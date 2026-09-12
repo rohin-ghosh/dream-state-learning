@@ -4229,3 +4229,18 @@ records caps/masks/criteria. Avicenna ownsnewdiagnostic/test only; Main will
 verifyCPU/nativeprovenance/devicevacancy beforelaunch. Nothingnewlaunched.
 Cumulative128957/node3GPU0stillreserved; A2traininglog nowreports11229steps,
 921249tokenpasses,1416.8fitseconds; remainingreadsnotyetterminal. NoG3freeze.
+
+## [Builder] 2026-09-12 15:53 UTC — timestamp correction and throughput evidence cut
+
+The preceding entry labelled15:55UTC was actually written approximately
+15:52UTC; its header was mistakenly ahead of the measured clock. Preserve
+that entry append-only; this correction governs its timestamp. The selected
+protocol and CPU implementation preceded any new citation fit or evaluation.
+
+Dalton's receipt-bound throughput md/json now archived. Observed sixSEQ085
+recipient controller spans578.221–776.315seconds sum3990.8215device-seconds;
+that is not calendar duration or active GPUcompute. Single-A40 serial recipe
+arithmetic61.63–67.82pairedseeds/day is conditional on24usablehours and no
+extraoverhead/failures, NOT measuredsustainedrate or completecampaigncapacity.
+No p50/p95,peakVRAM,utilization,A100speedup or16-way scaling inferred. Snapshot
+freezes earlierA2livecut; laterMaintraininglog1416.8s doesnotcomplete readouts.

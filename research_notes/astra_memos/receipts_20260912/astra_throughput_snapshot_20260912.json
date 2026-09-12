@@ -1,0 +1,1236 @@
+{
+  "title": "Bounded read-only throughput snapshot — 2026-09-12",
+  "schema_version": 1,
+  "main_status_update": {
+    "reported_utc": "2026-09-12T15:50:00Z",
+    "source": "Main's follow-up user message",
+    "status": "Main resumed; cumulative fit_A2 alive",
+    "terminal": false,
+    "additional_counters": null,
+    "independently_polled": false
+  },
+  "created_utc": "2026-09-12T15:51:34.055969+00:00",
+  "evidence_cut": "Requested live-cumulative cut: archived SEQ-091 terminal memo and reported AN progress/A2 100-step profile only. No later cumulative result incorporated.",
+  "scope": {
+    "only_owned_files": [
+      "/tmp/astra_throughput_snapshot_20260912.md",
+      "/tmp/astra_throughput_snapshot_20260912.json"
+    ],
+    "repo_changes": false,
+    "gpu_actions": false,
+    "network_actions": false,
+    "git_actions": false,
+    "tests_added_or_run": false,
+    "method": "Read archived tar members in memory, sum recorded fields, hash source files, write these two snapshots; no extraction, native revalidation, node polling or control-plane access."
+  },
+  "units": {
+    "controller_wall_seconds": "Elapsed per recipe controller, including internal load/check/probe/cleanup as coded, excluding outside windows.",
+    "accounted_reserved_device_seconds": "One continuously assigned GPU times recorded controller span. Partial reservation-window accounting; not CUDA active compute, full reservation duration, billing, or lease consumption.",
+    "full_reserved_gpu_seconds": null,
+    "native_loop_seconds": "Optimizer loop or native operation-call wall time; not interchangeable with controller wall or pure GPU kernel time.",
+    "input_token_passes": "Training context+target token occurrences over epochs; not unique examples or inference prompt usage.",
+    "supervised_update_token_passes": "Only masked-in training target occurrences; utility includes EOS, cumulative audit uses shifted causal labels.",
+    "actual_prompt_output_tokens": "Inference usage only when explicitly captured by native receipts; not character estimates or output caps."
+  },
+  "unmeasured": {
+    "latency_p50_seconds": null,
+    "latency_p95_seconds": null,
+    "peak_vram_bytes": null,
+    "gpu_utilization": null,
+    "pure_gpu_compute_seconds": null,
+    "full_reservation_seconds": null,
+    "isolated_cold_start_seconds": null,
+    "isolated_hash_validation_seconds": null,
+    "total_campaign_cost": null
+  },
+  "utility_recipe": {
+    "rank": 8,
+    "alpha": 16,
+    "dropout": 0.05,
+    "lr": 0.0001,
+    "epochs": 3,
+    "max_len": 4096,
+    "seed": 0,
+    "overflow": "split",
+    "split_overlap_tokens": 0,
+    "note": "DEV material utility whole_raw; unique_events=1; explicit_replays=32; not tokenmatched; no parenting claim",
+    "batch_size": 1,
+    "grad_accum": 1,
+    "pack": false,
+    "shuffle_groups": true,
+    "optimizer": "adamw",
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "layers": "all",
+    "svd_init": false,
+    "svd_scale": "sigma",
+    "svd_method": "exact",
+    "svd_cache": "",
+    "freeze_a": false,
+    "chat_template": true,
+    "add_eos": true,
+    "isolation_check": "auto",
+    "isolation_tol": 0.0,
+    "grad_checkpoint": true,
+    "device": "cuda",
+    "dtype": "bf16",
+    "model": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+    "max_steps": 96,
+    "log_every": 10
+  },
+  "utility_cells": [
+    {
+      "arm": "whole_raw",
+      "recipient_seed": 0,
+      "device": "1",
+      "source": "U",
+      "source_members": [
+        "astra_correction_utility_20260912_attempt1/recipient_logs/whole_raw/seed0/STARTED.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/whole_raw/seed0/COMPLETED.json",
+        "astra_correction_utility_20260912_attempt1/recipients/whole_raw/seed0/train_manifest.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/whole_raw/seed0/probes/pair/off/results.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/whole_raw/seed0/probes/pair/on/results.json"
+      ],
+      "status": "terminal",
+      "unique_source_events": 1,
+      "replay_rows": 32,
+      "epochs": 3,
+      "optimizer_steps": 96,
+      "input_token_passes": 92064,
+      "supervised_update_token_passes_including_eos": 8832,
+      "fit_native_loop_seconds": 84.7,
+      "fit_function_wall_seconds": 85.3,
+      "recipient_controller_wall_seconds": 776.314736,
+      "accounted_reserved_device_seconds": 776.314736,
+      "full_reserved_gpu_seconds": null,
+      "started_utc": "2026-09-12T13:38:47.797403+00:00",
+      "finished_utc": "2026-09-12T13:51:44.112139+00:00",
+      "generation_batches": 128,
+      "output_token_cap_not_usage": 32000,
+      "actual_generation_prompt_tokens": null,
+      "actual_generation_output_tokens": null,
+      "separate_eval_seconds": null,
+      "cold_start_seconds": null,
+      "validation_seconds": null
+    },
+    {
+      "arm": "whole_raw",
+      "recipient_seed": 1,
+      "device": "3",
+      "source": "U",
+      "source_members": [
+        "astra_correction_utility_20260912_attempt1/recipient_logs/whole_raw/seed1/STARTED.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/whole_raw/seed1/COMPLETED.json",
+        "astra_correction_utility_20260912_attempt1/recipients/whole_raw/seed1/train_manifest.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/whole_raw/seed1/probes/pair/off/results.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/whole_raw/seed1/probes/pair/on/results.json"
+      ],
+      "status": "terminal",
+      "unique_source_events": 1,
+      "replay_rows": 32,
+      "epochs": 3,
+      "optimizer_steps": 96,
+      "input_token_passes": 92064,
+      "supervised_update_token_passes_including_eos": 8832,
+      "fit_native_loop_seconds": 83.9,
+      "fit_function_wall_seconds": 84.4,
+      "recipient_controller_wall_seconds": 695.798777,
+      "accounted_reserved_device_seconds": 695.798777,
+      "full_reserved_gpu_seconds": null,
+      "started_utc": "2026-09-12T13:42:11.227276+00:00",
+      "finished_utc": "2026-09-12T13:53:47.026053+00:00",
+      "generation_batches": 128,
+      "output_token_cap_not_usage": 32000,
+      "actual_generation_prompt_tokens": null,
+      "actual_generation_output_tokens": null,
+      "separate_eval_seconds": null,
+      "cold_start_seconds": null,
+      "validation_seconds": null
+    },
+    {
+      "arm": "whole_raw",
+      "recipient_seed": 2,
+      "device": "5",
+      "source": "U",
+      "source_members": [
+        "astra_correction_utility_20260912_attempt1/recipient_logs/whole_raw/seed2/STARTED.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/whole_raw/seed2/COMPLETED.json",
+        "astra_correction_utility_20260912_attempt1/recipients/whole_raw/seed2/train_manifest.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/whole_raw/seed2/probes/pair/off/results.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/whole_raw/seed2/probes/pair/on/results.json"
+      ],
+      "status": "terminal",
+      "unique_source_events": 1,
+      "replay_rows": 32,
+      "epochs": 3,
+      "optimizer_steps": 96,
+      "input_token_passes": 92064,
+      "supervised_update_token_passes_including_eos": 8832,
+      "fit_native_loop_seconds": 84.1,
+      "fit_function_wall_seconds": 84.6,
+      "recipient_controller_wall_seconds": 736.047406,
+      "accounted_reserved_device_seconds": 736.047406,
+      "full_reserved_gpu_seconds": null,
+      "started_utc": "2026-09-12T13:42:27.591600+00:00",
+      "finished_utc": "2026-09-12T13:54:43.639006+00:00",
+      "generation_batches": 128,
+      "output_token_cap_not_usage": 32000,
+      "actual_generation_prompt_tokens": null,
+      "actual_generation_output_tokens": null,
+      "separate_eval_seconds": null,
+      "cold_start_seconds": null,
+      "validation_seconds": null
+    },
+    {
+      "arm": "act_only",
+      "recipient_seed": 0,
+      "device": "2",
+      "source": "U",
+      "source_members": [
+        "astra_correction_utility_20260912_attempt1/recipient_logs/act_only/seed0/STARTED.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/act_only/seed0/COMPLETED.json",
+        "astra_correction_utility_20260912_attempt1/recipients/act_only/seed0/train_manifest.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/act_only/seed0/probes/pair/off/results.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/act_only/seed0/probes/pair/on/results.json"
+      ],
+      "status": "terminal",
+      "unique_source_events": 1,
+      "replay_rows": 32,
+      "epochs": 3,
+      "optimizer_steps": 96,
+      "input_token_passes": 86880,
+      "supervised_update_token_passes_including_eos": 3648,
+      "fit_native_loop_seconds": 81.3,
+      "fit_function_wall_seconds": 81.8,
+      "recipient_controller_wall_seconds": 625.526204,
+      "accounted_reserved_device_seconds": 625.526204,
+      "full_reserved_gpu_seconds": null,
+      "started_utc": "2026-09-12T13:38:56.672283+00:00",
+      "finished_utc": "2026-09-12T13:49:22.198487+00:00",
+      "generation_batches": 128,
+      "output_token_cap_not_usage": 32000,
+      "actual_generation_prompt_tokens": null,
+      "actual_generation_output_tokens": null,
+      "separate_eval_seconds": null,
+      "cold_start_seconds": null,
+      "validation_seconds": null
+    },
+    {
+      "arm": "act_only",
+      "recipient_seed": 1,
+      "device": "4",
+      "source": "U",
+      "source_members": [
+        "astra_correction_utility_20260912_attempt1/recipient_logs/act_only/seed1/STARTED.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/act_only/seed1/COMPLETED.json",
+        "astra_correction_utility_20260912_attempt1/recipients/act_only/seed1/train_manifest.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/act_only/seed1/probes/pair/off/results.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/act_only/seed1/probes/pair/on/results.json"
+      ],
+      "status": "terminal",
+      "unique_source_events": 1,
+      "replay_rows": 32,
+      "epochs": 3,
+      "optimizer_steps": 96,
+      "input_token_passes": 86880,
+      "supervised_update_token_passes_including_eos": 3648,
+      "fit_native_loop_seconds": 81.1,
+      "fit_function_wall_seconds": 81.6,
+      "recipient_controller_wall_seconds": 578.221335,
+      "accounted_reserved_device_seconds": 578.221335,
+      "full_reserved_gpu_seconds": null,
+      "started_utc": "2026-09-12T13:42:11.970952+00:00",
+      "finished_utc": "2026-09-12T13:51:50.192287+00:00",
+      "generation_batches": 128,
+      "output_token_cap_not_usage": 32000,
+      "actual_generation_prompt_tokens": null,
+      "actual_generation_output_tokens": null,
+      "separate_eval_seconds": null,
+      "cold_start_seconds": null,
+      "validation_seconds": null
+    },
+    {
+      "arm": "act_only",
+      "recipient_seed": 2,
+      "device": "6",
+      "source": "U",
+      "source_members": [
+        "astra_correction_utility_20260912_attempt1/recipient_logs/act_only/seed2/STARTED.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/act_only/seed2/COMPLETED.json",
+        "astra_correction_utility_20260912_attempt1/recipients/act_only/seed2/train_manifest.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/act_only/seed2/probes/pair/off/results.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/act_only/seed2/probes/pair/on/results.json"
+      ],
+      "status": "terminal",
+      "unique_source_events": 1,
+      "replay_rows": 32,
+      "epochs": 3,
+      "optimizer_steps": 96,
+      "input_token_passes": 86880,
+      "supervised_update_token_passes_including_eos": 3648,
+      "fit_native_loop_seconds": 81.8,
+      "fit_function_wall_seconds": 82.3,
+      "recipient_controller_wall_seconds": 578.913064,
+      "accounted_reserved_device_seconds": 578.913064,
+      "full_reserved_gpu_seconds": null,
+      "started_utc": "2026-09-12T13:42:28.349910+00:00",
+      "finished_utc": "2026-09-12T13:52:07.262974+00:00",
+      "generation_batches": 128,
+      "output_token_cap_not_usage": 32000,
+      "actual_generation_prompt_tokens": null,
+      "actual_generation_output_tokens": null,
+      "separate_eval_seconds": null,
+      "cold_start_seconds": null,
+      "validation_seconds": null
+    }
+  ],
+  "utility_aggregate": {
+    "fits": 6,
+    "steps": 576,
+    "input_token_passes": 536832,
+    "supervised_update_token_passes": 37440,
+    "native_fit_loop_seconds": 496.9,
+    "fit_function_wall_seconds": 500.0,
+    "sum_controller_seconds": 3990.821522,
+    "accounted_reserved_gpu_hours": 1.108561533888889,
+    "calendar_span_of_overlapping_receipt_windows_seconds": 955.841603,
+    "unpartitioned_controller_minus_fit_function_seconds": 3490.821522,
+    "actual_generation_tokens": null
+  },
+  "exact_rows_terminal": [
+    {
+      "source": "E0",
+      "root_index": 0,
+      "status": "terminal",
+      "new_fits": 0,
+      "optimizer_steps": 0,
+      "unique_training_contexts": 128,
+      "generation_calls": 384,
+      "scoring_calls": 384,
+      "candidate_forwards": 768,
+      "controller_wall_seconds": 396.1546165943146,
+      "accounted_reserved_device_seconds": 396.1546165943146,
+      "full_reserved_gpu_seconds": null,
+      "states": [
+        {
+          "state": "OFF",
+          "records_member": "root0/OFF/records.jsonl",
+          "generation_calls": 128,
+          "scoring_calls": 128,
+          "generation_call_seconds": 30.020603684999514,
+          "scoring_call_seconds": 10.570291168987751,
+          "emitted_token_ids_including_terminal_eos": 896,
+          "actual_prompt_tokens": null
+        },
+        {
+          "state": "r0_plus",
+          "records_member": "root0/r0_plus/records.jsonl",
+          "generation_calls": 128,
+          "scoring_calls": 128,
+          "generation_call_seconds": 47.68622104606038,
+          "scoring_call_seconds": 14.16672069701599,
+          "emitted_token_ids_including_terminal_eos": 1000,
+          "actual_prompt_tokens": null
+        },
+        {
+          "state": "r0_minus",
+          "records_member": "root0/r0_minus/records.jsonl",
+          "generation_calls": 128,
+          "scoring_calls": 128,
+          "generation_call_seconds": 44.591401555961056,
+          "scoring_call_seconds": 14.190030907040637,
+          "emitted_token_ids_including_terminal_eos": 900,
+          "actual_prompt_tokens": null
+        }
+      ],
+      "emitted_token_ids_including_terminal_eos": 2796,
+      "generation_call_seconds": 122.29822628702095,
+      "scoring_call_seconds": 38.92704277304438,
+      "actual_prompt_tokens": null
+    },
+    {
+      "source": "E1",
+      "root_index": 1,
+      "status": "terminal",
+      "new_fits": 0,
+      "optimizer_steps": 0,
+      "unique_training_contexts": 128,
+      "generation_calls": 384,
+      "scoring_calls": 384,
+      "candidate_forwards": 768,
+      "controller_wall_seconds": 399.4168255329132,
+      "accounted_reserved_device_seconds": 399.4168255329132,
+      "full_reserved_gpu_seconds": null,
+      "states": [
+        {
+          "state": "OFF",
+          "records_member": "root1/OFF/records.jsonl",
+          "generation_calls": 128,
+          "scoring_calls": 128,
+          "generation_call_seconds": 30.008836747976602,
+          "scoring_call_seconds": 10.562494920966856,
+          "emitted_token_ids_including_terminal_eos": 895,
+          "actual_prompt_tokens": null
+        },
+        {
+          "state": "r1_plus",
+          "records_member": "root1/r1_plus/records.jsonl",
+          "generation_calls": 128,
+          "scoring_calls": 128,
+          "generation_call_seconds": 41.44173404995672,
+          "scoring_call_seconds": 14.124549186963122,
+          "emitted_token_ids_including_terminal_eos": 896,
+          "actual_prompt_tokens": null
+        },
+        {
+          "state": "r1_minus",
+          "records_member": "root1/r1_minus/records.jsonl",
+          "generation_calls": 128,
+          "scoring_calls": 128,
+          "generation_call_seconds": 45.97578557102679,
+          "scoring_call_seconds": 14.119766255025752,
+          "emitted_token_ids_including_terminal_eos": 1009,
+          "actual_prompt_tokens": null
+        }
+      ],
+      "emitted_token_ids_including_terminal_eos": 2800,
+      "generation_call_seconds": 117.42635636896011,
+      "scoring_call_seconds": 38.80681036295573,
+      "actual_prompt_tokens": null
+    }
+  ],
+  "exact_rows_failed_attempt_separate": {
+    "source": "EF",
+    "status": "failed_before_first_adapter_load",
+    "not_spliced_into_terminal_retry": true,
+    "generation_calls": 128,
+    "scoring_calls": 128,
+    "emitted_token_ids_including_terminal_eos": 896,
+    "recorded_call_seconds": 40.65792290590616,
+    "full_attempt_wall_seconds": null,
+    "full_reserved_gpu_seconds": null
+  },
+  "production_and_demonstration": [
+    {
+      "sequence": "SEQ-088",
+      "source": "P88",
+      "run_member_root": "astra_constraint_check_20260912_attempt1",
+      "status": "terminal",
+      "sampler_seed": 7101,
+      "learner_seed": null,
+      "new_fits": 0,
+      "optimizer_steps": 0,
+      "generation_calls": 16,
+      "controller_wall_seconds": 276.6724464040017,
+      "accounted_reserved_device_seconds": 276.6724464040017,
+      "full_reserved_gpu_seconds": null,
+      "actual_prompt_tokens": 4184,
+      "actual_output_tokens": 705,
+      "sum_arm_wall_seconds": 244.9546380860047,
+      "controller_minus_arm_seconds": 31.71780831799697,
+      "arms": {
+        "process": {
+          "generation_calls": 8,
+          "actual_prompt_tokens": 2104,
+          "actual_output_tokens": 392,
+          "arm_wall_seconds": 124.32839242900081,
+          "pure_generation_seconds": null,
+          "source_members": [
+            "astra_constraint_check_20260912_attempt1/process/results.json",
+            "astra_constraint_check_20260912_attempt1/process/generations.jsonl"
+          ]
+        },
+        "format": {
+          "generation_calls": 8,
+          "actual_prompt_tokens": 2080,
+          "actual_output_tokens": 313,
+          "arm_wall_seconds": 120.62624565700389,
+          "pure_generation_seconds": null,
+          "source_members": [
+            "astra_constraint_check_20260912_attempt1/format/results.json",
+            "astra_constraint_check_20260912_attempt1/format/generations.jsonl"
+          ]
+        }
+      }
+    },
+    {
+      "sequence": "SEQ-090",
+      "source": "P90",
+      "run_member_root": "astra_constraint_v2_20260912_seed7101_attempt1",
+      "status": "terminal",
+      "sampler_seed": 7101,
+      "learner_seed": null,
+      "new_fits": 0,
+      "optimizer_steps": 0,
+      "generation_calls": 16,
+      "controller_wall_seconds": 224.70432493100088,
+      "accounted_reserved_device_seconds": 224.70432493100088,
+      "full_reserved_gpu_seconds": null,
+      "actual_prompt_tokens": 4520,
+      "actual_output_tokens": 668,
+      "sum_arm_wall_seconds": 206.2533376749925,
+      "controller_minus_arm_seconds": 18.450987256008375,
+      "arms": {
+        "process": {
+          "generation_calls": 8,
+          "actual_prompt_tokens": 2272,
+          "actual_output_tokens": 327,
+          "arm_wall_seconds": 105.82526729999518,
+          "pure_generation_seconds": null,
+          "source_members": [
+            "astra_constraint_v2_20260912_seed7101_attempt1/process/results.json",
+            "astra_constraint_v2_20260912_seed7101_attempt1/process/generations.jsonl"
+          ]
+        },
+        "format": {
+          "generation_calls": 8,
+          "actual_prompt_tokens": 2248,
+          "actual_output_tokens": 341,
+          "arm_wall_seconds": 100.42807037499733,
+          "pure_generation_seconds": null,
+          "source_members": [
+            "astra_constraint_v2_20260912_seed7101_attempt1/format/results.json",
+            "astra_constraint_v2_20260912_seed7101_attempt1/format/generations.jsonl"
+          ]
+        }
+      }
+    },
+    {
+      "sequence": "SEQ-090",
+      "source": "P90",
+      "run_member_root": "astra_constraint_v2_20260912_seed7102_attempt1",
+      "status": "terminal",
+      "sampler_seed": 7102,
+      "learner_seed": null,
+      "new_fits": 0,
+      "optimizer_steps": 0,
+      "generation_calls": 16,
+      "controller_wall_seconds": 202.4868602589995,
+      "accounted_reserved_device_seconds": 202.4868602589995,
+      "full_reserved_gpu_seconds": null,
+      "actual_prompt_tokens": 4520,
+      "actual_output_tokens": 694,
+      "sum_arm_wall_seconds": 184.70885548200022,
+      "controller_minus_arm_seconds": 17.778004776999296,
+      "arms": {
+        "process": {
+          "generation_calls": 8,
+          "actual_prompt_tokens": 2272,
+          "actual_output_tokens": 363,
+          "arm_wall_seconds": 89.56385270100145,
+          "pure_generation_seconds": null,
+          "source_members": [
+            "astra_constraint_v2_20260912_seed7102_attempt1/process/results.json",
+            "astra_constraint_v2_20260912_seed7102_attempt1/process/generations.jsonl"
+          ]
+        },
+        "format": {
+          "generation_calls": 8,
+          "actual_prompt_tokens": 2248,
+          "actual_output_tokens": 331,
+          "arm_wall_seconds": 95.14500278099877,
+          "pure_generation_seconds": null,
+          "source_members": [
+            "astra_constraint_v2_20260912_seed7102_attempt1/format/results.json",
+            "astra_constraint_v2_20260912_seed7102_attempt1/format/generations.jsonl"
+          ]
+        }
+      }
+    },
+    {
+      "sequence": "SEQ-090",
+      "source": "P90",
+      "run_member_root": "astra_constraint_v2_20260912_seed7103_attempt1",
+      "status": "terminal",
+      "sampler_seed": 7103,
+      "learner_seed": null,
+      "new_fits": 0,
+      "optimizer_steps": 0,
+      "generation_calls": 16,
+      "controller_wall_seconds": 206.7819774840027,
+      "accounted_reserved_device_seconds": 206.7819774840027,
+      "full_reserved_gpu_seconds": null,
+      "actual_prompt_tokens": 4520,
+      "actual_output_tokens": 704,
+      "sum_arm_wall_seconds": 167.2184200059928,
+      "controller_minus_arm_seconds": 39.5635574780099,
+      "arms": {
+        "process": {
+          "generation_calls": 8,
+          "actual_prompt_tokens": 2272,
+          "actual_output_tokens": 374,
+          "arm_wall_seconds": 84.1646806159988,
+          "pure_generation_seconds": null,
+          "source_members": [
+            "astra_constraint_v2_20260912_seed7103_attempt1/process/results.json",
+            "astra_constraint_v2_20260912_seed7103_attempt1/process/generations.jsonl"
+          ]
+        },
+        "format": {
+          "generation_calls": 8,
+          "actual_prompt_tokens": 2248,
+          "actual_output_tokens": 330,
+          "arm_wall_seconds": 83.053739389994,
+          "pure_generation_seconds": null,
+          "source_members": [
+            "astra_constraint_v2_20260912_seed7103_attempt1/format/results.json",
+            "astra_constraint_v2_20260912_seed7103_attempt1/format/generations.jsonl"
+          ]
+        }
+      }
+    },
+    {
+      "sequence": "SEQ-091",
+      "source": "D91",
+      "run_member_root": "astra_demonstration_20260912_attempt1",
+      "status": "terminal",
+      "sampler_seed": 7101,
+      "learner_seed": null,
+      "new_fits": 0,
+      "optimizer_steps": 0,
+      "generation_calls": 32,
+      "controller_wall_seconds": 340.5489145469983,
+      "accounted_reserved_device_seconds": 340.5489145469983,
+      "full_reserved_gpu_seconds": null,
+      "actual_prompt_tokens": 11173,
+      "actual_output_tokens": 1300,
+      "sum_arm_wall_seconds": 288.85234796900477,
+      "controller_minus_arm_seconds": 51.69656657799351,
+      "arms": {
+        "process": {
+          "generation_calls": 16,
+          "actual_prompt_tokens": 5637,
+          "actual_output_tokens": 652,
+          "arm_wall_seconds": 132.17446275700058,
+          "pure_generation_seconds": null,
+          "source_members": [
+            "astra_demonstration_20260912_attempt1/process/results.json",
+            "astra_demonstration_20260912_attempt1/process/generations.jsonl"
+          ],
+          "phase_tokens": {
+            "source": {
+              "calls": 8,
+              "prompt_tokens": 2982,
+              "output_tokens": 327
+            },
+            "transfer": {
+              "calls": 8,
+              "prompt_tokens": 2655,
+              "output_tokens": 325
+            }
+          }
+        },
+        "format": {
+          "generation_calls": 16,
+          "actual_prompt_tokens": 5536,
+          "actual_output_tokens": 648,
+          "arm_wall_seconds": 156.67788521200418,
+          "pure_generation_seconds": null,
+          "source_members": [
+            "astra_demonstration_20260912_attempt1/format/results.json",
+            "astra_demonstration_20260912_attempt1/format/generations.jsonl"
+          ],
+          "phase_tokens": {
+            "source": {
+              "calls": 8,
+              "prompt_tokens": 2880,
+              "output_tokens": 328
+            },
+            "transfer": {
+              "calls": 8,
+              "prompt_tokens": 2656,
+              "output_tokens": 320
+            }
+          }
+        }
+      }
+    }
+  ],
+  "cumulative": {
+    "source": [
+      "CP",
+      "CL",
+      "CN",
+      "USER"
+    ],
+    "status": "LIVE_NOT_TERMINAL_AT_REQUESTED_CUT",
+    "node": 3,
+    "pid": 128957,
+    "device": 0,
+    "started_utc": "2026-09-12T15:16:50.264833+00:00",
+    "launch_status": "LAUNCHED_NOT_COMPLETED",
+    "stages": [
+      "A1_before",
+      "fit_AN",
+      "fit_A2",
+      "AN",
+      "A2",
+      "A1_after"
+    ],
+    "lineage": {
+      "A1": "Fit(base, OLD), inherited 9693 steps",
+      "A2": "Fit(base, OLD+NEW), 11229 steps",
+      "AN": "Fit(base, NEW), 1536 steps"
+    },
+    "recipe": {
+      "alpha": 16,
+      "bsz": 4,
+      "dropout": 0.05,
+      "epochs": 3,
+      "lr": 0.0001,
+      "max_len": 512,
+      "rank": 8,
+      "seed": 2,
+      "targets": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ]
+    },
+    "prepared_doses": {
+      "OLD": {
+        "rows": 12924,
+        "steps": 9693,
+        "input_tokens_per_epoch": 249995,
+        "input_token_passes_three_epochs": 749985,
+        "shifted_supervised_tokens_per_epoch": 237071,
+        "shifted_supervised_update_token_passes_three_epochs": 711213
+      },
+      "AN": {
+        "rows": 2048,
+        "steps": 1536,
+        "input_tokens_per_epoch": 57088,
+        "input_token_passes_three_epochs": 171264,
+        "shifted_supervised_tokens_per_epoch": 55040,
+        "shifted_supervised_update_token_passes_three_epochs": 165120
+      },
+      "A2": {
+        "rows": 14972,
+        "steps": 11229,
+        "input_tokens_per_epoch": 307083,
+        "input_token_passes_three_epochs": 921249,
+        "shifted_supervised_tokens_per_epoch": 292111,
+        "shifted_supervised_update_token_passes_three_epochs": 876333
+      }
+    },
+    "preparation_elapsed_seconds": 20.8721803619992,
+    "preparation_timer_scope": "Field prepare_cpu_seconds uses monotonic elapsed wall time for CPU-only source/base/A1 hash checks, tokenizer/row/order/mask checks and artifact preparation; not CPU process time, not GPU training, excludes transfer and outside preparation/audit.",
+    "inherited_A1_record": {
+      "native_loop_seconds_named_wall_seconds": 1327.3,
+      "steps": 9693,
+      "input_token_passes": 749985,
+      "supervised_update_token_passes": 711213,
+      "status": "inherited historical record; not a new fit or cost charged again"
+    },
+    "AN_reported_progress": {
+      "status": "fit reported done; checkpoint readout not established by this snapshot",
+      "loop_seconds": 199.4,
+      "steps": 1536,
+      "input_token_passes": 171264,
+      "source": "CN lines 4120-4125 and current user directive",
+      "actual_terminal_supervised_token_counter": null
+    },
+    "A2_reported_live_profile": {
+      "sample_steps": 100,
+      "input_tokens_per_second": 495,
+      "projected_fit_minutes": 28.4,
+      "terminal": false,
+      "source": "USER",
+      "full_fit_seconds": null,
+      "completed_steps": null,
+      "completed_input_token_passes": null,
+      "completed_supervised_update_token_passes": null
+    },
+    "prepared_work_per_read": {
+      "abstention_sequences": 448,
+      "candidate_sequences": 20752,
+      "cues": 1377,
+      "passes": 2,
+      "scored_prompt_rows": 3202
+    },
+    "planned_reads": 4,
+    "reserved_cap_seconds_not_measurement": 5400,
+    "full_reserved_gpu_seconds": null,
+    "completed_read_seconds": null,
+    "actual_read_prompt_tokens": null,
+    "actual_read_output_tokens": null,
+    "lease_finish_cutoff_utc_from_launch": "2026-09-25T21:03:00Z",
+    "lease_source": "Supplied node3 expiry minus six hours, not a fresh control-plane lease verification",
+    "notes": "No use of 90-minute cap, AN loop rate, or A2 100-step projection as completed learner-seeds/day. Do not replace step-profile projection with total tokens/495: sampled batch mix and whole-fit token mix differ."
+  },
+  "provisional_single_gpu_capacity": {
+    "status": "Conditional arithmetic envelope, NOT a measured sustained throughput interval, confidence interval, positive guaranteed lower bound, or capacity commitment.",
+    "hardware": "One A40 with the same Qwen2.5-7B rank8 utility recipe and receipt-style OFF/ON probes; underlying observations used separate devices, not a serial-day experiment.",
+    "recipient_fit_plus_off_on_per_day": [
+      111.29506628352858,
+      149.4237496442431
+    ],
+    "two_arm_paired_learner_seed_per_day": [
+      61.633240644263104,
+      67.81682579905772
+    ],
+    "paired_seconds_by_seed": [
+      1401.84094,
+      1274.020112,
+      1314.96047
+    ],
+    "unit_definition": "One recipient unit = one new fitted adapter plus its OFF/ON development evaluations. One paired learner-seed unit = whole_raw and act_only recipients at the same seed, run serially on ONE GPU. These are not successful discoveries, lifelong learners, or completed developmental lives.",
+    "assumptions": [
+      "24 hours usable reservation time",
+      "same small fixed recipe and data lengths",
+      "observed controller-time extrema representative",
+      "no additional external source/preparation/audit/release delays, queue gaps, failures or contention shifts"
+    ],
+    "external_overhead_seconds": null,
+    "failure_rate": null,
+    "unconditional_positive_lower_bound": null,
+    "unknown_new_pilot_capacity": null,
+    "cumulative_capacity_per_day": null,
+    "multi_gpu_scaling": null
+  },
+  "overhead_scope": [
+    "V3 train_seconds excludes model/tokenizer cold load; V3 wall_seconds is run_training on an already-loaded base, includes local setup/save, not whole fit subprocess.",
+    "memory_dose train_meta.wall_seconds starts after tokenization/base/adapter/optimizer setup and before adapter save: native loop time despite the wall_seconds name.",
+    "Production/demonstration controller and arm timers include their internal validation and model load/close, not just decoding. Controller-minus-arm residual is unpartitioned orchestration/validation, not an isolated hash benchmark.",
+    "Exact-row call timers cover native generate/score operations; runner-minus-call residual includes startup/loading/hash/check/cleanup/analysis and cannot isolate cold-start cost.",
+    "Preparation, external capture/audit, original source generation, inherited fits and failed attempts have separate scopes. None may be silently counted as free or assembled into total campaign cost."
+  ],
+  "next_pilot": {
+    "status": "descriptive proposal only; no implementation, launch, reservation, gate change, or new tests",
+    "critical_path_owner": "Main; cumulative remains live at the requested evidence cut and Main will add terminal results",
+    "serial_dependency_graph": [
+      "Main freezes prospective pilot scope, exact eligible own-output bytes, selection denominator, control/readouts and finite budget; public validity does not auto-authorize training.",
+      "Acquire or reuse source-bound own output and original public feedback; keep all failures and teacher/example provenance; exclude teacher text from update targets and freeze any outcome-dependent selection rule explicitly.",
+      "CPU preparation: exact hashes/overlap/visibility checks, tokenization and shifted target masks, immutable corpus/recipe manifest; do not silently pad/rewrite/truncate data.",
+      "Main verifies reservation readiness within existing rules; reserve one device continuously and account startup and hash validation.",
+      "Known SEQ-085 order: fresh-base own-output LoRA fit -> immutable save/DONE/hash validation -> trainer cleanup.",
+      "Fresh-process teacher-free OFF evaluation -> owned cleanup -> fresh-process saved-adapter reload/hash check -> identical ON evaluation -> cleanup.",
+      "Bind raw generations/native scores/actual token and time receipts; separate acquisition, transfer, retention and selection limits; preserve artifacts -> Main release verification.",
+      "Only after terminal evidence: Main chooses whether another seed/cycle is scientifically warranted; later-cycle retention or cumulative writes have a new dependency and are not priced from one fit."
+    ],
+    "cost_equation": "T_pilot = T_source_output + T_external_preparation + T_continuous_reservation; T_continuous_reservation = load/validate + fit + save/check + cleanup + fresh OFF load/eval/cleanup + fresh ON load/eval/cleanup + terminal validation/release.",
+    "known_analogue": "SEQ-085 recipient controller covers fit plus OFF/ON and internal custody; does not cover a new source production/selection phase, external preparation/audit, or full reservation endpoints.",
+    "end_to_end_pilot_time_seconds": null,
+    "semantic_demo_output_recipe_throughput_per_day": null
+  },
+  "resource_schedule": {
+    "a100_scheduled_pacific": "2026-09-12T22:05:00-07:00",
+    "a100_scheduled_utc": "2026-09-13T05:05:00+00:00",
+    "watcher_reference_utc": "2026-09-12T15:32:00+00:00",
+    "scheduled_hours_from_watcher": 13.55,
+    "watcher_6_5_hours_rejected": true,
+    "control_plane_verified": false,
+    "source": [
+      "RESOURCE",
+      "USER"
+    ],
+    "scope": "Schedule only; no assertion of presently available/onboarded capacity; no lease/extension/onboarding action."
+  },
+  "dataset_and_selection_limitations": [
+    "Only a selected set of terminal diagnostic receipts, one failed-attempt partial record, and current preparation/launch/progress reports are represented. No total campaign cost, billing, utilization, or throughput claim.",
+    "SEQ-085: one retrospectively selected solved child event, replayed 32 times, three recipient seeds per arm, 32 same-gym development questions; six repeated OFF evaluations are one deterministic baseline. No independent-experience replication; equal steps are not equal target/input token dose.",
+    "SEQ-087: 128 exact seen training prompts per root, fixed inherited adapters, root/optimizer-seed confounding; not held-out retention or generalization. Failed root0 attempt is kept separate.",
+    "SEQ-088/090: eight constructed board checks per arm; 7101/7102/7103 are sampler seeds, not learner seeds. Strict primary SEQ-090 grounding is 0/48. Post-hoc normalization is not a new terminal primary result.",
+    "SEQ-091: eight demonstrated sources and eight transfer cases per arm, one sampler seed; process grounding 2/8 source and 1/8 transfer versus 0/8 control, context-only. Demonstration echo and outcome-selected output eligibility limit subsequent learning claims; no output training approval or persistence claim follows.",
+    "Cumulative: synthetic researcher-planted OLD/NEW memory diagnostic, fresh-base replay/reconstruction, NOT warm-start updating OLD weights, catastrophic-forgetting evidence, or an own-output developmental life. OLD nonselectivity is not repaired by throughput.",
+    "Local source/model hashes establish local byte identity, not official base-origin authentication or exhaustive prior/hidden-storage contamination clearance. No clean-lineage, P1/G3/G5/H1/H2 or campaign-completion claim.",
+    "No latency p50/p95, peak VRAM, utilization, energy, or isolated cold-load/hash/evaluation timings are estimated from inventories, output characters, caps, or small heterogeneous samples."
+  ],
+  "arithmetic_receipt": [
+    {
+      "id": "A1",
+      "expression": "6 * 96",
+      "value": 576,
+      "unit": "SEQ-085 optimizer steps"
+    },
+    {
+      "id": "A2",
+      "expression": "3 * 92064 + 3 * 86880",
+      "value": 536832,
+      "unit": "SEQ-085 input token passes"
+    },
+    {
+      "id": "A3",
+      "expression": "3 * 8832 + 3 * 3648",
+      "value": 37440,
+      "unit": "SEQ-085 supervised update token passes including EOS"
+    },
+    {
+      "id": "A4",
+      "expression": "84.7 + 83.9 + 84.1 + 81.3 + 81.1 + 81.8",
+      "value": 496.9,
+      "unit": "native fit-loop seconds"
+    },
+    {
+      "id": "A5",
+      "expression": "85.3 + 84.4 + 84.6 + 81.8 + 81.6 + 82.3",
+      "value": 500.0,
+      "unit": "already-loaded fit-function wall seconds"
+    },
+    {
+      "id": "A6",
+      "expression": "776.314736 + 695.798777 + 736.047406 + 625.526204 + 578.221335 + 578.913064",
+      "value": 3990.821522,
+      "unit": "summed recipient controller/device seconds; not calendar"
+    },
+    {
+      "id": "A7",
+      "expression": "3990.821522 / 3600",
+      "value": 1.108561533888889,
+      "unit": "accounted reserved-device hours within receipt windows, not full lease or compute time"
+    },
+    {
+      "id": "A8",
+      "expression": "3990.821522 - 500.0",
+      "value": 3490.821522,
+      "unit": "unpartitioned load/validation/probe/cleanup/other seconds, not isolated eval"
+    },
+    {
+      "id": "A9",
+      "expression": "latest terminal - earliest STARTED across six overlapping utility cells",
+      "value": 955.841603,
+      "unit": "calendar seconds across receipt windows only"
+    },
+    {
+      "id": "A10",
+      "expression": "[86400 / 776.314736, 86400 / 578.221335]",
+      "value": [
+        111.29506628352858,
+        149.4237496442431
+      ],
+      "unit": "conditional recipient fits+OFF/ON reads per single-device day"
+    },
+    {
+      "id": "A11",
+      "expression": "paired serial wall per seed: whole_raw + act_only",
+      "value": [
+        1401.84094,
+        1274.020112,
+        1314.96047
+      ],
+      "unit": "seconds per two-arm seed, seeds 0/1/2"
+    },
+    {
+      "id": "A12",
+      "expression": "[86400 / max(paired_seconds), 86400 / min(paired_seconds)]",
+      "value": [
+        61.633240644263104,
+        67.81682579905772
+      ],
+      "unit": "conditional two-arm learner-seeds per single-device day"
+    },
+    {
+      "id": "A13",
+      "expression": "sum(E0,E1 controller wall)",
+      "value": 795.5714421272278,
+      "unit": "SEQ-087 terminal accounted device seconds, excludes failed attempt"
+    },
+    {
+      "id": "A14",
+      "expression": "sum native record seconds for generate / score operations across both terminal roots",
+      "value": {
+        "generate": 239.72458265598107,
+        "score": 77.7338531360001,
+        "total": 317.4584357919812
+      },
+      "unit": "call-wall seconds, not GPU kernel time"
+    },
+    {
+      "id": "A15",
+      "expression": "SEQ-087 terminal controller sum - generate/score call sum",
+      "value": 478.1130063352466,
+      "unit": "unpartitioned startup/hash/load/cleanup/analysis/other seconds"
+    },
+    {
+      "id": "A16",
+      "expression": "2796 + 2800",
+      "value": 5596,
+      "unit": "SEQ-087 emitted tokens including terminal EOS"
+    },
+    {
+      "id": "A17",
+      "expression": "224.70432493100088 + 202.4868602589995 + 206.7819774840027",
+      "value": 633.9731626740031,
+      "unit": "SEQ-090 summed pair/device seconds, not calendar"
+    },
+    {
+      "id": "A18",
+      "expression": "3 * (2272 + 2248); (327+341)+(363+331)+(374+330)",
+      "value": {
+        "prompt_tokens": 13560,
+        "output_tokens": 2066
+      },
+      "unit": "SEQ-090 actual generation tokens"
+    },
+    {
+      "id": "A19",
+      "expression": "5637 + 5536; 652 + 648",
+      "value": {
+        "prompt_tokens": 11173,
+        "output_tokens": 1300
+      },
+      "unit": "SEQ-091 actual generation tokens"
+    },
+    {
+      "id": "A20",
+      "expression": "57088 * 3; 55040 * 3; 3 * ceil(2048/4)",
+      "value": {
+        "rows": 2048,
+        "steps": 1536,
+        "input_tokens_per_epoch": 57088,
+        "input_token_passes_three_epochs": 171264,
+        "shifted_supervised_tokens_per_epoch": 55040,
+        "shifted_supervised_update_token_passes_three_epochs": 165120
+      },
+      "unit": "prepared AN dose, not all terminal counters"
+    },
+    {
+      "id": "A21",
+      "expression": "307083 * 3; 292111 * 3; 3 * ceil(14972/4)",
+      "value": {
+        "rows": 14972,
+        "steps": 11229,
+        "input_tokens_per_epoch": 307083,
+        "input_token_passes_three_epochs": 921249,
+        "shifted_supervised_tokens_per_epoch": 292111,
+        "shifted_supervised_update_token_passes_three_epochs": 876333
+      },
+      "unit": "prepared A2 dose, NOT completed work"
+    },
+    {
+      "id": "A22",
+      "expression": "1536 + 11229; 171264 + 921249; 165120 + 876333",
+      "value": {
+        "planned_new_steps": 12765,
+        "planned_input_token_passes": 1092513,
+        "planned_supervised_update_token_passes": 1041453
+      },
+      "unit": "two planned new fits, not actual completed cumulative cost"
+    },
+    {
+      "id": "A23",
+      "expression": "199.4 / 1536; 171264 / 199.4",
+      "value": {
+        "seconds_per_step": 0.12981770833333334,
+        "input_token_passes_per_second": 858.8966900702106
+      },
+      "unit": "AN reported loop averages only, not pipeline throughput"
+    },
+    {
+      "id": "A24",
+      "expression": "2026-09-12 22:05 America/Los_Angeles -> UTC; subtract 2026-09-12 15:32 UTC",
+      "value": {
+        "utc": "2026-09-13T05:05:00+00:00",
+        "hours_after_watcher": 13.55
+      },
+      "unit": "scheduled date arithmetic only; no control-plane verification"
+    }
+  ],
+  "sources": {
+    "U": {
+      "path": "/data/home/rohing/dream-state/research_notes/astra_memos/receipts_20260912/astra_correction_utility_terminal_20260912.tgz",
+      "sha256": "dfbb71fb9ea07bbff5dc990ca5c2028796d173bc0c51520b2f45c53cad87e3a4",
+      "members": [
+        "astra_correction_utility_20260912_attempt1/recipient_logs/whole_raw/seed0/STARTED.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/whole_raw/seed0/COMPLETED.json",
+        "astra_correction_utility_20260912_attempt1/recipients/whole_raw/seed0/train_manifest.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/whole_raw/seed0/probes/pair/off/results.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/whole_raw/seed0/probes/pair/on/results.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/whole_raw/seed1/STARTED.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/whole_raw/seed1/COMPLETED.json",
+        "astra_correction_utility_20260912_attempt1/recipients/whole_raw/seed1/train_manifest.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/whole_raw/seed1/probes/pair/off/results.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/whole_raw/seed1/probes/pair/on/results.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/whole_raw/seed2/STARTED.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/whole_raw/seed2/COMPLETED.json",
+        "astra_correction_utility_20260912_attempt1/recipients/whole_raw/seed2/train_manifest.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/whole_raw/seed2/probes/pair/off/results.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/whole_raw/seed2/probes/pair/on/results.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/act_only/seed0/STARTED.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/act_only/seed0/COMPLETED.json",
+        "astra_correction_utility_20260912_attempt1/recipients/act_only/seed0/train_manifest.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/act_only/seed0/probes/pair/off/results.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/act_only/seed0/probes/pair/on/results.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/act_only/seed1/STARTED.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/act_only/seed1/COMPLETED.json",
+        "astra_correction_utility_20260912_attempt1/recipients/act_only/seed1/train_manifest.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/act_only/seed1/probes/pair/off/results.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/act_only/seed1/probes/pair/on/results.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/act_only/seed2/STARTED.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/act_only/seed2/COMPLETED.json",
+        "astra_correction_utility_20260912_attempt1/recipients/act_only/seed2/train_manifest.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/act_only/seed2/probes/pair/off/results.json",
+        "astra_correction_utility_20260912_attempt1/recipient_logs/act_only/seed2/probes/pair/on/results.json"
+      ]
+    },
+    "E0": {
+      "path": "/data/home/rohing/dream-state/research_notes/astra_memos/receipts_20260912/astra_exact_train_root0_terminal_20260912.tgz",
+      "sha256": "7bfc98cc39fc4e98072540476c961111494815bcd517e89b2eac2bdb91cf141a",
+      "members": [
+        "root0/probe.json",
+        "root0/COMPLETED.json",
+        "root0/supplementary_report.json",
+        "root0/OFF/records.jsonl",
+        "root0/r0_plus/records.jsonl",
+        "root0/r0_minus/records.jsonl"
+      ]
+    },
+    "E1": {
+      "path": "/data/home/rohing/dream-state/research_notes/astra_memos/receipts_20260912/astra_exact_train_root1_terminal_20260912.tgz",
+      "sha256": "2c87796110b611b07f57f2724c8de050bddd9cf316f7df0bc1c54bbc9bba72a7",
+      "members": [
+        "root1/probe.json",
+        "root1/COMPLETED.json",
+        "root1/supplementary_report.json",
+        "root1/OFF/records.jsonl",
+        "root1/r1_plus/records.jsonl",
+        "root1/r1_minus/records.jsonl"
+      ]
+    },
+    "EF": {
+      "path": "/data/home/rohing/dream-state/research_notes/astra_memos/receipts_20260912/astra_exact_train_root0_failure_20260912.tgz",
+      "sha256": "28d518e03198bbb9b6c06cb77c0407d500b0088f1540290f4264c942d118a240",
+      "members": [
+        "root0/FAILED.json",
+        "root0/OFF/records.jsonl",
+        "root0/MAIN_FAILURE_AUDIT.json"
+      ]
+    },
+    "P88": {
+      "path": "/data/home/rohing/dream-state/research_notes/astra_memos/receipts_20260912/astra_constraint_verified_terminal_20260912.tgz",
+      "sha256": "7935c254ac16cfbf33c8cbf9386e9a947ec9b02e50d28e9f03987efb3bbbda89",
+      "members": [
+        "astra_constraint_check_20260912_attempt1/COMPLETED.json",
+        "astra_constraint_check_20260912_attempt1/process/results.json",
+        "astra_constraint_check_20260912_attempt1/process/generations.jsonl",
+        "astra_constraint_check_20260912_attempt1/format/results.json",
+        "astra_constraint_check_20260912_attempt1/format/generations.jsonl"
+      ]
+    },
+    "P90": {
+      "path": "/data/home/rohing/dream-state/research_notes/astra_memos/receipts_20260912/astra_constraint_v2_terminal_20260912.tgz",
+      "sha256": "476788fb5204ab45dfcc22644382f1519493ce6224ccbce8298616c0d1073692",
+      "members": [
+        "astra_constraint_v2_20260912_seed7101_attempt1/COMPLETED.json",
+        "astra_constraint_v2_20260912_seed7101_attempt1/process/results.json",
+        "astra_constraint_v2_20260912_seed7101_attempt1/process/generations.jsonl",
+        "astra_constraint_v2_20260912_seed7101_attempt1/format/results.json",
+        "astra_constraint_v2_20260912_seed7101_attempt1/format/generations.jsonl",
+        "astra_constraint_v2_20260912_seed7102_attempt1/COMPLETED.json",
+        "astra_constraint_v2_20260912_seed7102_attempt1/process/results.json",
+        "astra_constraint_v2_20260912_seed7102_attempt1/process/generations.jsonl",
+        "astra_constraint_v2_20260912_seed7102_attempt1/format/results.json",
+        "astra_constraint_v2_20260912_seed7102_attempt1/format/generations.jsonl",
+        "astra_constraint_v2_20260912_seed7103_attempt1/COMPLETED.json",
+        "astra_constraint_v2_20260912_seed7103_attempt1/process/results.json",
+        "astra_constraint_v2_20260912_seed7103_attempt1/process/generations.jsonl",
+        "astra_constraint_v2_20260912_seed7103_attempt1/format/results.json",
+        "astra_constraint_v2_20260912_seed7103_attempt1/format/generations.jsonl"
+      ]
+    },
+    "D91": {
+      "path": "/data/home/rohing/dream-state/research_notes/astra_memos/receipts_20260912/astra_demonstration_terminal_20260912.tgz",
+      "sha256": "b2d03d6b41c7211ac0c87ff177e590badb137cb2a9624abca4bc5749ac1d1417",
+      "members": [
+        "astra_demonstration_20260912_attempt1/COMPLETED.json",
+        "astra_demonstration_20260912_attempt1/process/results.json",
+        "astra_demonstration_20260912_attempt1/process/generations.jsonl",
+        "astra_demonstration_20260912_attempt1/format/results.json",
+        "astra_demonstration_20260912_attempt1/format/generations.jsonl"
+      ]
+    },
+    "CP": {
+      "path": "/data/home/rohing/dream-state/research_notes/astra_memos/receipts_20260912/astra_cumulative_prepared_20260912.tgz",
+      "sha256": "2295b838fea10a8d2b17575790c01f6d7fb7d5a6d708961fa63ee8ddcf28ebf6",
+      "members": [
+        "astra_cumulative_20260912_attempt1/manifest.json",
+        "astra_cumulative_20260912_attempt1/OLD.audit.json",
+        "astra_cumulative_20260912_attempt1/AN.audit.json",
+        "astra_cumulative_20260912_attempt1/A2.audit.json"
+      ]
+    },
+    "CL": {
+      "path": "/data/home/rohing/dream-state/research_notes/astra_memos/receipts_20260912/astra_cumulative_launch_20260912.json",
+      "sha256": "83ace26944b50a7dc40bb01f7eded5f48ac46017895b9b45dd8756ea790d844e"
+    },
+    "CN": {
+      "path": "/data/home/rohing/dream-state/research_loop/COORDINATION.md",
+      "sha256": "0ee1cbf45e0b023c3e3647c7ebbb1a39e3e22439e4f2d5d3514d38d998e54788",
+      "fields_or_lines": [
+        "4120-4125: Builder 2026-09-12 15:30 UTC AN progress",
+        "4173-4199: lineage correction and SEQ-091 terminal/live-A2 snapshot"
+      ]
+    },
+    "UM": {
+      "path": "/data/home/rohing/dream-state/research_notes/astra_memos/receipts_20260912/astra_correction_utility_analysis_20260912.md",
+      "sha256": "d645f6e69bc4f15e8625c00ff4e70f08e6beb8414ee369a32a10ef52bb433325",
+      "fields_or_lines": [
+        "Dose and cost; actual generation token counts absent"
+      ]
+    },
+    "EM": {
+      "path": "/data/home/rohing/dream-state/research_notes/astra_memos/ASTRA_EXACT_TRAIN_TERMINAL_2026-09-12.md",
+      "sha256": "116310a620c7f7b831e4392dc5dbc848cbf2c402f3d921c2c3b857208001c702"
+    },
+    "PM": {
+      "path": "/data/home/rohing/dream-state/research_notes/astra_memos/ASTRA_CONSTRAINT_PRODUCTION_TERMINAL_2026-09-12.md",
+      "sha256": "72a736954916eaf33e5ec969b793523e11b246db6767164f5f894cc0e3af53eb"
+    },
+    "DM": {
+      "path": "/data/home/rohing/dream-state/research_notes/astra_memos/ASTRA_DEMONSTRATION_TERMINAL_2026-09-12.md",
+      "sha256": "910bd86c351c55db16be6876c168f50b1a95973a1dab02c2858959dfe0a33733"
+    },
+    "CM": {
+      "path": "/data/home/rohing/dream-state/research_notes/astra_memos/ASTRA_CUMULATIVE_READONLY_AUDIT_2026-09-12.md",
+      "sha256": "88a01c42a84d97ef3c67af3d19709cf316ae827e0d69a5082754ee2a124055ea"
+    },
+    "RESOURCE": {
+      "path": "/data/home/rohing/dream-state/research_notes/ASTRA_LAUNCH_PROMPT_2026-09-12.md",
+      "sha256": "0509ee7e0148b0c08af75ce743f4a6f5e432ba536b6ca4def4612081ee8938c0",
+      "fields_or_lines": [
+        "340: scheduled A100 start and UTC correction; not control-plane verification"
+      ]
+    },
+    "V3T": {
+      "path": "/data/home/rohing/dream-state/organism_v6/train_adapter_v3.py",
+      "sha256": "02f47008c676f6aa361a7e18bf30f5010391174d7a0dd9e648532e16cd55e169",
+      "fields_or_lines": [
+        "501-508: fit-function timer starts with already-loaded base",
+        "619: training-loop timer",
+        "653-658: loop end, save, wall timer"
+      ]
+    },
+    "MDT": {
+      "path": "/data/home/rohing/dream-state/organism_v6/memory_dose.py",
+      "sha256": "ab98329c433cb085cd53e1c766db350f1bb0fe2efb9181e24a3678c0d31a76e3",
+      "fields_or_lines": [
+        "2610-2634: tokenizer/base load and optimizer precede timer",
+        "2696: wall_seconds is native-loop timer, before adapter save"
+      ]
+    },
+    "CPT": {
+      "path": "/data/home/rohing/dream-state/gpu/astra_memory_cumulative_diagnostic.py",
+      "sha256": "62e58de3fe27bd63b6d1b737bcc8071e95bce9cc343562aff7e5eb901b7cd112",
+      "fields_or_lines": [
+        "206-257: preparation timer includes hash/tokenization/row audit, measured by monotonic wall clock"
+      ]
+    },
+    "USER": {
+      "path": null,
+      "kind": "current user directive, not an archived terminal receipt",
+      "verbatim_profile": "A2 only live100step profile495tok/s projected28.4min (NOT terminal)",
+      "verification": "Reported live sample accepted as attributed input; no node poll, network or control-plane check."
+    }
+  }
+}
