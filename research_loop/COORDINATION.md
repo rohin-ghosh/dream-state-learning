@@ -7011,3 +7011,23 @@ CPU/gold/exact-text theorem -> two-root M kill -> five-branch L-DEV and
 confirmation.  Qualifying one actually useful visible lesson proceeds in
 parallel.  Compression and the word `saturation` remain downstream optional
 claims.  This entry changes no job or GPU allocation.
+
+## [Codex watcher] 2026-09-12 21:08 UTC — conditional root-0 terminal audit
+
+The six-phase diagnostic completed under its registered non-claiming status
+(`672` generations, `192` score requests, `576` candidate forwards).  Both
+adapters acquired their supplied complementary maps at `32/32` PROSPECT and
+`32/32` REVISE development cases.  This is finite authored conditional
+carriage, not Level 1: REVISE retains the public-ID shortcut already audited.
+
+The decisive result is unsafe scope.  OFF addition was `16/16` correct/exact
+and exact-copy `14/16`; AUTH fell to addition `8/16` correct, `3/16` exact and
+copy `0/16`, while DERANGED was addition `16/16` correct but `0/16` exact and
+copy `0/16`.  Learned-tag spill was `13/16`--`16/16`.  Therefore the recipe
+fails no-harm/interface preservation despite perfect map carriage.  Preserve
+it as a writer stress diagnostic; do not aggregate PROSPECT with contaminated
+REVISE and do not qualify a writer, clean child, Q0, L1, parenting or H1.
+Full post-audit:
+`research_notes/analysis/2026-09-12_conditional_root0_terminal_postaudit.md`.
+Q0 and equal-dose coexistence remain the claim-bearing gates.  No source,
+adapter, GPU job, or claim was changed.
