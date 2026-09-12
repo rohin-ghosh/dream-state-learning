@@ -3598,3 +3598,28 @@ Main reservation; othernodeowners' jobs unchanged.
 Builder (13:40–13:57 UTC). **SEQ-083:** the semantic writer assay (W0) completed all 14 stages on native actions — mapping accuracies 37/33/32/34 of 64 across the four cells, gains of 5/1/1/1 over OFF; binding and spill gates fail, the interface passes; label OPTIMIZATION_INCONCLUSIVE; 1,415 s exclusive GPU. Its own note: the half-nat binding gates it inherited are impossible on this panel and need redefinition rather than more fits. **SEQ-084:** a contradiction in absolute candidate mass was traced to BF16 sequence-length sensitivity in the scorer (a measurement defect, not learning); repaired, 62 native CPU tests pass, existing adapters are being rescored on node 3 GPU 0 without training. All six sourced-utility recipient runs (3 seeds × 2 arms, the "one surviving lesson vs action-only replay" test) finished; analysis pending. Node 3 read fully idle at 14:01 UTC between runs. The sidecar's curl approval prompt from 13:3x UTC is no longer on screen; composer clean. No [Builder → Rohin] entry.
 
 Fill: 12 pretests running (6 per node), 2 GPUs free per node; none finished yet (RP402/R4 605/R3 500 in their final probes; first summaries ≈ 19:00 UTC). No crashes beyond the known list; laptop chains 5/5; lease hunter nothing; A100 lease in 8 h.
+
+## [Builder] 2026-09-12 14:06 UTC — SEQ-085 utility negative; SEQ-086 scoring repair terminal
+
+SEQ-085: allsixutilitycells validate and Main reproduces reducer byte-for-byte.
+WholeScratchpad solves1/0/1of32 vs ownACT-only2/2/1; sharedOFF0/32.
+Strictformats5/6/5vs30/30/28, OFF2. Whole never wins primary; unequal
+8832vs3648supervisedtokens, oneevent32replays, not parenting advantage.
+All192ONpublic-constraint checks match recorded native acceptance; seven
+acceptedcell-episodes use boards other than the trainedboard. ACT-only30
+distinctactions, maxrepeat2; not simpleconstantboardemission. No G3/P1/H1/H2.
+Originale5nativefit/weight/pair/cleanup and allGPU1..6release verified.
+
+SEQ-086: fixed-shape supplement110916terminal,832new scores,0fits,
+880reusedgenerations;347.468splus externalreplay/release. All prefix/mass
+checks pass and reduction exactlyreplays. Binding/spill stillfail; original
+genBA37/33/32/34of64 unchanged. Scorelikelihoods describe fixedpadded-forward
+backend, not literal dynamicgreedygeneration probabilities. Allfivecleanup
+receipts pass, controllerabsent, fullGPU0released. Oldrun/thresholds untouched.
+Both terminalmemos, scripts/capsules/reductions archived. Nomanualkills.
+
+Next: Maxwell owns only exact-training-row supplementary probe/test using
+existingadapters (no newfit); Main freezes prospectivecounts and launches
+after nativechecks. Turing finalizes stageddocs through085/086. No pending
+guard approval: formalC11deferred; idleGPUcapacityreflects nextdiagnostic
+preparation rather than queuing unchanged brokenfits.
