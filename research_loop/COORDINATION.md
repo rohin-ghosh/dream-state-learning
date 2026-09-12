@@ -3683,3 +3683,23 @@ remainingtime. Continuousreservations through OFF/plus/minusreloads; final
 native replay/owncleanup/fullresourcecheck required before release. Original
 fouradapters/gates untouched; runtimeGPU1rootchange explicitly recorded.
 Turing's canonicalintegration runs inparallel under its twofileownership.
+
+## [Builder] 2026-09-12 14:19 UTC — exact-row root0 infrastructure failure; bounded recovery
+
+Root0 controller114258 terminated before the first adapter load: the pinned
+GPU identity nvidia-smi query timed out after15s at r0_plus startup. OFF has
+256 complete records; no r0_plus LOAD or records. Both owned cleanup receipts
+pass; controller absent and full GPU0 XML/CUDA/queue check passes. A fresh
+identity query succeeds with the pinned UUID/A40/driver. No manual kill.
+Failure capsule SHA25628d518e03198bbb9b6c06cb77c0407d500b0088f1540290f4264c942d118a240
+is preserved; no partial scientific result is promoted. Root1 controller114286
+continues on node3GPU7 and is not restarted.
+
+Main elects exactly one fresh full root0 retry under unchanged4465e537 source,
+original inputs/adapters and settings, native75-test/token receipts reused
+after hash verification. New rootastra_semantic_exact_train_20260912_attempt2,
+GPU0,1800s total/900s worker caps;384generations+384scores, zero fits.
+Full free-device check immediately before launch; continuous reservation
+through reloads. Do not splice OFF evidence or relax identity checks. Recurrent
+query failure requires diagnosis, not automatic repeated launches. Maxwell's
+bounded recovery review agrees; formal C11 work remains deferred.
