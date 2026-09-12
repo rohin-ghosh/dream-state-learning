@@ -141,3 +141,30 @@ The live recovery must still produce, in order:
   That is a non-material recovery repair, but it should not be applied to this
   already-running process.
 
+## Terminal addendum — 2026-09-12 02:24 UTC
+
+The recovery reached `LIFE_DONE`. An independent terminal inspection found:
+
+| measurement | exact value |
+|---|---:|
+| final adapter ON | `0.48779287089022094` |
+| final adapter OFF | `0.4671571454612038` |
+| ON minus OFF | `+0.02063572542901714` |
+
+Sleep 1024 committed operationally safely. Its fresh candidate gate mean was
+`0.48779287089022094`, exactly equal to the previous ON floor
+`0.48779287089022094` and above the gate's adapter-OFF base
+`0.4784264535800406`. `score_ok=true`, `brevity_ok=true` (`16.0` candidate
+chunks/episode versus `12.0` for the base), and the log records a format-canary
+rate of `0.92` with `pass=True`. The sleep-1024 adapter has `DONE` as its sole
+terminal verdict, the final mounted-adapter probe matches the fresh gate
+exactly, and `LIFE_DONE` exists.
+
+The endpoint is therefore usable only as **recovered exploratory evidence**:
+the mounted terminal adapter beats its contemporaneous adapter-OFF probe by
+about `2.06` percentage points, and the fresh terminal write preserved the
+previous mounted-adapter score and interface. It did not improve over sleep
+960. The directory remains historically contaminated by the non-idempotent
+sleep-128 replay and cannot count as a pristine writer, parenting, or restart
+replicate. Sleep 128 stays excluded from all gate-history analyses, and the
+recovery incident must accompany any use of the terminal endpoint.
