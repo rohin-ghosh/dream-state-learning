@@ -1,7 +1,7 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 13:13 UTC**.
+Latest reconciliation: **2026-09-12 13:40 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
@@ -9,10 +9,17 @@ Preserve actual provenance, quarantine, parent blindness, controls and resources
 
 ## Current live state — supersedes older run-status snapshots below
 
-- Node3GPU0 reserved for semantic writer controller98756, launched13:08:31UTC,
-  source d160e0b2, run astra_semantic_writer_Q0_20260912_attempt1. Native
-  preparation/Main-node48CPUtests pass; four256step fits/1712requests,
-  three-hour cap/16:30absolute cutoff, no completed result yet.
+- SEQ-083: semantic writer controller98756terminal;14stages, four256step
+  fits/1712requests, exact original-source replay and fullGPU0release pass.
+  Binding accuracy37/33/32/34of64; original optimization-inconclusive label,
+  binding/spill fail, interface passes. Half-nat gate impossible in30/64keys;
+  conditional-TV/legality assay limitations independently audited. No freeze.
+- Node3GPU1/2 continuously reserved for utility seed0whole_raw/act_only,
+  controllers104815/104902started13:38:32/42UTC; sourcee5c78cc8. Native26tests
+  and exact material/token masks pass. One sourced sham event,32replays×3epochs,
+ 96steps;92vs38supervised tokens/item, not token matched. Fresh32board OFF/ON
+  comparison; seeds1/2pending. No utility result yet. Nested timeout cleanup
+  requires Main checking recorded owned condition groups before GPU reuse.
 - SEQ-082: fresh correction pair controller97128 terminal; native replay
   passes, full release check13:12:35UTC frees GPU3. First/second solves1→2
   in both32episode arms; qualifying corrections1process/2sham. Not process
