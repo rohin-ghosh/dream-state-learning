@@ -32,6 +32,7 @@ import random
 import re
 import shutil
 import signal
+import stat
 import statistics
 import subprocess
 import sys
@@ -1363,9 +1364,44 @@ def assert_gpu_idle(config):
             "selected GPU has existing compute processes; main must resolve ownership")
 
 
+def assert_output_fds_outside_run(root):
+    root = checked_path(root).resolve(strict=True)
+    require(root.is_dir(), "output custody requires an existing run directory")
+    for descriptor in (1, 2):
+        try:
+            destination = os.readlink(f"/proc/self/fd/{descriptor}")
+            metadata = os.fstat(descriptor)
+            if re.fullmatch(r"pipe:\[\d+\]", destination):
+                require(stat.S_ISFIFO(metadata.st_mode), "output custody: pipe identity mismatch")
+                continue
+            if re.fullmatch(r"socket:\[\d+\]", destination):
+                require(stat.S_ISSOCK(metadata.st_mode), "output custody: socket identity mismatch")
+                continue
+            require(destination.startswith("/") and not destination.endswith(" (deleted)"),
+                    f"output custody: unknown fd {descriptor} destination")
+            target = Path(destination).resolve(strict=True)
+            require(not target.is_relative_to(root),
+                    f"output custody: fd {descriptor} destination is inside run root; use a sibling log")
+            target_metadata = target.stat()
+            identity = (metadata.st_dev, metadata.st_ino)
+            require(identity == (target_metadata.st_dev, target_metadata.st_ino),
+                    f"output custody: fd {descriptor} destination identity changed")
+            require(stat.S_ISREG(metadata.st_mode) or stat.S_ISFIFO(metadata.st_mode)
+                    or (stat.S_ISCHR(metadata.st_mode) and (os.isatty(descriptor) or target == Path(os.devnull))),
+                    f"output custody: unknown fd {descriptor} destination type")
+            if metadata.st_nlink > 1 and stat.S_ISREG(metadata.st_mode):
+                for child in root.rglob("*"):
+                    child_metadata = child.stat()
+                    require(identity != (child_metadata.st_dev, child_metadata.st_ino),
+                            f"output custody: fd {descriptor} has a hard-link alias inside run root")
+        except (OSError, RuntimeError) as error:
+            raise ContractError(f"output custody: cannot establish fd {descriptor} destination") from error
+
+
 def execute_real(path, allow_gpu=False):
     require(allow_gpu, "GPU execution requires explicit --allow-gpu; main schedules")
     root = checked_path(path)
+    assert_output_fds_outside_run(root)
     manifest = validate_prepared(root)
     config = manifest["config"]
     require(not (root / "EXECUTION_STARTED.json").exists(), "execution already attempted; no rescue or refit")

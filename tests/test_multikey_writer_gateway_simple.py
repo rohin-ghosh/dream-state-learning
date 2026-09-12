@@ -6,6 +6,7 @@ import itertools
 import json
 import math
 from pathlib import Path
+import socket
 import subprocess
 import sys
 import tempfile
@@ -504,6 +505,137 @@ class ContractTests(unittest.TestCase):
         self.assertEqual(result.returncode, 2)
         self.assertIn("requires explicit --allow-gpu", result.stderr)
         self.assertEqual(result.stdout, "")
+
+
+class OutputCustodyTests(unittest.TestCase):
+    def probe_execute(self, root, *, stdout=subprocess.PIPE, stderr=subprocess.PIPE, reject=False):
+        script = '''
+from contextlib import ExitStack
+from pathlib import Path
+import sys
+from unittest.mock import patch
+from organism_v6 import multikey_writer_gateway_simple as scout
+root = Path(sys.argv[1])
+reject = sys.argv[2] == "reject"
+with ExitStack() as stack:
+    prepared = stack.enter_context(patch.object(scout, "validate_prepared",
+        side_effect=AssertionError("read-only preparation reached")))
+    guarded = [stack.enter_context(patch.object(scout, name,
+        side_effect=AssertionError("forbidden runtime operation: " + name))) for name in
+        ("native_build_preflight", "pin_local_inputs", "gpu_identity", "assert_gpu_idle",
+         "load_local_tokenizer", "load_hf_model", "launch_worker", "write_once")]
+    try:
+        scout.execute_real(root, allow_gpu=True)
+    except scout.ContractError as error:
+        assert reject and "output custody" in str(error), str(error)
+        prepared.assert_not_called()
+    except AssertionError as error:
+        assert not reject and str(error) == "read-only preparation reached", str(error)
+        prepared.assert_called_once_with(root)
+    else:
+        raise AssertionError("execute unexpectedly proceeded")
+    for mocked in guarded:
+        mocked.assert_not_called()
+assert not (root / "EXECUTION_STARTED.json").exists()
+assert not (root / "REAL_EXECUTION_SEAL.json").exists()
+'''
+        result = subprocess.run([sys.executable, "-B", "-c", script, str(root), "reject" if reject else "accept"],
+                                stdout=stdout, stderr=stderr, timeout=30)
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_actual_stdout_or_stderr_inside_run_rejected_before_runtime(self):
+        for descriptor in ("stdout", "stderr"):
+            with self.subTest(descriptor=descriptor), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory) / "run"
+                root.mkdir()
+                log = root / "launcher.out"
+                with log.open("wb") as stream:
+                    self.probe_execute(root, reject=True, **{descriptor: stream})
+                self.assertEqual(log.read_bytes(), b"")
+                self.assertEqual({path.name for path in root.iterdir()}, {"launcher.out"})
+
+    def test_actual_nested_and_symlinked_in_run_logs_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            base = Path(directory)
+            root = base / "run"
+            (root / "nested").mkdir(parents=True)
+            log = root / "nested" / "launcher.out"
+            alias = base / "outside-symlink.out"
+            alias.symlink_to(log)
+            with alias.open("wb") as stream:
+                self.probe_execute(root, stdout=stream, reject=True)
+
+    def test_external_hardlink_to_sealed_evidence_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            base = Path(directory)
+            root = base / "run"
+            root.mkdir()
+            log = root / "launcher.out"
+            log.write_bytes(b"unchanged")
+            alias = base / "outside-hardlink.out"
+            scout.os.link(log, alias)
+            with alias.open("ab") as stream:
+                self.probe_execute(root, stdout=stream, reject=True)
+            self.assertEqual(log.read_bytes(), b"unchanged")
+
+    def test_actual_external_sibling_logs_and_pipes_accepted(self):
+        with tempfile.TemporaryDirectory() as directory:
+            base = Path(directory)
+            root = base / "run"
+            root.mkdir()
+            self.probe_execute(root)
+            with (base / "run-launcher.out").open("wb") as stream:
+                self.probe_execute(root, stdout=stream, stderr=stream)
+            self.assertEqual(list(root.iterdir()), [])
+
+    def test_actual_external_socket_terminal_and_devnull_accepted(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            endpoint, peer = socket.socketpair()
+            with endpoint, peer:
+                self.probe_execute(root, stdout=endpoint)
+            master, terminal = scout.os.openpty()
+            try:
+                self.probe_execute(root, stdout=terminal, stderr=terminal)
+            finally:
+                scout.os.close(master)
+                scout.os.close(terminal)
+            with open(scout.os.devnull, "wb") as stream:
+                self.probe_execute(root, stdout=stream, stderr=stream)
+
+    def test_actual_deleted_log_fails_closed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            base = Path(directory)
+            root = base / "run"
+            root.mkdir()
+            log = base / "deleted.out"
+            with log.open("wb") as stream:
+                log.unlink()
+                self.probe_execute(root, stdout=stream, reject=True)
+
+    def test_unknown_or_unreadable_proc_destinations_fail_closed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            for destination in ("anon_inode:[eventfd]", "relative-log", "pipe:unknown", "socket:[]"):
+                with self.subTest(destination=destination), \
+                        patch.object(scout.os, "readlink", return_value=destination):
+                    with self.assertRaisesRegex(scout.ContractError, "output custody"):
+                        scout.assert_output_fds_outside_run(directory)
+            with patch.object(scout.os, "readlink", side_effect=OSError("proc unavailable")):
+                with self.assertRaisesRegex(scout.ContractError, "cannot establish"):
+                    scout.assert_output_fds_outside_run(directory)
+
+    def test_descriptor_type_mismatch_or_closed_fd_fails_closed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            metadata = scout.os.stat(directory)
+            for destination in ("pipe:[123]", "socket:[123]"):
+                with self.subTest(destination=destination), \
+                        patch.object(scout.os, "readlink", return_value=destination), \
+                        patch.object(scout.os, "fstat", return_value=metadata):
+                    with self.assertRaisesRegex(scout.ContractError, "identity mismatch"):
+                        scout.assert_output_fds_outside_run(directory)
+            with patch.object(scout.os, "fstat", side_effect=OSError("closed fd")):
+                with self.assertRaisesRegex(scout.ContractError, "cannot establish"):
+                    scout.assert_output_fds_outside_run(directory)
 
 
 class NativeBuildPreflightTests(unittest.TestCase):

@@ -1,0 +1,56 @@
+======================================================================
+ERROR: test_writer_interface_calibration (unittest.loader._FailedTest.test_writer_interface_calibration)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_writer_interface_calibration
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state/tests/test_writer_interface_calibration.py", line 11, in <module>
+    import test_multikey_writer_gateway_simple as parent_fixture
+ModuleNotFoundError: No module named 'test_multikey_writer_gateway_simple'
+
+
+======================================================================
+ERROR: test_run_reasoning_neutral (unittest.loader._FailedTest.test_run_reasoning_neutral)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_run_reasoning_neutral
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state/tests/test_run_reasoning_neutral.py", line 16, in <module>
+    from test_reasoning_neutral_probe import FixtureBackend, FixtureGym
+ModuleNotFoundError: No module named 'test_reasoning_neutral_probe'
+
+
+======================================================================
+ERROR: test_neutral_pair_custody (unittest.loader._FailedTest.test_neutral_pair_custody)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_neutral_pair_custody
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state/tests/test_neutral_pair_custody.py", line 13, in <module>
+    import test_reasoning_neutral_probe as fixtures
+ModuleNotFoundError: No module named 'test_reasoning_neutral_probe'
+
+
+======================================================================
+ERROR: test_run_adult_v1 (unittest.loader._FailedTest.test_run_adult_v1)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_run_adult_v1
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state/tests/test_run_adult_v1.py", line 15, in <module>
+    import test_clean_nursery_runner as nursery_fixture
+ModuleNotFoundError: No module named 'test_clean_nursery_runner'
+
+
+----------------------------------------------------------------------
+Ran 103 tests in 13.366s
+
+FAILED (errors=4)
