@@ -341,16 +341,24 @@ recipe, evaluated through four root-map adapter fits, can carry several
 conditional native actions under held renderings without converting them into
 a global habit or damaging the ACT interface.
 
-The next eligible W0 experiment is the fresh semantic-action V10R2 `Q0`, not a
-frame-memory repair. Its exact-row OFF carrier first tests direct copying and
-full-candidate preference between two real organism actions, `-mem2reg` and
-`-gvn`, on four fresh root-map cells. Every cell must independently reach
-15/16 correct in both generation and scoring, with the frozen validity,
-redirection, native-interface, custody, and replay conjunction. Failure seals
-an assay-invalid zero-fit result. Only a complete carrier pass automatically
-releases exactly four new clean-base canonical-query fits. All four fitted
-cells must then pass W0 conjunctively; roots/maps are not independent learners
-and cannot be pooled or majority-voted.
+The fresh semantic-action surface gate has now passed exactly. With one
+researcher-supplied row visible, the frozen base produced the correct native
+action in `64/64` ordinary generations and `64/64` complete-candidate scores;
+all `32/32` complementary binding swaps redirected in both modes, all `16/16`
+copy canaries passed, and there were zero truncations or multiple actions. The
+four root-map cells each scored `16/16`, so no aggregate pooling rescued a weak
+cell. This is an inference-only measurement result with zero optimizer steps:
+it proves the surface can express a conditional action relation, not that a
+LoRA can learn one. Independent terminal audit:
+`research_notes/analysis/2026-09-12_semantic_carrier_terminal_watcher_audit.md`.
+
+The next eligible W0 experiment is therefore a separately prospectively bound
+fresh semantic-action V10R2 `Q0`, not a frame-memory repair. Its four new clean-
+base canonical-query fits must each pass W0 conjunctively; roots/maps are
+repeated surface cells, not independent learners, and cannot be pooled or
+majority-voted. The surface artifact itself explicitly recorded
+`fit_release=false`, so it permits specification of Q0 but is not retroactive
+authorization or writer evidence.
 
 If that canonical semantic W0 fails, classify it before choosing a repair.
 Use semantic cross-view `X0` only for exact-train storage with failed fresh-form

@@ -33,8 +33,12 @@ choose action B, the LoRA must produce A only in the first situation and B only
 in the second. It cannot pass by learning “always say A,” forgetting how to
 act, or merely repeating training wording.
 
-This is the current bottleneck. We know correct training material can improve
-behavior at small scale, but the older writer often installs broad habits.
+This is the current bottleneck. We now know the plain frozen model can express
+the intended interface perfectly when one correct row is shown: `64/64`
+ordinary outputs and `64/64` scored choices, with every reversed row reversing
+the action. That was a zero-training surface check. We still have to train four
+fresh LoRAs and show that the relation is stored without turning into a broad
+habit.
 
 ### 2. One full life cycle works
 

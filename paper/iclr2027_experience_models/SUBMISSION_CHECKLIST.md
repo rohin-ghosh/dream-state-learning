@@ -13,10 +13,12 @@
   writing, child-authored experience, SLEEP, or parenting.
 - **Writer:** not qualified. Lower learning rate preserves the same broad
   habit; response-prefix masking reduces spill but erases acquisition. The
-  next eligible test is a fresh semantic-action exact-row carrier followed by
-  exactly four canonical W0 fits only if the carrier passes. A bounded
-  preservation-KL diagnostic is still being reduced, but cannot substitute
-  for semantic conditional binding.
+  fresh semantic-action surface gate passed perfectly (`64/64` generation,
+  `64/64` scoring, `32/32` complementary redirects in both, `16/16` copy
+  canaries, zero malformed outputs). That is zero-step surface validity, not
+  learning. The next eligible test is a separately frozen four-fit canonical
+  semantic W0. A bounded preservation-KL diagnostic is still being reduced,
+  but cannot substitute for semantic conditional binding.
 - **Mechanism:** the first exact M-core draft failed a fresh adversarial audit
   before GPU spend. Its v2 replacement now uses a crossed repeated
   action--outcome source, eight syntax/frequency-matched DREAM candidates,
@@ -53,9 +55,9 @@
 
 ## Critical execution order
 
-1. Pass or falsify fresh semantic W0; classify storage, extraction, and
-   locality separately rather than starting another broad hyperparameter
-   sweep.
+1. Prospectively bind and pass or falsify the four-fit canonical semantic W0;
+   classify storage, extraction, and locality separately rather than starting
+   another broad hyperparameter sweep.
 2. Pass one old/new cumulative coexistence canary.
 3. Close M-core v2 under fresh review and CPU/exact text, then run the two LoRA
    roots S1-first: 6 S1 fits, followed by 6 S2 fits only if both roots pass.
