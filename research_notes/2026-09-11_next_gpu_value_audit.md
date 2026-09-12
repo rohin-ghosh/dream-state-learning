@@ -101,3 +101,26 @@ audit, parenting terminal-union audit, H1/H2 consensus candidate, active-text
 design adjudication, full-claim ladder, and the effective V9/V10/V10R1 scopes.
 The current evidence supports a bottleneck diagnosis, not a completed
 Dream--LoRA--Think result.
+
+## Fresh adversarial recheck (2026-09-12 UTC)
+
+Two fresh independent reviewers rechecked this ordering after SEQ-055 and the
+independent seed-1 child-frame audit. Both retained V10R1 as the next bounded
+writer **kill-gate**, not as a paper-core result.
+
+The more narrative-proximal lived-mirror alternative is weaker as the first
+test: a null would mix source/articulation failure with writer failure, and a
+pass could still be a small supervised situation table. A two-stage
+acquisition/retention scout within the same four-fit budget would sacrifice the
+second root precisely while fitting fragility is unresolved. V10R1 therefore
+remains the cheapest way to ask the narrower prerequisite question: can the
+fixed writer carry a genuinely joint conditional native-action policy without
+turning it into a global habit?
+
+The reviewers' shared boundary is non-negotiable. Even
+`MULTIKEY_BINDING_PASS` is only E1 component qualification over four fitted
+instances. It does not establish experience, DREAM, retention, parenting,
+connectedness, traversal, expansion, compression, generalization, reliability,
+or a learning lifetime. A pass advances immediately to one identity-disjoint
+cumulative retention write and then an unrepaired lived-source relay; it does
+not authorize parenting scale.
