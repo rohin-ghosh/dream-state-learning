@@ -28,12 +28,31 @@ pins in archived memory-only handoff; no source edits. Main collection helper
 not yet created at this snapshot. Controller status available via sidecar
 `status --source-root SOURCE --runroot ROOT` (no --allow-gpu).
 
-Dirac still owns two-habit runner/tests/handoff under/tmp; material remains
-already prepared at source d1e70002. Main schedules ONLY root0 pair next on
-GPU0, not roots1/2 if the symmetric own-map gate passes. No twohabitlaunchyet.
-Bernoulli six-file SEQ101–103 edit is EDIT-STOP, uncommitted and under Planck
-01a0971a-dcdb-7590-9111-d73adbf74fe3 read-only manuscript review. Do not change
-those bytes during review. Herschel memory runnerEDITSTOP; ownership released.
+Two-habit root0 LIVE node3GPU0/PID203151 since19:37:55.603911UTC.
+Source d1e70002; root~/astra_diagnostics/astra_fundamental_two_habit_20260912_attempt1/seed0.
+Plan af4988757fb01e93fe88e6f310c61656f26b2920d45c21561f6b035d208d11e9.
+1200scontroller/140cleanup,30A40minfullreservationcap; noautomaticretry.
+Bothsequentialarmsforkoriginalseed0, notchain. Main32localtestsPASS,
+native31PASS/1localcapsuleSKIP andactualnativeprovenancepreparePASS.
+ONLYroot0 pair; noroots1/2ifthe symmetricownmap/habit/ACT/operand/spillgate
+passes. Dirac now owns/tmp/astra_collect_two_habit_20260912.py+handoff;
+Herschel owns/tmp/astra_collect_memory_only_20260912.py+handoff. Do not copy
+in-progress files before EDITSTOP; neither collector run yet at this snapshot.
+
+SEQ101–103 sixfilemanuscript integrated661e6c3c. Planck reviewPASS after one
+phrasecorrection (log-probabilities/NLLs, not recomputed logits); addendum
+/tmp/astra_manuscript_seq101_103_review_addendum_20260912.md. 234wordabstract
+parity/58priortablespreserved; TeXcompilerunavailable. NoSEQ104proseupdateyet.
+Planckclosed. Ohm separatelyrecounted288newplasticitycallsPASS; disclosure:
+orchestratorauthor, notfresh-personimplementationreview.
+
+Bernoulli now owns ONLY organism_v6/conditional_behavior_corpus.py and
+tests/test_conditional_behavior_corpus.py plus/tmp handoff: pure128row
+AUTH/DERANGEDPROSPECT+REVISEcorpus,32devcases/operation withcrossedtwins;
+nativeparityauditor/scorer; NO runner/LRselection/GPU. Ohm owns/tmp
+astra_conditional_behavior_design_audit_20260912.md mathematical audit.
+These preparetheinput-selectivenextcomparison; noL1scientificlaunchapproved
+until Main assesses actualL0result andnativechecks. Preserve worker scopes.
 Full sprint remains ACTIVE; no mechanism freeze/generalG3/P1/G5/H1/H2 claim.
 
 Everything below is a HISTORICAL snapshot; these live rows supersede it.
