@@ -1,5 +1,62 @@
 # Astra current handoff — 2026-09-12T19:56:24.212350+00:00
 
+## Superseding terminal/audit checkpoint — 2026-09-12T21:21:11Z
+
+NO remaining Main GPU controllers from these three runs; do not relaunch them.
+Conditional220273, varied224587, RuleGame228661 have all completed and been
+collected with full GPU/proc/queue release checks. New allocations still need
+fresh vacancy checks; historical release is not a current reservation.
+
+- SEQ108 conditional is technically complete/recounted, locality FAIL,
+  REVISE interpretation unqualified by independently verified public-ID shortcut.
+  Memo ASTRA_CONDITIONAL_ROOT0_TERMINAL_2026-09-12.md; capsule2872407b...
+  1801files. Clock-sum-only1e-6 tolerance repair/Main54tests, rawscores untouched;
+  first partial analysis and original code archived. Source90e181a4 unchanged.
+- Varied root0 BOTH memory4/16 dev and exact; FOUR_VIEW habit/ACT32/32,
+  SINGLE_VIEW0/32. Registered FOUR memory gate FAIL, no laterseeds. Capsule
+  cce875ffcc8c00ccda781efe7de895e2ff68aa914afc9bb000b061d1aef545c0,
+  331files; fullcollection1099.948008s, controller1013.653164s,
+  workers779.505301s nested. Fresh Darwin raw recount/report in progress:
+  /tmp/astra_varied_root0_independent_analysis_20260912.{py,json} and review.md.
+  Grouped4copies mean10source-specific steps,40presentations; not time-separated
+  replay. Old protocol closed at root0. Source dc2e9a3c remains immutable.
+- RuleGame interaction_v3 formation complete, source610c6edd, plan
+  7dae3ca492ed39545987ab8deb5f39631a40332d480ddb99292e5f083741c468.
+  Root ~/astra_diagnostics/astra_rulegame_interaction_v3_20260912_attempt1.
+  Capsule05b9177bb83e800f4f9c10bbc5e34c27c7dd68e2fabe9c18c006c12e6971f90e,
+  141files. Fullrelease21:16:18.781282UTC,251.916964s; worker116.096466s.
+  P6/6 and A5/6 faithful records; A0042 has wrong null relation. Fixed firsttwo
+  P0008/0010 A0038/0040 remain selected. All8tasks reach valid6-item quizzes;
+  these formation scores are descriptive, not adult learning or parenting gain.
+- Main content audit ACCEPTED actual selected raw contexts/targets and four
+  parent contracts. P process guidance grounded in omitted TRY predictions;
+  A recap permitted under new prospectively defined control and grounded in
+  visible predictions/TRYs/quiz. P's hypothetical sum restatement stays excluded
+  from sleep, not credited as RuleGame evidence. Mainaudit
+  /tmp/astra_rulegame_v3_main_audit_20260912.json SHA
+  d362f530bb422dae799f57607779bdc6d83873dd23e77e9a8437ddf13c16fda6;
+  selection value_hash e3af02aca182aabee659a5e1fc98ac434f9228202ae328e06e7664f0f39db3d8.
+  Both archived; not yet uploaded/native-exported. No new adapters/readouts.
+- Planck owns ONLY /tmp/astra_rulegame_record_write_20260912.py, its test and
+  handoff. Await EDITSTOP then Main local/native tests; actual-record export and
+  two independent fresh V3 fits12updates/r8/LR1e-4 are the next critical path.
+  Legacy v3 material/write/evaluate disabled. Parent-free OFF/P_ON/A_ON readout
+  bridge is still missing; do not imply it is wired or executed.
+- Ohm owns ONLY new organism_v6/interleaved_memory_replay_corpus.py, its test,
+  /tmp design memo: CPU candidate for4distinctsources/batch and40steps/source,
+  paired SINGLE/FOUR plus fixed new lexical probes. No native/GPU/runner yet;
+  subordinate to actual-parent-write path, not an added prerequisite.
+- Read Rohin's relayed21:12UTC correction: today's ideas/steers are suggestions,
+  not rulings unless he explicitly says so. Existing standing invariants remain.
+  Current experiments stand on Main's design decisions, not inferred rulings.
+  Watcher ordering proposals remain advisory. Formal guard stays finalC11-only.
+
+Mission ACTIVE/incomplete; no generalG3/P1/G5/H1/H2/freeze. Model origin remains
+UNRESOLVED_LOCAL_HASHES_ONLY. SEQ107 manuscript integrated/freshreviewPASS,
+234word abstracts, no TeX engine, collaborator UNSENT. Main sole Git operator;
+preserve unrelated dirty gpu/codex/dream_state.rules. Latest records supersede
+every live-job/ownership list below.
+
 ## Superseding live launch — 2026-09-12T20:59:48.092375Z
 
 - TWO live controllers on node3: conditional GPU0/PID220273 remains live,

@@ -1,0 +1,62 @@
+{
+  "failures": [
+    {
+      "call_id": "0042",
+      "execution_id": "A:rule0/astra-minimum-20260912/lesson0/apply#t3",
+      "reasons": [
+        "relation mismatch"
+      ]
+    }
+  ],
+  "selected": {
+    "A": [
+      {
+        "arm": "A",
+        "call_id": "0038",
+        "eid": "rule0/astra-minimum-20260912/lesson0/apply",
+        "eligible": true,
+        "execution_id": "A:rule0/astra-minimum-20260912/lesson0/apply#t1",
+        "failures": [],
+        "kind": "record",
+        "source_call_id": "0037",
+        "text": "{\n  \"try\": [1, 1, 1],\n  \"observed\": true,\n  \"predicted\": false,\n  \"relation\": \"mismatched\"\n}"
+      },
+      {
+        "arm": "A",
+        "call_id": "0040",
+        "eid": "rule0/astra-minimum-20260912/lesson0/apply",
+        "eligible": true,
+        "execution_id": "A:rule0/astra-minimum-20260912/lesson0/apply#t2",
+        "failures": [],
+        "kind": "record",
+        "source_call_id": "0039",
+        "text": "{\n  \"try\": [2, 2, 2],\n  \"observed\": true,\n  \"predicted\": true,\n  \"relation\": \"matched\"\n}"
+      }
+    ],
+    "P": [
+      {
+        "arm": "P",
+        "call_id": "0008",
+        "eid": "rule0/astra-minimum-20260912/lesson0/apply",
+        "eligible": true,
+        "execution_id": "P:rule0/astra-minimum-20260912/lesson0/apply#t1",
+        "failures": [],
+        "kind": "record",
+        "source_call_id": "0007",
+        "text": "{\n  \"try\": [2, 3, 4],\n  \"observed\": true,\n  \"predicted\": false,\n  \"relation\": \"mismatched\"\n}"
+      },
+      {
+        "arm": "P",
+        "call_id": "0010",
+        "eid": "rule0/astra-minimum-20260912/lesson0/apply",
+        "eligible": true,
+        "execution_id": "P:rule0/astra-minimum-20260912/lesson0/apply#t2",
+        "failures": [],
+        "kind": "record",
+        "source_call_id": "0009",
+        "text": "{\n  \"try\": [1, 2, 3],\n  \"observed\": true,\n  \"predicted\": true,\n  \"relation\": \"matched\"\n}"
+      }
+    ]
+  },
+  "selection": "first two distinct executions; post-treatment selection; no quiz/unique-text gate"
+}
