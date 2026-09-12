@@ -1,6 +1,15 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
+**Terminal supersession, observed08:17:48UTC:** W0 attempt2 finished14phases;
+emitted ASSAY_INVALID, but external frozen replay FAILS because launcher.out
+changed after sealing. No accepted scientific label/clean qualification. SEQ-063
+preliminary preserves this; terminal capsule capture is active. All256oracle
+outputs hit32token truncation and fail strict ACT parsing. No rerun/reseal.
+Next: bounded development-only interface/truncation calibration,320inference
+requests maximum,1A40-hour; implementation only, no launch yet. W1 cannot run.
+An explicit model-authentication question is now logged to Rohin; other work
+continues. Older running snapshots below are historical, not live status.
 Latest reconciliation: **2026-09-12 08:11 UTC**. W0 attempt2 has four fit DONE
 receipts and ongoing evaluation, not a terminal result. SEQ-061 records B0
 postwrite instrumentation with zero neutral articulation and pending review.
