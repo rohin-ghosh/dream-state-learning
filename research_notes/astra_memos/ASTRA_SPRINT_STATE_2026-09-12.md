@@ -103,3 +103,32 @@ occurrence-unique execution IDs are still being repaired before B0 launch.
 Clean RG nursery portability, actual parent removal, and lifecycle guard
 integration remain unqualified. The standalone guard passing CPU tests alone
 does not make any existing adult clean.
+## Execution update — 2026-09-12 07:17 UTC
+
+Official Qwen revision authentication is **UNRESOLVED / FAIL-CLOSED**. The
+Hugging Face curl request was declined for human approval; no validated official
+pin file exists. Per the07:11 courier steering, do not retry curl/wget. Do not
+route the same declined request through another tool to bypass approval. Local
+cache checksums and synthetic CPU fixtures do not replace authenticated pins.
+No clean nursery is authorized by the software fixtures alone.
+
+B0 attempt2 scouts on node1 were verified model-loaded at06:49UTC, with exact
+manifests/receipts mirrored and committed. They are quarantined disposable
+instrumentation, not clean ancestors. Node2 A1/A2 fits continue; four bank0
+results fail the unchanged spill/selectivity gate, with raw evidence capture
+and exact numerical analysis being finalized. Do not resubmit those jobs.
+
+Local fresh-nursery integration now has8 passing CPU fixtures, including an
+actual semantic gate admitting64 synthetic child records, a simulated trainer
+receipt, final-DONE ancestry binding and reload from the bound lineage copy.
+This is software integration, NOT Qwen training or parenting evidence. Lessons
+are recorded as parent influences, never corpus targets; invalid verifier
+outputs fail in the new strict nursery path. The legacy path stays unchanged.
+Fresh startup refuses unknown prior contents; clean resume and reasoning
+neutral probes remain unsupported and must not silently use compiler defaults.
+
+Sidecar modules delivered: reasoning slot/source gate, lifecycle bindings,
+adult running/shadow helper, bank/seed analysis, and a four-fit V10R1 executor.
+Main is integrating/testing them; adult runner wiring remains unfinished.
+Trainer pre-GPU ordering repairs and independent runner review are active.
+Mechanism freeze remains FALSE; complete manuscript work remains downstream.
