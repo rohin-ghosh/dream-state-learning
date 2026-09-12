@@ -4941,7 +4941,6 @@ Rohin read your 16:53 answer and replied (raw message 15, dictated; "talk to Ast
 2. **The test he wants first — level 1 as post-training:** open the loop (no model output), train the teaching corpus into a fresh rank-8 LoRA at the **highest plasticity**, possibly several passes, and measure **adherence** to the taught simple behaviours and **memory** of the taught content against an equal-token control and the frozen child; then move plasticity up and down (lr, epochs, repetition) and find the adherence you would want for level 1. Outcome: level-1 plasticity, what a good corpus looks like, and the mechanism verified — "needed yesterday". No compiler is needed for this: at level 1 no agent thoughts flow in. He agrees with your operational definition of a teaching corpus (skill definition, sourced worked examples, varied practice, contingent correction, logged dose, held-out check on correct decisions) as an overview, not a fixed definition. Your provenance work on bootstrap_v3 is the right prerequisite if that corpus is used; a purpose-written simple-behaviour corpus (bigger and deeper than needed, more repetition of the good things, more examples, coherent) is the alternative he describes. Still a suggestion: choose, plan it in the notebook with GPU-hours, and say what you would do.
 3. **His reading of level 3 now:** fine and measurable, but "a child in a high-school class" — without teaching how to learn it tests the mechanism without the parenting that is part of the mechanism; do not expect visible improvement from it; keep it, do not lead with it.
 Compile ideas he lists for level 2, for your reading list not for action: project experiences into a space before the LoRA (repeated patterns kept, contrast preserved, a focus mechanism decides what to project down, plasticity possibly in that layer, hypernetwork-like transfer to the LoRA); a per-episode compile so the sleep compile is organised by episode; rewriting may be the easiest thing that works but is expensive at scale; extraction and QA pairs "lose intelligence — who decides what to extract? the model should learn to ask itself questions" (his worry about TMEM/OEL-style extraction). Skill-learning metrics are downstream of level 2.
-<<<<<<< HEAD
 
 ## [Builder] 2026-09-12 17:22 UTC — SEQ-096 terminal; freshness audit accepted before panel reduction
 
@@ -5056,7 +5055,7 @@ still lackcomplete author/support binding. No knownmarkerfileabsence orzero
 lexicalscreenhits certifiescleanliness. Capsulef054172b... preserves141files;
 boundedcredential/internal-hostnamepatternscan flags0. Leavev3unverified;
 newcandidate needs ordinary sourceddata, not retrospectiveancestry invention.
-=======
+
 ## [Codex watcher] 2026-09-12 17:20 UTC — writer gate, relation result, and M-core priority converge
 
 I read the complete 3,388-line M-core v8 and the independent first-eleven
@@ -5093,4 +5092,39 @@ still verified live at 17:20 UTC, but its four previously model-exposed puzzle
 IDs remain disqualifying for any fresh-panel claim regardless of terminal
 scores. Preserve it only as contaminated development evidence; the independent
 exposure-union audit is deriving a safe mandatory registry for any clean rerun.
->>>>>>> 13bb24bf (Set writer gate and preserve M-core hold)
+## [Codex watcher] 2026-09-12 17:31 UTC — all node-3 diagnostics terminal; exact exposure union closes the freshness repair
+
+Read-only re-poll shows relation PID 154973 and fresh-behavior PIDs 151210,
+151303, and 151403 all terminal. Each fresh-behavior controller records both
+useful/corrupt pairs complete with zero fits, pending Main reduction. External
+`nvidia-smi` verification finds all node-3 GPUs 0--7 at 0 MiB with no compute
+processes. Nothing was restarted or stopped by the watcher.
+
+Independent pre-result exposure audit `9630f000` exhaustively decompressed the
+committed evidence cut without reading attempt2 outcomes. It finds 153 exact
+pre-cut model-exposed Mini-Sudoku IDs: 137 generation-exposed and 16 fit-only.
+An additional 75 were CPU-inspected only and eight are metadata-only; those
+categories must not be mislabeled as model exposure, but may remain in a
+conservative selection exclusion. The exact pre-cut candidate-range overlap is
+`1900070..1900075`. Terminal attempt2 exposed 12 additional new IDs,
+`1900076..1900087`, so any successor must exclude `1900070..1900087` and use
+165 as the model-exposed union. A missing/default list is a preparation
+failure, not an empty registry.
+
+Recommended repair is two hash-bound canonical artifacts: a semantic JCS
+ledger retaining exposure classes/evidence hashes, and the bare sorted selector
+array the current helper consumes. Both digests must be copied into preflight,
+specs, manifest, and terminal receipt. This repairs a later reread only; it is
+lower priority than the opposing-input writer gate and the subsequent open-loop
+level-1 teaching-corpus/plasticity test. Independent paper-route synthesis
+`9f3ad516` reaches that same priority order and identifies the still-missing H1
+bridge as teaching -> child-authored grounded artifact -> selective sleep write
+-> parent-free task-disjoint behavior.
+
+## [Fable] 2026-09-12T17:33Z — watcher check: builder proposes the level-1 open-loop teaching test (elementary, ≤90 A40-min) in answer to message 15; behaviour positive control repeats 3/3 on fresh reread (SEQ-097); fill result 2 — the gated life's brief HURTS (tally 12)
+
+**Builder → Rohin (17:25 UTC), relayed in substance:** it now reads the distinction as intended — a fresh rank-8 birth LoRA on the frozen base, open loop, no learner-generated data, no live parent, no compiler — and proposes one deliberately elementary adherence test rather than another RuleGame reflection-format hunt: teach "state a correct prediction before acting" with 64 sourced one-step addition demonstrations, plus 16 invented device/colour observations for a separate taught-content recall and scope/unknown readout; controls = the same facts as task-only answers at matched native tokens, and the frozen child; evaluation with ordinary instructions (no reminder, no worked example); rank 8, seed 0, 4 epochs, LR 3e-4 as an aggressive tested candidate; 32 arithmetic + 16 recall development prompts read first, the rest held out; ≤ 90 aggregate A40-minutes; replicate seeds 1/2 and compare LR 1e-4 if operationally valid; "larger/deeper teaching and a stronger adaptive parent follow only if this shows usable adherence AND memory without unacceptable task damage." CPU emitter in preparation; native token-matching check before any training. This is the level-1 test Rohin described, scaled to the smallest honest version. **SEQ-096:** explicit relation definitions fix the record parsing (3/3 vs 1/3) — an interface fix, not a cognitive objective. **SEQ-097:** solution-disjoint behavioural reread — useful ON 3/16 for each of seeds 0/1/2; every OFF and corrupt arm 0/16; all six OFF output vectors identical; four panel items have prior research exposure, so development evidence only. Node 3 idle at 17:31 UTC (CPU preparation).
+
+**Fill result 2 of 14 — R3_B_seed503** (gated life, 4 of 32 sleeps rejected; 7.7 GPU-h; Δ vs OFF report / disjoint): whole-text A +0.003 / +0.001 (flat); A_v3, B, Bs, B_match all +0.003 / +0.001 (the same fixed routine); C and C_tmem −0.485 / −0.25 (collapse); **final brief −0.021 / −0.001 and brief_mid −0.047 / −0.074 — the first life whose own final brief lowers the report-panel score.** Tally, 12 lives: whole-text A carries 4, flat 7, harmful 1; child's brief never worse 11/12 (the exception is this gated R3 life; the other gated ones, 500/501/502/504/505, are still running and will say whether gating hurts the brief); C collapses 12/12. Raw: `~/v6_out/pretest_write_ab/R3_B_seed503/summary.json` (node 2). 11 fill pretests still running; the 08:30 UTC batch is in its last probes.
+
+No crashes beyond the known list; laptop chains 5/5; lease hunter nothing; A100 lease in 4.5 h. Notebook hygiene: three conflict-marker lines from the shared checkout's rebase were committed in the last hour and are removed in this commit.
