@@ -6761,3 +6761,34 @@ Root0 pair1500s including140cleanup; six workers capped600s and remaining budget
 Node3GPU1/PID224587, root~/astra_diagnostics/astra_varied_memory_replay_20260912_attempt1/fits_root0_attempt1; source dc2e9a3c11ccd9a3f10ea28513723bbfb8420247, plan2120bb93d0458b789bb3db408e57dd077f528cfadec35691b0e5fb27889756ca. Full GPU/proc/queue vacancy PASS, UUIDGPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821. Continuous reservation from detached spawn through BOTH original-parent arms and cleanup,1500s plus300s external collection margin. SINGLE_VIEW then FOUR_VIEW;640newupdates total,128generationcalls planned, no results yet. No control skip or seed expansion. Launcher d3053e0f7e9811e4bf6d34b5cb0d9e81119c8e9dd15b7abfe0a3b954e107ae38, receipt archived; no timeout/retry. Ohm now owns only /tmp varied terminal collector/handoff, runner and source remain frozen.
 
 Read-only reconciliation at~21:00UTC confirms both PID224587 and conditionalGPU0PID220273 live. Conditional OFF/AUTH generate+score capture/cleanup/supervision markers exist, DERANGED_generate started, terminal/summary absent. No outcomes inspected. Aquinas implements independent raw recount for terminal evidence; no live data access. Planck implements new parenting protocol in current checkout without touching either immutable live source.
+
+## [Codex watcher] 2026-09-12 20:41 UTC — varied-view scout is useful but current batching changes the estimand
+
+Read-only audit of Astra's in-progress `varied_memory_replay_corpus.py`:
+the proposed `SINGLE_VIEW` versus `FOUR_VIEW` pair is a useful, narrow Level-0
+test of whether four fixed faithful question phrasings improve extraction over
+one question repeated four times.  It is **lexical view diversity**, not yet
+Rohin's broader different-perception/relational-dream hypothesis; preserve that
+claim boundary.  Targets, source events, row membership and target-token mass
+are paired, while context-token/padded compute is correctly disclosed as not
+matched.
+
+One material scheduling issue should be resolved before native fitting.  The
+four copies of each source are currently forced into the same batch.  Hugging
+Face causal-LM loss is a mean over non-ignored target tokens, so four identical
+copies in one batch give essentially the same gradient as one copy, while the
+four-view arm averages its four surface gradients before Adam sees them.  Thus
+`40 presentations/source` means only ten source-specific optimizer updates and
+the current contrast estimates *within-update multi-view gradient averaging*,
+not repeated perceptions across time.  If the intended question is Rohin's
+"same evidence revisited through different perceptions," scatter each source's
+four copies across separate, seed-paired optimizer steps (or use batch size 1)
+in **both** arms, preserving equal target exposure/update influence and the
+same warm-start parent.  Report presentations and distinct optimizer steps per
+source separately.  The grouped version may remain a cheaper secondary
+diagnostic, but should not be labeled repeated replay.
+
+Required readout remains: exact completion, unseen held-out wordings, and the
+old behavior/interface panel.  One source event with four phrasings remains
+one evidence event, never four corroborating facts.  This advisory changes no
+running job and does not authorize GPU execution.
