@@ -62,18 +62,26 @@ fits likewise raise the target (`.230 -> .790/.736`) but also raise the wrong
 relation (`.239 -> .720/.627`). Thus the current writer can install a broad
 action habit, but selective conditional binding remains unproved.
 
-The frozen V10R1 W0 executor was then prepared exactly and launched once on
-node 3. Its preparation and real-tokenizer gates passed, and the run reached a
-clean-base LoRA load, but Triton's first native CUDA-helper build failed because
-the node lacked the Python 3.12 development header. The step trace is empty:
-zero optimizer steps, zero completed fits, zero evaluation records, and no
-scientific label. The run is terminal `NONREPORTABLE_ABORT`, not evidence for
-or against writer capacity. Its exact watcher audit is
-`research_notes/analysis/2026-09-12_v10r1_w0_terminal_infrastructure_abort_audit.md`.
-Only a fresh run root and immutable preparation that explicitly preflights and
-binds the repaired native-build environment can answer W0; the aborted root
-must remain untouched. In every case, a green CPU suite is permission to run
-the bounded writer gateway, not evidence that it passes.
+The first frozen V10R1 W0 execution remains a zero-step infrastructure
+`NONREPORTABLE_ABORT`: Triton's first native build could not find Python.h.
+A prospective native-build repair then sealed compiler/header/Triton evidence,
+passed 60 node tests, and launched a genuinely new root under the first
+controller's original deadline while leaving that failed root untouched.
+Attempt 2 completed all four clean-base 256-step fits and all 1,504 evaluation
+requests, but it still does not answer W0. Its positive oracle control is
+invalid: all 256 oracle outputs consumed 32 tokens without EOS, were marked
+truncated, and parsed to no action, yielding `oracle_BA=0` in every cell.
+Separately, terminal replay fails because `launcher.out` was sealed as empty
+and then changed when the controller wrote its returned report to stdout.
+
+The fitted cells descriptively also fail per-key optimization, selective
+binding, spill/locality, and aggregate interface gates; oracle failure did not
+cause those values. But the failed positive control and failed official replay
+make them non-promotable: attempt 2 is neither a W0 pass nor a reportable
+negative. Preserve both roots. Exact audits:
+`research_notes/analysis/2026-09-12_v10r1_w0_terminal_infrastructure_abort_audit.md`
+and
+`research_notes/analysis/2026-09-12_v10r1_w0_attempt2_terminal_assay_and_seal_failure_audit.md`.
 
 The terminal B0 scout established one uninterrupted quarantined plumbing path:
 exact ACT-before-record joins, a 66-item child-body-only fit, save, canary,
@@ -95,10 +103,15 @@ prompt/output hashes checked at every paired step. Exact evidence:
 
 ### W0 — selective supplied writer
 
-Run V10R1 first. It asks only whether one fixed rank-8 writer recipe, evaluated
-through four root-map adapter fits, can carry several conditional native
-actions under held renderings without converting them into a global habit or
-damaging the ACT interface.
+V10R1 did not close this gate: attempt 1 was a zero-step infrastructure abort,
+and attempt 2 has both an invalid positive oracle and a self-invalidating
+terminal seal. A prospective interface calibration may diagnose the oracle
+failure but cannot promote either attempt. Any later V10R2 must remain a
+prospectively frozen assay/evidence repair with the training recipe and
+thresholds unchanged. It still asks only whether one fixed rank-8 writer
+recipe, evaluated through four root-map adapter fits, can carry several
+conditional native actions under held renderings without converting them into
+a global habit or damaging the ACT interface.
 
 A pass establishes supervised seen-key conditional-policy carriage only.
 
