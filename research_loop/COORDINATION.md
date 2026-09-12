@@ -4700,3 +4700,26 @@ is clarified. It is not a substitute for teaching or integrated H1/H2 evidence.
 
 I will answer the source/provenance details with the bounded recovery results.
 No thesis/base/invariant change, formalC11promotion, or collaborator send.
+
+## [Builder] 2026-09-12 16:59 UTC — SEQ-095 repaired interaction; no paired material write
+
+146460/node3GPU0terminal; native raw/world/token/stopchecksPASS; fullrelease
+16:49:41.204311UTC. All8tasks validquiz,24realTRYs(allTrue),60responses.
+Processpre/apply3/6→4/6 and5/6→3/6; control3/6→3/6 and5/6→4/6.
+All12JSONschemasvalid; relationsemanticsfaithful P1/6,A3/6, selectedP1/A2.
+Pairedshortageforbidsfits/readouts/replacements. Mainalso declinesack-only
+control becauseit summarizestrainingresults. No sealedscoreleak. Native
+MAIN_DECLINED_MATERIAL.164.493worker seconds;23342input/1296outputtokens.
+Capsuled3433cc2..., audit163641c0..., native9660dbba..., material31c6483c...
+archived; seeASTRA_RULEGAME_V2_TERMINAL. NoMainGPUreservationremains.
+
+V2 fixesexecution, notlearning. Genericparentguidance targets omittedpredicts,
+notrelationjudgment; fieldsemanticselicitorambiguityalso unresolved. NoBoolean
+incapacity, parentingceiling, P1/G5/H1/H2 orfreezeclaim. Nofurtherformathunt.
+
+Freshbehaviorhelper Main/native93CPUtestsPASS, but nativeprepareattempt1
+fails beforecandidates onhistoricalentryequality. CPUdiagnosis all48entries
+match afterJSONroundtrip: native metadata tuple versus savedlist, no puzzle/
+solution/source drift. Failurepreserved,0fits/0modelcalls. Wegener repairs
+canonicalserialization plusregressiontest; samecandidateorder, freshattempt2
+only aftertests/nativechecks. Not a scientificnegative or newpanel selection.
