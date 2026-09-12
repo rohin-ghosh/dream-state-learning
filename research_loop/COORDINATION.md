@@ -4500,3 +4500,32 @@ v7.
 Builder (16:06–16:30 UTC). **SEQ-092 (cumulative replay, OLD then NEW write):** the OLD frame's completion falls 0.426 → 0.210 after the NEW write while the OLD native fact rises 0.292 → 0.342; the NEW frame reaches 0.673 (vs 0.359 for the plain A2 fit) with strong spill (wrong-relation 0.71/0.62), near-zero abstention — sequential writes interfere and nothing is selective; no G3 freeze. **SEQ-093 (citation sleep comparison):** OFF, full-record and syntax-only fits all 0/8 grounded and 0/8 schema; both ON forms end malformed; the full-record adapter reproduces the trained coordinates on 8/8 raw inspections, so the write *stores* the record but the child cannot *use* it — "do not call this no learning", in its words. **16:30 UTC:** minimum interactive RuleGame formation launched (node 3 GPU 0; target-blind classroom gym, parent/control arms, raw-target preservation, no automatic writes) — the first fresh interactive parenting material of the sprint. Manuscript reviews of 092/093 done. No [Builder → Rohin] entry; composer clean.
 
 Fill: 12 pretests running (6 per node), 2 GPUs free per node; RP402 / R4 605 / R3 500 have finished A, A_v3, B, Bs, B_match and are in C/C_tmem with all 9 probes still to run — first summaries now ≈ 20:30–21:30 UTC. No crashes beyond the known list; laptop chains 5/5; lease hunter nothing; A100 lease in 5.5 h.
+
+## [Builder] 2026-09-12 16:39 UTC — SEQ-094 formation terminal; interface repair selected
+
+RuleGame142838/node3GPU0 terminal; native source/model/token/raw-world replay
+and cleanupPASS; fullGPUrelease16:34:30.508825UTC.32calls,11895input/1446output
+native tokens;169.633754supervisedworker seconds, nottotalelapsed/GPUcompute.
+All8tasks endprotocolinvalid, no scoredquiz. FourmissingACTresponses are
+TRYaliases; fourmultipleACTresponses simulateOUTCOME continuations. No fake
+outcomeadmitted. Processapply0records; active-neutral2/4faithfulrecords,
+other2wrongrelation. Pairedshortageforbidsallfits/readouts/replacements.
+Main additionallydeclinesacknowledgment-onlycontrol: generatedcontrol solicits
+quiz/learningreflection. Nohiddenanswerleak; processlesson1misdiagnosesmissing
+prediction. NativeMAIN_DECLINED_MATERIAL. Preservefailure,noreinterpretation.
+
+Capsuleb13f6f77..., materialdecision763269ca..., actualcontentauditcdea111d...
+archived. Nativebackendcleanup reports escalationtokillownedengine143153;
+noexternal/unrelatedkill, andfullreleaseverified. NoMainGPUreservationremains.
+
+One new interaction_v2 blockselected, explicitprospectivespec: stopwakebefore
+simulatedOUTCOME, acceptsingleTRY/QUIZalias preservingraw, remindbudgetstate,
+clarifyacknowledgment-onlycontrol. Alltraining/caps/seeds/tasks/selectionstay;
+freshroot, originalstrictv1unchanged. Locke owns diagnosticandtestonly.
+NoC11ornewscientificgate. NewformationpendingCPU/nativechecks, notlaunched.
+
+Node1/2read-only16:33refresh: sixpretestsactiveeach, zeropending; no newterminal
+resultchangescriticalpath. Leaveotherownersuntouched. Currentnodememoryalone
+isnotpermissiontolaunch. Suppliednode1backupdeadlineSeptember13 23:14UTCstands.
+Harveybackfilled21terminalevents083–093,45checksPASS,historical70rowsbyteexact.
+Main added094separately. Manuscript092/093 remainsreviewed;094integrationnext.

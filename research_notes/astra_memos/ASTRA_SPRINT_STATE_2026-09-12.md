@@ -1,13 +1,21 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 16:30 UTC**.
+Latest reconciliation: **2026-09-12 16:39 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
 Preserve actual provenance, quarantine, parent blindness, controls and resources.
 
 ## Current live state — supersedes older run-status snapshots below
+
+- **16:39 superseding status:** no MainGPUjob/reservation. RuleGame142838
+  formation is terminal, native-verified and fully released16:34:30UTC.
+  P0 versusA2eligible records; all8tasks protocol-invalid/no scoredquiz.
+  Main additionally declines realized acknowledgment-only control; nofits,
+  noreadouts, noreplacements. SEQ094memo/capsules/audit archived. One explicit
+  interaction-v2 communicationrepair selected; Locke owns diagnostic/test.
+  It preserves v1 results and uses a fresh root after new native checks.
 
 - **16:30 superseding status:** RuleGame formation controller142838 runs on
   node3GPU0 from immutableaff89c4f034407120fc7badd064660492e0011cf,
