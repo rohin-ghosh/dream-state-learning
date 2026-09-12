@@ -7,7 +7,7 @@
 # Usage: bash gpu/local_watchers/lease_hunter.sh [MAX_NEW=2] [INTERVAL=1200] [DURATION=8d]
 # Stop: kill the PID in ~/dream-state-artifacts/lease_hunter.pid
 set -u
-MAX_NEW="${1:-2}"; INTERVAL="${2:-1200}"; DURATION="${3:-8d}"
+MAX_NEW="${1:-2}"; INTERVAL="${2:-1200}"; DURATION="${3:-14d}"
 C="$HOME/.venvs/colossus-cli/bin/colossus"
 LOG="$HOME/dream-state-artifacts/lease_hunter.log"; PIDF="$HOME/dream-state-artifacts/lease_hunter.pid"
 echo $$ > "$PIDF"
@@ -29,7 +29,7 @@ for r in d:
   if [ -z "$cands" ]; then log "no bookable 8-GPU node (free of pending leases) right now"; else
     while read -r name tag pool; do
       [ -z "$name" ] && continue
-      for dur in "$DURATION" 5d 3d; do
+      for dur in "$DURATION" 8d 5d 3d; do
         out=$("$C" bm lease create --search "$name" --os ubuntu-24.04-x86_64-standard-uefi --start-datetime now --duration "$dur" --provision-mode CLEAN --lease-justification "$JUST" 2>&1)
         if echo "$out" | grep -qi "error\|denied\|fail"; then log "REFUSED $name ($tag, $pool) $dur: $(echo "$out" | grep -i -m1 'error\|denied\|fail' | cut -c1-140)";
         else log "BOOKED $name ($tag, $pool) for $dur: $(echo "$out" | grep -i -m1 'lease id' | cut -c1-140) $(echo "$out" | grep -i -m1 'status by command' | cut -c1-120)"; booked=$((booked+1)); break; fi
