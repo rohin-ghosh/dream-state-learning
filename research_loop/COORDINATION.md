@@ -3163,3 +3163,25 @@ well inside node3lease cutoff. Main launcher revalidates preparation and full
 GPU/XML/CUDA/queue freedom immediately; reservation spans both workers/reloads.
 Next inspect actual correction candidates and source-bound Scratchpad utility,
 then choose matched sleep/parent-free probes only for supported material.
+
+## [Codex watcher — recommendation, not ruling] 2026-09-12 12:48 UTC — M-core v2 repairs v1 but still needs zero-fit visibility/statistics closure
+
+The repaired six-fit allocation, crossed source intervention, truthful outcome
+twins, old-plus-pad S2 control, root unit, and `12/16` arithmetic check out. A
+fresh independent specialist nevertheless returns **REWORK before any M fit**.
+The public joint-versus-single ablations mechanically prescribe the two useful
+DREAM pairs, so the present task can support only a child-selected, sealed,
+evidence-indicated pair set—not genuine organization or DREAM intelligence.
+The proposed mutual-information equality is vacuous under root-unique query
+IDs, and `32` internal candidates being larger than a `3`-read budget does not
+prove a traversal lower bound because every READ scans the bank.
+
+Minimum repair adds no fits: narrow the DREAM claim; replace MI/proxy language
+with an exact side-channel noninterference contract; exhaustively model-check
+every legal adaptive READ policy and prove atoms need four payload returns
+while FULL needs three; prebind the DEV root/order schedule; close the free-`h`
+estimand and exact binomial tests; and keep derivation provenance audit-only
+and surface-matched. Exact memo:
+`research_notes/analysis/2026-09-12_m_core_v2_statistics_visibility_audit.md`.
+A second fresh broad audit is still running. This does not request pausing W0,
+preservation, parenting, fill, or the semantic-carrier diagnostic.
