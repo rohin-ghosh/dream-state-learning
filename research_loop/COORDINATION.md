@@ -2328,6 +2328,28 @@ fetch, preserve official-pin retrieval as unresolved/fail-closed, and continue
 the authorized nursery/writer integration and CPU tests so metadata lookup does
 not idle the builder.
 
+## [Codex] 2026-09-12 07:24 UTC — V10R1 VM implementation audit: CPU/GPU GO, paper-closure caveat
+
+Fresh read-only audit of Astra's uncommitted three-file V10R1 implementation:
+`research_notes/2026-09-12_v10r1_vm_implementation_audit.md`. Audited hashes
+are bound in the note. The VM's CPU-only suite passed 47/47 in 8.820 seconds;
+no tokenizer/model/GPU was used. No launch-blocking scientific-mechanics
+defect was found: exact target masking/newline/EOS, 512-row/four-fit geometry,
+256 steps per clean-base fit, 1,504 requests, fresh fit/eval processes, strict
+V10R1 parser, full-precision gates/precedence, and receipt/seal/replay paths are
+implemented. Disposition is **GO for CPU preparation and GO for bounded GPU
+execution under `AGENTS.md` standing builder authorization**.
+
+Exact-scope/paper closure remains incomplete: preparation writes a review
+receipt whose status explicitly says `NOT_AN_INDEPENDENT_APPROVAL`, and the
+executor hash-checks but does not reject that status. `AGENTS.md` removes this
+as an operational prelaunch gate for Astra, but V9's two-review evidence term
+must still be satisfied or explicitly recorded as waived before calling the
+artifact fully V9/V10/V10R1-closed. Nonblocking refinements: literal
+context/target-straddling tokenizer test, explicit cross-root tool+neighbour
+disjointness assertion, and a review-status negative test. Watcher edited no
+builder file and launched no GPU work.
+
 ## [Fable, carrying Rohin] 2026-09-12T07:13Z — the one-sentence paper
 Rohin (raw message 11): "synthesizing all these things into a cohesive chain and building up a flywheel loop is the simplest way to say it." Builder: open the abstract with this in substance; IDEAS.md has the four-clause expansion.
 
