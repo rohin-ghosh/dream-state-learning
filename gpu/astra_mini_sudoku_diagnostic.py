@@ -88,18 +88,30 @@ def check_free(device):
     return dict(gpu_uuid=uuid, reconciled_system_services=reconciled), display.stdout
 
 
-def execute(root, arm, device):
+def execute(root, arm, device, seed=0):
     material = verify_material(root)
     logs = root / "logs" / arm
     training = root / "training"
-    adapter = training / (arm + "_seed0")
-    commands = json.loads((material / "trainer_commands.json").read_text())["commands"]
+    adapter = training / (arm + "_seed" + str(seed))
+    validation = json.loads((material / "validation.json").read_text())
+    if validation.get("training_seed", 0) != seed:
+        raise ValueError("material training seed mismatch")
+    command_file = json.loads((material / "trainer_commands.json").read_text())
+    if command_file.get("training_seed", 0) != seed:
+        raise ValueError("trainer command seed mismatch")
+    commands = command_file["commands"]
     command = commands[arm]
     if command["cwd"] != str(SOURCE) or adapter.exists():
         raise ValueError("wrong source or preexisting adapter")
+    argv = command["argv"]
+    if (Path(argv[0]).absolute() != Path(sys.executable).absolute()
+            or argv[argv.index("--out") + 1] != str(adapter)
+            or argv[argv.index("--seed") + 1] != str(seed)
+            or command["seed"] != seed):
+        raise ValueError("trainer interpreter, seed, or destination mismatch")
     supervisor.run_worker(command["argv"], log_path=logs / "train.log", timeout=900, device=device)
     manifest = json.loads((adapter / "train_manifest.json").read_text())
-    expected = dict(rank=8, alpha=0, dropout=0.05, lr=1e-4, epochs=3, seed=0,
+    expected = dict(rank=8, alpha=0, dropout=0.05, lr=1e-4, epochs=3, seed=seed,
                     batch_size=1, grad_accum=1, chat_template=False, pack=False,
                     max_len=4096, add_eos=True, optimizer="adamw", grad_checkpoint=True)
     if any(manifest["config"][key] != value for key, value in expected.items()):
@@ -111,7 +123,6 @@ def execute(root, arm, device):
     if manifest["corpus"]["n_items"] != 32 or any(manifest["truncation"][key] != 0 for key in (
             "items_truncated", "context_tokens_dropped", "target_tokens_dropped", "items_split")):
         raise ValueError("trainer material loss")
-    validation = json.loads((material / "validation.json").read_text())
     tokens = validation[arm + "_tokens"]
     if (manifest["tokens"]["target"] != sum(row["target_tokens"] for row in tokens)
             or manifest["train_tokens_seen"] != 3 * sum(row["input_tokens"] for row in tokens)
@@ -138,15 +149,22 @@ def execute(root, arm, device):
                            "--spec", str(spec_path), "--spec-sha256", digest(spec_path), "--allow-gpu"],
                           log_path=logs / "pair.log", timeout=2100, device=device)
     verify_material(root)
-    write_new(logs / "result.json", dict(status="COMPLETED", arm=arm,
+    write_new(logs / "result.json", dict(status="COMPLETED", arm=arm, training_seed=seed,
               finished_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
               clean_lineage=False, parenting=False, model_origin="UNRESOLVED_LOCAL_HASHES_ONLY"))
+
+
+def execute_selected(root, selection, device, seed):
+    arms = ("useful", "corrupt") if selection == "paired" else (selection,)
+    for arm in arms:
+        execute(root, arm, device, seed)
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", required=True)
-    parser.add_argument("--arm", required=True, choices=("useful", "corrupt"))
+    parser.add_argument("--arm", required=True, choices=("useful", "corrupt", "paired"))
+    parser.add_argument("--seed", type=int, default=0, choices=(0, 1, 2))
     parser.add_argument("--device", required=True, choices=("1", "3"))
     parser.add_argument("--execute", action="store_true")
     args = parser.parse_args()
@@ -154,15 +172,24 @@ def main():
     logs = root / "logs" / args.arm
     if args.execute:
         try:
-            execute(root, args.arm, args.device)
+            execute_selected(root, args.arm, args.device, args.seed)
+            if args.arm == "paired":
+                write_new(logs / "result.json", dict(status="BOTH_ARMS_COMPLETED", training_seed=args.seed,
+                          finished_utc=datetime.datetime.now(datetime.timezone.utc).isoformat()))
         except BaseException as error:
             write_new(logs / "failure.json", dict(error=repr(error),
                       failed_utc=datetime.datetime.now(datetime.timezone.utc).isoformat()))
             raise
         return
-    verify_material(root)
+    material = verify_material(root)
+    validation = json.loads((material / "validation.json").read_text())
+    if validation.get("training_seed", 0) != args.seed:
+        raise ValueError("material training seed mismatch")
     metadata, xml = check_free(args.device)
     logs.mkdir(parents=True, exist_ok=False)
+    if args.arm == "paired":
+        for arm in ("useful", "corrupt"):
+            (root / "logs" / arm).mkdir(exist_ok=False)
     (root / "training").mkdir(exist_ok=True)
     (root / "probes").mkdir(exist_ok=True)
     environment = dict(os.environ, CUDA_VISIBLE_DEVICES=args.device, PYTHONPATH=str(SOURCE),
@@ -170,14 +197,16 @@ def main():
                        HF_HUB_OFFLINE="1", TRANSFORMERS_OFFLINE="1",
                        VLLM_WORKER_MULTIPROC_METHOD="spawn")
     command = [sys.executable, "-B", str(Path(__file__).resolve()), "--root", str(root),
-               "--arm", args.arm, "--device", args.device, "--execute"]
+               "--arm", args.arm, "--device", args.device, "--seed", str(args.seed), "--execute"]
     with (logs / "controller.log").open("xb") as output:
         process = subprocess.Popen(command, cwd=SOURCE, env=environment, stdin=subprocess.DEVNULL,
                                    stdout=output, stderr=subprocess.STDOUT, start_new_session=True)
     receipt = dict(metadata, status="LAUNCHED_NOT_COMPLETED", node=3, device=args.device,
                    pid=process.pid, command=command, source=str(SOURCE), script_sha256=digest(Path(__file__)),
                    started_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
-                   training_cap_seconds=900, paired_probe_cap_seconds=2100)
+                   training_cap_seconds=900, paired_probe_cap_seconds=2100,
+                   training_seed=args.seed, selection=args.arm,
+                   same_device_sequential_arms=args.arm == "paired")
     write_new(logs / "launch_receipt.json", receipt)
     with (logs / "gpu_before.xml").open("x") as output:
         output.write(xml)

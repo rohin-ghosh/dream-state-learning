@@ -1,6 +1,8 @@
 """Synthetic CPU material tests; no package, tokenizer weights or model execution."""
 from collections import Counter
+from contextlib import redirect_stderr, redirect_stdout
 import copy
+import io
 import itertools
 import json
 from pathlib import Path
@@ -157,6 +159,93 @@ class MaterialTests(unittest.TestCase):
         for command in self.read("trainer_commands.json")["commands"].values():
             self.assertEqual(command["argv"][0], str(interpreter))
             self.assertNotEqual(command["argv"][0], str(target))
+
+    def test_training_seed_commands_paths_and_default_unchanged(self):
+        interpreter = self.root / "venv" / "bin" / "python"
+        defaults = material.trainer_commands(self.out, self.training, self.model, interpreter)
+        self.assertEqual(defaults, material.trainer_commands(
+            self.out, self.training, self.model, interpreter, training_seed=0))
+        for seed in (1, 2):
+            commands = material.trainer_commands(self.out, self.training, self.model, interpreter,
+                                                 training_seed=seed)
+            for arm, command in commands.items():
+                expected = copy.deepcopy(defaults[arm])
+                expected["argv"][expected["argv"].index("--seed") + 1] = str(seed)
+                expected["argv"][expected["argv"].index("--out") + 1] = str(
+                    self.training / f"{arm}_seed{seed}")
+                expected["exclusive_stdout_stderr_log"] = str(self.training / f"{arm}_seed{seed}.log")
+                expected["seed"] = seed
+                self.assertEqual(command, expected)
+
+    def test_training_seed_does_not_change_corpus_ids_or_token_validation(self):
+        baseline = None
+        for seed in (None, 0, 1, 2):
+            self.out = self.root / f"inputs_{seed}"
+            kwargs = {} if seed is None else dict(training_seed=seed)
+            with patch("organism_v6.batch_loop.time.time", return_value=100.0):
+                self.prepare(**kwargs)
+            content = {name: (self.out / name).read_bytes() for name in
+                       ("useful.json", "corrupt.json", "ids.json", "oracle_sources.json")}
+            validation = self.read("validation.json")
+            self.assertEqual(validation.pop("training_seed"), 0 if seed is None else seed)
+            content["validation_without_seed"] = material._encoded(validation)
+            if baseline is None:
+                baseline = content
+            self.assertEqual(content, baseline)
+            actual_seed = seed if seed is not None else 0
+            spec = self.read("trainer_commands.json")
+            self.assertEqual(spec["training_seed"], actual_seed)
+            for arm, command in spec["commands"].items():
+                self.assertEqual(command["seed"], actual_seed)
+                self.assertEqual(command["argv"][command["argv"].index("--seed") + 1], str(actual_seed))
+                self.assertEqual(command["argv"][command["argv"].index("--out") + 1],
+                                 str(self.training / f"{arm}_seed{actual_seed}"))
+            self.assertFalse(spec["future_seeds_scheduled"])
+            self.assertEqual(spec["future_seeds"], [value for value in (1, 2) if value > actual_seed])
+            self.assertIn(f"seed{actual_seed} ", spec["after_training_required"][1])
+
+    def test_invalid_training_seeds_rejected_before_material_reads(self):
+        for seed in (-1, 3, 100, True, False, 1.0, "1", None):
+            with self.subTest(seed=seed):
+                with patch.object(material.parent_material_diagnostic, "local_files",
+                                  side_effect=AssertionError("must reject seed first")):
+                    with self.assertRaisesRegex(ValueError, "training_seed"):
+                        self.prepare(training_seed=seed)
+                with self.assertRaisesRegex(ValueError, "training_seed"):
+                    material.trainer_commands(self.out, self.training, self.model, self.root / "python",
+                                              training_seed=seed)
+        self.assertFalse(self.out.exists())
+
+    def test_seed_specific_output_and_log_conflicts(self):
+        self.training.mkdir()
+        for seed in (1, 2):
+            destination = self.training / f"useful_seed{seed}"
+            destination.mkdir()
+            with self.assertRaisesRegex(ValueError, "trainer destination"):
+                material.trainer_commands(self.out, self.training, self.model, self.root / "python", seed)
+            log = self.training / f"corrupt_seed{seed}.log"
+            log.write_text("preserved attempt")
+        material.trainer_commands(self.out, self.training, self.model, self.root / "python")
+        separate = self.root / "only_logs"
+        separate.mkdir()
+        (separate / "corrupt_seed2.log").write_text("preserved log")
+        with self.assertRaisesRegex(ValueError, "external trainer log"):
+            material.trainer_commands(self.out, separate, self.model, self.root / "python", training_seed=2)
+
+    def test_cli_training_seed_default_choices_and_forwarding(self):
+        argv = ["--out", str(self.out), "--model-path", str(self.model),
+                "--training-root", str(self.training)]
+        for seed in (None, 0, 1, 2):
+            extra = [] if seed is None else ["--training-seed", str(seed)]
+            with patch.object(material, "prepare", return_value={}) as prepare, redirect_stdout(io.StringIO()):
+                material.main(argv + extra)
+            self.assertEqual(prepare.call_args.kwargs["training_seed"], 0 if seed is None else seed)
+        for value in ("-1", "3", "1.0", "true"):
+            with patch.object(material, "prepare") as prepare, redirect_stderr(io.StringIO()):
+                with self.assertRaises(SystemExit) as error:
+                    material.main(argv + ["--training-seed", value])
+            self.assertEqual(error.exception.code, 2)
+            prepare.assert_not_called()
 
     def test_ids_history_and_no_eval_targets_in_training(self):
         self.prepare()

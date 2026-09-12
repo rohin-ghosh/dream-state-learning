@@ -8,6 +8,23 @@ from gpu import astra_mini_sudoku_diagnostic as diagnostic
 
 
 class DiagnosticTests(unittest.TestCase):
+    def test_paired_execution_is_sequential_on_one_reserved_device(self):
+        with patch.object(diagnostic, "execute") as execute:
+            diagnostic.execute_selected(Path("/unused"), "paired", "1", 2)
+        self.assertEqual([call.args for call in execute.call_args_list], [
+            (Path("/unused"), "useful", "1", 2), (Path("/unused"), "corrupt", "1", 2)])
+
+    def test_single_arm_default_seed_path_is_preserved(self):
+        with patch.object(diagnostic, "execute") as execute:
+            diagnostic.execute_selected(Path("/unused"), "corrupt", "3", 0)
+        execute.assert_called_once_with(Path("/unused"), "corrupt", "3", 0)
+
+    def test_failed_first_arm_does_not_claim_paired_completion(self):
+        with patch.object(diagnostic, "execute", side_effect=RuntimeError("worker failed")) as execute:
+            with self.assertRaisesRegex(RuntimeError, "worker failed"):
+                diagnostic.execute_selected(Path("/unused"), "paired", "1", 1)
+        self.assertEqual(execute.call_count, 1)
+
     def fixture(self, root):
         material = root / "material"
         material.mkdir()
@@ -36,6 +53,26 @@ class DiagnosticTests(unittest.TestCase):
             (material / "validation.json").write_text("{}")
             with self.assertRaisesRegex(ValueError, "changed material"):
                 diagnostic.verify_material(root)
+
+    def test_wrong_interpreter_seed_or_destination_fails_before_training(self):
+        for field in ("interpreter", "seed", "destination"):
+            with self.subTest(field=field), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                material, _ = self.fixture(root)
+                argv = [diagnostic.sys.executable, "--out", str(root / "training/useful_seed0"),
+                        "--seed", "0"]
+                position = {"interpreter": 0, "destination": 2, "seed": 4}[field]
+                argv[position] = "unexpected"
+                command = dict(argv=argv, seed=0, cwd=str(diagnostic.SOURCE))
+                command_path = material / "trainer_commands.json"
+                command_path.write_text(json.dumps({"commands": {"useful": command}}))
+                manifest = json.loads((material / "manifest.json").read_text())
+                manifest["files"][command_path.name] = diagnostic.digest(command_path)
+                (material / "manifest.json").write_text(json.dumps(manifest))
+                with patch.object(diagnostic.supervisor, "run_worker") as worker:
+                    with self.assertRaisesRegex(ValueError, "interpreter, seed, or destination"):
+                        diagnostic.execute(root, "useful", "1", 0)
+                    worker.assert_not_called()
 
     def test_synthetic_material_cannot_launch(self):
         with tempfile.TemporaryDirectory() as directory:

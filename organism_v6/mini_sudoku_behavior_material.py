@@ -134,29 +134,32 @@ def _sources(gym):
     return {str(path): _file_hash(path) for path in sorted(paths)}
 
 
-def trainer_commands(out, training_root, model_path, python_executable):
+def trainer_commands(out, training_root, model_path, python_executable, training_seed=0):
+    _require(type(training_seed) is int and training_seed in (0, 1, 2), "training_seed must be 0, 1 or 2")
     commands = {}
     for arm in ("useful", "corrupt"):
-        destination = training_root / f"{arm}_seed0"
+        destination = training_root / f"{arm}_seed{training_seed}"
         _require(not destination.exists(), "trainer destination already exists")
-        log = training_root / f"{arm}_seed0.log"
+        log = training_root / f"{arm}_seed{training_seed}.log"
         _require(not log.exists(), "external trainer log already exists")
         commands[arm] = dict(
             argv=[str(python_executable), "-B", "-m", "organism_v6.train_adapter_v3",
                   "--corpus", str(out / f"{arm}.json"), "--out", str(destination),
                   "--model", str(model_path), "--rank", "8", "--lr", "1e-4", "--epochs", "3",
-                  "--seed", "0", "--batch-size", "1", "--grad-accum", "1", "--no-pack",
+                  "--seed", str(training_seed), "--batch-size", "1", "--grad-accum", "1", "--no-pack",
                   "--max-len", "4096"],
             cwd=str(Path(__file__).resolve().parents[1]),
             env=dict(V6_MODEL=str(model_path), HF_HUB_OFFLINE="1", TRANSFORMERS_OFFLINE="1",
                      PYTHONNOUSERSITE="1", PYTHONDONTWRITEBYTECODE="1"),
             exclusive_stdout_stderr_log=str(log), shell=False, execute=False,
             gpu_selector="caller must explicitly assign; none reserved by preparer",
-            expected_examples=32, expected_steps=96, seed=0)
+            expected_examples=32, expected_steps=96, seed=training_seed)
     return commands
 
 
-def prepare(out, model_path, training_root, *, gym=None, tokenizer=None, python_executable=None):
+def prepare(out, model_path, training_root, *, gym=None, tokenizer=None, python_executable=None,
+            training_seed=0):
+    _require(type(training_seed) is int and training_seed in (0, 1, 2), "training_seed must be 0, 1 or 2")
     synthetic = gym is not None or tokenizer is not None
     out = Path(out).absolute()
     _require(not out.exists() and not out.is_symlink(), "output already exists")
@@ -244,7 +247,7 @@ def prepare(out, model_path, training_root, *, gym=None, tokenizer=None, python_
     boundary = dict(BOUNDARY, validation_backend="SYNTHETIC_CPU_FIXTURE" if synthetic else "NATIVE_PACKAGE_CPU")
     interpreter = Path(python_executable or sys.executable).absolute()
     _require(interpreter.is_file(), "Python executable must exist")
-    commands = trainer_commands(out, training_root, model_path, interpreter)
+    commands = trainer_commands(out, training_root, model_path, interpreter, training_seed=training_seed)
     _require(parent_material_diagnostic.local_files(model_path) == pins, "local base changed during preparation")
     _require(_sources(gym) == source_hashes, "implementation changed during preparation")
     train_solutions = {_sha(_encoded(record["solution"])) for record in records[:32]}
@@ -262,7 +265,8 @@ def prepare(out, model_path, training_root, *, gym=None, tokenizer=None, python_
         "local_pins.json": dict(model_path=str(model_path), files=pins,
                                 origin="unresolved; local byte identity only"),
         "source_hashes.json": source_hashes,
-        "validation.json": dict(boundary=boundary, board_count=48, board_identities_unique=True,
+        "validation.json": dict(boundary=boundary, training_seed=training_seed,
+                                board_count=48, board_identities_unique=True,
                                 train_eval_disjoint=True, canonical_native_accepted=48,
                                 independent_row_column_box_givens_validated=48,
                                 corruption="fixed one-position cyclic shift; no rerolls", assignments=assignments,
@@ -279,10 +283,11 @@ def prepare(out, model_path, training_root, *, gym=None, tokenizer=None, python_
                                                      "useful minus OFF paired difference",
                                                      "useful minus corrupt paired difference"],
                                 evaluation="main-owned future fresh-process OFF/ON; retain every ACT; no outcomes here"),
-        "trainer_commands.json": dict(boundary=boundary, commands=commands,
-                                      future_seeds=[1, 2], future_seeds_scheduled=False,
+        "trainer_commands.json": dict(boundary=boundary, training_seed=training_seed, commands=commands,
+                                      future_seeds=[seed for seed in (1, 2) if seed > training_seed],
+                                      future_seeds_scheduled=False,
                                       after_training_required=["verify corpus SHA and source/model pins",
-                                          "rank8 lr1e-4 epochs3 batch1 seed0 chat_template false pack false max_len4096",
+                                          f"rank8 lr1e-4 epochs3 batch1 seed{training_seed} chat_template false pack false max_len4096",
                                           "32 examples, 96 optimizer steps; zero dropped context/target tokens",
                                           "target labels and target-token passes match preflight plus EOS",
                                           "finite loss; actual adapter file hashes; external exclusive logs",
@@ -308,8 +313,10 @@ def main(argv=None):
     parser.add_argument("--model-path", required=True)
     parser.add_argument("--training-root", required=True)
     parser.add_argument("--python", default=sys.executable)
+    parser.add_argument("--training-seed", type=int, choices=(0, 1, 2), default=0)
     args = parser.parse_args(argv)
-    result = prepare(args.out, args.model_path, args.training_root, python_executable=args.python)
+    result = prepare(args.out, args.model_path, args.training_root, python_executable=args.python,
+                     training_seed=args.training_seed)
     print(json.dumps(result, sort_keys=True))
 
 
