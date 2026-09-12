@@ -4625,3 +4625,78 @@ nooutcome-basedscreening, sixpairedOFF/ONreadouts, primaryfirstACTsolves.
 Plannednode3GPU1/2/3perseed reservations require actualnativeprep/fullvacancy;
 notyetlaunched. Expected35–50aggregateA40minutes, source/modelhashoverhead
 separate. GPU0 remainsRuleGamev2formation146460; no otherMainGPUjobs.
+
+## [Builder -> Rohin] 2026-09-12 16:53 UTC — answering the pre-steer, not turning it into rulings
+
+I agree with the distinction between an outcome corpus and a teaching corpus.
+I do NOT currently have a validated "perfect teaching corpus." The memory
+renderings and useful/corrupt Sudoku material are controlled outcome/reference
+material. They establish limited write effects, not the quality of a learning
+process. The 32B bootstrap_v3 is a candidate, not an authenticated/clean or
+validated teaching corpus; I am recovering its actual provenance and parent
+seam before selecting any use. Your suggestions remain hypotheses, not new
+rules. No 10GPU-hour birth run is launched from the pre-steer.
+
+1. What a narrow reference teaching corpus should mean operationally: explicit
+skill definition, sourced worked examples, varied practice and contingent
+correction, with repetition/dose logged and a separate held-out performance
+check. We should test observable correct decisions and utility, not reflection
+frequency, eloquent paraphrase or resemblance to an imagined inner monologue.
+A concrete current gap is relating an actual prediction to an actual outcome.
+The latest RuleGame loop now executes all8quizzes, but only1/6process and3/6
+control own records meet the registered relation semantics. The generic
+parenting messages mostly teach prediction presence, not this record judgment;
+the elicitor also says only "accordingly" rather than defining every relation
+case explicitly. So neither a deficient-child ceiling nor adequate teaching
+is established. A clear common task definition belongs in both arms; a genuine
+teaching treatment would add examples/practice/correction, not relabel that
+shared instruction repair as parenting. Teacher lessons never enter child
+sleep bytes; any optional birth corpus must be separately sourced/labeled.
+
+2. Current developmental cycle, without pretending it is already a life:
+we inherit the frozen pretrained7B base (no base-weight/level1training by us).
+Most059–093 work is isolated writer/material/reload diagnostics with fresh
+LoRA fits, plus in-context parent/extraction checks—not completed childhood.
+The current tiny branch is base -> pre-task -> same7B-in-parent-role feedback
+-> restatement -> apply-task -> checked own record -> intended sleep/reload
+-> parent-free new-rule readout. Both094andnowv2stopbeforefits due material
+shortage; no adult developmental learner emerges from them. Optional sourced
+birthLoRA/level2, richerpreschool/school and autonomousdeployment remain the
+intended ladder, not stages these runs completed. Same7Bparent is a prototype,
+not the strongest adaptive parent you intend. Recovering the14B/32Bseam is
+active work; I will not report the weak prototype as an upper bound.
+
+3. Compilation and sleep: current recipes are not all raw-transcript loss.
+There are rendered memory corpora, masked child-body records, and controlled
+external useful/corrupt action material. We have actual optimizer/reload paths
+and limited parameter effects; extraction quality, general behavioral utility,
+joint/repeated usability and retention are still distinct questions. A good
+oracle-material result tests the writer GIVEN material. It cannot alone prove
+that the child creates good material, that every component works together, or
+that a sleep interval is right. SEQ092 compares fresh-base OLD/NEW/OLD+NEW fits;
+its frame decline is NOT evidence that a longer sleep interval caused memory
+loss or that A1parameters forgot. Transform/objective/repetition and schedule
+need their own controlled comparisons. I am checking the actual TMEM/SEAL/OEL/
+SDFT primary methods rather than endorsing the supplied high-level summaries.
+
+4. Telling versus teaching: instruction-only is a baseline, not a ceiling.
+SEQ091's worked-example observations motivate testing teaching, but the changed
+protocols, token doses and selected cases do not isolate the example effect.
+The interface repair itself now yields8/8validquiz interactions versusv1zero;
+that is an execution result, NOT parent learning. Both failures are kept.
+Next treatment design should address the demonstrated target-skill gap with
+clear examples and feedback, after checking source/teacher availability—not
+another unchanged sample hunt or a cosmetic "think harder" prompt.
+
+5. Confounds and near-term sequence: compare raw-base/freshLoRA recipients,
+matched developmental opportunities/update budgets, task training versus
+process teaching, and context-cleared OFF/ON reads. Actual token/teacher costs
+can differ and must be reported, not asserted equal. Training corpora can be
+longer than one context window through multiple bounded training sequences;
+that does not make cross-sequence dependencies free or validate a truncating
+recipe. The already-selected no-new-fit reread tests the earlier weak Sudoku
+material effect on exact-solution-disjoint puzzles while this teaching design
+is clarified. It is not a substitute for teaching or integrated H1/H2 evidence.
+
+I will answer the source/provenance details with the bounded recovery results.
+No thesis/base/invariant change, formalC11promotion, or collaborator send.
