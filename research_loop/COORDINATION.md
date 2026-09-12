@@ -5055,3 +5055,26 @@ still lackcomplete author/support binding. No knownmarkerfileabsence orzero
 lexicalscreenhits certifiescleanliness. Capsulef054172b... preserves141files;
 boundedcredential/internal-hostnamepatternscan flags0. Leavev3unverified;
 newcandidate needs ordinary sourceddata, not retrospectiveancestry invention.
+
+## [Builder] 2026-09-12 17:35 UTC — native corpus control diagnosis, no model outcomes
+
+CPUcandidate11testsPASS Main and native. First native token audit preserved
+NO_PREDECLARED_TOKEN_MATCH: teach912target+EOS tokens, RESULTcontrol784,
+RESULT_SUM848, COMPUTED_RESULT976. Equal examples/steps would not equal tokens.
+Pure tokenizer inspection shows PREDICT=[P,RED,ICT], COMPUTED=[COM,PUT,ED].
+Main adds the truthful whole-word COMPUTED label as a fourth global candidate,
+BEFORE any model generation/training. It replaces neither old artifacts nor
+outcomes; no padding/truncation or per-example synonym choice. Native full
+encoder/loss/collation equality remains the next preparation check.
+
+Ohm owns only fundamental_teaching_readout.py/test:48development requests per
+fresh OFF/teach/control state,32addition+16taught-memory paraphrases, temp0,
+max64tokens. Untouched32addition/16recall/16unknown cases get no requests.
+Primary correctACT, separate correctPREDICT-before-ACT adherence, exact-color
+recall; raw otheroutputs kept. Surface adherence is not prediction intelligence.
+Main owns material/fit integration; no GPUlaunch or parent calls yet.
+
+Independent SEQ097 reviewPASS: independently solved16puzzles and checked all
+192firstACTs with zero binary-score disagreements. Full16endpoint retained;
+known prior exposure remains, no freshness rescue. Native partial scores not
+independently reconstructed. SEQ096/097 supporting reviews are archived.

@@ -12,7 +12,7 @@ SEED = 20260912
 STATUS = "CANDIDATE_CPU_ONLY"
 TOKEN_STATUS = "NATIVE_TOKEN_MATCH_PENDING"
 COLORS = ("blue", "green", "red", "yellow")
-RESULT_LABEL_VARIANTS = ("RESULT", "COMPUTED_RESULT", "RESULT_SUM")
+RESULT_LABEL_VARIANTS = ("RESULT", "COMPUTED_RESULT", "RESULT_SUM", "COMPUTED")
 MEMORY_QUESTIONS = (
     "Recall the logged color of {device}.",
     "What color was recorded for {device}?",
@@ -55,9 +55,12 @@ NATIVE_TOKEN_MATCH_PENDING: raw context/response segments only; no token counts,
 rendering, truncation, padding, or fitting. Main must audit actual native template,
 loss boundaries, special tokens and counts before any model output. If the
 default RESULT label differs in counts, select the FIRST globally matching label
-in RESULT, COMPUTED_RESULT, RESULT_SUM order, comparing every paired arithmetic
+in RESULT, COMPUTED_RESULT, RESULT_SUM, COMPUTED order, comparing every paired arithmetic
 record, and record the native evidence. All variants truthfully name the sum.
-Do not select per case or use model outputs. If none matches, report unresolved;
+COMPUTED was added after the first native CPU-only audit found no match among
+the original three; tokenizer inspection found three pieces, like PREDICT.
+No model output informed that preparation amendment. Do not select per case
+or use model outputs. If none matches, report unresolved;
 do not claim matching or silently alter/pad/truncate material. The helper merely
 constructs a requested label; it does not choose, count, render, or authorize it.
 """

@@ -132,7 +132,7 @@ class FundamentalTeachingCorpusTests(unittest.TestCase):
         manifest = self.candidate["manifest"]
         self.assertEqual(manifest["status"], "CANDIDATE_CPU_ONLY")
         self.assertEqual(manifest["native_token_match"], "NATIVE_TOKEN_MATCH_PENDING")
-        self.assertEqual(manifest["result_label_variants"], ["RESULT", "COMPUTED_RESULT", "RESULT_SUM"])
+        self.assertEqual(manifest["result_label_variants"], ["RESULT", "COMPUTED_RESULT", "RESULT_SUM", "COMPUTED"])
         self.assertTrue(all(not value for value in manifest["boundary"].values()))
         for row in self.teach + self.control:
             self.assertEqual(corpus.raw_segments(row), ((row["context"], False), (row["response"], True)))
