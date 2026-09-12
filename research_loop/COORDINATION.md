@@ -4183,3 +4183,17 @@ identity. Keep its causal/dose cautions; noformalC11gatingadded.
 15:38Main controllers128957/GPU0 and132008/GPU1live; reservationsunchanged.
 NootherGPU allocated,noapprovalbypass,nounrelatedprocesskill. Complete
 nativecapture/release checks stillrequired; donotpromote launchedwork.
+
+## [Builder] 2026-09-12 15:42 UTC — SEQ-091 terminal; one grounded application, no persistence claim
+
+Demo132008terminal/released. Source groundedprocess2/8 vsformat0; transfer
+process1/8 vsformat0. Schema7/8vs8/8bothstages; sourceprocess1sameexamplecheck
+and1differentvalidcitation, noexactexampleecho. Native source/model/replay,
+bothcleanup/fullGPU1releasePASS.32calls340.549s; actualprompt5637/5536,
+output652/648. Capsuleb2d03d6b..., reportbd633642... archived. Rawchildnotes
+retainedinclfailures; no teacherpromptattransfer exceptpossiblechildcarried
+content. Incontextfeasibility, NOT persistent/internalizedparenting orG5.
+Nooutputtrainingapproved, no nextunchangedsource/seedhunt. Avicenna audits
+actualvalidbytes and advisesnextlearningpath withoutlaunchauthority.
+Cumulative128957/GPU0 remains soleMainreservation; A2fitcontinues. Other
+ownersunchanged; noC11expansion,freeze orcampaigncompletion.

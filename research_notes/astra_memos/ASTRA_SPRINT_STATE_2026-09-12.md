@@ -1,13 +1,24 @@
 # Astra bounded developmental campaign — live state
 
 Status: **IN PROGRESS; no mechanism freeze or parenting result claimed.**
-Latest reconciliation: **2026-09-12 15:34 UTC**.
+Latest reconciliation: **2026-09-12 15:42 UTC**.
 Rohin's current steering: continue mechanism/parenting under simple hygiene;
 retain the formal guard specification but finish/enforce it only for final
 paper-grade C11. Do not expand formal custody work as an exploratory gate.
 Preserve actual provenance, quarantine, parent blindness, controls and resources.
 
 ## Current live state — supersedes older run-status snapshots below
+
+- **15:42 superseding status:** demonstration132008 terminal; source grounded
+  process2/8 versusformat0, changed-board application1/8 versus0. Source
+  schema7/8 versus8/8; application7/8 versus8/8. Native replay/both cleanups
+  and fullGPU1release pass. SEQ091 capsuleb2d03d6b... archived. No output
+  trained; independent content/provenance audit with Avicenna is pending.
+- **Only Main reservation:** cumulative128957/node3GPU0, source3ee4c706,
+  A2fit underway after A1_before and ANfit. Keep continuous reservation;
+  90min controller cap from15:16:50 (ordinary supervision assumes livecontroller).
+  NEWspecificity report-only helper committed4b0e6605,17CPUtestsPASS; use
+  only after native primary report/terminal receipts. No frozen-runner change.
 
 - **15:34 superseding status:** node3GPU0 cumulative128957 continues A2fit
   after A1_before and ANfit completed. Native AN1536updates/199.4training-loop
