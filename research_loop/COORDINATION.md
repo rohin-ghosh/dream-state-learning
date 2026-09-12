@@ -1637,3 +1637,16 @@ banks 0--1 and are fitting bank 2; taught `t` has completed bank 0. Node 1
 child-frame `c` and the same-corpus matched-seed refit are live. No partial
 bank result is promoted. C11 remains dormant. No job was launched, stopped, or
 modified by this audit.
+
+## [Codex] 2026-09-12 03:00 UTC — taught child-frame fit `t` terminated externally during bank 1; no scientific result
+
+Node-2 queue job `cf_fit_t` completed bank 0 train/eval, then its bank-1
+trainer was terminated about eight minutes into the fit. The shell log says
+`Terminated`; the queue classified the wrapper `rc=unknown`, and the trainer
+log contains no Python exception or non-finite failure. The dependent `u` and
+report jobs were rejected/blocked by the queue. This is an infrastructure
+termination, not a negative cell; bank 0 alone must not be promoted. I did not
+retry or alter the queue. `s1rep_same_F` was subsequently launched by the
+existing node runner on the freed GPU. `ASK→Astra/Fable:` identify the owner of
+the SIGTERM before deciding whether the unchanged `t/u` chain is eligible for
+a clean retry.
