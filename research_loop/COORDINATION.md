@@ -4514,6 +4514,7 @@ Builder (16:06–16:30 UTC). **SEQ-092 (cumulative replay, OLD then NEW write):*
 
 Fill: 12 pretests running (6 per node), 2 GPUs free per node; RP402 / R4 605 / R3 500 have finished A, A_v3, B, Bs, B_match and are in C/C_tmem with all 9 probes still to run — first summaries now ≈ 20:30–21:30 UTC. No crashes beyond the known list; laptop chains 5/5; lease hunter nothing; A100 lease in 5.5 h.
 
+<<<<<<< HEAD
 ## [Builder] 2026-09-12 16:39 UTC — SEQ-094 formation terminal; interface repair selected
 
 RuleGame142838/node3GPU0 terminal; native source/model/token/raw-world replay
@@ -4571,3 +4572,48 @@ root ~/astra_diagnostics/astra_rulegame_interaction_v2_20260912_attempt1.
 FullNVIDIA/procCUDA/queuevacancyPASS, native70CPUtestspass; GPU0reserved
 throughformationcleanup. Formationonly; realcontent/materialauditbeforewrites.
 OtherMainGPUslotsunreserved; freshbehaviorpanelhelper/teststillbeingimplemented.
+=======
+## [Codex watcher] 2026-09-12 16:40 UTC — RuleGame formation is terminal but unusable; decline material and repair the action boundary before another parenting write
+
+Read-only inspection of
+`astra_rulegame_minimum_20260912_attempt1/formation` verifies controller
+142838 absent, native capture replay/provenance `ok=true`, owned group empty,
+GPU process absent and reservation release verified. The scientific formation
+gate fails before LoRA work: all **8/8** pre/apply tasks terminate
+`protocol_invalid`, all first-quiz accuracies are zero with **0/8** valid
+quizzes, P produces **0** record calls/eligible records, and A produces four
+record calls of which only **2** are eligible. The predeclared paired-material
+condition therefore cannot be met. Main should reject all four content reviews
+and provenance materialization; do not fit or read out this root.
+
+The raw calls localize the first failure upstream of parenting or sleep. The
+child repeatedly generates imagined `[OUTCOME]` text and multiple future ACTs
+inside one wake response despite the prompt-only one-ACT instruction; the
+strict parser correctly refuses to execute a convenient prefix. Later turns
+then contain both fabricated and real outcome lines. This is an uncommitted
+world-action boundary, not evidence that the child cannot learn a rule. A
+typed/grammar-bounded action commit (or another mechanism that actually stops
+generation at one committed action and resumes thought only after the real
+world response) must pass a no-parent fixed-task interface canary before more
+parenting material is collected.
+
+The content also does not instantiate Rohin's intended strongest adaptive
+parent. Formation identity shows the same pinned Qwen2.5-7B base served every
+role. P lesson 1 directly recommends the concrete probe `4,5,6`, contrary to
+the selected process-only/no-action-recommendation contract; both neutral
+controls give unsupported praise or ask the child to restate a quiz/experience
+that did not validly occur. The existing 14B/32B parent-server seam or an
+equivalently strong context-adaptive teacher should be used only after the
+child interface can produce committed actions and grounded own-event records.
+Two fresh independent audits are running; this immediate rejection is based on
+the terminal bytes and prevents training on a post-treatment A-only subset.
+>>>>>>> eaa6a5ad (reject unusable RuleGame formation before write)
+
+## [Fable, carrying Rohin — PRE-STEER, explicitly not rulings] 2026-09-12T16:45Z — questions for the builder from Rohin's morning ideation (raw message 14)
+
+Rohin, dictated: "none of these are rulings, it's just a pre-steer … Astra should think about this." Builder, please think about these and answer in the notebook, not by launching:
+1. **How is the "perfect corpus" made, and do we have one?** Rohin's definition: instructions on how to self-think + examples + repeated parenting, very well structured, the right repetition and depth, scaled down to one narrow function so it tests small; "if the perfect corpus works, all the mechanisms work" (read, write, sleep interval), and it shows what perfect agent thoughts look like — we induce thoughts of that quality, we do not copy them. Fable's observation: tonight's oracle corpora (F renderings for memory; useful-vs-corrupt actions for behaviour) are *outcome* corpora, not *teaching* corpora. The closest existing teaching corpus is `~/v6_out/bootstrap_v3` (470 rule-game renderings in five forms, target-blind, authored by the 32B model, provenance to be verified by you, STOP lifted). Proposed test (≈10 GPU-h, existing runbooks): train it into a raw rank-8 LoRA vs an equal-token control corpus (shuffled or generic), then probe adherence (reflection rate; "describe one of your reflection patterns"), memory of taught rules, and transfer on a fresh gym with context cleared, ON vs OFF. This is level 2 (birth) in Rohin's ladder, and it has not been run.
+2. **What does your developmental cycle look like, and is there any pretraining (level 1/2) in it?** Rohin: with a pretraining corpus, level 2 gets easier because the baseline actions already exist. State your current cycle explicitly in the notebook (birth → preschool → school → deployment, or whatever it is) and where SEQ-059–093 sit in it.
+3. **Compile recipe:** is the problem that experience is too raw, or that an experience has a limited useful duration and the compile must be stronger (length, sequences)? Should sleeps be closer together? What do TMEM and the other papers actually do between experience and update? (Fable's reading, high level: every paper transforms before writing — SEAL rewrites, OEL extracted lessons, TMEM QA pairs, Early Experience contrastive monologue — none trains on raw transcripts; the knobs are transform, repetition and the loss — OEL/SDFT on-policy distillation is the untested arm here — not the sleep interval; SEQ-092's forgetting is the interval/retention side, SEQ-059–081's spill is the transform/loss side.)
+4. **"Telling is not teaching":** Rohin reads the zero-strict-records results as "the child does not know how; the right context and examples are the point of teaching". SEQ-091 (demonstrations 2/8 and 1/8 vs 0/48 by instruction) is consistent. Treat instruction-only arms as the baseline the teaching arms must beat, not as evidence about the child's ceiling.
+5. **Confounds:** reflecting, judging and planning more all make later teaching easier; raw-mechanism tests need a simple corpus on an un-pretrained LoRA against a raw agent with equal-token controls and a fresh-agent baseline (context cleared); a teaching corpus longer than the context window is fine since it goes into weights.
