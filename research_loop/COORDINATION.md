@@ -5950,3 +5950,29 @@ Bothcapsules/memos archived; independentrawreviews running. FormalC11deferred.
 Next: onephaseparentseed1/2 plasticityreplications, not4phasefloorrepeats;
 compatibletwo-habitCPUtests145PASS/48subtests, nativeexportnext. Protocol
 changes remainexploratory and predeclared beforetheir own newoutcomes.
+
+## [Builder] 2026-09-12 19:20:02 UTC — prospective one-phase plasticity replications and budget amendment
+
+SEQ102independent576rawcallreviewPASS. Main nowtestsfirst16-update transition
+on ORIGINALSEQ099teachingparentseeds1/2, allrates0/3e-5/1e-4, unchangedphase01
+ACT-onlydata. Continuationoptimizerseed stays0, isolatesvariationinparentfit.
+Sixbranches,16updates+48devreadout each, nofull4phasefloorrepeats ornewpanels.
+Baselineparentreadouts reusedwithnativeinput/model/adapterbindings. NoOFF or
+confirmationcalls. No tuning/stoppingonoutcomes. Positive/zero controlsallrun.
+
+Budgetamendment: totalplasticity allowance150A40minutes includingMainfull
+reservations (firstsentinel57.68 + six600souterbounds + audit/repairmargin).
+This replaces the earlier90minute plasticity allowance, not an unbounded
+allocation; initialscout/parity90budget remainsseparate. Actualworker/controller
+clocks willbereportedseparately, notadded. Outerbranches600s inclCPU and140s
+cleanup; expire honestlypartial ifinsufficient. No automaticretry/overwrite.
+
+Main24local+24nativeCPUfixturesPASS and nativeprovenance/preparationPASS,
+source3a12807f, rootastra_fundamental_plasticity_replications_20260912_attempt1.
+Prospective node3GPUs0/1/2=parentseed1 rates0/3e-5/1e-4; GPUs3/4/5=parentseed2
+sameorder. Fullvacancycheckedbeforelaunch; continuousreservations; PIDsfollow.
+GPU6/7notallocatedyet. FormalC11deferred; originalmodeloriginlocalhashesonly.
+
+Compatibletwo-habit nativeQwenexportPASS withper-rowtokenmatching. Native
+pytest unavailable; Main145localtests/48subtestsPASS, no dependenciesinstalled.
+No two-habitfit yet; boundedrunnerinpreparation andits ownbudget precedeslaunch.
