@@ -1,5 +1,68 @@
 # Astra current handoff — 2026-09-12T19:56:24.212350+00:00
 
+## Superseding checkpoint — September 12, 23:38 UTC
+
+Mission ACTIVE/incomplete. Simple hygiene, formalguard finalC11-only. Origin
+UNRESOLVED_LOCAL_HASHES_ONLY; no generalG3/P1/G5/H1/H2/freeze. MainsoleGit/
+nativeexperimentoperator. Preserve unrelateddirtygpu/codex/dream_state.rules.
+Latestlaunchcommitd7adb591; watcher0f1abc8d preserved. Do not run old live lists.
+
+### LIVE: node3 GPU0 sequential-new-memory pair
+
+PID/PGID263983, actualstart2026-09-12T23:35:40.672863Z.
+Source ~/astra_sources/5a1f300fed4b7f1ef54524869c2bf11509e965ca.
+Root ~/astra_diagnostics/astra_sequential_memory_20260912_attempt2/seed0_pair_attempt2.
+Plan9e53c716373c2458586ff7b6a72d0fe5822d41d5a0129057e2a4e805acab8b49.
+Driver /tmp/astra_sequential_memory_pair_20260912.py SHA
+29d70e46f0c65817f65f52f6ed310fcfaa91cda64928f9bdfc54b70834a0c232.
+Launcher /tmp/astra_launch_sequential_memory_20260912.py SHA
+9b73e13450531f79c732218682f3b0031ba16d24d72642d76a6a949b75808b12.
+19Main/native19runnertests+actualnativepreparePASS. WorkerCLI omissionfixed
+beforelaunch; oldd46925driver/8f6bplanpreservedUNLAUNCHED. Nativecorpusattempt1
+failedmissingparent beforeoutput; goodmaterialattempt2/materialMUSTNOTregenerate.
+S0=seed0FOUR400steps;R/Cown2cyclesfreshoptimizerseed0,400->720->1040;
+fixedbudgetreplayvsadditionalnewfacts, unequalnewdose.4fits/9workers/640calls,
+all5completepanelsBEFOREscores. At23:37S0panelrunning,noresultsinspected.
+
+Controllerreservationhardend Sep13 01:00:40.736287Z; cleanupalarm00:58:20.736287Z;
+custodyend01:05:40.736287Z (also5400sfull-launchbound). NOindependentpidfdwatcher;
+Mainmustmonitor; owncontrolleralarm+workersupervisors active. Neverreuse1800s
+oldwatchdog. Status/collect require nativevenv andSOURCEcwd plus:
+--source-root SOURCE --source-id 5a1f300fed4b7f1ef54524869c2bf11509e965ca
+--runroot ROOT. Afterterminal/controllerabsence, collectONCE withCUDAunset,
+300stimeout andNEW --archive path. Drivercollectoralready19nativeCPUtestsPASS;
+no native/tokenizer/model rerun incollector. Do not trust momentary0MiB.
+
+### Completed / next work
+
+SEQ115finiteown-wakewrite,SEQ116memoryreplications,SEQ117processreadout all
+complete/collected/raworauthor-audited asdocumented, archived68a3fb45 andearlier.
+ProcessreadoutPID255725ENDED/fullrelease23:19:06Z; all95calls. Pquiz12/OFF7/A6,
+butfullcriterionFAIL(PtiesAvalid/correctpred12/9),PallF9/12baseline andquiz12
+constant-labelbaseline;recordsP5/OFF9/A10. See ASTRA_PROCESS_READOUT_V2_2026-09-12.md.
+MemoryFOURall3seedthresholdspass;SINGLEseed2formatvalidbutnumericallywrong;
+notuniformFOURsuperiority. See ASTRA_INTERLEAVED_REPLICATIONS_2026-09-12.md.
+
+- Planck01a0971a-dcdb-7590-9111-d73adbf74fe3 implements ONLY /tmp/astra_rulegame_process_replication_20260912.py,
+  tests/handoff. Seeds0/1same4V2ownwakes; no newformation/confirmation.
+  MainapprovedSEPARATEwrite1200+300custody/readout1800+300custody=60A40minmax/
+  seed, NOT stalehandoff45mincombinedclipping. Noautomaticphaseprogression.
+  RequireactualgeneratedCLIregressions. NoCPU/nativeacceptance/launchyet.
+- Banach01a0972e-e39c-7653-901f-e994b237d92a sixmanuscriptfilesSEQ116/117
+  EDITSTOP; handoff /tmp/astra_manuscript_seq116_117_handoff_20260912.md.
+  Herschel01a09708-4d90-7d91-9aa4-25e6163abdda reviews ONLY matching
+  /tmp/astra_manuscript_seq116_117_independent_review_20260912.md. Commitafterreview.
+  PriorSEQ114/115alreadyreviewed/committedae354cf4,227wordcompanion,UNSENT.
+- Darwin01a0976c-89e3-7372-a3ba-134602680bff LIVEdriverEDITSTOP, now owns
+  /tmp/astra_node1_preservation_execution_20260912.md/.py. Read-onlynodeinventory
+  allowed; NOtransfer/Git/GPUchanges. Mainexecutesafterreview. Arendt CLOSED
+  afteracceptedcorpus; mayresume fornewcollector onceprocessreplicationAPIstable.
+
+Nativevenv /localhome/local-rohing/v2/venv/bin/python, neverresolvesymlink.
+Node1backupdueSep13 23:14Z; stillNOtransfer. A100startsSep13 05:05Z, future.
+Leases supplied, notcontrolplaneverified. Alloldpartials/evidencepreserved;
+no foreignsignals/queues changed and no collaborator message sent.
+
 ## Superseding checkpoint — September 12, 23:14 UTC
 
 Mission ACTIVE/incomplete. Simple hygiene now; formal guard finalC11-only.

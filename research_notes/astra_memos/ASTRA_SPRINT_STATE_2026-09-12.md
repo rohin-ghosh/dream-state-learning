@@ -1,4 +1,24 @@
-## Current superseding snapshot — 2026-09-12 20:54:27 UTC
+## Current superseding snapshot — 2026-09-12 23:38 UTC
+
+Mission ACTIVE/incomplete; exact processes/commands in newest HANDOFF.
+Mechanism: FOUR interleaved authored memory meets fixed joint thresholds on
+three seeds; SINGLE varies substantially. Same16 facts, not operational sleep
+or general learning; numerical failure can coexist with correct response form.
+Parenting: own-wake context-distillation readout has quizP12/OFF7/A6, but
+registered full criterion fails, predictions match an all-F baseline, quizP
+matches a constant-label baseline, and record fidelity worsens. No P1/G5/H1/H2
+or freeze promotion. SEQ115–117 evidence is archived with explicit limits.
+
+LIVE node3GPU0 PID263983 sequential-new-memory allocation pair since23:35:40Z;
+five reloads, two new16-fact banks, matched update budget with unequal new-data
+dose, replay versus extra-new rows,640 calls before scores. HardendSep13
+01:00:40Z/custody01:05:40Z; Mainmonitors. Process-fitseed0/1 replications are
+being implemented, NOT launched. Manuscript throughSEQ116/117 is under review;
+priorSEQ114/115 reviewed and committed, collaboratorUNSENT. FormalguardC11-only,
+originUNRESOLVED_LOCAL_HASHES_ONLY. Node1preservation preparation underway,
+no transfer yet. Preserve dirtygpu/codex/dream_state.rules and all partials.
+
+## Historical superseded snapshot — 2026-09-12 20:54:27 UTC
 
 Active/incomplete; latest exact process identities and hashes live in HANDOFF.
 Conditional root0 readout remains node3 GPU0/PID220273; OFF generation/scoring
