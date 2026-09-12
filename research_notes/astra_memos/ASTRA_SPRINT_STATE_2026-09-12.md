@@ -27,13 +27,16 @@ GPU2controller53265(rate1e-5), launched10:13:57/10:14:01UTC. Fresh roots
 material, adapter seed2, native G9unchanged; historical1e-4baseline reused,
 not retrained. Actual source/token preflight passes; known unrelated/broad
 test fixture issues logged, not called passes. PreserveGPU0/2reservations.
-**Active behavioral positive controls:** sourcea51ee0a4, node3GPU1useful
-controller56099andGPU3corrupt controller56124, start10:29:37/48UTC,
-root `astra_mini_sudoku_useful_corrupt_20260912_attempt2`. Native32item
+**Active behavioral positive controls:** source3d56c5cd, node3GPU1useful
+controller56987andGPU3corrupt controller57084, start10:32:26/39UTC,
+root `astra_mini_sudoku_useful_corrupt_20260912_attempt3`. Native32item
 useful/wrong-board material validated,96steps each then16canary fresh-process
 OFF/ON first-ACT evaluation.900sfit/2100spair limits; keep reservations through
 reload gaps. Attempt1material-only launch refusal retained (slow GPU query);
-non-material10→30stimeout repair passed22wrapper tests. No science outcomes
+non-material10→30stimeout repair passed22wrapper tests. Attempt2failed before
+model load because venv Python was symlink-resolved to system Python; fixed
+with regression,20material tests pass, both owned-worker cleanups verified.
+All attempt3corpus/token hashes match original. No science outcomes
 yet, no oracle material in clean lineage. See exact comparison memo.
 Parent-free learning/retention/campaign remain incomplete.
 

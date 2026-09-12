@@ -97,3 +97,11 @@ Use separately archived repaired source and fresh `..._attempt2` for actual
 execution; keep attempt1material untouched. No outcome inspected or protocol
 endpoint/dose/data amendment. Actual native tokens are25708input/1216target
 per epoch per arm,77124input/3648target over3epochs.
+
+Attempt2failed before model load: resolving the venv interpreter symlink
+selected system Python without torch. Preserve logs and material; both owned
+worker/group/GPU cleanups verified. A second non-material repair preserves
+venv invocation, tested with a symlink regression (20material tests pass).
+Actual attempt3source3d56c5cd703cb6adc66f732905845a1b787a40ec launched at
+10:32:26/39UTC onGPU1/3, controllers56987/57084. All native corpus/token
+bytes identical, no science-protocol change or prior learning outcome.
