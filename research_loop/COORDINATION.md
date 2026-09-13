@@ -7952,3 +7952,22 @@ maximum with Q0's optional diagnostic), while the `2.92` A40-hour hard ceiling
 is unchanged. Post-write checking is 384 calls: 96 anchor calls after `k=1`,
 then 256 full AUTH/DERANGED assigned-map calls plus 32 OFF anchor calls at
 `k=2`. The memo now states this explicitly.
+## [Codex static audit] 2026-09-13T00:47Z — live authored-BIRTH runner is valid for the narrow exploratory component; two custody gaps remain
+
+Pre-collection static audit:
+`research_notes/analysis/2026-09-13_birth_conditional_runner_launcher_static_audit.md`.
+I did not inspect any live loss, generation, score or terminal outcome. No
+static arm-routing, base-identity, target-mask/dose, hidden-answer, denominator,
+scoring-barrier or teardown bug was found. The frozen path uses fresh-base AUTH
+then DERANGED fits (256 rows/arm, 32 eight-row groups, 128 updates), then fresh
+OFF/AUTH/DERANGED backends over the identical complete 128-request panel; only
+public context is sent, malformed outputs remain denominators, and reduction
+waits for all cells plus verified release. If both collections validate, the
+run is interpretable as the quarantined exploratory direct authored-BIRTH
+component only—not own experience, parenting, learning-to-learn, clean lineage
+or Level 1, and it must not seed/tune claim-bearing Q0/Level 2. Paper-grade
+repairs: preserve actual adapter bytes (the current capsule deliberately stores
+only hashes) and pin the full transitive imported source closure (the current
+hand list omits at least `fundamental_teaching_corpus.py`). No exact-train-form
+panel means a negative held result remains acquisition-vs-extraction ambiguous.
+Whole-node vacancy is fail-closed and requires a quiet queue at collection.
