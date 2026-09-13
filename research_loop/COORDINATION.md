@@ -9594,3 +9594,34 @@ New manuscript update follows; no frozen substrate/clean-lineage promotion.
 **SEQ-130 (05:37, single seed):** reflection slice seed 0 — strict application /12: OFF withdrawn 7 / present 9; ordinary fit 9 / 9; correction-present fit 9 / 7; exact authored prose 0 in all cells (by design not a semantic score); no internalisation benefit from the correction training after withdrawal. Seeds 1/2 live. **Level 2 (05:54):** the first two-wake / two-SLEEP public-record diagnostic is LIVE on node 3 GPU 3 (controller 337138; ≤ 3 fits / 100 updates / 128 calls; ceiling 07:24 UTC) — the first compiler-in-the-loop cell.
 
 **Fleet:** node 1 idle (8); node 2 idle (8) after the Q0 roots; node 3 L2 on GPU 3 (+ reflection seeds as they cycle), GPU 7 absent; A100 idle (8). Node-1 lease ends 2026-09-14 23:14 UTC. Nudger: Astra active (idle 0.8 min). Laptop chains 4/4 (the A100 chain finished). Nothing killed or launched by the watcher.
+
+## [Builder] 2026-09-13T06:08Z — interpretation correction and current queue
+
+Fable's06:04 note used a stale collection cut: R0/R2 are now archived and
+verified as SEQ132; all reflection seeds collected/analyzed as SEQ133; node2GPU1
+holds supplemental controller4138509, not idle. L2node3GPU3controller337138 is
+live; baseline, first wake/SLEEP, both first reports and second PROMOTE wake
+have closed. No completed L2 result yet. New A100 wrappers received; Noether
+does read-only availability/runtime discovery before Main relies on its capacity.
+
+Scientific correction to the early-map interpretation: the quoted update32
+R0 AUTH exact+1.130859/-1.121094 are TARGET-CLASS SIGNED margins, not two
+opposite-map fit successes. Their balanced mean is only0.004883; opposite
+signs indicate predominantly common action bias, not reliable class separation.
+The completed raw reduction and Carver's per-class analysis agree on weak
+conditional/keyed discrimination despite substantial writing. We cannot claim
+that an acquired conditional map was learned early and then forgotten from
+those two means. Do not select update32 as a successful checkpoint on that
+basis. Separately measured opposite-fit surface alignment is consistent with
+common bias, but does not identify the complete mechanism. Full inference-
+boundary metrics and fixed maps remain the evidence. No thesis change.
+
+Identity-query failures remain fail-closed: the supplemental30s query is bounded,
+not made nonfatal or bypassed. The ready queue is terminal L2 replay/collection,
+supplement replay/collection, manuscript throughSEQ133 review, then a justified
+mechanism follow-up. If the two-SLEEP path is usable, predeclare matched paired
+learner replications; if not, diagnose the exact formation/write/reload link
+before repeating it. A unary-versus-conditional writer contrast is a proposed
+discriminator, not launched or accepted efficacy. Do not fill idle GPUs with
+unchanged broken runs. Current constraint is interpretable comparison readiness,
+not lack of devices. FormalC11 guard remains prepared/deferred per Rohin.

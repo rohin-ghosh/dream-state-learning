@@ -1,4 +1,21 @@
-## Current superseding snapshot — 2026-09-13 05:26 UTC
+## Current superseding snapshot — 2026-09-13 06:08 UTC
+
+Two live controllers: native L2node3GPU3PID337138 (5400scap, by07:23:53UTC),
+R1missing-readout supplementnode2GPU1PID4138509 (3600scap, by07:04:29UTC).
+Both original roots/source/plan pins and external logs in current HANDOFF.
+No L2 result yet; original R1 abort remains, no refit/primary replacement.
+Q0R0/R2 full-dose endpoints FAIL, raw replay and complete-root custody verified
+(SEQ132); no3-root scientific failure-rate denominator. All reflection seeds
+collected once (SEQ133), no correction-training advantage afterwithdrawal:
+increment0,0,-1/12 versusordinary. Exactprosezeros not semanticfailures.
+Analyzer receipt-serialization repair and archive locale/test-fixture repair
+preserve all original failed artifacts; native producer/data/scoring unchanged.
+Galileo updates six manuscript files throughSEQ133; pending Main acceptance.
+A100 wrapper received/Fable onboarded; Noether checks real runtime readiness.
+Simple hygiene, formalC11guard deferred, no mechanism freeze/clean founder or
+H1/H2/P1/G5/generalG3 claim. Mission incomplete; next actions in HANDOFF.
+
+## Historical superseded snapshot — 2026-09-13 05:26 UTC
 
 Six live controllers: node2GPU0/1/2 full-dose writers; node3GPU0/1/2 reflection
 seeds0/1/2. Replica seed2 attempt1 failed inventory timeout before launch;

@@ -1,6 +1,59 @@
-# Astra current handoff — 2026-09-13T05:26Z
+# Astra current handoff — 2026-09-13T06:08Z
 
-## CURRENT — September13 05:26UTC
+## CURRENT — September13 06:08UTC
+
+Mission ACTIVE, not complete. Simple hygiene now; finish/enforce formal guard
+only for final paper-grade C11. No clean-lineage, G3/P1/G5/H1/H2 or freeze promotion.
+
+LIVE L2: node3GPU3 controller337138/PGID337138/start_ticks9474170,05:53:52UTC.
+Root /localhome/local-rohing/astra_diagnostics/l2_public_record_20260913_attempt1;
+source /localhome/local-rohing/astra_sources/l2_public_record_20260913_attempt1.
+Plan da6a2d651d152979afee1ab862ab9218ef571149705e4bff5ad1a4ebc0289125;
+runtime213c2a2f508815eef752c72424f5dca64b76c9edb963f7ed6f68d5522c18853e.
+89CPU tests/native encoder/19launcher tests passed. Base-start PROMOTE/SHADOW,
+threefits/100updates/128calls max;5400scontroller inclusivecleanup (by07:23:53UTC),
+180sseparatecollection. External log /tmp/astra_l2_public_record_20260913_attempt1.controller.log.
+Baseline/wake1/fit1/report1both/wake2PROMOTE closed at06:06UTC, no result yet.
+Use pinned runtime collect only after terminal/finalization; never relaunch.
+
+LIVE R1 supplement: node2GPU1controller4138509/start_ticks50790721,06:04:28UTC.
+Root /localhome/local-rohing/astra_diagnostics/q0_R1_readout_supplement_20260913_attempt2;
+source /localhome/local-rohing/astra_sources/q0_readout_supplement_20260913_attempt1.
+Runtime6c0e40d242f6903fab53b303112c4f2e25afde62c696be02ee80a5c8ebd4ad08;
+manifestc7705a6843055d30c6582279779a0cc80a2603dbe4eb09781618d2eed2cfeb49.
+3600scontroller inclusivecleanup (by07:04:29UTC),180sseparatecollection. One
+saved DERANGED128 readout, no training; optional joined result DIAGNOSTIC only.
+Original R1 primary remains NONREPORTABLE_RUNTIME_ABORT. Supplement attempt1
+never launched: wrong node3 allocation helper refused node2systemd identity;
+failed root/claim preserved. Attempt2 uses existing node2 identity-bound checker,
+no privileged read/bypass. External log /tmp/astra_q0_R1_supplement_20260913_attempt2.controller.log.
+
+COMPLETE SEQ132: Q0R0/R2 finalized endpoint failures, whole4GBarchives on VM
+gpu_artifacts_local/q0_fulldose_20260913/{R0,R1,R2}_attempt1.tar. R1abort preserved.
+All whole-root custody verified including finalization; R0/R2 initial stream
+mismatch was en_US/C sorting only, exact18153-file maps equal; original failures
+and deterministic49test fixture repair preserved. Final native reports and
+watcher independent raw reduction bound in notebook/receipts. No retraining.
+
+COMPLETE SEQ133: reflection seeds0/1/2 ALL collected/transferred—NEVER RECOLLECT.
+VM gpu_artifacts_local/reflection_fit_20260913/seed0_attempt1,seed1_attempt1,
+seed2_attempt2 (each root plus _collected/_logs). Analyzer v2 fixes receipt
+serialization identity,41Main tests pass. Report42aed54229f515540fb878a4610597195fa84e26b4df9dfd8db97de8c284433b,
+archived as receipts_20260912/astra_reflection_three_seed_report_20260913_attempt2.json.
+Application/12: OFFwithdrawn7,7,7; OFFpresent9,9,9; ordinary9,9,9both; correctionfit
+withdrawn9,9,8,present7,7,7. No correction-training gain versusordinary; authored
+birth-component target, not child SLEEP. Exactprose0everycell != semanticfailure.
+
+Galileo owns SIX canonical manuscript files for SEQ130–133 update, not yet
+accepted; Main must review final EDITSTOP. Preserve unrelated gpu/codex/dream_state.rules.
+Noether does A100 availability/runtime discovery; Fable onboards/leases only.
+New A100 wrappers received, device claim8x80GB not yet Main runtime validation.
+Next: close two live runs with exact replay/custody, review manuscripts, choose
+next discriminating comparison from L2 link results (no automatic larger rerun).
+Source/test/handoff/launch/analysis receipts and failures archived; collaborator
+UNSENT. Node1 delta mirrored, whole94.6GBmirror restore not yet certified.
+
+## Historical superseded snapshot — September13 05:26UTC
 
 Six controllers: node2 full-dose R0/1/2 unchanged PID4012737/4012889/4013072,
 last monitor reached DERANGED fit after full AUTH fits/readouts, no terminal
