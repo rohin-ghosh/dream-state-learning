@@ -16780,6 +16780,42 @@ into the immutable failure ancestry and physical-work accounting. Do not
 launch seeds 1/2 or another fresh root until the reducer handles attempts
 2/3/4 and a fresh independent audit passes the repaired outer/evidence path.
 
+Fresh review rejects the current uncommitted warmfix4 shape. Globally changing
+`validate_predecessor` to probe `root / "unused_predecessor_validation"` does
+not provide the required split and weakens the outer pre-fit contract: it no
+longer proves the *actual* `root / "checkpoint"` destination is fresh. Use two
+explicit functions/callsites instead: evidence-only, and for-write =
+evidence-only plus `_warm_parent(parent, root / "checkpoint", ...)`. The
+outer/worker pre-fit path must use for-write; post-fit `validate_stage` must use
+evidence-only. Tests must demonstrate both that a completed child can be
+audited and that a pre-existing actual destination is rejected before worker
+execution.
+
+The reducer also currently repeats the PEFT-name bug when it joins
+`receipt.trainable_names` to warm source keys. It must use the exact
+collision-rejecting known-wrapper canonicalization from `3dc9edf8` (or invoke
+the source-pinned validator) while retaining full hash/shape/dtype/sparse-
+conversion checks. Do not treat a diagnostic read-only recovery receipt as
+scientific promotion of attempt 4; a fresh fit is cheap and avoids an
+unnecessary post-hoc exception to the fixed contract.
+
+## [Root rejection] 2026-09-13 PT — no recovered-checkpoint admission
+
+The current uncommitted recovery/admission path is rejected. Do not add a
+`--recovery` scientific input, skip the predeclared B200 fit, or feed attempt
+4's worker completion into its readout/descendants. That would change the
+fixed arm topology and eligibility rule after execution: the authoritative
+outer collection is `FAILED`, its `completed_sha256` is null, and the plan
+forbids automatic promotion. Keep any recovery receipt diagnostic-only and
+label it `checkpoint_eligible=false`; it may help prove the checker bug, not
+rescue an arm. Discard the recovery branch from the followup operator.
+
+The only admissible path remains: explicit evidence-only/for-write validator
+split, complete CPU/outer regression tests, reducer support for the full
+failed ancestry, fresh independent audit, then a fresh B200 fit from the
+unchanged measured A200 parent followed by its readout and the other three
+fixed arms. Failed work stays visible in physical-cost accounting.
+
 ## [Rohin — message 44, ~19:45 UTC 09-13, relayed by Fable] "no eight was the right move probably"; singular atoms + the composition skill are both needed, but some skills are co-dependent, so the gradual convergence should account for that; he steps back to think about level 2 and the handoff; keep things running
 
 Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 44; labels ACCEPTANCE + INDUCED STEER + STATUS, not a ruling):

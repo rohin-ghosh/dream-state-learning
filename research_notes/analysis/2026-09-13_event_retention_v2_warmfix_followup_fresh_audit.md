@@ -234,6 +234,46 @@ clean-only C0 parent for cumulative; no B200 outcome gate; no automatic retry
 or promotion; per-stage and per-seed deadlines; exact post-stage GPU/process
 release checks. The failed roots remain immutable evidence, not resumable work.
 
+## Rejected uncommitted warmfix4/recovery branch
+
+The helper's node-side worktree inspected after root commits `0ec0682e` and
+`1e4ed481` had not incorporated either ruling. It remained at the earlier
+history and contained two changes that are explicitly **NO-GO**:
+
+1. It changed the single global `validate_predecessor` implementation from
+   `_warm_parent(parent, root / "checkpoint", config)` to
+   `_warm_parent(parent, root / "unused_predecessor_validation", config)`.
+   That makes the post-fit replay stop colliding with the completed output,
+   but it also removes the actual-destination freshness proof from the pre-fit
+   worker path. A test that an existing child checkpoint remains untouched is
+   not a substitute for a test that a pre-existing actual destination is
+   refused before worker execution. This branch must be discarded in favor of
+   the explicit evidence-only/for-write split described above.
+2. It added `--recovery`, a recovery-certificate loader, and a branch that
+   skips the predeclared `B200_NEW_DOSE` fit, feeds attempt4's worker-level
+   completion into the B200 readout, and then initializes later descendants
+   from it. The accompanying test explicitly expects only three new fits.
+   This would revise the fixed topology and eligibility criterion after seeing
+   the failure. The authoritative attempt4 outer collection is still
+   `FAILED`, has `completed_sha256=null`, and forbids automatic promotion.
+   A recovery validator may remain diagnostic only, must state
+   `checkpoint_eligible=false`, and may not become an operator input.
+
+The same uncommitted reducer imported this recovery path. Although it had
+begun recursively accounting for attempt2 and attempt3 and had added the
+collision-rejecting PEFT canonical-name join, it still admitted recovered
+B200, still recognized the rejected broad warmfix4 scope, and had not yet
+encoded attempt4 as failed physical work followed by a fresh B200. At one
+inspection it also contained a duplicated `if parent_phase is None:` line in
+`check_fit`, so even its importability was not established. Its new tests and
+source remained uncommitted.
+
+No follow-up, reducer, recovery, or warmfix4 process was live at the final
+node-side process check. Therefore these rejected files did not create new
+scientific evidence. The only permissible next runtime is a fresh root after
+the split and reducer are committed, terminally tested, and independently
+audited.
+
 ## Reducer acceptance checklist
 
 Before any result is accepted, the committed reducer must:
