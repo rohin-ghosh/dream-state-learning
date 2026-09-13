@@ -1,19 +1,40 @@
 # PCFL scoped C0 native zero-fit: independent prelaunch audit
 
+> **Correction, 2026-09-13 13:44 UTC.** The audit's statement that the
+> attempt-1 `/tmp` manifest and allocation were absent was based on an
+> observation made through the always-on helper VM, not node 2 where those
+> paths live. Main subsequently rehashed both exact files on node 2; they were
+> present and matched their recorded hashes. Retract the missing-file claim
+> and the resulting second launch blocker. The stronger recommendation to
+> preserve raw and canonical inputs before spawn remains good final-C11
+> hygiene, but under Rohin's explicit directive it is not a blocker for this
+> exploratory scoped C0 run. Attempt 2 additionally has an honestly labeled
+> mid-run custody copy; it cannot be relabeled as pre-spawn custody. The exact
+> service-process repair was implemented and tested in `9a6d91d6`, so the
+> corrected prospective status is: service blocker closed; scoped C0 attempt
+> 2 may be used as exploratory DEV evidence subject to the terminal audit.
+
 **Date:** 2026-09-13  
 **Audited implementation:** remote commit `ba2872cc` (`Bind tested C0 outer controller and native pre-GPU acceptance`)  
 **Scope:** static and receipt audit only; no model, tokenizer, native backend, GPU, training, or test execution; no runtime/test edits
 
 ## Verdict
 
-**HOLD / REJECT launch at `ba2872cc` pending two narrow repairs; ACCEPT the underlying native path for a fresh scoped C0 attempt only after those repairs are committed, tested, and pinned.**
+**Corrected verdict: ACCEPT exploratory scoped C0 after the exact
+service-process repair in `9a6d91d6`; require the terminal audit before using
+the result.** The original audit held `ba2872cc` for two repairs. The first was
+real and is closed. The second arose from the wrong-host observation corrected
+above and is reclassified as final-C11 hardening.
 
 The scientific/runtime design is otherwise fit for its deliberately narrow purpose. It consumes one sealed, fixed inventory; exposes only the public task interface to one frozen Qwen2.5-7B-Instruct C0 actor; performs no fit, update, adapter mount, parenting, or retry; preserves the full 800-task denominator; and requires observed process/GPU release before a completed execution becomes usable.
 
-The two launch blockers are operational custody defects, not benchmark or model-design defects:
+The original audit identified two putative operational blockers, not
+benchmark or model-design defects; the second is now retracted:
 
 1. The real first preflight correctly failed closed on two unreadable, same-UID user-session daemons. A prospective exact-identity exception is needed for only those opaque processes; broadly ignoring `EACCES` is forbidden.
-2. The manifest and allocation files named by the failed attempt's context are already absent. A path plus a hash is not durable byte custody. The outer must preserve exact raw and canonical input snapshots before spawn and bind them through final collection.
+2. **Retracted:** the manifest/allocation absence observation was made on the
+   wrong host. Durable pre-spawn snapshots remain a final-C11 hardening
+   recommendation, not an exploratory launch blocker.
 
 Attempt 1 must remain immutable. Any repaired execution is a separately named attempt 2 with a fresh outer directory, diagnostic output, outer claim, manifest, allocation, and deadlines. It may reuse the exact frozen roots, 212 choices, plan, and tokenizer measurements. It may not rerun opaque-ID selection, change a task, replace a root, or call the new execution a retry of a model call: attempt 1 made no worker or model call.
 
@@ -96,16 +117,20 @@ The narrow repair should add a closed allocation field such as `opaque_environme
 
 Minimum new regressions: exact listed-EACCES acceptance; wrong start tick/UID/boot/comm rejection; extra unreadable PID rejection; non-EACCES rejection; readable listed process with selected CVD rejection; missing listed process policy; finalization new-opaque rejection; and raw receipt preservation.
 
-## Launch blocker 2: manifest/allocation byte custody
+## Retracted launch blocker 2: manifest/allocation byte custody
 
 Attempt 1's `context.json` records:
 
 - manifest path `/tmp/astra_pcfl_c0_manifest_20260913_attempt1.json`, byte hash `8d52469dae0534abe0b8c1a8da23ec664b7a3634d4ce25876ec3498a6c94952f`;
 - allocation path `/tmp/astra_pcfl_c0_allocation_20260913_attempt1.json`, byte hash `154593bfabfc0a220c42683c058ca8aac4cc06a12bad7fe7b429f013089e50bd`.
 
-Both files are already absent on node 2. The temporary copied source directory shown by the traceback is also absent, although the matching implementation bytes remain recoverable from commit `ba2872cc`. This proves that a temporary path plus a digest is insufficient artifact custody.
+The original audit incorrectly reported both files absent on node 2. That
+check actually ran on the helper VM. Main's direct node-2 check found both
+files present with the recorded hashes. The following is retained only as the
+stronger final-C11 hardening specification; it was not a valid reason to block
+the exploratory scoped C0 run.
 
-Before any repaired spawn, the outer must:
+Before the final paper-grade C11 spawn, the outer must:
 
 1. read and hash the raw manifest/allocation bytes once;
 2. require each input to equal the project's canonical JSON encoding plus exactly one LF;
@@ -119,7 +144,7 @@ The outer may continue to require that the original input paths remain unchanged
 
 Minimum new regressions: input path deletion after snapshot does not destroy later audit custody; a changed original still blocks during the live run; snapshot mutation blocks capture/finalize; noncanonical raw input is rejected; collection cross-links both raw and parsed snapshots; and a failed preflight retains the snapshots.
 
-## Fresh attempt-2 gate
+## Original fresh attempt-2 gate (item 1 closed; input snapshots deferred to final C11)
 
 Before launch, require all of the following:
 
@@ -144,4 +169,12 @@ Post-run audit must independently verify all 800 result rows, all generation/req
 
 ## Conclusion
 
-The native actor, zero-fit driver, and outer lifecycle form a coherent, conservative C0 diagnostic. The first live preflight exposed two real guard defects before any model work, exactly as a preflight should. Repair those two seams without changing the fixed scientific inventory, retain the failed attempt, and the fresh scoped launch is acceptable. Do not promote this narrow supplied-memory ceiling into a learning or whole-organism result.
+The native actor, zero-fit driver, and outer lifecycle form a coherent,
+conservative C0 diagnostic. The first live preflight exposed one real guard
+defect—the unreadable service-daemon handling—which `9a6d91d6` repaired
+without changing the scientific inventory. The second alleged defect was a
+wrong-host audit error. Pre-spawn input snapshots remain required hardening for
+final C11, while the honestly labeled mid-run custody copy is sufficient to
+retain attempt 2 as exploratory DEV evidence if its terminal integrity checks
+pass. Do not promote this narrow supplied-memory ceiling into a learning or
+whole-organism result.

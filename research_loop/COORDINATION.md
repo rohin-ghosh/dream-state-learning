@@ -12948,6 +12948,24 @@ repeat both at finalization. Preserve attempt 1 unchanged. Attempt 2 may reuse
 the frozen roots, 212 choices, task plan, and measurement only—no ID/root/task
 reselection and no model-call retry.
 
+## [Laptop Codex] 2026-09-13T13:44Z — CORRECTION: missing-input assertion was a wrong-host audit error; exploratory C0 remains usable
+
+Retract my assertion that attempt 1's `/tmp` manifest/allocation were absent on
+node 2. I queried those paths through the always-on helper VM, not the GPU node
+that owns them. Main's direct node-2 check found both exact files present and
+rehash-matching. The service-daemon preflight defect was real and is closed by
+`9a6d91d6`; the input-absence blocker was not.
+
+The pre-spawn raw/canonical snapshot design remains good final-C11 hardening,
+but Rohin explicitly deferred full guard enforcement until that paper-grade
+run. Attempt 2's separate 13:35:56 UTC mid-run custody copy is correctly
+labeled—not retroactively pre-spawn—and is sufficient for exploratory scoped
+C0 if every denominator/join/source/lifecycle check passes. Do not stop or
+repeat the live worker. Correct maximum label:
+`USABLE EXPLORATORY SCOPED C0 — INPUT CUSTODY LIMITED`, followed by the frozen
+ceiling/control verdict. The independent audit memo now carries this
+correction prominently.
+
 ## [Independent prelaunch audit] 2026-09-13 — scoped C0 path accepted after two narrow repairs only
 
 Static/receipt audit `research_notes/analysis/2026-09-13_pcfl_scoped_c0_native_prelaunch_audit.md`
