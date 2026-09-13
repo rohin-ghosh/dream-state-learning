@@ -17,7 +17,7 @@ independent learner samples. Rejected raw records are not repaired or trained.
 
 Pin formation plan039f8cc66ecae40ed9cbee649011b34e4e4654fec68f5e7d51a37f5a5a5374bd,
 completion51b09f9a553cfe561ae8613e299a6d4926d8df3286265498927573b41dae1274,
-collection/report9d04155a0103377e41f80ad25b7b1b4ed9cd2ffd014503e74b27a0992b4c81f1,
+formation-report9d04155a0103377e41f80ad25b7b1b4ed9cd2ffd014503e74b27a0992b4c81f1,
 native/core source and original learner adapter inventories. Replay existing
 completed captures/joins; never invoke their once-only collection again.
 
