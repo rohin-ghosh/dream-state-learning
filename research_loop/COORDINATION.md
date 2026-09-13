@@ -10531,6 +10531,39 @@ requests a prediction wherev1allowedomission; sameparserstillacceptsomission.
 This is an instruction bundle, NOT pureACT-prefix causal isolation. Report prior
 availability andexamplecopying aswell asvalid actions. Do not modify liverecords.
 
+## [Builder] 2026-09-13T08:36Z — SEQ146 second12 skills complete, with measured canary harm
+
+All12 second/fallback cells COMPLETE/collectedONCE/fullyarchived. Descartes
+verified native/VM archive custody and replayed1440/1440 original frozen score
+objects and48/48panel summaries exactly,13.479s. No alternate scorer, native
+regeneration or collection. Original A100failures remain missing, not replaced.
+
+| Skill | Heldcontent OFF -> post /48 (learnerseeds0,1,2) | Canarypost /12 |
+| --- | --- | --- |
+| perception | 21 -> 47,48,48 | 12,12,12 |
+| repetition | 0 -> 48,48,48 | 11,11,12 |
+| self_reflection | 0 -> 48,48,48 | 12,12,12 |
+| meta_reflection | 9 -> 48,48,48 | 12,12,11 |
+
+Allpoststrict matches heldcontent. AllcanaryOFF12/12. Threecanaryregressions
+remain: repetitionseed0/1 shorten copied 'rehearse? wait'; meta_reflectionseed2
+malforms arithmeticJSON. Perceptionseed0's one held failure is scalar try
+instead ofintegertriple. No heldcontentregressions; no blanketnoharm statement.
+Repetition/meta baseline outputs already exactJSON: their held gains are typed
+policy-content changes. Reflection andperception mix source/schema/interface
+changes. These authored fixed-material screens are NOT fullcognition, matched
+parenting, actual childSLEEP, compiler admission or H1/H2 evidence. First24
+standalone cells are now complete; do not repeat unchanged ceiling doses.
+
+AnalysisJSON1d2247c77bc582d2a0e3c8c69749ba541cfdf17fb04ec001fdfe11efc6b194a2;
+MD3d42de3bff3bc5a52c120d6d4dc34fbd424170a143610ca6e7e4ef4c78330b33;
+replayreceipt7daa501567354293697e17f1fe8681d37faceb96c1af7d89b796e1c709b616af,
+archived under receipts_20260912/astra_level1_second_roster_*.
+Four full archives under gpu_artifacts_local/level1_second_roster_20260913
+retain all12weights,rawcalls,fit/source/material/collection/claim receipts.
+Native andVM member/payload hashes agree; exact pins in analysisJSON. Same
+materialseed0 acrosslearners; pooled rows are not independent source cases.
+
 ## [Fable] 2026-09-13T08:33Z — self-check: FIRST LEVEL-1 SKILL GAINS (SEQ-142): four skills reach 48/48 held content on 3/3 seeds at the agreed recipe and scale, with real content corrections; the real-interaction test then fails at the action interface (SEQ-144); contrastive screen directional but below its gate (SEQ-140); all six L2 LR cells flat (SEQ-141/145); the A100 roster failed on a runtime PATH gap (SEQ-143); occupancy 12 → 0 as rosters completed
 
 **SEQ-142 (08:05) — the overnight target, part one:** first 12-cell Level-1 roster at the SEQ-113 recipe (320 updates) with 96 train / 48 held / 12 canary rows per skill, 3 learner seeds. Held CONTENT correct OFF → post, /48: contradiction 17 → 48; goal_completion 32 → 48; prediction 22 → 48; update_judgement 8 → 48. Strict (format + content): 0 → 48, 32 → 48, 22 → 48, 0 → 48. Canary (OFF-correct unrelated items): 12 → 12, 11 → 12, 11 → 12, 12 → 12 — no regressions. Content wins/losses 31/0, 16/0, 26/0, 40/0. Identical across seeds 0/1/2 (shared material seed). Builder: these include typed and source-content corrections, not only formatting (contradiction 31 parseable wrong contents fixed; judgement 34 parseable wrong contents + 6 unparseable). Cost 12 fits / 3,840 updates / 1,440 calls; 4.83 M training tokens, 252 k supervised. **Scale reading:** the five agreed changes (recipe transfer + 8× the rows + skins) turned the format-only slices of an hour earlier into content gains that saturate the held fixtures; the fixtures are same-distribution authored material, so the ceiling says "fixture too easy", not "skill mastered". Second roster (perception, self_reflection on node 2; repetition, meta_reflection on node 1 after the A100 failure) is complete and collected; reduction pending. Ledger P15.
