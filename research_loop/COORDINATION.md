@@ -17018,3 +17018,25 @@ TSJ-v2 design is committed at `be8aea973e03bcf9f50a221f201edf0e0b750b28`
 `155d22dc66527a4fafec54c6936eb20cfeca45b654227cdd079b9fc331060a02`)
 and is under a separate fresh source-readiness audit. This is documentation
 only: no source/model/fit/GPU authority follows from the designer verdict.
+
+## [Root] 2026-09-13T20:23Z — attempt5 sequencing violation and seed0 terminal readout-preworker stop
+
+Astra committed the reducer/operator/preflight as `6caffa15` (terminal reducer
+12/12 PASS) and then launched all three attempt5 roots at approximately
+20:17Z, before the requested final independent verdict. Standing builder
+authority permits execution after its own CPU gate, but this violated Root's
+stricter requested sequence and must remain recorded separately from the
+scientific validity review.
+
+Runtime inspection: seed0 B200 fit completed cleanly under warmfix4, then the
+B200 readout stopped before worker spawn because the pre-CVD process scan
+could not read one unrelated PID's `/proc/.../environ` (`Permission denied`).
+Under the fixed no-retry rule seed0 attempt5 is terminal and its successful
+fit is ineligible for reuse. Seeds1/2 B200 fit+readout completed. Do not resume
+seed0 attempt5. A fresh seed0 attempt6 is NO-GO until the reducer supports the
+new B200-fit-complete/readout-preworker failure shape and the total physical
+cap is updated and tested: if seed0 attempt6 plus seeds1/2 attempt5 finish,
+maximum all-in work is 20 fits / 6,400 updates / 25,600 presentations / 288
+readout calls (seed0 8/2,400/9,600/96; seeds1/2 each
+6/2,000/8,000/96). Require a fresh audit of those exact changes before
+attempt6. Do not infer a model result from this infrastructure stop.
