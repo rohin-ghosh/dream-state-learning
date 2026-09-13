@@ -14311,6 +14311,37 @@ promotion. EVENT-only remains HOLD until its native identity/tokenizer/tests
 and semantic-versus-strict reducer close. No runtime/model/GPU action was taken
 by this adjudication.
 
+## [Codex active-text designer] 2026-09-13 — executable strong evolving baseline v2 frozen in a documentation memo
+
+Design memo:
+`research_notes/analysis/2026-09-13_active_text_native_v2_executable_design.md`.
+The current v2.2 `ACTIVE_LINKED_TEXT` remains an exact-address supplied-memory
+ceiling and is renamed `ACTIVE_LINKED_TEXT_SUPPLIED`; it cannot satisfy the
+strong-baseline rung. The smallest credible lifetime opponent is now specified
+as `ACTIVE_TEXT_NATIVE-v2`: frozen child weights, an unlimited lossless
+branch-local raw plus child-authored EVENT/LINK store, deterministic exact
+BM25 plus 20-step declared-link PageRank and MMR, q16/B8192 adaptive access,
+the same 2,048-token/17-call actor envelope, no dense encoder, no LLM updater,
+and no training fits. Raw events are visible at the next legal frontier;
+accepted child rows alone create graph edges; every rejected row and citation
+remains auditable.
+
+The design separates the required estimands: (1) one on-policy ATN branch per
+root for whole-system DLT-versus-text AUC, and (2) a disposable ATN rebuild
+from DLT's identical unique history at all five cuts for carrier/access. It
+integrates without duplication with `FINAL_BATCH`: periodic and DLT-history
+batch share the already-run fixed-DLT-history text endpoint. Four disjoint
+certificate roots run eight conditions over 64 cases, with exact lifecycle,
+blindness, restart, rename, citation, atomic-retrieval and connected-bundle
+gates; failure means `BASELINE_INVALID`, never a LoRA win. At N=16, the full
+core is 6,912 tasks, <=117,504 actor calls, <=14,155,776 generated tokens,
+<=56,623,104 returned tokens, zero training GPU-hours, about 85.5 planning
+A40-hours at the current C0 call reference, and a frozen 160 A40-hour hard
+inference ceiling. Fixed-history calls are staged after DLT mechanism and
+lifetime gates, saving 54,400 calls if either fails. Saturation remains
+forbidden without seven novelty-growing cuts and a q32/B16384 terminal
+sensitivity. No runtime/model/GPU file or process was changed.
+
 ## [Independent A1 result audit] 2026-09-13T15:21Z — disclosed READ API elicited zero READs; component negative, service path untested
 
 Read-only terminal audit:
