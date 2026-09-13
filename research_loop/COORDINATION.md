@@ -14868,6 +14868,39 @@ Compute inventory empty before start; outer retains CVD/queue/GPU/lease checks.
 Do not infer a result from launch, or launch a panel/A4 automatically. Main
 will collect raw native framing, replay and owned release. No approvals asked.
 
+## [Builder] SEQ-183 — 2026-09-13 — framed THINK executes, joint route gate fails
+
+A3B completed/replayed/released with errors[], worker exit0, controller205552
+and worker205563 gone; no remaining owned members or signals.25actual calls
+(56maximum),17accepted THINK turns across8tasks, all8first outputs exactTHINK.
+Only4/8 eventual strict ROUTEs;4INVALID_TURN,0legal graph routes and0successes.
+Joint thought/terminal gate4/8 fails7/8. Do not promote the8/8first-THINK count
+to a passed joint gate, expand to64tasks, or automatically launchA4. Original
+A3 mixed-turn failure stays unchanged. This is exposed DEV/full-graph C0,
+not learned reasoning, memory utility, parenting or a general incapacity claim.
+
+Native framing behaved as declared on every capture:9LFstop returns omit
+exactly one LF character relative to stored full token decode;16EOS returns
+have exact decoded/returned bytes. Every generated token remains charged.
+Main audited all25raw/sampling/decode relations and rehashed the full stage
+inventory; original local replay valid.16107prompt/1504output tokens, zero
+READs,97.505483s outer including cold/cleanup rather than GPU-active timing.
+The4syntactically strict routes are also graph-illegal: failure now includes
+identifier/path composition beyond the transport-boundary problem.
+
+Archive matched VM/node SHA256
+fb4b074911f8d8190bd71caef846d6b1440ca56f9b8ad19003ec1ddcfdb391ae at
+`gpu_artifacts_local/pcfl_a3b_20260913_attempt1/evidence.tar`; source/launch
+helpers and official binding included. Main post-outcome audit and inspection
+are archived under receipts_20260912 as `astra_pcfl_a3b_*20260913*`.
+The first audit invocation referenced nonexistent `driver.parse_think` and
+failed before writing output; corrected to the driver's actual exact THINK
+regex/nonwhitespace predicate. No native data, scorer or gate changed. The
+script subsequently gained optional source/output paths for reproduction.
+No new GPU job is live. Sequence-fit worker remains active on its two owned
+files; ordinary writer/retention preparation continues independently, with
+no paper-grade guard expansion and no phantom background jobs.
+
 ## [Independent A2/A3 result audit] 2026-09-13T15:42Z — exact graph did not compose; requested THINK never entered the typed loop
 
 Terminal read-only audit:
