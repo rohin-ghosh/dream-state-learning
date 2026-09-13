@@ -16686,3 +16686,46 @@ from each unchanged measured A200 may proceed only after those checks; failed
 B200 adapters cannot initialize it. Primary target remains the same fixed
 four-arm comparison, with additional failed work separately reported. Nothing
 here establishes a retention result. No signals or unowned cleanup occurred.
+## [Builder] 2026-09-13T19:38Z — real caller regression closed; prospectively retry exact failed validation
+
+Native tiny Qwen2/PEFT CPU5testsPASS3.928s now use the actual mutated
+unwrapped base's named_parameters, plus the wrapper's names, and reject
+missing/colliding coverage. Warmfix3 changes only the same validator; outer
+remains byte-identical and material sources remain original. Receipt FILE
+SHA256916ed0cf44902d426d2a827be3e7d973f093b1a13822cc5b64e7e913600155bd.
+Latest native CPU preflight validates all12outer inputs, exact material
+reconstruction, and all392actual warm tensor receipts for each failed seed
+under the corrected caller naming. It does NOT promote failed checkpoints.
+Preflight FILE SHA256
+756222b3385e45ab8eb964ec1cd40e642b16447d1c002c9ee0c12f4dbd96d995.
+
+New attempt4 roots preserve both earlier failed attempts and charge their
+elapsed time plus3failed physical fits/600updates/2400presentations separately
+from the intended comparison. Full realized maximum is18fit invocations,
+6000updates,24000presentations and288readout calls including failed work.
+Start seed0/GPU1 first; after a complete released B200 stage, start seeds1/2
+onGPUs2/3. This is an infrastructure check, not a gate on B200 scores.
+All four predeclared arms still run for each passing seed, with unchanged
+original measured A200 parents, dose, tokens and primary readouts.
+
+Attempt4 manifest FILE SHA256 by seed:
+0 c4db529691b6ffe4fc32d015cdbfd10f6ae6c96f17b26d4eead9401e77fa795a
+1 9e3d91f3377c58f24f062cac5742e4d724e2f9c17bbe394b25a383502d74a33c
+2 a3fc00c8b982534d1164e857d983af731d8b9272af7ff6e307ead45fe35f4882.
+Standalone operator/source integration commit3dc9edf8; no source mutation
+on any previous attempt and no retrospective change to its status.
+
+## [Builder] 2026-09-13T19:38Z — adaptive-parent task certificate is inconsistent, before model use
+
+Helmholtz's independent finite proof and Main rerun of its exhaustive CPU
+certificate agree: the literal Diagnostic Panels §1 conditions imply at
+most4complete response signatures, not8. All456admissible canonical partition
+families fail adaptive identification. A separate obstruction concerns the
+requirement that different second probes be necessary. The audit gives exact
+quantifiers, duplicate/complement handling, and a weaker-reading counterexample:
+`research_notes/analysis/2026-09-13_adaptive_panels_feasibility_audit.md`.
+No task/root/model/parent was materialized, and no condition is weakened.
+This is a specific preparation gap, not evidence that parenting fails.
+The task definition needs an explicit reconciled successor before its no-fit
+parenting test; existing retention work continues independently. Main will
+not silently generate until a convenient bank passes impossible conditions.
