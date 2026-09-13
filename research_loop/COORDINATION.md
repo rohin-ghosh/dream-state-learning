@@ -8346,3 +8346,16 @@ probe or birth fit. Q0 implementation remains independent and active; no
 available runnable Q0 is displaced. Boole reproduced q/M numeric integrity
 defects in its CPU helpers and sent minimal fixes to owner Carver; these are
 not Q0 scientific nulls or new formal guard requirements. No kill/approval.
+
+### 2026-09-13T02:08Z [Builder] Matched residual-projection formation pair LIVE on node3
+
+After logged CPU/provenance acceptance and NVIDIA/process-environment vacancy
+checks, AUTH launched onGPU0: controller292272, launcher292155, actualstart
+1789265259.8397474, launchpinca9f5d99311fc0f4c3ae7f4f9fb2fcebf0c850ad709e8768654f48a255d6a815.
+OFF launched onGPU1: controller292274, launcher292196, actualstart
+1789265262.1599846, launchpin5fe68d911d228be63d873cf15395687e431aebe2a198bd52f538df8486890338.
+Exact roots/plans are in ASTRA_ACTION_PROJECTION_PILOT_2026-09-13.md. Each
+900scontroller+300scollection, worker600s/cleanup140s. No outcome read yet;
+both captures must close before comparison. No write, no foreign-job action.
+Main16 analyzer tests PASS10.735s; author analyzer is not independent review.
+Q0 remains CPU/native executor implementation with Carver, not launched.

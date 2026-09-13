@@ -890,3 +890,34 @@ Historical local-only origin receipts remain unchanged; this is not clean
 ancestry. Six-file reviewed manuscript is through SEQ121 at baf725ec, not
 SEQ122/123. Collaborator update remains UNSENT. Formal C11 guard stays deferred;
 simple hygiene, provenance, blindness, matched controls and lease margins apply.
+
+## September13 02:08UTC — matched projection AUTH/OFF live
+
+Main's pair runs on node3 in source830fe675ec16bdbe4c0a5dc36ec66908b28da6ce.
+AUTH GPU0 controller292272/launcher292155, OFF GPU1 controller292274/launcher292196.
+Roots are `~/astra_diagnostics/astra_projected_formation_AUTH_seed0_20260913_attempt1`
+and the corresponding `_OFF_` root. Plans respectively
+96cb57f6d3150ed916923d329e02bea7853a8019dc4ce97522876aa667c4bb30 and
+57fd3215d3e6de33c7ece8943c128a4992b2178de3e73abd01b070ae8a33e9a2.
+Launch roots append `_launch`; launch hashes respectively
+ca9f5d99311fc0f4c3ae7f4f9fb2fcebf0c850ad709e8768654f48a255d6a815 and
+5fe68d911d228be63d873cf15395687e431aebe2a198bd52f538df8486890338.
+Actual starts1789265259.8397474/1789265262.1599846.900scontroller plus300s
+collection. Use `/tmp/astra_projected_rulegame_formation_run_20260913.py`
+status/collect, exact native interpreter and sourcePYTHONPATH; never change
+live driver/source. Driver e0b673b7dc2ef6b556acfd47ab1df9db320c6122a459d957465cfe4315bb0a6e,
+launcher `/tmp/astra_launch_projected_formation_20260913.py`
+3e79ca6fb0984a4814664bfd22aa05c20fc466bbb7a2f38506c581f0206170fa.
+Wait for both raw captures and owned releases before reading outcome bodies.
+Collect each once into a fresh sibling `_collection` directory, then retrieve
+capsule.tgz/validation.json and run paired analyzer against frozen local source.
+Analyzer `/tmp/astra_projected_formation_analysis_20260913.py` plus handoff
+has exact CLI; requires trusted validation hashes and explicit both-closed flag.
+Main16 analyzer testsPASS; native164+47 source/runtime regressionsPASS.
+
+Arendt analyzer and Einstein runtime tests EDITSTOP. Carver actively owns Q0
+executor/tests: complete native lifecycle, not merely CPU helpers. Boole numeric
+audit found q/M producer-validator/reducer discrepancies; Carver has repair
+request. Constants prospectively registered in ASTRA_Q0_NUMERICAL_REGISTRATION_2026-09-13.md.
+Do not launch Q0 from incomplete native plumbing or mix any later exploratory
+data into its closed historical input allowlist. Rulesfile still unrelateddirty.
