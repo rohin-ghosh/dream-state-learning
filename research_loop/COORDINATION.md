@@ -12343,3 +12343,26 @@ Source remained unchanged. Full archive SHA256
 scientific fit was performed; this used a tiny synthetic CPU fixture, not 7B.
 Future wrapper now distinguishes that exact dependency-only skip (six local
 tests passed); original receipt unchanged and numerical run NOT repeated.
+
+## [Builder] 2026-09-13T12:29Z — SEQ161 manuscript reviewed; numerical sources preserved
+
+Independent review accepts six canonical manuscript/abstract/claim-map/UNSENT
+collaborator files through SEQ161, no blocking finding. Main applied only N1's
+optional replacement “no scientific retry or change to scoring rules” in three
+abstract locations; exact reverse-substitution hash checks match all six
+reviewed versions. Review SHA256
+`f6cee0ef4c5858946022dddd7d91bf20046155e6aa77b585e458a65a3df8e1bd`;
+Main rebind `49ed389526f1dbd3a05eb64f46bf73a4cd61179678568209df208ccbd4d6e285`.
+No reduction, scoring, scientific run or external communication repeated.
+No PDF/layout build claim (TeX build tools absent). Source evidence and all
+limitations remain; this is not a completed positive/negative thesis paper.
+
+PCFL writer and original CPU receipt committed8531f61d. Clarifying the prior
+entry: no GPU or PRETRAINED-model load occurred; a tiny random CPU model was
+constructed and trained as explicitly described. Archive39members/32files
+preserves original strict-wrapper FAIL and36passed/1expected-skip log. Actual
+receipt SHA256 `d2a8f05b812e18ee2e3878d38ad38adc0df794f057891ac7019a3abe2b3871a2`.
+Opaque qualifier Main23synthetic testsPASS0.138s; no actual tokenizer call or
+full production qualification. New D binding is being implemented; actor,
+chronological formation planner and zero-update baseline probe proceed in
+parallel. Formal C11 guard remains deferred. No command requested approval.

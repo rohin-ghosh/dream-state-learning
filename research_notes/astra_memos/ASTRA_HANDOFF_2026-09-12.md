@@ -1,6 +1,6 @@
-# Astra current handoff — 2026-09-13T12:10Z
+# Astra current handoff — 2026-09-13T12:29Z
 
-## CURRENT — September 13 12:10 UTC
+## CURRENT — September 13 12:29 UTC
 
 No Main GPU job remains live from the additive allocation. All six fits and
 480 readout calls completed; three scientific controllers rc0, original
@@ -29,11 +29,31 @@ Beauvoir: organism_v6/pcfl_vertical_dev.py and matching test;
 Kierkegaard: organism_v6/pcfl_vertical_prepare.py and matching test;
 Descartes: organism_v6/pcfl_vertical_train.py and matching test;
 Copernicus: gpu/astra_pcfl_vertical_dev.py and matching test. Main integrates
-and owns native operations. Concrete distractor D binding remains unresolved
-in laptop production-binding memo: no invented topology or native readiness.
-Continue CPU integration and known world behavior meanwhile.
+and owns native operations. Core/preparer/runtime committed b4911b62; writer
+and numerical receipts committed 8531f61d. Main passed core39/preparer26/
+runtime22 CPU tests, writer35 plus two local numerical skips. Actual node2
+offline CPU run then passed36/37 tests, including tiny random bf16 Qwen LoRA
+200-step save/reload and pooled-gradient tests. The one expected missing-Torch
+branch skipped because Torch is installed; original strict wrapper rc1/FAIL
+is preserved. No numerical assertion failed and the run was not repeated.
+Full archive: gpu_artifacts_local/pcfl_tiny_cpu_20260913_attempt1/evidence.tar,
+SHA256 23e67bc1cf21f5554a6bd8839bd59801e0f2b3e8140f5b848e731901c3be5f69.
 
-SEQ160 manuscript independently accepted in 8921724f; collaborator UNSENT.
+Main prospectively bound D as X->Z/q_D, role-neutral probe result, private
+probe-only receipts and terminal D/malformed behavior in 0418cb53, memo
+ASTRA_PCFL_PRODUCTION_WORLD_BINDING_2026-09-13.md. This explicitly new Builder
+choice does not promote old unspecified bytes or change H1/H2. Beauvoir now
+implements/tests the bound world. Native readiness remains incomplete.
+Kierkegaard finished qualifier (Main23testsPASS), next preparer binding update;
+Copernicus owns thin native actor; Parfit owns pre-output chronological
+formation planner; Lovelace owns zero-update OLD/NEW baseline diagnostic.
+Their new files remain worker-owned until EDITSTOP. Descartes writer is frozen.
+
+SEQ161 manuscript independently accepted; Main applied only the reviewer's
+three optional scoring-rules wording clarifications, exact byte rebind PASS.
+Review SHA256 f6cee0ef4c5858946022dddd7d91bf20046155e6aa77b585e458a65a3df8e1bd;
+rebind SHA256 49ed389526f1dbd3a05eb64f46bf73a4cd61179678568209df208ccbd4d6e285.
+Both archived in receipts_20260912; collaborator UNSENT. No PDF build claimed.
 Explicit-contract measurement prototype is CPU-tested and parked, not another
 GPU prerequisite. Formal guard remains deferred to final paper-grade C11;
 simple hygiene applies now. No mechanism freeze/general G3/P1/H1/H2/clean

@@ -1,13 +1,31 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ160 retains both positive and negative findings.
+This evidence cut through SEQ161 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current evidence through SEQ160 — C96; ongoing first draft.**
+**Current evidence through SEQ161 — C97; ongoing first draft.**
+Matched full-memory-schedule ADDITIVE versus fresh MEMORY_ONLY yields exact
+14/14,7/8,8/8 versus10/14,8/8,3/8; paraphrase10/14,7/8,4/8 versus10/14,8/8,2/8;
+held47/48,48/48,39/48 versus47/48,46/48,47/48, with12/12canaries in every cell.
+Frozen screens pass2/3versus1/3, not an all-seed repair. ADDITIVEseed2 loses nine
+LR0-correct held items and its paraphrase4/8 only ties the evaluator-only constant.
+Fresh MEMORY_ONLY differs from historical EXTRA_MEMORY in all three native seeds,
+including loss/final-tensor receipts despite matching initialized receipts and
+memory occurrence order; cause unresolved, limiting causal attribution.
+Original controllers succeed but collectors/holders fail from a scorer-binding
+bug; a separate byte-bound collection-only repair preserves rc0/1/1 and records
+recovery rc0, with zero new model calls/fits/updates and no scientific retry.
+Seed1's launcher BrokenPipe remains separate. The completed6fit/1632update/480call
+contrast matches memory exposure, not compute/RNG or realized gradients. Replay
+reads already-trained authored observations, not new TRY experience or parenting.
+C11 remains deferred; H1/H2 and the raw-chronological attribution gap remain open.
+No freeze, general G3, clean-lineage or mission promotion. Collaborator UNSENT.
+
+**Historical evidence through SEQ160 — C96.**
 The fixed-lesson alignment assay fails its frozen gate: all nine cells have
 process-use, faithful-record and full-material scores0/16. All144NOTE attempts
 and137called record sources fail normalization, so these zeros are not evidence
@@ -4408,5 +4426,81 @@ are nested spans; holder is allocation, not GPU-active time. Prepare and collect
 remain separate stages, not added to nested times. Main's archive pin is
 `ee83389388135d786c0508e602db01f8678a29c0b2a8a53efae6d2ecf3ae220f`;
 the manuscript writer did not repeat archive or original-parent tensor verification.
-The completed evidence cut ends at SEQ160. CPU additive parity is a prerequisite
-for future engineering decisions, not an experiment outcome; Main owns any next run.
+At this historical cut the completed evidence ended at SEQ160. CPU additive parity
+was a prerequisite, not an experiment outcome; the subsequent contrast is C97 below.
+
+
+## C97 — SEQ161: additive replay with native baseline drift
+
+| Seed | Arm | Exact eligible | Paraphrase content | Held | Canary | Lost LR0-correct held | Screen |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | --- |
+| 0 | ADDITIVE | 14/14 | 10/14 | 47/48 | 12/12 | 0 | Meets |
+| 0 | MEMORY_ONLY | 10/14 | 10/14 | 47/48 | 12/12 | 0 | Meets |
+| 1 | ADDITIVE | 7/8 | 7/8 | 48/48 | 12/12 | 0 | Meets |
+| 1 | MEMORY_ONLY | 8/8 | 8/8 | 46/48 | 12/12 | 2 | Fails |
+| 2 | ADDITIVE | 8/8 | 4/8 | 39/48 | 12/12 | 9 | Fails |
+| 2 | MEMORY_ONLY | 3/8 | 2/8 | 47/48 | 12/12 | 1 | Fails |
+
+The unchanged screen requires exact eligible recall>=8/14,7/8,5/8 and zero lost
+LR0-correct held/canary items. Neither arm passes all seeds. Exact eligibility,
+paraphrase content and strict formatting remain separate: all480calls stop, but
+only5/120memory readouts are strict canonical. Original possible-record16 is
+not the admitted-memory14/8/8denominator; no seed or failure is excluded.
+
+Fresh ADDITIVE-minus-MEMORY_ONLY exact differences are+4/-1/+5, paraphrase0/-1/+2,
+and held0/+2/-8. Seed2's held contrast comprises one gain and nine losses, not
+zero harm. All canaries remain correct. Best evaluator-only constant-target
+counts are6/14,4/8,4/8, from4/5/5distinct raw targets: seed2ADDITIVE paraphrase4/8
+ties its constant, while MEMORY_ONLY exact3/8 and paraphrase2/8 fall below it.
+These repeated-target banks do not establish general key binding.
+
+Fresh MEMORY_ONLY does not reproduce historical EXTRA_MEMORY: old exact13/14,
+7/8,7/8; paraphrase10/14,6/8,7/8; held47/48,46/48,42/48. Raw/finish drift counts
+(exact/paraphrase/held/canary) are5/0/0/0,1/2/0/0,5/5/7/0. Initialized tensor
+receipts and full memory occurrence/epoch order match, but loss traces differ
+from epoch1 and final tensor receipts differ in all three seeds. Native parity
+is unresolved despite tiny CPU parity; the cause is not inferred. Keep the
+results, but diagnose drift before attributing differences to a clean replay
+mechanism. Historical LOWER/HIGH/LR0/REPLAY/EXTRA_MEMORY are noncontemporaneous,
+zero-incremental-cost references, not additional fresh controls.
+
+Both arms start from original perception parents with fresh optimizers,
+LR3e-5,eight passes,rank8/alpha16/dropout0.05. At each of24extra memory occurrences,
+ADDITIVE adds one own-source observation loss: mean-token CE(memory) plus
+mean-token CE(replay), not their average. Both retain the exact old EXTRA_MEMORY
+schedule,304/256/256updates per arm. Cohort cost6fits1632updates480coldcalls;
+ADDITIVE adds576replay forwards and198552tokens to141368memory tokens. MEMORY_ONLY
+has141368tokens. Matched memory occurrences are not matched compute, RNG, timing
+or realized gradients. No new capture or parent-model call; replay reads
+already-trained authored TRAIN observations, not new free-action experience.
+
+Original controllers rc0, automatic collectors/holder-written receipts rc1:
+AttributeError: material dict lacks score_row. A separately pinned collector
+restores the original scorer-module binding without changing raw outputs,
+targets or scoring rules. Recovery records rc0, collection attempt2, no scientific
+retry and zero fits/updates/generation; old failure directories, claims and logs
+remain intact. Seed1's post-launch BrokenPipe is separate and preserved.
+All raw/source/token/route/release checks pass; retained errors include
+seed2ADDITIVE's nine held output-variant failures and MEMORY_ONLY's one malformed
+held JSON. These are not discarded as receipt problems.
+
+Controller660.238/570.774/583.234s; original holder677.930/585.522/598.028s includes
+failed collection17.542/14.608/14.649s. Preparation33.373/30.645/30.347s is separate;
+logged preparation+holder totals0.543290allocation-hours, not GPU-active time.
+Separate CPU recovery30.245/23.559/23.829s adds no scientific dose. Local reduction
+runs once,rc0,4.265s. Nested clocks must not be added twice; independent OS reaping,
+current native identity and unlogged reservation gaps are not reauthenticated.
+
+This single-write development contrast is a seed-dependent tradeoff, not an
+all-seed retention repair or repeated-cycle result. C11 remains deferred; the
+same-history raw-chronological LoRA comparator is still absent. No H1/H2,
+parenting, general G3, clean-lineage, mission or freeze promotion. Collaborator UNSENT.
+
+Sources: [archived full analysis](receipts_20260912/astra_additive_replay_recovered_analysis_result_20260913_attempt1/analysis.json),
+SHA256 `848602f01ca0596306dcb629a2e1d6896e08620cc6a67baa996853118c1cdb89`;
+[execution and interpretation handoff](receipts_20260912/astra_additive_replay_recovered_analysis_execution_20260913_attempt1.md),
+SHA256 `b3397ae8f4a29569f2f49e5d96a21410e73d072b101c439424d401ad5bfcfdfa`;
+[baseline/timing review](receipts_20260912/astra_additive_replay_recovered_analysis_result_20260913_attempt1/execution_review.json),
+SHA256 `c7e8f7eb64a42589869e6f5f903854044405eb9acfc944102d450164b12c35d1`;
+[frozen protocol](ASTRA_ADDITIVE_REPLAY_DEV_2026-09-13.md).
+SEQ161 is archived in `f15dec6c`; these pages summarize that cut, not a rerun.

@@ -1,4 +1,4 @@
-## Current superseding snapshot — 2026-09-13 12:10 UTC
+## Current superseding snapshot — 2026-09-13 12:29 UTC
 
 SEQ-161 additive evidence completed, recovered, independently reduced and
 archived; no Main GPU allocation remains live. Scientific controllers rc0;
@@ -8,11 +8,16 @@ fresh MEMORY_ONLY fails native historical parity. Drift audit pending, no
 general repair/causal attribution. Exact paths and hashes in current HANDOFF.
 Never repeat completed fits, collection or reduction.
 
-PCFL core/preparer/trainer/runtime have separate active owners; Main integrates
-CPU seams. Missing concrete D binding is explicit, not an invented no-op or
-reason to stop independent implementation. Parked measurement proxy has no
-native allocation. Manuscript independently accepted through SEQ160; update
-through SEQ161 still needed. Collaborator UNSENT. Formal guard only final C11;
+PCFL core/preparer/runtime committed b4911b62 and writer8531f61d. Main CPU
+checks passed, including actual tiny random bf16 Qwen/LoRA200updates/save/reload
+in node2's offline CPU environment. Suite36passes/1expected dependency skip;
+strict wrapper rc1 preserved, no numerical rerun. See HANDOFF/archive pins.
+D now explicitly prospectively bound in0418cb53; implementation/tests pending,
+not native readiness. Token qualifier Main23testsPASS, native actor and
+chronological formation planner underway. Baseline no-update diagnostic being
+prepared; no GPU launch yet. Manuscript independently accepted throughSEQ161
+with Main's exact optional wording rebind; collaborator UNSENT. Parked proxy
+has no native allocation. Formal guard only final C11;
 simple hygiene now. Mission ACTIVE/incomplete; no freeze/general G3/P1/H1/H2.
 
 ## Historical superseded snapshot — 2026-09-13 11:42 UTC

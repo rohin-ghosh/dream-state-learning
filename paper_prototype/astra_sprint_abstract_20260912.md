@@ -1,13 +1,31 @@
 # FIRST SPRINT DRAFT — companion abstract
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ160 retains both positive and negative findings.
+This evidence cut through SEQ161 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current evidence through SEQ160 — C96; ongoing first draft.**
+**Current evidence through SEQ161 — C97; ongoing first draft.**
+Matched full-memory-schedule ADDITIVE versus fresh MEMORY_ONLY yields exact
+14/14,7/8,8/8 versus10/14,8/8,3/8; paraphrase10/14,7/8,4/8 versus10/14,8/8,2/8;
+held47/48,48/48,39/48 versus47/48,46/48,47/48, with12/12canaries in every cell.
+Frozen screens pass2/3versus1/3, not an all-seed repair. ADDITIVEseed2 loses nine
+LR0-correct held items and its paraphrase4/8 only ties the evaluator-only constant.
+Fresh MEMORY_ONLY differs from historical EXTRA_MEMORY in all three native seeds,
+including loss/final-tensor receipts despite matching initialized receipts and
+memory occurrence order; cause unresolved, limiting causal attribution.
+Original controllers succeed but collectors/holders fail from a scorer-binding
+bug; a separate byte-bound collection-only repair preserves rc0/1/1 and records
+recovery rc0, with zero new model calls/fits/updates and no scientific retry.
+Seed1's launcher BrokenPipe remains separate. The completed6fit/1632update/480call
+contrast matches memory exposure, not compute/RNG or realized gradients. Replay
+reads already-trained authored observations, not new TRY experience or parenting.
+C11 remains deferred; H1/H2 and the raw-chronological attribution gap remain open.
+No freeze, general G3, clean-lineage or mission promotion. Collaborator UNSENT.
+
+**Historical evidence through SEQ160 — C96.**
 The fixed-lesson alignment assay fails its frozen gate: all nine cells have
 process-use, faithful-record and full-material scores0/16. All144NOTE attempts
 and137called record sources fail normalization, so these zeros are not evidence
@@ -437,7 +455,7 @@ cases remain unrequested; no G3, parenting, child sleep, H1/H2, clean lineage,
 novel-fact transfer or substrate freeze follows. Model origin remains
 `UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred. Collaborator **UNSENT**.
 
-Internal staging only; the canonical abstract now includes the bounded update through SEQ160 while preserving its historical text. H1/H2 remain the proposed
+Internal staging only; the canonical abstract now includes the bounded update through SEQ161 while preserving its historical text. H1/H2 remain the proposed
 developmental thesis, not established outcomes.
 
 ## Abstract
@@ -556,6 +574,21 @@ paraphrases. These zeros do not establish absent raw processing or a general
 absence of parenting effects. Separate own-event field errors persist. The
 305-call assay has zero fits/updates, no post-write parent-free evaluation or amortization
 test. CPU-only additive parity is engineering evidence, not a new outcome.
+
+Through SEQ-161, matched full-memory-schedule additive replay gives exact eligible
+14/14,7/8,8/8 versus fresh memory-only10/14,8/8,3/8; paraphrase10/14,7/8,4/8 versus
+10/14,8/8,2/8; held47/48,48/48,39/48 versus47/48,46/48,47/48, with12/12canaries.
+Screens pass2/3versus1/3, not an all-seed repair: additive seed2 loses nine
+LR0-correct held items and its paraphrase4/8 ties a constant-target diagnostic.
+Fresh memory-only differs from historical EXTRA_MEMORY in loss/final-tensor
+receipts despite matching initial receipts and memory schedules; cause unresolved.
+Six fits,1632updates and480calls match memory exposure, not compute/RNG. A separate
+zero-generation/fit/update collection repair preserves original rc0/1/1 and
+launcher anomalies: no scientific retry or change to scoring rules. Replay uses
+already-trained authored observations, not new experience or parenting. No
+H1/H2, general G3 or clean-lineage promotion follows.
+
+[SEQ161 / C97 archived sources](../research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md#c97--seq161-additive-replay-with-native-baseline-drift) bind this update; collaborator remains UNSENT.
 
 ## Historical SEQ143 result-table companion — C79–C82
 
