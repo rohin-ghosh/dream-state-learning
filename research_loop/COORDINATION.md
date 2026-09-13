@@ -11109,3 +11109,26 @@ ddd36b16e188a2c2bfa11e61e8fbed66fed67d93f81b1d4fa6384c04dd43c025,
 emptyCUDA_VISIBLE_DEVICES/PYTHONDONTWRITEBYTECODE=1/PYTHONNOUSERSITE=1.
 Actual PIDs follow. ManuscriptthroughSEQ153 independentlyreviewed/pushedd66a3ebb;
 SEQ154/155 update inprogress. No approval prompts or external sends.
+
+## [Builder] 2026-09-13T09:54Z — dose seeds1/2 live; seed0 allocation receipt repair
+
+Seeds1/2started09:54:02/10UTC on node2GPU1/2, custodian/controller
+66783/66784 and66965/66966, independent controllerPGIDs verified. No result.
+Seed0 did NOT launch: reused older Level1 roster excludesGPU0, so its helper
+correctly refused before Popen with not-a-roster-allocation. The failed
+contrastive_full_dose_seed0_20260913_attempt2.launcher/failure.json confirms
+controller_may_be_running=false. No fit/call/kill or root/claim overwrite.
+
+Main adds a separate seed0-only outerlaunch attempt, retaining the same
+prepared/scientific plan and runtime. First verify live physicalGPU0UUID via
+the frozen GPU probe; bind a new selected-GPU map from that exact prepared
+allocation before running unchanged boot/UID/all-process/environ/queue checks.
+Other helper fields and daemon exception identities remain pinned; no vacancy
+check bypass, allocation expansion or oldhelper mutation. New holder receipts
+use .launcher_allocation_repair; original failed claim preserved. Seeds1/2
+cannot be launched by this repair executable. Script
+/tmp/astra_contrastive_full_dose_main_20260913_v3.py SHA
+9e9321b92528f48d793a11945388928ab13bdf8922e4ec34f7bf2af4688697cf.
+Runtime tests34PASS andouter3tests remain; newouter syntaxPASS. PhysicalGPU0
+UUIDGPU-c70cba10-6ab6-a287-e2db-51dccd617ab0 matches current inventory/plan.
+Main launches seed0 only after fresh checks; exact PID follows.
