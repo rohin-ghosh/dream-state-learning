@@ -3,7 +3,97 @@
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
 
-## Latest bounded evidence — SEQ122–124 and prospective identity / C66–C69
+## Latest bounded evidence — SEQ125–127: Q0 stop and OFF format compliance / C70–C72
+
+The verified September13,2026 UTC extension adds a narrow negative result to
+the throughSEQ124 evidence, not a completed selective-writer qualification.
+SEQ125 remains an immutable **NONREPORTABLE_RUNTIME_ABORT** caused by missing
+native forward accounting. Its preserved terminal is not a scientific canary
+failure, a learning result, or an independent replication of the repaired run.
+SEQ126 uses the instrumentation-repaired executor with unchanged scientific
+material, recipe, thresholds and three-fit allocation. Its separately replayed
+terminal is **EARLY_XOR_QUARTET_STOP_AUTH**, with
+**BOTH_MAP_FIRST_STEP_MISS**, **EARLY_UNARY_TOOL_STOP** and
+**OPAQUE_TOOL_WRITE_FAILURE_THIS_RECIPE**. This is a reportable registered
+early stop, not successful arbitrary conditional binding.
+
+Each of AUTH, DERANGED and the permitted unary localizer performs exactly one
+first-quartet update. Signed projections pass2/4 rows in every arm; observed
+margin changes pass AUTH3/4, DERANGED1/4 and unary2/4. The gate requires4/4
+in both tests for an arm, so none passes. The stored misses are negative
+values, not display-rounding cases. The zero-update audit has nonzero P and V
+directions in all32 quartets and is nondegenerate; this is **not a zero-gradient
+finding**. Projection/observation disagreements alone do not establish a sign
+bug or a causal mechanism. No vocabulary-control fit was run in this early-stop
+branch, despite the nondegenerate audit.
+
+**Measured work versus missing readouts.** Three attempted fits produce three
+updates total and12 training-row forwards. Total work is2,925 model forwards,
+860 natural-prefix forwards,288 evaluation prefix readouts and296 generation
+requests producing2,065 tokens. All evaluation/generation is contemporary OFF.
+No fit reaches32/64/128 updates; no ON snapshot, exact/held acquisition,
+complementarity, locality or copy readout exists. Empty cells and zero-initialized
+complement counters therefore mean **N/A / not measured**, not zero final
+accuracy, measured failed complementarity or perfect locality. OFF observations
+cannot stand in for missing ON states. This does not establish that additional
+updates, another recipe, or the architecture cannot learn.
+
+Resource completion is1373.552545s and durable completion1378.080670s, both below
+the registered2700s ceiling. Separate native replay, transfer and custody checks
+are later post-terminal intervals, not training time. Main's separate native
+replay reproduces the entire controller result. The bounded metadata review
+supports scalar/count/label consistency but is non-blinded and not a fresh
+raw-tensor numerical replay; the archive checker establishes byte custody only.
+This manuscript update reads those returned receipts, not native models/tensors.
+
+The full-pass prerequisite for fresh-root confirmation and the endogenous
+one-SLEEP relay is unmet: **no Q0 relay promotion**. Independently authored
+per-skill birth comparisons are separate, not a relabeled Q0 relay or autonomous
+learning. The separate SEQ127 no-fit OFF diagnostic below does not qualify Q0.
+The thesis and H1/H2 questions, author intent, prior results/tables and
+both historical abstracts remain unchanged; no general impossibility, retention,
+robustness, clean-lineage or H1/H2/P1/G3/G5/mechanism-freeze claim follows.
+The collaborator draft remains **UNSENT**.
+
+**SEQ127: procedural anchor primarily changes raw-format compliance.** One
+greedy base-model contrast on12 authored DEV situations produces24 captures,
+with strict public-record passes **absent0/12 versus present10/12**. All12
+absent outputs are complete JSON inside Markdown fences; all12 present outputs
+are bare JSON. The bounded raw analysis's secondary descriptive fence removal
+finds supported four-field content **11/12 absent versus10/12 present**:
+11/12 paired objects are identical, and one changes from correct to an incorrect
+prediction/relation. The ten primary gains therefore expose already-correct
+content in the required raw format, not ten newly correct observations. Primary
+scores stay0/12 and10/12: no fence stripping enters the scorer and no invalid-score
+rescue occurs. Selected TRY/outcome fields remain12/12 in both secondary views.
+
+The actual treatment replaces the tokenizer-inserted generic helper system
+message with the procedural anchor; it is neither no-system versus system nor
+the same generic system plus an appended anchor. User prompts, public sources,
+targets, row order and sampling are paired; proof/case/answer metadata is not
+request content. Order is fixed absent then present, not counterbalanced. All24
+finishes are stop, with41–43 absent and37–39 present output tokens below the192
+cap; runtime is324.487180s below900s. The returned bounded review reproduces24
+primary decisions on unchanged text and checks65 indexed member hashes; this
+manuscript does not rerun inference or raw scoring. This is n=1, no fit, no
+adapter and LoRA disabled: no observation learning, persistence, general
+perception, L2 or H1/H2 evidence. At Main's supplied planning cut the separate
+seed0 two-fit/six-matched-readout comparison is live and independent learner
+replications are planned; **no live fitted outcomes are included**. Its matched
+OFF engines enable LoRA without requesting an adapter, so this disabled-LoRA
+diagnostic cannot substitute numerically for those controls.
+
+Source: `research_notes/astra_memos/ASTRA_Q0_FIRST_UPDATE_STOP_2026-09-13.md`;
+returned separate replay, bounded review and custody receipts under
+`research_notes/astra_memos/receipts_20260912/`. C70–C71 in the claim map bind
+the exact hashes and distinguish numerical replay from metadata/custody review.
+For C72, `research_notes/astra_memos/ASTRA_PERCEPTION_ANCHOR_OFF_2026-09-13.md`
+and `receipts_20260912/astra_perception_anchor_raw_analysis_20260913.md` under
+that memo directory bind the primary/secondary distinction and collection report.
+Earlier “no Q0 result” statements below describe their historical evidence cuts,
+now extended by the limited SEQ125–127 dispositions above.
+
+## Historical bounded evidence — SEQ122–124 and prospective identity / C66–C69
 
 September12,2026 PDT / September13 UTC. These completed, exposed exploratory
 diagnostics extend the reviewed throughSEQ121 window without changing prior

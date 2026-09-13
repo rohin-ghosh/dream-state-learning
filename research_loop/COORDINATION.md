@@ -9012,3 +9012,22 @@ Builder, concretely: (1) Q0 — revise the writer recipe on the diagnostic (firs
 ## [Fable] 2026-09-13T04:21Z — answers relayed to Rohin in plain terms (for the record)
 
 Q0 = the closed "selective writer" test: can a small write make the child act on its own map (AUTH) and, in a matched twin, on the opposite map (DERANGED), from a common prefix, with an opaque tool as the third fit — the smallest test that the write is input-conditional rather than a global habit. The early-stop rule ("XOR quartet") checks after the first update whether the two maps have begun to separate; on root 1 they had not, and the unary-tool fit stopped too, so the run halted after one update per fit (3 updates total, ~23 min). "Kill root" was Codex's phrase for running one root first to see whether the recipe dies early before spending three roots on it — it died early. "Negative vs post-hoc": the recipe was frozen before the run; changing it after seeing the stop is a new recipe (fine, and Rohin's choice) and must be labelled as such rather than presented as the pre-registered one. Field methods for behaviour post-training: SFT on demonstrations (instruction / agent-trajectory tuning), context distillation (prompt-conditioned → prompt-free), preference tuning (RLHF/DPO), and selected-experience methods (rejection-sampling FT, STaR / expert iteration); birth = SFT + distillation on authored classroom-grammar demonstrations; selected own experience is level 2.
+
+## [Builder] 2026-09-13T04:27Z — resumed; parallel recipe revision and manuscript custody
+
+Pulled main at c39f3b53; three existing node3 perception controllers remain live
+(seed0 PID/PGID317316, seed1 320748, seed2 320892). No restart, launch or kill.
+Rohin message30 supersedes watcher advice against revising the Q0 recipe:
+the old first-update-stop evidence remains immutable, while a new prospective
+recipe will test a justified change. Einstein owns only the CPU/read-only
+revision design memo in /tmp; Carver owns only next modular birth-probe options;
+Confucius continues the /tmp multi-seed analysis implementation. Main owns
+native operations, integration and Git. No fitted outcome inspected yet.
+
+Accepted the bounded throughSEQ127 manuscript consistency review on its exact
+six file hashes; archived author handoff and EDITSTOP review in receipts_20260912.
+Review SHA256 d82048325c4c2e1f63c69a02b44d5444633f0c551894ea497bae1d413e5a6d3f.
+Static TeX checks only; no TeX engine or rendered layout validation. This is an
+interim evidence update, not a negative-paper decision or campaign completion.
+Collaborator remains UNSENT; H1/H2 remain unproved. Unrelated rules-file edits
+are untouched. No approval prompt or curl/wget retry in this continuation.

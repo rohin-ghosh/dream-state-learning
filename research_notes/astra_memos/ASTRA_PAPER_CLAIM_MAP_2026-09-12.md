@@ -1,6 +1,22 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
-**Latest bounded extension: SEQ122–124 / C66–C68, prospective identity C69.**
+**Latest verified extension: SEQ125–127 / C70–C72.** SEQ125 remains an
+immutable, nonreportable instrumentation abort. SEQ126 is a reportable
+registered first-quartet stop: three attempted fits, one update each, no
+completed128-update fit or ON readout. AUTH/DERANGED/unary projection passes
+are2/4 each; observed-change passes are3/4,1/4,2/4; each requires4/4 of both.
+The initial P/V gradients are nonzero, and missing final readouts are not zero
+accuracy. This is neither general learning impossibility nor a Q0 relay
+promotion. Native replay, bounded non-blinded metadata review and full-capsule
+custody have different scopes, bound separately below. Prior throughSEQ124
+evidence, H1/H2/thesis, author intent, abstracts/tables and canonical appendix
+remain preserved. C72 adds a separate n=1 no-fit OFF contrast: strict passes
+absent0/12 versus present10/12, but secondary supported content11/12 versus10/12
+and11/12 paired objects identical, one worsening. This is raw-format compliance,
+not observation learning; no live fitted outcomes are included. Collaborator
+**UNSENT**. Historical “no Q0 result” statements retain their original cuts.
+
+**Historical bounded extension: SEQ122–124 / C66–C68, prospective identity C69.**
 Fixed practice and adaptive clarification are negative/mixed exploratory
 diagnostics, not learning or independent confirmation. Projection recovers
 AUTH6/6 invalid proposals; OFF has no invalids. Valid quizzes6/8 versus8/8
@@ -2916,3 +2932,180 @@ are preserved. New evidence is confined to these completed exploratory
 diagnostics and prospective model/file binding. No Q0 result, H1/H2/P1/G3/G5,
 retained useful learning or freeze. Collaborator **UNSENT**; Main handles review,
 integration and any Git or future experiment action.
+
+## C70 — SEQ125: immutable instrumentation abort, not a scientific failure
+
+The first closed native root terminates as `NONREPORTABLE_RUNTIME_ABORT`
+because native forward/token accounting is invalid. Preserve that disposition
+and all original artifacts. The instrumentation failure is not reportable
+evidence that the registered canary, final accuracy or selective writing failed;
+no numerical/scientific outcome is promoted from this attempt. It is not
+resumed, overwritten, pooled with the repaired root as a positive result, or
+treated as an independent replication.
+
+The later decoder-hook repair makes PEFT forwards countable without changing
+scientific material, recipe, thresholds or three-fit allocation. C71 is a
+separate registered execution with its own replayable disposition, not a
+retroactive repair of C70's evidence. This distinction preserves the difference
+between an integrity abort and a valid scientific early stop.
+
+Binding: canonical `research_notes/astra_memos/ASTRA_Q0_FIRST_UPDATE_STOP_2026-09-13.md`,
+read-snapshot SHA256 `e8fa45555718b643d74a078405dd342ceef5b4d9f0c2ef14014bb400b6b17901`,
+explicitly preserves SEQ125 as immutable and nonreportable. No attempt1 raw
+numerical review or new native replay is claimed by this manuscript writer.
+
+## C71 — SEQ126: reportable first-quartet canary miss, not completed acquisition
+
+The repaired root1 terminal is `EARLY_XOR_QUARTET_STOP_AUTH`, with
+`BOTH_MAP_FIRST_STEP_MISS`, `EARLY_UNARY_TOOL_STOP` and
+`OPAQUE_TOOL_WRITE_FAILURE_THIS_RECIPE`. This is a valid registered early stop,
+not a positive binding result. AUTH fails its first canary; DERANGED executes
+the prescribed single diagnostic step and also fails; unary consumes the third
+and final attempted fit and stops on its own first-step miss. Each fit performs
+one quartet update. No V_AUTH rescue is run in this branch, even though the
+initial objective contrast is nondegenerate.
+
+### Measured predicates and the scope of the negative result
+
+Every arm must pass all four signed gradient-dot-delta projections and all four
+observed signed margin-change predicates. AUTH passes2/4 projections and3/4
+observations; DERANGED2/4 and1/4; unary2/4 and2/4. The recorded misses are
+negative values rather than near-bound/equality display artifacts. Differences
+between projected and observed signs alone establish neither a sign bug nor a
+causal account of the miss. Dropout-active training and dropout-off canary
+evaluation are distinct registered surfaces, not an added post-hoc repair.
+
+All32 initial quartets have nonzero P and V directions. The recorded audit is
+`OBJECTIVE_CONTRAST_NONDEGENERATE_AT_INIT`, not zero tangent or zero parameter
+learning. The result rejects this seed1/rank8/LR3e-5/dropout-.05 first-quartet
+path under its fixed predicates, not arbitrary XOR or opaque-key learnability,
+other doses/recipes, or the architecture in general. The broad opaque-tool
+qualifier is inseparable from `EARLY_UNARY_TOOL_STOP`; no completed unary-versus-
+XOR learning comparison or V_AUTH training comparison exists.
+
+### Executed work and unexecuted outcome denominators
+
+There are three attempted fresh fits, three updates total,12 training-row
+forwards,2,925 total model forwards and860 natural-prefix forwards. The audit
+uses128 natural/model forwards. OFF uses288 prefix readouts and296 generation
+requests producing2,065 tokens (2,353 model forwards). Each one-step fit uses148
+natural/model forwards:128 initialization,4 training and16 diagnostic.
+
+No fit reaches32/64/128 updates, all fit snapshot maps are empty, and no ON
+readout state exists. `cells={}` and `checkpoint_curves={}` are empty;
+complement exact0/held0 and wrong-root-opposites0 are unexecuted defaults with
+schema denominators, not measurements. Report final exact/held acquisition,
+complementarity, locality and ON copy as **N/A / not measured**, not zero final
+accuracy, failed final complementarity or perfect wrong-root locality. Existing
+OFF observations do not substitute for the missing fitted states.
+
+### Timing, replay, custody and review scope
+
+Execution starts September13,2026 at03:23:31.475675UTC. Resource completion is
+1373.552545s and durable completion1378.080670s, before the2700s limit at
+04:08:31.475675UTC. Separate native replay, capsule transfer and later custody
+validation are additional post-terminal intervals, not part of training time.
+The canonical memo records Main's native cleanup/release verification; this
+writer did not reobserve processes or GPUs.
+
+Main's separate native replay, using the exact frozen source/environment,
+returns JSON equal to the controller's entire result. Its canonical report
+object hashes to `250e67b36c16325f5b8042e7731dd71c615cd0387c1f1f6d092b68e8188c87e5`;
+that is distinct from the whole returned-JSON file hash below. The bounded
+metadata review passes scalar predicates, work counts, release paths and the
+limited early-stop interpretation. It does not load tensors, recalculate
+gradient products, independently decode tokens or perform native replay; its
+author has prior project involvement and is non-blinded, not wholly project-
+independent replication. The full-capsule custody check validates16,100 regular
+files, including16,098 sealed files and the final witness chain, without tensor
+deserialization or scientific replay. A metadata-only capsule excludes tensors
+and cannot independently reproduce the numerical result. These are complementary
+checks, not interchangeable levels of scientific review.
+
+### Claim boundary and exact bindings
+
+The full-pass prerequisite for unchanged fresh-root confirmation and the
+endogenous one-SLEEP relay is unmet. Neither is promoted from this result.
+Separate authored per-skill birth experiments are not a relabeled Q0 relay,
+child self-learning or evidence of autonomous improvement. The separate SEQ127
+no-fit diagnostic in C72 does not qualify Q0. No H1/H2/P1/G3/G5,
+retention, robustness, clean-lineage or mechanism-freeze claim follows. Thesis
+and author intent remain unchanged, historical origin labels are not rewritten,
+and the collaborator draft remains **UNSENT**.
+
+Bindings (all under `research_notes/astra_memos/` unless stated otherwise):
+
+- Canonical `ASTRA_Q0_FIRST_UPDATE_STOP_2026-09-13.md`, SHA256 `e8fa45555718b643d74a078405dd342ceef5b4d9f0c2ef14014bb400b6b17901`.
+- `receipts_20260912/astra_q0_attempt2_separate_replay_20260913.json`, whole-file SHA256 `1a850b0eed265ed027159747025ea64335b25601944c938b0bcccba55e120a4f`; returned `report_sha256` is `250e67b36c16325f5b8042e7731dd71c615cd0387c1f1f6d092b68e8188c87e5`.
+- `receipts_20260912/astra_q0_attempt2_bounded_review_20260913.md`, SHA256 `822197cef2c732700cc91530b2f537af7881013c51b6d36d2a137a5ebcde2776`.
+- `receipts_20260912/astra_q0_attempt2_custody_20260913.json`, SHA256 `265c91f161c446854cb652ddb2cca56300c696f872c2a7d91814a733ee847e98`.
+- Prepared manifest SHA256 `bd263500a4d1176dfec5e3489db0c20e479f9703eb745b9902dde017d82754d1`; frozen executor SHA256 `1459c037cccf2f043bc02f40fb9957f38c5620a4d0bcfc8cbb4ebf30fd31182a`; recorded native CPU acceptance217 tests, zero failures/errors/skips. These are receipt-backed identities, not this writer's rerun.
+- Full capsule `gpu_artifacts_local/q0_20260913_attempt2/astra_pairwise_Q0_root1_20260913_attempt2.tgz`, recorded SHA256 `ec5527e3e6aecc0e5f0c10e4a956620fefc4f4f8da8cfa6d4c6b4980e6ecc2ec`,3,167,793,165 compressed bytes; not opened or hashed by this manuscript writer.
+- Metadata-only capsule recorded SHA256 `5b5184a64149a02973ccddea8a22a86faeafd8077931481edcefa74e49b6f483`; intentionally excludes tensors and is not a standalone native-replay capsule.
+
+Main owns independent review and integration. Manuscript/static checks do not
+certify the underlying numerical science or authorize further experiments.
+
+## C72 — SEQ127: OFF anchor improves raw-format compliance, not observation learning
+
+### Primary result and secondary content distinction
+
+The completed n=1 no-fit diagnostic contains one greedy base-model contrast on12
+authored DEV situations,24 captures: strict public-record passes are
+**absent0/12 versus present10/12**. All12 absent outputs contain complete JSON
+inside Markdown fences; all12 present outputs are bare JSON. The bounded raw
+analysis's explicitly secondary descriptive fence removal reveals supported
+four-field content **11/12 absent versus10/12 present**. Eleven of12 paired
+objects are identical after extraction; one changes from correct to an incorrect
+prediction/relation. The ten primary gains therefore make already-correct
+content usable in the required raw format, not ten newly correct observations
+or acquired perception abilities.
+
+The primary scores remain0/12 and10/12. No fence stripping enters the scorer;
+no invalid response is promoted or rescued. Secondary selected TRY/outcome
+fields remain12/12 in both conditions; the anchored errors concern prediction/
+relation fidelity. All24 responses finish with stop,41–43 absent output tokens
+and37–39 present, below the common192-token ceiling. Runtime is324.487180s,
+below900s. The returned bounded reviewer reproduced all24 primary score decisions
+and failure messages on unchanged response strings and checked65 indexed member
+hashes. This manuscript checked the returned collection report and bounded
+analysis; it did not independently rescore raw responses, reencode tokenizer
+inputs, run inference or verify the full compressed capsule.
+
+### Actual intervention, limitations and next-study boundary
+
+The procedural anchor replaces Qwen's tokenizer-inserted generic helper system
+message. It is not system versus no-system, nor a shared generic system with an
+appended anchor. User prompts, public sources, targets, row order and sampling
+settings are paired; case/proof/answer metadata never enters requests. Order is
+fixed absent then present, not counterbalanced. Earlier preparation and NVML
+failures are infrastructure failures, not scientific arms.
+
+There is no fit or adapter, and LoRA is disabled. This is not observation
+learning, learned perception, persistence, general perception, parenting, L2 or
+H1/H2 evidence. The collection report explicitly has `learned_skill_claim=false`
+and `science_pass=null`. At Main's supplied planning cut a separate seed0
+two-fit/six-matched-readout comparison is live, with independent learner
+replications planned; **no live fitted outcomes are included**. A single seed
+would remain exploratory; independent learners and untouched transfer instances
+are needed for broader conclusions. Its matched OFF engines enable LoRA without
+requesting an adapter, so this separate disabled-LoRA OFF diagnostic cannot
+substitute numerically for that comparison. Distinguish learned raw-format
+compliance from prediction/source fidelity rather than revising the primary
+scorer. None of C72 supplies Q0 confirmation or relay promotion, cleans source
+ancestry, changes the thesis/H1/H2, or authorizes sending the UNSENT collaborator
+draft.
+
+### Exact bindings
+
+All files below are under `research_notes/astra_memos/` unless stated otherwise.
+
+- Canonical `ASTRA_PERCEPTION_ANCHOR_OFF_2026-09-13.md`, SHA256 `ec13a83cb2abae356856a480ec6db229c3b5c85718b9becec427f649c29b9fb1`.
+- `receipts_20260912/astra_perception_anchor_raw_analysis_20260913.md`, SHA256 `6e067148b25f34bd8d4f9ad2f0afe5e527af37b7695986894a1fdaaecf787e37`; bounded raw review, not independent learner replication.
+- `receipts_20260912/astra_perception_anchor_20260913_attempt3_report.json`, SHA256 `bfcfebee88dbac507affaa822dd6e8a7acb1c79862e1a6aca3b238744f461244`.
+- Full compressed capsule recorded SHA256 `471f1302ddba3aa5a3c77df9e5414c5fe42387831cc2e955b3b2bd81c3787ec5`; not opened or independently hashed by this manuscript writer.
+- Member-index SHA256 `7a1db115d8783940ae6afa0325bb0b715e12a867198915f68c08128fd1f8f59b`, the collection report's `archive_sha256` field, is **not** the full compressed-capsule hash; all65 listed member hashes were checked by Main and the bounded raw reviewer.
+- Recorded plan SHA256 `f57769c71eeb0ecc55283749d7a00e864861c232561fef976f91f19fb61f690c`; recorded driver SHA256 `59874c678ce1b36feaa1969721c0dcc761b4fa05072a6231892269991201052c`. These are returned provenance identities, not this writer's native rerun.
+
+Main retains independent review, integration and operations. Static manuscript
+checks do not turn this no-fit diagnostic into a learning or H1/H2 result.

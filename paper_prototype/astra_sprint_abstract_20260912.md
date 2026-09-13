@@ -1,8 +1,54 @@
 # FIRST SPRINT DRAFT — companion abstract
 
-**Latest evidence extension: SEQ122–124 and prospective public identity
-(C66–C69).** Both existing manuscript abstracts are preserved; the current
-242-word companion abstract below retains its throughSEQ121 summary, with
+**Current abstract-level evidence update: SEQ125–127 / C70–C72.** The closed
+root1 Q0 assay now has a reportable first-update stop, not a completed binding
+result. SEQ125's `NONREPORTABLE_RUNTIME_ABORT` remains immutable;
+the repaired SEQ126 terminal is `EARLY_XOR_QUARTET_STOP_AUTH`, qualified by
+`BOTH_MAP_FIRST_STEP_MISS`, `EARLY_UNARY_TOOL_STOP` and
+`OPAQUE_TOOL_WRITE_FAILURE_THIS_RECIPE`. Three fresh fits each perform one
+quartet update. Projection predicates pass2/4 in each arm; observed-change
+predicates pass AUTH3/4, DERANGED1/4 and unary2/4, against the required4/4
+of both. The zero-update audit has nonzero P/V directions in all32 quartets;
+the stop is not a zero-gradient finding or proof that another dose, recipe or
+architecture cannot learn. No fit completes128 updates and no ON acquisition,
+held-form, complementarity, locality or copy readout is executed. Empty/zero
+report placeholders are unmeasured outcomes, not zero final accuracy.
+
+Main's separate native replay reproduces the terminal; the bounded metadata
+review supports the limited interpretation but is not raw-tensor replay or
+wholly project-independent replication. Three updates/12 training forwards and
+OFF-only288 prefix readouts/296 generations do not complete the selective-writer
+or H1/H2 causal chain. The full-pass prerequisite is unmet, so no Q0 confirmation
+or endogenous one-SLEEP relay is promoted. Independent authored birth studies
+remain separate. These findings extend
+the throughSEQ124 record without changing the thesis, author intent, historical
+abstracts/tables or earlier evidence. The collaborator draft remains **UNSENT**.
+The canonical Q0 stop memo and its returned replay/review are bound in C70–C71.
+
+SEQ127 adds one no-fit OFF contrast on12 authored DEV situations, not observation
+learning. Strict public-record passes are **absent0/12 versus present10/12**.
+All12 absent responses contain complete fenced JSON; all12 present responses
+are bare JSON. The bounded raw analysis's secondary descriptive fence removal
+finds supported content **11/12 absent versus10/12 present**, with11/12 paired
+objects identical and one correct-to-incorrect prediction/relation change.
+The primary gain is raw-format compliance for already-correct content, not ten
+newly correct observations. No fence stripping changes the primary scorer and
+no invalid-score rescue occurs. The procedural anchor replaces the model's
+tokenizer-inserted generic helper system message; it is not no-system versus
+system or an appended anchor. Fixed absent-then-present order and n=1 bound the
+interpretation. With no fit, no adapter and LoRA disabled, this is not learned
+perception, persistence, general perception, L2 or H1/H2 evidence. At Main's
+supplied planning cut a separate seed0 two-fit/six-matched-readout comparison is
+live and independent learner replications are planned; no live fitted outcomes
+are included. This diagnostic cannot replace that study's matched OFF engines,
+which enable LoRA without requesting an adapter. C72 binds the canonical
+`ASTRA_PERCEPTION_ANCHOR_OFF_2026-09-13.md`, collection report and bounded
+`astra_perception_anchor_raw_analysis_20260913.md`; the historical abstract
+below is unchanged.
+
+**Historical evidence extension: SEQ122–124 and prospective public identity
+(C66–C69).** Both existing manuscript abstracts are preserved; the
+242-word historical companion abstract below retains its throughSEQ121 summary, with
 the later evidence added here and in the complete result sections.
 
 SEQ122/123 each close32 fixed practice calls; adaptive grammar clarification

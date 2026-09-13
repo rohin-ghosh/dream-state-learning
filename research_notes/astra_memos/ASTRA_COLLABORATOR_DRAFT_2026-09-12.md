@@ -1,6 +1,81 @@
 # DRAFT ONLY — unsent collaborator update
 
-**UNSENT — SEQ122–124 / C66–C69 update; no Q0 result.**
+**UNSENT — verified SEQ125–127 / C70–C72 update for Main's review.**
+
+The new Q0 evidence is narrower than a completed writer result. SEQ125's
+forward-accounting `NONREPORTABLE_RUNTIME_ABORT` remains immutable;
+we do not reinterpret it as a scientific null, resume it, or pool it with the
+repaired run as replication. With scientific material, gates and recipe
+unchanged, SEQ126 reaches the reportable registered terminal
+`EARLY_XOR_QUARTET_STOP_AUTH`, with `BOTH_MAP_FIRST_STEP_MISS`,
+`EARLY_UNARY_TOOL_STOP` and `OPAQUE_TOOL_WRITE_FAILURE_THIS_RECIPE`.
+
+AUTH, DERANGED and unary each receive exactly one first-quartet update.
+Projection passes are2/4 in each arm; observed margin-change passes are3/4,
+1/4 and2/4 respectively. Each arm needs4/4 of both, so all three miss the
+canary. The audit has nonzero P/V directions in all32 quartets and a
+nondegenerate contrast; there is no zero-gradient or general learning-
+impossibility finding. The opaque-tool qualifier must be read as this recipe's
+early unary stop, not completed evidence that opaque keys cannot be learned.
+V_AUTH is not run in this branch.
+
+No fit reaches128 updates or yields any ON checkpoint/readout. In particular,
+we have no final exact/held accuracy, complementarity, locality or ON copy
+measurement. Empty cells and zero complement fields mean not measured, not
+zero final accuracy or perfect locality. Executed work is three updates,
+12 training-row forwards,2,925 total model forwards and860 natural-prefix
+forwards; the288 evaluation prefixes and296 generations/2,065 tokens are OFF
+only. Resource and durable completion are1373.552545s and1378.080670s;
+subsequent replay/transfer/custody are separate intervals.
+
+Main's separate native replay matches the entire controller return. The
+returned bounded review supports metadata/count/scalar consistency and this
+limited early-stop interpretation, not an independent raw-tensor replay or
+wholly project-independent replication. Archive custody is a separate byte
+check. I have not rerun native science for this manuscript update.
+
+The full-pass prerequisite for fresh-root confirmation and an endogenous
+one-SLEEP relay is unmet, so there is **no Q0 relay promotion**. Independently
+authored per-skill birth comparisons remain separate, not autonomous learning
+or a relabeled relay. The separate SEQ127 no-fit diagnostic does not qualify Q0.
+Prior throughSEQ124 evidence, thesis/H1/H2, author intent and
+historical abstracts/tables remain intact. Source ancestry is not cleaned by
+prospective public-model identity, and no H1/H2/P1/G3/G5, retention, robustness
+or mechanism-freeze claim follows. This is an internal **UNSENT** draft only.
+
+SEQ127's OFF anchor comparison initially looks like a perception gain, but the
+raw review narrows that reading. Across12 authored DEV situations, strict
+public-record passes are **absent0/12 versus present10/12**. All12 absent
+outputs contain complete JSON in Markdown fences; all12 present outputs are
+bare JSON. Secondary descriptive fence removal reveals supported four-field
+content **11/12 absent versus10/12 present**;11/12 paired objects are identical
+and one correct prediction/relation becomes incorrect. Thus the ten primary
+gains make already-correct content usable in the required raw format, not newly
+correct observations. Primary scores remain unchanged: no scorer fence stripping
+or invalid-score rescue. Secondary selected TRY/outcome fields are12/12 both.
+
+The procedural anchor replaces the tokenizer-inserted generic helper system
+message, rather than adding a system message to a no-system control or appending
+to a shared generic system. User prompts, public sources, targets, order and
+sampling are paired; proof/case/answer metadata never enters requests. The fixed
+absent-then-present order is not counterbalanced. All24 responses finish with
+stop, below the192-token cap, and runtime is324.487180s below900s. The bounded
+review reproduces all24 primary decisions on unchanged text and checks65 member
+hashes; I have not rerun the raw scorer or inference. This is n=1, no fit, no
+adapter and disabled LoRA: no observation learning, persistence, general
+perception, L2 or H1/H2 result. At Main's supplied planning cut the separate
+seed0 two-fit/six-matched-readout comparison is live, with independent learner
+replications planned, not reported. No live fitted outcomes enter this draft.
+Its matched OFF engines enable LoRA without requesting an adapter; this separate
+disabled-LoRA diagnostic is not their numerical substitute.
+
+Source: `research_notes/astra_memos/ASTRA_Q0_FIRST_UPDATE_STOP_2026-09-13.md`
+and returned separate-replay/bounded-review/custody receipts, bound in C70–C71.
+C72 binds `ASTRA_PERCEPTION_ANCHOR_OFF_2026-09-13.md` and the collection report
+and `astra_perception_anchor_raw_analysis_20260913.md` in `receipts_20260912`.
+Main handles independent review, integration and any subsequent operations.
+
+**Historical UNSENT — SEQ122–124 / C66–C69 update; no Q0 result at that cut.**
 
 The exposed32-call protocol probe finds mixed/negative interface results;
 the separate adaptive32-call clarification recovers parser validity16/16 per
