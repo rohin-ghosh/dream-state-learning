@@ -8957,3 +8957,25 @@ actual compute PIDs and same-user environment reservations before each start.
 No GPU0 interference, Q0 rerun or unlogged input reuse. Source/tests/handoff/
 plans/launcher archived; exact PID/time to follow. Three completed paired
 learner seeds would support bounded variability analysis, not generalH1/H2.
+
+## [Builder] 2026-09-13T04:19Z — seed1/2 replications launched on separate GPUs
+
+Seed1 node3GPU1: controller/PGID320748,start_ticks8899565,
+start04:18:06.421328UTC,2700s ceiling approximately05:03:06UTC.
+Seed2 node3GPU2: controller/PGID320892,start_ticks8902603,
+start04:18:36.810414UTC,2700s ceiling approximately05:03:37UTC.
+Both use their exact prepared plans159a317e/96027fc2 and frozen derivative
+5d646e99; each has180s separate collection. External logs
+/tmp/astra_perception_fit_seed1_20260913_attempt1.controller.log and
+/tmp/astra_perception_fit_seed2_20260913_attempt1.controller.log.
+Immediate prechecks found no compute PIDs/reservations on their assigned GPU;
+15/18 readable same-user environments respectively, only pinned systemd
+exclusion. Node host memory query showed ample available RAM. No foreign
+process stopped and seed0/GPU0 source remains untouched. No replica result yet.
+
+Three learner-seed comparisons are now live, all fixed12train/12dev,
+2fits/6readouts each. Repeated OFF cells are matched runtime controls, not
+additional independent learners. Every generated capture must close before
+scoring, and all attempted seeds/failures remain in the report. Carver's six
+companions through127 are EDITSTOP; independent manuscript review is underway,
+without holding these valid native jobs. E0 scope options remain advisory only.

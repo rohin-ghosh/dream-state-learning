@@ -1,6 +1,44 @@
-# Astra current handoff — 2026-09-13T04:10Z
+# Astra current handoff — 2026-09-13T04:19Z
 
-## CURRENT — September13 04:10UTC (supersedes older status below)
+## CURRENT — September13 04:19UTC (supersedes older status below)
+
+**Three perception comparisons LIVE**, node3GPU0/1/2. Never restart their roots:
+
+| Seed | Controller/PGID | start_ticks | StartUTC | 2700s ceilingUTC |
+| --- | --- | --- | --- | --- |
+| 0 | 317316 | 8828429 | 04:06:15.061857 | ~04:51:15 |
+| 1 | 320748 | 8899565 | 04:18:06.421328 | ~05:03:06 |
+| 2 | 320892 | 8902603 | 04:18:36.810414 | ~05:03:37 |
+
+Seed0 root/source/plan are in the04:10 snapshot below; at04:17 it had both fits
+and several readouts closed, no scores. Replicas root prefixes
+`/localhome/local-rohing/astra_diagnostics/perception_fit_seed1_20260913_attempt1`
+and `perception_fit_seed2_20260913_attempt1`; same parent directory.
+Both replica scripts frozen in
+`/localhome/local-rohing/astra_sources/perception_fit_replication_20260913_attempt1`.
+Driver5d646e993408cbf91fd4e2a0657f59b87c0197281d9e451e578a45263bbd09f8;
+seed1plan159a317e546be2981e8ed993b549050b3eda580ae8728c00774736e3cb7d10f9;
+seed2plan96027fc25822e078002d89a5c2ceb78b7f110cfab254f3e4f1958e0c3431a3f6.
+39nativeCPU testsPASS4.529s and both actual prepares passed. Only learner seed/
+training order differs; same inputs, targets, recipe, inference seed0 and caps.
+Each2fits/6readouts/72calls; collection180s separate. Logs named
+`/tmp/astra_perception_fit_seedN_20260913_attempt1.controller.log`, N=1,2.
+Check controller_failure.json first at terminal, then returned completion hash;
+collect with exact frozen driver's `collect --root --plan-sha256
+--completion-sha256 --out` in native venv, fresh external collection root.
+Do not score partial captures. All original Q0/failed-probe evidence stays closed.
+
+Carver manuscript six-file update throughSEQ127 now EDITSTOP, handoff
+/tmp/astra_manuscript_seq126_handoff_20260913.md (name historical), SHA0b14c7a9.
+Einstein01a09830-c71d-7fa1-802a-1ddf4dfdf463 reviews only into
+/tmp/astra_manuscript_seq127_independent_review_20260913.md; await final pins
+before Main stages those six dirty files. Confucius replica driver EDITSTOP;
+Boole/Boyle closed after completed sidecars. /tmp/astra_e0_scope_options_20260913.md
+contains advisory defaults/384-call inventory only; E0 not adopted or coded.
+Main sole Git/native operator. Unrelated rules-file edits remain untouched.
+Mission ACTIVE/incomplete; no generalG3/P1/G5/H1/H2 or mechanism freeze.
+
+## Previous snapshot — September13 04:10UTC
 
 **Mission ACTIVE/incomplete. Perception fit comparison LIVE** node3GPU0,
 controller/PGID317316,start_ticks8828429, start04:06:15.061857UTC,

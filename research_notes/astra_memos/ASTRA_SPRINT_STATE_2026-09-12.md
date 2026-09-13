@@ -1,4 +1,17 @@
-## Current superseding snapshot — 2026-09-13 04:10 UTC
+## Current superseding snapshot — 2026-09-13 04:19 UTC
+
+Three fixed perception learner-seed comparisons LIVE on node3GPU0/1/2:
+controllers317316/320748/320892; ceilings~04:51:15/05:03:06/05:03:37UTC,
+each2700s plus180s collection. Seed0 both fits passed; readouts in progress.
+Replicas1/2 accepted39nativeCPU tests/actual tokenizer prep; launched after
+fresh per-GPU vacancy/reservation checks, no scores inspected or data changes.
+Exact root/source/plan/PID custody in HANDOFF. Q0SEQ126 and no-fitSEQ127 are
+fully preserved/analysed; latter is primarily raw-format compliance, not better
+observations. Manuscripts through127 await bounded independent review before
+Main stages six files. E0 options advisory only. Full mission ACTIVE/incomplete;
+no generalG3/P1/G5/H1/H2 or mechanism-freeze claim, formalC11 guard deferred.
+
+## Historical superseded snapshot — 2026-09-13 04:10 UTC
 
 Mission ACTIVE. Q0 attempt2 complete/replayed/custody-validated: SEQ126 early
 first-update stop in both XOR maps and unary; no completed128 fit/ON readouts,
