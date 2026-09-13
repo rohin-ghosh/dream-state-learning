@@ -1,4 +1,19 @@
-## Current superseding snapshot — 2026-09-13 22:37 UTC
+## Current superseding snapshot — 2026-09-13 23:03 UTC
+
+Mission ACTIVE/incomplete. Handoff23:03UTC is current. Integrated506tests:
+491PASS/15native skips,194.606s,46source/test hashes unchanged. The9trainer
+and6checkpoint native tests separately passed; checkpoint6include actual
+fresh-process D1 restoration/D2 equivalence on tiny CPU models. All512
+synthetic scanner projections pass v2; complete inventory validation does not.
+Exact receipts/pins in analysis/2026-09-13_stage2a_scanner_checkpoint_integration.md
+and analysis/2026-09-13_stage2a_checkpoint_fresh_process_receipt.md.
+Source-derived semantic/future/route inventory and narrow contract closure
+remain before source audit/material/tokenizer/runtime preparation. Do not
+truncate ledgers or substitute empties. No Qwen/tokenizer/GPU/science promotion,
+no mechanism freeze or C11 completion. SEQ195 remains complete; no repetition.
+Node1 preservation scope unchanged; no new node1 writes.
+
+## Historical superseded snapshot — 2026-09-13 22:37 UTC
 
 Canonical current state: ASTRA_HANDOFF_2026-09-12.md22:37UTC. Integrated source
 suite434PASS/9native skips onVM; the9 separately PASS on node2 tinyCPUtorch.

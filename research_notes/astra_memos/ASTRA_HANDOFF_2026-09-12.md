@@ -1,6 +1,39 @@
-# Astra restart handoff — September 13, 2026, 22:37 UTC
+# Astra restart handoff — September 13, 2026, 23:03 UTC
 
-## Current superseding increment at22:37UTC
+## Current superseding increment at 23:03 UTC
+
+Integrated VM suite: 506 tests, 491 PASS, 15 native-only skips, 194.606s;
+46 source/test hashes unchanged. Actual start22:59:14/end23:02:30UTC.
+Receipt/pins: analysis/2026-09-13_stage2a_scanner_checkpoint_integration.md.
+The skipped9trainer+6checkpoint native tests separately passed on node2 tiny
+CPU fixtures; do not rerun solely because context changed. Six checkpoint
+tests include actual disk save -> fresh process -> D1 restore -> D2 equality.
+Checkpoint source bundle durably archived locally and hash-verified; custody:
+analysis/2026-09-13_stage2a_checkpoint_fresh_process_receipt.md.
+
+Scanner v2 and exact span/chronology bridge now pass all512 synthetic arm
+projections with explicit synthetic inventories. This does NOT establish
+inventory completeness. V2 admits historical EVENT GOT equal to latest
+observed CURRENT with any well-typed original EVENT owner, retaining exact
+service provenance. No future/action/semantic/route exception is added.
+
+Remaining source blocker: derive complete inventories rather than accepting
+caller inputs. Fresh audit identifies incomplete birth semantic schema,
+future-universe/disclosure, multi-step route serialization and core-derivation
+bindings; whole-world future IDs can exceed the current4096-entry bound.
+Do not truncate, insert empty ledgers, or invent visibility rules. Advance
+unambiguous full-constructor/source-record checks and obtain a narrow source
+disposition, then fresh audit before material/tokenizer/runtime preparation.
+Formal C11 stays deferred; no native Qwen/tokenizer, GPUjob or claim opened.
+Reduced screen560calls -> qualified authentic two-SLEEP remains execution order.
+SEQ195 complete; do not repeat. No node1 writes; bounded preservation audit
+unchanged. Deadline23:14UTC today, lease endSeptember14 23:14UTC.
+
+Ownership: Lorentz's four scanner files frozen; Main owns integration/docs.
+Mendel read-only v2/checkpoint review; Turing read-only inventory-gap audit.
+Faraday complete/closed. Preserve dirtyrules and unreviewed TSJ draft.
+
+## Historical superseded increment at22:37UTC
 
 Integrated443tests:434PASS,9native-only skips onVM,177.947s. The9native tests
 separately PASS21.425s on node2 torch2.13.0+cu130 withCUDAhidden, tiny synthetic

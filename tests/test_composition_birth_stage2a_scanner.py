@@ -1,5 +1,6 @@
 from dataclasses import replace
 from hashlib import sha256
+from pathlib import Path
 import unittest
 from unittest.mock import patch
 
@@ -47,6 +48,7 @@ def public_field(prefix, value, kind, *, occurrence=0, owner=None, observed_at=1
     for index in range(occurrence + 1):
         start = prefix.index(value, start + 1)
     origins = {"route_query": "service", "event_did": "service", "event_recover": "service",
+               "event_got": "service",
                "selected_event": "service", "issued_query": "actor", "think_implicated": "actor",
                "task_start": "task", "task_goal": "task", "current": "host",
                "task_current": "task", "protocol": "system"}
@@ -250,6 +252,105 @@ class SemanticAliasTests(unittest.TestCase):
 
 
 class ForwardScannerTests(unittest.TestCase):
+    def test_causal_occurrence_clarification_pin(self):
+        for version, digest in (("v1", source.CAUSAL_OCCURRENCE_SHA256),
+                                ("v2", source.CAUSAL_OCCURRENCE_V2_SHA256)):
+            note = (Path(__file__).resolve().parents[1] / "research_notes" / "analysis"
+                    / f"2026-09-13_stage2a_causal_occurrence_clarifications_{version}.md")
+            self.assertEqual(sha256(note.read_bytes()).hexdigest(), digest)
+
+    def test_check_historical_route_query_requires_same_implicated_query(self):
+        prefix = b"QUERY " + QUERY + b"\nREAD RELATION " + QUERY + b"\nSERVICE\nMISS"
+        returned = public_field(prefix, QUERY, "route_query")
+        issued = public_field(prefix, QUERY, "issued_query", occurrence=1, observed_at=2)
+        for phase in ("CHECK", "READ_CHECK"):
+            for implicated, expected in ((QUERY, True), (LATER_QUERY, False), (None, False)):
+                with self.subTest(phase=phase, implicated=implicated):
+                    report = scan(prefix, target=b"THINK REVISE " + QUERY, phase=phase,
+                                  implicated_query=implicated, fields=(returned, issued))
+                    self.assertEqual(report.passed, expected)
+                    occurrences = report.receipts if expected else report.issues
+                    self.assertEqual({hit.form for hit in occurrences if hit.start == returned.start},
+                                     {"literal", "normalized", "compact"})
+                    if expected:
+                        self.assertEqual({hit.field_path for hit in report.receipts}, {returned.path, issued.path})
+        self.assertEqual(returned.origin, "service")
+        self.assertEqual(issued.origin, "actor")
+
+    def test_continue_historical_got_requires_latest_current_and_typed_owner(self):
+        prefix = b"GOT " + NODE
+        for owner, implicated, current, expected in (
+                (EVENT, EVENT, NODE, True), (LATER_EVENT, EVENT, NODE, True),
+                (None, EVENT, NODE, False), (EVENT, None, NODE, True),
+                (None, None, NODE, False), (LATER_EVENT, None, NODE, True),
+                (EVENT, EVENT, LATER_NODE, False), (EVENT, EVENT, None, False),
+                (LATER_EVENT, EVENT, LATER_NODE, False), (LATER_EVENT, EVENT, None, False)):
+            with self.subTest(owner=owner, implicated=implicated, current=current):
+                field = public_field(prefix, NODE, "event_got", owner=owner)
+                report = scan(prefix, target=b"READ INDEX " + NODE, phase="CONTINUE",
+                              fields=(field,), current=current, implicated_event=implicated)
+                self.assertEqual(report.passed, expected)
+                self.assertEqual(field.origin, "service")
+                if expected:
+                    self.assertEqual({hit.form for hit in report.receipts}, {"literal", "normalized", "compact"})
+                    self.assertTrue(all(hit.category == "operand" and hit.field_path == field.path
+                                        and hit.evidence == field.evidence for hit in report.receipts))
+
+    def test_causal_service_fields_never_waive_other_leak_categories(self):
+        for value, kind, target, phase, context in (
+                (QUERY, "route_query", b"THINK REVISE " + QUERY, "READ_CHECK", {"implicated_query": QUERY}),
+                (NODE, "event_got", b"READ INDEX " + NODE, "CONTINUE",
+                 {"current": NODE, "implicated_event": EVENT})):
+            prefix = b"QUERY " + value if kind == "route_query" else b"GOT " + value
+            field = public_field(prefix, value, kind, owner=LATER_EVENT if kind == "event_got" else None)
+            for category, inventory in (
+                    ("future_identifier", {"future_identifiers": (value,)}),
+                    ("registered_route", {"registered_routes": (value,)}),
+                    ("semantic_alias", {"semantic_bytes": canonical_json({"oracle": value[-4:].decode("ascii")})})):
+                with self.subTest(kind=kind, category=category):
+                    report = scan(prefix, target=target, phase=phase, fields=(field,), **context, **inventory)
+                    self.assertFalse(report.passed)
+                    self.assertTrue(any(hit.category == category for hit in report.issues))
+                    self.assertTrue(any(hit.category == "operand" for hit in report.receipts))
+                    self.assertTrue(all(hit.category == "operand" for hit in report.receipts))
+            report = scan(prefix + b"\n" + target, target=target, phase=phase, fields=(field,), **context)
+            self.assertFalse(report.passed)
+            self.assertEqual({hit.form for hit in report.issues if hit.category == "full_target"},
+                             {"literal", "normalized", "compact"})
+            report = scan(prefix + b"\nprose " + value, target=target, phase=phase, fields=(field,), **context)
+            self.assertTrue(any(hit.category == "operand" and hit.start > field.end for hit in report.issues))
+
+    def test_causal_service_fields_require_exact_typed_predecision_receipts(self):
+        for value, kind, target, phase, context in (
+                (QUERY, "route_query", b"THINK REVISE " + QUERY, "CHECK", {"implicated_query": QUERY}),
+                (NODE, "event_got", b"READ INDEX " + NODE, "CONTINUE",
+                 {"current": NODE, "implicated_event": EVENT})):
+            prefix = b"VALUE " + value
+            field = public_field(prefix, value, kind, owner=EVENT if kind == "event_got" else None)
+            for invalid in (replace(field, observed_at=10), replace(field, origin="host"),
+                            replace(field, evidence=""), replace(field, start=0),
+                            replace(field, owner=QUERY), replace(field, owner=EVENT.decode("ascii")),
+                            replace(field, owner=b"M2AE_AAAAAAAAAAAA")):
+                with self.subTest(kind=kind, invalid=invalid), self.assertRaises(ValueError):
+                    scan(prefix, target=target, phase=phase, fields=(invalid,), **context)
+        with self.assertRaisesRegex(ValueError, "exact_typed_identifier"):
+            scan(QUERY, target=b"STOP", phase="CONTINUE",
+                 fields=(public_field(QUERY, QUERY, "event_got", owner=EVENT),))
+
+    def test_shared_got_never_authorizes_foreign_event_port_or_recover_operand(self):
+        for operand, target, phase in ((LATER_EVENT, b"THINK REVISE " + LATER_EVENT, "STEP_CHECK"),
+                                        (LATER_PORT, b"STEP " + LATER_PORT, "PROSPECT"),
+                                        (LATER_QUERY, b"READ RELATION " + LATER_QUERY, "SEEK")):
+            prefix = b"GOT " + NODE + b"\nOTHER " + operand
+            field = public_field(prefix, NODE, "event_got", owner=LATER_EVENT)
+            report = scan(prefix, target=target, phase=phase, current=NODE,
+                          implicated_event=EVENT, observed_contradiction=True, fields=(field,))
+            with self.subTest(phase=phase):
+                self.assertFalse(report.passed)
+                self.assertTrue(all(hit.category == "operand" and hit.value == operand
+                                    for hit in report.issues))
+                self.assertEqual(report.receipts, ())
+
     def test_prospect_did_allowed_with_receipt_for_each_form(self):
         prefix = b"EVENT " + EVENT + b"\nDID " + PORT
         field = public_field(prefix, PORT, "event_did")
@@ -318,9 +419,9 @@ class ForwardScannerTests(unittest.TestCase):
         self.assertFalse(scan(prefix).passed)
         with self.assertRaisesRegex(ValueError, "exact_typed_identifier"):
             scan(prefix, fields=(public_field(prefix, PORT, "route_query"),))
-        prefix = b"READ RELATION " + QUERY
+        prefix = b"QUERY " + QUERY
         report = scan(prefix, target=b"THINK REVISE " + QUERY, phase="READ_CHECK",
-                      fields=(public_field(prefix, QUERY, "route_query"),), implicated_query=QUERY)
+                      fields=(public_field(prefix, QUERY, "route_query"),), implicated_query=LATER_QUERY)
         self.assertFalse(report.passed)
         for raw in (b"system says " + PORT, b"hidden route=" + PORT,
                     b"future SERVICE DID " + PORT, b"unrelated task=" + PORT):

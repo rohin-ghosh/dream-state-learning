@@ -5,6 +5,11 @@ complete pre-public semantic object, future-ID ledger, and registered routes.
 Missing source bindings stay with Main; a clean partial report grants nothing.
 No escape decoding is performed on material bytes. JSON is decoded only when
 reading a supplied canonical semantic object or the pinned public certificate.
+The causal-occurrence clarifications permit two operand-only service spans:
+CHECK's implicated issued QUERY and CONTINUE's EVENT GOT equal to latest
+CURRENT with a well-typed EVENT owner. V2 supersedes only v1's selected-owner
+condition; original owner and service provenance remain intact. Neither
+authorizes future IDs, actions, semantic or route leaks.
 """
 
 from collections.abc import Mapping
@@ -21,6 +26,8 @@ from organism_v6.composition_birth_stage2a_primitives import parse_canonical_jso
 STATUS = "PARTIAL_SOURCE_ONLY"
 MEMO_SHA256 = "ca528cac3505cd4d1202e1df6253213ecc167671823c39a7ae3d1a9979126dd1"
 V3_SHA256 = "da833b9df37930d0b06f9206e5fa47d5b436b325e833e6f6b2f4221f4d8808d1"
+CAUSAL_OCCURRENCE_SHA256 = "37398723e197fcba2b24a505f06395c311d3dfcd488e9fc4026d883f6aeb4b07"
+CAUSAL_OCCURRENCE_V2_SHA256 = "a08b6ff2df927552f6c96917f58181f56f17f456643afaee28c8bb2dd7722b16"
 CERTIFICATE_SHA256 = "e90c7389e8811c4fe9c870119b76226ec070c47c99ea6ba8f075d89c5ba234b5"
 CERTIFICATE_LENGTH = 1025
 SCIENCE_GATES = MappingProxyType(dict.fromkeys((
@@ -60,12 +67,14 @@ _SPACES = re.compile(rb"[ \t]+")
 _COMPACT_DELETE = b"_- <>"
 _FIELD_ORIGINS = MappingProxyType({
     "route_query": "service", "event_did": "service", "event_recover": "service",
+    "event_got": "service",
     "selected_event": "service", "issued_query": "actor", "think_implicated": "actor",
     "task_start": "task", "task_goal": "task", "current": "host",
     "task_current": "task", "protocol": "system",
 })
 _FIELD_KINDS = MappingProxyType({
     "route_query": ("query",), "event_did": ("port",), "event_recover": ("query",),
+    "event_got": ("node",),
     "selected_event": ("event",), "issued_query": ("query",),
     "think_implicated": ("event", "query"), "task_start": ("node",),
     "task_goal": ("node",), "current": ("node",), "task_current": ("node",),
@@ -328,7 +337,8 @@ class PublicField:
     """Exact prefix value span plus caller-bound source evidence, not a trusted claim.
 
     `observed_at` is a trace index strictly before `decision_index`; `owner`
-    identifies the implicated event for RECOVER. `current`/`task_current` must
+    identifies the implicated event for RECOVER and the original well-typed
+    EVENT for GOT (not necessarily selected). `current`/`task_current` must
     identify the latest state (including Builder's authentic retained boundary).
     """
     path: str
@@ -513,6 +523,12 @@ def scan_forward_targets(prefix, *, target, phase, decision_index, semantic_byte
                     return field
                 if field.kind == "selected_event" and value == implicated_event:
                     return field
+            if (phase in ("CHECK", "READ_CHECK") and field.kind == "route_query"
+                    and value == implicated_query):
+                return field
+            if (phase == "CONTINUE" and field.kind == "event_got" and value == current
+                    and field.owner is not None):
+                return field
             if field.kind == "think_implicated" and value in (implicated_event, implicated_query):
                 return field
         return None

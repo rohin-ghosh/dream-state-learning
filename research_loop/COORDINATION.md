@@ -17906,3 +17906,50 @@ fixed through the integrated suite (177.947s). Simple hygiene stays in effect;
 formal paper-grade guard remains C11-only. Next: scanner-span binding and
 durable fresh-process state I/O, then actual preparation/reduced birth screen.
 SEQ195 is complete and will not be repeated. No generalG3/H1/H2 promotion.
+
+## [Builder] 2026-09-13T23:04Z — scanner/checkpoint integration verified; inventory gap localized
+
+Main integrated506tests:491PASS,15native-only skips,194.606s. Actual observed
+start22:59:14/end23:02:30UTC; all46source/test hashes unchanged. Exact receipt
+and pins: research_notes/analysis/2026-09-13_stage2a_scanner_checkpoint_integration.md.
+The9trainer and6checkpoint native tests already passed separately on node2
+tinyCPU fixtures with CUDAhidden. The checkpoint6include disk save -> fresh
+process -> D1 restoration -> D2 equality. Source bundle is now durably archived
+and hash-verified locally; full custody in the linked fresh-process receipt.
+These are engineering checks, not Qwen/PEFT/native-tokenizer or GPU results.
+
+The exact scanner input bridge and v2 historical-CURRENT correction pass
+all512synthetic arm projections with explicit synthetic inventories. V2
+preserves authentic shared-GOT history and original EVENT/service ownership;
+it adds no future/action/semantic/route exception. This is NOT complete
+inventory or canonical-material validation. No science/claim gate promoted.
+
+Fresh gap audit found the next actual blocker: source-derived inventories
+are absent; whole-world future semantics can exceed the scanner4096-entry
+bound even before queries (familyA ordinary EVENT2400+port2400). Empty caller
+ledgers cannot close readiness. Lorentz now owns ONLY new source_inputs.py
+and its test for full-constructor/exact-record validation; the accepted four
+scanner files stay frozen. Mendel reviews v2/checkpoint read-only. No GPUjob
+launched/killed, no curl/wget retry, no approval request, no node1 writes.
+Node1's bounded21:33preservation finding remains unchanged, not universal
+custody coverage; preservation deadline23:14UTC today, lease end09-14 23:14UTC.
+SEQ195 stays complete; no repeat. Formal paper-grade C11 stays deferred.
+
+## [Builder -> Root/Rohin] 2026-09-13T23:04Z — narrow source closure needed, not a new guard project
+
+Please resolve the remaining Stage2A source bindings before the separate
+material/tokenizer/runtime opening: (1) exact complete birth protected semantic
+object schema; (2) future universe including off-path/unregistered roles and
+whether ATOM disclosure means retained prefix or original lifetime; (3)
+multi-step registered-route membership/depth/recovery/byte serialization;
+(4) source derivation of birth core actual_route_depth and prior STEP match.
+V3section8 fixes alias extraction but not all these producer fields; current
+held-object schema is not a complete birth schema. The read-only audit is
+captured in the integration analysis. Do not interpret synthetic clear scans
+as this closure or silently select a visibility rule in source.
+
+Unambiguous constructor/source-record checks proceed now; no live reply is
+assumed. The target stays reduced BASE/D1ATOM_LOCAL560calls, then qualified
+same-adapter AUTH two-SLEEP junction. This request does not revive formal C11
+or a full matrix, and does not authorize synthetic/diagnostic relabeling to
+bypass the existing source/material gates.
