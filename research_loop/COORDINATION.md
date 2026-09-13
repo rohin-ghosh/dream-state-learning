@@ -15120,6 +15120,32 @@ new cold sequence-readout module/test. No sequence fit has executed yet.
 Main's suspected CPU-receipt environment-shape mismatch was disproved by the
 actual immutable native receipt (nested native+peft); no receipt was changed.
 
+## [Independent A3C audit + conditional A4 freeze] 2026-09-13 PT — typing passes 8/8; graph use remains 0/8; one final generic procedure is now eligible
+
+Documentation-only terminal audit and prospective freeze:
+`research_notes/analysis/2026-09-13_pcfl_a3c_structured_framed_terminal_audit_and_a4_freeze.md`.
+A3C made exactly 25 calls: 17 exact one-line THINKs plus eight strict terminal
+ROUTEs. First THINK and joint recurrent-THINK/strict-terminal physical gates
+both pass 8/8; legal and graph-success routes remain 0/8. The static regex
+contains no concrete identifier or candidate enumeration. All 17 THINK strings
+are byte-identical to A3B; structured generation only repairs action syntax
+(A3B strict 4/8 -> A3C 8/8), not semantics. Six of eight routes turn a visible
+node suffix into a nonexistent P-shaped port; the remaining two use registered
+ports but skip/splice nonadjacent edges. A2 on the same cases was strict 7/8,
+legal/graph 0/8. All 162 completed files rehash, native custody/local replay
+pass on their bounded terms, and outer worker exit/group/GPU/queue/CVD release
+receipts verify; no full-assay or clean-lineage claim.
+
+One final conditional `A4_GENERIC_PATH_STACK_FRAMED_SMOKE` is frozen: exact
+A3C tasks/seeds/model/grammar/LF/caps/scorer with only an answer-free generic
+procedure for CURRENT NODE, PATH, BRANCH STACK, separate node/port roles and
+final edge-by-edge verification. No route length, ID, example or answer.
+Require >=7/8 on both the physical gate and the joint THINK+strict+legal+graph
+gate. A miss stops the 7B reader branch with no prompt sweep; a pass permits
+one frozen 64-task panel requiring >=60/64, not a learning claim. No runtime,
+builder source, model, tokenizer, adapter, benchmark, GPU or remote state was
+changed.
+
 ## [Independent A3B terminal audit] 2026-09-13T16:40Z — physical recurrence exists; typed action and graph use still fail
 
 Read-only terminal audit:
