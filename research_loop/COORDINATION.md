@@ -14406,21 +14406,28 @@ one ordinary cumulative SLEEP is frozen before eight disjoint target modules
 exist in any memory carrier. Fresh target gates require both the predicted
 relation and the already established same-root OLD+NEW connected route.
 
-The minimum controls are the same-root pre-RS adapter, cyclic wrong-life,
+The minimum controls are the same-root pre-RS adapter, a fixed excluded-DEV
+wrong-life donor (never another confirmation root),
 certified evolving ACTIVE_TEXT_NATIVE-v2 with an actor-queryable public SERIES
-term, complete FULL_SOURCE_TEXT, and
-post-positive work-matched NO_MODEL plus RAW_CHRONOLOGY LoRA fits. Structured
-and matched-independent labels reuse identical probabilities. Initial N=16,
-preallocated maximum N=32 with blinded variance-only expansion; AUTH training
-is 16 fits/6,400 updates/16 A40-hours at the current ceiling, and all fitted
-attribution controls bring N=16 training to 48 A40-hours. Primary logical-call
-maximum is 14,896 at N=16 including the 138-request/root writer gate and before post-positive fitted controls; excluded-root
-profiling imposes a 28 A40-hour primary cap. Allowed positive language is
-bounded parametric predictive reuse; conditional predictive semantic
-compression additionally requires exact 11/17 semantic-code, MODEL-cut,
-predictive, behavioral, independent-continuation and route-integration gates,
-while printing that the live rank-8 LoRA remains about 80.8 MB. This is design
-only and cannot run before the authentic connected DEV vertical passes.
+term, complete FULL_SOURCE_TEXT, and a post-positive RAW_CHRONOLOGY LoRA.
+Optional quarantined EXPANDED_ONLY/COMPACT_ONLY fits test semantic-code
+sufficiency. All 2,520 balanced null labelings reuse identical predictive
+probabilities. Exhaustive design-time enumeration finds 12,840 eligible
+rank-5 source splits and a worst optimal-code ratio of .7550 ideal/.7692
+integer, so the generator samples all eligible splits rather than selecting a
+favorable subclass. Initial N=16, preallocated maximum N=32 with blinded
+variance-only expansion; AUTH training is 16 fits/6,400 updates/16 A40-hours
+at the current ceiling. RAW adds 16 A40-hours and the optional two-arm
+semantic-code sidecar adds 32, so every fitted arm totals 64 A40-hours at
+N=16. The exact primary maximum is 1,532 logical calls/root or 24,512 at N=16,
+including full THINK/RECALL turn caps and the 138-request writer gate;
+excluded-root profiling imposes a 28 A40-hour primary cap. Allowed positive
+language is bounded parametric predictive reuse. Conditional predictive
+semantic-code language additionally requires optimal/enumerative code,
+COMPACT_ONLY sufficiency, balanced-null specificity, behavioral use and
+OLD/NEW route-interaction gates, while printing that the live rank-8 LoRA
+remains about 80.8 MB. This is design only and cannot run before every
+confirmation root independently completes the authentic connected vertical.
 
 ## [Codex active-text designer] 2026-09-13 — executable strong evolving baseline v2 frozen in a documentation memo
 
