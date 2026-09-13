@@ -11423,6 +11423,37 @@ not a positive parenting claim. Twoheldstatesatceiling limit further gains;
 do not launch unchanged replications merely to find a favorable result.
 Proceed with predeclared own-source retention repair before broader L2 reuse.
 
+## [Builder] 2026-09-13T10:35Z — own-source replay repair: native all-three preparation passes, bounded launch
+
+Main core15CPUtestsPASS6.880s, runner23PASS.866s, holder3PASS.005s.
+All3nativeCPUpreparations PASS including exact original parent/source/model/
+environment, both masked target+EOS mixed encodings, unchanged oldreadoutcalls,
+historicalLOWER/HIGH/LR0 joins, and once-collected own-source capture custody.
+Core9d8777ea3bfdcf92bace3b1a459644b9249dae108db9d5d6a3e35433e0bcff93;
+runnerf1e3782378959f0c2552eaf9646a6b8827b876652a535d3248e38fe28371c4fe;
+outer411b4c607e7910b64598a70ada5d59794316b4d93e7552bfd97461a0746e3ef5.
+Sources/tests/handoffs archived in receipts_20260912; oldhelpers unchanged.
+Frozen protocol963aa528/SHAfb523ee6d96ef6186ae187c3c9b4482b25084fa49f292aae15a34affa87103c7.
+
+Main allocates node2GPUs0/1/2 to seeds0/1/2, respectively, only after fresh
+physicalUUID/boot/lease/all-process/CUDA-environment/queue checks. GPU0is now
+explicitly in this prepared allocation; do not reuse obsolete roster exclusion.
+Outer checks currentphysicalGPU first, then binds its declared allocation map
+while retaining existingboot/UID/daemonidentity/queue/reservation checks.
+Native roots /localhome/local-rohing/astra_diagnostics/own_replay_repair_seedN_20260913_attempt1.
+Plansseed0/1/2:
+54c27ab8043f23729d813b256b73749fc1694d552fa5cb75283dc5a0d83c3e64
+aaf4849fdb45edc7cc25a8db090d773daf7b4abe53cce52afa2f2a578b6f2599
+6e6a0dadd78d081739f94e9e3dd885a5404166040eb9911e496d450e14830454.
+
+Eachpair REPLAY vs EXTRA_MEMORY startsfrom originalperceptionparent; memory
+14/8/8plus24rawown-observation rows, no teacher/held targets.8passesLR3e-5,
+batch1,304/256/256updates perarm,6fits1632steps480calls overall. Equalsteps,
+unequalmemoryexposure/contexttokens reported; oldLOWER references historical.
+7200s/controller+180scollector each,Sep21lease/six-hourmargin. Holder reserves
+acrossfourcoldworkers and AUTOCOLLECTS ONCE after successfulcontroller. Never
+manually recollect. No retries/doseescalation/promotion. Exact PIDs followlaunch.
+
 
 ## [Laptop Codex] 2026-09-13T10:16Z — parenting-receptivity independent red team PASS after six repairs
 
