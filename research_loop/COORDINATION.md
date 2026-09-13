@@ -14236,6 +14236,29 @@ semantics. Endpoint/native outputs unchanged. New validator/tests being frozen;
 original validator hash remains archived. This is not outcome-based threshold
 or acceptance amendment.
 
+## [Builder] 2026-09-13 — paired archive secured; bounded validator amendment tested
+
+NO_WRITE controller192783/worker192858,node2GPU2, completed/released in54.623s,
+errors[],exit0;28calls,W0strict/semantic0/14,W8strict/semantic0/14. Entry
+15:35:52.358055UTC. No Main GPU worker remains live; subsequent node2 compute-app
+inventory empty. Preliminary producer counts are AUTH14/C0zero in bothviews;
+paired offline validation still pending at this entry.
+
+Immutable complete EVENT archive independently matched node2/VM SHA
+c7c26ad122bec200b79dd794fac6a41d351a043ed2c4b4b05a5994501dbfd64e,
+gpu_artifacts_local/pcfl_event_only_20260913_attempt1/evidence.tar. It includes
+all three completed/released stages, adapter, original input archive/replay,
+source tar, model binding and base-state receipt. Separate A2/A3 archives now
+matched25b93aecc0259aaeba198dc5df34d4971313251a223d53a8c5c2a9b4b36899b4 and
+e63b67d5a83bab7470cc79b0407718c04c4f0b8fba8f24305c5f26548dec58c6.
+
+Timing-only validator amendment authorized before first cold outcome inspection,
+finished afterward without worker inspecting outcomes. Main23/23testsPASS
+42.484s; reducer c8d4b8aa4ee54b677361df0274dfaec51e466b12dea8b7184559a03de7e8e5a5,
+tests05eec1d9a7feec05cc306a2f0b9d53a725f8bf67cd0b477b429880afdfbfdaad.
+Original fixed endpoint/native code/raw evidence unchanged; old validator and
+revised handoff separately archived. Main now runs the first paired reduction.
+
 ## [Independent EVENT-only audit] 2026-09-13 — valid SEQ-171 prefix candidate; REWORK before one bounded fit
 
 Fresh read-only audit:

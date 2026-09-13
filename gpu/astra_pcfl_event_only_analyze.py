@@ -16,6 +16,7 @@ event, prefix, native, core, readout = command.event, command.prefix, command.na
 require, canonical, digest = native.require, native.canonical, native.digest
 interval, files = shared.interval, shared.files
 SCHEMA = "pcfl.event_only.analysis.v1"
+VALIDATOR_AMENDMENT = "pre_outcome_request_limits_and_operation_timing_v1"
 STAGES = ("fit", "readout_AUTH_WRITE", "readout_NO_WRITE_C0")
 ARMS = ("AUTH_WRITE", "NO_WRITE_C0")
 INPUTS = {"spec.json", "import.json", "fit.json", "tokenizer.json", "encoding.json", "identity.json", "read_measurements.json", "service.json"}
@@ -219,6 +220,7 @@ def arm_rows(archive, manifest, fitted, completion, arm, adapter, surfaces, rele
     same(sorted(files(archive, directory + "actor/")), sorted(expected_actor_files), "exact28 actor call inventory; no retry/error extras")
     rows, generation_seconds, operation_seconds = [], 0., 0.
     prior_end = load["ready_at"]
+    prior_operation_end = completion["started"]
     for index, row in enumerate(manifest["roster"]):
         name = directory + f"actor/call_{index:04d}."
         request, render, captured, wrapped = [archive.read(name + suffix + ".json") for suffix in ("request", "render", "raw", "response")]
@@ -228,6 +230,9 @@ def arm_rows(archive, manifest, fitted, completion, arm, adapter, surfaces, rele
             same(record["route"], route, "per-call checkpoint route")
         same([request[key] for key in ("request", "row", "messages", "roster_sha256")],
              [{"id": row["id"]}, row, readout.public_messages(row), manifest["roster_sha256"]], "source-withdrawn exact query")
+        require("started" in request and "limits" in request, "request timing/limits missing")
+        same(request["limits"], {"deadline": settings["deadline"], "device_seconds": command.TOTAL_SECONDS - command.CLEANUP_SECONDS}, "production request limits")
+        native.number(request["started"])
         raw = captured["raw"]
         same([captured["kind"], raw["route"], raw["prompt_token_ids"]], ["NATIVE_OWN_WRITE_READOUT", route, render["prompt_token_ids"]], "native raw/route/tokens")
         prompt_ids, output_ids = native.token_ids(raw["prompt_token_ids"]), native.token_ids(raw["output_token_ids"])
@@ -247,6 +252,11 @@ def arm_rows(archive, manifest, fitted, completion, arm, adapter, surfaces, rele
         prior_end = captured["generation_ended"]
         generation_seconds += interval(captured["generation_started"], captured["generation_ended"])
         native.number(response["device_seconds"])
+        operation_end = request["started"] + response["device_seconds"]
+        require(prior_operation_end <= request["started"] <= captured["generation_started"]
+                <= captured["generation_ended"] <= operation_end <= completion["ended"], "per-call operation chronology/duration")
+        require(response["device_seconds"] <= request["limits"]["device_seconds"], "per-call operation cap")
+        prior_operation_end = operation_end
         operation_seconds += response["device_seconds"]
         rows.append({"raw": text, "raw_utf8_sha256": wrapped["raw_utf8_sha256"], "score": score,
                      "exact_bytes": score["strict"], "exact_stop": stop and score["strict"], "semantic_stop": stop and score["semantic"],
@@ -374,7 +384,8 @@ def analyze(root, manifest_sha256, stage_pins):
                     bucket[arm + "/" + metric] += result[metric]
                 bucket[arm + "/finish_" + result["finish_reason"]] += 1
     same(archive.snapshot(), archive.inventory, "archive changed during reduction")
-    return {"schema": SCHEMA, "label": "SEPARATE_FORMAT_SCAFFOLDED_EVENT_PREFIX_ONLY", "limits": LIMITS,
+    return {"schema": SCHEMA, "validator_amendment": VALIDATOR_AMENDMENT,
+            "label": "SEPARATE_FORMAT_SCAFFOLDED_EVENT_PREFIX_ONLY", "limits": LIMITS,
             "endpoint": endpoints(pairs, service), "pairs": pairs, "strata": {key: dict(value) for key, value in buckets.items()},
             "deterministic_service": service, "format_scaffold": imported["format_scaffold"],
             "experimental_units": {"source_lives": 1, "roots": 1, "fits": 1, "initializations": 1, "child_EVENTs": 8,

@@ -171,11 +171,14 @@ def fixture(root):
             text = imported["queries"][row["request"]]["target"] if (arm == "AUTH_WRITE" and index != 27) or (arm == "NO_WRITE_C0" and index == 14) else "MISS"
             prompt = tokenizer.apply_chat_template(analyze.readout.public_messages(row), tokenize=False, add_generation_prompt=True)
             prompt_ids, output_ids = tokenizer.encode(prompt), tokenizer.encode(text)
-            request = {"request": {"id": row["id"]}, "row": row, "messages": analyze.readout.public_messages(row), "route": route, "roster_sha256": manifest["roster_sha256"]}
+            request = {"request": {"id": row["id"]}, "row": row, "messages": analyze.readout.public_messages(row),
+                "route": route, "roster_sha256": manifest["roster_sha256"],
+                "started": started + .5 if index == 0 else started + 2.75 + index,
+                "limits": {"deadline": config["deadline"], "device_seconds": 1740}}
             raw = {"route": route, "text": text, "prompt_token_ids": prompt_ids, "output_token_ids": output_ids, "finish_reason": "stop", "stop_reason": None}
             response = {"id": row["id"], "request_sha256": analyze.digest({"id": row["id"]}), "roster_sha256": manifest["roster_sha256"],
                 "route": route, "text": text, "prompt_tokens": len(prompt_ids), "output_tokens": len(output_ids), "finish_reason": "stop",
-                "stop_reason": None, "truncated": False, "device_seconds": 1.}
+                "stop_reason": None, "truncated": False, "device_seconds": 3.1 if index == 0 else .9}
             capture = {"kind": "NATIVE_OWN_WRITE_READOUT", "route": route, "raw": raw,
                        "generation_started": started + 3 + index, "generation_ended": started + 3.5 + index}
             values = {"request": request, "render": {"route": route, "rendered_prompt": prompt, "prompt_token_ids": prompt_ids,
@@ -388,6 +391,68 @@ class EventOnlyAnalyzeTests(unittest.TestCase):
         write(path.parent.parent / "actor_close.json", close)
         self.repin("readout_AUTH_WRITE")
         with self.assertRaisesRegex(ValueError, "cost intervals"):
+            self.analyze()
+
+    def test_first_operation_may_start_before_cold_ready(self):
+        directory = self.archive / "readout_AUTH_WRITE/actor"
+        request = command.read(directory / "call_0000.request.json")
+        load = command.read(directory / "load.json")
+        self.assertLess(request["started"], load["model_load_started"])
+        self.assertLess(request["started"], load["ready_at"])
+        result = self.analyze()
+        self.assertEqual(result["validator_amendment"], "pre_outcome_request_limits_and_operation_timing_v1")
+        self.assertEqual(result["endpoint"]["AUTH_strict_stop"], 13)
+
+    def test_missing_request_start_or_limits_rejected(self):
+        path = self.archive / "readout_AUTH_WRITE/actor/call_0000.request.json"
+        original = command.read(path)
+        for field in ("started", "limits"):
+            changed = copy.deepcopy(original)
+            changed.pop(field)
+            write(path, changed)
+            self.repin("readout_AUTH_WRITE")
+            with self.assertRaisesRegex(ValueError, "request timing/limits missing"):
+                self.analyze()
+
+    def test_production_request_limits_exact_not_repaired(self):
+        path = self.archive / "readout_AUTH_WRITE/actor/call_0000.request.json"
+        original = command.read(path)
+        for limits in ({"deadline": original["limits"]["deadline"] + 1, "device_seconds": 1740},
+                       {"deadline": original["limits"]["deadline"], "device_seconds": 1739},
+                       {**original["limits"], "extra": 1}, {"device_seconds": 1740}):
+            write(path, {**original, "limits": limits})
+            self.repin("readout_AUTH_WRITE")
+            with self.assertRaisesRegex(ValueError, "production request limits"):
+                self.analyze()
+
+    def test_request_start_after_generation_or_overlapping_prior_response_rejected(self):
+        directory = self.archive / "readout_AUTH_WRITE/actor"
+        path = directory / "call_0001.request.json"
+        original = command.read(path)
+        generation = command.read(directory / "call_0001.raw.json")["generation_started"]
+        prior_start = command.read(directory / "call_0000.request.json")["started"]
+        prior_duration = command.read(directory / "call_0000.response.json")["response"]["device_seconds"]
+        for started in (generation + .1, prior_start + prior_duration - .1):
+            write(path, {**original, "started": started})
+            self.repin("readout_AUTH_WRITE")
+            with self.assertRaisesRegex(ValueError, "per-call operation chronology/duration"):
+                self.analyze()
+
+    def test_individually_impossible_duration_not_hidden_by_unchanged_sum(self):
+        directory = self.archive / "readout_AUTH_WRITE"
+        before, after = 0., 0.
+        for index, delta in ((0, -2.), (27, 2.)):
+            path = directory / f"actor/call_{index:04d}.response.json"
+            wrapped = command.read(path)
+            before += wrapped["response"]["device_seconds"]
+            wrapped["response"]["device_seconds"] += delta
+            after += wrapped["response"]["device_seconds"]
+            write(path, wrapped)
+            row = self.manifest["roster"][index]
+            write(directory / (row["id"].replace("/", "_") + ".json"), wrapped["response"])
+        self.assertAlmostEqual(before, after)
+        self.repin("readout_AUTH_WRITE")
+        with self.assertRaisesRegex(ValueError, "per-call operation chronology/duration"):
             self.analyze()
 
     def test_old_threshold_or_prepared_import_drift_rejected(self):
