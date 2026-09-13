@@ -1,13 +1,29 @@
 # FIRST SPRINT DRAFT — companion abstract
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ136 retains both positive and negative findings.
+This evidence cut through SEQ143 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current completed evidence: SEQ134–136 / C76–C78.** R1's read-only missing-readout
+**Current evidence through SEQ143 — C79–C82; ongoing first draft.**
+Three learner seeds per skill show controlled authored Level1 acquisition:
+prediction, goal completion, contradiction and update judgement each reach
+48/48 held content and strict, from OFF content 22/32/17/8 respectively;
+post-fit canaries are 12/12 throughout. This is positive component evidence,
+not a matched trained parenting comparison or general reasoning qualification.
+Contrastive practice has a small valid-field advantage over PLAIN but fails its
+frozen screen. The original two completed low/high-LR seed pairs have null
+endpoints; the low seed0 recovery is separate, not an imputed original success.
+A100 warm-up failures are missing scientific endpoints, not zero scores.
+**PENDING at this cut:** high-LR seed0 recovery, newer perception/reflection and
+repetition/meta-reflection roster results, and actual-record formation/transfer.
+No later outcome is incorporated, no H1/H2/clean-lineage/general G3/freeze or
+mission-completion claim is made, and the collaborator draft remains **UNSENT**.
+Historical exclusion statements below apply only to their named earlier cuts.
+
+**Historical completed evidence: SEQ134–136 / C76–C78.** R1's read-only missing-readout
 supplement is a post-abort diagnostic, not a repaired primary or third completed
 primary root. The first native child-record loop closes 11 stages, 128 generation
 calls, three fits and 100 updates; all five vLLM readout panels remain old 4/8,
@@ -17,7 +33,7 @@ Fit2 full likelihood scores 12/16, including four tiny downstream tie-break
 successes, versus strict first-token 8/16 with five ties; held-readout scores
 remain 8/16 by both measures. HF forced candidates and vLLM greedy outputs are
 distinct. This is child-record loop connectivity, not parenting, clean ancestry,
-general G1 or a frozen mechanism. Later LR-comparison outcomes are excluded;
+general G1 or a frozen mechanism. Later LR-comparison outcomes were excluded from this historical block;
 the working-draft research question remains unresolved. Collaborator UNSENT.
 
 **Historical completed-evidence cut: SEQ130–133 / C74–C75.** Q0 R0/R2 complete
@@ -328,7 +344,7 @@ cases remain unrequested; no G3, parenting, child sleep, H1/H2, clean lineage,
 novel-fact transfer or substrate freeze follows. Model origin remains
 `UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred. Collaborator **UNSENT**.
 
-Internal staging only; the canonical abstract now includes the bounded update through SEQ136 while preserving its historical text. H1/H2 remain the proposed
+Internal staging only; the canonical abstract now includes the bounded update through SEQ143 while preserving its historical text. H1/H2 remain the proposed
 developmental thesis, not established outcomes.
 
 ## Abstract
@@ -360,8 +376,61 @@ strict first-token choices with five exact ties; both held-readout measures
 remain 8/16. Unequal 12/14-token targets and HF teacher forcing differ from
 vLLM greedy generation. This is neither no learning nor a pure access failure,
 and does not establish parenting, clean ancestry, general G1 or a mechanism
-freeze. The research question remains open; later comparison outcomes are
-outside this evidence cut.
+freeze. The research question remains open.
+
+Through SEQ-143, four standalone authored Level1 skills each reach 48/48 held
+content and strict accuracy in all three learner seeds, from OFF content counts
+22, 32, 17 and 8 for prediction, goal completion, contradiction and update
+judgement; all post-fit canaries score 12/12. These controlled component gains
+include source-field corrections, not only formatting, but share fixed material
+and do not estimate a matched parenting effect. A separate contrastive screen
+scores OFF/PLAIN/CONTRASTIVE 2/17/19 out of 24 strict and fails its preregistered
+screen: its net two-item advantage over PLAIN includes three valid-field wins
+and one loss, while gains over OFF are interface-confounded. Original low/high-LR
+loops on learner seeds 1 and 2 retain old 4/8 and new 4/8 at every readout;
+a separately archived low-LR seed0 recovery is also flat. Original seed0 aborts
+remain missing, and high-LR recovery remains pending at this cut. Five A100
+warm-up failures yield no scientific endpoints, not zero accuracy. Newer-roster
+and actual-record transfer results remain pending. The learning-flywheel thesis
+and H1/H2 remain open; these results neither complete the mission nor freeze a
+mechanism.
+
+## Current result-table companion — C79–C82
+
+| Level1 skill (each learner seed0/1/2) | Held content /48 OFF→post | Held strict /48 | Canary C/S /12 | Content W/L |
+| --- | ---: | ---: | ---: | ---: |
+| Prediction | 22→48 | 22→48 | 11→12 | 26/0 |
+| Goal completion | 32→48 | 32→48 | 11→12 | 16/0 |
+| Contradiction | 17→48 | 0→48 | 12→12 | 31/0 |
+| Update judgement | 8→48 | 0→48 | 12→12 | 40/0 |
+
+Each entry is also the three-learner mean, range[x,x], on one fixed materialseed0.
+Strict combines content and canonical output; all12roots complete, collected
+once. Total1440calls/12fits/3840updates. The original Level1 content parser already
+accepts one enclosing fence: contradiction's+31 is source correction, not merely
+format; goal's+16 corrects already-canonical decisions. Prediction and update
+include both source and interface corrections. No-update OFF is not a matched
+trained parenting control, and shared canaries do not certify broad retention.
+
+Contrastive strict OFF/PLAIN/CONTRASTIVE is2/17/19 out of24; D1/D2 contrastive
+12/12 and7/12. Original screenFALSE,144calls/2fits/24updates. Its3valid-field
+wins/1loss versusPLAIN do not imply a robust wrapper advantage: D1/D2 share12cases,
+and both-wrapper correct is8/12 PLAIN versus7/12 contrastive. No permissive
+rescoring of the22malformed OFF held outputs is licensed by the later protocol.
+
+Original LR seeds1/2 at3e-5 and1e-4 complete four loops; all five readouts per
+loop remain old4/8,new4/8,legal16/16 with final paired8/0/0/8. Separate low-seed0
+attempt2 also completes128calls/3fits/100updates with flat endpoints, without
+replacing the original two seed0 aborts. High-seed0 recovery is **PENDING**.
+A100 has5warm-up failures before any fit or captured response, not5zero scores;
+its sixth prepared cell did not launch. Newer-roster and real-record results
+remain **PENDING at SEQ143**. The scientific question is what transfers beyond
+these authored fixtures and into a controlled child-record loop, not whether
+the mission is already complete.
+
+See [C79–C82 source pins](../research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md)
+and the [all12 table and costs](README.md). These are internal evidence links,
+not new literature references or independent approval of this manuscript patch.
 
 ## Evidence and interpretation boundaries
 

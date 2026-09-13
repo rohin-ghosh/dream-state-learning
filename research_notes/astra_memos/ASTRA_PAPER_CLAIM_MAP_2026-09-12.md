@@ -1,13 +1,29 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ136 retains both positive and negative findings.
+This evidence cut through SEQ143 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current completed evidence: SEQ134–136 / C76–C78.** R1's read-only missing-readout
+**Current evidence through SEQ143 — C79–C82; ongoing first draft.**
+Three learner seeds per skill show controlled authored Level1 acquisition:
+prediction, goal completion, contradiction and update judgement each reach
+48/48 held content and strict, from OFF content 22/32/17/8 respectively;
+post-fit canaries are 12/12 throughout. This is positive component evidence,
+not a matched trained parenting comparison or general reasoning qualification.
+Contrastive practice has a small valid-field advantage over PLAIN but fails its
+frozen screen. The original two completed low/high-LR seed pairs have null
+endpoints; the low seed0 recovery is separate, not an imputed original success.
+A100 warm-up failures are missing scientific endpoints, not zero scores.
+**PENDING at this cut:** high-LR seed0 recovery, newer perception/reflection and
+repetition/meta-reflection roster results, and actual-record formation/transfer.
+No later outcome is incorporated, no H1/H2/clean-lineage/general G3/freeze or
+mission-completion claim is made, and the collaborator draft remains **UNSENT**.
+Historical exclusion statements below apply only to their named earlier cuts.
+
+**Historical completed evidence: SEQ134–136 / C76–C78.** R1's read-only missing-readout
 supplement is a post-abort diagnostic, not a repaired primary or third completed
 primary root. The first native child-record loop closes 11 stages, 128 generation
 calls, three fits and 100 updates; all five vLLM readout panels remain old 4/8,
@@ -17,7 +33,7 @@ Fit2 full likelihood scores 12/16, including four tiny downstream tie-break
 successes, versus strict first-token 8/16 with five ties; held-readout scores
 remain 8/16 by both measures. HF forced candidates and vLLM greedy outputs are
 distinct. This is child-record loop connectivity, not parenting, clean ancestry,
-general G1 or a frozen mechanism. Later LR-comparison outcomes are excluded;
+general G1 or a frozen mechanism. Later LR-comparison outcomes were excluded from this historical block;
 the working-draft research question remains unresolved. Collaborator UNSENT.
 
 **Historical completed-evidence cut: SEQ130–133 / C74–C75.** Q0 R0/R2 complete
@@ -3482,7 +3498,182 @@ Sources:
 - [Main v2 CPU acceptance](receipts_20260912/astra_l2_access_probe_v2_main_cpu_20260913.log), SHA256 `45ebb4a305f09b5c431f46d74be10ece2a83fd1c568f07f4682400f44079bc8c`: 20 tests in 2.832 s; [native CPU route fixture](receipts_20260912/astra_l2_access_v2_native_route_20260913.log), SHA256 `0149d0f6abddb55c82ff6d22de2bda6e499ac6d42962de03130932d97b9a8c1b`.
 
 These findings guide acquisition/access repair, not a completed negative paper,
-general G1, parenting, clean-lineage, H1/H2 or mechanism freeze. Later LR-
-comparison outcomes remain excluded; no pending run is treated as a result.
+general G1, parenting, clean-lineage, H1/H2 or mechanism freeze. C78 excludes
+later LR-comparison outcomes, which are separately bounded in C79; no pending
+run is treated as a result.
 The research question remains open, with Main owning operations and integration.
 Collaborator UNSENT.
+
+## C79 — SEQ137–139/141: LR endpoint nulls; original aborts and separate recovery
+
+**Supported:** the original six-cell public-record DEV roster completes only
+learner seeds1/2 at both3e-5 and1e-4. Every complete root has11stages,
+128generation calls,3physical fits and100updates; four original complete roots
+sum512calls/12fits/400updates. Shared fit1 counts once. All five readout panels
+per complete root remain old4/8,new4/8,legal16/16. Final paired counts are
+both8/PROMOTE-only0/SHADOW-only0/neither8. PROMOTE-minus-SHADOW is0/16 at each
+rate for each of these two learners; paired high-minus-low is likewise0/16.
+This is no measured endpoint benefit, **not no parameter/distribution change**.
+It is a full-loop LR comparison with endogenous records, not fixed-material quality.
+
+**Missingness remains explicit:** original seed0-high aborts after baseline/wake1
+before fit1 (SEQ137); original seed0-low aborts after fit1/first reports and
+wake2_PROMOTE, before fit2 (SEQ138). Both record targeted XML-query30s timeouts.
+Original planned three-seed means/ranges remain null, not zero and not
+complete-case estimates presented as three-seed results. The aborted-work totals
+are not supplied by the analysis API; do not impute a zero budget.
+
+**Separate recovery, SEQ141:** seed0-low attempt2 completes11stages/128calls/
+3fits/100updates at3e-5, with all five flat readouts and final8/0/0/8 paired
+counts. Eight first and16cumulative child records are admitted. This fresh
+attempt is reported separately, never substituted into the immutable original
+six-cell analysis. High-seed0 recovery is **PENDING at the SEQ143 cut**; no
+later receipt is incorporated. C77's original exploratory seed0 bridge is not
+an extra learner replicate. C76's R1 supplement still cannot repair its abort.
+
+**Verification scope:** the original-six analyzer consumes Main-supplied,
+hash-bound native collections; it does not independently replay native custody
+or raw-byte scoring. Its roster/plan binding is not a direct root observation.
+Core `native_verified=false`/`scientific_pass=null` remain unchanged even where
+collector `scientific_replay=true`. C78's HF train12/16 full likelihood,8/16
+strict first-token and five ties remain unlike native greedy8/16; neither
+supersedes the other. No clean ancestry, P1, parenting, H1/H2 or mechanism freeze.
+
+Sources:
+- [Original six-cell analysis](receipts_20260912/astra_l2_lr_original_six_analysis_20260913.json), SHA256 `32bdeb890d23e58da1958b0fc94e07e967a6312174ee9e6434a4b09a54a2f9a8`; `runs`, `paired_learners`, `descriptive`, `failures` retain actual cells and nulls.
+- [Original roster](receipts_20260912/astra_l2_lr_prepared_20260913_attempt1.json), SHA256 `2cf367e16116d205eb1e938d05d786d99309d4ae4df4d7afed66863d9d1f865b`.
+- [Original seed0-high abort](receipts_20260912/astra_l2_lr_seed0_high_attempt1_collected.json), SHA256 `a40cd71a0e2fce8a1bd451db19cc7c5e6ec4b91834cf3bf02210bc59d3bc6957`; [original seed0-low abort](receipts_20260912/astra_l2_lr_seed0_low_attempt1_collected.json), SHA256 `96cd52a01e83f60591b67993d7c6ddcda71b34dda30b5a5952c920da4340d4fe`.
+- [Separate low-seed0 recovery](receipts_20260912/astra_l2_lr_seed0_low_20260913_attempt2_collected.json), SHA256 `def6bc23536a7014b1747f3c42ea2588669f4f386f3429a1532015ce8c38d4b3`; SEQ141 records archive SHA256 `fe93ceaecfd5504db8d9a76959cba66b2f3d8afb59c17058a5fbf9255c99c62a` and one-shot collection.
+- [Analyzer handoff](receipts_20260912/astra_l2_lr_analyze_20260913_handoff.md) describes API limits and synthetic CPU tests, **not an actual-result report**; [coordination](../../research_loop/COORDINATION.md) SEQ137–139/141 supplies chronological dispositions.
+
+## C80 — SEQ140: contrastive field gains without screen or mechanism qualification
+
+**Measured work:** original-wrapper144calls/2fits/24updates; each fit12updates,
+12rows/four epochs/48presentations. Controller1323.156s. Both arms1488supervised
+tokens; PLAIN/CONTRASTIVE training19224/19656,padded19460/19892. Equal facts,
+targets and update counts do not imply equal compute; grouping, guidance and
+length are bundled. One learner seed,12paired situations rendered as D1/D2;
+not24independent situations or two independent replications.
+
+| State | D1/12 | D2/12 | Held strict/24 | Record canary/12 | General canary/12 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| OFF | 0 | 2 | 2 | 0 | 11 |
+| PLAIN | 9 | 8 | 17 | 8 | 12 |
+| CONTRASTIVE | 12 | 7 | 19 | 9 | 12 |
+
+Frozen screen **FALSE**:19<20 held,7<9 D2,+2<+4 overPLAIN. OFF→CONTRASTIVE
+has17strict wins/0losses, all invalid→pass.
+The22OFFheld failures begin fences and the unchanged scorer rejects them;
+source content is unevaluable, neither proven absent nor salvaged. PLAIN→
+CONTRASTIVE has3wins/1loss: three already-schema-valid D1 missing-prediction
+Boolean→null/relation→unavailable corrections and one valid D2 TRY-sign loss
+([13,7,19] versus [13,7,-19]). Contrastive has3duplicate-key failures versus
+PLAIN2. Thus net+2 versusPLAIN is not formatting rescue, while the+17 versusOFF
+cannot isolate semantic acquisition.
+
+On21jointly-valid held pairs, observed fields stay correct21/21;
+predicted/relation transitions are3wrong→right,1wrong→wrong,17right→right.
+TRY has1correction/1regression. No OFF-correct canary regresses, but record
+OFF0/12 is a vacuous anchor; only11general canaries are correct OFF anchors.
+Relative toPLAIN, record canaries have2wins/1loss. Both-wrapper correct cases
+are8/12 PLAIN,7/12 contrastive; robust wrapper superiority is unproved.
+
+The advisory identifies a construction shortcut: earlier outcome always
+complements final outcome. Negating the former can solve the target without
+using the selected final outcome. This defeats mechanism identification, not
+proof that the learner uses the shortcut. Preserve both the narrow positive
+valid-field result and the failed screen. No blanket positive/negative verdict,
+general G3, H1/H2, parenting, clean-lineage or freeze follows. Never substitute
+the later Level1 fence-permitting content parser for this strict original scorer.
+
+Sources:
+- [Exact original scores](receipts_20260912/astra_contrastive_scores_20260913_attempt1.json), SHA256 `7af6484ebb72abc81d2f17d29e7ca15786599afba0b22e88139a80403f3412d0`.
+- [Independent stored-evidence analysis](receipts_20260912/astra_contrastive_independent_analysis_20260913.md), SHA256 `b381effa29b4114ab2c9ce9674cf931bc6a2db0fc98abafb96369c39d7509b68`: exact original scorer re-reduction equals the collected object; not another native collection or producer-custody replay. Its pinned material/scorer and handoffs bind transitions and original boundaries.
+- [Shortcut advisory](receipts_20260912/astra_contrastive_material_advisory_20260913.md), SHA256 `6d4e3982521a8cec81f3729461a1947b266cabd8ca7088c2c3a00eb15a5d2944`; [frozen protocol](ASTRA_CONTRASTIVE_PERCEPTION_PROTOCOL_2026-09-13.md).
+
+## C81 — SEQ142: three-seed controlled authored Level1 acquisition
+
+**Complete first roster only:**12roots, each collected once and source-archived;
+four skills×three learner seeds0/1/2 on fixed materialseed0. Each root uses96train
+rows,48held and12canaries. Frozen officialQwen2.5-7B-Instruct, freshLoRA rank8/
+alpha16/dropout.05, AdamW, LR3e-4,batch4. Cold-base, not a faithful replication
+of SEQ113's80-step warm parent plus320additional updates. Fresh OFF/post engines
+share held inputs and settings; supplied task instructions remain present.
+
+| Skill, identical for each of three learners | Held content/48 OFF→post | Held strict/48 | Canary content=strict/12 | Paired content W/L |
+| --- | ---: | ---: | ---: | ---: |
+| Prediction | 22→48 | 22→48 | 11→12 | 26/0 |
+| Goal completion | 32→48 | 32→48 | 11→12 | 16/0 |
+| Contradiction | 17→48 | 0→48 | 12→12 | 31/0 |
+| Update judgement | 8→48 | 0→48 | 12→12 | 40/0 |
+
+Every displayed count is also its three-seed mean, range[x,x]. Strict is content
+plus canonical format. Strict paired wins are26/16/48/48 respectively, all with
+zero losses. No OFF-correct canary regression; prediction/goals each fix the
+same one copy item in each learner, not six independent retention discoveries.
+Shared source families/skins/canaries do not provide independent task replication.
+No pooled independent-n=576 claim or broad zero-error certainty is justified.
+
+Each root120calls/1fit/320updates/1280presentations;
+totals1440calls/12fits/3840updates/15,360presentations;
+4,826,060training/251,819supervised/5,053,224padded tokens.
+Summed fit4646.8s/controller7811.911s; these concurrent accounting sums are not
+fleet wall time or GPU utilization. The full12cell table, timing means/ranges
+and tokens remain in the archived analysis and manuscript README.
+
+**Content versus format:** prediction's26OFF failures include4unparseable and
+22already-canonical typed-decision errors:21null abstentions despite supported
+Boolean evidence,1prediction despite conflict. Goal's16wrong-value outputs were
+already canonical; each wrongly continued despite verified completion. All48
+contradiction OFF outputs are fenced, already permitted by its predeclared
+content scorer;17are content-correct and31have wrong verdict/reason fields
+(23both,4verdict-only,4reason-only). Update OFF has8correct-fenced,32valid-schema
+fieldwrong,2invalid reason-domain and6unparseable outputs; one length-capped
+response is a failed item in a complete root, not missing experiment data.
+The gains therefore include substantial source-field correction; update and
+prediction also include interface/completion effects. No scorer repair occurs.
+
+**Claim:** positive authored-fixture acquisition versus no-update OFF, not
+matched trained parenting efficacy, actual child SLEEP, autonomous goals or
+evaluated reasoning traces. Fixed fixture labels and retained instructions
+bound source-discrimination/generalization inference. `automatic_pass=false`/
+`scientific_pass=null` remain. The ceiling motivates prospectively fixed
+source-transfer, then a controlled small actual-record loop; these next results
+are **PENDING**, not inferred from perfect held counts. No H1/H2, general G1/P1/G3,
+clean-lineage, mechanism freeze or completed mission follows.
+
+Sources:
+- [All12 structured analysis](receipts_20260912/astra_level1_first_roster_analysis_20260913.json), SHA256 `156662015a531a5644e1e1e754f54e0b302fe4221b9b739b5d409876762339d8`; includes distinct cell score/collection pins and verified native/VM archive hashes/listings.
+- [Counts, errors and archive report](receipts_20260912/astra_level1_first_roster_analysis_20260913.md), SHA256 `3ba88822f35b2a295c80d4f870828802f78997a4589cf34eea6f85d646a6b1b9`.
+- [Predeclared first-roster protocol](ASTRA_LEVEL1_SKILL_ROSTER_PROTOCOL_2026-09-13.md), SHA256 `c5420d9b6464eca62695be450884c2a3226615a065a3e7d6b9021fb2c7303297`; receipt archive custody is reported by the accepted sidecar, not independently rerun during this manuscript edit.
+
+## C82 — SEQ143: A100 infrastructure missingness; pending work stays pending
+
+Six prepared cells; five launched OFF stages fail warm-up, five releases,
+zero fits, zero generated request/response captures, zero completed roots.
+The sixth is prepared-only after the same-user guard encounters unreadable
+empty-cmdline children. A historical zombie state is not established.
+All five failures report flashinfer JIT unable to locate `ninja`; no scored
+accuracy exists. These are **missing endpoints, not zero scores**.
+
+The venv ninja and CUDA nvcc executables exist. A fresh wrapper PATH omits their
+directories and CUDA_HOME is unset; historical parent PATH was not logged and
+cannot be recovered from exited processes. This supports tool discovery as the
+immediate failure, not a missing-installation claim, proof of historical PATH,
+compiler compatibility or A100 native runtime parity. Release receipts do not
+amount to a fresh all-process clearance. This evidence is diagnostic, not a
+scientific skill failure rate or readiness certification.
+
+**PENDING at this cut:** high-LRseed0 recovery; newer perception/self-reflection
+results; separately named node1attempt2 repetition/meta-reflection; and real-record
+formation/transfer and small controlled Level2 follow-up. No newer output is
+read or incorporated. Completed authored first-roster assays do not complete the
+curriculum, developmental thesis or mission. Main owns operations and integration;
+this draft stays UNSENT and awaits independent manuscript review.
+
+Source: [A100 failure report](receipts_20260912/astra_a100_level1_failure_20260913.md),
+SHA256 `6d464fb79494274d6bcb05de66643f486dbf1c0b6d2c58e510d57f3ad3623c92`.
+It binds five stderr hashes and launch/failure/release chains, distinguishes
+prepared-only from launched failure, and explicitly withholds runtime parity.
+The [coordination ledger](../../research_loop/COORDINATION.md) SEQ143 fixes the
+cut; later outcomes are outside this integration, not presumed negative.

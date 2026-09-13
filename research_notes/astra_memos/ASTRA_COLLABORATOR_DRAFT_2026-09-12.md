@@ -1,13 +1,54 @@
 # DRAFT ONLY — unsent collaborator update
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ136 retains both positive and negative findings.
+This evidence cut through SEQ143 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**UNSENT — completed SEQ134–136 / C76–C78 update for Main's review.**
+**UNSENT — SEQ137–143 / C79–C82 update for Main's review.**
+
+We now have a positive, controlled authored-skill result worth carrying forward:
+all three learner seeds in each of four Level1 skills reach 48/48 held content
+and strict with 12/12 post-fit canaries. OFF content is prediction 22/48, goal
+completion 32/48, contradiction 17/48 and update judgement 8/48; paired content
+wins/losses are 26/0, 16/0, 31/0 and 40/0. Already canonical goal decisions and
+content-scored contradiction errors improve, so this is not just fence removal.
+The same material seed is reused: these are three learner replications, not
+independent tasks. The 1,440 calls/12 fits/3,840 updates establish authored
+component acquisition against no-update OFF, not matched parenting efficacy.
+
+The remaining evidence is mixed rather than a blanket success or failure.
+Contrastive held strict scores are OFF 2/24, PLAIN 17/24, CONTRASTIVE 19/24;
+D1/D2 contrastive counts are 12/12 and 7/12. The frozen screen is FALSE.
+Against PLAIN, three schema-valid field corrections and one valid-field loss
+produce net +2; versus OFF, all 17 wins are invalid-to-pass transitions and
+cannot isolate source learning. D1/D2 reuse the same cases; both-wrapper success
+is 8/12 PLAIN versus 7/12 contrastive. The earlier-outcome complement shortcut
+also leaves selected-source use unidentified. No OFF-correct canary regressions
+occur, but the record-canary OFF anchor is 0/12 and therefore vacuous.
+
+The original low/high-LR comparison completes only seeds 1 and 2: all four loops
+retain old 4/8, new 4/8, legal 16/16 at all five panels, with final PROMOTE-only
+and SHADOW-only both zero. Low seed0 attempt2 separately completes the same
+128 calls/3 fits/100 updates with flat endpoints; it does not overwrite either
+original seed0 runtime abort. High seed0 recovery is **PENDING at this cut**.
+Null accuracy is not no parameter/distribution change; C78's HF forced scores
+still cannot substitute for greedy native readouts, and C76's R1 supplement
+still does not repair its aborted primary.
+
+A100 has five OFF warm-up failures before any fit or generated request/response
+capture; the sixth cell was prepared but not launched. Failure to discover
+`ninja` is infrastructure missingness, not scientific zero or demonstrated
+runtime parity. Newer perception/reflection, separate node1 repetition/meta
+attempt2, and real-record results are **PENDING**; no later output enters this
+cut. The next scientific question is prospectively fixed source-transfer,
+followed by the smallest controlled actual-record loop, not more ceiling-panel
+practice or a completed negative paper. H1/H2 and the mission remain unresolved.
+See [C79–C82](ASTRA_PAPER_CLAIM_MAP_2026-09-12.md) for exact source bindings.
+
+**Historical UNSENT — completed SEQ134–136 / C76–C78 update for Main's review.**
 
 The first native child-record loop now connects action/feedback, exact records,
 compilation, fitting, mounting and subsequent wake/readout. It completes 11
@@ -39,7 +80,7 @@ The child records, unlike the earlier authored birth targets, enter a native
 loop, but external admission and this single exploratory pair do not establish
 parenting, clean ancestry, general G1, H1/H2 or a frozen mechanism. Recipe-level
 failures guide repair; the mission and research question remain open. No later
-LR-comparison outcomes are included. This collaborator draft remains **UNSENT**.
+LR-comparison outcomes were included in this historical update. This collaborator draft remains **UNSENT**.
 
 **Historical UNSENT — completed SEQ130–133 / C74–C75 update for Main's review.**
 

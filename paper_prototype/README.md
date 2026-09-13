@@ -1,18 +1,159 @@
 # Experience Models — ICLR 2027 submission (revised draft v3, 2026-09-10 fix pass)
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ136 retains both positive and negative findings.
+This evidence cut through SEQ143 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
+**Current evidence through SEQ143 — C79–C82; ongoing first draft.**
+Three learner seeds per skill show controlled authored Level1 acquisition:
+prediction, goal completion, contradiction and update judgement each reach
+48/48 held content and strict, from OFF content 22/32/17/8 respectively;
+post-fit canaries are 12/12 throughout. This is positive component evidence,
+not a matched trained parenting comparison or general reasoning qualification.
+Contrastive practice has a small valid-field advantage over PLAIN but fails its
+frozen screen. The original two completed low/high-LR seed pairs have null
+endpoints; the low seed0 recovery is separate, not an imputed original success.
+A100 warm-up failures are missing scientific endpoints, not zero scores.
+**PENDING at this cut:** high-LR seed0 recovery, newer perception/reflection and
+repetition/meta-reflection roster results, and actual-record formation/transfer.
+No later outcome is incorporated, no H1/H2/clean-lineage/general G3/freeze or
+mission-completion claim is made, and the collaborator draft remains **UNSENT**.
+Historical exclusion statements below apply only to their named earlier cuts.
+
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
 
-## Latest bounded evidence — SEQ134–136: native loop and access diagnostic / C76–C78
+## Latest bounded evidence — SEQ137–143 / C79–C82
 
-**Current completed evidence: SEQ134–136 / C76–C78.** R1's read-only missing-readout
+The manuscript now reports the original LR comparison, separate low-seed0
+recovery, contrastive screen, first authored Level1 roster and A100 missingness.
+These extend rather than replace C76–C78: R1 remains aborted; all five first-loop
+readouts remain old4/8/new4/8; HF forced12/16 train with five first-token ties
+is not interchangeable with native greedy8/16. No historical table or reference
+is replaced. The new TeX sections are `sec:bounded-lr`, `sec:bounded-contrastive`,
+`sec:bounded-level1` and `sec:bounded-infrastructure` in both manuscripts.
+
+### C79 — original LR cells and separate recovery
+
+| Evidence unit | Completed cells | LR | All five readouts per complete cell | Final paired both/only-P/only-S/neither |
+| --- | ---: | --- | --- | --- |
+| Original seeds1/2, low | 2 | 3e-5 | old4/8,new4/8,legal16/16 | 8/0/0/8 |
+| Original seeds1/2, high | 2 | 1e-4 | old4/8,new4/8,legal16/16 | 8/0/0/8 |
+| Original seed0, both rates | 0 | low/high | Runtime-aborted, missing endpoint | Missing |
+| Separate seed0-low attempt2 | 1 | 3e-5 | old4/8,new4/8,legal16/16 | 8/0/0/8 |
+| Separate seed0-high attempt2 | Pending | 1e-4 | **PENDING at cut** | Pending |
+
+Each complete cell has11stages/128calls/3fits/100updates, first physical fit
+counted once. Original complete-cell totals512calls/12fits/400updates exclude
+aborted work and the separately reported128calls/3fits/100updates recovery.
+Final PROMOTE-minus-SHADOW and paired high-minus-low are0 for each of the two
+original complete learner pairs. Original planned three-seed means/ranges remain
+unavailable; no recovery imputation or no-parameter-learning conclusion follows.
+This full-loop DEV contrast has endogenous records, not matched fixed material.
+
+### C80 — contrastive strict screen and field transitions
+
+| State | D1/12 | D2/12 | Held/24 | Record canary/12 | General canary/12 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| OFF | 0 | 2 | 2 | 0 | 11 |
+| PLAIN | 9 | 8 | 17 | 8 | 12 |
+| CONTRASTIVE | 12 | 7 | 19 | 9 | 12 |
+
+144calls/2fits/24updates; 1323.156s controller elapsed. Frozen screen **FALSE**:
+19<20 held,7<9 D2,and+2<+4 over PLAIN. Contrastive versus OFF has17wins/0losses,
+all invalid-to-pass; malformed OFF content is unevaluable under the original
+strict scorer. PLAIN→contrastive has3wins/1loss: all three wins are valid D1
+missing-prediction Boolean→null/relation→unavailable corrections, while the D2
+loss is a valid wrong TRY coordinate. Contrastive has3 duplicate-key failures
+versus PLAIN2, not a formatting advantage. On21jointly-valid pairs observed
+values remain correct21/21; predicted/relation changes are3wrong→right,
+1wrong→wrong,17right→right; TRY has1correction/1regression.
+
+D1/D2 reuse12cases, not24independent situations; both-wrapper correct is8/12
+PLAIN versus7/12 contrastive. No OFF-correct canary regression occurs, but OFF
+record0/12 is a vacuous anchor, and contrastive versus PLAIN record canaries
+have2wins/1loss. The earlier-outcome-complement shortcut prevents identifying
+selected-outcome use. Grouping/guidance/length are bundled and token costs differ.
+Do not retroactively apply Level1's fence-permitting content scorer to this assay.
+
+### C81 — all12 first-roster Level1 cells
+
+Arrows are OFF→saved-adapter post-fit. Held content and strict denominators48;
+canary content/strict denominator12. W/L is paired content, not a significance
+test. Every cell records120calls/1fit/320updates/1280presentations over96rows.
+
+| Cell | Held content | Held strict | Canary C/S | Held W/L | Canary W/L |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| prediction_seed0 | 22→48 | 22→48 | 11→12 | 26/0 | 1/0 |
+| prediction_seed1 | 22→48 | 22→48 | 11→12 | 26/0 | 1/0 |
+| prediction_seed2 | 22→48 | 22→48 | 11→12 | 26/0 | 1/0 |
+| goal_completion_seed0 | 32→48 | 32→48 | 11→12 | 16/0 | 1/0 |
+| goal_completion_seed1 | 32→48 | 32→48 | 11→12 | 16/0 | 1/0 |
+| goal_completion_seed2 | 32→48 | 32→48 | 11→12 | 16/0 | 1/0 |
+| contradiction_seed0 | 17→48 | 0→48 | 12→12 | 31/0 | 0/0 |
+| contradiction_seed1 | 17→48 | 0→48 | 12→12 | 31/0 | 0/0 |
+| contradiction_seed2 | 17→48 | 0→48 | 12→12 | 31/0 | 0/0 |
+| update_judgement_seed0 | 8→48 | 0→48 | 12→12 | 40/0 | 0/0 |
+| update_judgement_seed1 | 8→48 | 0→48 | 12→12 | 40/0 | 0/0 |
+| update_judgement_seed2 | 8→48 | 0→48 | 12→12 | 40/0 | 0/0 |
+
+Per protocol, every count is also its three-learner mean, range[x,x]; material
+seed0 is fixed, not independently resampled. Controller time mean[min,max] is
+prediction659.530[638.767,686.769]s; goal627.598[614.543,647.308]s;
+contradiction588.145[582.837,597.274]s; update728.698[724.586,732.728]s.
+Total1440calls/12fits/3840updates/15,360presentations;
+4,826,060training/251,819supervised/5,053,224padded tokens;
+summed fit4646.8s/controller7811.911s, not fleet elapsed time or GPU utilization.
+
+Strict means content-correct **and** canonical, not format alone. Prediction
+corrects22already-canonical type/decision errors (21over-abstentions,1prediction
+despite conflict), plus4invalid JSON responses. Goal's16gains all correct
+already-canonical source-state decisions. Contradiction's predeclared content
+parser accepts one enclosing fence:17OFF answers were already content-correct,
+31were verdict/reason-wrong, so+31 cannot be attributed to fence removal. Update
+OFF has8correct-fenced,32schema-valid fieldwrong,2invalid reason-domain and
+6unparseable answers; one is length-capped. Its+40 is mixed source/interface/
+completion improvement. Preserve every raw failure; no scorer repair.
+
+Post-fit held48/48 and canary12/12 across all12cells support controlled authored
+fixture acquisition, not mere format rescue. No OFF-correct canary regresses;
+prediction/goals fix the same one copy item across learners. Shared fixtures,
+labels rather than reasoning traces, retained task instructions and no-update
+rather than matched trained developmental controls bound the inference.
+Cold-base LR3e-4/rank8/alpha16/dropout.05/AdamW/batch4 is SEQ113-inspired,
+not its80+320 warm-parent replication. `automatic_pass=false` and
+`scientific_pass=null` are unchanged. Prospective source-transfer, then a
+controlled actual-record loop, remain scientific next questions, not results.
+
+### C82 — infrastructure, not a zero-scoring skill
+
+A100:6prepared/5launched/5OFFwarm-up failures/5release receipts;
+0fits/0generated request-response captures/0complete roots. Sixth was not launched.
+All five failed to discover `ninja` during flashinfer JIT. Executables exist;
+the fresh wrapper PATH omits venv/toolkit bins, but historical parent PATH is
+unrecorded. No successful JIT, compiler compatibility or runtime parity follows.
+**PENDING throughSEQ143:** high-LRseed0 recovery; new perception/self-reflection;
+separate node1attempt2 repetition/meta-reflection; actual-record formation/transfer.
+No subsequent result or operating status is imported into these placeholders.
+
+### Exact source mapping
+
+- **C79:** [original six-cell analysis](../research_notes/astra_memos/receipts_20260912/astra_l2_lr_original_six_analysis_20260913.json), SHA256 `32bdeb890d23e58da1958b0fc94e07e967a6312174ee9e6434a4b09a54a2f9a8`; [separate low recovery](../research_notes/astra_memos/receipts_20260912/astra_l2_lr_seed0_low_20260913_attempt2_collected.json), SHA256 `def6bc23536a7014b1747f3c42ea2588669f4f386f3429a1532015ce8c38d4b3`.
+- **C80:** [original scores](../research_notes/astra_memos/receipts_20260912/astra_contrastive_scores_20260913_attempt1.json), SHA256 `7af6484ebb72abc81d2f17d29e7ca15786599afba0b22e88139a80403f3412d0`; [stored-evidence analysis](../research_notes/astra_memos/receipts_20260912/astra_contrastive_independent_analysis_20260913.md), SHA256 `b381effa29b4114ab2c9ce9674cf931bc6a2db0fc98abafb96369c39d7509b68`; [shortcut advisory](../research_notes/astra_memos/receipts_20260912/astra_contrastive_material_advisory_20260913.md), SHA256 `6d4e3982521a8cec81f3729461a1947b266cabd8ca7088c2c3a00eb15a5d2944`.
+- **C81:** [all12 analysis JSON](../research_notes/astra_memos/receipts_20260912/astra_level1_first_roster_analysis_20260913.json), SHA256 `156662015a531a5644e1e1e754f54e0b302fe4221b9b739b5d409876762339d8`; [analysis and archive custody](../research_notes/astra_memos/receipts_20260912/astra_level1_first_roster_analysis_20260913.md), SHA256 `3ba88822f35b2a295c80d4f870828802f78997a4589cf34eea6f85d646a6b1b9`; [frozen protocol](../research_notes/astra_memos/ASTRA_LEVEL1_SKILL_ROSTER_PROTOCOL_2026-09-13.md), SHA256 `c5420d9b6464eca62695be450884c2a3226615a065a3e7d6b9021fb2c7303297`.
+- **C82:** [A100 failure analysis](../research_notes/astra_memos/receipts_20260912/astra_a100_level1_failure_20260913.md), SHA256 `6d464fb79494274d6bcb05de66643f486dbf1c0b6d2c58e510d57f3ad3623c92`.
+- [Claim map C79–C82](../research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md) records original abort pins, replay limits and pending boundaries; [coordination ledger](../research_loop/COORDINATION.md) SEQ137–143 supplies chronological dispositions only.
+
+This is author-side evidence incorporation, not independent manuscript approval
+or final publication readiness. Existing references remain unchanged; no new
+external citation, native collection or model access is needed.
+
+## Historical bounded evidence — SEQ134–136: native loop and access diagnostic / C76–C78
+
+**Historical completed evidence: SEQ134–136 / C76–C78.** R1's read-only missing-readout
 supplement is a post-abort diagnostic, not a repaired primary or third completed
 primary root. The first native child-record loop closes 11 stages, 128 generation
 calls, three fits and 100 updates; all five vLLM readout panels remain old 4/8,
@@ -22,7 +163,7 @@ Fit2 full likelihood scores 12/16, including four tiny downstream tie-break
 successes, versus strict first-token 8/16 with five ties; held-readout scores
 remain 8/16 by both measures. HF forced candidates and vLLM greedy outputs are
 distinct. This is child-record loop connectivity, not parenting, clean ancestry,
-general G1 or a frozen mechanism. Later LR-comparison outcomes are excluded;
+general G1 or a frozen mechanism. Later LR-comparison outcomes were excluded from this historical block;
 the working-draft research question remains unresolved. Collaborator UNSENT.
 
 R1's supplemental joined diagnostic is AUTH 67/128 exact, 31/64 held;

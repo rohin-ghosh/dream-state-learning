@@ -2,7 +2,7 @@
 % Historical CompilerGym numbers as of the life-level recount are listed with their sources in README.md (Number -> source table).
 % Later completion-assay and fit-seed diagnostics cite their dated independent audits beside them.
 % Separate September 12 component assays through SEQ-073/085/086 are indexed in README.md; historical rows are unchanged.
-% The bounded evidence extends through SEQ-136 (C76--C78): R1 diagnostic supplement, native child-record loop, and weak acquisition/access evidence. Original primary endpoints and historical abstracts/tables are retained; later comparison outcomes are excluded.
+% The bounded evidence extends through SEQ-143 (C79--C82): LR endpoints, contrastive screen, authored Level1 acquisition, and infrastructure missingness. Historical primary labels and results are retained; newer-roster and real-record results remain pending.
 % 2026-09-11 update (light, not a rewrite; third pass, applying Astra memo 6 = research_notes/astra_memos/2026-09-11_q7_paper_review.md,
 % objections 1-17): edits are marked "% 2026-09-11 update" on comment lines of their own or at the true end of a paragraph or table
 % row, never mid-line (a mid-line % drops the rest of the line from the compiled paper). Numbers added on this date are not yet in
@@ -44,11 +44,22 @@
 \maketitle
 
 \noindent\textbf{Ongoing first-sprint working draft---research question unresolved.}
-This evidence cut through SEQ136 retains both positive and negative findings.
+This evidence cut through SEQ143 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
+
+\noindent\textbf{Current evidence through SEQ-143 (C79--C82).}
+Controlled authored Level1 acquisition now replicates across three learner
+seeds per skill, with held content gains beyond formatting. Contrastive practice
+has a narrow field advantage but fails its frozen screen; the original two-seed
+LR comparison has null endpoints and a separate low-seed0 recovery. A100 warm-up
+failures are missing endpoints, not zero accuracy. Historical primary labels
+remain intact. \textbf{PENDING at this cut:} high-LR seed0 recovery, newer-roster
+results and actual-record transfer. No matched parenting effect, H1/H2,
+clean-lineage, general G3, mechanism freeze or completed mission is claimed.
+Historical exclusion statements below retain their named earlier cuts.
 
 \begin{abstract}
 % Approved bounded update: historical estimates retained; separate component evidence through SEQ-086.
@@ -76,8 +87,24 @@ strict first-token choices with five exact ties; both held-readout measures
 remain 8/16. Unequal 12/14-token targets and HF teacher forcing differ from
 vLLM greedy generation. This is neither no learning nor a pure access failure,
 and does not establish parenting, clean ancestry, general G1 or a mechanism
-freeze. The research question remains open; later comparison outcomes are
-outside this evidence cut.
+freeze. The research question remains open.
+
+Through SEQ-143, four standalone authored Level1 skills each reach 48/48 held
+content and strict accuracy in all three learner seeds, from OFF content counts
+22, 32, 17 and 8 for prediction, goal completion, contradiction and update
+judgement; all post-fit canaries score 12/12. These controlled component gains
+include source-field corrections, not only formatting, but share fixed material
+and do not estimate a matched parenting effect. A separate contrastive screen
+scores OFF/PLAIN/CONTRASTIVE 2/17/19 out of 24 strict and fails its preregistered
+screen: its net two-item advantage over PLAIN includes three valid-field wins
+and one loss, while gains over OFF are interface-confounded. Original low/high-LR
+loops on learner seeds 1 and 2 retain old 4/8 and new 4/8 at every readout;
+a separately archived low-LR seed0 recovery is also flat. Original seed0 aborts
+remain missing, and high-LR recovery remains pending at this cut. Five A100
+warm-up failures yield no scientific endpoints, not zero accuracy. Newer-roster
+and actual-record transfer results remain pending. The learning-flywheel thesis
+and H1/H2 remain open; these results neither complete the mission nor freeze a
+mechanism.
 \end{abstract}
 
 \section{Introduction}
@@ -884,8 +911,197 @@ checks without changing data or scoring. The independent stored-evidence
 analysis re-reduces 96 paired rows/192 continuations and checks 392 stored tensor
 records per adapter; it does not independently load tensors, certify numerical
 parity or repeat a full custody audit. C78 binds report, review and repair
-provenance. These completed diagnostics guide repair; later comparison outcomes
-are excluded and the research question remains open.
+provenance. These diagnostics guide repair, not a completed research program.
+The later bounded LR comparison is reported separately under C79.
+
+
+\subsection{Learning-rate endpoints without silent recovery substitution (SEQ-137--139, 141)}
+\label{sec:bounded-lr}
+The original six-cell public-record comparison uses learner seeds 0/1/2 at
+learning rates $3\times10^{-5}$ and $10^{-4}$. Only seeds 1 and 2 complete at
+both rates in that roster. Each completed loop executes 11 stages, 128 calls,
+three physical fits and 100 updates; the four original complete loops total
+512 calls, 12 fits and 400 updates. The shared first fit counts once per loop.
+Across every completed loop, baseline and both PROMOTE/SHADOW readouts after
+both sleeps remain old 4/8, new 4/8, legal 16/16. At the final paired endpoint,
+both-correct is 8, neither-correct is 8, and each arm-only count is zero.
+PROMOTE mounts the fitted candidate; SHADOW performs training without mounting
+it. This is a full-loop LR contrast with endogenous records, not a fixed-material
+quality comparison. \textsf{[Evidence C79]}
+
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{llll}
+\toprule
+Roster/attempt & Learner seeds & LR & Final PROMOTE--SHADOW /16 \\
+\midrule
+Original complete & 1, 2 & $3\times10^{-5}$ & 0 in each seed \\
+Original complete & 1, 2 & $10^{-4}$ & 0 in each seed \\
+Original aborted & 0 & Both & Missing, not zero \\
+Separate recovery, attempt2 & 0 & $3\times10^{-5}$ & 0 \\
+Separate recovery, attempt2 & 0 & $10^{-4}$ & Pending at cut \\
+\bottomrule
+\end{tabular}
+\caption{C79: original missing cells are not replaced by recovery attempts.
+High-minus-low is zero for each of the two original paired learners; the planned
+three-seed means/ranges remain unavailable in the original analysis.}
+\label{tab:bounded-lr}
+\end{table}
+
+Original seed0-high aborts after baseline/wake1, before fit1; original seed0-low
+aborts after fit1 and first readouts, before fit2. Both record 30-second targeted
+XML-query timeouts, not failed scientific endpoints. The separately archived
+low-seed0 attempt2 completes 128 calls/three fits/100 updates with the same flat
+readouts and final paired counts; eight first and 16 cumulative child records
+are admitted. It neither repairs the original aborts nor completes the original
+three-seed comparison. High-seed0 recovery remains \textbf{PENDING at this cut}.
+Core \texttt{native\_verified=false} and \texttt{scientific\_pass=null} are not
+promoted by collector replay flags. Null greedy accuracy does not imply no
+parameter or distribution change, and C78's weak forced-candidate discrimination
+does not replace these endpoints. \textsf{[Evidence C79]}
+
+\subsection{Contrastive authored perception: field gains, failed screen (SEQ-140)}
+\label{sec:bounded-contrastive}
+The completed original-wrapper assay records 144 calls, two fits and 24 updates
+(12 per arm). Each arm uses 12 training rows, four epochs and 48 presentations;
+controller elapsed time is 1323.156 seconds. The unchanged strict scorer rejects
+fences and duplicate keys. Its results must not be retrospectively rescored with
+the later Level1 content parser. \textsf{[Evidence C80]}
+
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{lrrrrr}
+\toprule
+State & D1 /12 & D2 /12 & Held /24 & Record /12 & General /12 \\
+\midrule
+OFF & 0 & 2 & 2 & 0 & 11 \\
+PLAIN & 9 & 8 & 17 & 8 & 12 \\
+CONTRASTIVE & 12 & 7 & 19 & 9 & 12 \\
+\bottomrule
+\end{tabular}
+\caption{C80: strict counts; the last two columns are canaries. D1 and D2 render
+the same 12 cases, not 24 independent situations. One learner seed is used.}
+\label{tab:bounded-contrastive}
+\end{table}
+
+The preregistered screen is \textbf{FALSE}: held 19 is below 20, D2 7 is below 9,
+and the gain over PLAIN is 2 rather than the required 4. Against OFF there are
+17 strict wins and zero losses, all invalid-to-pass transitions: the original
+scorer cannot determine whether malformed OFF source content was already right.
+This is neither 17 demonstrated semantic gains nor proof of purely format-only
+improvement. Against PLAIN there are three wins and one loss. All three wins
+correct schema-valid D1 missing-prediction cases from an invented Boolean to
+\texttt{null}, with relation corrected to unavailable. The D2 loss emits TRY
+$[13,7,19]$ instead of $[13,7,-19]$. These are field changes, not formatting rescue;
+CONTRASTIVE has three duplicate-key held failures versus PLAIN's two.
+Across the 21 jointly valid pairs, observed values stay correct in all 21;
+predicted/relation fields have three wrong-to-right, one wrong-to-wrong and
+17 right-to-right transitions. TRY has one correction and one regression.
+\textsf{[Evidence C80]}
+
+There is no OFF-correct canary regression, but record preservation is vacuous
+from OFF 0/12; only 11 general canaries provide correct OFF anchors. Relative to
+PLAIN, record canaries have two wins and one loss, so universal no-harm is not
+supported. Both-wrapper success is 8/12 PLAIN versus 7/12 CONTRASTIVE. Moreover,
+earlier outcomes always complement final outcomes in these fixtures: negating
+the earlier value can solve the target without consulting the selected outcome.
+This limits mechanism identification, not proof that the model used that shortcut.
+Grouping, explicit guidance and length change together; equal targets and update
+counts do not establish matched compute or a grouping-only causal effect.
+The narrow valid-field gain is useful, but source-discrimination robustness,
+parenting and general competence are not established. \textsf{[Evidence C80]}
+
+\subsection{Controlled acquisition of four authored Level1 skills (SEQ-142)}
+\label{sec:bounded-level1}
+All 12 first-roster roots complete and were collected once; the archived analysis
+binds their scores, collection receipts and full source archives. Each learner
+starts from the frozen official Qwen2.5-7B-Instruct base with fresh rank-8 LoRA
+(alpha 16, dropout 0.05), AdamW, LR $3\times10^{-4}$ and batch size 4. Each skill
+uses 96 authored training rows, 48 held cases and 12 canaries. Learner seeds 0/1/2
+share material seed 0; they replicate fitting, not independently sampled tasks.
+The recipe is inspired by SEQ-113 but does not reproduce its 80-step warm parent
+followed by 320 additional updates. These roots are cold-base standalone fits,
+not parented children. \textsf{[Evidence C81]}
+
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{lrrrr}
+\toprule
+Skill & Content /48 & Strict /48 & Canary /12 & Content W/L \\
+\midrule
+Prediction & $22\to48$ & $22\to48$ & $11\to12$ & 26/0 \\
+Goal completion & $32\to48$ & $32\to48$ & $11\to12$ & 16/0 \\
+Contradiction & $17\to48$ & $0\to48$ & $12\to12$ & 31/0 \\
+Update judgement & $8\to48$ & $0\to48$ & $12\to12$ & 40/0 \\
+\bottomrule
+\end{tabular}
+\caption{C81: OFF $\to$ saved-adapter post-fit counts, identical in each of three
+learner seeds per skill. Thus every count is also its three-seed mean with
+range $[x,x]$. Strict requires both content correctness and canonical format;
+canary content and strict coincide. W/L is item-paired content wins/losses,
+not independent-trial significance.}
+\label{tab:bounded-level1}
+\end{table}
+
+Each root records 120 calls, one fit, 320 updates and 1280 row presentations;
+totals are 1440 calls, 12 fits, 3840 updates and 15,360 presentations. Training,
+supervised and padded token totals are 4,826,060, 251,819 and 5,053,224.
+Summed fit time is 4646.8 seconds and summed controller time 7811.911 seconds;
+these concurrent sums are not fleet wall time or measured GPU utilization.
+OFF and post-fit use separate fresh engines with the same held inputs and
+inference settings; task instructions remain present. No-update OFF is a valid
+component control, not a matched trained non-parenting developmental control.
+\textsf{[Evidence C81]}
+
+The gains are not just format compliance. Prediction corrects 22 already
+canonical but wrongly typed decisions: 21 unsupported abstentions despite
+supported Boolean evidence and one prediction despite conflicting evidence;
+four additional OFF failures are unparseable. All 16 goal-completion gains
+correct already canonical \texttt{continue/false} decisions to supported
+\texttt{complete/true}. The predeclared Level1 content scorer accepts a sole
+JSON fence: contradiction's OFF 17/48 content versus 0/48 strict therefore
+separates interface from source error. Its remaining 31 cases comprise 23 wrong
+verdict-and-reason, four verdict-only and four reason-only errors. Update
+judgement has eight content-correct fenced OFF answers, 32 schema-valid field
+errors, two invalid reason-domain answers and six unparseable answers; one is
+length-capped. Its 40 gains mix source, schema and completion improvements.
+A failed response inside a completed root is not a missing experiment.
+\textsf{[Evidence C81]}
+
+No itemwise OFF-correct canary regresses; prediction and goal completion each
+fix the same copy-canary item in each learner, not six independent retention
+discoveries. Reasons are authored fixture labels, not assessed reasoning traces;
+goal completion applies supplied verified states, not autonomous goal creation.
+Perfect post-fit fixtures and shared narrow canaries do not certify broad
+retention, clean ancestry or general G3. The recorded
+\texttt{automatic\_pass=false}/\texttt{scientific\_pass=null} remain unchanged.
+These positive component results justify a prospectively fixed source-transfer
+test rather than more practice on the now-ceiling held panel; a controlled
+actual-record loop is a subsequent question, not an observed result.
+\textsf{[Evidence C81]}
+
+\subsection{Infrastructure missingness and the remaining evidence boundary (SEQ-143)}
+\label{sec:bounded-infrastructure}
+Six A100 cells are prepared; five launch and fail during OFF warm-up, with
+five release receipts, zero fits, zero generated request/response captures and
+zero complete roots. The sixth remains prepared-only after the conservative
+same-user process guard blocks launch. All five failures report that flashinfer
+JIT cannot locate \texttt{ninja}. Existing executable files include the venv's
+\texttt{ninja} and the CUDA toolkit's \texttt{nvcc}; a fresh wrapper search path
+omits both directories. The historical parent search path was not recorded.
+This supports a tool-discovery diagnosis, not proof of historical environment
+contents, compiler compatibility or exercised A100 runtime parity. These are
+\emph{missing scientific endpoints}, never zero accuracy. \textsf{[Evidence C82]}
+
+\noindent\textbf{PENDING at the SEQ-143 cut:} high-LR seed0 recovery; the newer
+perception/self-reflection cells; the separately named node1 attempt2 repetition/
+meta-reflection cells; and real-record formation, transfer and a controlled
+small Level2 follow-up. None contributes a result here. Neither infrastructure
+failure nor positive authored acquisition settles the developmental thesis.
+H1/H2, matched parenting benefit, clean-lineage qualification, general G3,
+mechanism freeze and mission completion remain unclaimed. C79--C82 in the claim
+map and README bind the archived evidence; no live output or new collection is
+used in this manuscript extension. \textsf{[Evidence C82]}
 
 \section{Discussion}
 \label{sec:discussion}

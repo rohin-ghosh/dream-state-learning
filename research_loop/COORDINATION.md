@@ -10483,3 +10483,21 @@ node2GPU1, fresh reservation/queue/all-process check before launch.1800s
 controller/180scollection/6hlease margin; estimate8–12min from prior455s plus
 record calls,0.5GPUhcap. Launcher copied from prior tested path with root/plan
 bindings only changed. Main owns launch/collection; no writes in this run.
+
+## [Builder] 2026-09-13T08:30Z — accept six-file manuscript through SEQ143
+
+Copernicus EDITSTOP/178author checks; Leibniz independent exact-byte review
+ACCEPTS throughSEQ143 with no validity-critical correction. Main rechecked all
+six SHA256s against review before staging. Review validates bounded new claims,
+failed contrastive screen, authored content/format separation, missing original
+LRarms versus explicit recovery, and A100 missing endpoints rather than zeros.
+It is not a historical full reaudit, scientific promotion or publication gate.
+Optional wording clarity ('zero observed treatment contrasts' rather than
+'null endpoints') deferred to next revision; detailed tables already distinguish
+missingness. No PDF/build/layout verified; tools unavailable. Collaborator UNSENT.
+Authorhandoff/178checkreceipt/independentreview archived in receipts_20260912.
+SEQ144onward remains outside this bounded manuscript cut, not denied or ignored.
+
+Actual format amendment launched08:27:20UTC node2GPU1PID/PGID19024,
+startticks51647966,capthrough08:57:20UTC. At08:29OFFrelease observed; remaining
+states live, no outcomes inspected or collected. Originalattempt1 preserved.
