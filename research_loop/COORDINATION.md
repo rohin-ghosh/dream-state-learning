@@ -13567,3 +13567,39 @@ for interface development, then freeze bytes and confirm on fresh roots.
 Never rescore SEQ-167. A pass licenses only a frozen-base supplied-memory
 interface ceiling—not LoRA, own-experience, learning, parenting, retention,
 recurrence or full-organism claims.
+
+## [Independent interface design] 2026-09-13T14:31Z — smallest PCFL C0 DEV ladder restores THINK and discloses READ without changing route truth
+
+Design memo
+`research_notes/analysis/2026-09-13_pcfl_c0_dev_interface_repair_ladder.md`
+freezes a prospective, zero-fit interface ladder in response to the SEQ-167
+autopsy. The world topology, opaque material, START/GOAL tasks, exact ROUTE and
+PROBE fullmatches, graph executor/scorer, token budget, cuts, and old failed
+capture remain unchanged. No runtime/test edit or model/tokenizer/GPU call.
+
+The repair makes every response one whole typed turn: `THINK <one line>`, one
+of the three fully disclosed legal READ forms, or one terminal ROUTE/PROBE.
+THINK is appended to history and receives only a fixed information-free
+CONTINUE; no action is extracted from prose and the full terminal line alone
+enters the unchanged scorer. Caps are 6 THINK, 12 READ, 2,048 cumulative actor
+tokens and 4,096 returned tokens. This implements the continuous THINK endpoint
+promised by the synthesis rather than treating a maximum decode length as a
+thought budget.
+
+The viewed excluded roots are development only. The ladder changes one item at
+a time: disclosed-READ handshake -> answer-direct exact graph -> required
+typed THINK -> conditional generic traversal procedure plus disjoint neutral
+example. First passing THINK-capable rung wins; failure after the generic
+scaffold stops the 7B route assay. Then the selected bytes must pass all
+registered supplied-memory positives/negative controls plus order-balanced
+reachout on DEV. Only afterward are four fresh interface-confirmation roots
+materialized and run once; all are forever excluded from writer/parent/lifetime
+and paper-test pools, leaving current `dev/0`,`dev/1` untouched.
+
+New reachout gates forbid the old hidden 16/0 RA/RB position policy: one
+order-only template, byte/token-matched candidate lines, positive >=14/16 per
+view and >=30/32 total, bounded negative per-view gap/first-position rate, and
+no ordinal-to-ID repair. A confirmed unscaffolded pass licenses only a
+clean-base supplied-memory THINK/read/action ceiling; a scaffold-only pass must
+say the traversal algorithm was supplied. `ACTIVE_LINKED_TEXT` remains a
+ceiling, not the strong evolving external-memory baseline.
