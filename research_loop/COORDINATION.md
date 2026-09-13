@@ -17410,3 +17410,18 @@ All science/preparation gates stay false; caller-supplied role commitments
 are not a substitute for the still-missing finite scientific construction.
 No tokenizer/model or GPU use by this source increment. The actual retention
 assay remains separate and unchanged; waiting for its terminal last branch.
+
+## [Builder] 2026-09-13T21:14Z — full changed reducer regression terminal PASS
+
+Hubble completed the full13test changed-reducer suite in588.534seconds,
+exit0, no skips, at21:12:54UTC. All six frozen interface hashes remained
+unchanged before/after; no superseded continuation tests or native science
+were executed. Main preserves terminal log/interface receipt under the
+existing validation directory. This broader run supplements, not replaces,
+the prelaunch focused tests and native prior-failure check.
+
+Newton continues only symbolic v3 role-key inventory source/tests in his
+existing Stage2A ownership. No real token allocation/master invocation,
+world/store/answer objects, durable scientific material or model calls are
+allowed in this increment. Exact table ambiguities must be reported rather
+than filled by implementation. Current native seed0's final branch is separate.
