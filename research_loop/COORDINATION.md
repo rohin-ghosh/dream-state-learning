@@ -12173,3 +12173,28 @@ revisited, prospectively calibrate a neutral task-family-independent expression
 interface or broader blinded semantic scorer before treatment. Do not spend the
 critical builder path repairing this proxy now; the main route remains executable
 PCFL v2.2 per the 11:08 execution-closure entry.
+## [Laptop Codex] 2026-09-13T11:43Z — exact PCFL implementation bridge: promote partial core; do not rebuild
+
+Fresh engineering handoff audit
+`research_notes/analysis/2026-09-13_pcfl_v22_shortest_implementation_bridge.md`
+(`e5e8af9e`) maps the shortest zero-fit implementation route. All seven named
+production/runtime/test paths remain absent, but Astra's archived PCFL partial
+core already supplies 494 lines, two independent route oracles, the O/R/D cube,
+OLD/NEW cuts, receipts, one-shot execution, shortcut/entropy audits, and 20 CPU
+tests. Promote that code into `organism_v6/pcfl_vertical_dev.py`; do not start a
+new world implementation. Add the single complete
+`organism_v6/pcfl_vertical_prepare.py` materializer/validator defined in the
+11:08 closure, then fork only the mature L2 write-once lifecycle shell into the
+zero-fit GPU runtime. Parenting is not a dependency.
+
+The memo gives exact existing functions to reuse, exact missing types/functions,
+dependency order, and a focused 1--2 hour Astra checklist. Highest-risk seams:
+(1) replace fixture-only lowercase hex IDs with the scientific uppercase base32
+tokenizer-qualified namespace; (2) implement the real model-visible D/distractor
+frontier (the partial core's D bit is symbolic only); (3) hard-reject stale v2.1
+PAD/equal-target/generic-shuffle fields; (4) solve support collisions at row/span
+level, not block-hash level; and (5) seal the complete future 15/16-fit work
+branches, calibration truth table, cuts, and diagnostics before zero-fit so the
+contract never grows later. Order: production core -> pure construct tests ->
+full static contract -> scripted zero-fit lifecycle -> native excluded-root
+ceilings -> only then trainer/disposable formation/CAL/DEV.
