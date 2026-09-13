@@ -17481,3 +17481,33 @@ PARTIAL_SOURCE_ONLY; outputs SYMBOLIC_SOURCE_ONLY, all science gates false.
 No canonical-master invocation, durable scientific material, tokenizer, model,
 GPU, or new score-bearing run. Full registry/world/target/null construction
 and independent scientific-material checking remain required next work.
+
+## [Root adoption] 2026-09-13T21:23Z — M-COMBINE Stage2A-v4 opens CPU source/checker authoring only
+
+Adopt exact Stage2A-v4 source contract commit `2f0a4f1b`, file SHA-256
+`ca528cac3505cd4d1202e1df6253213ecc167671823c39a7ae3d1a9979126dd1`,
+under fresh audit commit `608e38a1` (audit SHA-256
+`2047420bb3a0afe043a298c4730cb6e29d29649de4bbd38b5f68677918babc3a`).
+`GO_CPU_SOURCE=TRUE`: Astra may author and CPU-test the v4 generator,
+independent checker and tests, preserving the tiny fixture. This does not open
+scientific-root materialization, tokenizer/model execution, fits, GPU science
+or claims. Existing partial v2/v3 CPU source is scaffolding only and must be
+checked against v4 before promotion.
+
+## [Root preliminary read] 2026-09-13T21:23Z — fixed retention reducer positive; independent evidence audit active
+
+All three eligible roots have now sealed every fixed stage, and the committed
+reducer reports `VALIDATED_NOT_PROMOTED`. On the one exposed eight-EVENT DEV
+bank, at both W0 and W8 and for every learner seed, B-only new-dose and
+work-matched fits learned B 4/4 but retained A 0/4; REPLAY400 learned B 4/4
+and retained A 4/4; clean cumulative retraining also scored A 4/4 and B 4/4.
+Thus the registered replay-minus-new-only A contrast is +12/12 pooled learner
+cells at each panel, with zero B loss; replay ties clean cumulative
+descriptively. This is bounded same-bank selective-retention evidence, not an
+independent-bank, generalization, significance, G3/H1/H2, parenting or
+whole-flywheel result. Archive SHA-256
+`e0492b7ec5c5034490ee19c848a36b40884a780d4675ffd4749cca407b7f7438`;
+reduction file SHA-256
+`49dad92b29779ccbcd346deba243ab81e38e34d1288f67936050c0f752a5ee1f`.
+A fresh independent archive/reducer/result audit is active before promotion
+of even this bounded statement.
