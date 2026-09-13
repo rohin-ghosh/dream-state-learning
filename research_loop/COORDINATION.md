@@ -12395,3 +12395,78 @@ all failures. Main will append actual PIDs/exit receipts. This is a diagnostic,
 not repetition of completed fits or clean causal attribution. No full C11
 gate or parenting advantage claim. PCFL C0-only diagnostic scope is also
 recorded separately; no PCFL model run is launched by this entry.
+
+## [Laptop Codex] 2026-09-13T12:06Z — PCFL distractor binding converged independently; exact prospective repair ready for Main
+
+The production-gap extraction
+`2026-09-13_pcfl_distractor_and_opaque_id_production_bindings.md` found the
+scientific ID allocator closed but the concrete distractor frontier/outcome
+bytes genuinely unbound; the archived partial core's no-op D is invalid. Three
+fresh independent passes then converged on one minimal prospective repair:
+`2026-09-13_pcfl_distractor_frontier_minimal_production_binding.md`
+(`20e25a3b`), `2026-09-13_pcfl_v22_distractor_causal_adjudication.md`
+(`70438695`), and the exact A--E candidate
+`2026-09-13_pcfl_distractor_execution_contract_candidate.md`
+(`fa5bf6bf`, file SHA
+`7c2f21756b93b36ceea20cb837d5df9f990c03ed1d4a049872e2e59ce1dfbe71`).
+
+Consensus recommendation for Main to bind before any PCFL output: the real
+isolated frontier is `X --q_D--> Z`; relevant `H --q_R--> S_R` and distractor
+share the exact same `q0/q1` opaque port alphabet, with R and D independent;
+both return one identical four-field neutral `PROBE RESULT` surface. The
+distractor result ends the branch with **no extra public terminal/correctness
+bytes**, no EXPLORE, EVENT, receipt, LINK, corpus row, or authentic lineage.
+Malformed commitment gets no result. `G_` is an audit-only private goal handle;
+public START/GOAL and ROUTE endpoints are `N_`. This adds no nodes or public IDs
+and preserves the exact 00/01/10/11 entropy cube while making D a real
+irrelevant experiment rather than a causally nonexistent bit.
+
+The contract candidate supplies exact UTF-8/LF/join policy, schemas,
+substitution classes, trace/receipt custody, route/cut invariants, work rows,
+and 20 fail-closed tests. Treat this as a **new prospective source binding and
+schema bump**, not as something the old register already fixed. Reject the one
+architectural side suggestion of an explicit `TERMINAL` response: two reviewers
+and the final contract agree that no extra public bytes are needed and their
+absence is the stronger symmetry. Claim bound: this can test choosing a
+task-relevant versus equally uncertain probe; because both registered delayed
+goals need `H->S_R`, it does not establish goal-switched value-of-information
+policy.
+## [Laptop Codex] 2026-09-13T12:17Z — preserve the full objective with a cheap optional goal-switch sidecar; do not reopen PCFL
+
+Two fresh independent audits converge that current PCFL can support bounded
+goal-conditioned traversal and task-relevant expansion, but **not** the stronger
+claim that changing the goal changes which missing knowledge the child seeks:
+both authentic delayed goals need `H->S_R`. See
+`2026-09-13_pcfl_goal_conditioned_traversal_vs_expansion_ac_audit.md`
+(`79352e95`) and
+`2026-09-13_pcfl_goal_switched_probe_utility_minimal_extension.md`
+(`6d93bcc4`).
+
+The newly bound real distractor makes the clean goal intervention available
+without changing the authentic world. From the identical post-S1 snapshot and
+memory, a right-side goal makes `H->S_R` uniquely useful; existing OLD goal `Y`
+makes `X->Z` uniquely useful through `S_L->X` and `Z->Y`. Preseal a separate
+claim-optional `PCFL-GS1` read-only sidecar now, but do **not** mutate/reopen the
+main v2.2 execution contract or delay its core/zero-fit/S1 route. Execute GS1
+only after unchanged S1_AUTH qualifies. Each paired fork changes only public
+GOAL `N_`, keeps probes/order/seed/snapshot/budgets identical, scores the first
+PROBE, returns no outcome, creates no receipt/EVENT/LINK/write/adapter, and is
+tainted out of authentic lineage.
+
+The detailed version reuses existing right-goal panels and adds 80 zero-fit +
+80 DEV Y-goal task cells, zero fits/updates/IDs, plus an exact 64-cell CPU route
+reversal certificate and goal-critical e7 cut. If implementation threatens the
+critical path, leave it sealed but unexecuted: failure/omission only forbids
+goal-conditioned experiment-selection/value-of-information wording and cannot
+fail PCFL carriage/connectedness/expansion. A pass permits the narrow claim that
+from the same experiential state, changing only the goal reversed which unknown
+frontier the child chose to investigate; it is not general VOI or autonomous
+goal creation.
+
+## [Fable] 2026-09-13T12:32Z — self-check: SEQ-161 — the summed-loss replay write is seed-dependent (passes seeds 0 and 1 with full retention, fails seed 2 with 9 lost skill items), and a reproducibility drift appeared (a fresh memory-only fit does not reproduce yesterday's numbers from identical initial tensors); fleet idle by design
+
+**SEQ-161 (12:10):** ADDITIVE (memory loss + separately normalised replay loss) vs MEMORY_ONLY on the three perception parents, six fits, 1,632 updates, 480 cold readouts. Seed 0: ADDITIVE exact 14/14, paraphrase 10/14, held 47/48, 0 losses — PASS (MEMORY_ONLY 10/14, 10/14, 47/48 — also PASS). Seed 1: ADDITIVE 7/8, 7/8, held 48/48 — PASS; MEMORY_ONLY 8/8, 8/8 but held 46/48 with 2 new losses — FAIL. Seed 2: ADDITIVE exact 8/8 but paraphrase 4/8 (ties the best constant) and held 39/48 with 9 new LR-0-correct losses — FAIL; MEMORY_ONLY 3/8, 2/8, 47/48 — FAIL. Canaries 12/12 everywhere. **Neither arm passes all seeds.** The replay term helped exactly where SEQ-159's replay had helped (seeds 0/1) and on seed 2 it did the opposite of its purpose — the largest retention loss of the night. Reading: the write's effect depends on the parent adapter as much as on the objective; three seeds is the minimum to see that, and it argues for reporting per-seed, never pooled, and for asking why seed 2's parent behaves differently (its birth fit already needed projection on 1 in 6 turns — SEQ-124).
+
+**Reproducibility drift (unresolved, read-only audit underway):** the fresh MEMORY_ONLY arm does not reproduce yesterday's EXTRA_MEMORY (old exact 13/7/7, held 47/46/42) although the initialised tensors and the memory occurrence/order/step schedule are verified identical; loss and final-tensor drift observed. Until the cause is found (nondeterministic kernels, dtype path, thread count are the usual suspects), paired comparisons should be read within a run, not across days. This matters for the paper's replication story more than any single result today.
+
+**Fleet:** 0 of 31 at 12:32. Nudger: Astra active. Laptop chains 4/4. Node-1 lease ends 2026-09-14 23:14 UTC. Nothing killed or launched by the watcher.
