@@ -2,10 +2,9 @@
 
 **Date:** 2026-09-12 16:45 PDT / 23:45 UTC
 
-**Evidence cut:** repository `332490f4`; terminal evidence through the
-three-seed distinct-source interleaving result and process-v2 readout. The
-sequential OLD/NEW job is live and contributes no number here. No manuscript,
-model, experiment, or GPU state was changed for this scaffold.
+**Evidence cut updated:** repository `4d903140`; terminal evidence through the
+independently recounted sequential OLD/NEW result. No manuscript, model,
+experiment, or GPU state was changed for this scaffold.
 
 ## One branch-stable title
 
@@ -27,6 +26,7 @@ are repeated measurements unless stated otherwise.
 | Native action surface | Four root/map cells each generated and scored the supplied action `16/16`; aggregate valid generation and generation/scoring agreement `64/64`; complementary swaps `32/32` for generation and `32/32` for scoring; copy `16/16`; 0 truncations, 0 multiple actions, 0 optimizer steps. | One frozen model; four repeated surface cells, **not** four learners. | Surface positive only: the model can express and reverse both native actions when the answer row is visible. |
 | Material-sensitive behavior | Mini-Sudoku useful ON solves `2/16, 3/16, 5/16`; corrupt ON `0/16, 1/16, 0/16`; every OFF `0/16`; paired differences `+2,+2,+5`. | Adapter-training seed, `n=3`; same development panel and material family. | Repeatable directional supplied-material transfer; not selective memory or child experience. |
 | Supplied fact storage, extraction, and rehearsed coexistence | Under distinct-source interleaving, `FOUR_VIEW` dev/exact/held/old-action counts were seed 0 `16/16,16/16,48/48,32/32`; seed 1 `15/16,15/16,45/48,32/32`; seed 2 `16/16,16/16,48/48,32/32`. All preregistered joint thresholds passed. `SINGLE_VIEW` was `16/16,16/16,48/48,32/32`; `16/16,15/16,47/48,32/32`; then `4/16,5/16,12/48,0/32`. All outputs were parser-valid. | One optimizer/warm-start lineage, `n=3`; all use the same 16 authored facts and readout identities, so these are not independent fact banks or worlds. | First positive small writer/coexistence ingredient. Distinct-source batch mixing is the clearest causal change; `3/3` versus `2/3` supports only directional view-robustness. |
+| Sequential supplied-fact retention | From the same seed-0 FOUR_VIEW state, two 320-update writes introduced disjoint B1 then B2. At cycle 2, replay retained `64/64` old-bank exact/development decisions and acquired B2 `32/32`; no replay retained `25/64` old-bank decisions and also acquired B2 `32/32`. Arithmetic stayed `32/32` throughout. All 640 raw calls and exact weight lineage were independently recounted. | One authored bank sequence and one optimizer/warm-start lineage; surfaces repeat facts. Current-new dose differs (`20` presentations/fact with replay, `40` without). | Useful fixed-total-budget replay-allocation evidence at this load; not a pure replay effect, endogenous SLEEP, or general sequential stability. |
 | Conditional action carriage | On one authored root, AUTH and DERANGED each expressed its supplied PROSPECT map on `32/32` development cases. REVISE also scored `32/32` but has a perfect public-ID shortcut and is excluded from the intended inference. | One root with two paired map fits; development cases are repeated measurements. | Capacity/stress diagnostic, not qualified Q0. |
 | Policy locality | In the same stress diagnostic, exact copy fell from OFF `14/16` to `0/16` in both fits; learned-tag spill was `13/16--16/16`; addition exactness fell from OFF `16/16` to AUTH `3/16` and DERANGED `0/16`. | One authored root; no population replication. | Unsafe-write diagnostic. A prospective replicated native-action locality result is still missing. |
 | Acquisition--preservation interventions | Lower LR retained frame acquisition but spill stayed `.3936` and `.2964` versus the `.03` limit. Prefix masking changed spill `.416 -> .202` while `I_d_frame` became `.015 [-.133,.174]`. A matched coefficient-`.1` frozen-OFF objective changed spill `.415537 -> .036658` (91.2%) while `I_d_frame` changed `1.921470 [1.202608,2.682503] -> .152267 [-.023955,.333066]`. | One synthetic bank and optimizer seed; treatments are paired diagnostics, not independent replications. | Evidence of an acquisition--preservation tradeoff for these interventions; no selective-writer claim. |
@@ -69,7 +69,12 @@ optional and must remain absent from a submitted abstract until released.
 > `4/16`, `5/16`, `12/48`, and `0/32`, despite valid output syntax. This is a
 > positive small supplied-writer/coexistence ingredient and a directional
 > robustness result, not evidence that lexical diversity is universally
-> superior. A separate conditional-map stress test carried opposite supplied
+> superior. In a prospectively interpreted one-lineage sequence, explicit
+> replay retained `64/64` old-bank decisions while no replay retained `25/64`;
+> both acquired the newest bank at `32/32` and kept arithmetic at `32/32`.
+> Because replay halved current-new exposure and changed the batch mixture,
+> this is evidence for that fixed-budget allocation rather than a pure replay
+> effect. A separate conditional-map stress test carried opposite supplied
 > maps but changed unrelated outputs: exact copy fell from `14/16` without the
 > adapter to `0/16`, with trained-dialect spill on `13/16--16/16` controls.
 > Historical repeated-write lives likewise showed finite average behavior
@@ -129,6 +134,7 @@ historical lives must remain labeled exploratory in an abstract.
 ## Controlling evidence
 
 - `research_notes/analysis/2026-09-12_interleaved_replay_three_seed_terminal_postaudit.md`
+- `research_notes/analysis/2026-09-13_sequential_authored_memory_replay_terminal_postaudit.md`
 - `research_notes/analysis/2026-09-12_semantic_carrier_terminal_watcher_audit.md`
 - `research_notes/analysis/2026-09-12_mini_sudoku_three_seed_terminal_watcher_audit.md`
 - `research_notes/analysis/2026-09-12_conditional_root0_terminal_postaudit.md`
