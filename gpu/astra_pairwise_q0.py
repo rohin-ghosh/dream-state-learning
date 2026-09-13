@@ -1675,6 +1675,47 @@ def native_generate(model, tokenizer, row, *, max_new_tokens, do_sample):
     return output
 
 
+def qwen_forward_decoder(model):
+    from transformers.models.qwen2.modeling_qwen2 import Qwen2ForCausalLM, Qwen2Model
+
+    if isinstance(model, Qwen2ForCausalLM):
+        base = model
+    else:
+        from peft import PeftModelForCausalLM
+
+        require(isinstance(model, PeftModelForCausalLM), "forward counter requires Qwen2 causal LM or causal PEFT wrapper")
+        base = model.get_base_model()
+    require(isinstance(base, Qwen2ForCausalLM) and base.config.model_type == "qwen2",
+            "forward counter requires the actual Qwen2 causal LM")
+    decoder = base._modules.get("model")
+    require(isinstance(decoder, Qwen2Model) and decoder is base.model
+            and decoder.config is base.config
+            and base.get_input_embeddings() is decoder.get_input_embeddings()
+            and len(decoder.layers) == base.config.num_hidden_layers,
+            "forward counter requires the registered shared Qwen2 decoder path")
+    require(not base.is_gradient_checkpointing, "forward counter requires closed no-checkpointing recipe")
+    return decoder
+
+
+@contextmanager
+def native_forward_counter(model):
+    """Count shared decoder calls; PEFT can bypass causal-LM wrapper hooks."""
+    require(_FORWARD_COUNTS.get() is None, "one isolated forward counter per worker")
+    decoder = qwen_forward_decoder(model)
+    counts = Counter(natural_prefix_forwards=0, model_forward_calls=0)
+
+    def count_forward(module, arguments):
+        counts["model_forward_calls"] += 1
+
+    hook = decoder.register_forward_pre_hook(count_forward)
+    counter_token = _FORWARD_COUNTS.set(counts)
+    try:
+        yield counts
+    finally:
+        hook.remove()
+        _FORWARD_COUNTS.reset(counter_token)
+
+
 def artifact_value(value):
     torch = torch_module()
     if isinstance(value, torch.Tensor):
@@ -1737,14 +1778,6 @@ def native_worker(root, stage, *, allow_gpu=False):
                 hardware=hardware, inputs=manifest["inputs"], source_pins=manifest["source_pins"],
                 load_id=digest([stage, identity, time.time_ns()]), adapter=job.get("adapter"), loaded=time.time())
     write_once(directory, "LOAD.json", load)
-    counts = Counter(natural_prefix_forwards=0, model_forward_calls=0)
-    counter_token = _FORWARD_COUNTS.set(counts)
-
-    def count_forward(*args):
-        counts["model_forward_calls"] += 1
-
-    forward_owner = model.get_base_model() if hasattr(model, "peft_config") else model
-    hook = forward_owner.register_forward_pre_hook(count_forward)
     events = []
     event_directory = directory / "events"
     event_directory.mkdir()
@@ -1763,7 +1796,7 @@ def native_worker(root, stage, *, allow_gpu=False):
         return dict(path=path.relative_to(root).as_posix(), adapter_sha256=diagnostic.w0.tree_hash(path),
                     lora_sha256=diagnostic.w0.tensor_digest(diagnostic.w0.lora_tensors(current)))
 
-    try:
+    with native_forward_counter(model) as counts:
         with tensor_store(root, writable=True):
             if kind == "audit":
                 result = objective_audit(model, optimizer, prepared, PRODUCTION_POLICY, budget)
@@ -1777,9 +1810,6 @@ def native_worker(root, stage, *, allow_gpu=False):
         require(native_source_pins() == manifest["source_pins"], "source changed during worker")
         write_once(directory, "DONE.json", dict(result=result, load=load, events=events, counters=dict(counts),
                                                 finished=time.time(), evidence_kind=NATIVE_KIND))
-    finally:
-        hook.remove()
-        _FORWARD_COUNTS.reset(counter_token)
 
 
 def native_stage_name(ticket):

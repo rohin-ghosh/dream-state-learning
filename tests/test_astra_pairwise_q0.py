@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import copy
 from collections import Counter
+import importlib.util
 import json
 import math
 from pathlib import Path
@@ -1148,6 +1149,161 @@ class NativeProtocolMockTests(unittest.TestCase):
         result, commands = self.run_mock_controller(fail_verify=True)
         self.assertEqual(commands, [])
         self.assertEqual(result["report"]["label"], "NONREPORTABLE_PRECHECK_ABORT")
+
+
+@unittest.skipIf(torch is None, "real CPU Torch unavailable")
+class ForwardCounterPlumbingTests(unittest.TestCase):
+    """Torch hook/context mechanics only; patched path is NOT Qwen/PEFT proof."""
+
+    def test_counter_removal_and_backward_does_not_double_count(self):
+        decoder = torch.nn.Linear(2, 2)
+        with patch.object(q0, "qwen_forward_decoder", return_value=decoder):
+            with q0.native_forward_counter(None) as counts:
+                output = decoder(torch.ones(1, 2))
+                output.sum().backward()
+                self.assertEqual(dict(counts), dict(natural_prefix_forwards=0, model_forward_calls=1))
+            decoder(torch.ones(1, 2))
+        self.assertEqual(counts["model_forward_calls"], 1)
+        self.assertEqual(len(decoder._forward_pre_hooks), 0)
+        self.assertIsNone(q0._FORWARD_COUNTS.get())
+
+    def test_exception_removes_hook_and_restores_counter_context(self):
+        decoder = torch.nn.Linear(2, 2)
+        with patch.object(q0, "qwen_forward_decoder", return_value=decoder):
+            with self.assertRaisesRegex(RuntimeError, "fixture failure"):
+                with q0.native_forward_counter(None):
+                    raise RuntimeError("fixture failure")
+        self.assertEqual(len(decoder._forward_pre_hooks), 0)
+        self.assertIsNone(q0._FORWARD_COUNTS.get())
+
+    def test_nested_counter_rejected_without_damaging_outer_counter(self):
+        decoder = torch.nn.Linear(2, 2)
+        with patch.object(q0, "qwen_forward_decoder", return_value=decoder):
+            with q0.native_forward_counter(None) as counts:
+                with self.assertRaisesRegex(q0.IntegrityError, "one isolated forward counter"):
+                    with q0.native_forward_counter(None):
+                        self.fail("nested instrumentation accepted")
+                decoder(torch.ones(1, 2))
+                self.assertIs(q0._FORWARD_COUNTS.get(), counts)
+        self.assertEqual(counts["model_forward_calls"], 1)
+        self.assertIsNone(q0._FORWARD_COUNTS.get())
+
+
+@unittest.skipUnless(torch is not None and all(importlib.util.find_spec(name) is not None
+                                              for name in ("transformers", "peft")),
+                     "requires local Transformers and PEFT; config-only CPU regression not run without them")
+class TinyQwenForwardCounterTests(unittest.TestCase):
+    """Real config-only CPU Qwen2/PEFT; no pretrained files, tokenizer or downloads."""
+
+    def setUp(self):
+        self.previous_rng = torch.get_rng_state()
+        self.previous_threads = torch.get_num_threads()
+        self.addCleanup(torch.set_rng_state, self.previous_rng)
+        self.addCleanup(torch.set_num_threads, self.previous_threads)
+        torch.set_num_threads(1)
+        self.row = dict(panel="exact", input_ids=[1, 2, 3, 4])
+
+    def model(self, *, adapter):
+        from transformers import Qwen2Config, Qwen2ForCausalLM
+
+        torch.manual_seed(q0.RECIPE["seed"])
+        config = Qwen2Config(vocab_size=32, hidden_size=16, intermediate_size=32,
+                             num_hidden_layers=1, num_attention_heads=2, num_key_value_heads=1,
+                             max_position_embeddings=64, bos_token_id=1, eos_token_id=None,
+                             pad_token_id=0, attention_dropout=0., tie_word_embeddings=False)
+        config._attn_implementation = "eager"
+        model = Qwen2ForCausalLM(config).cpu()
+        if adapter:
+            from peft import LoraConfig, get_peft_model
+
+            model = get_peft_model(model, LoraConfig(task_type="CAUSAL_LM", r=q0.RECIPE["rank"],
+                lora_alpha=q0.RECIPE["alpha"], lora_dropout=q0.RECIPE["dropout"], bias="none",
+                target_modules=q0.RECIPE["target_modules"], init_lora_weights=True))
+        self.assertTrue(all(parameter.device.type == "cpu" for parameter in model.parameters()))
+        return model
+
+    def test_peft_wrapper_hook_bypass_reproduced_and_training_count_fixed(self):
+        model = self.model(adapter=True).train()
+        base = model.get_base_model()
+        old_counts = Counter()
+
+        def old_wrapper_hook(module, arguments):
+            old_counts["calls"] += 1
+
+        old_hook = base.register_forward_pre_hook(old_wrapper_hook)
+        self.addCleanup(old_hook.remove)
+        optimizer = q0.adamw(model)
+        parameters = [parameter for _, parameter in q0.trainables(model)]
+        before = [parameter.detach().clone() for parameter in parameters]
+        with q0.native_forward_counter(model) as counts:
+            output = q0.natural_forward(model, self.row)
+            loss, _, _ = q0.losses(output.logits[0, -1], [5, 6], 0)
+            loss.backward()
+            self.assertTrue(all(parameter.grad is not None and torch.isfinite(parameter.grad).all()
+                                for parameter in parameters))
+            self.assertTrue(any(torch.count_nonzero(parameter.grad).item() for parameter in parameters))
+            optimizer.step()
+            self.assertEqual(dict(counts), dict(natural_prefix_forwards=1, model_forward_calls=1))
+        self.assertEqual(old_counts["calls"], 0, "fixture must reproduce the old PEFT causal-wrapper hook bypass")
+        self.assertTrue(any(not torch.equal(previous, current) for previous, current in zip(before, parameters)))
+
+    def test_counter_is_neutral_to_logits_gradients_and_rng(self):
+        model = self.model(adapter=True).eval()
+        parameters = [parameter for _, parameter in q0.trainables(model)]
+        baseline = q0.natural_forward(model, self.row).logits
+        baseline_loss, _, _ = q0.losses(baseline[0, -1], [5, 6], 0)
+        baseline_gradients = torch.autograd.grad(baseline_loss, parameters)
+        before_rng = torch.get_rng_state().clone()
+        with q0.native_forward_counter(model) as counts:
+            measured = q0.natural_forward(model, self.row).logits
+            measured_loss, _, _ = q0.losses(measured[0, -1], [5, 6], 0)
+            measured_gradients = torch.autograd.grad(measured_loss, parameters)
+        self.assertTrue(torch.equal(baseline, measured))
+        self.assertTrue(all(torch.equal(previous, current) for previous, current
+                            in zip(baseline_gradients, measured_gradients)))
+        self.assertTrue(torch.equal(before_rng, torch.get_rng_state()))
+        self.assertEqual(dict(counts), dict(natural_prefix_forwards=1, model_forward_calls=1))
+
+    def test_OFF_and_adapter_ON_cached_generation_counts_equal_generated_tokens(self):
+        for adapter in (False, True):
+            with self.subTest(adapter=adapter):
+                model = self.model(adapter=adapter).requires_grad_(False).eval()
+                decoder = q0.qwen_forward_decoder(model)
+                prior_hooks = dict(decoder._forward_pre_hooks)
+                inputs = torch.tensor([self.row["input_ids"]], dtype=torch.long)
+                with torch.no_grad(), q0.native_forward_counter(model) as counts:
+                    q0.natural_forward(model, self.row)
+                    output = model.generate(input_ids=inputs, attention_mask=torch.ones_like(inputs),
+                        do_sample=False, max_new_tokens=4, min_new_tokens=4,
+                        eos_token_id=None, pad_token_id=0, use_cache=True)
+                    generated_tokens = output.shape[1] - inputs.shape[1]
+                    self.assertEqual(generated_tokens, 4)
+                    self.assertEqual(dict(counts), dict(natural_prefix_forwards=1,
+                                                        model_forward_calls=1 + generated_tokens))
+                self.assertEqual(dict(decoder._forward_pre_hooks), prior_hooks)
+                self.assertIsNone(q0._FORWARD_COUNTS.get())
+
+    def test_decoder_architecture_and_no_checkpointing_are_validated(self):
+        with self.assertRaisesRegex(q0.IntegrityError, "causal LM or causal PEFT"):
+            q0.qwen_forward_decoder(torch.nn.Linear(2, 2))
+        model = self.model(adapter=False)
+        model.model = torch.nn.Identity()
+        with self.assertRaisesRegex(q0.IntegrityError, "shared Qwen2 decoder path"):
+            q0.qwen_forward_decoder(model)
+        model = self.model(adapter=False)
+        model.gradient_checkpointing_enable()
+        with self.assertRaisesRegex(q0.IntegrityError, "no-checkpointing"):
+            q0.qwen_forward_decoder(model)
+
+    def test_real_decoder_hook_is_removed_on_exception(self):
+        model = self.model(adapter=True)
+        decoder = q0.qwen_forward_decoder(model)
+        prior_hooks = dict(decoder._forward_pre_hooks)
+        with self.assertRaisesRegex(RuntimeError, "fixture interruption"):
+            with q0.native_forward_counter(model):
+                raise RuntimeError("fixture interruption")
+        self.assertEqual(dict(decoder._forward_pre_hooks), prior_hooks)
+        self.assertIsNone(q0._FORWARD_COUNTS.get())
 
 
 if __name__ == "__main__":

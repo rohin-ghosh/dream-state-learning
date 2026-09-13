@@ -1,5 +1,36 @@
 # Q0 native preflight — 2026-09-13 02:40 UTC
 
+## Superseding instrumentation-only attempt2 preflight — 03:18UTC
+
+Attempt1 is immutableNONREPORTABLE_RUNTIME_ABORT (SEQ125), not a scientific
+null/pass. Exact forward-hook accounting failed for PEFT. New source SHA256
+`1459c037cccf2f043bc02f40fb9957f38c5620a4d0bcfc8cbb4ebf30fd31182a`, tests
+`bc08064301721157fa353247559105a31b11ee3e0c3b14d5dbbbfa255b9d42e3`, move the
+hook to the shared validated Qwen2 decoder. Reducer counts, all scientific
+constants, source material, recipe and legacy helper bytes remain unchanged.
+
+Main native installed-package acceptance: five real tiny-config Qwen2/PEFT CPU
+tests PASS21.529s, then **217 complete CPU tests PASS136.149s**, zero failures,
+errors or skips. The real fixture reproduces old-wrapper hook0, corrected
+decoder1, actual LoRA gradients/update, unchanged logits/gradients/RNG and OFF/
+adapterON generation counts. This is CPU instrumentation evidence, not a
+production-model result. Boole's scoped diff review found no residual defect.
+Receipts/handoff/review under receipts_20260912/astra_q0_counter_* and
+astra_q0_forward_counter_repair_*.
+
+New immutable native source:
+`/localhome/local-rohing/astra_sources/q0_counter_repair_20260913_attempt1`.
+New experiment root will be `astra_pairwise_Q0_root1_20260913_attempt2`, with
+the same GPU2 UUID/model/seed1/rank8/128-update/3-fit/2700-second allocation and
+unchanged numerical/scientific gates. This is a fresh attempt after localized
+instrumentation repair, not a selected scientific rerun or continuation of a
+fit. No relay/confirmation release. The old source remains authoritative for
+attempt1 replay. Main checks current /proc reservations and nvidia-smi again
+with fail-fast conjunctive launch commands; known nonlearner systemd PID3245
+must match its verified identity (PPID1, start_ticks2469) if unreadable.
+
+## Original attempt1 preflight (historical)
+
 Main integrates Carver's EDITSTOP executor, not a new scientific design or C11
 guard. Rohin's simple-hygiene instruction remains in force. This is the closed,
 synthetic historical root1 writer falsifier, not a clean child or parenting run.

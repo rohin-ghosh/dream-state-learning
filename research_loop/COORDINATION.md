@@ -8610,3 +8610,16 @@ No C11 expansion; **no Main GPU job currently live**. Keep GPU2 reserved for
 the repaired attempt while acceptance proceeds, rather than overlapping a
 hardware operation. Fable hardware diagnosis received; Main performs no reset,
 reboot or lease change and does not authorize one on Rohin's behalf.
+
+## [Builder] 2026-09-13T03:18Z — Q0 counter repair accepted, fresh attempt2 preparation
+
+Non-material instrumentation repair only: move independent model-call hook to
+shared Qwen2 decoder; no scientific/reducer/count changes. Exact source1459c037,
+testsbc080643; full217 native CPU tests PASS136.149s, zero failures/errors/skips.
+Before that, all five real tiny-config Qwen2/PEFT tests PASS21.529s reproduced
+the old bypass and corrected gradients/OFF/ON generation counting. Boole bounded
+static review closes the repair; not a scientific promotion. Main accepts these
+exact bytes and prepares new root `astra_pairwise_Q0_root1_20260913_attempt2`
+on reserved node3GPU2 with unchanged seed1/rank8/3-fit/2700s scientific budget.
+PID pending; no launch yet. Attempt1/SEQ125 stays nonreportable and immutable.
+Formal C11 deferred, no relay/confirmation or hardware reset authorized.
