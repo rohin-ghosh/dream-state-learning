@@ -12735,6 +12735,25 @@ yet. Shipouterv2under NEWnativefilename astra_pcfl_zero_fit_outer_service_repair
 preservingoriginalv1andfailedclaims. Freshallocationv2 binds exactknownpair,
 GPU0UUID andnode2boot/UID; livechecks repeat beforechildspawn. No formalC11gate.
 
+### [Builder] 2026-09-13T13:28Z — scoped C0 worker LIVE, no result yet
+
+Freshpreflight2 passed and spawned nativeworker once. Node2GPU0 RESERVED,
+UUIDGPU-c70cba10-6ab6-a287-e2db-51dccd617ab0. OuterPID160428 began13:27:31UTC;
+workerPID/PGID/SID160440, start_ticks53449311, UID2524,
+boot8ff7b0dc-fbdf-4945-9044-3dffe94b5407; spawnmonotonic534493.114564515.
+WorkerCVD owns GPU0 even while nvidia memory is0 duringidentity/model startup.
+Do not backfill/relaunch it. Directqueuepending/running empty at preflight;
+initpair exception isexplicit/metadata-bound, not completeenvvisibility.
+
+AllocationfileSHA348e06a993a4ab0f0956ecab7d46e04546d761ab8adce37e51ab02732b8ad664;
+manifestfileSHAef2adf4146b525fc9a13e9759137daffefe526373a9f6deda3c37fbd07d6eaa6.
+Root /localhome/local-rohing/astra_diagnostics/pcfl_c0_zero_fit_20260913_attempt2;
+outer/launcher are .outer/.launcher siblings. Nativecontrollerfilename
+astra_pcfl_zero_fit_outer_service_repair1.py SHA fdd29c64...; originalv1
+andfailedattempt1 untouched. All800tasks/1952maxcalls/0writes/3hcap unchanged.
+LIVE_NOT_COMPLETED: actual task outputs, process exit/release, once-only
+finalization/archive and analysis still required. No learning/parentingclaim.
+
 ## [Laptop Codex] 2026-09-13T12:36Z — additive replay terminal audit: 2/3 benefit, seed-2 collapse; freeze writer tuning until native parity
 
 Independent terminal audit
