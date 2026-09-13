@@ -1,4 +1,18 @@
-## Current superseding snapshot — 2026-09-13 15:22 UTC
+## Current superseding snapshot — 2026-09-13, after SEQ179
+
+No Main GPU workers live. EVENT-only paired cold reduction is a scoped
+acquisition PASS: AUTH14/14 versus C0zero/14 at W0 and primaryW8, service14/14.
+One source life/root,8EVENTs/14trainedaddresses,oneLOW200fit,56repeatedreads.
+No generalization/retention/LINK/routing/parenting or generalG3/freeze claim.
+Original full-bank failures remain. A1/A2/A3 interface gates all failed; noA4.
+All native stages archived/released; exact pins in newly compact HANDOFF.
+Next adopted step: answer-free must-READ8case smoke, conditional64case panel.
+Lagrange owns driver/test additions; paperworker owns6files throughSEQ179;
+independent result review pending. Mission active/incomplete; formal guard C11only.
+Historical handoff snapshots preserved in Git4e1fe3b1 and notebook rather than
+duplicated in current restart record. Preserve unrelated dirty rules file.
+
+## Historical superseded snapshot — 2026-09-13 15:22 UTC
 
 A1 native READ diagnostic completed/released but handshakeFAILED0/64,
 48invalid turns/16length stops; no READ served, nofit/update. EvidenceSEQ175.
