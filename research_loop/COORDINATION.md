@@ -7733,3 +7733,41 @@ equal-new-dose replay are lower information/GPU-hour now.
 
 Rohin, in substance (default unless refuted here or discussed with him), on learning that the builder adopted birth-first priority: "Birth-first priority is a must — we've already shown base prompts don't work well enough, which makes sense given the model is post-trained to do other things; we're guiding it to do our things." Scope: "it doesn't have to be that insane — it's just the flywheel to allow the model to learn when spoon-fed: give the model behaviours that make it create outputs that match the perfect learning corpus, so the model can be steered with prompting." Then level 2 spoon-feeds the learning so the child expands the flywheel with its own structure, from a parent's careful curation, "just like the initial pre-training will be careful curation as well." Next-paper idea (not for this paper): agents that create the corpus, do the preschool parenting and teach in classrooms — the developed population becomes curator, parent and teacher of the next generation.
 Watcher reading for the builder: this narrows the birth corpus usefully — it is the set of behaviours whose outputs already satisfy the compiler (record form, perception count, provenance citation, predict-before-act, input-reporting, the shortcut-free conditional family), trained at the SEQ-113 recipe from a fresh LoRA; the acceptance test is steerability — a prompted lesson on the born child yields records that pass the compiler unchanged and, after one sleep at that recipe, read out parent-free. That is also the first honest place for a parenting readout. Consistent with your "Choose conditional birth after sequential replay" (00:10 UTC).
+
+## [Codex ICLR minimum-claim audit] 2026-09-13T00:27Z — three-root Q0 is the only new deadline-critical experiment
+
+Independent paper audit:
+`research_notes/analysis/2026-09-12_iclr2027_minimum_empirical_claim_path.md`.
+The smallest defensible deadline paper is the storage-to-selectivity
+necessary-condition paper, not the full Experience Models result. Existing
+evidence supports supplied-material transfer (`n=3` optimizer seeds),
+distinct-source fact storage/extraction and rehearsed coexistence (`n=3`
+lineages over one fact world), and one carefully bounded SEQ-118
+fixed-budget-allocation case (`n=1`). It supplies no qualified W0, Level-1
+learning disposition, M, or L root.
+
+Only one new experiment changes the minimum abstract: a valid paired
+complementary Q0 terminal followed unchanged on two fresh independent roots
+(`3` roots, `6` mandatory fits, at most one prebound first-root diagnostic).
+Every root and failure subtype stays in the denominator; maps and prompts are
+repeated cells, not `N`. All-root pass releases selective supplied writing;
+repeated storage+extraction with the same locality failure releases the clean
+writer barrier; exact-only, acquisition-fail, heterogeneous, and invalid
+branches each have narrower frozen abstract language. Fewer than three valid
+roots by Sep 15 noon PDT is the recommended ICLR no-go, even though the
+existing lower-rung abstract remains scientifically honest.
+
+Level-1 birth is Rohin's research priority but is not automatically a paper
+claim: direct adherence needs the Q0 controls and a birth-disjoint Level-2
+root-level learning-gain contrast; promotion versus shadow is additionally
+needed to attribute persistence to SLEEP. M's current candidate-free `Z0--Z6`
+checklist is zero-fit preparation, not evidence; M needs two DEV kill roots
+then sixteen fresh confirmation roots. L has no defensible fixed confirmation
+`N`. `ACTIVE_TEXT_NATIVE` (public-only BM25 + declared-link PPR, four charged
+reads, <=1,024 returned tokens, no update) is the strongest specified memory
+baseline, but it is optional unless a text-superiority comparison is claimed.
+Equal-new-dose replay, full birth/Level-2, M/L, baseline comparison,
+compression, and further colour work are not manuscript-critical. Internal
+claim freeze is Sep 17 17:00 PDT; official abstract is Sep 19 04:59 PDT and
+full paper Sep 26 04:59 PDT. No source, experiment, adapter, model, job, GPU,
+claim release, or submission state changed.
