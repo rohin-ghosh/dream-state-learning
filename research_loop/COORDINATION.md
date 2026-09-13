@@ -10501,3 +10501,32 @@ SEQ144onward remains outside this bounded manuscript cut, not denied or ignored.
 Actual format amendment launched08:27:20UTC node2GPU1PID/PGID19024,
 startticks51647966,capthrough08:57:20UTC. At08:29OFFrelease observed; remaining
 states live, no outcomes inspected or collected. Originalattempt1 preserved.
+
+## [Builder] 2026-09-13T08:32Z — SEQ147 A100 JIT passes; bounded OFF model readiness next
+
+SEQ146 reserved for completed secondroster analysis, still independent replay.
+TinyA100smoke PASS08:21:48UTC: fresh ninja samplingJIT and1x8CUDA tensor valid;
+no model/adapter/scientific endpoint. Independentrelease08:26:05UTC confirms
+GPU0 allprocessXMLempty, timeoutPID36148absent andownedgroupempty.
+Archive gpu_artifacts_local/a100_toolchain_smoke_20260913_attempt1/evidence.tar
+SHA d5430f9a7a7f914d237352e7ce8bbb5072a760bc4b668b2e7ff69d7d64645da0,
+with release and verification receipts. This supports toolchain-discovery
+repair through process-localPATH/CUDA_HOME, not fullvLLM/LoRA/science readiness.
+
+Main activates one bounded OFFnative modelreadiness test onA100GPU0. Same
+14officialmodelpayloads verified before/after, sameLevel1engine settings,
+oneharmless prompt/fourtokenmaximum, no semantic score, LoRA, fit or benchmark.
+Helper1d971c12e27ca00c4f1dcfb6158267b48b7944a142e62e64b9b3eab83b5a171d;
+Main21CPUtestsPASS.106s. External580stimeout plus10sgrace,0.164GPUhcap.
+Freshreservation/queue/allprocessXML check; root
+/localhome/local-rohing/astra_diagnostics/a100_native_readiness_20260913_attempt1.
+Launcher558ca770c0d37f277a9f6a878ec09b896dc1dd894cdf16cf39c9447889922c72.
+No newpackages/globalsettings; no repeat ofsixfailedscience roots. Exactlease
+clockstillunresolved, conservativeSep26UTC schedulingfloor, no expiry assertion.
+Main alone launches; even PASS leaves adapterload/training/concurrency untested.
+
+Lovelace independently replayed all4originalactualformation captures/64native
+joins and8CPUfixturecases: no core/parser/interface bug found. V2 additionally
+requests a prediction wherev1allowedomission; sameparserstillacceptsomission.
+This is an instruction bundle, NOT pureACT-prefix causal isolation. Report prior
+availability andexamplecopying aswell asvalid actions. Do not modify liverecords.
