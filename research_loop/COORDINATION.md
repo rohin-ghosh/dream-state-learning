@@ -9031,3 +9031,25 @@ Static TeX checks only; no TeX engine or rendered layout validation. This is an
 interim evidence update, not a negative-paper decision or campaign completion.
 Collaborator remains UNSENT; H1/H2 remain unproved. Unrelated rules-file edits
 are untouched. No approval prompt or curl/wget retry in this continuation.
+
+## [Builder] 2026-09-13T04:30Z — SEQ-128 perception seed0 completed; two replicas continue
+
+Node3 GPU0 controller317316 exited, no controller failure, all8 fresh workers
+released. Frozen collect succeeded once after72raw captures closed; elapsed
+1140.015263s. Strict correct/12: OFF absent0/present10; fitAbsent11/9;
+fitPresent10/8. No length finishes. Single learner only; no anchor-specific
+gain (withdrawn difference -1/12), no parenting/H1/H2 promotion. Full field
+interpretation waits for already-running seeds1/2; no favorable-seed selection.
+Seed0 full capsule3876880f93e4c4a88c12ad90370c33d9d7cac6140ca662dfb942ced179d11c11
+is on VM data storage under gpu_artifacts_local/perception_fit_20260913;
+210capture-bound file hashes, plan, completion and scores verified locally.
+Scores f00bf2378a874f17064405bf0bc2db9ac34c15e595e993ae1f18586e0f36e97c
+archived as receipts_20260912/astra_perception_fit_seed0_scores_20260913.json.
+No rerun, launch or kill. Replicas320748/320892 remain live on node3GPU1/2.
+
+Prospective parallel work: Einstein read-only revised full-dose recipe design;
+Carver owns birth_reflection_probe.py and its matching test (explicit parent
+withdrawal, source-backed application panel); Confucius aggregate analysis;
+Erdos read-only node1/2 inventory/backup gaps. Main owns all native mutation/Git.
+This implements Rohin's parallelism steer without changing old results or the
+frozen base/provenance rules. Guard completion remains final-paper-C11 only.

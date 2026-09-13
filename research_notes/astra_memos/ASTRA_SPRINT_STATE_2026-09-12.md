@@ -1,4 +1,19 @@
-## Current superseding snapshot — 2026-09-13 04:19 UTC
+## Current superseding snapshot — 2026-09-13 04:30 UTC
+
+Seed0 perception comparison completed1140.015263s, all8stages/72calls validated,
+fresh collection and full capsule transferred/hashed. Strict OFF0/10,
+ordinary-fit11/9, anchor-fit10/8 (absent/present; each/12), no truncations.
+This single-seed result does not establish anchor-specific learning; full
+secondary field audit/three-seed analysis pending. Replicas1/2 LIVE unchanged;
+do not restart. Exact custody and source pins in current HANDOFF.
+ThroughSEQ127 interim manuscript review integrated/pushed0943810d; collaborator
+UNSENT. Rohin message30 directs new prospective writer recipe plus modular
+birth work in parallel, not promotion or erasure of the old first-step stop.
+Recipe-design, correction-withdrawal corpus/tests, node1/2 read-only inventory
+and aggregate analysis are assigned disjoint scopes. No new GPU launch yet.
+Simple hygiene applies; formalC11-only guard stays deferred. Mission incomplete.
+
+## Historical superseded snapshot — 2026-09-13 04:19 UTC
 
 Three fixed perception learner-seed comparisons LIVE on node3GPU0/1/2:
 controllers317316/320748/320892; ceilings~04:51:15/05:03:06/05:03:37UTC,

@@ -1,6 +1,40 @@
-# Astra current handoff — 2026-09-13T04:19Z
+# Astra current handoff — 2026-09-13T04:30Z
 
-## CURRENT — September13 04:19UTC (supersedes older status below)
+## CURRENT — September13 04:30UTC
+
+Seed0 perception controller317316 has exited successfully. All8 stage capture/
+release receipts validate;72calls closed before collection. Completion
+fa95be7a6c90b6907260631d77e2161ab93a786ce2f2fe268c71bd2b74aee7d1;
+scores f00bf2378a874f17064405bf0bc2db9ac34c15e595e993ae1f18586e0f36e97c.
+Native collection sibling `perception_fit_20260913_attempt1_collection1`.
+Full capsule in `gpu_artifacts_local/perception_fit_20260913/` named
+`astra_perception_fit_seed0_20260913_capsule1.tgz`, SHA256
+3876880f93e4c4a88c12ad90370c33d9d7cac6140ca662dfb942ced179d11c11;
+extracted sibling `seed0_capsule1`. All210 completion-bound files rehashed;
+plan/completion/scores pins match. Native duration1140.015263s. Strict counts
+OFF absent/present0/10; fitAbsent11/9; fitPresent10/8, each denominator12.
+No length finishes. No claim from this single learner; full field audit and
+three-seed analysis pending. Do not rerun/recollect the closed root.
+
+Replicas1/2 remain LIVE with unchanged identities/pins below; at04:29 five
+stages each released, remaining fitted readouts underway. Do not inspect partial
+scores. Collect each with its own frozen replica driver after successful close.
+
+ThroughSEQ127 manuscripts reviewed, hashes matched, archived and pushed0943810d.
+This is interim evidence preservation, not a campaign-complete negative paper.
+New Rohin message30 at04:21 directs prospective Q0 recipe revision in parallel
+with modular birth work; old Q0 evidence/recipe remains immutable. Einstein
+owns `/tmp/astra_q0_revision_design_20260913.md` only. Carver now owns ONLY
+`organism_v6/birth_reflection_probe.py`, `tests/test_birth_reflection_probe.py`
+and /tmp handoff: explicit parent-correction withdrawal, source-backed authored
+restatement plus separate12-choice application DEV panel. No native launch yet.
+Confucius owns only /tmp three-seed analysis driver/tests/handoff; Main33fixtures
+PASS6.866s, small pre-outcome contrast-report additions requested before freeze.
+Erdos01a09905-860a-7942-b4fe-c1ddc83e5b94 owns read-only node1/2 inventory into
+`/tmp/astra_node12_inventory_20260913.md`. Main remains sole launch/kill/Git owner.
+FormalC11 guard deferred. Mission ACTIVE/incomplete; no H1/H2/P1/G5/freeze.
+
+## Previous snapshot — September13 04:19UTC
 
 **Three perception comparisons LIVE**, node3GPU0/1/2. Never restart their roots:
 
