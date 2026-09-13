@@ -1,6 +1,25 @@
-# Astra current handoff — 2026-09-13T06:29Z
+# Astra current handoff — 2026-09-13T06:35Z
 
-## CURRENT — September13 06:29UTC
+## CURRENT — September13 06:35UTC
+
+LIVE saved-adapter read-only L2 access probe: node3GPU3controller344660,
+started06:34:35UTC,1200secondcap through06:54:35UTC. OFFworker344715 started
+06:34:54UTC after clean process/environment precheck. Initial SSH timeout was
+reconciled, NOT retried. Root /localhome/local-rohing/astra_diagnostics/l2_access_20260913_attempt1;
+source /localhome/local-rohing/astra_sources/l2_access_20260913_attempt1;
+external log /tmp/astra_l2_access_20260913_attempt1.controller.log.
+Probe633461895976b034729b71911216ec7fa5df385b922382fd67b800e9371847e5;
+controller29808a870fd4de68354a110cecdb2a9d7cc7138c00d86ffb77295c15a9a33d8c.
+Main17probe/10controllerCPUtests pass; native32case encoding matches original
+captured prompts/masks,12/14targettokens, no forwards. OFF/fit1/fit2PROMOTE,
+192candidateforwards/0updates, fresh HF processes, no original-root writes.
+Inspect terminal.json only after controller finishes; report.json is diagnostic,
+not substitute for original vLLM readouts. Do not relaunch completed SEQ134/135.
+Galileo repairs bounded manuscript review findings throughSEQ133 only; Sartre
+review at /tmp/astra_manuscript_seq130_133_independent_review_20260913.md.
+Mission incomplete; simple hygiene now, finalC11guard deferred. Other state below.
+
+## Historical superseded snapshot — September13 06:29UTC
 
 Mission ACTIVE/incomplete. Simple hygiene now; formal guard enforcement remains
 deferred to final paper-grade C11. No mechanism freeze or G3/P1/G5/H1/H2 promotion.

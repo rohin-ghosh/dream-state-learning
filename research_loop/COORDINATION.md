@@ -9718,3 +9718,15 @@ selection. New fitted recipe follows evidence, not an unchanged larger rerun.
 Parenting/clean-lineage/H1/H2 claims remain unestablished; simple hygiene now,
 formalC11 guard deferred. Updated watcher design notes received, not yet
 reviewed/accepted as a new implementation. No lease/onboarding actions.
+
+## [Builder] 2026-09-13T06:35Z — L2 diagnostic launched and reconciled
+
+Node3GPU3 controller344660 started06:34:35UTC,1200secondcap ends06:54:35UTC;
+source/root/pins as06:34prelaunch. Initial SSH/tool call timed out at10seconds;
+Main reconciled existing controller instead of retrying. OFFworker344715,
+PGID344715/start_ticks9720368, launched06:34:54UTC after fresh precheck found
+no compute process, no same-user reservation and no unresolved environment.
+Controller visible06:35:19UTC. No scientific result yet, no relaunch/kill.
+Launch reconciliation receipt archived. Manuscript bounded review found
+historical-vs-current base-pin ambiguity and prose issues; Galileo repairs
+only those, not new outcomes. No external send or guard-policy change.

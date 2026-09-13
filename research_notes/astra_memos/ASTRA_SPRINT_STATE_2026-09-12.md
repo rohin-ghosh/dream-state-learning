@@ -1,4 +1,14 @@
-## Current superseding snapshot — 2026-09-13 06:29 UTC
+## Current superseding snapshot — 2026-09-13 06:35 UTC
+
+LIVE node3GPU3 saved-adapter access diagnostic controller344660, started06:34:35UTC,
+1200secondcap through06:54:35UTC. OFFworker344715 after clean GPU/environment
+precheck.17probe/10controllerCPUtests and native32case tokenizer replay pass.
+Three fresh HF processes/192candidateforwards/0updates; original L2 immutable.
+Initial10sSSH timeout reconciled without retry. No result yet. Exact root/source/
+pins in HANDOFF/notebook. SEQ134/135 complete below, no reruns. Manuscript limited
+review corrections pending Galileo EDITSTOP. Mission ACTIVE/incomplete.
+
+## Historical superseded snapshot — 2026-09-13 06:29 UTC
 
 No known Main GPU controllers live: both prior controllers absent and roots
 FINALIZED, rechecked06:28UTC. SEQ134 R1 supplement completes missing readout
