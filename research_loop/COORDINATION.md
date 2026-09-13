@@ -8304,3 +8304,29 @@ mandatory regressions, then launch root 1 on node 3 if and only if the frozen
 tests and first-update canary pass. Keep all SEQ-120/121/122/clarified outputs
 out of Q0 material and selection. This entry changes no builder source, test,
 adapter, threshold, job, GPU process, or claim.
+
+## [Codex endogenous-relay designer] 2026-09-13T01:57Z — shortest post-Q0 parent-free one-SLEEP relay closes the interface mismatch by staying action-native
+
+Design memo:
+`research_notes/analysis/2026-09-13_shortest_parent_free_one_sleep_endogenous_action_relay.md`.
+After one valid full Q0 DEV pass, freeze its pairwise native-ACT writer and run
+one permanently excluded fresh-root relay: 16 child actions + 8 child records,
+8/8 grounded formation gate, copy-only fixed-view replay, two fits
+(`E_AUTH/E_SWAP`), OFF plus a no-extra-fit SHADOW cut, sterile per-item reset,
+and the unchanged exact/held/locality surface.  The mode-swapped write preserves
+target marginals and must redirect held actions; shadow must be byte-identical
+to OFF.  Hard ceiling: 2 fits, 256 updates, 984 total generations, one A40,
+1.25 A40-hours.  This can establish one child-authored learned action relay,
+not M-core: Q0 does not qualify complete candidate-free `MemoryRow|MISS`
+generation, which remains a separate later carrier gate.  No builder source,
+test, prompt, root, model, adapter, job, GPU state, or claim changed.
+
+## [Fable] 2026-09-13T02:03Z — self-check: born child and base both fail the rule-game TRY step under the plain prompt (SEQ-122), both improve under a clarified prompt (SEQ-123); builder turns to action projection + the Q0 executor; A-replications 11/12 (5 carriers hold); OFF-noise: seed effect small, outliers are run-to-run
+
+**Builder SEQ-122 (01:32) / SEQ-123 (01:46), teacher-free protocol probes, 16 fixed practice requests per state, no fits:** plain prompt — OFF TRY 0/4, QUIZ 4/4, record 4/4, revision 0/4; AUTH-born 0/4, 1/4, 3/4, 1/4 (record "0" was whitespace, not failure). The plain prompt omits the forecast grammar, so the failure cannot be attributed to a missing trained ability. Clarified prompt (uniform grammar/action-priority suffix on the 12 wakes, 4 byte-identical negative controls) — OFF 2/4, 4/4, 4/4, 2/4; AUTH 2/4, 4/4, 3/4, 4/4. Both states still ignore a supplied F forecast in 2 TRY cases; AUTH revises 4/4 vs OFF 2/4 (n = 4, adaptive practice, no learning claim). **Reading:** the level-2 formation failed at the interface, not at the child's weights — the born child follows the protocol about as well as the base once the prompt spells the grammar; that is consistent with Rohin's "level 1 not founded enough" only in the narrow sense that the birth corpus did not include the rule-game protocol at all. Builder's decision: no new bridge fit; implement strict same-child action projection after an invalid raw thought (CPU accepted 02:00, 43 focused tests, 164 regressions), matched AUTH/OFF children, parent always OFF; and, separately, the closed pairwise Q0 selective-writer test — numerical constants registered prospectively (02:01), a sidecar implements it from the frozen contract, native executor still to build. Codex's Q0 priority audit (01:08) and my reading agree: SEQ-120 does not substitute for Q0; Q0 with three fresh roots by Sep 15 noon PDT remains the deadline-critical experiment.
+
+**A-replications 11/12:** R3 502 holds (0.5291 / 0.2731 again; Δ +0.035 / +0.030). **Final picture (R3 501 pending, flat originally):** carriers on both panels at both generation seeds — R2 0, R2 1, R2 3, R3 500, R3 502 (5 of 23 lives); disjoint-only carrier R3 505; not replicated R4 602, R3 504; flat both times R2 5, R2 6, RP 401. Every carrier is the same routine (0.5291 / 0.2731); every flat life the same other routine (0.4878 / 0.2495).
+
+**OFF-noise sweep, report panel in (both nodes; disjoint pending):** standalone OFF (no adapter, no life) at seed 4242 repeat = 0.4886 (node 1) / 0.4878 (node 2); seed 6262 = 0.4799 / 0.4824; seed 7272 = 0.4863 / 0.4890. So the generation-seed effect is small (0.480–0.489) and the two nodes agree to ±0.003; the large per-life OFF excursions seen inside pretests (R2 3 0.501, R4 602 0.514 at 5252) are run-to-run outliers under load, not seed. Typical OFF noise ≈ ±0.005 with a heavy tail to 0.02+. Practical rule stands: pooled OFF ≈ 0.486 on the report panel; deltas below ~0.03 are not claims. Ledger P12.
+
+**Fleet:** node 1 four fill jobs (R3 501 A-rep, three OFF-noise), 4 free; node 2 three OFF-noise, 5 free; node 3 idle (builder in CPU implementation). Fill lists exhausted after these. Nudger: Astra active (idle 0.2 min). Laptop chains 5/5; A100 onboarding 05:05 UTC. Nothing killed or launched by the watcher outside the node queues.
