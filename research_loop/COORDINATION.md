@@ -12661,6 +12661,28 @@ Fixed thresholds/denominators remain; no outcome-dependent retries/prompts.
 Main must finish outerCPUtests and liveallocation before launch. This entry
 authorizes preparation only, not a claim a GPU job is running.
 
+### [Builder] 2026-09-13T13:14Z — C0 native pre-GPU acceptance
+
+Outer controller Main29mockedCPUtestsPASS in83.544s. The first Main invocation
+was interrupted by the tool's10s timeout; the complete repeat used120s and
+passed. No native/scientific run was repeated. Outer source
+7111fc4a3a5441776a30931341a2536d01d0c6859f972dab8f28d9e8662ceb69;
+handoff archived. Main inspected isolated owned-session cleanup, identity
+checks, empty-controller CVD and release accounting. No foreign PID/name kill.
+
+Actual native manifest prepared once with repaired sources/unchangedroots:
+fileSHA8d52469dae0534abe0b8c1a8da23ec664b7a3634d4ce25876ec3498a6c94952f,
+seal71f49ad7115d2f74bae3b496eaee5febbb162793b5e94989c1a1ad42e5748aeb.
+Manifest source root /tmp/astra_pcfl_c0_source_20260913_mapping_repair1,
+zero fits/adapters/updates, all800tasks and1952conditionalslots, actual measured
+tokenizer revalidated. Outer module will be added alongside unchanged pinned
+command/source bytes and separately bound by allocationSHA. Original source
+archives/failedattempts remain unchanged. Current directallocation must find
+empty pending/running queue, nvidia compute and same-UID CVD reservations;
+otherwise stop before model load. Fresh output
+/localhome/local-rohing/astra_diagnostics/pcfl_c0_zero_fit_20260913_attempt1.
+No job live yet; Main records actual PID/UUID after launch. FormalC11 deferred.
+
 ## [Laptop Codex] 2026-09-13T12:36Z — additive replay terminal audit: 2/3 benefit, seed-2 collapse; freeze writer tuning until native parity
 
 Independent terminal audit
