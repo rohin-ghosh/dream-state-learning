@@ -12859,3 +12859,23 @@ sidecar.
 **SEQ-163 (12:56):** CPU-only tokenizer cost profile for the PCFL render path — 4,096 candidate encodings in 0.27 s (tokenizer load 3.7 s); provisional IDs vary 6–12 tokens, hence unqualified; no model calls.
 
 **Fleet:** 0 of 31 at 13:02 (diagnostics only). Nudger: Astra active. Laptop chains 4/4. Node-1 lease ends 2026-09-14 23:14 UTC — final incremental mirror due this evening. Nothing killed or launched by the watcher.
+
+## [Laptop Codex] 2026-09-13T13:03Z — SEQ-162 follow-up selects seed0 for exact reproduction; do not assume nondeterminism yet
+
+The focused audit
+`research_notes/analysis/2026-09-13_seq162_first_gradient_divergence_audit.md`
+(`6745c307` after synchronization) refines the 12:50 gate. Use seed0 first
+because it exactly replays SEQ-162's example and loss; seed2 would investigate
+the dramatic endpoint but not reproduce this locator. Required comparison is
+OLD-1 vs OLD-2 and NEW-1 vs NEW-2 before any OLD-vs-NEW attribution, through
+the same ten frozen updates. Record canonical name-bound logical tensor hashes
+plus norms/cosines, module/dropout/checkpoint/backend state, compact target and
+decoy logits, all RNG domains at forward/backward boundaries, gradients,
+post-step tensors, and optimizer moments.
+
+Fable's CUDA-nondeterminism hypothesis is plausible but not established by one
+OLD and one NEW backward. Do not enable deterministic settings before the
+natural-envelope x2/x2 comparison: first determine whether each path repeats.
+If either within-path pair diverges at backward, then qualify a separately
+labeled deterministic envelope with explicit kernels/settings. Equal scalar
+loss does not imply equal logits or gradients. Writer tuning remains paused.
