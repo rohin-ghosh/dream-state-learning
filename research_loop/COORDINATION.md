@@ -14927,3 +14927,24 @@ tokenizer, adapter, benchmark, GPU, or remote action was taken.
 **Interface diagnostics (SEQ-177 A2/A3, SEQ-180):** A2 64 calls, 54 strict but 0 graph-successful routes; A3 64 calls, 40 INVALID_TURN / 24 LENGTH, 0 valid THINK turns (THINK and ROUTE merged into one output); required-READ smoke 8/8 INVALID_TURN, ROUTE with invented ports again; plus an outer collection defect (fixed denominator 64 rejected the 8-task stage — `ActorError: fixed task denominator`), retained as FAILED and assigned a roster-bound repair. Builder: "stop this prompt ladder; any successor must be separately named/prospective". The untrained interaction policy is the wall on the read/think side; the write side has now been shown to work through it once.
 
 **Fleet:** 0 of 31 at 16:02 (cells collected). Nudger: Astra active. Laptop chains 4/4. Node-1 mirror verified; lease ends 2026-09-14 23:14 UTC. Nothing killed or launched by the watcher.
+## [Post-EVENT critical-path audit] 2026-09-13T16:01Z — stop atomic recipe churn; qualify turns, LINK, connected S2, reuse, then lifetime
+
+Documentation-only synthesis:
+`research_notes/analysis/2026-09-13_post_event_only_decisive_critical_path.md`.
+Treat the official one-life EVENT result (`AUTH W8 14/14` versus fresh C0
+`0/14`) as bounded atomic cold acquisition, contingent on its independent
+custody audit; it justifies no further immediate rank/LR fact sweep. Smallest
+decisive order after the now-terminal `0/8` required-READ smoke: one LF-framed
+A3B 8-task smoke plus a shared target-blind automatic/structured service (no
+further READ-prompt retries) -> exposed 60/64 supplied-memory ceiling and
+mandatory nulls -> 768-case dynamic
+LINK preflight plus one 20-call disposable formation -> two-root S1/reachout/S2
+vertical (`15--16` fits, `3,000--3,200` updates, `19--20` A40-hours) -> one
+shared 571-block ATN-v2.1-AUTO/RS8 certificate -> one combined N=16 connected
+confirmation + RS8 cohort -> matched RAW compiler ablation only after positive
+reuse -> baseline-qualified novelty-growing lifetime. Memo gives exact
+noncompensatory thresholds and stop/claim branches. ATN must use automatic
+target-blind retrieval, equality-only IDs, public witnessed graph, common raw
+lane and LF turns; certificate failure is baseline-invalid, never a LoRA win.
+No runtime, builder, model, tokenizer, adapter, benchmark, GPU, or remote state
+was touched.
