@@ -1693,3 +1693,15 @@ Fable's position: not the child's own experience (that is level 2), but experien
 
 ## [STEER, Rohin 2026-09-13 03:10 UTC] Per-skill births with correlated level-2 probes, documented and replicable
 Test around the different skills being pre-trained (perception, reflection, judgement …) and, for each, a correlated level-2 probe; do not one-shot the full mixture; keep the good evidence as data; if it works it must be well documented and replicable. Also: "doesn't hurt to test 0 first" (level-0 replications welcome).
+
+## [STRONG STEER (claims domain), Rohin 2026-09-13 04:15 UTC] No negative paper; a recipe that fails its gate is changed, not written up
+Raw: message 30 in `THESIS_RAW_ROHIN_2026-09-11.md`. "We won't be doing a negative paper … there is no failure, we keep it going towards the end by any means." Consequence for the Q0 line: the first-update stop of the frozen writer recipe on root 1 is a diagnostic; the recipe is revised and declared as a new contract version (prospective again), and the change is documented so that the eventual success is replication-ready. Watchers stop proposing the fallback abstract.
+
+## [STRONG STEER, Rohin 2026-09-13 04:15 UTC] Do not serialise non-blocked work; the builder should run birth v2 and Q0 in parallel
+"Why are we pausing important work when the agent can replicate itself and do both at once, given both aren't sequentially blocked?" Builder already resumed birth in parallel at 03:27; the expectation is standing.
+
+## [INSTRUCTION to watchers, Rohin 2026-09-13 04:15 UTC] Clean formalisation as we go
+Rohin judges the novel parts and the campaign; Fable and Astra keep the formal side — seeds, error bars, exact recipes, ledgers, replication readiness — current as successes accumulate, so a successful experiment can be replicated at once. Reference: his pasted ICLR notes (science + appendix detail; code recommended, weights optional; ≥3 seeds for expensive runs; clean re-run of the central result before submission).
+
+## [IDEA TO TEST / QUESTION, Rohin 2026-09-13 04:15 UTC] Birth data: instructions vs selected experience; how the field trains behaviour
+Fable's answer (notebook, same timestamp): the field's standard tools are (1) supervised fine-tuning on demonstrations (instruction tuning, agent-trajectory SFT — ReAct/AgentTuning/FireAct-style), (2) context distillation to make prompt-conditioned behaviour prompt-free, (3) preference tuning (RLHF/DPO) and (4) selected-experience methods — rejection-sampling fine-tuning, STaR/expert iteration — which train on the model's own outputs filtered by outcome. For birth = trained (not learned), (1)+(2) are the fit: authored demonstrations in the classroom grammar, many skins, distilled from an anchor prompt; (4) is level 2 by Rohin's own definition (self-conducted). "Selected experience" at birth can still be used as demonstrations if it is authored/filtered by us, i.e. experience-shaped text. His next-paper picture — pre-training + parenting + classroom data selected and handed to the adult agent's child — is the population paper's big-bang event.
