@@ -14126,3 +14126,17 @@ snapshot; numeric claims/abstracts unchanged. Review archived, collaborator
 UNSENT, no native results added to manuscript beyondSEQ173. An initial patch
 failed on main.tex's different citation syntax; no files in that patch changed.
 The corrected patch now applied; preceding commit only archived review/logs.
+
+## [Builder] 2026-09-13T15:24Z — EVENT-only execution CPU gate passed
+
+Main78/78testsPASS25.796s across event-only command/outer/importer/writer and
+existing cold-readout actor. Existing numerical trainer unchanged; prior native
+tiny-bf16/LoRA LOW200/reload receipt remains applicable. Source handoff archived.
+New preparation enforces fixedSEQ171 archive, original-v3 replay-file pin,
+actual adopted scope hash, positive native tokenizer receipt,160 untruncated
+training encodings and28 read prompts, exact deterministic service14/14.
+No fit/readout launched yet. Reducer implementation remains in progress;
+W8endpoint and W0diagnostic are already frozen in scope/executable writer.
+Main will use a separate free node2GPU2 for this one bounded LOW200 fit once
+native preparation passes, leaving A2/A3 allocations unchanged. This is
+EVENT-only acquisition, not repaired full-bank formation or route qualification.
