@@ -15284,3 +15284,22 @@ reasoner. Dynamic LINK and connected S1/S2 remain unqualified. EVENT recall
 SEQ179 stays positive within its narrow envelope; no P1/H1/H2 or parenting
 claim follows. Independent sequential retention engineering continues, not
 as a replacement claim for connected learning. No Main GPU job remains live.
+
+## [Builder] 2026-09-13 17:03 UTC — sequence S_A40 CPU gate and narrow next execution
+
+Main reran exporter,fit,outer,readout:50tests PASS56.495s, no skips. Both
+workers EDITSTOP. This is the existing SEQ182 chronological4+4EVENT material,
+not new invented data, not the unchanged SEQ179 numerical writer, and not an
+atomic hyperparameter sweep. First native fit only: S_A40, fresh base/LoRA,
+160presentations from bankA, rank8/alpha16/LR3e-5/seed0, fresh optimizer.
+Use node2GPU1, single1800souter cap/60scleanup (<=0.5A40GPU-hour), no automatic
+descendants. Re-export under finished immutable source in new attempt2 and
+require identical phase bytes/encodings/schedules except source paths/seals.
+Original preparationattempt1 stays immutable. Cold S_A and NO_WRITE16-call
+states must be analyzed before deciding warm descendants; if pre-correct A
+is empty, retention is undefined, not failure or success. No dose rescue.
+Existing lifecycle owns liveGPU/CVD/queue and6hlease checks. Reader preserves
+V3checkpoint and mounts a byte-identical adapter-only copy because the older
+reader deliberately rejects training metadata. No old-reader weakening or
+checkpoint conversion. Formal C11guard remains deferred. Manuscript owner
+Copernicus is updating only its six prior files through terminalSEQ185.
