@@ -1,0 +1,60 @@
+test_cli_readout_requires_explicit_state_and_fit_remains_default (test_astra_pcfl_event_sequence_v2_outer.OuterTests.test_cli_readout_requires_explicit_state_and_fit_remains_default) ... ok
+test_descendants_and_unknown_readouts_refused_without_spawn (test_astra_pcfl_event_sequence_v2_outer.OuterTests.test_descendants_and_unknown_readouts_refused_without_spawn) ... ERROR
+test_failed_or_misbound_receipts_never_complete_collection (test_astra_pcfl_event_sequence_v2_outer.OuterTests.test_failed_or_misbound_receipts_never_complete_collection) ... ok
+test_failed_predecessor_does_not_launch_descendant (test_astra_pcfl_event_sequence_v2_outer.OuterTests.test_failed_predecessor_does_not_launch_descendant) ... FAIL
+test_fresh_output_and_input_overlap_are_not_reused (test_astra_pcfl_event_sequence_v2_outer.OuterTests.test_fresh_output_and_input_overlap_are_not_reused) ... ok
+test_input_changed_by_worker_fails_final_custody (test_astra_pcfl_event_sequence_v2_outer.OuterTests.test_input_changed_by_worker_fails_final_custody) ... ok
+test_input_source_and_allocation_drift_prevent_launch (test_astra_pcfl_event_sequence_v2_outer.OuterTests.test_input_source_and_allocation_drift_prevent_launch) ... ok
+test_post_busy_does_not_rewrite_fit_release_or_promote (test_astra_pcfl_event_sequence_v2_outer.OuterTests.test_post_busy_does_not_rewrite_fit_release_or_promote) ... ok
+test_readout_adapter_and_immutable_fit_drift_fail (test_astra_pcfl_event_sequence_v2_outer.OuterTests.test_readout_adapter_and_immutable_fit_drift_fail) ... ok
+test_readout_base_and_fitted_lifecycle_preserve_fit_and_failed_scores (test_astra_pcfl_event_sequence_v2_outer.OuterTests.test_readout_base_and_fitted_lifecycle_preserve_fit_and_failed_scores) ... ok
+test_readout_pins_state_and_resources_prevent_launch (test_astra_pcfl_event_sequence_v2_outer.OuterTests.test_readout_pins_state_and_resources_prevent_launch) ... ok
+test_readout_receipt_custody_and_capture_mismatches_fail_collection (test_astra_pcfl_event_sequence_v2_outer.OuterTests.test_readout_receipt_custody_and_capture_mismatches_fail_collection) ... ok
+test_readout_timeout_and_unknown_pid_cleanup (test_astra_pcfl_event_sequence_v2_outer.OuterTests.test_readout_timeout_and_unknown_pid_cleanup) ... ok
+test_readout_wrong_fit_phase_and_failed_receipt_never_launch (test_astra_pcfl_event_sequence_v2_outer.OuterTests.test_readout_wrong_fit_phase_and_failed_receipt_never_launch) ... FAIL
+test_resource_failures_prevent_launch (test_astra_pcfl_event_sequence_v2_outer.OuterTests.test_resource_failures_prevent_launch) ... ok
+test_sa_single_phase_real_collection_and_independent_release (test_astra_pcfl_event_sequence_v2_outer.OuterTests.test_sa_single_phase_real_collection_and_independent_release) ... ok
+test_seed_drift_refused_before_spawn (test_astra_pcfl_event_sequence_v2_outer.OuterTests.test_seed_drift_refused_before_spawn) ... ok
+test_standalone_controller_pins_itself_but_uses_imported_worker_source (test_astra_pcfl_event_sequence_v2_outer.OuterTests.test_standalone_controller_pins_itself_but_uses_imported_worker_source) ... ok
+test_timeout_cleanup_targets_only_verified_spawned_group (test_astra_pcfl_event_sequence_v2_outer.OuterTests.test_timeout_cleanup_targets_only_verified_spawned_group) ... ok
+test_unknown_identity_never_calls_cleanup_or_kills (test_astra_pcfl_event_sequence_v2_outer.OuterTests.test_unknown_identity_never_calls_cleanup_or_kills) ... ok
+test_unowned_session_identity_never_killed (test_astra_pcfl_event_sequence_v2_outer.OuterTests.test_unowned_session_identity_never_killed) ... ok
+
+======================================================================
+ERROR: test_descendants_and_unknown_readouts_refused_without_spawn (test_astra_pcfl_event_sequence_v2_outer.OuterTests.test_descendants_and_unknown_readouts_refused_without_spawn)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state/tests/test_astra_pcfl_event_sequence_v2_outer.py", line 551, in test_descendants_and_unknown_readouts_refused_without_spawn
+    result = self.run_controller()
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state/tests/test_astra_pcfl_event_sequence_v2_outer.py", line 275, in run_controller
+    return outer.controller(str(self.path), self.inputs_hash, str(self.allocation_path), self.allocation_hash,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state/gpu/astra_pcfl_event_sequence_v2_outer.py", line 231, in controller
+    root.mkdir(exist_ok=False)
+  File "/usr/lib/python3.12/pathlib.py", line 1313, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [Errno 17] File exists: '/tmp/SYNTHETIC_SEQUENCE_OUTER_nrs58i1w/outer'
+
+======================================================================
+FAIL: test_failed_predecessor_does_not_launch_descendant (test_astra_pcfl_event_sequence_v2_outer.OuterTests.test_failed_predecessor_does_not_launch_descendant)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state/tests/test_astra_pcfl_event_sequence_v2_outer.py", line 500, in test_failed_predecessor_does_not_launch_descendant
+    with self.assertRaisesRegex(ValueError, "acquisition gate incomplete"):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_readout_wrong_fit_phase_and_failed_receipt_never_launch (test_astra_pcfl_event_sequence_v2_outer.OuterTests.test_readout_wrong_fit_phase_and_failed_receipt_never_launch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/data/home/rohing/dream-state/tests/test_astra_pcfl_event_sequence_v2_outer.py", line 372, in test_readout_wrong_fit_phase_and_failed_receipt_never_launch
+    with self.assertRaisesRegex(ValueError, "acquisition gate incomplete"):
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 21 tests in 14.911s
+
+FAILED (failures=2, errors=1)
+{"outer":"/tmp/SYNTHETIC_SEQUENCE_OUTER_xst3ccxe/outer","phase":"A200","status":"COMPLETED"}
+{"outer":"/tmp/SYNTHETIC_SEQUENCE_OUTER_xst3ccxe/outer","stage":"readout","state":"NO_WRITE","status":"COMPLETED"}

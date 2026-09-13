@@ -369,8 +369,7 @@ class OuterTests(unittest.TestCase):
     def test_readout_wrong_fit_phase_and_failed_receipt_never_launch(self):
         self.prepare_readout("A200")
         self.state = "REPLAY400"
-        with self.assertRaisesRegex(ValueError, "acquisition gate incomplete"):
-            self.run_controller()
+        self.assertEqual(self.run_controller()["status"], "FAILED")
         self.state, self.output = "A200", self.root / "failed_fit"
         outer.write(Path(self.inputs["fit_receipt"]["path"]).parent / "failure.json", {"error": "ORIGINAL FIT FAILURE"})
         self.assertEqual(self.run_controller()["status"], "FAILED")
@@ -497,8 +496,7 @@ class OuterTests(unittest.TestCase):
                     "kind": "NATIVE", "phase": "A200", "updates": 200}))
         self.inputs["predecessor"] = {"path": str(path), "sha256": outer.fit.file_hash(path)}
         self.save()
-        with self.assertRaisesRegex(ValueError, "acquisition gate incomplete"):
-            self.run_controller()
+        self.assertEqual(self.run_controller()["status"], "FAILED")
         self.assertEqual(self.children, [])
 
     def test_resource_failures_prevent_launch(self):
@@ -548,6 +546,7 @@ class OuterTests(unittest.TestCase):
     def test_descendants_and_unknown_readouts_refused_without_spawn(self):
         for phase in ("B200_NEW_DOSE", "B400_FIXED_WORK", "REPLAY400", "CLEAN_CUM600"):
             self.phase = phase
+            self.output = self.root / ("missing_acquisition_" + phase)
             result = self.run_controller()
             self.assertEqual(result["status"], "FAILED")
             self.assertIn("acquisition", str(result["errors"]))

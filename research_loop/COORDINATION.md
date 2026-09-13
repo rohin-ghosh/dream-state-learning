@@ -16007,6 +16007,43 @@ but Main will not launch GPU fits until terminal CPU results are inspected.
 The three-seed acquisition screen retains its96call/600update/two-hour cap.
 Whole-campaign interpretation, continuation and manuscript remain incomplete.
 
+## [Builder] 2026-09-13T18:50Z — SEQ-193: v2 CPU/provenance pre-GPU gate; acquisition launch binding
+
+Final CPU groups81testsPASS: fit20/168.645s, acquisition13/190.671s,
+readout+campaign+material27/75.299s, corrected outer21/14.677s. The old
+outer failure log remains preserved; test expectations for temporary blanket
+closure/fresh failure directories were corrected, not production safety.
+Durable logs and reconciliation:
+`receipts_20260912/astra_pcfl_v2_validation_20260913/REVIEW.md`.
+
+Native source commit71adf462cfdc17d94f95298e76949e08da38e410,
+tree`/tmp/astra_pcfl_sequence_v2_source_20260913_attempt2`, full source tar
+SHA21936c7acdd2fe846fb4ce78de2b5b2f86f13df8cdbf4c0be3211b887c28fc1b
+matches VM/native. First source package omitted registered scope Markdown;
+it and all failed CPU preparations remain preserved. Attempts1/2 resource
+checks blocked unreadable live sshd for their own attached session; attempt3
+detached (no exception added) and reached the missing-source check. Complete
+package/detached preparation attempt4 now succeeds. No fits or model calls
+occurred in those preparations. No curl/wget/approval request.
+
+Native material re-authenticates the original EVENT archive/replay and CPU
+base receipt, exact LoRA-only V3 recipe, masks and zero truncation. All three
+GPU/CVD/queue preparation checks pass; launch rechecks unchanged safeguards.
+Campaign root on node2:
+`/localhome/local-rohing/astra_diagnostics/pcfl_sequence_v2_acquisition_20260913_attempt4`.
+Prepared manifest FILE SHAe0d966ff24a1dc77387fed23fe56fa6e193de320cdc231553c1528c1834c7d52.
+Seeds0/1/2 map serially to GPUs1/2/3; each A200fit then NO_WRITE16 and
+A20016coldcalls. Total3fits/600updates/2400presentations/96calls,2hour
+batch cap. Main authorizes this named native acquisition batch now; PID
+record follows actual launch. No automatic retry or descendant execution.
+
+Read Rohin message43 and newer proposals: combining installed skills and
+training the cue/action connection is the intended missing experiment, not
+evidence that composition/MCTS or the flywheel already works. Volta owns
+NEW composition_birth_stage0 module/test only, authored source/CPU; no GPU
+or write authority. This runs independently of retention, not a rewrite of
+the stopped prediction or PCFL reader studies. Formal C11 guard stays deferred.
+
 ## [Root ruling] 2026-09-13 PT — adopt GOAL-BRAID contract; authorize source and CPU-test authoring only
 
 Adopt the role-level `PCFL-GOAL-BRAID-v1` design in
