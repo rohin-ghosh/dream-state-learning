@@ -394,3 +394,42 @@ repair. Do not modify old snapshots or retroactively accept old failures.
 Simple hygiene continues; formal C11 guard deferred. Preserve unrelated rules
 edit. Node1 preservation deadline September13 23:14UTC; expiry September14
 23:14UTC, six-hour finish margin. Full mission remains incomplete.
+
+### SEQ193 / v2 native acquisition launched, September13 18:51UTC
+
+SEQ192 now incorporated into paper/TeX/claim-map C105/UNSENT collaborator
+draft; no abstract or claim promotion. Future zombie hygiene passed52tests.
+V2 material/runtime/readout/acquisition/campaign integrated. Final Main groups
+81testsPASS, preserved under receipts_20260912/astra_pcfl_v2_validation_20260913
+with explicit reconciliation of earlier timeout and outer-test failures.
+Raman/Epicurus/Mendel/Godel closed; Volta now owns ONLY new
+`organism_v6/composition_birth_stage0.py` and its test, source/CPU work under
+message43/staged successor. Await EDITSTOP; no native authority.
+
+Actual node2 detached batchPID232367, launched18:51:15UTC. Campaign root:
+`/localhome/local-rohing/astra_diagnostics/pcfl_sequence_v2_acquisition_20260913_attempt4`.
+Manifest FILE SHAe0d966ff24a1dc77387fed23fe56fa6e193de320cdc231553c1528c1834c7d52.
+Native source`/tmp/astra_pcfl_sequence_v2_source_20260913_attempt2`, commit
+71adf462cfdc17d94f95298e76949e08da38e410. Full source archive FILE SHA
+21936c7acdd2fe846fb4ce78de2b5b2f86f13df8cdbf4c0be3211b887c28fc1b.
+Source includes required own-write scope Markdown. Do not hot-edit it.
+
+Three A200 acquisitions, optimizer seeds0/1/2 on shared A4/B4 bank;
+GPUs1/2/3 serially, eachfit then freshNO_WRITE16/A20016.3fits/600updates/
+2400presentations/96calls,2hour aggregate serial cap,30min perstage. No native
+result inspected yet. Reconcile `completed.json` versus `stopped.json`, stage
+`collection.json`, `campaign.stdout.log`/stderr and actual PID before action.
+No automatic retry or followup launch. Keep all failed CPU preparation roots:
+attempts1/2 hit their attached sshd CVD denial; detachedattempt3 revealed a
+missing scope file in initial package; complete-package detachedattempt4passed.
+Those were zero-model-call preparations, not repeated science outcomes.
+
+The same frozen runtime can now validate raw C0/A200 acquisition requests
+and enable the four predeclared fits per passing seed, but the initial
+campaign helper deliberately captures only acquisition. Failures withhold
+that seed's descendants without dose rescue. Original S_A40 stays terminal;
+do not warm-start from it. Need raw analysis/VM transfer and explicit
+followup orchestration after acquisition, not blanket promotion or C11.
+Node2 lease ends September21 08:43UTC; finish six hours before. Node1's
+relevant prior/new evidence is already on VM; its preservation deadline
+remains September13 23:14UTC. Formal C11 guard deferred; mission incomplete.

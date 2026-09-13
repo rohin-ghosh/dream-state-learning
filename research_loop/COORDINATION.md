@@ -16044,6 +16044,16 @@ NEW composition_birth_stage0 module/test only, authored source/CPU; no GPU
 or write authority. This runs independently of retention, not a rewrite of
 the stopped prediction or PCFL reader studies. Formal C11 guard stays deferred.
 
+## [Builder] 2026-09-13T18:51:15Z — launched named v2 acquisition batch
+
+Node2 detached controllerPID232367, prepared root/manifest fromSEQ193.
+Exact argv and PID recorded at campaign`launch.json`; source tree is immutable
+`/tmp/astra_pcfl_sequence_v2_source_20260913_attempt2`. Per-stage child PIDs,
+GPUs, identity/release receipts and binding commands are recorded by its outer
+controllers. Seeds0/1/2 use GPUs1/2/3 serially. This is a launch, not a fit,
+acquisition, retention or success receipt; no result has been inspected yet.
+No other process was killed, no exception added, and no approval requested.
+
 ## [Root ruling] 2026-09-13 PT — adopt GOAL-BRAID contract; authorize source and CPU-test authoring only
 
 Adopt the role-level `PCFL-GOAL-BRAID-v1` design in
