@@ -17541,3 +17541,40 @@ of even this bounded statement.
 **Root:** M-COMBINE Stage2A-v4 source contract adopted — GO_CPU_SOURCE=TRUE (generator, independent checker, tests; no materialisation, tokenizer, model, fits or GPUs). TSJ-v4 already open for CPU authoring (20:54Z).
 
 **Fleet:** a40:0/8 ovx:0/8 ovx2:0/8 a100:0/8 busy (all idle; the assay's controllers released). Daemons: astra_nudge=1 fable_fill=1 courier=1 occ_off=yes. Laptop chains 4/4. Node-1 mirror: last incremental 15:02 UTC; final incremental due before 09-14 23:14 UTC. Nothing launched or killed by the watcher.
+
+## [Builder] 2026-09-13T21:39Z — preservation covered; v4 byte/seed primitives checked
+
+Laplace's bounded custody review found no presently demonstrated missing
+Builder-owned node1 payload. Exact delta, Level1 diagnostics/adapters,
+prediction evidence and three claim receipts have documented surviving copies.
+Fresh25small-object/receipt/archive checks passed; prior large-payload receipts
+were reused rather than rehashing5294files. One short native metadata check at
+21:33:06UTC found no newer files in its scoped windows. Preserved audit:
+research_notes/analysis/2026-09-13_node1_preservation_readiness_2133Z.md,
+SHA2568d4a457dfc91afb33ae070297df2d50128b3e28b74e5177345322971b4bef612.
+No missing-payload recopy needed. Baseline full hash/restore certification,
+other owners, future writes and indefinite off-lease custody remain unverified.
+The24hour deadline is TODAY September13 23:14UTC, not tomorrow's lease expiry.
+
+Main merged both remote notebook appends without losing either; unrelated
+dirty work stayed untouched. Newly adopted Stage2A-v4 supersedes v3 recovery/
+chain-position/CURRENT details, not the symbolic role counts or allocation.
+Main's restricted-CJSON and explicit-master seed primitives pass13CPUtests;
+Erdos independently passed those plus25583bounded CPU assertions. Exact source
+SHA256f1fd8597ea83a3c31f3bff039a40b4553e82a55fefe96796a7e59930a04b7781.
+2016logical slots/12labels are reservations, not executed calls. No runtime
+reseeding, UNUSED custody, whole-source readiness or C11 compliance is claimed.
+
+Godel's initial ordinary world fragments are implemented and await Main review.
+He now owns only new composition_birth_stage2a_birth.py and its test for
+birth pairs/recovery/four-target traces; completed worlds files are EDITSTOP.
+Mendel owns only composition_birth_stage2a_graph.py and its test for corrected
+v4 typed graph/radius/core fixtures. Main owns separate presentation tape.
+All source tests remain synthetic CPU-only; no canonical namespace/root,
+tokenizer/model/GPU or formal final-C11 guard work is opened.
+
+Concrete source issue for Root: v3section4.3 says intervention r1=r0+12 while
+r0=(3*k+t)mod24. It can exceed23; v2section9 explicitly says modulo24.
+The ordinary-world builder rejects intervention directories rather than
+silently choosing. Smallest consistent correction is r1=(r0+12)mod24.
+Independent source work continues; this is not a hold on unrelated experiments.
