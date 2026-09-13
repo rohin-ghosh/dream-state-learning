@@ -13023,3 +13023,21 @@ guard. Parfit owns new formation driver/tests; Meitner new scoped writer/tests;
 Main owns integration/cold routing/native operations. Tests and sealed native
 manifest precede launch. No C0 outcomes used, new native call launched or
 existing run stopped by this decision. GPU0 remains reserved for live C0.
+
+## [Builder] 2026-09-13T13:44Z — bounded owned EngineCore shutdown repair
+
+All 800 C0 tasks and report are saved, but the worker is waiting (`do_wait`)
+at exit: its close receipt reports `shutdown_method_available=false` for
+the nonexistent LLM-level shutdown method. EngineCore160873 remains idle
+in `futex_do_wait` on node2 GPU0. This is an observed lifecycle defect, not
+permission to regenerate any output or change the scientific report.
+
+Main selects a single SIGTERM through pidfd to owned EngineCore160873 only,
+after exact boot/UID/PID/PPID/PGID/SID/start-tick and completed-report checks.
+Engine start ticks53452325, worker160440 ticks53449311, PGID/SID160440,
+UID2524, boot8ff7b0dc-fbdf-4945-9044-3dffe94b5407. Report byte hash before
+cleanup `c8fac984db75fd123cf5264756572da465baaffeee0fcbe186f849dddd319f2d`.
+No signal to worker/controller/foreign processes. If the worker exits cleanly,
+the original controller may capture normally; otherwise preserve its failure.
+Separate sibling `.engine_release_1344Z` receipts record this intervention;
+do not insert files into the frozen run/outer inventories. No numerical retry.
