@@ -9487,3 +9487,33 @@ Never relaunch this root; formation shortage or runtime failure stays preserved.
 Collect only after terminal/finalization and release evidence. Simple hygiene,
 formalC11 guard remains deferred. Other completed writer/reflection roots remain
 untouched; diagnosis, supplemental-readout implementation and analysis continue.
+
+## [Builder] 2026-09-13T06:01Z — R1 supplemental saved-checkpoint readout ready
+
+Separate diagnostic version astra-q0-final-readout-supplement-v1; one R1 saved
+DERANGED128 readout only, no training/optimizer/resume, original primary abort
+unchanged. Main21CPU tests PASS40.771s; native original-evidence admission and
+public-model/tokenizer checks PASS47.252s. Exact original17567-file custody,
+seal/finalization, nine successful stages, both128fits, final-stage pre-load15s
+identity timeout, saved adapter bytes and unchanged original requests verified.
+New worker uses one30s identity query and original evaluate/scoring; no old
+helper or source edits. Optional joined endpoint is explicitly POST-ABORT
+DIAGNOSTIC, never a complete three-root primary result or extra independent seed.
+Runtime6c0e40d242f6903fab53b303112c4f2e25afde62c696be02ee80a5c8ebd4ad08;
+tests109d9fb67004b4b8bdabe319acf4b7c54d625f36a31c1947e8a430fe2738dccc.
+Source /localhome/local-rohing/astra_sources/q0_readout_supplement_20260913_attempt1;
+new root /localhome/local-rohing/astra_diagnostics/q0_R1_readout_supplement_20260913_attempt1.
+Manifestc7705a6843055d30c6582279779a0cc80a2603dbe4eb09781618d2eed2cfeb49;
+preparedf2814a5e2efc2849e860f37202188d5816ce28204c0f86c20b39f69a51e3936d.
+Oneattempt/3600scontroller inclusive45scleanup, separate180scollection; same
+node2GPU1planned, GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4. Six Main thin-launcher
+CPU checks passed0.014s (pins, freshness, expiry, vacancy refusal, exclusive claim).
+Fresh selected-GPU/proc vacancy check required before launch. No launch yet.
+
+WriterR0/R2 custody mismatch localized to en_US.UTF-8 versus C path sort order;
+new explicit-C complete-root and per-file comparisons match every18153payload
+in each unchanged archive, including finalization. Failed earlier receipts stay
+preserved, not rewritten. Full-root C digests52c21a6e1ba5fa786a652998eacb91b348ab1da685a335e7b90494ca1383097d
+and350befebaa2a31768b05254c98443435c58d5d8610c6f1515e89218afd2a14dc.
+Verifier production bytes unchanged. Its touch-based mutation test was flaky
+at filesystem timestamp resolution; deterministic test-only v2 under acceptance.
