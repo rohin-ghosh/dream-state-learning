@@ -11062,3 +11062,50 @@ The three frozen LR `3e-5` candidate score artifacts are terminal. Direct count 
 
 Rohin, in substance: "we're taking too much of L2 into L1 — L1 is trying to get the flywheel going, it's not trying to literally do everything; the minimum bar is getting baseline self-learning mechanisms going, repetition and steering; the minimum is learned by testing level 0 and seeing how behaviours change; we need to test what behaviours would take external parent and world inputs and turn them into learnable behaviour/memory outputs that are useful long-horizon but also within the horizon of the sleep cycle." "Level 1 isn't actually trying to solve self-learning with pre-training; it's just trying to build the internalised behaviours so that the model is receptive to parenting (parenting is architectural — having the model loop long enough and learn well)." Emotions, search-like traversal: deferred until real parenting is happening ("I was the only one getting carried away"). Return to L1 later only if parenting alone cannot change a behaviour. "I think Astra knows this and is running loop 2 to test what the needed behaviours and blockers are to solve on level 1 — that's good and the right strategy." Also: a receptivity test idea — after a lesson on skill X the next input should be processed WITH X, visibly in the record (IDEAS 09:50); and "people are the scaling law".
 Watcher note: the current path — L1 skill slices → real-record formation → own-record write → post-memory formation → retention repair — is exactly the loop-2 blocker search he endorses; SEQ-153/154's blockers (skill erosion on write; action still example-dependent) are the level-1 items to solve, not new skills to add.
+
+## [Builder] 2026-09-13T09:53Z — contrastive native preparation repaired; bounded three-seed launch allocation
+
+Read rawmessage37 and adopt scope discipline: receptivity/steering/ownrecords,
+not new emotions/search arsenal. Fixed-coaching own-record DEV is already
+specified in ASTRA_PARENTED_RECORD_DEV_2026-09-13.md; CPUcore/nativeglue in
+parallel, not launched. It uses fixed authored process advice versus neutral
+contact, no adaptive-parent claim or teacher-written sleep targets. Own-source
+TRAIN replaycore is separate preparation, not silently added to that protocol.
+
+Contrastive attempt1 native preparations all stopped before models/fits/calls:
+historical dataset comparison incorrectly compared Python tuples to their
+JSON-list serialization in provenance metadata. Main reproduced exact byte
+identity to pinned material7f9045242e98dc05b85f814574a1eb87cacebf463af88dcca60729c4aa5ebd66.
+Non-material repair compares canonical bytes/hash, NOT weaker source equality;
+targets, contexts, panels, seeds, recipe and thresholds unchanged. Original
+runner/specs and failedroots retained. Newv2runner/newattempt2roots preserve
+attempt identity; no scientific retry or outcome-based selection occurred.
+Main original32CPUtestsPASS10.809s after an initial10s tool-timeout; newv2
+34testsPASS12.746s incl actualgenerated tuple/list regression and changeddata
+rejection. Mainouterlauncher3testsPASS.001s, ownPGIDcontroller requirement
+satisfied via start_new_session=True. All3native tokenizer/mask/source/model/
+historicalOFF preparations now PASS.
+
+Allocate node2GPUs0/1/2 to learnerseeds0/1/2. Boot
+8ff7b0dc-fbdf-4945-9044-3dffe94b5407, lease2026-09-21T08:43Z, six-hour margin.
+Fresh queue/all-process/CUDA-environment checks run at launch; outerholders
+reserve UUID across four sequential worker processes perpair. Eachpair has
+two fresh fits336updates each and96cold calls,7200scontroller+180scollection;
+total6fits2016updates288calls,6GPU-hourcap. Historical OFF imported, not rerun.
+Same12paired sources: highdose is not source diversity or identifiedattention.
+OriginalexposedDEVpanels andnegate-earlier shortcut remain explicit. Noautomatic
+promotion, extra dose or foreign kills. Exact native roots:
+/localhome/local-rohing/astra_diagnostics/contrastive_full_dose_seedN_20260913_attempt2.
+Plans seed0/1/2:
+4742d9fbafe70d5f5bc97ef15d3712e0ad52bd20ae0887ab6e81b5e73359ffb8
+d19c72e6153549f2ea9a6bd218a1f2380aaedb64e0f563eed8b3a57982e28551
+b22af588a1be9549807c140dc594fda523a573b6de5f81a3ff23cb2520720e71.
+Runner /tmp/astra_contrastive_full_dose_run_20260913_v2.py SHA
+ddd36b16e188a2c2bfa11e61e8fbed66fed67d93f81b1d4fa6384c04dd43c025;
+Main /tmp/astra_contrastive_full_dose_main_20260913_v2.py SHA
+3191eb02d8ef09e6da7de4e664ae5f42e4e8cc947cc5c2714182ff157ca2e65a.
+Launch native v2/venv/bin/python -B Main launch --seed N --runner-sha256
+ddd36b16e188a2c2bfa11e61e8fbed66fed67d93f81b1d4fa6384c04dd43c025,
+emptyCUDA_VISIBLE_DEVICES/PYTHONDONTWRITEBYTECODE=1/PYTHONNOUSERSITE=1.
+Actual PIDs follow. ManuscriptthroughSEQ153 independentlyreviewed/pushedd66a3ebb;
+SEQ154/155 update inprogress. No approval prompts or external sends.
