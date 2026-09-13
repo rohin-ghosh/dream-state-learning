@@ -1,6 +1,62 @@
-# Astra current handoff — 2026-09-13T13:00Z
+# Astra current handoff — 2026-09-13T13:22Z
 
-## CURRENT — September 13 13:00 UTC
+## CURRENT — September 13 13:22 UTC
+
+MissionACTIVE/incomplete, about31hours elapsed. No Main GPUworker/model job
+is live. Current C0 path has zero model calls; no mechanism freeze/generalG3,
+P1/H1/H2/full-assay/C11 claim. Simple hygiene now; formal guard finalC11 only.
+
+SEQ164: first L8inventory attempt selected212IDs but failed on actual HF
+BatchEncoding return type (Mapping, notdict), before used-surface check.
+Main nonmaterial Mapping repair and2regressions, combined30CPUtestsPASS,
+commitd2b5abe4. Originalfailedarchive and fixedIDs preserved; NO reselection.
+SEQ165: one measurement-only recovery PASSED4533actual encodings/all800task
+surfaces; logicalplanunchanged (filedifferenceonlyLF). RA/RB differ1token,
+fullmate qualification remains unpassed. Source root
+/tmp/astra_pcfl_c0_source_20260913_mapping_repair1 onnode2.
+Measurement dir /tmp/astra_pcfl_c0_measurement_20260913_mapping_repair1;
+seal3b5553d15cb12e551d7567f66c29ac8f37fecc63b84d9ee2f187f1b033b65d0c.
+Archive gpu_artifacts_local/pcfl_c0_measurement_20260913_mapping_repair1/evidence.tar
+SHAaa9f1df7116c86df9599a3e7df5e6d911ff97e9a0824f93d5aaccb522e521b74.
+
+SEQ166: native OUTER attempt1 PID154224 started13:14:19UTC and preflight
+aborted2.678s before Popen/GPU/model. Known user-init services36935/36938 have
+protected environments. No foreignworker was present/killed. Preservefailed
+outer/launcher/claim; NEVER reuse them. Archive
+gpu_artifacts_local/pcfl_c0_preflight_20260913_attempt1/evidence.tar SHA
+453d036205eb11874c9c16ff05095a001ba06afba38ddf1065eb568187023607.
+Originalmanifest/allocation retained locally besidearchive. Publicmetadata
+ofsystemd--user/PAMhelper (NOT protectedenv) is archived inreceipts_20260912/
+astra_pcfl_c0_preflight_20260913_attempt1/astra_pcfl_system_service_binding_20260913_attempt1.json;
+SHA47e200b2c77576834624abbfe596bf974e08509cfee7f4289f05e95ce52f1309.
+
+Parfit owns IN-PROGRESS outerv2repair/tests: explicitexactmetadata-bound
+non-worker init-pair PermissionError fallback, no arbitrary unreadableworker
+skip and no protectedenvaccess. Do not stage until EDITSTOP. Copernicus does
+advisory foreign-process/release safety read. Other component workers closed.
+Originalnativeouterv1 remains untouched; ship repairedbytes under a NEW
+filename alongside original pinned command/driver, not overwriteoldsource.
+
+Main already PREPARED NOT LAUNCHED nativeattempt2 with SAME scientificplan:
+/tmp/astra_pcfl_c0_manifest_20260913_attempt2.json onnode2,
+fileSHAef2adf4146b525fc9a13e9759137daffefe526373a9f6deda3c37fbd07d6eaa6,
+sealdc2c83d1feea36e327fab76b41fad103b03bf0845d0ee9c2e2462cbb10fa2c6c.
+Output /localhome/local-rohing/astra_diagnostics/pcfl_c0_zero_fit_20260913_attempt2.
+CandidateGPU0 UUIDGPU-c70cba10-6ab6-a287-e2db-51dccd617ab0; UID2524,
+boot8ff7b0dc-fbdf-4945-9044-3dffe94b5407. Build fresh v2allocation from actual
+bound initmetadata AFTER tests, recheck liveGPU/queue/eligible CVDs, log/push,
+then launchonce. Cap10800s,120sinsidecapcleanup,preparedvalidity14400s on same
+nativeclock; expiry is not permission to silently reset/reuse a launchedrun.
+Firstworker manifestfile8d52469d... andallocation154593bf... belong toABORTED
+preflight1, notattempt2. Outer finalization is separate once-only command
+afterworker/holderrelease; use actual returned capture_file_sha256.
+
+Manuscript remains independently reviewed throughSEQ162 at0dc79d4f,UNSENT.
+SEQ163–166 operational evidence is not additional learning evidence. Preserve
+dirty gpu/codex/dream_state.rules. Continue execution, not another broad audit.
+
+## Historical superseded snapshot — September 13 13:00 UTC
+
 
 SEQ163 actual offline tokenizer profile completed once, rc0:4096candidate
 encodings plus212provisional IDs, no weights/model/GPU activity. Archive

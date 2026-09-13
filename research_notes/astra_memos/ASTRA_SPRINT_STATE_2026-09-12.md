@@ -1,4 +1,17 @@
-## Current superseding snapshot — 2026-09-13 13:00 UTC
+## Current superseding snapshot — 2026-09-13 13:22 UTC
+
+ACTIVE/incomplete,~31hours. C0has0modelcalls/noMainGPUjoblive. SEQ164fixed
+BatchEncodingMappingcompatibility withoutreselection;SEQ165all800usedsurfaces
+PASS4533actualrecords. SEQ166outerattempt1preflightabortedbeforePopen because
+protectedper-userinitenvirons,notGPUworker. Originalfailure/claimarchived.
+Parfit ownsv2exactnon-worker service-exceptionrepair/tests;Copernicusadvisory
+safetyread. Nativeattempt2manifestalreadyPREPARED_NOT_LAUNCHED, exacthash/path
+inHANDOFF. FinishscopedCPUrepair, freshallocation/livechecks, launchonceand
+inspectactualoutputs. Don'treuseoldclaims/reselectIDs/repeatnumericalscience.
+ManuscriptthroughSEQ162reviewed/UNSENT. FormalguardfinalC11only;nofreeze,
+generalG3/P1/H1/H2/full-assayclaim. Preserveunrelateddirtyrules.
+
+## Historical superseded snapshot — 2026-09-13 13:00 UTC
 
 SEQ163actualoffline profile4308encodings complete/archived, no model/GPU calls.
 ScopedC0 fixedL8inventory policy prospectively selected(d6b50c5a); original
