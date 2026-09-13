@@ -1,4 +1,16 @@
-## Current superseding snapshot — 2026-09-13 02:47 UTC
+## Current superseding snapshot — 2026-09-13 03:10 UTC
+
+Q0 attempt1 is TERMINAL_NONREPORTABLE, not a writer null/pass. Final raw forward
+accounting detected zero PEFT hook calls; correct fail-closed replay preserved
+all five stages and returned scientific_claim=false. All owned PIDs/GPU2 released;
+full3.17GB capsule verified and preserved. No Main GPU run currently live.
+Carver repairs instrumentation only; Main must run complete final native CPU
+acceptance and create a fresh attempt without changing scientific constants.
+No confirmation/endogenous relay is released. FormalC11 remains deferred.
+Latest exact custody and source ownership in HANDOFF; result memo SEQ125 is
+ASTRA_Q0_RUNTIME_ABORT_2026-09-13.md. Entire mission still ACTIVE/incomplete.
+
+## Historical superseded snapshot — 2026-09-13 02:47 UTC
 
 Mission ACTIVE/incomplete. Main Q0 root1 writer test is LIVE on node3GPU2,
 controller298494/auditworker298807, hard deadline03:27:18UTC. Exact immutable

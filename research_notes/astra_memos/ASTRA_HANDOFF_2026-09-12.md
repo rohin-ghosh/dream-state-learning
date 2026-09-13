@@ -1,6 +1,33 @@
 # Astra current handoff — 2026-09-12T19:56:24.212350+00:00
 
-## CURRENT — September13 02:59UTC (supersedes older status below)
+## CURRENT — September13 03:10UTC (supersedes older status below)
+
+**NO Main GPU job live.** Q0 attempt1 terminalNONREPORTABLE_RUNTIME_ABORT:
+final native forward accounting failed (PEFT audit/fits hook0, natural128/148;
+bareOFF2353=288+2065). No scientific Q0 null/pass; provisional canary observations
+cannot be promoted. Full memo ASTRA_Q0_RUNTIME_ABORT_2026-09-13.md (SEQ125).
+Captured and separately replayed report hash16bbed2a1cf6ed5be62fed186918cf855eaaf9e1ab134368c623ed21a7ed3f58.
+All controller/workerPIDs absent, GPU2 empty, durable completion1230.382598s.
+Full capsule47baaccd5a2d877ca975309c2f135e6aa439408f560fa4d99fb413042aa8733a,
+3.17GB,16,101 files, verified once. Native/tmp + VM gpu_artifacts_local copy.
+Metadata-only archive in receipts is not a complete replay capsule. Do not
+recollect, overwrite, relabel, resume or retry the same root/source.
+
+Carver01a0986e-79f4-7780-b165-61ad39766413 owns ONLY Q0 executor/tests plus
+NEW /tmp/astra_q0_forward_counter_repair_handoff_20260913.md. Non-material fix
+must move actual hook coverage to a shared called module (PEFT can bypass wrapper
+__call__), not loosen counts; real tiny-config CPU Peft/Qwen regression required.
+Main owns native full CPU acceptance, new immutable source, fresh preparation,
+and a new attempt under unchanged scientific constants. GPU2 reserved for this;
+no source changes may affect archived attempt1. No native repair accepted yet.
+
+Future relay module CPU25tests/review accepted; no relayroot or model run. Q0
+prerequisite NOT met. Formalguard finalC11-only. Six manuscript files through124
+remain reviewed/committed, collaboratorUNSENT; no claim promotion. User rulesfile
+still unrelateddirty. Fable identifies node3GPU7 driver init fault; no Main
+reset/reboot/lease change authorized or performed. A100 starts05:05UTC.
+
+## Previous Q0 diagnostic progress — September13 02:59UTC
 
 Q0 controller298494 remains LIVE with stage04_fit_P_UNARY_TOOL on node3GPU2.
 AUTH first-quartet canary missed after1 update; prescribed DERANGED/unary

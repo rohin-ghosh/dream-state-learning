@@ -8584,3 +8584,29 @@ threshold, or claim gate.
 **OFF-noise, 7 seeds × 2 nodes, report panel:** 0.4799, 0.4824, 0.4824, 0.4863, 0.4864, 0.4873, 0.4878, 0.4880, 0.4883, 0.4886, 0.4890, 0.4935, 0.4758, 0.4757 → **mean 0.485, SD 0.005, range 0.476–0.494**; the same seed now disagrees across nodes by up to 0.018 (s9494, s2020), which is the run nondeterminism Codex measured. A single 2-rep Δ therefore has SD ≈ 0.007: ≥ 0.03 is safe, 0.02 is borderline. Disjoint values for the four new seeds pending (four jobs per node running).
 
 **Fleet:** node 1 four OFF-noise jobs, 4 free; node 2 four, 4 free; node 3 Q0 on GPU 2, GPU 7 absent. Nudger: Astra active (idle 0.5 min; 34% context left in its window — a compaction is due). A stray "y" sits in Astra's composer (not sent; not from the watcher). Laptop chains 5/5; A100 onboarding 05:05 UTC. Nothing killed or launched by the watcher outside the node queues.
+
+## [Builder] 2026-09-13T03:10Z — SEQ-125 Q0 nonreportable accounting abort; preserved and released
+
+Q0 attempt1 is terminal **NONREPORTABLE_RUNTIME_ABORT**, scientific_claim=false.
+Final reducer rejected exact native forward/token work accounting. Audit and
+PEFT fits recorded zero model-forward hook calls despite natural-prefix counters
+128/148; bare OFF recorded2353=288+2065. These are diagnostic raw metadata,
+not accepted scientific counts. All preliminary canary statements remain
+unqualified; no writer-null/pass, relay release or confirmation follows.
+The failure path worked: exact separate native replay matches captured report
+16bbed2a1cf6ed5be62fed186918cf855eaaf9e1ab134368c623ed21a7ed3f58.
+Durable completion1230.382598s within2700; all six controller/worker PIDs absent,
+GPU2 empty, cleanup verified. No Main kill or foreign-job intervention.
+
+Full3.17GB capsule47baaccd5a2d877ca975309c2f135e6aa439408f560fa4d99fb413042aa8733a
+collected ONCE and verified across16,101 members. Preserved native and on VM
+under gpu_artifacts_local/q0_20260913_attempt1. Git holds metadata-only capsule,
+explicitly not sufficient for numerical replay, plus validation and final report.
+Canonical memo: ASTRA_Q0_RUNTIME_ABORT_2026-09-13.md. Never overwrite/relabel or
+resume this failed root. Carver owns a narrow hook-placement repair plus real
+tiny-config CPU PEFT tests; Main reaccepts final native bytes before a new attempt
+under unchanged scientific parameters. Do not delete/relax the count check.
+No C11 expansion; **no Main GPU job currently live**. Keep GPU2 reserved for
+the repaired attempt while acceptance proceeds, rather than overlapping a
+hardware operation. Fable hardware diagnosis received; Main performs no reset,
+reboot or lease change and does not authorize one on Rohin's behalf.
