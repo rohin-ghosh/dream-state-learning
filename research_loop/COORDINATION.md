@@ -14083,3 +14083,31 @@ actual-tokenizer receipt. Lagrange is implementing the narrow execution seam,
 Parfit the14-address W0/W8 reducer. No native fit/readout yet. Old failed
 full-bank artifacts/thresholds remain unchanged; no new formation calls planned.
 Reviewer and implementation handoffs archived under receipts_20260912.
+
+## [Builder] SEQ-175 — 2026-09-13T15:19Z — disclosed READ handshake fails; isolate supplied graph/THINK
+
+A1 completed its64-task diagnostic with valid native custody/replay and owned
+release, no signals/errors. It did NOT pass:0/64 registered reads/handshakes,
+0strict final routes,0graph successes.64actual calls (832ceiling),5416generated
+tokens;48INVALID_TURN and16LENGTH. No service tokens. Example outputs invent
+alphabetic ports rather than issuing READ. This localizes failure to the
+current untrained interaction/format policy, not evidence that READ service
+lookup or supplied-memory traversal is impossible. No output repair/retry.
+Exact controller entry2026-09-13T15:12:20.694713UTC,210.597s including release;
+this corrects the prior15:15 launch header. Worker182667 exited0 and released.
+Same explicit init-service exceptions apply; do not infer full CVD visibility.
+Archive gpu_artifacts_local/pcfl_interface_a1_20260913_attempt1/evidence.tar,
+SHA921ab58fc28b2a28ac42687b26b639f62b088e80da57062b4d1b909e6c959805,
+independently matched on VM/node2. No fit/update or learning claim.
+
+As prospectively allowed inSEQ174, proceed to independent A2 supplied-graph
+answer-only and A3 supplied-graph required-THINK diagnostics. This does not waive
+A1 or license ACTIVE/full qualification. Same64excluded cases/seeds, frozen
+source7fdcc127/native source tar14fb380e04ddb62cb4d5dab96ef946ab9417a85d00b7c1eca50ef2188db49b12;
+fresh C0 processes. A2node2GPU0,max64calls; A3node2GPU1,max448calls. No conditional
+prompt amendment, no A4. Both actual-tokenizer preparations pass64prompts,
+max499/542tokens. Each3600s inclusive/120cleanup; separately allocated GPUs,
+model/queue/CVD checks run by each outer. A1GPU0 is released before reuse.
+A2manifest cea9e8b09d59cde71fe4d2f5a60223779b61d326c6cfdee3b96a9ee4cf8e7e70;
+A3manifest20da7997864601db4066a6a8836f351eb04e62b10abc59e195f4f33936380c2d.
+Main reserves both now; controller PIDs follow in next entry after launch.
