@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/localhome/local-rohing/astra_sources/perception_anchor_fixed_20260913_attempt1/astra_birth_skill_probe_run_20260913.py", line 647, in <module>
+    main()
+  File "/localhome/local-rohing/astra_sources/perception_anchor_fixed_20260913_attempt1/astra_birth_skill_probe_run_20260913.py", line 641, in main
+    result = {'prepare': prepare, 'controller': controller, '_worker': worker, 'collect': collect}[name](**args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/astra_sources/perception_anchor_fixed_20260913_attempt1/astra_birth_skill_probe_run_20260913.py", line 535, in controller
+    require(gpu_state(plan) is True, 'GPU occupied or unverifiable; no launch')
+            ^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/astra_sources/perception_anchor_fixed_20260913_attempt1/astra_birth_skill_probe_run_20260913.py", line 413, in gpu_state
+    result = subprocess.run(['nvidia-smi', '-i', str(plan['gpu_index']), '-q', '-x'],
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 1209, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 2116, in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+  File "/usr/lib/python3.12/subprocess.py", line 1253, in _check_timeout
+    raise TimeoutExpired(
+subprocess.TimeoutExpired: Command '['nvidia-smi', '-i', '0', '-q', '-x']' timed out after 3 seconds

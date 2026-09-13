@@ -8782,3 +8782,31 @@ Launcher repeats the fail-fast check immediately before start. Effective lease
 limit1790370180 is the actual lease end minus6h, not the unbuffered end.
 This is bounded public-record elicitation only. No numerical claim, parent
 internalization or H1/H2 qualification; actual PID/start follows launch.
+
+## [Builder] 2026-09-13T03:52Z — probe launched then pre-inference abort; Q0 returned first-update stop
+
+OFF perception attempt2 launched03:50:17.250567UTC on node3GPU0, Main
+controller/PGID311696,start_ticks8732648,900s cap. Immediate allocation recheck
+passed: no compute PID or matching reservation;11 readable environments and
+only the pinned nonlearner exclusion. It then aborted before creating any
+worker: nvidia-smi -i0 -q -x exceeded the driver's3s query limit. Independent
+same-command measurement returned RC0 in12.017851s; no model or inference ran.
+Controller absence and absent.process.json nonexistence verified; no Main kill.
+Failed root remains unchanged; full failed capsule143963c9b181b7b9de817822746ba5dfd4046a39ccd55bd58c304ecdb6455e29
+and external traceback copied into receipts. This is an operations failure,
+not a perception score. Boyle changes only query allowance to30s within the
+existing outer cap and adds regression coverage. A fresh root is required.
+
+Q0 attempt2 controller306207 and all five workers306490/307094/307542/308239/
+308779 are absent; GPU2 compute query empty. Controller returned exact native
+replay report250e67b36c16325f5b8042e7731dd71c615cd0387c1f1f6d092b68e8188c87e5:
+EARLY_XOR_QUARTET_STOP_AUTH, BOTH_MAP_FIRST_STEP_MISS, EARLY_UNARY_TOOL_STOP,
+OPAQUE_TOOL_WRITE_FAILURE_THIS_RECIPE. Three fits attempted, one update each;
+2925 counted forwards/860 natural-prefix forwards,296 OFF generations/2065tokens.
+No completed128-update fit or ON acquisition/locality readout; empty cells and
+zero complement counters are NOT measured zero final accuracy. This does not
+qualify the writer/relay or establish that the architecture cannot learn.
+Durable witness1378.080670s, within2700s. Separate read-only native replay is now
+PID312164 with CUDA hidden, frozen source unchanged; full collection and new
+SEQ analysis follow its validation. Independent per-skill birth work continues;
+it is not the Q0-gated endogenous relay. No hardware or foreign jobs changed.
