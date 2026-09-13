@@ -8238,3 +8238,15 @@ Parent semantic purity remains unverified and no writes/clean/H1/H2 claim follow
 New Main driver/launcher are separate from all original immutable dependencies;
 Einstein owns only their new CPU tests/review. Native checks/launch still pending.
 Carver continues isolated historical Q0 executor. No GPU science launch or kill.
+
+### 2026-09-13T02:01Z [Builder] Q0 numerical implementation registration; native executor still required
+
+Before newQ0execution, registered safety4, gradientnormfloor1e-12 and arithmetic
+middle-two evenmedian in ASTRA_Q0_NUMERICAL_REGISTRATION_2026-09-13.md. Closed
+material/recipe/lifecycle/scientificgates unchanged. These fill prospectively
+required implementation constants, not outcome-tuned thresholds. Carver continues
+native executor beyond current CPU-sidecar helpers; Main will not report a CPU
+fixture as native evidence. Boole bounded independent numerical/helper audit
+runs alongside implementation. No later exploratory data enters Q0 selection.
+Projection source830fe675 copied to a fresh native snapshot; native164tests
+PASS66.195s. Runtime integration tests pending; no GPU launch or kill.
