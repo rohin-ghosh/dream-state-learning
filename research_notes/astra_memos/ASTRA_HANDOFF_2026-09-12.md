@@ -1,4 +1,4 @@
-# Astra restart handoff — September 13, 2026, 21:31 UTC
+# Astra restart handoff — September 13, 2026, 21:50 UTC
 
 ## Current state — SEQ-195 final retention comparison COMPLETE
 
@@ -30,11 +30,34 @@ Newton01a09c83 completed the Stage2A symbolic role-key inventory increment:
 all28v3hash/count commitments match, Main50CPUtests pass. No real token or
 material root was created. Its code is committed at bf4f2223;
 next missing pieces are registry/world/target/null construction and checking.
-Godel01a09cad-caee now owns only new composition_birth_stage2a_worlds.py and
-its test: explicit-map ordinary registry/world construction, synthetic CPU
-fixtures only. Laplace01a09cad-f66b performs bounded read-only preservation
-coverage review. Main owns integration and current documentation. Historical
-agent/PID assignments below are superseded by this current-state section.
+V4 is now adopted; Builder clarifications at9a03f9c1 pin A=0/B=1,
+modulo24 intervention pins, and authentic ATOM task-state boundaries. Note:
+research_notes/analysis/2026-09-13_stage2a_builder_source_clarifications_v1.md
+SHA5484567fdad924247c5371a7430a071c925c563b5375336e8bef86dc6a4a99f9.
+These are prospective in-scope source decisions, not a new human gate.
+
+Primitives/world/graph/tape are committed throughff926fd4;100combined tests
+PASS4.175s. Independent graph checker and strict-copy canaries are complete;
+Main69checker+graph+canary tests PASS0.786s. Main paired serializer currently
+passes8tests across32goal-switchcases/128units; Epicurus independently derives
+all128from the allowed local prefix and rejects608mutations. Relation tests,
+actual tokenizer masks/EOS, whole material validation and model use remain open.
+
+Active ownership (each owns the named module under organism_v6/ and its test):
+- Godel01a09cad-caee: composition_birth_stage2a_birth (all64case construction).
+- Beauvoir01a09cbc-947e: composition_birth_stage2a_held (interventions/chains).
+- Averroes01a09cbc-c35d: composition_birth_stage2a_nulls.
+- Newton01a09cbe-6988: composition_birth_stage2a_scanner.
+- Mendel01a09cb0-6483: composition_birth_stage2a_graph_inputs (resumed).
+Main owns targets/canaries/tape, integration and documentation. Lorentz,
+Epicurus and Laplace completed/closed. Historical assignments below are stale.
+
+Laplace's preserved bounded custody review found no demonstrated missing
+Builder-owned node1 payload; no further node1 recopy indicated. Audit:
+research_notes/analysis/2026-09-13_node1_preservation_readiness_2133Z.md.
+Full baseline restore/other owners/future writes remain unverified. The
+24hour preservation deadline is September13 23:14UTC, lease end September14
+23:14UTC. Do not run the unsafe legacy migration script or relaunch the assay.
 Preserve unrelated dirty gpu/codex/dream_state.rules and unreviewed junction
 draft. All formal final-C11 guard work stays deferred per Rohin.
 

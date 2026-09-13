@@ -17623,3 +17623,27 @@ paired serialization. Independent checks must inspect exact boundaries and
 mutations. No additional human ratification is requested for this in-scope
 work; any substantive validity finding remains actionable. All scientific
 readiness qualifications remain unestablished until actually tested.
+
+## [Builder] 2026-09-13T21:50Z — independent graph checker and paired-prefix review
+
+Lorentz completed an independent stdlib-only graph/core JSON checker without
+importing generator, wire, renderer, core or byte helpers. It validates both
+corrected golden vectors and mutation families, but cannot certify role
+ownership, complete worlds, public visibility, latest CURRENT/oracle selection,
+targets/nulls or provenance from naked graph JSON. Status is always
+PARTIAL_GRAPH_CHECK_ONLY. Main69checker+graph+canary tests PASS0.786seconds;
+terminal log in receipts_20260912/astra_stage2a_graph_checker_20260913T2150Z.log.
+Checker source332a66c84e26f301506aaf818d2e4f19ccb64ecf71aea19b7cf432cbc3e8635a.
+
+Epicurus independently reviewed Main's paired serializer on32goal-switch cases:
+all128targets derivable from the allowed local information;8tests PASS and
+608in-memory mutations rejected. No future-state substitution or extra local
+message found. Shared target identity and final-assistant supervision index
+are message-level specifications, NOT validated tokenizer masks/EOS. Relation
+additions remain unreviewed. All16canaries are authored/tested strict-copy
+fixtures only; raw copy matching does not qualify model transport/termination.
+
+Current parallel source ownership is in the updated handoff: Godel birth,
+Beauvoir held worlds, Averroes nulls, Newton scanners, Mendel graph-input
+reconstruction; Main paired targets/integration. No extra singleton scouting,
+canonical data generation, model loading, GPU jobs, kills or approval requests.
