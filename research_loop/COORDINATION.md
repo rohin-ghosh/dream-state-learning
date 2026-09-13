@@ -17733,3 +17733,23 @@ chain, graph, claim, and authority boundaries remain unchanged.
 `GO_CPU_SOURCE=TRUE` for source/checker/tests against this exact precedence
 chain. Materialisation, tokenizer/model execution, fitting, GPU science and
 claims remain closed pending a fresh audit of the completed source.
+
+## [Root critical-path ruling] 2026-09-13T21:51Z — reduced controller birth screen precedes full matrices
+
+Adopt the execution ordering in audit commit `760306f9`, memo
+`research_notes/analysis/2026-09-13_post_seq195_critical_path_efficiency_reaudit.md`.
+After the complete Stage2A-v5 CPU source/checker is independently audited,
+the next requested preparation target is the exact TSJ-consumed reduced
+controller screen: paired BASE and D1 ATOM_LOCAL only, 32 interventions,
+8 chains x 29 calls, and 16 canaries per state (560 calls total). One D2
+continuation is permitted only under the memo's finite-loss/intact-custody/
+intact-canary conditions; any D2 miss stops this controller version. CLOSED
+salvage remains conditional on atomic acquisition with a chain-only miss.
+
+This is an ordering and source-support ruling, not execution authority.
+Complete CPU source/checker/test readiness first, then obtain fresh audit and
+separate deterministic-materialization/tokenizer/runtime gates. Do not run
+the full 5,040-call Stage2A matrix before authentic two-SLEEP integration.
+If the reduced screen passes, bind that checkpoint as BIRTH and run the
+two-world AUTH junction kill gate before counterfactual-fit expansion. Storage-
+only scouts, rank/heat/prompt churn, and singleton-bank repeats remain stopped.
