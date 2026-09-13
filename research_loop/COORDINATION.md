@@ -10734,3 +10734,23 @@ other controllers were still verifying inputs. Submitted, not results.
 Outer custodian SHA5df4a3c00016ad07305658e2febc642a1182d1944106d70b92b463235ede2dbe.
 Copernicus manuscript EDITSTOP throughSEQ151; Beauvoir independently reviews
 the six-file increment while GPU work continues. No external send.
+
+## [Builder] 2026-09-13T09:00Z — native greedy gap diagnostic ready
+
+Main15CPUtests PASS0.109s for frozen native greedy runner
+a5f644c6660dc398a330bd51025f1d6c3ee75e7dda8a99310e5f3a91b1dea28f.
+Native tokenizer/preparation PASS; preparedSHA
+1d08018f9614d975d83e6f83d0990cf0d007769f833f1170a7c83c710efb588e.
+New root node3:/localhome/local-rohing/astra_diagnostics/
+l2_high_seed2_greedy_20260913_attempt1. Main allocation GPU3 UUID
+GPU-e1277146-04f2-c38f-d1ae-1a98132f907e; boot unchanged, queue empty,
+fresh vacancy/reservation/all-process checks in controller before each worker.
+OFF/saved seed2-high fit2, each16literal archived TRAIN+16READOUT prefixes,
+64native greedy generations,0fits/updates; exact original32token sampling,
+target/adapter/source/prefix guards. No HF diagnostic rerun or new training.
+Finite1200s including collection/cleanup, at most1/3GPU-hour. Node3 expiry
+2026-09-26T03:03Z and6h finish margin. New diagnostic fills missing native
+exact-cue endpoint; no general memory/parenting/H1/H2 promotion. Original
+scorer unchanged; stop-correct and malformed outputs separately reported.
+Launch via /tmp/astra_launch_high_seed2_greedy_20260913.py; PID follows.
+All three node2 memory controllers remain independently live.
