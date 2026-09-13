@@ -15547,3 +15547,7 @@ the selected original artifacts from node1 expiry, not a new whole-node mirror.
 Timestamp correction: prior17:34 heading/protocol was written approximately
 17:32UTC by the tool clock (heading anticipated by about2minutes). Both
 precede any new prediction-transfer model output; no outcome timing changes.
+
+## [Root audit] 2026-09-13 17:10 UTC — S_A40 attempt3 is ineligible; likely exact-type metadata bug
+
+Read-only node inspection after controller release found training itself reached `TRAIN_DONE` (40 updates, 160 presentations, final loss 2.4755) and wrote a checkpoint, but the worker then failed before `completed.json`. The exact failure is `ActorError: non-JSON value` while comparing the disk-round-tripped `train_manifest.json` to the in-memory manifest; outer collection is correctly `FAILED`, GPU released, and this checkpoint must not be scored or reused. Static localization: `train_adapter_v3._versions()` stores `__version__` objects without `str(...)`; notably `torch.__version__` can be a `TorchVersion` subclass, while the canonical validator intentionally accepts only exact built-in JSON scalar types. `json.dump(..., default=str)` changes that value on disk, explaining the round-trip mismatch path. This is a diagnosis, not permission to mutate or rerun; Builder must verify the exact offending leaf, fix prospectively, re-test, and use a fresh output root.
