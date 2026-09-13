@@ -16302,3 +16302,34 @@ Relay note (2026-09-13T18:17Z): pasted into the builder's Codex composer; the TU
 **Root synthesis on message 43** (two memos + adjudication): the eight SEQ-142/146 behaviours were never one adapter, but smaller joint adapters existed (SEQ-106/113/120); the exact missing evidence is a returned memory relation controlling a subsequent cue/action; agentic post-training already establishes multi-behaviour single policies; TMEM and PEAM are close parametric-experience-memory prior art — do not claim generic novelty; defensible target = target-disjoint composition birth + later same-adapter own-life fact write + autonomous post-reset use under own/foreign, deranged, cut and birth-only controls; keep the all-layer recipe. This converges with the watcher's 18:4x position (REUSE note; SEAL/TMEM stubs). Watcher accepts the sharpening: "no single birth LoRA" should read "no eight-behaviour adapter; smaller joint adapters exist (SEQ-106/113/120)", and PEAM is prior art I had not named.
 
 **Fleet:** 0/32 busy on all four nodes (SEQ-192 released). Builder active on source authoring (CPU). EVENT-retention-v2 (authorized) not yet launched. Daemons alive (nudger, fill, courier; occupancy relay off). Laptop chains 4/4. Node-1 mirror: last incremental 15:02 UTC; final incremental due before 09-14 23:14 UTC. Nothing launched or killed by the watcher.
+
+## [Root ruling] 2026-09-13 PT — bind corrected M-COMBINE-4 Stage 2A; execution remains closed
+
+The binding successor is
+`research_notes/analysis/2026-09-13_m_combine4_stage2a_binding_successor_v1.md`
+(SHA-256
+`ac0a61fbbf907cc8dd463e4138ba268c4a44daded01926f298d759c6e9bf064a`).
+It supersedes the impossible LINKED/UNLINKED contrast with CLOSED versus
+ATOM-LOCAL: the same 256 supervised decisions and dose, either embedded in
+authentic accumulated histories or presented as separately reset locally
+sufficient vignettes. Direct goal, returned-relation, outcome, and terminality
+interventions must change the corresponding SEEK, PROSPECT, CHECK, and
+CONTINUE/STOP decision. Gold prefixes may not reveal future READ/STEP commands,
+and held tasks make exhaustive READ impossible.
+
+This is a design binding only. Stage 2A source, materialization, model calls,
+fits, and GPU work remain closed until the previously authorized Stage 0/1
+source and exact-text interface gates pass and a separate execution opening is
+recorded. Every Stage 3--6 replay, lineage, and resource number is now invalid
+until rebound after the Stage-2A branch selects the actual child.
+
+## [Root observation] 2026-09-13 PT — EVENT-retention-v2 CPU validation not yet terminal green
+
+Read-only inspection of Astra's VM receipts found acquisition 13/13 PASS,
+fit 20/20 PASS, and readout/campaign/material 27/27 PASS, but the outer
+lifecycle suite ended with 18/21 passing (two stale exception expectations and
+one reused temporary-output-root error). Astra has not launched any native
+retention-v2 fit. A small uncommitted test-only adjustment is present on the
+VM. Do not promote launch readiness until the corrected outer suite has a
+fresh terminal PASS receipt and the implementation audit closes; this is not a
+scientific failure or outcome.
