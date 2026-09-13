@@ -1,12 +1,18 @@
 # FIRST SPRINT DRAFT — companion abstract
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This draft through SEQ167 retains earlier positive and negative findings;
-SEQ167 is an engineering-only log, excluded from scientific results.
+This draft through SEQ173 retains earlier positive and negative findings;
+SEQ167 and SEQ169--173 are engineering-only logs, excluded from scientific results.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
+
+**SEQ169–173 / C100: engineering-only formation diagnostics.**
+Adaptive interface clarifications stopped without a completed formation bank
+or any fit, update or readout; this is not learning evidence. Subsequent
+EVENT-only/import and READ/THINK interfaces remain proposed/implementation-only
+at this cut. C99's failed-finalization restriction remains unchanged.
 
 **SEQ167 / C99 engineering-only log — excluded from scientific results.**
 Attempt 2 ended as UNUSABLE EXECUTION --- ENGINEERING-ONLY CAPTURE

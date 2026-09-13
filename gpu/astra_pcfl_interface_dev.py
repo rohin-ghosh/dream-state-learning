@@ -214,15 +214,24 @@ def summarize(results, stage, complete):
     thought_tasks = sum(row["thinks"] > 0 for row in results)
     served_tasks = sum(row["served_reads"] > 0 for row in results)
     invalid = sum(row["invalid_read"] for row in results)
+    terminal = [row for row in results if row["status"] == "SCORED"
+                and row["reason"] == "ROUTE" and row["score"] and row["score"]["strict"]]
+    read_handshakes = sum(row["served_reads"] > 0 and not row["invalid_read"] for row in terminal)
+    thought_interfaces = sum(row["thinks"] > 0 for row in terminal)
+    thought_routes = sum(row["thinks"] > 0 and row["success"] for row in terminal)
+    active_routes = sum(row["thinks"] > 0 and row["served_reads"] > 0
+                        and not row["invalid_read"] and row["success"] for row in terminal)
     gate = successes >= 60
     if stage == "A1_READ_DISCLOSED":
-        gate = served_tasks >= 60 and invalid == 0
+        gate = read_handshakes >= 60 and invalid == 0
     if STAGES[stage]["thinks"]:
-        gate = gate and thought_tasks >= 60
+        gate = thought_routes >= 60
     if stage == "ACTIVE_THINK":
-        gate = gate and served_tasks >= 60 and invalid == 0
+        gate = active_routes >= 60 and invalid == 0
     return {"denominator": 64, "route_successes": successes, "thought_tasks": thought_tasks,
             "served_read_tasks": served_tasks, "invalid_read_tasks": invalid,
+            "read_handshake_tasks": read_handshakes, "thought_interface_tasks": thought_interfaces,
+            "thought_route_tasks": thought_routes, "active_thought_route_tasks": active_routes,
             "stage_gate_passed": bool(complete and gate), "full_assay_qualified": False}
 
 
@@ -266,7 +275,7 @@ def _execute(roster, settings, tokenizer, deadline, acquire, clock):
                 if output["finish_reason"] != "stop":
                     result["reason"] = "LENGTH"
                     break
-                if re.fullmatch(r"THINK [^\r\n]+", raw):
+                if re.fullmatch(r"THINK [^\r\n]+", raw) and any(not char.isspace() for char in raw[6:]):
                     if result["thinks"] >= caps["thinks"]:
                         result["reason"] = "THINK_DISABLED_OR_CAP"
                         break

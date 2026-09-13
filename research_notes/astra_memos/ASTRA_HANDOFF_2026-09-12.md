@@ -1,6 +1,34 @@
-# Astra current handoff — 2026-09-13T14:46Z
+# Astra current handoff — 2026-09-13T15:04Z
 
-## CURRENT — September 13 14:46 UTC
+## CURRENT — September 13 15:04 UTC
+
+Mission active/incomplete. No Main GPU worker remains live; node2 compute-app
+inventory is empty at15:03UTC. SEQ172/173 both failed before fitting: eight
+EVENTs, two LINKs,19calls, third LINK wrong VIA. No updates/cold readouts.
+Do not restart full-bank prompt retries or treat an imported prefix as success.
+
+Two bounded independent paths continue: Lagrange owns interface command/outer
+and their tests, awaiting EDITSTOP; Parfit owns EVENT-prefix importer and
+EVENT-only trainer/tests, awaiting EDITSTOP. Interface driver is committed;
+fixed information-free CONTINUE, default unconstrained NativeActor. Next native
+stage is disclosed READ handshake on the preserved four excluded roots.
+
+Main executed exact-original-v3 CPU replay on node2 at15:03UTC, retaining
+FORMATION_FAILED and false native/full-contract flags. Receipt on node2 and VM:
+`/tmp/astra_pcfl_event_prefix_original_v3_replay_20260913_attempt1.json`, canonical
+seal56ca52a34fae625747423cd89a4829b91d8c5f15b422977e741ed98325bb1898.
+No model calls/fits/updates. EVENT-only scope is separately frozen in
+ASTRA_PCFL_EVENT_ONLY_SCOPE_2026-09-13.md: originalSEQ171 first16slots,
+8EVENTs/14addresses, W0/W8 only, LOW200, AUTH versus C0; not17-address success.
+
+Copernicus owns six manuscript files for engineering-onlySEQ169–173 update.
+Meitner reviews EVENT-only scope/import independently. Preserve unrelated dirty
+gpu/codex/dream_state.rules and worker ownership. Node1 scoped custody transfer
+to node3 is verified; older baseline full-restore qualification stays incomplete.
+Simple hygiene now; formal guard finalC11only. No freeze/generalG3/P1/H1/H2.
+
+## Historical superseded snapshot — September 13 14:46 UTC
+
 
 SEQ171 format scaffold produced8 exact real EVENTs; first LINK source-valid
 but different from private preset pair, so original formation FAILED17calls,

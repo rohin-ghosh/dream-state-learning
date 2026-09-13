@@ -1,12 +1,18 @@
 # DRAFT ONLY — unsent collaborator update
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This draft through SEQ167 retains earlier positive and negative findings;
-SEQ167 is an engineering-only log, excluded from scientific results.
+This draft through SEQ173 retains earlier positive and negative findings;
+SEQ167 and SEQ169--173 are engineering-only logs, excluded from scientific results.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
+
+**SEQ169–173 / C100: engineering-only formation diagnostics.**
+Adaptive interface clarifications stopped without a completed formation bank
+or any fit, update or readout; this is not learning evidence. Subsequent
+EVENT-only/import and READ/THINK interfaces remain proposed/implementation-only
+at this cut. C99's failed-finalization restriction remains unchanged.
 
 **SEQ167 / C99 engineering-only log — excluded from scientific results.**
 Attempt 2 ended as UNUSABLE EXECUTION --- ENGINEERING-ONLY CAPTURE
@@ -141,6 +147,39 @@ forced TRAIN15/16 versus READOUT8/16 does not supply native greedy TRAIN accurac
 Actual-memory writing/readback and native-greedy testing remain development only;
 HF independent analysis is pending; archived A100 short-root OFF readiness passes.
 Historical pending statements below describe their named cuts, not current status.
+
+## Engineering-only log — SEQ169–173 / C100
+
+Five failed formation diagnostics use one development root and fixed seed0,
+with outcome-informed interface clarifications, not independent replications.
+All five original failures remain; the family has zero fits, updates or
+readouts and no completed full bank. These are engineering diagnostics only,
+excluded from scientific results. [C100]
+
+| SEQ / clarification | Calls / 20 | EVENT / 8 | LINK / 4 | Stop reason |
+| --- | ---: | ---: | ---: | --- |
+| 169 Original | 2/20 | 0/8 | 0/4 | First EVENT missing terminal LF |
+| 170 Explicit LF | 2/20 | 0/8 | 0/4 | Byte-identical missing-LF EVENT |
+| 171 Format scaffold | 17/20 | 8/8 | 0/4 | Valid LINK; different pair from private selection |
+| 172 Public pair + scaffold | 19/20 | 8/8 | 2/4 | Third LINK has wrong VIA |
+| 173 Generic semantics + pair/scaffold | 19/20 | 8/8 | 2/4 | Same wrong-VIA line |
+
+The eight accepted EVENTs in SEQ171–173 were obtained under a target-blind
+single-line, terminal-LF decoding scaffold; the two accepted LINKs in SEQ172–173 additionally
+use prescribed public EVENT pairs. Neither is autonomous discovery or learned
+formatting. SEQ171's semantically valid different LINK remains rejected by the
+original controlled-pair criterion; SEQ172–173 instead use the requested pair
+but put the first EVENT's source, not the shared node, in VIA. No raw response
+was repaired or admitted retrospectively. Uncalled slots remain in the planned
+denominators; prompt-hint retries stopped after SEQ173.
+
+EVENT-only import of SEQ171's first admitted prefix and the separate READ/THINK
+interface are proposed/implementation work only, not natively executed at this
+cut. They do not repair the failed full-bank attempts or C99 finalization.
+No learning, parenting, H1/H2, general G3, clean-lineage, full-assay, mission or
+freeze qualification follows; collaborator UNSENT.
+
+Source/custody mapping: [C100](ASTRA_PAPER_CLAIM_MAP_2026-09-12.md#c100--seq169173-engineering-only-formation-diagnostics).
 
 **UNSENT — SEQ167 / C99 engineering-only log, excluded from scientific results.**
 

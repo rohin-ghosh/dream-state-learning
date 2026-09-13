@@ -64,6 +64,43 @@ class RosterTests(unittest.TestCase):
             driver.validate_roster(plan, plan["sha256"])
 
 
+class SummaryTests(unittest.TestCase):
+    def rows(self):
+        return [{"status": "SCORED", "reason": "ROUTE", "score": {"strict": True},
+                 "success": True, "thinks": 1, "served_reads": 1, "invalid_read": False}
+                for _ in range(64)]
+
+    def test_marginal_success_and_read_counts_do_not_replace_joint_gate(self):
+        rows = self.rows()
+        for row in rows[:4]:
+            row["success"] = False
+        for row in rows[4:8]:
+            row["served_reads"] = 0
+        summary = driver.summarize(rows, "ACTIVE_THINK", True)
+        self.assertEqual(summary["route_successes"], 60)
+        self.assertEqual(summary["served_read_tasks"], 60)
+        self.assertEqual(summary["active_thought_route_tasks"], 56)
+        self.assertFalse(summary["stage_gate_passed"])
+
+    def test_read_followed_by_invalid_turn_or_cap_is_not_handshake(self):
+        rows = self.rows()
+        for row, reason in zip(rows[:5], ["INVALID_TURN", "TURN_CAP", "ACTOR_TOKEN_CAP",
+                                         "RETURNED_TOKEN_CAP", "LENGTH"]):
+            row.update(reason=reason, success=False, score=None)
+        summary = driver.summarize(rows, "A1_READ_DISCLOSED", True)
+        self.assertEqual(summary["served_read_tasks"], 64)
+        self.assertEqual(summary["read_handshake_tasks"], 59)
+        self.assertFalse(summary["stage_gate_passed"])
+
+    def test_wrong_graph_with_valid_terminal_can_pass_handshake_only(self):
+        rows = self.rows()
+        for row in rows:
+            row["success"] = False
+        self.assertTrue(driver.summarize(rows, "A1_READ_DISCLOSED", True)["stage_gate_passed"])
+        self.assertFalse(driver.summarize(rows, "A3_THINK", True)["stage_gate_passed"])
+        self.assertFalse(driver.summarize(rows, "A1_READ_DISCLOSED", False)["stage_gate_passed"])
+
+
 class StageTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -173,6 +210,14 @@ class StageTests(unittest.TestCase):
             self.assertEqual(sum(slot["status"] == "RETURNED" for slot in row["slots"]), 1)
         self.assertTrue(report["results"][0]["invalid_read"])
         self.assertFalse(report["summary"]["stage_gate_passed"])
+        self.replay(report)
+
+    def test_whitespace_only_think_is_not_a_reasoning_turn(self):
+        first = self.prepare("A3_THINK")
+        self.outputs[first["slot_ids"][0]] = "THINK \t\u2003 "
+        report = self.run_stage()
+        self.assertEqual(report["results"][0]["reason"], "INVALID_TURN")
+        self.assertEqual(report["results"][0]["thinks"], 0)
         self.replay(report)
 
     def test_think_required_and_disabled_and_no_semantic_route_rescue(self):

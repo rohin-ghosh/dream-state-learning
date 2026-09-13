@@ -1,4 +1,17 @@
-## Current superseding snapshot — 2026-09-13 14:46 UTC
+## Current superseding snapshot — 2026-09-13 15:04 UTC
+
+No Main GPU worker remains live. SEQ172/173 failed before fit, each19calls,
+eight EVENTs/two LINKs; stop full-bank prompt retries. HANDOFF current at15:04.
+Next independent component paths: supplied-memory READ/THINK interface (driver
+committed, Lagrange execution seam pending); fixedSEQ171 EVENT-only import/write
+(Parfit implementation pending,8rows/14addresses,W0/W8). Exact-original-v3
+CPU replay is valid while originalFORMATION_FAILED/native-custody-false/full-
+contract-false remain unchanged; zero model calls/fits/updates. Replay receipt
+archived in receipts_20260912, fileSHA5659e39989a4dd26ca336c2787318bda43b1223bc7a52d67dbbf52b950b58dea.
+Neither component result is available yet. No mechanism freeze/generalG3/P1/
+H1/H2/C11 upgrade; formal guard finalC11only, simple hygiene for current work.
+
+## Historical superseded snapshot — 2026-09-13 14:46 UTC
 
 SEQ171:8exact grounded EVENTs with LF scaffold, then valid but different first
 LINK pair; original17call attemptFAILED/no fit. Fresh public-pair policyv4

@@ -14025,3 +14025,32 @@ were made.
 ## [Fable] 2026-09-13T15:04Z — node-1 incremental mirror to node 2 complete and verified: 348 files / 2.40 GB added; source and mirror both 15,428 files
 
 Incremental `rsync -a` node 1 `~/v6_out/` → node 2 `~/mirror/node1_v6_out_2026-09-12T23/` (started 15:02 UTC, ~10 s of transfer at 370 MB/s): 404 entries created (346 files, 58 dirs), 348 regular files transferred, 2,401,668,049 bytes; `find -type f` on both sides = 15,428. Combined with last night's full copy (94.6 GB) and the receipts archive (verified on node 1, node 2 and the laptop), node 1 can be lost at its lease end (2026-09-14 23:14 UTC) without loss; one more incremental pass will run tomorrow before the deadline for anything written after 15:02 UTC today.
+
+## [Builder] SEQ-174 — 2026-09-13T15:11Z — interface CPU gate and original-prefix replay
+
+Exact originalSEQ171 v3 source-path CPU replay re-executed on node2, no model/
+fit/update. OriginalFORMATION_FAILED and false native/full-contract flags stay
+unchanged. Receipt file5659e39989a4dd26ca336c2787318bda43b1223bc7a52d67dbbf52b950b58dea,
+canonical seal56ca52a34fae625747423cd89a4829b91d8c5f15b422977e741ed98325bb1898,
+archived as receipts_20260912/astra_pcfl_event_prefix_original_v3_replay_20260913_attempt1.json.
+Separate EVENT-only importer/writer handed off; native integration remains pending.
+
+Typed READ/THINK command and same-controller detached release implemented.
+Main corrected whitespace-only THINK admission and replaced ACTIVE marginal
+gates with same-task terminal/THINK/read/success counts; A1 handshake now excludes
+later invalid/capped turns. A3 success already required THINK; no old A3 overlap
+claim. Added4regressions; old A1 test fixture emitted invalid MISS terminal,
+now explicitly emits valid wrong-graph ROUTE. Initial80test run1fixture failure;
+final80/80PASS80.462s including native actor/driver/command/outer. New independent
+review archived; detailed caps/uncalled slots remain separate from wrong routes.
+
+Next stage: A1_READ_DISCLOSED on the four preserved excluded roots,64tasks,
+max832calls/2048outputtokens per task,256per turn,12reads,0fits/updates. Same fixed
+base; no LF constrained decoder, no route salvage or feedback. Main reserves
+node2GPU0 for one fresh detached diagnostic after actual-tokenizer preparation;
+3600s inclusive/120cleanup/6hlease margin. No process launched at this entry.
+If handshake fails, inspect why; independent supplied-graph A2/A3 diagnostics
+remain authorized to localize read versus traversal failures, not to waive A1.
+Do not extend to full qualification/fresh confirmation until its own gates hold.
+Future full-panel guard/confirmation work does not block these excluded-root
+component tests. Manuscript updated throughSEQ173 engineering-only; UNSENT.

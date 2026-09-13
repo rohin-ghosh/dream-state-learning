@@ -1,12 +1,18 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This draft through SEQ167 retains earlier positive and negative findings;
-SEQ167 is an engineering-only log, excluded from scientific results.
+This draft through SEQ173 retains earlier positive and negative findings;
+SEQ167 and SEQ169--173 are engineering-only logs, excluded from scientific results.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
+
+**SEQ169–173 / C100: engineering-only formation diagnostics.**
+Adaptive interface clarifications stopped without a completed formation bank
+or any fit, update or readout; this is not learning evidence. Subsequent
+EVENT-only/import and READ/THINK interfaces remain proposed/implementation-only
+at this cut. C99's failed-finalization restriction remains unchanged.
 
 **SEQ167 / C99 engineering-only log — excluded from scientific results.**
 Attempt 2 ended as UNUSABLE EXECUTION --- ENGINEERING-ONLY CAPTURE
@@ -4659,3 +4665,55 @@ C99 engineering-only status source: [failed-finalization audit](../analysis/2026
 SHA256 `f7a2a6a536925597c8c4a376819dac4d889c67ef40ed7e533765efe2e8fe646a`.
 This terminal status is independent of the recorded performance checks; later
 release observations cannot repair the original once-only finalization.
+
+## C100 — SEQ169–173 engineering-only formation diagnostics
+
+Five failed formation diagnostics use one development root and fixed seed0,
+with outcome-informed interface clarifications, not independent replications.
+All five original failures remain; the family has zero fits, updates or
+readouts and no completed full bank. These are engineering diagnostics only,
+excluded from scientific results. [C100]
+
+| SEQ / clarification | Calls / 20 | EVENT / 8 | LINK / 4 | Stop reason |
+| --- | ---: | ---: | ---: | --- |
+| 169 Original | 2/20 | 0/8 | 0/4 | First EVENT missing terminal LF |
+| 170 Explicit LF | 2/20 | 0/8 | 0/4 | Byte-identical missing-LF EVENT |
+| 171 Format scaffold | 17/20 | 8/8 | 0/4 | Valid LINK; different pair from private selection |
+| 172 Public pair + scaffold | 19/20 | 8/8 | 2/4 | Third LINK has wrong VIA |
+| 173 Generic semantics + pair/scaffold | 19/20 | 8/8 | 2/4 | Same wrong-VIA line |
+
+The eight accepted EVENTs in SEQ171–173 were obtained under a target-blind
+single-line, terminal-LF decoding scaffold; the two accepted LINKs in SEQ172–173 additionally
+use prescribed public EVENT pairs. Neither is autonomous discovery or learned
+formatting. SEQ171's semantically valid different LINK remains rejected by the
+original controlled-pair criterion; SEQ172–173 instead use the requested pair
+but put the first EVENT's source, not the shared node, in VIA. No raw response
+was repaired or admitted retrospectively. Uncalled slots remain in the planned
+denominators; prompt-hint retries stopped after SEQ173.
+
+EVENT-only import of SEQ171's first admitted prefix and the separate READ/THINK
+interface are proposed/implementation work only, not natively executed at this
+cut. They do not repair the failed full-bank attempts or C99 finalization.
+No learning, parenting, H1/H2, general G3, clean-lineage, full-assay, mission or
+freeze qualification follows; collaborator UNSENT.
+
+Sources: [Builder notebook SEQ169–173](../../research_loop/COORDINATION.md),
+September 13, 2026, 14:18–14:59 UTC; archived original reports below. Each
+`evidence.tar` contains `<archive-directory>/formation/records/formation.json`;
+these failed reports preserve call/admission counts and null writer payloads.
+Archive hashes are distinct from report-object seals; no release/full-contract
+qualification is inferred from a local byte match.
+
+| SEQ | Local archive under `gpu_artifacts_local/` | Archive SHA256 |
+| --- | --- | --- |
+| 169 | `pcfl_own_write_20260913_attempt1/evidence.tar` | `acdd9c2cf6ec4b5a3bbd28a6c7d1a58159442a89e74461112c42e37b73c9694c` |
+| 170 | `pcfl_own_write_lf_20260913_attempt1/evidence.tar` | `8d1e220e7918377a4f189a033fd7f02b27a7d51749cb87292ed1d6946c0f1424` |
+| 171 | `pcfl_own_write_format_20260913_attempt1/evidence.tar` | `bd6829dfa4e6c0a63f48cf184e28091e12cf9de9a231e0f6cda6672d5133c869` |
+| 172 | `pcfl_own_write_pairs_20260913_attempt1/evidence.tar` | `dbe951af5823959c1172f70ab5e7163aecf54b89d55ad291a883cce819120cf4` |
+| 173 | `pcfl_own_write_semantics_20260913_attempt1/evidence.tar` | `8c2215eefef9f0f6ad546164688dd1b128e36191642bda603c77b133f56a1079` |
+
+Scaffold scope: [LF actor handoff](receipts_20260912/astra_pcfl_lf_actor_handoff_20260913.md).
+Prospective only: [EVENT-prefix import recommendation](receipts_20260912/astra_pcfl_event_only_next_scope_20260913.md)
+and [supplied-memory READ/THINK interface recommendation](receipts_20260912/astra_pcfl_supplied_memory_next_interface_20260913.md).
+The specified import source is SEQ171's first eight-EVENT prefix, not a selected
+better later attempt; neither new endpoint has native outcomes at this cut.
