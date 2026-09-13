@@ -12571,3 +12571,16 @@ ASTRA_PCFL_C0_INVENTORY_POLICY_2026-09-13.md. Original full allocator unchanged;
 do not label this a full certificate. Keep actual all800used-surface checks,
 no redraw on failure. Descartes owns isolated inventory preparer/tests;
 Main retains native-operation ownership. Formal guard remains finalC11 only.
+
+### [Builder] 2026-09-13T12:57Z — SEQ162 manuscript independently reviewed
+
+Six canonical manuscript/abstract/claim-map/UNSENT collaborator artifacts
+updated narrowly throughSEQ162/C98. Independent review ACCEPT at exact six
+hashes; Main rechecked those bytes and scoped diff whitespace. Handoffs in
+receipts_20260912/astra_manuscript_seq162_{handoff,independent_review}_20260913.md.
+Observed first-gradient nonidentity is not causal localization or historical
+drift explanation; no within-path repeatability or positive learning claim.
+SEQ161 preserved. No science rerun, PDF build or communication sent. The
+CPU-only tokenizer profileSEQ163 stays in operations evidence, not silently
+promoted into a native or scientific result. Inventory and outer-controller
+engineering proceed in parallel; no Main GPU job is presently live.

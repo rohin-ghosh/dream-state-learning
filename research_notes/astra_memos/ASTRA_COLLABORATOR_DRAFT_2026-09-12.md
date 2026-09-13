@@ -1,13 +1,26 @@
 # DRAFT ONLY — unsent collaborator update
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ161 retains both positive and negative findings.
+This evidence cut through SEQ162 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current evidence through SEQ161 — C97; ongoing first draft.**
+**Current evidence through SEQ162 — C98; ongoing first draft.**
+One instrumented seed0 OLD/NEW first-backward pair has matching recorded
+initialized trainable tensors, encoded input/mask, settings, fresh optimizer,
+environment and RNG snapshots at all six boundaries; both scalar losses are
+1.907779335975647. Gradient data hashes differ for 256/392 trainable tensors,
+with matching shape/dtype/device metadata. This is first observed nonidentity
+in materialized gradients before any optimizer update, not proof that the
+underlying difference originated in backward. There are zero optimizer steps,
+adapter saves or readouts. Equal loss/RNG does not establish equal intermediate
+computation or dropout masks; no cause, effect size or within-path repeatability
+is established. SEQ161 baseline drift remains unresolved. No H1/H2, general G3,
+parenting, clean-lineage, mission or freeze promotion; C11 deferred. Collaborator UNSENT.
+
+**Historical evidence through SEQ161 — C97.**
 Matched full-memory-schedule ADDITIVE versus fresh MEMORY_ONLY yields exact
 14/14,7/8,8/8 versus10/14,8/8,3/8; paraphrase10/14,7/8,4/8 versus10/14,8/8,2/8;
 held47/48,48/48,39/48 versus47/48,46/48,47/48, with12/12canaries in every cell.
@@ -118,7 +131,28 @@ Actual-memory writing/readback and native-greedy testing remain development only
 HF independent analysis is pending; archived A100 short-root OFF readiness passes.
 Historical pending statements below describe their named cuts, not current status.
 
-**Current UNSENT — bounded SEQ161 / C97 update for Main's review.**
+**Current UNSENT — bounded SEQ162 / C98 update for Main's review.**
+
+Through SEQ-162, one instrumented seed0 OLD/NEW first-backward pair has
+matching recorded initial trainable tensors, inputs, settings, optimizer,
+environment and six-boundary RNG snapshots, with equal loss 1.907779335975647,
+but 256/392 gradient tensor data hashes differ. No optimizer step, adapter save
+or readout occurs. This establishes first-gradient nonidentity for this pair,
+not its cause, effect size, backward-origin localization or repeatability.
+Equal loss/RNG does not establish equal intermediate computation; historical
+baseline drift remains unresolved. No H1/H2 or freeze promotion follows.
+NEW is the MEMORY_ONLY path, not a replay-loss treatment. Its retained
+failure.json is intentional stop cleanup. OLD's divide-by-one expression is
+inside the observed bracket, but is not an identified cause. Prior six-cell
+results, nine held losses and rc1/collection-repair distinctions remain below.
+
+[Archived comparison](receipts_20260912/additive_native_parity_seed0_20260913_attempt1/comparison.json),
+[archive/inventory receipt](receipts_20260912/astra_native_parity_archive_receipt_20260913.json),
+and [bounded interpretation](receipts_20260912/astra_native_parity_interpretation_20260913.md)
+are byte-bound in [C98](ASTRA_PAPER_CLAIM_MAP_2026-09-12.md#c98--seq162-instrumented-first-gradient-nonidentity).
+No sending, repeat execution or promotion is implied. Collaborator **UNSENT**.
+
+**Historical UNSENT — bounded SEQ161 / C97 update.**
 
 | Seed | Arm | Exact eligible | Paraphrase content | Held | Canary | Lost LR0-correct held | Screen |
 | --- | --- | ---: | ---: | ---: | ---: | ---: | --- |

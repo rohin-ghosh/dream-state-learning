@@ -1,13 +1,26 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ161 retains both positive and negative findings.
+This evidence cut through SEQ162 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current evidence through SEQ161 — C97; ongoing first draft.**
+**Current evidence through SEQ162 — C98; ongoing first draft.**
+One instrumented seed0 OLD/NEW first-backward pair has matching recorded
+initialized trainable tensors, encoded input/mask, settings, fresh optimizer,
+environment and RNG snapshots at all six boundaries; both scalar losses are
+1.907779335975647. Gradient data hashes differ for 256/392 trainable tensors,
+with matching shape/dtype/device metadata. This is first observed nonidentity
+in materialized gradients before any optimizer update, not proof that the
+underlying difference originated in backward. There are zero optimizer steps,
+adapter saves or readouts. Equal loss/RNG does not establish equal intermediate
+computation or dropout masks; no cause, effect size or within-path repeatability
+is established. SEQ161 baseline drift remains unresolved. No H1/H2, general G3,
+parenting, clean-lineage, mission or freeze promotion; C11 deferred. Collaborator UNSENT.
+
+**Historical evidence through SEQ161 — C97.**
 Matched full-memory-schedule ADDITIVE versus fresh MEMORY_ONLY yields exact
 14/14,7/8,8/8 versus10/14,8/8,3/8; paraphrase10/14,7/8,4/8 versus10/14,8/8,2/8;
 held47/48,48/48,39/48 versus47/48,46/48,47/48, with12/12canaries in every cell.
@@ -4504,3 +4517,55 @@ SHA256 `b3397ae8f4a29569f2f49e5d96a21410e73d072b101c439424d401ad5bfcfdfa`;
 SHA256 `c7e8f7eb64a42589869e6f5f903854044405eb9acfc944102d450164b12c35d1`;
 [frozen protocol](ASTRA_ADDITIVE_REPLAY_DEV_2026-09-13.md).
 SEQ161 is archived in `f15dec6c`; these pages summarize that cut, not a rerun.
+
+## C98 — SEQ162 instrumented first-gradient nonidentity
+
+One fresh instrumented seed0 process runs each path: OLD uses the frozen
+historical trainer; NEW uses the additive trainer's MEMORY_ONLY path, not an
+additive replay-loss intervention. The first matched occurrence is
+`own-repair:seed0:EXTRA_MEMORY:000`. Recorded initialized trainable tensors,
+encoded input/mask, settings, fresh optimizer/defaults and environment agree;
+Python/CPU/CUDA RNG snapshots agree at all six observed boundaries. Both losses
+are 1.907779335975647. Materialized gradient data hashes differ for 256/392 trainable
+tensors, with all compared shape/dtype/device metadata equal. These are correlated
+tensors from one backward per path, not 392 independent replications.
+
+Both workers record FIRST_BACKWARD_CAPTURED_ZERO_UPDATES: zero optimizer steps,
+adapter saves and readouts, unchanged parents/trainable parameters, and absent
+frozen-base gradients. Worker times are 52.135/53.052s, nested within holder
+53/54s; both holder exits are rc0. NEW's retained scratch/failure.json is the
+intentional interception cleanup, with an empty step journal, not a completed
+fit or a failed scientific endpoint. These clocks are not GPU-active time.
+
+The before-backward observation precedes the entire statement: OLD evaluates
+`(loss / cfg.grad_accum).backward()` with grad_accum=1, whereas NEW evaluates
+`loss.backward()`. The observer hashes the original loss, not OLD's subsequent
+division result. Thus the bracket includes this graph/execution difference;
+it does not isolate it as a cause. No logits, activations or saved autograd
+tensors were recorded. Equal scalar loss and RNG snapshots do not prove equal
+forward computation, dropout masks, checkpoint recomputation or reduction order.
+
+First observed nonidentity is in gradients following the first backward, before
+optimization; the first underlying difference need not originate in backward.
+Recorded sdpa/nonreentrant-checkpoint configuration and enabled SDP backends do
+not identify the executing kernel or prove a nondeterminism cause. Neither the
+divide-by-one expression, bf16, checkpointing nor CUDA nondeterminism is isolated.
+No raw gradient arrays supply an effect-size estimate. Instrumentation perturbs
+execution; no within-path repeat, later-step parity or historical-run reproduction
+is supplied. SEQ161 drift remains unresolved, with all six prior cells and nine
+seed2 ADDITIVE held losses retained. No causal replay benefit, repeatability,
+H1/H2, parenting, general G3, clean-lineage, mission or freeze promotion follows.
+C11 remains deferred. Collaborator UNSENT.
+
+Sources:
+- [comparison](receipts_20260912/additive_native_parity_seed0_20260913_attempt1/comparison.json), SHA256 `4e52301965fe1b2142fe46aac741cca0a6f64bcd45a45f7875616d79630f2120`.
+- [OLD receipt](receipts_20260912/additive_native_parity_seed0_20260913_attempt1/OLD/receipt.json), SHA256 `24c5bbf31aa735e06ee8f27786dceb784afe6e271385934ba23ca01aef2386a0`.
+- [NEW receipt](receipts_20260912/additive_native_parity_seed0_20260913_attempt1/NEW/receipt.json), SHA256 `d4ad625def96bc6abc3b25c476f20ccf3c8ca99c4730775244fbc79f021ba44c`.
+- [archive/inventory receipt](receipts_20260912/astra_native_parity_archive_receipt_20260913.json), SHA256 `ee31200c8b1cecf8e9a7f52ef7427bace5190671ba5c9583fa67afded61c639e`.
+- [bounded interpretation](receipts_20260912/astra_native_parity_interpretation_20260913.md), SHA256 `35b4438b2a5571cb8a041b4fe278b998d3bdcbdd5b5a280e82a4f0b94f0aec5f`.
+
+The archived plan SHA256 is `f81eef545ba86eb52b17d1a440d7f0783c6fb62290c3164184b855158d9b92d5`.
+The archive receipt binds 45 members/614400 bytes, zero new adapters, archive SHA256
+`3fd33489a8c0f7eebe0566307f8404421628339e84a111642b3536a80feefad0`.
+The interpretation's suggested future OLD-only repeat is not an executed result
+in this evidence cut. No later outcomes are incorporated.
