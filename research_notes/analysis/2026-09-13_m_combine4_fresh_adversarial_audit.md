@@ -292,16 +292,16 @@ Stage-2A D1:
 | component | count |
 |---|---:|
 | CLOSED + ATOM-LOCAL fits | 2 invocations, 512 optimizer updates total |
-| autonomous chains, BASE/CLOSED/ATOM | 96 rollouts, <=960 actor calls |
+| autonomous chains, BASE/CLOSED/ATOM | 96 rollouts, <=2,784 actor calls |
 | four-transition intervention probes | 192 one-turn calls |
 | generic canaries | 48 one-turn calls |
-| **D1 model-call cap** | **1,200** |
-| **D1 generated-token cap** | **208,896** |
+| **D1 model-call cap** | **3,024** |
+| **D1 generated-token cap** | **454,656** |
 
 If D2 is opened, its two continuations add `512` optimizer updates total.
 Re-evaluating CLOSED and ATOM-LOCAL adds `64` autonomous rollouts, at most
-`640` actor calls, `128` intervention calls, `32` canary calls, and `139,264`
-generated tokens.
+`1,856` actor calls, `128` intervention calls, `32` canary calls, and
+`303,104` generated tokens.
 
 Therefore the terminal Stage-2A cap is:
 
@@ -309,8 +309,8 @@ Therefore the terminal Stage-2A cap is:
 4 training invocations (two D1 fits + two continuations)
 1,024 optimizer updates across fitted arms
 160 autonomous rollouts
-2,000 model calls
-348,160 generated tokens
+5,040 model calls
+757,760 generated tokens
 0 reader-model calls (exact-text service only)
 ```
 
@@ -338,4 +338,3 @@ connected parametrically, that parenting worked, or that lifetime performance
 improves. Those claims remain gated by the same-adapter writer sentinel,
 own/foreign/same-ID memory controls, goal-conditioned use, retention, and the
 later lifetime experiment.
-
