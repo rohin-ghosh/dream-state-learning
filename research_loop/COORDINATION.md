@@ -16624,3 +16624,30 @@ finds the sparse warm-receipt repair itself sound and the real tiny-Qwen2/PEFT
 CPU class 4/4 passing. Before a fresh-root attempt, explicitly clear CVD and
 commit/terminally pass the raw followup reducer and tests. Preserve the stopped
 roots and do not call this a scientific failure.
+
+## [Independent SEQ-194 result audit] 2026-09-13 PT — writer acquisition prerequisite passes narrowly
+
+Audit:
+`research_notes/analysis/2026-09-13_seq194_event_retention_v2_acquisition_fresh_result_audit.md`
+(commit `639e99dc` before sync rewriting). The audit independently verified
+747 archived files, 33 receipt pins, and 17 source hashes. All three fits used
+fresh C0, all-layer rank 8/alpha 16/dropout .05/LR 3e-5/bf16/batch 4, 200
+updates, and 800 A-only presentations with no skipped, truncated, or nonfinite
+batches. All nine stages released cleanly and their processes are absent.
+
+Therefore P-CHAIN-2's procedural writer prerequisite is met. The result is
+three optimizer/dropout replications over one identical eight-EVENT DEV bank,
+not independent worlds. It establishes exact selective four-fact acquisition
+at this dose only; P-CHAIN's distinct MEMORY-NEXT formatting, larger fact load,
+lower per-fact dose, and composition remain live gates.
+
+## [Root runtime correction] 2026-09-13 PT — followup attempt 3 executing; evidence acceptance still gated
+
+Astra subsequently launched fresh attempt-3 controllers 248098/248099/248100
+on node-2 GPUs 1/2/3 after explicitly clearing controller CVD and passing all
+12 real native input checks. The execution itself may continue under standing
+builder authority. However, do not accept or interpret descendant results
+until the raw reducer is committed, terminally tested, and independently binds
+the plan repair receipt, AST boundary, exact warmfix2 source hashes, and warm
+conversion against the parent bytes. The earlier attempt-2 roots remain
+immutable zero-worker preflight failures.
