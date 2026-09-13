@@ -10193,3 +10193,41 @@ preserves all12specs and precheck pins in receipts.
 Node3 seed0_low attempt2 PID358281 still live07:46:13UTC. No reboot, no
 hot NVML changes, no seed0_high launch until low succeeds/exits/releases.
 Continue simple hygiene; formalC11guard remains deferred per Rohin.
+
+## [Builder] 2026-09-13T07:55Z — SEQ141 seed0-low recovered; Level1 captures collected
+
+Node3 seed0_low attempt2 controller358281 exited successfully, all11stages
+FINALIZED, collected ONCE07:53UTC.128calls/3fits/100updates, LR3e-5. Every
+readout remains old4/8,new4/8,legal16/16; final paired both8/neither8,
+PROMOTE-only0/SHADOW-only0. All8first and16cumulative child records admitted,
+but no measured endpoint gain. Not a claim of no parameter change. Keep this
+recovery separate from the original six-roster analysis and missing seed0aborts.
+Collection def6bc23536a7014b1747f3c42ea2588669f4f386f3429a1532015ce8c38d4b3;
+archive gpu_artifacts_local/l2_public_record_20260913/astra_l2_lr_seed0_low_attempt2.tar
+fe93ceaecfd5504db8d9a76959cba66b2f3d8afb59c17058a5fbf9255c99c62a,
+verified onnode3/VM. No recollection or replacement of original evidence.
+
+Per existing serial recovery amendment, now activate prepared seed0_high
+attempt2 on node3GPU1, plan93971b427808a1a13f7c475569fcc6cf6255b8fa500bc8b6e8c05c6842252e95,
+using unchanged accepted launcher/runtime and fresh vacancy/lease checks.
+5400secondcap; another infrastructure failure stops retryqueue. PID follows.
+
+All12first-roster Level1 controllers now exited/capture-complete and collected
+ONCE07:54UTC through pinned helperb53c47e52df0e418167a17b70d79377f7e2609fa3dec6008ee7b31efbc9e4748
+(Main12CPUtestsPASS.145s). Native custody/scoring checks passed per root; no
+result counts inspected yet. Next archive full roots and analyze three seeds,
+content versus format and preservation; collection is not scientific promotion.
+
+Second-roster protocol frozen c9652b1b0ad301c4a67c87597f870b8f423d95149679921bad5e5c95f3eabede:
+perception/self_reflection and repetition/meta_reflection x3seeds;96train,
+48held/12canary,320updates. Source-rich classroom screens, not childSLEEP.
+Main20perception/reflection tests8.783s and7repetition/meta tests.266s PASS.
+Prospective node2 released six devices plus A100 six after actual nativeprep;
+new immutable five-file source snapshot, no changes to frozen live sources.
+
+Independent contrastive re-reduction matches original score object exactly.
+All17contrastive wins overOFF originate in syntax-invalid responses: previous
+content unscorable, neither17semantic nor17proven-format-only gains. Against
+PLAIN,3D1wins are valid prediction/relation fixes;1D2loss is wrong TRY coordinate.
+Net+2 is not merely formatting, but not robust source-discrimination superiority.
+Full independent analysis archived b381effa29b4114ab2c9ce9674cf931bc6a2db0fc98abafb96369c39d7509b68.
