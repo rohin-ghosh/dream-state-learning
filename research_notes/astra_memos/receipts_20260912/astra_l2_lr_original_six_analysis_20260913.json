@@ -1,0 +1,1488 @@
+{
+  "all_six_complete": false,
+  "analysis_scope": "Analysis over Main-supplied verified native collections, not raw-byte/native replay or independent native certification.",
+  "claim": "Excluded exploratory DEV full-loop LR contrast, not fixed-material quality; no clean ancestry, mechanism freeze, P1, parenting, H1/H2 or scientific-pass claim. Three independent learner seeds on one inspected world; original seed0 is a bridge, not a fourth seed.",
+  "descriptive": {
+    "high": {
+      "mean": null,
+      "observed_learners": 2,
+      "planned_learners": 3,
+      "range": null
+    },
+    "high_minus_low": {
+      "mean": null,
+      "observed_learners": 2,
+      "planned_learners": 3,
+      "range": null
+    },
+    "low": {
+      "mean": null,
+      "observed_learners": 2,
+      "planned_learners": 3,
+      "range": null
+    }
+  },
+  "failures": {
+    "seed0_high": "NONREPORTABLE_RUNTIME_ABORT",
+    "seed0_low": "NONREPORTABLE_RUNTIME_ABORT"
+  },
+  "original_seed0_bridge_included_as_replicate": false,
+  "paired_learners": [
+    {
+      "high": null,
+      "high_minus_low": null,
+      "low": null,
+      "seed": 0
+    },
+    {
+      "high": {
+        "denominator": 16,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "high_minus_low": {
+        "denominator": 16,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "low": {
+        "denominator": 16,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "seed": 1
+    },
+    {
+      "high": {
+        "denominator": 16,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "high_minus_low": {
+        "denominator": 16,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "low": {
+        "denominator": 16,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "seed": 2
+    }
+  ],
+  "roster": {
+    "path": "/tmp/astra_l2_lr_prepared_20260913_attempt1.json",
+    "sha256": "2cf367e16116d205eb1e938d05d786d99309d4ae4df4d7afed66863d9d1f865b"
+  },
+  "runs": {
+    "seed0_high": {
+      "admission_denominators": {},
+      "collection": {
+        "path": "/tmp/astra_l2_lr_seed0_high_attempt1_collected.json",
+        "sha256": "a40cd71a0e2fce8a1bd451db19cc7c5e6ec4b91834cf3bf02210bc59d3bc6957"
+      },
+      "final_promote_minus_shadow": null,
+      "identity": {
+        "gpu_index": 1,
+        "gpu_uuid": "GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821",
+        "learner_seed": 0,
+        "learning_rate": 0.0001,
+        "name": "seed0_high",
+        "plan_sha256": "8a344a6e5217b2b24d6ac19640b73b3140c26559adf1542857c0fe06d69306c1",
+        "root": "/localhome/local-rohing/astra_diagnostics/l2_lr_seed0_high_20260913_attempt1",
+        "schema": "astra_l2_public_record_runtime_v1",
+        "spec_path": "/tmp/astra_l2_lr_specs_20260913_attempt1/seed0_high.json",
+        "spec_sha256": "83625d21f550ec13e78c2318a12c58db1e44b705b0c0a06dcf9eac2182c83bd9"
+      },
+      "measured_cost_totals": null,
+      "native_collection": {
+        "bytes": 259329,
+        "claim": "Exploratory public-record DEV pair; no birth, parenting, H1/H2 or clean-ancestry qualification.",
+        "completed": [
+          "baseline",
+          "wake1"
+        ],
+        "failed_raw_stages_not_scored": true,
+        "file_count": 126,
+        "plan_sha256": "8a344a6e5217b2b24d6ac19640b73b3140c26559adf1542857c0fe06d69306c1",
+        "reason": {
+          "message": "Command '['nvidia-smi', '-i', '1', '-q', '-x']' timed out after 30 seconds",
+          "time": 1789282829.071824,
+          "type": "TimeoutExpired"
+        },
+        "schema": "astra_l2_public_record_runtime_v1",
+        "scientific_pass": null,
+        "scientific_replay": false,
+        "seal_sha256": "084ebb3271b10442ae0fc0313359f3c1629efe6c0b5aca214c6914dd05d7e927",
+        "status": "NONREPORTABLE_RUNTIME_ABORT",
+        "two_cycle_complete": false
+      },
+      "root_binding": "Root resolved by unique pinned roster plan_sha256; collector does not emit root.",
+      "seed_lr_binding": "roster/plan only; absent in runtime abort",
+      "status": "NONREPORTABLE_RUNTIME_ABORT",
+      "unavailable": {
+        "controller_elapsed_seconds": null,
+        "first_report_paired_intersections": null,
+        "fit_elapsed_seconds": null,
+        "fit_losses": null,
+        "reason": "Not emitted by native collect API; no raw/model/corpus reads performed."
+      }
+    },
+    "seed0_low": {
+      "admission_denominators": {},
+      "collection": {
+        "path": "/tmp/astra_l2_lr_seed0_low_attempt1_collected.json",
+        "sha256": "96cd52a01e83f60591b67993d7c6ddcda71b34dda30b5a5952c920da4340d4fe"
+      },
+      "final_promote_minus_shadow": null,
+      "identity": {
+        "gpu_index": 0,
+        "gpu_uuid": "GPU-0ee6f753-c61e-e18a-8aea-acccd3042939",
+        "learner_seed": 0,
+        "learning_rate": 3e-05,
+        "name": "seed0_low",
+        "plan_sha256": "bcf68869b63ad7eb4b4be810ebe35476cec08a207dfcd3d22f77008e683b9e66",
+        "root": "/localhome/local-rohing/astra_diagnostics/l2_lr_seed0_low_20260913_attempt1",
+        "schema": "astra_l2_public_record_runtime_v1",
+        "spec_path": "/tmp/astra_l2_lr_specs_20260913_attempt1/seed0_low.json",
+        "spec_sha256": "7d790fb08af0bd5c2c8926c9042e4b80119be123f91fe20aa151d34e2cddd450"
+      },
+      "measured_cost_totals": null,
+      "native_collection": {
+        "bytes": 81358578,
+        "claim": "Exploratory public-record DEV pair; no birth, parenting, H1/H2 or clean-ancestry qualification.",
+        "completed": [
+          "baseline",
+          "wake1",
+          "fit1",
+          "report1_PROMOTE",
+          "report1_SHADOW",
+          "wake2_PROMOTE"
+        ],
+        "failed_raw_stages_not_scored": true,
+        "file_count": 318,
+        "plan_sha256": "bcf68869b63ad7eb4b4be810ebe35476cec08a207dfcd3d22f77008e683b9e66",
+        "reason": {
+          "message": "Command '['nvidia-smi', '-i', '0', '-q', '-x']' timed out after 30 seconds",
+          "time": 1789283481.0923328,
+          "type": "TimeoutExpired"
+        },
+        "schema": "astra_l2_public_record_runtime_v1",
+        "scientific_pass": null,
+        "scientific_replay": false,
+        "seal_sha256": "b5e326741a713668f8127da80a3e390b13d423df133dc41aa046329f210bbb70",
+        "status": "NONREPORTABLE_RUNTIME_ABORT",
+        "two_cycle_complete": false
+      },
+      "root_binding": "Root resolved by unique pinned roster plan_sha256; collector does not emit root.",
+      "seed_lr_binding": "roster/plan only; absent in runtime abort",
+      "status": "NONREPORTABLE_RUNTIME_ABORT",
+      "unavailable": {
+        "controller_elapsed_seconds": null,
+        "first_report_paired_intersections": null,
+        "fit_elapsed_seconds": null,
+        "fit_losses": null,
+        "reason": "Not emitted by native collect API; no raw/model/corpus reads performed."
+      }
+    },
+    "seed1_high": {
+      "admission_denominators": {
+        "fit1": {
+          "admitted": 8,
+          "opportunities": 8,
+          "rejected": 0
+        },
+        "fit2_PROMOTE": {
+          "admitted": 16,
+          "opportunities": 16,
+          "rejected": 0
+        },
+        "fit2_SHADOW": {
+          "admitted": 16,
+          "opportunities": 16,
+          "rejected": 0
+        }
+      },
+      "collection": {
+        "path": "/tmp/l2_lr_seed1_high_20260913_attempt1_collected",
+        "sha256": "be41caf2074261b6d36c0e941fac2cbbf8ae59cae502b96abbb13efcf2a6439d"
+      },
+      "final_promote_minus_shadow": {
+        "denominator": 16,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "identity": {
+        "gpu_index": 4,
+        "gpu_uuid": "GPU-f484c608-a2d4-0c26-dee1-a06cc5ae69e4",
+        "learner_seed": 1,
+        "learning_rate": 0.0001,
+        "name": "seed1_high",
+        "plan_sha256": "958040846348ce322259d8af9ff2e596507608e92556f9c21b4df646517a70db",
+        "root": "/localhome/local-rohing/astra_diagnostics/l2_lr_seed1_high_20260913_attempt1",
+        "schema": "astra_l2_public_record_runtime_v1",
+        "spec_path": "/tmp/astra_l2_lr_specs_20260913_attempt1/seed1_high.json",
+        "spec_sha256": "c9a2dbb769f3f69735c3f25c6b21db8520b7d14e9660542852826dd0ac3a04e8"
+      },
+      "measured_cost_totals": {
+        "elapsed_scope": "Summed generation only, not wall-clock/controller/fit time.",
+        "generation_seconds": 61.61245325098571,
+        "length_outputs": 0,
+        "output_tokens": 1754,
+        "physical_fit_accounting": "Shared fit1 counted once; cumulative later fits counted separately.",
+        "presentations": 800,
+        "prompt_tokens": 18301,
+        "supervised_tokens_seen": 10400,
+        "train_tokens_seen": 117820,
+        "work": {
+          "calls": 128,
+          "fits": 3,
+          "updates": 100
+        }
+      },
+      "native_collection": {
+        "bytes": 243488528,
+        "claim": "Exploratory public-record DEV pair; no birth, parenting, H1/H2 or clean-ancestry qualification.",
+        "completed": [
+          "baseline",
+          "wake1",
+          "fit1",
+          "report1_PROMOTE",
+          "report1_SHADOW",
+          "wake2_PROMOTE",
+          "wake2_SHADOW",
+          "fit2_PROMOTE",
+          "fit2_SHADOW",
+          "report2_PROMOTE",
+          "report2_SHADOW"
+        ],
+        "contrasts": {
+          "1": {
+            "legal": 0,
+            "new_correct": 0,
+            "old_correct": 0
+          },
+          "2": {
+            "legal": 0,
+            "new_correct": 0,
+            "old_correct": 0
+          }
+        },
+        "endpoint": {
+          "cells": {
+            "PROMOTE": {
+              "accepted": 16,
+              "accuracy": 0.5,
+              "endpoint_evaluable": true,
+              "legal": 16,
+              "missing": 0,
+              "new_correct": 4,
+              "observed_correct": 8,
+              "old_correct": 4,
+              "readout_sha256": "1dfcabd4f792c33c13431701aaf691e78b5a1c2d300c200bdfe1bb9e3a777298",
+              "rejected": 0,
+              "state_sha256": "cf614af24e06519527282123f649263965849464a30d0e9a7009cea221666d44",
+              "total": 16
+            },
+            "SHADOW": {
+              "accepted": 16,
+              "accuracy": 0.5,
+              "endpoint_evaluable": true,
+              "legal": 16,
+              "missing": 0,
+              "new_correct": 4,
+              "observed_correct": 8,
+              "old_correct": 4,
+              "readout_sha256": "23c5e43c8007600c65b8b107f3ebb7c14acd08643cbe00af996777f97e9d28e4",
+              "rejected": 0,
+              "state_sha256": "fced9e2deb95099caa90b0fbd1633956159a0b70b81fae4f577e0a5e766c79cf",
+              "total": 16
+            }
+          },
+          "claim": "Exploratory partial DEV loop only; no birth promotion, internalization or H1/H2 claim.",
+          "endpoint_evaluable": true,
+          "native_verified": false,
+          "paired": {
+            "both": 8,
+            "neither": 8,
+            "net": 0,
+            "promote_only": 0,
+            "shadow_only": 0,
+            "total": 16
+          },
+          "public_sha256": "01af2305d2ed202e3716f35643c672fb70a6fb89731566df581f857b7852463e",
+          "schema": "l2_public_record_dev_v0",
+          "scientific_pass": null
+        },
+        "exposure": {
+          "baseline": {
+            "calls": 16,
+            "generation_seconds": 6.913259676977759,
+            "length_outputs": 0,
+            "output_tokens": 224,
+            "prompt_tokens": 2133
+          },
+          "fit1": {
+            "fits": 1,
+            "presentations": 160,
+            "target_tokens_per_epoch": 104,
+            "total_tokens_per_epoch": 1177,
+            "train_tokens_seen": 23540,
+            "updates": 20
+          },
+          "fit2_PROMOTE": {
+            "fits": 1,
+            "presentations": 320,
+            "target_tokens_per_epoch": 208,
+            "total_tokens_per_epoch": 2357,
+            "train_tokens_seen": 47140,
+            "updates": 40
+          },
+          "fit2_SHADOW": {
+            "fits": 1,
+            "presentations": 320,
+            "target_tokens_per_epoch": 208,
+            "total_tokens_per_epoch": 2357,
+            "train_tokens_seen": 47140,
+            "updates": 40
+          },
+          "report1_PROMOTE": {
+            "calls": 16,
+            "generation_seconds": 9.434673276991816,
+            "length_outputs": 0,
+            "output_tokens": 224,
+            "prompt_tokens": 2133
+          },
+          "report1_SHADOW": {
+            "calls": 16,
+            "generation_seconds": 6.89894888298295,
+            "length_outputs": 0,
+            "output_tokens": 224,
+            "prompt_tokens": 2133
+          },
+          "report2_PROMOTE": {
+            "calls": 16,
+            "generation_seconds": 9.460804456990445,
+            "length_outputs": 0,
+            "output_tokens": 224,
+            "prompt_tokens": 2133
+          },
+          "report2_SHADOW": {
+            "calls": 16,
+            "generation_seconds": 6.877488820027793,
+            "length_outputs": 0,
+            "output_tokens": 224,
+            "prompt_tokens": 2133
+          },
+          "wake1": {
+            "calls": 16,
+            "generation_seconds": 6.635471947010956,
+            "length_outputs": 0,
+            "output_tokens": 216,
+            "prompt_tokens": 2546
+          },
+          "wake2_PROMOTE": {
+            "calls": 16,
+            "generation_seconds": 8.77266458500526,
+            "length_outputs": 0,
+            "output_tokens": 202,
+            "prompt_tokens": 2538
+          },
+          "wake2_SHADOW": {
+            "calls": 16,
+            "generation_seconds": 6.619141604998731,
+            "length_outputs": 0,
+            "output_tokens": 216,
+            "prompt_tokens": 2552
+          }
+        },
+        "file_count": 527,
+        "formation": {
+          "fit1": {
+            "admitted": 8,
+            "candidate_sha256": "f91687f09382d320934667e3451b678db7075313fdca42cabef40772320d59ec",
+            "corpus_sha256": "fb9e55ba7be8fab80a79347a6764eb8314117bf9d8238bc071650b450104cc9d",
+            "initialized_from_sha256": "1a28421dffcee174137818b590991ba80678b58f6c63fd8eab027a933486efd5",
+            "rejected": 0,
+            "shared_physical_fit": true,
+            "status": "FIT_COMPLETE"
+          },
+          "fit2_PROMOTE": {
+            "admitted": 16,
+            "candidate_sha256": "cef6a1069fefcbd77454c62cde49618508f5029b93e1dc003198459c37f8ba46",
+            "corpus_sha256": "09a22e9cdeb664783af73e8c8ac9029232b893393c911e2c235bd381f0ada498",
+            "initialized_from_sha256": "1a28421dffcee174137818b590991ba80678b58f6c63fd8eab027a933486efd5",
+            "rejected": 0,
+            "shared_physical_fit": false,
+            "status": "FIT_COMPLETE"
+          },
+          "fit2_SHADOW": {
+            "admitted": 16,
+            "candidate_sha256": "76c1a90bed3e225bbe9ae555b37582c7c4b76c4f7ee9b2b1f27baa9d5eb2acf2",
+            "corpus_sha256": "aea80040dcec3b9b7e60f618bda8d63d209884b804d4d72e55061b477cae8ae4",
+            "initialized_from_sha256": "1a28421dffcee174137818b590991ba80678b58f6c63fd8eab027a933486efd5",
+            "rejected": 0,
+            "shared_physical_fit": false,
+            "status": "FIT_COMPLETE"
+          }
+        },
+        "incomplete": [],
+        "learning_rate": 0.0001,
+        "plan_sha256": "958040846348ce322259d8af9ff2e596507608e92556f9c21b4df646517a70db",
+        "reports": {
+          "baseline": {
+            "legal": 16,
+            "length_outputs": 0,
+            "malformed": 0,
+            "new_correct": 4,
+            "new_total": 8,
+            "old_correct": 4,
+            "old_total": 8,
+            "total": 16
+          },
+          "report1_PROMOTE": {
+            "legal": 16,
+            "length_outputs": 0,
+            "malformed": 0,
+            "new_correct": 4,
+            "new_total": 8,
+            "old_correct": 4,
+            "old_total": 8,
+            "total": 16
+          },
+          "report1_SHADOW": {
+            "legal": 16,
+            "length_outputs": 0,
+            "malformed": 0,
+            "new_correct": 4,
+            "new_total": 8,
+            "old_correct": 4,
+            "old_total": 8,
+            "total": 16
+          },
+          "report2_PROMOTE": {
+            "legal": 16,
+            "length_outputs": 0,
+            "malformed": 0,
+            "new_correct": 4,
+            "new_total": 8,
+            "old_correct": 4,
+            "old_total": 8,
+            "total": 16
+          },
+          "report2_SHADOW": {
+            "legal": 16,
+            "length_outputs": 0,
+            "malformed": 0,
+            "new_correct": 4,
+            "new_total": 8,
+            "old_correct": 4,
+            "old_total": 8,
+            "total": 16
+          }
+        },
+        "schema": "astra_l2_public_record_runtime_v1",
+        "scientific_pass": null,
+        "scientific_replay": true,
+        "seal_sha256": "b00d405f5eb7b9d8c2b046b7ec7cbad9f0f86a68d3189262fb653545d25ca7aa",
+        "seeds": {
+          "learner": 1,
+          "truth": 2026091302,
+          "vocabulary": 2026091301
+        },
+        "status": "COMPLETE",
+        "two_cycle_complete": true,
+        "work": {
+          "calls": 128,
+          "fits": 3,
+          "updates": 100
+        }
+      },
+      "root_binding": "Root resolved by unique pinned roster plan_sha256; collector does not emit root.",
+      "seed_lr_binding": "collection and roster agree",
+      "status": "COMPLETE",
+      "unavailable": {
+        "controller_elapsed_seconds": null,
+        "first_report_paired_intersections": null,
+        "fit_elapsed_seconds": null,
+        "fit_losses": null,
+        "reason": "Not emitted by native collect API; no raw/model/corpus reads performed."
+      }
+    },
+    "seed1_low": {
+      "admission_denominators": {
+        "fit1": {
+          "admitted": 8,
+          "opportunities": 8,
+          "rejected": 0
+        },
+        "fit2_PROMOTE": {
+          "admitted": 16,
+          "opportunities": 16,
+          "rejected": 0
+        },
+        "fit2_SHADOW": {
+          "admitted": 16,
+          "opportunities": 16,
+          "rejected": 0
+        }
+      },
+      "collection": {
+        "path": "/tmp/l2_lr_seed1_low_20260913_attempt1_collected",
+        "sha256": "6412371a21623d301bd5575e951aa4cc14305fdce21c0909dade0e8ff2781f19"
+      },
+      "final_promote_minus_shadow": {
+        "denominator": 16,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "identity": {
+        "gpu_index": 2,
+        "gpu_uuid": "GPU-41a86250-88eb-ed8a-ddfe-9d6f93515da1",
+        "learner_seed": 1,
+        "learning_rate": 3e-05,
+        "name": "seed1_low",
+        "plan_sha256": "dc988cc3e767c3e9f6fa124bd7f3cc3ad38c0e91ea16b33a9b9e01fa9c0f02e8",
+        "root": "/localhome/local-rohing/astra_diagnostics/l2_lr_seed1_low_20260913_attempt1",
+        "schema": "astra_l2_public_record_runtime_v1",
+        "spec_path": "/tmp/astra_l2_lr_specs_20260913_attempt1/seed1_low.json",
+        "spec_sha256": "d5c07e21d850d8874169c36594723c172eb023517e8eff6050c2fcbc9698f49a"
+      },
+      "measured_cost_totals": {
+        "elapsed_scope": "Summed generation only, not wall-clock/controller/fit time.",
+        "generation_seconds": 62.78981429108535,
+        "length_outputs": 0,
+        "output_tokens": 1768,
+        "physical_fit_accounting": "Shared fit1 counted once; cumulative later fits counted separately.",
+        "presentations": 800,
+        "prompt_tokens": 18315,
+        "supervised_tokens_seen": 10400,
+        "train_tokens_seen": 117820,
+        "work": {
+          "calls": 128,
+          "fits": 3,
+          "updates": 100
+        }
+      },
+      "native_collection": {
+        "bytes": 243488654,
+        "claim": "Exploratory public-record DEV pair; no birth, parenting, H1/H2 or clean-ancestry qualification.",
+        "completed": [
+          "baseline",
+          "wake1",
+          "fit1",
+          "report1_PROMOTE",
+          "report1_SHADOW",
+          "wake2_PROMOTE",
+          "wake2_SHADOW",
+          "fit2_PROMOTE",
+          "fit2_SHADOW",
+          "report2_PROMOTE",
+          "report2_SHADOW"
+        ],
+        "contrasts": {
+          "1": {
+            "legal": 0,
+            "new_correct": 0,
+            "old_correct": 0
+          },
+          "2": {
+            "legal": 0,
+            "new_correct": 0,
+            "old_correct": 0
+          }
+        },
+        "endpoint": {
+          "cells": {
+            "PROMOTE": {
+              "accepted": 16,
+              "accuracy": 0.5,
+              "endpoint_evaluable": true,
+              "legal": 16,
+              "missing": 0,
+              "new_correct": 4,
+              "observed_correct": 8,
+              "old_correct": 4,
+              "readout_sha256": "1dfcabd4f792c33c13431701aaf691e78b5a1c2d300c200bdfe1bb9e3a777298",
+              "rejected": 0,
+              "state_sha256": "80dff478b252688c57c84458797260fff24ff034a770cb437cf42281ec72fc1f",
+              "total": 16
+            },
+            "SHADOW": {
+              "accepted": 16,
+              "accuracy": 0.5,
+              "endpoint_evaluable": true,
+              "legal": 16,
+              "missing": 0,
+              "new_correct": 4,
+              "observed_correct": 8,
+              "old_correct": 4,
+              "readout_sha256": "23c5e43c8007600c65b8b107f3ebb7c14acd08643cbe00af996777f97e9d28e4",
+              "rejected": 0,
+              "state_sha256": "85074df2d82caf11481dbbcc485e37ef8e705ea7f35cc9a7471b433171d49be6",
+              "total": 16
+            }
+          },
+          "claim": "Exploratory partial DEV loop only; no birth promotion, internalization or H1/H2 claim.",
+          "endpoint_evaluable": true,
+          "native_verified": false,
+          "paired": {
+            "both": 8,
+            "neither": 8,
+            "net": 0,
+            "promote_only": 0,
+            "shadow_only": 0,
+            "total": 16
+          },
+          "public_sha256": "01af2305d2ed202e3716f35643c672fb70a6fb89731566df581f857b7852463e",
+          "schema": "l2_public_record_dev_v0",
+          "scientific_pass": null
+        },
+        "exposure": {
+          "baseline": {
+            "calls": 16,
+            "generation_seconds": 6.8904014760191785,
+            "length_outputs": 0,
+            "output_tokens": 224,
+            "prompt_tokens": 2133
+          },
+          "fit1": {
+            "fits": 1,
+            "presentations": 160,
+            "target_tokens_per_epoch": 104,
+            "total_tokens_per_epoch": 1177,
+            "train_tokens_seen": 23540,
+            "updates": 20
+          },
+          "fit2_PROMOTE": {
+            "fits": 1,
+            "presentations": 320,
+            "target_tokens_per_epoch": 208,
+            "total_tokens_per_epoch": 2357,
+            "train_tokens_seen": 47140,
+            "updates": 40
+          },
+          "fit2_SHADOW": {
+            "fits": 1,
+            "presentations": 320,
+            "target_tokens_per_epoch": 208,
+            "total_tokens_per_epoch": 2357,
+            "train_tokens_seen": 47140,
+            "updates": 40
+          },
+          "report1_PROMOTE": {
+            "calls": 16,
+            "generation_seconds": 10.008861241978593,
+            "length_outputs": 0,
+            "output_tokens": 224,
+            "prompt_tokens": 2133
+          },
+          "report1_SHADOW": {
+            "calls": 16,
+            "generation_seconds": 6.878769839997403,
+            "length_outputs": 0,
+            "output_tokens": 224,
+            "prompt_tokens": 2133
+          },
+          "report2_PROMOTE": {
+            "calls": 16,
+            "generation_seconds": 9.445502556016436,
+            "length_outputs": 0,
+            "output_tokens": 224,
+            "prompt_tokens": 2133
+          },
+          "report2_SHADOW": {
+            "calls": 16,
+            "generation_seconds": 6.881172665031045,
+            "length_outputs": 0,
+            "output_tokens": 224,
+            "prompt_tokens": 2133
+          },
+          "wake1": {
+            "calls": 16,
+            "generation_seconds": 6.641776997013949,
+            "length_outputs": 0,
+            "output_tokens": 216,
+            "prompt_tokens": 2546
+          },
+          "wake2_PROMOTE": {
+            "calls": 16,
+            "generation_seconds": 9.403684534030617,
+            "length_outputs": 0,
+            "output_tokens": 216,
+            "prompt_tokens": 2552
+          },
+          "wake2_SHADOW": {
+            "calls": 16,
+            "generation_seconds": 6.639644980998128,
+            "length_outputs": 0,
+            "output_tokens": 216,
+            "prompt_tokens": 2552
+          }
+        },
+        "file_count": 527,
+        "formation": {
+          "fit1": {
+            "admitted": 8,
+            "candidate_sha256": "fdbb3d470787ebac75d27ff78daba759f22fb181ef5e47a9fb11bd7101c892e7",
+            "corpus_sha256": "fb9e55ba7be8fab80a79347a6764eb8314117bf9d8238bc071650b450104cc9d",
+            "initialized_from_sha256": "1a28421dffcee174137818b590991ba80678b58f6c63fd8eab027a933486efd5",
+            "rejected": 0,
+            "shared_physical_fit": true,
+            "status": "FIT_COMPLETE"
+          },
+          "fit2_PROMOTE": {
+            "admitted": 16,
+            "candidate_sha256": "dde41c89c31cf9797b4137f48fdf8039198d2dde2d4d661b386092a074dd0864",
+            "corpus_sha256": "5203dd72eef2799b16f8d4c5f321198ef2c44b17643673897b984c32de878cc1",
+            "initialized_from_sha256": "1a28421dffcee174137818b590991ba80678b58f6c63fd8eab027a933486efd5",
+            "rejected": 0,
+            "shared_physical_fit": false,
+            "status": "FIT_COMPLETE"
+          },
+          "fit2_SHADOW": {
+            "admitted": 16,
+            "candidate_sha256": "3a2ed26af2ad084c01d076fe6e0c2ac5a808930a4570b11aab259f759c377efb",
+            "corpus_sha256": "aea80040dcec3b9b7e60f618bda8d63d209884b804d4d72e55061b477cae8ae4",
+            "initialized_from_sha256": "1a28421dffcee174137818b590991ba80678b58f6c63fd8eab027a933486efd5",
+            "rejected": 0,
+            "shared_physical_fit": false,
+            "status": "FIT_COMPLETE"
+          }
+        },
+        "incomplete": [],
+        "learning_rate": 3e-05,
+        "plan_sha256": "dc988cc3e767c3e9f6fa124bd7f3cc3ad38c0e91ea16b33a9b9e01fa9c0f02e8",
+        "reports": {
+          "baseline": {
+            "legal": 16,
+            "length_outputs": 0,
+            "malformed": 0,
+            "new_correct": 4,
+            "new_total": 8,
+            "old_correct": 4,
+            "old_total": 8,
+            "total": 16
+          },
+          "report1_PROMOTE": {
+            "legal": 16,
+            "length_outputs": 0,
+            "malformed": 0,
+            "new_correct": 4,
+            "new_total": 8,
+            "old_correct": 4,
+            "old_total": 8,
+            "total": 16
+          },
+          "report1_SHADOW": {
+            "legal": 16,
+            "length_outputs": 0,
+            "malformed": 0,
+            "new_correct": 4,
+            "new_total": 8,
+            "old_correct": 4,
+            "old_total": 8,
+            "total": 16
+          },
+          "report2_PROMOTE": {
+            "legal": 16,
+            "length_outputs": 0,
+            "malformed": 0,
+            "new_correct": 4,
+            "new_total": 8,
+            "old_correct": 4,
+            "old_total": 8,
+            "total": 16
+          },
+          "report2_SHADOW": {
+            "legal": 16,
+            "length_outputs": 0,
+            "malformed": 0,
+            "new_correct": 4,
+            "new_total": 8,
+            "old_correct": 4,
+            "old_total": 8,
+            "total": 16
+          }
+        },
+        "schema": "astra_l2_public_record_runtime_v1",
+        "scientific_pass": null,
+        "scientific_replay": true,
+        "seal_sha256": "036129b810e9f981bbd9bec7f04052a22eeab75b2df442628b675a78da8f5ac0",
+        "seeds": {
+          "learner": 1,
+          "truth": 2026091302,
+          "vocabulary": 2026091301
+        },
+        "status": "COMPLETE",
+        "two_cycle_complete": true,
+        "work": {
+          "calls": 128,
+          "fits": 3,
+          "updates": 100
+        }
+      },
+      "root_binding": "Root resolved by unique pinned roster plan_sha256; collector does not emit root.",
+      "seed_lr_binding": "collection and roster agree",
+      "status": "COMPLETE",
+      "unavailable": {
+        "controller_elapsed_seconds": null,
+        "first_report_paired_intersections": null,
+        "fit_elapsed_seconds": null,
+        "fit_losses": null,
+        "reason": "Not emitted by native collect API; no raw/model/corpus reads performed."
+      }
+    },
+    "seed2_high": {
+      "admission_denominators": {
+        "fit1": {
+          "admitted": 8,
+          "opportunities": 8,
+          "rejected": 0
+        },
+        "fit2_PROMOTE": {
+          "admitted": 16,
+          "opportunities": 16,
+          "rejected": 0
+        },
+        "fit2_SHADOW": {
+          "admitted": 16,
+          "opportunities": 16,
+          "rejected": 0
+        }
+      },
+      "collection": {
+        "path": "/tmp/l2_lr_seed2_high_20260913_attempt1_collected",
+        "sha256": "24f6e79530b575a8923e5b1145f2e26d7cd95590ceebf9d12b6fd79013ebbd7e"
+      },
+      "final_promote_minus_shadow": {
+        "denominator": 16,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "identity": {
+        "gpu_index": 6,
+        "gpu_uuid": "GPU-319224de-e668-1822-d80b-4b24d15968ae",
+        "learner_seed": 2,
+        "learning_rate": 0.0001,
+        "name": "seed2_high",
+        "plan_sha256": "74569b1e8c3e0330e0c4f387120fedd4d9f71406366d8b5459088a35ab1a3593",
+        "root": "/localhome/local-rohing/astra_diagnostics/l2_lr_seed2_high_20260913_attempt1",
+        "schema": "astra_l2_public_record_runtime_v1",
+        "spec_path": "/tmp/astra_l2_lr_specs_20260913_attempt1/seed2_high.json",
+        "spec_sha256": "9a4c0052480747f01ecb3bc1efb669a3a0a7da872950c0438f154a043076bb10"
+      },
+      "measured_cost_totals": {
+        "elapsed_scope": "Summed generation only, not wall-clock/controller/fit time.",
+        "generation_seconds": 62.213320468974416,
+        "length_outputs": 0,
+        "output_tokens": 1756,
+        "physical_fit_accounting": "Shared fit1 counted once; cumulative later fits counted separately.",
+        "presentations": 800,
+        "prompt_tokens": 18303,
+        "supervised_tokens_seen": 10400,
+        "train_tokens_seen": 117820,
+        "work": {
+          "calls": 128,
+          "fits": 3,
+          "updates": 100
+        }
+      },
+      "native_collection": {
+        "bytes": 243488434,
+        "claim": "Exploratory public-record DEV pair; no birth, parenting, H1/H2 or clean-ancestry qualification.",
+        "completed": [
+          "baseline",
+          "wake1",
+          "fit1",
+          "report1_PROMOTE",
+          "report1_SHADOW",
+          "wake2_PROMOTE",
+          "wake2_SHADOW",
+          "fit2_PROMOTE",
+          "fit2_SHADOW",
+          "report2_PROMOTE",
+          "report2_SHADOW"
+        ],
+        "contrasts": {
+          "1": {
+            "legal": 0,
+            "new_correct": 0,
+            "old_correct": 0
+          },
+          "2": {
+            "legal": 0,
+            "new_correct": 0,
+            "old_correct": 0
+          }
+        },
+        "endpoint": {
+          "cells": {
+            "PROMOTE": {
+              "accepted": 16,
+              "accuracy": 0.5,
+              "endpoint_evaluable": true,
+              "legal": 16,
+              "missing": 0,
+              "new_correct": 4,
+              "observed_correct": 8,
+              "old_correct": 4,
+              "readout_sha256": "1dfcabd4f792c33c13431701aaf691e78b5a1c2d300c200bdfe1bb9e3a777298",
+              "rejected": 0,
+              "state_sha256": "51f4a7e159302e3ccb991d2fa701cdf881913ccd2b6430d34bfee447214abd5e",
+              "total": 16
+            },
+            "SHADOW": {
+              "accepted": 16,
+              "accuracy": 0.5,
+              "endpoint_evaluable": true,
+              "legal": 16,
+              "missing": 0,
+              "new_correct": 4,
+              "observed_correct": 8,
+              "old_correct": 4,
+              "readout_sha256": "23c5e43c8007600c65b8b107f3ebb7c14acd08643cbe00af996777f97e9d28e4",
+              "rejected": 0,
+              "state_sha256": "3cb0da1c72fb5c049005eadc354094f332ebfbb078bc1ee6335f72bcb1fee2e0",
+              "total": 16
+            }
+          },
+          "claim": "Exploratory partial DEV loop only; no birth promotion, internalization or H1/H2 claim.",
+          "endpoint_evaluable": true,
+          "native_verified": false,
+          "paired": {
+            "both": 8,
+            "neither": 8,
+            "net": 0,
+            "promote_only": 0,
+            "shadow_only": 0,
+            "total": 16
+          },
+          "public_sha256": "01af2305d2ed202e3716f35643c672fb70a6fb89731566df581f857b7852463e",
+          "schema": "l2_public_record_dev_v0",
+          "scientific_pass": null
+        },
+        "exposure": {
+          "baseline": {
+            "calls": 16,
+            "generation_seconds": 6.864915040991036,
+            "length_outputs": 0,
+            "output_tokens": 224,
+            "prompt_tokens": 2133
+          },
+          "fit1": {
+            "fits": 1,
+            "presentations": 160,
+            "target_tokens_per_epoch": 104,
+            "total_tokens_per_epoch": 1177,
+            "train_tokens_seen": 23540,
+            "updates": 20
+          },
+          "fit2_PROMOTE": {
+            "fits": 1,
+            "presentations": 320,
+            "target_tokens_per_epoch": 208,
+            "total_tokens_per_epoch": 2357,
+            "train_tokens_seen": 47140,
+            "updates": 40
+          },
+          "fit2_SHADOW": {
+            "fits": 1,
+            "presentations": 320,
+            "target_tokens_per_epoch": 208,
+            "total_tokens_per_epoch": 2357,
+            "train_tokens_seen": 47140,
+            "updates": 40
+          },
+          "report1_PROMOTE": {
+            "calls": 16,
+            "generation_seconds": 10.310022908000974,
+            "length_outputs": 0,
+            "output_tokens": 224,
+            "prompt_tokens": 2133
+          },
+          "report1_SHADOW": {
+            "calls": 16,
+            "generation_seconds": 6.888911384972744,
+            "length_outputs": 0,
+            "output_tokens": 224,
+            "prompt_tokens": 2133
+          },
+          "report2_PROMOTE": {
+            "calls": 16,
+            "generation_seconds": 9.375333012998453,
+            "length_outputs": 0,
+            "output_tokens": 224,
+            "prompt_tokens": 2133
+          },
+          "report2_SHADOW": {
+            "calls": 16,
+            "generation_seconds": 6.845780447983998,
+            "length_outputs": 0,
+            "output_tokens": 224,
+            "prompt_tokens": 2133
+          },
+          "wake1": {
+            "calls": 16,
+            "generation_seconds": 6.640531561046373,
+            "length_outputs": 0,
+            "output_tokens": 216,
+            "prompt_tokens": 2546
+          },
+          "wake2_PROMOTE": {
+            "calls": 16,
+            "generation_seconds": 8.652004518982721,
+            "length_outputs": 0,
+            "output_tokens": 204,
+            "prompt_tokens": 2540
+          },
+          "wake2_SHADOW": {
+            "calls": 16,
+            "generation_seconds": 6.635821593998116,
+            "length_outputs": 0,
+            "output_tokens": 216,
+            "prompt_tokens": 2552
+          }
+        },
+        "file_count": 527,
+        "formation": {
+          "fit1": {
+            "admitted": 8,
+            "candidate_sha256": "ed76540db3db67c5fba560c4441b30ac0855009a09889dae489ff99183a54192",
+            "corpus_sha256": "fb9e55ba7be8fab80a79347a6764eb8314117bf9d8238bc071650b450104cc9d",
+            "initialized_from_sha256": "1a28421dffcee174137818b590991ba80678b58f6c63fd8eab027a933486efd5",
+            "rejected": 0,
+            "shared_physical_fit": true,
+            "status": "FIT_COMPLETE"
+          },
+          "fit2_PROMOTE": {
+            "admitted": 16,
+            "candidate_sha256": "8e79df460e52e94b342de285bcc85ef69cc5fb468a8904d443c665af37bc8ff4",
+            "corpus_sha256": "d8c28368c4b38a2120b39496295cf22b31b0d242d9ecc7dba5ea1fd43c180bcb",
+            "initialized_from_sha256": "1a28421dffcee174137818b590991ba80678b58f6c63fd8eab027a933486efd5",
+            "rejected": 0,
+            "shared_physical_fit": false,
+            "status": "FIT_COMPLETE"
+          },
+          "fit2_SHADOW": {
+            "admitted": 16,
+            "candidate_sha256": "cf9ba5a184568812c415810c681351478333107558ce05c94ab9422e3d014e87",
+            "corpus_sha256": "aea80040dcec3b9b7e60f618bda8d63d209884b804d4d72e55061b477cae8ae4",
+            "initialized_from_sha256": "1a28421dffcee174137818b590991ba80678b58f6c63fd8eab027a933486efd5",
+            "rejected": 0,
+            "shared_physical_fit": false,
+            "status": "FIT_COMPLETE"
+          }
+        },
+        "incomplete": [],
+        "learning_rate": 0.0001,
+        "plan_sha256": "74569b1e8c3e0330e0c4f387120fedd4d9f71406366d8b5459088a35ab1a3593",
+        "reports": {
+          "baseline": {
+            "legal": 16,
+            "length_outputs": 0,
+            "malformed": 0,
+            "new_correct": 4,
+            "new_total": 8,
+            "old_correct": 4,
+            "old_total": 8,
+            "total": 16
+          },
+          "report1_PROMOTE": {
+            "legal": 16,
+            "length_outputs": 0,
+            "malformed": 0,
+            "new_correct": 4,
+            "new_total": 8,
+            "old_correct": 4,
+            "old_total": 8,
+            "total": 16
+          },
+          "report1_SHADOW": {
+            "legal": 16,
+            "length_outputs": 0,
+            "malformed": 0,
+            "new_correct": 4,
+            "new_total": 8,
+            "old_correct": 4,
+            "old_total": 8,
+            "total": 16
+          },
+          "report2_PROMOTE": {
+            "legal": 16,
+            "length_outputs": 0,
+            "malformed": 0,
+            "new_correct": 4,
+            "new_total": 8,
+            "old_correct": 4,
+            "old_total": 8,
+            "total": 16
+          },
+          "report2_SHADOW": {
+            "legal": 16,
+            "length_outputs": 0,
+            "malformed": 0,
+            "new_correct": 4,
+            "new_total": 8,
+            "old_correct": 4,
+            "old_total": 8,
+            "total": 16
+          }
+        },
+        "schema": "astra_l2_public_record_runtime_v1",
+        "scientific_pass": null,
+        "scientific_replay": true,
+        "seal_sha256": "c5ddc5585d33e1ffd6f1bcce46d9b6a2b23bfed334e7117c5e83586cf9fb9a2d",
+        "seeds": {
+          "learner": 2,
+          "truth": 2026091302,
+          "vocabulary": 2026091301
+        },
+        "status": "COMPLETE",
+        "two_cycle_complete": true,
+        "work": {
+          "calls": 128,
+          "fits": 3,
+          "updates": 100
+        }
+      },
+      "root_binding": "Root resolved by unique pinned roster plan_sha256; collector does not emit root.",
+      "seed_lr_binding": "collection and roster agree",
+      "status": "COMPLETE",
+      "unavailable": {
+        "controller_elapsed_seconds": null,
+        "first_report_paired_intersections": null,
+        "fit_elapsed_seconds": null,
+        "fit_losses": null,
+        "reason": "Not emitted by native collect API; no raw/model/corpus reads performed."
+      }
+    },
+    "seed2_low": {
+      "admission_denominators": {
+        "fit1": {
+          "admitted": 8,
+          "opportunities": 8,
+          "rejected": 0
+        },
+        "fit2_PROMOTE": {
+          "admitted": 16,
+          "opportunities": 16,
+          "rejected": 0
+        },
+        "fit2_SHADOW": {
+          "admitted": 16,
+          "opportunities": 16,
+          "rejected": 0
+        }
+      },
+      "collection": {
+        "path": "/tmp/l2_lr_seed2_low_20260913_attempt1_collected",
+        "sha256": "26c36a172c90f0908542ae1984a46d37a510e34ba0f6334f0a174ec7334ec671"
+      },
+      "final_promote_minus_shadow": {
+        "denominator": 16,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "identity": {
+        "gpu_index": 5,
+        "gpu_uuid": "GPU-bc211959-642d-664b-3581-42a0dbe434e9",
+        "learner_seed": 2,
+        "learning_rate": 3e-05,
+        "name": "seed2_low",
+        "plan_sha256": "ad992bd3623cbf92110c13c3ac23aa4af221fc0955cfe97771b0ecdfa6e62c47",
+        "root": "/localhome/local-rohing/astra_diagnostics/l2_lr_seed2_low_20260913_attempt1",
+        "schema": "astra_l2_public_record_runtime_v1",
+        "spec_path": "/tmp/astra_l2_lr_specs_20260913_attempt1/seed2_low.json",
+        "spec_sha256": "ed1c7c97b51c124f450d6cbedf4e3f575810f9e4b41f716c4d4b7f22ea8e0f50"
+      },
+      "measured_cost_totals": {
+        "elapsed_scope": "Summed generation only, not wall-clock/controller/fit time.",
+        "generation_seconds": 62.92910412501078,
+        "length_outputs": 0,
+        "output_tokens": 1768,
+        "physical_fit_accounting": "Shared fit1 counted once; cumulative later fits counted separately.",
+        "presentations": 800,
+        "prompt_tokens": 18315,
+        "supervised_tokens_seen": 10400,
+        "train_tokens_seen": 117820,
+        "work": {
+          "calls": 128,
+          "fits": 3,
+          "updates": 100
+        }
+      },
+      "native_collection": {
+        "bytes": 243488357,
+        "claim": "Exploratory public-record DEV pair; no birth, parenting, H1/H2 or clean-ancestry qualification.",
+        "completed": [
+          "baseline",
+          "wake1",
+          "fit1",
+          "report1_PROMOTE",
+          "report1_SHADOW",
+          "wake2_PROMOTE",
+          "wake2_SHADOW",
+          "fit2_PROMOTE",
+          "fit2_SHADOW",
+          "report2_PROMOTE",
+          "report2_SHADOW"
+        ],
+        "contrasts": {
+          "1": {
+            "legal": 0,
+            "new_correct": 0,
+            "old_correct": 0
+          },
+          "2": {
+            "legal": 0,
+            "new_correct": 0,
+            "old_correct": 0
+          }
+        },
+        "endpoint": {
+          "cells": {
+            "PROMOTE": {
+              "accepted": 16,
+              "accuracy": 0.5,
+              "endpoint_evaluable": true,
+              "legal": 16,
+              "missing": 0,
+              "new_correct": 4,
+              "observed_correct": 8,
+              "old_correct": 4,
+              "readout_sha256": "1dfcabd4f792c33c13431701aaf691e78b5a1c2d300c200bdfe1bb9e3a777298",
+              "rejected": 0,
+              "state_sha256": "519248eb733afb75f8d701100d5ba58c3c476bb80fe0a6c4bb62427ba6cd9d62",
+              "total": 16
+            },
+            "SHADOW": {
+              "accepted": 16,
+              "accuracy": 0.5,
+              "endpoint_evaluable": true,
+              "legal": 16,
+              "missing": 0,
+              "new_correct": 4,
+              "observed_correct": 8,
+              "old_correct": 4,
+              "readout_sha256": "23c5e43c8007600c65b8b107f3ebb7c14acd08643cbe00af996777f97e9d28e4",
+              "rejected": 0,
+              "state_sha256": "b0b458fa3fe9bf5e7a5c350cb8fe1af51c285f8e8225e4e53e96df89afda9004",
+              "total": 16
+            }
+          },
+          "claim": "Exploratory partial DEV loop only; no birth promotion, internalization or H1/H2 claim.",
+          "endpoint_evaluable": true,
+          "native_verified": false,
+          "paired": {
+            "both": 8,
+            "neither": 8,
+            "net": 0,
+            "promote_only": 0,
+            "shadow_only": 0,
+            "total": 16
+          },
+          "public_sha256": "01af2305d2ed202e3716f35643c672fb70a6fb89731566df581f857b7852463e",
+          "schema": "l2_public_record_dev_v0",
+          "scientific_pass": null
+        },
+        "exposure": {
+          "baseline": {
+            "calls": 16,
+            "generation_seconds": 6.890287646005163,
+            "length_outputs": 0,
+            "output_tokens": 224,
+            "prompt_tokens": 2133
+          },
+          "fit1": {
+            "fits": 1,
+            "presentations": 160,
+            "target_tokens_per_epoch": 104,
+            "total_tokens_per_epoch": 1177,
+            "train_tokens_seen": 23540,
+            "updates": 20
+          },
+          "fit2_PROMOTE": {
+            "fits": 1,
+            "presentations": 320,
+            "target_tokens_per_epoch": 208,
+            "total_tokens_per_epoch": 2357,
+            "train_tokens_seen": 47140,
+            "updates": 40
+          },
+          "fit2_SHADOW": {
+            "fits": 1,
+            "presentations": 320,
+            "target_tokens_per_epoch": 208,
+            "total_tokens_per_epoch": 2357,
+            "train_tokens_seen": 47140,
+            "updates": 40
+          },
+          "report1_PROMOTE": {
+            "calls": 16,
+            "generation_seconds": 9.811562155999127,
+            "length_outputs": 0,
+            "output_tokens": 224,
+            "prompt_tokens": 2133
+          },
+          "report1_SHADOW": {
+            "calls": 16,
+            "generation_seconds": 6.882265615044162,
+            "length_outputs": 0,
+            "output_tokens": 224,
+            "prompt_tokens": 2133
+          },
+          "report2_PROMOTE": {
+            "calls": 16,
+            "generation_seconds": 9.728877487024874,
+            "length_outputs": 0,
+            "output_tokens": 224,
+            "prompt_tokens": 2133
+          },
+          "report2_SHADOW": {
+            "calls": 16,
+            "generation_seconds": 6.907987841972499,
+            "length_outputs": 0,
+            "output_tokens": 224,
+            "prompt_tokens": 2133
+          },
+          "wake1": {
+            "calls": 16,
+            "generation_seconds": 6.640164807991823,
+            "length_outputs": 0,
+            "output_tokens": 216,
+            "prompt_tokens": 2546
+          },
+          "wake2_PROMOTE": {
+            "calls": 16,
+            "generation_seconds": 9.399956594977994,
+            "length_outputs": 0,
+            "output_tokens": 216,
+            "prompt_tokens": 2552
+          },
+          "wake2_SHADOW": {
+            "calls": 16,
+            "generation_seconds": 6.668001975995139,
+            "length_outputs": 0,
+            "output_tokens": 216,
+            "prompt_tokens": 2552
+          }
+        },
+        "file_count": 527,
+        "formation": {
+          "fit1": {
+            "admitted": 8,
+            "candidate_sha256": "5ca819932215122d5ba32c0716999f3a789b58d9f9136f0341afdbedb9bb6e92",
+            "corpus_sha256": "fb9e55ba7be8fab80a79347a6764eb8314117bf9d8238bc071650b450104cc9d",
+            "initialized_from_sha256": "1a28421dffcee174137818b590991ba80678b58f6c63fd8eab027a933486efd5",
+            "rejected": 0,
+            "shared_physical_fit": true,
+            "status": "FIT_COMPLETE"
+          },
+          "fit2_PROMOTE": {
+            "admitted": 16,
+            "candidate_sha256": "4670fed9c3abd9ea1e018ac0fd7df9f08a6fef836c3dfa682e751bf6a2d971fa",
+            "corpus_sha256": "5203dd72eef2799b16f8d4c5f321198ef2c44b17643673897b984c32de878cc1",
+            "initialized_from_sha256": "1a28421dffcee174137818b590991ba80678b58f6c63fd8eab027a933486efd5",
+            "rejected": 0,
+            "shared_physical_fit": false,
+            "status": "FIT_COMPLETE"
+          },
+          "fit2_SHADOW": {
+            "admitted": 16,
+            "candidate_sha256": "731cb892ef4de3571ba3d91f9200290ea704ddf93484a40d67a21a635679fd67",
+            "corpus_sha256": "aea80040dcec3b9b7e60f618bda8d63d209884b804d4d72e55061b477cae8ae4",
+            "initialized_from_sha256": "1a28421dffcee174137818b590991ba80678b58f6c63fd8eab027a933486efd5",
+            "rejected": 0,
+            "shared_physical_fit": false,
+            "status": "FIT_COMPLETE"
+          }
+        },
+        "incomplete": [],
+        "learning_rate": 3e-05,
+        "plan_sha256": "ad992bd3623cbf92110c13c3ac23aa4af221fc0955cfe97771b0ecdfa6e62c47",
+        "reports": {
+          "baseline": {
+            "legal": 16,
+            "length_outputs": 0,
+            "malformed": 0,
+            "new_correct": 4,
+            "new_total": 8,
+            "old_correct": 4,
+            "old_total": 8,
+            "total": 16
+          },
+          "report1_PROMOTE": {
+            "legal": 16,
+            "length_outputs": 0,
+            "malformed": 0,
+            "new_correct": 4,
+            "new_total": 8,
+            "old_correct": 4,
+            "old_total": 8,
+            "total": 16
+          },
+          "report1_SHADOW": {
+            "legal": 16,
+            "length_outputs": 0,
+            "malformed": 0,
+            "new_correct": 4,
+            "new_total": 8,
+            "old_correct": 4,
+            "old_total": 8,
+            "total": 16
+          },
+          "report2_PROMOTE": {
+            "legal": 16,
+            "length_outputs": 0,
+            "malformed": 0,
+            "new_correct": 4,
+            "new_total": 8,
+            "old_correct": 4,
+            "old_total": 8,
+            "total": 16
+          },
+          "report2_SHADOW": {
+            "legal": 16,
+            "length_outputs": 0,
+            "malformed": 0,
+            "new_correct": 4,
+            "new_total": 8,
+            "old_correct": 4,
+            "old_total": 8,
+            "total": 16
+          }
+        },
+        "schema": "astra_l2_public_record_runtime_v1",
+        "scientific_pass": null,
+        "scientific_replay": true,
+        "seal_sha256": "49c212784e8d290c5c22ad4fce809cc1d04c4439fc4472bdf96d29bfcb716f23",
+        "seeds": {
+          "learner": 2,
+          "truth": 2026091302,
+          "vocabulary": 2026091301
+        },
+        "status": "COMPLETE",
+        "two_cycle_complete": true,
+        "work": {
+          "calls": 128,
+          "fits": 3,
+          "updates": 100
+        }
+      },
+      "root_binding": "Root resolved by unique pinned roster plan_sha256; collector does not emit root.",
+      "seed_lr_binding": "collection and roster agree",
+      "status": "COMPLETE",
+      "unavailable": {
+        "controller_elapsed_seconds": null,
+        "first_report_paired_intersections": null,
+        "fit_elapsed_seconds": null,
+        "fit_losses": null,
+        "reason": "Not emitted by native collect API; no raw/model/corpus reads performed."
+      }
+    }
+  },
+  "schema": "astra_l2_lr_analysis_v1",
+  "scientific_pass": null
+}

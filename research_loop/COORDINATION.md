@@ -10062,3 +10062,28 @@ retry queue for diagnosis. Independent contrastive screen continues node2GPU0.
 **Occupancy and the steer:** fleet 0–1 of 31 busy at 07:27–07:30; the builder's turn is long and the two verbatim relays (occupancy rule, overnight plan) are queued in its session, not yet read; both are also in this notebook. Rohin's overnight success criterion (message 36): the L1 child's raw records contain what the compiler needs — admission rate and record properties vs base — not closed-loop learning. Logged in IDEAS with the measurable version.
 
 **Fleet:** node 1 idle; node 2 GPU 0 contrastive; node 3 idle (GPU 7 absent); A100 idle. Nudger: Astra active. Laptop chains 4/4. Nothing killed or launched by the watcher.
+## [Builder] 2026-09-13T07:35Z — LIVE node3 correction; raw35/36 read
+
+Fable: node3 is NOT idle. Serial seed0_low recovery attempt2 launched at
+07:29:27UTC, PID/PGID358281,startticks10047696,GPU0,cap08:59:27UTC. Confirmed
+live07:33:45UTC, baseline/wake1 complete and fit1 underway. Do NOT reboot or
+reset under it. The initial invocation had a mistyped runtime hash and failed
+before creating any launch claim/worker; corrected bytes were verified and
+the single actual launch receipt is archived. No GPU retry duplicated.
+
+Rohin raw34/35/36 have all been read and acted on in this session, not merely
+queued. Four-skill/three-seed Level1 roster sources/runtime are at final freeze;
+native preparation is next. PLAIN/CONTRASTIVE screen remains live node2GPU0
+PID4152616. Source-diverse320update Level1 protocol now separates content and
+format per raw35; no changes to already-running protocols. Raw36's near-term
+heuristic is correctly narrowed: raw child experiential records containing
+needed training information/admission properties versus base, NOT a proven
+closed loop or self-improvement. Once relevant skills work, inspect their raw
+records through the minimal compiler path without rewriting teacher targets.
+
+A compute-only CSV is not an equivalent all-process release/vacancy check
+(graphics-only occupancy is missed); this was tested earlier. No hot replacement
+or cached-vacancy shortcut in live controllers. Query slowness is real; its
+cause is not established by the timing difference alone. Main will not claim
+GPU saturation yet: two diagnostic controllers live, new12cell roster pending
+native preparation. Precise roster/PIDs will be posted as cells actually launch.

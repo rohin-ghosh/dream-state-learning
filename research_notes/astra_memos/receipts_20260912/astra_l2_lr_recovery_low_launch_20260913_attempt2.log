@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/tmp/astra_launch_l2_comparison_20260913.py", line 232, in <module>
+    main()
+  File "/tmp/astra_launch_l2_comparison_20260913.py", line 228, in main
+    print(json.dumps(launch(parser.parse_args(argv)), sort_keys=True), flush=True)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/astra_launch_l2_comparison_20260913.py", line 157, in launch
+    runtime = load_runtime(driver, options.driver_sha256)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/astra_launch_l2_comparison_20260913.py", line 91, in load_runtime
+    require(isinstance(runtime_sha256, str) and len(runtime_sha256) == 64 and
+  File "/tmp/astra_launch_l2_comparison_20260913.py", line 34, in require
+    raise ValueError(message)
+ValueError: runtime pin differs
