@@ -329,3 +329,45 @@ After removing treatment-address `MISS` targets and applying the two wording
 repairs, **PASS**. I found no new leakage, thinker/compiler crossing, invalid
 unit, arithmetic error, missing native endpoint, infeasible added fit, or
 claim expansion. The strongest permitted claim remains Section 6 above.
+
+---
+
+## Final re-audit addendum: v2.1 at `2ae2c62b`
+
+**Verdict: PASS.**
+
+The remaining causal-control defect is removed without changing the
+scientific fit roster or resource ceiling:
+
+- S1 full arms contain exactly `17` semantic blocks + `3` PAD; ATOMS contains
+  exactly `14` EVENT-bearing blocks + `6` PAD.
+- S2 FULL contains exactly `19` semantic blocks + `1` PAD; OLD_REPLAY contains
+  exactly `17` OLD blocks + `3` PAD.
+- ATOMS LINK addresses and OLD_REPLAY NEW addresses are held out. Neither arm
+  is trained on a false `MISS`. Exact refusal is reported if generated; the
+  causal safety gate is zero usable false rows.
+- All arms still have `20 x 8 = 160` examples per epoch, `200` updates per fit,
+  `14` fits, and `2,800` total updates. Parser-disjoint padding, not a semantic
+  negative, equalizes active target tokens.
+- Per-token weighting, approximate work matching, duplicated semantic calls,
+  and false-MISS fallback are prohibited in this version.
+- The profiled `S1_AUTH` and `S2_FULL_R0` are registered scientific fits inside
+  the fourteen-fit cap; there are no disposable profile fits.
+
+The full-arm query counts independently recompute: S1 is `8 READ EVENT + 6
+READ EVENTS_AT + 3 READ LINKS_FROM = 17`; S2 is `9 + 6 + 4 = 19` because the
+new event shares source node `H` but adds one individual EVENT address and one
+LINK-source address. ATOMS removes the three LINK blocks; OLD_REPLAY removes
+the two NEW-dependent address blocks and retains the seventeen OLD blocks.
+
+The post-S1 native visibility contract, reachout ceilings and causal cuts,
+endpoint-specific AUTH-minus-ATOMS estimands, artifact retention, and
+on-policy lifetime wording remain intact. I found no remaining fatal leakage,
+shortcut, thinker/compiler crossing, invalid causal claim, missing baseline/native
+endpoint, unit error, arithmetic error, or infeasible extra fit.
+
+One non-blocking editorial singular remains: Section 11.1 says “The three
+stage-level padding responses,” although ATOMS has six. Implement from the
+explicit per-arm table; changing that phrase to “The registered stage-level
+padding responses” would remove the typo but does not alter or block the
+protocol.
