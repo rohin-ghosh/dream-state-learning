@@ -1,6 +1,34 @@
 # Astra current handoff — 2026-09-12T19:56:24.212350+00:00
 
-## CURRENT — September13 03:10UTC (supersedes older status below)
+## CURRENT — September13 03:27UTC (supersedes older status below)
+
+**Q0 attempt2 LIVE** node3GPU2/controller306207(start_ticks8572061), start
+03:23:31UTC, harddeadline04:08:31UTC. Root
+`/localhome/local-rohing/astra_diagnostics/astra_pairwise_Q0_root1_20260913_attempt2`.
+Source `/localhome/local-rohing/astra_sources/q0_counter_repair_20260913_attempt1`,
+executor1459c037cccf2f043bc02f40fb9957f38c5620a4d0bcfc8cbb4ebf30fd31182a,
+manifestbd263500a4d1176dfec5e3489db0c20e479f9703eb745b9902dde017d82754d1.
+Main217 native CPU testsPASS136.149s, no skips; real tiny PEFT coveragePASS.
+Full319file source archive d5ed60de9d6a1cda0efcbbfca878a54bd9b46fc10110020137f813fea191a5d7
+preserved. Use exactnativevenvPython, offline/hiddenCUDA for terminal replay.
+External stdout /tmp/astra_pairwise_Q0_root1_20260913_attempt2.controller.log.
+Never restart/rootreuse or alter live source. Wait terminal+controllerexit,
+replay, then collect once. Largecapsule goes gpu_artifacts_local/q0_20260913_attempt2.
+Attempt1 remains NONREPORTABLE; raw canary observations cannot be promoted.
+
+Rohin message29 recovered (end of THESIS_RAW_ROHIN_2026-09-11.md, huge file—read
+only29). Birth per-skill work resumes in parallel NOW, not afterQ0. Confucius
+01a098cc-7279-7c01-9f18-fd93098d90e2 owns ONLY
+organism_v6/birth_skill_corpus.py, tests/test_birth_skill_corpus.py,
+/tmp/astra_birth_skill_corpus_handoff_20260913.md. Bounded authored development
+perception/reflection/judgement corpus/probes, actual classroom grammar and
+explicit anchor variants; no full mixture default, Q0 data, native runs, or
+claimed context-distilled model targets. Await EDITSTOP and Main validation.
+No new birth native runner/fit selected yet. Main sole Git/native operator.
+Carver/Boole Q0 repair EDITSTOP; relaycomponent acceptedCPU-only, no relaygate.
+Manuscriptthrough124 reviewed, collaboratorUNSENT. Fullmission incomplete.
+
+## Previous terminal and repair checkpoint — September13 03:10UTC
 
 **NO Main GPU job live.** Q0 attempt1 terminalNONREPORTABLE_RUNTIME_ABORT:
 final native forward accounting failed (PEFT audit/fits hook0, natural128/148;

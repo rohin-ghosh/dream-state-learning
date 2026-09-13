@@ -1,4 +1,14 @@
-## Current superseding snapshot — 2026-09-13 03:10 UTC
+## Current superseding snapshot — 2026-09-13 03:27 UTC
+
+Q0 repaired attempt2 LIVE on node3GPU2/controller306207, harddeadline04:08:31UTC.
+Instrumentation-only repair accepted by217 native CPU tests; real tiny PEFT
+training/OFF/ON-generation hook coverage verified. No result yet; attempt1
+remains nonreportable/immutable. Exact custody in HANDOFF. Rohin message29
+received: per-skill birth-v2 corpus/probe CPU work now runs in parallel under
+Confucius ownership, not a full mixture and not yet a native fit. Anchor removal
+is an empirical question, not assumed persistence. C11guard stays deferred.
+
+## Historical superseded snapshot — 2026-09-13 03:10 UTC
 
 Q0 attempt1 is TERMINAL_NONREPORTABLE, not a writer null/pass. Final raw forward
 accounting detected zero PEFT hook calls; correct fail-closed replay preserved

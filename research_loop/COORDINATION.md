@@ -8652,3 +8652,38 @@ recipe.  Attempt 1 releases neither confirmations nor the endogenous relay.
 
 Rohin, in substance: (a) "doesn't hurt to test 0 first" — level-0 replications are fine; (b) does the birth corpus need experience? — he is unsure, hasn't done this kind of pre-training; (c) IDEA TO TEST: an anchor — "a system prompt that points to the behaviours that are needed, then the behaviours, and reinforcements on the system prompt"; a prompt may activate some pretrained connections during the fit; persistence after the prompt is removed is the open question, and "the prompt can leave once the other flywheels start spinning"; (d) agrees the formation grammar must be tested; (e) STEER: test around the different skills being pre-trained — perception, reflection, judgement — each with a correlated level-2 probe, rather than one-shotting the full mixture; keep the good evidence as data; well documented and replicable; (f) "run the deadline experiment" (Q0 — running); (g) asks how long the builder is taking on the next level-1 corpus design and whether it is in CPU tests now.
 Watcher notes for the builder: (1) the anchor idea has a name and a recipe — context distillation (Askell et al. 2021; Snell, Klein & Zhong 2022): behaviour generated/scored with the manifest prompt present, trained on inputs with it absent, so it is prompt-free by construction; you already use the term for process-v2; a three-arm level-0 test (prompt at train+test / train only / distilled) would settle persistence cheaply; (2) my answer to (b): experience-shaped first-person records in the classroom's own grammar, many skins per behaviour — not the toy PROSPECT/REVISE grammar — with the child's real experience arriving only at level 2; (3) Rohin's per-skill matrix is the births × probes design already sketched at 00:40; (4) on (g), the notebook shows no new birth corpus in CPU tests since SEQ-124 — the queue is Q0 root 1 (live) and the endogenous relay component; if that is the intended order (Codex's deadline audit says it is), a one-line statement of when birth v2 design resumes would answer Rohin.
+
+## [Builder] 2026-09-13T03:27Z — repaired Q0 attempt2 LIVE; birth per-skill work resumes now
+
+Attempt2 launched03:23:31.475675UTC on node3GPU2, controller/PGID306207,
+start_ticks8572061, deadline04:08:31.475675UTC. Manifest
+bd263500a4d1176dfec5e3489db0c20e479f9703eb745b9902dde017d82754d1;
+immutable source q0_counter_repair_20260913_attempt1/executor1459c037. All217
+nativeCPU tests passed, including real PEFT bypass/generation regressions.
+Fail-fast prelaunch passed: no compute processes, no matching reservations in11
+readable same-user environments, no unresolved same-user environment; the known
+systemd manager3245 matched PPID1/start2469 and was explicitly recorded as
+nonlearner. No failed assertion was ignored this time. Native audit is active.
+Full repaired319-file source capsule d5ed60de9d6a1cda0efcbbfca878a54bd9b46fc10110020137f813fea191a5d7
+matches accepted source/support hashes and is preserved in receipts. All old
+attempt1 evidence stays immutable/nonreportable; no scientific result yet.
+
+**Answer to Rohin message29:** the next birth corpus was NOT already in CPU
+tests. I prioritized implementing, running, and repairing the deadline Q0
+writer gate. **Birth-v2 per-skill corpus design/CPU implementation resumes now
+in parallel, not after Q0.** Confucius owns only birth_skill_corpus.py and its
+tests, using actual classroom response grammar and separately traceable authored
+perception/reflection/judgement slices with correlated held-out public-situation
+probes. Target first handoff within20min, not a claimed completion time. No
+full-mixture default, no Q0 inputs/outcomes, no new model/fit/clean-child claim.
+System-anchor ON/OFF variants are explicit hypotheses; authored targets are
+not mislabeled model context distillation. Prompt-free transfer must be measured.
+
+Simple good/bad: **good**—bounded fact/behavior writes and replay have positive
+controlled evidence, and we can now execute the closed writer lifecycle;
+**bad/unproven**—the first birth mixture does not reliably transfer into the
+classroom's response grammar, and useful autonomous experience-to-write learning
+is still not established. Q0 attempt1 was an instrumentation abort, not a
+scientific failure of learning. Per-skill birth/probe comparisons address that
+activation question without pretending level1 or level2 is generally solved.
+Formal C11 remains deferred. No hardware reset or foreign process intervention.
