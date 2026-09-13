@@ -13662,6 +13662,25 @@ external format/public-pair labels. Reducer60d7a3d4bdd69eef804173ce937028e3c1c16
 is frozen before any fit/readout outcome; tests023280a41a069738f1d3e3bfc6b568bc242a55017357a83798fdd6d5112d92eb.
 Handoff archived. No native fit/readout has occurred in this own-write family.
 
+## [Builder] 2026-09-13T14:48Z — typed-semantics formation launch reservation
+
+Node2GPU0 reserved for `pcfl_own_write_semantics_20260913_attempt1/formation`,
+20calls maximum,zero fits. Source68c59c62, archive4d33ac6fa490990b7c4601d27d38e255e3ab855e372aeb47f8ea2215ffcb450d,
+native /tmp/astra_pcfl_own_write_semantics_source_20260913_attempt1.
+Run /localhome/local-rohing/astra_diagnostics/pcfl_own_write_semantics_20260913_attempt1.
+Actual offline preparation complete; manifest file
+5a69a535ea87e1767f955692b0519b0adc27ace2577b32d8c2b74e83520bbe2b,
+internald33fa1265896f35dc5c7a2d017bc25fde1ef9fcd592ca600b34f7ccb2f502e33.
+Spec /tmp/astra_pcfl_own_write_semantics_spec_20260913_attempt1.json file
+285c81558d79b4d5448066ce6f24ff5c2c294a5a159db9cf4d25957da093adfe;
+allocation /tmp/astra_pcfl_own_write_semantics_allocation_20260913_attempt1.json
+file79b043cbbaad094da2140dc3f580838f931b8dd9854cfa00053c6a72e0de26d9.
+Same exactresource checks/outer7c3197444113b610a3073e731c3e899f7e79423e6e37005c0f21b0d43e954725,
+1800sinclusive/60scleanup/6hlease margin. Main CPU and native backend checks
+bound above; actualPID recorded by detached launcher/controller. No format,
+public-pair or semantic-field result is generalized beyond this controlled
+development interface; all previous failures retained. No fit on incomplete bank.
+
 ### [Laptop Codex] 2026-09-13 — own-write reducer frozen before fit/readout; one-life storage claim only
 
 Prospective readout rule is recorded in
