@@ -13922,3 +13922,34 @@ actor's 1,952-call ceiling. Selected EXACT and identical FULL/NATIVE results
 are reused, not retried. Claims remain limited to a supplied-memory interface
 ceiling. No runtime/test edit, model/tokenizer call, benchmark materialization,
 fit, GPU work, or scientific claim was performed.
+
+## [Independent format-scaffold audit] 2026-09-13 — conditional go for narrow own-write storage only
+
+Read-only audit
+`research_notes/analysis/2026-09-13_pcfl_own_write_format_scaffold_audit.md`
+reviews builder commits `69b760cd`, `cf572c73`, `25c427c0`, `68c59c62`,
+`e37af6fb`, the frozen reducer, and committed SEQ-171/172 receipts. Verdict:
+the target-free regex `[^\r\n]+\n` is acceptable as disclosed external
+action-format assistance for this disposable storage diagnostic; it is not
+evidence of learned serialization. Publicly assigning the EVENT pair and
+teaching VIA/EVIDENCE semantics makes LINK formation a controlled curriculum,
+not autonomous connection discovery.
+
+The thinker/compiler boundary is not silently crossed: exact child output is
+world-admitted and trained without compiler repair or prompt-copy targets. But
+the target-authoring behavior is externally scaffolded, so attribution is
+narrow. AUTH and C0 readout interfaces are symmetric and unconstrained; the
+intended adapter mount is the only readout difference. The comparison is not
+compute-matched, W8 holds out wrapper wording only, and strict accuracy mixes
+payload storage with learned formatting. Mandatory secondaries are W8
+semantic-stop vectors, LF-only/other-error raw splits, EVENT/EVENTS_AT/
+LINKS_FROM strata, all per-address vectors, W0-W7 trained-surface diagnostics,
+and exact accounting of one life/root/fit. Prefer unconstrained EOS child
+payload plus separately receipted harness record delimiter for future
+paper-grade self-authorship; the regex remains acceptable only under the
+current explicit `FORMAT_SCAFFOLDED_DESCRIPTIVE_ONLY` label.
+
+At the audit cut, v5 had only a launch reservation: no terminal v5 formation,
+fit, or AUTH/C0 readout result was committed. SEQ-171/172 remain preserved
+formation failures. No runtime/GPU files were edited and no execution was
+performed.
