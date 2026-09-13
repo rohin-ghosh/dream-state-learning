@@ -3,9 +3,10 @@
 The caller supplies a checked, normalized completed-birth pin, not merely an
 adapter directory. Its receipt/plan hashes are custody references: this module
 does not interpret the birth runner's terminal artifacts or authenticate origin.
-Capture/replay use the unchanged interaction_v3 formation schedule. Backend
-injection supports CPU fixtures; native routing uses one engine, parent OFF and
-one immutable child LoRA. Loader receipts are not semantic no-leakage proofs.
+Default capture/replay use the unchanged interaction_v3 formation schedule.
+An explicit exploratory binding selects the separate action-projection schedule
+and AUTH or OFF child; native routing uses one engine and never switches adapters.
+Backend injection supports CPU fixtures. Loader receipts are not semantic proofs.
 """
 from __future__ import annotations
 
@@ -17,9 +18,11 @@ import re
 import time
 
 from . import model_backend, rulegame_parenting_diagnostic as diagnostic
+from . import rulegame_action_projection as projection
 
 
 SCHEMA = "born_rulegame_formation_v1"
+PROJECTION_SCHEMA = "born_rulegame_formation_action_projection_v1"
 BIRTH_PIN_SCHEMA = "completed_birth_adapter_pin_v1"
 PROTOCOL = "interaction_v3"
 ROLES = ("wake", "restate", "record", "parent")
@@ -39,11 +42,15 @@ def _hashes(value):
                 and ".." not in Path(name).parts and _sha(pin) for name, pin in value.items()))
 
 
-def source_hashes():
-    return dict(diagnostic.sources(), **{
+def source_hashes(interface=None):
+    sources = dict(diagnostic.sources(), **{
         "born_rulegame_formation.py": diagnostic.digest(Path(__file__)),
         "reasoning_neutral_probe.py": diagnostic.digest(Path(__file__).with_name("reasoning_neutral_probe.py")),
     })
+    if interface is not None:
+        require(interface == projection.INTERFACE, "unknown formation interface")
+        sources["rulegame_action_projection.py"] = diagnostic.digest(Path(projection.__file__))
+    return sources
 
 
 def _birth_pin(pin):
@@ -70,34 +77,57 @@ def _birth_pin(pin):
             {"adapter_config.json", "adapter_model.bin"}), "missing or ambiguous birth adapter pins")
 
 
-def make_binding(birth_pin, *, expected_birth_pin_sha256):
+def make_binding(birth_pin, *, expected_birth_pin_sha256, interface=None, child_mode=None):
     """Bind a caller-verified completion summary (hash uses diagnostic.value_hash).
 
     Main/the birth runner must derive child_identity and model_files from its
     verified completed fit and bind the real plan and completion-receipt hashes.
     No birth scores or material are accepted here or sent to any generation role.
+    interface=None preserves the original binding exactly. Projection requires
+    interface=projection.INTERFACE and child_mode='AUTH' or 'OFF'; OFF references
+    the genuine AUTH completion for matching base custody but loads no adapter.
     """
     require(diagnostic.value_hash(birth_pin) == expected_birth_pin_sha256, "birth pin hash mismatch")
     _birth_pin(birth_pin)
     child = copy.deepcopy(birth_pin["child_identity"])
     parent = dict(child, adapter_input=None, adapter_files={})
-    return dict(schema=SCHEMA, protocol=PROTOCOL, birth=copy.deepcopy(birth_pin),
-                role_identities={role: copy.deepcopy(parent if role == "parent" else child) for role in ROLES},
-                sources=source_hashes())
+    if interface is None:
+        require(child_mode is None, "child comparator requires explicit projection interface")
+        return dict(schema=SCHEMA, protocol=PROTOCOL, birth=copy.deepcopy(birth_pin),
+                    role_identities={role: copy.deepcopy(parent if role == "parent" else child) for role in ROLES},
+                    sources=source_hashes())
+    require(interface == projection.INTERFACE and child_mode in ("AUTH", "OFF"), "explicit projection AUTH/OFF required")
+    require(birth_pin["birth_arm"] == "AUTH", "projection comparison requires the genuine completed AUTH reference")
+    return dict(schema=PROJECTION_SCHEMA, protocol=PROTOCOL, birth=copy.deepcopy(birth_pin),
+                role_identities={role: copy.deepcopy(parent if role == "parent" or child_mode == "OFF" else child) for role in ROLES},
+                sources=source_hashes(interface), interface=interface, child_mode=child_mode,
+                task_schedule=projection.schedule(), wake_slots=projection.WAKE_SLOTS)
 
 
 def _binding(binding, expected_binding_sha256):
     require(diagnostic.value_hash(binding) == expected_binding_sha256, "formation binding hash mismatch")
-    require(set(binding) == {"schema", "protocol", "birth", "role_identities", "sources"}
-            and binding["schema"] == SCHEMA and binding["protocol"] == PROTOCOL, "formation version mismatch")
-    expected = make_binding(binding["birth"], expected_birth_pin_sha256=diagnostic.value_hash(binding["birth"]))
+    fields = {"schema", "protocol", "birth", "role_identities", "sources"}
+    if binding.get("schema") == PROJECTION_SCHEMA:
+        require(set(binding) == fields | {"interface", "child_mode", "task_schedule", "wake_slots"}
+                and binding["protocol"] == PROTOCOL, "projection formation version mismatch")
+        expected = make_binding(binding["birth"], expected_birth_pin_sha256=diagnostic.value_hash(binding["birth"]),
+                                interface=binding["interface"], child_mode=binding["child_mode"])
+    else:
+        require(set(binding) == fields and binding["schema"] == SCHEMA and binding["protocol"] == PROTOCOL, "formation version mismatch")
+        expected = make_binding(binding["birth"], expected_birth_pin_sha256=diagnostic.value_hash(binding["birth"]))
     require(binding == expected, "source or per-role identity mismatch")
 
 
 def _route(binding, role):
     require(role in ROLES, "unknown generation role")
-    return None if role == "parent" else dict(name="born_child", id=1,
-        path=binding["role_identities"][role]["adapter_input"])
+    adapter = binding["role_identities"][role]["adapter_input"]
+    return None if adapter is None else dict(name="born_child", id=1, path=adapter)
+
+
+def _formation_interface(binding):
+    if binding["schema"] == PROJECTION_SCHEMA:
+        return projection.run_formation, projection.CLAIM_BOUNDARY
+    return diagnostic.run_formation, CLAIM_BOUNDARY
 
 
 def _request(count, role, arm, eid, tick, prompt):
@@ -133,6 +163,8 @@ class RoleCalls:
         require(not self.failed, "failed capture cannot continue")
         try:
             require(role in ROLES and self.counts[role] < diagnostic.LIMITS["formation"][role], "response budget exhausted")
+            if self.binding["schema"] == PROJECTION_SCHEMA:
+                require(eid in self.binding["task_schedule"]["formation"], "projection development source required")
             started = self.clock()
             require(math.isfinite(started) and self.last_ended <= started < self.cutoff, "formation cutoff/order exceeded")
             identity = self.binding["role_identities"][role]
@@ -168,6 +200,8 @@ class RoleReplay:
 
     def ask(self, role, arm, eid, tick, prompt):
         require(role in ROLES and self.counts[role] < diagnostic.LIMITS["formation"][role], "response budget exhausted")
+        if self.binding["schema"] == PROJECTION_SCHEMA:
+            require(eid in self.binding["task_schedule"]["formation"], "projection development source required")
         require(self.count < len(self.rows), "missing raw call")
         row = self.rows[self.count]
         expected = _request(self.count, role, arm, eid, tick, prompt)
@@ -201,13 +235,14 @@ def capture_formation(backend, binding, *, expected_binding_sha256, cutoff, cloc
     """
     calls = RoleCalls(backend, binding, expected_binding_sha256=expected_binding_sha256, cutoff=cutoff, clock=clock)
     events = diagnostic.Events()
-    capture = dict(schema=SCHEMA, protocol=PROTOCOL, binding=copy.deepcopy(binding),
+    run_formation, claim = _formation_interface(binding)
+    capture = dict(schema=binding["schema"], protocol=PROTOCOL, binding=copy.deepcopy(binding),
                    binding_sha256=expected_binding_sha256, cutoff=cutoff,
-                   claim_boundary=CLAIM_BOUNDARY, status="FAILED_PARTIAL", result=None,
+                   claim_boundary=claim, status="FAILED_PARTIAL", result=None,
                    calls=calls.rows, events=events.rows)
     try:
         backend.verify()
-        result = diagnostic.run_formation(calls, events)
+        result = run_formation(calls, events)
         backend.verify()
         _binding(binding, expected_binding_sha256)
         require(clock() < cutoff, "formation cutoff exceeded")
@@ -222,15 +257,16 @@ def capture_formation(backend, binding, *, expected_binding_sha256, cutoff, cloc
 def replay_formation(capture, binding, *, expected_binding_sha256, cutoff):
     """Recompute every public prompt/world join; no backend or model calls."""
     _binding(binding, expected_binding_sha256)
-    require(capture["schema"] == SCHEMA and capture["protocol"] == PROTOCOL, "capture version mismatch")
+    run_formation, claim = _formation_interface(binding)
+    require(capture["schema"] == binding["schema"] and capture["protocol"] == PROTOCOL, "capture version mismatch")
     require(capture["binding"] == binding and capture["binding_sha256"] == expected_binding_sha256,
             "capture binding mismatch")
     require(capture["cutoff"] == cutoff, "capture cutoff mismatch")
-    require(capture["status"] == "AWAITING_MAIN_AUDIT" and capture["claim_boundary"] == CLAIM_BOUNDARY,
+    require(capture["status"] == "AWAITING_MAIN_AUDIT" and capture["claim_boundary"] == claim,
             "incomplete capture or claim boundary mismatch")
     calls = RoleReplay(capture["calls"], binding, expected_binding_sha256=expected_binding_sha256, cutoff=capture["cutoff"])
     events = diagnostic.Events()
-    result = diagnostic.run_formation(calls, events)
+    result = run_formation(calls, events)
     require(calls.count == len(capture["calls"]), "extra raw calls")
     require(result == capture["result"], "recomputed formation result mismatch")
     require(events.rows == capture["events"], "execution/record provenance mismatch")
@@ -253,7 +289,8 @@ class NativeRoleBackend:
         self._files()
         native = diagnostic.NativeBackend(self.child["model_input"], self.child["adapter_input"])
         self.backend = native.backend
-        self.child_lora = self.backend._LoRARequest("born_child", 1, self.child["adapter_input"])
+        self.child_lora = (self.backend._LoRARequest("born_child", 1, self.child["adapter_input"])
+                           if self.child["adapter_input"] is not None else None)
         self.verify()
 
     def _files(self):
@@ -265,8 +302,11 @@ class NativeRoleBackend:
         self._files()
         require(self.backend.generation_identity() == self.child, "engine child loader changed")
         require(self.backend.adapter_path == self.child["adapter_input"], "engine adapter path changed")
-        require(self.child_lora.lora_name == "born_child" and self.child_lora.lora_int_id == 1
-                and self.child_lora.lora_path == self.child["adapter_input"], "child LoRA request changed")
+        if self.child["adapter_input"] is None:
+            require(self.child_lora is None, "OFF must not create a synthetic child LoRA")
+        else:
+            require(self.child_lora is not None and self.child_lora.lora_name == "born_child" and self.child_lora.lora_int_id == 1
+                    and self.child_lora.lora_path == self.child["adapter_input"], "child LoRA request changed")
 
     def identity(self, role):
         require(role in ROLES, "unknown generation role")
@@ -279,6 +319,8 @@ class NativeRoleBackend:
     def generate(self, request):
         from vllm import SamplingParams
         role = request["role"]
+        if self.binding["schema"] == PROJECTION_SCHEMA:
+            require(request["eid"] in self.binding["task_schedule"]["formation"], "projection development source required")
         identity = self.identity(role)
         require(request == _request(int(request["call_id"]), role, request["arm"], request["eid"], request["tick"], request["prompt"]),
                 "native request settings/version mismatch")
@@ -288,7 +330,10 @@ class NativeRoleBackend:
         require(len(backend.tok.encode(rendered)) + request["max_tokens"] <= diagnostic.MAX_MODEL_LEN, "prompt exceeds model limit")
         sampling = SamplingParams(max_tokens=request["max_tokens"], temperature=request["temperature"], seed=request["seed"],
                                   stop=request["stop"], include_stop_str_in_output=request["include_stop_str_in_output"])
-        lora = None if role == "parent" else self.child_lora
+        route = _route(self.binding, role)
+        lora = None if route is None else self.child_lora
+        require((lora is None) == (route is None), "native role LoRA route mismatch")
+        require(self.child["adapter_input"] is not None or self.child_lora is None, "OFF must not create a synthetic child LoRA")
         require(lora is None or (lora.lora_name == "born_child" and lora.lora_int_id == 1
                 and lora.lora_path == self.child["adapter_input"]), "child LoRA request changed")
         outputs = backend.llm.generate([rendered], sampling, lora_request=lora, use_tqdm=False)

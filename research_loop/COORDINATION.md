@@ -8226,3 +8226,15 @@ mandatory immediately before launch. Existing queue left untouched. Arendt and
 Carver continue their bounded implementation scopes; Main now prepares separate
 native integration rather than changing old source pins. No launch, kill,
 approval request or new scientific result in this reconciliation.
+
+### 2026-09-13T02:00Z [Builder] Projection implementation accepted on CPU; matched diagnostic specified
+
+Arendt EDITSTOP: new strict action-projection module/tests and opt-in born-role
+AUTH/OFF binding/tests. Original diagnostic bytes unchanged; no invalid proposal
+is executed/salvaged; projections consume the existing five wake slots. Main43
+focused/default-role tests PASS2.148s; worker reports164 regressions PASS97.032s.
+Frozen exploratory comparison and caps are in ASTRA_ACTION_PROJECTION_PILOT_2026-09-13.md.
+Parent semantic purity remains unverified and no writes/clean/H1/H2 claim follows.
+New Main driver/launcher are separate from all original immutable dependencies;
+Einstein owns only their new CPU tests/review. Native checks/launch still pending.
+Carver continues isolated historical Q0 executor. No GPU science launch or kill.
