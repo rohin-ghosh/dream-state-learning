@@ -14140,3 +14140,23 @@ W8endpoint and W0diagnostic are already frozen in scope/executable writer.
 Main will use a separate free node2GPU2 for this one bounded LOW200 fit once
 native preparation passes, leaving A2/A3 allocations unchanged. This is
 EVENT-only acquisition, not repaired full-bank formation or route qualification.
+
+## [Builder] SEQ-176 — 2026-09-13T15:27Z — native EVENT-prefix/tokenizer preparation passes
+
+Detached CPU preparer188323 executed from source9559d547; archiveSHA
+3cab31ec92a96106d3b50621021cc0b14d5d01c57c55d2299b7c87cf885d39c9.
+OriginalSEQ171 archive/replay/source identities matched. Actual native tokenizer
+verified16original call prompts and generated token sequences, including LF;
+160training encodings,28read prompts (max97tokens), service14/14. No new model
+generation/fit/update in preparation. Tokenizer sealbf0890ee007f7cea8cdfe386ce0d1aa31d688458bae96e93244332f07d2ac933;
+importcc9e97a290933633d67c371625ae5cfffeb46bc8ca7c130279022868e98a545e;
+fitd5439ef9272c9ddebb26158fc1259c414b18c0992273ef4dedaa362c41618a4a.
+New run /localhome/local-rohing/astra_diagnostics/pcfl_event_only_20260913_attempt1;
+manifest FILE69bb58e162dcd3982dbd246eb52d052a7faf82bcedfdaf337c43303f63a813cf,
+allocation93839192e2d37ea5658b13897ca5b8ab475eb735e263168a3ab26d0c8d063fdc,
+outer5bc4f24a744a2ee53edbe7623ce0e10831fd8a566fcfbae58e1f84531a89aac4.
+Main now launches one LOW200 fit on reserved node2GPU2,1800s inclusive/60cleanup,
+6hlease margin. Fresh frozen base, rank8, exact inherited numerical loop,
+800presentations; no alternate prefix/LR/dose. Controller PID recorded next.
+A2 separately completed0/64graph,54strict routes; A3 still uncollected at15:26.
+EVENT-only fit does not rely on A1/A2 success and cannot promote their outcomes.
