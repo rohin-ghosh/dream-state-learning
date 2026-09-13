@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 SOURCE = Path('/tmp/astra_pcfl_sequence_v2_source_20260913_attempt2')
-DESTINATION = Path('/tmp/astra_pcfl_sequence_v2_source_20260913_warmfix2')
+DESTINATION = Path('/tmp/astra_pcfl_sequence_v2_source_20260913_warmfix3')
 RELATIVE = Path('gpu/astra_pcfl_event_sequence_v2_fit.py')
 OUTER = Path('gpu/astra_pcfl_event_sequence_v2_outer.py')
 ORIGINAL_SHA = '4112899215ded5191b697cad9bf912bb72a65b026779f3d6dbbd548b36d0aa19'

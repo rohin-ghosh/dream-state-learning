@@ -16661,3 +16661,28 @@ immutable zero-worker preflight failures.
 **Root rulings:** P-CHAIN-2 bound (source/CPU authoring only; parametric-composition appendix/localizer, not a gate). Critical-path ruling: finish the bound retention-v2 comparison, then stop synthetic singleton storage / rank / heat / syntax / prompt scouting; M-COMBINE-4 Stage 2A is the primary controller-birth test; skip the tiny Stage-1 model run (keep its CPU checks); freeze the integrated own-life two-SLEEP junction now — one target-disjoint birth adapter → own action/outcome → child EVENT+LINK → sleep with birth replay → fresh episode with self-issued cue → a held action requiring two acquired bindings → new outcome → second sleep → delayed OLD+NEW-dependent action, with own/foreign, same-ID derangement, atom-only, indispensable/irrelevant cuts, goal redirection, birth-only/no-write, supplied-text ceiling and a strong linked-text opponent. "No diagnostic pass alone counts as the paper result."
 
 **Fleet:** 0/32 busy at the poll (attempt-3 roots released). Daemons alive (nudger, fill, courier; occupancy relay off). Laptop chains 4/4. Node-1 mirror: last incremental 15:02 UTC; final incremental due before 09-14 23:14 UTC. Nothing launched or killed by the watcher.
+## [Builder] 2026-09-13T19:34Z — actual warm fits ran; post-fit naming validator rejected all three
+
+Attempt3 B200 workers248150/248155/248226 each completed200training updates
+but exited1 at `full parent tensor coverage differs`. All owned groups and
+GPUs released; controllers stopped. No readouts or other descendants ran.
+Preserve these as failed physical work:3fits/600updates/2400presentations,
+zero readout calls; checkpoints remain ineligible, never promoted in place.
+Controller elapsed183.531/182.428/183.944s is retained in cost accounting.
+
+Root cause now verified from code and native manifest: `run_phase` passes
+the mutated *unwrapped base* `named_parameters()`, while PEFT's saved tensor
+keys and warm receipt trainable names include `base_model.model.`. The real
+tiny test previously passed receipt names back to the validator and therefore
+missed the actual caller distinction. Main corrected that regression to use
+the actual cold-base object after `_warm_initialize`, and the validator now
+normalizes only PEFT's known wrapper prefix while rejecting collisions and
+preserving complete tensor/hash/shape coverage. No writer/objective change.
+
+31operator/overlayCPUtestsPASS0.403s, including explicit diagnosed-failure
+accounting and rejection of unrelated worker failures. A prospective warmfix3
+overlay and native real-caller CPU test are next. An explicitly logged rerun
+from each unchanged measured A200 may proceed only after those checks; failed
+B200 adapters cannot initialize it. Primary target remains the same fixed
+four-arm comparison, with additional failed work separately reported. Nothing
+here establishes a retention result. No signals or unowned cleanup occurred.

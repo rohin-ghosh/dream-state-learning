@@ -17,7 +17,7 @@ import time
 from types import SimpleNamespace
 
 SOURCE = Path('/tmp/astra_pcfl_sequence_v2_source_20260913_attempt2')
-REPAIR_SOURCE = Path('/tmp/astra_pcfl_sequence_v2_source_20260913_warmfix2')
+REPAIR_SOURCE = Path('/tmp/astra_pcfl_sequence_v2_source_20260913_warmfix3')
 PHASES = ('B200_NEW_DOSE', 'B400_FIXED_WORK', 'REPLAY400', 'CLEAN_CUM600')
 COUNTS = dict(fits=4, updates=1600, presentations=6400, calls=64,
               initial_updates=200, total_updates=1800)
@@ -193,21 +193,49 @@ def prepare(args, runtime):
         originals.append(binding)
     preserve(originals)
     prior_failure = None
+    prior_failed_work = dict(fits=0, updates=0, presentations=0, readout_calls=0)
     if getattr(args, 'prior_failure', None) is not None:
         prior_failure = dict(path=args.prior_failure, sha256=args.prior_failure_sha256)
         stopped = checked(prior_failure)
         previous = checked(pin(Path(args.prior_failure).parent / 'manifest.json'))
-        require(previous['entry'] == entry and previous['seed'] == args.seed and previous['source_root'] == str(source),
+        kind = getattr(args, 'prior_failure_kind', 'preworker')
+        require(kind in ('preworker', 'warm-prefix-validation'), 'explicit supported failure kind')
+        compatible_source = previous['source_root'] == str(source)
+        if kind == 'warm-prefix-validation':
+            compatible_source = (previous['source_root'] == '/tmp/astra_pcfl_sequence_v2_source_20260913_warmfix2'
+                                 and getattr(runtime, 'repair', None) is not None
+                                 and previous['repair']['original'] == runtime.repair['original'])
+        require(previous['entry'] == entry and previous['seed'] == args.seed and compatible_source,
                 'prior failure seed/source/ancestry mismatch')
         require(stopped['status'] == 'STOPPED' and stopped['phase'] == 'B200_NEW_DOSE'
                 and stopped['stage'] == 'fit' and len(stopped['results']) == 1, 'only preworker first-stage failure supported')
         collection = checked(stopped['results'][0]['collection'])
-        require(collection['status'] == 'FAILED' and collection['worker_identity'] is None
-                and collection['returncode'] is None and collection['stage_inventory'] == {}, 'prior attempt may have executed a worker')
+        failed_root = Path(stopped['results'][0]['collection']['path']).parent
+        if kind == 'warm-prefix-validation':
+            require({name: value for name, value in runtime.acquisition.inventory(failed_root).items()
+                     if name != 'collection.json'} == collection['files'], 'failed attempt inventory drift')
+        require(collection['status'] == 'FAILED', 'failed attempt required')
+        if kind == 'preworker':
+            require(collection['worker_identity'] is None and collection['returncode'] is None
+                    and collection['stage_inventory'] == {}, 'prior attempt may have executed a worker')
+        else:
+            stage_root = Path(stopped['results'][0]['collection']['path']).parent / 'fit'
+            failure = checked(pin(stage_root / 'failure.json'))
+            require(failure == dict(kind='NATIVE', message='full parent tensor coverage differs',
+                    partial_checkpoint_not_eligible=True, phase='B200_NEW_DOSE', status='FAILED', type='ActorError'),
+                    'only diagnosed warm-prefix validator failure eligible for rerun')
+            require(collection['worker_identity'] is not None and collection['returncode'] == 1
+                    and collection['gpu_released'] is True and not (stage_root / 'completed.json').exists(),
+                    'failed worker must be released and unqualified')
+            manifest = checked(pin(stage_root / 'checkpoint/train_manifest.json'))
+            require(manifest['steps'] == 200 and manifest['config']['seed'] == args.seed, 'failed fit dose/seed mismatch')
+            require(manifest['warm_start']['parent_path'] == str(directory / 'fit_outer/fit/checkpoint'), 'failed fit parent mismatch')
+            prior_failed_work = dict(fits=1, updates=200, presentations=800, readout_calls=0)
+            preserve([pin(stage_root / 'failure.json'), pin(stage_root / 'checkpoint/train_manifest.json')])
         elapsed = stopped['elapsed_seconds']
         require(type(elapsed) in (int, float) and math.isfinite(elapsed) and elapsed >= collection['elapsed_seconds'] >= 0,
                 'invalid prior failure cost')
-        initial += elapsed
+        initial = max(initial, previous['initial_outer_seconds']) + elapsed
         preserve([prior_failure, pin(Path(args.prior_failure).parent / 'manifest.json'), stopped['results'][0]['collection']])
     root.mkdir(parents=True)
     (root / 'inputs').mkdir()
@@ -228,6 +256,7 @@ def prepare(args, runtime):
                 acquisition_request=request_pin, acquisition_receipt=pin(root / 'inputs/acquisition_receipt.json'),
                 runtime_c0_inputs=pin(root / 'inputs/runtime_c0_inputs.json'), repair=getattr(runtime, 'repair', None),
                 prior_failure=prior_failure,
+                prior_failed_work=prior_failed_work,
                 automatic_promotion=False, no_automatic_retry=True, retention=None, fit_inputs=[])
     if ready:
         budget(initial, time.monotonic(), allocation)
@@ -302,6 +331,7 @@ def main():
             command.add_argument('--gpu', type=int, required=True)
             command.add_argument('--prior-failure')
             command.add_argument('--prior-failure-sha256')
+            command.add_argument('--prior-failure-kind', choices=('preworker', 'warm-prefix-validation'), default='preworker')
     args = parser.parse_args()
     result = (prepare if args.command == 'prepare' else run)(args, load_runtime(args.source_root))
     if result:

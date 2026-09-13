@@ -396,6 +396,46 @@ class FollowupTests(unittest.TestCase):
             api.run(self.args, self.runtime)
         self.assertEqual(len(self.calls), 8)
 
+    def diagnosed_warm_failure(self, message='full parent tensor coverage differs'):
+        source, replacement = self.repaired_runtime()
+        with patch.object(api, 'SOURCE', source):
+            self.prior_failure(worker={'pid': 123})
+        self.args.prior_failure_kind = 'warm-prefix-validation'
+        prior_root = Path(self.args.prior_failure).parent
+        previous = api.checked(api.pin(prior_root / 'manifest.json'))
+        previous['source_root'] = '/tmp/astra_pcfl_sequence_v2_source_20260913_warmfix2'
+        (prior_root / 'manifest.json').write_text(json.dumps(previous))
+        failed_root = prior_root / 'runs/B200_NEW_DOSE_fit_outer'
+        stage = failed_root / 'fit'
+        (stage / 'checkpoint').mkdir(parents=True)
+        write(stage / 'failure.json', dict(kind='NATIVE', message=message, partial_checkpoint_not_eligible=True,
+              phase='B200_NEW_DOSE', status='FAILED', type='ActorError'))
+        write(stage / 'checkpoint/train_manifest.json', dict(steps=200, config={'seed': 1},
+              warm_start={'parent_path': str(self.runs / 'fit_outer/fit/checkpoint')}))
+        collection = api.checked(api.pin(failed_root / 'collection.json'))
+        collection.update(returncode=1, gpu_released=True,
+                          files={name: value for name, value in inventory(failed_root).items() if name != 'collection.json'})
+        (failed_root / 'collection.json').write_text(json.dumps(collection))
+        stopped = api.checked(api.pin(self.args.prior_failure))
+        stopped['results'][0]['collection'] = api.pin(failed_root / 'collection.json')
+        Path(self.args.prior_failure).write_text(json.dumps(stopped))
+        self.args.prior_failure_sha256 = api.pin(self.args.prior_failure)['sha256']
+        return source
+
+    def test_explicit_diagnosed_warm_failure_charges_physical_updates(self):
+        source = self.diagnosed_warm_failure()
+        with patch.object(api, 'SOURCE', source):
+            plan = self.prepare()
+        self.assertEqual(plan['prior_failed_work'], dict(fits=1, updates=200, presentations=800, readout_calls=0))
+        self.assertEqual(plan['initial_outer_seconds'], 308)
+        self.assertEqual(plan['counts'], api.COUNTS)
+
+    def test_other_worker_failure_remains_ineligible(self):
+        source = self.diagnosed_warm_failure(message='unrelated failure')
+        with patch.object(api, 'SOURCE', source):
+            with self.assertRaisesRegex(ValueError, 'only diagnosed'):
+                self.prepare()
+
 
 if __name__ == '__main__':
     unittest.main()

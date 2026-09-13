@@ -507,12 +507,24 @@ class RealWarmInitializationTests(unittest.TestCase):
         self.assertTrue(all(torch.equal(loaded[name].cpu(), saved[name].to(loaded[name].dtype)) for name in saved))
         self.assertTrue(all(not tensor.requires_grad and torch.equal(tensor, before) for tensor, before in original_base))
         self.assertEqual(fit.v3._warm_inventory(parent), warm["parent_files"])
-        return receipt, receipt["trainable_names"]
+        caller_names = [name for name, tensor in cold.named_parameters() if tensor.requires_grad]
+        self.assertTrue(caller_names)
+        self.assertTrue(all(not name.startswith("base_model.model.") for name in caller_names))
+        return receipt, caller_names
 
     def test_actual_same_dtype_receipt_has_empty_conversion_map(self):
         receipt, names = self.initialize()
         self.assertEqual(receipt["dtype_conversions"], {})
         fit.validate_warm_tensors(receipt, names)
+
+    def test_actual_wrapped_and_unwrapped_caller_names_are_same_tensors(self):
+        receipt, names = self.initialize()
+        fit.validate_warm_tensors(receipt, names)
+        fit.validate_warm_tensors(receipt, receipt["trainable_names"])
+        with self.assertRaisesRegex(ValueError, "coverage"):
+            fit.validate_warm_tensors(receipt, names[:-1])
+        with self.assertRaisesRegex(ValueError, "ambiguous"):
+            fit.validate_warm_tensors(receipt, names + ["base_model.model." + names[0]])
 
     def test_actual_partial_and_full_dtype_conversion_receipts(self):
         for count in (1, 4):

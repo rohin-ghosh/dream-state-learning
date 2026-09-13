@@ -86,7 +86,14 @@ def validate_warm_tensors(warm, trainable):
     """Join every saved LoRA tensor to its loaded initialization receipt."""
     require(warm["initialized_loaded_state_check"] is True, "initialized loaded state check required")
     source, initialized = warm["source_state"], warm["initialized_state"]
-    expected = {name.replace(".default.weight", ".weight") for name in trainable}
+    def canonical_name(name):
+        return name.removeprefix("base_model.model.").replace(".default.weight", ".weight")
+
+    expected_names = {canonical_name(name) for name in trainable}
+    source_names = {canonical_name(name): name for name in source}
+    require(len(expected_names) == len(trainable) and len(source_names) == len(source), "ambiguous wrapper tensor names")
+    same(sorted(source_names), sorted(expected_names), "full parent tensor coverage differs")
+    expected = set(source_names.values())
     require(bool(expected), "full parent tensor coverage required")
     same(sorted(source), sorted(expected), "full parent tensor coverage differs")
     same(sorted(initialized), sorted(expected), "full initialized tensor coverage differs")
