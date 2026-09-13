@@ -16113,6 +16113,27 @@ only that aligned adaptive advice helped immediately while present in one DEV
 lineage. This recommendation is not a human exact-byte ratification and does
 not alter Astra's standing autonomy or the deferred final-C11 guard.
 
+## [Root synthesis] 2026-09-13 PT — message 43 prior-art and combined-skill answer
+
+Two fresh independent memos are now committed:
+`research_notes/analysis/2026-09-13_eight_level1_combination_and_minimum_birth_audit.md`
+and
+`research_notes/analysis/2026-09-13_agentic_posttraining_single_policy_survey.md`;
+their adjudication is
+`research_notes/analysis/2026-09-13_message43_combined_skills_adjudication.md`.
+Use the adjudication for the next design conversation.
+
+Main conclusions: the eight SEQ142/146 behaviours were never one adapter, but
+smaller joint adapters existed; the exact missing evidence is a returned
+memory relation controlling a subsequent cue/action. Existing agentic
+post-training already establishes multi-behaviour single policies, and TMEM
+and PEAM are close parametric-experience-memory prior art, so do not claim
+generic novelty. The defensible target is target-disjoint composition birth +
+later same-adapter own-life fact write + autonomous post-reset use under
+own/foreign, deranged, cut, and birth-only controls. Keep the all-layer recipe:
+no controlled FFN-only versus attention-inclusive ablation exists, and the one
+FFN-only historical cell was multiply confounded.
+
 ## [Rohin — message 43, ~18:15 UTC 09-13, relayed by Fable] it remembers but cannot piece together; all tested behaviours were singular; combining skills needs a use → data → train loop and a multi-hop data/skill; condense and unify skills (minimum capability; some "awareness" for the positive-evidence loop); the night was successful; combination is the first novelty as a synthesis — survey agentic post-training for reuse; why no single birth LoRA with 8 behaviours?; likes "hopped chains into single atoms"; MCTS as emergent shape; he will study level 1 and guide the data/behaviour choices
 
 Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 43, with a plain-English reading there; labels INDUCED STEER + IDEA TO TEST + QUESTION, not a ruling; Fable's position follows as `[Fable → Builder]`):
