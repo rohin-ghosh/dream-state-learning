@@ -107,3 +107,17 @@ Partial review, script and JSON are archived with the
 astra_birth_readout_independent_review_20260913 prefix in receipts_20260912.
 No independent tokenizer decode/full base-weight rehash was performed by that
 reviewer; its byte-custody verification and raw recount have this stated limit.
+
+### v2 bounded comparison completed
+
+Separately archived astra_birth_readout_independent_review_v2_20260913 fixes
+the dual-NEXT prefix parser and completes all requested stored-result checks.
+All strict/joint headlines, twin counts/edges and registered thresholds agree;
+zero unexplained differences. Ten difference-ledger entries reflect the same
+two invalid rows: the independent parser retains their valid COMPARE/POLICY
+fields while the frozen scorer clears the entire parsed object. No strict or
+joint success is recovered. DERANGED AUTH-NEXT is now6/64in both parsers.
+This closes the specific partial-review gap, not the native-tokenizer,
+weight-authentication, clean-ancestry or scientific-claim limitations above.
+v2script e988772186478818d67adbef16ad9d8b6d77fbe9de46a0971e11f2211525e8ab;
+v2JSON2b70eb7fb3cae1554d445599caf13ba0b972631644bf8a12ea785d09a247afcb.

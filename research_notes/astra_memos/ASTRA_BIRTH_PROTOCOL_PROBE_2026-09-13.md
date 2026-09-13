@@ -1,6 +1,6 @@
 # Fixed protocol-practice comparison — prospective specification
 
-Status: **LIVE, NOT SCORED**. Recorded September12 evening
+Status: **SEQ122 COMPLETE, COLLECTED AND RELEASED**. Recorded September12 evening
 Pacific / September13 UTC, after SEQ121 collection. The sixteen cases/counts
 were proposed before inspection of SEQ121. Main does not replace cases using
 observed failures. This is an exploratory diagnostic, not a clean or sealed
@@ -75,5 +75,73 @@ Plan50d47f1fc8b9c8c2557e963f296f593c4c92deb220aee75b85200eb8f5153352.
 Actual launch1789262555.9252133; controller283963, launcher283888, node3GPU0.
 Root~/astra_diagnostics/astra_birth_protocol_probe_seed0_20260913_attempt1.
 Exact launch argv and process-start identities are in archived
-astra_protocol_probe_launch_20260913_attempt1.json. This is live execution,
-not completed capture, successful collection or an outcome claim.
+astra_protocol_probe_launch_20260913_attempt1.json. All32calls completed;
+controller/launcher exited0, both owned workers released, GPU vacancy verified.
+
+## SEQ122 results, all fixed cases retained
+
+| Family (four cases each) | OFF parser / public / exact | AUTH parser / public / exact |
+|---|---:|---:|
+| TRY serialization | 0 / 0 / 0 | 0 / 0 / 0 |
+| Quiz format | 4 / 4 / 4 | 1 / 1 / 1 |
+| Record | 4 / 4 / 0 | 4 / 3 / 0 |
+| Public-evidence revision | 0 / 0 / 0 | 4 / 1 / 1 |
+
+All32outputs end with EOS, no token-limit hits or explicit stop-string matches.
+Record exact0does not mean useless records: OFF4/4are faithful JSON, with
+whitespace differing from the compact reference; AUTH3/4are faithful. AUTH's
+remaining record incorrectly labels an absent prediction as matched instead
+of unavailable. Quiz AUTH often emits incomplete ACT:QUIZ, while OFF4/4obeys.
+TRY OFF emits malformed PREDICT ACT strings; AUTH often emits only PREDICT.
+For revision, OFF emits the correct observed forecast without ACT in allfour
+cases (one spells True), not evidence of absent public-outcome comprehension.
+AUTH has two valid QUIZ-reveal actions when TRY is requested and one TRUE
+instead of literal T; only one meets the strict requested forecast/TRY contract.
+
+These are narrow instruction/protocol outcomes from one exposed practice panel,
+not a general cognitive decrement or parenting effect. Main inspected all32raw
+strings after the barrier and verified all91archive member hashes. Capsule
+11bd6633d462adfff2b3b2a2ca07de78e4f103344c69c7418ab1be37cc258973;
+validatione7e64988e46c67c442493a19e299c7e0fe9378b90d19c7cfdf59b31642420452.
+Files: receipts_20260912/astra_protocol_probe_seed0_20260913_attempt1.tgz
+and its .validation.json. No model or adapter weights are in this metadata capsule.
+
+Costs:5432inputtokens,472outputtokens;17.234142seconds summed call spans.
+Worker windows114.940875+122.563908seconds;254.778263seconds launch-to-exit.
+Recorded GPU release is286.772276seconds after launch (includes custody recheck;
+collection/reduction continues briefly afterward). These are nested intervals,
+not additive stages. No write/training call, kill, retry or approval request.
+
+## Next diagnostic: clarify the prompt before training
+
+Inspection localizes a test-design ambiguity: wake prompts say put PREDICT
+before ACT:TRY without spelling the exact forecast-line grammar. They also
+mention ACT:QUIZ? as a harness-state reminder beside a requested TRY. This
+does not invalidate the registered raw counts, but it prevents attributing
+failure uniquely to missing trained ability. The first smaller follow-up is a
+separate exploratory prompt amendment, not a larger birth fit.
+
+The clarified version retains all16cases, labels, public source facts, seeds,
+role caps and graders. It appends one uniform grammar/action-priority block to
+the12wake prompts only; allfour record requests remain byte-identical negative
+controls. It names literal PREDICT:T/F and ACT:TRY a,b,c syntax, clarifies that
+quiz reminders are not requested actions, and gives reveal/label grammar.
+No example case's answer is added. Old requests/captures/scorers stay immutable.
+This is adaptively selected on exposed practice evidence, not confirmation.
+
+If clarification restores action compliance, pursue native-context/teacher
+diagnosis instead of assuming more training is needed. If failures persist,
+the contingent16-row protocol bridge overlay is the next candidate, with
+fresh matched fits and measured target-token parity. Neither outcome establishes
+persistent learning or H1/H2. Record-output changes would flag reproducibility
+or generation-context effects, since their prompts/settings are unchanged.
+
+Clarified materialecba56d4c25ee14c4caf26dafc8d6d38d18406e8107a19bee76b01bdefa6e76d;
+runtime7467092c10f1f9301f5d3457139a965d4168ca6310ece4e38b5ce24c0a910a66.
+Runtime differs only in material filename/hash; existing supervision unchanged.
+Main49CPUtests PASS10.262s; native49PASS6.520s. The initial CPU check caught
+the old validator's exact-context binding; validation now delegates scoring
+to the unchanged original cases only after proving labels/public fields match.
+Plan cceacca734e74cb86383099b3a7e4ee45fbe923485933204f600c0768faff46b,
+fresh root~/astra_diagnostics/astra_birth_protocol_clarified_seed0_20260913_attempt1.
+PREPARED_NOT_LAUNCHED at this entry; same1500scontroller+300scollection cap.
