@@ -15408,6 +15408,30 @@ then S_A,16calls each,2048outputtokens/call, freshprocess each, node2GPU1,
 1800smaximum each (<=0.5A40GPU-hour/state). No score threshold or retention
 claim from an isolated state. Actual acquisition results decide later phases.
 
+## [Builder] 2026-09-13 17:18 UTC — cold NO_WRITE16 launched; S_A inputs prepared
+
+Node2GPU1, one cold NO_WRITE state, freshprocess,16calls,0fits/updates,
+1800sbound. Worker modules remain source7741c030/sourceattempt4; standalone
+controllerf50546f5 SHAed1e6076facce1901aca029742ae6d39d97133b3b4fc2914e9df4c3bf133c833.
+NO_WRITE inputs d204f2a7c3a8a1054e69ab8fce588ef3b6f8bb7648b9eb822e9e505070098463;
+S_A inputs742d9ada7d75c3a9c6f8cc7a885adb63deb758475d7a8cba5ccba8142ed0c278,
+prepared only, not launched concurrently. Both use allocation
+b672fab73143d8329300a67423a5389aefee61bfdf6ebeb7285b653b1fb2ff4a.
+
+Initial offline preparation stopped before inputs were written: the scoped
+source tar omitted the reader's hashed own-write scope Markdown dependency.
+Added only that missing file from exact same7741c030 Git snapshot, using
+tar --keep-old-files; no existing source/model/material/checkpoint byte was
+overwritten. Supplemental archive6a1ec967e601e0cc610b6f84811930caab498f06cdad2318a361921973a4173c
+is retained alongside original unchanged source archive. Readout pins now
+include that exact document; original fit source pins remain unchanged.
+This packaging repair changes no training, prompt, scorer or scientific scope.
+S_A complete fit and outer release reverified during input preparation.
+
+NO_WRITE launcher returned controller218996 at17:17:38UTC. Root
+`/localhome/local-rohing/astra_diagnostics/pcfl_event_sequence_readout_NO_WRITE_20260913_attempt1`;
+no cold result yet. Main owns its worker and release.
+
 ## [Fable] 2026-09-13T17:03Z — self-check: reader ladder closed — A3C static syntax passes the physical gate (8/8 THINK + strict terminal) with 0/8 graph routes; A4 supplied generic procedure 1/8 → builder stops the 7B PCFL reader branch; fleet idle, Astra on sequence-retention engineering
 
 **SEQ-184 (A3C):** identical eight tasks/seeds/budgets as A3B; only a static THINK-or-ROUTE regex plus explicit LF frame added. 25 calls, 17 THINK turns, 8/8 exact first THINK, 8/8 THINK-plus-strict-terminal histories, **0 legal routes, 0 graph successes**. Physical gate passes; graph use does not. 1,503 output / 16,107 prompt tokens, zero fits, zero READs.
