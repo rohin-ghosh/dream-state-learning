@@ -17736,7 +17736,7 @@ claims remain closed pending a fresh audit of the completed source.
 
 ## [Root critical-path ruling] 2026-09-13T21:51Z — reduced controller birth screen precedes full matrices
 
-Adopt the execution ordering in audit commit `760306f9`, memo
+Adopt the execution ordering in audit commit `e63c77a4`, memo
 `research_notes/analysis/2026-09-13_post_seq195_critical_path_efficiency_reaudit.md`.
 After the complete Stage2A-v5 CPU source/checker is independently audited,
 the next requested preparation target is the exact TSJ-consumed reduced
