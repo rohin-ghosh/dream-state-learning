@@ -10855,3 +10855,45 @@ not repeated learning. The observed retention harm must remain part of its
 interpretation and motivates a separate retention repair, not hidden threshold
 changes. PCFL v2.2 watcher recommendations received; they are proposed next
 integration work, not implemented results or a new ratified paper objective.
+
+## [Builder] 2026-09-13T09:17Z — post-memory transfer native preparation passes
+
+Main12coreCPUtestsPASS.264s and29runnerCPUtestsPASS6.000s. Native preparation
+passes all3paired checkpoints on node2; original completed memory inventory,
+once-collection bindings, adapter identities and new prompt tokens checked.
+Frozen runnerc8ca3444c604aebbf5cd0b134f98a86cf79c3521332fff841e371a9986c41942;
+core030c97c57a962a74a5b97bd66550096dedc2bab288d690b2c89808d2ec84474b.
+New8opaque DEVepisode IDs, two turns each, even syntax example present/odd
+only exampleblock absent, same assignment across arms/seeds. Original v2
+world/parser/record prompts and source judges unchanged. No parent, teacher,
+original memory/corpus prompts, new fit, sleep or update. Initial tasks paired,
+actual actions/history may differ. Every invalid/missing execution stays in
+16possible-record denominator; record content, canonical format, action validity,
+source fields, cue stratum and turn reported separately. No automatic pass.
+
+Main launch allocation node2GPUs1/2/3 for seed0/1/2, all WRITE/LR0 checkpoints,
+including harmed seed2. Finite1800s per paired controller,900s perstate and
+180s later collection; at most192totalcalls/1.5GPU-hours. Boot/lease unchanged,
+6h finish margin. Fresh queue/environment/all-process checks run before launch;
+outer holder reserves assignedUUID across workers. Exact PIDs follow.
+Roots /localhome/local-rohing/astra_diagnostics/post_memory_formation_seedN_20260913_attempt1.
+Prepared plan SHAs:
+72db084518088d12198e738b814d4e12ffa08a4c9dce72cad8d2e3c5a3fbd640
+1b322c44bc90a0983550e71f94688851e27762cbab0e977c1e09cbd7fd99dfca
+614258c09bf2334df26fad586d6e0c9b0b1c1f7a08e7d2da8ebe10664e04cdff
+Launch native interpreter -B /tmp/astra_post_memory_main_20260913.py launch --seed N,
+emptyCUDA_VISIBLE_DEVICES/PYTHONDONTWRITEBYTECODE=1/PYTHONNOUSERSITE=1.
+Only new completed roots are collected once; never original memory/formation.
+
+SEQ153 independent cell reduction reproduces all reported totals/contrasts
+and original-retention joins; Main10analyzerCPUtestsPASS.465s. Independent
+archive custody audit finds no hard payload mismatch, verifies all inherited
+parent files and raw tensor-byte inventory joins. Historical release is
+wrapper-attested, not independently authenticated; separate current checks
+do not retroactively prove history. Captures are object-preserving
+reserializations; nested raw child targets remain byte-exact, not arbitrary
+rewrites. Full audit and source/archive pins preserved with receipts.
+SEQ152 Main raw64call/132stage-file replay passes; HF/native differ at one
+TRAINslot(index0,HFmargin.25), not numerical parity. Manuscript throughSEQ151
+independently accepted with R1first-divergent-token clarification, committed
+4f7bd1a1; newer results await update. Collaborator remains UNSENT.
