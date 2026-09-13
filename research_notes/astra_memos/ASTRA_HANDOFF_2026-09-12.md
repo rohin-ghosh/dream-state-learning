@@ -1,6 +1,64 @@
-# Astra current handoff — 2026-09-13T07:48Z
+# Astra current handoff — 2026-09-13T08:05Z
 
-## CURRENT — September13 07:48UTC
+## CURRENT — September13 08:05UTC
+
+Mission ACTIVE/incomplete. Simplehygiene; formalC11guard final paper-grade only.
+Preserve dirty gpu/codex/dream_state.rules. No freeze/clean/P1/H1/H2 promotion.
+
+SEQ142 FIRST12LEVEL1 allCOMPLETE/collectedONCE/archived/re-reduced. Eachseed0/1/2
+heldcontent OFF->post: contradiction17->48,goal32->48,prediction22->48,
+judgement8->48, all/48; everypost strict48/48,canary12/12,no losses. Realtyped
+corrections plus interface gains, authored envelope not general cognition.
+Archive root gpu_artifacts_local/level1_first_roster_20260913; exact paths/pins
+receipts_20260912/astra_level1_first_roster_analysis_20260913.json and.md.
+Never recollect. Do not repeat unchanged dose on these ceiling fixtures.
+
+SECONDROSTER node2 six LIVE: perception0/1/2 GPUs1/2/3 PIDs4186619/4187289/4187709;
+self_reflection0/1/2 GPUs4/5/6 PIDs4188242/4189786/4190899.
+Roster /tmp/astra_level1_second_roster_20260913_attempt1_clockfix/roster.json
+SHA2bca9e4a66cc576993119fc1d5fddcac77de7cc3f93686327b962c45c2d17c69;
+batch_node2/allsubmitted. Same runtime6f4c...; protocol secondrosterc9652b...
+
+SEQ143 A1005OFFwarmupfailures missingninja;6roots prepared, nofits/noresponses;
+sixthneverlaunched. Allfailedcontrollers exited; do NOTcollect orretry roots.
+Galileo01a09927-5ffb-74a2-bcb7-40b0fbceba22 owns failurearchive+CPUtoolchainsmoke.
+Executable ninja existsvenv/bin, nvccCUDA13 exists; freshPATHomitsboth. Noinstall
+or globalenvchanges. Actualnative readiness unresolved; fullmodelhashesPASS.
+
+Six replacement rep/meta cells submitted onNODE1 freshattempt2, GPUs0–5.
+Batch2893484 allsubmitted; exact receipts
+/tmp/astra_level1_a40_fallback_roster_20260913_attempt2/batch_node1/*/launched.json.
+RosterSHA781b9a3e21786c3b5ff5a78f97933fcf738b6e5d18720cb447c5e06140fb6179.
+Known rep2PID2894696,meta0PID2895263,meta2PID2898668; get remaining fromreceipts.
+Rootpattern /localhome/local-rohing/astra_diagnostics/level1_SKILL_seedN_20260913_attempt2.
+
+Nextcollection helper /tmp/astra_level1_next_collect_20260913.py SHA
+fba79ae7813ad237b619d75fa65352778828c3a665666262bec0aa67cbd58499;
+Main18CPUtestsPASS.170s. CLI --roster --roster-sha256 --node --batch-dir.
+Main only, after complete+controllerexit; claims/failures never retried. Deploy
+helper to node1/node2 (not yet done atthissnapshot) beforecollecting secondroster.
+
+SEQ141 lowLRseed0attempt2 COMPLETE/collectedONCE/archived; old4/new4 unchanged.
+HighLRseed0attempt2 LIVE node3GPU1PID363053,start07:54:59UTC,cap09:24:59UTC,
+plan93971b427808a1a13f7c475569fcc6cf6255b8fa500bc8b6e8c05c6842252e95.
+Only this retry remains; stopretryqueue if infrastructurefails. NOreboot/node3GPU7.
+
+Real-record formation next: Parfit01a099a4-4d72-75c0-af60-8f84fc68d36a owns
+/tmp/astra_level1_real_record_core_20260913.py/tests/handoff. Lovelace
+01a0997b-d9db-7812-9206-e74dfa608600 owns matching real_record_run runner/tests.
+8newDEVepisodes,2actualchildTRYs each, ownrawrecords, no parent/write/quiz;
+OFF+3perceptionadapters, ≤128calls,totalcap1800s, wake96/record192. CPU/source
+preparation only; no native launch or result. Main must finalize protocol/pins,
+test and bind actual completed perception artifacts before nativeprepare.
+
+Manuscript accepted throughSEQ136 only; latest evidence not yetincorporated.
+Main keeps scientificintegration; independentresult analysis fromCopernicus
+01a099a3-f03d-7e42-bafe-53cdb4dd67d0. Descartes01a09964-393d-7682-99a9-33d89a6c4e9f
+finished nextcollector, available. Next: collectsecondroster, diagnose actual
+recordformation, repair A100 only via explicitlocalenv/boundednativecheck.
+Node1transfercheckpointSep13 23:14UTC;finishcutoffSep14 17:14UTC.
+
+## Historical superseded snapshot — September13 07:48UTC
 
 Mission ACTIVE/incomplete. Simple hygiene now; formalC11guard only for final
 paper-grade run. No freeze/clean/generalG3/P1/H1/H2 promotion. Preserve unrelated

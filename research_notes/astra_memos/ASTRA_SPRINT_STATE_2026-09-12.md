@@ -1,4 +1,18 @@
-## Current superseding snapshot — 2026-09-13 07:48 UTC
+## Current superseding snapshot — 2026-09-13 08:05 UTC
+
+SEQ142: allfirst12Level1 roots complete/collectedONCE/archived, allfour skills
+48/48heldcontent+strict across3learnerseeds,postcanary12/12,no measuredlosses.
+Authoredcomponent positive, not parenting/closedloop/generalcognition/freeze.
+Second6perception/reflection LIVE node2; A1005OFFwarmup aborts missingninja
+(SEQ143), sixthpreparedonly, nofit/noresponse. Preserveall. Sixrep/metareplacements
+LIVE node1 freshattempt2; unchanged science, explicitA40placementamendment.
+SEQ141lowLRseed0recovery complete/unchangedendpoint; highattempt2LIVE node3GPU1
+PID363053 through09:24:59UTCcap. No morerecovery afterinfrastructurefailure.
+Real-record nativecore/runner CPUsidecars,8freshDEVepisodesactualTRY+ownrecord,
+OFF+3perceptionadapters, formationonly. Allpins/currentpaths/exactnextsteps in
+HANDOFF. MissionACTIVE/incomplete; simplehygiene, formalC11guard deferred.
+
+## Historical superseded snapshot — 2026-09-13 07:48 UTC
 
 SEQ140 contrastive COMPLETE/collectedONCE/archived with matching node2/VMSHA.
 Strict held OFF2/24,plain17/24,contrastive19/24; screenFALSE, paired cases,

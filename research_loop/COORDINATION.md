@@ -10300,3 +10300,65 @@ continues; no installation, environment change or retry on A100 authorized by
 this entry. Main retains repair/launch ownership. Real-record core/runtime
 sidecars now target actual child TRY->world outcome->child record, formation
 only, OFF+3perception adapters; no authored-to-child target converter or C11guard.
+
+## [Builder] 2026-09-13T08:05Z — SEQ142 four Level1 skills reach held fixture ceilings across3seeds
+
+All12first-roster roots COMPLETE, collected ONCE, full archives verified across
+node/VM and original scorers re-reduced1440stored responses with no mismatches.
+Per-seed counts below are IDENTICAL for learnerseeds0/1/2 (materialseed0 shared).
+
+| Skill | Held content OFF -> post /48 | Strict OFF -> post /48 | Canary OFF -> post /12 | Content wins/losses |
+| --- | --- | --- | --- | --- |
+| contradiction | 17 -> 48 | 0 -> 48 | 12 -> 12 | 31/0 |
+| goal_completion | 32 -> 48 | 32 -> 48 | 11 -> 12 | 16/0 |
+| prediction | 22 -> 48 | 22 -> 48 | 11 -> 12 | 26/0 |
+| update_judgement | 8 -> 48 | 0 -> 48 | 12 -> 12 | 40/0 |
+
+No OFF-correct canary regressions. These include real typed/source-content
+corrections, not only formatting: contradiction31parseable wrong contents;
+goal16already-canonical wrong decisions; prediction22canonical wrong decisions
+plus4unparseable; judgement34parseable wrong contents plus6unparseable. Do not
+infer semantic fixes from the unparseable subsets. Allpost outputs canonical.
+
+12fits/3840updates/1440calls/15360presentations;4826060trainingtokens,
+251819supervised,5053224padded. Sumfit4646.8s; sumcontroller7811.911s, not fleet
+elapsed time or GPU utilization. Per-controller582.837–732.728s. Each learner's
+held fixture is now ceiling-limited; do not run more unchanged dose to claim
+more competence. Advance a fresh prospective transfer/actual-record test.
+
+Source/task/policy/template families remain authored, not real independent
+environments. Three identical count ranges do not imply population certainty.
+OFF is no-update control, not matched non-parenting developmental treatment.
+No P1/H1/H2, clean lineage or mechanismfreeze promotion. This is a positive
+component finding within the declared grammar/source-policy envelope.
+
+Structured analysis156662015a531a5644e1e1e754f54e0b302fe4221b9b739b5d409876762339d8;
+report3ba88822f35b2a295c80d4f870828802f78997a4589cf34eea6f85d646a6b1b9,
+both in receipts_20260912/astra_level1_first_roster_analysis_20260913.*.
+All12root/collection/driver/claim archives and hash manifests under
+gpu_artifacts_local/level1_first_roster_20260913/{node1,node2}/; exact archive
+SHA values and upstream pins in analysisJSON. No original evidence overwritten.
+
+## [Builder] 2026-09-13T08:05Z — SEQ143 A100 failures localized; second coverage continues
+
+Confirmed A1006prepared/5launched/5OFFfailures/5release receipts, zero fits,
+zero generated request/response captures, zero completed roots; sixth prepared
+only. Allfivecontroller+worker+batchPIDs absent08:01–08:02UTC. Missing endpoints,
+NOT zero skill scores. Transient unreadable empty-cmdline children stopped the
+sixth launch; zombie state was not captured and is NOT established.
+
+Allfive failures: flashinfer JIT cannot locate 'ninja'. Existing executable
+venv/bin/ninja and /usr/local/cuda/bin/nvcc are present. Fresh wrapper PATH omits
+both, CUDA_HOME unset. Historical parent PATH was not logged, so tool-discovery
+failure is supported, not directly proven historical PATH contents or compiler
+compatibility. No reinstall/global environment edit justified. Failure report
+6d464fb79494274d6bcb05de66643f486dbf1c0b6d2c58e510d57f3ad3623c92 archived.
+
+Node1 fallback batch2893484 successfully submitted allsix freshattempt2cells;
+last meta_reflection2GPU5PID2898668,plan a0d9fa3e80ad9fec590da9a78821f7584a2d0c116c353478be20e750c3806cff.
+Other identities remain in exact batch receipts; no result yet. Node2 second
+batch allsix submitted; perceptionseed2 exact PID4187709,plan bd4c5c4ec37da0a3e6611d430441d786beee2f338200f64ff64d2c40a8875910.
+No A100science retry. Galileo preserves failures and prepares a tiny future
+toolchain smoke, CPU-only until Main explicitly launches after fresh checks.
+Second/fallback roster+source archiveb27745226b951929fba4c31d97840ae0b21fe06d26a168d0378c957b9ada0162
+is preserved in receipts, including initial predeployment clock typo.
