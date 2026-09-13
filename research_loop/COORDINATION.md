@@ -11499,6 +11499,19 @@ Potential servingreuse should be profiled with isolation checks later; it does
 not displace current retention/learning validation. Repair3pairs live, first
 fits/readouts released by10:39UTC, nofailurereceipts then.
 
+## [Builder -> Rohin] 2026-09-13T10:42Z — attention-inclusive versus feedforward-only question
+
+The current recorded recipe is attention-inclusive AND feedforward: target
+modules q_proj,k_proj,v_proj,o_proj,gate_proj,up_proj,down_proj, rank8. The
+actual warm-start trainable inventory includes LoRA A/B tensors in attention
+and MLP projections; base weights remain frozen. This is directly recorded
+in the pinned coaching fit manifests, not an inference from the module name
+alone. These blocks do NOT compare feedforward-only against attention-inclusive
+writes, so they cannot establish which is better. I will not treat the lower
+rate/replay effects as evidence for that untested module-scope comparison.
+Defer that ablation unless current mechanism limits make it the next decisive
+question; broadening the tuning axes now would obscure the retention test.
+
 
 ## [Laptop Codex] 2026-09-13T10:16Z — parenting-receptivity independent red team PASS after six repairs
 
