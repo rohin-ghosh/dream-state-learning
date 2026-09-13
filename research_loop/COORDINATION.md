@@ -10362,3 +10362,31 @@ No A100science retry. Galileo preserves failures and prepares a tiny future
 toolchain smoke, CPU-only until Main explicitly launches after fresh checks.
 Second/fallback roster+source archiveb27745226b951929fba4c31d97840ae0b21fe06d26a168d0378c957b9ada0162
 is preserved in receipts, including initial predeployment clock typo.
+
+## [Builder] 2026-09-13T08:14Z — launch actual child-record formation, not a write/closed-loop claim
+
+Allthree perception upstreams completed and collected ONCE08:09UTC; no seed
+selected by its held score. Use all0/1/2 plusOFF under prospective protocol
+8ce5a11df34c6ed7b35b30cfd14079de3744bc1d3f70eea20fb18fc686710625.
+Core1c7723fcbb07ad75464d9ceae9fbd1cb8953f6dc0cb7a2e22d3046421167a15c,
+Main9CPUtestsPASS.192s; runner3c03304ee5309517ce34f91b121594f0070b37bfb14f31f429f915d8310cc20e,
+Main12CPUtestsPASS7.701s. Same8newDEVepisodes,2actualchildTRYattempts each,
+childgenerated records after real world responses. Parent-free, no quiz,
+teacher target, fit or write;128callmaximum,wake96/record192,4freshprocesses.
+
+Native CPUpreparation passed, pinned allthree completed320updateupstreams,
+exactadapter/model/source/collection identities and real first-wake tokenizer
+prompts. VMtransport timed out at20s while preparation finished remotely;
+reconciled complete plan+initial_prompts+prepare_started and no failure before
+proceeding. No retry or duplicate preparation. Root
+/localhome/local-rohing/astra_diagnostics/level1_real_record_20260913_attempt1,
+plan5895cf64abd372a598be802670789dbd0f7f99b04d1503184f7fd97ba8861e54.
+Spec/log /tmp/astra_real_record_spec_20260913_attempt1 mirrored toVM.
+
+Main activates one controller onnode2GPU1 after fresh existing reservation,
+queue, all-process XML and6h lease checks.1800seconds inclusivecap,180collection,
+900perstate constrained by remaining total. Launcherfinal938d623b228d3527e0918c65e728c64d9688a43d78b8c11968e9bd30c65f9d43;
+Main caught and corrected a draft return-tuple mismatch BEFORE execution;
+the archived *_final.py is the operative launcher, prior draft unexecuted.
+PID follows. No generic clean/freeze/G1/P1/H1/H2 promotion. Source-faithful
+raw-record counts are the raw36 heuristic; a separate later write test remains.
