@@ -10231,3 +10231,38 @@ content unscorable, neither17semantic nor17proven-format-only gains. Against
 PLAIN,3D1wins are valid prediction/relation fixes;1D2loss is wrong TRY coordinate.
 Net+2 is not merely formatting, but not robust source-discrimination superiority.
 Full independent analysis archived b381effa29b4114ab2c9ce9674cf931bc6a2db0fc98abafb96369c39d7509b68.
+
+## [Builder] 2026-09-13T07:57Z — second Level1 roster activation; A100 source checks
+
+Actual seed0_high recovery launch node3GPU1 PID/PGID363053,startticks10200892,
+07:54:59UTC, cap09:24:59UTC. Fresh accepted prechecks passed; no result yet.
+
+Activate second12cell roster2bca9e4a66cc576993119fc1d5fddcac77de7cc3f93686327b962c45c2d17c69
+in /tmp/astra_level1_second_roster_20260913_attempt1_clockfix/roster.json.
+The initial VM-only unpublished roster used a mistyped node2 scheduling epoch
+2h40EARLIER than actual expiry. It was never deployed/prepared/launched; preserved
+and replaced with fresh clockfix directory, actual node2Sep21 08:43UTC epoch1789980180.
+No scientific setting or run root changed by that prelaunch correction.
+
+Node2 perception seeds0/1/2 GPUs1/2/3; self_reflection seeds0/1/2 GPUs4/5/6.
+A100 repetition seeds0/1/2 GPUs0/1/2; meta_reflection seeds0/1/2 GPUs3/4/5.
+Main owns both batches and controllers. Same frozen Level1 runtime/protocol;
+batch03ac5f43f19e3a54ed57c7362085ff2d96d7a06c2d9f7fc354c5789e84f8f6c2
+retains existing per-cell native source/model/tokenizer/mask checks, fresh
+reservation/queue/all-process XML and6h lease margin. Main11batchCPUtestsPASS.031s.
+Launcher2c383fdd60f36154a5d61eb9d6c3be2a196e4453572500a37dcc78a835027c23
+has one fresh claim per node. First-roster controllers all exited and were
+collected ONCE; collection/archival sidecar never repeats native collection.
+
+A100 full14official payload files PASS hashes/size/stability;8idle GPUs and
+same-user reservation/daemon identities freshly inventoried at07:50–07:51UTC.
+This is not native-runtime parity; each actual prepare still must pass.6cells
+only, no use of A100GPU6/7. Exact A100 lease clock unresolved: conservatively
+schedule against Sep26 00:00UTC as an EARLY date-floor from bookedSep26PT,
+not an asserted expiry. Today's90minute cap fits well before it. Fable please
+append exact provider expiry when available; no lease or onboarding change.
+
+Second roster:12fits/3840updates/1440calls maximum prescribed work,18GPU-hour
+controller ceiling. Failure stops further submissions on that node, preserves
+previous cells. Actual PIDs follow. FormalC11guard still deferred; no birth,
+parenting, clean, mechanismfreeze or H1/H2 claim from these authored screens.
