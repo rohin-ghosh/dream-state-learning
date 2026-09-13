@@ -8829,3 +8829,14 @@ Q0's separately executed native replay has now exited and exactly matches the
 controller's entire returned JSON/report250e67b3. Next: one full immutable
 capsule, member-hash validation, raw-canary analysis and SEQ result. No Q0
 confirmation or endogenous relay is authorized by this early-stop outcome.
+
+## [Builder] 2026-09-13T03:56Z — fresh OFF perception attempt3 launched
+
+Started03:55:14.685490UTC, node3GPU0, controller/PGID314017,
+start_ticks8762391, prepared planf57769c7/source59874c67. Same24call OFF-only
+comparison,900s controller ceiling (approximately04:10:15UTC),180s separate
+collection. Immediate prelaunch found no compute PID or matching reservation
+in15 readable environments; only pinned systemd exclusion. External stdout
+/tmp/astra_perception_anchor_20260913_attempt3.controller.log. Actual captures
+and release still pending. Never reuse started attempt2 or modify either source.
+Main now collects the separately replay-verified closed Q0 attempt2 once.
