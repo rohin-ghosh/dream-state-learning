@@ -186,6 +186,14 @@ def _custody(directory, report, settings, injected, started, deadline):
             "native_actor_custody_verified": not injected, "outer_release_required": True}
 
 
+def _actor(settings, roster, actor_factory=None):
+    if actor_factory is not None:
+        return actor_factory(settings)
+    if roster["stage"] in driver.STRUCTURED_STAGES:
+        return driver.InterfaceActor(settings, stage=roster["stage"], roster=roster)
+    return native.NativeActor(settings)
+
+
 def stage(path, expected, deadline, *, actor_factory=None, tokenizer_factory=None, environment_reader=None, clock=time.monotonic):
     started = clock()
     manifest = validate_manifest(path, expected)
@@ -204,7 +212,7 @@ def stage(path, expected, deadline, *, actor_factory=None, tokenizer_factory=Non
         tokenizer = (tokenizer_factory or _tokenizer)(spec["model_path"])
         settings = _settings(spec, roster, tokenizer, directory / "actor", deadline)
         require({**settings, "deadline": manifest["actor_template"]["deadline"]} == manifest["actor_template"], "prepared actor binding drift")
-        actor = (actor_factory or native.NativeActor)(settings)
+        actor = _actor(settings, roster, actor_factory)
         try:
             report = driver.run_stage(roster, roster["sha256"], actor, tokenizer, directory / "records", actor_config=settings, deadline=deadline, clock=clock)
         finally:

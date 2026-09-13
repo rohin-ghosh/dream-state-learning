@@ -2,6 +2,7 @@
 
 import copy
 from pathlib import Path
+import re
 import unittest
 from unittest.mock import patch
 
@@ -33,6 +34,8 @@ class RosterTests(unittest.TestCase):
             "A2_DIRECT": "128a0cb53fdd719b15b6316196d4837ddfb2e17489ac1da38646ca6166907ad1",
             "A3_THINK": "6f6dbfc8b3d7cb2789eb3800e711e884e690cf2e155fec104e9b6cae981fa76f",
             "ACTIVE_THINK": "a5c03d367b1520a494b8bdfb2ba8fbd9eff9f43647b3d338235be583d2c76fa3",
+            "READ_REQUIRED_SMOKE": "0acea68facad2f4e120225530e49cdeb27ae61f50be5f529b9661cd71a5644ee",
+            "READ_REQUIRED_PANEL": "985c0cd62e44c2f2a9727e8db294193acdbe7ba945ad13e435e9f4bbbe4770e3",
         }
         with patch.object(driver, "source_pins", return_value={}):
             for stage, checksum in snapshots.items():
@@ -74,6 +77,65 @@ class RosterTests(unittest.TestCase):
             altered = driver.seal({key: value for key, value in altered.items() if key != "sha256"})
             with self.subTest(change=change), self.assertRaisesRegex(ValueError, "reconstruction"):
                 driver.validate_roster(altered, altered["sha256"])
+
+    def test_structured_smokes_preserve_prompt_cases_seeds_and_caps(self):
+        baseline = driver.build_roster(self.wires, "READ_REQUIRED_SMOKE")
+        for stage in driver.STRUCTURED_STAGES:
+            roster = driver.build_roster(self.wires, stage)
+            expected = copy.deepcopy(baseline["tasks"])
+            for task in expected:
+                task["id"] = f"interface/{stage}/{task['case_id']}"
+                task["slot_ids"] = [f"{driver.core.byte_hash(task['id'])}/actor/{turn}" for turn in range(13)]
+            self.assertEqual(roster["tasks"], expected)
+            self.assertEqual(roster["limits"], baseline["limits"])
+            self.assertEqual(len(roster["tasks"]), 8)
+            self.assertEqual(roster["limits"]["possible_calls"], 104)
+            policy = roster["sampling_policy"]
+            self.assertEqual(policy["name"], f"pcfl.supplied_memory.{stage.lower()}.v1")
+            self.assertTrue(policy["externally_scaffolded"])
+            self.assertEqual(policy["external_first_read"], stage == "STRUCTURED_FIRST_READ_SMOKE")
+            self.assertFalse(policy["learning_claim"] or policy["autonomy_claim"])
+            for slot in ("first", "later"):
+                self.assertEqual(policy[f"{slot}_slot_regex_sha256"], driver.core.byte_hash(policy[f"{slot}_slot_regex"]))
+            driver.validate_roster(roster, roster["sha256"])
+
+    def test_exact_regexes_match_parser_and_admit_nonexistent_identifiers(self):
+        expected = (r"(?:READ (?:EVENT E_[A-Z2-7]{10}|EVENTS_AT N_[A-Z2-7]{10}|LINKS_FROM E_[A-Z2-7]{10})"
+                    r"|ROUTE N_[A-Z2-7]{10} N_[A-Z2-7]{10} : P_[A-Z2-7]{10}(?:,P_[A-Z2-7]{10})*)")
+        self.assertEqual(driver.ACTION_REGEX, expected)
+        reads = ["READ EVENT E_ZZZZZZZZZZ", "READ EVENTS_AT N_ZZZZZZZZZZ", "READ LINKS_FROM E_ZZZZZZZZZZ"]
+        routes = ["ROUTE N_ZZZZZZZZZZ N_2222222222 : P_7777777777",
+                  "ROUTE N_ZZZZZZZZZZ N_2222222222 : P_7777777777,P_ABCDEF2345"]
+        valid = reads + routes
+        invalid = ["THINK reason", "PROBE Q_ZZZZZZZZZZ", "READ NODE N_ZZZZZZZZZZ",
+                   "READ EVENT E_ZZZZZZZZZ", "READ EVENT E_ZZZZZZZZZZZ", "READ EVENT E_0000000000",
+                   "READ EVENT N_ZZZZZZZZZZ", routes[1].replace(",", ", ")]
+        invalid += [changed for raw in valid for changed in (raw + "\n", raw + "\r", raw + " ", " " + raw,
+                    raw + "\n" + routes[0], raw.replace(" ", "  ", 1), "```" + raw + "```")]
+        for raw in valid + invalid:
+            with self.subTest(raw=raw):
+                parser = driver.core.parse_read if raw.startswith("READ ") else driver.core.parse_route
+                try:
+                    parser(raw)
+                    parsed = True
+                except ValueError:
+                    parsed = False
+                self.assertEqual(bool(re.fullmatch(driver.ACTION_REGEX, raw)), parsed)
+                self.assertEqual(parsed, raw in valid)
+                self.assertEqual(bool(re.fullmatch(driver.READ_REGEX, raw)), raw in reads)
+
+    def test_sampling_changes_only_regex_and_never_reads_task_contents(self):
+        for stage in driver.STAGES:
+            for slot in (0, 1, 12):
+                request = {"id": "a" * 64 + f"/actor/{slot}", "seed": 37}
+                limits = {"output_tokens": 19}
+                expected = {**driver.native.SAMPLING, "seed": 37, "max_tokens": 19}
+                if stage in driver.STRUCTURED_STAGES:
+                    expected["structured_outputs"] = {"regex": driver.READ_REGEX
+                        if stage == "STRUCTURED_FIRST_READ_SMOKE" and slot == 0 else driver.ACTION_REGEX}
+                self.assertEqual(driver.sampling_for(stage, request, limits), expected)
+                self.assertEqual(request, {"id": "a" * 64 + f"/actor/{slot}", "seed": 37})
+                self.assertEqual(limits, {"output_tokens": 19})
 
     def test_exact_paired_graph_and_seeds_and_no_address_enumeration(self):
         direct = driver.build_roster(self.wires, "A2_DIRECT")
@@ -149,7 +211,8 @@ class SummaryTests(unittest.TestCase):
         self.assertFalse(driver.summarize(rows, "A1_READ_DISCLOSED", False)["stage_gate_passed"])
 
     def test_required_read_thresholds_are_joint_and_not_graph_gates(self):
-        for stage, count, threshold in (("READ_REQUIRED_SMOKE", 8, 7), ("READ_REQUIRED_PANEL", 64, 60)):
+        for stage, count, threshold in (("READ_REQUIRED_SMOKE", 8, 7), ("READ_REQUIRED_PANEL", 64, 60),
+                                         ("STRUCTURED_ACTION_SMOKE", 8, 7), ("STRUCTURED_FIRST_READ_SMOKE", 8, 7)):
             with self.subTest(stage=stage):
                 rows = self.rows()[:count]
                 for row in rows:
@@ -167,7 +230,8 @@ class SummaryTests(unittest.TestCase):
                 self.assertFalse(driver.summarize(rows, stage, True)["stage_gate_passed"])
 
     def test_required_read_invalid_or_capped_terminal_cannot_supply_joint_gate(self):
-        for stage, count, threshold in (("READ_REQUIRED_SMOKE", 8, 7), ("READ_REQUIRED_PANEL", 64, 60)):
+        for stage, count, threshold in (("READ_REQUIRED_SMOKE", 8, 7), ("READ_REQUIRED_PANEL", 64, 60),
+                                         ("STRUCTURED_ACTION_SMOKE", 8, 7), ("STRUCTURED_FIRST_READ_SMOKE", 8, 7)):
             for reason in ("INVALID_TURN", "LENGTH", "TURN_CAP", "ACTOR_TOKEN_CAP",
                            "RETURNED_TOKEN_CAP", "INPUT_TOKEN_CAP"):
                 with self.subTest(stage=stage, reason=reason):
@@ -218,12 +282,14 @@ class StageTests(unittest.TestCase):
             for slot, raw in zip(task["slot_ids"], script):
                 self.outputs[slot] = raw
         fixture, outputs, finishes = self.fixture, self.outputs, self.finishes
-        class Scripted(driver.native.NativeActor):
+        actor_type = driver.InterfaceActor if stage in driver.STRUCTURED_STAGES else driver.native.NativeActor
+        class Scripted(actor_type):
             def generate(self, request, limits):
                 fixture.session.text = outputs.get(request["id"], "invalid")
                 fixture.session.mutate = lambda raw: {**raw, "finish_reason": finishes.get(request["id"], "stop")}
                 return super().generate(request, limits)
-        self.actor = Scripted(self.settings, loader=fixture.loader,
+        arguments = {"stage": stage, "roster": self.plan} if stage in driver.STRUCTURED_STAGES else {}
+        self.actor = Scripted(self.settings, **arguments, loader=fixture.loader,
                               environment_reader=lambda: copy.deepcopy(fixture.environment), clock=fixture.clock)
         self.addCleanup(self.actor.close)
         return self.plan["tasks"][0]
@@ -250,6 +316,114 @@ class StageTests(unittest.TestCase):
         self.assertFalse(report["full_assay_qualified"])
         self.assertEqual((report["fits"], report["updates"]), (0, 0))
         self.assertEqual([row["id"] for row in report["results"]], [task["id"] for task in self.plan["tasks"]])
+        self.replay(report)
+
+    def test_structured_action_generate_capture_and_replay(self):
+        self.check_structured_capture("STRUCTURED_ACTION_SMOKE")
+
+    def test_structured_first_read_generate_capture_and_replay(self):
+        self.check_structured_capture("STRUCTURED_FIRST_READ_SMOKE")
+
+    def check_structured_capture(self, stage):
+        first = self.prepare(stage)
+        self.outputs[first["slot_ids"][0]] = "READ EVENT E_ZZZZZZZZZZ"
+        self.assertNotIn(self.outputs[first["slot_ids"][0]], first["queries"])
+        report = self.run_stage()
+        self.assertEqual(report["status"], "COMPLETE")
+        self.assertEqual(report["calls"], 16)
+        self.assertEqual(report["possible_calls"], 104)
+        self.assertEqual(report["summary"]["denominator"], 8)
+        self.assertEqual(report["summary"]["read_handshake_tasks"], 7)
+        self.assertTrue(report["summary"]["stage_gate_passed"])
+        self.assertTrue(report["summary"]["externally_scaffolded"])
+        self.assertFalse(report["summary"]["autonomy_claim"] or report["summary"]["learning_claim"])
+        self.assertEqual(report["summary"]["external_first_read"], stage == "STRUCTURED_FIRST_READ_SMOKE")
+        self.assertEqual(report["sampling_policy"], self.plan["sampling_policy"])
+        self.assertEqual(report["results"][0]["services"][0]["raw"], "MISS")
+        for index, attempt in enumerate(report["attempts"]):
+            sampling = driver.sampling_for(stage, attempt["request"], attempt["limits"])
+            rendered = driver._decode(attempt["capture"]["files"][f"call_{index:04d}.render.json"]["utf8"])
+            self.assertEqual(rendered["sampling"], sampling)
+            self.assertEqual(self.fixture.session.calls[index][1], sampling)
+        self.replay(report)
+
+    def test_structured_generic_first_route_is_not_a_handshake(self):
+        self.prepare("STRUCTURED_ACTION_SMOKE")
+        for task in self.plan["tasks"]:
+            self.outputs[task["slot_ids"][0]] = self.outputs[task["slot_ids"][1]]
+        report = self.run_stage()
+        self.assertEqual(report["calls"], 8)
+        self.assertEqual(report["summary"]["route_successes"], 8)
+        self.assertEqual(report["summary"]["read_handshake_tasks"], 0)
+        self.assertFalse(report["summary"]["stage_gate_passed"])
+        self.replay(report)
+
+    def test_structured_length_failure_is_not_salvaged(self):
+        first = self.prepare("STRUCTURED_FIRST_READ_SMOKE")
+        self.finishes[first["slot_ids"][0]] = "length"
+        report = self.run_stage()
+        self.assertEqual(report["results"][0]["reason"], "LENGTH")
+        self.assertEqual(report["results"][0]["reads"], 0)
+        self.assertEqual(report["results"][0]["slots"][1]["status"], "UNCALLED")
+        self.assertEqual(report["results"][0]["raw"], self.outputs[first["slot_ids"][0]])
+        self.replay(report)
+
+    def test_structured_actor_binds_roster_stage_sources_and_immutable_slots(self):
+        task = self.prepare("STRUCTURED_FIRST_READ_SMOKE")
+        request = {"id": task["slot_ids"][0], "seed": task["seed"], "messages": task["messages"], "mount": "C0"}
+        limits = {"output_tokens": 256}
+        for changed in ({**request, "id": "f" * 64 + "/actor/0"},
+                        {**request, "seed": request["seed"] + 1},
+                        {**request, "id": task["slot_ids"][1]}):
+            with self.assertRaisesRegex(ValueError, "structured slot"):
+                self.actor._sampling(changed, limits)
+        with self.assertRaises(TypeError):
+            self.actor._slot_seeds[request["id"]] = 0
+        altered = copy.deepcopy(self.plan)
+        altered["sampling_policy"]["first_slot_regex"] = ".*"
+        altered = driver.seal({key: value for key, value in altered.items() if key != "sha256"})
+        with self.assertRaisesRegex(ValueError, "reconstruction"):
+            driver.InterfaceActor(self.settings, stage=self.plan["stage"], roster=altered)
+        with self.assertRaisesRegex(ValueError, "stage binding"):
+            driver.InterfaceActor(self.settings, stage="STRUCTURED_ACTION_SMOKE", roster=self.plan)
+        settings = copy.deepcopy(self.settings)
+        settings["source_files"].pop(str(Path(driver.__file__).resolve()))
+        with self.assertRaisesRegex(ValueError, "source pins"):
+            driver.InterfaceActor(settings, stage=self.plan["stage"], roster=self.plan)
+        self.fixture.loader.assert_not_called()
+
+    def test_structured_replay_rejects_resealed_sampling_tamper(self):
+        self.prepare("STRUCTURED_FIRST_READ_SMOKE")
+        report = self.run_stage()
+        for index, field, value in ((0, "structured_outputs", {"regex": driver.ACTION_REGEX}),
+                                    (1, "structured_outputs", {"regex": driver.READ_REGEX}),
+                                    (0, "max_tokens", 255), (0, "seed", 0)):
+            altered = copy.deepcopy(report)
+            record = altered["attempts"][index]["capture"]["files"][f"call_{index:04d}.render.json"]
+            rendered = driver._decode(record["utf8"])
+            rendered["sampling"][field] = value
+            record["utf8"] = driver.canonical(rendered).decode()
+            record["sha256"] = driver.core.byte_hash(record["utf8"])
+            altered = driver.seal({key: item for key, item in altered.items() if key != "sha256"})
+            with self.assertRaisesRegex(ValueError, "replay differs|extra replay"):
+                self.replay(altered)
+
+    def test_structured_live_capture_sampling_drift_fails_stage(self):
+        self.prepare("STRUCTURED_FIRST_READ_SMOKE")
+        def reader(directory, index):
+            capture = driver.read_capture(directory, index)
+            record = capture["files"][f"call_{index:04d}.render.json"]
+            rendered = driver._decode(record["utf8"])
+            rendered["sampling"].pop("structured_outputs")
+            record["utf8"] = driver.canonical(rendered).decode()
+            record["sha256"] = driver.core.byte_hash(record["utf8"])
+            return capture
+        report = self.run_stage(reader)
+        self.assertEqual(report["status"], "FAILED")
+        self.assertEqual(report["calls"], 1)
+        self.assertEqual(report["results"][0]["status"], "ABORTED")
+        self.assertTrue(all(row["status"] == "UNCALLED" for row in report["results"][1:]))
+        self.assertIn("sampling join", report["error"]["message"])
         self.replay(report)
 
     def test_required_panel_captures_64_only_when_explicitly_selected(self):

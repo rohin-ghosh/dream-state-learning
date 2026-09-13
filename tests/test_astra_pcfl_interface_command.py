@@ -78,6 +78,9 @@ class Harness:
         return self.manifest
 
     def actor(self, settings):
+        if self.manifest["stage"] in command.driver.STRUCTURED_STAGES:
+            return command.driver.InterfaceActor(settings, stage=self.manifest["stage"], roster=self.manifest["roster"],
+                loader=lambda config: self.session, environment_reader=lambda: self.fixture.environment, clock=self.clock)
         return command.native.NativeActor(settings, loader=lambda config: self.session,
                                          environment_reader=lambda: self.fixture.environment, clock=self.clock)
 
@@ -89,7 +92,7 @@ class Harness:
                 texts.append("THINK Follow the supplied edges.")
             if command.driver.STAGES[stage]["reads"]:
                 texts.append(next(query for query in task["queries"] if query.startswith("READ EVENTS_AT ")))
-            if stage == "A1_READ_DISCLOSED":
+            if stage == "A1_READ_DISCLOSED" or stage in command.driver.STRUCTURED_STAGES:
                 route = command.driver.core.oracle_route_v1(command.driver.core.from_data(task["cell"]), task["goal"])
                 wrong = route.split(" : ")[0] + " : P_ZZZZZZZZZZ"
                 score = command.driver.core.score_route(command.driver.core.from_data(task["cell"]), task["goal"], wrong)
@@ -141,6 +144,39 @@ class CommandTests(unittest.TestCase):
         self.assertEqual(result["summary"]["route_successes"], 0)
         self.assertTrue(result["summary"]["stage_gate_passed"])
         self.assertEqual(self.harness.manifest["actor_template"]["max_calls"], 832)
+
+    def test_structured_default_factory_is_stage_bound(self):
+        for stage in command.driver.STRUCTURED_STAGES:
+            roster = {"stage": stage, "tasks": []}
+            settings = {"fixture": True}
+            with self.subTest(stage=stage), patch.object(command.driver, "InterfaceActor") as structured, \
+                    patch.object(command.native, "NativeActor") as default:
+                self.assertIs(command._actor(settings, roster), structured.return_value)
+                structured.assert_called_once_with(settings, stage=stage, roster=roster)
+                default.assert_not_called()
+                injected = lambda config: config
+                self.assertIs(command._actor(settings, roster, injected), settings)
+                structured.assert_called_once()
+
+    def test_both_structured_smokes_complete_replay_without_route_success(self):
+        for stage in command.driver.STRUCTURED_STAGES:
+            with self.subTest(stage=stage):
+                self.harness.output = self.harness.root / stage
+                result = self.harness.run(stage)
+                self.assertEqual(result["status"], "COMPLETE")
+                self.assertEqual(result["summary"]["denominator"], 8)
+                self.assertEqual(result["actual_calls"], 16)
+                self.assertEqual(result["possible_calls"], 104)
+                self.assertEqual(result["summary"]["served_read_tasks"], 8)
+                self.assertEqual(result["summary"]["route_successes"], 0)
+                self.assertTrue(result["summary"]["stage_gate_passed"])
+                self.assertFalse(result["full_assay_qualified"])
+                actor_path = self.harness.output / stage / "actor"
+                for index in range(16):
+                    render = command.read(actor_path / f"call_{index:04d}.render.json")
+                    self.assertEqual(set(render["sampling"]["structured_outputs"]), {"regex"})
+                self.assertEqual(self.harness.session.engine.calls, 1)
+                self.assertEqual(self.harness.session.closed, 1)
 
     def test_think_stages_complete_but_fail_threshold(self):
         for stage, maximum in (("A3_THINK", 448), ("ACTIVE_THINK", 1216)):

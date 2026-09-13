@@ -14684,6 +14684,32 @@ wrong-but-well-typed identifiers, and eight-task outer collection. Per-stage
 one-hour cap including cleanup, expected minutes from recent smoke; maximum
 aggregate2A40h, no new lease. Main will pin source and allocation before launch.
 
+## [Builder] 2026-09-13 — structured-action CPU acceptance, separate continuation feasibility
+
+Scoped driver/test EDITSTOP:42tests PASS56.209s, including six old roster-byte
+snapshots excluding source repins, regex/parser agreement, nonexistent IDs,
+external first-slot scheduling, slot/seed binding, generation/capture/replay
+and sampling tamper rejection. Driver SHA256
+b62f7f4ffbea11458342223b6118ee89ea60effde6294273f002a152f5e2fbfb;
+test SHA2566f282a5ab8cae9c846b81c938cf26dc72f0db8fd347208196d923bad448b7c0e.
+Main command/outer integration26tests PASS46.805s, including both structured
+eight-task16call synthetic roundtrips, strict wrong routes remaining wrong,
+and explicit structured/default actor dispatch. Default native actor and core
+READ/ROUTE parsers are unchanged. No native structured output seen yet; a
+native regex-backend failure will be preserved, not silently downgraded.
+Main reviewed the sampler: static regexes only, immutable allowed slot/seed
+map, first-slot classification bound to the public turn; no graph/query lookup
+in the sampler. Both diagnostics remain8tasks/max104calls and exposed DEV.
+
+Separately, Meitner's sequence feasibility is archived as
+`research_notes/astra_memos/receipts_20260912/astra_event_sequence_feasibility_20260913.md`.
+The frozen EVENT writer cannot resume a checkpoint; V3 already supports
+full-adapter warm starts with fresh optimizers but different numerical details.
+Do not feedSEQ179 into V3 or pretend all-eight-trained weights are a four-event
+prefix. A new chronological4+4 diagnostic with genuine replay and controls is
+feasible but NOT implemented/launched by this note. Keep original material
+provenance and original writer claims separate. No general G3 claim follows.
+
 ## [Independent A2/A3 result audit] 2026-09-13T15:42Z — exact graph did not compose; requested THINK never entered the typed loop
 
 Terminal read-only audit:

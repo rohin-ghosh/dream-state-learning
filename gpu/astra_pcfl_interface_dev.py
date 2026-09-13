@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 import re
 import time
+from types import MappingProxyType
 
 from gpu import astra_pcfl_native_actor as native
 from organism_v6 import pcfl_vertical_dev as core
@@ -20,8 +21,16 @@ STAGES = {
     "ACTIVE_THINK": {"reads": 12, "thinks": 6, "calls": 19},
     "READ_REQUIRED_SMOKE": {"reads": 12, "thinks": 0, "calls": 13},
     "READ_REQUIRED_PANEL": {"reads": 12, "thinks": 0, "calls": 13},
+    "STRUCTURED_ACTION_SMOKE": {"reads": 12, "thinks": 0, "calls": 13},
+    "STRUCTURED_FIRST_READ_SMOKE": {"reads": 12, "thinks": 0, "calls": 13},
 }
 READ_REQUIRED_STAGES = ("READ_REQUIRED_SMOKE", "READ_REQUIRED_PANEL")
+STRUCTURED_STAGES = ("STRUCTURED_ACTION_SMOKE", "STRUCTURED_FIRST_READ_SMOKE")
+READ_REGEX = r"READ (?:EVENT E_[A-Z2-7]{10}|EVENTS_AT N_[A-Z2-7]{10}|LINKS_FROM E_[A-Z2-7]{10})"
+ACTION_REGEX = (
+    r"(?:READ (?:EVENT E_[A-Z2-7]{10}|EVENTS_AT N_[A-Z2-7]{10}|LINKS_FROM E_[A-Z2-7]{10})"
+    r"|ROUTE N_[A-Z2-7]{10} N_[A-Z2-7]{10} : P_[A-Z2-7]{10}(?:,P_[A-Z2-7]{10})*)"
+)
 SMOKE_INDICES = (0, 1, 16, 17, 32, 33, 48, 49)
 READ_REQUIRED = (
     "Before any ROUTE, you must issue at least one READ. Use only the public START\n"
@@ -86,7 +95,7 @@ def build_roster(root_wires, stage):
     system = BASE_SYSTEM + ROW_SEMANTICS + "\n"
     system += READ_API if limits["reads"] else "Local reads are disabled; do not emit READ."
     system += "\n" + (THINK_API if limits["thinks"] else "THINK is unavailable; do not emit THINK.")
-    if stage in READ_REQUIRED_STAGES:
+    if stage in READ_REQUIRED_STAGES + STRUCTURED_STAGES:
         system += "\n" + READ_REQUIRED
     projection = "ACTIVE_LINKED_TEXT" if limits["reads"] else "EXACT_WITNESSED_GRAPH"
     tasks = []
@@ -105,20 +114,59 @@ def build_roster(root_wires, stage):
                               "queries": copy.deepcopy(queries), "source_rows": copy.deepcopy(rows),
                               "slot_ids": [f"{core.byte_hash(identifier)}/actor/{turn}" for turn in range(limits["calls"])]})
     require(len(tasks) == 64 and len({task["case_id"] for task in tasks}) == 64, "case denominator")
-    if stage == "READ_REQUIRED_SMOKE":
+    if stage == "READ_REQUIRED_SMOKE" or stage in STRUCTURED_STAGES:
         tasks = [tasks[index] for index in SMOKE_INDICES]
-    return seal({"schema": SCHEMA + "/roster", "stage": stage, "roots": copy.deepcopy(root_wires),
+    roster = {"schema": SCHEMA + "/roster", "stage": stage, "roots": copy.deepcopy(root_wires),
                  "roots_sha256": digest(root_wires), "sources": source_pins(), "tasks": tasks,
                  "limits": {**limits, "turn_tokens": 256, "actor_tokens": 2048, "returned_tokens": 4096,
                             "input_tokens": 14336, "possible_calls": len(tasks) * limits["calls"]},
                  "continue": CONTINUE, "material_origin": "RESEARCHER_AUTHORED_EXCLUDED_ROOT_CEILING_NOT_CHILD",
-                 "fits": 0, "updates": 0, "full_assay_qualified": False})
+                 "fits": 0, "updates": 0, "full_assay_qualified": False}
+    if stage in STRUCTURED_STAGES:
+        first_regex = READ_REGEX if stage == "STRUCTURED_FIRST_READ_SMOKE" else ACTION_REGEX
+        roster["sampling_policy"] = {
+            "name": f"pcfl.supplied_memory.{stage.lower()}.v1", "externally_scaffolded": True,
+            "external_first_read": stage == "STRUCTURED_FIRST_READ_SMOKE",
+            "first_slot_regex": first_regex, "first_slot_regex_sha256": core.byte_hash(first_regex),
+            "later_slot_regex": ACTION_REGEX, "later_slot_regex_sha256": core.byte_hash(ACTION_REGEX),
+            "autonomy_claim": False, "learning_claim": False,
+        }
+    return seal(roster)
 
 
 def validate_roster(roster, expected_sha256):
     _unseal(roster)
     require(roster["sha256"] == expected_sha256, "roster hash differs")
     require(canonical(roster) == canonical(build_roster(roster["roots"], roster["stage"])), "roster/source reconstruction differs")
+
+
+def sampling_for(stage, request, limits):
+    require(stage in STAGES, "unknown sampling stage")
+    sampling = {**native.SAMPLING, "seed": request["seed"], "max_tokens": limits["output_tokens"]}
+    if stage in STRUCTURED_STAGES:
+        require(re.fullmatch(r"[0-9a-f]{64}/actor/(?:[0-9]|1[0-2])", request["id"]) is not None,
+                "structured slot syntax")
+        first = stage == "STRUCTURED_FIRST_READ_SMOKE" and request["id"].endswith("/actor/0")
+        sampling["structured_outputs"] = {"regex": READ_REGEX if first else ACTION_REGEX}
+    return sampling
+
+
+class InterfaceActor(native.NativeActor):
+    def __init__(self, config, *, stage, roster, **native_kwargs):
+        require(stage in STRUCTURED_STAGES and roster["stage"] == stage, "structured actor stage binding")
+        validate_roster(roster, roster["sha256"])
+        require(all(config["source_files"].get(path) == checksum for path, checksum in roster["sources"].items()),
+                "structured actor source pins")
+        self._stage = stage
+        self._slot_seeds = MappingProxyType({slot: task["seed"] for task in roster["tasks"] for slot in task["slot_ids"]})
+        self._first_slots = frozenset(task["slot_ids"][0] for task in roster["tasks"])
+        super().__init__(config, **native_kwargs)
+
+    def _sampling(self, request, limits):
+        require(request["id"] in self._slot_seeds and request["seed"] == self._slot_seeds[request["id"]],
+                "structured slot/seed binding")
+        require((request["id"] in self._first_slots) == (len(request["messages"]) == 2), "structured slot/turn binding")
+        return sampling_for(self._stage, request, limits)
 
 
 def _render(tokenizer, messages):
@@ -158,7 +206,7 @@ def read_capture(directory, index):
     return {"index": index, "files": files}
 
 
-def _verify(attempt, index, request, limits, settings, tokenizer, previous_end):
+def _verify(attempt, index, request, limits, settings, tokenizer, previous_end, stage):
     require(set(attempt) == {"request", "limits", "response", "capture", "error"}
             and attempt["request"] == request and attempt["limits"] == limits, "attempt binding")
     require(attempt["error"] is None, "backend/capture failure: " + str(attempt["error"]))
@@ -187,7 +235,7 @@ def _verify(attempt, index, request, limits, settings, tokenizer, previous_end):
             and asked["request_sha256"] == raw["request_sha256"] == digest(request), "request join")
     text, ids = _render(tokenizer, request["messages"])
     require(rendered["rendered_prompt"] == text and rendered["prompt_token_ids"] == ids
-            and rendered["sampling"] == {**native.SAMPLING, "seed": request["seed"], "max_tokens": limits["output_tokens"]}
+            and rendered["sampling"] == sampling_for(stage, request, limits)
             and rendered["mount"] == raw["mount"] == "C0" and rendered["lora_request"] is raw["lora_request"] is None,
             "render/default sampling join")
     output, response = raw["raw"], attempt["response"]
@@ -236,19 +284,23 @@ def summarize(results, stage, complete):
     gate = successes >= 60
     if stage == "A1_READ_DISCLOSED":
         gate = read_handshakes >= 60 and invalid == 0
-    if stage in READ_REQUIRED_STAGES:
-        denominator, threshold = (8, 7) if stage == "READ_REQUIRED_SMOKE" else (64, 60)
+    if stage in READ_REQUIRED_STAGES + STRUCTURED_STAGES:
+        denominator, threshold = (64, 60) if stage == "READ_REQUIRED_PANEL" else (8, 7)
         gate = len(results) == denominator and read_handshakes >= threshold and invalid == 0
     if STAGES[stage]["thinks"]:
         gate = thought_routes >= 60
     if stage == "ACTIVE_THINK":
         gate = active_routes >= 60 and invalid == 0
-    return {"denominator": len(results) if stage in READ_REQUIRED_STAGES else 64,
+    summary = {"denominator": len(results) if stage in READ_REQUIRED_STAGES + STRUCTURED_STAGES else 64,
             "route_successes": successes, "thought_tasks": thought_tasks,
             "served_read_tasks": served_tasks, "invalid_read_tasks": invalid,
             "read_handshake_tasks": read_handshakes, "thought_interface_tasks": thought_interfaces,
             "thought_route_tasks": thought_routes, "active_thought_route_tasks": active_routes,
             "stage_gate_passed": bool(complete and gate), "full_assay_qualified": False}
+    if stage in STRUCTURED_STAGES:
+        summary.update(externally_scaffolded=True, external_first_read=stage == "STRUCTURED_FIRST_READ_SMOKE",
+                       autonomy_claim=False, learning_claim=False)
+    return summary
 
 
 def _execute(roster, settings, tokenizer, deadline, acquire, clock):
@@ -280,7 +332,8 @@ def _execute(roster, settings, tokenizer, deadline, acquire, clock):
                 slot.update(status="ATTEMPTED", attempt_index=index)
                 attempt = acquire(index, request, limits)
                 attempts.append(copy.deepcopy(attempt))
-                output, observed_identity, previous_end = _verify(attempt, index, request, limits, settings, tokenizer, max(previous_end, now))
+                output, observed_identity, previous_end = _verify(attempt, index, request, limits, settings, tokenizer,
+                                                                 max(previous_end, now), roster["stage"])
                 require(identity_hash is None or identity_hash == observed_identity, "actor identity changed")
                 identity_hash = observed_identity
                 require(previous_end <= clock() <= deadline, "stage chronology/deadline after generation")
@@ -344,7 +397,8 @@ def _execute(roster, settings, tokenizer, deadline, acquire, clock):
             "error": error, "results": results, "attempts": attempts, "summary": summarize(results, roster["stage"], complete),
             "calls": len(attempts), "possible_calls": caps["possible_calls"], "fits": 0, "updates": 0,
             "material_origin": roster["material_origin"], "native_custody_verified": False,
-            "outer_release_required": True, "full_assay_qualified": False}
+            "outer_release_required": True, "full_assay_qualified": False,
+            **({"sampling_policy": copy.deepcopy(roster["sampling_policy"])} if roster["stage"] in STRUCTURED_STAGES else {})}
 
 
 def _inputs(roster, expected_sha256, settings, tokenizer, deadline):
