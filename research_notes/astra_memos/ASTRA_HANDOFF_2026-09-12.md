@@ -174,3 +174,50 @@ before expiry and leave six-hour completion margin for launches.
 Continue the broader mission after these component checks: held-out behavior,
 repeated usable writes/retention, parent-free competencies and matched adult
 comparisons remain necessary. This one acquisition pass is not the sprint end.
+
+## Restart delta — 2026-09-13 16:43 UTC, through SEQ-183
+
+This section supersedes pending-work descriptions above. Main resumed at
+`07fcc98c`; pull was already up to date. Preserve unrelated dirty
+`gpu/codex/dream_state.rules`. No Main GPU job is live at this checkpoint.
+
+- SEQ-181: static READ/ROUTE grammar selected no READ (0/8). Scheduling a
+  READ-only first action family yielded 8/8 handshakes, 40 READs (30 non-MISS),
+  8 strict terminals, 4 legal routes, and 0 graph successes. The child selected
+  every READ address, including the first; no host-selected address was used.
+  Reviewed archive SHA256
+  `a3745deee039131c037ac2e645e6ab54e6d437eaebd848b8452bc5cad7bdd37c`.
+- SEQ-182: authenticated chronological A/B EVENT material prepared, not fitted.
+  Exporter commit `8a880ddd`; 10 tests passed. Native material file SHA256
+  `9072d04c19ea7118a2835c95ecd1e72ce6749352efbf34018a6e0e288774cdc5`.
+  Six candidate V3 phases total 400 updates/1,600 presentations, fresh optimizer
+  at every write. S_A40 acquisition is unproven; retention is unavailable if
+  its pre-correct set is empty. Re-export to a new attempt under finished source
+  before native fitting; never mutate or loosen old pins.
+- SEQ-183: A3B LF framing gave 25 calls, 17 THINK turns, 8/8 exact first THINKs,
+  but only 4/8 strict terminals, 0 legal routes and 0 graph successes. Joint
+  physical gate failed. Nine LF returns matched the exact first-LF decode
+  relation; 16 EOS returns matched full bytes. All tokens charged. Original
+  failed A3 remains failed; no full panel or automatic A4. Archive SHA256
+  `fb4b074911f8d8190bd71caef846d6b1440ca56f9b8ad19003ec1ddcfdb391ae`.
+  Code `4ca790d5`, native/driver83 plus command/outer27 tests passed.
+
+Meitner (`01a09af5-65a4-7ea3-904c-af5c37968c88`) owns only
+`gpu/astra_pcfl_event_sequence_fit.py` and its test; await EDITSTOP before
+staging. Lagrange (`01a09b03-adae-7872-afb1-67d819134c38`) now owns only
+`gpu/astra_pcfl_interface_dev.py` and its test for the A3C static structured
+THINK/ROUTE plus LF smoke. Same prompts, roots, seeds and budgets; no answers,
+algorithm, dynamic identifiers, forced first THINK or parser repair. Main owns
+lifecycle, launches and notebook. No worker may launch GPUs.
+
+Next: test one static typed-action channel to localize the remaining syntax
+failure, inspect physical and graph outcomes separately, then decide whether
+any algorithm/incremental-service descendant is eligible. Sequence engineering
+is independent and bounded, not a replacement for dynamic LINK and connected
+action evidence. Manuscript remains through SEQ-179; update after the next
+useful evidence checkpoint. No mechanism freeze, general G3, P1, H1/H2,
+clean-lineage or full-assay claim. Formal C11 guard remains deferred by Rohin;
+simple provenance, state isolation, resource ownership and lease rules remain.
+Node1 preservation deadline is September13 23:14UTC; node1 expires
+September14 23:14UTC. Existing mirrors are reported verified; reconcile new
+evidence before that deadline. No approvals requested on this resumption.

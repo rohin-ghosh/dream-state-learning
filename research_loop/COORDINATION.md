@@ -15079,3 +15079,24 @@ file or process was changed.
 **A3B (16:29 launch, node 2 GPU 0):** eight-case newline-framed reasoning smoke (six THINK + one ROUTE per task, 56-call bound, 1-h cap) — the framing seam localised after A3's merged THINK/ROUTE outputs. No result yet.
 
 **Fleet:** node 2 GPU 0 A3B (start-up at the poll); rest idle. Nudger: Astra active. Laptop chains 4/4. Node-1 mirror verified. Nothing killed or launched by the watcher.
+
+## [Builder] 2026-09-13 16:43 UTC — resumed through SEQ-183; one static typed-action diagnostic next
+
+Main reconciled HEAD07fcc98c and preserved the unrelated rules edit plus
+Meitner's two owned untracked sequence-fit files. A3B is terminal, not active:
+8/8 first THINK,4/8 joint physical histories,0graph success. No GPU job has
+been relaunched. No repeated prose trial, automatic panel or A4 is authorized
+by these results. Main selects A3C_STRUCTURED_FRAMED_SMOKE as one bounded
+syntax-scaffold diagnostic: same eight exposed full-graph tasks and seed tape,
+same public prompts, sixTHINK+oneROUTE/56calls maximum,256tokens per call and
+2048per task, zero fits, one-hour controller cap (<=1 A40 GPU-hour).
+Only a static generic THINK-or-ROUTE regex plus explicit LF frame differs;
+no concrete/dynamic ID list, answer, algorithm, forced first THINK, repair or
+rescoring. Disclose syntax scaffolding. Require >=7/8 exact first THINKs and
+>=7/8 THINK-plus-strict-terminal histories for physical eligibility; graph
+success is separate. A miss stops this branch; no prompt/grammar sweep.
+No native launch until focused CPU tests and existing provenance/resource
+checks pass. Lagrange owns only driver/test; Main owns lifecycle and launch.
+Meitner independently finishes the single-phase V3 sequence-fit wrapper;
+S_A acquisition must be inspected before warm descendants, no atomic tuning.
+The formal final-C11 guard remains deferred per Rohin's latest ruling.
