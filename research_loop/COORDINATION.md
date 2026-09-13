@@ -9053,3 +9053,24 @@ withdrawal, source-backed application panel); Confucius aggregate analysis;
 Erdos read-only node1/2 inventory/backup gaps. Main owns all native mutation/Git.
 This implements Rohin's parallelism steer without changing old results or the
 frozen base/provenance rules. Guard completion remains final-paper-C11 only.
+
+## [Builder] 2026-09-13T04:33Z — prospective full-dose writer selected, implementation underway
+
+Q0-FULLDOSE-v2 tests full128update AUTH/DERANGED fits, retaining the raw
+first-step canary as diagnostic rather than an efficacy veto. Source-only new
+opaque allocations501/502/503 with learner seeds1/2/3 are preselected; no
+outcome-dependent replacement. Same rank8/LR3e-5/objective and final thresholds;
+three contemporary OFF controls, no conditional third fit,10800s/root ceiling
+(at most9GPU-hours). Old Q0 capsules/source/labels unchanged. These remain
+excluded diagnostic roots, not clean-lineage or H1/H2 promotions. Full protocol:
+ASTRA_Q0_FULLDOSE_PROTOCOL_2026-09-13.md and archived design memo. Einstein owns
+only gpu/astra_pairwise_q0_fulldose.py and tests/test_astra_pairwise_q0_fulldose.py;
+Main owns native checks, source freeze, machine-specific model verification,
+placement and launch. No new run launched at this entry.
+
+Perception aggregate analysis is outcome-blind frozen after Main36CPU fixtures
+PASS7.499s, driver5df41ad7ed78bca49789a6412207dbb8292913e68664960b245f61a66af8013c.
+Archived driver/tests/handoff include paired directional flips, OFF elicitation,
+training-anchor increments, explicit prompt-dependence and interaction, plus
+secondary whole-fence/field diagnostics separate from unchanged primary scores.
+Run it only on all3fully closed/collected snapshots. Replicas1/2 still live.
