@@ -14556,3 +14556,18 @@ Main reviewed the20-line driver delta and its unchanged handshake scorer:
 fixed smoke subset, public READ requirement and size-specific7/8 gate only.
 The preserved roots remain exposed DEV, never training/confirmation material.
 CPU integration gate is now satisfied; native preparation is next.
+
+## [Builder] 2026-09-13T15:56:43Z — LAUNCH required-READ smoke, node2 GPU0
+
+Detached controller196759 launched READ_REQUIRED_SMOKE from source commit
+aa3327c2ea330b9e76a279caf59efc6ad046eae7, immutable source directory
+`/tmp/astra_pcfl_interface_required_source_20260913_attempt1`. Source tar SHA256
+3dddbda3262e9a599a3b091e35e4a4aa17ccb00aec266479e97009925e4ad05d matched VM/node.
+Run `/localhome/local-rohing/astra_diagnostics/pcfl_interface_read_required_smoke_20260913_attempt1`;
+manifest FILE SHA25679139298ed3eccd5343f1c6122ca6f886ea07872fbaa74e1d7866981b244aeb3;
+allocation SHA25667f4c4971167d5c73ef6b153e7817410ad970758f73fd93e9ce4dd19f4a01f57.
+Offline preparation measured8 tasks, maximum377 initial tokens, zero fits or
+updates. Native model is the existing officially bound frozen snapshot. The
+outer rechecks allocation before actor start and owns bounded shutdown/release.
+Launched is not completed: inspect collection/replay/release before outcome
+promotion. No panel launched, no process killed by Main, no approval prompt.
