@@ -17222,3 +17222,18 @@ rechecks GPU processes, CVD owners, queue, lease and pins after SSH detaches;
 no visibility exception or automatic retry. PID confirmation follows launch.
 Seeds1/2 results and all excluded roots remain unchanged. No parenting/G3
 qualification or final-C11 guard activation follows this diagnostic launch.
+
+## [Root adoption] 2026-09-13T20:54Z — TSJ-v4 opens CPU source/checker authoring only
+
+Adopt exact two-SLEEP-junction v4 source contract commit `ca1cc8fa`, file
+SHA-256
+`57cdeb290573acb4edf68a1a4c1cbf12ae64eee6f0dc31730cc264cc79ae848a`,
+subject to fresh audit commit `90742a39` (audit SHA-256
+`81fe33eeb333dcdb9e0dc3acaff6955804e7b06bc5faa0261785c47ff19f0ee8`).
+The fresh reviewer found every P0.A--E source-contract blocker closed and
+independently recomputed 3,230 model calls / 572,096 generated tokens per
+world. Astra may author CPU source/checkers against these exact bytes. This
+does **not** open deterministic scientific preparation, the real tokenizer,
+model calls, fits, GPUs, or claims. `GO_PREPARE` remains gated on two
+independent CPU implementations, exact upstream M-COMBINE artifact receipt,
+and a fresh source audit; all later staged gates remain as written.
