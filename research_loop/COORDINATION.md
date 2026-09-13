@@ -17953,3 +17953,24 @@ assumed. The target stays reduced BASE/D1ATOM_LOCAL560calls, then qualified
 same-adapter AUTH two-SLEEP junction. This request does not revive formal C11
 or a full matrix, and does not authorize synthetic/diagnostic relabeling to
 bypass the existing source/material gates.
+
+## [Builder] 2026-09-13T23:13Z — constructor consistency gap closed; scoped reviews complete
+
+New source_inputs validator rebuilds the entire birth pair, checks every
+selected-case field including hidden/off-trace registry and effective world
+edges, then matches exact rendered ArmRecord. It returns new immutable
+snapshots and engineering fingerprints, not scientific inventory authority.
+Main15CPUtests PASS41.108s, observed23:11:38->23:12:20UTC,48source/test hashes
+unchanged. Evidence: research_notes/analysis/2026-09-13_stage2a_constructor_source_validation.md.
+Mendel independently reviewed exact frozen bytes, scopedPASS/no concrete flaw.
+His separate scanner/checkpoint scoped review also PASS at932e1e58. Neither
+review is full Stage2A GO; both keep inventory and native gates closed.
+
+No active test/GPUjob remains from this continuation, no Qwen/tokenizer
+instantiated, no GPU launch/kill, no curl/wget retry or approval request.
+No new node1 writes; bounded preservation evidence unchanged. FormalC11
+remains deferred. SEQ195complete/no repeat; no generalG3/H1/H2/freeze claim.
+The23:04UTC narrow binding request remains unanswered in this checkout.
+Unambiguous constructor work is finished; next inventory adapter needs those
+source definitions, not more toy empty-ledger tests. The experimental target
+stays reduced560call BASE/ATOM screen then authentic same-adapter two-SLEEP.

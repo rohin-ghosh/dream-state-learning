@@ -1,4 +1,17 @@
-## Current superseding snapshot — 2026-09-13 23:03 UTC
+## Current superseding snapshot — 2026-09-13 23:13 UTC
+
+Full-constructor source/record validator implemented: Main15PASS41.108s,
+48source/test hashes unchanged, independent scoped reviewPASS. Exact receipt
+and source pins: analysis/2026-09-13_stage2a_constructor_source_validation.md.
+Earlier506test and native CPU receipts remain distinct; no combined521test
+run claimed. No activeCPUtest/GPUjob; no new Qwen/tokenizer/material/science
+gate. No full-source/inventory/C11/mission completion or mechanism freeze.
+Remaining narrow bindings requested notebook23:04UTC, no received reply;
+handoff23:13UTC is current. Next source inventory adapter/full audit then
+separate preparation opening/reduced560call controller screen/authenticTSJ.
+FormalC11deferred; SEQ195complete/no repeat; preserve unrelateddirtyfiles.
+
+## Historical superseded snapshot — 2026-09-13 23:03 UTC
 
 Mission ACTIVE/incomplete. Handoff23:03UTC is current. Integrated506tests:
 491PASS/15native skips,194.606s,46source/test hashes unchanged. The9trainer

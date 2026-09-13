@@ -1,6 +1,32 @@
-# Astra restart handoff — September 13, 2026, 23:03 UTC
+# Astra restart handoff — September 13, 2026, 23:13 UTC
 
-## Current superseding increment at 23:03 UTC
+## Current superseding increment at 23:13 UTC
+
+Full-constructor/exact-record validator implemented in source_inputs.py;
+Main15CPUtests PASS41.108s,48source/test hashes unchanged, independent focused
+review PASS on exact bytes. Source/custody/limits:
+analysis/2026-09-13_stage2a_constructor_source_validation.md.
+It rebuilds complete hidden/off-trace source and returns fresh immutable
+snapshots; it does NOT define or validate complete scientific inventories.
+Accepted scanner/checkpoint slice at932e1e5804c95da328913289a5e326fc9928775c
+also received independent scoped PASS; separate review note preserved.
+
+No active CPUtest/GPUexperiment remains from this continuation. Lorentz and
+Mendel complete; no outstanding code ownership. Preserve unrelateddirtyrules
+and unreviewed TSJdraft. No real tokenizer/model/GPU or claim gate opened.
+MissionACTIVE/incomplete; formalC11deferred; SEQ195not to be repeated.
+
+Next blocker:23:04UTC notebook request for narrow inventory/source bindings
+has no received reply. Need complete birth semantic schema, future universe
+and disclosure chronology, registered-route membership/serialization, and
+birth-core derivation before completing the source inventory adapter. Do not
+invent visibility rules, truncate ledgers, substitute empty inventories or
+relabel a native run diagnostic. After source closure/full fresh audit,
+separately record material/tokenizer/runtime gates then reduced560call screen
+and qualified same-adapter authentic two-SLEEP. Current simple hygiene stays.
+Node1preservation audit unchanged; no writes to node1 in this continuation.
+
+## Historical superseded increment at 23:03 UTC
 
 Integrated VM suite: 506 tests, 491 PASS, 15 native-only skips, 194.606s;
 46 source/test hashes unchanged. Actual start22:59:14/end23:02:30UTC.
