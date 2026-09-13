@@ -1,5 +1,31 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
+**Latest bounded cut: SEQ119fit–121 / C63–C65, September12,2026 PDT /
+September13 UTC.** Externally authored TRAINED birth fits complete128 updates
+per arm, not child experience-learning or self-learning. Complete384-call
+OFF/AUTH/DERANGED readout shows own-map carriage but the full registered
+conjunction FAILS both trained maps. OFF96/128 truncated outputs do not establish
+absent base reasoning; no exact-train-form panel localizes residual failure.
+Exploratory formation completes28 calls,6/8 protocol-invalid tasks,1/3 faithful
+records and0/4 eligible rows: `PAIRED_SHORTAGE`, no paired downstream writes.
+Teacher misstatements prevent neutral-parent purity claims; no contemporaneous
+OFF formation means no causal birth-harm inference. SEQ120audit v2 reports
+`FINAL_BOUNDED_COMPARISON_COMPLETE`: all strict/joint headlines, twins and
+registered counts match; ten explained field-retention differences on two
+dual-NEXT rows, zero unexplained. This is bounded raw-count completion, not
+scientific/native approval or formation certification. Ampere did not independently
+verify native token decoding; official model origin and clean ancestry remain
+unresolved. V1 artifacts are preserved.
+Trained0097 emits89 for31+48=79; OFF16/16 numerically correct addition outputs
+are manual descriptive observations, not replacement scores or evidence that
+trained15/16 compliance improves arithmetic. Source
+NOT CLEAN; official base revision unresolved; no H1/H2/P1/G3/G5/freeze. C63–C65
+below bind the exact evidence. No protocol-probe result or launch status is
+included. This supersedes only historical birth-status wording, not earlier
+counts, tables, thesis or the canonical abstract. Collaborator **UNSENT**.
+
+**Historical SEQ118 cut; birth implementation status superseded by C63–C65.**
+
 **SEQ118 / C62 — terminal sequential-memory result; run September 12, 2026
 UTC, despite September13-named artifacts.** Returned raw-review PASS covers640
 calls with no discrepancies; the additive custody PASS verifies the newly supplied
@@ -2539,3 +2565,162 @@ Sources and exact bindings:
 - Capsule `research_notes/astra_memos/receipts_20260912/astra_sequential_memory_seed0_pair_attempt2_terminal_20260913T0000Z.tgz`, SHA256 `c63437c47918603d5b784544bcae85e7febc93ec7516677eaa9a3608b78b2fb0`; its `.tgz.validation.json` is SHA256 `10cfd0e1af02a552fe8078223b4d49905914e08e5351d4363d67e99161c737c4`, matching the supplied addendum's external receipt.
 - Source `5a1f300fed4b7f1ef54524869c2bf11509e965ca`; plan `9e53c716373c2458586ff7b6a72d0fe5822d41d5a0129057e2a4e805acab8b49`; driver `29d70e46f0c65817f65f52f6ed310fcfaa91cda64928f9bdfc54b70834a0c232`; root `astra_sequential_memory_20260912_attempt2/seed0_pair_attempt2`. S0 parent plan `4cad487a53d0e992b896eb4324ff2de1adb24ccc176856de7043d1132c0ee388`.
 - Prepared, UNLAUNCHED process fit-seed0/1 plan pins `ff6bbf2834cc300e9e5cb6ec1f36975bc4d7dd1ae29c1bb4936ce887d7fdb43d` / `a761747b53b43cd62ab664884419838c9f7b60b8df9ee0b7cd51b57230a428d9` are reported by Main's memo, not evidence of execution.
+
+## C63 — SEQ119fit: completed externally authored TRAINED birth, not child self-learning
+
+September12,2026 PDT / September13 UTC. Two fresh-base rank8 LoRAs use the
+same256 contexts with closed eight-row target/EOS-matched groups, AUTH and
+DERANGED assigned targets. Seed0, LR1e-4, four epochs, batch8,128 optimizer
+updates each/256 total;11,648 target-token presentations per arm/23,296 total.
+Both manifests report zero nonfinite batches and zero truncated items. These
+are supervised source-authored fits, not the child's learned experience or
+self-learning; technical completion alone does not qualify birth or usefulness.
+
+Selective supporting reads: both `metadata/run/run/{AUTH,DERANGED}/adapter/
+train_manifest.json` members of the fit capsule (literal members, no model
+load), external fit/readout validations, terminal ledger and notebook. Each
+manifest has256 encoded rows,2,912 target tokens per epoch,128 steps/four epochs;
+`train_tokens_seen`73,408 includes context and is not the target-token count.
+Main verified39 member hashes; no fresh tensor audit is claimed by this writer.
+Fit launch-to-release488.560991s (collection38.730419s nested), controller
+376.744928s; metadata capsule excludes weights, which have separate custody.
+
+Exact bindings (receipt filenames below are under
+`research_notes/astra_memos/receipts_20260912/`):
+- Canonical `research_notes/astra_memos/ASTRA_BIRTH_COMPONENT_RESULT_2026-09-13.md`, read-snapshot SHA256 `d6c6d83657bc3150a5185d805dfdd7f08bc831d452e214a584a145cc03928137`. Its initially pending review is superseded only by C64's completed bounded v2 comparison, not scientific/native approval; v1 remains preserved.
+- Fit capsule `astra_birth_fit_seed0_20260912_attempt1_capsule.tgz`, SHA256 `d2460cb3be9b357ae1beecad84ae9bcfc7e76b61d296fb7b359ae9e68d8e2474`; validation `astra_birth_fit_seed0_20260912_attempt1_validation.json`, SHA256 `d403b48b645dcc5ebd971a6527108f21287fd722981f128c8780c58a2f1cf770`.
+- Source `31b5535ec9f73f7b32fdaf21ccfc3a2a68a948a6`; fit plan `776871143e25027479ae2c2d375687fc383abb113b1bb2fcf0cb1077700d03fa`.
+- Ledger `research_notes/astra_memos/ASTRA_RUNS_2026-09-12.jsonl`, event `SEQ119-birth-conditional-seed0-fit-terminal`, recorded2026-09-13T00:40:39.796660+00:00; notebook `research_loop/COORDINATION.md`, September12 17:40 PDT Builder entry.
+
+## C64 — SEQ120: assigned-map carriage, failed full conjunction; bounded raw comparison COMPLETE
+
+All384 calls close before scoring,128 identical held-instance/template requests
+per OFF/AUTH/DERANGED cell, greedy64-token cap. Numbers below are frozen-scorer
+counts matched by the completed bounded v2 comparison; scientific/native
+approval is not implied. DERANGED column is its own assigned map.
+
+| Measure | OFF | AUTH | DERANGED own map | Required per trained map |
+|---|---:|---:|---:|---:|
+| PROSPECT strict joint /32 | 0 | 32 | 32 | 29 |
+| REVISE strict joint /64 | 0 | 58 | 56 | 58 |
+| Belief twins /16 | 0 | 16 | 16 | 15 |
+| Goal twins /16 | 0 | 16 | 16 | 15 |
+| Expected twins /32 | 0 | 26 | 24 | 29 |
+| Observed twins /32 | 0 | 26 | 24 | 29 |
+| Prior-action twins /32 | 0 | 26 | 24 | 29 |
+| Addition instruction-compliant /16 | 8 | 15 | 15 | 16 |
+| Copy instruction-compliant /16 | 8 | 16 | 16 | 16 |
+| Forbidden anchor tag spill | 0 | 0 | 0 | 0 |
+
+AUTH passes the conditional PROSPECT and REVISE thresholds but fails all three revision-twin floors
+and addition. DERANGED also misses the REVISE floor. Full conjunction **FAIL
+both**; no threshold relaxation. DERANGED has AUTH-truth PROSPECT0/32 and
+REVISE0/64, not truthful-map success. AUTH's COMPARE/POLICY each64/64 do not
+rescue its six NEXT errors. OFF's96/128 truncated outputs are the entire
+conditional panel; explanatory prose consumes the64-token budget. Neither
+trained arm hits its cap; each has128/128 raw EOS sequences. Strict OFF zeros
+do not establish absent base reasoning. No exact-train-form panel distinguishes
+residual acquisition versus access failure.
+
+### Completed bounded comparison; raw caveats are not replacement scores
+
+Ampere v2 JSON, generated September13 01:27:08.004693 UTC, reports
+`comparison.status=FINAL_BOUNDED_COMPARISON_COMPLETE`. All strict/joint
+headlines, twin counts/edges and registered counts match;10 explained
+field-retention differences concern the same two dual-NEXT rows,0 unexplained.
+This completes only the bounded raw-count/parser comparison, not scientific/
+native approval. The September13 01:23 UTC v1 partial handoff and its JSON
+remain preserved historically; their pending status is superseded by v2.
+- AUTH errors0005/0011/0034/0053/0059/0082 are template2 MATCH/KEEP cases: first displayed action instead of required prior action. Repeated patterns are not independent roots.
+- DERANGED0007/0055 emit two NEXT actions (`dax, wug`), malformed; its other six REVISE failures have wrong single NEXT. Strict surface counts AUTH64/64, DERANGED62/64 are separate from joint correctness58/64 and56/64.
+- Both trained arms fail addition0097: inputs31+48=79, output `ACT: 89`. This is a real arithmetic error, not just format or truncation.
+- All16 OFF addition outputs contain the correct number on the reviewer's manual descriptive inspection; eight ACT and eight `<sum>` forms yield only8/16 protocol compliance. This unregistered description does not replace scoring. Trained15/16 compliant addition is **not improved arithmetic**.
+- V1 prefix-matched the two dual-action NEXT outputs and incorrectly counted DERANGED AUTH-NEXT8/64. V2 requires a unique complete line value, rejecting dual/repeated tags; AUTH-NEXT6/64 now matches frozen. Headline strict/joint counts remain false on both rows. Reported targeted parser regressions pass; this writer did not rerun them.
+- Independent assigned COMPARE/POLICY64/64 versus frozen62/64 remains an explained field-retention definition difference: visible valid tags versus clearing the entire malformed fields object. Neither interpretation makes the dual-action outputs valid. V2's10 difference entries repeat that same two-row distinction in parsed fields, row flags and aggregate totals, not10 failed model cases. Zero unexplained differences. Comparison covers headline/field/twin/registered counts and row/twin-edge checks; receipt/native verification is not expanded by v2.
+
+The reviewer authored the downstream born-child readout helper, not the original
+birth runner/corpus. New parsing code is algorithmically independent, but Main
+supplied expected counts and prior interface inspection included scorer-related
+code: not blinded. The preserved v1 review reports39 fit/814 readout member-hash
+checks,384 raw outputs recounted and receipt joins. No independent tokenizer
+decode, base/adapter tensor audit or remote vacancy re-observation. This writer
+reads its metadata and handoff only, without duplicating the raw recount.
+
+Readout26,016 input/9,767 output tokens,24,576 output ceiling; summed call
+latency322.931770s nests in controller868.857594s. Launch-to-release949.620845s
+includes37.153007s collection. Fit+readout phase sum1438.181836s (23.969697
+A40-min) excludes131.636213s inter-phase gap; calendar first-launch to final
+release1569.818049s. No addition of nested clocks or GPU-active-time claim.
+
+Exact bindings:
+- Readout capsule `astra_birth_readout_seed0_20260912_attempt1_capsule.tgz`, SHA256 `07816cb0649255ddaec5377e0b2ab4442919ea806d2eb60243b0155f1dc96a2a`; external validation `astra_birth_readout_seed0_20260912_attempt1_validation.json`, SHA256 `4a47152320d9b78e16427c25858b9f8d37d2bb054d6db2fcda46128dd2a3a07b`, in the C63 receipt directory.
+- Readout plan `1b31178121d91bed8d5233d86f6918357e92541ffe2b09290edaf4af5354ac54`; source same as C63. Separate adapter-byte archive digest reported by Main: `56cc3073398aeb17da4b58b7a5c8ecfea4bf75dc6af4f05495f9d779f31687fc`, not rehashed here. Full source-snapshot match is post-hoc custody, not retroactive complete-import enforcement.
+- Partial handoff `/tmp/astra_birth_readout_independent_review_20260913.md`, SHA256 `b07f63bb104412c70cf2471584428379bbc3d8770c12706288c13434091b2e35`; unchanged JSON `/tmp/astra_birth_readout_independent_review_20260913.json`, SHA256 `60a0adaad9158d1cfdd3ad8383c631f0cac28f7a4f1af6f616569b4a50847852`. These local files are not asserted to have been archived in the repo.
+- Completed bounded v2 handoff `/tmp/astra_birth_readout_independent_review_v2_20260913.md`, SHA256 `a7f75c27eeb6ddc4f5bc25f47e93e4405565ac9f619a4d8997699a2760318a03`; JSON `/tmp/astra_birth_readout_independent_review_v2_20260913.json`, SHA256 `2b70eb7fb3cae1554d445599caf13ba0b972631644bf8a12ea785d09a247afcb`. No raw recount or expanded audit by this manuscript worker.
+- Same ledger, event `SEQ120-birth-conditional-seed0-readout-terminal`, recorded2026-09-13T00:58:48.314561+00:00; notebook September12 17:58:48 PDT terminal entry.
+
+## C65 — SEQ121: exploratory born formation, PAIRED_SHORTAGE and no writes
+
+The exact source-authored AUTH birth adapter generates child wake/restatement/
+record responses; parents explicitly use the same base with LoRA OFF. Per-role
+identities/routes are retained in one engine. Unchanged interaction_v3 P/A,
+two lessons each, public training feedback only. Participation was explicitly
+exploratory despite C64's failed qualification, not a qualified Q0/Level2 lineage.
+
+All28 calls close:17 wake,4 parent,4 restatement,3 record. Six of eight tasks
+are protocol-invalid; P's two apply quizzes score3/6 each, A's two apply tasks
+stop without TRY. These in-context descriptions establish no persistent benefit.
+There is no contemporaneous OFF formation comparator.
+
+The unchanged process-v2 selector takes the first executed TRY after an earlier
+public TRY and before quiz reveal in each fixed arm/lesson. Each whole raw wake
+must contain one explicit unambiguous preceding PREDICT T/F. Result0/4 eligible
+rows, **PAIRED_SHORTAGE**:
+
+| Fixed slot | Observed source | Disposition |
+|---|---|---|
+| P lesson0 | Immediate reveal/quiz; no TRY | Missing slot |
+| P lesson1 | Second TRY at call0012 | No explicit PREDICT T/F |
+| A lesson0 | Call0022 lacks canonical ACT | Missing slot |
+| A lesson1 | Call0027 lacks canonical ACT | Missing slot |
+
+Call0012 contains COMPARE/POLICY/NEXT and ACT TRY, not a forecast. No later-row
+replacement, canonicalization, corrected target, padding, corpus export, paired
+downstream write or parent-free descendant comparison occurred. No subsequent
+outcome is manufactured into a pre-action label. Of three separate record
+calls, only0011 is faithful;0013/0015 map null prediction to matched instead
+of unavailable. These are not the proposed whole-wake write targets.
+
+Main's source audit uses complete role-aware capture, losslessly preserved
+original envelopes and unchanged eligibility code through a tested isolated
+role facade. No separate independent formation review is claimed. The bounded
+birth raw comparison does not certify this audit. Multiple-ACT proposals are
+rejected whole, not executed environment events. Repeated COMPARE/birth-tag
+spill is descriptive protocol mismatch, **not causal birth harm** without
+contemporaneous OFF formation. P teacher errors concern TRY arity and prior
+prediction; A misstates call0018's F prediction as True and treats unexecuted
+proposals/overstated trials as confirmed. These misstatements preclude
+neutral-parent purity acceptance or a valid downstream treatment comparison.
+
+Inputs10,399/output929 tokens, zero cap hits. Summed call spans45.713561s nest
+in279.964049s controller work; launch-to-release379.776464s (6.329608 A40-min)
+includes36.180126s collection. Main verifies80 capsule members; all owned
+processes released. Selective local reads cover external validation, candidate
+slot dispositions and formation metadata manifest/result structure, not a
+duplicate raw-source audit.
+
+Exact bindings:
+- Canonical `research_notes/astra_memos/ASTRA_BORN_PARENTING_FORMATION_2026-09-13.md`, read-snapshot SHA256 `f8d1f838ae2e290fd9c33c0fda4cb05fec11ac9eb0e01a3ce95cf9ab053f30de`.
+- Formation capsule `astra_born_formation_seed0_20260912_attempt1_capsule.tgz`, SHA256 `7aaf3583ca1052914954bf4cf609b73bbb258c47cdd1d2ebbcd23e44ad75eb3c`; validation `astra_born_formation_seed0_20260912_attempt1_validation.json`, SHA256 `21cfe15114c44cab169aff1897c2d7550cca665c87911e84d09382d094f53cb0`, in the C63 receipt directory.
+- Source `9f51595ec537885543976622b16273903578209e`; plan `eaed6835bf2081ff9a0ff9f85ca8f942a3679f74137f0939883614b5361f4229`; launch `16c56e04923f95a248942f8860b0ac6a0f233feb2fd6a087adc90d9828d8d206`.
+- Archived candidate `astra_born_formation_source_candidate_20260913_attempt1.json` in that receipt directory; canonical value SHA256 `5f58c404b461f992f72799de238e2febfe78e5f2f6f971d2ad2dc3e27c02e36d`, JSON-byte SHA256 `e4a9ac7b15daabbe92bafd4189ed08ed890d1e632b73f5d92bc928790272b7fa`. They are distinct serializations, not interchangeable hashes.
+- Same ledger, event `SEQ121-born-auth-formation-source-shortage`, recorded2026-09-13T01:10:45.580963+00:00; notebook September12 18:10:45 PDT terminal entry.
+
+Across C63–C65, source remains **NOT CLEAN** and official base revision
+unresolved (`UNRESOLVED_LOCAL_HASHES_ONLY`), not authenticated by a local cache
+path or hash agreement. No full birth qualification, H1/H2/P1/G3/G5, useful
+self-learning, clean lineage or mechanism freeze; C11 remains deferred. No
+protocol-probe result or launch status is included. Main owns the separate
+probe and integration; this manuscript update is not a launch instruction.
+Canonical abstract, all previous tables and historical evidence remain intact;
+collaborator **UNSENT**.

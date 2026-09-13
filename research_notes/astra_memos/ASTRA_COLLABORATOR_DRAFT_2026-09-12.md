@@ -1,6 +1,58 @@
 # DRAFT ONLY — unsent collaborator update
 
-**UNSENT — SEQ118 update.**
+**UNSENT — SEQ119fit–121 update (C63–C65).**
+
+Executed September12,2026 PDT / September13 UTC. Two externally authored
+TRAINED birth adapters complete128 updates each (256 total;23,296 target-token
+presentations), not the child's learned experience or self-learning. All384
+OFF/AUTH/DERANGED readout calls close before scoring. AUTH follows PROSPECT32/32
+and REVISE58/64; DERANGED follows its own map32/32 and56/64, with zero
+AUTH-strict conditional answers. Both have belief/goal twins16/16, but revision
+twins26/32 AUTH and24/32 DERANGED miss29/32 required; addition15/16 in each
+misses16/16 required. Copy16/16 and zero forbidden anchor tag spill do not rescue
+the full conjunction: **FAIL for both trained maps**. OFF has strict PROSPECT0/32,
+REVISE0/64, addition/copy8/16 each, but96/128 outputs are truncated at64 tokens;
+this does not establish absent base reasoning. No exact-train-form panel
+localizes the remaining errors to acquisition versus access.
+
+Ampere's preserved v1 handoff adds: both trained arms answer31+48=79 with `ACT: 89`
+at0097, a real arithmetic error. OFF's16 addition outputs contain correct numbers
+on manual descriptive inspection, though only8/16 are ACT-compliant; this does
+not rescore the panel or make trained15/16 improved arithmetic. AUTH's six
+wrong NEXT outputs are template2 MATCH/KEEP, choosing first displayed rather
+than prior action; two DERANGED outputs have malformed dual NEXT actions.
+
+The exploratory AUTH-child formation (parents explicitly LoRA OFF) completes
+28 calls:17 wake,4 parent,4 restatement,3 record;6/8 tasks protocol-invalid,
+1/3 faithful records,0/4 eligible prescribed own-wake rows. **PAIRED_SHORTAGE:
+no corpus export, paired downstream writes or parent-free descendant comparison.**
+No later row substitution or target repair. P's two apply quizzes are3/6 each;
+A's two apply tasks stop without TRY. Teacher misstatements about predictions,
+arity and unexecuted proposals prevent neutral-parent purity claims. Observed
+birth-tag spill is not causal birth harm without contemporaneous OFF formation.
+
+SEQ120audit v2 is **FINAL_BOUNDED_COMPARISON_COMPLETE**: all strict/joint
+headlines, twins and registered counts match. Ten explained field-retention
+differences on the same two malformed dual-NEXT rows, zero unexplained; the
+unique-NEXT fix gives DERANGED AUTH-NEXT6/64, matching frozen. Neither row becomes
+valid. This is bounded raw-count completion, not scientific/native approval;
+Ampere did not independently verify native token decoding; official model origin
+and clean ancestry remain unresolved.
+V1 artifacts stay preserved. Downstream-helper authorship
+and expected-count/scorer exposure preclude a blinded-review claim. No separate
+independent formation review is claimed, and this manuscript worker did not
+duplicate raw audits. Main's39/814/80 capsule-member checks are custody, not
+official base-revision authentication. Source **NOT CLEAN**, origin
+`UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred; no H1/H2/P1/G3/G5 or freeze.
+
+Fit/readout phase intervals sum1438.181836s (23.969697 A40-min), excluding the
+gap; formation379.776464s (6.329608 A40-min); nested clocks are not additive.
+Canonical birth-result/formation memos, ledger/notebook and selected manifests
+are bound in C63–C65. No protocol-probe result or launch status is included.
+Earlier content/tables and the canonical abstract remain intact. This is still
+an internal **UNSENT** draft for Main's review, not an external communication.
+
+**Historical UNSENT — SEQ118 update.**
 
 **SEQ118 / C62 — terminal sequential-memory result; run September 12, 2026
 UTC, despite September13-named artifacts.** Returned raw-review PASS covers640

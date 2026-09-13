@@ -1,5 +1,21 @@
 # FIRST SPRINT DRAFT — companion abstract
 
+**Latest bounded cut: SEQ119fit–121 / C63–C65.** Executed September12,2026
+PDT / September13 UTC. Externally authored TRAINED birth is not the child's
+learned experience or self-learning. Complete readout fails the full conjunction
+in both trained maps; exploratory formation yields `PAIRED_SHORTAGE`, no writes.
+SEQ120audit v2 reports `FINAL_BOUNDED_COMPARISON_COMPLETE`: all strict/joint
+headlines, twins and registered counts match, with ten explained field-retention
+differences on two dual-NEXT rows and zero unexplained. This is bounded raw-count
+completion, not scientific/native approval. Ampere did not independently verify
+native token decoding; official model origin and clean ancestry remain unresolved.
+V1 artifacts are preserved.
+No independent formation certification. Source NOT CLEAN, official base revision
+unresolved, no H1/H2/P1/G3/G5/freeze. No protocol-probe results or launch status
+included. Canonical `main.tex` abstract unchanged; collaborator **UNSENT**.
+
+**Historical SEQ118 cut; birth implementation status superseded by C63–C65.**
+
 **SEQ118 / C62 — terminal sequential-memory result; run September 12, 2026
 UTC, despite September13-named artifacts.** Returned raw-review PASS covers640
 calls with no discrepancies; the additive custody PASS verifies the newly supplied
@@ -186,9 +202,47 @@ proposed developmental thesis, not established outcomes.
 
 ## Abstract
 
-Can developmental teaching improve learning after teacher removal? We separate authored-memory retention, parameter writing and parent-free utility using a frozen instruction-tuned model and LoRA. A one-seed sequential diagnostic starts two trajectories from the same previously trained FOUR adapter and allocates two successive fixed update budgets to new authored fact banks. Replay retains M0 while acquiring B1, then retains both while acquiring B2. At cycle two, replay scores 16/16 on both surfaces of all three banks; NEW_ONLY scores M0 dev 9/16 and exact 8/16, B1 4/16 on both, and B2 16/16 on both. Both arms had acquired B1 at 16/16 on both surfaces after cycle one, so its later decline is observed retention loss rather than incomplete initial acquisition. Arithmetic prediction-before-action adherence and numerical correctness remain 32/32 in every state. All 640 captured calls are independently recounted without discrepancies; repeated surfaces are not independent facts. Each fit adds 320 updates, from 400 through 720 to 1040 cumulative. Paired token and padding budgets match, but current-new exposure is twenty versus forty presentations per fact. This practical allocation contrast does not isolate replay at equal new dose; cycle-two trajectories have different parents and histories. It establishes no general stability, latent erasure, parenting, G3/H1/H2 or mechanism freeze. Earlier process-readout full-criterion failure remains unchanged. Model origin remains unresolved. Birth-first implementation and prepared process-seed replications supply no new GPU results here.
+Can developmental teaching improve learning after teacher removal? We separate externally authored training, child experience and parent-free utility using frozen Qwen2.5-7B-Instruct with LoRA. Earlier sequential-memory retention and failed process-readout criteria remain bounded results. Two source-authored TRAINED birth adapters each complete 128 updates; this is not the child's learned experience or self-learning. Across 384 calls, AUTH scores PROSPECT 32/32 and REVISE 58/64; DERANGED follows its own assigned map at 32/32 and 56/64, not AUTH truth. Both pass belief/goal twins at 16/16, but revision twins score 26/32 and 24/32 against 29/32 required, and both miss one required addition item. Thus both fail the full conjunction despite assigned-map success. Both trained arms answer 31+48 as 89; OFF's 16 numerically correct addition outputs (manual descriptive inspection) preclude an arithmetic-improvement claim from 15/16 compliance. OFF outputs are truncated on 96/128 calls, so strict zeros do not establish absent base reasoning. No exact-train-form panel distinguishes acquisition from access failures. Exploratory AUTH-child formation with base-only parents completes 28 calls: 17 wake, four parent, four restatement and three record. Six of eight tasks are protocol-invalid; one of three records is faithful; zero of four prescribed rows is eligible. PAIRED_SHORTAGE blocks both downstream writes: no persistent parenting comparison follows. Teacher misstatements prevent neutral-parent purity claims. Without contemporaneous OFF formation, observed birth-tag spill does not establish causal harm. Independent birth-audit comparison is complete; formation is not independently certified. Source is NOT CLEAN and official base revision unresolved. No H1/H2/P1/G3/G5 or freeze follows.
 
 ## Evidence and interpretation boundaries
+
+**C63–C65 terminal cut: trained birth is neither full qualification nor parenting.**
+Fit seed0 uses256 contexts per arm, rank8, LR1e-4, four epochs, batch8,
+128 updates each/256 total,23,296 target-token presentations total. The complete
+384-call panel uses128 identical requests per OFF/AUTH/DERANGED cell and a
+64-token cap; trained arms have zero cap hits and EOS128/128 each. OFF strict
+PROSPECT0/32 and REVISE0/64, addition/copy8/16 each, are budget-limited
+observations. AUTH/DERANGED addition15/16 each, copy16/16 each, zero forbidden
+anchor tag spill; the unchanged full conjunction still fails. Expected,
+observed and prior-action twins each score26/32 AUTH,24/32 DERANGED. AUTH's
+COMPARE/POLICY are64/64 each; its six REVISE misses are NEXT errors.
+The preserved v1 raw review locates those six in template2 MATCH/KEEP cases choosing
+first displayed instead of prior action, and identifies two malformed dual-NEXT
+DERANGED outputs. Both trained arms'0097 emit `ACT: 89` for31+48=79, a real
+arithmetic error. OFF's16 correct numeric sums are manual descriptive observations,
+not replacement scoring;15/16 trained compliance is not improved arithmetic.
+
+Formation's P apply quizzes3/6 each and A's no-TRY apply tasks are descriptive.
+P lesson0 supplies no slot; P lesson1 call0012 has no explicit PREDICT T/F;
+A lesson0/1 calls0022/0027 lack canonical ACT. No corpus export, replacement,
+padding, target rewrite or parent-free descendant comparison. Record0011 alone
+is faithful;0013/0015 map null prediction to matched rather than unavailable.
+Main's canonical audit records teacher misstatements and no neutral-parent
+purity acceptance. No causal birth-harm inference without OFF formation.
+
+Ampere v2 reports `FINAL_BOUNDED_COMPARISON_COMPLETE`: all strict/joint
+headlines, twins and registered counts match; ten explained field-retention
+differences on the same two dual-NEXT rows, zero unexplained. Unique-NEXT parsing
+now gives DERANGED AUTH-NEXT6/64, matching frozen; neither malformed row becomes
+valid. V1 is preserved. This is not scientific/native approval: Ampere did not
+independently verify native token decoding; official model origin and clean
+ancestry remain unresolved. Reviewer
+discloses downstream-helper authorship and expected-count/scorer exposure,
+not original birth runner/corpus authorship or blinding. No raw recount was
+duplicated here. Fit/readout intervals sum1438.181836s (23.969697 A40-min),
+excluding the gap; formation379.776464s (6.329608 A40-min), nested costs.
+Canonical birth/formation memos, ledger/notebook and selected manifests are
+bound in claim-map C63–C65. No new probe evidence is included.
 
 **C55–C56 terminal cut: verified writing is not useful parenting.** Two fresh
 rank8 adapters each complete12 updates, with392 finite saved tensors/nonzero B.

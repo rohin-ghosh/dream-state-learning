@@ -3,7 +3,107 @@
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
 
-## Latest bounded evidence — SEQ118 / C62
+## Latest bounded evidence — SEQ119fit–121 / C63–C65
+
+Executed September 12, 2026 PDT / September 13 UTC. This bounded terminal
+update supersedes only the earlier birth-implementation status, not prior
+results, tables, thesis or the canonical `main.tex` abstract. No protocol-probe
+result or launch status is included; Main owns that separate work.
+
+**SEQ119fit / C63 — externally authored TRAINED birth.** AUTH and DERANGED
+each fit a fresh-base rank8 LoRA on the same256 contexts, with closed eight-row
+target/EOS-matched groups, seed0, LR1e-4, four epochs and batch8:128 updates
+per arm,256 total,23,296 target-token presentations total. Both fit manifests
+report zero nonfinite batches and zero truncated items. This is source-authored
+supervised training, not the child's learned experience or self-learning.
+Fit completion alone is not efficacy or birth qualification.
+
+**SEQ120 / C64 — assigned-map carriage, full conjunction FAIL in both arms.**
+All384 readout calls (128 per OFF/AUTH/DERANGED cell) closed before scoring;
+greedy decoding used a64-token cap. DERANGED is scored against its own assigned
+map in this table, not AUTH truth.
+
+| Measure | OFF | AUTH | DERANGED own map | Required per trained map |
+|---|---:|---:|---:|---:|
+| PROSPECT strict joint /32 | 0 | 32 | 32 | 29 |
+| REVISE strict joint /64 | 0 | 58 | 56 | 58 |
+| Belief twins /16 | 0 | 16 | 16 | 15 |
+| Goal twins /16 | 0 | 16 | 16 | 15 |
+| Expected twins /32 | 0 | 26 | 24 | 29 |
+| Observed twins /32 | 0 | 26 | 24 | 29 |
+| Prior-action twins /32 | 0 | 26 | 24 | 29 |
+| Addition instruction-compliant /16 | 8 | 15 | 15 | 16 |
+| Copy instruction-compliant /16 | 8 | 16 | 16 | 16 |
+| Forbidden anchor tag spill | 0 | 0 | 0 | 0 |
+
+AUTH's conditional PROSPECT and REVISE thresholds pass, but revision twins26/32 fall below29/32;
+DERANGED has24/32 and also misses the REVISE threshold. Both miss one required
+addition item. DERANGED has zero AUTH-strict conditional answers. AUTH's six
+REVISE misses are NEXT errors; COMPARE and POLICY each score64/64. Ampere's
+preserved v1 handoff locates all six in template2 MATCH/KEEP cases: they choose the
+first displayed action rather than the prior action. Two DERANGED responses
+emit dual NEXT actions and are malformed. Both trained arms answer31+48=79
+with `ACT: 89` on call0097, a real arithmetic error. OFF's16 addition outputs
+all contain the correct number on manual descriptive inspection, but only8/16
+are ACT-compliant. This is not rescoring: trained15/16 compliance does **not**
+establish improved arithmetic. OFF is
+truncated at the limit on96/128 outputs; trained arms have zero limit hits and
+EOS in128/128 raw sequences each. OFF's strict zeros do **not** establish absent
+base reasoning. There is **no exact-train-form panel**: acquisition versus access
+does not uniquely explain the residual failures.
+
+**SEQ121 / C65 — formation completed, `PAIRED_SHORTAGE`, no writes.** Child
+wake/restatement/record calls use that AUTH adapter; all parent calls explicitly
+use the same base with LoRA OFF. The exploratory P/A participation sample ran
+despite failed birth qualification. Its28 calls comprise17 wake,4 parent,
+4 restatement and3 record calls;6/8 tasks are protocol-invalid,1/3 records
+faithful, and0/4 prescribed own-wake rows eligible. P's two apply quizzes score
+3/6 each; A's two apply tasks stop without a TRY. These are in-context
+descriptions, not persistent benefit.
+
+P lesson0 has no TRY before reveal/quiz; P lesson1 call0012 lacks explicit
+PREDICT T/F; A lesson0/1 calls0022/0027 lack canonical ACT and supply no selected
+slot. No later replacement, target rewrite, padding, corpus export, paired
+downstream write or parent-free descendant comparison followed. The faithful
+record is0011;0013/0015 incorrectly map null prediction to matched rather than
+unavailable. Teacher misstatements about TRY arity, prior predictions and
+unexecuted proposals prevent neutral-parent purity or treatment-validity claims.
+Birth-tag spill is descriptive only: without contemporaneous OFF formation,
+there is **no causal birth-harm claim**.
+
+**Review/custody boundary.** Ampere v2 reports
+`FINAL_BOUNDED_COMPARISON_COMPLETE`: all strict/joint headlines, twins and
+registered counts match. Unique-NEXT parsing now yields DERANGED AUTH-NEXT6/64,
+matching frozen. Ten explained field-retention differences concern the same
+two malformed dual-NEXT rows; zero unexplained differences. Neither row becomes
+valid. This completes only the bounded raw-count comparison, not scientific/
+native approval. Ampere did not independently verify native token decoding;
+official model origin and clean ancestry remain unresolved. The v1 partial
+artifacts are preserved. The disclosed
+recount is algorithmically independent, not blinded; the reviewer authored a
+downstream helper, saw expected counts and scorer interfaces, but did not author
+the original birth runner/corpus. It does not certify SEQ121 formation, for which
+no separate independent review is claimed. This writer did not duplicate either
+raw audit. Main's member-hash checks cover39 fit,814 readout and80 formation
+members, not authenticated model origin or a portable weight bundle.
+
+Fit/readout launch-to-release intervals are488.560991s/949.620845s;
+their sum1438.181836s (23.969697 A40-min) excludes the inter-phase gap.
+Formation is379.776464s (6.329608 A40-min). Collection38.730419s/37.153007s/
+36.180126s and controller/worker clocks are nested, not additive. Readout uses
+26,016 input/9,767 output tokens; formation10,399/929, with no formation cap hits.
+Source remains **NOT CLEAN**, official base revision unresolved
+(`UNRESOLVED_LOCAL_HASHES_ONLY`); C11 remains deferred. No full birth, H1/H2,
+P1/G3/G5, useful self-learning, clean-lineage or mechanism-freeze claim follows.
+
+Sources: canonical `ASTRA_BIRTH_COMPONENT_RESULT_2026-09-13.md` and
+`ASTRA_BORN_PARENTING_FORMATION_2026-09-13.md` in
+`research_notes/astra_memos/`; terminal ledger events SEQ119/120/121 and
+notebook entries17:40,17:58:48,18:10:45 PDT on September12. C63–C65 in the claim
+map bind selected manifests, capsules, candidate and completed bounded v2 comparison.
+The collaborator draft remains **UNSENT**.
+
+## Earlier bounded evidence — SEQ118 / C62
 
 **SEQ118 / C62 — terminal sequential-memory result; run September 12, 2026
 UTC, despite September13-named artifacts.** Returned raw-review PASS covers640
