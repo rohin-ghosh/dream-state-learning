@@ -12246,3 +12246,50 @@ follow before any native call.
 **Additive replay (Codex's summed-loss design; launched 11:39–11:40 on node 2 GPUs 0–2, three original perception parents):** all three native controllers completed their four stages (six fits) rc 0; the automatic collectors then failed on an integration defect (the frozen bind replaced the retention-scorer module with the paired-data dictionary → `'dict' object has no attribute 'score_row'`). Astra repaired collection only — new standalone source, original runner/raw outputs/failed claims untouched, restoring the scorer binding, re-scoring once to a separate `_collected_repair1` with recovery receipts; no fit, generation or threshold touched; a recovery-aware reducer (13 CPU tests) frozen BEFORE outcome reveal. Evidence archive 1,366 members / 6 adapters verified. **Scores not yet revealed** — next SEQ. This is the cell that asks whether replay can keep SEQ-159's zero forgetting while recovering recall.
 
 **Fleet:** 0 of 31 at 12:05. Nudger: Astra active. Laptop chains 4/4. Node-1 lease ends 2026-09-14 23:14 UTC. Nothing killed or launched by the watcher.
+
+## [Builder] SEQ-161 — 2026-09-13T12:10Z — additive replay has seed-dependent tradeoffs; native baseline drift unresolved
+
+Exactly one frozen recovery-aware reduction completed 12:01:12–12:01:17 UTC,
+rc0, 4.265s, empty stderr. No new model calls, fits, scientific retries or
+outcome-dependent protocol/scorer changes. Three original scientific controllers
+rc0; original automatic collectors and holders rc1 from the overwritten scorer
+module (`dict` has no `score_row`). New immutable collection-only repairs rc0;
+original failures and both attempt claims remain archived. Seed1 launcher
+BrokenPipe after valid launch is a separate preserved transport anomaly; no
+holder was relaunched. Earlier “scores pending” snapshots are superseded.
+
+| Seed | Arm | Exact eligible | Paraphrase content | Held | Canary | New LR0-held losses | Screen |
+|---|---|---|---|---|---|---:|---|
+| 0 | ADDITIVE | 14/14 | 10/14 | 47/48 | 12/12 | 0 | PASS |
+| 0 | MEMORY_ONLY | 10/14 | 10/14 | 47/48 | 12/12 | 0 | PASS |
+| 1 | ADDITIVE | 7/8 | 7/8 | 48/48 | 12/12 | 0 | PASS |
+| 1 | MEMORY_ONLY | 8/8 | 8/8 | 46/48 | 12/12 | 2 | FAIL |
+| 2 | ADDITIVE | 8/8 | 4/8 | 39/48 | 12/12 | 9 | FAIL |
+| 2 | MEMORY_ONLY | 3/8 | 2/8 | 47/48 | 12/12 | 1 | FAIL |
+
+Neither arm passes all seeds. Seed2 ADDITIVE paraphrase ties best constant 4/8.
+Same original parents, exact memory occurrence/order/steps, extra separately
+normalized replay loss, no division by two; not compute/RNG equivalence.
+Six fits, 1632 updates, 480 cold readouts. Historical references have zero
+incremental execution cost. Exact/paraphrase are the named metrics, not all
+strict canonical byte matches. Original possible-record denominator 16 remains
+distinct from admitted-memory denominators 14/8/8.
+
+Fresh MEMORY_ONLY does not reproduce historical EXTRA_MEMORY (old exact
+13/7/7, paraphrase 10/6/7, held 47/46/42), despite verified identical initialized
+tensor receipts and memory occurrence schedule. Loss/final-tensor drift is
+observed, cause unresolved. A narrow read-only audit is underway; no new sweep
+or clean mechanistic causal attribution. No general repair, G3 freeze,
+parenting/H1/H2 result, or clean-lineage qualification.
+
+Full native archive gpu_artifacts_local/additive_replay_20260913_attempt1/evidence.tar:
+SHA256 `1faf1f6a6482a3834f7aa4c98c34b71c29644acdc4dfec9ac7c0b3cd7c3b1d16`,
+1366 members/523970560 bytes/six adapters, verified extracted mirror.
+Final reducer manifest, execution handoff and result directory archived under
+research_notes/astra_memos/receipts_20260912/. Manifest SHA256
+`d975feca8197f2c09f45452101d9111afdaaa5988417cf9144fdc33089418c24`;
+analysis.json SHA256
+`848602f01ca0596306dcb629a2e1d6896e08620cc6a67baa996853118c1cdb89`.
+Never rerun this completed attempt. No launch/kill in this step; no approval
+requested. Direct PCFL CPU integration continues with disjoint owners; missing
+concrete D binding is explicit. Formal C11 guard remains deferred as Rohin asked.

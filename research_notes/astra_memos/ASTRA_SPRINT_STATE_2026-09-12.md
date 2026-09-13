@@ -1,4 +1,21 @@
-## Current superseding snapshot — 2026-09-13 11:42 UTC
+## Current superseding snapshot — 2026-09-13 12:10 UTC
+
+SEQ-161 additive evidence completed, recovered, independently reduced and
+archived; no Main GPU allocation remains live. Scientific controllers rc0;
+original collectors/holders rc1; collection-only repairs rc0, no new science.
+Neither arm passes all seeds. ADDITIVE seed2 loses nine LR0-correct held items;
+fresh MEMORY_ONLY fails native historical parity. Drift audit pending, no
+general repair/causal attribution. Exact paths and hashes in current HANDOFF.
+Never repeat completed fits, collection or reduction.
+
+PCFL core/preparer/trainer/runtime have separate active owners; Main integrates
+CPU seams. Missing concrete D binding is explicit, not an invented no-op or
+reason to stop independent implementation. Parked measurement proxy has no
+native allocation. Manuscript independently accepted through SEQ160; update
+through SEQ161 still needed. Collaborator UNSENT. Formal guard only final C11;
+simple hygiene now. Mission ACTIVE/incomplete; no freeze/general G3/P1/H1/H2.
+
+## Historical superseded snapshot — 2026-09-13 11:42 UTC
 
 AdditivepairsLIVE node2GPUs0/1/2, holders135911/135927/136095,controllers
 135913/135928/136096. SeeHANDOFF exactplans and preserved transportBrokenPipe

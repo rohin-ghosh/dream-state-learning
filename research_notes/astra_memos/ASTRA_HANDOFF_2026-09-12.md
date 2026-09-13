@@ -1,6 +1,45 @@
-# Astra current handoff — 2026-09-13T11:42Z
+# Astra current handoff — 2026-09-13T12:10Z
 
-## CURRENT — September13 11:42UTC
+## CURRENT — September 13 12:10 UTC
+
+No Main GPU job remains live from the additive allocation. All six fits and
+480 readout calls completed; three scientific controllers rc0, original
+collectors/holders rc1. Collection-only repair completed rc0 on every seed,
+with zero new fits/updates/model calls. Preserve both failure and recovery
+receipts. Do not repeat launches, collections, or the completed reduction.
+
+SEQ-161 records the recovered reduction: ADDITIVE passes the descriptive
+screen on seeds 0/1, fails seed 2 (nine new held losses); MEMORY_ONLY passes
+seed 0 only. Neither arm passes all seeds. Fresh MEMORY_ONLY differs from
+historical EXTRA_MEMORY despite matching initial tensor and source-order
+receipts. Native baseline drift remains unresolved; Lovelace audits it without
+rerunning. This is not a general retention repair or clean causal attribution.
+
+Archive: gpu_artifacts_local/additive_replay_20260913_attempt1/evidence.tar,
+SHA256 1faf1f6a6482a3834f7aa4c98c34b71c29644acdc4dfec9ac7c0b3cd7c3b1d16.
+1366 members, 523970560 bytes, six adapters; verified mirror
+/tmp/astra_additive_replay_native_20260913_attempt1.
+Final analysis now archived under receipts_20260912/
+astra_additive_replay_recovered_analysis_result_20260913_attempt1;
+analysis.json SHA256
+848602f01ca0596306dcb629a2e1d6896e08620cc6a67baa996853118c1cdb89.
+
+PCFL direct vertical is the implementation critical path. Exclusive writers:
+Beauvoir: organism_v6/pcfl_vertical_dev.py and matching test;
+Kierkegaard: organism_v6/pcfl_vertical_prepare.py and matching test;
+Descartes: organism_v6/pcfl_vertical_train.py and matching test;
+Copernicus: gpu/astra_pcfl_vertical_dev.py and matching test. Main integrates
+and owns native operations. Concrete distractor D binding remains unresolved
+in laptop production-binding memo: no invented topology or native readiness.
+Continue CPU integration and known world behavior meanwhile.
+
+SEQ160 manuscript independently accepted in 8921724f; collaborator UNSENT.
+Explicit-contract measurement prototype is CPU-tested and parked, not another
+GPU prerequisite. Formal guard remains deferred to final paper-grade C11;
+simple hygiene applies now. No mechanism freeze/general G3/P1/H1/H2/clean
+qualification. Mission ACTIVE/incomplete. Preserve dirty gpu/codex/dream_state.rules.
+
+## Historical superseded snapshot — September13 11:42UTC
 
 Three additive paired controllers LIVE onnode2GPUs0/1/2. Holders/controllers
 135911/135913,135927/135928,136095/136096. Starts11:39:17/11:39:31/11:40:10UTC.

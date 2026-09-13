@@ -1,0 +1,2175 @@
+{
+  "all_new_calls_stopped": 480,
+  "analysis_sha256": "848602f01ca0596306dcb629a2e1d6896e08620cc6a67baa996853118c1cdb89",
+  "description": "Read-only extraction and receipt comparisons after the single authorized reduction; no rescoring, fitting, collection or native execution.",
+  "generation_seconds_sum": 437.16072054894175,
+  "new_length_terminated": 0,
+  "new_scoring_executions": 0,
+  "original_controller_seconds_sum": 1814.2457381408894,
+  "recorded_failure_preservation": {
+    "original_collector_rc": [
+      1,
+      1,
+      1
+    ],
+    "original_controller_rc": [
+      0,
+      0,
+      0
+    ],
+    "original_holder_written_rc": [
+      1,
+      1,
+      1
+    ],
+    "recovery_recorded_rc": [
+      0,
+      0,
+      0
+    ],
+    "scientific_retries": 0,
+    "seed1_launcher_brokenpipe_preserved": true
+  },
+  "schema": "astra_additive_recovered_execution_review_v1",
+  "seeds": [
+    {
+      "constants": {
+        "exact": {
+          "actual_content_correct": {
+            "ADDITIVE": 14,
+            "MEMORY_ONLY": 10
+          },
+          "denominator": 14,
+          "distinct_candidates": 4,
+          "oracle_best": 6
+        },
+        "paraphrase": {
+          "actual_content_correct": {
+            "ADDITIVE": 10,
+            "MEMORY_ONLY": 10
+          },
+          "denominator": 14,
+          "distinct_candidates": 4,
+          "oracle_best": 6
+        }
+      },
+      "contrasts": {
+        "ADDITIVE_vs_EXTRA_MEMORY": {
+          "canary": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          },
+          "exact": {
+            "delta": 1,
+            "gained": 1,
+            "lost": 0
+          },
+          "held": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          },
+          "paraphrase": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          }
+        },
+        "ADDITIVE_vs_LR0": {
+          "canary": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          },
+          "exact": {
+            "delta": 14,
+            "gained": 14,
+            "lost": 0
+          },
+          "held": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          },
+          "paraphrase": {
+            "delta": 10,
+            "gained": 10,
+            "lost": 0
+          }
+        },
+        "ADDITIVE_vs_MEMORY_ONLY": {
+          "canary": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          },
+          "exact": {
+            "delta": 4,
+            "gained": 4,
+            "lost": 0
+          },
+          "held": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          },
+          "paraphrase": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          }
+        },
+        "MEMORY_ONLY_vs_EXTRA_MEMORY": {
+          "canary": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          },
+          "exact": {
+            "delta": -3,
+            "gained": 0,
+            "lost": 3
+          },
+          "held": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          },
+          "paraphrase": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          }
+        },
+        "MEMORY_ONLY_vs_LR0": {
+          "canary": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          },
+          "exact": {
+            "delta": 10,
+            "gained": 10,
+            "lost": 0
+          },
+          "held": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          },
+          "paraphrase": {
+            "delta": 10,
+            "gained": 10,
+            "lost": 0
+          }
+        }
+      },
+      "endpoints": {
+        "ADDITIVE": {
+          "canary": {
+            "content_correct": 12,
+            "passed": 12,
+            "strict": 12
+          },
+          "exact": {
+            "content_correct": 14,
+            "exact_target_bytes": 13,
+            "production_eligible": 14,
+            "strict_canonical": 5
+          },
+          "held": {
+            "content_correct": 47,
+            "passed": 47,
+            "strict": 47
+          },
+          "paraphrase": {
+            "content_correct": 10,
+            "exact_target_bytes": 8,
+            "production_eligible": 10,
+            "strict_canonical": 0
+          }
+        },
+        "EXTRA_MEMORY": {
+          "canary": {
+            "content_correct": 12,
+            "passed": 12,
+            "strict": 12
+          },
+          "exact": {
+            "content_correct": 13,
+            "exact_target_bytes": 13,
+            "production_eligible": 13,
+            "strict_canonical": 5
+          },
+          "held": {
+            "content_correct": 47,
+            "passed": 47,
+            "strict": 47
+          },
+          "paraphrase": {
+            "content_correct": 10,
+            "exact_target_bytes": 8,
+            "production_eligible": 10,
+            "strict_canonical": 0
+          }
+        },
+        "HIGH": {
+          "canary": {
+            "content_correct": 12,
+            "passed": 12,
+            "strict": 12
+          },
+          "exact": {
+            "content_correct": 8,
+            "exact_target_bytes": 7,
+            "production_eligible": 8,
+            "strict_canonical": 3
+          },
+          "held": {
+            "content_correct": 44,
+            "passed": 44,
+            "strict": 44
+          },
+          "paraphrase": {
+            "content_correct": 6,
+            "exact_target_bytes": 4,
+            "production_eligible": 6,
+            "strict_canonical": 0
+          }
+        },
+        "LOWER": {
+          "canary": {
+            "content_correct": 12,
+            "passed": 12,
+            "strict": 12
+          },
+          "exact": {
+            "content_correct": 10,
+            "exact_target_bytes": 8,
+            "production_eligible": 10,
+            "strict_canonical": 8
+          },
+          "held": {
+            "content_correct": 47,
+            "passed": 47,
+            "strict": 47
+          },
+          "paraphrase": {
+            "content_correct": 10,
+            "exact_target_bytes": 8,
+            "production_eligible": 10,
+            "strict_canonical": 2
+          }
+        },
+        "LR0": {
+          "canary": {
+            "content_correct": 12,
+            "passed": 12,
+            "strict": 12
+          },
+          "exact": {
+            "content_correct": 0,
+            "exact_target_bytes": 0,
+            "production_eligible": 0,
+            "strict_canonical": 0
+          },
+          "held": {
+            "content_correct": 47,
+            "passed": 47,
+            "strict": 47
+          },
+          "paraphrase": {
+            "content_correct": 0,
+            "exact_target_bytes": 0,
+            "production_eligible": 0,
+            "strict_canonical": 0
+          }
+        },
+        "MEMORY_ONLY": {
+          "canary": {
+            "content_correct": 12,
+            "passed": 12,
+            "strict": 12
+          },
+          "exact": {
+            "content_correct": 10,
+            "exact_target_bytes": 8,
+            "production_eligible": 10,
+            "strict_canonical": 0
+          },
+          "held": {
+            "content_correct": 47,
+            "passed": 47,
+            "strict": 47
+          },
+          "paraphrase": {
+            "content_correct": 10,
+            "exact_target_bytes": 8,
+            "production_eligible": 10,
+            "strict_canonical": 0
+          }
+        },
+        "REPLAY": {
+          "canary": {
+            "content_correct": 12,
+            "passed": 12,
+            "strict": 12
+          },
+          "exact": {
+            "content_correct": 10,
+            "exact_target_bytes": 8,
+            "production_eligible": 10,
+            "strict_canonical": 4
+          },
+          "held": {
+            "content_correct": 47,
+            "passed": 47,
+            "strict": 47
+          },
+          "paraphrase": {
+            "content_correct": 10,
+            "exact_target_bytes": 8,
+            "production_eligible": 10,
+            "strict_canonical": 0
+          }
+        }
+      },
+      "launcher_utc": {
+        "collection_started.json": "2026-09-13T11:50:17.993106+00:00",
+        "collector_exit.json": "2026-09-13T11:50:35.535330+00:00",
+        "controller.json": "2026-09-13T11:39:17.666900+00:00",
+        "controller_exit.json": "2026-09-13T11:50:17.992662+00:00",
+        "exit.json": "2026-09-13T11:50:35.535726+00:00",
+        "holder_started.json": "2026-09-13T11:39:17.666052+00:00"
+      },
+      "native_baseline_parity": {
+        "exact_memory_occurrences_and_order_validated": true,
+        "final_tensor_receipts_equal": false,
+        "initialized_tensor_receipts_equal": true,
+        "interpretation": "Native historical baseline is not reproduced; cause unlocalized. Tiny CPU parity is not native numerical parity. Keep results but diagnose drift before causal mechanism attribution.",
+        "new_epoch_losses": [
+          0.46188,
+          0.085,
+          0.06009,
+          0.03473,
+          0.03235,
+          0.03086,
+          0.02387,
+          0.01689
+        ],
+        "new_last_loss": 0.014876133762300014,
+        "new_manifest_path": "/tmp/astra_additive_replay_native_20260913_attempt1/additive_replay_seed0_20260913_attempt1/run/MEMORY_ONLY_fit/adapter/train_manifest.json",
+        "new_manifest_sha256": "a6ed70bc1c89e6a34b541694ee3df6ab9b167f693dee00e2f24d25a47ffcd8a7",
+        "old_epoch_losses": [
+          0.45994,
+          0.08625,
+          0.05956,
+          0.03517,
+          0.03127,
+          0.03069,
+          0.02206,
+          0.01264
+        ],
+        "old_last_loss": 0.00518771493807435,
+        "old_report_path": "/tmp/astra_additive_replay_native_20260913_attempt1/additive_replay_seed0_20260913_attempt1/repair/scores.json",
+        "old_report_sha256": "c4a0a0a50c69cc9d1b1705d6a702e5034216ac9228705cf876b560b2b8508044",
+        "raw_changed_counts": {
+          "canary": 0,
+          "exact": 5,
+          "held": 0,
+          "paraphrase": 0
+        },
+        "source_tensor_receipts_equal": true
+      },
+      "new_arms": {
+        "ADDITIVE": {
+          "costs": {
+            "calls": 88,
+            "component_seconds": {
+              "memory_forward_backward": 70.68064041459002,
+              "optimizer": 1.632927939062938,
+              "replay_forward_backward": 62.856757631059736
+            },
+            "fits": 1,
+            "peak_cuda_memory_allocated_bytes": 16290534400,
+            "peak_memory_scope": "process CUDA allocator high water, not isolated phase delta",
+            "readout": {
+              "generation_seconds": 85.25930301251356,
+              "output_tokens": 1991,
+              "process_seconds": 116.30358382989652,
+              "prompt_tokens": 19733
+            },
+            "timing_scope": "host wall intervals; CUDA asynchronous timings are not kernel-time attribution",
+            "timings": {
+              "fit_receipt_seconds": 165.93473649898078,
+              "process_seconds": 165.98040111898445,
+              "train_seconds": 147.295,
+              "wall_seconds": 153.324
+            },
+            "tokens": {
+              "context_tokens": 104608,
+              "memory_context_tokens": 44112,
+              "memory_forwards": 304,
+              "memory_supervised_tokens": 8776,
+              "memory_total_tokens": 52888,
+              "per_kind": {
+                "extra_memory": {
+                  "context_tokens": 27872,
+                  "forwards": 192,
+                  "rows": 24,
+                  "supervised_tokens": 5528,
+                  "total_tokens": 33400
+                },
+                "memory": {
+                  "context_tokens": 16240,
+                  "forwards": 112,
+                  "rows": 14,
+                  "supervised_tokens": 3248,
+                  "total_tokens": 19488
+                },
+                "observation_replay": {
+                  "context_tokens": 60496,
+                  "forwards": 192,
+                  "rows": 24,
+                  "supervised_tokens": 5688,
+                  "total_tokens": 66184
+                }
+              },
+              "replay_context_tokens": 60496,
+              "replay_forwards": 192,
+              "replay_supervised_tokens": 5688,
+              "replay_total_tokens": 66184,
+              "supervised_tokens": 14464,
+              "total_forwards": 496,
+              "total_tokens": 119072,
+              "updates": 304
+            },
+            "updates": 304
+          },
+          "epoch_losses": [
+            0.45351,
+            0.0869,
+            0.05917,
+            0.03451,
+            0.03539,
+            0.03439,
+            0.02641,
+            0.01491
+          ],
+          "errors": {
+            "canary": {
+              "content_correct_non_strict": 0,
+              "content_failures": 0,
+              "errors": {
+                "completion_errors": {},
+                "schema_errors": {},
+                "source_errors": {},
+                "syntax_errors": {}
+              },
+              "length_terminated": 0,
+              "stopped": 12
+            },
+            "exact": {
+              "content_correct_non_strict": 9,
+              "content_failures": 0,
+              "errors": {
+                "content_errors": {},
+                "production_errors": {},
+                "source_completion_errors": {}
+              },
+              "length_terminated": 0,
+              "stopped": 14
+            },
+            "held": {
+              "content_correct_non_strict": 0,
+              "content_failures": 1,
+              "errors": {
+                "completion_errors": {},
+                "schema_errors": {
+                  "try:integer_triple_required": 1
+                },
+                "source_errors": {},
+                "syntax_errors": {}
+              },
+              "length_terminated": 0,
+              "stopped": 48
+            },
+            "paraphrase": {
+              "content_correct_non_strict": 10,
+              "content_failures": 4,
+              "errors": {
+                "content_errors": {
+                  "outcome mismatch": 4
+                },
+                "production_errors": {
+                  "outcome mismatch": 4
+                },
+                "source_completion_errors": {}
+              },
+              "length_terminated": 0,
+              "stopped": 14
+            }
+          },
+          "final_loss": 0.006411808379652939,
+          "formats": {
+            "canary": {
+              "exact": 12
+            },
+            "exact": {
+              "exact": 5,
+              "json_noncanonical": 9
+            },
+            "held": {
+              "exact": 48
+            },
+            "paraphrase": {
+              "json_noncanonical": 14
+            }
+          },
+          "norms": {
+            "changed_elements": 20185082,
+            "comparison": "source converted to actual saved/initialized dtype; not serialized file equality",
+            "l2": {
+              "delta": 2.198169830314453,
+              "final": 24.62743870740519,
+              "initial": 24.514407193134378
+            }
+          }
+        },
+        "MEMORY_ONLY": {
+          "costs": {
+            "calls": 88,
+            "component_seconds": {
+              "memory_forward_backward": 71.59314857318532,
+              "optimizer": 1.6399582251906395,
+              "replay_forward_backward": 0.0
+            },
+            "fits": 1,
+            "peak_cuda_memory_allocated_bytes": 15867515904,
+            "peak_memory_scope": "process CUDA allocator high water, not isolated phase delta",
+            "readout": {
+              "generation_seconds": 86.23737553693354,
+              "output_tokens": 2034,
+              "process_seconds": 115.55076399596874,
+              "prompt_tokens": 19733
+            },
+            "timing_scope": "host wall intervals; CUDA asynchronous timings are not kernel-time attribution",
+            "timings": {
+              "fit_receipt_seconds": 108.2188734060619,
+              "process_seconds": 108.27056339406408,
+              "train_seconds": 85.191,
+              "wall_seconds": 91.074
+            },
+            "tokens": {
+              "context_tokens": 44112,
+              "memory_context_tokens": 44112,
+              "memory_forwards": 304,
+              "memory_supervised_tokens": 8776,
+              "memory_total_tokens": 52888,
+              "per_kind": {
+                "extra_memory": {
+                  "context_tokens": 27872,
+                  "forwards": 192,
+                  "rows": 24,
+                  "supervised_tokens": 5528,
+                  "total_tokens": 33400
+                },
+                "memory": {
+                  "context_tokens": 16240,
+                  "forwards": 112,
+                  "rows": 14,
+                  "supervised_tokens": 3248,
+                  "total_tokens": 19488
+                },
+                "observation_replay": {
+                  "context_tokens": 0,
+                  "forwards": 0,
+                  "rows": 0,
+                  "supervised_tokens": 0,
+                  "total_tokens": 0
+                }
+              },
+              "replay_context_tokens": 0,
+              "replay_forwards": 0,
+              "replay_supervised_tokens": 0,
+              "replay_total_tokens": 0,
+              "supervised_tokens": 8776,
+              "total_forwards": 304,
+              "total_tokens": 52888,
+              "updates": 304
+            },
+            "updates": 304
+          },
+          "epoch_losses": [
+            0.46188,
+            0.085,
+            0.06009,
+            0.03473,
+            0.03235,
+            0.03086,
+            0.02387,
+            0.01689
+          ],
+          "errors": {
+            "canary": {
+              "content_correct_non_strict": 0,
+              "content_failures": 0,
+              "errors": {
+                "completion_errors": {},
+                "schema_errors": {},
+                "source_errors": {},
+                "syntax_errors": {}
+              },
+              "length_terminated": 0,
+              "stopped": 12
+            },
+            "exact": {
+              "content_correct_non_strict": 10,
+              "content_failures": 4,
+              "errors": {
+                "content_errors": {
+                  "outcome mismatch": 4
+                },
+                "production_errors": {
+                  "outcome mismatch": 4
+                },
+                "source_completion_errors": {}
+              },
+              "length_terminated": 0,
+              "stopped": 14
+            },
+            "held": {
+              "content_correct_non_strict": 0,
+              "content_failures": 1,
+              "errors": {
+                "completion_errors": {},
+                "schema_errors": {
+                  "try:integer_triple_required": 1
+                },
+                "source_errors": {},
+                "syntax_errors": {}
+              },
+              "length_terminated": 0,
+              "stopped": 48
+            },
+            "paraphrase": {
+              "content_correct_non_strict": 10,
+              "content_failures": 4,
+              "errors": {
+                "content_errors": {
+                  "outcome mismatch": 4
+                },
+                "production_errors": {
+                  "outcome mismatch": 4
+                },
+                "source_completion_errors": {}
+              },
+              "length_terminated": 0,
+              "stopped": 14
+            }
+          },
+          "final_loss": 0.014876133762300014,
+          "formats": {
+            "canary": {
+              "exact": 12
+            },
+            "exact": {
+              "json_noncanonical": 14
+            },
+            "held": {
+              "exact": 48
+            },
+            "paraphrase": {
+              "json_noncanonical": 14
+            }
+          },
+          "norms": {
+            "changed_elements": 20185082,
+            "comparison": "source converted to actual saved/initialized dtype; not serialized file equality",
+            "l2": {
+              "delta": 2.168905272861746,
+              "final": 24.623823010119715,
+              "initial": 24.514407193134378
+            }
+          }
+        }
+      },
+      "original_gpu": {
+        "index": 0,
+        "node": "node2",
+        "source": "preserved plan and launcher receipts; not a fresh native query",
+        "uuid": "GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0"
+      },
+      "screens": {
+        "ADDITIVE": {
+          "exact_denominator": 14,
+          "exact_eligible": 14,
+          "execution_gate": false,
+          "exploratory": true,
+          "lr0_correct_regressions": {
+            "canary": [],
+            "held": []
+          },
+          "passed": true,
+          "scientific_pass": null,
+          "threshold": 8
+        },
+        "MEMORY_ONLY": {
+          "exact_denominator": 14,
+          "exact_eligible": 10,
+          "execution_gate": false,
+          "exploratory": true,
+          "lr0_correct_regressions": {
+            "canary": [],
+            "held": []
+          },
+          "passed": true,
+          "scientific_pass": null,
+          "threshold": 8
+        }
+      },
+      "seed": 0,
+      "spans": {
+        "controller_seconds": 660.2379746369552,
+        "limitation": "Original holder includes the failed collector; recovery is separate CPU time, not new GPU work. Do not sum nested spans; recovery idle gap is unmeasured.",
+        "original_failed_collection_wall_seconds": 17.54222321510315,
+        "original_holder_wall_seconds": 677.93035197258,
+        "prepare_seconds": 33.37267405993771,
+        "recovery_collection_seconds": 30.245098032988608
+      }
+    },
+    {
+      "constants": {
+        "exact": {
+          "actual_content_correct": {
+            "ADDITIVE": 7,
+            "MEMORY_ONLY": 8
+          },
+          "denominator": 8,
+          "distinct_candidates": 5,
+          "oracle_best": 4
+        },
+        "paraphrase": {
+          "actual_content_correct": {
+            "ADDITIVE": 7,
+            "MEMORY_ONLY": 8
+          },
+          "denominator": 8,
+          "distinct_candidates": 5,
+          "oracle_best": 4
+        }
+      },
+      "contrasts": {
+        "ADDITIVE_vs_EXTRA_MEMORY": {
+          "canary": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          },
+          "exact": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          },
+          "held": {
+            "delta": 2,
+            "gained": 2,
+            "lost": 0
+          },
+          "paraphrase": {
+            "delta": 1,
+            "gained": 1,
+            "lost": 0
+          }
+        },
+        "ADDITIVE_vs_LR0": {
+          "canary": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          },
+          "exact": {
+            "delta": 7,
+            "gained": 7,
+            "lost": 0
+          },
+          "held": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          },
+          "paraphrase": {
+            "delta": 7,
+            "gained": 7,
+            "lost": 0
+          }
+        },
+        "ADDITIVE_vs_MEMORY_ONLY": {
+          "canary": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          },
+          "exact": {
+            "delta": -1,
+            "gained": 0,
+            "lost": 1
+          },
+          "held": {
+            "delta": 2,
+            "gained": 2,
+            "lost": 0
+          },
+          "paraphrase": {
+            "delta": -1,
+            "gained": 0,
+            "lost": 1
+          }
+        },
+        "MEMORY_ONLY_vs_EXTRA_MEMORY": {
+          "canary": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          },
+          "exact": {
+            "delta": 1,
+            "gained": 1,
+            "lost": 0
+          },
+          "held": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          },
+          "paraphrase": {
+            "delta": 2,
+            "gained": 2,
+            "lost": 0
+          }
+        },
+        "MEMORY_ONLY_vs_LR0": {
+          "canary": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          },
+          "exact": {
+            "delta": 8,
+            "gained": 8,
+            "lost": 0
+          },
+          "held": {
+            "delta": -2,
+            "gained": 0,
+            "lost": 2
+          },
+          "paraphrase": {
+            "delta": 8,
+            "gained": 8,
+            "lost": 0
+          }
+        }
+      },
+      "endpoints": {
+        "ADDITIVE": {
+          "canary": {
+            "content_correct": 12,
+            "passed": 12,
+            "strict": 12
+          },
+          "exact": {
+            "content_correct": 7,
+            "exact_target_bytes": 7,
+            "production_eligible": 7,
+            "strict_canonical": 0
+          },
+          "held": {
+            "content_correct": 48,
+            "passed": 48,
+            "strict": 48
+          },
+          "paraphrase": {
+            "content_correct": 7,
+            "exact_target_bytes": 7,
+            "production_eligible": 7,
+            "strict_canonical": 0
+          }
+        },
+        "EXTRA_MEMORY": {
+          "canary": {
+            "content_correct": 12,
+            "passed": 12,
+            "strict": 12
+          },
+          "exact": {
+            "content_correct": 7,
+            "exact_target_bytes": 7,
+            "production_eligible": 7,
+            "strict_canonical": 0
+          },
+          "held": {
+            "content_correct": 46,
+            "passed": 46,
+            "strict": 46
+          },
+          "paraphrase": {
+            "content_correct": 6,
+            "exact_target_bytes": 6,
+            "production_eligible": 6,
+            "strict_canonical": 0
+          }
+        },
+        "HIGH": {
+          "canary": {
+            "content_correct": 12,
+            "passed": 12,
+            "strict": 12
+          },
+          "exact": {
+            "content_correct": 7,
+            "exact_target_bytes": 7,
+            "production_eligible": 7,
+            "strict_canonical": 0
+          },
+          "held": {
+            "content_correct": 37,
+            "passed": 37,
+            "strict": 37
+          },
+          "paraphrase": {
+            "content_correct": 5,
+            "exact_target_bytes": 5,
+            "production_eligible": 5,
+            "strict_canonical": 0
+          }
+        },
+        "LOWER": {
+          "canary": {
+            "content_correct": 12,
+            "passed": 12,
+            "strict": 12
+          },
+          "exact": {
+            "content_correct": 4,
+            "exact_target_bytes": 4,
+            "production_eligible": 4,
+            "strict_canonical": 0
+          },
+          "held": {
+            "content_correct": 46,
+            "passed": 46,
+            "strict": 46
+          },
+          "paraphrase": {
+            "content_correct": 5,
+            "exact_target_bytes": 5,
+            "production_eligible": 5,
+            "strict_canonical": 0
+          }
+        },
+        "LR0": {
+          "canary": {
+            "content_correct": 12,
+            "passed": 12,
+            "strict": 12
+          },
+          "exact": {
+            "content_correct": 0,
+            "exact_target_bytes": 0,
+            "production_eligible": 0,
+            "strict_canonical": 0
+          },
+          "held": {
+            "content_correct": 48,
+            "passed": 48,
+            "strict": 48
+          },
+          "paraphrase": {
+            "content_correct": 0,
+            "exact_target_bytes": 0,
+            "production_eligible": 0,
+            "strict_canonical": 0
+          }
+        },
+        "MEMORY_ONLY": {
+          "canary": {
+            "content_correct": 12,
+            "passed": 12,
+            "strict": 12
+          },
+          "exact": {
+            "content_correct": 8,
+            "exact_target_bytes": 8,
+            "production_eligible": 8,
+            "strict_canonical": 0
+          },
+          "held": {
+            "content_correct": 46,
+            "passed": 46,
+            "strict": 46
+          },
+          "paraphrase": {
+            "content_correct": 8,
+            "exact_target_bytes": 8,
+            "production_eligible": 8,
+            "strict_canonical": 0
+          }
+        },
+        "REPLAY": {
+          "canary": {
+            "content_correct": 12,
+            "passed": 12,
+            "strict": 12
+          },
+          "exact": {
+            "content_correct": 6,
+            "exact_target_bytes": 6,
+            "production_eligible": 6,
+            "strict_canonical": 0
+          },
+          "held": {
+            "content_correct": 48,
+            "passed": 48,
+            "strict": 48
+          },
+          "paraphrase": {
+            "content_correct": 6,
+            "exact_target_bytes": 6,
+            "production_eligible": 6,
+            "strict_canonical": 0
+          }
+        }
+      },
+      "launcher_utc": {
+        "collection_started.json": "2026-09-13T11:49:01.957357+00:00",
+        "collector_exit.json": "2026-09-13T11:49:16.564987+00:00",
+        "controller.json": "2026-09-13T11:39:31.104071+00:00",
+        "controller_exit.json": "2026-09-13T11:49:01.957048+00:00",
+        "exit.json": "2026-09-13T11:49:16.565216+00:00",
+        "holder_started.json": "2026-09-13T11:39:31.103271+00:00"
+      },
+      "native_baseline_parity": {
+        "exact_memory_occurrences_and_order_validated": true,
+        "final_tensor_receipts_equal": false,
+        "initialized_tensor_receipts_equal": true,
+        "interpretation": "Native historical baseline is not reproduced; cause unlocalized. Tiny CPU parity is not native numerical parity. Keep results but diagnose drift before causal mechanism attribution.",
+        "new_epoch_losses": [
+          0.32588,
+          0.09328,
+          0.06375,
+          0.03636,
+          0.02498,
+          0.00743,
+          0.00488,
+          0.01191
+        ],
+        "new_last_loss": 0.036297157406806946,
+        "new_manifest_path": "/tmp/astra_additive_replay_native_20260913_attempt1/additive_replay_seed1_20260913_attempt1/run/MEMORY_ONLY_fit/adapter/train_manifest.json",
+        "new_manifest_sha256": "f8d09d423b409f39f1530053c1d57c18943e3f2f0ba794092bbc9754fba55b2e",
+        "old_epoch_losses": [
+          0.32638,
+          0.09428,
+          0.06552,
+          0.03682,
+          0.02875,
+          0.00903,
+          0.00541,
+          0.01527
+        ],
+        "old_last_loss": 0.07439632713794708,
+        "old_report_path": "/tmp/astra_additive_replay_native_20260913_attempt1/additive_replay_seed1_20260913_attempt1/repair/scores.json",
+        "old_report_sha256": "0efdcd8b9e5f02035c32d3883e4d1ecd86ca45bd0d802f1f47c7030cfb4e351c",
+        "raw_changed_counts": {
+          "canary": 0,
+          "exact": 1,
+          "held": 0,
+          "paraphrase": 2
+        },
+        "source_tensor_receipts_equal": true
+      },
+      "new_arms": {
+        "ADDITIVE": {
+          "costs": {
+            "calls": 76,
+            "component_seconds": {
+              "memory_forward_backward": 56.903957772417925,
+              "optimizer": 1.3991266856901348,
+              "replay_forward_backward": 62.430640340200625
+            },
+            "fits": 1,
+            "peak_cuda_memory_allocated_bytes": 16293123072,
+            "peak_memory_scope": "process CUDA allocator high water, not isolated phase delta",
+            "readout": {
+              "generation_seconds": 63.33434076188132,
+              "output_tokens": 1526,
+              "process_seconds": 91.33873294689693,
+              "prompt_tokens": 18033
+            },
+            "timing_scope": "host wall intervals; CUDA asynchronous timings are not kernel-time attribution",
+            "timings": {
+              "fit_receipt_seconds": 152.91484125400893,
+              "process_seconds": 152.95843728806358,
+              "train_seconds": 130.727,
+              "wall_seconds": 140.547
+            },
+            "tokens": {
+              "context_tokens": 97680,
+              "memory_context_tokens": 37184,
+              "memory_forwards": 256,
+              "memory_supervised_tokens": 6368,
+              "memory_total_tokens": 43552,
+              "per_kind": {
+                "extra_memory": {
+                  "context_tokens": 27888,
+                  "forwards": 192,
+                  "rows": 24,
+                  "supervised_tokens": 4776,
+                  "total_tokens": 32664
+                },
+                "memory": {
+                  "context_tokens": 9296,
+                  "forwards": 64,
+                  "rows": 8,
+                  "supervised_tokens": 1592,
+                  "total_tokens": 10888
+                },
+                "observation_replay": {
+                  "context_tokens": 60496,
+                  "forwards": 192,
+                  "rows": 24,
+                  "supervised_tokens": 5688,
+                  "total_tokens": 66184
+                }
+              },
+              "replay_context_tokens": 60496,
+              "replay_forwards": 192,
+              "replay_supervised_tokens": 5688,
+              "replay_total_tokens": 66184,
+              "supervised_tokens": 12056,
+              "total_forwards": 448,
+              "total_tokens": 109736,
+              "updates": 256
+            },
+            "updates": 256
+          },
+          "epoch_losses": [
+            0.32587,
+            0.09291,
+            0.06565,
+            0.03442,
+            0.03281,
+            0.00832,
+            0.00503,
+            0.01656
+          ],
+          "errors": {
+            "canary": {
+              "content_correct_non_strict": 0,
+              "content_failures": 0,
+              "errors": {
+                "completion_errors": {},
+                "schema_errors": {},
+                "source_errors": {},
+                "syntax_errors": {}
+              },
+              "length_terminated": 0,
+              "stopped": 12
+            },
+            "exact": {
+              "content_correct_non_strict": 7,
+              "content_failures": 1,
+              "errors": {
+                "content_errors": {
+                  "outcome mismatch": 1
+                },
+                "production_errors": {
+                  "outcome mismatch": 1
+                },
+                "source_completion_errors": {}
+              },
+              "length_terminated": 0,
+              "stopped": 8
+            },
+            "held": {
+              "content_correct_non_strict": 0,
+              "content_failures": 0,
+              "errors": {
+                "completion_errors": {},
+                "schema_errors": {},
+                "source_errors": {},
+                "syntax_errors": {}
+              },
+              "length_terminated": 0,
+              "stopped": 48
+            },
+            "paraphrase": {
+              "content_correct_non_strict": 7,
+              "content_failures": 1,
+              "errors": {
+                "content_errors": {
+                  "outcome mismatch": 1
+                },
+                "production_errors": {
+                  "outcome mismatch": 1
+                },
+                "source_completion_errors": {}
+              },
+              "length_terminated": 0,
+              "stopped": 8
+            }
+          },
+          "final_loss": 0.08335691690444946,
+          "formats": {
+            "canary": {
+              "exact": 12
+            },
+            "exact": {
+              "json_noncanonical": 8
+            },
+            "held": {
+              "exact": 48
+            },
+            "paraphrase": {
+              "json_noncanonical": 8
+            }
+          },
+          "norms": {
+            "changed_elements": 20185081,
+            "comparison": "source converted to actual saved/initialized dtype; not serialized file equality",
+            "l2": {
+              "delta": 2.0532410183526557,
+              "final": 25.03614519742238,
+              "initial": 24.942493399944997
+            }
+          }
+        },
+        "MEMORY_ONLY": {
+          "costs": {
+            "calls": 76,
+            "component_seconds": {
+              "memory_forward_backward": 60.158873507753015,
+              "optimizer": 1.5681132584577426,
+              "replay_forward_backward": 0.0
+            },
+            "fits": 1,
+            "peak_cuda_memory_allocated_bytes": 15852893184,
+            "peak_memory_scope": "process CUDA allocator high water, not isolated phase delta",
+            "readout": {
+              "generation_seconds": 64.14804315485526,
+              "output_tokens": 1520,
+              "process_seconds": 95.0766221289523,
+              "prompt_tokens": 18033
+            },
+            "timing_scope": "host wall intervals; CUDA asynchronous timings are not kernel-time attribution",
+            "timings": {
+              "fit_receipt_seconds": 91.12709099601489,
+              "process_seconds": 91.17964038997889,
+              "train_seconds": 71.608,
+              "wall_seconds": 77.512
+            },
+            "tokens": {
+              "context_tokens": 37184,
+              "memory_context_tokens": 37184,
+              "memory_forwards": 256,
+              "memory_supervised_tokens": 6368,
+              "memory_total_tokens": 43552,
+              "per_kind": {
+                "extra_memory": {
+                  "context_tokens": 27888,
+                  "forwards": 192,
+                  "rows": 24,
+                  "supervised_tokens": 4776,
+                  "total_tokens": 32664
+                },
+                "memory": {
+                  "context_tokens": 9296,
+                  "forwards": 64,
+                  "rows": 8,
+                  "supervised_tokens": 1592,
+                  "total_tokens": 10888
+                },
+                "observation_replay": {
+                  "context_tokens": 0,
+                  "forwards": 0,
+                  "rows": 0,
+                  "supervised_tokens": 0,
+                  "total_tokens": 0
+                }
+              },
+              "replay_context_tokens": 0,
+              "replay_forwards": 0,
+              "replay_supervised_tokens": 0,
+              "replay_total_tokens": 0,
+              "supervised_tokens": 6368,
+              "total_forwards": 256,
+              "total_tokens": 43552,
+              "updates": 256
+            },
+            "updates": 256
+          },
+          "epoch_losses": [
+            0.32588,
+            0.09328,
+            0.06375,
+            0.03636,
+            0.02498,
+            0.00743,
+            0.00488,
+            0.01191
+          ],
+          "errors": {
+            "canary": {
+              "content_correct_non_strict": 0,
+              "content_failures": 0,
+              "errors": {
+                "completion_errors": {},
+                "schema_errors": {},
+                "source_errors": {},
+                "syntax_errors": {}
+              },
+              "length_terminated": 0,
+              "stopped": 12
+            },
+            "exact": {
+              "content_correct_non_strict": 8,
+              "content_failures": 0,
+              "errors": {
+                "content_errors": {},
+                "production_errors": {},
+                "source_completion_errors": {}
+              },
+              "length_terminated": 0,
+              "stopped": 8
+            },
+            "held": {
+              "content_correct_non_strict": 0,
+              "content_failures": 2,
+              "errors": {
+                "completion_errors": {},
+                "schema_errors": {},
+                "source_errors": {
+                  "predicted": 2,
+                  "relation": 2
+                },
+                "syntax_errors": {}
+              },
+              "length_terminated": 0,
+              "stopped": 48
+            },
+            "paraphrase": {
+              "content_correct_non_strict": 8,
+              "content_failures": 0,
+              "errors": {
+                "content_errors": {},
+                "production_errors": {},
+                "source_completion_errors": {}
+              },
+              "length_terminated": 0,
+              "stopped": 8
+            }
+          },
+          "final_loss": 0.036297157406806946,
+          "formats": {
+            "canary": {
+              "exact": 12
+            },
+            "exact": {
+              "json_noncanonical": 8
+            },
+            "held": {
+              "exact": 48
+            },
+            "paraphrase": {
+              "json_noncanonical": 8
+            }
+          },
+          "norms": {
+            "changed_elements": 20185085,
+            "comparison": "source converted to actual saved/initialized dtype; not serialized file equality",
+            "l2": {
+              "delta": 2.024493143404419,
+              "final": 25.032109295605498,
+              "initial": 24.942493399944997
+            }
+          }
+        }
+      },
+      "original_gpu": {
+        "index": 1,
+        "node": "node2",
+        "source": "preserved plan and launcher receipts; not a fresh native query",
+        "uuid": "GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4"
+      },
+      "screens": {
+        "ADDITIVE": {
+          "exact_denominator": 8,
+          "exact_eligible": 7,
+          "execution_gate": false,
+          "exploratory": true,
+          "lr0_correct_regressions": {
+            "canary": [],
+            "held": []
+          },
+          "passed": true,
+          "scientific_pass": null,
+          "threshold": 7
+        },
+        "MEMORY_ONLY": {
+          "exact_denominator": 8,
+          "exact_eligible": 8,
+          "execution_gate": false,
+          "exploratory": true,
+          "lr0_correct_regressions": {
+            "canary": [],
+            "held": [
+              "perception:3168de3a2773da0af3a9c7a43586a1838565eb04d29b6add6ce43cab4e29cb65",
+              "perception:a3487a82a4eba508a231505ebda20e8d3b8b26a2ef4bafeea5c404f8596a32ac"
+            ]
+          },
+          "passed": false,
+          "scientific_pass": null,
+          "threshold": 7
+        }
+      },
+      "seed": 1,
+      "spans": {
+        "controller_seconds": 570.7739695330383,
+        "limitation": "Original holder includes the failed collector; recovery is separate CPU time, not new GPU work. Do not sum nested spans; recovery idle gap is unmeasured.",
+        "original_failed_collection_wall_seconds": 14.607630014419556,
+        "original_holder_wall_seconds": 585.5221343040466,
+        "prepare_seconds": 30.645377698005177,
+        "recovery_collection_seconds": 23.55866512400098
+      }
+    },
+    {
+      "constants": {
+        "exact": {
+          "actual_content_correct": {
+            "ADDITIVE": 8,
+            "MEMORY_ONLY": 3
+          },
+          "denominator": 8,
+          "distinct_candidates": 5,
+          "oracle_best": 4
+        },
+        "paraphrase": {
+          "actual_content_correct": {
+            "ADDITIVE": 4,
+            "MEMORY_ONLY": 2
+          },
+          "denominator": 8,
+          "distinct_candidates": 5,
+          "oracle_best": 4
+        }
+      },
+      "contrasts": {
+        "ADDITIVE_vs_EXTRA_MEMORY": {
+          "canary": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          },
+          "exact": {
+            "delta": 1,
+            "gained": 1,
+            "lost": 0
+          },
+          "held": {
+            "delta": -3,
+            "gained": 0,
+            "lost": 3
+          },
+          "paraphrase": {
+            "delta": -3,
+            "gained": 0,
+            "lost": 3
+          }
+        },
+        "ADDITIVE_vs_LR0": {
+          "canary": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          },
+          "exact": {
+            "delta": 8,
+            "gained": 8,
+            "lost": 0
+          },
+          "held": {
+            "delta": -9,
+            "gained": 0,
+            "lost": 9
+          },
+          "paraphrase": {
+            "delta": 4,
+            "gained": 4,
+            "lost": 0
+          }
+        },
+        "ADDITIVE_vs_MEMORY_ONLY": {
+          "canary": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          },
+          "exact": {
+            "delta": 5,
+            "gained": 5,
+            "lost": 0
+          },
+          "held": {
+            "delta": -8,
+            "gained": 1,
+            "lost": 9
+          },
+          "paraphrase": {
+            "delta": 2,
+            "gained": 2,
+            "lost": 0
+          }
+        },
+        "MEMORY_ONLY_vs_EXTRA_MEMORY": {
+          "canary": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          },
+          "exact": {
+            "delta": -4,
+            "gained": 0,
+            "lost": 4
+          },
+          "held": {
+            "delta": 5,
+            "gained": 6,
+            "lost": 1
+          },
+          "paraphrase": {
+            "delta": -5,
+            "gained": 0,
+            "lost": 5
+          }
+        },
+        "MEMORY_ONLY_vs_LR0": {
+          "canary": {
+            "delta": 0,
+            "gained": 0,
+            "lost": 0
+          },
+          "exact": {
+            "delta": 3,
+            "gained": 3,
+            "lost": 0
+          },
+          "held": {
+            "delta": -1,
+            "gained": 0,
+            "lost": 1
+          },
+          "paraphrase": {
+            "delta": 2,
+            "gained": 2,
+            "lost": 0
+          }
+        }
+      },
+      "endpoints": {
+        "ADDITIVE": {
+          "canary": {
+            "content_correct": 12,
+            "passed": 12,
+            "strict": 12
+          },
+          "exact": {
+            "content_correct": 8,
+            "exact_target_bytes": 8,
+            "production_eligible": 8,
+            "strict_canonical": 0
+          },
+          "held": {
+            "content_correct": 39,
+            "passed": 39,
+            "strict": 39
+          },
+          "paraphrase": {
+            "content_correct": 4,
+            "exact_target_bytes": 4,
+            "production_eligible": 4,
+            "strict_canonical": 0
+          }
+        },
+        "EXTRA_MEMORY": {
+          "canary": {
+            "content_correct": 12,
+            "passed": 12,
+            "strict": 12
+          },
+          "exact": {
+            "content_correct": 7,
+            "exact_target_bytes": 7,
+            "production_eligible": 7,
+            "strict_canonical": 0
+          },
+          "held": {
+            "content_correct": 42,
+            "passed": 42,
+            "strict": 42
+          },
+          "paraphrase": {
+            "content_correct": 7,
+            "exact_target_bytes": 7,
+            "production_eligible": 7,
+            "strict_canonical": 0
+          }
+        },
+        "HIGH": {
+          "canary": {
+            "content_correct": 12,
+            "passed": 12,
+            "strict": 12
+          },
+          "exact": {
+            "content_correct": 5,
+            "exact_target_bytes": 5,
+            "production_eligible": 5,
+            "strict_canonical": 0
+          },
+          "held": {
+            "content_correct": 17,
+            "passed": 17,
+            "strict": 17
+          },
+          "paraphrase": {
+            "content_correct": 5,
+            "exact_target_bytes": 5,
+            "production_eligible": 5,
+            "strict_canonical": 0
+          }
+        },
+        "LOWER": {
+          "canary": {
+            "content_correct": 12,
+            "passed": 12,
+            "strict": 12
+          },
+          "exact": {
+            "content_correct": 4,
+            "exact_target_bytes": 4,
+            "production_eligible": 4,
+            "strict_canonical": 0
+          },
+          "held": {
+            "content_correct": 47,
+            "passed": 47,
+            "strict": 47
+          },
+          "paraphrase": {
+            "content_correct": 3,
+            "exact_target_bytes": 3,
+            "production_eligible": 3,
+            "strict_canonical": 0
+          }
+        },
+        "LR0": {
+          "canary": {
+            "content_correct": 12,
+            "passed": 12,
+            "strict": 12
+          },
+          "exact": {
+            "content_correct": 0,
+            "exact_target_bytes": 0,
+            "production_eligible": 0,
+            "strict_canonical": 0
+          },
+          "held": {
+            "content_correct": 48,
+            "passed": 48,
+            "strict": 48
+          },
+          "paraphrase": {
+            "content_correct": 0,
+            "exact_target_bytes": 0,
+            "production_eligible": 0,
+            "strict_canonical": 0
+          }
+        },
+        "MEMORY_ONLY": {
+          "canary": {
+            "content_correct": 12,
+            "passed": 12,
+            "strict": 12
+          },
+          "exact": {
+            "content_correct": 3,
+            "exact_target_bytes": 3,
+            "production_eligible": 3,
+            "strict_canonical": 0
+          },
+          "held": {
+            "content_correct": 47,
+            "passed": 47,
+            "strict": 47
+          },
+          "paraphrase": {
+            "content_correct": 2,
+            "exact_target_bytes": 2,
+            "production_eligible": 2,
+            "strict_canonical": 0
+          }
+        },
+        "REPLAY": {
+          "canary": {
+            "content_correct": 12,
+            "passed": 12,
+            "strict": 12
+          },
+          "exact": {
+            "content_correct": 5,
+            "exact_target_bytes": 5,
+            "production_eligible": 5,
+            "strict_canonical": 0
+          },
+          "held": {
+            "content_correct": 48,
+            "passed": 48,
+            "strict": 48
+          },
+          "paraphrase": {
+            "content_correct": 3,
+            "exact_target_bytes": 3,
+            "production_eligible": 3,
+            "strict_canonical": 0
+          }
+        }
+      },
+      "launcher_utc": {
+        "collection_started.json": "2026-09-13T11:49:53.838411+00:00",
+        "collector_exit.json": "2026-09-13T11:50:08.487078+00:00",
+        "controller.json": "2026-09-13T11:40:10.520990+00:00",
+        "controller_exit.json": "2026-09-13T11:49:53.837927+00:00",
+        "exit.json": "2026-09-13T11:50:08.487501+00:00",
+        "holder_started.json": "2026-09-13T11:40:10.520132+00:00"
+      },
+      "native_baseline_parity": {
+        "exact_memory_occurrences_and_order_validated": true,
+        "final_tensor_receipts_equal": false,
+        "initialized_tensor_receipts_equal": true,
+        "interpretation": "Native historical baseline is not reproduced; cause unlocalized. Tiny CPU parity is not native numerical parity. Keep results but diagnose drift before causal mechanism attribution.",
+        "new_epoch_losses": [
+          0.18589,
+          0.05933,
+          0.05685,
+          0.04255,
+          0.02366,
+          0.01622,
+          0.00971,
+          0.02745
+        ],
+        "new_last_loss": 0.04343966022133827,
+        "new_manifest_path": "/tmp/astra_additive_replay_native_20260913_attempt1/additive_replay_seed2_20260913_attempt1/run/MEMORY_ONLY_fit/adapter/train_manifest.json",
+        "new_manifest_sha256": "b2dce87dad5dd3dcda12b73ad61663e23cf58440163c4dd7fa46487e7f89cef7",
+        "old_epoch_losses": [
+          0.18537,
+          0.05949,
+          0.06216,
+          0.05082,
+          0.02692,
+          0.02645,
+          0.01736,
+          0.00935
+        ],
+        "old_last_loss": 0.0030477684922516346,
+        "old_report_path": "/tmp/astra_additive_replay_native_20260913_attempt1/additive_replay_seed2_20260913_attempt1/repair/scores.json",
+        "old_report_sha256": "ff08db86f090fe87750976b54cece741f8bd67b8729122135a243fd476ba63b1",
+        "raw_changed_counts": {
+          "canary": 0,
+          "exact": 5,
+          "held": 7,
+          "paraphrase": 5
+        },
+        "source_tensor_receipts_equal": true
+      },
+      "new_arms": {
+        "ADDITIVE": {
+          "costs": {
+            "calls": 76,
+            "component_seconds": {
+              "memory_forward_backward": 60.193849335075356,
+              "optimizer": 1.8168885502964258,
+              "replay_forward_backward": 62.380236721248366
+            },
+            "fits": 1,
+            "peak_cuda_memory_allocated_bytes": 16289712128,
+            "peak_memory_scope": "process CUDA allocator high water, not isolated phase delta",
+            "readout": {
+              "generation_seconds": 72.62518551608082,
+              "output_tokens": 1753,
+              "process_seconds": 100.40897327091079,
+              "prompt_tokens": 18033
+            },
+            "timing_scope": "host wall intervals; CUDA asynchronous timings are not kernel-time attribution",
+            "timings": {
+              "fit_receipt_seconds": 153.01988906692713,
+              "process_seconds": 153.06532520102337,
+              "train_seconds": 134.671,
+              "wall_seconds": 140.267
+            },
+            "tokens": {
+              "context_tokens": 97680,
+              "memory_context_tokens": 37184,
+              "memory_forwards": 256,
+              "memory_supervised_tokens": 7744,
+              "memory_total_tokens": 44928,
+              "per_kind": {
+                "extra_memory": {
+                  "context_tokens": 27888,
+                  "forwards": 192,
+                  "rows": 24,
+                  "supervised_tokens": 5808,
+                  "total_tokens": 33696
+                },
+                "memory": {
+                  "context_tokens": 9296,
+                  "forwards": 64,
+                  "rows": 8,
+                  "supervised_tokens": 1936,
+                  "total_tokens": 11232
+                },
+                "observation_replay": {
+                  "context_tokens": 60496,
+                  "forwards": 192,
+                  "rows": 24,
+                  "supervised_tokens": 5688,
+                  "total_tokens": 66184
+                }
+              },
+              "replay_context_tokens": 60496,
+              "replay_forwards": 192,
+              "replay_supervised_tokens": 5688,
+              "replay_total_tokens": 66184,
+              "supervised_tokens": 13432,
+              "total_forwards": 448,
+              "total_tokens": 111112,
+              "updates": 256
+            },
+            "updates": 256
+          },
+          "epoch_losses": [
+            0.18384,
+            0.05854,
+            0.06245,
+            0.05439,
+            0.02863,
+            0.02378,
+            0.01407,
+            0.00644
+          ],
+          "errors": {
+            "canary": {
+              "content_correct_non_strict": 0,
+              "content_failures": 0,
+              "errors": {
+                "completion_errors": {},
+                "schema_errors": {},
+                "source_errors": {},
+                "syntax_errors": {}
+              },
+              "length_terminated": 0,
+              "stopped": 12
+            },
+            "exact": {
+              "content_correct_non_strict": 8,
+              "content_failures": 0,
+              "errors": {
+                "content_errors": {},
+                "production_errors": {},
+                "source_completion_errors": {}
+              },
+              "length_terminated": 0,
+              "stopped": 8
+            },
+            "held": {
+              "content_correct_non_strict": 0,
+              "content_failures": 9,
+              "errors": {
+                "completion_errors": {},
+                "schema_errors": {},
+                "source_errors": {
+                  "output_variant": 9
+                },
+                "syntax_errors": {}
+              },
+              "length_terminated": 0,
+              "stopped": 48
+            },
+            "paraphrase": {
+              "content_correct_non_strict": 4,
+              "content_failures": 4,
+              "errors": {
+                "content_errors": {
+                  "action mismatch": 1,
+                  "outcome mismatch": 1,
+                  "prediction mismatch": 2
+                },
+                "production_errors": {
+                  "action mismatch": 1,
+                  "outcome mismatch": 1,
+                  "prediction mismatch": 2
+                },
+                "source_completion_errors": {}
+              },
+              "length_terminated": 0,
+              "stopped": 8
+            }
+          },
+          "final_loss": 0.0010453989416419063,
+          "formats": {
+            "canary": {
+              "exact": 12
+            },
+            "exact": {
+              "json_noncanonical": 8
+            },
+            "held": {
+              "exact": 48
+            },
+            "paraphrase": {
+              "json_noncanonical": 8
+            }
+          },
+          "norms": {
+            "changed_elements": 20185084,
+            "comparison": "source converted to actual saved/initialized dtype; not serialized file equality",
+            "l2": {
+              "delta": 1.963607291216567,
+              "final": 26.079627342273554,
+              "initial": 26.00035066370579
+            }
+          }
+        },
+        "MEMORY_ONLY": {
+          "costs": {
+            "calls": 76,
+            "component_seconds": {
+              "memory_forward_backward": 58.016731542302296,
+              "optimizer": 1.5629799755988643,
+              "replay_forward_backward": 0.0
+            },
+            "fits": 1,
+            "peak_cuda_memory_allocated_bytes": 15859371008,
+            "peak_memory_scope": "process CUDA allocator high water, not isolated phase delta",
+            "readout": {
+              "generation_seconds": 65.55647256667726,
+              "output_tokens": 1604,
+              "process_seconds": 93.68322897795588,
+              "prompt_tokens": 18033
+            },
+            "timing_scope": "host wall intervals; CUDA asynchronous timings are not kernel-time attribution",
+            "timings": {
+              "fit_receipt_seconds": 92.19071768794674,
+              "process_seconds": 92.24787189392373,
+              "train_seconds": 69.447,
+              "wall_seconds": 75.251
+            },
+            "tokens": {
+              "context_tokens": 37184,
+              "memory_context_tokens": 37184,
+              "memory_forwards": 256,
+              "memory_supervised_tokens": 7744,
+              "memory_total_tokens": 44928,
+              "per_kind": {
+                "extra_memory": {
+                  "context_tokens": 27888,
+                  "forwards": 192,
+                  "rows": 24,
+                  "supervised_tokens": 5808,
+                  "total_tokens": 33696
+                },
+                "memory": {
+                  "context_tokens": 9296,
+                  "forwards": 64,
+                  "rows": 8,
+                  "supervised_tokens": 1936,
+                  "total_tokens": 11232
+                },
+                "observation_replay": {
+                  "context_tokens": 0,
+                  "forwards": 0,
+                  "rows": 0,
+                  "supervised_tokens": 0,
+                  "total_tokens": 0
+                }
+              },
+              "replay_context_tokens": 0,
+              "replay_forwards": 0,
+              "replay_supervised_tokens": 0,
+              "replay_total_tokens": 0,
+              "supervised_tokens": 7744,
+              "total_forwards": 256,
+              "total_tokens": 44928,
+              "updates": 256
+            },
+            "updates": 256
+          },
+          "epoch_losses": [
+            0.18589,
+            0.05933,
+            0.05685,
+            0.04255,
+            0.02366,
+            0.01622,
+            0.00971,
+            0.02745
+          ],
+          "errors": {
+            "canary": {
+              "content_correct_non_strict": 0,
+              "content_failures": 0,
+              "errors": {
+                "completion_errors": {},
+                "schema_errors": {},
+                "source_errors": {},
+                "syntax_errors": {}
+              },
+              "length_terminated": 0,
+              "stopped": 12
+            },
+            "exact": {
+              "content_correct_non_strict": 3,
+              "content_failures": 5,
+              "errors": {
+                "content_errors": {
+                  "action mismatch": 3,
+                  "outcome mismatch": 2
+                },
+                "production_errors": {
+                  "action mismatch": 3,
+                  "outcome mismatch": 2
+                },
+                "source_completion_errors": {}
+              },
+              "length_terminated": 0,
+              "stopped": 8
+            },
+            "held": {
+              "content_correct_non_strict": 0,
+              "content_failures": 1,
+              "errors": {
+                "completion_errors": {},
+                "schema_errors": {},
+                "source_errors": {},
+                "syntax_errors": {
+                  "Expecting property name enclosed in double quotes: line 1 column 72 (char 71)": 1
+                }
+              },
+              "length_terminated": 0,
+              "stopped": 48
+            },
+            "paraphrase": {
+              "content_correct_non_strict": 2,
+              "content_failures": 6,
+              "errors": {
+                "content_errors": {
+                  "action mismatch": 3,
+                  "outcome mismatch": 3
+                },
+                "production_errors": {
+                  "action mismatch": 3,
+                  "outcome mismatch": 3
+                },
+                "source_completion_errors": {}
+              },
+              "length_terminated": 0,
+              "stopped": 8
+            }
+          },
+          "final_loss": 0.04343966022133827,
+          "formats": {
+            "canary": {
+              "exact": 12
+            },
+            "exact": {
+              "json_noncanonical": 8
+            },
+            "held": {
+              "exact": 47,
+              "unparseable": 1
+            },
+            "paraphrase": {
+              "json_noncanonical": 8
+            }
+          },
+          "norms": {
+            "changed_elements": 20185085,
+            "comparison": "source converted to actual saved/initialized dtype; not serialized file equality",
+            "l2": {
+              "delta": 1.931116815929262,
+              "final": 26.069595938031863,
+              "initial": 26.00035066370579
+            }
+          }
+        }
+      },
+      "original_gpu": {
+        "index": 2,
+        "node": "node2",
+        "source": "preserved plan and launcher receipts; not a fresh native query",
+        "uuid": "GPU-d2db2a6a-a308-1782-bf41-e41411d8dc05"
+      },
+      "screens": {
+        "ADDITIVE": {
+          "exact_denominator": 8,
+          "exact_eligible": 8,
+          "execution_gate": false,
+          "exploratory": true,
+          "lr0_correct_regressions": {
+            "canary": [],
+            "held": [
+              "perception:0cf684c0f25feaa457eaac3682c6188085e66f43a32b104d763fd854cfff72c0",
+              "perception:26e1d3383a96bdadae85058fa30e0a6ba1711406aa82f76bcbd36a7a1ce5cdd7",
+              "perception:53c6548400655468b0f9f0e68cf27c399ee081ec860fbe969203bd1fd6217950",
+              "perception:60e7cdcf38d04f7463255a7b30c1856824b43c92cd99b64933e43a11a3dce547",
+              "perception:87ac0accdc6c5520a020e74c23e42d4d29779b251ccad48b2420e0cdd353d155",
+              "perception:8a52085973d2b39774ae0b5394d1fe0cf340d7a7b234adb84884142680bc81e7",
+              "perception:96b361bff48cd77d36282875ae9032887a03dcbb8b52acbf205cba3bf0d1683e",
+              "perception:ac316e934099513c7f0d910703ad431ccfa8edc66df058af9aafafd0017d77cc",
+              "perception:c1a1f0a863316f632ecd58951cbef7f2ab956ad46d8f200f6cac9ba2dd0c4011"
+            ]
+          },
+          "passed": false,
+          "scientific_pass": null,
+          "threshold": 5
+        },
+        "MEMORY_ONLY": {
+          "exact_denominator": 8,
+          "exact_eligible": 3,
+          "execution_gate": false,
+          "exploratory": true,
+          "lr0_correct_regressions": {
+            "canary": [],
+            "held": [
+              "perception:3168de3a2773da0af3a9c7a43586a1838565eb04d29b6add6ce43cab4e29cb65"
+            ]
+          },
+          "passed": false,
+          "scientific_pass": null,
+          "threshold": 5
+        }
+      },
+      "seed": 2,
+      "spans": {
+        "controller_seconds": 583.2337939708959,
+        "limitation": "Original holder includes the failed collector; recovery is separate CPU time, not new GPU work. Do not sum nested spans; recovery idle gap is unmeasured.",
+        "original_failed_collection_wall_seconds": 14.648666858673096,
+        "original_holder_wall_seconds": 598.0276882648468,
+        "prepare_seconds": 30.347388349939138,
+        "recovery_collection_seconds": 23.828819290036336
+      }
+    }
+  ],
+  "training_seconds_sum": 638.939
+}
