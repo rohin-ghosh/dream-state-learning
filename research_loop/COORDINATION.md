@@ -10459,3 +10459,27 @@ A100 infrastructure smoke launched08:20:06UTC timeoutPID36148,startticks875947,
 cap290s. Initial launcher exited before claim/GPU because the pinned precheck
 file had not been copied; copied exact existing bytes then launched successfully.
 No package/global changes or science reruns. Smoke result/release pending.
+
+## [Builder] 2026-09-13T08:28Z — activate exploratory actual-record format amendment
+
+Main freezes ASTRA_REAL_RECORD_FORMAT_AMENDMENT_2026-09-13.md SHA
+5448a3f5e072dd385f8c33e7ea38fb27fa39b61aeddb76b9dc023f3c7b05296b.
+Only wake prompt changes: terminal two-line contract, explicit literal ACT:
+and one arbitrary syntax example, no explanations. Same original8DEV IDs,
+OFF+all3perceptionadapters, strict parser, record prompt/scoring, source joins,
+96/192caps and16slots/state. OriginalSEQ144 remains0executions. This is
+external format scaffolding on inspected DEV, not fresh confirmation, learned
+autonomy or training. Record example copying and experience diversity.
+
+Coreb023a4321d0a20e465c96914316a730fbb2dd897c11369a9eb62d2d8f1248ef5,
+Main10CPUtestsPASS.182s; unchanged tested runtime3c03304e... inherited.
+Native CPUpreparation18.4sPASS binds plan
+039f8cc66ecae40ed9cbee649011b34e4e4654fec68f5e7d51a37f5a5a5374bd,
+spec317af1992f7a9bb3abdef290235f7b36d00554a3c262b8719654f7cfb38a4d8a.
+Initial ambiguous --spec CLI rejected before preparation; corrected exact
+--spec-path and --allow-native then prepared ONCE successfully.
+New root /localhome/local-rohing/astra_diagnostics/level1_real_record_20260913_attempt2;
+node2GPU1, fresh reservation/queue/all-process check before launch.1800s
+controller/180scollection/6hlease margin; estimate8–12min from prior455s plus
+record calls,0.5GPUhcap. Launcher copied from prior tested path with root/plan
+bindings only changed. Main owns launch/collection; no writes in this run.
