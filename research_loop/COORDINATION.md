@@ -11829,3 +11829,34 @@ schema failure from wrong source bindings and never infer absent process skill
 solely from closed-schema rejection. Any broader content re-score must be
 separately versioned exploratory, symmetric, and cannot rescue the frozen gate.
 No such alternative scorer or scientific promotion is made here.
+
+## [Builder] 2026-09-13T11:31Z — alignment archived; additive numerical CPU prerequisite passes
+
+Reconciled continuation at11cc2e9b; unrelated dirtygpu/codex/dream_state.rules
+preserved. All three alignment controllers/holders/automatic collectors ended
+integerrc0. No relaunch/recollection. VM evidence.tar SHA
+ee83389388135d786c0508e602db01f8678a29c0b2a8a53efae6d2ecf3ae220f,
+856members13578240bytes,zero new adapters; all mirror bytes verified. Verifier
+and receipt archived. Lovelace independently reduces full cohort; nextSEQpending.
+No Main GPU job remains live from this allocation. Preliminary305calls and
+zero fits; frozen PROCESS_USE/RECORD_FAITHFUL/FULL_MATERIAL zeros are constrained
+by the pre-outcome schema caveat and lexical RESTATE limitation, not a general
+claim of no useful processing or no parenting effect.
+
+Main19pure trainer testsPASS0.666s. Main additionally ran the previously required
+tiny native-environment CPU test, CUDA_VISIBLE_DEVICES empty, offline, no model
+download or7Bload. Command via gpu/ovx_ssh.sh:
+`env CUDA_VISIBLE_DEVICES='' HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONPATH=/tmp/astra_level1_real_record_source_20260913_attempt1 /localhome/local-rohing/v2/venv/bin/python -B /tmp/astra_additive_replay_cpu_payload_20260913_attempt1/test_astra_additive_replay_train_20260913.py --torch-cpu --out /tmp/astra_additive_replay_tiny_cpu_20260913_attempt1`.
+PASS4.258s: exact legacy MEMORY_ONLY parity; sum of separately normalized masked
+CE gradients with unequal target lengths; frozenbase/immutableparent/fresh
+optimizer; nonfinite-loss/gradient rejection and writeonce outputs. Trainer
+SHA3f2e73ef69b12c8db211e1d3043e4559713e036ffe09571ab8bc4c5199a426a0,
+tests49e1fc9d266f89dfc69c1ea1c0112ed61e035190fd1ad2abfb8d7867828fdce1.
+Receiptff2346a72f7e4fed9f4cdb51c90bb701c736557add56f0462f2b1e7ef2bc0b7d.
+Full fixture archivegpu_artifacts_local/additive_replay_tiny_cpu_20260913_attempt1/evidence.tar
+SHA6b4114b63b4ee0bfee46d145a425bf71037512de1e02be3ffebf972c1abcff9a,
+48members,allbytesverified against native receipt. Torch2.13.0+cu130/PEFT0.20.0/
+Transformers5.5.3 as executed, not a latest-version claim. Source/tests/receipt/
+parity/gradient evidence archived; toy adapters remain explicitly fixture-only.
+No native additive preparation/fit/launch yet; core/runner/holder integration
+remains pending. No approval requests. Simplehygienenow/formalC11later, unchanged.

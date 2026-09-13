@@ -1,4 +1,21 @@
-## Current superseding snapshot — 2026-09-13 11:08 UTC
+## Current superseding snapshot — 2026-09-13 11:31 UTC
+
+Alignment all3controllers/holders/auto-collectors completed rc0; no Main GPU
+job remains live from that allocation. Archive856members,zero new adapters,
+allbytesverified; exactpins/paths in currentHANDOFF. Never recollect/relaunch.
+IndependentLovelace reduction pending. Preliminary frozen score zeros require
+the pre-outcome closed-schema caveat; they do not establish absent process skill.
+Additive trainer Main19puretestsPASS plus tiny native CPU suitePASS4.258s:
+legacy baseline parity and correct sum-of-means gradients, frozenbase/parent,
+freshoptimizer/nonfinite/writeonce checks. Fixture archive48membersverified;
+receiptff2346a72f7e4fed9f4cdb51c90bb701c736557add56f0462f2b1e7ef2bc0b7d.
+Parfitcore/runner and Mainholder/native preparation still pending; no nativefit.
+Prospective4f4e8357 protocol unchanged: same memory dose/order/steps, extra replay
+compute, fresh original parents. FormalC11later; simplehygiene now. Manuscript
+throughSEQ159accepted, collaboratorUNSENT. MissionACTIVE/incomplete; nofreeze,
+generalG3/P1/H1/H2/clean qualification. Rules dirtyfile preserved.
+
+## Historical superseded snapshot — 2026-09-13 11:08 UTC
 
 Three alignment inference-onlycontrollersLIVE node2GPUs0/1/2 from11:07:53/
 11:08:00/11:08:02UTC. Holders/controllers119320/119325,119380/119381,

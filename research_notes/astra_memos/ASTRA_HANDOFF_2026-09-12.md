@@ -1,6 +1,37 @@
-# Astra current handoff — 2026-09-13T11:08Z
+# Astra current handoff — 2026-09-13T11:31Z
 
-## CURRENT — September13 11:08UTC
+## CURRENT — September13 11:31UTC
+
+All three alignment controllers, holders and automatic collectors completed
+with integer rc0. DO NOT relaunch or recollect. No Main GPU job remains live
+from this allocation. Full archive already VM-preserved:
+gpu_artifacts_local/parenting_alignment_20260913_attempt1/evidence.tar,
+SHAee83389388135d786c0508e602db01f8678a29c0b2a8a53efae6d2ecf3ae220f,
+856members,13578240bytes,zero new adapters. All extracted bytes verified at
+/tmp/astra_parenting_alignment_native_20260913_attempt1. Archive verifier and
+receipt copied to receipts_20260912. Lovelace owns independent reduction;
+do not duplicate it. Main preliminary inspection:305calls,zero fits/updates;
+PROCESS_USE/RECORD_FAITHFUL/FULL_MATERIAL all zero under frozen scoring.
+These are NOT general cognitive-inability results: the pre-outcome NOTE-schema
+caveat in11cc2e9b and lexical restatement limitations constrain interpretation.
+Frozen gate is not rescued; independent result/next SEQ still pending.
+
+Additive replay selected prospectively fromSEQ159, protocol committed4f4e8357.
+Beauvoir trainer3f2e73ef69b12c8db211e1d3043e4559713e036ffe09571ab8bc4c5199a426a0;
+Main19puretestsPASS0.666s. Main tiny native CPU-only suite PASS4.258s:
+legacy MEMORY_ONLY parity, separate masked mean gradient sum, fresh optimizer,
+frozen base/unchanged parent, nonfinite failures, write-once output. No download
+or7Bload. Receiptff2346a72f7e4fed9f4cdb51c90bb701c736557add56f0462f2b1e7ef2bc0b7d;
+48-member full fixture archive SHA6b4114b63b4ee0bfee46d145a425bf71037512de1e02be3ffebf972c1abcff9a
+atgpu_artifacts_local/additive_replay_tiny_cpu_20260913_attempt1/evidence.tar,
+allbytesverified. Fixtures are NOT scientific evidence. Parfit core/runner
+integration and Main holder/native preparation remain pending. No additive
+native fit or launch yet. Source memory dose/order preserved, additive replay
+cost is extra; simple hygiene now, formal guard only final paper-grade C11.
+Mission ACTIVE/incomplete; no mechanism freeze/generalG3/P1/H1/H2/clean claim.
+Dirtygpu/codex/dream_state.rules preserved. No approval requests this continuation.
+
+## Historical superseded snapshot — September13 11:08UTC
 
 Three inference-only alignment controllers LIVE node2GPUs0/1/2, original
 perception parents. Native roots /localhome/local-rohing/astra_diagnostics/
