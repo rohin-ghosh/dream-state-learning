@@ -535,9 +535,13 @@ only concatenates accepted exact child spans and adds no semantic field.
 Maximum adjacency is two, so there is no pagination ambiguity.
 
 At S1 this yields 17 scored service requests per full arm: eight `READ EVENT`,
-six distinct `READ EVENTS_AT`, and three `READ LINKS_FROM`. At S2 it yields 19:
-nine, six, and four respectively. Every control is matched at this
-query/response-shape level, rather than merely by semantic-row count.
+six distinct `READ EVENTS_AT`, and three `READ LINKS_FROM`. ATOMS has only its
+14 EVENT-bearing request blocks; LINK addresses are held out rather than
+trained false. At S2 each FULL arm yields 19 blocks: nine, six, and four
+respectively. OLD_REPLAY retains the 17 OLD request blocks; future NEW
+addresses are held out. Controls match total examples, active target tokens,
+batches, and updates through parser-disjoint padding, not through invented
+semantic responses.
 
 At the mechanistic endpoint:
 
@@ -550,13 +554,12 @@ At the mechanistic endpoint:
   tokens; and
 - request/response bytes and source receipts are logged.
 
-For `S1_ATOMS`, the three registered `READ LINKS_FROM` requests return the
-control-only target `MISS`; ATOMS may spend the same 12 reads composing from
-EVENT calls. No authentic LINK target exists in that arm. For
-`S2_OLD_REPLAY`, the 19-request roster is preserved: NEW-address requests
-return its registered control-only `MISS`, while old multi-row requests contain
-only OLD child spans. These negatives are synthetic controls, never authentic
-memory or lineage, and are reported separately.
+For `S1_ATOMS`, no LINK response is a training target; it may spend the same 12
+reads composing from EVENT calls. At evaluation, LINK-address calls are held
+out and must yield zero usable false LINK rows, but exact `MISS` is not required.
+For `S2_OLD_REPLAY`, old multi-row requests contain only OLD child spans; NEW
+addresses are held out and likewise must yield zero usable false rows. This
+prevents a control from being poisoned by training it to assert a false absence.
 
 This endpoint isolates parametric carriage and goal-directed traversal. An
 opaque public address copied into an actor-authored local request is allowed;
@@ -617,11 +620,19 @@ query-level target block. Repetition and varied views are writer mechanics
 supported by the existing high-dose authored-memory evidence. This DEV does
 not claim they are optimal.
 
-Each arm has exactly 20 query-response slots. S1 uses its 17 scored service
-queries plus three disjoint never-called `PAD_S1_<id>` requests. S2 uses its 19
-scored service queries plus one `PAD_S2_<id>` request. Padding targets live in
-an unparseable control namespace and contain no node, port, event, link,
-receipt, route, or outcome identifier. They never answer a real service call.
+Each arm has exactly 20 query-response slots:
+
+```text
+S1_AUTH / EVENT_TWIN / LINK_PERMUTE: 17 semantic blocks + 3 PAD
+S1_ATOMS:                            14 semantic blocks + 6 PAD
+S2_FULL_R0 / FULL_R1:                19 semantic blocks + 1 PAD
+S2_OLD_REPLAY:                       17 semantic blocks + 3 PAD
+```
+
+Padding uses disjoint never-called `PAD_S1_<id>` / `PAD_S2_<id>` requests.
+Padding targets live in an unparseable control namespace and contain no node,
+port, event, link, receipt, route, or outcome identifier. They never answer a
+real service call.
 
 After native tokenization, choose one presealed stage-level target-token budget
 equal to the longest arm plus a fixed feasible padding reserve. Distribute each
@@ -630,6 +641,8 @@ loss-active target tokens, examples, batches, and updates across arms; require
 every padding target to remain parser-disjoint and every sequence to remain
 below 512 tokens. If exact equality cannot be materialized with the bound
 tokenizer, stop before fitting as `VS_ASSAY_INVALID` rather than altering dose.
+Per-token loss weights, fractional examples, duplicated semantic requests, or
+trained false `MISS` rows are not fallback equalizers in this version.
 
 Thus the frozen optimizer arithmetic is:
 
@@ -640,9 +653,9 @@ S1 or S2: 20 query-response slots x 8 views = 160 examples/epoch
 14 fits x 200 = 2,800 optimizer updates total
 ```
 
-The manifest reports, for every arm, its 17/19 scored response blocks, padding
-blocks, exact target tokens, multi-row response shapes, and 200 executed
-updates. The token budget is fixed before DEV outputs are opened.
+The manifest reports, for every arm, its 14/17/19 semantic response blocks,
+padding blocks, exact target tokens, multi-row response shapes, and 200
+executed updates. The token budget is fixed before DEV outputs are opened.
 
 No first-update monotonic acceptance gate is allowed. Candidate acceptance is
 based on final-dose absorption, interface, and no-harm gates below.
@@ -651,12 +664,12 @@ based on final-dose absorption, interface, and no-harm gates below.
 
 ### 11.1 SLEEP 1: four fits per root
 
-| arm | 17 scored query responses + 3 padding responses | role |
+| arm | semantic query responses + padding responses | role |
 |---|---|---|
-| `S1_AUTH` | grouped reads over exact 8 EVENT + exact 4 LINK child rows | only authentic S1 lineage |
-| `S1_ATOMS` | identical EVENT reads; registered `MISS` for the 3 LINK queries | link-added-value control |
-| `S1_EVENT_TWIN` | grouped reads over coherent alternate-O 8 EVENT + corresponding 4 LINK rows | event source-binding control |
-| `S1_LINK_PERMUTE` | authentic EVENT reads + grouped endpoint-incompatible LINK derangement | false-pointer diagnostic |
+| `S1_AUTH` | 17 grouped reads over exact 8 EVENT + exact 4 LINK child rows; 3 PAD | only authentic S1 lineage |
+| `S1_ATOMS` | 14 identical EVENT-bearing reads; no trained LINK address; 6 PAD | link-added-value control |
+| `S1_EVENT_TWIN` | 17 grouped reads over coherent alternate-O 8 EVENT + corresponding 4 LINK rows; 3 PAD | event source-binding control |
+| `S1_LINK_PERMUTE` | 17 authentic EVENT/grouped endpoint-incompatible LINK reads; 3 PAD | false-pointer diagnostic |
 
 The three stage-level padding responses use a disjoint unparseable control
 namespace, carry no node/port/event/link identifiers, and are included only to
@@ -682,11 +695,11 @@ reachout/S2.
 Restore the exact pre-evaluation S1_AUTH snapshot. Fork the pre-outcome child
 into its two public relevant outcomes and independently collect exact NEW rows.
 
-| arm | 19 scored query responses + 1 padding response | role |
+| arm | semantic query responses + padding responses | role |
 |---|---|---|
-| `S2_FULL_R0` | grouped reads over exact 12 OLD + exact 3 child NEW_R0 | OLD+NEW authentic counterfactual continuation |
-| `S2_FULL_R1` | grouped reads over exact 12 OLD + exact 3 child NEW_R1 | OLD+NEW authentic counterfactual continuation |
-| `S2_OLD_REPLAY` | the same 19-query roster with OLD-only blocks/registered NEW-address `MISS` | equal-work no-NEW control |
+| `S2_FULL_R0` | 19 grouped reads over exact 12 OLD + exact 3 child NEW_R0; 1 PAD | OLD+NEW authentic counterfactual continuation |
+| `S2_FULL_R1` | 19 grouped reads over exact 12 OLD + exact 3 child NEW_R1; 1 PAD | OLD+NEW authentic counterfactual continuation |
+| `S2_OLD_REPLAY` | 17 OLD grouped reads; no trained NEW address; 3 PAD | equal-work no-NEW control |
 
 Every S2 fit starts from clean C0 and trains on the cumulative exact corpus;
 it does not stack a new optimizer onto S1 weights. This preserves coupled
@@ -702,9 +715,9 @@ Failures score zero; no retry, replacement, or favorable decode selection.
 - EVENT local reads: semantic exact `>=15/16`, strict exact `>=14/16` under
   each arm's registered map; arm semantic scores differ by at most `1/16`.
 - LINK local reads for AUTH, EVENT_TWIN, and LINK_PERMUTE: semantic and strict
-  exact `>=7/8` under the registered arm target. ATOMS instead must return its
-  registered `MISS` on all `3/3` trained LINK addresses and zero usable LINK
-  rows.
+  exact `>=7/8` under the registered arm target. ATOMS' held-out LINK-address
+  calls must return zero usable LINK rows; exact `MISS` versus another
+  registered non-row refusal is reported, not trained or required.
 - Eight unseen-address plus eight wrong-root requests: `>=15/16` exact MISS
   or registered non-row refusal and `0/16` usable false rows.
 - Candidate-free memory-service OLD route: S1_AUTH `>=14/16`, including
@@ -842,6 +855,10 @@ replacement root, or retry inside this cap. Profile one S1 and one S2 fit; if
 either cannot finish within 30 minutes, stop with `VS_RESOURCE_CAP` rather
 than silently raising the budget.
 
+The profiled fits are the first scheduled `S1_AUTH` and, if reached,
+`S2_FULL_R0` fits inside the fourteen-fit roster. Profiling does not authorize
+an extra fit, replay, or checkpoint selection.
+
 Parallel schedule:
 
 1. CPU construct gate and zero-fit model ceilings run immediately, independent
@@ -969,14 +986,14 @@ Only three choices remain implementation-level rather than scientific:
 
 1. **Opaque-token search feasibility.** The generator must find identifiers
    that keep all registered rows and control replacements exactly token-count
-   matched under the pinned tokenizer. If it cannot, fail closed and use
-   explicit per-token loss weights prospectively; do not accept approximate
-   work matching after looking at results.
-2. **Neutral ATOMS control surface.** The exact nonsemantic control grammar
-   must be pretested to be unparseable by every EVENT/LINK/read parser and to
-   contain no world identifiers. If neutral targets measurably damage the
-   generic canary, report ATOMS as assay-invalid rather than interpreting an
-   AUTH advantage.
+   matched through the registered PAD targets under the pinned tokenizer. If
+   it cannot, fail closed as `VS_ASSAY_INVALID`; this version has no per-token
+   weighting or approximate-match fallback.
+2. **Neutral padding surface.** Every nonsemantic PAD target must be pretested
+   as unparseable by every EVENT/LINK/read parser and contain no world
+   identifier. If padding measurably damages the generic canary, report the
+   affected control as assay-invalid rather than interpreting an AUTH/FULL
+   advantage.
 3. **Native internal mediation.** The minimum native endpoint proves success
    on an information-identified task, not separate OLD/NEW parameter use. If
    that stronger language is required for the first paper, pay for two
