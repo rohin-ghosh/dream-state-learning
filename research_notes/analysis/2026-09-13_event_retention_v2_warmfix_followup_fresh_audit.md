@@ -85,6 +85,16 @@ model or GPU call and did not edit builder-owned source.
    (attempt2 preworker -> attempt3 diagnosed post-fit -> fresh attempt4) and
    does not validate `prior_failed_work`. It and its tests remain uncommitted
    at this audit snapshot.
+9. **Attempt4 seed0 exposed a second post-fit checker defect and is also
+   terminally inadmissible.** The worker returned zero and wrote a sealed
+   `fit/completed.json` after 200 updates/800 presentations, but the outer's
+   post-fit `validate_stage` called `validate_predecessor` with the completed
+   fit directory. That helper always invokes `_warm_parent(parent,
+   directory/checkpoint, ...)`, whose pre-fit freshness guard correctly rejects
+   an already-existing checkpoint. The outer therefore recorded `FAILED`,
+   `completed_sha256=null`, and `warm start: output must be fresh`; no readout
+   ran. This is a posthoc-checker impurity, not a writer failure, but the outer
+   contract still makes the checkpoint unusable. Seeds1/2 were not launched.
 
 **Exact present decision:** acquisition **GO/PASS**; warmfix2 descendants and
 attempt2/attempt3 roots **terminal NO-GO/no reuse**; the warmfix3 validator,
@@ -93,8 +103,10 @@ independent audit **withholds execution and evidence acceptance GO** because
 the reducer must first be committed, terminally green, and independently
 audited with complete failure ancestry and failed-work accounting. The builder
 subsequently launched attempt4 seed0 under its separate standing authority;
-that does not change this acceptance gate. Seeds1/2 should remain held, and no
-seed0 output should be interpreted, until the reducer gate passes.
+it stopped at the post-fit outer-checker defect above. Attempt4 seed0 is now
+also terminal NO-GO/no reuse. Seeds1/2 should remain held. A later execution is
+NO-GO until the post-fit validator is cleanly separated from the pre-fit
+freshness check and the reducer accepts the exact full failure chain.
 
 ## Sparse conversion semantics
 
@@ -151,7 +163,24 @@ trainable names obtained from the mutated cold-base caller. All five pass in
   `9e3d91f3377c58f24f062cac5742e4d724e2f9c17bbe394b25a383502d74a33c`,
   and `a3fc00c8b982534d1164e857d983af731d8b9272af7ff6e307ead45fe35f4882`
   for seeds 0/1/2. Seed0 was launched after preparation under the builder's
-  standing authority; seeds1/2 remained unlaunched at the last inspection.
+  standing authority and stopped after a successful fit but failed outer
+  validation; seeds1/2 remained unlaunched at the last inspection.
+
+The safe prospective source shape is two explicit paths:
+
+1. A read-only predecessor-evidence validator that checks the immutable A200
+   receipt, parent checkpoint inventory, configuration, corpus, material,
+   model/base identities, and nonoverlap without referring to a future output.
+2. A pre-fit predecessor-for-write validator that calls the read-only validator
+   and then calls `_warm_parent(parent, output_root/checkpoint, config)` to
+   enforce destination freshness before any training.
+
+The worker/pre-fit input path must use (2); outer post-fit `validate_stage`
+must use only (1). Freshness must not become an optional flag, a default that a
+caller can accidentally disable, or a condition inferred from whether an
+output already exists. The new overlay must explicitly bind every changed
+function and callsite; warmfix3's fit-only AST boundary is no longer sufficient
+for this additional repair.
 - The reducer's newer `runtime_cold` logic independently pins the repair
   receipt, verifies root/path identities, re-runs the AST boundary, requires a
   byte-identical relocated outer, and proves that translating repaired runtime
@@ -182,6 +211,16 @@ per seed **six fits, 2,000 updates, 8,000 presentations, 96 calls**, or over
 three seeds **18 fits, 6,000 updates, 24,000 presentations, 288 calls**. These
 failed costs must be reported separately from the fixed scientific contrast.
 
+After attempt4 seed0, those totals rise once more if a later run succeeds:
+
+- seed0: **7 fit invocations, 2,200 updates, 8,800 presentations, 96 calls**;
+- seeds1/2: **6 fits, 2,000 updates, 8,000 presentations, 96 calls each**;
+- all three: **19 fits, 6,200 updates, 24,800 presentations, 288 calls**.
+
+Attempt4's worker-return-zero does not make its fit scientifically successful:
+the final outer contract failed. Its physical work must be charged, while its
+checkpoint remains excluded.
+
 `REPLAY400-B200_NEW_DOSE` is dose-matched for B but not total work.
 `REPLAY400-B400_FIXED_WORK` is matched for update/presentation work but not B
 dose or target tokens. `REPLAY400-CLEAN_CUM600` crosses a checkpoint/reload and
@@ -199,17 +238,21 @@ release checks. The failed roots remain immutable evidence, not resumable work.
 
 Before any result is accepted, the committed reducer must:
 
-- verify the exact approved warmfix3 receipt, replacement hash, regular outer
-  hash, repair revision, and one-function AST boundary;
+- verify the exact approved successor receipt, fit/outer replacement hashes,
+  repair revision, and explicit AST boundaries for the read-only/pre-fit split
+  and every changed callsite;
 - validate all tensor key coverage, hashes, shapes, dtypes, sparse conversion
   keys, and same-dtype equality, with the executed validator/source tied to the
   exact parent checkpoint bytes;
-- validate the full attempt2 -> attempt3 -> fresh-run ancestry, proving
-  attempt2 had no worker and attempt3 was exactly the diagnosed, released,
-  unqualified post-fit failure;
-- charge attempt2 elapsed time and attempt3 elapsed time plus 1 fit / 200
-  updates / 800 presentations / 0 calls per seed, without folding failed work
-  into the planned arm counts;
+- validate the full attempt2 -> attempt3 -> attempt4(seed0) -> fresh-run
+  ancestry, proving attempt2 had no worker, attempt3 was exactly the diagnosed
+  released namespace-check failure, and attempt4 seed0 was exactly the
+  released posthoc-freshness checker failure despite a worker return code of
+  zero; seeds1/2 have no attempt4 work;
+- charge attempt2 elapsed time and all later failed elapsed time plus 1 fit /
+  200 updates / 800 presentations / 0 calls for every executed failed fit (two
+  for seed0, one for seeds1/2), without folding failed work into the planned
+  arm counts;
 - re-score all raw readout captures and validate exact token/stop/route/load/
   close/custody evidence;
 - require all four planned fit/readout branches, exact raw denominators, and
