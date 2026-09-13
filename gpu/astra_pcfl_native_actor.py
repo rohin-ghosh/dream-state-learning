@@ -117,8 +117,16 @@ def _native_loader(config):
 
         def generate(self, prompt, sampling):
             import torch
+            parameters = copy.deepcopy(sampling)
+            if "structured_outputs" in parameters:
+                structured = parameters["structured_outputs"]
+                require(type(structured) is dict and set(structured) == {"regex"}
+                        and type(structured["regex"]) is str and bool(structured["regex"]),
+                        "structured outputs must be a JSON regex binding")
+                from vllm.sampling_params import StructuredOutputsParams
+                parameters["structured_outputs"] = StructuredOutputsParams(**structured)
             with torch.inference_mode():
-                outputs = self.llm.generate([prompt], SamplingParams(**sampling), lora_request=None, use_tqdm=False)
+                outputs = self.llm.generate([prompt], SamplingParams(**parameters), lora_request=None, use_tqdm=False)
             if len(outputs) != 1 or len(outputs[0].outputs) != 1:
                 captures = [{"prompt_token_ids": list(result.prompt_token_ids),
                              "outputs": [{"text": output.text, "output_token_ids": list(output.token_ids),
@@ -359,6 +367,9 @@ class NativeActor:
         require(match is not None and match[1] == messages[0]["content"], "actual system segment differs")
         return prompt, ids
 
+    def _sampling(self, request, limits):
+        return {**SAMPLING, "seed": request["seed"], "max_tokens": limits["output_tokens"]}
+
     def generate(self, request, limits):
         request, limits = copy.deepcopy(request), copy.deepcopy(limits)
         self._request(request, limits)
@@ -379,7 +390,7 @@ class NativeActor:
             prompt, prompt_ids = self._render(request["messages"])
             require(len(prompt_ids) <= limits.get("input_tokens", self._config["max_input_tokens"]), "prompt input-token cap exceeded")
             require(len(prompt_ids) + limits["output_tokens"] <= self._config["engine"]["max_model_len"], "context window exceeded")
-            sampling = {**SAMPLING, "seed": request["seed"], "max_tokens": limits["output_tokens"]}
+            sampling = self._sampling(request, limits)
             self._write(name + ".render.json", {"rendered_prompt": prompt, "prompt_token_ids": prompt_ids,
                                                "sampling": sampling, "mount": "C0", "lora_request": None})
             self._check(deadline)

@@ -2,6 +2,7 @@
 
 import contextlib
 import copy
+from dataclasses import dataclass
 import hashlib
 import json
 import os
@@ -449,6 +450,47 @@ class ActorTests(unittest.TestCase):
     def test_native_loader_without_offline_configuration_fails_before_import(self):
         with patch.dict(os.environ, {}, clear=True), self.assertRaisesRegex(actor_api.ActorError, "offline"):
             actor_api._native_loader(self.config)
+
+    def test_native_loader_converts_structured_regex_without_mutating_json(self):
+        @dataclass
+        class Structured:
+            regex: str
+
+        fake_output = SimpleNamespace(text="wrong content\n", token_ids=[1], finish_reason="stop", stop_reason=None)
+        llm = Mock()
+        llm.generate.return_value = [SimpleNamespace(outputs=[fake_output], prompt_token_ids=[65])]
+        sampling_constructor = Mock(side_effect=lambda **params: params)
+        structured_constructor = Mock(side_effect=Structured)
+        modules = {"vllm": SimpleNamespace(LLM=Mock(return_value=llm), SamplingParams=sampling_constructor),
+                   "vllm.sampling_params": SimpleNamespace(StructuredOutputsParams=structured_constructor),
+                   "torch": SimpleNamespace(inference_mode=contextlib.nullcontext)}
+        offline = {key: "1" for key in ("HF_HUB_OFFLINE", "TRANSFORMERS_OFFLINE", "HF_HUB_DISABLE_TELEMETRY", "VLLM_NO_USAGE_STATS")}
+        offline["CUDA_VISIBLE_DEVICES"] = self.config["gpu_uuid"]
+        sampling = {**actor_api.SAMPLING, "seed": 0, "max_tokens": 2048,
+                    "structured_outputs": {"regex": r"[^\r\n]+\n"}}
+        original = copy.deepcopy(sampling)
+        with patch.dict("sys.modules", modules), patch.dict(os.environ, offline):
+            session = actor_api._native_loader(self.config)
+            raw = session.generate("A", sampling)
+            for invalid in (None, {}, {"regex": True}, {"regex": ""},
+                            {"regex": "x", "choice": ["answer"]}, Structured("x")):
+                with self.subTest(invalid=invalid), self.assertRaisesRegex(actor_api.ActorError, "JSON regex"):
+                    session.generate("A", {**sampling, "structured_outputs": invalid})
+            session.close()
+        self.assertEqual(raw["text"], "wrong content\n")
+        self.assertEqual(sampling, original)
+        self.assertEqual(actor_api.canonical(sampling), actor_api.canonical(original))
+        structured_constructor.assert_called_once_with(regex=r"[^\r\n]+\n")
+        sampling_constructor.assert_called_once_with(
+            **{**original, "structured_outputs": Structured(r"[^\r\n]+\n")})
+        llm.generate.assert_called_once()
+        self.assertEqual(llm.generate.call_args.args[1],
+                         {**original, "structured_outputs": Structured(r"[^\r\n]+\n")})
+
+    def test_default_sampling_hook_matches_existing_dictionary(self):
+        actor = self.actor()
+        self.assertEqual(actor._sampling(self.request, self.limits),
+                         {**actor_api.SAMPLING, "seed": self.request["seed"], "max_tokens": self.limits["output_tokens"]})
 
 
 if __name__ == "__main__":

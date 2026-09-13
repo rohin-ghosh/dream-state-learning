@@ -73,3 +73,30 @@ after the first failure, not a pristine confirmation or a retroactive pass.
 Use fresh source pins, preparation, manifest and output directories. An
 unsupported or incomplete commitment still blocks fitting. No original
 full-assay parser/gate or thesis invariant changes.
+
+## Prospective format-scaffolded diagnostic — 2026-09-13 14:32 UTC
+
+SEQ170's explicit LF prompt also failed on the first EVENT. Both earlier
+attempts stay failed and unchanged. The next separate disposable diagnostic
+adds a target-free decoding constraint only to EVENT/LINK: one nonempty line
+containing neither CR nor LF, followed by exactly one LF. The regex is
+`[^\r\n]+\n`. It contains no words, IDs, plan, receipt or expected response.
+The model still chooses all semantic contents; incorrect contents are allowed
+by the regex and must be rejected by the unchanged provenance/grammar judges.
+EXPLORE and subsequent cold READ decoding remain unconstrained. Prompts,
+chosen root/actions/link pairs, seeds, budgets and LOW200 recipe are unchanged.
+
+This is a declared external formatting scaffold, not learned formatting,
+autonomous formation, parenting, or passage of the original full assay.
+The decoder emits the actual LF; the harness never appends, strips, replaces
+or repairs output bytes. All native tokens, stop reasons and rejected responses
+remain captured. Missing LF still fails even if a backend reports enabling the
+constraint. No post-generation correction, extra call, or replacement root.
+
+Bind this policy, its exact source and sampling representation in fresh
+preparation/config/manifest and formation receipts carried into any later fit.
+Verify the installed backend API and CPU path before launch. Complete authentic
+formation remains necessary for writing; if formation fails, fit stays blocked.
+Any future gain is acquisition from this format-scaffolded own-event bank,
+not causal evidence that constrained decoding improved learning. Original
+unconstrained failures are development history, not matched randomized controls.

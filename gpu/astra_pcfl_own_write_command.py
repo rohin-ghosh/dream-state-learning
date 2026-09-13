@@ -10,6 +10,7 @@ from pathlib import Path
 import time
 
 from gpu import astra_pcfl_native_actor as native
+from gpu import astra_pcfl_lf_actor as lf_api
 from gpu import astra_pcfl_own_write_dev as formation_api
 from gpu import astra_pcfl_own_write_readout as readout_api
 from gpu import astra_pcfl_zero_fit_dev as token_api
@@ -49,7 +50,7 @@ def environment():
 
 
 def source_files():
-    modules = (formation_api, readout_api, native, token_api, train_api,
+    modules = (formation_api, readout_api, native, lf_api, token_api, train_api,
                train_api.writer, train_api.writer.shared, train_api.prepare, train_api.planner, core)
     paths = {str(Path(module.__file__).resolve()) for module in modules}
     paths.update((str(Path(__file__).resolve()), str(readout_api.SCOPE)))
@@ -323,7 +324,7 @@ def formation(path, expected, *, actor_factory=None, environment_reader=None, cl
         settings = {**manifest["formation_template"]["actor_config"], "deadline": deadline}
         config = formation_api.build_config(*choices(), actor_config=settings, seed=0, limits=_limits(deadline))
         write(directory / "formation_config.json", config)
-        actor = (actor_factory or native.NativeActor)(settings)
+        actor = (actor_factory or lf_api.LFNativeActor)(settings)
         try:
             report = formation_api.run_formation(config, config["sha256"], actor, directory / "records")
         finally:

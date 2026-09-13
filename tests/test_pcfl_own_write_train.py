@@ -90,7 +90,7 @@ def synthetic_fixture(root, *, cold_first_call=False):
         sidecars = {"config.json": actor_config, "identity.json": identity,
                     prefix + "request.json": {"request": request, "limits": call_limits, "request_sha256": own.digest(request), "started": operation_started},
                     prefix + "render.json": {"rendered_prompt": rendered, "prompt_token_ids": prompt_ids,
-                                              "sampling": {**native.SAMPLING, "seed": 17, "max_tokens": 256}, "mount": "C0", "lora_request": None},
+                                              "sampling": formation.lf_api.sampling_for(request, call_limits), "mount": "C0", "lora_request": None},
                     prefix + "raw.json": {"kind": "NATIVE", "request_sha256": own.digest(request), "operation_started": operation_started,
                                            "generation_started": 10.2 + 3 * index, "generation_ended": 10.7 + 3 * index,
                                            "mount": "C0", "lora_request": None,

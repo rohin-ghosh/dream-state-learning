@@ -10,12 +10,13 @@ import math
 from pathlib import Path
 
 from gpu import astra_pcfl_native_actor as actor_api
+from gpu import astra_pcfl_lf_actor as lf_api
 from organism_v6 import pcfl_vertical_dev as core
 from organism_v6 import pcfl_vertical_formation_plan as planner
 
 
 SCHEMA = "pcfl.own_write_old_formation.v1"
-POLICY = "public_session_history_whole_response_stop_only_fail_fast_v2"
+POLICY = "public_session_history_whole_response_stop_only_format_scaffold_v3"
 LF_COMMITMENT_RULE = (
     "End your response with exactly one LF (U+000A) after the last identifier. "
     "Emit the actual newline character, not the literal characters backslash-n (\\n). "
@@ -23,7 +24,7 @@ LF_COMMITMENT_RULE = (
 )
 KINDS = [kind for _ in range(8) for kind in ("EXPLORE", "EVENT")] + ["LINK"] * 4
 CONFIG_FIELDS = {"schema", "policy", "source_pins", "planner", "actor_config",
-                 "seed", "limits", "slots", "sha256"}
+                 "seed", "limits", "slots", "format_scaffold", "sha256"}
 
 
 class FormationError(ValueError):
@@ -56,7 +57,7 @@ def detached(value):
 
 
 def source_pins():
-    paths = [Path(__file__), Path(actor_api.__file__), Path(planner.__file__),
+    paths = [Path(__file__), Path(actor_api.__file__), Path(lf_api.__file__), Path(planner.__file__),
              Path(core.__file__), Path(planner.prepare.__file__)]
     return {str(path.resolve()): hashlib.sha256(path.read_bytes()).hexdigest()
             for path in paths}
@@ -98,6 +99,8 @@ def build_config(cell, actions, link_choices, *, actor_config, seed, limits):
     slots = [{"id": f"old/formation/{index:02d}", "kind": kind}
              for index, kind in enumerate(KINDS)]
     return seal(dict(schema=SCHEMA + "/config", policy=POLICY, source_pins=pins,
+                     format_scaffold={"policy": lf_api.POLICY, "regex": lf_api.REGEX,
+                                      "applies_to": ["EVENT", "LINK"], "readout": "UNCONSTRAINED"},
                      planner=plan, actor_config=actor_config, seed=seed,
                      limits=limits, slots=slots))
 
@@ -196,8 +199,7 @@ def _verify_capture(config, index, request, response, capture, previous_end):
     require(raw["mount"] == rendered["mount"] == "C0"
             and raw["lora_request"] is None and rendered["lora_request"] is None,
             "formation adapter contamination")
-    require(rendered["sampling"] == {**actor_api.SAMPLING, "seed": config["seed"],
-                                      "max_tokens": config["limits"]["output_tokens"]},
+    require(rendered["sampling"] == lf_api.sampling_for(request, config["limits"]),
             "sampling differs")
     output = raw["raw"]
     require(type(output) is dict and set(output) == {"text", "output_token_ids",
@@ -325,6 +327,7 @@ def _form(config, acquire):
         except (ValueError, TypeError, KeyError, IndexError) as error:
             failure = {"slot": None, "type": type(error).__name__, "message": str(error)}
     return seal({"schema": SCHEMA + "/report", "config_sha256": config["sha256"],
+                 "format_scaffold": detached(config["format_scaffold"]),
                  "status": "COMPLETE" if failure is None else "FORMATION_FAILED",
                  "slots": slots, "failure": failure, "world_receipts": core.detached(session.receipts),
                  "admissions": admissions, "formation_binding": binding, "writer_payload": payload,

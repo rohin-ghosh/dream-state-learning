@@ -113,7 +113,7 @@ class CommandTests(unittest.TestCase):
         events, link_rows = plan_fixtures.synthetic_child_spans(cell, actions, links)
         outputs = [raw for pair in zip(actions, events) for raw in pair] + link_rows
         self.form_session = FormationSession(settings, self.clock, outputs)
-        return command.native.NativeActor(settings, loader=lambda config: self.form_session,
+        return command.lf_api.LFNativeActor(settings, loader=lambda config: self.form_session,
                                           environment_reader=lambda: self.env["native"], clock=self.clock)
 
     def read_factory(self, settings):

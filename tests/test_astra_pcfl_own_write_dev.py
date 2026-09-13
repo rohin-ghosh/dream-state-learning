@@ -48,7 +48,7 @@ class OwnFormationTests(unittest.TestCase):
 
     def actor(self):
         session = ScriptedSession(self.fixture.model, self.fixture.clock, self.outputs)
-        native = actor_api.NativeActor(self.settings, loader=Mock(return_value=session),
+        native = driver.lf_api.LFNativeActor(self.settings, loader=Mock(return_value=session),
                                       environment_reader=lambda: copy.deepcopy(self.fixture.environment),
                                       clock=self.fixture.clock)
         self.addCleanup(native.close)
@@ -70,6 +70,8 @@ class OwnFormationTests(unittest.TestCase):
     def test_real_actor_twenty_calls_and_exact_writer_payload(self):
         report, session = self.run_formation()
         self.assertEqual(report["status"], "COMPLETE")
+        self.assertEqual(report["format_scaffold"], self.config["format_scaffold"])
+        self.assertEqual(report["format_scaffold"]["regex"], r"[^\r\n]+\n")
         self.assertEqual(len(session.calls), 20)
         self.assertEqual(report["counts"], {"possible_calls": 20, "possible_events": 8,
             "possible_links": 4, "attempted_calls": 20, "accepted_events": 8, "accepted_links": 4})
@@ -193,7 +195,7 @@ class OwnFormationTests(unittest.TestCase):
                 "Emit the actual newline character, not the literal characters backslash-n (\\n). "
                 "Do not add a blank line.")
         self.assertEqual(driver.LF_COMMITMENT_RULE, rule)
-        self.assertEqual(self.config["policy"], "public_session_history_whole_response_stop_only_fail_fast_v2")
+        self.assertEqual(self.config["policy"], "public_session_history_whole_response_stop_only_format_scaffold_v3")
         for index, slot in enumerate(report["slots"]):
             prompt = slot["attempt"]["request"]["messages"][-1]["content"]
             if slot["kind"] == "EXPLORE":
@@ -219,6 +221,32 @@ class OwnFormationTests(unittest.TestCase):
         self.assertEqual(report["counts"]["accepted_events"], 0)
         self.assertIn("own executed receipt", report["admissions"][0]["error"])
         self.assert_replay(report)
+
+    def test_unconstrained_actor_cannot_claim_format_scaffold(self):
+        session = ScriptedSession(self.fixture.model, self.fixture.clock, self.outputs)
+        native = actor_api.NativeActor(self.settings, loader=Mock(return_value=session),
+                                       environment_reader=lambda: copy.deepcopy(self.fixture.environment),
+                                       clock=self.fixture.clock)
+        self.addCleanup(native.close)
+        report = driver.run_formation(self.config, self.config["sha256"], native, self.out)
+        self.assertEqual(len(session.calls), 2)
+        self.assertEqual(report["status"], "FORMATION_FAILED")
+        self.assertIn("sampling differs", report["failure"]["message"])
+        self.assertIsNone(report["writer_payload"])
+        self.assert_replay(report)
+
+    def test_scaffold_policy_and_sampling_bound_into_report(self):
+        report, session = self.run_formation()
+        self.assertEqual(report["format_scaffold"], self.config["format_scaffold"])
+        for index, (_, sampling) in enumerate(session.calls):
+            request = report["slots"][index]["attempt"]["request"]
+            self.assertEqual(sampling, driver.lf_api.sampling_for(request, self.limits))
+            self.assertEqual("structured_outputs" in sampling, report["slots"][index]["kind"] != "EXPLORE")
+        changed = copy.deepcopy(report)
+        changed["format_scaffold"]["regex"] = "forced expected answer"
+        changed = driver.seal({key: value for key, value in changed.items() if key != "sha256"})
+        with self.assertRaisesRegex(driver.FormationError, "replay differs"):
+            driver.replay_validate(self.config, self.config["sha256"], changed)
 
     def test_other_valid_link_pair_does_not_reselect_bank(self):
         second = core.parse_link_line(self.link_raw[1])
