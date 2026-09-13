@@ -671,9 +671,9 @@ based on final-dose absorption, interface, and no-harm gates below.
 | `S1_EVENT_TWIN` | 17 grouped reads over coherent alternate-O 8 EVENT + corresponding 4 LINK rows; 3 PAD | event source-binding control |
 | `S1_LINK_PERMUTE` | 17 authentic EVENT/grouped endpoint-incompatible LINK reads; 3 PAD | false-pointer diagnostic |
 
-The three stage-level padding responses use a disjoint unparseable control
-namespace, carry no node/port/event/link identifiers, and are included only to
-equalize loss-active target tokens. They are synthetic and never lineage.
+The stage-level padding responses use a disjoint unparseable control namespace,
+carry no node/port/event/link identifiers, and are included only to equalize
+loss-active target tokens. They are synthetic and never lineage.
 
 `S1_EVENT_TWIN` is materialized from the presealed alternate O cube cell; it
 preserves row counts, token marginals, identifiers, and link-handle graph while
