@@ -13041,3 +13041,39 @@ No signal to worker/controller/foreign processes. If the worker exits cleanly,
 the original controller may capture normally; otherwise preserve its failure.
 Separate sibling `.engine_release_1344Z` receipts record this intervention;
 do not insert files into the frozen run/outer inventories. No numerical retry.
+
+## [Builder] 2026-09-13T13:48Z — C0 capture complete; finalization failed, evidence preserved
+
+The exact-owned EngineCore SIGTERM succeeded. Worker160440 exited0;
+original outer verified the empty owned group and compute vacancy. All 800
+tasks were captured, with zero fits/updates and no scientific retry. Original
+report byte hash remains `c8fac984db75fd123cf5264756572da465baaffeee0fcbe186f849dddd319f2d`;
+capture file hash `9b31501c242a99de53c908fe472bb63f1e309bbfd17b1991e9c2cc9543ff6d3d`.
+
+Main invoked the original finalizer ONCE. It failed at the CVD observation:
+unreadable same-UID PID164452, no visible CVD owners. That process was absent
+at 13:44:42. No finalizer retry or manufactured collection/release receipt.
+The failed finalizer and the successful capture both remain immutable.
+A separate postfailure observation found empty owned group/compute list but
+another unreadable PID164788, later absent. It does NOT grant release or a
+finalized diagnostic pass. Original `diagnostic_usable` remains false.
+
+Direct contemporaneous public-metadata diagnosis at 13:47 UTC identifies
+the analogous new unreadable PID165118 as this foreground observer's own
+`sshd` parent (observer165119, PPID165118). Its environment was not recovered
+through another route. This supports a foreground-SSH observation issue;
+it does not retroactively identify the vanished PIDs or prove their contents.
+Future current-resource observations can run after their launching SSH
+session ends, retaining the same checks and exclusions rather than silently
+ignoring arbitrary unreadable processes. No previous finalization is retried.
+
+Full original run/outer/launcher, mid-run custody, engine cleanup, postfailure
+observation, exact manifest/allocation and intervention scripts archived once:
+`gpu_artifacts_local/pcfl_c0_zero_fit_20260913_attempt2/evidence.tar`, SHA256
+`44473352a9220e4e92475d16194a87f1fc89bd3d6021bbe6caa97a74a2ca20cf` verified
+after transfer. No outcome scores inspected yet. Lagrange owns a separate
+unfinalized-capture inspector/tests: fixed800 denominator/rawscorer replay,
+explicit failure state, no weakened finalized analyzer or invented collection.
+Parfit formation, Meitner writer and Copernicus cold-readout work continue.
+No Main scientific worker remains; current reservation visibility is not yet
+cleared for a new allocation. No approval prompt occurred.
