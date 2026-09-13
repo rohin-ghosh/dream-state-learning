@@ -27,6 +27,13 @@ def utc():
     return datetime.now(timezone.utc).isoformat()
 
 
+def isolated_output(output, input_pin, allocation_pin):
+    output = Path(output).resolve()
+    for protected in (Path(input_pin["path"]).resolve().parent, Path(allocation_pin["path"]).resolve().parent,
+                      Path(outer.__file__).resolve().parent):
+        fit.require(not output.is_relative_to(protected) and not protected.is_relative_to(output), "outer/input/source overlap")
+
+
 def prepare(args):
     from transformers import AutoTokenizer
     root = Path(args.root).resolve()
@@ -55,10 +62,14 @@ def prepare(args):
     gpu_ids = {int(row.split(",")[0]): row.split(",")[1].strip() for row in gpu_rows}
     fit.require(len(args.gpus) == 3 and len(set(args.gpus)) == 3 and all(index in gpu_ids for index in args.gpus), "three distinct observed GPUs required")
     root.mkdir()
+    (root / "inputs").mkdir()
+    (root / "runs").mkdir()
     entries = []
     for seed, gpu in enumerate(args.gpus):
-        directory = root / f"seed{seed}"
+        directory = root / "inputs" / f"seed{seed}"
         directory.mkdir()
+        run_root = root / "runs" / f"seed{seed}"
+        run_root.mkdir()
         material = fit.sequence.export_material(imported, imported["sha256"], tokenizer, learner_seed=seed)
         fit.write(directory / "material.json", material)
         allocation = {**template, "gpu_index": gpu, "gpu_uuid": gpu_ids[gpu], "outer_sha256": fit.file_hash(outer.__file__)}
@@ -79,7 +90,12 @@ def prepare(args):
         fit.write(directory / "c0_inputs.json", cold)
         entry = {"seed": seed, "gpu": gpu, "allocation": pin(directory / "allocation.json"),
                  "fit_inputs": pin(directory / "fit_inputs.json"), "c0_inputs": pin(directory / "c0_inputs.json"),
-                 "material": pin(directory / "material.json"), "spec_sha256": material["spec"]["sha256"]}
+                 "material": pin(directory / "material.json"), "spec_sha256": material["spec"]["sha256"], "run_root": str(run_root)}
+        isolated_output(run_root / "fit_outer", entry["fit_inputs"], entry["allocation"])
+        isolated_output(run_root / "no_write_outer", entry["c0_inputs"], entry["allocation"])
+        outer._inputs(entry["fit_inputs"]["path"], entry["fit_inputs"]["sha256"], entry["allocation"]["path"],
+                      entry["allocation"]["sha256"], allocation["outer_sha256"], "A200", time.monotonic() + 90,
+                      output=run_root / "fit_outer/fit")
         entries.append(entry)
     manifest = {"schema": SCHEMA, "status": "PREPARED_NOT_EXECUTED", "prepared_at": utc(),
                 "source_files": {**readout.source_files(), str(Path(outer.__file__).resolve()): fit.file_hash(outer.__file__),
@@ -100,7 +116,8 @@ def validate_campaign(manifest, root):
                 and all(type(entry["seed"]) is int and type(entry["gpu"]) is int for entry in entries), "exact three ordered learner seeds required")
     fit.require(len({entry["gpu"] for entry in entries}) == 3, "three distinct allocated GPUs required")
     for entry in entries:
-        directory = root / f"seed{entry['seed']}"
+        directory = root / "inputs" / f"seed{entry['seed']}"
+        fit.same(entry["run_root"], str(root / "runs" / f"seed{entry['seed']}"), "fixed run root differs")
         values = {}
         for name, filename in (("allocation", "allocation.json"), ("fit_inputs", "fit_inputs.json"),
                                ("c0_inputs", "c0_inputs.json"), ("material", "material.json")):
@@ -117,6 +134,7 @@ def validate_campaign(manifest, root):
                     and trained["predecessor"] is None and cold["fit_receipt"] is None, "campaign requires fresh C0/A200 inputs")
         for name in ("model_path", "model_binding", "base_state_receipt", "replay_receipt", "archive", "environment"):
             fit.same(trained[name], cold[name], "campaign fit/C0 identity differs: " + name)
+        isolated_output(Path(entry["run_root"]) / "fit_outer", entry["fit_inputs"], entry["allocation"])
 
 
 def run(args):
@@ -131,7 +149,8 @@ def run(args):
     results = []
     try:
         for entry in manifest["entries"]:
-            directory = root / f"seed{entry['seed']}"
+            directory = root / "inputs" / f"seed{entry['seed']}"
+            run_root = Path(entry["run_root"])
             allocation = fit.read_pin(entry["allocation"])
             for stage, state, input_pin in (("fit", None, entry["fit_inputs"]),
                                              ("readout", "NO_WRITE", entry["c0_inputs"]),
@@ -140,11 +159,12 @@ def run(args):
                 fit.require(time.time() + outer.TOTAL_SECONDS < allocation["lease_end"] - max(21600, allocation["lease_margin_seconds"]), "lease finish margin")
                 if state == "A200":
                     cold = fit.read_pin(entry["c0_inputs"])
-                    cold["fit_receipt"] = pin(directory / "fit_outer/fit/completed.json")
+                    cold["fit_receipt"] = pin(run_root / "fit_outer/fit/completed.json")
                     fit.write(directory / "a200_inputs.json", cold)
                     input_pin = pin(directory / "a200_inputs.json")
                 fit.read_pin(input_pin)
-                output = directory / ("fit_outer" if stage == "fit" else f"{state.lower()}_outer")
+                output = run_root / ("fit_outer" if stage == "fit" else f"{state.lower()}_outer")
+                isolated_output(output, input_pin, entry["allocation"])
                 result = outer.controller(input_pin["path"], input_pin["sha256"], entry["allocation"]["path"],
                                           entry["allocation"]["sha256"], str(output), outer_sha256=allocation["outer_sha256"],
                                           phase="A200", stage=stage, state=state)

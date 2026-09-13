@@ -16054,6 +16054,27 @@ controllers. Seeds0/1/2 use GPUs1/2/3 serially. This is a launch, not a fit,
 acquisition, retention or success receipt; no result has been inspected yet.
 No other process was killed, no exception added, and no approval requested.
 
+## [Builder] 2026-09-13T18:56Z — acquisition operator stopped before any worker; path-only repair
+
+BatchPID232367 stopped at18:51:16UTC, before spawning a fit/readout worker:
+`outer/input/source overlap`. The operator placed input JSON and stage outputs
+under the same seed directory, which the existing outer correctly refuses.
+This is zero fits/updates/model calls, not failed scientific acquisition.
+Failed attempt4/root/launch/stopped receipts remain immutable.
+
+Main changed only the acquisition OPERATOR to use separate `inputs/seedN`
+and `runs/seedN` trees, tests the native outer's exact overlap rule, and calls
+its real CPU `_inputs` validation during preparation.7operator testsPASS0.070s.
+Do not modify the frozen71adf462 native fit/readout/acquisition tree. The
+revised operator is copied separately and imports that same immutable runtime;
+new attempt5 is prepared before any retry launch. Same cases, recipe,
+three seeds, endpoints and budget; no inspected model outcomes or rescue.
+
+Volta EDITSTOP/closed: Stage0 CPU source is partial/NO-GO (missing rich-domain
+and complete null contracts), not a training or model-run qualification.
+Main will inspect it separately; Aristotle owns only the followup operator
+and test, with the same required input/output path separation.
+
 ## [Root ruling] 2026-09-13 PT — adopt GOAL-BRAID contract; authorize source and CPU-test authoring only
 
 Adopt the role-level `PCFL-GOAL-BRAID-v1` design in

@@ -16,10 +16,14 @@ class CampaignTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
+        (self.root / "inputs").mkdir()
+        (self.root / "runs").mkdir()
         self.entries = []
         for seed in range(3):
-            directory = self.root / f"seed{seed}"
+            directory = self.root / "inputs" / f"seed{seed}"
             directory.mkdir()
+            run_root = self.root / "runs" / f"seed{seed}"
+            run_root.mkdir()
             api.fit.write(directory / "allocation.json", {"outer_sha256": "a" * 64, "lease_end": time.time() + 86400,
                                                          "lease_margin_seconds": 21600, "gpu_index": seed + 1, "gpu_uuid": f"GPU-{seed}"})
             api.fit.write(directory / "material.json", {"spec": {"learner_seed": seed, "sha256": str(seed) * 64}})
@@ -29,7 +33,7 @@ class CampaignTests(unittest.TestCase):
             api.fit.write(directory / "c0_inputs.json", {**shared, "schema": api.readout.SCHEMA + "/inputs", "fit_receipt": None})
             self.entries.append({"seed": seed, "gpu": seed + 1, "allocation": api.pin(directory / "allocation.json"),
                                  "fit_inputs": api.pin(directory / "fit_inputs.json"), "c0_inputs": api.pin(directory / "c0_inputs.json"),
-                                 "material": api.pin(directory / "material.json"), "spec_sha256": str(seed) * 64})
+                                 "material": api.pin(directory / "material.json"), "spec_sha256": str(seed) * 64, "run_root": str(run_root)})
         self.manifest = {"schema": api.SCHEMA, "status": "PREPARED_NOT_EXECUTED", "source_files": {}, "entries": self.entries, "budget": api.BUDGET}
         api.fit.write(self.root / "manifest.json", self.manifest)
         self.args = argparse.Namespace(root=str(self.root), manifest_sha256=api.pin(self.root / "manifest.json")["sha256"])
@@ -37,6 +41,7 @@ class CampaignTests(unittest.TestCase):
 
     def stage(self, inputs_path, inputs_sha, allocation_path, allocation_sha, output, **selection):
         self.calls.append(selection)
+        api.isolated_output(output, {"path": inputs_path}, {"path": allocation_path})
         api.fit.read_pin({"path": inputs_path, "sha256": inputs_sha})
         root = Path(output)
         root.mkdir()
@@ -103,7 +108,7 @@ class CampaignTests(unittest.TestCase):
                 api.validate_campaign(manifest, self.root)
 
     def test_repinned_wrong_learner_input_and_gpu_binding_refused(self):
-        path = self.root / "seed1/fit_inputs.json"
+        path = self.root / "inputs/seed1/fit_inputs.json"
         original = api.outer.read(path)
         for key, value in (("learner_seed", 0), ("gpu_uuid", "GPU-0")):
             path.write_bytes(api.fit.prefix.canonical({**original, key: value}))
@@ -111,6 +116,12 @@ class CampaignTests(unittest.TestCase):
             manifest["entries"][1]["fit_inputs"] = api.pin(path)
             with self.subTest(key=key), self.assertRaises(ValueError):
                 api.validate_campaign(manifest, self.root)
+
+    def test_native_outer_input_directory_guard_is_preserved(self):
+        entry = self.entries[0]
+        with self.assertRaisesRegex(ValueError, "outer/input/source overlap"):
+            api.isolated_output(self.root / "inputs/seed0/fit_outer", entry["fit_inputs"], entry["allocation"])
+        api.isolated_output(self.root / "runs/seed0/fit_outer", entry["fit_inputs"], entry["allocation"])
 
 
 if __name__ == "__main__":
