@@ -139,6 +139,7 @@ class Fixture(unittest.TestCase):
         self.public = core.public_view(self.world)
         self.probe = Probe()
         self.plan = dict(root=str(self.root), base_sha256="a" * 64, chat_template=Tokenizer.chat_template,
+                         seeds=dict(runtime.SEEDS),
                          spec=dict(model="/fixture/model", source="/fixture/source", gpu_uuid="GPU-fixture", gpu_index=0,
                                    lease_end=time.time() + 100000), python=sys.executable,
                          config=asdict(trainer.TrainConfig(**runtime.RECIPE, model="/fixture/model")))
@@ -347,6 +348,160 @@ class TrainingTests(Fixture):
         self.reflection.load_native_model = lambda path: (Tokenizer(), model)
         with self.assertRaisesRegex(ValueError, "non-LoRA"):
             self.fit("fit1")
+
+
+class LearnerSeedTests(Fixture):
+    def select_seed(self, learner_seed):
+        self.plan["spec"]["learner_seed"] = learner_seed
+        self.plan["seeds"] = dict(runtime.SEEDS, learner=learner_seed)
+        self.plan["config"] = runtime.fit_config(trainer, self.plan["spec"]["model"], learner_seed=learner_seed)
+
+    def training(self, learner_seed=0):
+        return runtime.encode_training(core, self.public, self.states["PROMOTE"].corpus,
+                                       Tokenizer(), trainer, self.probe, learner_seed=learner_seed)
+
+    def test_default_seed0_preserves_prechange_encoding_and_config_bytes(self):
+        self.close("wake1", self.capture("wake1"))
+        prepared = self.training()
+        self.assertEqual(prepared, self.training(0))
+        self.assertEqual(prepared.pop("learner_seed"), 0)
+        self.assertEqual(runtime.value_hash(prepared), "7800ef957a7a35dc801ed973bbb8c725d312949c92ad8661ac85fdeff7a68ff5")
+        self.assertEqual(runtime.value_hash(runtime.fit_config(trainer, "/fixture/model")),
+                         "c188517d43550a4bf347fed433b75c88a6129b1a66c1abadc8292381ee1ee409")
+        self.assertEqual(core.digest(self.world), "39ebd6a4307bff2c3d4da5added98a9980689972c9cc648e70072329e8ba3370")
+
+    def test_default_seed0_preserves_newline_encoding_bytes(self):
+        self.close("wake1", self.capture("wake1", newline=True))
+        prepared = self.training()
+        self.assertEqual(prepared.pop("learner_seed"), 0)
+        self.assertEqual(runtime.value_hash(prepared), "0e9cad6abdea9da920594eca00949eb93e1eeff6a422024998f68c5db4b4563a")
+
+    def test_seeds_only_change_config_seed_and_epoch_order(self):
+        constants = deepcopy((runtime.SEEDS, runtime.RECIPE, runtime.ENGINE, runtime.PARAMS))
+        self.close("wake1", self.capture("wake1", newline=True))
+        baseline = self.training()
+        orders = []
+        for learner_seed in (0, 1, 2):
+            with self.subTest(learner_seed=learner_seed):
+                prepared = self.training(learner_seed)
+                self.assertEqual(prepared, self.training(learner_seed))
+                self.assertEqual(prepared["learner_seed"], learner_seed)
+                self.assertEqual({key: value for key, value in prepared.items() if key not in ("learner_seed", "epoch_order")},
+                                 {key: value for key, value in baseline.items() if key not in ("learner_seed", "epoch_order")})
+                config = runtime.fit_config(trainer, "/fixture/model", learner_seed=learner_seed)
+                self.assertEqual(config, dict(self.plan["config"], seed=learner_seed))
+                packs = [trainer.encode_item_segments(item, Tokenizer(), 1024, False, False, index, overflow="truncate")
+                         for index, item in enumerate(trainer.normalize_items(prepared["items"]))]
+                packs = trainer.pack_by_group([pack[0] for pack in packs], 1024, pack=False)
+                expected = [[pack[0].item_index for pack in trainer.epoch_order(packs, learner_seed, epoch, True)]
+                            for epoch in range(20)]
+                self.assertEqual(prepared["epoch_order"], expected)
+                orders.append(runtime.value_hash(expected))
+        self.assertEqual(len(set(orders)), 3)
+        self.assertEqual((runtime.SEEDS, runtime.RECIPE, runtime.ENGINE, runtime.PARAMS), constants)
+
+    def test_invalid_seed_rejected_by_config_and_encoding_before_work(self):
+        for learner_seed in (True, False, -1, 3, 1.0, 0.0, "1", None, [], {}, math.nan, math.inf):
+            with self.subTest(learner_seed=learner_seed):
+                with self.assertRaisesRegex(ValueError, "learner_seed"):
+                    runtime.fit_config(trainer, "/fixture/model", learner_seed=learner_seed)
+                with self.assertRaisesRegex(ValueError, "learner_seed"):
+                    self.training(learner_seed)
+        self.assertEqual(self.models, [])
+
+    def test_cross_seed_plan_and_config_reject_before_fit_artifacts(self):
+        self.select_seed(1)
+        for field, value in (("seeds", dict(runtime.SEEDS, learner=2)),
+                             ("seeds", dict(runtime.SEEDS, learner=True)),
+                             ("config", dict(self.plan["config"], seed=2)),
+                             ("config", dict(self.plan["config"], seed=True))):
+            with self.subTest(field=field, value=value):
+                broken = deepcopy(self.plan)
+                broken[field] = value
+                with self.assertRaisesRegex(ValueError, "seed"):
+                    runtime.fit_stage(broken, core, trainer, self.probe, self.reflection, self.world, self.states, "fit1")
+        self.assertEqual(self.models, [])
+        self.assertFalse((self.root / "run").exists())
+
+    def test_manifest_rejects_cross_seed_and_bool_receipts(self):
+        self.close("wake1", self.capture("wake1"))
+        prepared = self.training(1)
+        config = runtime.fit_config(trainer, "/fixture/model", learner_seed=1)
+        manifest = manifest_for(prepared, config)
+        runtime.validate_manifest(manifest, config, prepared)
+        for learner_seed in (0, 2, True, 1.0, None):
+            with self.subTest(learner_seed=learner_seed):
+                with self.assertRaises(ValueError):
+                    runtime.validate_manifest(manifest, config, dict(prepared, learner_seed=learner_seed))
+                with self.assertRaises(ValueError):
+                    runtime.validate_manifest(dict(manifest, config=dict(config, seed=learner_seed)), config, prepared)
+        del prepared["learner_seed"]
+        with self.assertRaisesRegex(ValueError, "learner_seed"):
+            runtime.validate_manifest(manifest, config, prepared)
+
+    def paired_seed(self, learner_seed):
+        self.select_seed(learner_seed)
+        terminal = self.finish()
+        self.assertEqual(terminal["work"], dict(calls=128, fits=3, updates=100))
+        self.assertEqual(terminal["completed"], list(runtime.STAGES))
+        self.assertEqual(len({id(model) for model in self.models}), 3)
+        self.assertEqual(self.states["PROMOTE"].sleeps[0].candidate_sha256,
+                         self.states["SHADOW"].sleeps[0].candidate_sha256)
+        self.assertEqual(self.states["SHADOW"].mounted_sha256, self.plan["base_sha256"])
+        self.assertEqual([backend.route is not None for backend in self.backends],
+                         [False, False, True, False, True, False, True, False])
+        for stage in runtime.STAGES:
+            directory = runtime.stage_dir(self.plan, stage) / "data"
+            if stage.startswith("fit"):
+                prepared = runtime.read(directory / "training.json")
+                self.assertEqual(prepared["learner_seed"], learner_seed)
+                self.assertEqual(runtime.read(directory / "adapter/train_manifest.json")["config"], self.plan["config"])
+                self.assertEqual(runtime.read(directory / "fit_intent.json")["initialized_from"], self.plan["base_sha256"])
+                for audit in prepared["encoding"]:
+                    target = bytes.fromhex(audit["target_hex"]).decode("ascii")
+                    self.assertEqual([token for token in audit["labels"] if token != -100], Tokenizer().encode(target) + [2])
+            else:
+                identity = runtime.read(directory / "identity.json")
+                self.assertEqual(identity["engine"], runtime.ENGINE)
+                self.assertEqual(identity["params"], runtime.PARAMS)
+                self.assertEqual((identity["engine"]["seed"], identity["params"]["seed"]), (0, 0))
+        checksum = self.seal(terminal)
+        with patch.object(runtime, "verify", return_value=(self.plan, core, trainer, self.probe, self.reflection, self.world)):
+            summary = runtime.collect(self.root, checksum, Path(self.temporary.name) / "collection.json")
+        self.assertEqual(summary["seeds"], dict(vocabulary=2026091301, truth=2026091302, learner=learner_seed))
+        self.assertEqual(summary["work"], runtime.CAPS)
+        self.assertTrue(summary["two_cycle_complete"])
+        self.assertIsNone(summary["scientific_pass"])
+        self.assertFalse(summary["endpoint"]["native_verified"])
+
+    def test_seed1_full_mocked_pair_and_replay(self):
+        self.paired_seed(1)
+
+    def test_seed2_full_mocked_pair_and_replay(self):
+        self.paired_seed(2)
+
+    def test_replay_rejects_cross_seed_or_malformed_training_and_epoch_orders(self):
+        self.select_seed(1)
+        terminal = self.finish()
+        original = runtime.read
+        training_path = self.root / "run/fit1/data/training.json"
+        prepared = original(training_path)
+        corpus = core.from_data(original(training_path.parent / "corpus.json"), expected_type=core.Corpus)
+        seed2 = runtime.encode_training(core, self.public, corpus, Tokenizer(), trainer, self.probe, learner_seed=2)
+        bool_order = deepcopy(prepared["epoch_order"])
+        bool_order[0][bool_order[0].index(1)] = True
+        changes = (dict(prepared, learner_seed=2), dict(prepared, learner_seed=True),
+                   dict(prepared, epoch_order=seed2["epoch_order"]), dict(prepared, epoch_order=bool_order))
+        checksum = self.seal(terminal)
+        for broken in changes:
+            with self.subTest(fields=[key for key in broken if runtime.encoded(broken[key]) != runtime.encoded(prepared[key])]):
+                def read(path):
+                    return broken if Path(path) == training_path else original(path)
+                with patch.object(runtime, "read", side_effect=read), patch.object(
+                        runtime, "verify", return_value=(self.plan, core, trainer, self.probe, self.reflection, self.world)):
+                    with self.assertRaisesRegex(ValueError, "replayed training/seed/epoch/EOS"):
+                        runtime.collect(self.root, checksum, Path(self.temporary.name) / "rejected.json")
+        self.assertFalse((Path(self.temporary.name) / "rejected.json").exists())
 
 
 class LoopTests(Fixture):
@@ -750,6 +905,91 @@ class BindingTests(Fixture):
         prepared_root = Path(self.temporary.name) / "prepared"
         with patch.object(runtime, "load_apis") as loaded:
             with self.assertRaisesRegex(ValueError, "lease margin"):
+                runtime.prepare(spec_path, runtime.digest(spec_path), prepared_root, allow_native=True)
+        loaded.assert_not_called()
+        self.assertFalse(prepared_root.exists())
+
+    def prepare_spec(self, spec, label):
+        spec_path = Path(self.temporary.name) / (label + ".spec.json")
+        runtime.write(spec_path, spec)
+        self.probe.public_model_files = lambda receipt, model: {"fixture-weight": "b" * 64}
+        self.probe.model_hashes = lambda model: {"fixture-weight": "b" * 64}
+        self.reflection.environment = lambda probe: {"fake_backend_only": True}
+        with patch.object(runtime, "load_apis", return_value=(core, trainer, self.probe, self.reflection)):
+            return runtime.prepare(spec_path, runtime.digest(spec_path), Path(self.temporary.name) / label, allow_native=True)
+
+    def test_optional_seed_spec_decoder_rejects_malformed_bool_and_out_of_range(self):
+        spec = self.spec()
+        runtime.validate_spec(spec)
+        path = Path(self.temporary.name) / "decoded.spec.json"
+        prefix = json.dumps(spec)[:-1] + ', "learner_seed": '
+        for raw in ("0", "1", "2"):
+            with self.subTest(raw=raw):
+                path.write_text(prefix + raw + "}")
+                decoded = runtime.read(path)
+                runtime.validate_spec(decoded)
+                self.assertIs(type(decoded["learner_seed"]), int)
+        for raw in ("true", "false", "-1", "3", "0.0", "1.0", "1e0", '"1"', "null", "[]", "{}",
+                    "NaN", "Infinity", "1e309", "01", '1, "learner_seed": 2'):
+            with self.subTest(raw=raw):
+                path.write_text(prefix + raw + "}")
+                with self.assertRaises(ValueError):
+                    runtime.validate_spec(runtime.read(path))
+        with self.assertRaisesRegex(ValueError, "spec fields"):
+            runtime.validate_spec(dict(spec, learner_seed=1, inference_seed=1))
+
+    def test_seeded_prepare_verify_receipts_and_hardware_independent_fields(self):
+        spec = self.spec()
+        worlds, calls = [], []
+        for label, learner_seed in (("default", None), ("zero", 0), ("one", 1), ("two", 2)):
+            with self.subTest(label=label):
+                selected = dict(spec) if learner_seed is None else dict(spec, learner_seed=learner_seed)
+                selected.update(gpu_uuid="GPU-prospective-fixture", gpu_index=7)
+                receipt = self.prepare_spec(selected, label)
+                with patch.object(runtime, "load_apis", return_value=(core, trainer, self.probe, self.reflection)):
+                    verified = runtime.verify(receipt["root"], receipt["plan_sha256"], native=True)
+                plan = verified[0]
+                expected_seed = 0 if learner_seed is None else learner_seed
+                self.assertEqual(receipt["learner_seed"], expected_seed)
+                self.assertEqual(plan["seeds"], dict(runtime.SEEDS, learner=expected_seed))
+                self.assertEqual(plan["config"], dict(self.plan["config"], seed=expected_seed))
+                self.assertEqual(plan["spec"], selected)
+                self.assertEqual(plan["engine"], runtime.ENGINE)
+                self.assertEqual(plan["params"], runtime.PARAMS)
+                self.assertEqual(plan["caps"], dict(calls=128, fits=3, updates=100))
+                self.assertEqual(plan["spec"]["source_files"]["organism_v6/l2_public_record_dev.py"], CORE_PIN)
+                worlds.append((Path(receipt["root"]) / "world.json").read_bytes())
+                calls.append((Path(receipt["root"]) / "calls.json").read_bytes())
+        self.assertTrue(all(world == worlds[0] for world in worlds))
+        self.assertTrue(all(call == calls[0] for call in calls))
+
+    def test_verify_rejects_rehashed_cross_seed_plan_config_and_inference_drift(self):
+        receipt = self.prepare_spec(dict(self.spec(), learner_seed=1), "seeded")
+        plan_path = Path(receipt["root"]) / "plan.json"
+        plan = runtime.read(plan_path)
+        changes = [("spec", dict(plan["spec"], learner_seed=value)) for value in (0, 2, True, "1", None)]
+        changes += [("seeds", dict(plan["seeds"], learner=value)) for value in (0, 2, True, 1.0)]
+        changes += [("config", dict(plan["config"], seed=value)) for value in (0, 2, True, 1.0)]
+        changes += [("engine", dict(plan["engine"], seed=value)) for value in (1, 2, False)]
+        changes += [("params", dict(plan["params"], seed=value)) for value in (1, 2, False)]
+        for field, value in changes:
+            with self.subTest(field=field, value=value):
+                plan_path.write_bytes(runtime.encoded(dict(plan, **{field: value})))
+                with patch.object(runtime, "load_apis") as loaded:
+                    with self.assertRaises(ValueError):
+                        runtime.verify(receipt["root"], runtime.digest(plan_path))
+                loaded.assert_not_called()
+        plan_path.write_bytes(runtime.encoded(dict(plan, seeds=dict(runtime.SEEDS, learner=2))))
+        with self.assertRaisesRegex(ValueError, "manifest pin"):
+            runtime.verify(receipt["root"], receipt["plan_sha256"])
+
+    def test_invalid_spec_seed_rejected_before_prepare_root_or_import(self):
+        spec = dict(self.spec(), learner_seed=True)
+        spec_path = Path(self.temporary.name) / "invalid.spec.json"
+        runtime.write(spec_path, spec)
+        prepared_root = Path(self.temporary.name) / "invalid-root"
+        with patch.object(runtime, "load_apis") as loaded:
+            with self.assertRaisesRegex(ValueError, "learner_seed"):
                 runtime.prepare(spec_path, runtime.digest(spec_path), prepared_root, allow_native=True)
         loaded.assert_not_called()
         self.assertFalse(prepared_root.exists())

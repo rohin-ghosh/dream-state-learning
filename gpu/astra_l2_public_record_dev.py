@@ -58,6 +58,23 @@ def require(condition, message):
         raise ValueError(message)
 
 
+def validate_learner_seed(learner_seed):
+    require(type(learner_seed) is int and learner_seed in (0, 1, 2), "learner_seed must be integer 0/1/2")
+    return learner_seed
+
+
+def fit_config(trainer, model, learner_seed=0):
+    recipe = dict(RECIPE, seed=validate_learner_seed(learner_seed))
+    return asdict(trainer.TrainConfig(**recipe, model=model))
+
+
+def plan_learner_seed(plan):
+    learner_seed = validate_learner_seed(plan["spec"].get("learner_seed", 0))
+    require(encoded(plan["seeds"]) == encoded(dict(SEEDS, learner=learner_seed)), "plan seeds differ from spec")
+    require(validate_learner_seed(plan["config"].get("seed")) == learner_seed, "config learner_seed differs from spec")
+    return learner_seed
+
+
 def encoded(value):
     return (json.dumps(value, sort_keys=True, ensure_ascii=True, allow_nan=False,
                        separators=(",", ":")) + "\n").encode("ascii")
@@ -184,8 +201,9 @@ def release_budget(deadline):
 
 
 def validate_spec(spec):
-    require(set(spec) == {"schema", "source", "source_files", "core_schema", "helpers", "model",
+    require(set(spec) - {"learner_seed"} == {"schema", "source", "source_files", "core_schema", "helpers", "model",
                           "model_binding", "protocol", "gpu_uuid", "gpu_index", "lease_end"}, "spec fields")
+    validate_learner_seed(spec.get("learner_seed", 0))
     require(spec["schema"] == SCHEMA and isinstance(spec["core_schema"], str), "spec/core schema")
     source = plain_path(spec["source"])
     require(not (source / ".git").exists(), "fresh source snapshot, not a checkout")
@@ -238,6 +256,7 @@ def prepare(spec_path, spec_sha256, root, allow_native=False):
     spec_path = checked_file(dict(path=str(Path(spec_path).absolute()), sha256=spec_sha256))
     spec = read(spec_path)
     validate_spec(spec)
+    learner_seed = validate_learner_seed(spec.get("learner_seed", 0))
     root = plain_path(str(Path(root).absolute()))
     launcher_output_outside(root)
     for other in (spec["source"], spec["model"], *[entry["path"] for entry in spec["helpers"].values()], str(spec_path)):
@@ -262,16 +281,16 @@ def prepare(spec_path, spec_sha256, root, allow_native=False):
         write(root / "calls.json", calls)
         write(root / "world.json", core.to_data(world))
         write(root / "model_binding.json", receipt)
-        config = asdict(trainer.TrainConfig(**RECIPE, model=spec["model"]))
+        config = fit_config(trainer, spec["model"], learner_seed=learner_seed)
         plan = dict(schema=SCHEMA, spec=spec, spec_sha256=spec_sha256, root=str(root),
                     python=os.path.abspath(sys.executable), python_sha256=digest(sys.executable),
-                    model_files=model_files, base_sha256=value_hash(model_files), seeds=SEEDS,
+                    model_files=model_files, base_sha256=value_hash(model_files), seeds=dict(SEEDS, learner=learner_seed),
                     config=config, engine=ENGINE, params=PARAMS, stages=list(STAGES), caps=CAPS,
                     generic_system=GENERIC_SYSTEM, chat_template=tokenizer.chat_template,
                     environment=reflection.environment(probe), claim=CLAIM,
                     prepared_files={name: digest(root / name) for name in ("calls.json", "world.json", "model_binding.json")})
         write(root / "plan.json", plan)
-        return dict(root=str(root), plan_sha256=digest(root / "plan.json"), schema=SCHEMA)
+        return dict(root=str(root), plan_sha256=digest(root / "plan.json"), schema=SCHEMA, learner_seed=learner_seed)
     except BaseException as error:
         write(root / "prepare_failure.json", failure(error))
         raise
@@ -282,7 +301,8 @@ def verify(root, plan_sha256, native=False):
     require(digest(root / "plan.json") == pin(plan_sha256), "prepared manifest pin differs")
     plan = read(root / "plan.json")
     require(plan["schema"] == SCHEMA and plan["root"] == str(root), "prepared root/schema")
-    require(plan["seeds"] == SEEDS and plan["engine"] == ENGINE and plan["params"] == PARAMS and
+    learner_seed = plan_learner_seed(plan)
+    require(encoded(plan["engine"]) == encoded(ENGINE) and encoded(plan["params"]) == encoded(PARAMS) and
             plan["stages"] == list(STAGES) and plan["caps"] == CAPS and
             plan["generic_system"] == GENERIC_SYSTEM, "closed configuration differs")
     for name, checksum in plan["prepared_files"].items():
@@ -290,7 +310,8 @@ def verify(root, plan_sha256, native=False):
                 "prepared artifact drift")
     require(set(plan["prepared_files"]) == {"calls.json", "world.json", "model_binding.json"}, "prepared inventory")
     core, trainer, probe, reflection = load_apis(plan["spec"])
-    require(plan["config"] == asdict(trainer.TrainConfig(**RECIPE, model=plan["spec"]["model"])), "fit recipe differs")
+    require(encoded(plan["config"]) == encoded(fit_config(trainer, plan["spec"]["model"], learner_seed=learner_seed)),
+            "fit recipe differs")
     require(plan["python"] == os.path.abspath(sys.executable) and plan["python_sha256"] == digest(sys.executable),
             "interpreter differs")
     require(plan["base_sha256"] == value_hash(plan["model_files"]), "base identity differs")
@@ -387,7 +408,8 @@ def token_ids(value):
     return list(value)
 
 
-def encode_training(core, public, corpus, tokenizer, trainer, probe):
+def encode_training(core, public, corpus, tokenizer, trainer, probe, learner_seed=0):
+    learner_seed = validate_learner_seed(learner_seed)
     require(corpus.kind == "AUTHENTIC" and 1 <= len(corpus.rows) <= 16, "authentic nonempty bounded corpus")
     exports = core.training_items(public, corpus, expected_sha256=core.digest(corpus))
     require(len(exports) == len(corpus.rows), "export row count")
@@ -440,7 +462,7 @@ def encode_training(core, public, corpus, tokenizer, trainer, probe):
     require(len(packs) == len(items) and all(len(pack) == 1 for pack in packs), "packing forbidden")
     orders = []
     for epoch in range(20):
-        ordered = trainer.epoch_order(packs, 0, epoch, True)
+        ordered = trainer.epoch_order(packs, learner_seed, epoch, True)
         orders.append([pack[0].item_index for pack in ordered])
         require(sorted(orders[-1]) == list(range(len(items))), "epoch row coverage differs")
         for offset in range(0, len(ordered), 8):
@@ -452,14 +474,17 @@ def encode_training(core, public, corpus, tokenizer, trainer, probe):
                 require(ids == segment.ids + [pad_id] * padding and labels == segment.labels + [-100] * padding,
                         "batched target or padding mask differs")
     return dict(items=items, encoding=audits, source_exports=exports, rows=len(items), epoch_order=orders,
+                learner_seed=learner_seed,
                 steps=20 * math.ceil(len(items) / 8), corpus_sha256=core.digest(corpus),
                 target_tokens=sum(row["supervised_tokens"] for row in audits),
                 total_tokens=sum(len(row["input_ids"]) for row in audits))
 
 
 def validate_manifest(manifest, config, prepared):
+    learner_seed = validate_learner_seed(config.get("seed"))
+    require(validate_learner_seed(prepared.get("learner_seed")) == learner_seed, "training learner_seed differs from config")
     count, steps = prepared["rows"], prepared["steps"]
-    require(manifest["config"] == config and not manifest["empty"] and manifest["steps"] == steps and
+    require(encoded(manifest["config"]) == encoded(config) and not manifest["empty"] and manifest["steps"] == steps and
             manifest["micro_batches"] == steps and manifest["epochs_run"] == 20 and
             manifest["nonfinite_batches"] == 0, "actual fit work/config differs")
     corpus = manifest["corpus"]
@@ -482,6 +507,9 @@ def validate_manifest(manifest, config, prepared):
 
 
 def fit_stage(plan, core, trainer, probe, reflection, world, states, stage):
+    learner_seed = plan_learner_seed(plan)
+    require(encoded(plan["config"]) == encoded(fit_config(trainer, plan["spec"]["model"], learner_seed=learner_seed)),
+            "fit recipe differs")
     policy = "PROMOTE" if stage == "fit1" else stage.split("_")[1]
     state = states[policy]
     corpus = state.corpus
@@ -496,7 +524,7 @@ def fit_stage(plan, core, trainer, probe, reflection, world, states, stage):
         return result
     tokenizer = probe.native_tokenizer(plan["spec"]["model"])
     require(tokenizer.chat_template == plan["chat_template"], "tokenizer template drift")
-    prepared = encode_training(core, public, corpus, tokenizer, trainer, probe)
+    prepared = encode_training(core, public, corpus, tokenizer, trainer, probe, learner_seed=learner_seed)
     write(directory / "training.json", prepared)
     write(directory / "fit_intent.json", dict(fresh_base=True, fresh_optimizer=True, initialized_from=plan["base_sha256"],
                                                steps=prepared["steps"], config=plan["config"]))
@@ -853,6 +881,8 @@ def collect(root, plan_sha256, output):
                        scientific_replay=False, scientific_pass=None, claim=CLAIM)
         if terminal["status"] != "NONREPORTABLE_RUNTIME_ABORT":
             plan, core, trainer, probe, reflection, world = verify(root, plan_sha256)
+            learner_seed = plan_learner_seed(plan)
+            summary["seeds"] = dict(plan["seeds"])
             states = core.start_pair(core.public_view(world), plan["base_sha256"])
             reports = {stage: None for stage in STAGES if stage == "baseline" or stage.startswith("report")}
             formation, exposure = {}, {}
@@ -878,8 +908,9 @@ def collect(root, plan_sha256, output):
                         if tokenizer is None:
                             tokenizer = probe.native_tokenizer(plan["spec"]["model"])
                             require(tokenizer.chat_template == plan["chat_template"], "collection tokenizer differs")
-                        require(prepared == encode_training(core, core.public_view(world), states[policy].corpus,
-                                                            tokenizer, trainer, probe), "replayed training/EOS exposure differs")
+                        require(encoded(prepared) == encoded(encode_training(core, core.public_view(world), states[policy].corpus,
+                                                            tokenizer, trainer, probe, learner_seed=learner_seed)),
+                                "replayed training/seed/epoch/EOS exposure differs")
                         validate_manifest(read(adapter / "train_manifest.json"), plan["config"], prepared)
                         exposure[stage].update(target_tokens_per_epoch=prepared["target_tokens"],
                                                total_tokens_per_epoch=prepared["total_tokens"],

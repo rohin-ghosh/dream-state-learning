@@ -1,4 +1,20 @@
-## Current superseding snapshot — 2026-09-13 06:08 UTC
+## Current superseding snapshot — 2026-09-13 06:29 UTC
+
+No known Main GPU controllers live: both prior controllers absent and roots
+FINALIZED, rechecked06:28UTC. SEQ134 R1 supplement completes missing readout
+only; primary R1 remains runtime-aborted. SEQ135 L2 completes all11stages,
+128calls/3fits/100updates with exact child material; all old/new readouts4/8.
+No PROMOTE/SHADOW benefit. Both archives pass custody; original sources/roots
+immutable. See HANDOFF/notebook/receipts for pins and full limitations.
+Seed-parameterization102CPUtests accepted; no unchanged native replications.
+Next diagnostic compares OFF/fit1/fit2PROMOTE train/readout conditional likelihood
+at actual12/14token continuations includingEOS (first divergence2), zero updates.
+Descartes implements CPU-only; Main launches after its checks. Galileo manuscript
+throughSEQ133 pending review. A100 availability verified, runtime unexercised.
+Simple hygiene now; formalC11guard deferred. No freeze/clean founder/H1/H2/P1/G5
+or generalG3 promotion. Mission ACTIVE/incomplete; failed recipes need diagnosis.
+
+## Historical superseded snapshot — 2026-09-13 06:08 UTC
 
 Two live controllers: native L2node3GPU3PID337138 (5400scap, by07:23:53UTC),
 R1missing-readout supplementnode2GPU1PID4138509 (3600scap, by07:04:29UTC).

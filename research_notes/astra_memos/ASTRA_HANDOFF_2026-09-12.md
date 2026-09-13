@@ -1,6 +1,49 @@
-# Astra current handoff — 2026-09-13T06:08Z
+# Astra current handoff — 2026-09-13T06:29Z
 
-## CURRENT — September13 06:08UTC
+## CURRENT — September13 06:29UTC
+
+Mission ACTIVE/incomplete. Simple hygiene now; formal guard enforcement remains
+deferred to final paper-grade C11. No mechanism freeze or G3/P1/G5/H1/H2 promotion.
+Both former controllers are absent and roots FINALIZED (Main rechecked06:28UTC).
+No known Main GPU controller live. Do not restart either completed experiment.
+
+SEQ134: R1 read-only supplement COMPLETE,584records/1894generatedtokens/0updates.
+Native replay report dc1be5a0b80f39026b79621badba48741afb7000f5842015874a42ab139590eb.
+Joined diagnostic AUTH67/128exact,31/64held; DERANGED69/128exact,32/64held;
+complement37/128exact,0/64held. Original R1 stays NONREPORTABLE_RUNTIME_ABORT:
+not a repaired primary, independent seed or third completed primary root.
+Archive gpu_artifacts_local/q0_fulldose_20260913/R1_supplement_attempt2.tar,
+SHA777b7238a0e483fe677c602076761b8e3ab2379ec89f363e2594fd5a52e8c309;
+PASS_CUSTODY601files/599sealed; exact source/root remains in historical06:08.
+
+SEQ135: first L2 public-record loop COMPLETE,11stages/128calls/3fits/100updates.
+First corpus8/8admitted; second corpora16/16each, all exact child spans.
+Every baseline/report readout old4/8,new4/8,16/16legal. Final both8/neither8,
+PROMOTE-only0/SHADOW-only0. Execution connectivity, NO measured readout benefit.
+Pure-core native_verified:false/scientific_pass:null retained, not promoted.
+Archive gpu_artifacts_local/l2_public_record_20260913/seed0_attempt1.tar,
+SHAa03962e3be5244b62c2c39435d2c4994a2654ecd1637786e8e68915076dec523;
+PASS_CUSTODY529files/527sealed. Collected ONCE with original213c2a2f runtime.
+Remote _collected is a JSON FILE, not a snapshot directory. Do not recollect.
+
+Main accepted seed-parameterization102CPUtests18.775s; source d1965ddc,
+test14fbbc06. Old roots MUST use frozen original source, not new seed metadata.
+No unchanged replications now: diagnose acquisition/access first. Descartes owns
+/tmp/astra_l2_access_probe_20260913.py plus tests/handoff, CPU-only. Main owns
+native preparation/launch. Planned192candidateforwards,OFF/fit1/fit2PROMOTE,
+train/readout views, zero updates. Actions have12/14tokens includingEOS and
+multiple different positions; first divergence2. ln(2)/13 is only a reference,
+not measured model likelihood. Corrected agent at06:25UTC.
+
+Galileo retains six manuscript files throughSEQ133 until EDITSTOP/Main review.
+Noether finished custody. A100 inventory8x80GB/no processes verified06:09UTC;
+runtime imports/model loading not exercised, not runtime-certified/reserved.
+Preserve unrelated gpu/codex/dream_state.rules. Next: accept diagnostic CPU tests,
+run read-only probe on saved candidates, inspect causal bottleneck, then select
+a justified repair rather than repeat flat runs. Paper remains working draft;
+collaborator UNSENT. Node1 expiry2026-09-14T23:14Z; mirror limits unchanged.
+
+## Historical superseded snapshot — September13 06:08UTC
 
 Mission ACTIVE, not complete. Simple hygiene now; finish/enforce formal guard
 only for final paper-grade C11. No clean-lineage, G3/P1/G5/H1/H2 or freeze promotion.

@@ -9625,3 +9625,53 @@ before repeating it. A unary-versus-conditional writer contrast is a proposed
 discriminator, not launched or accepted efficacy. Do not fill idle GPUs with
 unchanged broken runs. Current constraint is interpretable comparison readiness,
 not lack of devices. FormalC11 guard remains prepared/deferred per Rohin.
+
+## [Builder] 2026-09-13T06:29Z — SEQ134/135 terminal results and next diagnostic
+
+SEQ-134 — R1 missing-readout supplement attempt2 COMPLETE; original controller
+4138509 absent and root FINALIZED, rechecked06:28UTC. 584raw records,
+1894generatedtokens, zero updates/training forwards;295.8748seconds and release
+verified. Independent read-only native replay matches report
+dc1be5a0b80f39026b79621badba48741afb7000f5842015874a42ab139590eb.
+Post-abort joined diagnostic AUTH67/128exact,31/64held; DERANGED69/128exact,
+32/64held; complementary double-correct37/128exact,0/64held; copy8/8both.
+Endpoint fails. ORIGINAL R1 remains NONREPORTABLE_RUNTIME_ABORT: supplemental
+readout is not a repaired primary, third complete primary root, new fit or seed.
+Archive777b7238a0e483fe677c602076761b8e3ab2379ec89f363e2594fd5a52e8c309
+passes custody601files/599sealed; external C-order full root
+5ef8908d2925bd92db5bce953d7a863dabd7ba9bf2b8e20accd8d8f8d7077607.
+Earlier attempt1 never launched; wrong-node precheck rejection preserved.
+
+SEQ-135 — first native L2 public-record DEV pair COMPLETE. Controller337138
+absent and FINALIZED rechecked06:28UTC; all11stages closed.128generationcalls,
+3fits/100updates; first SLEEP8/8exact child records admitted, cumulative second
+SLEEP16/16each. Shared first candidate; PROMOTE mounts candidates, SHADOW fits
+but stays base. Every readout (baseline and both arms after both sleeps):
+old4/8,new4/8,16/16legal,no malformed/length outputs. Final paired both8,neither8,
+PROMOTE-only0,SHADOW-only0. Execution connectivity, NOT measured learning or
+retention gain. Core native_verified:false and scientific_pass:null preserved.
+Single exploratory learner pair, no parenting/clean lineage/H1/H2 promotion.
+First fit20updates/final loss0.05020161345601082/23540train tokens; second
+PROMOTE40updates/loss0.05077841132879257/47140tokens. Low aggregate loss is not
+evidence of keyed discrimination. Native continuations includingEOS are12/14
+tokens and differ at multiple positions, first divergence2; ln(2)/13 is only
+a reference hypothesis, not measured per-token likelihood or proof of collapse.
+Collected ONCE under original runtime213c2a2f508815eef752c72424f5dca64b76c9edb963f7ed6f68d5522c18853e;
+remote _collected is a JSON file. Archive
+a03962e3be5244b62c2c39435d2c4994a2654ecd1637786e8e68915076dec523
+passes custody529files/527sealed; external full root
+e93f957419bcb546c37291df4783cc8593fc27a8f37a82fa3fcde0cdf822c87e.
+Custody is distinct from scientific verification. No recollection or old-root edits.
+
+Main accepts optional learner-seed0/1/2 CPU parameterization (default0):102tests
+PASS18.775s; runtime d1965ddc571ec393ef0ec656eda8556b3db91d7de81fafa87310900706d96a3d,
+tests14fbbc06b9f748685069bcb978df388791408f679e71025c7c95c324d7be4272.
+Vocabulary/truth and inference seed unchanged. Old roots use original source.
+No unchanged seed reruns now. Descartes builds bounded read-only acquisition/
+access probe: OFF/fit1/fit2PROMOTE, exact train versus held readout prompts,
+both legal continuations includingEOS/per-token scores, at most192forwards,
+zero updates, no original-root writes. Main owns launch/precheck/cleanup.
+Teacher-forced likelihood and original vLLM generation remain separate estimands.
+Next repair depends on this discrimination, not merely larger dose. FormalC11
+guard stays deferred; mission incomplete. A1008x80GB availability verified,
+runtime not exercised; no lease/onboarding changes or hardware intervention.
