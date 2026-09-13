@@ -15100,3 +15100,35 @@ checks pass. Lagrange owns only driver/test; Main owns lifecycle and launch.
 Meitner independently finishes the single-phase V3 sequence-fit wrapper;
 S_A acquisition must be inspected before warm descendants, no atomic tuning.
 The formal final-C11 guard remains deferred per Rohin's latest ruling.
+
+## [Independent A3B terminal audit] 2026-09-13T16:40Z — physical recurrence exists; typed action and graph use still fail
+
+Read-only terminal audit:
+`research_notes/analysis/2026-09-13_pcfl_a3b_newline_framed_terminal_audit.md`.
+The hash-bound run made exactly 25/56 calls and accepted 17 THINK turns:
+8/8 first outputs were exact THINK, every task underwent THINK -> fixed
+answer-free CONTINUE -> another native call, and 5/8 produced multiple THINK
+turns. All 25 returned byte strings were one physical line: nine LF stops
+omitted exactly the one terminal LF while charging its token and sixteen EOS
+stops decoded byte-exactly. Prompt/output totals were 16,107/1,504 tokens.
+Thus externally LF-framed recurrent thinking occurred on the exposed C0 graph.
+
+The joint result fails: only 4/8 tasks reached a strict terminal ROUTE, the
+other four were INVALID_TURN, all four strict routes were graph-illegal, and
+legal/success were 0/8. On the same eight tasks A2 was 7/8 strict, 0/8 legal,
+0/8 success, so A3B shows no scored semantic improvement and worsens terminal
+syntax. Raw traces expose both seams: node/port role serialization errors and
+genuine path-state errors (skipped bridges/spliced branches). Root 3
+qualitatively traced most of the correct node chain before converting
+destinations into ports; that is a hypothesis, not a promoted score.
+
+Full completed inventory and native sampling/decode joins independently
+rehash; local replay passes while its intentional no-full-assay/no-clean
+flags remain. Controller 205552 and worker 205563 are absent, the bound GPU
+UUID has no process and GPU 0 is 0 MiB. Smallest successor is a separately
+named `A3C_STATIC_TYPED_SMOKE`: the identical eight tasks/seeds/budgets with
+one symmetric static THINK-or-strict-ROUTE regex on every slot and no real-ID
+enumeration. A4 is eligible only if A3C passes the >=7/8 physical gate but
+still misses graph semantics; if physical typing fails, A4 remains prohibited.
+No READ, fit, runtime, model, tokenizer, adapter, benchmark, or GPU state was
+changed by this audit.
