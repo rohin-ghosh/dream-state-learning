@@ -14646,6 +14646,44 @@ Collaborator remains UNSENT. Neither pdflatex nor latexmk is installed here;
 no PDF build/layout certification is claimed. Static diff checks passed.
 Full mission remains incomplete; no formal C11 guard work added.
 
+## [Builder] 2026-09-13 — collector repair and predeclared two-condition action-format diagnostic
+
+Lagrange's non-material collector repair replaces the64-only expectation with
+the pinned roster count, actual report count and ordered SCORED task IDs.
+Old64-task stages remain64; eight-task failures can be collected without being
+called successful.10 outer tests PASS18.818s; source SHA256
+48a843258edefafdad2a0f70430350670e262970df9b10e95965bfd13a040a6c;
+test SHA2569feee61eac970e74fa08dbf9d513d3bf8226dfb9e23b7ec1b5c8dd0f097f745b.
+OriginalSEQ180 failed collection is unchanged; no redundant GPU rerun.
+
+Prospective next comparison before any new output inspection: two separately
+named eight-case DEV conditions on the same original fixed indices/roots/seeds,
+frozen base, zero fits/updates, unchanged public must-READ prompt, strict raw
+parser/service/scorer and104 possible calls per condition. The generic regex
+matches the disclosed READ/ROUTE grammar with no concrete identifiers or graph
+knowledge. STRUCTURED_ACTION_SMOKE allows READ or ROUTE every turn;
+STRUCTURED_FIRST_READ_SMOKE permits a generic READ on its first turn only,
+then the same READ-or-ROUTE grammar. Both keep12 reads/13 turns,256tokens/turn,
+2048actor tokens/task,4096returned tokens/task. No identifier enumeration,
+endpoint substitution, oracle graph, hidden target filtering or output repair.
+Child still selects READ family/address and subsequent actions. First READ in
+the second condition is HOST-SCHEDULED, never evidence of learned/autonomous
+tool choice. Any larger matched comparison must use the same declared
+scaffolding across its arms; these are C0 interface diagnostics, not parenting.
+
+Parfit recommended only the constant-grammar condition (archived design memo).
+Main adopts an additional PREDECLARED scheduled-first control to distinguish
+serialization/action-choice failure from transport/subsequent-use failure,
+not an outcome-triggered retry or a claim of spontaneously learned retrieval.
+Report8-task reasons, served/MISS/invalid READs, strict terminals, graph
+successes, raw/token usage and closure separately. The inherited7/8 handshake
+threshold is descriptive only; no automatic panel/A4/learning promotion.
+Stop after these two conditions and reassess the resulting failure location.
+CPU tests must cover generation plus exact sampling replay, source/slot binding,
+wrong-but-well-typed identifiers, and eight-task outer collection. Per-stage
+one-hour cap including cleanup, expected minutes from recent smoke; maximum
+aggregate2A40h, no new lease. Main will pin source and allocation before launch.
+
 ## [Independent A2/A3 result audit] 2026-09-13T15:42Z — exact graph did not compose; requested THINK never entered the typed loop
 
 Terminal read-only audit:

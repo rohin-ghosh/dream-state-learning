@@ -37,18 +37,25 @@ write=lambda path,value:path.write_text(json.dumps(value)+'\n')
 (root/'actor').mkdir()
 (root/'records').mkdir()
 settings=dict(manifest['actor_template'],deadline=float(deadline))
-summary=dict(denominator=64,route_successes=0,stage_gate_passed=False,full_assay_qualified=False)
+count=len(manifest['roster']['tasks'])
+summary=dict(denominator=count,route_successes=0,stage_gate_passed=False,full_assay_qualified=False)
+results=[dict(id=task['id'],status='SCORED',reason='INVALID_TURN',raw='ROUTE invalid',reads=0)
+    for task in manifest['roster']['tasks']]
+if mode=='wrongdenominator':summary['denominator']=64 if count==8 else 8
+if mode=='missingtask':results.pop()
+if mode=='wrongorder':results[0],results[1]=results[1],results[0]
+if mode=='uncalled':results[0]['status']='UNCALLED'
 report=seal(dict(status='COMPLETE',roster_sha256=manifest['roster']['sha256'],actor_config=settings,
-    summary=summary,calls=64,possible_calls=manifest['roster']['limits']['possible_calls'],attempts=[{}]*64))
+    summary=summary,results=results,calls=count,possible_calls=manifest['roster']['limits']['possible_calls'],attempts=[{}]*count))
 write(root/'records/report.json',report)
 write(root/'actor/identity.json',dict(kind='NATIVE',pid=os.getpid(),config_sha256=digest(settings)))
-write(root/'actor/close.json',dict(kind='NATIVE',calls_consumed=64,token_count_calls=0))
+write(root/'actor/close.json',dict(kind='NATIVE',calls_consumed=count,token_count_calls=0))
 ended=time.monotonic()
 completed=dict(schema='pcfl.interface.command.v1/completed',status='COMPLETE',stage=stage,
     manifest_sha256=manifest['sha256'],report_sha256=report['sha256'],summary=summary,
     started=started,ended=ended,elapsed_seconds=ended-started,outer_release_required=True,
     gpu_released=False,full_assay_qualified=False,kind='NATIVE',fits=0,updates=0,
-    actual_calls=64,possible_calls=report['possible_calls'],
+    actual_calls=count,possible_calls=report['possible_calls'],
     files={str(path.relative_to(root)):hashlib.sha256(path.read_bytes()).hexdigest() for path in root.rglob('*') if path.is_file()})
 if mode=='wrongstage':completed['stage']='A3_THINK'
 if mode=='injected':completed['kind']='INJECTED_CPU_TEST'
@@ -138,9 +145,55 @@ class OuterTests(unittest.TestCase):
         self.children.append(child)
         return child
 
-    def run_controller(self):
+    def run_controller(self, stage="A2_DIRECT"):
         return outer.controller(str(self.harness.path), self.manifest_hash, str(self.allocation_path),
-            self.allocation_hash, str(self.output), outer_sha256=self.source_hash, stage="A2_DIRECT")
+            self.allocation_hash, str(self.output), outer_sha256=self.source_hash, stage=stage)
+
+    def test_required_roster_collection_completes_with_failed_diagnostic(self):
+        for stage, count, maximum in (("READ_REQUIRED_SMOKE", 8, 104), ("READ_REQUIRED_PANEL", 64, 832)):
+            with self.subTest(stage=stage):
+                self.harness.output = self.root / ("prepared_" + stage)
+                self.manifest = self.harness.prepare(stage)
+                self.manifest["kind"] = "OFFLINE_PREPARATION"
+                self.output = self.root / ("outer_" + stage)
+                self.save()
+                result = self.run_controller(stage)
+                self.assertEqual(result["status"], "COMPLETED", result["errors"])
+                self.assertEqual(result["returncode"], 0)
+                self.assertEqual(result["stage_summary"]["denominator"], count)
+                self.assertFalse(result["stage_summary"]["stage_gate_passed"])
+                self.assertFalse(result["stage_summary"]["full_assay_qualified"])
+                directory = self.harness.output / stage
+                report = outer.command.read(directory / "records/report.json")
+                self.assertEqual(report["calls"], count)
+                self.assertEqual(report["possible_calls"], maximum)
+                self.assertEqual([row["id"] for row in report["results"]],
+                                 [task["id"] for task in self.manifest["roster"]["tasks"]])
+                self.assertTrue(all(row["reason"] == "INVALID_TURN" and row["reads"] == 0 for row in report["results"]))
+                original = (directory / "completed.json").read_bytes()
+                self.assertEqual((self.output / "stage_completed.json").read_bytes(), original)
+                self.assertEqual(self.children[-1].poll(), 0)
+                with self.assertRaises(FileExistsError):
+                    self.run_controller(stage)
+                self.assertEqual((directory / "completed.json").read_bytes(), original)
+
+    def test_denominator_and_completed_tasks_must_match_pinned_roster(self):
+        for stage in ("A2_DIRECT", "READ_REQUIRED_SMOKE"):
+            for mode in ("wrongdenominator", "missingtask", "wrongorder", "uncalled"):
+                with self.subTest(stage=stage, mode=mode):
+                    label = stage + "_" + mode
+                    self.harness.output = self.root / ("prepared_" + label)
+                    self.manifest = self.harness.prepare(stage)
+                    self.manifest["kind"] = "OFFLINE_PREPARATION"
+                    self.mode, self.output = mode, self.root / ("outer_" + label)
+                    self.save()
+                    result = self.run_controller(stage)
+                    self.assertEqual(result["status"], "FAILED")
+                    self.assertTrue(any(error["phase"] == "stage_evidence" and "roster task" in error["error"]
+                                        for error in result["errors"]), result["errors"])
+                    directory = self.harness.output / stage
+                    self.assertEqual((self.output / "stage_completed.json").read_bytes(),
+                                     (directory / "completed.json").read_bytes())
 
     def test_real_child_complete_failed_ceiling_and_release(self):
         result = self.run_controller()

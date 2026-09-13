@@ -144,9 +144,12 @@ def controller(manifest_path, manifest_sha256, allocation_path, allocation_sha25
                 require(completed["outer_release_required"] is True and completed["gpu_released"] is False
                         and completed["kind"] == "NATIVE" and completed["full_assay_qualified"] is False
                         and completed["fits"] == completed["updates"] == 0, "stage scope drift")
-                require(completed["summary"]["denominator"] == 64, "fixed task denominator")
                 report = command.read(stage_dir / "records/report.json")
                 command.driver._unseal(report)
+                tasks = manifest["roster"]["tasks"]
+                require(completed["summary"]["denominator"] == len(tasks) == len(report["results"]), "roster task denominator")
+                require([row["id"] for row in report["results"]] == [task["id"] for task in tasks]
+                        and all(row["status"] == "SCORED" for row in report["results"]), "roster task completion/order")
                 actor_identity = command.read(stage_dir / "actor/identity.json")
                 close = command.read(stage_dir / "actor/close.json")
                 require(report["sha256"] == completed["report_sha256"] and report["status"] == "COMPLETE"
