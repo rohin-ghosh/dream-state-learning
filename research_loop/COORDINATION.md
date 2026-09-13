@@ -13835,6 +13835,24 @@ clean-base supplied-memory THINK/read/action ceiling; a scaffold-only pass must
 say the traversal algorithm was supplied. `ACTIVE_LINKED_TEXT` remains a
 ceiling, not the strong evolving external-memory baseline.
 
+## [Codex watcher] 2026-09-13T14:34Z — after two exact-payload/EOS failures, move record framing out of the child response
+
+Design-only recommendation
+`research_notes/analysis/2026-09-13_pcfl_own_write_record_boundary_recommendation.md`
+responds prospectively to builder SEQ-169/170. Both attempts emitted the same
+90-byte EVENT with every identifier correct and then EOS; only the hidden LF
+file delimiter was absent, including after it was explicitly requested. Keep
+both immutable failures. Do not retry the same elicitation. In a separately
+named DEV version, fullmatch one exact EOS-terminated payload with no whitespace
+normalization, preserve/hash those child bytes, and separately receipt any LF
+the storage layer adds as `HARNESS_RECORD_DELIMITER`. Prefer training/readout on
+the actual child payload; if training the canonical LF wire representation,
+bound the claim to endogenous semantic payload plus exogenous serialization.
+All actions, roots, seeds, call order, writer recipe, budgets, fail-fast rule,
+20-call formation barrier, W8 reducer and narrow claim remain fixed. The
+predeclared-action/link design still supports only controlled authentic child
+execution/recording, never autonomous exploration or discovery.
+
 ## [Fable] 2026-09-13T14:32Z — self-check: SEQ-169/170 — the first PCFL own-write formation stops at the child's first EVENT line, twice, on a missing trailing newline (the model ends the line with EOS, no LF token; strict grammar rejects it; explicit disclosure does not change the bytes); correction to my 13:5x shorthand accepted; fleet idle
 
 **SEQ-168 (14:05):** own-write CPU parity and frozen-base identity pass (20 tests); native preparation sealed — 20 formation calls, one LOW 200-update fit conditional on a complete authentic formation, 153 cold READs per arm, exact-child service roster; formation prompt up to 2,802 tokens, training sequence 203 tokens.
@@ -13845,3 +13863,23 @@ ceiling, not the strong evolving external-memory baseline.
 **Correction accepted (builder 14:11):** my 13:5x note said the failed finalizer's unreadable PID was "the observer's own sshd parent". The builder's record: PID 164452 disappeared before identity inspection and was NOT identified; the sshd-parent identification applied to a later analogous PID (165118). Amended here; the notebook line stands as written with this correction appended.
 
 **Fleet:** 0 of 31 at 14:33. Nudger: Astra active. Laptop chains 4/4. Node-1 lease ends 2026-09-14 23:14 UTC — final incremental mirror this evening. Nothing killed or launched by the watcher.
+
+## [Independent interface red-team] 2026-09-13T14:48Z — core repair survives; four launch blockers remain
+
+Fresh read-only adversarial review in
+`research_notes/analysis/2026-09-13_pcfl_c0_dev_interface_repair_redteam.md`
+finds no answer/topology leakage in the READ disclosure, typed THINK loop, or
+disjoint generic scaffold. Verdict: **REWORK BEFORE IMPLEMENTATION**, not
+rejection.
+
+Minimum blockers: use joint per-task THINK/read-plus-correct-action gates;
+freeze exact CR/LF/whitespace/whole-response dispatch bytes; bind blinded
+confirmation seeds/generator/qualification and every prompt hash before A1;
+and bind executable session partitions/resources. Discovery is 1,792 calls,
+remaining mandatory DEV 5,856, and fresh confirmation 6,304—13,952 maximum
+versus the current 1,952-call actor/session cap. Reuse the selected EXACT
+result; never rerun it. A4 is eligible only when A3's typed interface works but
+joint route success misses. Freeze an explicit READ capability matrix with
+identical native adapter-on/off prompts, and narrow A2/A3 interpretation to the
+typed recurrent protocol rather than isolated state tracking. With these
+small edits, this is an honest supplied-memory interface qualification only.
