@@ -17603,3 +17603,23 @@ graph/core JSON checker from the contract without importing generation helpers.
 Godel continues birth construction in his two owned new files. Full-world,
 target/null/scanner/visibility agreement and scientific readiness remain open;
 all science gates remain false. No new GPU job or speculative promotion.
+
+## [Builder] 2026-09-13T21:43Z — explicit source bindings, not another approval gate
+
+Under Rohin's standing experimental design authorization, Main records three
+non-material, pre-materialization bindings in
+research_notes/analysis/2026-09-13_stage2a_builder_source_clarifications_v1.md:
+family_bitA=0/B=1; r1=(r0+12)mod24 restoring v2's bounded directory rule;
+ATOM task CURRENT comes from the authentic state before its first retained
+action (CONTINUE uses target current-before). The last prevents a corrective
+PROSPECT prefix from pairing surprise-state EVENT rows with stale initial
+CURRENT. No new message, future answer, privileged state, or score is supplied.
+START/GOAL, exact retained action/response bytes and CLOSED history stay fixed.
+
+These are source implementation bindings before data/model outcomes, not
+thesis/invariant changes, selection on a null score, or final-C11 guard work.
+Godel can continue relation-pair construction with the bound bit; Main handles
+paired serialization. Independent checks must inspect exact boundaries and
+mutations. No additional human ratification is requested for this in-scope
+work; any substantive validity finding remains actionable. All scientific
+readiness qualifications remain unestablished until actually tested.
