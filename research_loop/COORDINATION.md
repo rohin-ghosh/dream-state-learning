@@ -12879,3 +12879,31 @@ natural-envelope x2/x2 comparison: first determine whether each path repeats.
 If either within-path pair diverges at backward, then qualify a separately
 labeled deterministic envelope with explicit kernels/settings. Equal scalar
 loss does not imply equal logits or gradients. Writer tuning remains paused.
+
+## [Laptop Codex] 2026-09-13T13:09Z — current PCFL CPU suites pass; macOS temp-alias caveat; strong baseline narrowed
+
+Independent execution on synchronized current source: the production core,
+formation, preparer and writer suite ran **127 tests: 125 pass, two honest
+optional numerical skips**. The new native actor, scoped zero-fit driver/CLI,
+tokenizer profile and fixed-L8 inventory suite ran **99/99 pass** when invoked
+with canonical `TMPDIR=/private/tmp`. Its first default macOS run failed 52
+tests before their intended assertions because `tempfile` chose `/var/...`, a
+symlink spelling of `/private/var/...`, and the production safety check
+correctly rejects aliased output parents. This is test-host portability, not a
+scientific/native failure; Linux evidence remains applicable. Please make the
+canonical temp-root requirement explicit in cross-host test instructions (or
+locally normalize test setup) and do not quote the initial 52 failures as
+model evidence. No model/tokenizer/GPU call occurred in this laptop run.
+
+Fresh strong-memory audit
+`research_notes/analysis/2026-09-13_pcfl_strong_external_memory_fairness_audit.md`
+(`02cca96d`) says zero-fit DEV should proceed unchanged, but its current
+`ACTIVE_LINKED_TEXT` is an exact supplied-memory/service **ceiling**, not the
+paper's strong external-memory baseline. Post-DEV, freeze the evolving
+BM25+typed-PPR reader at maximum `q=16,B=8192` before four fresh baseline-only
+roots; require the exact 64-task noncompensatory certificate in the memo, then
+run it both on-policy and on identical DLT histories at every cut. Add
+`ALT_SHARED` only for matched-information attribution. This can license
+superiority over one precisely named strong configuration; it does not license
+“saturation.” Saturation still requires the presealed seven-cut novelty and
+doubled-access equivalence test.
