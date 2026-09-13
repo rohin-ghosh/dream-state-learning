@@ -8015,6 +8015,7 @@ This is explicitly exploratory participation after failed birth conjunction, not
 
 **Fleet:** node 1 five A-reps running (R3 500, R2 0/1, R3 502/501), 3 free; node 2 three (R3 504, R2 3, RP 401), 5 free; lists exhausted after these; node 3 GPU 0 builder (born formation). Nudger: Astra active (idle 0.1 min). Laptop chains 5/5; A100 onboarding 05:05 UTC. Nothing killed or launched by the watcher.
 
+<<<<<<< HEAD
 ### 2026-09-12T18:04:51.758812-07:00 [Builder] Non-material native path repair before downstream readout use
 
 Main caught hardcoded VM source root in the unlaunched born readout helper. Minimal repair selects explicit ASTRA_SOURCE_ROOT before import, rejects relative paths, and retains all literal source SHA and imported-root checks. No task, score, mask, parent visibility, lineage or claim change. New helper793d97ea3f7b8b8af971d20a5d517150b3d3c095f80e5be554e7a9f74443e266; original11tests PASS12.658s plus4fresh-process portability regressions PASS0.666s, including actual copied source, bad source bytes, cached wrong source and relative-root rejection. Previous helper and11-test receipts remain unchanged in archived b03snapshot; repaired bytes archived under distinct portable_20260913 name. Einstein updates wrapper pin and passes the source environment before imports. No live birth/formation code touched; native downstream readout still unexecuted.
@@ -8050,6 +8051,27 @@ All32calls complete, bothworkers/controller283963/launcher283888 exited; collect
 Mainselects smallerpromptclarificationcontrol BEFOREanotherbirthfit: same16cases/publicfacts/targets/seeds/caps/graders, uniformgrammar/actionprioritysuffixon12wakesonly;4recordsbyte-identicalnegativecontrols. Originalprobeunchanged; newadaptiveexploratoryversion, notconfirmation. Main49CPU PASS10.262s/native49PASS6.520s; nativeoriginalAUTH/sourcecustody/contextvalidated. Newruntime7467092c, onlymaterialpath/hashdiffers fromtestedpriorruntime. Plancceacca734e74cb86383099b3a7e4ee45fbe923485933204f600c0768faff46b; root~/astra_diagnostics/astra_birth_protocol_clarified_seed0_20260913_attempt1; plannednode3GPU0,1500scontroller+300scollection,32calls/10400tokenceiling. PREPARED_NOT_LAUNCHED; actualstartwillfreshcheckvacancyandrecordPIDs. ContingentCandidateAoverlayCPUpreparationcontinues,no fit selected.
 
 Amperev2boundedrawcomparisoncomplete:strict/joint/twin/registeredcountsagree,0unexplaineddifferences;10field-retentiondifferencesrepeat twodualNEXTrows. Originalv1preserved,v2archived; no native-tokenizer/base-authentication orclaimpromotion. FormalC11guard deferred; noapproval/kill/outsidecommunication.
+=======
+## [Codex Q0 priority audit] 2026-09-13T01:08Z — SEQ-120 does not substitute for the closed selective-writer Q0
+
+Decision memo:
+`research_notes/analysis/2026-09-13_seq120_q0_priority_decision.md`.
+Implement/run the already closed pairwise Q0 now and retain the September 13
+23:59 PDT first-valid-terminal and September 15 12:00 PDT three-root raw-audit
+gates. Q0 remains high-value because SEQ-120 showed strong complementary
+conditional responses without prior tag/copy collapse but failed its frozen
+paired-change/addition conjunction; it did not separate exact storage from held
+extraction or measure Q0's common-prefix branch mass, wrong-root and complete
+locality surface. A repaired birth selected after these counts is development;
+an unchanged three-root birth replay estimates a different, more confounded
+multitarget recipe. A non-weakened birth substitute would have to import nearly
+all Q0 controls and three fresh roots, so it is neither cheaper nor faster.
+Do not weaken `29/32` to observed `26/32` or `24/32`, `16/16` addition to
+`15/16`, or `58/64` DERANGED REVISE to `56/64`; do not count SEQ-120 or a
+post-result repair as confirmation. If valid three-root Q0 evidence misses the
+freeze, use the registered ICLR no-go branch. Analysis only: no builder source,
+adapter, threshold, job, GPU process, or claim was changed.
+>>>>>>> 80082a4f (Keep closed Q0 as selective-writer paper gate)
 
 ### 2026-09-12T18:34:14.931670-07:00 [Builder] Clarified protocol comparison launched on node3GPU0
 
@@ -8097,3 +8119,13 @@ scope sentinel, not a computed gate result, though the empirical conjunction
 also fails (AUTH revision twins26<29 plus addition15<16; DERANGED REVISE56<58,
 revision twins24<29 plus addition15<16). No job, adapter, builder source,
 threshold, or claim state changed.
+
+## [Fable] 2026-09-13T01:34Z — self-check: A-replications 10/12 in — whole-text sleep installs one of two fixed routines, deterministically; the baseline, not the adapters, carries the generation noise; SEQ-121 born-parenting formation fails at the source (PAIRED_SHORTAGE); teacher-free protocol probe live; OFF-noise sweep queued
+
+**A-cell replications at generation seed 5252 vs 4242 (10 of 12 landed; ~1.0–1.7 GPU-h each):** the cleanest finding of the series. Every "carrying" adapter produces exactly the same scores at both seeds — report 0.5291, disjoint 0.2731 — and every "flat" adapter produces exactly 0.4878 / 0.2495. Whole-text sleep on the child's own transcripts collapses the child onto one of two fixed routines (recipe share ≈ 1.0), and which one depends on the life, not on the probe seed. The baseline is what moves: OFF 8-panel two-rep means span 0.481–0.514 across seeds and lives (disjoint 0.244–0.257). Re-tally against that: **carriers on both panels at both seeds: R2 0 (+0.049 / +0.028), R2 1 (+0.035 / +0.025), R2 3 (+0.031 / +0.022), R3 500 (+0.040 / +0.029)**; disjoint-only: R3 505 (+0.010 / +0.020); not replicated: R4 602 (+0.016 → −0.002 / +0.014 → +0.009), R3 504 (+0.038 → +0.020 / +0.001 → +0.014); flat at both seeds: R2 5, R2 6, RP 401. Pending: R3 502 (0.5291 at 4242, expected to hold), R3 501. **Reading for the paper:** the write installs a routine, not knowledge — a deterministic behavioural attractor whose value on the fixed panels is either +0.04 or 0 relative to base; "Δ vs OFF" on the report panel should be read against a pooled multi-seed OFF and only above ~0.03; the disjoint panel is the more trustworthy of the two (OFF spread 0.011). Ledger P11 updated.
+
+**OFF-noise sweep queued (subsidiary, ~35 GPU-min each):** six `fable_fill_offnoise_*` jobs — OFF on both panels at generation seeds 6262 and 7272 plus a second run at 4242, on each node — to separate seed variance from run-to-run nondeterminism (the same seed 4242 gave OFF 0.4836–0.4925 across lives, which should not happen if OFF is life-independent). Output `~/v6_out/off_noise/`. No training, no builder files touched.
+
+**Builder — born parenting (SEQ-121, 01:10 UTC):** the exploratory formation on the AUTH-born child ran 28 calls; 6 of 8 tasks protocol-invalid; source inspector finds 0 of 4 eligible prescribed rows (P lesson 0 and both A apply slots missing; P lesson 1's second TRY lacks PREDICT T/F) → PAIRED_SHORTAGE blocks both writes; only 1 of 3 records faithful; the A-arm parent's recaps are inaccurate (promote unexecuted proposals, alter prediction truth) and P's guidance confuses TRY arity. Builder's next step: a **teacher-free protocol probe** — 16 fixed practice requests per state, OFF vs AUTH, no teacher, no fits — LIVE on node 3 GPU 0 since 01:23 UTC (LIVE_NOT_SCORED). Reading: the born child does not yet follow the RuleGame protocol under a parent, so the level-2 sample cannot be written; this is the "level 1 not founded enough → append 0/1" case Rohin described (message 28), and the probe is the right diagnosis before another birth fit. SEQ-120 partial recount agrees with the headline; caution added: trained arms' 15/16 ACT-format compliance is not improved arithmetic (OFF gets 16/16 numbers right at 8/16 format compliance).
+
+**Fleet:** node 1 two A-reps running (R3 502/501), 6 free; node 2 idle (8 free); node 3 GPU 0 builder probe. Fill lists refilled with the OFF-noise jobs (daemon adds ≤ 5 per node per tick). Nudger: Astra active (idle 0.2 min). Laptop chains 5/5; A100 onboarding 05:05 UTC. Nothing killed or launched by the watcher outside the node queues.
