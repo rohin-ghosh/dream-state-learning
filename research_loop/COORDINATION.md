@@ -13953,3 +13953,38 @@ At the audit cut, v5 had only a launch reservation: no terminal v5 formation,
 fit, or AUTH/C0 readout result was committed. SEQ-171/172 remain preserved
 formation failures. No runtime/GPU files were edited and no execution was
 performed.
+
+## [Independent full-thesis construct audit] 2026-09-13 — PCFL is a strong mechanism world, not yet a paper-complete benchmark
+
+Fresh skeptical review in
+`research_notes/analysis/2026-09-13_pcfl_full_thesis_construct_validity_audit.md`
+finds PCFL worth keeping, but rejects assembling the full claim from its
+current precursors. The executable vertical remains
+`SCRIPTED_TEST_ONLY`/`NATIVE_BINDING_UNIMPLEMENTED`; no PCFL own-write
+formation, fit, or readout has completed; current `ACTIVE_LINKED_TEXT` is a
+supplied exact-address ceiling, not the planned evolving strong memory.
+
+Four construct gaps are fatal before paper-scale execution: (1) hidden exact
+LINK-pair matching filters the child's connection choice, while disclosing the
+pair makes the harness the connection author; admit the four OLD/two NEW valid
+pairs in any child-chosen order and bind the actual bank. (2) Repeated opaque
+bindings favor lossless text and cannot establish parametric reuse or broad
+memory superiority; freeze the reusable-structure stratum before confirmation
+or explicitly bound O8 to opaque exact bindings. (3) Lifetime DLT-versus-
+frozen can reflect generic EVENT/LINK dialect training; add cyclic wrong-life
+mounts (inference only) and preserve a same-history raw-chronology LoRA
+ablation. (4) The evolving BM25+typed-PPR memory must be implemented,
+fresh-root certified, and compared on-policy and on identical DLT histories;
+call q16/B8192 `MAX_TESTED_ACCESS` unless the longer doubled-access equivalence
+gate really passes.
+
+Other claim boundaries: LINKs are derivable from EVENTs, so AUTH-over-ATOMS
+plus cuts shows organization utility under a fixed work budget, not new
+information; current reachout is useful but not goal-conditioned, so execute
+the zero-fit GS1 goal reversal before using goal-directed-expansion language;
+the 80.8 MB rank-8 adapter is not physically compressed, so only a passing
+fresh-target predictive-code/use assay can support *conditional predictive
+semantic compression*. The smallest path remains repaired C0 ceiling -> one
+scientifically repaired formation -> scoped own-write localizer -> two-root
+v2.2 vertical with raw/wrong-life/GS1 additions -> only then reusable stratum,
+strong text certificate, and powered lifetime lineages.
