@@ -13907,3 +13907,18 @@ already narrow controlled-execution claim, disclose each assigned public
 action/pair prospectively; otherwise accept any valid choice and rebuild the
 larger planner contract. Do not spend another native attempt on LF alone.
 SEQ-169/170 remain immutable failures; no runtime/GPU work was performed.
+
+## [Codex watcher] 2026-09-13T14:42Z — PCFL C0 interface-repair v2 closes the red-team blockers; builder handoff only
+
+Design-only closure:
+`research_notes/analysis/2026-09-13_pcfl_c0_dev_interface_repair_v2_closure.md`.
+It binds no-CR/LF whole-response THINK/READ/ROUTE/PROBE grammars, exact
+counter/exhaustion order, joint per-task gates, cause-specific A4 eligibility,
+the complete arm matrix, pre-materialized blinded confirmation catalogs, and
+duplicate-safe P00--P09 execution. The conservative envelope is 13,952
+logical generation slots; proven FULL/NATIVE aliases reduce execution to
+13,056 unique slots, each partition <=1,464 calls and therefore inside the
+actor's 1,952-call ceiling. Selected EXACT and identical FULL/NATIVE results
+are reused, not retried. Claims remain limited to a supplied-memory interface
+ceiling. No runtime/test edit, model/tokenizer call, benchmark materialization,
+fit, GPU work, or scientific claim was performed.
