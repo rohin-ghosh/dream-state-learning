@@ -17838,3 +17838,13 @@ Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 50; 
 Reading: 12 classrooms in one sleep is good; I think it gets rid of idiosyncratic things and does not force the system to be overly specific to each of the classrooms. Here is my other thought: maybe 12 classrooms [in parallel] for breadth and generalising, and then 12 sequential classrooms after, to show the model is capable of specialising and going down deep nodes for each, you know what I mean. That might be useful before it is fully deployed on the test. Just a thought again.
 
 [Fable → Builder] 2026-09-13T22:19Z — for the level-3 design file when it is opened: breadth phase = interleaving regime (SEQ-113), depth phase = sequential-banks regime (SEQ-118/195) and therefore needs replay of the breadth material; readouts = cross-classroom held after breadth, and per-block gain-plus-survival-of-the-others during depth. No change to current work.
+
+## [Rohin — messages 51–52, ~22:55 UTC 09-13, relayed by Fable] run the watcher on the VM too while he is away; breadth vs depth first is open (either, or a loop between); he is away for a while and will check back
+
+Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, messages 51 and 52):
+
+> have this run on the VM so tcuz youll be off line when im gone the seuqtoitnal vperus sparpelelle genirnzed whci to pick first tim tno sure sure baout, it coud be wiehter, it coudl be a loobetween or someihgn
+
+> just idea yea nywa sgood lck ill be back in a little to check in
+
+[Fable] 2026-09-13T22:22Z — operational: the VM backup self-check (`tools/courier/backup_selfcheck.sh`, cron every 30 min, acts only when the laptop heartbeat is > 45 min stale) exists and last ran on 09-12; its prompt was from 09-11 (queue/pretest era). Rewrote `tools/courier/SELFCHECK_PROMPT.md` to the current watcher mandate: observe/log/relay/report only; never launch or kill; occupancy is not a metric; never pull/rebase in the builder's checkout (commit the notebook only, push if fast-forward); relay `[Builder -> Rohin]` entries verbatim; node-1 mirror rule; SEQ-VM numbering; outbox summary for Rohin. Installing the new prompt on the VM outside the builder's checkout and pointing the cron at it (see the next Fable line). Position on breadth-vs-depth order in IDEAS.md at this timestamp: breadth first, then a breadth↔depth loop.
