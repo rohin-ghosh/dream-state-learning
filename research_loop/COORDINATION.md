@@ -14215,3 +14215,24 @@ excluded-root interface diagnostics, not64independent learners. A1 remains
 failed. A3 did not qualify its byte/interface endpoint: noA4 algorithm scaffold
 or ACTIVE/full-panel launch. Stop this prompt ladder; any successor must be
 separately named/prospective and retain these negative results unchanged.
+
+## [Independent interface implementation audit] 2026-09-13T15:06Z — current partial source is STOP before native calls
+
+Read-only audit
+`research_notes/analysis/2026-09-13_pcfl_c0_interface_v2_implementation_audit.md`
+compares the helper-VM interface DEV/command/outer source and all three test
+files against the frozen v2 closure. Verdict:
+`STOP_TYPED_INTERFACE_IMPLEMENTATION_NOT_V2`; passing the current CPU tests
+does not qualify A1. Astra repaired whitespace-only THINK handling and the
+same-task 56/64 overlap gate during the audit. Remaining critical mismatches:
+wrong frozen CONTINUE bytes; required per-task joint fields and full-panel
+reducers absent; exact terminal output rejected solely on
+`finish_reason=length`; READ blocks
+marked delivered before next-context overflow is checked; an unclosed 14,336
+input-token cap; no A4, downstream panel, PROBE/reachout, blinded confirmation,
+alias, terminal-disposition, or pre-A1 catalog implementation; and one-hour
+stage-local launchers instead of P00--P09 partition arithmetic and predecessor
+stops. Required record fields and boundary fixtures are also incomplete. No
+builder source, model, tokenizer, GPU, or runtime was touched. This stop is
+specific to the C0 interface path and does not block the separately scoped
+EVENT-only storage localizer.
