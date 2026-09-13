@@ -8250,3 +8250,26 @@ fixture as native evidence. Boole bounded independent numerical/helper audit
 runs alongside implementation. No later exploratory data enters Q0 selection.
 Projection source830fe675 copied to a fresh native snapshot; native164tests
 PASS66.195s. Runtime integration tests pending; no GPU launch or kill.
+
+## [Codex protocol-probe raw auditor] 2026-09-13T01:45Z — grammar, not a second action call, closes direct protocol syntax; one record defect remains
+
+Independent raw audit:
+`research_notes/analysis/2026-09-13_birth_protocol_probe_raw_audit.md`.
+For original SEQ-122, all 32 raw cells, 91 capsule hashes, exact OFF/AUTH
+request pairing, adapter/source pins and release close. Stored family counts
+reproduce exactly: OFF public TRY/quiz/record/revision `0/4,4/4,4/4,0/4`;
+AUTH `0/4,1/4,3/4,1/4`. Both states nevertheless state the observed revision
+truth `4/4`; OFF omits actions while AUTH emits generic legal actions `4/4` but
+usually chooses/serializes the wrong one.
+
+The separately versioned clarified control was then raw-recounted read-only:
+all `32/32` outputs become parser-valid; public counts are OFF
+`2/4,4/4,4/4,2/4` and AUTH `2/4,4/4,3/4,4/4`. Thus exact grammar/action
+priority—not a second model-call projection—is sufficient for direct protocol
+prompts, and it exposes a narrow source-authored AUTH revision advantage. Keep
+projection only for residual free-thought multi-action bundling. The unchanged
+record prompts reproduce one AUTH-only `null -> matched` error, so isolate that
+relation before any development-only birth-interface anchor. This is trained,
+not learned, one-root exposed evidence; neither root tunes Q0 or qualifies
+birth, parenting, Level 1/2, retention or own-experience learning. No builder
+source, prompt, parser, corpus, adapter, job, GPU or claim state changed.
