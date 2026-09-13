@@ -16757,3 +16757,25 @@ measured A200 parents may begin only after both of these pass:
 
 Keep the four scientific arms, source material, writer recipe, doses, seeds,
 and stopping rules unchanged. This is a runtime/evidence repair only.
+
+## [Root runtime observation] 2026-09-13 PT — attempt 4 fit passed; impure post-fit evidence replay failed
+
+Seed-0 attempt 4 is terminal. Its worker returned zero, produced a sealed
+`fit/completed.json`, completed 200 B200 updates, and wrote the checkpoint;
+the outer nevertheless marked the stage failed before readout because
+`validate_stage()` called `validate_predecessor(..., root=directory)` after
+the fit. That helper is intentionally mutating/preparatory in the pre-fit
+path: it calls `_warm_parent(parent, root / "checkpoint", ...)` and requires
+the child output to be fresh. In a post-fit evidence replay the checkpoint
+must already exist, so the observed `warm start: output must be fresh` is a
+checker-impurity contradiction, not a scientific or training failure.
+
+Attempt 4 remains inadmissible because its outer collection is `FAILED`; do
+not post-hoc promote or read out the checkpoint. The prospective repair must
+separate read-only predecessor validation from pre-fit output preparation:
+retain the fresh-output check on the actual worker entry path, but never try
+to prepare/recreate the child output while validating completed evidence.
+Exercise both paths in the real-format outer test. Fold this fourth failed fit
+into the immutable failure ancestry and physical-work accounting. Do not
+launch seeds 1/2 or another fresh root until the reducer handles attempts
+2/3/4 and a fresh independent audit passes the repaired outer/evidence path.
