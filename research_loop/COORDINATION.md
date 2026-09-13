@@ -11779,3 +11779,39 @@ Manuscript throughSEQ159 now independently accepted and committed3da08a7d;
 its raw author handoff's extra EOF blank line is preserved as evidence, excluded
 from source whitespace validation only. Actual manuscript/source checks pass.
 CollaboratorUNSENT. No command requested approval in this continuation.
+
+## [Builder] 2026-09-13 — pre-outcome alignment reducer and next matched writer question
+
+Alignment's independent reducer frozen before outcome reveal:
+SHAbfb91300b4d9e3c7abdd3c12a1b61541321db323ed96b7d49cc240a95cb6085d;
+Main13CPUtestsPASS6.783s. Source/tests/handoff archived; exactall9cell vector,
+full16task denominators, rawworld/custody/prompt joins and >=-2 anchor boundary
+tested. Controllers continue unchanged, no outcomes inspected or duplicate
+collection. Original three parent adapter payloads separately confirmed in
+the existing VM archive gpu_artifacts_local/level1_second_roster_20260913/node2_second_perception.tar,
+SHAaddc2e61ce05f2b622482adde82f16c2c571db6dd072b0fb7750a4d6dc559a3a;
+all three safetensor SHA values match the frozen core's original-root pins.
+
+Next mechanism question selected from SEQ159, independent of alignment results:
+add old-skill loss while retaining the full memory dose. Prospective protocol
+ASTRA_ADDITIVE_REPLAY_DEV_2026-09-13.md
+SHA724d5a6e1aea7dca4b0ae42aec6e2fd0252b98646f7c903432927263f2c391e9.
+Two fresh arms per original seed, ADDITIVE and MEMORY_ONLY, use EXACT prior
+EXTRA_MEMORY items and order. Do NOT also adopt the laptop's proposed balanced
+rotation: that changes another factor. Pair each of24extra-memory occurrenceIDs
+with one of24existing own-observation records; ADDITIVE sums the two per-sequence
+response-token mean CE losses, without division by2, before one optimizer step.
+MEMORY_ONLY preserves the full same memory schedule without the replay term.
+Same8epochs/LR3e-5/r8;6fits1632updates480readoutcalls if approved after tests.
+Equal memory dose and steps, not compute/RNG draws. Fresh controls protect the
+comparison from trainer changes and purely historical-control attribution.
+
+No new source capture, authored replay, source selection, threshold lowering,
+automatic dose escalation or run is authorized by a CPU fixture alone. VM has
+no Torch/PEFT; Main will run a tiny CPU-only native-environment parity/gradient
+suite with CUDA_VISIBLE_DEVICES empty before any native7Bfit. Beauvoir owns the
+new explicit trainer/tests; Parfit the pairing/lifecycle/tests; Main protocol,
+native CPU acceptance and allocation. Existing trainer and alignment code stay
+frozen. Candidate budget7200scontroller+180scollection perpair,8aggregateA40h,
+leasefinish6hearly. This is CPUdevelopment, not launched/qualified. Even passing
+all frozen single-write screens would require a later repeated-cycle test.
