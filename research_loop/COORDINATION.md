@@ -9279,3 +9279,13 @@ native recipe/runtime after acceptance. This is an exploratory base-start
 loop, not an automatic qualified-birth release or successful parenting claim.
 Galileo completed six-file SEQ129 manuscript patch; Carver independently reviews
 it. Noether monitors exact node2 controllers read-only; Main retains all mutations.
+
+## [Builder] 2026-09-13T05:14Z — prospective reflection replications, before outcomes
+
+Selected learner seeds1and2 alongside live seed0 now, not conditional on its
+results. Plato owns new /tmp reflection replication runner/launcher/tests only;
+original runtime/root untouched. Only learner seed and epoch order change,
+same paired treatment targets/data/readouts; engine/generation seed stays0.
+Prospective protocol amended; planned3roots/6fits/432calls,3600s/root ceiling,
+3aggregate GPU-hours. CPU/native checks and current vacancy precede any launch.
+Potential placement node3GPU1/2, no reservation asserted. No outcomes inspected.

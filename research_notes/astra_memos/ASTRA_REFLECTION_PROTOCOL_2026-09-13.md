@@ -93,3 +93,19 @@ was not used or modified. First read-only vacancy command exceeded the tool's
 Reported lease September26 03:03UTC; launch additionally requires six-hour
 lease margin. A100 onboarding remains Fable-owned and is not needed here.
 Complete preparation, helper/runner handoffs and CPU acceptance are archived.
+
+## Prospective learner-seed replication amendment — 05:14 UTC
+
+Before any reflection outcome inspection, Main selects learner seeds1and2 in
+addition to the live seed0 pair. This is an independent replication extension,
+not success-selected follow-up or a modification of seed0. The derivative
+runtime changes only training seed/epoch order and binds those differences;
+readout engine and generation seeds remain0, with unchanged data/targets,
+methods, metrics and per-root ceilings. All seeds and all failed runs will be
+reported. Three roots mean six cold fits and432readout calls in total; at most
+3aggregate controller GPU-hours plus separate bounded collections. Identical
+OFF readouts remain matched deterministic controls, not independent samples.
+Native preparation and fresh allocation are still required for each replica.
+Selected placement node3GPU1/2 is provisional until checked; no replacement
+seed/root is authorized by an unfavorable outcome. The original root/plan/runtime
+and all its source hashes remain unchanged. No replica is launched at this entry.
