@@ -8373,3 +8373,16 @@ Arendt implements forward v2 task-local marker hygiene/regression, no new run.
 Einstein audits eight parent messages; purity pending. Canonical result/custody:
 ASTRA_ACTION_PROJECTION_RESULT_2026-09-13.md. Main owns no liveGPUjob now.
 Q0 native executor remains Carver-owned; numerical repairs ongoing. No kill.
+
+### 2026-09-13 [Builder] SEQ124 semantic limitations accepted; forward marker hygiene repaired
+
+Einstein raw review of8parents+8restatements complete; Main accepts no blanket
+neutral-recap purity. AUTH A0 wrongfiveanswercount, OFF A1 falseconfirmedforecast
+description, A1quizunitimprecision; P advice remains process-oriented with some
+overbroad/underspecified diagnoses. No hiddenrule/futureanswer-vector found;
+do not misreport every defect as invented executed proposals. Review archived.
+Arendt forward v2 marker repair preservesglobalIDs inmetadata only, publicmarkers
+use task-localresponses; Main45testsPASS2.230s. Originalv1sources/results preserved,
+no v2run selected. Singer owns sixmanuscriptfiles for throughSEQ124/publicidentity
+update; do not stage untilEDITSTOP/review. Carver Q0 native executor and Boole
+lifecycle audit continue independently. No MainGPUjoblive, no kill or sending.

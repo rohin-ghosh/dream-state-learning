@@ -17,8 +17,8 @@ RAW_SIX = (('0001', BUNDLE0), ('0007', BUNDLE1), ('0019', BUNDLE0),
 class Calls:
     protocol = 'interaction_v3'
 
-    def __init__(self, outputs, before=None):
-        self.outputs, self.rows, self.count = iter(outputs), [], 0
+    def __init__(self, outputs, before=None, start=0):
+        self.outputs, self.rows, self.count = iter(outputs), [], start
         self.before = before
 
     def ask(self, role, arm, eid, tick, prompt):
@@ -49,11 +49,14 @@ class ActionProjectionTests(unittest.TestCase):
 
     def test_original_diagnostic_bytes_and_fresh_schedule(self):
         self.assertEqual(diagnostic.digest(diagnostic.__file__), 'e6055da48b2c6fa1bd294c9d991e07f32f05dc6630fe8973373977bdfe977526')
-        self.assertEqual(projection.schedule(), {'formation': [f'rule{rule}/astra-action-projection-v1-20260913/lesson{rule}/{phase}'
+        self.assertEqual(projection.INTERFACE, 'rulegame_action_projection_v2')
+        self.assertEqual(projection.schedule(), {'formation': [f'rule{rule}/astra-action-projection-v2-20260913/lesson{rule}/{phase}'
                          for rule in (0, 1) for phase in ('pre', 'apply')], 'evaluation': []})
         self.assertFalse(set(projection.schedule()['formation']) & set(diagnostic.schedule()['formation']))
         with self.assertRaises(ValueError):
             projection.play_task(Calls(['DONE']), diagnostic.Events(), 'P', diagnostic.task_id(0, 'pre'))
+        with self.assertRaises(ValueError):
+            projection.play_task(Calls(['DONE']), diagnostic.Events(), 'P', 'rule0/astra-action-projection-v1-20260913/lesson0/pre')
 
     def test_no_salvage_world_or_record_before_projection(self):
         events = diagnostic.Events()
@@ -84,7 +87,7 @@ class ActionProjectionTests(unittest.TestCase):
         identifier = projection.task_id(0, 'pre')
         expected = (diagnostic.BOOT + f'\nTask: {identifier}\nGoal: Induce the hidden rule and answer the quiz.\n'
             'Response: 2/5\nA fresh mystery box.\nTemporary parent restatement:\n'+prefix+
-            '\n[UNEXECUTED_PROPOSAL response=1 call=0000; no action dispatched]\n'+raw+
+            '\n[UNEXECUTED_PROPOSAL response=1; no action dispatched]\n'+raw+
             '\n[END UNEXECUTED_PROPOSAL response=1; NO ACTION OR WORLD RESULT]'
             '\nHarness state: remaining TRY budget: 3. Quiz reveal still needed before scoring: ACT: QUIZ ?.'
             '\nEmit one action only; never supply [OUTCOME] or simulate a world reply.'
@@ -95,6 +98,50 @@ class ActionProjectionTests(unittest.TestCase):
                        'birth_plan_sha256', 'child_identity', 'lesson1', 'evaluated correction'):
             self.assertNotIn(hidden, expected)
         self.assertFalse(any(row['kind'] == 'execution' for row in events))
+
+    def test_public_prompts_ignore_global_ids_but_metadata_joins_retain_them(self):
+        runs = []
+        for start in (17, 44):
+            calls = Calls(['COMPARE  \n', 'ACT: TRY 1,2,3', 'COMPARE', 'ACT: TRY 4,5,6', 'DONE'], start=start)
+            events = diagnostic.Events()
+            result, transcript = projection.play_task(calls, events, 'P', projection.task_id(1, 'pre'), notes=True)
+            wakes = [row for row in calls.rows if row['role'] == 'wake']
+            self.assertEqual([row['tick'] for row in wakes], [1, 2, 3, 4, 5])
+            self.assertIn('[UNEXECUTED_PROPOSAL response=1; no action dispatched]\nCOMPARE  \n', wakes[1]['prompt'])
+            self.assertIn('[PROJECTED_ACTION response=2 from_response=1]', wakes[2]['prompt'])
+            self.assertIn('[PROJECTED_ACTION response=4 from_response=3]', wakes[4]['prompt'])
+            self.assertNotIn('call=', transcript)
+            self.assertNotIn('from=', transcript)
+            executions = [row for row in events.rows if row['kind'] == 'execution']
+            invalids = [row for row in events.rows if row['kind'] == 'protocol_invalid']
+            records = [row for row in events.rows if row['kind'] == 'record']
+            self.assertEqual([row['projection_of'] for row in executions], [row['call_id'] for row in invalids])
+            self.assertEqual([row['source_call_id'] for row in records], [row['call_id'] for row in executions])
+            self.assertEqual(invalids[0]['call_id'], f'{start:04d}')
+            runs.append((wakes, result, transcript))
+        self.assertNotEqual([row['call_id'] for row in runs[0][0]], [row['call_id'] for row in runs[1][0]])
+        self.assertEqual([row['prompt'] for row in runs[0][0]], [row['prompt'] for row in runs[1][0]])
+        self.assertEqual(runs[0][1:], runs[1][1:])
+
+    def test_deterministic_formation_pa_pre_requests_equal_despite_global_offsets(self):
+        from test_born_rulegame_formation import BornFormationTests
+        fixture = BornFormationTests()
+        fixture.setUp()
+        self.addCleanup(fixture.doCleanups)
+        fixture.use_projection('AUTH')
+        capture, _ = fixture.capture(fixture.projection_backend({1: 'COMPARE', 3: 'COMPARE'}))
+        self.assertTrue(fixture.replay(capture)['ok'])
+        for lesson in (0, 1):
+            eid = projection.task_id(lesson, 'pre')
+            paths = [[row for row in capture['calls'] if row['request']['role'] == 'wake'
+                      and row['request']['arm'] == arm and row['request']['eid'] == eid] for arm in ('P', 'A')]
+            self.assertEqual(len(paths[0]), 5)
+            for parental, alone in zip(*paths):
+                self.assertNotEqual(parental['request']['call_id'], alone['request']['call_id'])
+                self.assertEqual({key: value for key, value in parental['request'].items() if key not in ('call_id', 'arm')},
+                                 {key: value for key, value in alone['request'].items() if key not in ('call_id', 'arm')})
+                self.assertEqual(parental['envelope']['response'], alone['envelope']['response'])
+            self.assertIn('[ONE ACTION PROJECTION]', paths[0][3]['request']['prompt'])
 
     def test_public_history_before_invalid_preserved_and_no_new_outcome(self):
         calls, events, result, transcript = self.task(['PREDICT: F\nACT: TRY 1,2,3', BUNDLE0, 'DONE'])

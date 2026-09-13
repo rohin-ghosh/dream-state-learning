@@ -11,8 +11,8 @@ import re
 from . import rulegame_parenting_diagnostic as diagnostic
 
 
-INTERFACE = "rulegame_action_projection_v1"
-TASK_NAMESPACE = "astra-action-projection-v1-20260913"
+INTERFACE = "rulegame_action_projection_v2"
+TASK_NAMESPACE = "astra-action-projection-v2-20260913"
 WAKE_SLOTS = 5
 CLAIM_BOUNDARY = ("Exploratory action-projection interface only; not Q0, clean Level 2, parenting efficacy, "
                   "retention, learning, useful writes, G3/G5/H1/H2 or clean lineage")
@@ -37,8 +37,8 @@ def schedule():
             "evaluation": []}
 
 
-def tentative_block(raw, tick, call_id):
-    return (f"[UNEXECUTED_PROPOSAL response={tick} call={call_id}; no action dispatched]\n{raw}\n"
+def tentative_block(raw, tick):
+    return (f"[UNEXECUTED_PROPOSAL response={tick}; no action dispatched]\n{raw}\n"
             f"[END UNEXECUTED_PROPOSAL response={tick}; NO ACTION OR WORLD RESULT]")
 
 
@@ -67,6 +67,7 @@ def play_task(calls, events, arm, eid, notes=False, prefix=""):
             prompt += "\n[ONE ACTION PROJECTION]\n" + PROJECTION_INSTRUCTION.format(tick=pending["tick"])
         call_id, output = calls.ask("wake", arm, eid, tick, prompt)
         projection_of = pending["call_id"] if pending is not None else None
+        projected_from_tick = pending["tick"] if pending is not None else None
         wake = dict(kind="wake_response", interface=INTERFACE, arm=arm, eid=eid, tick=tick,
                     call_id=call_id, raw_response=output, projection_of=projection_of)
         try:
@@ -80,7 +81,7 @@ def play_task(calls, events, arm, eid, notes=False, prefix=""):
                            call_id=call_id, raw_response=output, failure=str(error), tentative=True,
                            executed=False, projection_of=projection_of)
             events.append(invalid)
-            history.append(tentative_block(output, tick, call_id))
+            history.append(tentative_block(output, tick))
             if pending is not None or tick == WAKE_SLOTS:
                 terminal = "protocol_invalid"
                 break
@@ -92,7 +93,7 @@ def play_task(calls, events, arm, eid, notes=False, prefix=""):
             history.append(f"[TASK ENDED WITHOUT WORLD ACTION response={tick}]\n{output}")
             terminal = "done"
             break
-        history.append((f"[PROJECTED_ACTION response={tick} from={projection_of}]\n" if projection_of is not None else "") + output)
+        history.append((f"[PROJECTED_ACTION response={tick} from_response={projected_from_tick}]\n" if projection_of is not None else "") + output)
         reward, outcome = game.evaluate(episode, action["action"])
         execution = dict(action, kind="execution", action_kind=action["kind"], arm=arm, eid=eid,
                          tick=tick, call_id=call_id, execution_id=f"{arm}:{eid}#t{tick}", reward=reward, outcome=outcome,

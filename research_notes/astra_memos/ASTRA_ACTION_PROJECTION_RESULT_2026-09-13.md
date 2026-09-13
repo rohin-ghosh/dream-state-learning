@@ -1,7 +1,7 @@
 # SEQ124 — matched residual-projection formation
 
 Status: EXECUTED, COLLECTED_ONCE, raw paired replay VERIFIED; parent semantic
-audit pending. Both owned controllers/workers/launchers have exited and both
+audit complete with limitations accepted by Main. Both owned controllers/workers/launchers have exited and both
 collector receipts report full release. No parameter update or fit occurred.
 
 ## Registered descriptive results
@@ -102,3 +102,33 @@ Continue the independently specified closed Q0 executor and native writer test,
 without selecting or tuning its material, recipe or thresholds from this result.
 No new birth fit is justified by this diagnostic alone. Preserve the v2 repair
 for a separately declared future interface test; do not rerun v1 unchanged.
+
+## Parent semantic review and forward repair
+
+Einstein traced all8 parent messages and8 restatements to exact sent transcripts,
+raw call envelopes and actual events, independently verifying276member hashes.
+Main accepts the review's conclusion: no blanket accurate-recap/control-purity
+approval. AUTH A0 incorrectly says five answers despite six submitted labels;
+its child restatement repeats this. OFF A1 treats positive world observations
+as confirmed forecasts despite two F predictions and True observations, and
+confuses individual values with triples. Both A1 recaps misdescribe the quiz unit.
+OFF A0 is substantially grounded with conversational ambiguity. Preserve correct
+parts of those messages; they do not all invent executed rejected proposals.
+
+P guidance remains process-oriented but several diagnoses are overbroad or
+task-underspecified. In OFF, some TRYs genuinely lack forecasts, so local advice
+to forecast consistently has a basis; no blanket claim of absent learning is
+established by dialogue. No reviewed parent supplies a hidden rule or a new
+future-answer vector. These are retrospective semantic judgments, not proof of
+efficacy or a new launch gate. Reviewer involvement in prior project helpers/
+tests and lack of blinding are disclosed in the archived review.
+
+The forward v2 repair removes global IDs only from harness-authored public
+markers, retaining them in raw custody/execution metadata. It uses task-local
+response references and a separately versioned namespace/interface. Main45
+focused/adjacent tests PASS2.230s, including exact P/A pre-prompt parity and
+different global offsets. Projection module SHA
+9eeb962e9e2d7716bdbc9963dfdcccfc3219db52e852a00e8d8e655cdf68cbfe;
+tests ab4c10491d373b72606a34608e8322215ac3fcf6cc94fbf2e3b450d57942c110.
+This is implemented/CPU-tested only, not a new run or a repaired v1 result.
+No new birth fit or interface run displaces the independently active Q0 work.
