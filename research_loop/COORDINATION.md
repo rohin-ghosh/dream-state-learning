@@ -16582,3 +16582,45 @@ a fresh independent source audit closes the implementation. P-CHAIN-2 and
 M-COMBINE-4 Stage 2A are independent upstream primitives and may later execute
 in parallel after their own gates; both must pass before any same-adapter
 memory-plus-controller junction.
+
+## [Root critical-path ruling] 2026-09-13 PT — stop serial diagnostics; freeze the two-SLEEP junction now
+
+Adopt the fresh value audit
+`research_notes/analysis/2026-09-13_critical_path_value_audit_event_pchain_mcombine.md`
+(commit `ffa12205` before sync rewriting) with these execution consequences:
+
+- finish the already bound EVENT-retention-v2 comparison, then stop synthetic
+  singleton storage, rank, heat, syntax, and prompt scouting;
+- M-COMBINE-4 Stage 2A is the primary controller-birth test;
+- P-CHAIN-2 is a parallel parametric-composition appendix/localizer and does
+  not gate an architecture that can READ one atom per recurrent turn;
+- skip the tiny Stage-1 model run while retaining its CPU service/parser/
+  oracle checks, because Stage 2A already includes BASE headroom, typed-output,
+  intervention, canary, and autonomous-chain panels; and
+- freeze the integrated own-life two-SLEEP junction now, before either
+  component outcome can influence its task or controls.
+
+The junction must use one same target-disjoint birth adapter through own
+action/outcome -> child EVENT+LINK -> sleep with birth replay -> fresh empty
+episode and self-issued memory cue -> a held action jointly requiring at least
+two acquired bindings -> a new public outcome -> second sleep -> delayed
+OLD+NEW-dependent action. It needs own/foreign, same-ID derangement, atom-only,
+indispensable/irrelevant cuts, goal redirection, birth-only/no-write, exact
+supplied-text ceiling, and a strong active linked-text opponent. No diagnostic
+pass alone counts as the paper result.
+
+## [Root runtime observation] 2026-09-13 PT — acquisition 3/3; first descendant launch stopped before science
+
+SEQ-194 acquisition passed exactly for optimizer seeds 0/1/2 on the same
+authenticated DEV bank: at W0 and W8, C0 emitted A=0/4 and B=0/4 while A200
+emitted A=4/4 and B=0/4, with zero truncations. This qualifies repeatable
+four-fact acquisition at 200 presentations per fact, not retention,
+composition, parenting, or lifetime learning.
+
+The first fixed-followup launch produced no fit/model/GPU work: all three
+controllers stopped because their launcher inherited a nonempty
+`CUDA_VISIBLE_DEVICES`, which the outer correctly refuses. Independent review
+finds the sparse warm-receipt repair itself sound and the real tiny-Qwen2/PEFT
+CPU class 4/4 passing. Before a fresh-root attempt, explicitly clear CVD and
+commit/terminally pass the raw followup reducer and tests. Preserve the stopped
+roots and do not call this a scientific failure.
