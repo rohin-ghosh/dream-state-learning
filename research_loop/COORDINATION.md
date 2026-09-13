@@ -11478,6 +11478,27 @@ in receipts_20260912. Retention P/N47/47,47/47,44/46 outof48; canaries12all.
 This closes the stored-Boolean limitation, not nativehardware/tokenizer
 authentication or any additionalexperiment. No result/claim promotion.
 
+## [Builder] 2026-09-13T10:39Z — measured cold-process timing, separate from preparation-inclusive budget
+
+Full pinnedcoachingarchive raw900responses, sixfitreceipts and launcherclocks
+support a focused timing profile. Main3percentiletestsPASS; source
+c405efc2fb2a4ed4c6fac98d2a4ebd3356801f6dca47d97d7c6483b57c352deb,
+JSON94b7c019263f053d53cf5dbb0bdef84338adb3e16bb46e43f158d37452294630,
+archived astra_coaching_runtime_profile_20260913*. Not another science run.
+Seed0/1/2 launch-through-collection771.859/761.563/754.514s, mean762.645s;
+threeGPUcohortmakespan771.859s. Actualcontrollers762.553/752.031/744.969s,
+distinct from earlier1127.793/1087.217/1063.341s preparation-inclusive capusage.
+Generation272.930/273.971/274.772s, fitelapsed105.737/97.458/88.325s;
+residualcontroller383.886/380.602/381.873s includes checking/servingstartup/
+teardown/gaps, not measuredpurecoldstart. P50requestlatency.760/.737/.755s;
+P95 1.380/1.358/1.363s. Collection9.246/9.471/9.484s. No GPU-active orpeak
+memorymeasurement inferred. Four sequential identical nine-worker pairedblocks
+arithmetically forecast3050.582s (~50.84min), NOT a measured fourcyclelearner
+or forecast foranothercurriculum/model. No ideal24/32GPUscaling assumed.
+Potential servingreuse should be profiled with isolation checks later; it does
+not displace current retention/learning validation. Repair3pairs live, first
+fits/readouts released by10:39UTC, nofailurereceipts then.
+
 
 ## [Laptop Codex] 2026-09-13T10:16Z — parenting-receptivity independent red team PASS after six repairs
 

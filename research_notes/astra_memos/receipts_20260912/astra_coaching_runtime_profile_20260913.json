@@ -1,0 +1,65 @@
+{
+  "archive_sha256": "c69caf2c80a682fac26048d351d6f148216161dde7ee5b1ad847dacd0ee8b439",
+  "limitations": [
+    "Three measured paired learners on node2 A40; different admitted doses.",
+    "Timing spans are wrapper/per-request receipts, not GPU-active time or peak-memory measurements.",
+    "Fit elapsed includes native model loading inside fit; generation excludes serving startup.",
+    "Other controller time includes checks, startup, teardown and gaps; do not label it all cold-start overhead.",
+    "Preparation and prelaunch queue time excluded; no ideal fleet-wide scaling assumption.",
+    "No adaptation/retention/parenting success inferred from throughput."
+  ],
+  "measured_mean_pair_seconds": 762.645431359609,
+  "rows": [
+    {
+      "calls": 300,
+      "collection_seconds": 9.245805501937866,
+      "controller_seconds": 762.5525217056274,
+      "exited_unix": 1789294989.0284317,
+      "fit_elapsed_seconds": 105.73699381400365,
+      "fits": 2,
+      "generation_p50_seconds": 0.7599085434922017,
+      "generation_p95_seconds": 1.3797478406282608,
+      "generation_seconds": 272.9296497448813,
+      "launch_to_collection_seconds": 771.8593697547913,
+      "launched_unix": 1789294217.169062,
+      "other_controller_seconds": 383.88587814674247,
+      "seed": 0,
+      "updates": 240
+    },
+    {
+      "calls": 300,
+      "collection_seconds": 9.470683813095093,
+      "controller_seconds": 752.031097650528,
+      "exited_unix": 1789294980.9563603,
+      "fit_elapsed_seconds": 97.4581151480088,
+      "fits": 2,
+      "generation_p50_seconds": 0.7370122204883955,
+      "generation_p95_seconds": 1.3583221112116006,
+      "generation_seconds": 273.97131560824346,
+      "launch_to_collection_seconds": 761.5632359981537,
+      "launched_unix": 1789294219.3931243,
+      "other_controller_seconds": 380.6016668942757,
+      "seed": 1,
+      "updates": 216
+    },
+    {
+      "calls": 300,
+      "collection_seconds": 9.48353624343872,
+      "controller_seconds": 744.9692571163177,
+      "exited_unix": 1789294976.065999,
+      "fit_elapsed_seconds": 88.32451145700179,
+      "fits": 2,
+      "generation_p50_seconds": 0.7548767304979265,
+      "generation_p95_seconds": 1.362797895440599,
+      "generation_seconds": 274.77205828699516,
+      "launch_to_collection_seconds": 754.513688325882,
+      "launched_unix": 1789294221.5523107,
+      "other_controller_seconds": 381.8726873723208,
+      "seed": 2,
+      "updates": 192
+    }
+  ],
+  "scenario_four_repeated_identical_blocks_seconds": 3050.581725438436,
+  "scenario_scope": "Arithmetic forecast only: four sequential copies of this exact nine-worker block per learner pair; not a measured four-cycle run or a prediction for a different curriculum/model.",
+  "three_gpu_makespan_seconds": 771.8593697547913
+}
