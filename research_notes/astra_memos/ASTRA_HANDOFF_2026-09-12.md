@@ -1,6 +1,24 @@
 # Astra current handoff — 2026-09-12T19:56:24.212350+00:00
 
-## CURRENT — September13 02:43UTC (supersedes older status below)
+## CURRENT — September13 02:59UTC (supersedes older status below)
+
+Q0 controller298494 remains LIVE with stage04_fit_P_UNARY_TOOL on node3GPU2.
+AUTH first-quartet canary missed after1 update; prescribed DERANGED/unary
+diagnostics continue. Await final terminal and exact native replay; do not
+promote relay, change live source, retry or strengthen preliminary conclusions.
+Closed-root collection: archive once only after controller exit/native replay;
+use /data-backed gpu_artifacts_local/q0_20260913_attempt1 for large tensors.
+Custody-only validator /tmp/astra_q0_archive_check_20260913.py (archived) needs
+external archiveSHA and manifest2486bbc89e02fc3357eb285e19ac9172b3cf4ac1427097b4ad48b471e4cae207.
+Main25 testsPASS0.109s; it does NOT perform numerical/scientific replay.
+
+Faraday relay component now EDITSTOP/acceptedCPU-only: sourceb7e48914 and
+test1a728166, Main25PASS0.720s; EinsteinF1fixverificationPASS4 tests. Exact
+source/capture/replay anchors are external; no hiddenmap, no native proof,
+no full writer/reset/readout runner. No fresh relayroot or native launch.
+This supersedes the active Faraday ownership description in the02:43 entry.
+
+## Previous exact Q0 startup custody — September13 02:43UTC
 
 Mission ACTIVE/incomplete. Simple hygiene, formal guard finalC11-only.
 **Main Q0 root1 LIVE** node3GPU2/controller298494 (start_ticks8324765),

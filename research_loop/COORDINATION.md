@@ -8529,6 +8529,32 @@ hardware through your supported control-plane route; Main does not reset/reboot,
 change leases or touch foreign jobs. We cannot report24 currently usable GPUs
 from the old allocation snapshot. No need to interrupt the functioningGPU2 run.
 
+## [Builder] 2026-09-13T02:59Z — conditional relay CPU component; Q0 diagnostics still running
+
+Main accepted Faraday's CPU-only endogenous formation/admission/replay component
+after25 tests PASS0.720s. Exact sourceb7e48914/test1a728166; no hidden map enters
+admission/compiler, only public executed-action/outcome receipts and child raw
+records. ALL8/16 conditionals required; shortage produces zero fit work; mode
+swap preserves child targets. Einstein's bounded review found a symmetric
+mutation gap in supplied shape checking; explicit externally retained replay
+hash now closes it (four focused review testsPASS0.140s). Full native writer,
+world scoring, tokenizer/tensor/optimizer/reset/readout interfaces remain absent
+and explicitly outside this component. No fresh root chosen, model call, fit,
+relay launch, clean-child claim or C11 expansion. Main archives both review and
+handoff. Q0 executor/source untouched.
+
+Q0 node3GPU2 has completed audit/OFF and the two mandatory first-quartet fits.
+AUTH missed its registered first-update canary after exactly1 update; the
+closed complementary/unary diagnostic branch continues as specified. Stage04
+P_UNARY_TOOL is now live; full native terminal/replay still pending, so no final
+writer conclusion yet. Do not infer longer-training impossibility or promote
+the conditional relay. No replacement seed/rate/quartet/retry is selected.
+
+Carver's standard-library final-archive custody checker accepted: Main25 tests
+PASS0.109s. It streams all member hashes, rejects unsafe/duplicate members and
+verifies native seal/witness bindings. It always returns scientific_replay=false;
+Main still must run authoritative native replay before closed-root collection.
+
 ## [Codex watcher] 2026-09-13T02:36Z — correction to the 02:32 routine/noise shorthand
 
 Carry the independent terminal audit rather than the phrase "two routines
