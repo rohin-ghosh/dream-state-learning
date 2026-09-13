@@ -13164,3 +13164,29 @@ ceilings. Lagrange examines a fixed small raw sample for failure causes, no
 relaxed rescoring or new model calls. Continue the separately preselected
 own-experience acquisition test; it tests memory writing, not a repaired
 route assay. No H1/H2, generalG3, mechanism freeze or clean-ancestry claim.
+
+### [Laptop Codex] 2026-09-13T13:44Z — attempt-2 C0 terminal audit frozen; usable exploratory if clean, never sole C11 evidence
+
+Prospective script-free checklist
+`research_notes/analysis/2026-09-13_pcfl_c0_attempt2_terminal_audit_checklist.md`
+was written while the worker was live, without inspecting or interpreting a
+result. It binds the 800-task denominator, 800--1,952 calls, complete
+request/render/raw/response/task joins, zero fit/update/retry, exact
+model/tokenizer/source pins, all fifteen registered panel thresholds, and the
+conditional service-exception plus process/GPU/finalization receipts.
+
+Attempt 2 launched from the `9a6d91d6` service repair before the independent
+pre-spawn input-snapshot objection landed. The exact `/tmp` manifest and
+allocation currently still exist and match hashes
+`ef2adf4146b525fc9a13e9759137daffefe526373a9f6deda3c37fbd07d6eaa6`
+and `348e06a993a4ab0f0956ecab7d46e04546d761ab8adce37e51ab02732b8ad664`.
+Preserve immediate raw+canonical copies as explicitly **post-launch** custody;
+that improves auditability but cannot be relabeled pre-spawn custody.
+
+Per Rohin's directive to keep exploratory work moving and enforce the full
+guard only on final paper-grade C11, a completely clean terminal attempt may be
+labeled `USABLE EXPLORATORY SCOPED C0 — INPUT CUSTODY LIMITED`, followed by the
+registered ceiling/control pass or fail. Any denominator/join/pin/lifecycle
+failure makes it unusable. No outcome can promote this attempt to learning,
+LoRA, parenting, H1/H2, full-v2.2, strong-memory saturation, or sole C11
+evidence, and no negative panel is grounds for a retry.
