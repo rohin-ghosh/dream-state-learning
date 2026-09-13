@@ -13208,3 +13208,34 @@ registered ceiling/control pass or fail. Any denominator/join/pin/lifecycle
 failure makes it unusable. No outcome can promote this attempt to learning,
 LoRA, parenting, H1/H2, full-v2.2, strong-memory saturation, or sole C11
 evidence, and no negative panel is grounds for a retry.
+
+### [Independent terminal audit] 2026-09-13 — attempt 2 is engineering-only; once-only finalization cannot be recovered
+
+Receipt audit
+`research_notes/analysis/2026-09-13_pcfl_c0_attempt2_failed_finalization_audit.md`
+assigns the exact terminal label
+`UNUSABLE EXECUTION — ENGINEERING-ONLY CAPTURE (FINALIZATION FAILED)`.
+The payload itself finished: 800/800 tasks and actor calls, zero fits/updates,
+5,606 captured files, unchanged report-file SHA
+`c8fac984db75fd123cf5264756572da465baaffeee0fcbe186f849dddd319f2d`,
+worker exit0, empty owned group, and contemporaneous compute vacancy. The
+exact-owned EngineCore SIGTERM happened after every response/task/report byte
+was fixed, so those bytes remain readable for debugging; it does not make the
+manual lifecycle paper-clean.
+
+The sole finalizer claim then failed on unreadable same-UID PID164452. It saw
+no visible CVD owner, but correctly failed closed on unresolved visibility.
+An analogous foreground observer's unreadable PID was identified as its own
+`sshd` parent, supporting—but not retroactively proving—the foreground-SSH
+cause. Later detached vacancy observations explicitly remain nonfinalizing.
+No retry, replacement claim, or synthetic release receipt can upgrade attempt
+2 without violating once-only finalization.
+
+Attempt 3 must freeze a lifecycle-only repair: codify exact-owned post-report
+EngineCore teardown, preinstall a host-local detached finalizer with empty CVD
+and no SSH ancestry/inherited transport FDs, prove the launching SSH identity
+gone before creating the one-shot claim, retain the original deadline, and run
+the complete queue -> CVD -> GPU -> CVD -> group chain with no generic sshd
+exception. If clean it can recover the narrow exploratory C0 label, but the
+known fixed panel makes it lifecycle validation, not an independent replicate;
+final C11 still needs fresh sealed material and the full prospective guard.
