@@ -1,4 +1,13 @@
-## Current superseding snapshot — 2026-09-13 05:04 UTC
+## Current superseding snapshot — 2026-09-13 05:12 UTC
+
+Reflection launched node3GPU0 PID328732,05:12:20UTC;3600scontroller/180scollection,
+two cold fits and144readout calls, no outcomes yet.102CPU/native encoding and
+21launcher fixtures accepted; all exact pins in HANDOFF/protocol/launch receipt.
+Three full-dose writer roots remain live node2GPU0/1/2, no endpoint claim.
+New excludedDEV two-sleep public-record CPU core assigned to Curie; SEQ129
+manuscript edits in independent review. Simple hygiene now, C11guard deferred.
+
+## Historical superseded snapshot — 2026-09-13 05:04 UTC
 
 Q0 full-dose three roots LIVE on node2 GPUs0/1/2, controllers4012737/4012889/
 4013072, started05:00:47/05:01:11/05:01:26UTC,10800s/root,9GPU-hours total.

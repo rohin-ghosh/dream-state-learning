@@ -9257,3 +9257,25 @@ why all-four per-row first-step improvement is not guaranteed by the mean
 objective; old failed label remains, new full-dose protocol unchanged. Watcher
 M1/L2 release-ladder proposals are advisory, not new mandatory launch gates.
 Main continues toward a small excluded-DEV closed loop with simple hygiene.
+
+## [Builder] 2026-09-13T05:12Z — reflection comparison launched; small L2 core assigned
+
+Launched node3GPU0 controller PID=PGID328732,start_ticks9224944 at
+05:12:20.211208UTC. Exact root/reflection runtime/plan in prospective protocol;
+stdout /tmp/astra_reflection_fit_20260913_attempt1.controller.log.
+Launcher56fef18c passed21Main CPU mocks0.262s and fresh native vacancy check;
+zero compute PIDs/reservations/unresolved same-user processes. Lease gate
+requires completion+collection+extra40s reserve at least6hours before expiry,
+rechecked after allocation scan.3600s controller ceiling/180s separate collection.
+Receipt astra_reflection_launch_receipt_20260913_attempt1.json archived. No
+scientific result yet; no duplicate launch, kill, or final-C11 guard expansion.
+
+Curie owns ONLY new organism_v6/l2_public_record_dev.py and matching tests,
+plus /tmp handoff: pure CPU excluded-DEV two-wake/two-SLEEP public-record core.
+Fresh opaque binary world, child-authored publicly supported action targets,
+PROMOTE/SHADOW and explicitly marked misbinding control; branch-local old+new
+replay, no teacher-generated target and no hidden report access. Main selects
+native recipe/runtime after acceptance. This is an exploratory base-start
+loop, not an automatic qualified-birth release or successful parenting claim.
+Galileo completed six-file SEQ129 manuscript patch; Carver independently reviews
+it. Noether monitors exact node2 controllers read-only; Main retains all mutations.

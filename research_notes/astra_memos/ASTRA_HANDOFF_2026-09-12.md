@@ -1,6 +1,27 @@
-# Astra current handoff — 2026-09-13T05:04Z
+# Astra current handoff — 2026-09-13T05:12Z
 
-## CURRENT — September13 05:04UTC
+## CURRENT — September13 05:12UTC
+
+Reflection LIVE node3GPU0 PID=PGID328732/start_ticks9224944, launched
+05:12:20.211208UTC,3600scontroller ceiling plus180s separate collection.
+Root `/localhome/local-rohing/astra_diagnostics/reflection_fit_20260913_attempt1`;
+runtime `/tmp/astra_reflection_fit_run_20260913.py` hash0f79efa1;
+plan098d023ab4ac01976370bcd3e1d2ce1992e7636cb04edf8cb96a9546d7c03e1f.
+External stdout `/tmp/astra_reflection_fit_20260913_attempt1.controller.log`.
+102CPU tests/native-tokenizer accepted,21launcher mocks/fresh vacancy passed.
+No result yet. Only collect after capture_complete.json and all releases;
+never retry started root. Protocol ASTRA_REFLECTION_PROTOCOL_2026-09-13.md.
+
+Three node2 full-dose writer controllers below remain live, R0 reached AUTH fit
+after audit/OFF receipts. Noether01a09926-ebb6-71e1-8245-3c62bbc24eda owns
+read-only120s monitoring to /tmp/astra_q0_fulldose_monitor_20260913_attempt1.jsonl.
+Curie01a0990e-a43b-7921-b656-ca353a1d5ece owns new l2_public_record_dev.py/tests:
+CPU-only base-start public-record two-sleep exploratory loop, no native launch.
+Galileo's six-file SEQ129 patch awaits Carver's independent review; do not stage
+unrelated dirty gpu/codex/dream_state.rules. Fable alone onboards A100; unverified.
+Simple hygiene; final-C11 guard deferred. Mission incomplete.
+
+## Historical superseded snapshot — September13 05:04UTC
 
 Three Q0 full-dose controllers LIVE on node2 GPUs0/1/2: PID=PGID4012737,
 4012889,4013072; starts05:00:47/05:01:11/05:01:26UTC;10800seconds each,
