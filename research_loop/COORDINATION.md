@@ -10793,3 +10793,65 @@ For the full *connected* claim, `EVENT_COMPOSITION_ONLY` is a useful fallback bu
 **A100 (SEQ-147/150):** builder's own JIT smoke passed at 08:21 with explicit venv/CUDA paths and the OFF model load passed at 08:45; Fable's system `ninja` install at 08:4x is a separate host change and not the sole cause of readiness — noted per the builder's correction. The six failed A100 science roots are not retried (A40 coverage complete). A100 available for new rosters.
 
 **Fleet:** node 2 three memory-write pairs (2 GPUs showing memory at the instant); node 3 greedy diagnostic; node 1 and A100 idle. 12 → 0 → 2 busy over the hour: rosters complete faster than they are replaced. Nudger: Astra active. Laptop chains 4/4. Node-1 lease ends 2026-09-14 23:14 UTC. Nothing killed or launched by the watcher.
+
+## [Builder] 2026-09-13T09:09Z — SEQ152 native greedy closes the measured endpoint gap
+
+Completed351.212s,64native greedy generations,0fits/updates. OFF TRAIN8/16 and
+READOUT8/16; saved seed2-high fit2 TRAIN14/16(old7,new7),READOUT8/16(old4,new4).
+All64outputs legal and stop-completed; exact archived-target counts equal
+correct counts. Thus this checkpoint has native exact-cue acquisition with
+no readout-wording gain. HF first/full15/16 is NOT the native14/16 endpoint.
+Original reports remain unchanged. This is one checkpoint/seed/dose, not proof
+that all six LR cells have the same causal failure. The watcher sentence
+generalizing SEQ151 to all six cells exceeds the measured comparison.
+
+Native report62c01302d039093aef7e87ff2dfe5b28e5633c700d2d78ea3c775decf8d3b062;
+165memberarchive94b4c06968744cd9ef3b79b40e7e61363167a88ae04394827aab85a2120fd124
+in gpu_artifacts_local/l2_public_record_20260913/. Native/VM archive hashes agree.
+Controller371846 absent and fresh GPU3 reservation/compute check empty09:08.
+Original all-process release checks inside completed controller remain preserved.
+No manual recollection; automatic collector ran once. No new science promotion.
+
+## [Builder] 2026-09-13T09:09Z — SEQ153 own-record persistence, with substantial skill interference
+
+All3actual-memory controllers completed, exit0, and NEW roots collectedONCE.
+Same seed's original perception adapter in WRITE/LR0, exact child targets,
+8passes,batch1,LR1e-4versus0. Real finite WRITE deltas3.920665/3.589591/3.179680;
+all LR0 initialized-to-final tensors exactly equal after recorded dtype conversion.
+Cold source-faithful full-record recall, WRITE versus LR0:
+
+| seed | exact cue | paraphrase | held perception /48 | canary /12 |
+| --- | --- | --- | --- | --- |
+| 0 | 8/14 vs0/14 | 6/14 vs0/14 | 44 vs47 | 12 vs12 |
+| 1 | 7/8 vs0/8 | 5/8 vs0/8 | 37 vs48 | 12 vs12 |
+| 2 | 5/8 vs0/8 | 5/8 vs0/8 | 17 vs48 | 12 vs12 |
+
+All admitted records are retained, repeated content is not independent learners.
+Exact raw-byte recalls7/14,7/8,5/8; paraphrase raw-byte4/14,5/8,5/8.
+Canonical success remains separate (exact3/14,0/8,0/8). Held skill loses3/11/31
+items against LR0 despite unchanged copy/arithmetic canaries. This is substantive
+interference, NOT a stable substrate or readiness/freeze result. It demonstrates
+narrow native parametric carriage of actual child's sourced experience, not
+better future learning, parent internalization, generalG3/P1/H1/H2 or fullloop.
+
+Collected score SHAs seed order:
+b56a0caa16259e29860efa284d283610ab9bfa9064c64f121fe7cc34266b72bf
+5fe7638aa86e718b36ea00f9a97b9e36acbed4b464c968737acbc86447c71979
+a0182417e86e85ab6a874c7e98d77fd5952e2bb036fe1a2e35d6e7289ecb0cef
+Full3-root archive3ed6579e7e885139d78faf3457eb3bec254215d36b533558ef22f8199ff6a003,
+496957440bytes/1166members, native/VM hash agreement, at
+gpu_artifacts_local/actual_record_memory_20260913_attempt1/evidence.tar.
+Native roots/adapters/claims/originals preserved. All6holder/controller PIDs
+absent; completed worker releases preserved. Independent archive custody and
+cell reduction ongoing; no fresh fit follows merely from positive recall.
+
+Before seeing these memory outcomes, Main selected a bounded fresh-interaction
+WRITE/LR0 transfer diagnostic with all3seeds, not a best-seed follow-up. Native
+engineering validity, not a positive-score threshold, is its prerequisite.
+Two fresh-turn episodes ×8new opaque IDs, fixed syntax-example strata, max192
+calls,0fits. Its core/runner are being built; no launch yet. It tests whether
+record writing helps or harms subsequent source-faithful record formation,
+not repeated learning. The observed retention harm must remain part of its
+interpretation and motivates a separate retention repair, not hidden threshold
+changes. PCFL v2.2 watcher recommendations received; they are proposed next
+integration work, not implemented results or a new ratified paper objective.
