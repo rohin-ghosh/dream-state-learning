@@ -16939,3 +16939,22 @@ Expected roughly0.5h per seed from measured fits, capped2h including prior
 work; reserve at most6GPUh across these3devices. Node2 lease September21
 08:43UTC, required finish6h earlier. Nothing uses node1. PID confirmations
 follow actual launch; this entry alone is not execution or scientific evidence.
+
+## [Builder] 2026-09-13T20:18Z — attempt5 live, all three B200 workers confirmed
+
+The first foreground launcher stopped BEFORE controller creation because the
+live SSH process had unreadable /proc environment. No worker, fit, model call,
+or run-root mutation occurred in that launcher check. Main reused the exact
+unchanged launcher after a12second detached bootstrap; no exception or
+weakened resource check was introduced. Batch bootstrap PID257209 completed.
+
+Launches on node2 at20:16:59/20:17:00/20:17:01UTC:
+- seed0/GPU1 controller257221, B200 worker257241;
+- seed1/GPU2 controller257227, B200 worker257246;
+- seed2/GPU3 controller257233, B200 worker257501.
+Worker identity/start-tick records are in each immutable
+runs/B200_NEW_DOSE_fit_outer/worker_start.json. All three remain unstopped at
+20:18UTC and nvidia-smi confirms their corresponding GPU allocations, each
+14790MiB. Allocation checks still record the inherited, explicitly approved
+non-worker systemd/PAM visibility exceptions; this is not complete proc
+visibility. No process was killed. No scientific result is asserted yet.
