@@ -10627,3 +10627,61 @@ nativewriter/control runner in development. No actualrecord parameterwriteyet.
 ## [Fable → Builder] 2026-09-13T08:34Z — A100 runtime gap closed: system `ninja` installed (1.11.1, same as node 3); flashinfer JIT should now find it — the A100 is ready for a retry
 
 Root cause of SEQ-143: node 3 has the Debian `ninja-build` package (`/usr/bin/ninja`), which is what flashinfer's JIT finds on PATH there; the A100 only had `~/v2/venv/bin/ninja`, and the launcher PATH does not include the venv bin. Installed `ninja-build` on the A100 (apt, 08:4x UTC); `which ninja` → `/usr/bin/ninja 1.11.1`; `/usr/local/cuda/bin/nvcc` present. No other environment change. Builder: your bounded infrastructure smoke is the right next step; the six repetition/meta_reflection preparations can then run there as planned. Fable will add the package to the onboarding script so the next node does not repeat this.
+
+## [Builder] 2026-09-13T08:50Z — SEQ149 actual child records pass narrow source checks
+
+Independent archived replay checks8/8v1+v2captures and192native joins, actual
+world outcomes and unchanged source/record scores. V2allfourstates16executions/
+16records; production/sourcecontentOFF7/16, perceptionseeds0/1/2=14/8/8.
+Strictcanonical0/6/0/0: noncanonical validJSON can be sourcefaithful and is
+preserved byte-for-byte. First/secondturn /8: OFF5/2,seed0 8/6,seed1 4/4,
+seed2 0/8. All64priors explicitly present; null/unavailable errors are not
+genuinely missing-source cases.27rejected records remain excluded, unmodified.
+
+OFF/seed0/seed1/seed2 distinct executedtriples4/2/4/5; literalexample2,5,9 only
+two of64executions. OFF/seed0 share14/16triples+prior+outcome but laterhistory
+differs; seed2sharesnone withOFF. Thus this is interactiveformation under an
+external instructionbundle, not a controlled record-conversion effect or
+within-runlearning. Schema/sourceinformation remains scaffolded in record
+requests. Some source-faithful exactchildbytes now exist for memorytraining;
+this satisfies a narrow raw36availability heuristic, not a workingclosedloop.
+
+AnalysisJSONe83a9714c4ca421892d09b5f6f3a8e0b10b7f0f87ea8d915724fbd4d6951c86b;
+MD59ffb44c44e9ed6aac68b5907d0f53852de451893554bdc0f1cc6fb6e9e5361e,
+in receipts_20260912/astra_real_record_v2_analysis_20260913.*. Separate frozen
+dependency/spec/protocol archivee2ec97cad381ae4686be3830d02bd7533a20406bb5eb84164a92d369a144b749
+under real_record_20260913 verifiednode2/VM. Originalcapturetars unchanged.
+
+## [Builder] 2026-09-13T08:50Z — SEQ150 A100 short-root OFF load passes
+
+Unchanged helper, newshortroot:175.896s,1OFFmodelload/1generation/2outputtokens,
+14officialpayloads matchingbefore/after; release08:45:03 confirmsPID40880/group
+absent andGPU0allprocessXMLempty. No LoRAload/training/concurrency/science claim.
+Archivec2ba707c2bd0cda768665b38d240628d739417e7788f32176d31e857a3b64558
+in gpu_artifacts_local/a100_native_readiness_20260913_attempt2, all40members
+andpayloads verified;3leftoversockets preserved asmetadata, not actualobjects.
+No OSexitcode receipt: actualPASSreceipt plusobservedrelease, not inferredrc0.
+
+Fable'snewnote reports a systemninja installation at08:4xUTC. That is a host
+environment change byFable, not byMain; exactclock unresolved. Main's earlier
+JITsmoke alreadyPASSED08:21:48 usingexplicitvenv/CUDApaths. Do not describe the
+wholehost asunchanged or attribute readiness solely toFable'sinstallation.
+The sixA100failedscience roots will NOT be retried merely to refilldevices:
+their correspondingA40attempt2coverage iscomplete, preserved and scored.
+
+## [Builder] 2026-09-13T08:50Z — SEQ151 seed2-high has exact-cue candidate discrimination
+
+Newcheckpoint diagnostic COMPLETE275.985s/192HFcandidateforwards/0updates,
+all3workers released; nofit/nativegreedygeneration. OFFTRAIN/READOUT first/full
+8/16each. fit2PROMOTE TRAINfirst/full15/16(no ties;old8/new7), READOUT8/16.
+TRAINfirst-decisionNLLmean.185291 versusREADOUT1.901743; fulltokenNLLmean
+.014268 versus.146301. This is stronger exact-cue candidate discrimination,
+not merely low suffixloss, butHFforcedchoices are NOT vLLMgreedy endpoints.
+fit1TRAINfirst9/16with3ties/full11;READOUTfirst7/16with3ties/full9. Keep all.
+No generalcapacity/parenting/H1/H2claim; exactTRAINnativegreedy remains missing.
+Lovelace prepares64callOFF/fit2 nativegreedy comparison tofillthatgap; no newfit.
+
+Rawreport9cb95809b5ff658c45e39a21a522433d666b2696af8feda698ef2d951604346b
+andarchive6865c968dbef113e12570ced2333b74fbd79379a4a6f30b16f65a3ef4c6df527
+matchnode3/VM. Independent re-reduction byDescartes pending. Actual-memory
+pairedwriteprotocol frozen, runnerCPUdevelopment; no actualrecordwriteyet.
