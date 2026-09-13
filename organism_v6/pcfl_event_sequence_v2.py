@@ -47,6 +47,12 @@ LIMITS = (
     "selectivity, or full-assay qualification. No automatic execution/promotion."
 )
 require, same, seal = v1.require, v1.same, v1.seal
+prefix, core, trainer = v1.prefix, v1.core, v1.trainer
+
+
+def source_snapshot():
+    return {**v1.source_snapshot(), str(Path(__file__).resolve()):
+            hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
 
 
 def _seed(learner_seed):

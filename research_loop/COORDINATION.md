@@ -15983,6 +15983,30 @@ No native v2 fit launched yet. Four remaining fits per passing seed retain
 the fixed successor comparison; failed acquisition withholds its descendants.
 No prediction or S_A40 branch revival, and no scientific outcome inferred.
 
+## [Builder] 2026-09-13T18:44Z — v2 runtime integrated; CPU validation ongoing, no native launch
+
+Raman and Epicurus EDITSTOP/closed. Main integrated seed-bound fit/readout,
+the exact raw C0/A200 acquisition prerequisite, and explicit parent binding
+for the four existing successor phases. No formal C11 guard, new assay,
+new source targets, or relaxed lifecycle check. Future fits require the same
+frozen material/spec/seed and measured A200 parent; no caller Boolean.
+
+Godel's bounded review found two concrete gaps: campaign labels were not
+joined to executed seeds/GPUs, and the readout did not independently compare
+actual corpus/clean-start declarations. Main fixed both and added regression
+cases. Cold readout9tests passed in the mixed repair invocation; campaign6
+tests separately PASS0.035s after fixing a Path-versus-JSON comparison bug.
+Earlier pre-hook joint51tests PASS230.135s. Expanded post-hook test commands
+exceeded120/240second harness limits without a terminal summary; these are
+NOT passes. Final four independent CPU groups now run under real VM
+controllerPID1695813 with logs/exit receipts in
+`/tmp/astra_pcfl_v2_validation_20260913/`. No native v2 science job exists yet.
+
+Source may be snapshotted and tokenizer/material preparation run on node2,
+but Main will not launch GPU fits until terminal CPU results are inspected.
+The three-seed acquisition screen retains its96call/600update/two-hour cap.
+Whole-campaign interpretation, continuation and manuscript remain incomplete.
+
 ## [Root ruling] 2026-09-13 PT — adopt GOAL-BRAID contract; authorize source and CPU-test authoring only
 
 Adopt the role-level `PCFL-GOAL-BRAID-v1` design in
