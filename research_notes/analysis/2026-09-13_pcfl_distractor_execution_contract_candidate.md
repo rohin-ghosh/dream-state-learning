@@ -213,8 +213,8 @@ Commit exactly: PROBE <probe_id>
 PROBE RESULT
 PROBE {SELECTED_PROBE_ID}
 SOURCE {SELECTED_SOURCE_NODE_ID}
-DESTINATION {SELECTED_DESTINATION_NODE_ID}
 PORT {SELECTED_PORT_ID}
+DESTINATION {SELECTED_DESTINATION_NODE_ID}
 ```
 
 `SINGLETON_EXPLORE_TASK` is the already-registered EXPLORE template with one
@@ -231,7 +231,7 @@ EXPLORE <source> <port>
 `PUBLIC_EXECUTED_EVENT_RECEIPT`:
 
 ```text
-PUBLIC RECEIPT
+EXECUTION RECEIPT
 RECEIPT {RECEIPT_ID}
 SOURCE {SOURCE_NODE_ID}
 PORT {PORT_ID}
@@ -403,30 +403,47 @@ The probe result itself is **not** an executed-event receipt, receives no
 `R_` ID, and cannot support an EVENT or LINK commitment. Only a valid
 `EXPLORE` of the revealed relevant port creates `r8` and `e8`.
 
-Each internal trace record has this closed envelope:
+The private custody record for that result is:
 
 ```text
-TraceRecord = {
-  record_kind:{PROBE_COMMIT|PROBE_RESULT|EXPLORE_COMMIT|PUBLIC_RECEIPT|
-               CHILD_GENERATION|ADMISSION|TERMINAL},
-  root_skeleton_hash:SHA256,
-  branch_id:{PREOUTCOME|OLD|R0|R1|D0|D1},
-  sequence:nonnegative integer,
-  exact_bytes_utf8:UTF8,
-  exact_bytes_sha256:SHA256,
-  previous_trace_sha256:SHA256-or-null,
-  trace_sha256:SHA256
+ProbeResultCustody = {
+  root_skeleton_hash:SHA256, cell_id:SHA256,
+  branch_id:{R0|R1|D0|D1}, selected_probe_id:QID,
+  committed_probe_generation_sha256:SHA256,
+  public_result_sha256:SHA256, terminal_after_result:boolean,
+  custody_sha256:SHA256
 }
 ```
 
-`trace_sha256` hashes the canonical record without its own field. Sequence is
-strictly increasing by one and `previous_trace_sha256` equals the immediately
-preceding record hash. The common PROBE commitment is `PREOUTCOME`. The first
-R0/R1 or D0/D1 result record has that one common commitment hash as its
-predecessor; each then forms an independent chain. The ordinary public `r8`
-receipt additionally carries internal `stage=NEW`, `turn=0`, its branch
-identity, and the hash of the immediately preceding EXPLORE record; only the
-exact public receipt projection above is shown to the model.
+It hashes the canonical object without `custody_sha256`; none of its custody
+fields is model-visible. R0/R1 result records cite the same one sealed
+pre-outcome state and common committed-PROBE generation before forking.
+
+Executed-event receipt custody is a separate, exact chain:
+
+```text
+PublicReceiptInternal = {
+  root_skeleton_hash:SHA256, branch_id:{OLD|R0|R1}, stage:{OLD|NEW},
+  turn:nonnegative integer, receipt_id:RID,
+  source_node_id:NID, port_id:PID, destination_node_id:NID,
+  committed_explore_generation_sha256:SHA256,
+  previous_receipt_sha256:SHA256-or-null,
+  public_visible_sha256:SHA256,
+  receipt_sha256:SHA256
+}
+```
+
+`receipt_sha256` hashes the canonical record without its own field. OLD
+receipts are one stage-local chain: `r0` has `turn=0` and null predecessor;
+for `i=1..7`, `ri.turn=i` and `ri.previous_receipt_sha256` equals the complete
+hash of `r(i-1)`. Each sterile R continuation starts a fresh NEW chain: `r8`
+has `turn=0` and null predecessor. R0 and R1 may reuse the same prepared `R_`
+address because they are mutually exclusive counterfactual branches, but
+their receipt/public hashes differ when `q_R` differs and neither may cite the
+other. `committed_explore_generation_sha256` separately proves that each
+receipt is downstream of the exact source-qualified action that caused it.
+Only the exact four-field public receipt projection above is shown to the
+model.
 
 An admitted `EVENT e8` must cite exactly the visible `r8`, occur after that
 receipt, and copy its `H`, `q_R`, and `S_R` IDs byte-for-byte. Exact evidence
