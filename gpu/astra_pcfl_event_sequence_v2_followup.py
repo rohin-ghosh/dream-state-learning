@@ -5,6 +5,7 @@ explicitly nonnative runtime; they are not acquisition or GPU evidence.
 """
 
 import argparse
+import ast
 import hashlib
 import importlib
 import json
@@ -15,6 +16,7 @@ import time
 from types import SimpleNamespace
 
 SOURCE = Path('/tmp/astra_pcfl_sequence_v2_source_20260913_attempt2')
+REPAIR_SOURCE = Path('/tmp/astra_pcfl_sequence_v2_source_20260913_warmfix1')
 PHASES = ('B200_NEW_DOSE', 'B400_FIXED_WORK', 'REPLAY400', 'CLEAN_CUM600')
 COUNTS = dict(fits=4, updates=1600, presentations=6400, calls=64,
               initial_updates=200, total_updates=1800)
@@ -36,19 +38,61 @@ def checked(binding):
     return json.loads(Path(binding['path']).read_bytes())
 
 
+def validate_repair(original, replacement):
+    trees = [ast.parse(Path(path).read_bytes()) for path in (original, replacement)]
+    for tree in trees:
+        functions = [node for node in tree.body if isinstance(node, ast.FunctionDef) and node.name == 'validate_warm_tensors']
+        require(len(functions) == 1, 'single warm validator required')
+        functions[0].body = [ast.Pass()]
+    require(ast.dump(trees[0]) == ast.dump(trees[1]), 'repair changed code outside warm validator')
+
+
 def load_runtime(source_root):
     root = Path(source_root)
-    require(root == SOURCE and root.resolve() == root and root.is_dir(), 'explicit immutable source root required')
+    require(root in (SOURCE, REPAIR_SOURCE) and root.resolve() == root and root.is_dir(), 'explicit immutable source root required')
+    repair = None
+    if root == REPAIR_SOURCE:
+        receipt = pin(root / 'warm_repair.json')
+        repair = checked(receipt)
+        require(repair['schema'] == 'pcfl.event_sequence.v2.warm_repair.v1'
+                and repair['original_root'] == str(SOURCE) and repair['source_root'] == str(root), 'repair root identity')
+        relative = 'gpu/astra_pcfl_event_sequence_v2_fit.py'
+        require(repair['original'] == pin(SOURCE / relative)
+                and repair['replacement'] == pin(root / relative), 'repair source identity')
+        require(repair['scope'] == 'validate_warm_tensors_only', 'validation-only repair required')
+        validate_repair(repair['original']['path'], repair['replacement']['path'])
+        for path in SOURCE.rglob('*'):
+            if path.is_file() and '__pycache__' not in path.parts and path.relative_to(SOURCE).as_posix() != relative:
+                alias = root / path.relative_to(SOURCE)
+                require(alias.is_symlink() and alias.resolve() == path.resolve(), 'immutable source alias mismatch')
+        repair = {**repair, 'receipt': receipt}
     sys.dont_write_bytecode = True
     for name, module in tuple(sys.modules.items()):
         if name.split('.')[0] in ('gpu', 'organism_v6') and getattr(module, '__file__', None):
-            require(Path(module.__file__).resolve().is_relative_to(root), 'preloaded runtime source mismatch; use standalone script')
+            require(Path(module.__file__).resolve().is_relative_to(SOURCE)
+                    or (repair is not None and Path(module.__file__).resolve() == Path(repair['replacement']['path'])),
+                    'preloaded runtime source mismatch; use standalone script')
     sys.path.insert(0, str(root))
     runtime = SimpleNamespace(**{name: importlib.import_module('gpu.astra_pcfl_event_sequence_v2_' + name)
                                  for name in ('fit', 'readout', 'outer', 'acquisition', 'campaign')})
     for module in vars(runtime).values():
-        require(Path(module.__file__).resolve().is_relative_to(root), 'runtime source mismatch')
+        require(Path(module.__file__).resolve().is_relative_to(SOURCE)
+                or (repair is not None and Path(module.__file__).resolve() == Path(repair['replacement']['path'])), 'runtime source mismatch')
+    if repair is not None:
+        require(Path(runtime.fit.__file__).resolve() == Path(repair['replacement']['path']), 'patched fit was not loaded')
+    runtime.repair = repair
     return runtime
+
+
+def original_sources(sources, runtime):
+    repair = getattr(runtime, 'repair', None)
+    if repair is None:
+        return sources
+    original, replacement = repair['original'], repair['replacement']
+    require(sources.get(replacement['path']) == replacement['sha256'] and original['path'] not in sources,
+            'exact single repaired source required')
+    return {**{path: checksum for path, checksum in sources.items() if path != replacement['path']},
+            original['path']: original['sha256']}
 
 
 def budget(initial, started, allocation):
@@ -73,8 +117,9 @@ def prepare(args, runtime):
     require(trained['gpu_uuid'] == cold['gpu_uuid'] == allocation['gpu_uuid'], 'GPU UUID identity mismatch')
     sources = {**runtime.readout.source_files(), **{str(Path(module.__file__).resolve()): pin(module.__file__)['sha256']
                for module in (runtime.outer, runtime.outer.lifecycle)}}
-    require(all(campaign['source_files'].get(path) == checksum for path, checksum in sources.items()), 'campaign source identity mismatch')
-    require(trained['source_files'] == runtime.fit.source_files() and cold['source_files'] == runtime.readout.source_files(), 'input source identity mismatch')
+    require(all(campaign['source_files'].get(path) == checksum for path, checksum in original_sources(sources, runtime).items()), 'campaign source identity mismatch')
+    require(trained['source_files'] == original_sources(runtime.fit.source_files(), runtime)
+            and cold['source_files'] == original_sources(runtime.readout.source_files(), runtime), 'input source identity mismatch')
     require(allocation['outer_sha256'] == pin(runtime.outer.__file__)['sha256'], 'outer source identity mismatch')
     require(runtime.outer.TOTAL_SECONDS == 1800, 'fixed stage cap required')
     require(trained['predecessor'] is None and cold['fit_receipt'] is None, 'original C0/A200 inputs required')
@@ -96,8 +141,12 @@ def prepare(args, runtime):
                 preserve(child)
 
     for path, checksum in sources.items():
-        require(Path(path).resolve().is_relative_to(source), 'runtime source outside immutable root')
+        require(Path(path).resolve().is_relative_to(source)
+                or (getattr(runtime, 'repair', None) is not None and Path(path).resolve().is_relative_to(SOURCE)),
+                'runtime source outside immutable root')
         preserve(dict(path=path, sha256=checksum))
+    if getattr(runtime, 'repair', None) is not None:
+        preserve(runtime.repair['receipt'])
     preserve(pin(runtime.campaign.__file__))
     for value in (entry, trained, cold):
         preserve(value)
@@ -142,16 +191,20 @@ def prepare(args, runtime):
     runtime.fit.write(root / 'inputs/acquisition_receipt.json', receipt)
     require(receipt['a200_fit_receipt'] == pin(directory / 'fit_outer/fit/completed.json'), 'measured A200 identity mismatch')
     ready = receipt['observed_gate'] is True
+    runtime_cold = {**cold, 'source_files': runtime.readout.source_files()}
+    runtime.fit.write(root / 'inputs/runtime_c0_inputs.json', runtime_cold)
     plan = dict(schema=SCHEMA, status='READY' if ready else 'WITHHELD', seed=args.seed, gpu=args.gpu,
                 source_root=str(source), root=str(root), phases=list(PHASES) if ready else [],
                 counts=COUNTS if ready else {**dict.fromkeys(COUNTS, 0), 'initial_updates': 200, 'total_updates': 200}, initial_outer_seconds=initial,
                 remaining_seconds=7200-initial, originals=originals, entry=entry, pins=pins,
                 acquisition_request=request_pin, acquisition_receipt=pin(root / 'inputs/acquisition_receipt.json'),
+                runtime_c0_inputs=pin(root / 'inputs/runtime_c0_inputs.json'), repair=getattr(runtime, 'repair', None),
                 automatic_promotion=False, no_automatic_retry=True, retention=None, fit_inputs=[])
     if ready:
         budget(initial, time.monotonic(), allocation)
         for phase in PHASES:
             inputs = {**trained, 'acquisition_receipt': request_pin,
+                      'source_files': runtime.fit.source_files(),
                       'predecessor': receipt['a200_fit_receipt'] if phase != 'CLEAN_CUM600' else None}
             runtime.fit.write(root / f'inputs/{phase}_inputs.json', inputs)
             plan['fit_inputs'].append(pin(root / f'inputs/{phase}_inputs.json'))
@@ -169,12 +222,13 @@ def run(args, runtime):
     require(not any((root / name).exists() for name in ('started.json', 'stopped.json', 'completed.json')), 'already started; no resume')
     require(not any((root / f'runs/{phase}_{stage}_outer').exists() for phase in PHASES for stage in ('fit', 'readout')), 'already-existing stage output')
     entry, results, started = plan['entry'], [], time.monotonic()
-    allocation, cold = checked(entry['allocation']), checked(entry['c0_inputs'])
+    allocation, cold = checked(entry['allocation']), checked(plan['runtime_c0_inputs'])
+    require(plan['repair'] == getattr(runtime, 'repair', None), 'runtime repair identity mismatch')
     runtime.fit.write(root / 'started.json', dict(manifest=manifest_pin, started_at=time.time()))
     try:
         for phase, fit_pin in zip(PHASES, plan['fit_inputs']):
             for stage in ('fit', 'readout'):
-                for binding in [manifest_pin, *plan['pins'], *plan['fit_inputs'], plan['acquisition_request'], plan['acquisition_receipt']]:
+                for binding in [manifest_pin, *plan['pins'], *plan['fit_inputs'], plan['acquisition_request'], plan['acquisition_receipt'], plan['runtime_c0_inputs']]:
                     require(pin(binding['path']) == binding, 'pinned provenance drift')
                 inputs = checked(fit_pin)
                 receipt = runtime.acquisition.validate(plan['acquisition_request'], checked(entry['material']), inputs)

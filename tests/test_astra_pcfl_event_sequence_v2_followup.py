@@ -292,6 +292,70 @@ class FollowupTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'immutable source'):
             api.load_runtime(self.args.source_root)
 
+    def test_validation_only_ast_boundary(self):
+        original, replacement = self.base / 'old.py', self.base / 'new.py'
+        original.write_text('import math\ndef validate_warm_tensors(warm, trainable):\n    return False\n')
+        replacement.write_text('import math\ndef validate_warm_tensors(warm, trainable):\n    return True\n')
+        api.validate_repair(original, replacement)
+        replacement.write_text('import os\ndef validate_warm_tensors(warm, trainable):\n    return True\n')
+        with self.assertRaisesRegex(ValueError, 'outside warm validator'):
+            api.validate_repair(original, replacement)
+        replacement.write_text('import math\ndef other():\n    return True\n')
+        with self.assertRaisesRegex(ValueError, 'single warm validator'):
+            api.validate_repair(original, replacement)
+
+    def repaired_runtime(self):
+        source = Path(self.args.source_root)
+        replacement = self.base / 'REPAIRED_NONNATIVE_SOURCE/gpu/fit.py'
+        replacement.parent.mkdir(parents=True)
+        replacement.write_text('NONNATIVE REPAIRED PLACEHOLDER\n')
+        original = api.pin(self.runtime.fit.__file__)
+        repair = dict(original=original, replacement=api.pin(replacement), scope='validate_warm_tensors_only')
+        receipt = replacement.parent.parent / 'warm_repair.json'
+        write(receipt, repair)
+        self.runtime.repair = {**repair, 'receipt': api.pin(receipt)}
+        self.runtime.fit.__file__ = str(replacement)
+        self.runtime.fit.source_files = lambda: {str(replacement): api.pin(replacement)['sha256']}
+        readout = self.runtime.readout.__file__
+        self.runtime.readout.source_files = lambda: {**self.runtime.fit.source_files(), readout: api.pin(readout)['sha256']}
+        self.args.source_root = str(replacement.parent.parent)
+        return source, replacement
+
+    def test_repaired_runtime_preserves_original_material_and_parent(self):
+        original_source, replacement = self.repaired_runtime()
+        before = inventory(self.campaign)
+        with patch.object(api, 'SOURCE', original_source):
+            plan = self.prepare()
+            api.run(self.args, self.runtime)
+        self.assertEqual(inventory(self.campaign), before)
+        self.assertEqual(len(self.calls), 8)
+        for selection, inputs in self.calls:
+            self.assertEqual(inputs['material'], self.entry['material'])
+            self.assertIn(str(replacement), inputs['source_files'])
+        self.assertEqual(plan['originals'][0], api.pin(self.runs / 'fit_outer/collection.json'))
+
+    def test_repair_pin_drift_refuses_run(self):
+        original_source, replacement = self.repaired_runtime()
+        with patch.object(api, 'SOURCE', original_source):
+            self.prepare()
+        replacement.write_text('NONNATIVE DRIFT\n')
+        with self.assertRaisesRegex(ValueError, 'provenance drift'):
+            api.run(self.args, self.runtime)
+        self.runtime.outer.controller.assert_not_called()
+
+    def test_repair_cannot_hide_unrelated_source_change(self):
+        original_source, replacement = self.repaired_runtime()
+        readout = Path(self.runtime.readout.__file__)
+        readout.write_text('UNRELATED DRIFT\n')
+        with patch.object(api, 'SOURCE', original_source):
+            with self.assertRaisesRegex(ValueError, 'campaign source identity'):
+                self.prepare()
+
+    def test_repaired_source_map_requires_exact_replacement(self):
+        self.repaired_runtime()
+        with self.assertRaisesRegex(ValueError, 'exact single repaired'):
+            api.original_sources({}, self.runtime)
+
 
 if __name__ == '__main__':
     unittest.main()

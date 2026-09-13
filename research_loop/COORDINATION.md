@@ -16381,3 +16381,44 @@ screen itself.
 **Composition birth:** Stage 2A bound to CLOSED vs ATOM-LOCAL (same 256 supervised decisions and dose, embedded in authentic accumulated histories vs separately reset locally sufficient vignettes), replacing the impossible LINKED/UNLINKED contrast; direct goal / returned-relation / outcome / terminality interventions must each flip the matching SEEK / PROSPECT / CHECK / CONTINUE-STOP decision; gold prefixes may not reveal future READ/STEP; held tasks make exhaustive READ impossible. Design binding only; Stages 3–6 numbers invalid until rebound.
 
 **Fleet:** node 2 GPU (UUID-bound) busy with the acquisition fit; 31 other GPUs idle. Daemons: astra_nudge=1 fable_fill=1 courier=1 occ_off=yes. Laptop chains 4/4 (courier, lease_hunter, two onboard_at timers; an earlier pgrep count in this entry matched its own shell and was corrected twice). Node-1 mirror: last incremental 15:02 UTC; final incremental due before 09-14 23:14 UTC. Nothing launched or killed by the watcher.
+## [Builder] 2026-09-13T19:10Z — acquisition resumed; warm receipt repair is a concrete blocker
+
+Reconciled actual node2 controller233271 in attempt5: seed0 fit/NO_WRITE/A200
+released; seed1 fit released. Original attempt4 failed before any worker.
+Frozen scientific source71adf462 remains untouched. The independently found
+warm receipt mismatch is real: the validator requires conversion entries for
+every tensor, while `_warm_initialize` records only actual conversions.
+A200 is unaffected. No warm descendant has launched; Raman owns the narrow
+validator repair and real writer-receipt CPU regression. Main owns explicit
+versioned compatibility and followup orchestration. Hubble owns final raw
+descendant reduction only. Formal C11 guard remains deferred per Rohin;
+this repair addresses a runtime rejection, not an added scientific gate.
+
+Seed0 raw reducer executed against original pinned collections. At both W0
+and W8: C0 A0/4 B0/4; A200 A4/4 B0/4, no truncations. Acquisition gate TRUE,
+not retention, H1/H2, general G3 or campaign completion. Receipt FILE SHA256
+045aaf1b99cf714752ccc4ce015f570bb0fc803539a61af7eabc5436ad42c0ea at node2
+`pcfl_sequence_v2_acquisition_reduction_seed0_20260913_attempt1/receipt.json`.
+The other optimizer seeds continue regardless of seed0's result. All share
+one authenticated exposed DEV fact bank. Raw evidence transfer still pending.
+## [Builder] 2026-09-13T19:14Z — validation-only warm repair implemented, native CPU check pending
+
+Raman EDITSTOP: only `validate_warm_tensors` changes in the fit implementation;
+sparse actual-conversion maps are accepted while coverage/hash/shape/dtype
+checks remain. Conversions are recomputed from pinned parent tensor bytes.
+Reported22CPUtestsPASS167.755s; the real PEFT warm-initialization class skipped
+on the VM because dependencies are absent. That skip is NOT gate closure.
+Main26followup/overlayCPUtestsPASS0.322s. Next is the real CPU class on node2
+with CUDA hidden, before any warm GPU stage. No change to writer, loss, dose,
+material, parent checkpoint, readout or evaluator.
+
+Compatibility design: a new immutable warmfix1 source overlay contains only
+the patched fit file, with unchanged files symlinked to frozen originals.
+Resolved material source paths/hashes remain exact; no material is re-exported
+or parent receipt rewritten. The operator pins old/new fit files and the
+repair receipt, enforces an AST boundary outside the one validator, and records
+the new loaded fit path. Original acquisition sources stay untouched. Hubble
+is implementing the all-four-state raw reducer in parallel, not launching.
+Seed1 now also passes exact raw acquisition at W0/W8: C0A0B0, A200A4B0,
+all denominators4 and no truncations. Receipt FILE SHA256
+3b0efc7272d83d41e8bc238d35df1f32e151bf90ff055e9f7a84820321ef0cf5.

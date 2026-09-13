@@ -84,21 +84,46 @@ def validate_predecessor(inputs, material, phase, root, config, kind):
 
 def validate_warm_tensors(warm, trainable):
     """Join every saved LoRA tensor to its loaded initialization receipt."""
+    require(warm["initialized_loaded_state_check"] is True, "initialized loaded state check required")
     source, initialized = warm["source_state"], warm["initialized_state"]
     expected = {name.replace(".default.weight", ".weight") for name in trainable}
+    require(bool(expected), "full parent tensor coverage required")
     same(sorted(source), sorted(expected), "full parent tensor coverage differs")
     same(sorted(initialized), sorted(expected), "full initialized tensor coverage differs")
     conversions = warm["dtype_conversions"]
-    same(sorted(conversions), sorted(expected), "full dtype conversion coverage differs")
+    changed = {name for name in expected if source[name]["dtype"] != initialized[name]["dtype"]}
+    same(sorted(conversions), sorted(changed), "actual dtype conversion coverage differs")
     for name in expected:
         before, after = source[name], initialized[name]
         require(name.endswith((".lora_A.weight", ".lora_B.weight")), "non-LoRA tensor receipt")
         native.sha(before["sha256"])
         native.sha(after["sha256"])
         same(before["shape"], after["shape"], "parent tensor shape drift")
-        same(conversions[name], {"source": before["dtype"], "initialized": after["dtype"]}, "dtype conversion binding")
-        if before["dtype"] == after["dtype"]:
+        if name in changed:
+            same(conversions[name], {"source": before["dtype"], "initialized": after["dtype"]}, "dtype conversion binding")
+        else:
             same(before, after, "parent tensor initialization drift")
+    if changed:
+        import torch
+        parent = Path(warm["parent_path"])
+        same(v3._warm_inventory(parent), warm["parent_files"], "parent conversion inventory drift")
+        weights = [name for name in ("adapter_model.safetensors", "adapter_model.bin") if name in warm["parent_files"]]
+        require(len(weights) == 1, "exact parent conversion weights required")
+        if weights[0].endswith(".safetensors"):
+            from safetensors.torch import load_file
+            tensors = load_file(str(parent / weights[0]), device="cpu")
+        else:
+            tensors = torch.load(str(parent / weights[0]), map_location="cpu", weights_only=True)
+        same(v3._warm_state_inventory(tensors), source, "parent conversion source tensor drift")
+        converted = {}
+        for name in expected:
+            dtype_name = initialized[name]["dtype"]
+            require(isinstance(dtype_name, str) and dtype_name.startswith("torch."), "initialized tensor dtype")
+            dtype = getattr(torch, dtype_name.removeprefix("torch."), None)
+            require(isinstance(dtype, torch.dtype), "initialized tensor dtype")
+            converted[name] = tensors[name].to(dtype=dtype, device="cpu")
+        same(v3._warm_state_inventory(converted), initialized, "converted parent tensor initialization drift")
+        same(v3._warm_inventory(parent), warm["parent_files"], "parent conversion inventory drift")
 
 
 def run_phase(inputs_path, inputs_sha256, output, deadline, *, phase="A200", device="cuda",

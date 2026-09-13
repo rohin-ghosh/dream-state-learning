@@ -1,7 +1,8 @@
-"""Injected CPU orchestration only: no model, tensors, GPU, or native training."""
+"""Injected orchestration and real tiny-model CPU warm-initialization tests."""
 
 import copy
 from dataclasses import asdict
+import importlib.util
 import json
 import os
 from pathlib import Path
@@ -384,7 +385,7 @@ class FitTests(unittest.TestCase):
         names = ["layer.lora_A.default.weight", "layer.lora_B.default.weight"]
         tensors = {name.replace(".default", ""): {"sha256": "a" * 64, "shape": [8, 8], "dtype": "torch.float32"} for name in names}
         receipt = {"source_state": copy.deepcopy(tensors), "initialized_state": copy.deepcopy(tensors),
-                   "dtype_conversions": {name: {"source": "torch.float32", "initialized": "torch.float32"} for name in tensors}}
+                   "dtype_conversions": {}, "initialized_loaded_state_check": True}
         fit.validate_warm_tensors(receipt, names)
         receipt["initialized_state"]["layer.lora_B.weight"]["sha256"] = "b" * 64
         with self.assertRaisesRegex(ValueError, "initialization drift"):
@@ -392,3 +393,161 @@ class FitTests(unittest.TestCase):
         receipt["source_state"].pop("layer.lora_B.weight")
         with self.assertRaisesRegex(ValueError, "coverage"):
             fit.validate_warm_tensors(receipt, names)
+
+
+class TorchConversionValidationTests(unittest.TestCase):
+    """Real CPU tensor arithmetic/serialization, not initializer-path evidence."""
+
+    @classmethod
+    def setUpClass(cls):
+        if importlib.util.find_spec("torch") is None:
+            raise unittest.SkipTest("tensor conversion regression requires local CPU torch")
+
+    def receipt(self):
+        import torch
+        temporary = tempfile.TemporaryDirectory(prefix="pcfl-v2-conversion-")
+        self.addCleanup(temporary.cleanup)
+        parent = Path(temporary.name)
+        tensors = {"layer.lora_A.weight": torch.arange(8, dtype=torch.bfloat16).reshape(2, 4),
+                   "layer.lora_B.weight": torch.arange(8, dtype=torch.float32).reshape(4, 2)}
+        torch.save(tensors, parent / "adapter_model.bin")
+        converted = {name: tensor.to(torch.float32) for name, tensor in tensors.items()}
+        return {"source_state": fit.v3._warm_state_inventory(tensors),
+                "initialized_state": fit.v3._warm_state_inventory(converted),
+                "dtype_conversions": {name: {"source": str(tensor.dtype), "initialized": str(converted[name].dtype)}
+                                      for name, tensor in tensors.items() if tensor.dtype != converted[name].dtype},
+                "initialized_loaded_state_check": True, "parent_path": str(parent),
+                "parent_files": fit.v3._warm_inventory(parent)}, [name.replace(".weight", ".default.weight") for name in tensors]
+
+    def test_partial_conversion_recomputed_from_real_parent_tensor_bytes(self):
+        receipt, names = self.receipt()
+        fit.validate_warm_tensors(receipt, names)
+        self.assertEqual(len(receipt["dtype_conversions"]), 1)
+        self.assertEqual(fit.v3._warm_inventory(receipt["parent_path"]), receipt["parent_files"])
+
+    def test_sparse_map_and_converted_hash_source_shape_dtype_or_flag_drift_rejected(self):
+        receipt, names = self.receipt()
+        changed, unchanged = "layer.lora_A.weight", "layer.lora_B.weight"
+        mutations = [lambda value: value["dtype_conversions"].pop(changed),
+                     lambda value: value["dtype_conversions"].update({unchanged: {"source": "torch.float32", "initialized": "torch.float32"}}),
+                     lambda value: value["dtype_conversions"][changed].update(source="torch.float16"),
+                     lambda value: value["initialized_state"][changed].update(sha256="0" * 64),
+                     lambda value: value["source_state"][changed].update(sha256="0" * 64),
+                     lambda value: value["initialized_state"][changed].update(shape=[1, 8]),
+                     lambda value: value["initialized_state"][changed].update(dtype="torch.float64"),
+                     lambda value: value["initialized_state"].pop(unchanged),
+                     lambda value: value.update(initialized_loaded_state_check=False),
+                     lambda value: value.update(initialized_loaded_state_check=1)]
+        for index, mutate in enumerate(mutations):
+            altered = copy.deepcopy(receipt)
+            mutate(altered)
+            with self.subTest(mutation=index), self.assertRaises(ValueError):
+                fit.validate_warm_tensors(altered, names)
+        (Path(receipt["parent_path"]) / "adapter_model.bin").write_bytes(b"drift")
+        with self.assertRaisesRegex(ValueError, "inventory drift"):
+            fit.validate_warm_tensors(receipt, names)
+
+
+class RealWarmInitializationTests(unittest.TestCase):
+    """Real CPU Qwen2/PEFT initialization and serialization; no mocked loader."""
+
+    @classmethod
+    def setUpClass(cls):
+        missing = [name for name in ("torch", "peft", "transformers", "safetensors")
+                   if importlib.util.find_spec(name) is None]
+        if missing:
+            raise unittest.SkipTest("real warm initialization requires local dependencies: " + ", ".join(missing))
+
+    def initialize(self, converted_count=0):
+        import torch
+        from peft import get_peft_model, get_peft_model_state_dict
+        from safetensors.torch import load_file, save_file
+        from transformers import Qwen2Config, Qwen2ForCausalLM
+
+        temporary = tempfile.TemporaryDirectory(prefix="pcfl-v2-real-warm-")
+        self.addCleanup(temporary.cleanup)
+        root = Path(temporary.name)
+        model_path = root / "tiny-local-qwen2"
+        model_path.mkdir()
+        config = fit.v3.TrainConfig(model=str(model_path), rank=2, alpha=4, dropout=.05,
+                                    target_modules=["q_proj", "v_proj"], device="cpu", dtype="fp32")
+
+        def base():
+            model_config = Qwen2Config(vocab_size=32, hidden_size=16, intermediate_size=32,
+                                      num_hidden_layers=1, num_attention_heads=2, num_key_value_heads=1)
+            model_config._attn_implementation = "eager"
+            model_config._name_or_path = config.model
+            return Qwen2ForCausalLM(model_config).to(device="cpu", dtype=torch.float32)
+
+        with torch.random.fork_rng(devices=[]):
+            torch.manual_seed(17)
+            parent_model = get_peft_model(base(), fit.v3.lora_config(config, 1))
+            with torch.no_grad():
+                for name, tensor in parent_model.named_parameters():
+                    if "lora_" in name:
+                        tensor.uniform_(-.25, .25)
+            parent = root / "parent"
+            parent_model.save_pretrained(parent, safe_serialization=True, save_embedding_layers=False)
+            weights = parent / "adapter_model.safetensors"
+            saved = load_file(str(weights), device="cpu")
+            changed = set(sorted(saved)[:converted_count])
+            if changed:
+                saved = {name: tensor.to(torch.bfloat16) if name in changed else tensor for name, tensor in saved.items()}
+                save_file(saved, str(weights))
+            warm = {"parent": parent, "weights": weights, "parent_files": fit.v3._warm_inventory(parent),
+                    "manifest": {"lora": {"n_layers": 1}},
+                    "saved": json.loads((parent / "adapter_config.json").read_text()), "cumulative_steps": 0}
+            cold = base()
+            original_base = [(tensor, tensor.detach().clone()) for tensor in cold.parameters()]
+            model, receipt = fit.v3._warm_initialize(cold, config, warm)
+        loaded = get_peft_model_state_dict(model, save_embedding_layers=False)
+        self.assertEqual(set(receipt["dtype_conversions"]), changed)
+        self.assertIs(receipt["initialized_loaded_state_check"], True)
+        self.assertTrue(all(tensor.device.type == "cpu" for tensor in model.parameters()))
+        self.assertTrue(all(torch.equal(loaded[name].cpu(), saved[name].to(loaded[name].dtype)) for name in saved))
+        self.assertTrue(all(not tensor.requires_grad and torch.equal(tensor, before) for tensor, before in original_base))
+        self.assertEqual(fit.v3._warm_inventory(parent), warm["parent_files"])
+        return receipt, receipt["trainable_names"]
+
+    def test_actual_same_dtype_receipt_has_empty_conversion_map(self):
+        receipt, names = self.initialize()
+        self.assertEqual(receipt["dtype_conversions"], {})
+        fit.validate_warm_tensors(receipt, names)
+
+    def test_actual_partial_and_full_dtype_conversion_receipts(self):
+        for count in (1, 4):
+            with self.subTest(converted_count=count):
+                receipt, names = self.initialize(count)
+                self.assertEqual(len(receipt["dtype_conversions"]), count)
+                fit.validate_warm_tensors(receipt, names)
+
+    def test_actual_receipt_missing_extra_and_wrong_conversion_entries_rejected(self):
+        receipt, names = self.initialize(1)
+        changed = next(iter(receipt["dtype_conversions"]))
+        unchanged = next(name for name in receipt["source_state"] if name != changed)
+        mutations = [lambda value: value["dtype_conversions"].pop(changed),
+                     lambda value: value["dtype_conversions"].update({unchanged: {"source": "torch.float32", "initialized": "torch.float32"}}),
+                     lambda value: value["dtype_conversions"][changed].update(source="torch.float16")]
+        for mutate in mutations:
+            altered = copy.deepcopy(receipt)
+            mutate(altered)
+            with self.assertRaisesRegex(ValueError, "conversion"):
+                fit.validate_warm_tensors(altered, names)
+
+    def test_actual_receipt_tensor_hash_shape_dtype_coverage_and_flag_drift_rejected(self):
+        for count in (0, 1):
+            receipt, names = self.initialize(count)
+            selected = next(iter(receipt["dtype_conversions"])) if count else next(iter(receipt["source_state"]))
+            mutations = [lambda value: value["source_state"].pop(selected),
+                         lambda value: value["initialized_state"].pop(selected),
+                         lambda value: value["source_state"][selected].update(sha256="0" * 64),
+                         lambda value: value["initialized_state"][selected].update(sha256="0" * 64),
+                         lambda value: value["initialized_state"][selected].update(shape=[1, 1]),
+                         lambda value: value["initialized_state"][selected].update(dtype="torch.float64"),
+                         lambda value: value.update(initialized_loaded_state_check=False),
+                         lambda value: value.update(initialized_loaded_state_check=1)]
+            for index, mutate in enumerate(mutations):
+                altered = copy.deepcopy(receipt)
+                mutate(altered)
+                with self.subTest(converted_count=count, mutation=index), self.assertRaises(ValueError):
+                    fit.validate_warm_tensors(altered, names)
