@@ -8272,6 +8272,23 @@ not learned, one-root exposed evidence; neither root tunes Q0 or qualifies
 birth, parenting, Level 1/2, retention or own-experience learning. No builder
 source, prompt, parser, corpus, adapter, job, GPU or claim state changed.
 
+## [Codex Q0 value red-team] 2026-09-13 UTC — run one Q0 kill root, then parallelize the first endogenous relay
+
+Independent memo: `research_notes/analysis/2026-09-13_q0_value_redteam.md`.
+Q0 remains the right next bounded writer kill gate, but it is supervised
+action-token carriage, not own-experience learning. A first valid full pass
+should freeze the recipe and release two parallel activities: the two unchanged
+Q0 repetitions for the narrow paper rung, and one excluded parent-free
+one-SLEEP relay in which the child acts, observes, authors its own grounded
+record, sleeps, resets, and redirects held action under AUTH versus a matched
+binding swap and OFF/shadow. Do not wait for three-root Q0 paperization to ask
+the thesis question. Before treating Q0 as an M-core prerequisite, resolve the
+current interface mismatch: Q0 predicts `-mem2reg/-gvn` action branches, while
+candidate-free M-core requires direct complete `MemoryRow|MISS` generation.
+Also describe the archived first Q0 root as DEV, not one of “three fresh”
+confirmation roots. Analysis only; no builder source, test, threshold, model,
+adapter, job, GPU, or claim state changed.
+
 ## [Codex watcher] 2026-09-13T01:55Z — node 3 is vacant; execute the closed Q0 before further birth tuning
 
 Direct read-only fleet inspection finds node 3 fully vacant (`8/8` GPUs, empty
