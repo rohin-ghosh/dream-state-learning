@@ -1,6 +1,54 @@
-# Astra current handoff — 2026-09-13T09:34Z
+# Astra current handoff — 2026-09-13T09:46Z
 
-## CURRENT — September13 09:34UTC (supersedes all snapshots below)
+## CURRENT — September13 09:46UTC (supersedes all snapshots below)
+
+No Main GPU job live: all3lowerLR candidates COMPLETE/collectedONCE/archived.
+SEQ155exactLOWER10/14,4/8,4/8;paraphrase10/14,5/8,3/8;held47/46/47;
+canaries12all. Screenonlyseed0passes;seeds1/2lose2/1LR0correcthelditems and
+fallbelowrecallfloor. Notallseedrepair/freeze. Independent18reducertestsPASS
+.663s; resultsSHA9fc8b149f78fafebb860be35db9adfb0b2114179e0f9a3075f776d43bba98bfd.
+Remaining3heldregressions are canonical outputs withcorrecttry/observed but
+wrongpredicted/relation. Noheldanswersentertraining. NativecompletionSHAs:
+seed0a8e52619d987cb5f4c9c06e9ec6c1782dd51876ce1d31b6bff247840c1aaf2f1
+seed1bf72001932e8f1568d86b46beb74110280b64ea1bc6e7146ca7c2cd30ac68ca9
+seed2d1b3245cfc51651959c221a6f40a6eea8e5e9c9b0032ddbbd42cf2e3ad67379c.
+Native/VMarchive gpu_artifacts_local/memory_lower_lr_20260913_attempt1/evidence.tar
+675f3598855c581da85caea154724004a9d2adb446091cca184e0f67072b0b02,
+627members/253122560bytes. Nativeoriginals/claims/adapters preserved.
+Allscores/reducer/tests/resultscommitted19cb07d0. Do not recollect orrerun.
+
+ManuscriptthroughSEQ153+constantalternative independentlyaccepted; A1archive
+linksrebound, committedd66a3ebb. Copernicusnowowns same6files forSEQ154/155;
+awaitnewEDITSTOP/review. CollaboratorUNSENT. Dirtyrulesremainunrelated.
+
+NEXT: three-seed contrastivefull-dose CPUrunner byDescartes, notyetEDITSTOP
+orprepared/launched. Mainouterlauncher /tmp/astra_contrastive_full_dose_main_20260913.py
+syntaxPASS, expectednode2GPUs0/1/2. SourceprotocolSHAe777b5be15e2a1cab447de3e72fb013bfac2a20a3d12d81574f95880ca60b0e6.
+Use finalrunnerSHAfromworker, runCPUsuite, copynewrunner/main/protocolnode2;
+existingnativeoldspec /tmp/astra_contrastive_spec_20260913_attempt1.json SHA
+56970a4b5f4637564b4fdfba344e9c72cffeabb3be93ad0e8353b9bb5781d12a.
+Historicalarchive /localhome/local-rohing/astra_diagnostics/contrastive_perception_20260913_attempt1_archive.tar
+SHA c12c3ff8e7cd0a9261aa5118d85f5a93d5318245afd05d0d4ff3cacc96401f7d.
+Mainlauncher accepts specs/prepare/launch/hold --runner-sha256 HASH --seed N.
+Native specs directory /tmp/astra_contrastive_full_dose_specs_20260913_attempt1
+must contain protocol.md. Controller needsownPGID: outerholder creates it
+withstart_new_session=True. Neverrerunoldcollector/OFF ormutateoldhelpers.
+Sixfits2016updates288calls,2h/paircap,6hlease margin. Finalnativechecksneeded.
+
+Fixed-coaching own-record DEV protocolcommitted843a8432, SHA
+bae29cfc48d9ae0922531d306bef1434bcc7296f2ae71a4ad6493da2a5dfb964,
+ASTRA_PARENTED_RECORD_DEV_2026-09-13.md. Fixedauthorcoachvsneutral, noLLMparent,
+original3perceptionparents,16applyslots/arm,childrawtargets only,LR3e-5eightpasses,
+parentfreeheld ORIGINAL/P/N;<=900calls/768updates. Noresult/notlaunched.
+Lovelaceownsnew/tmp/astra_parented_record_core_20260913.py andtests/API;
+Beauvoirownsnew/tmp/astra_parented_record_run_20260913.py andtests/nativeglue.
+Theycoordinateinterfaces, Mainownsprotocol/allocation/nativechecks. Parfitowns
+new/tmp/astra_own_source_replay_core_20260913.py: TRAIN-onlychildreplaycandidate
+construction/admission, nofitdecision; excludes allinspectedheld/canarytargets.
+ThatreplayisNOTsilentlyincludedinfixed-coachingDEV. PCFLworldremainspartial
+CPUfixtureonly, noStage0/modelcalls. Simplehygiene; formalguardfinalC11only.
+
+## Historical superseded snapshot — September13 09:34UTC
 
 Mission ACTIVE/incomplete. Simple hygiene now; formal guard only final C11.
 LowerLR3e-5 actual-child repair LIVE node2GPUs4/5/6, seeds0/1/2.

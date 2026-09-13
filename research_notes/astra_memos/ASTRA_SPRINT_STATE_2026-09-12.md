@@ -1,4 +1,16 @@
-## Current superseding snapshot — 2026-09-13 09:34 UTC
+## Current superseding snapshot — 2026-09-13 09:46 UTC
+
+SEQ155threeLOWERLRcandidates complete/collectedONCE:exact10/4/4,para10/5/3,
+held47/46/47,canary12all. Onlyseed0strictscreenpasses; notthree-seedrepair.
+NoMainGPUjoblive. Independent18reducertestsPASS; fullarchive+pinsinHANDOFF.
+ManuscriptthroughSEQ153reviewed/pushedd66a3ebb; nextSEQ154/155editinprogress.
+Contrastivefull-dose runner awaitingfinalCPUhandoff/nativeprepare; intended
+node2GPUs0/1/2. Fixed-authorcoachingvsneutral ownrecordDEV protocolfrozen,
+core+nativeglueinparallel; noadaptiveparentclaim/no teacherbytesinsleep.
+Own-source TRAIN-onlyreplaycandidatecoreindependent,notafitdecision. PCFLpartial
+fixtureonly. Missionincomplete; simplehygieneoperative, finalC11guarddeferred.
+
+## Historical superseded snapshot — 2026-09-13 09:34 UTC
 
 LowerLR3e-5 repair live node2GPUs4/5/6, three original perception parents;
 no new result, no LR0reruns. SEQ154post-memory transfer complete/oncearchived:
