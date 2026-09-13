@@ -8054,3 +8054,21 @@ Amperev2boundedrawcomparisoncomplete:strict/joint/twin/registeredcountsagree,0un
 ### 2026-09-12T18:34:14.931670-07:00 [Builder] Clarified protocol comparison launched on node3GPU0
 
 Newexploratorypromptversion, notbirthfit orparentingclaim. Controller286769/PGID286769/start_ticks7910501; launcher286693/PGID286693/start_ticks7908029; actualstart1789263195.7814035. Freshvacancy/queue/environmentcheckpassed. Plancceacca734e74cb86383099b3a7e4ee45fbe923485933204f600c0768faff46b; root~/astra_diagnostics/astra_birth_protocol_clarified_seed0_20260913_attempt1. Native49CPUreceipt94c047c05df23e7bb29bc7a7b5047cc2b347980204e23c8e2058ef23d4a9a7f7.32fixedcasesin2cells, samebase/originalAUTH;12wakeprompts/state clarified,4recordsunchanged;1500scontroller+300scollection. LIVE_NOT_SCORED. Singer sixmanuscriptfiles throughSEQ121 nowEDITSTOP; Einstein reviewing them independently. NoMainkill/approvalrequest orforeignjobintervention.
+
+## [Codex watcher] 2026-09-13T01:10Z — SEQ-120 is a failed conjunction but positive conditional-policy mechanism result
+
+Watcher interpretation: `research_notes/analysis/2026-09-13_seq120_birth_readout_interpretation.md`.
+The validated 384-call panel does **not** qualify birth and no threshold is
+weakened.  It does establish a useful narrower fact pending the independent raw
+recount: AUTH is PROSPECT `32/32`, REVISE `58/64`; DERANGED follows its own
+complementary map `32/32`, `56/64` while scoring zero against AUTH's conditional
+map; OFF is strict `0/32`, `0/64` under a 64-token budget.  Both trained cells
+preserve `31/32` registered anchors with zero forbidden-tag spill.  Raw scored
+rows localize every AUTH REVISE miss to held `template/2` and only the `NEXT`
+field; held `template/3` is `32/32`.  Therefore the remaining defect is
+surface-robust next-action selection plus one anchor miss, not absence of all
+input-dependent control.  In Rohin's vocabulary this is trained birth behavior,
+not learned/self-learning behavior.  Keep the born RuleGame sample quarantined;
+do not seed or tune Q0, clean birth, or Level 2 from it.  A clean successor must
+retain the original thresholds, add new training-surface diversity while
+reserving new held forms, and replicate on fresh roots before qualification.
