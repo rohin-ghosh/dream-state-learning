@@ -1,4 +1,38 @@
-# Astra restart handoff — September 13, 2026, 22:18 UTC
+# Astra restart handoff — September 13, 2026, 22:37 UTC
+
+## Current superseding increment at22:37UTC
+
+Integrated443tests:434PASS,9native-only skips onVM,177.947s. The9native tests
+separately PASS21.425s on node2 torch2.13.0+cu130 withCUDAhidden, tiny synthetic
+CPU model only. Exact restored/uninterrupted D2 adapter/optimizer/cursor/RNG
+match; no Qwen/tokenizer/PEFT/GPU or fresh-process claim. Source/traces/pins:
+research_notes/analysis/2026-09-13_stage2a_source_integration_and_cpu_continuity.md.
+Its receipt table is authoritative; timestamped filenames are attempt labels.
+
+Held graph bridge now covers64intervention members/32chain tasks. Scorer,
+full synthetic null audit, reduced-screen ledger, one-turn probe capture,
+tokenization masks and stateful trainer source are integrated. Actual Qwen
+template was read as plain JSON on node3: exact final LF afterEOS is retained
+but masked. Native tokenizer execution remains pending. Two rollout error-path
+findings were fixed and independently closed. No canonical-null/model claim.
+
+Active ownership now:
+- Main integration/probe/screen/null audit/docs; no activeGPUexperiment.
+- Lorentz01a09cb6-342d: scan_inputs.py/test; scorer complete, no further edits.
+- Faraday01a09cdb-a411: checkpoint.py/test (durable I/O/fresh-process native
+  CPU fixture); accepted training.py/test stay unchanged.
+- Mendel01a09cb0-6483: held bridge complete; read-only probe/screen/null review.
+- Averroes/Kierkegaard completed and closed. Preserve unrelateddirtyrules and
+  unreviewed two_sleep_junction_prospective_packet_draft; never stage them.
+
+Next immediate actions: integrate scan_inputs and checkpoint; run latter's
+tiny-CPU fresh-process tests using a NEW isolated node2/tmp source bundle,
+not a Qwen fit. Then complete source/material validation and true native
+tokenizer preparation before the reduced screen. No repeated SEQ195 assay.
+Node1 preservation audit unchanged; no node1 writes during this increment.
+Rohin49-53: reduced evaluation is not reduced capability; retain all level1
+artifacts. Breadth/depth/branching and adaptive-parent ideas stay downstream
+open hypotheses, not additions blocking the first authentic two-SLEEP loop.
 
 ## Superseding source/integration state at 22:18 UTC
 

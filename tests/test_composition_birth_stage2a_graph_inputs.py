@@ -1,6 +1,7 @@
 """Synthetic world/trace integration, not an independent scientific checker."""
 
 from collections import Counter, defaultdict
+from contextlib import contextmanager
 from dataclasses import replace
 from hashlib import sha256
 from pathlib import Path
@@ -13,10 +14,12 @@ from organism_v6 import composition_birth_stage2a_birth as birth
 from organism_v6 import composition_birth_stage2a_checker as checker
 from organism_v6 import composition_birth_stage2a_graph as graph
 from organism_v6 import composition_birth_stage2a_graph_inputs as source
+from organism_v6 import composition_birth_stage2a_held as held
 from organism_v6 import composition_birth_stage2a_worlds as worlds
 from organism_v6.composition_birth_stage2a_primitives import canonical_json
 from tests.test_composition_birth_stage2a_birth import synthetic_bindings
 from tests.test_composition_birth_stage2a_worlds import fixture as ordinary_fixture
+from tests.test_composition_birth_stage2a_held import fixtures as held_fixtures
 
 
 def aliases_for_identities(tokens, identities):
@@ -474,6 +477,345 @@ class GraphInputTests(unittest.TestCase):
                 self.public_graph(2, arm=arm)
         with self.assertRaises(ValueError):
             self.public_graph(2, case=replace(self.cases[2], clarification_sha256="0" * 64))
+
+
+class ObservedSession:
+    """Synthetic host observations created without consuming expected traces."""
+
+    def __init__(self, task, read, transition, skin):
+        self.current = task.current
+        self.read = read
+        self.transition = transition
+        self.skin = skin
+        self.prefix = (held.Message("system", wire.SYSTEM_MESSAGE), held.Message(
+            "user", f"TASK\nSTART {task.start}\nGOAL {task.goal}\nCURRENT {task.current}"))
+        self.snapshots = [(self.prefix, self.current)]
+
+    def execute(self, raw):
+        action = wire.parse_action(raw)
+        block = None
+        if action.operation == "READ":
+            response = "SERVICE\n" + self.read(raw)
+            block = wire.parse_service(response.removeprefix("SERVICE\n"), skin=self.skin)
+        elif action.operation == "STEP":
+            self.current = self.transition(self.current, action.operand)
+            response = "WORLD\nCURRENT " + self.current
+        elif action.operation == "THINK":
+            response = "ACK"
+        else:
+            raise AssertionError("fixture_prefix_ends_before_stop")
+        self.prefix += (held.Message("assistant", raw), held.Message("user", response))
+        self.snapshots.append((self.prefix, self.current))
+        return block
+
+
+def observed_matching(block, current, goal):
+    matches = [row for row in block.rows if row.node == current and row.goal == goal]
+    if len(matches) != 1:
+        raise AssertionError("synthetic_observation_has_no_unique_relevant_row")
+    return matches[0]
+
+
+def observed_intervention(member):
+    session = ObservedSession(member.task, member.read, member.effective_transition, member.construction.skin)
+    if member.transition_name != "continue":
+        directory = session.execute("READ INDEX " + session.current)
+        route = observed_matching(directory, session.current, member.task.goal)
+        if member.transition_name in ("prospect", "check"):
+            block = session.execute("READ RELATION " + route.query)
+            if member.transition_name == "check":
+                event = observed_matching(block, session.current, member.task.goal)
+                session.execute("STEP " + event.port)
+    return session
+
+
+def observed_chain(chain_world, member):
+    session = ObservedSession(member.task, chain_world.read, chain_world.transition, chain_world.skin)
+    recovery = None
+    root = None
+    steps = 0
+    while session.current != member.task.goal:
+        if steps >= 3:
+            raise AssertionError("synthetic_chain_did_not_terminate")
+        if recovery is None:
+            directory = session.execute("READ INDEX " + session.current)
+            query = observed_matching(directory, session.current, member.task.goal).query
+        else:
+            query = recovery
+        block = session.execute("READ RELATION " + query)
+        event = observed_matching(block, session.current, member.task.goal)
+        if root is None:
+            root = event.event
+        session.execute("STEP " + event.port)
+        matched = session.current == event.got
+        session.execute("THINK " + ("KEEP " if matched else "REVISE ") + event.event)
+        recovery = None if matched else event.recover
+        steps += 1
+    if steps != 2:
+        raise AssertionError("synthetic_chain_was_not_two_step")
+    return session, root
+
+
+@contextmanager
+def forbid_evaluator_answer_reads():
+    forbidden = {"expected_target", "expected_causal_prefix", "semantic_object",
+                 "expected_trace", "sufficient_reads"}
+
+    def guarded(instance, name):
+        if name in forbidden:
+            raise AssertionError("forbidden_evaluator_answer_read:" + name)
+        return object.__getattribute__(instance, name)
+
+    with patch.object(held.InterventionMember, "__getattribute__", guarded), \
+            patch.object(held.ChainMember, "__getattribute__", guarded), \
+            patch.object(held, "_chain_witness", side_effect=AssertionError("witness generation forbidden")), \
+            patch.object(held, "_semantic_object", side_effect=AssertionError("semantic answer generation forbidden")), \
+            patch.object(wire, "allocate_opaque_namespace", side_effect=AssertionError("allocation forbidden")):
+        yield
+
+
+class HeldGraphPacketTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.intervention_tokens = held_fixtures("dose_intervention")
+        cls.chain_tokens = held_fixtures("dose_chain")
+        cls.interventions = held.build_intervention_panel(role_tokens_by_world=cls.intervention_tokens)
+        cls.chains = held.build_chain_panel(role_tokens_by_world=cls.chain_tokens)
+        cls.observations = {}
+        with forbid_evaluator_answer_reads():
+            for pair in cls.interventions:
+                for member in pair.members:
+                    session = observed_intervention(member)
+                    cls.observations[pair.world, member.member] = (session, member.selected_event.event)
+            for chain_world in cls.chains:
+                for member in chain_world.members:
+                    cls.observations[chain_world.world, member.member] = observed_chain(chain_world, member)
+
+    def intervention_packet(self, member, *, prefix=None, current=None, **changes):
+        session, root = self.observations[member.construction.world, member.member]
+        arguments = dict(role_tokens=self.intervention_tokens[member.construction.world],
+                         observed_prefix=session.prefix if prefix is None else prefix,
+                         world_current=session.current if current is None else current, root_event=root)
+        arguments.update(changes)
+        return source.build_intervention_graph_packet(member, **arguments)
+
+    def chain_packet(self, chain_world, member_id="m0", *, prefix=None, current=None, **changes):
+        session, root = self.observations[chain_world.world, member_id]
+        arguments = dict(member_id=member_id, role_tokens=self.chain_tokens[chain_world.world],
+                         observed_prefix=session.prefix if prefix is None else prefix,
+                         world_current=session.current if current is None else current, root_event=root)
+        arguments.update(changes)
+        return source.build_chain_graph_packet(chain_world, **arguments)
+
+    def assert_packet(self, packet, construction, tokens, task, current):
+        self.assertEqual(set(packet), {"status", "world_graph", "public_graph", "public_to_world_aliases", "science_gates"})
+        self.assertEqual(packet["status"], "PARTIAL_SOURCE_ONLY")
+        self.assertFalse(any(packet["science_gates"].values()))
+        world, public = packet["world_graph"], packet["public_graph"]
+        mapping = packet["public_to_world_aliases"]
+        graph.validate_graph(world)
+        graph.validate_graph(public)
+        prefixes = dict(EVENT="E", GOAL="G", PORT="P", QUERY="Q", RECEIPT="R", STATE="S")
+        for value in (world, public):
+            for vertex_type, prefix in prefixes.items():
+                aliases = [vertex["alias"] for vertex in value["vertices"] if vertex["type"] == vertex_type]
+                self.assertEqual(aliases, [f"{prefix}{ordinal:04d}" for ordinal in range(len(aliases))])
+        self.assertEqual(set(mapping), {vertex["alias"] for vertex in public["vertices"]})
+        self.assertEqual(len(set(mapping.values())), len(mapping))
+        by_alias = {vertex["alias"]: vertex for vertex in world["vertices"]}
+        for vertex in public["vertices"]:
+            self.assertEqual({**vertex, "alias": mapping[vertex["alias"]]}, by_alias[mapping[vertex["alias"]]])
+        translated = {canonical_json({"label": edge["label"],
+                                     "tails": [mapping[alias] for alias in edge["tails"]],
+                                     "heads": [mapping[alias] for alias in edge["heads"]]})
+                      for edge in public["edges"]}
+        self.assertTrue(translated <= edge_set(world))
+        aliases = independent_aliases(construction, tokens, task.goal)
+        world_current = [vertex["alias"] for vertex in world["vertices"] if "CURRENT" in vertex["flags"]]
+        public_current = [mapping[vertex["alias"]] for vertex in public["vertices"] if "CURRENT" in vertex["flags"]]
+        self.assertEqual(world_current, [aliases[current, "STATE"]])
+        self.assertEqual(public_current, world_current)
+        self.assertLess(len(public["vertices"]), len(world["vertices"]))
+        induced = graph.radius_graph(world, 0)
+        self.assertTrue({canonical_json(vertex) for vertex in induced["vertices"]}
+                        <= {canonical_json(vertex) for vertex in world["vertices"]})
+        self.assertTrue(edge_set(induced) <= edge_set(world))
+
+    def test_all_64_intervention_members_replay_without_answer_reads(self):
+        count = 0
+        with forbid_evaluator_answer_reads():
+            for pair in self.interventions:
+                for member in pair.members:
+                    with self.subTest(world=pair.world, member=member.member):
+                        session, root = self.observations[pair.world, member.member]
+                        before = dict(member.construction.world_edges)
+                        prefix_before = tuple(session.prefix)
+                        packet = self.intervention_packet(member)
+                        self.assert_packet(packet, member.construction, self.intervention_tokens[pair.world],
+                                           member.task, session.current)
+                        self.assertEqual(dict(member.construction.world_edges), before)
+                        self.assertEqual(session.prefix, prefix_before)
+                        labels = Counter(edge["label"] for edge in packet["public_graph"]["edges"])
+                        self.assertEqual(labels["WORLD"], int(member.transition_name == "check"))
+                        self.assertEqual(labels["INDEXES"], 0 if member.transition_name == "continue" else 24)
+                        self.assertEqual(labels["CONTAINS"], 4 if member.transition_name in ("prospect", "check") else 0)
+                        if member.transition_name in ("seek", "continue"):
+                            self.assertFalse(any(flag.startswith("ROOT_") for vertex in packet["public_graph"]["vertices"]
+                                                 for flag in vertex["flags"]))
+                        count += 1
+        self.assertEqual(count, 64)
+
+    def test_all_32_chain_tasks_replay_initial_and_completed_observations(self):
+        count = 0
+        with forbid_evaluator_answer_reads():
+            for chain_world in self.chains:
+                for member in chain_world.members:
+                    with self.subTest(world=chain_world.world, member=member.member):
+                        session, root = self.observations[chain_world.world, member.member]
+                        for prefix, current in (session.snapshots[0], session.snapshots[-1]):
+                            packet = self.chain_packet(chain_world, member.member, prefix=prefix, current=current)
+                            self.assert_packet(packet, chain_world.construction, self.chain_tokens[chain_world.world],
+                                               member.task, current)
+                            worlds_seen = sum(edge["label"] == "WORLD" for edge in packet["public_graph"]["edges"])
+                            self.assertEqual(worlds_seen, 0 if len(prefix) == 2 else 2)
+                            labels = Counter(edge["label"] for edge in packet["public_graph"]["edges"])
+                            self.assertEqual(labels["CONTAINS"], 0 if len(prefix) == 2 else 8)
+                            self.assertEqual(labels["INDEXES"], 0 if len(prefix) == 2 else (24 if chain_world.mismatch else 48))
+                            if len(prefix) == 2:
+                                self.assertEqual(packet["public_graph"]["edges"], [])
+                        count += 1
+        self.assertEqual(count, 32)
+
+    def test_check_override_replaces_one_head_and_never_mutates_base(self):
+        with forbid_evaluator_answer_reads():
+            for pair in self.interventions:
+                if not pair.world.startswith("check_"):
+                    continue
+                for member in pair.members:
+                    packet = self.intervention_packet(member)
+                    tokens = self.intervention_tokens[pair.world]
+                    aliases = independent_aliases(member.construction, tokens, member.task.goal)
+                    designated = (member.task.start, member.selected_event.port)
+                    expected = dict(member.world_edges)
+                    expected[designated] = member.intervention.outcome_destination
+                    world_edges = {canonical_json({"label": "WORLD", "tails": [aliases[state, "STATE"], aliases[port, "PORT"]],
+                                                   "heads": [aliases[destination, "STATE"]]})
+                                   for (state, port), destination in expected.items()}
+                    actual_edges = {canonical_json(edge) for edge in packet["world_graph"]["edges"] if edge["label"] == "WORLD"}
+                    self.assertEqual(actual_edges, world_edges)
+                    self.assertEqual(len(actual_edges), 96)
+                    self.assertEqual(member.world_edges[designated], member.selected_event.got)
+
+    def test_check_rejects_base_prediction_as_observed_override_and_wrong_snapshot(self):
+        member = next(pair.members[1] for pair in self.interventions if pair.world == "check_k0")
+        session, root = self.observations[member.construction.world, member.member]
+        forged = session.prefix[:-1] + (held.Message("user", "WORLD\nCURRENT " + member.selected_event.got),)
+        with self.assertRaises(ValueError):
+            self.intervention_packet(member, prefix=forged, current=member.selected_event.got)
+        with self.assertRaises(ValueError):
+            self.intervention_packet(member, current=member.task.current)
+        with self.assertRaises(ValueError):
+            self.intervention_packet(member, prefix=session.prefix[:2])
+
+    def test_chain_rejects_forged_read_world_ack_and_snapshot(self):
+        chain_world = self.chains[4]
+        session, root = self.observations[chain_world.world, "m0"]
+        for host_index, replacement in (
+            (3, "SERVICE\nMISS"),
+            (7, "WORLD\nCURRENT " + chain_world.members[0].task.goal),
+            (9, "SERVICE\nMISS"),
+        ):
+            prefix = list(session.prefix)
+            prefix[host_index] = held.Message("user", replacement)
+            with self.subTest(host_index=host_index), self.assertRaises(ValueError):
+                self.chain_packet(chain_world, prefix=tuple(prefix))
+        with self.assertRaises(ValueError):
+            self.chain_packet(chain_world, current=chain_world.members[0].task.start)
+
+    def test_off_witness_miss_and_irrelevant_reads_are_observed_not_filtered(self):
+        chain_world = self.chains[0]
+        member = chain_world.members[0]
+        tokens = self.chain_tokens[chain_world.world]
+        query = next(token for role, token in tokens.items()
+                     if role.endswith("/query") and "READ RELATION " + token not in chain_world.registry)
+        session = ObservedSession(member.task, chain_world.read, chain_world.transition, chain_world.skin)
+        session.execute("READ RELATION " + query)
+        session.execute("THINK REVISE " + query)
+        irrelevant_request = next(request for request, block in chain_world.construction.blocks.items()
+                                  if block.kind == "EVENTS" and all(row.goal != member.task.goal for row in block.rows))
+        session.execute(irrelevant_request)
+        with forbid_evaluator_answer_reads():
+            packet = self.chain_packet(chain_world, prefix=session.prefix, current=session.current)
+        self.assertEqual(sum(edge["label"] == "CONTAINS" for edge in packet["public_graph"]["edges"]), 4)
+        aliases = independent_aliases(chain_world.construction, tokens, member.task.goal)
+        mapped_query = aliases[query, "QUERY"]
+        reverse = {value: key for key, value in packet["public_to_world_aliases"].items()}
+        self.assertIn(mapped_query, reverse)
+        self.assertFalse(any(edge["label"] == "CONTAINS" and reverse[mapped_query] in edge["tails"]
+                             for edge in packet["public_graph"]["edges"]))
+        self.assertFalse(any(edge["label"] == "WORLD" for edge in packet["public_graph"]["edges"]))
+
+    def test_prefix_shape_roles_system_task_future_and_stop_rejected(self):
+        member = self.interventions[0].members[0]
+        session, root = self.observations[member.construction.world, member.member]
+        malformed = [(), iter(session.prefix), session.prefix[:-1],
+                     (held.Message("system", "other"),) + session.prefix[1:],
+                     session.prefix[:2] + (held.Message("user", session.prefix[2].content), session.prefix[3]),
+                     session.prefix + (held.Message("assistant", "STOP"), held.Message("user", "")),
+                     tuple({"role": message.role, "content": message.content} for message in session.prefix),
+                     session.prefix[:2] + session.prefix[2:4] * (wire.CALL_CAP + 1)]
+        for ordinal, prefix in enumerate(malformed):
+            with self.subTest(mutation=ordinal), self.assertRaises(ValueError):
+                self.intervention_packet(member, prefix=prefix)
+        future_task = session.prefix[1].content.replace("CURRENT " + member.task.current,
+                                                      "CURRENT " + member.task.goal)
+        with self.assertRaises(ValueError):
+            self.intervention_packet(member, prefix=(session.prefix[0], held.Message("user", future_task)) + session.prefix[2:])
+
+    def test_missing_roots_role_bindings_and_member_metadata_rejected(self):
+        member = self.interventions[0].members[0]
+        for root in (None, member.task.start, "M2AE_BBBBBBBBBBBB"):
+            with self.subTest(root=root), self.assertRaises(ValueError):
+                self.intervention_packet(member, root_event=root)
+        tokens = dict(self.intervention_tokens[member.construction.world])
+        del tokens[next(iter(tokens))]
+        with self.assertRaises(ValueError):
+            self.intervention_packet(member, role_tokens=tokens)
+        with self.assertRaises(ValueError):
+            self.intervention_packet(replace(member, status="READY"))
+        with self.assertRaises(ValueError):
+            self.chain_packet(replace(self.chains[0], clarification_sha256="0" * 64))
+        session, root = self.observations[self.chains[0].world, "m0"]
+        for member_id in ("m2", None, True):
+            with self.subTest(member_id=member_id), self.assertRaises(ValueError):
+                source.build_chain_graph_packet(self.chains[0], member_id=member_id,
+                    role_tokens=self.chain_tokens[self.chains[0].world], observed_prefix=session.prefix,
+                    root_event=root, world_current=session.current)
+
+    def test_v2_checker_accepts_held_evaluator_packets_and_world_radii(self):
+        selected = next(pair.members[1] for pair in self.interventions if pair.world == "check_k0")
+        cases = [(self.intervention_packet(selected), "STEP_CHECK", "STEP_OUTCOME_MISMATCH", 0),
+                 (self.chain_packet(self.chains[0]), "CONTINUE", "NONE", None),
+                 (self.chain_packet(self.chains[4]), "CONTINUE", "STEP_OUTCOME_MISMATCH", None)]
+        for packet, phase, recovery, position in cases:
+            world = packet["world_graph"]
+            core = graph.decision_core(packet["public_graph"], actual_route_depth=2,
+                family_motif="C_CROSSING_WEAVE", flow="RECOVERY" if recovery != "NONE" else "ORDINARY",
+                goal_side="LEFT", phase=phase, predicted_actual_match=phase != "STEP_CHECK",
+                recovery_subtype=recovery, relevant_candidate_display_position=position, skin=0,
+                terminal_class="UNRESOLVED" if phase == "STEP_CHECK" else "REACHED", step_outcome_observed=True)
+            envelope = {
+                "schema_version": checker.SCHEMA_VERSION, "world_graph": world, "core": core,
+                "public_to_world_aliases": packet["public_to_world_aliases"], "step_outcome_observed": True,
+                "radius_graphs": {f"r{radius}": graph.radius_graph(world, radius) for radius in range(4)},
+                "expected_hashes": {"world_graph": graph.graph_hash(world), "public_graph": graph.graph_hash(packet["public_graph"]),
+                                    "radii": graph.signature(world), "signature": graph.signature_hash(world),
+                                    "core": graph.core_hash(core, step_outcome_observed=True)},
+            }
+            receipt = checker.check_graph_core_json(canonical_json(envelope))
+            self.assertEqual(receipt["status"], "PARTIAL_GRAPH_CHECK_ONLY")
+            self.assertFalse(any(receipt["science_gates"].values()))
+            self.assertFalse(any(receipt["certifications"].values()))
 
 
 if __name__ == "__main__":

@@ -45,6 +45,7 @@ class CallRecord:
     request: DecodeRequest | None
     attempt: wire.Attempt | None
     error_type: str | None = None
+    raw_bytes: bytes | None = None
 
 
 @dataclass(frozen=True)
@@ -128,6 +129,7 @@ def run_chain(world, member, *, actor, count_context, counter_provenance, master
             reason = "invalid_generation_transport"
             records.append(CallRecord(slot, seed, "ERROR", request, None))
             continue
+        raw_bytes = wire._raw_bytes(generation.raw)
         try:
             attempt = session.turn(
                 generation.raw, generation_request={"max_new_tokens": allowance, "seed": seed},
@@ -137,9 +139,9 @@ def run_chain(world, member, *, actor, count_context, counter_provenance, master
             )
         except ValueError as error:
             reason = "unsupported_custody_transport"
-            records.append(CallRecord(slot, seed, "ERROR", request, None, type(error).__name__))
+            records.append(CallRecord(slot, seed, "ERROR", request, None, type(error).__name__, raw_bytes))
             continue
-        records.append(CallRecord(slot, seed, "EXECUTED", request, attempt))
+        records.append(CallRecord(slot, seed, "EXECUTED", request, attempt, raw_bytes=raw_bytes))
         if attempt.accepted:
             prefix += (held.Message("assistant", generation.raw),)
             if attempt.response_bytes:
@@ -164,20 +166,29 @@ def run_schedule(world, member, *, name, count_context, count_action,
     policy = nulls.BoundedSchedule(name, tuple(
         nulls.PublicMessage(message.role, message.content.encode("ascii")) for message in prefix
     ), skin=world.skin)
+    emitted_count = 0
+    pending_emitted = False
 
     def actor(request):
-        if policy.pending is not None:
+        nonlocal emitted_count, pending_emitted
+        if policy.pending is not None and pending_emitted:
             if len(request.prefix) < 2 or request.prefix[-1].role != "user":
                 raise ValueError("missing_public_host_response")
             policy.observe(request.prefix[-1].content.encode("ascii"))
+            pending_emitted = False
         decision = policy.next_action()
         if decision.action is None:
             raise _ScheduleStopped(decision.terminal_reason)
         count = count_action(decision.action)
+        emitted_count += 1
+        pending_emitted = True
         return Generation(decision.action.decode("ascii"), count, count, False, "stop")
 
     result = run_chain(world, member, actor=actor, count_context=count_context,
                        counter_provenance=counter_provenance, master=master, stage=stage)
-    if policy.pending is not None:
-        policy.observe(b"")
+    if (policy.pending is not None and pending_emitted and result.attempts
+            and result.attempts[-1].capture.call_index == emitted_count - 1
+            and result.attempts[-1].capture.raw_bytes == policy.pending):
+        final = result.attempts[-1]
+        policy.observe(final.response_bytes if final.accepted else b"")
     return result

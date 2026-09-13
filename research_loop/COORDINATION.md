@@ -17874,3 +17874,35 @@ Reading: Arguably the generalisable part — the parallel thing — would grow m
 ## [Fable] 2026-09-13T22:25Z — operational: VM backup watcher revalidated for Rohin's absence
 
 Per Rohin's message 51 ("have this run on the VM too"): the VM backup self-check (`tools/courier/backup_selfcheck.sh`, cron every 30 min, runs only when the laptop heartbeat is > 45 min stale) is in place with a rewritten prompt (`tools/courier/SELFCHECK_PROMPT.md`, committed; installed at `~/courier/SELFCHECK_PROMPT.md` on the VM and the crontab now points at that copy so it does not depend on the builder pulling). Readiness under a cron-like environment: READY (CLI 2.1.269, fresh credentials; the "not logged in" string I saw earlier was the library's fallback reason text, not a check). A one-off forced validation run (SELFCHECK_STALE_MIN=0) started 22:24:11Z with the new prompt (cap 1,500 s; output `~/courier/selfcheck/20260913T2224*.md` and an outbox reply); result to be read at the next laptop tick. Watcher rules baked into the prompt: observe/log/relay/report only; never launch or kill; occupancy not a metric; never pull/rebase in the builder's checkout; relay `[Builder -> Rohin]` verbatim; node-1 mirror only by reusing the logged rsync command; SEQ-VM numbering. Laptop watcher continues as long as this laptop is awake.
+
+## [Builder -> Rohin] 2026-09-13T22:37Z — controller source now joined; tiny CPU continuation verified
+
+The kickoff being built is not merely producing atoms or one READ: choose a
+useful lookup, let it change the next action, check the actual outcome, then
+write supported own-experience material at SLEEP and use it on a subsequent
+goal with the same evolving adapter. The reduced screen changes evaluation
+volume, not the four coupled controller functions or retained level1 artifacts.
+The earlier skills/adapters/recipes stay preserved. The breadth/depth/clone
+suggestions remain open downstream tests; they do not delay this first loop.
+
+Today in this continuation, integrated source443tests comprise434PASS and9
+torch-only skips onVM. Those9 were separately executed successfully on node2
+with realtorch2.13.0+cu130, CUDA_VISIBLE_DEVICES empty, a tinyCPU model:21.425s.
+Restored D2 matches uninterrupted adapter, optimizer, cursor and RNG; this is
+engineering continuity, NOT a Qwen/PEFT/controller-learning or GPU result.
+Exact source/traces are bound in
+research_notes/analysis/2026-09-13_stage2a_source_integration_and_cpu_continuity.md.
+The CPU test is complete; no background test or GPU job remains from it.
+
+The full synthetic null suite executes45singleton/pair configs on64members and
+six schedules on32chains (1319schedule attempts). Fixed bounds pass for these
+fixtures only; no canonical-null promotion. Held graph packets now coverall
+members/tasks. Two independently found rollout custody/observation bugs are
+fixed/rechecked. Read-only node3 tokenizer-config bytes exposed the exact
+template-final LF: now retained but loss-masked, rather than rejected/removed.
+No real tokenizer/model loaded, no canonical material generated, no GPU science
+launched/killed, no curl/wget retry or approval request. Source21hashes stayed
+fixed through the integrated suite (177.947s). Simple hygiene stays in effect;
+formal paper-grade guard remains C11-only. Next: scanner-span binding and
+durable fresh-process state I/O, then actual preparation/reduced birth screen.
+SEQ195 is complete and will not be repeated. No generalG3/H1/H2 promotion.

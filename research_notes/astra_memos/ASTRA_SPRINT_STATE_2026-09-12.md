@@ -1,4 +1,15 @@
-## Current superseding snapshot — 2026-09-13 22:18 UTC
+## Current superseding snapshot — 2026-09-13 22:37 UTC
+
+Canonical current state: ASTRA_HANDOFF_2026-09-12.md22:37UTC. Integrated source
+suite434PASS/9native skips onVM; the9 separately PASS on node2 tinyCPUtorch.
+Held graph, scoring/null/schedule/probe/reduced roster, targetEOS+maskedLF and
+stateful D1/D2 mechanics implemented. Authentic scanner input binding and
+durable checkpoint/fresh-process CPU tests are in progress. No Qwen/tokenizer
+execution, GPU science, canonical material/null validation, claim promotion
+or mechanism freeze. Mission ACTIVE/incomplete; SEQ195 must not be repeated.
+Evidence/pins: analysis/2026-09-13_stage2a_source_integration_and_cpu_continuity.md.
+
+## Historical superseded snapshot — 2026-09-13 22:18 UTC
 
 Mission incomplete. Canonical live source/ownership/restart state is
 ASTRA_HANDOFF_2026-09-12.md (22:18UTC header). SEQ-195 is complete, independently

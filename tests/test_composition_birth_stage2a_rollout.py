@@ -2,6 +2,7 @@
 
 from dataclasses import FrozenInstanceError, replace
 import unittest
+from unittest.mock import patch
 
 from organism_v6 import composition_birth_stage2a as wire
 from organism_v6 import composition_birth_stage2a_held as held
@@ -142,6 +143,59 @@ class RolloutTests(unittest.TestCase):
     def test_missing_counter_provenance_rejected(self):
         with self.assertRaisesRegex(ValueError, "explicit_counter_provenance"):
             self.run_fixture(counter_provenance="")
+
+    def test_raw_action_survives_uncapturable_metadata(self):
+        result = source.run_schedule(
+            self.worlds[0], "m0", name="S_DISPLAY0", count_context=lambda prefix: 1,
+            count_action=lambda raw: object(), counter_provenance="synthetic-invalid-counter",
+            master=b"synthetic-only",
+        )
+        self.assertEqual(result.terminal_reason, "unsupported_custody_transport")
+        self.assertEqual(result.attempts, ())
+        self.assertEqual(result.calls[0].raw_bytes,
+                         ("READ INDEX " + self.worlds[0].members[0].task.current).encode("ascii"))
+
+    def test_final_schedule_observation_delivers_executed_service(self):
+        policies = []
+        original = nulls.BoundedSchedule
+
+        def tracked(*arguments, **keywords):
+            policy = original(*arguments, **keywords)
+            policies.append(policy)
+            return policy
+
+        with patch.object(nulls, "BoundedSchedule", side_effect=tracked):
+            result = source.run_schedule(
+                self.worlds[0], "m0", name="S_DISPLAY0",
+                count_context=lambda prefix: 1 if len(prefix) == 2 else wire.CONTEXT_CAP,
+                count_action=lambda raw: 1, counter_provenance="synthetic-context-exhaustion",
+                master=b"synthetic-only",
+            )
+        self.assertEqual(result.terminal_reason, "zero_allowance")
+        self.assertEqual(len(result.attempts), 1)
+        self.assertEqual(policies[0].trace, tuple(nulls.PublicMessage(message.role, message.content.encode("ascii"))
+                                                for message in result.prefix))
+
+    def test_counter_exception_does_not_invent_executed_policy_action(self):
+        policies = []
+        original = nulls.BoundedSchedule
+
+        def tracked(*arguments, **keywords):
+            policy = original(*arguments, **keywords)
+            policies.append(policy)
+            return policy
+
+        def bad_counter(raw):
+            raise RuntimeError("fixture failure before execution")
+
+        with patch.object(nulls, "BoundedSchedule", side_effect=tracked):
+            result = source.run_schedule(
+                self.worlds[0], "m0", name="S_DISPLAY0", count_context=lambda prefix: 1,
+                count_action=bad_counter, counter_provenance="synthetic-counter-failure",
+                master=b"synthetic-only",
+            )
+        self.assertEqual(result.attempts, ())
+        self.assertEqual(len(policies[0].trace), 2)
 
 
 if __name__ == "__main__":
