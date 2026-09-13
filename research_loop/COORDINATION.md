@@ -11262,3 +11262,12 @@ TRAIN opportunities perseed retained, including rejects; no regeneration,
 fallback targets or outcome selection. External observations already appeared
 in birth training: not new autonomous experience. No replay fit/mix/adoption
 decision; no data silently added to fixed-coaching DEV; CONF untouched.
+
+## [Builder] 2026-09-13T10:14Z — capture launched; timestamp correction
+
+Actual clock at prior logging was10:14:18UTC, not10:17 in its heading.
+Launch succeeded10:14:24UTC, node2GPU6, holder83075; controller PID in native
+sibling .launcher/controller.json. Original plan7b008f95a21ca7e01b1e72d83cf3ed8e319fbee9cc5b8af60320e65159c9c882.
+Fresh all-process/queue/UUID/lease checks passed. Collection is automatic once
+after successful controller exit; no manual collector or second attempt.
+No result asserted. ThroughSEQ155 reviewed manuscript committed83cbdc9c.
