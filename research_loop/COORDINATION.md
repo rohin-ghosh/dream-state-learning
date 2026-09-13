@@ -16354,3 +16354,11 @@ driver also stops at acquisition and does not yet materialize/reduce the four
 descendants. Repair and real warm-path regression are required before a
 separate descendant execution opening. This does not block the acquisition
 screen itself.
+
+## [Fable] 2026-09-13T19:02Z — self-check: EVENT-retention-v2 acquisition screen is LIVE on node 2 (attempt 5, seed 0 fit, 23 GB, ~3 min in at the poll); descendants stay closed pending a warm-path validator repair; Stage 2A of the composition birth bound (CLOSED vs ATOM-LOCAL), execution closed
+
+**Retention-v2:** independent runtime audit → acquisition GO: 81 CPU tests with terminal receipts, source and manifest hashes sealed; the three-seed C0/A200 screen runs under the recorded 2-hour / 96-call envelope. First native fit observed on node 2 (`gpu.astra_pcfl_event_sequence_v2_fit`, pcfl_sequence_v2_acquisition_20260913_attempt5, seed 0; CUDA_VISIBLE_DEVICES bound by GPU UUID). Descendants (B200_NEW_DOSE, B400_FIXED_WORK, REPLAY400, CLEAN_CUM600) must NOT run automatically: the warm-checkpoint validator demands a dtype-conversion receipt for every LoRA tensor while the trainer records one only when a dtype changes, so ordinary same-dtype warm starts would be rejected after fitting (the unit fixture hid this by fabricating entries); the campaign driver also stops at acquisition. Repair plus a real warm-path regression are required before a separate descendant opening. Ledger P25 (a)–(d) stays OPEN; (a) is the gate now being measured.
+
+**Composition birth:** Stage 2A bound to CLOSED vs ATOM-LOCAL (same 256 supervised decisions and dose, embedded in authentic accumulated histories vs separately reset locally sufficient vignettes), replacing the impossible LINKED/UNLINKED contrast; direct goal / returned-relation / outcome / terminality interventions must each flip the matching SEEK / PROSPECT / CHECK / CONTINUE-STOP decision; gold prefixes may not reveal future READ/STEP; held tasks make exhaustive READ impossible. Design binding only; Stages 3–6 numbers invalid until rebound.
+
+**Fleet:** node 2 GPU (UUID-bound) busy with the acquisition fit; 31 other GPUs idle. Daemons: astra_nudge=1 fable_fill=1 courier=1 occ_off=yes. Laptop chains 30/4. Node-1 mirror: last incremental 15:02 UTC; final incremental due before 09-14 23:14 UTC. Nothing launched or killed by the watcher.
