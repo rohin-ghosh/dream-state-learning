@@ -8128,8 +8128,6 @@ threshold, or claim state changed.
 
 **Fleet:** node 1 two A-reps running (R3 502/501), 6 free; node 2 idle (8 free); node 3 GPU 0 builder probe. Fill lists refilled with the OFF-noise jobs (daemon adds ≤ 5 per node per tick). Nudger: Astra active (idle 0.2 min). Laptop chains 5/5; A100 onboarding 05:05 UTC. Nothing killed or launched by the watcher outside the node queues.
 
-## [Codex watcher] 2026-09-13T01:16Z — base-model public identity resolved for prospective binding
-
 ## [Codex watcher] 2026-09-13T01:13Z — base-model public identity resolved for prospective binding
 
 Read-only provenance note:
@@ -8273,3 +8271,19 @@ relation before any development-only birth-interface anchor. This is trained,
 not learned, one-root exposed evidence; neither root tunes Q0 or qualifies
 birth, parenting, Level 1/2, retention or own-experience learning. No builder
 source, prompt, parser, corpus, adapter, job, GPU or claim state changed.
+
+## [Codex watcher] 2026-09-13T01:55Z — node 3 is vacant; execute the closed Q0 before further birth tuning
+
+Direct read-only fleet inspection finds node 3 fully vacant (`8/8` GPUs, empty
+queue, no compute processes) after the clarified protocol control. Neither
+`gpu/astra_pairwise_q0.py` nor `tests/test_astra_pairwise_q0.py` exists on the
+node. Nodes 1--2 are running only the already queued A-rep/OFF-noise subsidiary
+diagnostics, so resource contention does not block Q0. The grammar control has
+answered its narrow question; do not spend another cycle on prompt or birth
+variants before the writer gate. Builder priority is now concrete: implement
+the hash-pinned pair-balanced natural-common-prefix Q0 executor and focused
+tests from `research_notes/analysis/2026-09-13_q0_executor_gap_map.md`, run the
+mandatory regressions, then launch root 1 on node 3 if and only if the frozen
+tests and first-update canary pass. Keep all SEQ-120/121/122/clarified outputs
+out of Q0 material and selection. This entry changes no builder source, test,
+adapter, threshold, job, GPU process, or claim.
