@@ -9153,3 +9153,44 @@ Einstein full-dose writer and Erdos delta-custody helper continue independently.
 
 Rohin, in substance: (1) Q0 — remeasure at the right dose, but also "examine the test — could be issues with the data for the test or other things; there must be a reason"; a tool call is "simply an action" and should be writable with a perfect write, "but only if the actual training corpus for them was written correctly" — so audit the Q0 corpus (maps and tool rows) and read the raw results, not just the counters. (2) A hypothesis: opposites that are too close blend — "if A is 121212 and B is 212121 it might be easy to forget" — Fable's reading below. (3) Level-1 arsenal confirmed as his view: once the dataset exists the post-training is just data being trained, no prompt and no loop; the open-loop runs, parent steering and distillation exist to produce that dataset; the fine-tuning lets prompt-based parenting start the loop (levels 2–3) which starts self-learning. (4) "Don't hold off": context distillation and the other arsenal pieces proceed; level-0 tuning does not pause level 1 unless level 0 is catastrophic; start level 2 "slightly" as soon as level 1 gives any result, then build up.
 Fable's notes for the builder: (a) map closeness — DERANGED is a permutation of the same actions over the same inputs; the twins share everything but the pairing, so SGD learns the shared marginal first and the keyed residual later (the same common-mode-first effect Codex localised in the memory failures, 19:41); a one-update gate cannot see separation by construction. A cheap add to the Q0 revision: a map-distance arm (disjoint action vocabularies vs permuted) to measure updates-to-separation. (b) Please include a corpus/row audit of the Q0 tool-call rows in the revision memo (Rohin's explicit ask). (c) The arsenal, in method terms: SFT on authored classroom-grammar demonstrations + context distillation + rejection-sampled parent-steered open-loop runs filtered by verified outcome and provenance-tagged; SEQ-128 is its first measured ingredient. (d) Level 2 stays distinct: at level 1 we select and train the child's outputs; at level 2 the child does, through the compiler.
+
+## [Builder] 2026-09-13T04:59Z — full-dose pre-GPU acceptance and node1 delta custody
+
+Native node2 full7suite acceptance:282tests,0failures/errors/skips,189.487s.
+Receipt astra_q0_fulldose_native_cpu_20260913_attempt3.json archived. Attempt1
+staging lacked the historical receipt in the source snapshot; attempt2 preserved
+a successful282test run with1skip because v1's fixed external receipt path was
+absent. Installed the same already-verified reference bytes at that test path;
+no code/test/gate weakening. One intervening targeted command named a nonexistent
+test and ran none; the full final receipt is authoritative. OldQ0 hashes unchanged.
+
+New writerf63c77f9c371433442a204d6bd7bb10e3769a3bb709ae1d728648d765ee8ceca;
+testea5ea21c8b508e8621a673b61fa324c4303b3ec25160d666a7431dfb7459ea72.
+All3native tokenizer preparations succeeded before any launch, campaign
+1f29967875bb7e84fd479c25a1a54aed59405675c9bccc74305be8449d7884df.
+Node2-specific model bindinga7481b25 (full receipt archived) rehashes14files,
+binds current environment/node/resolved paths, and asserts no clean ancestry.
+R0/R1/R2 identifiers501/502/503 and learners1/2/3 remain fixed; manifests
+b21fba8b/509fd3ba/eafe1e55, full hashes in archived preparations JSON.
+Source /localhome/local-rohing/astra_sources/q0_fulldose_20260913_attempt2;
+roots /localhome/local-rohing/astra_diagnostics/q0_fulldose_R{0,1,2}_20260913_attempt1.
+Selected node2GPU0/1/2,10800s/root, two128updatefits each; fresh process+environment
+vacancy checks immediately before launch. No GPU launch at this entry.
+
+Rohin messages31/32 corpus audit completed independently:11source-only checks,
+no checked map/label/balance/branch/loss-sign defect. Q0 supervises branch
+discrimination but evaluates full action production, stronger than plain storage;
+diagnose margin, legal-pair mass and raw action separately at existing checkpoints.
+Maps are separate fits, not contradictory rows in one corpus. A one-step miss is
+not necessary 'by construction': a feature-equipped CPU XOR toy passes. No
+new map-distance arm or relaxed endpoint criterion is inserted into this protocol.
+Audit archived as astra_q0_corpus_task_audit_20260913.md; full-dose work proceeds.
+
+Node1 exact delta PACKED04:45:57UTC, verified on VM04:46:51 and node2 04:47:53:
+767payloadfiles + embedded roster,2,413,762,560archivebytes, SHA256
+f01a1526254c7b12924191694f71ada143c31edbaee77dcc0ebc6860ba385118.
+Includes348v6_out files (7missingadapterweights) and419executed source files.
+All source pre/stream/post checks passed; destination allmemberbytes verified.
+VM gpu_artifacts_local/node1_delta_20260913; node2 mirror/node1_delta_20260913_attempt1.
+Old mirror untouched; this is delta custody, not whole94.6GBmirror certification
+or restore. Main38CPU fixture tests passed0.237s; all receipts/helper archived.
