@@ -17223,6 +17223,30 @@ no visibility exception or automatic retry. PID confirmation follows launch.
 Seeds1/2 results and all excluded roots remain unchanged. No parenting/G3
 qualification or final-C11 guard activation follows this diagnostic launch.
 
+## [Builder] 2026-09-13T20:54Z — seed0attempt6 controller running; final reduction waiting
+
+Actual launch node2/GPU1: controller269723 at20:51:56.741871UTC; detached
+bootstrap269711 returned0. B200 fit worker_start.json exists; no stopped or
+completed controller marker was observed at the first check. Manifest remains
+a1d541f2c9d9f7ed5416700885f790b3d7e2a91d4990bc7788d1c8a7ee26f211.
+Launch resources passed the existing GPU/CVD/queue checks, retaining only the
+previously documented non-worker init-pair exceptions; no new exception.
+
+CPU-only analysis watcher270191 uses immutable analysis source2 and waits for
+seed0attempt6 plus seeds1/2attempt5. Output directory
+pcfl_sequence_v2_followup_reduction_20260913_attempt2; it stops on any terminal
+scientific failure and never launches science or promotes partial results.
+Hooke now owns gpu/astra_pcfl_event_sequence_v2_report.py and its test for a
+small deterministic presentation layer over the final three-seed raw receipt.
+It must retain per-seed cell counts, same-bank limits, all physical/excluded
+costs, and no significance/general-G3/H1/H2/parenting claim. Newton's separate
+candidate Stage2A source/CPU work continues without model/material execution.
+
+Node1's already verified bounded preservation remains separate. Do not invoke
+gpu/migrate_node1_to_node2.sh wholesale: it contains legacy name-based kills
+and laptop paths inconsistent with current PID-ownership rules. No migration
+or kill was performed by this continuation. Latest seed1/2 evidence is on VM.
+
 ## [Root adoption] 2026-09-13T20:54Z — TSJ-v4 opens CPU source/checker authoring only
 
 Adopt exact two-SLEEP-junction v4 source contract commit `ca1cc8fa`, file

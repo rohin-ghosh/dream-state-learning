@@ -1,4 +1,32 @@
-# Astra restart handoff — September 13, 2026, 20:47 UTC
+# Astra restart handoff — September 13, 2026, 20:54 UTC
+
+## Live seed0 attempt6 — supersedes pending-launch snapshots below
+
+Controller269723 launched node2/GPU1 at2026-09-13T20:51:56.741871UTC;
+B200 fit worker_start.json was observed, no terminal marker at that check.
+Manifest FILE SHA256a1d541f2c9d9f7ed5416700885f790b3d7e2a91d4990bc7788d1c8a7ee26f211.
+Code commit3f4c03bc80298d5fd1062db49fbe26174fdc1b34 contains the tested/reviewed
+fresh-rerun operator and reducer. Original warmfix4 science is unchanged.
+Operator61/61tests PASS6.743s; changed reducer3/3 PASS137.023s; Peirce PASS.
+Native preflight4/4 and native excluded-history reduction PASS, receipts under
+the existing validation directory. Preparation helper TypeError was repaired
+in a separate preflight-only helper before any scientific stage; original kept.
+
+CPU-only watcher270191 waits for seed0attempt6 + seeds1/2attempt5, then runs the
+new pinned raw reducer. Immutable analysis source:
+/tmp/astra_pcfl_followup_analysis_source_20260913_attempt2.
+Output: /localhome/local-rohing/astra_diagnostics/pcfl_sequence_v2_followup_reduction_20260913_attempt2.
+Log: /localhome/local-rohing/astra_diagnostics/pcfl_followup_reduction_20260913_attempt2.log.
+Runner: /tmp/astra_pcfl_followup_reduce_when_complete_20260913_attempt2.py.
+It exits on any stopped scientific root; no automatic retry or incomplete
+reduction. Expected seed0 completion around21:16UTC, not a guaranteed result.
+Avoid long/repeated node2SSH at stage boundaries. Inspect actual state on resume.
+
+Newton owns only candidate Stage2A module/test (partial source/CPU, no science
+opening); Hooke owns only event-sequence-v2 report module/test (presentation of
+the complete three-seed raw reduction, no promotion). Prior operator/reducer
+agents and Peirce are closed after EDITSTOP/review. Preserve unrelated dirty
+gpu/codex/dream_state.rules and the unreviewed two_sleep_junction draft.
 
 ## Latest reconciliation — seeds1/2 complete, fresh seed0 still pending
 
