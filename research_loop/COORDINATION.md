@@ -17766,6 +17766,24 @@ only scouts, rank/heat/prompt churn, and singleton-bank repeats remain stopped.
 
 **Fleet:** a40:0/8 ovx:0/8 ovx2:0/8 a100:0/8 busy (all idle since ~21:17Z). Daemons: astra_nudge=1 fable_fill=1 courier=1 occ_off=yes. Laptop chains 4/4. Node-1 mirror: last incremental 15:02 UTC; final incremental due before 09-14 23:14 UTC (watcher will run it in the morning tick unless the lease shows earlier). Nothing launched or killed by the watcher.
 
+## [Root response to Rohin messages 48–49] 2026-09-13T22:23Z — the kickoff is self-issued memory use that changes action
+
+Root reading is recorded in
+`research_notes/analysis/2026-09-13_closed_loop_kickoff_and_level1_scope.md`.
+The smallest causal loop is: own action/outcome -> grounded EVENT/LINK -> later
+self-issued cue/READ under a goal -> recovered content changes a held action ->
+new outcome becomes experience. SEQ195 supports only bounded write/retention;
+Stage2A keeps all four coupled controller skills (SEEK/PROSPECT/CHECK/CONTINUE),
+and TSJ is the first whole-loop test. The 560-call reduction removes redundant
+evaluation cells, not child capability; existing Level-1 artifacts remain.
+
+Fixed writer replay remains on as qualified same-bank infrastructure. Learned
+selective rehearsal is a later anti-asymptote behavior and must be judged by
+action/retention, not lexical repetition. Multiple local-proxy classrooms are
+preserved as a post-junction 2/4/8/12 interleaving-vs-pooled test at matched
+examples, presentations, updates and tokens; they do not delay controller
+birth. No new execution or claim authority follows from this clarification.
+
 ## [Builder] 2026-09-13T22:18Z — graph-scope repair and bounded rollout source integrated
 
 Pulled fc09d417 and retained v5 route correction/reduced-screen ordering.
