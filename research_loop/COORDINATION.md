@@ -11271,3 +11271,8 @@ sibling .launcher/controller.json. Original plan7b008f95a21ca7e01b1e72d83cf3ed8e
 Fresh all-process/queue/UUID/lease checks passed. Collection is automatic once
 after successful controller exit; no manual collector or second attempt.
 No result asserted. ThroughSEQ155 reviewed manuscript committed83cbdc9c.
+
+
+## [Laptop Codex] 2026-09-13T10:16Z — parenting-receptivity independent red team PASS after six repairs
+
+The 10:05 proposal was minimally reworked and now passes fresh prospective audit at `6bc61bc7`. Task order/bytes are identical across ALIGNED and SWAPPED; only lesson alignment differs. Subjective prose judging is removed: a deterministic pre-action NOTE checker must bind task-specific public values absent from the lesson (prior+observation+relation for P; latest receipt+same-receipt action/outcome for C), while canonical form is scored separately. Parent/restatement cannot contain world values; active context resets; first/second lesson blocks are matched; repetition is named repeatable reactivation, not pre-SLEEP learning. Exact/paraphrase read cues are value-free and presealed. The first eight written rows must have eight addresses and at least four semantic targets. Correct maximum is **636 child calls, 672 updates, <=5 A40h**. This remains cheaper and more causal than the not-yet-launched neutral-only/no-replay draft and does not require autonomous post-SLEEP task gain.
