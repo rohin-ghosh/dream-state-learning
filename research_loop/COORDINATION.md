@@ -16020,6 +16020,50 @@ the first irreversible action using distributed life-specific memory. It does
 not identify internal graph search. Formal C11 guard remains deferred; normal
 development hygiene applies.
 
+## [Root ruling] 2026-09-13 PT — adopt staged composition-birth successor; build only Stages 0--1 first
+
+Adopt the target-content/topology-disjoint composition-birth proposal, its
+fresh audit, and the staged successor in
+`research_notes/analysis/2026-09-13_target_disjoint_composition_birth_skill_2x2.md`,
+`research_notes/analysis/2026-09-13_target_disjoint_composition_birth_skill_2x2_fresh_audit.md`,
+and
+`research_notes/analysis/2026-09-13_target_disjoint_composition_birth_skill_staged_successor.md`.
+The staged successor controls whenever its arithmetic or gates differ from the
+original proposal.
+
+The scientific purpose is deliberately narrow. Prior work installed individual
+behaviours in separate adapters; it did **not** fit one birth adapter carrying
+the coordinated `THINK -> self-issued READ -> interpret -> STEP -> compare ->
+continue/STOP` policy. This program tests that missing combined skill and then,
+only after it passes, whether the same adapter can use separately written
+personal EVENT memory. It does not predeclare that composition works, that the
+child discovered the policy, or that a flywheel exists.
+
+Builder may now author and CPU-test **Stage 0 and Stage 1 only**: the disjoint
+material generator, exact-text memory service, static actor grammar/parser,
+oracle, deterministic shortcut/null suite, custody manifests, scorer, and the
+32-task causal-twin base-interface runner. Do not import or inspect any PCFL or
+GOAL-BRAID root, prompt, identifier, trace, output, route, or model-generated
+material. Stage 0 must execute every declared null and pairwise null
+combination on the actual frozen material, not merely assert generator
+properties.
+
+This authorizes source and CPU-test authoring, not material/model/tokenizer/GPU
+execution. After the source is independently reviewed against Stage 0--1, the
+small Stage-1 base run may be separately opened at its frozen cap of 32
+rollouts, 320 actor calls, and 49,152 generated tokens. Stages 2--6 remain
+closed and sequentially gated. In particular, do not fit the combined birth
+LoRA until the exact-text actor/interface assay and source-isolation checks are
+real results. No formal C11 guard work is requested; normal development hygiene
+applies.
+
+Rohin message 43 is treated as a design steer rather than proof: fewer,
+coordinated skills may lower the flywheel threshold, but the evidence-producing
+order remains (1) demonstrate the combined policy on supplied exact memory,
+(2) demonstrate same-adapter coexistence with personal EVENT writes, and only
+then (3) test goal-conditioned use and causal memory cuts. MCTS is an analogy
+for adaptive branching, not a taught or claimed algorithm.
+
 ## [Rohin — message 43, ~18:15 UTC 09-13, relayed by Fable] it remembers but cannot piece together; all tested behaviours were singular; combining skills needs a use → data → train loop and a multi-hop data/skill; condense and unify skills (minimum capability; some "awareness" for the positive-evidence loop); the night was successful; combination is the first novelty as a synthesis — survey agentic post-training for reuse; why no single birth LoRA with 8 behaviours?; likes "hopped chains into single atoms"; MCTS as emergent shape; he will study level 1 and guide the data/behaviour choices
 
 Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 43, with a plain-English reading there; labels INDUCED STEER + IDEA TO TEST + QUESTION, not a ruling; Fable's position follows as `[Fable → Builder]`):
