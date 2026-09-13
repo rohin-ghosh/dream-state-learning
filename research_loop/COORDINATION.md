@@ -9861,3 +9861,36 @@ No extra fit1-only campaign is launched in parallel. Analysis/receipts archived.
 
 Rohin, in substance: (1) "just data work" was a bad phrase — how the data is produced is the method; it must be reproducible as a specification (sources, generators, filters, steering protocol) alongside the dataset; document it well once it works. (2) Classroom grammar, but general enough not to tank base capability or fire on everything; many skins. (3) Agrees: data is the work; birth should maximise supervised training and births should be compared; levels 2–3 are closed-loop supervised training on the real functions, and that is what parenting measures. (4) On "one update cannot see separation": "the perceiver needs to spend a lot of thought on the differences … if I don't care about cars they all look the same; if I want to tell them apart I pay attention to differences … not a problem with the mechanism but another thing that needs to be taught." (5) Asks whether LoRA modifies attention (answered below) and files emotion-as-decision-indicators, communication, population and base-model post-training as next-paper work.
 Watcher reading for the builder (advice): (4) is the cheapest lever on the SEQ-132/134 pattern — common-mode-first learning. Rather than only more dose or wider map distance, make the difference its own token sequence: contrastive records ("key 3, unlike key 5, maps to …"; "A differs from B in …") written by the perceiver. Proposed level-0 cell: the Q0 maps (or the shared-key fact bank) with plain vs contrastive records, same dose and rows; prediction — keyed discrimination rises with contrastive records while the common part is unchanged. If it holds, contrastive perception becomes a birth-v2 perception behaviour and, at level 2, the child learns when to spend thought on differences. On LoRA: all level-0 fits adapt q/k/v/o and gate/up/down in all 28 layers, so attention weights do change; an attention-frozen (FFN-only) arm is a cheap ablation if wanted.
+
+## [Builder] 2026-09-13T06:55Z — six comparisons live; message33 incorporated
+
+All six node3 controllers independently passed fresh compute/environment
+vacancy checks and launched; Main confirmed all PIDs alive06:54UTC:
+
+| root label | GPU | PID/PGID | start ticks | launch UTC | 5400s cap UTC |
+| --- | --- | --- | --- | --- | --- |
+| seed0_low | 0 | 348349 | 9821325 | 06:51:44 | 08:21:44 |
+| seed0_high | 1 | 348411 | 9823269 | 06:52:03 | 08:22:03 |
+| seed1_low | 2 | 348477 | 9825975 | 06:52:30 | 08:22:30 |
+| seed1_high | 4 | 348537 | 9827610 | 06:52:46 | 08:22:46 |
+| seed2_low | 5 | 348613 | 9830681 | 06:53:17 | 08:23:17 |
+| seed2_high | 6 | 348673 | 9833496 | 06:53:45 | 08:23:45 |
+
+Date2026-09-13UTC throughout. Roots/source/plan/UUIDs bound in prepared roster;
+full launch receipts archived as astra_l2_lr_launch_20260913_attempt1.log.
+Collection not launched; use each ORIGINAL pinned source exactly once after
+terminal/finalized+controller exit. No result claimed from successful launch.
+No control arm stopped, no GPU7/hardware/lease intervention.
+
+Main read Rohin's rawmessage33 and06:53relay. Data generation/selection is a
+reproducible method, not disposable data work. Contrastive discrimination is
+the next material hypothesis, not presumed evidence the mechanism cannot fail.
+Descartes maps a minimal plain-versus-contrastive perception comparison with
+explicit source/generator/filters/skins/budgets and no-harm checks. Authored
+level0/1 targets remain distinct from exact child-authored SLEEP; no compiler
+rewrite or parent-text target. Existing six runs remain frozen. Emotions,
+population/communication and base-model post-training remain deferred ideas.
+Lovelace prepares six-root analysis while Main owns native monitoring/collection.
+Other capacity is not filled with repeated uninformative copies of weak
+recipes; the next material comparison is being made executable. FormalC11
+guard stays deferred. No thesis/base/invariant change or external message.

@@ -1,6 +1,42 @@
-# Astra current handoff — 2026-09-13T06:42Z
+# Astra current handoff — 2026-09-13T06:55Z
 
-## CURRENT — September13 06:42UTC
+## CURRENT — September13 06:55UTC
+
+SIX matched full L2 LR loops LIVE on node3, same source and fixed protocol:
+seed0low/high GPU0/1 PID348349/348411; seed1low/high GPU2/4 PID348477/348537;
+seed2low/high GPU5/6 PID348613/348673. Starts06:51:44–06:53:45UTC,5400second
+caps through08:21:44–08:23:45UTC,180seconds separate collection. All alive at
+06:54UTC. Do not relaunch or edit any active source/root. Runtime
+dce8cd88b82bd51ec4f12e482ce70dc220453cb85dcaeb758206c7b5200a4277 in
+/localhome/local-rohing/astra_sources/l2_lr_comparison_20260913_attempt1.
+Root template /localhome/local-rohing/astra_diagnostics/l2_lr_seed{0,1,2}_{low,high}_20260913_attempt1.
+External controller logs /tmp/astra_l2_lr_seed{seed}_{label}_20260913_attempt1.controller.log.
+Exact roster/plan/UUID/pins: /tmp/astra_l2_lr_prepared_20260913_attempt1.json onVM,
+also archived receipts_20260912; launch receipts astra_l2_lr_launch_20260913_attempt1.log.
+Collection not yet run: pinned runtime `collect --root ROOT --plan-sha256 PIN
+--output OUTSIDE_ROOT` only after terminal/finalized AND controller exit. Do
+not interpret a live root or launch status as completed. No reported result yet.
+
+SEQ136 saved-adapter diagnostic COMPLETE,192forwards/0updates/264.685seconds;
+report1d3d33347c246f0e243343d4f18f01b4dfa2c35b669b97cb64d28c3fff259aa1.
+Archive /tmp/astra_l2_access_attempt2.tar SHAe6b80249420b37264981339d84c1744bf12577594c01910e7be959b0bfc2360e.
+Bias reduced, exact-train discrimination fragile (fit2full12/16,first8/16+5ties),
+readout8/16; not no-learning or pure access-only failure. Independent96paired
+reductions agree. V1 route-check failure preserved; no original L2 result changed.
+Six-root protocol ASTRA_L2_LR_COMPARISON_PROTOCOL_2026-09-13.md activated at06:46.
+Main111runtime/29launcherCPUtests +six native preparations passed. Same rank8,
+exposure and data contracts; LR3e-5vs1e-4,3learnerseeds, PROMOTE/SHADOW per root.
+
+Rohin rawmessage33 read: data-production reproducibility and taught contrastive
+discrimination now next material comparison; don't change active runs. Descartes
+owns /tmp/astra_contrastive_perception_next_20260913.md (read-only design).
+Lovelace owns /tmp/astra_l2_lr_analyze_20260913.py/tests/handoff (CPU aggregate).
+Noether diagnostic review complete. Manuscript throughSEQ133 reviewed/committed,
+collaboratorUNSENT, no TeX/PDF validation. Mission ACTIVE/incomplete, formalC11
+guard deferred. Preserve unrelated gpu/codex/dream_state.rules. Node1 expiry
+2026-09-14T23:14Z; prior mirror qualification limits remain, no lease changes.
+
+## Historical superseded snapshot — September13 06:42UTC
 
 LIVE read-only access attempt2 node3GPU3controller346117,06:40:19UTC through
 07:00:19UTC maximum. Root/source l2_access_20260913_attempt2 under prior

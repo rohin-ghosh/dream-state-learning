@@ -1,4 +1,18 @@
-## Current superseding snapshot — 2026-09-13 06:42 UTC
+## Current superseding snapshot — 2026-09-13 06:55 UTC
+
+SIX matched LR-only fullL2 loops LIVE node3GPU0/1/2/4/5/6, PIDs348349/348411/
+348477/348537/348613/348673; starts06:51:44–06:53:45UTC,5400s/controller caps.
+No results yet; collection once after each terminal/finalization/controllerexit.
+Exact roster/source/pins in HANDOFF and launch receipts.111runtime/29launcher
+CPUtests and six native preparations pass. Old roots immutable.
+SEQ136read-only probe complete: strong prior bias reduction, fragile exacttrain
+discrimination, no heldreadout gain; independent stored-score reduction agrees.
+Rohinmessage33 read: reproducible data method and contrastive perception next;
+active runs unchanged. Analyzer/nextmaterial sidecars underway. Manuscript
+throughSEQ133 accepted, UNSENT, PDF unbuilt. Mission ACTIVE/incomplete; finalC11
+guard deferred, no clean/G1/generalG3/P1/G5/H1/H2/freeze promotion.
+
+## Historical superseded snapshot — 2026-09-13 06:42 UTC
 
 LIVE repaired diagnostic attempt2 node3GPU3PID346117,06:40:19–07:00:19UTCcap.
 Attempt1 failed an overbroad adapter-status check (Transformers method versus
