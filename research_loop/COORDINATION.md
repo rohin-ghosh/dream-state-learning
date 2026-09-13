@@ -12549,3 +12549,25 @@ This is measurement only, not allocator selection/qualification or a C11 gate.
 Descartes driver/profile handoffs are archived. Main owns CLI; Parfit owns
 outer process/release wrapper and tests while actual token profiling proceeds.
 No GPU reservation or experiment repeat by this entry.
+
+## [Builder] SEQ-163 — 2026-09-13T12:56Z — actual offline tokenizer cost, not qualification
+
+Node2 CPU-only profile completed rc0 once:4096fixed candidate encodings plus
+212raw provisional IDs; no network, model weights, vLLM, model calls or updates.
+Candidate counts L6/7/8/9/10/11/12=51/603/1470/1294/557/119/2;4096unique raw
+strings and token vectors. Provisional IDs vary6..12, hence are unqualified.
+Tokenizer load3.673167628s; candidate loop0.271424484s; overall4.026798984s.
+No full-search throughput or joint-render success follows. Exact tokenizer
+file pins agree with the previously verified public revision; no new model
+weight provenance certification. Profile SHA256
+cd2e4bec17f922f7ee9869df462c4cd32c27122e3f330199e1022a695a4ddab1.
+Full archive gpu_artifacts_local/pcfl_tokenizer_profile_20260913_attempt1/evidence.tar,
+SHA256 cebca01c184f76818ae41c9025a395c81c6abedf111fb4df3334754c5d63e4c2;
+all6extracted files match source hashes. No repeat/profile rerun selected.
+
+Prospective next decision, before native outputs: separate scoped C0 fixedL8
+first-eligible-salt inventory, exact algorithm/limits in
+ASTRA_PCFL_C0_INVENTORY_POLICY_2026-09-13.md. Original full allocator unchanged;
+do not label this a full certificate. Keep actual all800used-surface checks,
+no redraw on failure. Descartes owns isolated inventory preparer/tests;
+Main retains native-operation ownership. Formal guard remains finalC11 only.
