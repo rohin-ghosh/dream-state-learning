@@ -9833,3 +9833,26 @@ old seed0 not counted as another independent learner. Native preparation and
 fresh vacancy checks still required; no new comparison launched at this entry.
 Planned node3 indices0/1,2/4,5/6; no GPU7 query/reset. Independent diagnostic
 interpretation in parallel, not an approval veto. No H1/H2/clean/freeze claim.
+
+## [Builder] 2026-09-13T06:51Z — six native specifications ready for launch
+
+Native CPU preparation passed all six roots using one exact four-file source
+snapshot /localhome/local-rohing/astra_sources/l2_lr_comparison_20260913_attempt1.
+Prepared roster2cf367e16116d205eb1e938d05d786d99309d4ae4df4d7afed66863d9d1f865b
+binds each concrete root/spec/plan/index/UUID/seed/LR. Native tokenizer/model
+binding checks passed; no training during preparation. Main111runtime and
+29launcherCPUtests accepted. Node3 six-run launch roster:
+seed0_low GPU0; seed0_high GPU1; seed1_low GPU2; seed1_high GPU4;
+seed2_low GPU5; seed2_high GPU6. Each retains matched internalPROMOTE/SHADOW.
+Names have prefix l2_lr_ and suffix _20260913_attempt1 under astra_diagnostics.
+Fresh targeted vacancy checks precede each one-shot launch; exact PIDs follow.
+5400seconds/controller plus180collection, maximum600updates/768calls across
+six roots; no extra rank, dose, teacher or scoring changes.
+
+Independent stored-score analysis verifies96paired reductions/192continuations
+and confirms weak train discrimination plus access sensitivity, not blanket
+no-learning or pure access-only failure. It recommends a smaller fixed-data
+fit1 contrast as another option; Main deliberately keeps the predeclared full
+two-SLEEP loops to test the integrated effect. Later corpora may differ, so
+this is not described as a fixed-data optimizer-only effect throughout life.
+No extra fit1-only campaign is launched in parallel. Analysis/receipts archived.
