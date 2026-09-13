@@ -10149,3 +10149,47 @@ scientific attempt or justification to overwrite an existing root.
 ## [Fable] 2026-09-13T07:46Z — saturation began 07:44 UTC: the builder read messages 35/36 and activated a 12-cell Level-1 skill roster across nodes 1 and 2 (per-cell native checks); Rohin informed
 
 Occupancy monitor: 0–3 of 31 busy from 07:27 to 07:42, **12 of 31 at 07:44**. Builder 07:35 "raw 35/36 read"; 07:39 "activate 12-cell Level-1 roster"; 07:41 node-2 starts — contradiction seeds 0/1/2 (GPUs 1/2/3, PIDs 4168522/4169406/4169805, 07:39:53–07:40:30 UTC), judgement cells submitting; node 1's first batch failed on a missing `~/astra_diagnostics` parent directory before any learner root was created, the directory was created and the same six specs relaunched as a node-1 recovery batch (no scientific change). At 07:47: node 2 six GPUs busy, node 1 twelve level-1 processes loading models, node 3 one L2 recovery cell, A100 idle. Contrastive screen on node 2 GPU 0 caps 08:04. Rohin told at 07:48 so he can sleep; overnight criterion = message 36 (records contain what the compiler needs). Nothing killed or launched by the watcher.
+
+## [Builder] 2026-09-13T07:48Z — SEQ140 contrastive screen complete; twelve skill controllers submitted
+
+Contrastive node2 controller4152616 EXITED, completion verified and collected
+ONCE at07:43UTC; do not recollect. This supersedes watcher live-screen snapshot.
+144 calls, two fits/24 optimizer updates, controller1323.156seconds; measured
+fit training18.6seconds contrastive and27.6seconds plain, not total GPU costs.
+
+| State | D1 /12 | D2 /12 | Held /24 | C-record /12 | C-general /12 |
+| --- | --- | --- | --- | --- | --- |
+| OFF | 0 | 2 | 2 | 0 | 11 |
+| PLAIN | 9 | 8 | 17 | 8 | 12 |
+| CONTRASTIVE | 12 | 7 | 19 | 9 | 12 |
+
+Predeclared exploratory screen FALSE: contrastive19<20held, D2=7<9 and
+advantage2<4 overplain. Paired contrastive-vs-plain wins3/losses1, all three
+winsD1 and lossD2. No OFF-correct canary regressions. Authored-fixture strict
+success improves overOFF; content/format attribution awaits the independent
+raw-error analysis. One learnerseed; D1/D2 are paired renderings of12cases/two
+fresh triples, NOT24independent situations. Earlier audit identified a perfect
+negate-earlier-outcome shortcut; this design cannot identify use of the selected
+final outcome. Keep original strict scorer; no retrospective permissive scoring
+or promotion to parenting, H1/H2, P1, generalG3, clean ancestry or mechanismfreeze.
+
+Score7af6484ebb72abc81d2f17d29e7ca15786599afba0b22e88139a80403f3412d0;
+planf0060eb8d37a61aa1d9b25ba6798f19045a8a66cca715755f5e948d216702ec4;
+completion9574f5b7dfe6df3bbd9b74a3afb46fd5fc1c5d4ae0b1e11f249f9076bf0c38ff.
+Full native root+collection preserved in
+gpu_artifacts_local/contrastive_perception_20260913/contrastive_perception_20260913_attempt1_archive.tar,
+SHA256c12c3ff8e7cd0a9261aa5118d85f5a93d5318245afd05d0d4ff3cacc96401f7d,
+verified equal onnode2 andVM. Score and collectionstdout copied to receipts.
+
+Both Level1 batch finished.json receipts now say all six controllers submitted,
+NOT scientific success. Actual node1 prediction seeds0/1/2 GPUs0/1/2
+PIDs2874439/2874893/2875352; goal_completion seeds0/1/2 GPUs3/4/5
+PIDs2876101/2877696/2878855. Node2 contradiction seeds0/1/2 GPUs1/2/3
+PIDs4168522/4169406/4169805; update_judgement seeds0/1/2 GPUs4/5/6
+PIDs4170978/4172582/4173845. Independent live-stage reconciliation underway;
+no duplicate batch submission. VM roster archivefee4f3c12a822333dc58b932d40eb5741d255e87afa615f7a0ff50997d6f6d3e
+preserves all12specs and precheck pins in receipts.
+
+Node3 seed0_low attempt2 PID358281 still live07:46:13UTC. No reboot, no
+hot NVML changes, no seed0_high launch until low succeeds/exits/releases.
+Continue simple hygiene; formalC11guard remains deferred per Rohin.

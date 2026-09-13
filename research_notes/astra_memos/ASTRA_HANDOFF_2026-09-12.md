@@ -1,6 +1,58 @@
-# Astra current handoff — 2026-09-13T07:23Z
+# Astra current handoff — 2026-09-13T07:48Z
 
-## CURRENT — September13 07:23UTC
+## CURRENT — September13 07:48UTC
+
+Mission ACTIVE/incomplete. Simple hygiene now; formalC11guard only for final
+paper-grade run. No freeze/clean/generalG3/P1/H1/H2 promotion. Preserve unrelated
+dirty gpu/codex/dream_state.rules. Pull before writing; explicit owned staging.
+
+SEQ140 contrastive screen COMPLETE, controller4152616 exited, collected ONCE;
+never recollect. OFF2/24,plain17/24,contrastive19/24 strict held; predeclared
+screenFALSE; one learnerseed, paired12cases and outcome shortcut limit claims.
+Full root+collection archive verified node2/VM:
+gpu_artifacts_local/contrastive_perception_20260913/contrastive_perception_20260913_attempt1_archive.tar
+SHA c12c3ff8e7cd0a9261aa5118d85f5a93d5318245afd05d0d4ff3cacc96401f7d.
+Score in receipts_20260912/astra_contrastive_scores_20260913_attempt1.json.
+Copernicus01a099a3-f03d-7e42-bafe-53cdb4dd67d0 independent analysis pending.
+
+ALL12 Level1 controllers submitted; both batch finished receipts exist.
+Node1 prediction0/1/2 GPUs0/1/2 PIDs2874439/2874893/2875352;
+goal_completion0/1/2 GPUs3/4/5 PIDs2876101/2877696/2878855.
+Node2 contradiction0/1/2 GPUs1/2/3 PIDs4168522/4169406/4169805;
+update_judgement0/1/2 GPUs4/5/6 PIDs4170978/4172582/4173845.
+Not completed results. Lovelace01a0997b-d9db-7812-9206-e74dfa608600 now owns
+read-only live-stage inventory /tmp/astra_level1_inventory_20260913T0746Z.md.
+Roster onVM/bothnodes /tmp/astra_level1_roster_20260913_attempt1/roster.json;
+node1 receipts batch_node1_parentfix, node2 batch_node2. Root pattern
+/localhome/local-rohing/astra_diagnostics/level1_SKILL_seedN_20260913_attempt1.
+Original node1 failed batch preserved; never rerun either batch.
+Protocol ASTRA_LEVEL1_SKILL_ROSTER_PROTOCOL_2026-09-13.md is frozen; runtime
+/tmp/astra_level1_skill_run_20260913.py SHA6f4c391419500d046e2b15729ee09485baa07b45938db1f96484b07e69e1ed9e.
+96distincttrain/48held+12canary,320updates, fresh-base LoRA,3seeds per skill;
+content primary/strict format secondary, not SEQ113replication or childSLEEP.
+
+SEQ139 original LR seed1/2 low/high ALLcomplete/collectedONCE/archived;
+every readout old4/8,new4/8,legal16/16. Original seed0aborts remain missing.
+Seed0_low attempt2 LIVE node3 PID358281, start07:29:27UTC, cap08:59:27UTC,
+plan5864a45b34c7735b1bb303c5702f1aafc29e11c323cd9ed25de6a83dae92aef6.
+Seed0_high attempt2 PREPARED NOTlaunched; wait for low success/exit/release,
+then original accepted launcher per recovery amendment. Another infrastructure
+failure stops serial queue for diagnosis. Node3GPU7fault untouched; NOreboot.
+
+Next skills: Descartes01a09964-393d-7682-99a9-33d89a6c4e9f owns new
+/tmp/astra_level1_perception_reflection_material_20260913.py/tests/handoff;
+Parfit repetition/meta material+tests/handoff ready under/tmp, not Mainaccepted.
+Manuscript throughSEQ136 accepted/pushed f99354e0, LR/contrastive not integrated.
+Galileo recipe primary-source note ready/tmp, not fully reviewed. No externalsend.
+
+Node1 finish cutoffSep14 17:14UTC; transfercheckpointSep13 23:14UTC. Node2
+expirySep21 08:43UTC. A100 full-model/native validation and exact expiryclock
+unresolved; no allocation there. Existing GPUs free status needs fresh all-process
+and environment checks, not memory-zero or stale occupancy. Next: review/accept
+independent skill material, collect completed Level1 exactly once, analyze then
+advance compiler-relevant raw-record checks; do not stop at submitted work.
+
+## Historical superseded snapshot — September13 07:23UTC
 
 Contrastive authored screen LIVE node2GPU0PID/PGID4152616,startticks51239687,
 actual launch07:19:17UTC (prior07:20activation heading was rounded ahead).

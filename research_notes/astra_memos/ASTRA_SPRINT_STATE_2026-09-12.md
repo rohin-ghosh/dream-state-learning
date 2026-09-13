@@ -1,4 +1,19 @@
-## Current superseding snapshot — 2026-09-13 07:23 UTC
+## Current superseding snapshot — 2026-09-13 07:48 UTC
+
+SEQ140 contrastive COMPLETE/collectedONCE/archived with matching node2/VMSHA.
+Strict held OFF2/24,plain17/24,contrastive19/24; screenFALSE, paired cases,
+one learnerseed, outcome shortcut. No parenting/scientific promotion.
+All12Level1 controllers submitted across node1/2; stage verification underway.
+Four skills x3seeds,96distincttrain/48held/12canary,320updates, typedcontent
+primary/format secondary. Frozen protocol and exact PIDs/artifacts in HANDOFF.
+SEQ139 original LR seeds1/2 complete and archived, no measured endpoint gain;
+original seed0aborts preserved. Recoverylow PID358281 LIVE node3 at07:46UTC;
+high prepared only, serial and stopretryqueue on infrastructurefailure.
+Next perception/reflection and rehearsal/meta materials CPUsidecars; no new
+native allocation yet. Manuscript accepted throughSEQ136; new evidence pending
+integration. Mission ACTIVE/incomplete. Simplehygiene; formalC11guard deferred.
+
+## Historical superseded snapshot — 2026-09-13 07:23 UTC
 
 LIVE contrastive screen node2GPU0PID4152616,07:19:17UTC through08:04:17UTCcap,
 twofits24updates/144calls. Native preflight passed; no result yet. Four original
