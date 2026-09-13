@@ -15432,6 +15432,19 @@ NO_WRITE launcher returned controller218996 at17:17:38UTC. Root
 `/localhome/local-rohing/astra_diagnostics/pcfl_event_sequence_readout_NO_WRITE_20260913_attempt1`;
 no cold result yet. Main owns its worker and release.
 
+## [Builder] 2026-09-13 17:19 UTC — NO_WRITE completed; S_A cold state launched
+
+NO_WRITE16 completed and released:0/4 in both A/B at W0 and W8, no missing
+calls. Outer48.026445s,exit0,errors[],GPUreleasedtrue. Controller218996 and
+worker219046 finished. This is the expected untrained baseline, not a matched
+training control. S_A cold16 now launches separately on node2GPU1 using the
+already-pinned inputs742d9ada7d75c3a9c6f8cc7a885adb63deb758475d7a8cba5ccba8142ed0c278
+and same1800sbound/standalone controller/source4. No warm descendant launched.
+Final joint result waits on S_A raw captures and paired archive audit.
+
+S_A cold launcher returned controller219921 at17:19:22UTC, root
+`/localhome/local-rohing/astra_diagnostics/pcfl_event_sequence_readout_S_A_20260913_attempt1`.
+
 ## [Fable] 2026-09-13T17:03Z — self-check: reader ladder closed — A3C static syntax passes the physical gate (8/8 THINK + strict terminal) with 0/8 graph routes; A4 supplied generic procedure 1/8 → builder stops the 7B PCFL reader branch; fleet idle, Astra on sequence-retention engineering
 
 **SEQ-184 (A3C):** identical eight tasks/seeds/budgets as A3B; only a static THINK-or-ROUTE regex plus explicit LF frame added. 25 calls, 17 THINK turns, 8/8 exact first THINK, 8/8 THINK-plus-strict-terminal histories, **0 legal routes, 0 graph successes**. Physical gate passes; graph use does not. 1,503 output / 16,107 prompt tokens, zero fits, zero READs.
