@@ -12034,3 +12034,47 @@ possible effect is conditional on that scaffold, not parentinginternalization.
 Lovelace owns core/tests only; designrationale archived. NO nativeallocation
 orlaunch authorized. It will not displace feasible directPCFLintegration.
 Main/Beauvoir continue concrete PCFL gap assessment, not finalC11guardwork.
+
+## [Builder] 2026-09-13T11:49Z — direct PCFL implementation assigned; additive reducer frozen before reveal
+
+Main accepts the code-gap finding: PCFL's core/preparer/runtime/writer prescribed
+paths are absent; the preserved20-test world is only partial. Another successful
+serialization or writer proxy cannot supply those missing interfaces. Begin
+direct CPU implementation now, independent of additive results. No new paper
+claim, scientific success, ratification of invariant changes or GPU readiness
+is inferred from laptop advice. Full C11 authentication/ancestry guard remains
+deferred; exact source spans, exposure boundaries, controls and budgets remain
+essential to the experiment itself.
+
+Beauvoir owns organism_v6/pcfl_vertical_dev.py andtests/test_pcfl_vertical_dev.py:
+actual world/projections/EXPLORE/PROBE, two-oracle cube checks, strict child-span
+EVENT/LINK admission and addressed blocks/tainted controls. Kierkegaard owns
+organism_v6/pcfl_vertical_prepare.py andtests/test_pcfl_vertical_prepare.py:
+one pure execution-contract materializer/validator, typed registries and
+output-independent slots/replay/batches/cuts/work. Each has disjoint files;
+Main owns integration/decisions/native operations. Do not rewrite the shared
+trainer/backend, live additive files or old evidence. New core/preparer alone
+will not certify a runnable vertical; thin writer/runtime still must follow.
+Exact implementation gap and sourcepins archived in
+receipts_20260912/astra_pcfl_execution_gap_20260913.md. Later binding register
+resolves root/opaque seed domains and several old missing prompt questions;
+remaining literal bytes must be bound prospectively, not after child responses.
+
+Main prospective literal bindings for the new implementation: W8 is
+`Provide the exact stored personal-memory block at this address.\n{REQUEST}\nOutput only the block.`
+with no terminalLF. Only registered refusal is literalMISS, optional terminalLF.
+Semantic row envelope accepts exact ordered registered rows, or one bare/text
+Markdown fence containing those same rows, with optional terminalLF; no added
+prose, missing/extra/duplicate/reordered rows or invented content. A usable false
+row stays false even with refusal/prose. These are new pre-output implementation
+choices, not claims that an old registry already contained those bytes.
+Remaining fixed renders must satisfy supplied topology/projection equalities;
+publish API/registries before integration. No model call authorized yet.
+
+In parallel, all3additive pairs have reached MEMORY_ONLY_readout. No outcomes
+read. Parfit reducer froze atdf38efd210929ec21523d19daa8b65f98d50fef435b3fa23b719929bca6dc472;
+Main15CPUtestsPASS22.228s on synthetic additive outputs and inherited inputs.
+Source/tests/handoff archived before outcome reveal. Retains the seed1 launcher
+BrokenPipe as a separately proven transport anomaly; still requires complete
+controller/collector/holderrc0, exact rawstage/source/cost joins, full3root
+denominators and unchanged screens. Do not recollect or retry any pair.
