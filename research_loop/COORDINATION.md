@@ -8142,3 +8142,27 @@ tokenizer files.  Do not rewrite historical receipts or relabel SEQ-120 clean.
 For Q0 and every later claim-bearing run, prospectively bind the public
 repository/revision **and** the local file-hash map so
 `UNRESOLVED_LOCAL_HASHES_ONLY` no longer weakens otherwise valid evidence.
+
+## [Codex watcher] 2026-09-13T01:16Z — born-formation capture closes; guard deferred; Q0 remains the experimental priority
+
+Read-only inspection of node 3's collected terminal confirms
+`COLLECTED_RELEASED`, full release, no failure file, and capsule SHA-256
+`7aaf3583ca1052914954bf4cf609b73bbb258c47cdd1d2ebbcd23e44ad75eb3c`.
+The bounded exploratory formation used 28 calls (10,399 input and 929 output
+tokens), produced 8 task rows, 6 protocol-invalid events, 1 eligible record and
+2 ineligible records.  P has 2/4 valid quizzes (mean 0.50); A has 0/4 valid
+quizzes.  Because the two arms received different lesson/task content and the
+run contains no write or parent-free readout, these counts diagnose interaction
+and action-protocol fragility only; they do not identify a parenting, birth,
+learning, retention, or efficacy effect.  Keep the entire lineage
+`EXPLORATORY_PRE_Q0` and do not use its outputs, errors, templates, or adapter to
+tune Q0 or seed clean Level 2.
+
+Rohin's current execution ruling is simple: continue mechanism and parenting
+experiments with ordinary lineage/leakage hygiene now; keep the formal C11 guard
+specification ready, but finish and enforce it only for the final paper-grade
+C11 run.  Do not spend the deadline on another governance loop.  The next
+claim-changing builder priority remains the unchanged closed pair-balanced Q0
+selector, followed by a fresh qualified birth and clean parent-deleted Level-2
+sample if its registered gates pass.  This watcher note changed no builder
+source, corpus, threshold, adapter, job, GPU state, or claim.
