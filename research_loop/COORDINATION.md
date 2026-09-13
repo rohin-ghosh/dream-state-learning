@@ -9368,3 +9368,20 @@ matching source suffix; external stdout /tmp/astra_reflection_fit_seed2_20260913
 Attempt1 remains failed/unlaunched and preserved; no root or evidence overwrite.
 Now node3GPU0/1/2 hold reflection seeds0/1/2, node2GPU0/1/2 the full-dose writer
 instances. No scientific results inferred from these six controllers.
+
+## [Builder] 2026-09-13T05:28Z — L2 pure core and reflection analyzer accepted on CPU
+
+Main28L2-core fixtures PASS0.855s. Final source
+0bb33988f003a0111e14cdfb53b3dc86a695e8e20656c90e71cfadb5ad28d352;
+test9691e1c2b97d25a8a5bc0747bb5937ecd9281b0c52a041efbdfc9cc63499a4aa.
+Reviewed public/private separation, exact child-byte support, chronological
+receipt links, shared first candidate, branch-local old+new replay and no-op
+control labeling. Typed JSON codec preserves bytes/tuples; no pickle or native
+operations. Core routing is intent, not actual loaded-model proof. Carver now
+has final API/pins for the separate native runtime. No L2 launch yet.
+
+Reflection three-seed analyzer6d84b3ed accepted34Main CPU fixtures20.252s,
+using synthetic captures only. It requires complete relocated seed0/1/2
+snapshots and checks unchanged producer/source pins, raw captures and metrics;
+separate exact-prose/application results, no composite or semantic prose score.
+No live results inspected by this analyzer. All artifacts/handoffs archived.
