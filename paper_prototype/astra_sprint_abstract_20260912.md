@@ -1,13 +1,24 @@
 # FIRST SPRINT DRAFT — companion abstract
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ162 retains both positive and negative findings.
+This draft through SEQ167 retains earlier positive and negative findings;
+SEQ167 is an engineering-only log, excluded from scientific results.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current evidence through SEQ162 — C98; ongoing first draft.**
+**SEQ167 / C99 engineering-only log — excluded from scientific results.**
+Attempt 2 ended as UNUSABLE EXECUTION --- ENGINEERING-ONLY CAPTURE
+(FINALIZATION FAILED). C99 is an engineering-only appendix/log, excluded from
+scientific results. Archived bytes support interface/lifecycle debugging, not
+a usable C0 result or learning evidence; the original gate remains failed.
+The engineering log retains recorded interval checks and fixed-sample
+limitations, not assay qualification. Own-write remains implementation only,
+not executed at this cut. No learning, parenting, H1/H2, clean-lineage,
+general G3, mission or freeze promotion follows.
+
+**Historical evidence through SEQ162 — C98.**
 One instrumented seed0 OLD/NEW first-backward pair has matching recorded
 initialized trainable tensors, encoded input/mask, settings, fresh optimizer,
 environment and RNG snapshots at all six boundaries; both scalar losses are
@@ -613,6 +624,10 @@ Equal loss/RNG does not establish equal intermediate computation; historical
 baseline drift remains unresolved. No H1/H2 or freeze promotion follows.
 
 [SEQ162 / C98 archived sources](../research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md#c98--seq162-instrumented-first-gradient-nonidentity) bind this diagnostic; collaborator remains UNSENT.
+
+Attempt 2 ended as UNUSABLE EXECUTION --- ENGINEERING-ONLY CAPTURE
+(FINALIZATION FAILED). Archived bytes support interface/lifecycle debugging,
+not a usable C0 result or learning evidence; the original gate remains failed.
 
 ## Historical SEQ143 result-table companion — C79–C82
 

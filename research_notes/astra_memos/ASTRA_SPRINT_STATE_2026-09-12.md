@@ -1,4 +1,23 @@
-## Current superseding snapshot — 2026-09-13 13:56 UTC
+## Current superseding snapshot — 2026-09-13 14:27 UTC
+
+Mission ACTIVE/incomplete. Formal guard deferred to final paper-grade C11;
+simple hygiene/invariants maintained. SEQ169 own-formation failed missing LF
+after two native calls, no fit; all original evidence archived unchanged.
+Prompt-only disclosure follow-up implemented cf6ffe56, Main29+21 CPU PASS.
+Fresh actual-tokenizer preparation and manifest sealed; node2GPU0 formation
+controller171768/worker171785 live, twenty-call maximum, no fits launched.
+Exact source/run/pins and next commands in current HANDOFF. No repeated old
+attempt, repaired child bytes, new roots or scientific qualification.
+
+If all twenty calls form valid authentic EVENT/LINK bank, replay and then
+run the predeclared LOW200 fit and two cold readout arms in fresh processes.
+Otherwise archive failure and diagnose before choosing another intervention.
+SEQ167 manuscripts final presentation independently PASS, C99 engineering-only
+and original failed finalization unchanged. Collaborator UNSENT; no PDF build.
+Node1 migration readiness read-only sidecar pending; deadline Sep13 23:14UTC.
+No mechanism freeze/generalG3/P1/H1/H2/full-assay/C11 qualification.
+
+## Historical superseded snapshot — 2026-09-13 13:56 UTC
 
 SEQ167: C0 attempt2 captured all800tasks; worker exited0 after exact-owned
 EngineCore SIGTERM (LLM.shutdown absent). Original finalizer invoked ONCE

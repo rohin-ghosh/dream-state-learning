@@ -1,6 +1,51 @@
-# Astra current handoff — 2026-09-13T13:56Z
+# Astra current handoff — 2026-09-13T14:27Z
 
-## CURRENT — September 13 13:56 UTC
+## CURRENT — September 13 14:27 UTC
+
+Mission active/incomplete. Latest direction: simple hygiene now; finish/enforce
+formal guard for final paper-grade C11 only. No general G3/mechanism freeze,
+P1/H1/H2, clean-ancestry, full-assay or C11 qualification.
+
+SEQ169 original own-write formation failed after two calls: exact experienced
+EVENT identifiers but missing terminal LF; no fit/update/readouts. Original
+raw evidence unchanged, no normalization. Archive:
+`gpu_artifacts_local/pcfl_own_write_20260913_attempt1/evidence.tar`, SHA256
+acdd9c2cf6ec4b5a3bbd28a6c7d1a58159442a89e74461112c42e37b73c9694c.
+Explicit EngineCore shutdown succeeded, owned group released with no signals.
+
+LF-disclosure follow-up LIVE: node2 GPU0, controller171768, worker/PGID/SID171785,
+start_ticks53794258, UID2524, boot8ff7b0dc-fbdf-4945-9044-3dffe94b5407.
+Run `/localhome/local-rohing/astra_diagnostics/pcfl_own_write_lf_20260913_attempt1`;
+source `/tmp/astra_pcfl_own_write_lf_source_20260913_attempt1`.
+Manifest file SHA188c55dd0c2ab725d8e4f4dd97af420dea32f5d0a04a40cda04c409450a5dd76.
+Allocation `/tmp/astra_pcfl_own_write_lf_allocation_20260913_attempt1.json`, SHA
+79b043cbbaad094da2140dc3f580838f931b8dd9854cfa00053c6a72e0de26d9.
+Controller7c3197444113b610a3073e731c3e899f7e79423e6e37005c0f21b0d43e954725;
+`.formation.outer` and `.formation.launcher` siblings. One detached stage,
+1800s including cleanup; no foreground finalizer. Do not poll SSH around
+expected completion; do not reuse any stage path or relax resource checks.
+At14:25:29 no completion/failure existed. Inspect actual terminal output next.
+Only complete independently replayed authentic formation allows LOW200 fit,
+then separate fresh-process153-query AUTH_WRITE and NO_WRITE_C0 readouts.
+Same root is development, not fresh confirmation; identifiers not L8-qualified.
+
+LF amendment cf6ffe56: EVENT/LINK prompt-only explicit LF, unchanged admission,
+writer and responses. Main29formation/21command tests PASS; native CPU writer
+14/14 inherited. Handoff receipt archived. Launch reservation b94d43ac.
+Actual CPU base-state receipt reused (SEQ168), no repeat expensive hash run.
+
+Six manuscripts through SEQ167 have final independent presentation PASS;
+C99 is engineering-only, original finalization failed, excluded from science.
+Final author/reviewer receipts in receipts_20260912; collaborator UNSENT.
+Main owns LF files after EDITSTOP; no uncompleted worker source edits remain.
+Preserve unrelated dirty gpu/codex/dream_state.rules. Lagrange independently
+checks node1 migration readiness before Sep13 23:14UTC deadline. No other
+Main GPU worker was live at this resume; current formation is the only launch.
+
+Next: inspect formation; conditionally fit/readout or diagnose preserved failure;
+advance mechanism/parenting campaign rather than building deferred C11 guard.
+
+## Historical superseded snapshot — September 13 13:56 UTC
 
 READ SEQ167 and current SPRINT_STATE first. C0 is NOT live:800task outputs
 captured, worker0exit after logged ownedEngineCoreSIGTERM; no repeatedcalls.

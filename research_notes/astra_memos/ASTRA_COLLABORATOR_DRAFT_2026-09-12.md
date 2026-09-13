@@ -1,13 +1,24 @@
 # DRAFT ONLY — unsent collaborator update
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ162 retains both positive and negative findings.
+This draft through SEQ167 retains earlier positive and negative findings;
+SEQ167 is an engineering-only log, excluded from scientific results.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current evidence through SEQ162 — C98; ongoing first draft.**
+**SEQ167 / C99 engineering-only log — excluded from scientific results.**
+Attempt 2 ended as UNUSABLE EXECUTION --- ENGINEERING-ONLY CAPTURE
+(FINALIZATION FAILED). C99 is an engineering-only appendix/log, excluded from
+scientific results. Archived bytes support interface/lifecycle debugging, not
+a usable C0 result or learning evidence; the original gate remains failed.
+The engineering log retains recorded interval checks and fixed-sample
+limitations, not assay qualification. Own-write remains implementation only,
+not executed at this cut. No learning, parenting, H1/H2, clean-lineage,
+general G3, mission or freeze promotion follows.
+
+**Historical evidence through SEQ162 — C98.**
 One instrumented seed0 OLD/NEW first-backward pair has matching recorded
 initialized trainable tensors, encoded input/mask, settings, fresh optimizer,
 environment and RNG snapshots at all six boundaries; both scalar losses are
@@ -131,7 +142,65 @@ Actual-memory writing/readback and native-greedy testing remain development only
 HF independent analysis is pending; archived A100 short-root OFF readiness passes.
 Historical pending statements below describe their named cuts, not current status.
 
-**Current UNSENT — bounded SEQ162 / C98 update for Main's review.**
+**UNSENT — SEQ167 / C99 engineering-only log, excluded from scientific results.**
+
+**Engineering-only; excluded from scientific results.** Attempt 2 is
+UNUSABLE EXECUTION — ENGINEERING-ONLY CAPTURE (FINALIZATION FAILED).
+See the [failed-finalization audit](../analysis/2026-09-13_pcfl_c0_attempt2_failed_finalization_audit.md).
+
+Archived inspection records `UNFINALIZED_CAPTURE_REPLAY_MATCH`, with
+`diagnostic_usable=false` and `finalization_failed=true`. The worker exits zero
+after logged owned-engine cleanup; the original once-only finalizer remains
+failed. Offline replay does not repair that failure or constitute a new native
+run, collection, finalized assay or current-resource verification.
+
+**Engineering analysis of an unfinalized capture; recorded interval checks only, not assay qualification.**
+
+| Captured panel | Correct / fixed denominator | Declared boundary |
+| --- | ---: | --- |
+| Required delayed panels (five; each) | 0/64 | Minimum 60/64 |
+| All delayed projections (ten) | 0/640 | Mixed criteria; no pooled pass |
+| Reachout ACTIVE_LINKED_TEXT | 8/32 | Minimum 30/32 |
+| Reachout FULL_CHILD_TEXT | 5/32 | Minimum 30/32 |
+| Reachout EXACT_WITNESSED_GRAPH | 6/32 | Minimum 30/32 |
+| Reachout NONE_OFF / WRONG_ROOT | 16/32 each | Maximum 18/32 |
+
+The required delayed panels are NATIVE_CONTEXT, ACTIVE_LINKED_TEXT,
+EVENT_ATOMS_TEXT, FULL_CHILD_TEXT and EXACT_WITNESSED_GRAPH. All eight recorded
+positive interval checks fail; this does not constitute a usable passed/failed
+C0 assay. Upper-bound control checks do not rescue the failed execution.
+Invalid final syntax occurs in 344/640 delayed and 67/160 reachout outputs (411/800);
+the remaining 296 delayed outputs also fail the unchanged route scorer.
+64 delayed ACTIVE_LINKED_TEXT responses were flagged as invalid READ attempts;
+none was served and zero tokens were returned. This counter counts responses
+beginning READ, not individual READ lines. All 800 calls are untruncated, with
+426480 prompt tokens, 25968 output tokens and zero fits, updates or parents.
+
+Four excluded roots sharing fixed C0 are not independent learner replications.
+RA prompts are one token longer than RB; this is not an order-only causal
+contrast. ACTIVE_LINKED_TEXT is a supplied service with no successful retrieval
+here, not an evolving or strong external-memory baseline. Token/decode checks
+are cross-receipt consistency, not an independent tokenizer replay.
+
+A fixed 30-case review (first two tasks per panel/projection, all from one
+excluded root) finds 14/20 sampled delayed outputs with valid syntax but wrong
+routes: 13 illegal paths and one wrong goal. Two of ten sampled reachout outputs
+are valid distractor PROBEs. Missing terminal LF is not an error for ROUTE,
+PROBE or READ, unlike EVENT/LINK memory rows. Both sampled delayed ACTIVE_LINKED_TEXT
+prompts omit the literal allowed READ EVENT / READ EVENTS_AT / READ LINKS_FROM
+dialect; those two replies each contain two invalid bare READ N_... lines. This is a
+disclosure limitation, not evidence that a properly disclosed strong memory
+service was useless. The sample contradicts a universal format-only account,
+but gives no failure-type prevalence estimate across 800 tasks. No corrected
+prompt, relaxed parser or new model call was used.
+
+Own-write is implementation only, not executed at this cut. No learning,
+parenting, H1/H2, general G3, clean-ancestry, C11, mission or freeze promotion.
+Collaborator **UNSENT**.
+
+Source/count/custody mapping: [C99](ASTRA_PAPER_CLAIM_MAP_2026-09-12.md#c99--seq167-engineering-only-unfinalized-capture).
+
+**Historical UNSENT — bounded SEQ162 / C98 update.**
 
 Through SEQ-162, one instrumented seed0 OLD/NEW first-backward pair has
 matching recorded initial trainable tensors, inputs, settings, optimizer,
