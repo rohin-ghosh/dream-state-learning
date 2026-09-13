@@ -1,5 +1,71 @@
 # Astra current handoff — 2026-09-12T19:56:24.212350+00:00
 
+## Superseding checkpoint — September 12, 17:12 PDT
+
+Mission ACTIVE/incomplete. Rohin rawmessage23 prioritizes authored level1BIRTH,
+then sampling level2 on the born child. Main adopts within existingoptionalbirth/
+singleLoRA/frozenbase/provenance. Simplehygiene; formalguard finalC11-only.
+Origin UNRESOLVED_LOCAL_HASHES_ONLY, no cleanancestry/generalG3/P1/G5/H1/H2/freeze.
+
+**NO Main GPU job live.** Former sequential node3GPU0/PID263983 COMPLETE and
+collected ONCE, fullreleaseSeptember12 23:57:48.133511UTC. Do NOT reruncollect.
+SEQ118 memo ASTRA_SEQUENTIAL_MEMORY_2026-09-13.md; filename uses UTC-oriented
+artifact naming, actual run occurred September12UTC. Capsule c63437c47918603d5b784544bcae85e7febc93ec7516677eaa9a3608b78b2fb0,
+1421metadata entries,640calls. IndependentrawPASS + externalcustodyaddendumPASS.
+R2 retainsM0/B1/B2 each16/16 bothsurfaces; NEW_ONLY2 M0dev9/exact8,B1=4/4,
+B2=16/16; arithmetic32/32allstates. Fixedtotalbudget, unequalnewdose20vs40;
+one seed only, no generalreadiness. Fullobservedvacancy1327.460648s NOTfinalpackaging.
+
+Prepared processrep FITseeds0/1 UNLAUNCHED and deferred forbirthfirst.
+Runner96e27f5b8becaa59263f221206dc89a1b7d9a95eba8056810339556d8d9d11dd,
+27Main/nativeCPU PASS. Collectorsfe80cfbbef70b2dc09b103d1de555eb7bdd359135be2bd9f59b9acc9d9bf39f8,
+19Main/nativeCPU PASS; nativeprepares218s each. Plans/rootdetails inSEQ118memo.
+Launcher /tmp/astra_launch_process_replication_20260912.py nowSHA
+3d03f4867bcfb2a6f2d152ea5f0f29d11d9e3cb7de2187df6240f48d7e2e9aac after
+prelaunchwindowrecheckfix. Main12CPU PASS34.198s; no native launch/acceptance
+of this launcher. Beforefix11/12 evidence preserved. Do NOTresumeoldpriority.
+
+MainsoleGit/nativeoperator; preserve dirtygpu/codex/dream_state.rules.
+Pullbeforewriting; explicitstage; pushloggedsteps. Newuntrackedfiles areowned
+WIP, neverstageuntilEDITSTOP; existingfailedcorpora/results untouched:
+
+- Bernoulli01a09698-4cf1-7471-affb-99f660185c43 owns organism_v6/birth_conditional_corpus.py,
+  tests/test_birth_conditional_corpus.py,/tmp/astra_birth_conditional_corpus_handoff_20260913.md.
+  NewPROSPECT/repairedfullEXPECTED×OBSERVED×PRIORREVISE + ACT/copyanchors;
+  sharedvisibleIDswithinfullfactorial, hiddenIDsnotinprompts, omittedfactorlookup
+  ceilings<=.5. AUTH/DERANGED targetswaps, identicaltruthfulanchors. Working
+  256train/128dev, batch8 (2PROSPECT2REVISE2ADDITION2COPY), testcounts dev32/64/16/16.
+  Mainrecipe seed0/LR1e-4/epochs4 =>128updates perarm, rank8alpha16.
+  DoNOTassumenativeauditpassed; awaitfrozenhandoff/testresults thenMainvalidate.
+- Arendt01a097b5-1d8e-7bb3-bb6b-52e0844e371a owns ONLY /tmp/astra_birth_conditional_run_20260913.py,
+  test/handoff. Separatepairedfits1800s +300custody; OFF/AUTH/DERANGEDreadout
+  2700s +300custody,384calls max64tokensgreedy, allcapturebeforescores.
+  Criteria boundatprepare: ownmapconditionaljoint>=ceil(.90N), eachfactor-twin
+  jointpair>=ceil(.90N); eachanchorinstructioncompliant>=max(ceil(.95N),OFF-1),
+  zeroanchor tagspill. Descriptivecomponentcriteria, NOTfullL1orautopromotion.
+  Collector/runtimeCLItests requiredbeforelaunch; noactualbirthnative/GPU yet.
+- Planck01a0971a-dcdb-7590-9111-d73adbf74fe3 owns organism_v6/born_rulegame_formation.py,
+  tests/test_born_rulegame_formation.py,/tmp/astra_born_rulegame_formation_handoff_20260912.md.
+  Existinginteraction_v3 twoP/Apositions, childbirthLoRA vsfixedOFFparent,
+  perrolereceipts/replay; singlevLLMengine explicitpercallLoRArequestNoneforparent.
+  No newgym/no writer/no launch; level2participationinterfaceonly, testfirst.
+- Banach01a0972e-e39c-7653-901f-e994b237d92a owns SAMEsixmanuscriptfiles,
+  integratingSEQ118. Await/tmp/astra_manuscript_seq118_handoff_20260912.md+EDITSTOP,
+  thenconsistencyreview. PriorSEQ116/117reviewedandpushed05af6475; collaboratorUNSENT.
+- Herschel01a09708-4d90-7d91-9aa4-25e6163abdda rawSEQ118reviewEDITSTOP plus
+  custodyaddendum. Mayreuseforupcomingmanuscriptconsistencyreview, discloserawauthorship.
+- Darwin01a0976c-89e3-7372-a3ba-134602680bff level2bridgeadvisoryEDITSTOP;
+  /tmp/astra_birth_level2_bridge_review_20260913.md explains vocabulary/role mismatch.
+  Conditionalformat!=RuleGameparticipation; baseparentmustnotinheritbirthLoRA.
+
+Node1/2 Fableforeignfill jobs untouched. Mainnoadditionalbackuptransfer;
+Fablereports94.6GBfullv6_outmirror + receiptarchive3places. Darwin's eleven
+scopesinsidev6_out, don'tduplicate. Outsideexecutedsnapshots/runtimecustody
+stilltoreconcile. Node1backupdueSep13 23:14UTC; expirySep14 23:14UTC.
+A100startSep13 05:05UTC = Sep12 22:05PDT stillfuture. Existingleasehorizons
+remain suppliednotcontrolplaneverified. NativePython exactvenv spelling and
+wrapperinstructions below stillapply; don'treuse any oldliveinventory.
+
 ## Superseding checkpoint — September 12, 23:38 UTC
 
 Mission ACTIVE/incomplete. Simple hygiene, formalguard finalC11-only. Origin

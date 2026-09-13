@@ -1,7 +1,7 @@
 # SEQ-118 — two sequential new-memory cycles, seed 0
 
-**COMPLETE; source-bound terminal collection verified. Independent raw review
-pending. Exploratory fixed-budget allocation result, not parenting or general
+**COMPLETE; source-bound terminal collection and independent raw review PASS.
+Exploratory fixed-budget allocation result, not parenting or general
 G3 qualification.**
 
 The two trajectories start from the same completed seed-0 FOUR_VIEW adapter
@@ -33,7 +33,10 @@ NEW_ONLY acquires both new banks when trained, but loses old-bank accuracy;
 B1 was fully acquired at its own cycle-1 checkpoint, so its cycle-2 decline
 is a retention failure rather than merely unequal initial acquisition.
 Arithmetic interface adherence and numerical correctness remain intact in
-both trajectories. Raw per-fact transition auditing is pending.
+both trajectories. Independent per-fact auditing confirms twelve B1 facts fail
+on both surfaces after NEW_ONLY2. Its unchanged M0 exact total between cycles
+hides four recoveries and four new failures, rather than an unchanged set of
+remembered answers. All 640 outputs stop normally, with no token-cap hits.
 
 Under the prospectively frozen watcher matrix, R is safe integration and
 NEW_ONLY is old forgetting with new acquisition. This supports the practical
@@ -63,6 +66,13 @@ the numerical result itself. The matrix is
   collection's final check remained within the 90-minute global bound.
 - Collector ran once, without native model/tokenizer or reducer reruns. Main
   received an exact capsule hash match. No Main signals or kills occurred.
+- Herschel independently scored all 640 raw calls with zero discrepancies;
+  review SHA256 `7717ce3eec75634e7ca9eba97bc601c664e30f1708f7b389f5baae4e7bc77434`.
+  Its additive custody supplement verifies the subsequently supplied external
+  validation and all 1,421 member hashes. It does not supply an otherwise
+  absent final-packaging timestamp. Both reviews and raw analysis are archived.
+  Native weights, execution and model origin remain receipt-backed rather than
+  independently remeasured. No additional scientific promotion follows.
 
 Stored counts can be reproduced without a model:
 
