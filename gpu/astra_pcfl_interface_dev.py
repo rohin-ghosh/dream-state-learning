@@ -25,10 +25,12 @@ STAGES = {
     "STRUCTURED_FIRST_READ_SMOKE": {"reads": 12, "thinks": 0, "calls": 13},
     "A3B_NEWLINE_FRAMED_SMOKE": {"reads": 0, "thinks": 6, "calls": 7},
     "A3C_STRUCTURED_FRAMED_SMOKE": {"reads": 0, "thinks": 6, "calls": 7},
+    "A4_GENERIC_PROCEDURE_SMOKE": {"reads": 0, "thinks": 6, "calls": 7},
 }
 READ_REQUIRED_STAGES = ("READ_REQUIRED_SMOKE", "READ_REQUIRED_PANEL")
 STRUCTURED_STAGES = ("STRUCTURED_ACTION_SMOKE", "STRUCTURED_FIRST_READ_SMOKE")
-STRUCTURED_FRAMED_STAGES = ("A3C_STRUCTURED_FRAMED_SMOKE",)
+PROCEDURE_STAGES = ("A4_GENERIC_PROCEDURE_SMOKE",)
+STRUCTURED_FRAMED_STAGES = ("A3C_STRUCTURED_FRAMED_SMOKE",) + PROCEDURE_STAGES
 FRAMED_STAGES = ("A3B_NEWLINE_FRAMED_SMOKE",) + STRUCTURED_FRAMED_STAGES
 CUSTOM_STAGES = STRUCTURED_STAGES + FRAMED_STAGES
 READ_REGEX = r"READ (?:EVENT E_[A-Z2-7]{10}|EVENTS_AT N_[A-Z2-7]{10}|LINKS_FROM E_[A-Z2-7]{10})"
@@ -74,6 +76,15 @@ THINK_API = (
     "A THINK receives only a fixed CONTINUE message, not world information. "
     "Never combine a THINK and an action in one response."
 )
+GENERIC_PROCEDURE = (
+    "GENERIC ROUTE PROCEDURE\n"
+    "Treat every EDGE or EVENT as one directed transition: source --port--> destination.\n"
+    "In THINK turns, maintain a candidate path that begins exactly at START and a table of transitions you have actually seen.\n"
+    "Search for a continuous path whose final destination is GOAL. A next transition is usable only when its source equals the current end of that candidate path.\n"
+    "When a branch cannot reach GOAL, backtrack to an earlier branch. Do not include ports from abandoned branches.\n"
+    "Before committing, verify from the visible rows that every adjacent transition joins exactly and that the ordered ports take START to GOAL.\n"
+    "Then emit the exact ROUTE and no explanation."
+)
 require, canonical, digest = native.require, native.canonical, native.digest
 
 
@@ -106,6 +117,8 @@ def build_roster(root_wires, stage):
     system += "\n" + (THINK_API if limits["thinks"] else "THINK is unavailable; do not emit THINK.")
     if stage in READ_REQUIRED_STAGES + STRUCTURED_STAGES:
         system += "\n" + READ_REQUIRED
+    if stage in PROCEDURE_STAGES:
+        system += "\n" + GENERIC_PROCEDURE
     projection = "ACTIVE_LINKED_TEXT" if limits["reads"] else "EXACT_WITNESSED_GRAPH"
     tasks = []
     for root in roots:
@@ -151,6 +164,10 @@ def build_roster(root_wires, stage):
         roster["sampling_policy"].update(
             structured_outputs={"regex": THINK_ROUTE_REGEX}, regex_sha256=core.byte_hash(THINK_ROUTE_REGEX),
             externally_scaffolded=True, external_first_think=False)
+    if stage in PROCEDURE_STAGES:
+        roster["sampling_policy"].update(
+            supplied_generic_procedure=True, procedure_sha256=core.byte_hash(GENERIC_PROCEDURE),
+            traversal_discovery_claim=False)
     return seal(roster)
 
 
@@ -349,6 +366,8 @@ def summarize(results, stage, complete):
         gate = active_routes >= 60 and invalid == 0
     if stage in FRAMED_STAGES:
         gate = len(results) == 8 and thought_interfaces >= 7
+    if stage in PROCEDURE_STAGES:
+        gate = len(results) == 8 and thought_routes >= 7
     summary = {"denominator": len(results) if stage in READ_REQUIRED_STAGES + CUSTOM_STAGES else 64,
             "route_successes": successes, "thought_tasks": thought_tasks,
             "served_read_tasks": served_tasks, "invalid_read_tasks": invalid,
@@ -362,6 +381,8 @@ def summarize(results, stage, complete):
         summary.update(externally_framed=True, autonomy_claim=False, learning_claim=False)
     if stage in STRUCTURED_FRAMED_STAGES:
         summary.update(externally_scaffolded=True, external_first_think=False)
+    if stage in PROCEDURE_STAGES:
+        summary.update(supplied_generic_procedure=True, traversal_discovery_claim=False)
     return summary
 
 

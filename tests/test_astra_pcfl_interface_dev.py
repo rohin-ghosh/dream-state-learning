@@ -454,6 +454,39 @@ class StageTests(unittest.TestCase):
     def test_combined_generation_preserves_full_decode_single_token_suffix_and_replay(self):
         self.check_framed_generation("A3C_STRUCTURED_FRAMED_SMOKE")
 
+    def test_generic_procedure_is_only_prompt_delta_and_requires_graph_success(self):
+        first = self.prepare("A4_GENERIC_PROCEDURE_SMOKE")
+        previous = driver.build_roster(self.plan["roots"], "A3C_STRUCTURED_FRAMED_SMOKE")
+        self.assertEqual(previous["limits"], self.plan["limits"])
+        for old, new in zip(previous["tasks"], self.plan["tasks"], strict=True):
+            self.assertEqual(old["messages"][1], new["messages"][1])
+            self.assertEqual(old["seed"], new["seed"])
+            self.assertEqual(old["messages"][0]["content"] + "\n" + driver.GENERIC_PROCEDURE,
+                             new["messages"][0]["content"])
+        self.assertNotRegex(driver.GENERIC_PROCEDURE, r"[NEPR]_[A-Z2-7]{10}")
+        self.assertEqual(self.plan["sampling_policy"]["procedure_sha256"], driver.core.byte_hash(driver.GENERIC_PROCEDURE))
+        for task in self.plan["tasks"][:2]:
+            route = self.outputs[task["slot_ids"][1]]
+            self.outputs[task["slot_ids"][1]] = route.split(" : ")[0] + " : P_ZZZZZZZZZZ"
+        report = self.run_stage()
+        self.assertEqual(report["summary"]["thought_interface_tasks"], 8)
+        self.assertEqual(report["summary"]["thought_route_tasks"], 6)
+        self.assertFalse(report["summary"]["stage_gate_passed"])
+        self.assertTrue(report["summary"]["supplied_generic_procedure"])
+        self.assertFalse(report["summary"]["traversal_discovery_claim"])
+        self.replay(report)
+
+    def test_generic_procedure_seven_successes_pass_smoke_without_promotion(self):
+        first = self.prepare("A4_GENERIC_PROCEDURE_SMOKE")
+        route = self.outputs[first["slot_ids"][1]]
+        self.outputs[first["slot_ids"][1]] = route.split(" : ")[0] + " : P_ZZZZZZZZZZ"
+        report = self.run_stage()
+        self.assertEqual(report["summary"]["thought_route_tasks"], 7)
+        self.assertTrue(report["summary"]["stage_gate_passed"])
+        self.assertFalse(report["full_assay_qualified"])
+        self.assertEqual((report["fits"], report["updates"]), (0, 0))
+        self.replay(report)
+
     def check_framed_generation(self, stage):
         suffix = "\nROUTE unexecuted suffix"
         class SuffixTokenizer(fixtures.Tokenizer):

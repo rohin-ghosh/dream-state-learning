@@ -15197,3 +15197,18 @@ report firstTHINK and physical gate separately. A miss stops this 7B PCFL
 reader path; no repeated prompt/grammar or LoRA route-procedure rescue. No
 panel launch is automatic. Main owns driver/test for this successor; Lagrange
 owns sequence outer/test and Meitner sequence readout/test independently.
+
+## [Builder] 2026-09-13 16:56 UTC — A4 procedure CPU gate ready
+
+Implemented the predeclared exact generic block and no other public prompt
+delta. Static regex/frame and scoring remain A3C's; new stage requires7/8
+joint THINK+strict+graph rather than a syntax-only pass. Driver SHA256
+ea36b17946aa83f8a40d74918f96f169a6c0085025b4789f64696aa4eb4c6f64.
+CPU driver56 and outer10 tests passed; combined83test run exposed one stale
+command-fixture expectation that every framed condition passes on wrong
+routes. Fixed only that test's stage-specific expectation; all17command tests
+then passed29.059s. No native outcome prompted this correction. New tests
+verify exact procedure-only delta, graph6/8fails versus7/8passes, immutable
+limits, no IDs in procedure and no learning/full-assay promotion.
+Native next action remains only8-task/56-call A4 smoke on node2GPU0 with
+existing model/provenance/lease/resource checks; no writer or panel launch.

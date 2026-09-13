@@ -190,7 +190,7 @@ class CommandTests(unittest.TestCase):
                 self.assertEqual(result["summary"]["thought_tasks"], 8)
                 self.assertEqual(result["summary"]["served_read_tasks"], 0)
                 self.assertEqual(result["summary"]["route_successes"], 0)
-                self.assertTrue(result["summary"]["stage_gate_passed"])
+                self.assertEqual(result["summary"]["stage_gate_passed"], stage not in command.driver.PROCEDURE_STAGES)
                 self.assertFalse(result["full_assay_qualified"])
                 for index in range(16):
                     render = command.read(self.harness.output / stage / "actor" / f"call_{index:04d}.render.json")
