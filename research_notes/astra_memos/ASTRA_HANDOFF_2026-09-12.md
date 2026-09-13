@@ -1,4 +1,35 @@
-# Astra restart handoff — September 13, 2026, 20:01 UTC
+# Astra restart handoff — September 13, 2026, 20:24 UTC
+
+## Latest state, supersedes all snapshots below
+
+Warmfix4 repaircd2b8cea is native CPU-tested35/35, operator/overlay49/49,
+raw reducer12/12 terminal532.070s, independently reviewed. Native source
+/tmp/astra_pcfl_sequence_v2_source_20260913_warmfix4 is immutable; receipt
+c79dff53330905c553a6ca0e276888055f5fc270d4c1124e5fe507f9c75213e4.
+Raw reducer committed6caffa15. Do not repeat these tests absent code changes.
+
+Node2 attempt5 controllers seed0/1/2=257221/257227/257233. All B200 fits
+completed with COMPLETE released outer collections. Seed0 stopped at the
+following readout PREWORKER CVD check (unreadable transient PID258553), with
+zero readout calls; seed1/2 continue. DO NOT retrain seed0's valid B200 fit.
+Do not reuse attempt3/4 FAILED fits. Main minimizes SSH queries: an active
+transport process can itself be unreadable to the global CVD check.
+
+Russell owns followup operator/test; Hubble owns reducer/test for an explicit
+fresh-root manual continuation: carry only seed0's COMPLETE released B200
+collection, preserve failed reader evidence, charge196.980491s once, execute
+the same remaining7stages. No automatic retry, failed-outer recovery, outcome
+selection, scientific recipe/source change, or edits to running native trees.
+Existing plan manifests/pins and full details in notebook20:15/20:24entries.
+The CPU reduction monitor258558 stops when a scientific controller stops;
+its source/output remain as diagnostic evidence, not an active result.
+
+Node1's only uncovered receipts in Kepler's5294-file bounded audit are now
+saved and SHA-verified: gpu_artifacts_local/node1_prediction_claims_20260913_attempt1/evidence.tar,
+SHA25670e0887801f8e47e6e9934f81b18a6433f5135fd7b6104eed9b1fbe0757bfe34.
+No new general retention/parenting/H1/H2 or completion qualification.
+
+## Historical snapshot at20:01UTC
 
 ## Current override: prospective warmfix4, no live Main GPU job
 

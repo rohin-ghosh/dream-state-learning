@@ -16958,3 +16958,41 @@ runs/B200_NEW_DOSE_fit_outer/worker_start.json. All three remain unstopped at
 14790MiB. Allocation checks still record the inherited, explicitly approved
 non-worker systemd/PAM visibility exceptions; this is not complete proc
 visibility. No process was killed. No scientific result is asserted yet.
+
+## [Builder] 2026-09-13T20:24Z — valid B200 fits; seed0 readout preflight interruption, preservation gap closed
+
+All three attempt5 B200 workers completed and their outer collections are
+COMPLETED, error-free and released (187.998/187.068/186.919outer seconds).
+This establishes the repaired warm execution/collection path, not retention.
+Seed0 then stopped before readout worker creation: pre_cvd found unreadable
+PID258553 during a live SSH inspection; owners=[],worker=null,returncode=null,
+no readout stage. This is consistent with the reproduced transient SSH
+visibility issue; the unreadable PID's role was not captured, so no new
+exception is inferred. Other two sequences continue under unchanged pins.
+
+Seed0 valid B200 fit collection FILE SHA256
+866015aae0208d16ed267ad0277c078c0c9c85e861d275fc78406aee2260de78;
+failed preworker readout collection FILE SHA256
+059b93dad0f03175133df9e2a859e74e44d03a75b404b804092cfbfddd05a71a.
+Stopped controller elapsed196.980491s includes the passing fit and4.558508s
+failed readout preflight. No readout model call occurred; no extra fit is
+scientifically needed. Main is implementing an explicit fresh-root manual
+continuation for this COMPLETE-and-released fit only. This differs from
+rejected attempt4 recovery: no FAILED fit/outer is promoted. It must preserve
+the failed reader, validate the complete fit, charge elapsed once, run every
+remaining fixed stage and reject any worker-created failed reader. Russell
+owns operator/test; Hubble reducer/test. No automatic retry or outcome-based
+selection; no source hot edits on running seeds. Minimize node2 SSH during
+phase boundaries; its pre/post CVD checks intentionally remain fail-closed.
+CPU reduction monitor258558 was started before this interruption was seen;
+it stops on any stopped scientific controller and has no GPU authority.
+
+Node1 preservation: Kepler's bounded read-only audit reports5294hashed files,
+all covered onVM except three sibling prediction collection-claim receipts.
+Main copied all three201-byte files to a fresh VM archive and independently
+checked exact member set, sizes and Kepler's three expected SHA256s.
+Archive gpu_artifacts_local/node1_prediction_claims_20260913_attempt1/evidence.tar
+SHA25670e0887801f8e47e6e9934f81b18a6433f5135fd7b6104eed9b1fbe0757bfe34.
+This closes that specific gap before September13 23:14UTC preservation
+deadline. It is not a full baseline restore test or a guarantee about every
+other owner's artifacts; no node1 process or lease was changed.
