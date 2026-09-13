@@ -13331,3 +13331,29 @@ SEQ166's known init services and SEQ167's foreground observation are distinct.
 Likewise captured failures concern this fixed interface, not a general proof
 that the base cannot solve PCFL under every valid presentation. No C0 rerun
 is selected merely to obtain cleaner lifecycle receipts or improve its score.
+
+## [Builder] 2026-09-13T14:13Z — launch selected: disposable own-write formation, node2 GPU0
+
+Main reserves node2GPU0 UUIDGPU-c70cba10-6ab6-a287-e2db-51dccd617ab0 for
+direct job `pcfl_own_write_20260913_attempt1/formation`. Only the formation
+stage is launched now: at most20one-shot calls, zero fits/updates/parents.
+Complete actual own EVENT/LINK provenance is required before any later fit;
+failure stops the chain, never fabricates rows or resamples the world.
+Frozen salt0 plan/preparation is unchanged by SEQ167 outcomes.
+
+Acceptance: Main27formation,33readout,20command,21outer CPUtests pass;
+native-environment CPU writer14/14 including200-update parity passes.
+Outer7412f812 source SHA256
+`7c3197444113b610a3073e731c3e899f7e79423e6e37005c0f21b0d43e954725`.
+Manifest file `ca0212fbbb13ffe0cc0426d331f0b4b8ac8dda64fc9f23b7c808940cdd7aa3ee`;
+fresh allocation `/tmp/astra_pcfl_own_write_allocation_20260913_attempt1.json`
+SHA256 `79b043cbbaad094da2140dc3f580838f931b8dd9854cfa00053c6a72e0de26d9`.
+Native source `/tmp/astra_pcfl_own_write_native_source_20260913_attempt1`;
+run `/localhome/local-rohing/astra_diagnostics/pcfl_own_write_20260913_attempt1`;
+outer/launcher use `.formation.outer`/`.formation.launcher` siblings.
+Controller detached with empty CVD, exact boot/UID/queue/GPU/CVD checks
+before Popen; actual workerPID is recorded after spawn, no guessed identity.
+1800s total including cold/release,60s cleanup reserve; lease ends Sep21
+01:43Pacific,6h finish margin bound. No unrecognized-process exclusions or
+foreign kills. Main avoids foreground SSH polling during likely completion.
+Natural explicit EngineCore shutdown is used; every failure remains evidence.
