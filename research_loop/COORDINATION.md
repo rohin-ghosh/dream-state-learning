@@ -8755,3 +8755,30 @@ independent learner seeds and further held-out experience remain necessary
 before numerical/general claims. Q0 attempt2 still belongs to its existing
 controller; durable witness appeared, but Main waits for full publication and
 controller exit before native replay/collection. No foreign jobs touched.
+
+## [Builder] 2026-09-13T03:50Z — OFF perception probe pre-GPU acceptance
+
+Tokenizer representation repair0e61f807, tests6fe7a180: Main23 CPU testsPASS
+on VM1.907s and native1.880s. Native prepare now passes all24 tokenized prompts,
+with262/268 input tokens absent and297/303 present. Actual absent system is
+the tokenizer's generic Qwen helper prompt, not no system; present replaces it
+with the exact registered behavior anchor. Native package/environment and
+all14 publicly matched model files are pinned in the plan. No model loaded yet.
+
+Prepared root node3 /localhome/local-rohing/astra_diagnostics/perception_anchor_20260913_attempt2,
+plan630111aee97925c5563be7662cfa25b7a65663ea824fe35d190f2c032102020a;
+frozen source /localhome/local-rohing/astra_sources/perception_anchor_fixed_20260913_attempt1,
+capsuled6996c471c950b7873fbc41cfdfdf24a14e085dc4c5064a6c53ae58a64bbd808.
+23 fixtures, source/handoff, plan, allocation checker and Main launcher archived
+in receipts_20260912. First failed prepare created no root and launched nothing.
+Existing failed-preparation source is preserved; new source never overwrites it.
+
+Main allocates node3GPU0 UUID GPU-0ee6f753-c61e-e18a-8aea-acccd3042939 for the
+24call OFF-only absent/present probe,900controller seconds plus180collection,
+max4608 generated tokens, no adapter/fit, fresh process per condition. Allocation
+check observed no compute processes or matching same-user environment reservation;
+11 readable environments and only the pinned nonlearner systemd exclusion.
+Launcher repeats the fail-fast check immediately before start. Effective lease
+limit1790370180 is the actual lease end minus6h, not the unbuffered end.
+This is bounded public-record elicitation only. No numerical claim, parent
+internalization or H1/H2 qualification; actual PID/start follows launch.
