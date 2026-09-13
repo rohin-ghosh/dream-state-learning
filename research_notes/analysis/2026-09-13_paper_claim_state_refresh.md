@@ -1,9 +1,9 @@
-# Paper claim-state refresh through the actual-child writer results
+# Paper claim-state refresh through fixed coaching and actual-child writes
 
 **Date:** 2026-09-13 UTC  
 **Role:** fresh manuscript/claim-map auditor  
-**Repository cut:** `051c5fa9`; compression disposition amended against
-`66f14501`
+**Repository cut:** `306bd533`; terminal fixed-coaching and contrastive audits
+incorporated; compression disposition remains amended against `66f14501`
 **Scope:** paper claim audit and replacement abstract candidates only; no edit
 to `paper_prototype/main.tex`, benchmark source, model, adapter, or GPU state
 
@@ -29,6 +29,24 @@ This is bounded parametric carriage of scaffolded, admitted child records plus
 a measured stability--plasticity tradeoff. It is not connected memory, native
 use, repeated SLEEP, lifetime improvement, parenting, or a strong-memory win.
 
+The terminal fixed-coaching DEV adds two narrower results. While the reminder
+was present, it made both named `predicted`/`relation` fields correct in
+`48/48` apply records versus `38/48` under active-neutral contact. After the
+parent/contact was completely removed and only admitted child records were
+written, however, P and N each formed `45/48` fresh records versus `27/48` for
+their initial models: the parent-free write effect was positive, but the
+P-minus-N contrast was exactly zero in every seed. Task-specific retention was
+N `140/144`, P `138/144`, and initial `143/144`, despite perfect generic
+canaries. This shows targeted in-context coaching and parent-free carriage of
+record behavior, not persistence of a parenting-specific advantage.
+
+The terminal authored contrastive diagnostic is negative/mixed: CONTRASTIVE
+scored `58/72` versus PLAIN `50/72`, but improved only wrapper D1, tied on D2,
+and passed the registered screen in `0/3` seeds. Its fixed fixture admits a
+polarity shortcut, and increasing seed-0 dose from four to 112 epochs changed
+neither aggregate endpoint. It is evidence to change information structure,
+not evidence for experiential SLEEP or a result to headline.
+
 PCFL v2.2 is the correct prospective experiment, but its current authoritative
 status is **PASS for scientific direction, REWORK for execution readiness**.
 The named runtime, renderer/parser bindings, replay identities, batch solver,
@@ -44,6 +62,8 @@ and full request/resource receipt are absent. No PCFL result exists.
 | Actual child-record write, LR `1e-4` | Exact `20/30`, paraphrase `16/30`, LR0 `0/30`; robust target types `7/14` and `6/14`; retained `98/143`; canary `36/36` | Positive carriage, severe variable forgetting | This is the strongest present own-record result; always state scaffolded formation, warm-start authored skill, output collapse, and no native action use |
 | Actual child-record repair, LR `3e-5` | Exact `18/30`, paraphrase `18/30`; retained `140/143`; low-rate repair screen passes 1/3 seeds | Favorable tradeoff, failed qualification | Say lower heat restored 42/45 items erased by HIGH while preserving partial recall; do not say safe writer or selected recipe |
 | Generic format canary | `36/36` under LR0, damaging HIGH, and LOW | Falsified as a sufficient retention gate | Say interface canaries miss semantic skill erasure; task-specific paired retention is mandatory |
+| Fixed answer-free coaching and child-record write | In context, both targeted fields P `48/48` vs N `38/48`; whole records P `43/48` vs N `38/48`. Parent-free after writing, P=N=`45/48` vs initial `27/48`; task retention N `140/144`, P `138/144`, initial `143/144` | Transient targeted coaching positive; own-record write positive; parenting-specific persisted contrast null | State all three surfaces separately. Do not call the parent-free gain amortized coaching, adaptive parenting, or parent-to-weight mediation; neutral writing reached the same endpoint and the panel nearly saturated |
+| Authored full-dose contrastive bundle | CONTRASTIVE `58/72` vs PLAIN `50/72`, but D1 `34/36` vs `26/36`, D2 `24/36` tie; registered screen `0/3`; seed-0 four-to-112-epoch endpoint unchanged | Negative/mixed curriculum diagnostic with a polarity shortcut | Dose was not the missing ingredient on these bytes. Preserve grouping as a candidate ingredient only for a shortcut-resistant keyed task; no source-selection, parenting, or experiential-SLEEP claim |
 | PCFL v2.2 two-SLEEP vertical | Prospective design repaired to truthful replay, LOW-first calibration, source-diverse batches, exact child EVENT/LINK custody, connected-value controls, and PCFL retention | No result; science direction passes, implementation readiness fails | Describe only as the next experiment. Do not write “ready/running/passed PCFL” until runtime closure and terminal evidence exist |
 | Connected experiential knowledge | Requires AUTH-over-ATOMS plus critical LINK cut or registered redirection on both DEV roots | Unmeasured | No present abstract claim; `EVENT_COMPOSITION_ONLY` is explicitly insufficient |
 | Goal traversal and action-driven expansion | PCFL service/native route, useful-probe choice, public frontier outcome, S2 OLD+NEW cuts | Unmeasured | Bracket exact endpoint counts only after terminal PCFL artifacts |
@@ -51,7 +71,7 @@ and full request/resource receipt are absent. No PCFL result exists.
 | Strong active-memory superiority/plateau | `ACTIVE_LINKED_TEXT` and access curve are specified but not implemented or certified | Unmeasured | No superiority or saturation language; plateau requires the optional seven-cut equivalence test |
 | Physical compression | Rank-8 LoRA is about 80.8 MB, larger than the complete proposed PCFL life | Contradicted at this scale | Always print the unfavorable byte accounting; never call the LoRA, life, or organism physically compressed |
 | Conditional predictive semantic compression | A zero-new-fit assay is prospectively specified on the ordinary final DLT adapters: shorter predictive code on unseen structure-governed outcomes, matched independent-continuation null, adapter-removal contrast, and fresh actions | Unmeasured; downstream of positive PCFL and lifetime gates | If every prospective code/use gate passes, call it *parametric predictive reuse* or *conditional predictive semantic compression*. It is not physical compression or exact seen-row storage |
-| Parenting | Historical parenting is observational/null or contaminated; minimum receptivity assays are designs | Unsolved upstream factor | Parenting may motivate better child material, but it is not part of the PCFL causal result and is not solved pedagogy |
+| Parenting | Fixed answer-free coaching changed its two named fields while present (`48/48` vs `38/48`), but P and N tied at `45/48` on parent-free held record formation after both arms were written | Targeted in-context receptivity shown; durable parenting-specific advantage not shown | Parenting may motivate better child material, but do not call the equal post-write gain parenting persistence, amortized teaching, adaptive parenting, or solved pedagogy |
 
 ## Stale or overbroad manuscript/abstract claims
 
@@ -61,6 +81,7 @@ and full request/resource receipt are absent. No PCFL result exists.
 | `paper_prototype/main.tex:92--162` | The “abstract” concatenates six historical updates and is far beyond an abstract; several pending statements are now false | Replace wholesale with one bounded abstract, not another appended paragraph |
 | `paper_prototype/main.tex:94` | The historical `+0.019` original-panel mean can read as a learning result before the disjoint failure is understood | If retained in the abstract, bind it immediately to the disjoint `-0.017`, common-random text comparison, supplied routine, and lack of a causal lifetime claim |
 | `paper_prototype/main.tex:150--161` | Correctly reports HIGH actual-record carriage, but omits terminal LOW and still says its outcome is pending | Replace with the paired HIGH/LOW/LR0 acquisition and retention totals; state that LOW failed qualification |
+| Entire manuscript evidence cut | Omits the terminal fixed-coaching P/N experiment and full-dose contrastive diagnostic | Add fixed coaching only as transient targeted steering plus equal P/N parent-free written endpoint; relegate contrastive to a negative component diagnostic. Neither promotes a parenting or SLEEP claim |
 | `paper_prototype/main.tex:192` | “That the adapter stores knowledge the agent can use” is denied without qualification | Narrow to “general/native task use.” Direct source-withdrawn exact and paraphrase generation now supports bounded storage/extractability, not spontaneous use |
 | `paper_prototype/main.tex:200--208` | Describes only the historical CompilerGym THINK/DREAM/SLEEP implementation; readers can mistake it for the current proposed PCFL mechanism | Label the entire section historical/as-run. A future result paper needs a separate frozen PCFL system section; do not silently overwrite the historical recipe |
 | `paper_prototype/main.tex:229` and component appendix | Evidence boundary ends before C89/LOW and scatters later evidence through appendix patches | Replace the chronological patchwork with one evidence table keyed by assay, unit, target origin, read surface, retention, and permitted claim |
@@ -73,26 +94,26 @@ and full request/resource receipt are absent. No PCFL result exists.
 | `2026-09-13_pcfl_dev_to_paper_grade_successor.md` | Contains exact prospective thresholds and resource projections, not observations | Keep every number out of past tense. `ONE_EPOCH_SCALE`, linked-text certification, reusable structure, N resizing, and all AUCs remain conditional |
 | Earlier supplied-schema compression sidecars | A fresh `SCHEMA_LORA` fit would test transport of an authored compact code, not whether ordinary experiential SLEEP learned reusable structure | Do not use as the main compression slot. First test existing final DLT states with the zero-fit predictive-reuse assay |
 
-## Candidate A: current-evidence fallback if PCFL DEV fails (181 words)
+## Candidate A: current-evidence fallback if PCFL DEV fails (177 words)
 
-Language agents can write deployment records into low-rank parameters, but
-acquisition can coexist with silent forgetting. We characterize this failure
-in a frozen Qwen2.5-7B-Instruct agent whose per-life LoRA is trained from its
-record. In nine historical 1,024-episode compiler-optimization lives, the
-original eight-program panel showed mean gain `+0.019`, yet final adapters
-averaged `-0.017` on a disjoint panel and four lives developed harmful
-action-generation failures. We then isolate the writer using three
-same-learner sets of scaffolded, child-authored records. At learning rate
-`1e-4`, source-withdrawn generation recovered `20/30` records under exact cues
-and `16/30` under paraphrases, versus `0/30` for zero-learning-rate controls,
-but retained only `98/143` previously correct skill items. Repeating the fit at
-`3e-5` recovered `18/30` records under both cue forms while retaining
-`140/143`; nevertheless, only one of three seeds passed the frozen repair
-screen, and a generic format canary was perfect even for damaging writes.
-Thus an agent's own admitted records can enter a parametric carrier and cross
-a request paraphrase, but training loss and interface checks do not certify
-selective, retained memory. Connected traversal, repeated-sleep improvement,
-strong-memory superiority, compression, and parenting remain open.
+Language agents can convert deployment records into low-rank behavior, but
+neither writing nor coaching alone certifies durable learning. We study frozen
+Qwen2.5-7B-Instruct agents with per-life LoRAs. In a fixed-coaching assay, an
+answer-free process reminder made its named prediction and relation fields
+correct in `48/48` records versus `38/48` under neutral contact. After parent
+removal and training only on admitted child records, however, coached and
+neutral descendants both formed `45/48` fresh records, versus `27/48` before
+writing: both written arms outscored their initial models, while the
+parenting-specific contrast was zero. Task-specific retention was `138/144`
+for coached descendants and `140/144` for neutral descendants, from an initial
+`143/144`, despite perfect generic canaries. In a separate three-seed
+source-withdrawn assay, learning rate `1e-4` recovered `20/30` exact and
+`16/30` paraphrased child records but retained only `98/143` previously correct
+items; `3e-5` recovered `18/30` under both cue forms while retaining `140/143`,
+yet passed the frozen repair screen in only one of three seeds. These results
+establish bounded parametric carriage and transient process steering, not
+durable parenting-specific learning. Connected traversal, repeated-sleep
+improvement, strong-memory superiority, and compression remain open.
 
 ## Candidate B: prospectively fillable main abstract (189 words)
 
@@ -137,6 +158,8 @@ lifetime or strong-memory claims.
 - `research_notes/abstract_experience_models_v4_decisive_program.md`
 - `research_notes/analysis/2026-09-13_actual_child_real_record_memory_pair_terminal_audit.md`
 - `research_notes/analysis/2026-09-13_actual_child_lower_lr_memory_repair_terminal_audit.md`
+- `research_notes/analysis/2026-09-13_astra_parented_record_terminal_audit.md`
+- `research_notes/analysis/2026-09-13_astra_contrastive_full_dose_terminal_audit.md`
 - `research_notes/analysis/2026-09-13_pcfl_vertical_dev_v2_2_writer_repair.md`
 - `research_notes/analysis/2026-09-13_pcfl_v22_execution_readiness_audit.md`
 - `research_notes/analysis/2026-09-13_pcfl_dev_to_paper_grade_successor.md`
