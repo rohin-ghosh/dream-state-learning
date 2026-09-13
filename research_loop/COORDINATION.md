@@ -15359,6 +15359,20 @@ No TeX tool available, so no build/layout certification. Main integrates those
 six reviewed files now; broader mission remains incomplete, formal C11guard
 deferred and connected reader branch stopped.
 
+## [Builder] 2026-09-13 17:11 UTC — repaired S_A40 attempt4 launched on node2GPU1
+
+Same40updates/160presentations/seed0 as failedattempt3, no dose or training
+change. Immutable source7741c030cd7c6a690dea84ee91d17b895e03a8c3 tar
+b672619d2dc04618ac15f90c47b72f57133be42fac7cf89ce7cc09db4ddc85ed.
+Material9fe776c38a493152526920cb13a9bc37911cd6e674b7009cc199f1e3f9e4ae4f;
+inputs0742e8c175577157e296ba553e6f2f285936abb7ef890a18ca0018b2bd8d4162.
+New root `/localhome/local-rohing/astra_diagnostics/pcfl_event_sequence_S_A_20260913_attempt4`;
+originalattempt3 retainedfailed. Existing1800souter/60scleanup, lease and
+owned-resource checks remain. No completed result or descendant implied.
+
+Launcher returned controller217750 at17:10:49UTC; owned worker will be bound
+in the root's worker_start.json. This is the sole Main GPU job now live.
+
 ## [Fable] 2026-09-13T17:03Z — self-check: reader ladder closed — A3C static syntax passes the physical gate (8/8 THINK + strict terminal) with 0/8 graph routes; A4 supplied generic procedure 1/8 → builder stops the 7B PCFL reader branch; fleet idle, Astra on sequence-retention engineering
 
 **SEQ-184 (A3C):** identical eight tasks/seeds/budgets as A3B; only a static THINK-or-ROUTE regex plus explicit LF frame added. 25 calls, 17 THINK turns, 8/8 exact first THINK, 8/8 THINK-plus-strict-terminal histories, **0 legal routes, 0 graph successes**. Physical gate passes; graph use does not. 1,503 output / 16,107 prompt tokens, zero fits, zero READs.
