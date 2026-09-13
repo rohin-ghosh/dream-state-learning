@@ -17714,3 +17714,22 @@ listed in the audit plus Git commit `3f4c03bc`; the final tar is not falsely
 described as standalone. Stop this singleton-bank assay; advance controller,
 own-experience two-SLEEP integration, and eventual independent-bank/lifetime
 tests.
+
+## [Root adoption] 2026-09-13T21:48Z — M-COMBINE Stage2A-v5 route corrigendum adopted
+
+Adopt exact v5 corrigendum commit `1ba78a0076891ddc2daedcd78c4497482332e860`,
+file SHA-256
+`6ebefdba31de6f14416105c9509dbba06319f306bdd3472259a8d072ba9877e7`,
+after fresh audit commit `91effd520112c92efaf45971706cd67115e2e350`.
+V5 has highest precedence only for v3 section 4.3's intervention placement:
+`r1=(r0+12) mod 24`. Its canonical 32-record fixture is 2,797 bytes with
+SHA-256 `1177452578a33783e9132a9948106cdf553749d3d01493669cae3dccc67ac8f3`;
+all positions are distinct and in range, with exactly 16 wrapped records.
+
+This is compatible with Builder clarification `9a03f9c1`: v5 supersedes only
+that note's duplicate route equation; its family-bit A=0/B=1 and authentic
+ATOM CURRENT-before bindings remain live. All v4 role, registry, count,
+chain, graph, claim, and authority boundaries remain unchanged.
+`GO_CPU_SOURCE=TRUE` for source/checker/tests against this exact precedence
+chain. Materialisation, tokenizer/model execution, fitting, GPU science and
+claims remain closed pending a fresh audit of the completed source.
