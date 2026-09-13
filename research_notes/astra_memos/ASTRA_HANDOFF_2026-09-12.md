@@ -1,6 +1,69 @@
-# Astra current handoff — 2026-09-13T08:30Z
+# Astra current handoff — 2026-09-13T09:02Z
 
-## CURRENT — September13 08:30UTC (supersedes historical snapshots below)
+## CURRENT — September13 09:02UTC (supersedes all snapshots below)
+
+Mission ACTIVE/incomplete. Simple hygiene now; formal C11 guard final-paper only.
+Latest pushed a65703b8 before this update. Unrelated dirty rules preserved.
+Main owns GPU operations. No clean-lineage/freeze/generalG3/P1/H1/H2 promotion.
+
+LIVE node2 actual-child memory WRITE/LR0 pairs, seeds0/1/2 onGPUs1/2/3.
+Custodian/controller PIDs30950/30952,31023/31024,31094/31095. Starts
+08:56:52,08:57:01,08:57:10UTC;3600s cap per controller,180s later collection.
+Original seed-specific perception adapters, same14/8/8 actual admitted records,
+WRITE1e-4 versusLR0;8passes,batch1,fresh optimizers. No teacher rewriting.
+Latest check all3WRITE_fit complete, all3WRITE_readout launched. Not results.
+Root /localhome/local-rohing/astra_diagnostics/real_record_memory_seedN_20260913_attempt1.
+Each .launcher sibling has custody/commands/stdout. Wrapper holds GPU visibility
+while controller visibility is empty; zero MiB during transition is NOT free.
+Plan hashes seed order:
+66fb0ae06fce25feb04c422add3062f8665be9bafaa72efdb348365fa82208c1
+9886ef9f19869f69649ee894e15c1fb47dfc85e301ee728adfbefc4df2c9c52b
+48f64f78aa6953baa72067602bf3043c0a8fb5531750f0433c6fdd8ef76dc5ea
+Runner /tmp/astra_real_record_memory_run_20260913.py SHA7028fa9a...;
+protocol ASTRA_ACTUAL_RECORD_MEMORY_PROTOCOL_2026-09-13.md; exact command/specs
+/tmp/astra_memory_pairs_20260913_attempt1 and /tmp/astra_memory_pairs_main_20260913.py.
+Main13CPUtests passed plus3native preparations; paired224/128/128updates and
+176/152/152calls. After complete+release collect NEW memory roots ONCE with
+runner collect --root ROOT --plan-sha256 SHA --completion-sha256 SHA --out OUT.
+Never recollect original formation. Preserve failed roots; no automatic retry.
+
+LIVE node3 native greedy gap diagnostic GPU3PID/PGID371846,startticks10585485,
+native start08:59:05UTC. Root /localhome/local-rohing/astra_diagnostics/
+l2_high_seed2_greedy_20260913_attempt1. Runner /tmp/astra_l2_high_seed2_greedy_20260913.py
+SHAa5f644c6...; prepared1d08018f9614d975d83e6f83d0990cf0d007769f833f1170a7c83c710efb588e.
+Main15CPUtestsPASS.109s, native32prefix preparationPASS. OFF/fit2 each16TRAIN+
+16READOUT,64native generations,0updates;1200s INCLUDING automatic once-only
+collection. Inspect terminal.json and sibling _collected/report.json; do NOT
+manually recollect. This is not the completed HF diagnostic; no new fit.
+
+COMPLETED since08:30: SEQ146 all24standalone skill cells archived/replayed;
+three second-roster canary losses preserved. SEQ149 formationv2 actual eligible
+OFF7,perception0/1/2=14/8/8 of16 each; strict0/6/0/0. Scaffold includes mandatory
+prior, so no pure ACT-format effect; differing trajectories, no within-run update.
+SEQ151 HF forced-candidate fit2TRAIN15/16versusREADOUT8/16, not native greedy;
+Descartes independently replayed report bytes and receipt joins. Original native
+endpoints remainflat. SEQ150 A100 short-root OFFreadiness passed1load/1generation
+2tokens,14officialpayloads matched; not LoRA/training/science readiness. Original
+A100 failures preserved, no corresponding science reruns. All originals collected
+once and archived in gpu_artifacts_local; exact pins in notebook/receipts.
+
+Copernicus EDITSTOP six manuscript files throughSEQ151; Beauvoir
+01a099fb-2d8d-7d13-9e40-6a414fe7d14d reviews that increment independently.
+Manuscript handoff /tmp/astra_manuscript_seq144_151_handoff_20260913.md.
+Descartes01a09964-393d-7682-99a9-33d89a6c4e9f designs next small L2 comparison
+conditionally, no implementation/launch. Parfit01a099a4-4d72-75c0-af60-8f84fc68d36a
+tests custody wrapper only; native runner EDITSTOP. Lovelace01a0997b-d9db-7812-9206-e74dfa608600
+greedy runner EDITSTOP. All file scopes explicit; Main retains integration.
+
+Node1 expirySep14 23:14UTC; evidence off-node deadlineSep13 23:14UTC. New
+standalone skills already archived VM. Node2 expirySep21 08:43UTC; node3Sep26
+03:03UTC;6h finish margins. Node3GPU7 faulty, untouched. A100 exact expiry
+unresolved; no active MainA100 work. Never treat historical vacancy as allocation.
+Next: inspect live pairs/greedy, collect once, archive+reduce+independent review,
+then select justified next loop from observed endpoints and raw user messages.
+No command in this continuation asked for approval; no external messages sent.
+
+## HISTORICAL — September13 08:30UTC
 
 Mission ACTIVE/incomplete. Simple hygiene now; formal C11guard final paper-grade
 only. Preserve unrelated dirty gpu/codex/dream_state.rules. No clean/freeze/H1/H2

@@ -10754,3 +10754,14 @@ exact-cue endpoint; no general memory/parenting/H1/H2 promotion. Original
 scorer unchanged; stop-correct and malformed outputs separately reported.
 Launch via /tmp/astra_launch_high_seed2_greedy_20260913.py; PID follows.
 All three node2 memory controllers remain independently live.
+
+## [Builder] 2026-09-13T09:02Z — greedy custody and live memory stage check
+
+Native greedy node3GPU3PID/PGID371846,startticks10585485; native start
+08:59:05UTC,1200s cap. Controller_started receipt verified. No result yet.
+All3node2 memory WRITE_fit receipts exist, WRITE_readout workers launched;
+custodians retain reservations across temporary0MiB transitions. No failures
+observed at this check. HANDOFF/STATE now reconcile the08:30 stale snapshots.
+Descartes SEQ151 independent raw-receipt reduction reproduces report bytewise,
+784adapter tensor byte/conversion joins and64original prompt joins; this is
+not independent HFforward recomputation or native greedy evidence.

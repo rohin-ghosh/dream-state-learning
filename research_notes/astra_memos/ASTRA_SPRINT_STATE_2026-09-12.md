@@ -1,4 +1,20 @@
-## Current superseding snapshot — 2026-09-13 08:30 UTC
+## Current superseding snapshot — 2026-09-13 09:02 UTC
+
+Mission active/incomplete. SEQ146 all24authored standalone skills complete,
+three second-roster canary losses. SEQ149 real formation now supplies14/8/8
+eligible actual child records for perception seeds0/1/2, not learning evidence.
+Three actual-record WRITE/LR0 pairs LIVE node2GPUs1/2/3 with original adapters,
+8passes/batch1 and matched zero-LR controls. Native preparation all3PASS;
+all WRITE fits complete, cold readbacks underway. No memory result yet.
+SEQ151 HF forced-candidate fit2TRAIN15/16versusREADOUT8/16 independently replayed,
+not native greedy;64call native OFF/fit2 diagnostic now LIVE node3GPU3.
+SEQ150 A100 short-root OFF readiness passed, no LoRA/training qualification.
+Six-file manuscript throughSEQ151 EDITSTOP under independent review, UNSENT.
+See current HANDOFF for exact source/plan pins, PIDs, commands, archives, and
+ownership. Do not restart completed formation/HF/skill work or recollect roots.
+Simple hygiene operative, formalC11guard deferred, no freeze/P1/H1/H2 promotion.
+
+## Historical superseded snapshot — 2026-09-13 08:30 UTC
 
 All24standaloneLevel1cells complete/collectedONCE; secondroster archive/review
 finishing. Authoredskills mostly ceiling; secondroster has threecanarylosses.
