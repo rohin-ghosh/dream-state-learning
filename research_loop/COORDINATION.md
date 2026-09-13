@@ -7638,3 +7638,38 @@ Watcher reading for the builder: (a) SEQ-106 (two compatible habits) and SEQ-118
 **Fill result 14 of 14 (original series) — R4_B_seed603 (A/C cells, 6.6 GPU-h):** A +0.003 / −0.006, A_v3 +0.003 / −0.005 (flat); C −0.485 / −0.255 (collapse); C_tmem −0.124 / −0.025; **brief −0.090 / −0.042 with two collapsed reps** — the third life where the parent brief in context hurts (R3 503, RP 402 on disjoint, R4 603); brief_mid +0.018 / −0.016. **Final tally, 22 lives with an A cell:** whole-text A carries 8, flat 13, harmful 1; C collapses 22/22; brief ≥ OFF on report 19/22. The A-replication series (12 jobs, generation seed 5252) is running: node 1 five (R3 500, R2 0/1/5/6) + 606_AC, GPUs 6/7 free; node 2 five (R3 504/505, R4 602, R2 3, RP 401), GPUs 1/6/7 free; R3 502 and R3 501 queue when node 1 frees a slot.
 
 **Fleet:** node 3 all GPUs released after SEQ-118 (builder preparing the memo/commit). Nudger: Astra active (idle 0.1 min). Laptop chains 5/5; A100 onboarding 05:05 UTC. Backup: full mirror + receipts archive verified (previous entries). Nothing killed or launched by the watcher.
+
+## [Codex fresh replay-next-value audit] 2026-09-13T00:12Z — stop the colour replay line; conditional Q0/Level-1 is the next GPU spend
+
+Independent decision memo: `research_notes/analysis/2026-09-12_sequential_replay_next_value_decision.md`.
+
+SEQ-118 has answered the practical allocation question at its finite authored load: at cycle 2, replay retains `64/64` old-bank exact/dev decisions while NEW_ONLY retains `25/64` (difference `39/64`), and both acquire the current bank `32/32`; arithmetic remains `32/32` throughout. This is strong one-lineage fixed-budget allocation evidence, not a causal replay effect, because replay gives current-new facts 20 presentations versus NEW_ONLY's 40 and changes batch composition. The observed full reservation was 22.12 A40-minutes.
+
+Decision: do not buy same-protocol seed replication, equal-new-dose replay, or larger colour banks now. Use replay provisionally inside birth. The first new claim-bearing GPU spend should be the already closed pair-balanced complementary Q0 gate (`2` mandatory, `3` maximum fits; `0.75` A40-hour cap) as Level-1 birth's conditional-behaviour slice. Keep it noncompensatory: facts/arithmetic cannot hide failed conditional control. Full Q0 pass releases the complete interleaved/replayed Level-1 birth and a small parent-deleted Level-2 sample; exact-only failure releases only relation views, locality-only failure only the registered locality treatment, and failed exact acquisition stops this writer family. Equal-new-dose replay becomes worth two fits only after selective Q0/Level 1 and only if causal replay itself remains manuscript-blocking. No builder code, corpus, job, model, adapter, or GPU state changed.
+
+## [Fresh Level-1 audit] 2026-09-13T00:18Z — fading/repetition is Level 0; Level 1 must be judged by a Level-2 learning delta
+
+Fresh audit: `research_notes/analysis/2026-09-12_level1_birth_disposition_fresh_audit.md`.
+The bounded fading-sequence design is sound for its stated narrow purpose—how
+an authored `PREDICT`-before-`ACT` habit survives or is replaced by competing
+authored updates—but it cannot test Rohin message 23's Level-1 birth. A larger
+interleaved corpus of `PREDICT`, `INPUT`, fact recall, PROSPECT and REVISE can
+still install several fixed response maps. Direct adherence is therefore a
+necessary birth check, not evidence of a learning disposition.
+
+Minimum distinguishing pilot: teach one selective information-state policy
+across held task skins (check/predict when uncertain and informative; commit/
+stop when resolved; revise the implicated belief after surprise), with fully
+crossed positive/negative cases, opaque IDs, an equal-dose routine/deranged
+active control and OFF, and strict locality/spill panels. Then sample Level 2
+on a task family absent from birth: authentic- and control-born children receive
+the same opportunities, parent policy, feedback, compiler and dose; measure
+early-to-late task gain, grounded child-authored records, conditional use and
+omission, and parent/context-free post-write behavior. The causal birth readout
+is the root-level difference in pre/post learning gains, not reflection rate.
+Promotion-versus-shadow within both births is additionally required to isolate
+SLEEP promotion. One root is feasibility only; only a favorable Level-2 delta
+with direct selectivity and no interface damage licenses GPU scaling. SEQ-113/
+116/118 justify distinct-source interleaving, varied views and replay as current
+writer defaults, not as learned-to-learn evidence. No builder code/job/GPU was
+changed.
