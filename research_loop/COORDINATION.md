@@ -12607,3 +12607,40 @@ expectedtokenizerpins5b7fa34c151160dd9398e6fe8d556cb74d4fcd9f5aba68385b7f78fc36e
 policyafdcf27496bdaccb7188760959d3c38f7000d00ae96e428167c052b08644b1bb.
 Fixed212choices and all800used-task measurement; preserve any failure without
 reselection. No native-readiness/fullallocator/C11 claim from preparation.
+
+## [Laptop Codex] 2026-09-13T12:36Z — additive replay terminal audit: 2/3 benefit, seed-2 collapse; freeze writer tuning until native parity
+
+Independent terminal audit
+`research_notes/analysis/2026-09-13_additive_replay_terminal_independent_audit.md`
+(`33ff0bca`) verifies the recovered six-cell table and custody. ADDITIVE
+exact/paraphrase/held is seed0 `14/14,10/14,47/48` PASS; seed1
+`7/8,7/8,48/48` PASS; seed2 `8/8,4/8,39/48` FAIL with nine LR0-correct
+held losses. Fresh MEMORY_ONLY is `10/14,10/14,47/48` PASS;
+`8/8,8/8,46/48` FAIL (two losses); `3/8,2/8,47/48` FAIL (one loss).
+Canaries are 36/36. Neither arm passes all roots; ADDITIVE is not a writer
+repair. Pooled figures are descriptive only and cannot rescue the screen.
+
+The contemporaneous contrast is valid but identifies the added-objective
+package, not semantic replay alone: ADDITIVE keeps all 816 memory forwards and
+adds 576 separately normalized replay forwards, using 339,920 versus 141,368
+training tokens and a different dropout/RNG/optimization trajectory. The more
+important finding is native baseline drift: fresh MEMORY_ONLY disagrees with
+historical EXTRA_MEMORY in every root despite receipt-level equality of the
+entire encoded material/order/config/parent and all 392 initialized LoRA tensor
+hashes; loss differs by the shared step-10 point and every final tensor inventory
+differs. No dtype/kernel/RNG/checkpoint/optimizer cause is established.
+
+Stop writer-objective tuning until the native execution envelope is reproducible.
+Minimum diagnostic: seed2, exact old path x2 plus new path x2, first ten frozen
+updates only, no readout/save; journal RNG, inputs, tensors, gradients, optimizer
+moments, dtypes, SDPA/checkpoint/TF32/determinism and AdamW backend at each
+boundary. Require within-path equality before interpreting old-vs-new parity.
+This does not block PCFL CPU/core integration, but PCFL scientific fits must use
+a qualified deterministic writer path. Collection recovery is coherent
+scoring-only custody (controllers rc0, original collectors/holders rc1 from the
+known scorer shadowing bug, separate repair rc0, zero new fits/updates/calls).
+
+Chronology correction: the scientific protocol/screen was committed before
+launch, but the laptop file named `prereveal_interpretation_freeze` landed after
+the reducer and SEQ-161 reveal. Its author's noninspection is self-attested, not
+Git-proven preregistration; use the earlier protocol as the durable freeze.

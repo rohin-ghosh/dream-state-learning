@@ -2,9 +2,9 @@
 
 **Date:** 2026-09-13 UTC  
 **Role:** fresh manuscript/claim-map auditor  
-**Repository cut:** `2a0c5a25`; terminal fixed-coaching, lesson-alignment,
-contrastive, and own-source replay audits incorporated; compression disposition
-remains amended against `66f14501`
+**Repository cut:** `33ff0bca`; terminal fixed-coaching, lesson-alignment,
+contrastive, own-source replay, and additive-replay audits incorporated;
+compression disposition remains amended against `66f14501`
 **Scope:** paper claim audit and replacement abstract candidates only; no edit
 to `paper_prototype/main.tex`, benchmark source, model, adapter, or GPU state
 
@@ -38,6 +38,15 @@ repeated new memories. New-memory access moved oppositely: replay recovered
 extra memory. Replay passed the frozen noncompensatory screen on only `2/3`
 roots. It is evidence that rehearsal can move the retention--acquisition
 frontier, not an all-root writer repair or a generally safe SLEEP mechanism.
+
+Adding a separately normalized replay loss to the full memory objective also
+fails to repair the writer. It passes two roots but on seed 2 reaches `8/8`
+exact recall while losing nine previously correct held items and tying the
+`4/8` constant paraphrase baseline. More seriously, its fresh MEMORY_ONLY
+control does not reproduce the historical nominally identical EXTRA_MEMORY
+fits despite matched encoded schedules, configurations, parents, and initial
+LoRA tensor receipts. Until native within-path repeatability is established,
+fine-grained objective attribution and further writer tuning are not paper-safe.
 
 The terminal fixed-coaching DEV adds two narrower results. While the reminder
 was present, it made both named `predicted`/`relation` fields correct in
@@ -81,6 +90,7 @@ and full request/resource receipt are absent. No PCFL result exists.
 | Actual child-record write, LR `1e-4` | Exact `20/30`, paraphrase `16/30`, LR0 `0/30`; robust target types `7/14` and `6/14`; retained `98/143`; canary `36/36` | Positive carriage, severe variable forgetting | This is the strongest present own-record result; always state scaffolded formation, warm-start authored skill, output collapse, and no native action use |
 | Actual child-record repair, LR `3e-5` | Exact `18/30`, paraphrase `18/30`; retained `140/143`; low-rate repair screen passes 1/3 seeds | Favorable tradeoff, failed qualification | Say lower heat restored 42/45 items erased by HIGH while preserving partial recall; do not say safe writer or selected recipe |
 | Own-source replay vs extra new-memory repetition | Fixed updates: REPLAY exact/paraphrase `21/30`/`19/30`, retained `143/143`; EXTRA_MEMORY `27/30`/`23/30`, retained `135/143`; replay frozen screen `2/3`; canaries `36/36` both | Direct stability--plasticity movement, failed all-root repair | Say replay protected previously correct task behavior at the cost of new-memory acquisition. Do not call it pure semantic replay, autonomous replay selection, or qualified SLEEP; token/FLOP exposure differs and seed-0 extra-memory repetition was imbalanced |
+| Additive replay loss vs fresh memory-only | ADDITIVE passes seeds 0/1 but seed 2 exact/paraphrase/held=`8/8,4/8,39/48` with nine prior-correct losses; MEMORY_ONLY passes seed 0 only. Fresh MEMORY_ONLY differs from historical EXTRA_MEMORY despite matched recorded inputs/initial tensors | Failed qualification; heterogeneous parent-dependent effect; native reproducibility unresolved | Do not call additive replay a repair or semantic-replay mechanism. It adds 576 forwards and 2.40x training tokens. Stop objective attribution until within-path native repeatability is demonstrated |
 | Generic format canary | `36/36` under LR0, damaging HIGH, and LOW | Falsified as a sufficient retention gate | Say interface canaries miss semantic skill erasure; task-specific paired retention is mandatory |
 | Fixed answer-free coaching and child-record write | In context, both targeted fields P `48/48` vs N `38/48`; whole records P `43/48` vs N `38/48`. Parent-free after writing, P=N=`45/48` vs initial `27/48`; task retention N `140/144`, P `138/144`, initial `143/144` | Transient targeted coaching positive; own-record write positive; parenting-specific persisted contrast null | State all three surfaces separately. Do not call the parent-free gain amortized coaching, adaptive parenting, or parent-to-weight mediation; neutral writing reached the same endpoint and the panel nearly saturated |
 | Fixed-lesson alignment without writing | Manual audit: `24/24` lesson restatements semantically faithful; frozen lexical RESTATE only `2/12` ALIGNED and `2/12` SWAPPED. Structured process use, faithful records, and full material were `0/48` in all three arms | Lesson reception apparent; registered operational transfer failed and scorer under-sensitive | Treat as a thought-to-operation/interface diagnostic only. It tests neither SLEEP nor persistence, and post-hoc state-shape differences cannot rescue the failed vector |
@@ -129,10 +139,13 @@ supported child outputs preserved every `143/143` previously correct task
 item, versus `135/143` when the same update positions repeated new memories.
 New-memory access moved oppositely: replay recovered `21/30` exact and `19/30`
 paraphrased records, versus `27/30` and `23/30` with extra repetition, and
-passed the frozen per-root screen only twice. Generic canaries remained
-perfect throughout. These results establish bounded parametric carriage,
-transient process steering, and rehearsal-mediated retention, not a qualified
-sleep writer or durable parenting-specific learning. Connected traversal,
+passed the frozen per-root screen only twice. Adding replay loss to the complete
+memory objective likewise passed only two roots and erased nine previously
+correct items on the third; its fresh nominal control also exposed unresolved
+native training drift. Generic canaries remained perfect throughout. These
+results establish bounded parametric carriage, transient process steering, and
+a heterogeneous rehearsal-mediated retention tradeoff, not a qualified sleep
+writer or durable parenting-specific learning. Connected traversal,
 repeated-sleep improvement, strong-memory superiority, and compression remain
 open.
 
@@ -183,6 +196,7 @@ lifetime or strong-memory claims.
 - `research_notes/analysis/2026-09-13_parenting_alignment_terminal_audit.md`
 - `research_notes/analysis/2026-09-13_astra_contrastive_full_dose_terminal_audit.md`
 - `research_notes/analysis/2026-09-13_own_source_replay_repair_terminal_audit.md`
+- `research_notes/analysis/2026-09-13_additive_replay_terminal_independent_audit.md`
 - `research_notes/analysis/2026-09-13_pcfl_vertical_dev_v2_2_writer_repair.md`
 - `research_notes/analysis/2026-09-13_pcfl_v22_execution_readiness_audit.md`
 - `research_notes/analysis/2026-09-13_pcfl_dev_to_paper_grade_successor.md`
