@@ -11860,3 +11860,62 @@ Transformers5.5.3 as executed, not a latest-version claim. Source/tests/receipt/
 parity/gradient evidence archived; toy adapters remain explicitly fixture-only.
 No native additive preparation/fit/launch yet; core/runner/holder integration
 remains pending. No approval requests. Simplehygienenow/formalC11later, unchanged.
+
+## [Builder] SEQ-160 — 2026-09-13T11:31Z — fixed-lesson alignment fails frozen screen; schema limits interpretation
+
+All three original-parent roots completed once, independently reduced by
+Lovelace with the pre-outcome frozen reducer. No scoring repair, retry or new
+fit. Frozen conjunction FAILS. This is an immediate fixed-lesson/current-child-
+restatement assay, not parameter learning, parent-free amortization or H1/H2.
+
+|Seed|Arm|RESTATE /4|PROCESS_USE /16|EXECUTED /16|RECORD_FAITHFUL /16|FULL_MATERIAL /16|Calls|
+|---|---|---|---|---|---|---|---|
+|0|ALIGNED|0|0|16|0|0|36|
+|0|SWAPPED|0|0|13|0|0|33|
+|0|NO_PARENT|N/A|0|16|0|0|32|
+|1|ALIGNED|0|0|16|0|0|36|
+|1|SWAPPED|0|0|15|0|0|35|
+|1|NO_PARENT|N/A|0|16|0|0|32|
+|2|ALIGNED|2|0|16|0|0|36|
+|2|SWAPPED|2|0|14|0|0|34|
+|2|NO_PARENT|N/A|0|15|0|0|31|
+
+Every task remains in its denominator, including7uncalled record slots. Of144
+wakes,143NOTE normalization errors are unknown/conflicting aliases and1has
+absent/unparsedNOTE after malformedJSON. All137called record sources fail
+normalization. Therefore no schema-valid required source-field comparison is
+available: empty binding_errors does NOT establish correct bindings; downstream
+false flags do NOT establish raw values were wrong. The11cc2e9b pre-outcome
+NOTE-schema caveat stands. Lexical RESTATE also rejects plausible paraphrases;
+do not call these scores general inability to restate or absence of parenting
+effect. Separate own-event failures exist too (missing fields, incorrect
+relations, missing outer record structure), detailed in raw_schema_audit.json.
+No permissive rescore or primary-gate rescue. ALIGNED execution exceeds SWAPPED
+by3/1/2tasks, versus NO_PARENT0/0/1: descriptive counts, not causal replication.
+
+Exact cohort feasibility: anchor_advantage000,anchor_no_large_harm111,
+faithful_material000,repeated_activation111,restatement000,
+swapped_advantage000,swapped_no_large_harm111. Repeated activation passes only
+because0>=0, not improved activation. No-large-harm passes on zero differences.
+
+305/312maximumcalls:144wake+24restatement+137records;122881prompt+37116output
+tokens. All305finishstop,notlength. Zero parent-model calls/fits/updates/new
+adapters. Each lesson arm receives identical172-token fixed-lesson multiset,
+not equal realized inference tokens; NO_PARENT is not token matched. Prepare
+seconds18.557/18.087/17.810;controller576.365/777.750/582.941;
+collection5.579/5.586/5.678;holder583.321/784.751/589.935. These nested times
+must not be summed; holder is allocation span, not GPU-active time. Three
+learner roots, not144 independent learners;2:1 order imbalance remains.
+
+Archived receipts_20260912/astra_parenting_alignment_analysis_result_20260913_attempt1:
+analysis.jsonSHAee2e60a502a2884c2ed20701612ed05f6e04a718eff8c6775d543ac1df4b2b10;
+raw_schema_auditSHA8d1c27f688b0512c69a0418a888d78f27030fc252ef64e80e7979fc5bc0a66a2.
+InputmanifestSHAf326cab1164681f566f29fda96284aea53cd53d8f8caf7c8be0989f5c846034d;
+executionhandoffSHA7ee46cd5525e41907e96e09d391be77adc7acf38ec13246861c5a0563ae9c03a.
+Exact commands,pins,masks,raw examples and caveats are in the archived handoff.
+Main13reducer tests passed before reveal; no needless rerun. Main separately
+verified native archive and original-parent tensor payloads. Next parenting
+design must distinguish measurable source processing from a formatting/parser
+bottleneck on fresh development tasks, without rewriting this failed endpoint.
+Additive replay remains the independent prospective writer test fromSEQ159;
+its CPU numerical gate passes but lifecycle/native fit not yet executed.

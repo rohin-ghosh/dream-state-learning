@@ -2,6 +2,14 @@
 
 ## CURRENT — September13 11:31UTC
 
+UPDATE: SEQ160 independently reduced and archived. Frozen gateFAILS; all9
+PROCESS_USE/RECORD_FAITHFUL/FULL_MATERIAL cells0/16; RESTATEaligned0/0/2.
+All144NOTE and137calledsources fail normalization; no valid binding comparison
+is available. Measurement/schema failure does not establish cognitive absence.
+Raw own-event/outer-format failures coexist. Full counts/pins/limits inSEQ160;
+analysisSHAee2e60a502a2884c2ed20701612ed05f6e04a718eff8c6775d543ac1df4b2b10.
+Earlier pending-reduction lines below are superseded; do not repeat reduction.
+
 All three alignment controllers, holders and automatic collectors completed
 with integer rc0. DO NOT relaunch or recollect. No Main GPU job remains live
 from this allocation. Full archive already VM-preserved:

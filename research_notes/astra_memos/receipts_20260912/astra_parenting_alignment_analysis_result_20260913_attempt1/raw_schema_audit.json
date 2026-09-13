@@ -1,0 +1,3263 @@
+{
+  "analysis_sha256": "ee2e60a502a2884c2ed20701612ed05f6e04a718eff8c6775d543ac1df4b2b10",
+  "cells": [
+    {
+      "arm": "ALIGNED",
+      "capture": {
+        "path": "/tmp/astra_parenting_alignment_native_20260913_attempt1/parenting_alignment_seed0_20260913_attempt1/run/ALIGNED/capture.json",
+        "sha256": "eb84ecfc14fb859ec96d4b0a1632beaf4e002cf10d74ef533561f856daa6457c"
+      },
+      "costs": {
+        "calls": 36,
+        "fits": 0,
+        "generation_seconds": 130.62827126297634,
+        "kind_counts": {
+          "record": 16,
+          "restate": 4,
+          "wake": 16
+        },
+        "output_tokens": 3301,
+        "parent_model_calls": 0,
+        "prompt_tokens": 14488,
+        "updates": 0
+      },
+      "counts": {
+        "EXECUTED": 16,
+        "FULL_MATERIAL": 0,
+        "PROCESS_USE": 0,
+        "RECORD_FAITHFUL": 0,
+        "RESTATE": 0,
+        "by_delivery": {
+          "0": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          },
+          "1": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          }
+        },
+        "by_family": {
+          "C": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          },
+          "P": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          }
+        },
+        "by_family_delivery": {
+          "C": {
+            "0": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            },
+            "1": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            }
+          },
+          "P": {
+            "0": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            },
+            "1": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            }
+          }
+        },
+        "calls": 36,
+        "contacts": 4,
+        "endpoint_masks": {
+          "EXECUTED": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "FULL_MATERIAL": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "PROCESS_USE": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "RECORD_FAITHFUL": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        "finishes": {
+          "stop": 36
+        },
+        "fits": 0,
+        "input_utf8_bytes": 46039,
+        "opportunities": 16,
+        "output_utf8_bytes": 7954,
+        "parent_model_calls": 0,
+        "raw_unique": {
+          "record": 16,
+          "restate": 2,
+          "wake": 16
+        },
+        "record_not_called": 0,
+        "restate_denominator": 4,
+        "restate_mask": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "token_costs": "Native wrapper must report actual token counts; UTF8 bytes are not tokens.",
+        "updates": 0
+      },
+      "invalid_wakes": [],
+      "note": {
+        "available": 16,
+        "binding_errors_shape_valid": {},
+        "normalized": 0,
+        "parse_errors": {
+          "note_schema": 16,
+          "unknown_or_conflicting_note_alias": 16
+        },
+        "shape_valid": 0
+      },
+      "own_event_all5_correct": 10,
+      "own_event_missing_or_unparsed": {
+        "observed": 1,
+        "predicted": 1,
+        "receipt_id": 1,
+        "relation": 4,
+        "try": 1
+      },
+      "own_event_present_incorrect": {
+        "relation": 2
+      },
+      "record_json_parse_failures": 1,
+      "record_outer_schema_failures": 16,
+      "record_source_types": {
+        "dict": 1,
+        "missing_or_unparsed": 15
+      },
+      "restatements": [
+        {
+          "block_index": 0,
+          "delivered_lesson": "P",
+          "raw": "Maintain the initial prediction independently from the subsequent observation. Keep both the predicted and observed values from the public receipt and check if they are consistent or different. Do not overwrite the original prediction with the new observation.",
+          "score": {
+            "content_correct": false,
+            "contradictions": [],
+            "errors": [],
+            "limitation": "Frozen conservative lexical operation/scope screen; not an unrestricted semantic judge.",
+            "operation_scope": {
+              "comparison": false,
+              "outcome_scope": false,
+              "prior_scope": false,
+              "separation": true
+            }
+          }
+        },
+        {
+          "block_index": 1,
+          "delivered_lesson": "C",
+          "raw": "Select the most recent event based on the public receipt times, not the order they are displayed. Ensure that you keep the receipt identity, action, and returned observation together for that event. Do not mix the action from one receipt with the outcome from another receipt.",
+          "score": {
+            "content_correct": false,
+            "contradictions": [],
+            "errors": [],
+            "limitation": "Frozen conservative lexical operation/scope screen; not an unrestricted semantic judge.",
+            "operation_scope": {
+              "action": true,
+              "chronology": true,
+              "executed_scope": false,
+              "outcome": true,
+              "same_receipt": true,
+              "time_scope": true
+            }
+          }
+        },
+        {
+          "block_index": 2,
+          "delivered_lesson": "P",
+          "raw": "Maintain the initial prediction independently from the subsequent observation. Keep both the predicted and observed values from the public receipt and check if they are consistent or different. Do not overwrite the original prediction with the new observation.",
+          "score": {
+            "content_correct": false,
+            "contradictions": [],
+            "errors": [],
+            "limitation": "Frozen conservative lexical operation/scope screen; not an unrestricted semantic judge.",
+            "operation_scope": {
+              "comparison": false,
+              "outcome_scope": false,
+              "prior_scope": false,
+              "separation": true
+            }
+          }
+        },
+        {
+          "block_index": 3,
+          "delivered_lesson": "C",
+          "raw": "Select the most recent event based on the public receipt times, not the order they are displayed. Ensure that you keep the receipt identity, action, and returned observation together for that event. Do not mix the action from one receipt with the outcome from another receipt.",
+          "score": {
+            "content_correct": false,
+            "contradictions": [],
+            "errors": [],
+            "limitation": "Frozen conservative lexical operation/scope screen; not an unrestricted semantic judge.",
+            "operation_scope": {
+              "action": true,
+              "chronology": true,
+              "executed_scope": false,
+              "outcome": true,
+              "same_receipt": true,
+              "time_scope": true
+            }
+          }
+        }
+      ],
+      "seed": 0,
+      "source": {
+        "available": 16,
+        "binding_errors_shape_valid": {},
+        "normalized": 0,
+        "parse_errors": {
+          "note_object_required": 15,
+          "note_schema": 16,
+          "unknown_or_conflicting_note_alias": 1
+        },
+        "shape_valid": 0
+      }
+    },
+    {
+      "arm": "SWAPPED",
+      "capture": {
+        "path": "/tmp/astra_parenting_alignment_native_20260913_attempt1/parenting_alignment_seed0_20260913_attempt1/run/SWAPPED/capture.json",
+        "sha256": "c2b5f7ec7d82393a245f9235147fcc773c65a446fd1f24c8478659b957a96b8b"
+      },
+      "costs": {
+        "calls": 33,
+        "fits": 0,
+        "generation_seconds": 141.99869218305685,
+        "kind_counts": {
+          "record": 13,
+          "restate": 4,
+          "wake": 16
+        },
+        "output_tokens": 3555,
+        "parent_model_calls": 0,
+        "prompt_tokens": 12933,
+        "updates": 0
+      },
+      "counts": {
+        "EXECUTED": 13,
+        "FULL_MATERIAL": 0,
+        "PROCESS_USE": 0,
+        "RECORD_FAITHFUL": 0,
+        "RESTATE": 0,
+        "by_delivery": {
+          "0": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          },
+          "1": {
+            "EXECUTED": 5,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          }
+        },
+        "by_family": {
+          "C": {
+            "EXECUTED": 5,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          },
+          "P": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          }
+        },
+        "by_family_delivery": {
+          "C": {
+            "0": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            },
+            "1": {
+              "EXECUTED": 1,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            }
+          },
+          "P": {
+            "0": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            },
+            "1": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            }
+          }
+        },
+        "calls": 33,
+        "contacts": 4,
+        "endpoint_masks": {
+          "EXECUTED": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            false,
+            false
+          ],
+          "FULL_MATERIAL": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "PROCESS_USE": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "RECORD_FAITHFUL": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        "finishes": {
+          "stop": 33
+        },
+        "fits": 0,
+        "input_utf8_bytes": 41250,
+        "opportunities": 16,
+        "output_utf8_bytes": 8733,
+        "parent_model_calls": 0,
+        "raw_unique": {
+          "record": 13,
+          "restate": 3,
+          "wake": 16
+        },
+        "record_not_called": 3,
+        "restate_denominator": 4,
+        "restate_mask": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "token_costs": "Native wrapper must report actual token counts; UTF8 bytes are not tokens.",
+        "updates": 0
+      },
+      "invalid_wakes": [
+        {
+          "errors": [
+            "strict_action"
+          ],
+          "raw": "{\"note\":{\"address\":\"pa-1e7bacb818c2f0be21ded7b20b8c\",\"receipts\":[{\"observed\":false,\"predicted\":null,\"receipt_id\":\"pa-6299bc48cd2d0c89747d5748af40\",\"time\":1,\"try\":[-7,-6,-7]},{\"observed\":true,\"predicted\":null,\"receipt_id\":\"pa-bcdb95b3fbd4d8a1b98d08a13a58\",\"time\":2,\"try\":[0,-6,6]}]},\"prediction\":null,\"action\":{\"kind\":\"TRY\",\"values\":[-8,-5,-8]}}",
+          "task_id": "pa-38a331f74b9dfdbf3251ad82493c",
+          "task_index": 12
+        },
+        {
+          "errors": [
+            "strict_action"
+          ],
+          "raw": "{\"note\":{\"receipts\":[{\"observed\":true,\"predicted\":null,\"receipt_id\":\"pa-41cd4d8668121cbbc98c42619283\",\"time\":2,\"try\":[-2,8,8]},{\"observed\":false,\"predicted\":null,\"receipt_id\":\"pa-57b07c7a9a82fadce23a34fdd9a4\",\"time\":1,\"try\":[7,4,-7]}]},\"prediction\":null,\"action\":{\"kind\":\"TRY\",\"values\":[-9,0,9]}}",
+          "task_id": "pa-c9d38078b7c6355c4032f147f025",
+          "task_index": 14
+        },
+        {
+          "errors": [
+            "strict_action"
+          ],
+          "raw": "{\"note\":{\"address\":\"pa-76601116a75c7e2fc086ab6ee8cb\",\"receipts\":[{\"observed\":false,\"predicted\":null,\"receipt_id\":\"pa-6cfc874a6779c1773705fac5b388\",\"time\":2,\"try\":[7,-3,-3]},{\"observed\":true,\"predicted\":null,\"receipt_id\":\"pa-aa49a462c0a7a3a9bc8ed665c7f6\",\"time\":1,\"try\":[-3,-6,-9]}]},\"prediction\":null,\"action\":{\"kind\":\"TRY\",\"values\":[-3,2,-5]}}",
+          "task_id": "pa-89440b5df4c150653879989ebd1d",
+          "task_index": 15
+        }
+      ],
+      "note": {
+        "available": 16,
+        "binding_errors_shape_valid": {},
+        "normalized": 0,
+        "parse_errors": {
+          "note_schema": 16,
+          "unknown_or_conflicting_note_alias": 16
+        },
+        "shape_valid": 0
+      },
+      "own_event_all5_correct": 11,
+      "own_event_missing_or_unparsed": {
+        "observed": 1,
+        "predicted": 1,
+        "receipt_id": 1,
+        "relation": 2,
+        "try": 1
+      },
+      "own_event_present_incorrect": {},
+      "record_json_parse_failures": 1,
+      "record_outer_schema_failures": 13,
+      "record_source_types": {
+        "dict": 1,
+        "missing_or_unparsed": 11,
+        "str": 1
+      },
+      "restatements": [
+        {
+          "block_index": 0,
+          "delivered_lesson": "C",
+          "raw": "Select the most recent event based on the public receipt times, not the order they are displayed. Ensure that you keep the receipt identity, action, and returned observation together for that event. Do not mix the action from one receipt with the outcome from another receipt.",
+          "score": {
+            "content_correct": false,
+            "contradictions": [],
+            "errors": [],
+            "limitation": "Frozen conservative lexical operation/scope screen; not an unrestricted semantic judge.",
+            "operation_scope": {
+              "action": true,
+              "chronology": true,
+              "executed_scope": false,
+              "outcome": true,
+              "same_receipt": true,
+              "time_scope": true
+            }
+          }
+        },
+        {
+          "block_index": 1,
+          "delivered_lesson": "P",
+          "raw": "Maintain the initial prediction independently from the subsequent observation. Keep both the predicted and observed values from the public receipt and check if they are consistent or different. Do not overwrite the original prediction with the new observation.",
+          "score": {
+            "content_correct": false,
+            "contradictions": [],
+            "errors": [],
+            "limitation": "Frozen conservative lexical operation/scope screen; not an unrestricted semantic judge.",
+            "operation_scope": {
+              "comparison": false,
+              "outcome_scope": false,
+              "prior_scope": false,
+              "separation": true
+            }
+          }
+        },
+        {
+          "block_index": 2,
+          "delivered_lesson": "C",
+          "raw": "Select the most recent event based on the public receipt times, not the order they are displayed. Ensure that you keep the receipt identity, action, and returned observation together for that event. Do not mix the action from one receipt with the outcome from another receipt.",
+          "score": {
+            "content_correct": false,
+            "contradictions": [],
+            "errors": [],
+            "limitation": "Frozen conservative lexical operation/scope screen; not an unrestricted semantic judge.",
+            "operation_scope": {
+              "action": true,
+              "chronology": true,
+              "executed_scope": false,
+              "outcome": true,
+              "same_receipt": true,
+              "time_scope": true
+            }
+          }
+        },
+        {
+          "block_index": 3,
+          "delivered_lesson": "P",
+          "raw": "Maintain the initial prediction independently from the subsequent observation. Keep both the public receipt values and compare them to determine if they align or differ. Do not overwrite the original prediction with the new observation.",
+          "score": {
+            "content_correct": false,
+            "contradictions": [],
+            "errors": [],
+            "limitation": "Frozen conservative lexical operation/scope screen; not an unrestricted semantic judge.",
+            "operation_scope": {
+              "comparison": true,
+              "outcome_scope": false,
+              "prior_scope": false,
+              "separation": true
+            }
+          }
+        }
+      ],
+      "seed": 0,
+      "source": {
+        "available": 13,
+        "binding_errors_shape_valid": {},
+        "normalized": 0,
+        "parse_errors": {
+          "note_object_required": 12,
+          "note_schema": 13,
+          "unknown_or_conflicting_note_alias": 1
+        },
+        "shape_valid": 0
+      }
+    },
+    {
+      "arm": "NO_PARENT",
+      "capture": {
+        "path": "/tmp/astra_parenting_alignment_native_20260913_attempt1/parenting_alignment_seed0_20260913_attempt1/run/NO_PARENT/capture.json",
+        "sha256": "1870b3149c14ed090e44833029a6ff70c461e64517fab265ca2c64760ac16486"
+      },
+      "costs": {
+        "calls": 32,
+        "fits": 0,
+        "generation_seconds": 145.92189913464244,
+        "kind_counts": {
+          "record": 16,
+          "wake": 16
+        },
+        "output_tokens": 3574,
+        "parent_model_calls": 0,
+        "prompt_tokens": 13105,
+        "updates": 0
+      },
+      "counts": {
+        "EXECUTED": 16,
+        "FULL_MATERIAL": 0,
+        "PROCESS_USE": 0,
+        "RECORD_FAITHFUL": 0,
+        "RESTATE": null,
+        "by_delivery": {
+          "0": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          },
+          "1": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          }
+        },
+        "by_family": {
+          "C": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          },
+          "P": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          }
+        },
+        "by_family_delivery": {
+          "C": {
+            "0": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            },
+            "1": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            }
+          },
+          "P": {
+            "0": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            },
+            "1": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            }
+          }
+        },
+        "calls": 32,
+        "contacts": 0,
+        "endpoint_masks": {
+          "EXECUTED": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "FULL_MATERIAL": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "PROCESS_USE": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "RECORD_FAITHFUL": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        "finishes": {
+          "stop": 32
+        },
+        "fits": 0,
+        "input_utf8_bytes": 36875,
+        "opportunities": 16,
+        "output_utf8_bytes": 8487,
+        "parent_model_calls": 0,
+        "raw_unique": {
+          "record": 16,
+          "restate": 0,
+          "wake": 16
+        },
+        "record_not_called": 0,
+        "restate_denominator": null,
+        "restate_mask": null,
+        "token_costs": "Native wrapper must report actual token counts; UTF8 bytes are not tokens.",
+        "updates": 0
+      },
+      "invalid_wakes": [],
+      "note": {
+        "available": 16,
+        "binding_errors_shape_valid": {},
+        "normalized": 0,
+        "parse_errors": {
+          "note_schema": 16,
+          "unknown_or_conflicting_note_alias": 16
+        },
+        "shape_valid": 0
+      },
+      "own_event_all5_correct": 6,
+      "own_event_missing_or_unparsed": {
+        "receipt_id": 4
+      },
+      "own_event_present_incorrect": {
+        "relation": 6
+      },
+      "record_json_parse_failures": 0,
+      "record_outer_schema_failures": 16,
+      "record_source_types": {
+        "missing_or_unparsed": 16
+      },
+      "restatements": [],
+      "seed": 0,
+      "source": {
+        "available": 16,
+        "binding_errors_shape_valid": {},
+        "normalized": 0,
+        "parse_errors": {
+          "note_object_required": 16,
+          "note_schema": 16
+        },
+        "shape_valid": 0
+      }
+    },
+    {
+      "arm": "ALIGNED",
+      "capture": {
+        "path": "/tmp/astra_parenting_alignment_native_20260913_attempt1/parenting_alignment_seed1_20260913_attempt1/run/ALIGNED/capture.json",
+        "sha256": "19ef20a8ea8832acf027f4fecbef61744573e72e9dd812025c163dfba2017b1d"
+      },
+      "costs": {
+        "calls": 36,
+        "fits": 0,
+        "generation_seconds": 229.36288775107823,
+        "kind_counts": {
+          "record": 16,
+          "restate": 4,
+          "wake": 16
+        },
+        "output_tokens": 5729,
+        "parent_model_calls": 0,
+        "prompt_tokens": 15548,
+        "updates": 0
+      },
+      "counts": {
+        "EXECUTED": 16,
+        "FULL_MATERIAL": 0,
+        "PROCESS_USE": 0,
+        "RECORD_FAITHFUL": 0,
+        "RESTATE": 0,
+        "by_delivery": {
+          "0": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          },
+          "1": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          }
+        },
+        "by_family": {
+          "C": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          },
+          "P": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          }
+        },
+        "by_family_delivery": {
+          "C": {
+            "0": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            },
+            "1": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            }
+          },
+          "P": {
+            "0": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            },
+            "1": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            }
+          }
+        },
+        "calls": 36,
+        "contacts": 4,
+        "endpoint_masks": {
+          "EXECUTED": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "FULL_MATERIAL": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "PROCESS_USE": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "RECORD_FAITHFUL": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        "finishes": {
+          "stop": 36
+        },
+        "fits": 0,
+        "input_utf8_bytes": 49197,
+        "opportunities": 16,
+        "output_utf8_bytes": 14191,
+        "parent_model_calls": 0,
+        "raw_unique": {
+          "record": 16,
+          "restate": 2,
+          "wake": 16
+        },
+        "record_not_called": 0,
+        "restate_denominator": 4,
+        "restate_mask": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "token_costs": "Native wrapper must report actual token counts; UTF8 bytes are not tokens.",
+        "updates": 0
+      },
+      "invalid_wakes": [],
+      "note": {
+        "available": 16,
+        "binding_errors_shape_valid": {},
+        "normalized": 0,
+        "parse_errors": {
+          "note_schema": 16,
+          "unknown_or_conflicting_note_alias": 16
+        },
+        "shape_valid": 0
+      },
+      "own_event_all5_correct": 9,
+      "own_event_missing_or_unparsed": {
+        "observed": 4,
+        "predicted": 4,
+        "receipt_id": 4,
+        "relation": 4,
+        "try": 4
+      },
+      "own_event_present_incorrect": {
+        "relation": 3
+      },
+      "record_json_parse_failures": 4,
+      "record_outer_schema_failures": 8,
+      "record_source_types": {
+        "dict": 4,
+        "missing_or_unparsed": 4,
+        "str": 8
+      },
+      "restatements": [
+        {
+          "block_index": 0,
+          "delivered_lesson": "C",
+          "raw": "Choose the event that was most recently executed based on the public receipt times, not the order in which they are displayed. Include the receipt identity, the action taken, and the returned observation for that specific event. Ensure that you do not mix the action from one receipt with the outcome from another receipt.",
+          "score": {
+            "content_correct": false,
+            "contradictions": [],
+            "errors": [],
+            "limitation": "Frozen conservative lexical operation/scope screen; not an unrestricted semantic judge.",
+            "operation_scope": {
+              "action": true,
+              "chronology": false,
+              "executed_scope": true,
+              "outcome": true,
+              "same_receipt": true,
+              "time_scope": true
+            }
+          }
+        },
+        {
+          "block_index": 1,
+          "delivered_lesson": "P",
+          "raw": "Maintain the original prediction distinct from the subsequent observation. Ensure both values are recorded from the public receipt and then compare them to check for consistency or differences. Do not overwrite the initial prediction with the new observation.",
+          "score": {
+            "content_correct": false,
+            "contradictions": [],
+            "errors": [],
+            "limitation": "Frozen conservative lexical operation/scope screen; not an unrestricted semantic judge.",
+            "operation_scope": {
+              "comparison": true,
+              "outcome_scope": false,
+              "prior_scope": false,
+              "separation": false
+            }
+          }
+        },
+        {
+          "block_index": 2,
+          "delivered_lesson": "C",
+          "raw": "Choose the event that was most recently executed based on the public receipt times, not the order in which they are displayed. Include the receipt identity, the action taken, and the returned observation for that specific event. Ensure that you do not mix the action from one receipt with the outcome from another receipt.",
+          "score": {
+            "content_correct": false,
+            "contradictions": [],
+            "errors": [],
+            "limitation": "Frozen conservative lexical operation/scope screen; not an unrestricted semantic judge.",
+            "operation_scope": {
+              "action": true,
+              "chronology": false,
+              "executed_scope": true,
+              "outcome": true,
+              "same_receipt": true,
+              "time_scope": true
+            }
+          }
+        },
+        {
+          "block_index": 3,
+          "delivered_lesson": "P",
+          "raw": "Maintain the original prediction distinct from the subsequent observation. Ensure both values are recorded from the public receipt and then compare them to check for consistency or differences. Do not overwrite the initial prediction with the new observation.",
+          "score": {
+            "content_correct": false,
+            "contradictions": [],
+            "errors": [],
+            "limitation": "Frozen conservative lexical operation/scope screen; not an unrestricted semantic judge.",
+            "operation_scope": {
+              "comparison": true,
+              "outcome_scope": false,
+              "prior_scope": false,
+              "separation": false
+            }
+          }
+        }
+      ],
+      "seed": 1,
+      "source": {
+        "available": 16,
+        "binding_errors_shape_valid": {},
+        "normalized": 0,
+        "parse_errors": {
+          "note_object_required": 12,
+          "note_schema": 16,
+          "unknown_or_conflicting_note_alias": 4
+        },
+        "shape_valid": 0
+      }
+    },
+    {
+      "arm": "SWAPPED",
+      "capture": {
+        "path": "/tmp/astra_parenting_alignment_native_20260913_attempt1/parenting_alignment_seed1_20260913_attempt1/run/SWAPPED/capture.json",
+        "sha256": "cacb87ca1e9dd59713a7b44aa0e1a8f3846ea59ca67f5c2e1cdc83f3c5b04690"
+      },
+      "costs": {
+        "calls": 35,
+        "fits": 0,
+        "generation_seconds": 222.89412161160726,
+        "kind_counts": {
+          "record": 15,
+          "restate": 4,
+          "wake": 16
+        },
+        "output_tokens": 5799,
+        "parent_model_calls": 0,
+        "prompt_tokens": 14907,
+        "updates": 0
+      },
+      "counts": {
+        "EXECUTED": 15,
+        "FULL_MATERIAL": 0,
+        "PROCESS_USE": 0,
+        "RECORD_FAITHFUL": 0,
+        "RESTATE": 0,
+        "by_delivery": {
+          "0": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          },
+          "1": {
+            "EXECUTED": 7,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          }
+        },
+        "by_family": {
+          "C": {
+            "EXECUTED": 7,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          },
+          "P": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          }
+        },
+        "by_family_delivery": {
+          "C": {
+            "0": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            },
+            "1": {
+              "EXECUTED": 3,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            }
+          },
+          "P": {
+            "0": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            },
+            "1": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            }
+          }
+        },
+        "calls": 35,
+        "contacts": 4,
+        "endpoint_masks": {
+          "EXECUTED": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "FULL_MATERIAL": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "PROCESS_USE": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "RECORD_FAITHFUL": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        "finishes": {
+          "stop": 35
+        },
+        "fits": 0,
+        "input_utf8_bytes": 47173,
+        "opportunities": 16,
+        "output_utf8_bytes": 14455,
+        "parent_model_calls": 0,
+        "raw_unique": {
+          "record": 15,
+          "restate": 3,
+          "wake": 16
+        },
+        "record_not_called": 1,
+        "restate_denominator": 4,
+        "restate_mask": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "token_costs": "Native wrapper must report actual token counts; UTF8 bytes are not tokens.",
+        "updates": 0
+      },
+      "invalid_wakes": [
+        {
+          "errors": [
+            "strict_action"
+          ],
+          "raw": "{\"note\":{\"address\":\"pa-4e90dfab86fb9e46ee9d6135c8ed\",\"receipt_origin\":\"Harness-provided earlier public environment events; not your own actions.\",\"receipts\":[{\"observed\":false,\"predicted\":null,\"receipt_id\":\"pa-830538012e3fcfcf7d9bac2972ec\",\"time\":1,\"try\":[-7,-3,1]},{\"observed\":true,\"predicted\":null,\"receipt_id\":\"pa-e084143a689a3706272097e3bb2c\",\"time\":2,\"try\":[0,-3,-5]}],\"task_id\":\"pa-4059ad989e81a538d959cb51b3e1\"},\"prediction\":null,\"action\":{\"kind\":\"TRY\",\"values\":[-7,-3,1]}}",
+          "task_id": "pa-4059ad989e81a538d959cb51b3e1",
+          "task_index": 8
+        }
+      ],
+      "note": {
+        "available": 16,
+        "binding_errors_shape_valid": {},
+        "normalized": 0,
+        "parse_errors": {
+          "note_schema": 16,
+          "unknown_or_conflicting_note_alias": 16
+        },
+        "shape_valid": 0
+      },
+      "own_event_all5_correct": 11,
+      "own_event_missing_or_unparsed": {
+        "observed": 4,
+        "predicted": 4,
+        "receipt_id": 4,
+        "relation": 4,
+        "try": 4
+      },
+      "own_event_present_incorrect": {},
+      "record_json_parse_failures": 3,
+      "record_outer_schema_failures": 6,
+      "record_source_types": {
+        "dict": 3,
+        "missing_or_unparsed": 3,
+        "str": 9
+      },
+      "restatements": [
+        {
+          "block_index": 0,
+          "delivered_lesson": "P",
+          "raw": "Maintain the original prediction distinct from the subsequent observation. Ensure both the public receipt values are retained and then compare them to check for any discrepancies. Do not overwrite the initial prediction with the new observation.",
+          "score": {
+            "content_correct": false,
+            "contradictions": [],
+            "errors": [],
+            "limitation": "Frozen conservative lexical operation/scope screen; not an unrestricted semantic judge.",
+            "operation_scope": {
+              "comparison": true,
+              "outcome_scope": false,
+              "prior_scope": false,
+              "separation": false
+            }
+          }
+        },
+        {
+          "block_index": 1,
+          "delivered_lesson": "C",
+          "raw": "Choose the event that was most recently executed based on the public receipt times, not the order in which they are displayed. Include the receipt identity, the action taken, and the returned observation for that specific event. Ensure that you do not mix the action from one receipt with the outcome from another receipt.",
+          "score": {
+            "content_correct": false,
+            "contradictions": [],
+            "errors": [],
+            "limitation": "Frozen conservative lexical operation/scope screen; not an unrestricted semantic judge.",
+            "operation_scope": {
+              "action": true,
+              "chronology": false,
+              "executed_scope": true,
+              "outcome": true,
+              "same_receipt": true,
+              "time_scope": true
+            }
+          }
+        },
+        {
+          "block_index": 2,
+          "delivered_lesson": "P",
+          "raw": "Maintain the original prediction distinct from the subsequent observation. Ensure both values are recorded from the public receipt and then compare them to check for consistency or differences. Do not overwrite the initial prediction with the new observation.",
+          "score": {
+            "content_correct": false,
+            "contradictions": [],
+            "errors": [],
+            "limitation": "Frozen conservative lexical operation/scope screen; not an unrestricted semantic judge.",
+            "operation_scope": {
+              "comparison": true,
+              "outcome_scope": false,
+              "prior_scope": false,
+              "separation": false
+            }
+          }
+        },
+        {
+          "block_index": 3,
+          "delivered_lesson": "C",
+          "raw": "Choose the event that was most recently executed based on the public receipt times, not the order in which they are displayed. Include the receipt identity, the action taken, and the returned observation for that specific event. Ensure that you do not mix the action from one receipt with the outcome from another receipt.",
+          "score": {
+            "content_correct": false,
+            "contradictions": [],
+            "errors": [],
+            "limitation": "Frozen conservative lexical operation/scope screen; not an unrestricted semantic judge.",
+            "operation_scope": {
+              "action": true,
+              "chronology": false,
+              "executed_scope": true,
+              "outcome": true,
+              "same_receipt": true,
+              "time_scope": true
+            }
+          }
+        }
+      ],
+      "seed": 1,
+      "source": {
+        "available": 15,
+        "binding_errors_shape_valid": {},
+        "normalized": 0,
+        "parse_errors": {
+          "note_object_required": 12,
+          "note_schema": 15,
+          "unknown_or_conflicting_note_alias": 3
+        },
+        "shape_valid": 0
+      }
+    },
+    {
+      "arm": "NO_PARENT",
+      "capture": {
+        "path": "/tmp/astra_parenting_alignment_native_20260913_attempt1/parenting_alignment_seed1_20260913_attempt1/run/NO_PARENT/capture.json",
+        "sha256": "46c25ea69014ec5f6d0d8babe2bf7b849cb3fe9dd0caa98f0b00ff187ff090be"
+      },
+      "costs": {
+        "calls": 32,
+        "fits": 0,
+        "generation_seconds": 172.12369149632286,
+        "kind_counts": {
+          "record": 16,
+          "wake": 16
+        },
+        "output_tokens": 4503,
+        "parent_model_calls": 0,
+        "prompt_tokens": 13192,
+        "updates": 0
+      },
+      "counts": {
+        "EXECUTED": 16,
+        "FULL_MATERIAL": 0,
+        "PROCESS_USE": 0,
+        "RECORD_FAITHFUL": 0,
+        "RESTATE": null,
+        "by_delivery": {
+          "0": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          },
+          "1": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          }
+        },
+        "by_family": {
+          "C": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          },
+          "P": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          }
+        },
+        "by_family_delivery": {
+          "C": {
+            "0": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            },
+            "1": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            }
+          },
+          "P": {
+            "0": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            },
+            "1": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            }
+          }
+        },
+        "calls": 32,
+        "contacts": 0,
+        "endpoint_masks": {
+          "EXECUTED": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "FULL_MATERIAL": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "PROCESS_USE": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "RECORD_FAITHFUL": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        "finishes": {
+          "stop": 32
+        },
+        "fits": 0,
+        "input_utf8_bytes": 37045,
+        "opportunities": 16,
+        "output_utf8_bytes": 10869,
+        "parent_model_calls": 0,
+        "raw_unique": {
+          "record": 16,
+          "restate": 0,
+          "wake": 16
+        },
+        "record_not_called": 0,
+        "restate_denominator": null,
+        "restate_mask": null,
+        "token_costs": "Native wrapper must report actual token counts; UTF8 bytes are not tokens.",
+        "updates": 0
+      },
+      "invalid_wakes": [],
+      "note": {
+        "available": 16,
+        "binding_errors_shape_valid": {},
+        "normalized": 0,
+        "parse_errors": {
+          "note_schema": 16,
+          "unknown_or_conflicting_note_alias": 16
+        },
+        "shape_valid": 0
+      },
+      "own_event_all5_correct": 0,
+      "own_event_missing_or_unparsed": {},
+      "own_event_present_incorrect": {
+        "relation": 16
+      },
+      "record_json_parse_failures": 0,
+      "record_outer_schema_failures": 0,
+      "record_source_types": {
+        "str": 16
+      },
+      "restatements": [],
+      "seed": 1,
+      "source": {
+        "available": 16,
+        "binding_errors_shape_valid": {},
+        "normalized": 0,
+        "parse_errors": {
+          "note_object_required": 16,
+          "note_schema": 16
+        },
+        "shape_valid": 0
+      }
+    },
+    {
+      "arm": "ALIGNED",
+      "capture": {
+        "path": "/tmp/astra_parenting_alignment_native_20260913_attempt1/parenting_alignment_seed2_20260913_attempt1/run/ALIGNED/capture.json",
+        "sha256": "4dfc9c4bc53ee8c1aa67bcd3c04057bd2334b4ec81ed72929f28f3db3651240a"
+      },
+      "costs": {
+        "calls": 36,
+        "fits": 0,
+        "generation_seconds": 114.08370987698436,
+        "kind_counts": {
+          "record": 16,
+          "restate": 4,
+          "wake": 16
+        },
+        "output_tokens": 2767,
+        "parent_model_calls": 0,
+        "prompt_tokens": 13806,
+        "updates": 0
+      },
+      "counts": {
+        "EXECUTED": 16,
+        "FULL_MATERIAL": 0,
+        "PROCESS_USE": 0,
+        "RECORD_FAITHFUL": 0,
+        "RESTATE": 2,
+        "by_delivery": {
+          "0": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          },
+          "1": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          }
+        },
+        "by_family": {
+          "C": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          },
+          "P": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          }
+        },
+        "by_family_delivery": {
+          "C": {
+            "0": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            },
+            "1": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            }
+          },
+          "P": {
+            "0": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            },
+            "1": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            }
+          }
+        },
+        "calls": 36,
+        "contacts": 4,
+        "endpoint_masks": {
+          "EXECUTED": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "FULL_MATERIAL": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "PROCESS_USE": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "RECORD_FAITHFUL": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        "finishes": {
+          "stop": 36
+        },
+        "fits": 0,
+        "input_utf8_bytes": 45932,
+        "opportunities": 16,
+        "output_utf8_bytes": 8040,
+        "parent_model_calls": 0,
+        "raw_unique": {
+          "record": 16,
+          "restate": 3,
+          "wake": 16
+        },
+        "record_not_called": 0,
+        "restate_denominator": 4,
+        "restate_mask": [
+          false,
+          true,
+          false,
+          true
+        ],
+        "token_costs": "Native wrapper must report actual token counts; UTF8 bytes are not tokens.",
+        "updates": 0
+      },
+      "invalid_wakes": [],
+      "note": {
+        "available": 16,
+        "binding_errors_shape_valid": {},
+        "normalized": 0,
+        "parse_errors": {
+          "note_schema": 16,
+          "unknown_or_conflicting_note_alias": 16
+        },
+        "shape_valid": 0
+      },
+      "own_event_all5_correct": 6,
+      "own_event_missing_or_unparsed": {
+        "observed": 9,
+        "predicted": 9,
+        "receipt_id": 9,
+        "relation": 9,
+        "try": 9
+      },
+      "own_event_present_incorrect": {
+        "relation": 1
+      },
+      "record_json_parse_failures": 0,
+      "record_outer_schema_failures": 16,
+      "record_source_types": {
+        "dict": 4,
+        "missing_or_unparsed": 10,
+        "str": 2
+      },
+      "restatements": [
+        {
+          "block_index": 0,
+          "delivered_lesson": "P",
+          "raw": "Ensure that the prediction made before an action remains distinct from the observation returned afterward. Maintain both values from the public receipt and compare them to determine if they match or differ. Do not substitute the initial prediction with the observed outcome.",
+          "score": {
+            "content_correct": false,
+            "contradictions": [],
+            "errors": [],
+            "limitation": "Frozen conservative lexical operation/scope screen; not an unrestricted semantic judge.",
+            "operation_scope": {
+              "comparison": true,
+              "outcome_scope": true,
+              "prior_scope": true,
+              "separation": false
+            }
+          }
+        },
+        {
+          "block_index": 1,
+          "delivered_lesson": "C",
+          "raw": "Identify the most recent event that has actually been executed based on the public receipt times, not the order in which they are displayed. Ensure that you keep the receipt identity, the action performed, and the returned observation associated with that event together. Do not mix the action from one receipt with the outcome from another receipt.",
+          "score": {
+            "content_correct": true,
+            "contradictions": [],
+            "errors": [],
+            "limitation": "Frozen conservative lexical operation/scope screen; not an unrestricted semantic judge.",
+            "operation_scope": {
+              "action": true,
+              "chronology": true,
+              "executed_scope": true,
+              "outcome": true,
+              "same_receipt": true,
+              "time_scope": true
+            }
+          }
+        },
+        {
+          "block_index": 2,
+          "delivered_lesson": "P",
+          "raw": "Ensure that the prediction made before an action remains distinct from the observation returned afterward. Maintain both values from the public receipt and compare them to determine if they match or differ. Do not substitute the initial prediction with the observed outcome.",
+          "score": {
+            "content_correct": false,
+            "contradictions": [],
+            "errors": [],
+            "limitation": "Frozen conservative lexical operation/scope screen; not an unrestricted semantic judge.",
+            "operation_scope": {
+              "comparison": true,
+              "outcome_scope": true,
+              "prior_scope": true,
+              "separation": false
+            }
+          }
+        },
+        {
+          "block_index": 3,
+          "delivered_lesson": "C",
+          "raw": "Identify the most recent event that has been actually executed based on the public receipt times, not the order in which they are displayed. Ensure that you keep the receipt identity, the action performed, and the returned observation associated with that event together. Do not mix the action from one receipt with the outcome from another receipt.",
+          "score": {
+            "content_correct": true,
+            "contradictions": [],
+            "errors": [],
+            "limitation": "Frozen conservative lexical operation/scope screen; not an unrestricted semantic judge.",
+            "operation_scope": {
+              "action": true,
+              "chronology": true,
+              "executed_scope": true,
+              "outcome": true,
+              "same_receipt": true,
+              "time_scope": true
+            }
+          }
+        }
+      ],
+      "seed": 2,
+      "source": {
+        "available": 16,
+        "binding_errors_shape_valid": {},
+        "normalized": 0,
+        "parse_errors": {
+          "note_object_required": 12,
+          "note_schema": 16,
+          "unknown_or_conflicting_note_alias": 4
+        },
+        "shape_valid": 0
+      }
+    },
+    {
+      "arm": "SWAPPED",
+      "capture": {
+        "path": "/tmp/astra_parenting_alignment_native_20260913_attempt1/parenting_alignment_seed2_20260913_attempt1/run/SWAPPED/capture.json",
+        "sha256": "70e27d97eece52f1e966c00f1af892dd4f489a8f3087bea2ef4e81f3ba0c1f0e"
+      },
+      "costs": {
+        "calls": 34,
+        "fits": 0,
+        "generation_seconds": 106.2048631067155,
+        "kind_counts": {
+          "record": 14,
+          "restate": 4,
+          "wake": 16
+        },
+        "output_tokens": 2578,
+        "parent_model_calls": 0,
+        "prompt_tokens": 12757,
+        "updates": 0
+      },
+      "counts": {
+        "EXECUTED": 14,
+        "FULL_MATERIAL": 0,
+        "PROCESS_USE": 0,
+        "RECORD_FAITHFUL": 0,
+        "RESTATE": 2,
+        "by_delivery": {
+          "0": {
+            "EXECUTED": 7,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          },
+          "1": {
+            "EXECUTED": 7,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          }
+        },
+        "by_family": {
+          "C": {
+            "EXECUTED": 6,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          },
+          "P": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          }
+        },
+        "by_family_delivery": {
+          "C": {
+            "0": {
+              "EXECUTED": 3,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            },
+            "1": {
+              "EXECUTED": 3,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            }
+          },
+          "P": {
+            "0": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            },
+            "1": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            }
+          }
+        },
+        "calls": 34,
+        "contacts": 4,
+        "endpoint_masks": {
+          "EXECUTED": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true
+          ],
+          "FULL_MATERIAL": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "PROCESS_USE": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "RECORD_FAITHFUL": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        "finishes": {
+          "stop": 34
+        },
+        "fits": 0,
+        "input_utf8_bytes": 42976,
+        "opportunities": 16,
+        "output_utf8_bytes": 7978,
+        "parent_model_calls": 0,
+        "raw_unique": {
+          "record": 14,
+          "restate": 2,
+          "wake": 16
+        },
+        "record_not_called": 2,
+        "restate_denominator": 4,
+        "restate_mask": [
+          true,
+          false,
+          true,
+          false
+        ],
+        "token_costs": "Native wrapper must report actual token counts; UTF8 bytes are not tokens.",
+        "updates": 0
+      },
+      "invalid_wakes": [
+        {
+          "errors": [
+            "strict_action"
+          ],
+          "raw": "{\"note\":{\"message\":\"The receipts have null predictions, so no prediction can be made for the fresh action based on the given public state.\"},\"prediction\":null,\"action\":{\"kind\":\"TRY\",\"values\":[7,-7,-3]}}",
+          "task_id": "pa-75282d6fb9dbe1d69f63e1728b27",
+          "task_index": 6
+        },
+        {
+          "errors": [
+            "strict_action"
+          ],
+          "raw": "{\"note\":{\"message\":\"The receipts have null predictions, so no prediction can be made for the fresh action based on the given public state.\"},\"prediction\":null,\"action\":{\"kind\":\"TRY\",\"values\":[-4,-1,-8]}}",
+          "task_id": "pa-232da83b4d784cfb8d71a4c7ca7d",
+          "task_index": 13
+        }
+      ],
+      "note": {
+        "available": 16,
+        "binding_errors_shape_valid": {},
+        "normalized": 0,
+        "parse_errors": {
+          "note_schema": 16,
+          "unknown_or_conflicting_note_alias": 16
+        },
+        "shape_valid": 0
+      },
+      "own_event_all5_correct": 4,
+      "own_event_missing_or_unparsed": {
+        "observed": 7,
+        "predicted": 7,
+        "receipt_id": 7,
+        "relation": 8,
+        "try": 7
+      },
+      "own_event_present_incorrect": {
+        "relation": 2
+      },
+      "record_json_parse_failures": 0,
+      "record_outer_schema_failures": 13,
+      "record_source_types": {
+        "dict": 3,
+        "missing_or_unparsed": 8,
+        "str": 3
+      },
+      "restatements": [
+        {
+          "block_index": 0,
+          "delivered_lesson": "C",
+          "raw": "Identify the most recent event that has actually been executed based on the public receipt times, not the order in which they are displayed. Ensure that you keep the receipt identity, the action performed, and the returned observation associated with that event together. Do not mix the action from one receipt with the outcome from another receipt.",
+          "score": {
+            "content_correct": true,
+            "contradictions": [],
+            "errors": [],
+            "limitation": "Frozen conservative lexical operation/scope screen; not an unrestricted semantic judge.",
+            "operation_scope": {
+              "action": true,
+              "chronology": true,
+              "executed_scope": true,
+              "outcome": true,
+              "same_receipt": true,
+              "time_scope": true
+            }
+          }
+        },
+        {
+          "block_index": 1,
+          "delivered_lesson": "P",
+          "raw": "Ensure that the prediction made before an action remains distinct from the observation returned afterward. Maintain both values from the public receipt and compare them to determine if they match or differ. Do not substitute the initial prediction with the observed outcome.",
+          "score": {
+            "content_correct": false,
+            "contradictions": [],
+            "errors": [],
+            "limitation": "Frozen conservative lexical operation/scope screen; not an unrestricted semantic judge.",
+            "operation_scope": {
+              "comparison": true,
+              "outcome_scope": true,
+              "prior_scope": true,
+              "separation": false
+            }
+          }
+        },
+        {
+          "block_index": 2,
+          "delivered_lesson": "C",
+          "raw": "Identify the most recent event that has actually been executed based on the public receipt times, not the order in which they are displayed. Ensure that you keep the receipt identity, the action performed, and the returned observation associated with that event together. Do not mix the action from one receipt with the outcome from another receipt.",
+          "score": {
+            "content_correct": true,
+            "contradictions": [],
+            "errors": [],
+            "limitation": "Frozen conservative lexical operation/scope screen; not an unrestricted semantic judge.",
+            "operation_scope": {
+              "action": true,
+              "chronology": true,
+              "executed_scope": true,
+              "outcome": true,
+              "same_receipt": true,
+              "time_scope": true
+            }
+          }
+        },
+        {
+          "block_index": 3,
+          "delivered_lesson": "P",
+          "raw": "Ensure that the prediction made before an action remains distinct from the observation returned afterward. Maintain both values from the public receipt and compare them to determine if they match or differ. Do not substitute the initial prediction with the observed outcome.",
+          "score": {
+            "content_correct": false,
+            "contradictions": [],
+            "errors": [],
+            "limitation": "Frozen conservative lexical operation/scope screen; not an unrestricted semantic judge.",
+            "operation_scope": {
+              "comparison": true,
+              "outcome_scope": true,
+              "prior_scope": true,
+              "separation": false
+            }
+          }
+        }
+      ],
+      "seed": 2,
+      "source": {
+        "available": 14,
+        "binding_errors_shape_valid": {},
+        "normalized": 0,
+        "parse_errors": {
+          "note_object_required": 11,
+          "note_schema": 14,
+          "unknown_or_conflicting_note_alias": 3
+        },
+        "shape_valid": 0
+      }
+    },
+    {
+      "arm": "NO_PARENT",
+      "capture": {
+        "path": "/tmp/astra_parenting_alignment_native_20260913_attempt1/parenting_alignment_seed2_20260913_attempt1/run/NO_PARENT/capture.json",
+        "sha256": "309da088452bbec8f66abfca32e7187470d5d0762dbcf544b70a22eb114b0382"
+      },
+      "costs": {
+        "calls": 31,
+        "fits": 0,
+        "generation_seconds": 207.43612438603304,
+        "kind_counts": {
+          "record": 15,
+          "wake": 16
+        },
+        "output_tokens": 5310,
+        "parent_model_calls": 0,
+        "prompt_tokens": 12145,
+        "updates": 0
+      },
+      "counts": {
+        "EXECUTED": 15,
+        "FULL_MATERIAL": 0,
+        "PROCESS_USE": 0,
+        "RECORD_FAITHFUL": 0,
+        "RESTATE": null,
+        "by_delivery": {
+          "0": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          },
+          "1": {
+            "EXECUTED": 7,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          }
+        },
+        "by_family": {
+          "C": {
+            "EXECUTED": 7,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          },
+          "P": {
+            "EXECUTED": 8,
+            "FULL_MATERIAL": 0,
+            "PROCESS_USE": 0,
+            "RECORD_FAITHFUL": 0
+          }
+        },
+        "by_family_delivery": {
+          "C": {
+            "0": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            },
+            "1": {
+              "EXECUTED": 3,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            }
+          },
+          "P": {
+            "0": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            },
+            "1": {
+              "EXECUTED": 4,
+              "FULL_MATERIAL": 0,
+              "PROCESS_USE": 0,
+              "RECORD_FAITHFUL": 0,
+              "denominator": 4
+            }
+          }
+        },
+        "calls": 31,
+        "contacts": 0,
+        "endpoint_masks": {
+          "EXECUTED": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false
+          ],
+          "FULL_MATERIAL": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "PROCESS_USE": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "RECORD_FAITHFUL": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        "finishes": {
+          "stop": 31
+        },
+        "fits": 0,
+        "input_utf8_bytes": 34040,
+        "opportunities": 16,
+        "output_utf8_bytes": 11537,
+        "parent_model_calls": 0,
+        "raw_unique": {
+          "record": 15,
+          "restate": 0,
+          "wake": 16
+        },
+        "record_not_called": 1,
+        "restate_denominator": null,
+        "restate_mask": null,
+        "token_costs": "Native wrapper must report actual token counts; UTF8 bytes are not tokens.",
+        "updates": 0
+      },
+      "invalid_wakes": [
+        {
+          "errors": [
+            "Expecting ',' delimiter: line 1 column 280 (char 279)",
+            "wake_schema",
+            "strict_action"
+          ],
+          "raw": "{\"note\":{\"address\":\"pa-6fb610174a5679e107a2b99170fc\",\"receipts\":[{\"observed\":false,\"predicted\":null,\"receipt_id\":\"pa-904ad6c6f2c5585c36aeb48e145b\",\"time\":2,\"try\":[-6,-9,-5]},{\"observed\":true,\"predicted\":null,\"receipt_id\":\"pa-17e9c96ed87234c7d4d40539e4c7\",\"time\":1,\"try\":[-7,1,9]}},\"prediction\":false,\"action\":{\"kind\":\"TRY\",\"values\":[-8,-3,-1]}}",
+          "task_id": "pa-130ad75e7cdbfc0c3a4459c9e61b",
+          "task_index": 15
+        }
+      ],
+      "note": {
+        "available": 16,
+        "binding_errors_shape_valid": {},
+        "normalized": 0,
+        "parse_errors": {
+          "note_object_required": 1,
+          "note_schema": 16,
+          "unknown_or_conflicting_note_alias": 15
+        },
+        "shape_valid": 0
+      },
+      "own_event_all5_correct": 4,
+      "own_event_missing_or_unparsed": {
+        "observed": 2,
+        "predicted": 2,
+        "receipt_id": 2,
+        "relation": 9,
+        "try": 2
+      },
+      "own_event_present_incorrect": {
+        "relation": 2
+      },
+      "record_json_parse_failures": 1,
+      "record_outer_schema_failures": 13,
+      "record_source_types": {
+        "dict": 12,
+        "missing_or_unparsed": 3
+      },
+      "restatements": [],
+      "seed": 2,
+      "source": {
+        "available": 15,
+        "binding_errors_shape_valid": {},
+        "normalized": 0,
+        "parse_errors": {
+          "note_object_required": 3,
+          "note_schema": 15,
+          "unknown_or_conflicting_note_alias": 12
+        },
+        "shape_valid": 0
+      }
+    }
+  ],
+  "method": "Descriptive classification of frozen replay-validated scores and raw parsed structure only; no rescoring, permissive normalization or gate changes.",
+  "qualitative_examples": [
+    {
+      "arm": "ALIGNED",
+      "family": "P",
+      "own_receipt": {
+        "observed": false,
+        "predicted": false,
+        "receipt_id": "pa-19e81c718e52337587e53775c8f1",
+        "time": 2,
+        "try": [
+          1,
+          2,
+          -3
+        ]
+      },
+      "public_task_literal": "{\"address\":\"pa-01fec41484b9454be8fe0006f8d3\",\"receipt_origin\":\"Harness-provided earlier public environment events; not your own actions.\",\"receipts\":[{\"observed\":false,\"predicted\":false,\"receipt_id\":\"pa-617821fa49ec5f1484515b314b6d\",\"time\":1,\"try\":[4,8,-6]}],\"task_id\":\"pa-eac3aa57ae37fef131360f8646b2\"}",
+      "record_raw": "{\"event\":{\"receipt_id\":\"pa-19e81c718e52337587e53775c8f1\",\"try\":[1,2,-3],\"predicted\":false,\"observed\":false,\"relation\":\"matched\"}}",
+      "record_score": {
+        "RECORD_FAITHFUL": false,
+        "address_correct": false,
+        "canonical_form": false,
+        "errors": [
+          "record_schema",
+          "address_binding"
+        ],
+        "event_fields": {
+          "observed": true,
+          "predicted": true,
+          "receipt_id": true,
+          "relation": true,
+          "try": true
+        },
+        "format_valid": false,
+        "frozen_event_judge": {
+          "eligible": true,
+          "failures": []
+        },
+        "parse_errors": [],
+        "parsed": {
+          "event": {
+            "observed": false,
+            "predicted": false,
+            "receipt_id": "pa-19e81c718e52337587e53775c8f1",
+            "relation": "matched",
+            "try": [
+              1,
+              2,
+              -3
+            ]
+          }
+        },
+        "schema_errors": [
+          "record_schema"
+        ],
+        "source": {
+          "binding_errors": [],
+          "canonical_note": false,
+          "content_correct": false,
+          "errors": [
+            "note_object_required",
+            "note_schema"
+          ],
+          "field_correct": {
+            "observed": false,
+            "predicted": false,
+            "relation": false
+          },
+          "normalized": null,
+          "parse_errors": [
+            "note_object_required",
+            "note_schema"
+          ],
+          "shape_valid": false
+        }
+      },
+      "seed": 0,
+      "task_id": "pa-eac3aa57ae37fef131360f8646b2",
+      "task_index": 0,
+      "wake_raw": "{\"note\":{\"receipt_id\":\"pa-617821fa49ec5f1484515b314b6d\",\"time\":1,\"predicted\":false,\"observed\":false},\"prediction\":false,\"action\":{\"kind\":\"TRY\",\"values\":[1,2,-3]}}",
+      "wake_score": {
+        "PROCESS_USE": false,
+        "action_valid": true,
+        "canonical_form": false,
+        "errors": [],
+        "format_valid": true,
+        "note": {
+          "binding_errors": [],
+          "canonical_note": false,
+          "content_correct": false,
+          "errors": [
+            "unknown_or_conflicting_note_alias",
+            "note_schema"
+          ],
+          "field_correct": {
+            "observed": false,
+            "predicted": false,
+            "relation": false
+          },
+          "normalized": null,
+          "parse_errors": [
+            "unknown_or_conflicting_note_alias",
+            "note_schema"
+          ],
+          "shape_valid": false
+        },
+        "parse_errors": [],
+        "parsed": {
+          "action": {
+            "kind": "TRY",
+            "values": [
+              1,
+              2,
+              -3
+            ]
+          },
+          "note": {
+            "observed": false,
+            "predicted": false,
+            "receipt_id": "pa-617821fa49ec5f1484515b314b6d",
+            "time": 1
+          },
+          "prediction": false
+        },
+        "schema_errors": []
+      }
+    },
+    {
+      "arm": "ALIGNED",
+      "family": "C",
+      "own_receipt": {
+        "observed": false,
+        "predicted": true,
+        "receipt_id": "pa-0f29ef7fa84d9f48735f272fe23b",
+        "time": 3,
+        "try": [
+          -7,
+          3,
+          1
+        ]
+      },
+      "public_task_literal": "{\"address\":\"pa-c602820ded40348ef8635d0a30d8\",\"receipt_origin\":\"Harness-provided earlier public environment events; not your own actions.\",\"receipts\":[{\"observed\":false,\"predicted\":null,\"receipt_id\":\"pa-613277dfa9b1e894a7003f6c0b35\",\"time\":1,\"try\":[-8,-5,-4]},{\"observed\":true,\"predicted\":null,\"receipt_id\":\"pa-aa56da61e4929e0fc2dd5af9ea87\",\"time\":2,\"try\":[-5,4,0]}],\"task_id\":\"pa-145490c6c3a7c023f52469ff73d2\"}",
+      "record_raw": "{\"event\":{\"observed\":false,\"predicted\":true,\"receipt_id\":\"pa-0f29ef7fa84d9f48735f272fe23b\",\"time\":3,\"try\":[-7,3,1]},\"relation\":\"mismatched\"}",
+      "record_score": {
+        "RECORD_FAITHFUL": false,
+        "address_correct": false,
+        "canonical_form": false,
+        "errors": [
+          "record_schema",
+          "address_binding",
+          "relation_binding"
+        ],
+        "event_fields": {
+          "observed": true,
+          "predicted": true,
+          "receipt_id": true,
+          "relation": false,
+          "try": true
+        },
+        "format_valid": false,
+        "frozen_event_judge": {
+          "eligible": false,
+          "failures": [
+            "event_schema"
+          ]
+        },
+        "parse_errors": [],
+        "parsed": {
+          "event": {
+            "observed": false,
+            "predicted": true,
+            "receipt_id": "pa-0f29ef7fa84d9f48735f272fe23b",
+            "time": 3,
+            "try": [
+              -7,
+              3,
+              1
+            ]
+          },
+          "relation": "mismatched"
+        },
+        "schema_errors": [
+          "record_schema"
+        ],
+        "source": {
+          "binding_errors": [],
+          "canonical_note": false,
+          "content_correct": false,
+          "errors": [
+            "note_object_required",
+            "note_schema"
+          ],
+          "field_correct": {
+            "observed": false,
+            "receipt_id": false,
+            "try": false
+          },
+          "normalized": null,
+          "parse_errors": [
+            "note_object_required",
+            "note_schema"
+          ],
+          "shape_valid": false
+        }
+      },
+      "seed": 0,
+      "task_id": "pa-145490c6c3a7c023f52469ff73d2",
+      "task_index": 4,
+      "wake_raw": "{\"note\":{\"address\":\"pa-c602820ded40348ef8635d0a30d8\",\"receipts\":[{\"observed\":false,\"predicted\":null,\"receipt_id\":\"pa-613277dfa9b1e894a7003f6c0b35\",\"time\":1,\"try\":[-8,-5,-4]},{\"observed\":true,\"predicted\":null,\"receipt_id\":\"pa-aa56da61e4929e0fc2dd5af9ea87\",\"time\":2,\"try\":[-5,4,0]}]},\"prediction\":true,\"action\":{\"kind\":\"TRY\",\"values\":[-7,3,1]}}",
+      "wake_score": {
+        "PROCESS_USE": false,
+        "action_valid": true,
+        "canonical_form": false,
+        "errors": [],
+        "format_valid": true,
+        "note": {
+          "binding_errors": [],
+          "canonical_note": false,
+          "content_correct": false,
+          "errors": [
+            "unknown_or_conflicting_note_alias",
+            "note_schema"
+          ],
+          "field_correct": {
+            "observed": false,
+            "receipt_id": false,
+            "try": false
+          },
+          "normalized": null,
+          "parse_errors": [
+            "unknown_or_conflicting_note_alias",
+            "note_schema"
+          ],
+          "shape_valid": false
+        },
+        "parse_errors": [],
+        "parsed": {
+          "action": {
+            "kind": "TRY",
+            "values": [
+              -7,
+              3,
+              1
+            ]
+          },
+          "note": {
+            "address": "pa-c602820ded40348ef8635d0a30d8",
+            "receipts": [
+              {
+                "observed": false,
+                "predicted": null,
+                "receipt_id": "pa-613277dfa9b1e894a7003f6c0b35",
+                "time": 1,
+                "try": [
+                  -8,
+                  -5,
+                  -4
+                ]
+              },
+              {
+                "observed": true,
+                "predicted": null,
+                "receipt_id": "pa-aa56da61e4929e0fc2dd5af9ea87",
+                "time": 2,
+                "try": [
+                  -5,
+                  4,
+                  0
+                ]
+              }
+            ]
+          },
+          "prediction": true
+        },
+        "schema_errors": []
+      }
+    },
+    {
+      "arm": "NO_PARENT",
+      "family": "C",
+      "own_receipt": {
+        "observed": false,
+        "predicted": false,
+        "receipt_id": "pa-cb4c104cb71afeb8820f4edaf48c",
+        "time": 3,
+        "try": [
+          -9,
+          1,
+          7
+        ]
+      },
+      "public_task_literal": "{\"address\":\"pa-9d0a38589f5761d915434a2f72af\",\"receipt_origin\":\"Harness-provided earlier public environment events; not your own actions.\",\"receipts\":[{\"observed\":false,\"predicted\":null,\"receipt_id\":\"pa-b031981f3549f50cf3f1f51869ce\",\"time\":1,\"try\":[4,-5,8]},{\"observed\":true,\"predicted\":null,\"receipt_id\":\"pa-650b5c614a2143085521b339dc86\",\"time\":2,\"try\":[-3,0,-3]}],\"task_id\":\"pa-658b6262d5d0e5ba960c9ae8982e\"}",
+      "record_raw": "{\"address\":\"pa-9d0a38589f5761d915434a2f72af\",\"source\":\"Harness-provided earlier public environment events; not your own actions.\",\"event\":{\"receipt_id\":\"pa-cb4c104cb71afeb8820f4edaf48c\",\"try\":[-9,1,7],\"predicted\":false,\"observed\":false,\"relation\":true}}",
+      "record_score": {
+        "RECORD_FAITHFUL": false,
+        "address_correct": true,
+        "canonical_form": false,
+        "errors": [
+          "relation_binding"
+        ],
+        "event_fields": {
+          "observed": true,
+          "predicted": true,
+          "receipt_id": true,
+          "relation": false,
+          "try": true
+        },
+        "format_valid": false,
+        "frozen_event_judge": {
+          "eligible": false,
+          "failures": [
+            "relation mismatch"
+          ]
+        },
+        "parse_errors": [],
+        "parsed": {
+          "address": "pa-9d0a38589f5761d915434a2f72af",
+          "event": {
+            "observed": false,
+            "predicted": false,
+            "receipt_id": "pa-cb4c104cb71afeb8820f4edaf48c",
+            "relation": true,
+            "try": [
+              -9,
+              1,
+              7
+            ]
+          },
+          "source": "Harness-provided earlier public environment events; not your own actions."
+        },
+        "schema_errors": [],
+        "source": {
+          "binding_errors": [],
+          "canonical_note": false,
+          "content_correct": false,
+          "errors": [
+            "note_object_required",
+            "note_schema"
+          ],
+          "field_correct": {
+            "observed": false,
+            "receipt_id": false,
+            "try": false
+          },
+          "normalized": null,
+          "parse_errors": [
+            "note_object_required",
+            "note_schema"
+          ],
+          "shape_valid": false
+        }
+      },
+      "seed": 1,
+      "task_id": "pa-658b6262d5d0e5ba960c9ae8982e",
+      "task_index": 0,
+      "wake_raw": "{\"note\":{\"address\":\"pa-9d0a38589f5761d915434a2f72af\",\"receipt_origin\":\"Harness-provided earlier public environment events; not your own actions.\",\"receipts\":[{\"observed\":false,\"predicted\":null,\"receipt_id\":\"pa-b031981f3549f50cf3f1f51869ce\",\"time\":1,\"try\":[4,-5,8]},{\"observed\":true,\"predicted\":null,\"receipt_id\":\"pa-650b5c614a2143085521b339dc86\",\"time\":2,\"try\":[-3,0,-3]}],\"task_id\":\"pa-658b6262d5d0e5ba960c9ae8982e\"},\"prediction\":false,\"action\":{\"kind\":\"TRY\",\"values\":[-9,1,7]}}",
+      "wake_score": {
+        "PROCESS_USE": false,
+        "action_valid": true,
+        "canonical_form": false,
+        "errors": [],
+        "format_valid": true,
+        "note": {
+          "binding_errors": [],
+          "canonical_note": false,
+          "content_correct": false,
+          "errors": [
+            "unknown_or_conflicting_note_alias",
+            "note_schema"
+          ],
+          "field_correct": {
+            "observed": false,
+            "receipt_id": false,
+            "try": false
+          },
+          "normalized": null,
+          "parse_errors": [
+            "unknown_or_conflicting_note_alias",
+            "note_schema"
+          ],
+          "shape_valid": false
+        },
+        "parse_errors": [],
+        "parsed": {
+          "action": {
+            "kind": "TRY",
+            "values": [
+              -9,
+              1,
+              7
+            ]
+          },
+          "note": {
+            "address": "pa-9d0a38589f5761d915434a2f72af",
+            "receipt_origin": "Harness-provided earlier public environment events; not your own actions.",
+            "receipts": [
+              {
+                "observed": false,
+                "predicted": null,
+                "receipt_id": "pa-b031981f3549f50cf3f1f51869ce",
+                "time": 1,
+                "try": [
+                  4,
+                  -5,
+                  8
+                ]
+              },
+              {
+                "observed": true,
+                "predicted": null,
+                "receipt_id": "pa-650b5c614a2143085521b339dc86",
+                "time": 2,
+                "try": [
+                  -3,
+                  0,
+                  -3
+                ]
+              }
+            ],
+            "task_id": "pa-658b6262d5d0e5ba960c9ae8982e"
+          },
+          "prediction": false
+        },
+        "schema_errors": []
+      }
+    },
+    {
+      "arm": "ALIGNED",
+      "family": "P",
+      "own_receipt": {
+        "observed": false,
+        "predicted": false,
+        "receipt_id": "pa-4a8b90a66b08eefc8f944a20a4f3",
+        "time": 2,
+        "try": [
+          -3,
+          5,
+          5
+        ]
+      },
+      "public_task_literal": "{\"address\":\"pa-73a37e8b243f4d69d5c3ecf91e6f\",\"receipt_origin\":\"Harness-provided earlier public environment events; not your own actions.\",\"receipts\":[{\"observed\":false,\"predicted\":false,\"receipt_id\":\"pa-33a47547a70bee3d79aa83e9d315\",\"time\":1,\"try\":[-3,5,5]}],\"task_id\":\"pa-43eae06f442a48e66506560c1c80\"}",
+      "record_raw": "{\"source\":{\"observed\":false,\"predicted\":false,\"receipt_id\":\"pa-33a47547a70bee3d79aa83e9d315\",\"time\":1,\"try\":[-3,5,5]},\"event\":{\"observed\":false,\"predicted\":false,\"relation\":\"mismatched\",\"receipt_id\":\"pa-4a8b90a66b08eefc8f944a20a4f3\",\"time\":2,\"try\":[-3,5,5]}}",
+      "record_score": {
+        "RECORD_FAITHFUL": false,
+        "address_correct": false,
+        "canonical_form": false,
+        "errors": [
+          "record_schema",
+          "address_binding",
+          "relation_binding"
+        ],
+        "event_fields": {
+          "observed": true,
+          "predicted": true,
+          "receipt_id": true,
+          "relation": false,
+          "try": true
+        },
+        "format_valid": false,
+        "frozen_event_judge": {
+          "eligible": false,
+          "failures": [
+            "event_schema"
+          ]
+        },
+        "parse_errors": [],
+        "parsed": {
+          "event": {
+            "observed": false,
+            "predicted": false,
+            "receipt_id": "pa-4a8b90a66b08eefc8f944a20a4f3",
+            "relation": "mismatched",
+            "time": 2,
+            "try": [
+              -3,
+              5,
+              5
+            ]
+          },
+          "source": {
+            "observed": false,
+            "predicted": false,
+            "receipt_id": "pa-33a47547a70bee3d79aa83e9d315",
+            "time": 1,
+            "try": [
+              -3,
+              5,
+              5
+            ]
+          }
+        },
+        "schema_errors": [
+          "record_schema"
+        ],
+        "source": {
+          "binding_errors": [],
+          "canonical_note": false,
+          "content_correct": false,
+          "errors": [
+            "unknown_or_conflicting_note_alias",
+            "note_schema"
+          ],
+          "field_correct": {
+            "observed": false,
+            "predicted": false,
+            "relation": false
+          },
+          "normalized": null,
+          "parse_errors": [
+            "unknown_or_conflicting_note_alias",
+            "note_schema"
+          ],
+          "shape_valid": false
+        }
+      },
+      "seed": 2,
+      "task_id": "pa-43eae06f442a48e66506560c1c80",
+      "task_index": 0,
+      "wake_raw": "{\"note\":{\"observed\":false,\"predicted\":false,\"receipt_id\":\"pa-33a47547a70bee3d79aa83e9d315\",\"time\":1,\"try\":[-3,5,5]},\"prediction\":false,\"action\":{\"kind\":\"TRY\",\"values\":[-3,5,5]}}",
+      "wake_score": {
+        "PROCESS_USE": false,
+        "action_valid": true,
+        "canonical_form": false,
+        "errors": [],
+        "format_valid": true,
+        "note": {
+          "binding_errors": [],
+          "canonical_note": false,
+          "content_correct": false,
+          "errors": [
+            "unknown_or_conflicting_note_alias",
+            "note_schema"
+          ],
+          "field_correct": {
+            "observed": false,
+            "predicted": false,
+            "relation": false
+          },
+          "normalized": null,
+          "parse_errors": [
+            "unknown_or_conflicting_note_alias",
+            "note_schema"
+          ],
+          "shape_valid": false
+        },
+        "parse_errors": [],
+        "parsed": {
+          "action": {
+            "kind": "TRY",
+            "values": [
+              -3,
+              5,
+              5
+            ]
+          },
+          "note": {
+            "observed": false,
+            "predicted": false,
+            "receipt_id": "pa-33a47547a70bee3d79aa83e9d315",
+            "time": 1,
+            "try": [
+              -3,
+              5,
+              5
+            ]
+          },
+          "prediction": false
+        },
+        "schema_errors": []
+      }
+    },
+    {
+      "arm": "ALIGNED",
+      "family": "C",
+      "own_receipt": {
+        "observed": true,
+        "predicted": true,
+        "receipt_id": "pa-4a7f3d62c08b2243f4cddff2df16",
+        "time": 3,
+        "try": [
+          7,
+          4,
+          6
+        ]
+      },
+      "public_task_literal": "{\"address\":\"pa-0f5d879f27f4754287b47d70d42a\",\"receipt_origin\":\"Harness-provided earlier public environment events; not your own actions.\",\"receipts\":[{\"observed\":false,\"predicted\":null,\"receipt_id\":\"pa-07bf5329ef0b918e8c1759da7483\",\"time\":1,\"try\":[-1,-8,5]},{\"observed\":true,\"predicted\":null,\"receipt_id\":\"pa-a6042cdea704347c4d48da5b5077\",\"time\":2,\"try\":[7,4,6]}],\"task_id\":\"pa-4c32836e93079f2891fa5be5402e\"}",
+      "record_raw": "{\"note\":{\"observed\":true,\"predicted\":true,\"receipt_id\":\"pa-4a7f3d62c08b2243f4cddff2df16\",\"time\":3,\"try\":[7,4,6]},\"prediction\":true,\"action\":{\"kind\":\"MATCH\",\"values\":[7,4,6]}}",
+      "record_score": {
+        "RECORD_FAITHFUL": false,
+        "address_correct": false,
+        "canonical_form": false,
+        "errors": [
+          "record_schema",
+          "address_binding",
+          "receipt_id_binding",
+          "try_binding",
+          "predicted_binding",
+          "observed_binding",
+          "relation_binding"
+        ],
+        "event_fields": {
+          "observed": false,
+          "predicted": false,
+          "receipt_id": false,
+          "relation": false,
+          "try": false
+        },
+        "format_valid": false,
+        "frozen_event_judge": {
+          "eligible": false,
+          "failures": [
+            "event_schema"
+          ]
+        },
+        "parse_errors": [],
+        "parsed": {
+          "action": {
+            "kind": "MATCH",
+            "values": [
+              7,
+              4,
+              6
+            ]
+          },
+          "note": {
+            "observed": true,
+            "predicted": true,
+            "receipt_id": "pa-4a7f3d62c08b2243f4cddff2df16",
+            "time": 3,
+            "try": [
+              7,
+              4,
+              6
+            ]
+          },
+          "prediction": true
+        },
+        "schema_errors": [
+          "record_schema"
+        ],
+        "source": {
+          "binding_errors": [],
+          "canonical_note": false,
+          "content_correct": false,
+          "errors": [
+            "note_object_required",
+            "note_schema"
+          ],
+          "field_correct": {
+            "observed": false,
+            "receipt_id": false,
+            "try": false
+          },
+          "normalized": null,
+          "parse_errors": [
+            "note_object_required",
+            "note_schema"
+          ],
+          "shape_valid": false
+        }
+      },
+      "seed": 2,
+      "task_id": "pa-4c32836e93079f2891fa5be5402e",
+      "task_index": 4,
+      "wake_raw": "{\"note\":{\"observed\":true,\"predicted\":null,\"receipt_id\":\"pa-a6042cdea704347c4d48da5b5077\",\"time\":2,\"try\":[7,4,6]},\"prediction\":true,\"action\":{\"kind\":\"TRY\",\"values\":[7,4,6]}}",
+      "wake_score": {
+        "PROCESS_USE": false,
+        "action_valid": true,
+        "canonical_form": false,
+        "errors": [],
+        "format_valid": true,
+        "note": {
+          "binding_errors": [],
+          "canonical_note": false,
+          "content_correct": false,
+          "errors": [
+            "unknown_or_conflicting_note_alias",
+            "note_schema"
+          ],
+          "field_correct": {
+            "observed": false,
+            "receipt_id": false,
+            "try": false
+          },
+          "normalized": null,
+          "parse_errors": [
+            "unknown_or_conflicting_note_alias",
+            "note_schema"
+          ],
+          "shape_valid": false
+        },
+        "parse_errors": [],
+        "parsed": {
+          "action": {
+            "kind": "TRY",
+            "values": [
+              7,
+              4,
+              6
+            ]
+          },
+          "note": {
+            "observed": true,
+            "predicted": null,
+            "receipt_id": "pa-a6042cdea704347c4d48da5b5077",
+            "time": 2,
+            "try": [
+              7,
+              4,
+              6
+            ]
+          },
+          "prediction": true
+        },
+        "schema_errors": []
+      }
+    }
+  ]
+}

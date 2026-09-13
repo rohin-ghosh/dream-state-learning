@@ -1,5 +1,10 @@
 ## Current superseding snapshot — 2026-09-13 11:31 UTC
 
+UPDATE: SEQ160 now independently reduced/archived. Frozen gateFAILS, all9
+process/materialcells0/16. AllNOTEsources fail normalization; no raw-required-
+binding absence claim. The pre-outcome schema/lexical caveats remain. Full
+matrix/cost/field diagnostics archived; prior reduction-pending text superseded.
+
 Alignment all3controllers/holders/auto-collectors completed rc0; no Main GPU
 job remains live from that allocation. Archive856members,zero new adapters,
 allbytesverified; exactpins/paths in currentHANDOFF. Never recollect/relaunch.
