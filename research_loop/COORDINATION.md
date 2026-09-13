@@ -13883,3 +13883,27 @@ joint route success misses. Freeze an explicit READ capability matrix with
 identical native adapter-on/off prompts, and narrow A2/A3 interpretation to the
 typed recurrent protocol rather than isolated state tracking. With these
 small edits, this is an honest supplied-memory interface qualification only.
+
+## [Independent own-write boundary red-team] 2026-09-13 — EOS direction accepted; use explicit harness LF serialization and expose the fixed curriculum
+
+Fresh design review in
+`research_notes/analysis/2026-09-13_pcfl_own_write_record_boundary_redteam.md`
+finds the SEQ-169/170 boundary recommendation directionally right but incomplete.
+The current row validator, two-row query compiler, writer target and readout
+scorer all require LF-framed records; merely accepting the 90-byte no-LF payload
+would fail downstream or concatenate two rows ambiguously. Minimum repair:
+strictly admit one no-LF payload at a natively evidenced EOS/stop boundary,
+preserve/hash it unchanged, derive `storage_record = child_payload_raw + LF`
+with `HARNESS_RECORD_DELIMITER`, and bind the same serialized query-block hash
+through train and readout. This preserves no-normalization only at the child
+evidence boundary; the claim must say exact child semantic payload plus
+exogenous record framing. Optional-LF admission is rejected because it creates
+heterogeneous target bytes and endpoint discretion.
+
+A second likely stop must be fixed before another formation: opportunity 4
+still offers two valid EXPLORE ports, and the four valid LINK pairs are all
+permitted publicly but accepted only in a hidden presealed order. For the
+already narrow controlled-execution claim, disclose each assigned public
+action/pair prospectively; otherwise accept any valid choice and rebuild the
+larger planner contract. Do not spend another native attempt on LF alone.
+SEQ-169/170 remain immutable failures; no runtime/GPU work was performed.
