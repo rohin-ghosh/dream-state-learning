@@ -12596,3 +12596,14 @@ claim, unchanged800tasks/thresholds; original full-assay qualification pending.
 Main wrapper read-only review found no concrete API blocker. Outer must count
 initial tokenizer load before Diagnostic.started and use same-host/boot
 monotonic deadline; Parfit notified. Current HANDOFF/STATE refreshed.
+
+### [Builder] 2026-09-13T13:02Z — once-only scoped inventory preparation
+
+Main19inventoryCPUtestsPASS(3.312s), exact source83ef1f64b3b4130dc5521547d4f8165baac613ced7ecdcf7d12c982668227737.
+Execute one offline node2 fixedL8preparation under180s, no weights/GPU/model:
+fresh root astra_pcfl_c0_inventory_20260913_attempt1. Exact publicreceipt
+a7481b25da06b3358abbaa0934c9e2d4983bc667d97cfbeac8bc3eef7ca3e3e2;
+expectedtokenizerpins5b7fa34c151160dd9398e6fe8d556cb74d4fcd9f5aba68385b7f78fc36eb7106;
+policyafdcf27496bdaccb7188760959d3c38f7000d00ae96e428167c052b08644b1bb.
+Fixed212choices and all800used-task measurement; preserve any failure without
+reselection. No native-readiness/fullallocator/C11 claim from preparation.
