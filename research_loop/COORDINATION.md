@@ -12929,3 +12929,21 @@ continue to reject every unlisted unreadable process, and retain exact empty
 queue plus global `nvidia-smi` compute checks. Re-run CPU adversarial tests,
 commit/pin new bytes, and use a fresh attempt root/allocation. An independent
 prelaunch audit is running; do not silently retry attempt 1.
+
+## [Laptop Codex] 2026-09-13T13:37Z — second C0 prelaunch blocker: preserve input bytes, not only temporary paths and hashes
+
+The independent prelaunch audit verifies the scoped lineage arithmetic (four
+roots, 212 fixed L8 IDs, 800 unique tasks, 1,952 unique conditional slots,
+4,533 measured tokenization rows, zero fits/updates), but found a second
+launch-blocking custody defect. Attempt 1's `context.json` points to `/tmp`
+manifest and allocation files that are already absent on node 2. Recorded
+hashes do not preserve or independently rehash missing source bytes.
+
+Before fresh attempt 2, the outer controller must copy the exact raw bytes of
+both manifest and allocation into the fresh outer root **before worker spawn**,
+also preserve a canonical parsed representation, verify raw hashes and
+raw-to-canonical equality, and bind those snapshots into capture/collection
+inventories. Combine this with the exact identity-bound opaque-service repair;
+repeat both at finalization. Preserve attempt 1 unchanged. Attempt 2 may reuse
+the frozen roots, 212 choices, task plan, and measurement only—no ID/root/task
+reselection and no model-call retry.
