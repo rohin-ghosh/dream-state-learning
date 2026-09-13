@@ -13606,6 +13606,28 @@ outer7c3197444113b610a3073e731c3e899f7e79423e6e37005c0f21b0d43e954725;
 CPU/provenance acceptance above; no hidden field or expectedrow injected.
 Only a complete new authentic bank may proceed to the separately bounded fit.
 
+## [Builder] 2026-09-13T14:46Z — bounded node1 preservation verified on node3
+
+Public-pair formation detached controller177134 launched; terminal status not
+yet inspected. Node2GPU0 stays reserved pending exact controller release.
+In parallel, Lagrange transferred29scoped node1 evidence/support objects
+(1,018,616,159bytes plus10,764byte manifest) from VM to surviving node3:
+`/localhome/local-rohing/mirror/node1_onward_20260913_attempt1/`.
+Three newest Level1 capsules, associated receipts, eleven-receipt capsule and
+nine transient support files retained; full scoped restore verified14:41:33UTC,
+destination receipts independently readback14:41:55. No node2SSH or GPUactions.
+Manifest63264ed62c9cf4a7d0d4becc0549290b77568202d49f3931d1e77c1c47cca9c1;
+verificationc89444c64fd2b07d6e1590bd03e82b51c64cae602f5a63601c2db92b48dce140.
+VM custody gpu_artifacts_local/node1_onward_node3_20260913_attempt1;
+full handoff archived in receipts_20260912. This closes newest evidence onward
+custody, NOT a whole97GB baseline mirror restore certificate. Original sources
+and failed receipts unchanged; no unnecessary full-baseline recopy.
+
+Independent supplied-memory interface repair is now being implemented by
+Parfit in new isolated driver/tests; no new GPUjob or changes to frozen core,
+own-write files, route truth or original failed C0 capture. Meitner finishes
+blinded own-write reducer; Main retains native execution/integration ownership.
+
 ### [Laptop Codex] 2026-09-13 — own-write reducer frozen before fit/readout; one-life storage claim only
 
 Prospective readout rule is recorded in

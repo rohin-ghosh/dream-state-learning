@@ -1,6 +1,40 @@
-# Astra current handoff — 2026-09-13T14:29Z
+# Astra current handoff — 2026-09-13T14:46Z
 
-## CURRENT — September 13 14:29 UTC
+## CURRENT — September 13 14:46 UTC
+
+SEQ171 format scaffold produced8 exact real EVENTs; first LINK source-valid
+but different from private preset pair, so original formation FAILED17calls,
+zero fits. Archived bd6829dfa4e6c0a63f48cf184e28091e12cf9de9a231e0f6cda6672d5133c869
+at gpu_artifacts_local/pcfl_own_write_format_20260913_attempt1/evidence.tar.
+No raw correction or training on failed bank; original full-assay stays failed.
+
+Prospective public-pair policyv4 explicitly requests only originally selected
+already-admitted EVENT handles; no via/evidence/row supplied. Keeps target-free
+LF decoder, same root/actions/pairs/LOW200/153readouts. Sourcecf572c73,
+Main32formation/21command/12writerCPU PASS;2opt-in numerical skips, prior native
+14/14 numerical PASS17.389s. Controlled curriculum, not autonomous discovery.
+
+Fresh formation launched controller177134 on node2GPU0; terminal status not
+yet inspected. Root /localhome/local-rohing/astra_diagnostics/pcfl_own_write_pairs_20260913_attempt1;
+source /tmp/astra_pcfl_own_write_pairs_source_20260913_attempt1.
+Manifest fileae3a2a9348df919e2e5b63b2a25e1c5240b63d0a0acc6246032c5981d8a554d4;
+allocation /tmp/astra_pcfl_own_write_pairs_allocation_20260913_attempt1.json,
+file79b043cbbaad094da2140dc3f580838f931b8dd9854cfa00053c6a72e0de26d9.
+Outer7c3197444113b610a3073e731c3e899f7e79423e6e37005c0f21b0d43e954725,
+1800s inclusive/60scleanup/6hlease margin; .formation.outer/.formation.launcher.
+Do not poll SSH during release, relaunch same stage, or backfill reservedGPU0.
+Only complete authenticated/replayed formation allows next fit. Meitner owns
+new analyzer/tests; frozen narrow W8endpoint in latest reducer note and ledger,
+must test/commit before fit/readout. Native numerical trainer unchanged.
+
+Node1 newest threecapsules+smallreceipts+support now copied to node3
+/localhome/local-rohing/mirror/node1_onward_20260913_attempt1; full scoped
+restore verified, receiptc89444c64fd2b07d6e1590bd03e82b51c64cae602f5a63601c2db92b48dce140.
+Not full old baseline certification. Parfit owns new typed-turn supplied-memory
+driver/tests in parallel (no native job). Preserve dirty gpu/codex/dream_state.rules.
+Mission ACTIVE/incomplete; formal guard finalC11only, nofreeze/generalG3/P1/H1/H2.
+
+## Historical superseded snapshot — September 13 14:29 UTC
 
 SEQ170 supersedes live status below: LF-disclosure formation also FAILED after
 2calls with the exact same missing-LF EVENT as SEQ169;18uncalled,zero updates.

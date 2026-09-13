@@ -1,4 +1,17 @@
-## Current superseding snapshot — 2026-09-13 14:29 UTC
+## Current superseding snapshot — 2026-09-13 14:46 UTC
+
+SEQ171:8exact grounded EVENTs with LF scaffold, then valid but different first
+LINK pair; original17call attemptFAILED/no fit. Fresh public-pair policyv4
+explicitly requests existing selected handles only; controlled curriculum,
+not discovery. Formation launched controller177134/node2GPU0, terminal status
+pending inspection; exact source/run/pins in HANDOFF. No fit on failed banks.
+Blinded reducer/test worker and supplied-memory typed-turn driver/test worker
+continue independently. Main owns native operations. No other Main GPUjob.
+Node1 newest scoped evidence restored/verified on surviving node3; not complete
+baseline restore certification. SEQ167 manuscript reviewed/integrated/UNSENT.
+MissionACTIVE/incomplete; formalguardfinalC11only/noG3freeze/P1/H1/H2claim.
+
+## Historical superseded snapshot — 2026-09-13 14:29 UTC
 
 SEQ170 LF-disclosure follow-up FAILED after2native calls, exact same90-byte
 EVENT without terminal LF; no fits/updates/readouts. Explicit instruction
