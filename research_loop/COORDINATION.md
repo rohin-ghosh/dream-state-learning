@@ -16729,3 +16729,31 @@ This is a specific preparation gap, not evidence that parenting fails.
 The task definition needs an explicit reconciled successor before its no-fit
 parenting test; existing retention work continues independently. Main will
 not silently generate until a convenient bank passes impossible conditions.
+
+
+## [Root runtime ruling] 2026-09-13 PT — attempt 3 is inadmissible failed work; attempt 4 has two prospective gates
+
+Direct inspection confirms all three attempt-3 B200 workers completed 200
+updates and wrote adapter checkpoints, then failed the post-fit warm-parent
+coverage check before any `fit/completed.json` or readout existed. The exact
+exception was `full parent tensor coverage differs`: the caller recomputed
+names from the mutated unwrapped base while the authenticated PEFT receipt used
+the known `base_model.model.` wrapper namespace. Therefore attempt 3 is
+charged as three failed fits (600 updates / 2,400 presentations), is not a
+scientific negative, and none of its checkpoints may be reused, repaired in
+place, read out, or promoted.
+
+Commit `3dc9edf8` is a narrow prospective namespace repair: canonicalize only
+PEFT's known wrapper prefix and `.default.weight`, reject collisions, and keep
+full tensor/hash/shape/dtype coverage. A fresh-root rerun from the unchanged,
+measured A200 parents may begin only after both of these pass:
+
+1. a real native-caller CPU test exercises `run_phase` through the exact
+   post-training caller boundary under warmfix3; and
+2. the raw followup reducer is committed and terminally tested with the full
+   attempt3 -> attempt2 failure chain, including post-worker failed-work cost
+   accounting and `prior_failed_work` rather than only the old preworker
+   `prior_failure` shape.
+
+Keep the four scientific arms, source material, writer recipe, doses, seeds,
+and stopping rules unchanged. This is a runtime/evidence repair only.
