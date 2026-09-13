@@ -85,3 +85,32 @@ it is not a randomized estimate of a general birth or parenting effect.
 Neither result establishes clean Level2, a mechanism freeze, persistence,
 G3/P1/G5/H1/H2, or a functioning adult learning loop. Closed Q0 uses only its
 own historical allowlisted material and is not tuned with these outcomes.
+
+## Native acceptance and prepared pair — September13 02:06UTC
+
+Native source commit830fe675ec16bdbe4c0a5dc36ec66908b28da6ce in its own new
+snapshot; source archive SHAfe11503e1d504a1964f3ce03fcbc956df8a809a56b9ab0b1eae9a3375de671f7.
+Native164 role/material regressions PASS66.195s. Native47 runtime/launcher
+integration tests PASS90.453s; log
+`astra_projected_runtime_native_cpu_20260913_attempt1.log`, SHA
+c0553060afa25e7b66b515532e93a00f9a8c06713367a4b6e15f7eece9740d11.
+These include mocked launch receipts; fixture PIDs in that CPU log are NOT
+actual scientific launches. Einstein's bounded review is archived separately.
+
+Driver e0b673b7dc2ef6b556acfd47ab1df9db320c6122a459d957465cfe4315bb0a6e;
+launcher3e79ca6fb0984a4814664bfd22aa05c20fc466bbb7a2f38506c581f0206170fa.
+Both plans PREPARED_NOT_LAUNCHED with identical source, model/public receipt,
+original birth custody, schedule, budget and deadline; explicit routes checked:
+
+- AUTH node3GPU0 root `~/astra_diagnostics/astra_projected_formation_AUTH_seed0_20260913_attempt1`,
+  plan96cb57f6d3150ed916923d329e02bea7853a8019dc4ce97522876aa667c4bb30.
+- OFF node3GPU1 root `~/astra_diagnostics/astra_projected_formation_OFF_seed0_20260913_attempt1`,
+  plan57fd3215d3e6de33c7ece8943c128a4992b2178de3e73abd01b070ae8a33e9a2.
+
+Deadline04:30UTC, actual node3 lease September25 20:03Pacific, six-hour lease
+margin enforced. Start only through new launcher with the47-test native log,
+plan/driver pins and explicit GPU opt-in. Existing vacancy check examines both
+NVIDIA holders and process-environment reservations immediately before spawn.
+Run status/collection through the same versioned driver; collection takes exact
+launch receipt, launcher path/hash and a fresh output directory, and happens
+once after both raw captures have closed. No optional birth fit is queued.

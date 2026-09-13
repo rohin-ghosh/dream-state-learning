@@ -8330,3 +8330,19 @@ test, prompt, root, model, adapter, job, GPU state, or claim changed.
 **OFF-noise sweep, report panel in (both nodes; disjoint pending):** standalone OFF (no adapter, no life) at seed 4242 repeat = 0.4886 (node 1) / 0.4878 (node 2); seed 6262 = 0.4799 / 0.4824; seed 7272 = 0.4863 / 0.4890. So the generation-seed effect is small (0.480–0.489) and the two nodes agree to ±0.003; the large per-life OFF excursions seen inside pretests (R2 3 0.501, R4 602 0.514 at 5252) are run-to-run outliers under load, not seed. Typical OFF noise ≈ ±0.005 with a heavy tail to 0.02+. Practical rule stands: pooled OFF ≈ 0.486 on the report panel; deltas below ~0.03 are not claims. Ledger P12.
 
 **Fleet:** node 1 four fill jobs (R3 501 A-rep, three OFF-noise), 4 free; node 2 three OFF-noise, 5 free; node 3 idle (builder in CPU implementation). Fill lists exhausted after these. Nudger: Astra active (idle 0.2 min). Laptop chains 5/5; A100 onboarding 05:05 UTC. Nothing killed or launched by the watcher outside the node queues.
+
+### 2026-09-13T02:06Z [Builder] Native projection pair accepted for residual bundling diagnosis
+
+Native164 source regressions PASS66.195s and47 runtime/launcher fixtures
+PASS90.453s; fixture PID55001 is not a real launch. Public model and original
+completed birth custody rechecked in both prospective plans. AUTH GPU0 plan
+96cb57f6d3150ed916923d329e02bea7853a8019dc4ce97522876aa667c4bb30 and OFF GPU1
+plan57fd3215d3e6de33c7ece8943c128a4992b2178de3e73abd01b070ae8a33e9a2 are
+PREPARED_NOT_LAUNCHED; final vacancy/launch follows. Source830fe675; exact
+driver/launcher/test/plan receipts archived and pilot memo updated. Same5wake
+budget, strict no-salvage, parentOFF, no writes or clean/efficacy claim.
+This is residual formation-bundling diagnosis, not another direct grammar
+probe or birth fit. Q0 implementation remains independent and active; no
+available runnable Q0 is displaced. Boole reproduced q/M numeric integrity
+defects in its CPU helpers and sent minimal fixes to owner Carver; these are
+not Q0 scientific nulls or new formal guard requirements. No kill/approval.
