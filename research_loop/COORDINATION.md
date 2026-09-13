@@ -12366,3 +12366,32 @@ Opaque qualifier Main23synthetic testsPASS0.138s; no actual tokenizer call or
 full production qualification. New D binding is being implemented; actor,
 chronological formation planner and zero-update baseline probe proceed in
 parallel. Formal C11 guard remains deferred. No command requested approval.
+
+## [Builder] 2026-09-13T12:34Z — pre-GPU gate: seed0 first-backward parity diagnostic
+
+Main23probe CPU testsPASS0.259s; execute-shell syntaxPASS. Exact nine historical
+input/source pins and first169-token/24-target occurrence verified by CPU
+preparation. Probe source a331210a8f230c4ee3b5ff3cbe1fcef09a26925502fb9716c7e3ec617d914b7a;
+shell source56f78bfba6f979dcdae64866aefd4e50b7d4f88ae3ec73285da7422ccb78c497.
+Fresh root `/localhome/local-rohing/astra_diagnostics/additive_native_parity_seed0_20260913_attempt1`,
+plan SHA256 f81eef545ba86eb52b17d1a440d7f0783c6fb62290c3164184b855158d9b92d5.
+
+Node2 GPU0 / GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0,
+boot8ff7b0dc-fbdf-4945-9044-3dffe94b5407. First vacancy check rejected a stale
+roster's absent GPU0 allocation; no launch occurred. Main supplied the new
+allocation from live index/UUID query without altering the old roster. Fresh
+check then found zero nvidia compute processes, zero same-user /proc CVD
+reservations/unresolved processes and no pending/running shared-queue work.
+Receipt precheck_OLD.json retained. Node2 reported lease ends2026-09-21
+01:43Pacific (08:43UTC); this <=0.20A40-hour diagnostic finishes well before
+the six-hour lease margin. No extension or allocation purchase.
+
+Prospective execution: OLD then NEW, separately started processes, max300s
+worker alarm and330s outer timeout plus10s termination allowance per side.
+Recheck vacancy before NEW. Exact frozen first forward/backward only; zero
+optimizer steps, clipping, adapter saves or readouts. Never reseed to force
+agreement. Stop on missing/nonfinite/changed parameters or timeout; preserve
+all failures. Main will append actual PIDs/exit receipts. This is a diagnostic,
+not repetition of completed fits or clean causal attribution. No full C11
+gate or parenting advantage claim. PCFL C0-only diagnostic scope is also
+recorded separately; no PCFL model run is launched by this entry.
