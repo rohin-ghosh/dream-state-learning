@@ -397,3 +397,158 @@ scientific question easier to interpret, not easier to pass.
 - `research_loop/plans/counterfactual_confluence_v03.md`
 - read-only inspection of `organism_v6/pcfl_vertical_dev.py`,
   `gpu/astra_pcfl_interface_dev.py`, and `lands/v02.py`
+
+## Addendum: reachout-side correction and explicit topology proof
+
+**Added after an independent pre-implementation question on 2026-09-13 PT.**
+
+### A. Correction: the two-sided reachout claim was too strong
+
+The concern is valid. In the proposed two-card reachout:
+
+```text
+Q0 proposes F0 -> R0
+Q1 proposes F1 -> R1
+goal is G_g
+```
+
+both OLD prefixes `S -> U0 -> F0` and `S -> U1 -> F1` exist. The child does
+not need to inspect either prefix to choose `Q_g`. It can inspect only the
+candidate destinations:
+
+```text
+R0 -> K0 -> G0
+R1 -> K1 -> G1
+```
+
+and select the card whose two-edge suffix reaches the stated goal. Therefore
+the statements in sections 2 and 4 that the reachout choice **requires** a
+two-sided connection are withdrawn.
+
+The safe reachout claim is narrower:
+
+> Changing the distant goal selected which equally uncertain bridge to
+> investigate by tracing a two-edge remembered suffix. The resulting public
+> outcome was then authored as NEW memory and used after SLEEP 2.
+
+That remains goal-conditioned, nonlocal, and memory-dependent. It is not
+evidence that the child jointly checked source reachability and destination
+utility, computed a general value of information, or evaluated both sides of
+a gap.
+
+This correction does **not** weaken the principal delayed-route assay. On the
+paired S2 tasks, the first STEP at `S` still requires choosing between two
+locally identical complete corridors. The child must follow the candidate
+first edge's destination forward through four remembered transitions to
+match the goal. That is the main prospective claim; reachout is a smaller
+expansion side result.
+
+### B. Smallest optional repair if two-sided gap selection is later required
+
+Do not enlarge the authentic S2 topology merely to rescue stronger reachout
+wording. Add, at most, a sterile read-only diagnostic with the Cartesian
+product of existing frontier endpoints:
+
+```text
+Q00: F0 -> R0       Q01: F0 -> R1
+Q10: F1 -> R0       Q11: F1 -> R1
+```
+
+Pair `START U_i` with `GOAL G_j`. Exactly `Qij` joins a source reachable from
+that start to a suffix reaching that goal. Source-only reasoning leaves two
+cards; destination-only reasoning leaves two; their conjunction selects one.
+Counterbalance the four `(i,j)` pairs and card order.
+
+This diagnostic must return no outcome, create no receipt or memory row, and
+never re-enter an authentic lineage. It needs zero fits and does not alter the
+two authentic NEW bridge events or delayed-route scorer. A pass could support
+“two-sided gap selection” as an optional component claim. It cannot replace
+the authentic two-card reachout that actually generates NEW experience.
+
+### C. Exact verification of the `1/4` no-memory route ceiling
+
+For fixed `(root, goal=G0)`, the route is determined by exactly two balanced
+bits:
+
+```text
+O  selects a_0 versus a_1 at S
+N0 selects q0_0 versus q0_1 at F0
+N1 is irrelevant to this route
+```
+
+The eight cells therefore contain four exact route strings, each twice:
+
+```text
+(O,N0) = 00, 01, 10, 11; each duplicated over N1
+```
+
+The Bayes-best deterministic complete-route label is `2/8 = 1/4`. For
+`goal=G1`, the same proof holds with first port `a_(1-O)`, bridge bit `N1`,
+and irrelevant bit `N0`. Allowing a different fixed prediction for each
+visible goal does not change the per-goal or pooled ceiling: both are `1/4`.
+
+State-to-state feedback does not raise this bound. A policy that guesses the
+first port learns which `U` it reached only after the irreversible choice;
+the wrong corridor cannot reach the requested goal. Conditional on guessing
+the correct corridor, it must still guess the independently balanced bridge
+port. Even granting every fixed interior port and label candidate, success is
+`1/2 x 1/2 = 1/4`.
+
+The `1/4` number is an information ceiling over the known output-label
+support. An actual no-memory model may be lower because the opaque port IDs
+are not printed in its prompt. The memo must not imply that OFF is expected to
+reach `1/4` physically.
+
+### D. Exact verification of the radius and local-policy claims
+
+After both NEW events exist, each branch from `S` is:
+
+```text
+S -> U_i -> F_i -> R_i -> K_i -> G_i
+```
+
+Viewed from candidate destination `U_i`:
+
+| radius | newly visible role | outward degree |
+|---:|---|---:|
+| 0 | `U_i` | 1 |
+| 1 | `F_i` | 1 |
+| 2 | `R_i` | 1 |
+| 3 | `K_i` | 1 |
+| 4 | `G_i` | 0 |
+
+The rooted directed neighborhoods of `U0` and `U1` are isomorphic through
+radius three. The task-specific target mark first distinguishes them at
+radius four. Both first edges have identical direct-goal status, destination
+degree, path length, and adjacent LINK count. Before NEW, both `F` nodes have
+outdegree zero, so the symmetry also holds in S1.
+
+For the two authentic reachout cards before outcome:
+
+- both sources `F0/F1` have the same OLD in/out-degree and LINK signature;
+- both destinations `R0/R1` have outdegree one to a degree-one `K`;
+- neither destination is the goal; and
+- the destination neighborhoods differ by target identity at radius two,
+  which is the intended nonlocal suffix signal, not a depth-one shortcut.
+
+Consequently:
+
+- fixed-first, fixed-last, direct-goal, destination-degree, depth-one LINK,
+  and goal-blind paired-S2 policies remain bounded by `1/2`;
+- the `LOCAL_1_DEGREE` shortcut that solved the retired topology cannot
+  distinguish the first STEP here;
+- a radius-four goal-path controller can solve delayed traversal and a
+  radius-two destination-path controller can solve the narrow reachout; those
+  are intended constructive ceilings, not nulls; and
+- lexicographic, row-order, and goal/branch ordinal policies are bounded only
+  if the batch-level identifier/order counterbalancing required in section 6
+  is implemented and audited. Topology symmetry alone does not guarantee
+  those realized surface bounds.
+
+### Addendum ruling
+
+Retain `PCFL-GOAL-BRAID-v1` for prospective delayed traversal. Narrow the
+authentic reachout claim now; do not add the four-card diagnostic unless
+two-sided gap valuation becomes claim-critical. The main topology, OLD/NEW
+cuts, `1/4` exact-label ceiling, paired-goal first-STEP intervention, and
+radius-three symmetry survive this audit unchanged.
