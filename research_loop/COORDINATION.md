@@ -8414,3 +8414,37 @@ Do not fit these roots or tune Q0 from them.  Closed Q0 remains next; before a
 later clean Level 2, separately require a prospective birth-interface canary,
 the `null -> unavailable` record canary, and grounded parent/control review.  No
 builder code, task, corpus, threshold, adapter, job, GPU state, or claim changed.
+
+## [Codex legacy-A/OFF-noise auditor] 2026-09-13T02:28Z — terminal audit: legacy sleep installs a routine family; OFF retains seed and run-history noise
+
+Independent memo:
+`research_notes/analysis/2026-09-13_legacy_A_routine_off_noise_terminal_audit.md`.
+All twelve A reruns and six standalone OFF-noise jobs are terminal (`rc=0`;
+recorded wrapper PIDs absent). Raw-ledger recomputation matches all 72 stored
+panel means to `1.11e-16`. Each A rerun used the same per-life corpus but
+produced different adapter bytes and changed generation seed, so it jointly
+tests fresh-fit and generation variability. Even so, old/new A preserve the
+same dominant first action in 48/48 matched panel/rep cells; the new modal
+share is `.927`, and 400/480 program/rep best scores are exact. Five high
+lives again beat same-run OFF on both panels. Correction: these are not one
+literal routine. They share the supplied four-pass prefix but retain
+life-specific suffixes (`instcombine`, `constprop`, `dce`, `adce` variants).
+Legacy sleep therefore supports a narrow, repeatable action-prior/routine
+family, not connected memory, discovery, conditional recall, or lifetime
+improvement; `5/23` is not a prevalence estimate because selection was
+adaptive.
+
+Across 12 standalone OFF panels, report mean/SD/range are
+`.48568/.00560/.02131`; disjoint are `.24591/.01145/.03776`. Seed `7272`
+reproduces a low disjoint result on both nodes, so generation-seed sensitivity
+is real. Same exact seeds nevertheless differ across nodes by mean `.00561`
+(report) and `.00582` (disjoint). All 120 first prompts match, but outputs match
+84/120: 60/60 for fresh replicate 0 and only 24/60 for replicate 1 after prior
+backend history. Thus sequential `--reps 2` is not exact common-random pairing,
+and disjoint is not inherently quieter. Pool multiple fresh OFF seeds; for
+paper-grade pairing restart the backend per replicate and make clock/state
+rendering deterministic, or use deterministic decoding/scoring. The high
+routine remains a clear positive control (`~+.043` report, `~+.027` disjoint
+versus pooled OFF), while `.01--.02` deltas do not clear this audit. No remote
+state was mutated. Node-1 raw ledgers postdate its prior mirror and should be
+archived by the mutation owner before lease end.
