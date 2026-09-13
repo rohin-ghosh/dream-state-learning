@@ -4,8 +4,9 @@
 **Status:** prospective design delta only; no source, fixture, model, tokenizer,
 adapter, job, or GPU execution
 **Base protocol:** `2026-09-13_pcfl_vertical_dev_v2_synthesis.md` v2.1
-**Independent inputs:** `2026-09-13_pcfl_vertical_v21_writer_fit_audit.md`
-and `2026-09-13_full_objective_evidence_and_pcfl_redteam.md`
+**Independent inputs:** `2026-09-13_pcfl_vertical_v21_writer_fit_audit.md`,
+`2026-09-13_full_objective_evidence_and_pcfl_redteam.md`, and
+`2026-09-13_actual_child_real_record_memory_pair_terminal_audit.md`
 
 ## 0. Ruling
 
@@ -47,6 +48,9 @@ This memo supersedes only:
 - the PAD entries in Sections 11.1 and 11.2;
 - random-only training order where it conflicts with the source-diverse batch
   invariant below;
+- v2.1 Section 12.4's interpretation of the generic canary as sufficient
+  no-harm evidence, which is replaced by the paired PCFL-specific retention
+  gate in Section 4.1 below;
 - the 14-fit/2,800-update/17-A40-hour maximum, which becomes a conditional
   15--16-fit/3,000--3,200-update/20-A40-hour maximum after qualification
   readout is charged explicitly; and
@@ -223,6 +227,7 @@ The writer gate is:
   roster produce exact MISS or a registered non-row refusal, with zero usable
   false rows;
 - the 40-item generic canary passes v2.1 Section 12.4; and
+- the paired PCFL task-skill retention gate in Section 4.1 passes; and
 - finite loss/gradients, exact source custody, and zero target truncation.
 
 Native ROUTE behavior and the ninth-wrapper diagnostic are recorded but do not
@@ -233,11 +238,61 @@ stop with `VS_WRITER_QUALIFICATION_FAIL`. Do not add a third heat, more updates,
 rank 16, new wrappers, best-checkpoint selection, or a repaired corpus. Both
 untouched DEV roots use the selected rate unchanged for S1 and S2.
 
+### 4.1 Task-specific retention after an actual-child write
+
+The actual-child record audit changed one conclusion and no more: a generic
+canary is necessary but not sufficient. It stayed `36/36` while a previously
+learned Level-1 skill fell from `143/144` to `98/144`. That experiment used a
+different inherited adapter and dose, so it does not select a PCFL learning
+rate and its researcher-authored Level-1 examples never enter a PCFL prompt,
+corpus, replay pool, adapter, or scientific target.
+
+PCFL instead reuses its own already-frozen, evaluation-only `NATIVE_CONTEXT`
+ceiling panel from the four excluded construct roots. This panel supplies the
+exact PCFL memory in context and asks the mounted model to perform the same
+reasoning and strict ROUTE action required downstream. None of its rows is
+loss-active. The four roots are disjoint from the disposable qualification
+root and both DEV roots.
+
+For C0 and every CAL or final fitted state, run the same 64 requests once with
+identical prompt bytes, memory bytes, token budget, decoding settings, and
+per-request seeds. Relative to the frozen C0 item results, require all of:
+
+- exact-route success at least `60/64`;
+- no more than two losses among requests C0 answered exactly, without letting
+  newly gained items cancel lost items; and
+- no more than one such loss within any one of the four excluded roots.
+
+The fit manifest proves that no fitted root overlaps this panel and records
+the paired lost, retained, gained, illegal, malformed, and exact sets. This is
+a retention test, not another acquisition target and not evidence that the
+adapter used its own memory.
+
+For CAL and authentic lineage candidates (`S1_AUTH`, `S2_FULL_R0`, and
+`S2_FULL_R1`), failure is noncompensatory: reject the candidate, preserve the
+rollback receipt, and stop that candidate with `VS_PCFL_TASK_RETENTION_FAIL`.
+For a quarantined comparison arm, failure censors every native causal contrast
+that uses that arm; it may not be scored as zero or used to make AUTH look
+better. Valid clean-actor memory-service and local-carriage diagnostics may
+still be reported because the mounted control's task skill is not on those
+paths.
+
+In the ordered failure registry, apply this label after the applicable local
+EVENT/LINK/NEW carrier labels and before any goal-traversal or native-organism
+label; at S2 it also precedes the existing OLD-memory `VS_RETENTION_FAIL`.
+
+Two other task-specific retention checks already remain mandatory and should
+not be conflated with this panel: exact child authorship of `1/1` NEW EVENT and
+`2/2` NEW LINK after S1 tests whether the authentic child can still form
+records, and v2.1 Section 12.3's itemwise OLD read/route comparison tests
+memory retention after the clean-base cumulative S2 write. Every S2 fit still
+starts from clean C0; no adapter stacking or Level-1 replay is introduced.
+
 ## 5. Four diagnostic localizers
 
 These diagnostics are collected for C0, CAL, and every final fitted state. They
-cannot rescue a failed formation, carriage, locality, native, canary, or route
-gate.
+cannot rescue a failed formation, carriage, locality, native, generic-canary,
+PCFL-retention, or route gate.
 
 1. **Grammar/content NLL.** Report assistant target NLL separately for fixed
    grammar/separators/EOS tokens and opaque-field tokens (child-authored in
@@ -279,7 +334,9 @@ The label is released only when the *same* endpoint-specific conjunction
 passes on both DEV roots; service evidence on one root cannot be combined with
 native evidence on the other. `CONNECTED_MEMORY_BOTH_DEV` requires both labels.
 Every label also requires no grammar/content collapse, wrong-root leakage, or
-canary failure. Because LINK text is derivable from EVENT content, even a pass
+generic-canary failure. Every fitted arm used in a native connected contrast
+must also pass Section 4.1; a task-damaged comparison arm cannot support that
+contrast. Because LINK text is derivable from EVENT content, even a pass
 supports only the bounded claim that the compiled LINK organization added
 usable value under the fixed read and work budget; it is not a claim of new
 information creation.
@@ -309,7 +366,10 @@ materialization; the time cap is not a substitute for that inventory.
 
 The complete v2.2 maximum is therefore 19 aggregate A40-hours if LOW passes
 and 20 if HIGH is validly launched. Formation, ceiling, qualification, and
-per-root stages still stop cheaply at their first registered failure.
+per-root stages still stop cheaply at their first registered failure. The
+Section 4.1 requests for DEV fits are charged to the existing 10-hour
+formation/ceiling/DEV-inference cap; CAL retention is charged to its existing
+one-hour-per-state qualification-readout cap. No resource ceiling increases.
 
 ## 8. Release interpretation
 
