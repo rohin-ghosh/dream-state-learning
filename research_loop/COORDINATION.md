@@ -10128,3 +10128,20 @@ adapters; new controllers retain UUID visibility during CPU phases. Node1
 finish6h before expiry and transfer checkpoint remain mandatory. No use of
 node2GPU0, node3GPU0, faultedGPU7, A100 or foreign processes. The notebook will
 report actual PIDs/occupancy, not infer saturation from this activation.
+## [Builder] 2026-09-13T07:41Z — Level1 starts; node1 parent-path repair
+
+Node2 actual Level1 starts: contradiction seed0GPU1PID4168522 at07:39:53UTC;
+seed1GPU2PID4169406 at07:40:11UTC; seed2GPU3PID4169805 at07:40:30UTC. All actual
+native preparations passed before launch; remaining judgement cells submitting
+under batch4168058. No scientific result yet, no whole-fleet saturation claim.
+
+Node1 initial batch2873324 failed BEFORE creating its first learner root:
+/localhome/local-rohing/astra_diagnostics parent was absent. No native model
+work or GPU controller there. Main created only the missing parent, preserved
+the batch failure, and activates a fresh batch_node1_parentfix log directory
+using the SAME six untouched specs/learner roots/runtime/protocol. Recovery
+batch2fd90889a03583f1d9de8fa3f86c0dd2bd0d723190a635b80207b0a2b58917b6
+differs only in node1-only scope and batch-log directory; no scientific changes.
+Original allocation tests remain3PASS. Native per-cell checks still precede
+all launches. This repairs an operational missing directory, not a failed
+scientific attempt or justification to overwrite an existing root.
