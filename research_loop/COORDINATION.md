@@ -16075,6 +16075,29 @@ and complete null contracts), not a training or model-run qualification.
 Main will inspect it separately; Aristotle owns only the followup operator
 and test, with the same required input/output path separation.
 
+## [Builder] 2026-09-13T18:59:23Z — v2 acquisition attempt5 launched after real CPU path validation
+
+Node2 detached batchPID233271; root
+`/localhome/local-rohing/astra_diagnostics/pcfl_sequence_v2_acquisition_20260913_attempt5`.
+Manifest FILE SHA4e41adf04873a5f119f2f372dcb6ab27c561134c8ff7f407e72ec6b242d89731.
+Revised standalone operator
+`/tmp/astra_pcfl_v2_campaign_operator_20260913_attempt5.py`, FILE SHA
+06aada2e6853c2a8679e4f09aaab40681d9faaaeeaa16e7cbb2fe517d4d77c12,
+code commit03e42270. It imports UNCHANGED71adf462 scientific runtime in
+`/tmp/astra_pcfl_sequence_v2_source_20260913_attempt2`. New preparation
+passed all three real `_inputs` checks and resources. Material FILE hashes
+for seeds0/1/2 are unchanged from attempt4. No earlier model outcomes exist.
+Same3fits/96calls, GPUs1/2/3 serially,2hour cap; child PID/binding/release
+receipts under `runs/seedN/*_outer`. No result claimed at launch.
+
+Volta's source/CPU slice independently passes11tests in0.037s. It is
+deliberately NO_GO_PARTIAL_SOURCE_ONLY:32tiny cases/oracle succeed, but rich
+domains, cross-domain motifs and36pairwise policy definitions remain missing.
+Its fixed-READ diagnostic uses oracle choice and fixed-STOP uses oracle
+READ/STEP; their32/32 are memory-using ceilings, NOT task-blind shortcut
+scores. Do not misreport these as failure of a defined no-memory null suite.
+This fixture is preparatory code, not Stage0 closure or model authorization.
+
 ## [Root ruling] 2026-09-13 PT — adopt GOAL-BRAID contract; authorize source and CPU-test authoring only
 
 Adopt the role-level `PCFL-GOAL-BRAID-v1` design in
