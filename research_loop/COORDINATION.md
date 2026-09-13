@@ -9334,3 +9334,24 @@ plan seed2 2c4f55e7238b6f1bced803661ea87d122941dccfc3dbbb6e18aeb2afd12bf442.
 Prepared capsule, handoff/source/tests and native command results archived.
 GPU1/2 fresh per-launch process/env checks still required;3600s/root ceiling,
 six-hour after-finish lease margin. No replica launch or outcome at this entry.
+
+## [Builder] 2026-09-13T05:24Z — seed1 launched; seed2 allocation timeout preserved
+
+Reflection seed1 LIVE node3GPU1 PID=PGID331133/start_ticks9290535, launched
+05:23:16.121227UTC;3600scontroller plus180scollection. Fresh vacancy passed;
+exact plan28e97239 and launch receipt archived. Seed0 PID328732 remains alive.
+
+Seed2 attempt1 launched NO controller: allocation helper's whole-device
+nvidia-smi index/UUID query exceeded20s. launcher_failure records pid=null and
+controller_may_be_running=false; no stage/model work occurred. Full failed root
+archived, no overwrite/retry of that root. This is infrastructure failure before
+outcomes, not an unfavorable scientific result or new seed selection.
+
+Non-material repair in a NEW helper: target both inventory and compute-PID
+queries to the selected GPU index, retaining UUID match, all same-user CUDA
+environment scans, busy/unresolved refusal and exact systemd exception. Query
+ceilings25s each fit within launcher60s cap; no failed query is accepted. Main
+7CPU fixtures PASS0.002s. Helper32d366afc432d9e8dcf0c188cbf0725cdadfcc68a1a0f8e0b11532ca7629862a.
+The timeout cause is not proven to be GPU7's known fault; no hardware action.
+Main authorizes one fresh seed2 attempt2 with unchanged data/recipe/seed after
+native preparation and fresh targeted check. Existing live code stays unchanged.
