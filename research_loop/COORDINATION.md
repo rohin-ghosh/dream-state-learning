@@ -14174,3 +14174,25 @@ paired archive and separate native/fit/outer pins; missing/invalid arms reject
 rather than become zeros. Preserves originalFORMATION_FAILED17calls. No old
 17-address/full-bank reducer or endpoint is used. Independent bounded reducer
 review runs concurrently, not as a formal C11 gate. No numerical-loop change.
+
+## [Builder] SEQ-177 — 2026-09-13T15:32Z — EVENT-only LOW200 fit completes; A3 interface fails
+
+EVENT-only fit completed and released with errors[],exit0,no signals; worker
+189173/node2GPU2. Controller entry15:28:00.800195UTC,162.729s release-inclusive,
+stage155.910s.200updates/800presentations; final recorded loss0.0001355207059532404,
+finite clipped norm0.005626056343317032. Loss is not a readout/learning result.
+Actual independent adapter/no-write cold readouts remain required. Main now
+launches AUTH_WRITE28reads on releasedGPU2, W0/W8only, then freshNO_WRITE_C0
+28reads after AUTH release. Same manifest69bb58e162dcd3982dbd246eb52d052a7faf82bcedfdaf337c43303f63a813cf,
+1800s/60cleanup each; no prompt/LR/checkpoint selection. Frozen18-test reducer
+will evaluate only both valid released arms. Original full-bankFAILED stays.
+
+A3 also completed/released, errors[],exit0:64actual calls,13642outputtokens,
+40INVALID_TURN/24LENGTH,0valid THINK turns or strict terminal routes. Typical
+response combines THINK and ROUTE in one multi-line output; never salvaged.
+Controller entry15:19:58.357484UTC,446.860s. A2 completed64calls/2530tokens,
+54strict but0graph-successful routes,10invalid;131.853s. These are independent
+excluded-root interface diagnostics, not64independent learners. A1 remains
+failed. A3 did not qualify its byte/interface endpoint: noA4 algorithm scaffold
+or ACTIVE/full-panel launch. Stop this prompt ladder; any successor must be
+separately named/prospective and retain these negative results unchanged.

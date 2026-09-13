@@ -1,0 +1,55 @@
+{
+  "actor_tokens": 13642,
+  "actual_calls": 64,
+  "elapsed_seconds": 446.86014348396566,
+  "entry_utc": "2026-09-13T15:19:58.357484+00:00",
+  "errors": [],
+  "examples": [
+    {
+      "id": "interface/A3_THINK/excluded/0/0/0/0/0",
+      "raw": "THINK N_S6JZXHYXBT has a path to N_HJZRZAYWOT through N_APBZHN7V4U and N_KJPKJSCVUU.\nROUTE N_S6JZXHYXBT N_HJZRZAYWOT : P_7MGNA5ALJT,P_JFTRJJNMXM,P_RK7VLTKHNM",
+      "reads": 0,
+      "reason": "INVALID_TURN",
+      "thinks": 0
+    },
+    {
+      "id": "interface/A3_THINK/excluded/0/0/0/0/1",
+      "raw": "THINK N_S6JZXHYXBT has a direct edge to N_DPH5JSJYDT and also to N_CFZQL5YFH3. N_CFZQL5YFH3 does not lead directly to N_6TUR2VALJP, but N_DPH5JSJYDT has an edge to N_IPQ2WLA2DK. N_IPQ2WLA2DK has an edge to N_APBZHN7V4U, which has an edge to N_6TUR2VALJP. Therefore, the path is N_S6JZXHYXBT -> N_DPH5JSJYDT -> N_IPQ2WLA2DK -> N_APBZHN7V4U -> N_6TUR2VALJP.\nROUTE N_S6JZXHYXBT N_6TUR2VALJP : DPH5JSJYDT,IPQ2WLA2DK,_APBZHN7V4U",
+      "reads": 0,
+      "reason": "INVALID_TURN",
+      "thinks": 0
+    },
+    {
+      "id": "interface/A3_THINK/excluded/0/0/0/1/0",
+      "raw": "THINK N_S6JZXHYXBT has a path to N_HJZRZAYWOT through N_APBZHN7V4U and N_KJPKJSCVUU.\nROUTE N_S6JZXHYXBT N_HJZRZAYWOT : P_7MGNA5ALJT,P_JFTRJJNMXM,P_RK7VLTKHNM",
+      "reads": 0,
+      "reason": "INVALID_TURN",
+      "thinks": 0
+    }
+  ],
+  "graph_success_tasks": 0,
+  "inserted_memory_tokens": 0,
+  "returncode": 0,
+  "status": "COMPLETED",
+  "strict_terminal_tasks": 0,
+  "summary": {
+    "active_thought_route_tasks": 0,
+    "denominator": 64,
+    "full_assay_qualified": false,
+    "invalid_read_tasks": 0,
+    "read_handshake_tasks": 0,
+    "route_successes": 0,
+    "served_read_tasks": 0,
+    "stage_gate_passed": false,
+    "thought_interface_tasks": 0,
+    "thought_route_tasks": 0,
+    "thought_tasks": 0
+  },
+  "task_reasons": {
+    "INVALID_TURN": 40,
+    "LENGTH": 24
+  },
+  "task_statuses": {
+    "SCORED": 64
+  }
+}
