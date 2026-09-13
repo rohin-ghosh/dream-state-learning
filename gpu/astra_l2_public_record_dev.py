@@ -63,8 +63,14 @@ def validate_learner_seed(learner_seed):
     return learner_seed
 
 
-def fit_config(trainer, model, learner_seed=0):
-    recipe = dict(RECIPE, seed=validate_learner_seed(learner_seed))
+def validate_learning_rate(learning_rate):
+    require(type(learning_rate) is float and math.isfinite(learning_rate) and learning_rate in (3e-5, 1e-4),
+            "learning_rate must be numeric 3e-5 or 1e-4")
+    return learning_rate
+
+
+def fit_config(trainer, model, learner_seed=0, learning_rate=3e-5):
+    recipe = dict(RECIPE, seed=validate_learner_seed(learner_seed), lr=validate_learning_rate(learning_rate))
     return asdict(trainer.TrainConfig(**recipe, model=model))
 
 
@@ -73,6 +79,13 @@ def plan_learner_seed(plan):
     require(encoded(plan["seeds"]) == encoded(dict(SEEDS, learner=learner_seed)), "plan seeds differ from spec")
     require(validate_learner_seed(plan["config"].get("seed")) == learner_seed, "config learner_seed differs from spec")
     return learner_seed
+
+
+def plan_learning_rate(plan):
+    learning_rate = validate_learning_rate(plan["spec"].get("learning_rate", 3e-5))
+    require(validate_learning_rate(plan.get("learning_rate")) == learning_rate, "plan learning_rate differs from spec")
+    require(validate_learning_rate(plan["config"].get("lr")) == learning_rate, "config learning_rate differs from spec")
+    return learning_rate
 
 
 def encoded(value):
@@ -201,9 +214,10 @@ def release_budget(deadline):
 
 
 def validate_spec(spec):
-    require(set(spec) - {"learner_seed"} == {"schema", "source", "source_files", "core_schema", "helpers", "model",
+    require(set(spec) - {"learner_seed", "learning_rate"} == {"schema", "source", "source_files", "core_schema", "helpers", "model",
                           "model_binding", "protocol", "gpu_uuid", "gpu_index", "lease_end"}, "spec fields")
     validate_learner_seed(spec.get("learner_seed", 0))
+    validate_learning_rate(spec.get("learning_rate", 3e-5))
     require(spec["schema"] == SCHEMA and isinstance(spec["core_schema"], str), "spec/core schema")
     source = plain_path(spec["source"])
     require(not (source / ".git").exists(), "fresh source snapshot, not a checkout")
@@ -257,6 +271,7 @@ def prepare(spec_path, spec_sha256, root, allow_native=False):
     spec = read(spec_path)
     validate_spec(spec)
     learner_seed = validate_learner_seed(spec.get("learner_seed", 0))
+    learning_rate = validate_learning_rate(spec.get("learning_rate", 3e-5))
     root = plain_path(str(Path(root).absolute()))
     launcher_output_outside(root)
     for other in (spec["source"], spec["model"], *[entry["path"] for entry in spec["helpers"].values()], str(spec_path)):
@@ -281,16 +296,17 @@ def prepare(spec_path, spec_sha256, root, allow_native=False):
         write(root / "calls.json", calls)
         write(root / "world.json", core.to_data(world))
         write(root / "model_binding.json", receipt)
-        config = fit_config(trainer, spec["model"], learner_seed=learner_seed)
+        config = fit_config(trainer, spec["model"], learner_seed=learner_seed, learning_rate=learning_rate)
         plan = dict(schema=SCHEMA, spec=spec, spec_sha256=spec_sha256, root=str(root),
                     python=os.path.abspath(sys.executable), python_sha256=digest(sys.executable),
                     model_files=model_files, base_sha256=value_hash(model_files), seeds=dict(SEEDS, learner=learner_seed),
-                    config=config, engine=ENGINE, params=PARAMS, stages=list(STAGES), caps=CAPS,
+                    config=config, learning_rate=learning_rate, engine=ENGINE, params=PARAMS, stages=list(STAGES), caps=CAPS,
                     generic_system=GENERIC_SYSTEM, chat_template=tokenizer.chat_template,
                     environment=reflection.environment(probe), claim=CLAIM,
                     prepared_files={name: digest(root / name) for name in ("calls.json", "world.json", "model_binding.json")})
         write(root / "plan.json", plan)
-        return dict(root=str(root), plan_sha256=digest(root / "plan.json"), schema=SCHEMA, learner_seed=learner_seed)
+        return dict(root=str(root), plan_sha256=digest(root / "plan.json"), schema=SCHEMA,
+                    learner_seed=learner_seed, learning_rate=learning_rate)
     except BaseException as error:
         write(root / "prepare_failure.json", failure(error))
         raise
@@ -302,6 +318,7 @@ def verify(root, plan_sha256, native=False):
     plan = read(root / "plan.json")
     require(plan["schema"] == SCHEMA and plan["root"] == str(root), "prepared root/schema")
     learner_seed = plan_learner_seed(plan)
+    learning_rate = plan_learning_rate(plan)
     require(encoded(plan["engine"]) == encoded(ENGINE) and encoded(plan["params"]) == encoded(PARAMS) and
             plan["stages"] == list(STAGES) and plan["caps"] == CAPS and
             plan["generic_system"] == GENERIC_SYSTEM, "closed configuration differs")
@@ -310,7 +327,8 @@ def verify(root, plan_sha256, native=False):
                 "prepared artifact drift")
     require(set(plan["prepared_files"]) == {"calls.json", "world.json", "model_binding.json"}, "prepared inventory")
     core, trainer, probe, reflection = load_apis(plan["spec"])
-    require(encoded(plan["config"]) == encoded(fit_config(trainer, plan["spec"]["model"], learner_seed=learner_seed)),
+    require(encoded(plan["config"]) == encoded(fit_config(trainer, plan["spec"]["model"],
+                                                       learner_seed=learner_seed, learning_rate=learning_rate)),
             "fit recipe differs")
     require(plan["python"] == os.path.abspath(sys.executable) and plan["python_sha256"] == digest(sys.executable),
             "interpreter differs")
@@ -482,6 +500,7 @@ def encode_training(core, public, corpus, tokenizer, trainer, probe, learner_see
 
 def validate_manifest(manifest, config, prepared):
     learner_seed = validate_learner_seed(config.get("seed"))
+    validate_learning_rate(config.get("lr"))
     require(validate_learner_seed(prepared.get("learner_seed")) == learner_seed, "training learner_seed differs from config")
     count, steps = prepared["rows"], prepared["steps"]
     require(encoded(manifest["config"]) == encoded(config) and not manifest["empty"] and manifest["steps"] == steps and
@@ -508,7 +527,9 @@ def validate_manifest(manifest, config, prepared):
 
 def fit_stage(plan, core, trainer, probe, reflection, world, states, stage):
     learner_seed = plan_learner_seed(plan)
-    require(encoded(plan["config"]) == encoded(fit_config(trainer, plan["spec"]["model"], learner_seed=learner_seed)),
+    learning_rate = plan_learning_rate(plan)
+    require(encoded(plan["config"]) == encoded(fit_config(trainer, plan["spec"]["model"],
+                                                       learner_seed=learner_seed, learning_rate=learning_rate)),
             "fit recipe differs")
     policy = "PROMOTE" if stage == "fit1" else stage.split("_")[1]
     state = states[policy]
@@ -883,6 +904,7 @@ def collect(root, plan_sha256, output):
             plan, core, trainer, probe, reflection, world = verify(root, plan_sha256)
             learner_seed = plan_learner_seed(plan)
             summary["seeds"] = dict(plan["seeds"])
+            summary["learning_rate"] = plan_learning_rate(plan)
             states = core.start_pair(core.public_view(world), plan["base_sha256"])
             reports = {stage: None for stage in STAGES if stage == "baseline" or stage.startswith("report")}
             formation, exposure = {}, {}

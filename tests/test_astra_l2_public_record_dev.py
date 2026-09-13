@@ -139,7 +139,7 @@ class Fixture(unittest.TestCase):
         self.public = core.public_view(self.world)
         self.probe = Probe()
         self.plan = dict(root=str(self.root), base_sha256="a" * 64, chat_template=Tokenizer.chat_template,
-                         seeds=dict(runtime.SEEDS),
+                         seeds=dict(runtime.SEEDS), learning_rate=3e-5,
                          spec=dict(model="/fixture/model", source="/fixture/source", gpu_uuid="GPU-fixture", gpu_index=0,
                                    lease_end=time.time() + 100000), python=sys.executable,
                          config=asdict(trainer.TrainConfig(**runtime.RECIPE, model="/fixture/model")))
@@ -348,6 +348,82 @@ class TrainingTests(Fixture):
         self.reflection.load_native_model = lambda path: (Tokenizer(), model)
         with self.assertRaisesRegex(ValueError, "non-LoRA"):
             self.fit("fit1")
+
+
+class LearningRateTests(Fixture):
+    def select_rate(self, learning_rate):
+        self.plan["spec"]["learning_rate"] = learning_rate
+        self.plan["learning_rate"] = learning_rate
+        self.plan["config"] = runtime.fit_config(trainer, "/fixture/model", learning_rate=learning_rate)
+
+    def test_learning_rate_config_only_changes_lr_with_seeds_preserved(self):
+        constants = deepcopy((runtime.RECIPE, runtime.SEEDS, runtime.ENGINE, runtime.PARAMS))
+        self.assertEqual(runtime.fit_config(trainer, "/fixture/model"), self.plan["config"])
+        for learner_seed in (0, 1, 2):
+            baseline = runtime.fit_config(trainer, "/fixture/model", learner_seed=learner_seed)
+            for learning_rate in (3e-5, 1e-4):
+                with self.subTest(seed=learner_seed, learning_rate=learning_rate):
+                    self.assertEqual(runtime.fit_config(trainer, "/fixture/model", learner_seed=learner_seed,
+                                                        learning_rate=learning_rate), dict(baseline, lr=learning_rate))
+        self.assertEqual((runtime.RECIPE, runtime.SEEDS, runtime.ENGINE, runtime.PARAMS), constants)
+        self.assertEqual(runtime.RECIPE["lr"], 3e-5)
+
+    def test_invalid_learning_rate_rejected_without_coercion_or_tolerance(self):
+        for value in (True, False, 0, 1, 0.0, -3e-5, 1e-5, "3e-5", "1e-4", None, [], {}, math.nan, math.inf,
+                      -math.inf, math.nextafter(3e-5, 0.0), math.nextafter(1e-4, math.inf)):
+            with self.subTest(value=value), self.assertRaisesRegex(ValueError, "learning_rate"):
+                runtime.fit_config(trainer, "/fixture/model", learning_rate=value)
+
+    def test_cross_learning_rate_rejected_before_fit_artifacts(self):
+        self.select_rate(1e-4)
+        changes = [("spec", dict(self.plan["spec"], learning_rate=3e-5)), ("learning_rate", 3e-5),
+                   ("learning_rate", True), ("config", dict(self.plan["config"], lr=3e-5)),
+                   ("config", dict(self.plan["config"], lr="1e-4"))]
+        for field, value in changes:
+            with self.subTest(field=field), self.assertRaisesRegex(ValueError, "learning_rate"):
+                runtime.fit_stage(dict(self.plan, **{field: value}), core, trainer, self.probe, self.reflection,
+                                  self.world, self.states, "fit1")
+        self.assertEqual(self.models, [])
+        self.assertFalse((self.root / "run").exists())
+
+    def test_manifest_learning_rate_must_match_validated_config(self):
+        self.close("wake1", self.capture("wake1"))
+        prepared = runtime.encode_training(core, self.public, self.states["PROMOTE"].corpus,
+                                           Tokenizer(), trainer, self.probe)
+        config = runtime.fit_config(trainer, "/fixture/model", learning_rate=1e-4)
+        manifest = manifest_for(prepared, config)
+        runtime.validate_manifest(manifest, config, prepared)
+        with self.assertRaisesRegex(ValueError, "fit work/config"):
+            runtime.validate_manifest(dict(manifest, config=dict(config, lr=3e-5)), config, prepared)
+        for value in (True, "1e-4", math.nan):
+            broken = dict(config, lr=value)
+            with self.subTest(value=value), self.assertRaisesRegex(ValueError, "learning_rate"):
+                runtime.validate_manifest(dict(manifest, config=broken), broken, prepared)
+
+    def test_learning_rate_only_full_mocked_pair_and_replay(self):
+        original_config = dict(self.plan["config"])
+        self.select_rate(1e-4)
+        terminal = self.finish()
+        self.assertEqual(terminal["work"], dict(calls=128, fits=3, updates=100))
+        self.assertEqual(self.plan["config"], dict(original_config, lr=1e-4))
+        self.assertEqual(self.plan["seeds"], runtime.SEEDS)
+        self.assertEqual([backend.route is not None for backend in self.backends],
+                         [False, False, True, False, True, False, True, False])
+        for stage in ("fit1", "fit2_PROMOTE", "fit2_SHADOW"):
+            directory = runtime.stage_dir(self.plan, stage) / "data"
+            manifest = runtime.read(directory / "adapter/train_manifest.json")
+            self.assertEqual(manifest["config"], dict(original_config, lr=1e-4))
+            corpus = core.from_data(runtime.read(directory / "corpus.json"), expected_type=core.Corpus)
+            self.assertEqual(runtime.read(directory / "training.json"),
+                             runtime.encode_training(core, self.public, corpus, Tokenizer(), trainer, self.probe))
+        checksum = self.seal(terminal)
+        with patch.object(runtime, "verify", return_value=(self.plan, core, trainer, self.probe, self.reflection, self.world)):
+            summary = runtime.collect(self.root, checksum, Path(self.temporary.name) / "collection.json")
+        self.assertEqual(summary["learning_rate"], 1e-4)
+        self.assertEqual(summary["seeds"], runtime.SEEDS)
+        self.assertEqual(summary["work"], runtime.CAPS)
+        self.assertTrue(summary["two_cycle_complete"])
+        self.assertIsNone(summary["scientific_pass"])
 
 
 class LearnerSeedTests(Fixture):
@@ -991,6 +1067,76 @@ class BindingTests(Fixture):
         with patch.object(runtime, "load_apis") as loaded:
             with self.assertRaisesRegex(ValueError, "learner_seed"):
                 runtime.prepare(spec_path, runtime.digest(spec_path), prepared_root, allow_native=True)
+        loaded.assert_not_called()
+        self.assertFalse(prepared_root.exists())
+
+    def test_optional_learning_rate_spec_decoder_is_strict(self):
+        spec = self.spec()
+        runtime.validate_spec(spec)
+        path = Path(self.temporary.name) / "rate.spec.json"
+        prefix = json.dumps(spec)[:-1] + ', "learning_rate": '
+        for raw in ("3e-5", "0.00003", "1e-4", "0.0001"):
+            with self.subTest(raw=raw):
+                path.write_text(prefix + raw + "}")
+                runtime.validate_spec(runtime.read(path))
+        for raw in ("true", "false", "0", "1", "0.0", "-0.00003", "1e-5", '"1e-4"', '"3e-5"',
+                    "null", "[]", "{}", "NaN", "Infinity", "1e309", '1e-4, "learning_rate": 3e-5'):
+            with self.subTest(raw=raw):
+                path.write_text(prefix + raw + "}")
+                with self.assertRaises(ValueError):
+                    runtime.validate_spec(runtime.read(path))
+        with self.assertRaisesRegex(ValueError, "spec fields"):
+            runtime.validate_spec(dict(spec, lr=1e-4))
+
+    def test_learning_rate_prepare_verify_matrix_preserves_seed_and_data(self):
+        spec = self.spec()
+        selections = [spec] + [dict(spec, learner_seed=seed, learning_rate=rate)
+                              for seed in (0, 1, 2) for rate in (3e-5, 1e-4)]
+        prepared_bytes = []
+        for index, selected in enumerate(selections):
+            with self.subTest(index=index):
+                receipt = self.prepare_spec(selected, f"rate-{index}")
+                with patch.object(runtime, "load_apis", return_value=(core, trainer, self.probe, self.reflection)):
+                    plan = runtime.verify(receipt["root"], receipt["plan_sha256"])[0]
+                rate, seed = selected.get("learning_rate", 3e-5), selected.get("learner_seed", 0)
+                self.assertEqual(receipt["learning_rate"], rate)
+                self.assertEqual(receipt["learner_seed"], seed)
+                self.assertEqual(plan["learning_rate"], rate)
+                self.assertEqual(plan["spec"], selected)
+                self.assertEqual(plan["config"], dict(self.plan["config"], lr=rate, seed=seed))
+                self.assertEqual(plan["seeds"], dict(runtime.SEEDS, learner=seed))
+                self.assertEqual(plan["engine"], runtime.ENGINE)
+                self.assertEqual(plan["params"], runtime.PARAMS)
+                self.assertEqual(plan["caps"], runtime.CAPS)
+                prepared_bytes.append(tuple((Path(receipt["root"]) / name).read_bytes() for name in ("world.json", "calls.json")))
+        self.assertTrue(all(value == prepared_bytes[0] for value in prepared_bytes))
+
+    def test_verify_rejects_cross_learning_rate_and_missing_receipt(self):
+        receipt = self.prepare_spec(dict(self.spec(), learning_rate=1e-4), "rate")
+        path = Path(receipt["root"]) / "plan.json"
+        plan = runtime.read(path)
+        changes = [("spec", dict(plan["spec"], learning_rate=value)) for value in (3e-5, True, "1e-4", None)]
+        changes += [("learning_rate", value) for value in (3e-5, True, "1e-4", None)]
+        changes += [("config", dict(plan["config"], lr=value)) for value in (3e-5, True, "1e-4", None)]
+        broken_plans = [dict(plan, **{field: value}) for field, value in changes]
+        broken_plans.append({key: value for key, value in plan.items() if key != "learning_rate"})
+        for index, broken in enumerate(broken_plans):
+            with self.subTest(index=index):
+                path.write_bytes(runtime.encoded(broken))
+                with patch.object(runtime, "load_apis") as loaded:
+                    with self.assertRaisesRegex(ValueError, "learning_rate"):
+                        runtime.verify(receipt["root"], runtime.digest(path))
+                loaded.assert_not_called()
+        with self.assertRaisesRegex(ValueError, "manifest pin"):
+            runtime.verify(receipt["root"], receipt["plan_sha256"])
+
+    def test_invalid_learning_rate_rejected_before_prepare_root(self):
+        path = Path(self.temporary.name) / "invalid-rate.spec.json"
+        runtime.write(path, dict(self.spec(), learning_rate=True))
+        prepared_root = Path(self.temporary.name) / "invalid-rate-root"
+        with patch.object(runtime, "load_apis") as loaded:
+            with self.assertRaisesRegex(ValueError, "learning_rate"):
+                runtime.prepare(path, runtime.digest(path), prepared_root, allow_native=True)
         loaded.assert_not_called()
         self.assertFalse(prepared_root.exists())
 

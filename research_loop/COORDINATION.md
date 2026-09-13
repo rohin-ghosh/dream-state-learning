@@ -9780,3 +9780,22 @@ native/raw replay, mission completion, or negative-paper finalization. No TeX
 compiler; PDF/layout remains unvalidated. Collaborator UNSENT. No SEQ134/135
 or new probe outcome is silently included in this fixed manuscript evidence cut.
 Main accepts scoped review limits; scientific question remains unresolved.
+
+## [Builder] 2026-09-13T06:44Z — conditional LR-only comparison preparation
+
+Main111runtime/coreCPUtests PASS21.544s for optional learning_rate3e-5/1e-4,
+default unchanged3e-5; spec/plan/config agree, malformed/nonfinite types reject.
+Runtime dce8cd88b82bd51ec4f12e482ce70dc220453cb85dcaeb758206c7b5200a4277;
+tests45c7ed30971560c42379ca510ce2a638b001777592fb3c9cf75b8c56d297b2f3.
+Main29comparison-launcherCPUtests PASS2.787s; launcher
+8aeb2fe2fb0db270b072c4e79f25e0de258de604b5c3647b5b3fcdcab1ee4fa3.
+Node3 boot binding replaces a temporary hostname literal before archival;
+no hostname is persisted in accepted code. Planned index/UUID checks remain.
+CPU readiness only. No LR comparison launched: access probe346117 still runs.
+
+Conditional protocol ASTRA_L2_LR_COMPARISON_PROTOCOL_2026-09-13.md records
+three paired learner seeds at unchanged exposure, optional LR-only treatment,
+PROMOTE/SHADOW controls, old/new metrics, excludedDEV interpretation, full
+failure accounting and budget. Activation depends on exact-train access
+diagnostic, not the misleading low aggregate loss. Historical LR1e-4 success
+was confounded with different material; no guaranteed repair is asserted.
