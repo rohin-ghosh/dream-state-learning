@@ -59,6 +59,16 @@ canary, and all outputs complete. OFF at least21/24 is ceiling-limited, not
 success. These are exploratory triage criteria, not a general learning gate.
 Report paired wins/losses and every panel even when the screen fails.
 
+Pre-fit advisory identifies a perfect-score shortcut on these fixed fixtures:
+the earlier observation is always opposite the selected final observation, so
+negating the earlier observation can answer without reading the final outcome.
+Report performance on conflicting-event fixtures, not identified selected-outcome
+use. Formatting-only improvement can also pass the strict screen; field-correct
+indicators are unavailable when schema fails, so do not silently repair outputs
+or count those indicators as proof of content improvement. Additional varied
+event relationships would be needed to test source binding separately. Preserve
+these limitations rather than changing this frozen material after outcomes.
+
 If promising, next compare independent learner seeds and additional fresh
 source families before any numbered scientific claim. If gains are syntax-only,
 report interface practice rather than learned discrimination. If null, inspect
