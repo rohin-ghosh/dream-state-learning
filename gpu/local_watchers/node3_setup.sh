@@ -19,9 +19,9 @@ log "node3_setup start (prefix $PFX; source node 2 = ${N2%%@*}@…)"
 $S3 'set -e; if ! command -v nvidia-smi >/dev/null || ! nvidia-smi -L >/dev/null 2>&1; then
   cd /tmp && [ -f cuda-keyring_1.1-1_all.deb ] || wget -q https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/cuda-keyring_1.1-1_all.deb
   sudo dpkg -i cuda-keyring_1.1-1_all.deb >/dev/null; sudo apt-get update -qq
-  sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq nvidia-driver-580-server nvidia-utils-580-server cuda-toolkit-13-0 rsync expect python3.12-dev python3-dev build-essential >/dev/null 2>&1 || sudo DEBIAN_FRONTEND=noninteractive apt-get install -y nvidia-driver-580-server nvidia-utils-580-server cuda-toolkit-13-0 rsync python3.12-dev python3-dev build-essential
+  sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq nvidia-driver-580-server nvidia-utils-580-server cuda-toolkit-13-0 rsync expect python3.12-dev python3-dev build-essential ninja-build >/dev/null 2>&1 || sudo DEBIAN_FRONTEND=noninteractive apt-get install -y nvidia-driver-580-server nvidia-utils-580-server cuda-toolkit-13-0 rsync python3.12-dev python3-dev build-essential ninja-build
   echo APT_DONE; nvidia-smi -L 2>/dev/null | wc -l
-else echo DRIVER_PRESENT; nvidia-smi -L | wc -l; fi; sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq python3.12-dev python3-dev build-essential >/dev/null 2>&1; ls /usr/include/python3.12/Python.h' 2>&1 | tail -3 | tee -a "$LOG"
+else echo DRIVER_PRESENT; nvidia-smi -L | wc -l; fi; sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq python3.12-dev python3-dev build-essential ninja-build >/dev/null 2>&1; ls /usr/include/python3.12/Python.h' 2>&1 | tail -3 | tee -a "$LOG"
 if ! $S3 'nvidia-smi -L 2>/dev/null | grep -q GPU'; then
   log "driver not active yet; rebooting node 3 and waiting"
   $S3 'sudo reboot' 2>/dev/null; sleep 90
