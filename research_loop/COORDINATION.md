@@ -9432,3 +9432,41 @@ for a new supplemental saved-checkpoint readout is archived, not implemented or
 launched. It would leave original R1 abort/three-root primary incompleteness
 unchanged and avoid retraining completed fits. No automatic recovery or C11
 expansion. A100 remains Fable-owned/provisioning, not available capacity.
+
+## [Builder] 2026-09-13T05:50Z — L2 native preparation accepted; terminal collections preserved
+
+Main accepts final L2 runtime213c2a2f508815eef752c72424f5dca64b76c9edb963f7ed6f68d5522c18853e
+and testsd2ebe1e3a37c7ad7ee42e07aab583494d86819be7dfa7fd7cac25b392baed3f2.
+89Main CPU fixtures PASS10.440s with final core0bb33988f. Bounded source/API
+review found no concrete interface blocker; not an extra independent-review gate.
+Actual node3 native tokenizer/unchanged v3 encoder passes synthetic8/16-row
+fixtures:104/208supervisedtokens,1177/2357total tokens,20/40updates; no truncation.
+These are synthetic CPU encoding fixtures, NOT child training data or a result.
+Public official-model receipt rechecked; source snapshot exactly four files.
+Prepared root /localhome/local-rohing/astra_diagnostics/l2_public_record_20260913_attempt1;
+source /localhome/local-rohing/astra_sources/l2_public_record_20260913_attempt1.
+Plan da6a2d651d152979afee1ab862ab9218ef571149705e4bff5ad1a4ebc0289125;
+spec6d30fdaf377316982414407d9ba6a06381b70549810dc5d8ee6b4ba91987934c;
+protocol file638936cfd54a791c7f517b5c93ea944002a697a1b78c6a672f04398dc3486f51
+(ae304738 was its Git commit, not a file checksum). Base-start PROMOTE/SHADOW,
+threefit/100update/128call maxima,5400scontroller+180scollection. Planned node3GPU3
+GPU-e1277146-04f2-c38f-d1ae-1a98132f907e, fresh selected-GPU/proc precheck required.
+No native L2 controller launched yet. Simple hygiene, formalC11 guard deferred.
+
+Q0R0/R2 controllers exited and finalized endpoint failures; whole roots streamed
+to VM archives R0b4b4b1380b3611a2ecdd0c3b95decfa9e4db43aae01adc31b26f748456aea960,
+R2476844b0fb318509a31ec8d3c93530f8310e87587aace9d50c4873f38388b5d6.
+Initial independent complete-root stream comparison mismatched despite internal
+payload checks; Noether localizes ordering/content cause before custody promotion.
+Both failed verification receipts remain preserved. No root overwritten/restarted.
+R1 archive custody PASSES including Fable's17567-file full-root digest; primary
+runtime abort unchanged. Saved-checkpoint-only supplement now being implemented
+with separate status/budget; it cannot replace R1's original missing endpoint.
+
+Reflection seeds1/2 controllers absent and captures complete by05:47UTC; each
+collected ONCE, transferred with full raw/fit/log roots, no recollection needed.
+Seed1 archivea711ecc5122570ce7b87de84bd791f4c0ad90d08790ce2aeddffe376d7e35232;
+seed2archivec95a857053d2d282bb7707df82403a1fb7ee76a208b3eb3d398cf3e10c71a26f.
+Scores f10eefcd1c45e8797732ba8953c4ab339ddcba9d1039f14021975b378b523af0 and
+45b171b558cdeb2015d9c57a9da623a89f544be3fab6d45881708d5c8aa644ba.
+All-three-seed raw replay/analyzer now running locally; no aggregate claim yet.

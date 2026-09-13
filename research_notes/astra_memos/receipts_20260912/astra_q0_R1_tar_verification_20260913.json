@@ -1,0 +1,122 @@
+{
+  "archive_bytes_streamed": 4010106880,
+  "archive_hash_complete": true,
+  "archive_path": "/data/home/rohing/dream-state/gpu_artifacts_local/q0_fulldose_20260913/R1_attempt1.tar",
+  "archive_sha256": "fa079949411b4e8da95ff3670d1f1bc1bea0594c6c999814cf4143168180ecab",
+  "archive_sha256_matches": true,
+  "command_argv": [
+    "/usr/bin/python3",
+    "-B",
+    "/tmp/astra_q0_tar_custody_20260913.py",
+    "--archive",
+    "/data/home/rohing/dream-state/gpu_artifacts_local/q0_fulldose_20260913/R1_attempt1.tar",
+    "--archive-sha256",
+    "fa079949411b4e8da95ff3670d1f1bc1bea0594c6c999814cf4143168180ecab",
+    "--seal",
+    "/tmp/astra_q0_fulldose_R1_seal_20260913.json",
+    "--expected-root-stream",
+    "006c21d38b763953e5a59ef5641d3fe7683e3e32f71a84bb879c7de667a9db87",
+    "--out",
+    "/tmp/astra_q0_R1_tar_verification_20260913.json"
+  ],
+  "counts": {
+    "directories": 41,
+    "gnu_longname_headers": 15245,
+    "pax_headers": 0,
+    "regular_files": 17567,
+    "regular_payload_bytes": 3985308850,
+    "sealed_files_verified": 17565
+  },
+  "custody_only": true,
+  "duration_seconds": 7.15437,
+  "errors": [],
+  "expected_archive_sha256": "fa079949411b4e8da95ff3670d1f1bc1bea0594c6c999814cf4143168180ecab",
+  "expected_full_root_stream_sha256": "006c21d38b763953e5a59ef5641d3fe7683e3e32f71a84bb879c7de667a9db87",
+  "expected_sealed_file_count": 17565,
+  "expected_standalone_seal_sha256": null,
+  "finalized_seal_binding_verified": true,
+  "finished_utc": "2026-09-13T05:38:53.326146+00:00",
+  "full_root_regular_files": 17567,
+  "full_root_stream_bytes": 2481506,
+  "full_root_stream_matches_expected": true,
+  "full_root_stream_sha256": "006c21d38b763953e5a59ef5641d3fe7683e3e32f71a84bb879c7de667a9db87",
+  "input_after": {
+    "archive": {
+      "st_ctime_ns": 1789277600514199991,
+      "st_dev": 36,
+      "st_ino": 4362037,
+      "st_mtime_ns": 1789277600514199991,
+      "st_size": 4010106880
+    },
+    "seal": {
+      "st_ctime_ns": 1789277602978230803,
+      "st_dev": 64513,
+      "st_ino": 159228,
+      "st_mtime_ns": 1789277602978230803,
+      "st_size": 2499056
+    }
+  },
+  "input_before": {
+    "archive": {
+      "st_ctime_ns": 1789277600514199991,
+      "st_dev": 36,
+      "st_ino": 4362037,
+      "st_mtime_ns": 1789277600514199991,
+      "st_size": 4010106880
+    },
+    "seal": {
+      "st_ctime_ns": 1789277602978230803,
+      "st_dev": 64513,
+      "st_ino": 159228,
+      "st_mtime_ns": 1789277602978230803,
+      "st_size": 2499056
+    }
+  },
+  "input_path_after": {
+    "archive": {
+      "st_ctime_ns": 1789277600514199991,
+      "st_dev": 36,
+      "st_ino": 4362037,
+      "st_mtime_ns": 1789277600514199991,
+      "st_size": 4010106880
+    },
+    "seal": {
+      "st_ctime_ns": 1789277602978230803,
+      "st_dev": 64513,
+      "st_ino": 159228,
+      "st_mtime_ns": 1789277602978230803,
+      "st_size": 2499056
+    }
+  },
+  "inputs_unchanged": true,
+  "limitations": [
+    "Custody only; no model/GPU execution, replay, scientific result verification, promotion or reclassification.",
+    "Full-root stream reproduces bytewise path sorting; independently supplied expected digest is required to bind the external observation. Observer identity/time is not independently re-established.",
+    "Uncompressed GNU/USTAR tar, GNU long path headers, and bounded local PAX path/time/owner metadata only. Links, sparse files, global PAX, size overrides and other special members rejected.",
+    "Streaming payload reads use at most 1 MiB; standalone seal is bounded to 64 MiB and manifests/path digests are held in memory. No real payload is extracted.",
+    "Input identity/size/mtime/ctime are checked before/after; atime may change due to ordinary filesystem reads. Directory metadata and file modes are not bound by the root content stream."
+  ],
+  "missing_sealed_files": [],
+  "observed_payload_mapping_sha256": "da65d09b3cefa4e5774ef1960d2bb763bfedd4e5969830a09e95c36d34b2c9f6",
+  "promotion_or_reclassification": false,
+  "root_stream_semantics": "ASCII byte-sorted relative paths; SHA256 of concatenated '<payload_sha256>  ./<relative_path>\\n'; all regular files, including SEAL/FINALIZED/FINALIZATION_ABORT; backslashes, controls and non-ASCII names rejected",
+  "schema": "astra_q0_tar_custody_v1",
+  "scientific_replay_performed": false,
+  "seal_exact_bytes_match": true,
+  "standalone_seal_path": "/tmp/astra_q0_fulldose_R1_seal_20260913.json",
+  "standalone_seal_sha256": "d3a7fa5b18b74821955d06c5e4b28c88fd92586479fbd6d284e6c2ba8885ab87",
+  "started_utc": "2026-09-13T05:38:46.171860+00:00",
+  "status": "PASS_CUSTODY",
+  "streamed_bytes_sha256": "fa079949411b4e8da95ff3670d1f1bc1bea0594c6c999814cf4143168180ecab",
+  "terminal_metadata": {
+    "FINALIZED.json": {
+      "bytes": 232,
+      "sha256": "ec1c4212ff93b5bfb4b20963a83dfc61c9ffa731944968b6f77568762d5e3eb0"
+    },
+    "SEAL.json": {
+      "bytes": 2499056,
+      "sha256": "d3a7fa5b18b74821955d06c5e4b28c88fd92586479fbd6d284e6c2ba8885ab87"
+    }
+  },
+  "top_directory": "q0_fulldose_R1_20260913_attempt1"
+}

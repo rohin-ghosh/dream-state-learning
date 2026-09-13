@@ -1,0 +1,239 @@
+{
+  "archive_transfer_performed": false,
+  "custody_only": true,
+  "cwd": "/data/home/rohing/dream-state",
+  "editstop_pins_unchanged": true,
+  "limitations": [
+    "The exact find/sort/sha256sum pipeline runs in each terminal root and includes every regular file, including SEAL/FINALIZED and any FINALIZATION_ABORT.",
+    "Controller absence and regular FINALIZED presence checked before hashing; controller absence, marker byte hashes, and full entry stat fingerprints rechecked after hashing.",
+    "Read-atime effects excluded from unchanged-stat checks. This is not an atomic snapshot or independent model/scientific verification.",
+    "No tar creation, transfer, extraction, launch, kill, GPU query, replay, outcome scoring, Git operation, or repo edit. Main supplies archive pins and handles transfers.",
+    "Receipt captures the node environment locale without overriding it. ASCII printable, non-backslash filenames were checked to avoid sha256sum quoting ambiguity. Later archive verification must match these exact whole-root digests."
+  ],
+  "local_finished_utc": "2026-09-13T05:42:32.733378+00:00",
+  "local_started_utc": "2026-09-13T05:42:18.510918+00:00",
+  "observation": {
+    "hash_pipeline": "find . -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum",
+    "locale_environment": {
+      "LANG": "en_US.UTF-8",
+      "LC_ALL": null,
+      "LC_COLLATE": null,
+      "LC_CTYPE": null
+    },
+    "pipeline_shell": [
+      "bash",
+      "-o",
+      "pipefail",
+      "-c"
+    ],
+    "remote_finished_utc": "2026-09-13T05:42:32.720183+00:00",
+    "remote_started_utc": "2026-09-13T05:42:19.111048+00:00",
+    "roots": [
+      {
+        "complete_root_stream_sha256": "3448cc7d9c4c12fb04c9ce2b0be837b3c67ce3f217ce8098e0730aaf4ac322bd",
+        "controller_absence_and_finalized_checked_utc": "2026-09-13T05:42:19.116089+00:00",
+        "controller_after": {
+          "pid": 4012737,
+          "present": false
+        },
+        "controller_before": {
+          "pid": 4012737,
+          "present": false
+        },
+        "custody_only": true,
+        "duration_seconds": 6.95022,
+        "finished_utc": "2026-09-13T05:42:26.061292+00:00",
+        "hash_duration_seconds": 4.595574,
+        "hash_finished_utc": "2026-09-13T05:42:24.889771+00:00",
+        "hash_started_utc": "2026-09-13T05:42:20.294138+00:00",
+        "inventory_after": {
+          "entries_including_directories": 18194,
+          "nonregular_nondirectory_paths": [],
+          "regular_bytes": 3986007540,
+          "regular_files": 18153,
+          "stat_inventory_sha256": "3cda63ed2da16003902d2cfe0037219a0a1288e44f603ddb465d984f2f4c320b",
+          "unsafe_checksum_pathnames": []
+        },
+        "inventory_before": {
+          "entries_including_directories": 18194,
+          "nonregular_nondirectory_paths": [],
+          "regular_bytes": 3986007540,
+          "regular_files": 18153,
+          "stat_inventory_sha256": "3cda63ed2da16003902d2cfe0037219a0a1288e44f603ddb465d984f2f4c320b",
+          "unsafe_checksum_pathnames": []
+        },
+        "markers_after": {
+          "FAILED.json": {
+            "present": false
+          },
+          "FINALIZATION_ABORT.json": {
+            "present": false
+          },
+          "FINALIZED.json": {
+            "bytes": 233,
+            "present": true,
+            "regular": true,
+            "sha256": "5cecfd81ef81b5d72179c11ff681356ae95b19dd24931fb22b96c83fdf9bcdf8"
+          },
+          "RESOURCE.json": {
+            "bytes": 668,
+            "present": true,
+            "regular": true,
+            "sha256": "4a61ab63cf692f59e0aeb03af5f5af384f54076ea9287b391e1bf31816f354c7"
+          },
+          "SEAL.json": {
+            "bytes": 2571715,
+            "present": true,
+            "regular": true,
+            "sha256": "cbd1bbdd9767bc296508714063a45ed6a14b9ef5b6d5b19185066bf119128f4a"
+          }
+        },
+        "markers_before": {
+          "FAILED.json": {
+            "present": false
+          },
+          "FINALIZATION_ABORT.json": {
+            "present": false
+          },
+          "FINALIZED.json": {
+            "bytes": 233,
+            "present": true,
+            "regular": true,
+            "sha256": "5cecfd81ef81b5d72179c11ff681356ae95b19dd24931fb22b96c83fdf9bcdf8"
+          },
+          "RESOURCE.json": {
+            "bytes": 668,
+            "present": true,
+            "regular": true,
+            "sha256": "4a61ab63cf692f59e0aeb03af5f5af384f54076ea9287b391e1bf31816f354c7"
+          },
+          "SEAL.json": {
+            "bytes": 2571715,
+            "present": true,
+            "regular": true,
+            "sha256": "cbd1bbdd9767bc296508714063a45ed6a14b9ef5b6d5b19185066bf119128f4a"
+          }
+        },
+        "pipeline_exit_code": 0,
+        "pipeline_stderr": "",
+        "pipeline_stdout": "3448cc7d9c4c12fb04c9ce2b0be837b3c67ce3f217ce8098e0730aaf4ac322bd  -\n",
+        "regular_files": 18153,
+        "replica": "R0",
+        "root": "/localhome/local-rohing/astra_diagnostics/q0_fulldose_R0_20260913_attempt1",
+        "started_utc": "2026-09-13T05:42:19.111124+00:00",
+        "stat_inventory_unchanged": true,
+        "status": "POST_TERMINAL_FULL_ROOT_CUSTODY_RECORDED",
+        "terminal_marker_bytes_unchanged": true
+      },
+      {
+        "complete_root_stream_sha256": "6bf4f44a850a10ec94fd8d429d268b568b66e33ac842ea5f885e746b89159342",
+        "controller_absence_and_finalized_checked_utc": "2026-09-13T05:42:26.064899+00:00",
+        "controller_after": {
+          "pid": 4013072,
+          "present": false
+        },
+        "controller_before": {
+          "pid": 4013072,
+          "present": false
+        },
+        "custody_only": true,
+        "duration_seconds": 6.658841,
+        "finished_utc": "2026-09-13T05:42:32.720161+00:00",
+        "hash_duration_seconds": 4.694422,
+        "hash_finished_utc": "2026-09-13T05:42:31.806559+00:00",
+        "hash_started_utc": "2026-09-13T05:42:27.112108+00:00",
+        "inventory_after": {
+          "entries_including_directories": 18194,
+          "nonregular_nondirectory_paths": [],
+          "regular_bytes": 3986007890,
+          "regular_files": 18153,
+          "stat_inventory_sha256": "85035a03c394ab219e5c85fadecfaf8db0409d83ab7e4a6bca0f06e7ed74361f",
+          "unsafe_checksum_pathnames": []
+        },
+        "inventory_before": {
+          "entries_including_directories": 18194,
+          "nonregular_nondirectory_paths": [],
+          "regular_bytes": 3986007890,
+          "regular_files": 18153,
+          "stat_inventory_sha256": "85035a03c394ab219e5c85fadecfaf8db0409d83ab7e4a6bca0f06e7ed74361f",
+          "unsafe_checksum_pathnames": []
+        },
+        "markers_after": {
+          "FAILED.json": {
+            "present": false
+          },
+          "FINALIZATION_ABORT.json": {
+            "present": false
+          },
+          "FINALIZED.json": {
+            "bytes": 233,
+            "present": true,
+            "regular": true,
+            "sha256": "c2882a24e36ff4826e85b9997acec9b6bdf68753eef7e55cb75a178bf901ac78"
+          },
+          "RESOURCE.json": {
+            "bytes": 669,
+            "present": true,
+            "regular": true,
+            "sha256": "fd681a7fc243f64c6fe32ddd63d21f40b135350a3c51befadaf911a96b277c43"
+          },
+          "SEAL.json": {
+            "bytes": 2571715,
+            "present": true,
+            "regular": true,
+            "sha256": "73eff0eafa7dd4f136db2a29e706e3657aeb85ee55b51eab61981651acfb02a6"
+          }
+        },
+        "markers_before": {
+          "FAILED.json": {
+            "present": false
+          },
+          "FINALIZATION_ABORT.json": {
+            "present": false
+          },
+          "FINALIZED.json": {
+            "bytes": 233,
+            "present": true,
+            "regular": true,
+            "sha256": "c2882a24e36ff4826e85b9997acec9b6bdf68753eef7e55cb75a178bf901ac78"
+          },
+          "RESOURCE.json": {
+            "bytes": 669,
+            "present": true,
+            "regular": true,
+            "sha256": "fd681a7fc243f64c6fe32ddd63d21f40b135350a3c51befadaf911a96b277c43"
+          },
+          "SEAL.json": {
+            "bytes": 2571715,
+            "present": true,
+            "regular": true,
+            "sha256": "73eff0eafa7dd4f136db2a29e706e3657aeb85ee55b51eab61981651acfb02a6"
+          }
+        },
+        "pipeline_exit_code": 0,
+        "pipeline_stderr": "",
+        "pipeline_stdout": "6bf4f44a850a10ec94fd8d429d268b568b66e33ac842ea5f885e746b89159342  -\n",
+        "regular_files": 18153,
+        "replica": "R2",
+        "root": "/localhome/local-rohing/astra_diagnostics/q0_fulldose_R2_20260913_attempt1",
+        "started_utc": "2026-09-13T05:42:26.061345+00:00",
+        "stat_inventory_unchanged": true,
+        "status": "POST_TERMINAL_FULL_ROOT_CUSTODY_RECORDED",
+        "terminal_marker_bytes_unchanged": true
+      }
+    ]
+  },
+  "remote_readonly_script": "import datetime\nimport hashlib\nimport json\nimport os\nfrom pathlib import Path\nimport re\nimport stat\nimport subprocess\nimport time\n\ncommand = \"find . -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum\"\ntargets = [(\"R0\", 4012737), (\"R2\", 4013072)]\n\ndef now():\n    return datetime.datetime.now(datetime.timezone.utc).isoformat()\n\ndef process(pid):\n    path = Path('/proc') / str(pid)\n    try:\n        fields = (path / 'stat').read_text().rsplit(')', 1)[1].split()\n        return {'pid': pid, 'present': True, 'state': fields[0], 'start_ticks': int(fields[19]), 'argv': [part.decode('utf-8', 'replace') for part in (path / 'cmdline').read_bytes().split(b'\\0') if part]}\n    except FileNotFoundError:\n        return {'pid': pid, 'present': False}\n\ndef inventory(root):\n    records = []\n    regular_count = 0\n    regular_bytes = 0\n    unsupported = []\n    unsafe_names = []\n    def failed(error):\n        raise error\n    for base, directories, files in os.walk(root, topdown=True, followlinks=False, onerror=failed):\n        for name in directories + files:\n            path = Path(base) / name\n            relative = str(path.relative_to(root))\n            info = path.lstat()\n            if not all(32 <= ord(character) <= 126 for character in relative) or '\\\\' in relative:\n                unsafe_names.append(relative)\n            records.append([relative, info.st_dev, info.st_ino, info.st_mode, info.st_size, info.st_mtime_ns, info.st_ctime_ns])\n            if stat.S_ISREG(info.st_mode):\n                regular_count += 1\n                regular_bytes += info.st_size\n            elif not stat.S_ISDIR(info.st_mode):\n                unsupported.append(relative)\n    records.sort(key=lambda entry: entry[0].encode('utf-8'))\n    fingerprint = hashlib.sha256(json.dumps(records, sort_keys=True, separators=(',', ':'), ensure_ascii=True).encode()).hexdigest()\n    return {'stat_inventory_sha256': fingerprint, 'entries_including_directories': len(records), 'regular_files': regular_count, 'regular_bytes': regular_bytes, 'nonregular_nondirectory_paths': unsupported, 'unsafe_checksum_pathnames': unsafe_names}\n\ndef markers(root):\n    result = {}\n    for name in ('FAILED.json', 'SEAL.json', 'FINALIZED.json', 'RESOURCE.json', 'FINALIZATION_ABORT.json'):\n        path = root / name\n        try:\n            details = path.lstat()\n            entry = {'present': True, 'regular': stat.S_ISREG(details.st_mode), 'bytes': details.st_size}\n            if entry['regular']:\n                digest = hashlib.sha256()\n                with path.open('rb') as stream:\n                    for chunk in iter(lambda: stream.read(1024 * 1024), b''):\n                        digest.update(chunk)\n                entry['sha256'] = digest.hexdigest()\n            result[name] = entry\n        except FileNotFoundError:\n            result[name] = {'present': False}\n    return result\n\nresult = {'remote_started_utc': now(), 'hash_pipeline': command, 'pipeline_shell': ['bash', '-o', 'pipefail', '-c'], 'locale_environment': {key: os.environ.get(key) for key in ('LANG', 'LC_ALL', 'LC_COLLATE', 'LC_CTYPE')}, 'roots': []}\nfor replica, pid in targets:\n    root = Path('/localhome/local-rohing/astra_diagnostics') / ('q0_fulldose_' + replica + '_20260913_attempt1')\n    beginning = time.perf_counter()\n    observed = {'replica': replica, 'root': str(root), 'started_utc': now(), 'status': 'NOT_VERIFIED', 'custody_only': True}\n    try:\n        observed['controller_before'] = process(pid)\n        if observed['controller_before']['present']:\n            raise ValueError('Expected terminal controller PID is still present; no hash pipeline run')\n        if not root.is_dir() or root.is_symlink():\n            raise ValueError('Expected nonsymlink root directory missing')\n        observed['markers_before'] = markers(root)\n        if not observed['markers_before']['FINALIZED.json'].get('regular'):\n            raise ValueError('Regular FINALIZED.json is required before hashing')\n        observed['controller_absence_and_finalized_checked_utc'] = now()\n        observed['inventory_before'] = inventory(root)\n        if observed['inventory_before']['unsafe_checksum_pathnames'] or observed['inventory_before']['nonregular_nondirectory_paths']:\n            raise ValueError('Unsupported file type or checksum pathname; no hash pipeline run')\n        observed['hash_started_utc'] = now()\n        timer = time.perf_counter()\n        response = subprocess.run(['bash', '-o', 'pipefail', '-c', command], cwd=root, capture_output=True, text=True, check=False)\n        observed['hash_duration_seconds'] = round(time.perf_counter() - timer, 6)\n        observed['hash_finished_utc'] = now()\n        observed['pipeline_exit_code'] = response.returncode\n        observed['pipeline_stdout'] = response.stdout\n        observed['pipeline_stderr'] = response.stderr\n        match = re.fullmatch(r'([0-9a-f]{64})  -\\n', response.stdout)\n        if response.returncode != 0 or match is None or response.stderr:\n            raise ValueError('Checksum pipeline failed or returned unexpected output')\n        observed['complete_root_stream_sha256'] = match.group(1)\n        observed['inventory_after'] = inventory(root)\n        observed['markers_after'] = markers(root)\n        observed['controller_after'] = process(pid)\n        observed['stat_inventory_unchanged'] = observed['inventory_before'] == observed['inventory_after']\n        observed['terminal_marker_bytes_unchanged'] = observed['markers_before'] == observed['markers_after']\n        if not observed['stat_inventory_unchanged'] or not observed['terminal_marker_bytes_unchanged'] or observed['controller_after']['present']:\n            raise ValueError('Post-terminal root/controller state changed during custody hash')\n        observed['regular_files'] = observed['inventory_after']['regular_files']\n        observed['status'] = 'POST_TERMINAL_FULL_ROOT_CUSTODY_RECORDED'\n    except (OSError, ValueError) as error:\n        observed['error'] = {'type': type(error).__name__, 'message': str(error)}\n    observed['finished_utc'] = now()\n    observed['duration_seconds'] = round(time.perf_counter() - beginning, 6)\n    result['roots'].append(observed)\nresult['remote_finished_utc'] = now()\nprint(json.dumps(result, sort_keys=True, allow_nan=False))\n",
+  "remote_write_or_mutation_performed": false,
+  "schema": "astra_q0_external_terminal_custody_v1",
+  "scientific_replay_or_reclassification": false,
+  "ssh_command": [
+    "bash",
+    "gpu/ovx_ssh.sh",
+    "PYTHONDONTWRITEBYTECODE=1 python3 -B -"
+  ],
+  "ssh_duration_seconds": 14.222461,
+  "ssh_exit_code": 0,
+  "ssh_stderr": "",
+  "status": "BOTH_ROOTS_CUSTODY_RECORDED"
+}
