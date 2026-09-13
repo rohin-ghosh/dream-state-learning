@@ -1,6 +1,33 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
-**September 12, 2026 — terminal SEQ116–117 / C60–C61.** Both new FOUR
+**SEQ118 / C62 — terminal sequential-memory result; run September 12, 2026
+UTC, despite September13-named artifacts.** Returned raw-review PASS covers640
+calls with no discrepancies; the additive custody PASS verifies the newly supplied
+external validation without changing science. R2 has M0/B1/B2 each16/16 on both
+dev/exact surfaces. NEW_ONLY2 has M0 dev9/16,exact8/16; B1 4/16 on both; B2 16/16
+on both. Both cycle1 arms had acquired B1 at16/16 on each surface before its
+NEW_ONLY cycle2 loss. Arithmetic habit/correct ACT remain32/32 at every state.
+One seed, two authored-bank cycles, practical fixed-budget allocation: equal
+updates/tokens/padding do NOT match current-new dose (R20 versus NEW_ONLY40
+presentations/fact), nor make cycle2 a common-parent comparison. No general G3,
+parenting, H1/H2, latent-erasure or mechanism-freeze claim.
+
+Launch23:35:40.672863 to observed vacancy23:57:48.133511 on September12 UTC is
+1327.460648s (22.124344 A40-min), NOT time through complete packaging/validation.
+Worker/controller clocks nest; the external receipt has no collection-completion
+timestamp. At the supplied planning cut process FIT-seed0/1 replications are
+prepared but **UNLAUNCHED**. Rohin message23's birth-first priority is adopted;
+PROSPECT/repaired REVISE plus truthful locality corpus/runner work is implemented/
+in progress in that snapshot only. No birth GPU result or live birth status is
+inferred. Origin `UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. Collaborator **UNSENT**.
+
+Sources: `research_notes/astra_memos/ASTRA_SEQUENTIAL_MEMORY_2026-09-13.md`,
+returned raw review and custody addendum; C62 in the claim map binds exact copies.
+Main's updated memo now records the returned PASS, superseding its earlier
+pending-review wording. Canonical
+abstract, author intent and prior tables remain unchanged; no new thesis framing.
+
+**Historical September 12, 2026 — terminal SEQ116–117 / C60–C61.** Both new FOUR
 memory branches pass the fixed thresholds; with inherited SEQ113 seed0, all
 three FOUR seeds qualify. SINGLE outcomes are heterogeneous: seed0 ties,
 seed1 slightly favors SINGLE, seed2 SINGLE loses numeric correctness despite
@@ -17,9 +44,9 @@ fit seed/four shared development tasks, unequal target exposure, no general
 conditional-prediction improvement, internalization or parenting efficacy.
 Returned raw reviews PASS with non-blinding/implementation-author limits.
 No G3/P1/G5/H1/H2, adult-learning or mechanism-freeze qualification; origin
-`UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. At this supplied cut the native
-sequential comparison is NOT LAUNCHED (prelaunch missing-argument fix), and
-process-seed replication is NOT LAUNCHED. Neither supplies outcomes.
+`UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. At that historical cut sequential
+execution was not launched; C62 now reports its result. Prepared process-seed
+replications remain UNLAUNCHED at the newer supplied planning cut.
 Collaborator **UNSENT**.
 
 Sources: `research_notes/astra_memos/ASTRA_INTERLEAVED_REPLICATIONS_2026-09-12.md`
@@ -2321,8 +2348,8 @@ First-full-release observations1210.147/1220.484s are slightly earlier snapshots
 worker/controller/collection intervals nest/overlap, never sum across clocks.
 Raw usage19596 input/2408 output tokens,28672 output allowance, not usage.
 No watchdog signals/overruns; prior root0/parent costs excluded. The sequential
-native proposal starts consistently from seed0 FOUR, not per-seed winners; it is
-NOT LAUNCHED at the supplied cut (prelaunch missing-argument fix), no outcomes.
+native proposal starts consistently from seed0 FOUR, not per-seed winners; it was
+unlaunched at the historical C61 cut. C62 now supplies the terminal result.
 
 Sources and exact bindings:
 - Canonical `research_notes/astra_memos/ASTRA_INTERLEAVED_REPLICATIONS_2026-09-12.md`, SHA256 `e441de60998db2778b5e961d4d85eba57b135e3c22c1a9cd229e882c35535cda`.
@@ -2392,10 +2419,123 @@ controller1078.610350s; collection228.588219s overlaps the outer interval.
 Usage33546 input/2120 output tokens,27200 actual-call allowance. Do not sum
 nested clocks or call readout cost adult-cycle throughput. No new signal,
 relaunch or outcome-dependent replacement. Process-seed replication remains
-NOT LAUNCHED at the supplied cut; no results or replacement criterion implied.
+prepared but UNLAUNCHED at the newer supplied planning cut; no results or
+replacement criterion implied.
 
 Sources and exact bindings:
 - Canonical `research_notes/astra_memos/ASTRA_PROCESS_READOUT_V2_2026-09-12.md`, SHA256 `55ed0678423dd24c495d75709181cf6237910c037323fd88f74e0fa2eb1df5ae`.
 - Supplied `/tmp/astra_process_readout_independent_review_20260912.md` and `.json` match archived `research_notes/astra_memos/receipts_20260912/astra_process_readout_independent_review_20260912.md` and `.json` byte-for-byte. SHA256 MD `9116c8e740501aab4f8a7183e6bc9122eda5b6cdc6dafb59b39363a09af58f8a`; JSON `60f998fdbcb8dfdee0f77e92c93502a47481422f71e45ffd191ef812bce49282`.
 - Capsule `research_notes/astra_memos/receipts_20260912/astra_process_readout_terminal_20260912.tgz`, SHA256 `bbd61be6bb2cb88b36779fc9d1f58eaa5b60570812f8a3221f00e35b6eeab037`; adjacent `astra_process_readout_terminal_validation_20260912.json` binds collection.
 - Source `4c3064c1c3eef068951e9c3b2ca46630754564e7`; readout plan `8b0f23858427d57b579688bcc06dbae4768b9bbbc2198660d1f1dbe31f092323`; prior write plan `67f2b89a769dd1f21e2ae3f048aa2d3743a5761f0574dcca3f47e1a8c51b0f44`; P/A weight receipt identities `c7976a0c035e57ad193790c895a8b6203deb1cba6d2711388c33584c55959dbb` / `7f859e21530bef1ea000ae266a124ad3a0f06ebcdd3784c319d8f1ecff2637e1`.
+
+
+## C62 — Two-cycle sequential memory, practical fixed-budget contrast (SEQ118)
+
+**Returned640-call raw review PASS, zero discrepancies; additive custody PASS,
+science unchanged.** Main's updated canonical memo now records raw-review PASS
+and per-fact auditing, superseding its earlier pending wording. S0 is a newly captured already-trained
+seed0 FOUR400 adapter, NOT OFF. R/NEW_ONLY share S0 then continue their own
+preceding weights; fresh seed0 optimizer each fit,320 updates per cycle,
+400→720→1040 cumulative. No per-seed winner selection or new confirmation data.
+
+Each memory cell lists dev / exact correct counts, each out of16; not two independent fact sets.
+
+| SEQ118 state | Cumulative updates | M0 dev/exact | B1 dev/exact | B2 dev/exact | Habit /32 | ACT correct /32 |
+|---|---:|---:|---:|---:|---:|---:|
+| S0 | 400 | 16 /16 | 5 /5 | 7 /6 | 32 | 32 |
+| R1 | 720 | 16 /16 | 16 /16 | 5 /6 | 32 | 32 |
+| NEW_ONLY1 | 720 | 10 /8 | 16 /16 | 5 /4 | 32 | 32 |
+| R2 | 1040 | 16 /16 | 16 /16 | 16 /16 | 32 | 32 |
+| NEW_ONLY2 | 1040 | 9 /8 | 4 /4 | 16 /16 | 32 | 32 |
+
+M0 is the primary old-content contrast; B1 must remain separately identified.
+Both cycle1 arms acquire B1 from5/16 to16/16 on both surfaces. NEW_ONLY2 then
+loses12/16 B1 facts on each, not merely failing to acquire them initially. B2
+reaches16/16 in both arms from each arm's own intermediate baseline. S0's B1/B2
+and cycle1 B2 scores are untrained-bank baselines, not acquired competence.
+R minus NEW_ONLY M0 dev/exact margins are6/8 after cycle1 and7/8 after cycle2;
+B1 cycle2 margins12/12, B2 tie. NEW_ONLY M0 exact remains8 but four recoveries
+and four new failures change its case set; dev has two recoveries/three new
+failures. These are observed answer changes, not latent-erasure evidence.
+
+Five128-call panels comprise640 raw pairs:480 memory responses and160 arithmetic
+responses. All memory answers are valid colors; all arithmetic PREDICT-before-ACT
+ordering and both numbers are correct,32/32 per state, casewise identical raw
+arithmetic text across states. All finish normally, zero cap hits; no missing
+cases/score discrepancies/selective omissions. Two surfaces repeat the same
+facts, not independent fact samples or640 independent trials. B1 devices100–115
+and B2 devices200–215 are balanced authored mappings novel against bound sources,
+not authenticated absence from pretraining.
+
+| Fit | Immediate parent | Memory presentations per fact | Arithmetic presentations/source | Updates |
+|---|---|---|---:|---:|
+| R1 | S0 | M0 20; B1 20 | 40 | 320 |
+| NEW_ONLY1 | S0 | B1 40 | 40 | 320 |
+| R2 | R1 | M0 10; B1 10; B2 20 | 40 | 320 |
+| NEW_ONLY2 | NEW_ONLY1 | B2 40 | 40 | 320 |
+
+Every fit uses the single original question surface, not FOUR training phrasings.
+Rank8/alpha16/dropout0.05/LR3e-4/AdamW, one carried adapter and frozen base;
+128 rows×10 epochs=1280 presentations, batch4 with two distinct memory/two
+arithmetic sources. No packing/truncation/nonfinite batches or target drops.
+Per-fit native accounting:66160 input,56160 context,10000 targets (1280 memory,
+8720 arithmetic),76960 padded slots. Paired bytes/IDs/prefix lengths/per-update
+target totals and padding actually match; aggregate memory target mass12.8%.
+Four-fit total1280 new updates,264640 inputs,40000 targets,307840 padded slots.
+Equal updates/tokens/padding do NOT equalize current-new dose:20/fact R versus40
+NEW_ONLY. This is a practical fixed-budget allocation contrast, not replay
+causally isolated from new-dose/interference/batch-composition effects. R2 versus
+NEW_ONLY2 has different immediate parents and acquisition histories, not a
+common-parent cycle2 intervention. One seed/two cycles cannot establish general
+stability, broad transfer, learned extraction, parenting, H1/H2, G3 or freeze.
+
+Raw reviewer authored older replay/helper/collector/audit code, reused standalone
+scoring functions rather than the current reducer, and saw saved S0 counts during
+schema inspection; independent reduction, not fresh-author/blinded review. All1421
+safe regular metadata members and source/material/schedule/fit/capture/release
+joins pass. Four initialization inventories match their respective immediate
+parents; fresh optimizers report zero initial entries, each child392/392 tensor
+hashes changes. Native source/base/weights/isolation claims remain receipt-backed;
+excluded weight bytes are not locally rehashed or loaded. Model origin remains
+`UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred.
+
+### Custody supplement and exact event times
+
+Returned additive custody PASS matches all1421 external member entries, plan,
+source, five128-call panel reports, and unchanged capsule to the original review.
+It supersedes ONLY the earlier adjacent-external-validation availability limit;
+science/counts/contrasts remain unchanged. Retained capture-stage receipts marked
+CAPTURED_NOT_REDUCED are not missing final reductions: external reports separately
+bind final reduction hashes. The external receipt is driver-author custody
+validation, not an independent raw review or native-origin certificate.
+
+Despite September13-named memo/capsule/review artifacts, execution events are
+**September12,2026 UTC**: launch23:35:40.672863, terminal23:57:16.712009,
+release XML23:57:44, derived observed vacancy23:57:48.133511. Launch-to-vacancy
+1327.4606475830078s =22.1243441264 A40-min, reported1327.460648s/22.124344min.
+Workers1181.033689s/controller1295.975722s/generation152.636696s nest; do not add.
+Raw input27295/output3160,40960 output ceiling. Packaging follows vacancy, so this
+is NOT complete collection/packaging/validation wall time. The newly available
+external receipt contains no explicit collection-completion timestamp/duration;
+that timing limitation remains after the addendum. No model/tokenizer/reducer
+rerun or budget extension; no native execution by this manuscript integration.
+
+### Supplied planning cut, not live birth status
+
+Rohin message23's birth-first priority is adopted. Prepared fresh-base process
+FIT-seed0/1 replications remain **UNLAUNCHED**, not failed or completed; no dose
+change or process-criterion rescue. PROSPECT/repaired REVISE EXPECTED-factor and
+truthful locality corpus/runner work is implemented/in progress in the supplied
+planning snapshot only; no birth GPU result or live birth status is inferred.
+Prior failed locality evidence, historical tables and thesis/author intent remain
+unchanged. Birth is not evidence parenting works; no new framing/contribution,
+launch authorization or mechanism promotion. Collaborator **UNSENT**.
+
+Sources and exact bindings:
+- Canonical `research_notes/astra_memos/ASTRA_SEQUENTIAL_MEMORY_2026-09-13.md`, SHA256 `396e825a6e7cf5dd3164e23a793a9644e733524b71c9de59e5d7c485fd9555a1`; Main updated its review/custody status during integration, without changing science. This manuscript worker did not edit the source memo.
+- Original raw review `/tmp/astra_sequential_memory_independent_review_20260913.md`, SHA256 `7717ce3eec75634e7ca9eba97bc601c664e30f1708f7b389f5baae4e7bc77434`; `/tmp/astra_sequential_memory_independent_review_20260913.json`, SHA256 `98edbbfdbe6374e56c49ed8069e91565e79598d811223dbfcbef6d3d1ee4ad63`. Original artifacts are preserved, no analyzer rerun.
+- Additive custody supplement `/tmp/astra_sequential_memory_independent_review_20260913_custody_addendum.md`, SHA256 `1eb32dc99383a63449a7debc984293aa6aeb0c4aef6655b162f58b22747277b3`; no scientific changes.
+- The supplied raw review/JSON/addendum match archived same-named files in `research_notes/astra_memos/receipts_20260912/` byte-for-byte; the original unavailable-external-validation wording remains preserved in those original artifacts, with the supplement alongside it.
+- Capsule `research_notes/astra_memos/receipts_20260912/astra_sequential_memory_seed0_pair_attempt2_terminal_20260913T0000Z.tgz`, SHA256 `c63437c47918603d5b784544bcae85e7febc93ec7516677eaa9a3608b78b2fb0`; its `.tgz.validation.json` is SHA256 `10cfd0e1af02a552fe8078223b4d49905914e08e5351d4363d67e99161c737c4`, matching the supplied addendum's external receipt.
+- Source `5a1f300fed4b7f1ef54524869c2bf11509e965ca`; plan `9e53c716373c2458586ff7b6a72d0fe5822d41d5a0129057e2a4e805acab8b49`; driver `29d70e46f0c65817f65f52f6ed310fcfaa91cda64928f9bdfc54b70834a0c232`; root `astra_sequential_memory_20260912_attempt2/seed0_pair_attempt2`. S0 parent plan `4cad487a53d0e992b896eb4324ff2de1adb24ccc176856de7043d1132c0ee388`.
+- Prepared, UNLAUNCHED process fit-seed0/1 plan pins `ff6bbf2834cc300e9e5cb6ec1f36975bc4d7dd1ae29c1bb4936ce887d7fdb43d` / `a761747b53b43cd62ab664884419838c9f7b60b8df9ee0b7cd51b57230a428d9` are reported by Main's memo, not evidence of execution.

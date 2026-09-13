@@ -1,8 +1,37 @@
 # DRAFT ONLY — unsent collaborator update
 
-**UNSENT — SEQ116–117 update.**
+**UNSENT — SEQ118 update.**
 
-**September 12, 2026 — terminal SEQ116–117 / C60–C61.** Both new FOUR
+**SEQ118 / C62 — terminal sequential-memory result; run September 12, 2026
+UTC, despite September13-named artifacts.** Returned raw-review PASS covers640
+calls with no discrepancies; the additive custody PASS verifies the newly supplied
+external validation without changing science. R2 has M0/B1/B2 each16/16 on both
+dev/exact surfaces. NEW_ONLY2 has M0 dev9/16,exact8/16; B1 4/16 on both; B2 16/16
+on both. Both cycle1 arms had acquired B1 at16/16 on each surface before its
+NEW_ONLY cycle2 loss. Arithmetic habit/correct ACT remain32/32 at every state.
+One seed, two authored-bank cycles, practical fixed-budget allocation: equal
+updates/tokens/padding do NOT match current-new dose (R20 versus NEW_ONLY40
+presentations/fact), nor make cycle2 a common-parent comparison. No general G3,
+parenting, H1/H2, latent-erasure or mechanism-freeze claim.
+
+Launch23:35:40.672863 to observed vacancy23:57:48.133511 on September12 UTC is
+1327.460648s (22.124344 A40-min), NOT time through complete packaging/validation.
+Worker/controller clocks nest; the external receipt has no collection-completion
+timestamp. At the supplied planning cut process FIT-seed0/1 replications are
+prepared but **UNLAUNCHED**. Rohin message23's birth-first priority is adopted;
+PROSPECT/repaired REVISE plus truthful locality corpus/runner work is implemented/
+in progress in that snapshot only. No birth GPU result or live birth status is
+inferred. Origin `UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. Collaborator **UNSENT**.
+
+Sources: `research_notes/astra_memos/ASTRA_SEQUENTIAL_MEMORY_2026-09-13.md`,
+returned raw review and custody addendum; C62 in the claim map binds exact copies.
+Main's updated memo now records the returned PASS, superseding its earlier
+pending-review wording. Canonical
+abstract, author intent and prior tables remain unchanged; no new thesis framing.
+
+**Historical UNSENT — SEQ116–117 update.**
+
+**Historical September 12, 2026 — terminal SEQ116–117 / C60–C61.** Both new FOUR
 memory branches pass the fixed thresholds; with inherited SEQ113 seed0, all
 three FOUR seeds qualify. SINGLE outcomes are heterogeneous: seed0 ties,
 seed1 slightly favors SINGLE, seed2 SINGLE loses numeric correctness despite
@@ -19,9 +48,9 @@ fit seed/four shared development tasks, unequal target exposure, no general
 conditional-prediction improvement, internalization or parenting efficacy.
 Returned raw reviews PASS with non-blinding/implementation-author limits.
 No G3/P1/G5/H1/H2, adult-learning or mechanism-freeze qualification; origin
-`UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. At this supplied cut the native
-sequential comparison is NOT LAUNCHED (prelaunch missing-argument fix), and
-process-seed replication is NOT LAUNCHED. Neither supplies outcomes.
+`UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. At that historical cut sequential
+execution was not launched; C62 now reports its result. Prepared process-seed
+replications remain UNLAUNCHED at the newer supplied planning cut.
 Collaborator **UNSENT**.
 
 Sources: `research_notes/astra_memos/ASTRA_INTERLEAVED_REPLICATIONS_2026-09-12.md`

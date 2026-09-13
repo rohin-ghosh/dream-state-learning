@@ -1,6 +1,33 @@
 # FIRST SPRINT DRAFT — companion abstract
 
-**September 12, 2026 — terminal SEQ116–117 / C60–C61.** Both new FOUR
+**SEQ118 / C62 — terminal sequential-memory result; run September 12, 2026
+UTC, despite September13-named artifacts.** Returned raw-review PASS covers640
+calls with no discrepancies; the additive custody PASS verifies the newly supplied
+external validation without changing science. R2 has M0/B1/B2 each16/16 on both
+dev/exact surfaces. NEW_ONLY2 has M0 dev9/16,exact8/16; B1 4/16 on both; B2 16/16
+on both. Both cycle1 arms had acquired B1 at16/16 on each surface before its
+NEW_ONLY cycle2 loss. Arithmetic habit/correct ACT remain32/32 at every state.
+One seed, two authored-bank cycles, practical fixed-budget allocation: equal
+updates/tokens/padding do NOT match current-new dose (R20 versus NEW_ONLY40
+presentations/fact), nor make cycle2 a common-parent comparison. No general G3,
+parenting, H1/H2, latent-erasure or mechanism-freeze claim.
+
+Launch23:35:40.672863 to observed vacancy23:57:48.133511 on September12 UTC is
+1327.460648s (22.124344 A40-min), NOT time through complete packaging/validation.
+Worker/controller clocks nest; the external receipt has no collection-completion
+timestamp. At the supplied planning cut process FIT-seed0/1 replications are
+prepared but **UNLAUNCHED**. Rohin message23's birth-first priority is adopted;
+PROSPECT/repaired REVISE plus truthful locality corpus/runner work is implemented/
+in progress in that snapshot only. No birth GPU result or live birth status is
+inferred. Origin `UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. Collaborator **UNSENT**.
+
+Sources: `research_notes/astra_memos/ASTRA_SEQUENTIAL_MEMORY_2026-09-13.md`,
+returned raw review and custody addendum; C62 in the claim map binds exact copies.
+Main's updated memo now records the returned PASS, superseding its earlier
+pending-review wording. Canonical
+abstract, author intent and prior tables remain unchanged; no new thesis framing.
+
+**Historical September 12, 2026 — terminal SEQ116–117 / C60–C61.** Both new FOUR
 memory branches pass the fixed thresholds; with inherited SEQ113 seed0, all
 three FOUR seeds qualify. SINGLE outcomes are heterogeneous: seed0 ties,
 seed1 slightly favors SINGLE, seed2 SINGLE loses numeric correctness despite
@@ -17,9 +44,9 @@ fit seed/four shared development tasks, unequal target exposure, no general
 conditional-prediction improvement, internalization or parenting efficacy.
 Returned raw reviews PASS with non-blinding/implementation-author limits.
 No G3/P1/G5/H1/H2, adult-learning or mechanism-freeze qualification; origin
-`UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. At this supplied cut the native
-sequential comparison is NOT LAUNCHED (prelaunch missing-argument fix), and
-process-seed replication is NOT LAUNCHED. Neither supplies outcomes.
+`UNRESOLVED_LOCAL_HASHES_ONLY`, C11 deferred. At that historical cut sequential
+execution was not launched; C62 now reports its result. Prepared process-seed
+replications remain UNLAUNCHED at the newer supplied planning cut.
 Collaborator **UNSENT**.
 
 Sources: `research_notes/astra_memos/ASTRA_INTERLEAVED_REPLICATIONS_2026-09-12.md`
@@ -159,7 +186,7 @@ proposed developmental thesis, not established outcomes.
 
 ## Abstract
 
-Can developmental teaching improve learning after teacher removal? We separate authored-memory retention, parameter writing and parent-free utility using a frozen instruction-tuned model and LoRA. Interleaved replay extends to three teaching seeds: all FOUR branches meet prespecified memory and arithmetic thresholds, including inherited seed-zero results. SINGLE outcomes differ: seed zero ties, seed one slightly favors SINGLE, and seed two has memory 4/16 on dev and zero correct arithmetic actions despite valid prediction-before-action formatting on all thirty-two responses. Five memory surfaces query the same sixteen authored facts, not eighty independent facts or general wording-variety superiority. Separately, one paired process-v2 write seed, trained on two teacher-influenced own wakes per arm under explicit context distillation, yields parent-free quiz scores P 12/24, OFF 7/24 and A 6/24. The full criterion fails: P ties A at twelve valid and nine correct pre-TRY predictions. P predicts false throughout and scores 9/12 exactly as an all-false baseline on its observed paths; conditional accuracy remains 0.75 in every cell. P's quiz score also equals a constant-label baseline on balanced panels. Faithful records are P 5/12, OFF 9/12 and A 10/12, opposing the quiz ranking. These exploratory contrasts establish changed outputs, not general conditional prediction, internalization, parenting efficacy, G3/P1/G5/H1/H2, clean lineage or a frozen mechanism. Model origin remains unresolved. Sequential-memory and process-seed replication runs are not launched at this cut.
+Can developmental teaching improve learning after teacher removal? We separate authored-memory retention, parameter writing and parent-free utility using a frozen instruction-tuned model and LoRA. A one-seed sequential diagnostic starts two trajectories from the same previously trained FOUR adapter and allocates two successive fixed update budgets to new authored fact banks. Replay retains M0 while acquiring B1, then retains both while acquiring B2. At cycle two, replay scores 16/16 on both surfaces of all three banks; NEW_ONLY scores M0 dev 9/16 and exact 8/16, B1 4/16 on both, and B2 16/16 on both. Both arms had acquired B1 at 16/16 on both surfaces after cycle one, so its later decline is observed retention loss rather than incomplete initial acquisition. Arithmetic prediction-before-action adherence and numerical correctness remain 32/32 in every state. All 640 captured calls are independently recounted without discrepancies; repeated surfaces are not independent facts. Each fit adds 320 updates, from 400 through 720 to 1040 cumulative. Paired token and padding budgets match, but current-new exposure is twenty versus forty presentations per fact. This practical allocation contrast does not isolate replay at equal new dose; cycle-two trajectories have different parents and histories. It establishes no general stability, latent erasure, parenting, G3/H1/H2 or mechanism freeze. Earlier process-readout full-criterion failure remains unchanged. Model origin remains unresolved. Birth-first implementation and prepared process-seed replications supply no new GPU results here.
 
 ## Evidence and interpretation boundaries
 
