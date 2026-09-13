@@ -1,12 +1,24 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This draft through SEQ192 retains earlier positive and negative findings;
+This draft through SEQ195 retains earlier positive and negative findings;
 SEQ167 and SEQ169--173 are engineering-only logs, excluded from scientific results.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
-independent review, with no later outcomes incorporated.
+independent review. The newest bounded result is C106 below; no outcome after
+SEQ195 is incorporated.
+
+**Through SEQ195 / C106: bounded same-bank EVENT retention passes.**
+On one exposed eight-EVENT DEV bank, all three optimizer seeds learned A at
+200 presentations per fact. A subsequent B-only write learned B `4/4` but
+forgot A `4/4 -> 0/4`; replaying A while writing B retained A `4/4` and learned
+B `4/4`. The pattern was exact at both W0 and W8 in every seed, with zero
+truncations across 288 accepted readout calls. Clean cumulative retraining also
+reached A `4/4`, B `4/4`. This qualifies replay for integration on this exposed
+bank; it does not establish independent-bank reliability, generalization,
+connected use, parenting, lifetime improvement, or pure replay causality under
+one simultaneously dose- and work-matched control.
 
 **Through SEQ192 / C105: prompt-package robustness continuation rule FALSE.**
 On the shared 24-case panel, FULL OFF16 gives post24/23/19 and MINIMAL OFF14
@@ -4974,3 +4986,50 @@ attempt selection, continuation flag, and call/fit totals. Retention-v2 runtime
 integration is separate and is not a renewed prediction sweep or a retention
 result. Earlier findings and failed gates remain unchanged; neither manuscript
 nor research mission is complete. Collaborator **UNSENT**. [C105]
+
+## C106 — SEQ195 bounded EVENT-retention comparison
+
+The fixed September 13, 2026 comparison uses one exposed DEV bank containing
+four A and four B EVENT records. Three optimizer seeds share those semantic
+items; they are repeated fits, not independent banks. Every accepted condition
+was read cold in both W0 and W8 views.
+
+| State | A /4, every seed/view | B /4, every seed/view |
+| --- | ---: | ---: |
+| C0 | 0 | 0 |
+| A200 | 4 | 0 |
+| B200_NEW_DOSE | 0 | 4 |
+| B400_FIXED_WORK | 0 | 4 |
+| REPLAY400 | 4 | 4 |
+| CLEAN_CUM600 | 4 | 4 |
+
+Thus the registered replay-minus-new-only A contrast is `+12/12` pooled
+learner cells at each view, with zero B loss. New-only writing completely
+forgets the old bank in this envelope; scheduled replay preserves it while
+acquiring the new bank. B200 matches the new-item dose and B400 matches total
+work, but no single control matches both, so this is not an isolated causal
+estimate of replay at identical dose and work. Equality with clean cumulative
+retraining is descriptive and does not prove optimizer/resume equivalence.
+
+The independent audit verifies 288/288 accepted raw calls by exact hash, zero
+truncations, three root seals, source/reducer identities, contrasts, failure
+ancestry, and the physical accounting: 20 fits, 6,400 updates, and 25,600
+presentations, including five excluded fits (1,000 updates and 4,000
+presentations). Exact reproduction requires the five separately hashed
+archives listed by the audit plus Git source commit `3f4c03bc`; the final tar
+alone is not a standalone reproduction bundle.
+
+**Permitted treatment.** This is positive bounded same-bank selective-retention
+evidence and qualifies this replay writer for the next controller/integration
+test. It is not an independent-bank reliability, generalization, composition,
+connected-knowledge, native-action, H1/H2, parenting, lineage, lifetime, or
+whole-organism result. No additional singleton-bank writer sweep follows.
+
+Sources: [fresh result audit](../analysis/2026-09-13_event_retention_v2_three_seed_final_fresh_audit.md),
+commit `d7111125`; [raw report](../analysis/2026-09-13_event_retention_v2_three_seed_raw_report.md);
+[analysis](../analysis/2026-09-13_event_retention_v2_three_seed_analysis.md).
+Final evidence tar SHA256
+`e0492b7ec5c5034490ee19c848a36b40884a780d4675ffd4749cca407b7f7438`;
+reduction file SHA256
+`49dad92b29779ccbcd346deba243ab81e38e34d1288f67936050c0f752a5ee1f`.
+[C106]
