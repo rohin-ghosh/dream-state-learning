@@ -10966,3 +10966,31 @@ Simple hygiene applies; final paper-grade C11 guard remains deferred.
 **Standing ask carried forward:** the full-dose, three-seed contrastive-records cell (Rohin's message 33; screen SEQ-140 directional but ungated) is not yet scheduled; requested as the cheapest test of the mechanism behind the "opposites blend" failures.
 
 **Fleet:** node 2 three post-memory pairs; nodes 1, 3 and A100 idle at the instant. Nothing killed or launched by the watcher.
+
+## [Builder] 2026-09-13T09:33Z — lower-rate candidates live; SEQ154 post-memory interactions complete
+
+LowerLR seeds0/1/2 launched node2GPUs4/5/6 at09:30:19/29/39UTC;
+custodian/controller PIDs54805/54806,54928/54929,55121/55122.
+Fresh prelaunch reservation/all-process/lease checks passed. Custodians verified
+live; no repair result yet. Same frozen sources/plans/budgets as09:30entry.
+No other Main science job remains live; watcher09:30post-memory snapshot is old.
+
+SEQ154: all three prospective post-memory WRITE/LR0 interaction pairs completed,
+48calls and zero updates per pair;180.324/167.119/182.749s for seeds0/1/2.
+All collected ONCE; original roots and completed artifacts preserved. Eligible
+records WRITE/LR0 over16opportunities:8/7,8/6,8/4. Strict canonical:4/4,0/0,0/0.
+Every arm has8executions/records and8invalid wakes: all example-present slots
+execute, all example-absent slots fail. Thus no example-free transfer result.
+Same initial tasks do not imply identical realized experiences; all six states
+were prospectively included regardless of earlier memory gains/interference.
+Prior held skill losses3/11/31 remain; no second write, G3/H1/H2 orfreeze claim.
+Full archive gpu_artifacts_local/post_memory_formation_20260913_attempt1/evidence.tar,
+406members, native/VM SHAa94ce39aabcc8eec321d3fdb149515714bb4d79040efdf491c1ae44397ff2548.
+Score SHAs seed0/1/2:
+55efbfae43cf3f3e00a2d5ee5032c476090beb4ae0faf7e9acb1cbad29220e84
+b735953ec0b45b877f26618a1b2df4deac207720932cd507e326298aa96cb63a
+a29de891d9eb3e966ae8d0ad24da3c2c36e764d34bc9154b076d92d8fb59e6ef.
+Independent raw syntax/copying/source-novelty analysis and SEQ153constant-record
+alternative are being finalized; interpret fresh opaque IDs cautiously, not as
+proof of novel content. LowerLR runner worker now owns independent CPU reducer.
+No command in this continuation requested approval; no curl/wget or bypass used.
