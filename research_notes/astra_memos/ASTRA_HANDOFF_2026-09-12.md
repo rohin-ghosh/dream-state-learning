@@ -374,3 +374,23 @@ Meitner closed. No native v2 export/driver/fit yet. Lagrange now owns only
 `gpu/astra_pcfl_zero_fit_outer.py` and its test for narrow zombie handling;
 await EDITSTOP before staging. Current f84 snapshots must not be modified.
 Other agents closed. Keep unrelated rules edit. Broad sprint incomplete.
+
+### SEQ192 / prediction terminal, September13 18:18UTC
+
+Retry completed/collected, primary attempts2/2/1. Main independently audited
+288eligible raw joins; final result is now durable in receipts_20260912 as
+`astra_prediction_transfer_audit_20260913_result.json` (SHA256
+9ca1433d5cce275cbc9ae8af1a36a43e7f93351d28eb823e9d6e5cde8c821344), alongside
+the audit script. FULL OFF16each/post24,23,19; MINIMAL OFF14each/post24,1,18.
+Continuation rule FALSE; branch stopped without rescue. Result note:
+`research_notes/analysis/2026-09-13_level1_prediction_transfer_result.md`.
+480actual calls=288eligible+192failed-attempt, zero new fits/updates/parents.
+Both original and primary archives verified onVM. No ongoing Main native job
+is implied. Manuscript incorporation pending at this checkpoint.
+
+Raman owns new sequence-v2 fit/outer and tests; Main owns readout integration.
+Lagrange EDITSTOP/closed after52testsPASS; Main reviewing future-only zombie
+repair. Do not modify old snapshots or retroactively accept old failures.
+Simple hygiene continues; formal C11 guard deferred. Preserve unrelated rules
+edit. Node1 preservation deadline September13 23:14UTC; expiry September14
+23:14UTC, six-hour finish margin. Full mission remains incomplete.

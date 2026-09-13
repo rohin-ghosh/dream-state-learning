@@ -248,6 +248,20 @@ class OuterTests(unittest.TestCase):
             self.run_controller()
         self.mocks[2].assert_not_called()
 
+    def test_zombie_cvd_exclusion_never_overrides_nvml_owner(self):
+        self.process_record(900002, pgid=900002, sid=900002, ticks=50, cvd="GPU-FIXTURE")
+        path = self.proc / "900002/stat"
+        path.write_text(path.read_text().replace(") S ", ") Z ", 1))
+        self.compute = "GPU-FIXTURE, 900002\n"
+        with self.assertRaisesRegex(ValueError, "GPU occupied"):
+            self.run_controller()
+        scan = outer.read(self.out / "preflight_cvd.json")["value"]
+        self.assertTrue(scan["clear"])
+        self.assertEqual([record["pid"] for record in scan["excluded_terminated_processes"]], [900002])
+        self.assertFalse(outer.read(self.out / "preflight_gpu.json")["value"]["empty"])
+        self.mocks[2].assert_not_called()
+        self.mocks[4].assert_not_called()
+
     def test_wrong_uuid_no_spawn(self):
         self.gpu_uuid = "GPU-OTHER"
         with self.assertRaisesRegex(ValueError, "GPU occupied"):
@@ -613,6 +627,175 @@ class ServiceExceptionTests(unittest.TestCase):
              "ppid": 36935, "comm": "(sd-pam)", "cgroup": cgroup,
              "cmdline_sha256": "971490059d839d27af3ded30a476216b92689d837b0236a700723fb13640e370"}]
         self.assertEqual(set(outer._service_expectations(allocation)), {"user_manager", "pam_helper"})
+
+
+class TerminatedCvdTests(unittest.TestCase):
+    process_record = OuterTests.process_record
+    scan = ServiceExceptionTests.scan
+
+    def setUp(self):
+        temporary = tempfile.TemporaryDirectory(prefix="pcfl_terminated_cvd_cpu_")
+        self.addCleanup(temporary.cleanup)
+        self.proc = Path(temporary.name) / "proc"
+        (self.proc / "sys/kernel/random").mkdir(parents=True)
+        (self.proc / "sys/kernel/random/boot_id").write_text("fixture-boot")
+        self.process_record(os.getpid(), pgid=os.getpid(), sid=os.getpid(), ticks=100)
+        self.process_record(900020, pgid=900020, sid=900020, ticks=200, cvd="GPU-FIXTURE")
+        self.allocation = {"uid": os.getuid(), "boot_id": "fixture-boot", "gpu_index": 2,
+                           "gpu_uuid": "GPU-FIXTURE", "coordination_owners": [], "service_exceptions": []}
+        context = patch.object(outer, "PROC", self.proc)
+        context.start()
+        self.addCleanup(context.stop)
+
+    def state(self, state, pid=900020):
+        path = self.proc / str(pid) / "stat"
+        head, fields = path.read_text().rsplit(")", 1)
+        fields = fields.split()
+        fields[0] = state
+        path.write_text(head + ") " + " ".join(fields))
+
+    def test_stable_zombie_records_identity_without_environment_access(self):
+        self.state("Z")
+        for release in (False, True):
+            result, attempts = self.scan(denied=(900020,), release=release)
+            self.assertTrue(result["clear"])
+            self.assertEqual(attempts, [])
+            self.assertEqual(result["owners"], [])
+            record, = result["excluded_terminated_processes"]
+            self.assertEqual(record["identity_before"], outer.identity(900020))
+            self.assertEqual(record["identity_before"], record["identity_after"])
+            self.assertEqual(set(record["identity_before"]), outer.IDENTITY_FIELDS)
+            self.assertEqual([record[key] for key in ("state_before", "terminated_state_before", "state_after")], ["Z"] * 3)
+            self.assertFalse(record["environment_read"])
+            self.assertIsNone(record["environment_error_type"])
+            self.assertEqual(record["exclusion_scope"], "STABLE_TERMINATED_Z_NON_LIVE_RESERVATION")
+
+    def test_becomes_zombie_during_permission_denial_requires_stable_identity(self):
+        result, attempts = self.scan(denied=(900020,), hook=lambda path: self.state("Z"))
+        self.assertEqual(attempts, [900020])
+        self.assertTrue(result["clear"])
+        record, = result["excluded_terminated_processes"]
+        self.assertEqual(record["state_before"], "S")
+        self.assertEqual(record["terminated_state_before"], "Z")
+        self.assertEqual(record["state_after"], "Z")
+        self.assertEqual(record["identity_before"], record["identity_after"])
+        self.assertEqual(record["environment_error_type"], "PermissionError")
+        self.assertIn("SYNTHETIC", record["environment_error"])
+
+    def test_live_d_ssh_unknown_and_non_z_terminated_denials_still_block(self):
+        for state in ("S", "R", "D", "T", "I", "X", "?"):
+            with self.subTest(state=state):
+                self.state(state)
+                path = self.proc / "900020/stat"
+                path.write_text(path.read_text().replace("(synthetic cpu fixture)", "(sshd)"))
+                result, attempts = self.scan(denied=(900020,))
+                self.assertEqual(attempts, [900020])
+                self.assertFalse(result["clear"])
+                self.assertEqual(result["excluded_terminated_processes"], [])
+                self.assertEqual(result["unresolved"][0]["pid"], 900020)
+
+    def test_identity_reuse_or_boot_uid_group_session_change_never_excluded(self):
+        original_identity = outer.identity
+        for field in outer.IDENTITY_FIELDS:
+            with self.subTest(field=field):
+                self.state("Z")
+                samples = []
+                def identity(pid):
+                    value = original_identity(pid)
+                    if pid == 900020:
+                        samples.append(value)
+                        if len(samples) > 1:
+                            value = {**value, field: "changed-boot" if field == "boot_id" else value[field] + 1}
+                    return value
+                with patch.object(outer, "identity", side_effect=identity):
+                    result, _ = self.scan(denied=(900020,))
+                self.assertFalse(result["clear"])
+                self.assertEqual(result["excluded_terminated_processes"], [])
+                self.assertEqual(result["unresolved"][0]["pid"], 900020)
+
+    def test_pid_reused_on_denial_cannot_be_mistaken_for_original_zombie(self):
+        def reuse(path):
+            self.process_record(900020, pgid=900020, sid=900020, ticks=999, cvd="GPU-FIXTURE")
+            self.state("Z")
+        result, _ = self.scan(denied=(900020,), hook=reuse)
+        self.assertFalse(result["clear"])
+        self.assertEqual(result["excluded_terminated_processes"], [])
+        self.assertIn("identity changed", result["unresolved"][0]["error"])
+
+    def test_state_must_remain_z_through_final_identity_check(self):
+        self.state("Z")
+        original_identity = outer.identity
+        samples = []
+        def identity(pid):
+            value = original_identity(pid)
+            if pid == 900020:
+                samples.append(value)
+                if len(samples) > 1:
+                    self.state("R")
+            return value
+        with patch.object(outer, "identity", side_effect=identity):
+            result, _ = self.scan(denied=(900020,))
+        self.assertFalse(result["clear"])
+        self.assertEqual(result["excluded_terminated_processes"], [])
+
+    def test_live_children_are_scanned_independently_of_zombie_parent(self):
+        self.state("Z")
+        self.process_record(900021, pgid=900020, sid=900020, ticks=201, ppid=900020, cvd="GPU-FIXTURE")
+        for denied in ((900020,), (900020, 900021)):
+            with self.subTest(denied=denied):
+                result, attempts = self.scan(denied=denied)
+                self.assertFalse(result["clear"])
+                self.assertEqual([record["pid"] for record in result["excluded_terminated_processes"]], [900020])
+                if 900021 in denied:
+                    self.assertEqual(attempts, [900021])
+                    self.assertEqual(result["unresolved"][0]["pid"], 900021)
+                else:
+                    self.assertEqual(result["unexpected"][0]["identity"]["pid"], 900021)
+
+    def test_unknown_state_read_after_denial_stays_unresolved(self):
+        original = Path.read_text
+        denied = []
+        def text(path, *args, **kwargs):
+            if denied and path == self.proc / "900020/stat":
+                raise PermissionError("SYNTHETIC cannot prove termination")
+            return original(path, *args, **kwargs)
+        with patch.object(Path, "read_text", text):
+            result, _ = self.scan(denied=(900020,), hook=lambda path: denied.append(path))
+        self.assertFalse(result["clear"])
+        self.assertEqual(result["excluded_terminated_processes"], [])
+
+
+class RealZombieTests(unittest.TestCase):
+    @unittest.skipUnless(hasattr(os, "waitid") and hasattr(os, "WNOWAIT") and Path("/proc/self/stat").is_file(), "Linux unreaped-child fixture")
+    def test_real_unreaped_child_is_excluded_without_reading_environment(self):
+        process = subprocess.Popen([sys.executable, "-B", "-c", "pass"], start_new_session=True,
+            stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+            env=dict(os.environ, CUDA_VISIBLE_DEVICES="GPU-ZOMBIE-FIXTURE"))
+        try:
+            deadline = time.monotonic() + 5
+            while os.waitid(os.P_PID, process.pid, os.WEXITED | os.WNOWAIT | os.WNOHANG) is None:
+                self.assertLess(time.monotonic(), deadline)
+                time.sleep(.01)
+            before = outer.identity(process.pid)
+            self.assertEqual(outer._cvd_state(before), "Z")
+            allocation = {"uid": os.getuid(), "boot_id": outer.boot_id(), "gpu_index": 2,
+                          "gpu_uuid": "GPU-ZOMBIE-FIXTURE", "coordination_owners": [], "service_exceptions": []}
+            original_glob, original_read = Path.glob, Path.read_bytes
+            def glob(path, pattern, *args, **kwargs):
+                if path == outer.PROC and pattern == "[0-9]*":
+                    return iter([outer.PROC / str(process.pid)])
+                return original_glob(path, pattern, *args, **kwargs)
+            def read_bytes(path):
+                if path == outer.PROC / str(process.pid) / "environ":
+                    self.fail("terminated process environment must not be opened")
+                return original_read(path)
+            with patch.object(Path, "glob", glob), patch.object(Path, "read_bytes", read_bytes):
+                result = outer.check_cvd(allocation, time.monotonic() + 5, release=True)
+            self.assertTrue(result["clear"])
+            self.assertEqual(result["excluded_terminated_processes"][0]["identity_before"], before)
+            self.assertEqual(outer.identity(process.pid), before)
+        finally:
+            process.wait(timeout=5)
 
 
 if __name__ == "__main__":

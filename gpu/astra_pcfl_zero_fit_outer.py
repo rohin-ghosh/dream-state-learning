@@ -190,8 +190,36 @@ def check_queue(allocation, deadline, *, release=False):
             "release_allows_removal_only": release, "matched": matched}
 
 
+def _cvd_state(expected):
+    path = PROC / str(expected["pid"])
+    fields = (path / "stat").read_text().rsplit(")", 1)[1].split()
+    observed = {"pid": expected["pid"], "pgid": int(fields[2]), "sid": int(fields[3]),
+                "start_ticks": int(fields[19]), "boot_id": boot_id(), "uid": path.stat().st_uid}
+    require(observed == expected, "process identity changed during CVD state check")
+    return fields[0]
+
+
+def _terminated_cvd(before, state_before, allocation, deadline, error=None):
+    remaining(deadline)
+    terminated_state = _cvd_state(before)
+    if terminated_state != "Z":
+        return None
+    _identity_schema(before)
+    require(before["boot_id"] == allocation["boot_id"] and before["uid"] == allocation["uid"],
+            "terminated process allocation identity differs")
+    after = identity(before["pid"])
+    require(after == before, "terminated process identity changed/reused")
+    state_after = _cvd_state(after)
+    require(state_after == "Z", "terminated process state changed")
+    return {"pid": before["pid"], "identity_before": before, "identity_after": after,
+            "state_before": state_before, "terminated_state_before": terminated_state, "state_after": state_after,
+            "environment_read": False, "environment_error_type": type(error).__name__ if error is not None else None,
+            "environment_error": str(error) if error is not None else None,
+            "exclusion_scope": "STABLE_TERMINATED_Z_NON_LIVE_RESERVATION"}
+
+
 def check_cvd(allocation, deadline, *, release=False):
-    owners, unresolved, approved = [], [], []
+    owners, unresolved, approved, terminated = [], [], [], []
     services = _service_expectations(allocation)
     service_pids = {record["identity"]["pid"] for record in services.values()}
     ancestors, parent = [], os.getpid()
@@ -211,6 +239,12 @@ def check_cvd(allocation, deadline, *, release=False):
             if path.stat().st_uid != allocation["uid"]:
                 continue
             before = identity(int(path.name))
+            state_before = _cvd_state(before)
+            if state_before == "Z":
+                exclusion = _terminated_cvd(before, state_before, allocation, deadline)
+                require(exclusion is not None, "terminated process state changed")
+                terminated.append(exclusion)
+                continue
             metadata_before, metadata_error = None, None
             if before["pid"] in service_pids:
                 try:
@@ -220,6 +254,10 @@ def check_cvd(allocation, deadline, *, release=False):
             try:
                 entries = (path / "environ").read_bytes().split(b"\0")
             except PermissionError as error:
+                exclusion = _terminated_cvd(before, state_before, allocation, deadline, error)
+                if exclusion is not None:
+                    terminated.append(exclusion)
+                    continue
                 if before["pid"] not in service_pids:
                     raise
                 try:
@@ -246,8 +284,9 @@ def check_cvd(allocation, deadline, *, release=False):
         except (OSError, ValueError) as error:
             unresolved.append({"pid": int(path.name), "error_type": type(error).__name__, "error": str(error)})
     unexpected = [owner for owner in owners if owner["identity"] not in allowed]
-    return {"scope": "same_uid_explicit_CVD; GPU query covers all compute owners",
+    return {"scope": "same_uid_live_explicit_CVD; GPU query covers all compute owners",
             "owners": owners, "unresolved": unresolved, "unexpected": unexpected,
+            "excluded_terminated_processes": terminated,
             "excluded_own_ancestors": [owner for owner in owners if owner["identity"] in allowed],
             "approved_unreadable_services": approved, "complete_cvd_visibility": not unresolved and not approved,
             "device_unreserved": False if unresolved or owners else None if approved else True,

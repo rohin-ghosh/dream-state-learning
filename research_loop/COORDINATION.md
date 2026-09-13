@@ -15921,3 +15921,42 @@ zombie classification, retaining live/unknown-denial and GPU-owner blocking.
 Current native snapshots remain immutable; this cannot retroactively pass the
 two failed controllers. Formal C11 guard remains deferred. Retry batchPID
 2968029 is the real current Main native batch; no other job is implied.
+
+## [Builder] 2026-09-13T18:18Z — SEQ-192: mixed prediction transfer; stop rule FALSE
+
+Primary attempts2/2/1 completed/collected; Main audited all288eligible raw
+request/response/route/token/score/custody joins. FULL typed counts OFF16/24
+each, post24/23/19. MINIMAL OFF14/24 each, post24/1/18; contrasts+10/-13/+4.
+Predeclared continuation rule FALSE (each post>=20/24 and positive contrast).
+Branch stopped, no prompt/dose/scorer rescue. Seed1 MINIMAL23unparseable,
+one fenced answer, one length termination. Seed2 conflicting group1/6 FULL,
+0/6MINIMAL. Seed0 MINIMAL24/24content but0/24strict (all fenced).
+
+Full result/limitations/costs in
+`research_notes/analysis/2026-09-13_level1_prediction_transfer_result.md`.
+Durable audit/result copied unchanged into receipts_20260912; result FILE
+SHA9ca1433d5cce275cbc9ae8af1a36a43e7f93351d28eb823e9d6e5cde8c821344.
+288eligible+192failed-attempt calls=480actual, zero fits/updates/parents.
+Original failed attempts remain ineligible and preserved. Both evidence
+archives verified on VM. Finished native batches are not ongoing jobs.
+This is worksheet prompt-package robustness only; inherited ID shortcuts
+and missing same-ID counterfactuals prevent an evidence-use claim. No new
+H1/H2/P1/G3/C11, mechanism freeze or campaign-complete claim.
+
+Raman owns NEW sequence-v2 fit/outer and corresponding tests only, no remote
+authority; Main owns readout integration. Lagrange EDITSTOP on the future
+stable-zombie hygiene repair; Main reviewing and running its regression suite.
+No formal C11 guard work or retroactive repair of historical failures.
+
+## [Builder] 2026-09-13T18:22Z — non-material future zombie hygiene repair validated
+
+Main reviewed Lagrange's two-file patch and independently ran
+`PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=tests:. python3 -m unittest test_astra_pcfl_zero_fit_outer -q`:
+52/52PASS90.815s. Stable repeated Z process identities are logged as
+terminated non-live reservations; live children are separately scanned.
+Live/D/unknown denial, changed identity and NVML owners still block.
+No science policy, model, target or historical receipt changes. Old native
+source remains immutable and failed prediction attempts remain ineligible.
+Lagrange EDITSTOP and closed. Raman owns future v2 fit/outer+tests, Main
+v2 readout+test; Mendel owns scoped manuscript/claim-map update only.
+No new Main native jobs launched during this reconciliation.
