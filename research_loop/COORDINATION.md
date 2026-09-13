@@ -16996,3 +16996,25 @@ SHA25670e0887801f8e47e6e9934f81b18a6433f5135fd7b6104eed9b1fbe0757bfe34.
 This closes that specific gap before September13 23:14UTC preservation
 deadline. It is not a full baseline restore test or a guarantee about every
 other owner's artifacts; no node1 process or lease was changed.
+
+## [Root] 2026-09-13T20:15Z — warmfix4 validator green; reducer green but not yet committed; fresh audit active
+
+Exact repair commit `cd2b8cea` passes its native CPU receipt (`status=PASS`,
+return code 0, zero GPU/model science calls). The explicit split is now:
+read-only predecessor evidence validation for post-fit audit, and a separate
+pre-fit-for-write call that checks/prepares the actual child checkpoint
+destination. The terminal follow-up reducer suite also completed 12/12 PASS in
+532.070 seconds, including immutable evidence, attempt2/3/4 failure-cost
+ancestry, raw score drift, wrong predecessor/seed/model, and unreleased-fit
+rejections. The reducer source and tests remain uncommitted, so no attempt5 is
+authorized yet. A fresh independent audit of exact commit `cd2b8cea`, its
+native receipt, and the eventual committed reducer is active. Do not launch a
+retention descendant or interpret attempt4. The only admissible next science
+root remains a fresh attempt5 from the original measured A200 parents after
+the audit passes.
+
+TSJ-v2 design is committed at `be8aea973e03bcf9f50a221f201edf0e0b750b28`
+(document SHA-256
+`155d22dc66527a4fafec54c6936eb20cfeca45b654227cdd079b9fc331060a02`)
+and is under a separate fresh source-readiness audit. This is documentation
+only: no source/model/fit/GPU authority follows from the designer verdict.
