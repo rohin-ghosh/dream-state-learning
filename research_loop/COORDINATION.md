@@ -8722,3 +8722,36 @@ tests prompt-dependent elicitation, not learning. Main accepts native interfaces
 and checks an actually free GPU before launch; none reserved or launched yet.
 Formal guard remains final-paper-C11-only under Rohin's steer. No general
 G3/P1/G5/H1/H2, clean-lineage or mechanism-freeze promotion.
+
+## [Builder] 2026-09-13T03:48Z — native probe prepare catches tokenizer API mismatch; fit comparison selected
+
+OFF perception driver initial final bytes de1cd675/tests9bdeaf52 pass19 VM CPU
+fixtures1.965s and19 native CPU fixtures1.254s. Native prepare then rejects
+template/token disagreement BEFORE creating a run directory or loading a GPU
+model: installed Transformers5.5.3 returns BatchEncoding by default, so list()
+was reading keys instead of input_ids. Direct native tokenizer inspection
+localizes this representation mismatch; intended token IDs agree with encoded
+rendered text. Boyle repairs normalization and adds a mapping regression;
+pre-repair driver/tests/handoff remain preserved separately. No probe launch,
+retry or scientific outcome. Source snapshot is independent of Q0.
+
+Main selected the next exploratory perception-only fit comparison prospectively:
+two fresh rank8/alpha16/dropout.05 adapters, training anchor absent/present;
+LR1e-4,4epochs,batch4,no packing,max1024,seed0,12updates/48presentations each.
+All actual target IDs/EOS/masks must pass native preparation with zero drops.
+Six matched readout cells: OFF/fitAbsent/fitPresent crossed absent/present
+readout anchor,12dev situations each,72calls,greedy/max192. All six use the same
+LoRA-enabled vLLM configuration, OFF with no adapter request, rather than assume
+the separately disabled-LoRA OFF backend is numerically equivalent. Same
+literal anchor and rows; no checkpoint selection using dev; two fits plus
+readouts capped2700s, collection180s. Confucius owns only a new /tmp runner,
+tests and handoff; Main accepts and launches. This is a recipe ceiling, not
+measured throughput, fit readiness, a launch, or a positive result.
+
+The question is whether authored perception practice changes record fidelity
+under anchor withdrawal. It is not teacher distillation, biological activation,
+autonomous learning, a balanced judgement intervention, H1/H2 or Level2. Three
+independent learner seeds and further held-out experience remain necessary
+before numerical/general claims. Q0 attempt2 still belongs to its existing
+controller; durable witness appeared, but Main waits for full publication and
+controller exit before native replay/collection. No foreign jobs touched.
