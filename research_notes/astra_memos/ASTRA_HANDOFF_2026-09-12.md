@@ -1,6 +1,39 @@
-# Astra current handoff — 2026-09-13T07:14Z
+# Astra current handoff — 2026-09-13T07:23Z
 
-## CURRENT — September13 07:14UTC
+## CURRENT — September13 07:23UTC
+
+Contrastive authored screen LIVE node2GPU0PID/PGID4152616,startticks51239687,
+actual launch07:19:17UTC (prior07:20activation heading was rounded ahead).
+2700secondcap through08:04:17UTC,180seconds separate collection. Root
+/localhome/local-rohing/astra_diagnostics/contrastive_perception_20260913_attempt1;
+driver /tmp/astra_contrastive_perception_run_20260913.py SHA
+aea1b5d84d6d79efa7dbdd43ab8e93bf0483fd4383531eae363cdbb4b7583d55,
+planf0060eb8d37a61aa1d9b25ba6798f19045a8a66cca715755f5e948d216702ec4.
+Log /tmp/astra_contrastive_20260913_attempt1.controller.log onnode2.
+Main20material/10runtime/4launcherCPUtests and native tokenizer prep passed;
+twofits24updates,144calls. No outcome yet. Historical29–35min projection only.
+Collection once after capture_complete+controllerexit, use original runtime
+collect with --completion-sha256 and --out fresh DIRECTORY (not L2 JSON API).
+
+Four original LR seed1/2controllers live at07:20:27UTC; both original seed0
+aborts collected/archived already. Two fresh recovery roots CPU-prepared only:
+seed0_low attempt2 plan5864a45b34c7735b1bb303c5702f1aafc29e11c323cd9ed25de6a83dae92aef6;
+seed0_high attempt2 plan93971b427808a1a13f7c475569fcc6cf6255b8fa500bc8b6e8c05c6842252e95.
+Same old runtime/source/model/spec content; newroot suffixattempt2. Neither
+launched; wait for original four to exit, then low/high serial per recovery
+amendment. Stop retry queue on another infrastructure failure; don't recollect
+old aborts or silently replace their original six-primary roster.
+
+Rohinraw34/07:16steer read: independent granular Level1 skills proceed in parallel.
+Descartes owns /tmp/astra_level1_discrimination_material_20260913.py/tests/handoff
+(contradiction,judgement); Parfit owns prediction/goal material similarly;
+Lovelace owns /tmp/astra_level1_skill_run_20260913.py/tests/handoff, using recovered
+SEQ113recipe rather than another underdosed12row-only path. All CPU-only sidecars,
+Main alone native launch. Manuscript throughSEQ136 EDITSTOP received, Copernicus
+advisory review active; Galileo remains six-file owner until accepted. No freeze,
+H1/H2/clean/P1 promotion. Mission incomplete; formalC11guard deferred.
+
+## Historical superseded snapshot — September13 07:14UTC
 
 FOUR original LR controllers remain (seed1/2 low/high348477/348537/348613/348673).
 seed0_low also aborted on30second XML timeout, after wake2_PROMOTE, before fit2.

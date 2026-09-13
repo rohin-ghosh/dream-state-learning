@@ -1,4 +1,15 @@
-## Current superseding snapshot — 2026-09-13 07:14 UTC
+## Current superseding snapshot — 2026-09-13 07:23 UTC
+
+LIVE contrastive screen node2GPU0PID4152616,07:19:17UTC through08:04:17UTCcap,
+twofits24updates/144calls. Native preflight passed; no result yet. Four original
+LR seed1/2controllers last live07:20UTC, both seed0aborts preserved/collectedonce.
+Two seed0recovery roots CPU-prepared, NOT launched; serial after originals exit.
+GranularLevel1contradiction/judgement/prediction/goal materials and stronger
+SEQ113recipe runtime prepared in parallel per fresh Rohinraw34. ThroughSEQ136
+manuscript EDITSTOP, review underway. Exact pins/ownership/current paths in HANDOFF.
+Mission ACTIVE/incomplete; no scientific promotion or formalC11guard work.
+
+## Historical superseded snapshot — 2026-09-13 07:14 UTC
 
 Four original seed1/2 low/high LR controllers remain. Both seed0 arms aborted
 at targeted XML queries; seed0_low after wake2_PROMOTE, before fit2. Both are

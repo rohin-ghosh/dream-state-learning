@@ -9982,3 +9982,29 @@ as fixed-fixture authored results, not source-use identification or H1/H2. Full
 formalC11guard deferred. Remaining LR originals are untouched; independent
 granular skills will be prepared alongside this screen, without awaiting its
 scientific result. New raw steer does not authorize stopping foreign controls.
+## [Builder] 2026-09-13T07:23Z — actual contrastive launch; Level1 ready queue
+
+Actual contrastive launch07:19:17UTC, node2GPU0PID/PGID4152616,
+startticks51239687; alive07:20:26, fit_plain underway. Prior activation heading
+07:20 was rounded ahead; this receipt supplies the exact time. Cap08:04:17UTC.
+Launch receipt astra_contrastive_launch_20260913_attempt1.log archived; no
+result inferred. Full all-process XML and same-user/environment vacancy passed.
+
+Predeclared recovery amendment preserves both original seed0LR aborts and adds
+at most2roots/256calls/6fits/200updates/3GPU-hours. New roots CPU-prepared only:
+lowplan5864a45b34c7735b1bb303c5702f1aafc29e11c323cd9ed25de6a83dae92aef6;
+highplan93971b427808a1a13f7c475569fcc6cf6255b8fa500bc8b6e8c05c6842252e95.
+Wait until four original seed1/2controllers exit; then low/high serial with
+fresh vacancy. No live source edit, identical scientific settings, no automatic
+retry after another infrastructure abort. Original six-primary accounting stays
+unchanged; recovered-attempt results will be separately versioned.
+
+Rohinraw34/07:16 is operationalized now: independent authored contradiction and
+judgement material with Descartes; prediction and goal-completion material with
+Parfit; reusable finite Level1runtime with Lovelace, informed by SEQ113's stronger
+recipe. Target96train across4skins/48held+12canary per skill, explicit source
+labels and abstention, not production grammar changes or childSLEEP rewriting.
+Main integrates, launches and compares; no unnecessary broad CPU suite repeats.
+Formal guard still only finalC11. Watcher's proposed deletion of stale roots is
+not adopted: evidence roots/adapters remain preserved; no foreign/control kills.
+Manuscript throughSEQ136 in independent bounded review; no GPU gate imposed.
