@@ -1,0 +1,57 @@
+# What existing work we can reuse for "combining the skills" — and what is ours
+
+Fable, 2026-09-13 ~18:40 UTC. Written in answer to Rohin's message 43 ("we build all these skills for fine-tuning but we never trained how to bring them together … that will require a loop between using them successfully for data and then training it better … let's think about how much of existing work we can use"). Sources: the notebook (research_loop/COORDINATION.md), the repo's own surveys (WHAT_TO_PARENT_FROM_THE_LITERATURE_2026-09-12.md, PARENTING_SCIENCE_SURVEY_v1.md, note 41), and literature recalled from memory by a survey agent — **every literature claim below is from memory and must be checked against the paper before it goes into the manuscript.** Tags: [known result] / [inference] / [uncertain].
+
+## 1. The state we are in (what the notebook actually shows)
+
+- Everything tested so far is single-step. Recall is one cue → one completion. Each of the eight level-1 skills is one prompt (evidence supplied) → one JSON object, scored against an authored label; three of them compare two *supplied* items inside one prompt (contradiction, update_judgement, perception/self_reflection), which is one step over given context, not chaining of remembered items.
+- The only two-item perception ever asked — the PCFL LINK record that connects two EVENTs — never formed across three zero-fit runs (SEQ-171–173).
+- "Cannot piece together" has been measured only with the facts in the prompt (zero-fit probes: SEQ-167 0/64; A3 0/52; A3B/A3C/A4 0/8, 0/8, 1/8; SEQ-181 0/8 with memory served as text). Multi-hop from LoRA-stored facts has never been measured. The cell is designed (A→B and B→C in separate rows that never co-occur; LoRA+CoT vs LoRA+no-CoT vs facts-in-prompt+CoT; LR-0 and deranged twins; variant B adds junction rows) and unrun.
+- No stored record has yet been shown to drive a later decision (SEQ-154). Recall so far is carriage, not use.
+- The eight skill adapters were fit **without replay** (roster protocol: "training starts from the base, on skill material, without unrelated replay … NOT a faithful replication" of SEQ-113), so cross-skill coexistence has never been measured. The only interference datum is SEQ-153 (writing 8–14 records into a skill adapter without rehearsal cut held perception to 44/37/17 of 48), repaired by own-source replay (SEQ-159). Level-1 dose was ~13 presentations per row (1,280 over 96 rows) versus 40 per source at level 0, and the fixtures still saturated — "fixture too easy, not skill mastered". One fixture (prediction) leaks its label through the selected-action identifiers (modulo-60 residue).
+
+## 2. The loop Rohin describes already has a name, and it already runs in our code
+
+**Rejection-sampling self-SFT** — STaR (Zelikman 2022), ReST / ReST-EM (Gulcehre 2023; Singh 2023), RFT (Yuan 2023), expert iteration [known result]: sample attempts, keep the ones a verifier accepts, fine-tune, repeat; ReST-EM restarts from the base each round and saturates in about 2–3 rounds per data pool [known result, numbers not quoted]; ReST with a *learned* reward model was gamed within a few improve steps [known result]; V-STaR uses failures to train a verifier; Quiet-STaR learns to think between tokens [known result].
+
+What we already have: `organism_v6/sleep_compile.py` keeps rows with score > 0 as "wins", fail→win pairs as "recoveries", slow→fast pairs as "contrasts", and `train_adapter.py` refits a fresh LoRA from the base every sleep — that *is* the STaR/ReST-EM shape. It was run once, on 2026-09-07 under the old rule-game system (~400 rows of the child's own successful continuations, one rank-8 write): 0/4 writes positive, 3/4 beyond the harm tolerance. It was never re-run under the level-0 recipe that later worked (interleaved sources, 320 updates, replay). Everything trained back since has been admission/faithfulness-filtered records, never task success (SEQ-135/139/141/145 flat 4/8 in all six cells; SEQ-149→153; SEQ-158 P − N = 0). Rohin's message-31 open-loop, success-filtered collection was proposed and not run.
+
+Reusable now: RFT's dedupe-by-distinct-path (a diversity filter against ritual); STaR's *rationalisation* as a parent move (show the outcome, have the child write the path to it); ReST-EM's expectation of saturation (the flywheel needs new environment, not more passes over the same pool); Algorithm Distillation's "train on attempt → outcome → revised attempt sequences, not endpoints" (already flagged in PARENTING_SCIENCE_SURVEY_v1 §335 and note 41).
+
+## 3. The junction skill is a trained call step — with the model as its own tool
+
+Published trained call steps [known result, from memory]: **Toolformer** (the model inserts an API call; the call is kept in the training data only if inserting call+result lowers the loss on the following tokens — an oracle-free filter); **ReAct-SFT / FireAct / AgentTuning** (interleaved Thought → Action → Observation trajectories, filtered by final-answer correctness, loss on the model's tokens only, environment tokens masked); **Self-RAG** (critic-labelled retrieve/no-retrieve tokens trained in); **Search-R1** (the RL version). All of them target an **external** store. None trains a call that is answered by the same model's own fine-tuned weights.
+
+What transfers directly:
+- Row format: `<reasoning> [canonical recall frame → completion] <continue>`, loss on the child's tokens only (we already have the mask: `child_target_mask` in `organism_v6/train_adapter.py`).
+- Filter: Toolformer's test, computable offline with no oracle — keep the row only if inserting the recall frame + completion changes (lowers loss on / flips) the next action relative to the same context without it. This is the mechanical form of Rohin's "awareness": the loop admits a recall only when the recall did work.
+- Constraint from Physics of LMs 3.2 / the two-hop curse: the retrieve-then-operate CoT has to be **in the training rows**, in the **trained direction** of the fact (reversal curse), not merely permitted at test [known result]. Instruct bases already decompose questions zero-shot, so the thing that needs examples is only the junction, not chain-of-thought in general [inference].
+
+## 4. Many skills in one adapter
+
+- Interference in merged/multi-task adapters is mainly sign conflict on shared parameters (TIES, DARE) [known result]; in a single interleaved fit, conflicts arise where two skills prescribe different outputs for the same prefix [inference]. AgentTuning's "mix general data back in" is our replay rule (SEQ-104/113/118).
+- Measured constraint here is rehearsal, not rank: SEQ-044 saturated at rank 8; an unrehearsed habit dies within 16 competing updates; multi-task LoRAs at rank 8–16 over thousands of mixed instructions are routine [known result], so eight shared-format skills are unlikely to hit a rank ceiling [inference]. No published behaviours-per-rank-8 number is known [uncertain].
+- Inside one interleaved fit the skills rehearse each other; the tax appears when the adapter is written **again** with new material (SEQ-153 → SEQ-159). Fewer, more general skills mean fewer same-prefix conflicts and a smaller rehearsal set at every later sleep — the mechanism behind "the more condensed our skills, the easier".
+- Cost of the eight-skill single LoRA (arithmetic from the roster receipts): 768 rows; at the level-1 dose (~13 presentations/row) 2,560 updates ≈ 3.2 M training tokens ≈ 1 h per seed on an A40; at the level-0 dose (40/row) 7,680 updates ≈ 9.7 M tokens ≈ 2.6 h per seed. It needs leak-free, harder held sets before its counts mean anything. It is gated by process (Rohin's probes-first steers, msgs 29/30/34; the builder's "no full-mixture default" after the first birth mixture SEQ-119/120 failed its conjunction gate; the 2026-09-13 root ruling gating the combined birth LoRA behind Stage 0–1), not by evidence.
+
+## 5. Search: two published routes, and we must choose one for behaviour
+
+- **Result distillation** — AlphaZero / Expert Iteration: the network imitates the *outcome* of search (visit distribution, value), never the search moves [known result]. Our memory-side analogue is already ruled in: sleep materialises frequently-hopped chains into single atoms (IDEAS.md 08-31 law).
+- **Trace distillation** — Stream of Search, Algorithm Distillation: train on serialized search traces *including failed branches and backtracks* [known result]. If our behaviour rows are to carry backtracking, they must include failed branches — and a success-only filter silently removes them (note 41 §107–116; PARENTING_SCIENCE_SURVEY_v1 §335).
+- Rohin's reading that "MCTS is an emergent parallel, not the literal thing we teach" matches the root ruling ("MCTS is an analogy for adaptive branching, not a taught or claimed algorithm"). The choice that remains is which route the behaviour rows take.
+
+## 6. Verifier ("awareness")
+
+Keep it mechanical first: (1) the provenance/outcome gate on what enters (sleep_compile already keeps score > 0 rows); (2) Toolformer's loss-gain test for junction rows; (3) the held-out probe + canary gate at every sleep. A learned self-verifier (V-STaR style) is later and has a known gaming risk; intrinsic self-correction without an external signal fails at this scale (Huang et al. 2023 [known result]), and ungrounded STaR-style reflection made agents worse in Early Experience (WebShop 47.3 → 25.0, per WHAT_TO_PARENT §72). Astra's own line applies: "an excellent ledger is not reflection".
+
+## 7. The honest novelty statement
+
+Rejection-sampling self-SFT (STaR, ReST-EM), trained mid-reasoning call steps (Toolformer, Self-RAG, ReAct-SFT), and LoRA as parametric memory written by the agent itself (Physics of LMs, TMEM, **SEAL — already ReST-EM over self-written edits into a LoRA on Qwen2.5-7B**) each exist. Ours differs in three checkable ways: (i) the call step targets the agent's **own** consolidated memory — cue habit and stored completion live in the same adapter, refit at sleep; (ii) the records are outcome-grounded, first-person, admitted through a provenance gate, and written from acting (environment, parent, person), not from passages handed to the model; (iii) call and memory are refit into one adapter over a lifetime under a parent, and the test is the 2×2 (parented × sleep running) on an unseen gym. Without (i)–(iii) demonstrated, the loop collapses to "SEAL in a gym". The related-work stubs for SEAL, TMEM and LoRA-as-knowledge-memory now carry this differentiation (research_notes/related_work/).
+
+## 8. Concrete cells this points to (suggestions, builder's discretion)
+
+1. Two-hop from weights (designed, unrun): the first decisive test of "can it use what it remembers"; one adapter, minutes of GPU.
+2. Variant B of the same: add junction rows (reasoning → recall frame → continue) to the training material; tests "CoT needs connection examples".
+3. Re-run the 09-07 success-filtered round under the level-0 recipe (interleaved, 320 updates, replay) — the loop exists in code; the one datum we have predates the recipe that works.
+4. The eight-skill interleaved single LoRA, as a gated side cell with leak-free held sets (Rohin: "even if they're not connected that would be good to see").
+5. Note 41 (Aug 2026) already specifies controller-token-only loss, environment tokens masked, failed-branch-preserving traces, and "only afterward try rejection-sampling SFT on successful self-trajectories" — the plan Rohin is arriving at exists in the repo under another name, unrun.
