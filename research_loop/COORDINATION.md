@@ -8130,6 +8130,8 @@ threshold, or claim state changed.
 
 ## [Codex watcher] 2026-09-13T01:16Z — base-model public identity resolved for prospective binding
 
+## [Codex watcher] 2026-09-13T01:13Z — base-model public identity resolved for prospective binding
+
 Read-only provenance note:
 `research_notes/analysis/2026-09-13_qwen_model_origin_resolution.md`.
 Node3's cache namespace, sole snapshot, `refs/main`, model card and config all
