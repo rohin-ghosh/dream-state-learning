@@ -1,9 +1,76 @@
 # Experience Models — ICLR 2027 submission (revised draft v3, 2026-09-10 fix pass)
 
+**Ongoing first-sprint working draft — research question unresolved.**
+This fixed SEQ130–133 evidence cut retains both positive and negative findings.
+Recipe-level failures are diagnostics to guide repair, not a finished negative
+paper or the endpoint of the research program. Completion refers only to the
+named assays; the research question remains unresolved. Held for bounded
+independent review, with no later outcomes incorporated.
+
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
 
-## Latest bounded evidence — SEQ125–129: Q0 stop and perception format transfer / C70–C73
+## Latest bounded evidence — SEQ130–133: Q0 endpoints and reflection / C74–C75
+
+**Current completed-evidence cut: SEQ130–133 / C74–C75.** Q0 R0/R2 complete
+128 updates per arm and fail the registered endpoint; R1 is a runtime-aborted,
+missing paired endpoint, not zero accuracy or a third scientific failure.
+Across three preselected reflection learner seeds, ordinary practice improves
+parent-withdrawn strict A/B application from 7/12 to 9/12 per seed with valid
+syntax throughout, unlike perception's format rescue. Correction training adds
+0, 0, -1 versus ordinary after withdrawal: no observed advantage here. Exact
+prose zeros are not semantic failures. These are authored birth-component
+studies, not child-authored SLEEP, P1/H2 or a clean-lineage qualification;
+formal C11 remains deferred. No L2 or supplemental-readout results are included.
+Prior abstract text, tables and author intent are retained; collaborator UNSENT.
+
+| Q0 instance / arm | Exact correct/128 | Held correct/64 | Exact keys/16 | Held keys/16 |
+| --- | ---: | ---: | ---: | ---: |
+| R0 AUTH | 71 | 37 | 7 | 9 |
+| R0 DERANGED | 70 | 31 | 1 | 8 |
+| R2 AUTH | 65 | 31 | 3 | 8 |
+| R2 DERANGED | 72 | 32 | 1 | 8 |
+
+Each Q0 arm completes 128 updates. All exact/held acquisition and key gates fail,
+although all actions are valid and copy is 8/8 per arm. Complementary double-correct
+counts are R0 39/128 exact, 10/64 held; R2 28/128, 4/64. All 16 locality cells fail.
+R1's final DERANGED/128 readout is absent after a pre-load identity-query timeout;
+both fits exist, but no complete paired endpoint does. Root and learner seed
+jointly vary: two completed instances, not an n=3 scientific failure rate.
+The [independent watcher raw reduction](../research_notes/analysis/2026-09-13_q0_fulldose_v2_terminal_independent_raw_reduction.md)
+agrees with endpoint counts and missingness; native replay and archive custody
+are separate checks. Formal C11 remains deferred.
+
+Reflection strict A/B application correct/12 per preselected learner seed:
+
+| Reflection readout | Seed0 | Seed1 | Seed2 |
+| --- | ---: | ---: | ---: |
+| OFF / correction withdrawn | 7 | 7 | 7 |
+| OFF / correction present | 9 | 9 | 9 |
+| Ordinary / correction withdrawn | 9 | 9 | 9 |
+| Ordinary / correction present | 9 | 9 | 9 |
+| Correction fit / correction withdrawn | 9 | 9 | 8 |
+| Correction fit / correction present | 7 | 7 | 7 |
+
+Exact authored restatement is a separate metric: 0/12 in every cell/seed,
+not semantic prose failure. All 216 application outputs have valid A/B syntax;
+ordinary-withdrawn versus OFF has two gains/zero losses per seed. Correction
+training adds 0, 0, -1 after withdrawal versus ordinary and -2, -2, -2 while present.
+No observed benefit on this fixed panel/recipe is not a population null. All 432
+responses finish normally; raw prose is retained. Shared DEV rows and identical
+OFF repeats are not independent extra observations. Correction is in user
+messages with generic system unchanged, not the perception system anchor;
+matched target dose does not match input exposure.
+
+[C74–C75](../research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md)
+bind replay receipts, report/manifest and repair provenance. The preserved v1
+failure equated incoming receipt bytes with compact copies; v2 checks both pins,
+decoded identity and model inventory without changing scoring or captures.
+Main's archived acceptance is 41 CPU tests in 23.167 s, not independent scientific
+review. Abstracts now include observed results while retaining their historical
+text; all prior tables remain. No local TeX build/layout claim is made.
+
+## Historical bounded evidence — SEQ125–129: Q0 stop and perception format transfer / C70–C73
 
 The verified September13,2026 UTC extension adds a narrow negative result to
 the throughSEQ124 evidence, not a completed selective-writer qualification.

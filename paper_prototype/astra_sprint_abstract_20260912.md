@@ -1,6 +1,27 @@
 # FIRST SPRINT DRAFT — companion abstract
 
-**Current abstract-level evidence update: SEQ125–129 / C70–C73.** The closed
+**Ongoing first-sprint working draft — research question unresolved.**
+This fixed SEQ130–133 evidence cut retains both positive and negative findings.
+Recipe-level failures are diagnostics to guide repair, not a finished negative
+paper or the endpoint of the research program. Completion refers only to the
+named assays; the research question remains unresolved. Held for bounded
+independent review, with no later outcomes incorporated.
+
+**Current completed-evidence cut: SEQ130–133 / C74–C75.** Q0 R0/R2 complete
+128 updates per arm and fail the registered endpoint; R1 is a runtime-aborted,
+missing paired endpoint, not zero accuracy or a third scientific failure.
+Across three preselected reflection learner seeds, ordinary practice improves
+parent-withdrawn strict A/B application from 7/12 to 9/12 per seed with valid
+syntax throughout, unlike perception's format rescue. Correction training adds
+0, 0, -1 versus ordinary after withdrawal: no observed advantage here. Exact
+prose zeros are not semantic failures. These are authored birth-component
+studies, not child-authored SLEEP, P1/H2 or a clean-lineage qualification;
+formal C11 remains deferred. No L2 or supplemental-readout results are included.
+Prior abstract text, tables and author intent are retained; collaborator UNSENT.
+
+Sources and repair provenance: [C74–C75 claim map](../research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md). The abstract below adds completed findings without deleting its historical birth/formation account.
+
+**Historical abstract-level evidence update: SEQ125–129 / C70–C73.** The closed
 root1 Q0 assay now has a reportable first-update stop, not a completed binding
 result. SEQ125's `NONREPORTABLE_RUNTIME_ABORT` remains immutable;
 the repaired SEQ126 terminal is `EARLY_XOR_QUARTET_STOP_AUTH`, qualified by
@@ -294,12 +315,27 @@ cases remain unrequested; no G3, parenting, child sleep, H1/H2, clean lineage,
 novel-fact transfer or substrate freeze follows. Model origin remains
 `UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred. Collaborator **UNSENT**.
 
-Internal staging only; the canonical abstract is unchanged. H1/H2 remain the
-proposed developmental thesis, not established outcomes.
+Internal staging only; the canonical abstract now includes the bounded SEQ130–133
+update while preserving its historical text. H1/H2 remain the proposed
+developmental thesis, not established outcomes.
 
 ## Abstract
 
-Can developmental teaching improve learning after teacher removal? We separate externally authored training, child experience and parent-free utility using frozen Qwen2.5-7B-Instruct with LoRA. Earlier sequential-memory retention and failed process-readout criteria remain bounded results. Two source-authored TRAINED birth adapters each complete 128 updates; this is not the child's learned experience or self-learning. Across 384 calls, AUTH scores PROSPECT 32/32 and REVISE 58/64; DERANGED follows its own assigned map at 32/32 and 56/64, not AUTH truth. Both pass belief/goal twins at 16/16, but revision twins score 26/32 and 24/32 against 29/32 required, and both miss one required addition item. Thus both fail the full conjunction despite assigned-map success. Both trained arms answer 31+48 as 89; OFF's 16 numerically correct addition outputs (manual descriptive inspection) preclude an arithmetic-improvement claim from 15/16 compliance. OFF outputs are truncated on 96/128 calls, so strict zeros do not establish absent base reasoning. No exact-train-form panel distinguishes acquisition from access failures. Exploratory AUTH-child formation with base-only parents completes 28 calls: 17 wake, four parent, four restatement and three record. Six of eight tasks are protocol-invalid; one of three records is faithful; zero of four prescribed rows is eligible. PAIRED_SHORTAGE blocks both downstream writes: no persistent parenting comparison follows. Teacher misstatements prevent neutral-parent purity claims. Without contemporaneous OFF formation, observed birth-tag spill does not establish causal harm. Independent birth-audit comparison is complete; formation is not independently certified. Source is NOT CLEAN and official base revision unresolved. No H1/H2/P1/G3/G5 or freeze follows.
+Can developmental teaching improve learning after teacher removal? We separate externally authored training, child experience and parent-free utility using frozen Qwen2.5-7B-Instruct with LoRA. Earlier sequential-memory retention and failed process-readout criteria remain bounded results. Two source-authored TRAINED birth adapters each complete 128 updates; this is not the child's learned experience or self-learning. Across 384 calls, AUTH scores PROSPECT 32/32 and REVISE 58/64; DERANGED follows its own assigned map at 32/32 and 56/64, not AUTH truth. Both pass belief/goal twins at 16/16, but revision twins score 26/32 and 24/32 against 29/32 required, and both miss one required addition item. Thus both fail the full conjunction despite assigned-map success. Both trained arms answer 31+48 as 89; OFF's 16 numerically correct addition outputs (manual descriptive inspection) preclude an arithmetic-improvement claim from 15/16 compliance. OFF outputs are truncated on 96/128 calls, so strict zeros do not establish absent base reasoning. No exact-train-form panel distinguishes acquisition from access failures. Exploratory AUTH-child formation with base-only parents completes 28 calls: 17 wake, four parent, four restatement and three record. Six of eight tasks are protocol-invalid; one of three records is faithful; zero of four prescribed rows is eligible. PAIRED_SHORTAGE blocks both downstream writes: no persistent parenting comparison follows. Teacher misstatements prevent neutral-parent purity claims. Without contemporaneous OFF formation, observed birth-tag spill does not establish causal harm. Independent birth-audit comparison is complete; formation is not independently certified. At the historical birth/formation cut, source was NOT CLEAN and official base revision was unresolved. Later prospective file matching is limited to the checked node3 snapshot; historical receipt labels and clean-ancestry limitations remain unchanged. No H1/H2/P1/G3/G5 or freeze follows.
+
+Subsequent completed diagnostics through SEQ133 separate full-dose writer
+failure from authored reflection practice. Q0 R0/R2 each complete 128 updates
+per arm but fail the registered endpoint: AUTH/DERANGED exact counts are
+71/70 and 65/72 out of 128, respectively; R1's final paired endpoint is missing
+following a runtime abort, not zero accuracy. Root and learner seed vary
+together, so these are two completed instances, not a three-seed failure rate.
+Across three preselected reflection learner seeds, ordinary practice raises
+parent-withdrawn strict application from 7/12 to 9/12 in every seed; all application
+outputs already have valid A/B syntax, so this is not format rescue. Correction
+training adds 0, 0, -1 correct applications after withdrawal versus ordinary
+practice: no observed advantage here. Exact authored restatement matches remain
+zero, not a semantic-prose failure. These authored birth-component targets do
+not test child-authored SLEEP, P1 or H2; formal C11 remains deferred.
 
 ## Evidence and interpretation boundaries
 

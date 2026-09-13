@@ -2,7 +2,7 @@
 % Historical CompilerGym numbers as of the life-level recount are listed with their sources in README.md (Number -> source table).
 % Later completion-assay and fit-seed diagnostics cite their dated independent audits beside them.
 % Separate September 12 component assays through SEQ-073/085/086 are indexed in README.md; historical rows are unchanged.
-% The bounded companion evidence extends through SEQ-129 (C70--C73): Q0 abort/first-update stop and completed three-seed perception format transfer, not new semantic record content or relay promotion.
+% The bounded companion evidence extends through SEQ-133 (C74/C75): completed Q0 R0/R2 endpoint failures, R1 missing endpoint, and three-seed authored reflection application; no L2 or supplemental-readout results. Historical abstracts/tables are retained.
 % 2026-09-11 update (light, not a rewrite; third pass, applying Astra memo 6 = research_notes/astra_memos/2026-09-11_q7_paper_review.md,
 % objections 1-17): edits are marked "% 2026-09-11 update" on comment lines of their own or at the true end of a paragraph or table
 % row, never mid-line (a mid-line % drops the rest of the line from the compiled paper). Numbers added on this date are not yet in
@@ -43,9 +43,27 @@
 \begin{document}
 \maketitle
 
+\noindent\textbf{Ongoing first-sprint working draft---research question unresolved.}
+This fixed SEQ130--133 evidence cut retains both positive and negative findings.
+Recipe-level failures are diagnostics to guide repair, not a finished negative
+paper or the endpoint of the research program. Completion refers only to the
+named assays; the research question remains unresolved. Held for bounded
+independent review, with no later outcomes incorporated.
+
 \begin{abstract}
 % Approved bounded update: historical estimates retained; separate component evidence through SEQ-086.
 We characterize an experience model: frozen Qwen2.5-7B-Instruct with a rank-8 adapter retrained from compiled experience. Across nine ungated 1{,}024-episode compiler-optimization lives, paired probes on eight identifier-held-out programs gave mean life-level gain $+0.019$ (SE 0.011); 4/9 lives had a harmful pair below $-0.03$ despite format checks. Scores measure fractional instruction-count reduction. A disjoint re-probe covered 48 adapter cells on 12 programs absent from the curricula. Final-adapter mean gains were $-0.017$ (ungated, $n=9$), $+0.003$ (gated, $n=6$), and $-0.010$ (gate plus parent, $n=7$), with routine reproduction and action collapse. A post-hoc common-random text-by-adapter comparison on nine ungated lives favored text on average ($+0.0041$) over the adapter ($-0.0146$). Separate controlled diagnostics found small useful-versus-wrong-board transfer across three optimizer seeds, but replaying one child's whole Scratchpad did not outperform its own action alone. Equal-shape supplementary scoring repaired a numerical measurement defect without qualifying the semantic writer. These component results neither demonstrate developmental parenting nor establish selective, retained learning; the historical writer changes behaviour but can silently damage action generation.
+
+Subsequent full-dose Q0 diagnostics complete 128 updates per arm in R0/R2 but
+fail acquisition and locality: AUTH/DERANGED exact counts are 71/70 and 65/72
+out of 128. R1's paired endpoint is missing after a runtime abort, not zero;
+root and learner seed are confounded. Separately, three preselected reflection
+learner seeds improve parent-withdrawn strict A/B application from 7/12 OFF to 9/12
+after ordinary authored practice, with valid syntax throughout. Correction
+training adds 0, 0, -1 versus ordinary practice after withdrawal, with no advantage
+here. Zero exact prose matches do not establish semantic failure. These authored
+birth-component diagnostics do not establish child-authored SLEEP, P1 or H2;
+formal C11 remains deferred.
 \end{abstract}
 
 \section{Introduction}
@@ -651,6 +669,106 @@ independent review (SHA256 prefix \texttt{b1088d75}). The review agrees with
 all216 raw decisions but is post-collection, not blinded replication or
 native/model-tensor recertification. This writer has not repeated that raw
 audit; no live writer outcomes are included.
+
+\paragraph{Full-dose Q0 endpoints versus missingness (SEQ-131/132; C74).}
+Q0-FULLDOSE-v2 prospectively measures rather than vetoes finite first-step
+canary misses; it does not relabel SEQ-126's one-update stop. Each P\_AUTH and
+P\_DERANGED fit in R0/R2 completes 128 updates (256 per instance). Both instances
+are \texttt{Q0\_V2\_FULL\_DOSE\_ENDPOINT\_FAIL}. Exact and held-form counts
+below come from archived exact native replays, not live readouts.
+
+\begin{table}[ht]
+\centering
+\caption{Q0 full-dose endpoints at128 updates per arm. Exact/held counts and
+key coverage retain their separate denominators; R1 has no paired endpoint.}
+\begin{tabular}{llrrrr}
+\toprule
+Instance & Arm & Exact/128 & Held/64 & Exact keys/16 & Held keys/16 \\
+\midrule
+R0 & AUTH & 71 & 37 & 7 & 9 \\
+R0 & DERANGED & 70 & 31 & 1 & 8 \\
+R2 & AUTH & 65 & 31 & 3 & 8 \\
+R2 & DERANGED & 72 & 32 & 1 & 8 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All four arms miss exact/held acquisition and key-coverage gates despite legal
+single actions on 128/128 exact and 64/64 held rows and copy 8/8. Complementary
+opposite-and-correct counts are R0 exact 39/128, held 10/64 and R2 exact 28/128,
+held 4/64, below 112/128 and 48/64 required. Wrong-root opposites are 14/64 and 8/64
+against at most 3/64; all 16 arm-by-family locality cells fail. Syntax/copying is
+not the endpoint bottleneck. This is failure under the full registered dose,
+not evidence that LoRA generally cannot learn or that a particular mechanism
+has been identified.
+
+R1 (SEQ-131) is \texttt{NONREPORTABLE\_RUNTIME\_ABORT}: both 128-update fits
+are preserved, but the final P\_DERANGED/128 readout never starts because a
+pre-load GPU-identity query times out. The paired endpoint is missing, not zero
+accuracy, and is excluded from the scientific endpoint denominator. All three
+allocations were prospective; root and learner seed vary together. R0/R2 are
+two completed root/learner-confounded instances, not an $n=3$ failure rate.
+Formal C11 remains deferred; no child-sleep, parenting, retention, clean-lineage,
+H1/H2 or relay qualification follows.
+
+The archived independent watcher raw reduction agrees with these counts and
+R1's missing-endpoint classification. It is separate from Main's native replay
+and external archive custody; this manuscript pass repeats none of those native
+checks. Exact replay required the launcher's single-thread numerical environment
+(\texttt{OMP\_NUM\_THREADS=1}, \texttt{MKL\_NUM\_THREADS=1}). C74 binds the
+protocol, all three terminal receipts and that scoped watcher memo.
+
+\paragraph{Authored reflection: application gain, no correction-training advantage (SEQ-130/133; C75).}
+SEQ-130's exploratory seed 0 record is included once in SEQ-133, which closes
+all three preselected learner seeds 0/1/2 after collection. Each ordinary and
+correction-present fit uses the same 12 externally authored restatement TRAIN
+targets, four epochs and 12 updates. Each fresh readout has 12 DEV application
+situations and a separate 12-item restatement panel. These are authored
+birth-component targets, not child-authored SLEEP material.
+
+\begin{table}[ht]
+\centering
+\caption{Reflection practice: strict A/B application correct/12 per learner
+seed. Exact authored restatement, a separate metric, is0/12 in every cell/seed.}
+\begin{tabular}{lrrr}
+\toprule
+Fresh readout & Seed0 & Seed1 & Seed2 \\
+\midrule
+OFF, correction withdrawn & 7 & 7 & 7 \\
+OFF, correction present & 9 & 9 & 9 \\
+Ordinary fit, correction withdrawn & 9 & 9 & 9 \\
+Ordinary fit, correction present & 9 & 9 & 9 \\
+Correction fit, correction withdrawn & 9 & 9 & 8 \\
+Correction fit, correction present & 7 & 7 & 7 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All 216 application responses have valid strict A/B syntax. Ordinary practice
+therefore gives a descriptive $+2/12$ parent-withdrawn gain in every seed
+(two gains, zero losses), \textbf{not a format rescue}. This differs from C73's
+perception-format result. Ordinary-withdrawn A/B responses match the OFF-present
+vector in every seed. Incremental correction training after withdrawal versus
+ordinary practice is $0, 0, -1$; with correction present it is $-2, -2, -2$.
+There is \textbf{no observed correction-training advantage on this fixed panel
+and recipe}, not a population null or general harm conclusion.
+
+Exact authored restatement scores 0/12 in all six cells of each seed. This is
+\textbf{not semantic prose failure}: no semantic prose scoring was performed;
+all 216 raw prose responses are retained for later manual review. All 432 responses
+finish normally, with no length finishes; the two panels are not a composite.
+Shared DEV situations and deterministic OFF repeats are not independent extra
+learners. Generic system text is unchanged; correction is withdrawn from user
+messages, unlike the perception system-anchor intervention. Matched targets do
+not match input exposure (1696 versus 2272 input tokens per epoch). No autonomous
+material-quality, retention, parenting, P1/H2, clean-lineage or C11 promotion
+follows; no L2 or supplemental-readout result enters this analysis.
+
+C75 binds the frozen report and manifest and Main's 41 CPU tests (23.167 s).
+Analyzer v1's metadata-mismatch failure remains archived; v2 separately verifies
+original and compact-copy receipt hashes, decoded identity and model inventory,
+without changing captures, scoring or model binding. This author-side analysis
+and Main's acceptance are not a fresh independent reflection raw review.
 
 \section{Discussion}
 \label{sec:discussion}

@@ -1,6 +1,25 @@
-# Astra current handoff — 2026-09-13T06:35Z
+# Astra current handoff — 2026-09-13T06:42Z
 
-## CURRENT — September13 06:35UTC
+## CURRENT — September13 06:42UTC
+
+LIVE read-only access attempt2 node3GPU3controller346117,06:40:19UTC through
+07:00:19UTC maximum. Root/source l2_access_20260913_attempt2 under prior
+astra_diagnostics/astra_sources parents. Probe filename ends_20260913_v2.py,
+SHAa38a089fae5b09b53415655dd8e5346dfbb0f597f34b35cd49921a98b50e22c1;
+controller unchanged29808a870fd4de68354a110cecdb2a9d7cc7138c00d86ffb77295c15a9a33d8c.
+Attempt1 FAILED afterOFF64forwards: adapter-status check treated a Transformers
+method as a boolean. V2 checks actual BaseTunerLayers;20CPUtests/nativeCPUroute
+fixture/native32case encoding pass; no scoring/model/training change. Failed
+root tar /tmp/astra_l2_access_attempt1_failure.tar SHA1b4877012eeabef901e114aea92898bccade4c9c9d850ebd1ee63f629464cb14.
+No old-root edits, endpoint promotion or mixed-v1/v2 report. Inspect attempt2
+terminal/report and archive its full output after controller exit. No retries
+until concrete diagnosis. Main accepted six-file manuscript throughSEQ133 after
+bounded independent review; collaborator UNSENT, no TeX/PDF compile. Descartes
+owns optional strict LR3e-5/1e-4 runtime/tests; Lovelace owns prospective node3
+comparison launcher /tmp files. Neither change authorizes a native comparison
+before Main's acceptance and acquisition/access result. Mission incomplete.
+
+## Historical superseded snapshot — September13 06:35UTC
 
 LIVE saved-adapter read-only L2 access probe: node3GPU3controller344660,
 started06:34:35UTC,1200secondcap through06:54:35UTC. OFFworker344715 started

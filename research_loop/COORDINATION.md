@@ -9761,3 +9761,22 @@ Original failed receipts and v1 retained; attempted partial OFF not promoted
 or silently mixed with v2. New complete diagnostic needed before interpreting
 the acquisition/access contrast. LR-only optional config is being prepared,
 not launched or accepted as a remedy; no unchanged science reruns.
+
+## [Builder] 2026-09-13T06:42Z — repaired diagnostic live; manuscript incorporated
+
+Access attempt2 controller346117 launched node3GPU3 at06:40:19UTC,
+1200secondcap through07:00:19UTC. Same predeclaredOFF/fit1/fit2PROMOTE,
+192forwards/0updates; v2 source/root and pins above. OFFworker passes fresh
+reservation check; no result yet. Attempt1 failed controller remains terminal
+and preserved; do not resume/recollect original SEQ135.
+
+Main incorporates Galileo's six-file SEQ130–133/C74–75 manuscript update after
+Sartre's bounded review and post-repair check. Historical unresolved base-pin
+sentence now explicitly historical; later node3-only file matching does not
+certify all nodes or clean ancestry. Canonical-abstract status reconciled;
+counts/denominators unchanged. Reviewer PASS for bounded scientific incorporation,
+two residual nonblocking spacing nits retained in claim-map prose. Review is not
+native/raw replay, mission completion, or negative-paper finalization. No TeX
+compiler; PDF/layout remains unvalidated. Collaborator UNSENT. No SEQ134/135
+or new probe outcome is silently included in this fixed manuscript evidence cut.
+Main accepts scoped review limits; scientific question remains unresolved.

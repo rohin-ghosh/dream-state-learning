@@ -1,4 +1,15 @@
-## Current superseding snapshot — 2026-09-13 06:35 UTC
+## Current superseding snapshot — 2026-09-13 06:42 UTC
+
+LIVE repaired diagnostic attempt2 node3GPU3PID346117,06:40:19–07:00:19UTCcap.
+Attempt1 failed an overbroad adapter-status check (Transformers method versus
+PEFT property), not original scientific efficacy; preserved.20CPUtests plus
+nativeCPUroute and32case tokenizer checks pass. Only actual tuner flags now
+tested; unchanged scoring/data. No completed comparison yet. Six-file manuscript
+throughSEQ133 accepted after bounded review; no PDF build, collaborator UNSENT.
+Optional LR-only follow-up configuration/launcher in CPU preparation, not run.
+Mission ACTIVE/incomplete; formalC11guard deferred. Pins/paths in HANDOFF.
+
+## Historical superseded snapshot — 2026-09-13 06:35 UTC
 
 LIVE node3GPU3 saved-adapter access diagnostic controller344660, started06:34:35UTC,
 1200secondcap through06:54:35UTC. OFFworker344715 after clean GPU/environment

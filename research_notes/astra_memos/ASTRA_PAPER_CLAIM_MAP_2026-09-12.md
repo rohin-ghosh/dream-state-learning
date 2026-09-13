@@ -1,6 +1,27 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
-**Latest verified extension: SEQ125–129 / C70–C73.** SEQ125 remains an
+**Ongoing first-sprint working draft — research question unresolved.**
+This fixed SEQ130–133 evidence cut retains both positive and negative findings.
+Recipe-level failures are diagnostics to guide repair, not a finished negative
+paper or the endpoint of the research program. Completion refers only to the
+named assays; the research question remains unresolved. Held for bounded
+independent review, with no later outcomes incorporated.
+
+**Current completed-evidence cut: SEQ130–133 / C74–C75.** Q0 R0/R2 complete
+128 updates per arm and fail the registered endpoint; R1 is a runtime-aborted,
+missing paired endpoint, not zero accuracy or a third scientific failure.
+Across three preselected reflection learner seeds, ordinary practice improves
+parent-withdrawn strict A/B application from 7/12 to 9/12 per seed with valid
+syntax throughout, unlike perception's format rescue. Correction training adds
+0, 0, -1 versus ordinary after withdrawal: no observed advantage here. Exact
+prose zeros are not semantic failures. These are authored birth-component
+studies, not child-authored SLEEP, P1/H2 or a clean-lineage qualification;
+formal C11 remains deferred. No L2 or supplemental-readout results are included.
+Prior abstract text, tables and author intent are retained; collaborator UNSENT.
+
+C74/C75 below bind the exact archived receipts and review scopes; SEQ130 seed 0 is included once in SEQ133, not an additional replicate.
+
+**Historical verified extension: SEQ125–129 / C70–C73.** SEQ125 remains an
 immutable, nonreportable instrumentation abort. SEQ126 is a reportable
 registered first-quartet stop: three attempted fits, one update each, no
 completed128-update fit or ON readout. AUTH/DERANGED/unary projection passes
@@ -3200,3 +3221,117 @@ aggregate report retains paired flips, field errors, tokens and timing. Main
 owns Git, integration and operations. The collaborator draft stays **UNSENT**;
 this evidence-only incorporation does not change thesis/invariants or authorize
 external publication.
+
+
+## C74 — SEQ131/132: two full-dose Q0 endpoint failures, one missing endpoint
+
+The prospective Q0-FULLDOSE-v2 protocol measures finite first-step canary misses
+rather than stopping on efficacy; SEQ125/126 remain immutable. Allocations
+R0=(identifier 501, learner 1), R1=(502, 2), R2=(503, 3) precede outputs. Root and
+learner seed jointly vary; this is not isolated optimizer-seed replication.
+R0/R2 each complete 128 updates per arm, 256 per instance, and both return
+`Q0_V2_FULL_DOSE_ENDPOINT_FAIL` in the archived exact native replay.
+
+| Q0 instance / arm | Exact correct/128 | Held correct/64 | Exact keys/16 | Held keys/16 |
+| --- | ---: | ---: | ---: | ---: |
+| R0 AUTH | 71 | 37 | 7 | 9 |
+| R0 DERANGED | 70 | 31 | 1 | 8 |
+| R2 AUTH | 65 | 31 | 3 | 8 |
+| R2 DERANGED | 72 | 32 | 1 | 8 |
+
+Every listed exact/held cell fails acquisition and key coverage despite128/128
+or 64/64 legal single actions, zero multiple actions and copy 8/8 per arm. Exact
+requires at least 116/128 and 14/16 keys; held 52/64 and 12/16 keys, alongside
+registered class-recall, gain and interface conditions. Complementary
+opposite-and-correct counts are R0 exact 39/128, held 10/64; R2 exact 28/128, held 4/64,
+against112/128 and 48/64. Wrong-root opposites 14/64 and 8/64 exceed the 3/64 cap;
+all 16 complete-instance arm-by-family locality cells fail. Full dose did not
+qualify this writer recipe; syntax/copying is not the endpoint bottleneck.
+No general LoRA impossibility or causal mechanism identification follows.
+
+R1 is `NONREPORTABLE_RUNTIME_ABORT` (SEQ131). Both 128-update fits are preserved,
+but the final P_DERANGED/128 readout never starts because the pre-load GPU
+identity query times out after 15 s. Its paired endpoint is missing, not zero;
+partial results do not supply a paired root label. Thus two completed endpoint
+failures plus one infrastructure-incomplete instance are **not an n=3 scientific
+failure rate**. Formal C11 remains deferred. These excluded-DEV writer
+diagnostics do not test child-authored SLEEP, parenting, retention, clean lineage,
+P1/H2 or a relay. No L2 or supplemental-readout result is incorporated.
+
+### Sources and review scope
+
+- [Prospective protocol](ASTRA_Q0_FULLDOSE_PROTOCOL_2026-09-13.md).
+- [R0 exact-replay receipt](receipts_20260912/astra_q0_R0_controller_replay_20260913.json), file SHA256 `a2fd4fee7fc51e193534e5af8db4c1b80974e48891488c9cefbe51fbd052ae84`; embedded report identity `7e3cd8644ba7643992a2331921ed2b1060593ade2860ff4536acb044e8a7e96b`.
+- [R2 exact-replay receipt](receipts_20260912/astra_q0_R2_controller_replay_20260913.json), file SHA256 `e3db8c19cae99a734e40b837c776c73412e5ef2b17e8e11eccd5591f096964b3`; embedded report identity `e59900a2ea66f0b04f260a07b2b7e9540b258467893ceaf8e7bf8d6665b87694`.
+- [R1 terminal receipt](receipts_20260912/astra_q0_fulldose_R1_terminal_20260913.json), file SHA256 `ca4aae670899ddaf7d315ad0a4f2e95d373d6a4caf2493df78cb6144abc28dac`; embedded report identity `c6a5b07549d8cefe12f40492f7b4b8f83d8e8b6532d1e8ad02ab91ab694715de`.
+- [Independent watcher raw reduction](../analysis/2026-09-13_q0_fulldose_v2_terminal_independent_raw_reduction.md), SHA256 `5eec18ad7c51e3a1b568f60eba7c3935f71639f52fb25eb53013f2e5294637a8`.
+
+The watcher independently reduces completed raw records and agrees with these
+counts and R1's infrastructure-incomplete classification. This is distinct from
+Main's native/tensor replay and external full-archive custody; none is replaced
+by this textual manuscript check. Exact replay needs the launcher's pinned
+`OMP_NUM_THREADS=1` and `MKL_NUM_THREADS=1`; unpinned multithread replay failed
+exact equality. The watcher's further mechanistic sidecar interpretations are
+not adopted here. Review of Q0 does not independently certify reflection.
+
+## C75 — SEQ130/133: three-seed authored reflection application, no correction advantage
+
+SEQ130 is seed 0's exploratory single-seed record, included once in SEQ133's
+completed three-seed comparison. All learner seeds 0/1/2 were preselected before
+outcomes. Same 12 authored TRAIN restatement targets, four epochs, 12 updates and
+48 presentations per fit; all application rows are DEV-only. The separate 12-item
+DEV application and 12-item restatement panels are not a combined score.
+
+Strict A/B application correct/12:
+
+| Reflection readout | Seed0 | Seed1 | Seed2 |
+| --- | ---: | ---: | ---: |
+| OFF / correction withdrawn | 7 | 7 | 7 |
+| OFF / correction present | 9 | 9 | 9 |
+| Ordinary / correction withdrawn | 9 | 9 | 9 |
+| Ordinary / correction present | 9 | 9 | 9 |
+| Correction fit / correction withdrawn | 9 | 9 | 8 |
+| Correction fit / correction present | 7 | 7 | 7 |
+
+Exact authored restatement matches, separately, are **0/12 in every cell of
+each seed**. This is not semantic prose failure: no semantic prose scorer was
+used, and all 216 raw prose responses remain in the report for later manual review.
+All 216 application outputs have valid strict A/B syntax; all 432 responses finish
+normally with no length finishes. Ordinary withdrawn versus OFF withdrawn gives
+two gains/zero losses in every seed, hence a **+2/12 application gain, not format
+rescue**. Its A/B vector equals OFF-present in every seed. Unlike C73, this gain
+is not the recovery of previously correct fenced-record content.
+
+Incremental correction training versus ordinary after withdrawal is 0, 0, -1
+(no flips in seeds 0/1; one loss in seed 2), and while present is -2, -2, -2 (two
+losses each). Adding correction at readout to correction-trained fits gives
+net -2, -2, -1; seed 2 has one gain and two losses. No observed training advantage
+on this fixed authored panel/recipe is not a population null or general harm
+finding. Shared DEV rows and identical OFF repeats are not independent extra
+observations. No p-values, composite or scientific promotion is introduced.
+
+The generic system remains unchanged; the correction is in user messages, not
+the perception system anchor. Matched targets (604 target-plus-EOS tokens per
+epoch) do not match total input exposure (1696 ordinary versus 2272 correction).
+These are authored birth-component targets, not child-authored SLEEP, autonomous
+material quality, retention, parenting or P1/H2 evidence. C11 remains deferred;
+no clean-lineage, frozen-substrate, L2 or supplemental-readout result follows.
+
+### Sources and bounded analyzer repair
+
+- [Prospective reflection protocol](ASTRA_REFLECTION_PROTOCOL_2026-09-13.md) and [replication handoff](receipts_20260912/astra_reflection_replication_handoff_20260913.md).
+- [Frozen three-seed report](receipts_20260912/astra_reflection_three_seed_report_20260913_attempt2.json), SHA256 `42aed54229f515540fb878a4610597195fa84e26b4df9dfd8db97de8c284433b`.
+- [Accepted manifest](receipts_20260912/astra_reflection_three_seed_manifest_20260913_attempt2.json), SHA256 `2c6f88ea72eb8da087cc39c04612e4fbd02d49c4b39e01f347b29d4844925dc7`; contains per-seed relocated paths and plan/completion/scores/collection pins plus original receipt pins.
+- [Analysis handoff](receipts_20260912/astra_reflection_three_seed_analysis_handoff_20260913_attempt2.md), SHA256 `080390962d3bf94770d6349e0c10faacaf8b9c6bccd415c5487cd8c6120b9981`; raw preservation, exposure, cost and provenance limits.
+- [Main's v2 CPU acceptance](receipts_20260912/astra_reflection_analysis_main_cpu_v2_20260913.log), SHA256 `55411dd43e6c94889a9f326eed5289df805ac7716a96bd414b4c8260aceadc07`: **41 tests PASS in 23.167 s** (distinct from the author's 23.680 s run).
+- [Preserved v1 failure diagnosis](receipts_20260912/astra_reflection_three_seed_analysis_blocker_20260913_attempt1.md), [failed manifest](receipts_20260912/astra_reflection_three_seed_manifest_20260913_attempt1.json) and [failed log](receipts_20260912/astra_reflection_three_seed_analysis_20260913_attempt1.log).
+
+V1 failed before scoring by equating incoming JSON receipt hashes with compact
+reserialized-copy hashes. Separate v2 (SHA256
+`f271796ddc63d640c55ca044423610ee186b0b413af8285d5015d927344b3a81`)
+checks original and copy byte pins separately, decoded-object identity and the
+recorded official-model inventory. No normalization of captures, metric change
+or model-binding relaxation occurred. All 432 decisions match stored counts;
+this author-side CPU/custody analysis plus Main's acceptance is not a fresh
+independent reflection raw/scientific review. Main owns integration and Git;
+collaborator UNSENT. Manuscript changes are evidence incorporation only.

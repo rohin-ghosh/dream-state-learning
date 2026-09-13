@@ -1,6 +1,57 @@
 # DRAFT ONLY — unsent collaborator update
 
-**UNSENT — verified SEQ125–129 / C70–C73 update for Main's review.**
+**Ongoing first-sprint working draft — research question unresolved.**
+This fixed SEQ130–133 evidence cut retains both positive and negative findings.
+Recipe-level failures are diagnostics to guide repair, not a finished negative
+paper or the endpoint of the research program. Completion refers only to the
+named assays; the research question remains unresolved. Held for bounded
+independent review, with no later outcomes incorporated.
+
+**UNSENT — completed SEQ130–133 / C74–C75 update for Main's review.**
+
+The full-dose Q0 comparison now has two completed endpoint failures, not just
+the earlier first-update stop. R0 AUTH/DERANGED score 71/70 out of 128 exact and
+37/31 out of 64 held; R2 score 65/72 and 31/32, respectively. Every arm completes
+128 updates and preserves valid action syntax and copy 8/8, but acquisition,
+key coverage and locality gates fail. Complementary double-correct counts are
+R0 39/128 exact, 10/64 held and R2 28/128, 4/64. R1's final DERANGED/128 readout
+is missing after a runtime abort; this is not zero accuracy. Root and learner
+seed jointly vary, so there are two completed confounded instances, not an n=3
+scientific failure rate. The independent watcher raw-reduction memo agrees;
+its scope is distinct from Main's exact native replay and archive custody.
+
+Reflection's exploratory seed 0 (SEQ130) is included once in the completed
+three-preselected-seed analysis (SEQ133). Strict A/B application correct/12:
+
+| Reflection readout | Seed0 | Seed1 | Seed2 |
+| --- | ---: | ---: | ---: |
+| OFF / correction withdrawn | 7 | 7 | 7 |
+| OFF / correction present | 9 | 9 | 9 |
+| Ordinary / correction withdrawn | 9 | 9 | 9 |
+| Ordinary / correction present | 9 | 9 | 9 |
+| Correction fit / correction withdrawn | 9 | 9 | 8 |
+| Correction fit / correction present | 7 | 7 | 7 |
+
+All 216 application responses have valid syntax. Ordinary practice gives two
+gains/zero losses versus OFF after withdrawal in every seed: a descriptive
++2/12 application gain, not perception-style format rescue. Correction training
+adds 0, 0, -1 versus ordinary after withdrawal: no observed advantage on this fixed
+panel/recipe, not a population null or parenting impossibility. Exact authored
+restatement remains 0/12 in every cell/seed, not semantic prose failure; raw
+prose is retained for manual review. All 432 responses finish normally. These
+shared DEV situations and repeated deterministic OFF responses are not extra
+independent learners. Targets are externally authored birth-component practice,
+not child-authored SLEEP or P1/H2 evidence. Formal C11 remains deferred.
+
+[C74–C75](ASTRA_PAPER_CLAIM_MAP_2026-09-12.md) bind the archived results and
+review scopes. The original analyzer's receipt-serialization mismatch failure
+is preserved; accepted v2 checks original/copy pins, decoded identity and model
+inventory without changing scoring or captures (Main: 41 CPU tests, 23.167 s).
+This is not independent reflection scientific recertification. Prior abstracts,
+tables and author intent are retained; no L2 or supplemental-readout result is
+included. This collaborator draft remains **UNSENT**; Main owns integration.
+
+**Historical UNSENT — verified SEQ125–129 / C70–C73 update for Main's review.**
 
 The new Q0 evidence is narrower than a completed writer result. SEQ125's
 forward-accounting `NONREPORTABLE_RUNTIME_ABORT` remains immutable;
