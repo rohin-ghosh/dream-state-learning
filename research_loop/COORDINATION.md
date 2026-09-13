@@ -10087,3 +10087,44 @@ or cached-vacancy shortcut in live controllers. Query slowness is real; its
 cause is not established by the timing difference alone. Main will not claim
 GPU saturation yet: two diagnostic controllers live, new12cell roster pending
 native preparation. Precise roster/PIDs will be posted as cells actually launch.
+## [Builder] 2026-09-13T07:39Z — activate12cell Level1 roster, native checks per cell
+
+Main finalfreeze:22discriminationCPUtests7.242s,9prediction/goaltests0.210s,
+15runtimeCPUtests14.186s,3batch allocation tests0.001s allPASS. No broad suite
+repetition. Runtime6f4c391419500d046e2b15729ee09485baa07b45938db1f96484b07e69e1ed9e;
+discriminationcfc2839f11e710b9de513efc465e3d2b895cfd067d7c8146bba97121bf4ad2fb;
+prediction/goal3da282322f65525271a48b628b30ecdc8a2fba6ba6ba84d8cf1f3e65ad6d6433.
+Protocolc5420d9b6464eca62695be450884c2a3226615a065a3e7d6b9021fb2c7303297.
+Immutable rosterad1c8d522d295e3c1b33c7e6ed93fbf89c467d3206d61e449d6844905fa19423
+at /tmp/astra_level1_roster_20260913_attempt1/roster.json onVM/bothnodes.
+
+Main owns native batch_node1 and batch_node2. Each cell first runs actual native
+CPU tokenizer/model-file/source/provenance/mask/scorer validation, then fresh
+environment/queue/all-process XML vacancy, then the one controller launch. A
+failed cell halts remaining submissions on that node; preserve already-live
+cells and failure evidence. Exact plans/PIDs are written before next submission.
+
+| Native batch/cell | Node GPU | Learner seed |
+| --- | --- | --- |
+| batch_node1/prediction_seed0 | node1 GPU0 | 0 |
+| batch_node1/prediction_seed1 | node1 GPU1 | 1 |
+| batch_node1/prediction_seed2 | node1 GPU2 | 2 |
+| batch_node1/goal_completion_seed0 | node1 GPU3 | 0 |
+| batch_node1/goal_completion_seed1 | node1 GPU4 | 1 |
+| batch_node1/goal_completion_seed2 | node1 GPU5 | 2 |
+| batch_node2/contradiction_seed0 | node2 GPU1 | 0 |
+| batch_node2/contradiction_seed1 | node2 GPU2 | 1 |
+| batch_node2/contradiction_seed2 | node2 GPU3 | 2 |
+| batch_node2/update_judgement_seed0 | node2 GPU4 | 0 |
+| batch_node2/update_judgement_seed1 | node2 GPU5 | 1 |
+| batch_node2/update_judgement_seed2 | node2 GPU6 | 2 |
+
+Each root96sourcedtrain/48held+12canary, OFF->320updatefit->post,120calls;
+5400secondinclusivecap+180collection. Twelve-root ceiling18GPU-hours, not actual
+cost. Full targets+EOS, maskedcontext, max1024/no truncation, rank8/LR3e-4;
+fresh-base recipe-inspired branch, not warm-parentSEQ113replication. Three seeds
+per skill, content primary/format secondary per Rohin35. No shared mutable
+adapters; new controllers retain UUID visibility during CPU phases. Node1
+finish6h before expiry and transfer checkpoint remain mandatory. No use of
+node2GPU0, node3GPU0, faultedGPU7, A100 or foreign processes. The notebook will
+report actual PIDs/occupancy, not infer saturation from this activation.
