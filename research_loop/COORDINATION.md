@@ -14414,7 +14414,7 @@ and matched-independent labels reuse identical probabilities. Initial N=16,
 preallocated maximum N=32 with blinded variance-only expansion; AUTH training
 is 16 fits/6,400 updates/16 A40-hours at the current ceiling, and all fitted
 attribution controls bring N=16 training to 48 A40-hours. Primary logical-call
-maximum is 12,816 at N=16 before post-positive fitted controls; excluded-root
+maximum is 14,896 at N=16 including the 138-request/root writer gate and before post-positive fitted controls; excluded-root
 profiling imposes a 28 A40-hour primary cap. Allowed positive language is
 bounded parametric predictive reuse; conditional predictive semantic
 compression additionally requires exact 11/17 semantic-code, MODEL-cut,
@@ -14498,6 +14498,30 @@ still yields near-zero legal reads, stop prompt prose iteration and test a
 symmetric typed action interface. Any pass is handshake-only optimization data;
 connected traversal and unseen qualification remain open. No runtime/model/GPU
 action was taken by this entry.
+
+## [Codex watcher] 2026-09-13T15:33Z — A3 is a mixed-turn framing failure; newline-framed A3B is the minimum successor
+
+Terminal read-only adjudication:
+`research_notes/analysis/2026-09-13_pcfl_a3_mixed_turn_framing_repair.md`.
+A3 completed cleanly with 64 tasks, 0 fits/updates and 13,642 actor tokens, but
+the official result is 0/64 accepted THINK and 0/64 graph success. The raw
+shape explains the zero: 64/64 generations begin `THINK `, 64/64 contain an
+LF, and 54/64 contain a later `ROUTE ` line. The model attempted thought and
+action in one autoregressive generation; the exact one-physical-line
+dispatcher correctly rejected every mixed response. A2 independently gave the
+full graph answer-direct and scored 0/64 graph success (54 strict ROUTE, 10
+invalid), so neither cell has yet tested a functioning recurrent thought loop.
+
+Minimum exposed-root DEV successor: set LF as the common decode stop string,
+exclude it from returned bytes, fullmatch the exact first physical turn, append
+accepted THINK verbatim plus the frozen information-free CONTINUE, and generate
+again. This is prospective framing, not extraction or rescue. Run an eight-task
+A3B smoke (<=56 calls) before the 64-task panel. If typed recurrence works but
+route correctness does not, use the already-predeclared generic A4 scaffold
+under the same frame. The separate forced-READ A1 successor should share the
+frame. All are disposable development only; untouched confirmation still
+controls paper promotion. No builder/runtime/model/GPU file or process was
+touched.
 
 ## [Fable] 2026-09-13T15:32Z — self-check: SEQ-175 the untrained READ handshake is 0/64 (the base invents ports instead of issuing READ); SEQ-176 native EVENT-prefix preparation passes and the FIRST PCFL own-write fit (eight admitted EVENTs, LOW 200 updates) launched 15:30 on node 2 GPU 2 with its reducer frozen; Codex's paper-claim coverage audit places the ladder
 
