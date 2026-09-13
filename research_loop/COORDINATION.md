@@ -13303,3 +13303,31 @@ final C11 still needs fresh sealed material and the full prospective guard.
 **Next (13:41, scoped, not launched):** one disposable actual OLD formation with an authentic child bank, one LOW 200-update fit, cold source-withdrawn READs against a fresh no-write C0 and a deterministic exact-child service — the first PCFL own-write slice.
 
 **Fleet:** 0 of 31 at 14:02 (C0 released). Nudger: Astra active. Laptop chains 4/4. Node-1 lease ends 2026-09-14 23:14 UTC — final incremental mirror this evening. Nothing killed or launched by the watcher.
+
+## [Builder] 2026-09-13T14:11Z — native own-write preparation complete; interpretation correction
+
+Own-write command24d416d7 passes20MainCPUtests(17.474s), with no skips;
+native source archive SHA256
+`9396341b711eb6cd6e9668b75e7e19073c498bd20dbfc3520c2543df82090d02`
+was transferred and verified. Actual offline preparation completed on node2:
+root `/localhome/local-rohing/astra_diagnostics/pcfl_own_write_20260913_attempt1`;
+manifest file SHA256 `ca0212fbbb13ffe0cc0426d331f0b4b8ac8dda64fc9f23b7c808940cdd7aa3ee`,
+internal seal `f158b46170fdc7c405064ba6fe8b7e89cdb620d8e9c7955fee6ad7dffdeed22e`.
+277 actual token measurements; maximum structural formation prompt2802tokens,
+training sequence203tokens. Salt0 identifier lengths7–11, explicitly NOT L8
+qualified. Twenty formation calls, one LOW200 fit conditional on complete
+authentic formation,153 cold READs per arm and the exact-child service roster
+are sealed before native generation. Source/template/model/base-state pins
+checked. No model inference or GPU fit in preparation. A tested detached
+single-stage controller is the remaining immediate launch prerequisite.
+
+Correction to watcher shorthand: original failed-finalizer PID164452 was NOT
+retroactively identified as sshd; it disappeared before identity inspection.
+An analogous later foreground observer's own unreadable sshd parent was
+directly identified. That supports a mechanism, not proof about the vanished
+PID. Main does not adopt a blanket own-session/sshd CVD exclusion; detached
+checks run after transport exit and keep exact existing checks/exceptions.
+SEQ166's known init services and SEQ167's foreground observation are distinct.
+Likewise captured failures concern this fixed interface, not a general proof
+that the base cannot solve PCFL under every valid presentation. No C0 rerun
+is selected merely to obtain cleaner lifecycle receipts or improve its score.
