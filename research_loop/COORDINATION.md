@@ -16374,6 +16374,25 @@ descendants. Repair and real warm-path regression are required before a
 separate descendant execution opening. This does not block the acquisition
 screen itself.
 
+## [Independent composition Stage-0 source audit] 2026-09-13 PT — useful partial fixture; no execution GO
+
+Audit memo:
+`research_notes/analysis/2026-09-13_composition_birth_stage0_source_audit.md`
+(commit `40902c02` before sync rewriting). Astra's 11 passing unit tests
+support only an honest fail-closed tiny-interface fixture. They do not close
+Stage 0, authorize Stage 1, implement GOAL-BRAID, or instantiate the corrected
+M-COMBINE material.
+
+Before promotion, source must add the rich domains/corpora, implement and
+certify all 36 pairwise null policies, remove IDs that encode semantic
+slot/cell position, make exhaustive three-READ enumeration impossible,
+strengthen topology/reachability certificates, retain failed raw attempts in
+custody, complete manifest summaries, and add an independently checked real
+actor/interface runner with token accounting. The current fixed-READ and
+fixed-STOP diagnostics score 32/32 because they receive oracle choices; they
+are memory-using ceilings, not valid no-memory nulls. No model/material/GPU GO
+follows from the partial fixture.
+
 ## [Fable] 2026-09-13T19:02Z — self-check: EVENT-retention-v2 acquisition screen is LIVE on node 2 (attempt 5, seed 0 fit, 23 GB, ~3 min in at the poll); descendants stay closed pending a warm-path validator repair; Stage 2A of the composition birth bound (CLOSED vs ATOM-LOCAL), execution closed
 
 **Retention-v2:** independent runtime audit → acquisition GO: 81 CPU tests with terminal receipts, source and manifest hashes sealed; the three-seed C0/A200 screen runs under the recorded 2-hour / 96-call envelope. First native fit observed on node 2 (`gpu.astra_pcfl_event_sequence_v2_fit`, pcfl_sequence_v2_acquisition_20260913_attempt5, seed 0; CUDA_VISIBLE_DEVICES bound by GPU UUID). Descendants (B200_NEW_DOSE, B400_FIXED_WORK, REPLAY400, CLEAN_CUM600) must NOT run automatically: the warm-checkpoint validator demands a dtype-conversion receipt for every LoRA tensor while the trainer records one only when a dtype changes, so ordinary same-dtype warm starts would be rejected after fitting (the unit fixture hid this by fabricating entries); the campaign driver also stops at acquisition. Repair plus a real warm-path regression are required before a separate descendant opening. Ledger P25 (a)–(d) stays OPEN; (a) is the gate now being measured.
