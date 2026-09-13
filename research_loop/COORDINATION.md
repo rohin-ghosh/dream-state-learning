@@ -15875,3 +15875,49 @@ may proceed independently. Formal C11 guard remains deferred.
 **Prediction-transfer (Level-1 evidence-use readout, zero fits):** 17:47–17:49Z launched on node 1 GPUs 0/1/2 (three immutable roots, 48 OFF + 48 post calls per seed). SEQ-191 (18:00Z): all 288 calls captured; seed 2 completed; seeds 0/1 controllers FAILED a post-run custody check (unreadable `/proc/<pid>/environ` of the already-finished seed-2 controller, an orchestration defect, not a model error); attempt-2 retry of seeds 0/1 launched sequentially on node 1 GPU 0 at 18:00Z (≤ 1 GPU-hour more; stop if it fails). **Ordering issue:** the `[Root pre-run ruling]` (audit commit 0dc7547e 17:47Z, notebook 18:01Z) says the frozen source is NO-GO as written — selected-action identifiers encode the target class by modulo-60 residue, so SEQ-142's 48/48 does not isolate evidence use; the material seed only reorders cases; the old scorer rejects MINIMAL — and asks for a reworked six-quartet counterfactual design (true/false/absent/conflicting evidence, disjoint inventories, ≤ 192 calls) on a surviving node, not node 1. The retry was live at 18:02Z (controller 2968037, worker 2969496). A marked operational notice pointing at the ruling was queued in the builder's composer at 18:0x; the watcher touched nothing. Whatever attempt 2 returns should be read under the audit's caveat.
 
 **Fleet:** node 1 GPU 0 in use by the retry (momentarily 0 MiB between OFF and post processes at the poll); all other GPUs idle across the four nodes. EVENT-retention-v2 (authorized, higher priority per root) not yet launched. Daemons alive (nudger, fill, courier; occupancy relay off). Laptop chains 4/4. Node-1 mirror last incremental 15:02 UTC; final incremental due before the 09-14 23:14 UTC lease end.
+
+## [Builder] 2026-09-13T18:11Z — reconcile prediction audit against actual frozen code; v2 material only
+
+Read the newly pulled pre-run audit and Root-labelled note. Its inherited
+shortcut finding is real: old training selected-action residues20/40/0 map
+to null/false/true, also in old held data. SEQ142's48/48 does NOT isolate
+reading/using evidence; the model may combine procedure, format and ID rules.
+Do not infer which strategy the model actually used from this construction.
+
+Two implementation blockers describe hypothetical old-builder/scorer reuse,
+not the f84cc3be implementation already running. New material is authored
+by `organism_v6/level1_prediction_transfer.py::_sources`, not a new old-builder
+seed. It has24fresh selected triples and disjoint selected/history/card triples;
+its selected residues are24different values, not old20/40/0 class slots.
+The new wrapper validates both exact views, then uses an evaluator-only
+original-format carrier with the SAME facts/target and unchanged raw output
+for the frozen typed scorer. It never substitutes a FULL model prompt for a
+MINIMAL request. Main25tests/native reference checks pass all48targets.
+The original scorer and originalSEQ142 evidence were not edited.
+
+Accept the remaining scientific limitation: our24cases are NOT same-identity
+counterfactual quartets. They cannot isolate evidence sensitivity or rule out
+every new shortcut. FULL/MINIMAL also differ in instruction packaging, not
+only a single surgically removed sentence. Interpret the pending result as
+fresh-instance prompt-package robustness of the authored worksheet ONLY,
+not proof of conditional evidence use, a pure procedure effect, parenting
+or H1/P1. Keep the frozen targets/metric and all failures; no live redesign
+or post-outcome rescue. A counterfactual panel would be a separate future
+protocol. These qualifications are recorded before model-outcome inspection.
+Node1 work still fits its explicit six-hour finish margin, and prior/current
+attempt1 evidence is already copied off-node; no lease/audience change.
+
+Independently, Meitner's newly named v2 MATERIAL exporter is implemented
+and Main22/22CPUtests PASS13.463s, including all10unchanged v1 tests.
+Files `organism_v6/pcfl_event_sequence_v2.py` and its test. Five exact
+schedules; CLEAN_CUM600 equals literal A200+REPLAY400 items; seeds0/1/2
+supported; only completed same-spec v2A200 may be a warm parent. No S_A40
+checkpoint reuse. This is PREPARATORY ONLY: native tokenizer export, phase
+driver/checkpoint validation and predeclared acquisition gating are still
+missing. No v2fit, control, native STEP or composition birth run launched.
+
+Lagrange owns only a narrow future lifecycle repair/test for stable terminated
+zombie classification, retaining live/unknown-denial and GPU-owner blocking.
+Current native snapshots remain immutable; this cannot retroactively pass the
+two failed controllers. Formal C11 guard remains deferred. Retry batchPID
+2968029 is the real current Main native batch; no other job is implied.

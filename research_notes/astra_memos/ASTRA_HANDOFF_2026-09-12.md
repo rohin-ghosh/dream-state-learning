@@ -341,3 +341,36 @@ Fable's same-recipe/dose interpretation ofSEQ179vs188 was corrected in notebook;
 retention-v2 and STEP proposals are not live Main jobs. Hegel now owns only
 read-only `/tmp/astra_next_composition_decision_20260913.md` advisory while
 these readouts run. No reserved invariant changed. Broader sprint incomplete.
+
+### SEQ191 / retry and prospective material, September13 18:11UTC
+
+Original prediction batch captured288calls. Seed2 completed/collected;
+seed0/1 failed only post-CVD because the ordered batch coordinator left
+finished controller2960286 unreaped. All six workers exited0 and released.
+Failures preserved/ineligible. Original archive copied toVM
+`gpu_artifacts_local/prediction_transfer_20260913_attempt1/evidence.tar`,
+SHA0928686137e8a61db60cc91952c407920117e136285b847ee71a8afa68e508bf.
+Primary outcome inspection has not occurred yet. Infrastructure amendment
+selected seed0/1attempt2, serial/reaped, retaining seed2attempt1; same source,
+parents/material/scorer/sampling. Additional192calls, no third attempt.
+
+Retry batchPID2968029 uses `/tmp/astra_prediction_transfer_retry_20260913.py`;
+roster/rootreceipts `/tmp/astra_prediction_transfer_retry_20260913_attempt2`.
+Do not rerun without checking `complete.json`/`stopped.json` and terminals.
+Plans: seed0 55f3bd2c796e81784500522c301e1f6f37fe33a6104683709de387f090149b0a;
+seed1 4d201d286da913a47795ddf2a758d38020d922b39046aa9c4b0a472e839c0f9a.
+Source f84cc3be remains unchanged. Only orchestration changes; failed costs
+remain. Main local audit helper `/tmp/astra_prediction_transfer_audit_20260913.py`
+now selects attempts2/2/1; not yet executed on primary outcomes.
+
+New pre-run audit reconciled in notebook18:11: old ID-residue shortcut real;
+actual new generator/scorer already address two implementation concerns.
+Pending endpoint is prompt-package worksheet robustness only, not isolated
+conditional evidence use; no same-ID counterfactual quartet control exists.
+No frozen metric/data change or live source edit.
+
+Meitner's new v2 material/exporter+test complete and Main22tests PASS13.463s;
+Meitner closed. No native v2 export/driver/fit yet. Lagrange now owns only
+`gpu/astra_pcfl_zero_fit_outer.py` and its test for narrow zombie handling;
+await EDITSTOP before staging. Current f84 snapshots must not be modified.
+Other agents closed. Keep unrelated rules edit. Broad sprint incomplete.
