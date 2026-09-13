@@ -15548,6 +15548,25 @@ Timestamp correction: prior17:34 heading/protocol was written approximately
 17:32UTC by the tool clock (heading anticipated by about2minutes). Both
 precede any new prediction-transfer model output; no outcome timing changes.
 
+## [Builder] 2026-09-13T17:45Z — SEQ-190: prediction-transfer CPU/material freeze
+
+Main25/25 focused tests PASS25.197s, including original adapter/source/receipt
+drift, busyGPU/unreadableCVD no-spawn, raw/route/token failures, owned cleanup,
+collection deadline, source-disjoint paired cases and frozen content scorer.
+Both workers EDITSTOP and closed; Main owns integration and all native work.
+Protocol finalized at research_notes/analysis/2026-09-13_level1_prediction_transfer_protocol.md.
+Exact native material seal150bc6b4431a2ad80205ee17e04f3f2d99c4f8e19e917ce7d6bbb8210e537d29;
+48rows,24fresh facts, four groups6each, FULL/MINIMAL paired,192token cap.
+Material JSON and Main setup/launch helper archived under receipts_20260912.
+Zero model calls, zero fits; CPU PASS is not a scientific result.
+
+Next native CPU preparation uses original node1 predictionseed0/1/2 adapters
+and their corresponding GPUs0/1/2 if live checks remain clear. Full comparison
+288calls,30minutes/GPU cap including collection; no teacher/parent or write.
+No GPU jobs launched by this entry. Original adapters are already in the
+rehashed surviving-VM first-roster archive; new receipts will also be copied.
+Simple hygiene applies; final-paper C11 guard is not being built/enforced here.
+
 ## [Independent A4 terminal audit] 2026-09-13 PT — valid 1/8 failure; retire later wording; split component and full-objective successors
 
 Documentation-only terminal audit and disposition:

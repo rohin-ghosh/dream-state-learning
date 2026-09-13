@@ -85,3 +85,28 @@ Exact launch commands and selected resources follow after CPU validation.
 Formal final-paper C11 guard remains deferred under Rohin's ruling. Ordinary
 provenance, parent blindness, state isolation, evidence preservation and
 shared-node/lease hygiene remain mandatory. Broader sprint is incomplete.
+
+## Implementation freeze — September 13, 2026, 17:45 UTC
+
+Main joint CPU suite25/25PASS in25.197s (14 lifecycle/custody tests plus11
+material tests): `python3 -m unittest discover -s tests -p '*prediction_transfer*.py' -v`.
+Material module SHA25676c742ed35f0d30012e2095c4a0077c9c026d97b55d1f4c7810b2d7b745d2e8d;
+runner24e74d5d57a36ab1e749567ba603a025680a66ad605642e9697b69d92bfd6274.
+Exact native material seal150bc6b4431a2ad80205ee17e04f3f2d99c4f8e19e917ce7d6bbb8210e537d29;
+material JSON FILE SHA7cdd08b461bf88daf02cf1ad6228d81b5912c19781f076fc23f2ac2ba551f690.
+All48 rows frozen before native outputs. Default fixture path is portable to
+the tracked old receipt; native generation explicitly uses original pinned
+`/tmp/astra_level1_prediction_goal_material_20260913.py`, unchanged bytes.
+
+Operational selection: node1 GPUs0/1/2, corresponding original prediction
+seeds0/1/2; native interpreter `/localhome/local-rohing/v2/venv/bin/python`.
+Original plan/completion pins and exact service identities are in the archived
+`receipts_20260912/astra_prediction_transfer_setup_20260913.py` (relative to
+research_notes/astra_memos). Its prepare mode does CPU/tokenizer checks only;
+launch mode creates three bounded controllers and collects completed captures.
+No GPU is reserved solely by this document. Each controller rechecks live
+compute processes, CVD environments and queue before each state, and owns
+only its spawned group. Exact known user-init service exceptions only;
+no blanket unreadable-process exemption. Detach before checks so the launch
+SSH transport exits. Collection stays within each30minute controller budget.
+Main will preserve all new roots/captures on the VM before reporting results.
