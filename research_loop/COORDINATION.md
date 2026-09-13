@@ -17647,3 +17647,18 @@ Current parallel source ownership is in the updated handoff: Godel birth,
 Beauvoir held worlds, Averroes nulls, Newton scanners, Mendel graph-input
 reconstruction; Main paired targets/integration. No extra singleton scouting,
 canonical data generation, model loading, GPU jobs, kills or approval requests.
+
+## [Builder] 2026-09-13T21:54Z — null source details fixed before scores
+
+Recorded research_notes/analysis/2026-09-13_stage2a_null_source_clarifications_v1.md:
+NPAIR preimages use exact descriptive ASCII null names in N0..N8 order;
+S_READ_ALL12 completes its true CHECK/ACK before STOP on actual public GOAL
+arrival, otherwise continues its specified recovery/index path. Query-KEEP is
+not added: registered held CHECK panels always implicate EVENTs; unsupported
+query-CHECK inputs remain rejected and are not missing held-panel members.
+No null/model score was inspected for these decisions. These finite source
+bindings preserve all comparison caps and do not add a human or C11 gate.
+
+Godel's all64birthcases/256targets now pass22CPUtests. Main all64paired-prefix
+tests pass8/8 in7.174seconds; Epicurus examines only the32new relation cases in
+parallel. Closed-loop/world/source-only evidence is not model learning.
