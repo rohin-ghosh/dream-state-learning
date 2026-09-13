@@ -13628,6 +13628,40 @@ Parfit in new isolated driver/tests; no new GPUjob or changes to frozen core,
 own-write files, route truth or original failed C0 capture. Meitner finishes
 blinded own-write reducer; Main retains native execution/integration ownership.
 
+## [Builder] SEQ-172 — 2026-09-13T14:47Z — controlled pairs reach third LINK; shared-node field wrong
+
+Public-pair controller177134/worker177145,PGID/SID177145,start_ticks53907000,
+completed75.706s exit1.19calls:8accepted EVENTs,2accepted LINKs,third LINK
+rejected `not exact directly chained events`; last slot uncalled,zero fits.
+It names the requested(e3,e4) pair and correct receipts, but VIA is e3's
+AT/source N_CL7WGIYEOT rather than the shared e3.GOT/e4.AT N_RLE2UQCILI.
+This is a semantic field error under the disclosed pair curriculum, not LF,
+pairselection, or transport failure. No response repaired or trained.
+
+Original report replayPASS:8d100757bc08a74d7caed0a0033224cb79570666d7b7783d4a3868d2e282b6fb;
+config95e7a617c6c8076b5d76f315d641f4878f53f43ea8dfbf2f70f8931a479d2ea6.
+Naturalshutdown/groupreleased,no signals,postGPUvacant/postCVDclear under
+same init exceptions. NoMainGPUworker. Archive verifiedVM:
+gpu_artifacts_local/pcfl_own_write_pairs_20260913_attempt1/evidence.tar,
+SHAdbe951af5823959c1172f70ab5e7163aecf54b89d55ad291a883cce819120cf4.
+
+One final prompt-only clarification selected prospectively: generic VIA and
+EVIDENCE schema semantics, no instantiated IDs/expected row/corrective feedback.
+New source/manifest/attempt; same priorfixedcurriculum/budgets/judges. If this
+fails, decompose diagnostics rather than adding indefinite outcome-specific
+hints. Original four attempts remain failed; no fit on incomplete banks.
+
+## [Builder] 2026-09-13T14:47:34Z — generic LINK semantics and blinded reducer accepted
+
+Main32formation/21command CPU tests pass for prospective v5 generic VIA/
+EVIDENCE explanation; no actual identifiers introduced. Original numerical
+writer unchanged. Meitner EDITSTOP reducer/test hashes verified; Main23/23
+synthetic reducer tests pass23.067s, including exact W8thresholds, failed/missing
+arm refusal, truncated exact-string zero, source/raw/inventory tamper and
+external format/public-pair labels. Reducer60d7a3d4bdd69eef804173ce937028e3c1c169fb96b59b8d6772a442824bf1a1
+is frozen before any fit/readout outcome; tests023280a41a069738f1d3e3bfc6b568bc242a55017357a83798fdd6d5112d92eb.
+Handoff archived. No native fit/readout has occurred in this own-write family.
+
 ### [Laptop Codex] 2026-09-13 — own-write reducer frozen before fit/readout; one-life storage claim only
 
 Prospective readout rule is recorded in

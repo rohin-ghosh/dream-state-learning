@@ -195,7 +195,7 @@ class OwnFormationTests(unittest.TestCase):
                 "Emit the actual newline character, not the literal characters backslash-n (\\n). "
                 "Do not add a blank line.")
         self.assertEqual(driver.LF_COMMITMENT_RULE, rule)
-        self.assertEqual(self.config["policy"], "public_session_history_whole_response_stop_only_format_public_pair_v4")
+        self.assertEqual(self.config["policy"], "public_session_history_whole_response_stop_only_format_public_pair_semantics_v5")
         for index, slot in enumerate(report["slots"]):
             prompt = slot["attempt"]["request"]["messages"][-1]["content"]
             if slot["kind"] == "EXPLORE":
@@ -230,6 +230,9 @@ class OwnFormationTests(unittest.TestCase):
         pair = self.config["planner"]["link_choices"][0]
         prompt = driver.requested_link_prompt("PUBLIC GRAMMAR", pair, handles)
         self.assertIn(pair[0] + " then " + pair[1], prompt)
+        self.assertIn(driver.LINK_SEMANTICS_RULE, prompt)
+        self.assertIn("GOT node of the first EVENT", driver.LINK_SEMANTICS_RULE)
+        self.assertIn("AT node of the second EVENT", driver.LINK_SEMANTICS_RULE)
         for fields in [core.parse_event_line(raw) for raw in self.event_raw]:
             for key in ("source", "destination", "receipt", "port"):
                 self.assertNotIn(fields[key], prompt)

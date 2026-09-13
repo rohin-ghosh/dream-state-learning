@@ -16,8 +16,13 @@ from organism_v6 import pcfl_vertical_formation_plan as planner
 
 
 SCHEMA = "pcfl.own_write_old_formation.v1"
-POLICY = "public_session_history_whole_response_stop_only_format_public_pair_v4"
+POLICY = "public_session_history_whole_response_stop_only_format_public_pair_semantics_v5"
 LINK_PAIR_POLICY = "requested_preselected_already_admitted_event_handles_v1"
+LINK_SEMANTICS_RULE = (
+    "VIA is the shared node: copy the GOT node of the first EVENT and verify it equals the AT node of the second EVENT. "
+    "Do not use the AT node of the first EVENT. "
+    "EVIDENCE lists the first EVENT receipt followed by the second EVENT receipt, in that order."
+)
 LF_COMMITMENT_RULE = (
     "End your response with exactly one LF (U+000A) after the last identifier. "
     "Emit the actual newline character, not the literal characters backslash-n (\\n). "
@@ -42,7 +47,8 @@ def requested_link_prompt(prompt, pair, public_event_handles):
             "requested pair must already be admitted public events")
     return commitment_prompt(prompt + "\nFor this controlled recording task, use the already-observed event addresses "
                              + pair[0] + " then " + pair[1] + " in that order. "
-                             "Derive the shared node and evidence references only from your actual public EVENT commitments.")
+                             "Derive the shared node and evidence references only from your actual public EVENT commitments.\n"
+                             + LINK_SEMANTICS_RULE)
 
 
 def require(condition, message):

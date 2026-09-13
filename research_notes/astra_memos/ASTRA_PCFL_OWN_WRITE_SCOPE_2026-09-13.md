@@ -117,3 +117,20 @@ discovery. The original semantic LINK was valid but did not meet the hidden
 pair selection; neither it nor its failed bank is repaired or trained. Use a
 fresh source/preparation/manifest/attempt and record the public pair policy in
 formation config/report carried into any fit. No full-assay gate is promoted.
+
+## Prospective typed LINK semantics disclosure — 2026-09-13 14:47 UTC
+
+SEQ172 reached eight exact EVENTs and two exact LINKs, then used the first
+EVENT's AT/source as VIA on the third pair. Keep that failure unchanged. A
+fresh version discloses the generic typed relation: VIA is the first EVENT's
+GOT/destination, equal to the second EVENT's AT/source; EVIDENCE is the two
+receipts in event order. This supplies no identifier or instantiated answer.
+All previous public pair selection, LF scaffold, strict judges, root, budget,
+writer and readouts remain unchanged. This is scaffolded schema execution,
+not inference of an undisclosed representation or autonomous link discovery.
+
+This is the last prompt-only LINK clarification selected for this diagnostic.
+If it fails, preserve the result and change the diagnostic decomposition
+rather than keep adding outcome-specific hints. Any separate event-only
+writer check would require its own declared input scope, manifest and endpoint;
+no incomplete old full-bank attempt becomes successful or receives a fit.
