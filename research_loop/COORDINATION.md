@@ -16449,3 +16449,35 @@ the original material/spec/checkpoint identities. Main26overlay/operator
 testsPASS0.392s, now exercising the relocated outer. Recheck real native CPU
 outer inputs before opening the four fixed descendants. Formal C11 guard
 still deferred; no automatic outcome rescue or substrate redesign.
+## [Builder] 2026-09-13T19:21Z — pre-GPU opening: fixed EVENT-v2 followups, all three passing seeds
+
+Native CPU preflight PASS: original material reconstituted byte-for-byte
+under warmfix2 for all3seeds; all12real outer fit-input/predecessor/acquisition
+checks passed without a GPU fit. Receipt FILE SHA256
+0b9a0654a1c3e430613d1f22ccecfaee012c2f4af1733b79def3c1a3fa7ac7d4.
+Real PEFT CPU4testsPASS3.908s already recorded; native receipt and overlay
+receipt now onVM. Warmfix2 receipt FILE SHA256
+ba1ed31aff1021d6e4ea02c90eb935c0ae433bb0c4ea30922e56f5229b0888e8,
+source repair commitfad676bb272e8deffaf87aa651b14ce0c3536ce0.
+No original source/material/checkpoint was changed or re-exported.
+
+Open all four predeclared fit/readout pairs for each passing seed, independently
+on node2 GPUs1/2/3. B200_NEW_DOSE, B400_FIXED_WORK, REPLAY400 each fork the
+same measured A200; CLEAN_CUM600 starts C0. A weak B200 score never suppresses
+the other arms.12fits/4800updates/19200presentations/192calls additional;
+full-assay cumulative15fits/5400updates/21600presentations/288calls.
+Perseed2hour cap includes measured acquisition time;30min stage caps,
+six-hour lease margin, actual process+queue+CVD checks before every stage,
+owned cleanup only. No automatic retry. Node2 lease September21 08:43UTC.
+Current nvidia-smi has no compute processes, but only the outer's combined
+checks establish stage availability. Expect approximately30–45minutes for
+three independent sequences in parallel, not a throughput guarantee.
+
+Roots `pcfl_sequence_v2_followup_seed{0,1,2}_20260913_attempt2` under node2
+`/localhome/local-rohing/astra_diagnostics`; manifest FILE SHA256 by seed:
+0 4c32af9840b3e244067fbf792f2b46f211987296b6e185d08f4da867ce33c199
+1 d8da445d1ddf8fb463c12955ebf609cfb5537c25d94722c24445198cb05e235b
+2 aa2025084a34a2c96e125d4d7ad7ad34cc9bf91aa5d3a13baeaf4da0b5c4a859.
+Native launch uses the separately pinned attempt2 followup operator, not
+the old acquisition driver. Completion/raw analysis still required; no
+general retention or parenting claim follows from this opening.
