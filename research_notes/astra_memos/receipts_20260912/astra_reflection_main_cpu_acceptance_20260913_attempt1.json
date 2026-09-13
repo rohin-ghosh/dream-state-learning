@@ -1,0 +1,447 @@
+{
+  "all_six_declared_file_pins_match": true,
+  "all_tracked_inputs_unchanged": true,
+  "artifacts": {
+    "json": "/tmp/astra_reflection_main_cpu_acceptance_20260913_attempt1.json",
+    "markdown": "/tmp/astra_reflection_main_cpu_acceptance_20260913_attempt1.md"
+  },
+  "attempt": 1,
+  "commands": [
+    {
+      "accepted": true,
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_birth_reflection_probe.py",
+        "-v"
+      ],
+      "command": "python3 -B -m unittest discover -s tests -p test_birth_reflection_probe.py -v",
+      "cwd": "/data/home/rohing/dream-state",
+      "duration_seconds": 1.874952,
+      "errors": 0,
+      "exit_code": 0,
+      "expected_failures": 0,
+      "expected_tests": 40,
+      "failures": 0,
+      "label": "birth_reflection_probe_focused",
+      "passed": 40,
+      "skipped": 0,
+      "started_at_utc": "2026-09-13T05:07:17.646025+00:00",
+      "stderr": "test_application_all_literal_events_and_triples_disjoint_from_old_splits (test_birth_reflection_probe.BirthReflectionProbeTests.test_application_all_literal_events_and_triples_disjoint_from_old_splits) ... ok\ntest_application_cases_and_choice_labels_are_balanced (test_birth_reflection_probe.BirthReflectionProbeTests.test_application_cases_and_choice_labels_are_balanced) ... ok\ntest_application_proof_agrees_with_hand_authored_case_table (test_birth_reflection_probe.BirthReflectionProbeTests.test_application_proof_agrees_with_hand_authored_case_table) ... ok\ntest_audit_detects_answer_imbalance_duplicates_and_single_factor_shortcut (test_birth_reflection_probe.BirthReflectionProbeTests.test_audit_detects_answer_imbalance_duplicates_and_single_factor_shortcut) ... ok\ntest_both_restatement_conditions_have_well_posed_nondeictic_task (test_birth_reflection_probe.BirthReflectionProbeTests.test_both_restatement_conditions_have_well_posed_nondeictic_task) ... ok\ntest_choice_order_swap_swaps_semantic_target_not_source (test_birth_reflection_probe.BirthReflectionProbeTests.test_choice_order_swap_swaps_semantic_target_not_source) ... ok\ntest_cli_emits_clean_export_without_native_imports (test_birth_reflection_probe.BirthReflectionProbeTests.test_cli_emits_clean_export_without_native_imports) ... ok\ntest_cli_rejects_application_training (test_birth_reflection_probe.BirthReflectionProbeTests.test_cli_rejects_application_training) ... ok\ntest_construction_is_deterministic_and_does_not_change_random_state (test_birth_reflection_probe.BirthReflectionProbeTests.test_construction_is_deterministic_and_does_not_change_random_state) ... ok\ntest_dependency_pins_are_verified_before_construction (test_birth_reflection_probe.BirthReflectionProbeTests.test_dependency_pins_are_verified_before_construction) ... ok\ntest_dev_cannot_be_relabelled_as_training (test_birth_reflection_probe.BirthReflectionProbeTests.test_dev_cannot_be_relabelled_as_training) ... ok\ntest_development_export_separates_requests_from_scoring_rows (test_birth_reflection_probe.BirthReflectionProbeTests.test_development_export_separates_requests_from_scoring_rows) ... ok\ntest_explicit_panel_split_and_parent_required (test_birth_reflection_probe.BirthReflectionProbeTests.test_explicit_panel_split_and_parent_required) ... ok\ntest_explicit_withdrawal_is_only_input_difference_all_panels (test_birth_reflection_probe.BirthReflectionProbeTests.test_explicit_withdrawal_is_only_input_difference_all_panels) ... ok\ntest_frozen_rows_have_exact_output_blind_digests (test_birth_reflection_probe.BirthReflectionProbeTests.test_frozen_rows_have_exact_output_blind_digests) ... ok\ntest_full_assistant_mask_contract_reference_is_not_suffix_training (test_birth_reflection_probe.BirthReflectionProbeTests.test_full_assistant_mask_contract_reference_is_not_suffix_training) ... ok\ntest_historical_targets_and_event_bytes_preserved_with_labeled_prompt_transform (test_birth_reflection_probe.BirthReflectionProbeTests.test_historical_targets_and_event_bytes_preserved_with_labeled_prompt_transform) ... ok\ntest_identical_ordered_choices_can_require_opposite_source_backed_answers (test_birth_reflection_probe.BirthReflectionProbeTests.test_identical_ordered_choices_can_require_opposite_source_backed_answers) ... ok\ntest_json_round_trip_validates_without_coercing_raw_fields (test_birth_reflection_probe.BirthReflectionProbeTests.test_json_round_trip_validates_without_coercing_raw_fields) ... ok\ntest_manifest_and_row_tampering_rejected_even_with_recomputed_hashes (test_birth_reflection_probe.BirthReflectionProbeTests.test_manifest_and_row_tampering_rejected_even_with_recomputed_hashes) ... ok\ntest_native_and_claim_flags_remain_false (test_birth_reflection_probe.BirthReflectionProbeTests.test_native_and_claim_flags_remain_false) ... ok\ntest_no_metadata_proofs_or_training_target_annotations_in_messages (test_birth_reflection_probe.BirthReflectionProbeTests.test_no_metadata_proofs_or_training_target_annotations_in_messages) ... ok\ntest_overlap_is_rejected_including_distractor_events (test_birth_reflection_probe.BirthReflectionProbeTests.test_overlap_is_rejected_including_distractor_events) ... ok\ntest_panel_reducer_rejects_missing_extra_or_list_inventory (test_birth_reflection_probe.BirthReflectionProbeTests.test_panel_reducer_rejects_missing_extra_or_list_inventory) ... ok\ntest_panel_reducer_retains_raw_failures_and_does_not_promote (test_birth_reflection_probe.BirthReflectionProbeTests.test_panel_reducer_retains_raw_failures_and_does_not_promote) ... ok\ntest_prompt_transform_rejects_historical_framing_or_task_drift (test_birth_reflection_probe.BirthReflectionProbeTests.test_prompt_transform_rejects_historical_framing_or_task_drift) ... ok\ntest_restatement_cannot_pass_by_substring_or_reusable_suffix_only (test_birth_reflection_probe.BirthReflectionProbeTests.test_restatement_cannot_pass_by_substring_or_reusable_suffix_only) ... ok\ntest_restatement_keeps_historical_exact_scorer_and_no_semantic_score (test_birth_reflection_probe.BirthReflectionProbeTests.test_restatement_keeps_historical_exact_scorer_and_no_semantic_score) ... ok\ntest_returned_mutations_cannot_change_future_construction (test_birth_reflection_probe.BirthReflectionProbeTests.test_returned_mutations_cannot_change_future_construction) ... ok\ntest_score_rejects_tampered_target_or_proof_before_response (test_birth_reflection_probe.BirthReflectionProbeTests.test_score_rejects_tampered_target_or_proof_before_response) ... ok\ntest_semantic_proof_checks_types_not_python_bool_int_equality (test_birth_reflection_probe.BirthReflectionProbeTests.test_semantic_proof_checks_types_not_python_bool_int_equality) ... ok\ntest_semantic_proof_rejects_ambiguous_pairs_and_malformed_source (test_birth_reflection_probe.BirthReflectionProbeTests.test_semantic_proof_rejects_ambiguous_pairs_and_malformed_source) ... ok\ntest_single_factor_baselines_and_residual_composite_shortcuts_reported (test_birth_reflection_probe.BirthReflectionProbeTests.test_single_factor_baselines_and_residual_composite_shortcuts_reported) ... ok\ntest_source_proof_binds_final_event_not_distractor (test_birth_reflection_probe.BirthReflectionProbeTests.test_source_proof_binds_final_event_not_distractor) ... ok\ntest_strict_application_scores_correct_and_wrong_choice_separately (test_birth_reflection_probe.BirthReflectionProbeTests.test_strict_application_scores_correct_and_wrong_choice_separately) ... ok\ntest_strict_scorer_never_strips_fences_whitespace_or_explanations (test_birth_reflection_probe.BirthReflectionProbeTests.test_strict_scorer_never_strips_fences_whitespace_or_explanations) ... ok\ntest_system_anchor_none_does_not_withdraw_parent_regression (test_birth_reflection_probe.BirthReflectionProbeTests.test_system_anchor_none_does_not_withdraw_parent_regression) ... ok\ntest_train_export_rejects_all_dev_and_appended_application_rows (test_birth_reflection_probe.BirthReflectionProbeTests.test_train_export_rejects_all_dev_and_appended_application_rows) ... ok\ntest_two_training_exports_have_same_order_targets_and_only_clean_payload (test_birth_reflection_probe.BirthReflectionProbeTests.test_two_training_exports_have_same_order_targets_and_only_clean_payload) ... ok\ntest_withdrawal_rejects_missing_duplicate_or_nonstandalone_correction (test_birth_reflection_probe.BirthReflectionProbeTests.test_withdrawal_rejects_missing_duplicate_or_nonstandalone_correction) ... ok\n\n----------------------------------------------------------------------\nRan 40 tests in 1.580s\n\nOK\n",
+      "stdout": "",
+      "tests_run": 40,
+      "unexpected_successes": 0,
+      "unittest_reported_duration_seconds": 1.58
+    },
+    {
+      "accepted": true,
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_birth_skill_corpus.py",
+        "-v"
+      ],
+      "command": "python3 -B -m unittest discover -s tests -p test_birth_skill_corpus.py -v",
+      "cwd": "/data/home/rohing/dream-state",
+      "duration_seconds": 0.239333,
+      "errors": 0,
+      "exit_code": 0,
+      "expected_failures": 0,
+      "expected_tests": 22,
+      "failures": 0,
+      "label": "birth_skill_corpus_historical_regression",
+      "passed": 22,
+      "skipped": 0,
+      "started_at_utc": "2026-09-13T05:07:19.521403+00:00",
+      "stderr": "test_all_targets_have_raw_event_proofs_and_pass_existing_parser (test_birth_skill_corpus.BirthSkillCorpusTests.test_all_targets_have_raw_event_proofs_and_pass_existing_parser) ... ok\ntest_ambiguous_prediction_is_not_silently_treated_as_absent (test_birth_skill_corpus.BirthSkillCorpusTests.test_ambiguous_prediction_is_not_silently_treated_as_absent) ... ok\ntest_anchor_is_only_input_difference (test_birth_skill_corpus.BirthSkillCorpusTests.test_anchor_is_only_input_difference) ... ok\ntest_collision_and_balance_checks_detect_corruption (test_birth_skill_corpus.BirthSkillCorpusTests.test_collision_and_balance_checks_detect_corruption) ... ok\ntest_counts_balance_origin_and_claim_boundaries (test_birth_skill_corpus.BirthSkillCorpusTests.test_counts_balance_origin_and_claim_boundaries) ... ok\ntest_determinism_seed_only_orders_and_manifest_hashes (test_birth_skill_corpus.BirthSkillCorpusTests.test_determinism_seed_only_orders_and_manifest_hashes) ... ok\ntest_explicit_skill_split_anchor_and_seed_required (test_birth_skill_corpus.BirthSkillCorpusTests.test_explicit_skill_split_anchor_and_seed_required) ... ok\ntest_invalid_actions_outcomes_and_duplicate_events_fail_closed (test_birth_skill_corpus.BirthSkillCorpusTests.test_invalid_actions_outcomes_and_duplicate_events_fail_closed) ... ok\ntest_judgement_negatives_are_paired_and_not_fake_abstention_targets (test_birth_skill_corpus.BirthSkillCorpusTests.test_judgement_negatives_are_paired_and_not_fake_abstention_targets) ... ok\ntest_literal_split_disjointness_and_shared_correlated_situations (test_birth_skill_corpus.BirthSkillCorpusTests.test_literal_split_disjointness_and_shared_correlated_situations) ... ok\ntest_metadata_is_not_rendered_as_model_input (test_birth_skill_corpus.BirthSkillCorpusTests.test_metadata_is_not_rendered_as_model_input) ... ok\ntest_missing_prediction_is_sufficient_but_missing_outcome_is_not (test_birth_skill_corpus.BirthSkillCorpusTests.test_missing_prediction_is_sufficient_but_missing_outcome_is_not) ... ok\ntest_no_triple_template_or_earlier_outcome_shortcut (test_birth_skill_corpus.BirthSkillCorpusTests.test_no_triple_template_or_earlier_outcome_shortcut) ... ok\ntest_post_action_prediction_is_not_prior_prediction (test_birth_skill_corpus.BirthSkillCorpusTests.test_post_action_prediction_is_not_prior_prediction) ... ok\ntest_public_parser_is_loaded_without_native_or_world_imports (test_birth_skill_corpus.BirthSkillCorpusTests.test_public_parser_is_loaded_without_native_or_world_imports) ... ok\ntest_public_record_parser_rejects_false_fields_types_and_extra_prose (test_birth_skill_corpus.BirthSkillCorpusTests.test_public_record_parser_rejects_false_fields_types_and_extra_prose) ... ok\ntest_reflection_is_supported_reusable_prose_not_rule_induction (test_birth_skill_corpus.BirthSkillCorpusTests.test_reflection_is_supported_reusable_prose_not_rule_induction) ... ok\ntest_returned_manifest_mutation_does_not_change_future_builds (test_birth_skill_corpus.BirthSkillCorpusTests.test_returned_manifest_mutation_does_not_change_future_builds) ... ok\ntest_selected_execution_identity_and_outcome_join (test_birth_skill_corpus.BirthSkillCorpusTests.test_selected_execution_identity_and_outcome_join) ... ok\ntest_six_semantic_cases_hand_checked_without_hidden_rule (test_birth_skill_corpus.BirthSkillCorpusTests.test_six_semantic_cases_hand_checked_without_hidden_rule) ... ok\ntest_source_mutation_and_wrong_origin_rejected (test_birth_skill_corpus.BirthSkillCorpusTests.test_source_mutation_and_wrong_origin_rejected) ... ok\ntest_split_audit_checks_raw_evidence_not_just_different_ids (test_birth_skill_corpus.BirthSkillCorpusTests.test_split_audit_checks_raw_evidence_not_just_different_ids) ... ok\n\n----------------------------------------------------------------------\nRan 22 tests in 0.178s\n\nOK\n",
+      "stdout": "",
+      "tests_run": 22,
+      "unexpected_successes": 0,
+      "unittest_reported_duration_seconds": 0.178
+    },
+    {
+      "accepted": true,
+      "argv": [
+        "python3",
+        "-B",
+        "/tmp/test_astra_reflection_fit_run_20260913.py",
+        "-v"
+      ],
+      "command": "python3 -B /tmp/test_astra_reflection_fit_run_20260913.py -v",
+      "cwd": "/data/home/rohing/dream-state",
+      "duration_seconds": 7.571784,
+      "errors": 0,
+      "exit_code": 0,
+      "expected_failures": 0,
+      "expected_tests": 40,
+      "failures": 0,
+      "label": "reflection_fit_runtime",
+      "passed": 40,
+      "skipped": 0,
+      "started_at_utc": "2026-09-13T05:07:19.760862+00:00",
+      "stderr": "test_adapter_mutation_after_fit_is_not_accepted_for_readout (__main__.RuntimeTests.test_adapter_mutation_after_fit_is_not_accepted_for_readout) ... ok\ntest_all_144_raw_captures_close_before_two_separate_metrics (__main__.RuntimeTests.test_all_144_raw_captures_close_before_two_separate_metrics) ... ok\ntest_budget_expires_and_restores_alarm (__main__.RuntimeTests.test_budget_expires_and_restores_alarm) ... ok\ntest_busy_gpu_is_never_killed_or_started (__main__.RuntimeTests.test_busy_gpu_is_never_killed_or_started) ... ok\ntest_capture_error_preserves_raw_and_never_closes_or_scores (__main__.RuntimeTests.test_capture_error_preserves_raw_and_never_closes_or_scores) ... ok\ntest_capture_tamper_duplicate_process_and_recollection_rejected (__main__.RuntimeTests.test_capture_tamper_duplicate_process_and_recollection_rejected) ... ok\ntest_cleanup_failure_cannot_claim_release (__main__.RuntimeTests.test_cleanup_failure_cannot_claim_release) ... ok\ntest_collection_never_writes_into_sources_models_logs_or_capture_root (__main__.RuntimeTests.test_collection_never_writes_into_sources_models_logs_or_capture_root) ... ok\ntest_controller_sigterm_unwinds_owned_group_cleanup (__main__.RuntimeTests.test_controller_sigterm_unwinds_owned_group_cleanup) ... ok\ntest_controller_stops_on_failure_preserves_evidence_and_no_retry (__main__.RuntimeTests.test_controller_stops_on_failure_preserves_evidence_and_no_retry) ... ok\ntest_explicit_gpu_flags_deadlines_and_lease_reserve (__main__.RuntimeTests.test_explicit_gpu_flags_deadlines_and_lease_reserve) ... ok\ntest_export_metadata_leakage_and_application_loss_rejected (__main__.RuntimeTests.test_export_metadata_leakage_and_application_loss_rejected) ... ok\ntest_extra_source_and_checkout_symlink_rejected (__main__.RuntimeTests.test_extra_source_and_checkout_symlink_rejected) ... ok\ntest_final_helper_hash_binding_and_environment_rejections (__main__.RuntimeTests.test_final_helper_hash_binding_and_environment_rejections) ... ok\ntest_final_source_pins_supplied_by_main_not_frozen_during_development (__main__.RuntimeTests.test_final_source_pins_supplied_by_main_not_frozen_during_development) ... ok\ntest_fit_manifest_rejects_skips_nonfinite_drops_exposure (__main__.RuntimeTests.test_fit_manifest_rejects_skips_nonfinite_drops_exposure) ... ok\ntest_full_assistant_masks_counts_bytes_padding_and_matched_orders (__main__.RuntimeTests.test_full_assistant_masks_counts_bytes_padding_and_matched_orders) ... ok\ntest_immutable_json_no_overwrite_duplicate_keys_or_nonfinite (__main__.RuntimeTests.test_immutable_json_no_overwrite_duplicate_keys_or_nonfinite) ... ok\ntest_import_does_not_load_native_libraries (__main__.RuntimeTests.test_import_does_not_load_native_libraries) ... ok\ntest_input_scope_recipe_model_and_environment_drift (__main__.RuntimeTests.test_input_scope_recipe_model_and_environment_drift) ... ok\ntest_insufficient_query_release_budget_starts_nothing (__main__.RuntimeTests.test_insufficient_query_release_budget_starts_nothing) ... ok\ntest_log_mutation_after_capture_closure_is_rejected (__main__.RuntimeTests.test_log_mutation_after_capture_closure_is_rejected) ... ok\ntest_missing_capture_never_scores_even_after_completion (__main__.RuntimeTests.test_missing_capture_never_scores_even_after_completion) ... ok\ntest_missing_fit_or_log_never_allows_scores (__main__.RuntimeTests.test_missing_fit_or_log_never_allows_scores) ... ok\ntest_native_backend_calls_matched_engine_and_actual_lora_argument (__main__.RuntimeTests.test_native_backend_calls_matched_engine_and_actual_lora_argument) ... ok\ntest_native_bad_tail_and_template_token_mismatch_rejected (__main__.RuntimeTests.test_native_bad_tail_and_template_token_mismatch_rejected) ... ok\ntest_nested_release_timer_restores_outer_and_signal_handlers (__main__.RuntimeTests.test_nested_release_timer_restores_outer_and_signal_handlers) ... ok\ntest_nvml_30s_budget_preserves_exact_uuid_and_release_checks (__main__.RuntimeTests.test_nvml_30s_budget_preserves_exact_uuid_and_release_checks) ... ok\ntest_off_never_routes_adapter_and_adapters_are_hash_bound (__main__.RuntimeTests.test_off_never_routes_adapter_and_adapters_are_hash_bound) ... ok\ntest_oversize_rejected_before_native_encoder_and_nontrain_loss_forbidden (__main__.RuntimeTests.test_oversize_rejected_before_native_encoder_and_nontrain_loss_forbidden) ... ok\ntest_pair_target_order_and_generic_system_drift_rejected (__main__.RuntimeTests.test_pair_target_order_and_generic_system_drift_rejected) ... ok\ntest_prepare_inventory_recipe_and_public_scope_not_ancestry (__main__.RuntimeTests.test_prepare_inventory_recipe_and_public_scope_not_ancestry) ... ok\ntest_raw_whitespace_choice_not_normalized_and_prose_not_semantic_failure (__main__.RuntimeTests.test_raw_whitespace_choice_not_normalized_and_prose_not_semantic_failure) ... ok\ntest_readout_300s_ceiling_still_clamps_to_global_release_reserve (__main__.RuntimeTests.test_readout_300s_ceiling_still_clamps_to_global_release_reserve) ... ok\ntest_same_source_template_and_event_leakage_are_rejected (__main__.RuntimeTests.test_same_source_template_and_event_leakage_are_rejected) ... ok\ntest_stage_owns_only_spawned_group_and_cleanup_runs_on_timeout (__main__.RuntimeTests.test_stage_owns_only_spawned_group_and_cleanup_runs_on_timeout) ... ok\ntest_target_eos_bad_mask_and_padding_loss_rejected (__main__.RuntimeTests.test_target_eos_bad_mask_and_padding_loss_rejected) ... ok\ntest_token_vector_accepts_mapping_and_rejects_nested_bool_empty (__main__.RuntimeTests.test_token_vector_accepts_mapping_and_rejects_nested_bool_empty) ... ok\ntest_two_cold_fit_calls_actual_trainer_api_and_no_dev_items (__main__.RuntimeTests.test_two_cold_fit_calls_actual_trainer_api_and_no_dev_items) ... ok\ntest_worker_interpreter_preserves_venv_symlink_spelling (__main__.RuntimeTests.test_worker_interpreter_preserves_venv_symlink_spelling) ... ok\n\n----------------------------------------------------------------------\nRan 40 tests in 7.423s\n\nOK\n",
+      "stdout": "",
+      "tests_run": 40,
+      "unexpected_successes": 0,
+      "unittest_reported_duration_seconds": 7.423
+    },
+    {
+      "accepted": true,
+      "argv": [
+        "python3",
+        "-B",
+        "-"
+      ],
+      "command": "python3 -B -",
+      "cwd": "/data/home/rohing/dream-state",
+      "details": {
+        "bytecode_written": false,
+        "compiled_in_memory": [
+          "organism_v6/birth_reflection_probe.py",
+          "tests/test_birth_reflection_probe.py",
+          "/tmp/astra_reflection_fit_run_20260913.py",
+          "/tmp/test_astra_reflection_fit_run_20260913.py",
+          "tests/test_birth_skill_corpus.py"
+        ],
+        "count": 5
+      },
+      "duration_seconds": 0.054451,
+      "exit_code": 0,
+      "label": "in_memory_compilation",
+      "started_at_utc": "2026-09-13T05:07:27.332818+00:00",
+      "stderr": "",
+      "stdin_python": "import json\nfrom pathlib import Path\npaths = [\"organism_v6/birth_reflection_probe.py\", \"tests/test_birth_reflection_probe.py\", \"/tmp/astra_reflection_fit_run_20260913.py\", \"/tmp/test_astra_reflection_fit_run_20260913.py\", \"tests/test_birth_skill_corpus.py\"]\nfor name in paths:\n    compile(Path(name).read_bytes(), name, \"exec\")\nprint(json.dumps({\"compiled_in_memory\": paths, \"count\": len(paths), \"bytecode_written\": False}))\n",
+      "stdout": "{\"compiled_in_memory\": [\"organism_v6/birth_reflection_probe.py\", \"tests/test_birth_reflection_probe.py\", \"/tmp/astra_reflection_fit_run_20260913.py\", \"/tmp/test_astra_reflection_fit_run_20260913.py\", \"tests/test_birth_skill_corpus.py\"], \"count\": 5, \"bytecode_written\": false}\n"
+    },
+    {
+      "accepted": true,
+      "argv": [
+        "python3",
+        "-B",
+        "-"
+      ],
+      "command": "python3 -B -",
+      "cwd": "/data/home/rohing/dream-state",
+      "details": {
+        "all_digests_match_handoff": true,
+        "expected_digest_count": 7,
+        "export_digests": {
+          "Both ordered target lists": "60b2b0a94bc0b4fdb8b9eda3cd6ff30c59ed969a992cd58863b2970f8dcfc6ac",
+          "DEV present application requests": "2055f1365271d498c97814a348799b05ff43b963feb521b1a911bb3a9d5526e9",
+          "DEV present restatement requests": "c5bf73cb2b899e7924348238e724ce13b3bb02e0dc2ec98abaeb3a4c1a4a12d5",
+          "DEV withdrawn application requests": "672b61954088ed48ef6381de617d9ebca8ab09de344a3749183ae86cddb44409",
+          "DEV withdrawn restatement requests": "bbe940759df8114fce677239db772ad9102d3a272f2b0be40e03f918a0f78cac",
+          "TRAIN present records": "b7ce09ba00fb1c95bcdffd641b14d0d40178fa8ad4c9d47efc0cc59922ae2f21",
+          "TRAIN withdrawn records": "cf610fe611a92ef57ec869e0f2d20b9458ef169420c421be5a38034dbe1df42d"
+        },
+        "exports": [
+          {
+            "count": 12,
+            "panel": "restatement",
+            "parent": "present",
+            "split": "train"
+          },
+          {
+            "authored_target_self_consistency_passed": 12,
+            "count": 12,
+            "model_scores": false,
+            "panel": "restatement",
+            "parent": "present",
+            "split": "dev"
+          },
+          {
+            "authored_target_self_consistency_passed": 12,
+            "count": 12,
+            "model_scores": false,
+            "panel": "application",
+            "parent": "present",
+            "split": "dev"
+          },
+          {
+            "count": 12,
+            "panel": "restatement",
+            "parent": "withdrawn",
+            "split": "train"
+          },
+          {
+            "authored_target_self_consistency_passed": 12,
+            "count": 12,
+            "model_scores": false,
+            "panel": "restatement",
+            "parent": "withdrawn",
+            "split": "dev"
+          },
+          {
+            "authored_target_self_consistency_passed": 12,
+            "count": 12,
+            "model_scores": false,
+            "panel": "application",
+            "parent": "withdrawn",
+            "split": "dev"
+          }
+        ],
+        "native_libraries_imported": false,
+        "scientific_or_native_acceptance": false
+      },
+      "duration_seconds": 0.431823,
+      "exit_code": 0,
+      "label": "frozen_export_digest_and_self_consistency",
+      "started_at_utc": "2026-09-13T05:07:27.387358+00:00",
+      "stderr": "",
+      "stdin_python": "import hashlib\nimport json\nimport sys\nfrom organism_v6 import birth_reflection_probe as probe\n\ndef digest(value):\n    return hashlib.sha256(json.dumps(value, sort_keys=True, ensure_ascii=False, allow_nan=False).encode()).hexdigest()\n\nexpected = {\n    \"TRAIN present records\": \"b7ce09ba00fb1c95bcdffd641b14d0d40178fa8ad4c9d47efc0cc59922ae2f21\",\n    \"TRAIN withdrawn records\": \"cf610fe611a92ef57ec869e0f2d20b9458ef169420c421be5a38034dbe1df42d\",\n    \"Both ordered target lists\": \"60b2b0a94bc0b4fdb8b9eda3cd6ff30c59ed969a992cd58863b2970f8dcfc6ac\",\n    \"DEV present restatement requests\": \"c5bf73cb2b899e7924348238e724ce13b3bb02e0dc2ec98abaeb3a4c1a4a12d5\",\n    \"DEV withdrawn restatement requests\": \"bbe940759df8114fce677239db772ad9102d3a272f2b0be40e03f918a0f78cac\",\n    \"DEV present application requests\": \"2055f1365271d498c97814a348799b05ff43b963feb521b1a911bb3a9d5526e9\",\n    \"DEV withdrawn application requests\": \"672b61954088ed48ef6381de617d9ebca8ab09de344a3749183ae86cddb44409\",\n}\nobserved = {}\nexports = []\nordered_targets = []\nfor parent in (\"present\", \"withdrawn\"):\n    bundle = probe.build_panel(\"restatement\", split=\"train\", parent_condition=parent)\n    training = probe.export_training(bundle)\n    assert len(training[\"records\"]) == 12\n    observed[f\"TRAIN {parent} records\"] = digest(training[\"records\"])\n    ordered_targets.append([row[\"response_target\"] for row in training[\"records\"]])\n    exports.append({\"split\": \"train\", \"panel\": \"restatement\", \"parent\": parent, \"count\": len(training[\"records\"])})\n    for panel in (\"restatement\", \"application\"):\n        bundle = probe.build_panel(panel, split=\"dev\", parent_condition=parent)\n        development = probe.export_development(bundle)\n        assert len(development[\"requests\"]) == 12\n        observed[f\"DEV {parent} {panel} requests\"] = digest(development[\"requests\"])\n        passed = sum(probe.score_response(row, row[\"response_target\"])[\"passed\"] for row in development[\"scoring_rows\"])\n        assert passed == 12\n        exports.append({\"split\": \"dev\", \"panel\": panel, \"parent\": parent, \"count\": len(development[\"requests\"]), \"authored_target_self_consistency_passed\": passed, \"model_scores\": False})\nassert ordered_targets[0] == ordered_targets[1]\nobserved[\"Both ordered target lists\"] = digest(ordered_targets[0])\nassert observed == expected, {key: [expected[key], observed.get(key)] for key in expected if expected[key] != observed.get(key)}\nassert not {\"torch\", \"transformers\", \"peft\", \"vllm\"}.intersection(sys.modules)\nprint(json.dumps({\"export_digests\": observed, \"expected_digest_count\": len(expected), \"all_digests_match_handoff\": True, \"exports\": exports, \"native_libraries_imported\": False, \"scientific_or_native_acceptance\": False}, sort_keys=True))\n",
+      "stdout": "{\"all_digests_match_handoff\": true, \"expected_digest_count\": 7, \"export_digests\": {\"Both ordered target lists\": \"60b2b0a94bc0b4fdb8b9eda3cd6ff30c59ed969a992cd58863b2970f8dcfc6ac\", \"DEV present application requests\": \"2055f1365271d498c97814a348799b05ff43b963feb521b1a911bb3a9d5526e9\", \"DEV present restatement requests\": \"c5bf73cb2b899e7924348238e724ce13b3bb02e0dc2ec98abaeb3a4c1a4a12d5\", \"DEV withdrawn application requests\": \"672b61954088ed48ef6381de617d9ebca8ab09de344a3749183ae86cddb44409\", \"DEV withdrawn restatement requests\": \"bbe940759df8114fce677239db772ad9102d3a272f2b0be40e03f918a0f78cac\", \"TRAIN present records\": \"b7ce09ba00fb1c95bcdffd641b14d0d40178fa8ad4c9d47efc0cc59922ae2f21\", \"TRAIN withdrawn records\": \"cf610fe611a92ef57ec869e0f2d20b9458ef169420c421be5a38034dbe1df42d\"}, \"exports\": [{\"count\": 12, \"panel\": \"restatement\", \"parent\": \"present\", \"split\": \"train\"}, {\"authored_target_self_consistency_passed\": 12, \"count\": 12, \"model_scores\": false, \"panel\": \"restatement\", \"parent\": \"present\", \"split\": \"dev\"}, {\"authored_target_self_consistency_passed\": 12, \"count\": 12, \"model_scores\": false, \"panel\": \"application\", \"parent\": \"present\", \"split\": \"dev\"}, {\"count\": 12, \"panel\": \"restatement\", \"parent\": \"withdrawn\", \"split\": \"train\"}, {\"authored_target_self_consistency_passed\": 12, \"count\": 12, \"model_scores\": false, \"panel\": \"restatement\", \"parent\": \"withdrawn\", \"split\": \"dev\"}, {\"authored_target_self_consistency_passed\": 12, \"count\": 12, \"model_scores\": false, \"panel\": \"application\", \"parent\": \"withdrawn\", \"split\": \"dev\"}], \"native_libraries_imported\": false, \"scientific_or_native_acceptance\": false}\n"
+    }
+  ],
+  "completed_at_utc": "2026-09-13T05:07:27.821631+00:00",
+  "counts": {
+    "errors": 0,
+    "expected_failures": 0,
+    "expected_tests": 102,
+    "failures": 0,
+    "passed": 102,
+    "skipped": 0,
+    "tests_run": 102,
+    "unexpected_successes": 0
+  },
+  "environment_overrides": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "HF_HUB_OFFLINE": "1",
+    "NVIDIA_VISIBLE_DEVICES": "none",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "REFLECTION_DRIVER": "/tmp/astra_reflection_fit_run_20260913.py",
+    "REFLECTION_PUBLIC_HELPER": "/tmp/astra_birth_skill_probe_run_20260913.py",
+    "REFLECTION_TRAINER": "/data/home/rohing/dream-state/organism_v6/train_adapter_v3.py",
+    "TRANSFORMERS_OFFLINE": "1"
+  },
+  "fixture_directory_observation": {
+    "new_remaining_paths": [],
+    "note": "Snapshot observation only; concurrent agent fixtures are not owned or removed by this validator."
+  },
+  "handoff_inspection": [
+    {
+      "contract": "Symmetric nondeictic prompt repair; historical events/targets retained; explicit generic system; 12 training records per arm; 12 DEV requests per panel/condition; exact prose and strict raw A/B scoring kept separate; no native/scientific qualification.",
+      "path": "/tmp/astra_birth_reflection_probe_handoff_20260913.md",
+      "reported_tests": {
+        "focused": 40,
+        "historical_regression": 22
+      }
+    },
+    {
+      "contract": "Two cold authored fits and six matched 24-call readouts are Main-only; CPU mocks cover masks, custody, completion-before-scoring and release logic; native/lease/source/model gates remain Main responsibilities.",
+      "path": "/tmp/astra_reflection_fit_runtime_handoff_20260913.md",
+      "reported_tests": {
+        "runtime": 40
+      }
+    }
+  ],
+  "hashes": [
+    {
+      "after": {
+        "bytes": 20814,
+        "sha256": "b69dfe4ab39e60fab826e67758d21e708c87d538f3fcd2b8a579bb778b0ace80"
+      },
+      "before": {
+        "bytes": 20814,
+        "sha256": "b69dfe4ab39e60fab826e67758d21e708c87d538f3fcd2b8a579bb778b0ace80"
+      },
+      "expected_sha256": "b69dfe4ab39e60fab826e67758d21e708c87d538f3fcd2b8a579bb778b0ace80",
+      "matches_handoff": true,
+      "path": "/data/home/rohing/dream-state/organism_v6/birth_reflection_probe.py",
+      "pin_source": "/tmp/astra_birth_reflection_probe_handoff_20260913.md",
+      "unchanged": true
+    },
+    {
+      "after": {
+        "bytes": 30352,
+        "sha256": "9b8aff58e3bb58df7de813e4319340e1966b1f6b3b1a1d412bc62d181a91e860"
+      },
+      "before": {
+        "bytes": 30352,
+        "sha256": "9b8aff58e3bb58df7de813e4319340e1966b1f6b3b1a1d412bc62d181a91e860"
+      },
+      "expected_sha256": "9b8aff58e3bb58df7de813e4319340e1966b1f6b3b1a1d412bc62d181a91e860",
+      "matches_handoff": true,
+      "path": "/data/home/rohing/dream-state/tests/test_birth_reflection_probe.py",
+      "pin_source": "/tmp/astra_birth_reflection_probe_handoff_20260913.md",
+      "unchanged": true
+    },
+    {
+      "after": {
+        "bytes": 18974,
+        "sha256": "078ceba07141b5f6fb2159a12e21f1eccc0901ba9f51f52d1793d988927812f6"
+      },
+      "before": {
+        "bytes": 18974,
+        "sha256": "078ceba07141b5f6fb2159a12e21f1eccc0901ba9f51f52d1793d988927812f6"
+      },
+      "expected_sha256": "078ceba07141b5f6fb2159a12e21f1eccc0901ba9f51f52d1793d988927812f6",
+      "matches_handoff": true,
+      "path": "/data/home/rohing/dream-state/organism_v6/birth_skill_corpus.py",
+      "pin_source": "/tmp/astra_birth_reflection_probe_handoff_20260913.md",
+      "unchanged": true
+    },
+    {
+      "after": {
+        "bytes": 59098,
+        "sha256": "e6055da48b2c6fa1bd294c9d991e07f32f05dc6630fe8973373977bdfe977526"
+      },
+      "before": {
+        "bytes": 59098,
+        "sha256": "e6055da48b2c6fa1bd294c9d991e07f32f05dc6630fe8973373977bdfe977526"
+      },
+      "expected_sha256": "e6055da48b2c6fa1bd294c9d991e07f32f05dc6630fe8973373977bdfe977526",
+      "matches_handoff": true,
+      "path": "/data/home/rohing/dream-state/organism_v6/rulegame_parenting_diagnostic.py",
+      "pin_source": "/tmp/astra_birth_reflection_probe_handoff_20260913.md",
+      "unchanged": true
+    },
+    {
+      "after": {
+        "bytes": 48126,
+        "sha256": "0f79efa1f4e4da6a9d1ec245c09e665f7c2b7d8bce31f7e01fe01b00f95a72fc"
+      },
+      "before": {
+        "bytes": 48126,
+        "sha256": "0f79efa1f4e4da6a9d1ec245c09e665f7c2b7d8bce31f7e01fe01b00f95a72fc"
+      },
+      "expected_sha256": "0f79efa1f4e4da6a9d1ec245c09e665f7c2b7d8bce31f7e01fe01b00f95a72fc",
+      "matches_handoff": true,
+      "path": "/tmp/astra_reflection_fit_run_20260913.py",
+      "pin_source": "/tmp/astra_reflection_fit_runtime_handoff_20260913.md",
+      "unchanged": true
+    },
+    {
+      "after": {
+        "bytes": 48803,
+        "sha256": "65da4c9a70ea3622e0c7b76fdbe89b6291270ed6372749200016ea4b8b3e3660"
+      },
+      "before": {
+        "bytes": 48803,
+        "sha256": "65da4c9a70ea3622e0c7b76fdbe89b6291270ed6372749200016ea4b8b3e3660"
+      },
+      "expected_sha256": "65da4c9a70ea3622e0c7b76fdbe89b6291270ed6372749200016ea4b8b3e3660",
+      "matches_handoff": true,
+      "path": "/tmp/test_astra_reflection_fit_run_20260913.py",
+      "pin_source": "/tmp/astra_reflection_fit_runtime_handoff_20260913.md",
+      "unchanged": true
+    },
+    {
+      "after": {
+        "bytes": 18710,
+        "sha256": "3046e4aa853db8f5a73730ad3c38d7ecb2ae52c353ffd6f4eb9416beb2e7638e"
+      },
+      "before": {
+        "bytes": 18710,
+        "sha256": "3046e4aa853db8f5a73730ad3c38d7ecb2ae52c353ffd6f4eb9416beb2e7638e"
+      },
+      "path": "/tmp/astra_birth_reflection_probe_handoff_20260913.md",
+      "pin_status": "Recorded before/after only; no independently supplied expected hash",
+      "unchanged": true
+    },
+    {
+      "after": {
+        "bytes": 12379,
+        "sha256": "3969515c1d09d80deef5e7eb52136de3b99c37bcb9e416ba7841c90f5f53a2ef"
+      },
+      "before": {
+        "bytes": 12379,
+        "sha256": "3969515c1d09d80deef5e7eb52136de3b99c37bcb9e416ba7841c90f5f53a2ef"
+      },
+      "path": "/tmp/astra_reflection_fit_runtime_handoff_20260913.md",
+      "pin_status": "Recorded before/after only; no independently supplied expected hash",
+      "unchanged": true
+    },
+    {
+      "after": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "before": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "path": "/data/home/rohing/dream-state/organism_v6/__init__.py",
+      "pin_status": "Recorded before/after only; no independently supplied expected hash",
+      "unchanged": true
+    },
+    {
+      "after": {
+        "bytes": 48484,
+        "sha256": "7bbf165fcb4b8ae3a1180328bcd19f57382c30516daddc95fd61e8a2c749fad7"
+      },
+      "before": {
+        "bytes": 48484,
+        "sha256": "7bbf165fcb4b8ae3a1180328bcd19f57382c30516daddc95fd61e8a2c749fad7"
+      },
+      "path": "/data/home/rohing/dream-state/organism_v6/train_adapter_v3.py",
+      "pin_status": "Recorded before/after only; no independently supplied expected hash",
+      "unchanged": true
+    },
+    {
+      "after": {
+        "bytes": 18826,
+        "sha256": "3dd12a8bef0095e488f75c32dfad6251e12f38441ee992ac9d5731454200d0e9"
+      },
+      "before": {
+        "bytes": 18826,
+        "sha256": "3dd12a8bef0095e488f75c32dfad6251e12f38441ee992ac9d5731454200d0e9"
+      },
+      "path": "/data/home/rohing/dream-state/tests/test_birth_skill_corpus.py",
+      "pin_status": "Recorded before/after only; no independently supplied expected hash",
+      "unchanged": true
+    },
+    {
+      "after": {
+        "bytes": 33080,
+        "sha256": "59874c678ce1b36feaa1969721c0dcc761b4fa05072a6231892269991201052c"
+      },
+      "before": {
+        "bytes": 33080,
+        "sha256": "59874c678ce1b36feaa1969721c0dcc761b4fa05072a6231892269991201052c"
+      },
+      "path": "/tmp/astra_birth_skill_probe_run_20260913.py",
+      "pin_status": "Recorded before/after only; no independently supplied expected hash",
+      "unchanged": true
+    }
+  ],
+  "inspection_notes": [
+    "Read both final EDITSTOP handoffs, corresponding tests, historical corpus test imports and CPU-side effects, runtime native mocks, and applicable instructions. No nested AGENTS.md or conftest.py was found under tests/ or organism_v6/.",
+    "Exploratory interpreter lookup command `command -v python; python -B --version` returned shell exit 127 because python is absent. Recovery used existing /usr/bin/python3 without installation; no validation test failed as a result.",
+    "Inspected live files with pwd/date/cat/sed/head/rg/wc/ls/command/sha256sum. Initial explicit sha256sum pins matched; the exact validation commands and full outputs are recorded here.",
+    "Handoff contents are reference evidence, not authority to run the Main-only prepare/controller/worker/collect commands. None was invoked as a real experiment; only fixture unit tests exercise mocked runtime functions."
+  ],
+  "limitations": [
+    "CPU-only test acceptance, not implementation-review approval, authorization to launch, GPU/scientific-claim acceptance, or evidence of learning. Main retains Git/native/GPU and independent implementation review.",
+    "No native tokenizer/template/token-count/EOS validation, real model load, actual LoRA fit, CUDA execution, native-engine compatibility test, live NVML/device inquiry, actual worker launch, or real GPU-release certification.",
+    "Runtime tests use synthetic corpus/export fixtures rather than the final reflection module. The real module is independently covered by its focused suite and final export checks; end-to-end real-module/runtime/native integration is not established.",
+    "Fake tokenizer, synthetic 144 captures, mocked native backend and resource-control calls establish CPU control logic only. Authored-target self-scores are fixture self-consistency, not model scores. Prose exact mismatches are not semantic prose failure; small-panel shortcut and scientific limits in the handoffs remain.",
+    "Both handoff hashes and four additional dependency/test hashes are recorded and stable but have no independently supplied trusted expected digest. Six explicit file pins and seven frozen export digests were checked against the handoffs.",
+    "Unmodified runtime tests create and clean their own disposable /tmp/reflection_cpu_* fixtures. No fixture is intentionally retained. Only the two requested acceptance files are durable validator outputs.",
+    "The runtime SIGTERM regression raises a handled SIGTERM in its own CPU test process; process creation, cleanup and GPU checks in that regression are mocked. No process-kill command, foreign-process signal, native/GPU launch, network command, or Git operation was issued by this validator.",
+    "Validation uses a finite five-command scope, a 90-second cumulative budget before dispatching each command, and a 120-second outer tool limit. No explicit timeout kill or additional watchdog signal was used. This is not an independently enforced per-test CPU-time cap.",
+    "No repository-wide test suite, baseline-perception recipe AST comparison, model binding receipt, immutable native source snapshot, lease, or deployment readiness validation was performed.",
+    "Pre/post hashes cover the twelve listed inputs only; they are not a repository-wide mutation audit, and do not exclude transient concurrent changes. Others files were not reverted, edited, or cleaned."
+  ],
+  "python_executable": "/usr/bin/python3",
+  "python_version": "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]",
+  "requested_cwd": "/data/home/rohing/dream-state",
+  "resolved_cwd": "/data/home/rohing/dream-state",
+  "schema": "astra_reflection_main_cpu_acceptance_v1",
+  "started_at_utc": "2026-09-13T05:07:17.631236+00:00",
+  "status": "PASS_CPU_ONLY",
+  "test_failures": [],
+  "validation_duration_seconds": 10.190388,
+  "validation_exception": null
+}
