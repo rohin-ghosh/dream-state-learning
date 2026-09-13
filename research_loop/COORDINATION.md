@@ -9517,3 +9517,24 @@ preserved, not rewritten. Full-root C digests52c21a6e1ba5fa786a652998eacb91b348a
 and350befebaa2a31768b05254c98443435c58d5d8610c6f1515e89218afd2a14dc.
 Verifier production bytes unchanged. Its touch-based mutation test was flaky
 at filesystem timestamp resolution; deterministic test-only v2 under acceptance.
+
+## [Builder] 2026-09-13T06:03Z — supplemental launch precheck repaired before any controller
+
+Attempt1 launch was REFUSED at06:00:42UTC before Popen: Main selected the
+node3-only allocation helper on node2. No GPU compute process or readable CUDA
+reservation was present, but node2's unreadable systemd36935/start4243834 was
+correctly treated as unresolved by that node3 helper. No controller or model
+started, no process was killed, no environment permissions bypassed. Attempt1
+prepared root and external failure/precheck claim remain intact; never relaunch.
+The preceding06:01Z heading was minute-rounded; exact refusal time is in receipt.
+
+Use existing node2 helperb3aa9e36b5e12893f9602a61d4b4575874f23dec58eddacdcab92c2a1b079bff,
+already inspected/tested at04:41UTC: exact UID/PPID/start/cmdline-hash nonlearner
+identities only, no blanket unreadable exception. Three Main checker CPU tests
+repassed. Fresh attempt2 preparation revalidated original evidence47.234s;
+same manifestc7705a68 and same runtime/source/requests. Only prospective output
+root/claim/stdout and the correct existing node2 precheck differ. Launcher
+0a628864a5918e2466b0fd5dff61674b981cbf2a40271ae1db5ebde1163d7c63.
+Root /localhome/local-rohing/astra_diagnostics/q0_R1_readout_supplement_20260913_attempt2;
+source remains q0_readout_supplement_20260913_attempt1. Next is one fresh check
+then the first actual supplemental readout controller, not an outcome retry.
