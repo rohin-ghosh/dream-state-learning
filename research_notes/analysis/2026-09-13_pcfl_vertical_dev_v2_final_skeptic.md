@@ -220,3 +220,112 @@ the existing v2 design resolving the query-group writer, post-S1 visibility,
 reachout endpoint/controls, ATOMS estimand, artifact retention, and lifetime
 wording. It does not require another broad deliberation, a new diagnostic
 ladder, more than fourteen fits, or any change to Q0/L1 scheduling.
+
+---
+
+## Re-audit addendum: v2.1 at `29bcd1ed`
+
+**Re-audit verdict: REWORK (one causal-control repair, two exact wording
+repairs).** The patch resolves the six requested defects in substance, and its
+full-arm query counts and arithmetic are correct. It introduces one new
+control treatment that must be removed before implementation: address-specific
+synthetic `MISS` targets.
+
+### Repair-by-repair verification
+
+1. **Query-level writer/readout alignment — resolved for AUTH/full arms.**
+   `READ EVENT` now targets one exact child span; `READ EVENTS_AT` and
+   `READ LINKS_FROM` target complete sorted concatenations with a bound LF
+   separator. For S1, `8` individual EVENT calls + `6` distinct source-node
+   calls + `3` distinct link-source calls = **17**. For S2, adding `e8` gives
+   `9` individual EVENT calls, still `6` source nodes because `e8` shares `H`,
+   and `4` link sources because `e8` is new = **19**. These counts are exact.
+2. **Post-S1 visibility — resolved.** The native continuation is sterile and
+   the fixed target-free grammar is the only formation scaffold. OLD IDs in
+   NEW links must come from the mounted child; the service fork cannot enter
+   lineage.
+3. **Reachout endpoint and causality — resolved at DEV scope.** The primary is
+   explicitly one-shot native. The eight-view native and service panels, old
+   cut, OFF, wrong-root, and excluded-root zero-fit reachout closure are
+   noncompensatory. `7/8` versus controls `<=4/8`, with a `>=3/8` delta, is
+   arithmetically coherent. The claim is correctly narrowed to task-relevant
+   expansion, not goal-switched experiment choice.
+4. **ATOMS estimand — structurally resolved.** Service and native deltas are
+   now distinct, budget-matched estimands; endpoint-specific language is
+   correct. The particular trained-MISS construction still needs repair below.
+5. **Artifact custody — resolved.** Controls are sealed and quarantined, not
+   destroyed.
+6. **Lifetime history language — resolved.** On-policy arms own divergent
+   histories; only the inference-only carrier table is same-history.
+
+The 20-slot arithmetic is also correct as optimization arithmetic:
+
+```text
+20 slots x 8 views = 160 examples/epoch
+160 / batch 4 x 5 epochs = 200 updates/fit
+14 fits x 200 = 2,800 updates
+14 fits x 30 A40-minutes = 420 A40-minutes = 7 A40-hours
+```
+
+### Remaining causal-control defect: do not teach false absence at treatment
+addresses
+
+`S1_ATOMS` is now explicitly trained to emit `MISS` for the three authentic
+link-source addresses. `S2_OLD_REPLAY` is trained to emit `MISS` for addresses
+of the future NEW event. Those are not neutral equal-work controls:
+
+- ATOMS learns an explicit false/no-link disposition exactly where AUTH learns
+  true links. AUTH-minus-ATOMS can therefore be caused by negative-target
+  poisoning rather than added value from stored links.
+- OLD_REPLAY receives future NEW address identities and is explicitly taught
+  absence there. FULL-minus-OLD_REPLAY can therefore be caused by a
+  future-address negative map rather than acquisition of NEW semantics. This
+  is especially avoidable because neutral padding already equalizes examples
+  and loss-active tokens.
+
+The compiler also selects these negative targets using the very addresses on
+which the later causal evaluation is performed. Presealing them does not make
+them ordinary old replay.
+
+**Minimal repair:** do not train address-specific `MISS` in either causal
+control. Materialize:
+
+```text
+S1_AUTH/TWIN/PERMUTE: 17 scored query blocks + 3 PAD = 20
+S1_ATOMS:              14 EVENT query blocks + 6 PAD = 20
+S2_FULL_R0/R1:         19 scored query blocks + 1 PAD = 20
+S2_OLD_REPLAY:         17 OLD query blocks + 3 PAD = 20
+```
+
+At evaluation, missing LINK/NEW addresses are held-out calls. Score exact
+`MISS` if produced, but the noncompensatory requirement should be **zero usable
+false rows**; do not require exact `MISS` unless a generic refusal curriculum
+is supplied identically to every arm at non-treatment addresses and reported
+as a common interface scaffold. ATOMS may use all twelve reads to compose from
+EVENTs. OLD_REPLAY may only use OLD returns. All target-token deficits remain
+filled in the parser-disjoint PAD requests, so the fit count, 20 slots, 200
+updates/fit, 2,800 total updates, and 17-hour cap remain unchanged.
+
+This repair changes the table headers from fixed `17/19 scored` for every arm
+to the per-arm counts above; the manifest must bind actual scored and PAD
+counts.
+
+### Two exact wording repairs
+
+1. Section 14's “profile one S1 and one S2 fit” must say these are the first
+   registered fits inside the fourteen-fit roster, retained as scientific
+   roots if they complete. No disposable profiling fits exist outside the
+   `14` / `2,800` / `7 A40-hour` cap.
+2. Section 17 currently both says exact materialization failure stops as
+   `VS_ASSAY_INVALID` and suggests switching to per-token loss weights. Bind
+   the former for v2.1: no weighted-loss fallback is allowed inside this
+   version. Any such fallback requires a newly versioned prospective design.
+   Also require stage-total target-token equality, not obsolete per-row
+   equality, because grouped blocks intentionally have different lengths.
+
+### Final disposition
+
+After removing treatment-address `MISS` targets and applying the two wording
+repairs, **PASS**. I found no new leakage, thinker/compiler crossing, invalid
+unit, arithmetic error, missing native endpoint, infeasible added fit, or
+claim expansion. The strongest permitted claim remains Section 6 above.
