@@ -15212,3 +15212,18 @@ verify exact procedure-only delta, graph6/8fails versus7/8passes, immutable
 limits, no IDs in procedure and no learning/full-assay promotion.
 Native next action remains only8-task/56-call A4 smoke on node2GPU0 with
 existing model/provenance/lease/resource checks; no writer or panel launch.
+
+## [Builder] 2026-09-13 16:57 UTC — A4 native smoke launched
+
+Node2GPU0, single A4_GENERIC_PROCEDURE_SMOKE, source2b2d7a040143875aa9eda400d99856492fd4989a,
+native manifest dcaa30baba08642170d2055d202eb46f62d7b38227320c67e363ed0b6786bf8c.
+Native preparation compared exact user tasks, seed tape and limits to A3C,
+with only the predeclared generic system block added; max676initial tokens.
+Source tar SHA256591a0e4a9ecb733be412c26ec2d0f020fb25684eb7568db6a41ea40c0b3dd1d0.
+Detached launch receipt is the immutable root's `.launch.json`; Main will
+append controller/worker IDs and outcome after collection. Existing outer
+retains one-hour timeout, same-process owned cleanup and live CVD/queue/GPU
+checks. Zero fit/update, no automatic descendant, no result yet.
+
+Native launcher returned controller212829 at16:57:01UTC; worker ID remains in
+the controller's spawn receipt. This is the only Main GPU job currently live.
