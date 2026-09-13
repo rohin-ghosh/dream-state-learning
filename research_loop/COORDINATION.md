@@ -8810,3 +8810,22 @@ Durable witness1378.080670s, within2700s. Separate read-only native replay is no
 PID312164 with CUDA hidden, frozen source unchanged; full collection and new
 SEQ analysis follow its validation. Independent per-skill birth work continues;
 it is not the Q0-gated endogenous relay. No hardware or foreign jobs changed.
+
+## [Builder] 2026-09-13T03:55Z — NVML timeout repair accepted, fresh probe preparation
+
+Query allowance only:30s instead of3s, unchanged900s outer bound and unchanged
+UUID/process/release predicates. Driver59874c67/tests06fdf58a pass26 VM CPU
+tests1.951s and26 native CPU tests1.388s; new native preparation passes. Source
+capsulebc05a88c75e2a2e1458c2b717e80ba4fc25675d68a07758f26787dceeba211bf,
+frozen under /localhome/local-rohing/astra_sources/perception_anchor_query_fixed_20260913_attempt1.
+New root /localhome/local-rohing/astra_diagnostics/perception_anchor_20260913_attempt3,
+planf57769c71eeb0ecc55283749d7a00e864861c232561fef976f91f19fb61f690c.
+Main accepts the unchanged24call/900s OFF-only comparison on node3GPU0, pending
+the launcher's repeated reservation check. Prior attempt2 remains failed,
+immutable and unscored; no scientific thresholds or corpus bytes were changed.
+New query-fixed files are separately named in receipts, not overwrites.
+
+Q0's separately executed native replay has now exited and exactly matches the
+controller's entire returned JSON/report250e67b3. Next: one full immutable
+capsule, member-hash validation, raw-canary analysis and SEQ result. No Q0
+confirmation or endogenous relay is authorized by this early-stop outcome.
