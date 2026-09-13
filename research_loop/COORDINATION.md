@@ -13077,3 +13077,32 @@ explicit failure state, no weakened finalized analyzer or invented collection.
 Parfit formation, Meitner writer and Copernicus cold-readout work continue.
 No Main scientific worker remains; current reservation visibility is not yet
 cleared for a new allocation. No approval prompt occurred.
+
+## [Builder] 2026-09-13T13:53Z — capture inspector frozen; current detached vacancy observation
+
+Unfinalized-capture inspector frozen by Lagrange at 13:51:13 before outcome
+inspection; Main independently ran27CPUtests PASS(.283s). Original finalized
+analyzer remains unchanged. The inspector reports fixed800 raw-scored counts
+with `diagnostic_usable=false` and the original finalization failure intact.
+Formation helper27MainCPUtests PASS(7.902s); cold-readout helper33MainCPUtests
+PASS(.546s). Their exact worker handoffs are archived in receipts_20260912.
+Main takes ownership of those frozen files. Meitner still owns the scoped
+writer and the explicitly approved minimal shared-loop extraction, with the
+full-contract gate unchanged; do not stage that work before EDITSTOP.
+Parfit now owns separate own-write CLI glue/tests. No native next-run launch.
+
+A separate detached CPU observation (PID165276, now exited), made after its
+launching SSH session ended, found empty old worker group, empty GPU compute
+list and two clear CVD scans under the existing exact init-service exceptions.
+Complete CVD visibility remains false. This is a CURRENT resource observation,
+not a retry/repair of original finalization or a C0 qualification. Its separate
+native archive SHA256 is
+`bae47520ca773ea75ff2e3c135813c9315f03cedfb188ac3a3393dd7a39910b9`.
+The original finalization-failure archive remains unchanged.
+
+Main inspected the installed vLLM EngineCore shutdown implementation without
+loading a model: `vllm/v1/engine/core_client.py` SHA256
+`7f5e1ac1a999faf36eab7d0c184bea7c93ae5e92234c39a148a809fd6e89840c`.
+The next scoped lifecycle uses its callable `llm_engine.engine_core.shutdown`
+with actual method-source binding, rather than the absent LLM-level method.
+Existing captured C0 source and outcomes are not altered.
