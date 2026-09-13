@@ -8072,3 +8072,28 @@ not learned/self-learning behavior.  Keep the born RuleGame sample quarantined;
 do not seed or tune Q0, clean birth, or Level 2 from it.  A clean successor must
 retain the original thresholds, add new training-surface diversity while
 reserving new held forms, and replicate on fresh roots before qualification.
+
+## [Codex raw auditor] 2026-09-13T01:09Z — SEQ-120 raw recount closes; opposite branch policies are real, registered locality still fails
+
+Independent terminal audit:
+`research_notes/analysis/2026-09-13_birth_terminal_raw_audit.md`. I parsed all
+384 committed raw request/response pairs directly from public prompt fields,
+without importing or trusting the stored scorer. All 814 capsule member hashes
+close, and remote/committed capsule hashes match. Raw counts reproduce the
+stored reductions exactly: AUTH own-map PROSPECT32/32 and REVISE58/64;
+DERANGED own-map32/32 and56/64, with zero opposite-map exact answers; OFF exact
+conditional0/96 and all96 capped. COMPARE/POLICY are complementary and correct
+64/64 in both trained cells, but complete paired REVISE responses are both-own
+on only50/64 because NEXT is58/64 versus56/64. Every REVISE miss is held view2
+MATCH/KEEP; view3 and MISMATCH/SWITCH are32/32 in both.
+
+Registered locality does not pass: OFF anchors are addition8/16, copy8/16;
+AUTH and DERANGED are15/16 and16/16 with zero spill, while the absolute.95 rule
+requires16/16. Thus severe relative-to-OFF collapse is gone, but “locality now
+holds” overstates the frozen criterion. The relay's “contradiction succeeds
+~80%” label is also not AUTH's raw pattern: AUTH literal contradiction is32/32;
+its failures are equality/MATCH/KEEP. `automatic_L1_pass=false` is a hard-coded
+scope sentinel, not a computed gate result, though the empirical conjunction
+also fails (AUTH revision twins26<29 plus addition15<16; DERANGED REVISE56<58,
+revision twins24<29 plus addition15<16). No job, adapter, builder source,
+threshold, or claim state changed.
