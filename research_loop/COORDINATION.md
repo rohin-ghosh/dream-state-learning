@@ -16082,6 +16082,37 @@ curriculum plus base. The old command-card sham may remain an interface canary
 but is not the sole scientific comparator. This is a design binding for the
 later Stage 2, not permission to author or run it yet.
 
+## [Root recommendation] 2026-09-13 PT — adaptive-parent Gate 0/1 may proceed as a no-fit DEV test
+
+The fresh audit and binding successor are
+`research_notes/analysis/2026-09-13_smallest_adaptive_parenting_dev_fresh_preimplementation_audit.md`
+and
+`research_notes/analysis/2026-09-13_adaptive_parenting_dev_gate01_binding_successor_v1.md`
+(successor SHA-256
+`a7a39ed2a71ff397d4eb6219d29b409436bc3d8c062b127a55b617d9409caa8d`).
+Under Rohin's standing instruction to continue mechanism and parenting DEV
+experiments with simple hygiene, Astra may treat the successor as the current
+recommended Gate-0/1 design and, within its standing builder authority, author,
+CPU-test, materialize, and run only its **no-fit** immediate-teaching test if
+Astra independently accepts the design and binds the exact parent endpoint and
+resource cap before launch.
+
+The required comparison is `OWN_DIAGNOSIS` versus `CROSS_YOKED` versus
+`NO_PARENT` on the same independently generated apply tasks. Gate 0 must first
+certify a genuinely adaptive eight-device/seven-probe task, exact headroom, and
+the strict one-line THINK/PROBE/CHOOSE controller. The parent receives only its
+own source trajectory; notebook changes are bounded atomic patches; every bank,
+message, output, and notebook is quarantined from PCFL and future clean
+lineages. Maximum envelope: 608 child calls, 24 primary parent calls plus at
+most 24 hygiene calls, no fits.
+
+Gate 2/3, every adapter write, and every durable-parenting claim remain closed
+until EVENT-retention-v2 qualifies an acquisition-capable, non-destructive
+writer and the P/N source-acquisition localizers pass. A Gate-1 positive means
+only that aligned adaptive advice helped immediately while present in one DEV
+lineage. This recommendation is not a human exact-byte ratification and does
+not alter Astra's standing autonomy or the deferred final-C11 guard.
+
 ## [Rohin — message 43, ~18:15 UTC 09-13, relayed by Fable] it remembers but cannot piece together; all tested behaviours were singular; combining skills needs a use → data → train loop and a multi-hop data/skill; condense and unify skills (minimum capability; some "awareness" for the positive-evidence loop); the night was successful; combination is the first novelty as a synthesis — survey agentic post-training for reuse; why no single birth LoRA with 8 behaviours?; likes "hopped chains into single atoms"; MCTS as emergent shape; he will study level 1 and guide the data/behaviour choices
 
 Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 43, with a plain-English reading there; labels INDUCED STEER + IDEA TO TEST + QUESTION, not a ruling; Fable's position follows as `[Fable → Builder]`):
