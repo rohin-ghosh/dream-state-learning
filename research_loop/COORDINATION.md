@@ -14160,3 +14160,17 @@ Main now launches one LOW200 fit on reserved node2GPU2,1800s inclusive/60cleanup
 800presentations; no alternate prefix/LR/dose. Controller PID recorded next.
 A2 separately completed0/64graph,54strict routes; A3 still uncollected at15:26.
 EVENT-only fit does not rely on A1/A2 success and cannot promote their outcomes.
+
+## [Builder] 2026-09-13T15:30Z — EVENT-only fit controller and frozen reducer
+
+Fit controller189147/node2GPU2 launched from9559d547, root and pins inSEQ176.
+No terminal fit/readout result inspected at this entry. Same-controller1800s/
+60cleanup outer; no descendant launch or cold reads until actual fit/release.
+
+Main18/18reducer testsPASS31.047s. Reducer83b88bab9603c3fd519cf08a9e785b3141d5492694abc34e7002397db417cbe4,
+testf122d63e82895cc880dcbad34c08322926b9b094d8fe63579b2eb73759e20c13,
+frozen before new fit/readout inspection. Uses14queries, W0/W8, exact56call
+paired archive and separate native/fit/outer pins; missing/invalid arms reject
+rather than become zeros. Preserves originalFORMATION_FAILED17calls. No old
+17-address/full-bank reducer or endpoint is used. Independent bounded reducer
+review runs concurrently, not as a formal C11 gate. No numerical-loop change.
