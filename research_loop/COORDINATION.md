@@ -9122,6 +9122,33 @@ capsule with byte verification; no old mirror overwrite. Transfer deadline
 September13 23:14UTC remains18+hours away. Erdos owns CPU pack/verify helper only;
 Main owns native preservation and all launch/kill/Git actions.
 
+## [Builder] 2026-09-13T04:45Z — independent perception review accepted; next runtime interfaces
+
+Curie independently checked all216raw responses/source-derived targets and
+paired decisions, confirming format-only ordinary gains, zero anchor-only
+withdrawal wins and systematic distractor capture in anchor-trained cells.
+Reviewb1088d75 archived; canonical now includes inherited NO_FIT binding-label
+limitation (top-level plans correctly describe fits). No operational/H1/H2
+promotion. This result is preserved; current DEV errors are not new train data.
+
+Node2 Main prelaunch checker3CPU fixtures passed; nativeGPU0check passed at
+04:41:36UTC with no compute PID or readable CUDA reservation. Only exact
+inspected systemd36935/start4243834/cmdhash3127082f and sd-pam36938/start4243835/
+cmdhash97149005 plus the current checker's own SHA-bound SSH ancestor are
+classified nonlearners; no blanket unreadable-process exclusion or privileged
+read. This is not a reservation; rerun immediately before each launch. Main
+launcher9mock tests passed and artifacts archived. No GPU launch yet.
+
+Reflection corpus API is available; Main identified a pre-execution construct
+bug: 'Restate that message' is ill-posed after deleting the parent message.
+Carver will give BOTH conditions the same nondeictic public-event/procedure task,
+preserving source bytes and identical authored targets, then rebind tests/hashes.
+This is a non-material validity repair before native execution, not outcome
+tuning. Plato01a09914-39e5-7e00-92a6-0dc1b57e943b owns only /tmp reflection runner/
+tests/handoff:2fits/6cells/144calls, separate restatement/application metrics,
+3600souter/180scollection. Corpus final pins must be supplied before nativeprep.
+Einstein full-dose writer and Erdos delta-custody helper continue independently.
+
 ## [Rohin — steers, relayed by Fable] 2026-09-13T04:44Z — Q0: remeasure AND audit the test/corpus ("there must be a reason"); opposite maps may blend when too close; the level-1 arsenal is right, it is data work; don't pause level 1 for level-0 tuning; start level 2 as soon as level 1 yields anything (raw = message 32 in research_notes/THESIS_RAW_ROHIN_2026-09-11.md)
 
 Rohin, in substance: (1) Q0 — remeasure at the right dose, but also "examine the test — could be issues with the data for the test or other things; there must be a reason"; a tool call is "simply an action" and should be writable with a perfect write, "but only if the actual training corpus for them was written correctly" — so audit the Q0 corpus (maps and tool rows) and read the raw results, not just the counters. (2) A hypothesis: opposites that are too close blend — "if A is 121212 and B is 212121 it might be easy to forget" — Fable's reading below. (3) Level-1 arsenal confirmed as his view: once the dataset exists the post-training is just data being trained, no prompt and no loop; the open-loop runs, parent steering and distillation exist to produce that dataset; the fine-tuning lets prompt-based parenting start the loop (levels 2–3) which starts self-learning. (4) "Don't hold off": context distillation and the other arsenal pieces proceed; level-0 tuning does not pause level 1 unless level 0 is catastrophic; start level 2 "slightly" as soon as level 1 gives any result, then build up.

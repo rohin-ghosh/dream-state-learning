@@ -2,7 +2,8 @@
 
 September 13, 2026, 04:39 UTC. SEQ-129 extends seed0 SEQ-128; all three runs
 completed, collected once, transferred and hash-checked. Independent bounded
-raw interpretation review is pending. No parenting/H1/H2 or freeze promotion.
+raw interpretation review is complete; see the review below. No parenting/H1/H2
+or freeze promotion.
 
 ## Results
 
@@ -93,3 +94,22 @@ display-only jq command used a wrong report key; it did not modify the report.
 Reproduce the CPU analysis with the archived analyzer, accepted attempt2
 manifest, intact relocated capsules and a fresh output path. The manifest's
 absolute paths are local custody locations; preserve original native plan bytes.
+
+## Bounded independent raw review
+
+Curie's independent standard-library checks covered all216raw responses,
+source-derived targets, score decisions, field errors and paired memberships;
+they match the frozen report without invoking its analyzer. Review archived as
+`receipts_20260912/astra_perception_three_seed_review_20260913.md`, SHA256
+b1088d75b991e21e5fa59f30a949ebb6af74e2990cf310da9722bbfafa548880.
+This is a separate post-collection review, not blinded replication or native
+model/tensor recertification. No checked discrepancy was found beyond the known
+inherited binding label `perception_DEV12_anchor_NO_FIT`: the top-level plans
+correctly specify the fits; the inherited receipt does not attest them.
+
+The eleven correct OFF-secondary and ordinary-fit-absent objects are identical
+in every seed. The remaining error changes but never becomes correct. All
+anchor-trained cells copy the earlier distractor's action/outcome in call10;
+the ordinary/OFF cells do not. The universally failed explicit-prediction call01
+and the exposed distractor are diagnostic observations, not fresh training rows
+or untouched confirmation data. Do not repair these records post hoc.
