@@ -56,7 +56,7 @@ def capture_lineage(data, outer, manifest_hash, capture_hash):
     claim, failure = outer.read("finalize_claim.json"), outer.read("finalize_failure.json")
     same(claim["retry"], False, "finalization retry forbidden")
     expected_error = "late reservation/group appeared" if len(phase) == 4 else "CVD owner remains; release Main holder before finalization"
-    same(failure, {"type": "ValueError", "error": expected_error}, "actual CVD finalization failure")
+    same(failure, {"type": native.ActorError.__name__, "error": expected_error}, "actual CVD finalization failure")
     cap = min(manifest["wall_seconds"], manifest["device_seconds"])
     times = [context["entry_monotonic"], worker["spawn_started_monotonic"], report["started_monotonic"],
              report["started_monotonic"] + report["wall_seconds_through_close"], exited["ended_monotonic"],

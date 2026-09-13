@@ -52,7 +52,7 @@ class PartialCaptureTests(unittest.TestCase):
         write(self.outer, "finalize_claim.json", {"started_monotonic": 21, "retry": False})
         write(self.outer, "final_queue.json", {"started_monotonic": 22, "ended_monotonic": 23, "value": {"matched": True}})
         write(self.outer, "final_cvd.json", {"started_monotonic": 24, "ended_monotonic": 25, "value": self.blocked})
-        write(self.outer, "finalize_failure.json", {"type": "ValueError", "error": "CVD owner remains; release Main holder before finalization"})
+        write(self.outer, "finalize_failure.json", {"type": inspector.native.ActorError.__name__, "error": "CVD owner remains; release Main holder before finalization"})
         self.recapture()
 
     def recapture(self):
@@ -87,6 +87,17 @@ class PartialCaptureTests(unittest.TestCase):
         self.assertEqual(failure["failed_observation"], "final_cvd.json")
         self.assertIsNone(failure["capture_visibility"]["device_unreserved"])
         self.assertEqual(audit.Archive(self.outer).snapshot(), before)
+
+    def test_failure_type_matches_actual_outer_require_exception(self):
+        message = "CVD owner remains; release Main holder before finalization"
+        try:
+            inspector.native.require(False, message)
+        except inspector.native.ActorError as error:
+            self.change(self.outer, "finalize_failure.json", lambda value: value.update(type=type(error).__name__, error=str(error)))
+        self.check()
+        self.change(self.outer, "finalize_failure.json", lambda value: value.update(type="ValueError"))
+        with self.assertRaisesRegex(ValueError, "actual CVD finalization failure"):
+            self.check()
 
     def test_second_cvd_failure_requires_prior_clear_and_gpu_vacancy(self):
         self.change(self.outer, "final_cvd.json", lambda value: value.update(value={"clear": True, "owners": []}))
