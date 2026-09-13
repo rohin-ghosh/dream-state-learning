@@ -1,4 +1,4 @@
-# Astra restart handoff — 2026-09-13, after SEQ179
+# Astra restart handoff — 2026-09-13, after SEQ180
 
 Mission ACTIVE and incomplete. This replaces stale running-job snapshots;
 their full history remains in Git at `4e1fe3b1` and the append-only notebook.
@@ -17,8 +17,10 @@ Pull safely before writing; push logged steps. Do not overwrite run artifacts.
 ## Current native work
 
 No Main GPU worker remains live. Fit, AUTH and C0 readout all completed and
-released with errors[], exit0 and no signals. Node2 compute-app inventory was
-empty after collection. Do not rerun their controllers/finalizers/readouts.
+released with errors[], exit0 and no signals. The later READ_REQUIRED_SMOKE
+worker also released, but its outer FAILED a hardcoded64-task denominator.
+Node2 compute-app inventory was empty after collection. Do not rerun completed
+controllers/finalizers/readouts or rewrite the failed collection.
 
 SEQ179 is a **scoped EVENT-prefix acquisition pass**, not full-bank success:
 - Original SEQ171 first16 calls supply eight authenticated EVENTs. The original
@@ -74,27 +76,39 @@ Archives `gpu_artifacts_local/pcfl_interface_{a1,a2,a3}_20260913_attempt1/eviden
 Original interface native source remains `/tmp/astra_pcfl_interface_source_20260913_attempt1`
 from `7fdcc127`. Do not mutate it or replay it using new source paths.
 
-Next adopted diagnostic: new answer-free **must-READ** requirement, fixed
-eight-case smoke across four excluded roots and both goals. Same parsers and
-budgets, no useful addresses/algorithm hints. Require >=7/8 joint legal non-MISS
-READ plus strict terminal, no invalid/cap failure; zero invalid READs. Only a
-pass permits the separately prepared64-case panel (>=60/64). Exposed DEV only,
-not training or confirmation. Stop prose retries if smoke fails.
-See `analysis/2026-09-13_pcfl_a1_zero_read_minimal_successor.md` and archived
-`astra_pcfl_interface_successor_options_20260913.md`. No native successor yet.
+SEQ180 required-READ smoke has now FAILED:8calls,8INVALID_TURN,0READs/strict
+terminals,294output tokens. Original stage report's gate is false. Additionally
+the outer rejected denominator8 because it hardcoded64; collection remains
+FAILED even though worker exit0 and owned_group_released=true, no signals.
+Controller196759/worker196809 are gone; elapsed59.227624s including release.
+Do not launch the64-task panel or retry prompt prose. No learning/service-use
+or full-qualification inference. This is exposed DEV, never training data.
+
+Run `pcfl_interface_read_required_smoke_20260913_attempt1` on node2 GPU0;
+source `/tmp/astra_pcfl_interface_required_source_20260913_attempt1`, commit
+aa3327c2ea330b9e76a279caf59efc6ad046eae7. Source tar SHA256
+3dddbda3262e9a599a3b091e35e4a4aa17ccb00aec266479e97009925e4ad05d.
+Manifest79139298ed3eccd5343f1c6122ca6f886ea07872fbaa74e1d7866981b244aeb3.
+VM/native evidence archive SHA256
+d49cdff447330cb28fa049cc6ad1dc79530feaa66de626218a1d3079f791fe77 at
+`gpu_artifacts_local/pcfl_interface_read_required_smoke_20260913_attempt1/evidence.tar`.
+Original source/launch helpers and official binding included; unpacked sibling.
+Next separately specified diagnostic: symmetric structured action formatting,
+no useful addresses/route injection. Design worker active; no implementation
+or native successor yet. Fix only the collector denominator for future runs.
 
 ## Workers and ownership
 
-- Lagrange `01a09b03-adae-7872-afb1-67d819134c38`: owns only
-  `gpu/astra_pcfl_interface_dev.py` and its test for new
-  READ_REQUIRED_SMOKE/PANEL. Await EDITSTOP/tests; Main prepares/launches.
-- Copernicus `01a099a3-f03d-7e42-bafe-53cdb4dd67d0`: owns the existing six
-  manuscript/abstract/claim-map/collaborator files for a bounded SEQ179 update;
-  await `/tmp/astra_manuscript_seq179_handoff_20260913.md`. Collaborator UNSENT.
-- Meitner `01a09af5-65a4-7ea3-904c-af5c37968c88`: read-only independent result
-  review, `/tmp/astra_pcfl_event_only_result_review_20260913.md` pending.
-- Parfit `01a099a4-4d72-75c0-af60-8f84fc68d36a`: reducer work complete,
-  ownership released. Main's later RNG repair supersedes its source hashes.
+- Lagrange `01a09b03-adae-7872-afb1-67d819134c38`: driver32tests passed and
+  released; now owns ONLY `gpu/astra_pcfl_interface_outer.py` and its test for
+  the roster-bound denominator repair/regression. Await EDITSTOP.
+- Copernicus `01a099a3-f03d-7e42-bafe-53cdb4dd67d0`: SEQ179 manuscript complete,
+  independently reviewed, integrated at65c570c6; agent closed. Collaborator UNSENT.
+- Meitner `01a09af5-65a4-7ea3-904c-af5c37968c88`: EVENT and manuscript reviews
+  complete, no blocking findings, archived under receipts_20260912. Idle.
+- Parfit `01a099a4-4d72-75c0-af60-8f84fc68d36a`: read-only structured-action
+  design at `/tmp/astra_pcfl_structured_action_design_20260913.md` pending.
+  No repo ownership. Main handles integration/launch/notes.
 
 ## Native environment / custody
 
