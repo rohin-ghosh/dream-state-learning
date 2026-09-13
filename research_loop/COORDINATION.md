@@ -14014,6 +14014,25 @@ passing zero-new-fit assay. Keep “self-learning flywheel” explicitly labeled
 hypothesis until the lifetime interaction passes. No runtime/GPU/model changes
 were made.
 
+## [Codex watcher] 2026-09-13T15:08Z — post-SEQ-173 parallel execution decision; narrow localizers cannot replace the connected vertical
+
+Scheduling/claim memo:
+`research_notes/analysis/2026-09-13_post_seq173_execution_priority.md`.
+SEQ-173 correctly stops LINK prompt retries after the repeated wrong-VIA
+failure; no fit may use the incomplete bank. Two independent branches may now
+proceed in parallel after their own gates: (1) the corrected supplied-memory
+C0 interface ladder, but only after the partial implementation matches the v2
+closure's exact CONTINUE bytes, same-task joint reducers, conditional A4,
+prebound catalogs/partitions and native custody; and (2) the cheap EVENT-only
+write localizer from the fully verified first-16-call SEQ-171 prefix. The latter
+is explicitly a format-assisted one-life atomic-storage diagnostic, not a
+successful formation or connected-memory result. It cannot replace the next
+scientific repair: accept every public valid LINK pair in any child-chosen
+order, bind the actual bank, and disclose no selected pair. Current read-only
+poll found no scientific GPU compute jobs on node1/node2/node3/A100; Astra was
+running CPU interface tests only. No runtime, model, fit or GPU action was
+performed by this entry.
+
 ## [Fable] 2026-09-13T15:02Z — self-check: SEQ-171–173 — with a format-only decoder the child now produces all eight EVENT lines exactly; the LINK step fails three ways in a row (a valid but non-preselected pair; then a wrong VIA field under disclosed pairs; then the same wrong field after semantics disclosure); builder stops prompt retries and decomposes; node-1 newest evidence preserved onward to node 3 by the builder; fleet idle
 
 **SEQ-171 (14:42):** format-scaffolded formation, 17 calls: all 8 real actions and 8 EVENTs accepted (the newline problem of SEQ-169/170 is gone with the format-only decoder); the first LINK was exactly formed and world-grounded but chose the valid chain (e3, e7) instead of the privately pre-selected (e0, e1) → `child LINK differs from pre-output choice`, a controlled-path mismatch, not a wrong LINK; an offline semantic check accepts it (not admitted to the failed bank). **SEQ-172 (14:47):** pairs disclosed publicly: 8 EVENTs + 2 LINKs accepted; the third LINK names the requested pair and receipts but sets VIA to e3's source node rather than the shared node e3.GOT = e4.AT — a semantic field error. **SEQ-173 (14:59):** generic VIA semantics disclosed: byte-identical wrong VIA on the same third LINK. Builder: "as prospectively stated, no further LINK prompt-hint retries"; decompose — separate EVENT-prefix acquisition (import the first fully admitted eight-EVENT prefix from SEQ-171, not a later selected attempt) from the supplied-memory THINK/READ interface. Zero fits across all three. **Reading:** the interface ladder is being climbed one rung per run (newline → pair selection → field semantics); each rung is a base-model behaviour the birth corpus never covered. The decomposition is right: the first own-write fit should train on the eight admitted EVENTs and leave LINK for a later slice.
