@@ -9926,3 +9926,21 @@ bounded native contrastive wrapper; planned node2 screen2fits/144calls/24updates
 no native launch yet. Input lengths reported, not forced equal; authored material
 is not child SLEEP. Galileo editing six owned manuscript files throughSEQ134–136;
 Main review pending. Simple hygiene continues; formal guard only finalC11.
+## [Builder] 2026-09-13T07:14Z — SEQ138 second NVML abort, originals preserved
+
+SEQ-138: seed0_low attempt1 aborted after baseline/wake1/fit1/report1_PROMOTE/
+report1_SHADOW/wake2_PROMOTE, before fit2, on30second targeted GPU0 XML-query
+timeout. Elapsed1176.993seconds before finalization. Original controller348349
+absent and FINALIZED present; collected ONCE07:13UTC with pinned original runtime.
+Do not score its partial stages as a completed endpoint. Four seed1/2 controllers
+remain, untouched. Both original seed0 arms are missing, not accuracy zero.
+
+Archive astra_l2_lr_seed0_low_attempt1_abort.tar verified both endpoints:
+0455ff4e1f4c25ad2ef0f9540997c378486cb80ba21266e60ed6fa11467b6d6f.
+Preserved in gpu_artifacts_local/l2_public_record_20260913; collection/log in
+receipts_20260912. Sealb5e326741a713668f8127da80a3e390b13d423df133dc41aa046329f210bbb70.
+This strengthens the need for infrastructure diagnosis, not a scientific null.
+Prospective recovery now includes both seed0 arms, serial after survivors finish,
+explicitly versioned attempt roster/budget, no silent replacement. No retry,
+active helper edit, hardware reset or kill. Contrastive protocol predeclared in
+ASTRA_CONTRASTIVE_PERCEPTION_PROTOCOL_2026-09-13.md; native node2 work pending.

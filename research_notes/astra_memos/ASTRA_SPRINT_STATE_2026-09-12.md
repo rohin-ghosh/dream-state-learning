@@ -1,4 +1,13 @@
-## Current superseding snapshot — 2026-09-13 07:10 UTC
+## Current superseding snapshot — 2026-09-13 07:14 UTC
+
+Four original seed1/2 low/high LR controllers remain. Both seed0 arms aborted
+at targeted XML queries; seed0_low after wake2_PROMOTE, before fit2. Both are
+collected ONCE, archives verified/preserved, no completed endpoint scored.
+Prospective sequential retries of both seed0 arms after survivors finish need
+explicit attempt/budget amendment; none launched. Existing helpers unchanged.
+Contrastive protocol predeclared, wrapper pending; other work as07:10 below.
+
+## Historical superseded snapshot — 2026-09-13 07:10 UTC
 
 Five LR controllers confirmed live07:09UTC; seed0_high attempt1 aborted before
 fit1 on30second NVML XML query timeout, collected ONCE and archived. Abort is

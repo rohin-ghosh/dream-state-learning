@@ -1,6 +1,20 @@
-# Astra current handoff — 2026-09-13T07:10Z
+# Astra current handoff — 2026-09-13T07:14Z
 
-## CURRENT — September13 07:10UTC
+## CURRENT — September13 07:14UTC
+
+FOUR original LR controllers remain (seed1/2 low/high348477/348537/348613/348673).
+seed0_low also aborted on30second XML timeout, after wake2_PROMOTE, before fit2.
+Original root FINALIZED/controller absent; collected ONCE07:13UTC, never repeat.
+Archive astra_l2_lr_seed0_low_attempt1_abort.tar SHA
+0455ff4e1f4c25ad2ef0f9540997c378486cb80ba21266e60ed6fa11467b6d6f
+under gpu_artifacts_local/l2_public_record_20260913; JSON/log in receipts.
+Both seed0 arms now missing primary endpoints. Planned retries are BOTH seed0
+arms, sequential after original survivors finish, with explicit attempt/budget
+amendment. No retry yet. No XML replacement or control kill; cause unproven.
+Other work/ownership remains as07:10 below. Contrastive protocol authored, native
+wrapper finalization pending. Mission ACTIVE/incomplete.
+
+## Historical superseded snapshot — September13 07:10UTC
 
 FIVE LR controllers still live, confirmed07:09:37UTC:348349/348477/348537/
 348613/348673. seed0_high attempt1 controller348411 exited after baseline+wake1,
