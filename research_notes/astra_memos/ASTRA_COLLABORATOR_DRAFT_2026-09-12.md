@@ -1,13 +1,47 @@
 # DRAFT ONLY — unsent collaborator update
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This fixed SEQ130–133 evidence cut retains both positive and negative findings.
+This evidence cut through SEQ136 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**UNSENT — completed SEQ130–133 / C74–C75 update for Main's review.**
+**UNSENT — completed SEQ134–136 / C76–C78 update for Main's review.**
+
+The first native child-record loop now connects action/feedback, exact records,
+compilation, fitting, mounting and subsequent wake/readout. It completes 11
+stages, 128 generation calls and three fits/100 updates. PROMOTE mounts the
+candidate; SHADOW trains but stays base. Every vLLM readout, including baseline
+and both arms after both sleeps, is old 4/8, new 4/8 with 16/16 legal outputs.
+This is an important connectivity result, not parenting or a demonstrated
+accuracy/retention benefit. Core `native_verified=false` remains unchanged.
+
+The access diagnostic changes the interpretation of those unchanged scores:
+HF first-token gold NLL falls substantially, with modest but fragile train-form
+discrimination. Fit2 train full likelihood is 12/16 (old 5/8, new 7/8), but first
+strict is 8/16 (old 3/8, new 5/8) with five ties. Four ties become correct only
+through tiny downstream likelihood differences. Both held-readout measures
+remain 8/16. This is neither no learning nor a pure access failure. Unequal
+12/14-token candidates and HF teacher forcing differ from vLLM greedy decoding;
+these diagnostic scores do not replace the native readouts.
+
+Separately, R1's zero-update supplemental readout joins to AUTH 67/128 exact,
+31/64 held and DERANGED 69/128, 32/64; the joined diagnostic still fails.
+Original R1 remains runtime-aborted, not a repaired primary or third complete
+primary root. No new fit or learner seed is introduced.
+
+[C76–C78](ASTRA_PAPER_CLAIM_MAP_2026-09-12.md) bind receipts and the scoped
+independent access analysis. The preserved v1 diagnostic mistook a method for
+a Boolean; v2 checks actual routes and saved/loaded tensor identity. This is
+not evidence of an originally inactive adapter or proof of HF/vLLM parity.
+The child records, unlike the earlier authored birth targets, enter a native
+loop, but external admission and this single exploratory pair do not establish
+parenting, clean ancestry, general G1, H1/H2 or a frozen mechanism. Recipe-level
+failures guide repair; the mission and research question remain open. No later
+LR-comparison outcomes are included. This collaborator draft remains **UNSENT**.
+
+**Historical UNSENT — completed SEQ130–133 / C74–C75 update for Main's review.**
 
 The full-dose Q0 comparison now has two completed endpoint failures, not just
 the earlier first-update stop. R0 AUTH/DERANGED score 71/70 out of 128 exact and

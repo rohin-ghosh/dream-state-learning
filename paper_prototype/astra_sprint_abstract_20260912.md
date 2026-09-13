@@ -1,13 +1,26 @@
 # FIRST SPRINT DRAFT — companion abstract
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This fixed SEQ130–133 evidence cut retains both positive and negative findings.
+This evidence cut through SEQ136 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current completed-evidence cut: SEQ130–133 / C74–C75.** Q0 R0/R2 complete
+**Current completed evidence: SEQ134–136 / C76–C78.** R1's read-only missing-readout
+supplement is a post-abort diagnostic, not a repaired primary or third completed
+primary root. The first native child-record loop closes 11 stages, 128 generation
+calls, three fits and 100 updates; all five vLLM readout panels remain old 4/8,
+new 4/8. The separate access probe shows distribution change and weak, fragile
+train-form discrimination, not no learning or a purely access-only failure.
+Fit2 full likelihood scores 12/16, including four tiny downstream tie-break
+successes, versus strict first-token 8/16 with five ties; held-readout scores
+remain 8/16 by both measures. HF forced candidates and vLLM greedy outputs are
+distinct. This is child-record loop connectivity, not parenting, clean ancestry,
+general G1 or a frozen mechanism. Later LR-comparison outcomes are excluded;
+the working-draft research question remains unresolved. Collaborator UNSENT.
+
+**Historical completed-evidence cut: SEQ130–133 / C74–C75.** Q0 R0/R2 complete
 128 updates per arm and fail the registered endpoint; R1 is a runtime-aborted,
 missing paired endpoint, not zero accuracy or a third scientific failure.
 Across three preselected reflection learner seeds, ordinary practice improves
@@ -315,8 +328,7 @@ cases remain unrequested; no G3, parenting, child sleep, H1/H2, clean lineage,
 novel-fact transfer or substrate freeze follows. Model origin remains
 `UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred. Collaborator **UNSENT**.
 
-Internal staging only; the canonical abstract now includes the bounded SEQ130–133
-update while preserving its historical text. H1/H2 remain the proposed
+Internal staging only; the canonical abstract now includes the bounded update through SEQ136 while preserving its historical text. H1/H2 remain the proposed
 developmental thesis, not established outcomes.
 
 ## Abstract
@@ -336,6 +348,20 @@ training adds 0, 0, -1 correct applications after withdrawal versus ordinary
 practice: no observed advantage here. Exact authored restatement matches remain
 zero, not a semantic-prose failure. These authored birth-component targets do
 not test child-authored SLEEP, P1 or H2; formal C11 remains deferred.
+
+A subsequent read-only R1 supplement does not repair its aborted primary.
+The first native child-record loop completes 11 stages, 128 generation calls,
+three fits and 100 updates, connecting records, compilation, fitting, mounting
+and subsequent wake/readout. All five vLLM readout panels remain old 4/8 and
+new 4/8. A separate HF forced-candidate probe nevertheless measures distribution
+change and weak, fragile train-form discrimination: fit2 scores 12/16 by full
+likelihood, including four tiny downstream tie-break successes, versus 8/16
+strict first-token choices with five exact ties; both held-readout measures
+remain 8/16. Unequal 12/14-token targets and HF teacher forcing differ from
+vLLM greedy generation. This is neither no learning nor a pure access failure,
+and does not establish parenting, clean ancestry, general G1 or a mechanism
+freeze. The research question remains open; later comparison outcomes are
+outside this evidence cut.
 
 ## Evidence and interpretation boundaries
 

@@ -10008,3 +10008,14 @@ Main integrates, launches and compares; no unnecessary broad CPU suite repeats.
 Formal guard still only finalC11. Watcher's proposed deletion of stale roots is
 not adopted: evidence roots/adapters remain preserved; no foreign/control kills.
 Manuscript throughSEQ136 in independent bounded review; no GPU gate imposed.
+## [Builder] 2026-09-13T07:25Z — accept six-file manuscript throughSEQ136
+
+Main reviewed abstract additions and exact six EDITSTOP hashes; scoped diff
+check passes. Copernicus independent review ACCEPT with no required correction,
+tracing C76–C78 to receipts. R1 remains an aborted primary despite its readout
+supplement; native L2 readouts remain8/16; HF12/16train includes fragile ties,
+not vLLM12/16 or a demonstrated parenting gain. No new LR outcome incorporated.
+Review/handoff archived; all six files explicitly staged. This is a working
+first draft, not a finished negative paper or mission completion. Collaborator
+UNSENT; no TeX installation/PDF or layout validation, no external send.
+Review concerns manuscript only; ongoing GPU work never waited on it.

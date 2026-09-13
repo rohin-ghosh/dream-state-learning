@@ -1,13 +1,26 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This fixed SEQ130–133 evidence cut retains both positive and negative findings.
+This evidence cut through SEQ136 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current completed-evidence cut: SEQ130–133 / C74–C75.** Q0 R0/R2 complete
+**Current completed evidence: SEQ134–136 / C76–C78.** R1's read-only missing-readout
+supplement is a post-abort diagnostic, not a repaired primary or third completed
+primary root. The first native child-record loop closes 11 stages, 128 generation
+calls, three fits and 100 updates; all five vLLM readout panels remain old 4/8,
+new 4/8. The separate access probe shows distribution change and weak, fragile
+train-form discrimination, not no learning or a purely access-only failure.
+Fit2 full likelihood scores 12/16, including four tiny downstream tie-break
+successes, versus strict first-token 8/16 with five ties; held-readout scores
+remain 8/16 by both measures. HF forced candidates and vLLM greedy outputs are
+distinct. This is child-record loop connectivity, not parenting, clean ancestry,
+general G1 or a frozen mechanism. Later LR-comparison outcomes are excluded;
+the working-draft research question remains unresolved. Collaborator UNSENT.
+
+**Historical completed-evidence cut: SEQ130–133 / C74–C75.** Q0 R0/R2 complete
 128 updates per arm and fail the registered endpoint; R1 is a runtime-aborted,
 missing paired endpoint, not zero accuracy or a third scientific failure.
 Across three preselected reflection learner seeds, ordinary practice improves
@@ -3239,12 +3252,12 @@ R0/R2 each complete 128 updates per arm, 256 per instance, and both return
 | R2 AUTH | 65 | 31 | 3 | 8 |
 | R2 DERANGED | 72 | 32 | 1 | 8 |
 
-Every listed exact/held cell fails acquisition and key coverage despite128/128
+Every listed exact/held cell fails acquisition and key coverage despite 128/128
 or 64/64 legal single actions, zero multiple actions and copy 8/8 per arm. Exact
 requires at least 116/128 and 14/16 keys; held 52/64 and 12/16 keys, alongside
 registered class-recall, gain and interface conditions. Complementary
 opposite-and-correct counts are R0 exact 39/128, held 10/64; R2 exact 28/128, held 4/64,
-against112/128 and 48/64. Wrong-root opposites 14/64 and 8/64 exceed the 3/64 cap;
+against 112/128 and 48/64. Wrong-root opposites 14/64 and 8/64 exceed the 3/64 cap;
 all 16 complete-instance arm-by-family locality cells fail. Full dose did not
 qualify this writer recipe; syntax/copying is not the endpoint bottleneck.
 No general LoRA impossibility or causal mechanism identification follows.
@@ -3335,3 +3348,141 @@ or model-binding relaxation occurred. All 432 decisions match stored counts;
 this author-side CPU/custody analysis plus Main's acceptance is not a fresh
 independent reflection raw/scientific review. Main owns integration and Git;
 collaborator UNSENT. Manuscript changes are evidence incorporation only.
+
+
+## C76 — SEQ134: R1 missing-readout supplement, not a repaired primary
+
+A separate read-only supplement evaluates the saved R1 P_DERANGED/128 checkpoint
+without new training (zero updates/training forwards). Its 288 prefix readouts
+and 296 generations yield 584 records. The joined diagnostic uses original
+OFF/AUTH evidence plus only the missing DERANGED readout:
+
+| Post-abort diagnostic arm | Exact correct/128 | Held correct/64 | Copy/8 |
+| --- | ---: | ---: | ---: |
+| Original AUTH readout | 67 | 31 | 8 |
+| Supplemental DERANGED readout | 69 | 32 | 8 |
+
+Complementary double-correct counts are 37/128 exact and 0/64 held; the joined
+endpoint fails. The original R1 primary remains `NONREPORTABLE_RUNTIME_ABORT`.
+The receipt explicitly records `original_primary_changed=false`,
+`primary_three_root_complete=false` and `scientific_claim=false`. This is a
+post-abort diagnostic, not a repaired primary, third complete primary root,
+new fit/seed or population failure-rate estimate. C74's historical missingness
+is unchanged; no parenting, clean-lineage or H1/H2 qualification follows.
+
+Source: [supplemental native replay receipt](receipts_20260912/astra_q0_R1_supplement_replay_20260913_attempt2.json),
+file SHA256 `6f6dadd5a60abb17722e56f823ef467bd9297f228519398ec2830806ed46a4eb`;
+embedded report identity `dc1be5a0b80f39026b79621badba48741afb7000f5842015874a42ab139590eb`.
+This manuscript pass reads the archived receipt; it does not repeat native
+replay, load weights, recollect or edit the original root.
+
+## C77 — SEQ135: first native child-record loop connects, readout accuracy unchanged
+
+The prospective public-record DEV protocol uses 16 opaque independent keys,
+not Q0's tool-by-mode map or an LLVM/compiler-gym task. All 11 native stages
+complete with 128 generation calls, three physical fits and 100 updates.
+First SLEEP admits 8/8 exact child records; cumulative second SLEEP admits
+16/16 in each branch. The shared first fit is performed once for 20 updates.
+PROMOTE mounts the candidate for subsequent experience/recording/readout;
+SHADOW retains trained candidate bytes but stays base. Each second branch fit
+uses its own admitted union for 40 updates, starting again from the frozen base,
+not a persistent optimizer or warm-started first adapter.
+
+| Native vLLM greedy readout | Old correct/8 | New correct/8 | Legal/16 |
+| --- | ---: | ---: | ---: |
+| Baseline | 4 | 4 | 16 |
+| SLEEP1 PROMOTE | 4 | 4 | 16 |
+| SLEEP1 SHADOW | 4 | 4 | 16 |
+| SLEEP2 PROMOTE | 4 | 4 | 16 |
+| SLEEP2 SHADOW | 4 | 4 | 16 |
+
+All five report panels have zero malformed and length-capped outputs. Final
+paired counts are both-correct 8, neither 8, PROMOTE-only 0, SHADOW-only 0 of 16.
+This closes the child action/feedback → exact record → compile → fit → mount →
+subsequent wake/readout path, unlike the earlier authored-target-only assays.
+Admission still uses external public-support checks. Execution connectivity
+and absence of a measured old/new accuracy or retention benefit in this single
+exploratory pair do not imply no parameter/distribution change; C78 measures
+the latter separately. Core `endpoint.native_verified=false`,
+`scientific_pass=null` and the original readouts remain unchanged. No parenting,
+clean-ancestry, general G1, H1/H2 or mechanism-freeze result; formal C11 deferred.
+
+Sources:
+- [Prospective L2 public-record protocol](ASTRA_L2_PUBLIC_RECORD_PROTOCOL_2026-09-13.md), SHA256 `638936cfd54a791c7f517b5c93ea944002a697a1b78c6a672f04398dc3486f51`.
+- [Completed collection receipt](receipts_20260912/astra_l2_collection_20260913_attempt1.json), SHA256 `a2d80c7e1e973d102a675507fc4d0ef40a1a25acd4516729ea9ade54dd90347f`; plan `da6a2d651d152979afee1ab862ab9218ef571149705e4bff5ad1a4ebc0289125`, seal `14a0e0b33998dba794642d014f1f9f5939b78e6956d1724f497660c7e239e42f`.
+
+The receipt's `scientific_replay=true` does not override its core endpoint flags
+or supply an independent native review. No new collection or native run was
+performed for this manuscript. Shared first-fit cost is not counted twice.
+
+## C78 — SEQ136: distribution change and weak acquisition/access discrimination
+
+The completed HF diagnostic scores supplied candidates for OFF, fit1 and
+fit2_PROMOTE: 96 paired rows / 192 candidate continuations, 192 forwards and
+zero updates. Each state has 16 training-form and 16 held-readout-form keys.
+Training-form wording is not the same as exposure: fit1 was fit only on the
+old eight, while fit2 includes all 16. The first comparison is at the first
+divergent token; exact-zero ties receive no correctness credit. Full-sum
+scoring includes the whole continuation and EOS. First gold NLL below is the
+mean gold first-divergent-token negative log likelihood, not full target loss.
+
+| HF state / wording | First strict/16 | Exact ties | Full sum/16 | First gold NLL |
+| --- | ---: | ---: | ---: | ---: |
+| OFF / train | 8 | 0 | 8 | 2.784746 |
+| OFF / readout | 8 | 0 | 8 | 2.077657 |
+| fit1 / train | 8 | 1 | 9 | 0.689233 |
+| fit1 / readout | 8 | 0 | 8 | 0.670401 |
+| fit2 / train | 8 | 5 | 12 | 0.638386 |
+| fit2 / readout | 8 | 0 | 8 | 0.675427 |
+
+OFF chooses action0 for every key in both views; lower first-token gold NLL
+shows substantial reduction of its common action-confidence bias. This is
+measured distribution change, not a blanket no-learning result. Fit2 train
+first strict counts are old 3/8, new 5/8 with five ties; full-sum counts are
+old 5/8, new 7/8. Four of the five first ties become correct only through tiny
+downstream likelihood differences; one remains incorrect. All five resolve
+toward action1 with absolute full margins about 0.000040–0.000710 nats. Thus
+12/16 full-sum correctness is not four additional robust first-position choices.
+Both held-readout measures remain 8/16, all action0. Weak training-form choices
+and wording-sensitive access are jointly plausible; a purely access-only
+failure after strong acquisition is not isolated. Fit2 train NLL improves from
+fit1 while readout NLL slightly worsens; do not collapse this mixed result.
+
+Candidates have 14/12 tokens including EOS for action0/action1, a shared two-
+token prefix, and differ at multiple positions. Full likelihood sums, mean
+likelihood and first-token preference are distinct; mean likelihood reverses
+the full-sum choice on all five first-tied items. Even the identical EOS token
+conditions on different supplied histories. No single-decision-token assumption,
+post-hoc tie tolerance, p-value, composite or best-state selection is introduced.
+HF teacher forcing is not vLLM full-vocabulary greedy generation or demonstrated
+numerical parity. The diagnostic does not replace C77's unchanged readouts.
+
+### Repair and independent-analysis scope
+
+The preserved v1 diagnostic failed a type check: its all-module truthiness test
+mistook a model-level `disable_adapters` method for a Boolean property. This is
+not evidence that the original L2 adapter was inactive. V2 restricts checks to
+actual tuner layers with enabled/default/unmerged routes and saved-versus-loaded
+tensor identity after recorded dtype conversion, plus frozen/eval state; it
+changes no original data, candidate serialization, adapter or training.
+
+The independent stored-evidence analysis recomputes 96 paired rows / 192
+continuations and verifies report/worker identities and stored converted/actual
+tensor inventories (392 records per adapter). It checks truth indices against
+the accepted world, but does not independently load tensors, retokenize cases,
+repeat a full producer/custody audit or certify HF/vLLM parity. Main's archived
+20-test CPU acceptance and native CPU route fixture are separate checks, not
+new tests run by this manuscript editor. V1 failure is preserved, not combined
+with v2 as diagnostic outcome data.
+
+Sources:
+- [Completed access report](receipts_20260912/astra_l2_access_report_20260913_attempt2.json), SHA256 `1d3d33347c246f0e243343d4f18f01b4dfa2c35b669b97cb64d28c3fff259aa1`.
+- [Independent stored-evidence analysis](receipts_20260912/astra_l2_access_independent_analysis_20260913.md), SHA256 `8a053d9a43fc84167835d45aacce8550778fb5fdeb28fc6935c4766bc2765762`.
+- Preserved [v1 diagnostic source](receipts_20260912/astra_l2_access_probe_20260913.py) and [versioned v2 source](receipts_20260912/astra_l2_access_probe_20260913_v2.py); failed-attempt interpretation is bounded in the independent analysis, not rewritten by this incorporation.
+- [Main v2 CPU acceptance](receipts_20260912/astra_l2_access_probe_v2_main_cpu_20260913.log), SHA256 `45ebb4a305f09b5c431f46d74be10ece2a83fd1c568f07f4682400f44079bc8c`: 20 tests in 2.832 s; [native CPU route fixture](receipts_20260912/astra_l2_access_v2_native_route_20260913.log), SHA256 `0149d0f6abddb55c82ff6d22de2bda6e499ac6d42962de03130932d97b9a8c1b`.
+
+These findings guide acquisition/access repair, not a completed negative paper,
+general G1, parenting, clean-lineage, H1/H2 or mechanism freeze. Later LR-
+comparison outcomes remain excluded; no pending run is treated as a result.
+The research question remains open, with Main owning operations and integration.
+Collaborator UNSENT.

@@ -1,7 +1,7 @@
 # Experience Models — ICLR 2027 submission (revised draft v3, 2026-09-10 fix pass)
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This fixed SEQ130–133 evidence cut retains both positive and negative findings.
+This evidence cut through SEQ136 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
@@ -10,9 +10,63 @@ independent review, with no later outcomes incorporated.
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
 
-## Latest bounded evidence — SEQ130–133: Q0 endpoints and reflection / C74–C75
+## Latest bounded evidence — SEQ134–136: native loop and access diagnostic / C76–C78
 
-**Current completed-evidence cut: SEQ130–133 / C74–C75.** Q0 R0/R2 complete
+**Current completed evidence: SEQ134–136 / C76–C78.** R1's read-only missing-readout
+supplement is a post-abort diagnostic, not a repaired primary or third completed
+primary root. The first native child-record loop closes 11 stages, 128 generation
+calls, three fits and 100 updates; all five vLLM readout panels remain old 4/8,
+new 4/8. The separate access probe shows distribution change and weak, fragile
+train-form discrimination, not no learning or a purely access-only failure.
+Fit2 full likelihood scores 12/16, including four tiny downstream tie-break
+successes, versus strict first-token 8/16 with five ties; held-readout scores
+remain 8/16 by both measures. HF forced candidates and vLLM greedy outputs are
+distinct. This is child-record loop connectivity, not parenting, clean ancestry,
+general G1 or a frozen mechanism. Later LR-comparison outcomes are excluded;
+the working-draft research question remains unresolved. Collaborator UNSENT.
+
+R1's supplemental joined diagnostic is AUTH 67/128 exact, 31/64 held;
+DERANGED 69/128, 32/64. Complementary double-correct is 37/128 exact and 0/64
+held; copy 8/8 per arm. This zero-update supplement leaves the original R1
+primary runtime-aborted; it is not a third complete primary or new seed.
+
+The L2 loop admits 8/8 exact child records at SLEEP1 and 16/16 cumulative at
+SLEEP2 per branch. A shared first fit runs 20 updates; second branch fits run
+40 each from the frozen base. PROMOTE mounts candidates; SHADOW trains but
+stays base. Baseline and both arms after both sleeps each score old 4/8,
+new 4/8, legal 16/16. Final PROMOTE-only and SHADOW-only correctness are both
+zero. Native child-record/compile/fit/mount/subsequent-wake connectivity is
+established, not parenting or a measured learning/retention benefit. Core
+`native_verified=false` and `scientific_pass=null` are preserved.
+
+| HF state / wording | First strict/16 | Exact ties | Full sum/16 | First gold NLL |
+| --- | ---: | ---: | ---: | ---: |
+| OFF / train | 8 | 0 | 8 | 2.784746 |
+| OFF / readout | 8 | 0 | 8 | 2.077657 |
+| fit1 / train | 8 | 1 | 9 | 0.689233 |
+| fit1 / readout | 8 | 0 | 8 | 0.670401 |
+| fit2 / train | 8 | 5 | 12 | 0.638386 |
+| fit2 / readout | 8 | 0 | 8 | 0.675427 |
+
+First NLL is mean gold first-divergent-token negative log likelihood. OFF's
+all-action0 bias is reduced; fit2 train full-sum 12/16 includes four correct
+resolutions of first-token ties by tiny downstream likelihoods. First strict
+8/16 plus five ties and held-readout 8/16 do not establish robust acquisition
+or a pure access failure. Target lengths are 14/12 tokens including EOS for
+action0/action1; full sums and mean likelihood can disagree. These HF supplied-
+candidate scores never replace original vLLM greedy outputs.
+
+[C76–C78](../research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md)
+bind the completed receipts, independent stored-evidence analysis and v1/v2
+repair provenance. The diagnostic v1 type-check failure is preserved, not proof
+that original adapters were inactive. V2 route/tensor identity checks are not
+HF/vLLM parity or independent native certification. No outcome from subsequent
+LR comparisons is included. Existing abstracts/tables and source limits remain;
+formal C11 is deferred, with no general G1, clean-lineage or mechanism freeze.
+
+## Historical bounded evidence — SEQ130–133: Q0 endpoints and reflection / C74–C75
+
+**Historical completed-evidence cut: SEQ130–133 / C74–C75.** Q0 R0/R2 complete
 128 updates per arm and fail the registered endpoint; R1 is a runtime-aborted,
 missing paired endpoint, not zero accuracy or a third scientific failure.
 Across three preselected reflection learner seeds, ordinary practice improves
