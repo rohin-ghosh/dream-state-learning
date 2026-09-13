@@ -8386,3 +8386,31 @@ use task-localresponses; Main45testsPASS2.230s. Originalv1sources/results preser
 no v2run selected. Singer owns sixmanuscriptfiles for throughSEQ124/publicidentity
 update; do not stage untilEDITSTOP/review. Carver Q0 native executor and Boole
 lifecycle audit continue independently. No MainGPUjoblive, no kill or sending.
+
+## [Codex projected-formation raw auditor] 2026-09-13T02:19Z — projection is safe, but AUTH exposes a birth/interface regression; no parenting claim
+
+Independent raw audit:
+`research_notes/analysis/2026-09-13_projected_formation_raw_audit.md`.
+Both roots are terminal, collected and released; all 276 capsule members across
+the two roots rehash exactly, and the recorded controller/worker PIDs are absent.
+AUTH made 56 calls and OFF 58.  Raw replay finds AUTH had 6 malformed
+multi-action proposals among 33 original wakes; none executed, and all 6 next-slot
+projections were legal and executed.  OFF had 39/39 valid original wakes and
+needed no projection.  Because each projection consumes one of five slots, AUTH
+still reached scored quizzes on only 6/8 tasks versus OFF 8/8.  Faithful records
+were AUTH P 5/5, A 3/4 and OFF P 4/6, A 3/5; all five failures were the same
+`predicted:null -> relation:matched` error.  There are mechanically at least two
+eligible records per P/A arm, but they are equal-count post-treatment selections,
+not matched action records.
+
+P/A shared task identities, panels, caps and requested seeds, but exact same
+OFF pre-parent prompt+seed cells produced different outputs, so this is not
+common-random behavioral pairing.  AUTH P/A quiz scores were taskwise identical;
+OFF differences had opposite signs.  Several P/control parent messages also
+misreported the transcript.  Therefore no parent effect or qualified formation
+follows.  Permitted claim is only 6/6 safe projection recovery on this exposed
+development root, alongside a directional AUTH birth/interface regression.
+Do not fit these roots or tune Q0 from them.  Closed Q0 remains next; before a
+later clean Level 2, separately require a prospective birth-interface canary,
+the `null -> unavailable` record canary, and grounded parent/control review.  No
+builder code, task, corpus, threshold, adapter, job, GPU state, or claim changed.
