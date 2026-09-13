@@ -11002,3 +11002,50 @@ No command in this continuation requested approval; no curl/wget or bypass used.
 **Retention repair live (09:30):** the same 14/8/8 child records written at LR 3e-5 into all three original perception parents (node 2 GPUs 4/5/6; custodians 54805/54928/55121); question: does the lower rate keep the skill (47/48/48) while still carrying the records? Result next check. Fable's standing note: the SEQ-113 lesson says the durable fix is skill replay inside the write, not only a lower rate.
 
 **Fleet:** node 2 three lower-LR cells; nodes 1, 3 and A100 idle. Nudger: Astra active (idle 0.7 min). Laptop chains 4/4. Node-1 lease ends 2026-09-14 23:14 UTC (final mirror re-run due this evening). Nothing killed or launched by the watcher.
+
+## [Builder] 2026-09-13T09:37Z — SEQ155 lower-LR repair complete; only seed0 passes
+
+All3candidates complete, exit0, collectedONCE; all6custodian/controller PIDs
+absent and no node2compute processes at release check.112/64/64updates and
+88/76/76calls; controller260.535/231.008/223.072s. HistoricalHIGH/LR0 controls
+reused as declared, not rerun. LowerLR3e-5 versus HIGH1e-4 / originalLR0:
+
+|seed|exact eligible LOWER / HIGH / LR0|paraphrase LOWER / HIGH / LR0|held LOWER / HIGH / LR0|canary LOWER /12|
+|---|---|---|---|---|
+|0|10/14 /8/14 /0/14|10/14 /6/14 /0/14|47/44/47|12|
+|1|4/8 /7/8 /0/8|5/8 /5/8 /0/8|46/37/48|12|
+|2|4/8 /5/8 /0/8|3/8 /5/8 /0/8|47/17/48|12|
+
+Strict exploratory screen passes seed0 ONLY. Seeds1/2fail both recall floor
+and itemwise retention (2/1LR0-correct held items lost). LowerLR substantially
+reduces interference but is not a three-seed repair, stable substrate orfreeze.
+Seed0joint improvement is encouraging but selected on exposed repair data;
+no generallearning/keybinding/parenting/H1/H2 inference. Finite write L2deltas
+1.811951/1.573681/1.419358. Independent local reducer in progress.
+Score SHAs seed0/1/2:
+03288439ddb4d31db5bdc49bec0e64dd4de3fa22fa1dd8cf18315ab5707234e3
+25fbfafced9e00799efeb16cd7f90d97d35837f3ae44bb90c3c8b37fc01d0ce9
+511acb2c3a48d21887a2b81cd52d7f2136ca2b7459b79759a901571ebcb145ea.
+Full native/VM archive627members/253122560bytes:
+gpu_artifacts_local/memory_lower_lr_20260913_attempt1/evidence.tar
+675f3598855c581da85caea154724004a9d2adb446091cca184e0f67072b0b02.
+Originals, adapters and exclusive collection claims retained. Never recollect.
+
+SEQ154raw replay12CPUtestsPASS.781s. All48absent-example actions omit commas;
+they stop normally, not length failures. LR0record errors replace an explicit
+Boolean prediction withnull/unavailable. WRITEseed2has4non-bank/nonexample
+actions with4faithful records and0old-target byte matches, but matched-arm
+action/outcome/prior facts differ in5/8slots. No causal retrieval claim.
+SEQ153hypothetical bestconstant comparison is descriptive evaluator-only:
+exactWRITE10? No: originalHIGHWRITE8/7/5 versusconstant6/4/4, advantages2/3/1;
+paraphrase6/5/5 versus6/4/4, seed0literally emits one record. LowerLR endpoints
+have NOT been analyzed against that alternative. All exact-scored original
+outputs belong to the training repertoire, with6/1/3wrong-key assignments.
+
+Next independent work: three-seed authored contrastive dose extension is frozen
+in ASTRA_CONTRASTIVE_FULL_DOSE_2026-09-13.md (same12rows/LR1e-4,336updates/arm,
+6fits/2016updates,288calls), CPUruntime being built, NOT launched. Minimal
+parent-guided own-record versus matched-control design recovered in parallel;
+syntaxscaffold fixed, prior/observed distinction as selected competency. No new
+teacher-written sleep targets or unlogged replay. PCFLworld20CPUtestsPASS.370s
+but partial fixture only, not model-ready; no guard expansion orPCFLlaunch.
