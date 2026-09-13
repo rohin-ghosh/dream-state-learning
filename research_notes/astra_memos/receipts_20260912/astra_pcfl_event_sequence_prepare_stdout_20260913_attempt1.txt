@@ -1,0 +1,68 @@
+f4fed2093e969e0e050fcf605c66bc2c1ac3409a4f56008bf8b43c347b40c388  /tmp/astra_pcfl_event_sequence_source_20260913_attempt1.tar
+{
+  "export_sha256": "4c25742c1c4d90b5749a31ecddd10b6daba4febc136ce1057fd97379f5ab50e1",
+  "file_sha256": "9072d04c19ea7118a2835c95ecd1e72ce6749352efbf34018a6e0e288774cdc5",
+  "fits": 0,
+  "import_sha256": "cc9e97a290933633d67c371625ae5cfffeb46bc8ca7c130279022868e98a545e",
+  "path": "/tmp/astra_pcfl_event_sequence_material_20260913_attempt1.json",
+  "phases": {
+    "ALL_AVAILABLE_1": {
+      "context_dropped": 0,
+      "input_tokens": 22732,
+      "parent_phase": null,
+      "presentations": 160,
+      "supervised_tokens": 8306,
+      "target_dropped": 0,
+      "updates": 40
+    },
+    "ALL_AVAILABLE_2": {
+      "context_dropped": 0,
+      "input_tokens": 45468,
+      "parent_phase": "ALL_AVAILABLE_1",
+      "presentations": 320,
+      "supervised_tokens": 16614,
+      "target_dropped": 0,
+      "updates": 80
+    },
+    "FRESH_MIX": {
+      "context_dropped": 0,
+      "input_tokens": 45360,
+      "parent_phase": null,
+      "presentations": 320,
+      "supervised_tokens": 16520,
+      "target_dropped": 0,
+      "updates": 80
+    },
+    "SEQ_NEW_ONLY": {
+      "context_dropped": 0,
+      "input_tokens": 45040,
+      "parent_phase": "S_A",
+      "presentations": 320,
+      "supervised_tokens": 16240,
+      "target_dropped": 0,
+      "updates": 80
+    },
+    "SEQ_REPLAY": {
+      "context_dropped": 0,
+      "input_tokens": 45360,
+      "parent_phase": "S_A",
+      "presentations": 320,
+      "supervised_tokens": 16520,
+      "target_dropped": 0,
+      "updates": 80
+    },
+    "S_A": {
+      "context_dropped": 0,
+      "input_tokens": 22840,
+      "parent_phase": null,
+      "presentations": 160,
+      "supervised_tokens": 8400,
+      "target_dropped": 0,
+      "updates": 40
+    }
+  },
+  "source_commit": "8a880ddd031f9432270c01b03c70a6e0194ef9d4",
+  "spec_sha256": "1d084ec7595fa57fc1fb4b01d61fbfc0961a5b14e9fb53063e400e2493359d74",
+  "status": "TOKENIZED_MATERIAL_NOT_EXECUTED",
+  "updates_executed": 0
+}

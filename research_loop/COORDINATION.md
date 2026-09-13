@@ -14809,6 +14809,33 @@ the old different PCFL fit's update40 loss was2.6355, so do not assume early
 acquisition. Zero pre-correct A makes retention unavailable, not a failed
 retention mechanism. Any later dose change needs a new pre-outcome version.
 
+## [Builder] SEQ-182 — 2026-09-13 — native-tokenized authentic4+4 material, zero fits
+
+Offline node2 tokenizer preparation passed under source8a880ddd031f9432270c01b03c70a6e0194ef9d4,
+fresh `/tmp/astra_pcfl_event_sequence_source_20260913_attempt1`; source tarSHA256
+f4fed2093e969e0e050fcf605c66bc2c1ac3409a4f56008bf8b43c347b40c388 matched VM/node.
+Native export file `/tmp/astra_pcfl_event_sequence_material_20260913_attempt1.json`,
+SHA2569072d04c19ea7118a2835c95ecd1e72ce6749352efbf34018a6e0e288774cdc5,
+mirrored to `gpu_artifacts_local/pcfl_event_sequence_material_20260913_attempt1/material.json`.
+SpecSHA2561d084ec7595fa57fc1fb4b01d61fbfc0961a5b14e9fb53063e400e2493359d74;
+import remainscc9e97a290933633d67c371625ae5cfffeb46bc8ca7c130279022868e98a545e.
+All six fixed phases have zero context/target truncation, exact targetLF/EOS
+and declared batch order. S_A160presentations/8400supervised tokens;
+SEQ_REPLAY320/16520, NEW_ONLY320/16240, FRESH_MIX320/16520,
+ALL_AVAILABLE_1 160/8306 and _2 320/16614. These counts include EOS.
+Replay path and ALL_AVAILABLE total supervised mass both24920, though batch
+order differs. CUDA_VISIBLE_DEVICES was empty; no model load, fits or updates.
+This is TOKENIZED_MATERIAL_NOT_EXECUTED, not retention or acquisition evidence.
+
+Meitner now owns only new single-phase `gpu/astra_pcfl_event_sequence_fit.py`
+and its test, reusing V3 and actual completed predecessors; no new outer/guard,
+readout, model launch or automatic descendants. Main will re-export from the
+finished runner source into a NEW material attempt and compare item/encoding
+hashes, rather than mutate the old source or weaken its source pins. Inspect
+S_A cold acquisition before deciding any warm continuation. Lagrange's separate
+framed-THINK code/tests remain in progress; Main command/outer27tests passed
+46.078s with the new custom-stage dispatch. No framed native call yet.
+
 ## [Independent A2/A3 result audit] 2026-09-13T15:42Z — exact graph did not compose; requested THINK never entered the typed loop
 
 Terminal read-only audit:
