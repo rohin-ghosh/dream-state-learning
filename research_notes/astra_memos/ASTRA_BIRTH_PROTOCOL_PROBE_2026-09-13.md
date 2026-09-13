@@ -144,4 +144,68 @@ the old validator's exact-context binding; validation now delegates scoring
 to the unchanged original cases only after proving labels/public fields match.
 Plan cceacca734e74cb86383099b3a7e4ee45fbe923485933204f600c0768faff46b,
 fresh root~/astra_diagnostics/astra_birth_protocol_clarified_seed0_20260913_attempt1.
-PREPARED_NOT_LAUNCHED at this entry; same1500scontroller+300scollection cap.
+PREPARED_NOT_LAUNCHED at that entry; same1500scontroller+300scollection cap.
+
+## SEQ123 clarified control — complete, collected and released
+
+Actual launch1789263195.7814035; controller286769/launcher286693 exited0.
+All32calls closed before one collection/reduction; all91capsule members
+verified on VM and allscores reproduced by the frozen grader. No write/fit.
+
+| Family (four cases each) | OFF parser / public / exact | AUTH parser / public / exact |
+|---|---:|---:|
+| TRY serialization | 4 / 2 / 2 | 4 / 2 / 2 |
+| Quiz format | 4 / 4 / 4 | 4 / 4 / 4 |
+| Record (unchanged prompts) | 4 / 4 / 0 | 4 / 3 / 0 |
+| Public-evidence revision | 4 / 2 / 2 | 4 / 4 / 4 |
+
+All32outputs end with EOS; zero limits or explicit stop-string matches. Both
+states now supply parser-valid actions but predict T on allfour supplied-forecast
+TRY cases, ignoring the two supplied F values. AUTH performs allfour requested
+public-observation repetitions correctly; OFF substitutes QUIZ? for two requested
+TRY actions while giving the correct forecast. These are exposed, adaptively
+selected practice diagnostics, not independent confirmation or a learning effect.
+
+Records retain the earlier semantic results: OFF4/4faithful, AUTH3/4; AUTH again
+maps an absent prediction to matched in practice-record-2. Allfour AUTH raw
+record strings repeat exactly. OFF3/4repeat exactly; the remaining string differs
+only in JSON whitespace, with identical parsed fields. Do not claim bitwise
+determinism from fixed seeds across these two sequences. The exact-reference
+score0for records remains a formatting artifact, not zero semantic fidelity.
+
+Costs:9464inputtokens,581outputtokens;21.360377seconds summed call spans.
+Launch-to-exit278.781528seconds; recorded GPU release360.784369seconds after
+launch, including post-exit waiting/custody, not a pure inference measurement.
+Collection/reduction continues briefly afterward. No additive interpretation.
+Capsule9f184c4a1baa2c5771763147a5008a2f140fbceabc618a36d52dac3148a3a97f;
+validationc6b23d7ca16380a5bf1d8642697ad809f937bc1df845989cc86073b3cc4a5ce7.
+Archived under astra_protocol_clarified_seed0_20260913_attempt1.tgz and its
+.validation.json. Reproduction helper astra_protocol_probe_analysis_20260913.py
+accepts one or both archives and verifies members, unchanged public cases,
+stored/raw scores, costs and unchanged-record inputs. This reuses the frozen
+grader; it is not another independent review.
+
+## Current decision after both diagnostics
+
+Do not fit the contingent16-row bridge overlay yet. Grammar clarification
+already recovers valid syntax in both states; further training is not uniquely
+motivated by the first probe. The real formation CHILD_BOOT already supplies
+explicit forecast/action grammar, so transplanting the practice suffix is not
+automatically a native repair. The separate laptop interface audit localizes
+the real six failures to multi-action bundles and birth-dialect restatement
+continuations, not parser false negatives.
+
+Next exploratory interface comparison: a separately versioned, same-child strict
+action-projection turn after an invalid tentative response, consuming the next
+slot inside the unchanged five-response budget. Preserve the raw invalid and
+dispatch no action/outcome for it; do not salvage a first marker. Pair original
+AUTH with an adapter-OFF child under matched schedules; parents remain OFF.
+Exact strict parsing, public-only visibility, role routing and replay tests are
+required. Parent recap accuracy still needs content audit; no automatic purity
+or downstream write eligibility. Arendt owns bounded CPU implementation; not
+launched. This is an interface diagnostic, not qualified Level2 or H1/H2.
+
+In parallel, a fresh bounded worker implements the already-closed pair-balanced
+Q0 executor from its allowlisted historical contract/material ONLY. None of these
+exploratory outcomes/templates/weights may select or tune Q0. Formal C11 guard
+remains deferred to the final paper-grade run. No currently live Main GPU job.

@@ -1,0 +1,478 @@
+{
+  "runs": [
+    {
+      "archive": "/tmp/astra_protocol_probe_seed0_20260913_attempt1.tgz",
+      "archive_sha256": "11bd6633d462adfff2b3b2a2ca07de78e4f103344c69c7418ab1be37cc258973",
+      "launch_to_exit_seconds": 254.7782633304596,
+      "launch_to_recorded_gpu_release_seconds": 286.7722759246826,
+      "limitation": "Same frozen grader reproduced, not independent scientific review; formatting-sensitive contract; exposed practice.",
+      "states": {
+        "AUTH": {
+          "families": {
+            "quiz_format": {
+              "denominator": 4,
+              "instruction_compliant": 1,
+              "parser_valid": 1,
+              "public_contract_correct": 1
+            },
+            "record": {
+              "denominator": 4,
+              "instruction_compliant": 0,
+              "parser_valid": 4,
+              "public_contract_correct": 3
+            },
+            "revision": {
+              "denominator": 4,
+              "instruction_compliant": 1,
+              "parser_valid": 4,
+              "public_contract_correct": 1
+            },
+            "try_serialization": {
+              "denominator": 4,
+              "instruction_compliant": 0,
+              "parser_valid": 0,
+              "public_contract_correct": 0
+            }
+          },
+          "records": {
+            "practice-record-0": {
+              "request": {
+                "arm": "protocol_practice",
+                "call_id": "0008",
+                "case_id": "practice-record-0",
+                "eid": "practice-record-0",
+                "include_stop_str_in_output": false,
+                "max_tokens": 100,
+                "prompt": "Task: practice-record-0\nExecution: practice-record-0#t1\nActual emitted output:\nPREDICT: T\nACT: TRY 2,1,3\nActual world response:\nthe box says: True for (2,1,3)\nObserved fields: {\"values\": [2, 1, 3], \"observed\": true, \"predicted\": true}\nRecord only the TRY just executed and its returned result. Output one JSON\nobject with keys \"try\", \"observed\", \"predicted\", and \"relation\". \"try\" is the\nsubmitted array of three integers; \"observed\" is the returned Boolean.\n\"predicted\" is your explicit T/F prediction before that ACT, as a Boolean, or\nnull if none was made. \"relation\" is \"matched\", \"mismatched\", or \"unavailable\"\naccordingly. Do not issue an action, state a hidden rule, or add other text.\nExplicit mapping: no prediction (null) => unavailable; prediction equal to observation => matched; prediction different from observation => mismatched.",
+                "protocol": "interaction_v3",
+                "role": "record",
+                "seed": 865418567,
+                "stop": [],
+                "temperature": 0.7,
+                "tick": 1
+              },
+              "text": "{\"try\": [2, 1, 3], \"observed\": true, \"predicted\": true, \"relation\": \"matched\"}"
+            },
+            "practice-record-1": {
+              "request": {
+                "arm": "protocol_practice",
+                "call_id": "0009",
+                "case_id": "practice-record-1",
+                "eid": "practice-record-1",
+                "include_stop_str_in_output": false,
+                "max_tokens": 100,
+                "prompt": "Task: practice-record-1\nExecution: practice-record-1#t1\nActual emitted output:\nPREDICT: T\nACT: TRY 0,9,0\nActual world response:\nthe box says: False for (0,9,0)\nObserved fields: {\"values\": [0, 9, 0], \"observed\": false, \"predicted\": true}\nRecord only the TRY just executed and its returned result. Output one JSON\nobject with keys \"try\", \"observed\", \"predicted\", and \"relation\". \"try\" is the\nsubmitted array of three integers; \"observed\" is the returned Boolean.\n\"predicted\" is your explicit T/F prediction before that ACT, as a Boolean, or\nnull if none was made. \"relation\" is \"matched\", \"mismatched\", or \"unavailable\"\naccordingly. Do not issue an action, state a hidden rule, or add other text.\nExplicit mapping: no prediction (null) => unavailable; prediction equal to observation => matched; prediction different from observation => mismatched.",
+                "protocol": "interaction_v3",
+                "role": "record",
+                "seed": 844584816,
+                "stop": [],
+                "temperature": 0.7,
+                "tick": 1
+              },
+              "text": "{\"try\": [0, 9, 0], \"observed\": false, \"predicted\": true, \"relation\": \"mismatched\"}"
+            },
+            "practice-record-2": {
+              "request": {
+                "arm": "protocol_practice",
+                "call_id": "0010",
+                "case_id": "practice-record-2",
+                "eid": "practice-record-2",
+                "include_stop_str_in_output": false,
+                "max_tokens": 100,
+                "prompt": "Task: practice-record-2\nExecution: practice-record-2#t1\nActual emitted output:\nACT: TRY 5,1,2\nActual world response:\nthe box says: True for (5,1,2)\nObserved fields: {\"values\": [5, 1, 2], \"observed\": true, \"predicted\": null}\nRecord only the TRY just executed and its returned result. Output one JSON\nobject with keys \"try\", \"observed\", \"predicted\", and \"relation\". \"try\" is the\nsubmitted array of three integers; \"observed\" is the returned Boolean.\n\"predicted\" is your explicit T/F prediction before that ACT, as a Boolean, or\nnull if none was made. \"relation\" is \"matched\", \"mismatched\", or \"unavailable\"\naccordingly. Do not issue an action, state a hidden rule, or add other text.\nExplicit mapping: no prediction (null) => unavailable; prediction equal to observation => matched; prediction different from observation => mismatched.",
+                "protocol": "interaction_v3",
+                "role": "record",
+                "seed": 806480169,
+                "stop": [],
+                "temperature": 0.7,
+                "tick": 1
+              },
+              "text": "{\"try\": [5, 1, 2], \"observed\": true, \"predicted\": null, \"relation\": \"matched\"}"
+            },
+            "practice-record-3": {
+              "request": {
+                "arm": "protocol_practice",
+                "call_id": "0011",
+                "case_id": "practice-record-3",
+                "eid": "practice-record-3",
+                "include_stop_str_in_output": false,
+                "max_tokens": 100,
+                "prompt": "Task: practice-record-3\nExecution: practice-record-3#t1\nActual emitted output:\nACT: TRY 1,2,3\nActual world response:\nthe box says: False for (1,2,3)\nObserved fields: {\"values\": [1, 2, 3], \"observed\": false, \"predicted\": null}\nRecord only the TRY just executed and its returned result. Output one JSON\nobject with keys \"try\", \"observed\", \"predicted\", and \"relation\". \"try\" is the\nsubmitted array of three integers; \"observed\" is the returned Boolean.\n\"predicted\" is your explicit T/F prediction before that ACT, as a Boolean, or\nnull if none was made. \"relation\" is \"matched\", \"mismatched\", or \"unavailable\"\naccordingly. Do not issue an action, state a hidden rule, or add other text.\nExplicit mapping: no prediction (null) => unavailable; prediction equal to observation => matched; prediction different from observation => mismatched.",
+                "protocol": "interaction_v3",
+                "role": "record",
+                "seed": 835945246,
+                "stop": [],
+                "temperature": 0.7,
+                "tick": 1
+              },
+              "text": "{\"try\": [1, 2, 3], \"observed\": false, \"predicted\": null, \"relation\": \"unavailable\"}"
+            }
+          },
+          "totals": {
+            "call_seconds": 9.704069577986957,
+            "calls": 16,
+            "eos": 16,
+            "explicit_stop_matches": 0,
+            "input_tokens": 2716,
+            "output_tokens": 226,
+            "token_limits": 0
+          }
+        },
+        "OFF": {
+          "families": {
+            "quiz_format": {
+              "denominator": 4,
+              "instruction_compliant": 4,
+              "parser_valid": 4,
+              "public_contract_correct": 4
+            },
+            "record": {
+              "denominator": 4,
+              "instruction_compliant": 0,
+              "parser_valid": 4,
+              "public_contract_correct": 4
+            },
+            "revision": {
+              "denominator": 4,
+              "instruction_compliant": 0,
+              "parser_valid": 0,
+              "public_contract_correct": 0
+            },
+            "try_serialization": {
+              "denominator": 4,
+              "instruction_compliant": 0,
+              "parser_valid": 0,
+              "public_contract_correct": 0
+            }
+          },
+          "records": {
+            "practice-record-0": {
+              "request": {
+                "arm": "protocol_practice",
+                "call_id": "0008",
+                "case_id": "practice-record-0",
+                "eid": "practice-record-0",
+                "include_stop_str_in_output": false,
+                "max_tokens": 100,
+                "prompt": "Task: practice-record-0\nExecution: practice-record-0#t1\nActual emitted output:\nPREDICT: T\nACT: TRY 2,1,3\nActual world response:\nthe box says: True for (2,1,3)\nObserved fields: {\"values\": [2, 1, 3], \"observed\": true, \"predicted\": true}\nRecord only the TRY just executed and its returned result. Output one JSON\nobject with keys \"try\", \"observed\", \"predicted\", and \"relation\". \"try\" is the\nsubmitted array of three integers; \"observed\" is the returned Boolean.\n\"predicted\" is your explicit T/F prediction before that ACT, as a Boolean, or\nnull if none was made. \"relation\" is \"matched\", \"mismatched\", or \"unavailable\"\naccordingly. Do not issue an action, state a hidden rule, or add other text.\nExplicit mapping: no prediction (null) => unavailable; prediction equal to observation => matched; prediction different from observation => mismatched.",
+                "protocol": "interaction_v3",
+                "role": "record",
+                "seed": 865418567,
+                "stop": [],
+                "temperature": 0.7,
+                "tick": 1
+              },
+              "text": "{\n  \"try\": [2, 1, 3],\n  \"observed\": true,\n  \"predicted\": true,\n  \"relation\": \"matched\"\n}"
+            },
+            "practice-record-1": {
+              "request": {
+                "arm": "protocol_practice",
+                "call_id": "0009",
+                "case_id": "practice-record-1",
+                "eid": "practice-record-1",
+                "include_stop_str_in_output": false,
+                "max_tokens": 100,
+                "prompt": "Task: practice-record-1\nExecution: practice-record-1#t1\nActual emitted output:\nPREDICT: T\nACT: TRY 0,9,0\nActual world response:\nthe box says: False for (0,9,0)\nObserved fields: {\"values\": [0, 9, 0], \"observed\": false, \"predicted\": true}\nRecord only the TRY just executed and its returned result. Output one JSON\nobject with keys \"try\", \"observed\", \"predicted\", and \"relation\". \"try\" is the\nsubmitted array of three integers; \"observed\" is the returned Boolean.\n\"predicted\" is your explicit T/F prediction before that ACT, as a Boolean, or\nnull if none was made. \"relation\" is \"matched\", \"mismatched\", or \"unavailable\"\naccordingly. Do not issue an action, state a hidden rule, or add other text.\nExplicit mapping: no prediction (null) => unavailable; prediction equal to observation => matched; prediction different from observation => mismatched.",
+                "protocol": "interaction_v3",
+                "role": "record",
+                "seed": 844584816,
+                "stop": [],
+                "temperature": 0.7,
+                "tick": 1
+              },
+              "text": "{\n  \"try\": [0, 9, 0],\n  \"observed\": false,\n  \"predicted\": true,\n  \"relation\": \"mismatched\"\n}"
+            },
+            "practice-record-2": {
+              "request": {
+                "arm": "protocol_practice",
+                "call_id": "0010",
+                "case_id": "practice-record-2",
+                "eid": "practice-record-2",
+                "include_stop_str_in_output": false,
+                "max_tokens": 100,
+                "prompt": "Task: practice-record-2\nExecution: practice-record-2#t1\nActual emitted output:\nACT: TRY 5,1,2\nActual world response:\nthe box says: True for (5,1,2)\nObserved fields: {\"values\": [5, 1, 2], \"observed\": true, \"predicted\": null}\nRecord only the TRY just executed and its returned result. Output one JSON\nobject with keys \"try\", \"observed\", \"predicted\", and \"relation\". \"try\" is the\nsubmitted array of three integers; \"observed\" is the returned Boolean.\n\"predicted\" is your explicit T/F prediction before that ACT, as a Boolean, or\nnull if none was made. \"relation\" is \"matched\", \"mismatched\", or \"unavailable\"\naccordingly. Do not issue an action, state a hidden rule, or add other text.\nExplicit mapping: no prediction (null) => unavailable; prediction equal to observation => matched; prediction different from observation => mismatched.",
+                "protocol": "interaction_v3",
+                "role": "record",
+                "seed": 806480169,
+                "stop": [],
+                "temperature": 0.7,
+                "tick": 1
+              },
+              "text": "{\"try\": [5, 1, 2], \"observed\": true, \"predicted\": null, \"relation\": \"unavailable\"}"
+            },
+            "practice-record-3": {
+              "request": {
+                "arm": "protocol_practice",
+                "call_id": "0011",
+                "case_id": "practice-record-3",
+                "eid": "practice-record-3",
+                "include_stop_str_in_output": false,
+                "max_tokens": 100,
+                "prompt": "Task: practice-record-3\nExecution: practice-record-3#t1\nActual emitted output:\nACT: TRY 1,2,3\nActual world response:\nthe box says: False for (1,2,3)\nObserved fields: {\"values\": [1, 2, 3], \"observed\": false, \"predicted\": null}\nRecord only the TRY just executed and its returned result. Output one JSON\nobject with keys \"try\", \"observed\", \"predicted\", and \"relation\". \"try\" is the\nsubmitted array of three integers; \"observed\" is the returned Boolean.\n\"predicted\" is your explicit T/F prediction before that ACT, as a Boolean, or\nnull if none was made. \"relation\" is \"matched\", \"mismatched\", or \"unavailable\"\naccordingly. Do not issue an action, state a hidden rule, or add other text.\nExplicit mapping: no prediction (null) => unavailable; prediction equal to observation => matched; prediction different from observation => mismatched.",
+                "protocol": "interaction_v3",
+                "role": "record",
+                "seed": 835945246,
+                "stop": [],
+                "temperature": 0.7,
+                "tick": 1
+              },
+              "text": "{\"try\": [1, 2, 3], \"observed\": false, \"predicted\": null, \"relation\": \"unavailable\"}"
+            }
+          },
+          "totals": {
+            "call_seconds": 7.5300724580010865,
+            "calls": 16,
+            "eos": 16,
+            "explicit_stop_matches": 0,
+            "input_tokens": 2716,
+            "output_tokens": 246,
+            "token_limits": 0
+          }
+        }
+      },
+      "verified_members": 91
+    },
+    {
+      "archive": "/tmp/astra_protocol_clarified_seed0_20260913_attempt1.tgz",
+      "archive_sha256": "9f184c4a1baa2c5771763147a5008a2f140fbceabc618a36d52dac3148a3a97f",
+      "launch_to_exit_seconds": 278.7815284729004,
+      "launch_to_recorded_gpu_release_seconds": 360.7843692302704,
+      "limitation": "Same frozen grader reproduced, not independent scientific review; formatting-sensitive contract; exposed practice.",
+      "states": {
+        "AUTH": {
+          "families": {
+            "quiz_format": {
+              "denominator": 4,
+              "instruction_compliant": 4,
+              "parser_valid": 4,
+              "public_contract_correct": 4
+            },
+            "record": {
+              "denominator": 4,
+              "instruction_compliant": 0,
+              "parser_valid": 4,
+              "public_contract_correct": 3
+            },
+            "revision": {
+              "denominator": 4,
+              "instruction_compliant": 4,
+              "parser_valid": 4,
+              "public_contract_correct": 4
+            },
+            "try_serialization": {
+              "denominator": 4,
+              "instruction_compliant": 2,
+              "parser_valid": 4,
+              "public_contract_correct": 2
+            }
+          },
+          "records": {
+            "practice-record-0": {
+              "request": {
+                "arm": "protocol_practice",
+                "call_id": "0008",
+                "case_id": "practice-record-0",
+                "eid": "practice-record-0",
+                "include_stop_str_in_output": false,
+                "max_tokens": 100,
+                "prompt": "Task: practice-record-0\nExecution: practice-record-0#t1\nActual emitted output:\nPREDICT: T\nACT: TRY 2,1,3\nActual world response:\nthe box says: True for (2,1,3)\nObserved fields: {\"values\": [2, 1, 3], \"observed\": true, \"predicted\": true}\nRecord only the TRY just executed and its returned result. Output one JSON\nobject with keys \"try\", \"observed\", \"predicted\", and \"relation\". \"try\" is the\nsubmitted array of three integers; \"observed\" is the returned Boolean.\n\"predicted\" is your explicit T/F prediction before that ACT, as a Boolean, or\nnull if none was made. \"relation\" is \"matched\", \"mismatched\", or \"unavailable\"\naccordingly. Do not issue an action, state a hidden rule, or add other text.\nExplicit mapping: no prediction (null) => unavailable; prediction equal to observation => matched; prediction different from observation => mismatched.",
+                "protocol": "interaction_v3",
+                "role": "record",
+                "seed": 865418567,
+                "stop": [],
+                "temperature": 0.7,
+                "tick": 1
+              },
+              "text": "{\"try\": [2, 1, 3], \"observed\": true, \"predicted\": true, \"relation\": \"matched\"}"
+            },
+            "practice-record-1": {
+              "request": {
+                "arm": "protocol_practice",
+                "call_id": "0009",
+                "case_id": "practice-record-1",
+                "eid": "practice-record-1",
+                "include_stop_str_in_output": false,
+                "max_tokens": 100,
+                "prompt": "Task: practice-record-1\nExecution: practice-record-1#t1\nActual emitted output:\nPREDICT: T\nACT: TRY 0,9,0\nActual world response:\nthe box says: False for (0,9,0)\nObserved fields: {\"values\": [0, 9, 0], \"observed\": false, \"predicted\": true}\nRecord only the TRY just executed and its returned result. Output one JSON\nobject with keys \"try\", \"observed\", \"predicted\", and \"relation\". \"try\" is the\nsubmitted array of three integers; \"observed\" is the returned Boolean.\n\"predicted\" is your explicit T/F prediction before that ACT, as a Boolean, or\nnull if none was made. \"relation\" is \"matched\", \"mismatched\", or \"unavailable\"\naccordingly. Do not issue an action, state a hidden rule, or add other text.\nExplicit mapping: no prediction (null) => unavailable; prediction equal to observation => matched; prediction different from observation => mismatched.",
+                "protocol": "interaction_v3",
+                "role": "record",
+                "seed": 844584816,
+                "stop": [],
+                "temperature": 0.7,
+                "tick": 1
+              },
+              "text": "{\"try\": [0, 9, 0], \"observed\": false, \"predicted\": true, \"relation\": \"mismatched\"}"
+            },
+            "practice-record-2": {
+              "request": {
+                "arm": "protocol_practice",
+                "call_id": "0010",
+                "case_id": "practice-record-2",
+                "eid": "practice-record-2",
+                "include_stop_str_in_output": false,
+                "max_tokens": 100,
+                "prompt": "Task: practice-record-2\nExecution: practice-record-2#t1\nActual emitted output:\nACT: TRY 5,1,2\nActual world response:\nthe box says: True for (5,1,2)\nObserved fields: {\"values\": [5, 1, 2], \"observed\": true, \"predicted\": null}\nRecord only the TRY just executed and its returned result. Output one JSON\nobject with keys \"try\", \"observed\", \"predicted\", and \"relation\". \"try\" is the\nsubmitted array of three integers; \"observed\" is the returned Boolean.\n\"predicted\" is your explicit T/F prediction before that ACT, as a Boolean, or\nnull if none was made. \"relation\" is \"matched\", \"mismatched\", or \"unavailable\"\naccordingly. Do not issue an action, state a hidden rule, or add other text.\nExplicit mapping: no prediction (null) => unavailable; prediction equal to observation => matched; prediction different from observation => mismatched.",
+                "protocol": "interaction_v3",
+                "role": "record",
+                "seed": 806480169,
+                "stop": [],
+                "temperature": 0.7,
+                "tick": 1
+              },
+              "text": "{\"try\": [5, 1, 2], \"observed\": true, \"predicted\": null, \"relation\": \"matched\"}"
+            },
+            "practice-record-3": {
+              "request": {
+                "arm": "protocol_practice",
+                "call_id": "0011",
+                "case_id": "practice-record-3",
+                "eid": "practice-record-3",
+                "include_stop_str_in_output": false,
+                "max_tokens": 100,
+                "prompt": "Task: practice-record-3\nExecution: practice-record-3#t1\nActual emitted output:\nACT: TRY 1,2,3\nActual world response:\nthe box says: False for (1,2,3)\nObserved fields: {\"values\": [1, 2, 3], \"observed\": false, \"predicted\": null}\nRecord only the TRY just executed and its returned result. Output one JSON\nobject with keys \"try\", \"observed\", \"predicted\", and \"relation\". \"try\" is the\nsubmitted array of three integers; \"observed\" is the returned Boolean.\n\"predicted\" is your explicit T/F prediction before that ACT, as a Boolean, or\nnull if none was made. \"relation\" is \"matched\", \"mismatched\", or \"unavailable\"\naccordingly. Do not issue an action, state a hidden rule, or add other text.\nExplicit mapping: no prediction (null) => unavailable; prediction equal to observation => matched; prediction different from observation => mismatched.",
+                "protocol": "interaction_v3",
+                "role": "record",
+                "seed": 835945246,
+                "stop": [],
+                "temperature": 0.7,
+                "tick": 1
+              },
+              "text": "{\"try\": [1, 2, 3], \"observed\": false, \"predicted\": null, \"relation\": \"unavailable\"}"
+            }
+          },
+          "totals": {
+            "call_seconds": 12.232808897999348,
+            "calls": 16,
+            "eos": 16,
+            "explicit_stop_matches": 0,
+            "input_tokens": 4732,
+            "output_tokens": 285,
+            "token_limits": 0
+          }
+        },
+        "OFF": {
+          "families": {
+            "quiz_format": {
+              "denominator": 4,
+              "instruction_compliant": 4,
+              "parser_valid": 4,
+              "public_contract_correct": 4
+            },
+            "record": {
+              "denominator": 4,
+              "instruction_compliant": 0,
+              "parser_valid": 4,
+              "public_contract_correct": 4
+            },
+            "revision": {
+              "denominator": 4,
+              "instruction_compliant": 2,
+              "parser_valid": 4,
+              "public_contract_correct": 2
+            },
+            "try_serialization": {
+              "denominator": 4,
+              "instruction_compliant": 2,
+              "parser_valid": 4,
+              "public_contract_correct": 2
+            }
+          },
+          "records": {
+            "practice-record-0": {
+              "request": {
+                "arm": "protocol_practice",
+                "call_id": "0008",
+                "case_id": "practice-record-0",
+                "eid": "practice-record-0",
+                "include_stop_str_in_output": false,
+                "max_tokens": 100,
+                "prompt": "Task: practice-record-0\nExecution: practice-record-0#t1\nActual emitted output:\nPREDICT: T\nACT: TRY 2,1,3\nActual world response:\nthe box says: True for (2,1,3)\nObserved fields: {\"values\": [2, 1, 3], \"observed\": true, \"predicted\": true}\nRecord only the TRY just executed and its returned result. Output one JSON\nobject with keys \"try\", \"observed\", \"predicted\", and \"relation\". \"try\" is the\nsubmitted array of three integers; \"observed\" is the returned Boolean.\n\"predicted\" is your explicit T/F prediction before that ACT, as a Boolean, or\nnull if none was made. \"relation\" is \"matched\", \"mismatched\", or \"unavailable\"\naccordingly. Do not issue an action, state a hidden rule, or add other text.\nExplicit mapping: no prediction (null) => unavailable; prediction equal to observation => matched; prediction different from observation => mismatched.",
+                "protocol": "interaction_v3",
+                "role": "record",
+                "seed": 865418567,
+                "stop": [],
+                "temperature": 0.7,
+                "tick": 1
+              },
+              "text": "{\n  \"try\": [2, 1, 3],\n  \"observed\": true,\n  \"predicted\": true,\n  \"relation\": \"matched\"\n}"
+            },
+            "practice-record-1": {
+              "request": {
+                "arm": "protocol_practice",
+                "call_id": "0009",
+                "case_id": "practice-record-1",
+                "eid": "practice-record-1",
+                "include_stop_str_in_output": false,
+                "max_tokens": 100,
+                "prompt": "Task: practice-record-1\nExecution: practice-record-1#t1\nActual emitted output:\nPREDICT: T\nACT: TRY 0,9,0\nActual world response:\nthe box says: False for (0,9,0)\nObserved fields: {\"values\": [0, 9, 0], \"observed\": false, \"predicted\": true}\nRecord only the TRY just executed and its returned result. Output one JSON\nobject with keys \"try\", \"observed\", \"predicted\", and \"relation\". \"try\" is the\nsubmitted array of three integers; \"observed\" is the returned Boolean.\n\"predicted\" is your explicit T/F prediction before that ACT, as a Boolean, or\nnull if none was made. \"relation\" is \"matched\", \"mismatched\", or \"unavailable\"\naccordingly. Do not issue an action, state a hidden rule, or add other text.\nExplicit mapping: no prediction (null) => unavailable; prediction equal to observation => matched; prediction different from observation => mismatched.",
+                "protocol": "interaction_v3",
+                "role": "record",
+                "seed": 844584816,
+                "stop": [],
+                "temperature": 0.7,
+                "tick": 1
+              },
+              "text": "{\n  \"try\": [0, 9, 0],\n  \"observed\": false,\n  \"predicted\": true,\n  \"relation\": \"mismatched\"\n}"
+            },
+            "practice-record-2": {
+              "request": {
+                "arm": "protocol_practice",
+                "call_id": "0010",
+                "case_id": "practice-record-2",
+                "eid": "practice-record-2",
+                "include_stop_str_in_output": false,
+                "max_tokens": 100,
+                "prompt": "Task: practice-record-2\nExecution: practice-record-2#t1\nActual emitted output:\nACT: TRY 5,1,2\nActual world response:\nthe box says: True for (5,1,2)\nObserved fields: {\"values\": [5, 1, 2], \"observed\": true, \"predicted\": null}\nRecord only the TRY just executed and its returned result. Output one JSON\nobject with keys \"try\", \"observed\", \"predicted\", and \"relation\". \"try\" is the\nsubmitted array of three integers; \"observed\" is the returned Boolean.\n\"predicted\" is your explicit T/F prediction before that ACT, as a Boolean, or\nnull if none was made. \"relation\" is \"matched\", \"mismatched\", or \"unavailable\"\naccordingly. Do not issue an action, state a hidden rule, or add other text.\nExplicit mapping: no prediction (null) => unavailable; prediction equal to observation => matched; prediction different from observation => mismatched.",
+                "protocol": "interaction_v3",
+                "role": "record",
+                "seed": 806480169,
+                "stop": [],
+                "temperature": 0.7,
+                "tick": 1
+              },
+              "text": "{\"try\": [5, 1, 2], \"observed\": true, \"predicted\": null, \"relation\": \"unavailable\"}"
+            },
+            "practice-record-3": {
+              "request": {
+                "arm": "protocol_practice",
+                "call_id": "0011",
+                "case_id": "practice-record-3",
+                "eid": "practice-record-3",
+                "include_stop_str_in_output": false,
+                "max_tokens": 100,
+                "prompt": "Task: practice-record-3\nExecution: practice-record-3#t1\nActual emitted output:\nACT: TRY 1,2,3\nActual world response:\nthe box says: False for (1,2,3)\nObserved fields: {\"values\": [1, 2, 3], \"observed\": false, \"predicted\": null}\nRecord only the TRY just executed and its returned result. Output one JSON\nobject with keys \"try\", \"observed\", \"predicted\", and \"relation\". \"try\" is the\nsubmitted array of three integers; \"observed\" is the returned Boolean.\n\"predicted\" is your explicit T/F prediction before that ACT, as a Boolean, or\nnull if none was made. \"relation\" is \"matched\", \"mismatched\", or \"unavailable\"\naccordingly. Do not issue an action, state a hidden rule, or add other text.\nExplicit mapping: no prediction (null) => unavailable; prediction equal to observation => matched; prediction different from observation => mismatched.",
+                "protocol": "interaction_v3",
+                "role": "record",
+                "seed": 835945246,
+                "stop": [],
+                "temperature": 0.7,
+                "tick": 1
+              },
+              "text": "{\n  \"try\": [1, 2, 3],\n  \"observed\": false,\n  \"predicted\": null,\n  \"relation\": \"unavailable\"\n}"
+            }
+          },
+          "totals": {
+            "call_seconds": 9.127567888004705,
+            "calls": 16,
+            "eos": 16,
+            "explicit_stop_matches": 0,
+            "input_tokens": 4732,
+            "output_tokens": 296,
+            "token_limits": 0
+          }
+        }
+      },
+      "verified_members": 91
+    }
+  ],
+  "unchanged_record_controls": {
+    "AUTH": {
+      "denominator": 4,
+      "identical_outputs": 4
+    },
+    "OFF": {
+      "denominator": 4,
+      "identical_outputs": 3
+    }
+  }
+}
