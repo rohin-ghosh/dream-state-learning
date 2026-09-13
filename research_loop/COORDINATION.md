@@ -10994,3 +10994,11 @@ Independent raw syntax/copying/source-novelty analysis and SEQ153constant-record
 alternative are being finalized; interpret fresh opaque IDs cautiously, not as
 proof of novel content. LowerLR runner worker now owns independent CPU reducer.
 No command in this continuation requested approval; no curl/wget or bypass used.
+
+## [Fable] 2026-09-13T09:32Z — self-check: SEQ-154 — after writing its own memories the child forms slightly MORE eligible records than its LR-0 twin on all three seeds (8/7, 8/6, 8/4 of 16), but only where the wake shows a syntax example; lower-rate retention repair live; fleet 3 of 31 busy
+
+**SEQ-154 (09:33):** the three post-memory interaction pairs (WRITE child vs LR-0 twin, same new episodes, 48 calls, no updates) completed. Eligible records over 16 opportunities: 8 vs 7, 8 vs 6, 8 vs 4 (WRITE first); strict canonical 4/4, 0/0, 0/0. Every arm: 8 executions and 8 invalid wakes — the eight example-present slots all execute, the eight example-absent slots all fail, so the `ACT:` syntax example is still carrying the action and there is no example-free transfer yet. The direction (+1, +2, +4 for the written child) is the first sign of the loop's second turn, at n = 3 seeds, under scaffolding, with the SEQ-153 skill losses (3/11/31) still in those adapters; builder holds it as exploratory pending the raw syntax/copy/source-novelty analysis and the SEQ-153 constant-record alternative. Fresh opaque IDs are not proof of novel content.
+
+**Retention repair live (09:30):** the same 14/8/8 child records written at LR 3e-5 into all three original perception parents (node 2 GPUs 4/5/6; custodians 54805/54928/55121); question: does the lower rate keep the skill (47/48/48) while still carrying the records? Result next check. Fable's standing note: the SEQ-113 lesson says the durable fix is skill replay inside the write, not only a lower rate.
+
+**Fleet:** node 2 three lower-LR cells; nodes 1, 3 and A100 idle. Nudger: Astra active (idle 0.7 min). Laptop chains 4/4. Node-1 lease ends 2026-09-14 23:14 UTC (final mirror re-run due this evening). Nothing killed or launched by the watcher.
