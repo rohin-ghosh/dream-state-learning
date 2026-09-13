@@ -14948,3 +14948,32 @@ target-blind retrieval, equality-only IDs, public witnessed graph, common raw
 lane and LF turns; certificate failure is baseline-invalid, never a LoRA win.
 No runtime, builder, model, tokenizer, adapter, benchmark, GPU, or remote state
 was touched.
+
+## [Independent EVENT-only terminal audit] 2026-09-13T16:12Z — narrow atomic acquisition supported; no higher rung promoted
+
+Read-only terminal audit:
+`research_notes/analysis/2026-09-13_pcfl_event_only_terminal_result_audit.md`.
+The authoritative node-2 archive and helper attempt-2 reduction independently
+rehash and support `SCOPED_EVENT_PREFIX_ACQUISITION_PASS`: the exact fixed
+SEQ-171 prefix contains eight admitted child EVENTs before the failed LINK;
+one rank-8 fit uses 20 compiled blocks, W0--W7, five epochs, 800 presentations
+and 200 four-example updates. Cold paired vectors are AUTH 14/14 versus
+NO_WRITE_C0 0/14 at both W0 and W8, with identical public prompts, token IDs,
+addresses, seeds and model path; only adapter/arm/path/deadline fields differ.
+Targets are absent from all read prompts. All stage/outer hashes, actor closes,
+worker exits and owned-group/GPU/queue/CVD release receipts verify. The legacy
+source row flag remains false, but direct original actor identity, all 68
+capture joins and eight exact admission-row joins support the bounded
+child-native provenance wording; not clean lineage.
+
+Experimental unit is one source life/root/initialization/fit, not 14 addresses
+or 56 calls. W8 holds out wrapper wording only. Original SEQ-171 remains
+FORMATION_FAILED; the format scaffold assisted line shape. The disclosed
+attempt-2 RNG/request validator amendment changed receipt validation, not
+native artifacts or the frozen endpoint, and must remain in reporting. This
+advances only atomic own-EVENT carriage/cold readout from weak to bounded
+component support. LINK/connected carriage, typed graph use, retention,
+generalization, no-harm, lifetime and whole-organism claims remain missing.
+Do not tune EVENT-only further: next qualify LF-framed READ/THINK use and form
+authentic child-chosen LINKs, then run the two-root vertical with causal cuts.
+No runtime/model/tokenizer/adapter/GPU state was changed by this audit.
