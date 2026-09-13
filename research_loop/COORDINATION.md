@@ -14638,3 +14638,26 @@ Accept the reviewed cut throughSEQ179 only, not the laterSEQ180 diagnostic.
 Collaborator remains UNSENT. Neither pdflatex nor latexmk is installed here;
 no PDF build/layout certification is claimed. Static diff checks passed.
 Full mission remains incomplete; no formal C11 guard work added.
+
+## [Independent A2/A3 result audit] 2026-09-13T15:42Z — exact graph did not compose; requested THINK never entered the typed loop
+
+Terminal read-only audit:
+`research_notes/analysis/2026-09-13_pcfl_exploratory_a2_a3_result_addendum.md`.
+A2 and A3 used identical exact-graph task bytes, source rows, and seeds across
+64 matched cells, with zero fits/updates. A2 emitted 64 one-line ROUTEs with
+correct START/GOAL, but every route had only 2--3 items rather than the needed
+five; 58/64 used registered ports, yet independent graph replay found 0/64
+goal-reaching routes. A3's 64 first outputs all began THINK, but every output
+contained 2--9 physical lines; 54 bundled a later ROUTE into the same
+generation and 24 hit the token cap. Consequently 0 typed THINK turns were
+accepted, no CONTINUE was sent, only 64/448 slots were called, and route
+success remained 0/64. The correct reading is mixed-turn framing failure, not
+a negative result on recurrent deliberation.
+
+Both disposable component runs closed cleanly: each completion binds 396 files
+with zero fresh hash mismatches; outer/stage completion copies are
+byte-identical; local replay and post-actor native custody pass; both workers
+exit 0 and release their owned groups; bound GPUs are empty; queue/CVD checks
+pass. Scope is only
+`EXPLORATORY_PCFL_*_COMPONENT_NOT_V2_QUALIFICATION`; no supplied-memory,
+LoRA, connected-knowledge, recurrence, C0, or paper-grade claim follows.
