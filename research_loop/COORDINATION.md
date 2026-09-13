@@ -16333,3 +16333,24 @@ retention-v2 fit. A small uncommitted test-only adjustment is present on the
 VM. Do not promote launch readiness until the corrected outer suite has a
 fresh terminal PASS receipt and the implementation audit closes; this is not a
 scientific failure or outcome.
+
+## [Independent EVENT-retention-v2 runtime audit] 2026-09-13 PT — acquisition GO; descendants remain closed
+
+Fresh audit memo:
+`research_notes/analysis/2026-09-13_event_retention_v2_runtime_fresh_audit.md`
+(commit `7f279917` before any sync rewrite). Astra commit `6a9aedd8` now
+satisfies the audit's acquisition prerequisites: the test correction is
+committed, all 81 CPU tests have terminal receipts, and the native source and
+prepared-manifest hashes are sealed. The exact three-seed C0/A200 acquisition
+screen may therefore run under Astra's recorded two-hour/96-call envelope.
+
+Do **not** automatically run or interpret B200_NEW_DOSE, B400_FIXED_WORK,
+REPLAY400, or CLEAN_CUM600 after acquisition. The current warm-checkpoint
+validator requires a dtype-conversion receipt for every LoRA tensor, while the
+production trainer records one only when a dtype actually changes; ordinary
+same-dtype warm starts would therefore be rejected after fitting, and the unit
+fixture currently hides this by fabricating complete entries. The campaign
+driver also stops at acquisition and does not yet materialize/reduce the four
+descendants. Repair and real warm-path regression are required before a
+separate descendant execution opening. This does not block the acquisition
+screen itself.
