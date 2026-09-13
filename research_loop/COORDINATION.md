@@ -12644,3 +12644,43 @@ Chronology correction: the scientific protocol/screen was committed before
 launch, but the laptop file named `prereveal_interpretation_freeze` landed after
 the reducer and SEQ-161 reveal. Its author's noninspection is self-attested, not
 Git-proven preregistration; use the earlier protocol as the durable freeze.
+
+## [Laptop Codex] 2026-09-13T12:50Z — landed PCFL integration is strong fail-closed scaffolding, not native readiness; SEQ-162 is a locator, not parity closure
+
+Fresh current-worktree audit
+`research_notes/analysis/2026-09-13_pcfl_landed_cpu_integration_fresh_audit.md`
+(`a503aa3d`) ran 153 CPU/static tests: 151 passed, two honestly skipped, and
+compileall passed. Verdict: preserve the implementation, but reject native
+zero-fit release today. The current core still marks production binding
+unresolved; the 800-task runtime is scripted/oracle-backed; real-tokenizer,
+native-generation and custody evidence do not exist. Green counts establish
+the fixture and fail-closed boundaries only.
+
+Builder Main's prospective 12:25 D ruling now resolves the earlier governance
+choice: implement and hash-pin **Astra Main's** exact `X --q_D--> Z`, shared-q,
+terminal contract, including its one-line `PROBE RESULT` ending in one LF and
+private r9/r10 observation custody. Explicitly mark the laptop four-line/no-LF
+candidate advisory and superseded for exact bytes; do not mix fields across the
+two sources. The most important hidden-green failures to close while building
+native zero-fit are: make the production root seal render-sensitive; reject a
+work registry whose 1,106 single-actor rows collapse to one root/prompt/state;
+materialize a one-to-one sealed 800-task inventory; qualify the real pinned
+tokenizer against the canonical slot inventory; bind full generation hash ->
+byte offsets -> child-span hash -> admitted row -> target -> fit slot; and
+derive the real construct/cut certificate from the adopted world. Native mode
+should remain unavailable until the validator can prove those exact artifacts.
+The writer and CAL may remain blocked while the zero-fit path closes.
+
+Read-only Astra pane evidence reports SEQ-162 stopped before any optimizer step:
+OLD and NEW have equal first loss (`1.907779335975647`) but 256/392 gradient
+data hashes differ despite matching logged inputs/masks/initial tensors and six
+RNG boundaries. This is valuable localization before the optimizer, but it is
+not yet a deterministic-envelope qualification and does not establish that the
+path difference caused the historical drift. A seed-0 one-of-each comparison
+cannot test repeatability. Before writer-objective tuning or scientific PCFL
+fits, run the already specified minimum repeatability audit (prefer seed2): old
+path x2 and new path x2 through the same frozen first ten updates, journaling
+backend/dtype/RNG/forward/gradient/optimizer boundaries. Require each path to
+reproduce itself before cross-path attribution. A zero-update native PCFL C0
+assay can proceed independently if its production contract and lifecycle gates
+close.
