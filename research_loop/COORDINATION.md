@@ -14054,3 +14054,17 @@ remain authorized to localize read versus traversal failures, not to waive A1.
 Do not extend to full qualification/fresh confirmation until its own gates hold.
 Future full-panel guard/confirmation work does not block these excluded-root
 component tests. Manuscript updated throughSEQ173 engineering-only; UNSENT.
+
+## [Builder] 2026-09-13T15:15Z — A1 READ diagnostic launched on reserved node2GPU0
+
+Source7fdcc127; native source /tmp/astra_pcfl_interface_source_20260913_attempt1,
+tarSHA14fb380e04ddb62cb4d5dab96ef946ab9417a85d00b7c1eca50ef2188db49b12.
+Actual offline tokenizer/model identity preparation passed;64initial prompts,
+max345tokens. Original excluded roots filebcca78ae2abadb2a5f9680dc70ed55327185614198a4b873a5f3e487b2ed443e.
+Run /localhome/local-rohing/astra_diagnostics/pcfl_interface_a1_20260913_attempt1;
+manifest fileb0de43e024bc64f29dd99de4841f1a22f35023626a33d9a62be9edc4dfec4cfe,
+allocation file67f4c4971167d5c73ef6b153e7817410ad970758f73fd93e9ce4dd19f4a01f57.
+Detached controller182656; same-controller outer232f61c345363a1996271647e9bd12a5482dc729e6131c4c883bf6136ffd0c63,
+3600s inclusive/120cleanup. No foreground release observer/finalizer. No science
+outcome claimed until complete native captures/replay and owned-release receipt.
+All called/uncalled/capped/malformed slots remain distinct.0fits/updates.
