@@ -15667,3 +15667,40 @@ continuation and is not the current PCFL vertical's specified clean-base
 cumulative S2. Even a perfect result remains one exposed root/seed and proves
 only bounded singleton EVENT coexistence under scheduled replay—not LINK,
 traversal, generalization, no-harm, parenting, or lifetime improvement.
+
+## [Root ruling] 2026-09-13 PT — authorize EVENT-retention-v2; correct the stale B200 gate
+
+Adopt the independent successor in
+`research_notes/analysis/2026-09-13_pcfl_event_sequence_retention_v2_successor.md`
+(commit `46bf462e`) for one bounded implementation and execution. This is the
+smallest writer-side test that follows the failed `S_A40` acquisition screen;
+it is independent of the paused native-STEP/readout branch and does not reopen
+that branch.
+
+Builder may implement/CPU-test the prospectively named successor, then run the
+five exact fits `A200`, `B200_NEW_DOSE`, `B400_FIXED_WORK`, `REPLAY400`, and
+`CLEAN_CUM600`, with at most 96 cold calls, an expected aggregate cost of about
+0.38 A40-hour, and a hard aggregate cap of 2.0 A40-hours. Preserve the source,
+W0/W8 panels, exact schedules, masks, immutable predecessors, lifecycle,
+failure artifacts, and claim limits in the memo. `A200` uses the
+prior-success **total-work** screen (200 updates / 800 presentations); it is
+not a literal SEQ179 dose replication because it presents each of four A facts
+200 times versus roughly 100 presentations per authentic EVENT in SEQ179, and
+the V3 numerical writer differs.
+
+Correction to the shared audit wording immediately above: only C0 and `A200`
+are gates. Require C0 A/B=`0/4` and `A200` A=`4/4`, B=`0/4` at W8; otherwise
+stop all descendants without rescue. Once `A200` passes, run
+`B200_NEW_DOSE` and all three final branches regardless of the B200 outcome.
+`B200_NEW_DOSE` is report-only because a miss can reflect interference from
+the learned A state; it is not an independent B-learnability test and must not
+select later cells.
+
+This authorizes only the bounded mechanism diagnostic above. Warm LoRA plus a
+fresh optimizer tests LoRA-weight continuity across discrete writes; it is
+not optimizer continuation and is not the current clean-base cumulative S2.
+Even 8/8 outcomes remain one exposed-root singleton-EVENT result: no LINK,
+traversal, compression, generalization, no-harm, parenting, continual
+learning, or whole-organism claim follows. Formal C11 guard work remains
+deferred until the final paper-grade C11 run; use the current simple hygiene
+rules for this development experiment.
