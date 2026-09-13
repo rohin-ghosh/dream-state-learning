@@ -17,6 +17,7 @@ class OverlayTests(unittest.TestCase):
         self.original.write_text('def validate_warm_tensors(warm, trainable):\n    return False\n')
         self.other = self.source / 'gpu/material.py'
         self.other.write_text('MATERIAL = "UNCHANGED"\n')
+        (self.source / api.OUTER).write_text('OUTER = "UNCHANGED"\n')
         self.replacement = self.root / 'replacement.py'
         self.replacement.write_text('def validate_warm_tensors(warm, trainable):\n    return True\n')
         self.enterContext(patch.object(api, 'SOURCE', self.source))
@@ -30,6 +31,8 @@ class OverlayTests(unittest.TestCase):
         self.assertEqual(api.pin(self.original), original)
         self.assertEqual((self.destination / 'gpu/material.py').resolve(), self.other)
         self.assertFalse((self.destination / api.RELATIVE).is_symlink())
+        self.assertFalse((self.destination / api.OUTER).is_symlink())
+        self.assertEqual((self.destination / api.OUTER).read_bytes(), (self.source / api.OUTER).read_bytes())
         self.assertEqual((self.destination / api.RELATIVE).read_bytes(), self.replacement.read_bytes())
         with self.assertRaisesRegex(ValueError, 'fresh overlay'):
             api.build(self.replacement, 'a' * 40)

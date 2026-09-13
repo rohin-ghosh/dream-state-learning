@@ -16,7 +16,7 @@ import time
 from types import SimpleNamespace
 
 SOURCE = Path('/tmp/astra_pcfl_sequence_v2_source_20260913_attempt2')
-REPAIR_SOURCE = Path('/tmp/astra_pcfl_sequence_v2_source_20260913_warmfix1')
+REPAIR_SOURCE = Path('/tmp/astra_pcfl_sequence_v2_source_20260913_warmfix2')
 PHASES = ('B200_NEW_DOSE', 'B400_FIXED_WORK', 'REPLAY400', 'CLEAN_CUM600')
 COUNTS = dict(fits=4, updates=1600, presentations=6400, calls=64,
               initial_updates=200, total_updates=1800)
@@ -57,12 +57,16 @@ def load_runtime(source_root):
         require(repair['schema'] == 'pcfl.event_sequence.v2.warm_repair.v1'
                 and repair['original_root'] == str(SOURCE) and repair['source_root'] == str(root), 'repair root identity')
         relative = 'gpu/astra_pcfl_event_sequence_v2_fit.py'
+        outer_relative = 'gpu/astra_pcfl_event_sequence_v2_outer.py'
         require(repair['original'] == pin(SOURCE / relative)
                 and repair['replacement'] == pin(root / relative), 'repair source identity')
         require(repair['scope'] == 'validate_warm_tensors_only', 'validation-only repair required')
         validate_repair(repair['original']['path'], repair['replacement']['path'])
+        require(repair['outer_original'] == pin(SOURCE / outer_relative)
+                and repair['outer_relocated'] == pin(root / outer_relative)
+                and repair['outer_original']['sha256'] == repair['outer_relocated']['sha256'], 'outer must be byte-identical')
         for path in SOURCE.rglob('*'):
-            if path.is_file() and '__pycache__' not in path.parts and path.relative_to(SOURCE).as_posix() != relative:
+            if path.is_file() and '__pycache__' not in path.parts and path.relative_to(SOURCE).as_posix() not in (relative, outer_relative):
                 alias = root / path.relative_to(SOURCE)
                 require(alias.is_symlink() and alias.resolve() == path.resolve(), 'immutable source alias mismatch')
         repair = {**repair, 'receipt': receipt}
@@ -70,14 +74,14 @@ def load_runtime(source_root):
     for name, module in tuple(sys.modules.items()):
         if name.split('.')[0] in ('gpu', 'organism_v6') and getattr(module, '__file__', None):
             require(Path(module.__file__).resolve().is_relative_to(SOURCE)
-                    or (repair is not None and Path(module.__file__).resolve() == Path(repair['replacement']['path'])),
+                    or (repair is not None and str(Path(module.__file__).resolve()) in (repair['replacement']['path'], repair['outer_relocated']['path'])),
                     'preloaded runtime source mismatch; use standalone script')
     sys.path.insert(0, str(root))
     runtime = SimpleNamespace(**{name: importlib.import_module('gpu.astra_pcfl_event_sequence_v2_' + name)
                                  for name in ('fit', 'readout', 'outer', 'acquisition', 'campaign')})
     for module in vars(runtime).values():
         require(Path(module.__file__).resolve().is_relative_to(SOURCE)
-                or (repair is not None and Path(module.__file__).resolve() == Path(repair['replacement']['path'])), 'runtime source mismatch')
+                or (repair is not None and str(Path(module.__file__).resolve()) in (repair['replacement']['path'], repair['outer_relocated']['path'])), 'runtime source mismatch')
     if repair is not None:
         require(Path(runtime.fit.__file__).resolve() == Path(repair['replacement']['path']), 'patched fit was not loaded')
     runtime.repair = repair
@@ -91,8 +95,14 @@ def original_sources(sources, runtime):
     original, replacement = repair['original'], repair['replacement']
     require(sources.get(replacement['path']) == replacement['sha256'] and original['path'] not in sources,
             'exact single repaired source required')
-    return {**{path: checksum for path, checksum in sources.items() if path != replacement['path']},
-            original['path']: original['sha256']}
+    result = {**{path: checksum for path, checksum in sources.items() if path != replacement['path']},
+              original['path']: original['sha256']}
+    outer_original, outer_relocated = repair.get('outer_original'), repair.get('outer_relocated')
+    if outer_relocated is not None and outer_relocated['path'] in result:
+        require(result.pop(outer_relocated['path']) == outer_original['sha256'] == outer_relocated['sha256'], 'outer source drift')
+        require(outer_original['path'] not in result, 'ambiguous outer source')
+        result[outer_original['path']] = outer_original['sha256']
+    return result
 
 
 def budget(initial, started, allocation):

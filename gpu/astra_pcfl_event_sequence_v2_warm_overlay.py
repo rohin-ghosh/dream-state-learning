@@ -8,8 +8,9 @@ from pathlib import Path
 
 
 SOURCE = Path('/tmp/astra_pcfl_sequence_v2_source_20260913_attempt2')
-DESTINATION = Path('/tmp/astra_pcfl_sequence_v2_source_20260913_warmfix1')
+DESTINATION = Path('/tmp/astra_pcfl_sequence_v2_source_20260913_warmfix2')
 RELATIVE = Path('gpu/astra_pcfl_event_sequence_v2_fit.py')
+OUTER = Path('gpu/astra_pcfl_event_sequence_v2_outer.py')
 ORIGINAL_SHA = '4112899215ded5191b697cad9bf912bb72a65b026779f3d6dbbd548b36d0aa19'
 
 
@@ -44,12 +45,16 @@ def build(replacement, commit):
         if relative == str(RELATIVE):
             with target.open('xb') as stream:
                 stream.write(replacement.read_bytes())
+        elif relative == str(OUTER):
+            with target.open('xb') as stream:
+                stream.write(Path(binding['path']).read_bytes())
         else:
             target.symlink_to(binding['path'])
     if any(pin(binding['path']) != binding for binding in original_inventory.values()):
         raise ValueError('original source changed during preparation')
     receipt = dict(schema='pcfl.event_sequence.v2.warm_repair.v1', original_root=str(SOURCE),
                    source_root=str(DESTINATION), original=original, replacement=pin(DESTINATION / RELATIVE),
+                   outer_original=pin(SOURCE / OUTER), outer_relocated=pin(DESTINATION / OUTER),
                    scope='validate_warm_tensors_only', repair_commit=commit,
                    original_inventory=original_inventory, material_reexported=False, original_modified=False)
     with (DESTINATION / 'warm_repair.json').open('x') as stream:

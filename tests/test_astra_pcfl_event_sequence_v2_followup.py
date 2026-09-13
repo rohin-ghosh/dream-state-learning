@@ -310,11 +310,16 @@ class FollowupTests(unittest.TestCase):
         replacement.parent.mkdir(parents=True)
         replacement.write_text('NONNATIVE REPAIRED PLACEHOLDER\n')
         original = api.pin(self.runtime.fit.__file__)
-        repair = dict(original=original, replacement=api.pin(replacement), scope='validate_warm_tensors_only')
+        outer_original = api.pin(self.runtime.outer.__file__)
+        outer = replacement.with_name('outer.py')
+        outer.write_bytes(Path(outer_original['path']).read_bytes())
+        repair = dict(original=original, replacement=api.pin(replacement), scope='validate_warm_tensors_only',
+                      outer_original=outer_original, outer_relocated=api.pin(outer))
         receipt = replacement.parent.parent / 'warm_repair.json'
         write(receipt, repair)
         self.runtime.repair = {**repair, 'receipt': api.pin(receipt)}
         self.runtime.fit.__file__ = str(replacement)
+        self.runtime.outer.__file__ = str(outer)
         self.runtime.fit.source_files = lambda: {str(replacement): api.pin(replacement)['sha256']}
         readout = self.runtime.readout.__file__
         self.runtime.readout.source_files = lambda: {**self.runtime.fit.source_files(), readout: api.pin(readout)['sha256']}

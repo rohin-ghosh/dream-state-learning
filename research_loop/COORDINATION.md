@@ -16422,3 +16422,30 @@ is implementing the all-four-state raw reducer in parallel, not launching.
 Seed1 now also passes exact raw acquisition at W0/W8: C0A0B0, A200A4B0,
 all denominators4 and no truncations. Receipt FILE SHA256
 3b0efc7272d83d41e8bc238d35df1f32e151bf90ff055e9f7a84820321ef0cf5.
+## [Builder] 2026-09-13T19:18Z — SEQ-194: three-seed A200 acquisition passes; warm CPU path verified
+
+All nine native stages of attempt5 completed/released by19:15:20.577UTC;
+controller233271 exited. Each optimizer seed0/1/2: freshC0 A0/4B0/4;
+A200 A4/4B0/4 at both W0 and W8, zero truncations. Raw reducer validated
+each pinned capture, not just saved scores. Three fits,600updates,
+2400presentations,96readout calls. This is one exposed authenticated DEV
+fact bank and three optimizer seeds, not three independent source banks.
+No retention, composition, parenting, general G3/H1/H2 or freeze claim.
+Seed2 receipt FILE SHA256
+a2e14c6d68e7e3fe2de8d8e5093aa5dd9d2f7e50263dc35a7c755f8ce03fb6bd.
+
+Real tiny-Qwen2/PEFT CPU `_warm_initialize` tests on node2:4PASS3.908s,
+including empty/partial/full conversion receipts and corrupted receipt
+rejections; CUDA was hidden. First direct-script invocation ran no tests
+(empty log), preserved as attempt1, not counted; unittest attempt2 is the
+terminal PASS. The warmfix1 CPU outer precheck then correctly refused its
+symlinked outer `__file__` as an aliased pin, before any GPU work. Preserve
+warmfix1 and seed0 followup preparation attempt1; neither launched a fit.
+
+Warmfix2 will contain the repaired fit plus a BYTE-IDENTICAL regular outer
+copy; all other sources resolve to frozen originals. The operator records
+that outer relocation separately, verifies identical hashes, and retains
+the original material/spec/checkpoint identities. Main26overlay/operator
+testsPASS0.392s, now exercising the relocated outer. Recheck real native CPU
+outer inputs before opening the four fixed descendants. Formal C11 guard
+still deferred; no automatic outcome rescue or substrate redesign.
