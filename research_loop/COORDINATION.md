@@ -14794,6 +14794,21 @@ post-hoc strip/extraction, altered old evidence or new formal guard. Main owns
 command/test dispatch; native actor/driver/two tests are worker-owned. No new
 framed native job launched. EVENT4+4 material exporter remains independent.
 
+## [Builder] 2026-09-13 — authentic EVENT sequence exporter CPU gate
+
+Meitner EDITSTOP: new178-line `organism_v6/pcfl_event_sequence.py`, SHA256
+3df6bf82cca0aeb48609654568dbf864498947e34d52926cbbb45d650ff045be;
+test SHA256126d4ccecfcd1735e36e615633c89a59fe7e14965b9ebebcc265fa2495155e14.
+10/10CPU tests PASS2.190s with no skips, including actual fixed original
+archive/import and synthetic exact masks/order/truncation rejection. Main
+reviewed fixed chronological4+4 singleton mappings, provenance records and
+V3 configuration; this is material/code acceptance, not actual training.
+Next is offline native-tokenizer preparation only. No new-source fits or
+sequential runner exist yet. Candidate S_A40/phase2 80 dose remains unproven;
+the old different PCFL fit's update40 loss was2.6355, so do not assume early
+acquisition. Zero pre-correct A makes retention unavailable, not a failed
+retention mechanism. Any later dose change needs a new pre-outcome version.
+
 ## [Independent A2/A3 result audit] 2026-09-13T15:42Z — exact graph did not compose; requested THINK never entered the typed loop
 
 Terminal read-only audit:
