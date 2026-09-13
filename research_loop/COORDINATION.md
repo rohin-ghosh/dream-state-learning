@@ -7776,6 +7776,7 @@ claim release, or submission state changed.
 
 Rohin confirms the reading of messages 23/26: spoon-feeding = level 2. Numbering: mechanism = ground 0; birth = 1 because it is the first thing in the learned system, even though birth is trained, not learned. His definitions, to be used exactly: **trained** = weights change on material prepared by someone else; **learned** = self-conducted — the model prepares its own training material (training still happens inside it); **self-learning** = that regime running on its own. So: level 1 trained; level 2 learned with a parent curating; levels 3–4 self-learning with external validation, then unparented. Builder/watchers: use these three words in that sense in memos and the manuscript.
 
+<<<<<<< HEAD
 ### 2026-09-12T17:30:16.828018-07:00 [Builder] Birth pair pre-GPU acceptance and finite reservation
 
 Runner072a1333c0411a73ae0fc46c6e70de9afe0bce9b49c74e01bdaae16174195daa EDITSTOP. Main43CPUtestsPASS42.890s; Mainlauncher9testsPASS0.025s afterfixingtest-doublecreate_module (initialfixtureImportErrors preserved; launchercodeunchanged). Nativecombined52testsPASS36.430s, actualCLI/parser andreceiptcontract coveredwithCPUfixtures. Launcherc4246f29393a992fdefaf188b2d2069c5526a49bfa84bd7b4a8a38108b3d6c7f detachesitself, startsfreshcontroller session, writesexactlaunch/exitreceipts andwaitsforcontroller. Nativecustodybeforelaterreadout; noautochaining. Noactualbirthmodelrunyet.
@@ -7783,6 +7784,25 @@ Runner072a1333c0411a73ae0fc46c6e70de9afe0bce9b49c74e01bdaae16174195daa EDITSTOP.
 Actualnativeprepare-fitPASS using source31b5535ec9f73f7b32fdaf21ccfc3a2a68a948a6 andfrozencorpus43bf0749; immutableplan776871143e25027479ae2c2d375687fc383abb113b1bb2fcf0cb1077700d03fa, root~/astra_diagnostics/astra_birth_conditional_fit_seed0_20260912_attempt1. Sameverifiedauthoredcandidate, masks/tokenparity/128updates; no source/originclaimupgrade. Suppliedphase deadline September12 20:30PDT, node3realleaseSeptember25 20:03PDT withsixhourmargin. PlanstillPREPARED_NOT_LAUNCHED.
 
 Main now authorizes the logged boundedfitpair on node3GPU0 AFTERfreshfullvacancycheck: AUTHthenDERANGED, seed0rank8LR1e-4,4epochs,batch8,128updates/arm, identicalsource/anchor/tokenbudgets. Controllercap1800s plus300scollection; stopdiagnoseonfailure/nonfinite/missingreceipts, noautomaticretryorreadout. Hypothesis/criteria and later384-callOFF/AUTH/DERANGEDcomparison alreadyfrozen in ASTRA_BIRTH_COMPONENT_PLAN_2026-09-12.md. ActualPID/launchreceiptwillfollow; thislineis CPU/provenance gate andreservationintent, notanexecutedrun/result. NoformalC11guard, foreignkill or additionalpaidallocation.
+=======
+## [Codex sleep/post-training translation] 2026-09-13 UTC — Allen-Zhu--Li implies one birth measurement addition, not a recipe change
+
+Independent memo:
+`research_notes/analysis/2026-09-13_allen_zhu_li_birth_sleep_recipe_translation.md`.
+The paper directly separates exact source fit from later extraction and shows
+large benefits from varied/reordered, explicitly keyed encoding plus early
+mixing with QA-like use forms, but in scratch-pretrained small biography models,
+not repeated LoRA SLEEP. Current BIRTH already has 4-view PROSPECT, 2-view
+REVISE, explicit visible keys, native use-shaped targets, fully crossed
+counterconditions, and distinct-source batches with truthful addition/copy
+anchors. SEQ-113 supports interleaving/varied views provisionally; SEQ-118
+supports replay provisionally. Recommendation: preserve the pending birth fit
+and add only a deterministic exact-training-form conditional panel: one view
+for each 16 PROSPECT + 32 REVISE semantic sources over OFF/AUTH/DERANGED = 144
+extra greedy calls. Exact fail = acquisition failure; exact pass/held fail =
+extraction failure; both pass/locality fail = unscoped policy. No new
+paraphrases, rank, dose, or loss change is justified before the first fit.
+>>>>>>> 85649a91 (Translate storage extraction evidence for birth writer)
 
 ## [Codex hostile Level-1/2 audit] 2026-09-13T00:31Z — direct birth and current RuleGame bridge cannot identify improved learning
 
@@ -7820,3 +7840,15 @@ Level-2 improvement. Allen-Zhu/Li 2309.14316 is only a prior for varied rewrites
 and early extraction-form mixture—not LoRA, parenting or disposition evidence;
 its mixed-training “study to pass the test” warning supports this firewall. No
 source, runner, model, adapter, job or GPU was changed.
+
+## [Fable] 2026-09-13T00:33Z — self-check: birth conditional fit pair LIVE on node 3 (shortcut-repaired corpus); fill result 15 (606_AC carries, brief hurts a fourth time); predictions ledger started; Codex minimum-claim audit flagged for Rohin
+
+**Builder — birth, level 1 (00:02–00:31 UTC):** SEQ-118 independently recounted 640/640 (Codex/Herschel). Rohin's birth-first steer adopted as a scoped priority. Birth conditional corpus (Bernoulli module, 133 CPU tests): 304 sources, 256 rows per arm, 32 eight-row groups; REVISE crosses EXPECTED × OBSERVED × PRIOR inside each visible instance, all omitted-factor ceilings ≤ .5 including the visible ID (the SEQ-108 shortcut is closed by construction); truthful addition/copy anchors identical across arms; dev 128 = PROSPECT 32 / REVISE 64 / ADDITION 16 / COPY 16. Native token/mask audit PASS (73,408 input / 11,648 target tokens per arm). Frozen recipe: seed 0, rank 8 / alpha 16, LR 1e-4, 4 epochs, batch 8 → 128 updates per arm. **AUTH then DERANGED fits LIVE on node 3 GPU 0** (controller 273803, since ≈ 00:31 UTC, 1800 s cap + 300 s collection); 384-call greedy readout OFF/AUTH/DERANGED next; pre-declared criteria conditional 29/32 and 58/64, anchors 16/16, zero tag spill, factor twins ≥ ceil(.90 N). Also implemented: the born-RuleGame bridge (Planck, 21 tests) — the interaction_v3 formation run with the birth LoRA as the child, i.e. Rohin's "sample level 2 on the born child". Note the recipe: LR 1e-4 / 128 updates is the old conditional dose, not the SEQ-113 recipe (3e-4 / 320 interleaved); the builder flags this as "no arbitrary high-plasticity certification". Prediction P9 in the ledger is this run.
+
+**Fill result 15 — R4_B_seed606 (A/C cells, 7.8 GPU-h):** whole-text A +0.025 / +0.014 (carries); A_v3 −0.002 / +0.010; C −0.493 / −0.247 (collapse); C_tmem −0.108 / −0.003; **brief −0.043 / −0.013 (one collapsed rep) — the fourth life where the parent brief in context hurts** (R3 503, RP 402, R4 603, R4 606 — three of the four are R4 gated-parent lives); brief_mid +0.016 / +0.022. **Tally, 23 lives with an A cell:** carries 9, flat 13, harmful 1; C collapses 23/23; brief ≥ OFF on report 19/23. The original pretest series is complete. A-replications: node 1 five running (R3 500, R2 0/1/5/6), R3 502/501 queue next; node 2 five running (R3 504/505, R4 602, R2 3, RP 401); 2–3 GPUs free per node.
+
+**Predictions ledger started:** `research_notes/PREDICTIONS_LEDGER.md` — ten dated predictions (Rohin's, mine, Codex's) with tests and outcomes (6 confirmed, 1 split, 1 refuted — mine, 2 open). Builder may append corrections.
+
+**Codex ICLR minimum-claim audit (00:27, research_notes/analysis/2026-09-12_iclr2027_minimum_empirical_claim_path.md) — for Rohin:** the smallest defensible deadline paper is a storage-to-selectivity necessary-condition paper; the only new experiment that changes the minimum abstract is a valid paired complementary Q0 terminal replicated unchanged on two fresh roots (3 roots, 6 fits); its recommended no-go is fewer than three valid roots by **Sep 15 noon PDT**; level-1 birth is the research priority but not automatically a paper claim. Rohin has said the main risk is time; this is the concrete deadline the watchers are working to.
+
+**Fleet:** node 3 GPU 0 builder (birth fits); nodes 1/2 as above. Nudger: Astra active (idle 0.4 min). Laptop chains 5/5; A100 onboarding 05:05 UTC. Backup complete (00:00). Nothing killed or launched by the watcher.
