@@ -72,12 +72,25 @@ their data lessons rather than claim the generic loop is unprecedented:
    fixture scores are insufficient.
 
 TMEM and PEAM also preclude “first agent to put its experience in LoRA” as a
-safe claim. The defensible unshown conjunction is narrower: a target-disjoint
-birth teaches a generic composition policy; later the same adapter absorbs
-exact opaque facts from its own life; after a clean reset the child chooses to
-read and compose them into new goal-directed actions; own/foreign life,
-same-identifier derangement, memory cuts, birth-only, and active controls move
-the result causally.
+safe claim. The fresh novelty red team in
+`research_notes/analysis/2026-09-13_agentic_posttraining_novelty_redteam.md`
+corrects this boundary further: TMEM already clears working context and
+explicit memory while its fast LoRA persists and later actions use it inside
+the same episode; PEAM already consolidates cross-episode experience into
+category LoRAs for later multi-step execution; AgeMem closely precedes the
+exposure-before-query, reset, distractor, retrieval, and reasoning schedule in
+an external store. OEL, SEAL, Doc-to-LoRA, ParamMem, and Auto-Dreamer are also
+required close citations.
+
+The defensible unshown conjunction is therefore narrower: a target-disjoint
+birth teaches a generic composition policy; later the **identical continued
+adapter** absorbs exact opaque facts from its own life; in a **fresh episode**
+with no text/vector memory, slow-tier answer, or prior context, the child
+autonomously selects a content-dependent cue and takes a held action that
+jointly depends on at least two independently acquired bindings; own/foreign
+life, same-identifier derangement, memory cuts or binding redirection, and
+birth-only controls move the result causally. Do not claim novelty for any
+ingredient separately.
 
 ## The next birth, staged
 
@@ -139,7 +152,7 @@ interference that placement could diagnose.
 A positive `M-COMBINE-4` result would show a lab-taught composition policy in
 one adapter, not parenting, self-learning, personal-memory utility, MCTS, or a
 flywheel. The paper-relevant bridge arrives only when that policy uses later
-own-life parametric EVENTs after reset and follows the expected causal memory
-cuts. MCTS remains a useful analogy for adaptive branching, not the taught
-algorithm or measured claim.
-
+own-life parametric EVENTs across a fresh-episode boundary, with the adapter as
+the only life-specific state, and follows the expected causal memory cuts.
+MCTS remains a useful analogy for adaptive branching, not the taught algorithm
+or measured claim.

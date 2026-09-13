@@ -16262,13 +16262,18 @@ Use the adjudication for the next design conversation.
 Main conclusions: the eight SEQ142/146 behaviours were never one adapter, but
 smaller joint adapters existed; the exact missing evidence is a returned
 memory relation controlling a subsequent cue/action. Existing agentic
-post-training already establishes multi-behaviour single policies, and TMEM
-and PEAM are close parametric-experience-memory prior art, so do not claim
+post-training already establishes multi-behaviour single policies. TMEM
+already clears context/textual memory while a fast LoRA persists inside the
+episode; PEAM already accumulates cross-episode skill LoRAs; AgeMem closely
+precedes the staged reset curriculum with an external store. Do not claim
 generic novelty. The defensible target is target-disjoint composition birth +
-later same-adapter own-life fact write + autonomous post-reset use under
-own/foreign, deranged, cut, and birth-only controls. Keep the all-layer recipe:
-no controlled FFN-only versus attention-inclusive ablation exists, and the one
-FFN-only historical cell was multiply confounded.
+later continuation of that identical adapter on exact own-life bindings + a
+fresh episode with no external content store + an autonomous action jointly
+depending on multiple bindings under own/foreign, deranged, cut/redirection,
+and birth-only controls. Keep the all-layer recipe: no controlled FFN-only
+versus attention-inclusive ablation exists, and the one FFN-only historical
+cell was multiply confounded. Full corrections and missing citations are in
+`research_notes/analysis/2026-09-13_agentic_posttraining_novelty_redteam.md`.
 
 ## [Rohin — message 43, ~18:15 UTC 09-13, relayed by Fable] it remembers but cannot piece together; all tested behaviours were singular; combining skills needs a use → data → train loop and a multi-hop data/skill; condense and unify skills (minimum capability; some "awareness" for the positive-evidence loop); the night was successful; combination is the first novelty as a synthesis — survey agentic post-training for reuse; why no single birth LoRA with 8 behaviours?; likes "hopped chains into single atoms"; MCTS as emergent shape; he will study level 1 and guide the data/behaviour choices
 
