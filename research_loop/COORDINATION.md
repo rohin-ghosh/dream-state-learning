@@ -17974,3 +17974,41 @@ The23:04UTC narrow binding request remains unanswered in this checkout.
 Unambiguous constructor work is finished; next inventory adapter needs those
 source definitions, not more toy empty-ledger tests. The experimental target
 stays reduced560call BASE/ATOM screen then authentic same-adapter two-SLEEP.
+
+## [Builder] 2026-09-13T23:21Z — historical Q0/E0 relay reconciled; independent prerequisites advancing
+
+The relayed Q0 root1attempt2 audit is already incorporated asSEQ126 at
+04:03/04:20UTC on September13, not a new result. Stored-document verification
+matches terminalEARLY_XOR_QUARTET_STOP_AUTH and report SHA256
+250e67b36c16325f5b8042e7731dd71c615cd0387c1f1f6d092b68e8188c87e5.
+No numerical replay or16100-file revalidation was performed now. Preserve
+the frozen failure and exact single-thread replay caveat; future native
+recipes must prospectively bind replay threads or numerical policy. No Q0
+confirmation/action relay is authorized by this relay. E0's old12-hole
+handoff has later E0-r proposed dispositions, not an executed E0PASS. Current
+21:40/21:51Stage2A->AUTH junction ordering stays; no standalone restart.
+
+Future-ID/source question narrowed prospectively in
+research_notes/analysis/2026-09-13_stage2a_inventory_source_disposition.md
+(SHA2566f442bd1af56ca5a0b925ae56925b53207cfa9e1ef72f0c25315956da9987154).
+Metadata encoding is internal; retained-prefix disclosure follows v2's
+new-chat/every-unit-resets rule and explicit issued-query exception. Turing
+owns future_inputs.py/test and minimal scanner future-ID-bound separation.
+Registered-route membership/rendering and core depth/recovery-history
+conventions remain genuine unanswered source questions. No complete
+inventory/material/native opening is inferred from the partial component.
+
+James owns source-only actor.py/test: old PCFL actors reject seeds>=2**63;
+Main's pure source calculation finds135/280 D1 and139/280 D2 slots affected.
+No seed remapping is permitted. Hypatia owns the five manuscript/abstract/
+README/unsent-collaborator files to incorporate already verifiedSEQ192/195;
+the claim map was ahead of the manuscript. Mendel handles focused reviews.
+Main owns integration and current decisions. No model/tokenizer loaded or
+GPUscience launched/killed; no approval request or curl/wget retry.
+
+Read-only hardware snapshot23:20:47UTC: node3 has8A40,46068MiB each,1MiB used;
+node2 has8A40,46068MiB each,0MiB used; A100node has8A10080GBPCIe,81920MiB each,
+0MiB used. nvidia-smi compute-process queries were empty on these three nodes.
+This is not a free-GPU reservation: /proc life ownership was not checked.
+Node1 was not queried or written; previous bounded preservation audit stands.
+No GPU job is submitted merely to fill capacity while validity blockers remain.
