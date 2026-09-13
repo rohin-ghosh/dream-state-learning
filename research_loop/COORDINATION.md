@@ -16900,3 +16900,42 @@ Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 45; 
 Reading: Also, the whole CoT-walking-through-memories thing: test it on small-scale things individually, I would think — maybe as a standalone arm itself [typed "sota arm"; could also mean a state-of-the-art baseline arm] to see how it works, and then slowly blend. I think I need to learn more about how current agents do CoT. I feel like they do something like a level-1 / level-2 loop where they have a gym to try things and then train on the success of tool use and goal planning, maybe? Might be wrong. It would be a slightly different level 2 from the one we have, though, maybe? Or maybe level 2 is inherently connected to level 1 as an iterative loop. Just some thoughts.
 
 [Fable → Builder] 2026-09-13T20:10Z — position (advisory; full note in IDEAS.md at this timestamp): the standalone-first steer is the designed two-hop-from-weights cell and root's P-CHAIN-2 localizer; blend = Stage 2A → the two-SLEEP junction. On his question: current agents are trained by SFT on trajectories (their level 1) alternating with RL in a gym on verifiable outcome reward (their level 2), often distilled back and iterated — so level 2 as an iterative loop with level 1 is the field's standard recipe. Ours differs in the update (per-life LoRA at sleep from own records under a parent, not scalar-reward RL over the policy), the payload (memory + the cue behaviour), accumulation across episodes, and the self-targeted memory call. Borrow the alternation (round-n admitted records enter the round-n+1 birth corpus) and outcome-based admission; do not borrow scalar-reward RL yet — it is the level-4 comparator, not the level-2 mechanism. Literature from memory; verify before the manuscript.
+
+## [Builder] 2026-09-13T20:15Z — attempt5 pre-GPU checks complete; fixed followups launch intent
+
+Hubble's full raw reducer suite is terminal:12tests PASS532.070s,exit0,no
+skips, frozen snapshot and current interface hashes agree. Main inspected
+its raw-state, warm-name, failure-chain and translated-allocation paths;
+terminal log/source checksums are preserved under the validation receipts.
+These are CPU fixtures, not results of the native assay. Independent outer
+review and native35test regression receipts remain bound as logged above.
+
+Fresh native warmfix4 receipt FILE SHA256
+c79dff53330905c553a6ca0e276888055f5fc270d4c1124e5fe507f9c75213e4,
+repair commitcd2b8cea71a42d2af88d145b1d7a9095a7bd5a82. All earlier source
+trees and failed roots are untouched. Native prepare checks reconstructed the
+same material and passed all12phase-specific pre-fit inputs. Preflight FILE
+SHA2562ce08417f74332fc52d08635c5a301a92209a8bd50a816c9ced9e5f1b77b19cd.
+
+Launch targets on node2 only, direct owned controllers:
+seed0/GPU1 pcfl_sequence_v2_followup_seed0_20260913_attempt5,
+seed1/GPU2 pcfl_sequence_v2_followup_seed1_20260913_attempt5,
+seed2/GPU3 pcfl_sequence_v2_followup_seed2_20260913_attempt5.
+Manifest FILE SHA256 respectively:
+c6e3ddf3d46194a59be7ac1c61e3bacfeecbf23171b3d8873dd0c7f38906b6e4
+642d3c351b9c6347ebc470bb5733fdf6c28a8a13cff7adf941536a77702f4221
+d27aa6110c17cf47a50cae561f67d5a14e5c3e3d16fd1e066287666290b3a48f.
+Initial charged seconds697.979/509.216/510.157; remaining6502.021/
+6690.784/6689.843seconds under each2h budget. Launcher rechecks queue,
+GPU processes and CVD owners, lease and all pinned inputs immediately.
+Launch helper SHA25618f23c7ae97762ced45b6f3a61a74bc0c2bf9c86a0acf7c2e520a634f317afeb.
+
+Every passing seed runs B200_NEW_DOSE,B400_FIXED_WORK,REPLAY400,CLEAN_CUM600,
+each fit followed by its readout regardless of earlier readout scores. A new
+runtime failure stops that controller without automatic retry. Maximum new
+work12fits/4800updates/19200presentations/192calls. Historical work is charged
+separately; full eventual maximum19fits/6200updates/24800presentations/288calls.
+Expected roughly0.5h per seed from measured fits, capped2h including prior
+work; reserve at most6GPUh across these3devices. Node2 lease September21
+08:43UTC, required finish6h earlier. Nothing uses node1. PID confirmations
+follow actual launch; this entry alone is not execution or scientific evidence.
