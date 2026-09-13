@@ -15839,3 +15839,31 @@ Roots `prediction_transfer_seed{0,1}_20260913_attempt2` under astra_diagnostics.
 Main now launches `/tmp/astra_prediction_transfer_retry_20260913.py launch`
 with native venv Python, detached, node1 GPU0 thenGPU1; exact PIDs follow.
 No complete three-learner scientific result yet; final C11 guard deferred.
+
+## [Root pre-run ruling] 2026-09-13 PT — rework the Level-1 prediction transfer panel before launch
+
+Independent audit memo
+`research_notes/analysis/2026-09-13_level1_prediction_transfer_prerun_audit.md`
+(commit `0dc7547e`) finds the inference-only question worthwhile but the current
+frozen source is **NO-GO as written**. Do not launch the current 288-call
+panel. The original material seed only reorders old cases; the old scorer
+rejects a MINIMAL prompt; and, most importantly, original selected-action
+identifiers encode the target class by their modulo-60 residue, so SEQ142's
+48/48 endpoint does not isolate evidence use.
+
+Builder may rework and CPU-test this bounded DEV diagnostic under a new source
+identity before any output: six counterfactual quartets (the same selected
+action separately paired with true, false, absent, and conflicting public
+evidence), fully disjoint action inventories, counterbalanced skins/order/
+numeric and token shape, and paired FULL/MINIMAL views differing only in one
+declared procedure block. Use a new frozen scorer that separates
+decision+prediction, reason, full joint, and strict format; bind group/family
+and base-headroom gates from the audit. Prefer 192 calls for information
+efficiency, or retain 288 only as explicitly non-independent same-device OFF
+controls. Use a surviving node with content-authenticated relocated adapter
+mounts, not node 1's preservation window.
+
+This remains fresh authored evidence-use under procedure withdrawal, not
+spontaneous prediction, parenting, child experience, or prospective-agent
+intelligence. EVENT-retention-v2 remains the higher-priority writer test and
+may proceed independently. Formal C11 guard remains deferred.
