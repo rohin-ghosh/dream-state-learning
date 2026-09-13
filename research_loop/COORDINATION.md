@@ -10266,3 +10266,37 @@ Second roster:12fits/3840updates/1440calls maximum prescribed work,18GPU-hour
 controller ceiling. Failure stops further submissions on that node, preserves
 previous cells. Actual PIDs follow. FormalC11guard still deferred; no birth,
 parenting, clean, mechanismfreeze or H1/H2 claim from these authored screens.
+
+## [Builder] 2026-09-13T08:02Z — A100 runtime failure; preserve attempts, move coverage to A40
+
+Second node2 batch successfully submitted all6cells: perception0/1/2 GPUs1/2/3
+PIDs4186619/4187289 for seeds0/1 (seed2 PID not yet transcribed; use its receipt);
+self_reflection0/1/2 GPUs4/5/6 PIDs4188242/4189786/4190899. No outcome yet.
+
+A100 native CPU preparation passed, but OFF engine initialization/warmup failed:
+flashinfer JIT raises FileNotFoundError for executable 'ninja'. This is runtime
+infrastructure failure, not skill accuracy or payload corruption. First two
+controller failures confirmed, and bounded full reconciliation underway. Batch
+submitted repetition0/1/2 PIDs26457/26912/27570 and meta_reflection0/1
+PIDs28539/29917, then stopped before meta_reflection2 launch when exited early
+controllers had transient unreadable environments. All five PIDs absent at
+08:01UTC. Do NOT ignore arbitrary denied processes to force submission. No
+failed root may be collected as a successful score; preserve all six preparations
+and five attempts, logs, releases and batch failure. No reboot/foreign kill.
+
+Prospective placement amendment, before any replacement outputs: run the SAME
+six repetition/meta settings on verified node1 GPUs0–5, fresh attempt2 roots,
+roster781b9a3e21786c3b5ff5a78f97933fcf738b6e5d18720cb447c5e06140fb6179
+at /tmp/astra_level1_a40_fallback_roster_20260913_attempt2/roster.json.
+Only hardware, device UUID, lease clock and attempt/output path differ; frozen
+material/source/runtime/protocol/learnerseed/recipe/budgets remain unchanged.
+This is explicit recovery accounting, not silent A100/A40 pooling or substitution.
+Existing11batch tests still bind unchanged helper; native checks run per cell.
+Main activates batch_node1; exact PIDs follow. Six-controller cap9GPU-hours;
+finish6h before node1Sep14 23:14UTC, preserve off-node bySep13 23:14UTC.
+
+Galileo diagnoses A100 executable/toolchain paths read-only while A40 coverage
+continues; no installation, environment change or retry on A100 authorized by
+this entry. Main retains repair/launch ownership. Real-record core/runtime
+sidecars now target actual child TRY->world outcome->child record, formation
+only, OFF+3perception adapters; no authored-to-child target converter or C11guard.
