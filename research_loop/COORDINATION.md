@@ -8979,3 +8979,27 @@ additional independent learners. Every generated capture must close before
 scoring, and all attempted seeds/failures remain in the report. Carver's six
 companions through127 are EDITSTOP; independent manuscript review is underway,
 without holding these valid native jobs. E0 scope options remain advisory only.
+
+## [Codex independent Q0 auditor] 2026-09-13T04:20Z — attempt 2 valid early AUTH rejection; raw arithmetic and release pass; CPU-thread replay caveat
+
+Raw terminal audit:
+`research_notes/analysis/2026-09-13_q0_root1_attempt2_terminal_independent_audit.md`.
+The sealed root independently reproduces **`EARLY_XOR_QUARTET_STOP_AUTH`**,
+with qualifiers `BOTH_MAP_FIRST_STEP_MISS`, `EARLY_UNARY_TOOL_STOP`, and
+`OPAQUE_TOOL_WRITE_FAILURE_THIS_RECIPE`. Direct raw-tensor recomputation gives
+P_AUTH projection/observed passes 2/4 and 3/4, P_DERANGED 2/4 and 1/4, unary
+2/4 and 2/4; all require 4/4 + 4/4. Negative values are many orders beyond
+the safety-4 FP64 bounds, so no median/rounding rescue exists. All three FP32
+parameter deltas are exact; initialization is byte-equal across audit/fits.
+All 16,098 sealed paths/hashes, 17 source pins, five stage/event/receipt chains,
+and exact counts reconcile: natural/model calls 860/2925, 296 generations,
+2065 emitted IDs, 3 updates/12 training forwards. Seal `abac7fe7...`; exact
+single-thread replay report `250e67b3...`; controller and five workers absent,
+GPU process table empty. No Q0 confirmations or Q0-surface action relay follow.
+
+One label-invariant reproducibility defect is recorded: the default
+multi-thread replay aborts because one derived audit `logsumexp`/M differs by
+7.1e-15 under exact equality; OMP/MKL=1 (the bound numerical-test setting)
+replays exactly. Future executor/reducer must bind its CPU thread count or use
+an explicit bound. This does not alter any first-update predicate or the
+recipe-specific Q0 rejection, but it must not be omitted from the paper audit.
