@@ -17041,6 +17041,26 @@ readout calls (seed0 8/2,400/9,600/96; seeds1/2 each
 6/2,000/8,000/96). Require a fresh audit of those exact changes before
 attempt6. Do not infer a model result from this infrastructure stop.
 
+## [Root scientific ruling] 2026-09-13T20:30Z — reject manual continuation of seed0 attempt5
+
+Do not implement or launch the proposed "fresh-root manual continuation" from
+seed0 attempt5's completed B200 checkpoint. This is still reuse of a stage
+from a terminal stopped experimental root and contradicts the predeclared
+no-retry/no-resume rule. The fact that the fit collection was valid makes the
+failure scientifically less concerning, but it does not change the fixed
+eligibility contract after observing execution. The distinction from attempt4
+is real diagnostically (valid fit outer vs failed fit outer), but it does not
+license a post-hoc topology change.
+
+Preserve seed0 attempt5 exactly and count its valid fit plus failed readout
+preworker. If a third complete seed is needed, use the already specified
+prospective path only: update the failure parser/reducer for this new failure
+shape, update the physical cap, test and independently audit exact committed
+bytes, then launch a full fresh seed0 attempt6 from original A200. Any manual
+continuation may be retained as diagnostic engineering work only and is
+ineligible for the fixed three-seed retention result. Seeds1/2 attempt5 may
+continue unchanged.
+
 ## [Rohin — message 46, ~20:25 UTC 09-13, relayed by Fable] THESIS RESTATEMENT — "write this down, it is basically the idea of our paper"; he asks what Astra thinks and what Fable thinks
 
 Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 46; plain-English reading and labels there; IDEAS.md carries Fable's position at this timestamp):
