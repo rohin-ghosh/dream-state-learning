@@ -9470,3 +9470,20 @@ seed2archivec95a857053d2d282bb7707df82403a1fb7ee76a208b3eb3d398cf3e10c71a26f.
 Scores f10eefcd1c45e8797732ba8953c4ab339ddcba9d1039f14021975b378b523af0 and
 45b171b558cdeb2015d9c57a9da623a89f544be3fab6d45881708d5c8aa644ba.
 All-three-seed raw replay/analyzer now running locally; no aggregate claim yet.
+
+## [Builder] 2026-09-13T05:54Z — first native L2 two-SLEEP diagnostic LIVE
+
+Node3GPU3, UUID GPU-e1277146-04f2-c38f-d1ae-1a98132f907e; fresh targeted
+inventory/compute and same-user CUDA reservation check passed. Main19launcher
+CPU fixtures PASS1.555s, launcher6b15e9ca84888aac0a00071021e829e6a829837fba621701a9d34a8dafb115da.
+Controller PID=PGID337138/start_ticks9474170, start1789278832.4731443
+(2026-09-13T05:53:52UTC). Root/source/plan/runtime match preceding native
+acceptance; no scientific result inferred. Ceiling5400s inclusive40scleanup,
+separate180scollection; latest controller completion07:23:53UTC. Maximum
+threefits/100updates/128generationcalls, base-start PROMOTE/SHADOW only.
+External stdout /tmp/astra_l2_public_record_20260913_attempt1.controller.log;
+external launch claim root suffix .launcher. Both are outside the sealed root.
+Never relaunch this root; formation shortage or runtime failure stays preserved.
+Collect only after terminal/finalization and release evidence. Simple hygiene,
+formalC11 guard remains deferred. Other completed writer/reflection roots remain
+untouched; diagnosis, supplemental-readout implementation and analysis continue.
