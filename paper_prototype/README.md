@@ -1,13 +1,27 @@
 # Experience Models — ICLR 2027 submission (revised draft v3, 2026-09-10 fix pass)
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ153 retains both positive and negative findings.
+This evidence cut through SEQ155 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current evidence through SEQ153 — C88/C89; ongoing first draft.**
+**Current evidence through SEQ155 — C90/C91; ongoing first draft.**
+Post-memory fresh formation yields source-faithful WRITE8/16 in every seed
+versus LR0 7/16,6/16,4/16, but all48example-absent wakes omit required commas
+and produce no executions/records. Current facts remain in record prompts;
+novelty relative to the admitted bank is not matched experience or retrieval proof.
+The original HIGH write's3/11/31held-skill losses remain. Lower-LR3e-5 gives
+exact10/14,4/8,4/8 and paraphrase10/14,5/8,3/8 with held47/48,46/48,47/48;
+canaries remain12/12. Only seed0 meets the exploratory joint repair screen,
+not the three-seed roster. HIGH/LR0 controls are historical/noncontemporaneous;
+the HIGH constant-record comparison has not been evaluated for LOWER.
+Fixed-coaching and contrastive full-dose work is CPU implementation only,
+not launched or a result at this cut. No stable-substrate, freeze, parenting,
+H1/H2, general G3 or working-loop promotion follows. Collaborator UNSENT.
+
+**Historical evidence through SEQ153 — C88/C89.**
 Native greedy exact-TRAIN is now14/16 versus OFF8/16; READOUT remains8/16
 for both. HF forced15/16 remains a different measurement, and its independent
 stored-receipt analysis is complete, not a new forward pass. Same-learner actual
@@ -20,8 +34,8 @@ constant. This excludes only a single fixed-response alternative on the saved
 exact panels, not heuristic cue use, and does not prove causal key association.
 This is narrow parametric carriage, not a stable
 substrate, parenting, general G3, H1/H2, a working learning loop or mission
-completion. Post-memory fresh-interaction outcomes and the lower-LR repair
-remain PENDING; a launch or developing runner is not a result. Historical
+completion. The formerly pending post-memory and lower-LR outcomes are now
+reported separately in C90/C91; they do not revise these HIGH endpoints. Historical
 pending statements below retain their named earlier cuts. Collaborator UNSENT.
 
 **Historical evidence through SEQ151 — C83–C87.**
@@ -54,7 +68,44 @@ Historical exclusion statements below apply only to their named earlier cuts.
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
 
-## Current bounded extension — SEQ152–153 / C88–C89
+## Current bounded extension — SEQ154–155 / C90–C91
+
+Both TeX manuscripts add `sec:seq155-extension`; all earlier tables remain.
+Fresh-interaction eligibility/content is WRITE8/16 per seed versus LR0 7/16,
+6/16,4/16, with paired gains/losses1/0,2/0,4/0. Strict is4/4,0/0,0/0
+in WRITE/LR0 order. Every arm calls only8records: all48example-absent wakes
+omit commas and fail before execution, with normal stops, not length caps.
+The1/2/4LR0 record errors substitute null/unavailable for an explicit Boolean
+prior. Cue assignment is fixed, so syntax association is not a randomized effect.
+WRITEseed2 has4/4faithful non-bank/non-example executions and zero old-target
+byte matches, but record prompts expose current facts and5/8jointly executed
+slots differ between arms in action/outcome/prior. This is not matched experience,
+causal retrieval or broad novelty; HIGH's3/11/31held losses remain. Cost:144calls,
+zero fits/updates. The completed raw audit is local replay, not model execution.
+
+| Seed | LOWER exact P/B/S | LOWER paraphrase P/B/S | Held LOWER/HIGH/LR0 /48 | Lost LR0-correct held | Joint screen |
+| --- | ---: | ---: | ---: | ---: | --- |
+| 0 | 10/8/8 | 10/8/2 | 47/44/47 | 0 | Met |
+| 1 | 4/4/0 | 5/5/0 | 46/37/48 | 2 | Not met |
+| 2 | 4/4/0 | 3/3/0 | 47/17/48 | 1 | Not met |
+
+Memory denominators remain14/8/8; P=production/content, B=exact bytes,
+S=strict canonical. All LOWER canaries remain12/12. LR3e-5 changes no records,
+passes or target masks; three fits add240calls/240steps while historical HIGH/LR0
+controls add no new work and are noncontemporaneous. The screen requires exact
+recall at least8/7/5 and every LR0-correct held/canary item retained, not net gains.
+Only seed0 passes;3/3,9/11,30/31HIGH-lost held items are restored, leaving0/2/1
+missing. The three-seed repair fails; the inspected panel is exploratory.
+The HIGH constant-record diagnostic is **not** a LOWER baseline analysis.
+
+Sources and exact pins: [C90–C91 claim map](../research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md#c90--seq154-fresh-formation-with-example-dependent-execution).
+Main reports12post-memory and18lower-reducer tests passing; raw replay and
+stored-score arithmetic are distinct scopes, neither a science promotion.
+**Prospective only at this cut:** fixed-coaching and contrastive full-dose
+protocol/CPU implementation; neither launched nor a result. No freeze, parenting,
+H1/H2, general G3 or working-loop qualification. Collaborator remains UNSENT.
+
+## Historical bounded extension — SEQ152–153 / C88–C89
 
 Both TeX manuscripts add `sec:seq153-extension`, retaining earlier tables.
 Native greedy exact-TRAIN is **14/16** (old7/new7) at high-LR seed2 fit2PROMOTE,
@@ -93,8 +144,8 @@ release is wrapper-attested, without raw historical vacancy/per-worker exit
 receipts. No clean-lineage, parenting, general G3, H1/H2 or freeze claim follows.
 
 Sources, exact pins and audit boundaries: [C88–C89 claim map](../research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md#c88--seq152-native-greedy-exact-cue-acquisition-not-hf-equivalence).
-**PENDING at this cut:** post-memory fresh-interaction outcomes (launched only),
-and lower-LR3e-5 retention repair (runner development only). The inspected held
+**Historical SEQ153 status:** post-memory and lower-LR outcomes were pending;
+both are now reported in C90/C91. The inspected held
 panel is exploratory for repair; fresh confirmation is required. Collaborator
 remains **UNSENT**; no later outcomes or PDF build are incorporated.
 

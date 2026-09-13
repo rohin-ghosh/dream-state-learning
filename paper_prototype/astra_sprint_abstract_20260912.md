@@ -1,13 +1,27 @@
 # FIRST SPRINT DRAFT — companion abstract
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ153 retains both positive and negative findings.
+This evidence cut through SEQ155 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current evidence through SEQ153 — C88/C89; ongoing first draft.**
+**Current evidence through SEQ155 — C90/C91; ongoing first draft.**
+Post-memory fresh formation yields source-faithful WRITE8/16 in every seed
+versus LR0 7/16,6/16,4/16, but all48example-absent wakes omit required commas
+and produce no executions/records. Current facts remain in record prompts;
+novelty relative to the admitted bank is not matched experience or retrieval proof.
+The original HIGH write's3/11/31held-skill losses remain. Lower-LR3e-5 gives
+exact10/14,4/8,4/8 and paraphrase10/14,5/8,3/8 with held47/48,46/48,47/48;
+canaries remain12/12. Only seed0 meets the exploratory joint repair screen,
+not the three-seed roster. HIGH/LR0 controls are historical/noncontemporaneous;
+the HIGH constant-record comparison has not been evaluated for LOWER.
+Fixed-coaching and contrastive full-dose work is CPU implementation only,
+not launched or a result at this cut. No stable-substrate, freeze, parenting,
+H1/H2, general G3 or working-loop promotion follows. Collaborator UNSENT.
+
+**Historical evidence through SEQ153 — C88/C89.**
 Native greedy exact-TRAIN is now14/16 versus OFF8/16; READOUT remains8/16
 for both. HF forced15/16 remains a different measurement, and its independent
 stored-receipt analysis is complete, not a new forward pass. Same-learner actual
@@ -20,8 +34,8 @@ constant. This excludes only a single fixed-response alternative on the saved
 exact panels, not heuristic cue use, and does not prove causal key association.
 This is narrow parametric carriage, not a stable
 substrate, parenting, general G3, H1/H2, a working learning loop or mission
-completion. Post-memory fresh-interaction outcomes and the lower-LR repair
-remain PENDING; a launch or developing runner is not a result. Historical
+completion. The formerly pending post-memory and lower-LR outcomes are now
+reported separately in C90/C91; they do not revise these HIGH endpoints. Historical
 pending statements below retain their named earlier cuts. Collaborator UNSENT.
 
 **Historical evidence through SEQ151 — C83–C87.**
@@ -372,7 +386,7 @@ cases remain unrequested; no G3, parenting, child sleep, H1/H2, clean lineage,
 novel-fact transfer or substrate freeze follows. Model origin remains
 `UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred. Collaborator **UNSENT**.
 
-Internal staging only; the canonical abstract now includes the bounded update through SEQ153 while preserving its historical text. H1/H2 remain the proposed
+Internal staging only; the canonical abstract now includes the bounded update through SEQ155 while preserving its historical text. H1/H2 remain the proposed
 developmental thesis, not established outcomes.
 
 ## Abstract
@@ -434,7 +448,7 @@ READOUT8/16 by both first-divergent-token and full likelihood, not native greedy
 independent analysis remains pending. Actual-memory writing/readback remains
 protocol/CPU-runner development, not a result. H1/H2 and the mission remain open.
 
-Through SEQ-153, native greedy exact-TRAIN at the high-seed2 checkpoint scores
+At the historical SEQ-153 cut, native greedy exact-TRAIN at the high-seed2 checkpoint scores
 14/16 versus OFF8/16, while both READOUT scores remain8/16; HF forced15/16 is
 not the native endpoint. Three same-learner actual-record WRITE/LR0 pairs show
 cold source-faithful exact-cue recall8/14,7/8,5/8 versus zero, with paraphrase
@@ -447,7 +461,18 @@ Against an evaluator-only best constant record, exact recall gains+2/+3/+1
 and paraphrase+0/+1/+1; seed0 paraphrase is literally constant. These saved-panel
 differences exclude only a single fixed-response alternative; they do not establish
 causal key binding.
-Fresh-interaction and lower-LR repair outcomes remain pending; the mission is open.
+The completed follow-ups below qualify these findings; the mission remains open.
+
+Through SEQ-155, fresh-interaction source-faithful formation is8/16 per WRITE
+learner versus LR0 7/16,6/16,4/16; all48example-absent wakes fail comma syntax.
+Current facts remain visible, and reached experiences differ between arms.
+Lower-LR3e-5 yields exact-cue10/14,4/8,4/8 and paraphrase10/14,5/8,3/8,
+with held47/48,46/48,47/48 and intact12/12canaries. Only seed0 meets the
+joint exploratory screen against reused historical controls; the three-seed
+repair fails. This partial retention recovery does not erase the HIGH write's
+3/11/31losses or prove stable learning. The HIGH constant-record diagnostic
+cannot be extrapolated to LOWER. Fixed-coaching and full-dose contrastive work
+remains CPU implementation, not launched evidence; H1/H2 and the mission remain open.
 
 ## Historical SEQ143 result-table companion — C79–C82
 

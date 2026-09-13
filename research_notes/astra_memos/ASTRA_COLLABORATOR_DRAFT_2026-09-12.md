@@ -1,13 +1,27 @@
 # DRAFT ONLY — unsent collaborator update
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ153 retains both positive and negative findings.
+This evidence cut through SEQ155 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current evidence through SEQ153 — C88/C89; ongoing first draft.**
+**Current evidence through SEQ155 — C90/C91; ongoing first draft.**
+Post-memory fresh formation yields source-faithful WRITE8/16 in every seed
+versus LR0 7/16,6/16,4/16, but all48example-absent wakes omit required commas
+and produce no executions/records. Current facts remain in record prompts;
+novelty relative to the admitted bank is not matched experience or retrieval proof.
+The original HIGH write's3/11/31held-skill losses remain. Lower-LR3e-5 gives
+exact10/14,4/8,4/8 and paraphrase10/14,5/8,3/8 with held47/48,46/48,47/48;
+canaries remain12/12. Only seed0 meets the exploratory joint repair screen,
+not the three-seed roster. HIGH/LR0 controls are historical/noncontemporaneous;
+the HIGH constant-record comparison has not been evaluated for LOWER.
+Fixed-coaching and contrastive full-dose work is CPU implementation only,
+not launched or a result at this cut. No stable-substrate, freeze, parenting,
+H1/H2, general G3 or working-loop promotion follows. Collaborator UNSENT.
+
+**Historical evidence through SEQ153 — C88/C89.**
 Native greedy exact-TRAIN is now14/16 versus OFF8/16; READOUT remains8/16
 for both. HF forced15/16 remains a different measurement, and its independent
 stored-receipt analysis is complete, not a new forward pass. Same-learner actual
@@ -20,8 +34,8 @@ constant. This excludes only a single fixed-response alternative on the saved
 exact panels, not heuristic cue use, and does not prove causal key association.
 This is narrow parametric carriage, not a stable
 substrate, parenting, general G3, H1/H2, a working learning loop or mission
-completion. Post-memory fresh-interaction outcomes and the lower-LR repair
-remain PENDING; a launch or developing runner is not a result. Historical
+completion. The formerly pending post-memory and lower-LR outcomes are now
+reported separately in C90/C91; they do not revise these HIGH endpoints. Historical
 pending statements below retain their named earlier cuts. Collaborator UNSENT.
 
 **Historical evidence through SEQ151 — C83–C87.**
@@ -35,7 +49,35 @@ Actual-memory writing/readback and native-greedy testing remain development only
 HF independent analysis is pending; archived A100 short-root OFF readiness passes.
 Historical pending statements below describe their named cuts, not current status.
 
-**Current UNSENT — bounded SEQ152–153 / C88–C89 update for Main's review.**
+**Current UNSENT — bounded SEQ154–155 / C90–C91 update for Main's review.**
+
+Fresh-interaction eligibility/content is8/16 for each HIGH-WRITE descendant
+versus LR0 7/16,6/16,4/16; strict WRITE/LR0 is4/4,0/0,0/0. All48example-absent
+wakes omit commas and fail before execution despite normal stops. Only8records
+are called per arm; LR0's1/2/4record errors substitute null/unavailable for a
+known Boolean prior. WRITEseed2 reaches4non-bank/non-example executions with
+4faithful records and no old-target byte matches, but current facts remain in
+record prompts and5/8executed slots differ between arms. This is conditional
+fidelity, not matched experience, causal retrieval or a working learning loop;
+the earlier HIGH write's3/11/31held losses remain. New work:144calls, zero fits.
+
+One lower write rate,3e-5 with the same raw records/eight passes, gives exact
+production/content10/14,4/8,4/8 and paraphrase10/14,5/8,3/8. Exact bytes8/14,
+4/8,4/8 and canonical8/14,0/8,0/8 remain separate; paraphrase bytes8/14,5/8,3/8,
+canonical2/14,0/8,0/8. Held47/46/47 out of48 restores3/3,9/11,30/31HIGH-lost
+items;0/2/1LR0-correct items remain lost. All12canaries stay correct. Only seed0
+meets the joint recall/retention screen; the three-seed repair fails. Historical
+HIGH/LR0 are reused noncontemporaneous controls, not rerun evidence. The240new
+calls/240steps exclude historical costs. This is partial retention recovery on
+an inspected exploratory panel; no HIGH constant-baseline result applies to LOWER.
+
+[C90–C91](ASTRA_PAPER_CLAIM_MAP_2026-09-12.md#c90--seq154-fresh-formation-with-example-dependent-execution)
+bind the completed local raw audit and stored-score reduction. Main reports12/18
+software tests passing, not a scientific qualification. Fixed-coaching and
+contrastive full-dose work is CPU implementation only, neither launched nor a
+result at this cut. No freeze, parenting, H1/H2, general G3 or mission completion.
+
+**Historical UNSENT — bounded SEQ152–153 / C88–C89 update for Main's review.**
 
 The high-LR seed2 checkpoint now scores14/16 on native greedy exact-TRAIN
 versus OFF8/16, while READOUT remains8/16 for both. This is a separate64-call,
@@ -66,8 +108,8 @@ The latter binds480raw-response joins and inherited dependencies across three
 prior archives, not independent model execution, score truth or tensor arithmetic.
 Captures are object-preserving reserializations; release remains wrapper-attested
 without raw historical vacancy/per-worker exit receipts. [C88–C89](ASTRA_PAPER_CLAIM_MAP_2026-09-12.md#c88--seq152-native-greedy-exact-cue-acquisition-not-hf-equivalence)
-bind source hashes and limitations. Post-memory fresh interaction is launched
-with **outcomes pending**; lower-LR3e-5 repair is **runner development only**.
+bind source hashes and limitations. Post-memory interaction and lower-LR3e-5
+repair were pending at SEQ153; completed endpoints now appear in C90/C91.
 The inspected held panel is exploratory for repair and requires fresh confirmation.
 No later outcome, mechanism freeze, mission completion or external send is claimed.
 

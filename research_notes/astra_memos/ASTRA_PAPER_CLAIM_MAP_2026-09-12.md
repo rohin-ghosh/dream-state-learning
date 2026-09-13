@@ -1,13 +1,27 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ153 retains both positive and negative findings.
+This evidence cut through SEQ155 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current evidence through SEQ153 — C88/C89; ongoing first draft.**
+**Current evidence through SEQ155 — C90/C91; ongoing first draft.**
+Post-memory fresh formation yields source-faithful WRITE8/16 in every seed
+versus LR0 7/16,6/16,4/16, but all48example-absent wakes omit required commas
+and produce no executions/records. Current facts remain in record prompts;
+novelty relative to the admitted bank is not matched experience or retrieval proof.
+The original HIGH write's3/11/31held-skill losses remain. Lower-LR3e-5 gives
+exact10/14,4/8,4/8 and paraphrase10/14,5/8,3/8 with held47/48,46/48,47/48;
+canaries remain12/12. Only seed0 meets the exploratory joint repair screen,
+not the three-seed roster. HIGH/LR0 controls are historical/noncontemporaneous;
+the HIGH constant-record comparison has not been evaluated for LOWER.
+Fixed-coaching and contrastive full-dose work is CPU implementation only,
+not launched or a result at this cut. No stable-substrate, freeze, parenting,
+H1/H2, general G3 or working-loop promotion follows. Collaborator UNSENT.
+
+**Historical evidence through SEQ153 — C88/C89.**
 Native greedy exact-TRAIN is now14/16 versus OFF8/16; READOUT remains8/16
 for both. HF forced15/16 remains a different measurement, and its independent
 stored-receipt analysis is complete, not a new forward pass. Same-learner actual
@@ -20,8 +34,8 @@ constant. This excludes only a single fixed-response alternative on the saved
 exact panels, not heuristic cue use, and does not prove causal key association.
 This is narrow parametric carriage, not a stable
 substrate, parenting, general G3, H1/H2, a working learning loop or mission
-completion. Post-memory fresh-interaction outcomes and the lower-LR repair
-remain PENDING; a launch or developing runner is not a result. Historical
+completion. The formerly pending post-memory and lower-LR outcomes are now
+reported separately in C90/C91; they do not revise these HIGH endpoints. Historical
 pending statements below retain their named earlier cuts. Collaborator UNSENT.
 
 **Historical evidence through SEQ151 — C83–C87.**
@@ -3954,8 +3968,102 @@ historical GPU/group-vacancy observations. These attestations alone do not prove
 worker success. The audit does not authenticate current vacancy, base weights,
 interpreter/runtime or model execution, or redo a native/VM transfer check.
 
-**PENDING through SEQ153:** post-memory fresh-interaction outcomes (launched only)
-and lower-LR3e-5 retention repair (runner development only). The inspected held
+**Historical SEQ153 status:** post-memory interaction and lower-LR repair were
+pending; completed endpoints now appear separately in C90/C91. The inspected held
 panel is now exploratory for repair; fresh confirmation is required. C85's prior
 formation-only status remains historical, not a denial of this later bounded
 write result. No later outcomes are incorporated. Collaborator remains UNSENT.
+
+## C90 — SEQ154: fresh formation with example-dependent execution
+
+All three prospective HIGH-WRITE/LR0 descendant pairs complete with48calls per
+pair,144total, zero fits/updates. Each arm has16scheduled wakes but only8world
+executions and8record calls. Source-faithful production/content WRITE/LR0 counts
+are8/7,8/6,8/4 out of16; strict canonical4/4,0/0,0/0. Paired production gains/
+losses are1/0,2/0,4/0; uncalled records remain missing, not observed wrong answers.
+
+All48example-absent wakes across the six arms use space-separated TRY arguments
+without required commas, stop normally and fail before execution/record calls.
+All example-present slots execute. Fixed cue assignment is not randomized; the
+syntax failure is replayable but its causal origin is not identified. LR0's1/2/4
+rejected records replace a known Boolean prior with predicted=null and relation=
+unavailable, rather than lacking a prior. WRITE records preserve all source fields.
+
+WRITEseed2 has4executions of one non-bank/non-example triple,4eligible records and zero
+old-target byte matches across its8records; WRITEseeds0/1reach no such subset.
+Fresh IDs do not imply fresh content. Record prompts expose current execution
+facts, and shared initial tasks/schedule do not ensure matched experiences:
+joint action/outcome/prior match7/8,6/8,3/8slots by seed; second-turn prompts
+match3/8,2/8,0/8. Relative-bank novelty therefore does not prove causal retrieval,
+independent task replication or a working learned loop. HIGH's3/11/31held losses
+and intact canaries remain; this endpoint does not repair that skill damage.
+
+Sources: [final raw analysis JSON](receipts_20260912/astra_post_memory_analysis_result_20260913_final/analysis.json),
+SHA256 `ee2b3d7f58e4ed8b6cc794815558b3e67ea2b58301c55868631d31876b196f92`;
+[companion analysis](receipts_20260912/astra_post_memory_analysis_result_20260913_final/analysis.md),
+SHA256 `2812af90e0acde8658a3b3b14046d1894fca360a8a41babe2ad2a827e13d6b54`.
+The final local audit replays all six captures and three admitted banks using
+frozen cores, checking requests/responses, routes, source joins and accounting.
+It reuses archived native token/route attestations, not new tokenizer/model
+execution, recollection or independent hardware-identity verification. Archive
+pin `a94ce39aabcc8eec321d3fdb149515714bb4d79040efdf491c1ae44397ff2548`;
+controller durations180.324/167.119/182.749s are separate pair clocks, not an
+active-GPU measure. Main's SEQ155 ledger reports12post-analysis CPU tests PASS;
+software tests and byte consistency do not establish scientific efficacy.
+
+## C91 — SEQ155: lower-LR partial retention recovery, three-seed screen fails
+
+One prospective candidate per learner restarts from its original perception
+adapter, not HIGH's descendant. LR3e-5 replaces1e-4 with the same14/8/8raw child
+records, eight passes, fit seed/order, fresh optimizer and target+EOS masks.
+Historical HIGH/LR0 controls are imported with source/collection pins, not
+contemporaneous, rerun or independent replications. No sleep targets are repaired.
+
+| Seed | LOWER exact P/B/S | LOWER paraphrase P/B/S | Held LOWER/HIGH/LR0 /48 | Lost LR0-correct held | Joint screen |
+| --- | ---: | ---: | ---: | ---: | --- |
+| 0 | 10/8/8 | 10/8/2 | 47/44/47 | 0 | Met |
+| 1 | 4/4/0 | 5/5/0 | 46/37/48 | 2 | Not met |
+| 2 | 4/4/0 | 3/3/0 | 47/17/48 | 1 | Not met |
+
+Memory denominators14/8/8; P=source-faithful production (content equal), B=exact
+bytes, S=strict canonical. Held content/strict coincide; every LOWER canary is
+12/12. The screen is joint recall/retention, not a canonical-format threshold:
+exact-source floors8/7/5 plus zero lost LR0-correct held/canary items, with no
+offsetting losses by gains. Only seed0 meets it;47/48retains all47LR0-correct
+items and restores3/3HIGH losses. Seeds1/2 restore9/11and30/31, retain46/48and
+47/48LR0-correct items, and fail both recall floors and itemwise retention.
+There are no newly lost LR0-correct held items versus HIGH, but remaining2/1
+losses still fail. Complete three-seed screen is false; inspected held data
+are exploratory, not fresh confirmation or a stable-substrate/general repair.
+C89's HIGH constant-record comparison has **not** been performed on LOWER;
+no LOW oracle advantage or key-binding conclusion is inferred from it.
+
+New cost:three fits,112/64/64updates and88/76/76calls,240each total. Incremental
+historical-control calls/updates are zero. Summed generation211.406s, fit train
+85.3s and fit wall115.7s are duration sums, not concurrent makespan/controller
+wall time. Reported LOWER L2deltas1.811951/1.573681/1.419358 are stored diagnostics,
+not independent weight remeasurement or proof that displacement causes retention.
+
+Sources: [complete result reduction](receipts_20260912/astra_memory_lower_lr_analysis_20260913_results.json),
+SHA256 `9fc8b149f78fafebb860be35db9adfb0b2114179e0f9a3075f776d43bba98bfd`;
+[implementation and final result handoff](receipts_20260912/astra_memory_lower_lr_analysis_20260913_handoff.md),
+SHA256 `8e4f15d9b4999d438feb049318350a3c47d1c20433dca5a379676762b2c7d2cc`;
+[frozen repair protocol](ASTRA_ACTUAL_MEMORY_RETENTION_REPAIR_2026-09-13.md),
+SHA256 `122965224f6a72d1fb852a40dd24c02b78c733751337f37513712f0f3b45bbce`.
+Original LOWER score SHA256 seed0/1/2:
+`03288439ddb4d31db5bdc49bec0e64dd4de3fa22fa1dd8cf18315ab5707234e3`,
+`25fbfafced9e00799efeb16cd7f90d97d35837f3ae44bb90c3c8b37fc01d0ce9`,
+`511acb2c3a48d21887a2b81cd52d7f2136ca2b7459b79759a901571ebcb145ea`.
+The handoff verifies archive `675f3598855c581da85caea154724004a9d2adb446091cca184e0f67072b0b02`
+(627members); this is byte integrity, not a new native audit. The completed
+independent reducer authenticates local collection bytes and stored-score joins,
+paired arithmetic and frozen screens, without raw semantic rescoring, native
+identity or all prompt-token-sequence verification. Main/handoff report18reducer
+tests PASS, not independent scientific replication or native model execution.
+
+**Current prospective status through SEQ155:** fixed-coaching protocol and
+contrastive full-dose CPU implementation are not launched and supply no outcomes.
+The [full-dose protocol](ASTRA_CONTRASTIVE_FULL_DOSE_2026-09-13.md), SHA256
+`e777b5be15e2a1cab447de3e72fb013bfac2a20a3d12d81574f95880ca60b0e6`,
+is a plan, not extra evidence. No freeze, parenting, H1/H2, general G3, clean-lineage,
+working-loop or mission-completion claim follows. Collaborator remains UNSENT.
