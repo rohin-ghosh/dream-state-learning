@@ -1,4 +1,49 @@
-# Astra restart handoff — September 13, 2026, 19:26 UTC
+# Astra restart handoff — September 13, 2026, 20:01 UTC
+
+## Current override: prospective warmfix4, no live Main GPU job
+
+Reconciled node2 at19:52UTC: controllers233271,248098/99/100,252471 absent;
+`nvidia-smi` reported no compute processes. Recheck both GPU process and CVD
+ownership before launching. Acquisition SEQ-194 is complete and unchanged.
+
+Attempt3 failed after200B updates on each seed, before worker completion.
+Attempt4 seed0 completed its worker but FAILED outer collection after187.831s
+with `warm start: output must be fresh`. Seeds1/2 attempt4 never launched.
+Every failed root remains excluded: no recovery certificate, readout, promotion,
+or reuse of attempt4. The local unexecuted recovery proposal is archived at
+`/tmp/astra_pcfl_unexecuted_recovery_proposal_20260913.py`, not deployed.
+Prospective successful full assay would charge19physical fits,6200updates,
+24800presentations,288readout calls, including4failed fits separately.
+
+Fresh audit e66edeac and Peirce found freshness checks in BOTH validate_stage
+and the controller's final input revalidation. Main now separates read-only
+predecessor/input validation from explicit pre-fit helpers. Scientific writer,
+material, doses, seeds, four arms and measured A200 parents are unchanged.
+Main fit suite:22tests PASS184.480s,2dependency-based class skips; actual native
+tiny-model tests and full warm outer/controller regression remain required.
+
+Current ownership (uncommitted work; preserve gpu/codex/dream_state.rules):
+- Main: fit module/test, outer module, integration, archives and notebook.
+- Russell01a09c54: followup operator, warm overlay, their tests; exact attempt4
+  failure chain and explicit two-file repair boundary. Fresh attempt5 only.
+- Franklin01a09c56-75c3: outer tests, full warm controller regression.
+- Hubble01a09c2d: raw reducer and its tests; terminal stable-source suite pending.
+- Peirce01a09c56-a66c: independent read-only code review; re-review pending.
+No new native overlay or experiment has been deployed in this continuation.
+
+Attempt4 evidence, including unlaunched seed1/2 plans, is now preserved onVM:
+`gpu_artifacts_local/pcfl_v2_attempt4_20260913_attempt1/evidence.tar`,74members,
+SHA256e4a7e7c76b27567dda9a9101b87930a1c319b813e6a1ef14b9120e7d80d05b9d.
+Native archive `/tmp/astra_pcfl_v2_attempt4_evidence_20260913_attempt1.tar`.
+Both SHA256checks agree. Earlier acquisition and attempt2/3 archives remain.
+
+Next: finish full controller tests and independent review, commit/pin repaired
+fit+outer+operator+reducer, build fresh warmfix4, native CPU validation, prepare
+attempt5 with all failed-work costs, then launch complete matched followups.
+Do not repeat acquisition. TSJ-v1 binding and M-COMBINE remain separate future
+work; no parenting, H1/H2, mechanism-freeze or completion claims follow here.
+
+## Historical snapshot at19:26UTC — superseded by current override
 
 Mission ACTIVE and incomplete. Reconcile live state before any new launch.
 Earlier full handoff is preserved in Git at16842885; the append-only notebook

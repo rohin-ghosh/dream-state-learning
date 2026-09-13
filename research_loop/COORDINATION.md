@@ -16789,3 +16789,38 @@ Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 44; 
 Reading: Oh okay, yeah, good idea — no eight was probably the right move. But my thought is this: if we add the cue/composition stuff, I do agree singular atoms are needed along with the composition skill, but then my thought is that some of these things are co-dependent, so the gradual convergence should think about that. Okay, good work. I will start thinking about what level 2 needs so I can formalise what the handoff might look like before we are done. I am going to take some time to think things through, figure out what I feel we are missing, [while] having things keep running. I feel I have handed off most of the information for the experiments to continue, and you and Astra have done a good job going back and forth and making progress.
 
 [Fable → Builder] 2026-09-13T19:46Z — position (advisory): the co-dependence steer is already served by Stage 2A training the four controller skills jointly and by the two-SLEEP junction coupling atoms with the cue skill (a held action needing two acquired bindings). The one sequential seam is writer-before-controller; keep the junction's own/foreign and birth-only controls so a controller born on supplied text is caught if it never learns to cue its own atoms. Full note in IDEAS.md at this timestamp. Rohin is stepping back for a while; the standing instruction is to keep things running; the watcher's half-hour checks continue.
+
+## [Builder] 2026-09-13T20:03Z — reconciliation, evidence preservation, complete validation-path repair
+
+Node2 reconciliation19:52UTC: no compute processes reported, prior Main
+controllers233271,248098/99/100,252471 absent. Attempt4 seed0 is STOPPED with
+the exact post-fit freshness error; seeds1/2 attempt4 never launched. Main
+accepts the conservative prospective path: no post-hoc recovery, readout, or
+promotion of attempt4. An unexecuted local recovery proposal is archived in
+/tmp and removed from active implementation. Failed work remains4fits,
+800updates,3200presentations,zero readout calls, separately from planned arms.
+If the full assay subsequently passes:19physical fits/6200updates/
+24800presentations/288readout calls. No scientific negative inferred from
+these checker failures.
+
+Attempt4 archive now exists on node2 and VM, SHA256
+e4a7e7c76b27567dda9a9101b87930a1c319b813e6a1ef14b9120e7d80d05b9d;
+VM gpu_artifacts_local/pcfl_v2_attempt4_20260913_attempt1/evidence.tar.
+74members include all three prepared plans and seed0's unchanged failed
+outer/completed worker. Earlier acquisition/attempt2/3 archives are unchanged.
+
+Peirce caught a second freshness path after Main's initial split: the outer
+controller replays _inputs after validate_stage. Main repaired both sites
+using explicit pre-fit helpers and read-only post-fit validators, preserving
+actual destination freshness on both prelaunch checks and worker entry.
+No writer, dose, material, seed, optimizer, measured A200 parent or arm changes.
+Main fit suite22tests PASS184.480s with2dependency-based class skips. Franklin
+reproduced the old failure and reports5focused warm-controller tests and
+26outer tests PASS after the fix, including final postflight input checks.
+Native actual-caller validation, Russell's two-file source overlay/operator,
+Hubble's terminal raw reducer suite and independent re-review remain pending.
+No native job or new native overlay launched in this continuation yet.
+
+Handoff updated with current ownership and restart path. Acquired evidence
+is still SEQ-194 only; general retention/G3, parenting, H1/H2 and mechanism
+freeze remain unqualified. TSJ-v1 stays prospective until its entry evidence.
