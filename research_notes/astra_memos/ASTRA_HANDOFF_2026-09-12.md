@@ -320,3 +320,24 @@ Result FILE SHAb7e0159b94cae55b9182509840771a658de934c2b82a51eab7438ce64dc65957.
 Four missing readout states correspond to five withheld fit phases; do not
 merge those counts. No native job on this resumption yet. Prediction material
 and runner owners still working; await EDITSTOP before staging their files.
+
+### SEQ190 / active readouts — September13 17:49UTC
+
+Material and runner owners EDITSTOP and closed. Source commitf84cc3be,
+Main joint25tests PASS25.197s. Native CPU/tokenizer/old-adapter checks passed
+for all3seeds; no source/ancestry override. Source snapshot
+`/tmp/astra_prediction_transfer_source_20260913_attempt1` on node1;
+roster `/tmp/astra_prediction_transfer_batch_20260913_attempt1/roster.json`.
+Detached batchPID2960273; controllerPIDs2960284/2960285/2960286, GPUs0/1/2,
+same-order seeds0/1/2. Main setup/launch helper is archived in receipts_20260912.
+Predictiontransfer roots named `prediction_transfer_seed{seed}_20260913_attempt1`
+under native astra_diagnostics. Each has planned OFF48/post48 calls, zero
+fits,30minute cap including collection; batch auto-collects successful runs.
+No result read yet. Reconcile terminal receipts before rerun; never overwrite.
+
+Newest Rohin message42 read from pulled raw notes. Composition/cueing is
+plausible learned behavior, not established MCTS or a proved final component.
+Fable's same-recipe/dose interpretation ofSEQ179vs188 was corrected in notebook;
+retention-v2 and STEP proposals are not live Main jobs. Hegel now owns only
+read-only `/tmp/astra_next_composition_decision_20260913.md` advisory while
+these readouts run. No reserved invariant changed. Broader sprint incomplete.

@@ -15790,3 +15790,14 @@ dose alone. Retention-v2 proposal remains unlaunched by this Main; neither it
 nor the paused STEP proposal is an active background job here. New planning
 may version another justified mechanism comparison, but does not relabel
 the completed S_A screen or erase its stop condition.
+
+## [Builder] 2026-09-13T17:49Z — prediction-transfer launch receipts
+
+Node1 detached batchPID2960273; recorded controllers seed0/GPU0 PID2960284,
+seed1/GPU1 PID2960285,seed2/GPU2 PID2960286. Each is its own PID/PGID/SID,
+UID2524, bootfc5d7cca-b343-4040-9930-bbd387632f71,start_ticks110255921.
+Exact argv/root/plan/identity receipts in batch `/launch/seed{0,1,2}.json`.
+Read-only snapshot17:48UTC found zero completed responses so far, no stage
+failure markers and no terminals; this is launch evidence, not completion
+or a GPU-utilization measurement. Main will collect actual outcomes. No
+parent, new fit, checkpoint rewrite or other process kill has occurred.
