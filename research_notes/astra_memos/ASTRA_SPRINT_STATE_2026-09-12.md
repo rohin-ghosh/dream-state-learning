@@ -1,4 +1,20 @@
-## Current superseding snapshot — 2026-09-13 08:05 UTC
+## Current superseding snapshot — 2026-09-13 08:30 UTC
+
+All24standaloneLevel1cells complete/collectedONCE; secondroster archive/review
+finishing. Authoredskills mostly ceiling; secondroster has threecanarylosses.
+SEQ144actualformation0executions acrossOFF+3perceptionadapters: actionprefix/
+length failure, not tested record extraction. Original archived unchanged.
+Prospective prompt-only v2 LIVE node2GPU1PID19024 from08:27:20UTC,1800scap;
+same8DEVIDs/strictparser/all4states. Main only collect after complete+exit.
+SEQ145highLRseed0recovery completeflat, all6LRcompleted cells available with
+explicitattempts; originalaborts not replaced. No activeLRruns/retries. Seed2high
+access diagnostic adaptationCPUinprogress; no newfit/dose escalation selected.
+A100sampling/JITsmokePASS; fullmodel readiness helperCPUinprogress, notlaunched.
+SixfilemanuscriptthroughSEQ143 EDITSTOP, independentreview pending. Current
+paths/pins/ownership/nextcommands in HANDOFF. MissionACTIVE/incomplete, simple
+hygiene, finalC11guard deferred. No clean/freeze/P1/H1/H2 promotion.
+
+## Historical superseded snapshot — 2026-09-13 08:05 UTC
 
 SEQ142: allfirst12Level1 roots complete/collectedONCE/archived, allfour skills
 48/48heldcontent+strict across3learnerseeds,postcanary12/12,no measuredlosses.

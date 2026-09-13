@@ -1,6 +1,68 @@
-# Astra current handoff — 2026-09-13T08:05Z
+# Astra current handoff — 2026-09-13T08:30Z
 
-## CURRENT — September13 08:05UTC
+## CURRENT — September13 08:30UTC (supersedes historical snapshots below)
+
+Mission ACTIVE/incomplete. Simple hygiene now; formal C11guard final paper-grade
+only. Preserve unrelated dirty gpu/codex/dream_state.rules. No clean/freeze/H1/H2
+promotion. Main runs operations; collaborators own only the scopes below.
+
+LIVE actual-record prompt-format v2: node2GPU1 PID/PGID19024,startticks51647966,
+start08:27:20UTC;1800scontroller plus180scollection. Root
+/localhome/local-rohing/astra_diagnostics/level1_real_record_20260913_attempt2;
+plan039f8cc66ecae40ed9cbee649011b34e4e4654fec68f5e7d51a37f5a5a5374bd.
+Unchanged runner /tmp/astra_level1_real_record_run_20260913.py SHA3c03304e...;
+new core /tmp/astra_level1_real_record_core_20260913_v2.py SHAb023a432...;
+launcher /tmp/astra_launch_real_record_20260913_attempt2.py SHAe81858b7....
+Spec /tmp/astra_real_record_spec_20260913_attempt2/spec.json SHA317af199....
+Protocol ASTRA_REAL_RECORD_FORMAT_AMENDMENT_2026-09-13.md SHA5448a3f5....
+Only wake instructions changed, same8DEVIDs/all3adapters+OFF/strict scorer.
+After completion AND controller exit: collect ONCE with --root ROOT
+--plan-sha256 PLAN --completion-sha256 HASH --out FRESH_EXTERNAL_DIRECTORY;
+Main only. Never duplicate preparation or modify running files.
+
+SEQ144 originalactualformation COMPLETE455.289s/64calls, collectedONCE/archived.
+Allfourstates0executions/0records: missing ACT: markers or length terminations.
+Do not infer extraction failure from absent record calls. Original evidence
+immutable at gpu_artifacts_local/real_record_20260913/astra_real_record_20260913_attempt1.tar
+SHA ccbcdf6c89921609116d751a2b0b8fe295ba200bde574d00c8f319173509d445.
+Report in receipts_20260912/astra_real_record_formation_report_20260913_attempt1.json.
+
+SEQ145 highLRseed0recovery COMPLETE1404.346s/128calls/3fits/100updates, collected
+ONCE/archived. Everypanel old4/8,new4/8,legal16/16. All6completed LRcells exist
+with explicit attempts, originalseed0aborts still missing in original roster.
+No live LRcontrollers or retry queue. Archive in l2_public_record_20260913,
+highattempt2SHA369764744ecb2760e29a0ac9e0e82b623f943b36d834f591ed96521335ea424b.
+Parfit diagnosed intact masks plus action-token loss dilution/prompt dependence;
+now owns a NEW seed2high adaptation of existing SEQ136 access diagnostic with
+explicit learner_seed binding/test. No new fit; Main chooses native launch.
+
+All24standaloneLevel1cells complete/collectedONCE. First12SEQ142 archived.
+Second12finalarchive/analysis Descartes owns; reserveSEQ146. Perceptionpost
+47/48,48/48,48/48; otherthree skills48/48 allseeds. Threecanaryregressions:
+repetitionseeds0/1 copyloss; metareflectionseed2 invalidJSON. No blanketnoharm.
+Full files /tmp/astra_level1_second_roster_analysis_20260913.{json,md} and
+gpu_artifacts_local/level1_second_roster_20260913; await finalEDITSTOP/hash.
+
+A100tinyJITsmoke PASS finished08:21:48UTC; timeoutPID36148 absent08:24.
+Root /localhome/local-rohing/astra_diagnostics/a100_toolchain_20260913_attempt1.
+Galileo owns archive+independentrelease check and NEW bounded OFFmodelreadiness
+helper/tests (NOT launched). No package/globalenv edits; fullmodel readiness
+not implied by1x8tensor/sampling success. ExactA100expiry unresolved; scheduling
+floorSep26 00:00UTC is conservative, not a verifiedexpiry. Node1offnodeevidence
+checkpointSep13 23:14UTC; finishcutoffSep14 17:14UTC, expirySep14 23:14UTC.
+
+Agents: Copernicus01a099a3-f03d-7e42-bafe-53cdb4dd67d0 EDITSTOP six manuscript
+files throughSEQ143,178authorchecks; Leibniz01a099de-45f9-7f60-93b4-dc38fdce145c
+independentreview /tmp/astra_manuscript_seq143_independent_review_20260913.md.
+Do not edit sixfiles until review disposition; stageonlyownedfiles afterward.
+Descartes01a09964-393d-7682-99a9-33d89a6c4e9f secondroster; Parfit
+01a099a4-4d72-75c0-af60-8f84fc68d36a seed2highaccess; Galileo
+01a09927-5ffb-74a2-bcb7-40b0fbceba22 A100; Lovelace
+01a0997b-d9db-7812-9206-e74dfa608600 independentactioninterface diagnosis.
+Their /tmp proposals are not GPUauthorization or completedresults. Main owns
+notebook/state/protocols and all native launch/collection. Collaborator UNSENT.
+
+## HISTORICAL — September13 08:05UTC
 
 Mission ACTIVE/incomplete. Simplehygiene; formalC11guard final paper-grade only.
 Preserve dirty gpu/codex/dream_state.rules. No freeze/clean/P1/H1/H2 promotion.
