@@ -14668,3 +14668,32 @@ exit 0 and release their owned groups; bound GPUs are empty; queue/CVD checks
 pass. Scope is only
 `EXPLORATORY_PCFL_*_COMPONENT_NOT_V2_QUALIFICATION`; no supplied-memory,
 LoRA, connected-knowledge, recurrence, C0, or paper-grade claim follows.
+
+## [Independent active-text adversarial audit] 2026-09-13 — ATN-v2 requires rework before it is a strong/fair claim baseline
+
+Documentation-only audit:
+`research_notes/analysis/2026-09-13_active_text_native_v2_adversarial_audit.md`.
+Verdict **REWORK**. ATN-v2 correctly separates the v2.2 exact-address ceiling,
+on-policy system effect and same-history view, but as written it depends on an
+actor RECALL/THINK loop now known to yield 0/64 READs and 0 accepted recurrent
+THINK turns; its typed slot normalization can leak role/ordinal or collide;
+shared EVENT-symbol vertices already compose chains without LINK; DLT's common
+raw recall is undefined; rejected-status eligibility can leak private validator
+feedback; and a small-store certificate does not qualify the 571-block store.
+
+Smallest strong repair is a new frozen `ACTIVE_TEXT_NATIVE-v2.1-AUTO`: common
+LF-framed one-turn parsing across every arm, target-blind automatic BM25 plus
+public witnessed-event graph retrieval before actor calls 1--16, q16/B8192
+memory bandwidth with no extra actor generations, equality-only hashed opaque
+IDs, one exact common `RAW_PUBLIC` lane, public-only lifecycle, and a 571-block
+certificate. RS8 requires an explicit versioned MODEL lexical-document lane
+(`ATN-v2-RS8` or inclusion in v2.1); it may not silently extend v2, create a
+graph/solver feature, or receive the RS8 plan's 128 ATN-only predictive query
+generations. Merge ATN and RS8 qualification into one 448-task/four-root
+certificate, then stage 3,200 on-policy tasks before the conditional 3,200
+same-DLT-history tasks. Same history is a conditional system/access contrast,
+not a pure carrier effect. Current resource planning is not closed: SCALE
+training + scale qualification + ATN already reserve 324.6 A40-hours before
+v2.2 DEV, other inference or RS8, and call-count extrapolation must be replaced
+by empty/157/571-block prompt-length profiles. No runtime, builder, model,
+tokenizer, adapter, benchmark, GPU, or remote action was taken.
