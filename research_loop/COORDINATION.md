@@ -13586,6 +13586,26 @@ Regressions reject unknown/not-yet-admitted or duplicated handles and assert
 no receipt/source/destination/port fields are introduced by the new instruction.
 No fit/readout yet; tested frozen reducer remains required for those stages.
 
+## [Builder] 2026-09-13T14:45Z — public-pair formation launch reservation
+
+Node2GPU0 reserved for `pcfl_own_write_pairs_20260913_attempt1/formation`,
+20calls maximum,zero fits. Sourcecf572c73, archive0449dfa30c389f04f5c2f704e4e0ab91c00e90167fa9d759b3999689de8d42e3,
+native `/tmp/astra_pcfl_own_write_pairs_source_20260913_attempt1`.
+Run `/localhome/local-rohing/astra_diagnostics/pcfl_own_write_pairs_20260913_attempt1`.
+Actual offline preparation passed with explicit external LF and public pair
+policies, same root/actions/pairs/training/readout plan. Manifest file
+ae3a2a9348df919e2e5b63b2a25e1c5240b63d0a0acc6246032c5981d8a554d4,
+internal a71dd5cbd0b71cb4062ebbe8a14806c7df9cd9b7f1ed435a41c2fd6b8fb1ef9a.
+Spec `/tmp/astra_pcfl_own_write_pairs_spec_20260913_attempt1.json` file
+d3b51f8e364a895fbc623a559f7fabbf68bd9ca954f7a56883fb9504174e21dc;
+allocation `/tmp/astra_pcfl_own_write_pairs_allocation_20260913_attempt1.json`
+file79b043cbbaad094da2140dc3f580838f931b8dd9854cfa00053c6a72e0de26d9.
+Unchanged exactGPUUUID/boot/UID/queue/service-exception checks and detached
+outer7c3197444113b610a3073e731c3e899f7e79423e6e37005c0f21b0d43e954725;
+1800s inclusive,60scleanup,6hlease margin; actualPID recorded after spawn.
+CPU/provenance acceptance above; no hidden field or expectedrow injected.
+Only a complete new authentic bank may proceed to the separately bounded fit.
+
 ### [Laptop Codex] 2026-09-13 — own-write reducer frozen before fit/readout; one-life storage claim only
 
 Prospective readout rule is recorded in
