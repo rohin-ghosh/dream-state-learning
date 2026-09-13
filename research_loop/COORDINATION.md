@@ -11751,3 +11751,31 @@ laptop proposals for parent-free process gates remain next-stage advice: this
 currently frozen assay has no SLEEP or persistence endpoint. No naive adoption
 of authored sleep replay, relaxed retention floors, or automatic scientific
 promotion. Invariants and simple hygiene remain unchanged; formalC11later.
+
+## [Builder] 2026-09-13T11:08Z — three inference-only alignment controllers launched
+
+Pre-GPU tests/provenance/native preparations logged and committed3da08a7d before
+launch. Full live GPU/process/environment reservation checks passed on node2.
+Boot8ff7b0dc-fbdf-4945-9044-3dffe94b5407; all three original root adapters.
+
+| Seed | GPU | Holder / controller PID | Actual UTC start | Plan SHA256 |
+|---|---|---|---|---|
+|0|0|119320 /119325|2026-09-13 11:07:53|f517e0a77bf4705f8a7aebf9ff4472da44838493b13fb8e592c64378134956c1|
+|1|1|119380 /119381|2026-09-13 11:08:00|78b316e79e303b68ac326671f350c5e2735ada80ce2750d734406175d2f51535|
+|2|2|119384 /119386|2026-09-13 11:08:02|34079b169137d8e2fdbd16e1b5be902d216c974e84a2526632a3fa068d54649e|
+
+Native roots /localhome/local-rohing/astra_diagnostics/parenting_alignment_seedN_20260913_attempt1.
+Exact invocation for each N:
+`/localhome/local-rohing/v2/venv/bin/python -B /tmp/astra_parenting_alignment_main_20260913.py launch --seed N --runner-sha256 712248f1fc86b026e68e9cfbc791d3b441c6ded53db82f7622f8f2cd2b8b8c2a`
+via gpu/ovx_ssh.sh. Holders/controller receipts live in sibling.launcher.
+Each controller has three cold original-adapter arms;312maximumgenerationcalls,
+0fits/updates. Actual outcomes not inspected yet. No result from liveness.
+No foreign process killed, no retry or new lease. On success holder auto-collects
+ONCE to sibling_collected before releasing reservation; DO NOT manually collect.
+Wait for controller_exit/collector_exit/exit rc0, then archive complete roots,
+collections, claims and launchers; release verified local mirror to Lovelace.
+
+Manuscript throughSEQ159 now independently accepted and committed3da08a7d;
+its raw author handoff's extra EOF blank line is preserved as evidence, excluded
+from source whitespace validation only. Actual manuscript/source checks pass.
+CollaboratorUNSENT. No command requested approval in this continuation.

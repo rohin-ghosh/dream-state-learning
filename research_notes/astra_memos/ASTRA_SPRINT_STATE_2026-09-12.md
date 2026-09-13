@@ -1,4 +1,18 @@
-## Current superseding snapshot — 2026-09-13 10:52 UTC
+## Current superseding snapshot — 2026-09-13 11:08 UTC
+
+Three alignment inference-onlycontrollersLIVE node2GPUs0/1/2 from11:07:53/
+11:08:00/11:08:02UTC. Holders/controllers119320/119325,119380/119381,
+119384/119386. Exactpins/HANDOFF;19/24/5MainCPUtestsPASS,all3nativeprepPASS,
+committedpreGPUgate3da08a7d.312maxcalls,0fits,originalperceptionparentsonly.
+HoldersAUTO-COLLECTONCE; no manualcollection/retries. IndependentLovelacereducer
+preoutcomedevelopment. Noresultyet. SEQ159repaircomplete,preservedandreduced:
+replay0retentionlossesbutseed1recallfloorfailure/seed2parabelowconstant.
+Noallseedrepair/freeze/H1H2/generalG3/cleanqualification. Manuscriptthrough159
+independentlyaccepted/committed3da08a7d;collaboratorUNSENT. Simplehygienenow,
+formalC11later. MissionACTIVE/incomplete. Nextinspectterminalreceipts/archive/
+independentreduce, notsubmitmoretrainingoradoptfuturewriterthresholds.
+
+## Historical superseded snapshot — 2026-09-13 10:52 UTC
 
 SEQ159 complete: all3REPLAY/EXTRA_MEMORYpairs oncecollected/archived/reduced.
 Replayexact10/6/5,para10/6/3,held47/48/48;extraexact13/7/7,para10/6/7,

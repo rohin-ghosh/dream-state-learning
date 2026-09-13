@@ -1,6 +1,41 @@
-# Astra current handoff — 2026-09-13T10:52Z
+# Astra current handoff — 2026-09-13T11:08Z
 
-## CURRENT — September13 10:52UTC
+## CURRENT — September13 11:08UTC
+
+Three inference-only alignment controllers LIVE node2GPUs0/1/2, original
+perception parents. Native roots /localhome/local-rohing/astra_diagnostics/
+parenting_alignment_seedN_20260913_attempt1. Holders/controllers0:119320/119325,
+1:119380/119381,2:119384/119386. Actualstarts11:07:53,11:08:00,11:08:02UTC.
+Plans0/1/2:
+f517e0a77bf4705f8a7aebf9ff4472da44838493b13fb8e592c64378134956c1
+78b316e79e303b68ac326671f350c5e2735ada80ce2750d734406175d2f51535
+34079b169137d8e2fdbd16e1b5be902d216c974e84a2526632a3fa068d54649e.
+Core71311d3d9add1f485289c6ee6824ef758393193ee05bcc088674d12697b11010;
+runner712248f1fc86b026e68e9cfbc791d3b441c6ded53db82f7622f8f2cd2b8b8c2a;
+outercb61e7f8e47af782ac25e6ace3cc9be67e7c25856b5863973dd1643630f065bc.
+Allscripts/tests/handoffsarchivedreceipts_20260912; Main19corePASS2.640s,
+24runnerPASS5.944s,5holderPASS.005s;all3nativeCPUpresPASS. Protocolfinal
+SHA5c53d6aa850b3a3a409c255ab9b28ce3b090f7325f35688437e42a86b1cccce5
+committedbeforelaunch;preGPUlog3da08a7d.312maxcalls,0fits/updates;3600s
+controller+180scollector each. No outcomesyet. EachholderAUTO-COLLECTSONCE
+aftercontrollerexit0, retainsGPUreservationthroughcollection. DO NOT manually
+collect/resubmit. Check sibling.launcher/controller_exit,collector_exit,exit;
+then archiveallroots/adapters/collections/claims/launchers toVM and verifybytes.
+Lovelace01a0997b-d9db-7812-9206-e74dfa608600 owns preoutcome independentreducer;
+reveal onlyverifiedmirror. CoreBeauvoir/runnerParfitEDITSTOP,noeditswithoutMain.
+
+SEQ159complete: replayretentionloss0all3 butrecallfloorfailsseed1;seed2para3/8
+belowconstant4/8. Exact10/6/5,para10/6/3,held47/48/48;extraexact13/7/7,
+para10/6/7,held47/46/42. Fullarchive/resultpinsin10:52snapshot. Noallseedrepair.
+ManuscriptthroughSEQ159independentlyACCEPTED,committed3da08a7d,UNSENTcollaborator.
+Dirtygpu/codex/dream_state.rulespreserved. No mechanismfreeze/P1/H1/H2/generalG3
+orcleanlineage. FormalC11guarddeferred;simplehygienepreserved. Latestlaptop
+parent-freeprocessgate/writerproposals notadoptedinto thisinferenceonlyassay.
+MissionACTIVE/incomplete. Node2boot8ff7b0dc-fbdf-4945-9044-3dffe94b5407;
+leaseSep21 08:43UTC,finish6hearly. Needednode1evacdeadlineSep13 23:14UTC;
+allnewMainfinishedevidencealreadyVMarchived. Noapprovalrequests.
+
+## Historical superseded snapshot — September13 10:52UTC
 
 No Main GPU job live. All3 replay-repair pairs completed/automatically collected
 rc0. Never recollect/relaunch. Fullarchive
