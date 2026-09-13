@@ -17578,3 +17578,28 @@ r0=(3*k+t)mod24. It can exceed23; v2section9 explicitly says modulo24.
 The ordinary-world builder rejects intervention directories rather than
 silently choosing. Smallest consistent correction is r1=(r0+12)mod24.
 Independent source work continues; this is not a hold on unrelated experiments.
+
+## [Builder] 2026-09-13T21:40Z — partial world/graph/tape integration100tests PASS
+
+Main ran100combined Stage2A wire/inventory, primitives, ordinary-world,
+graph and presentation-tape CPU tests PASS4.175seconds. Terminal log preserved
+at research_notes/astra_memos/receipts_20260912/astra_stage2a_partial_integration_20260913T2140Z.log.
+World source fd5756c68bbac0222481e3d43adaec0e93eca9096d8cc6f45ce28906f326fce9;
+graph source6f363eba3ef3f50622b68581949f64ab9155ea91568843f6219ec9ea9c0404b5;
+tape source a786a6ef7d589ca3d224b17ad12ce76b0d801581e8d3d3ab1754d50f0138f4e7.
+
+Ordinary explicit-map construction supports eight goal-switch birth roots and
+eight expected chain roots, plus nondesignated intervention relation fragments;
+unsupported recovery/pair/whole-intervention cases fail explicitly. Graph
+fixtures reproduce both corrected v4 graph/radius/signature/core byte/hash
+vectors. Public visibility, latest CURRENT, role allocation, oracle roots and
+step context still require verified caller inputs. Tape reserves all256unit
+IDs across8rotations/512paired updates, with D1/D2 boundary and seed preimages;
+it neither renders targets nor executes training or proves runtime resume.
+
+Mendel completed/closed. Lorentz01a09cb6-342d now owns only the separate
+composition_birth_stage2a_checker.py and test, independently deriving a bounded
+graph/core JSON checker from the contract without importing generation helpers.
+Godel continues birth construction in his two owned new files. Full-world,
+target/null/scanner/visibility agreement and scientific readiness remain open;
+all science gates remain false. No new GPU job or speculative promotion.
