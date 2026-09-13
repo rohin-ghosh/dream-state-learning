@@ -11815,3 +11815,17 @@ native CPU acceptance and allocation. Existing trainer and alignment code stay
 frozen. Candidate budget7200scontroller+180scollection perpair,8aggregateA40h,
 leasefinish6hearly. This is CPUdevelopment, not launched/qualified. Even passing
 all frozen single-write screens would require a later repeated-cycle test.
+
+## [Builder] 2026-09-13 — alignment parser limitation noted before reading outcomes
+
+Two alignment holders have completed/auto-collected; seed1 still progresses in
+NO_PARENT. No manual recollection or outcome inspection. Independent reducer
+remains frozen. During source inspection Main notes normalize_note rejects
+unknown extra public-metadata keys, and C expects exactly its three required
+fields. The generic task instruction does not forbid every other useful field.
+ASTRA_ALIGNMENT_NOTE_SCHEMA_CAVEAT_2026-09-13.md records this BEFORE Main or
+reducer reads results. Original scoring/thresholds stay unchanged; distinguish
+schema failure from wrong source bindings and never infer absent process skill
+solely from closed-schema rejection. Any broader content re-score must be
+separately versioned exploratory, symmetric, and cannot rescue the frozen gate.
+No such alternative scorer or scientific promotion is made here.
