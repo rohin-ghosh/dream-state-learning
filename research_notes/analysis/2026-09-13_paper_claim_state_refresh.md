@@ -2,7 +2,8 @@
 
 **Date:** 2026-09-13 UTC  
 **Role:** fresh manuscript/claim-map auditor  
-**Repository cut:** `051c5fa9`  
+**Repository cut:** `051c5fa9`; compression disposition amended against
+`66f14501`
 **Scope:** paper claim audit and replacement abstract candidates only; no edit
 to `paper_prototype/main.tex`, benchmark source, model, adapter, or GPU state
 
@@ -48,7 +49,8 @@ and full request/resource receipt are absent. No PCFL result exists.
 | Goal traversal and action-driven expansion | PCFL service/native route, useful-probe choice, public frontier outcome, S2 OLD+NEW cuts | Unmeasured | Bracket exact endpoint counts only after terminal PCFL artifacts |
 | Increasing-lifetime learning | PCFL-STREAM successor is a design; no independent lineage AUC exists | Unmeasured | Require positive absolute slope, entry-to-terminal gain, and DLT-minus-FROZEN AUC `>=.05` with one-sided 95% lower bound above zero |
 | Strong active-memory superiority/plateau | `ACTIVE_LINKED_TEXT` and access curve are specified but not implemented or certified | Unmeasured | No superiority or saturation language; plateau requires the optional seven-cut equivalence test |
-| Compression | Rank-8 LoRA is about 80.8 MB; no rate--distortion pass exists | Contradicted if interpreted physically; semantic sidecar prospective | Use *compiled* or *connected*, not *compressed*, unless the separate exact codec/utility gate passes |
+| Physical compression | Rank-8 LoRA is about 80.8 MB, larger than the complete proposed PCFL life | Contradicted at this scale | Always print the unfavorable byte accounting; never call the LoRA, life, or organism physically compressed |
+| Conditional predictive semantic compression | A zero-new-fit assay is prospectively specified on the ordinary final DLT adapters: shorter predictive code on unseen structure-governed outcomes, matched independent-continuation null, adapter-removal contrast, and fresh actions | Unmeasured; downstream of positive PCFL and lifetime gates | If every prospective code/use gate passes, call it *parametric predictive reuse* or *conditional predictive semantic compression*. It is not physical compression or exact seen-row storage |
 | Parenting | Historical parenting is observational/null or contaminated; minimum receptivity assays are designs | Unsolved upstream factor | Parenting may motivate better child material, but it is not part of the PCFL causal result and is not solved pedagogy |
 
 ## Stale or overbroad manuscript/abstract claims
@@ -69,8 +71,9 @@ and full request/resource receipt are absent. No PCFL result exists.
 | `research_notes/abstract_experience_models_v3_one_parent_causal.md` | Treats parenting as the headline and assumes a mature pedagogy core; its fixed/adaptive parent topology is no longer the main causal campaign | Keep archival. It cannot be filled from PCFL or PCFL-STREAM results |
 | `abstract_experience_models_v1/v2` and the 2026-09-02 PCFL namespace map | Superseded/deferred documents contain aspirational learning, parenting, compression, and old-protocol claim language | Cite only as history. Their explicit deferred/superseded statuses do not authorize a current claim |
 | `2026-09-13_pcfl_dev_to_paper_grade_successor.md` | Contains exact prospective thresholds and resource projections, not observations | Keep every number out of past tense. `ONE_EPOCH_SCALE`, linked-text certification, reusable structure, N resizing, and all AUCs remain conditional |
+| Earlier supplied-schema compression sidecars | A fresh `SCHEMA_LORA` fit would test transport of an authored compact code, not whether ordinary experiential SLEEP learned reusable structure | Do not use as the main compression slot. First test existing final DLT states with the zero-fit predictive-reuse assay |
 
-## Candidate A: current-evidence fallback if PCFL DEV fails (187 words)
+## Candidate A: current-evidence fallback if PCFL DEV fails (181 words)
 
 Language agents can write deployment records into low-rank parameters, but
 acquisition can coexist with silent forgetting. We characterize this failure
@@ -91,28 +94,28 @@ a request paraphrase, but training loss and interface checks do not certify
 selective, retained memory. Connected traversal, repeated-sleep improvement,
 strong-memory superiority, compression, and parenting remain open.
 
-## Candidate B: prospectively fillable main abstract (196 words)
+## Candidate B: prospectively fillable main abstract (189 words)
 
 Can an acting language model turn its own action outcomes into connected
-parametric knowledge that improves a life? We study a frozen
-Qwen2.5-7B-Instruct agent with a per-life rank-8 LoRA. THINK interleaves
-reasoning, typed actions, and public outcomes; DREAM manages active context;
-SLEEP trains only on provenance-bound child continuations, with truthful
-replay and transactional retention checks. Our PCFL benchmark separates the
-causal chain: a child first acts and authors EVENT and LINK records; after
-source removal, a candidate-free reader and the mounted actor must traverse
-different links under different goals, select an informative experiment, and
-after a second write solve a delayed task requiring both old and new evidence.
-Matched atom-only, permuted-link, wrong-root, adapter-off, link-cut, frozen-
-sleep, exact-graph, raw-RAG, and evolving linked-text controls localize each
-step. Results: [WRITER: rate, EVENT/LINK carriage, false-row and retention
-counts]; [PCFL: formation denominator, AUTH-minus-ATOMS, link-cut/redirection,
-native route, and OLD+NEW counts on both DEV roots]; [LIFETIME: `N`, five-cut
-absolute gain, DLT-minus-FROZEN paired AUC and one-sided 95% lower bound];
-[MEMORY: certified linked-text access point, on-policy and fixed-history
-DLT-minus-text AUC]; [COMPRESSION SIDECAR, if passed: exact reconstruction,
-codec ratio, and utility margin; otherwise omit]. Parenting is evaluated
-separately as upstream receptivity, not as solved pedagogy.
+parametric knowledge that improves a life? We study frozen
+Qwen2.5-7B-Instruct with a per-life rank-8 LoRA. THINK interleaves reasoning,
+typed actions, and public outcomes; DREAM manages active context; SLEEP trains
+provenance-bound child continuations with truthful replay and retention gates.
+PCFL separates the chain: a child acts and authors EVENT and LINK records;
+after source removal, a candidate-free reader and mounted actor must traverse
+goal-dependent links, select an informative experiment, and after a second
+write solve a delayed OLD+NEW task. Atom-only, permuted-link, wrong-root,
+adapter-off, link-cut, frozen-sleep, exact-graph, and evolving-text controls
+localize each step. Results: [WRITER: rate, EVENT/LINK carriage, false rows,
+retention]; [PCFL: formation, AUTH-minus-ATOMS, link-cut/redirection, native
+route, OLD+NEW on both DEV roots]; [LIFETIME: `N`, five-cut absolute gain,
+DLT-minus-FROZEN paired AUC and one-sided 95% lower bound]; [MEMORY: certified
+linked-text access and paired AUC]; [ZERO-FIT PREDICTIVE REUSE, if passed: structured
+DLT-ON/OFF predictive-bit ratio and upper bound, independent-twin null, and
+fresh-action gain with lower bound]. The last result is conditional predictive
+semantic compression, never physical LoRA compression; report the 80.8 MB
+adapter. Parenting remains a separate upstream receptivity question, not
+solved pedagogy.
 
 ## Promotion rule
 
@@ -137,5 +140,6 @@ lifetime or strong-memory claims.
 - `research_notes/analysis/2026-09-13_pcfl_vertical_dev_v2_2_writer_repair.md`
 - `research_notes/analysis/2026-09-13_pcfl_v22_execution_readiness_audit.md`
 - `research_notes/analysis/2026-09-13_pcfl_dev_to_paper_grade_successor.md`
+- `research_notes/analysis/2026-09-13_pcfl_minimal_parametric_reuse_compression_assay.md`
 - `research_notes/analysis/2026-09-13_pcfl_stream16_successor_objective_redteam.md`
 - `research_notes/analysis/2026-09-13_full_objective_evidence_and_pcfl_redteam.md`
