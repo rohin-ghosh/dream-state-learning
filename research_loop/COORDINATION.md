@@ -11920,6 +11920,44 @@ bottleneck on fresh development tasks, without rewriting this failed endpoint.
 Additive replay remains the independent prospective writer test fromSEQ159;
 its CPU numerical gate passes but lifecycle/native fit not yet executed.
 
+## [Builder] 2026-09-13T11:39Z — additive replay pre-GPU acceptance and bounded allocation
+
+Main accepts the prospective4f4e8357 additive replay protocol unchanged after
+19trainer/10core/18runner/22holderCPUtestsPASS(0.666/1.258/6.262/0.117s),
+plus native tinyTorchCPU parity/gradient suitePASS4.258s archived1ca5f33f.
+All3native CPU preparations now PASS: original tokenizer/template, exact old
+EXTRA_MEMORY items/order/masks, old own-observation provenance/history, original
+parent inventories and fresh output roots. No new source capture or teacher
+bytes. Source/core/runner/holder/tests/handoffs archivedreceipts_20260912.
+
+Coreb58e4c90e2abdd26648475c9fb1fe92e3bc3fef2fa7664ecaaa69fc93591076a;
+runnerca54e7e1971d89224bb8dec8f3518d0a6a73ec4d1abe6f29278bab335b1618a5;
+trainer3f2e73ef69b12c8db211e1d3043e4559713e036ffe09571ab8bc4c5199a426a0;
+holder1ed1b383f2a36855f53e7b165dc9d75fe99620e930a3ae89332fcbe22c7ce05c.
+Native plansseed0/1/2:
+77a7e3f39005e10c0f3085dc68aabdebc31f33f9684925125c2a261039555c45
+7d426da11e418d0b23a2513b9b76b1b0acf49bfaf544132ee1760e4bcadcff2b
+9d0fbcc9d8b40184348f849477a502250c385037eb297b24225793f804cfa3c6.
+
+Authorize exactly three paired controllers on node2GPUs0/1/2, originalseedN
+perception adapters, new roots /localhome/local-rohing/astra_diagnostics/
+additive_replay_seedN_20260913_attempt1. Each runs ADDITIVE_fit/readout then
+fresh MEMORY_ONLY_fit/readout. Sixfits1632updates480coldreadoutcalls total,
+zero capture/teacher calls. Same memory dose/order/steps, notcompute/RNG;
+ADDITIVE sums separately normalized memory+replayCE at pairedpositions,not/2.
+Question: can the old-skill replay term preserve retention without sacrificing
+the full memory dose? Compare fresharms and diagnose MEMORY_ONLY drift against
+historicalEXTRA_MEMORY before attributing effects. Originalrecall/zero-loss
+screens unchanged; no automaticpromotion/generalG3/H1/H2claim.
+
+Bound7200scontroller+180scollection perpair,8aggregateA40h includingprepare.
+Earlier lifecycle runtime is a rough forecast, not a measurement of the new
+objective. LeaseSep21 08:43UTC; finish6hearly. Lastnode2boot unchanged, noGPU
+processes shown; actual per-GPU /proc/CVD and nvidia vacancychecks must pass
+again inside launch. Killno foreignprocess. HolderreservesUUID until controller
+and once-only auto-collector exit. Do not manuallycollect/relaunch. Logactual
+PIDs/startreceipts afterlaunch; this entry alone is NOT execution or aresult.
+
 ## [Laptop Codex] 2026-09-13T11:08Z — critical path converged: one PCFL execution contract; additive replay is parallel-only; stop proxy churn
 
 Three fresh independent audits converge on the same ordering. (1) `research_notes/analysis/2026-09-13_pcfl_v22_minimum_execution_closure_contract.md` (`c263dd6f`) collapses the five open PCFL seams into one sealed `<run_root>/PREPARE/execution_contract.json` consumed by a pure CPU `organism_v6/pcfl_vertical_prepare.py` validator. It pins the current authoritative source hashes and gives the closed A--E schema: no-PAD v2.2 truth, every exact render/parser/W8/diagnostic candidate universe, structural replay/counterpart/support-overlap schedules, conservative CAL_HIGH truth table, and exact cuts/addresses/work inventory, plus 13 fail-closed tests. Runtime/profile receipts may validate but never mutate the contract. This is the minimum zero-GPU implementation closure Astra needs before PCFL model execution. (2) `research_notes/analysis/2026-09-13_writer_replay_acquisition_tradeoff_adjudication.md` (`48421e29`) identifies a three-fit `ADDITIVE_REPLAY` diagnostic: preserve the complete balanced new-memory gradient and add old-replay loss on the same updates, fixed rank8/LR3e-5 across roots. It asks whether the observed retention and acquisition endpoints compose; it is useful only in parallel and must not delay or qualify PCFL. (3) fresh area-chair audit `research_notes/analysis/2026-09-13_iclr_shortest_decisive_evidence_path_fresh_ac.md` (`7a305690`) says the current fallback is honest but not yet ICLR-competitive. The shortest full-thesis path is executable PCFL v2.2 -> four quarantined RAW_CHRONOLOGICAL DEV fits -> one-epoch scale qualification -> one combined N=16 confirmation/lifetime campaign with SLEEP_FROZEN and certified ACTIVE_LINKED_TEXT; plateau/compression only after those pass. Immediate bottleneck is PCFL integration, not GPU supply. The already-building alignment assay is a valid separate-owner diagnostic; no further generic proxy should consume the critical builder path.
