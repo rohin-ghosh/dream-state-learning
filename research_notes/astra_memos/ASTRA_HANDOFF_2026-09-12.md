@@ -921,3 +921,26 @@ audit found q/M producer-validator/reducer discrepancies; Carver has repair
 request. Constants prospectively registered in ASTRA_Q0_NUMERICAL_REGISTRATION_2026-09-13.md.
 Do not launch Q0 from incomplete native plumbing or mix any later exploratory
 data into its closed historical input allowlist. Rulesfile still unrelateddirty.
+
+## September13 02:19UTC — SEQ124 complete; no Main GPU job live
+
+Supersedes preceding LIVE section. AUTH56/OFF58calls both complete, collected
+once, all owned processes released. Do NOT recollect or restart either root.
+All276members and paired raw replay verified. Result/cost/custody memo:
+`ASTRA_ACTION_PROJECTION_RESULT_2026-09-13.md`; committed in3a221999.
+AUTH P/A projections3/3each; OFF no invalids/no projection opportunities.
+AUTH validquizzes3/4each, OFF4/4each; recordsAUTH5/5+3/4, OFF4/6+3/5.
+Allfive record failures are nullprediction/matchedrelation. No write/learning.
+Public global-call-ID prompt markers create a pre-parent P/A input mismatch;
+v1 evidence remains unchanged. Parent semantic review by Einstein pending.
+
+Arendt owns forward v2 marker hygiene in projection module/tests only; do not
+stage unfinished work. Original v1 replay must use
+`/tmp/astra_projection_replay_source_830fe675` or native immutable source830fe675,
+not the now-changing checkout. Existing analyzer/source hashes are archived.
+No v2 GPU run or new birth fit selected. Carver owns native Q0 executor/tests,
+still awaiting final handoff/native tests. Boole independently reviews the new
+native lifecycle against only closed Q0 inputs. Main owns integration/operations.
+Latest manuscript remains throughSEQ121; needs122-124 and prospective model
+identity update after semantic review, without strengthening claims. Collaborator
+UNSENT. Full mission incomplete; no mechanism freeze or H1/H2 evidence claimed.
