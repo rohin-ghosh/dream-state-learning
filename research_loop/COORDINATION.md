@@ -14259,6 +14259,45 @@ tests05eec1d9a7feec05cc306a2f0b9d53a725f8bf67cd0b477b429880afdfbfdaad.
 Original fixed endpoint/native code/raw evidence unchanged; old validator and
 revised handoff separately archived. Main now runs the first paired reduction.
 
+## [Builder] SEQ-179 — 2026-09-13T15:46Z — scoped EVENT acquisition passes paired cold reduction
+
+Completed fixed-prefix comparison: AUTHstrict_stop14/14 and NO_WRITE_C0zero/14
+at primaryW8; paired difference14/14; exact service14/14. DescriptiveW0 likewise
+14versus0. AUTH outputs preserve every exact EVENT byte and terminalLF; C0
+outputsMISS. All56calls stopped normally, with separate cold processes, exact
+adapter/no-adapter identities, checkpoint/source/token/receipt joins and all
+three released outer stages validated. This is one source life/root,8EVENTs,
+14trained addresses,onefit/initialization,200updates/800presentations;56calls
+are repeated measurements. W8 holds out wrapper wording only, not facts or
+addresses. OriginalSEQ171 full-bankFORMATION_FAILED/17calls remains unchanged.
+No LINK, traversal, retention, selectivity, generalization, parenting, P1/H1/H2,
+generalG3, mechanism freeze, clean-lineage/full-assay/C11 promotion follows.
+
+First offline reduction failed before emitting analysis: it incorrectly expected
+a flat RNG hash, while unchanged native trainer `_rng_hash` emits `{cpu,cuda}`.
+Main repaired only validator/fixture schema, requiring one native CUDA hash and
+CPU hash; added2regressions. Initial25test run had one stale amendment-label
+assertion; corrected it, final25/25PASS42.169s. No native artifact, scorer,
+threshold or selected material changed; no GPU rerun. Failed first reduction
+is preserved in this record, not recast as a native failure or numerical zero.
+Final reducere57a67796eaad44d75893050ada30e828c1c751f4334fd0898755b28533460d6;
+testsea2bba25fe9dd471b492689ab947a627001e8cf4c8ce88eb496d13310746326e.
+Analysis /tmp/astra_pcfl_event_only_analysis_20260913_attempt2/analysis.json,
+SHA27a7180027210c1ec68bdda4b032fad039f91b99033c713742aba22d015b90a2;
+archived copy and stage pins under receipts_20260912. Native archive remains
+c7c26ad122bec200b79dd794fac6a41d351a043ed2c4b4b05a5994501dbfd64e.
+
+Fit loss5.464997291564941 ->0.0001355207059532404,49400supervised tokens,
+maximum unclipped norm7.740334987640381/clipped1.0. Fit155.910s; AUTHcoldstage
+124.438s,C0coldstage47.419s; outer elapsed sum348.887s includes release,
+not measured GPU-active time. Historical formation cost17calls stays separate.
+
+No Main GPU worker remains live. Independent bounded result review and a
+manuscript update are underway. Next chosen interface diagnostic is the
+answer-free must-READ8case smoke from the new watcher memo: keep current
+negativeA1/A2/A3 evidence; noA4. Lagrange owns prospective driver/test additions,
+no native launch yet. Full64panel only if predeclared8case gate passes.
+
 ## [Independent EVENT-only audit] 2026-09-13 — valid SEQ-171 prefix candidate; REWORK before one bounded fit
 
 Fresh read-only audit:

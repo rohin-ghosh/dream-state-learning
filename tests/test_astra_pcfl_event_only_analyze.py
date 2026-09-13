@@ -129,7 +129,9 @@ def fixture(root):
         for batch, items in enumerate(batches):
             updates.append({"update": len(updates) + 1, "epoch": epoch, "batch": batch, "items": items,
                 "source_sha256": [lookup[tuple(pair)]["source_sha256"] for pair in items], "loss": 1., "pre_clip_norm": .5,
-                "post_clip_norm": .5, "rng_before": "5" * 64, "rng_after": "6" * 64,
+                "post_clip_norm": .5,
+                "rng_before": {"cpu": "5" * 64, "cuda": ["6" * 64]},
+                "rng_after": {"cpu": "7" * 64, "cuda": ["8" * 64]},
                 "supervised_tokens": sum(lookup[tuple(pair)]["encoded"]["n_target"] for pair in items)})
     (archive / "fit/write/updates.jsonl").write_bytes(b"".join(analyze.canonical(row) + b"\n" for row in updates))
     write(archive / "fit/write/adapter/adapter_config.json", {"r": 8, "lora_alpha": 16, "lora_dropout": .05, "peft_type": "LORA"})
@@ -208,6 +210,20 @@ def fixture(root):
         pins[name] = {"completed_sha256": command.file_hash(archive / name / "completed.json"), "outer_path": str(root / ("SYNTHETIC_OUTER_" + name))}
         outer_fixture(archive, manifest, name, pins[name], index)
     return archive, manifest, pins
+
+
+class NativeRngTests(unittest.TestCase):
+    def test_actual_single_gpu_rng_object_schema(self):
+        analyze.validate_rng_state({"cpu": "5" * 64, "cuda": ["6" * 64]})
+
+    def test_flat_hash_and_invalid_gpu_rng_objects_rejected(self):
+        values = ["5" * 64, {"cpu": "5" * 64}, {"cpu": "5" * 64, "cuda": []},
+                  {"cpu": "5" * 64, "cuda": ["6" * 64, "7" * 64]},
+                  {"cpu": "invalid", "cuda": ["6" * 64]},
+                  {"cpu": "5" * 64, "cuda": [False]}]
+        for value in values:
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                analyze.validate_rng_state(value)
 
 
 class EventOnlyAnalyzeTests(unittest.TestCase):
@@ -400,7 +416,7 @@ class EventOnlyAnalyzeTests(unittest.TestCase):
         self.assertLess(request["started"], load["model_load_started"])
         self.assertLess(request["started"], load["ready_at"])
         result = self.analyze()
-        self.assertEqual(result["validator_amendment"], "pre_outcome_request_limits_and_operation_timing_v1")
+        self.assertEqual(result["validator_amendment"], "request_timing_v1_and_native_rng_schema_repair_v1")
         self.assertEqual(result["endpoint"]["AUTH_strict_stop"], 13)
 
     def test_missing_request_start_or_limits_rejected(self):

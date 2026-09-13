@@ -16,7 +16,7 @@ event, prefix, native, core, readout = command.event, command.prefix, command.na
 require, canonical, digest = native.require, native.canonical, native.digest
 interval, files = shared.interval, shared.files
 SCHEMA = "pcfl.event_only.analysis.v1"
-VALIDATOR_AMENDMENT = "pre_outcome_request_limits_and_operation_timing_v1"
+VALIDATOR_AMENDMENT = "request_timing_v1_and_native_rng_schema_repair_v1"
 STAGES = ("fit", "readout_AUTH_WRITE", "readout_NO_WRITE_C0")
 ARMS = ("AUTH_WRITE", "NO_WRITE_C0")
 INPUTS = {"spec.json", "import.json", "fit.json", "tokenizer.json", "encoding.json", "identity.json", "read_measurements.json", "service.json"}
@@ -34,6 +34,13 @@ LIMITS = ("Separate post-failure developmental EVENT-prefix acquisition, not rep
 def sealed(value):
     prefix.unseal(value, value["sha256"])
     return value
+
+
+def validate_rng_state(value):
+    require(type(value) is dict and set(value) == {"cpu", "cuda"}, "native RNG state fields")
+    native.sha(value["cpu"])
+    require(type(value["cuda"]) is list and len(value["cuda"]) == 1, "single-GPU native RNG state")
+    native.sha(value["cuda"][0])
 
 
 def source_binding(sources):
@@ -174,7 +181,7 @@ def training(archive, fitted, completion, manifest):
             native.number(update[key])
         require(update["post_clip_norm"] <= 1.00001, "post-clip norm")
         for key in ("rng_before", "rng_after"):
-            native.sha(update[key])
+            validate_rng_state(update[key])
     adapter = archive.read("fit/adapter.json")
     same(adapter["path"], str(Path(manifest["root"]) / "fit/write/adapter"), "original checkpoint path")
     inventory = {name[len("fit/write/adapter/"):]: entry for name, entry in archive.inventory.items() if name.startswith("fit/write/adapter/")}
