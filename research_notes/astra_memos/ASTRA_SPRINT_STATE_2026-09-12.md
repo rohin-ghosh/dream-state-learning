@@ -1,4 +1,28 @@
-## Current superseding snapshot — 2026-09-12 23:38 UTC
+## Current superseding snapshot — 2026-09-13 02:47 UTC
+
+Mission ACTIVE/incomplete. Main Q0 root1 writer test is LIVE on node3GPU2,
+controller298494/auditworker298807, hard deadline03:27:18UTC. Exact immutable
+source, source/test/support hashes, native209-test acceptance and restart-safe
+commands are in the newest HANDOFF and ASTRA_Q0_NATIVE_PREFLIGHT memo.
+Do not restart this root or modify its source. No Q0 scientific terminal yet.
+Formal C11 guard deferred; simple hygiene and closed scientific constants hold.
+
+SEQ118 sequential-memory pair and SEQ123/124 protocol/projection diagnostics
+are COMPLETE/collected/reviewed, not live. No projection fits/writes occurred.
+Qualified parent semantic review and public-marker confound prohibit blanket
+control purity or P/A efficacy claims. V2 task-local markers CPU-tested only.
+The throughSEQ124 six-file manuscript is reviewed/committed; collaboratorUNSENT.
+Public Qwen model identity is prospectively verified for14 node3 cached files;
+historical labels unchanged, clean ancestry not established. No generalG3/P1/G5/
+H1/H2 or mechanism-freeze promotion. Conditional future endogenous-relay CPU
+component delegated; it cannot launch or import Q0 outputs before its gate.
+
+Actual node3 nvidia-smi -L at02:46:49UTC enumerates seven A40s(indices0–6),
+not eight. SelectedGPU2 remains identifiable and its audit is running. Treat
+fleet24 as a reported allocation, not24 currently confirmed usable devices.
+Fable owns hardware/onboarding follow-up; no Main reset/reboot/foreign kill.
+
+## Historical superseded snapshot — 2026-09-12 23:38 UTC
 
 Mission ACTIVE/incomplete; exact processes/commands in newest HANDOFF.
 Mechanism: FOUR interleaved authored memory meets fixed joint thresholds on

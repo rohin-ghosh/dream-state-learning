@@ -18,6 +18,11 @@ synthetic historical root1 writer falsifier, not a clean child or parenting run.
   `/localhome/local-rohing/astra_sources/q0_final_cpu_20260913_attempt1`.
   Original d160 source/test support is separate from the Q0 scientific-input
   allowlist. No later birth/projection data enters the root or its selections.
+- Full final native source/support archive is preserved on node3, the VM's
+  gitignored gpu_artifacts_local copy, and in receipts. SHA256
+  `78be7289cd08767aa9532afa7fab623194dff63a26810723329b684299efaa40`;
+  2,245,764 compressed bytes. Main verified all319 archived file hashes equal
+  the union of the17 runtime pins and302 regression-support pins.
 - Frozen Qwen revision and local14-file inventory bind prospectively to Main's
   official model-only receipt, SHA256
   `e87abf9c83845a32bb5df3828901dde1929e86a57fa0278158d4101b7df9a019`.

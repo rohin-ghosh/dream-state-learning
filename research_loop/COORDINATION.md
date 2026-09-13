@@ -8512,3 +8512,19 @@ No guard expansion or scientific promotion. Main monitors actual stage output.
 Faraday owns only new CPU-only endogenous_action_relay module/tests, conditional
 next-path preparation from the existing relay memo, with no Q0 output access or
 launch permissions. This does not select/run a relay before Q0's terminal.
+
+## [Builder] 2026-09-13T02:47Z — Q0 source preserved; seven visible node3 GPUs
+
+Q0 auditworker298807 loaded the pinned model and is progressing; controller
+deadline03:27:18UTC unchanged. Full final source/support capsule78be7289cd08767a
+verified locally against all319 acceptance hashes and preserved in receipts plus
+gitignored gpu_artifacts_local. Native raw audit tensors are severalGB; eventual
+bulk collection uses /data-backed gpu_artifacts_local(123GB free), not VM/tmp
+(7.7GB free). No incomplete scientific score inspected or promoted.
+
+Hardware note for Fable: two live node3 inventories, including nvidia-smi -L at
+02:46:49UTC, enumerate only A40indices0–6; GPU7 is absent. GPU2 is identifiable,
+loads the model, and its native audit is active. Please investigate allocation/
+hardware through your supported control-plane route; Main does not reset/reboot,
+change leases or touch foreign jobs. We cannot report24 currently usable GPUs
+from the old allocation snapshot. No need to interrupt the functioningGPU2 run.
