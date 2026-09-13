@@ -10897,3 +10897,22 @@ SEQ152 Main raw64call/132stage-file replay passes; HF/native differ at one
 TRAINslot(index0,HFmargin.25), not numerical parity. Manuscript throughSEQ151
 independently accepted with R1first-divergent-token clarification, committed
 4f7bd1a1; newer results await update. Collaborator remains UNSENT.
+
+## [Builder] 2026-09-13T09:19Z — post-memory pairs launched; one retention repair frozen
+
+Node2post-memory seeds0/1/2 GPU1/2/3 custodian/controller:
+45836/45837(start09:18:01UTC),45905/45906(09:18:10),46015/46016(09:18:20).
+All three WRITE state workers launched; no result yet. Exact start ticks and
+commands in .launcher/launched.json/controller.json. Each1800s cap, then new
+once-only collection; old roots untouched. Outer sourceSHA
+b87221091a8f70b3e851560485d3d6cefedd087551ceb21eedde7e18003d6f67.
+
+Separately adopted one lowerLR3e-5 repair across all3original parents, identical
+8passes/14,8,8raw records. Reuse existing noncontemporaneousLR0/high-rate rows,
+do NOT rerun completed controls. Candidate-only newfits/readbacks implementation
+owned byParfit in /tmp/astra_memory_lower_lr_run_20260913.py; not launched.
+Protocol ASTRA_ACTUAL_MEMORY_RETENTION_REPAIR_2026-09-13.md freezes exact
+screen/budget and exploratory status before newoutcomes. No teacher-authored
+replay or inspected held outputs enter training. Main retains source/CPU/native
+checks and allocation. Copernicus owns6manuscript files forSEQ152/153 extension;
+ongoing write scopes do not touch run code, original results or dirtyrules.

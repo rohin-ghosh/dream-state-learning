@@ -1,4 +1,17 @@
-## Current superseding snapshot — 2026-09-13 09:02 UTC
+## Current superseding snapshot — 2026-09-13 09:19 UTC
+
+SEQ152nativegreedy confirms14/16TRAIN versus8/16READOUT forhighseed2, not
+HF15/16parity. SEQ153all3actual-child writes improve exact/paraphrase recall
+overLR0 but lose3/11/31heldperceptionitems despite12/12canaries. Fullcontrols,
+archives andindependentreductions preserved. These are bounded positivecarriage
+and negativeinterference findings, not stablemechanism/parenting/freeze/H1/H2.
+Post-memoryfreshinteraction6states LIVE node2GPUs1/2/3 (three pairedcontrollers,
+09:18starts,1800scap), no newwrite. LowerLR3e-5 repair withreusedoldcontrols
+specified, runnerinCPUdevelopment, notlaunched. Copernicus updates6manuscript
+files throughSEQ153. CurrentHANDOFF has exactPIDs/roots/plans/ownership.
+Mission ACTIVE/incomplete; formalC11guard deferred, simplehygiene operative.
+
+## Historical superseded snapshot — 2026-09-13 09:02 UTC
 
 Mission active/incomplete. SEQ146 all24authored standalone skills complete,
 three second-roster canary losses. SEQ149 real formation now supplies14/8/8

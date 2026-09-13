@@ -1,6 +1,53 @@
-# Astra current handoff — 2026-09-13T09:02Z
+# Astra current handoff — 2026-09-13T09:19Z
 
-## CURRENT — September13 09:02UTC (supersedes all snapshots below)
+## CURRENT — September13 09:19UTC (supersedes all snapshots below)
+
+MissionACTIVE/incomplete; simple hygiene now, C11formalguard only finalpaper.
+SEQ152nativegreedy COMPLETE/archived: OFF8/16TRAIN+8/16READOUT,fit2highseed2
+14/16TRAIN+8/16READOUT; HF15/16 is distinct. Native64calls/351.212s/0updates,
+allstop/legal. Main raw64call/132file replayPASS; controller371846 released.
+
+SEQ153all3actual-child memory pairs COMPLETE/collectedONCE/archived. WRITE
+exacteligible8/14,7/8,5/8 versusLR00;paraphrase6/14,5/8,5/8 versus0. BUT held
+perception44/37/17 versus47/48/48:3/11/31losses; canaries12all. Not stable
+substrate, generalG3, P1, H1/H2 orfreeze. Main/independent local reductions
+agree; archivecustodyhas no payload mismatch, historicalrelease is attested,
+not independently authenticated. Old memory PIDs all exited; do not recollect.
+Archive3ed6579e7e885139d78faf3457eb3bec254215d36b533558ef22f8199ff6a003
+at gpu_artifacts_local/actual_record_memory_20260913_attempt1/evidence.tar.
+Scores/analysis/audits now versioned in receipts_20260912. Original parents
+and dependencies remain separate pinned archives listed in custodyaudit.
+
+LIVE post-memory freshinteraction pairs, node2GPUs1/2/3 seeds0/1/2:
+custodian/controller45836/45837,45905/45906,46015/46016. Starts09:18:01/10/20UTC,
+1800scontroller/900state/180collection. All WRITE workers launched, noresults.
+Root /localhome/local-rohing/astra_diagnostics/post_memory_formation_seedN_20260913_attempt1.
+Plan hashes:
+72db084518088d12198e738b814d4e12ffa08a4c9dce72cad8d2e3c5a3fbd640
+1b322c44bc90a0983550e71f94688851e27762cbab0e977c1e09cbd7fd99dfca
+614258c09bf2334df26fad586d6e0c9b0b1c1f7a08e7d2da8ebe10664e04cdff
+Runner /tmp/astra_post_memory_formation_run_20260913.py SHAc8ca3444...;
+core030c97c5...; Main29runner+12coreCPUtestsPASS, all3nativepreparationsPASS.
+No newfits/updates/parent. Eight freshopaque IDs,two turns,even examplepresent/
+oddexampleabsent; all6WRITE/LR0states retained regardless of gains/harm.
+Inspect .launcher stdout/exit and root capture_complete/controller_failure.
+After complete+absence collect NEW roots once using runner collect with exact
+plan/completionSHA and fresh OUT. No originalcollectors, retries or scoringpartial.
+
+NEXT independent repair: one3e-5 candidate from each ORIGINAL parent, same
+records/eightpasses;3fits/240updates/240calls, reuse oldLR0/high endpoints.
+Protocol ASTRA_ACTUAL_MEMORY_RETENTION_REPAIR_2026-09-13.md. Parfit owns
+/tmp/astra_memory_lower_lr_run_20260913.py/tests/handoff; not prepared/launched.
+ProposedGPU4/5/6 only afterfreshchecks. Never overwrite livepostmemory routes.
+Copernicus owns sixmanuscript files extending throughSEQ153; prior through151
+independentlyaccepted4f7bd1a1. Do not stage partial edits. Beauvoir custodyaudit
+complete; Lovelace prepares postmemoryanalysisplan; Descartes runnerEDITSTOP.
+Keep all unfinished files/agents; preserve dirtygpu/codex/dream_state.rules.
+Current branchmain, latest702d790d beforethissnapshot. No external send/approval.
+Next: monitor/collect/archivenewinteraction, prepare/launchboundedretentionrepair,
+analyze both, then update manuscripts/evidence. Fullmissionnotcompleted.
+
+## HISTORICAL — September13 09:02UTC
 
 Mission ACTIVE/incomplete. Simple hygiene now; formal C11 guard final-paper only.
 Latest pushed a65703b8 before this update. Unrelated dirty rules preserved.
