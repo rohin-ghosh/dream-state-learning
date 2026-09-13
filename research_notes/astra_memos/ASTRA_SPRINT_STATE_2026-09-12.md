@@ -1,4 +1,16 @@
-## Current superseding snapshot — 2026-09-13 11:31 UTC
+## Current superseding snapshot — 2026-09-13 11:42 UTC
+
+AdditivepairsLIVE node2GPUs0/1/2, holders135911/135927/136095,controllers
+135913/135928/136096. SeeHANDOFF exactplans and preserved transportBrokenPipe
+anomaly; no scientificretry. MainCPU69tests+tinyCPUgradient/parity+all3native
+prepsPASS logged/pushedeff29f77beforelaunch. Auto-collectONCE; no manualcollection.
+6fits1632updates480calls maximum; originalparents/equalmemorydose,notcompute.
+Parfitpreoutcomereducer. SEQ160 independentlyreduced/archived, failedgate but
+not rawprocessabsence. Manuscript160independentreviewpending,UNSENT. PCFLactual
+execution-gap audit is Maincriticalpath while pairsrun; new measurementproxy
+CPUonly, no launchallocation. FormalC11guarddeferred. MissionACTIVE/incomplete.
+
+## Historical superseded snapshot — 2026-09-13 11:31 UTC
 
 UPDATE: SEQ160 now independently reduced/archived. Frozen gateFAILS, all9
 process/materialcells0/16. AllNOTEsources fail normalization; no raw-required-

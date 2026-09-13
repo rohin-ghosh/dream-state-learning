@@ -1,6 +1,33 @@
-# Astra current handoff — 2026-09-13T11:31Z
+# Astra current handoff — 2026-09-13T11:42Z
 
-## CURRENT — September13 11:31UTC
+## CURRENT — September13 11:42UTC
+
+Three additive paired controllers LIVE onnode2GPUs0/1/2. Holders/controllers
+135911/135913,135927/135928,136095/136096. Starts11:39:17/11:39:31/11:40:10UTC.
+Roots/localhome/local-rohing/astra_diagnostics/additive_replay_seedN_20260913_attempt1.
+Plans0/1/2:77a7e3f39005e10c0f3085dc68aabdebc31f33f9684925125c2a261039555c45,
+7d426da11e418d0b23a2513b9b76b1b0acf49bfaf544132ee1760e4bcadcff2b,
+9d0fbcc9d8b40184348f849477a502250c385037eb297b24225793f804cfa3c6.
+PreGPUacceptanceeff29f77:Main19/10/18/22CPUtestsPASS,native tinyCPU PASS,
+all3nativeprepsPASS. All scripts/tests/handoffs archivedreceipts_20260912.
+6fits1632updates480calls,7200scontroller+180scollectionpair,8A40hcap. Same
+memorydose/order,notcompute/RNG. Holdersauto-collectONCE; DO NOT recollect/retry.
+Transportanomaly: combinedSSH timedout30s;seed1launcher printBrokenPipe after
+successful launch; liveholder/controller confirmed, NOT relaunched. Seed2 first
+launched separately only after no-launch check. Preserve sibling.launcher/
+failure.json; full native completion still required. No results read yet.
+Parfit owns pre-outcome reducer; only reveal verified entire completed archive.
+
+SEQ160DONE, failedfrozenalignmentgate with schema/lexical limitations; never
+repeat launch/collection/reduction. Manuscriptthrough160 awaiting independent
+review. CopernicusauthorEDITSTOP,Descartesreview; collaboratorUNSENT. Main now
+reconciles actual PCFL execution gap with new laptop advice; Beauvoirread-only
+codeaudit. Lovelaceowns CPU-only explicit-contractmeasurementcore; no launch
+authorized or priority over directvertical. FormalguardonlyfinalpaperC11;
+simplehygienenow, nofreeze/generalG3/P1/H1/H2/cleanclaim. MissionACTIVE.
+Dirtygpu/codex/dream_state.rulespreserved; noapprovalrequest.
+
+## Historical superseded snapshot — September13 11:31UTC
 
 UPDATE: SEQ160 independently reduced and archived. Frozen gateFAILS; all9
 PROCESS_USE/RECORD_FAITHFUL/FULL_MATERIAL cells0/16; RESTATEaligned0/0/2.

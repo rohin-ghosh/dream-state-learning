@@ -11969,3 +11969,46 @@ Three fresh independent audits converge on the same ordering. (1) `research_note
 **Additive replay trainer (CPU prerequisite PASS, 11:31):** the summed per-target objective from Codex's 20:23 design (memory loss + replay loss as separately normalised masked CE, unequal target lengths; exact parity with the legacy memory-only path when replay is absent; frozen base, immutable parent, fresh optimizer, write-once outputs) passed the tiny native-environment CPU test. This is the tool for the next own-record write: keep the SEQ-159 retention while recovering the recall it cost.
 
 **Fleet:** 0 of 31 at 11:35 (alignment collected; next fits in preparation). Nudger: Astra active. Laptop chains 4/4. Node-1 lease ends 2026-09-14 23:14 UTC. Nothing killed or launched by the watcher.
+
+## [Builder] 2026-09-13T11:42Z — additive pairs live; transport timeout reconciled without duplicate runs
+
+Pre-GPU code/tests/nativepreparations committed eff29f77 beforelaunch. Node2
+boot8ff7b0dc-fbdf-4945-9044-3dffe94b5407, three original perception parents.
+Actual full nvidia/proc/CVD vacancychecks passed inside each launch.
+
+|Seed|GPU|Holder/controller PID|launched.started_unix|Plan SHA256|
+|---|---|---|---|---|
+|0|0|135911/135913|1789299557.605374|77a7e3f39005e10c0f3085dc68aabdebc31f33f9684925125c2a261039555c45|
+|1|1|135927/135928|1789299571.0430813|7d426da11e418d0b23a2513b9b76b1b0acf49bfaf544132ee1760e4bcadcff2b|
+|2|2|136095/136096|1789299610.4598126|9d0fbcc9d8b40184348f849477a502250c385037eb297b24225793f804cfa3c6|
+
+Starts11:39:17/11:39:31/11:40:10UTC. Native roots
+/localhome/local-rohing/astra_diagnostics/additive_replay_seedN_20260913_attempt1.
+Command eachN via gpu/ovx_ssh.sh:
+`env CUDA_VISIBLE_DEVICES='' /localhome/local-rohing/v2/venv/bin/python -B /tmp/astra_additive_replay_main_20260913.py launch --seed N --runner-sha256 ca54e7e1971d89224bb8dec8f3518d0a6a73ec4d1abe6f29278bab335b1618a5`.
+
+The initial combined SSH tool timed out at30s. Seed0 AND seed1 holders/controllers
+were already launched. Seed1 retained sibling.launcher/failure.json:
+BrokenPipeError(32,'Broken pipe'),holder_may_be_running=true, after its valid
+launched/controller receipts; this is the launcher printing to a closed SSH
+channel, not evidence of a failed fit. Main inspected live identities/receipts,
+DID NOT relaunch0/1. Seed2 had no launcher/controller receipt and was first
+launched separately with a120s tooltimeout. Preserve this anomaly and all
+receipts; reducer must report it separately and still require complete native
+controller/collector/holderrc0 and raw validation. No scientific retry occurred.
+All3roots currently show ADDITIVE_fit stage;0/1workers hold intendedGPUs.
+No outputs inspected, no result inferred. Do not manuallycollect: holders
+auto-collectONCE aftercontroller0. Parfit owns pre-outcome reducer; reveal only
+verified completed archives. No foreignprocess killed or approval requested.
+
+SEQ160 independent reduction is now DONE, not pending as the watcher snapshot
+states;937ecd69 archives exactcounts and schema/lexical limitations. Manuscript
+through160 authored, independentreview underway, collaboratorUNSENT.
+
+Read laptop PCFL-closure recommendation: it is relevant design advice, not new
+human ratification or a reason to kill these bounded pairs. Additive remains
+the already-frozen parallel mechanism test. Main is now checking the concrete
+PCFL execution gap; Beauvoir owns read-only code/API audit. The explicit-contract
+measurement follow-up toSEQ160 is CPUdesign only, no GPU allocation or parent
+learning claim, and will not displace a runnable thesis-level vertical. No
+automatic adoption of balanced rotation, new thresholds or a formalC11guard.
