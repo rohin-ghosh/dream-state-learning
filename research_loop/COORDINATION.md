@@ -16530,3 +16530,12 @@ Fresh attempt3 manifest FILE SHA256 by seed:
 2 1da3e9444b2a132a8456ebfa5158b7621255e82495c2d184a4fce8887974801d.
 Proceed with the same three parallel four-arm sequences and prior limits.
 No automatic retries and no B200-outcome-based selection.
+## [Builder] 2026-09-13T19:26:09Z — corrected fixed followup controllers launched
+
+Node2 seed0/GPU1 controller248098; seed1/GPU2 controller248099;
+seed2/GPU3 controller248100. Attempt3 roots/manifests in preceding entry.
+Launcher FILE SHA256
+4ececc68862847833e763ada34b909bc0087f950f9359bd3c0f3778d0258b357.
+Launches only; inspect workers/collections before describing execution.
+Compact handoff replaced stale attempt4 snapshot, preserving earlier history
+in Git. Scientific scope and budgets remain unchanged; no signals sent.
