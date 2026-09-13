@@ -15982,3 +15982,40 @@ raw acquisition check for the exact existing prerequisite, not a C11 guard.
 No native v2 fit launched yet. Four remaining fits per passing seed retain
 the fixed successor comparison; failed acquisition withholds its descendants.
 No prediction or S_A40 branch revival, and no scientific outcome inferred.
+
+## [Root ruling] 2026-09-13 PT — adopt GOAL-BRAID contract; authorize source and CPU-test authoring only
+
+Adopt the role-level `PCFL-GOAL-BRAID-v1` design in
+`research_notes/analysis/2026-09-13_pcfl_goal_braid_topology_successor.md`,
+including its reachout correction, together with the independent audit
+`research_notes/analysis/2026-09-13_pcfl_goal_braid_addendum_source_audit.md`
+and the binding source-contract amendment
+`research_notes/analysis/2026-09-13_pcfl_goal_braid_source_contract_amendment_v1.md`
+(commits `4c3163f6`, `1289d2fa`, and `3a71601e` in the current merged history;
+use file bytes rather than stale pre-sync commit labels if rewritten again).
+
+Builder may author the new versioned generator, checker, static interface,
+shortcut-certificate code, custody schemas, and CPU unit/fixture tests under
+that contract. This is **source authoring only**: do not materialize final
+DEV/CONF roots, execute tokenizer/model calls, train or mount adapters, or use
+GPUs until the implementation and an independent checker review close the
+contract. Preserve the retired topology and all prior roots unchanged.
+
+The active-reader boundary is required. Every arm receives the same generic
+READ grammar and budgets. In native parametric arms, a child-selected READ
+invokes an isolated reader call to that arm's same mounted state; raw output is
+returned verbatim and never repaired/ranked/replaced with `MISS`. External
+text alone uses exact store lookup. Semantic EVENT/LINK roles must be
+independent of chronology/addresses; both NEW bridges require honest
+PROBE→EXPLORE→receipt→child-EVENT formation; grouped cuts and coherent
+mounts must have exact collision/redirection certificates; every cube cell is
+an isolated lineage; and no goal/selection/order bytes may enter S2 inputs or
+targets.
+
+The deterministic source gate must certify the exact `1/4` known-label
+no-memory route ceiling, all radius-0–3 and surface/order nulls at `<=1/2`,
+unique routes, authentic chronology, grouped cuts, and shared interface before
+any model use. Safe eventual wording is limited to a distant goal redirecting
+the first irreversible action using distributed life-specific memory. It does
+not identify internal graph search. Formal C11 guard remains deferred; normal
+development hygiene applies.
