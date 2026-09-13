@@ -1,6 +1,43 @@
-# Astra restart handoff — September 13, 2026, 23:13 UTC
+# Astra restart handoff — September 13, 2026, 23:43 UTC
 
-## Current superseding increment at 23:13 UTC
+## Current superseding increment at 23:43 UTC
+
+Future-ID source bridge and actor accepted, independently reviewed on exact
+hashes. Integrated553tests:536PASS/17native-only skips,294.802s;52source/test
+hashes unchanged. Native actor2PASS2.657s on node2 CPU tinyGPT2/rank8PEFT and
+synthetic tokenizer; separate prior9trainer/6checkpoint receipts remain.
+No combined native17run, Qwen/tokenizer/CUDA/learning qualification inferred.
+Exact sources/receipts/custody: analysis/2026-09-13_stage2a_future_actor_integration.md.
+No test or GPUexperiment remains active from these receipts.
+
+Actual manuscripts/abstract/collaborator updated throughSEQ192/195, independent
+scoped PASS, two wording findings closed. All3 active abstracts identical254
+words; oversized historical payloads preserved verbatim and hash-checked.
+No TeX engine/PDF build; unresolved citations remain. CollaboratorUNSENT.
+Review/pins: analysis/2026-09-13_manuscript_seq192_seq195_sync_review.md.
+
+Remaining source-contract questions: multi-step registered-route membership,
+boundaries/recovery/termination/rendering and core depth/history conventions.
+Future universe/disclosure are now bound and implemented; complete scientific
+semantic/route inventory still absent. No reply observed at latest23:43pull.
+Do not invent these, substitute empty inventories or bypass material/native
+opening. FormalC11 remains deferred. No freeze/scientific/mission completion.
+
+Active worker James01a09d0f-25f9-7582-8e4b-8fba5b27c2bd owns ONLY new
+composition_birth_stage2a_screen_runtime.py and its test: single-state reduced
+roster dispatch and state/slot/physical-call custody joins. FakeCPUtests only;
+no new material semantics, loaders, retries, D2choice or jobs. Main integrates
+and owns docs; Turing available for focused review. Other completed workers
+closed. Preserve unrelateddirtyrules and unreviewedTSJdraft. Node1preservation
+deadline23:14UTC has passed; prior bounded audit unchanged, no new node1writes.
+Lease endSeptember14 23:14UTC. No universal mirror coverage is asserted.
+
+Next: finish/review this orchestration slice while waiting for exact source
+bindings, then full inventory/source audit and separate preparation opening.
+Experiment remains reducedBASE/D1ATOM_LOCAL560reservedslots then qualified
+same-adapter authentictwo-SLEEP. SEQ195/Q0 complete, never relaunch.
+
+## Historical superseded increment at 23:13 UTC
 
 Full-constructor/exact-record validator implemented in source_inputs.py;
 Main15CPUtests PASS41.108s,48source/test hashes unchanged, independent focused

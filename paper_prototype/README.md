@@ -1,14 +1,122 @@
 # Experience Models — ICLR 2027 submission (revised draft v3, 2026-09-10 fix pass)
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This draft through SEQ188 retains earlier positive and negative findings;
+This draft through SEQ195 (C105–C106) retains earlier positive and negative findings.
+SEQ192 fails prediction prompt-package robustness; SEQ195 supports only
+scheduled replay retention on one exposed eight-EVENT DEV bank. Both TeX
+manuscripts now report the results and limits in their actual results sections;
+all three abstract surfaces carry the bounded update.
 SEQ167 and SEQ169--173 are engineering-only logs, excluded from scientific results.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
-independent review, with no later outcomes incorporated.
+independent manuscript review; no outcomes beyond SEQ195 are incorporated.
+Stage2A source/runtime remains blocked and supplies no scientific result here;
+the full sprint remains incomplete. No G3/H1/H2, parenting or freeze promotion.
 
-**Through SEQ188 / C104: no exact sequence acquisition; retention undefined.**
+## Current evidence and custody through SEQ195
+
+- **C105 / SEQ192 negative:** three existing adapters, 24 shared fresh authored
+  cases per FULL/MINIMAL view. FULL post 24/23/19 versus OFF 16/24 each;
+  MINIMAL post 24/1/18 versus OFF 14/24 each. The every-learner continuation
+  rule fails in seeds1/2. Strict MINIMAL post 0/0/18 is distinct from content;
+  no same-ID counterfactual test or isolated evidence-use claim. Zero fits or
+  updates; 288 eligible + 192 excluded failed-attempt = 480 actual calls.
+- **C106 / SEQ195 bounded positive:** one exposed, format-assisted eight-EVENT
+  DEV bank, three optimizer seeds, repeated cold W0/W8 views. After A200 gives
+  A4/4, both B-only writes leave A0/4 while acquiring B4/4; REPLAY400 and
+  CLEAN_CUM600 each give A4/4 and B4/4 in every seed/view. B200 matches B dose;
+  B400 matches updates/presentations, not B dose or exact target-token work.
+  No control is jointly dose/work-matched; the saturated cumulative tie is
+  not equivalence. Accepted work: 15 fits/5,400 updates/21,600 presentations/
+  288 readouts. Excluded attempts: 5 fits/1,000 updates/4,000 presentations/
+  zero readouts. **Failure-inclusive: 20 fits/6,400 updates/25,600 presentations/
+  288 readouts**. No unseen-bank, selectivity, LINK/action, parenting,
+  clean-lineage, broad G3/H1/H2, lifetime or freeze claim.
+
+Exact source trail (September 13, 2026):
+
+- [Claim map C105–C106](../research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md#c105--seq192-prediction-worksheet-prompt-package-robustness).
+- [SEQ192 result memo](../research_notes/analysis/2026-09-13_level1_prediction_transfer_result.md)
+  and [durable audit JSON](../research_notes/astra_memos/receipts_20260912/astra_prediction_transfer_audit_20260913_result.json),
+  file SHA256 `9ca1433d5cce275cbc9ae8af1a36a43e7f93351d28eb823e9d6e5cde8c821344`.
+- [SEQ195 raw report](../research_notes/analysis/2026-09-13_event_retention_v2_three_seed_raw_report.md),
+  [analysis](../research_notes/analysis/2026-09-13_event_retention_v2_three_seed_analysis.md)
+  and [fresh independent audit](../research_notes/analysis/2026-09-13_event_retention_v2_three_seed_final_fresh_audit.md).
+  Local `gpu_artifacts_local/pcfl_v2_final_three_seed_20260913_attempt1/reduction.json`
+  has file SHA256 `49dad92b29779ccbcd346deba243ab81e38e34d1288f67936050c0f752a5ee1f`.
+  The audit recounts all 288 decisions (168 correct/120 incorrect), all stop
+  terminated, with zero truncations. Its GO is bounded exposed-DEV retention,
+  not standalone confirmation; reducer non-promotion flags remain unchanged.
+- [Notebook](../research_loop/COORDINATION.md): Builder 18:18Z (SEQ192),
+  21:22Z (SEQ195 completion), 21:31Z (recount), and Root evidence promotion
+  21:40Z (bounded acceptance). These are results/audits, not the neighboring
+  Stage2A CPU test logs. Exact reproduction requires the audit's **five**
+  separately hashed archives and source commit
+  `3f4c03bc80298d5fd1062db49fbe26174fdc1b34`; the final archive alone is not
+  standalone. Final archive SHA256:
+  `e0492b7ec5c5034490ee19c848a36b40884a780d4675ffd4749cca407b7f7438`.
+- [Post-SEQ195 critical-path re-audit](../research_notes/analysis/2026-09-13_post_seq195_critical_path_efficiency_reaudit.md)
+  supplies strategy only, not scientific outcomes or launch authorization.
+  Its record-hygiene warning predates the claim map's C106 entry; no repeat
+  retention run or broader claim follows from it.
+
+This is a reporting-only synchronization, not a new scientific claim or change
+to author intent. Earlier negative tables, failed gates and engineering-only
+exclusions remain. Collaborator summary stays **UNSENT**. No bibliography,
+literature, experimental source or unreviewed TSJ draft is changed.
+No TeX engine, latexmk, Pandoc or ChkTeX is available on this machine; no
+packages are installed and no PDF/layout/page-count claim is made. Remaining
+manuscript work includes independent manuscript review, a real TeX build,
+full-manuscript length/layout checks and later integration evidence; old dated
+length claims below are historical.
+
+**Abstract organization (September 13, 2026; UNSENT).** The active abstract is
+now synchronized verbatim across both TeX abstract environments and the first
+`## Abstract` in the companion Markdown: 254 whitespace-delimited words,
+with H1/H2 as proposed questions and the bounded SEQ192/SEQ195 outcomes.
+Each TeX file moves its entire previous abstract payload, byte for byte,
+to `Historical extended abstract: verbatim evidence log` before the document
+end, outside the active abstract. The companion places the concise abstract
+first and relabels the old section `Historical extended abstract — verbatim
+evidence log`, retaining its full body and source links unchanged. This is
+organization only, not a claim revision, deletion of negative evidence,
+mechanism freeze, submission or completed sprint. The collaborator summary
+remains UNSENT; no bibliography, authorship or experimental result is changed.
+Structural/word-count checks and byte-preservation hashes cover this move;
+no new scientific metric, experiment or model call is introduced.
+
+Abstract-move preservation manifest (1-based inclusive line bounds; UTF-8
+SHA256). Active hash excludes only outer whitespace and includes the exact
+shared line wrapping: `933d3b7aabd6dc9856cf08641affdeff8cf9d7acad1f35d0dea077fdfa304ffd`.
+Historical hashes include all original payload whitespace; each equals its
+pre-move snapshot. TeX active bounds include both environment delimiters;
+Markdown active bounds below are the body under the heading at line3.
+
+| File | Active bounds | Historical heading | Verbatim payload bounds | Preserved payload SHA256 |
+| --- | --- | --- | --- | --- |
+| `astra_sprint_draft_20260912.tex` | 362–392 | 4673 | 4677–4855 | `75f62096cb15ac8957fac2c1c9478d191b36c93660fd95f98faddd014aabd4a6` |
+| `main.tex` | 229–259 | 2758 | 2762–2914 | `9bb07d978ed2b9e4bbe14931b0cb0aa758104141df29484dfa06e1e1b64350f2` |
+| `astra_sprint_abstract_20260912.md` | 4–33 | 549 | 550–719 | `0113f28977b9d0e6cee8d9b032c54b6c89616acc0f7e1aa1a8ee1fde94a211ec` |
+
+The preservation check reverses just these moves to reconstruct each of the
+three pre-edit files exactly. Brace/environment/reference checks pass; table,
+authorship and citation content is unchanged. This does not certify PDF layout.
+
+Bounded local checks on September 13, 2026 verified both JSON file hashes,
+SEQ192 scores/stop/costs, all 288 SEQ195 raw hash-plus-stop decisions and work
+totals, new source-link targets, escape-aware TeX braces, environment/reference
+balance, and both added tables' columns. All 61 sprint and 38 main historical
+tables, prior abstract text, titles/authors and citation calls are preserved;
+the new abstract paragraph is identical across all three surfaces. No new
+structural errors or diff whitespace errors. The existing rough TeX checker
+still flags complex-table/path syntax and the unchanged missing bibliography
+keys `TODO-auto-dreamer` and `TODO-consolidation-collapse`; this is not a clean
+compile claim. Pre-reorganization TeX abstract whitespace counts were 1,700 (sprint) and
+1,573 (main); those complete payloads are now historical evidence logs, not
+active abstracts or submission-certified page estimates.
+
+**Historical SEQ188 / C104: no exact sequence acquisition; retention undefined.**
 The eligible changed-recipe screen alters output without exact acquisition;
 remaining fit phases are withheld. Prior scoped acquisition and reader STOP
 remain unchanged. This closes the17:25 UTC evidence checkpoint, not the

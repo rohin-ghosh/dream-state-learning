@@ -1,12 +1,23 @@
 # DRAFT ONLY — unsent collaborator update
 
+**Manuscript organization only — UNSENT.** A synchronized 254-word
+current abstract now leads the companion and fills both TeX abstract
+environments. All previous abstract text remains verbatim in marked
+historical evidence logs outside the active abstracts. H1/H2 remain
+proposed questions; the bounded SEQ192 negative and SEQ195 retention
+findings, authorship, citations and incomplete-sprint status are unchanged.
+
 **Ongoing first-sprint working draft — research question unresolved.**
-This draft through SEQ192 retains earlier positive and negative findings;
+This draft through SEQ195 (C105–C106) retains earlier positive and negative findings.
+SEQ192 fails prediction prompt-package robustness; SEQ195 supports only
+scheduled replay retention on one exposed eight-EVENT DEV bank.
 SEQ167 and SEQ169--173 are engineering-only logs, excluded from scientific results.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
-independent review, with no later outcomes incorporated.
+independent manuscript review; no outcomes beyond SEQ195 are incorporated.
+Stage2A source/runtime remains blocked and supplies no scientific result here;
+the full sprint remains incomplete. No G3/H1/H2, parenting or freeze promotion.
 
 **SEQ192 / C105: prediction prompt-package robustness branch stops.**
 Three existing SEQ142 prediction adapters, without new fits or updates, were
@@ -41,8 +52,8 @@ Primary attempts2/2/1 were selected before outcome inspection; original
 seed0/1 controller custody-check failures remain ineligible, not repaired
 receipts or zero-score observations. **288 eligible+192 failed-attempt=480
 actual calls**, zero fits, updates, or parent calls. Shared cases and repeated
-frozen OFF do not supply independent banks. Retention-v2 runtime integration
-is separate and supplies no result here. Prior results and author intent
+frozen OFF do not supply independent banks. The separate SEQ195 retention
+result below does not reopen this stopped branch. Prior results and author intent
 remain; neither manuscript nor mission is complete. This draft stays **UNSENT**.
 
 Sources: [SEQ192 result memo](../analysis/2026-09-13_level1_prediction_transfer_result.md)
@@ -50,7 +61,54 @@ and [durable audit JSON](receipts_20260912/astra_prediction_transfer_audit_20260
 SHA256 `9ca1433d5cce275cbc9ae8af1a36a43e7f93351d28eb823e9d6e5cde8c821344`.
 Detailed assertion-to-receipt mapping is in [C105](ASTRA_PAPER_CLAIM_MAP_2026-09-12.md#c105--seq192-prediction-worksheet-prompt-package-robustness).
 
-**Through SEQ188 / C104: no exact sequence acquisition; retention undefined.**
+**SEQ195 / C106: bounded scheduled replay retention, not a completed flywheel.**
+On one exposed, format-assisted eight-EVENT DEV bank, optimizer seeds0/1/2
+share four old A and four new B records. Cold W0 and exposed paraphrase W8
+give the same counts in every seed/view:
+
+| State | A exact /4 | B exact /4 |
+| --- | ---: | ---: |
+| NO_WRITE (C0) | 0 | 0 |
+| A200 | 4 | 0 |
+| B200_NEW_DOSE | 0 | 4 |
+| B400_FIXED_WORK | 0 | 4 |
+| REPLAY400 | 4 | 4 |
+| CLEAN_CUM600 | 4 | 4 |
+
+New-only writing loses A from4/4 to0/4 while learning B4/4; scheduled replay
+and clean cumulative each yield A4/4 and B4/4. The independent audit
+recounts288/288 raw decisions (168 exact-plus-stop,120 incorrect), all stop
+terminated with zero truncations. Three optimizer seeds and two views do
+not supply independent banks. B200 matches new-item dose, B400 matches
+updates/presentations but not B dose or exact target-token work: no control
+jointly matches dose and work. The saturated replay/cumulative tie does not
+establish equivalence. Warm branches inherit A200 LoRA weights with a fresh
+AdamW optimizer, not continued optimizer state.
+
+Accepted15fits/5,400updates/21,600presentations/288readouts plus excluded
+5fits/1,000updates/4,000presentations/zero readouts give **failure-inclusive
+20fits/6,400updates/25,600presentations/288readouts**. Failed-attempt work is
+counted once; excluded checkpoints are not primary observations. This is
+same-bank rehearsal retention only, not selectivity, unseen-bank reliability,
+LINK/composition/action use, parenting, clean lineage, general G3/H1/H2,
+lifetime improvement or a mechanism freeze. SEQ188's different-recipe
+negative and all earlier failed gates remain unchanged.
+
+Sources: [C106](ASTRA_PAPER_CLAIM_MAP_2026-09-12.md#c106--seq195-bounded-event-retention-comparison),
+[raw report](../analysis/2026-09-13_event_retention_v2_three_seed_raw_report.md),
+[analysis](../analysis/2026-09-13_event_retention_v2_three_seed_analysis.md)
+and [fresh independent audit](../analysis/2026-09-13_event_retention_v2_three_seed_final_fresh_audit.md).
+Reduction file SHA256 `49dad92b29779ccbcd346deba243ab81e38e34d1288f67936050c0f752a5ee1f`.
+The audit's five separately hashed archives plus source commit
+`3f4c03bc80298d5fd1062db49fbe26174fdc1b34` are required, not the final tar alone.
+The [notebook](../../research_loop/COORDINATION.md) records completion at
+21:22Z, recount at21:31Z and bounded acceptance at21:40Z on September13,2026.
+The [efficiency re-audit](../analysis/2026-09-13_post_seq195_critical_path_efficiency_reaudit.md)
+is strategy only; its claim-map-staleness note predates C106. Stage2A source
+tests and prospective integration plans are not completed scientific results.
+No new run or external message follows from this update. **UNSENT; full sprint incomplete.**
+
+**Historical SEQ188 / C104: no exact sequence acquisition; retention undefined.**
 The eligible changed-recipe screen alters output without exact acquisition;
 remaining fit phases are withheld. Prior scoped acquisition and reader STOP
 remain unchanged. This closes the17:25 UTC evidence checkpoint, not the

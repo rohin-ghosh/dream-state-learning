@@ -1,3 +1,4 @@
+import base64
 from dataclasses import replace
 from hashlib import sha256
 from pathlib import Path
@@ -552,6 +553,23 @@ class ForwardScannerTests(unittest.TestCase):
             prefix = b"DID " + PORT
             with self.assertRaisesRegex(ValueError, "bounded_public_fields"):
                 scan(prefix, fields=(public_field(prefix, PORT, "event_did"),))
+
+    def test_future_identifier_bound_is_separate_from_fields_and_routes(self):
+        identifiers = tuple(b"M2AQ_" + base64.b32encode(index.to_bytes(7, "big")).rstrip(b"=")
+                            for index in range(1, 16385))
+        self.assertEqual(len(set(identifiers)), 16384)
+        self.assertEqual(source.BOUNDS["future_identifiers"], 16384)
+        self.assertEqual(source.BOUNDS["fields"], 4096)
+        report = scan(identifiers[-1], future_identifiers=identifiers)
+        self.assertTrue(any(hit.category == "future_identifier" and hit.value == identifiers[-1]
+                            for hit in report.issues))
+        with self.assertRaisesRegex(ValueError, "bounded_ledger_sequence_required"):
+            scan(b"", future_identifiers=identifiers + (QUERY,))
+        self.assertTrue(scan(b"", registered_routes=(b"later route",) * 4096).passed)
+        with self.assertRaisesRegex(ValueError, "bounded_ledger_sequence_required"):
+            scan(b"", registered_routes=(b"later route",) * 4097)
+        with self.assertRaisesRegex(ValueError, "bounded_public_fields"):
+            scan(b"", fields=(None,) * 4097)
 
     def test_empty_compact_alias_is_unsupported_not_exempted(self):
         with self.assertRaisesRegex(ValueError, "empty_normalized_ledger"):

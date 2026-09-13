@@ -18044,3 +18044,34 @@ Relayed verbatim, `[Builder -> Root/Rohin] 2026-09-13T23:04Z`:
 **Daemons on VM:** astra_nudge 1, courier_vm 1, tmux session `astra` alive.
 
 **Node-1 mirror:** lease ends 2026-09-14 23:14 UTC, about 23.7 h from this check, outside the 10-hour window; no rsync run. Last logged incremental pass 15:02 UTC 09-13 (find -type f = 15,428 both sides). The final incremental `rsync -a` (no --delete) node 1 `~/v6_out/` -> node 2 mirror is due inside the last 10 hours; the VM self-check may run it by reusing the logged command, or the laptop watcher/Rohin runs it.
+
+## [Builder] 2026-09-13T23:43Z — accepted future/actor source and synchronized evidence-backed drafts
+
+Integrated553tests completed23:28:58–23:33:54UTC:536PASS/17native-onlyskips,
+294.802s,52source/testhashes unchanged. Separate node2nativeCPUactor2PASS
+2.657s at23:27:47–23:27:52UTC uses tinyGPT2/rank8PEFT, synthetictokenizer,
+CUDAhidden and allreplaythreads1. Prior9trainer+6checkpoint receipts remain
+separate; no combined17native run. Mendel independently accepts exact future,
+scanner and actor bytes within stated source boundaries. Full evidence/pins:
+research_notes/analysis/2026-09-13_stage2a_future_actor_integration.md.
+No Qwen/real tokenizer/CUDA/learning or science promotion follows.
+
+Hypatia synchronized actual manuscripts/abstract/UNSENTcollaborator through
+SEQ192/195. Turing independently checked C105/C106, scopedPASS; corrected
+two wording findings without changing accepted evidence. Three identical
+254word current abstracts; historical oversized payloads preserved verbatim.
+Main independently checked all3active and3historicalpayload hashes. NoTeX
+engine/PDFbuild; existing citation holes remain. Review/pins:
+research_notes/analysis/2026-09-13_manuscript_seq192_seq195_sync_review.md.
+
+The future-universe/retained-disclosure component is implemented, not complete
+inventory validation. Remaining registered-route membership/rendering and
+coredepth/recovery/history definitions still lack a source-owner reply.
+James now owns only new screen_runtime.py/test for reduced-roster dispatch
+and failure-inclusive state/slot/call custody; no material semantics or native
+opening in this slice. Other completed work is not repeated. Reduced560slot
+BASE/D1ATOM_LOCAL then qualifiedsame-adapterauthentictwo-SLEEP remains next.
+No GPU science launch/kill, node1write, curl/wget retry or approval request.
+FormalC11deferred; no mechanismfreeze/H1/H2/parenting/missioncompletion.
+Precision correction to23:21historicalQ0cross-reference: original sealed-file
+count was16098, not the approximate16100; no revalidation performed now.

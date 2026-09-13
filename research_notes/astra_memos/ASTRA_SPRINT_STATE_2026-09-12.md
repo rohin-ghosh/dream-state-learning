@@ -1,4 +1,22 @@
-## Current superseding snapshot — 2026-09-13 23:13 UTC
+## Current superseding snapshot — 2026-09-13 23:43 UTC
+
+MissionACTIVE/incomplete. Future-ID/actor source accepted with independent
+scoped reviews. Integrated553tests:536PASS/17native-onlyskips,294.802s,
+52hashesfixed. Separate nativeactor2PASS2.657s uses CPUtinyGPT2/rank8PEFT and
+synthetic tokenizer; no realQwen/native-tokenizer/CUDA/learning qualification.
+Receipts/pins: analysis/2026-09-13_stage2a_future_actor_integration.md.
+Manuscripts/abstract/UNSENTcollaborator now throughSEQ192/195; scoped review
+PASS, activeabstracts254words and historicalpayloads preserved. NoPDFbuild.
+Review: analysis/2026-09-13_manuscript_seq192_seq195_sync_review.md.
+
+Open bindings narrowed to registered multi-step route/coredepth/history;
+complete semantic/routeinventory and separate preparation gates stay open.
+No23:43reply. James owns new screen_runtime.py/test only, fakeCPU dispatch/
+custody integration underway. No activeGPUexperiment or nativeCPUtest.
+Next reduced560slotBASE/D1screen then qualifiedauthentictwo-SLEEP; noSEQ195
+repeat, no broadG3/H1/H2/parenting/freeze. FormalC11deferred. Handoff23:43current.
+
+## Historical superseded snapshot — 2026-09-13 23:13 UTC
 
 Full-constructor source/record validator implemented: Main15PASS41.108s,
 48source/test hashes unchanged, independent scoped reviewPASS. Exact receipt

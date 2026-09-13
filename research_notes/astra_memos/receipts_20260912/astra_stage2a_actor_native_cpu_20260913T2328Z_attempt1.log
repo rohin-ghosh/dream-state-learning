@@ -1,0 +1,18 @@
+OBSERVED_START_UTC=2026-09-13T23:27:47Z
+9b376d43a7564b00ef9e75513853a735103bad3b055e527af97e8ede5359957a  /tmp/astra_stage2a_actor_cpu_20260913T2328Z_attempt1/organism_v6/composition_birth_stage2a_actor.py
+6926d4940cbdff6c23b64a4898805edcc2373e95b65c15f35ee83d28cbfe543b  /tmp/astra_stage2a_actor_cpu_20260913T2328Z_attempt1/tests/test_composition_birth_stage2a_actor.py
+stage2a_native_cpu_prospective_binding={"CUDA_VISIBLE_DEVICES": "", "MKL_NUM_THREADS": "1", "OMP_NUM_THREADS": "1", "device": "cpu", "dtype": "float32", "fixture_seed": 20260913, "peft_version": "0.20.0", "status": "ENGINEERING_BACKEND_ONLY", "tokenizer": "SYNTHETIC_FIXTURE", "tokenizers_version": "0.22.2", "torch_num_interop_threads": 1, "torch_num_threads": 1, "torch_version": "2.13.0+cu130", "transformers_version": "5.5.3"}
+test_tiny_random_baseline_cpu_generate (tests.test_composition_birth_stage2a_actor.NativeCPUCompatibilityTests.test_tiny_random_baseline_cpu_generate) ... The following generation flags are not valid and may be ignored: ['temperature', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+ok
+test_tiny_random_rank8_peft_cpu_generate (tests.test_composition_birth_stage2a_actor.NativeCPUCompatibilityTests.test_tiny_random_rank8_peft_cpu_generate) ... Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+Both `min_new_tokens` (=0) and `min_length`(=0) seem to have been set. `min_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 2.657s
+
+OK
+TEST_EXIT=0
+OBSERVED_END_UTC=2026-09-13T23:27:52Z

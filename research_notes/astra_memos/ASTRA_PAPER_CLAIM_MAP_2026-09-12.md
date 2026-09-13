@@ -5019,7 +5019,7 @@ presentations). Exact reproduction requires the five separately hashed
 archives listed by the audit plus Git source commit `3f4c03bc`; the final tar
 alone is not a standalone reproduction bundle.
 
-**Permitted treatment.** This is positive bounded same-bank selective-retention
+**Permitted treatment.** This is positive bounded same-bank rehearsal-retention
 evidence and qualifies this replay writer for the next controller/integration
 test. It is not an independent-bank reliability, generalization, composition,
 connected-knowledge, native-action, H1/H2, parenting, lineage, lifetime, or

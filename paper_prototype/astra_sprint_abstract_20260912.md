@@ -1,14 +1,53 @@
 # FIRST SPRINT DRAFT — companion abstract
 
+## Abstract
+
+We ask whether developmental teaching produces durable, adapter-mediated
+learning-process competence on task-disjoint situations after reload and
+removal of teacher access and temporary teaching context (H1), and whether it
+increases improvement from new, self-generated, externally grounded experience
+on unseen verifiable tasks through continued consolidation (H2). Both remain
+proposed questions. We study frozen Qwen2.5-7B-Instruct with learning confined
+to LoRA adapters, separating acquisition, retention and downstream use.
+
+Through SEQ195, two component findings constrain this program. SEQ192 tests
+three existing prediction adapters without new fits on 24 shared authored
+cases in FULL/MINIMAL prompt packages. Typed-content scores are 24/23/19 and
+24/1/18, respectively, versus disabled-adapter baselines of 16/24 and 14/24
+per learner. Two learners fail the predeclared MINIMAL continuation rule; the
+branch stops. Content and strict format differ, and absent same-ID
+counterfactuals preclude isolated evidence-use attribution.
+
+SEQ195 uses one exposed, format-assisted eight-EVENT DEV bank across three
+optimizer seeds and repeated cold W0/W8 views. After A200 acquires four old A
+records, both new-only writes reduce A from 4/4 to 0/4 while acquiring B 4/4.
+Scheduled replay and clean cumulative training each yield A4/4 and B4/4 in
+every seed/view. Controls match either new-item dose or update/presentation
+work, not both jointly; the saturated cumulative tie is not equivalence.
+Failure-inclusive work is 20 fits, 6,400 updates, 25,600 presentations and 288
+readouts, including five excluded fits and 1,000 updates.
+
+This is bounded within-bank rehearsal retention, not independent-bank
+generality, selectivity, action utility, parenting, clean lineage, broad G3 or
+evidence for H1/H2. Earlier negatives remain; no mechanism freeze follows.
+Integrated learning and the full sprint remain incomplete.
+
+## Evidence status and historical updates
+
 **Ongoing first-sprint working draft — research question unresolved.**
-This draft through SEQ188 retains earlier positive and negative findings;
+This draft through SEQ195 (C105–C106) retains earlier positive and negative findings.
+SEQ192 fails prediction prompt-package robustness; SEQ195 supports only
+scheduled replay retention on one exposed eight-EVENT DEV bank. The actual
+abstract below and both manuscripts' results sections carry these bounded findings.
 SEQ167 and SEQ169--173 are engineering-only logs, excluded from scientific results.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
-independent review, with no later outcomes incorporated.
+independent manuscript review; no outcomes beyond SEQ195 are incorporated.
+Stage2A source/runtime remains blocked and supplies no scientific result here;
+the full sprint remains incomplete. No G3/H1/H2, parenting or freeze promotion.
 
-**Through SEQ188 / C104: no exact sequence acquisition; retention undefined.**
+**Historical SEQ188 / C104: no exact sequence acquisition; retention undefined.**
 The eligible changed-recipe screen alters output without exact acquisition;
 remaining fit phases are withheld. Prior scoped acquisition and reader STOP
 remain unchanged. This closes the17:25 UTC evidence checkpoint, not the
@@ -504,10 +543,10 @@ cases remain unrequested; no G3, parenting, child sleep, H1/H2, clean lineage,
 novel-fact transfer or substrate freeze follows. Model origin remains
 `UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred. Collaborator **UNSENT**.
 
-Internal staging only; the canonical abstract now includes the bounded update through SEQ161 while preserving its historical text. H1/H2 remain the proposed
+Internal staging only; the canonical abstract now includes the bounded update through SEQ195 while preserving its historical text. H1/H2 remain the proposed
 developmental thesis, not established outcomes.
 
-## Abstract
+## Historical extended abstract — verbatim evidence log
 
 Can developmental teaching improve learning after teacher removal? We separate externally authored training, child experience and parent-free utility using frozen Qwen2.5-7B-Instruct with LoRA. Earlier sequential-memory retention and failed process-readout criteria remain bounded results. Two source-authored TRAINED birth adapters each complete 128 updates; this is not the child's learned experience or self-learning. Across 384 calls, AUTH scores PROSPECT 32/32 and REVISE 58/64; DERANGED follows its own assigned map at 32/32 and 56/64, not AUTH truth. Both pass belief/goal twins at 16/16, but revision twins score 26/32 and 24/32 against 29/32 required, and both miss one required addition item. Thus both fail the full conjunction despite assigned-map success. Both trained arms answer 31+48 as 89; OFF's 16 numerically correct addition outputs (manual descriptive inspection) preclude an arithmetic-improvement claim from 15/16 compliance. OFF outputs are truncated on 96/128 calls, so strict zeros do not establish absent base reasoning. No exact-train-form panel distinguishes acquisition from access failures. Exploratory AUTH-child formation with base-only parents completes 28 calls: 17 wake, four parent, four restatement and three record. Six of eight tasks are protocol-invalid; one of three records is faithful; zero of four prescribed rows is eligible. PAIRED_SHORTAGE blocks both downstream writes: no persistent parenting comparison follows. Teacher misstatements prevent neutral-parent purity claims. Without contemporaneous OFF formation, observed birth-tag spill does not establish causal harm. Independent birth-audit comparison is complete; formation is not independently certified. At the historical birth/formation cut, source was NOT CLEAN and official base revision was unresolved. Later prospective file matching is limited to the checked node3 snapshot; historical receipt labels and clean-ancestry limitations remain unchanged. No H1/H2/P1/G3/G5 or freeze follows.
 
@@ -655,6 +694,29 @@ Attempt 2 ended as UNUSABLE EXECUTION --- ENGINEERING-ONLY CAPTURE
 not a usable C0 result or learning evidence; the original gate remains failed.
 
 A separate exploratory one-bank experiment records cold acquisition of trained, source-grounded mappings, without compute-matched controls or demonstrated downstream use or parenting.
+
+Through SEQ195, prediction prompt-package robustness fails its predeclared
+continuation rule: on 24 shared authored cases, MINIMAL content scores are
+24/1/18 across three learners versus OFF 14/24 each; two learners fail.
+Separately, on one exposed, format-assisted eight-EVENT DEV bank, all three
+optimizer seeds show the same cold W0/W8 outcomes: after A acquisition at 4/4,
+both new-only writes leave A at 0/4 while acquiring B at 4/4; scheduled replay
+and clean cumulative training each retain A 4/4 and B 4/4. These are repeated
+fits and views of one bank, not independent-bank replications. The controls
+match either new-item dose or update/presentation work, not both jointly;
+the saturated replay/cumulative tie is not equivalence. Failure-inclusive
+SEQ195 work is 20 fits, 6,400 updates, 25,600 presentations and 288 readouts,
+including five excluded fits and 1,000 updates. This bounded retention result
+does not rescue earlier negatives or establish action utility, broad G3/H1/H2,
+parenting, clean lineage or a mechanism freeze. The full sprint remains incomplete.
+
+Sources: [C105–C106 claim map](../research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md#c105--seq192-prediction-worksheet-prompt-package-robustness),
+[SEQ192 result](../research_notes/analysis/2026-09-13_level1_prediction_transfer_result.md),
+[SEQ195 raw report](../research_notes/analysis/2026-09-13_event_retention_v2_three_seed_raw_report.md)
+and [fresh independent audit](../research_notes/analysis/2026-09-13_event_retention_v2_three_seed_final_fresh_audit.md).
+The [post-SEQ195 re-audit](../research_notes/analysis/2026-09-13_post_seq195_critical_path_efficiency_reaudit.md)
+is strategy only, not a new result; its claim-map-staleness note predates C106.
+See [README](README.md#current-evidence-and-custody-through-seq195) for exact source hashes and custody limits.
 
 ## Historical SEQ143 result-table companion — C79–C82
 

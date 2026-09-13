@@ -36,7 +36,7 @@ SCIENCE_GATES = MappingProxyType(dict.fromkeys((
 ), False))
 BOUNDS = MappingProxyType({"bytes": 1048576, "fields": 4096, "leaves": 4096, "nodes": 32768,
                           "aliases": 32768, "depth": 64, "hits": 16384,
-                          "domains": 16})
+                          "domains": 16, "future_identifiers": 16384})
 LIMITATIONS = (
     "Caller must authenticate field spans, chronology, implicated IDs, and latest CURRENT.",
     "Caller must supply complete semantic, future-ID, and registered-route inventories.",
@@ -475,8 +475,9 @@ def scan_forward_targets(prefix, *, target, phase, decision_index, semantic_byte
         if value is not None and not _public_identifier(value, (kind,)):
             raise ValueError("invalid_context_identifier")
     _validate_fields(prefix, fields, decision_index)
-    for values in (future_identifiers, registered_routes):
-        if type(values) not in (tuple, list) or len(values) > BOUNDS["fields"]:
+    for values, bound in ((future_identifiers, BOUNDS["future_identifiers"]),
+                          (registered_routes, BOUNDS["fields"])):
+        if type(values) not in (tuple, list) or len(values) > bound:
             raise ValueError("bounded_ledger_sequence_required")
         for value in values:
             if not _bytes(value):
