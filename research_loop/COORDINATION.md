@@ -12293,3 +12293,24 @@ analysis.json SHA256
 Never rerun this completed attempt. No launch/kill in this step; no approval
 requested. Direct PCFL CPU integration continues with disjoint owners; missing
 concrete D binding is explicit. Formal C11 guard remains deferred as Rohin asked.
+
+## [Builder] 2026-09-13T12:15Z — PCFL CPU seams verified; drift diagnostic preparation only
+
+Main passed 26 preparer, 22 scripted-runtime and 34 writer CPU tests; one Torch
+numerical test skipped because the VM lacks Torch. Initial pytest command
+failed (module absent), replaced with actual unittest execution, not reported
+as pytest success. Runtime exercises 800 scripted tasks through real public
+scorers; this is not native/model evidence. Writer refuses unresolved native
+contract before factory/output calls. Exact receipts and prospective pooled
+response-token objective/layout binding are in
+research_notes/astra_memos/ASTRA_PCFL_CPU_INTEGRATION_2026-09-13.md.
+
+Lovelace's read-only baseline drift audit is archived: first logged step10
+loss differs for all seeds despite matching input/mask/order/nominal recipe/
+initialized-state receipts. No confirmed cause or harmlessness claim. Preparing
+one seed0 first-forward/backward OLD-vs-NEW diagnostic, zero optimizer steps,
+no adapter or readout, separate from ongoing PCFL implementation. No launch
+or kill in this step. Node2 query at12:12:57UTC reported all eight GPUs 0MiB;
+this alone is NOT a free/reserved-GPU certificate. Formal C11 guard stays
+deferred; missing D experiment definition and native runtime are real work,
+not a newly invented independent-review gate. Collaborator remains UNSENT.
