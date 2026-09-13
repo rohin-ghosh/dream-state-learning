@@ -1,5 +1,38 @@
 # FIRST SPRINT DRAFT — companion abstract
 
+**Latest evidence extension: SEQ122–124 and prospective public identity
+(C66–C69).** Both existing manuscript abstracts are preserved; the current
+242-word companion abstract below retains its throughSEQ121 summary, with
+the later evidence added here and in the complete result sections.
+
+SEQ122/123 each close32 fixed practice calls; adaptive grammar clarification
+recovers parser validity16/16 per OFF/AUTH state, not learning. Public TRY/
+quiz/record/revision counts per4 are initially OFF0/4/4/0,AUTH0/1/3/1 and then
+OFF2/4/4/2,AUTH2/4/3/4. Both still ignore two supplied F forecasts. Faithful
+record semantics remain OFF4/4,AUTH3/4; exact record0 is serialization, not zero
+fidelity. One OFF whitespace-only change is not bitwise deterministic replay.
+
+SEQ124 recovers AUTH6/6 invalid proposals through strict next-slot projection;
+OFF has no invalid wakes. Valid quizzes6/8 versus8/8 are legal completions,
+not answer accuracy; faithful records8/9 versus7/11 are on different
+trajectories, not efficacy. All114 calls/276 capsule members are verified by
+the recorded paired replay, not independently certified as a whole experiment.
+No fit/write, no unprojected AUTH sibling, and no Q0 result. Main's pre-parent
+global-call-ID prompt confound remains; forward v2 CPU repair is not a native
+run or retrospective correction. The returned parent review finds specific
+false answer-count/confirmed-forecast recaps and quiz-unit imprecision, not
+blanket purity or universally invented executed actions. P guidance is
+process-oriented but sometimes overbroad. No hidden rule/future-answer vector
+is found; no P/A efficacy, general H1/H2/P1/G3/G5 or freeze follows.
+
+Prospective binding matches all14 node3 files of public revision
+`a09a35458c702b33eeacc393d103063234e8bc28` of `Qwen/Qwen2.5-7B-Instruct`,
+not every node or clean ancestry. Historical origin receipts are unchanged;
+source-authored birth remains NOT CLEAN. Claim-map C66–C69 bind the exact
+memos/receipts/review. Collaborator **UNSENT**.
+
+**Historical throughSEQ121 evidence window follows.**
+
 **Latest bounded cut: SEQ119fit–121 / C63–C65.** Executed September12,2026
 PDT / September13 UTC. Externally authored TRAINED birth is not the child's
 learned experience or self-learning. Complete readout fails the full conjunction

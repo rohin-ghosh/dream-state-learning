@@ -1,5 +1,22 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
+**Latest bounded extension: SEQ122–124 / C66–C68, prospective identity C69.**
+Fixed practice and adaptive clarification are negative/mixed exploratory
+diagnostics, not learning or independent confirmation. Projection recovers
+AUTH6/6 invalid proposals; OFF has no invalids. Valid quizzes6/8 versus8/8
+are legal completions, faithful records8/9 versus7/11 use different trajectories;
+neither is efficacy. All114 calls/276 members are verified in recorded paired
+replay. Pre-parent global-call-ID confounding remains, with forward v2 CPU
+repair not run natively and no retrospective correction. Returned parent review
+supersedes pending status without blanket purity: specific erroneous counts/
+forecasts/quiz units, not universally invented actions. Prospective public
+revision identity matches14 files on node3 only; old origin receipts remain
+unchanged, source NOT CLEAN. No Q0 result, H1/H2/P1/G3/G5 or freeze. Both
+abstracts, all previous results/tables and canonical appendix are preserved;
+collaborator **UNSENT**. Exact new evidence is bound in C66–C69 below.
+
+**Historical throughSEQ121 evidence window follows.**
+
 **Latest bounded cut: SEQ119fit–121 / C63–C65, September12,2026 PDT /
 September13 UTC.** Externally authored TRAINED birth fits complete128 updates
 per arm, not child experience-learning or self-learning. Complete384-call
@@ -2724,3 +2741,178 @@ protocol-probe result or launch status is included. Main owns the separate
 probe and integration; this manuscript update is not a launch instruction.
 Canonical abstract, all previous tables and historical evidence remain intact;
 collaborator **UNSENT**.
+
+## C66 — SEQ122: exposed protocol-practice diagnostic, mixed/negative outcomes
+
+Completed/released September12 PDT / September13 UTC. Fixed OFF then AUTH,
+16 requests/state, four per TRY/quiz/record/public-revision family,32 calls.
+AUTH is the unchanged externally authored TRAINED birth adapter. No teacher,
+new fit, optimizer or write; supplied forecasts/quiz labels are practice
+scaffolds, not hidden-rule induction. All cases remain denominators. Action
+public correctness is formatting-sensitive; exact reference serialization
+is not pure semantics. Record exact0 is not zero fidelity.
+
+| Diagnostic / family | OFF parser / public / exact | AUTH parser / public / exact |
+|---|---:|---:|
+| SEQ122 TRY serialization | 0 / 0 / 0 | 0 / 0 / 0 |
+| SEQ122 Quiz format | 4 / 4 / 4 | 1 / 1 / 1 |
+| SEQ122 Record | 4 / 4 / 0 | 4 / 3 / 0 |
+| SEQ122 Public-evidence revision | 0 / 0 / 0 | 4 / 1 / 1 |
+| SEQ123 TRY serialization | 4 / 2 / 2 | 4 / 2 / 2 |
+| SEQ123 Quiz format | 4 / 4 / 4 | 4 / 4 / 4 |
+| SEQ123 Record | 4 / 4 / 0 | 4 / 3 / 0 |
+| SEQ123 Public-evidence revision | 4 / 2 / 2 | 4 / 4 / 4 |
+
+Every cell is three counts, each out of4. SEQ123 rows belong to C67, not pooled
+independent trials. SEQ122 OFF revision outputs carry the observed forecast
+without ACT, so zeros are not absent public-outcome comprehension. AUTH revision
+has two QUIZ-reveal substitutions and a TRUE rather than literal T; only one
+meets the requested contract. Faithful records OFF4/4,AUTH3/4; AUTH's absent
+prediction is wrongly labeled matched. All32 outputs EOS, zero limit hits.
+Main inspected all raw strings after closure and verified91 archive members.
+Score reproduction uses the frozen grader, not another independent review.
+
+Costs:5432 input/472 output tokens;17.234142s summed call spans; worker windows
+114.940875s/122.563908s; launch-to-exit254.778263s and recorded release286.772276s
+after launch. Custody recheck is included; collection/reduction continues briefly
+afterward. Nested, not additive or purely inference time.
+
+Exact sources (receipt names below are relative to
+`research_notes/astra_memos/receipts_20260912/`):
+- Canonical `research_notes/astra_memos/ASTRA_BIRTH_PROTOCOL_PROBE_2026-09-13.md`, read-snapshot SHA256 `a8b2c933347887744cd0b6d03f2e8a5f4077a53dbca641c101d99adb27a7e673`, contains both C66/C67 terminal results and historical prospective entries. Later speculative live/next-work text is not a result.
+- `astra_protocol_probe_seed0_20260913_attempt1.tgz`, SHA256 `11bd6633d462adfff2b3b2a2ca07de78e4f103344c69c7418ab1be37cc258973`; actual archived sibling `astra_protocol_probe_seed0_20260913_attempt1.tgz.validation.json`, SHA256 `e7e64988e46c67c442493a19e299c7e0fe9378b90d19c7cfdf59b31642420452`.
+- Plan `50d47f1fc8b9c8c2557e963f296f593c4c92deb220aee75b85200eb8f5153352`; source `9f51595ec537885543976622b16273903578209e`; material `2799efda619f7686db88d7990b203a3c7ad39eb8577228a26402037de16cc66b`.
+- `research_notes/astra_memos/ASTRA_RUNS_2026-09-12.jsonl`, event `SEQ122-protocol-practice-OFF-AUTH-complete`, recorded2026-09-13T01:32:27.946650+00:00; notebook `research_loop/COORDINATION.md`, September12 18:32:27 PDT entry.
+
+## C67 — SEQ123: clarified syntax, residual contract failures, no learning
+
+The separately versioned adaptive follow-up keeps cases, labels, public facts,
+seeds, caps and graders; one uniform grammar/action-priority suffix is appended
+to12 wake prompts/state. Four record requests/state remain byte-identical
+negative controls. Another32 calls,91 members verified, no fit/write. See C66's
+paired table. Parser validity16/16 in both states does not imply public-contract
+success: both answer T on all four TRY cases, ignoring two supplied F forecasts.
+AUTH performs four public repetitions; OFF substitutes QUIZ? for two requested
+TRYs with correct forecasts. This is exposed adaptive practice, not independent
+confirmation, hidden-rule induction, parenting or parameter learning.
+
+Faithful records remain OFF4/4,AUTH3/4, including AUTH's same absent-prediction
+relation error. AUTH4/4 raw record strings repeat; OFF3/4 repeat, one whitespace-
+only change with identical fields. No bitwise-determinism claim. Record exact0
+is formatting, not semantic zero. All32 outputs EOS, no limits/explicit stop-
+string matches. Main's frozen-grader reproduction is not a new independent audit.
+No contingent bridge fit or Q0 result is reported.
+
+Costs:9464 input/581 output tokens;21.360377s summed calls; launch-to-exit
+278.781528s, recorded release360.784369s after launch including waiting/custody.
+Collection/reduction continues briefly afterward; clocks nest, not add.
+
+Bindings:
+- Same canonical memo as C66; `astra_protocol_clarified_seed0_20260913_attempt1.tgz`, SHA256 `9f184c4a1baa2c5771763147a5008a2f140fbceabc618a36d52dac3148a3a97f`; actual sibling `astra_protocol_clarified_seed0_20260913_attempt1.tgz.validation.json`, SHA256 `c6b23d7ca16380a5bf1d8642697ad809f937bc1df845989cc86073b3cc4a5ce7`.
+- Plan `cceacca734e74cb86383099b3a7e4ee45fbe923485933204f600c0768faff46b`; clarified material `ecba56d4c25ee14c4caf26dafc8d6d38d18406e8107a19bee76b01bdefa6e76d`; unchanged source as C66.
+- Same ledger, event `SEQ123-protocol-clarified-OFF-AUTH-complete`, recorded2026-09-13T01:46:25.515040+00:00; notebook September12 18:46:25 PDT terminal entry.
+
+## C68 — SEQ124: strict projection recovery, confounded trajectories, qualified semantics
+
+Matched instances/seeds/base/adapter pins and budgets are not identical
+interactive trajectories. After a strictly invalid tentative wake, the same
+child consumes its next response slot within the unchanged five-response budget
+for one legal action. No invalid proposal is executed or partially salvaged.
+
+| Child / arm | Original-valid wakes | Recovered projections | Valid scored quizzes | Faithful records |
+|---|---:|---:|---:|---:|
+| AUTH / P | 14/17 | 3/3 | 3/4 | 5/5 |
+| AUTH / A | 13/16 | 3/3 | 3/4 | 3/4 |
+| OFF / P | 20/20 | 0/0 | 4/4 | 4/6 |
+| OFF / A | 19/19 | 0/0 | 4/4 | 3/5 |
+
+AUTH6/6 invalid multi-action proposals are recovered as legal TRYs; OFF has no
+invalid wakes, hence no projection denominator or100% recovery. Valid quizzes
+6/8 versus8/8 count legal completed quizzes, not correctness. Faithful records
+8/9 versus7/11 are generated on different trajectories, not efficacy. Both AUTH
+rule1 pre tasks exhaust the response budget without a scored quiz. No unprojected
+AUTH sibling isolates net benefit. All five failed records have null prediction
+and matched relation: one AUTH A, two OFF P, two OFF A. This error is not
+exclusively AUTH-specific. No fit/write or persistent-learning comparison.
+
+All114 calls (56 AUTH/58 OFF) and276 exact members (136/140) are verified by
+Main's recorded paired replay, including raw/stored metrics and request/world
+joins. It uses the interface author's analyzer, not independent scientific
+review. All finish_reason=stop, none length; no independent token-EOS proof.
+
+### Pre-parent prompt confound and non-retrospective repair
+
+Main observes AUTH P/A rule1/pre ticks1–3 prompt/seed identity, then tick4
+differs only in global call0017 versus0044 before projections TRY1,1,1 versus
+10,11,12. These are different inputs before parenting, not failed same-input
+determinism or a parenting effect. No causal estimate of the marker's share
+in downstream divergence. Original v1 source/captures/results are immutable.
+Forward v2 uses task-local public references/global IDs in custody metadata;
+Main reports45 CPU tests PASS2.230s, **not a native run**. No retrospective
+correction or result for the separately scoped closed Q0 executor. Q0 material/
+recipe/thresholds are not selected from these exploratory diagnostics.
+
+### Returned semantic review and Main's acceptance of limitations
+
+Einstein reviews8 parents+8 restatements with actual parent-visible transcripts,
+selected raw envelopes and event joins. This supersedes pending review in the
+canonical memo/analysis, not with blanket accurate-recap/control-purity acceptance.
+- AUTH A0 parent0034 falsely says five answers; final quiz0033 has six labels. Restatement0035 repeats the count. Correct two True outcomes and0.50 score stay correct; rejected proposals are not assigned invented outcomes.
+- OFF A1 parent0050 falsely describes confirmed guesses: first two forecasts F have True outcomes and the third forecast is absent. Actual units are triples, not seven individual trials. True outcomes and displayed4/6,0.67 score are real, not invented.
+- Both AUTH A1 and OFF A1 use misleading six-answers-per-set wording; the task requires one Boolean per triple across six triples. Preserve correct executed-outcome descriptions rather than call all recaps invented actions.
+- OFF A0 is substantially grounded, with conversational ambiguity, not blanket purity; its child's unsupported known/guessed distinction is not newly supplied parent leakage.
+- P guidance remains process-oriented but sometimes overbroad/underspecified. OFF P0/P1 have genuine local omitted forecasts, not universally absent predictions. AUTH P0 quiz criticism is not missing TRY forecasting; AUTH P1's single-value wording is ambiguous, not a definite one-argument TRY instruction. Internal failure to learn is not established.
+- No hidden rule or new future-answer vector is found. All parent loaders are recorded base-only; restatements use the appropriate child state. Restatement prompts omit the original transcript, so error repetition is not independent child verification or persistent learning.
+
+Main's dated notebook accepts these limitations. Reviewer's related downstream-
+helper/probe-test/projected-CPU-test authorship and supplied confound information
+mean not blinded or wholly independent. The semantic pass checks276 member hashes
+and reconstructs parent transcripts byte-for-byte but does not audit action/
+record aggregates, decode tokenizer IDs or reobserve native vacancy. No wholesale
+treatment-validity, efficacy, birth-harm, general H1/H2/P1/G3/G5/freeze conclusion.
+
+Costs AUTH/OFF: inputs24983/23209; outputs1541/1341; calls79.492846s/40.115812s;
+worker264.549166s/193.377055s; controller293.498131s/232.152951s;
+collection34.624328s/38.484359s; launch-to-recorded-release369.270620s/414.370157s.
+Intervals overlap/nest, not add. OFF includes waiting while AUTH is collected
+first, not slower inference. One exploratory pair, not general validation.
+
+Bindings:
+- Canonical `research_notes/astra_memos/ASTRA_ACTION_PROJECTION_RESULT_2026-09-13.md`, read-snapshot SHA256 `7d106b3e24a5e8347183cf8e9c207fc9032cbe29bc263692449c45a54f8e90e9`; its pending semantic status is superseded only by the returned qualified review and Main's acceptance.
+- `astra_projected_AUTH_20260913_attempt1.tgz`, SHA256 `c435ce2e6dd6750c541788be1889ba6f4664c5c8a35d91bd8c196fb329b08805`; sibling replacing `.tgz`, `astra_projected_AUTH_20260913_attempt1.validation.json`, SHA256 `ea6eb7f7dcc1421b430dbbc7674b065960abba04d664d46886fd6b99eb1f5cd9`.
+- `astra_projected_OFF_20260913_attempt1.tgz`, SHA256 `4095540b9d7ab7a0436b3961d6e694c7d70a9eac109d4b32c20d62fa78dc145c`; sibling `astra_projected_OFF_20260913_attempt1.validation.json`, SHA256 `efa0cc8bcaf5de1c38207badca3e2f653ac9988c236859483f6e38bdb7bdfa48`.
+- `astra_projected_formation_paired_analysis_20260913_attempt1.json`, SHA256 `4d8bebac600412119b995556cf3943bc4b38161475bfe1c3017b38d7371a3bf3`. Its unreviewed parent-purity field remains historical; no automatic purity PASS is inferred.
+- Returned `/tmp/astra_projected_parent_semantic_review_20260913.md` and archived same-named receipt, SHA256 `9acaa1f541d4c62d1cb6df9a2e7331c982569e6d4fbd226932e7ddec1102ab19`.
+- Source `830fe675ec16bdbe4c0a5dc36ec66908b28da6ce`; AUTH plan `96cb57f6d3150ed916923d329e02bea7853a8019dc4ce97522876aa667c4bb30`; OFF plan `57fd3215d3e6de33c7ece8943c128a4992b2178de3e73abd01b070ae8a33e9a2`. Replay belongs to original v1 source, not the later edited checkout; not rerun by this writer.
+- Same ledger, run IDs `astra_projected_formation_AUTH_seed0_20260913` and `astra_projected_formation_OFF_seed0_20260913`, SEQ124 terminal records at2026-09-13T02:19:04UTC; notebook02:17Z terminal entry and subsequent September13 semantic-limitations/forward-repair acceptance.
+
+## C69 — prospective public identity:14 checked node3 files, not historical relabeling
+
+`PUBLIC_REVISION_FILES_MATCHED_PROSPECTIVE_BINDING`, checked2026-09-13
+01:48:48.855692UTC on node3 only. Public repository `Qwen/Qwen2.5-7B-Instruct`,
+revision `a09a35458c702b33eeacc393d103063234e8bc28`. Recorded native read-only
+verification matches all14 cached files: four safetensor shards to official
+LFS SHA256 and sizes, ten others to Git-blob SHA1 and sizes. Identity/size/
+timestamps stable during each hash pass; local SHA256 map retained. Actual
+check13.233842s, not a model load; six passing CPU fixtures are distinct from
+native14-file evidence. This manuscript worker uses local receipts, no network.
+
+Agreement with existing plan maps is post-hoc consistency, not rewritten
+provenance declarations. Historical `UNRESOLVED_LOCAL_HASHES_ONLY` receipts
+remain unchanged. Future plans may bind/recheck public identity/receipt/local
+map for their own node; do not assume all nodes share the checked cache. No
+clean training-data ancestry, independent tokenizer decoding, scientific effect
+or final C11 certification. Source-authored birth remains NOT CLEAN; data
+contamination and parent visibility are independent constraints. No Q0 result.
+
+Bindings:
+- Canonical `research_notes/astra_memos/ASTRA_MODEL_PUBLIC_BINDING_2026-09-13.md`, read-snapshot SHA256 `d88a61f6045e160978bd1c70ed92875ef2954d9916057e59787cef616a5da571`.
+- `astra_qwen_official_metadata_20260913_attempt1.txt`, SHA256 `8aebd0fc61d42917fedbf3c6dd08e39c36eac4c92478c88f2accabadae78de3b`; public metadata already fetched by Main, not fetched here.
+- `astra_qwen_public_binding_receipt_20260913_attempt1.json`, SHA256 `e87abf9c83845a32bb5df3828901dde1929e86a57fa0278158d4101b7df9a019`; verifier `astra_qwen_public_binding_20260913.py`, SHA256 `11fe0f35f6883bbd8b572c04f4ab79dfa4eaf1b8f9b9824e1acbba5fe8c8b60a`, not executed here.
+- Notebook September12 18:50:42 PDT prospective-binding entry; receipt explicitly records `clean_lineage_certified=false` and `historical_receipts_changed=false`.
+
+Both original manuscript abstracts, prior result tables and canonical appendix
+are preserved. New evidence is confined to these completed exploratory
+diagnostics and prospective model/file binding. No Q0 result, H1/H2/P1/G3/G5,
+retained useful learning or freeze. Collaborator **UNSENT**; Main handles review,
+integration and any Git or future experiment action.

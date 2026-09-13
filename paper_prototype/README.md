@@ -3,7 +3,103 @@
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
 
-## Latest bounded evidence — SEQ119fit–121 / C63–C65
+## Latest bounded evidence — SEQ122–124 and prospective identity / C66–C69
+
+September12,2026 PDT / September13 UTC. These completed, exposed exploratory
+diagnostics extend the reviewed throughSEQ121 window without changing prior
+results, either existing abstract, historical tables or the canonical appendix.
+No Q0 result is available at this cut; no new fit or parameter write occurred.
+
+**SEQ122/123: protocol practice, then adaptive grammar clarification.** Each
+comparison closes32 calls,16 per OFF/AUTH state, with four cases per family.
+SEQ123 preserves cases, public facts, labels, seeds, caps and graders; one uniform
+grammar/action-priority suffix is appended only to12 wake prompts per state.
+The four record requests per state remain unchanged negative controls. Each
+cell below is parser-valid / public-contract-correct / exact-reference count,
+each out of4. Public action correctness is format-sensitive; exact record
+serialization is not semantic fidelity.
+
+| Diagnostic / family | OFF parser / public / exact | AUTH parser / public / exact |
+|---|---:|---:|
+| SEQ122 TRY serialization | 0 / 0 / 0 | 0 / 0 / 0 |
+| SEQ122 Quiz format | 4 / 4 / 4 | 1 / 1 / 1 |
+| SEQ122 Record | 4 / 4 / 0 | 4 / 3 / 0 |
+| SEQ122 Public-evidence revision | 0 / 0 / 0 | 4 / 1 / 1 |
+| SEQ123 TRY serialization | 4 / 2 / 2 | 4 / 2 / 2 |
+| SEQ123 Quiz format | 4 / 4 / 4 | 4 / 4 / 4 |
+| SEQ123 Record | 4 / 4 / 0 | 4 / 3 / 0 |
+| SEQ123 Public-evidence revision | 4 / 2 / 2 | 4 / 4 / 4 |
+
+SEQ122 OFF revision responses express the correct observed forecast without ACT,
+not absent public-outcome comprehension. SEQ123 recovers parser validity16/16
+per state, but both emit T on all four supplied-forecast TRY cases, ignoring two
+F values. AUTH follows all four public revisions; OFF substitutes QUIZ? for two
+requested TRY actions. Faithful records stay OFF4/4 versus AUTH3/4; AUTH maps an
+absent prediction to matched, not unavailable. Record exact0 reflects whitespace/
+serialization, not zero fidelity. Across runs AUTH4/4 record strings repeat,
+OFF3/4; the remaining OFF string changes only whitespace, so no bitwise
+determinism claim. All32 outputs in each probe have EOS and no limit hits.
+Adaptive prompt clarification is not independent confirmation or learning.
+
+**SEQ124: strict residual action projection, not efficacy.** After an invalid
+tentative response, the same child uses its next slot within the unchanged
+five-response budget to produce one strictly parsed action. Invalid multi-action
+text is neither executed nor salvaged. All114 calls (AUTH56/OFF58) and276 capsule
+members (136/140) are verified in the recorded paired replay.
+
+| Child / arm | Original-valid wakes | Recovered projections | Valid scored quizzes | Faithful records |
+|---|---:|---:|---:|---:|
+| AUTH / P | 14/17 | 3/3 | 3/4 | 5/5 |
+| AUTH / A | 13/16 | 3/3 | 3/4 | 3/4 |
+| OFF / P | 20/20 | 0/0 | 4/4 | 4/6 |
+| OFF / A | 19/19 | 0/0 | 4/4 | 3/5 |
+
+AUTH recovers6/6 invalid proposals as legal TRYs; OFF needs no projection, not
+100% recovery. AUTH/OFF valid quizzes6/8 versus8/8 are legal completed quizzes,
+not answer accuracy; faithful records8/9 versus7/11 arise on different
+trajectories, not a record-skill treatment effect. Both AUTH rule1 pre tasks
+exhaust the budget without a scored quiz; recovery consumes an opportunity.
+No unprojected AUTH sibling estimates net benefit. All five record failures
+are null-prediction/matched-relation errors, including four OFF records. All
+calls report stop, none length; this is not independent token-level EOS proof.
+
+**Two separate interpretation limits remain.** Main finds a pre-parent global
+call-ID prompt confound: AUTH rule1/pre P/A ticks1–3 have identical prompts/seeds,
+but tick4 differs in call0017 versus0044 before different projected TRYs. This
+is different input, not failed same-input determinism or a parenting effect;
+the marker's causal contribution is not isolated. The forward v2 task-local
+marker repair is CPU-tested only, not run natively; v1 is not retrospectively
+corrected. Separately, the returned8-parent/8-restatement semantic review
+supersedes the memo's pending status, **not with blanket purity**: AUTH A0 falsely
+says five answers; OFF A1 falsely calls forecasts confirmed; both A1 recaps
+misstate quiz units. OFF A0 is substantially grounded with qualifications.
+P advice is process-oriented but sometimes overbroad/underspecified. No hidden
+rule or future-answer vector is found. Do not transplant SEQ121's invented-
+executed-proposal diagnosis to all these recaps; actual public outcomes can be
+correct despite the specific errors. Main accepts these limitations. The reviewer
+has related-code authorship and is not blinded; no whole-experiment certification.
+
+**Prospective model identity, node3 only.** At2026-09-13T01:48:48.855692UTC,
+the read-only check matches all14 cached files of `Qwen/Qwen2.5-7B-Instruct`
+revision `a09a35458c702b33eeacc393d103063234e8bc28` to official metadata: four
+weight shards via LFS SHA256, ten other files via Git-blob SHA1, with sizes and
+stability checked. Status `PUBLIC_REVISION_FILES_MATCHED_PROSPECTIVE_BINDING`.
+It enables explicit future binding/rechecking of that node's files, not every
+node, independent tokenizer decoding, clean training ancestry or retrospective
+predeclaration. Old `UNRESOLVED_LOCAL_HASHES_ONLY` receipts are unchanged;
+source-authored birth remains NOT CLEAN. No Q0/H1/H2/P1/G3/G5/freeze claim.
+
+Probe launch-to-recorded-release286.772276s/360.784369s includes custody checks;
+collection/reduction continues briefly afterward. Projection AUTH/OFF release
+intervals369.270620s/414.370157s overlap; OFF includes waiting for AUTH collection,
+not slower inference. Do not add nested clocks. Full costs, exact receipt hashes,
+semantic-review scope and sources are bound in C66–C69 of the claim map:
+`ASTRA_BIRTH_PROTOCOL_PROBE_2026-09-13.md`,
+`ASTRA_ACTION_PROJECTION_RESULT_2026-09-13.md`,
+`ASTRA_MODEL_PUBLIC_BINDING_2026-09-13.md`, the returned semantic review,
+terminal run ledger and notebook. Collaborator **UNSENT**; no sending or launch.
+
+## Earlier bounded evidence — SEQ119fit–121 / C63–C65
 
 Executed September 12, 2026 PDT / September 13 UTC. This bounded terminal
 update supersedes only the earlier birth-implementation status, not prior

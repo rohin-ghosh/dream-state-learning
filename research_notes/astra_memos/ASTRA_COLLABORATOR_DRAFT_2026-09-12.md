@@ -1,6 +1,45 @@
 # DRAFT ONLY — unsent collaborator update
 
-**UNSENT — SEQ119fit–121 update (C63–C65).**
+**UNSENT — SEQ122–124 / C66–C69 update; no Q0 result.**
+
+The exposed32-call protocol probe finds mixed/negative interface results;
+the separate adaptive32-call clarification recovers parser validity16/16 per
+OFF/AUTH state without training. Public TRY/quiz/record/revision counts per4
+change from OFF0/4/4/0,AUTH0/1/3/1 to OFF2/4/4/2,AUTH2/4/3/4. Both states still
+ignore two supplied F forecasts; unchanged record semantics are OFF4/4 faithful,
+AUTH3/4. Exact record0 is formatting, not zero fidelity; one OFF whitespace
+change precludes a bitwise-determinism claim. This is not independent
+confirmation, hidden-rule induction or learning.
+
+SEQ124 strict action projection recovers6/6 AUTH invalid multi-action proposals
+as legal TRYs in the next slot of the same five-response budget; OFF has no
+invalid wakes and needs no projection. AUTH/OFF valid quizzes6/8 versus8/8 are
+legal completions, not accuracy. Faithful records8/9 versus7/11 have different
+trajectories/denominators, not efficacy; four of five null-prediction/matched
+errors are OFF. All114 calls and276 capsule members are verified in recorded
+paired replay. No fit, parameter write or unprojected AUTH sibling.
+
+Main finds a pre-parent global-call-ID prompt confound at AUTH rule1/pre tick4;
+different inputs precede different projected actions, not a determinism failure
+or parenting effect. Forward v2 task-local-marker hygiene is CPU-tested only,
+not run natively; no retrospective correction. Returned8-parent/8-restatement
+semantic review rejects blanket purity: AUTH A0's false five-answer count,
+OFF A1's false confirmed forecasts, and both A1 quiz-unit imprecision. P advice
+is process-oriented but sometimes overbroad; OFF A0 is substantially grounded.
+No hidden rule/future-answer vector found. Do not label all recaps as invented
+executed actions. Main accepts these limitations; reviewer is not blinded or
+wholly independent of the project. No valid P/A efficacy inference follows.
+
+Prospective node3-only verification matches14 cached files of
+`Qwen/Qwen2.5-7B-Instruct` revision `a09a35458c702b33eeacc393d103063234e8bc28`
+to public metadata (four LFS SHA256 shards, ten Git-blob SHA1 files). It does
+not rewrite historical origin receipts, establish clean ancestry or certify
+other nodes. Source remains NOT CLEAN; no Q0/H1/H2/P1/G3/G5/freeze result.
+Both existing abstracts, prior results/tables and canonical appendix are
+preserved. C66–C69 bind canonical memos, run ledger and semantic review.
+This remains an internal **UNSENT** draft for Main, not a sent update.
+
+**Historical UNSENT — SEQ119fit–121 update (C63–C65).**
 
 Executed September12,2026 PDT / September13 UTC. Two externally authored
 TRAINED birth adapters complete128 updates each (256 total;23,296 target-token

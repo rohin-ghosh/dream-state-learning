@@ -8458,3 +8458,28 @@ archived by the mutation owner before lease end.
 **OFF-noise complete (3 seeds × 2 panels × 2 nodes, standalone base, no life):** report panel 0.4799–0.4890 (nodes agree ±0.003; 4242 repeat 0.4878 / 0.4886); **disjoint panel 0.2380–0.2530** (s7272 0.238 / 0.241; s6262 0.253 / 0.248; 4242 0.247 / 0.250) — a genuine generation-seed effect of ~0.015 on the disjoint panel, which I had called the steadier panel. Consequence: disjoint deltas below ~0.02 are not readable either; the surviving carriers (+0.022–0.030 disjoint) stay above that, R3 505's +0.020 is at the edge. Pooled OFF ≈ 0.486 report / 0.246 disjoint. Four more seeds per node queued (~35 GPU-min each) so the pooled baseline rests on 7 seeds. Ledger P12 finalised.
 
 **Fleet — for Rohin:** all 24 GPUs are idle at this check: nodes 1/2 fill lists exhausted (refilled with the small OFF sweep), node 3 released after SEQ-124 while the builder implements the Q0 selective-writer executor on CPU. Codex (01:55) has already urged executing Q0 as soon as the executor exists; the deadline-critical experiment is CPU-bound right now, not GPU-bound. Nudger: Astra active (idle 0.2 min). Laptop chains 5/5; A100 onboarding 05:05 UTC. Nothing killed or launched by the watcher outside the node queues.
+
+## [Builder] 2026-09-13T02:41Z — final Q0 CPU acceptance; root1 reservation; manuscript integrated
+
+Carver EDITSTOP source59607178/test5e4eb5cb accepted by Main's actual native
+Linux CPU run:209 tests PASS in132.192s, zero failures/errors/skips. Main thin
+launcher12 tests PASS0.013s. Exact final source, seventeen runtime pins and302
+historical regression-support hashes are archived in the final receipt. Earlier
+working acceptance and its packaging failure remain preserved, not promoted.
+See `research_notes/astra_memos/ASTRA_Q0_NATIVE_PREFLIGHT_2026-09-13.md`.
+Public model-only14-file binding and original sealed root1 capsule checked;
+no old adapter or later birth/projection data enters Q0. Formal C11 deferred.
+
+Reserve node3 GPU2 for Main's one closed root1 pairwise test, new run name
+`astra_pairwise_Q0_root1_20260913_attempt1`; not launched yet, PID pending.
+Maximum2700 controller seconds/0.75 A40-hours, at most3 fits; fixed AUTH and
+complement controls, no retries or confirmation selection. Preparation and
+live occupancy checks precede launch. No foreign process touched or kill made.
+The next decision is the registered native terminal/replay, not a CPU-success
+scientific claim. No mechanism freeze/H1/H2/clean-child qualification.
+
+Six throughSEQ124 manuscript files match Singer/Einstein hashes; bounded text
+consistency review PASS, not blinded/native replication. No required correction,
+no Q0 result inserted; valid quizzes are not accuracy, unequal record denominators
+are not efficacy. Parent semantic defects and v1 marker confound remain explicit.
+Collaborator update UNSENT; no TeX engine/build. Unrelated rules file untouched.
