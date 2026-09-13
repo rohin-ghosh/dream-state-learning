@@ -15514,3 +15514,36 @@ Copernicus owns material/test, Lagrange runner/test, Meitner prior reducer/test.
 All GPU actions remain unlaunched. This is same-task DEV scaffold withdrawal,
 not parenting/H1/P1, new-family transfer, retention or clean-lineage promotion.
 Formal final-C11 guard remains deferred; ordinary hygiene stays in force.
+
+## [Builder] 2026-09-13T17:37Z — SEQ-189: descriptive offline sequence reduction
+
+Main tested Meitner's frozen reducer:8/8 unittest discovery tests PASS in
+34.055s. Native/model/tokenizer/lifecycle calls absent. Initial pytest command
+was unavailable; direct unittest module invocation lacked tests on sys.path;
+one discovery call was terminated by Main's mistakenly short1s tool timeout.
+The full discovery command then completed. These are validation-command
+failures, not scientific attempts or changed native evidence:
+`python3 -m unittest discover -s tests -p 'test_astra_pcfl_event_sequence_analyze.py' -v`.
+
+Main reran the offline CLI against immutable paired collections with a durable
+fit-receipt remap. Request `receipts_20260912/astra_pcfl_sequence_reducer_request_20260913.json`,
+FILE SHA90df83bae38258da5f6147c3ed4b1fe9526b813a0b216c25bf20137381b3ce8a;
+result `receipts_20260912/astra_pcfl_sequence_reduction_20260913/analysis.json`,
+FILE SHAb7e0159b94cae55b9182509840771a658de934c2b82a51eab7438ce64dc65957.
+Paths relative to research_notes/astra_memos. Both states0/4 in every A/B
+W0/W8 panel; pre-correct A0at both views, retention null/undefined. Four
+missing readout endpoints are not five withheld fits: ALL_AVAILABLE1/2
+feed one readout. No new acquisition, retention, G3 or parenting claim.
+Meitner EDITSTOP and closed; reducer/test integrated. No new GPU work.
+
+Node1 read-only17:33UTC: no compute processes, no own CUDA reservations,
+queues empty, original three prediction adapter DONE files exist. Three
+unreadable system/SSH environments need existing identity exceptions at live
+launch check, not blanket ignoring. VM first-roster archive rehashed to
+0d822a18838314346f1fa332ad4ac71234e1d20e59e7f841d81109a1f23226d1;
+all three prediction adapters/manifests/completions included. This protects
+the selected original artifacts from node1 expiry, not a new whole-node mirror.
+
+Timestamp correction: prior17:34 heading/protocol was written approximately
+17:32UTC by the tool clock (heading anticipated by about2minutes). Both
+precede any new prediction-transfer model output; no outcome timing changes.

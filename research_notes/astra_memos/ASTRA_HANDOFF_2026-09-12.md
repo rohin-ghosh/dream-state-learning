@@ -307,3 +307,16 @@ Node1 preservation deadline September13 23:14UTC remains pending live
 reconciliation; no new node1 work on this resumption yet. Preserve dirty
 `gpu/codex/dream_state.rules`. No approval prompts or curl/wget on this
 resumption. Mechanism freeze, generalG3/P1/H1/H2 and campaign remain incomplete.
+
+### SEQ189 integration, September13 17:37UTC
+
+Offline sequence reducer/test accepted; Meitner EDITSTOP and closed. Main
+unittest discovery8/8PASS34.055s; actual paired CLI reproduces all zero panels
+and null retention. Durable request/fit copy/result under receipts_20260912:
+`astra_pcfl_sequence_reducer_request_20260913.json`,
+`astra_pcfl_sequence_fit_completed_20260913_attempt4.json`, and
+`astra_pcfl_sequence_reduction_20260913/analysis.json`.
+Result FILE SHAb7e0159b94cae55b9182509840771a658de934c2b82a51eab7438ce64dc65957.
+Four missing readout states correspond to five withheld fit phases; do not
+merge those counts. No native job on this resumption yet. Prediction material
+and runner owners still working; await EDITSTOP before staging their files.
