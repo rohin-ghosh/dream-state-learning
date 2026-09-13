@@ -17662,3 +17662,40 @@ bindings preserve all comparison caps and do not add a human or C11 gate.
 Godel's all64birthcases/256targets now pass22CPUtests. Main all64paired-prefix
 tests pass8/8 in7.174seconds; Epicurus examines only the32new relation cases in
 parallel. Closed-loop/world/source-only evidence is not model learning.
+
+## [Builder] 2026-09-13T22:02Z — complete birth source path; held/scanner checks; graph-scope repair
+
+Main ran99birth/paired-target/curriculum/held/scanner CPU tests PASS43.631s;
+all five source hashes stayed unchanged during the run. Receipt is preserved
+under receipts_20260912/astra_stage2a_birth_held_scanner_20260913T2203Z.log
+(the filename is an attempt label; observed terminal time was22:02:19UTC).
+The pure in-memory compiler links64cases,256shared targets,512paired update
+reservations and byte/message residuals. It uses one explicit synthetic master
+for display and initialization/dropout seeds; no allocator, tokenizer, model,
+tensor loss mask, optimizer or filesystem material root is exercised.
+
+Epicurus's separate relation-only review PASS covers the other32cases/128units:
+all targets derivable locally; all16relation pairs differ only twoFOR leaves,
+with shared task/world; four mismatch pairs share their failed prefix and
+recovery_m0.288new mutation probes rejected. Together with the prior review,
+all256source targets have bounded message-level scrutiny, not model evidence.
+
+Locke independently verified32held intervention pairs/64members and16worlds/
+32chain witnesses;8focused tests and10mutation operators passed. Preserved
+review research_notes/analysis/2026-09-13_stage2a_held_independent_review.md,
+SHAc93ef648a677feeae8e0ee53abee6e2ab006f68447cd0493b57bc75d3db014d4.
+Main applied its wording-only P3 fix: PublicView is a host-side service facade;
+the enumerable registry is not an actor/parent-safe serialized packet. Only
+prefixes and requested replies may cross the actor boundary. No executable
+behavior changed after the99test receipt; held source nowb2e62417fe78195fd1ad4aca48da50f2e5a48e542b4aa88b571c786288f6d8c6.
+Runtime one-shot custody and scoring remain unimplemented.
+
+Main found a concrete pre-materialization graph integration defect: public
+graphs used hidden full-world alias ordinals. V3section7.2 canonicalizes EACH
+graph; only induced radii in7.3 preserve world aliases. Main's earlier bridge
+assignment wording contributed to it. Mendel repairs the uncommitted bridge;
+Lorentz repairs the independent JSON checker with explicit versioned alias
+correspondence and dense public aliases. No actor prefix, model outcome, or
+completed assay is affected; old synthetic checker receipts remain preserved.
+Do not promote the partial graph bridge until the repaired tests are inspected.
+This is a source bug fix, not a new scientific or final-C11 approval gate.
