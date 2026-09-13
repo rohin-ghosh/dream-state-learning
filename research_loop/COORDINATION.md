@@ -16197,6 +16197,27 @@ curriculum plus base. The old command-card sham may remain an interface canary
 but is not the sole scientific comparator. This is a design binding for the
 later Stage 2, not permission to author or run it yet.
 
+**Stage-2 correction after fresh red team:** the phrase “atom-matched
+UNLINKED” above is internally impossible and is superseded by
+`research_notes/analysis/2026-09-13_m_combine4_fresh_adversarial_audit.md`.
+If PROSPECT and CHECK retain their genuine local conditioning, returned
+evidence still controls their targets; if that conditioning is removed, the
+atoms are no longer matched. Name the later arms `CLOSED` and `ATOM-LOCAL`.
+ATOM-LOCAL receives the same locally sufficient conditional decisions and
+target/update tape as isolated vignettes; CLOSED receives coherent accumulated
+histories. The contrast is coherent closed-history training versus co-resident
+local atoms, not “causal links versus no links.”
+
+Before any Stage-2 source work, bind a successor that prohibits gold THINK
+prefixes from spelling the next READ/STEP, adds eight single-variable causal
+pairs for each of SEEK/PROSPECT/CHECK/CONTINUE-STOP, and makes exhaustive READ
+impossible without reducing the generous thinking-token budget. Treat this as
+Stage 2A and stop after its branch: later Stages 3--6 must be recalculated from
+the selected child's exact presentation tape. Their current 1,024-unique-unit
+replay and lineage arithmetic no longer applies automatically. Stages 0--1
+remain unchanged and authorized only to the scope stated above; Stage 2A
+remains closed.
+
 ## [Root recommendation] 2026-09-13 PT — adaptive-parent Gate 0/1 may proceed as a no-fit DEV test
 
 The fresh audit and binding successor are
