@@ -10685,3 +10685,40 @@ Rawreport9cb95809b5ff658c45e39a21a522433d666b2696af8feda698ef2d951604346b
 andarchive6865c968dbef113e12570ced2333b74fbd79379a4a6f30b16f65a3ef4c6df527
 matchnode3/VM. Independent re-reduction byDescartes pending. Actual-memory
 pairedwriteprotocol frozen, runnerCPUdevelopment; no actualrecordwriteyet.
+
+## [Builder] 2026-09-13T08:56Z — actual-child memory pairs prepared, launch allocation
+
+Main resumed and pulled37bcb809; six manuscript files remain Copernicus-owned
+until EDITSTOP/review, unrelated gpu/codex/dream_state.rules preserved.
+Simple hygiene remains operative; formal C11 guard remains final-paper work.
+Native memory runner7028fa9a9b277adc6edfec2398d1885d6c55ec33eb67a1bd51ac36b37e02215e
+Main13CPUtests PASS2.060s; projector16PASS1.125s inherited, not rerun.
+Native CPU preparation now PASSES all three original perception learners,
+14/8/8 admitted real-event raw records; paired WRITE/LR0 costs224/128/128
+optimizer invocations and176/152/152 cold-generation calls. No GPU fit yet.
+
+Main reserves node2 GPUs1/2/3 for seeds0/1/2, respectively, after fresh boot,
+queue, environment-reservation and all-process checks at launch. Initial
+08:53 inventory has no GPU processes and no pending/running queue work.
+Outer custodian holds CUDA_VISIBLE_DEVICES=assigned UUID through all stages;
+controller has empty visibility, each fresh worker receives only its UUID.
+No other node/global process changes. Per-pair cap3600s, collection180s,
+maximum3GPU-hours; node2 ends2026-09-21T08:43Z with6h finish margin.
+All source adapters preserved; WRITE1e-4 versus LR0, eight full passes,
+same seed/optimizer initialization, exact raw child targets, no teacher rewrite.
+Cold exact-cue acquisition, separate paraphrase transfer, original48held+12
+canary retention. No G3/P1/H1/H2/freeze or clean-lineage promotion.
+
+Immutable native roots: /localhome/local-rohing/astra_diagnostics/
+real_record_memory_seed{0,1,2}_20260913_attempt1; launcher sibling .launcher.
+Prepared plan SHAs, seed order:
+66fb0ae06fce25feb04c422add3062f8665be9bafaa72efdb348365fa82208c1
+9886ef9f19869f69649ee894e15c1fb47dfc85e301ee728adfbefc4df2c9c52b
+48f64f78aa6953baa72067602bf3043c0a8fb5531750f0433c6fdd8ef76dc5ea
+Frozen protocol ASTRA_ACTUAL_RECORD_MEMORY_PROTOCOL_2026-09-13.md unchanged.
+Outer launch command, native interpreter /localhome/local-rohing/v2/venv/bin/python:
+-B /tmp/astra_memory_pairs_main_20260913.py launch --seed N
+with empty CUDA_VISIBLE_DEVICES and PYTHONDONTWRITEBYTECODE=1/PYTHONNOUSERSITE=1.
+Custodian PID/controller identity follows after actual submission. Stop/preserve
+on invalid source/mask, nonfinite write, LR0 tensor inequality, failed release
+or cap. No automatic retries or original formation recollection.
