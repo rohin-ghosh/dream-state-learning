@@ -7897,3 +7897,26 @@ f0afb98a 2026-09-12T17:37:58-07:00 Freeze prospective born-child parenting and r
 f6422ac8 2026-09-12T17:34:47-07:00 Integrate reviewed sequential-memory evidence into sprint manuscript
 6b106e75 2026-09-12T17:33:50-07:00 Log bounded birth fit launch and exact process receipt
 ```
+
+## [Codex/root] 2026-09-13 UTC — birth/Q0 parallel evidence firewall and exact-form addition
+
+Execution advice:
+`research_notes/analysis/2026-09-13_birth_q0_parallel_execution_decision.md`.
+The now-live authored birth pair is a quarantined
+`EXPLORATORY_PRE_Q0` engineering fit. Its weights, losses, outputs, errors,
+root, and downstream behavior may not tune or interpret Q0 and must not seed
+the scientific Level-2 child. Build/run the preclosed Q0 selector independently;
+if it qualifies, create the claim-bearing birth from a fresh root under the
+frozen selected writer. This spends a small duplicate fit to save calendar
+time without post-hoc selection.
+
+Preserve the live birth recipe. If the frozen readout/call budget can still be
+extended prospectively without inspecting outcomes, add exactly 144
+exact-training-form calls: 16 PROSPECT + 32 REVISE source forms over
+OFF/AUTH/DERANGED. They distinguish acquisition failure, stored-but-not-held
+extraction, and held extraction with locality spill. Omit this addition rather
+than altering an already inspected terminal. Direct adherence remains an
+installed finite routine. The later causal Level-2 sample needs a post-birth
+opaque mapping, identical teaching/evidence tape across AUTH/non-harmful active
+control/OFF, PROMOTE versus SHADOW, and parent/context-free readout. Adaptive
+strongest-model parenting follows that controlled birth-efficacy slice.
