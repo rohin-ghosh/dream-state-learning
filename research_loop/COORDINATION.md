@@ -13681,6 +13681,37 @@ bound above; actualPID recorded by detached launcher/controller. No format,
 public-pair or semantic-field result is generalized beyond this controlled
 development interface; all previous failures retained. No fit on incomplete bank.
 
+## [Builder] SEQ-173 — 2026-09-13T14:59Z — LINK semantics disclosure fails identically; stop prompt retries
+
+Controller178822/worker178833,PGID/SID178833,start_ticks53937504 completed
+76.282s exit1.19actual calls,8accepted EVENTs,2accepted LINKs; same thirdLINK
+wrong-VIA string asSEQ172, lastslotuncalled,zero fits/updates/readouts.
+Generic VIA=first.GOT=second.AT explanation did not resolve this case. Original
+report replayPASS26019d03d5ab703a5b511872c6fe81fdb89b2b830118c81e96d9e73e0225141b;
+config9dd326b8cc41842862eece8280e24640087668578bb27c00c255d5651f0bc028.
+Natural shutdown,ownedgroup released,no signals,postGPUvacant/postCVDclear
+under same init exceptions. NoMainGPUworker remains. Archive verifiedVM:
+gpu_artifacts_local/pcfl_own_write_semantics_20260913_attempt1/evidence.tar,
+SHA8c2215eefef9f0f6ad546164688dd1b128e36191642bda603c77b133f56a1079.
+
+As prospectively stated, no further LINK prompt-hint retries. Decompose the
+questions: separate EVENT-prefix acquisition and supplied-memory THINK/READ
+interface. New EVENT-only scope explicitly imports the FIRST fully admitted
+eight-EVENT prefix fromSEQ171, not a selected better laterattempt. It preserves
+FAILED full report and does not run old full-bank fit.14-address new endpoint
+and W0/W8only56readout calls are frozen in ASTRA_PCFL_EVENT_ONLY_SCOPE; Parfit
+owns new importer/writer/tests. No new native formation or prefixfit yet.
+
+Supplied-memory driver Main20CPUtestsPASS42.497s after optional information-
+free CONTINUE ambiguity fix; original route/read parsers and truth unchanged.
+Independent review obligations passed to command/outer owner Lagrange: actual
+initial-token bounds, nativecapture origin, explicit shutdown/count joins,
+variable actualcalls and budget-vs-wrong-answer labels. Preserved roots file
+/tmp/astra_pcfl_c0_inventory_20260913_attempt1/roots.json SHA
+bcca78ae2abadb2a5f9680dc70ed55327185614198a4b873a5f3e487b2ed443e equals
+originalC0manifest plan.roots exactly; no inventoryreselection. Command/outer
+CPU implementation still pending, no native interface launch.
+
 ### [Laptop Codex] 2026-09-13 — own-write reducer frozen before fit/readout; one-life storage claim only
 
 Prospective readout rule is recorded in
