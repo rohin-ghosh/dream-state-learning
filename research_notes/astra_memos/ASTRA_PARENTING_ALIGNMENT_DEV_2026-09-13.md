@@ -114,3 +114,48 @@ paper-grade C11 guard remains deferred. Preserve native roots and archive all
 receipts before independent CPU reduction. The final code/plan manifests contain
 exact prompts, schemas, IDs, token caps, native commands and pins; none is
 invented in this prose before implementation.
+
+## Pre-execution clarification after focused causal review
+
+This clarification precedes all native assay outputs and changes no numerical
+thresholds. Prior protocol bytes remain in Git. The contrast estimates task
+alignment of the fixed-lesson-to-raw-restatement package. SWAPPED may interfere
+or still help; report absolute A/S/N rates and both contrasts. It does not
+identify mediation by restatement versus direct lesson prompting.
+
+Each restatement call sees only its delivered lesson and the common restatement
+instruction. At a new block replace the current restatement; do not accumulate
+earlier block notes, lessons, task receipts or prior conversations. Reset each
+task's world/history prospectively. Application gets only the current raw child
+restatement plus that task's public context and common output instruction;
+recording also sees the current child's action and actual returned receipt.
+Bad restatements remain verbatim, never filtered. RESTATE is checked against
+the lesson actually delivered, including SWAPPED, not the relevant task lesson.
+The ordinary output contract is identical across families and arms; no computed
+relation/latest-ID, family/arm label, scorer result or relevant-lesson mapping
+enters it. Public raw values and chronological markers remain legitimate inputs.
+
+FULL_MATERIAL means PROCESS_USE AND EXECUTED AND RECORD_FAITHFUL, not RESTATE.
+Task endpoints use all 16 scheduled slots per arm; invalid actions imply false
+execution/record/full outcomes with uncalled record slots retained. RESTATE uses
+all four scheduled contacts per lesson arm; it is not applicable to NO_PARENT.
+Both arm contrasts in the feasibility vector use PROCESS_USE. Record each
+root's component masks separately, without post-hoc root selection.
+
+The second-delivery check is PROCESS_USE over eight second-delivery slots versus
+eight first-delivery slots; additionally report each family's four-versus-four
+stratum. This 2:1 order schedule is confounded with learner seed, not a separate
+order experiment. Structural matching does not certify equal difficulty or
+identify learning from a second-delivery difference.
+
+Malformed child outputs, failed restatements and low feasibility scores are
+assay outcomes, not infrastructure aborts or grounds for early stopping/retries.
+A leakage stop means a breach in harness/source visibility, not merely an
+incorrect child statement. Custody/deadline failures remain incomplete attempts.
+The 3600-second controller bound starts at controller entry and includes its
+verification/workers/cleanup; 180-second collection starts on collector entry.
+Native preparation is separately bounded at 180 seconds per seed. Report those
+spans and holder launch-through-collection separately, without double-counting
+nested work or calling CPU/elapsed spans GPU-active time. These limits fit within
+the five aggregate A40-hour ceiling; unused capacity is not an instruction to
+run more cases. No paper-grade guard, writer or extra control is added.

@@ -11652,3 +11652,27 @@ three original roots xALIGNED/SWAPPED/NO_PARENT, same task order/lesson multiset
 312maximumcalls,0fits. New CPU core/lifecycle in progress; no launch yet. No
 authored replay or one-sleep promotion rules imported from the broader laptop
 proposal. Manuscript throughSEQ158 committed2af3c792; SEQ159update next.
+
+## [Builder] 2026-09-13 — alignment pre-execution definitions and native input staging
+
+Before any native assay output, appended finite definitions requested by focused
+causal review to ASTRA_PARENTING_ALIGNMENT_DEV_2026-09-13.md. Final prospective
+protocol SHA5c53d6aa850b3a3a409c255ab9b28ce3b090f7325f35688437e42a86b1cccce5;
+previous bytes remain in ea44fb5f. No threshold, arm, count or scientific-claim
+change. Explicit current-restatement-only/task-local contexts; delivered-lesson
+RESTATE scoring; FULL=PROCESS_USE&EXECUTED&RECORD_FAITHFUL; fixed16task/4contact
+denominators; eight-versus-eight repetition metric with family strata; low scores
+are outcomes, not aborts; distinct preparation/controller/collection clocks.
+This identifies alignment of the lesson-to-restatement package, not restatement
+mediation. Source/causal advisory archived; no new approval gate or C11 work.
+
+Prior namespace exclusion rebuilt from404archivedJSONfiles:284IDs, output
+SHAbcfb7aed8ac07b4c90698f796046270f40bccd3a33bcf3f81e0cf51a3adfcf7e;
+manifest SHA421856f3e96ecf578224c2fe69f2592be0eb918112ce906c361028adf0123d86.
+Identifier-only exclusion includes fixtures; not global clean-ancestry proof.
+Source script/list/manifest archived. Native staging on node2 copies only new
+protocol, priorIDs and Main launcher into fresh/tmp paths; their hashes match.
+Boot rechecked8ff7b0dc-fbdf-4945-9044-3dffe94b5407. GPUmemory0 is not treated
+as reservation proof; full process/environment checks remain required at launch.
+Main new holder fiveCPUtestsPASS.005s. Core/runner still under construction;
+no native preparation, model call or launch yet. All old evidence untouched.
