@@ -9385,3 +9385,15 @@ using synthetic captures only. It requires complete relocated seed0/1/2
 snapshots and checks unchanged producer/source pins, raw captures and metrics;
 separate exact-prose/application results, no composite or semantic prose score.
 No live results inspected by this analyzer. All artifacts/handoffs archived.
+
+## [Fable] 2026-09-13T05:32Z — self-check: Q0 full-dose v2 running on node 2 (three roots in parallel); reflection birth slice running on node 3 at three seeds; the first level-2 core (two-wake / two-SLEEP public-record) is selected and CPU-accepted; A100 node reprovisioning
+
+**Q0 full-dose v2 (builder 05:04):** three roots R0/R1/R2 launched 05:00:47–05:01:26 UTC on node 2 GPUs 0/1/2 (controllers 4012737 / 4012889 / 4013072), executor f63c77f9, 128-update AUTH/DERANGED fits at rank 8 / LR 3e-5, canary as diagnostic only, three OFF controls; total ceiling 9 GPU-hours across the three (10,800 s each), so results by ≈ 08:00 UTC at the latest. GPU memory 19.4 GB each at 05:03; at 05:31 only GPU 2 showed memory (phase gaps on the others — activity, not evidence). Node 2 is now in builder use as Rohin asked.
+
+**Reflection birth slice (05:12, 05:24, 05:26):** the second per-skill birth comparison launched on node 3 GPU 0 (controller 328732, 3,600 s ceiling), then seeds 1 and 2 (one allocation timeout preserved, fresh attempt launched); three-seed analyzer accepted on CPU with synthetic captures only — exact-prose and application results kept separate, no composite "semantic reflection" score. Lesson from SEQ-127/129 already built in: format and content scored apart.
+
+**Level 2 starts "slightly" (05:18, 05:28), as Rohin asked in message 32:** the smallest two-wake / two-SLEEP public-record protocol is frozen before data (ASTRA_L2_PUBLIC_RECORD_PROTOCOL_2026-09-13.md): one base-start root, 16 independent opaque keys (8 + 8), seeds fixed, PROMOTE vs SHADOW (shadow compiles and trains but keeps the pre-write adapter mounted — the causal control for "SLEEP caused it"), ≤ 3 fits / 100 updates / 128 generation calls, 5,400 s controller; the child's own publicly-supported action records are the only training source (no teacher bytes in sleep or feedback); a misbinding control is a ready follow-up. Pure CPU core accepted (28 fixtures; typed JSON, byte-exact child records, chronological receipt links); native runtime being written; no L2 launch yet. This is the first closed-loop (compiler) cell of the campaign — the thing that distinguishes level 2 from the level-1 arsenal in Rohin's message 31.
+
+**A100 (a4u8g-0147, lease from 05:05 UTC):** the laptop chain found the node DELETING at 05:16, PROVISIONING from 05:22 (clean reprovision), polling every 2 min; onboarding, key install and setup will run unattended; host entry and VM key follow. Node 1 lease ends 2026-09-14 23:14 UTC (≈ 41.5 h); final incremental mirror re-run due tomorrow.
+
+**Fleet:** node 1 idle (8); node 2 Q0 on GPUs 0–2; node 3 reflection on GPUs 0–2 (as they cycle), GPU 7 absent. Fill lists empty by design. Nudger: Astra active (idle 0.3 min). Laptop chains 5/5. Nothing killed or launched by the watcher.
