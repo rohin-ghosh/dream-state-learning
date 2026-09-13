@@ -13420,3 +13420,24 @@ Use new source/spec/manifest/run; preserve SEQ169 failure unchanged. Final C11
 guard remains deferred under Rohin's latest ruling. Manuscripts remain under
 independent review and are not staged with this implementation. Node1 migration
 readiness is being inspected independently before its 23:14UTC checkpoint target.
+
+## [Builder] 2026-09-13T14:26Z — prospective LF-disclosure formation launch
+
+Reserve node2 GPU0 UUIDGPU-c70cba10-6ab6-a287-e2db-51dccd617ab0 for
+`pcfl_own_write_lf_20260913_attempt1/formation`;20calls maximum, zero fits now.
+Actual offline tokenizer preparation completed from cf6ffe56 implementation,
+fresh source `/tmp/astra_pcfl_own_write_lf_source_20260913_attempt1`, archive
+SHA25690b47b4bfa81861225ca3ac83ca5ed7a888bf9784ac9869da3bc2298e7aeba40.
+Run `/localhome/local-rohing/astra_diagnostics/pcfl_own_write_lf_20260913_attempt1`.
+Manifest file188c55dd0c2ab725d8e4f4dd97af420dea32f5d0a04a40cda04c409450a5dd76,
+internal seal28f67a96af75592f56c7a6dc99e608a5fddf81c1582ca0de7c1ac1fdaa28edd5.
+Spec `/tmp/astra_pcfl_own_write_lf_spec_20260913_attempt1.json`, SHA256
+c0d74d8dc9608f4383a53968be172948002ca520eb5fd16605279816d61d494d.
+Allocation `/tmp/astra_pcfl_own_write_lf_allocation_20260913_attempt1.json`,
+SHA25679b043cbbaad094da2140dc3f580838f931b8dd9854cfa00053c6a72e0de26d9.
+Same tested outer7c3197444113b610a3073e731c3e899f7e79423e6e37005c0f21b0d43e954725,
+1800s inclusive bound/60s cleanup reserve, exact live queue/GPU/CVD checks,
+6h lease margin, no foreign kills; detached transport exits before checks.
+Actual PID will be recorded by controller. CPU acceptance and provenance gate
+are the preceding entry; complete raw EVENT/LINK formation is required for fit.
+No output normalization, parser relaxation, world reselection, or claim upgrade.
