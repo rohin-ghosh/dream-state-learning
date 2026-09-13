@@ -1,6 +1,47 @@
-# Astra current handoff — 2026-09-13T12:29Z
+# Astra current handoff — 2026-09-13T12:47Z
 
-## CURRENT — September 13 12:29 UTC
+## CURRENT — September 13 12:47 UTC
+
+SEQ162 completed and archived at commit 824c9131. OLD/NEW native probes each
+performed one forward/backward and intentionally stopped before any optimizer
+step. Initial tensors/input/mask/config/environment and six RNG boundaries
+match; first loss equals 1.907779335975647; 256/392 gradient data hashes differ.
+This is first observed instrumented gradient nonidentity, not localization of
+the underlying cause or proof of historical drift's cause. Within-path
+repeatability remains untested. No repeat is selected or launched. Raw failures
+and intentional-stop cleanup remain immutable. Never repeat these attempts,
+collection or comparison. Archive gpu_artifacts_local/additive_native_parity_20260913_attempt1/evidence.tar
+SHA256 3fd33489a8c0f7eebe0566307f8404421628339e84a111642b3536a80feefad0.
+Independent interpretation archived as receipts_20260912/
+astra_native_parity_interpretation_20260913.md. No Main GPU job remains live.
+
+PCFL bound-world core, preparer, native actor and chronological formation
+planner reached EDITSTOP and are being integrated by Main. Already executed
+Main tests: core47, preparer30, actor32, formation13, qualifier23 and scripted
+runtime22 all PASS. These are CPU/component checks, not actual tokenizer or
+native7B qualification. Handoffs archived under receipts_20260912. Bound
+distractor remains X->Z/q_D, private PROBE observations, terminal after D;
+no candidate literal replaces Main's 0418cb53 binding.
+
+Descartes owns unfinished gpu/astra_pcfl_zero_fit_dev.py and matching test;
+do not stage until EDITSTOP. It implements separately scoped
+PCFL_C0_ZERO_FIT_DIAGNOSTIC_V1: 800 fixed tasks, C0 only, no updates/parenting.
+Actual offline tokenizer qualification, immutable used-task inventory, actor
+binding and outer release evidence remain pending before any native call.
+No alternate opaque allocator policy or synthetic qualification is approved.
+Lovelace advises on tokenizer profiling without running it. Beauvoir owns
+six canonical manuscript artifacts for bounded SEQ162 update; no other code.
+Current manuscript covers SEQ161; collaborator UNSENT. Main owns integration
+and native operations. Other completed workers are read-only unless reassigned.
+
+Rohin's simple hygiene applies now; formal guard only for final paper-grade
+C11. Mission ACTIVE/incomplete; no mechanism freeze/general G3/P1/H1/H2,
+clean-ancestry or C11 claim. Preserve dirty gpu/codex/dream_state.rules.
+Next: finish driver; profile actual offline tokenizer without loading model;
+bind scoped manifest/resource/custody, run and inspect finite C0 diagnostic;
+continue toward own-experience sequential writing and matched parenting.
+
+## Historical superseded snapshot — September 13 12:29 UTC
 
 No Main GPU job remains live from the additive allocation. All six fits and
 480 readout calls completed; three scientific controllers rc0, original

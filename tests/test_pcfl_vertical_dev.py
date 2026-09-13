@@ -1,6 +1,8 @@
 import copy
+from collections import Counter
 import hashlib
 import json
+import math
 from pathlib import Path
 import unittest
 
@@ -48,6 +50,7 @@ class PCFLVerticalTests(unittest.TestCase):
         for name, expected in core.SOURCE_PINS.items():
             self.assertEqual(hashlib.sha256((root / name).read_bytes()).hexdigest(), expected, name)
         self.assertEqual(hashlib.sha256((root / core.BINDING_MEMO).read_bytes()).hexdigest(), core.BINDING_MEMO_SHA256)
+        self.assertEqual(hashlib.sha256((Path(__file__).resolve().parents[1] / core.PRODUCTION_BINDING_PATH).read_bytes()).hexdigest(), core.PRODUCTION_BINDING_SHA256)
 
     def test_root_roundtrip_and_closed_json(self):
         for label in core.ROOT_LABELS:
@@ -90,7 +93,7 @@ class PCFLVerticalTests(unittest.TestCase):
         cell = core.WorldCell(self.root, 1, 1, 0)
         wrong = core.ideal_rows(core.WorldCell(core.build_root("excluded/1"), 0, 0, 0))
         self.assertEqual(core.digest(core.to_data(self.root)), "823754da5823bbcef0d00852d3c1160d5e012b6e8c236eb7555acdd906d6d186")
-        self.assertEqual(core.digest(core.registries()), "caceddbaab84390196b8d1b219062440a4e7b49e640665b463f1bf83a43e8f03")
+        self.assertEqual(core.digest(core.registries()), "cf8dd4b26388676dc2466139f49252c39a537f7d6383b3ef0b4fb48468354825")
         self.assertEqual(core.digest(core.render_views(cell, 0, core.ideal_rows(cell), wrong, fixture_only=True)), "ca87f40f3c78ac9885a071297408d08b40b1401a31454a1c6d5af1b16b02b5bc")
 
     def test_registry_detached_no_pad_and_main_literals(self):
@@ -105,40 +108,43 @@ class PCFLVerticalTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             core.validate_registries(registry)
 
-    def test_production_d_is_closed_unresolved_object(self):
+    def test_production_definition_bound_does_not_close_other_gates(self):
         binding = core.production_binding_status()
-        self.assertEqual(binding["status"], "VS_ASSAY_INVALID")
+        self.assertEqual(binding["status"], "WORLD_DEFINITION_BOUND")
+        self.assertTrue(binding["definition_bound"])
         self.assertFalse(binding["execution_contract_valid"])
         self.assertFalse(binding["production_inventory_complete"])
-        self.assertTrue(all(value is None for value in binding["distractor"].values()))
-        self.assertIsNone(binding["relevant_public_result"])
+        self.assertEqual(binding["source_sha256"], core.PRODUCTION_BINDING_SHA256)
+        self.assertEqual(binding["distractor"]["endpoints"], ["X", "Z"])
+        self.assertEqual(binding["relevant_public_result"], core.PROBE_WIRE)
         world = core.registries()["world_registry"]
         self.assertEqual(world["distractor"], binding)
-        self.assertEqual(world["probe_endpoints"], [["H", "S_R"], None])
-        self.assertIsNone(world["probe_result"])
-        self.assertIsNone(world["probe_receipt_slots"])
+        self.assertEqual(world["probe_endpoints"], [["H", "S_R"], ["X", "Z"]])
+        self.assertEqual(world["probe_result"], core.PROBE_WIRE)
+        self.assertEqual(world["probe_receipt_slots"], ["r9", "r10"])
         binding["distractor"]["endpoints"] = ["invented", "invented"]
-        self.assertIsNone(core.production_binding_status()["distractor"]["endpoints"])
+        self.assertEqual(core.production_binding_status()["distractor"]["endpoints"], ["X", "Z"])
 
-    def test_default_production_probe_render_and_new_paths_fail_closed(self):
-        with self.assertRaisesRegex(ValueError, "VS_ASSAY_INVALID"):
-            core.require_production_bindings()
-        with self.assertRaisesRegex(ValueError, "VS_ASSAY_INVALID"):
-            core.WorldSession(self.cell, "NEW")
-        with self.assertRaisesRegex(ValueError, "VS_ASSAY_INVALID"):
-            core.render_reachout(self.cell, 0)
-        with self.assertRaisesRegex(ValueError, "VS_ASSAY_INVALID"):
-            core.render_task(self.cell, 0, "RAW_EPISODIC")
+    def test_bound_default_cpu_interfaces_do_not_authorize_native(self):
+        self.assertTrue(core.require_production_bindings())
+        self.assertFalse(core.WorldSession(self.cell, "NEW").terminal)
+        self.assertIn(self.root.lookup("node", "X"), core.render_reachout(self.cell, 0))
+        self.assertIn("PROBE RESULT", core.render_task(self.cell, 0, "RAW_EPISODIC")["user"])
         old = core.WorldSession(self.cell, "OLD")
-        with self.assertRaisesRegex(ValueError, "VS_ASSAY_INVALID"):
+        with self.assertRaises(ValueError):
             old.probe("PROBE " + self.root.lookup("probe", "distractor"))
         self.assertEqual(old.receipts, [])
+        self.assertFalse(core.production_binding_status()["execution_contract_valid"])
 
-    def test_demo_fixture_never_establishes_production_d_binding(self):
+    def test_fixture_flag_never_bypasses_bound_terminal_rules(self):
         session = core.WorldSession(self.cell, "NEW", fixture_only=True)
         result = session.probe("PROBE " + self.root.lookup("probe", "distractor"))
         self.assertTrue(result["ok"])
         self.assertTrue(result["receipt"]["fixture_only"])
+        self.assertTrue(result["terminal"])
+        self.assertEqual(result["receipt"]["destination"], self.root.lookup("node", "Z"))
+        with self.assertRaises(ValueError):
+            session.explore_prompt()
         self.assertFalse(core.production_binding_status()["execution_contract_valid"])
         with self.assertRaises(ValueError):
             core.WorldSession(self.cell, "NEW", fixture_only="true")
@@ -216,9 +222,16 @@ class PCFLVerticalTests(unittest.TestCase):
                 result = session.probe("PROBE " + self.root.lookup("probe", name))
                 self.assertTrue(result["ok"])
                 self.assertEqual(result["receipt"]["port"], self.root.lookup("port", f"q{bit}"))
-                source, ports = session._affordances()
-                executed = session.explore("EXPLORE " + source + " " + ports[0])
-                self.assertEqual(executed["receipt"]["destination"], self.root.lookup("node", "S_R" if name == "relevant" else "Y"))
+                if name == "relevant":
+                    self.assertFalse(result["terminal"])
+                    source, ports = session._affordances()
+                    executed = session.explore("EXPLORE " + source + " " + ports[0])
+                    self.assertEqual(executed["receipt"]["destination"], self.root.lookup("node", "S_R"))
+                else:
+                    self.assertTrue(result["terminal"])
+                    self.assertEqual(result["receipt"]["destination"], self.root.lookup("node", "Z"))
+                    with self.assertRaises(ValueError):
+                        session._affordances()
 
     def test_invalid_actions_consumed_no_retry(self):
         session = core.WorldSession(self.cell, "OLD")
@@ -232,6 +245,199 @@ class PCFLVerticalTests(unittest.TestCase):
             fresh.probe("PROBE " + self.root.lookup("probe", "relevant"))
         with self.assertRaises(ValueError):
             fresh.explore("bad")
+
+    def test_latent_transition_in_full_private_audit_not_witnessed_banks(self):
+        for cell in core.expand_cube(self.root):
+            self.assertEqual(len(cell.edges), 9)
+            self.assertEqual(len(cell.full_transitions), 10)
+            latent = cell.full_transitions[-1]
+            self.assertIsNone(latent.event)
+            self.assertIsNone(latent.receipt)
+            self.assertEqual((latent.source, latent.port, latent.destination),
+                             (self.root.lookup("node", "X"), self.root.lookup("port", f"q{cell.distractor}"), self.root.lookup("node", "Z")))
+            detour_ports = tuple(self.root.lookup("port", name) for name in (f"a{1-cell.old}", f"q{cell.distractor}", "u"))
+            start = self.root.lookup("node", "S_L")
+            dead_end = self.root.lookup("node", "Y")
+            self.assertTrue(core.execute_route(cell.full_transitions, (start, dead_end, detour_ports))["graph_success"])
+            self.assertFalse(core.execute_route(cell.edges, (start, dead_end, detour_ports))["legal"])
+            for goal in (0, 1):
+                raw = core.format_route(start, self.root.lookup("node", f"G_R{goal}"), detour_ports)
+                result = core.score_route(cell, goal, raw)
+                self.assertTrue(result["legal"])
+                self.assertFalse(result["graph_success"])
+                for cut in ("OLD", "NEW"):
+                    self.assertEqual(core.oracle_routes_v2(cell, goal, cut), ())
+            rows = core.ideal_rows(cell)
+            self.assertEqual(len(rows), 15)
+            events = [row for row in rows if row["kind"] == "EVENT"]
+            self.assertEqual(len(events), 9)
+            self.assertTrue(all(row["fields"]["source"] != latent.source for row in events))
+            self.assertTrue(all(row["fields"]["receipt"] not in [self.root.lookup("receipt", name) for name in ("r9", "r10")] for row in events))
+            queries = core.materialize_queries(rows)
+            self.assertEqual(len(queries), 19)
+            self.assertNotIn("READ EVENTS_AT " + latent.source, queries)
+            graph = core.render_task(cell, 0, "EXACT_WITNESSED_GRAPH")["user"]
+            self.assertNotIn(f"EDGE {latent.source} {latent.port} {latent.destination}\n", graph)
+            self.assertNotIn("PROBE " + self.root.lookup("probe", "distractor"), core.ceiling_fixture(cell)["raw_public"])
+
+    def test_distractor_commit_is_terminal_without_relevant_reveal(self):
+        for cell in core.expand_cube(self.root):
+            for fixture_only in (False, True):
+                session = core.WorldSession(cell, "NEW", fixture_only=fixture_only)
+                result = session.probe("PROBE " + self.root.lookup("probe", "distractor"))
+                self.assertTrue(result["ok"])
+                self.assertTrue(result["terminal"])
+                self.assertTrue(session.terminal)
+                self.assertIsNone(session._probe_result)
+                self.assertEqual(result["public"].count("\n"), 1)
+                self.assertNotIn(self.root.lookup("probe", "relevant"), result["public"])
+                evidence_before = session.receipts
+                for action in (session.public_affordances, session.explore_prompt, session.link_prompt,
+                               lambda: session.event_prompt(result["receipt"]),
+                               lambda: session.explore("EXPLORE " + self.root.lookup("node", "H") + " " + self.root.lookup("port", f"q{cell.relevant}")),
+                               lambda: session.probe("PROBE " + self.root.lookup("probe", "relevant"))):
+                    with self.assertRaises(ValueError):
+                        action()
+                fresh = self.root.lookup("event", "e8")
+                raw = core.EVENT_WIRE.format(event=fresh, **result["receipt"])
+                self.assertFalse(core.admit_event(raw, result["receipt"], session, fresh)["accepted"])
+                self.assertFalse(core.admit_link("", [result["receipt"]]*2, session, self.root.lookup("link", "l4"), [])["accepted"])
+                self.assertEqual(session.receipts, evidence_before)
+                self.assertEqual(len(session.attempts), 1)
+
+    def test_missing_malformed_and_unlisted_probes_terminate_without_bytes(self):
+        probe = "PROBE " + self.root.lookup("probe", "relevant")
+        unlisted = "PROBE " + core.build_root("excluded/1").lookup("probe", "relevant")
+        for raw in ("", None, "bad", probe + "\n", " " + probe, probe + " " + probe, probe.lower(), unlisted):
+            session = core.WorldSession(self.cell, "NEW")
+            result = session.probe(raw)
+            self.assertFalse(result["ok"])
+            self.assertTrue(result["terminal"])
+            self.assertEqual(result["public"], "")
+            self.assertNotIn("receipt", result)
+            self.assertEqual(session.receipts, [])
+            self.assertEqual(len(session.attempts), 1)
+            with self.assertRaises(ValueError):
+                session.probe(probe)
+            with self.assertRaises(ValueError):
+                session.explore_prompt()
+            with self.assertRaises(ValueError):
+                session.link_prompt()
+
+    def test_public_probe_wire_and_private_observation_receipts(self):
+        self.assertEqual(core.PROBE_WIRE, "PROBE RESULT {probe} TESTED {source} TO {destination} AVAILABLE PORT {port}\n")
+        for cell in core.expand_cube(self.root):
+            for name, source, destination, receipt_slot, outcome in (
+                ("relevant", "H", "S_R", "r9", cell.relevant),
+                ("distractor", "X", "Z", "r10", cell.distractor),
+            ):
+                session = core.WorldSession(cell, "NEW")
+                result = session.probe("PROBE " + self.root.lookup("probe", name))
+                receipt = result["receipt"]
+                self.assertEqual(receipt["kind"], "PROBE")
+                self.assertEqual(receipt["receipt"], self.root.lookup("receipt", receipt_slot))
+                self.assertTrue(session.check_receipt(receipt))
+                expected = ("PROBE RESULT " + self.root.lookup("probe", name) + " TESTED " + self.root.lookup("node", source) +
+                            " TO " + self.root.lookup("node", destination) + " AVAILABLE PORT " + self.root.lookup("port", f"q{outcome}") + "\n")
+                self.assertEqual(result["public"], expected)
+                for forbidden in (receipt["receipt"], self.root.label, "relevant", "distractor", "sha256", "terminal", "R=", "D="):
+                    self.assertNotIn(forbidden, result["public"])
+                fresh = self.root.lookup("event", "e8")
+                self.assertFalse(core.admit_event(core.EVENT_WIRE.format(event=fresh, **receipt), receipt, session, fresh)["accepted"])
+                with self.assertRaises(ValueError):
+                    session.event_prompt(receipt)
+
+    def test_actual_public_result_entropy_and_d_neutrality(self):
+        def entropy(values):
+            return -sum((count/len(values))*math.log2(count/len(values)) for count in Counter(values).values())
+        def mutual_information(first, second):
+            return entropy(first) + entropy(second) - entropy(list(zip(first, second)))
+        for root_index in range(4):
+            root = core.build_root(f"excluded/{root_index}")
+            for old in (0, 1):
+                quartet = [cell for cell in core.expand_cube(root) if cell.old == old]
+                outputs = {name: [core.WorldSession(cell, "NEW").probe("PROBE " + root.lookup("probe", name))["public"] for cell in quartet]
+                           for name in ("relevant", "distractor")}
+                self.assertEqual(len(set(zip(outputs["relevant"], outputs["distractor"]))), 4)
+                for goal in (0, 1):
+                    labels = [core.oracle_route_v1(cell, goal) for cell in quartet]
+                    self.assertEqual([entropy(outputs["relevant"]), entropy(outputs["distractor"]),
+                                      mutual_information(outputs["relevant"], labels), mutual_information(outputs["distractor"], labels)], [1, 1, 1, 0])
+                    for render_id in ("RA", "RB"):
+                        self.assertEqual(len({core.render_reachout(cell, goal, render_id) for cell in quartet}), 1)
+                    for first, second in ((quartet[0], quartet[1]), (quartet[2], quartet[3])):
+                        self.assertEqual([row["raw"] for row in core.ideal_rows(first)], [row["raw"] for row in core.ideal_rows(second)])
+                        self.assertEqual(core.ceiling_fixture(first)["raw_public"], core.ceiling_fixture(second)["raw_public"])
+                        for cut in (None, "OLD", "NEW"):
+                            self.assertEqual(core.oracle_routes_v2(first, goal, cut), core.oracle_routes_v2(second, goal, cut))
+
+    def test_bound_goal_and_root_visibility_and_probe_order_balance(self):
+        positions = Counter()
+        for root_index in range(4):
+            root = core.build_root(f"excluded/{root_index}")
+            for old in (0, 1):
+                cell = core.WorldCell(root, old, 0, 0)
+                for goal in (0, 1):
+                    for render_id in ("RA", "RB"):
+                        public = core.render_reachout(cell, goal, render_id)
+                        relevant = root.lookup("probe", "relevant")
+                        distractor = root.lookup("probe", "distractor")
+                        positions[1 if public.index(relevant) < public.index(distractor) else 2] += 1
+                        self.assertIn("START " + root.lookup("node", "S_L"), public)
+                        self.assertIn("GOAL " + root.lookup("node", f"G_R{goal}"), public)
+                        for forbidden in (root.label, "relevant", "distractor", "PROBE_0", "PROBE_1"):
+                            self.assertNotIn(forbidden, public)
+                        for goal_slot in core.SLOTS["goal"]:
+                            self.assertNotIn(root.lookup("goal", goal_slot), public)
+                    route = core.oracle_route_v1(cell, goal)
+                    start, target, _ = core.parse_route(route)
+                    self.assertTrue(start.startswith("N_") and target.startswith("N_"))
+        self.assertEqual(positions, {1: 16, 2: 16})
+
+    def test_relevant_continuation_one_event_two_links_and_chronology(self):
+        old, admissions = self.old_life()
+        events = {item["row"]["fields"]["event"]: item["row"] for item in admissions if item["kind"] == "EVENT"}
+        self.assertEqual(events[self.root.lookup("event", "e5")]["fields"]["source"], self.root.lookup("node", "Z"))
+        self.assertEqual(events[self.root.lookup("event", "e7")]["fields"]["source"], self.root.lookup("node", "B"))
+        session = core.WorldSession(self.cell, "NEW", old)
+        probe = session.probe("PROBE " + self.root.lookup("probe", "relevant"))
+        self.assertFalse(probe["terminal"])
+        public = session.public_affordances()
+        receipt = session.explore("EXPLORE " + public["source"] + " " + public["ports"][0])["receipt"]
+        self.assertEqual(receipt["receipt"], self.root.lookup("receipt", "r8"))
+        self.assertEqual(receipt["kind"], "EXPLORE")
+        self.assertEqual(receipt["previous_sha256"], probe["receipt"]["sha256"])
+        fresh = self.root.lookup("event", "e8")
+        new = core.admit_event(core.EVENT_WIRE.format(event=fresh, **receipt), receipt, session, fresh)
+        self.assertTrue(new["accepted"])
+        events[fresh] = new["row"]
+        for index, (first_id, second_id) in enumerate(((self.root.lookup("event", "e1"), fresh), (fresh, self.root.lookup("event", "e3")))):
+            first, second = events[first_id], events[second_id]
+            fields = dict(link=self.root.lookup("link", f"l{index+4}"), first=first_id, second=second_id,
+                          via=first["fields"]["destination"], receipt_first=first["fields"]["receipt"], receipt_second=second["fields"]["receipt"])
+            evidence = [next(item for item in old.receipts + session.receipts if item["receipt"] == fields[key]) for key in ("receipt_first", "receipt_second")]
+            self.assertTrue(core.admit_link(core.LINK_WIRE.format(**fields), evidence, session, fields["link"], [first, second])["accepted"])
+        with self.assertRaises(ValueError):
+            session.link_prompt()
+        with self.assertRaises(ValueError):
+            session.explore_prompt()
+        self.assertFalse(core.admit_event(new["raw"], receipt, session, fresh)["accepted"])
+
+    def test_probe_receipt_cannot_substitute_link_evidence(self):
+        old, admissions = self.old_life()
+        session = core.WorldSession(self.cell, "NEW", old)
+        probe = session.probe("PROBE " + self.root.lookup("probe", "relevant"))["receipt"]
+        public = session.public_affordances()
+        receipt = session.explore("EXPLORE " + public["source"] + " " + public["ports"][0])["receipt"]
+        fresh = self.root.lookup("event", "e8")
+        event = core.admit_event(core.EVENT_WIRE.format(event=fresh, **receipt), receipt, session, fresh)["row"]
+        first = admissions[1]["row"]
+        first_receipt = old.receipts[1]
+        fields = dict(link=self.root.lookup("link", "l4"), first=first["fields"]["event"], second=fresh,
+                      via=public["source"], receipt_first=first_receipt["receipt"], receipt_second=probe["receipt"])
+        result = core.admit_link(core.LINK_WIRE.format(**fields), [first_receipt, probe], session, fields["link"], [first, event])
+        self.assertFalse(result["accepted"])
+        self.assertIn("executed", result["error"])
 
     def test_strict_parsers_no_normalization(self):
         rows = core.ideal_rows(self.cell)
@@ -554,12 +760,14 @@ class PCFLVerticalTests(unittest.TestCase):
         self.assertTrue(report["route_construct_passed"])
         self.assertFalse(report["full_construct_passed"])
         self.assertFalse(report["ready_for_model_calls"])
-        self.assertEqual(report["scope"], "CPU_FIXTURE_ONLY_NOT_PRODUCTION_D_CERTIFICATE")
+        self.assertEqual(report["scope"], "CPU_BOUND_WORLD_DEFINITION_NOT_NATIVE_READINESS")
         self.assertFalse(report["production_binding"]["execution_contract_valid"])
         self.assertEqual(len(report["route_cut_decisions"]), 192)
         self.assertEqual(len(report["atoms_link_decisions"]), 48)
         self.assertEqual(len(report["link_successor_support"]), 32)
         self.assertEqual(len(report["entropy_quartets"]), 16)
+        self.assertEqual(len(report["d_neutrality_pairs"]), 32)
+        self.assertTrue(all(row["latent_transition_included"] for row in report["route_cut_decisions"]))
         self.assertEqual(report["projection_ceilings"]["OLD_ONLY_TEXT"]["bayes_correct"], 32)
         self.assertEqual(report["projection_ceilings"]["NEW_ONLY_TEXT"]["bayes_correct"], 32)
         self.assertEqual(report["projection_ceilings"]["NONE_OFF"]["bayes_correct"], 16)

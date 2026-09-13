@@ -12519,3 +12519,18 @@ The just-merged independent laptop proposal agrees on X->Z/q_D/privateG;
 Main's explicitly recorded result literal/private-observation custody remains
 the selected prospective binding, not silently swapped for a candidate.
 Optional goal-switch sidecar is not added to the current queue.
+
+### [Builder] 2026-09-13T12:47Z — continuation and PCFL component integration
+
+Main safely pulled main at824c9131; preserves unrelated dirty rules and
+Descartes's unfinished zero-fit driver/tests. Archived EDITSTOP handoffs for
+bound world/preparer/native actor/formation plus SEQ162 interpretation.
+Main's already-executed component tests passed47/30/32/13 respectively,
+qualifier23 and scripted runtime22; no duplicated numerical experiment.
+Exact core/actor/formation byte hashes rechecked against handoffs. Current
+HANDOFF/STATE supersede12:29 snapshot: SEQ162 complete, no Main GPU job live,
+within-path repeatability/historical-drift cause unresolved. No repeat selected.
+Actual PCFL tokenizer measurements/used-task manifest/release handling remain
+pending; no PCFL native call or write. Simple hygiene now, formal guard finalC11.
+Beauvoir owns bounded six-file manuscript update throughSEQ162; Descartes
+continues driver; Lovelace advises tokenizer-only profile. No claims promoted.

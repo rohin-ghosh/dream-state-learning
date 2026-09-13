@@ -1,4 +1,20 @@
-## Current superseding snapshot — 2026-09-13 12:29 UTC
+## Current superseding snapshot — 2026-09-13 12:47 UTC
+
+SEQ162 complete (824c9131): matching recorded initial conditions/loss/RNG,
+256/392 first-gradient hashes differ in instrumented OLD/NEW, zero optimizer
+steps. Underlying cause/historical drift and within-path repeatability remain
+unresolved. No Main GPU job live; no repeat selected. Archive and independent
+interpretation in current HANDOFF. Do not repeat completed collection/scoring.
+Bound PCFL core/preparer/actor/formation EDITSTOP; Main previously passed
+47/30/32/13 tests, qualifier23 and scripted runtime22. Integrating exact bytes.
+Descartes owns unfinished zero-fit driver/tests. Actual offline tokenizer,
+800-task scoped manifest and native allocation/release prerequisites pending;
+no native PCFL call, synthetic certificate or alternate allocator approved.
+Beauvoir updates manuscript throughSEQ162, collaborator remains UNSENT.
+Simple hygiene now, formal guard finalC11 only. Mission ACTIVE/incomplete;
+no freeze/generalG3/P1/H1/H2/clean-ancestry/C11 qualification.
+
+## Historical superseded snapshot — 2026-09-13 12:29 UTC
 
 SEQ-161 additive evidence completed, recovered, independently reduced and
 archived; no Main GPU allocation remains live. Scientific controllers rc0;

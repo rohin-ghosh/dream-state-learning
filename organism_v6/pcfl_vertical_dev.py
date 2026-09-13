@@ -13,6 +13,8 @@ import re
 SCHEMA = "pcfl_vertical_cpu_v1"
 BINDING_MEMO = "2026-09-13_pcfl_distractor_and_opaque_id_production_bindings.md"
 BINDING_MEMO_SHA256 = "bcdae11f3eb5c0653b842f16bbf5ba1e34cc5ffdbdc62689aca1ce2ca0f6eecf"
+PRODUCTION_BINDING_PATH = "research_notes/astra_memos/ASTRA_PCFL_PRODUCTION_WORLD_BINDING_2026-09-13.md"
+PRODUCTION_BINDING_SHA256 = "ac2013fe44c3f9bdfdca43defca0d8b19baa39209fab443b74abc128391fea91"
 SOURCE_PINS = {
     "2026-09-13_pcfl_vertical_dev_v2_synthesis.md": "222677395031224e5bb645a18ada975a571db28ae9c818f12fa396e09a394456",
     "2026-09-13_pcfl_vertical_dev_v2_2_writer_repair.md": "683fcba7762b69f408e5371cd9525e62c7ba6c8aa25494542f3041fec275dfca",
@@ -112,18 +114,24 @@ def detached(value):
 
 
 def production_binding_status():
-    return {"status": "VS_ASSAY_INVALID", "execution_contract_valid": False,
-            "source": BINDING_MEMO, "source_sha256": BINDING_MEMO_SHA256,
-            "distractor": {"endpoints": None, "port_semantics": None, "public_outcomes": None,
-                           "receipt_schema": None, "post_commit_transition": None},
-            "relevant_public_result": None, "production_inventory_complete": False,
-            "pending": ["distractor topology and result/receipt/port semantics", "relevant public result bytes",
-                        "production probe receipt slots", "G_ visibility and root metadata typing",
-                        "real tokenizer joint inventory qualification", "profile/device-time gates"]}
+    return {"status": "WORLD_DEFINITION_BOUND", "definition_bound": True, "execution_contract_valid": False,
+            "source": PRODUCTION_BINDING_PATH, "source_sha256": PRODUCTION_BINDING_SHA256,
+            "distractor": {"endpoints": ["X", "Z"], "port_semantics": "D selects existing q0/q1",
+                           "public_outcomes": PROBE_WIRE,
+                           "receipt_schema": {"kind": "PROBE", "slot": "r10", "public_receipt_id": False,
+                                              "can_support_event_or_link": False},
+                           "post_commit_transition": "latent X --q_D--> Z; selected probe returns result then terminates lineage",
+                           "witnessed_or_fitted": False},
+            "relevant_public_result": PROBE_WIRE, "production_inventory_complete": False,
+            "goal_visibility": "G_ private metadata; START/GOAL/ROUTE endpoints are N_ nodes",
+            "root_visibility": "private labels; no model-visible root namespace",
+            "pending": ["real tokenizer joint inventory qualification", "complete rendered shortcut certificate",
+                        "native runtime/custody and model ceilings", "profile/device-time gates"]}
 
 
 def require_production_bindings():
-    raise ValueError("VS_ASSAY_INVALID: production distractor and probe-result bindings unresolved")
+    require(production_binding_status()["definition_bound"], "VS_ASSAY_INVALID: world definition unresolved")
+    return True
 
 
 def seed(label):
@@ -150,11 +158,11 @@ class Root:
 
 @dataclass(frozen=True)
 class Edge:
-    event: str
+    event: str | None
     source: str
     port: str
     destination: str
-    receipt: str
+    receipt: str | None
 
 
 @dataclass(frozen=True)
@@ -173,6 +181,12 @@ class WorldCell:
                           self.root.lookup("port", port), self.root.lookup("node", destination),
                           self.root.lookup("receipt", f"r{index}"))
                      for index, (source, port, destination) in enumerate(definitions))
+
+    @property
+    def full_transitions(self):
+        latent = Edge(None, self.root.lookup("node", "X"), self.root.lookup("port", f"q{self.distractor}"),
+                      self.root.lookup("node", "Z"), None)
+        return self.edges + (latent,)
 
 
 def build_root(label, inventory=None):
@@ -301,8 +315,8 @@ def oracle_routes_v2(cell, goal, cut=None):
         if current == target:
             routes.append(format_route(start, target, ports))
             continue
-        for edge in cell.edges:
-            if edge.event != removed and edge.source == current and edge.destination not in visited:
+        for edge in cell.full_transitions:
+            if (removed is None or edge.event != removed) and edge.source == current and edge.destination not in visited:
                 pending.append((edge.destination, visited + (edge.destination,), ports + (edge.port,)))
     return tuple(sorted(routes))
 
@@ -330,7 +344,7 @@ def score_route(cell, goal, raw, cut=None):
     result["strict"] = True
     if parsed[:2] != (start, target):
         return result
-    execution = execute_route(tuple(edge for edge in cell.edges if edge.event != removed), parsed)
+    execution = execute_route(tuple(edge for edge in cell.full_transitions if removed is None or edge.event != removed), parsed)
     result.update(legal=execution["legal"], graph_success=execution["graph_success"],
                   used_old=cell.root.lookup("event", "e0") in execution["events"],
                   used_new=cell.root.lookup("event", "e8") in execution["events"])
@@ -406,14 +420,13 @@ def ceiling_fixture(cell):
 
 def render_reachout(cell, goal, render_id="RA", *, fixture_only=False):
     require(type(fixture_only) is bool, "explicit fixture flag required")
-    if not fixture_only:
-        require_production_bindings()
+    require_production_bindings()
     start, target = _task_nodes(cell, goal)
     require(render_id in REACHOUT_TEMPLATES, "unknown reachout render")
     root = cell.root
     return REACHOUT_TEMPLATES[render_id].format(START_ID=start, GOAL_ID=target,
         PROBE_0=root.lookup("probe", "relevant"), SOURCE_0=root.lookup("node", "H"), DESTINATION_0=root.lookup("node", "S_R"),
-        PROBE_1=root.lookup("probe", "distractor"), SOURCE_1=root.lookup("node", "Z"), DESTINATION_1=root.lookup("node", "Y"))
+        PROBE_1=root.lookup("probe", "distractor"), SOURCE_1=root.lookup("node", "X"), DESTINATION_1=root.lookup("node", "Z"))
 
 
 def render_task(cell, goal, render_id="NATIVE_CONTEXT", projection=None, rows=(), wrong_rows=(), *, fixture_only=False):
@@ -470,13 +483,14 @@ class WorldSession:
         validate_cell(cell)
         require(stage in ("OLD", "NEW"), "unknown stage")
         require(type(fixture_only) is bool, "explicit fixture flag required")
-        if stage == "NEW" and not fixture_only:
+        if stage == "NEW":
             require_production_bindings()
         self._fixture_only = fixture_only
         self._cell, self.stage = cell, stage
         self._receipts, self._attempts, self._events, self._links = [], [], [], []
         self._old_events, self._old_receipts = [], []
         self._explore_turn, self._probe_used, self._probe_result = 0, False, None
+        self._terminal = False
         self._event_attempts, self._link_attempts = set(), 0
         if prior_session is not None:
             require(stage == "NEW" and type(prior_session) is WorldSession and prior_session.stage == "OLD", "invalid parent session")
@@ -492,6 +506,10 @@ class WorldSession:
     def attempts(self):
         return detached(self._attempts)
 
+    @property
+    def terminal(self):
+        return self._terminal
+
     def explore_prompt(self):
         source, ports = self._affordances()
         return EXPLORE_TEMPLATE.format(SOURCE_ID=source, COMMA_SEPARATED_PUBLIC_PORT_IDS=",".join(ports))
@@ -501,6 +519,7 @@ class WorldSession:
         return {"source": source, "ports": list(ports)}
 
     def _affordances(self):
+        require(not self._terminal, "lineage terminal; no exploration or NEW continuation")
         root = self._cell.root
         if self.stage == "OLD":
             require(self._explore_turn < 8, "OLD opportunities consumed")
@@ -520,9 +539,8 @@ class WorldSession:
         return detached(receipt)
 
     def probe(self, raw):
-        if not self._fixture_only:
-            require_production_bindings()
-        require(self.stage == "NEW" and not self._probe_used, "probe unavailable/consumed")
+        require_production_bindings()
+        require(self.stage == "NEW" and not self._probe_used and not self._terminal, "probe unavailable/consumed")
         self._probe_used = True
         attempt = {"kind": "PROBE", "raw": raw, "ok": False}
         self._attempts.append(attempt)
@@ -532,15 +550,19 @@ class WorldSession:
             require(probe_id in [root.lookup("probe", name) for name in SLOTS["probe"]], "unlisted probe")
             relevant = probe_id == root.lookup("probe", "relevant")
             fields = dict(kind="PROBE", probe=probe_id, receipt=root.lookup("receipt", "r9" if relevant else "r10"),
-                          source=root.lookup("node", "H" if relevant else "Z"), destination=root.lookup("node", "S_R" if relevant else "Y"),
+                          source=root.lookup("node", "H" if relevant else "X"), destination=root.lookup("node", "S_R" if relevant else "Z"),
                           port=root.lookup("port", f"q{self._cell.relevant if relevant else self._cell.distractor}"))
-            self._probe_result = fields
+            self._probe_result = fields if relevant else None
+            self._terminal = not relevant
             receipt = self._issue(fields)
             attempt["ok"] = True
-            return {"ok": True, "receipt": receipt, "public": PROBE_WIRE.format(**fields)}
+            attempt["terminal"] = self._terminal
+            return {"ok": True, "receipt": receipt, "public": PROBE_WIRE.format(**fields), "terminal": self._terminal}
         except ValueError as error:
+            self._terminal = True
             attempt["error"] = str(error)
-            return {"ok": False, "error": str(error)}
+            attempt["terminal"] = True
+            return {"ok": False, "error": str(error), "public": "", "terminal": True}
 
     def explore(self, raw):
         source, ports = self._affordances()
@@ -566,12 +588,14 @@ class WorldSession:
             return {"ok": False, "error": str(error)}
 
     def event_prompt(self, receipt):
+        require(not self._terminal, "lineage terminal; no EVENT opportunity")
         self.check_receipt(receipt)
         require(receipt["kind"] == "EXPLORE", "event needs executed action")
         fresh = self._cell.root.lookup("event", f"e{receipt['opportunity'] if self.stage == 'OLD' else 8}")
         return EVENT_TEMPLATE.format(FRESH_EVENT_ID=fresh)
 
     def link_prompt(self):
+        require(not self._terminal, "lineage terminal; no LINK opportunity")
         require(self._explore_turn == (8 if self.stage == "OLD" else 1), "link phase before exploration completes")
         require(self._link_attempts < (4 if self.stage == "OLD" else 2), "LINK opportunities consumed")
         fresh = self._cell.root.lookup("link", f"l{self._link_attempts + (0 if self.stage == 'OLD' else 4)}")
@@ -601,6 +625,7 @@ def _admission(raw, kind, action):
 def admit_event(raw, receipt, session, fresh_id):
     require(type(session) is WorldSession, "issuing session required")
     def admit():
+        require(not session.terminal, "lineage terminal; no EVENT admission")
         session.check_receipt(receipt)
         require(receipt["kind"] == "EXPLORE", "probe result is not an executed event")
         opportunity = receipt["opportunity"]
@@ -935,9 +960,9 @@ def registries():
                         "prefixes": PREFIXES, "seed_prefix": "PCFL-V2.1-PREP\u0000", "tokenizer_qualified": False,
                         "dev_realized_old": [0, 1], "dev_canonical_relevant": [0, 1], "dev_primary_reachout": ["RA", "RB"]},
         "world_registry": {"old_sources": list(OLD_SOURCES), "visible_port_order": list(SLOTS["port"]),
-                           "probe_endpoints": [["H", "S_R"], None], "probe_result": None,
+                           "probe_endpoints": [["H", "S_R"], ["X", "Z"]], "probe_result": PROBE_WIRE,
                            "distractor": production_binding_status(),
-                           "receipt": RECEIPT_WIRE, "probe_receipt_slots": None,
+                           "receipt": RECEIPT_WIRE, "probe_receipt_slots": ["r9", "r10"],
                            "fresh_handles": "chronological e0..e7 then e8; l0..l3 then l4,l5",
                            "ideal_edge_handles_not_live_chronology": True},
         "render_registry": {"projections": renders, "wrappers": {f"W{index}": wrapper for index, wrapper in enumerate(WRAPPERS)},
@@ -973,18 +998,47 @@ def audit_construct(roots):
     require(len(roots) == 4 and {root.label for root in roots} == {f"excluded/{index}" for index in range(4)}, "four distinct excluded roots required")
     all_ids = [identifier for root in roots for _, entries in root.inventory for _, identifier in entries]
     require(len(all_ids) == len(set(all_ids)), "cross-root ID collision")
-    checks, atoms, link_support, quartets, projections = [], [], [], [], defaultdict(list)
+    checks, atoms, link_support, quartets, neutrality, projections = [], [], [], [], [], defaultdict(list)
     for root in roots:
         for old in (0, 1):
             for goal in (0, 1):
                 quartet = [cell for cell in expand_cube(root) if cell.old == old]
-                before = [render_reachout(cell, goal, fixture_only=True) + "\n" + render_task(cell, goal, "OLD_ONLY_TEXT", rows=ideal_rows(cell))["user"] for cell in quartet]
+                before = [canonical({"RA": render_reachout(cell, goal, "RA"), "RB": render_reachout(cell, goal, "RB"),
+                                     "old": render_task(cell, goal, "OLD_ONLY_TEXT", rows=ideal_rows(cell))}) for cell in quartet]
                 require(len(set(before)) == 1, "pre-outcome visible bytes leak R/D")
                 labels = [oracle_route_v1(cell, goal) for cell in quartet]
-                require(all(len({labels[index] for index, cell in enumerate(quartet) if cell.relevant == relevant}) == 1 for relevant in (0, 1)), "R not sufficient within quartet")
-                require(all(len({labels[index] for index, cell in enumerate(quartet) if cell.distractor == distractor}) == 2 for distractor in (0, 1)), "D informative within quartet")
-                quartets.append({"root": root.label, "old": old, "goal": goal, "table": [[cell.relevant, cell.distractor] for cell in quartet],
-                                  "bits": [1, 1, 1, 0], "pre_outcome_sha256": byte_hash(before[0])})
+                outcomes = {name: [WorldSession(cell, "NEW").probe("PROBE " + root.lookup("probe", name)) for cell in quartet]
+                            for name in ("relevant", "distractor")}
+                observed = {name: [byte_hash(result["public"]) for result in results] for name, results in outcomes.items()}
+                require(all(sorted(Counter(values).values()) == [2, 2] for values in observed.values()), "public outcomes not balanced binary entropy")
+                require(len(set(zip(observed["relevant"], observed["distractor"]))) == 4, "public R/D outcomes not independent")
+                require(all(len({labels[index] for index, value in enumerate(observed["relevant"]) if value == outcome}) == 1
+                            for outcome in set(observed["relevant"])), "R result not sufficient within quartet")
+                require(all(len({labels[index] for index, value in enumerate(observed["distractor"]) if value == outcome}) == 2
+                            for outcome in set(observed["distractor"])), "D result informative within quartet")
+                require(all(not result["terminal"] for result in outcomes["relevant"]) and
+                        all(result["terminal"] for result in outcomes["distractor"]), "probe continuation rule differs")
+                ports = [root.lookup("port", name) for name in ("q0", "q1")]
+                table = [[ports.index(outcomes[name][index]["receipt"]["port"]) for name in ("relevant", "distractor")]
+                         for index in range(4)]
+                require(table == [[0, 0], [0, 1], [1, 0], [1, 1]], "observed public outcome table differs")
+                quartets.append({"root": root.label, "old": old, "goal": goal, "table": table,
+                                  "bits": [1, 1, 1, 0], "pre_outcome_sha256": byte_hash(before[0]),
+                                  "public_outcome_sha256": observed, "evidence": "executed bound CPU PROBE results"})
+                for relevant in (0, 1):
+                    twins = [cell for cell in quartet if cell.relevant == relevant]
+                    pair_rows = [ideal_rows(cell) for cell in twins]
+                    require([row["raw"] for row in pair_rows[0]] == [row["raw"] for row in pair_rows[1]], "D changes target rows")
+                    require(materialize_queries(pair_rows[0]) == materialize_queries(pair_rows[1]), "D changes memory service")
+                    for projection in PROJECTIONS:
+                        if projection == "WRONG_ROOT":
+                            continue
+                        public = [render_task(cell, goal, projection, rows=rows) for cell, rows in zip(twins, pair_rows)]
+                        require(public[0] == public[1], "D changes non-probe projection")
+                    for cut in (None, "OLD", "NEW"):
+                        require(oracle_routes_v2(twins[0], goal, cut) == oracle_routes_v2(twins[1], goal, cut), "D changes full-private route/cut")
+                    neutrality.append({"root": root.label, "old": old, "relevant": relevant, "goal": goal,
+                                       "passed": True, "private_transitions_per_cell": 10, "witnessed_event_slots": 9})
             cell = WorldCell(root, old, 0, 0)
             rows = ideal_rows(cell)[:12]
             fixture = ceiling_fixture(cell)
@@ -1015,7 +1069,8 @@ def audit_construct(roots):
                     require(result["graph_success"] == (cut is None), "route/cut mismatch")
                     require(oracle_routes_v2(cell, goal, cut) == (() if cut else (route,)), "cut oracle mismatch")
                     checks.append({"root": root.label, "old": cell.old, "relevant": cell.relevant, "distractor": cell.distractor,
-                                   "goal": goal, "cut": cut, "success": result["graph_success"]})
+                                   "goal": goal, "cut": cut, "success": result["graph_success"],
+                                   "full_private_transitions": len(cell.full_transitions), "latent_transition_included": True})
                 rows = ideal_rows(cell)
                 for projection in ("OLD_ONLY_TEXT", "NEW_ONLY_TEXT", "NONE_OFF"):
                     public = render_task(cell, goal, projection, rows=rows)
@@ -1030,9 +1085,10 @@ def audit_construct(roots):
                                 "minimum_labels": min(len(counts) for counts in groups.values())}
         require(ceilings[projection]["bayes_correct"] == (16 if projection == "NONE_OFF" else 32), "projection leaks or drops information")
     return {"schema": SCHEMA, "worlds": 32, "delayed_tasks": 64, "route_cut_decisions": checks,
-            "scope": "CPU_FIXTURE_ONLY_NOT_PRODUCTION_D_CERTIFICATE", "production_binding": production_binding_status(),
+            "scope": "CPU_BOUND_WORLD_DEFINITION_NOT_NATIVE_READINESS", "production_binding": production_binding_status(),
             "projection_ceilings": ceilings, "route_construct_passed": True,
             "atoms_link_decisions": atoms, "link_successor_support": link_support, "entropy_quartets": quartets,
+            "d_neutrality_pairs": neutrality,
             "full_construct_passed": False, "ready_for_model_calls": False,
-            "remaining": ["production D topology/probe-result/receipt/port bindings", "tokenizer-qualified inventories", "complete rendered shortcut certificate",
+            "remaining": ["tokenizer-qualified inventories", "complete rendered shortcut certificate",
                           "prepared render/diagnostic/schedule/cut contract", "native custody and runtime binding", "model ceiling tests"]}

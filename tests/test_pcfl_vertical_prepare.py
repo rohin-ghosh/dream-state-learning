@@ -221,8 +221,11 @@ class ExecutionContractTests(unittest.TestCase):
         self.assertEqual(before, prepare.canonical(self.bindings))
         contract["bindings"]["environment"]["cal_seeds"]["cal/init"] = 9
         contract["tokenizer_receipt"]["measurements"][0]["token_ids"][0] = 9
+        contract["production_bindings"]["distractor"]["distractor"]["endpoints"][0] = "changed"
         self.assertEqual(self.bindings["environment"]["cal_seeds"]["cal/init"], 1)
         self.assertEqual(receipt["measurements"][0]["token_ids"][0], 1)
+        self.assertEqual(contract["bindings"]["core_registry"]["world_registry"]["distractor"], core.production_binding_status())
+        self.assertEqual(prepare.PRODUCTION_BINDINGS["distractor"], core.production_binding_status())
 
     def test_six_authority_source_files_match(self):
         directory = Path(__file__).resolve().parents[1] / "research_notes" / "analysis"
@@ -493,16 +496,132 @@ class ExecutionContractTests(unittest.TestCase):
         self.assertNotIn("s00", prepare._eligible_replay(bindings, corpora, old, "EVENT", "replay"))
         self.assertIn("s00", prepare._eligible_replay(bindings, corpora, old, "EVENT", "old_event_extra"))
 
-    def test_production_D_is_explicitly_unresolved_not_provisional_core_authority(self):
+    def test_bound_definition_removes_only_resolved_missing_interfaces(self):
         report = prepare.validate_execution_contract(self.contract)
         self.assertFalse(report["static_contract_complete"])
         self.assertFalse(report["ready_for_model_calls"])
         self.assertFalse(report["execution_contract_valid"])
-        self.assertEqual(self.contract["production_bindings"]["distractor"]["status"], "UNRESOLVED")
-        self.assertIn("production_D_frontier_outcome_receipt_and_terminal_bytes_binding", report["missing_interfaces"])
-        self.assert_rejected(lambda contract: contract["production_bindings"]["distractor"].update(status="BOUND"), "cannot be invented")
-        note = Path(__file__).resolve().parents[1] / "research_notes" / "analysis" / "2026-09-13_pcfl_distractor_and_opaque_id_production_bindings.md"
-        self.assertEqual(hashlib.sha256(note.read_bytes()).hexdigest(), prepare.PRODUCTION_BINDINGS["distractor"]["source_note_sha256"])
+        world = core.registries()["world_registry"]
+        self.assertEqual(self.contract["production_bindings"], {
+            "distractor": world["distractor"], "probe_result_bytes": world["probe_result"]})
+        self.assertEqual(world["distractor"]["status"], "WORLD_DEFINITION_BOUND")
+        missing = report["missing_interfaces"]
+        self.assertNotIn("production_D_frontier_outcome_receipt_and_terminal_bytes_binding", missing)
+        self.assertNotIn("production_R_and_D_public_probe_result_bytes_binding", missing)
+        self.assertEqual({item for item in missing if not item.startswith("profile_receipt:")}, {
+            "core_render_parser_diagnostic_and_cut_oracle_certification",
+            "joint_backtracker_first_solution_and_replay_counterpart_proof",
+            "complete_tokenizer_inventory_and_response_mask_coverage",
+            "expanded_diagnostic_service_load_and_denominator_coverage",
+            "native_contract_hash_enforcement_and_actual_source_pin_verification",
+            "synthetic_evidence_is_not_execution_evidence"})
+        self.assertTrue(any(item.startswith("profile_receipt:") for item in missing))
+
+    def test_prospective_memo_bytes_and_core_source_reference_match(self):
+        note = Path(__file__).resolve().parents[1] / prepare.PRODUCTION_BINDING_PATH
+        self.assertEqual(hashlib.sha256(note.read_bytes()).hexdigest(), prepare.PRODUCTION_BINDING_SHA256)
+        self.assertEqual(core.PRODUCTION_BINDING_PATH, prepare.PRODUCTION_BINDING_PATH)
+        self.assertEqual(core.PRODUCTION_BINDING_SHA256, prepare.PRODUCTION_BINDING_SHA256)
+        self.assertEqual(core.production_binding_status(), prepare.PRODUCTION_BINDINGS["distractor"])
+        self.assertEqual(core.PROBE_WIRE, prepare.PROBE_RESULT)
+
+    def test_production_binding_drift_fails_even_when_decisions_resealed(self):
+        changes = [
+            (("distractor", "status"), "UNRESOLVED"),
+            (("distractor", "definition_bound"), 1),
+            (("distractor", "source_sha256"), "b" * 64),
+            (("distractor", "source"), "older-audit-is-not-authority.md"),
+            (("distractor", "execution_contract_valid"), True),
+            (("distractor", "production_inventory_complete"), True),
+            (("distractor", "distractor", "endpoints"), ["Z", "Y"]),
+            (("distractor", "distractor", "witnessed_or_fitted"), True),
+            (("distractor", "distractor", "receipt_schema", "can_support_event_or_link"), True),
+            (("distractor", "distractor", "post_commit_transition"), "continue after D"),
+            (("distractor", "relevant_public_result"), "UNRESOLVED"),
+            (("probe_result",), prepare.PROBE_RESULT.rstrip("\n")),
+            (("probe_endpoints",), [["H", "S_R"], ["Z", "Y"]]),
+            (("probe_receipt_slots",), ["r8", "r10"]),
+            (("fresh_handles",), "remap to ideal graph handles"),
+            (("old_sources",), ["S_L", "A", "H", "S_R", "B", "B", "S_L", "Z"]),
+            (("visible_port_order",), ["q0", "q1"]),
+        ]
+        for path, value in changes:
+            def mutate(contract):
+                target = contract["bindings"]["core_registry"]["world_registry"]
+                for key in path[:-1]:
+                    target = target[key]
+                target[path[-1]] = value
+            with self.subTest(path=path):
+                self.assert_rejected(mutate, "production world binding/source drift|bound .* drift")
+        self.assert_rejected(lambda contract: contract["production_bindings"]["distractor"].update(definition_bound=1),
+                             "production world binding/source drift")
+        self.assert_rejected(lambda contract: contract["bindings"]["core_registry"]["world_registry"].pop("distractor"),
+                             "malformed typed registry")
+        self.assert_rejected(lambda contract: contract["bindings"]["core_registry"]["root_schema"]["slots"]["receipt"].append("r11"),
+                             "bound world inventory drift")
+        self.assert_rejected(lambda contract: contract["bindings"]["core_registry"]["root_schema"]["prefixes"].update(goal="N"),
+                             "bound world namespaces drift")
+        self.assert_rejected(lambda contract: contract["bindings"]["core_registry"]["render_registry"]["substitution_classes"].update(GOAL_ID="goal"),
+                             "private goal metadata")
+
+    def test_bound_cpu_probe_bytes_terminal_custody_and_latent_transition(self):
+        root = core.build_root("dev/0")
+        for cell in core.expand_cube(root):
+            latent = cell.full_transitions[-1]
+            self.assertEqual((latent.event, latent.source, latent.port, latent.destination, latent.receipt),
+                             (None, root.lookup("node", "X"), root.lookup("port", f"q{cell.distractor}"),
+                              root.lookup("node", "Z"), None))
+            self.assertEqual(cell.full_transitions[:-1], cell.edges)
+            self.assertEqual(len(cell.edges), 9)
+            for name, source, destination, bit, receipt_slot in (
+                    ("relevant", "H", "S_R", cell.relevant, "r9"),
+                    ("distractor", "X", "Z", cell.distractor, "r10")):
+                session = core.WorldSession(cell, "NEW", fixture_only=True)
+                result = session.probe("PROBE " + root.lookup("probe", name))
+                expected = prepare.PROBE_RESULT.format(probe=root.lookup("probe", name), source=root.lookup("node", source),
+                                                       destination=root.lookup("node", destination), port=root.lookup("port", f"q{bit}"))
+                self.assertEqual(result["public"], expected)
+                self.assertEqual(result["receipt"]["receipt"], root.lookup("receipt", receipt_slot))
+                self.assertEqual(result["receipt"]["kind"], "PROBE")
+                self.assertEqual(result["terminal"], name == "distractor")
+                self.assertNotIn(root.lookup("receipt", receipt_slot), result["public"])
+                event = root.lookup("event", "e8")
+                admission = core.admit_event(core.EVENT_WIRE.format(event=event, **result["receipt"]), result["receipt"], session, event)
+                self.assertFalse(admission["accepted"])
+                with self.assertRaises(ValueError):
+                    session.probe("PROBE " + root.lookup("probe", "relevant"))
+                if name == "distractor":
+                    with self.assertRaises(ValueError):
+                        session.explore_prompt()
+                    with self.assertRaises(ValueError):
+                        session.explore("EXPLORE " + root.lookup("node", "H") + " " + root.lookup("port", f"q{cell.relevant}"))
+                else:
+                    executed = session.explore("EXPLORE " + root.lookup("node", "H") + " " + root.lookup("port", f"q{cell.relevant}"))
+                    self.assertTrue(executed["ok"])
+                    self.assertEqual(executed["receipt"]["receipt"], root.lookup("receipt", "r8"))
+            for raw in ("malformed", "PROBE Q_AAAAAAAAAA"):
+                session = core.WorldSession(cell, "NEW", fixture_only=True)
+                result = session.probe(raw)
+                self.assertEqual((result["ok"], result["public"], result["terminal"]), (False, "", True))
+                self.assertEqual(session.receipts, [])
+                with self.assertRaises(ValueError):
+                    session.probe("PROBE " + root.lookup("probe", "relevant"))
+                with self.assertRaises(ValueError):
+                    session.explore_prompt()
+
+    def test_bound_core_construct_is_cpu_only_not_contract_closure(self):
+        report = core.audit_construct([core.build_root(f"excluded/{index}") for index in range(4)])
+        self.assertEqual(report["scope"], "CPU_BOUND_WORLD_DEFINITION_NOT_NATIVE_READINESS")
+        self.assertEqual(report["production_binding"], self.contract["production_bindings"]["distractor"])
+        self.assertTrue(report["route_construct_passed"])
+        self.assertFalse(report["full_construct_passed"])
+        self.assertFalse(report["ready_for_model_calls"])
+        self.assertEqual((report["worlds"], report["delayed_tasks"], len(report["route_cut_decisions"])), (32, 64, 192))
+        self.assertEqual(len(report["entropy_quartets"]), 16)
+        for quartet in report["entropy_quartets"]:
+            self.assertEqual(quartet["table"], [[0, 0], [0, 1], [1, 0], [1, 1]])
+            self.assertEqual(quartet["bits"], [1, 1, 1, 0])
+        self.assertFalse(prepare.validate_execution_contract(self.contract)["static_contract_complete"])
 
 
 if __name__ == "__main__":

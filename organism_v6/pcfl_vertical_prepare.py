@@ -24,13 +24,26 @@ SOURCE_PINS = {
     "2026-09-13_pcfl_v22_execution_readiness_audit.md": "deb3b51abde362a0d35f41295b565c9b5ef02d7d77757644ae5834294e539c13",
 }
 CLOSURE_PIN = {"2026-09-13_pcfl_v22_minimum_execution_closure_contract.md": "f9b9891761c47e6d8047e7a9161a827d00fae464df91940c523b40f85af535d0"}
+PRODUCTION_BINDING_PATH = "research_notes/astra_memos/ASTRA_PCFL_PRODUCTION_WORLD_BINDING_2026-09-13.md"
+PRODUCTION_BINDING_SHA256 = "ac2013fe44c3f9bdfdca43defca0d8b19baa39209fab443b74abc128391fea91"
+PROBE_RESULT = "PROBE RESULT {probe} TESTED {source} TO {destination} AVAILABLE PORT {port}\n"
 PRODUCTION_BINDINGS = {
     "distractor": {
-        "status": "UNRESOLVED",
-        "source_note_sha256": "bcdae11f3eb5c0653b842f16bbf5ba1e34cc5ffdbdc62689aca1ce2ca0f6eecf",
-        "missing": ["frontier_topology", "D0_D1_public_result_bytes", "receipt_schema", "terminal_public_response"],
+        "status": "WORLD_DEFINITION_BOUND", "definition_bound": True, "execution_contract_valid": False,
+        "source": PRODUCTION_BINDING_PATH, "source_sha256": PRODUCTION_BINDING_SHA256,
+        "distractor": {"endpoints": ["X", "Z"], "port_semantics": "D selects existing q0/q1",
+                       "public_outcomes": PROBE_RESULT,
+                       "receipt_schema": {"kind": "PROBE", "slot": "r10", "public_receipt_id": False,
+                                          "can_support_event_or_link": False},
+                       "post_commit_transition": "latent X --q_D--> Z; selected probe returns result then terminates lineage",
+                       "witnessed_or_fitted": False},
+        "relevant_public_result": PROBE_RESULT, "production_inventory_complete": False,
+        "goal_visibility": "G_ private metadata; START/GOAL/ROUTE endpoints are N_ nodes",
+        "root_visibility": "private labels; no model-visible root namespace",
+        "pending": ["real tokenizer joint inventory qualification", "complete rendered shortcut certificate",
+                    "native runtime/custody and model ceilings", "profile/device-time gates"],
     },
-    "probe_result_bytes": "UNRESOLVED",
+    "probe_result_bytes": PROBE_RESULT,
 }
 WRAPPERS = [
     "Retrieve the exact stored memory for this request.\n{REQUEST}\nReply with only the stored memory block.",
@@ -641,18 +654,43 @@ def _profiles(bindings, contract_hash, receipts):
     return sorted(set(by_id) - supplied), synthetic
 
 
+def _production_bindings(bindings):
+    core = bindings["core_registry"]
+    world = core["world_registry"]
+    production = {"distractor": world["distractor"], "probe_result_bytes": world["probe_result"]}
+    _require(canonical(production) == canonical(PRODUCTION_BINDINGS), "prospective production world binding/source drift")
+    _require(world["probe_endpoints"] == [["H", "S_R"], ["X", "Z"]]
+             and world["probe_receipt_slots"] == ["r9", "r10"], "bound probe endpoints/receipt slots drift")
+    _require(world["old_sources"] == ["S_L", "A", "H", "S_R", "B", "Z", "S_L", "B"]
+             and world["fresh_handles"] == "chronological e0..e7 then e8; l0..l3 then l4,l5",
+             "bound OLD chronology drift")
+    slots = {"node": ["S_L", "A", "H", "G_L", "S_R", "B", "G_R0", "G_R1", "X", "Z", "Y"],
+             "port": ["a0", "a1", "b", "c", "d", "f0", "f1", "u", "q0", "q1"],
+             "event": [f"e{index}" for index in range(9)], "link": [f"l{index}" for index in range(6)],
+             "probe": ["relevant", "distractor"], "receipt": [f"r{index}" for index in range(11)],
+             "goal": ["old_left", "old_right", "delayed0", "delayed1"]}
+    _require(core["root_schema"]["slots"] == slots and world["visible_port_order"] == slots["port"],
+             "bound world inventory drift")
+    _require(core["root_schema"]["prefixes"] == dict(node="N", port="P", event="E", link="L", probe="Q", receipt="R", goal="G"),
+             "bound world namespaces drift")
+    substitutions = core["render_registry"]["substitution_classes"]
+    _require(substitutions["START_ID"] == substitutions["GOAL_ID"] == "node", "private goal metadata cannot be public endpoints")
+    return json.loads(canonical(production))
+
+
 def build_execution_contract(bindings, tokenizer_receipt):
     """Seal caller-selected bindings; missing real evidence is never invented."""
     _record(bindings, BINDING_FIELDS, "bindings")
     detached = json.loads(canonical(bindings))
     try:
         _, skeleton_hash = _structural(detached)
+        production = _production_bindings(detached)
     except (KeyError, TypeError, IndexError, AttributeError) as error:
         raise ExecutionContractError("malformed structural bindings") from error
     contract = {"schema": SCHEMA, "canonicalization": CANONICALIZATION,
                 "bindings": detached, "decisions_sha256": digest(detached),
                 "root_skeleton_hash": skeleton_hash, "recipe": json.loads(canonical(RECIPE)),
-                "production_bindings": json.loads(canonical(PRODUCTION_BINDINGS)),
+                "production_bindings": production,
                 "prospective_literals": {"wrappers": WRAPPERS[:], "parser_policy": json.loads(canonical(PARSER_POLICY))},
                 "calibration": _calibration_table(), "tokenizer_receipt": json.loads(canonical(tokenizer_receipt))}
     validate_execution_contract(contract)
@@ -723,9 +761,10 @@ def _validate(contract, profile_receipts):
     _require(contract["schema"] == SCHEMA and contract["canonicalization"] == CANONICALIZATION, "contract version")
     _require(canonical(contract["recipe"]) == canonical(RECIPE) and canonical(contract["calibration"]) == canonical(_calibration_table()), "v2.2 constants/calibration drift")
     _require(canonical(contract["prospective_literals"]) == canonical({"wrappers": WRAPPERS, "parser_policy": PARSER_POLICY}), "prospective W8/parser literal drift")
-    _require(contract["production_bindings"] == PRODUCTION_BINDINGS, "unresolved production D/probe bindings cannot be invented or promoted")
+    _require(canonical(contract["production_bindings"]) == canonical(PRODUCTION_BINDINGS), "prospective production world binding/source drift")
     bindings = contract["bindings"]
     _record(bindings, BINDING_FIELDS, "bindings")
+    _require(contract["production_bindings"] == _production_bindings(bindings), "core/contract production binding differs")
     _require(bindings["source_pins"] in (SOURCE_PINS, {**SOURCE_PINS, **CLOSURE_PIN}), "source-pin drift")
     _require(contract["decisions_sha256"] == digest(bindings), "sealed decisions drift")
     _record(bindings["implementation_pins"], ("preparer", "validator", "core"), "implementation pins")
@@ -752,9 +791,7 @@ def _validate(contract, profile_receipts):
     _tokenizer(contract["tokenizer_receipt"], contract["decisions_sha256"], environment)
     branches = _work(bindings, corpora)
     missing_profiles, synthetic_profiles = _profiles(bindings, digest(contract), profile_receipts)
-    missing = ["production_D_frontier_outcome_receipt_and_terminal_bytes_binding",
-               "production_R_and_D_public_probe_result_bytes_binding",
-               "core_render_parser_diagnostic_and_cut_oracle_certification",
+    missing = ["core_render_parser_diagnostic_and_cut_oracle_certification",
                "joint_backtracker_first_solution_and_replay_counterpart_proof",
                "complete_tokenizer_inventory_and_response_mask_coverage",
                "expanded_diagnostic_service_load_and_denominator_coverage",
