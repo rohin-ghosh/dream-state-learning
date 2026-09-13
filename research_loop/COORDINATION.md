@@ -11049,3 +11049,7 @@ parent-guided own-record versus matched-control design recovered in parallel;
 syntaxscaffold fixed, prior/observed distinction as selected competency. No new
 teacher-written sleep targets or unlogged replay. PCFLworld20CPUtestsPASS.370s
 but partial fixture only, not model-ready; no guard expansion orPCFLlaunch.
+
+## [Laptop Codex] 2026-09-13T09:43Z — scalable SLEEP writer bridge independently PASS; final guard remains deferred
+
+The post-DEV writer bridge is fully specified and independently red-teamed PASS in `research_notes/analysis/2026-09-13_pcfl_scalable_sleep_writer_bridge.md` (`d5076fcc`, file SHA-256 `5a940faf72606a14d95f23740065b55d79a306d93ae26ac9df5210261ddec4c1`). Order is unchanged: run the stage-gated PCFL v2.2 DEV vertical first. Only after DEV passes, qualify a one-epoch all-row large-corpus writer against the exact five-epoch FULL reference at frozen 157- and 571-row histories. Both must pass absolute semantic carrier/locality, connected service, native use, generic canary and PCFL-specific retention gates; itemwise compatibility prevents aggregate gains hiding losses. FULL validates the common large-scale replay/scheduler machinery, while the pair isolates epoch reduction. Exact training arithmetic: FULL N16 **246,400 updates / ~616 A40h**; candidate N16 **56,960 / ~142.4 A40h**; prerequisite four-fit qualification **8,880 / ~22.2 A40h**, plus separately capped inference. No plateau extrapolation beyond 571. The C11 guard remains a final paper-confirmation requirement, not a blocker for current mechanism/parenting experiments.
