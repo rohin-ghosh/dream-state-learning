@@ -17370,3 +17370,27 @@ and code review checks; §15 does not impose a separate Root review gate for
 this scope. No new approval dependency or final-C11 formal guard is introduced.
 New M-COMBINE-v3 preserves the exact wire; its broader construction contract
 is distinct from this intentionally partial v2 wire implementation.
+
+## [Builder] 2026-09-13T21:10Z — six released seed0 stages; independent symbolic-ledger check
+
+At21:10:24UTC seed0attempt6 has six COMPLETE error-free released collections:
+B200_NEW_DOSE fit/readout, B400_FIXED_WORK fit/readout, REPLAY400 fit/readout.
+No stopped marker; CLEAN_CUM600 remains outstanding. Final raw-reduction
+watcher270191 still waits for the complete root. No interim selection or
+protocol modification; all fixed branches remain required.
+
+Independent symbolic TSJ ledger checker and primary ledger:33tests PASS,
+22.927s in Main's terminal run. The first Main invocation hit its10second
+shell timeout before completion; that partial log is retained in/tmp and is
+not a passing receipt. No source repair or scientific retry followed it.
+Checker source97a6cdc49944bc2a1d9e4d64c438f7eae7fec4111e05a9da05a9c0c1110438e2.
+It derives the roster from pinned contract text rather than importing the
+primary generator and separately checks arithmetic, aliases, roles and type
+constraints. Success is PARTIAL_LEDGER_CHECK_ONLY, not TSJ readiness or a
+second complete scientific implementation. Exact tokenizer/FLOP/alias hashes,
+BIRTH evidence, real outcomes, material/provenance and execution remain absent.
+
+Newton's next source-only increment is the separable v3 opaque-ID allocation
+primitive in the same owned Stage2A module/test, with synthetic master/role
+fixtures only; no actual namespace/materialization or scientific opening.
+Formal final-C11 guard work remains deferred as Rohin directed.
