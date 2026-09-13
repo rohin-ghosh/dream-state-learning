@@ -1,6 +1,56 @@
-# Astra current handoff — 2026-09-13T09:46Z
+# Astra current handoff — 2026-09-13T10:11Z
 
-## CURRENT — September13 09:46UTC (supersedes all snapshots below)
+## CURRENT — September13 10:11UTC (supersedes all snapshots below)
+
+Mission ACTIVE/incomplete. Node2 has SIX Main paired controllers, not zero.
+Boot8ff7b0dc-fbdf-4945-9044-3dffe94b5407; lease2026-09-21T08:43Z, six-hour margin.
+Contrastive full-dose attempt2: seed0/1/2 GPUs0/1/2, holder/controller
+68101/68107,66783/66784,66965/66966. All alive10:09UTC; no result.
+Roots /localhome/local-rohing/astra_diagnostics/contrastive_full_dose_seedN_20260913_attempt2.
+Runner /tmp/astra_contrastive_full_dose_run_20260913_v2.py SHA
+ddd36b16e188a2c2bfa11e61e8fbed66fed67d93f81b1d4fa6384c04dd43c025.
+Manual once-only collection AFTER completion and holder exit; historical OFF
+not rerun. Seed0 launcher receipts use .launcher_allocation_repair, others
+.launcher. Attempt1 preparation failure and seed0 first allocation refusal
+preserved. Plans and protocol pinned in notebook; 6fits2016updates288calls.
+
+Fixed-coaching pairs LAUNCHED10:10:17/19/21UTC, seeds0/1/2 GPUs3/4/5.
+Holders/controllers75307/75308,75369/75370,75432/75433. Roots
+/localhome/local-rohing/astra_diagnostics/parented_record_seedN_20260913_attempt1.
+Runner /tmp/astra_parented_record_run_20260913.py SHA
+54cad8a6eeb5ae8af08213efe60f4c8047879991ca77f7a30d8be548659699f8;
+main /tmp/astra_parented_record_main_20260913.py SHA
+115927ee21dca299a94aa70e27f93c6cf52f3e5c5bc7130b0e31f02748d4aa6a.
+Plans seed0/1/2:
+7bf29472f7290c7b5f856527b837689b0668f16b63a151198072c5e423c98455
+6e30c79caf85666f6db678c9765e93e33a595a200f0f598a01b5a2d516736d47
+c184ddb8a273da5472b18fae3f4f99915cbe53f7dd7c73826b112037f5303a96.
+AUTOMATIC once-only collection after successful controller exit, held allocation
+through collector. Do not manually recollect. Inspect sibling .launcher/{controller,
+controller_exit,collector,collector_exit,exit}.json and sibling _collected.
+Continuous7200s clocks began ~10:04UTC preparation (expire~12:04–12:05UTC),
+not launch; never reset. CPU core17/runner27/holder2 PASS and native all3PASS.
+Only fixed author coaching vs neutral; own sourced raw apply targets, original
+perception parents, no teacher/replay bytes, NO_WRITE valid, CONF untouched.
+No general parenting/P1/H1/H2/freeze promotion from launch.
+
+All completed SEQ153–155 collections remain once-only and VM-archived.
+Manuscript six-file EDITSTOP throughSEQ155 independently ACCEPT at exact
+hashes in /tmp/astra_manuscript_seq155_independent_review_20260913.md;
+Main archives/commits next, preserving unrelated dirty gpu/codex/dream_state.rules.
+Lovelace prepares parenting independent reducer; Descartes contrastive reducer.
+Parfit finishes own-source TRAIN capture-only runner (72calls,0fits), not launched.
+Copernicus manuscript EDITSTOP. No agent may launch/recollect independently.
+PCFL remains partial CPU fixture; no silent assumption of integrated closure.
+
+Rohin38: grounded sequential progress, not occupancy; L1 parenting receptivity
+is the target. Laptop aligned/swapped suggestion is advisory next design, not
+current frozen protocol; authored replay needs reconciliation with own-write rule.
+Fable reports node3 reboot/recovery and persistence-mode fix; do not reuse its
+old boot/allocation pins. Needed node1 evidence deadlineSep13 23:14UTC; Main
+node1 outputs previously archived to VM. Simple hygiene now; formal guard finalC11.
+
+## Historical superseded snapshot — September13 09:46UTC
 
 No Main GPU job live: all3lowerLR candidates COMPLETE/collectedONCE/archived.
 SEQ155exactLOWER10/14,4/8,4/8;paraphrase10/14,5/8,3/8;held47/46/47;

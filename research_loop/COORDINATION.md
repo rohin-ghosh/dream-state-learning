@@ -11213,3 +11213,14 @@ aligned/swapped proposal is advisory future design, not a mutation of this
 frozen block; its authored96 replay targets cannot silently enter own-source
 sleep. Evaluate it separately after current evidence. Formal guard remains
 deferred to final paper-grade C11; basic provenance/isolation checks stay.
+
+## [Builder] 2026-09-13T10:11Z — all three fixed-coaching pairs launched, not results
+
+Successful native launch10:10:17/19/21UTC on node2 GPUs3/4/5, seeds0/1/2.
+Holders/controllers75307/75308,75369/75370,75432/75433; UUIDs and plans match
+the previous entry. All fresh allocation/provenance/lease checks passed.
+Automatic once-only collection stays inside each holder; no manual recollection.
+Contrastive seeds0/1/2 remain alive on GPUs0/1/2 (verified10:09UTC); seed0
+success already recorded above, superseding watcher's stale relaunch-pending note.
+HANDOFF/STATE now distinguish both lifecycles and actual live work. No approvals
+requested, no foreign process killed, no protocol/guard/claim expansion.

@@ -1,4 +1,18 @@
-## Current superseding snapshot — 2026-09-13 09:46 UTC
+## Current superseding snapshot — 2026-09-13 10:11 UTC
+
+Six Main node2 paired controllers LIVE: contrastive full-dose seeds0/1/2
+GPUs0/1/2; fixed-coaching DEV pairs seeds0/1/2 GPUs3/4/5. No new result.
+Contrastive manually collected once after exit; coaching holder auto-collects
+once. Exact PIDs/roots/versions/deadlines in current HANDOFF and notebook.
+Do not reset preparation clocks, resubmit live jobs or recollect old roots.
+All completed SEQ153–155 evidence preserved. ThroughSEQ155 manuscript review
+ACCEPT, pending Main archive/commit. Independent reducers under construction;
+own-source replay capture-only runner pending final validation, zero fit decision.
+Rohin38: prioritize grounded sequential evidence, not occupancy. Formal guard
+finalC11 only; basic provenance/isolation stays. No mechanism freeze, P1/H1/H2,
+general key binding or mission completion established.
+
+## Historical superseded snapshot — 2026-09-13 09:46 UTC
 
 SEQ155threeLOWERLRcandidates complete/collectedONCE:exact10/4/4,para10/5/3,
 held47/46/47,canary12all. Onlyseed0strictscreenpasses; notthree-seedrepair.
