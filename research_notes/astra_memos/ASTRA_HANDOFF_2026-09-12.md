@@ -1,4 +1,4 @@
-# Astra restart handoff — 2026-09-13, after SEQ180
+# Astra restart handoff — 2026-09-13, after SEQ181
 
 Mission ACTIVE and incomplete. This replaces stale running-job snapshots;
 their full history remains in Git at `4e1fe3b1` and the append-only notebook.
@@ -15,6 +15,30 @@ Preserve unrelated dirty `gpu/codex/dream_state.rules` and worker-owned files.
 Pull safely before writing; push logged steps. Do not overwrite run artifacts.
 
 ## Current native work
+
+Latest completed checkpoint: SEQ181 paired structured controls, both released,
+errors[], exit0. Generic grammar8calls gives0READs,7strict/1LENGTH and0graph.
+External first-READ48calls gives40READs/30non-MISS/10MISS,8/8handshakes and
+strict terminals,4legal routes but0graph. First READ is HOST-SCHEDULED, not
+learned choice. Same4exposed roots/8tasks, no fits; current manuscript cut179.
+No automatic panel/A4. Subsequent reads/addresses are child-selected; transport
+now executed under scaffolding, but composition is still broken. Both native
+structured regex backends worked. No Main GPU job remains.
+
+SEQ181 source174ff587cddd6cbf75c6929d2af46a5231f812ce at native
+`/tmp/astra_pcfl_structured_action_source_20260913_attempt1`, source tarSHA256
+dca4864af8ab6083d869be6377136f33f32f1a17589af1b2053095e5d79bdf41.
+Native roots `pcfl_interface_structured_action_smoke_20260913_attempt1` and
+`pcfl_interface_structured_first_read_smoke_20260913_attempt1` under the usual
+node2 diagnostic directory. Controllers200046/200102 and workers200113/200181
+released without signals. Archive on VM/node SHA256
+a3745deee039131c037ac2e645e6ab54e6d437eaebd848b8452bc5cad7bdd37c at
+`gpu_artifacts_local/pcfl_structured_action_20260913_attempt1/evidence.tar`.
+Post-outcome aggregation/script archived in receipts_20260912; analysisSHA256
+85e7be53d0eeb10608d8a12b7dd20dda55a35f231b55b92a3ebd9b6dc57430a2.
+Independent review checked all56captures and420regular archive files; no
+blocking discrepancy. Review `astra_pcfl_structured_result_review_20260913.md`
+SHA256e0018d48e9583e22fe0d0ad3274f81467e6e85938f4669090b6cf9dfa191c4fc.
 
 No Main GPU worker remains live. Fit, AUTH and C0 readout all completed and
 released with errors[], exit0 and no signals. The later READ_REQUIRED_SMOKE
@@ -93,22 +117,40 @@ VM/native evidence archive SHA256
 d49cdff447330cb28fa049cc6ad1dc79530feaa66de626218a1d3079f791fe77 at
 `gpu_artifacts_local/pcfl_interface_read_required_smoke_20260913_attempt1/evidence.tar`.
 Original source/launch helpers and official binding included; unpacked sibling.
-Next separately specified diagnostic: symmetric structured action formatting,
-no useful addresses/route injection. Design worker active; no implementation
-or native successor yet. Fix only the collector denominator for future runs.
+The subsequent paired structured controls are nowSEQ181 above; oldSEQ180
+failure remains unchanged. Collector denominator repair is committed and
+tested through real-shaped8-task collection. No formal C11 guard was added.
+
+Next interface candidate: A3B_NEWLINE_FRAMED_SMOKE, original A3 messages/full
+graph on fixed8cases,6THINK+1ROUTE/max56calls, LFstop excluding delimiter. No
+native launch yet. Installed vllm detokenizer retains all token IDs while
+trimming stop text (sourceSHA213d71cf6eefcea061b28b656cf8a08af60c9f3513403e724b16876995f3de93).
+Thus existing exact decoded-token-text==returned-text check needs a SCOPED
+frame relation, not fake raw bytes. Worker must preserve default strict check,
+full token decode, exact native returned text/stop reason and all token costs.
+Only exact first-LF prefix allowed under declared LFstop; never old-output
+salvage. Smoke gate joint first acceptedTHINK + strict terminal>=7/8; report
+graph separately. No panel/A4 automatic, no grammar regex in this candidate.
 
 ## Workers and ownership
 
-- Lagrange `01a09b03-adae-7872-afb1-67d819134c38`: driver32tests passed and
-  released; now owns ONLY `gpu/astra_pcfl_interface_outer.py` and its test for
-  the roster-bound denominator repair/regression. Await EDITSTOP.
+- Lagrange `01a09b03-adae-7872-afb1-67d819134c38`: structured driver42tests and
+  collector repair complete. Now owns native actor+interface driver and their
+  two tests ONLY for scoped A3B LF framing. Await EDITSTOP. Main owns pending
+  command/test changes dispatching `driver.CUSTOM_STAGES`; do not stage them
+  before the corresponding driver API and tests exist/pass.
 - Copernicus `01a099a3-f03d-7e42-bafe-53cdb4dd67d0`: SEQ179 manuscript complete,
   independently reviewed, integrated at65c570c6; agent closed. Collaborator UNSENT.
-- Meitner `01a09af5-65a4-7ea3-904c-af5c37968c88`: EVENT and manuscript reviews
-  complete, no blocking findings, archived under receipts_20260912. Idle.
-- Parfit `01a099a4-4d72-75c0-af60-8f84fc68d36a`: read-only structured-action
-  design at `/tmp/astra_pcfl_structured_action_design_20260913.md` pending.
-  No repo ownership. Main handles integration/launch/notes.
+- Meitner `01a09af5-65a4-7ea3-904c-af5c37968c88`: owns new
+  `organism_v6/pcfl_event_sequence.py` and `tests/test_pcfl_event_sequence.py`
+  ONLY. Exports authentic chronological4+4 EVENT singleton material for a NEW
+  V3 weight-continuation diagnostic, not SEQ179 numerical recipe; spec API
+  `build_spec`, `export_material`, `training_config`, `PHASES`, `READ_STATES`.
+  Six fits/400updates candidate; no runner/native fit yet. Await EDITSTOP.
+  S_A40updates may not acquire; zero A acquisition means retention unavailable,
+  not a retention failure. Do not silently raise dose or seed fromSEQ179.
+- Parfit `01a099a4-4d72-75c0-af60-8f84fc68d36a`: SEQ181 raw review complete,
+  archived, no blocking discrepancy; no repo ownership. Main integrates/launches.
 
 ## Native environment / custody
 

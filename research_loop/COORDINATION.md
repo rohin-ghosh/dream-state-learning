@@ -14772,6 +14772,28 @@ named line-framed THINK smoke; do not reinterpret old mixed-turn A3 as passing.
 Independent mechanism work: Meitner owns only a new authentic EVENT4+4 V3
 material exporter/test; no sequential native runner or fit launched yet.
 
+## [Builder] 2026-09-13 — SEQ181 independent review accepted; next framing seam localized before launch
+
+Parfit checked all56captures and420regular archive files; no blocking raw/
+custody discrepancy. Review archived with SHA256
+e0018d48e9583e22fe0d0ad3274f81467e6e85938f4669090b6cf9dfa191c4fc.
+Accept only the scoped host-scheduled transport result, not routing/learning.
+All40 service returns were delivered;30were non-MISS; no LINKS_FROM calls.
+
+Next predeclared candidate is A3B_NEWLINE_FRAMED_SMOKE: original A3 graph,
+messages, seeds, limits and strict parser on8fixed cases, at most56calls,
+LFstop excluding delimiter, no syntax regex or supplied algorithm. Joint first
+acceptedTHINK plus strict terminal>=7/8, graph success separate; no automatic
+panel/A4. Installed native vllm detokenizer sourceSHA256
+213d71cf6eefcea061b28b656cf8a08af60c9f3513403e724b16876995f3de93 appends all
+token IDs then truncates returned stop-text. Merely adding LFstop would break
+our exact decoded-text equality. Lagrange owns a minimal scoped validation
+hook preserving the default exact check and every native raw/token/stop byte;
+only the prospectively declared first-LF framing relation may differ. No
+post-hoc strip/extraction, altered old evidence or new formal guard. Main owns
+command/test dispatch; native actor/driver/two tests are worker-owned. No new
+framed native job launched. EVENT4+4 material exporter remains independent.
+
 ## [Independent A2/A3 result audit] 2026-09-13T15:42Z — exact graph did not compose; requested THINK never entered the typed loop
 
 Terminal read-only audit:
