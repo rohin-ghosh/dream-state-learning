@@ -16098,6 +16098,25 @@ READ/STEP; their32/32 are memory-using ceilings, NOT task-blind shortcut
 scores. Do not misreport these as failure of a defined no-memory null suite.
 This fixture is preparatory code, not Stage0 closure or model authorization.
 
+## [Builder] 2026-09-13T19:04Z — first v2 fit/C0 captured; followup operator tested, outcomes pending
+
+Actual worker233282 used node2GPU1 (NVML matched its UUID at19:00:52UTC).
+Seed0 A200 fit completed/released19:02:16.828UTC; collection FILE SHA
+9849ce1c050bf64e914e4cfce72206faeef50e080920d8b201383e1206dae2ad.
+Seed0 fresh C0 readout completed/released19:03:12.118UTC; collection FILE
+SHAb7345cc328007515b74fcbcdb5020f1336f88a03f8770fc2bb15372ddf524dad.
+The three-seed batch233271 continues; no acquisition outcome inspected yet.
+Do not infer learning from fit completion or GPU use.
+
+Aristotle EDITSTOP/closed. Main reviewed and ran17testsPASS0.244s on new
+standalone followup helper and tests. Separate input/run directories, exact
+raw acquisition request and measured parent binding, all four fixed fits
+with cold readouts, initial acquisition time charged against per-seed2hours,
+lease margin and stop-on-failure/no-retry remain enforced. Main corrected
+one source assumption: original acquisition may use a separately pinned
+operator outside the frozen runtime, as attempt5 does. No source exception;
+every original source pin is still checked and preserved. No followup launched.
+
 ## [Root ruling] 2026-09-13 PT — adopt GOAL-BRAID contract; authorize source and CPU-test authoring only
 
 Adopt the role-level `PCFL-GOAL-BRAID-v1` design in
