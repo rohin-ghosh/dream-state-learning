@@ -1,8 +1,16 @@
 # EVENT-retention-v2: completed three-seed component comparison
 
 2026-09-13. Observed DEV component result, not a parenting or general G3 result.
-Independent post-result raw recount is pending at this writing. The committed
-raw reducer and native input/failure-history validation have passed.
+Independent post-result raw recount passed on September 13, 2026. The committed
+raw reducer and native input/failure-history validation have also passed.
+
+Peirce independently recounted 288 calls and 72 A/B cells against captured
+expected output bytes: 168 strict-match-plus-stop successes, all 288 stopped,
+zero truncations. The cell vectors and all-in costs below agree. The review
+verified the reduction and 3,336-member archive hashes, and charged seed0
+attempt5's 196.98049139091745 seconds exactly once while retaining its exclusion.
+This is artifact-level review, not native attestation, independent tokenizer
+decoding, semantic rescoring, or qualification of a broader scientific claim.
 
 ## Result
 

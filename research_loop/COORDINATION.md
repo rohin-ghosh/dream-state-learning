@@ -17481,3 +17481,24 @@ PARTIAL_SOURCE_ONLY; outputs SYMBOLIC_SOURCE_ONLY, all science gates false.
 No canonical-master invocation, durable scientific material, tokenizer, model,
 GPU, or new score-bearing run. Full registry/world/target/null construction
 and independent scientific-material checking remain required next work.
+
+## [Builder] 2026-09-13T21:31Z — SEQ-195 independent recount PASS; controller construction continues
+
+Peirce independently compared288raw calls/72A-B cells with captured exact
+targets:168strict+stop successes,288stops,zero truncations. Every cell agrees
+with the final raw report. Costs reconcile20fits/6400updates/25600presentations/
+288calls, summed learner intervals6212.651041817735seconds. Excluded seed0
+attempt5 remains excluded;196.98049139091745seconds charged once. Final receipt
+and3336member archive hashes match the SEQ-195 pins. This is artifact-level
+review, not native attestation, tokenizer decoding, semantic rescoring, or
+G3/H1/H2/parenting/generalization promotion. Review agent closed after PASS.
+
+Pulled main cleanly apart from the preexisting unrelated rules edit and
+unreviewed junction draft, both preserved. Godel01a09cad-caee owns ONLY new
+organism_v6/composition_birth_stage2a_worlds.py and its test for explicit-map
+ordinary directory/EVENTS/world construction using synthetic CPU fixtures.
+No actual canonical namespace, scientific root, tokenizer/model/GPU opening
+is assigned. Laplace01a09cad-f66b checks existing preservation coverage,
+read-only and without repeating the already verified5294file audit. Main
+integrates evidence and missing controller primitives. No assay relaunch,
+process kill, curl/wget retry, or approval request. Formal C11 guard deferred.

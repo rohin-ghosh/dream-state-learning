@@ -1,4 +1,4 @@
-# Astra restart handoff — September 13, 2026, 21:22 UTC
+# Astra restart handoff — September 13, 2026, 21:31 UTC
 
 ## Current state — SEQ-195 final retention comparison COMPLETE
 
@@ -16,7 +16,10 @@ gpu_artifacts_local/pcfl_v2_final_three_seed_20260913_attempt1/evidence.tar,
 Reduction.json in that same directory; earlier acquisition/failure archives
 remain required. Raw report and analysis are in research_notes/analysis/
 2026-09-13_event_retention_v2_three_seed_{raw_report,analysis}.md.
-Peirce01a09c56-a66c performs independent post-result raw recount; pending.
+Peirce01a09c56-a66c completed independent raw recount PASS:288calls/72cells,
+168strict+stop successes,288stops,zero truncations; costs/exclusions and
+receipt/archive pins match. Artifact review only, not native attestation or
+independent decoding/semantic rescore. Agent closed after completion.
 
 Next critical work is Stage2A controller construction then adopted TSJ-v4,
 not another singleton/rank/prompt assay. Candidate wire/session and synthetic
@@ -25,9 +28,13 @@ not. Symbolic TSJ phase ledger and independent JSON checker are implemented
 and CPU-tested only, not two complete TSJ implementations or preparation GO.
 Newton01a09c83 completed the Stage2A symbolic role-key inventory increment:
 all28v3hash/count commitments match, Main50CPUtests pass. No real token or
-material root was created. Its code is ready to commit with this checkpoint;
+material root was created. Its code is committed at bf4f2223;
 next missing pieces are registry/world/target/null construction and checking.
-Other code workers closed; Peirce's final raw recount remains pending.
+Godel01a09cad-caee now owns only new composition_birth_stage2a_worlds.py and
+its test: explicit-map ordinary registry/world construction, synthetic CPU
+fixtures only. Laplace01a09cad-f66b performs bounded read-only preservation
+coverage review. Main owns integration and current documentation. Historical
+agent/PID assignments below are superseded by this current-state section.
 Preserve unrelated dirty gpu/codex/dream_state.rules and unreviewed junction
 draft. All formal final-C11 guard work stays deferred per Rohin.
 
