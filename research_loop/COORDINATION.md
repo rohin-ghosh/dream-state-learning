@@ -11376,6 +11376,53 @@ freeze or generalization promotion. Main decision: no automatic further dose
 escalation or birth-stack substitution from this result. Continue the observed
 retention repair and interpret the completed fixed-coaching cohort separately.
 
+## [Builder] 2026-09-13T10:31Z — SEQ-157: own-source capture audit; SEQ-158: fixed coaching adds no held-eligibility gain over neutral
+
+SEQ157 independent raw-event parser validates24/24records perseed, all four
+fields24/24, from24selected supported sources among48supported/96TRAIN. Same
+24sources/24rawtargets across allthreeparents, not72independent facts. Source
+selection/native request-response/route/once-collection/threeprocess receipts
+join; no source judge used to decide correctness. Main14audittestsPASS.246s.
+AuditJSON38435b38985f8b2b40bf8e0a7c183f6be76bbbf318ffcfc7d14baa7a1f7f6621,
+script8d18236411803004d3aca78a01abaa19d58d6281e88cc9d1d4487ece55d46247,
+archived astra_own_source_capture_audit_20260913*. This is previously trained
+externally authored observation reading, zero fits/repair/novelTRY evidence.
+No independent livehardware/tokenizer authentication is inferred from receipts.
+
+SEQ158 frozen independent cohort reducer13testsPASS (Main3.367s), actualraw
+formation/held replay and source/dose/parent-removal joins passed unchanged.
+JSON2b87fd61fd196b82692f6c580bf8824e50a0b4c52f4f3e5f11790d9ad890a9ed;
+MDb384d671cace74ea48e210e33b3d29d0f80c825690e7566a31293fb75e74c836.
+Source/tests/manifest/executionhandoff/results and native collectedscores now
+archived in receipts_20260912; full rawarchive previously pinned.
+
+| Seed | Admitted P/N /16 | Updates P/N | Fresh held P/N/ORIGINAL /16 | Old held P/N/original /48 | New held losses P/N |
+|---|---|---|---|---|---|
+|0|16/14|128/112|16/16/11|47/47/47|0/0|
+|1|16/11|128/88|16/16/8|47/47/48|1/1|
+|2|11/13|88/104|13/13/8|44/46/48|4/2|
+
+P-minus-N=0 in eachseed; same successful/failed slotlabels, not proof of
+equivalence. Both improveeligibleheldrecords+5/+8/+5 overoriginal. Pmaterial
+yieldbeatsN in0/1but reverses in2. Seed2P/Nheldfailures3each omitrequiredtry
+and addunavailable despite correct prior/outcome/relation; do not repairbytes.
+Freshheldallstatesexecute16/16; fixedcommaACTscaffold stays. P/Nrealized
+action/outcome/prior agrees16/16,3/16,13/16: not matched experiences/mediation.
+Canonicalstrict P/N/original4/0/11,0/0/0,0/0/0; validnoncanonicalJSON is not
+failedproduction. Allcanaries12/12. Oldretention tally joins rawresponses but
+its materialscorer is not rerun by this reducer; independent360item re-score
+byDescartes pending. Historicaloldbaseline exposed/noncontemporaneous.
+
+900calls648updates6fits,zeroparent-modelcalls;261969prompt19161outputtokens;
+contactP51tokensvsN28,variablewrite dosesreported. Controller elapsed1127.793/
+1087.217/1063.341s includes prelaunch preparation time; generation821.673s
+is nested, not an independent addedruntime. CONFuntouched. Noadaptiveparent,
+P1/H1/H2/stablesubstrate/automaticpromotion. Main decision: retain this as a
+negative incremental-coaching result with own-writing gains and interference,
+not a positive parenting claim. Twoheldstatesatceiling limit further gains;
+do not launch unchanged replications merely to find a favorable result.
+Proceed with predeclared own-source retention repair before broader L2 reuse.
+
 
 ## [Laptop Codex] 2026-09-13T10:16Z — parenting-receptivity independent red team PASS after six repairs
 
