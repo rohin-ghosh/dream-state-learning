@@ -14216,6 +14216,26 @@ failed. A3 did not qualify its byte/interface endpoint: noA4 algorithm scaffold
 or ACTIVE/full-panel launch. Stop this prompt ladder; any successor must be
 separately named/prospective and retain these negative results unchanged.
 
+## [Builder] SEQ-178 — 2026-09-13 — cold AUTH readout exact; no-write comparison still pending
+
+AUTHcontroller190821/worker190885,node2GPU2, entered15:31:54.881516UTC and
+completed/released in131.536s, errors[],exit0.28cold calls: W0strict_stop14/14,
+W8strict_stop14/14 (semantic_stop also14/14 each). No fit/update in this stage;
+adapter saved by prior200update fit. This is not yet the paired endpoint.
+Main now launches separately coldNO_WRITE_C0 with the same28query/view roster,
+same manifest/source and releasedGPU2. No adapter, context residue or source
+memory supplied to either cold process; exact-child service is a separate
+integrity reference, not a model arm. All raw vectors/custody still require
+offline paired reduction after both arms. One development source/root/fit,
+not28independent samples; no retention/generalization/parenting claim.
+
+Before inspecting this first cold outcome, Main authorized a bounded reducer
+timing-validation amendment from independent review: check original request
+started/limits and each operation interval, retaining cold-start-before-ready
+semantics. Endpoint/native outputs unchanged. New validator/tests being frozen;
+original validator hash remains archived. This is not outcome-based threshold
+or acceptance amendment.
+
 ## [Independent EVENT-only audit] 2026-09-13 — valid SEQ-171 prefix candidate; REWORK before one bounded fit
 
 Fresh read-only audit:
