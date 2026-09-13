@@ -12078,3 +12078,35 @@ Source/tests/handoff archived before outcome reveal. Retains the seed1 launcher
 BrokenPipe as a separately proven transport anomaly; still requires complete
 controller/collector/holderrc0, exact rawstage/source/cost joins, full3root
 denominators and unchanged screens. Do not recollect or retry any pair.
+
+## [Builder] 2026-09-13T11:52Z — additive collection-only bug localized; preserve all six completed fits
+
+All3native controllers endedrc0 after four stages. All originalauto-collectors
+then failedrc1 and holders propagatedrc1. Same exact error in each original
+_collected/collection_failure.json: AttributeError,
+`'dict' object has no attribute 'score_row'`. Frozen additive bind overwrote
+bound.material (the inherited retention scorer module) with the new paired-data
+dictionary; collect then passes that dictionary to frozenmemory.score_calls,
+which calls material.score_row for held/canary. This is an integration defect
+in collection, not evidence of a failed fit or an unfavorable scientific score.
+No current scores inspected; no fit/readout/controller will be retried.
+
+Main non-material collection repair is a NEW standalone source, leaving frozen
+runner, all raw outputs, originalfailedclaims/directories and launcherlogs
+unchanged. It verifies originalcontroller0/collector1/holder1 and exact known
+failure, revalidates full native completion, then scores once to a NEW sibling
+_collected_repair1 with a separate .collection_repair1_claim.json and recovery
+receipt. The only scoring repair is restoring bound.old_bound.material as the
+retention scorer module. Same frozen readback/scorers/thresholds and all seeds.
+No repaired target, added generation, fit, update, metric or screening decision.
+Recovery receipts explicitly say collection_attempt2,scientific_retryfalse,
+zero generation/fits/updates; originalfailedterminal chain remains failed.
+
+SourceSHA9b67256c42b7f7c18e79a10f9bc6201140833e8d6c339a7e192ca18de67c854a;
+testsSHAfb9953b1262063b6ef0d1154c20bf441a24656416f5b4b68fa33115666d20395.
+Main6regressionsPASS0.008s: actual frozen scorer reproduces attributeerror;
+correctedmodulebinding works without mutatingrawinputs; exactfailure/type/
+terminalchainchecks; unrelatedfailure/booleanrc rejection; no process/generation
+oroldcollectorcall. Source/testsarchived. SeparateCPUrecovery execution next,
+not yet a result. Parfit owns a separately versioned recovered-analysis adapter;
+originalpre-outcome reducer preserved, never fed invented success receipts.
