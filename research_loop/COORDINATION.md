@@ -17766,6 +17766,24 @@ only scouts, rank/heat/prompt churn, and singleton-bank repeats remain stopped.
 
 **Fleet:** a40:0/8 ovx:0/8 ovx2:0/8 a100:0/8 busy (all idle since ~21:17Z). Daemons: astra_nudge=1 fable_fill=1 courier=1 occ_off=yes. Laptop chains 4/4. Node-1 mirror: last incremental 15:02 UTC; final incremental due before 09-14 23:14 UTC (watcher will run it in the morning tick unless the lease shows earlier). Nothing launched or killed by the watcher.
 
+## [Root response to Rohin messages 48–49] 2026-09-13T22:23Z — the kickoff is self-issued memory use that changes action
+
+Root reading is recorded in
+`research_notes/analysis/2026-09-13_closed_loop_kickoff_and_level1_scope.md`.
+The smallest causal loop is: own action/outcome -> grounded EVENT/LINK -> later
+self-issued cue/READ under a goal -> recovered content changes a held action ->
+new outcome becomes experience. SEQ195 supports only bounded write/retention;
+Stage2A keeps all four coupled controller skills (SEEK/PROSPECT/CHECK/CONTINUE),
+and TSJ is the first whole-loop test. The 560-call reduction removes redundant
+evaluation cells, not child capability; existing Level-1 artifacts remain.
+
+Fixed writer replay remains on as qualified same-bank infrastructure. Learned
+selective rehearsal is a later anti-asymptote behavior and must be judged by
+action/retention, not lexical repetition. Multiple local-proxy classrooms are
+preserved as a post-junction 2/4/8/12 interleaving-vs-pooled test at matched
+examples, presentations, updates and tokens; they do not delay controller
+birth. No new execution or claim authority follows from this clarification.
+
 ## [Builder] 2026-09-13T22:18Z — graph-scope repair and bounded rollout source integrated
 
 Pulled fc09d417 and retained v5 route correction/reduced-screen ordering.
@@ -17824,3 +17842,23 @@ Backup self-check from the VM (laptop heartbeat stale). Since the last watcher e
 **VM daemons:** astra_nudge 1, courier_vm 1, tmux session `astra` alive.
 
 **Node-1 mirror:** lease ends 2026-09-14 23:14 UTC, about 25 h from this check, so outside the 10-hour window; no rsync run. Last incremental pass logged at 15:02 UTC 09-13 (find -type f = 15,428 both sides). The final incremental `rsync -a` (no --delete) node 1 `~/v6_out/` → node 2 `~/mirror/node1_v6_out_2026-09-12T23/` is still due before the lease end; the laptop watcher runs it, or this self-check may if the laptop stays stale into the window.
+
+## [Rohin — message 50, ~22:50 UTC 09-13, relayed by Fable] curriculum shape for level 3: 12 classrooms interleaved in one sleep for breadth, then 12 sequential classrooms for depth, before deployment — "just a thought again"
+
+Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 50; IDEA TO TEST, not a ruling; Fable's position in IDEAS.md at this timestamp):
+
+> 12 clessrosn in one sleep is good, i think it getrs rid of didiutl things adoens tofruce the ystem to overly specitic to each tofot he class roms, here smy othnty thought is that maybe 12 classrooms for the bredht genirlaing, and then a 12 seuqtion calslsroms after ot show the model is capabel of liek speciatlized nad goind down depth ndoes for ehct ykwim, that might be usufel before its tufllfy dlepled on the test, jjust a thought agian
+
+Reading: 12 classrooms in one sleep is good; I think it gets rid of idiosyncratic things and does not force the system to be overly specific to each of the classrooms. Here is my other thought: maybe 12 classrooms [in parallel] for breadth and generalising, and then 12 sequential classrooms after, to show the model is capable of specialising and going down deep nodes for each, you know what I mean. That might be useful before it is fully deployed on the test. Just a thought again.
+
+[Fable → Builder] 2026-09-13T22:19Z — for the level-3 design file when it is opened: breadth phase = interleaving regime (SEQ-113), depth phase = sequential-banks regime (SEQ-118/195) and therefore needs replay of the breadth material; readouts = cross-classroom held after breadth, and per-block gain-plus-survival-of-the-others during depth. No change to current work.
+
+## [Rohin — messages 51–52, ~22:55 UTC 09-13, relayed by Fable] run the watcher on the VM too while he is away; breadth vs depth first is open (either, or a loop between); he is away for a while and will check back
+
+Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, messages 51 and 52):
+
+> have this run on the VM so tcuz youll be off line when im gone the seuqtoitnal vperus sparpelelle genirnzed whci to pick first tim tno sure sure baout, it coud be wiehter, it coudl be a loobetween or someihgn
+
+> just idea yea nywa sgood lck ill be back in a little to check in
+
+[Fable] 2026-09-13T22:22Z — operational: the VM backup self-check (`tools/courier/backup_selfcheck.sh`, cron every 30 min, acts only when the laptop heartbeat is > 45 min stale) exists and last ran on 09-12; its prompt was from 09-11 (queue/pretest era). Rewrote `tools/courier/SELFCHECK_PROMPT.md` to the current watcher mandate: observe/log/relay/report only; never launch or kill; occupancy is not a metric; never pull/rebase in the builder's checkout (commit the notebook only, push if fast-forward); relay `[Builder -> Rohin]` entries verbatim; node-1 mirror rule; SEQ-VM numbering; outbox summary for Rohin. Installing the new prompt on the VM outside the builder's checkout and pointing the cron at it (see the next Fable line). Position on breadth-vs-depth order in IDEAS.md at this timestamp: breadth first, then a breadth↔depth loop.

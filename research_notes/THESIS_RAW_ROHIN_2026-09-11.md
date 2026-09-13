@@ -429,3 +429,21 @@ yea ageree itll need a local proxy drugin life and msot of the time, so liek it 
 what is goign on right now btw, what is ti workgin on? im asusmgin butilnd the mechsims to have minimum level 1 - 2 conencion by trying out the atomizoer and one hop and cue, we sohudltn tank all ofu our levle one capbaties to sut thatt we shoud thingk funemtnally what is the behvior most imroptan for closed loop learnign to kick off flywheel and then think ocne the flywheel is started thest it and then level one misght itll  what heveioarns owuld also be helfpul so that the flywheel doenst asymtepth so that the flywheel can acutally grow proelry
 
 (context: after message 48, during his stepping-back period. Reading: "What is going on right now, by the way — what is it working on? I am assuming: building the mechanisms to have the minimum level-1-to-level-2 connection by trying out the atomiser, one-hop and cue. We should not tank all of our level-1 capabilities to suit that; we should think fundamentally about what behaviour is most important for closed-loop learning to kick off the flywheel, and then, once the flywheel is started, test it, and then [for] level 1 think about what behaviours would also be helpful so that the flywheel does not asymptote — so that the flywheel can actually grow properly." Labels: QUESTION (status) + INDUCED STEER (order of work: kickoff behaviour first → test the flywheel → anti-asymptote behaviours; keep the eight level-1 capabilities, do not discard them).)
+
+## Message 50 — (typed, ~22:50 UTC 09-13) curriculum shape: 12 classrooms in one sleep for breadth (removes idiosyncrasy, avoids over-specialisation), then 12 sequential classrooms for depth (specialising, going down deep nodes) before deployment on the test — "just a thought again"
+
+12 clessrosn in one sleep is good, i think it getrs rid of didiutl things adoens tofruce the ystem to overly specitic to each tofot he class roms, here smy othnty thought is that maybe 12 classrooms for the bredht genirlaing, and then a 12 seuqtion calslsroms after ot show the model is capabel of liek speciatlized nad goind down depth ndoes for ehct ykwim, that might be usufel before its tufllfy dlepled on the test, jjust a thought agian
+
+(context: after Fable'"'"'s answer that one sleep with many classrooms is the level-0 interleaving/replay rule at scale. Reading: "12 classrooms in one sleep is good; I think it gets rid of idiosyncratic things and does not force the system to be overly specific to each of the classrooms. Here is my other thought: maybe 12 classrooms [in parallel] for breadth and generalising, and then 12 sequential classrooms after, to show the model is capable of specialising and going down deep nodes for each, you know what I mean. That might be useful before it is fully deployed on the test. Just a thought again." Label: IDEA TO TEST (a level-3 curriculum design: parallel breadth phase → sequential depth phase → deployment).)
+
+## Message 51 — (typed, ~22:55 UTC 09-13) run the watcher on the VM too, since the laptop watcher will be offline while he is away; sequential vs parallel/generalised classrooms — which to pick first he is not sure about: either, or a loop between them
+
+have this run on the VM so tcuz youll be off line when im gone the seuqtoitnal vperus sparpelelle genirnzed whci to pick first tim tno sure sure baout, it coud be wiehter, it coudl be a loobetween or someihgn
+
+(context: reply to Fable'"'"'s position on message 50. Reading: "Have this run on the VM too, because you will be offline when I am gone. The sequential versus parallel/generalised [phase] — which to pick first I am not sure about; it could be either, it could be a loop between, or something." Labels: OPERATIONAL REQUEST (VM-side watcher continuity) + OPEN QUESTION (phase order; a loop between phases is a live option).)
+
+## Message 52 — (typed, ~22:57 UTC 09-13) "just an idea, yeah; anyway good luck, I'll be back in a little to check in"
+
+just idea yea nywa sgood lck ill be back in a little to check in
+
+(context: closing for now. Reading: "Just an idea, yeah. Anyway, good luck; I will be back in a little to check in." Label: STATUS — he is away for a while; keep things running.)
