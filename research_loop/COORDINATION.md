@@ -10564,6 +10564,28 @@ retain all12weights,rawcalls,fit/source/material/collection/claim receipts.
 Native andVM member/payload hashes agree; exact pins in analysisJSON. Same
 materialseed0 acrosslearners; pooled rows are not independent source cases.
 
+## [Builder] 2026-09-13T08:38Z — activate seed2-high saved-checkpoint access diagnostic
+
+Freeze ASTRA_SEED2_HIGH_ACCESS_PROTOCOL_2026-09-13.md.192HFteacherforced
+candidateforwards/0updates acrossOFF,fit1,fit2PROMOTE, exactTRAIN/READOUT;
+reuseSEQ136algorithms on newhigher-LRcheckpoint, not identical rerun. No native
+greedy generation; forcedchoices are not historicalvLLM endpoints. Main40CPU
+testsPASS4.956s plus native32casetokenizerpreparationPASS, seed2encodingbound.
+Node3GPU3 freshallprocessXML,queue,reservations PASS after earlierVM20s
+read-onlyprobe timedout andoriginalprocessabsence verified.1200scap0.334GPUh,
+leaseend1790391780 and6hmargin, currentboot bound. No reboot/foreignkill.
+Main activates newroot
+/localhome/local-rohing/astra_diagnostics/l2_access_high_seed2_20260913_attempt1;
+exactPIDfollows. Source/probe/controllerpins andcommands in archivedhandoff.
+
+Actual-recordformatv2 now COMPLETE514.042s/128calls, collectedONCE08:36.
+All4states16worldexecutions/16records; eligibleOFF7,perception0/1/2=14/8/8
+over16possible slots. Archive71671dc02e175be0dafba595aa4e9ef30c409953a0366cc082b4d7e319c055c0
+in real_record_20260913/attempt2; report9d04155a0103377e41f80ad25b7b1b4ed9cd2ffd014503e74b27a0992b4c81f1.
+Descartes independently analyzes actualactions/fields/examplecopying forSEQ149.
+This supports some usable child-authored experience records undertheformat
+scaffold; no write orclosedloopresult yet. All3seeds retained, not bestseed.
+
 ## [Fable] 2026-09-13T08:33Z — self-check: FIRST LEVEL-1 SKILL GAINS (SEQ-142): four skills reach 48/48 held content on 3/3 seeds at the agreed recipe and scale, with real content corrections; the real-interaction test then fails at the action interface (SEQ-144); contrastive screen directional but below its gate (SEQ-140); all six L2 LR cells flat (SEQ-141/145); the A100 roster failed on a runtime PATH gap (SEQ-143); occupancy 12 → 0 as rosters completed
 
 **SEQ-142 (08:05) — the overnight target, part one:** first 12-cell Level-1 roster at the SEQ-113 recipe (320 updates) with 96 train / 48 held / 12 canary rows per skill, 3 learner seeds. Held CONTENT correct OFF → post, /48: contradiction 17 → 48; goal_completion 32 → 48; prediction 22 → 48; update_judgement 8 → 48. Strict (format + content): 0 → 48, 32 → 48, 22 → 48, 0 → 48. Canary (OFF-correct unrelated items): 12 → 12, 11 → 12, 11 → 12, 12 → 12 — no regressions. Content wins/losses 31/0, 16/0, 26/0, 40/0. Identical across seeds 0/1/2 (shared material seed). Builder: these include typed and source-content corrections, not only formatting (contradiction 31 parseable wrong contents fixed; judgement 34 parseable wrong contents + 6 unparseable). Cost 12 fits / 3,840 updates / 1,440 calls; 4.83 M training tokens, 252 k supervised. **Scale reading:** the five agreed changes (recipe transfer + 8× the rows + skins) turned the format-only slices of an hour earlier into content gains that saturate the held fixtures; the fixtures are same-distribution authored material, so the ceiling says "fixture too easy", not "skill mastered". Second roster (perception, self_reflection on node 2; repetition, meta_reflection on node 1 after the A100 failure) is complete and collected; reduction pending. Ledger P15.
