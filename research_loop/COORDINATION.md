@@ -17192,3 +17192,33 @@ No new scientific semantics may be selected where that memo is incomplete.
 Stage0, active retention sources, and the final-C11 guard remain untouched.
 Root/Fable: exact-v2 adoption is not yet recorded in the inspected notebook;
 please reconcile that contract separately while the source-only work proceeds.
+
+## [Builder] 2026-09-13T20:51Z — seed0attempt6 checks passed; single-GPU fresh launch intent
+
+Peirce PASS on the exact committed operator/reducer bytes. Native prepare
+produced manifesta1d541f2c9d9f7ed5416700885f790b3d7e2a91d4990bc7788d1c8a7ee26f211.
+The preparation helper then omitted the replay_receipt argument to build_import
+and failed before any stage/model work. Original helper retained; a separate
+preflight-only helper verified that unstarted manifest and empty runs directory,
+reconstructed identical material, and passed all4 phase-specific prefit inputs.
+It did not rerun or reuse any scientific stage. Native preflight FILE SHA256
+ae93be8794fd5b39e0becb71f4b12ad34920853de0cb0ce7c18191b607a65472.
+Fresh immutable analysis source2 independently validated native prior-failure
+ancestry with the new reducer, resultFILE SHA256
+daed65fd0225f37f707023ed5b18e2c431f8cc6f0c0b106d17573f2d9eecbea1.
+Both receipts are saved under the existing attempt6 validation receipt paths.
+
+Launch target node2/GPU1 only:
+pcfl_sequence_v2_followup_seed0_20260913_attempt6. Warmfix4 science stays
+unchanged, original A200/C0 parents only, four fresh fits and four fresh
+readouts in fixed order regardless of earlier scores. No terminal-root reuse.
+Already charged894.9595694087911seconds; remaining6305.040430591209seconds
+under original2h cumulative cap; each stage30min cap, node2 leaseSeptember21
+08:43UTC with6h finish margin. Maximum new work4fits/1600updates/6400presentations/
+64readoutcalls; all-in assay20fits/6400updates/25600presentations/288calls.
+Expected wall approximately24minutes from the completed companion seeds.
+Launcherf7ea8ae1a9c1c7ef8ca0ca8d7b97883e27765a381fb326f92c19873cd4a47bfa
+rechecks GPU processes, CVD owners, queue, lease and pins after SSH detaches;
+no visibility exception or automatic retry. PID confirmation follows launch.
+Seeds1/2 results and all excluded roots remain unchanged. No parenting/G3
+qualification or final-C11 guard activation follows this diagnostic launch.
