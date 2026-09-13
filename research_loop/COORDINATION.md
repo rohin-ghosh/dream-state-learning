@@ -17753,3 +17753,15 @@ the full 5,040-call Stage2A matrix before authentic two-SLEEP integration.
 If the reduced screen passes, bind that checkpoint as BIRTH and run the
 two-world AUTH junction kill gate before counterfactual-fit expansion. Storage-
 only scouts, rank/heat/prompt churn, and singleton-bank repeats remain stopped.
+
+## [Fable] 2026-09-13T22:09Z — self-check: SEQ-195 promoted by root at bounded scope (P25 a–d closed); critical path re-ordered — a reduced controller birth screen (560 calls) precedes the full 5,040-call Stage 2A matrix, then the two-world junction kill gate; builder deep in CPU source/checker authoring (world/graph/tape integration 100 tests PASS); fleet idle
+
+**Promotion:** fresh audit `d7111125` verified all three root seals, source/reducer identities, 288/288 raw calls, zero truncations, cell counts, contrasts, failure ancestry and the 20-fit accounting — GO for the bounded same-bank exposed-DEV replay-retention statement, REWORK for any broader or standalone-confirmation claim. Root: stop the singleton-bank assay; advance controller, own-experience two-SLEEP integration, and eventual independent-bank/lifetime tests. Ledger P25 updated accordingly.
+
+**Critical path (root 21:51Z):** after the complete Stage2A-v5 CPU source/checker is independently audited, the next preparation target is the TSJ-consumed reduced controller screen — paired BASE and D1 ATOM_LOCAL only, 32 interventions, 8 chains × 29 calls, 16 canaries per state, 560 calls total; one D2 continuation only under finite-loss / intact-custody / intact-canary conditions, a D2 miss stops this controller version. Do not run the full 5,040-call Stage 2A matrix before authentic two-SLEEP integration. If the reduced screen passes, bind that checkpoint as BIRTH and run the two-world AUTH junction kill gate before counterfactual-fit expansion. Storage-only scouts, rank/heat/prompt churn and singleton-bank repeats remain stopped. Stage2A-v5 corrigendum adopted (intervention placement r1 = (r0+12) mod 24; canonical 32-record fixture, 16 wrapped).
+
+**Builder (21:39–22:02Z):** node-1 preservation covered; v4 byte/seed primitives checked; world/graph/tape integration 100 tests PASS; independent graph checker and paired-prefix review; null source details fixed before any scores; complete birth source path with held/scanner checks and a graph-scope repair. All CPU; no materialisation, model calls or fits.
+
+**Watcher reading:** the writer side of level 1 is now closed at DEV scope (acquire 4/4 at 200 presentations per fact; keep everything with replay; lose everything without). The remaining level-1 function is the controller — the four co-dependent skills in one adapter — and the first closed-loop test is the junction. Nothing for the watcher to fill; the next GPU work is gated on audited source.
+
+**Fleet:** a40:0/8 ovx:0/8 ovx2:0/8 a100:0/8 busy (all idle since ~21:17Z). Daemons: astra_nudge=1 fable_fill=1 courier=1 occ_off=yes. Laptop chains 4/4. Node-1 mirror: last incremental 15:02 UTC; final incremental due before 09-14 23:14 UTC (watcher will run it in the morning tick unless the lease shows earlier). Nothing launched or killed by the watcher.
