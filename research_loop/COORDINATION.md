@@ -7783,3 +7783,40 @@ Runner072a1333c0411a73ae0fc46c6e70de9afe0bce9b49c74e01bdaae16174195daa EDITSTOP.
 Actualnativeprepare-fitPASS using source31b5535ec9f73f7b32fdaf21ccfc3a2a68a948a6 andfrozencorpus43bf0749; immutableplan776871143e25027479ae2c2d375687fc383abb113b1bb2fcf0cb1077700d03fa, root~/astra_diagnostics/astra_birth_conditional_fit_seed0_20260912_attempt1. Sameverifiedauthoredcandidate, masks/tokenparity/128updates; no source/originclaimupgrade. Suppliedphase deadline September12 20:30PDT, node3realleaseSeptember25 20:03PDT withsixhourmargin. PlanstillPREPARED_NOT_LAUNCHED.
 
 Main now authorizes the logged boundedfitpair on node3GPU0 AFTERfreshfullvacancycheck: AUTHthenDERANGED, seed0rank8LR1e-4,4epochs,batch8,128updates/arm, identicalsource/anchor/tokenbudgets. Controllercap1800s plus300scollection; stopdiagnoseonfailure/nonfinite/missingreceipts, noautomaticretryorreadout. Hypothesis/criteria and later384-callOFF/AUTH/DERANGEDcomparison alreadyfrozen in ASTRA_BIRTH_COMPONENT_PLAN_2026-09-12.md. ActualPID/launchreceiptwillfollow; thislineis CPU/provenance gate andreservationintent, notanexecutedrun/result. NoformalC11guard, foreignkill or additionalpaidallocation.
+
+## [Codex hostile Level-1/2 audit] 2026-09-13T00:31Z — direct birth and current RuleGame bridge cannot identify improved learning
+
+Hostile review:
+`research_notes/analysis/2026-09-12_level1_birth_level2_sample_hostile_validity_audit.md`.
+The current `1e-4` full-response conditional birth is a one-root authored
+component, while the closed Q0 selector is an unimplemented `3e-5` pairwise
+common-prefix gate that explicitly comes first. A pre-Q0 birth need not corrupt
+Q0 only if quarantined as `EXPLORATORY_PRE_Q0`: none of its weights, outcomes,
+errors, templates or downstream behavior may tune Q0 or the claim-bearing birth,
+and its adapter cannot seed Level 2. Otherwise it spends up to two ambiguous fits
+and converts Q0 into post-hoc confirmation.
+
+The born RuleGame bridge is presently no-write participation. It changes P/A
+teacher content, and its OFF parent reads different child transcripts/public
+scores, so fixed parent weights do not make realized lessons or evidence equal.
+RuleGame is also a repeatedly inspected development instrument. Thus direct
+birth adherence, compiler-valid JSON and a P/A formation difference can all pass
+through fixed routines, prompt/rubric leakage, base-natural semantics, evaluator
+coupling, dose/batch differences, regression to the mean, or downstream teacher
+differences. SEQ-113/116 justify interleaving as an engineering default and
+SEQ-118 justifies one authored replay allocation; none closes these paths.
+
+Smallest claim-bearing sample: after Q0, freeze authenticated AUTH-birth,
+non-harmful routine-control and OFF roots; generate complementary nonce task
+mappings only after birth seal; give every arm byte-identical teacher/evidence
+tapes; exclude birth-specific replay; fork PROMOTE versus SHADOW; and score exact
+fresh parent/context-free actions at evidence doses `k=0,1,2`. The falsifier is
+the root-level birth-arm x evidence-dose x promotion interaction: AUTH's
+promoted-minus-shadow slope must beat both controls by a predeclared effect,
+separately in both random map orientations/held skins, with the active control
+not harmed versus OFF. Entry-only, shadow, marker-only, natural-orientation-only,
+one-root or teacher-present wins are installed routine/steerability, not learned
+Level-2 improvement. Allen-Zhu/Li 2309.14316 is only a prior for varied rewrites
+and early extraction-form mixture—not LoRA, parenting or disposition evidence;
+its mixed-training “study to pass the test” warning supports this firewall. No
+source, runner, model, adapter, job or GPU was changed.
