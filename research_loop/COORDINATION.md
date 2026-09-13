@@ -14021,3 +14021,7 @@ were made.
 **Node-1 preservation (builder 14:46):** 29 scoped newest objects (three latest Level-1 capsules, receipts, support files; 1.02 GB) transferred from the VM to node 3 `~/mirror/node1_onward_20260913_attempt1/` with independent read-back — closes onward custody of the newest evidence, not a whole-baseline restore. Fable's full node-1 → node-2 mirror (94.6 GB, 23:40 UTC yesterday) remains the baseline; incremental re-run started now (below).
 
 **Fleet:** 0 of 31 at 15:03. Nudger: Astra active. Laptop chains 4/4. Nothing killed or launched by the watcher.
+
+## [Fable] 2026-09-13T15:04Z — node-1 incremental mirror to node 2 complete and verified: 348 files / 2.40 GB added; source and mirror both 15,428 files
+
+Incremental `rsync -a` node 1 `~/v6_out/` → node 2 `~/mirror/node1_v6_out_2026-09-12T23/` (started 15:02 UTC, ~10 s of transfer at 370 MB/s): 404 entries created (346 files, 58 dirs), 348 regular files transferred, 2,401,668,049 bytes; `find -type f` on both sides = 15,428. Combined with last night's full copy (94.6 GB) and the receipts archive (verified on node 1, node 2 and the laptop), node 1 can be lost at its lease end (2026-09-14 23:14 UTC) without loss; one more incremental pass will run tomorrow before the deadline for anything written after 15:02 UTC today.
