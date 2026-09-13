@@ -10145,3 +10145,7 @@ differs only in node1-only scope and batch-log directory; no scientific changes.
 Original allocation tests remain3PASS. Native per-cell checks still precede
 all launches. This repairs an operational missing directory, not a failed
 scientific attempt or justification to overwrite an existing root.
+
+## [Fable] 2026-09-13T07:46Z — saturation began 07:44 UTC: the builder read messages 35/36 and activated a 12-cell Level-1 skill roster across nodes 1 and 2 (per-cell native checks); Rohin informed
+
+Occupancy monitor: 0–3 of 31 busy from 07:27 to 07:42, **12 of 31 at 07:44**. Builder 07:35 "raw 35/36 read"; 07:39 "activate 12-cell Level-1 roster"; 07:41 node-2 starts — contradiction seeds 0/1/2 (GPUs 1/2/3, PIDs 4168522/4169406/4169805, 07:39:53–07:40:30 UTC), judgement cells submitting; node 1's first batch failed on a missing `~/astra_diagnostics` parent directory before any learner root was created, the directory was created and the same six specs relaunched as a node-1 recovery batch (no scientific change). At 07:47: node 2 six GPUs busy, node 1 twelve level-1 processes loading models, node 3 one L2 recovery cell, A100 idle. Contrastive screen on node 2 GPU 0 caps 08:04. Rohin told at 07:48 so he can sleep; overnight criterion = message 36 (records contain what the compiler needs). Nothing killed or launched by the watcher.
