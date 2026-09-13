@@ -38,6 +38,7 @@ class RosterTests(unittest.TestCase):
             "READ_REQUIRED_PANEL": "985c0cd62e44c2f2a9727e8db294193acdbe7ba945ad13e435e9f4bbbe4770e3",
             "STRUCTURED_ACTION_SMOKE": "38cfb40f9b8388b7deeae0b63f84561696a8486433b47645ade311b5e86d32d5",
             "STRUCTURED_FIRST_READ_SMOKE": "3c0db7783cf32f9ecc548f1ae89aa419a787e140217c0ca9f1decdea7a5e735b",
+            "A3B_NEWLINE_FRAMED_SMOKE": "9a6bbc7c0ba9decf9a380b3d78343b50f14dc0fd7c140913fd2bb02ad2485980",
         }
         with patch.object(driver, "source_pins", return_value={}):
             for stage, checksum in snapshots.items():
@@ -139,6 +140,68 @@ class RosterTests(unittest.TestCase):
             with self.subTest(decoded=decoded, raw=raw, sampling=settings), self.assertRaises(ValueError):
                 driver._validate_frame(decoded, raw, settings)
 
+    def test_combined_smoke_changes_only_stage_identity_and_pinned_policy(self):
+        baseline = driver.build_roster(self.wires, "A3B_NEWLINE_FRAMED_SMOKE")
+        stage = "A3C_STRUCTURED_FRAMED_SMOKE"
+        roster = driver.build_roster(self.wires, stage)
+        expected = copy.deepcopy(baseline["tasks"])
+        for task in expected:
+            task["id"] = f"interface/{stage}/{task['case_id']}"
+            task["slot_ids"] = [f"{driver.core.byte_hash(task['id'])}/actor/{turn}" for turn in range(7)]
+        self.assertEqual(roster["tasks"], expected)
+        for field in ("roots", "roots_sha256", "sources", "limits", "continue", "fits", "updates", "full_assay_qualified"):
+            self.assertEqual(roster[field], baseline[field])
+        policy = roster["sampling_policy"]
+        self.assertTrue(policy["externally_scaffolded"] and policy["externally_framed"])
+        self.assertFalse(policy["external_first_think"] or policy["autonomy_claim"] or policy["learning_claim"])
+        self.assertEqual(policy["structured_outputs"], {"regex": driver.THINK_ROUTE_REGEX})
+        self.assertEqual(policy["regex_sha256"], driver.core.byte_hash(driver.THINK_ROUTE_REGEX))
+        driver.validate_roster(roster, roster["sha256"])
+        roster["sampling_policy"]["structured_outputs"]["regex"] = ".*"
+        roster["sampling_policy"]["regex_sha256"] = driver.core.byte_hash(".*")
+        roster = driver.seal({key: value for key, value in roster.items() if key != "sha256"})
+        with self.assertRaisesRegex(ValueError, "reconstruction"):
+            driver.validate_roster(roster, roster["sha256"])
+
+    def test_combined_regex_is_static_generic_think_or_route_with_optional_lf(self):
+        expected = (r"(?:THINK [^\r\n]*[^\s\r\n][^\r\n]*"
+                    r"|ROUTE N_[A-Z2-7]{10} N_[A-Z2-7]{10} : P_[A-Z2-7]{10}(?:,P_[A-Z2-7]{10})*)\n?")
+        self.assertEqual(driver.THINK_ROUTE_REGEX, expected)
+        route = "ROUTE N_ZZZZZZZZZZ N_2222222222 : P_7777777777,P_ABCDEF2345"
+        valid = ["THINK x", "THINK \t é \t", "THINK ROUTE inert payload", route]
+        for raw in valid:
+            self.assertIsNotNone(re.fullmatch(expected, raw))
+            self.assertIsNotNone(re.fullmatch(expected, raw + "\n"))
+        driver.core.parse_route(route)
+        invalid = ["THINK", "THINK ", "THINK \t\u00a0", "THINK \n", "THINK x\r", "THINK x\nROUTE later",
+                   "THINK x\n\n", "READ EVENT E_ZZZZZZZZZZ", "PROBE Q_ZZZZZZZZZZ", "```THINK x```",
+                   route + " ", route + "\r\n", route.replace(",", ", "), route.replace("P_7777777777", "P_0")]
+        for raw in invalid:
+            with self.subTest(raw=raw):
+                self.assertIsNone(re.fullmatch(expected, raw))
+        for slot in range(7):
+            sampling = driver.sampling_for("A3C_STRUCTURED_FRAMED_SMOKE", {"id": "a" * 64 + f"/actor/{slot}", "seed": 7},
+                                           {"output_tokens": 256})
+            self.assertEqual(sampling["structured_outputs"], {"regex": expected})
+            self.assertEqual(sampling["stop"], ["\n"])
+            self.assertIs(sampling["include_stop_str_in_output"], False)
+
+    def test_combined_frame_allows_only_pinned_grammar_without_weakening_a3b(self):
+        sampling = driver.sampling_for("A3C_STRUCTURED_FRAMED_SMOKE", {"id": "unused", "seed": 1}, {"output_tokens": 256})
+        original = copy.deepcopy(sampling)
+        raw = {"text": "THINK x", "finish_reason": "stop", "stop_reason": "\n"}
+        driver._validate_structured_frame("THINK x\nsuffix", raw, sampling)
+        self.assertEqual(sampling, original)
+        with self.assertRaisesRegex(ValueError, "LF framing sampling"):
+            driver._validate_frame("THINK x\nsuffix", raw, sampling)
+        for structured in (None, {"regex": ".*"}, {"regex": driver.ACTION_REGEX},
+                           {"regex": driver.THINK_ROUTE_REGEX, "choice": ["THINK x"]}):
+            with self.assertRaisesRegex(ValueError, "grammar differs"):
+                driver._validate_structured_frame("THINK x\nsuffix", raw, {**sampling, "structured_outputs": structured})
+        for changed in ({**raw, "text": "suffix"}, {**raw, "stop_reason": None}, {**raw, "finish_reason": "length"}):
+            with self.assertRaises(ValueError):
+                driver._validate_structured_frame("THINK x\nsuffix", changed, sampling)
+
     def test_exact_regexes_match_parser_and_admit_nonexistent_identifiers(self):
         expected = (r"(?:READ (?:EVENT E_[A-Z2-7]{10}|EVENTS_AT N_[A-Z2-7]{10}|LINKS_FROM E_[A-Z2-7]{10})"
                     r"|ROUTE N_[A-Z2-7]{10} N_[A-Z2-7]{10} : P_[A-Z2-7]{10}(?:,P_[A-Z2-7]{10})*)")
@@ -175,6 +238,8 @@ class RosterTests(unittest.TestCase):
                         if stage == "STRUCTURED_FIRST_READ_SMOKE" and slot == 0 else driver.ACTION_REGEX}
                 if stage in driver.FRAMED_STAGES:
                     expected.update(stop=["\n"], include_stop_str_in_output=False)
+                if stage in driver.STRUCTURED_FRAMED_STAGES:
+                    expected["structured_outputs"] = {"regex": driver.THINK_ROUTE_REGEX}
                 self.assertEqual(driver.sampling_for(stage, request, limits), expected)
                 self.assertEqual(request, {"id": "a" * 64 + f"/actor/{slot}", "seed": 37})
                 self.assertEqual(limits, {"output_tokens": 19})
@@ -384,6 +449,12 @@ class StageTests(unittest.TestCase):
         self.check_structured_capture("STRUCTURED_ACTION_SMOKE")
 
     def test_framed_generation_preserves_full_decode_single_token_suffix_and_replay(self):
+        self.check_framed_generation("A3B_NEWLINE_FRAMED_SMOKE")
+
+    def test_combined_generation_preserves_full_decode_single_token_suffix_and_replay(self):
+        self.check_framed_generation("A3C_STRUCTURED_FRAMED_SMOKE")
+
+    def check_framed_generation(self, stage):
         suffix = "\nROUTE unexecuted suffix"
         class SuffixTokenizer(fixtures.Tokenizer):
             def encode(self, text, add_special_tokens=False):
@@ -394,7 +465,7 @@ class StageTests(unittest.TestCase):
             def decode(self, ids, skip_special_tokens=True):
                 return "".join(suffix if token == 999999 else chr(token) for token in ids)
         self.tokenizer = self.fixture.session.tokenizer = SuffixTokenizer(self.fixture.model)
-        self.prepare("A3B_NEWLINE_FRAMED_SMOKE")
+        self.prepare(stage)
         for task in self.plan["tasks"]:
             for slot in task["slot_ids"][:2]:
                 prefix = self.outputs[slot]
@@ -446,6 +517,47 @@ class StageTests(unittest.TestCase):
         self.assertEqual(report["results"][0]["reason"], "LENGTH")
         self.assertEqual(report["results"][0]["slots"][1]["status"], "UNCALLED")
         self.assertEqual(report["results"][1]["reason"], "THINK_REQUIRED")
+        self.assertEqual(report["summary"]["thought_interface_tasks"], 6)
+        self.assertFalse(report["summary"]["stage_gate_passed"])
+        self.replay(report)
+
+    def test_combined_physical_gate_is_not_graph_success_and_rejects_sampling_tamper(self):
+        self.prepare("A3C_STRUCTURED_FRAMED_SMOKE")
+        for task in self.plan["tasks"]:
+            route = self.outputs[task["slot_ids"][1]]
+            self.outputs[task["slot_ids"][1]] = route.split(" : ")[0] + " : P_ZZZZZZZZZZ"
+        report = self.run_stage()
+        self.assertEqual(report["status"], "COMPLETE")
+        self.assertEqual(report["calls"], 16)
+        self.assertEqual(report["possible_calls"], 56)
+        self.assertEqual(report["summary"]["thought_interface_tasks"], 8)
+        self.assertEqual(report["summary"]["route_successes"], 0)
+        self.assertTrue(report["summary"]["stage_gate_passed"])
+        self.assertTrue(report["summary"]["externally_scaffolded"])
+        self.assertFalse(report["summary"]["external_first_think"] or report["summary"]["full_assay_qualified"])
+        self.replay(report)
+        for index, field, value in ((0, "structured_outputs", {"regex": "THINK [^\r\n]+"}),
+                                    (1, "structured_outputs", {"regex": driver.ACTION_REGEX}),
+                                    (0, "stop", []), (0, "include_stop_str_in_output", True)):
+            altered = copy.deepcopy(report)
+            record = altered["attempts"][index]["capture"]["files"][f"call_{index:04d}.render.json"]
+            rendered = driver._decode(record["utf8"])
+            rendered["sampling"][field] = value
+            record["utf8"] = driver.canonical(rendered).decode()
+            record["sha256"] = driver.core.byte_hash(record["utf8"])
+            altered = driver.seal({key: item for key, item in altered.items() if key != "sha256"})
+            with self.assertRaises(ValueError):
+                self.replay(altered)
+
+    def test_combined_does_not_force_first_think_or_salvage_length(self):
+        first = self.prepare("A3C_STRUCTURED_FRAMED_SMOKE")
+        self.outputs[first["slot_ids"][0]] = self.outputs[first["slot_ids"][1]]
+        second = self.plan["tasks"][1]
+        self.finishes[second["slot_ids"][0]] = "length"
+        report = self.run_stage()
+        self.assertEqual(report["status"], "COMPLETE")
+        self.assertEqual(report["results"][0]["reason"], "THINK_REQUIRED")
+        self.assertEqual(report["results"][1]["reason"], "LENGTH")
         self.assertEqual(report["summary"]["thought_interface_tasks"], 6)
         self.assertFalse(report["summary"]["stage_gate_passed"])
         self.replay(report)

@@ -15101,6 +15101,25 @@ Meitner independently finishes the single-phase V3 sequence-fit wrapper;
 S_A acquisition must be inspected before warm descendants, no atomic tuning.
 The formal final-C11 guard remains deferred per Rohin's latest ruling.
 
+## [Builder] 2026-09-13 16:48 UTC — A3C CPU gate and sequence wrapper complete
+
+Lagrange EDITSTOP on interface driver/test:54focused tests PASS63.411s.
+Main command/outer plus sequence-fit14 tests:41PASS72.620s, no skips.
+Driver SHA256461aef9a62919dd3b28acdc40b167715c262a3e69f39b0835dfc6702c61d661c;
+sequence-fit SHA2569a0d722021103c78a335e0c540e8ad79e78a210503a881cf17f6c7bfb9225b6c.
+Old A3B sampling ban is preserved. A3C explicitly validates its one fixed
+grammar before accepting the declared first-LF decode relation; no token is
+discarded from costs and no address appears in the grammar. Prompts/seeds/caps
+are unchanged; native preparation will compare them to the original A3B.
+Node2 refresh16:41:52UTC: all8GPUs0MiB/no compute rows; old A3B PIDs absent.
+This is not the launch-time CVD/queue check; existing controller retains those.
+Approved bounded native next action: A3C smoke only, node2GPU0, zero writes,
+same authenticated model/base/root wires, one-hour maximum and6hlease margin.
+Main owns all launches. Meitner has EDITSTOP on sequence fit; now owns only a
+new cold sequence-readout module/test. No sequence fit has executed yet.
+Main's suspected CPU-receipt environment-shape mismatch was disproved by the
+actual immutable native receipt (nested native+peft); no receipt was changed.
+
 ## [Independent A3B terminal audit] 2026-09-13T16:40Z — physical recurrence exists; typed action and graph use still fail
 
 Read-only terminal audit:

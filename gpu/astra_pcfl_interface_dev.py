@@ -24,15 +24,21 @@ STAGES = {
     "STRUCTURED_ACTION_SMOKE": {"reads": 12, "thinks": 0, "calls": 13},
     "STRUCTURED_FIRST_READ_SMOKE": {"reads": 12, "thinks": 0, "calls": 13},
     "A3B_NEWLINE_FRAMED_SMOKE": {"reads": 0, "thinks": 6, "calls": 7},
+    "A3C_STRUCTURED_FRAMED_SMOKE": {"reads": 0, "thinks": 6, "calls": 7},
 }
 READ_REQUIRED_STAGES = ("READ_REQUIRED_SMOKE", "READ_REQUIRED_PANEL")
 STRUCTURED_STAGES = ("STRUCTURED_ACTION_SMOKE", "STRUCTURED_FIRST_READ_SMOKE")
-FRAMED_STAGES = ("A3B_NEWLINE_FRAMED_SMOKE",)
+STRUCTURED_FRAMED_STAGES = ("A3C_STRUCTURED_FRAMED_SMOKE",)
+FRAMED_STAGES = ("A3B_NEWLINE_FRAMED_SMOKE",) + STRUCTURED_FRAMED_STAGES
 CUSTOM_STAGES = STRUCTURED_STAGES + FRAMED_STAGES
 READ_REGEX = r"READ (?:EVENT E_[A-Z2-7]{10}|EVENTS_AT N_[A-Z2-7]{10}|LINKS_FROM E_[A-Z2-7]{10})"
 ACTION_REGEX = (
     r"(?:READ (?:EVENT E_[A-Z2-7]{10}|EVENTS_AT N_[A-Z2-7]{10}|LINKS_FROM E_[A-Z2-7]{10})"
     r"|ROUTE N_[A-Z2-7]{10} N_[A-Z2-7]{10} : P_[A-Z2-7]{10}(?:,P_[A-Z2-7]{10})*)"
+)
+THINK_ROUTE_REGEX = (
+    r"(?:THINK [^\r\n]*[^\s\r\n][^\r\n]*"
+    r"|ROUTE N_[A-Z2-7]{10} N_[A-Z2-7]{10} : P_[A-Z2-7]{10}(?:,P_[A-Z2-7]{10})*)\n?"
 )
 SMOKE_INDICES = (0, 1, 16, 17, 32, 33, 48, 49)
 READ_REQUIRED = (
@@ -136,11 +142,15 @@ def build_roster(root_wires, stage):
         }
     if stage in FRAMED_STAGES:
         roster["sampling_policy"] = {
-            "name": "pcfl.supplied_memory.a3b_newline_framed_smoke.v1", "externally_framed": True,
+            "name": f"pcfl.supplied_memory.{stage.lower()}.v1", "externally_framed": True,
             "stop": ["\n"], "include_stop_str_in_output": False,
             "decode_contract": "EXACT_FIRST_LF_PREFIX_FULL_TOKEN_DECODE_RETAINED",
             "autonomy_claim": False, "learning_claim": False,
         }
+    if stage in STRUCTURED_FRAMED_STAGES:
+        roster["sampling_policy"].update(
+            structured_outputs={"regex": THINK_ROUTE_REGEX}, regex_sha256=core.byte_hash(THINK_ROUTE_REGEX),
+            externally_scaffolded=True, external_first_think=False)
     return seal(roster)
 
 
@@ -160,6 +170,8 @@ def sampling_for(stage, request, limits):
         sampling["structured_outputs"] = {"regex": READ_REGEX if first else ACTION_REGEX}
     if stage in FRAMED_STAGES:
         sampling.update(stop=["\n"], include_stop_str_in_output=False)
+    if stage in STRUCTURED_FRAMED_STAGES:
+        sampling["structured_outputs"] = {"regex": THINK_ROUTE_REGEX}
     return sampling
 
 
@@ -174,6 +186,11 @@ def _validate_frame(decoded, raw, sampling):
         require(raw["finish_reason"] == "length" or
                 (raw["finish_reason"] == "stop" and raw["stop_reason"] is None and "\n" not in decoded),
                 "LF frame termination differs")
+
+
+def _validate_structured_frame(decoded, raw, sampling):
+    require(sampling.get("structured_outputs") == {"regex": THINK_ROUTE_REGEX}, "structured frame grammar differs")
+    _validate_frame(decoded, raw, {key: value for key, value in sampling.items() if key != "structured_outputs"})
 
 
 class InterfaceActor(native.NativeActor):
@@ -194,7 +211,9 @@ class InterfaceActor(native.NativeActor):
         return sampling_for(self._stage, request, limits)
 
     def _validate_decoded(self, decoded, raw, sampling):
-        if self._stage in FRAMED_STAGES:
+        if self._stage in STRUCTURED_FRAMED_STAGES:
+            _validate_structured_frame(decoded, raw, sampling)
+        elif self._stage in FRAMED_STAGES:
             _validate_frame(decoded, raw, sampling)
         else:
             super()._validate_decoded(decoded, raw, sampling)
@@ -277,7 +296,9 @@ def _verify(attempt, index, request, limits, settings, tokenizer, previous_end, 
     require(output["finish_reason"] in ("stop", "length")
             and (output["stop_reason"] is None or type(output["stop_reason"]) in (int, str)), "finish receipt")
     decoded = tokenizer.decode(output_ids, skip_special_tokens=True)
-    if stage in FRAMED_STAGES:
+    if stage in STRUCTURED_FRAMED_STAGES:
+        _validate_structured_frame(decoded, output, rendered["sampling"])
+    elif stage in FRAMED_STAGES:
         _validate_frame(decoded, output, rendered["sampling"])
     else:
         require(decoded == output["text"], "raw token decode/cap")
@@ -339,6 +360,8 @@ def summarize(results, stage, complete):
                        autonomy_claim=False, learning_claim=False)
     if stage in FRAMED_STAGES:
         summary.update(externally_framed=True, autonomy_claim=False, learning_claim=False)
+    if stage in STRUCTURED_FRAMED_STAGES:
+        summary.update(externally_scaffolded=True, external_first_think=False)
     return summary
 
 
