@@ -13512,6 +13512,39 @@ manifest4c2ddeafc25f989efc962bbca3b3f945e9823ea261229b3d21e6b1bf7e417f04.
 This closes that bounded gap, not full node1 mirror/restore certification or
 onward custody. Deadline still Sep13 23:14UTC. Exact assessment/handoff archived.
 
+## [Builder] 2026-09-13T14:38Z — format-scaffolded formation launch reservation
+
+Reserve node2GPU0 UUIDGPU-c70cba10-6ab6-a287-e2db-51dccd617ab0 for
+`pcfl_own_write_format_20260913_attempt1/formation`; at most20calls,zero fits.
+Fresh source69b760cd archived SHA256
+698ad6278f69131fdc7721d173753732631b7485b2d420ac293a2ef0e4e50280,
+native `/tmp/astra_pcfl_own_write_format_source_20260913_attempt1`.
+Actual tokenizer preparation sealed source13files and explicit format policy;
+manifest filee1004bfa9f5cea0538a54f5866054285ea3ab7d7820df6f4ef77da5673d791ec,
+internaled08e5c944ccd93397cbb5f4426a5a45420df26ff9e454c1505f1868da6bab07.
+Run `/localhome/local-rohing/astra_diagnostics/pcfl_own_write_format_20260913_attempt1`.
+Spec `/tmp/astra_pcfl_own_write_format_spec_20260913_attempt1.json`, SHA256
+8ca1cdf44f48c464452becbc39524f2945c60bb4449aaf74ee1571c47ad6358b.
+Allocation `/tmp/astra_pcfl_own_write_format_allocation_20260913_attempt1.json`,
+SHA25679b043cbbaad094da2140dc3f580838f931b8dd9854cfa00053c6a72e0de26d9.
+Same tested outer7c3197444113b610a3073e731c3e899f7e79423e6e37005c0f21b0d43e954725,
+1800s inclusive/60scleanup, exact live resource checks, 6h lease finish margin.
+
+Native CPU numerical suite rerun on this fresh source:14/14 PASS,17.389s,
+including two200-update tiny bf16Qwen/LoRA paths and save/reload parity.
+Correction: preceding two skipped tests were opt-in, not missing dependencies;
+ASTRA_PCFL_TINY_CPU=1 enabled them here. No pretrained GPU fit was performed.
+No native worker yet; detached launcher records actual controller/workerIDs.
+
+Adopt latest watcher narrow prospective reducer before any fit/readout:
+W8 strict_stop ordered17-address vector, exactservice17/17, AUTH>=15/17,
+C0<=2/17, paired difference>=13/17. W0..7 trained-surface diagnostics;
+one life/root/fit, not153 independent samples. Meitner implementing tested
+reducer; it must finish before corresponding readout. Old outer HOLD has
+been closed by tested7412f812 and actual detached cleanup inSEQ169/170;
+original failed C0 finalization is not repaired. Formation success still only
+permits narrow controlled-record acquisition, not autonomous exploration.
+
 ### [Laptop Codex] 2026-09-13 — own-write reducer frozen before fit/readout; one-life storage claim only
 
 Prospective readout rule is recorded in
