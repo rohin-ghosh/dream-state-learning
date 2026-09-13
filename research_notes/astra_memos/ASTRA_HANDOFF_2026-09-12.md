@@ -1,6 +1,41 @@
-# Astra current handoff — 2026-09-13T10:36Z
+# Astra current handoff — 2026-09-13T10:52Z
 
-## CURRENT — September13 10:36UTC (supersedes all snapshots below)
+## CURRENT — September13 10:52UTC
+
+No Main GPU job live. All3 replay-repair pairs completed/automatically collected
+rc0. Never recollect/relaunch. Fullarchive
+gpu_artifacts_local/own_replay_repair_20260913_attempt1/evidence.tar
+SHA86c2aadc7b35a50ccb58ad81e4c4733200423d121db75b25afde1112538d8936,
+1248members507965440bytes6adapters. Every extracted file verified in
+/tmp/astra_own_replay_repair_native_20260913_attempt1. Native originals preserved.
+SEQ159 independent rawreduction: REPLAYexact10/6/5,para10/6/3,held47/48/48;
+EXTRA_MEMORYexact13/7/7,para10/6/7,held47/46/42. Allcanary12. Replayloses0
+LR0correctitems, EXTRA0/2/6. Replayfailsseed1floor7;seed2parabelowconstant4.
+Screens2/3vs1/3,notallseedrepair.6fits1632updates480calls,equalstepsNOTexposure.
+Resultreceipts_20260912/astra_own_replay_repair_analysis_result_20260913_attempt1/analysis.json
+SHA03ac63e35c3e912533b62474ba4590dee21bbac02ca790511491d3305022bc6a.
+Reducer original preserved; separate one-line candidate sort repair with16Main
+testsPASS3.095s. Allcode/tests/manifest/failuretranscription/executionhandsoff
+archived. No scientific retry, scorer or threshold change.
+
+Six-file manuscript throughSEQ158 independently accepted, freshauthorfreeze
+resolves stalehash table without furtheredits; committed/pushed2af3c792.
+CollaboratorUNSENT,noPDFbuild. Dirtygpu/codex/dream_state.rulespreserved.
+Nextprotocol ASTRA_PARENTING_ALIGNMENT_DEV_2026-09-13.md
+SHA3b28ba598ba152a7becf878f0f935324993ac85f0763834317f9aabb898290bf:
+inference-only task-aligned/swapped/no-parent steering,3originalroots,312maxcalls,
+0fits. Not a continuation from memorydescendants. No new dose/sleeprecipe.
+Beauvoir01a099fb-2d8d-7d13-9e40-6a414fe7d14d owns new/tmpalignmentcore/tests;
+Parfit01a099a4-4d72-75c0-af60-8f84fc68d36a lifecycle/tests; Mainprotocol/outer;
+Descartes advisory focusedcausal review. APIs/codepins pending,no nativeprepare
+orlaunch. Lovelace repairreductioncomplete. Mainnext: integrate/test core+runner,
+freeze exact source/prompt manifests, then nativeprep/reservationbeforelaunch.
+Simplehygiene now,formalC11later. No freeze/P1/H1/H2/clean qualification.
+RawchronologicalSLEEP comparator still required for compilerutility attribution.
+MissionACTIVE,incomplete; node2leaseSep21 08:43UTC,finish6hearly. Needednode1
+evidence evacuation deadlineSep13 23:14UTC; newMainartifactsVMarchived.
+
+## Historical superseded snapshot — September13 10:36UTC
 
 Three Main REPLAY vs EXTRA_MEMORY pairs LIVE on node2GPUs0/1/2, started
 10:34:12/21/30UTC. Holders/controllers106836/106837,106897/106898,106962/106963.

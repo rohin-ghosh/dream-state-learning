@@ -11587,3 +11587,68 @@ tests and handoff only. No fits or native run yet. The laptop's broader assay is
 a proposal, not adopted wholesale: its authored replay and one-sleep promotion
 rules are not authorized by this implementation assignment. Simple hygiene now,
 formal final C11 guard later; no mechanism freeze or H1/H2 promotion.
+
+## [Builder] SEQ-159 — 2026-09-13T10:52Z — own-source replay protects retention, not all-seed recall
+
+Timestamp correction: the previous Builder heading says10:54Z, but its commit
+2af3c792 was actually made at10:49:34UTC. That heading was a manual timestamp
+error; preserved append-only. Native launch/exit receipts are unchanged. The
+six manuscript files passed diff checks; a later staged check flags whitespace
+in the preserved unified-diff receipt (context-line syntax), not those source
+files. The receipt is retained byte-for-byte rather than cosmetically altered.
+
+All three original-parent REPLAY/EXTRA_MEMORY pairs completed and automatically
+collected once. Main's full archive pin is in the preceding entry. Independent
+raw source/custody/scorer reduction now complete:
+
+| Seed | REPLAY exact / paraphrase | EXTRA_MEMORY exact / paraphrase | Held R/E of48 | New LR0-correct losses R/E | Frozen screen R/E |
+|---|---|---|---|---|---|
+|0|10/14 /10/14|13/14 /10/14|47/47|0/0|meets/meets|
+|1|6/8 /6/8|7/8 /6/8|48/46|0/2|misses recall/fails retention|
+|2|5/8 /3/8|7/8 /7/8|48/42|0/6|meets/fails retention|
+
+Canaries12/12 for every arm. Replay preserves every originally correct held and
+canary item on these panels, but seed1 misses exact floor7. Seed2's paraphrase
+3/8 is BELOW the evaluator-only best-constant4/8; constants by seed are6/14,
+4/8,4/8 on both memory panels. Exceeding a limited constant baseline elsewhere
+is not a general key-binding proof. No all-seed repair, freeze, generalG3 or
+parenting promotion. Fixed exact/retention screens were not loosened.
+
+REPLAY-only/EXTRA_MEMORY-only successes: exact1/4,0/1,0/2; paraphrase0/0,0/0,0/4;
+held0/0,2/0,6/0. EXTRA_MEMORY seed1's new failures overwrite an absent prior
+with the observed outcome; seed2's six new failures emit records when sources
+require abstention. These are source/content errors, not malformed JSON.
+Seed0's one held error was already wrong under LR0, not a newly lost item.
+
+Equal304/256/256 steps per arm, NOT equal memory exposure: R/E memory
+presentations112/304,64/256,64/256; replay adds192 own observation presentations
+per seed. Sources are the same24 previously trained, harness-authored supported
+observations read by each original child, not72 new experiences. Totals6fits,
+1632updates,480calls;46728supervised+334800context training tokens. Controller
+spans539.210/477.818/495.145s are not summed parallel makespan or GPU-active
+time. Historical LOWER/HIGH/LR0 remain noncontemporaneous references, zero new
+control runs. Three learner pairs, exploratory exposed DEV, no pooled causal
+or equivalence claim.
+
+Initial pre-outcome reducer rejected candidate/tie array order: it used admission
+order while frozen collector sorted candidate SHA keys. No failed result folder
+was created. Separate orderfix copy changes only candidates.items() to
+sorted(candidates.items()); scores/candidate set/floors unchanged. Originals and
+later-transcribed failure receipt preserved. Main16testsPASS3.095s, including
+exact one-line source diff and frozen-native ordering regression. Corrected code
+SHA4c06d8ded8ab58814a94f0aab40780a54fa2cf76ca0c7d858d1ab639483b03ab.
+Result receipts_20260912/astra_own_replay_repair_analysis_result_20260913_attempt1/analysis.json
+SHA03ac63e35c3e912533b62474ba4590dee21bbac02ca790511491d3305022bc6a;
+execution handoff SHA6614a09dd98f501c3f8f93e141a74a7a1ee166378b8c00f149fb65cb4645fa6e.
+All code/tests/pinned inputs/results archived. No scientific rerun/recollection.
+
+Decision: retain replay as a candidate with explicit recall/transfer limitations;
+do not increase dose or choose a winning seed. While that substrate limit stays
+open, the next useful cheap question is immediate task-specific parental steering,
+not another unchanged coaching write. Prospective inference-only protocol
+ASTRA_PARENTING_ALIGNMENT_DEV_2026-09-13.md
+SHA3b28ba598ba152a7becf878f0f935324993ac85f0763834317f9aabb898290bf:
+three original roots xALIGNED/SWAPPED/NO_PARENT, same task order/lesson multiset,
+312maximumcalls,0fits. New CPU core/lifecycle in progress; no launch yet. No
+authored replay or one-sleep promotion rules imported from the broader laptop
+proposal. Manuscript throughSEQ158 committed2af3c792; SEQ159update next.

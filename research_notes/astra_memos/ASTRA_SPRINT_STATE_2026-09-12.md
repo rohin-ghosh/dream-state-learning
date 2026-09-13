@@ -1,4 +1,18 @@
-## Current superseding snapshot — 2026-09-13 10:36 UTC
+## Current superseding snapshot — 2026-09-13 10:52 UTC
+
+SEQ159 complete: all3REPLAY/EXTRA_MEMORYpairs oncecollected/archived/reduced.
+Replayexact10/6/5,para10/6/3,held47/48/48;extraexact13/7/7,para10/6/7,
+held47/46/42. Allcanary12. Retentionlosses0allreplay,0/2/6extra. Notallseed
+repair:seed1belowrecallfloor7;seed2parabelowconstant4. Frozen screens2/3vs1/3.
+6fits1632updates480calls,equalstepsNOTmemoryexposure/tokens. Fullarchive/result
+pinsinHANDOFF. Independentreducer ordering-only correctionseparate,preserved
+originals,Main16testsPASS. NoMainGPUjoblive. ManuscriptthroughSEQ158accepted
+andcommitted2af3c792;collaboratorUNSENT. New inference-only alignmentassay
+CPUdevelopment,3originalroots x3arms,312maxcalls,0fits. CoreBeauvoir,runnerParfit,
+Mainprotocol/nativeintegration. No furtherdose/freeze/H1/H2/cleanqualification.
+Simplehygiene now,formalC11guardlater. MissionACTIVE/incomplete.
+
+## Historical superseded snapshot — 2026-09-13 10:36 UTC
 
 ThreeREPLAY/EXTRA_MEMORYpairs LIVE node2GPUs0/1/2 from10:34UTC; nativeall3
 preparationspassed,15/23/3MaintestsPASS. AutoONCEcollection aftersuccess;
