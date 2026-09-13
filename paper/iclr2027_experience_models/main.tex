@@ -285,6 +285,35 @@ Audit JSON SHA256:
 \path{9ca1433d5cce275cbc9ae8af1a36a43e7f93351d28eb823e9d6e5cde8c821344}.
 \end{quote}
 
+\subsection{Bounded replay retention on child EVENT records (SEQ195)}
+
+We tested sequential writing on one exposed DEV bank containing four A and
+four B EVENT records. The three optimizer seeds used the same semantic bank
+and therefore test fit repeatability, not independent-bank reliability. Every
+condition was read cold in both W0 and W8 views. In all three seeds and both
+views, the initial A write moved A from $0/4$ to $4/4$. A subsequent B-only
+write learned B ($4/4$) but forgot A ($0/4$), whether matched to the new dose
+or to replay's total work. Replaying A while writing B retained A and learned
+B ($4/4$ and $4/4$); clean cumulative retraining reached the same descriptive
+endpoint.
+
+The registered replay-minus-new-only A contrast was $+12/12$ pooled learner
+cells at each view, with no B loss. All 288 accepted readout calls were
+exact-hash audited and had zero truncations. Across eligible and failed
+attempts, the campaign used 20 fits, 6,400 updates, and 25,600 presentations.
+No single control simultaneously matches replay in both semantic dose and
+total work, so this result qualifies replay for integration on this bank but
+does not isolate pure replay causality. It establishes neither independent-bank
+generalization, connected use, native action improvement, parenting, nor a
+lifetime effect.
+
+The authoritative result audit is
+\path{research_notes/analysis/2026-09-13_event_retention_v2_three_seed_final_fresh_audit.md}
+(commit \texttt{d7111125}). The final evidence archive has SHA256
+\path{e0492b7ec5c5034490ee19c848a36b40884a780d4675ffd4749cca407b7f7438};
+exact reproduction additionally requires the four antecedent archives and
+source commit enumerated by that audit.
+
 \subsection{Prospective parenting and lifetime results}
 
 \tbd{} Figure 1: the parented Think--Dream--Sleep child and frozen-parameter
