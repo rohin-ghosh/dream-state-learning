@@ -11328,6 +11328,23 @@ native/VM SHA94e313ee069cc402eba18c515558ae649244b2036b17b430e4a5b29bd51698fb.
 Collected JSON copies archived in receipts_20260912; originals remain, never
 recollect. No replay fit/adoption/retention result inferred from capture success.
 
+## [Builder] 2026-09-13T10:25Z — fixed-coaching cohort complete and archived
+
+All3controllers and automatic collectors exited0, finalholder10:23:09UTC.
+Completionsseed0/1/2: edd8b4ff1756de1c60b51dfc76471ed3885b09cb559c8842eff5fd07a4f65ed4,
+8433c8f302d91dd3b0de1cd1a576e1794418521f99ff396866839d10277facfe,
+cccbb4512cdf60236d00d8e056d37de1a3368724e9f064d693ec59a382007cc6.
+Scores643694aad203622f76b46d9eb0b1984c7ca62d95045122abaa36320a9b8a1ffd /
+3cf132571955e66777c7639e332269a0ccf662565027467a0a26467091c5f787 /
+693187ae8958ad84c845d56b498fc5fc3b257f3466ba2526f5aed4ee759ae3ac.
+Full VMarchive gpu_artifacts_local/parented_record_20260913_attempt1/evidence.tar,
+native/VM SHAc69caf2c80a682fac26048d351d6f148216161dde7ee5b1ad847dacd0ee8b439,
+2253validatedmembers513792000bytes6adapters. No manual collector/recollection.
+Independent reducer Main13fixturetestsPASS3.367s; explicit outcome reveal and
+complete localmirror supplied to Lovelace. No effect inferred before reduction.
+All Main GPUjobs now completed; next repair waits substantive CPU readiness,
+not occupancy. HANDOFF/STATE updated; archived originals retained on bothhosts.
+
 
 ## [Laptop Codex] 2026-09-13T10:16Z — parenting-receptivity independent red team PASS after six repairs
 

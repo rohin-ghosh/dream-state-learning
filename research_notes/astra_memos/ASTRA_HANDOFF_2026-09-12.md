@@ -1,6 +1,52 @@
-# Astra current handoff — 2026-09-13T10:11Z
+# Astra current handoff — 2026-09-13T10:25Z
 
-## CURRENT — September13 10:11UTC (supersedes all snapshots below)
+## CURRENT — September13 10:25UTC (supersedes all snapshots below)
+
+No Main GPU job live. ALL3contrastive pairs, ALL3fixed-coaching pairs and
+72call own-source capture completed and once-collected successfully. Do not
+resubmit, restart clocks or recollect. Full native originals stay on node2;
+all raw outputs/adapters/claims/launchers now also VM-archived:
+
+- gpu_artifacts_local/contrastive_full_dose_20260913_attempt2/evidence.tar
+  SHA32ee167d153812943c6942a095dafc1b5e2c7ccf2634eb77be5e95c03489fa4f;
+  776members493527040bytes6adapters. Independent reducer Descartes in progress.
+  Complete local mirror /tmp/astra_contrastive_full_dose_native_20260913_attempt2.
+- gpu_artifacts_local/parented_record_20260913_attempt1/evidence.tar
+  SHAc69caf2c80a682fac26048d351d6f148216161dde7ee5b1ad847dacd0ee8b439;
+  2253members513792000bytes6adapters. Auto-collection allrc0 by10:23:09UTC.
+  Complete mirror /tmp/astra_parented_record_native_20260913_attempt1.
+  Lovelace received explicit outcome reveal for independent reducer; Main13testsPASS.
+- gpu_artifacts_local/own_source_replay_capture_20260913_attempt1/evidence.tar
+  SHA94e313ee069cc402eba18c515558ae649244b2036b17b430e4a5b29bd51698fb.
+  Controller83082/holder83075 done10:18:31/34UTC including auto-collection.
+  Native report24/24source-admitted perseed;72calls0fits247.060s, previously
+  trained supported observations, not new TRY. Copernicus raw-source audit pending.
+  Collections /tmp/own_source_replay_capture_20260913_attempt1_collected and
+  matching receipts_20260912 path. Native plan/completion pins in notebook.
+
+Next bounded repair protocol committed963aa528:
+ASTRA_OWN_SOURCE_REPLAY_REPAIR_2026-09-13.md SHA
+fb523ee6d96ef6186ae187c3c9b4482b25084fa49f292aae15a34affa87103c7.
+REPLAY vs EXTRA_MEMORY, same originalparents, all24own admitted replay rows
+and original14/8/8memory rows, LR3e-5/eightpasses/batch1. Extra-memory rows are
+cyclic additional presentations, not new sources. Matches steps, not tokens
+or memory exposures. At most6fits1632steps480calls, no fits launched yet.
+Beauvoir owns new/tmp/astra_own_replay_repair_core_20260913.py+tests;
+Parfit new/tmp/astra_own_replay_repair_run_20260913.py+tests. Main awaits
+EDITSTOP/stableAPI then own CPU tests/native prepare and fresh allocation.
+Do not mutate frozen coaching or use authored teacher targets for replay.
+
+ManuscriptthroughSEQ155 exact reviewed bytes committed83cbdc9c; collaborator
+UNSENT. Dirtygpu/codex/dream_state.rules remains unrelated. New scientific
+SEQ entries await independent reductions; collection success is not efficacy.
+Rohin40: weigh suggestions, preserve explicit invariants, do not mechanically
+expand scope. Main prioritizes observed retention blocker and coaching evidence
+over optional L1skills/PCFL expansion. PCFL remains partial CPUfixture.
+MissionACTIVE/incomplete; no freeze/P1/H1/H2/generalkeybinding/clean certification.
+Simple hygiene now; formalguard finalC11 only. Node2leaseSep21 08:43UTC,6hmargin.
+Node1 needed-evidence deadlineSep13 23:14UTC; new Main evidence already VM-copied.
+
+## Historical superseded snapshot — September13 10:11UTC
 
 Mission ACTIVE/incomplete. Node2 has SIX Main paired controllers, not zero.
 Boot8ff7b0dc-fbdf-4945-9044-3dffe94b5407; lease2026-09-21T08:43Z, six-hour margin.

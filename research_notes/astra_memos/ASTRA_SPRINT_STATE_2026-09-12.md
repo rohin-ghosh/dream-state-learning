@@ -1,4 +1,17 @@
-## Current superseding snapshot — 2026-09-13 10:11 UTC
+## Current superseding snapshot — 2026-09-13 10:25 UTC
+
+All3contrastive pairs, all3coaching pairs and own-source72callcapture completed,
+once-collected, raw/adapters/receipts VM-archived. No Main GPUjoblive. Independent
+reducers/audit pending; exact paths/pins in current HANDOFF. Capture reports
+24/24admitted perseed on selected supported previously trained observations,
+not full96competence/newTRY/replayrepair. Main fixturetests contrastive25PASS,
+coaching13PASS. Next own-source REPLAY vs matched-step EXTRA_MEMORY protocol
+frozen963aa528; core/lifecycleCPUdevelopment, nofits. ThroughSEQ155 manuscript
+reviewed/committed83cbdc9c. Rohin40 advice treated as conversation; evidenced
+blockers drive next choices, not occupancy or automatic scope expansion.
+Missionincomplete, simplehygiene now/formalC11guardlater, no scientificpromotion.
+
+## Historical superseded snapshot — 2026-09-13 10:11 UTC
 
 Six Main node2 paired controllers LIVE: contrastive full-dose seeds0/1/2
 GPUs0/1/2; fixed-coaching DEV pairs seeds0/1/2 GPUs3/4/5. No new result.
