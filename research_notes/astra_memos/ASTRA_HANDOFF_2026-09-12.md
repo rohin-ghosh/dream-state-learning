@@ -1,6 +1,40 @@
-# Astra current handoff — 2026-09-13T13:33Z
+# Astra current handoff — 2026-09-13T13:56Z
 
-## CURRENT — September 13 13:33 UTC
+## CURRENT — September 13 13:56 UTC
+
+READ SEQ167 and current SPRINT_STATE first. C0 is NOT live:800task outputs
+captured, worker0exit after logged ownedEngineCoreSIGTERM; no repeatedcalls.
+Original once-only finalizer FAILED on unreadable transientforegroundPID;
+preserve failure, do not retry or invent collection/final. Later detached
+current-resource observation foundemptygroup/GPU and clearCVDscans under
+same exactinitexceptions; completevisibilityfalse. NoMainGPUworker.
+
+Archive gpu_artifacts_local/pcfl_c0_zero_fit_20260913_attempt2/evidence.tar
+SHA44473352a9220e4e92475d16194a87f1fc89bd3d6021bbe6caa97a74a2ca20cf.
+Unpacked containsoriginalrun/.outer/.launcher/custody/cleanup/postfailure.
+Independent unfinalized inspection_v3/inspection.json SHA
+786d96c659379675be03e7eaf40f018556efc25646f721e2d3985601ff2c5afd;
+copy inreceipts_20260912/astra_pcfl_c0_capture_inspection_20260913.json.
+Delayed0/640; requiredreachout ACTIVE8/FULL5/GRAPH6 of32; allpositiveceilings
+fail. 411invalidsyntax,64invalidREADs,0servedREADs,notruncations. Full
+qualifications remainfalse. Rawscorers/denominators unchanged. Twoinspector
+compatibility/outputserialization failures preserved beforeoutcomeinspection.
+
+Own-write scope prospective BEFOREC0outcomes inASTRA_PCFL_OWN_WRITE_SCOPE:
+one disposableOLDactualformation→AUTHLOW200fit→coldREAD vsC0/exactservice.
+Formation/readoutcommittedadf39c4a; Main27+33CPUtestsPASS. Meitner owns
+organism_v6/pcfl_own_write_train.py, approvedprivatehelper extraction in
+pcfl_vertical_train.py +tests. Parfit nowowns gpu/astra_pcfl_own_write_command.py
++tests; commandglue lifecycle/schema pending. Lagrange fixedrawsample review
+ofC0failures only. Main integration/nativeops. Do notstageunfinishedworker
+files or unrelateddirtygpu/codex/dream_state.rules. No nextGPUlaunchyet.
+
+Existing manuscriptthroughSEQ162reviewed/UNSENT; update167pending. Mission
+ACTIVE/incomplete(~32h); nofreeze/generalG3/P1/H1/H2/fullassay/C11. Formal
+guardfinalC11only. Node2leaseSep21, node1migrationdeadlineSep13 23:14UTC
+(24hbeforeexpiry); do not forgetcontinuingartifactprotection.
+
+## Historical superseded snapshot — September 13 13:33 UTC
 
 C0 NATIVE ATTEMPT2 LIVE onnode2GPU0: outer160428, worker/PGID/SID160440
 (start_ticks53449311), EngineCore160873. UUIDGPU-c70cba10-6ab6-a287-e2db-51dccd617ab0,

@@ -1,4 +1,25 @@
-## Current superseding snapshot — 2026-09-13 13:33 UTC
+## Current superseding snapshot — 2026-09-13 13:56 UTC
+
+SEQ167: C0 attempt2 captured all800tasks; worker exited0 after exact-owned
+EngineCore SIGTERM (LLM.shutdown absent). Original finalizer invoked ONCE
+and failed on unreadable foreground PID; NEVER retry or overwrite it.
+Original capture/archive preserved, no numerical rerun. Separate unfinalized
+inspector independently replays all receipts/counts: delayed0/640; reachout
+supplied ACTIVE8/32,FULL5/32,GRAPH6/32; NONE/WRONG16/32each. All required
+positive ceilings fail. No route/learning/parenting/full-assay claim.
+Archive44473352... and inspection786d96c6... exact paths/hashes inSEQ167.
+Later detached CURRENT resource check: oldgroup/GPUempty, CVDclear with
+explicit init exceptions, incompletevisibility retained. NoMainGPUworker.
+
+Own-write scope selected BEFORE C0 outcomes: disposable OLD nativeformation,
+one AUTHLOW200-update fit, coldREADs vsfreshC0/exactservice; nooraclefit.
+Formation27MainCPUtests/readout33PASS and committedadf39c4a. Meitner owns
+scopedwriter plus approvedminimal sharedloop extraction/tests; Parfit owns
+newcommandglue/tests; Lagrange independentC0failure-sample review. Main owns
+nativeops/integration. FormalguardfinalC11only. GoalACTIVE/incomplete/no
+G3freeze/P1/H1/H2; manuscriptthroughSEQ162reviewed,SEQ167updatepending.
+
+## Historical superseded snapshot — 2026-09-13 13:33 UTC
 
 C0attempt2LIVE node2GPU0UUIDc70cba10..., outer160428/worker160440/engine160873.
 At13:32:55 264/800taskrecords, no outcomeinspection. Firstmodelafter13:28,

@@ -13106,3 +13106,61 @@ loading a model: `vllm/v1/engine/core_client.py` SHA256
 The next scoped lifecycle uses its callable `llm_engine.engine_core.shutdown`
 with actual method-source binding, rather than the absent LLM-level method.
 Existing captured C0 source and outcomes are not altered.
+
+## [Builder] SEQ-167 — 2026-09-13T13:56Z — captured C0 interface failures, not a finalized assay
+
+The fixed800-task native capture has been independently replayed against
+raw request/response/token receipts, original task files, report, manifest,
+source pins and capture inventory. Two offline inspector implementation bugs
+were repaired before outcome inspection: ActorError versus ValueError class
+binding, then Counter-to-JSON serialization. Both failed offline attempts and
+regressions are preserved (0d301d45,740a5f4e); no scorer/threshold/root/task
+change, model-call retry, collection retry or original-finalizer retry.
+Main28inspectorCPUtests PASS(.324s); inspection_v3 succeeds as
+`UNFINALIZED_CAPTURE_REPLAY_MATCH`, explicitly `diagnostic_usable=false` and
+`finalization_failed=true`. This is inspectable captured evidence, not a
+full-assay, original-finalization or C11 pass.
+
+| Panel | Captured correct / fixed denominator | Declared positive threshold |
+|---|---:|---:|
+| Delayed NATIVE_CONTEXT | 0/64 | 60/64 |
+| Delayed ACTIVE_LINKED_TEXT | 0/64 | 60/64 |
+| Delayed EVENT_ATOMS_TEXT | 0/64 | 60/64 |
+| Delayed FULL_CHILD_TEXT | 0/64 | 60/64 |
+| Delayed EXACT_WITNESSED_GRAPH | 0/64 | 60/64 |
+| All delayed projections | 0/640 | Mixed panel criteria; not pooled pass |
+| Reachout ACTIVE_LINKED_TEXT | 8/32 | 30/32 |
+| Reachout FULL_CHILD_TEXT | 5/32 | 30/32 |
+| Reachout EXACT_WITNESSED_GRAPH | 6/32 | 30/32 |
+| Reachout NONE_OFF / WRONG_ROOT | 16/32 each | Negative-control maxima18/32 |
+
+All required supplied-information positive panels fail. The remaining delayed
+projections also score0/64 each. Upper-bound negative controls passing at zero
+do not rescue the assay. Delayed344/640 and reachout67/160 outputs have invalid
+final syntax; 64 attempted READs are invalid, all in delayed ACTIVE_LINKED_TEXT,
+and none are served. No output is length-truncated. Captured totals:800calls,
+426480prompt tokens,25968output tokens,0returned tokens,0fits/updates/parents.
+The 296 syntactically valid delayed outputs also fail the unchanged route
+scorer; do not explain the entire result as formatting without inspecting it.
+
+Recorded overlapping wall intervals, not GPU-active time: cold model load
+21.692s, generation783.964s, actor operations842.116s, diagnostic through
+close855.713s, outer entry through capture994.186s. Closure required the
+logged owned-engine signal; original finalization failed and remains failed.
+The separate later detached current-resource observation found no group/GPU
+owner and clear scans under the exact unreadable-init exceptions; it neither
+identifies vanished foreground PIDs nor changes original qualification.
+
+Archive SHA256 `44473352a9220e4e92475d16194a87f1fc89bd3d6021bbe6caa97a74a2ca20cf`;
+inspection JSON SHA256 `786d96c659379675be03e7eaf40f018556efc25646f721e2d3985601ff2c5afd`,
+copied to `receipts_20260912/astra_pcfl_c0_capture_inspection_20260913.json`.
+Inspector SHA256 `a61b7055a7c0b32927a9e86ce216754fc592dca1fc0cf2552a21b02dc6eb8fa8`.
+Four excluded roots, fixed C0 and call seeds are not independent learner
+replications. RA is one token longer than RB; no order-only causal contrast.
+ACTIVE_LINKED_TEXT is a supplied service, not an evolving-memory baseline.
+
+Decision: no parenting/learning/route-competence inference from these failed
+ceilings. Lagrange examines a fixed small raw sample for failure causes, no
+relaxed rescoring or new model calls. Continue the separately preselected
+own-experience acquisition test; it tests memory writing, not a repaired
+route assay. No H1/H2, generalG3, mechanism freeze or clean-ancestry claim.
