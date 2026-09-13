@@ -10916,3 +10916,31 @@ screen/budget and exploratory status before newoutcomes. No teacher-authored
 replay or inspected held outputs enter training. Main retains source/CPU/native
 checks and allocation. Copernicus owns6manuscript files forSEQ152/153 extension;
 ongoing write scopes do not touch run code, original results or dirtyrules.
+
+## [Builder] 2026-09-13T09:30Z — lower-LR repair preparation reconciled; launch allocation
+
+Main resumed from compaction, pulled1f2749ce; preserves dirty rules and
+Copernicus's six manuscript files. Previous Main22CPUtestsPASS0.306s receipt
+retained; no duplicate test or completed-root collection. All three native
+preparations independently reread as NATIVE_CPU_PREPARED_NOT_LAUNCHED.
+Node2 boot8ff7b0dc-fbdf-4945-9044-3dffe94b5407 and UUIDs match prepared plans.
+Allocation seed0/1/2 to GPU4/5/6; launcher rechecks queue reservations,
+all-process/CUDA environment vacancy and lease before starting each custodian.
+Node2 expiry2026-09-21T08:43Z, six-hour finish margin;3600s/candidate cap.
+Three candidate-only WRITE_fit/cold WRITE_readout paths, LR3e-5, original
+perception parents and exact sourced child records.240updates/240calls total,
+maximum3GPU-hours. Historical HIGH/LR0 rows are noncontemporaneous controls;
+no reruns, fabricated LR0 stages, extra replay or automatic retries.
+Strict screen remains exact recall at least8/14,7/8,5/8 and restoration of
+every LR0-correct held/canary item; inspected held panel is exploratory.
+Runner80467204aa7ccb4a1cbf4f8d85c7be4e7347263f98f4f7b8fef5739980fcf413;
+launcherbb6de32882484fac0c6bb7c154381a1ba1af9d0d8ffa52dd29d9036ef7010da3.
+Plans seed0/1/2:
+898bed1d787bd58a2fa45b98a1ff719652d1f29cc903dd53480768e6d297b500
+b0ad752559d04781d090d3042888d51f8a0ddd2250f509ffa85b512f78f55889
+597095536f3d23de7bd1833c65ffe516293e6936ebedc5c5a9321580a2d868e7.
+Roots memory_lower_lr_seedN_20260913_attempt1 under node2 astra_diagnostics.
+Launch: empty CUDA_VISIBLE_DEVICES, PYTHONDONTWRITEBYTECODE=1,
+PYTHONNOUSERSITE=1, v2/venv/bin/python -B
+/tmp/astra_memory_lower_lr_main_20260913.py launch --seed N. PIDs follow.
+Simple hygiene applies; final paper-grade C11 guard remains deferred.
