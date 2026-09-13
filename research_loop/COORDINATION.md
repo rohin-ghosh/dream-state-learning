@@ -10390,3 +10390,29 @@ Main caught and corrected a draft return-tuple mismatch BEFORE execution;
 the archived *_final.py is the operative launcher, prior draft unexecuted.
 PID follows. No generic clean/freeze/G1/P1/H1/H2 promotion. Source-faithful
 raw-record counts are the raw36 heuristic; a separate later write test remains.
+
+## [Builder] 2026-09-13T08:20Z — reconcile collections and activate bounded A100 infrastructure smoke
+
+Actual-record formation remains LIVE node2 GPU1 PID10608, start08:14:20UTC;
+no duplicate preparation or collection. Self-reflection seeds0/1/2 completed,
+controllers absent and Main collected ONCE08:17:40UTC using frozen claim helper.
+All nine perception/repetition/self-reflection cells now collected; node1 three
+meta-reflection controllers still live08:17:56. Descartes archives/reduces the
+collected cells; Main alone collects. Node3 high-LR seed0 recovery PID363053
+still live08:17:57; no additional retries or dose escalation selected.
+
+Main activates A100 GPU0 infrastructure-only smoke after fresh same-user
+reservation/queue checks and all-process nvidia-smi XML vacancy. Frozen smoke
+fd0628c850dd76c53b8660b83f9e1fac6a13460a569c1deb61b12d904e828c2e,
+26CPU tests passed in preceding continuation. Process-local PATH/CUDA_HOME
+only, existing ninja/nvcc, fresh JIT workspace and preserved private native.log.
+One1x8tensor+FlashInfer sampling/JIT; no model, LoRA or scientific score.
+External timeout280s plus10s TERM/KILL grace on its own process group.
+Launcher ae307ac002ac19a44bbec14887878f6432537566cc3747a5d74e40d420215eac;
+root /localhome/local-rohing/astra_diagnostics/a100_toolchain_20260913_attempt1.
+GPU0 UUID GPU-ff5f84e9-c70e-272d-a8e0-eb20aad05ac6; exact PID follows.
+Under0.081GPU-hours; conservative Sep26 00:00UTC scheduling floor is not an
+asserted lease expiry. Exact expiry remains a pending Fable question. No
+package installation, global environment edit, repeated failed science roots,
+foreign kills or formal C11guard work. Passing only justifies a later bounded
+native model-readiness test, not fleet science readiness.
