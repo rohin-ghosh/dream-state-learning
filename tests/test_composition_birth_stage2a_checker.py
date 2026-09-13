@@ -78,6 +78,28 @@ def sort_graph(graph):
     graph["edges"].sort(key=encode)
 
 
+def with_hidden_prefixes(envelope, offsets):
+    changed = deepcopy(envelope)
+    world = changed["world_graph"]
+    translated = {
+        vertex["alias"]: f'{vertex["alias"][0]}{int(vertex["alias"][1:]) + offsets.get(vertex["type"], 0):04d}'
+        for vertex in world["vertices"]
+    }
+    for vertex in world["vertices"]:
+        vertex["alias"] = translated[vertex["alias"]]
+    for edge in world["edges"]:
+        for side in ("heads", "tails"):
+            edge[side] = [translated[alias] for alias in edge[side]]
+    for kind, offset in offsets.items():
+        world["vertices"].extend({"alias": f"{kind[0]}{index:04d}", "flags": [], "type": kind}
+                                 for index in range(offset))
+    changed["public_to_world_aliases"] = {
+        alias: translated[target] for alias, target in changed["public_to_world_aliases"].items()
+    }
+    sort_graph(world)
+    return rebind(changed, derive_radii=True)
+
+
 def pinned_envelopes():
     raw = V4_PATH.read_bytes()
     if sha256(raw).hexdigest() != V4_SHA256:
@@ -102,8 +124,10 @@ def pinned_envelopes():
             raise AssertionError("memo signature preimage disagrees with radius hashes")
         graph_hash = re.search(r"Graph hash:\s*`([0-9a-f]{64})`", section).group(1)
         envelopes[title] = {
-            "schema_version": "M2A-PARTIAL-GRAPH-CHECK-V1",
+            "schema_version": "M2A-PARTIAL-GRAPH-CHECK-V2",
             "step_outcome_observed": True,
+            "public_to_world_aliases": {vertex["alias"]: vertex["alias"]
+                                        for vertex in graph["vertices"]},
             "world_graph": graph,
             "core": json.loads(core_lines[0]),
             "radius_graphs": radii,
@@ -202,6 +226,7 @@ class PinnedCheckerTests(unittest.TestCase):
                 self.assertEqual(commitments(envelope), envelope["expected_hashes"])
                 self.assertEqual(expanded_radii(envelope["world_graph"]), envelope["radius_graphs"])
                 self.assertEqual(receipt["input_sha256"], sha256(raw).hexdigest())
+                self.assertEqual(receipt["schema_version"], "M2A-PARTIAL-GRAPH-CHECK-V2")
                 self.assertEqual(receipt["status"], "PARTIAL_GRAPH_CHECK_ONLY")
                 self.assertIs(receipt["graph_checks_passed"], True)
                 self.assertTrue(receipt["science_gates"])
@@ -235,7 +260,7 @@ class PinnedCheckerTests(unittest.TestCase):
                  ("expected_hashes",), ("expected_hashes", "radii"),
                  ("core", "typed_vertex_counts"), ("core", "public_graph"),
                  ("world_graph", "vertices", 0), ("world_graph", "edges", 0),
-                 ("radius_graphs", "r0"))
+                 ("radius_graphs", "r0"), ("public_to_world_aliases",))
         for path in paths:
             for mode in ("extra", "missing"):
                 changed = deepcopy(self.envelope)
@@ -254,6 +279,17 @@ class PinnedCheckerTests(unittest.TestCase):
             self.reject(value, "object")
         self.envelope["schema_version"] = "M2A-GRAPH-V3"
         self.reject(self.envelope, "schema version")
+
+    def test_v1_explicitly_rejected_not_reinterpreted_or_modified(self):
+        for with_map in (False, True):
+            changed = deepcopy(self.envelope)
+            changed["schema_version"] = "M2A-PARTIAL-GRAPH-CHECK-V1"
+            if not with_map:
+                del changed["public_to_world_aliases"]
+            raw = encode(changed)
+            with self.subTest(with_map=with_map):
+                self.reject(changed, "schema version V1 unsupported; V2 requires explicit")
+                self.assertEqual(raw, encode(changed))
 
     def test_each_hash_field_and_each_radius_hash_is_checked(self):
         paths = [("world_graph",), ("public_graph",), ("signature",), ("core",)]
@@ -467,10 +503,16 @@ class PinnedCheckerTests(unittest.TestCase):
                 with self.subTest(field=field, value=value):
                     self.reject(rebind(changed), "skin|depth")
 
-    def test_sparse_public_graph_need_not_be_induced_or_contain_roots(self):
+    def test_dense_public_graph_need_not_be_induced_or_contain_roots(self):
         public = self.envelope["core"]["public_graph"]
         public["vertices"] = [vertex for vertex in public["vertices"]
                               if vertex["alias"] in ("G0000", "Q0003", "S0000", "S0002")]
+        self.envelope["public_to_world_aliases"] = {
+            "G0000": "G0000", "Q0000": "Q0003", "S0000": "S0000", "S0001": "S0002",
+        }
+        world_to_public = {target: alias for alias, target in self.envelope["public_to_world_aliases"].items()}
+        for vertex in public["vertices"]:
+            vertex["alias"] = world_to_public[vertex["alias"]]
         public["edges"] = []
         self.envelope["core"].update(phase="SEEK", relevant_candidate_display_position=23,
                                      predicted_actual_match=None)
@@ -485,10 +527,143 @@ class PinnedCheckerTests(unittest.TestCase):
         public = changed["core"]["public_graph"]
         next(edge for edge in public["edges"] if edge["label"] == "WORLD")["heads"] = ["S0002"]
         sort_graph(public)
-        self.reject(rebind(changed), "edge not in supplied world")
+        self.reject(rebind(changed), "mapped edge incidence not in supplied world")
         self.envelope["core"]["public_graph"]["vertices"].append(
             {"alias": "S0003", "type": "STATE", "flags": []})
-        self.reject(rebind(self.envelope, counts=True), "vertex/flags")
+        self.envelope["public_to_world_aliases"]["S0003"] = "S0003"
+        self.reject(rebind(self.envelope, counts=True), "existing world alias")
+
+    def test_nonidentity_goal_map_and_per_graph_aliases_without_raw_subset(self):
+        changed = with_hidden_prefixes(self.envelope, {
+            "EVENT": 2, "GOAL": 12, "PORT": 3, "QUERY": 4, "RECEIPT": 5, "STATE": 6,
+        })
+        receipt = checker.check_graph_core_json(encode(changed))
+        self.assertEqual(changed["public_to_world_aliases"]["G0000"], "G0012")
+        self.assertEqual(changed["core"], self.envelope["core"])
+        self.assertEqual(receipt["hashes"]["core"], self.envelope["expected_hashes"]["core"])
+        self.assertEqual(receipt["hashes"]["public_graph"], self.envelope["expected_hashes"]["public_graph"])
+        world_vertices = changed["world_graph"]["vertices"]
+        self.assertNotIn({"alias": "G0000", "flags": ["GOAL"], "type": "GOAL"}, world_vertices)
+        raw_world_edges = {encode(edge) for edge in changed["world_graph"]["edges"]}
+        self.assertTrue(any(encode(edge) not in raw_world_edges
+                            for edge in changed["core"]["public_graph"]["edges"]))
+        self.assertEqual([vertex["alias"] for vertex in changed["radius_graphs"]["r0"]["vertices"]],
+                         ["E0003", "P0004"])
+        self.assertFalse(receipt["certifications"]["public_to_world_mapping_veracity"])
+
+    def test_public_hashes_do_not_depend_on_hidden_world_ordinals(self):
+        receipts = []
+        for ordinal in (0, 12, 23):
+            changed = with_hidden_prefixes(self.envelope, {"GOAL": ordinal})
+            receipts.append(checker.check_graph_core_json(encode(changed)))
+            self.assertEqual(changed["public_to_world_aliases"]["G0000"], f"G{ordinal:04d}")
+            self.assertEqual(encode(changed["core"]), encode(self.envelope["core"]))
+        for field in ("public_graph", "core"):
+            self.assertEqual(len({receipt["hashes"][field] for receipt in receipts}), 1)
+        self.assertEqual(len({receipt["hashes"]["world_graph"] for receipt in receipts}), 3)
+
+    def test_sparse_public_aliases_rejected_even_with_consistent_map(self):
+        for kind in KINDS:
+            changed = with_hidden_prefixes(self.envelope, {kind: 12})
+            translated = {alias: target if alias[0] == kind[0] else alias
+                          for alias, target in changed["public_to_world_aliases"].items()}
+            public = changed["core"]["public_graph"]
+            for vertex in public["vertices"]:
+                vertex["alias"] = translated[vertex["alias"]]
+            for edge in public["edges"]:
+                for side in ("heads", "tails"):
+                    edge[side] = [translated[alias] for alias in edge[side]]
+            changed["public_to_world_aliases"] = {
+                translated[alias]: target for alias, target in changed["public_to_world_aliases"].items()
+            }
+            sort_graph(public)
+            with self.subTest(kind=kind):
+                self.reject(rebind(changed), "public_graph: aliases not contiguous from zero")
+
+    def test_map_is_required_and_exactly_covers_public_vertices(self):
+        for operation in ("absent", "missing", "extra"):
+            changed = deepcopy(self.envelope)
+            if operation == "absent":
+                del changed["public_to_world_aliases"]
+            elif operation == "missing":
+                del changed["public_to_world_aliases"]["G0000"]
+            else:
+                changed["public_to_world_aliases"]["G0012"] = "G0000"
+            with self.subTest(operation=operation):
+                self.reject(changed, "keys")
+
+    def test_map_container_and_target_types_fail_closed(self):
+        for value in (None, [], "identity", True):
+            changed = deepcopy(self.envelope)
+            changed["public_to_world_aliases"] = value
+            with self.subTest(map=value):
+                self.reject(changed, "public_to_world_aliases: expected object")
+        for value in (None, [], {}, True, 0, "G9999", "G12", "g0000"):
+            changed = deepcopy(self.envelope)
+            changed["public_to_world_aliases"]["G0000"] = value
+            with self.subTest(target=value):
+                self.reject(changed, "existing world alias")
+
+    def test_map_duplicate_targets_rejected(self):
+        self.envelope["public_to_world_aliases"]["Q0000"] = "Q0001"
+        self.reject(self.envelope, "injective")
+
+    def test_map_duplicate_json_keys_rejected(self):
+        raw = encode(self.envelope)
+        altered = raw.replace(b'"G0000":"G0000"', b'"G0000":"G0000","G0000":"G0000"')
+        self.assertNotEqual(raw, altered)
+        with self.assertRaisesRegex(checker.GraphCheckError, "duplicate object key"):
+            checker.check_graph_core_json(altered)
+
+    def test_map_wrong_vertex_type_rejected(self):
+        self.envelope["public_to_world_aliases"]["E0000"] = "Q0000"
+        self.reject(self.envelope, "vertex type mismatch")
+
+    def test_map_flag_mismatches_rejected(self):
+        offsets = {"EVENT": 2, "GOAL": 12, "PORT": 3, "STATE": 6}
+        for alias in ("E0001", "G0000", "P0001", "S0000"):
+            changed = with_hidden_prefixes(self.envelope, offsets)
+            changed["public_to_world_aliases"][alias] = alias[0] + "0000"
+            with self.subTest(alias=alias):
+                self.reject(changed, "vertex/flags mismatch")
+
+    def test_map_cannot_change_incidence_despite_matching_types_and_flags(self):
+        for first, second in (("Q0000", "Q0001"), ("R0000", "R0001"), ("S0001", "S0002")):
+            changed = deepcopy(self.envelope)
+            mapping = changed["public_to_world_aliases"]
+            mapping[first], mapping[second] = mapping[second], mapping[first]
+            with self.subTest(aliases=(first, second)):
+                self.reject(changed, "mapped edge incidence")
+
+    def test_mapped_hyperedge_incidence_is_ordered(self):
+        changed = with_hidden_prefixes(self.envelope, {"GOAL": 12, "STATE": 6})
+        next(edge for edge in changed["core"]["public_graph"]["edges"]
+             if edge["label"] == "INDEXES")["tails"].reverse()
+        sort_graph(changed["core"]["public_graph"])
+        self.reject(rebind(changed), "ordered incidence type")
+
+    def test_mapping_is_input_bound_not_a_visibility_or_ownership_proof(self):
+        changed = deepcopy(self.envelope)
+        world = changed["world_graph"]
+        world["vertices"].extend([
+            {"alias": "Q0004", "flags": [], "type": "QUERY"},
+            {"alias": "Q0005", "flags": [], "type": "QUERY"},
+        ])
+        sort_graph(world)
+        public = changed["core"]["public_graph"]
+        public["vertices"] = [vertex for vertex in public["vertices"]
+                              if vertex["alias"] in ("G0000", "Q0000", "S0000")]
+        public["edges"] = []
+        changed["public_to_world_aliases"] = {"G0000": "G0000", "Q0000": "Q0004", "S0000": "S0000"}
+        rebind(changed, counts=True)
+        first = checker.check_graph_core_json(encode(changed))
+        changed["public_to_world_aliases"]["Q0000"] = "Q0005"
+        second = checker.check_graph_core_json(encode(changed))
+        self.assertEqual(first["hashes"], second["hashes"])
+        self.assertNotEqual(first["input_sha256"], second["input_sha256"])
+        for field in ("public_to_world_mapping_veracity", "alias_role_ownership_and_order", "public_visibility"):
+            self.assertIs(second["certifications"][field], False)
+        self.assertTrue(all(value is False for value in second["science_gates"].values()))
 
     def test_radius_zero_preserves_nonzero_aliases(self):
         radius = self.envelope["radius_graphs"]["r0"]

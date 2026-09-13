@@ -1,4 +1,19 @@
-## Current superseding snapshot — 2026-09-13, after SEQ179
+## Current superseding snapshot — 2026-09-13 22:18 UTC
+
+Mission incomplete. Canonical live source/ownership/restart state is
+ASTRA_HANDOFF_2026-09-12.md (22:18UTC header). SEQ-195 is complete, independently
+recounted and bounded to the exposed same bank; do not repeat it. No Main GPU
+assay remains. Stage2A-v5 controller source advances: all birth targets and held
+fixtures, repaired independent graph-alias checker/bridge, canonical nulls,
+public-only rollout and reserved-slot accounting. Main172CPUtests pass32.951s.
+Scoring, held graph bridge, complete scanner/material checking and native
+tokenizer/stateful D1-D2 trainer remain unfinished. Reduced birth screen then
+AUTH two-SLEEP junction is the next execution order, not the full matrix.
+No new source-root/model/fit/claim gate is opened by these synthetic tests.
+No generalG3/H1/H2/P1/clean-ancestry/C11/mechanism-freeze promotion. Simple
+hygiene continues; formal guard stays deferred to final paper-grade C11.
+
+## Historical superseded snapshot — 2026-09-13, after SEQ179
 
 No Main GPU workers live. EVENT-only paired cold reduction is a scoped
 acquisition PASS: AUTH14/14 versus C0zero/14 at W0 and primaryW8, service14/14.

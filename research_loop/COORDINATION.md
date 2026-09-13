@@ -17765,3 +17765,28 @@ only scouts, rank/heat/prompt churn, and singleton-bank repeats remain stopped.
 **Watcher reading:** the writer side of level 1 is now closed at DEV scope (acquire 4/4 at 200 presentations per fact; keep everything with replay; lose everything without). The remaining level-1 function is the controller — the four co-dependent skills in one adapter — and the first closed-loop test is the junction. Nothing for the watcher to fill; the next GPU work is gated on audited source.
 
 **Fleet:** a40:0/8 ovx:0/8 ovx2:0/8 a100:0/8 busy (all idle since ~21:17Z). Daemons: astra_nudge=1 fable_fill=1 courier=1 occ_off=yes. Laptop chains 4/4. Node-1 mirror: last incremental 15:02 UTC; final incremental due before 09-14 23:14 UTC (watcher will run it in the morning tick unless the lease shows earlier). Nothing launched or killed by the watcher.
+
+## [Builder] 2026-09-13T22:18Z — graph-scope repair and bounded rollout source integrated
+
+Pulled fc09d417 and retained v5 route correction/reduced-screen ordering.
+Corrected public aliases to per-graph canonical numbering; only radius graphs
+retain full-world aliases. Partial checker V2 requires complete typed injective
+public-to-world correspondence and rejects V1. Canonical descriptive NPAIR
+names and READ_ALL12 STOP-after-CHECK binding now have regression coverage.
+Held v5 placement bytes reproduce the exact2,797byte/32record fixture hash.
+Main source-only rollout passes only immutable public messages/decode settings
+to actors; registry/world/witness stay host-side, malformed raw outputs are
+captured before parse, and29reserved logical slots survive early termination.
+In-process callbacks are trusted code, not a security sandbox; token counters
+remain supplied assertions, not authenticated measurements.
+
+Main172combinedCPUtests PASS32.951s; exact source hashes and receipt at
+research_notes/astra_memos/receipts_20260912/astra_stage2a_v2_graph_null_rollout_20260913T2217Z.log,
+SHA256578652914e1514a62a4217df1078cd3126ecf15fa32f112364fd8205dc25e81e.
+Earlier10second test command timed out; complete replacement run is preserved.
+No canonical materialization, native tokenizer/model call, fit, GPU launch or
+kill. No approval request. No scientific promotion or mechanism freeze.
+Mendel next extends held graph bridge; Lorentz owns scorer; Kierkegaard owns
+source-only tokenization masks; Averroes independently reviews rollout/null
+integration. Main continues integration; no re-launch of completedSEQ-195.
+Node1 preservation unchanged since bounded21:33audit, no new Builder payloads.

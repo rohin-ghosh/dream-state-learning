@@ -11,6 +11,7 @@ from unittest.mock import patch
 from organism_v6 import composition_birth_stage2a as wire
 from organism_v6 import composition_birth_stage2a_held as held
 from organism_v6 import composition_birth_stage2a_worlds as worlds
+from organism_v6.composition_birth_stage2a_primitives import canonical_json
 
 
 def fixtures(domain):
@@ -112,9 +113,23 @@ class HeldConstructionTests(unittest.TestCase):
         root = Path(__file__).resolve().parents[1] / "research_notes" / "analysis"
         for filename, expected in (
             ("2026-09-13_m_combine4_stage2a_binding_successor_v4.md", held.MEMO_SHA256),
+            ("2026-09-13_m_combine4_stage2a_binding_successor_v5.md", held.ROUTE_CORRIGENDUM_SHA256),
             ("2026-09-13_stage2a_builder_source_clarifications_v1.md", held.CLARIFICATION_SHA256),
         ):
             self.assertEqual(sha256((root / filename).read_bytes()).hexdigest(), expected)
+
+    def test_v5_canonical_route_corrigendum(self):
+        placements = []
+        for transition in held.TRANSITIONS:
+            for pair_index in range(8):
+                (position0, goal0), (position1, goal1) = held.intervention_pins(transition, pair_index)
+                placements.append(dict(goal0=f"g{goal0:02d}", goal1=f"g{goal1:02d}",
+                                       k=pair_index, position0=position0, position1=position1,
+                                       transition=transition.upper()))
+        payload = canonical_json(placements)
+        self.assertEqual(len(payload), 2797)
+        self.assertEqual(sha256(payload).hexdigest(),
+                         "1177452578a33783e9132a9948106cdf553749d3d01493669cae3dccc67ac8f3")
         self.assertEqual(held.STATUS, "PARTIAL_SOURCE_ONLY")
         self.assertFalse(any(held.SCIENCE_GATES.values()))
         for name in ("GO_WRITE_ROOT", "GO_MATERIALIZE", "GO_MODEL_TOKENIZER", "GO_FIT_OR_GPU", "GO_CLAIM"):

@@ -7,9 +7,10 @@ API: check_graph_core_json(payload: bytes) -> dict; malformed or inconsistent
 input raises GraphCheckError. canonical_json_bytes(value) is a restricted
 stdlib-only transport encoder, not a role canonicalizer or graph generator.
 
-Exact envelope (every object rejects missing/extra keys):
-  {"schema_version": SCHEMA_VERSION,
+Exact v2 envelope (every object rejects missing/extra keys):
+  {"schema_version": "M2A-PARTIAL-GRAPH-CHECK-V2",
    "world_graph": Graph, "core": Core, "step_outcome_observed": bool,
+   "public_to_world_aliases": {PublicAlias: WorldAlias, ...},
    "radius_graphs": {"r0": Graph, "r1": Graph, "r2": Graph, "r3": Graph},
    "expected_hashes": {"world_graph": Hex, "public_graph": Hex,
                        "radii": {"r0": Hex, "r1": Hex, "r2": Hex, "r3": Hex},
@@ -19,13 +20,22 @@ Hex is exactly 64 lowercase hexadecimal characters. Graph is exactly
    "vertices": [{"alias": Alias, "flags": [Flag, ...], "type": Type}, ...]}.
 Types, flags and ordered label incidence are the finite tables below. Aliases
 are E/G/P/Q/R/S plus four decimal digits, consistent with their vertex type.
-World aliases must be zero-based and contiguous within each type; public and
-radius graphs keep world aliases, including gaps. Vertices, flags, and edges
-must already be sorted and unique. Full world roots are unique and joined by
-DID. World and public graphs each have one CURRENT and GOAL; public vertices
-(including flags) and edges must be supplied-world subsets. Radii are induced
-from the full world, never from the public graph. Public graphs need NOT be
-induced: omitted edges may represent facts not yet observed.
+World and decision/public aliases must EACH be zero-based and contiguous within
+each type (v3 section 7.2). Only radius graphs keep world aliases, including gaps
+(v3 section 7.3). Vertices, flags, and edges must already be sorted and unique.
+Full world roots are unique and joined by DID. World and public graphs each
+have one CURRENT and GOAL. public_to_world_aliases is an exact object with one
+key for every public alias and no other keys; values are existing world aliases
+and must be injective. Each mapped vertex must have the same type and flags.
+Every public edge, with ordered incidence translated through the map, must
+exist in the world. No literal public/world alias equality is assumed. Public
+graphs need NOT be induced: omitted edges may represent unobserved facts.
+Radii are induced from the full world, never from the public graph.
+
+V1 envelopes are explicitly rejected, not reinterpreted; historical receipts
+are not upgraded. Graph/core/radius/signature hash domains and preimages are
+unchanged. The map is bound by the receipt's input_sha256, not incorporated
+into graph or core hashes. Its role/visibility truth remains a caller assertion.
 
 Core has exactly actual_route_depth, family_motif, flow, goal_side, phase,
 predicted_actual_match, public_graph, recovery_subtype,
@@ -46,8 +56,9 @@ CR/NUL, no floats/nonfinite constants/negative zero/duplicate keys. Input must
 equal its canonical encoding, including key order, escaping, and no final LF.
 
 Success is only PARTIAL_GRAPH_CHECK_ONLY. Expected hashes and supplied world
-facts are caller assertions, not authenticated commitments. This cannot prove
-role ownership/order, world completeness, latest CURRENT, oracle root choice,
+facts and alias mapping are caller assertions, not authenticated commitments.
+Dense alias syntax does not prove local-owner ordering or mapping veracity.
+This cannot prove role ownership/order, world completeness, latest CURRENT, oracle root choice,
 public visibility, targets, nulls, provenance/contamination, held separation,
 or scientific validity. Self-consistent replacement inputs can pass. No
 filesystem, material-root, model, tokenizer, network, or GPU access occurs.
@@ -60,7 +71,7 @@ import re
 
 
 CONTRACT_SHA256 = "ca528cac3505cd4d1202e1df6253213ecc167671823c39a7ae3d1a9979126dd1"
-SCHEMA_VERSION = "M2A-PARTIAL-GRAPH-CHECK-V1"
+SCHEMA_VERSION = "M2A-PARTIAL-GRAPH-CHECK-V2"
 STATUS = "PARTIAL_GRAPH_CHECK_ONLY"
 MAX_BYTES = 32 * 1024 * 1024
 MAX_DEPTH = 32
@@ -110,7 +121,7 @@ UNCERTIFIED = (
     "alias_role_ownership_and_order", "world_completeness", "public_visibility",
     "latest_current", "oracle_root_choice", "targets", "nulls", "provenance",
     "contamination", "train_held_separation", "step_outcome_context",
-    "independent_scientific_checker",
+    "public_to_world_mapping_veracity", "independent_scientific_checker",
 )
 
 
@@ -247,10 +258,10 @@ def _graph(graph, location, *, full=False, decision=False):
     _require(list(by_alias) == sorted(by_alias), f"{location}: vertices not sorted")
     for kind, aliases in typed.items():
         _require(len(aliases) <= MAX_VERTICES_PER_TYPE, f"{location}: per-type limit exceeded")
-        if full:
+        if full or decision:
             _require(aliases == [f"{TYPE_PREFIXES[kind]}{index:04d}"
                                  for index in range(len(aliases))],
-                     f"{location}: full aliases not contiguous from zero")
+                     f"{location}: aliases not contiguous from zero")
     for flag, aliases in flagged.items():
         required = (decision and flag in ("CURRENT", "GOAL")) or (
             full and flag in ("ROOT_EVENT", "ROOT_PORT"))
@@ -355,8 +366,13 @@ def _hash(domain, value):
 def check_graph_core_json(payload):
     """Verify an exact envelope; return a partial-only receipt, never a gate."""
     envelope = loads_canonical_json(payload)
+    _require(type(envelope) is dict, "envelope: expected object")
+    _require(envelope.get("schema_version") != "M2A-PARTIAL-GRAPH-CHECK-V1",
+             "envelope: schema version V1 unsupported; V2 requires explicit "
+             "public_to_world_aliases and independently dense public aliases")
     _keys(envelope, ("schema_version", "world_graph", "core", "radius_graphs",
-                     "expected_hashes", "step_outcome_observed"), "envelope")
+                     "expected_hashes", "step_outcome_observed",
+                     "public_to_world_aliases"), "envelope")
     _require(envelope["schema_version"] == SCHEMA_VERSION, "envelope: wrong schema version")
     expected = envelope["expected_hashes"]
     _keys(expected, ("world_graph", "public_graph", "radii", "signature", "core"),
@@ -369,13 +385,29 @@ def check_graph_core_json(payload):
     world = envelope["world_graph"]
     world_vertices, _ = _graph(world, "world_graph", full=True, decision=True)
     public_vertices = _core(envelope["core"], envelope["step_outcome_observed"])
+    alias_map = envelope["public_to_world_aliases"]
+    _keys(alias_map, public_vertices, "public_to_world_aliases")
+    mapped_aliases = set()
     for alias, vertex in public_vertices.items():
-        _require(world_vertices.get(alias) == vertex,
-                 "public_graph: vertex/flags not in supplied world")
+        target = alias_map[alias]
+        _require(type(target) is str and target in world_vertices,
+                 "public_to_world_aliases: target must be an existing world alias")
+        _require(target not in mapped_aliases, "public_to_world_aliases: map must be injective")
+        mapped_aliases.add(target)
+        _require(world_vertices[target]["type"] == vertex["type"],
+                 "public_to_world_aliases: vertex type mismatch")
+        _require(world_vertices[target]["flags"] == vertex["flags"],
+                 "public_to_world_aliases: vertex/flags mismatch")
     world_edges = {_encode(edge) for edge in world["edges"]}
     public = envelope["core"]["public_graph"]
-    _require(all(_encode(edge) in world_edges for edge in public["edges"]),
-             "public_graph: edge not in supplied world")
+    for edge in public["edges"]:
+        mapped_edge = {
+            "heads": [alias_map[alias] for alias in edge["heads"]],
+            "label": edge["label"],
+            "tails": [alias_map[alias] for alias in edge["tails"]],
+        }
+        _require(_encode(mapped_edge) in world_edges,
+                 "public_graph: mapped edge incidence not in supplied world")
     _keys(envelope["radius_graphs"], RADIUS_KEYS, "radius_graphs")
     radii = _radii(world)
     for name in RADIUS_KEYS:

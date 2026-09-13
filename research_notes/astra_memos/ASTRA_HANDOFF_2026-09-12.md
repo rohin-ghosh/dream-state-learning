@@ -1,4 +1,50 @@
-# Astra restart handoff — September 13, 2026, 21:50 UTC
+# Astra restart handoff — September 13, 2026, 22:18 UTC
+
+## Superseding source/integration state at 22:18 UTC
+
+Mission ACTIVE/incomplete. SEQ-195 remains complete and must not be relaunched.
+Pulled fc09d417: adopted Stage2A-v5 route corrigendum and reduced-screen
+ordering (BASE plus ATOM_LOCAL D1, 560 reserved calls; conditional D2 only).
+No new material root, model/tokenizer execution, fit, GPU job or kill here.
+Rohin's simple hygiene remains; formal paper-grade guard is deferred to C11.
+
+All64 birth cases/256 targets, curriculum tape,32 intervention pairs/32 chain
+tasks, scanner primitives and canaries exist as source. Independent target
+reviews covered all256 targets. They are not tensor-mask/native-token tests.
+Current graph correction: public graphs number aliases locally, independently
+of full-world aliases; only radii preserve world aliases. Checker schema V2
+requires an explicit typed injective public-to-world mapping; V1 is rejected.
+Bridge now supports this mapping for birth/ordinary constructions. Held graph
+extension is next. Null NPAIR descriptive names and READ_ALL12 post-CHECK goal
+STOP are bound/tested. Source-only rollout now passes only immutable public
+messages/decode settings to callbacks, preserves raw malformed attempts, and
+retains all29 logical slots including UNUSED slots. Counters remain caller
+assertions, synthetic in tests; physical cross-run custody remains upstream.
+
+Main combined172tests PASS32.951s; receipt
+receipts_20260912/astra_stage2a_v2_graph_null_rollout_20260913T2217Z.log
+SHA256578652914e1514a62a4217df1078cd3126ecf15fa32f112364fd8205dc25e81e.
+Filename is an attempt label; receipt observed start22:16:51UTC. Earlier
+10second integration command timed out; the later complete run is authoritative.
+
+Current ownership supersedes historical list below:
+- Main: rollout driver/tests, integration, durable state and receipts.
+- Mendel01a09cb0-6483: graph_inputs and test; repaired bridge complete;
+  held extension to follow scoped assignment after this checkpoint.
+- Lorentz01a09cb6-342d: checker repair complete; now scoring.py and test.
+- Averroes01a09cbc-c35d: null source complete; read-only rollout review.
+- Kierkegaard01a09cd3-e0ea: tokenization.py and test, fake-tokenizer source only.
+
+Next: complete held graph inputs and scoring/null execution on synthetic
+fixtures; bind scanner spans/chronology and independent whole-material checks;
+then native target+EOS tokenization and stateful D1/D2 trainer. Existing
+retention writer resets its optimizer per write and is not a valid D2 trainer.
+Official Qwen public pin is ALREADY resolved in ASTRA_MODEL_PUBLIC_BINDING_
+2026-09-13.md; do not refetch it. Check chosen node's actual files prospectively.
+No full source/material/runtime/fit readiness or mechanism freeze is claimed.
+Node1's preservation deadline is23:14UTC today; Laplace's21:33 bounded audit
+found no demonstrated missing Builder-owned payload. No new node writes here.
+Preserve dirty gpu/codex/dream_state.rules and unreviewed junction packet draft.
 
 ## Current state — SEQ-195 final retention comparison COMPLETE
 
