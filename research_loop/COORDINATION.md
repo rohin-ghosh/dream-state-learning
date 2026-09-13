@@ -17394,3 +17394,19 @@ Newton's next source-only increment is the separable v3 opaque-ID allocation
 primitive in the same owned Stage2A module/test, with synthetic master/role
 fixtures only; no actual namespace/materialization or scientific opening.
 Formal final-C11 guard work remains deferred as Rohin directed.
+
+## [Builder] 2026-09-13T21:12Z — isolated synthetic allocation tests complete
+
+Newton's bounded v3 allocation primitive consumes an explicitly supplied
+master/domain/role inventory/count/hash/collision context. It implements the
+fixed hash/Base32 and independent role/pool ordering with byte tie-breaks;
+no role enumeration, scientific registry/world, reserved-pool materialization,
+retry/reseed or real bank was added. Tests use synthetic inputs only.
+Main reviewed the102line source delta against v3 sections2/3 and ran42tests
+PASS0.100s (31candidate tests plus11unchanged Stage0). Existing wire/session
+functions remain unchanged from the reviewed prior commit. Candidate source
+98a4ecf3aaad428851d5395da7d71f36c3ada290c97643b46b1e5fd6e6b28f5d.
+All science/preparation gates stay false; caller-supplied role commitments
+are not a substitute for the still-missing finite scientific construction.
+No tokenizer/model or GPU use by this source increment. The actual retention
+assay remains separate and unchanged; waiting for its terminal last branch.

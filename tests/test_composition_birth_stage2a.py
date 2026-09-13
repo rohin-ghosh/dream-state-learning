@@ -4,7 +4,7 @@ from dataclasses import FrozenInstanceError
 from hashlib import sha256
 from pathlib import Path
 import unittest
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 from organism_v6 import composition_birth_stage2a as source
 
@@ -42,6 +42,160 @@ def turn(current_session, raw, **overrides):
                   truncated=False, finish_reason="stop")
     values.update(overrides)
     return current_session.turn(raw, **values)
+
+
+class NamespaceAllocationTests(unittest.TestCase):
+    def setUp(self):
+        self.inputs = {
+            "master": b"SYNTHETIC-ALLOCATION-UNIT-ONLY",
+            "domain": "synthetic_fixture",
+            "kind": "query",
+            "role_keys": (
+                "synthetic_fixture/dummy_b/s/01/useful/-/query",
+                "synthetic_fixture/dummy_a/s/00/useful/-/query",
+                "synthetic_fixture/dummy_c/s/02/useful/-/query",
+            ),
+            "expected_count": 3,
+            "expected_role_list_sha256": "b88e5cbcae14a44608ab1ded23e42fd250994b2067455905119d00d6e7efea74",
+            "occupied_tokens": (),
+        }
+
+    def test_exact_v3_binding_no_science_gate_or_implicit_inputs(self):
+        memo = Path(__file__).resolve().parents[1] / "research_notes/analysis/2026-09-13_m_combine4_stage2a_binding_successor_v3.md"
+        self.assertEqual(sha256(memo.read_bytes()).hexdigest(), source.ALLOCATION_MEMO_SHA256)
+        self.assertEqual(source.STATUS, "PARTIAL_SOURCE_ONLY")
+        for field in self.inputs:
+            inputs = dict(self.inputs)
+            del inputs[field]
+            with self.subTest(field=field), self.assertRaises(TypeError):
+                source.allocate_opaque_namespace(**inputs)
+        source.allocate_opaque_namespace(**self.inputs)
+        self.assertFalse(any(source.SCIENCE_GATES.values()))
+
+    def test_u32_unsigned_big_endian_boundaries(self):
+        for value, expected in ((0, b"\x00\x00\x00\x00"), (1, b"\x00\x00\x00\x01"),
+                                (256, b"\x00\x00\x01\x00"), (2**32-1, b"\xff\xff\xff\xff")):
+            self.assertEqual(source.allocation_u32(value), expected)
+        for value in (-1, 2**32, True, False, 1.0, "1", None):
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                source.allocation_u32(value)
+
+    def test_synthetic_golden_vector_canonical_order_and_immutable_result(self):
+        result = source.allocate_opaque_namespace(**self.inputs)
+        self.assertEqual(result.role_list_bytes, b"\n".join(
+            role.encode("ascii") for role in sorted(self.inputs["role_keys"])))
+        self.assertFalse(result.role_list_bytes.endswith(b"\n"))
+        self.assertEqual(result.role_list_sha256, self.inputs["expected_role_list_sha256"])
+        self.assertEqual(result.serial_tokens,
+                         ("M2AQ_SUYNDRKOHVIY", "M2AQ_GOXIYUE7CW7Z", "M2AQ_PT7CQAH7P2D6"))
+        self.assertEqual(result.bindings, (
+            ("synthetic_fixture/dummy_a/s/00/useful/-/query", "M2AQ_PT7CQAH7P2D6"),
+            ("synthetic_fixture/dummy_b/s/01/useful/-/query", "M2AQ_SUYNDRKOHVIY"),
+            ("synthetic_fixture/dummy_c/s/02/useful/-/query", "M2AQ_GOXIYUE7CW7Z"),
+        ))
+        reordered = dict(self.inputs, role_keys=list(reversed(self.inputs["role_keys"])))
+        self.assertEqual(source.allocate_opaque_namespace(**reordered), result)
+        reordered["role_keys"].clear()
+        self.assertEqual(len(result.bindings), 3)
+        with self.assertRaises(FrozenInstanceError):
+            result.bindings = ()
+
+    def test_explicit_empty_role_list_allocates_nothing(self):
+        inputs = dict(self.inputs, role_keys=(), expected_count=0,
+                      expected_role_list_sha256="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855")
+        result = source.allocate_opaque_namespace(**inputs)
+        self.assertEqual(result.role_list_bytes, b"")
+        self.assertEqual(result.serial_tokens, ())
+        self.assertEqual(result.bindings, ())
+
+    def test_all_six_prefixes_use_only_explicit_synthetic_roles(self):
+        for kind, prefix in (("node", "M2AN_"), ("query", "M2AQ_"), ("event", "M2AE_"),
+                             ("route", "M2AI_"), ("port", "M2AP_"), ("receipt", "M2AR_")):
+            role = f"synthetic_fixture/dummy_a/s/-/state/-/{kind}"
+            inputs = dict(self.inputs, kind=kind, role_keys=(role,), expected_count=1,
+                          expected_role_list_sha256=sha256(role.encode()).hexdigest())
+            result = source.allocate_opaque_namespace(**inputs)
+            self.assertRegex(result.serial_tokens[0], "^" + prefix + "[A-Z2-7]{12}$")
+
+    def test_missing_extra_duplicate_roles_and_commitment_drift_fail(self):
+        roles = self.inputs["role_keys"]
+        cases = (
+            {"role_keys": roles[:-1]},
+            {"role_keys": roles + ("synthetic_fixture/dummy_d/s/03/useful/-/query",)},
+            {"role_keys": (roles[0], roles[0], roles[2])},
+            {"expected_count": 2}, {"expected_count": True},
+            {"expected_count": -1}, {"expected_count": 2**32+1},
+            {"expected_role_list_sha256": "0" * 64},
+            {"expected_role_list_sha256": self.inputs["expected_role_list_sha256"].upper()},
+        )
+        for override in cases:
+            with self.subTest(override=override), self.assertRaises(ValueError):
+                source.allocate_opaque_namespace(**dict(self.inputs, **override))
+
+    def test_role_syntax_and_delimiters_fail_without_repair(self):
+        original = self.inputs["role_keys"][0]
+        invalid = (original + "\n", original + "/extra", original.replace("/01/", "/24/"),
+                   original.replace("/01/", "/1/"), original.replace("/-/query", "/4/query"),
+                   original.replace("/s/", "//"), original.replace("dummy_b", "dummy\x00b"),
+                   original.replace("dummy_b", "dummy\rb"), original.replace("dummy_b", "dümmý"),
+                   original.replace("dummy_b", "\ud800"), original.replace("query", "event"),
+                   original.replace("synthetic_fixture", "synthetic_other"), b"not-a-role")
+        for role in invalid:
+            with self.subTest(role=role), self.assertRaises(ValueError):
+                source.allocate_opaque_namespace(**dict(self.inputs, role_keys=(role,)))
+        for override in ({"master": "not-bytes"}, {"domain": "bad/domain"},
+                         {"kind": "unknown"}, {"role_keys": set()},
+                         {"occupied_tokens": None}, {"occupied_tokens": ("bad",)},
+                         {"occupied_tokens": ("M2AQ_AAAAAAAAAAAA",)}):
+            with self.subTest(override=override), self.assertRaises(ValueError):
+                source.allocate_opaque_namespace(**dict(self.inputs, **override))
+
+    def test_candidate_collision_and_all_a_fail_without_retry(self):
+        candidate_prefix = self.inputs["master"] + b"\x00synthetic_fixture\x00query\x00"
+        for digest, expected_reason, expected_calls in ((b"\x00" * 32, "reserved_allocation_token", 1),
+                                                       (b"\x01" * 32, "allocation_token_collision", 2)):
+            calls = []
+            def controlled_hash(raw):
+                if raw.startswith(candidate_prefix):
+                    calls.append(raw)
+                    return Mock(digest=lambda: digest)
+                return sha256(raw)
+            with patch.object(source, "sha256", side_effect=controlled_hash):
+                with self.assertRaisesRegex(ValueError, expected_reason):
+                    source.allocate_opaque_namespace(**self.inputs)
+            self.assertEqual(len(calls), expected_calls)
+            self.assertEqual(calls, [candidate_prefix + serial.to_bytes(4, "big")
+                                     for serial in range(expected_calls)])
+
+    def test_cross_domain_collision_with_explicit_prior_tokens_fails(self):
+        previous = source.allocate_opaque_namespace(**self.inputs)
+        new_domain = "synthetic_other"
+        roles = tuple(role.replace("synthetic_fixture", new_domain) for role in self.inputs["role_keys"])
+        inputs = dict(self.inputs, domain=new_domain, role_keys=roles,
+                      expected_role_list_sha256=sha256("\n".join(sorted(roles)).encode()).hexdigest(),
+                      occupied_tokens=previous.serial_tokens)
+        first_digest = sha256(self.inputs["master"] + b"\x00synthetic_fixture\x00query\x00\x00\x00\x00\x00").digest()
+        candidate_prefix = self.inputs["master"] + b"\x00synthetic_other\x00query\x00"
+        def controlled_hash(raw):
+            if raw.startswith(candidate_prefix):
+                return Mock(digest=lambda: first_digest)
+            return sha256(raw)
+        with patch.object(source, "sha256", side_effect=controlled_hash):
+            with self.assertRaisesRegex(ValueError, "allocation_token_collision"):
+                source.allocate_opaque_namespace(**inputs)
+        self.assertEqual(len(previous.serial_tokens), 3)
+
+    def test_digest_ties_use_raw_byte_tiebreak_for_both_orders(self):
+        original = source.allocate_opaque_namespace(**self.inputs)
+        def controlled_hash(raw):
+            if b"\x00pool-order\x00" in raw or b"\x00role-order\x00" in raw:
+                return Mock(digest=lambda: b"\xff" * 32)
+            return sha256(raw)
+        with patch.object(source, "sha256", side_effect=controlled_hash):
+            tied = source.allocate_opaque_namespace(**self.inputs)
+        self.assertEqual(tied.serial_tokens, original.serial_tokens)
+        self.assertEqual(tied.bindings, tuple(zip(sorted(self.inputs["role_keys"]),
+                                                 sorted(original.serial_tokens))))
 
 
 class WireTests(unittest.TestCase):

@@ -6,14 +6,19 @@ Opaque Python objects and cyclic containers fail closed at the transport boundar
 CHECK correctness, witness scoring, and whole-chain scoring are not implemented.
 Only the synthetic successful finish reason "stop" is admitted. Other non-length
 finish labels remain unbound at this transport boundary, not inferred engine pins.
+The v3 allocator consumes explicit role inventories and commitments; it does not
+enumerate roles, validate scientific inventory semantics, or construct material.
 """
 
+import base64
 from dataclasses import dataclass
+from hashlib import sha256
 import re
 from types import MappingProxyType
 
 
 MEMO_SHA256 = "dd1f57693dfc09fae20691e1f53f11bc3b6a6d491bcb5e437aa4ed346d65df74"
+ALLOCATION_MEMO_SHA256 = "da833b9df37930d0b06f9206e5fa47d5b436b325e833e6f6b2f4221f4d8808d1"
 STATUS = "PARTIAL_SOURCE_ONLY"
 SCIENCE_GATES = MappingProxyType(dict.fromkeys((
     "adoption", "source_gate", "independent_checker", "materialization",
@@ -53,6 +58,103 @@ SYSTEM_MESSAGE = "\n".join((
     "STOP is correct only when the latest CURRENT equals GOAL.",
     "The service returns registered exact text or MISS. Unsupported actions terminate the task.",
 ))
+
+
+def allocation_u32(value):
+    if type(value) is not int or not 0 <= value < 2**32:
+        raise ValueError("invalid_allocation_u32")
+    return value.to_bytes(4, "big")
+
+
+def _allocation_component(value):
+    if (type(value) is not str or not value or not value.isascii()
+            or any(character in value for character in "/\r\n\x00")):
+        raise ValueError("invalid_allocation_component")
+    return value.encode("ascii")
+
+
+@dataclass(frozen=True)
+class OpaqueNamespace:
+    domain: str
+    kind: str
+    role_list_bytes: bytes
+    role_list_sha256: str
+    serial_tokens: tuple
+    bindings: tuple
+
+
+def allocate_opaque_namespace(*, master, domain, kind, role_keys, expected_count,
+                              expected_role_list_sha256, occupied_tokens):
+    """V3 sections 2/3.1/3.2 byte allocation over explicitly supplied roles.
+
+    This checks role syntax and the supplied per-kind count/hash commitment,
+    not the finite scientific role expansion. The caller must supply all prior
+    namespace tokens for cross-domain collision checks. No reserved pools,
+    display positions, registry, task, or canonical graph is constructed here.
+    No master, domain, inventory, commitment, or collision context is defaulted.
+    """
+    prefixes = {"node": "M2AN_", "query": "M2AQ_", "event": "M2AE_",
+                "route": "M2AI_", "port": "M2AP_", "receipt": "M2AR_"}
+    if type(master) is not bytes:
+        raise ValueError("allocation_master_requires_bytes")
+    domain_bytes = _allocation_component(domain)
+    kind_bytes = _allocation_component(kind)
+    if kind not in prefixes:
+        raise ValueError("invalid_allocation_kind")
+    if type(role_keys) not in (tuple, list) or type(occupied_tokens) not in (tuple, list):
+        raise ValueError("allocation_requires_explicit_sequences")
+    if type(expected_count) is not int or not 0 <= expected_count <= 2**32:
+        raise ValueError("invalid_role_count")
+    if (type(expected_role_list_sha256) is not str
+            or re.fullmatch(r"[0-9a-f]{64}", expected_role_list_sha256) is None):
+        raise ValueError("invalid_role_hash")
+    roles = []
+    for role in role_keys:
+        if type(role) is not str:
+            raise ValueError("invalid_role_key")
+        parts = role.split("/")
+        if len(parts) != 7:
+            raise ValueError("invalid_role_key")
+        for part in parts:
+            _allocation_component(part)
+        if (parts[0] != domain or parts[6] != kind
+                or re.fullmatch(r"(?:0[0-9]|1[0-9]|2[0-3]|-)", parts[3]) is None
+                or re.fullmatch(r"[0-3]|-", parts[5]) is None):
+            raise ValueError("invalid_role_key")
+        roles.append(role.encode("ascii"))
+    if len(set(roles)) != len(roles):
+        raise ValueError("duplicate_role_key")
+    roles.sort()
+    role_list_bytes = b"\n".join(roles)
+    role_hash = sha256(role_list_bytes).hexdigest()
+    if len(roles) != expected_count or role_hash != expected_role_list_sha256:
+        raise ValueError("role_commitment_mismatch")
+    occupied = set()
+    for token in occupied_tokens:
+        if (type(token) is not str
+                or re.fullmatch(r"M2A[NQEIPR]_[A-Z2-7]{12}", token) is None
+                or token.endswith("_AAAAAAAAAAAA")):
+            raise ValueError("invalid_occupied_token")
+        occupied.add(token)
+    preimage = master + b"\x00" + domain_bytes + b"\x00"
+    candidates = []
+    seen = set()
+    for serial in range(len(roles)):
+        digest = sha256(preimage + kind_bytes + b"\x00" + allocation_u32(serial)).digest()
+        token = prefixes[kind] + base64.b32encode(digest)[:12].decode("ascii")
+        if token.endswith("_AAAAAAAAAAAA"):
+            raise ValueError("reserved_allocation_token")
+        if token in seen or token in occupied:
+            raise ValueError("allocation_token_collision")
+        seen.add(token)
+        candidates.append(token)
+    ordered_tokens = sorted((token.encode("ascii") for token in candidates), key=lambda token: (
+        sha256(preimage + b"pool-order\x00" + token).digest(), token))
+    ordered_roles = sorted(roles, key=lambda role: (
+        sha256(preimage + b"role-order\x00" + role).digest(), role))
+    bindings = tuple((role.decode("ascii"), token.decode("ascii"))
+                     for role, token in zip(ordered_roles, ordered_tokens))
+    return OpaqueNamespace(domain, kind, role_list_bytes, role_hash, tuple(candidates), bindings)
 
 
 def _text(raw):
