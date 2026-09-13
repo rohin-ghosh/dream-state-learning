@@ -14710,6 +14710,27 @@ prefix. A new chronological4+4 diagnostic with genuine replay and controls is
 feasible but NOT implemented/launched by this note. Keep original material
 provenance and original writer claims separate. No general G3 claim follows.
 
+## [Builder] 2026-09-13T16:10:18Z — LAUNCH paired structured-action controls
+
+Node2 GPU0 controller200046: STRUCTURED_ACTION_SMOKE, run
+`/localhome/local-rohing/astra_diagnostics/pcfl_interface_structured_action_smoke_20260913_attempt1`;
+manifest139507309739dc871bd6cf02f40802cc8caba0dc23df61148270f1d715bd2f0f,
+allocation217fb3ba2b31f919e47c9bb4e911157970ba02cae98b1adab156e2c19895f1ec.
+Node2 GPU1 controller200102: STRUCTURED_FIRST_READ_SMOKE, run
+`/localhome/local-rohing/astra_diagnostics/pcfl_interface_structured_first_read_smoke_20260913_attempt1`;
+manifest016a6162337b80591b27d5baa038f67f6517e6a53fe18fafe68a8f7a267f2c36,
+allocationa7a2896a00b24231b1ed823a9bda32ec736df7c1153408d2702fb5201090167f.
+Both use immutable `/tmp/astra_pcfl_structured_action_source_20260913_attempt1`
+from174ff587cddd6cbf75c6929d2af46a5231f812ce; source tarSHA256
+dca4864af8ab6083d869be6377136f33f32f1a17589af1b2053095e5d79bdf41 matched
+VM/node. Each offline preparation measured8tasks/max377initial tokens and
+zero fits/updates. Same fixed root wires/public prompts/seeds; separately
+allocated read-only C0 processes, no shared mutable learner. Pre-publish GPU
+compute inventory empty, with full per-allocation checks retained in each
+detached outer. One-hour caps and node2 six-hour lease margin apply. Launch
+does not imply model/backend success or completion; collect both closures.
+No other launches or kills; no approval prompt. Stop after these two controls.
+
 ## [Independent A2/A3 result audit] 2026-09-13T15:42Z — exact graph did not compose; requested THINK never entered the typed loop
 
 Terminal read-only audit:
