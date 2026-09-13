@@ -1,9 +1,10 @@
-# Paper claim-state refresh through fixed coaching and actual-child writes
+# Paper claim-state refresh through fixed coaching and replay repair
 
 **Date:** 2026-09-13 UTC  
 **Role:** fresh manuscript/claim-map auditor  
-**Repository cut:** `306bd533`; terminal fixed-coaching and contrastive audits
-incorporated; compression disposition remains amended against `66f14501`
+**Repository cut:** `c498cc21`; terminal fixed-coaching, contrastive, and
+own-source replay audits incorporated; compression disposition remains amended
+against `66f14501`
 **Scope:** paper claim audit and replacement abstract candidates only; no edit
 to `paper_prototype/main.tex`, benchmark source, model, adapter, or GPU state
 
@@ -28,6 +29,15 @@ actual-child assay changes the strongest defensible result:
 This is bounded parametric carriage of scaffolded, admitted child records plus
 a measured stability--plasticity tradeoff. It is not connected memory, native
 use, repeated SLEEP, lifetime improvement, parenting, or a strong-memory win.
+
+The own-source replay repair makes that tradeoff causal at fixed update count.
+Replaying 24 older supported child outputs preserved every `143/143` old item
+the unchanged parents got right, versus `135/143` when the same update positions
+repeated new memories. New-memory access moved oppositely: replay recovered
+`21/30` exact and `19/30` paraphrased records, versus `27/30` and `23/30` under
+extra memory. Replay passed the frozen noncompensatory screen on only `2/3`
+roots. It is evidence that rehearsal can move the retention--acquisition
+frontier, not an all-root writer repair or a generally safe SLEEP mechanism.
 
 The terminal fixed-coaching DEV adds two narrower results. While the reminder
 was present, it made both named `predicted`/`relation` fields correct in
@@ -61,6 +71,7 @@ and full request/resource receipt are absent. No PCFL result exists.
 | Native keyed acquisition at one L2 checkpoint | Greedy TRAIN `14/16` vs OFF `8/16`; READOUT `8/16` in both | Supported exact-cue acquisition with a wording/interface gap | Do not call pure access failure, general keyed memory, or downstream use |
 | Actual child-record write, LR `1e-4` | Exact `20/30`, paraphrase `16/30`, LR0 `0/30`; robust target types `7/14` and `6/14`; retained `98/143`; canary `36/36` | Positive carriage, severe variable forgetting | This is the strongest present own-record result; always state scaffolded formation, warm-start authored skill, output collapse, and no native action use |
 | Actual child-record repair, LR `3e-5` | Exact `18/30`, paraphrase `18/30`; retained `140/143`; low-rate repair screen passes 1/3 seeds | Favorable tradeoff, failed qualification | Say lower heat restored 42/45 items erased by HIGH while preserving partial recall; do not say safe writer or selected recipe |
+| Own-source replay vs extra new-memory repetition | Fixed updates: REPLAY exact/paraphrase `21/30`/`19/30`, retained `143/143`; EXTRA_MEMORY `27/30`/`23/30`, retained `135/143`; replay frozen screen `2/3`; canaries `36/36` both | Direct stability--plasticity movement, failed all-root repair | Say replay protected previously correct task behavior at the cost of new-memory acquisition. Do not call it pure semantic replay, autonomous replay selection, or qualified SLEEP; token/FLOP exposure differs and seed-0 extra-memory repetition was imbalanced |
 | Generic format canary | `36/36` under LR0, damaging HIGH, and LOW | Falsified as a sufficient retention gate | Say interface canaries miss semantic skill erasure; task-specific paired retention is mandatory |
 | Fixed answer-free coaching and child-record write | In context, both targeted fields P `48/48` vs N `38/48`; whole records P `43/48` vs N `38/48`. Parent-free after writing, P=N=`45/48` vs initial `27/48`; task retention N `140/144`, P `138/144`, initial `143/144` | Transient targeted coaching positive; own-record write positive; parenting-specific persisted contrast null | State all three surfaces separately. Do not call the parent-free gain amortized coaching, adaptive parenting, or parent-to-weight mediation; neutral writing reached the same endpoint and the panel nearly saturated |
 | Authored full-dose contrastive bundle | CONTRASTIVE `58/72` vs PLAIN `50/72`, but D1 `34/36` vs `26/36`, D2 `24/36` tie; registered screen `0/3`; seed-0 four-to-112-epoch endpoint unchanged | Negative/mixed curriculum diagnostic with a polarity shortcut | Dose was not the missing ingredient on these bytes. Preserve grouping as a candidate ingredient only for a shortcut-resistant keyed task; no source-selection, parenting, or experiential-SLEEP claim |
@@ -94,26 +105,26 @@ and full request/resource receipt are absent. No PCFL result exists.
 | `2026-09-13_pcfl_dev_to_paper_grade_successor.md` | Contains exact prospective thresholds and resource projections, not observations | Keep every number out of past tense. `ONE_EPOCH_SCALE`, linked-text certification, reusable structure, N resizing, and all AUCs remain conditional |
 | Earlier supplied-schema compression sidecars | A fresh `SCHEMA_LORA` fit would test transport of an authored compact code, not whether ordinary experiential SLEEP learned reusable structure | Do not use as the main compression slot. First test existing final DLT states with the zero-fit predictive-reuse assay |
 
-## Candidate A: current-evidence fallback if PCFL DEV fails (177 words)
+## Candidate A: current-evidence fallback if PCFL DEV fails
 
 Language agents can convert deployment records into low-rank behavior, but
-neither writing nor coaching alone certifies durable learning. We study frozen
-Qwen2.5-7B-Instruct agents with per-life LoRAs. In a fixed-coaching assay, an
-answer-free process reminder made its named prediction and relation fields
-correct in `48/48` records versus `38/48` under neutral contact. After parent
-removal and training only on admitted child records, however, coached and
-neutral descendants both formed `45/48` fresh records, versus `27/48` before
-writing: both written arms outscored their initial models, while the
-parenting-specific contrast was zero. Task-specific retention was `138/144`
-for coached descendants and `140/144` for neutral descendants, from an initial
-`143/144`, despite perfect generic canaries. In a separate three-seed
-source-withdrawn assay, learning rate `1e-4` recovered `20/30` exact and
-`16/30` paraphrased child records but retained only `98/143` previously correct
-items; `3e-5` recovered `18/30` under both cue forms while retaining `140/143`,
-yet passed the frozen repair screen in only one of three seeds. These results
-establish bounded parametric carriage and transient process steering, not
-durable parenting-specific learning. Connected traversal, repeated-sleep
-improvement, strong-memory superiority, and compression remain open.
+writing exposes a stability--plasticity tradeoff and coaching does not
+automatically persist. We study frozen Qwen2.5-7B-Instruct agents with per-life
+LoRAs. In a fixed-coaching assay, an answer-free process reminder made its
+targeted fields correct in `48/48` records versus `38/48` under neutral
+contact. After parent removal and training only on admitted child records,
+however, coached and neutral descendants tied at `45/48`, versus `27/48`
+before writing. In a separate three-root writer assay, replaying 24 older
+supported child outputs preserved every `143/143` previously correct task
+item, versus `135/143` when the same update positions repeated new memories.
+New-memory access moved oppositely: replay recovered `21/30` exact and `19/30`
+paraphrased records, versus `27/30` and `23/30` with extra repetition, and
+passed the frozen per-root screen only twice. Generic canaries remained
+perfect throughout. These results establish bounded parametric carriage,
+transient process steering, and rehearsal-mediated retention, not a qualified
+sleep writer or durable parenting-specific learning. Connected traversal,
+repeated-sleep improvement, strong-memory superiority, and compression remain
+open.
 
 ## Candidate B: prospectively fillable main abstract (189 words)
 
@@ -160,6 +171,7 @@ lifetime or strong-memory claims.
 - `research_notes/analysis/2026-09-13_actual_child_lower_lr_memory_repair_terminal_audit.md`
 - `research_notes/analysis/2026-09-13_astra_parented_record_terminal_audit.md`
 - `research_notes/analysis/2026-09-13_astra_contrastive_full_dose_terminal_audit.md`
+- `research_notes/analysis/2026-09-13_own_source_replay_repair_terminal_audit.md`
 - `research_notes/analysis/2026-09-13_pcfl_vertical_dev_v2_2_writer_repair.md`
 - `research_notes/analysis/2026-09-13_pcfl_v22_execution_readiness_audit.md`
 - `research_notes/analysis/2026-09-13_pcfl_dev_to_paper_grade_successor.md`
