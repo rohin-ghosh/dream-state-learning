@@ -27,4 +27,13 @@ precedes each record.
 - terminal marker was present before hashing; its scientific meaning was not
   inspected while the other registered roots remained live.
 
-R0 and R2 remain pending at this record's creation.
+## R0
+
+- root: `/localhome/local-rohing/astra_diagnostics/q0_fulldose_R0_20260913_attempt1`
+- observed terminal and controller absent: `2026-09-13T05:37:04Z`
+- complete-root stream SHA-256:
+  `52c21a6e1ba5fa786a652998eacb91b348ab1da685a335e7b90494ca1383097d`
+- regular files: `18,153`
+- scientific status was not interpreted while R2 remained live.
+
+R2 remains pending at this record's update.
