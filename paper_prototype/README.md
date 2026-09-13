@@ -1,21 +1,32 @@
 # Experience Models — ICLR 2027 submission (revised draft v3, 2026-09-10 fix pass)
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ143 retains both positive and negative findings.
+This evidence cut through SEQ151 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current evidence through SEQ143 — C79–C82; ongoing first draft.**
+**Current evidence through SEQ151 — C83–C87; ongoing first draft.**
+Through SEQ151, all 24 authored Level1 cells are complete, with three canary
+regressions in the second roster. Actual-record v2 executes actions and yields
+source-faithful records under an external prompt scaffold with mandatory priors;
+this is state-dependent experience formation, not a learned closed loop. Separate
+high-LR seed0 recovery has zero observed treatment contrasts. HF high-seed2
+forced TRAIN15/16 versus READOUT8/16 does not supply native greedy TRAIN accuracy.
+Actual-memory writing/readback and native-greedy testing remain development only;
+HF independent analysis is pending; archived A100 short-root OFF readiness passes.
+Historical pending statements below describe their named cuts, not current status.
+
+**Historical evidence through SEQ143 — C79–C82.**
 Three learner seeds per skill show controlled authored Level1 acquisition:
 prediction, goal completion, contradiction and update judgement each reach
 48/48 held content and strict, from OFF content 22/32/17/8 respectively;
 post-fit canaries are 12/12 throughout. This is positive component evidence,
 not a matched trained parenting comparison or general reasoning qualification.
 Contrastive practice has a small valid-field advantage over PLAIN but fails its
-frozen screen. The original two completed low/high-LR seed pairs have null
-endpoints; the low seed0 recovery is separate, not an imputed original success.
+frozen screen. The original two completed low/high-LR seed pairs have zero observed treatment
+contrasts; the low seed0 recovery is separate, not an imputed original success.
 A100 warm-up failures are missing scientific endpoints, not zero scores.
 **PENDING at this cut:** high-LR seed0 recovery, newer perception/reflection and
 repetition/meta-reflection roster results, and actual-record formation/transfer.
@@ -26,7 +37,57 @@ Historical exclusion statements below apply only to their named earlier cuts.
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
 
-## Latest bounded evidence — SEQ137–143 / C79–C82
+## Latest bounded extension — SEQ144–151 / C83–C87
+
+Both TeX manuscripts add `sec:seq151-extension` without replacing historical
+tables. The second authored roster completes the24cells across eight skills;
+the same three learner seeds share materialseed0, not independent tasks.
+
+| Second-roster skill | OFF content/strict /48 | Post content=strict /48, seeds0/1/2 | Post canary /12 | Held mean [range] |
+| --- | ---: | ---: | ---: | --- |
+| Perception | 21/0 | 47,48,48 | 12,12,12 | 47.667 [47,48] |
+| Repetition | 0/0 | 48,48,48 | 11,11,12 | 48 [48,48] |
+| Self-reflection | 0/0 | 48,48,48 | 12,12,12 | 48 [48,48] |
+| Meta-reflection | 9/9 | 48,48,48 | 12,12,11 | 48 [48,48] |
+
+All OFF canaries12/12; three regressions remain: repetition seeds0/1 truncate
+the same copy target and meta-reflection seed2 malforms arithmetic JSON. No held
+content losses occur. Repetition/meta OFF was already canonical; their gains
+are typed policy/content changes. Other gains mix source/schema/interface.
+Second-roster1440calls/12fits/3840updates; all24complete-cell totals are
+2880calls/24fits/7680updates, excluding failed A100 attempts and formation.
+These are authored component controls against no-update OFF, not matched parenting.
+
+Actual v1 has64wake calls,0executions/0records. Fresh prompt-bundle v2 has
+128calls,16executions/16records per state: OFF/perception0/1/2 eligible7/14/8/8
+out of16, strict0/6/0/0. Mandatory priors, the ACT/two-line/no-fence scaffold,
+state-varying actions/outcomes and earlier records in later prompts preclude a
+learned-closed-loop or record-only causal claim. All64priors are explicit;
+27records fail nested source/schema checks. Do not select only seed0's14/16.
+
+Separate high-LRseed0 recovery now completes128calls/3fits/100updates with all
+five panels old4/8,new4/8,legal16/16 and paired8/0/0/8. All six seed/rate
+combinations have attempt-labelled complete observations with **zero observed
+treatment contrasts**; the original two aborted attempts remain missing.
+
+HF high-seed2 report:192forced forwards/0updates. TRAIN first/full counts
+OFF8/8,fit1 9/11,fit2 15/15 out of16; READOUT8/8,7/9,8/8. Fit1 first-token
+ties3in each view; no fit2 ties. Neither stronger TRAIN discrimination nor its
+READOUT gap supplies native greedy TRAIN accuracy or proves pure access failure.
+Independent stored-evidence analysis remains **PENDING** at this edit.
+
+A100 tiny JIT passes; long-root full-model OFF fails before responses on IPC
+path length. Archived short-root OFF passes1load/1generation/2tokens, with
+14payloads matching before/after and40members verified; observed release is not
+an OS-exit-code receipt. A separately reported system-ninja installation leaves
+host-level repair attribution unresolved. This is not parity/training/science
+qualification. Actual-memory write/
+readback and native-greedy probes remain protocol/CPU-runner development only.
+See [C83–C87](../research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md)
+for exact source pins and explicit provisional-versus-archived distinctions.
+No later results, new external citations, mission completion or H1/H2 claim.
+
+## Historical bounded evidence — SEQ137–143 / C79–C82
 
 The manuscript now reports the original LR comparison, separate low-seed0
 recovery, contrastive screen, first authored Level1 roster and A100 missingness.

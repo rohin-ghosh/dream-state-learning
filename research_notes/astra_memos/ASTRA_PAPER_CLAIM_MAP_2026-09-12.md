@@ -1,21 +1,32 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ143 retains both positive and negative findings.
+This evidence cut through SEQ151 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current evidence through SEQ143 — C79–C82; ongoing first draft.**
+**Current evidence through SEQ151 — C83–C87; ongoing first draft.**
+Through SEQ151, all 24 authored Level1 cells are complete, with three canary
+regressions in the second roster. Actual-record v2 executes actions and yields
+source-faithful records under an external prompt scaffold with mandatory priors;
+this is state-dependent experience formation, not a learned closed loop. Separate
+high-LR seed0 recovery has zero observed treatment contrasts. HF high-seed2
+forced TRAIN15/16 versus READOUT8/16 does not supply native greedy TRAIN accuracy.
+Actual-memory writing/readback and native-greedy testing remain development only;
+HF independent analysis is pending; archived A100 short-root OFF readiness passes.
+Historical pending statements below describe their named cuts, not current status.
+
+**Historical evidence through SEQ143 — C79–C82.**
 Three learner seeds per skill show controlled authored Level1 acquisition:
 prediction, goal completion, contradiction and update judgement each reach
 48/48 held content and strict, from OFF content 22/32/17/8 respectively;
 post-fit canaries are 12/12 throughout. This is positive component evidence,
 not a matched trained parenting comparison or general reasoning qualification.
 Contrastive practice has a small valid-field advantage over PLAIN but fails its
-frozen screen. The original two completed low/high-LR seed pairs have null
-endpoints; the low seed0 recovery is separate, not an imputed original success.
+frozen screen. The original two completed low/high-LR seed pairs have zero observed treatment
+contrasts; the low seed0 recovery is separate, not an imputed original success.
 A100 warm-up failures are missing scientific endpoints, not zero scores.
 **PENDING at this cut:** high-LR seed0 recovery, newer perception/reflection and
 repetition/meta-reflection roster results, and actual-record formation/transfer.
@@ -3504,7 +3515,7 @@ run is treated as a result.
 The research question remains open, with Main owning operations and integration.
 Collaborator UNSENT.
 
-## C79 — SEQ137–139/141: LR endpoint nulls; original aborts and separate recovery
+## C79 — SEQ137–139/141: zero observed treatment contrasts; original aborts and separate recovery
 
 **Supported:** the original six-cell public-record DEV roster completes only
 learner seeds1/2 at both3e-5 and1e-4. Every complete root has11stages,
@@ -3677,3 +3688,122 @@ It binds five stderr hashes and launch/failure/release chains, distinguishes
 prepared-only from launched failure, and explicitly withholds runtime parity.
 The [coordination ledger](../../research_loop/COORDINATION.md) SEQ143 fixes the
 cut; later outcomes are outside this integration, not presumed negative.
+
+## C83 — SEQ145: separate high-LR recovery, zero observed treatment contrasts
+
+High-LRseed0 attempt2 completes128calls/3fits/100updates; all five panels remain
+old4/8,new4/8,legal16/16, final both/PROMOTE-only/SHADOW-only/neither8/0/0/8.
+Eight first/16cumulative records admitted. All six seed/rate combinations now
+have complete **attempt-labelled** observations, including two recoveries;
+the original six-attempt analysis still contains two missing seed0 endpoints.
+No silent replacement, complete-original-roster mean, or no-parameter-change claim.
+Source: [high recovery collection](receipts_20260912/astra_l2_lr_seed0_high_20260913_attempt2_collected.json), SHA256 `ceba37612abdf3aa7db21b1c3280f559f67911a0ca86dd58b702cb3c3d25f50b`;
+SEQ145 records native/VM archive SHA256 `369764744ecb2760e29a0ac9e0e82b623f943b36d834f591ed96521335ea424b`.
+
+## C84 — SEQ146: all24 authored cells complete, three measured canary harms
+
+Second12cells: perception OFFcontent21/48→47,48,48; repetition0→48,48,48;
+self-reflection0→48,48,48; meta-reflection9→48,48,48. Post strict equals content;
+OFFstrict is0/0/0/9 respectively. Perception post mean47.667,range[47,48];
+others48,[48,48]. Materialseed0 shared by learner seeds0/1/2; OFF is no-update,
+not a matched trained developmental control. Second-roster1440calls/12fits/
+3840updates; all24complete authored cells2880calls/24fits/7680updates. These
+totals exclude failed A100 attempts and actual formation, not all campaign cost.
+
+All OFF canaries12/12. Repetition post11,11,12; meta-reflection12,12,11;
+perception/self-reflection12each. Three learner-item regressions: two shorten
+the same `rehearse? wait` copy target to `rehearse`; one malforms arithmetic
+JSON. No held-content losses. Perception seed0 emits a scalar TRY on its one
+held failure. Repetition/meta OFF already exact-format JSON: gains are supplied
+policy/content changes. Perception/self-reflection mix source/schema/interface.
+No blanket no-harm, independent-task replication, general cognition, executed
+reflection, compiler admission, actual child SLEEP or parenting conclusion.
+C81's first-roster no-regression claim retains only its original scope.
+
+Sources: [second-roster JSON](receipts_20260912/astra_level1_second_roster_analysis_20260913.json), SHA256 `1d2247c77bc582d2a0e3c8c69749ba541cfdf17fb04ec001fdfe11efc6b194a2`;
+[analysis](receipts_20260912/astra_level1_second_roster_analysis_20260913.md), SHA256 `3d42de3bff3bc5a52c120d6d4dc34fbd424170a143610ca6e7e4ef4c78330b33`;
+[original-scorer replay](receipts_20260912/astra_level1_second_roster_replay_20260913.json), SHA256 `7daa501567354293697e17f1fe8681d37faceb96c1af7d89b796e1c709b616af`.
+Accepted analysis reports1440/1440objects and48/48panels exactly replayed, all12
+archives preserved with native/VM agreement; no new recollection by this editor.
+
+## C85 — SEQ144/149: externally scaffolded actual-record formation, not learning
+
+V1:64wake calls,zero world executions/record calls across all four states;
+action-interface failure, not extraction failure on experienced outcomes.
+V2:128calls,16executions/16record requests per state. Production source-faithful
+OFF/perception0/1/2 counts7/14/8/8 out of16; strict canonical0/6/0/0.
+First/second turn counts5/2,8/6,4/4,0/8 out of8 each. All64priors explicit and
+unambiguous. There are27nested source/schema rejections despite empty top-level
+turn errors; five seed2 schema failures and eight seed1 nulls for explicit false
+priors are not unavailable source evidence. No rejected answer is repaired.
+
+V2 changes the external instruction bundle (ACT-prefix/two-line/no-fence,
+literal triple example, mandatory prior versus optional in v1); not an isolated
+prefix intervention or learned format behavior. Shared scheduled IDs do not
+make realized experience identical: actions, priors, outcomes and histories
+vary; seed2 has0/16same triples as OFF. Literal example[2,5,9] matches2/64, not
+proof of a copying mechanism. Turn2 carries earlier actual history; turn
+strata are nonrandomized, not within-run learning. Record eligibility is not
+prior truth, hidden-rule discovery or parametric retention; record requests still
+supply source/schema scaffolding. All three original
+learners retained; no best-seed selection or matched parenting treatment.
+
+Sources: [preserved v1 report](receipts_20260912/astra_real_record_formation_report_20260913_attempt1.json), SHA256 `2b9bb4d5539d6e26e75933af8d45e21e1dc3c93ad7320fc2bc6c64d1cf93420a`;
+[v2 amendment](ASTRA_REAL_RECORD_FORMAT_AMENDMENT_2026-09-13.md), SHA256 `5448a3f5e072dd385f8c33e7ea38fb27fa39b61aeddb76b9dc023f3c7b05296b`.
+[Archived final analysis](receipts_20260912/astra_real_record_v2_analysis_20260913.json), SHA256
+`e83a9714c4ca421892d09b5f6f3a8e0b10b7f0f87ea8d915724fbd4d6951c86b`;
+[companion analysis](receipts_20260912/astra_real_record_v2_analysis_20260913.md), SHA256
+`59ffb44c44e9ed6aac68b5907d0f53852de451893554bdc0f1cc6fb6e9e5361e`.
+It reports8/8capture replays,192native request/response joins across v1/v2 and
+separately preserved dependency pins; deterministic consistency is not independent
+model-origin authentication. V2 report pin `9d04155a0103377e41f80ad25b7b1b4ed9cd2ffd014503e74b27a0992b4c81f1`;
+archive pin `71671dc02e175be0dafba595aa4e9ef30c409953a0366cc082b4d7e319c055c0`.
+The archived copies match the supplied final `/tmp` analysis hashes exactly.
+[Actual-memory protocol](ASTRA_ACTUAL_RECORD_MEMORY_PROTOCOL_2026-09-13.md), SHA256 `c056a0fb6c97d1ba93b4d2a0fa07cb70f806cfa64fef2df1769d78e80334a716`,
+and CPU projector/runner development are **prospective only**: no actual native
+memory-write, readback, learned closed-loop, H1/H2 or retention result at this cut.
+
+## C86 — SEQ147/148/150: distinct infrastructure attempts, no science qualification
+
+SEQ147 tiny sampling-JIT/tensor smoke passes, with no model/adapter endpoint;
+SEQ148 first full-model OFF attempt fails before requests/responses on a long
+root-derived IPC path exceeding107bytes, not demonstrated model incompatibility.
+SEQ150 short-root OFF **passes**1model load/1generation/2tokens in175.896s;
+14official payloads match before/after. Archived inspection verifies40members,
+all regular payloads and observed release; no OS-exit-code receipt exists.
+Three leftover sockets are preserved as metadata, not socket objects. A separate
+system-ninja installation is reported with unresolved timing; do not call the
+whole host unchanged or attribute success solely to it or to output placement.
+Neither smoke nor one OFF readiness pass certifies LoRA load/training, long
+contexts, concurrency, hardware parity or a scientific result. Original five
+A100 science failures remain missing, not repaired or zero-scoring experiments.
+
+Sources: [coordination](../../research_loop/COORDINATION.md) SEQ147 binds smoke
+archive `d5430f9a7a7f914d237352e7ce8bbb5072a760bc4b668b2e7ff69d7d64645da0`;
+[long-root OFF failure](receipts_20260912/astra_a100_native_readiness_failure_20260913.md), SHA256 `6969920bb14f9b0b23e0c23f235456a9ddc8f41dfa8323249b1e8c6929845422`.
+SEQ150 inspection `gpu_artifacts_local/a100_native_readiness_20260913_attempt2/inspection.md`, SHA256 `73cdc84d53158781122102f494d722104cc3aae16011f00d990ac4a9c2cb240a`;
+verification at the same directory's `verification.json`, SHA256 `aed4d4641d8f880046eb2e46d8d52136287ebd37c1a175fb902e631eb0cced60`;
+archive SHA256 `c2ba707c2bd0cda768665b38d240628d739417e7788f32176d31e857a3b64558`.
+These are private ignored artifacts, not published logs; the manuscript editor
+reads existing inspection/verification only, without native access or new model hashes.
+
+## C87 — SEQ151: high-seed2 HF discrimination, independent analysis pending
+
+Saved checkpoint-specific diagnostic,192teacher-forced candidate forwards,
+zero updates; all three states retained. First/full TRAIN counts OFF8/8,
+fit1 9/11,fit2PROMOTE15/15 out of16; READOUT8/8,7/9,8/8. Fit1 first ties3in
+each view; OFF/fit2 first ties0; all full ties0. Fit2 TRAIN old8/8,new7/8 versus
+READOUT old4/8,new4/8. This is stronger keyed candidate discrimination at this
+checkpoint, with a prompt-dependent gap, not demonstrated pure access failure.
+Unequal12/14-token lengths, teacher forcing and candidate restriction persist.
+Native greedy READOUT remains8/16; native greedy exact-TRAIN is unmeasured.
+Checkpoint motivation from inspected low loss is exploratory, not confirmation.
+C78's earlier checkpoint and ties remain separate historical evidence.
+
+Source: [archived high-seed2 report](receipts_20260912/astra_l2_access_high_seed2_report_20260913.json), SHA256
+`9cb95809b5ff658c45e39a21a522433d666b2696af8feda698ef2d951604346b`;
+[prospective protocol](ASTRA_SEED2_HIGH_ACCESS_PROTOCOL_2026-09-13.md), SHA256 `be6edc7ae575f8b846b20a81c7d91dbacdee4273fb089f931acaf523ce4e75c4`.
+Independent `/tmp/astra_l2_high_seed2_independent_analysis_20260913.md` is
+**PENDING**, not used as evidence. Native-greedy probe is development only.
+No new fit, native-generation equivalence, general G3, clean-lineage, parenting,
+H1/H2, mechanism freeze or completed mission is asserted. Collaborator UNSENT.

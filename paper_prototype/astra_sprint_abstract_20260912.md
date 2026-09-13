@@ -1,21 +1,32 @@
 # FIRST SPRINT DRAFT — companion abstract
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ143 retains both positive and negative findings.
+This evidence cut through SEQ151 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current evidence through SEQ143 — C79–C82; ongoing first draft.**
+**Current evidence through SEQ151 — C83–C87; ongoing first draft.**
+Through SEQ151, all 24 authored Level1 cells are complete, with three canary
+regressions in the second roster. Actual-record v2 executes actions and yields
+source-faithful records under an external prompt scaffold with mandatory priors;
+this is state-dependent experience formation, not a learned closed loop. Separate
+high-LR seed0 recovery has zero observed treatment contrasts. HF high-seed2
+forced TRAIN15/16 versus READOUT8/16 does not supply native greedy TRAIN accuracy.
+Actual-memory writing/readback and native-greedy testing remain development only;
+HF independent analysis is pending; archived A100 short-root OFF readiness passes.
+Historical pending statements below describe their named cuts, not current status.
+
+**Historical evidence through SEQ143 — C79–C82.**
 Three learner seeds per skill show controlled authored Level1 acquisition:
 prediction, goal completion, contradiction and update judgement each reach
 48/48 held content and strict, from OFF content 22/32/17/8 respectively;
 post-fit canaries are 12/12 throughout. This is positive component evidence,
 not a matched trained parenting comparison or general reasoning qualification.
 Contrastive practice has a small valid-field advantage over PLAIN but fails its
-frozen screen. The original two completed low/high-LR seed pairs have null
-endpoints; the low seed0 recovery is separate, not an imputed original success.
+frozen screen. The original two completed low/high-LR seed pairs have zero observed treatment
+contrasts; the low seed0 recovery is separate, not an imputed original success.
 A100 warm-up failures are missing scientific endpoints, not zero scores.
 **PENDING at this cut:** high-LR seed0 recovery, newer perception/reflection and
 repetition/meta-reflection roster results, and actual-record formation/transfer.
@@ -344,7 +355,7 @@ cases remain unrequested; no G3, parenting, child sleep, H1/H2, clean lineage,
 novel-fact transfer or substrate freeze follows. Model origin remains
 `UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred. Collaborator **UNSENT**.
 
-Internal staging only; the canonical abstract now includes the bounded update through SEQ143 while preserving its historical text. H1/H2 remain the proposed
+Internal staging only; the canonical abstract now includes the bounded update through SEQ151 while preserving its historical text. H1/H2 remain the proposed
 developmental thesis, not established outcomes.
 
 ## Abstract
@@ -378,7 +389,7 @@ vLLM greedy generation. This is neither no learning nor a pure access failure,
 and does not establish parenting, clean ancestry, general G1 or a mechanism
 freeze. The research question remains open.
 
-Through SEQ-143, four standalone authored Level1 skills each reach 48/48 held
+At the historical SEQ-143 cut, four standalone authored Level1 skills each reach 48/48 held
 content and strict accuracy in all three learner seeds, from OFF content counts
 22, 32, 17 and 8 for prediction, goal completion, contradiction and update
 judgement; all post-fit canaries score 12/12. These controlled component gains
@@ -395,7 +406,18 @@ and actual-record transfer results remain pending. The learning-flywheel thesis
 and H1/H2 remain open; these results neither complete the mission nor freeze a
 mechanism.
 
-## Current result-table companion — C79–C82
+At the SEQ-151 cut, all 24 standalone authored Level1 cells are complete;
+the second roster improves held content but incurs three canary regressions.
+Prompt-scaffolded actual-record formation yields OFF7/16 versus14/16,8/16,8/16
+source-faithful records from the same three perception learners, with mandatory
+priors and state-varying actions and histories. This is not matched parenting or
+a learned closed loop. Separate high-LR seed0 recovery also has zero observed
+treatment contrasts. A checkpoint-specific HF diagnostic gives TRAIN15/16 and
+READOUT8/16 by both first-divergent-token and full likelihood, not native greedy accuracy;
+independent analysis remains pending. Actual-memory writing/readback remains
+protocol/CPU-runner development, not a result. H1/H2 and the mission remain open.
+
+## Historical SEQ143 result-table companion — C79–C82
 
 | Level1 skill (each learner seed0/1/2) | Held content /48 OFF→post | Held strict /48 | Canary C/S /12 | Content W/L |
 | --- | ---: | ---: | ---: | ---: |

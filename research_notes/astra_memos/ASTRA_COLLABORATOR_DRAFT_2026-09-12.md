@@ -1,13 +1,49 @@
 # DRAFT ONLY — unsent collaborator update
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ143 retains both positive and negative findings.
+This evidence cut through SEQ151 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**UNSENT — SEQ137–143 / C79–C82 update for Main's review.**
+**Current evidence through SEQ151 — C83–C87; ongoing first draft.**
+Through SEQ151, all 24 authored Level1 cells are complete, with three canary
+regressions in the second roster. Actual-record v2 executes actions and yields
+source-faithful records under an external prompt scaffold with mandatory priors;
+this is state-dependent experience formation, not a learned closed loop. Separate
+high-LR seed0 recovery has zero observed treatment contrasts. HF high-seed2
+forced TRAIN15/16 versus READOUT8/16 does not supply native greedy TRAIN accuracy.
+Actual-memory writing/readback and native-greedy testing remain development only;
+HF independent analysis is pending; archived A100 short-root OFF readiness passes.
+Historical pending statements below describe their named cuts, not current status.
+
+**UNSENT — bounded SEQ144–151 / C83–C87 update for Main's review.**
+
+All24standalone authored cells now complete across eight skills. Second-roster
+held content reaches perception47/48,48/48,48/48 and48/48 for each repetition,
+self-reflection and meta-reflection learner, but three canary losses remain:
+repetition0/1 copy truncations and meta-reflection2 malformed arithmetic JSON.
+These shared-material, three-learner results are not matched parenting controls.
+
+Actual v1 never executed an action. V2's external ACT/two-line/no-fence prompt
+bundle and mandatory prior enable16executions/16records per state; eligible
+OFF/perception0/1/2 is7/14/8/8 out of16, strict0/6/0/0. Actions, priors, outcomes
+and histories differ by state. This is useful scaffolded experience formation,
+not learned closed-loop improvement; preserve all three learners and27rejections.
+Actual-memory writing/readback remains prospective protocol/CPU development.
+
+High-LRseed0 recovery separately completes with zero observed treatment contrasts;
+it does not overwrite original aborts. High-seed2 HF forced TRAIN is15/16 by
+first/full likelihood while READOUT remains8/16; native greedy TRAIN is unmeasured
+and independent stored-evidence analysis pending. Stronger checkpoint-specific
+forced discrimination does not establish full-vocabulary success or pure access
+failure. A100 JIT pass, long-root IPC failure and archive-verified short-root
+OFF pass remain infrastructure-only:1load/1generation, not training or parity.
+[C83–C87](ASTRA_PAPER_CLAIM_MAP_2026-09-12.md) bind sources. H1/H2, clean-lineage,
+general G3, freeze and mission completion remain unclaimed. **UNSENT.**
+
+**Historical UNSENT — SEQ137–143 / C79–C82 update for Main's review.**
 
 We now have a positive, controlled authored-skill result worth carrying forward:
 all three learner seeds in each of four Level1 skills reach 48/48 held content
