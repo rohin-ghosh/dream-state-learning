@@ -17142,3 +17142,25 @@ analysis watcher266243 will reduce their completed8-stage results, with no
 pooled-three-seed claim before the remaining seed completes. It uses the
 previously terminal-tested immutable analysis source, not mutable checkout
 code. No additional resource exception or model retry has been introduced.
+
+## [Builder] 2026-09-13T20:47Z — completed seed1/2 evidence preserved; seed0 rerun validation pending
+
+Brief node2 reconciliation at20:42UTC found completed.json for both attempt5
+seed1/2 roots. CPU-only watcher266243 completed individual raw reductions with
+VALIDATED_NOT_PROMOTED, not a three-seed scientific result. Their receipt FILE
+SHA256s are respectively5fda6c97c76324a6b105037ca36515859b474f681de94dfeb9cbf6c91ba3e3b5
+and0847835edbce4fe8f41c53e2a75473e92af19b0304685ef88c4d0a1bfa42c0f1.
+Main copied both full native roots/reductions and the analysis directory/runner
+to gpu_artifacts_local/pcfl_v2_seed12_completed_20260913_attempt1/evidence.tar.
+Node2/VM SHA256s match: c48ff8fd6a0191e75a7aa612cf2cb2dee26784c8c609d70f0c67ebff3b52ac71;
+archive lists1737members. Symlinked immutable science sources remain separately
+preserved; no standalone-model/environment recovery claim follows.
+
+Russell/Hubble finish the exact prospective seed0attempt6 failure parser and
+reducer tests; Peirce reviews their stable bytes/receipts. No manual continuation
+or carried checkpoint is eligible. Native attempt6 has not been prepared or
+launched. Newton separately checks reusable M-COMBINE source/CPU prerequisites
+without edits/model calls. Bacon completed the bounded primary-source SEAL
+claim-boundary note; no project result follows from that literature check.
+Simple current hygiene and final-C11-only formal-guard timing remain unchanged.
+No new GPU science run, kill, curl/wget, or approval request this reconciliation.

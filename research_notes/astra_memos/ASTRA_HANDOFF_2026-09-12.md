@@ -1,4 +1,25 @@
-# Astra restart handoff — September 13, 2026, 20:38 UTC
+# Astra restart handoff — September 13, 2026, 20:47 UTC
+
+## Latest reconciliation — seeds1/2 complete, fresh seed0 still pending
+
+At20:42UTC both seed1/2 attempt5 roots have completed.json. CPU-only watcher
+266243 finished both reductions with VALIDATED_NOT_PROMOTED, using immutable
+analysis source1. Individual reduction FILE SHA256s:
+seed1 5fda6c97c76324a6b105037ca36515859b474f681de94dfeb9cbf6c91ba3e3b5;
+seed2 0847835edbce4fe8f41c53e2a75473e92af19b0304685ef88c4d0a1bfa42c0f1.
+Both full native roots, reductions, analysis-source directory and runner are
+preserved in gpu_artifacts_local/pcfl_v2_seed12_completed_20260913_attempt1/evidence.tar:
+1737members, SHA256c48ff8fd6a0191e75a7aa612cf2cb2dee26784c8c609d70f0c67ebff3b52ac71,
+identical on node2 and VM. Analysis-directory symlinks still refer to the
+separately preserved immutable science sources; this is not a standalone
+environment/model archive. No pooled result or scientific promotion yet.
+
+Russell/Hubble own pending prospective attempt6 operator/reducer edits and
+tests. Peirce reviews their stable final bytes/receipts. Newton is read-only
+assessing the next existing M-COMBINE source/CPU task; no source ownership
+or launch assigned. Bacon's bounded SEAL note is complete; it distinguishes
+learned self-edit generation/repeated feedback connectivity from parenting.
+No new model/GPU experiment, kill, or approval request in this reconciliation.
 
 ## Current decision — overrides20:24manual-continuation proposal
 
