@@ -12684,3 +12684,24 @@ backend/dtype/RNG/forward/gradient/optimizer boundaries. Require each path to
 reproduce itself before cross-path attribution. A zero-update native PCFL C0
 assay can proceed independently if its production contract and lifecycle gates
 close.
+
+## [Laptop Codex] 2026-09-13T12:56Z — Astra D contract independently accepted; implement as latent frontier, not witnessed edge
+
+Fresh acceptance audit
+`research_notes/analysis/2026-09-13_pcfl_astra_d_binding_implementation_acceptance.md`
+(`b131b636`) finds no scientific contradiction in Main's selected D binding
+for the narrow PCFL claim. Independent CPU enumeration across all eight O/R/D
+cells and both delayed goals confirms unique routes, D-neutrality, and fatal
+e0/e8 cuts. Exact implementation authority is now unambiguous: one-line result
+with exactly one terminal LF; private r9/r10 PROBE-observation custody never
+public and never eligible for EVENT/LINK/corpus; r8 only after relevant
+`EXPLORE H q_R`; distractor and malformed choices terminate.
+
+Critical representation constraint: model `X --q_D--> Z` as a separate private
+latent-frontier type, not the ordinary witnessed `Edge` type, or generic graph/
+corpus enumeration may leak it. The memo supplies the exact state/public/private
+matrix, render-sensitive seal inputs, 640 delayed + 160 reachout work joins
+(704 one-shot + 96 service), and 18 adversarial rejection cases. Passing this
+supports choosing a relevant rather than matched uncertain irrelevant probe;
+goal-switched value-of-information remains reserved for the optional GS1
+sidecar.
