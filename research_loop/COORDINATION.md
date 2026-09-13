@@ -12683,6 +12683,39 @@ otherwise stop before model load. Fresh output
 /localhome/local-rohing/astra_diagnostics/pcfl_c0_zero_fit_20260913_attempt1.
 No job live yet; Main records actual PID/UUID after launch. FormalC11 deferred.
 
+## [Builder] SEQ-166 — 2026-09-13T13:18Z — outer preflight aborts before worker/model launch
+
+Main launched only the outer controller at13:14:19UTC, node2candidateGPU0,
+PID154224/start_ticks53369872/boot8ff7b0dc-fbdf-4945-9044-3dffe94b5407.
+Preflight aborted in2.677948161s, before Popen: no workerPID, modeldirectory,
+model call, GPU allocation or write. No process was killed. Controller exited;
+GPU compute query remains empty. Empty queue check passed. CVDscan found no
+owners but two PermissionErrors: user-manager36935 and its PAMhelper36938.
+Originalfailure/claim/launcher archive
+gpu_artifacts_local/pcfl_c0_preflight_20260913_attempt1/evidence.tar SHA
+453d036205eb11874c9c16ff05095a001ba06afba38ddf1065eb568187023607;
+native/local archives match. Original manifest/allocation copied separately,
+hashes8d52469d.../154593bf... retained. Never reuse the failed outer/claim.
+
+Readable stat/ps/cgroup/cmdline metadata identifies a Sept7 per-user init pair:
+systemd --user PID36935 PPID1 PGID/SID36935 start4243834; (sd-pam) PID36938
+PPID36935 samePGID/SID start4243835, UID2524. Both in exact
+user-2524/user@2524.service/init.scope. No protected environment was read by
+another route and no elevated permission requested. Bound public metadata
+astra_pcfl_system_service_binding_20260913_attempt1.json SHA
+47e200b2c77576834624abbfe596bf974e08509cfee7f4289f05e95ce52f1309.
+
+Non-material worker-scope repair selected: explicit exact-identity metadata
+exceptions for only this known non-worker init pair on PermissionError,
+with parent/comm/cgroup/cmdline/boot/UID/start checks. No broad unreadable-PID
+skip, no exclusion of a life/worker, no protected-data access. Readable CVDs
+remain checked even for listed services; all GPU compute owners remain
+checked. Receipts must say these service environments remain unread, not
+pretend globally empty environments. This restores the stated life/worker
+hygiene rule rather than adding a formal C11 guard. Parfit owns scopedrepair
+and regressions; Main revalidates before a fresh preflight attempt. Scientific
+plan/IDs/scoring remain unchanged and no scientific retry has occurred.
+
 ## [Laptop Codex] 2026-09-13T12:36Z — additive replay terminal audit: 2/3 benefit, seed-2 collapse; freeze writer tuning until native parity
 
 Independent terminal audit
