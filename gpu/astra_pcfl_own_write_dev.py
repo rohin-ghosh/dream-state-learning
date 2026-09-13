@@ -16,7 +16,8 @@ from organism_v6 import pcfl_vertical_formation_plan as planner
 
 
 SCHEMA = "pcfl.own_write_old_formation.v1"
-POLICY = "public_session_history_whole_response_stop_only_format_scaffold_v3"
+POLICY = "public_session_history_whole_response_stop_only_format_public_pair_v4"
+LINK_PAIR_POLICY = "requested_preselected_already_admitted_event_handles_v1"
 LF_COMMITMENT_RULE = (
     "End your response with exactly one LF (U+000A) after the last identifier. "
     "Emit the actual newline character, not the literal characters backslash-n (\\n). "
@@ -24,7 +25,7 @@ LF_COMMITMENT_RULE = (
 )
 KINDS = [kind for _ in range(8) for kind in ("EXPLORE", "EVENT")] + ["LINK"] * 4
 CONFIG_FIELDS = {"schema", "policy", "source_pins", "planner", "actor_config",
-                 "seed", "limits", "slots", "format_scaffold", "sha256"}
+                 "seed", "limits", "slots", "format_scaffold", "link_pair_policy", "sha256"}
 
 
 class FormationError(ValueError):
@@ -33,6 +34,15 @@ class FormationError(ValueError):
 
 def commitment_prompt(prompt):
     return prompt + "\n" + LF_COMMITMENT_RULE
+
+
+def requested_link_prompt(prompt, pair, public_event_handles):
+    require(type(pair) is list and len(pair) == 2 and pair[0] != pair[1]
+            and all(handle in public_event_handles for handle in pair),
+            "requested pair must already be admitted public events")
+    return commitment_prompt(prompt + "\nFor this controlled recording task, use the already-observed event addresses "
+                             + pair[0] + " then " + pair[1] + " in that order. "
+                             "Derive the shared node and evidence references only from your actual public EVENT commitments.")
 
 
 def require(condition, message):
@@ -99,6 +109,7 @@ def build_config(cell, actions, link_choices, *, actor_config, seed, limits):
     slots = [{"id": f"old/formation/{index:02d}", "kind": kind}
              for index, kind in enumerate(KINDS)]
     return seal(dict(schema=SCHEMA + "/config", policy=POLICY, source_pins=pins,
+                     link_pair_policy=LINK_PAIR_POLICY,
                      format_scaffold={"policy": lf_api.POLICY, "regex": lf_api.REGEX,
                                       "applies_to": ["EVENT", "LINK"], "readout": "UNCONSTRAINED"},
                      planner=plan, actor_config=actor_config, seed=seed,
@@ -257,7 +268,7 @@ def _form(config, acquire):
             elif kind == "EVENT":
                 prompt = commitment_prompt(latest["public"] + session.event_prompt(latest["receipt"]))
             else:
-                prompt = commitment_prompt(session.link_prompt())
+                prompt = requested_link_prompt(session.link_prompt(), plan["link_choices"][index - 16], events)
             history.append({"role": "user", "content": prompt})
             request = {"id": slot["id"], "messages": detached(history),
                        "seed": config["seed"], "mount": "C0"}
@@ -328,6 +339,7 @@ def _form(config, acquire):
             failure = {"slot": None, "type": type(error).__name__, "message": str(error)}
     return seal({"schema": SCHEMA + "/report", "config_sha256": config["sha256"],
                  "format_scaffold": detached(config["format_scaffold"]),
+                 "link_pair_policy": config["link_pair_policy"],
                  "status": "COMPLETE" if failure is None else "FORMATION_FAILED",
                  "slots": slots, "failure": failure, "world_receipts": core.detached(session.receipts),
                  "admissions": admissions, "formation_binding": binding, "writer_payload": payload,

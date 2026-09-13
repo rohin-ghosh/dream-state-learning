@@ -100,3 +100,20 @@ formation remains necessary for writing; if formation fails, fit stays blocked.
 Any future gain is acquisition from this format-scaffolded own-event bank,
 not causal evidence that constrained decoding improved learning. Original
 unconstrained failures are development history, not matched randomized controls.
+
+## Prospective public pair-request diagnostic — 2026-09-13 14:42 UTC
+
+SEQ171 formed all eight exact EVENTs but its first LINK selected a different
+valid experienced chain from the privately predeclared pair. The new scoped
+prompt explicitly requests each originally selected pair of event handles.
+Both handles must already occur in the child's admitted public EVENTs; no new
+identifier, shared-node value, receipt reference, expected row or future goal
+is supplied. The child must recover those other fields from its own experience.
+Structural measurement uses the same prompt helper. All actions, link pairs,
+admission, format scaffold, schedules, recipes and cold readouts are unchanged.
+
+This is an explicit controlled recording curriculum, not autonomous link
+discovery. The original semantic LINK was valid but did not meet the hidden
+pair selection; neither it nor its failed bank is repaired or trained. Use a
+fresh source/preparation/manifest/attempt and record the public pair policy in
+formation config/report carried into any fit. No full-assay gate is promoted.

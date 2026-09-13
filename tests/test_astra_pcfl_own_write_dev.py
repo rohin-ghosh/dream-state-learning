@@ -195,7 +195,7 @@ class OwnFormationTests(unittest.TestCase):
                 "Emit the actual newline character, not the literal characters backslash-n (\\n). "
                 "Do not add a blank line.")
         self.assertEqual(driver.LF_COMMITMENT_RULE, rule)
-        self.assertEqual(self.config["policy"], "public_session_history_whole_response_stop_only_format_scaffold_v3")
+        self.assertEqual(self.config["policy"], "public_session_history_whole_response_stop_only_format_public_pair_v4")
         for index, slot in enumerate(report["slots"]):
             prompt = slot["attempt"]["request"]["messages"][-1]["content"]
             if slot["kind"] == "EXPLORE":
@@ -209,7 +209,10 @@ class OwnFormationTests(unittest.TestCase):
                 else:
                     original = core.LINK_TEMPLATE.format(
                         FRESH_LINK_ID=self.config["planner"]["links"][index - 16]["link_handle"])
-                self.assertEqual(prompt, original + "\n" + rule)
+                expected_prompt = original + "\n" + rule if slot["kind"] == "EVENT" else driver.requested_link_prompt(
+                    original, self.config["planner"]["link_choices"][index - 16],
+                    [opportunity["event_handle"] for opportunity in self.config["planner"]["opportunities"]])
+                self.assertEqual(prompt, expected_prompt)
                 self.assertEqual(prompt.count(rule), 1)
         self.assertEqual(sum(slot["kind"] != "EXPLORE" for slot in report["slots"]), 12)
         self.assertEqual([row["raw"] for row in report["writer_payload"]["rows"]], self.event_raw + self.link_raw)
@@ -221,6 +224,20 @@ class OwnFormationTests(unittest.TestCase):
         self.assertEqual(report["counts"]["accepted_events"], 0)
         self.assertIn("own executed receipt", report["admissions"][0]["error"])
         self.assert_replay(report)
+
+    def test_requested_pairs_disclose_only_existing_public_handles(self):
+        handles = [opportunity["event_handle"] for opportunity in self.config["planner"]["opportunities"]]
+        pair = self.config["planner"]["link_choices"][0]
+        prompt = driver.requested_link_prompt("PUBLIC GRAMMAR", pair, handles)
+        self.assertIn(pair[0] + " then " + pair[1], prompt)
+        for fields in [core.parse_event_line(raw) for raw in self.event_raw]:
+            for key in ("source", "destination", "receipt", "port"):
+                self.assertNotIn(fields[key], prompt)
+        with self.assertRaisesRegex(driver.FormationError, "already be admitted"):
+            driver.requested_link_prompt("PUBLIC GRAMMAR", pair, handles[1:])
+        with self.assertRaisesRegex(driver.FormationError, "already be admitted"):
+            driver.requested_link_prompt("PUBLIC GRAMMAR", [pair[0], pair[0]], handles)
+        self.assertEqual(self.config["link_pair_policy"], driver.LINK_PAIR_POLICY)
 
     def test_unconstrained_actor_cannot_claim_format_scaffold(self):
         session = ScriptedSession(self.fixture.model, self.fixture.clock, self.outputs)

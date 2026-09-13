@@ -13545,6 +13545,47 @@ been closed by tested7412f812 and actual detached cleanup inSEQ169/170;
 original failed C0 finalization is not repaired. Formation success still only
 permits narrow controlled-record acquisition, not autonomous exploration.
 
+## [Builder] SEQ-171 — 2026-09-13T14:42Z — eight exact EVENTs; valid LINK fails undisclosed pair selection
+
+Format-scaffolded controller175269/worker175283 (PGID/SID175283,
+start_ticks53873835) completed72.058s, exit1. All8 real actions and8 EVENTs
+passed; first LINK had exact LF syntax and world-grounded contents but chose
+the valid(e3,e7) chain rather than privately preselected(e0,e1).17actual calls,
+3uncalled,zero fits/updates/readouts. Failure `child LINK differs from
+pre-output choice` is a controlled-path mismatch, not an invalid semantic LINK.
+Independent offline semantic check accepted its exact raw line using the
+unchanged provenance judge; this does NOT admit it to the failed original bank.
+Actualpair E_B46SKGEBDB/E_NVKV6RDQ27; expected E_BRFFHBSD7R/E_QL4Q3BQTIY.
+
+Original report replays, seale6b87cbbec498482e5f536156e10c020f9d1f40fe07bf10ffc1041b653f91bf4,
+config5db340da5facedb385d2eaa735e4cce02ff8590dc10cfdda621fe42b5c673e2a.
+Natural shutdown/release, no signals, no Main GPU worker remains; same explicit
+init visibility exceptions. Archive verified onVM:
+gpu_artifacts_local/pcfl_own_write_format_20260913_attempt1/evidence.tar,
+SHA256bd6829dfa4e6c0a63f48cf184e28091e12cf9de9a231e0f6cda6672d5133c869.
+
+Next minimal interface correction: explicitly request each already-preselected
+LINK pair using only handles already present in the child's admitted EVENTs.
+Supply no shared node, receipt reference, row, later goal or hidden outcome.
+Preserve original action/pair schedule, strict raw syntax/provenance, LF decoder,
+writer and readout budgets; fresh source/manifest/attempt only. This declares
+the controlled curriculum selection rather than silently scoring it as free
+discovery. It supports neither autonomous link selection nor learned formatting.
+Original3failed attempts remain failed, and no fit uses their incomplete banks.
+
+## [Builder] 2026-09-13T14:44Z — explicit public pair curriculum CPU acceptance
+
+Prospective v4 driver names only each originally selected pair's already
+admitted EVENT handles; it supplies no shared node/receipt/row. Same helper
+used for actual prompts and measurement. Config/report preserve selection
+policy into fit ancestry. Strict alternative-pair rejection is unchanged and
+the original valid alternative remains a failed controlled-path attempt.
+Main formation32/32, command21/21, writer12/12 with2opt-in numerical skips
+PASS; no production numerical code changed since native14/14 receipt above.
+Regressions reject unknown/not-yet-admitted or duplicated handles and assert
+no receipt/source/destination/port fields are introduced by the new instruction.
+No fit/readout yet; tested frozen reducer remains required for those stages.
+
 ### [Laptop Codex] 2026-09-13 — own-write reducer frozen before fit/readout; one-life storage claim only
 
 Prospective readout rule is recorded in

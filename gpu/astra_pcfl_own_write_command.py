@@ -153,7 +153,9 @@ def _measure(plan, schedule, roster, tokenizer):
                          core.RECEIPT_WIRE.format(**opportunity["expected_receipt"]) + opportunity["event_prompt"]),
                      expected[opportunity["event_handle"]])
     for link in plan["links"]:
-        history_turn(formation_api.commitment_prompt(core.LINK_TEMPLATE.format(FRESH_LINK_ID=link["link_handle"])),
+        history_turn(formation_api.requested_link_prompt(
+                         core.LINK_TEMPLATE.format(FRESH_LINK_ID=link["link_handle"]), link["events"],
+                         [opportunity["event_handle"] for opportunity in plan["opportunities"]]),
                      expected[link["link_handle"]])
     prefixes = {}
     for row in roster:
