@@ -52,9 +52,18 @@
   supplied-fact/coexistence ingredient and directional view-robustness result,
   not yet a selective writer: every seed used the same 16 authored facts,
   warm-started adapters, and an old behavior explicitly rehearsed in every
-  fit. The bounded sequential OLD/NEW allocation diagnostic is now running;
-  it tests retention across two writes, not endogenous DREAM or lifetime
-  learning.
+  fit. A prospectively interpreted sequential OLD/NEW allocation diagnostic
+  then completed at one seed. After two successive writes, replay retained
+  `64/64` old-bank exact/development decisions and acquired the newest bank at
+  `32/32`; no-replay retained `25/64` old-bank decisions while also acquiring
+  the newest bank at `32/32`. Arithmetic remained `32/32` in every state, and
+  an independent recount of all 640 raw calls found no invalid responses,
+  truncations, identity changes, or stored-reducer discrepancies. This is a
+  useful fixed-total-budget replay-allocation result, not a causal replay
+  effect: current-new dose was 20 presentations/fact with replay versus 40
+  without, all facts were authored, and only one warm-started lineage ran.
+  Use replay provisionally in Level-1 birth; do not call this endogenous DREAM,
+  general sequential stability, or lifetime learning.
 - **Mechanism:** v3 preserves a credible six-fit skeleton: crossed authentic
   source events, evidence-indicated child pair selection, source/link
   derangements, two truthful outcome carriers, old+pad control, typed reads,
@@ -94,20 +103,28 @@
 
 ## Critical execution order
 
-1. Prospectively bind and pass or falsify the four-fit canonical semantic W0;
-   classify storage, extraction, and locality separately rather than starting
-   another broad hyperparameter sweep.
-2. Pass one old/new cumulative coexistence canary.
-3. Close M-core v4 under fresh review and CPU/exact text, then run the two LoRA
-   roots S1-first: 6 S1 fits, followed by 6 S2 fits only if both roots pass.
-   The maximum remains 48 DEV plus 96 confirmation fits. Budget only from
-   measured exact-deck fit time plus measured inference/action/reset overhead;
-   the provisional `28--60` A40-hour interval is retired.
-4. Qualify one actually useful visible lesson against matched sham and
-   no-teacher before any parenting-derived fit.
-5. Raise clean childhood roots only after one-SLEEP parent-deleted persistence
-   and adult-extension gates pass; then run the five deployment branches on
-   every independent root.
+1. Run the prospectively closed complementary Q0/locality diagnostic as the
+   noncompensatory conditional-behavior slice of Level-1 birth. It must acquire
+   both opposite maps on exact and held surfaces while preserving native action,
+   copy, arithmetic, and wrong-root behavior. Do not average easier fact or
+   habit cells over a failed conditional policy.
+2. If Q0 passes, build one authored birth root against an equal-dose active
+   routine/deranged control and OFF, using the now-supported varied views,
+   distinct-source interleaving, and replay. Preserve component-level gates;
+   direct adherence is necessary but is not learning-to-learn evidence.
+3. Immediately test that birth with one small, birth-disjoint Level-2 sequence:
+   identical teaching, feedback, compiler, and dose across birth arms, measured
+   before, during, and after parent/context deletion. The primary feasibility
+   effect is the difference in pre/post learning gains; add promote-versus-
+   shadow if claiming that SLEEP caused persistence.
+4. Finish the candidate-free zero-fit M-core closure in parallel. Only after
+   its public/scorer/compiler boundaries and all exact roots pass should trained
+   M-core roots run; supplied answer rows or candidate-bearing adapter reads do
+   not qualify connected-memory traversal.
+5. Scale independent birth/childhood roots only after conditional selectivity,
+   interface preservation, and the Level-2 learning delta point the same way.
+   Then run the clean lifetime branches and the matched strong textual-memory
+   baseline on every root.
 6. Run semantic rate--distortion only after connected utility; compression is
    not an upstream gate.
 

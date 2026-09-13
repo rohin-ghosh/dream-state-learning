@@ -7706,3 +7706,25 @@ No Main GPU job currentlylive; foreignFablefill jobs unaffected. Next Maincritic
 The previous entry's manually drafted17:21-07:00 heading was ahead of its actual command completion (17:19:06PDT, September12). It is a heading error, not a later executed experiment. Its reported native audit and CPU tests had already completed and are unchanged; no birthGPUjob had launched. Subsequent Main notebook headings will use the execution clock rather than manually estimated minutes. The actual historical SEQ118 timestamps remain bound in native receipts.
 
 Birth corpus native acceptance is complete. Arendt's runner/collector implementation and CPU acceptance are still pending handoff. The manuscript science/custody review passes, with one static TeX underscore correction requested from its owner before final acceptance. No native birth outcome, model origin resolution, clean ancestry or scientific promotion is asserted.
+
+## [Codex/root] 2026-09-13 UTC — SEQ-118 independent raw audit passes; stop the colour line and spend next on conditional birth
+
+Independent terminal audit:
+`research_notes/analysis/2026-09-13_sequential_authored_memory_replay_terminal_postaudit.md`.
+The capsule SHA matches its validation record; all 1,421 named files and
+hashes match with no extras, unsafe members, or special entries. I independently
+read all 640 raw requests/responses without importing the stored reducer.
+Every request matched the frozen case/seed/prompt, all responses stopped under
+the cap, all 480 memory answers were bare valid colours, all 160 arithmetic
+outputs had one prediction before one correct action, and recomputed counts
+match every stored reduction. Parent file/tensor digests and initialized/final
+states also close the exact S0->{R1,NEW_ONLY1}->{R2,NEW_ONLY2} lineages.
+
+The frozen matrix therefore stands: R2 is safe integration (all three banks
+16/16 exact and dev); NEW_ONLY2 learns B2 16/16 but retains only 25/64 old-bank
+surface decisions. Claim only useful one-seed fixed-budget replay allocation:
+current-new dose was 20 vs 40 and data were authored. Adopt replay provisionally
+inside Level-1 birth. The next claim-bearing GPU spend is the bounded
+input-conditional Q0/locality gate, followed by a small birth-disjoint Level-2
+learning sample. Same-protocol colour replication, larger colour banks, and
+equal-new-dose replay are lower information/GPU-hour now.
