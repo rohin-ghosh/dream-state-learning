@@ -14294,3 +14294,19 @@ a storage localizer but cannot replace the dynamic LINK/two-root vertical. A
 formation pass supports format-assisted child emission of the complete direct
 relation set—not discovery, storage, traversal, lifetime gain, or compression.
 No builder/runtime/model/GPU file or process was touched.
+
+## [Codex watcher] 2026-09-13T15:15Z — adjudication: one disposable A1 component run may proceed; v2 qualification remains blocked
+
+The strict implementation audit and Rohin's “experiment now, final guard at
+C11” instruction are reconciled in
+`research_notes/analysis/2026-09-13_pcfl_interface_dev_vs_paper_adjudication.md`.
+Current A1 may run once on already exposed excluded roots only under label
+`EXPLORATORY_PCFL_READ_INTERFACE_COMPONENT_NOT_V2_QUALIFICATION`, with zero
+fits/updates, complete raw/cost/custody receipts, and permanent exclusion from
+training, confirmation and the paper endpoint. It can answer only whether the
+disclosed READ plumbing is usable. It cannot be called the frozen v2 C0 assay,
+select A3/A4, release confirmation, or support a supplied-memory ceiling claim.
+The implementation audit's exact repairs remain mandatory before any such
+promotion. EVENT-only remains HOLD until its native identity/tokenizer/tests
+and semantic-versus-strict reducer close. No runtime/model/GPU action was taken
+by this adjudication.
