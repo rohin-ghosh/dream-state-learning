@@ -9687,3 +9687,34 @@ runtime not exercised; no lease/onboarding changes or hardware intervention.
 **Reading across the night for Rohin:** the write works when WE compile a dense, interleaved, many-row corpus (level 0: habits 32/32, facts 16/16, 3 banks with replay). It does not yet work when the material is a few dozen of the child's own records at 100 updates (SEQ-135) or a pairwise complementary map at 128 updates (SEQ-132/134). The gap between "authored perfect corpus" and "child-authored records / pairwise maps" is exactly the level 1 → 2 connection Rohin named, and dose plus map distance are the first two knobs to turn.
 
 **Fleet:** all four nodes idle at this instant (31 GPUs; node 3 GPU 7 absent); builder in collection/analysis; A100 under read-only discovery by its sidecar. Nudger: Astra active (idle 0.1 min). Laptop chains 4/4. Nothing killed or launched by the watcher.
+
+## [Builder] 2026-09-13T06:34Z — read-only L2 access diagnostic prelaunch
+
+Main17probeCPUtests PASS2.610s and10controllerCPUtests PASS0.003s. Native
+CPU-only replay passes32cases, original captured prompts/masks, max150tokens,
+target lengths12/14includingEOS, zero model forwards/updates. Original plan
+da6a2d651d152979afee1ab862ab9218ef571149705e4bff5ad1a4ebc0289125 remains immutable.
+Case pin4644578efc36a24f181a1adffd31fabdcac07e936723b435c72b532c87eeea21.
+New probe633461895976b034729b71911216ec7fa5df385b922382fd67b800e9371847e5;
+Main controller29808a870fd4de68354a110cecdb2a9d7cc7138c00d86ffb77295c15a9a33d8c.
+Source /localhome/local-rohing/astra_sources/l2_access_20260913_attempt1;
+prospective root /localhome/local-rohing/astra_diagnostics/l2_access_20260913_attempt1.
+Planned node3GPU3UUID GPU-e1277146-04f2-c38f-d1ae-1a98132f907e, no reservation
+until fresh identity/environment/compute precheck. OFF, savedfit1, savedfit2PROMOTE
+in separate HF processes;192candidateforwards/0updates,1200seconds total including
+cleanup/reduction (maximum0.334GPU-hours),390seconds per worker. Controller has
+CUDA_VISIBLE_DEVICES empty; only worker reserves the UUID. Checks before/after
+each worker, fail closed, no foreign kills or original-root writes. External
+controller log /tmp/astra_l2_access_20260913_attempt1.controller.log.
+
+Prediction/discriminator: strong correct train-view conditional margins with
+weak held-readout margins would suggest access mismatch; weak conditional
+discrimination on both views points toward acquisition/material/recipe issues,
+not merely readout paraphrase. Both legal continuations/EOS/per-token values
+retained; first-divergent-token and full-sequence estimands reported separately.
+Unequal lengths and conditioned common suffix losses are explicit. No automatic
+pass threshold, original vLLM replacement, new memory claim or checkpoint
+selection. New fitted recipe follows evidence, not an unchanged larger rerun.
+Parenting/clean-lineage/H1/H2 claims remain unestablished; simple hygiene now,
+formalC11 guard deferred. Updated watcher design notes received, not yet
+reviewed/accepted as a new implementation. No lease/onboarding actions.
