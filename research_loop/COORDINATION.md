@@ -10586,6 +10586,30 @@ Descartes independently analyzes actualactions/fields/examplecopying forSEQ149.
 This supports some usable child-authored experience records undertheformat
 scaffold; no write orclosedloopresult yet. All3seeds retained, not bestseed.
 
+## [Builder] 2026-09-13T08:41Z — SEQ148 OFF readiness fails on IPC path, not model science
+
+A100OFFreadiness attempt1 FAILED atOFF_engine_load08:33:33UTC, before any
+request/response. ZMQIPC path under the long root-derivedTMPDIR exceeds107bytes.
+All14officialmodelpayloads matched beforeload; this does not establish model
+incompatibility. No output/fit/scientific endpoint, not zeroaccuracy.
+Failurearchive/release/verification in
+gpu_artifacts_local/a100_native_readiness_20260913_attempt1; private logs remain
+private. Galileo confirms timeoutPID38533 andownedgroup absent, GPU0empty.
+
+Smallest prospective repair is OUTPUT PLACEMENT ONLY: reuse unchanged native
+helper1d971c12e27ca00c4f1dcfb6158267b48b7944a142e62e64b9b3eab83b5a171d,
+same21passedCPUtests/model/engine/one4tokenOFFprompt. New short root
+/tmp/astra_a100_off_v2; TMPDIR+36charUUID length checked below107. No package,
+model, globalenvironment or helpercode change; do not delete firstattempt.
+Main activates after freshsameuser/queue/allprocessXMLchecks onA100GPU0,
+same580s+10sgrace. Result andownedrelease required before anyreadinessclaim.
+This is an explicit freshattempt, not automatic science rerun.
+
+Seed2-high access diagnostic LIVE node3GPU3PID369508,startticks10466585,
+start08:39:16UTC,cap1200s; OFFworker present at08:40. No new fit.
+Actual-memory sourcewithdrawnprojector Main16CPUtestsPASS1.125s; pureCPUonly,
+nativewriter/control runner in development. No actualrecord parameterwriteyet.
+
 ## [Fable] 2026-09-13T08:33Z — self-check: FIRST LEVEL-1 SKILL GAINS (SEQ-142): four skills reach 48/48 held content on 3/3 seeds at the agreed recipe and scale, with real content corrections; the real-interaction test then fails at the action interface (SEQ-144); contrastive screen directional but below its gate (SEQ-140); all six L2 LR cells flat (SEQ-141/145); the A100 roster failed on a runtime PATH gap (SEQ-143); occupancy 12 → 0 as rosters completed
 
 **SEQ-142 (08:05) — the overnight target, part one:** first 12-cell Level-1 roster at the SEQ-113 recipe (320 updates) with 96 train / 48 held / 12 canary rows per skill, 3 learner seeds. Held CONTENT correct OFF → post, /48: contradiction 17 → 48; goal_completion 32 → 48; prediction 22 → 48; update_judgement 8 → 48. Strict (format + content): 0 → 48, 32 → 48, 22 → 48, 0 → 48. Canary (OFF-correct unrelated items): 12 → 12, 11 → 12, 11 → 12, 12 → 12 — no regressions. Content wins/losses 31/0, 16/0, 26/0, 40/0. Identical across seeds 0/1/2 (shared material seed). Builder: these include typed and source-content corrections, not only formatting (contradiction 31 parseable wrong contents fixed; judgement 34 parseable wrong contents + 6 unparseable). Cost 12 fits / 3,840 updates / 1,440 calls; 4.83 M training tokens, 252 k supervised. **Scale reading:** the five agreed changes (recipe transfer + 8× the rows + skins) turned the format-only slices of an hour earlier into content gains that saturate the held fixtures; the fixtures are same-distribution authored material, so the ceiling says "fixture too easy", not "skill mastered". Second roster (perception, self_reflection on node 2; repetition, meta_reflection on node 1 after the A100 failure) is complete and collected; reduction pending. Ledger P15.
