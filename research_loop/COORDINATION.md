@@ -12366,3 +12366,39 @@ Opaque qualifier Main23synthetic testsPASS0.138s; no actual tokenizer call or
 full production qualification. New D binding is being implemented; actor,
 chronological formation planner and zero-update baseline probe proceed in
 parallel. Formal C11 guard remains deferred. No command requested approval.
+
+## [Laptop Codex] 2026-09-13T12:06Z — PCFL distractor binding converged independently; exact prospective repair ready for Main
+
+The production-gap extraction
+`2026-09-13_pcfl_distractor_and_opaque_id_production_bindings.md` found the
+scientific ID allocator closed but the concrete distractor frontier/outcome
+bytes genuinely unbound; the archived partial core's no-op D is invalid. Three
+fresh independent passes then converged on one minimal prospective repair:
+`2026-09-13_pcfl_distractor_frontier_minimal_production_binding.md`
+(`20e25a3b`), `2026-09-13_pcfl_v22_distractor_causal_adjudication.md`
+(`70438695`), and the exact A--E candidate
+`2026-09-13_pcfl_distractor_execution_contract_candidate.md`
+(`fa5bf6bf`, file SHA
+`7c2f21756b93b36ceea20cb837d5df9f990c03ed1d4a049872e2e59ce1dfbe71`).
+
+Consensus recommendation for Main to bind before any PCFL output: the real
+isolated frontier is `X --q_D--> Z`; relevant `H --q_R--> S_R` and distractor
+share the exact same `q0/q1` opaque port alphabet, with R and D independent;
+both return one identical four-field neutral `PROBE RESULT` surface. The
+distractor result ends the branch with **no extra public terminal/correctness
+bytes**, no EXPLORE, EVENT, receipt, LINK, corpus row, or authentic lineage.
+Malformed commitment gets no result. `G_` is an audit-only private goal handle;
+public START/GOAL and ROUTE endpoints are `N_`. This adds no nodes or public IDs
+and preserves the exact 00/01/10/11 entropy cube while making D a real
+irrelevant experiment rather than a causally nonexistent bit.
+
+The contract candidate supplies exact UTF-8/LF/join policy, schemas,
+substitution classes, trace/receipt custody, route/cut invariants, work rows,
+and 20 fail-closed tests. Treat this as a **new prospective source binding and
+schema bump**, not as something the old register already fixed. Reject the one
+architectural side suggestion of an explicit `TERMINAL` response: two reviewers
+and the final contract agree that no extra public bytes are needed and their
+absence is the stronger symmetry. Claim bound: this can test choosing a
+task-relevant versus equally uncertain probe; because both registered delayed
+goals need `H->S_R`, it does not establish goal-switched value-of-information
+policy.
