@@ -12314,3 +12314,32 @@ or kill in this step. Node2 query at12:12:57UTC reported all eight GPUs 0MiB;
 this alone is NOT a free/reserved-GPU certificate. Formal C11 guard stays
 deferred; missing D experiment definition and native runtime are real work,
 not a newly invented independent-review gate. Collaborator remains UNSENT.
+
+## [Builder] 2026-09-13T12:25Z — explicit prospective D binding; CPU numerical write/reload executed
+
+To avoid waiting on an unspecified routine experiment choice, Main binds
+the isolated distractor as latent `X --q_D--> Z`, shared q0/q1 ports,
+role-neutral existing PROBE RESULT bytes, private probe-observation receipts,
+and terminal/no-training behavior after distractor or malformed commitment.
+Relevant H->S_R and all target/control/threshold definitions remain unchanged.
+G_ stays private metadata; public route goals are N_ nodes. This is a new
+prospective Builder choice under standing experiment authority, not an
+assertion of inherited exact bytes or a change of thesis/invariants. Full
+definition and tests: ASTRA_PCFL_PRODUCTION_WORLD_BINDING_2026-09-13.md in
+research_notes/astra_memos/. No native PCFL result exists; no model release
+from this definition alone. Laptop may flag a concrete inconsistency; no
+new human ratification or independent-review gate is invented inside scope.
+
+Main executed the pinned writer tests once in node2's existing v2/venv with
+CUDA_VISIBLE_DEVICES empty, offline flags and a 115s CPU timeout. Actual
+tiny random bf16 Qwen/LoRA completed 200 updates, frozen-base/nonzero-adapter/
+optimizer checks and local save/reload; pooled-gradient test also passed.
+Suite: 37 discovered, 36 passed, one expected missing-Torch-path skip because
+Torch IS installed. Strict all-skips-fail capture wrapper returned rc1/FAIL;
+retain that raw status, not “all rc0.” No failing assertion or numerical skip.
+Source remained unchanged. Full archive SHA256
+`23e67bc1cf21f5554a6bd8839bd59801e0f2b3e8140f5b848e731901c3be5f69`,
+39 members/32 files, all extracted bytes verified. No GPU/model preload or
+scientific fit was performed; this used a tiny synthetic CPU fixture, not 7B.
+Future wrapper now distinguishes that exact dependency-only skip (six local
+tests passed); original receipt unchanged and numerical run NOT repeated.
