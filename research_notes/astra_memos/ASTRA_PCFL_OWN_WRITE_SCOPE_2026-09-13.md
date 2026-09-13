@@ -56,3 +56,20 @@ fourteen unused corpus branches to unblock this disposable diagnostic.
 Formal guard completion/enforcement remains reserved for final paper-grade
 C11 as Rohin directed. All native actions receive their own dated launch
 record and preserve existing evidence.
+
+## Prospective LF-disclosure follow-up — 2026-09-13 14:18 UTC
+
+SEQ169's original attempt stops after its first EVENT: correct observed
+identifiers, absent terminal LF, strict rejection, no training. Preserve that
+attempt unchanged. The next scoped version appends an explicit instruction
+to EVENT and LINK prompts to emit exactly one final LF (U+000A), not literal
+backslash-n or an extra blank line. Match structural tokenizer measurements
+to the revised public prompts before generation. EXPLORE prompts and choices,
+world/root/IDs, child-byte admissions, targets, seeds, fitting and readout
+plans remain unchanged. Never append/strip/repair model output in the harness.
+
+This is an interface-disclosure experiment on development material, selected
+after the first failure, not a pristine confirmation or a retroactive pass.
+Use fresh source pins, preparation, manifest and output directories. An
+unsupported or incomplete commitment still blocks fitting. No original
+full-assay parser/gate or thesis invariant changes.

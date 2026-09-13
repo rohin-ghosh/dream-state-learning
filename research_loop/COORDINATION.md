@@ -13357,3 +13357,48 @@ before Popen; actual workerPID is recorded after spawn, no guessed identity.
 01:43Pacific,6h finish margin bound. No unrecognized-process exclusions or
 foreign kills. Main avoids foreground SSH polling during likely completion.
 Natural explicit EngineCore shutdown is used; every failure remains evidence.
+
+## [Builder] SEQ-169 — 2026-09-13T14:18Z — first actual own-formation stops on undisclosed LF requirement
+
+Node2GPU0: controller169634 spawned worker169645, PGID/SID169645,
+start_ticks53726842, UID2524, boot8ff7b0dc-fbdf-4945-9044-3dffe94b5407.
+Worker made exactly2native calls: its EXPLORE matched the sealed first action
+and produced a real public receipt; its first EVENT then failed the unchanged
+strict admission grammar. Twenty planned slots remain recorded,18uncalled.
+Status FORMATION_FAILED, slotold/formation/01, `child EVENT rejected: not exact EVENT`.
+No writer payload, fit, update, parent, or cold readout was produced.
+
+Direct byte diagnosis: the90-byte raw EVENT contains exactly the required
+event/source/port/destination/receipt identifiers. Appending one hypothetical
+LF would equal the91-byte expected wire line, but NO LF was inserted into
+the evidence or any training target. Raw SHA256
+`5a4eaded0470de4324c6248692c2c09c785592fdd75bc5e313ecc8c3f2c95472`;
+expected protocol line SHA256
+`1ed92f10eae3fb3555f84bb1b8dfb11d19d9546c8bce10f3654f109ea65c4dda`.
+Both generations ended `stop`, not truncation. The public EVENT instruction
+required one physical line and no other text but did not explicitly disclose
+the required terminal LF. This is one observed interface mismatch, not a
+learning/retention result or a statistical competence claim.
+
+The original failed formation replays exactly under the frozen driver:
+report seal6df6c8b38a583136262ec5a030c28a986d0ea44898546078ee2d9dd5a8d293df,
+config seal45079977995419b143c5a95cfdb58423d3a6b01d934f76f109e38bc4368907f4.
+Explicit installed EngineCore.shutdown returned successfully. Worker exit1
+reflects failed formation, not shutdown; actor reported no backend error.
+Owned group was empty, GPU compute vacant, post-CVD clear under the exact
+init exceptions; no process signal was needed. Outer elapsed50.829s, status
+FAILED as required; no missing completion was invented. Lifecycle cleanup
+worked within this failed-science path, not a successful write/reload claim.
+
+Full original manifest/spec/formation/actor/outer/launcher/allocation/source
+patch archived once and verified after transfer:
+`gpu_artifacts_local/pcfl_own_write_20260913_attempt1/evidence.tar`, SHA256
+`acdd9c2cf6ec4b5a3bbd28a6c7d1a58159442a89e74461112c42e37b73c9694c`.
+No Main GPU worker remains. No numerical retry or output normalization.
+
+Prospective next comparison: clarify the existing LF requirement in EVENT
+and LINK prompts only, retaining strict admission, whole raw bytes, all other
+world/actions/choices/seeds/schedule/LOW recipe and budgets. Parfit owns this
+small scoped driver/measurement/tests amendment. Use new source/manifest/run;
+old failure remains a failure. Same root is development/exploratory, not fresh
+confirmation. This does not relax the original full-assay gate or an invariant.
