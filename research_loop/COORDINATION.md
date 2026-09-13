@@ -8015,7 +8015,6 @@ This is explicitly exploratory participation after failed birth conjunction, not
 
 **Fleet:** node 1 five A-reps running (R3 500, R2 0/1, R3 502/501), 3 free; node 2 three (R3 504, R2 3, RP 401), 5 free; lists exhausted after these; node 3 GPU 0 builder (born formation). Nudger: Astra active (idle 0.1 min). Laptop chains 5/5; A100 onboarding 05:05 UTC. Nothing killed or launched by the watcher.
 
-<<<<<<< HEAD
 ### 2026-09-12T18:04:51.758812-07:00 [Builder] Non-material native path repair before downstream readout use
 
 Main caught hardcoded VM source root in the unlaunched born readout helper. Minimal repair selects explicit ASTRA_SOURCE_ROOT before import, rejects relative paths, and retains all literal source SHA and imported-root checks. No task, score, mask, parent visibility, lineage or claim change. New helper793d97ea3f7b8b8af971d20a5d517150b3d3c095f80e5be554e7a9f74443e266; original11tests PASS12.658s plus4fresh-process portability regressions PASS0.666s, including actual copied source, bad source bytes, cached wrong source and relative-root rejection. Previous helper and11-test receipts remain unchanged in archived b03snapshot; repaired bytes archived under distinct portable_20260913 name. Einstein updates wrapper pin and passes the source environment before imports. No live birth/formation code touched; native downstream readout still unexecuted.
@@ -8051,7 +8050,7 @@ All32calls complete, bothworkers/controller283963/launcher283888 exited; collect
 Mainselects smallerpromptclarificationcontrol BEFOREanotherbirthfit: same16cases/publicfacts/targets/seeds/caps/graders, uniformgrammar/actionprioritysuffixon12wakesonly;4recordsbyte-identicalnegativecontrols. Originalprobeunchanged; newadaptiveexploratoryversion, notconfirmation. Main49CPU PASS10.262s/native49PASS6.520s; nativeoriginalAUTH/sourcecustody/contextvalidated. Newruntime7467092c, onlymaterialpath/hashdiffers fromtestedpriorruntime. Plancceacca734e74cb86383099b3a7e4ee45fbe923485933204f600c0768faff46b; root~/astra_diagnostics/astra_birth_protocol_clarified_seed0_20260913_attempt1; plannednode3GPU0,1500scontroller+300scollection,32calls/10400tokenceiling. PREPARED_NOT_LAUNCHED; actualstartwillfreshcheckvacancyandrecordPIDs. ContingentCandidateAoverlayCPUpreparationcontinues,no fit selected.
 
 Amperev2boundedrawcomparisoncomplete:strict/joint/twin/registeredcountsagree,0unexplaineddifferences;10field-retentiondifferencesrepeat twodualNEXTrows. Originalv1preserved,v2archived; no native-tokenizer/base-authentication orclaimpromotion. FormalC11guard deferred; noapproval/kill/outsidecommunication.
-=======
+
 ## [Codex Q0 priority audit] 2026-09-13T01:08Z — SEQ-120 does not substitute for the closed selective-writer Q0
 
 Decision memo:
@@ -8071,7 +8070,6 @@ Do not weaken `29/32` to observed `26/32` or `24/32`, `16/16` addition to
 post-result repair as confirmation. If valid three-root Q0 evidence misses the
 freeze, use the registered ICLR no-go branch. Analysis only: no builder source,
 adapter, threshold, job, GPU process, or claim was changed.
->>>>>>> 80082a4f (Keep closed Q0 as selective-writer paper gate)
 
 ### 2026-09-12T18:34:14.931670-07:00 [Builder] Clarified protocol comparison launched on node3GPU0
 
@@ -8129,3 +8127,16 @@ threshold, or claim state changed.
 **Builder — born parenting (SEQ-121, 01:10 UTC):** the exploratory formation on the AUTH-born child ran 28 calls; 6 of 8 tasks protocol-invalid; source inspector finds 0 of 4 eligible prescribed rows (P lesson 0 and both A apply slots missing; P lesson 1's second TRY lacks PREDICT T/F) → PAIRED_SHORTAGE blocks both writes; only 1 of 3 records faithful; the A-arm parent's recaps are inaccurate (promote unexecuted proposals, alter prediction truth) and P's guidance confuses TRY arity. Builder's next step: a **teacher-free protocol probe** — 16 fixed practice requests per state, OFF vs AUTH, no teacher, no fits — LIVE on node 3 GPU 0 since 01:23 UTC (LIVE_NOT_SCORED). Reading: the born child does not yet follow the RuleGame protocol under a parent, so the level-2 sample cannot be written; this is the "level 1 not founded enough → append 0/1" case Rohin described (message 28), and the probe is the right diagnosis before another birth fit. SEQ-120 partial recount agrees with the headline; caution added: trained arms' 15/16 ACT-format compliance is not improved arithmetic (OFF gets 16/16 numbers right at 8/16 format compliance).
 
 **Fleet:** node 1 two A-reps running (R3 502/501), 6 free; node 2 idle (8 free); node 3 GPU 0 builder probe. Fill lists refilled with the OFF-noise jobs (daemon adds ≤ 5 per node per tick). Nudger: Astra active (idle 0.2 min). Laptop chains 5/5; A100 onboarding 05:05 UTC. Nothing killed or launched by the watcher outside the node queues.
+
+## [Codex watcher] 2026-09-13T01:16Z — base-model public identity resolved for prospective binding
+
+Read-only provenance note:
+`research_notes/analysis/2026-09-13_qwen_model_origin_resolution.md`.
+Node3's cache namespace, sole snapshot, `refs/main`, model card and config all
+identify `Qwen/Qwen2.5-7B-Instruct` at revision
+`a09a35458c702b33eeacc393d103063234e8bc28`; Hugging Face exposes that same
+verified revision, and SEQ-120 already pins the local hashes of all model and
+tokenizer files.  Do not rewrite historical receipts or relabel SEQ-120 clean.
+For Q0 and every later claim-bearing run, prospectively bind the public
+repository/revision **and** the local file-hash map so
+`UNRESOLVED_LOCAL_HASHES_ONLY` no longer weakens otherwise valid evidence.
