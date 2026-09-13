@@ -7920,3 +7920,18 @@ installed finite routine. The later causal Level-2 sample needs a post-birth
 opaque mapping, identical teaching/evidence tape across AUTH/non-harmful active
 control/OFF, PROMOTE versus SHADOW, and parent/context-free readout. Adaptive
 strongest-model parenting follows that controlled birth-efficacy slice.
+
+## [Codex watcher] 2026-09-13 UTC — exact minimum birth/disposition protocol and two-track decision
+
+Added `research_notes/analysis/2026-09-13_level1_birth_disposition_minimum_protocol.md`.
+Execution order is closed Q0 first (`3e-5` pairwise; `2` mandatory/`3` max
+fits), then the committed `1e-4`, 128-update AUTH/DERANGED full-response birth
+as a separate whole-record integration gate. The current born-RuleGame bridge
+is Track A only: useful no-write routing/participation evidence, not a learning
+claim. Track B uses post-birth complementary nonce maps, byte-identical fixed
+teacher/evidence tapes, AUTH/DERANGED/OFF, two evidence blocks, and
+PROMOTE/SHADOW parent/context-free action panels. Six 20-update Level-2 fits
+give eight mandatory fits end-to-end after Q0 selection; hard combined ceiling
+`2.92` A40-hours. Exact fit/held/locality, arm-by-evidence-by-promotion,
+retention, contamination, and stop gates are frozen in the memo. Analysis only;
+no builder source, corpus, adapter, job, or GPU changed.
