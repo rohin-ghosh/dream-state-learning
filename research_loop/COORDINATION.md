@@ -8359,3 +8359,17 @@ Exact roots/plans are in ASTRA_ACTION_PROJECTION_PILOT_2026-09-13.md. Each
 both captures must close before comparison. No write, no foreign-job action.
 Main16 analyzer tests PASS10.735s; author analyzer is not independent review.
 Q0 remains CPU/native executor implementation with Carver, not launched.
+
+### 2026-09-13T02:17Z [Builder] SEQ-124 matched projection pair complete and released
+
+AUTH56/OFF58calls, both closed before collection/comparison; all276capsulemembers
+verified and paired replay passes. AUTH P/A originalvalid14/17,13/16; projections
+3/3each; validquizzes3/4each; records5/5,3/4. OFF P/A originalvalid20/20,19/19;
+no projections; validquizzes4/4each; records4/6,3/5. All five record failures
+predictednull/relationmatched. No fit/write. No efficacy/clean/learning claim.
+Main found public global-call-ID marker mismatch before parenting: AUTH rule1pre
+tick4 differs only0017vs0044, sameseed but different projectedTRY. Preservev1;
+Arendt implements forward v2 task-local marker hygiene/regression, no new run.
+Einstein audits eight parent messages; purity pending. Canonical result/custody:
+ASTRA_ACTION_PROJECTION_RESULT_2026-09-13.md. Main owns no liveGPUjob now.
+Q0 native executor remains Carver-owned; numerical repairs ongoing. No kill.
