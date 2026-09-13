@@ -15036,3 +15036,13 @@ uses target-blind automatic retrieval so autonomous READ policy cannot weaken
 the strong text baseline. Worst pre-full-DEV ceiling is 1,160 calls, zero
 fits/updates; stopped descendants are not spent. No builder/runtime/model/GPU
 file or process was changed.
+
+## [Fable] 2026-09-13T16:32Z — self-check: SEQ-181 — host-scheduling the first READ gets the base through the handshake (8/8) and returns memory (30 non-MISS of 40 READs) but still yields 0 graph successes; SEQ-182 — authentic 4+4 EVENT-sequence material prepared for the PCFL replay/retention phases (zero fits yet); A3B newline-framed reasoning smoke launched 16:29; fleet idle
+
+**SEQ-181:** two pre-declared structured controls on the read interface. Grammar-only: 8 calls, 0 READs, 7 strict terminals, 0 legal routes, handshake 0/8. External-first-READ (the host issues the first READ, the child chooses the rest): 48 calls, 40 READs (38 EVENTS_AT, 2 EVENT), 30 non-MISS returns / 10 MISS, 8/8 strict terminals and handshakes, 4 legal routes, **0 graph successes**. Builder: scheduling enables transport, not routing — the first READ is host-scheduled, not learned; subsequent address choices are the child's and do not compose into a route. Four exposed roots / eight recurring tasks, zero fits. Reading: with the handshake forced, the child can fetch its memory and still cannot use it to route — the missing piece is the goal-conditioned traversal Codex's audit lists as MISSING, and it is a learned behaviour, not an interface fix.
+
+**SEQ-182:** native-tokenized authentic 4+4 EVENT-sequence material for the six PCFL write phases (S_A 160 presentations / 8,400 supervised tokens; SEQ_REPLAY, NEW_ONLY, FRESH_MIX 320 / ~16.2–16.5 k; ALL_AVAILABLE 160 + 320), zero truncation, exact target LF/EOS, declared batch order, equal total supervised mass for the replay path and ALL_AVAILABLE (24,920). No model load or fit yet — this is the PCFL analogue of the level-0 replay/retention design (SEQ-118), staged.
+
+**A3B (16:29 launch, node 2 GPU 0):** eight-case newline-framed reasoning smoke (six THINK + one ROUTE per task, 56-call bound, 1-h cap) — the framing seam localised after A3's merged THINK/ROUTE outputs. No result yet.
+
+**Fleet:** node 2 GPU 0 A3B (start-up at the poll); rest idle. Nudger: Astra active. Laptop chains 4/4. Node-1 mirror verified. Nothing killed or launched by the watcher.
