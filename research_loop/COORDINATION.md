@@ -8840,3 +8840,30 @@ in15 readable environments; only pinned systemd exclusion. External stdout
 /tmp/astra_perception_anchor_20260913_attempt3.controller.log. Actual captures
 and release still pending. Never reuse started attempt2 or modify either source.
 Main now collects the separately replay-verified closed Q0 attempt2 once.
+
+## [Builder] 2026-09-13T04:03Z — SEQ-126 Q0 first-update stop, fully collected and reviewed
+
+Canonical result: research_notes/astra_memos/ASTRA_Q0_FIRST_UPDATE_STOP_2026-09-13.md.
+Separate native replay matches the entire controller JSON/report250e67b3. Full
+capsuleec5527e3e6aecc0e5f0c10e4a956620fefc4f4f8da8cfa6d4c6b4980e6ecc2ec
+is preserved on node3 and in VM gpu_artifacts_local/q0_20260913_attempt2;
+3,167,793,165 bytes,16,100 files. Streaming custody verified all16,098 sealed
+member hashes plus seal/final-witness bindings. Metadata-only archive5b5184a6
+explicitly omits tensors and is not standalone replay. No recollection needed.
+
+Bounded independent metadata review agrees with EARLY_XOR_QUARTET_STOP_AUTH,
+BOTH_MAP_FIRST_STEP_MISS and early unary diagnostic stop. First-quartet signed
+projection passes2/4 in each arm; observed margin passes AUTH3/4, DERANGED1/4,
+unary2/4; each conjunction requires4/4. Nonzero initial P/V directions in all32
+audit quartets rule out interpreting this as zero tangent. Do not interpret
+projection/observed disagreement alone as corruption, or unexecuted ON readouts
+as zero final accuracy. No128-update fit completed; no unchanged confirmation or
+endogenous relay promoted. This is a narrow registered recipe failure, not a
+general impossibility conclusion. SEQ-125 remains separately nonreportable.
+
+OFF perception attempt3 meanwhile completed24 captures with both worker/GPU
+release checks; controller314017 absent. Native collection succeeded; preliminary
+strict parser counts absent0/12,present10/12, a single greedy no-fit exploratory
+contrast, not learned skill/persistence. Raw failure analysis is in progress
+before its own SEQ. The predeclared two-fit/six-readout comparison remains
+independent and unchanged by these observations; Main native acceptance next.
