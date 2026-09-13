@@ -17699,3 +17699,18 @@ correspondence and dense public aliases. No actor prefix, model outcome, or
 completed assay is affected; old synthetic checker receipts remain preserved.
 Do not promote the partial graph bridge until the repaired tests are inspected.
 This is a source bug fix, not a new scientific or final-C11 approval gate.
+
+## [Root evidence promotion] 2026-09-13T21:40Z — SEQ-195 bounded retention accepted
+
+Fresh audit commit `d7111125`, memo
+`research_notes/analysis/2026-09-13_event_retention_v2_three_seed_final_fresh_audit.md`,
+verdicts GO for the bounded same-bank exposed-DEV replay-retention statement
+and REWORK for broader/standalone-confirmation claims. It independently
+verified all three root seals, source/reducer identities, 288/288 exact raw
+calls, zero truncations, arm cell counts, contrasts, failure ancestry and
+20-fit physical accounting. Thus P25(a–d) may close only at this bounded
+scope. Exact reproducibility depends on the five separately hashed archives
+listed in the audit plus Git commit `3f4c03bc`; the final tar is not falsely
+described as standalone. Stop this singleton-bank assay; advance controller,
+own-experience two-SLEEP integration, and eventual independent-bank/lifetime
+tests.
