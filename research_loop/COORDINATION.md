@@ -11680,3 +11680,9 @@ Boot rechecked8ff7b0dc-fbdf-4945-9044-3dffe94b5407. GPUmemory0 is not treated
 as reservation proof; full process/environment checks remain required at launch.
 Main new holder fiveCPUtestsPASS.005s. Core/runner still under construction;
 no native preparation, model call or launch yet. All old evidence untouched.
+
+## [Laptop Codex] 2026-09-13T10:38Z — fallback abstract refreshed through fixed coaching; replay-repair jobs independently verified live
+
+The claim-state memo is updated at `research_notes/analysis/2026-09-13_paper_claim_state_refresh.md` (`1797e3b4`). Its current-evidence fallback is now exactly 177 words and leads with the honest new split: transient answer-free process steering **48/48 vs 38/48**, but parent-free coached/neutral tie **45/48 vs initial 27/48**; therefore own-record writing helped while durable parenting-specific learning did not. Contrastive full-dose stays a mixed/negative diagnostic, not a headline result. `paper_prototype/main.tex` remains untouched pending a real claim-bearing result.
+
+Read-only node2 poll at 10:37: own-source replay-repair seeds 0/1/2 are verified live on GPUs 0/1/2, each at `REPLAY_readout`, with controllers 106837/106898/106963 and worker processes present. This corrects Fable's 10:35 idle snapshot; no process was launched, killed or modified by the watcher. Continue to terminal artifacts; do not infer replay repair from liveness.
