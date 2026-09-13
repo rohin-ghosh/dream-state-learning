@@ -3,6 +3,10 @@
 **Date:** 2026-09-13 UTC  
 **Status:** prospective design and adversarial audit only; no implementation,
 model/tokenizer call, fit, adapter mutation, GPU execution, or scientific claim  
+**Fresh red-team disposition:** minimal **REWORK applied; prospective PASS**.
+The repair makes the crossover order unambiguous, makes process use
+task-bound and mechanically scoreable, freezes leak-free read cues, and
+corrects the maximum call arithmetic.
 **Scope ruling:** Rohin message 37: Level 1 is not self-learning. It should
 show repetition, specific steering, conversion of parent/world input into a
 child-authored learnable record, and survival of that record across one SLEEP.
@@ -79,11 +83,15 @@ between the explicit prior and real outcome; chronology is trivial. Task family
 C contains two public executed events and makes prior/outcome comparison
 uninformative; selecting the latest same-receipt event is decisive.
 
-Each sibling receives four contacts in counterbalanced order: P and C once,
-then the same P and C lessons again. `ALIGNED` receives P before P tasks and C
-before C tasks. `SWAPPED` receives C before P tasks and P before C tasks. Thus
-the exact lesson multiset and repetition count are identical. Seeds 0/2 use
-P-C-P-C order; seed 1 uses C-P-C-P.
+Freeze the **task-family** block order first. Seeds 0/2 use P-C-P-C and seed 1
+uses C-P-C-P. `ALIGNED` receives the matching lesson before each block;
+`SWAPPED` receives the other lesson. Thus, for a P-C-P-C task schedule, the
+lesson schedules are P-C-P-C for `ALIGNED` and C-P-C-P for `SWAPPED`. The two
+siblings solve the exact same task bytes in the same order and each receives
+the exact same lesson multiset and repetition count. Within each family, make
+the two four-item blocks structurally matched and reverse their first/second
+delivery assignment for seed 1. Freeze this rotation before model output so a
+nominal repetition effect cannot be only an easier second block.
 
 After each contact the child emits one unrestricted restatement. Then the
 parent turn is removed. The next task context contains only the ordinary task
@@ -94,6 +102,13 @@ causal bridge visible:
 parent words -> child-owned NOTE -> processing of the next input
 ```
 
+Reset active context between blocks: no earlier lesson, restatement, task, or
+receipt survives except through the newly repeated lesson and its new child
+restatement. There is no weight update before SLEEP. “Repetition” at this
+stage therefore means that the same reminder can be reactivated and used
+reliably on a second matched block; it is not yet cumulative parametric
+learning.
+
 The restatement is audit material, not a training target. Four fresh apply
 tasks follow each contact, giving **16 fixed opportunities per arm/root**:
 eight per lesson family and eight after the first versus second deliveries.
@@ -102,6 +117,26 @@ ordinary task context only: no parent contact, restatement, or NOTE. It is an
 absolute behavioral anchor, not a token-matched control; ALIGNED-versus-SWAPPED
 remains the matched lesson-content contrast.
 
+Make the task-bound operation mechanically observable rather than asking a
+model judge whether the child sounded thoughtful. Every apply task starts with
+lawful public environment receipts and then permits one fresh child action:
+
+- a P item exposes one earlier receipt containing an explicit prior and its
+  returned observation. The values vary independently across items. Before
+  its new action, the child's NOTE must bind those exact two values and their
+  equality/mismatch relation;
+- a C item exposes two earlier receipts whose chronological order is
+  independent of display order. Before its new action, the child's NOTE must
+  bind the exact latest receipt ID and the action/outcome pair from that same
+  receipt.
+
+The ordinary task instruction asks for one relevant-state NOTE and an action;
+it does not name P, C, comparison, or recency. Those operations come only from
+the current child-owned restatement in the lesson arms. The new action then
+produces another real, previously unknown world receipt for the child's
+post-outcome record. No value needed by either family-specific checker occurs
+in a lesson.
+
 ## 3. Exact observed endpoints before SLEEP
 
 For every opportunity preserve the raw pre-action generation, strict typed
@@ -109,16 +144,24 @@ action, real environment receipt, raw post-outcome record, and all failures.
 Score separately:
 
 1. `RESTATE`: the child states the correct operation and scope in its own NOTE;
-2. `PROCESS_USE`: before seeing the outcome, its processing actually performs
-   the currently relevant P or C operation, not merely names “care” or
-   “reflection”;
+2. `PROCESS_USE`: a frozen deterministic parser, not a model judge, verifies
+   the family-specific task bindings in the pre-action NOTE: P requires the
+   exact public prior, observation, and relation; C requires the exact latest
+   receipt ID and its same-receipt action/outcome pair. Generic descriptions,
+   a bare claim that the lesson was followed, or values from the wrong receipt
+   fail. The NOTE is emitted before the new action's outcome exists;
 3. `EXECUTED`: its strict action dispatches once;
-4. `RECORD_FAITHFUL`: its unchanged record binds the actual prior, action,
-   outcome, relation/latest-event choice, and receipt ID correctly; and
+4. `RECORD_FAITHFUL`: its unchanged record keeps the task-specific public
+   source binding from `PROCESS_USE` separate from, and correctly binds, the
+   child's fresh pre-action prediction, action, returned outcome, and new
+   receipt ID. It may not splice fields from two receipts; and
 5. `FULL_MATERIAL`: `PROCESS_USE & EXECUTED & RECORD_FAITHFUL`.
 
 The record's event values and receipt identity do not occur in either parent
-lesson, so a pure lesson copy cannot pass. Report exact phrase overlap and raw
+lesson, so a pure lesson copy cannot pass. `PROCESS_USE` is a content score
+under a finite parser whose accepted shapes are frozen before inference;
+canonical NOTE form remains a separate score so dialect brittleness cannot be
+mistaken for absence of the operation. Report exact phrase overlap and raw
 output diversity, but do not discard a child merely for repeating the parent:
 repetition is part of the treatment. Content, strict format, action validity,
 field errors, length finishes, and not-called slots remain separate.
@@ -146,7 +189,10 @@ specific receptivity,” and no stronger writer can rescue it.
 
 For each aligned root with at least eight FULL_MATERIAL rows, take the first
 eight in frozen chronological order. No score ranking or regeneration is
-allowed. Each supplies two exact child targets from its real interaction:
+allowed. Before fitting, require those first eight to have eight unique
+addresses and at least four distinct semantic record targets; otherwise the
+root is ineligible and later rows may not be substituted to manufacture
+diversity. Each supplies two exact child targets from its real interaction:
 
 - the pre-action process/action continuation; and
 - the post-outcome source-faithful record continuation.
@@ -181,9 +227,14 @@ retrieval state, or source transcript.
 ## 5. Post-SLEEP endpoints and decision
 
 On each of the eight written records, query once by a source-withdrawn exact
-address and once through a frozen paraphrase. Score semantic record fidelity,
-exact target bytes, strict form, per-field errors, wrong-key assignments, and
-unique outputs. The unchanged root receives identical requests.
+address and once through a frozen paraphrase. The exact cue contains only the
+opaque record address and the frozen read instruction; it contains no lesson,
+NOTE, action, outcome, relation, receipt contents, or target prefix. The
+paraphrase changes only the wrapper around the same address and also leaks no
+target content. Freeze both renderers before formation. Score semantic record
+fidelity, exact target bytes, strict form, per-field errors, wrong-key
+assignments, and unique outputs. The unchanged root receives byte-identical
+requests.
 
 Re-run the original 48-item Level-1 perception panel and 12 generic canaries
 on every written child. Historical root outputs may supply the bound C0 item
@@ -205,21 +256,25 @@ steering, material formation, carriage, or retention. Never average across a
 failed noncompensatory link.
 
 As a prespecified descriptive readout, give the written child and unchanged
-root eight fresh parent-free homologous inputs and score `PROCESS_USE`. A gain
-is evidence for a stronger persistent habit. A null does **not** negate the
-minimum record-carriage result and must not be hidden; Level 1 was not asked to
-establish autonomous self-learning.
+root eight fresh parent-free homologous inputs and score `PROCESS_USE` from
+one pre-action generation per input. No post-outcome record call is needed for
+this optional diagnostic. A gain is evidence for a stronger persistent habit.
+A null does **not** negate the minimum record-carriage result and must not be
+hidden; Level 1 was not asked to establish autonomous self-learning.
 
 ## 6. Scale, stop rules, and information/GPU-hour
 
 Maximum new work:
 
 - three clean roots, three inference-only conditions/root;
-- `312` formation/restatement/application child calls;
+- `312` formation/restatement/application child calls: per root,
+  `ALIGNED=(16 pre-action + <=16 record + 4 restatement)`, the same for
+  `SWAPPED`, and `NO_PARENT=(16 pre-action + <=16 record)`;
 - at most three fits and `672` optimizer updates;
 - `96` exact/paraphrase memory-read calls;
 - `180` descendant retention calls;
-- optional fresh-task readout: `96` calls;
+- optional fresh-task readout: `48` calls;
+- therefore at most `636` child calls including the optional readout;
 - zero parent-model calls and no more than **5 aggregate A40-hours**.
 
 Stage it: finish and reduce all inference-only formation arms before any fit.
