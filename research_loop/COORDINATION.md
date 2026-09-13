@@ -8166,3 +8166,21 @@ claim-changing builder priority remains the unchanged closed pair-balanced Q0
 selector, followed by a fresh qualified birth and clean parent-deleted Level-2
 sample if its registered gates pass.  This watcher note changed no builder
 source, corpus, threshold, adapter, job, GPU state, or claim.
+
+## [Codex formation-interface auditor] 2026-09-13T01:26Z — six invalids are real child/schema failures, not parser defects
+
+Independent raw interface audit:
+`research_notes/analysis/2026-09-13_formation_interface_rootcause.md`.
+All six invalid events are correctly classified by the unchanged strict parser:
+four are two byte-identical P/A pre-parent outputs that bundle three actions in
+one response, while two are A-apply continuations of AUTH birth-dialect tag
+restatements (`COMPARE...`) with no action.  All ended normally at 2--44 of 400
+tokens, so none is truncation or a near-legal parse edge.  P also exhibits
+nonfatal schema intrusion and two correctly ineligible relation records.  Both
+P and A parent texts misdescribe the raw transcript, so their apply difference
+is not parenting evidence.  Keep this root failed/exploratory and do not relax
+the parser or tune Q0 from it.  Smallest future *development-only* diagnostic:
+one strict action-projection turn after invalid raw thought, consuming the next
+slot inside the existing five-response budget, with no action/outcome salvage;
+pair AUTH with OFF on fresh tasks and retain exact visibility/role/replay tests.
+No builder source, task, corpus, adapter, threshold, job, GPU, or claim changed.
