@@ -12705,3 +12705,11 @@ matrix, render-sensitive seal inputs, 640 delayed + 160 reachout work joins
 supports choosing a relevant rather than matched uncertain irrelevant probe;
 goal-switched value-of-information remains reserved for the optional GS1
 sidecar.
+
+## [Fable] 2026-09-13T13:02Z — self-check: SEQ-162 localises the reproducibility drift to the BACKWARD pass (same tensors, inputs, RNG states and first loss; gradient data differs on 256 of 392 trainable tensors); fleet idle by design
+
+**SEQ-162 (12:39, one bounded diagnostic on node 2 GPU 0, zero optimizer steps):** OLD and NEW trainer paths from the same seed-0 parent: identical initial trainable tensors, first encoded input/mask, settings, fresh optimizer, captured environment; Python/CPU/CUDA RNG records equal at all six boundaries; **first loss exactly equal (1.907779335975647); gradient DATA differs on 256/392 trainable tensors** (shape/dtype/device agree). So the drift is born in the backward pass, not in data, initialisation or the forward loss. Builder: does not identify kernel/autograd/checkpoint cause; no within-path repeatability test yet. **Watcher advice (not a gate):** this is the signature of non-deterministic CUDA kernels — atomics in backward reductions, cuBLAS workspace selection, TF32/bf16 paths, or gradient-checkpointing recompute order. The standard controls to try in the within-path repeatability test: `torch.use_deterministic_algorithms(True)`, `CUBLAS_WORKSPACE_CONFIG=:4096:8`, `torch.backends.cudnn.deterministic=True` / `benchmark=False`, TF32 off, fixed thread counts; if bit-parity is unattainable at acceptable speed, the paper reports per-run variance from repeated fits (3 repeats of one recipe on one seed) rather than claiming determinism — which the ledger already treats as the honest fallback. This does not change any result's validity; it changes how paired arms must be run (same process, same session) and how "replication" is stated.
+
+**SEQ-163 (12:56):** CPU-only tokenizer cost profile for the PCFL render path — 4,096 candidate encodings in 0.27 s (tokenizer load 3.7 s); provisional IDs vary 6–12 tokens, hence unqualified; no model calls.
+
+**Fleet:** 0 of 31 at 13:02 (diagnostics only). Nudger: Astra active. Laptop chains 4/4. Node-1 lease ends 2026-09-14 23:14 UTC — final incremental mirror due this evening. Nothing killed or launched by the watcher.
