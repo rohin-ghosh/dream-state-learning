@@ -1,13 +1,27 @@
 # FIRST SPRINT DRAFT — companion abstract
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ159 retains both positive and negative findings.
+This evidence cut through SEQ160 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current evidence through SEQ159 — C95; ongoing first draft.**
+**Current evidence through SEQ160 — C96; ongoing first draft.**
+The fixed-lesson alignment assay fails its frozen gate: all nine cells have
+process-use, faithful-record and full-material scores0/16. All144NOTE attempts
+and137called record sources fail normalization, so these zeros are not evidence
+of absent raw source processing or a general absence of parenting effects.
+Lexical RESTATE also rejects plausible paraphrases; distinct own-event missing
+fields/wrong relations remain errors, not a rescued endpoint. All16opportunities
+per arm remain in the denominator, including seven uncalled records. There are
+305calls, zero fits/updates/parent-model calls: no post-write parent-free test, learned
+persistence, amortization or H1/H2 result. CPU-only additive parity is an
+engineering prerequisite, not a scientific outcome or new experiment authority.
+C11 remains deferred; prior evidence and the raw-chronological attribution gap
+remain. No freeze, general G3 or clean-lineage promotion. Collaborator UNSENT.
+
+**Historical evidence through SEQ159 — C95.**
 Own-source REPLAY retains every LR0-correct held/canary item in all three
 learners, with exact-cue source-faithful recall10/14,6/8,5/8 and paraphrase
 10/14,6/8,3/8. EXTRA_MEMORY gives13/14,7/8,7/8 exact and10/14,6/8,7/8
@@ -423,7 +437,7 @@ cases remain unrequested; no G3, parenting, child sleep, H1/H2, clean lineage,
 novel-fact transfer or substrate freeze follows. Model origin remains
 `UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred. Collaborator **UNSENT**.
 
-Internal staging only; the canonical abstract now includes the bounded update through SEQ159 while preserving its historical text. H1/H2 remain the proposed
+Internal staging only; the canonical abstract now includes the bounded update through SEQ160 while preserving its historical text. H1/H2 remain the proposed
 developmental thesis, not established outcomes.
 
 ## Abstract
@@ -525,14 +539,23 @@ not72novel facts. Own-source replay repair is launched, with no outcomes include
 No same-history raw-chronological LoRA comparator isolates extraction/compiler
 utility; H1/H2 remain hypotheses rather than demonstrated mechanisms.
 
-Through SEQ-159, own-source replay retains every historically LR0-correct held
+At the historical SEQ-159 cut, own-source replay retains every historically LR0-correct held
 and canary item, but exact-cue recall10/14,6/8,5/8 and paraphrase10/14,6/8,3/8
 do not establish an all-seed repair. EXTRA_MEMORY has exact13/14,7/8,7/8 and
 paraphrase10/14,6/8,7/8 while losing0/2/6old held items. Frozen screens pass
 2/3versus1/3; REPLAYseed2paraphrase3/8 falls below the limited constant4/8.
 Equal steps do not equal memory exposure or token compute. Historical controls,
 shared authored replay sources and the absent raw-chronological LoRA comparator
-limit attribution; the next zero-fit alignment protocol remains CPU development.
+limit attribution; alignment was CPU development at that cut, now reported below.
+
+Through SEQ-160, immediate fixed-lesson alignment fails its frozen screen:
+process-use, record-faithfulness and full-material counts are0/16in all nine
+cells. All144NOTE attempts and137called sources fail normalization, precluding
+schema-valid source-field assessment; lexical RESTATE can reject plausible
+paraphrases. These zeros do not establish absent raw processing or a general
+absence of parenting effects. Separate own-event field errors persist. The
+305-call assay has zero fits/updates, no post-write parent-free evaluation or amortization
+test. CPU-only additive parity is engineering evidence, not a new outcome.
 
 ## Historical SEQ143 result-table companion — C79–C82
 

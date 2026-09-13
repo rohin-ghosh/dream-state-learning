@@ -1,13 +1,27 @@
 # DRAFT ONLY — unsent collaborator update
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ159 retains both positive and negative findings.
+This evidence cut through SEQ160 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current evidence through SEQ159 — C95; ongoing first draft.**
+**Current evidence through SEQ160 — C96; ongoing first draft.**
+The fixed-lesson alignment assay fails its frozen gate: all nine cells have
+process-use, faithful-record and full-material scores0/16. All144NOTE attempts
+and137called record sources fail normalization, so these zeros are not evidence
+of absent raw source processing or a general absence of parenting effects.
+Lexical RESTATE also rejects plausible paraphrases; distinct own-event missing
+fields/wrong relations remain errors, not a rescued endpoint. All16opportunities
+per arm remain in the denominator, including seven uncalled records. There are
+305calls, zero fits/updates/parent-model calls: no post-write parent-free test, learned
+persistence, amortization or H1/H2 result. CPU-only additive parity is an
+engineering prerequisite, not a scientific outcome or new experiment authority.
+C11 remains deferred; prior evidence and the raw-chronological attribution gap
+remain. No freeze, general G3 or clean-lineage promotion. Collaborator UNSENT.
+
+**Historical evidence through SEQ159 — C95.**
 Own-source REPLAY retains every LR0-correct held/canary item in all three
 learners, with exact-cue source-faithful recall10/14,6/8,5/8 and paraphrase
 10/14,6/8,3/8. EXTRA_MEMORY gives13/14,7/8,7/8 exact and10/14,6/8,7/8
@@ -86,7 +100,47 @@ Actual-memory writing/readback and native-greedy testing remain development only
 HF independent analysis is pending; archived A100 short-root OFF readiness passes.
 Historical pending statements below describe their named cuts, not current status.
 
-**Current UNSENT — bounded SEQ159 / C95 update for Main's review.**
+**Current UNSENT — bounded SEQ160 / C96 update for Main's review.**
+
+| Seed | Executed A/S/N /16 | RESTATE A/S /4 | U/F/M in each arm /16 | Calls A/S/N |
+| --- | ---: | ---: | ---: | ---: |
+| 0 | 16/13/16 | 0/0 | 0/0/0 | 36/33/32 |
+| 1 | 16/15/16 | 0/0 | 0/0/0 | 36/35/32 |
+| 2 | 16/14/15 | 2/2 | 0/0/0 | 36/34/31 |
+
+A=ALIGNED, S=SWAPPED, N=NO_PARENT; N has no RESTATE opportunity.
+U/F/M denote frozen PROCESS_USE/RECORD_FAITHFUL/FULL_MATERIAL, all zero in
+all nine cells. Every16-slot denominator retains invalid/uncalled records;
+FULL excludes RESTATE. The frozen conjunction fails. Repeated activation passes
+only by0>=0, not improvement; no-large-harm passes on zero differences.
+
+All144wake NOTE attempts fail normalization (143unknown/conflicting aliases,
+one absent/unparsed after malformed wake JSON), as do137called record sources.
+There is no schema-valid required source-field assessment: empty binding errors
+do not prove correct bindings; downstream false flags do not prove raw values
+wrong. Lexical RESTATE rejects plausible paraphrases, not general restatement
+ability. Independently visible own-event errors include missing fields/outer
+structure and incorrect relations: seed1N has16present relation errors, whereas
+seed0A has10/16own events with all five fields correct. Those diagnostics do
+not replace the failed source/whole-material endpoint. No permissive rescore.
+
+Execution A-S is+3/+1/+2 and A-N0/0/+1, descriptive counts, not causal
+replications. Three roots retain a2:1lesson-order imbalance. Identical172-token
+lesson multisets in A/S do not match generated trajectories or total tokens;
+N is not token matched. This is immediate lesson/current-child-restatement
+exposure, not an adaptive parent, post-write parent-free evaluation or learned amortization.
+All305/312maximum calls stop:144wakes+24restatements+137records, with seven
+uncalled records retained. Zero parent-model calls, fits, updates or new adapters.
+CPU frozen-core/raw replay and receipt joins are not hardware/tokenizer/tensor
+reauthentication. Additive parity remains a CPU engineering prerequisite only;
+no new experiment is implied. C11 remains deferred, H1/H2 and the same-history
+raw-chronological LoRA attribution gap remain open; no freeze, general G3,
+clean-lineage or mission promotion. Collaborator UNSENT.
+
+[C96](ASTRA_PAPER_CLAIM_MAP_2026-09-12.md#c96--seq160-alignment-screen-failure-with-source-schema-limits)
+binds the frozen primary result and diagnostic limits without rewriting prior evidence.
+
+**Historical UNSENT — bounded SEQ159 / C95 update for Main's review.**
 
 | Seed | Arm | Exact cue | Paraphrase | Held /48 | Lost LR0-correct held | Screen |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
