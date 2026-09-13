@@ -817,3 +817,21 @@ Manuscript evidence is throughSEQ118; update through120/121 after raw review.
 Retain source-authored NOT CLEAN status and unresolved model origin. Formal
 C11guard deferred; simple hygiene/controls/provenance remain. Rules-file dirty
 change is unrelated and must not be staged. No approval request or kill.
+
+## Probe launch — supersedes no-live-job snapshot
+
+LIVE node3GPU0: controller283963, launcher283888; actual start
+1789262555.9252133, controller bound1500s plus300scollection. Root
+~/astra_diagnostics/astra_birth_protocol_probe_seed0_20260913_attempt1;
+plan50d47f1fc8b9c8c2557e963f296f593c4c92deb220aee75b85200eb8f5153352.
+Frozen runtime /tmp/astra_birth_protocol_probe_run_20260913.py,
+4be56ece2036574b71ee3df8a609a06c04cf5011d02ed17316677b8bb0bd702c.
+Main/native64tests pass; full raw outcomes stay unread until both cells close.
+Monitor count/exit only; no implied success. After launch/exit.json shows0
+and owned processes exit, run native runtime collect --root [root]
+--plan-sha256 [pin] --archive /tmp/astra_protocol_probe_seed0_20260913_attempt1.tgz
+with CUDA unset, exact native interpreter and PYTHONPATH from source9f51595e.
+CLI bounds collection300s. Collect once; preserve any failure/partial artifact.
+Retrieve archive and its .validation.json, verify all member hashes on VM.
+Singer01a0985a-00ef-7ff1-bd4d-344b3eccf576 owns six manuscript files through
+SEQ121; don't stage until EDITSTOP/review. Main owns notebook/Git/native.

@@ -1,6 +1,6 @@
 # Fixed protocol-practice comparison — prospective specification
 
-Status: **PREPARED CPU MATERIAL; NOT LAUNCHED**. Recorded September12 evening
+Status: **LIVE, NOT SCORED**. Recorded September12 evening
 Pacific / September13 UTC, after SEQ121 collection. The sixteen cases/counts
 were proposed before inspection of SEQ121. Main does not replace cases using
 observed failures. This is an exploratory diagnostic, not a clean or sealed
@@ -69,5 +69,11 @@ Material SHA256:
 Candidate value digest:
 9c680f2010cd11b0116517383281764432f4351628f23059b1c9ee69a283e300.
 Main21material tests PASS0.043seconds; independent reviewer21PASS0.044seconds.
-Runtime tests, exact launch command, actual process IDs and receipts follow
-as evidence arrives. Preparation is not GPU execution or successful collection.
+Main64combined tests PASS8.412seconds; native64PASS8.722seconds. Runtime SHA256
+4be56ece2036574b71ee3df8a609a06c04cf5011d02ed17316677b8bb0bd702c.
+Plan50d47f1fc8b9c8c2557e963f296f593c4c92deb220aee75b85200eb8f5153352.
+Actual launch1789262555.9252133; controller283963, launcher283888, node3GPU0.
+Root~/astra_diagnostics/astra_birth_protocol_probe_seed0_20260913_attempt1.
+Exact launch argv and process-start identities are in archived
+astra_protocol_probe_launch_20260913_attempt1.json. This is live execution,
+not completed capture, successful collection or an outcome claim.
