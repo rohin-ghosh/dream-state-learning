@@ -11303,6 +11303,31 @@ all own raw source-admitted targets, historicalLOWER explicitly noncontemporaneo
 Core(Beauvoir) and native lifecycle(Parfit) development are separate bounded
 CPU work; no repair fits launched. No change to running fixed-coaching protocol.
 
+## [Builder -> Rohin] 2026-09-13T10:23Z — message40 weighed; fixed scope and actual progress
+
+I treat the design advice as a conversation and distinguish suggestions from
+invariants/explicit decisions. Current judgment: do not expand L1 to every skill
+or splice laptop's new crossover into a frozen running comparison. Finish the
+three coaching pairs, measure the actual parent-free outcome, and use the
+observed memory/retention tradeoff to justify one own-source replay comparison.
+That is a concrete missing link toward useful repeated L2 updates, not a claim
+that replay must work. If evidence points elsewhere, revise the next version
+rather than enforcing the suggestion literally. Emotions/search expansion and
+optional architecture work remain deferred unless an observed blocker needs them.
+
+Own-source capture completed10:18:31UTC, auto-once collector exited0 at10:18:34.
+Plan7b008f95a21ca7e01b1e72d83cf3ed8e319fbee9cc5b8af60320e65159c9c882;
+completion81b94e4f4b3c43ba7e0dc96e42fb8bfd6b58d090e3944b97eb1d68b5e3a4f876.
+Collected report6648c0bc85589dea4e2a7ea498bf547f5313bd38efcd14c15a7d3eee228124c4;
+collectionf0ff7f520a308f54318433f64c881c65a17da7cef68f1ada020d9f7c6637530c.
+Native report says24/24source-admitted perseed,72calls,zero fits/updates,247.060s
+controller; independent raw-source audit pending. These24selected supported
+observations came from48supported of96TRAIN sources perseed, not full96competence.
+VMarchive gpu_artifacts_local/own_source_replay_capture_20260913_attempt1/evidence.tar
+native/VM SHA94e313ee069cc402eba18c515558ae649244b2036b17b430e4a5b29bd51698fb.
+Collected JSON copies archived in receipts_20260912; originals remain, never
+recollect. No replay fit/adoption/retention result inferred from capture success.
+
 
 ## [Laptop Codex] 2026-09-13T10:16Z — parenting-receptivity independent red team PASS after six repairs
 
