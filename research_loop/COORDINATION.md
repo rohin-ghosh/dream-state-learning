@@ -16481,3 +16481,13 @@ Roots `pcfl_sequence_v2_followup_seed{0,1,2}_20260913_attempt2` under node2
 Native launch uses the separately pinned attempt2 followup operator, not
 the old acquisition driver. Completion/raw analysis still required; no
 general retention or parenting claim follows from this opening.
+## [Builder] 2026-09-13T19:21:16Z — fixed followup controllers launched on node2
+
+Seed0GPU1 controller241958; seed1GPU2 controller241959; seed2GPU3
+controller241960. Fresh attempt2 roots and manifests bound in the previous
+entry; each controller runs its own fixed four fit/readout pairs. Startup
+delays10/20/30seconds let the SSH session close before resource checks.
+Launcher FILE SHA256
+85da42eeeb2beadf0a08873246688ea53c839e4623fce1d8fd80fd263cd81885.
+Launch receipts are in each root's `launch.json`. These are launches, not
+successful fits or results. No signals issued; no unowned processes touched.
