@@ -1,13 +1,28 @@
 # DRAFT ONLY — unsent collaborator update
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ158 retains both positive and negative findings.
+This evidence cut through SEQ159 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current evidence through SEQ158 — C92–C94; ongoing first draft.**
+**Current evidence through SEQ159 — C95; ongoing first draft.**
+Own-source REPLAY retains every LR0-correct held/canary item in all three
+learners, with exact-cue source-faithful recall10/14,6/8,5/8 and paraphrase
+10/14,6/8,3/8. EXTRA_MEMORY gives13/14,7/8,7/8 exact and10/14,6/8,7/8
+paraphrase, but loses0/2/6old held items. Frozen screens pass2/3versus1/3,
+not an all-seed repair: REPLAYseed1 misses exact floor7, and seed2paraphrase3/8
+is below the evaluator-only best constant4/8. Equal updates do not match memory
+exposure or tokens; historical controls remain noncontemporaneous. Replay uses
+the same24supported authored TRAIN observations per original child, not72novel
+facts. This completed comparison supersedes the SEQ158launch-only status without
+rewriting that cut. The next alignment protocol is inference-only, zero-fit CPU
+development, not a result. C11 remains deferred; the raw-chronological LoRA
+attribution gap and H1/H2 hypotheses remain. No freeze, parenting, general G3,
+clean-lineage or mission promotion. Collaborator UNSENT.
+
+**Historical evidence through SEQ158 — C92–C94.**
 Fixed author coaching (P) and neutral contact (N), each followed by own-record
 writing, yield fresh held eligibility16/16,16/16,13/16 in both arms versus
 ORIGINAL11/16,8/16,8/16. Incremental held coaching contrast is zero in each learner, not
@@ -71,7 +86,51 @@ Actual-memory writing/readback and native-greedy testing remain development only
 HF independent analysis is pending; archived A100 short-root OFF readiness passes.
 Historical pending statements below describe their named cuts, not current status.
 
-**Current UNSENT — bounded SEQ156–158 / C92–C94 update for Main's review.**
+**Current UNSENT — bounded SEQ159 / C95 update for Main's review.**
+
+| Seed | Arm | Exact cue | Paraphrase | Held /48 | Lost LR0-correct held | Screen |
+| --- | --- | ---: | ---: | ---: | ---: | --- |
+| 0 | REPLAY | 10/14 | 10/14 | 47 | 0 | Meets |
+| 0 | EXTRA_MEMORY | 13/14 | 10/14 | 47 | 0 | Meets |
+| 1 | REPLAY | 6/8 | 6/8 | 48 | 0 | Misses recall |
+| 1 | EXTRA_MEMORY | 7/8 | 6/8 | 46 | 2 | Fails retention |
+| 2 | REPLAY | 5/8 | 3/8 | 48 | 0 | Meets |
+| 2 | EXTRA_MEMORY | 7/8 | 7/8 | 42 | 6 | Fails retention |
+
+Exact cue/paraphrase counts are source-faithful production (content coincides),
+not target-byte or canonical-string identity. All six canary panels are12/12;
+held correct outputs are canonical. REPLAY retains all LR0-correct items,
+not every scheduled item (seed0already had one wrong held item). Screens2/3
+versus1/3 do not establish all-seed repair: the unchanged exact floors are8/7/5
+plus zero itemwise held/canary loss; seed1REPLAY misses7. The screen does not
+require paraphrase superiority. Evaluator-only best constants score6/14,4/8,4/8
+on each memory panel; seed2REPLAYparaphrase3/8 is below4/8. Beating that limited
+same-panel diagnostic elsewhere is not general key binding or anti-shortcut proof.
+
+Both arms restart from original perception adapters with the same14/8/8raw
+memory records, not HIGH/LOWER descendants. Each child supplies24unchanged
+source-supported observation-reading targets; these are the same24previously
+trained authored sources across three children, not72new facts. Updates match
+304/256/256per arm, but memory presentations are REPLAY112/64/64 versus
+EXTRA_MEMORY304/256/256. REPLAY adds192observation presentations per seed;
+EXTRA_MEMORY adds192repetitions of existing memory, not new records. Tokens and
+memory exposure are unequal. Historical HIGH/LOWER/LR0 are noncontemporaneous
+references with zero new control runs; exposed DEV and three learner pairs do
+not support pooled causal or equivalence claims. Six fits,1632updates,480calls.
+
+The reducer's separate ordering-only copy matches the frozen collector's sorted
+constant-candidate/tie order; scores, candidates, floors and raw data are unchanged.
+Main reports16tests PASS3.095s. This is not a scientific retry or recollection.
+Frozen raw-scorer/receipt replay does not reauthenticate hardware or tensor payloads.
+C11 remains deferred; absent same-child/same-history raw-chronological LoRA
+control prevents extraction/compiler attribution. No freeze, H1/H2, parenting,
+general G3, clean-lineage or mission promotion. Next alignment is inference-only,
+zero-fit CPU development, not an outcome; collaborator remains UNSENT.
+
+[C95](ASTRA_PAPER_CLAIM_MAP_2026-09-12.md#c95--seq159-own-source-replay-retention-with-incomplete-recall-repair)
+binds archived completed results; the earlier cuts remain historical below.
+
+**Historical UNSENT — bounded SEQ156–158 / C92–C94 update for Main's review.**
 
 | Seed | Material P/N /16 | Updates P/N | Fresh held P/N/O /16 | Old held P/N/O /48 | Lost old P/N |
 | --- | ---: | ---: | ---: | ---: | ---: |

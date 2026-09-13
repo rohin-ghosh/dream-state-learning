@@ -1,13 +1,28 @@
 # FIRST SPRINT DRAFT — companion abstract
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ158 retains both positive and negative findings.
+This evidence cut through SEQ159 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current evidence through SEQ158 — C92–C94; ongoing first draft.**
+**Current evidence through SEQ159 — C95; ongoing first draft.**
+Own-source REPLAY retains every LR0-correct held/canary item in all three
+learners, with exact-cue source-faithful recall10/14,6/8,5/8 and paraphrase
+10/14,6/8,3/8. EXTRA_MEMORY gives13/14,7/8,7/8 exact and10/14,6/8,7/8
+paraphrase, but loses0/2/6old held items. Frozen screens pass2/3versus1/3,
+not an all-seed repair: REPLAYseed1 misses exact floor7, and seed2paraphrase3/8
+is below the evaluator-only best constant4/8. Equal updates do not match memory
+exposure or tokens; historical controls remain noncontemporaneous. Replay uses
+the same24supported authored TRAIN observations per original child, not72novel
+facts. This completed comparison supersedes the SEQ158launch-only status without
+rewriting that cut. The next alignment protocol is inference-only, zero-fit CPU
+development, not a result. C11 remains deferred; the raw-chronological LoRA
+attribution gap and H1/H2 hypotheses remain. No freeze, parenting, general G3,
+clean-lineage or mission promotion. Collaborator UNSENT.
+
+**Historical evidence through SEQ158 — C92–C94.**
 Fixed author coaching (P) and neutral contact (N), each followed by own-record
 writing, yield fresh held eligibility16/16,16/16,13/16 in both arms versus
 ORIGINAL11/16,8/16,8/16. Incremental held coaching contrast is zero in each learner, not
@@ -408,7 +423,7 @@ cases remain unrequested; no G3, parenting, child sleep, H1/H2, clean lineage,
 novel-fact transfer or substrate freeze follows. Model origin remains
 `UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred. Collaborator **UNSENT**.
 
-Internal staging only; the canonical abstract now includes the bounded update through SEQ158 while preserving its historical text. H1/H2 remain the proposed
+Internal staging only; the canonical abstract now includes the bounded update through SEQ159 while preserving its historical text. H1/H2 remain the proposed
 developmental thesis, not established outcomes.
 
 ## Abstract
@@ -496,7 +511,7 @@ repair fails. This partial retention recovery does not erase the HIGH write's
 cannot be extrapolated to LOWER. Fixed-coaching and full-dose contrastive were
 prospective at that historical cut; their completed assays are distinguished next.
 
-Through SEQ-158, fixed author coaching and neutral contact followed by own-record
+At the historical SEQ-158 cut, fixed author coaching and neutral contact followed by own-record
 writing yield the same fresh held eligibility16/16,16/16,13/16 across three
 learners, versus ORIGINAL11/16,8/16,8/16. Incremental held coaching contrast is zero, not
 an equivalence result or a parenting benefit; admitted material and write doses
@@ -509,6 +524,15 @@ capture validates the same24source-supported TRAIN records across three parents,
 not72novel facts. Own-source replay repair is launched, with no outcomes included.
 No same-history raw-chronological LoRA comparator isolates extraction/compiler
 utility; H1/H2 remain hypotheses rather than demonstrated mechanisms.
+
+Through SEQ-159, own-source replay retains every historically LR0-correct held
+and canary item, but exact-cue recall10/14,6/8,5/8 and paraphrase10/14,6/8,3/8
+do not establish an all-seed repair. EXTRA_MEMORY has exact13/14,7/8,7/8 and
+paraphrase10/14,6/8,7/8 while losing0/2/6old held items. Frozen screens pass
+2/3versus1/3; REPLAYseed2paraphrase3/8 falls below the limited constant4/8.
+Equal steps do not equal memory exposure or token compute. Historical controls,
+shared authored replay sources and the absent raw-chronological LoRA comparator
+limit attribution; the next zero-fit alignment protocol remains CPU development.
 
 ## Historical SEQ143 result-table companion — C79–C82
 

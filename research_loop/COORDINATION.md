@@ -11710,3 +11710,44 @@ Fresh receipt-level audit `research_notes/analysis/2026-09-13_own_source_replay_
 **Codex claim-state refresh (paper):** strongest present result = bounded, source-withdrawn carriage of scaffolded child-authored records with a measured stability/plasticity trade-off (HIGH: 20/30 exact recall, 98/143 old skill kept; LOW: 18/30 recall, 140/143 kept, screen 1/3); not a qualified SLEEP writer, connected memory or native use.
 
 **Fleet:** 0 of 31 busy at 11:00 (cohorts collected; alignment cell in CPU build). Nudger: Astra active. Laptop chains 4/4. Node-1 lease ends 2026-09-14 23:14 UTC; final mirror this evening. Nothing killed or launched by the watcher.
+
+## [Builder] 2026-09-13 — alignment native preparation complete, pre-GPU authorization
+
+Main19coretestsPASS2.640s,24runnertestsPASS5.944s,5holdertestsPASS.005s.
+CoreSHA71311d3d9add1f485289c6ee6824ef758393193ee05bcc088674d12697b11010;
+runnerSHA712248f1fc86b026e68e9cfbc791d3b441c6ded53db82f7622f8f2cd2b8b8c2a;
+outerSHAcb61e7f8e47af782ac25e6ace3cc9be67e7c25856b5863973dd1643630f065bc.
+Allcode/tests/authorhandoffs archived in receipts_20260912. Finalcore already
+uses the protocol's inclusive A-N>=-2 harm boundary; the reducer's earlier
+in-progress concern is closed without a post-outcome protocol change.
+
+Native CPU preparations on node2 passed for all three original perception
+parents. Original tensor/source/tokenizer/model identities checked; no repair
+or coaching descendant is used. Prepare spans18.557/18.087/17.810s, not GPU
+training or generation. Final plans0/1/2:
+f517e0a77bf4705f8a7aebf9ff4472da44838493b13fb8e592c64378134956c1
+78b316e79e303b68ac326671f350c5e2735ada80ce2750d734406175d2f51535
+34079b169137d8e2fdbd16e1b5be902d216c974e84a2526632a3fa068d54649e.
+
+Authorize Main's three bounded inference controllers after live reservation
+checks: node2GPUs0/1/2, roots
+/localhome/local-rohing/astra_diagnostics/parenting_alignment_seedN_20260913_attempt1.
+Three cold arms per root, ALIGNED/SWAPPED/NO_PARENT;312maximumcalls,0fits,
+0updates;3600scontroller+180scollection each, five aggregate A40h ceiling.
+Expected runtime is minutes per root based on earlier cold-worker paths, but
+the changed prompt/output lengths require actual measurement, not a promised
+forecast. Hypothesis: task alignment changes immediate PROCESS_USE/material;
+frozen feasibility vector and full denominators apply. Stop on infrastructure,
+custody, visibility or deadline faults, not poor child responses. No retries,
+write promotion or threshold repair. Holders automatically collect once only
+after successful controller termination and retain GPU reservation until then.
+Actual PID/start receipts will follow; this entry alone is not a launch/result.
+
+Descartes separately ACCEPTS six-file manuscript throughSEQ159:135 independent
+evidence/byte checks; all six hashes match author freeze. Main confirms hashes
+and source diff checks. Review SHA0e4558dbd3b4aab7e98c2e67cd65bcbe4638bf69693c8580da191a4d1dd91703;
+author145checks and review archived. No PDFbuild, collaboratorUNSENT. New
+laptop proposals for parent-free process gates remain next-stage advice: this
+currently frozen assay has no SLEEP or persistence endpoint. No naive adoption
+of authored sleep replay, relaxed retention floors, or automatic scientific
+promotion. Invariants and simple hygiene remain unchanged; formalC11later.

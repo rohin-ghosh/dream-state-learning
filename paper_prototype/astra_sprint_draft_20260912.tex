@@ -13,13 +13,28 @@
 \maketitle
 
 \noindent\textbf{Ongoing first-sprint working draft---research question unresolved.}
-This evidence cut through SEQ158 retains both positive and negative findings.
+This evidence cut through SEQ159 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-\noindent\textbf{Current evidence through SEQ-158 (C92--C94).}
+\noindent\textbf{Current evidence through SEQ-159 (C95).}
+Own-source REPLAY retains every LR0-correct held/canary item in all three
+learners, with exact-cue source-faithful recall10/14,6/8,5/8 and paraphrase
+10/14,6/8,3/8. EXTRA\_MEMORY gives13/14,7/8,7/8 exact and10/14,6/8,7/8
+paraphrase, but loses0/2/6old held items. Frozen screens pass2/3versus1/3,
+not an all-seed repair: REPLAYseed1 misses exact floor7, and seed2paraphrase3/8
+is below the evaluator-only best constant4/8. Equal updates do not match memory
+exposure or tokens; historical controls remain noncontemporaneous. Replay uses
+the same24supported authored TRAIN observations per original child, not72novel
+facts. This completed comparison supersedes the SEQ158launch-only status without
+rewriting that cut. The next alignment protocol is inference-only, zero-fit CPU
+development, not a result. C11 remains deferred; the raw-chronological LoRA
+attribution gap and H1/H2 hypotheses remain. No freeze, parenting, general G3,
+clean-lineage or mission promotion. Collaborator UNSENT.
+
+\noindent\textbf{Historical evidence through SEQ-158 (C92--C94).}
 Fixed author coaching (P) and neutral contact (N), each followed by own-record
 writing, yield fresh held eligibility16/16,16/16,13/16 in both arms versus
 ORIGINAL11/16,8/16,8/16. Incremental held coaching contrast is zero in each learner, not
@@ -366,7 +381,7 @@ repair fails. This partial retention recovery does not erase the HIGH write's
 cannot be extrapolated to LOWER. Fixed-coaching and full-dose contrastive were
 prospective at that historical cut; their completed assays are distinguished next.
 
-Through SEQ-158, fixed author coaching and neutral contact followed by own-record
+At the historical SEQ-158 cut, fixed author coaching and neutral contact followed by own-record
 writing yield the same fresh held eligibility16/16,16/16,13/16 across three
 learners, versus ORIGINAL11/16,8/16,8/16. Incremental held coaching contrast is zero, not
 an equivalence result or a parenting benefit; admitted material and write doses
@@ -379,6 +394,15 @@ capture validates the same24source-supported TRAIN records across three parents,
 not72novel facts. Own-source replay repair is launched, with no outcomes included.
 No same-history raw-chronological LoRA comparator isolates extraction/compiler
 utility; H1/H2 remain hypotheses rather than demonstrated mechanisms.
+
+Through SEQ-159, own-source replay retains every historically LR0-correct held
+and canary item, but exact-cue recall10/14,6/8,5/8 and paraphrase10/14,6/8,3/8
+do not establish an all-seed repair. EXTRA\_MEMORY has exact13/14,7/8,7/8 and
+paraphrase10/14,6/8,7/8 while losing0/2/6old held items. Frozen screens pass
+2/3versus1/3; REPLAYseed2paraphrase3/8 falls below the limited constant4/8.
+Equal steps do not equal memory exposure or token compute. Historical controls,
+shared authored replay sources and the absent raw-chronological LoRA comparator
+limit attribution; the next zero-fit alignment protocol remains CPU development.
 \end{abstract}
 
 \section{Introduction}
@@ -3885,6 +3909,62 @@ observed component outcomes or introduce a new launch requirement.
 These results guide further repair without changing H1/H2 as hypotheses or
 promoting parenting, freeze, general G3, clean lineage or mission completion.
 \ev{C92,C93,C94}
+
+
+\subsection{Own-source replay protects retention, not all-seed recall (SEQ-159)}
+\label{sec:seq159-replay}
+REPLAY and EXTRA\_MEMORY restart from each original perception adapter, using
+the same14/8/8raw memory records; no HIGH/LOWER descendant is continued.
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{llrrrrl}
+\toprule
+Seed & Arm & Exact cue & Paraphrase & Held & Lost LR0 & Screen \\
+\midrule
+0 & REPLAY & 10/14 & 10/14 & 47 & 0 & Meets \\
+0 & EXTRA\_MEMORY & 13/14 & 10/14 & 47 & 0 & Meets \\
+1 & REPLAY & 6/8 & 6/8 & 48 & 0 & Misses recall \\
+1 & EXTRA\_MEMORY & 7/8 & 6/8 & 46 & 2 & Fails retention \\
+2 & REPLAY & 5/8 & 3/8 & 48 & 0 & Meets \\
+2 & EXTRA\_MEMORY & 7/8 & 7/8 & 42 & 6 & Fails retention \\
+\bottomrule
+\end{tabular}
+\caption{C95: source-faithful exact-cue/paraphrase production, not target-byte
+or canonical-string identity; content counts coincide. Held counts are out of48;
+Lost LR0 counts previously correct items lost. All six canary panels remain12/12.
+The frozen screen combines exact floors8/7/5 with zero held/canary itemwise loss.}
+\label{tab:seq159-replay}
+\end{table}
+REPLAY preserves all LR0-correct items in three learners, but meets only2/3
+screens versus EXTRA\_MEMORY's1/3: seed1misses recall floor7. Seed0's one held
+failure was already wrong under LR0. No all-seed repair follows. Evaluator-only
+best constant exact/paraphrase counts are6/14,4/8,4/8. Seed2REPLAYparaphrase3/8
+is below4/8 despite meeting its exact/retention screen; limited constant-baseline
+advantages elsewhere do not prove general key binding. Paired REPLAY-only/extra-only
+successes are exact1/4,0/1,0/2; paraphrase0/0,0/0,0/4; held0/0,2/0,6/0.
+EXTRA\_MEMORYseed1's two new losses overwrite an absent prior; seed2's six
+emit records where the source requires abstention (five missing outcomes, one
+outcome/action mismatch). These are source/content errors, not malformed JSON.
+
+Updates match304/256/256per arm, not exposure or compute: REPLAY has112/64/64
+memory presentations plus192observation presentations per learner, while
+EXTRA\_MEMORY has304/256/256memory presentations. The192extra memory
+presentations repeat existing records. The replay inputs are24shared previously
+trained authored supported observations read by each original child, not72novel
+facts. Training tokens differ; totals are46728supervised and334800context tokens.
+Six fits add1632updates/480calls; historical HIGH/LOWER/LR0 controls add no new
+runs and remain noncontemporaneous. Three exposed DEV learner pairs are not
+independent episodes or a pooled causal/equivalence estimate. \ev{C95}
+
+A separate reducer copy fixes only constant-candidate/tie array ordering to
+match the frozen collector. Scores, candidate sets and floors are unchanged;
+Main reports16tests PASS3.095s. This is no scientific retry or recollection.
+The completed audit replays raw source/scoring and receipt joins, not native
+hardware or tensor payloads. C11 remains deferred; the absent same-child,
+same-history raw-chronological LoRA control prevents extraction/compiler
+attribution. The next alignment protocol is inference-only, zero-fit CPU
+development, not a result. No all-seed substrate, freeze, H1/H2, parenting,
+general G3, clean-lineage or mission promotion follows. \ev{C95}
 
 \section{Causal protocol for integration, not a launch instruction}
 \paragraph{Separate the three links.} First establish oracle material correctness,
