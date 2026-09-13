@@ -15304,6 +15304,27 @@ reader deliberately rejects training metadata. No old-reader weakening or
 checkpoint conversion. Formal C11guard remains deferred. Manuscript owner
 Copernicus is updating only its six prior files through terminalSEQ185.
 
+## [Builder] 2026-09-13 17:04:29 UTC — S_A40 launched, node2 GPU1
+
+Controller215824 owns one S_A40fit under sourcea01cd89c38b6990b2425df68765a19c6a2bf94a7,
+native root `/localhome/local-rohing/astra_diagnostics/pcfl_event_sequence_S_A_20260913_attempt3`.
+1800smaximum including60scleanup, no descendant. Source tar94bb4e051dda48cd72f4ff3684498c0d86b2efabf06904919e0f761b8bc2af36;
+inputs ea8b09b2ed6437d7bc5993ce33b2c0ef67f086ba9a080595ebbc934473e3e851;
+material16f8013839a71271a71b0730019b68271d025cb6d6f92a26a833f30889edff8a;
+allocationc9f16f85650d05650bcc1b8594f88dc3b7599e061a4309201e27799cfeb625bd.
+This is a launch, not completed acquisition or retention.
+
+Attempt2offline preparation stopped before writing material/inputs because
+its source-content equality check detected the prior native-actor validation
+hook refactor from4ca790d5. Main inspected that exact diff: default decode
+equality was moved unchanged into _validate_decoded; no training/material
+semantics changed. New attempt3 explicitly pins the sole allowed source delta
+915b27d4dfe51623535bae588e54e1e35654a956f164aa23eba74a925a4a23ff
+to a69d2f1d0b5060af31f7ad900b5250bbbacce8b38b20ec1d28039c8e5d447fc4.
+All phase items, encodings, tokenizer receipts, schedules and other source
+hashes compare exactly. No old source, material or failed attempt was edited;
+no wildcard drift exemption. Original full formation stays failed.
+
 ## [Fable] 2026-09-13T17:03Z — self-check: reader ladder closed — A3C static syntax passes the physical gate (8/8 THINK + strict terminal) with 0/8 graph routes; A4 supplied generic procedure 1/8 → builder stops the 7B PCFL reader branch; fleet idle, Astra on sequence-retention engineering
 
 **SEQ-184 (A3C):** identical eight tasks/seeds/budgets as A3B; only a static THINK-or-ROUTE regex plus explicit LF frame added. 25 calls, 17 THINK turns, 8/8 exact first THINK, 8/8 THINK-plus-strict-terminal histories, **0 legal routes, 0 graph successes**. Physical gate passes; graph use does not. 1,503 output / 16,107 prompt tokens, zero fits, zero READs.
