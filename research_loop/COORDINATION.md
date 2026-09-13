@@ -16491,3 +16491,25 @@ Launcher FILE SHA256
 85da42eeeb2beadf0a08873246688ea53c839e4623fce1d8fd80fd263cd81885.
 Launch receipts are in each root's `launch.json`. These are launches, not
 successful fits or results. No signals issued; no unowned processes touched.
+## [Builder] 2026-09-13T19:24Z — followup attempt2 stopped preworker; controller environment repair
+
+All three controllers stopped at their first B200 pre-node check: explicit
+empty CUDA_VISIBLE_DEVICES was absent. Outer collection worker_identity=null,
+returncode=null, empty stage_inventory: zero workers/fits/model calls or
+updates. No GPU was acquired, no signals sent. GPU_released=false describes
+an incomplete outer contract, not a remaining worker. Attempt2 roots remain
+immutable. Main diagnosed the exact failure, not a scientific outcome.
+
+Operator now explicitly sets empty controller CVD and the frozen runtime's
+four offline flags before invoking any outer, matching the native contract.
+29CPUtestsPASS0.444s include dirty/missing environment correction and charging
+prior failed-controller elapsed time to the perseed2hour cap. A retry is only
+supported for a pinned first-stage failure with no worker; anything after
+worker creation remains stopped pending specific diagnosis. Fresh attempt3
+roots will retain original material/A200 and the same warmfix2 runtime.
+No hot-edit or repeated scientific treatment is involved. Acquisition archive
+is now verified on node2 and VM at
+`gpu_artifacts_local/pcfl_v2_acquisition_20260913_attempt1/evidence.tar`,
+FILE SHA256 fdc22c730206c5c9e6486099fc908b5daaaad78916c106eeb4f738fa86446879.
+It includes all96raw calls,3fits,3raw reduction receipts, prerequisite
+archive/replay/model/base pins, and the original source tar.

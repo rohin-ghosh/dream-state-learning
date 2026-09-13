@@ -10,6 +10,7 @@ import hashlib
 import importlib
 import json
 import math
+import os
 from pathlib import Path
 import sys
 import time
@@ -191,6 +192,23 @@ def prepare(args, runtime):
         initial += elapsed
         originals.append(binding)
     preserve(originals)
+    prior_failure = None
+    if getattr(args, 'prior_failure', None) is not None:
+        prior_failure = dict(path=args.prior_failure, sha256=args.prior_failure_sha256)
+        stopped = checked(prior_failure)
+        previous = checked(pin(Path(args.prior_failure).parent / 'manifest.json'))
+        require(previous['entry'] == entry and previous['seed'] == args.seed and previous['source_root'] == str(source),
+                'prior failure seed/source/ancestry mismatch')
+        require(stopped['status'] == 'STOPPED' and stopped['phase'] == 'B200_NEW_DOSE'
+                and stopped['stage'] == 'fit' and len(stopped['results']) == 1, 'only preworker first-stage failure supported')
+        collection = checked(stopped['results'][0]['collection'])
+        require(collection['status'] == 'FAILED' and collection['worker_identity'] is None
+                and collection['returncode'] is None and collection['stage_inventory'] == {}, 'prior attempt may have executed a worker')
+        elapsed = stopped['elapsed_seconds']
+        require(type(elapsed) in (int, float) and math.isfinite(elapsed) and elapsed >= collection['elapsed_seconds'] >= 0,
+                'invalid prior failure cost')
+        initial += elapsed
+        preserve([prior_failure, pin(Path(args.prior_failure).parent / 'manifest.json'), stopped['results'][0]['collection']])
     root.mkdir(parents=True)
     (root / 'inputs').mkdir()
     (root / 'runs').mkdir()
@@ -209,6 +227,7 @@ def prepare(args, runtime):
                 remaining_seconds=7200-initial, originals=originals, entry=entry, pins=pins,
                 acquisition_request=request_pin, acquisition_receipt=pin(root / 'inputs/acquisition_receipt.json'),
                 runtime_c0_inputs=pin(root / 'inputs/runtime_c0_inputs.json'), repair=getattr(runtime, 'repair', None),
+                prior_failure=prior_failure,
                 automatic_promotion=False, no_automatic_retry=True, retention=None, fit_inputs=[])
     if ready:
         budget(initial, time.monotonic(), allocation)
@@ -234,6 +253,8 @@ def run(args, runtime):
     entry, results, started = plan['entry'], [], time.monotonic()
     allocation, cold = checked(entry['allocation']), checked(plan['runtime_c0_inputs'])
     require(plan['repair'] == getattr(runtime, 'repair', None), 'runtime repair identity mismatch')
+    os.environ.update({name: '1' for name in runtime.fit.OFFLINE})
+    os.environ['CUDA_VISIBLE_DEVICES'] = ''
     runtime.fit.write(root / 'started.json', dict(manifest=manifest_pin, started_at=time.time()))
     try:
         for phase, fit_pin in zip(PHASES, plan['fit_inputs']):
@@ -279,6 +300,8 @@ def main():
         if name == 'prepare':
             command.add_argument('--seed', type=int, choices=(0, 1, 2), required=True)
             command.add_argument('--gpu', type=int, required=True)
+            command.add_argument('--prior-failure')
+            command.add_argument('--prior-failure-sha256')
     args = parser.parse_args()
     result = (prepare if args.command == 'prepare' else run)(args, load_runtime(args.source_root))
     if result:

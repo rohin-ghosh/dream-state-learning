@@ -3,6 +3,7 @@
 import argparse
 import copy
 import json
+import os
 from pathlib import Path
 import tempfile
 from types import SimpleNamespace
@@ -36,6 +37,7 @@ class FollowupTests(unittest.TestCase):
             modules[name] = SimpleNamespace(__file__=str(path))
         self.runtime = SimpleNamespace(**{key: value for key, value in modules.items() if key != 'lifecycle'})
         self.runtime.fit.write = write
+        self.runtime.fit.OFFLINE = ('HF_HUB_OFFLINE', 'TRANSFORMERS_OFFLINE', 'HF_HUB_DISABLE_TELEMETRY', 'VLLM_NO_USAGE_STATS')
         self.runtime.fit.prefix = SimpleNamespace(unseal=Mock())
         fit_sources = {modules['fit'].__file__: api.pin(modules['fit'].__file__)['sha256']}
         read_sources = {**fit_sources, modules['readout'].__file__: api.pin(modules['readout'].__file__)['sha256']}
@@ -112,6 +114,8 @@ class FollowupTests(unittest.TestCase):
         self.assertIn(api.pin(operator), plan['pins'])
 
     def controller(self, inputs_path, inputs_sha256, allocation_path, allocation_sha256, output, **selection):
+        self.assertEqual(os.environ.get('CUDA_VISIBLE_DEVICES'), '')
+        self.assertTrue(all(os.environ.get(name) == '1' for name in self.runtime.fit.OFFLINE))
         root = Path(output)
         self.assertTrue(root.is_absolute() and root.parent.is_dir() and root.parent.resolve() == root.parent)
         protected_paths = (Path(inputs_path).resolve().parent, Path(allocation_path).resolve(),
@@ -360,6 +364,37 @@ class FollowupTests(unittest.TestCase):
         self.repaired_runtime()
         with self.assertRaisesRegex(ValueError, 'exact single repaired'):
             api.original_sources({}, self.runtime)
+
+    def prior_failure(self, worker=None):
+        self.prepare()
+        previous = Path(self.args.root)
+        outer = previous / 'runs/B200_NEW_DOSE_fit_outer'
+        outer.mkdir()
+        write(outer / 'collection.json', dict(status='FAILED', worker_identity=worker, returncode=None,
+                                             stage_inventory={}, elapsed_seconds=6))
+        write(previous / 'stopped.json', dict(status='STOPPED', phase='B200_NEW_DOSE', stage='fit',
+              elapsed_seconds=8, results=[dict(collection=api.pin(outer / 'collection.json'))]))
+        self.args.prior_failure = str(previous / 'stopped.json')
+        self.args.prior_failure_sha256 = api.pin(previous / 'stopped.json')['sha256']
+        self.args.root = str(self.base / 'followup_retry')
+
+    def test_logged_preworker_failure_cost_is_charged(self):
+        self.prior_failure()
+        plan = self.prepare()
+        self.assertEqual(plan['initial_outer_seconds'], 308)
+        self.assertEqual(plan['remaining_seconds'], 6892)
+        self.assertIn(plan['prior_failure'], plan['pins'])
+
+    def test_prior_worker_execution_cannot_be_silently_retried(self):
+        self.prior_failure(worker={'pid': 123})
+        with self.assertRaisesRegex(ValueError, 'may have executed a worker'):
+            self.prepare()
+
+    def test_dirty_controller_environment_is_reset_before_first_stage(self):
+        self.prepare()
+        with patch.dict(os.environ, {'CUDA_VISIBLE_DEVICES': 'GPU-UNRELATED', 'HF_HUB_OFFLINE': '0'}):
+            api.run(self.args, self.runtime)
+        self.assertEqual(len(self.calls), 8)
 
 
 if __name__ == '__main__':
