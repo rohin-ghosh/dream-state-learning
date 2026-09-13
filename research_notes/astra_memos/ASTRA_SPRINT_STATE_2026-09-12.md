@@ -1,4 +1,18 @@
-## Current superseding snapshot — 2026-09-13 09:19 UTC
+## Current superseding snapshot — 2026-09-13 09:34 UTC
+
+LowerLR3e-5 repair live node2GPUs4/5/6, three original perception parents;
+no new result, no LR0reruns. SEQ154post-memory transfer complete/oncearchived:
+WRITE8/16each vsLR07/6/4, only example-present wakes execute. Raw audit shows
+48missing-comma failures; LR0records drop Boolean priors. Source novelty varies
+byseed, realized experience differs; not example-free transfer or repeatedlearning.
+SEQ153constant alternative exact+2/+3/+1 versus hypothetical bestconstant;
+seed0paraphrase is a literal constant. Not generalkeybinding. Originalheld
+losses3/11/31remain. Independent manuscript review throughSEQ153 pending.
+Three-seed contrastive authored dose extension specified, CPUrunnerinprogress,
+notlaunched; PCFL CPUworldpartial only, no modelready gate. CurrentHANDOFF
+pins ownership/plans/nextcommands. Missionincomplete; simplehygiene, C11deferred.
+
+## Historical superseded snapshot — 2026-09-13 09:19 UTC
 
 SEQ152nativegreedy confirms14/16TRAIN versus8/16READOUT forhighseed2, not
 HF15/16parity. SEQ153all3actual-child writes improve exact/paraphrase recall

@@ -1,6 +1,52 @@
-# Astra current handoff — 2026-09-13T09:19Z
+# Astra current handoff — 2026-09-13T09:34Z
 
-## CURRENT — September13 09:19UTC (supersedes all snapshots below)
+## CURRENT — September13 09:34UTC (supersedes all snapshots below)
+
+Mission ACTIVE/incomplete. Simple hygiene now; formal guard only final C11.
+LowerLR3e-5 actual-child repair LIVE node2GPUs4/5/6, seeds0/1/2.
+Custodian/controller54805/54806,54928/54929,55121/55122;09:30:19/29/39UTC.
+All three are cold-readout workers now, no result yet.3600s cap per candidate.
+Runner /tmp/astra_memory_lower_lr_run_20260913.py SHA
+80467204aa7ccb4a1cbf4f8d85c7be4e7347263f98f4f7b8fef5739980fcf413.
+Launcher /tmp/astra_memory_lower_lr_main_20260913.py SHA
+bb6de32882484fac0c6bb7c154381a1ba1af9d0d8ffa52dd29d9036ef7010da3.
+Native roots /localhome/local-rohing/astra_diagnostics/memory_lower_lr_seedN_20260913_attempt1.
+Plans seed0/1/2:
+898bed1d787bd58a2fa45b98a1ff719652d1f29cc903dd53480768e6d297b500
+b0ad752559d04781d090d3042888d51f8a0ddd2250f509ffa85b512f78f55889
+597095536f3d23de7bd1833c65ffe516293e6936ebedc5c5a9321580a2d868e7.
+Wait for capture_complete.json AND launcher exit.json then collect each new
+root ONCE with exact completion SHA and fresh sibling output. CLI in runner.
+Archive new roots/collections/launcher receipts and compare imported HIGH/LR0
+as historical/noncontemporaneous; do not recollect originals or rerun controls.
+Strict screen is unchanged: exact8/14,7/8,5/8 plus every LR0-correct held/canary
+item restored. No outcome yet. Parfit owns independent local-only reducer.
+
+SEQ154post-memory pairs COMPLETE, collectedONCE/archived: WRITE8/16each vs
+LR07/16,6/16,4/16; all48example-absent wakes omit commas and fail strict parser.
+LR0record errors are Boolean prior replaced bynull, not simply format.
+Seed2WRITE4new-bank/nonexample actions yield4eligible records; no exact old
+targets reused, but actions/priors differ between arms. No example-free
+transfer, repeated learning or freeze. Lovelace local replay12testsPASS.781s;
+final analysis /tmp/astra_post_memory_analysis_result_20260913_final.
+Archive gpu_artifacts_local/post_memory_formation_20260913_attempt1/evidence.tar
+a94ce39aabcc8eec321d3fdb149515714bb4d79040efdf491c1ae44397ff2548.
+SEQ153constant-record alternative: exact WRITE exceeds hypothetical oracle
+constant by2/3/1records, paraphrase by0/1/1;seed0paraphrase literally constant.
+No proven key-binding mechanism. Beauvoir finishes audit/manuscript review.
+
+Copernicus owns six dirty manuscript files throughSEQ153 plus constant caveat;
+await final EDITSTOP and independent review. Preserve unrelated dirtyrules.
+Descartes PCFL partial CPUworld20testsPASS.370s, NOT fullStage0/model-ready:
+missing actual scientific root/token/prompt/distractor/projection bindings.
+No PCFL model call. Descartes now owns new contrastive full-dose runner/tests
+in/tmp; protocol ASTRA_CONTRASTIVE_FULL_DOSE_2026-09-13.md, not launched.
+Same12paired sources, dose336updates/arm,3seeds,6fits; no other recipe change.
+Node1 evidence evacuation deadline2026-09-13T23:14UTC; originals protected.
+Next: collect lowerLR once, integrate analyses/review, qualify contrastive
+extension, and select simplest next own-record/replay test from outcomes.
+
+## Historical superseded snapshot — September13 09:19UTC
 
 MissionACTIVE/incomplete; simple hygiene now, C11formalguard only finalpaper.
 SEQ152nativegreedy COMPLETE/archived: OFF8/16TRAIN+8/16READOUT,fit2highseed2
