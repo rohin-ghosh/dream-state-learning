@@ -206,6 +206,51 @@ placement STRONGER than predicted (below the floor).]
 5.6 [SLOT: second backbone replication.]
 5.7 Ablations: β sweep, layer sweep, value-only vs surprise×value vs additive.
 
+### 5.8 Separate DEV-only component diagnostic: SEQ192
+
+This September 13, 2026 worksheet prompt-package robustness diagnostic is
+separate from the Felt Attention results above. Three existing SEQ142 prediction
+adapters were evaluated without new fits or updates against disabled-adapter
+OFF on 24 shared fresh authored cases in FULL and MINIMAL views, with six cases
+each for supported-true, supported-false, missing, and conflicting evidence.
+Primary typed-content counts retain malformed and truncated outputs.
+
+| Learner seed | OFF FULL /24 | Post FULL /24 | OFF MINIMAL /24 | Post MINIMAL /24 | MINIMAL contrast |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 0 | 16 | 24 | 14 | 24 | +10 |
+| 1 | 16 | 23 | 14 | 1 | -13 |
+| 2 | 16 | 19 | 14 | 18 | +4 |
+
+The predeclared continuation rule is **FALSE**: every learner had to show a
+positive MINIMAL contrast and at least 20/24 post content; seeds 1 and 2 fail.
+The branch stops without a prompt, dose, scorer, or token-cap rescue. FULL
+improves in all three learners, but uniform prompt-package robustness fails.
+Content is distinct from format: strict MINIMAL post counts are 0/0/18 versus
+OFF 0/0/0. Seed 0's 24 content-correct MINIMAL answers are all fenced; seed 1
+has 23 unparseable outputs and one fenced answer, with one length termination
+and 23 stop terminations.
+
+Original SEQ142 selected action-ID residues encode target labels, so its
+48/48 prediction result does not establish evidence reading. SEQ192 uses fresh
+disjoint triples and 24 distinct selected residues, but **does not test
+same-ID counterfactuals**. FULL/MINIMAL also differ in packaging: this is
+prompt-package robustness only, not isolated conditional evidence use or proof
+that all ID shortcuts are excluded. There is no matched-trained parenting
+control, retention test, independent fact-bank replication, new-family transfer,
+or general H1/H2, P1, or mechanism-freeze claim.
+
+Primary attempts are 2/2/1 for seeds 0/1/2, selected before outcome inspection.
+The original seed 0/1 attempts remain ineligible after controller custody-check
+failures, not zero-score observations or repaired receipts. Cost is **288 eligible
++ 192 failed-attempt = 480 actual calls**, with zero fits, updates, or parent
+calls. These are shared cases and repeated frozen OFF, not independent banks.
+Retention-v2 runtime integration is separate and supplies no result here;
+the manuscript and broader research mission remain incomplete.
+
+Sources: [SEQ192 result memo](../research_notes/analysis/2026-09-13_level1_prediction_transfer_result.md)
+and [durable audit JSON](../research_notes/astra_memos/receipts_20260912/astra_prediction_transfer_audit_20260913_result.json),
+SHA256 `9ca1433d5cce275cbc9ae8af1a36a43e7f93351d28eb823e9d6e5cde8c821344`.
+
 ## 6. The Negative-Control Ledger (methodological contribution)
 
 6.1 With mock embeddings, no realistic policy beats the canaries — reported, not

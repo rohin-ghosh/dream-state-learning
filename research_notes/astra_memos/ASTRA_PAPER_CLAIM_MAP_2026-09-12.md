@@ -1,12 +1,22 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This draft through SEQ188 retains earlier positive and negative findings;
+This draft through SEQ192 retains earlier positive and negative findings;
 SEQ167 and SEQ169--173 are engineering-only logs, excluded from scientific results.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
+
+**Through SEQ192 / C105: prompt-package robustness continuation rule FALSE.**
+On the shared 24-case panel, FULL OFF16 gives post24/23/19 and MINIMAL OFF14
+gives post24/1/18 across seeds0/1/2. Seeds1/2 fail the all-learner MINIMAL rule;
+the prediction branch stops. Original SEQ142 action-ID residues encode labels,
+and SEQ192 has no same-ID counterfactual test: prompt-package robustness only,
+not isolated evidence use, parenting, retention, or general H1/H2 evidence.
+The cost is288 eligible+192 failed-attempt=480 actual calls, zero fits/updates
+or parent calls. Retention-v2 runtime integration is separate, not an outcome
+reported here. Prior results remain; manuscript and mission are incomplete.
 
 **Through SEQ188 / C104: no exact sequence acquisition; retention undefined.**
 The eligible changed-recipe screen alters output without exact acquisition;
@@ -4908,3 +4918,59 @@ The fit audit is not an acquisition result; the cold audit records
 Adapter bytes match the failed attempt, SHA256
 `82d98aed28fe4bcd0a6c18e49111b48ff0b92b37c3ef9459e1993edd38e661b2`;
 that match does not make the failed receipt eligible or rescue its outcome.
+
+## C105 — SEQ192 prediction worksheet prompt-package robustness
+
+The DEV-only September 13, 2026 result evaluates the three existing SEQ142
+prediction adapters without new fits or updates against disabled-adapter OFF.
+All learners share 24 fresh authored cases in FULL/MINIMAL views, with six
+cases per supported-true, supported-false, missing, and conflicting group.
+Malformed and truncated outputs remain in primary typed-content denominators.
+
+| Learner seed | OFF FULL /24 | Post FULL /24 | OFF MINIMAL /24 | Post MINIMAL /24 | MINIMAL contrast |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 0 | 16 | 24 | 14 | 24 | +10 |
+| 1 | 16 | 23 | 14 | 1 | -13 |
+| 2 | 16 | 19 | 14 | 18 | +4 |
+
+The audit records `continuation_rule_met=false`. The fixed rule required
+positive MINIMAL contrast and at least20/24 post content in every learner;
+seeds1 and2 fail. FULL improves in all three learners but does not establish
+uniform prompt-package robustness. The prediction branch stops: no rescue
+with new prompts, dose, scoring, or token caps. Strict MINIMAL post counts
+are0/0/18 versus OFF0/0/0. Seed0's24 content-correct MINIMAL responses are
+all fenced; seed1 has23 unparseable outputs and one fenced answer, with one
+length termination and23 stop terminations. Seed2 misses five conflicting
+cases in FULL and all six in MINIMAL. Content and format are separate.
+
+**Shortcut and isolation limits.** Original SEQ142 selected action-ID residues
+encode target labels in both train and held material; its48/48 prediction
+result is preserved but cannot establish evidence reading. SEQ192's fresh
+disjoint triples and24 distinct selected residues do not substitute for a
+**same-ID counterfactual test, which was not performed**. FULL/MINIMAL also
+differ in packaging. This supports only a worksheet prompt-package robustness
+diagnostic, not isolated conditional evidence use or exclusion of all ID
+shortcuts. Shared authored cases and repeated frozen OFF are not independent
+fact-bank replications. No matched-trained parenting control, retention,
+new-family transfer, general H1/H2, P1, or mechanism-freeze claim follows.
+
+**Eligibility and cost.** Before primary outcome inspection, selection fixed
+serial retries for seeds0/1 and retained seed2 attempt1: primary attempts2/2/1.
+The original parallel attempt captured288 calls and its six workers exited0
+and released, but seed0/1 controllers failed their post-CVD check against the
+finished, unreaped seed2 controller. Those original seed0/1 attempts remain
+ineligible, not zero scores or repaired receipts; there is no third attempt.
+The durable JSON reports **288 eligible+192 failed-attempt=480 actual calls**
+and **zero fits**; the result memo also records zero updates and parent calls.
+Failed-attempt costs remain part of campaign accounting. No new runtime or
+aggregate GPU-hour claim is inferred from this call count.
+
+Sources: [SEQ192 result memo](../analysis/2026-09-13_level1_prediction_transfer_result.md),
+recorded18:18 UTC; [durable audit JSON](receipts_20260912/astra_prediction_transfer_audit_20260913_result.json),
+SHA256 `9ca1433d5cce275cbc9ae8af1a36a43e7f93351d28eb823e9d6e5cde8c821344`;
+[audit implementation](receipts_20260912/astra_prediction_transfer_audit_20260913.py).
+The JSON's seed summaries verify the table, strict counts, failure modes,
+attempt selection, continuation flag, and call/fit totals. Retention-v2 runtime
+integration is separate and is not a renewed prediction sweep or a retention
+result. Earlier findings and failed gates remain unchanged; neither manuscript
+nor research mission is complete. Collaborator **UNSENT**. [C105]

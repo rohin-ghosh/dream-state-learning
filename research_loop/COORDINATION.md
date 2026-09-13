@@ -15960,3 +15960,25 @@ source remains immutable and failed prediction attempts remain ineligible.
 Lagrange EDITSTOP and closed. Raman owns future v2 fit/outer+tests, Main
 v2 readout+test; Mendel owns scoped manuscript/claim-map update only.
 No new Main native jobs launched during this reconciliation.
+
+## [Builder] 2026-09-13T18:28Z — manuscript synchronized; v2 acquisition scope fixed
+
+Mendel EDITSTOP/closed; Main checked the SEQ192 tables/limits against audit
+JSON and source diffs. Paper draft, TeX, claim map C105 and UNSENT collaborator
+draft now include the mixed prompt-package result and inherited ID-shortcut
+limitation. Abstracts unchanged; no TeX compiler/build claim, no gate promotion.
+
+Prospective supplement
+`research_notes/analysis/2026-09-13_pcfl_event_sequence_v2_execution_protocol.md`
+fixes three optimizer seeds on the same authenticated DEV bank, first A200
+and fresh C0/A200 cold readouts:3fits/600updates/2400presentations/96calls,
+node2 GPUs1/2/3 serially,2hour batch cap,30minute perstage limit. Actual live
+resource checks precede every stage. Node2 at18:23UTC had no NVML compute
+owners; this is not a reservation or substitute for CVD checks.
+
+Main v2 readout7testsPASS53.609s and orchestration4testsPASS0.029s; Raman's
+fit/outer validation is still in progress. Epicurus implements a small bound
+raw acquisition check for the exact existing prerequisite, not a C11 guard.
+No native v2 fit launched yet. Four remaining fits per passing seed retain
+the fixed successor comparison; failed acquisition withholds its descendants.
+No prediction or S_A40 branch revival, and no scientific outcome inferred.

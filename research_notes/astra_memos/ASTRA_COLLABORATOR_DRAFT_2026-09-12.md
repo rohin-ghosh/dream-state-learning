@@ -1,12 +1,54 @@
 # DRAFT ONLY — unsent collaborator update
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This draft through SEQ188 retains earlier positive and negative findings;
+This draft through SEQ192 retains earlier positive and negative findings;
 SEQ167 and SEQ169--173 are engineering-only logs, excluded from scientific results.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
+
+**SEQ192 / C105: prediction prompt-package robustness branch stops.**
+Three existing SEQ142 prediction adapters, without new fits or updates, were
+compared with disabled-adapter OFF on24 shared fresh authored cases in each
+FULL/MINIMAL view (six each supported-true, supported-false, missing, conflicting).
+Primary typed-content counts retain malformed and truncated outputs.
+
+| Learner seed | OFF FULL /24 | Post FULL /24 | OFF MINIMAL /24 | Post MINIMAL /24 | MINIMAL contrast |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 0 | 16 | 24 | 14 | 24 | +10 |
+| 1 | 16 | 23 | 14 | 1 | -13 |
+| 2 | 16 | 19 | 14 | 18 | +4 |
+
+The predeclared continuation rule is **FALSE**: positive MINIMAL contrast
+and at least20/24 post content were required in every learner; seeds1/2 fail.
+FULL improves in all three, not uniformly robust performance across packages.
+There is no prompt, dose, scorer, or token-cap rescue. Strict MINIMAL post
+counts are0/0/18 versus OFF0/0/0: seed0's24 correct-content answers are all
+fenced; seed1 has23 unparseable outputs and one fenced answer, with one length
+termination and23 stop terminations. Content and strict format are distinct.
+
+Original SEQ142 selected action-ID residues encode labels, so its preserved
+48/48 prediction result does not establish evidence reading. SEQ192 uses
+fresh disjoint triples and24 distinct selected residues but **has no same-ID
+counterfactual test**. FULL/MINIMAL also differ in packaging: prompt-package
+robustness only, not isolated conditional evidence use or exclusion of all
+ID shortcuts. There is no matched-trained parenting control, retention test,
+independent fact-bank replication, new-family transfer, general H1/H2, P1,
+or mechanism-freeze claim.
+
+Primary attempts2/2/1 were selected before outcome inspection; original
+seed0/1 controller custody-check failures remain ineligible, not repaired
+receipts or zero-score observations. **288 eligible+192 failed-attempt=480
+actual calls**, zero fits, updates, or parent calls. Shared cases and repeated
+frozen OFF do not supply independent banks. Retention-v2 runtime integration
+is separate and supplies no result here. Prior results and author intent
+remain; neither manuscript nor mission is complete. This draft stays **UNSENT**.
+
+Sources: [SEQ192 result memo](../analysis/2026-09-13_level1_prediction_transfer_result.md)
+and [durable audit JSON](receipts_20260912/astra_prediction_transfer_audit_20260913_result.json),
+SHA256 `9ca1433d5cce275cbc9ae8af1a36a43e7f93351d28eb823e9d6e5cde8c821344`.
+Detailed assertion-to-receipt mapping is in [C105](ASTRA_PAPER_CLAIM_MAP_2026-09-12.md#c105--seq192-prediction-worksheet-prompt-package-robustness).
 
 **Through SEQ188 / C104: no exact sequence acquisition; retention undefined.**
 The eligible changed-recipe screen alters output without exact acquisition;
