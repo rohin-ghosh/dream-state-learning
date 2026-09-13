@@ -8697,3 +8697,28 @@ Formal C11 remains deferred. No hardware reset or foreign process intervention.
 **OFF-noise sweep complete (7 generation seeds × 2 panels × 2 nodes, standalone base, ~10 GPU-h total):** report panel mean 0.485, SD 0.005, range 0.476–0.494; disjoint panel mean 0.2505, SD 0.006, range 0.238–0.260; the same seed disagrees across nodes by up to 0.018 on report and 0.013 on disjoint (run nondeterminism). Against this pooled base the five carrying lives sit at ≈ +8 SD on report (0.5291) and ≈ +3.6 SD on disjoint (0.2731); the flat lives' 0.4878 / 0.2495 are within noise of base. Rule for any pretest claim: a 2-rep Δ has SD ≈ 0.007–0.009, so ≥ 0.03 is safe and 0.02 borderline on either panel. Ledger P12 final. This closes the fill series; the lists are empty by design (see 02:5x entry on why), pending a replication kit from the builder if it wants level-0 seeds run on nodes 1/2 (Rohin: "doesn't hurt to test 0 first").
 
 **Fleet:** nodes 1 and 2 idle (16 GPUs); node 3 Q0 on GPU 2, GPU 7 still absent (driver init fault, Rohin's call on a reboot). Nudger: Astra active (idle 1.3 min); its Codex window shows 14% context left, so an automatic compaction is imminent — the nudger's binding is by rollout file and survives it. A stray "y" remains in Astra's composer (unsent). Laptop chains 5/5; A100 onboarding 05:05 UTC. Node-1 lease ends 2026-09-14 23:14 UTC; final incremental mirror to be re-run tomorrow. Nothing killed or launched by the watcher.
+
+## [Builder] 2026-09-13T03:42Z — per-skill birth corpus CPU acceptance; Q0 still live
+
+Resumed after compaction and pulled4b655575 without disturbing the unrelated
+rules-file edits. Q0 attempt2 controller306207 remains live on node3GPU2 at
+03:40UTC; no restart/kill/source edit or terminal scientific result.
+
+The next corpus is now implemented and CPU-tested: Main22PASS0.174s and
+independent22PASS0.209s plus authored-source/Boolean checks; no required repair.
+Source078ceba07141b5f6fb2159a12e21f1eccc0901ba9f51f52d1793d988927812f6,
+tests3dd12a8bef0095e488f75c32dfad6251e12f38441ee992ac9d5731454200d0e9.
+Handoff/review are archived in research_notes/astra_memos/receipts_20260912.
+Perception12train/12dev targets, reflection12/12 authored scaffolded restatements,
+judgement24/24 rows with12 targets each and unsupported abstention negatives.
+No full-mixture default, real-child experience, context-distilled generation,
+persistent skill or Level2 claim. Judgement is NOT fit-ready as balanced SFT;
+reflection exact wording is NOT a semantic reflection metric.
+
+Boyle builds the bounded OFF perception anchor probe in /tmp only. Planned
+comparison: same12dev public situations, anchor absent/present,24 greedy calls,
+fresh condition processes, all raw captures before scoring; no fitting. This
+tests prompt-dependent elicitation, not learning. Main accepts native interfaces
+and checks an actually free GPU before launch; none reserved or launched yet.
+Formal guard remains final-paper-C11-only under Rohin's steer. No general
+G3/P1/G5/H1/H2, clean-lineage or mechanism-freeze promotion.

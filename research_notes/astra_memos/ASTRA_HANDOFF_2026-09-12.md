@@ -1,6 +1,31 @@
 # Astra current handoff — 2026-09-12T19:56:24.212350+00:00
 
-## CURRENT — September13 03:27UTC (supersedes older status below)
+## CURRENT — September13 03:42UTC (supersedes older status below)
+
+Q0 attempt2 controller306207 still live at03:40UTC; retain exact custody below.
+Audit128/128 actual/natural-prefix forwards and OFF2353/288 were observed before
+compaction; no terminal scientific report. Do not restart, edit live source,
+collect prematurely, or infer a result from intermediate canaries.
+
+Birth per-skill corpus is now EDITSTOP and accepted as a bounded authored
+DEVELOPMENT CPU component: source078ceba07141b5f6fb2159a12e21f1eccc0901ba9f51f52d1793d988927812f6,
+tests3dd12a8bef0095e488f75c32dfad6251e12f38441ee992ac9d5731454200d0e9.
+Main22 testsPASS0.174s; independent review22PASS0.209s plus independent source
+checks, no required repair. Handoff/review archived in receipts_20260912.
+Perception12 train/12dev; reflection12/12 scaffolded authored restatement;
+judgement24/24 rows but only12 targets/split, negatives have no native abstain
+target. No mixture, teacher-distillation, lived-experience, or learning claim.
+Keep training_export_ready=false; CPU component acceptance is not fit readiness.
+
+Boyle01a098d6-3f45-71a2-88e7-75d0d6ec9918 owns only /tmp perception-probe
+driver/test/runtime-handoff files. Handoff not yet present at03:39UTC. First
+planned native probe: base OFF, perception DEV12, anchor absent/present24 calls,
+greedy seed0/max192, fresh condition processes, all captures before scoring,
+900s controller plus180s collection. No GPU reserved or launch yet. Main owns
+native acceptance, launch and Git. Confucius/Einstein corpus EDITSTOP.
+Formal guard remains finalC11-only. No generalG3/P1/G5/H1/H2 or freeze claim.
+
+## Previous launch checkpoint — September13 03:27UTC
 
 **Q0 attempt2 LIVE** node3GPU2/controller306207(start_ticks8572061), start
 03:23:31UTC, harddeadline04:08:31UTC. Root

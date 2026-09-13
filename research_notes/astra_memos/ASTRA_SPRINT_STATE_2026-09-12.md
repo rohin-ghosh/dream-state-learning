@@ -1,4 +1,17 @@
-## Current superseding snapshot — 2026-09-13 03:27 UTC
+## Current superseding snapshot — 2026-09-13 03:42 UTC
+
+Q0 attempt2 remains live at03:40UTC, controller306207/node3GPU2; no terminal
+scientific report yet. Exact source/root/deadline custody is in HANDOFF.
+Per-skill authored DEVELOPMENT corpus implemented and CPU-reviewed: Main22PASS,
+independent22PASS plus source/Boolean checks; source078ceba0, tests3dd12a8b.
+Three separate slices, not a mixture. Perception has12 train/12dev targets;
+reflection is scaffolded restatement, not semantic skill evidence; judgement
+negatives remain unscored/no native target. Training export is not ready.
+Native OFF perception anchor probe driver pending Boyle handoff. No native
+birth probe or new fit launched; formalC11 guard still deferred. No learning,
+ancestry, H1/H2 or mechanism-freeze promotion from these CPU fixtures.
+
+## Historical superseded snapshot — 2026-09-13 03:27 UTC
 
 Q0 repaired attempt2 LIVE on node3GPU2/controller306207, harddeadline04:08:31UTC.
 Instrumentation-only repair accepted by217 native CPU tests; real tiny PEFT
