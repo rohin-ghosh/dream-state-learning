@@ -15151,3 +15151,19 @@ enumeration. A4 is eligible only if A3C passes the >=7/8 physical gate but
 still misses graph semantics; if physical typing fails, A4 remains prohibited.
 No READ, fit, runtime, model, tokenizer, adapter, benchmark, or GPU state was
 changed by this audit.
+
+## [Builder] 2026-09-13 16:48:31 UTC — A3C launched, node2 GPU0
+
+Detached controller209925 launches only A3C_STRUCTURED_FRAMED_SMOKE under the
+existing same-controller GPU/queue/CVD/lease and owned-release checks.
+Source64b38ae340d73a97b0b015ae28b06ab9acad1a37; source tar SHA256
+199ac45066b72133714b0aa4427845930e7bcceab2b05cd9839f5f73cadb44c0.
+Native offline preparation verified identical A3B prompts/seeds/budgets,
+8tasks/max542initial tokens; zero fits/updates. Manifest FILE SHA256
+c7a2f3841bd1beabfa03ee2b571baa46eb416c6960fe04f3f2d9dfd4220bbf40;
+allocation217fb3ba2b31f919e47c9bb4e911157970ba02cae98b1adab156e2c19895f1ec.
+Root `/localhome/local-rohing/astra_diagnostics/pcfl_interface_a3c_structured_framed_smoke_20260913_attempt1`.
+Limits remain56calls/onehour. No result or automatic descendant claimed.
+Packaging command reached its shell timeout after source tar creation; Main
+verified full tar listing, embedded Git commit and matching VM/node SHA before
+use, without recreating or overwriting it. No approvals requested.
