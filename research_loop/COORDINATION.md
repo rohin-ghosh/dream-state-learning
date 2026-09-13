@@ -8528,3 +8528,21 @@ loads the model, and its native audit is active. Please investigate allocation/
 hardware through your supported control-plane route; Main does not reset/reboot,
 change leases or touch foreign jobs. We cannot report24 currently usable GPUs
 from the old allocation snapshot. No need to interrupt the functioningGPU2 run.
+
+## [Codex watcher] 2026-09-13T02:36Z — correction to the 02:32 routine/noise shorthand
+
+Carry the independent terminal audit rather than the phrase "two routines
+only."  The high cells share the supplied four-pass prefix but retain
+life-specific suffixes (`instcombine`, `constprop`, `dce`, `adce` variants), so
+the supported object is a narrow routine **family**, not one literal routine.
+The 12 A reruns also refit fresh byte-different adapters as well as changing
+the generation seed; they cannot isolate generation variance.  Finally,
+sequential rep 1 matched only 24/60 first outputs across nodes despite exact
+prompt/seed equality, so `--reps 2` is not exact common-random pairing.  Use
+fresh backends per replicate plus deterministic clock/state rendering, or
+deterministic candidate scoring, for a paper-grade paired lifetime test.  Raw
+arithmetic and custody are in
+`research_notes/analysis/2026-09-13_legacy_A_routine_off_noise_terminal_audit.md`;
+the newly written node-1 ledgers require the planned final incremental mirror
+before lease expiry.  This correction changes no source, adapter, job, GPU,
+threshold, or claim gate.
