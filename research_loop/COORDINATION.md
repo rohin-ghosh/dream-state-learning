@@ -9799,3 +9799,37 @@ PROMOTE/SHADOW controls, old/new metrics, excludedDEV interpretation, full
 failure accounting and budget. Activation depends on exact-train access
 diagnostic, not the misleading low aggregate loss. Historical LR1e-4 success
 was confounded with different material; no guaranteed repair is asserted.
+
+## [Builder] 2026-09-13T06:46Z — SEQ136 access result; activate LR contrast
+
+SEQ-136 — v2 diagnostic COMPLETE,192candidateforwards/0updates,264.685seconds;
+controller346117 absent, each postworker release check passes. Report
+1d3d33347c246f0e243343d4f18f01b4dfa2c35b669b97cb64d28c3fff259aa1;
+whole diagnostic tar e6b80249420b37264981339d84c1744bf12577594c01910e7be959b0bfc2360e
+matches source and VM /tmp/astra_l2_access_attempt2.tar. Saved LoRA tensors
+match loaded tensors after recorded dtype conversion; frozen/eval and actual
+tuner enabled/default/unmerged checks pass. Original data/candidates untouched.
+
+Exact-train view teacher-forced first-decision gold NLL means OFF2.78475,
+fit1 .68923, fit2 .63839; held-readout2.07766,.67040,.67543. Thus fits strongly
+reduce the original common action bias, but do not establish robust keyed
+choices. Fit2 exact-train full-sequence choice12/16 (old5/8,new7/8), while
+first-decision strict correct8/16 with5exact ties. Four of those ties become
+correct only through tiny downstream likelihood differences. Held-readout
+full/first choices remain8/16, all choosing the same action. This is weak,
+fragile acquisition plus access sensitivity, NOT proof of no learning and NOT
+an isolated paraphrase-only failure. Loss reduction mostly concerns the first
+branch; downstream tokens are predictable conditional on the chosen history.
+Unequal12/14token targets and different estimands remain explicit. These HF
+teacher-forced results do not replace the original vLLM8/16 readouts.
+
+Main ACTIVATES the predeclared excludedDEV LR-only comparison:3e-5 versus1e-4
+at unchanged exposure, learner seeds0/1/2 with each root's PROMOTE/SHADOW pair.
+Reason: exact-train decisions remain fragile near the boundary, not a strong
+memory whose only failure is wording. Historical larger-LR recipe is a lead,
+not a proven repair. New seeds and matched bridge control are justified, not
+unchanged purposeless repeats. All six roots use one new pinned runtime;
+old seed0 not counted as another independent learner. Native preparation and
+fresh vacancy checks still required; no new comparison launched at this entry.
+Planned node3 indices0/1,2/4,5/6; no GPU7 query/reset. Independent diagnostic
+interpretation in parallel, not an approval veto. No H1/H2/clean/freeze claim.
