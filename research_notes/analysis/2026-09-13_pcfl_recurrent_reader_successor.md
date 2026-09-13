@@ -24,7 +24,7 @@ Answer them with one prospective ladder:
 A3B-LF exact graph, 8-task smoke
   -> A3B-LF exact graph, 64-task DEV if the smoke passes
   -> otherwise A4-LF generic procedure, but only when A3B's physical turns work
-  -> scheduled-first-READ recurrent integration, 8 AUTH + 8 MISS controls
+  -> scheduled-first-READ recurrent integration, 8 AUTH tasks
   -> full supplied-memory DEV only if integration passes
 ```
 
@@ -303,8 +303,8 @@ READ EVENTS_AT <node_id>
 READ LINKS_FROM <event_id>
 READ EVENT returns the matching EVENT. READ EVENTS_AT returns all EVENTs whose AT/source is that node. READ LINKS_FROM returns all LINKs whose first event is that event. The return is exact registered rows or MISS.
 Your first generated response is scheduled to be one READ-family action. You must choose its command and address. Read the public START first; never guess an undisclosed address. This externally scheduled action family is not evidence that you autonomously chose to retrieve. It counts toward the twelve-READ limit.
-After every delivered memory result, your next generated response must be one THINK line. After the fixed CONTINUE message, choose one legal READ or commit ROUTE. Use only public START/GOAL and identifiers already returned by memory as READ addresses. Never invent an address.
-Use at least one and at most six THINK responses. Never combine THINK, READ, or ROUTE in one response.
+After the first delivered memory result, use at least one THINK before ROUTE. Thereafter choose THINK, one legal READ, or final ROUTE as needed. Use only public START/GOAL and identifiers already returned by memory as READ addresses. Never invent an address.
+Use at most six THINK responses. Never combine THINK, READ, or ROUTE in one response.
 ```
 
 For every task, the first neural generation uses only the same generic static
@@ -323,45 +323,44 @@ in the predecessor. Log the raw model tokens and label the turn
 `MODEL_GENERATED_UNDER_EXTERNAL_READ_FAMILY_SCHEDULE`, never autonomous
 retrieval.
 
-After this model-generated request receives its exact block, the next actor
-slot is constrained only to the generic `THINK [^\r\n]+` family and physically
-LF-terminated. After the fixed CONTINUE, the next slot permits the generic
-READ-or-ROUTE families without enumerating values. A later READ is
-model-generated and visible-address-closed, receives the exact service result,
-and again schedules one THINK-family slot before the next READ-or-ROUTE choice.
-No controller chooses a READ address or route token. This tests a supplied
-read--reflect--act interface; it does not establish that the child learned when
-to think or retrieve.
+After this model-generated request receives its exact block, every later slot
+uses one static LF-framed union of generic THINK, READ, and ROUTE families,
+without enumerating values. A THINK gets only the fixed CONTINUE. A later READ
+is model-generated and visible-address-closed and receives only the exact
+service result. No controller chooses a READ address, thought content, or route
+token. The prompt requires at least one post-return THINK before ROUTE, but
+does not force THINK after every later return. This is the smallest combination
+of the two components already isolated: scheduled initial access plus freely
+recurrent state construction.
 
-### 5.2 Paired conditions
+### 5.2 One smoke condition
 
-Use the same eight balanced exposed tasks in two prospectively paired arms:
+Use the same eight balanced exposed tasks in one `AUTH_SERVICE` smoke:
 
 - `AUTH_SERVICE`: the scheduled and later legal queries return exact registered
   blocks from the task's supplied bank.
-- `MISS_SERVICE`: the identical scheduled/read interface returns exact `MISS`
-  for every legal query. It must not change model, prompt, task, seed tape,
-  turn limits, or action scorer.
 
-`MISS_SERVICE` is a causal no-information control, not a strong memory
-baseline. Keep all its attempts even when it guesses. Do not construct a
-wrong-root block whose foreign identifiers or length create a second treatment
-inside this smallest smoke.
+Do not add a MISS/wrong-root arm to this component screen. The next full DEV
+already contains NONE/OFF, wrong-root, OLD-only, NEW-only and positive
+projections under the selected interface. Duplicating one null here spends
+calls without changing the screen's decision. An integration-smoke pass is not
+yet evidence of memory dependence; that interpretation waits for those full
+nulls.
 
 Per task:
 
 ```text
-12 total READ operations registered, but a successful transcript can complete at most 6 READ--THINK cycles under the THINK cap
+12 generated READ operations maximum
 6 generated THINK turns maximum
 all READ commands, including the first, are model-generated
 1 generated terminal ROUTE
-13 neural generations maximum on a successful transcript (6 READ + 6 THINK + 1 ROUTE)
+19 neural generations maximum (12 READ + 6 THINK + 1 ROUTE)
 2,048 generated tokens maximum
 4,096 returned-memory tokens maximum
 14,336 input tokens maximum at every call
 ```
 
-Paired smoke maximum: `16 * 13 = 208` neural calls, zero fits/updates. Failed
+Smoke maximum: `8 * 19 = 152` neural calls, zero fits/updates. Failed
 transcripts retain all uncalled slots. This diagnostic is deliberately not
 compute-matched to the complete-graph condition; it isolates incremental use.
 
@@ -380,9 +379,7 @@ compute-matched to the complete-graph condition; it isolates incremental use.
 5. Every successful AUTH route transition is supported by a matching exact
    EVENT row delivered before ROUTE; branch-spliced ports fail even if every
    individual port appeared somewhere in memory.
-6. `MISS_SERVICE` graph success is at most `1/8`, and AUTH's paired advantage
-   is at least `6/8` tasks.
-7. No false/private row is returned, no malformed or mixed output is accepted,
+6. No false/private row is returned, no malformed or mixed output is accepted,
    no parser repair occurs, and no arm loses a task from its denominator.
 
 Report separately: scheduled reads, autonomous legal reads, served non-MISS
@@ -405,12 +402,10 @@ claim.
   cannot reliably integrate incrementally delivered rows into a continuous
   route under this interface. This is a graph/retrieval integration failure,
   not memory transport or atomic storage failure.
-- **AUTH and MISS both pass:** the task/interface leaks a route or allows a
-  memory-independent policy. Stop; no memory-use claim.
-- **AUTH passes and MISS fails:** the bounded supplied service, recurrent
-  thought, and route action form a usable component interface. Release the
-  full supplied-memory DEV, then untouched confirmation; do not yet infer
-  LoRA utility.
+- **AUTH passes:** the bounded supplied service, recurrent thought, and route
+  action form a usable component interface. Release the full supplied-memory
+  DEV and its mandatory nulls; do not yet infer memory dependence or LoRA
+  utility.
 
 There is no second READ-prompt retry, address example, candidate route, larger
 budget, parser relaxation, or post-output correction on a miss.
@@ -545,8 +540,8 @@ Prospective upper bound before the already-budgeted full supplied-memory DEV:
 |---|---:|---:|
 | A3B smoke + full panel | 504 | 0 / 0 |
 | conditional A4 smoke + full panel | 504 | 0 / 0 |
-| scheduled integration, 8 AUTH + 8 MISS | 208 | 0 / 0 |
-| **worst case** | **1,216** | **0 / 0** |
+| scheduled integration, 8 AUTH | 152 | 0 / 0 |
+| **worst case** | **1,160** | **0 / 0** |
 
 This is a maximum, not a promised spend: failure stops descendants, and
 successful routes may use fewer turns. Measure actual prompt lengths and

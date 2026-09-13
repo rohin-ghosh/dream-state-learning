@@ -15020,17 +15020,19 @@ externally scheduling the first READ served 8/8 and elicited later READs but
 still produced 0/8 routes. The smallest successor is one common LF-framed A3B
 over the complete graph (8-task/56-call smoke, then 60/64 DEV), conditional
 answer-free A4 only when physical turns work but graph reasoning fails, and
-only after a full reasoner pass an 8 AUTH + 8 MISS first-READ/recurrent
-integration smoke (<=208 calls). The first slot uses a generic READ-only regex
+only after a full reasoner pass an 8-task AUTH first-READ/recurrent integration
+smoke (<=152 calls). The first slot uses a generic READ-only regex
 without enumerating an address; the model must select exact public START.
 Later addresses must be public or present in prior exact returns. A generic
-THINK-only slot follows each service return, then the actor chooses later
-READ/ROUTE. AUTH requires >=7/8 joint post-return THINK + legal follow-on READ
-plus exact evidence-covered route, MISS <=1/8, paired advantage >=6/8. No answer/candidate/private
+LF-framed THINK/READ/ROUTE union follows the first service return; the prompt
+requires at least one THINK before ROUTE while leaving later allocation to the
+actor. AUTH requires >=7/8 joint post-return THINK + legal follow-on READ plus
+exact evidence-covered route. Full DEV—not this smoke—supplies the mandatory
+NONE/wrong-root/partial controls. No answer/candidate/private
 address, dynamic ID enumeration, parser repair, prompt retry, fit, or new root.
 If exact graph passes but incremental service fails, that is retrieval/graph
 integration failure—not LoRA/writer failure. ATN-v2.1-AUTO shares LF turns but
 uses target-blind automatic retrieval so autonomous READ policy cannot weaken
-the strong text baseline. Worst pre-full-DEV ceiling is 1,216 calls, zero
+the strong text baseline. Worst pre-full-DEV ceiling is 1,160 calls, zero
 fits/updates; stopped descendants are not spent. No builder/runtime/model/GPU
 file or process was changed.
