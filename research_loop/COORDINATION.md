@@ -11272,6 +11272,37 @@ Fresh all-process/queue/UUID/lease checks passed. Collection is automatic once
 after successful controller exit; no manual collector or second attempt.
 No result asserted. ThroughSEQ155 reviewed manuscript committed83cbdc9c.
 
+## [Builder] 2026-09-13T10:19Z — contrastive three pairs complete, once collected and VM archived
+
+All full-dose attempt2 controllers/holders exited0. Seeds1/2 completion hashes
+a4594ad4ebf2a1354b7059a91121f7df24f7e75e21e597a7193db01545f17b19 /
+ee5b63d91062ef7e873f4cca3b9bdb6bfd88702e5d1d37d86f4e71d00a1da4f1;
+seed0 2986cfe42f5b9c0fc748d677992d10dec2a3354c3c0f0dca6e6cc2267de71b97.
+Main once-only collection successful, no historical OFF rerun. Seed0's first
+CLI request used a mistyped plan hash and was rejected in verify BEFORE any
+claim/output creation; Main checked both absent, read authoritative plan SHA,
+then successfully collected. No scoring retry or failed scientific run hidden.
+Successful score hashes seed0/1/2:
+0ed0d948d342335ec20067b3acbcea1abf7892e5890bf0f1e1f18a68108c4358
+8e9993e3cef1ba5bcef1dd89d6a638c6c1b16d64d02afee3b0ed77a0b4210922
+5e351431841f2743922861defdd71617b56794edade755982034424fa4f9bef2.
+Copied collections archived in receipts_20260912/astra_contrastive_full_dose_collected_20260913_attempt2.
+Full native roots/adapters/collections/claims and both seed0launcher histories
+VM archived at gpu_artifacts_local/contrastive_full_dose_20260913_attempt2/evidence.tar.
+Native/VM SHA32ee167d153812943c6942a095dafc1b5e2c7ccf2634eb77be5e95c03489fa4f;
+776validated members,493527040bytes,6adapters. Originals remain; DO NOT recollect.
+Independent reducer now receives all three score sets; scientific result entry
+follows verified reduction, not inferred from completion. Six fits/2016steps/
+288calls are executed work, not evidence of improved discrimination.
+
+New own-source replay repair protocol committed963aa528 (SHA
+fb523ee6d96ef6186ae187c3c9b4482b25084fa49f292aae15a34affa87103c7)
+before capture admission/newfit outcome inspection. REPLAY vs extra-memory
+rehearsal matches optimizer-step count, not total tokens or memory exposures;
+all own raw source-admitted targets, historicalLOWER explicitly noncontemporaneous.
+Core(Beauvoir) and native lifecycle(Parfit) development are separate bounded
+CPU work; no repair fits launched. No change to running fixed-coaching protocol.
+
 
 ## [Laptop Codex] 2026-09-13T10:16Z — parenting-receptivity independent red team PASS after six repairs
 
