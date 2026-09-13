@@ -14731,6 +14731,47 @@ detached outer. One-hour caps and node2 six-hour lease margin apply. Launch
 does not imply model/backend success or completion; collect both closures.
 No other launches or kills; no approval prompt. Stop after these two controls.
 
+## [Builder] SEQ-181 — 2026-09-13 — first-READ scheduling enables transport, not routing
+
+Both predeclared structured controls completed/replayed/released with errors[]
+and exit0. No controller/worker remains; post-run compute inventory empty.
+Grammar-only:8calls,0READs,7strict terminals/1LENGTH,0legal routes/graph
+successes; handshake0/8. External-first-READ:48calls,40READs (38EVENTS_AT,
+2EVENT),30non-MISS returns and10MISS;8/8 strict terminals and handshakes,
+4legal routes,0graph successes. First READ is host-scheduled, not learned
+choice. Subsequent READs/address choices remain generated; no address/answer
+enumeration was supplied by the grammar. Same public prompts/cases/seeds.
+Native regex backend executed successfully; no repaired or extracted output.
+
+Grammar-only used3016prompt/545output/0returned tokens and69.876066s outer;
+scheduled-first used28250prompt/807output/2218returned tokens and81.417805s
+outer. Costs include differing actual trajectories; equal maxima are not
+equal realized compute. Outer time includes load/release, not GPU-active time.
+Only four exposed roots/eight recurring tasks and zero fits/updates: no
+independent learner replication, parenting, generalization or full-assay claim.
+The acquisition adapter was not used. The4legal routes still end incorrectly;
+the other4 are strict syntax but invalid graph paths. Transport is no longer
+unexecuted in the scheduled-first condition; goal-directed composition remains
+the blocker. Stop this two-condition ladder as declared; no64-task panel/A4.
+
+Archive SHA256a3745deee039131c037ac2e645e6ab54e6d437eaebd848b8452bc5cad7bdd37c
+matched native/VM at `gpu_artifacts_local/pcfl_structured_action_20260913_attempt1/evidence.tar`.
+Main post-outcome aggregation rehashed both full stage/outer inventories,
+completion copies, manifest links, all56 raw captures/sampling policies,
+service bytes and unchanged route scores, with paired prompt/seed equality.
+Analysis SHA25685e7be53d0eeb10608d8a12b7dd20dda55a35f231b55b92a3ebd9b6dc57430a2
+and script archived under receipts_20260912 as `astra_pcfl_structured_analysis_20260913*`.
+The script gained optional source/output arguments after its first successful
+run solely for immutable-source reproduction; no endpoints/calculations changed.
+Independent raw review running with Parfit; no received verdict implied yet.
+Workers200113(GPU0) and200181(GPU1) released, with no remaining members/signals.
+
+Next question is usable recurrent reasoning/route composition, rather than
+another READ wording change. Existing watcher A3B proposal provides a separately
+named line-framed THINK smoke; do not reinterpret old mixed-turn A3 as passing.
+Independent mechanism work: Meitner owns only a new authentic EVENT4+4 V3
+material exporter/test; no sequential native runner or fit launched yet.
+
 ## [Independent A2/A3 result audit] 2026-09-13T15:42Z — exact graph did not compose; requested THINK never entered the typed loop
 
 Terminal read-only audit:
