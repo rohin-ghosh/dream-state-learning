@@ -1,4 +1,4 @@
-# PCFL vertical DEV v2: shortest authentic child-authored THINK/DREAM/SLEEP slice
+# PCFL vertical DEV v2.1: shortest authentic child-authored THINK/DREAM/SLEEP slice
 
 **Date:** 2026-09-13 UTC  
 **Status:** implementation-ready design only; no source authoring or execution  
@@ -7,6 +7,13 @@
 turn its own experience into connected parametric memory and later use OLD and
 NEW experience together, without confusing that result with prompting,
 researcher-authored post-training, retrieval candidates, or a world shortcut.
+
+**v2.1 repair:** this revision incorporates the independent final-skeptic audit
+at commit `405c5db4`. It groups exact child spans into the same multi-row
+responses the memory API scores, forbids textual OLD-memory reinjection after
+SLEEP 1, makes native memory-dependent reachout explicit, defines both ATOMS
+contrasts, retains every control artifact, and corrects the later on-policy
+comparison language. The fitted roster remains fourteen.
 
 ## 0. Decisive ruling
 
@@ -91,7 +98,8 @@ A complete pass permits only:
 > In two development worlds, a scaffolded child converted its own public
 > action/outcome receipts into exact typed memories. A low-rank personal write
 > carried those memories after reset. The child then selected a relevant
-> experiment, authored a new memory, retained old memory through another
+> experiment in a registered memory-dependence contrast, authored a new memory
+> without textual OLD-memory reinjection, retained old memory through another
 > write, and solved a candidate-free delayed task whose correct command was
 > jointly identified by OLD and NEW information.
 
@@ -166,10 +174,22 @@ token lengths under the frozen tokenizer. One commitment is one physical
 line, single ASCII spaces, one terminal LF, no Markdown fence, prefix, suffix,
 or normalization.
 
-The child sees a public receipt when it proposes `EVENT`. It sees only
-previously accepted public events when it proposes `LINK`. Later goal prompts,
-hidden bits, oracle routes, candidate rows, evaluator scores, and expected
-answers are absent.
+During initial OLD formation, the child sees a public receipt when it proposes
+`EVENT` and may use prior public events still present in that same causal wake
+context when it proposes `LINK`. Later goal prompts, hidden bits, oracle routes,
+candidate rows, evaluator scores, and expected answers are absent.
+
+After SLEEP 1 the native lineage is reset and the visibility rule is stricter.
+It receives only the ordinary future goal/probe interface, its own newly
+generated thought state, the public outcome of its committed probe, the new
+executed-event receipt, and the same fixed target-free commitment grammar. The
+harness injects **no** OLD receipt, admitted EVENT/LINK row, roster, ledger
+excerpt, memory-service return, or compiler state. To author either NEW LINK,
+the mounted child must reproduce the needed OLD event identifiers through its
+own parametric state. A separate mechanistic read-service fork may expose raw
+goal-blind service returns, but that fork is logged, read-only, and can never
+become the native lineage. The R0/R1 continuations restore one byte-identical
+sealed native pre-outcome state; only the ordinary public outcome changes.
 
 The compiler may:
 
@@ -424,6 +444,24 @@ training data.
 | `NONE/OFF` | no life memory | `<=20/64` |
 | `WRONG_ROOT` | another root's exact memory | `<=20/64` and zero valid false rows |
 
+The same four excluded roots also carry a **32-cell reachout certificate**
+(`4 roots x 2 O x 2 goals x 2 balanced surface/order renders`). The task has
+two symmetric probes; a fixed probe policy is therefore exactly `16/32`.
+
+| zero-fit reachout condition | required target-relevant probe |
+|---|---:|
+| `EXACT_WITNESSED_GRAPH` | `>=30/32` |
+| `FULL_CHILD_TEXT` | `>=30/32` |
+| `ACTIVE_LINKED_TEXT` | `>=30/32` |
+| `NONE/OFF` | `<=18/32` |
+| `WRONG_ROOT` | `<=18/32` |
+
+Every registered ID, probe-order, wording, and fixed-choice projection must
+also remain `<=18/32`; the two probe positions occur exactly `16/32` each.
+These are assay ceilings for selecting the task-relevant experiment after the
+future goal is revealed. They do not claim that a different goal would make
+the distractor useful: both current delayed goals require the same frontier.
+
 `60/64=.9375`; `36/64=.5625`; prompt-only chance is exactly `.25`. The
 OLD-only and NEW-only ceilings are intentionally just above their exact `.5`
 information ceilings. The deterministic graph oracle itself must be `64/64`.
@@ -434,7 +472,8 @@ These are token-sufficient limits, not a compression experiment. All memory
 conditions receive the same actor budget. `ACTIVE_LINKED_TEXT` must log exact
 source/citation identity on `100%` of returned rows.
 
-If the three useful model ceilings fail `60/64`, label
+If the three useful delayed model ceilings fail `60/64`, or any mandatory
+reachout ceiling/control misses its table above, label
 `VS_ASSAY_INVALID_MODEL_CEILING`; repair the task/read protocol on new
 excluded roots before fitting. Do not compensate by adding answer candidates.
 
@@ -457,6 +496,9 @@ After the relevant outcome, in each R continuation:
 
 - NEW EVENT is exact `1/1`;
 - NEW LINK is exact `2/2`; and
+- the raw native-generation context contains no OLD receipt/row/roster,
+  memory-service return, ledger excerpt, or compiler state; every OLD ID in a
+  NEW LINK was reproduced by the mounted child; and
 - the same raw-span, chronology, and evidence requirements hold.
 
 No fixed renderer may rescue a claim-bearing root. A failed OLD formation is
@@ -474,10 +516,28 @@ READ EVENT <event_id>
 READ LINKS_FROM <event_id>
 ```
 
-The response is either exact admitted rows in event/link-ID order or the exact
-token `MISS`. `READ LINKS_FROM` returns the complete outgoing adjacency in one
-response; maximum degree is two, so there is no pagination ambiguity. Unknown
-addresses return `MISS`.
+The response is either an exact query-level materialization or the exact token
+`MISS`. Before any fit, the compiler constructs and hashes one deterministic
+query-to-response table:
+
+- `READ EVENT e` returns the one admitted child EVENT span for `e`;
+- `READ EVENTS_AT n` returns the concatenation of **all** admitted child EVENT
+  spans sourced at `n`, sorted by event ID;
+- `READ LINKS_FROM e` returns the concatenation of **all** admitted child LINK
+  spans sourced from `e`, sorted by link ID; and
+- an absent address returns `MISS` only where the arm explicitly declares a
+  qualified no-row target. Otherwise unseen-address refusal stays an empirical
+  gate and is not secretly trained.
+
+The multi-row separator is exactly one LF; the final row keeps its terminal LF.
+The parser and hash bind these bytes. Grouping is compiler-safe because it
+only concatenates accepted exact child spans and adds no semantic field.
+Maximum adjacency is two, so there is no pagination ambiguity.
+
+At S1 this yields 17 scored service requests per full arm: eight `READ EVENT`,
+six distinct `READ EVENTS_AT`, and three `READ LINKS_FROM`. At S2 it yields 19:
+nine, six, and four respectively. Every control is matched at this
+query/response-shape level, rather than merely by semantic-row count.
 
 At the mechanistic endpoint:
 
@@ -490,6 +550,14 @@ At the mechanistic endpoint:
   tokens; and
 - request/response bytes and source receipts are logged.
 
+For `S1_ATOMS`, the three registered `READ LINKS_FROM` requests return the
+control-only target `MISS`; ATOMS may spend the same 12 reads composing from
+EVENT calls. No authentic LINK target exists in that arm. For
+`S2_OLD_REPLAY`, the 19-request roster is preserved: NEW-address requests
+return its registered control-only `MISS`, while old multi-row requests contain
+only OLD child spans. These negatives are synthetic controls, never authentic
+memory or lineage, and are reported separately.
+
 This endpoint isolates parametric carriage and goal-directed traversal. An
 opaque public address copied into an actor-authored local request is allowed;
 an answer-bearing candidate bank is not.
@@ -497,8 +565,8 @@ an answer-bearing candidate bank is not.
 Score memory output in two columns:
 
 1. **semantic exactness:** every required semantic field is correct; and
-2. **strict surface exactness:** the entire returned row matches admitted
-   bytes and the one-line grammar.
+2. **strict surface exactness:** the entire returned response block matches
+   the registered concatenation of admitted child bytes.
 
 Never convert a fenced but semantically right answer into strict success. This
 is the direct lesson from Q0/perception.
@@ -538,35 +606,43 @@ birth/parenting adapter is mounted in this DEV.
 | max sequence | `512`; zero target truncation permitted |
 | formatting | frozen chat template, EOS, no packing |
 | loss | response-only; wrappers and metadata masked |
-| views | 8 presealed request wrappers per whole child row |
+| views | 8 presealed wrappers per query-level response block |
 | epochs | 5 |
 | initialization | clean C0 tensors and fresh optimizer for every fit |
 | ordering | one presealed target-free shuffle, coupled across controls |
 | checkpoint selection | final checkpoint only; no best-of-run choice |
 
-The eight wrappers vary neutral request phrasing/order but never the child
-target. Repetition and varied views are writer mechanics supported by the
-existing high-dose authored-memory evidence. This DEV does not claim they are
-optimal.
+The eight wrappers vary neutral request phrasing/order but never the registered
+query-level target block. Repetition and varied views are writer mechanics
+supported by the existing high-dose authored-memory evidence. This DEV does
+not claim they are optimal.
 
-S1 has 12 target slots. S2 has 15. The generator/tokenizer search must make
-the control-slot token counts exact. Therefore:
+Each arm has exactly 20 query-response slots. S1 uses its 17 scored service
+queries plus three disjoint never-called `PAD_S1_<id>` requests. S2 uses its 19
+scored service queries plus one `PAD_S2_<id>` request. Padding targets live in
+an unparseable control namespace and contain no node, port, event, link,
+receipt, route, or outcome identifier. They never answer a real service call.
+
+After native tokenization, choose one presealed stage-level target-token budget
+equal to the longest arm plus a fixed feasible padding reserve. Distribute each
+arm's exact deficit only across its padding targets. Require identical total
+loss-active target tokens, examples, batches, and updates across arms; require
+every padding target to remain parser-disjoint and every sequence to remain
+below 512 tokens. If exact equality cannot be materialized with the bound
+tokenizer, stop before fitting as `VS_ASSAY_INVALID` rather than altering dose.
+
+Thus the frozen optimizer arithmetic is:
 
 ```text
-S1: 12 rows x 8 views = 96 examples/epoch
-    96 / batch 4 x 5 epochs = 120 optimizer updates/fit
+S1 or S2: 20 query-response slots x 8 views = 160 examples/epoch
+          160 / batch 4 x 5 epochs = 200 optimizer updates/fit
 
-S2: 15 rows x 8 views = 120 examples/epoch
-    120 / batch 4 x 5 epochs = 150 optimizer updates/fit
+14 fits x 200 = 2,800 optimizer updates total
 ```
 
-Across two roots:
-
-```text
-8 S1 fits x 120 = 960 updates
-6 S2 fits x 150 = 900 updates
-TOTAL = 14 fits, 1,860 optimizer updates
-```
+The manifest reports, for every arm, its 17/19 scored response blocks, padding
+blocks, exact target tokens, multi-row response shapes, and 200 executed
+updates. The token budget is fixed before DEV outputs are opened.
 
 No first-update monotonic acceptance gate is allowed. Candidate acceptance is
 based on final-dose absorption, interface, and no-harm gates below.
@@ -575,16 +651,16 @@ based on final-dose absorption, interface, and no-harm gates below.
 
 ### 11.1 SLEEP 1: four fits per root
 
-| arm | 12 target slots | role |
+| arm | 17 scored query responses + 3 padding responses | role |
 |---|---|---|
-| `S1_AUTH` | exact 8 EVENT + exact 4 LINK child rows | only authentic S1 lineage |
-| `S1_ATOMS` | exact 8 child EVENT + 4 presealed neutral matched-token control rows | link-added-value control |
-| `S1_EVENT_TWIN` | coherent alternate-O 8 EVENT + corresponding 4 LINK rows | event source-binding control |
-| `S1_LINK_PERMUTE` | authentic EVENT + fixed-point-free syntax/token-matched endpoint-incompatible LINK derangement | false-pointer diagnostic |
+| `S1_AUTH` | grouped reads over exact 8 EVENT + exact 4 LINK child rows | only authentic S1 lineage |
+| `S1_ATOMS` | identical EVENT reads; registered `MISS` for the 3 LINK queries | link-added-value control |
+| `S1_EVENT_TWIN` | grouped reads over coherent alternate-O 8 EVENT + corresponding 4 LINK rows | event source-binding control |
+| `S1_LINK_PERMUTE` | authentic EVENT reads + grouped endpoint-incompatible LINK derangement | false-pointer diagnostic |
 
-The neutral `S1_ATOMS` rows use a disjoint unparseable control namespace,
-carry no node/port/event/link identifiers, and are included only to equalize
-loss-active target tokens and updates. They are synthetic and never lineage.
+The three stage-level padding responses use a disjoint unparseable control
+namespace, carry no node/port/event/link identifiers, and are included only to
+equalize loss-active target tokens. They are synthetic and never lineage.
 
 `S1_EVENT_TWIN` is materialized from the presealed alternate O cube cell; it
 preserves row counts, token marginals, identifiers, and link-handle graph while
@@ -595,19 +671,22 @@ not authored in the realized life.
 Because authentic LINK is endpoint-derivable, this arm can show that a false
 pointer influences behavior; it cannot prove LINK information necessity.
 
-All control adapters and corpora are quarantined and destroyed after scoring.
-Only the exact pre-evaluation `S1_AUTH` state continues to reachout/S2.
+All control adapters and corpora are immutably sealed, quarantined from
+authentic lineage, and retained through independent reduction and claim
+closure. They may be archived or deleted only under a later separately logged
+retention policy. Only the exact pre-evaluation `S1_AUTH` state continues to
+reachout/S2.
 
 ### 11.2 SLEEP 2: three fits per root
 
 Restore the exact pre-evaluation S1_AUTH snapshot. Fork the pre-outcome child
 into its two public relevant outcomes and independently collect exact NEW rows.
 
-| arm | 15 target slots | role |
+| arm | 19 scored query responses + 1 padding response | role |
 |---|---|---|
-| `S2_FULL_R0` | exact 12 OLD + exact 3 child NEW_R0 | OLD+NEW authentic counterfactual continuation |
-| `S2_FULL_R1` | exact 12 OLD + exact 3 child NEW_R1 | OLD+NEW authentic counterfactual continuation |
-| `S2_OLD_REPLAY` | exact 12 OLD + 3 presealed matched-token replays of OLD child rows | equal-work no-NEW control |
+| `S2_FULL_R0` | grouped reads over exact 12 OLD + exact 3 child NEW_R0 | OLD+NEW authentic counterfactual continuation |
+| `S2_FULL_R1` | grouped reads over exact 12 OLD + exact 3 child NEW_R1 | OLD+NEW authentic counterfactual continuation |
+| `S2_OLD_REPLAY` | the same 19-query roster with OLD-only blocks/registered NEW-address `MISS` | equal-work no-NEW control |
 
 Every S2 fit starts from clean C0 and trains on the cumulative exact corpus;
 it does not stack a new optimizer onto S1 weights. This preserves coupled
@@ -622,14 +701,17 @@ Failures score zero; no retry, replacement, or favorable decode selection.
 
 - EVENT local reads: semantic exact `>=15/16`, strict exact `>=14/16` under
   each arm's registered map; arm semantic scores differ by at most `1/16`.
-- LINK local reads: semantic and strict exact `>=7/8` under the registered
-  arm target.
+- LINK local reads for AUTH, EVENT_TWIN, and LINK_PERMUTE: semantic and strict
+  exact `>=7/8` under the registered arm target. ATOMS instead must return its
+  registered `MISS` on all `3/3` trained LINK addresses and zero usable LINK
+  rows.
 - Eight unseen-address plus eight wrong-root requests: `>=15/16` exact MISS
   or registered non-row refusal and `0/16` usable false rows.
 - Candidate-free memory-service OLD route: S1_AUTH `>=14/16`, including
-  `>=7/8` for each old goal.
+  `>=7/8` for each old goal; score S1_ATOMS under the identical 12-read,
+  returned-token, and actor-token budgets.
 - Candidate-free native OLD route: S1_AUTH `>=14/16`, strict legal commit
-  `>=15/16`.
+  `>=15/16`; score S1_ATOMS under the identical native prompt and token budget.
 - EVENT_TWIN follows its alternate-O command on `>=12/16` and scores at least
   `4/16` below AUTH under authentic scoring.
 - Goal-swap pairs change the correct route `8/8`; the memory-service query
@@ -637,27 +719,48 @@ Failures score zero; no retry, replacement, or favorable decode selection.
 - Replacing the critical authentic local memory result with MISS drops
   service route success by `>=6/16`.
 
-LINK added value is a separately labeled disposition:
+LINK added value is endpoint-specific and separately labeled:
 
 ```text
-if AUTH - ATOMS >= 4/16:  LINK_ORGANIZATION_ADDED_VALUE
-else:                     EVENT_COMPOSITION_ONLY
+Delta_link_service = route(S1_AUTH service) - route(S1_ATOMS service)
+Delta_link_native  = route(S1_AUTH native)  - route(S1_ATOMS native)
 ```
 
-The second branch is not an overall root failure if AUTH itself passes.
+`>=4/16` earns `LINK_ORGANIZATION_ADDED_VALUE` only for that endpoint. Native
+added-value wording requires the native delta; service-only success is named
+as such. Otherwise label `EVENT_COMPOSITION_ONLY`. That branch is not an
+overall root failure if AUTH itself passes.
 LINK_PERMUTE redirection `>=12/16` may be reported as false-pointer influence;
 failure to redirect is `LINK_DERANGEMENT_IGNORED`, not evidence against EVENT
 composition.
 
 ### 12.2 Reachout, per root
 
-From the untouched S1_AUTH state, evaluate eight presealed surface variants.
-Require the target-relevant probe on `>=7/8`, and require it on the one
-presealed primary variant that enters lineage. Invalid, missing, distractor,
-or post-outcome choices score zero. The eight views show surface robustness;
-the primary committed action earns exactly one registered information bit.
+The one lineage-entering reachout is emitted once, without retry, by the native
+mounted `S1_AUTH` child from the sterile post-S1 context in Section 3. Require
+the target-relevant probe on that presealed primary render. Only its committed
+action receives a public outcome and enters either R continuation.
 
-If the primary choice is not relevant, label `VS_REACHOUT_FAIL` and stop that
+Use read-only forks of the same untouched S1 snapshot for two diagnostic
+panels:
+
+- native S1_AUTH over eight exactly probe-order-balanced surface renders must
+  choose the relevant probe on `>=7/8`; and
+- the clean actor plus S1_AUTH memory service must score `>=7/8` under the same
+  budget. Replacing the critical OLD event group with `MISS`, using OFF, or
+  using wrong-root memory must each score `<=4/8`, and AUTH must exceed each by
+  at least `3/8`. Every raw service request/return is logged; no diagnostic
+  fork enters lineage.
+
+Invalid, missing, distractor, fixed-choice, or post-outcome choices score zero.
+The eight views show surface robustness; the primary committed action earns
+exactly one registered information bit. These endpoints establish
+memory-dependent **task-relevant expansion after a revealed goal**. They do
+not establish that experiment choice changes with the goal, because both
+current future goals make the same frontier probe useful.
+
+If the native primary action fails, the native panel fails, or the mechanistic
+AUTH/cut/OFF/wrong-root contrast fails, label `VS_REACHOUT_FAIL` and stop that
 root before S2. Do not reveal the relevant outcome anyway.
 
 ### 12.3 S2 carriage, retention, and joint use, per root
@@ -727,6 +830,7 @@ Nonfatal branch labels are `EVENT_COMPOSITION_ONLY`,
 The maximum is immutable:
 
 - **14 adapter fits total**;
+- **2,800 optimizer updates total** after query-level materialization;
 - **30 wall-minutes on one A40 per fit**;
 - **420 A40-minutes = 7 aggregate A40-hours of training**;
 - **10 aggregate A40-hours maximum** for formation, zero-fit ceilings,
@@ -809,10 +913,15 @@ Minimum lifetime comparison:
 
 ```text
 DLT_PERIODIC       child-authored DREAM/SLEEP throughout
-SLEEP_FROZEN       identical THINK history, no later writes
+SLEEP_FROZEN       identical starting child, opportunity schedule, random
+                   tape, budgets, and shadow-SLEEP transactions; never mounts
+                   later writes and therefore owns its divergent THINK history
 ACTIVE_LINKED_TEXT exact child rows through the same local service
 FINAL_BATCH        same accumulated child corpus, one terminal write
 ```
+
+Only the separate inference-only carrier table is same-history. On-policy
+systems must never exchange actions, outcomes, rows, or later histories.
 
 At presealed cuts, keep the same-history carrier table and native endpoint.
 An experiential-learning claim additionally requires DLT_PERIODIC minus
