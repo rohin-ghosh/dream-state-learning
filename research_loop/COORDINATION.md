@@ -9397,3 +9397,38 @@ No live results inspected by this analyzer. All artifacts/handoffs archived.
 **A100 (a4u8g-0147, lease from 05:05 UTC):** the laptop chain found the node DELETING at 05:16, PROVISIONING from 05:22 (clean reprovision), polling every 2 min; onboarding, key install and setup will run unattended; host entry and VM key follow. Node 1 lease ends 2026-09-14 23:14 UTC (≈ 41.5 h); final incremental mirror re-run due tomorrow.
 
 **Fleet:** node 1 idle (8); node 2 Q0 on GPUs 0–2; node 3 reflection on GPUs 0–2 (as they cycle), GPU 7 absent. Fill lists empty by design. Nudger: Astra active (idle 0.3 min). Laptop chains 5/5. Nothing killed or launched by the watcher.
+
+## [Builder] 2026-09-13T05:37Z — SEQ-130 reflection seed0 collected; SEQ-131 writer R1 runtime abort
+
+SEQ-130 is a SINGLE-SEED exploratory record, not a three-seed or parenting
+claim. Reflection seed0 closed144calls/eightfreshstages, all release receipts;
+controller1180.1885s. Native collection revalidated raw captures and scored
+only after complete closure. Strict application counts/12: OFF withdrawn7,
+present9; ordinary/withdrawn-fit withdrawn9,present9; correction-present-fit
+withdrawn9,present7. No length finishes. Exact authored prose matches0in all
+six cells; this is NOT semantic prose failure. Seed0's training-correction
+increment after withdrawal is0versusordinary, not an internalization benefit.
+Seeds1/2 remain independently live and preselected; no tuning or early stopping.
+Scores c9209b4379c1927980f0b503029a0e6b1ef988d033d3d949d5095a11a1706c1f;
+completion fb266930ce763f4c6d6667758ac72654dbb15121fbcfa66179f1c911a026c125.
+Full raw/fit/log capsule transferred to VM, SHA256
+055f3a63cb7c057d8fca1b87bbec72b27c16b226bc031b01f88f7aaf662be40e;
+gpu_artifacts_local/reflection_fit_20260913/seed0_attempt1.tar. Do not recollect.
+
+SEQ-131: Q0 full-dose R1 is NONREPORTABLE_RUNTIME_ABORT, NOT a scientific
+endpoint failure. Final09_eval_P_DERANGED_128 stopped before model load because
+the inherited GPU identity nvidia-smi query exceeded15s. Both128fits and nine
+successful stages preserved; no final DERANGED128 readout, no validated primary
+counters. Controller4012889exited; resource release true; immutable terminal
+replayreport c6a5b07549d8cefe12f40492f7b4b8f83d8e8b6532d1e8ad02ab91ab694715de.
+Full4GBroot transferred, archive
+fa079949411b4e8da95ff3670d1f1bc1bea0594c6c999814cf4143168180ecab;
+Noether verifies every payload and Fable's independent full-root hash (including
+finalization files outside internal SEAL). Static custody weakness acknowledged;
+external complete-root capsule/receipt required before relying on closure.
+
+R0/R2 remain live at final readout; no change or kill. Einstein's bounded design
+for a new supplemental saved-checkpoint readout is archived, not implemented or
+launched. It would leave original R1 abort/three-root primary incompleteness
+unchanged and avoid retraining completed fits. No automatic recovery or C11
+expansion. A100 remains Fable-owned/provisioning, not available capacity.
