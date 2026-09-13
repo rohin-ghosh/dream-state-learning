@@ -1,10 +1,10 @@
-# Paper claim-state refresh through fixed coaching and replay repair
+# Paper claim-state refresh through fixed coaching, alignment, and replay repair
 
 **Date:** 2026-09-13 UTC  
 **Role:** fresh manuscript/claim-map auditor  
-**Repository cut:** `c498cc21`; terminal fixed-coaching, contrastive, and
-own-source replay audits incorporated; compression disposition remains amended
-against `66f14501`
+**Repository cut:** `2a0c5a25`; terminal fixed-coaching, lesson-alignment,
+contrastive, and own-source replay audits incorporated; compression disposition
+remains amended against `66f14501`
 **Scope:** paper claim audit and replacement abstract candidates only; no edit
 to `paper_prototype/main.tex`, benchmark source, model, adapter, or GPU state
 
@@ -50,6 +50,15 @@ N `140/144`, P `138/144`, and initial `143/144`, despite perfect generic
 canaries. This shows targeted in-context coaching and parent-free carriage of
 record behavior, not persistence of a parenting-specific advantage.
 
+The subsequent fixed-lesson alignment DEV does not strengthen that claim. All
+24 ALIGNED/SWAPPED restatements were semantically faithful on bounded manual
+review, but the frozen lexical RESTATE score accepted only `2/12` in each arm.
+More importantly, required structured `PROCESS_USE`, `RECORD_FAITHFUL`, and
+`FULL_MATERIAL` were each `0/48` for ALIGNED, SWAPPED, and NO_PARENT. This
+localizes a gap between understanding advice in prose and converting it into
+the exact task-state operation; it is not evidence of durable parenting and
+contains no write or persistence test.
+
 The terminal authored contrastive diagnostic is negative/mixed: CONTRASTIVE
 scored `58/72` versus PLAIN `50/72`, but improved only wrapper D1, tied on D2,
 and passed the registered screen in `0/3` seeds. Its fixed fixture admits a
@@ -74,6 +83,7 @@ and full request/resource receipt are absent. No PCFL result exists.
 | Own-source replay vs extra new-memory repetition | Fixed updates: REPLAY exact/paraphrase `21/30`/`19/30`, retained `143/143`; EXTRA_MEMORY `27/30`/`23/30`, retained `135/143`; replay frozen screen `2/3`; canaries `36/36` both | Direct stability--plasticity movement, failed all-root repair | Say replay protected previously correct task behavior at the cost of new-memory acquisition. Do not call it pure semantic replay, autonomous replay selection, or qualified SLEEP; token/FLOP exposure differs and seed-0 extra-memory repetition was imbalanced |
 | Generic format canary | `36/36` under LR0, damaging HIGH, and LOW | Falsified as a sufficient retention gate | Say interface canaries miss semantic skill erasure; task-specific paired retention is mandatory |
 | Fixed answer-free coaching and child-record write | In context, both targeted fields P `48/48` vs N `38/48`; whole records P `43/48` vs N `38/48`. Parent-free after writing, P=N=`45/48` vs initial `27/48`; task retention N `140/144`, P `138/144`, initial `143/144` | Transient targeted coaching positive; own-record write positive; parenting-specific persisted contrast null | State all three surfaces separately. Do not call the parent-free gain amortized coaching, adaptive parenting, or parent-to-weight mediation; neutral writing reached the same endpoint and the panel nearly saturated |
+| Fixed-lesson alignment without writing | Manual audit: `24/24` lesson restatements semantically faithful; frozen lexical RESTATE only `2/12` ALIGNED and `2/12` SWAPPED. Structured process use, faithful records, and full material were `0/48` in all three arms | Lesson reception apparent; registered operational transfer failed and scorer under-sensitive | Treat as a thought-to-operation/interface diagnostic only. It tests neither SLEEP nor persistence, and post-hoc state-shape differences cannot rescue the failed vector |
 | Authored full-dose contrastive bundle | CONTRASTIVE `58/72` vs PLAIN `50/72`, but D1 `34/36` vs `26/36`, D2 `24/36` tie; registered screen `0/3`; seed-0 four-to-112-epoch endpoint unchanged | Negative/mixed curriculum diagnostic with a polarity shortcut | Dose was not the missing ingredient on these bytes. Preserve grouping as a candidate ingredient only for a shortcut-resistant keyed task; no source-selection, parenting, or experiential-SLEEP claim |
 | PCFL v2.2 two-SLEEP vertical | Prospective design repaired to truthful replay, LOW-first calibration, source-diverse batches, exact child EVENT/LINK custody, connected-value controls, and PCFL retention | No result; science direction passes, implementation readiness fails | Describe only as the next experiment. Do not write “ready/running/passed PCFL” until runtime closure and terminal evidence exist |
 | Connected experiential knowledge | Requires AUTH-over-ATOMS plus critical LINK cut or registered redirection on both DEV roots | Unmeasured | No present abstract claim; `EVENT_COMPOSITION_ONLY` is explicitly insufficient |
@@ -82,7 +92,7 @@ and full request/resource receipt are absent. No PCFL result exists.
 | Strong active-memory superiority/plateau | `ACTIVE_LINKED_TEXT` and access curve are specified but not implemented or certified | Unmeasured | No superiority or saturation language; plateau requires the optional seven-cut equivalence test |
 | Physical compression | Rank-8 LoRA is about 80.8 MB, larger than the complete proposed PCFL life | Contradicted at this scale | Always print the unfavorable byte accounting; never call the LoRA, life, or organism physically compressed |
 | Conditional predictive semantic compression | A zero-new-fit assay is prospectively specified on the ordinary final DLT adapters: shorter predictive code on unseen structure-governed outcomes, matched independent-continuation null, adapter-removal contrast, and fresh actions | Unmeasured; downstream of positive PCFL and lifetime gates | If every prospective code/use gate passes, call it *parametric predictive reuse* or *conditional predictive semantic compression*. It is not physical compression or exact seen-row storage |
-| Parenting | Fixed answer-free coaching changed its two named fields while present (`48/48` vs `38/48`), but P and N tied at `45/48` on parent-free held record formation after both arms were written | Targeted in-context receptivity shown; durable parenting-specific advantage not shown | Parenting may motivate better child material, but do not call the equal post-write gain parenting persistence, amortized teaching, adaptive parenting, or solved pedagogy |
+| Parenting | Fixed answer-free coaching changed its two named fields while present (`48/48` vs `38/48`), but P and N tied at `45/48` parent-free after writing. In a separate no-write alignment assay, lessons were semantically restated but exact process use was `0/48` in every arm | Prose-level receptivity shown; operational transfer and durable parenting-specific advantage not shown | Parenting may motivate better child material, but do not call either result parenting persistence, amortized teaching, adaptive parenting, or solved pedagogy |
 
 ## Stale or overbroad manuscript/abstract claims
 
@@ -170,6 +180,7 @@ lifetime or strong-memory claims.
 - `research_notes/analysis/2026-09-13_actual_child_real_record_memory_pair_terminal_audit.md`
 - `research_notes/analysis/2026-09-13_actual_child_lower_lr_memory_repair_terminal_audit.md`
 - `research_notes/analysis/2026-09-13_astra_parented_record_terminal_audit.md`
+- `research_notes/analysis/2026-09-13_parenting_alignment_terminal_audit.md`
 - `research_notes/analysis/2026-09-13_astra_contrastive_full_dose_terminal_audit.md`
 - `research_notes/analysis/2026-09-13_own_source_replay_repair_terminal_audit.md`
 - `research_notes/analysis/2026-09-13_pcfl_vertical_dev_v2_2_writer_repair.md`

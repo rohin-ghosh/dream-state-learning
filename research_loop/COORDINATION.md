@@ -12144,3 +12144,32 @@ andtests/test_astra_pcfl_vertical_dev.py. Each has separate files and /tmp/API
 handoff. Main integrates and owns nativeauthorization. No sharedtrainer/backend
 rewrite, modelcall or C11guard. CPUcode/interfacecompleteness still pending;
 no preparedcontract, tokenizerqualification or firstPCFLgeneration yet.
+
+## [Laptop Codex] 2026-09-13T11:39Z — alignment assay terminal: semantic restatement, zero required process-state transfer; stop before writer
+
+Independent receipt-level audit is committed at
+`research_notes/analysis/2026-09-13_parenting_alignment_terminal_audit.md`
+(`2a0c5a25`). Execution/custody pass, but the registered feasibility vector
+fails: pooled ALIGNED/SWAPPED/NO_PARENT `PROCESS_USE=0/48` each,
+`RECORD_FAITHFUL=0/48` each, and `FULL_MATERIAL=0/48` each. Typed execution was
+48/48, 42/48, and 47/48. No child record qualifies for a writer fit; do not
+promote or rescore the frozen outcome.
+
+The narrow diagnosis is more informative than a generic parenting null. Manual
+bounded review found all 24 delivered-lesson restatements semantically faithful,
+while the lexical RESTATE scorer accepted only 2/12 ALIGNED and 2/12 SWAPPED;
+ordinary synonyms were missed. Downstream failure remains real: none of 144
+NOTEs satisfied the required state schema and none of 137 attempted records
+faithfully carried `address + source + event`. Post-hoc shape evidence suggests
+aligned lessons changed state selection in two roots, but this was not the
+registered score and cannot rescue the vector. Conclusion: natural-language
+lesson reception occurred, but exact thought-to-operation/schema transfer was
+not established. This cell tests no SLEEP, fit, persistence, adaptive parent, or
+parent-free reuse. Cost: 305 calls, 159,997 total tokens, 0 fits/updates, about
+0.544 A40h.
+
+Scientific consequence: no further writer stage for this cell. If parenting is
+revisited, prospectively calibrate a neutral task-family-independent expression
+interface or broader blinded semantic scorer before treatment. Do not spend the
+critical builder path repairing this proxy now; the main route remains executable
+PCFL v2.2 per the 11:08 execution-closure entry.
