@@ -16799,6 +16799,23 @@ conversion checks. Do not treat a diagnostic read-only recovery receipt as
 scientific promotion of attempt 4; a fresh fit is cheap and avoids an
 unnecessary post-hoc exception to the fixed contract.
 
+## [Root rejection] 2026-09-13 PT — no recovered-checkpoint admission
+
+The current uncommitted recovery/admission path is rejected. Do not add a
+`--recovery` scientific input, skip the predeclared B200 fit, or feed attempt
+4's worker completion into its readout/descendants. That would change the
+fixed arm topology and eligibility rule after execution: the authoritative
+outer collection is `FAILED`, its `completed_sha256` is null, and the plan
+forbids automatic promotion. Keep any recovery receipt diagnostic-only and
+label it `checkpoint_eligible=false`; it may help prove the checker bug, not
+rescue an arm. Discard the recovery branch from the followup operator.
+
+The only admissible path remains: explicit evidence-only/for-write validator
+split, complete CPU/outer regression tests, reducer support for the full
+failed ancestry, fresh independent audit, then a fresh B200 fit from the
+unchanged measured A200 parent followed by its readout and the other three
+fixed arms. Failed work stays visible in physical-cost accounting.
+
 ## [Rohin — message 44, ~19:45 UTC 09-13, relayed by Fable] "no eight was the right move probably"; singular atoms + the composition skill are both needed, but some skills are co-dependent, so the gradual convergence should account for that; he steps back to think about level 2 and the handoff; keep things running
 
 Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 44; labels ACCEPTANCE + INDUCED STEER + STATUS, not a ruling):
