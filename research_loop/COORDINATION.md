@@ -11345,6 +11345,37 @@ complete localmirror supplied to Lovelace. No effect inferred before reduction.
 All Main GPUjobs now completed; next repair waits substantive CPU readiness,
 not occupancy. HANDOFF/STATE updated; archived originals retained on bothhosts.
 
+## [Builder] 2026-09-13T10:27Z — SEQ-156: full-dose contrastive grouping helps some rows, zero of three frozen screens pass
+
+Independent raw-collected reducer25CPUtestsPASS (Main11.878s), actual complete
+three-pair reduction exited0. ResultSHA204fcb1e40041e3057d1fdd9300b924d6d1a9aa94b80d2a513f07b428f500c60;
+source/tests/manifest/results/handoffs archived as astra_contrastive_full_dose_analysis_20260913*
+in receipts_20260912, full native archive pinned in prior entry.
+
+| Seed | Held PLAIN/CONTRASTIVE /24 | C-P | D1 C /12 | D2 C /12 | C-record P/C /12 | C-general P/C /12 |
+|---|---|---|---|---|---|---|
+|0|17/19|+2|11|8|6/11|12/12|
+|1|14/20|+6|12|8|7/11|12/12|
+|2|19/19|0|11|8|7/11|12/12|
+
+Content/original-strict/exact-target success coincide for newarms. Allcontrastive
+arms miss D2floor9; seeds0/2also miss held20 and advantage4. Seed1's aggregate
+gain does not erase its failed skinfloor. No newarm loses an OFF-correctcanary,
+but C-record OFFcorrect0 makes that retention condition vacuous. The SINGLE
+historicalOFF has held2/24,C-record0/12,C-general11/12; reused48calls,zero newcalls.
+Do not call three imports independent OFF replications. All288newresponses stop.
+Remaining contrastiveheld source-errors5/4/5 allinclude predicted/relationerrors;
+verylowfinalfitloss(~5–6e-6) does not establish correct source use.
+
+6newfits2016updates8064presentations288calls. Paircontrollers1291.182/1301.871/
+1294.471s; supervisedtokens249984,padded3305136. Context/paddedcosts differ;
+same update/supervision budget is not equalcompute. D1/D2repeat12situations,
+allpanels exposedDEV; negate-earlier remains perfectshortcut, grouping and
+instructions both differ. No source-attention mechanism, parenting, H1/H2,
+freeze or generalization promotion. Main decision: no automatic further dose
+escalation or birth-stack substitution from this result. Continue the observed
+retention repair and interpret the completed fixed-coaching cohort separately.
+
 
 ## [Laptop Codex] 2026-09-13T10:16Z — parenting-receptivity independent red team PASS after six repairs
 
