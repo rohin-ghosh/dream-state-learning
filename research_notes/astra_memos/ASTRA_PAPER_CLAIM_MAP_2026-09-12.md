@@ -1,12 +1,19 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This draft through SEQ179 retains earlier positive and negative findings;
+This draft through SEQ185 retains earlier positive and negative findings;
 SEQ167 and SEQ169--173 are engineering-only logs, excluded from scientific results.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
+
+**Through SEQ185 / C103: terminal engineering-only reader branch.**
+Scheduled action-family and syntax scaffolds enable bounded interface behavior,
+not successful graph use; the supplied-procedure branch fails and stops.
+The prior scoped EVENT-acquisition result remains positive, not a completed
+learning/parenting loop or broad sprint result. Sequence-material and wrapper
+work are CPU-only at17:00 UTC; no native sequence fits are claimed.
 
 **Through SEQ179 / C101–C102: bounded acquisition and failed use interfaces.**
 A separate one-bank cold-acquisition endpoint passes, while disclosed READ,
@@ -4795,3 +4802,65 @@ and paired gain at least12; all pass here without applying the old full-bank
 threshold. W0 is descriptive. This does not establish source/compiler
 attribution or a matched-compute writing benefit; full-contract release and
 automatic promotion remain false in the analysis receipt.
+
+## C103 — SEQ180–185 terminal engineering-only reader diagnostics
+
+The terminal reader branch remains an engineering diagnostic: the same four
+exposed roots/eight recurring cases, not independent learners, with zero fits
+or updates and no acquisition adapter in use. Interface passage and graph
+success are distinct endpoints. [C103]
+
+| Condition | Actual calls | Interface observations (8 cases) | Graph success |
+| --- | ---: | --- | ---: |
+| Required READ | 8 | 0 strict; 8 invalid | 0/8 |
+| Static READ union | 8 | 0 READ; 7 strict | 0/8 |
+| Scheduled-first READ | 48 | 8 handshakes; 8 strict | 0/8 |
+| A3B LF framing | 25 | 8 first THINK; 4 strict | 0/8 |
+| A3C static typed | 25 | 8 first THINK; 8 strict | 0/8 |
+| A4 supplied procedure | 21 | 5 first THINK; 5 strict | 1/8 |
+
+The required-READ smoke also retains its FAILED outer collection: the old
+64-task assertion rejected the eight-task stage despite worker exit0; later
+repair does not rewrite that verdict. Under scheduled-first READ, the host
+selects only the first action family, not an address: the child selects every
+address. It generates40 READs with30 non-MISS returns (10 MISS). The8/8
+handshake is externally scheduled transport, not learned action selection or
+successful routing.
+
+A3B's declared LF framing supports17 accepted recurrent THINK turns, not
+autonomous thought allocation; its joint THINK/strict-terminal4/8 fails the7/8
+gate. A3C's static typed syntax yields8/8 joint physical passage but0/8 graph
+success. A4 adds a supplied generic traversal procedure, not discovered or
+learned traversal: three first generations hit LENGTH and are not accepted
+THINKs; the joint THINK/strict/graph1/8 fails7/8. This branch stops at SEQ185;
+there is no expanded panel or claim of general model incapacity.
+
+SEQ179's one-bank cold EVENT acquisition remains14/14 versus0/14 in both
+W0/W8 within C102's scoped limits; the original full-formation failure is
+unchanged. Sequence-material preparation (including offline tokenization)
+and wrapper work remain CPU-only, with no native sequence fits by17:00 UTC.
+These diagnostics do not close the broader sprint or establish retention,
+parenting, P1, H1/H2, G3, clean-lineage, full-assay or freeze qualification.
+Collaborator UNSENT. [C102, C103]
+
+Sources: [Builder notebook SEQ180–185](../../research_loop/COORDINATION.md),
+terminal cut September13,2026,17:00 UTC. SEQ180 supplies the unchanged
+required-READ/collection-failure record; SEQ182 is preparation, not a fit.
+The following archived receipts supply the other counts and separate
+post-outcome audit PASS from physical/graph gates:
+
+| Scope | Receipt | SHA256 |
+| --- | --- | --- |
+| SEQ181 static/scheduled READ | [structured analysis](receipts_20260912/astra_pcfl_structured_analysis_20260913_attempt1.json) | `85e7be53d0eeb10608d8a12b7dd20dda55a35f231b55b92a3ebd9b6dc57430a2` |
+| SEQ183 A3B | [A3B audit](receipts_20260912/astra_pcfl_a3b_audit_20260913_attempt1.json) | `e61632ca08c6415dfcc56ca0b4c0647abe76df9d144a27066fb998127ac1b039` |
+| SEQ184 A3C | [A3C audit](receipts_20260912/astra_pcfl_a3c_audit_20260913_attempt1.json) | `6cf3dba283a529b0c4443b9b0e758ee272d655cab78e5b648ae848202e77d52b` |
+| SEQ185 A4 | [A4 audit](receipts_20260912/astra_pcfl_a4_audit_20260913_attempt1.json) | `017c06214f12d3edfe44ec81950724d0a09daf1809e22eaf3da904705786c08f` |
+
+[Independent A3B review](receipts_20260912/astra_pcfl_a3b_independent_review_20260913.md),
+SHA256 `418ef0b1aaf7ecd25622aa17f70b3aa18f0ba741a71ad70e206810749be651c9`,
+accepts bounded descriptive capture/accounting evidence, not the failed joint
+gate or scientific promotion. The [A3B terminal audit](../analysis/2026-09-13_pcfl_a3b_newline_framed_terminal_audit.md),
+SHA256 `2a862417dfca7b6827166f6c046aeeaa6e98f3ed42084f1e515d634477da8359`,
+supports externally framed recurrent THINK without successful traversal.
+Both are outcome-aware reviews of the same run, not replications. These
+interface controls do not test downstream use of the acquired C102 adapter.

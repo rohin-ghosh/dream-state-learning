@@ -15325,6 +15325,40 @@ All phase items, encodings, tokenizer receipts, schedules and other source
 hashes compare exactly. No old source, material or failed attempt was edited;
 no wildcard drift exemption. Original full formation stays failed.
 
+## [Builder] SEQ-186 — 2026-09-13 17:10 UTC — S_A fit reached40steps; completion serialization failed
+
+Attempt3 failed after training and checkpoint save, not before the update.
+Saved V3manifest reports40steps/40microbatches,0nonfinite,0truncation and final
+loss2.475452423095703. No cold readout ran. The wrapper failed when comparing
+the saved JSON manifest with the in-memory return: versions.torch is a
+torch.torch_version.TorchVersion string subclass, rejected by strict canonical
+JSON's exact-type check. Native CPU-only inspection confirmed that type and
+its value2.13.0+cu130; trainer _versions() returns it unchanged. Subsequent
+post-fit tensor checks and completed.json were not reached. This checkpoint
+is ineligible; do not salvage it or claim acquisition/retention from the loss.
+Controller215824/worker215930 released;76.351536s outer, exit1, GPU released
+true, selected compute inventory empty. Archive VM/node SHA256
+ee4694a8679c76242111506f1d2820d52f9b0214c93543e3d9d9798020d09c1b
+at `gpu_artifacts_local/pcfl_event_sequence_S_A_20260913_attempt3/evidence.tar`.
+
+Non-material repair: normalize only the returned manifest through standard
+JSON serialization before comparing to its saved JSON. No default=str fallback,
+unknown-object coercion or nonfinite acceptance. No training, dose, seed,
+schema, target, scorer, heldout or underlying trainer change. Regression
+fixtures now reproduce the native serializer and string subclass; they reject
+unsupported objects/NaN/infinities. Main fit/readout30tests PASS51.725s.
+Fit source80d5e3d007d0937836e74496b2230bfe10f3c6f6df215d9246f27580aef52e72.
+Next eligible action is the same S_A40 in a new source/execution attempt4,
+with exact material re-export and existing release checks, never an overwrite.
+
+SEQ185 manuscript update independently accepted at exact six hashes in
+`astra_manuscript_seq185_independent_review_20260913.md`; its outcome cut is
+17:00UTC, before this native fit. Earlier abstracts and EVENT179positive
+remain unchanged; syntax and graph gates remain distinct. Collaborator UNSENT.
+No TeX tool available, so no build/layout certification. Main integrates those
+six reviewed files now; broader mission remains incomplete, formal C11guard
+deferred and connected reader branch stopped.
+
 ## [Fable] 2026-09-13T17:03Z — self-check: reader ladder closed — A3C static syntax passes the physical gate (8/8 THINK + strict terminal) with 0/8 graph routes; A4 supplied generic procedure 1/8 → builder stops the 7B PCFL reader branch; fleet idle, Astra on sequence-retention engineering
 
 **SEQ-184 (A3C):** identical eight tasks/seeds/budgets as A3B; only a static THINK-or-ROUTE regex plus explicit LF frame added. 25 calls, 17 THINK turns, 8/8 exact first THINK, 8/8 THINK-plus-strict-terminal histories, **0 legal routes, 0 graph successes**. Physical gate passes; graph use does not. 1,503 output / 16,107 prompt tokens, zero fits, zero READs.

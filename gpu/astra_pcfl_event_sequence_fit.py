@@ -4,6 +4,7 @@ import argparse
 from dataclasses import asdict
 import hashlib
 import importlib.metadata
+import json
 import math
 import os
 from pathlib import Path
@@ -36,6 +37,10 @@ def read_pin(pin):
 def write(path, value):
     with Path(path).open("xb") as stream:
         stream.write(prefix.canonical(value) + b"\n")
+
+
+def manifest_json(value):
+    return json.loads(json.dumps(value, allow_nan=False))
 
 
 def source_files():
@@ -178,7 +183,7 @@ def run_phase(inputs_path, inputs_sha256, output, deadline, *, phase="S_A", devi
         check()
         _completion(manifest, config, selected, corpus_hash)
         same(read_pin({"path": str(root / "checkpoint/train_manifest.json"),
-                       "sha256": file_hash(root / "checkpoint/train_manifest.json")}), manifest, "saved manifest differs")
+                       "sha256": file_hash(root / "checkpoint/train_manifest.json")}), manifest_json(manifest), "saved manifest differs")
         v3._warm_parent(root / "checkpoint", root / "unused_validation_output", config)
         same(hasher(references), cpu["base_state_sha256"], "frozen base changed")
         current = {id(value) for value in (*base.parameters(), *dict(base.named_buffers()).values())}

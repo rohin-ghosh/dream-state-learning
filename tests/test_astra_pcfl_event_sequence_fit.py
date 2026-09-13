@@ -136,7 +136,7 @@ class FitTests(unittest.TestCase):
         (destination / "adapter_model.safetensors").write_bytes(b"SYNTHETIC_NOT_TENSORS")
         (destination / "DONE").write_text("ok\n")
         self.mutate(manifest, base, destination, init_adapter)
-        fit.write(destination / "train_manifest.json", manifest)
+        (destination / "train_manifest.json").write_text(json.dumps(manifest, default=str))
         return manifest
 
     def run_fit(self, phase="S_A", output=None, **kwargs):
@@ -163,6 +163,22 @@ class FitTests(unittest.TestCase):
         self.assertFalse(result["automatic_promotion"])
         self.assertFalse((self.output / "unused_reference_actor").exists())
         self.unchanged.assert_called_once()
+
+    def test_trainer_string_subclass_version_matches_saved_json(self):
+        class Version(str):
+            pass
+        self.mutate = lambda manifest, base, output, parent: manifest.update(versions={"torch": Version("2.13.0+cu130")})
+        result = self.run_fit()
+        self.assertEqual(result["status"], "COMPLETE")
+        self.assertEqual(json.loads((self.output / "checkpoint/train_manifest.json").read_text())["versions"],
+                         {"torch": "2.13.0+cu130"})
+
+    def test_manifest_json_never_stringifies_unknown_objects_or_nonfinite_numbers(self):
+        with self.assertRaises(TypeError):
+            fit.manifest_json({"unknown": object()})
+        for value in (float("nan"), float("inf"), -float("inf")):
+            with self.assertRaises(ValueError):
+                fit.manifest_json({"number": value})
 
     def test_cpu_reference_requires_nested_native_and_peft_environment(self):
         cpu = fit.read_pin(self.inputs["base_state_receipt"])

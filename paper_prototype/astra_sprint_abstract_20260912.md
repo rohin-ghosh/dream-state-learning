@@ -1,12 +1,19 @@
 # FIRST SPRINT DRAFT — companion abstract
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This draft through SEQ179 retains earlier positive and negative findings;
+This draft through SEQ185 retains earlier positive and negative findings;
 SEQ167 and SEQ169--173 are engineering-only logs, excluded from scientific results.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
+
+**Through SEQ185 / C103: terminal engineering-only reader branch.**
+Scheduled action-family and syntax scaffolds enable bounded interface behavior,
+not successful graph use; the supplied-procedure branch fails and stops.
+The prior scoped EVENT-acquisition result remains positive, not a completed
+learning/parenting loop or broad sprint result. Sequence-material and wrapper
+work are CPU-only at17:00 UTC; no native sequence fits are claimed.
 
 **Through SEQ179 / C101–C102: bounded acquisition and failed use interfaces.**
 A separate one-bank cold-acquisition endpoint passes, while disclosed READ,

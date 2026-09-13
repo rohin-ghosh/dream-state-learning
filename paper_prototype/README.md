@@ -1,12 +1,19 @@
 # Experience Models — ICLR 2027 submission (revised draft v3, 2026-09-10 fix pass)
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This draft through SEQ179 retains earlier positive and negative findings;
+This draft through SEQ185 retains earlier positive and negative findings;
 SEQ167 and SEQ169--173 are engineering-only logs, excluded from scientific results.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
+
+**Through SEQ185 / C103: terminal engineering-only reader branch.**
+Scheduled action-family and syntax scaffolds enable bounded interface behavior,
+not successful graph use; the supplied-procedure branch fails and stops.
+The prior scoped EVENT-acquisition result remains positive, not a completed
+learning/parenting loop or broad sprint result. Sequence-material and wrapper
+work are CPU-only at17:00 UTC; no native sequence fits are claimed.
 
 **Through SEQ179 / C101–C102: bounded acquisition and failed use interfaces.**
 A separate one-bank cold-acquisition endpoint passes, while disclosed READ,
@@ -172,6 +179,48 @@ Historical exclusion statements below apply only to their named earlier cuts.
 
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
+
+## Terminal engineering-only reader diagnostics — SEQ180–185 / C103
+
+The terminal reader branch remains an engineering diagnostic: the same four
+exposed roots/eight recurring cases, not independent learners, with zero fits
+or updates and no acquisition adapter in use. Interface passage and graph
+success are distinct endpoints. [C103]
+
+| Condition | Actual calls | Interface observations (8 cases) | Graph success |
+| --- | ---: | --- | ---: |
+| Required READ | 8 | 0 strict; 8 invalid | 0/8 |
+| Static READ union | 8 | 0 READ; 7 strict | 0/8 |
+| Scheduled-first READ | 48 | 8 handshakes; 8 strict | 0/8 |
+| A3B LF framing | 25 | 8 first THINK; 4 strict | 0/8 |
+| A3C static typed | 25 | 8 first THINK; 8 strict | 0/8 |
+| A4 supplied procedure | 21 | 5 first THINK; 5 strict | 1/8 |
+
+The required-READ smoke also retains its FAILED outer collection: the old
+64-task assertion rejected the eight-task stage despite worker exit0; later
+repair does not rewrite that verdict. Under scheduled-first READ, the host
+selects only the first action family, not an address: the child selects every
+address. It generates40 READs with30 non-MISS returns (10 MISS). The8/8
+handshake is externally scheduled transport, not learned action selection or
+successful routing.
+
+A3B's declared LF framing supports17 accepted recurrent THINK turns, not
+autonomous thought allocation; its joint THINK/strict-terminal4/8 fails the7/8
+gate. A3C's static typed syntax yields8/8 joint physical passage but0/8 graph
+success. A4 adds a supplied generic traversal procedure, not discovered or
+learned traversal: three first generations hit LENGTH and are not accepted
+THINKs; the joint THINK/strict/graph1/8 fails7/8. This branch stops at SEQ185;
+there is no expanded panel or claim of general model incapacity.
+
+SEQ179's one-bank cold EVENT acquisition remains14/14 versus0/14 in both
+W0/W8 within C102's scoped limits; the original full-formation failure is
+unchanged. Sequence-material preparation (including offline tokenization)
+and wrapper work remain CPU-only, with no native sequence fits by17:00 UTC.
+These diagnostics do not close the broader sprint or establish retention,
+parenting, P1, H1/H2, G3, clean-lineage, full-assay or freeze qualification.
+Collaborator UNSENT. [C102, C103]
+
+Source/review mapping: [C103](../research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md#c103--seq180185-terminal-engineering-only-reader-diagnostics).
 
 ## Exploratory component evidence — SEQ179 / C102
 
