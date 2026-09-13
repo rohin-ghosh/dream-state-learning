@@ -1672,3 +1672,6 @@ Raw: message 26 in `THESIS_RAW_ROHIN_2026-09-11.md`. Why birth first: base promp
 
 ## [NEXT PAPER — IDEA, Rohin 2026-09-13 00:20 UTC] Agents that write the corpus, do the preschool parenting and teach in classrooms, so the structure keeps building its own learners after development
 "We won't do this [in this paper]" — but it is the natural feature of the population paper discussed for afterwards, where deployed agents learn from working with people on real problems: the developed agents become the curators, parents and teachers of the next generation. Filed for the next-paper section / library; not formalised.
+
+## [VOCABULARY, Rohin 2026-09-13 00:25 UTC] Trained vs learned vs self-learning; why birth is level 1
+Raw: message 27 in `THESIS_RAW_ROHIN_2026-09-11.md`. **Trained**: weights change on material someone else prepared (birth, level 1). **Learned**: self-conducted — training still happens, but the model prepares its own material (level 2 onward, with a parent curating). **Self-learning**: the learned regime running on its own (levels 3–4). Level 0 is the mechanism ground; birth is numbered 1 because it is the first thing in the learned system even though it is trained, not learned. Confirmed: spoon-feeding = level 2. Use these three words exactly in the notebook and the paper.

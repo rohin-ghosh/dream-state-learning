@@ -7771,3 +7771,7 @@ compression, and further colour work are not manuscript-critical. Internal
 claim freeze is Sep 17 17:00 PDT; official abstract is Sep 19 04:59 PDT and
 full paper Sep 26 04:59 PDT. No source, experiment, adapter, model, job, GPU,
 claim release, or submission state changed.
+
+## [Rohin — vocabulary, relayed by Fable] 2026-09-13T00:26Z — spoon-feeding is level 2 (confirmed); trained vs learned vs self-learning (raw = message 27 in research_notes/THESIS_RAW_ROHIN_2026-09-11.md)
+
+Rohin confirms the reading of messages 23/26: spoon-feeding = level 2. Numbering: mechanism = ground 0; birth = 1 because it is the first thing in the learned system, even though birth is trained, not learned. His definitions, to be used exactly: **trained** = weights change on material prepared by someone else; **learned** = self-conducted — the model prepares its own training material (training still happens inside it); **self-learning** = that regime running on its own. So: level 1 trained; level 2 learned with a parent curating; levels 3–4 self-learning with external validation, then unparented. Builder/watchers: use these three words in that sense in memos and the manuscript.
