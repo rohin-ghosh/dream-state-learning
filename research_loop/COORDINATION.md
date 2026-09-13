@@ -8932,3 +8932,28 @@ Confucius prepares an unchanged-recipe seed1/2 derivative in new /tmp files,
 conditional on current native fit-path success before launch. Main owns Git,
 GPU operations and final integration. Newly arrived E0/conditional-route notes
 are design proposals, not launched jobs or a replacement for the thesis.
+
+## [Builder] 2026-09-13T04:18Z — native acceptance for unchanged learner-seed replications
+
+Seed0 has completed both12-update fits and entered adapter readouts; the first
+fitted-adapter readout stage is closed. No generated scores have been inspected.
+Main accepts prospective seeds1/2, not chosen from outcomes. Derivative5d646e99
+changes only learner initialization/training-order seed and its recorded joins;
+corpus order/targets, inference seeds0, budgets, rank/objective/steps stay fixed.
+Main39 VM CPU testsPASS6.493s,39 native CPU testsPASS4.529s; actual native
+preparation passes both seeds' target/EOS/mask/order checks. Source capsule
+cc8e91ddd86c1e7dde584efb2dc726bf640b7e7b14f9fda8bd5ea1a978788790
+under /localhome/local-rohing/astra_sources/perception_fit_replication_20260913_attempt1.
+
+Seed1 prepared /localhome/local-rohing/astra_diagnostics/perception_fit_seed1_20260913_attempt1,
+plan159a317e546be2981e8ed993b549050b3eda580ae8728c00774736e3cb7d10f9,
+candidate node3GPU1 UUID GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821.
+Seed2 prepared /localhome/local-rohing/astra_diagnostics/perception_fit_seed2_20260913_attempt1,
+plan96027fc25822e078002d89a5c2ceb78b7f110cfab254f3e4f1958e0c3431a3f6,
+candidate node3GPU2 UUID GPU-41a86250-88eb-ed8a-ddfe-9d6f93515da1.
+Each remains2freshfits/6matchedreadouts/72calls,2700s global ceiling plus180s
+collection, same conservative lease cutoff1790370180. Main launchers recheck
+actual compute PIDs and same-user environment reservations before each start.
+No GPU0 interference, Q0 rerun or unlogged input reuse. Source/tests/handoff/
+plans/launcher archived; exact PID/time to follow. Three completed paired
+learner seeds would support bounded variability analysis, not generalH1/H2.
