@@ -110,3 +110,19 @@ only its spawned group. Exact known user-init service exceptions only;
 no blanket unreadable-process exemption. Detach before checks so the launch
 SSH transport exits. Collection stays within each30minute controller budget.
 Main will preserve all new roots/captures on the VM before reporting results.
+
+## Infrastructure amendment — September 13, 2026, 18:00 UTC
+
+Before scientific outcome inspection, attempt1 seeds0/1 failed post-run CVD
+checks because finished seed2 controller2960286 was left unreaped by Main's
+ordered batch waits. All six workers captured their48calls, exited0 and
+released; only seed2 has a successful original controller/collection. Preserve
+the other two failures and their raw data/cost; do not retroactively pass them.
+
+Select fresh attempt2 for seeds0/1 only, serial orchestration with immediate
+reaping. Keep seed2 attempt1 unchanged. Same source, frozen material, parents,
+GPU assignment, sampling, scorer and per-state call counts; no outcome-driven
+change. This is an infrastructure retry, not another independent learner or
+resampling to improve an answer. Add192calls/1.0allocated GPU-hour maximum,
+for480total attempted calls if both retries finish. Timing/concurrency differs
+and must be reported. No third attempt. Strict resource checks remain intact.

@@ -15801,3 +15801,41 @@ Read-only snapshot17:48UTC found zero completed responses so far, no stage
 failure markers and no terminals; this is launch evidence, not completion
 or a GPU-utilization measurement. Main will collect actual outcomes. No
 parent, new fit, checkpoint rewrite or other process kill has occurred.
+
+## [Builder] 2026-09-13T18:00Z — SEQ-191: all calls captured; two postcheck failures; bounded infrastructure retry
+
+All288planned calls executed:48OFF+48post per seed. All six workers exited0
+and released their owned groups. Seed2 controller/collection completed. Seeds0
+and1 controllers FAILED their post-post CVD check; original failures remain
+immutable/ineligible, not relabeled successful. No scientific outcome/response
+contents inspected before the following retry selection.
+
+Exact failure in both: unreadable `/proc/2960286/environ`, PermissionError;
+no unexpected CUDA owners, and no GPU compute processes after batch release.
+2960286 was the finished seed2 controller. Main's batch waited/reaped in seed
+order, leaving that faster child unreaped while waiting for seeds0/1. The
+failed checks are orchestration custody failures, not measured model errors.
+We do not weaken CVD checks, ignore arbitrary denied processes or modify
+the saved failed completions. Whole attempt1 archive copied off node1:
+`gpu_artifacts_local/prediction_transfer_20260913_attempt1/evidence.tar`,
+VM/node SHA0928686137e8a61db60cc91952c407920117e136285b847ee71a8afa68e508bf.
+
+Prospective infrastructure amendment BEFORE outcome inspection: retry only
+seeds0/1 in fresh attempt2 roots, sequentially and reap each controller before
+starting the next. Keep successful seed2 attempt1; no outcome-based selection.
+Same unchanged f84cc3be runner/source, material, original checkpoint, GPU,
+sampling/scorer and96calls/seed, zero fits. Additional192calls and at most
+1.0allocated GPU-hour; totalattempt cap2.5GPU-hours, not measured utilization.
+Failed attempts'192calls/cost remain reported and are not independent learners.
+If a retry fails, stop; no third attempt or prompt/dose/scorer rescue.
+
+Main retry helper SHA d873350dbcee46717d120bd09a6b39afaff38fd5579cde363436a803fbd90b27,
+archived in receipts_20260912/astra_prediction_transfer_retry_20260913.py.
+Harmless CPU subprocess regression PASS: both children reaped before next
+launch. Native CPU preparations also passed, using exact original spec pins.
+New plan seed0 SHA55f3bd2c796e81784500522c301e1f6f37fe33a6104683709de387f090149b0a;
+seed1 SHA4d201d286da913a47795ddf2a758d38020d922b39046aa9c4b0a472e839c0f9a.
+Roots `prediction_transfer_seed{0,1}_20260913_attempt2` under astra_diagnostics.
+Main now launches `/tmp/astra_prediction_transfer_retry_20260913.py launch`
+with native venv Python, detached, node1 GPU0 thenGPU1; exact PIDs follow.
+No complete three-learner scientific result yet; final C11 guard deferred.
