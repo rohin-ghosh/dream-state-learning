@@ -1,13 +1,35 @@
 # DRAFT ONLY — unsent collaborator update
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ155 retains both positive and negative findings.
+This evidence cut through SEQ158 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current evidence through SEQ155 — C90/C91; ongoing first draft.**
+**Current evidence through SEQ158 — C92–C94; ongoing first draft.**
+Fixed author coaching (P) and neutral contact (N), each followed by own-record
+writing, yield fresh held eligibility16/16,16/16,13/16 in both arms versus
+ORIGINAL11/16,8/16,8/16. Incremental held coaching contrast is zero in each learner, not
+proof of equivalence; own-writing gains do not establish a coaching benefit.
+Admitted material P/N is16/14,16/11,11/13 out of16, with unequal realized
+experiences and write doses. Old held P/N is47/47,47/47,44/46 out of48 versus
+historical47/48/48; all12canaries remain correct. These retention tallies are
+raw-linked; all360old-retention items now match exact frozen-scorer replay,
+with zero score-object discrepancies and unchanged counts.
+The fixed ACT comma scaffold remains; CONF is untouched, and no adaptive parent
+is tested. Full-dose contrastive held gains over PLAIN are+2,+6,0, but all three
+screens fail D2's9/12floor (8/12each); exposed panels, repeated situations,
+shortcut and historical-control limits remain. A separate zero-fit capture
+validates24/24raw records per parent from24selected/48supported/96TRAIN sources:
+the same24sources and24raw targets across three parents, not72novel facts.
+Own-source replay repair is separately predeclared; Main reports its later launch,
+not outcomes. The completed evidence cut stays SEQ158. Without a same-child,
+same-history raw-chronological LoRA control, own-writing gains do not establish
+extraction/compiler utility. H1/H2 remain hypotheses; no freeze, parenting, general G3, clean-lineage,
+working-loop or mission-completion promotion follows. Collaborator UNSENT.
+
+**Historical evidence through SEQ155 — C90/C91.**
 Post-memory fresh formation yields source-faithful WRITE8/16 in every seed
 versus LR0 7/16,6/16,4/16, but all48example-absent wakes omit required commas
 and produce no executions/records. Current facts remain in record prompts;
@@ -49,7 +71,68 @@ Actual-memory writing/readback and native-greedy testing remain development only
 HF independent analysis is pending; archived A100 short-root OFF readiness passes.
 Historical pending statements below describe their named cuts, not current status.
 
-**Current UNSENT — bounded SEQ154–155 / C90–C91 update for Main's review.**
+**Current UNSENT — bounded SEQ156–158 / C92–C94 update for Main's review.**
+
+| Seed | Material P/N /16 | Updates P/N | Fresh held P/N/O /16 | Old held P/N/O /48 | Lost old P/N |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 0 | 16/14 | 128/112 | 16/16/11 | 47/47/47 | 0/0 |
+| 1 | 16/11 | 128/88 | 16/16/8 | 47/47/48 | 1/1 |
+| 2 | 11/13 | 88/104 | 13/13/8 | 44/46/48 | 4/2 |
+
+P=fixed author coaching, N=neutral author contact, O=ORIGINAL unwritten
+perception adapter. Fresh eligibility and content coincide; both new arms gain
+5/8/5records over ORIGINAL, but P-minus-N is0/0/0 (three-learner mean/range zero).
+Successful/failed slot labels match; this is not equivalence, and two pairs
+reach ceiling. Own-writing gains are not a coaching benefit. Material yield
+favors P in0/1 and reverses in2; contacts51/28tokens and realized doses differ.
+Fresh P/N action/outcome/prior agrees16/16,3/16,13/16, not matched experience.
+During contact, prior/relation fields are correct16/16per P learner versus
+14/16,11/16,13/16for N. This is bounded in-context field improvement, not learned
+persistence; seed2P's five material failures omit required `try` and add
+`unavailable`, rather than copying a different triple.
+All states execute16/16held actions with the fixed comma ACT scaffold. Seed2's
+three failures per new arm omit required `try` and add `unavailable` despite
+correct prior/outcome/relation; no byte repair. Canonical strict P/N/O counts
+are4/0/11,0/0/0,0/0/0, distinct from valid noncanonical source-faithful production.
+Current facts remain in record prompts; repeated slots are not new learner pairs.
+
+Old skill controls47/48/48 are historical/noncontemporaneous, unlike the freshly
+probed ORIGINAL formation endpoint. P/N retention is47/47,47/47,44/46: lost
+previously correct items0/0,1/1,4/2, with no compensating gains. All six canary
+panels remain12/12; they do not detect these skill harms. The earlier HIGH write's
+3/11/31losses remain separate historical results. The cohort reducer replays raw
+formation/held and source/dose/contact-removal joins, but only raw-links and
+tallies old retention scores. **The separate frozen-material replay now matches
+all360P/Nold-retention score objects with zero discrepancies**, counts unchanged.
+Main reports22CPUtests PASS (1.051s). Retention strict requires correct content
+and target-exact text; fresh held eligibility instead accepts valid noncanonical
+JSON. Neither is substituted for the other; neither replay authenticates native
+model/tokenizer/hardware identity.
+
+Cost: six writes,648updates,900calls, zero parent-model calls. Budget elapsed
+1127.793/1087.217/1063.341s includes preparation, not postlaunch controller runtime;
+summed generation821.673s is
+nested, not an additional makespan or GPU-active duration. CONF is untouched.
+This is fixed author contact, not adaptive parenting, a matched-experience
+mediation test, H1/H2, freeze, general G3 or a working learned loop. No same-child,
+same-history raw-chronological LoRA comparator isolates extraction/compiler
+utility; this limits attribution, not the recorded component outcomes.
+
+Full-dose contrastive practice improves held versus PLAIN by+2,+6,0, but all
+three frozen screens fail D2's9/12floor (8each). Source errors, exposed repeated
+DEV situations, perfect negate-earlier shortcut and reused historical OFF
+prevent mechanism or parenting claims. A separate independent capture audit
+validates24/24raw records per parent:24shared previously trained authored
+sources and24raw targets, not72new facts; zero fits. These component positives
+and failures guide repair rather than close the research question.
+
+[C92–C94](ASTRA_PAPER_CLAIM_MAP_2026-09-12.md#c92--seq156-full-dose-contrastive-gains-with-zero-frozen-screen-passes)
+bind archived reductions and their limited audit scopes. New own-source replay
+repair963aa528 is now launched (Main-reported10:34:12/21/30UTC, September13),
+not completed evidence: no repair outcomes enter this SEQ158cut.
+This update is UNSENT; H1/H2 remain hypotheses, not promoted claims.
+
+**Historical UNSENT — bounded SEQ154–155 / C90–C91 update for Main's review.**
 
 Fresh-interaction eligibility/content is8/16 for each HIGH-WRITE descendant
 versus LR0 7/16,6/16,4/16; strict WRITE/LR0 is4/4,0/0,0/0. All48example-absent

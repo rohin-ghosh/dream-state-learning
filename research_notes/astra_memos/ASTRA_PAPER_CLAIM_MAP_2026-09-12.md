@@ -1,13 +1,35 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ155 retains both positive and negative findings.
+This evidence cut through SEQ158 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current evidence through SEQ155 — C90/C91; ongoing first draft.**
+**Current evidence through SEQ158 — C92–C94; ongoing first draft.**
+Fixed author coaching (P) and neutral contact (N), each followed by own-record
+writing, yield fresh held eligibility16/16,16/16,13/16 in both arms versus
+ORIGINAL11/16,8/16,8/16. Incremental held coaching contrast is zero in each learner, not
+proof of equivalence; own-writing gains do not establish a coaching benefit.
+Admitted material P/N is16/14,16/11,11/13 out of16, with unequal realized
+experiences and write doses. Old held P/N is47/47,47/47,44/46 out of48 versus
+historical47/48/48; all12canaries remain correct. These retention tallies are
+raw-linked; all360old-retention items now match exact frozen-scorer replay,
+with zero score-object discrepancies and unchanged counts.
+The fixed ACT comma scaffold remains; CONF is untouched, and no adaptive parent
+is tested. Full-dose contrastive held gains over PLAIN are+2,+6,0, but all three
+screens fail D2's9/12floor (8/12each); exposed panels, repeated situations,
+shortcut and historical-control limits remain. A separate zero-fit capture
+validates24/24raw records per parent from24selected/48supported/96TRAIN sources:
+the same24sources and24raw targets across three parents, not72novel facts.
+Own-source replay repair is separately predeclared; Main reports its later launch,
+not outcomes. The completed evidence cut stays SEQ158. Without a same-child,
+same-history raw-chronological LoRA control, own-writing gains do not establish
+extraction/compiler utility. H1/H2 remain hypotheses; no freeze, parenting, general G3, clean-lineage,
+working-loop or mission-completion promotion follows. Collaborator UNSENT.
+
+**Historical evidence through SEQ155 — C90/C91.**
 Post-memory fresh formation yields source-faithful WRITE8/16 in every seed
 versus LR0 7/16,6/16,4/16, but all48example-absent wakes omit required commas
 and produce no executions/records. Current facts remain in record prompts;
@@ -4061,9 +4083,169 @@ paired arithmetic and frozen screens, without raw semantic rescoring, native
 identity or all prompt-token-sequence verification. Main/handoff report18reducer
 tests PASS, not independent scientific replication or native model execution.
 
-**Current prospective status through SEQ155:** fixed-coaching protocol and
+**Historical prospective status through SEQ155:** fixed-coaching protocol and
 contrastive full-dose CPU implementation are not launched and supply no outcomes.
 The [full-dose protocol](ASTRA_CONTRASTIVE_FULL_DOSE_2026-09-13.md), SHA256
 `e777b5be15e2a1cab447de3e72fb013bfac2a20a3d12d81574f95880ca60b0e6`,
 is a plan, not extra evidence. No freeze, parenting, H1/H2, general G3, clean-lineage,
 working-loop or mission-completion claim follows. Collaborator remains UNSENT.
+
+## C92 — SEQ156: full-dose contrastive gains with zero frozen screen passes
+
+| Seed | Held PLAIN/CONTRASTIVE /24 | C-P | C D1/D2 /12 | Paired wins/losses/both/neither | C-record P/C /12 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 0 | 17/19 | +2 | 11/8 | 2/0/17/5 | 6/11 |
+| 1 | 14/20 | +6 | 12/8 | 6/0/14/4 | 7/11 |
+| 2 | 19/19 | 0 | 11/8 | 1/1/18/4 | 7/11 |
+
+Content, original-strict and exact-target success counts coincide in new arms;
+the frozen strict scorer nevertheless permits JSON whitespace/key order.
+Every C arm fails D2floor9; seeds0/2also miss held20and advantage4. Seed1's
+gain does not override the failed floor. Cheld failures5/4/5 are all source
+errors including predicted/relation; PLAINseed1 has one syntax failure. All288
+new completions stop. All general canaries12/12, no OFF-correct canary losses;
+OFF's0/12record-canary successes make that retention condition vacuous.
+OFFheld2/24,record0/12,general11/12 is one historical48-call endpoint imported
+three times, not three new controls. D1/D2 repeat12situations, all panels are
+exposed DEV, negate-earlier is a perfect shortcut, and grouping plus instructions
+change. No source-attention mechanism, new independent dose-control replication,
+child SLEEP, parenting or H1/H2 conclusion follows.
+
+New6fits/2016updates/8064presentations/288calls; imported OFF adds zero work.
+Supervised tokens249984, padded3305136; equal supervision is not equal context
+or compute. Pair clocks1291.182/1301.871/1294.471s are not summed makespan.
+Low final fit loss around5–6e-6 does not erase remaining source errors.
+
+Sources: [frozen reduction](receipts_20260912/astra_contrastive_full_dose_analysis_20260913_results.json),
+SHA256 `204fcb1e40041e3057d1fdd9300b924d6d1a9aa94b80d2a513f07b428f500c60`;
+[result/custody handoff](receipts_20260912/astra_contrastive_full_dose_analysis_20260913_results_handoff.md),
+SHA256 `e1bf5b55911c65da56ef75fef074e34d988ef3808320f8dbdfcadb7957625b6b`;
+[protocol](ASTRA_CONTRASTIVE_FULL_DOSE_2026-09-13.md).
+Archive pin `32ee167d153812943c6942a095dafc1b5e2c7ccf2634eb77be5e95c03489fa4f`.
+Main reports25CPUtests PASS. Reducer replays frozen scorer and receipt joins;
+shared scoring dependencies are not independently redesigned semantics or new
+model/tokenizer/hardware authentication. Original lower-dose C80 remains unchanged.
+
+## C93 — SEQ157: raw own-source capture fidelity without a fit
+
+Each original perception parent supplies24/24admitted raw responses from
+24selected/48supported/96TRAIN observations. The independent strict parser
+derives all four fields from the last designated TRY and its matching public
+outcome, using only explicit pre-action priors (otherwise null). It verifies
+raw-byte/source/request/response/route joins, prospective source selection,
+once-collection and three sequential process/release identities, not just the
+original source judge. All four fields are24/24correct per parent.
+The24sources,24triples and24raw targets are shared across three parents; each
+target repeats3times. Six non-triple patterns appear4times per parent, and
+earlier/last outcomes differ12/24times. These are previously trained externally
+authored observations, not72novel facts or autonomous TRY experience. The other
+72TRAIN rows per parent were not captured (48unsupported,24supported unselected).
+All96authored targets do not thereby become admissible replay targets.
+
+Cost72calls,0fits/updates;247.060controller seconds,90.960summed generation
+seconds nested. Main's14audit tests PASS (.246s) is a separate CPU-test clock.
+Source [audit JSON](receipts_20260912/astra_own_source_capture_audit_20260913.json),
+SHA256 `38435b38985f8b2b40bf8e0a7c183f6be76bbbf318ffcfc7d14baa7a1f7f6621`;
+[audit memo](receipts_20260912/astra_own_source_capture_audit_20260913.md),
+SHA256 `93542f4eb200e579626ab4bc9b4ada9cbbdfc591d5d7e5a7ce973adb069acdf5`;
+[capture protocol](ASTRA_OWN_SOURCE_REPLAY_CAPTURE_2026-09-13.md).
+Archive pin `94e313ee069cc402eba18c515558ae649244b2036b17b430e4a5b29bd51698fb`.
+Original material/plan members and local frozen sources are hash-bound, not a
+fresh model-weight/tokenizer/hardware audit. Finally-path releases alone do not
+prove success; closed manifests/controller receipts complement them. Local
+once-collection evidence cannot exclude unarchived calls. No fit, retention
+repair, replay adoption or mechanism promotion follows from this capture.
+
+## C94 — SEQ158: own-writing gains, zero incremental fixed-coaching contrast
+
+| Seed | Material P/N /16 | Updates P/N | Fresh held P/N/O /16 | Old held P/N/O /48 | Lost old P/N |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 0 | 16/14 | 128/112 | 16/16/11 | 47/47/47 | 0/0 |
+| 1 | 16/11 | 128/88 | 16/16/8 | 47/47/48 | 1/1 |
+| 2 | 11/13 | 88/104 | 13/13/8 | 44/46/48 | 4/2 |
+
+P=fixed author coaching, N=neutral author contact, O=ORIGINAL unwritten
+perception adapter. Fresh eligibility and content coincide; both new arms gain
+5/8/5records over ORIGINAL, but P-minus-N is0/0/0 (three-learner mean/range zero).
+Successful/failed slot labels match; this is not equivalence, and two pairs
+reach ceiling. Own-writing gains are not a coaching benefit. Material yield
+favors P in0/1 and reverses in2; contacts51/28tokens and realized doses differ.
+Fresh P/N action/outcome/prior agrees16/16,3/16,13/16, not matched experience.
+During contact, prior/relation fields are correct16/16per P learner versus
+14/16,11/16,13/16for N. This is bounded in-context field improvement, not learned
+persistence; seed2P's five material failures omit required `try` and add
+`unavailable`, rather than copying a different triple.
+All states execute16/16held actions with the fixed comma ACT scaffold. Seed2's
+three failures per new arm omit required `try` and add `unavailable` despite
+correct prior/outcome/relation; no byte repair. Canonical strict P/N/O counts
+are4/0/11,0/0/0,0/0/0, distinct from valid noncanonical source-faithful production.
+Current facts remain in record prompts; repeated slots are not new learner pairs.
+
+Old skill controls47/48/48 are historical/noncontemporaneous, unlike the freshly
+probed ORIGINAL formation endpoint. P/N retention is47/47,47/47,44/46: lost
+previously correct items0/0,1/1,4/2, with no compensating gains. All six canary
+panels remain12/12; they do not detect these skill harms. The earlier HIGH write's
+3/11/31losses remain separate historical results. The cohort reducer replays raw
+formation/held and source/dose/contact-removal joins, but only raw-links and
+tallies old retention scores. **The separate frozen-material replay now matches
+all360P/Nold-retention score objects with zero discrepancies**, counts unchanged.
+Main reports22CPUtests PASS (1.051s). Retention strict requires correct content
+and target-exact text; fresh held eligibility instead accepts valid noncanonical
+JSON. Neither is substituted for the other; neither replay authenticates native
+model/tokenizer/hardware identity.
+
+Cost: six writes,648updates,900calls, zero parent-model calls. Budget elapsed
+1127.793/1087.217/1063.341s includes preparation, not postlaunch controller runtime;
+summed generation821.673s is
+nested, not an additional makespan or GPU-active duration. CONF is untouched.
+This is fixed author contact, not adaptive parenting, a matched-experience
+mediation test, H1/H2, freeze, general G3 or a working learned loop. No same-child,
+same-history raw-chronological LoRA comparator isolates extraction/compiler
+utility; this limits attribution, not the recorded component outcomes.
+
+Source: [independent cohort reduction](receipts_20260912/astra_parented_record_analysis_result_20260913_attempt1/analysis.json),
+SHA256 `2b87fd61fd196b82692f6c580bf8824e50a0b4c52f4f3e5f11790d9ad890a9ed`;
+[analysis memo](receipts_20260912/astra_parented_record_analysis_result_20260913_attempt1/analysis.md),
+SHA256 `b384d671cace74ea48e210e33b3d29d0f80c825690e7566a31293fb75e74c836`;
+[input manifest](receipts_20260912/astra_parented_record_analysis_inputs_20260913_attempt1.json),
+SHA256 `df245557fc9c11f1ddc6bf08506e53b77ff189a8f0414658ef5e2e5a87c76edd`;
+[frozen DEV protocol](ASTRA_PARENTED_RECORD_DEV_2026-09-13.md).
+Archive pin `c69caf2c80a682fac26048d351d6f148216161dde7ee5b1ad847dacd0ee8b439`.
+Main reports13cohort tests PASS; local frozen-core replay/archived attestations
+do not validate native hardware, tokenizer execution or tensor payloads. Sources
+and interpretation are recorded in the notebook's10:27Z/10:31Z SEQ156–158 entries;
+commit identifiers are user-supplied, not independently inspected here with Git.
+
+Timing precision source: [archived runtime profile](receipts_20260912/astra_coaching_runtime_profile_20260913.json),
+SHA256 `94b7c019263f053d53cf5dbb0bdef84338adb3e16bb46e43f158d37452294630`.
+The preparation-inclusive budget elapsed values above are not postlaunch controller
+runtime; fit/generation intervals remain separate and are not GPU-active time.
+
+**Closed retention-audit scope:** [exact frozen-material rescore](receipts_20260912/astra_parented_retention_rescore_20260913_results.json),
+SHA256 `f217f480f9a42f983fde87f381f497bd63d811ff4baf909b46a57764dbec4d30`;
+[rescore handoff](receipts_20260912/astra_parented_retention_rescore_20260913_handoff.md),
+SHA256 `206398326448eee0c4cc525962a9e1da70b0eec3e077276bbcbe990c1969a909`.
+Six48held+12canary readouts are checked itemwise, including full score/error/format
+objects and JSON types; counts stay47/47,47/47,44/46held and12/12canaries.
+There are359canonical serializations and1unparseable response; canonical format
+alone does not imply correct content. This is successful original-scorer replay,
+not redesigned semantics, a new endpoint or native hardware authentication.
+
+**Advisory consistency only:** the [fixed-coaching terminal audit](../analysis/2026-09-13_astra_parented_record_terminal_audit.md)
+and [contrastive terminal audit](../analysis/2026-09-13_astra_contrastive_full_dose_terminal_audit.md)
+agree on the headline counts. Raw C94records govern the error description:
+seed2P's five formation failures (and three held failures per new arm) omit
+required `try` and add `unavailable`, not a wrong copied triple. The
+[raw-SLEEP comparator note](../analysis/2026-09-13_end_to_end_path_fresh_reviewer_missing_raw_sleep_control.md)
+concerns future compiler/lifetime attribution: a same-child, same-history
+raw-chronological LoRA comparator is absent. It neither invalidates these
+component outcomes nor supplies an extraction/compiler benefit or a launch veto.
+Watcher pooling, causal/dose prescriptions and stronger mechanistic wording
+are not imported as experimental evidence.
+
+**Prospective through this cut:** [own-source replay repair](ASTRA_OWN_SOURCE_REPLAY_REPAIR_2026-09-13.md)
+was predeclared at963aa528 before capture admissions. Main subsequently reports
+launches at10:34:12/21/30UTC on September13; no repair outcomes enter this
+SEQ158cut. This status comes from Main, not new native inspection. No automatic advancement,
+freeze, parenting, clean lineage, general G3, H1/H2 or mission completion follows.
+The complete first draft remains open and collaborator UNSENT.

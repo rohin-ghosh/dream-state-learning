@@ -1,13 +1,35 @@
 # FIRST SPRINT DRAFT — companion abstract
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ155 retains both positive and negative findings.
+This evidence cut through SEQ158 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current evidence through SEQ155 — C90/C91; ongoing first draft.**
+**Current evidence through SEQ158 — C92–C94; ongoing first draft.**
+Fixed author coaching (P) and neutral contact (N), each followed by own-record
+writing, yield fresh held eligibility16/16,16/16,13/16 in both arms versus
+ORIGINAL11/16,8/16,8/16. Incremental held coaching contrast is zero in each learner, not
+proof of equivalence; own-writing gains do not establish a coaching benefit.
+Admitted material P/N is16/14,16/11,11/13 out of16, with unequal realized
+experiences and write doses. Old held P/N is47/47,47/47,44/46 out of48 versus
+historical47/48/48; all12canaries remain correct. These retention tallies are
+raw-linked; all360old-retention items now match exact frozen-scorer replay,
+with zero score-object discrepancies and unchanged counts.
+The fixed ACT comma scaffold remains; CONF is untouched, and no adaptive parent
+is tested. Full-dose contrastive held gains over PLAIN are+2,+6,0, but all three
+screens fail D2's9/12floor (8/12each); exposed panels, repeated situations,
+shortcut and historical-control limits remain. A separate zero-fit capture
+validates24/24raw records per parent from24selected/48supported/96TRAIN sources:
+the same24sources and24raw targets across three parents, not72novel facts.
+Own-source replay repair is separately predeclared; Main reports its later launch,
+not outcomes. The completed evidence cut stays SEQ158. Without a same-child,
+same-history raw-chronological LoRA control, own-writing gains do not establish
+extraction/compiler utility. H1/H2 remain hypotheses; no freeze, parenting, general G3, clean-lineage,
+working-loop or mission-completion promotion follows. Collaborator UNSENT.
+
+**Historical evidence through SEQ155 — C90/C91.**
 Post-memory fresh formation yields source-faithful WRITE8/16 in every seed
 versus LR0 7/16,6/16,4/16, but all48example-absent wakes omit required commas
 and produce no executions/records. Current facts remain in record prompts;
@@ -386,7 +408,7 @@ cases remain unrequested; no G3, parenting, child sleep, H1/H2, clean lineage,
 novel-fact transfer or substrate freeze follows. Model origin remains
 `UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred. Collaborator **UNSENT**.
 
-Internal staging only; the canonical abstract now includes the bounded update through SEQ155 while preserving its historical text. H1/H2 remain the proposed
+Internal staging only; the canonical abstract now includes the bounded update through SEQ158 while preserving its historical text. H1/H2 remain the proposed
 developmental thesis, not established outcomes.
 
 ## Abstract
@@ -471,8 +493,22 @@ with held47/48,46/48,47/48 and intact12/12canaries. Only seed0 meets the
 joint exploratory screen against reused historical controls; the three-seed
 repair fails. This partial retention recovery does not erase the HIGH write's
 3/11/31losses or prove stable learning. The HIGH constant-record diagnostic
-cannot be extrapolated to LOWER. Fixed-coaching and full-dose contrastive work
-remains CPU implementation, not launched evidence; H1/H2 and the mission remain open.
+cannot be extrapolated to LOWER. Fixed-coaching and full-dose contrastive were
+prospective at that historical cut; their completed assays are distinguished next.
+
+Through SEQ-158, fixed author coaching and neutral contact followed by own-record
+writing yield the same fresh held eligibility16/16,16/16,13/16 across three
+learners, versus ORIGINAL11/16,8/16,8/16. Incremental held coaching contrast is zero, not
+an equivalence result or a parenting benefit; admitted material and write doses
+differ. Old held retention is47/47,47/47,44/46 in coaching/neutral order versus
+historical47/48/48, despite intact12/12canaries; all360old-retention score
+objects match frozen-scorer replay. The fixed ACT scaffold and state-dependent
+experience remain, with CONF untouched and no adaptive parent. Full-dose
+contrastive gains+2,+6,0 over PLAIN fail all three frozen screens. A zero-fit
+capture validates the same24source-supported TRAIN records across three parents,
+not72novel facts. Own-source replay repair is launched, with no outcomes included.
+No same-history raw-chronological LoRA comparator isolates extraction/compiler
+utility; H1/H2 remain hypotheses rather than demonstrated mechanisms.
 
 ## Historical SEQ143 result-table companion — C79–C82
 

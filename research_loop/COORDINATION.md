@@ -11555,3 +11555,35 @@ Independent end-to-end red team `research_notes/analysis/2026-09-13_end_to_end_p
 **[Builder -> Rohin] 10:23 — Astra's direct answer to message 40 (for Rohin's morning):** "I treat the design advice as a conversation and distinguish suggestions from invariants/explicit decisions. Current judgment: do not expand L1 to every skill or splice the laptop's new crossover into a frozen running comparison. Finish the three coaching pairs, measure the actual parent-free outcome, and use the observed memory/retention trade-off to justify one own-source replay comparison … If evidence points elsewhere, revise the next version rather than enforcing the suggestion literally. Emotions/search expansion and optional architecture work remain deferred unless an observed blocker needs them." The coaching pairs are now done (SEQ-158); the own-source replay comparison is the next cell.
 
 **Fleet:** 0 of 31 busy at 10:35 (all cohorts collected; next cell in preparation) — expected under Rohin's message 38; no action. Nudger: Astra active. Laptop chains 4/4. Node-1 lease ends 2026-09-14 23:14 UTC. Nothing killed or launched by the watcher.
+
+## [Builder] 2026-09-13T10:54Z — repair evidence preserved; SEQ158 manuscript reviewed
+
+After continuation reconciliation, all three own_replay_repair_seedN_20260913_attempt1
+controller, automatic collector and holder exit receipts on node2 report rc0.
+No recollection, retries, relaunches or kills. Complete roots, six adapters,
+collections, collection claims and launchers archived once natively and copied
+to gpu_artifacts_local/own_replay_repair_20260913_attempt1/evidence.tar:
+SHA256 86c2aadc7b35a50ccb58ad81e4c4733200423d121db75b25afde1112538d8936,
+507965440 bytes, 1248 members. Safe member inventory and every extracted file's
+bytes verified into /tmp/astra_own_replay_repair_native_20260913_attempt1.
+Verifier and receipt archived in receipts_20260912. Independent reducer received
+this unchanged mirror after its prospective code freeze; result integration
+pending. Main's 14 pre-outcome reducer fixture tests PASS in 3.032s.
+
+Descartes independently accepts scientific content of all six manuscript files
+through SEQ158. Review identified a stale author hash binding, not a scientific
+error: five files had the authorized preparation-inclusive timing clarification.
+Author issued a fresh freeze without further manuscript edits, preserving old
+handoff. Main confirms all six current hashes equal reviewed hashes; diff check
+passes. Review SHA5b53bbe513238067614046f8b01f7402cec912b05d00cdb4467cf55e887eee04;
+fresh freeze SHAe723f1b664f60feed10fd564e51778ed8da323f0feb57250d279fb523a888ff0.
+Both, author checks and final diff are archived. No PDF build claimed; collaborator
+UNSENT. Unrelated dirty gpu/codex/dream_state.rules remains excluded.
+
+Next design work is inference-only aligned/swapped/no-parent process steering,
+motivated by the zero incremental fixed-coaching held effect in SEQ158. Main
+owns protocol; Beauvoir owns new /tmp/astra_parenting_alignment_core_20260913.py,
+tests and handoff only. No fits or native run yet. The laptop's broader assay is
+a proposal, not adopted wholesale: its authored replay and one-sleep promotion
+rules are not authorized by this implementation assignment. Simple hygiene now,
+formal final C11 guard later; no mechanism freeze or H1/H2 promotion.
