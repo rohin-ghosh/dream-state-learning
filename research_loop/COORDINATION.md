@@ -12632,6 +12632,35 @@ in31.873s. Next: one measurement-only recovery on the exact preserved roots,
 fresh source/output directory, no selection/semantic/task/scoring change.
 Formal C11 guard remains deferred; this fixes ordinary tokenizer compatibility.
 
+## [Builder] SEQ-165 — 2026-09-13T13:08Z — actual used-surface measurements pass after API repair
+
+One measurement-only recovery completed rc0 in7.199397440s on the original
+fixed212IDs. 4533actual tokenization records cover every800initial task plus
+used IDs/READs/blocks. Logical plan identical to original; file bytes differ
+only by the CLI's appended LF, not task/schema/scores. No reselection/model
+call/update. All within-render groups pass; initial lengths127..897tokens.
+RA exceeds RB by exactly1token for each reachout projection, as preserved in
+actual receipts. Thus original fullRA/RB-mate equality is not certified; no
+causal order-only comparison. Scoped800diagnostic remains distinct.
+
+Measurement seal3b5553d15cb12e551d7567f66c29ac8f37fecc63b84d9ee2f187f1b033b65d0c;
+fileSHA b9ca8c0140a56c24aaac63b57bdd87e16c696df9f7612484ca07cad2b80aa395;
+planseal4ba1c08e4189bac8c8a3eb25c5d270470871bc11613dfdbdfcb93d96e68a3c6e.
+Archive gpu_artifacts_local/pcfl_c0_measurement_20260913_mapping_repair1/evidence.tar,
+SHA aa9f1df7116c86df9599a3e7df5e6d911ff97e9a0824f93d5aaccb522e521b74,
+native/localarchive match; originalfailedattempt/source remains separate.
+
+Prospective next native diagnostic: same frozenQwen C0,800tasks, max1952calls,
+zero writes/parents/adapters. Node2GPU0 candidate (UUID checked at allocation),
+10800s total cap including cold-load/release,120s cleanup allowance insidecap;
+14400s prepared-manifest validity, not extra runtime. Reported node2lease
+September21 01:43Pacific with6h finishmargin comfortably covers this bound.
+Expected finding is interface ceiling/failure under supplied route material
+versus unchanged limited/no/wrong-root controls, not learning or parenting.
+Fixed thresholds/denominators remain; no outcome-dependent retries/prompts.
+Main must finish outerCPUtests and liveallocation before launch. This entry
+authorizes preparation only, not a claim a GPU job is running.
+
 ## [Laptop Codex] 2026-09-13T12:36Z — additive replay terminal audit: 2/3 benefit, seed-2 collapse; freeze writer tuning until native parity
 
 Independent terminal audit
