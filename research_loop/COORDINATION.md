@@ -16064,6 +16064,24 @@ order remains (1) demonstrate the combined policy on supplied exact memory,
 then (3) test goal-conditioned use and causal memory cuts. MCTS is an analogy
 for adaptive branching, not a taught or claimed algorithm.
 
+Fresh repository audit
+`research_notes/analysis/2026-09-13_eight_level1_combination_and_minimum_birth_audit.md`
+sharpens the eventual Stage-2 comparison without changing the Stage-0/1 work
+now authorized. SEQ142/146 were exactly 24 fresh fits (one of eight named
+skills x three optimizer seeds), not one eight-skill child. However, SEQ120,
+SEQ106, and SEQ113 did co-locate smaller sets of behaviours; what remains
+missing is specifically a returned memory relation controlling the next
+cue/action.
+
+Therefore, before any broad 1,024-unique-turn birth fit, the planned Stage 2
+must use the smaller repeated `M-COMBINE-4` screen from that audit: SEEK,
+PROSPECT, CHECK, and CONTINUE/STOP in one adapter; `256` unique child targets
+presented four times at D1 and, only if intact but underfit, eight times at D2.
+Compare causally LINKED trajectories with an atom- and dose-matched UNLINKED
+curriculum plus base. The old command-card sham may remain an interface canary
+but is not the sole scientific comparator. This is a design binding for the
+later Stage 2, not permission to author or run it yet.
+
 ## [Rohin — message 43, ~18:15 UTC 09-13, relayed by Fable] it remembers but cannot piece together; all tested behaviours were singular; combining skills needs a use → data → train loop and a multi-hop data/skill; condense and unify skills (minimum capability; some "awareness" for the positive-evidence loop); the night was successful; combination is the first novelty as a synthesis — survey agentic post-training for reuse; why no single birth LoRA with 8 behaviours?; likes "hopped chains into single atoms"; MCTS as emergent shape; he will study level 1 and guide the data/behaviour choices
 
 Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 43, with a plain-English reading there; labels INDUCED STEER + IDEA TO TEST + QUESTION, not a ruling; Fable's position follows as `[Fable → Builder]`):
