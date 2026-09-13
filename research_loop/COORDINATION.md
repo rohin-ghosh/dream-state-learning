@@ -15548,6 +15548,39 @@ Timestamp correction: prior17:34 heading/protocol was written approximately
 17:32UTC by the tool clock (heading anticipated by about2minutes). Both
 precede any new prediction-transfer model output; no outcome timing changes.
 
+## [Independent A4 terminal audit] 2026-09-13 PT — valid 1/8 failure; retire later wording; split component and full-objective successors
+
+Documentation-only terminal audit and disposition:
+`research_notes/analysis/2026-09-13_pcfl_a4_generic_procedure_terminal_audit_and_post_reader_branch.md`.
+A4 made 21 calls: three first THINKs hit LENGTH and are unaccepted; the other
+five tasks produced 13 accepted THINKs and strict terminals. Exactly one route
+is the correct five-edge graph path; the other four omit a bridge, synthesize
+a port from a node, splice a dead branch, or skip three edges. Physical and
+joint gates are 5/8 and 1/8 versus required 7/8. No partial trace is salvaged,
+and the zero-shot 7B reader ladder stops with no 64-panel, cap/grammar/prose
+retry or post-outcome route fit.
+
+Protocol audit: all eight A3C task/root/cell/goal/user/seed/limit bindings and
+the static regex match. Actual procedure SHA
+ff1862745226f4fd1bbf10739eb06895979a3005616adc7fa963ce9db253e48d is
+byte-identical to the prospectively committed recurrent-reader successor §4,
+with no ID/length/example/answer. It differs from the more explicit
+CURRENT-NODE/PATH/BRANCH-STACK block in the later A3C audit (SHA a2172372...),
+which was authored after A4 launched. No protocol drift occurred; the later
+alternative is unexecuted and retired, not grounds for a retry. All 138 stage
+files and 18 outer files rehash; native custody/local replay and outer
+exit/group/GPU/queue/CVD release pass in their declared bounded scopes.
+
+Next-path ruling is advisory and non-implementing: (1) stronger clean resolver
+only as model-capacity ceiling unless a material base change is approved; (2)
+generic mechanized route-state as the immediate identical-across-arms
+component assay for dynamic LINK/connected carriage/cuts/S2, never agentic
+traversal; (3) clean target-disjoint inherited procedure training as the
+primary full-objective branch, shared by all memory arms and prospectively
+qualified on fresh graph families. Combine learned policy with authentic
+Dream/Sleep only after both the component writer and inherited skill pass.
+No builder/runtime/model/tokenizer/adapter/benchmark/GPU/remote state changed.
+
 ## [Root audit] 2026-09-13 17:10 UTC — S_A40 attempt3 is ineligible; likely exact-type metadata bug
 
 Read-only node inspection after controller release found training itself reached `TRAIN_DONE` (40 updates, 160 presentations, final loss 2.4755) and wrote a checkpoint, but the worker then failed before `completed.json`. The exact failure is `ActorError: non-JSON value` while comparing the disk-round-tripped `train_manifest.json` to the in-memory manifest; outer collection is correctly `FAILED`, GPU released, and this checkpoint must not be scored or reused. Static localization: `train_adapter_v3._versions()` stores `__version__` objects without `str(...)`; notably `torch.__version__` can be a `TorchVersion` subclass, while the canonical validator intentionally accepts only exact built-in JSON scalar types. `json.dump(..., default=str)` changes that value on disk, explaining the round-trip mismatch path. This is a diagnosis, not permission to mutate or rerun; Builder must verify the exact offending leaf, fix prospectively, re-test, and use a fresh output root.
