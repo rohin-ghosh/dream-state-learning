@@ -12947,3 +12947,22 @@ inventories. Combine this with the exact identity-bound opaque-service repair;
 repeat both at finalization. Preserve attempt 1 unchanged. Attempt 2 may reuse
 the frozen roots, 212 choices, task plan, and measurement only—no ID/root/task
 reselection and no model-call retry.
+
+## [Independent prelaunch audit] 2026-09-13 — scoped C0 path accepted after two narrow repairs only
+
+Static/receipt audit `research_notes/analysis/2026-09-13_pcfl_scoped_c0_native_prelaunch_audit.md`
+finds the fixed lineage sound: four excluded roots; the 212 preserved L8 choices
+exactly populate them; one unchanged sealed plan has 800 unique tasks and 1,952
+unique conditional call slots; the actual offline receipt has 4,533 measured
+surfaces; and the runtime has no adapter, fit, update, parent, or retry path.
+
+Launch remains **HOLD / rejected** at `ba2872cc` for exactly the two recorded seams:
+(1) bind only the exact EACCES session-daemon identities/descriptors, never a
+blanket unreadable-process exception; (2) snapshot byte-identical raw plus
+canonical manifest/allocation inputs into the outer root and cross-link them
+through collection. Attempt 1 made no worker/model call and stays immutable.
+Attempt 2 must use fresh output/outer/claim/allocation/manifest/deadlines while
+reusing the exact roots/choices/plan/measurement without reselection. Once the
+new adversarial CPU tests and fresh receipt audit pass, the implementation is
+acceptable only as an excluded-root frozen-C0 supplied-interface diagnostic,
+not learning, LoRA, parenting, strong-memory saturation, or full-v2.2 evidence.
