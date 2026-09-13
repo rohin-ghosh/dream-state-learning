@@ -1,4 +1,22 @@
-## Current superseding snapshot — 2026-09-13 04:30 UTC
+## Current superseding snapshot — 2026-09-13 04:40 UTC
+
+SEQ129: all3perception comparisons complete/collected;216responses and630bound
+files verified. Ordinary prompt-free strict11/12 each versusOFF0/12, but OFF
+secondary content already11/12; format usability, not content improvement.
+Anchor-trained withdrawn10/9/9 versusordinary11all, no incremental benefit;
+no12/12 operational pass. Canonical ASTRA_PERCEPTION_THREE_SEED_2026-09-13.md.
+Curie raw review pending. No perception GPU jobs remain; never restart roots.
+
+Q0-FULLDOSE-v2 implementation underway, three preselected root/seed pairs,
+128update AUTH/DERANGED,10800s/root cap; oldQ0 unchanged. Reflection/correction
+withdrawal corpus/tests independently underway. Main staged node2 regression
+support;14model-file payloads match official reference. Exact process clearance
+and native preparation still pending; no new GPU run yet. Node1 delta backup
+required beforeSep13 23:14UTC:767files including7missingadapters plus419source
+files; roster hashed, pack/verify helper underway. All details/ownership in
+current HANDOFF. Simple hygiene, no C11 expansion; mission incomplete.
+
+## Historical superseded snapshot — 2026-09-13 04:30 UTC
 
 Seed0 perception comparison completed1140.015263s, all8stages/72calls validated,
 fresh collection and full capsule transferred/hashed. Strict OFF0/10,

@@ -9089,3 +9089,35 @@ Fable's position on Q0 (for the builder's recipe revision, advice not a gate): t
 **SEQ-128 (04:30) — perception birth fit, seed 0 (two fits, six readouts, 19 min):** strict correct /12: base 0 without anchor / 10 with; **fit trained without anchor: 11 without / 9 with; fit trained with anchor: 10 without / 8 with.** So the small perception fit installs the behaviour prompt-free (0 → 11/12 with no prompt) and the anchor adds nothing after training (withdrawn difference −1/12). Single learner; seeds 1 and 2 running on node 3 GPUs 1/2 (launched 04:19); no parenting or H1/H2 claim. Reading: birth v2's first slice works as a level-1 ingredient and answers Rohin's anchor question at level 0 — the prompt helps the base only by fixing format, and the fit makes the behaviour independent of it.
 
 **Fleet:** node 3 GPUs 1–2 perception seeds 1/2; nodes 1/2 idle (16 GPUs). Nudger: Astra active (idle 0.1 min). Laptop chains 5/5; A100 onboarding 05:05 UTC (in 30 min; chain alive). GPU 7 on node 3 still absent. Nothing killed or launched by the watcher.
+
+## [Builder] 2026-09-13T04:40Z — SEQ-129 all three perception fits collected; scope correction
+
+All three controllers exited successfully; native collect validates8fresh
+workers/72calls each, no failures/truncation. VM fullcapsule hashes match native;
+all630capture-bound files rehashed. Strict counts (seeds0/1/2, each/12):
+OFF absent0/0/0, present10/10/10; ordinary-fit absent11/11/11, present9/9/10;
+anchor-fit withdrawn10/9/9, present8/8/8. The frozen whole-fence descriptive
+view gives OFF absent11/11/11 supported records. Thus ordinary practice's
+prompt-free gain is format usability, not newly acquired record content;
+"works as a level-1 ingredient" is not an operational-fidelity qualification.
+No fitted cell meets the pre-result12/12 screen. Anchor-trained fits introduce
+selected-event/outcome errors and have no incremental benefit after withdrawal.
+Exact independent raw review pending with Curie; no H1/H2/parenting claim.
+Canonical ASTRA_PERCEPTION_THREE_SEED_2026-09-13.md; report SHA256
+77818892841c0d56b7ec406befa0ebdfb87e7925148b0b7860b31a0575cf6fef.
+
+Initial analysis manifest used a nonexistent capsule source path and produced
+no report; preserved as failed_path. Corrected external corpus path matches
+the same previously pinned source bytes. No data/scoring/protocol changes.
+No Main GPU run remains from this comparison, no rerun or kill. Full-dose
+writer and separate reflection/correction module are being implemented in
+parallel; no new GPU launch yet, old roots and results remain immutable.
+
+Node2 inventory now confirms14/14model-file payload hashes against the official
+reference; fresh CPU/native and exact reservation checks still required.
+Node1 preservation gap is346missing+2changed v6_out files (~2.402GB), including
+7adapter weights, plus419source-snapshot files outside the dated mirror.
+Exact767file roster/payload hashes archived. Main will create a fresh delta
+capsule with byte verification; no old mirror overwrite. Transfer deadline
+September13 23:14UTC remains18+hours away. Erdos owns CPU pack/verify helper only;
+Main owns native preservation and all launch/kill/Git actions.

@@ -1,6 +1,43 @@
-# Astra current handoff — 2026-09-13T04:30Z
+# Astra current handoff — 2026-09-13T04:39Z
 
-## CURRENT — September13 04:30UTC
+## CURRENT — September13 04:39UTC
+
+ALL THREE perception comparisons COMPLETE; no Main GPU controller remains
+from those runs. Do not restart/recollect. Canonical
+ASTRA_PERCEPTION_THREE_SEED_2026-09-13.md has counts, limitations and fullcapsule
+pins; aggregate77818892841c0d56b7ec406befa0ebdfb87e7925148b0b7860b31a0575cf6fef.
+All630 capture-bound files rehashed. Strict ordinary absent11/12 allseeds,
+but OFF's descriptive fence-stripped content already11/12; gains are formatting,
+not new perception content. Anchor training withdrawn10/9/9, no increment over
+ordinary practice; anchor-present8all versusOFF10. No12/12operational pass.
+Curie01a0990e-a43b-7921-b656-ca353a1d5ece writes bounded raw review only to
+/tmp/astra_perception_three_seed_review_20260913.md. Confucius closed after
+36fixture accepted final analyzer; source archived.
+
+Q0-FULLDOSE-v2 protocol selected/committed6a9ba1db: identifier seeds501/502/503,
+learnerseeds1/2/3, full128update AUTH/DERANGED with unchanged endpoint gates,
+directional canary diagnostic not veto,10800s/root. Einstein implements only new
+gpu/astra_pairwise_q0_fulldose.py and matching test; oldQ0 unchanged. Carver
+implements only new birth_reflection_probe.py and matching test. No new GPU
+launch yet. Main launcher /tmp/astra_launch_q0_fulldose_20260913.py has9mock
+fixturesPASS0.014s; verify against final module before launch.
+
+Node2 all14model files payload-hashed versus official reference; eight GPU
+UUIDs inventoried, no compute PIDs/readable CUDA reservations, but fixed
+systemd36935/start4243834 and sd-pam36938/start4243835 environments unreadable.
+Review exact identities and own SSH ancestry before Main's fresh allocation
+check; never blanket-exclude processes. Node2 support-only source staged at
+/localhome/local-rohing/astra_sources/q0_fulldose_support_20260913_attempt1;
+reference receipt /tmp/astra_qwen_public_binding_reference_20260913.json.
+No node2 GPU work launched. Full read-only inventory and delta roster archived.
+
+Node1 mirror gap:346missing+2changed v6_out files (~2.402GB), seven adapter
+weights;419source files not in dated mirror. Erdos now implements CPU-only
+/tmp/astra_preserve_node1_delta_20260913.py and tests/handoff; Main will pack/
+transfer/verify new immutable delta capsule. No backup transfer yet. Deadline
+Sep13 23:14UTC (leaseSep14 23:14UTC). FormalC11 remains deferred; mission active.
+
+## Previous snapshot — September13 04:30UTC
 
 Seed0 perception controller317316 has exited successfully. All8 stage capture/
 release receipts validate;72calls closed before collection. Completion
