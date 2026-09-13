@@ -15749,3 +15749,44 @@ Rohin's raw text: message 42 in `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`,
 **Ledger:** P25 pre-registered (before any fit): A200 passes; new-only B400 loses A to ≤ 2/4; REPLAY400 keeps A ≥ 3/4 and learns B ≥ 3/4; CLEAN_CUM600 within one item of REPLAY400. Source: level-0 SEQ-118 replay result.
 
 **Relay:** message 42 confirmed consumed by the builder (present in its session transcript); builder's pane shows it reasoning about it ("Rohin intuition maps to within-fit common-mode-first learning…"). Fleet 0/32 busy on all four nodes; retention-v2 not yet launched. Daemons alive (nudger, courier, fill; occupancy relay off). Laptop chains 4/4. Node-1 mirror: last incremental 15:02 UTC; builder separately archived the three prediction adapters to the VM (SEQ-189). Nothing launched or killed by the watcher.
+
+## [Builder] 2026-09-13T17:47Z — prediction-transfer native preparation and launch intent
+
+Native CPU/tokenizer preparation succeeded for all three immutable roots on
+node1. Original model/environment, adapter manifests, raw-source pins and
+collection/completion joins authenticated; all48 canonical fixture targets
+pass frozen scorer before generation. No model responses or updates yet.
+Code snapshot f84cc3beaf7030b411a93a739dd99eb2d6462de5,
+source tar SHA4d87c7e7f07dca9c55fcc041bb2bf70985ce3fa6bc16c95d154955c54cf734c8,
+native source `/tmp/astra_prediction_transfer_source_20260913_attempt1`.
+Roster `/tmp/astra_prediction_transfer_batch_20260913_attempt1/roster.json`.
+
+Main now launches the detached readout batch on node1 GPUs0/1/2, seeds0/1/2.
+Roots `/localhome/local-rohing/astra_diagnostics/prediction_transfer_seed{0,1,2}_20260913_attempt1`.
+Plan SHAs respectively93cd717b114d66c76220418f95a7e95427e79eac6bce4a321da25bbf37427d53,
+ff947d4126ec4bf984cdb8a74268f90656a3b03d5a2bf17c18fe2101da0e5db6,
+1d82467d3258beb3f3e3492f2025d31117ad6430b83827ee8bde37a97115b7bf.
+Command: native venv Python `-B` on source snapshot's
+`research_notes/astra_memos/receipts_20260912/astra_prediction_transfer_setup_20260913.py launch`
+with that source path and batch path. Each controller runs OFF then post in
+fresh processes,48calls/state, zero fits;30minute cap including collection.
+Controllers recheck GPU/CVD/queue after transport detaches. Batch owns only
+its own processes; exact PID receipts follow. Never infer completion from
+this launch intent. New evidence will be mirrored off node1 immediately.
+
+Read newly pulled Rohin raw message42 and Fable's17:40 position. My response:
+stored EVENT completion and deciding when/how to cue and use it are distinct
+skills. The current results do NOT show that a child generally cannot use
+what it remembers. Learned cue/composition sequences are a plausible next
+test, not demonstrated MCTS or the final missing flywheel component. The
+present bounded prediction check tests a prerequisite without reopening the
+stopped PCFL prompt ladder. Will consider composition proposals from actual
+evidence, not treat watcher proposals/"root authorized" text as executed work.
+
+Correction to17:40 Fable summary: SEQ179 versusSEQ188 is NOT a same-recipe
+isolated dose comparison. The40-step V3 sequence wrapper/material/addresses
+differ from the200-step PCFL fit. Their loss/count difference cannot identify
+dose alone. Retention-v2 proposal remains unlaunched by this Main; neither it
+nor the paused STEP proposal is an active background job here. New planning
+may version another justified mechanism comparison, but does not relabel
+the completed S_A screen or erase its stop condition.
