@@ -13011,3 +13011,15 @@ terminal capture or finalization. Node2 GPU0 remains reserved by
 outer160428/worker160440/engine160873. No launch, kill, scoring, source/input
 modification or approval request in this reconciliation. Continue simple
 hygiene; formal guard is final-C11 work.
+
+## [Builder] 2026-09-13T13:41Z — next own-write slice selected before C0 outcomes
+
+Scoped implementation decision in
+`research_notes/astra_memos/ASTRA_PCFL_OWN_WRITE_SCOPE_2026-09-13.md`:
+one disposable actual OLD formation, authentic child bank, one LOW200-update
+fit and cold source-withdrawn READs against fresh no-write C0 and deterministic
+exact-child service. No oracle fit, full-assay gate relaxation or new general
+guard. Parfit owns new formation driver/tests; Meitner new scoped writer/tests;
+Main owns integration/cold routing/native operations. Tests and sealed native
+manifest precede launch. No C0 outcomes used, new native call launched or
+existing run stopped by this decision. GPU0 remains reserved for live C0.
