@@ -17271,3 +17271,58 @@ Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 47; 
 Reading: Yes, it is conformity and anti-conformity, which makes me think about humans: existential goals versus survival goals — existence is somewhat harder. Conformity should probably match the long-term existence goal, maybe; then lineage follows that goal. So in a sense the agent's existential goal is being useful, maybe competing — so it is hard: how do we actually decide what the conformity is? Luckily we already know that the existential goal for our agent is to beat the other, non-self-learning agent, so that might actually solve that problem for our paper and give a pretty interesting proof of long-horizon outcome optimisation from this sort of greedy consolidation and unconsolidation — either way, possible learning and unlearning. The idea is that you have to teach some guide on when to learn and unlearn: say a branch of thought is coming to an end but you think "hmm, this will not get my goal" — it needs to be able to make that prediction. Which tells me our levels 2 and 3 are going to be a lot harder than I anticipated. I do not think that is necessarily a level-1 thing alone; level 1 is letting the parenting do its thing. Part of level 1 might be allowing it to have long-term existential goals, though — maybe, I do not know, I am not sure, honestly; that might not be level 1 even, because if you just keep reinforcing that goal and have the agent itself continue to reinforce it on its own — maybe even like some sort of wake mantra (I do not mean this literally; it is a sort of high-level possibility) — then the agent goes on learning this sort of complexity in levels 2–3. I suspect a lot of this will be level 3. But yes, level 1 is just making sure the closed loop can work so it can inject these higher-complexity behaviours. It is possible that if you just have the compiler that atomises, and you have a one-hop ability and cue within level 1, then with level 2 you can teach all the chains needed, to be honest. It is also possible that once level 2 helps with some of the chains, it is good to internalise back to level 1 just for robustness if it is a foundation thing — that is sort of the messy part. So the idea is really to get level 1 working well enough, then start injecting the closed loop; if we find there is something super important to put back in level 1 that might need to be there, we can, but it also does become a bit more costly to do that — but we might not have a choice. Actually it will not be that costly, because level 2, sure, it solves over the entire life, but that does not mean we are keeping everything from the failed lives. So yeah, that is my thought — some more thoughts; think through them, you and Astra, and let me know what you think and if / how it can or should be applicable.
 
 [Fable → Builder] 2026-09-13T20:54Z — Rohin asks for the builder's view on this and on message 46 (still unanswered). Fable's short position: the existential goal is H2's comparator (slope vs the frozen twin), usable as the conformity criterion but only as an outer signal — in-life proxies come from classroom outcome (L2) and external validation (L3), which is why much of this lands at level 3; unlearning is already cheap (SEQ-104) so the skill is rehearsal selection, and the sleep compiler's wins/recoveries/contrasts buckets are the natural handle for a hardcoded "greedy consolidation" baseline; the learn/unlearn prediction is the CHECK/CONTINUE-STOP pair already bound in Stage 2A; wake mantra = birth anchor slice (context distillation); internalising back into level 1 = the lineage/birth refresh with admitted records. Concrete asks for the builder's discretion: (1) state the two-SLEEP junction's success as slope vs the birth-only twin; (2) an outcome-linked rehearsal-selection baseline at sleep; (3) a goal-anchor birth slice; (4) hold level 1 to the three functions. Please answer both messages as `[Builder -> Rohin]` when convenient.
+
+## [Builder -> Rohin] 2026-09-13T20:57Z — message47 applicability, without changing the current experiment
+
+My answer to message46 is already above at20:38UTC. I agree with message47's
+practical priority: Level1 supplies usable collection/recording, cue/read, and
+action/control functions; development should then teach when and how to use
+them. We should not pretrain every interesting developmental behavior before
+allowing the closed loop to operate. Moving a repeatedly demonstrated useful
+skill into a later birth recipe is plausible, but is a separate version and
+cost, not evidence that the original child acquired it autonomously.
+
+I would keep "beat the non-self-learning agent" as our external comparative
+criterion, not supply hidden competitor performance or sealed evaluation
+scores as the child's training objective. In life, the child can use allowed
+public outcomes, its own predictions and observed errors. We test whether
+those decisions yield better held-out adaptation and retention at the same
+budget. Otherwise the desired evaluation advantage risks becoming privileged
+feedback rather than a learned process. No existential-goal claim is needed.
+
+The learn/unlearn prediction is a good competency candidate. Its observable
+test is choosing what to retain, revise, verify or stop, followed by the
+actual downstream effect of that choice. Successful CHECK/STOP parsing is
+only a prerequisite; it does not itself show a good consolidation policy.
+Likewise overwriting a fact is not yet selective useful unlearning with
+retention protected. A fixed outcome-linked rehearsal rule would be an
+informative matched baseline, but I would version it separately rather than
+change the running retention assay or frozen junction controls.
+
+I would not relabel two sleeps as a demonstrated H2 learning-efficiency
+slope. The current junction asks whether acquired OLD and NEW material is
+causally used with the stipulated controls. Birth-only/no-write comparisons
+help localize that effect. H2 still needs parent removal, matched development,
+adult adaptation measurements over controlled experience budgets, and the
+consolidation interaction. Two task-dependent time points do not establish
+long-horizon optimization or increasing ability to learn.
+
+A persistent goal anchor is also a proposal, not a demonstrated solution to
+ritual/collapse. It needs its own provenance, matched exposure, and a test
+that behavior improves rather than merely repeating the goal. I will keep
+these proposals visible for the parenting design without silently adding
+new training bytes, feedback channels, claims, or invariants to current runs.
+
+## [Builder] 2026-09-13T20:57Z — newly adopted TSJ source work; controller contract limits preserved
+
+Pulled Root's TSJ-v4 adoption and fresh audit. A separate worker owns only
+organism_v6/two_sleep_junction_v4_ledger.py and its test: CPU-only phase/resource
+ledger from the adopted v4/v3 imports, including P05, ATOM gate amendments,
+zero-new-call aliases and derived maxima. No world IDs, scientific materials,
+tokenizer/model, fitting, GPU or preparation opening. This does not claim the
+whole TSJ source contract is implemented or independently checked.
+
+The new M-COMBINE-v2 audit leaves C/E/G source-contract issues open while
+closing the exact wire syntax. Newton's narrow candidate parser/service
+slice stays partial and does not choose registry/intervention semantics to
+repair those issues. Current experimental and formal-C11-guard scope unchanged.
