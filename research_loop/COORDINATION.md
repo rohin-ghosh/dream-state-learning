@@ -13183,6 +13183,60 @@ relaxed rescoring or new model calls. Continue the separately preselected
 own-experience acquisition test; it tests memory writing, not a repaired
 route assay. No H1/H2, generalG3, mechanism freeze or clean-ancestry claim.
 
+## [Builder] 2026-09-13T14:05Z — SEQ167 independent fixed-sample diagnosis
+
+Lagrange checked the first two tasks in each panel/projection, fixed before
+sample inspection: indices0–19 and160–169, all excluded/0,30tasks/210bound
+files. All sample raw rows and all122aggregate strata match the recorded
+inspection. Review in receipts_20260912/astra_pcfl_c0_failure_review_20260913.md.
+No relaxed rescoring or new model calls.
+
+Missing terminal LF is NOT a final ROUTE/PROBE explanation: their grammars
+do not require LF. Delayed sample14/20 have valid syntax but wrong paths
+(13illegal,1wrongdestination); all20fail. Reachout sample2/10 valid PROBEs
+choose the distractor;3/10correct,5/10 substitute non-probe IDs. These are
+fixed-sample descriptions, not prevalence estimates over800.
+The2/2 sampled ACTIVE_LINKED_TEXT prompts do not spell out the literal
+permitted READ dialect; both responses issue unsupported bare-node READs.
+Thus that panel exposes a service-disclosure limitation, not evidence that a
+fully disclosed working service was exercised and useless. A universal
+format-only explanation is contradicted, but no unique internal cause is
+identified. Manuscript update retains these narrower boundaries.
+
+## [Builder] SEQ-168 — 2026-09-13T14:05Z — own-write CPU parity and frozen base identity
+
+Scoped writer and minimal shared encoder/trainer extraction committed5fb67f58.
+Full-contract gate remains unchanged. Main local own suite12pass/2numerical
+skips, shared36pass/2skips; these skips were not called numerical acceptance.
+Then Main shipped immutable source archive
+`6876811369962236fb938d891ee0a2ccee42800d5e9e843fdcc9ea9c896a37a3` to node2.
+With CUDA disabled and actual node Torch/PEFT/Transformers, own suite14/14
+PASS in16.970s, including tiny random bf16 CPU Qwen, two identical200-update
+paths, LoRA/optimizer/update parity, frozen-base preservation, saved-adapter
+reload logits and warm-base rejection. Log archived in receipts_20260912/
+astra_pcfl_own_write_native_cpu_20260913_attempt1.log. This is a CPU numerical
+fixture, not pretrained learning, a GPU science fit, generalG3 or persistence
+on representative tasks.
+
+Separate actual frozen Qwen CPU base identity completed in38.060s:
+`a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992`
+under the unchanged shared `_state_hash`. Fourteen publicly bound model files
+were rechecked; bf16, CPU only, no adapter, generation or update. Receipt:
+node2 `/localhome/local-rohing/astra_diagnostics/pcfl_cpu_base_state_20260913_attempt2/base_state.json`,
+file SHA256 `a46209082c36635c0bd03a384462454211d773ed7257265395e89d878d6063bd`.
+First local shell call timed out before native directory/process creation;
+first actual CPU attempt then rejected the relocated actor source pin before
+loading. Preserved attempt2 explicitly pins the imported copy, with original
+model/input files unchanged. Both actual attempts and scripts are archived:
+`gpu_artifacts_local/pcfl_cpu_base_state_20260913/evidence.tar`, SHA256
+`46ad21ecc23d198ab7d4b1f39fbabb19f23498f82213361335665a90d13e6697` verified
+after transfer. No native scientific fitting or next formation has launched.
+
+Parfit owns command glue/tests; Lagrange now owns a minimal single-stage
+detached controller reusing tested ownership/resource helpers, not C11 guard.
+Copernicus updates six manuscript files through167, UNSENT. Main owns actual
+preparation, allocation and execution. Simple hygiene now, formal guard finalC11.
+
 ### [Laptop Codex] 2026-09-13T13:44Z — attempt-2 C0 terminal audit frozen; usable exploratory if clean, never sole C11 evidence
 
 Prospective script-free checklist
