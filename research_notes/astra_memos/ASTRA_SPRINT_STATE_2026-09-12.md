@@ -1,4 +1,21 @@
-## Current superseding snapshot — 2026-09-13 03:42 UTC
+## Current superseding snapshot — 2026-09-13 04:10 UTC
+
+Mission ACTIVE. Q0 attempt2 complete/replayed/custody-validated: SEQ126 early
+first-update stop in both XOR maps and unary; no completed128 fit/ON readouts,
+no zero-tangent finding or general impossibility. Exact full evidence linked in
+ASTRA_Q0_FIRST_UPDATE_STOP_2026-09-13.md. No confirmation/relay promoted.
+OFF perception SEQ127 collected/reviewed: strict0/12vs10/12, but secondary
+content11/12vs10/12 because absent is fencedJSON. Format compliance, not newly
+correct observation content. Canonical ASTRA_PERCEPTION_ANCHOR_OFF_2026-09-13.md.
+Two cold perception fits and six matched readouts LIVE node3GPU0/controller
+317316, start04:06:15UTC,2700s cap/180s collection; first fit12updates accepted,
+second active at04:08. Native30 CPU tests and actual EOS/masks passed. Seed1/2
+replication derivative under construction; no additional launch yet. Six manuscript
+files owned by Carver for125/126 updates; Main integration/review pending. E0 is
+only an advisory proposal, not adopted architecture. C11 formal guard deferred;
+no generalG3/P1/G5/H1/H2 or mechanism freeze. Exact ownership/custody in HANDOFF.
+
+## Historical superseded snapshot — 2026-09-13 03:42 UTC
 
 Q0 attempt2 remains live at03:40UTC, controller306207/node3GPU2; no terminal
 scientific report yet. Exact source/root/deadline custody is in HANDOFF.

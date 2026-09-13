@@ -1,6 +1,57 @@
-# Astra current handoff — 2026-09-12T19:56:24.212350+00:00
+# Astra current handoff — 2026-09-13T04:10Z
 
-## CURRENT — September13 03:42UTC (supersedes older status below)
+## CURRENT — September13 04:10UTC (supersedes older status below)
+
+**Mission ACTIVE/incomplete. Perception fit comparison LIVE** node3GPU0,
+controller/PGID317316,start_ticks8828429, start04:06:15.061857UTC,
+2700s ceiling approximately04:51:15UTC plus180s separate collection.
+Root `/localhome/local-rohing/astra_diagnostics/perception_fit_20260913_attempt1`;
+source `/localhome/local-rohing/astra_sources/perception_fit_20260913_attempt1`;
+driverf62da57d1a66cd287b72ac8ad8b8724601062813653a63d3dcd6cd8a3b69cd51;
+planf5f2315d5fa35029249f77b075943fa2c0a36b2691037a7700b50cefbe48c837.
+Native interpreter `/localhome/local-rohing/v2/venv/bin/python`.
+External stdout `/tmp/astra_perception_fit_20260913_attempt1.controller.log`.
+Stage logs `run/STAGE/stdout.log` and stderr.log. At04:08UTC first fit_absent
+passed12updates/48presentations, saved adapter31b9ad97; fit_present active.
+No readout result yet. Never edit/restart/reuse this started root/source.
+Native30 CPU testsPASS3.221s, exact full-assistant masks/oneEOS prepared;
+372supervised tokens per epoch per arm,3024/3444total absent/present.
+Eight fresh workers:2fits,6matched LoRA-enabled readouts,72calls,seed0.
+
+Q0 attempt2 COMPLETE, fully collected, separately native-replayed and bounded
+metadata-reviewed: **SEQ126 EARLY_XOR_QUARTET_STOP_AUTH**, both maps and unary
+miss first-update canary. Three fits/oneupdateeach; no128fit or ON readouts;
+not zero final accuracy, zero tangent or general impossibility. Canonical
+ASTRA_Q0_FIRST_UPDATE_STOP_2026-09-13.md. Report250e67b3, fullcapsuleec5527e3
+in gpu_artifacts_local/q0_20260913_attempt2 and node3/tmp;16100files verified.
+Do not replay/recollect/retry by default. All Q0 PIDs absent. Q0 confirmation
+and endogenous action relay remain closed. SEQ125 stays nonreportable.
+
+OFF perception probe COMPLETE/collected/reviewed, **SEQ127**:
+ASTRA_PERCEPTION_ANCHOR_OFF_2026-09-13.md. Primary0/12absent,10/12present;
+secondary content-only11/12vs10/12 because absent is fencedJSON, presentbare.
+Thus primarygain is format compliance, not improved observation content.
+All24 stop normally;324.487s runtime,65member hashes match. Fullcapsule471f1302,
+reportbfcfebee in receipts. Attempt1 prepare failed before root; attempt2
+NVML timeout preworker; attempt3 succeeded. Never overwrite failed evidence.
+
+Confucius01a098cc-7279-7c01-9f18-fd93098d90e2 owns ONLY new /tmp perception-fit
+replication runner/tests/handoff for learner seeds1/2; seed0 live source frozen.
+Main may accept/launch after native checks and fresh GPU reservations; no
+replication launched yet. Carver01a0986e-79f4-7780-b165-61ad39766413 owns six
+manuscript companion files through125/126 plus /tmp handoff; dirty paper edits
+are his, not Main staging material until EDITSTOP/review. Boole01a0987d-f806-
+75b0-a50f-1154c47add22 owns /tmp/astra_e0_scope_options_20260913.md, advisory
+choices from newly arrived E0 proposal; no E0 code/adoption/run yet. Einstein
+Q0 bounded review EDITSTOP, Boyle probe query repair EDITSTOP. Main sole Git/
+native operator. Preserve unrelated dirty gpu/codex/dream_state.rules.
+
+Next: monitor current fit/readout stages without scoring early; accept seed1/2
+derivative and run valid independent replications; finish127 manuscript inclusion
+after exact source handoff; collect only after closure/release and validate raw
+scores. Formal guard finalC11-only; no generalG3/P1/G5/H1/H2 or freeze established.
+
+## Previous snapshot — September13 03:42UTC
 
 Q0 attempt2 controller306207 still live at03:40UTC; retain exact custody below.
 Audit128/128 actual/natural-prefix forwards and OFF2353/288 were observed before

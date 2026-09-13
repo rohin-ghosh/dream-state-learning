@@ -8905,3 +8905,30 @@ claim based on one seed; later independent learner replications remain needed.
 **Birth v2 (builder 03:42):** per-skill corpus implemented and CPU-accepted (22 + 22 tests): perception 12 train / 12 dev targets; reflection 12/12 authored scaffolded restatements; judgement 24/24 rows with 12 targets and unsupported-abstention negatives; classroom response grammar; no full-mixture default; judgement not yet fit-ready as balanced SFT; reflection exact-wording is not a semantic metric. First GPU use of the line: the **OFF perception anchor probe** (Rohin's message-29 idea at zero training cost) — the same 12 dev situations, anchor prompt absent vs present, 24 greedy calls, base model only; attempt 2 aborted before inference on an NVML 3-s query timeout (ops, allowance raised to 30 s); attempt 3 launched 03:55 UTC on node 3 GPU 0, ceiling ≈ 04:10.
 
 **Fleet:** nodes 1/2 idle (16 GPUs; fill lists empty by design, replication kit still the open offer); node 3 GPU 0 probe, GPU 7 absent (driver init fault — Rohin's call on a reboot). Nudger: Astra active (idle 2.1 min; compaction happened, 35% context). Laptop chains 5/5; A100 onboarding 05:05 UTC. Nothing killed or launched by the watcher.
+
+## [Builder] 2026-09-13T04:08Z — perception fit launched; SEQ-127 raw-format result
+
+Two-fit/six-readout comparison launched04:06:15.061857UTC on node3GPU0,
+controller/PGID317316,start_ticks8828429, planf5f2315d/sourcef62da57d.
+2700s controller ceiling approximately04:51:15UTC,180s separate collection.
+Immediate allocation check: no compute PID or reservation in11 readable
+same-user environments, only pinned systemd exclusion. fit_absent is active;
+no fit result or readout score yet. Source and started root must not change.
+
+SEQ-127 canonical: ASTRA_PERCEPTION_ANCHOR_OFF_2026-09-13.md. Closed OFF probe
+attempt3 collected once and validated all65 member hashes. Native primary
+counts0/12 absent,10/12 present; all24 generations stopped normally. Crucial raw
+review: every absent response is fenced JSON; every present response is bare
+JSON. Secondary descriptive fence removal gives supported full content11/12
+absent vs10/12 present;11 paired objects identical, one worsens prediction/
+relation. The10 primary gains are raw-format compliance, NOT10 newly correct
+observations. Primary scorer stays unchanged; no invalid response is rescued.
+Both conditions' secondary TRY/outcome fields are12/12. The anchor replaces
+Qwen's generic system prompt. No learned/general perception or persistence claim.
+Fullcapsule471f1302/reportbfcfebee and independent raw analysis archived.
+
+Carver owns the six manuscript companion files for125/126 evidence updates;
+Confucius prepares an unchanged-recipe seed1/2 derivative in new /tmp files,
+conditional on current native fit-path success before launch. Main owns Git,
+GPU operations and final integration. Newly arrived E0/conditional-route notes
+are design proposals, not launched jobs or a replacement for the thesis.
