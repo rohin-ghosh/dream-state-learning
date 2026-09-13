@@ -14311,6 +14311,35 @@ promotion. EVENT-only remains HOLD until its native identity/tokenizer/tests
 and semantic-versus-strict reducer close. No runtime/model/GPU action was taken
 by this adjudication.
 
+## [Reusable-structure designer] 2026-09-13 — RS8 affine gate: smallest post-vertical fresh-target reuse stratum
+
+Prospective design memo:
+`research_notes/analysis/2026-09-13_pcfl_reusable_affine_gate_stratum.md`.
+Current opaque PCFL remains the required atomic/connected vertical; it cannot
+by itself establish reusable or compressed structure. The proposed attachment
+samples a fresh per-life ten-bit affine XOR law over public four-bit module
+descriptors. Eight child-executed calibration actions produce ordinary public
+receipts and child EVENTs; the child gets one no-feedback MODEL commitment;
+one ordinary cumulative SLEEP is frozen before eight disjoint target modules
+exist in any memory carrier. Fresh target gates require both the predicted
+relation and the already established same-root OLD+NEW connected route.
+
+The minimum controls are the same-root pre-RS adapter, cyclic wrong-life,
+certified evolving ACTIVE_TEXT_NATIVE-v2 with an actor-queryable public SERIES
+term, complete FULL_SOURCE_TEXT, and
+post-positive work-matched NO_MODEL plus RAW_CHRONOLOGY LoRA fits. Structured
+and matched-independent labels reuse identical probabilities. Initial N=16,
+preallocated maximum N=32 with blinded variance-only expansion; AUTH training
+is 16 fits/6,400 updates/16 A40-hours at the current ceiling, and all fitted
+attribution controls bring N=16 training to 48 A40-hours. Primary logical-call
+maximum is 12,816 at N=16 before post-positive fitted controls; excluded-root
+profiling imposes a 28 A40-hour primary cap. Allowed positive language is
+bounded parametric predictive reuse; conditional predictive semantic
+compression additionally requires exact 11/17 semantic-code, MODEL-cut,
+predictive, behavioral, independent-continuation and route-integration gates,
+while printing that the live rank-8 LoRA remains about 80.8 MB. This is design
+only and cannot run before the authentic connected DEV vertical passes.
+
 ## [Codex active-text designer] 2026-09-13 — executable strong evolving baseline v2 frozen in a documentation memo
 
 Design memo:
@@ -14387,3 +14416,13 @@ still yields near-zero legal reads, stop prompt prose iteration and test a
 symmetric typed action interface. Any pass is handshake-only optimization data;
 connected traversal and unseen qualification remain open. No runtime/model/GPU
 action was taken by this entry.
+
+## [Fable] 2026-09-13T15:32Z — self-check: SEQ-175 the untrained READ handshake is 0/64 (the base invents ports instead of issuing READ); SEQ-176 native EVENT-prefix preparation passes and the FIRST PCFL own-write fit (eight admitted EVENTs, LOW 200 updates) launched 15:30 on node 2 GPU 2 with its reducer frozen; Codex's paper-claim coverage audit places the ladder
+
+**SEQ-175 (15:19, A1 interface diagnostic, 64 tasks, no fits):** 0/64 registered READ handshakes, 0 strict routes, 0 graph successes; 48 INVALID_TURN + 16 LENGTH; outputs invent alphabetic ports rather than issuing READ; no service tokens. Builder: localises the failure to the untrained interaction/format policy, not to READ lookup or supplied-memory traversal being impossible; proceed to the independent A2 supplied-graph/THINK isolation. Same class as the other interface stops today, now on the read side.
+
+**SEQ-176 → 15:30 — first PCFL own-write fit LIVE:** EVENT-only importer/writer takes the first fully admitted eight-EVENT prefix from SEQ-171 (not a later selected attempt); native EVENT-prefix/tokenizer preparation passes; fit controller 189147 on node 2 GPU 2 from source 9559d547, 1,800 s outer + cleanup, no descendant launch or cold reads until actual fit/release; reducer (14 queries, W0/W8, exact 56-call paired archive; missing arms reject rather than zero) frozen before inspection; independent bounded reducer review concurrent. This is the first time the child's own PCFL-formation experience (its eight event records) is written into weights.
+
+**Codex paper-claim coverage audit (research_notes/analysis/2026-09-13_full_objective_paper_claim_coverage_audit.md), for Rohin:** ladder status at snapshot df6565ff — own action→outcome write: WEAK / bounded partial (SEQ-153/159/161); connected knowledge: MISSING in the current organism; goal-conditioned traversal/expansion: MISSING; reliable lifetime improvement: MISSING (and contradicted by the legacy aggregate); strong evolving-text and terminal-batch controls: MISSING; physical compression contradicted at current scale. Recommended order without making the task easier: (1) the frozen corrected supplied-memory C0 typed THINK/READ qualification (13,056 unique calls, ≤ 9.5 A40-h, no fits); (2) the stage-gated two-root PCFL vertical with authentic child formation, causal link cuts and retention. Astra's current path (interface repairs → EVENT-only own-write) is step 0 of that.
+
+**Fleet:** node 2 GPU 2 fit controller (0 MiB at the instant of the poll — start-up); rest idle. Nudger: Astra active. Laptop chains 4/4. Node-1 mirror complete and verified (15:03). Nothing killed or launched by the watcher.
