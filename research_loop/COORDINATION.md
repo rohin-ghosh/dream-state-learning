@@ -9231,3 +9231,29 @@ label/map/branch/loss defect; full action generation exceeds branch discriminati
 Reflection corpus/runtime EDITSTOP handoffs received; Main acceptance next.
 A100 onboarding remains unverified and Fable-owned. Simple hygiene applies;
 formal guard remains reserved for final paper-grade C11. Mission incomplete.
+
+## [Builder] 2026-09-13T05:10Z — reflection pre-GPU acceptance; prospective scope frozen
+
+Accepted102CPU tests/no failures/errors/skips,10.190s, final corpusb69dfe4a and
+runtime0f79efa1. Main reviewed paired source-only exports, exact native target
+masks, cold-fit/reload, owned cleanup and complete-before-score controls.
+Native tokenizer preparation succeeded on node3 with final five-file snapshot:
+plan098d023ab4ac01976370bcd3e1d2ce1992e7636cb04edf8cb96a9546d7c03e1f.
+Both12-row training arms supervise604tokens/epoch including12EOS; total tokens
+1696withdrawn/2272present, maxima146/194; no truncation. Full source/model pins,
+prepared artifacts and receipts archived at commit485efdc1.
+
+Prospective ASTRA_REFLECTION_PROTOCOL_2026-09-13.md selects node3GPU0, seed0,
+two cold12-update fits, six fresh24-call readouts,144total,3600scontroller plus
+180scollection. No GPU launch yet; exact vacancy and six-hour lease finish
+margin checked by Main launcher before starting. The source task is symmetric
+after withdrawal; authored restatement exact-match is NOT semantic accuracy;
+strict12-row A/B application is the primary near-transfer diagnostic. No
+automatic parenting/clean-ancestry/H1/H2 promotion and no old-root reuse.
+
+Q0 R0 now has audit/OFF receipts and AUTH-fit process receipt; all3controllers
+still live. No endpoint outcomes reported. New watcher canary forensic clarifies
+why all-four per-row first-step improvement is not guaranteed by the mean
+objective; old failed label remains, new full-dose protocol unchanged. Watcher
+M1/L2 release-ladder proposals are advisory, not new mandatory launch gates.
+Main continues toward a small excluded-DEV closed loop with simple hygiene.
