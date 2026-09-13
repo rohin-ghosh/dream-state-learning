@@ -16,8 +16,9 @@ Run two small tracks in parallel.
    writer can make the intended local action change without changing unrelated
    behavior.
 
-This is not two competing architectures. Q0 is the selective-write gate for
-the conditional part of birth. Parallel execution buys calendar time because
+This is not two competing architectures. Q0 is a separate prospective
+necessary-condition and paper gate; it does not validate or select the
+different full-response birth recipe. Parallel execution buys calendar time because
 the prepared birth runner and the new Q0 executor are different engineering
 paths and the available compute is not the limiting resource.
 
@@ -27,8 +28,9 @@ The separation is strict:
 - do not use its weights, losses, outputs, errors, templates, root, seed, or
   downstream behavior to alter Q0 bytes or interpret Q0;
 - do not use that adapter as the scientific Level-2 child;
-- if Q0 qualifies a writer, create the claim-bearing birth from a fresh
-  root under the frozen selected writer;
+- after Q0 terminates, create the claim-bearing birth from a fresh root under
+  the separately frozen birth recipe, and require birth to pass its own exact,
+  held, complementarity, interface, and locality gates;
 - if Q0 does not qualify, preserve the engineering birth result as a direct
   installed-routine diagnostic and do not call it selective writing or
   learning-to-learn.
@@ -70,8 +72,10 @@ rank, rate, dose, or architecture.
 
 ## What can proceed to Level 2
 
-Only a fresh birth produced after the selective writer is frozen can enter the
-claim-bearing Level-2 sample. The engineering adapter may still be used to
+Only a fresh birth produced after Q0 is terminal and the birth recipe is frozen
+can enter the claim-bearing Level-2 sample. Q0's 3e-5 pairwise objective does
+not carry into or validate birth's 1e-4 full-response objective; neither gate
+can compensate for the other. The engineering adapter may still be used to
 exercise and debug the role-routing bridge, but that is plumbing and carries
 no learning claim.
 
@@ -104,4 +108,3 @@ itself changed absorption.
   probes for the intended Experience Models paper.
 - Run them in parallel; do not make either wait for optional replay,
   compression, larger memory banks, or classroom-scale work.
-

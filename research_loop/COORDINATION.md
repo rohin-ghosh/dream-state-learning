@@ -7906,8 +7906,10 @@ The now-live authored birth pair is a quarantined
 `EXPLORATORY_PRE_Q0` engineering fit. Its weights, losses, outputs, errors,
 root, and downstream behavior may not tune or interpret Q0 and must not seed
 the scientific Level-2 child. Build/run the preclosed Q0 selector independently;
-if it qualifies, create the claim-bearing birth from a fresh root under the
-frozen selected writer. This spends a small duplicate fit to save calendar
+after it terminates, create the claim-bearing birth from a fresh root under the
+separately frozen birth recipe. Q0 does not validate or select that different
+full-response recipe; birth must pass its own exact/held/complementarity/
+interface/locality conjunction. This spends a small duplicate fit to save calendar
 time without post-hoc selection.
 
 Preserve the live birth recipe. If the frozen readout/call budget can still be
