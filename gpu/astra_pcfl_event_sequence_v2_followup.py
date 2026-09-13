@@ -173,6 +173,10 @@ def budget(initial, started, allocation):
 
 
 def validate_failure(binding, kind, entry, directory, runtime, initial, source, preserve, output_root):
+    if kind == 'readout-preworker':
+        require(entry['seed'] == 0 and output_root.name == 'pcfl_sequence_v2_followup_seed0_20260913_attempt6',
+                'readout-preworker requires fresh seed0 attempt6')
+        return validate_readout_preworker_failure(binding, entry, directory, runtime, initial, source, preserve, output_root)
     require(kind in ('preworker', 'warm-prefix-validation', 'collector-predecessor-validation'), 'explicit supported failure kind')
     stopped = checked(binding)
     previous_root = Path(binding['path']).parent
@@ -409,10 +413,164 @@ def prepare(args, runtime):
     return pin(root / 'manifest.json')
 
 
+def validate_readout_preworker_failure(stopped_pin, entry, directory, runtime, initial, source, preserve, output_root):
+    stopped = checked(stopped_pin)
+    old_root = Path(stopped_pin['path']).parent
+    previous_pin = pin(old_root / 'manifest.json')
+    previous = checked(previous_pin)
+    require(old_root.name == 'pcfl_sequence_v2_followup_seed0_20260913_attempt5'
+            and previous['root'] == str(old_root) and previous['seed'] == entry['seed'] == 0 and previous['entry'] == entry
+            and stopped_pin['path'] == str(old_root / 'stopped.json'), 'readout-preworker requires exact seed0 attempt5 history')
+    require('manual_continuation' not in previous and previous['schema'] == SCHEMA and previous['status'] == 'READY'
+            and previous['phases'] == list(PHASES) and previous['counts'] == COUNTS and len(previous['fit_inputs']) == 4
+            and previous['automatic_promotion'] is False and previous['no_automatic_retry'] is True,
+            'original fixed four-phase plan required; terminal no-resume')
+    require(previous['source_root'] == str(source) and previous['repair'] == getattr(runtime, 'repair', None),
+            'excluded attempt runtime/source must remain unchanged')
+    require(not (old_root / 'completed.json').exists()
+            and sorted(path.name for path in (old_root / 'runs').iterdir())
+            == ['B200_NEW_DOSE_fit_outer', 'B200_NEW_DOSE_readout_outer'], 'only first fit and preworker reader may exist')
+    preserve([previous, previous_pin, stopped_pin])
+    for protected in (old_root, source, SOURCE, Path(checked(entry['fit_inputs'])['model_path'])):
+        require(not output_root.is_relative_to(protected) and not protected.is_relative_to(output_root),
+                'output overlaps excluded attempt evidence/source/model')
+    started_pin = pin(old_root / 'started.json')
+    require(checked(started_pin)['manifest'] == previous_pin, 'attempt5 started manifest drift')
+    preserve(started_pin)
+    require(stopped['status'] == 'STOPPED' and stopped['phase'] == 'B200_NEW_DOSE' and stopped['stage'] == 'readout'
+            and stopped['no_automatic_retry'] is True and len(stopped['results']) == 2,
+            'readout-preworker requires stopped first reader')
+    fit_row, read_row = stopped['results']
+    fit_pin = pin(old_root / 'runs/B200_NEW_DOSE_fit_outer/collection.json')
+    read_pin = pin(old_root / 'runs/B200_NEW_DOSE_readout_outer/collection.json')
+    require(fit_row == dict(phase='B200_NEW_DOSE', stage='fit', inputs=previous['fit_inputs'][0], collection=fit_pin)
+            and read_row == dict(phase='B200_NEW_DOSE', stage='readout', inputs=pin(old_root / 'inputs/B200_NEW_DOSE_readout_inputs.json'),
+                                 collection=read_pin), 'exact completed fit then failed reader rows required')
+    allocation, cold, trained, material = (checked(binding) for binding in
+        (previous['runtime_allocation'], previous['runtime_c0_inputs'], entry['fit_inputs'], entry['material']))
+    require(allocation == {**checked(entry['allocation']), 'outer_sha256': pin(runtime.outer.__file__)['sha256']}
+            and previous['gpu'] == entry['gpu'] == allocation['gpu_index'], 'excluded attempt allocation changed')
+    require(cold == {**checked(entry['c0_inputs']), 'source_files': runtime.readout.source_files()}, 'excluded attempt cold inputs changed')
+    receipt = runtime.acquisition.validate(previous['acquisition_request'], material, trained)
+    require(receipt == checked(previous['acquisition_receipt']) and receipt['observed_gate'] is True, 'excluded attempt acquisition drift')
+    for phase, binding in zip(PHASES, previous['fit_inputs']):
+        expected = {**trained, 'source_files': runtime.fit.source_files(), 'acquisition_receipt': previous['acquisition_request'],
+                    'predecessor': None if phase == 'CLEAN_CUM600' else receipt['a200_fit_receipt']}
+        require(checked(binding) == expected, 'excluded attempt fit parameters changed')
+    for sources in (runtime.fit.source_files(), runtime.readout.source_files()):
+        for path, checksum in sources.items():
+            preserve(dict(path=path, sha256=checksum))
+    require(previous['originals'] == [pin(directory / f'{name}_outer/collection.json') for name in ('fit', 'no_write', 'a200')],
+            'excluded attempt acquisition identity mismatch')
+    require(previous['prior_failure_kind'] == 'collector-predecessor-validation'
+            and previous['prior_failed_work'] == dict(fits=2, updates=400, presentations=1600, readout_calls=0),
+            'attempt5 failed physical-work history must remain unchanged')
+    initial, work = validate_failure(previous['prior_failure'], previous['prior_failure_kind'], entry, directory, runtime,
+                                     initial, source, preserve, output_root)
+    require(previous['initial_outer_seconds'] == initial and previous['remaining_seconds'] == 7200 - initial
+            and previous['prior_failed_work'] == work, 'excluded attempt initial budget/history drift')
+
+    def capture(binding, stage):
+        root = old_root / f'runs/B200_NEW_DOSE_{stage}_outer'
+        require(binding['path'] == str(root / 'collection.json'), 'excluded attempt collection root mismatch')
+        collection = checked(binding)
+        runtime.fit.prefix.unseal(collection, collection['sha256'])
+        observed = runtime.acquisition.inventory(root)
+        require({name: value for name, value in observed.items() if name != 'collection.json'} == collection['files'],
+                'excluded attempt full collection inventory drift')
+        require(collection['allocation_file_sha256'] == previous['runtime_allocation']['sha256']
+                and collection['outer_source_sha256'] == allocation['outer_sha256'] and collection['retries'] == 0
+                and collection['automatic_promotion'] is False and collection['full_contract_released'] is False,
+                'excluded attempt collection allocation/source/scope mismatch')
+        require(observed['inputs.input.json']['sha256'] == collection['inputs']['sha256']
+                and observed['allocation.input.json']['sha256'] == previous['runtime_allocation']['sha256'], 'excluded attempt input snapshots changed')
+        context = checked(pin(root / 'context.json'))
+        require(context['inputs'] == collection['inputs'] and context['allocation_file_sha256'] == previous['runtime_allocation']['sha256']
+                and context['outer_source_sha256'] == allocation['outer_sha256']
+                and context['helper_sha256'] == pin(runtime.outer.lifecycle.__file__)['sha256'], 'excluded attempt context source/input mismatch')
+        require(type(collection['elapsed_seconds']) in (int, float) and math.isfinite(collection['elapsed_seconds'])
+                and 0 <= collection['elapsed_seconds'] <= 1800, 'excluded attempt stage elapsed invalid')
+        for name in observed:
+            preserve(pin(root / name))
+        return root, collection, observed
+
+    fit_root, fit_collection, fit_inventory = capture(fit_pin, 'fit')
+    require(fit_collection['status'] == 'COMPLETED' and fit_collection['phase'] == 'B200_NEW_DOSE'
+            and fit_collection['errors'] == [] and fit_collection['returncode'] == 0 and fit_collection['gpu_released'] is True
+            and fit_collection['inputs'] == fit_row['inputs']
+            and not any(Path(name).name in ('failure.json', 'collection_failure.json') for name in fit_inventory),
+            'readout-preworker requires fully completed released fit evidence; still excluded from primary results')
+    stage_root = fit_root / 'fit'
+    stage_inventory = runtime.acquisition.inventory(stage_root)
+    require(stage_inventory == fit_collection['stage_inventory']
+            and fit_inventory['fit_completed.json'] == fit_inventory['fit/completed.json'], 'completed fit snapshot/inventory changed')
+    identity, observations = fit_collection['worker_identity'], fit_collection['observations']
+    require(identity is not None and identity['pid'] == identity['pgid'] == identity['sid']
+            and identity['uid'] == allocation['uid'] and identity['boot_id'] == allocation['boot_id'], 'completed fit worker identity mismatch')
+    require(observations['worker_wait'] == 0 and observations['worker_release']['owned_group_released'] is True
+            and observations['worker_release']['identity'] == identity, 'completed fit worker release mismatch')
+    worker_exit = checked(pin(fit_root / 'worker_exit.json'))
+    require(worker_exit['identity'] == identity and worker_exit['pid'] == identity['pid']
+            and worker_exit['returncode'] == 0 and worker_exit['signal'] is None
+            and checked(pin(fit_root / 'worker_start.json'))['identity'] == identity, 'completed fit worker exit mismatch')
+    context, binding = checked(pin(fit_root / 'context.json')), checked(pin(fit_root / 'binding.json'))
+    for name, value in observations.items():
+        record = checked(pin(fit_root / (name + '.json')))
+        require(record['value'] == value and context['entry_monotonic'] <= record['started_monotonic'] <= record['ended_monotonic']
+                <= context['entry_monotonic'] + fit_collection['elapsed_seconds'] <= binding['deadline_monotonic'],
+                'completed fit observation join/timing mismatch')
+    for when in ('pre', 'post'):
+        require(observations[when + '_queue']['matched'] is True and observations[when + '_gpu']['empty'] is True
+                and observations[when + '_gpu']['gpu_uuid'] == allocation['gpu_uuid']
+                and observations[when + '_cvd']['clear'] is True and observations[when + '_cvd']['owners'] == []
+                and observations[when + '_cvd']['unresolved'] == [], 'completed fit resources not released')
+    completed = runtime.outer.validate_stage(stage_root, fit_root / 'fit_completed.json', fit_row['inputs'],
+        checked(fit_row['inputs']), material, 'B200_NEW_DOSE', stage_inventory, fit_collection['elapsed_seconds'])
+    completed_pin = pin(stage_root / 'completed.json')
+    require(completed == checked(completed_pin) and completed['sha256'] == fit_collection['completed_sha256'],
+            'completed fit native stage validation differs')
+    read_root, read_collection, read_inventory = capture(read_pin, 'readout')
+    require(read_collection['status'] == 'FAILED' and read_collection['stage'] == 'readout' and read_collection['state'] == 'B200_NEW_DOSE'
+            and read_collection['worker_identity'] is None and read_collection['returncode'] is None
+            and read_collection['gpu_released'] is False
+            and read_collection['stage_inventory'] == {} and read_collection['completed_sha256'] is None
+            and not (read_root / 'readout').exists()
+            and not any(name.startswith(('worker_', 'spawn', 'readout', 'stdout', 'stderr')) for name in read_inventory),
+            'failed reader must have no worker, stage, or model calls')
+    errors = [dict(phase='pre_cvd', type='ValueError', error='resource not released/matched'),
+              dict(phase='controller', type='ActorError', error='preflight failed')]
+    require(read_collection['errors'] == errors and checked(pin(read_root / 'failure.json')) == dict(errors=errors),
+            'only diagnosed reader pre_cvd/controller preflight failure eligible')
+    pre_cvd = read_collection['observations']['pre_cvd']
+    require(set(read_inventory) == {'allocation.input.json', 'binding.json', 'context.json', 'failure.json',
+                                   'inputs.input.json', 'pre_cvd.json', 'pre_gpu.json', 'pre_queue.json', 'collection.json'}
+            and set(read_collection['observations']) == {'pre_cvd', 'pre_gpu', 'pre_queue'},
+            'failed reader contains unexpected worker/readout bytes')
+    require(pre_cvd['clear'] is False and pre_cvd['owners'] == []
+            and len(pre_cvd['unresolved']) == 1 and pre_cvd['unresolved'][0]['pid'] == 258553
+            and checked(pin(read_root / 'pre_cvd.json'))['value'] == pre_cvd, 'failed reader unresolved CVD receipt required')
+    require(read_collection['observations']['pre_queue']['matched'] is True
+            and read_collection['observations']['pre_gpu']['empty'] is True
+            and read_collection['observations']['pre_gpu']['gpu_uuid'] == allocation['gpu_uuid'], 'failed reader unexpected resource failure')
+    for name, value in read_collection['observations'].items():
+        require(checked(pin(read_root / (name + '.json')))['value'] == value, 'failed reader observation drift')
+    require(read_collection['inputs'] == read_row['inputs']
+            and checked(read_row['inputs']) == {**cold, 'fit_receipt': completed_pin}, 'failed reader must reference the validated completed fit')
+    elapsed = stopped['elapsed_seconds']
+    require(type(elapsed) in (int, float) and math.isfinite(elapsed)
+            and elapsed >= fit_collection['elapsed_seconds'] + read_collection['elapsed_seconds']
+            and initial + elapsed <= 7200, 'excluded attempt elapsed must be charged exactly once')
+    require(runtime.acquisition.inventory(fit_root) == fit_inventory and runtime.acquisition.inventory(read_root) == read_inventory,
+            'excluded attempt validation modified original evidence')
+    excluded = dict(fits=1, updates=200, presentations=800, readout_calls=0)
+    return initial + elapsed, {name: value + excluded[name] for name, value in work.items()}
+
+
 def run(args, runtime):
     root = Path(args.root).resolve()
     manifest_pin = dict(path=str(root / 'manifest.json'), sha256=args.manifest_sha256)
     plan = checked(manifest_pin)
+    require('manual_continuation' not in plan, 'terminal no-resume; fresh four-fit plan required')
     require(plan['schema'] == SCHEMA and plan['status'] == 'READY', 'WITHHELD or non-ready plan; zero fits')
     require(plan['root'] == str(root) and plan['source_root'] == args.source_root, 'source/output identity mismatch')
     require(plan['phases'] == list(PHASES) and plan['counts'] == COUNTS and len(plan['fit_inputs']) == 4, 'fixed four fits required')
@@ -473,9 +631,9 @@ def main():
             command.add_argument('--gpu', type=int, required=True)
             command.add_argument('--prior-failure')
             command.add_argument('--prior-failure-sha256')
-            command.add_argument('--prior-failure-kind', choices=('preworker', 'warm-prefix-validation', 'collector-predecessor-validation'), default='preworker')
+            command.add_argument('--prior-failure-kind', choices=('preworker', 'warm-prefix-validation', 'collector-predecessor-validation', 'readout-preworker'), default='preworker')
     args = parser.parse_args()
-    result = (prepare if args.command == 'prepare' else run)(args, load_runtime(args.source_root))
+    result = {'prepare': prepare, 'run': run}[args.command](args, load_runtime(args.source_root))
     if result:
         print(json.dumps(result, sort_keys=True))
 

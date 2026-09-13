@@ -2,10 +2,12 @@
 
 import argparse
 import copy
+import io
 import json
 import os
 from pathlib import Path
 import tempfile
+import tarfile
 from types import SimpleNamespace
 import unittest
 from unittest.mock import Mock, patch
@@ -60,6 +62,7 @@ class FollowupTests(unittest.TestCase):
             write(inputs / f'{name}.json', {'kind': 'INJECTED_CPU_TEST'})
         write(inputs / 'material.json', {'spec': {'learner_seed': seed, 'sha256': 'NONNATIVE'}})
         allocation = dict(gpu_index=2, gpu_uuid='GPU-NONNATIVE-2', lease_end=10**12, lease_margin_seconds=21600,
+                          uid=1000, boot_id='NONNATIVE_BOOT',
                           outer_sha256=api.pin(modules['outer'].__file__)['sha256'])
         write(inputs / 'allocation.json', allocation)
         shared = {name: api.pin(inputs / f'{name}.json') for name in ('model_binding', 'base_state_receipt', 'archive', 'replay_receipt', 'material')}
@@ -616,6 +619,394 @@ class FollowupTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'only outer source pin'):
             api.run(self.args, self.runtime)
         self.runtime.outer.controller.assert_not_called()
+
+    def readout_preworker_failure(self):
+        self.setUp(seed=0)
+        acquisition_path = self.runs / 'no_write_outer/collection.json'
+        acquisition = json.loads(acquisition_path.read_text())
+        acquisition['elapsed_seconds'] = 294.9790780178737
+        acquisition_path.write_text(json.dumps(acquisition))
+        source, attempt4 = self.collector_failure()
+        with patch.object(api, 'SOURCE', source):
+            previous = self.prepare()
+        old_root = Path(self.args.root)
+        write(old_root / 'started.json', dict(manifest=api.pin(old_root / 'manifest.json')))
+        allocation = api.checked(previous['runtime_allocation'])
+        worker = dict(pid=100, pgid=100, sid=100, uid=allocation['uid'], boot_id=allocation['boot_id'])
+        fit_root = old_root / 'runs/B200_NEW_DOSE_fit_outer'
+        (fit_root / 'fit/checkpoint').mkdir(parents=True)
+        (fit_root / 'fit/checkpoint/adapter.bin').write_bytes(b'NONNATIVE ADAPTER')
+        completed = dict(sha256='NONNATIVE_COMPLETED', kind='NATIVE', status='COMPLETE', phase='B200_NEW_DOSE',
+                         updates=200, learner_seed=0, predecessor=self.parent, inputs=previous['fit_inputs'][0])
+        write(fit_root / 'fit/completed.json', completed)
+        write(fit_root / 'fit_completed.json', completed)
+        self.runtime.outer.validate_stage = Mock(side_effect=lambda stage, snapshot, *args: api.checked(api.pin(snapshot)))
+        fit_observations = dict(worker_wait=0, worker_release=dict(identity=worker, owned_group_released=True))
+        for when in ('pre', 'post'):
+            fit_observations[when + '_queue'] = dict(matched=True)
+            fit_observations[when + '_gpu'] = dict(empty=True, gpu_uuid=allocation['gpu_uuid'])
+            fit_observations[when + '_cvd'] = dict(clear=True, owners=[], unresolved=[])
+        write(fit_root / 'worker_start.json', dict(identity=worker))
+        write(fit_root / 'worker_exit.json', dict(identity=worker, pid=worker['pid'], returncode=0, signal=None))
+        read_root = old_root / 'runs/B200_NEW_DOSE_readout_outer'
+        read_root.mkdir()
+        read_inputs = {**api.checked(previous['runtime_c0_inputs']), 'fit_receipt': api.pin(fit_root / 'fit/completed.json')}
+        write(old_root / 'inputs/B200_NEW_DOSE_readout_inputs.json', read_inputs)
+        read_pin = api.pin(old_root / 'inputs/B200_NEW_DOSE_readout_inputs.json')
+        read_observations = dict(pre_queue=dict(matched=True), pre_gpu=dict(empty=True, gpu_uuid=allocation['gpu_uuid']),
+            pre_cvd=dict(clear=False, owners=[], unresolved=[dict(pid=258553, error_type='PermissionError', error='NONNATIVE')]))
+        errors = [dict(phase='pre_cvd', type='ValueError', error='resource not released/matched'),
+                  dict(phase='controller', type='ActorError', error='preflight failed')]
+        write(read_root / 'failure.json', dict(errors=errors))
+        rows = []
+        for stage, root, input_pin, observations, elapsed in (
+                ('fit', fit_root, previous['fit_inputs'][0], fit_observations, 187.99774396594148),
+                ('readout', read_root, read_pin, read_observations, 4.558508142014034)):
+            (root / 'inputs.input.json').write_bytes(Path(input_pin['path']).read_bytes())
+            (root / 'allocation.input.json').write_bytes(Path(previous['runtime_allocation']['path']).read_bytes())
+            write(root / 'context.json', dict(entry_monotonic=0, inputs=input_pin,
+                allocation_file_sha256=previous['runtime_allocation']['sha256'], outer_source_sha256=allocation['outer_sha256'],
+                helper_sha256=api.pin(self.runtime.outer.lifecycle.__file__)['sha256']))
+            write(root / 'binding.json', dict(deadline_monotonic=1800))
+            for name, value in observations.items():
+                write(root / (name + '.json'), dict(value=value, started_monotonic=1, ended_monotonic=2))
+            collection = dict(sha256='NONNATIVE_COLLECTION', status='COMPLETED' if stage == 'fit' else 'FAILED',
+                phase='B200_NEW_DOSE', stage=stage, state='B200_NEW_DOSE', inputs=input_pin,
+                allocation_file_sha256=previous['runtime_allocation']['sha256'], outer_source_sha256=allocation['outer_sha256'],
+                worker_identity=worker if stage == 'fit' else None, returncode=0 if stage == 'fit' else None,
+                gpu_released=stage == 'fit', errors=[] if stage == 'fit' else errors, observations=observations,
+                stage_inventory=inventory(root / 'fit') if stage == 'fit' else {},
+                completed_sha256=completed['sha256'] if stage == 'fit' else None, elapsed_seconds=elapsed,
+                retries=0, automatic_promotion=False, full_contract_released=False, files=inventory(root))
+            write(root / 'collection.json', collection)
+            rows.append(dict(phase='B200_NEW_DOSE', stage=stage, inputs=input_pin, collection=api.pin(root / 'collection.json')))
+        write(old_root / 'stopped.json', dict(status='STOPPED', phase='B200_NEW_DOSE', stage='readout', no_automatic_retry=True,
+              elapsed_seconds=196.98049139091745, results=rows))
+        self.args.prior_failure = str(old_root / 'stopped.json')
+        self.args.prior_failure_sha256 = api.pin(old_root / 'stopped.json')['sha256']
+        self.args.prior_failure_kind = 'readout-preworker'
+        self.args.root = str(self.base / 'pcfl_sequence_v2_followup_seed0_20260913_attempt6')
+        return source, old_root, previous
+
+    def prepare_fresh(self, source):
+        with patch.object(api, 'SOURCE', source):
+            binding = api.prepare(self.args, self.runtime)
+        self.args.manifest_sha256 = binding['sha256']
+        return api.checked(binding)
+
+    def rewrite_interruption_collection(self, old_root, stage, mutate):
+        root = old_root / f'runs/B200_NEW_DOSE_{stage}_outer'
+        path = root / 'collection.json'
+        value = json.loads(path.read_text())
+        value['files'] = {name: binding for name, binding in inventory(root).items() if name != 'collection.json'}
+        mutate(value)
+        path.write_text(json.dumps(value))
+        stopped_path = old_root / 'stopped.json'
+        stopped = json.loads(stopped_path.read_text())
+        stopped['results'][0 if stage == 'fit' else 1]['collection'] = api.pin(path)
+        stopped_path.write_text(json.dumps(stopped))
+        self.args.prior_failure_sha256 = api.pin(stopped_path)['sha256']
+
+    def test_readout_preworker_excluded_and_attempt6_runs_all_eight_new_stages(self):
+        source, old_root, previous = self.readout_preworker_failure()
+        before = inventory(old_root)
+        plan = self.prepare_fresh(source)
+        self.assertAlmostEqual(plan['initial_outer_seconds'], 894.9595694087912)
+        self.assertEqual(plan['initial_outer_seconds'], previous['initial_outer_seconds'] + 196.98049139091745)
+        self.assertNotIn('manual_continuation', plan)
+        self.assertEqual(plan['prior_failure'], api.pin(old_root / 'stopped.json'))
+        self.assertEqual(plan['prior_failure_kind'], 'readout-preworker')
+        self.assertEqual(plan['prior_failed_work'], dict(fits=3, updates=600, presentations=2400, readout_calls=0))
+        for name in ('phases', 'counts'):
+            self.assertEqual(plan[name], previous[name])
+        self.assertNotEqual(plan['fit_inputs'], previous['fit_inputs'])
+        self.assertTrue(all(binding in plan['pins'] for binding in previous['pins']))
+        with patch.object(api, 'SOURCE', source):
+            api.run(self.args, self.runtime)
+        self.assertEqual(len(self.calls), 8)
+        self.assertEqual(sum(selection['stage'] == 'fit' for selection, inputs in self.calls), 4)
+        self.assertEqual(sum(selection['stage'] == 'readout' for selection, inputs in self.calls), 4)
+        for selection, inputs in self.calls:
+            if selection['stage'] == 'fit':
+                self.assertEqual(inputs['predecessor'], None if selection['phase'] == 'CLEAN_CUM600' else self.parent)
+            else:
+                self.assertTrue(Path(inputs['fit_receipt']['path']).is_relative_to(Path(self.args.root)))
+        self.assertTrue((Path(self.args.root) / 'runs/B200_NEW_DOSE_fit_outer').exists())
+        completed = api.checked(api.pin(Path(self.args.root) / 'completed.json'))
+        self.assertEqual(len(completed['results']), 8)
+        self.assertTrue(all(Path(row['collection']['path']).is_relative_to(Path(self.args.root)) for row in completed['results']))
+        self.assertEqual(self.runtime.outer.validate_stage.call_count, 1)
+        self.assertEqual(inventory(old_root), before)
+        with self.assertRaisesRegex(ValueError, 'already started'):
+            api.run(self.args, self.runtime)
+        self.assertEqual(len(self.calls), 8)
+        for attempt in (2, 3, 4, 5):
+            history = self.base / f'pcfl_sequence_v2_followup_seed0_20260913_attempt{attempt}'
+            self.assertIn(api.pin(history / 'stopped.json'), plan['pins'])
+            self.assertIn(api.pin(history / 'manifest.json'), plan['pins'])
+        excluded = plan['prior_failed_work']
+        self.assertEqual(3 + excluded['fits'] + 1 + 1 + 3 * api.COUNTS['fits'], 20)
+        self.assertEqual(3 * 200 + excluded['updates'] + 200 + 200 + 3 * api.COUNTS['updates'], 6400)
+        self.assertEqual(3 * 800 + excluded['presentations'] + 800 + 800 + 3 * api.COUNTS['presentations'], 25600)
+        self.assertEqual(3 * (32 + api.COUNTS['calls']), 288)
+
+    def test_readout_preworker_rejects_failed_or_unreleased_fit(self):
+        for field, value in (('status', 'FAILED'), ('errors', ['failure']), ('returncode', 1), ('gpu_released', False)):
+            source, old_root, previous = self.readout_preworker_failure()
+            self.rewrite_interruption_collection(old_root, 'fit', lambda collection: collection.update({field: value}))
+            with self.subTest(field=field), self.assertRaisesRegex(ValueError, 'fully completed released fit'):
+                self.prepare_fresh(source)
+            self.assertFalse(Path(self.args.root).exists())
+
+    def test_readout_preworker_rejects_reader_worker_or_stage(self):
+        for field, value in (('worker_identity', {'pid': 99}), ('returncode', 0), ('stage_inventory', {'capture': {}})):
+            source, old_root, previous = self.readout_preworker_failure()
+            self.rewrite_interruption_collection(old_root, 'readout', lambda collection: collection.update({field: value}))
+            with self.subTest(field=field), self.assertRaisesRegex(ValueError, 'no worker, stage, or model calls'):
+                self.prepare_fresh(source)
+        for name in ('readout', 'worker_start.json', 'unexpected_capture.json'):
+            source, old_root, previous = self.readout_preworker_failure()
+            target = old_root / 'runs/B200_NEW_DOSE_readout_outer' / name
+            target.mkdir() if name == 'readout' else target.write_text('{}')
+            self.rewrite_interruption_collection(old_root, 'readout', lambda collection: None)
+            with self.subTest(name=name), self.assertRaisesRegex(ValueError, 'no worker|unexpected worker/readout'):
+                self.prepare_fresh(source)
+            self.assertFalse(Path(self.args.root).exists())
+
+    def test_readout_preworker_native_stage_rejection_blocks_prepare(self):
+        source, old_root, previous = self.readout_preworker_failure()
+        self.runtime.outer.validate_stage.side_effect = ValueError('native fit evidence rejected')
+        with self.assertRaisesRegex(ValueError, 'native fit evidence rejected'):
+            self.prepare_fresh(source)
+        self.assertFalse(Path(self.args.root).exists())
+
+    def test_readout_preworker_run_does_not_use_historical_fit_validator_as_primary(self):
+        source, old_root, previous = self.readout_preworker_failure()
+        self.prepare_fresh(source)
+        self.runtime.outer.validate_stage.side_effect = ValueError('native fit evidence rejected')
+        with patch.object(api, 'SOURCE', source):
+            api.run(self.args, self.runtime)
+        self.assertEqual(self.runtime.outer.validate_stage.call_count, 1)
+        self.assertEqual(len(self.calls), 8)
+
+    def test_readout_preworker_retired_continuation_plan_rejected(self):
+        source, old_root, previous = self.readout_preworker_failure()
+        plan = self.prepare_fresh(source)
+        path = Path(self.args.root) / 'manifest.json'
+        path.write_text(json.dumps({**plan, 'manual_continuation': {'fit_collection': api.pin(old_root / 'runs/B200_NEW_DOSE_fit_outer/collection.json')}}))
+        self.args.manifest_sha256 = api.pin(path)['sha256']
+        with self.assertRaisesRegex(ValueError, 'terminal no-resume'):
+            api.run(self.args, self.runtime)
+        self.runtime.outer.controller.assert_not_called()
+
+    def test_readout_preworker_resumed_checkpoint_rejected(self):
+        source, old_root, previous = self.readout_preworker_failure()
+        plan = self.prepare_fresh(source)
+        path = Path(plan['fit_inputs'][0]['path'])
+        value = json.loads(path.read_text())
+        value['predecessor'] = api.pin(old_root / 'runs/B200_NEW_DOSE_fit_outer/fit/completed.json')
+        path.write_text(json.dumps(value))
+        plan['fit_inputs'][0] = api.pin(path)
+        manifest = Path(self.args.root) / 'manifest.json'
+        manifest.write_text(json.dumps(plan))
+        self.args.manifest_sha256 = api.pin(manifest)['sha256']
+        with self.assertRaisesRegex(ValueError, 'fixed measured parent required'):
+            api.run(self.args, self.runtime)
+        self.runtime.outer.controller.assert_not_called()
+
+    def test_readout_preworker_read_input_cannot_reference_other_checkpoint(self):
+        source, old_root, previous = self.readout_preworker_failure()
+        path = old_root / 'inputs/B200_NEW_DOSE_readout_inputs.json'
+        value = json.loads(path.read_text())
+        value['fit_receipt'] = self.parent
+        path.write_text(json.dumps(value))
+        root = old_root / 'runs/B200_NEW_DOSE_readout_outer'
+        (root / 'inputs.input.json').write_bytes(path.read_bytes())
+        context_path = root / 'context.json'
+        context = json.loads(context_path.read_text())
+        context['inputs'] = api.pin(path)
+        context_path.write_text(json.dumps(context))
+        self.rewrite_interruption_collection(old_root, 'readout', lambda collection: collection.update(inputs=api.pin(path)))
+        stopped_path = old_root / 'stopped.json'
+        stopped = json.loads(stopped_path.read_text())
+        stopped['results'][1]['inputs'] = api.pin(path)
+        stopped_path.write_text(json.dumps(stopped))
+        self.args.prior_failure_sha256 = api.pin(stopped_path)['sha256']
+        with self.assertRaisesRegex(ValueError, 'validated completed fit'):
+            self.prepare_fresh(source)
+
+    def test_readout_preworker_checkpoint_unchanged_during_validation(self):
+        source, old_root, previous = self.readout_preworker_failure()
+        checkpoint = old_root / 'runs/B200_NEW_DOSE_fit_outer/fit/checkpoint/adapter.bin'
+        def mutate(stage, snapshot, *args):
+            checkpoint.write_bytes(b'NONNATIVE CHANGED ADAPTER')
+            return api.checked(api.pin(snapshot))
+        self.runtime.outer.validate_stage.side_effect = mutate
+        with self.assertRaisesRegex(ValueError, 'modified original evidence'):
+            self.prepare_fresh(source)
+
+    def test_readout_preworker_fit_source_drift_and_input_drift_rejected(self):
+        for target in ('source', 'inputs'):
+            source, old_root, previous = self.readout_preworker_failure()
+            path = Path(self.runtime.fit.__file__) if target == 'source' else Path(previous['fit_inputs'][1]['path'])
+            path.write_text(path.read_text() + '\n')
+            with self.subTest(target=target), self.assertRaisesRegex(ValueError, 'pin drift|repaired source'):
+                self.prepare_fresh(source)
+
+    def test_readout_preworker_fresh_nonoverlapping_root_required(self):
+        source, old_root, previous = self.readout_preworker_failure()
+        self.args.root = str(old_root / Path(self.args.root).name)
+        with self.assertRaisesRegex(ValueError, 'overlaps'):
+            self.prepare_fresh(source)
+        self.args.root = str(old_root)
+        with self.assertRaisesRegex(ValueError, 'fresh output root'):
+            self.prepare_fresh(source)
+
+    def test_readout_preworker_rejects_release_observation_drift(self):
+        source, old_root, previous = self.readout_preworker_failure()
+        root = old_root / 'runs/B200_NEW_DOSE_fit_outer'
+        path = root / 'post_cvd.json'
+        record = json.loads(path.read_text())
+        record['value']['clear'] = False
+        path.write_text(json.dumps(record))
+        self.rewrite_interruption_collection(old_root, 'fit', lambda collection: collection['observations'].update(post_cvd=record['value']))
+        with self.assertRaisesRegex(ValueError, 'resources not released'):
+            self.prepare_fresh(source)
+
+    def test_readout_preworker_initial_budget_and_old_parameters_revalidated(self):
+        for field, value, error in (('initial_outer_seconds', 0, 'initial budget/history'),
+                                    ('source_root', '/different/source', 'runtime/source'),
+                                    ('seed', 1, 'exact seed0 attempt5'),
+                                    ('manual_continuation', {}, 'terminal no-resume')):
+            source, old_root, previous = self.readout_preworker_failure()
+            path = old_root / 'manifest.json'
+            previous[field] = value
+            path.write_text(json.dumps(previous))
+            (old_root / 'started.json').write_text(json.dumps(dict(manifest=api.pin(path))))
+            with self.subTest(field=field), self.assertRaisesRegex(ValueError, error):
+                self.prepare_fresh(source)
+            self.assertFalse(Path(self.args.root).exists())
+
+    def test_readout_preworker_fit_parameter_change_cannot_be_repinned(self):
+        source, old_root, previous = self.readout_preworker_failure()
+        path = Path(previous['fit_inputs'][2]['path'])
+        original_pin = api.pin(path)
+        value = json.loads(path.read_text())
+        value['predecessor'] = None
+        path.write_text(json.dumps(value))
+        previous['fit_inputs'][2] = api.pin(path)
+        previous['pins'] = [binding for binding in previous['pins'] if binding != original_pin]
+        manifest = old_root / 'manifest.json'
+        manifest.write_text(json.dumps(previous))
+        (old_root / 'started.json').write_text(json.dumps(dict(manifest=api.pin(manifest))))
+        with self.assertRaisesRegex(ValueError, 'fit parameters changed'):
+            self.prepare_fresh(source)
+
+    def test_readout_preworker_checkpoint_drift_after_prepare_blocks_run(self):
+        source, old_root, previous = self.readout_preworker_failure()
+        self.prepare_fresh(source)
+        path = old_root / 'runs/B200_NEW_DOSE_fit_outer/fit/checkpoint/adapter.bin'
+        path.write_bytes(b'CHANGED')
+        with patch.object(api, 'SOURCE', source), self.assertRaisesRegex(ValueError, 'provenance drift'):
+            api.run(self.args, self.runtime)
+        self.runtime.outer.controller.assert_not_called()
+
+    def test_readout_preworker_another_reader_failure_is_terminal(self):
+        source, old_root, previous = self.readout_preworker_failure()
+        self.prepare_fresh(source)
+        original = self.controller
+        def fail_reader(*args, **kwargs):
+            if kwargs['stage'] == 'readout':
+                self.stage_result = {'status': 'FAILED'}
+            return original(*args, **kwargs)
+        self.runtime.outer.controller.side_effect = fail_reader
+        with patch.object(api, 'SOURCE', source), self.assertRaisesRegex(ValueError, 'failed/unreleased'):
+            api.run(self.args, self.runtime)
+        self.assertEqual(len(self.calls), 2)
+        stopped = api.checked(api.pin(Path(self.args.root) / 'stopped.json'))
+        self.assertEqual(len(stopped['results']), 2)
+        with self.assertRaisesRegex(ValueError, 'already started'):
+            api.run(self.args, self.runtime)
+
+    def test_readout_preworker_cli_is_explicit(self):
+        argv = ['operator', 'prepare', '--campaign', '/acquisition/manifest.json', '--campaign-sha256', 'a' * 64,
+                '--prior-failure', '/attempt5/stopped.json', '--prior-failure-sha256', 'b' * 64,
+                '--prior-failure-kind', 'readout-preworker', '--seed', '0', '--gpu', '1',
+                '--root', '/attempt6', '--source-root', str(api.REPAIR_SOURCE)]
+        with patch.object(api.sys, 'argv', argv), patch.object(api, 'load_runtime', return_value=self.runtime), \
+                patch.object(api, 'prepare', return_value=None) as prepare:
+            api.main()
+        self.assertEqual(prepare.call_args.args[0].prior_failure, '/attempt5/stopped.json')
+        self.assertEqual(prepare.call_args.args[0].prior_failure_kind, 'readout-preworker')
+        with patch.object(api.sys, 'argv', argv + ['--recovery', '/failed-checkpoint']), \
+                patch.object(api.sys, 'stderr', io.StringIO()), self.assertRaises(SystemExit) as error:
+            api.main()
+        self.assertEqual(error.exception.code, 2)
+        with patch.object(api.sys, 'argv', ['operator', 'prepare-continuation']), \
+                patch.object(api.sys, 'stderr', io.StringIO()), self.assertRaises(SystemExit) as error:
+            api.main()
+        self.assertEqual(error.exception.code, 2)
+
+    def test_readout_preworker_cannot_be_charged_as_a_different_failure_kind(self):
+        source, old_root, previous = self.readout_preworker_failure()
+        for kind in ('preworker', 'warm-prefix-validation', 'collector-predecessor-validation', 'unknown'):
+            self.args.prior_failure_kind = kind
+            with self.subTest(kind=kind), self.assertRaises(ValueError):
+                self.prepare_fresh(source)
+            self.assertFalse(Path(self.args.root).exists())
+
+    def test_readout_preworker_exact_attempt4_ancestor_required(self):
+        source, old_root, previous = self.readout_preworker_failure()
+        previous['prior_failure'] = api.pin(self.base / 'pcfl_sequence_v2_followup_seed0_20260913_attempt3/stopped.json')
+        manifest = old_root / 'manifest.json'
+        manifest.write_text(json.dumps(previous))
+        (old_root / 'started.json').write_text(json.dumps(dict(manifest=api.pin(manifest))))
+        with self.assertRaisesRegex(ValueError, 'exact failed attempt2/3/4 chain'):
+            self.prepare_fresh(source)
+
+    def test_readout_preworker_exact_next_root_required(self):
+        source, old_root, previous = self.readout_preworker_failure()
+        self.args.root = str(self.base / 'pcfl_sequence_v2_followup_seed0_20260913_attempt7')
+        with self.assertRaisesRegex(ValueError, 'fresh seed0 attempt6'):
+            self.prepare_fresh(source)
+
+    def test_readout_preworker_elapsed_cost_cannot_be_omitted_or_nonfinite(self):
+        source, old_root, previous = self.readout_preworker_failure()
+        path = old_root / 'stopped.json'
+        stopped = json.loads(path.read_text())
+        for elapsed in (0, -1, float('nan'), float('inf'), 7200):
+            path.write_text(json.dumps({**stopped, 'elapsed_seconds': elapsed}))
+            self.args.prior_failure_sha256 = api.pin(path)['sha256']
+            with self.subTest(elapsed=elapsed), self.assertRaisesRegex(ValueError, 'elapsed must be charged exactly once'):
+                self.prepare_fresh(source)
+            self.assertFalse(Path(self.args.root).exists())
+
+    def test_native_offline_archive_matches_excluded_readout_preworker_history(self):
+        archive_path = Path(__file__).resolve().parents[1] / 'gpu_artifacts_local/pcfl_v2_seed0_interruption_20260913_attempt1/evidence.tar'
+        if not archive_path.exists():
+            self.skipTest('optional native offline interruption archive not installed')
+        self.assertEqual(api.pin(archive_path)['sha256'], 'faf25b21619e951cf21a30624fa72bd7ab4d2c0f06b929d4e26b1a17505c20d5')
+        prefix = 'localhome/local-rohing/astra_diagnostics/pcfl_sequence_v2_followup_seed0_20260913_attempt5/'
+        with tarfile.open(archive_path) as archive:
+            def read(relative):
+                return json.load(archive.extractfile(prefix + relative))
+            previous, stopped = read('manifest.json'), read('stopped.json')
+            fit = read('runs/B200_NEW_DOSE_fit_outer/collection.json')
+            reader = read('runs/B200_NEW_DOSE_readout_outer/collection.json')
+            reader_inputs = read('inputs/B200_NEW_DOSE_readout_inputs.json')
+            completed_bytes = archive.extractfile(prefix + 'runs/B200_NEW_DOSE_fit_outer/fit/completed.json').read()
+            self.assertEqual((fit['status'], fit['gpu_released'], fit['returncode'], fit['errors']), ('COMPLETED', True, 0, []))
+            self.assertEqual(reader['errors'], [dict(phase='pre_cvd', type='ValueError', error='resource not released/matched'),
+                                              dict(phase='controller', type='ActorError', error='preflight failed')])
+            self.assertEqual((reader['status'], reader['worker_identity'], reader['returncode'], reader['stage_inventory']),
+                             ('FAILED', None, None, {}))
+            self.assertEqual(reader['observations']['pre_cvd']['unresolved'][0]['pid'], 258553)
+            self.assertEqual(reader_inputs['fit_receipt']['sha256'], api.hashlib.sha256(completed_bytes).hexdigest())
+            self.assertFalse(any(name.startswith(prefix + 'runs/B200_NEW_DOSE_readout_outer/readout') for name in archive.getnames()))
+            self.assertEqual(stopped['elapsed_seconds'], 196.98049139091745)
+            self.assertAlmostEqual(previous['initial_outer_seconds'] + stopped['elapsed_seconds'], 894.9595694087912)
+            self.assertNotEqual(read('runs/B200_NEW_DOSE_fit_outer/context.json')['entry_monotonic'],
+                                read('runs/B200_NEW_DOSE_readout_outer/context.json')['entry_monotonic'])
 
 
 if __name__ == '__main__':

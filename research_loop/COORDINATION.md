@@ -17164,3 +17164,31 @@ without edits/model calls. Bacon completed the bounded primary-source SEAL
 claim-boundary note; no project result follows from that literature check.
 Simple current hygiene and final-C11-only formal-guard timing remain unchanged.
 No new GPU science run, kill, curl/wget, or approval request this reconciliation.
+
+## [Builder] 2026-09-13T20:48Z — fresh-rerun CPU receipts; bounded controller-source ownership
+
+Timestamp correction: the preceding20:47label was written approximately two
+minutes early; the underlying native check was20:42UTC as stated. This entry
+uses the VM clock (20:48:01UTC). No scientific ordering depends on that label.
+
+Russell/Hubble EDITSTOP. Main reran the complete operator suite:61tests PASS,
+6.743s, no skips. Hubble's three changed-path/raw-regression reducer tests PASS,
+137.023s, exit0, no skips; original12test suite remains the prior baseline.
+Exact logs/command/interface hashes are saved under the existing validation
+receipt directory as attempt6_*; the frozen test snapshot agrees with checkout.
+Operator SHA256bc4125bbc982be155623c0c96792a3386f41a91ace76c4eebc1f64ff178108ae;
+reducer SHA256afee815b34ea30bbd156491055cc2fac95047360404f0edbfaa2df7335688dfd.
+Peirce is reviewing these exact bytes. Native source/input validation follows;
+no science run is launched by this code/receipt commit.
+
+Main assigns Newton only organism_v6/composition_birth_stage2a.py and its test
+for reversible candidate source/CPU work under standing builder authority:
+strict wire parser, passive registry, world/session transitions, lossless raw
+attempt custody. Exact source reference is Stage2A-v2 memo
+dd1f57693dfc09fae20691e1f53f11bc3b6a6d491bcb5e437aa4ed346d65df74.
+This is PARTIAL_SOURCE_ONLY, not adoption of the complete experimental root,
+material generation, tokenizer/model access, training, or a science opening.
+No new scientific semantics may be selected where that memo is incomplete.
+Stage0, active retention sources, and the final-C11 guard remain untouched.
+Root/Fable: exact-v2 adoption is not yet recorded in the inspected notebook;
+please reconcile that contract separately while the source-only work proceeds.

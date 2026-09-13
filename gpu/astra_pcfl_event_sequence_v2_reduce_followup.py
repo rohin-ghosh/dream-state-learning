@@ -34,7 +34,11 @@ IDENTITY = ("material", "model_path", "model_binding", "base_state_receipt", "le
 REPAIR_SCOPE = "warm_receipt_and_predecessor_validation_only"
 PROSPECTIVE_SCOPE = "warm_receipt_and_readonly_predecessor_split"
 COLLECTOR_ERRORS = [{"error": "warm start: output must be fresh", "phase": "stage_evidence", "type": "ValueError"}]
-MAX_PHYSICAL_WORK = dict(fits=19, updates=6200, presentations=24800, readout_calls=288)
+PREWORKER_READOUT_ERRORS = [
+    {"error": "resource not released/matched", "phase": "pre_cvd", "type": "ValueError"},
+    {"error": "preflight failed", "phase": "controller", "type": "ActorError"},
+]
+MAX_PHYSICAL_WORK = dict(fits=20, updates=6400, presentations=25600, readout_calls=288)
 
 
 def file_pin(path):
@@ -131,6 +135,7 @@ def runtime_allocation(plan):
 
 
 def prior_failure_evidence(plan, *, expected_kind="NATIVE", seen=()):
+    require("manual_continuation" not in plan, "terminal no-resume: manual continuation is inadmissible")
     zero_work = dict(fits=0, updates=0, presentations=0, readout_calls=0)
     pin = plan.get("prior_failure")
     if pin is None:
@@ -146,20 +151,65 @@ def prior_failure_evidence(plan, *, expected_kind="NATIVE", seen=()):
     previous = pinned(manifest_pins[0])
     fields(previous, {name: plan[name] for name in ("entry", "seed", "originals")}, "prior failure ancestry")
     same(previous["root"], str(root), "prior failure manifest root")
-    fields(stopped, {"status": "STOPPED", "phase": "B200_NEW_DOSE", "stage": "fit"}, "preworker first-stage failure only")
-    require(len(stopped["results"]) == 1, "prior failure may have executed later stages")
+    readout_failure = stopped["stage"] == "readout"
+    fields(stopped, {"status": "STOPPED", "phase": "B200_NEW_DOSE", "stage": "readout" if readout_failure else "fit"},
+           "only diagnosed first-fit or preworker-reader failure")
+    require(len(stopped["results"]) == (2 if readout_failure else 1), "prior failure may have executed later stages")
     collection_pin = stopped["results"][0]["collection"]
-    require(collection_pin in plan["pins"], "bound failed collection required")
+    require(collection_pin in plan["pins"], "bound prior collection required")
     same(collection_pin["path"], str(root / "runs/B200_NEW_DOSE_fit_outer/collection.json"), "failed stage path")
     collection = sealed(pinned(collection_pin))
-    fields(collection, {"schema": OUTER_SCHEMA + "/collection", "phase": "B200_NEW_DOSE", "status": "FAILED",
+    fields(collection, {"schema": OUTER_SCHEMA + "/collection", "phase": "B200_NEW_DOSE", "status": "COMPLETED" if readout_failure else "FAILED",
                         "retries": 0}, "failed first-stage collection required")
     failed_root = Path(collection_pin["path"]).parent
     observed = inventory(failed_root)
     same({name: value for name, value in observed.items() if name != "collection.json"}, collection["files"], "failed attempt inventory")
     preworker = collection["worker_identity"] is None
-    work, partial = zero_work, None
-    if preworker:
+    work, partial, failed_readout = zero_work, None, None
+    if readout_failure:
+        prior_inventory = inventory(root)
+        same(plan["seed"], 0, "readout-preworker failure is seed0 attempt5 only")
+        require(plan.get("prior_failure_kind", "readout-preworker") == "readout-preworker", "explicit readout-preworker failure kind")
+        require("manual_continuation" not in previous and not (root / "completed.json").exists(), "terminal stopped controller required")
+        fields(stopped, {"no_automatic_retry": True, "error": "failed/unreleased stage; no retry"}, "terminal readout stop reason")
+        fields(previous, {name: plan[name] for name in ("source_root", "phases", "counts", "gpu")}, "excluded attempt runtime/topology")
+        same(previous.get("repair"), plan.get("repair"), "excluded attempt repair identity")
+        same(sorted(path.name for path in (root / "runs").iterdir()),
+             ["B200_NEW_DOSE_fit_outer", "B200_NEW_DOSE_readout_outer"], "excluded attempt has later stage artifacts")
+        same(read(root / "started.json")["manifest"], manifest_pins[0], "excluded attempt started manifest")
+        fit_row, read_row = stopped["results"]
+        same(fit_row, {"phase": "B200_NEW_DOSE", "stage": "fit", "inputs": previous["fit_inputs"][0], "collection": collection_pin},
+             "excluded completed fit row")
+        require(set(read_row) == {"phase", "stage", "inputs", "collection"}, "closed excluded reader row")
+        fields(read_row, {"phase": "B200_NEW_DOSE", "stage": "readout"}, "excluded reader row identity")
+        same(read_row["inputs"]["path"], str(root / "inputs/B200_NEW_DOSE_readout_inputs.json"), "excluded reader input path")
+        same(read_row["collection"]["path"], str(root / "runs/B200_NEW_DOSE_readout_outer/collection.json"), "excluded reader path")
+        require(read_row["collection"] in plan["pins"], "bound excluded reader required")
+        inputs = pinned(fit_row["inputs"])
+        same(inputs["acquisition_receipt"], previous["acquisition_request"], "excluded fit acquisition pin")
+        same(pinned(previous["acquisition_request"]), pinned(plan["acquisition_request"]), "excluded acquisition collections")
+        same({**inputs, "acquisition_receipt": plan["acquisition_request"]}, pinned(plan["fit_inputs"][0]), "excluded fit input/source identity")
+        material = pinned(plan["entry"]["material"])
+        acquired = acquisition.validate(previous["acquisition_request"], material, inputs, expected_kind=expected_kind)
+        same(acquired, sealed(pinned(previous["acquisition_receipt"])), "excluded fit raw acquisition receipt")
+        require(acquired["observed_gate"] is True, "excluded fit requires raw acquisition pass")
+        allocation_pin = previous.get("runtime_allocation", previous["entry"]["allocation"])
+        same(pinned(allocation_pin), pinned(plan.get("runtime_allocation", plan["entry"]["allocation"])), "excluded allocation identity")
+        fit = fit_result(collection_pin, "B200_NEW_DOSE", fit_row["inputs"], allocation_pin,
+                         material, expected_kind, acquired["a200_fit_receipt"])
+        same(pinned(fit["receipt"])["acquisition_validation"], acquired, "excluded completed fit acquisition validation")
+        cold = pinned(previous["runtime_c0_inputs"])
+        same(cold, pinned(plan["runtime_c0_inputs"]), "excluded C0/source identity")
+        failed_readout = preworker_readout_evidence(read_row["collection"], read_row["inputs"], allocation_pin,
+                                                   {**cold, "fit_receipt": fit["receipt"]})
+        require(collection["elapsed_seconds"] + failed_readout["elapsed_seconds"] <= stopped["elapsed_seconds"],
+                "excluded attempt elapsed must include fit and failed reader")
+        work = dict(fits=1, updates=200, presentations=800, readout_calls=0)
+        partial = {"failure_kind": "readout-preworker", "collection_status": "COMPLETED", "worker_status": "COMPLETE",
+                   "checkpoint_eligible": False, "readout_eligible": False, "excluded_from_primary": True,
+                   "exclusion_reason": "terminal_controller_no_resume", "excluded_completed_fit": fit}
+        provenance(previous)
+    elif preworker:
         require(previous.get("prior_failure") is None, "preworker must terminate failure ancestry")
         fields(collection, {"returncode": None, "stage_inventory": {}}, "prior attempt may have executed a worker")
         require(not any(Path(name).name in ("worker_start.json", "worker_exit.json") or name.startswith(("fit/", "readout/"))
@@ -233,7 +283,10 @@ def prior_failure_evidence(plan, *, expected_kind="NATIVE", seen=()):
     earlier = prior_failure_evidence(previous, expected_kind=expected_kind, seen=(*seen, pin["path"]))
     if not preworker:
         require(earlier is not None, "missing failed-attempt ancestry")
-        if collector_failure:
+        if readout_failure:
+            require(not earlier["recorded_preworker_only"] and earlier["partial_fit"]["failure_kind"] == "collector-freshness-validation",
+                    "readout-preworker attempt must follow diagnosed collector failure")
+        elif collector_failure:
             require(not earlier["recorded_preworker_only"] and earlier["partial_fit"]["failure_kind"] == "warm-prefix-validation",
                     "collector attempt must follow diagnosed warm-prefix failure")
         else:
@@ -243,10 +296,12 @@ def prior_failure_evidence(plan, *, expected_kind="NATIVE", seen=()):
     same(previous["initial_outer_seconds"], original_seconds + earlier_seconds, "earlier failed time cannot be erased")
     cumulative_work = {key: work[key] + (0 if earlier is None else earlier["cumulative_failed_work"][key]) for key in zero_work}
     same(plan.get("prior_failed_work", zero_work), cumulative_work, "recorded failed work differs from artifacts")
+    if readout_failure:
+        same(inventory(root), prior_inventory, "excluded attempt changed while reducing")
     return {"stopped": pin, "manifest": manifest_pins[0], "collection": collection_pin,
             "attempt_elapsed_seconds": stopped["elapsed_seconds"], "elapsed_seconds": stopped["elapsed_seconds"] + earlier_seconds,
             "recorded_preworker_only": preworker, "failed_work": work, "cumulative_failed_work": cumulative_work,
-            "partial_fit": partial, "earlier_failure": earlier}
+            "partial_fit": partial, "failed_readout": failed_readout, "earlier_failure": earlier}
 
 
 def check_fit(pin, phase, material, expected_inputs, kind, measured_parent=None):
@@ -516,6 +571,54 @@ def fit_result(collection_pin, phase, inputs_pin, allocation_pin, material, kind
             "elapsed_seconds": {**receipt["elapsed_seconds"], "outer_release_inclusive": collection["elapsed_seconds"]}}
 
 
+def preworker_readout_evidence(collection_pin, inputs_pin, allocation_pin, expected_inputs):
+    """Account for the diagnosed failed reader only; never qualify a checkpoint."""
+    provenance([collection_pin, inputs_pin, allocation_pin])
+    failed = sealed(pinned(collection_pin))
+    root = Path(collection_pin["path"]).parent
+    observed = inventory(root)
+    fields(failed, {"schema": OUTER_SCHEMA + "/collection", "stage": "readout", "state": "B200_NEW_DOSE",
+        "status": "FAILED", "errors": PREWORKER_READOUT_ERRORS, "worker_identity": None, "returncode": None,
+        "stage_inventory": {}, "completed_sha256": None, "gpu_released": False, "retries": 0,
+        "automatic_promotion": False, "full_contract_released": False}, "excluded reader must fail only preworker CVD")
+    same({name: value for name, value in observed.items() if name != "collection.json"}, failed["files"], "failed reader inventory")
+    expected_files = {"context.json", "inputs.input.json", "allocation.input.json", "binding.json", "pre_queue.json",
+                      "pre_gpu.json", "pre_cvd.json", "failure.json", "collection.json"}
+    same(sorted(path.name for path in root.iterdir()), sorted(expected_files), "failed reader has worker or unexpected stage bytes")
+    same(read(root / "failure.json"), {"errors": PREWORKER_READOUT_ERRORS}, "failed reader error record")
+    same(failed["inputs"], inputs_pin, "failed reader input pin")
+    inputs = pinned(inputs_pin)
+    same(inputs, expected_inputs, "failed reader exact excluded checkpoint/input")
+    provenance(inputs)
+    for path, checksum in inputs["source_files"].items():
+        verify_pin({"path": path, "sha256": checksum})
+    same(read(root / "inputs.input.json"), inputs, "failed reader input snapshot")
+    same(observed["inputs.input.json"]["sha256"], inputs_pin["sha256"], "failed reader input bytes")
+    same(observed["allocation.input.json"]["sha256"], allocation_pin["sha256"], "failed reader allocation bytes")
+    outer_identity(failed, inputs, allocation_pin)
+    context, binding = read(root / "context.json"), read(root / "binding.json")
+    fields(context, {"schema": OUTER_SCHEMA, "stage": "readout", "state": "B200_NEW_DOSE", "inputs": inputs_pin,
+                    "outer_source_sha256": failed["outer_source_sha256"]}, "failed reader context")
+    observations = failed["observations"]
+    same(sorted(observations), ["pre_cvd", "pre_gpu", "pre_queue"], "failed reader has worker observations")
+    for name, value in observations.items():
+        record = read(root / (name + ".json"))
+        same(record["value"], value, "failed reader raw observation join")
+        require(context["entry_monotonic"] <= record["started_monotonic"] <= record["ended_monotonic"]
+                <= context["entry_monotonic"] + failed["elapsed_seconds"] <= binding["deadline_monotonic"], "failed reader elapsed bounds")
+    fields(observations["pre_queue"], {"matched": True}, "excluded reader queue identity")
+    fields(observations["pre_gpu"], {"empty": True, "gpu_uuid": inputs["gpu_uuid"]}, "excluded reader GPU identity")
+    cvd = observations["pre_cvd"]
+    fields(cvd, {"clear": False, "owners": [], "unexpected": [], "reservation_check_status": "BLOCKED"}, "unreadable transient CVD only")
+    require(len(cvd["unresolved"]) == 1, "one unreadable transient PID required")
+    unresolved = cvd["unresolved"][0]
+    require(type(unresolved["pid"]) is int and unresolved["pid"] > 0 and unresolved["error_type"] == "PermissionError"
+            and f"/proc/{unresolved['pid']}/environ" in unresolved["error"], "unreadable transient environment required")
+    same(inventory(root), observed, "failed reader changed while reducing")
+    return {"collection": collection_pin, "collection_status": "FAILED", "inputs": inputs_pin, "inventory": observed,
+            "readout_calls": 0, "elapsed_seconds": failed["elapsed_seconds"], "checkpoint_eligible": False, "readout_eligible": False}
+
+
 def contrasts(states, control):
     result = {}
     for view in ("W0", "W8"):
@@ -539,6 +642,8 @@ def physical_work(failed_work):
 def _reduce_followup(manifest_pin, completed_pin, expected_kind):
     require(expected_kind in ("NATIVE", "INJECTED_CPU_TEST"), "explicit supported evidence kind")
     plan, completed = pinned(manifest_pin), pinned(completed_pin)
+    require("manual_continuation" not in plan and "manual_continuation" not in completed,
+            "terminal no-resume: manual continuation is inadmissible")
     require(plan.get("recovered_b200") is None and plan.get("recovery_elapsed_seconds", 0) == 0, "FAILED outer recovery is inadmissible")
     fields(plan, {"schema": operator.SCHEMA, "status": "READY", "phases": list(operator.PHASES),
                   "counts": operator.COUNTS, "automatic_promotion": False, "no_automatic_retry": True}, "fixed followup plan")
@@ -583,6 +688,7 @@ def _reduce_followup(manifest_pin, completed_pin, expected_kind):
         fit_row, read_row = completed["results"][2 * index:2 * index + 2]
         for row in (fit_row, read_row):
             require("recovery" not in row, "FAILED outer recovery is inadmissible")
+            require(set(row) == {"phase", "stage", "inputs", "collection"}, "closed fresh stage row; no carried primary")
             same(row["collection"]["path"], str(root / f"runs/{phase}_{row['stage']}_outer/collection.json"),
                  "operator stage collection path")
         same(fit_row["inputs"], plan["fit_inputs"][index], "planned fit input pin")

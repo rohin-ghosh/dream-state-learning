@@ -122,6 +122,27 @@ class FollowupFixture:
             tokenizer_factory=lambda config: self.harness.tokenizer, actor_factory=self.harness.actor,
             environment_reader=lambda: self.harness.env, clock=self.harness.clock)
 
+    def failed_reader(self, root, inputs_pin, allocation_pin):
+        inputs, allocation = api.pinned(inputs_pin), api.pinned(allocation_pin)
+        self.write(root / "inputs.input.json", inputs)
+        self.write(root / "allocation.input.json", allocation)
+        self.write(root / "context.json", {"schema": api.OUTER_SCHEMA, "stage": "readout", "state": "B200_NEW_DOSE",
+            "inputs": inputs_pin, "outer_source_sha256": allocation["outer_sha256"], "entry_monotonic": 0})
+        self.write(root / "binding.json", {"deadline_monotonic": 1800, "worker_deadline_monotonic": 1740})
+        observations = {"pre_queue": {"matched": True}, "pre_gpu": {"empty": True, "gpu_uuid": inputs["gpu_uuid"]},
+            "pre_cvd": {"clear": False, "owners": [], "unexpected": [], "reservation_check_status": "BLOCKED",
+                "unresolved": [{"pid": 258553, "error_type": "PermissionError",
+                                "error": "[Errno 13] Permission denied: '/proc/258553/environ'"}]}}
+        for name, value in observations.items():
+            self.write(root / (name + ".json"), {"started_monotonic": 1, "ended_monotonic": 2, "value": value})
+        self.write(root / "failure.json", {"errors": api.PREWORKER_READOUT_ERRORS})
+        return self.write(root / "collection.json", {"schema": api.OUTER_SCHEMA + "/collection", "stage": "readout",
+            "state": "B200_NEW_DOSE", "status": "FAILED", "errors": api.PREWORKER_READOUT_ERRORS, "worker_identity": None,
+            "returncode": None, "gpu_released": False, "stage_inventory": {}, "completed_sha256": None,
+            "retries": 0, "automatic_promotion": False, "full_contract_released": False, "elapsed_seconds": 6,
+            "inputs": inputs_pin, "allocation_file_sha256": allocation_pin["sha256"], "outer_source_sha256": allocation["outer_sha256"],
+            "observations": observations, "files": api.inventory(root)}, seal=True)
+
     def build(self, seed=1):
         root = self.harness.root / f"seed{seed}"
         followup = root / "followup"
@@ -217,6 +238,13 @@ class ReducerTests(unittest.TestCase):
         self.assertEqual(result["total_physical_work"], dict(fits=5, updates=1800, presentations=7200, readout_calls=96))
         with self.assertRaises(ValueError):
             api.reduce_followup(binding["manifest"], binding["completed"])
+        for manual in (None, {"fit_collection": result["fits"]["B200_NEW_DOSE"]["collection"]}):
+            plan = api.pinned(binding["manifest"])
+            original = copy.deepcopy(plan)
+            altered = self.builder.write(binding["manifest"]["path"], {**plan, "manual_continuation": manual})
+            with self.subTest(manual=manual), self.assertRaisesRegex(ValueError, "terminal no-resume"):
+                api.reduce_followup(altered, binding["completed"], expected_kind=KIND)
+            self.builder.write(binding["manifest"]["path"], original)
 
     def test_missing_and_wrong_phase_branches_rejected(self):
         binding = self.builder.build()
@@ -513,11 +541,103 @@ class ReducerTests(unittest.TestCase):
             "stage": "fit", "elapsed_seconds": 110, "results": [{"collection": collector_pin}]})
         with self.assertRaisesRegex(ValueError, "completion/release"):
             api.fit_result(collector_pin, "B200_NEW_DOSE", inputs_pin, plan["entry"]["allocation"], material, KIND, parent)
-        work = [api.physical_work(failed) for failed in (prospective["prior_failed_work"], current["prior_failed_work"], current["prior_failed_work"])]
+        excluded_root = self.builder.harness.root / "failed_reader_attempt"
+        excluded_fit_root = excluded_root / "runs/B200_NEW_DOSE_fit_outer"
+        excluded_receipt = self.builder.fit(excluded_fit_root, "B200_NEW_DOSE", inputs_pin, material,
+                                            api.pinned(plan["acquisition_receipt"]))
+        excluded_fit = self.builder.outer(excluded_fit_root, "fit", "B200_NEW_DOSE", inputs_pin, plan["entry"]["allocation"])
+        read_inputs = self.builder.write(excluded_root / "inputs/B200_NEW_DOSE_readout_inputs.json",
+            {**api.pinned(plan["runtime_c0_inputs"]), "fit_receipt": excluded_receipt})
+        failed_reader = self.builder.failed_reader(excluded_root / "runs/B200_NEW_DOSE_readout_outer", read_inputs, plan["entry"]["allocation"])
+        excluded_stop = {"status": "STOPPED", "phase": "B200_NEW_DOSE", "stage": "readout", "elapsed_seconds": 111,
+            "no_automatic_retry": True, "error": "failed/unreleased stage; no retry", "results": [
+                {"phase": "B200_NEW_DOSE", "stage": "fit", "inputs": inputs_pin, "collection": excluded_fit},
+                {"phase": "B200_NEW_DOSE", "stage": "readout", "inputs": read_inputs, "collection": failed_reader}]}
+        excluded_stopped = self.builder.write(excluded_root / "stopped.json", excluded_stop)
+        excluded_plan = {**prospective, "root": str(excluded_root), "initial_outer_seconds": 528, "remaining_seconds": 6672}
+        excluded_manifest = self.builder.write(excluded_root / "manifest.json", excluded_plan)
+        self.builder.write(excluded_root / "started.json", {"manifest": excluded_manifest, "started_at": 0})
+        fresh = {**plan, "repair": repair, "prior_failure": excluded_stopped, "prior_failure_kind": "readout-preworker",
+            "prior_failed_work": dict(fits=3, updates=600, presentations=2400, readout_calls=0),
+            "initial_outer_seconds": 639, "remaining_seconds": 6561,
+            "pins": [*plan["pins"], excluded_manifest, excluded_stopped, excluded_fit, failed_reader]}
+        before = api.inventory(excluded_root)
+        excluded = api.prior_failure_evidence(fresh, expected_kind=KIND)
+        self.assertEqual(api.inventory(excluded_root), before)
+        self.assertEqual(excluded["elapsed_seconds"], 339)
+        self.assertEqual(excluded["attempt_elapsed_seconds"], 111)
+        self.assertEqual(excluded["cumulative_failed_work"], fresh["prior_failed_work"])
+        self.assertEqual(excluded["partial_fit"]["collection_status"], "COMPLETED")
+        self.assertTrue(excluded["partial_fit"]["excluded_from_primary"])
+        self.assertFalse(excluded["partial_fit"]["readout_eligible"])
+        self.assertFalse(excluded["partial_fit"]["checkpoint_eligible"])
+        self.assertEqual(excluded["failed_readout"]["readout_calls"], 0)
+        self.assertEqual(api.pinned(excluded_fit)["status"], "COMPLETED")
+        self.assertEqual(api.pinned(failed_reader)["status"], "FAILED")
+        self.assertEqual(excluded["earlier_failure"]["partial_fit"]["failure_kind"], "collector-freshness-validation")
+        for changes in ({"prior_failed_work": prospective["prior_failed_work"]}, {"prior_failure_kind": "preworker"},
+                        {"manual_continuation": None}):
+            with self.subTest(changes=changes), self.assertRaises(ValueError):
+                api.prior_failure_evidence({**fresh, **changes}, expected_kind=KIND)
+        for changes in ({"results": excluded_stop["results"][:1]}, {"results": excluded_stop["results"] * 2},
+                        {"elapsed_seconds": 105}):
+            changed_stop = self.builder.write(excluded_stopped["path"], {**excluded_stop, **changes})
+            with self.subTest(changes=changes), self.assertRaises(ValueError):
+                api.prior_failure_evidence({**fresh, "prior_failure": changed_stop,
+                    "pins": [*plan["pins"], excluded_manifest, changed_stop, excluded_fit, failed_reader]}, expected_kind=KIND)
+        self.builder.write(excluded_stopped["path"], excluded_stop)
+        truncated = {**excluded_plan, "prior_failure": stopped_pin, "prior_failed_work": current["prior_failed_work"],
+                     "pins": current["pins"], "initial_outer_seconds": 418, "remaining_seconds": 6782}
+        truncated_manifest = self.builder.write(excluded_manifest["path"], truncated)
+        self.builder.write(excluded_root / "started.json", {"manifest": truncated_manifest, "started_at": 0})
+        with self.assertRaisesRegex(ValueError, "must follow diagnosed collector failure"):
+            api.prior_failure_evidence({**fresh, "pins": [*plan["pins"], truncated_manifest, excluded_stopped,
+                                                         excluded_fit, failed_reader]}, expected_kind=KIND)
+        self.builder.write(excluded_manifest["path"], excluded_plan)
+        self.builder.write(excluded_root / "started.json", {"manifest": excluded_manifest, "started_at": 0})
+        completed = api.pinned(binding["completed"])
+        carried = copy.deepcopy(completed)
+        carried["results"][0]["collection"] = excluded_fit
+        carried_pin = self.builder.write(binding["completed"]["path"], carried)
+        with self.assertRaisesRegex(ValueError, "stage collection path"):
+            api.reduce_followup(binding["manifest"], carried_pin, expected_kind=KIND)
+        self.builder.write(binding["completed"]["path"], completed)
+        work = [api.physical_work(failed) for failed in (fresh["prior_failed_work"], current["prior_failed_work"], current["prior_failed_work"])]
         self.assertEqual({key: sum(row[key] for row in work) for key in api.MAX_PHYSICAL_WORK}, api.MAX_PHYSICAL_WORK)
         bad_plan = self.builder.write(binding["manifest"]["path"], {**plan, "recovered_b200": {"original_collection": collector_pin}})
         with self.assertRaisesRegex(ValueError, "recovery is inadmissible"):
             api.reduce_followup(bad_plan, binding["completed"], expected_kind=KIND)
+
+    def test_preworker_readout_failure_rejects_worker_bytes_and_raw_drift(self):
+        binding = self.builder.build(0)
+        plan, completed = api.pinned(binding["manifest"]), api.pinned(binding["completed"])
+        inputs_pin = completed["results"][1]["inputs"]
+        inputs, allocation = api.pinned(inputs_pin), plan["entry"]["allocation"]
+        root = self.builder.harness.root / "excluded_reader"
+        pin = self.builder.failed_reader(root, inputs_pin, allocation)
+        failed = api.pinned(pin)
+        result = api.preworker_readout_evidence(pin, inputs_pin, allocation, inputs)
+        self.assertEqual(result["readout_calls"], 0)
+        self.assertFalse(result["checkpoint_eligible"])
+        for changes in ({"worker_identity": {"pid": 258553}}, {"returncode": 0}, {"status": "COMPLETED"},
+                        {"stage_inventory": {"completed.json": {}}},
+                        {"errors": [{**api.PREWORKER_READOUT_ERRORS[0], "phase": "post_cvd"}, api.PREWORKER_READOUT_ERRORS[1]]},
+                        {"observations": {**failed["observations"], "pre_cvd": {
+                            **failed["observations"]["pre_cvd"], "unbound": True}}}):
+            changed = self.builder.write(pin["path"], {**failed, **changes}, seal=True)
+            with self.subTest(changes=changes), self.assertRaises(ValueError):
+                api.preworker_readout_evidence(changed, inputs_pin, allocation, inputs)
+        marker = root / "readout/raw_call.json"
+        self.builder.write(marker, {"modelcalls": 1})
+        changed = self.builder.write(pin["path"], {**failed,
+            "files": {name: entry for name, entry in api.inventory(root).items() if name != "collection.json"}}, seal=True)
+        with self.assertRaisesRegex(ValueError, "worker or unexpected stage bytes"):
+            api.preworker_readout_evidence(changed, inputs_pin, allocation, inputs)
+        marker.unlink()
+        marker.parent.rmdir()
+        self.builder.write(pin["path"], failed, seal=True)
+        with self.assertRaisesRegex(ValueError, "checkpoint/input"):
+            api.preworker_readout_evidence(pin, inputs_pin, allocation, {**inputs, "fit_receipt": None})
 
 
 if __name__ == "__main__":
