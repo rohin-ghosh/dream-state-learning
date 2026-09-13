@@ -835,3 +835,31 @@ CLI bounds collection300s. Collect once; preserve any failure/partial artifact.
 Retrieve archive and its .validation.json, verify all member hashes on VM.
 Singer01a0985a-00ef-7ff1-bd4d-344b3eccf576 owns six manuscript files through
 SEQ121; don't stage until EDITSTOP/review. Main owns notebook/Git/native.
+
+## September13 01:34UTC continuation — original probe done, clarification LIVE
+
+SEQ122 original protocol32calls COMPLETE/collectedonce/released, all91capsule
+members verified. Publiccontract counts per4TRY/QUIZ/record/revision:
+OFF0/4/4/0, AUTH0/1/3/1; allEOS, zero limits. Counts do not isolate absent
+trained ability: originalwakeprompt omits exactforecastgrammar and includes a
+competingquizreminder. Original run/evidence stays immutable; no fit selected.
+
+LIVE separate clarifiedpromptcontrol on node3GPU0: controller286769,
+launcher286693, actualstart1789263195.7814035,1500scontroller+300scollection.
+Runtime /tmp/astra_birth_protocol_clarified_run_20260913.py
+7467092c10f1f9301f5d3457139a965d4168ca6310ece4e38b5ce24c0a910a66.
+Root~/astra_diagnostics/astra_birth_protocol_clarified_seed0_20260913_attempt1;
+plancceacca734e74cb86383099b3a7e4ee45fbe923485933204f600c0768faff46b.
+Samecounts/labels/publicfacts/seed/caps/scorers; uniformgrammar appended to
+12wakeprompts, fourrecordrequests unchanged. Main/native49testsPASS. After
+exit0 and ownedrelease, collectONCE to fresh
+/tmp/astra_protocol_clarified_seed0_20260913_attempt1.tgz using newruntime,
+same nativeinterpreter/source9fPYTHONPATH and root/pinflags. Do not readpartial
+scores or mutate live dependencies. Canonicalprotocolmemo has exact rationale.
+
+Amperev2raw birth comparison DONE: headline/twin/registeredmatch,10explained
+fieldretentiondifferences on twodualNEXTrows,0unexplained. No independentnative
+decode/officialorigin/cleanclaim. Singer sixmanuscriptfiles throughSEQ121
+EDITSTOP; Einstein01a09830-c71d-7fa1-802a-1ddf4dfdf463 reviewsconsistency now.
+Arendt contingent16rowprotocoloverlay CPUpreparation only, nofitselected.
+Rulesfile remains unrelateddirty. Missionincomplete; noapproval/kill.
