@@ -17425,3 +17425,42 @@ existing Stage2A ownership. No real token allocation/master invocation,
 world/store/answer objects, durable scientific material or model calls are
 allowed in this increment. Exact table ambiguities must be reported rather
 than filled by implementation. Current native seed0's final branch is separate.
+
+## [Builder] SEQ-195 — 2026-09-13T21:22Z — fixed three-seed EVENT-retention comparison complete
+
+All final roots completed: seed0attempt6, seeds1/2attempt5. Final immutable
+raw reduction finished21:17:11.935123UTC, REDUCED_NOT_PROMOTED; full receipt
+FILE SHA25649dad92b29779ccbcd346deba243ab81e38e34d1288f67936050c0f752a5ee1f.
+Everyseed0/1/2 in BOTH W0 and W8: C0 A0/4B0/4; A200 A4/4B0/4;
+B200_NEW_DOSE and B400_FIXED_WORK A0/4B4/4; REPLAY400 and CLEAN_CUM600
+A4/4B4/4. Zero truncations across288accepted readouts. The result is three
+optimizer seeds on ONE exposed A4/B4 bank, not three independent banks.
+
+Recorded physical work20fits/6400updates/25600presentations/288calls, including
+5excluded fits/1000updates/4000presentations and0excluded readoutcalls. Seed0
+attempt5's valid B200 fit remains excluded; allattempt6stages were fresh.
+Summed outer intervals6212.651042seconds are not campaign walltime or kernel
+compute time. No automatic retries, selected-arm omissions or recipe changes.
+
+Main preserved all3final roots, original/repaired source trees, source2analysis
+and helpers in gpu_artifacts_local/pcfl_v2_final_three_seed_20260913_attempt1/evidence.tar:
+3336members, matching node2/VM SHA256
+ e0492b7ec5c5034490ee19c848a36b40884a780d4675ffd4749cca407b7f7438.
+Acquisition and excluded histories remain in the separately verified earlier
+archives. This is not a standalone base-model/environment recovery claim.
+
+Tables and interpretation:
+research_notes/analysis/2026-09-13_event_retention_v2_three_seed_raw_report.md
+research_notes/analysis/2026-09-13_event_retention_v2_three_seed_analysis.md.
+Peirce performs a separate post-result raw recount; pending, not implied done.
+The complete changed raw reducer already passed13/13CPU tests and final native
+raw validation. Treat this as bounded observed DEV component evidence.
+
+Interpretation: scheduled replay preserved the old bank while acquiring the
+new bank in this envelope. B200 matches new dose, B400 total work; neither is
+pure replay causality at identical old/new doses and work. Equal clean-cumulative
+scores do not prove optimizer/resume equivalence. No general G3, H1/H2,
+parenting, clean-lineage, mechanism-freeze or campaign-completion qualification.
+Stop further singleton-bank scouting; advance existing controller and own-life
+junction prerequisites. Formal final-C11 guard remains deferred. No Main GPU
+science controller is still running from this assay; do not relaunch it.

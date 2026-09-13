@@ -1,4 +1,37 @@
-# Astra restart handoff — September 13, 2026, 20:54 UTC
+# Astra restart handoff — September 13, 2026, 21:22 UTC
+
+## Current state — SEQ-195 final retention comparison COMPLETE
+
+No Main GPU job remains from this assay. Seed0attempt6 and seeds1/2attempt5
+all completed; CPU watcher270191 finished the combined raw reduction at
+2026-09-13T21:17:11.935123UTC. Do not relaunch any controller named below.
+Final reduction FILE SHA25649dad92b29779ccbcd346deba243ab81e38e34d1288f67936050c0f752a5ee1f.
+For each of3optimizer seeds, in W0/W8: C0 A0/B0, A200 A4/B0,
+B200/B400 A0/B4, REPLAY400/CLEAN_CUM600 A4/B4 (denominators4each).
+One exposed8event bank,288calls,0truncations; not general G3/H1/H2/parenting.
+
+Full final-root/source archive onVM:
+gpu_artifacts_local/pcfl_v2_final_three_seed_20260913_attempt1/evidence.tar,
+3336members, SHA256e0492b7ec5c5034490ee19c848a36b40884a780d4675ffd4749cca407b7f7438.
+Reduction.json in that same directory; earlier acquisition/failure archives
+remain required. Raw report and analysis are in research_notes/analysis/
+2026-09-13_event_retention_v2_three_seed_{raw_report,analysis}.md.
+Peirce01a09c56-a66c performs independent post-result raw recount; pending.
+
+Next critical work is Stage2A controller construction then adopted TSJ-v4,
+not another singleton/rank/prompt assay. Candidate wire/session and synthetic
+allocator are implemented/tested; full task/store/target/null construction is
+not. Symbolic TSJ phase ledger and independent JSON checker are implemented
+and CPU-tested only, not two complete TSJ implementations or preparation GO.
+Newton01a09c83 owns only Stage2A module/test for the next symbolic role-key
+inventory increment; preserve his uncommitted work. Other code workers closed.
+Preserve unrelated dirty gpu/codex/dream_state.rules and unreviewed junction
+draft. All formal final-C11 guard work stays deferred per Rohin.
+
+The overall research mission remains ACTIVE and incomplete: no integrated
+parent-removal campaign, full substrate freeze, or full manuscript completion
+is established by this result. Builder replies to Rohin46/47 are in notebook
+20:38/20:57 entries; no thesis/invariant or feedback-channel change was made.
 
 ## Live seed0 attempt6 — supersedes pending-launch snapshots below
 
