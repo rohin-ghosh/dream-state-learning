@@ -103,6 +103,13 @@
 
 ## Critical execution order
 
+Calendar parallelism does not change scientific order: the already prepared
+full-response birth pair is running as `EXPLORATORY_PRE_Q0`, but its outcome
+cannot tune Q0 or seed a claim-bearing Level-2 child. Q0 remains the separate
+deadline paper gate. A scientific birth must be recreated from a fresh root
+after Q0 is terminal and must pass its own exact/held/complementarity/interface/
+locality gates; Q0 does not validate the different birth objective.
+
 1. Run the prospectively closed complementary Q0/locality diagnostic as the
    noncompensatory conditional-behavior slice of Level-1 birth. It must acquire
    both opposite maps on exact and held surfaces while preserving native action,
