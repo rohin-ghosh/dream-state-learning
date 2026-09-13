@@ -1,5 +1,6 @@
 """Separate, finite C0-only diagnostic; never a full v2.2 release or fit path."""
 from collections import defaultdict
+from collections.abc import Mapping
 import copy
 import hashlib
 import json
@@ -71,7 +72,7 @@ def _render(tokenizer, messages):
     require(type(text) is str and text, "rendered text required")
     ids = native.token_ids(tokenizer.encode(text, add_special_tokens=False))
     templated = tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True)
-    if isinstance(templated, dict):
+    if isinstance(templated, Mapping):
         templated = templated.get("input_ids")
     require(ids and ids == native.token_ids(templated), "template/encode mismatch")
     return text, ids

@@ -1,5 +1,6 @@
 """Only injected CPU backends/synthetic tokenizers; never native execution."""
 import copy
+from collections import UserDict
 import hashlib
 import json
 from pathlib import Path
@@ -326,6 +327,26 @@ class ZeroFitTests(unittest.TestCase):
         self.tokenizer.name_or_path = self.actor_config["model_path"]
         with self.assertRaises(FileNotFoundError):
             driver.measure_tokenizer(self.plan, self.tokenizer, driver.tokenizer_binding(self.actor_config))
+
+
+class RenderMappingTests(unittest.TestCase):
+    def test_batch_encoding_mapping_is_unwrapped(self):
+        class MappingTokenizer(Tokenizer):
+            def apply_chat_template(self, messages, tokenize, add_generation_prompt):
+                result = super().apply_chat_template(messages, tokenize, add_generation_prompt)
+                return UserDict({"input_ids": result, "attention_mask": [1] * len(result)}) if tokenize else result
+
+        messages = [{"role": "user", "content": "fixed text"}]
+        self.assertEqual(driver._render(MappingTokenizer(), messages), driver._render(Tokenizer(), messages))
+
+    def test_mapping_token_mismatch_still_rejected(self):
+        class DamagedTokenizer(Tokenizer):
+            def apply_chat_template(self, messages, tokenize, add_generation_prompt):
+                result = super().apply_chat_template(messages, tokenize, add_generation_prompt)
+                return UserDict({"input_ids": result + [1]}) if tokenize else result
+
+        with self.assertRaisesRegex(ValueError, "template/encode mismatch"):
+            driver._render(DamagedTokenizer(), [{"role": "user", "content": "fixed text"}])
 
 
 if __name__ == "__main__":

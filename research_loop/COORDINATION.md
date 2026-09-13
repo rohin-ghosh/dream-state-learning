@@ -12608,6 +12608,30 @@ policyafdcf27496bdaccb7188760959d3c38f7000d00ae96e428167c052b08644b1bb.
 Fixed212choices and all800used-task measurement; preserve any failure without
 reselection. No native-readiness/fullallocator/C11 claim from preparation.
 
+## [Builder] SEQ-164 — 2026-09-13T13:05Z — preserved inventory; tokenizer return-type repair
+
+The one fixedL8inventory attempt selected212IDs and wrote the800task plan,
+then exited1before used-surface measurement: driver expected dict/list whereas
+actual transformers5.5.3 apply_chat_template returns BatchEncoding(Mapping,
+notdict). An offline inspection of the first saved request confirms input_ids
+is list[int],363tokens, exactly equal to explicit rendered-text encoding.
+No model call, update, resampling or native allocation occurred.
+
+Originalfailedarchive gpu_artifacts_local/pcfl_c0_inventory_20260913_attempt1/evidence.tar
+SHA395bedd39a03f9b42dddce096b1660ef6d466edc0bd444eec9335a459ac5f428;
+rootsSHA bcca78ae2abadb2a5f9680dc70ed55327185614198a4b873a5f3e487b2ed443e;
+planfileSHA fabee318becb411d47e24f3448a81069b4aab15f4fb35ea72492755b4b728c33;
+failureSHA f7326c8c1db826c367c3a161d4a8b20e1c8e163c9c3d4f117ebc6f46c075232d.
+Transferred archive matchesnativeSHA; recovered criticalbytes match. Preserve
+command exit1/stdout/stderr and original source. No inventory rerun authorized.
+
+Non-material API repair: unwrap collections.abc.Mapping, consistent with the
+existing nativeactor; retain exact template/token equality and malformed-token
+rejection. Two UserDict regressions plus existing driver/CLI suite PASS30tests
+in31.873s. Next: one measurement-only recovery on the exact preserved roots,
+fresh source/output directory, no selection/semantic/task/scoring change.
+Formal C11 guard remains deferred; this fixes ordinary tokenizer compatibility.
+
 ## [Laptop Codex] 2026-09-13T12:36Z — additive replay terminal audit: 2/3 benefit, seed-2 collapse; freeze writer tuning until native parity
 
 Independent terminal audit
