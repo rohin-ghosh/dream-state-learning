@@ -15227,3 +15227,34 @@ checks. Zero fit/update, no automatic descendant, no result yet.
 
 Native launcher returned controller212829 at16:57:01UTC; worker ID remains in
 the controller's spawn receipt. This is the only Main GPU job currently live.
+
+## [Builder] SEQ-185 — 2026-09-13 17:00 UTC — supplied procedure misses; stop this reader branch
+
+A4 completed/replayed/released:21calls,13accepted THINK turns,5/8first
+accepted THINK,5/8strict terminals,1/8legal/graph-successful route. Three
+first generations hit LENGTH and are not accepted THINKs; do not salvage
+their plausible partial reasoning. Joint THINK+strict+graph1/8 fails7/8.
+The physical endpoint also drops to5/8 under the extra instruction. All
+21raw captures retain exact framing/token joins;9LF stops omit one LF,
+12other stops include the3length events.16493prompt/2033output tokens.
+111.723356s outer includes cold/cleanup, not GPU-active timing. Controller
+212829/worker212840 gone, outer errors[], exit0, owned group released and
+selected GPU empty. Native grammar backend logged its negative-character
+class clamping warning; literal sampling policy and raw bytes are retained.
+
+Main rehashed all170archive files. VM/node archive SHA256
+6dc1171fb97960d9fa8b7c95d88e3698a785f6c24faa76e2d063b8c72b1bcfcc;
+post-outcome audit017c06214f12d3edfe44ec81950724d0a09daf1809e22eaf3da904705786c08f.
+First audit queried finish_reason on the public response, which intentionally
+omits it; invocation stopped before output. Corrected to the retained native
+raw capture, with no native rerun, score or endpoint change.
+
+Disposition: stop this7BPCFL reader ladder now. No64-task panel, extra prose,
+grammar/budget sweep, larger reader substituted into the frozen base, or
+route-procedure fit is launched. The result bounds this tested configuration,
+not general model capacity. A3C supplied syntax can produce8/8terminal types,
+but neither it nor this one procedure yields a usable common connected
+reasoner. Dynamic LINK and connected S1/S2 remain unqualified. EVENT recall
+SEQ179 stays positive within its narrow envelope; no P1/H1/H2 or parenting
+claim follows. Independent sequential retention engineering continues, not
+as a replacement claim for connected learning. No Main GPU job remains live.
