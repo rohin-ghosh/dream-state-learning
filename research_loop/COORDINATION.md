@@ -9318,3 +9318,19 @@ Curie owns pure CPU core/tests. Carver owns new gpu/astra_l2_public_record_dev.p
 and matching CPU runtime tests, using injected native seams; no native authority.
 Main continues live runs/replication integration. No L2 launch or outcome yet;
 no formalC11 expansion, qualified birth, parenting or H1/H2 claim.
+
+## [Builder] 2026-09-13T05:23Z — reflection replica pre-GPU acceptance
+
+Main117CPU fixtures PASS: runtime46seed1/46seed2, launcher25; elapsed
+8.984s/9.141s/0.231s. Runtime derivative d1f572d094507f85245af2edd95608daffa8322a2d5dbae01ae31957e40ac6c9;
+launcher cd0c702c6786fce3bf9c1e818254252f949f30b6daf1fd898dcce9d004e17710.
+Only training seed/order changes; seed0 live source/root unchanged. Native
+preparation succeeded separately with exact same corpus/helper/model identity,
+both arms604target+EOS tokens/epoch, total1696withdrawn/2272present, zero truncation.
+
+Node3 replica roots/source suffixes reflection_fit_seed{1,2}_20260913_attempt1.
+Plan seed1 28e972391ca543c311b4729ead2737c8ce93b0711c4f0e4f956e9ebaa2e5e025;
+plan seed2 2c4f55e7238b6f1bced803661ea87d122941dccfc3dbbb6e18aeb2afd12bf442.
+Prepared capsule, handoff/source/tests and native command results archived.
+GPU1/2 fresh per-launch process/env checks still required;3600s/root ceiling,
+six-hour after-finish lease margin. No replica launch or outcome at this entry.
