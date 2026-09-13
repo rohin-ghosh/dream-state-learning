@@ -1,4 +1,16 @@
-## Current superseding snapshot — 2026-09-13 12:47 UTC
+## Current superseding snapshot — 2026-09-13 13:00 UTC
+
+SEQ163actualoffline profile4308encodings complete/archived, no model/GPU calls.
+ScopedC0 fixedL8inventory policy prospectively selected(d6b50c5a); original
+fullallocator unchanged, provisionalmixedlengthIDs unqualified. Driver/CLI
+Main28CPUtestsPASS; profiler20PASS. Descartes owns inventory; Parfit outer.
+Await actual800usedtaskmeasurement, manifest and release before native calls.
+RA/RB fullmate qualification remains pending; see render-scope clarification.
+Six-fileSEQ162manuscript independentlyaccepted/committed0dc79d4f;UNSENT.
+No MainGPUjob live, noOLDrepeat selected; simplehygiene now/formalguardfinalC11.
+MissionACTIVE/incomplete; exact current paths/hashes inHANDOFF.
+
+## Historical superseded snapshot — 2026-09-13 12:47 UTC
 
 SEQ162 complete (824c9131): matching recorded initial conditions/loss/RNG,
 256/392 first-gradient hashes differ in instrumented OLD/NEW, zero optimizer

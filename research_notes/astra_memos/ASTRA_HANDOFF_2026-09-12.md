@@ -1,6 +1,37 @@
-# Astra current handoff — 2026-09-13T12:47Z
+# Astra current handoff — 2026-09-13T13:00Z
 
-## CURRENT — September 13 12:47 UTC
+## CURRENT — September 13 13:00 UTC
+
+SEQ163 actual offline tokenizer profile completed once, rc0:4096candidate
+encodings plus212provisional IDs, no weights/model/GPU activity. Archive
+gpu_artifacts_local/pcfl_tokenizer_profile_20260913_attempt1/evidence.tar SHA
+cebca01c184f76818ae41c9025a395c81c6abedf111fb4df3334754c5d63e4c2;
+all6files verified. Small receipts tracked under receipts_20260912/
+astra_pcfl_tokenizer_profile_20260913_attempt1. Raw IDs mix6..12tokens and
+remain unqualified. No rerun. Main prospectively selected separate scopedC0
+fixedL8/first-eligible-salt policy in d6b50c5a, not the original full allocator.
+Exact policy ASTRA_PCFL_C0_INVENTORY_POLICY_2026-09-13.md SHA
+afdcf27496bdaccb7188760959d3c38f7000d00ae96e428167c052b08644b1bb.
+
+Scoped C0 driver and Main CLI committed8aa4a1dc; Main28combinedCPUtestsPASS.
+Tokenizer profiler Main20testsPASS. Descartes currently owns unfinished
+gpu/astra_pcfl_zero_fit_inventory.py plus tests; Parfit owns unfinished
+gpu/astra_pcfl_zero_fit_outer.py plus tests. Do not stage before EDITSTOP.
+No native PCFL model call or GPU allocation yet. Actual800used-task token
+measurement, native manifest and release controller remain critical path.
+Read ASTRA_PCFL_C0_RENDER_SCOPE_2026-09-13.md: within-render checks are not
+full-assay RA/RB mate qualification; keep that obligation pending and avoid
+causal order-only interpretation of cross-template differences.
+
+Manuscript six-file SEQ162 update independently ACCEPT and committed0dc79d4f;
+review/author handoffs archived, collaboratorUNSENT, noPDFbuild. PriorSEQ162
+details below remain current: first-gradient nonidentity, cause/repeatability
+unresolved, zero optimizer steps. NoOLDrepeat selected. No Main GPUjob live.
+Simple hygiene now; formal guard only finalC11. MissionACTIVE/incomplete;
+no freeze/generalG3/P1/H1/H2/clean-ancestry/full-assay qualification.
+
+## Historical superseded snapshot — September 13 12:47 UTC
+
 
 SEQ162 completed and archived at commit 824c9131. OLD/NEW native probes each
 performed one forward/backward and intentionally stopped before any optimizer

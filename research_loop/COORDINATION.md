@@ -12584,3 +12584,15 @@ SEQ161 preserved. No science rerun, PDF build or communication sent. The
 CPU-only tokenizer profileSEQ163 stays in operations evidence, not silently
 promoted into a native or scientific result. Inventory and outer-controller
 engineering proceed in parallel; no Main GPU job is presently live.
+
+### [Builder] 2026-09-13T13:00Z — scoped render qualification limit retained
+
+Advisory source audit confirms fullbinding§5.3 includes RA/RB substitution
+mates. Separate scoped within-render groups do not certify that paired
+obligation; earlier accidental-equality wording must not imply disposal.
+ASTRA_PCFL_C0_RENDER_SCOPE_2026-09-13.md records scope before native output:
+preserve measured cross-render lengths, template-stratify, no causal ordering
+claim, unchanged800tasks/thresholds; original full-assay qualification pending.
+Main wrapper read-only review found no concrete API blocker. Outer must count
+initial tokenizer load before Diagnostic.started and use same-host/boot
+monotonic deadline; Parfit notified. Current HANDOFF/STATE refreshed.
