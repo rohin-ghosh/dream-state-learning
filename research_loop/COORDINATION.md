@@ -15600,3 +15600,70 @@ Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 42; 
 > in COORDINATION.md shortly] okay so level 1 and 0 is connected, but not level 1 and 2, tell me why, why can it not use what it remembers? youve been testing the level 1 memory usage for behcairo and remembering this ole time? hmmm compsoistion sodes not that makes sense becUSE  composion is MCTS, its some sort of skill or soemthing, comptions soudlbe somethign like intra is next token from lora, and then a self reflection skill tha twill sorta be an emergent index that potins it towards the next skill,ykwim its not a literal sense but it explaisn how figurtives the COT willhappen, all this means is we need to bomcbine this with COT which is oing ot be another boudnary as that COT will actually need examples of connectisn to toher skills if im correnct, and then that might be the las thign the set off the flywheel perhap, lmk what you thkna bout this
 
 Relay: queued in the Astra Codex composer via Tab at 17:29Z UTC (the first paste at 17:2x did not queue; composer verified empty after queuing, no duplicate).
+
+## [Independent sequence audit] 2026-09-13 PT — `S_A40` fails acquisition; retention undefined; no warm descendant
+
+Documentation-only terminal audit:
+`research_notes/analysis/2026-09-13_pcfl_sa40_terminal_sequence_audit.md`.
+The eligible attempt-4 fit is authentic: fresh Qwen2.5-7B base, Bank A only,
+40 updates / 160 presentations / 8,400 target tokens, rank8/alpha16/LR3e-5,
+zero truncation/nonfinite batches, base unchanged. Every fit/readout source
+pin and declared file inventory rehashes; the mounted readout adapter is a
+byte-identical three-file checkpoint copy; paired public prompts, prompt token
+IDs, roster, seeds, and engine are identical except for the intended adapter.
+All workers exit0 and outer GPU/queue/CVD releases pass.
+
+Terminal endpoint: `NO_WRITE` is 0/4 for A and B at both W0/W8, all 16 exact
+`MISS`; `S_A40` is also 0/4 for A and B at both W0/W8. All S_A generations
+stop without truncation but are wrong. There is no partial content result:
+0/64 exact non-address fields and zero occurrences of any of the 14 trained
+Bank-A non-address IDs anywhere in the 16 outputs. Instead the adapter changes
+all 16 misses into EVENT-shaped non-refusals: 15 copy the prompt-visible query
+address in the expected prefix, only one parses as a complete false EVENT, and
+15 are malformed. This supports only a negative schema-before-binding safety
+finding, not memory.
+
+Because written Bank A has zero pre-correction successes, no positive item can
+be retained or forgotten: retention is UNDEFINED. No `SEQ_REPLAY`, NEW_ONLY,
+FRESH_MIX, ALL_AVAILABLE, or other warm descendant exists or is eligible.
+No higher-dose rescue under this version. Attempt3 remains ineligible; a new
+acquisition recipe would require a prospective successor. Original material
+remains exposed-DEV, format-assisted, single-root/single-fit, and its formation
+was terminally failed, so no autonomous-formation, chronology, retention,
+generalization, continual-learning, or whole-organism claim follows.
+
+## [Independent NATIVE-STEP red-team] 2026-09-13 PT — STEP is a valid wire, but the existing topology is interface-only
+
+Terminal memo: `research_notes/analysis/2026-09-13_pcfl_native_step_v1_red_team.md`. Deterministic reconstruction from the preserved A3C/A4 root wires proves a public depth-one policy solves the exact smoke `8/8` and the full four-root excluded cube `64/64`: choose a direct-goal edge if present, otherwise choose the edge whose destination has the greatest visible witnessed outdegree. At `S_L` this selects `A` over dead `X`; at `H`, `S_R` over dead `G_L`; at `B`, the direct stated goal. Fixed-first and fixed-last are both `0/8`, so the originally planned nulls would miss the shortcut; port/row reordering cannot repair an order-invariant policy. Both delayed goals share the first four actions, so goal sensitivity exists only at the terminal fork. No registered root/cell/cut/old goal fixes this topology.
+
+Disposition: do not freeze or run `PCFL-NATIVE-STEP-v1` as a prospective-planning ceiling. It may be rebound only as `PCFL-STEP-INTERFACE-v1`, supporting typed irreversible state/action execution or local memory use, with no 64-task prospective promotion. Before any source freeze, use the same static `THINK|STEP P_[A-Z2-7]{10}` LF grammar in native-LoRA, text/service, OFF and controls; never enumerate concrete candidate IDs in one arm only. Validate every STEP against the same witnessed world transitions, terminate invalid actions without retry/help, return only the next CURRENT, and add direct-goal, depth-one-degree, topology-position and LINK-presence nulls alongside fixed/random/order controls. A future claim-bearing STEP topology must prospectively equalize direct-goal/outdegree signatures through depth one and require an early goal-dependent choice; this audit does not authorize that benchmark change. No builder/runtime/model/tokenizer/adapter/GPU/remote state changed.
+## [Retention v2 successor audit] 2026-09-13 PT — replace under-dosed S_A40 with a prospectively dose-anchored accounting triangle
+
+Documentation-only design:
+`research_notes/analysis/2026-09-13_pcfl_event_sequence_retention_v2_successor.md`.
+Read-only node-2 terminal evidence shows eligible `S_A40` completed/released
+but acquired A `0/4` exact at both W0/W8 (B also `0/4`); retention is
+undefined. Fit was40updates/160presentations, final loss2.47545. This does not
+contradict SEQ179's one-life atomic success at200updates/800presentations,
+14/14 versus C0 0/14, final loss0.0001355.
+
+Prospective smallest successor uses the prior-success physical dose rather
+than another adaptive rescue: shared `A200`; warm `B200_NEW_DOSE`; warm
+`B400_FIXED_WORK`; warm `REPLAY400` with800A+800B presentations; and
+`CLEAN_CUM600` from C0 over the exact concatenated A200+REPLAY400 item stream.
+This yields (i) B-dose-matched replay versus new-only, with replay's extra
+compute explicit; (ii) phase2-update/presentation-matched replay versus
+new-only, with B dose explicit; and (iii) exact lifetime-item/order/update-
+matched warm replay versus clean cumulative, isolating the discrete
+checkpoint/fresh-optimizer/RNG boundary package. Five fits,1,800updates,
+7,200presentations, at most96cold calls; expected ~.38A40-hour from measured
+S_A timing, hard aggregate cap2.0A40-hours.
+
+Gates: C0 A/B0/4; A200 A4/4+B0/4; B200 B4/4. Failure stops all descendants
+with no rank/LR/dose/view rescue. If both pass, all final branches run and
+report exact vectors. Warm LoRA+fresh optimizer is mechanically valid only
+when the organism state is defined as LoRA weights; it is not optimizer-state
+continuation and is not the current PCFL vertical's specified clean-base
+cumulative S2. Even a perfect result remains one exposed root/seed and proves
+only bounded singleton EVENT coexistence under scheduled replay—not LINK,
+traversal, generalization, no-harm, parenting, or lifetime improvement.
