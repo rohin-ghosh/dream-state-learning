@@ -14508,3 +14508,51 @@ action was taken by this entry.
 **Codex paper-claim coverage audit (research_notes/analysis/2026-09-13_full_objective_paper_claim_coverage_audit.md), for Rohin:** ladder status at snapshot df6565ff — own action→outcome write: WEAK / bounded partial (SEQ-153/159/161); connected knowledge: MISSING in the current organism; goal-conditioned traversal/expansion: MISSING; reliable lifetime improvement: MISSING (and contradicted by the legacy aggregate); strong evolving-text and terminal-batch controls: MISSING; physical compression contradicted at current scale. Recommended order without making the task easier: (1) the frozen corrected supplied-memory C0 typed THINK/READ qualification (13,056 unique calls, ≤ 9.5 A40-h, no fits); (2) the stage-gated two-root PCFL vertical with authentic child formation, causal link cuts and retention. Astra's current path (interface repairs → EVENT-only own-write) is step 0 of that.
 
 **Fleet:** node 2 GPU 2 fit controller (0 MiB at the instant of the poll — start-up); rest idle. Nudger: Astra active. Laptop chains 4/4. Node-1 mirror complete and verified (15:03). Nothing killed or launched by the watcher.
+
+## [Builder] 2026-09-13T15:57Z — SEQ179 review accepted; required-READ smoke integration
+
+Resumed at d174bb9f and pulled main without overwriting worker-owned changes
+or the unrelated dirty command rules. Independent EVENT review archived at
+`research_notes/astra_memos/receipts_20260912/astra_pcfl_event_only_result_review_20260913.md`
+(SHA256047504e571cd7a726b7e024e4325d0833fe14b1afbbd7d982e38a6819aa4343c).
+It checked all56 captures and378 mirrored files: W8 AUTH14/14 versus C00/14
+is supported, with no blocking discrepancy. Accept only the declared one-bank
+acquisition endpoint. Native nested CPU/CUDA RNG receipt schema and the failed
+first reduction/corrected second reduction remain explicit. No G3, parenting,
+connected-use, C11 or clean-lineage promotion. Manuscript author EDITSTOP
+received for six files; independent bounded manuscript review is running.
+
+Next native work remains the separately scoped READ_REQUIRED_SMOKE, indices
+0,1,16,17,32,33,48,49 in the preserved four-root DEV roster:8 tasks, at most104
+calls, no fits/updates. Added public requirement only; same strict whole-response
+parser and service bytes. Threshold is7/8 joint registered non-MISS READ plus
+strict terminal without invalid/cap failure, zero invalid READs. Do not launch
+READ_REQUIRED_PANEL unless the smoke passes; no A4/full-assay qualification.
+On failure stop prose retries and reassess symmetric structured actions.
+Candidate node2 GPU0; node check found all eight compute inventories empty,
+not itself proof of CVD freedom. Detached outer will recheck node/CVD/queue/GPU
+and exact service exceptions. Node2 end2026-09-21T08:43Z, six-hour margin.
+One-hour stage cap including120-second cleanup; expected minutes from earlier
+interfaces, no unmeasured speedup claim. Exact source/manifest will be pinned
+before launch and the actual controller logged separately.
+
+CPU validation: an initial1-second shell timeout interrupted the invocation;
+no surviving test runner was observed. The next invocation ran76 native/outer
+tests successfully but had two import-loader errors for command/outer due to
+the wrong module path (78 total,88.132s). Corrected invocation with
+PYTHONPATH=tests:. ran22 command/outer tests PASS in35.773s. No code change was
+needed for those invocation errors. Driver worker final receipt still pending;
+no successor GPU job launched at this entry. No approval prompt or curl/wget.
+
+## [Builder] 2026-09-13T15:56Z — clock correction and required-READ CPU gate closed
+
+The preceding15:57Z header was written at15:55:33Z (shell UTC clock); its
+header is ahead of the actual record and remains preserved as an error.
+Lagrange has now EDITSTOPped both scoped driver/test files:32 tests PASS in
+50.937s, exit0, with PYTHONPATH=tests:. Driver SHA256
+7774b59e2015fb0db7befd2054a1cf4adc2c9fe413dacc22b4c1634c37f1a33b;
+test SHA2565840ebb6737c690df7883fe8fb0eee97f04d55b08a16be91a042a4ea1855a0ff.
+Main reviewed the20-line driver delta and its unchanged handshake scorer:
+fixed smoke subset, public READ requirement and size-specific7/8 gate only.
+The preserved roots remain exposed DEV, never training/confirmation material.
+CPU integration gate is now satisfied; native preparation is next.

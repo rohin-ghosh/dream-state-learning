@@ -18,7 +18,15 @@ STAGES = {
     "A2_DIRECT": {"reads": 0, "thinks": 0, "calls": 1},
     "A3_THINK": {"reads": 0, "thinks": 6, "calls": 7},
     "ACTIVE_THINK": {"reads": 12, "thinks": 6, "calls": 19},
+    "READ_REQUIRED_SMOKE": {"reads": 12, "thinks": 0, "calls": 13},
+    "READ_REQUIRED_PANEL": {"reads": 12, "thinks": 0, "calls": 13},
 }
+READ_REQUIRED_STAGES = ("READ_REQUIRED_SMOKE", "READ_REQUIRED_PANEL")
+SMOKE_INDICES = (0, 1, 16, 17, 32, 33, 48, 49)
+READ_REQUIRED = (
+    "Before any ROUTE, you must issue at least one READ. Use only the public START\n"
+    "and exact identifiers returned by memory; never invent a READ address."
+)
 CONTINUE = "CONTINUE: follow the declared turn budgets and commit the final action when ready."
 ROW_SEMANTICS = (
     "EDGE <source> <port> <destination> is a directed transition.\n"
@@ -78,6 +86,8 @@ def build_roster(root_wires, stage):
     system = BASE_SYSTEM + ROW_SEMANTICS + "\n"
     system += READ_API if limits["reads"] else "Local reads are disabled; do not emit READ."
     system += "\n" + (THINK_API if limits["thinks"] else "THINK is unavailable; do not emit THINK.")
+    if stage in READ_REQUIRED_STAGES:
+        system += "\n" + READ_REQUIRED
     projection = "ACTIVE_LINKED_TEXT" if limits["reads"] else "EXACT_WITNESSED_GRAPH"
     tasks = []
     for root in roots:
@@ -95,10 +105,12 @@ def build_roster(root_wires, stage):
                               "queries": copy.deepcopy(queries), "source_rows": copy.deepcopy(rows),
                               "slot_ids": [f"{core.byte_hash(identifier)}/actor/{turn}" for turn in range(limits["calls"])]})
     require(len(tasks) == 64 and len({task["case_id"] for task in tasks}) == 64, "case denominator")
+    if stage == "READ_REQUIRED_SMOKE":
+        tasks = [tasks[index] for index in SMOKE_INDICES]
     return seal({"schema": SCHEMA + "/roster", "stage": stage, "roots": copy.deepcopy(root_wires),
                  "roots_sha256": digest(root_wires), "sources": source_pins(), "tasks": tasks,
                  "limits": {**limits, "turn_tokens": 256, "actor_tokens": 2048, "returned_tokens": 4096,
-                            "input_tokens": 14336, "possible_calls": 64 * limits["calls"]},
+                            "input_tokens": 14336, "possible_calls": len(tasks) * limits["calls"]},
                  "continue": CONTINUE, "material_origin": "RESEARCHER_AUTHORED_EXCLUDED_ROOT_CEILING_NOT_CHILD",
                  "fits": 0, "updates": 0, "full_assay_qualified": False})
 
@@ -224,11 +236,15 @@ def summarize(results, stage, complete):
     gate = successes >= 60
     if stage == "A1_READ_DISCLOSED":
         gate = read_handshakes >= 60 and invalid == 0
+    if stage in READ_REQUIRED_STAGES:
+        denominator, threshold = (8, 7) if stage == "READ_REQUIRED_SMOKE" else (64, 60)
+        gate = len(results) == denominator and read_handshakes >= threshold and invalid == 0
     if STAGES[stage]["thinks"]:
         gate = thought_routes >= 60
     if stage == "ACTIVE_THINK":
         gate = active_routes >= 60 and invalid == 0
-    return {"denominator": 64, "route_successes": successes, "thought_tasks": thought_tasks,
+    return {"denominator": len(results) if stage in READ_REQUIRED_STAGES else 64,
+            "route_successes": successes, "thought_tasks": thought_tasks,
             "served_read_tasks": served_tasks, "invalid_read_tasks": invalid,
             "read_handshake_tasks": read_handshakes, "thought_interface_tasks": thought_interfaces,
             "thought_route_tasks": thought_routes, "active_thought_route_tasks": active_routes,

@@ -27,6 +27,54 @@ class RosterTests(unittest.TestCase):
             driver.validate_roster(plan, plan["sha256"])
         self.assertEqual(self.wires, original)
 
+    def test_old_roster_bytes_unchanged_except_required_source_repin(self):
+        snapshots = {
+            "A1_READ_DISCLOSED": "b9b1cdac002c41c1703b4a75fd2141f3e7baa9c9547d428f422f38eb892042f0",
+            "A2_DIRECT": "128a0cb53fdd719b15b6316196d4837ddfb2e17489ac1da38646ca6166907ad1",
+            "A3_THINK": "6f6dbfc8b3d7cb2789eb3800e711e884e690cf2e155fec104e9b6cae981fa76f",
+            "ACTIVE_THINK": "a5c03d367b1520a494b8bdfb2ba8fbd9eff9f43647b3d338235be583d2c76fa3",
+        }
+        with patch.object(driver, "source_pins", return_value={}):
+            for stage, checksum in snapshots.items():
+                self.assertEqual(driver.build_roster(self.wires, stage)["sha256"], checksum)
+
+    def test_required_read_rosters_change_only_instruction_and_stage_identity(self):
+        original = driver.build_roster(self.wires, "A1_READ_DISCLOSED")
+        instruction = ("Before any ROUTE, you must issue at least one READ. Use only the public START\n"
+                       "and exact identifiers returned by memory; never invent a READ address.")
+        for stage, indices in (("READ_REQUIRED_SMOKE", (0, 1, 16, 17, 32, 33, 48, 49)),
+                               ("READ_REQUIRED_PANEL", tuple(range(64)))):
+            with self.subTest(stage=stage):
+                roster = driver.build_roster(self.wires, stage)
+                self.assertEqual(roster["roots"], self.wires)
+                self.assertEqual(roster["sources"], driver.source_pins())
+                expected_limits = {**original["limits"], "possible_calls": len(indices) * 13}
+                self.assertEqual(roster["limits"], expected_limits)
+                expected = copy.deepcopy([original["tasks"][index] for index in indices])
+                for task in expected:
+                    task["id"] = f"interface/{stage}/{task['case_id']}"
+                    task["slot_ids"] = [f"{driver.core.byte_hash(task['id'])}/actor/{turn}" for turn in range(13)]
+                    task["messages"][0]["content"] += "\n" + instruction
+                self.assertEqual(roster["tasks"], expected)
+                driver.validate_roster(roster, roster["sha256"])
+                for task in roster["tasks"]:
+                    for request in task["queries"]:
+                        self.assertNotIn(request, driver.canonical(task["messages"]).decode())
+
+    def test_required_smoke_selection_or_instruction_drift_rejected(self):
+        original = driver.build_roster(self.wires, "READ_REQUIRED_SMOKE")
+        for change in ("selection", "instruction", "source"):
+            altered = copy.deepcopy(original)
+            if change == "selection":
+                altered["tasks"][0], altered["tasks"][2] = altered["tasks"][2], altered["tasks"][0]
+            elif change == "instruction":
+                altered["tasks"][0]["messages"][0]["content"] += " Use a useful address."
+            else:
+                altered["sources"].pop(str(Path(driver.__file__).resolve()))
+            altered = driver.seal({key: value for key, value in altered.items() if key != "sha256"})
+            with self.subTest(change=change), self.assertRaisesRegex(ValueError, "reconstruction"):
+                driver.validate_roster(altered, altered["sha256"])
+
     def test_exact_paired_graph_and_seeds_and_no_address_enumeration(self):
         direct = driver.build_roster(self.wires, "A2_DIRECT")
         thought = driver.build_roster(self.wires, "A3_THINK")
@@ -100,6 +148,42 @@ class SummaryTests(unittest.TestCase):
         self.assertFalse(driver.summarize(rows, "A3_THINK", True)["stage_gate_passed"])
         self.assertFalse(driver.summarize(rows, "A1_READ_DISCLOSED", False)["stage_gate_passed"])
 
+    def test_required_read_thresholds_are_joint_and_not_graph_gates(self):
+        for stage, count, threshold in (("READ_REQUIRED_SMOKE", 8, 7), ("READ_REQUIRED_PANEL", 64, 60)):
+            with self.subTest(stage=stage):
+                rows = self.rows()[:count]
+                for row in rows:
+                    row.update(success=False, thinks=0)
+                for row in rows[threshold:]:
+                    row["served_reads"] = 0
+                summary = driver.summarize(rows, stage, True)
+                self.assertEqual(summary["denominator"], count)
+                self.assertEqual(summary["read_handshake_tasks"], threshold)
+                self.assertEqual(summary["route_successes"], 0)
+                self.assertTrue(summary["stage_gate_passed"])
+                self.assertFalse(driver.summarize(rows, stage, False)["stage_gate_passed"])
+                self.assertFalse(driver.summarize(rows[:threshold], stage, True)["stage_gate_passed"])
+                rows[0]["served_reads"] = 0
+                self.assertFalse(driver.summarize(rows, stage, True)["stage_gate_passed"])
+
+    def test_required_read_invalid_or_capped_terminal_cannot_supply_joint_gate(self):
+        for stage, count, threshold in (("READ_REQUIRED_SMOKE", 8, 7), ("READ_REQUIRED_PANEL", 64, 60)):
+            for reason in ("INVALID_TURN", "LENGTH", "TURN_CAP", "ACTOR_TOKEN_CAP",
+                           "RETURNED_TOKEN_CAP", "INPUT_TOKEN_CAP"):
+                with self.subTest(stage=stage, reason=reason):
+                    rows = self.rows()[:count]
+                    for row in rows[threshold - 1:]:
+                        row.update(reason=reason, success=False)
+                    summary = driver.summarize(rows, stage, True)
+                    self.assertEqual(summary["served_read_tasks"], count)
+                    self.assertEqual(summary["read_handshake_tasks"], threshold - 1)
+                    self.assertFalse(summary["stage_gate_passed"])
+            rows = self.rows()[:count]
+            rows[-1]["invalid_read"] = True
+            summary = driver.summarize(rows, stage, True)
+            self.assertGreaterEqual(summary["read_handshake_tasks"], threshold)
+            self.assertFalse(summary["stage_gate_passed"])
+
 
 class StageTests(unittest.TestCase):
     @classmethod
@@ -152,6 +236,53 @@ class StageTests(unittest.TestCase):
         result = driver.replay_validate(self.plan, self.plan["sha256"], report, self.tokenizer)
         self.assertTrue(result["local_replay_valid"])
         self.assertFalse(result["native_custody_verified"])
+
+    def test_required_smoke_captures_only_fixed_eight_and_replays(self):
+        self.prepare("READ_REQUIRED_SMOKE")
+        report = self.run_stage()
+        self.assertEqual(report["status"], "COMPLETE")
+        self.assertEqual(len(report["results"]), 8)
+        self.assertEqual(report["calls"], 16)
+        self.assertEqual(report["possible_calls"], 104)
+        self.assertEqual(report["summary"]["denominator"], 8)
+        self.assertEqual(report["summary"]["read_handshake_tasks"], 8)
+        self.assertTrue(report["summary"]["stage_gate_passed"])
+        self.assertFalse(report["full_assay_qualified"])
+        self.assertEqual((report["fits"], report["updates"]), (0, 0))
+        self.assertEqual([row["id"] for row in report["results"]], [task["id"] for task in self.plan["tasks"]])
+        self.replay(report)
+
+    def test_required_panel_captures_64_only_when_explicitly_selected(self):
+        self.prepare("READ_REQUIRED_PANEL")
+        report = self.run_stage()
+        self.assertEqual(report["status"], "COMPLETE")
+        self.assertEqual(report["calls"], 128)
+        self.assertEqual(report["possible_calls"], 832)
+        self.assertEqual(report["summary"]["denominator"], 64)
+        self.assertEqual(report["summary"]["read_handshake_tasks"], 64)
+        self.assertTrue(report["summary"]["stage_gate_passed"])
+        self.replay(report)
+
+    def test_required_smoke_keeps_raw_failures_miss_and_no_read_as_scored(self):
+        self.prepare("READ_REQUIRED_SMOKE")
+        tasks = self.plan["tasks"]
+        self.outputs[tasks[0]["slot_ids"][0]] += "\n"
+        self.finishes[tasks[1]["slot_ids"][0]] = "length"
+        self.outputs[tasks[2]["slot_ids"][0]] = "READ EVENT E_ZZZZZZZZZZ"
+        self.outputs[tasks[3]["slot_ids"][0]] = self.outputs[tasks[3]["slot_ids"][1]]
+        self.outputs[tasks[4]["slot_ids"][1]] += "\n"
+        report = self.run_stage()
+        self.assertEqual(report["status"], "COMPLETE")
+        self.assertEqual(report["summary"]["denominator"], 8)
+        self.assertEqual(report["summary"]["read_handshake_tasks"], 3)
+        self.assertEqual(report["summary"]["invalid_read_tasks"], 1)
+        self.assertFalse(report["summary"]["stage_gate_passed"])
+        self.assertEqual([row["reason"] for row in report["results"][:5]],
+                         ["INVALID_READ", "LENGTH", "ROUTE", "ROUTE", "INVALID_TURN"])
+        self.assertEqual(report["results"][2]["services"][0]["raw"], "MISS")
+        self.assertEqual(report["results"][0]["raw"], self.outputs[tasks[0]["slot_ids"][0]])
+        self.assertEqual(report["results"][1]["slots"][1]["status"], "UNCALLED")
+        self.replay(report)
 
     def test_real_think_read_think_route_prefixes_and_all_denominators(self):
         first = self.prepare()
