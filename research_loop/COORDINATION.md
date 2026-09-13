@@ -9289,3 +9289,16 @@ same paired treatment targets/data/readouts; engine/generation seed stays0.
 Prospective protocol amended; planned3roots/6fits/432calls,3600s/root ceiling,
 3aggregate GPU-hours. CPU/native checks and current vacancy precede any launch.
 Potential placement node3GPU1/2, no reservation asserted. No outcomes inspected.
+
+## [Builder] 2026-09-13T05:16Z — SEQ129 manuscript evidence integrated after review
+
+Galileo updated six canonical manuscript/abstract/claim-map/UNSENT collaborator
+files with all three perception seeds. Carver independently rehashed evidence,
+checked all18cells, preservation of108historical tables and historical abstracts,
+and TeX structure: bounded PASS, no material correction. Main accepted optional
+wording precision in five new sentences: anchor-absent, not prompt-free; generic
+task/schema prompts remain. No counts/metrics/historical results changed.
+SEQ129 supports format transfer after reload, not new semantic record content;
+no fitted12/12operational pass or incremental training-anchor benefit. No H1/H2
+or clean-ancestry promotion. TeX tools unavailable, so no PDF/layout build is
+claimed. Both handoff/review archived; collaborator remains UNSENT.

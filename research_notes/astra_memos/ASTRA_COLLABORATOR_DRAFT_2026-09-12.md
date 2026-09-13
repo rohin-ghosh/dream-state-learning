@@ -1,6 +1,6 @@
 # DRAFT ONLY — unsent collaborator update
 
-**UNSENT — verified SEQ125–127 / C70–C72 update for Main's review.**
+**UNSENT — verified SEQ125–129 / C70–C73 update for Main's review.**
 
 The new Q0 evidence is narrower than a completed writer result. SEQ125's
 forward-accounting `NONREPORTABLE_RUNTIME_ABORT` remains immutable;
@@ -63,16 +63,44 @@ stop, below the192-token cap, and runtime is324.487180s below900s. The bounded
 review reproduces all24 primary decisions on unchanged text and checks65 member
 hashes; I have not rerun the raw scorer or inference. This is n=1, no fit, no
 adapter and disabled LoRA: no observation learning, persistence, general
-perception, L2 or H1/H2 result. At Main's supplied planning cut the separate
-seed0 two-fit/six-matched-readout comparison is live, with independent learner
-replications planned, not reported. No live fitted outcomes enter this draft.
+perception, L2 or H1/H2 result. The separate three-seed fitted comparison is now
+complete through SEQ129, as summarized below.
 Its matched OFF engines enable LoRA without requesting an adapter; this separate
 disabled-LoRA diagnostic is not their numerical substitute.
+
+SEQ128–129 completes all216 responses across learner seeds0/1/2. Each ordinary
+and anchor fit uses the same12 TRAIN targets, four epochs and12 updates; fresh
+readout strict counts out of the same12 DEV situations are OFF absent0/0/0,
+present10/10/10; ordinary absent11/11/11,present9/9/10; anchor-trained
+withdrawn10/9/9,present8/8/8. The frozen secondary whole-fence view already gives
+OFF absent11/12 in every seed. Its eleven correct objects are identical to
+ordinary-fit-absent objects, and the remaining error never becomes correct.
+This is **FORMAT transfer after fresh reload, not new semantic record content**.
+No primary scores are rescued; no fitted cell reaches12/12 operational fidelity.
+There is no training-anchor benefit: withdrawal increments are -1,-2,-2 against
+ordinary practice, and while present -1,-1,-2. Anchor-trained live-anchor
+readouts are8/12 versus matched OFF10/12 in each seed, a local adverse signal,
+not a claim of general anchor harm.
+
+These are descriptive learner-seed comparisons on repeated shared DEV situations,
+not significance tests or extra independent OFF draws. The anchor replaces the
+generic system message; matched target exposure does not match input exposure,
+and user prompts already define the schema/relation mapping. No perfect compiler,
+parent removal, autonomous material quality, long-term retention, clean lineage
+or H1/H2 result follows. The archived independent review (`b1088d75…`) agrees
+with all216 raw decisions and the frozen report; it is a separate post-collection
+check, not blinded replication or native/model-tensor recertification. I have
+not repeated that raw audit. These completed perception results do not change
+Q0's first-update-stop evidence; no live writer outcomes enter this **UNSENT** draft.
 
 Source: `research_notes/astra_memos/ASTRA_Q0_FIRST_UPDATE_STOP_2026-09-13.md`
 and returned separate-replay/bounded-review/custody receipts, bound in C70–C71.
 C72 binds `ASTRA_PERCEPTION_ANCHOR_OFF_2026-09-13.md` and the collection report
 and `astra_perception_anchor_raw_analysis_20260913.md` in `receipts_20260912`.
+C73 binds `ASTRA_PERCEPTION_THREE_SEED_2026-09-13.md`, the frozen
+`astra_perception_three_seed_report_20260913_attempt2.json`,
+`astra_perception_three_seed_review_20260913.md`, accepted manifest and custody
+receipt under the same canonical memo/receipt directories, with exact hashes.
 Main handles independent review, integration and any subsequent operations.
 
 **Historical UNSENT — SEQ122–124 / C66–C69 update; no Q0 result at that cut.**

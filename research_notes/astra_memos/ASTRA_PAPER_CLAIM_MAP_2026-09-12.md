@@ -1,6 +1,6 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
-**Latest verified extension: SEQ125–127 / C70–C72.** SEQ125 remains an
+**Latest verified extension: SEQ125–129 / C70–C73.** SEQ125 remains an
 immutable, nonreportable instrumentation abort. SEQ126 is a reportable
 registered first-quartet stop: three attempted fits, one update each, no
 completed128-update fit or ON readout. AUTH/DERANGED/unary projection passes
@@ -13,7 +13,10 @@ evidence, H1/H2/thesis, author intent, abstracts/tables and canonical appendix
 remain preserved. C72 adds a separate n=1 no-fit OFF contrast: strict passes
 absent0/12 versus present10/12, but secondary supported content11/12 versus10/12
 and11/12 paired objects identical, one worsening. This is raw-format compliance,
-not observation learning; no live fitted outcomes are included. Collaborator
+not observation learning. C73 adds completed three-seed format transfer:
+ordinary anchor-absent strict11/12 per seed matches OFF descriptive whole-fence
+content11/12, not new semantic record content. No fitted12/12 operational pass
+or training-anchor benefit occurs; no live writer outcomes are included. Collaborator
 **UNSENT**. Historical “no Q0 result” statements retain their original cuts.
 
 **Historical bounded extension: SEQ122–124 / C66–C68, prospective identity C69.**
@@ -3084,11 +3087,9 @@ failures are infrastructure failures, not scientific arms.
 There is no fit or adapter, and LoRA is disabled. This is not observation
 learning, learned perception, persistence, general perception, parenting, L2 or
 H1/H2 evidence. The collection report explicitly has `learned_skill_claim=false`
-and `science_pass=null`. At Main's supplied planning cut a separate seed0
-two-fit/six-matched-readout comparison is live, with independent learner
-replications planned; **no live fitted outcomes are included**. A single seed
-would remain exploratory; independent learners and untouched transfer instances
-are needed for broader conclusions. Its matched OFF engines enable LoRA without
+and `science_pass=null`. The separate fitted comparison is now complete across
+three learner seeds through SEQ129 (C73). Untouched transfer instances are still
+needed for broader conclusions. Its matched OFF engines enable LoRA without
 requesting an adapter, so this separate disabled-LoRA OFF diagnostic cannot
 substitute numerically for that comparison. Distinguish learned raw-format
 compliance from prediction/source fidelity rather than revising the primary
@@ -3109,3 +3110,93 @@ All files below are under `research_notes/astra_memos/` unless stated otherwise.
 
 Main retains independent review, integration and operations. Static manuscript
 checks do not turn this no-fit diagnostic into a learning or H1/H2 result.
+
+## C73 — SEQ128–129: completed three-seed record-format transfer, no anchor benefit
+
+### Strict result and descriptive semantic comparator
+
+All216 responses across learner seeds0/1/2 closed before collection, with no
+length finishes. Each ordinary and anchor fit uses the same12 TRAIN targets,
+four epochs and12 updates. Fresh readouts use the same12 DEV situations per
+learner. OFF uses the same LoRA-enabled engine without an adapter request;
+C72's disabled-LoRA diagnostic is not its numerical substitute.
+
+| Fresh readout | Seed0 strict | Seed1 strict | Seed2 strict |
+| --- | ---: | ---: | ---: |
+| OFF, anchor absent | 0 | 0 | 0 |
+| OFF, anchor present | 10 | 10 | 10 |
+| Ordinary fit, anchor absent | 11 | 11 | 11 |
+| Ordinary fit, anchor present | 9 | 9 | 10 |
+| Anchor fit, anchor withdrawn | 10 | 9 | 9 |
+| Anchor fit, anchor present | 8 | 8 | 8 |
+
+The frozen secondary whole-fence view already scores OFF absent11/12 in every
+seed, versus strict0/12; all12 raw outputs contain complete JSON fences.
+All other cells' secondary complete-record counts equal their strict counts.
+The independent review finds the eleven correct OFF-secondary objects identical
+to ordinary-fit-absent objects in every seed. The remaining error changes but
+never becomes correct. Thus the supported gain is **FORMAT transfer after fresh
+adapter reload, not new semantic record content or newly learned perception**.
+No fence stripping or post-hoc repair changes the primary scorer.
+
+No fitted cell reaches the pre-result12/12 operational-fidelity screen. The
+training-anchor increment after withdrawal is -1,-2,-2 correct records relative
+to ordinary practice (mean -1.667/12, range -2 to -1); while present it is
+-1,-1,-2. There is no incremental anchor benefit. Anchor-trained live-anchor
+readouts score8/12 against matched OFF10/12 per seed, meeting the pre-result
+two-net-loss local adverse-signal screen, not establishing general anchor harm.
+
+Ordinary anchor-absent and OFF-secondary readouts each have one prediction and
+one relation error with zero selected-action/outcome errors in every seed.
+Anchor-trained fits introduce one selected-action and one outcome error per
+seed/readout condition, alongside prediction/relation errors. Error categories
+overlap on rows; they cannot be added into a new denominator. The review traces
+the anchor-trained action/outcome error to copying call10's earlier distractor;
+call01's explicit prediction fails universally. These exposed diagnostics are
+not untouched confirmation or new training material; do not repair them post hoc.
+
+### Exposure, review and scientific boundaries
+
+These are descriptive paired learner-seed results, not p-values. Shared DEV
+situations are repeated measurements within learners; deterministic OFF repeats
+are not additional independent draws. The anchor replaces the generic system
+message, not no system. Generic user prompts explicitly define the schema and
+relation mapping, with content already near ceiling. Target exposure matches
+372 target-plus-EOS tokens/epoch, but total input exposure differs (ordinary3024
+versus anchor3444 tokens/epoch); this does not isolate an anchor mechanism.
+
+The recipe does not establish an operationally perfect event-record compiler,
+parent removal, autonomous learning-material quality, long-term retention or
+clean lineage. No parenting, L2, H1/H2 or freeze promotion follows. Do not select
+seed0/checkpoints to hide replica differences or certify these imperfect records
+as safe provenance input. No new prospective module outcome or live writer result
+is included; C70/C71's Q0 first-update-stop evidence is unchanged.
+
+The archived independent post-collection review checks all216 raw responses,
+source-derived targets, decisions, field errors and paired memberships without
+invoking the frozen analyzer; it agrees with the report. This is not blinded
+replication or native/model-tensor recertification. The known inherited label
+`perception_DEV12_anchor_NO_FIT` does not attest fits; the top-level plans specify
+them. The accepted attempt2 manifest fixes a nonexistent source-directory path
+from the preserved failed manifest, without changing raw data, scorer, targets,
+denominators or training source. The returned custody receipt records all three
+collected roots,72 calls/eight stages and210 completion-bound files each. This
+manuscript writer verifies receipt bytes/counts only, not raw responses, weights,
+full capsules or native execution; no rerun or recollection occurred.
+
+### Exact canonical and receipt bindings
+
+All paths below are under `research_notes/astra_memos/`; SHA256 values identify
+file bytes, not canonical-JSON object hashes or compressed-capsule identities.
+
+- Canonical `ASTRA_PERCEPTION_THREE_SEED_2026-09-13.md`, SHA256 `9f9b46563cb8860422f782b901ce523e588be0b9a6fd42c1e50937432f6df502`.
+- Frozen `receipts_20260912/astra_perception_three_seed_report_20260913_attempt2.json`, SHA256 `77818892841c0d56b7ec406befa0ebdfb87e7925148b0b7860b31a0575cf6fef`.
+- Archived independent `receipts_20260912/astra_perception_three_seed_review_20260913.md`, SHA256 `b1088d75b991e21e5fa59f30a949ebb6af74e2990cf310da9722bbfafa548880` (review identity, not a Git revision).
+- Accepted `receipts_20260912/astra_perception_three_seed_manifest_20260913_attempt2.json`, SHA256 `63c2a65b17887d163a3c07128b2f87be08c4c0f465813de9cc02001a48fec448`.
+- Custody `receipts_20260912/astra_perception_three_seed_custody_20260913.json`, SHA256 `97937e0c290f6123a247061ffc8bd25a23b3aa8d935116fb111ce69467357684`.
+
+The memo binds full-capsule identities and the archived per-seed scores; the
+aggregate report retains paired flips, field errors, tokens and timing. Main
+owns Git, integration and operations. The collaborator draft stays **UNSENT**;
+this evidence-only incorporation does not change thesis/invariants or authorize
+external publication.

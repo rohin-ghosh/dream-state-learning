@@ -3,7 +3,7 @@
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
 
-## Latest bounded evidence — SEQ125–127: Q0 stop and OFF format compliance / C70–C72
+## Latest bounded evidence — SEQ125–129: Q0 stop and perception format transfer / C70–C73
 
 The verified September13,2026 UTC extension adds a narrow negative result to
 the throughSEQ124 evidence, not a completed selective-writer qualification.
@@ -77,11 +77,45 @@ cap; runtime is324.487180s below900s. The returned bounded review reproduces24
 primary decisions on unchanged text and checks65 indexed member hashes; this
 manuscript does not rerun inference or raw scoring. This is n=1, no fit, no
 adapter and LoRA disabled: no observation learning, persistence, general
-perception, L2 or H1/H2 evidence. At Main's supplied planning cut the separate
-seed0 two-fit/six-matched-readout comparison is live and independent learner
-replications are planned; **no live fitted outcomes are included**. Its matched
-OFF engines enable LoRA without requesting an adapter, so this disabled-LoRA
-diagnostic cannot substitute numerically for those controls.
+perception, L2 or H1/H2 evidence. The separate fitted comparison is now complete
+through SEQ129 below. Its matched OFF engines enable LoRA without requesting an
+adapter, so this disabled-LoRA diagnostic cannot substitute numerically for
+those controls.
+
+**SEQ128–129: three-seed strict record-format transfer, no anchor benefit.**
+All216 responses across learner seeds0/1/2 completed before collection. Each
+entry below is correct out of the same12 DEV situations after fresh readout;
+ordinary and anchor fits share12 TRAIN targets, four epochs and12 updates.
+
+| Fresh readout | Seed0 strict | Seed1 strict | Seed2 strict |
+| --- | ---: | ---: | ---: |
+| OFF, anchor absent | 0 | 0 | 0 |
+| OFF, anchor present | 10 | 10 | 10 |
+| Ordinary fit, anchor absent | 11 | 11 | 11 |
+| Ordinary fit, anchor present | 9 | 9 | 10 |
+| Anchor fit, anchor withdrawn | 10 | 9 | 9 |
+| Anchor fit, anchor present | 8 | 8 | 8 |
+
+OFF absent already has **11/12 supported complete records** in the frozen
+descriptive whole-fence view in every seed. The eleven correct objects are
+identical to ordinary-fit-absent objects; the remaining error never becomes
+correct. The gain is **FORMAT**, not newly learned semantic record content.
+Primary scoring is unchanged. No fitted cell reaches the12/12 operational
+screen. Training with the anchor yields withdrawal increments -1,-2,-2 against
+ordinary practice, not a benefit; while present the increments are -1,-1,-2.
+Anchor-trained live-anchor readouts are8/12 versus matched OFF10/12 in every
+seed, meeting the local adverse-signal screen, not establishing general harm.
+
+These are descriptive paired learner-seed results on repeated shared DEV
+situations; deterministic OFF repeats are not extra independent draws. The
+anchor replaces a generic system message, not no system; target exposure is
+matched but input exposure differs. Generic user prompts already specify the
+schema/relation mapping. Fresh adapter reload supports strict format transfer,
+not an operationally perfect compiler, parent removal, long-term retention,
+autonomous material quality, clean lineage or H1/H2 promotion. The archived
+independent post-collection review (`b1088d75…`) agrees with the frozen report;
+it is not blinded replication or native/model-tensor recertification. This
+writer checks returned evidence only. Q0 first-update-stop evidence is unchanged.
 
 Source: `research_notes/astra_memos/ASTRA_Q0_FIRST_UPDATE_STOP_2026-09-13.md`;
 returned separate replay, bounded review and custody receipts under
@@ -90,8 +124,12 @@ the exact hashes and distinguish numerical replay from metadata/custody review.
 For C72, `research_notes/astra_memos/ASTRA_PERCEPTION_ANCHOR_OFF_2026-09-13.md`
 and `receipts_20260912/astra_perception_anchor_raw_analysis_20260913.md` under
 that memo directory bind the primary/secondary distinction and collection report.
+C73 binds `ASTRA_PERCEPTION_THREE_SEED_2026-09-13.md` and the archived
+`astra_perception_three_seed_report_20260913_attempt2.json`,
+`astra_perception_three_seed_review_20260913.md`, accepted manifest and custody
+receipt in the same memo/receipt directories, with exact SHA256 identities.
 Earlier “no Q0 result” statements below describe their historical evidence cuts,
-now extended by the limited SEQ125–127 dispositions above.
+now extended by the limited SEQ125–129 dispositions above.
 
 ## Historical bounded evidence — SEQ122–124 and prospective identity / C66–C69
 

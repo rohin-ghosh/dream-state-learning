@@ -1,6 +1,6 @@
 # FIRST SPRINT DRAFT — companion abstract
 
-**Current abstract-level evidence update: SEQ125–127 / C70–C72.** The closed
+**Current abstract-level evidence update: SEQ125–129 / C70–C73.** The closed
 root1 Q0 assay now has a reportable first-update stop, not a completed binding
 result. SEQ125's `NONREPORTABLE_RUNTIME_ABORT` remains immutable;
 the repaired SEQ126 terminal is `EARLY_XOR_QUARTET_STOP_AUTH`, qualified by
@@ -37,14 +37,32 @@ no invalid-score rescue occurs. The procedural anchor replaces the model's
 tokenizer-inserted generic helper system message; it is not no-system versus
 system or an appended anchor. Fixed absent-then-present order and n=1 bound the
 interpretation. With no fit, no adapter and LoRA disabled, this is not learned
-perception, persistence, general perception, L2 or H1/H2 evidence. At Main's
-supplied planning cut a separate seed0 two-fit/six-matched-readout comparison is
-live and independent learner replications are planned; no live fitted outcomes
-are included. This diagnostic cannot replace that study's matched OFF engines,
+perception, persistence, general perception, L2 or H1/H2 evidence. The separate
+three-seed fitted comparison is now complete through SEQ129. This diagnostic
+cannot replace that study's matched OFF engines,
 which enable LoRA without requesting an adapter. C72 binds the canonical
 `ASTRA_PERCEPTION_ANCHOR_OFF_2026-09-13.md`, collection report and bounded
 `astra_perception_anchor_raw_analysis_20260913.md`; the historical abstract
 below is unchanged.
+
+SEQ128–129 closes216 responses across three learner seeds after matched ordinary
+and anchor practice (12 TRAIN targets, four epochs,12 updates). Strict counts
+out of the same12 DEV situations, in seed0/1/2 order, are OFF absent0/0/0 and
+present10/10/10; ordinary absent11/11/11 and present9/9/10; anchor-trained
+withdrawn10/9/9 and present8/8/8. OFF absent already scores11/12 in every seed
+under the frozen descriptive whole-fence view; its eleven correct objects are
+identical to ordinary-fit-absent objects. Thus fresh-reload gains are **FORMAT
+transfer, not new semantic record content**. No fitted cell meets12/12 operational
+fidelity and no training-anchor benefit appears (withdrawal increments -1,-2,-2
+versus ordinary). Shared DEV situations and deterministic OFF repeats are not
+independent observations; user prompts supply the schema/relation mapping and
+input exposure differs despite matched targets. This does not establish parent
+removal, retention, autonomous material quality, clean lineage or H1/H2. C73
+binds the canonical `ASTRA_PERCEPTION_THREE_SEED_2026-09-13.md`, frozen report,
+custody and archived independent review (`b1088d75…`): a separate post-collection
+raw check, not blinded replication or native/model-tensor recertification.
+Q0's first-update-stop interpretation remains unchanged; no live writer results
+are included.
 
 **Historical evidence extension: SEQ122–124 and prospective public identity
 (C66–C69).** Both existing manuscript abstracts are preserved; the
