@@ -14852,6 +14852,22 @@ Main reviewed the diff and accepts only this prospective8-task/56-call framing
 smoke on node2 GPU0, one-hour outer cap/120s cleanup, no fits, no automatic
 panel/A4. Same graph/messages/CONTINUE/seeds as selected original A3 cases.
 
+## [Builder] 2026-09-13T16:29:43Z — LAUNCH eight-case A3B newline-framed reasoning
+
+Node2 GPU0 detached controller205552 launched A3B_NEWLINE_FRAMED_SMOKE;
+run `/localhome/local-rohing/astra_diagnostics/pcfl_interface_a3b_newline_framed_smoke_20260913_attempt1`.
+Source4ca790d546d1b93b1499de25440ccc1db5997def at
+`/tmp/astra_pcfl_a3b_source_20260913_attempt1`; source tarSHA256
+cf6ee7375ebedd1956d7c46b47c561aaae0cbd8189b3d12d59a287b8eb5e1e2c matched
+VM/node. Manifest FILE SHA256
+9b39c966f41f4bf87544b1e032352cdf2b7c82218d0f171483a0893061e202e7;
+allocation217fb3ba2b31f919e47c9bb4e911157970ba02cae98b1adab156e2c19895f1ec.
+Offline preparation8tasks/max542initial tokens; no fit/update. Same declared
+8-task/56-call bound, sixTHINK/oneROUTE per task, one-hour outer cap/120s cleanup.
+Compute inventory empty before start; outer retains CVD/queue/GPU/lease checks.
+Do not infer a result from launch, or launch a panel/A4 automatically. Main
+will collect raw native framing, replay and owned release. No approvals asked.
+
 ## [Independent A2/A3 result audit] 2026-09-13T15:42Z — exact graph did not compose; requested THINK never entered the typed loop
 
 Terminal read-only audit:
