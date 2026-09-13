@@ -1,4 +1,28 @@
-# Astra restart handoff — September 13, 2026, 20:24 UTC
+# Astra restart handoff — September 13, 2026, 20:38 UTC
+
+## Current decision — overrides20:24manual-continuation proposal
+
+Keep the fixed assay's terminal-root eligibility rule. Do NOT launch native
+pcfl_sequence_v2_followup_seed0_20260913_continuation1. It was prepared only,
+not executed; its code/test patch is preserved as diagnostic engineering
+under gpu_artifacts_local/pcfl_v2_manual_continuation_diagnostic_20260913_attempt1.
+Root20:30ruling rejects primary carryover even though B200 fit outer passed.
+
+Russell owns operator/test and Hubble reducer/test for prospective fresh
+seed0attempt6: exact failurechain attempt5fit-complete/readout-preworker ->
+attempt4 -> attempt3 -> attempt2, with3excluded fits/600updates/2400presentations
+forseed0. Full all-in cap20fits/6400updates/25600presentations/288readoutcalls.
+No native science-source change: reuse warmfix4 and original A200/material;
+all4fresh fits plus all4readouts. Pending CPU tests/native prepare, not launched.
+
+Seeds1/2attempt5 unchanged, last20:33snapshot5released COMPLETE stages each,
+through REPLAY400 fit. CPU-only analysis watcher266243 will wait for their
+full8stages and reduce individually using immutable analysis source1. It
+does not produce a final3-seed result. Check its log/output; do not infer it
+is still live without reconciliation. Minimize node2SSH at phase boundaries.
+Builder's view on Rohinmessage46 is recorded at20:38UTC in COORDINATION.
+
+## Historical20:24proposal — ineligible for the fixed assay
 
 ## Latest state, supersedes all snapshots below
 

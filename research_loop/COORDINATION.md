@@ -17082,3 +17082,63 @@ Reading: Well, our level-1-to-level-2 loop (amortised, and somewhat open?) is ac
 **Message 46:** relayed 20:28Z with a request for the builder's view; no `[Builder -> Rohin]` answer yet.
 
 **Fleet:** node 2 2/8 busy (attempt-5 seeds 1/2); nodes 1/3 and A100 idle. Daemons: astra_nudge=1 fable_fill=1 courier=1 occ_off=yes. Laptop chains 4/4. Nothing launched or killed by the watcher.
+
+## [Builder -> Rohin] 2026-09-13T20:38Z — view on message46, without changing the thesis
+
+I agree with the distinction you are making. Level1 supplies usable functions;
+it need not itself be a new post-training algorithm. The distinctive question
+is whether development teaches the child to operate its own experience-to-
+learning loop, and whether that learned process still helps after the parent
+leaves. The current writer/controller component work is preparation for that
+test, not a substitute for it.
+
+I would phrase the paper's hypothesis as: development of a closed-loop
+self-learning process, with both contextual behavior and persistent adapter
+updates, followed by parent-free evaluation on new experience. I would not
+yet phrase it as parenting being necessary, or as the loop necessarily
+improving its own learning efficiency. Those need their own comparisons.
+The parented-by-sleep-enabled2x2, pre-adaptation measurements, and adaptation
+slopes on unseen tasks remain the decisive comparison rather than isolated
+memory accuracy or fluent reasoning text.
+
+Two qualifications I would preserve. First, decreasing plasticity is a
+schedule hypothesis, not something success scarcity alone establishes. We
+need retention, acquisition, and useful exploration measured together; a
+schedule that protects old behavior while preventing new learning is not
+the desired result. Second, amortization in this paper should first mean
+the individual child retains useful learning-process behavior without live
+parenting. Reusing a developmental recipe or transferring curated experience
+to a new lineage is a separate, interesting form of amortization, not evidence
+of the first one. I would keep lineage/rejuvenation and population resource
+allocation as explicitly separate follow-up questions, not current milestones.
+
+Operationally: finish the bounded retention comparison, qualify the smallest
+controller/reader composition, then test the child-authored two-SLEEP loop and
+parent-free developmental contrast. Current evidence is not yet a parenting
+or self-improving-learning result. This is my interpretation of message46,
+not a new architecture ruling or an amendment to H1/H2 or the invariants.
+
+## [Builder] 2026-09-13T20:38Z — prospective seed0 rerun; manual continuation remains diagnostic only
+
+After pulling Root's20:30ruling, Main keeps the original terminal-root rule
+for this fixed assay. The manual continuation implementation/native prepare
+is diagnostic engineering only: no controller/readout/fit was launched.
+Do not launch pcfl_sequence_v2_followup_seed0_20260913_continuation1; its
+prepared manifestad718240b0bbbe267c86894e44f50929cc95d1f1b30268dfad5e3a3076c5ef27
+does not establish science eligibility. The unexecuted source/test patch is
+preserved onVM under pcfl_v2_manual_continuation_diagnostic_20260913_attempt1,
+SHA256b593e72f1e3e923f377e7624d0a0f17483174347b98cf734e007ac9698539f87.
+Its56operator tests,3focused reducer tests and static review concern the
+engineering distinction only, not permission to change this assay's topology.
+
+Russell/Hubble now add the exact attempt5fit-complete/readout-preworker
+failure chain to prospective attempt6 and remove primary carryover. Seed0
+will run all4fits/readouts from original measured A200/C0. Full physical cap
+becomes20fits/6400updates/25600presentations/288calls; all excluded work stays
+visible. Science fit/outer sources, dose, seeds and controls remain unchanged.
+Seeds1/2 attempt5 remain independent and unmodified. At20:33UTC both had
+five COMPLETE, error-free, released stages through REPLAY400 fit. CPU-only
+analysis watcher266243 will reduce their completed8-stage results, with no
+pooled-three-seed claim before the remaining seed completes. It uses the
+previously terminal-tested immutable analysis source, not mutable checkout
+code. No additional resource exception or model retry has been introduced.
