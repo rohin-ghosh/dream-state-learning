@@ -12470,3 +12470,52 @@ goal creation.
 **Reproducibility drift (unresolved, read-only audit underway):** the fresh MEMORY_ONLY arm does not reproduce yesterday's EXTRA_MEMORY (old exact 13/7/7, held 47/46/42) although the initialised tensors and the memory occurrence/order/step schedule are verified identical; loss and final-tensor drift observed. Until the cause is found (nondeterministic kernels, dtype path, thread count are the usual suspects), paired comparisons should be read within a run, not across days. This matters for the paper's replication story more than any single result today.
 
 **Fleet:** 0 of 31 at 12:32. Nudger: Astra active. Laptop chains 4/4. Node-1 lease ends 2026-09-14 23:14 UTC. Nothing killed or launched by the watcher.
+
+## [Builder] SEQ-162 — 2026-09-13T12:39Z — seed0 native first-backward gradients diverge despite equal captured starting state and loss
+
+Main executed the prospectively bounded diagnostic on node2GPU0 after the
+953823cc pre-GPU gate (pushed after preserving both sides of a notebook-only
+merge infa2f4d4f). OLD workerPID147381, shell147373, started12:34:38UTC,
+rc0 after53s. NEW workerPID147989, shell147981, started12:35:50UTC,
+rc0 after54s, with fresh nvidia-/proc/queue vacancy check before NEW. No
+timeout or kill. Exactly one fresh process per path; zero optimizer steps,
+adapter saves or readouts. Both parents verified unchanged. This did not
+rerun either scientific fit or alter the frozen historical trainer bytes.
+
+The one completed, pinned receipt-only comparison finds:
+
+- same initial trainable tensors, first encoded input/mask, recorded settings,
+  fresh optimizer/defaults and captured environment;
+- equal captured Python/CPU/CUDA RNG records at all six boundaries, and
+  observers verified not to consume RNG;
+- exactly equal first loss, OLD=NEW=1.907779335975647;
+- different gradient DATA hashes for256/392 trainable tensors; all compared
+  gradient shape/dtype/device metadata agree. Base gradients absent and
+  trainable parameters unchanged before stopping both paths.
+
+This localizes the first observed mismatch in these instrumented executions
+to the backward result, not input/initialization/first-loss mismatch. It does
+NOT identify a kernel, checkpoint, autograd or nondeterminism cause; equal
+RNG endpoint hashes do not prove identical internal execution. The observer
+and OLD/NEW execution paths can affect timing/allocation. No within-path
+repeatability test, later-step parity or clean causal attribution is supplied.
+Baseline drift remains unresolved. No H1/H2/G3/freeze/clean-lineage claim.
+
+OLD receipt SHA25624c5bbf31aa735e06ee8f27786dceb784afe6e271385934ba23ca01aef2386a0;
+NEW d4ad625def96bc6abc3b25c476f20ccf3c8ca99c4730775244fbc79f021ba44c;
+comparison4e52301965fe1b2142fe46aac741cca0a6f64bcd45a45f7875616d79630f2120.
+Full archive gpu_artifacts_local/additive_native_parity_20260913_attempt1/evidence.tar,
+SHA2563fd33489a8c0f7eebe0566307f8404421628339e84a111642b3536a80feefad0,
+45members/614400bytes/zero new adapters; every extracted byte verified. All
+small native receipts/raw phase observations and Main archive check are also
+tracked under receipts_20260912/additive_native_parity_seed0_20260913_attempt1.
+The NEW frozen cleanup's failure.json records the intentional stop after
+backward, not a failed scientific fit; it is preserved alongside success
+receipt. Comparison ran once; do not repeat collection/scoring or the attempt.
+
+No Main GPU job remains live from this diagnostic; final nvidia query showed
+no compute processes. PCFL bound-world/actor/formation integration continues.
+The just-merged independent laptop proposal agrees on X->Z/q_D/privateG;
+Main's explicitly recorded result literal/private-observation custody remains
+the selected prospective binding, not silently swapped for a candidate.
+Optional goal-switch sidecar is not added to the current queue.
