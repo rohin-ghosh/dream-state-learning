@@ -17464,3 +17464,20 @@ parenting, clean-lineage, mechanism-freeze or campaign-completion qualification.
 Stop further singleton-bank scouting; advance existing controller and own-life
 junction prerequisites. Formal final-C11 guard remains deferred. No Main GPU
 science controller is still running from this assay; do not relaunch it.
+
+## [Builder] 2026-09-13T21:27Z — finite symbolic role inventory now matches v3 commitments
+
+Newton completed the finite role-string inventory for the four bound v3
+material domains, without allocating opaque tokens or constructing world/
+store/answer objects. All28per-kind/domain commitments match v3 section3.4:
+ALL totals birth_train223528, dose_intervention15904, dose_chain63504,
+generic_canary12. These are symbolic roles, not executed model cases or new
+scientific observations. Reserved/unbound domains are rejected.
+
+Main ran50tests PASS1.883s (39candidate plus11unchanged Stage0). Source
+1e750b7ae8151f122dbde6abc0ecb9e7b779af43b0fa0240fea1a6584741c40a;
+existing parser/session/allocation definitions remain unchanged. Module stays
+PARTIAL_SOURCE_ONLY; outputs SYMBOLIC_SOURCE_ONLY, all science gates false.
+No canonical-master invocation, durable scientific material, tokenizer, model,
+GPU, or new score-bearing run. Full registry/world/target/null construction
+and independent scientific-material checking remain required next work.

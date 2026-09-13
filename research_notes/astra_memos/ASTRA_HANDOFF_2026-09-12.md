@@ -23,8 +23,11 @@ not another singleton/rank/prompt assay. Candidate wire/session and synthetic
 allocator are implemented/tested; full task/store/target/null construction is
 not. Symbolic TSJ phase ledger and independent JSON checker are implemented
 and CPU-tested only, not two complete TSJ implementations or preparation GO.
-Newton01a09c83 owns only Stage2A module/test for the next symbolic role-key
-inventory increment; preserve his uncommitted work. Other code workers closed.
+Newton01a09c83 completed the Stage2A symbolic role-key inventory increment:
+all28v3hash/count commitments match, Main50CPUtests pass. No real token or
+material root was created. Its code is ready to commit with this checkpoint;
+next missing pieces are registry/world/target/null construction and checking.
+Other code workers closed; Peirce's final raw recount remains pending.
 Preserve unrelated dirty gpu/codex/dream_state.rules and unreviewed junction
 draft. All formal final-C11 guard work stays deferred per Rohin.
 

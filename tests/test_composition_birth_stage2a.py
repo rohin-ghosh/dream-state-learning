@@ -44,6 +44,170 @@ def turn(current_session, raw, **overrides):
     return current_session.turn(raw, **values)
 
 
+class SymbolicInventoryTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        with patch.object(source, "allocate_opaque_namespace", side_effect=AssertionError("allocation forbidden")), \
+                patch.object(source, "allocation_u32", side_effect=AssertionError("serials forbidden")), \
+                patch.object(source.base64, "b32encode", side_effect=AssertionError("tokens forbidden")), \
+                patch.object(source, "PassiveRegistry", side_effect=AssertionError("store forbidden")), \
+                patch.object(source, "Session", side_effect=AssertionError("session forbidden")):
+            cls.inventories = {domain: source.enumerate_symbolic_role_inventory(domain) for domain in
+                               ("birth_train", "dose_intervention", "dose_chain", "generic_canary")}
+
+    def test_exact_memo_commitments_and_independent_counts_hashes(self):
+        memo = Path(__file__).resolve().parents[1] / "research_notes/analysis/2026-09-13_m_combine4_stage2a_binding_successor_v3.md"
+        raw = memo.read_bytes()
+        self.assertEqual(sha256(raw).hexdigest(), source.SYMBOLIC_MEMO_SHA256)
+        expected = {}
+        for line in raw.decode("utf-8").splitlines():
+            if line.startswith("| "):
+                cells = [cell.strip().strip("`") for cell in line.strip("|").split("|")]
+                if len(cells) == 4 and cells[0] in self.inventories:
+                    expected[cells[0], cells[1]] = (int(cells[2].replace(",", "")), cells[3])
+        self.assertEqual(len(expected), 28)
+        literal_counts = {
+            "birth_train": (2080, 61512, 49216, 12288, 49216, 49216, 223528),
+            "dose_intervention": (2080, 3840, 3072, 768, 3072, 3072, 15904),
+            "dose_chain": (1040, 17344, 13888, 3456, 13888, 13888, 63504),
+            "generic_canary": (2, 2, 4, 0, 4, 0, 12),
+        }
+        for domain, inventory in self.inventories.items():
+            self.assertEqual(tuple(inventory.counts.values()), literal_counts[domain])
+            combined = []
+            for kind, roles in inventory.roles_by_kind.items():
+                derived = (len(roles), sha256(b"\n".join(role.encode("ascii") for role in roles)).hexdigest())
+                self.assertEqual(derived, expected[domain, kind])
+                self.assertEqual(derived, source.SYMBOLIC_COMMITMENTS[domain][kind])
+                self.assertEqual(derived, (inventory.counts[kind], inventory.hashes[kind]))
+                combined.extend(roles)
+            derived_all = (len(combined), sha256("\n".join(sorted(combined)).encode("ascii")).hexdigest())
+            self.assertEqual(derived_all, expected[domain, "ALL"])
+            self.assertEqual(derived_all, (inventory.counts["ALL"], inventory.hashes["ALL"]))
+
+    def test_ordered_seven_component_unique_domain_separated_strings_only(self):
+        observed = set()
+        for domain, inventory in self.inventories.items():
+            self.assertEqual(inventory.status, "SYMBOLIC_SOURCE_ONLY")
+            self.assertEqual(inventory.memo_sha256, source.SYMBOLIC_MEMO_SHA256)
+            self.assertEqual(inventory.domain, domain)
+            self.assertEqual(tuple(inventory.roles_by_kind), ("node", "query", "event", "route", "port", "receipt"))
+            for kind, roles in inventory.roles_by_kind.items():
+                self.assertIsInstance(roles, tuple)
+                self.assertEqual(roles, tuple(sorted(roles)))
+                self.assertEqual(len(roles), len(set(roles)))
+                self.assertTrue(observed.isdisjoint(roles))
+                observed.update(roles)
+                for role in roles:
+                    parts = role.split("/")
+                    self.assertEqual(len(parts), 7)
+                    self.assertEqual(parts[0], domain)
+                    self.assertEqual(parts[-1], kind)
+                    self.assertTrue(role.isascii())
+                    self.assertNotIn("M2A", role)
+        self.assertEqual(source.STATUS, "PARTIAL_SOURCE_ONLY")
+        self.assertFalse(any(source.SCIENCE_GATES.values()))
+
+    def test_birth_family_and_member_specific_roles_only_where_created(self):
+        roles = self.inventories["birth_train"].roles_by_kind
+        nodes = set(roles["node"])
+        queries = set(roles["query"])
+        for role in ("p00/a23/23/state/-/node", "p03/b05/05/state/-/node",
+                     "p01/pred_m0/00/mismatch/-/node", "p01/surp_m1/12/mismatch/-/node",
+                     "p25/pred_m1/06/mismatch/-/node", "p29/surp_m0/13/mismatch/-/node"):
+            self.assertIn("birth_train/" + role, nodes)
+        for role in ("p00/b00/00/state/-/node", "p03/a00/00/state/-/node",
+                     "p03/b06/06/state/-/node", "p00/pred_m0/00/mismatch/-/node"):
+            self.assertNotIn("birth_train/" + role, nodes)
+        for role in ("p09/s/10/miss_m0/-/query", "p09/s/14/miss_m1/-/query",
+                     "p19/s/08/miss_m0/-/query", "p19/s/08/miss_m1/-/query",
+                     "p23/s/23/miss_m1/-/query", "p25/surp_m1/06/recover2_m1/3/query"):
+            self.assertIn("birth_train/" + role, queries)
+        self.assertIn("birth_train/p00/a23/23/index/-/route", roles["route"])
+        self.assertIn("birth_train/p25/surp_m1/06/recovery_m1/3/event", roles["event"])
+        miss_pairs = {role.split("/")[1] for role in queries if role.split("/")[4].startswith("miss_")}
+        mismatch_pairs = {role.split("/")[1] for role in nodes if role.split("/")[4] == "mismatch"}
+        self.assertEqual(miss_pairs, {"p09", "p13", "p19", "p23"})
+        self.assertEqual(mismatch_pairs, {"p01", "p03", "p05", "p07", "p25", "p27", "p29", "p31"})
+
+    def test_intervention_worlds_have_start_queries_and_no_corrective_roles(self):
+        roles = self.inventories["dose_intervention"].roles_by_kind
+        worlds = {role.split("/")[1] for role in roles["node"]}
+        expected = {f"{transition}_k{index}" for transition in ("seek", "prospect", "check", "continue")
+                    for index in range(8)}
+        self.assertEqual(worlds, expected)
+        self.assertIn("dose_intervention/check_k7/w07/07/state/-/node", roles["node"])
+        self.assertIn("dose_intervention/continue_k7/s/23/recover/3/query", roles["query"])
+        for kind in ("query", "route", "event", "port", "receipt"):
+            for role in roles[kind]:
+                self.assertEqual(role.split("/")[2], "s")
+                self.assertIn(role.split("/")[4], ("index", "useful", "recover"))
+
+    def test_chain_recovery_uses_scored_goal_and_member_specific_surprise_hub(self):
+        roles = self.inventories["dose_chain"].roles_by_kind
+        self.assertIn("dose_chain/h04/w05/08/recovery_m0/3/event", roles["event"])
+        self.assertIn("dose_chain/h04/w05/16/recovery_m1/3/event", roles["event"])
+        self.assertIn("dose_chain/h12/w01/12/recover2_m1/0/query", roles["query"])
+        self.assertIn("dose_chain/h00/h07/23/useful/3/event", roles["event"])
+        for kind in ("query", "event", "port", "receipt"):
+            corrective = [role.split("/") for role in roles[kind]
+                          if role.split("/")[4].startswith(("recovery_", "recover2_"))]
+            self.assertEqual(len(corrective), 64)
+            self.assertEqual({parts[1] for parts in corrective},
+                             {"h04", "h05", "h06", "h07", "h12", "h13", "h14", "h15"})
+            self.assertTrue(all(parts[2].startswith("w") for parts in corrective))
+        self.assertFalse(any(role.split("/")[2].startswith("w") for role in roles["route"]))
+
+    def test_canary_identifier_absences_and_read_only_results(self):
+        inventory = self.inventories["generic_canary"]
+        self.assertEqual(inventory.roles_by_kind["route"], ())
+        self.assertEqual(inventory.roles_by_kind["receipt"], ())
+        worlds = {role.split("/")[1] for entries in inventory.roles_by_kind.values() for role in entries}
+        self.assertEqual(worlds, {f"c{index:02d}" for index in range(12)})
+        self.assertEqual(inventory.roles_by_kind["node"], (
+            "generic_canary/c00/canary/-/target/-/node", "generic_canary/c01/canary/-/target/-/node"))
+        with self.assertRaises(TypeError):
+            inventory.roles_by_kind["node"] = ()
+        with self.assertRaises(FrozenInstanceError):
+            inventory.status = "GO"
+        mutable = {kind: list(reversed(entries)) for kind, entries in inventory.roles_by_kind.items()}
+        checked = source.validate_symbolic_role_inventory("generic_canary", mutable)
+        mutable["node"].clear()
+        self.assertEqual(checked, inventory)
+        self.assertEqual(source.enumerate_symbolic_role_inventory("generic_canary"), inventory)
+
+    def test_duplicate_missing_extra_cross_domain_and_rebound_roles_rejected(self):
+        inventory = self.inventories["generic_canary"]
+        nodes = inventory.roles_by_kind["node"]
+        changes = (
+            (nodes[0], nodes[0]), nodes[:-1],
+            nodes + ("generic_canary/c12/canary/-/target/-/node",),
+            (nodes[0].replace("generic_canary", "dose_chain"), nodes[1]),
+            (nodes[0].replace("/target/", "/state/"), nodes[1]),
+            (nodes[0] + "\n", nodes[1]),
+        )
+        for changed in changes:
+            with self.subTest(changed=changed), self.assertRaises(ValueError):
+                source.validate_symbolic_role_inventory("generic_canary", dict(inventory.roles_by_kind, node=changed))
+        for kind_change in ("missing", "extra"):
+            changed = dict(inventory.roles_by_kind)
+            if kind_change == "missing":
+                del changed["node"]
+            else:
+                changed["unknown"] = ()
+            with self.assertRaisesRegex(ValueError, "symbolic_kind_inventory_mismatch"):
+                source.validate_symbolic_role_inventory("generic_canary", changed)
+        with self.assertRaisesRegex(ValueError, "duplicate_symbolic_role"):
+            source.validate_symbolic_role_inventory("generic_canary", dict(inventory.roles_by_kind, node=(nodes[0], nodes[0])))
+
+    def test_unbound_reserved_and_unspecified_domains_fail_without_expansion(self):
+        for domain in ("confirmation_reserved", "writer_reserved", "birth_confirmation", "unknown", None, []):
+            with self.subTest(domain=domain), self.assertRaisesRegex(ValueError, "unbound_symbolic_domain"):
+                source.enumerate_symbolic_role_inventory(domain)
+        with self.assertRaises(TypeError):
+            source.enumerate_symbolic_role_inventory()
+
+
 class NamespaceAllocationTests(unittest.TestCase):
     def setUp(self):
         self.inputs = {
