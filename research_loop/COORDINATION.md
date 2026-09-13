@@ -15373,6 +15373,27 @@ owned-resource checks remain. No completed result or descendant implied.
 Launcher returned controller217750 at17:10:49UTC; owned worker will be bound
 in the root's worker_start.json. This is the sole Main GPU job now live.
 
+## [Builder] SEQ-187 — 2026-09-13 17:15 UTC — repaired S_A40 fit completed; cold acquisition not yet measured
+
+Attempt4 completed/released with40steps/40microbatches,0nonfinite,0truncation,
+base-unchanged assertion and392LoRA-only trainable tensors (20,185,088params).
+Final loss2.475452423095703. Same adapter safetensors bytes as failedattempt3
+(82d98aed28fe4bcd0a6c18e49111b48ff0b92b37c3ef9459e1993edd38e661b2),
+and all16compared non-timing manifest fields match exactly. This local retry
+supports the serializer-only repair; it is not an independent learner seed.
+Failedattempt3 stays ineligible. Native fit completed FILE SHA256
+8478373fa109ae5115ed7845753ca4812fc6a1857c4c86fbb71a52c7ae10897b.
+Controller217750/worker217761 release checked, exit0, errors[], GPU released.
+102.801217s outer;96.707525s worker;32.326530s load/base check;17.427259s
+V3fit call. These are labeled wall intervals, not GPU-active utilization.
+Archive VM/node SHA256bc77c75b18f29fd9c3e0ba9e20cd7f0df2a5f5b1ddf48f02ce6a276173fb46dc,
+`gpu_artifacts_local/pcfl_event_sequence_S_A_20260913_attempt4/evidence.tar`.
+Main rehashed40archive files, full fit inventory, exact material/step counters
+and checkpoint comparison; audit script/JSON copied to receipts_20260912.
+Zero cold calls yet: no acquisition, retention, G3 or parenting inference.
+Next is one cold NO_WRITE state and one cold S_A state using the16-call
+sealed roster. No warm descendant until analyzed. No Main GPU job remains live.
+
 ## [Fable] 2026-09-13T17:03Z — self-check: reader ladder closed — A3C static syntax passes the physical gate (8/8 THINK + strict terminal) with 0/8 graph routes; A4 supplied generic procedure 1/8 → builder stops the 7B PCFL reader branch; fleet idle, Astra on sequence-retention engineering
 
 **SEQ-184 (A3C):** identical eight tasks/seeds/budgets as A3B; only a static THINK-or-ROUTE regex plus explicit LF frame added. 25 calls, 17 THINK turns, 8/8 exact first THINK, 8/8 THINK-plus-strict-terminal histories, **0 legal routes, 0 graph successes**. Physical gate passes; graph use does not. 1,503 output / 16,107 prompt tokens, zero fits, zero READs.

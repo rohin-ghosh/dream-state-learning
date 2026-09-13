@@ -221,3 +221,53 @@ simple provenance, state isolation, resource ownership and lease rules remain.
 Node1 preservation deadline is September13 23:14UTC; node1 expires
 September14 23:14UTC. Existing mirrors are reported verified; reconcile new
 evidence before that deadline. No approvals requested on this resumption.
+
+## Restart delta — September13,2026 17:15UTC, through SEQ187
+
+This supersedes pending-work descriptions above. Reader ladder STOPPED:
+SEQ184 A3C25calls,17THINKs,8/8firstTHINK/strict terminals,0/8graph; physical
+gate passes only. SEQ185 A4 supplied procedure21calls,13acceptedTHINKs,
+5/8firstTHINK/strict terminals,1/8graph,3first LENGTH; joint gate fails.
+No expanded panel, extra prose/grammar/budget sweep, substituted base or
+route-procedure fit. Dynamic LINK/connectedS1/S2 and parenting unqualified.
+Archives `gpu_artifacts_local/pcfl_a3c_20260913_attempt1/evidence.tar` and
+`gpu_artifacts_local/pcfl_a4_20260913_attempt1/evidence.tar`; hashes and all
+post-outcome audits in SEQ184/185 and receipts_20260912. Both released.
+
+SEQ186 S_Aattempt3 ran40steps then failed completion comparison because the
+returned TorchVersion string subclass was rejected by strict JSON types.
+Original failed checkpoint remains ineligible. Wrapper-only repair serializes
+returned manifest as standard JSON, no fallback or nonfinite acceptance;
+fit/readout30tests passed. No numerical training or data change.
+SEQ187 newattempt4 COMPLETE and released:40steps,0nonfinite,0truncation,
+base unchanged,392LoRA tensors,loss2.475452423095703. Identical adapter bytes
+and16non-timing manifest fields to failedattempt3. Zero cold readout so far.
+No Main GPU job live at this checkpoint; do not relaunch the completed fit.
+
+Eligible native fit root:
+`/localhome/local-rohing/astra_diagnostics/pcfl_event_sequence_S_A_20260913_attempt4`.
+Its `fit/completed.json` FILE SHA256
+`8478373fa109ae5115ed7845753ca4812fc6a1857c4c86fbb71a52c7ae10897b`.
+Source `/tmp/astra_pcfl_event_sequence_source_20260913_attempt4` from7741c030;
+material `/tmp/astra_pcfl_event_sequence_material_20260913_attempt4.json`, SHA
+`9fe776c38a493152526920cb13a9bc37911cd6e674b7009cc199f1e3f9e4ae4f`.
+Archive `gpu_artifacts_local/pcfl_event_sequence_S_A_20260913_attempt4/evidence.tar`,
+SHA `bc77c75b18f29fd9c3e0ba9e20cd7f0df2a5f5b1ddf48f02ce6a276173fb46dc`.
+Failedattempt3 archive SHA
+`ee4694a8679c76242111506f1d2820d52f9b0214c93543e3d9d9798020d09c1b`.
+
+Lagrange01a09b03-adae-7872-afb1-67d819134c38 owns only sequence outer/test
+for explicit cold-readout mode. Await EDITSTOP before staging those files.
+Execute its updated controller as a separately pinned standalone/tmp script
+with PYTHONPATH pointing to immutable sourceattempt4, preserving module/material
+paths. Main owns native commands. NO_WRITE and S_A16calls each precede any
+warm descendant; empty pre-correct A means retention undefined, no dose rescue.
+Meitner implementations committed; manuscript owner/reviewer done and closed.
+
+Manuscript six-file update throughSEQ185, outcome cut17:00UTC, independently
+accepted and committed7741c030. Actual abstracts unchanged, collaborator UNSENT.
+No TeX tools or certified PDF build/layout. Preserve unrelated rules edit.
+No mechanism freeze, generalG3/P1/H1/H2 or sprint completion. Formal final-C11
+guard remains deferred. Node1 preservation deadline September13 23:14UTC;
+no node1 work added here. Continue authorized work without rerunning completed
+reader diagnostics or completed S_A fit.
