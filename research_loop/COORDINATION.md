@@ -11176,3 +11176,40 @@ Rohin, in substance: low occupancy is a consequence of the stage — testing fin
 **Rohin's messages 38/39 (relayed, verbatim in the builder's session):** utilisation is not the metric at this stage — small fine-tuning tests are the right work; optimise for grounded sequential results, not throughput; the GPUs are for peak needs; "make sure Astra knows what it's working towards." The occupancy-relay daemon started at 09:54 is switched off (`~/occupancy_nudge.off`); the idle-nudger stays. Watcher compute on idle nodes: permitted when clearly useful for the builder or the paper, not required, default none. Rohin is handing off for the night.
 
 **Fleet at 10:15:** node 2 two contrastive full-dose cells (seed 0 relaunch pending); nodes 1, 3 (8 GPUs again) and A100 idle. Nothing killed by the watcher; the reboot and the persistence setting were the only node-state changes, both under Rohin's instruction to recover node 3.
+## [Builder] 2026-09-13T10:10Z — prepared fixed-coaching DEV pairs: launch decision and continuity
+
+Resumed at HEAD051c5fa9; live node2 boot remains
+8ff7b0dc-fbdf-4945-9044-3dffe94b5407. Contrastive full-dose attempt2
+holders/controllers verified alive: seed0 GPU0 68101/68107 (09:55:30Z),
+seed1 GPU1 66783/66784 (09:54:02Z), seed2 GPU2 66965/66966 (09:54:10Z).
+These require once-only manual collection after completion, not resubmission.
+
+Authorize native launch of the already frozen fixed-coaching DEV protocol
+ASTRA_PARENTED_RECORD_DEV_2026-09-13.md, SHA
+bae29cfc48d9ae0922531d306bef1434bcc7296f2ae71a4ad6493da2a5dfb964.
+Main inherited CPU receipts: core17PASS, runner27PASS, holder2PASS; all three
+native preparations PASS with original perception roots and source/mask checks.
+Runner54cad8a6eeb5ae8af08213efe60f4c8047879991ca77f7a30d8be548659699f8;
+holder115927ee21dca299a94aa70e27f93c6cf52f3e5c5bc7130b0e31f02748d4aa6a.
+Sources/tests/prior-ID inventory now archived in receipts_20260912.
+Prior-ID inventory is conservative, not global exposure/clean-ancestry proof.
+
+Node2 seeds0/1/2 reserve GPUs3/4/5 respectively; roots
+/localhome/local-rohing/astra_diagnostics/parented_record_seedN_20260913_attempt1.
+Plans: 7bf29472f7290c7b5f856527b837689b0668f16b63a151198072c5e423c98455,
+6e30c79caf85666f6db678c9765e93e33a595a200f0f598a01b5a2d516736d47,
+c184ddb8a273da5472b18fae3f4f99915cbe53f7dd7c73826b112037f5303a96.
+Fresh queue/all-process/CUDA-environment/UUID/lease checks are mandatory in
+launcher. 7200s cap began during preparation ~10:04Z; never reset clocks.
+At most900calls/768updates total; fixed coaching vs active-neutral, original
+checkpoint baseline, own raw sourced apply records, LR3e-5/eight passes.
+No generated/adaptive parent; unequal admitted doses reported. NO_WRITE is
+genuine unchanged tensors. Cold held/retention; CONF remains untouched.
+Holder automatically collects ONCE after successful controller exit while
+retaining allocation; do not manually recollect. PIDs follow after launch.
+
+Rohin38 steer retained: scientific progress, not occupancy. Laptop's new
+aligned/swapped proposal is advisory future design, not a mutation of this
+frozen block; its authored96 replay targets cannot silently enter own-source
+sleep. Evaluate it separately after current evidence. Formal guard remains
+deferred to final paper-grade C11; basic provenance/isolation checks stay.
