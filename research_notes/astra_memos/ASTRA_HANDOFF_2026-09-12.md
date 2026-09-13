@@ -1,6 +1,24 @@
-# Astra current handoff — 2026-09-13T14:27Z
+# Astra current handoff — 2026-09-13T14:29Z
 
-## CURRENT — September 13 14:27 UTC
+## CURRENT — September 13 14:29 UTC
+
+SEQ170 supersedes live status below: LF-disclosure formation also FAILED after
+2calls with the exact same missing-LF EVENT as SEQ169;18uncalled,zero updates.
+Explicit newline instruction did not suffice. Actual output tokens end in EOS
+without LF; no evidence of transport stripping. Never repair raw responses.
+Native exact-source replay passes; no Main GPU worker remains live. Natural
+shutdown and detached release completed with no signals and same init exceptions.
+Fresh failed attempt archived/verified:
+`gpu_artifacts_local/pcfl_own_write_lf_20260913_attempt1/evidence.tar`, SHA256
+8d1e220e7918377a4f189a033fd7f02b27a7d51749cb87292ed1d6946c0f1424.
+No fit/readout stage is authorized on this incomplete formation. Parfit gives
+bounded next-interface diagnosis; original full contract/parser remain unchanged.
+Manuscript throughSEQ167 independent editorial PASS committed5e03a65a, UNSENT.
+Lagrange owns small node1 receipt-delta preservation to a fresh VM directory;
+no node2 transfer yet. Full node1 restore certification remains incomplete.
+Mission active/incomplete; formal guard final C11 only, no qualification upgrade.
+
+## Historical superseded snapshot — September 13 14:27 UTC
 
 Mission active/incomplete. Latest direction: simple hygiene now; finish/enforce
 formal guard for final paper-grade C11 only. No general G3/mechanism freeze,

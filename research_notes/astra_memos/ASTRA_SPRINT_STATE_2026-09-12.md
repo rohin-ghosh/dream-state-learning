@@ -1,4 +1,18 @@
-## Current superseding snapshot — 2026-09-13 14:27 UTC
+## Current superseding snapshot — 2026-09-13 14:29 UTC
+
+SEQ170 LF-disclosure follow-up FAILED after2native calls, exact same90-byte
+EVENT without terminal LF; no fits/updates/readouts. Explicit instruction
+insufficient on this fixed development case. Native replay passes, archive
+verified, owned resources released naturally with no signals. NoMainGPUworker.
+Exact pins and paths in current HANDOFF/SEQ170. Do not train on failed bank,
+repair child bytes, reuse attempt, or claim full-contract/learning readiness.
+Bounded interface diagnosis next; formal guard still deferred to final C11.
+SEQ167 manuscripts integrated5e03a65a after independent presentation PASS;
+C99 excluded from science, collaborator UNSENT. Node1 small receipt-delta
+preservation delegated; full restoration verification remains incomplete.
+MissionACTIVE/incomplete, nofreeze/generalG3/P1/H1/H2/full-assay/C11 qualification.
+
+## Historical superseded snapshot — 2026-09-13 14:27 UTC
 
 Mission ACTIVE/incomplete. Formal guard deferred to final paper-grade C11;
 simple hygiene/invariants maintained. SEQ169 own-formation failed missing LF
