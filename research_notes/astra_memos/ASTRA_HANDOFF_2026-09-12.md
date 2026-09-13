@@ -271,3 +271,39 @@ No mechanism freeze, generalG3/P1/H1/H2 or sprint completion. Formal final-C11
 guard remains deferred. Node1 preservation deadline September13 23:14UTC;
 no node1 work added here. Continue authorized work without rerunning completed
 reader diagnostics or completed S_A fit.
+
+## Restart delta — September 13, 2026, 17:34 UTC, through SEQ188
+
+SEQ188 cold screen completed and released: NO_WRITE and S_A40 each ran16
+calls; all four W0/W8 by A/B panels per state are0/4. Baseline MISS16/16;
+S_A EVENT-prefixed16/16, all incorrect (one scorer-usable false row). Changed
+output only. Pre-correct A is empty, so retention UNDEFINED, not0percent,
+forgetting or successful retention. Five later sequence phases are withheld;
+no warm descendants, dose rescue or renewed stopped reader branch.
+
+Paired archive `gpu_artifacts_local/pcfl_sequence_cold_screen_20260913_attempt1/evidence.tar`,
+SHA256 `94320d0aba9a4a638b6553821edb3a12fe241babdaefdba5fa4fc951f5142534`.
+Main audited233files and32 raw-route-token-target joins; receipt
+`receipts_20260912/astra_pcfl_sequence_cold_audit_20260913_attempt1.json`,
+SHA256 `444c01b6c46da10446b72053550fd08a3881b6152d6f6c24b1b1b4f2bdcc218a`.
+Reproduction needs original source4 tar plus same-commit scope supplement,
+both in archive. SEQ179's separate200-step positive remains separately scoped.
+
+Six manuscript files now reflectSEQ188 at17:25UTC. Independent review PASS
+with no blockers binds exact hashes in
+`receipts_20260912/astra_manuscript_seq188_independent_review_20260913.md`.
+Actual abstracts unchanged; collaborator UNSENT; no TeX build/layout claim.
+
+No Main native job is live as of this checkpoint. Meitner owns only sequence
+offline reducer/test; await EDITSTOP. Copernicus releases all manuscript
+files and owns `organism_v6/level1_prediction_transfer.py` and its test.
+Lagrange owns `gpu/astra_level1_prediction_transfer_readout.py` and its test.
+Both implement the proposed bounded no-fit same-task DEV scaffold-withdrawal
+comparison in `research_notes/analysis/2026-09-13_level1_prediction_transfer_protocol.md`;
+neither may launch. Main owns protocol, integration, native actions and notes.
+Hegel's manuscript review is complete and that agent is closed.
+
+Node1 preservation deadline September13 23:14UTC remains pending live
+reconciliation; no new node1 work on this resumption yet. Preserve dirty
+`gpu/codex/dream_state.rules`. No approval prompts or curl/wget on this
+resumption. Mechanism freeze, generalG3/P1/H1/H2 and campaign remain incomplete.

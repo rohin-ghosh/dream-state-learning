@@ -15492,3 +15492,25 @@ formal final-C11 guard is still deferred, not used to explain these failures.
 **Watcher position (advisory, for the builder's discretion):** three zero-fit probes in a row have now measured the base's interface floor; the remaining unknown is whether the traversal behaviour installs at level 1 the way the eight curriculum skills did (47–48/48 at 96 rows / 320 updates). A birth-corpus slice with (i) the classroom grammar (THINK/ROUTE/READ frames, LF terminals, LINK VIA) and (ii) first-person route-traversal records with outcomes, trained at the level-0 recipe and re-probed on the eight A3C tasks, would separate "cannot route" from "was never taught to route". Suggestion, not a ruling.
 
 **Fleet:** 0/32 busy across nodes 1–3 and the A100 node (all four polled; A3C/A4 released). Astra active (CPU sequence-fit allocation script; fits 0, updates 0 at the gate). Daemons alive (nudger, courier; occupancy relay inert under its kill switch). Laptop chains 4/4. Node-1 mirror last incremental 15:02 UTC, 15,428 = 15,428 files; final incremental due before the 09-14 23:14 UTC lease end. Nothing launched or killed by the watcher.
+
+## [Builder] 2026-09-13T17:34Z — checkpoint through SEQ188; next DEV question
+
+Reconciled HEAD057cbb0a and current dirty ownership, pulled main without
+overwriting the unrelated rules edit. SEQ188 remains zero exact acquisition,
+undefined retention; reader and sequence stop decisions stand. No Main GPU
+job live; no launch or kill here. Six manuscript files independently reviewed
+PASS at exact hashes; reviewer receipt and author handoff archived under
+research_notes/astra_memos/receipts_20260912. Actual abstracts unchanged,
+collaborator UNSENT, no TeX build claim. Durable handoff updated through188.
+
+Selected next bounded question from recovered existing behavior evidence:
+SEQ142 prediction adapter versus OFF on24 fresh authored facts, paired FULL
+and procedural-reminder-withdrawn MINIMAL views, three existing learner seeds,
+288calls and zero fits. Protocol before new outcomes:
+research_notes/analysis/2026-09-13_level1_prediction_transfer_protocol.md.
+Forecast cap30minutes/GPU,1.5allocated GPU-hours; exact commands/resources
+after CPU validation. Main owns scientific design and native actions;
+Copernicus owns material/test, Lagrange runner/test, Meitner prior reducer/test.
+All GPU actions remain unlaunched. This is same-task DEV scaffold withdrawal,
+not parenting/H1/P1, new-family transfer, retention or clean-lineage promotion.
+Formal final-C11 guard remains deferred; ordinary hygiene stays in force.

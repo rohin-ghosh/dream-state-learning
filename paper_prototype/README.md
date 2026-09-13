@@ -1,12 +1,18 @@
 # Experience Models — ICLR 2027 submission (revised draft v3, 2026-09-10 fix pass)
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This draft through SEQ185 retains earlier positive and negative findings;
+This draft through SEQ188 retains earlier positive and negative findings;
 SEQ167 and SEQ169--173 are engineering-only logs, excluded from scientific results.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
+
+**Through SEQ188 / C104: no exact sequence acquisition; retention undefined.**
+The eligible changed-recipe screen alters output without exact acquisition;
+remaining fit phases are withheld. Prior scoped acquisition and reader STOP
+remain unchanged. This closes the17:25 UTC evidence checkpoint, not the
+broader campaign or a G3/P1/H1/H2, parenting, clean-lineage or freeze claim.
 
 **Through SEQ185 / C103: terminal engineering-only reader branch.**
 Scheduled action-family and syntax scaffolds enable bounded interface behavior,
@@ -179,6 +185,33 @@ Historical exclusion statements below apply only to their named earlier cuts.
 
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
+
+## Sequence acquisition screen — SEQ186–188 / C104
+
+The changed V3 S_A recipe screens four introduced A addresses at40 steps.
+Attempt3 trained and saved its adapter but failed TorchVersion receipt
+serialization; it remains ineligible. Same-dose attempt4 completed with
+identical adapter bytes,40 steps, zero nonfinite batches/truncation and a
+verified base-unchanged assertion, not an independent replication. [C104]
+
+| Cold state | Calls | A / W0 | B / W0 | A / W8 | B / W8 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| NO_WRITE | 16 | 0/4 | 0/4 | 0/4 | 0/4 |
+| S_A attempt4 | 16 | 0/4 | 0/4 | 0/4 | 0/4 |
+
+Both cold stages completed/released,16 calls each, all stop-completed with
+no truncation or missing results. NO_WRITE emitted exact MISS16/16; S_A emitted
+EVENT-prefixed text16/16, all wrong, including one scorer-usable false row.
+This is changed output, not exact acquisition; evaluation outputs are not
+reingested as experience. Pre-correct A is empty: retention is UNDEFINED,
+not zero percent or a forgetting result. The remaining five planned fit phases
+are UNRUN/withheld; no dose rescue or G3 claim follows. This40-step V3 screen
+is not an isolated dose comparison with SEQ179's separate200-step PCFL recipe,
+whose scoped14/14 W0/W8 versus0/14 result is unchanged. Full-formation failure
+and the A4 reader-branch STOP remain; the broader campaign is incomplete.
+Collaborator UNSENT. [C102, C104]
+
+Source mapping: [C104](../research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md#c104--seq186188-sequence-acquisition-screen).
 
 ## Terminal engineering-only reader diagnostics — SEQ180–185 / C103
 
