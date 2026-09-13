@@ -98,6 +98,10 @@ bounded candidate pool. Native preparation may reject candidates solely to
 make each identifier class equal in tokenizer length. It may not query model
 probabilities or change the world. Record the accepted strings, attempts,
 token IDs, mapping, held mask, and all hashes before OFF inference.
+Freeze the permissive parser's exact boundary alphabet before identifier
+selection, and reject any outcome identifier set that overlaps pairwise or
+with `UNKNOWN` under that boundary rule. This makes permissive native scoring
+an exact lexeme test rather than a substring accident.
 
 ### Independent construction domains and shortcut certificate
 
@@ -131,8 +135,9 @@ the intended key and is not mislabeled a nuisance. Latent permutation identity
 plus mode is an oracle encoding of the answer; report its `100%` value but do
 not call it a visible shortcut. H-KEY has one held cell per family, so family
 identity alone can encode the family's completed missing value; consequently
-H-KEY supports **family-level rule completion**, not by itself joint-key use.
-The joint-key claim comes from H-SKIN's within-family mode coverage.
+H-KEY supports **family-level withheld-cell completion compatible with the
+rule**, not by itself rule use or joint-key use. The joint-key claim comes from
+H-SKIN's within-family mode coverage.
 
 Accept the first mapping/held-mask candidate that satisfies the structural
 balances above and for which no registered visible single, affine, or
@@ -192,14 +197,18 @@ mnemonic, or mapping rule beyond the shared public rule.
 
 There is **no visible arm-specific padding**. Preserve each instruction exactly
 as written and report its natural token cost. To equalize tensor/batch shapes,
-the collator pads both arms to the paired batch's joint maximum using the same
-pad ID with `attention_mask=0` and label `-100`; those positions are neither
-attended to nor supervised. A pre-fit isolation check must show that changing
-only the masked pad-token IDs leaves all answer-prefix logits identical within
-the prospectively fixed dtype tolerance. Failure aborts. Natural input-token
-counts may differ and must be reported; padded tensor positions, target token
-IDs, and optimizer work are matched. Targets must be token-for-token identical
-within every PLAIN/CONTRASTIVE pair.
+the collator right-pads both arms only after the native EOS to the paired
+batch's joint maximum, using the same pad ID with `attention_mask=0` and label
+`-100`; those positions are neither attended to nor supervised. A pre-fit
+isolation check must hold tensor shape, non-padding tokens, labels, RNG state,
+and attention mask fixed, replace every masked pad ID with a different legal
+token ID, and require bit-identical non-padding/answer-prefix logits,
+supervised loss, and LoRA-parameter gradients. It must also assert that every
+zero-mask position is a trailing suffix after EOS and has label `-100`.
+Failure aborts. Natural input-token counts and target positions may differ as
+part of the two frozen instruction renderings and must be reported; padded
+tensor shapes, target token IDs, row counts, and optimizer steps are matched.
+Targets must be token-for-token identical within every PLAIN/CONTRASTIVE pair.
 
 ### Preservation/replay sources
 
@@ -216,9 +225,12 @@ four skins, producing 96 replay rows. Training therefore has exactly:
 Every optimizer batch has exactly two memory rows from distinct semantic
 sources and two preservation rows from distinct sources. No batch may contain
 two skins of one source. Ten epochs give `48 updates/epoch`, **480 updates per
-fit**, and **40 presentations per semantic source**, preserving SEQ-113's
-supported source dose. This modestly raises update count only because there are
-24 rather than 16 memory sources.
+fit**, and **40 selected-target presentations per semantic source**, preserving
+SEQ-113's supported target dose. Because each row also contains its family's
+complete three-record observed block, each observed fact occurs loss-masked in
+`3 selected sources * 4 skins * 10 epochs = 120` memory contexts. Both counts
+are arm-identical and must be reported separately. This modestly raises update
+count only because there are 24 rather than 16 memory sources.
 
 ## Arms, fits, and optimization contract
 
@@ -257,8 +269,9 @@ It contains no observation, case file, earlier outcome, public one-of-each rule,
 target statement, worked example, or outcome roster. The template distribution
 is byte-identical across E-TRAIN-SKIN, H-SKIN, and H-KEY apart from the
 registered key and skin; panel identity and `held` status never enter a prompt.
-Thus the held panel cannot be solved by a held-only rule cue. The fitted model
-must carry both the observations and the structural rule from training.
+Thus the held panel cannot be solved by a held-only rule cue. A successful
+answer must be carried from training, but this panel alone cannot distinguish
+retention/use of the structural rule from an induced family-level association.
 
 Per inference state:
 
@@ -334,7 +347,8 @@ passes only if **that same seed** satisfies all of the following:
 2. **Conditional slices:** CONTRASTIVE is at least `4/6` in every family on
    H-SKIN and at least `3/4` in every mode on H-KEY. H-SKIN supplies the joint
    family-and-mode discrimination result; H-KEY supplies family-level
-   one-of-each completion.
+   withheld-cell completion compatible with the supplied one-of-each rule,
+   not evidence that the rule was the model's causal procedure.
 3. **Candidate direction:** on this seed, CONTRASTIVE exceeds its paired PLAIN
    by at least `2/48` H-SKIN and `1/16` H-KEY. A tie in either panel is not a
    seed pass.
@@ -364,7 +378,7 @@ are never part of the treatment-pass numerator.
 
 These are intentionally joint gates. A content improvement that does not
 survive unseen skins is rehearsal; direct-key success without H-KEY is keyed
-memorization without relational completion; H-KEY success without direct
+memorization without withheld-cell completion; H-KEY success without direct
 coverage is an anomalous slice, not a general win; candidate-only success is a
 native extraction-interface gap; strict-only success is formatting.
 
@@ -444,7 +458,8 @@ If and only if the joint screen passes:
 > difference-attention instruction in otherwise matched loss-masked training
 > contexts improved paired-seed LoRA acquisition and candidate-free held-skin
 > retrieval of family-by-mode bindings, and improved family-level completion of
-> withheld cells under a rule learned during training, relative to ordinary
+> withheld cells compatible with a one-of-each rule supplied during training,
+> relative to ordinary
 > record reading, without detectable scope or canary harm under the registered
 > panels.
 
