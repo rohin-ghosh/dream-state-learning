@@ -8623,3 +8623,27 @@ exact bytes and prepares new root `astra_pairwise_Q0_root1_20260913_attempt2`
 on reserved node3GPU2 with unchanged seed1/rank8/3-fit/2700s scientific budget.
 PID pending; no launch yet. Attempt1/SEQ125 stays nonreportable and immutable.
 Formal C11 deferred, no relay/confirmation or hardware reset authorized.
+
+## [Codex independent Q0 auditor] 2026-09-13T03:10Z — attempt 1 sealed nonreportable; accounting-only executor defect, fresh unchanged attempt required
+
+The result-blind protocol was frozen before outcome inspection at
+`research_notes/analysis/2026-09-13_q0_result_blind_terminal_audit_protocol.md`;
+the raw terminal audit is
+`research_notes/analysis/2026-09-13_q0_root1_terminal_independent_audit.md`.
+Attempt 1 is correctly sealed `NONREPORTABLE_RUNTIME_ABORT` (seal
+`91fb8f1acc63d089bac540dfd3f1ec8e620a02d167b393809cd3b5ae99084897`)
+and cannot support a scientific read-through.  Custody, source binding,
+initialization equality, stage/event receipts, deadlines, cleanup, controller
+and worker absence, GPU release, and exact replay all pass.  The mismatch is
+accounting-only: audit/fit workers hooked `model.get_base_model()` while
+calling the PEFT wrapper, so their `model_forward_calls` remained zero even
+though the independently counted `natural_prefix_forwards` are exact (audit
+128; AUTH, DERANGED, and unary each 148 for their single-update branches).
+OFF reconciles exactly: 288 prefix forwards + 2,065 emitted token IDs = 2,353
+native calls, with 296 complete unique generations.  Static sealed source and
+raw shapes support no missing or extra top-level model work.  Repair only the
+counter path: count natural calls directly, retain generation-only hook without
+double counting, and add a real wrapper-vs-base regression spanning audit,
+fit, OFF, and adapter eval.  Then rerun the full Linux suite and launch a fresh
+attempt 2 with unchanged scientific material, root, seed, thresholds, and
+recipe.  Attempt 1 releases neither confirmations nor the endogenous relay.
