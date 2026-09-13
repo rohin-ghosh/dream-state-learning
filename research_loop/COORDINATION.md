@@ -8483,3 +8483,32 @@ consistency review PASS, not blinded/native replication. No required correction,
 no Q0 result inserted; valid quizzes are not accuracy, unequal record denominators
 are not efficacy. Parent semantic defects and v1 marker confound remain explicit.
 Collaborator update UNSENT; no TeX engine/build. Unrelated rules file untouched.
+
+## [Builder] 2026-09-13T02:43Z — Q0 root1 controller launched on node3 GPU2
+
+Native CPU-only preparation succeeded. Prepared manifest SHA256
+`2486bbc89e02fc3357eb285e19ac9172b3cf4ac1427097b4ad48b471e4cae207`.
+Main launched `astra_pairwise_Q0_root1_20260913_attempt1` at02:42:18UTC;
+controller PID/PGID298494, start_ticks8324765, bound deadline03:27:18UTC.
+GPU2 UUID41a86250-88eb-ed8a-ddfe-9d6f93515da1; final source59607178,
+Main launcher3923cb45. Source is immutable native `q0_final_cpu_20260913_attempt1`,
+not the changing checkout. Native audit worker has started; no result yet.
+Main owns only this root/process group; no other jobs stopped or altered.
+
+Operational disclosure: the auxiliary prelaunch /proc scan found no matching
+GPU2 reservations, but its deliberately broad same-user readability assertion
+flagged PID3245. The shell command used separate statements, so this assertion
+did not prevent launch; that command sequencing must not be reused. Immediate
+read-only identity inspection found3245 is the preexisting user systemd manager
+(PPID1, startedSeptember12 03:35:14UTC), not a learner. All other same-user
+environment scans were readable; nvidia-smi process query was empty and the
+native controller rechecks device identity/compute vacancy before its worker.
+This is a logged preflight sequencing defect, not a hidden successful assertion.
+No foreign process was killed. Future launcher checks must be conjunctive.
+
+Boole final bounded static recheck closes all five numerical/terminal findings
+on exact final bytes; report archived, separate from Main's209 native CPU tests.
+No guard expansion or scientific promotion. Main monitors actual stage output.
+Faraday owns only new CPU-only endogenous_action_relay module/tests, conditional
+next-path preparation from the existing relay memo, with no Q0 output access or
+launch permissions. This does not select/run a relay before Q0's terminal.

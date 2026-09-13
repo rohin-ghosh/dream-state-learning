@@ -1,5 +1,41 @@
 # Astra current handoff — 2026-09-12T19:56:24.212350+00:00
 
+## CURRENT — September13 02:43UTC (supersedes older status below)
+
+Mission ACTIVE/incomplete. Simple hygiene, formal guard finalC11-only.
+**Main Q0 root1 LIVE** node3GPU2/controller298494 (start_ticks8324765),
+root `/localhome/local-rohing/astra_diagnostics/astra_pairwise_Q0_root1_20260913_attempt1`.
+Controller started02:42:18UTC, deadline03:27:18UTC, maximum3 fresh attempted fits.
+No restart/resume/retry of this root. Final accepted source is native
+`/localhome/local-rohing/astra_sources/q0_final_cpu_20260913_attempt1`;
+executor SHA596071780b961031ef8ef5e352898391df47038db70e2acb68b5c3dbe15c201b,
+manifest2486bbc89e02fc3357eb285e19ac9172b3cf4ac1427097b4ad48b471e4cae207.
+Use exact `/localhome/local-rohing/v2/venv/bin/python`; stdout external
+`/tmp/astra_pairwise_Q0_root1_20260913_attempt1.controller.log`.
+Final209 native Linux CPU testsPASS132.192s, zero skips; source/support receipts
+and all known fix-review dispositions archived. Preflight memo contains commands.
+After terminal, replay from frozen source with CUDA hidden/offline. Native report
+is returned JSON, not report.json. Preserve provisional/final/abort evidence.
+No Q0 scientific result yet. Source capsule and confirmations remain isolated
+from later birth/projection data. No confirmation-root allocation selected.
+
+Main commit67c1b6c4 integrates final Q0 and six throughSEQ124 manuscript files;
+Einstein bounded consistencyPASS, no TeX build, collaboratorUNSENT. No new
+clean-lineage/G3/P1/G5/H1/H2/freeze qualification. Public model identity is now
+prospectively resolved for all14 node3 files; historical labels stay unchanged.
+SEQ124 complete, collected once, parent semantic review qualified (not blanket
+purity); forwardv2 task-local marker repair committed but not run natively.
+
+Faraday01a098a6-00f2-76a2-a61a-2da1e01064d4 owns ONLY
+organism_v6/endogenous_action_relay.py, tests/test_endogenous_action_relay.py,
+/tmp/astra_endogenous_action_relay_handoff_20260913.md. CPU-only conditional
+formation/admission work; no Q0 outputs, no launch and no new scientific choice.
+Carver EDITSTOP, closed source stays immutable. MainsoleGit/native operator.
+Preserve unrelateddirtygpu/codex/dream_state.rules and workerWIP.
+See coordination02:43 entry for nonblocking systemd/readability assertion and
+shell-sequencing defect; never reuse non-conjunctive prelaunch commands.
+
+
 ## Superseding checkpoint — September 12, 17:12 PDT
 
 Mission ACTIVE/incomplete. Rohin rawmessage23 prioritizes authored level1BIRTH,
