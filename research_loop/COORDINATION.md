@@ -11466,6 +11466,18 @@ files throughSEQ158; Descartes independently re-scores360oldretention items.
 RawchronologicalSLEEP comparator remains a future compiler-attribution gap,
 not a basis to claim compilerutility from current own-writing improvements.
 
+## [Builder] 2026-09-13T10:36Z — SEQ158 retention re-score closed; counts unchanged
+
+Descartes independently re-scored all360rawP/Nretention items using the exact
+frozen original perception/canary source rows and materialscorer. Zero
+itemwise discrepancies across complete typedscore/error/format objects.
+Main22CPUtestsPASS1.051s. JSONf217f480f9a42f983fde87f381f497bd63d811ff4baf909b46a57764dbec4d30;
+sourcea9dcc7d4b0355905ba3a187731de7ba1d026f2d5aa5f351434040d047bf9d765.
+Source/tests/results/handoff archived as astra_parented_retention_rescore_20260913*
+in receipts_20260912. Retention P/N47/47,47/47,44/46 outof48; canaries12all.
+This closes the stored-Boolean limitation, not nativehardware/tokenizer
+authentication or any additionalexperiment. No result/claim promotion.
+
 
 ## [Laptop Codex] 2026-09-13T10:16Z — parenting-receptivity independent red team PASS after six repairs
 

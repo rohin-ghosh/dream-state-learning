@@ -1,6 +1,52 @@
-# Astra current handoff — 2026-09-13T10:25Z
+# Astra current handoff — 2026-09-13T10:36Z
 
-## CURRENT — September13 10:25UTC (supersedes all snapshots below)
+## CURRENT — September13 10:36UTC (supersedes all snapshots below)
+
+Three Main REPLAY vs EXTRA_MEMORY pairs LIVE on node2GPUs0/1/2, started
+10:34:12/21/30UTC. Holders/controllers106836/106837,106897/106898,106962/106963.
+Roots /localhome/local-rohing/astra_diagnostics/own_replay_repair_seedN_20260913_attempt1.
+Core9d8777ea3bfdcf92bace3b1a459644b9249dae108db9d5d6a3e35433e0bcff93;
+runnerf1e3782378959f0c2552eaf9646a6b8827b876652a535d3248e38fe28371c4fe;
+outer411b4c607e7910b64598a70ada5d59794316b4d93e7552bfd97461a0746e3ef5.
+All archived corresponding astra_own_replay_repair* files in receipts_20260912.
+Plansseed0/1/2:
+54c27ab8043f23729d813b256b73749fc1694d552fa5cb75283dc5a0d83c3e64
+aaf4849fdb45edc7cc25a8db090d773daf7b4abe53cce52afa2f2a578b6f2599
+6e6a0dadd78d081739f94e9e3dd885a5404166040eb9911e496d450e14830454.
+15core/23runner/3holder MainCPUtestsPASS; nativeall3preparationsPASS.
+Four coldworkers/pair,7200scontroller+180scollection,6hleasefinishmargin.
+Holders AUTO-COLLECT ONCE on success into sibling_collected. Check .launcher
+controller_exit/collector_exit/exit; DO NOT manually recollect/resubmit.
+No result yet. Frozenoriginalparents,ownrawtargetsonly,304/256/256steps perarm,
+6fits1632steps480calls. EqualstepsNOTequaltokens/memoryexposure. No coaching
+protocol mutation. Node2boot8ff7b0dc-fbdf-4945-9044-3dffe94b5407/Sep21lease.
+
+SEQ156 contrastive complete: heldPLAIN/CONTRASTIVE17/19,14/20,19/19;C-P+2,+6,0.
+AllthreeoriginalscreensfailD2floor9(actual8). Fullarchive+independentrawreducer
+committed3e33822e. No furtherdose orsourceattentionclaim.
+SEQ157 own-sourcecapture independent14testsaudit:24/24each,24sharedsources
+and24rawtargetsacrosslearners(not72facts),0fits; archivedcb889bc3.
+SEQ158coaching complete: P/Nheld16/16,16/16,13/13 vsORIGINAL11/8/8.
+Incrementalcoaching0allseeds; no equivalence. P/Nadmitted16/14,16/11,11/13;
+P/Noldheld47/47,47/47,44/46 vs47/48/48;canary12all. 900calls648updates6fits.
+Parentremoval/source/rawreplay reducer archivedcb889bc3. Independent360item
+retention re-score NOWzero discrepancies,22MaintestsPASS, exactresults archived
+astra_parented_retention_rescore_20260913*. Allfinishedrootsonce-collected
+andnative/VMarchived; previoussnapshot holds archivepins. Neverrecollect.
+
+Lovelace reopened for independent repairreducer(pre-outcome); Beauvoir/Parfit
+closed aftervalidatedcore/runner. Copernicus owns same6manuscriptfiles for
+SEQ156–158 update (DIRTY,notEDITSTOPyet); throughSEQ155committed83cbdc9c.
+Descartes completedretentionrescore, nextindependentreviewafterwriterEDITSTOP.
+Preserve unrelateddirtygpu/codex/dream_state.rules. CollaboratorUNSENT.
+Rohin40/41 advice conversational; boundednullresult retained, not rescued by
+newthresholds. RawchronologicalSLEEP comparator missing for compilerattribution;
+no compilerutilityclaimed. MissionACTIVE/incomplete, nofreeze/P1/H1/H2/clean
+certification. Simplehygiene now/formalC11guardlater. Nextcriticalstep inspect
+repairoutcomes, notmoreunmotivatedbirthskills. Needednode1evidence deadline
+Sep13 23:14UTC; newMainartifactscopiedtoVM.
+
+## Historical superseded snapshot — September13 10:25UTC
 
 No Main GPU job live. ALL3contrastive pairs, ALL3fixed-coaching pairs and
 72call own-source capture completed and once-collected successfully. Do not

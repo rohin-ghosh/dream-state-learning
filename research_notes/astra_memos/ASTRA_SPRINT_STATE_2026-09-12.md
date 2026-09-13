@@ -1,4 +1,16 @@
-## Current superseding snapshot — 2026-09-13 10:25 UTC
+## Current superseding snapshot — 2026-09-13 10:36 UTC
+
+ThreeREPLAY/EXTRA_MEMORYpairs LIVE node2GPUs0/1/2 from10:34UTC; nativeall3
+preparationspassed,15/23/3MaintestsPASS. AutoONCEcollection aftersuccess;
+exactPIDs/pins/commandsincurrentHANDOFF. Sixfits1632steps480calls, noresult.
+SEQ156contrastiveC-P+2/+6/0 butallfrozen screensfail;SEQ157captures24/24own
+supportedTRAINrecordseach,not72newfacts. SEQ158coachingP-Nheld0allseeds;
+own-writinggains+5/+8/+5,retentionlossesremain. Raw360retentionrescoringnow
+confirmsallstoredscores; no discrepancy. Allcompletedcohortsarchived/reduced.
+Sixfilemanuscriptupdateinprogress; independentrepairreducerinparallel.
+No furtherdose/freeze/H1/H2/parentingbenefitclaim. Missionincomplete.
+
+## Historical superseded snapshot — 2026-09-13 10:25 UTC
 
 All3contrastive pairs, all3coaching pairs and own-source72callcapture completed,
 once-collected, raw/adapters/receipts VM-archived. No Main GPUjoblive. Independent
