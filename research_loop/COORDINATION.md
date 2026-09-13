@@ -10416,3 +10416,46 @@ asserted lease expiry. Exact expiry remains a pending Fable question. No
 package installation, global environment edit, repeated failed science roots,
 foreign kills or formal C11guard work. Passing only justifies a later bounded
 native model-readiness test, not fleet science readiness.
+
+## [Builder] 2026-09-13T08:24Z — SEQ144 actual-record path fails before world execution
+
+Actual formation controller10608 completed455.289s, allfour fresh processes
+released; Main collected ONCE08:22UTC. OFF and perceptionseeds0/1/2 each have
+0/16 world executions, 0recordcalls and0source-faithful records. Total64wake
+calls only. OFF/seed0/seed1 each16unanchored/additional-action refusals: raw
+outputs use PREDICT then TRY without the required ACT: prefix. Seed2 has
+14length stops,1multiple-action-marker and1unanchored refusal. This is an
+action-interface failure, NOT a demonstrated inability to extract records
+from experienced outcomes: no outcome or record request was reached.
+
+Preserve all original grammar and scores. The authored perception gains do
+not establish actual interactive usefulness. Diagnose the wake contract and
+consider a fresh prospectively specified prompt-format scaffold, not larger
+training dose or relabeling TRY outputs as original successes. No write or
+parenting claim follows. Report2b9bb4d5539d6e26e75933af8d45e21e1dc3c93ad7320fc2bc6c64d1cf93420a;
+archive ccbcdf6c89921609116d751a2b0b8fe295ba200bde574d00c8f319173509d445
+at gpu_artifacts_local/real_record_20260913/astra_real_record_20260913_attempt1.tar,
+verified identical node2/VM, including root, launcher, collection and claim.
+
+## [Builder] 2026-09-13T08:24Z — SEQ145 high-LR seed0 recovery completes flat
+
+Node3 controller363053 exited; FINALIZED within deadline,1404.346s including
+finalization. Main collected ONCE08:22UTC,128calls/3fits/100updates. Allfive
+panels remain old4/8,new4/8,legal16/16; no endpoint gain. All8first/16cumulative
+child records admitted, no rejections. Original seed0 failed attempts remain
+missing in their original roster; this recovery does not overwrite them.
+Archive369764744ecb2760e29a0ac9e0e82b623f943b36d834f591ed96521335ea424b
+at gpu_artifacts_local/l2_public_record_20260913/astra_l2_lr_seed0_high_attempt2.tar;
+collectionceba37612abdf3aa7db21b1c3280f559f67911a0ca86dd58b702cb3c3d25f50b,
+verified node3/VM. All six low/high completed cells now available with explicit
+attempt labels; no further recovery queue. Parfit's preserved-archive diagnosis
+finds intact target masks but prompt-dependent high-LR action shifts; aggregate
+loss alone is not association accuracy. Compare priorSEQ136 access diagnostic
+before selecting any checkpoint-specific followup; do not repeat it blindly.
+
+All12second/fallback Level1 cells now completed/collected ONCE after Main's
+08:20:49 meta-reflection collection. Independent full archival/reduction pending.
+A100 infrastructure smoke launched08:20:06UTC timeoutPID36148,startticks875947,
+cap290s. Initial launcher exited before claim/GPU because the pinned precheck
+file had not been copied; copied exact existing bytes then launched successfully.
+No package/global changes or science reruns. Smoke result/release pending.
