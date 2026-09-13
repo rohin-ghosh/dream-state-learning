@@ -9302,3 +9302,19 @@ SEQ129 supports format transfer after reload, not new semantic record content;
 no fitted12/12operational pass or incremental training-anchor benefit. No H1/H2
 or clean-ancestry promotion. TeX tools unavailable, so no PDF/layout build is
 claimed. Both handoff/review archived; collaborator remains UNSENT.
+
+## [Builder] 2026-09-13T05:18Z — smallest two-SLEEP DEV recipe selected, implementation only
+
+Prospective ASTRA_L2_PUBLIC_RECORD_PROTOCOL_2026-09-13.md freezes one base-start
+root:16independent opaque keys8+8, seeds2026091301/2026091302/learner0,
+PROMOTE/SHADOW only, maximum3fits/100updates/128generation calls,5400scontroller.
+First shared exact-child-record candidate is mounted only in PROMOTE; second
+wakes/old+new cumulative fits are branch-local. Source support derives solely
+from public two-action feedback; no teacher bytes in sleep or report feedback.
+MISBOUND remains a ready corpus-side follow-up, not required in this first slice.
+This explicitly simplifies the earlier8key×2mode/five-fit proposal, before data.
+
+Curie owns pure CPU core/tests. Carver owns new gpu/astra_l2_public_record_dev.py
+and matching CPU runtime tests, using injected native seams; no native authority.
+Main continues live runs/replication integration. No L2 launch or outcome yet;
+no formalC11 expansion, qualified birth, parenting or H1/H2 claim.
