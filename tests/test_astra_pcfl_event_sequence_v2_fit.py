@@ -308,6 +308,29 @@ class FitTests(unittest.TestCase):
         self.assertEqual(fit.v3._warm_inventory(self.parent_root), before)
         self.assertEqual(len(self.calls), 1)
 
+    def test_postfit_predecessor_check_preserves_existing_child_checkpoint(self):
+        self.parent()
+        child = self.root / 'child/checkpoint'
+        child.mkdir(parents=True)
+        marker = child / 'immutable_checkpoint_marker'
+        marker.write_bytes(b'EXISTING_CHILD')
+        before = fit.v3._warm_inventory(self.parent_root)
+        with patch.object(fit.v3, '_warm_parent', side_effect=AssertionError('read-only validation prepared an output')):
+            self.validate_parent()
+        self.assertEqual(marker.read_bytes(), b'EXISTING_CHILD')
+        self.assertEqual(fit.v3._warm_inventory(self.parent_root), before)
+        self.assertFalse((self.root / 'child/unused_predecessor_validation').exists())
+
+    def test_prefit_predecessor_check_rejects_existing_actual_checkpoint(self):
+        self.parent()
+        child = self.root / 'child'
+        config = fit.sequence.training_config('REPLAY400', self.model, learner_seed=1, device='cpu')
+        fit.validate_predecessor_for_write(self.inputs, self.material, 'REPLAY400', child, config, 'INJECTED_CPU_TEST')
+        self.assertFalse(child.exists())
+        (child / 'checkpoint').mkdir(parents=True)
+        with self.assertRaisesRegex(ValueError, 'output must be fresh'):
+            fit.validate_predecessor_for_write(self.inputs, self.material, 'REPLAY400', child, config, 'INJECTED_CPU_TEST')
+
     def test_parent_drift_and_sa40_seed_spec_material_refused(self):
         self.parent()
         path = self.parent_root / "completed.json"

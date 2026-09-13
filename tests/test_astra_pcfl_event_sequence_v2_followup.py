@@ -24,7 +24,7 @@ def inventory(root):
 
 
 class FollowupTests(unittest.TestCase):
-    def setUp(self):
+    def setUp(self, seed=1):
         self.temporary = tempfile.TemporaryDirectory()
         self.addCleanup(self.temporary.cleanup)
         self.base = Path(self.temporary.name)
@@ -52,23 +52,23 @@ class FollowupTests(unittest.TestCase):
                                                    validate=Mock(side_effect=self.acquire))
         self.gate, self.calls, self.stage_result = True, [], {}
         self.campaign = self.base / 'campaign'
-        inputs = self.campaign / 'inputs/seed1'
+        inputs = self.campaign / f'inputs/seed{seed}'
         inputs.mkdir(parents=True)
-        self.runs = self.campaign / 'runs/seed1'
+        self.runs = self.campaign / f'runs/seed{seed}'
         self.runs.mkdir(parents=True)
         for name in ('model_binding', 'base_state_receipt', 'archive', 'replay_receipt', 'shutdown_binding'):
             write(inputs / f'{name}.json', {'kind': 'INJECTED_CPU_TEST'})
-        write(inputs / 'material.json', {'spec': {'learner_seed': 1, 'sha256': 'NONNATIVE'}})
+        write(inputs / 'material.json', {'spec': {'learner_seed': seed, 'sha256': 'NONNATIVE'}})
         allocation = dict(gpu_index=2, gpu_uuid='GPU-NONNATIVE-2', lease_end=10**12, lease_margin_seconds=21600,
                           outer_sha256=api.pin(modules['outer'].__file__)['sha256'])
         write(inputs / 'allocation.json', allocation)
         shared = {name: api.pin(inputs / f'{name}.json') for name in ('model_binding', 'base_state_receipt', 'archive', 'replay_receipt', 'material')}
         shared.update(model_path='/nonexistent/NONNATIVE_MODEL', environment={'kind': 'INJECTED_CPU_TEST'},
-                      learner_seed=1, gpu_uuid=allocation['gpu_uuid'])
+                      learner_seed=seed, gpu_uuid=allocation['gpu_uuid'])
         write(inputs / 'fit_inputs.json', {**shared, 'source_files': fit_sources, 'predecessor': None})
         write(inputs / 'c0_inputs.json', {**shared, 'source_files': read_sources, 'fit_receipt': None,
                                        'shutdown_binding': api.pin(inputs / 'shutdown_binding.json')})
-        self.entry = dict(seed=1, gpu=2, spec_sha256='NONNATIVE',
+        self.entry = dict(seed=seed, gpu=2, spec_sha256='NONNATIVE',
                           **{name: api.pin(inputs / f'{name}.json') for name in ('allocation', 'fit_inputs', 'c0_inputs', 'material')})
         fit_root = self.runs / 'fit_outer/fit'
         fit_root.mkdir(parents=True)
@@ -88,7 +88,7 @@ class FollowupTests(unittest.TestCase):
         sources = {module.__file__: api.pin(module.__file__)['sha256'] for module in modules.values()}
         write(self.campaign / 'manifest.json', dict(schema='NONNATIVE_CAMPAIGN', budget={'NONNATIVE': True},
                                                    entries=[self.entry], source_files=sources))
-        self.args = argparse.Namespace(root=str(self.base / 'followup'), source_root=str(source), seed=1, gpu=2,
+        self.args = argparse.Namespace(root=str(self.base / 'followup'), source_root=str(source), seed=seed, gpu=2,
                                        campaign=str(self.campaign / 'manifest.json'),
                                        campaign_sha256=api.pin(self.campaign / 'manifest.json')['sha256'])
 
@@ -298,14 +298,9 @@ class FollowupTests(unittest.TestCase):
 
     def test_validation_only_ast_boundary(self):
         original, replacement = self.base / 'old.py', self.base / 'new.py'
-        original.write_text('import math\ndef validate_warm_tensors(warm, trainable):\n    return False\n')
-        replacement.write_text('import math\ndef validate_warm_tensors(warm, trainable):\n    return True\n')
-        api.validate_repair(original, replacement)
-        replacement.write_text('import os\ndef validate_warm_tensors(warm, trainable):\n    return True\n')
-        with self.assertRaisesRegex(ValueError, 'outside warm validator'):
-            api.validate_repair(original, replacement)
-        replacement.write_text('import math\ndef other():\n    return True\n')
-        with self.assertRaisesRegex(ValueError, 'single warm validator'):
+        original.write_text('def validate_warm_tensors(warm, trainable):\n    return False\n')
+        replacement.write_text('def validate_warm_tensors(warm, trainable):\n    return True\n')
+        with self.assertRaisesRegex(ValueError, 'exact scoped functions'):
             api.validate_repair(original, replacement)
 
     def repaired_runtime(self):
@@ -316,9 +311,9 @@ class FollowupTests(unittest.TestCase):
         original = api.pin(self.runtime.fit.__file__)
         outer_original = api.pin(self.runtime.outer.__file__)
         outer = replacement.with_name('outer.py')
-        outer.write_bytes(Path(outer_original['path']).read_bytes())
-        repair = dict(original=original, replacement=api.pin(replacement), scope='validate_warm_tensors_only',
-                      outer_original=outer_original, outer_relocated=api.pin(outer))
+        outer.write_text('NONNATIVE REPAIRED OUTER PLACEHOLDER\n')
+        repair = dict(original=original, replacement=api.pin(replacement), scope=api.REPAIR_SCOPE,
+                      outer_original=outer_original, outer_replacement=api.pin(outer))
         receipt = replacement.parent.parent / 'warm_repair.json'
         write(receipt, repair)
         self.runtime.repair = {**repair, 'receipt': api.pin(receipt)}
@@ -342,6 +337,11 @@ class FollowupTests(unittest.TestCase):
             self.assertEqual(inputs['material'], self.entry['material'])
             self.assertIn(str(replacement), inputs['source_files'])
         self.assertEqual(plan['originals'][0], api.pin(self.runs / 'fit_outer/collection.json'))
+        original_allocation = api.checked(self.entry['allocation'])
+        self.assertEqual(api.checked(plan['runtime_allocation']),
+                         {**original_allocation, 'outer_sha256': self.runtime.repair['outer_replacement']['sha256']})
+        for call in self.runtime.outer.controller.call_args_list:
+            self.assertEqual(call.args[2:4], (plan['runtime_allocation']['path'], plan['runtime_allocation']['sha256']))
 
     def test_repair_pin_drift_refuses_run(self):
         original_source, replacement = self.repaired_runtime()
@@ -365,15 +365,35 @@ class FollowupTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'exact single repaired'):
             api.original_sources({}, self.runtime)
 
+    def test_repaired_source_map_translates_both_replacements(self):
+        self.repaired_runtime()
+        repair = self.runtime.repair
+        sources = {binding['path']: binding['sha256'] for binding in (repair['replacement'], repair['outer_replacement'])}
+        expected = {binding['path']: binding['sha256'] for binding in (repair['original'], repair['outer_original'])}
+        self.assertEqual(api.original_sources(sources, self.runtime), expected)
+        for changed, error in (({**sources, repair['outer_replacement']['path']: '0' * 64}, 'outer source drift'),
+                               ({**sources, repair['outer_original']['path']: repair['outer_original']['sha256']}, 'ambiguous outer')):
+            with self.assertRaisesRegex(ValueError, error):
+                api.original_sources(changed, self.runtime)
+
     def prior_failure(self, worker=None):
-        self.prepare()
+        attempt = 3 if getattr(self.args, 'prior_failure', None) else 2
+        self.args.root = str(self.base / f'pcfl_sequence_v2_followup_seed{self.args.seed}_20260913_attempt{attempt}')
+        plan = self.prepare()
         previous = Path(self.args.root)
         outer = previous / 'runs/B200_NEW_DOSE_fit_outer'
         outer.mkdir()
         write(outer / 'collection.json', dict(status='FAILED', worker_identity=worker, returncode=None,
-                                             stage_inventory={}, elapsed_seconds=6))
+              stage_inventory={}, elapsed_seconds=6, sha256='NONNATIVE', retries=0, phase='B200_NEW_DOSE',
+              inputs=plan['fit_inputs'][0], files={}, allocation_file_sha256=self.entry['allocation']['sha256'],
+              outer_source_sha256=api.checked(self.entry['allocation'])['outer_sha256']))
         write(previous / 'stopped.json', dict(status='STOPPED', phase='B200_NEW_DOSE', stage='fit',
-              elapsed_seconds=8, results=[dict(collection=api.pin(outer / 'collection.json'))]))
+              elapsed_seconds=8, results=[dict(collection=api.pin(outer / 'collection.json'),
+              phase='B200_NEW_DOSE', stage='fit', inputs=plan['fit_inputs'][0])]))
+        if getattr(self.runtime, 'repair', None) is not None:
+            plan['source_root'] = '/tmp/astra_pcfl_sequence_v2_source_20260913_warmfix2'
+            (previous / 'manifest.json').write_text(json.dumps(plan))
+        write(previous / 'started.json', dict(manifest=api.pin(previous / 'manifest.json')))
         self.args.prior_failure = str(previous / 'stopped.json')
         self.args.prior_failure_sha256 = api.pin(previous / 'stopped.json')['sha256']
         self.args.root = str(self.base / 'followup_retry')
@@ -399,6 +419,7 @@ class FollowupTests(unittest.TestCase):
     def diagnosed_warm_failure(self, message='full parent tensor coverage differs'):
         source, replacement = self.repaired_runtime()
         with patch.object(api, 'SOURCE', source):
+            self.prior_failure()
             self.prior_failure(worker={'pid': 123})
         self.args.prior_failure_kind = 'warm-prefix-validation'
         prior_root = Path(self.args.prior_failure).parent
@@ -410,7 +431,7 @@ class FollowupTests(unittest.TestCase):
         (stage / 'checkpoint').mkdir(parents=True)
         write(stage / 'failure.json', dict(kind='NATIVE', message=message, partial_checkpoint_not_eligible=True,
               phase='B200_NEW_DOSE', status='FAILED', type='ActorError'))
-        write(stage / 'checkpoint/train_manifest.json', dict(steps=200, config={'seed': 1},
+        write(stage / 'checkpoint/train_manifest.json', dict(steps=200, config={'seed': self.args.seed},
               warm_start={'parent_path': str(self.runs / 'fit_outer/fit/checkpoint')}))
         collection = api.checked(api.pin(failed_root / 'collection.json'))
         collection.update(returncode=1, gpu_released=True,
@@ -427,7 +448,7 @@ class FollowupTests(unittest.TestCase):
         with patch.object(api, 'SOURCE', source):
             plan = self.prepare()
         self.assertEqual(plan['prior_failed_work'], dict(fits=1, updates=200, presentations=800, readout_calls=0))
-        self.assertEqual(plan['initial_outer_seconds'], 308)
+        self.assertEqual(plan['initial_outer_seconds'], 316)
         self.assertEqual(plan['counts'], api.COUNTS)
 
     def test_other_worker_failure_remains_ineligible(self):
@@ -435,6 +456,166 @@ class FollowupTests(unittest.TestCase):
         with patch.object(api, 'SOURCE', source):
             with self.assertRaisesRegex(ValueError, 'only diagnosed'):
                 self.prepare()
+
+    def collector_failure(self):
+        source = self.diagnosed_warm_failure()
+        self.args.root = str(self.base / f'pcfl_sequence_v2_followup_seed{self.args.seed}_20260913_attempt4')
+        with patch.object(api, 'SOURCE', source):
+            plan = self.prepare()
+        previous = Path(self.args.root)
+        plan['source_root'] = '/tmp/astra_pcfl_sequence_v2_source_20260913_warmfix3'
+        (previous / 'manifest.json').write_text(json.dumps(plan))
+        write(previous / 'started.json', dict(manifest=api.pin(previous / 'manifest.json')))
+        outer = previous / 'runs/B200_NEW_DOSE_fit_outer'
+        stage = outer / 'fit'
+        (stage / 'checkpoint').mkdir(parents=True)
+        write(stage / 'checkpoint/train_manifest.json', dict(steps=200, config={'seed': self.args.seed},
+              warm_start={'parent_path': str(self.runs / 'fit_outer/fit/checkpoint')}))
+        write(stage / 'completed.json', dict(sha256='NONNATIVE', kind='NATIVE', status='COMPLETE', phase='B200_NEW_DOSE',
+              updates=200, learner_seed=self.args.seed, predecessor=self.parent, inputs=plan['fit_inputs'][0]))
+        (outer / 'fit_completed.json').write_bytes((stage / 'completed.json').read_bytes())
+        errors = [dict(error='warm start: output must be fresh', phase='stage_evidence', type='ValueError')]
+        write(outer / 'failure.json', dict(errors=errors))
+        worker = {'pid': 123}
+        write(outer / 'worker_exit.json', dict(returncode=0, identity=worker))
+        write(outer / 'worker_release.json', dict(value=dict(identity=worker, owned_group_released=True)))
+        write(outer / 'collection.json', dict(status='FAILED', worker_identity=worker, returncode=0, gpu_released=True,
+              stage_inventory=inventory(stage), elapsed_seconds=185, sha256='NONNATIVE', retries=0,
+              phase='B200_NEW_DOSE', inputs=plan['fit_inputs'][0], files=inventory(outer), errors=errors,
+              completed_sha256=None, full_contract_released=False, automatic_promotion=False,
+              allocation_file_sha256=self.entry['allocation']['sha256'],
+              outer_source_sha256=api.checked(self.entry['allocation'])['outer_sha256']))
+        write(previous / 'stopped.json', dict(status='STOPPED', phase='B200_NEW_DOSE', stage='fit', elapsed_seconds=187,
+              results=[dict(collection=api.pin(outer / 'collection.json'), inputs=plan['fit_inputs'][0],
+                            phase='B200_NEW_DOSE', stage='fit')]))
+        self.args.prior_failure = str(previous / 'stopped.json')
+        self.args.prior_failure_sha256 = api.pin(self.args.prior_failure)['sha256']
+        self.args.prior_failure_kind = 'collector-predecessor-validation'
+        self.args.root = str(self.base / f'pcfl_sequence_v2_followup_seed{self.args.seed}_20260913_attempt5')
+        return source, previous
+
+    def test_seed0_attempt5_charges_full_chain_without_reusing_attempt4(self):
+        self.setUp(seed=0)
+        source, previous = self.collector_failure()
+        before = inventory(previous)
+        with patch.object(api, 'SOURCE', source):
+            plan = self.prepare()
+            api.run(self.args, self.runtime)
+        self.assertEqual(plan['prior_failed_work'], dict(fits=2, updates=400, presentations=1600, readout_calls=0))
+        self.assertEqual(plan['initial_outer_seconds'], 503)
+        self.assertEqual(plan['counts'], api.COUNTS)
+        self.assertEqual(len(self.calls), 8)
+        self.assertEqual(inventory(previous), before)
+        for selection, inputs in self.calls:
+            if selection['stage'] == 'fit':
+                self.assertEqual(inputs['predecessor'], None if selection['phase'] == 'CLEAN_CUM600' else self.parent)
+            else:
+                self.assertTrue(Path(inputs['fit_receipt']['path']).is_relative_to(Path(self.args.root)))
+        for attempt in (2, 3, 4):
+            failed = self.base / f'pcfl_sequence_v2_followup_seed0_20260913_attempt{attempt}'
+            self.assertIn(api.pin(failed / 'stopped.json'), plan['pins'])
+            self.assertIn(api.pin(failed / 'manifest.json'), plan['pins'])
+
+    def test_seed1_seed2_charge_one_failed_fit(self):
+        for seed in (1, 2):
+            self.setUp(seed=seed)
+            source = self.diagnosed_warm_failure()
+            with self.subTest(seed=seed), patch.object(api, 'SOURCE', source):
+                plan = self.prepare()
+            self.assertEqual(plan['prior_failed_work'], dict(fits=1, updates=200, presentations=800, readout_calls=0))
+            self.assertEqual(plan['initial_outer_seconds'], 316)
+
+    def test_collector_failure_rejected_for_other_seed(self):
+        source, previous = self.collector_failure()
+        with patch.object(api, 'SOURCE', source), self.assertRaisesRegex(ValueError, 'seed0 attempt4 only'):
+            self.prepare()
+        self.assertFalse(Path(self.args.root).exists())
+
+    def test_collector_ancestry_cannot_drop_attempt3_or_its_cost(self):
+        self.setUp(seed=0)
+        source, previous = self.collector_failure()
+        path = previous / 'manifest.json'
+        original = json.loads(path.read_text())
+        for field, value, error in (('prior_failure', None, 'ancestry required'),
+                                    ('initial_outer_seconds', 300, 'elapsed ancestry'),
+                                    ('prior_failed_work', dict(fits=0, updates=0, presentations=0, readout_calls=0), 'accounting')):
+            path.write_text(json.dumps({**original, field: value}))
+            (previous / 'started.json').write_text(json.dumps(dict(manifest=api.pin(path))))
+            with self.subTest(field=field), patch.object(api, 'SOURCE', source), self.assertRaisesRegex(ValueError, error):
+                self.prepare()
+            self.assertFalse(Path(self.args.root).exists())
+
+    def test_collector_other_error_or_worker_return_refused(self):
+        self.setUp(seed=0)
+        source, previous = self.collector_failure()
+        path = previous / 'runs/B200_NEW_DOSE_fit_outer/collection.json'
+        original = json.loads(path.read_text())
+        stopped_path = previous / 'stopped.json'
+        stopped = json.loads(stopped_path.read_text())
+        for field, value in (('returncode', 1), ('errors', []), ('gpu_released', False)):
+            path.write_text(json.dumps({**original, field: value}))
+            stopped['results'][0]['collection'] = api.pin(path)
+            stopped_path.write_text(json.dumps(stopped))
+            self.args.prior_failure_sha256 = api.pin(stopped_path)['sha256']
+            with self.subTest(field=field), patch.object(api, 'SOURCE', source), self.assertRaises(ValueError):
+                self.prepare()
+            self.assertFalse(Path(self.args.root).exists())
+
+    def test_failed_checkpoint_drift_refused_before_prepare(self):
+        self.setUp(seed=0)
+        source, previous = self.collector_failure()
+        checkpoint = previous / 'runs/B200_NEW_DOSE_fit_outer/fit/checkpoint/train_manifest.json'
+        checkpoint.write_text(checkpoint.read_text() + '\n')
+        with patch.object(api, 'SOURCE', source), self.assertRaisesRegex(ValueError, 'inventory drift'):
+            self.prepare()
+
+    def test_attempt5_cannot_be_nested_in_failed_attempt4(self):
+        self.setUp(seed=0)
+        source, previous = self.collector_failure()
+        self.args.root = str(previous / 'attempt5')
+        before = inventory(previous)
+        with patch.object(api, 'SOURCE', source), self.assertRaisesRegex(ValueError, 'overlaps immutable failed'):
+            self.prepare()
+        self.assertEqual(inventory(previous), before)
+
+    def test_prior_manifest_must_match_started_pin(self):
+        source = self.diagnosed_warm_failure()
+        previous = Path(self.args.prior_failure).parent
+        path = previous / 'manifest.json'
+        path.write_text(path.read_text() + '\n')
+        with patch.object(api, 'SOURCE', source), self.assertRaisesRegex(ValueError, 'started manifest drift'):
+            self.prepare()
+
+    def test_readout_under_failed_attempt_is_not_eligible(self):
+        self.setUp(seed=0)
+        source, previous = self.collector_failure()
+        (previous / 'runs/B200_NEW_DOSE_readout_outer').mkdir()
+        with patch.object(api, 'SOURCE', source), self.assertRaisesRegex(ValueError, 'no later stages or readouts'):
+            self.prepare()
+
+    def test_ancestor_work_pin_drift_aborts_before_any_controller(self):
+        self.setUp(seed=0)
+        source, previous = self.collector_failure()
+        with patch.object(api, 'SOURCE', source):
+            self.prepare()
+        ancestor = self.base / 'pcfl_sequence_v2_followup_seed0_20260913_attempt3/runs/B200_NEW_DOSE_fit_outer/fit/checkpoint/train_manifest.json'
+        ancestor.write_text(ancestor.read_text() + '\n')
+        with self.assertRaisesRegex(ValueError, 'provenance drift'):
+            api.run(self.args, self.runtime)
+        self.runtime.outer.controller.assert_not_called()
+
+    def test_runtime_allocation_cannot_change_gpu(self):
+        plan = self.prepare()
+        path = Path(plan['runtime_allocation']['path'])
+        value = json.loads(path.read_text())
+        path.write_text(json.dumps({**value, 'gpu_index': 7}))
+        plan['runtime_allocation'] = api.pin(path)
+        manifest = Path(self.args.root) / 'manifest.json'
+        manifest.write_text(json.dumps(plan))
+        self.args.manifest_sha256 = api.pin(manifest)['sha256']
+        with self.assertRaisesRegex(ValueError, 'only outer source pin'):
+            api.run(self.args, self.runtime)
+        self.runtime.outer.controller.assert_not_called()
 
 
 if __name__ == '__main__':

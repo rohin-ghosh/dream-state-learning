@@ -16861,6 +16861,28 @@ Handoff updated with current ownership and restart path. Acquired evidence
 is still SEQ-194 only; general retention/G3, parenting, H1/H2 and mechanism
 freeze remain unqualified. TSJ-v1 stays prospective until its entry evidence.
 
+## [Builder] 2026-09-13T20:07Z — warmfix4 CPU and independent-review receipts
+
+The explicit pre-fit/read-only split is now tested end to end. Native node2
+CPU snapshot at /tmp/astra_pcfl_warmfix4_cpu_source_20260913_attempt1:
+35tests PASS50.673s, no skips, CUDA_VISIBLE_DEVICES empty, no scientific fit
+or GPU call. Includes real tiny Qwen2/PEFT tensor serialization/initialization,
+wrapped and actual unwrapped caller names, sparse dtype conversion checks,
+pre-fit occupied destination rejection, and all26outer controller tests.
+Receipt FILE SHA256bc934349fd19aae76bc9ed53e92156aa57e4bd7f4dd0495be362a874195ff622
+is copied into receipts_20260912/astra_pcfl_v2_validation_20260913 alongside
+the native log. Exact tested fit563354304444b306b7d1ba210c3dce42a4d9e6c1b1322f239e5256341210c45f
+and outerc9f01d41872fc3a890826eff1a5367c847c8e93d02be9d0fa274feb19424f319.
+
+Peirce independent static re-review PASS after its first review caught the
+remaining controller postflight call; no scientific-recipe change, applicable
+guard loss, or validator mutation found. This is not GPU evidence. Main also
+reran Russell's49operator/overlay tests PASS1.417s and reviewed the explicit
+AST restrictions on both changed source modules. Failed attempt4 is now
+accounted as inadmissible work in its exact chain, never an accepted input.
+Hubble's full terminal reducer suite is running on these stable source bytes.
+No model science launch yet; prepare fresh overlay/plans while it runs.
+
 ## [Fable] 2026-09-13T20:02Z — self-check: retention-v2 descendants still blocked by checker defects, not by science — attempt 3 (3 fits) failed a PEFT tensor-namespace check after training; attempt 4 (1 fit) trained cleanly and was then failed by an impure post-fit validator; root rejects any recovered-checkpoint admission; adaptive-parent task certificate found inconsistent before model use; fleet idle
 
 **Retention-v2 descendants:** attempt 3's three B200_NEW_DOSE workers each completed 200 updates and wrote checkpoints, then exited 1 at "full parent tensor coverage differs" — root cause verified: the caller recomputed names from the unwrapped base while the PEFT receipt uses the `base_model.model.` wrapper namespace; the earlier tiny test had passed receipt names back to the validator and so missed the caller distinction. Repair committed (`3dc9edf8`: canonicalise only PEFT's known prefix, reject collisions, keep full tensor/hash/shape/dtype coverage). Attempt 4 (seed 0) then trained 200 updates cleanly, sealed `fit/completed.json`, and was failed by the outer because post-fit `validate_stage` called the mutating pre-fit predecessor validator, which demands a fresh output ("warm start: output must be fresh") — a checker impurity. Root: both attempts are inadmissible failed physical work (4 fits, 800 updates, 3,200 presentations, zero readouts), not scientific negatives; no checkpoint may be reused, repaired in place or promoted; the proposed `--recovery` admission path is rejected. Admissible path: split evidence-only vs for-write validation with tests for both, reducer support for the attempt 2/3/4 failure ancestry, fresh independent audit, then a fresh B200 fit from the unchanged A200 parents and the other three arms. Ledger P25 (b)–(d) remain OPEN; (a) stands.

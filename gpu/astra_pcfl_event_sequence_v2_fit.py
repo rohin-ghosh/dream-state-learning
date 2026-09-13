@@ -42,7 +42,7 @@ def require_acquisition(inputs, material, phase, *, kind="NATIVE"):
 
 
 def validate_predecessor(inputs, material, phase, root, config, kind):
-    """Validate exact full immutable A200; never accept S_A40 or a fallback."""
+    """Read immutable A200 evidence without preparing a child checkpoint."""
     parent_phase = sequence.PHASES[phase][0]
     pin = inputs.get("predecessor")
     require((pin is None) == (parent_phase is None), "exact immediate predecessor required; cold phases require C0")
@@ -77,8 +77,33 @@ def validate_predecessor(inputs, material, phase, root, config, kind):
     _completion(manifest, parent_config, selected, file_hash(parent_root / "corpus.json"))
     require(manifest.get("warm_start") is None, "A200 must start from clean C0")
     same(prefix._json(prefix._record((parent_root / "corpus.json").read_bytes())), selected["items"], "predecessor material drift")
-    v3._warm_parent(parent, root / "checkpoint", config)
+    require(not any(path.is_symlink() for path in (parent, root, *parent.parents, *root.parents)),
+            "symlink-aliased parent/output")
+    parent_files = v3._warm_inventory(parent)
+    require(all(name in parent_files for name in ("DONE", "adapter_config.json", "train_manifest.json"))
+            and "EMPTY_CORPUS" not in parent_files, "parent is incomplete")
+    saved_adapter = prefix._json(prefix._record((parent / "adapter_config.json").read_bytes()))
+    require(all(v3._base_identity(value) == v3._base_identity(config.model) for value in
+                (saved_adapter["base_model_name_or_path"], saved_config["model"], manifest["base_model"])),
+            "parent base identity mismatch")
+    require(not config.svd_init and not config.freeze_a and not saved_config["freeze_a"],
+            "SVD initialization/frozen A is incompatible")
+    require(saved_config["rank"] == config.rank
+            and (saved_config["alpha"] or 2 * saved_config["rank"]) == (config.alpha or 2 * config.rank)
+            and saved_config["dropout"] == config.dropout
+            and set(saved_config["target_modules"]) == set(config.target_modules)
+            and saved_config["layers"] == config.layers, "parent LoRA recipe mismatch")
+    require(len([name for name in ("adapter_model.safetensors", "adapter_model.bin") if name in parent_files]) == 1,
+            "missing/ambiguous adapter weights")
     require(not root.is_relative_to(parent_root) and not parent_root.is_relative_to(root), "output/predecessor overlap")
+    return parent, prior, before
+
+
+def validate_predecessor_for_write(inputs, material, phase, root, config, kind):
+    """Validate predecessor evidence and require the actual write output fresh."""
+    parent, prior, before = validate_predecessor(inputs, material, phase, root, config, kind)
+    if parent is not None:
+        v3._warm_parent(parent, root / "checkpoint", config)
     return parent, prior, before
 
 
@@ -168,7 +193,7 @@ def run_phase(inputs_path, inputs_sha256, output, deadline, *, phase="A200", dev
     sequence.validate_spec(material["spec"], imported, imported["sha256"])
     parent_phase = sequence.PHASES[phase][0]
     predecessor_pin = inputs.get("predecessor")
-    parent, prior, before_parent = validate_predecessor(inputs, material, phase, root, config, kind)
+    parent, prior, before_parent = validate_predecessor_for_write(inputs, material, phase, root, config, kind)
     acquisition_result = require_acquisition(inputs, material, phase, kind=kind)
     root.mkdir(parents=False, exist_ok=False)
     write(root / "inputs.json", inputs)

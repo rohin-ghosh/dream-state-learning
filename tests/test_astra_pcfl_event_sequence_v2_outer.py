@@ -1,4 +1,4 @@
-"""Real harmless child sessions, synthetic fit receipts, injected GPU observations."""
+"""Non-material regression tests: harmless children, nonnative synthetic receipts."""
 
 import copy
 import os
@@ -46,19 +46,42 @@ manifest=dict(config=asdict(config),base_model=config.model,recipe=fit.v3.RECIPE
                 n_encoded=selected['presentations'],n_skipped_no_target=0),
     truncation=dict.fromkeys(('items_truncated','context_tokens_dropped','target_tokens_dropped','items_split'),0),
     tokens=dict(target=selected['supervised_tokens'],total=selected['input_tokens']))
+trainable=['layer.lora_A.default.weight','layer.lora_B.default.weight']
+gate='NOT_REQUIRED_A200'
+if inputs.get('predecessor'):
+    assert inputs['synthetic_fixture_kind']=='INJECTED_CPU_TEST'
+    prior=fit.read_pin(inputs['predecessor'])
+    parent=pathlib.Path(prior['checkpoint'])
+    parent_files=fit.v3._warm_inventory(parent)
+    source={f'base_model.model.model.layers.0.self_attn.q_proj.lora_{suffix}.weight':
+        dict(shape=shape,dtype='torch.float32',sha256=fit.prefix.digest(['SYNTHETIC',suffix]))
+        for suffix,shape in [('A',[config.rank,1]),('B',[1,config.rank])]}
+    trainable=[name.removeprefix('base_model.model.').replace('.weight','.default.weight') for name in source]
+    manifest['warm_start']=dict(mode='WEIGHT_WARM_START_FRESH_OPTIMIZER',
+        optimizer_initialization='fresh_per_write',optimizer_state_restored=False,optimizer_state_saved=False,
+        optimizer_class='torch.optim.adamw.AdamW',optimizer_defaults=dict(lr=config.lr),
+        optimizer_initial_state_entries=0,parent_path=str(parent),parent_files=parent_files,
+        parent_files_after=parent_files,parent_unchanged=True,source_state=source,initialized_state=source,
+        initialized_loaded_state_check=True,
+        equality_scope='exact after explicit source-to-initialized dtype conversion, before any update',
+        dtype_conversions={},trainable_names=['base_model.model.'+name for name in trainable],
+        base_frozen=True,adapter_count=1,phase_seed=config.seed,parent_cumulative_steps=prior['updates'],
+        trainer_sha256=fit.file_hash(fit.v3.__file__),phase_steps=config.max_steps,
+        cumulative_steps=prior['updates']+config.max_steps,final_state=source)
+    gate=fit.read_pin(inputs['acquisition_receipt'])
 if mode=='wrongtokens': manifest['tokens']['target']+=1
 if mode=='truncation': manifest['truncation']['items_truncated']=1
 fit.write(checkpoint/'train_manifest.json',manifest)
 if mode=='failure': fit.write(root/'failure.json',dict(error='ORIGINAL FAILURE'))
 receipt=dict(schema=fit.SCHEMA+'/completed',status='COMPLETE',kind='NATIVE',phase=phase,
-    learner_seed=inputs['learner_seed'],descendants_enabled=False,acquisition_validation='NOT_REQUIRED_A200',
+    learner_seed=inputs['learner_seed'],descendants_enabled=False,acquisition_validation=gate,
     parent_phase=fit.sequence.PHASES[phase][0],predecessor=inputs.get('predecessor'),
     inputs=dict(path=path,sha256=checksum),material_sha256=inputs['material']['sha256'],
     export_sha256=material['sha256'],spec_sha256=material['spec']['sha256'],import_sha256=material['spec']['import_sha256'],
     items_sha256=selected['items_sha256'],encoding_sha256=selected['encoding_sha256'],
     model_binding=inputs['model_binding'],base_state_receipt=inputs['base_state_receipt'],
-    updates=config.max_steps,nonfinite_batches=0,checkpoint=str(checkpoint),warm_start=None,base_unchanged=True,
-    trainable_names=['layer.lora_A.default.weight','layer.lora_B.default.weight'],files=fit.v3._warm_inventory(root),
+    updates=config.max_steps,nonfinite_batches=0,checkpoint=str(checkpoint),warm_start=manifest.get('warm_start'),base_unchanged=True,
+    trainable_names=trainable,files=fit.v3._warm_inventory(root),
     elapsed_seconds=dict(load_and_base_check=0,v3_fit_call=0,worker=time.monotonic()-started),
     original_status='FORMATION_FAILED',limits=fit.sequence.LIMITS,outer_release_required=True,
     gpu_released=False,full_contract_released=False,automatic_promotion=False)
@@ -274,6 +297,192 @@ class OuterTests(unittest.TestCase):
     def run_controller(self):
         return outer.controller(str(self.path), self.inputs_hash, str(self.allocation_path), self.allocation_hash,
                                 str(self.output), outer_sha256=self.source_hash, phase=self.phase, stage=self.stage, state=self.state)
+
+    def prepare_synthetic_warm_phase(self):
+        self.output = self.root / "synthetic_parent_outer"
+        result = self.run_controller()
+        self.assertEqual(result["status"], "COMPLETED", result["errors"])
+        self.parent_outer = self.output
+        self.parent_fit = self.output / "fit"
+        self.parent_inventory = outer.fit.v3._warm_inventory(self.parent_outer)
+        self.parent_inputs_path = self.path
+        self.parent_inputs_hash = self.inputs_hash
+        self.path = self.prepared / "synthetic_warm_inputs.json"
+        predecessor = self.parent_fit / "completed.json"
+        self.inputs["predecessor"] = {"path": str(predecessor), "sha256": outer.fit.file_hash(predecessor)}
+        self.inputs["synthetic_fixture_kind"] = "INJECTED_CPU_TEST"
+        self.synthetic_acquisition = outer.fit.prefix.seal({
+            "schema": outer.fit.acquisition.SCHEMA + "/receipt", "status": "VALIDATED",
+            "kind": "INJECTED_CPU_TEST", "observed_gate": True,
+            "a200_fit_receipt": self.inputs["predecessor"], "automatic_promotion": False,
+            "full_contract_released": False, "limits": outer.fit.sequence.LIMITS})
+        acquisition_path = self.prepared / "synthetic_acquisition.json"
+        outer.write(acquisition_path, self.synthetic_acquisition)
+        self.inputs["acquisition_receipt"] = {"path": str(acquisition_path), "sha256": outer.fit.file_hash(acquisition_path)}
+
+        def synthetic_acquisition(pin, material, inputs, *, expected_kind):
+            self.assertEqual(inputs["synthetic_fixture_kind"], "INJECTED_CPU_TEST")
+            self.assertEqual(expected_kind, "NATIVE")
+            self.assertEqual(material, outer.read(inputs["material"]["path"]))
+            self.assertEqual(outer.fit.read_pin(pin), self.synthetic_acquisition)
+            outer.fit.prefix.unseal(self.synthetic_acquisition, self.synthetic_acquisition["sha256"])
+            return copy.deepcopy(self.synthetic_acquisition)
+
+        context = patch.object(outer.fit.acquisition, "validate", side_effect=synthetic_acquisition)
+        self.acquisition_mock = context.start()
+        self.addCleanup(context.stop)
+        self.phase, self.output = "B200_NEW_DOSE", self.root / "synthetic_warm_outer"
+        self.save()
+
+    def validate_existing_warm_stage(self):
+        directory = self.output / "fit"
+        return outer.validate_stage(directory, self.output / "fit_completed.json",
+            {"path": str(self.path), "sha256": self.inputs_hash}, self.inputs,
+            outer.read(self.inputs["material"]["path"]), self.phase,
+            outer.lifecycle._inventory(directory, time.monotonic() + 30), 1800)
+
+    def test_warm_prefit_and_postfit_full_validation_preserve_existing_checkpoints(self):
+        self.prepare_synthetic_warm_phase()
+        directory = self.output / "fit"
+        child_count = len(self.children)
+        warm_parent_calls, stage_inventories, validation_order = [], [], []
+        real_warm_parent, real_validate_stage = outer.fit.v3._warm_parent, outer.validate_stage
+        real_inputs = outer._inputs
+
+        def validate_inputs(*args, **kwargs):
+            self.assertEqual(kwargs["output"], directory)
+            occupied = (directory / "checkpoint").exists()
+            before = outer.fit.v3._warm_inventory(directory) if occupied else None
+            validated = real_inputs(*args, **kwargs)
+            if occupied:
+                self.assertEqual(outer.fit.v3._warm_inventory(directory), before)
+            self.assertEqual(outer.fit.v3._warm_inventory(self.parent_outer), self.parent_inventory)
+            validation_order.append(("inputs", occupied))
+            return validated
+
+        def warm_parent(parent, destination, config):
+            warm_parent_calls.append((Path(parent), Path(destination), Path(destination).exists()))
+            return real_warm_parent(parent, destination, config)
+
+        def validate_stage(*args, **kwargs):
+            self.assertEqual(args[0], directory)
+            self.assertTrue((directory / "checkpoint/DONE").is_file())
+            before = outer.fit.v3._warm_inventory(directory)
+            completed = real_validate_stage(*args, **kwargs)
+            self.assertEqual(outer.fit.v3._warm_inventory(directory), before)
+            self.assertEqual(outer.fit.v3._warm_inventory(self.parent_outer), self.parent_inventory)
+            stage_inventories.append(before)
+            validation_order.append(("stage", True))
+            return completed
+
+        with patch.object(outer.fit.v3, "_warm_parent", side_effect=warm_parent), \
+                patch.object(outer, "_inputs", side_effect=validate_inputs), \
+                patch.object(outer, "validate_stage", side_effect=validate_stage), \
+                patch.object(outer.fit, "validate_predecessor_for_write",
+                             wraps=outer.fit.validate_predecessor_for_write) as prefit:
+            result = self.run_controller()
+            self.assertEqual(prefit.call_count, 2)
+            self.assertTrue(all(call.args[3] == directory for call in prefit.call_args_list))
+            completed = self.validate_existing_warm_stage()
+        self.assertEqual(result["status"], "COMPLETED", result["errors"])
+        self.assertEqual(validation_order, [("inputs", False), ("inputs", False),
+                                           ("stage", True), ("inputs", True), ("stage", True)])
+        parent_calls = [call for call in warm_parent_calls if call[0] == self.parent_fit / "checkpoint"]
+        self.assertTrue(parent_calls)
+        self.assertTrue(all(destination == directory / "checkpoint" and not existed
+                            for _, destination, existed in parent_calls), parent_calls)
+        self.assertEqual(len(self.children), child_count + 1)
+        self.assertEqual(len(stage_inventories), 2)
+        self.assertEqual(stage_inventories[0], stage_inventories[1])
+        self.assertEqual(result["returncode"], 0)
+        self.assertTrue(result["gpu_released"])
+        self.assertEqual(result["completed_sha256"], completed["sha256"])
+        self.assertEqual(completed["warm_start"]["cumulative_steps"], 400)
+        self.assertEqual(completed["warm_start"]["dtype_conversions"], {})
+        self.assertEqual(completed["warm_start"]["parent_files"], outer.fit.v3._warm_inventory(self.parent_fit / "checkpoint"))
+        self.assertEqual((directory / "completed.json").read_bytes(), (self.output / "fit_completed.json").read_bytes())
+        self.assertEqual(outer.fit.file_hash(self.parent_inputs_path), self.parent_inputs_hash)
+        self.assertFalse(result["automatic_promotion"] or result["full_contract_released"])
+        self.assertTrue(self.acquisition_mock.called)
+
+    def test_warm_actual_prefit_occupied_checkpoint_is_refused_without_spawn(self):
+        self.prepare_synthetic_warm_phase()
+        child_count = len(self.children)
+        directory = self.output / "fit"
+        occupied_inventory = None
+
+        def occupy_output(allocation, deadline):
+            nonlocal occupied_inventory
+            checkpoint = directory / "checkpoint"
+            checkpoint.mkdir(parents=True)
+            (checkpoint / "original.txt").write_bytes(b"OCCUPIED ORIGINAL CHILD CHECKPOINT\n")
+            occupied_inventory = outer.fit.v3._warm_inventory(directory)
+            return self.gpu(allocation, deadline)
+
+        with patch.object(outer.lifecycle, "check_gpu", side_effect=occupy_output):
+            result = self.run_controller()
+        self.assertEqual(result["status"], "FAILED")
+        self.assertIn("output must be fresh", str(result["errors"]))
+        self.assertEqual(len(self.children), child_count)
+        self.assertIsNone(result["worker_identity"])
+        self.assertEqual(outer.fit.v3._warm_inventory(directory), occupied_inventory)
+        self.assertEqual(outer.fit.v3._warm_inventory(self.parent_outer), self.parent_inventory)
+
+    def test_warm_corrupt_parent_prefit_refused_without_spawn(self):
+        self.prepare_synthetic_warm_phase()
+        child_count = len(self.children)
+        (self.parent_fit / "checkpoint/adapter_model.safetensors").write_bytes(b"CORRUPTED PARENT\n")
+        corrupt_inventory = outer.fit.v3._warm_inventory(self.parent_outer)
+        result = self.run_controller()
+        self.assertEqual(result["status"], "FAILED")
+        self.assertIn("predecessor file drift", str(result["errors"]))
+        self.assertEqual(len(self.children), child_count)
+        self.assertIsNone(result["worker_identity"])
+        self.assertFalse((self.output / "fit").exists())
+        self.assertEqual(outer.fit.v3._warm_inventory(self.parent_outer), corrupt_inventory)
+
+    def test_warm_corrupt_parent_refused_prefit_and_postfit_without_rewriting(self):
+        self.prepare_synthetic_warm_phase()
+        result = self.run_controller()
+        self.assertEqual(result["status"], "COMPLETED", result["errors"])
+        child_count = len(self.children)
+        child_outer = self.output
+        child_inventory = outer.fit.v3._warm_inventory(child_outer)
+        (self.parent_fit / "checkpoint/adapter_model.safetensors").write_bytes(b"CORRUPTED PARENT\n")
+        corrupt_inventory = outer.fit.v3._warm_inventory(self.parent_outer)
+        with self.assertRaisesRegex(ValueError, "predecessor file drift"):
+            self.validate_existing_warm_stage()
+        self.output = self.root / "corrupt_parent_prefit"
+        result = self.run_controller()
+        self.assertEqual(result["status"], "FAILED")
+        self.assertIn("predecessor file drift", str(result["errors"]))
+        self.assertEqual(len(self.children), child_count)
+        self.assertEqual(outer.fit.v3._warm_inventory(self.parent_outer), corrupt_inventory)
+        self.assertEqual(outer.fit.v3._warm_inventory(child_outer), child_inventory)
+
+    def test_warm_wrong_source_and_nonnative_worker_still_refused(self):
+        self.prepare_synthetic_warm_phase()
+        child_count = len(self.children)
+        source_files = copy.deepcopy(self.inputs["source_files"])
+        self.inputs["source_files"].pop(str(Path(outer.fit.__file__).resolve()))
+        self.save()
+        result = self.run_controller()
+        self.assertEqual(result["status"], "FAILED")
+        self.assertIn("loaded stage source pins differ", str(result["errors"]))
+        self.assertEqual(len(self.children), child_count)
+        self.inputs["source_files"] = source_files
+        self.output, self.mode = self.root / "nonnative_warm_worker", "injected"
+        self.save()
+        result = self.run_controller()
+        self.assertEqual(result["status"], "FAILED")
+        self.assertIn("fit completion/kind", str(result["errors"]))
+        self.assertEqual(len(self.children), child_count + 1)
+        self.assertEqual(result["returncode"], 0)
+        self.assertIsNone(result["completed_sha256"])
+        self.assertEqual(outer.read(self.output / "fit/completed.json")["kind"], "INJECTED_CPU_TEST")
+        self.assertEqual((self.output / "fit/completed.json").read_bytes(), (self.output / "fit_completed.json").read_bytes())
+        self.assertEqual(result["stage_inventory"], outer.lifecycle._inventory(self.output / "fit", time.monotonic() + 30))
+        self.assertEqual(outer.fit.v3._warm_inventory(self.parent_outer), self.parent_inventory)
 
     def prepare_readout(self, state="NO_WRITE"):
         records = [{"bank": "A" if index < 4 else "B", "index": index,

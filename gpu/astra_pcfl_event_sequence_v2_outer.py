@@ -70,6 +70,15 @@ def _inputs(inputs_path, inputs_sha256, allocation_path, allocation_sha256, oute
     return inputs, allocation, material
 
 
+def _inputs_for_write(inputs_path, inputs_sha256, allocation_path, allocation_sha256, outer_sha256, phase, deadline, *, stage="fit", state=None, output=None):
+    inputs, allocation, material = _inputs(inputs_path, inputs_sha256, allocation_path, allocation_sha256,
+                                         outer_sha256, phase, deadline, stage=stage, state=state, output=output)
+    if stage == "fit":
+        config = fit.sequence.training_config(phase, inputs["model_path"], learner_seed=inputs["learner_seed"], device="cuda")
+        fit.validate_predecessor_for_write(inputs, material, phase, output, config, "NATIVE")
+    return inputs, allocation, material
+
+
 def validate_stage(directory, snapshot, inputs_pin, inputs, material, phase, inventory, elapsed):
     completed = read(snapshot)
     fit.prefix.unseal(completed, completed["sha256"])
@@ -270,7 +279,7 @@ def controller(inputs_path, inputs_sha256, allocation_path, allocation_sha256, o
             with (root / f"{name}.input.json").open("xb") as stream:
                 stream.write(Path(path).read_bytes())
         sleep(DETACH_SECONDS)
-        inputs, allocation, material = _inputs(inputs_path, inputs_sha256, allocation_path, allocation_sha256, outer_sha256, phase, deadline, stage=stage, state=state, output=directory)
+        inputs, allocation, material = _inputs_for_write(inputs_path, inputs_sha256, allocation_path, allocation_sha256, outer_sha256, phase, deadline, stage=stage, state=state, output=directory)
         require(lifecycle.file_hash(root / "inputs.input.json", deadline) == inputs_sha256
                 and lifecycle.file_hash(root / "allocation.input.json", deadline) == allocation_sha256, "raw input snapshot drift")
         for protected in [Path(inputs["model_path"]).resolve(), *[Path(inputs[name]["path"]).resolve() for name in PIN_NAMES],
@@ -287,7 +296,7 @@ def controller(inputs_path, inputs_sha256, allocation_path, allocation_sha256, o
               "deadline_monotonic": deadline, "worker_deadline_monotonic": deadline - CLEANUP_SECONDS,
               "lease_finish_margin_seconds": max(LEASE_MARGIN, allocation["lease_margin_seconds"])})
         require(resources("pre"), "preflight failed")
-        _inputs(inputs_path, inputs_sha256, allocation_path, allocation_sha256, outer_sha256, phase, deadline, stage=stage, state=state, output=directory)
+        _inputs_for_write(inputs_path, inputs_sha256, allocation_path, allocation_sha256, outer_sha256, phase, deadline, stage=stage, state=state, output=directory)
         require(lifecycle.file_hash(lifecycle.__file__, deadline) == helper_hash, "lifecycle helper drift")
         environment = dict(os.environ, CUDA_VISIBLE_DEVICES=allocation["gpu_uuid"], PYTHONPATH=str(source),
                            PYTHONDONTWRITEBYTECODE="1", **{key: "1" for key in fit.OFFLINE})
