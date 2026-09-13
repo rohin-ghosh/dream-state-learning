@@ -1,0 +1,60 @@
+{
+  "actor_tokens": 294,
+  "actual_calls": 8,
+  "elapsed_seconds": 59.22762446303386,
+  "entry_utc": "2026-09-13T15:56:43.340075+00:00",
+  "errors": [
+    {
+      "error": "fixed task denominator",
+      "phase": "stage_evidence",
+      "type": "ActorError"
+    }
+  ],
+  "examples": [
+    {
+      "id": "interface/READ_REQUIRED_SMOKE/excluded/0/0/0/0/0",
+      "raw": "ROUTE N_S6JZXHYXBT N_HJZRZAYWOT : X,Y,Z",
+      "reads": 0,
+      "reason": "INVALID_TURN",
+      "thinks": 0
+    },
+    {
+      "id": "interface/READ_REQUIRED_SMOKE/excluded/0/0/0/0/1",
+      "raw": "ROUTE N_S6JZXHYXBT N_6TUR2VALJP : X,Y,Z",
+      "reads": 0,
+      "reason": "INVALID_TURN",
+      "thinks": 0
+    },
+    {
+      "id": "interface/READ_REQUIRED_SMOKE/excluded/1/0/0/0/0",
+      "raw": "ROUTE N_F2NEPOJWOO N_W2GYE4FYXE : X1234567890",
+      "reads": 0,
+      "reason": "INVALID_TURN",
+      "thinks": 0
+    }
+  ],
+  "graph_success_tasks": 0,
+  "inserted_memory_tokens": 0,
+  "returncode": 0,
+  "status": "FAILED",
+  "strict_terminal_tasks": 0,
+  "summary": {
+    "active_thought_route_tasks": 0,
+    "denominator": 8,
+    "full_assay_qualified": false,
+    "invalid_read_tasks": 0,
+    "read_handshake_tasks": 0,
+    "route_successes": 0,
+    "served_read_tasks": 0,
+    "stage_gate_passed": false,
+    "thought_interface_tasks": 0,
+    "thought_route_tasks": 0,
+    "thought_tasks": 0
+  },
+  "task_reasons": {
+    "INVALID_TURN": 8
+  },
+  "task_statuses": {
+    "SCORED": 8
+  }
+}

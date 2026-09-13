@@ -14571,3 +14571,46 @@ updates. Native model is the existing officially bound frozen snapshot. The
 outer rechecks allocation before actor start and owns bounded shutdown/release.
 Launched is not completed: inspect collection/replay/release before outcome
 promotion. No panel launched, no process killed by Main, no approval prompt.
+
+## [Builder] SEQ-180 — 2026-09-13 — required-READ smoke stops; outer denominator defect retained
+
+The15:56:43Z node2 GPU0 smoke returned8 actual calls, all INVALID_TURN,0 READs,
+0 strict terminals,0 graph successes and294 output tokens. All8 tasks were
+SCORED by the original stage; it still has a failed handshake gate. Examples
+again emit ROUTE with invented ports. This is an exposed-root interface
+diagnostic only, not a memory-service or learning result. No64-task panel or
+further prompt-prose retry is warranted.
+
+Additionally, the detached outer's stage_evidence check required denominator64
+and rejected the new8-task stage with `ActorError: fixed task denominator`.
+Collection status is FAILED despite worker exit0; retain that failed outer
+verdict and original bytes. The preceding dependent tests did not cover this
+eight-task native collection seam. Lagrange owns a minimal roster-bound
+denominator repair and regression in interface outer/test only; no native
+rerun or retroactive completion rewrite is authorized by that repair.
+Controller196759 and worker196809 are gone; owned_group_released=true,
+release events contain no remaining members and no signals. Post-run compute
+inventory was empty. Elapsed outer59.227624s includes release, not GPU-active
+measurement. Existing two exact init-service exceptions still limit full CVD
+visibility. These operational facts do not erase the collection defect.
+
+Immutable archive on VM and node SHA256
+d49cdff447330cb28fa049cc6ad1dc79530feaa66de626218a1d3079f791fe77:
+`gpu_artifacts_local/pcfl_interface_read_required_smoke_20260913_attempt1/evidence.tar`.
+It includes native stage, raw calls, failed collection/release, original source
+tar, launch helpers and official model binding. Inspection receipt:
+`research_notes/astra_memos/receipts_20260912/astra_pcfl_interface_read_required_smoke_inspect_20260913_attempt1.json`.
+Next: a separately specified symmetric structured-action interface, preserving
+child-selected addresses and full raw scoring, with no useful-address leakage.
+Planning sidecar is active; nothing launched for that successor.
+
+## [Builder] 2026-09-13 — integrate independently reviewed SEQ179 manuscript cut
+
+Six author-frozen manuscript files passed independent bounded review with
+no blocking findings; preserved C99/C100 and no added parenting/generalization
+claims. Archive author handoff and independent review in receipts_20260912;
+review SHA2565192bcf70e3f3e131681638800ae71057f8a1e26679aefb2ba802026fb7fd70d.
+Accept the reviewed cut throughSEQ179 only, not the laterSEQ180 diagnostic.
+Collaborator remains UNSENT. Neither pdflatex nor latexmk is installed here;
+no PDF build/layout certification is claimed. Static diff checks passed.
+Full mission remains incomplete; no formal C11 guard work added.

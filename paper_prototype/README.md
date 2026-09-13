@@ -1,12 +1,18 @@
 # Experience Models — ICLR 2027 submission (revised draft v3, 2026-09-10 fix pass)
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This draft through SEQ173 retains earlier positive and negative findings;
+This draft through SEQ179 retains earlier positive and negative findings;
 SEQ167 and SEQ169--173 are engineering-only logs, excluded from scientific results.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
+
+**Through SEQ179 / C101–C102: bounded acquisition and failed use interfaces.**
+A separate one-bank cold-acquisition endpoint passes, while disclosed READ,
+supplied-graph and required-THINK interface diagnostics fail. Acquisition is
+exploratory component evidence, not downstream use or parenting; no full
+qualification follows. Historical C99/C100 restrictions and failures remain.
 
 **SEQ169–173 / C100: engineering-only formation diagnostics.**
 Adaptive interface clarifications stopped without a completed formation bank
@@ -166,6 +172,52 @@ Historical exclusion statements below apply only to their named earlier cuts.
 
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
+
+## Exploratory component evidence — SEQ179 / C102
+
+Separate post-failure EVENT-prefix acquisition passes its scoped paired
+endpoint, not a full-bank assay. One original SEQ171 source life/root provides
+eight format-scaffolded child EVENTs and fourteen trained addresses (eight
+EVENT and six EVENTS_AT queries). One fresh-C0 rank8 LoRA LOW fit uses learning
+rate3e-5,200 updates and800 presentations; no new formation calls occur. [C102]
+
+| Cold view | AUTH_WRITE exact + stop | NO_WRITE_C0 exact + stop |
+| --- | ---: | ---: |
+| W0 trained surface | 14/14 | 0/14 |
+| W8 held wrapper only | 14/14 | 0/14 |
+
+The deterministic exact service returns14/14; AUTH_WRITE gains14 paired
+addresses over NO_WRITE_C0 in each view. All reported readout successes require
+exact bytes and stop completion. These56 cold calls are repeated measurements
+of one bank, not independent experiences. W0 is the trained surface; W8 holds
+out only the wrapper, not facts or addresses. NO_WRITE_C0 is not compute-matched.
+This supports limited acquired mappings as exploratory component evidence,
+not a complete paper-grade study, learned formatting or compiler utility.
+Original SEQ171 full-bank FORMATION_FAILED remains unchanged. There is no
+LINK/routing, retention, generalization, P1, H1/H2, parenting, general G3,
+clean-lineage, full qualification, mission or freeze claim. [C102]
+
+## Engineering-only use-interface diagnostics — SEQ175/177 / C101
+
+Separate untrained C0 interface diagnostics also completed but failed every
+stage gate. The same64 excluded cases recur across stages, not64 independent
+learners; each stage uses64 actual calls, zero fits and zero updates. [C101]
+
+| Interface | Recorded endpoint (64 tasks each) | Other terminal outcomes |
+| --- | --- | --- |
+| A1 disclosed READ | 0 registered READs; 0 graph successes | 48 invalid turns; 16 length |
+| A2 supplied graph, answer-only | 54 strict terminal routes; 0 graph successes | 10 invalid turns |
+| A3 supplied graph, required THINK | 0 valid THINK; 0 graph successes | 40 invalid turns; 24 length |
+
+A2's54 strict terminal routes are syntactically accepted, not graph-correct.
+A1 serves no READ or memory tokens; A3's zero valid THINK turns is an interface
+endpoint, not evidence of absent raw reasoning. These failures do not show
+that a functioning disclosed memory service or downstream use is impossible.
+They do not test use of the acquired EVENT-only adapter: acquisition and use
+remain separate components. No ACTIVE/full-assay qualification; C99's failed
+finalization is unchanged. Collaborator UNSENT. [C101, C102]
+
+Sources: [C101](../research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md#c101--seq175177-engineering-only-use-interfaces), [C102](../research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md#c102--seq179-exploratory-event-prefix-acquisition).
 
 ## Engineering-only log — SEQ169–173 / C100
 

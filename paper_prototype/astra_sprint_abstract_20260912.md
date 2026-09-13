@@ -1,12 +1,18 @@
 # FIRST SPRINT DRAFT — companion abstract
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This draft through SEQ173 retains earlier positive and negative findings;
+This draft through SEQ179 retains earlier positive and negative findings;
 SEQ167 and SEQ169--173 are engineering-only logs, excluded from scientific results.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
+
+**Through SEQ179 / C101–C102: bounded acquisition and failed use interfaces.**
+A separate one-bank cold-acquisition endpoint passes, while disclosed READ,
+supplied-graph and required-THINK interface diagnostics fail. Acquisition is
+exploratory component evidence, not downstream use or parenting; no full
+qualification follows. Historical C99/C100 restrictions and failures remain.
 
 **SEQ169–173 / C100: engineering-only formation diagnostics.**
 Adaptive interface clarifications stopped without a completed formation bank
@@ -634,6 +640,8 @@ baseline drift remains unresolved. No H1/H2 or freeze promotion follows.
 Attempt 2 ended as UNUSABLE EXECUTION --- ENGINEERING-ONLY CAPTURE
 (FINALIZATION FAILED). Archived bytes support interface/lifecycle debugging,
 not a usable C0 result or learning evidence; the original gate remains failed.
+
+A separate exploratory one-bank experiment records cold acquisition of trained, source-grounded mappings, without compute-matched controls or demonstrated downstream use or parenting.
 
 ## Historical SEQ143 result-table companion — C79–C82
 

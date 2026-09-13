@@ -1,12 +1,18 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This draft through SEQ173 retains earlier positive and negative findings;
+This draft through SEQ179 retains earlier positive and negative findings;
 SEQ167 and SEQ169--173 are engineering-only logs, excluded from scientific results.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
+
+**Through SEQ179 / C101–C102: bounded acquisition and failed use interfaces.**
+A separate one-bank cold-acquisition endpoint passes, while disclosed READ,
+supplied-graph and required-THINK interface diagnostics fail. Acquisition is
+exploratory component evidence, not downstream use or parenting; no full
+qualification follows. Historical C99/C100 restrictions and failures remain.
 
 **SEQ169–173 / C100: engineering-only formation diagnostics.**
 Adaptive interface clarifications stopped without a completed formation bank
@@ -4717,3 +4723,75 @@ Prospective only: [EVENT-prefix import recommendation](receipts_20260912/astra_p
 and [supplied-memory READ/THINK interface recommendation](receipts_20260912/astra_pcfl_supplied_memory_next_interface_20260913.md).
 The specified import source is SEQ171's first eight-EVENT prefix, not a selected
 better later attempt; neither new endpoint has native outcomes at this cut.
+
+## C101 — SEQ175/177 engineering-only use interfaces
+
+Separate untrained C0 interface diagnostics also completed but failed every
+stage gate. The same64 excluded cases recur across stages, not64 independent
+learners; each stage uses64 actual calls, zero fits and zero updates. [C101]
+
+| Interface | Recorded endpoint (64 tasks each) | Other terminal outcomes |
+| --- | --- | --- |
+| A1 disclosed READ | 0 registered READs; 0 graph successes | 48 invalid turns; 16 length |
+| A2 supplied graph, answer-only | 54 strict terminal routes; 0 graph successes | 10 invalid turns |
+| A3 supplied graph, required THINK | 0 valid THINK; 0 graph successes | 40 invalid turns; 24 length |
+
+A2's54 strict terminal routes are syntactically accepted, not graph-correct.
+A1 serves no READ or memory tokens; A3's zero valid THINK turns is an interface
+endpoint, not evidence of absent raw reasoning. These failures do not show
+that a functioning disclosed memory service or downstream use is impossible.
+They do not test use of the acquired EVENT-only adapter: acquisition and use
+remain separate components. No ACTIVE/full-assay qualification; C99's failed
+finalization is unchanged. Collaborator UNSENT. [C101, C102]
+
+Sources: [SEQ175/177 notebook](../../research_loop/COORDINATION.md) and frozen
+[A1 inspection](receipts_20260912/astra_pcfl_interface_a1_inspect_20260913_attempt1.json),
+[A2 inspection](receipts_20260912/astra_pcfl_interface_a2_inspect_20260913_attempt1.json),
+[A3 inspection](receipts_20260912/astra_pcfl_interface_a3_inspect_20260913_attempt2.json).
+Raw archives under `gpu_artifacts_local/`, with locally checked SHA256:
+
+| Stage | Archive | SHA256 |
+| --- | --- | --- |
+| A1 | `pcfl_interface_a1_20260913_attempt1/evidence.tar` | `921ab58fc28b2a28ac42687b26b639f62b088e80da57062b4d1b909e6c959805` |
+| A2 | `pcfl_interface_a2_20260913_attempt1/evidence.tar` | `25b93aecc0259aaeba198dc5df34d4971313251a223d53a8c5c2a9b4b36899b4` |
+| A3 | `pcfl_interface_a3_20260913_attempt1/evidence.tar` | `e63b67d5a83bab7470cc79b0407718c04c4f0b8fba8f24305c5f26548dec58c6` |
+
+## C102 — SEQ179 exploratory EVENT-prefix acquisition
+
+Separate post-failure EVENT-prefix acquisition passes its scoped paired
+endpoint, not a full-bank assay. One original SEQ171 source life/root provides
+eight format-scaffolded child EVENTs and fourteen trained addresses (eight
+EVENT and six EVENTS_AT queries). One fresh-C0 rank8 LoRA LOW fit uses learning
+rate3e-5,200 updates and800 presentations; no new formation calls occur. [C102]
+
+| Cold view | AUTH_WRITE exact + stop | NO_WRITE_C0 exact + stop |
+| --- | ---: | ---: |
+| W0 trained surface | 14/14 | 0/14 |
+| W8 held wrapper only | 14/14 | 0/14 |
+
+The deterministic exact service returns14/14; AUTH_WRITE gains14 paired
+addresses over NO_WRITE_C0 in each view. All reported readout successes require
+exact bytes and stop completion. These56 cold calls are repeated measurements
+of one bank, not independent experiences. W0 is the trained surface; W8 holds
+out only the wrapper, not facts or addresses. NO_WRITE_C0 is not compute-matched.
+This supports limited acquired mappings as exploratory component evidence,
+not a complete paper-grade study, learned formatting or compiler utility.
+Original SEQ171 full-bank FORMATION_FAILED remains unchanged. There is no
+LINK/routing, retention, generalization, P1, H1/H2, parenting, general G3,
+clean-lineage, full qualification, mission or freeze claim. [C102]
+
+Sources: [SEQ179 notebook](../../research_loop/COORDINATION.md) and
+[archived paired analysis](receipts_20260912/astra_pcfl_event_only_analysis_20260913_attempt2.json)
+(identical to `/tmp/astra_pcfl_event_only_analysis_20260913_attempt2/analysis.json`),
+SHA256 `27a7180027210c1ec68bdda4b032fad039f91b99033c713742aba22d015b90a2`;
+endpoint `SCOPED_EVENT_PREFIX_ACQUISITION_PASS`. Raw archive:
+`gpu_artifacts_local/pcfl_event_only_20260913_attempt1/evidence.tar`,
+SHA256 `c7c26ad122bec200b79dd794fac6a41d351a043ed2c4b4b05a5994501dbfd64e`.
+Analysis attempt2 is a receipt-validator amendment, not another native fit or
+readout: no new model evidence is claimed from reduction. Original SEQ171
+prefix archive remains the C100 source; no failed LINK enters this bank.
+The scoped W8 endpoint requires service14/14, AUTH at least13/14, C0 at most1/14
+and paired gain at least12; all pass here without applying the old full-bank
+threshold. W0 is descriptive. This does not establish source/compiler
+attribution or a matched-compute writing benefit; full-contract release and
+automatic promotion remain false in the analysis receipt.
