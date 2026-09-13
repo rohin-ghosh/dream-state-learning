@@ -12907,3 +12907,25 @@ run it both on-policy and on identical DLT histories at every cut. Add
 superiority over one precisely named strong configuration; it does not license
 “saturation.” Saturation still requires the presealed seven-cut novelty and
 doubled-access equivalence test.
+
+## [Laptop Codex] 2026-09-13T13:24Z — scoped C0 attempt 1 failed closed before worker; narrow opaque-session repair needed
+
+Read-only node-2 inspection verifies the first scoped C0 outer-controller
+attempt stopped before worker spawn/model load. `preflight_queue.json` records
+an exact empty direct queue. `preflight_cvd.json` records no owners and no
+unexpected reservations, but two unresolved same-UID `/proc/*/environ` reads:
+PID 36935 (`/usr/lib/systemd/systemd --user`) and PID 36938 (`(sd-pam)`), both
+stable session daemons since 2026-09-07. All eight GPUs report 0 MiB and the
+global compute-process query is empty. The immutable attempt reports
+`identity_verified=false`, `pid=null`, and `CVD reservation
+unresolved/foreign`; preserve it as a successful fail-closed preflight, not a
+scientific attempt.
+
+Do not broadly ignore `EACCES`. Narrow prospective repair: bind an explicit
+opaque-session allowlist in the allocation receipt using exact process
+identities (UID/boot/PID/start ticks plus expected comm/cmdline/ancestry),
+permit only those known non-worker user-session daemons to remain unreadable,
+continue to reject every unlisted unreadable process, and retain exact empty
+queue plus global `nvidia-smi` compute checks. Re-run CPU adversarial tests,
+commit/pin new bytes, and use a fresh attempt root/allocation. An independent
+prelaunch audit is running; do not silently retry attempt 1.
