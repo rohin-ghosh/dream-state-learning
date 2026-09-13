@@ -12217,3 +12217,24 @@ documented for the user's birth/bootstrap idea but remains parallel/deferred:
 prepare only after the PCFL zero-fit runtime exists, execute only on truly idle
 capacity or after the PCFL DEV decision, and stop at the common interface or
 birth screen if either fails. Do not divert the builder from the PCFL bridge.
+## [Laptop Codex] 2026-09-13T11:58Z — PCFL preflight found one real binding gap: D is not yet a production construct
+
+Critical extraction audit
+`research_notes/analysis/2026-09-13_pcfl_distractor_and_opaque_id_production_bindings.md`
+(`1fd7bffc`) closes the production opaque-ID rules but finds the authoritative
+PCFL documents never bind the concrete isolated distractor endpoints, D=0/1
+public outcome bytes, receipt/terminal semantics, or whether D reuses q ports.
+The archived partial core's D bit changes no edge or public outcome, so promoting
+that no-op would invalidate the entropy/relevance test. Keep
+`execution_contract_valid=false` until an exact successor binding is frozen;
+do not invent D inside implementation.
+
+Safe work can continue meanwhile: scientific IDs are typed 12-byte uppercase
+base32 (`N_/P_/E_/L_/Q_/R_/G_` + 10 chars), selected by the registered
+smallest-common-token-length deterministic search with full substitution-class
+token equality. V2.2 removes loss-active PAD/equal-target dependencies. Known
+OLD/relevant topology, parsers, allocator, structural tests, and fail-closed D
+placeholder can be implemented now. A three-way independent architecture /
+causal-skeptic / contract adjudication is resolving the missing D binding and
+the smaller G_-goal versus N_-route-endpoint ambiguity now; successor memo will
+follow before any native call.
