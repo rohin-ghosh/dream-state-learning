@@ -9950,3 +9950,35 @@ ASTRA_CONTRASTIVE_PERCEPTION_PROTOCOL_2026-09-13.md; native node2 work pending.
 Rohin, verbatim (dictated): "standing occupancy target: I think the obvious thing is if there is something to do that needs to be done on the GPU and doesn't wait completely on other results (so parallel: trying new skills, building something, seeds) then fill the GPUs, we are anything but scarce on work to do. Astra should be planning and looking at results and following my steers but that should still give it enough time to plan for the next while past runs gain usefulness. That being said, any runs that are no longer relevant should be cleared up, and if important work needs to be done the GPUs can be cleared to fill it out." … "over the last 8 hours the GPUs haven't been touched much which makes no sense given all the testing we're doing should be running almost constantly on the GPUs — building data, training, testing" … "why is it spending more time on CPU tests than GPU tests" … "I don't think maximising experiment throughput is a good heuristic but there's a ton of things that should be happening right now and a ton of things I wanna see working — the granular things of level 1."
 Curriculum (his list): "perception, contradiction, self-reflection, repetition, judgement, predict, goal end and start, and meta-reflection — all of those things are great; they should be tested on level 1 individually too; they should all be mentioned and made working; once some things are working we can start thinking about the bare-minimum behaviours we need for teaching to allow things to be receptive — prompts changing behaviour, building memory, and having the agent react from that." On the first level-2 loop: "that's good … it'll take a bit but it'll move." On the missing skill gain: "either wrong v1 or v0; I suspect more of the blame is on v0 … level 0 is pretty good, let's start at the skill level, TMEM already did this, lots of the papers did this, let's learn from them and get the skills working."
 Watcher translation (advice): the fleet is 31 GPUs on four nodes; his curriculum is 8 skills × 3 seeds = 24 cells at the SEQ-113 recipe — one roster fills it. Concretely: (1) default recipe for new behaviour cells = SEQ-113 (rank 8, LR 3e-4, 4 distinct sources/batch, 320 updates, replay), not the Q0 3e-5 or the 1e-4/128 pair; (2) skill corpora at ≥ 64–128 rows × ≥ 4 skins in classroom grammar, contrastive records where alternatives are near-identical; (3) run CPU suites once per source freeze and launch rosters, collecting while the next roster runs; (4) clear stale roots. My answer to his "v0 or v1" is in IDEAS (07:10): the mechanism is proven; recipe transfer and scale are what failed.
+## [Builder] 2026-09-13T07:20Z — contrastive screen native-ready; activate node2GPU0
+
+Read Rohin's newest granular-Level1/occupancy steer: fill available devices with
+valid independent skills/replications, not pointless throughput or CPU ceremony.
+Main accepts contrastive wrapper10CPUtests3.991s, launcher4CPUtests0.006s and
+native tokenizer preparation19seconds. Pauli independently matched all14node2
+model-file hashes to existing official public receipt. Same frozen base, no
+ancestry promotion. Source/target preservation and mask/EOS/no-truncation checks
+passed. Per arm372supervisedtokens/epoch; PLAIN4806total versus CONTRASTIVE4914;
+four-epoch padded19460/19892. No token/compute-equivalence claim.
+
+Activating node2GPU0, UUIDGPU-c70cba10-6ab6-a287-e2db-51dccd617ab0, fresh root
+/localhome/local-rohing/astra_diagnostics/contrastive_perception_20260913_attempt1.
+Planf0060eb8d37a61aa1d9b25ba6798f19045a8a66cca715755f5e948d216702ec4;
+runtimeaea1b5d84d6d79efa7dbdd43ab8e93bf0483fd4383531eae363cdbb4b7583d55.
+Spec56970a4b5f4637564b4fdfba344e9c72cffeabb3be93ad0e8353b9bb5781d12a;
+protocolcc7e92d8aa3999c2ee619893cf830f2687347a39175149708886c1bf0d820ef5.
+Main launches /tmp/astra_launch_contrastive_20260913.py once after fresh
+environment/all-process XML vacancy checks; PID receipt follows. No foreign kill.
+Two fresh12updatefits/144calls;2700secondcontroller+180collection, no panel
+shrinking or cap increase. Historical full-slot projections1752–2105seconds,
+slow-slot sensitivity2279seconds support feasibility; actual node2 timings remain
+to be measured. Nonfinite/integrity/occupancy/timeout aborts preserve all evidence.
+Initial short SSH tool timeout was reconciled before any prepare root existed;
+one actual native preparation completed, no duplicate root or GPU job.
+
+Advisory accepted before fitting: grouping bundles guidance; formatting-only
+success and negating the earlier fixture outcome remain shortcuts. Report these
+as fixed-fixture authored results, not source-use identification or H1/H2. Full
+formalC11guard deferred. Remaining LR originals are untouched; independent
+granular skills will be prepared alongside this screen, without awaiting its
+scientific result. New raw steer does not authorize stopping foreign controls.
