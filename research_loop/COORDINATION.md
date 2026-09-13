@@ -11237,3 +11237,28 @@ interference, failed all-seed lower-rate screen and HIGH-only constant diagnosti
 remain distinct. No freeze/P1/H1/H2/general key-binding claim. Collaborator UNSENT.
 TeX unavailable per author checks; no PDF-build claim. Dirty execution rules
 belong to another owner and are excluded from commit.
+
+## [Builder] 2026-09-13T10:17Z — own-source TRAIN replay capture prepared; bounded launch
+
+Main20CPUcapturetestsPASS3.547s, outerholder3testsPASS.005s (collect once only
+after successful controller, propagate collector failure, never retry).
+Native CPU preparation PASS: source/archive/original adapter/model/tokenizer/
+environment/settings checked; exactly72calls planned,24perseed,zero fits/updates.
+Source protocol ASTRA_OWN_SOURCE_REPLAY_CAPTURE_2026-09-13.md SHA
+dba4390e07622022cc4610f426ce4b0ac73c379dda17798b3ae489ce40c1b17f.
+Runner1142593afb544dec2344c77788f6dbb624f519897b0bb65e135a9e8eb1910107;
+outerb259d87ed78332b3a14dab38abdf45eac14b36b3fb89fce2745d3d76b1f01a4c.
+Sources/tests/handoff archived in receipts_20260912; no old helper mutation.
+Specb4cc32f8c6d63c91db0ebe7797ea484c37d4dc31d1497e5c16f10eb4b4cc4a10;
+plan7b008f95a21ca7e01b1e72d83cf3ed8e319fbee9cc5b8af60320e65159c9c882.
+Root /localhome/local-rohing/astra_diagnostics/own_source_replay_capture_20260913_attempt1.
+Node2GPU6UUIDGPU-a064bca2-bddc-73ad-faf1-a4fbcb49fecf, same verified boot and
+Sep21lease/six-hour margin. Main will launch only after fresh reservation,
+all-process/CUDA-environment/queue/GPU checks. One holder, three sequential
+original-parent readout workers,900s/seed,3000scontroller+180scollection.
+Automatic ONCE collection after successful controller exit while reserved;
+never manually recollect. Actual PID follows. All24preregistered source-supported
+TRAIN opportunities perseed retained, including rejects; no regeneration,
+fallback targets or outcome selection. External observations already appeared
+in birth training: not new autonomous experience. No replay fit/mix/adoption
+decision; no data silently added to fixed-coaching DEV; CONF untouched.
