@@ -1,6 +1,43 @@
-# Astra current handoff — 2026-09-13T13:22Z
+# Astra current handoff — 2026-09-13T13:33Z
 
-## CURRENT — September 13 13:22 UTC
+## CURRENT — September 13 13:33 UTC
+
+C0 NATIVE ATTEMPT2 LIVE onnode2GPU0: outer160428, worker/PGID/SID160440
+(start_ticks53449311), EngineCore160873. UUIDGPU-c70cba10-6ab6-a287-e2db-51dccd617ab0,
+boot8ff7b0dc-fbdf-4945-9044-3dffe94b5407,UID2524. Outer start13:27:31UTC;
+firstmodel load completed13:28. At13:32:55,264/800taskfiles existed, no outcomes
+inspected and no terminalcapture. GPU0 remainsreserved evenif memorydrops.
+Do NOT backfill/relaunch/recollect. Cap10800s includingcold/release;120scleanup.
+
+Liveoutput /localhome/local-rohing/astra_diagnostics/pcfl_c0_zero_fit_20260913_attempt2;
+.outer/.launcher siblings. Nativecontrollerfile in
+/tmp/astra_pcfl_c0_source_20260913_mapping_repair1/gpu/astra_pcfl_zero_fit_outer_service_repair1.py
+SHAfdd29c64bc73b1602998e6509da9f6d3132b90f9a5d50dceb1ad20ce86128f19;
+v2allocation /tmp/astra_pcfl_c0_allocation_20260913_attempt2.json fileSHA
+348e06a993a4ab0f0956ecab7d46e04546d761ab8adce37e51ab02732b8ad664.
+Manifest2 path/hash belowunchanged(ef2adf4146...). Actualpreflight2 passed
+with exactmetadata-bound non-worker systemd/PAM PermissionError exception;
+complete_CVD_visibility remainsfalse, not falsely emptyenvs. Main12service
+regressions+1capture/finalizerPASS; workerfull42PASS. Commit9a6d91d6;
+launchlogged8ecf38cd. Originalv1source/failedattempt1/claims preserved.
+
+When controller exits, inspectactualexit/capture/failures. Finalize ONCE on
+same node using repairedcontroller `finalize --outer <attempt2.outer>
+--capture-sha256 <actual capture_complete.json FILE SHA>`, withCVDempty.
+Use returnedcapture hash, not manifest/reportseal. Verifygroup/GPUworker
+release and honestinitexceptionmetadata; archiveonce, verifytransfer, then
+analyze. Noautomaticrestarts. No finalization/archive/reduction has run yet.
+
+Meitner01a09af5-65a4-7ea3-904c-af5c37968c88 owns new independent analyzer
+gpu/astra_pcfl_zero_fit_analyze.py +matchingtests+/tmp handoff, no liveoutcome
+access. Parfit surveys smallest next own-experience/write/reload bridge in
+/tmp/astra_pcfl_next_write_bridge_20260913.md, no code/native actions.
+Copernicus doesadvisorysafetyread; Main ownsallnativeoperations. Do not stage
+unfinishedanalyzer. ManuscriptreviewedthroughSEQ162,UNSENT. Goalactive/~31h,
+scopeincomplete; noG3freeze/P1/H1/H2/fullassay/C11claim. FormalguardfinalC11.
+
+## Historical superseded snapshot — September 13 13:22 UTC
+
 
 MissionACTIVE/incomplete, about31hours elapsed. No Main GPUworker/model job
 is live. Current C0 path has zero model calls; no mechanism freeze/generalG3,

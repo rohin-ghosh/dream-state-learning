@@ -1,4 +1,16 @@
-## Current superseding snapshot — 2026-09-13 13:22 UTC
+## Current superseding snapshot — 2026-09-13 13:33 UTC
+
+C0attempt2LIVE node2GPU0UUIDc70cba10..., outer160428/worker160440/engine160873.
+At13:32:55 264/800taskrecords, no outcomeinspection. Firstmodelafter13:28,
+10800scap/120scleanup. DoNOTrelaunch/backfillGPU0/recollect. Exactmanifest,
+allocation/sourcepins, paths and once-onlyfinalizeinstruction inHANDOFF.
+Service-scopev2repairpassedCPUchecks; actualpreflightpassedwith explicit
+unread-initmetadata limitation, notcompleteCVDvisibility. Meitner ownsblind
+analyzer;Parfit nextwritebridgesurvey;Main nativeops. No terminalcapture or
+finalization/analysis yet. MissionACTIVE/~31h/incomplete;noG3/P1/H1/H2/full
+assay/C11claim. ManuscriptthroughSEQ162reviewed/UNSENT;formalguardfinalC11.
+
+## Historical superseded snapshot — 2026-09-13 13:22 UTC
 
 ACTIVE/incomplete,~31hours. C0has0modelcalls/noMainGPUjoblive. SEQ164fixed
 BatchEncodingMappingcompatibility withoutreselection;SEQ165all800usedsurfaces
