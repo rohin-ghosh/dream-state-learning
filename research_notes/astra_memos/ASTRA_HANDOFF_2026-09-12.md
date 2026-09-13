@@ -1,6 +1,33 @@
-# Astra current handoff — 2026-09-13T04:39Z
+# Astra current handoff — 2026-09-13T05:04Z
 
-## CURRENT — September13 04:39UTC
+## CURRENT — September13 05:04UTC
+
+Three Q0 full-dose controllers LIVE on node2 GPUs0/1/2: PID=PGID4012737,
+4012889,4013072; starts05:00:47/05:01:11/05:01:26UTC;10800seconds each,
+9GPU-hours total. Last read-only reconciliation05:03UTC confirms all alive,
+STARTED and audit-stage receipts, roughly19.4GB/device. No completed gate yet.
+Source `/localhome/local-rohing/astra_sources/q0_fulldose_20260913_attempt2`;
+roots `/localhome/local-rohing/astra_diagnostics/q0_fulldose_R{0,1,2}_20260913_attempt1`.
+Executor SHA256f63c77f9c371433442a204d6bd7bb10e3769a3bb709ae1d728648d765ee8ceca.
+Native acceptance282tests/no failures/errors/skips; all3preparations before launch.
+Do not restart roots. Inspect terminal/resource/seal receipts before replay.
+
+Perception comparison complete, collected and independently reviewed; SEQ129
+is format usability, not new record semantics. No operational12/12qualification.
+Manuscript throughSEQ127; SEQ129 update remains due. Collaborator UNSENT.
+Node1 exact767-file delta preserved/byte-verified VM and node2; archive
+f01a1526254c7b12924191694f71ada143c31edbaee77dcc0ebc6860ba385118.
+Whole94.6GBmirror certification and restore remain unverified.
+
+Reflection corpus and runtime final EDITSTOP handoffs in
+`/tmp/astra_birth_reflection_probe_handoff_20260913.md` and
+`/tmp/astra_reflection_fit_runtime_handoff_20260913.md`; Main tests/acceptance next.
+Corpus files untracked, preserve unrelated dirty gpu/codex/dream_state.rules.
+A100 scheduled05:05UTC, not yet verified onboarded; Fable alone owns onboarding.
+Simple hygiene now, formal guard only final paper-grade C11. No mechanism
+freeze, general G3/P1/G5/H1/H2 or clean-ancestry promotion. Mission active.
+
+## Historical superseded snapshot — September13 04:39UTC
 
 ALL THREE perception comparisons COMPLETE; no Main GPU controller remains
 from those runs. Do not restart/recollect. Canonical

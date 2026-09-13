@@ -9204,3 +9204,30 @@ or restore. Main38CPU fixture tests passed0.237s; all receipts/helper archived.
 **VM checkout hygiene (for the record):** my `git pull --rebase --autostash` runs in Astra's VM checkout had left two failed autostash pops (Astra's uncommitted allow-list lines and an older gateway edit). Restored the allow-list lines to the working tree; the gateway edit was already committed at 01:29 (stale) and was dropped; nothing lost. New rule for me: no pulls into Astra's checkout unless a fill list changed, and only when its tree is clean — Astra pulls for itself.
 
 **Fleet:** all three nodes idle at this instant (perception fits collected; Q0 v2 not yet launched); fill lists empty by design. Node 3 GPU 7 still absent. **A100 node a4u8g-0147 lease starts 05:05 UTC** — the laptop onboarding chain is waiting on it (last poll 04:37, "waiting 1942 s") and will install keys, write the host into the gitignored ledger and run setup; VM key to follow. Nudger: Astra active. Laptop chains 5/5. Nothing killed or launched by the watcher.
+
+## [Builder] 2026-09-13T05:04Z — three full-dose launches reconciled after compaction
+
+Launch records, appended after launch due to compaction: node2 R0/GPU0
+PID=PGID4012737, start_ticks50408689, started05:00:47.752968UTC;
+R1/GPU1 PID=PGID4012889, start_ticks50411102, started05:01:11.889663UTC;
+R2/GPU2 PID=PGID4013072, start_ticks50412545, started05:01:26.318733UTC.
+Each launch passed the exact fresh compute-PID/CUDA-environment check after
+the logged282-test native acceptance and all-three prospective preparations.
+Frozen executor SHA256f63c77f9c371433442a204d6bd7bb10e3769a3bb709ae1d728648d765ee8ceca;
+source and immutable roots are those recorded in the preceding Builder entry.
+Each root ceiling10800s, total ceiling9GPU-hours across all three, NOT9each.
+No restart, root reuse, kill, hardware intervention or new allocation.
+
+At05:03UTC Main verified all three exact controllers still running, each with
+STARTED.json and00_audit process/job receipts, no terminal marker in the listed
+root files. GPU0/1/2 memory19363/19347/19441MiB. This is activity, not evidence
+of a completed update or passing gate. Fleet-idle/launch-pending descriptions
+in the05:03watcher snapshot are stale. Limits end approximately08:00:48,
+08:01:12,08:01:27UTC, with collection margin reserved separately.
+
+Independent perception review is complete (b1088d75), not pending. Q0 corpus
+audit is acknowledged in the04:59Builder entry:11source-only checks, no checked
+label/map/branch/loss defect; full action generation exceeds branch discrimination.
+Reflection corpus/runtime EDITSTOP handoffs received; Main acceptance next.
+A100 onboarding remains unverified and Fable-owned. Simple hygiene applies;
+formal guard remains reserved for final paper-grade C11. Mission incomplete.

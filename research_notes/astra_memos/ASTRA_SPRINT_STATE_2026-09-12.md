@@ -1,4 +1,17 @@
-## Current superseding snapshot — 2026-09-13 04:40 UTC
+## Current superseding snapshot — 2026-09-13 05:04 UTC
+
+Q0 full-dose three roots LIVE on node2 GPUs0/1/2, controllers4012737/4012889/
+4013072, started05:00:47/05:01:11/05:01:26UTC,10800s/root,9GPU-hours total.
+282native CPU tests pass with zero skips; all3tokenizer preparations precede
+launches. Last05:03check: all alive/audit-stage receipts, no gate outcome yet.
+Exact immutable source/roots/pins and current next actions in HANDOFF.
+Do not restart. Perception SEQ129 collected/reviewed; format-only ordinary gain,
+no anchor benefit. Node1 767-file delta now fully verified on VM and node2;
+whole prior mirror certification/restore not established. Reflection corpus and
+runtime EDITSTOP received, Main acceptance next. A100 onboarding unverified.
+Simple hygiene applies; formal C11 guard remains deferred. Mission incomplete.
+
+## Historical superseded snapshot — 2026-09-13 04:40 UTC
 
 SEQ129: all3perception comparisons complete/collected;216responses and630bound
 files verified. Ordinary prompt-free strict11/12 each versusOFF0/12, but OFF
