@@ -274,6 +274,15 @@ class WriterTests(unittest.TestCase):
         self.assertEqual(encoded["padding"], "none")
         self.assertEqual(encoded, writer.encode_fit(fit, ToyTokenizer()))
 
+    def test_extracted_encoder_preserves_original_payload(self):
+        fit = self.build()
+        corpus, schedule = writer._validate({key: value for key, value in fit.items() if key != "sha256"})
+        bindings = fit["contract"]["bindings"]
+        direct = writer._encode_corpus(fit["sha256"], corpus, schedule, fit["queries"],
+                                        bindings["core_registry"]["render_registry"],
+                                        bindings["environment"]["chat_template_sha256"], ToyTokenizer())
+        self.assertEqual(writer.encode_fit(fit, ToyTokenizer()), direct)
+
     def test_truncation_and_template_drift_rejected(self):
         tokenizer = ToyTokenizer()
         tokenizer.chat_template = "other"
@@ -486,7 +495,9 @@ class NativeGateTests(unittest.TestCase):
         self.assertTrue(report["missing_interfaces"])
         with tempfile.TemporaryDirectory() as directory:
             out = Path(directory) / "never_claimed"
-            with patch.object(writer, "encode_fit", side_effect=AssertionError("must not encode")):
+            with patch.object(writer, "encode_fit", side_effect=AssertionError("must not encode")), \
+                    patch.object(writer, "_encode_corpus", side_effect=AssertionError("must not encode corpus")), \
+                    patch.object(writer, "_train_encoded", side_effect=AssertionError("must not enter numerical loop")):
                 with self.assertRaisesRegex(writer.WriterError, "native fitting blocked"):
                     writer.train_fit({"contract": contract}, ToyTokenizer(),
                                      lambda: self.fail("factory must not be called"), out)

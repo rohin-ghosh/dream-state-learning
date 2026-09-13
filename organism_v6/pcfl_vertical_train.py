@@ -202,12 +202,18 @@ def encode_fit(fit, tokenizer):
     validate_fit(fit)
     corpus, schedule = _validate({key: value for key, value in fit.items() if key != "sha256"})
     registry = fit["contract"]["bindings"]["core_registry"]["render_registry"]
+    return _encode_corpus(fit["sha256"], corpus, schedule, fit["queries"], registry,
+                          fit["contract"]["bindings"]["environment"]["chat_template_sha256"], tokenizer)
+
+
+def _encode_corpus(fit_sha256, corpus, schedule, queries, registry,
+                   chat_template_sha256, tokenizer):
     require(type(tokenizer.eos_token_id) is int and tokenizer.eos_token_id >= 0, "EOS token required")
     require(type(tokenizer.chat_template) is str and byte_hash(tokenizer.chat_template) ==
-            fit["contract"]["bindings"]["environment"]["chat_template_sha256"], "chat template pin")
+            chat_template_sha256, "chat template pin")
     items = []
     for slot in corpus["slots"]:
-        query = fit["queries"][slot["request"]]
+        query = queries[slot["request"]]
         for view in range(8):
             messages = [{"role": "system", "content": registry["systems"]["memory"]},
                         {"role": "user", "content": registry["wrappers"][f"W{view}"].format(REQUEST=slot["request"])}]
@@ -228,7 +234,7 @@ def encode_fit(fit, tokenizer):
             items.append({"slot": slot["id"], "view": view, "prompt_sha256": byte_hash(prompt),
                           "target_sha256": query["target_sha256"], "source_sha256": query["source_sha256"],
                           "encoded": asdict(encoded)})
-    payload = {"fit_sha256": fit["sha256"], "items": items, "epochs": schedule,
+    payload = {"fit_sha256": fit_sha256, "items": items, "epochs": schedule,
                "layout": LAYOUT, "padding": "none", "objective": OBJECTIVE,
                "target_tokens_per_epoch": sum(item["encoded"]["n_target"] for item in items)}
     return {**payload, "sha256": digest(payload)}
@@ -337,17 +343,23 @@ def train_fit(fit, tokenizer, base_factory, out, *, profile_receipts=None):
     verify_sources(fit)
     verify_tokenizer_files(fit, tokenizer)
     encoded = encode_fit(fit, tokenizer)
+    return _train_encoded(fit, encoded, base_factory, out,
+                          fit["contract"]["bindings"]["environment"], release)
+
+
+def _train_encoded(fit, encoded, base_factory, out, expected_environment, release,
+                   *, report_name="execution_contract_report.json"):
     out.mkdir(parents=False, exist_ok=False)
     updates = 0
     try:
         (out / "fit.json").write_bytes(canonical(fit) + b"\n")
         (out / "encoding.json").write_bytes(canonical(encoded) + b"\n")
-        (out / "execution_contract_report.json").write_bytes(canonical(release) + b"\n")
+        (out / report_name).write_bytes(canonical(release) + b"\n")
         import torch
         from peft import get_peft_model
 
         model, environment = base_factory()
-        require(canonical(environment) == canonical(fit["contract"]["bindings"]["environment"]), "base factory identity mismatch")
+        require(canonical(environment) == canonical(expected_environment), "base factory identity mismatch")
         require(not getattr(model, "peft_config", None) and not any("lora_" in name for name, _ in model.named_parameters()), "warm/adapted base forbidden")
         require(_state_hash(model.state_dict()) == fit["binding"]["base_state_sha256"], "actual C0 tensor identity mismatch")
         require(all(parameter.dtype == torch.bfloat16 for parameter in model.parameters() if parameter.is_floating_point()), "bf16 base required")
