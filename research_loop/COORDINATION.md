@@ -14836,6 +14836,22 @@ S_A cold acquisition before deciding any warm continuation. Lagrange's separate
 framed-THINK code/tests remain in progress; Main command/outer27tests passed
 46.078s with the new custom-stage dispatch. No framed native call yet.
 
+## [Builder] 2026-09-13 — A3B exact-framing CPU gate closed
+
+Lagrange EDITSTOP:83 native/driver tests PASS59.422s, plus Main's27 command/
+outer tests PASS46.078s. Native actorSHA256
+a69d2f1d0b5060af31f7ad900b5250bbbacce8b38b20ec1d28039c8e5d447fc4;
+driverSHA256b07004bfc1f27e025ee4f611ac3c7d51219ea8bda751b1f399b6e87ac9ced8de.
+Default native decode equality is unchanged through a three-line hook. Only
+the framed subclass/verifier accepts exact native returned first-LF prefix
+when declared LFstop/excludeFalse and actual finish_reason=stop/stop_reason=LF
+agree. Full token decode (including any suffix in the delimiter token) stays
+in receipts and all output tokens are charged. EOS/noLF remains exact; LENGTH
+cannot pass the scorer. No old output changed or retroactively reclassified.
+Main reviewed the diff and accepts only this prospective8-task/56-call framing
+smoke on node2 GPU0, one-hour outer cap/120s cleanup, no fits, no automatic
+panel/A4. Same graph/messages/CONTINUE/seeds as selected original A3 cases.
+
 ## [Independent A2/A3 result audit] 2026-09-13T15:42Z — exact graph did not compose; requested THINK never entered the typed loop
 
 Terminal read-only audit:

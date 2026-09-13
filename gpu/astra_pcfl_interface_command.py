@@ -189,7 +189,7 @@ def _custody(directory, report, settings, injected, started, deadline):
 def _actor(settings, roster, actor_factory=None):
     if actor_factory is not None:
         return actor_factory(settings)
-    if roster["stage"] in driver.STRUCTURED_STAGES:
+    if roster["stage"] in driver.CUSTOM_STAGES:
         return driver.InterfaceActor(settings, stage=roster["stage"], roster=roster)
     return native.NativeActor(settings)
 

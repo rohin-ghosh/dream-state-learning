@@ -370,6 +370,9 @@ class NativeActor:
     def _sampling(self, request, limits):
         return {**SAMPLING, "seed": request["seed"], "max_tokens": limits["output_tokens"]}
 
+    def _validate_decoded(self, decoded, raw, sampling):
+        require(decoded == raw["text"], "output text/token decode differs")
+
     def generate(self, request, limits):
         request, limits = copy.deepcopy(request), copy.deepcopy(limits)
         self._request(request, limits)
@@ -417,7 +420,7 @@ class NativeActor:
             require(len(output_ids) <= limits["output_tokens"] and (output_ids or not raw["text"]), "actual output token cap/receipt")
             require(raw["finish_reason"] in ("stop", "length") and (raw["stop_reason"] is None or type(raw["stop_reason"]) in (int, str)), "unexpected generation termination")
             decoded = self._session.tokenizer.decode(output_ids, skip_special_tokens=True)
-            require(decoded == raw["text"], "output text/token decode differs")
+            self._validate_decoded(decoded, raw, sampling)
             self._unchanged_files()
             self._check(deadline)
             elapsed = self._clock() - started

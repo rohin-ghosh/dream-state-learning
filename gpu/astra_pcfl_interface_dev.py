@@ -23,9 +23,12 @@ STAGES = {
     "READ_REQUIRED_PANEL": {"reads": 12, "thinks": 0, "calls": 13},
     "STRUCTURED_ACTION_SMOKE": {"reads": 12, "thinks": 0, "calls": 13},
     "STRUCTURED_FIRST_READ_SMOKE": {"reads": 12, "thinks": 0, "calls": 13},
+    "A3B_NEWLINE_FRAMED_SMOKE": {"reads": 0, "thinks": 6, "calls": 7},
 }
 READ_REQUIRED_STAGES = ("READ_REQUIRED_SMOKE", "READ_REQUIRED_PANEL")
 STRUCTURED_STAGES = ("STRUCTURED_ACTION_SMOKE", "STRUCTURED_FIRST_READ_SMOKE")
+FRAMED_STAGES = ("A3B_NEWLINE_FRAMED_SMOKE",)
+CUSTOM_STAGES = STRUCTURED_STAGES + FRAMED_STAGES
 READ_REGEX = r"READ (?:EVENT E_[A-Z2-7]{10}|EVENTS_AT N_[A-Z2-7]{10}|LINKS_FROM E_[A-Z2-7]{10})"
 ACTION_REGEX = (
     r"(?:READ (?:EVENT E_[A-Z2-7]{10}|EVENTS_AT N_[A-Z2-7]{10}|LINKS_FROM E_[A-Z2-7]{10})"
@@ -114,7 +117,7 @@ def build_roster(root_wires, stage):
                               "queries": copy.deepcopy(queries), "source_rows": copy.deepcopy(rows),
                               "slot_ids": [f"{core.byte_hash(identifier)}/actor/{turn}" for turn in range(limits["calls"])]})
     require(len(tasks) == 64 and len({task["case_id"] for task in tasks}) == 64, "case denominator")
-    if stage == "READ_REQUIRED_SMOKE" or stage in STRUCTURED_STAGES:
+    if stage == "READ_REQUIRED_SMOKE" or stage in CUSTOM_STAGES:
         tasks = [tasks[index] for index in SMOKE_INDICES]
     roster = {"schema": SCHEMA + "/roster", "stage": stage, "roots": copy.deepcopy(root_wires),
                  "roots_sha256": digest(root_wires), "sources": source_pins(), "tasks": tasks,
@@ -129,6 +132,13 @@ def build_roster(root_wires, stage):
             "external_first_read": stage == "STRUCTURED_FIRST_READ_SMOKE",
             "first_slot_regex": first_regex, "first_slot_regex_sha256": core.byte_hash(first_regex),
             "later_slot_regex": ACTION_REGEX, "later_slot_regex_sha256": core.byte_hash(ACTION_REGEX),
+            "autonomy_claim": False, "learning_claim": False,
+        }
+    if stage in FRAMED_STAGES:
+        roster["sampling_policy"] = {
+            "name": "pcfl.supplied_memory.a3b_newline_framed_smoke.v1", "externally_framed": True,
+            "stop": ["\n"], "include_stop_str_in_output": False,
+            "decode_contract": "EXACT_FIRST_LF_PREFIX_FULL_TOKEN_DECODE_RETAINED",
             "autonomy_claim": False, "learning_claim": False,
         }
     return seal(roster)
@@ -148,12 +158,27 @@ def sampling_for(stage, request, limits):
                 "structured slot syntax")
         first = stage == "STRUCTURED_FIRST_READ_SMOKE" and request["id"].endswith("/actor/0")
         sampling["structured_outputs"] = {"regex": READ_REGEX if first else ACTION_REGEX}
+    if stage in FRAMED_STAGES:
+        sampling.update(stop=["\n"], include_stop_str_in_output=False)
     return sampling
+
+
+def _validate_frame(decoded, raw, sampling):
+    require(sampling.get("stop") == ["\n"] and sampling.get("include_stop_str_in_output") is False
+            and "structured_outputs" not in sampling, "LF framing sampling differs")
+    if raw["finish_reason"] == "stop" and raw["stop_reason"] == "\n":
+        offset = decoded.find("\n")
+        require(offset >= 0 and raw["text"] == decoded[:offset], "LF frame prefix differs")
+    else:
+        require(decoded == raw["text"], "output text/token decode differs")
+        require(raw["finish_reason"] == "length" or
+                (raw["finish_reason"] == "stop" and raw["stop_reason"] is None and "\n" not in decoded),
+                "LF frame termination differs")
 
 
 class InterfaceActor(native.NativeActor):
     def __init__(self, config, *, stage, roster, **native_kwargs):
-        require(stage in STRUCTURED_STAGES and roster["stage"] == stage, "structured actor stage binding")
+        require(stage in CUSTOM_STAGES and roster["stage"] == stage, "structured actor stage binding")
         validate_roster(roster, roster["sha256"])
         require(all(config["source_files"].get(path) == checksum for path, checksum in roster["sources"].items()),
                 "structured actor source pins")
@@ -167,6 +192,12 @@ class InterfaceActor(native.NativeActor):
                 "structured slot/seed binding")
         require((request["id"] in self._first_slots) == (len(request["messages"]) == 2), "structured slot/turn binding")
         return sampling_for(self._stage, request, limits)
+
+    def _validate_decoded(self, decoded, raw, sampling):
+        if self._stage in FRAMED_STAGES:
+            _validate_frame(decoded, raw, sampling)
+        else:
+            super()._validate_decoded(decoded, raw, sampling)
 
 
 def _render(tokenizer, messages):
@@ -242,13 +273,17 @@ def _verify(attempt, index, request, limits, settings, tokenizer, previous_end, 
     require(raw["kind"] == identity["kind"] and set(output) == {"text", "output_token_ids", "prompt_token_ids", "finish_reason", "stop_reason"}, "raw fields/kind")
     output_ids = native.token_ids(output["output_token_ids"])
     require(native.token_ids(output["prompt_token_ids"]) == ids and type(output["text"]) is str
-            and tokenizer.decode(output_ids, skip_special_tokens=True) == output["text"]
             and len(output_ids) <= limits["output_tokens"] and (output_ids or not output["text"]), "raw token decode/cap")
     require(output["finish_reason"] in ("stop", "length")
             and (output["stop_reason"] is None or type(output["stop_reason"]) in (int, str)), "finish receipt")
+    decoded = tokenizer.decode(output_ids, skip_special_tokens=True)
+    if stage in FRAMED_STAGES:
+        _validate_frame(decoded, output, rendered["sampling"])
+    else:
+        require(decoded == output["text"], "raw token decode/cap")
     require(type(response) is dict and set(response) == {"request_sha256", "text", "prompt_tokens", "output_tokens", "device_seconds"}
             and response == returned["response"] and response["request_sha256"] == digest(request)
-            and response["text"] == output["text"] and returned["decoded"] == output["text"]
+            and response["text"] == output["text"] and returned["decoded"] == decoded
             and returned["raw_hex"] == output["text"].encode("utf-8").hex()
             and returned["raw_utf8_sha256"] == core.byte_hash(output["text"]), "response byte join")
     require(type(response["prompt_tokens"]) is int and response["prompt_tokens"] == len(ids)
@@ -291,7 +326,9 @@ def summarize(results, stage, complete):
         gate = thought_routes >= 60
     if stage == "ACTIVE_THINK":
         gate = active_routes >= 60 and invalid == 0
-    summary = {"denominator": len(results) if stage in READ_REQUIRED_STAGES + STRUCTURED_STAGES else 64,
+    if stage in FRAMED_STAGES:
+        gate = len(results) == 8 and thought_interfaces >= 7
+    summary = {"denominator": len(results) if stage in READ_REQUIRED_STAGES + CUSTOM_STAGES else 64,
             "route_successes": successes, "thought_tasks": thought_tasks,
             "served_read_tasks": served_tasks, "invalid_read_tasks": invalid,
             "read_handshake_tasks": read_handshakes, "thought_interface_tasks": thought_interfaces,
@@ -300,6 +337,8 @@ def summarize(results, stage, complete):
     if stage in STRUCTURED_STAGES:
         summary.update(externally_scaffolded=True, external_first_read=stage == "STRUCTURED_FIRST_READ_SMOKE",
                        autonomy_claim=False, learning_claim=False)
+    if stage in FRAMED_STAGES:
+        summary.update(externally_framed=True, autonomy_claim=False, learning_claim=False)
     return summary
 
 
@@ -398,7 +437,7 @@ def _execute(roster, settings, tokenizer, deadline, acquire, clock):
             "calls": len(attempts), "possible_calls": caps["possible_calls"], "fits": 0, "updates": 0,
             "material_origin": roster["material_origin"], "native_custody_verified": False,
             "outer_release_required": True, "full_assay_qualified": False,
-            **({"sampling_policy": copy.deepcopy(roster["sampling_policy"])} if roster["stage"] in STRUCTURED_STAGES else {})}
+            **({"sampling_policy": copy.deepcopy(roster["sampling_policy"])} if roster["stage"] in CUSTOM_STAGES else {})}
 
 
 def _inputs(roster, expected_sha256, settings, tokenizer, deadline):

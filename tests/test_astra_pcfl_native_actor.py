@@ -240,6 +240,21 @@ class ActorTests(unittest.TestCase):
         with self.assertRaisesRegex(actor_api.ActorError, "text/token decode"):
             actor.generate(self.request, self.limits)
 
+    def test_default_decode_hook_rejects_lf_prefix_even_with_stop_sampling(self):
+        prefix = "THINK unchanged"
+        self.session.text = prefix + "\nROUTE suffix"
+        self.session.mutate = lambda raw: {**raw, "text": prefix, "stop_reason": "\n"}
+        actor = self.actor()
+        sampling = {**actor_api.SAMPLING, "seed": self.request["seed"], "max_tokens": 100,
+                    "stop": ["\n"], "include_stop_str_in_output": False}
+        with patch.object(actor, "_sampling", return_value=sampling):
+            with self.assertRaisesRegex(actor_api.ActorError, "text/token decode"):
+                actor.generate(self.request, self.limits)
+        raw = self.read("call_0000.raw.json")["raw"]
+        self.assertEqual(raw["text"], prefix)
+        self.assertEqual(self.session.tokenizer.decode(raw["output_token_ids"]), self.session.text)
+        self.assertFalse((Path(self.config["output_dir"]) / "call_0000.response.json").exists())
+
     def test_empty_output_and_unicode_are_exact_not_normalized(self):
         self.session.text = "é\n"
         actor = self.actor()
