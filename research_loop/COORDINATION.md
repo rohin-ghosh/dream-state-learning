@@ -15445,6 +15445,42 @@ Final joint result waits on S_A raw captures and paired archive audit.
 S_A cold launcher returned controller219921 at17:19:22UTC, root
 `/localhome/local-rohing/astra_diagnostics/pcfl_event_sequence_readout_S_A_20260913_attempt1`.
 
+## [Builder] SEQ-188 — 2026-09-13 17:25 UTC — S_A40 cold exact acquisition zero; no retention denominator
+
+Both native cold states completed/released with16calls each, all finish=stop,
+no truncation, no missing results. At both W0 and W8, NO_WRITE A0/4,B0/4;
+S_A A0/4,B0/4. S_A used the exact eligible attempt4 adapter, copied byte-for-byte
+into a separate read-only mount. Its actual per-call LoRA route was verified
+against the loaded identity; baseline had no adapter. Pre-correct A is empty,
+so retention is undefined, not0percent or a retained/forgotten result. No
+warm SEQ_REPLAY/SEQ_NEW_ONLY descendant or other sequence phase is launched.
+Remaining planned phases are unexecuted; no silent dose increase or sweep.
+
+There is a changed-output instrumentation effect, not successful factual
+acquisition: baseline emitted exact MISS16/16; S_A emitted EVENT-prefixed
+text16/16, all incorrect. The scorer flags1usable false row; these evaluation
+outputs are not authenticated experiences and are never reingested as writes.
+Do not call this no parameter change or general model incapacity. It is the
+predeclared40-step V3 screen on four introduced addresses. SEQ179's separate
+200-step PCFL recipe/14-address result stays positive within its own envelope.
+
+NO_WRITE:1506prompt/32output tokens,48.026445souter; S_A:1506prompt/836output,
+79.706444souter. Respective generation-call intervals1.328122s/33.371747s;
+model load17.064137s/15.708222s. All are recorded wall intervals, not measured
+GPU utilization. Controllers218996/219921, workers219046/219932 gone; selected
+GPU compute inventory empty, both outererrors[],exit0,GPUreleasedtrue.
+
+Paired archive VM/node SHA25694320d0aba9a4a638b6553821edb3a12fe241babdaefdba5fa4fc951f5142534
+at `gpu_artifacts_local/pcfl_sequence_cold_screen_20260913_attempt1/evidence.tar`.
+Main rehashed all233files and checked all32native raw response/route/token/
+ordered-target joins, parent adapter bytes and exact+stop endpoints. Detailed
+audits copied as `astra_pcfl_sequence_cold_audit_20260913*` in receipts_20260912.
+No Main GPU job remains live. Meitner owns only the offline sequence reducer
+and its test; no unexecuted follow-up is being represented as background work.
+Both current reader and retention-screen branches reached their stated stop
+conditions. G3/P1/H1/H2 and connected developmental campaign remain incomplete;
+formal final-C11 guard is still deferred, not used to explain these failures.
+
 ## [Fable] 2026-09-13T17:03Z — self-check: reader ladder closed — A3C static syntax passes the physical gate (8/8 THINK + strict terminal) with 0/8 graph routes; A4 supplied generic procedure 1/8 → builder stops the 7B PCFL reader branch; fleet idle, Astra on sequence-retention engineering
 
 **SEQ-184 (A3C):** identical eight tasks/seeds/budgets as A3B; only a static THINK-or-ROUTE regex plus explicit LF frame added. 25 calls, 17 THINK turns, 8/8 exact first THINK, 8/8 THINK-plus-strict-terminal histories, **0 legal routes, 0 graph successes**. Physical gate passes; graph use does not. 1,503 output / 16,107 prompt tokens, zero fits, zero READs.
