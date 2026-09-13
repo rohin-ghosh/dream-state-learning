@@ -11,8 +11,8 @@ The strongest minimal completion is:
 
 - relevant frontier: `H -> S_R`, with private port pair `q0/q1` selected by
   `R`;
-- distractor frontier: **`X -> Z`**, with a separate private port pair
-  **`v0/v1`** selected by `D`;
+- distractor frontier: **`X -> Z`**, using the same private port pair
+  **`q0/q1`** selected independently by `D`;
 - either probe returns the same neutral public result shape, revealing only
   the selected probe, its declared endpoints, and one opaque port;
 - a relevant result is followed by the already-registered `EXPLORE`, ordinary
@@ -85,7 +85,7 @@ Private structural slot enums are:
 
 ```text
 node  = [S_L,A,H,G_L,S_R,B,G_R0,G_R1,X,Z,Y]
-port  = [a0,a1,b,c,d,f0,f1,u,q0,q1,v0,v1]
+port  = [a0,a1,b,c,d,f0,f1,u,q0,q1]
 event = [e0,e1,e2,e3,e4,e5,e6,e7,e8]
 link  = [l0,l1,l2,l3,l4,l5]
 probe = [relevant,distractor]
@@ -93,8 +93,9 @@ receipt = [r0,r1,r2,r3,r4,r5,r6,r7,r8]
 goal  = [old_left,old_right,delayed0,delayed1]
 ```
 
-`v0/v1` are the only added opaque slots. No distractor EVENT, LINK, or
-receipt slot is added.
+No opaque slot is added. Actions are keyed by `(source,port)`, so the same
+prepared `P_` ID may deterministically denote `H -> S_R` at source `H` and
+`X -> Z` at source `X`. No distractor EVENT, LINK, or receipt slot is added.
 
 ## 2. Candidate A--E contract fragment
 
@@ -109,7 +110,7 @@ runtime may consume only the prepared instantiation.
 {
   "A_source_truth": {
     "distractor_binding_schema": "PCFL_V2_2_DISTRACTOR_XZ_V1",
-    "new_port_slots": ["v0", "v1"],
+    "new_port_slots": [],
     "frontiers": [
       {
         "frontier_id": "RELEVANT",
@@ -130,7 +131,7 @@ runtime may consume only the prepared instantiation.
         "source_node_slot_ref": "node/X",
         "destination_node_slot_ref": "node/Z",
         "outcome_private_bit": "D",
-        "port_by_bit": {"0": "port/v0", "1": "port/v1"},
+        "port_by_bit": {"0": "port/q0", "1": "port/q1"},
         "probe_materializes_event": false,
         "post_result_transition": "REVEAL_THEN_TERMINATE",
         "explore_event_slot_ref": null,
@@ -158,7 +159,7 @@ runtime may consume only the prepared instantiation.
       "gid_in_model_bytes": false
     },
     "prohibitions": {
-      "reuse_relevant_ports_for_distractor": true,
+      "add_distractor_only_port_slots": true,
       "distractor_event_or_link_target": true,
       "distractor_in_authentic_lineage": true,
       "distractor_in_sleep_corpus": true,
@@ -360,14 +361,14 @@ For every fixed `(root,O,goal)`, the prepared table is exactly:
 
 | R | D | relevant result port | distractor result port | correct delayed route contains |
 |---:|---:|---|---|---|
-| 0 | 0 | `q0` | `v0` | `q0` |
-| 0 | 1 | `q0` | `v1` | `q0` |
-| 1 | 0 | `q1` | `v0` | `q1` |
-| 1 | 1 | `q1` | `v1` | `q1` |
+| 0 | 0 | `q0` | `q0` | `q0` |
+| 0 | 1 | `q0` | `q1` | `q0` |
+| 1 | 0 | `q1` | `q0` | `q1` |
+| 1 | 1 | `q1` | `q1` | `q1` |
 
-`q*` and `v*` denote private slots; the prepared report records only their
-corresponding `P_` IDs. Normalizing the two port pairs back to bits must give
-exactly:
+`q*` denotes private slots; the prepared report records only their
+corresponding `P_` IDs. `R` and `D` index the same two-token alphabet but are
+independent. Normalizing the two outcomes back to bits must give exactly:
 
 ```text
 H(Y_R)=1
@@ -441,9 +442,9 @@ Here names are private structural slots; model bytes contain their prepared
 `E_`/`R_`/`L_` IDs. No D-branch trace or result can be a support span, replay
 source, counterpart, corpus slot, or authentic ancestor.
 
-The existing replay and batch registries are otherwise unchanged. Adding
-`v0/v1` changes only opaque-inventory search and the registered tokenization
-classes; it does not add a training slot or item.
+The existing opaque inventory, replay, and batch registries are otherwise
+unchanged. The new result and join substitution classes must still be checked,
+but no new ID, training slot, or item is added.
 
 ### D. Calibration
 
@@ -480,7 +481,7 @@ connection, but the witnessed graph contains only executed EVENTs. Therefore:
   cut, goal, task prompt, corpus, fit, or authentic state;
 - toggling `R` changes the relevant result port, `e8`, `l4/l5`, and the unique
   correct delayed ROUTE, but not the pre-outcome bytes;
-- adding the potential `X --v_D--> Z` connection to an independent full-graph
+- adding the potential `X --q_D--> Z` connection to an independent full-graph
   oracle still gives no path from `S_L` through that branch to `G_R0/G_R1`;
 - the only successful delayed route is
   `S_L --a_O,b,q_R,d,f_goal--> G_R_goal`;
@@ -488,7 +489,7 @@ connection, but the witnessed graph contains only executed EVENTs. Therefore:
 - cutting `e8` destroys success in every cell;
 - cutting or toggling the distractor frontier never changes delayed success;
   and
-- a route that takes `a_(1-O),v_D,u` terminates at `Y` and fails both delayed
+- a route that takes `a_(1-O),q_D,u` terminates at `Y` and fails both delayed
   goals.
 
 The work registry adds no model call or fit merely to populate D. It does add
@@ -512,8 +513,10 @@ the archived 20 route-algebra tests.
    booleans as bits, generic-ID parsing, `G_` in ROUTE, and unknown fields.
 2. **Exact frontier:** require relevant `H -> S_R` and distractor `X -> Z`;
    mutate either endpoint and fail.
-3. **Separate D capacity:** require distinct `v0/v1`, disjoint from `q0/q1`;
-   reuse, alias, missing slot, or cross-root collision fails.
+3. **Shared matched alphabet:** require both frontiers to use exactly the same
+   distinct `q0/q1` pair. A third port, a role-specific pair, q0/q1 aliasing,
+   missing slot, or cross-root collision fails. Prove `(source,port)` remains
+   a deterministic transition in all cells.
 4. **Golden renders:** byte-snapshot RA, RB, all four PROBE_RESULTs,
    both relevant joins, both receipts/receipt joins, and the distractor
    terminal response. Flip one byte, space, order, separator, or final LF and
@@ -571,12 +574,14 @@ the archived 20 route-algebra tests.
 
 `X -> Z` is better than inventing two new nodes: the registered OLD life
 already supplies both endpoints and the paths around them, so the useful and
-irrelevant probes can be judged using the same learned graph. It is better
-than reusing `q0/q1`: separate `v0/v1` prevents the irrelevant outcome token
-from accidentally aliasing the route-bearing token. It is better than adding
-a distractor EVENT: an extra authored row would change S2, the writer roster,
-and the fit arithmetic. It is better than leaving D symbolic: D0/D1 now cause
-different ordinary public bytes after a committed action.
+irrelevant probes can be judged using the same learned graph. Reusing
+`q0/q1` is stronger than inventing `v0/v1`: both experiments return the same
+two-token alphabet, and source-qualified actions remain deterministic. Seeing
+`q_D` predicts `q_R` at exactly chance because `D` and `R` are independent.
+It is better than adding a distractor EVENT: an extra authored row would
+change S2, the writer roster, and the fit arithmetic. It is better than
+leaving D symbolic: D0/D1 now cause different ordinary public bytes after a
+committed action.
 
 The result remains deliberately narrow. Both delayed goals still make the
 same frontier useful, so this tests memory-dependent **task-relevant
@@ -591,8 +596,8 @@ prepared contract must:
 1. pin this memo's exact post-commit SHA-256 as a new controlling source;
 2. bump its schema to include `PCFL_V2_2_DISTRACTOR_XZ_V1`;
 3. replace the unresolved-D sentinel with this exact A--E fragment;
-4. rerun deterministic opaque allocation/tokenizer search with `v0/v1` and
-   every new substitution class; and
+4. rerun deterministic tokenizer qualification over every new substitution
+   class using the existing opaque slots; and
 5. pass the complete CPU and real-tokenizer gates before the first model call.
 
 Until then, `execution_contract_valid=false` and
