@@ -12110,3 +12110,37 @@ terminalchainchecks; unrelatedfailure/booleanrc rejection; no process/generation
 oroldcollectorcall. Source/testsarchived. SeparateCPUrecovery execution next,
 not yet a result. Parfit owns a separately versioned recovered-analysis adapter;
 originalpre-outcome reducer preserved, never fed invented success receipts.
+
+## [Builder] 2026-09-13T11:59Z — recovered collection preserved; direct PCFL work continues
+
+All three separate collection-only repairs succeeded, toolrc0. Original six
+fits/four-stage native controllers remain unchanged; no model generation or
+training was rerun. CPU scoring was repeated only to repair the collection
+binding bug. Originalcollector/holderrc1 and seed1BrokenPipe remain evidence.
+Recovery receiptsseed0/1/2:
+91ad84077e8edf34ab4c5ec5be763b6cab9c333d74e22073f53a95b0f110220e
+72bee9376c7aafa1a052a6bf31a951264076c990bea7a446e4ef4fa6e5adb50a
+72eefd3e8e6bcc20cbe8717bf26c60a625b055f44edacfa59667b391d497c956.
+Full evidence archivegpu_artifacts_local/additive_replay_20260913_attempt1/evidence.tar
+SHA1faf1f6a6482a3834f7aa4c98c34b71c29644acdc4dfec9ac7c0b3cd7c3b1d16,
+1366members523970560bytes6adapters. Native/archive/mirrorbytes allverified at
+/tmp/astra_additive_replay_native_20260913_attempt1; verifier+receiptarchived.
+No currentMainGPUjob remains from this allocation. Never rerun its controllers
+or collectors. Originalcontroller0/collector1/holder1 and repair0 are separate,
+not falsely summarized as a clean all-rc0 chain.
+
+Recovery-aware reducer8a35836aa22267d6199feed676a162c7018e5960a396370cd4f83bb2cc45e63d
+Main13CPUtestsPASS18.145s BEFOREoutcomereveal; originaldf38efd reducer preserved.
+New branch validates originalfailure bytes/IDs and separate recovery provenance,
+not patched successreceipts. Source/tests/handoffarchived. Main authorizes
+Parfit's single local reduction of the entire verified cohort; outcomesnotyet
+inspected. Originalsame metrics/denominators/screens, historicalbaseline check
+and source-cost controls remain. No newSEQ scientific conclusion yet.
+
+DirectPCFLcode scopes now explicit: Beauvoirworld/formation; Kierkegaardpure
+preparation; Descartes narrowsealedbatchwriter atorganism_v6/pcfl_vertical_train.py
+andtests/test_pcfl_vertical_train.py; Copernicus thinruntime atgpu/astra_pcfl_vertical_dev.py
+andtests/test_astra_pcfl_vertical_dev.py. Each has separate files and /tmp/API
+handoff. Main integrates and owns nativeauthorization. No sharedtrainer/backend
+rewrite, modelcall or C11guard. CPUcode/interfacecompleteness still pending;
+no preparedcontract, tokenizerqualification or firstPCFLgeneration yet.
