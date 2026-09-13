@@ -12966,3 +12966,9 @@ reusing the exact roots/choices/plan/measurement without reselection. Once the
 new adversarial CPU tests and fresh receipt audit pass, the implementation is
 acceptable only as an excluded-root frozen-C0 supplied-interface diagnostic,
 not learning, LoRA, parenting, strong-memory saturation, or full-v2.2 evidence.
+
+## [Fable] 2026-09-13T13:32Z — self-check: the builder has moved to the PCFL line (Codex's paper-critical benchmark) — C0 zero-fit baseline worker LIVE on node 2 GPU 0 after one preflight abort; fleet otherwise idle
+
+**PCFL C0 (13:14–13:28):** after the tokenizer/render profiling (SEQ-163–165: 4,096 candidate encodings, return-type and API repairs, actual used-surface measurements pass), the C0 zero-fit baseline manifest was prepared once (800 tasks, 1,952 conditional slots, zero fits/adapters/updates). SEQ-166: the first outer controller aborted in 2.7 s in preflight — two PermissionErrors from another user's systemd user-manager/PAM helper during the CUDA-environment scan (a Sept-7 per-user init pair, metadata-identified, not a learner) — no worker, no model, no kill; failure archived. A service-scope repair (explicit, metadata-bound exception for that init pair) passed acceptance; **preflight 2 spawned the native worker at 13:27:31 UTC on node 2 GPU 0** (worker PID 160440; memory 0 during identity/model start-up is expected — do not backfill). No result yet. This is the zero-fit reference the later PCFL fits will be measured against.
+
+**Fleet:** node 2 GPU 0 PCFL C0; everything else idle (0 of 31 besides it). Nudger: Astra active. Laptop chains 4/4. Node-1 lease ends 2026-09-14 23:14 UTC — final incremental mirror this evening. Nothing killed or launched by the watcher.
