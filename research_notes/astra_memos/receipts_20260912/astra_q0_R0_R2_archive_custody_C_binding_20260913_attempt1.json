@@ -1,0 +1,196 @@
+{
+  "R1_ordering_check": {
+    "C_digest_matches_fable": "006c21d38b763953e5a59ef5641d3fe7683e3e32f71a84bb879c7de667a9db87",
+    "conclusion": "The orderings do not coincide. Fable supplied a C-order-equivalent digest; its actual runtime locale is not available in the note.",
+    "different_order_positions": 2324,
+    "en_US_UTF8_digest_does_not_match_fable": "c47b36a95d1da52291756974d2e700d16bdeead8d33af04a7b8b102d619f00b4",
+    "regular_files": 17567
+  },
+  "all_preserved_inputs_still_match_pins": true,
+  "cpu_test_v2_receipt": {
+    "path": "/tmp/astra_q0_tar_custody_cpu_v2_20260913.json",
+    "sha256": "35e7a22e991ba2f26ce5fd37dd8506122eff00479dd7660959a7002fea39e3d9"
+  },
+  "created_utc": "2026-09-13T05:56:17.993885+00:00",
+  "finished_utc": "2026-09-13T05:56:20.830089+00:00",
+  "limitations": [
+    "Original failed verifier receipts remain failed records against their original en_US expected digests. New PASS_CUSTODY receipts have different explicit-C observation provenance, not overwritten expectations.",
+    "The sidecar validates hashes and correspondence of Main-supplied controller output; it does not independently execute or reproduce native model replay.",
+    "Copying recorded scientific_claim fields is not sidecar endorsement or a new scientific eligibility decision. Both supplied controller labels remain Q0_V2_FULL_DOSE_ENDPOINT_FAIL.",
+    "Stat/digest guards are not an atomic snapshot guarantee against arbitrary concurrent or subsequent writes. The original touch-only test did not demonstrate changed content; test repair does not claim stronger runtime locking."
+  ],
+  "main_verifier_acceptance": "NOT_CLAIMED_PENDING_MAIN_REVIEW",
+  "mutation_fixture_diagnosis": {
+    "path": "/tmp/astra_q0_tar_custody_race_diagnosis_20260913_attempt1.json",
+    "sha256": "f23a4881b04161c441ce4ab28bf3ccd174cb1d29959aad33a0d4c5f791319eb4",
+    "summary": "80/200 immediate touches left bytes and stat fingerprint unchanged; all 120 changed-fingerprint cases rejected. Test-only v2 forces a distinct mtime and adds real content/inode/seal controls; 49 tests plus 200 deterministic repetitions pass."
+  },
+  "native_replay_executed_by_sidecar": false,
+  "new_observation": {
+    "explicit_environment": {
+      "LC_ALL": "C"
+    },
+    "path": "/tmp/astra_q0_R0_R2_external_custody_C_20260913_attempt1.json",
+    "sha256": "0b97c718e2bd877b956b4e04371f8baf57f165c3455ea1a2b3703ec6f36f7461"
+  },
+  "preserved_original_pins": {
+    "/tmp/astra_q0_R0_R2_external_custody_20260913.json": "2e2e01c024a21ee56456de8120f0156b6725aa07f7281adfbb414cbff5ae4748",
+    "/tmp/astra_q0_R0_R2_external_custody_C_20260913_attempt1.json": "0b97c718e2bd877b956b4e04371f8baf57f165c3455ea1a2b3703ec6f36f7461",
+    "/tmp/astra_q0_R0_tar_verification_20260913.json": "3c460b15980f85a20c322a41d2e7f6443bde50d78f74c3f23a01d9647b8d639a",
+    "/tmp/astra_q0_R2_tar_verification_20260913.json": "a4b51a61a212c5353ad70ac5fd8fa5d468805e8bc3e1e6205722c10f0fbbc81b",
+    "/tmp/astra_q0_tar_custody_20260913.py": "eaffff4a235986ac4ff1f43768ec7bee58a640dd3ec77c9db76057bdd6e4969b",
+    "/tmp/astra_q0_tar_custody_main_cpu_20260913.log": "ead8de4cd1fbe1022d467baca611dc86f7197b5fe20378de09dea691c7090d0e",
+    "/tmp/test_astra_q0_tar_custody_20260913.py": "8a805d14f09a580c3a2434d94870f94d4370e717f0b7d9b6f38dd187ee248a6a",
+    "/tmp/test_astra_q0_tar_custody_20260913_v2.py": "4b9f4586f29e2aecfe7b2034742f58755a9efcbc6d7c9835b3f4f38ad22bcfd4"
+  },
+  "remote_payload_mutation_or_recollection": false,
+  "root_stream_diagnosis": "Both old en_US.UTF-8 and new C observations are retained. Explicit-C rehash matches archive byte-sorted digests. Remote per-file maps compare equal for all 18,153 files per root with zero missing/added/changed hashes, and stat/terminal snapshots match the prior en_US observation. Cause is collation, not changed payload evidence.",
+  "roots": [
+    {
+      "all_per_file_hashes_equal_remote": true,
+      "archive_sha256": "b4b4b1380b3611a2ecdd0c3b95decfa9e4db43aae01adc31b26f748456aea960",
+      "archive_unchanged_during_binding": true,
+      "explicit_C_full_root_sha256": "52c21a6e1ba5fa786a652998eacb91b348ab1da685a335e7b90494ca1383097d",
+      "new_C_archive_receipt": {
+        "duration_seconds": 7.367614,
+        "path": "/tmp/astra_q0_R0_tar_verification_C_20260913_attempt1.json",
+        "sha256": "331dd96071f7b1ca2a8852c15c81a45a65262a856073f278957ed4c2a56ccaa2",
+        "status": "PASS_CUSTODY"
+      },
+      "original_failed_receipt": {
+        "path": "/tmp/astra_q0_R0_tar_verification_20260913.json",
+        "sha256": "3c460b15980f85a20c322a41d2e7f6443bde50d78f74c3f23a01d9647b8d639a",
+        "status_unchanged": "FAIL_CUSTODY"
+      },
+      "per_file_mapping_sha256": "06b0cccb686689f3dc56fc4fff62395d4e2177fddce9b276de0ba4f89c55d4c7",
+      "preserved_endpoint": {
+        "attempted_fits": 2,
+        "cells": {
+          "P_AUTH": {
+            "exact_correct": 71,
+            "exact_total": 128,
+            "held_correct": 37,
+            "held_total": 64,
+            "passed": false
+          },
+          "P_DERANGED": {
+            "exact_correct": 70,
+            "exact_total": 128,
+            "held_correct": 31,
+            "held_total": 64,
+            "passed": false
+          }
+        },
+        "complement_denominators": {
+          "exact": 128,
+          "held": 64
+        },
+        "complements": {
+          "exact": 39,
+          "held": 10
+        },
+        "label": "Q0_V2_FULL_DOSE_ENDPOINT_FAIL",
+        "qualifiers": [
+          "BOTH_MAP_FIRST_STEP_MISS"
+        ],
+        "updates": 256,
+        "wrong_root_denominator": 64,
+        "wrong_root_opposites": 14
+      },
+      "regular_files": 18153,
+      "remote_stat_stable_during_and_since_prior_observation": true,
+      "replica": "R0",
+      "supplied_controller_output": {
+        "archived_finalized_sha256": "5cecfd81ef81b5d72179c11ff681356ae95b19dd24931fb22b96c83fdf9bcdf8",
+        "archived_reduction_sha256": "258e0a87179445d6e256f890cf31b7c2f5c843978693369f7bcb823daa47194a",
+        "bytes": 11282,
+        "canonical_rule": "json.dumps(sort_keys=True, separators=(comma,colon), ensure_ascii=False, allow_nan=False) plus LF, UTF-8",
+        "computed_report_sha256": "7e3cd8644ba7643992a2331921ed2b1060593ade2860ff4536acb044e8a7e96b",
+        "durable_completion_matches_exact_finalized_bytes": true,
+        "exact_reduction_bytes_match_after_removing_durable_completion": true,
+        "path": "/tmp/astra_q0_R0_controller_replay_20260913.json",
+        "raw_file_sha256": "a2fd4fee7fc51e193534e5af8db4c1b80974e48891488c9cefbe51fbd052ae84",
+        "recorded_scientific_claim": true,
+        "replay_tag": "EXACT_NATIVE_RAW_REPLAY",
+        "report_hash_matches": true,
+        "reported_report_sha256": "7e3cd8644ba7643992a2331921ed2b1060593ade2860ff4536acb044e8a7e96b",
+        "sidecar_does_not_upgrade_this_field": true
+      }
+    },
+    {
+      "all_per_file_hashes_equal_remote": true,
+      "archive_sha256": "476844b0fb318509a31ec8d3c93530f8310e87587aace9d50c4873f38388b5d6",
+      "archive_unchanged_during_binding": true,
+      "explicit_C_full_root_sha256": "350befebaa2a31768b05254c98443435c58d5d8610c6f1515e89218afd2a14dc",
+      "new_C_archive_receipt": {
+        "duration_seconds": 7.470682,
+        "path": "/tmp/astra_q0_R2_tar_verification_C_20260913_attempt1.json",
+        "sha256": "2c8346555d9ccfdfdc4cca9fae8f15c4bd9ebcb5dc88df29ec3a53e531eec052",
+        "status": "PASS_CUSTODY"
+      },
+      "original_failed_receipt": {
+        "path": "/tmp/astra_q0_R2_tar_verification_20260913.json",
+        "sha256": "a4b51a61a212c5353ad70ac5fd8fa5d468805e8bc3e1e6205722c10f0fbbc81b",
+        "status_unchanged": "FAIL_CUSTODY"
+      },
+      "per_file_mapping_sha256": "57dee86498c6b3efb3f6dde170adb2ab48d18343b73a0849c3fc5db23c9c7049",
+      "preserved_endpoint": {
+        "attempted_fits": 2,
+        "cells": {
+          "P_AUTH": {
+            "exact_correct": 65,
+            "exact_total": 128,
+            "held_correct": 31,
+            "held_total": 64,
+            "passed": false
+          },
+          "P_DERANGED": {
+            "exact_correct": 72,
+            "exact_total": 128,
+            "held_correct": 32,
+            "held_total": 64,
+            "passed": false
+          }
+        },
+        "complement_denominators": {
+          "exact": 128,
+          "held": 64
+        },
+        "complements": {
+          "exact": 28,
+          "held": 4
+        },
+        "label": "Q0_V2_FULL_DOSE_ENDPOINT_FAIL",
+        "qualifiers": [
+          "BOTH_MAP_FIRST_STEP_MISS"
+        ],
+        "updates": 256,
+        "wrong_root_denominator": 64,
+        "wrong_root_opposites": 8
+      },
+      "regular_files": 18153,
+      "remote_stat_stable_during_and_since_prior_observation": true,
+      "replica": "R2",
+      "supplied_controller_output": {
+        "archived_finalized_sha256": "c2882a24e36ff4826e85b9997acec9b6bdf68753eef7e55cb75a178bf901ac78",
+        "archived_reduction_sha256": "281a8ef4bd20bf032da35e73dd78888864ebe06740814e75880084894efeb6cd",
+        "bytes": 11300,
+        "canonical_rule": "json.dumps(sort_keys=True, separators=(comma,colon), ensure_ascii=False, allow_nan=False) plus LF, UTF-8",
+        "computed_report_sha256": "e59900a2ea66f0b04f260a07b2b7e9540b258467893ceaf8e7bf8d6665b87694",
+        "durable_completion_matches_exact_finalized_bytes": true,
+        "exact_reduction_bytes_match_after_removing_durable_completion": true,
+        "path": "/tmp/astra_q0_R2_controller_replay_20260913.json",
+        "raw_file_sha256": "e3db8c19cae99a734e40b837c776c73412e5ef2b17e8e11eccd5591f096964b3",
+        "recorded_scientific_claim": true,
+        "replay_tag": "EXACT_NATIVE_RAW_REPLAY",
+        "report_hash_matches": true,
+        "reported_report_sha256": "e59900a2ea66f0b04f260a07b2b7e9540b258467893ceaf8e7bf8d6665b87694",
+        "sidecar_does_not_upgrade_this_field": true
+      }
+    }
+  ],
+  "runtime_verifier_unchanged": true,
+  "schema": "astra_q0_explicit_C_archive_and_controller_output_binding_v1",
+  "scientific_upgrade_or_reclassification": false,
+  "status": "CUSTODY_AND_SUPPLIED_CONTROLLER_HASH_BINDINGS_VERIFIED"
+}

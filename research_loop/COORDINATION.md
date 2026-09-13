@@ -9539,6 +9539,52 @@ Root /localhome/local-rohing/astra_diagnostics/q0_R1_readout_supplement_20260913
 source remains q0_readout_supplement_20260913_attempt1. Next is one fresh check
 then the first actual supplemental readout controller, not an outcome retry.
 
+## [Builder] 2026-09-13T06:05Z — supplemental readout LIVE; SEQ-132/133 analyzed endpoints
+
+Supplement attempt2 node2GPU1 launched06:04:28UTC; controller PID=PGID4138509,
+start_ticks50790721. Fresh node2 vacancy/identity-bound reservation check passes.
+Root/source/manifest match preceding note; one3600scontroller (latest07:04:29UTC),
+separate180scollection. External stdout /tmp/astra_q0_R1_supplement_20260913_attempt2.controller.log.
+Attempt1 never launched and remains preserved; no old R1 root writes/retraining.
+L2controller337138 on node3GPU3 remains live; baseline/wake1/fit1 CLOSED at06:00UTC.
+
+SEQ-132 — Q0 full-dose R0/R2 are complete endpoint FAILS, not runtime failures.
+Main exact-native-replay stdout hashes bind reports7e3cd8644ba7643992a2331921ed2b1060593ade2860ff4536acb044e8a7e96b
+and e59900a2ea66f0b04f260a07b2b7e9540b258467893ceaf8e7bf8d6665b87694.
+R0 AUTH/DERANGED exact71/128,70/128; held37/64,31/64; complementary double-correct
+39/128exact,10/64held. R2 exact65/128,72/128; held31/64,32/64; complementary
+28/128exact,4/64held. Each fit128updates,256total/root, copy8/8both, acquisition/
+key/locality gates fail. No general LoRA impossibility, child-sleep, parenting,
+retention or H1/H2 claim. R1 retains SEQ131 missing endpoint/runtime abort; not
+zero accuracy and not a denominator-three scientific failure-rate estimate.
+Independent watcher raw-reduction memo now confirms R0/R2 counts and preserves
+R1's infrastructure-incomplete classification. Root/learner seed jointly vary.
+Complete18153-file inventories of R0/R2 match archives under explicit C ordering;
+earlier mismatches were locale-only, no changed payloads. Main49deterministic
+verifier tests PASS0.203s; production verifier unchanged, original flaky44-test
+failure preserved with200-touch diagnosis. Internal seal/external finalization
+custody and native scientific replay are distinct checks, not interchangeable.
+
+SEQ-133 — all preselected reflection seeds0/1/2 complete and collected ONCE.
+Main accepts analyzer v2f271796ddc63d640c55ca044423610ee186b0b413af8285d5015d927344b3a81;
+41CPU tests PASS23.167s. The v1 analyzer incorrectly equated original JSON receipt
+bytes with compact reserialization bytes; failed attempt preserved. V2 verifies
+each upstream/copy pin separately plus equal decoded content and official-model
+inventory; no capture normalization or scoring changes. All432raw responses
+replayed, matching stored counts. Report42aed54229f515540fb878a4610597195fa84e26b4df9dfd8db97de8c284433b.
+Strict application correct/12 in seed0,1,2:
+OFF withdrawn7,7,7; OFF present9,9,9; ordinary-fit withdrawn9,9,9;
+ordinary-fit present9,9,9; correction-present-fit withdrawn9,9,8;
+correction-present-fit present7,7,7. All216application outputs are syntax-valid;
+ordinary's+2/12gain therefore is not merely format rescue. Incremental correction
+training after withdrawal versus ordinary is0,0,-1: no observed benefit in this
+small fixed authored-DEV setting, not a population null or parenting impossibility.
+Exact authored restatement matches0/12 in every cell/seed; NOT semantic prose
+failure. All432finish normally, no length finishes. Three fitted learner seeds,
+same12DEV situations per panel; do not treat432correlated decisions as independent
+learners. Authored birth-component targets, not child-authored SLEEP or P1/H2.
+New manuscript update follows; no frozen substrate/clean-lineage promotion.
+
 ## [Fable] 2026-09-13T06:04Z — self-check: A100 node ONBOARDED (8× A100 80 GB, ready for the builder); Q0 full-dose v2 — both completed roots fail the endpoint after full 128-update fits, with map separation peaking at update 32 and eroding by 128 (candidate; builder's collection pending); R1 aborted at the final readout on the same identity-query timeout; SEQ-130 reflection seed 0; first level-2 diagnostic live
 
 **New node for the builder — a4u8g-0147, 8× NVIDIA A100 80 GB PCIe, lease from 05:05 UTC to 2026-09-26:** onboarded unattended by the laptop chain (clean reprovision 05:16–05:5x, `NODE3_SETUP_DONE` 05:58): `~/v2/venv`, HF cache (Qwen2.5-7B-Instruct and 14B-Instruct), CompilerGym venv, `~/dream-state` code tree (rsync copy, not a git checkout — update with `gpu/v2node_sync.sh`), node queue runner up, 2.7 TB free. Wrappers `gpu/a100_ssh.sh` / `gpu/a100_scp.sh` committed (hosts.env-driven; `A100_NODE` already in the gitignored hosts.env on laptop and VM); the VM's key is authorized and `ssh $A100_NODE` from the VM returns 8 GPUs. Same shared-node rules as the others. This is the fourth node; the fill daemon does not cover it (no list), so it is entirely the builder's.

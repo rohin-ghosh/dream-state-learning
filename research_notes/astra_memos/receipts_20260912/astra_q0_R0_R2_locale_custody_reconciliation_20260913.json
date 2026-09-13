@@ -1,0 +1,80 @@
+{
+  "custody_only": true,
+  "diagnosis": "Frozen verifier sorts pathnames bytewise. The actual independent node2 checksum pipeline inherited LANG=en_US.UTF-8 and no LC_ALL/LC_COLLATE override. Applying that recorded sort environment to the exact archive-verified path/hash maps reproduces both expected full-root stream hashes. The original FAIL_CUSTODY receipts remain authoritative records of the frozen verifier runs and are not rewritten.",
+  "finished_utc": "2026-09-13T05:48:51.308606+00:00",
+  "independent_receipt": "/tmp/astra_q0_R0_R2_external_custody_20260913.json",
+  "independent_receipt_sha256": "2e2e01c024a21ee56456de8120f0156b6725aa07f7281adfbb414cbff5ae4748",
+  "prior_receipts_edited": false,
+  "reconstruction": [
+    "Load independently pinned standalone SEAL files mapping and add SEAL/FINALIZED/optional FINALIZATION_ABORT hashes from the final verifier receipt.",
+    "Require that the reconstructed mapping SHA256 exactly equals observed_payload_mapping_sha256 recorded by the streaming verifier; require complete archive hash match, exact seal bytes, finalized binding, all expected sealed files and unchanged inputs.",
+    "Require that the only frozen-verifier error is full-root stream expected SHA256 mismatch, and preserve that original receipt unchanged.",
+    "Sort NUL-terminated ./relative_path names using GNU sort -z under the recorded remote locale environment.",
+    "For each sorted path, concatenate payload_sha256 + two ASCII spaces + ./relative_path + LF; SHA256 the entire stream.",
+    "Require exact equality with the previously recorded independent node2 stream hash and regular-file count. No archive payload re-extraction, native replay, or remote rehash is involved."
+  ],
+  "recorded_remote_locale_environment": {
+    "LANG": "en_US.UTF-8",
+    "LC_ALL": null,
+    "LC_COLLATE": null,
+    "LC_CTYPE": null
+  },
+  "remote_actions_performed": false,
+  "roots": [
+    {
+      "archive_path": "/data/home/rohing/dream-state/gpu_artifacts_local/q0_fulldose_20260913/R0_attempt1.tar",
+      "archive_sha256": "b4b4b1380b3611a2ecdd0c3b95decfa9e4db43aae01adc31b26f748456aea960",
+      "byte_sorted_root_stream_sha256": "52c21a6e1ba5fa786a652998eacb91b348ab1da685a335e7b90494ca1383097d",
+      "checksum_stream_bytes": 2553579,
+      "duration_seconds": 0.144274,
+      "expected_independent_root_stream_sha256": "3448cc7d9c4c12fb04c9ce2b0be837b3c67ce3f217ce8098e0730aaf4ac322bd",
+      "matches_expected": true,
+      "original_verifier_receipt": "/tmp/astra_q0_R0_tar_verification_20260913.json",
+      "original_verifier_receipt_sha256": "3c460b15980f85a20c322a41d2e7f6443bde50d78f74c3f23a01d9647b8d639a",
+      "original_verifier_status": "FAIL_CUSTODY",
+      "positions_differing_from_byte_order": 2911,
+      "recorded_locale_root_stream_sha256": "3448cc7d9c4c12fb04c9ce2b0be837b3c67ce3f217ce8098e0730aaf4ac322bd",
+      "regular_files": 18153,
+      "replica": "R0",
+      "sort_input_sha256": "066c0df4af0bc9d3fcbcdd47b7c4eee1c558609e0c6b227c11790b7e60261fc7",
+      "sort_output_sha256": "b94dc543b9390895585b1212ec92bda738147d8a50945cf130a63e76613e2efd",
+      "standalone_seal": "/tmp/astra_q0_fulldose_R0_seal_20260913.json",
+      "standalone_seal_sha256": "cbd1bbdd9767bc296508714063a45ed6a14b9ef5b6d5b19185066bf119128f4a",
+      "status": "MATCH_RECORDED_REMOTE_LOCALE",
+      "verified_payload_mapping_sha256": "06b0cccb686689f3dc56fc4fff62395d4e2177fddce9b276de0ba4f89c55d4c7"
+    },
+    {
+      "archive_path": "/data/home/rohing/dream-state/gpu_artifacts_local/q0_fulldose_20260913/R2_attempt1.tar",
+      "archive_sha256": "476844b0fb318509a31ec8d3c93530f8310e87587aace9d50c4873f38388b5d6",
+      "byte_sorted_root_stream_sha256": "350befebaa2a31768b05254c98443435c58d5d8610c6f1515e89218afd2a14dc",
+      "checksum_stream_bytes": 2553579,
+      "duration_seconds": 0.125631,
+      "expected_independent_root_stream_sha256": "6bf4f44a850a10ec94fd8d429d268b568b66e33ac842ea5f885e746b89159342",
+      "matches_expected": true,
+      "original_verifier_receipt": "/tmp/astra_q0_R2_tar_verification_20260913.json",
+      "original_verifier_receipt_sha256": "a4b51a61a212c5353ad70ac5fd8fa5d468805e8bc3e1e6205722c10f0fbbc81b",
+      "original_verifier_status": "FAIL_CUSTODY",
+      "positions_differing_from_byte_order": 2911,
+      "recorded_locale_root_stream_sha256": "6bf4f44a850a10ec94fd8d429d268b568b66e33ac842ea5f885e746b89159342",
+      "regular_files": 18153,
+      "replica": "R2",
+      "sort_input_sha256": "6ebf60c939f6b0f3caf03c94ed6769d238dc9a9f740d48dfb52e4ba61f88069d",
+      "sort_output_sha256": "f34ed062d1b3a4896feef156e61f0ac20a3930bd32bddcca96208ab329591713",
+      "standalone_seal": "/tmp/astra_q0_fulldose_R2_seal_20260913.json",
+      "standalone_seal_sha256": "73eff0eafa7dd4f136db2a29e706e3657aeb85ee55b51eab61981651acfb02a6",
+      "status": "MATCH_RECORDED_REMOTE_LOCALE",
+      "verified_payload_mapping_sha256": "57dee86498c6b3efb3f6dde170adb2ab48d18343b73a0849c3fc5db23c9c7049"
+    }
+  ],
+  "schema": "astra_q0_recorded_locale_custody_reconciliation_v1",
+  "scientific_replay_promotion_or_reclassification": false,
+  "sort_command": [
+    "sort",
+    "-z"
+  ],
+  "sort_version": "sort (GNU coreutils) 9.4",
+  "started_utc": "2026-09-13T05:48:48.189469+00:00",
+  "status": "MATCH_RECORDED_REMOTE_LOCALE",
+  "verifier_edited": false,
+  "verifier_sha256": "eaffff4a235986ac4ff1f43768ec7bee58a640dd3ec77c9db76057bdd6e4969b"
+}

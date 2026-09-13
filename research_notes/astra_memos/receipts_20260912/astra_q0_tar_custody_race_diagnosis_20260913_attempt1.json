@@ -1,0 +1,4424 @@
+{
+  "all_payloads_unchanged_in_touch_reproduction": true,
+  "changed_touch_passes": 0,
+  "changed_touch_rejections": 120,
+  "controls": [
+    {
+      "after": {
+        "st_ctime_ns": 1789278793797128254,
+        "st_dev": 64513,
+        "st_ino": 159504,
+        "st_mtime_ns": 1789278795796128241,
+        "st_size": 10240
+      },
+      "before": {
+        "st_ctime_ns": 1789278793796128241,
+        "st_dev": 64513,
+        "st_ino": 159504,
+        "st_mtime_ns": 1789278793796128241,
+        "st_size": 10240
+      },
+      "errors": [
+        {
+          "message": "input changed/replaced during custody verification",
+          "type": "CustodyError"
+        }
+      ],
+      "mode": "explicit_mtime_change",
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after": {
+        "st_ctime_ns": 1789278793798128266,
+        "st_dev": 64513,
+        "st_ino": 159507,
+        "st_mtime_ns": 1789278793798128266,
+        "st_size": 10247
+      },
+      "before": {
+        "st_ctime_ns": 1789278793797128254,
+        "st_dev": 64513,
+        "st_ino": 159507,
+        "st_mtime_ns": 1789278793797128254,
+        "st_size": 10240
+      },
+      "errors": [
+        {
+          "message": "input changed/replaced during custody verification",
+          "type": "CustodyError"
+        }
+      ],
+      "mode": "append_payload_after_scan",
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after": {
+        "st_ctime_ns": 1789278793799128279,
+        "st_dev": 64513,
+        "st_ino": 159511,
+        "st_mtime_ns": 1789278793798128266,
+        "st_size": 10240
+      },
+      "before": {
+        "st_ctime_ns": 1789278793798128266,
+        "st_dev": 64513,
+        "st_ino": 159510,
+        "st_mtime_ns": 1789278793798128266,
+        "st_size": 10240
+      },
+      "errors": [
+        {
+          "message": "input changed/replaced during custody verification",
+          "type": "CustodyError"
+        }
+      ],
+      "mode": "replace_inode_same_bytes",
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after": {
+        "st_ctime_ns": 1789278793799128279,
+        "st_dev": 64513,
+        "st_ino": 159514,
+        "st_mtime_ns": 1789278793799128279,
+        "st_size": 10240
+      },
+      "before": {
+        "st_ctime_ns": 1789278793799128279,
+        "st_dev": 64513,
+        "st_ino": 159514,
+        "st_mtime_ns": 1789278793799128279,
+        "st_size": 10240
+      },
+      "errors": [],
+      "mode": "same_stat_noop",
+      "verifier_status": "PASS_CUSTODY"
+    }
+  ],
+  "created_utc": "2026-09-13T05:53:13.801335+00:00",
+  "diagnosis": "Original regression calls Path.touch() immediately after building/reading a tiny fixture. touch can leave the recorded mtime/ctime fingerprint unchanged; it never changes payload bytes. The assertion unconditionally expects FAIL_CUSTODY even when nothing in the validated fingerprint or content changed. Explicitly distinct mtime, appended content, and inode replacement are separate deterministic controls.",
+  "duration_seconds": 0.225593,
+  "iterations": 200,
+  "limits": [
+    "Only disposable CPU fixtures were changed. Real archives, seals, Main log, original code and prior receipts were not written.",
+    "Stat/digest checks are not an atomic snapshot or a proof against a writer after verification. This diagnostic does not claim arbitrary concurrent mutation can be prevented.",
+    "Test-only versioning is appropriate if changed-fingerprint controls all reject; no runtime detector change is inferred from a same-stat touch alone."
+  ],
+  "main_acceptance_claimed": false,
+  "main_log": "/tmp/astra_q0_tar_custody_main_cpu_20260913.log",
+  "main_log_sha256": "ead8de4cd1fbe1022d467baca611dc86f7197b5fe20378de09dea691c7090d0e",
+  "original_test_sha256": "8a805d14f09a580c3a2434d94870f94d4370e717f0b7d9b6f38dd187ee248a6a",
+  "original_verifier_sha256": "eaffff4a235986ac4ff1f43768ec7bee58a640dd3ec77c9db76057bdd6e4969b",
+  "reproduction_examples": [
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793594125713,
+        "st_dev": 64513,
+        "st_ino": 159431,
+        "st_mtime_ns": 1789278793594125713,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793594125713,
+        "st_dev": 64513,
+        "st_ino": 159431,
+        "st_mtime_ns": 1789278793594125713,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 18,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793596125738,
+        "st_dev": 64513,
+        "st_ino": 159437,
+        "st_mtime_ns": 1789278793596125738,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793596125738,
+        "st_dev": 64513,
+        "st_ino": 159437,
+        "st_mtime_ns": 1789278793596125738,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 20,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793597125750,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793597125750,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793597125750,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793597125750,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 21,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793598125763,
+        "st_dev": 64513,
+        "st_ino": 159410,
+        "st_mtime_ns": 1789278793598125763,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793598125763,
+        "st_dev": 64513,
+        "st_ino": 159410,
+        "st_mtime_ns": 1789278793598125763,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 22,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793599125775,
+        "st_dev": 64513,
+        "st_ino": 159415,
+        "st_mtime_ns": 1789278793599125775,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793599125775,
+        "st_dev": 64513,
+        "st_ino": 159415,
+        "st_mtime_ns": 1789278793599125775,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 23,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    }
+  ],
+  "schema": "astra_q0_custody_race_diagnosis_v1",
+  "source_preserved": true,
+  "trials": [
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793576125487,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793576125487,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793575125475,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793575125475,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 0,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793578125512,
+        "st_dev": 64513,
+        "st_ino": 159413,
+        "st_mtime_ns": 1789278793578125512,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793577125500,
+        "st_dev": 64513,
+        "st_ino": 159413,
+        "st_mtime_ns": 1789278793577125500,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 1,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793579125525,
+        "st_dev": 64513,
+        "st_ino": 159415,
+        "st_mtime_ns": 1789278793579125525,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793578125512,
+        "st_dev": 64513,
+        "st_ino": 159415,
+        "st_mtime_ns": 1789278793578125512,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 2,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793580125537,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793580125537,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793579125525,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793579125525,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 3,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793581125550,
+        "st_dev": 64513,
+        "st_ino": 159417,
+        "st_mtime_ns": 1789278793581125550,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793580125537,
+        "st_dev": 64513,
+        "st_ino": 159417,
+        "st_mtime_ns": 1789278793580125537,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 4,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793582125563,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793582125563,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793581125550,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793581125550,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 5,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793583125575,
+        "st_dev": 64513,
+        "st_ino": 159423,
+        "st_mtime_ns": 1789278793583125575,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793582125563,
+        "st_dev": 64513,
+        "st_ino": 159423,
+        "st_mtime_ns": 1789278793582125563,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 6,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793584125588,
+        "st_dev": 64513,
+        "st_ino": 159426,
+        "st_mtime_ns": 1789278793584125588,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793583125575,
+        "st_dev": 64513,
+        "st_ino": 159426,
+        "st_mtime_ns": 1789278793583125575,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 7,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793585125600,
+        "st_dev": 64513,
+        "st_ino": 159429,
+        "st_mtime_ns": 1789278793585125600,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793584125588,
+        "st_dev": 64513,
+        "st_ino": 159429,
+        "st_mtime_ns": 1789278793584125588,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 8,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793586125613,
+        "st_dev": 64513,
+        "st_ino": 159432,
+        "st_mtime_ns": 1789278793586125613,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793585125600,
+        "st_dev": 64513,
+        "st_ino": 159432,
+        "st_mtime_ns": 1789278793585125600,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 9,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793587125625,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793587125625,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793586125613,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793586125613,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 10,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793588125638,
+        "st_dev": 64513,
+        "st_ino": 159409,
+        "st_mtime_ns": 1789278793588125638,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793587125625,
+        "st_dev": 64513,
+        "st_ino": 159409,
+        "st_mtime_ns": 1789278793587125625,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 11,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793589125650,
+        "st_dev": 64513,
+        "st_ino": 159413,
+        "st_mtime_ns": 1789278793589125650,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793588125638,
+        "st_dev": 64513,
+        "st_ino": 159413,
+        "st_mtime_ns": 1789278793588125638,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 12,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793590125663,
+        "st_dev": 64513,
+        "st_ino": 159416,
+        "st_mtime_ns": 1789278793590125663,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793589125650,
+        "st_dev": 64513,
+        "st_ino": 159416,
+        "st_mtime_ns": 1789278793589125650,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 13,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793591125675,
+        "st_dev": 64513,
+        "st_ino": 159419,
+        "st_mtime_ns": 1789278793591125675,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793590125663,
+        "st_dev": 64513,
+        "st_ino": 159419,
+        "st_mtime_ns": 1789278793590125663,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 14,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793592125688,
+        "st_dev": 64513,
+        "st_ino": 159422,
+        "st_mtime_ns": 1789278793592125688,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793591125675,
+        "st_dev": 64513,
+        "st_ino": 159422,
+        "st_mtime_ns": 1789278793591125675,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 15,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793593125700,
+        "st_dev": 64513,
+        "st_ino": 159425,
+        "st_mtime_ns": 1789278793593125700,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793592125688,
+        "st_dev": 64513,
+        "st_ino": 159425,
+        "st_mtime_ns": 1789278793592125688,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 16,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793594125713,
+        "st_dev": 64513,
+        "st_ino": 159428,
+        "st_mtime_ns": 1789278793594125713,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793593125700,
+        "st_dev": 64513,
+        "st_ino": 159428,
+        "st_mtime_ns": 1789278793593125700,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 17,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793594125713,
+        "st_dev": 64513,
+        "st_ino": 159431,
+        "st_mtime_ns": 1789278793594125713,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793594125713,
+        "st_dev": 64513,
+        "st_ino": 159431,
+        "st_mtime_ns": 1789278793594125713,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 18,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793596125738,
+        "st_dev": 64513,
+        "st_ino": 159434,
+        "st_mtime_ns": 1789278793596125738,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793595125725,
+        "st_dev": 64513,
+        "st_ino": 159434,
+        "st_mtime_ns": 1789278793595125725,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 19,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793596125738,
+        "st_dev": 64513,
+        "st_ino": 159437,
+        "st_mtime_ns": 1789278793596125738,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793596125738,
+        "st_dev": 64513,
+        "st_ino": 159437,
+        "st_mtime_ns": 1789278793596125738,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 20,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793597125750,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793597125750,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793597125750,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793597125750,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 21,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793598125763,
+        "st_dev": 64513,
+        "st_ino": 159410,
+        "st_mtime_ns": 1789278793598125763,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793598125763,
+        "st_dev": 64513,
+        "st_ino": 159410,
+        "st_mtime_ns": 1789278793598125763,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 22,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793599125775,
+        "st_dev": 64513,
+        "st_ino": 159415,
+        "st_mtime_ns": 1789278793599125775,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793599125775,
+        "st_dev": 64513,
+        "st_ino": 159415,
+        "st_mtime_ns": 1789278793599125775,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 23,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793600125788,
+        "st_dev": 64513,
+        "st_ino": 159418,
+        "st_mtime_ns": 1789278793600125788,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793600125788,
+        "st_dev": 64513,
+        "st_ino": 159418,
+        "st_mtime_ns": 1789278793600125788,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 24,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793601125800,
+        "st_dev": 64513,
+        "st_ino": 159419,
+        "st_mtime_ns": 1789278793601125800,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793601125800,
+        "st_dev": 64513,
+        "st_ino": 159419,
+        "st_mtime_ns": 1789278793601125800,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 25,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793602125813,
+        "st_dev": 64513,
+        "st_ino": 159422,
+        "st_mtime_ns": 1789278793602125813,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793602125813,
+        "st_dev": 64513,
+        "st_ino": 159422,
+        "st_mtime_ns": 1789278793602125813,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 26,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793603125825,
+        "st_dev": 64513,
+        "st_ino": 159425,
+        "st_mtime_ns": 1789278793603125825,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793603125825,
+        "st_dev": 64513,
+        "st_ino": 159425,
+        "st_mtime_ns": 1789278793603125825,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 27,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793604125838,
+        "st_dev": 64513,
+        "st_ino": 159428,
+        "st_mtime_ns": 1789278793604125838,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793604125838,
+        "st_dev": 64513,
+        "st_ino": 159428,
+        "st_mtime_ns": 1789278793604125838,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 28,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793605125850,
+        "st_dev": 64513,
+        "st_ino": 159431,
+        "st_mtime_ns": 1789278793605125850,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793604125838,
+        "st_dev": 64513,
+        "st_ino": 159431,
+        "st_mtime_ns": 1789278793604125838,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 29,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793606125863,
+        "st_dev": 64513,
+        "st_ino": 159434,
+        "st_mtime_ns": 1789278793606125863,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793605125850,
+        "st_dev": 64513,
+        "st_ino": 159434,
+        "st_mtime_ns": 1789278793605125850,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 30,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793607125875,
+        "st_dev": 64513,
+        "st_ino": 159437,
+        "st_mtime_ns": 1789278793607125875,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793606125863,
+        "st_dev": 64513,
+        "st_ino": 159437,
+        "st_mtime_ns": 1789278793606125863,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 31,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793608125888,
+        "st_dev": 64513,
+        "st_ino": 159440,
+        "st_mtime_ns": 1789278793608125888,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793607125875,
+        "st_dev": 64513,
+        "st_ino": 159440,
+        "st_mtime_ns": 1789278793607125875,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 32,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793609125900,
+        "st_dev": 64513,
+        "st_ino": 159443,
+        "st_mtime_ns": 1789278793609125900,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793608125888,
+        "st_dev": 64513,
+        "st_ino": 159443,
+        "st_mtime_ns": 1789278793608125888,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 33,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793610125913,
+        "st_dev": 64513,
+        "st_ino": 159446,
+        "st_mtime_ns": 1789278793610125913,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793609125900,
+        "st_dev": 64513,
+        "st_ino": 159446,
+        "st_mtime_ns": 1789278793609125900,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 34,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793611125926,
+        "st_dev": 64513,
+        "st_ino": 159450,
+        "st_mtime_ns": 1789278793611125926,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793610125913,
+        "st_dev": 64513,
+        "st_ino": 159450,
+        "st_mtime_ns": 1789278793610125913,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 35,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793612125938,
+        "st_dev": 64513,
+        "st_ino": 159454,
+        "st_mtime_ns": 1789278793612125938,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793611125926,
+        "st_dev": 64513,
+        "st_ino": 159454,
+        "st_mtime_ns": 1789278793611125926,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 36,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793612125938,
+        "st_dev": 64513,
+        "st_ino": 159457,
+        "st_mtime_ns": 1789278793612125938,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793612125938,
+        "st_dev": 64513,
+        "st_ino": 159457,
+        "st_mtime_ns": 1789278793612125938,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 37,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793613125951,
+        "st_dev": 64513,
+        "st_ino": 159410,
+        "st_mtime_ns": 1789278793613125951,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793613125951,
+        "st_dev": 64513,
+        "st_ino": 159410,
+        "st_mtime_ns": 1789278793613125951,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 38,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793615125976,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793615125976,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793614125963,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793614125963,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 39,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793616125988,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793616125988,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793615125976,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793615125976,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 40,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793617126001,
+        "st_dev": 64513,
+        "st_ino": 159417,
+        "st_mtime_ns": 1789278793617126001,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793616125988,
+        "st_dev": 64513,
+        "st_ino": 159417,
+        "st_mtime_ns": 1789278793616125988,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 41,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793618126013,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793618126013,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793617126001,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793617126001,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 42,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793619126026,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793619126026,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793618126013,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793618126013,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 43,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793619126026,
+        "st_dev": 64513,
+        "st_ino": 159413,
+        "st_mtime_ns": 1789278793619126026,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793619126026,
+        "st_dev": 64513,
+        "st_ino": 159413,
+        "st_mtime_ns": 1789278793619126026,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 44,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793620126038,
+        "st_dev": 64513,
+        "st_ino": 159416,
+        "st_mtime_ns": 1789278793620126038,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793620126038,
+        "st_dev": 64513,
+        "st_ino": 159416,
+        "st_mtime_ns": 1789278793620126038,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 45,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793621126051,
+        "st_dev": 64513,
+        "st_ino": 159419,
+        "st_mtime_ns": 1789278793621126051,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793621126051,
+        "st_dev": 64513,
+        "st_ino": 159419,
+        "st_mtime_ns": 1789278793621126051,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 46,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793622126063,
+        "st_dev": 64513,
+        "st_ino": 159422,
+        "st_mtime_ns": 1789278793622126063,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793622126063,
+        "st_dev": 64513,
+        "st_ino": 159422,
+        "st_mtime_ns": 1789278793622126063,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 47,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793623126076,
+        "st_dev": 64513,
+        "st_ino": 159425,
+        "st_mtime_ns": 1789278793623126076,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793623126076,
+        "st_dev": 64513,
+        "st_ino": 159425,
+        "st_mtime_ns": 1789278793623126076,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 48,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793624126088,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793624126088,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793624126088,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793624126088,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 49,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793625126101,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793625126101,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793625126101,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793625126101,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 50,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793626126113,
+        "st_dev": 64513,
+        "st_ino": 159416,
+        "st_mtime_ns": 1789278793626126113,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793625126101,
+        "st_dev": 64513,
+        "st_ino": 159416,
+        "st_mtime_ns": 1789278793625126101,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 51,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793627126126,
+        "st_dev": 64513,
+        "st_ino": 159419,
+        "st_mtime_ns": 1789278793627126126,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793626126113,
+        "st_dev": 64513,
+        "st_ino": 159419,
+        "st_mtime_ns": 1789278793626126113,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 52,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793628126138,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793628126138,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793627126126,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793627126126,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 53,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793629126151,
+        "st_dev": 64513,
+        "st_ino": 159413,
+        "st_mtime_ns": 1789278793629126151,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793628126138,
+        "st_dev": 64513,
+        "st_ino": 159413,
+        "st_mtime_ns": 1789278793628126138,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 54,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793630126163,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793630126163,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793629126151,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793629126151,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 55,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793631126176,
+        "st_dev": 64513,
+        "st_ino": 159417,
+        "st_mtime_ns": 1789278793631126176,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793630126163,
+        "st_dev": 64513,
+        "st_ino": 159417,
+        "st_mtime_ns": 1789278793630126163,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 56,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793631126176,
+        "st_dev": 64513,
+        "st_ino": 159419,
+        "st_mtime_ns": 1789278793631126176,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793631126176,
+        "st_dev": 64513,
+        "st_ino": 159419,
+        "st_mtime_ns": 1789278793631126176,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 57,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793632126188,
+        "st_dev": 64513,
+        "st_ino": 159422,
+        "st_mtime_ns": 1789278793632126188,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793632126188,
+        "st_dev": 64513,
+        "st_ino": 159422,
+        "st_mtime_ns": 1789278793632126188,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 58,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793633126201,
+        "st_dev": 64513,
+        "st_ino": 159425,
+        "st_mtime_ns": 1789278793633126201,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793633126201,
+        "st_dev": 64513,
+        "st_ino": 159425,
+        "st_mtime_ns": 1789278793633126201,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 59,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793634126213,
+        "st_dev": 64513,
+        "st_ino": 159428,
+        "st_mtime_ns": 1789278793634126213,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793634126213,
+        "st_dev": 64513,
+        "st_ino": 159428,
+        "st_mtime_ns": 1789278793634126213,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 60,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793635126226,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793635126226,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793635126226,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793635126226,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 61,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793636126238,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793636126238,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793636126238,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793636126238,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 62,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793637126251,
+        "st_dev": 64513,
+        "st_ino": 159417,
+        "st_mtime_ns": 1789278793637126251,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793636126238,
+        "st_dev": 64513,
+        "st_ino": 159417,
+        "st_mtime_ns": 1789278793636126238,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 63,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793638126263,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793638126263,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793637126251,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793637126251,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 64,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793639126276,
+        "st_dev": 64513,
+        "st_ino": 159409,
+        "st_mtime_ns": 1789278793639126276,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793638126263,
+        "st_dev": 64513,
+        "st_ino": 159409,
+        "st_mtime_ns": 1789278793638126263,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 65,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793640126288,
+        "st_dev": 64513,
+        "st_ino": 159412,
+        "st_mtime_ns": 1789278793640126288,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793639126276,
+        "st_dev": 64513,
+        "st_ino": 159412,
+        "st_mtime_ns": 1789278793639126276,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 66,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793641126301,
+        "st_dev": 64513,
+        "st_ino": 159415,
+        "st_mtime_ns": 1789278793641126301,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793640126288,
+        "st_dev": 64513,
+        "st_ino": 159415,
+        "st_mtime_ns": 1789278793640126288,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 67,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793642126314,
+        "st_dev": 64513,
+        "st_ino": 159418,
+        "st_mtime_ns": 1789278793642126314,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793641126301,
+        "st_dev": 64513,
+        "st_ino": 159418,
+        "st_mtime_ns": 1789278793641126301,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 68,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793643126326,
+        "st_dev": 64513,
+        "st_ino": 159422,
+        "st_mtime_ns": 1789278793643126326,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793642126314,
+        "st_dev": 64513,
+        "st_ino": 159422,
+        "st_mtime_ns": 1789278793642126314,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 69,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793644126339,
+        "st_dev": 64513,
+        "st_ino": 159425,
+        "st_mtime_ns": 1789278793644126339,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793643126326,
+        "st_dev": 64513,
+        "st_ino": 159425,
+        "st_mtime_ns": 1789278793643126326,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 70,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793645126351,
+        "st_dev": 64513,
+        "st_ino": 159428,
+        "st_mtime_ns": 1789278793645126351,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793644126339,
+        "st_dev": 64513,
+        "st_ino": 159428,
+        "st_mtime_ns": 1789278793644126339,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 71,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793646126364,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793646126364,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793645126351,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793645126351,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 72,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793647126376,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793647126376,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793646126364,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793646126364,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 73,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793647126376,
+        "st_dev": 64513,
+        "st_ino": 159417,
+        "st_mtime_ns": 1789278793647126376,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793647126376,
+        "st_dev": 64513,
+        "st_ino": 159417,
+        "st_mtime_ns": 1789278793647126376,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 74,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793648126389,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793648126389,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793648126389,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793648126389,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 75,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793649126401,
+        "st_dev": 64513,
+        "st_ino": 159409,
+        "st_mtime_ns": 1789278793649126401,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793649126401,
+        "st_dev": 64513,
+        "st_ino": 159409,
+        "st_mtime_ns": 1789278793649126401,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 76,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793650126414,
+        "st_dev": 64513,
+        "st_ino": 159412,
+        "st_mtime_ns": 1789278793650126414,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793650126414,
+        "st_dev": 64513,
+        "st_ino": 159412,
+        "st_mtime_ns": 1789278793650126414,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 77,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793651126426,
+        "st_dev": 64513,
+        "st_ino": 159415,
+        "st_mtime_ns": 1789278793651126426,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793651126426,
+        "st_dev": 64513,
+        "st_ino": 159415,
+        "st_mtime_ns": 1789278793651126426,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 78,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793652126439,
+        "st_dev": 64513,
+        "st_ino": 159418,
+        "st_mtime_ns": 1789278793652126439,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793652126439,
+        "st_dev": 64513,
+        "st_ino": 159418,
+        "st_mtime_ns": 1789278793652126439,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 79,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793653126451,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793653126451,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793653126451,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793653126451,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 80,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793654126464,
+        "st_dev": 64513,
+        "st_ino": 159423,
+        "st_mtime_ns": 1789278793654126464,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793654126464,
+        "st_dev": 64513,
+        "st_ino": 159423,
+        "st_mtime_ns": 1789278793654126464,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 81,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793655126476,
+        "st_dev": 64513,
+        "st_ino": 159426,
+        "st_mtime_ns": 1789278793655126476,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793655126476,
+        "st_dev": 64513,
+        "st_ino": 159426,
+        "st_mtime_ns": 1789278793655126476,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 82,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793656126489,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793656126489,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793656126489,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793656126489,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 83,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793657126501,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793657126501,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793657126501,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793657126501,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 84,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793658126514,
+        "st_dev": 64513,
+        "st_ino": 159417,
+        "st_mtime_ns": 1789278793658126514,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793657126501,
+        "st_dev": 64513,
+        "st_ino": 159417,
+        "st_mtime_ns": 1789278793657126501,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 85,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793659126526,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793659126526,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793658126514,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793658126514,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 86,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793660126539,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793660126539,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793660126539,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793660126539,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 87,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793661126551,
+        "st_dev": 64513,
+        "st_ino": 159413,
+        "st_mtime_ns": 1789278793661126551,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793660126539,
+        "st_dev": 64513,
+        "st_ino": 159413,
+        "st_mtime_ns": 1789278793660126539,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 88,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793662126564,
+        "st_dev": 64513,
+        "st_ino": 159416,
+        "st_mtime_ns": 1789278793662126564,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793661126551,
+        "st_dev": 64513,
+        "st_ino": 159416,
+        "st_mtime_ns": 1789278793661126551,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 89,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793663126576,
+        "st_dev": 64513,
+        "st_ino": 159421,
+        "st_mtime_ns": 1789278793663126576,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793662126564,
+        "st_dev": 64513,
+        "st_ino": 159421,
+        "st_mtime_ns": 1789278793662126564,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 90,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793664126589,
+        "st_dev": 64513,
+        "st_ino": 159422,
+        "st_mtime_ns": 1789278793664126589,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793663126576,
+        "st_dev": 64513,
+        "st_ino": 159422,
+        "st_mtime_ns": 1789278793663126576,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 91,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793665126601,
+        "st_dev": 64513,
+        "st_ino": 159425,
+        "st_mtime_ns": 1789278793665126601,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793664126589,
+        "st_dev": 64513,
+        "st_ino": 159425,
+        "st_mtime_ns": 1789278793664126589,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 92,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793666126614,
+        "st_dev": 64513,
+        "st_ino": 159428,
+        "st_mtime_ns": 1789278793666126614,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793665126601,
+        "st_dev": 64513,
+        "st_ino": 159428,
+        "st_mtime_ns": 1789278793665126601,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 93,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793667126626,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793667126626,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793666126614,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793666126614,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 94,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793668126639,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793668126639,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793667126626,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793667126626,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 95,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793669126651,
+        "st_dev": 64513,
+        "st_ino": 159417,
+        "st_mtime_ns": 1789278793669126651,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793668126639,
+        "st_dev": 64513,
+        "st_ino": 159417,
+        "st_mtime_ns": 1789278793668126639,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 96,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793670126664,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793670126664,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793669126651,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793669126651,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 97,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793670126664,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793670126664,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793670126664,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793670126664,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 98,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793672126689,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793672126689,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793671126677,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793671126677,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 99,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793673126702,
+        "st_dev": 64513,
+        "st_ino": 159417,
+        "st_mtime_ns": 1789278793673126702,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793672126689,
+        "st_dev": 64513,
+        "st_ino": 159417,
+        "st_mtime_ns": 1789278793672126689,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 100,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793674126714,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793674126714,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793673126702,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793673126702,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 101,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793675126727,
+        "st_dev": 64513,
+        "st_ino": 159423,
+        "st_mtime_ns": 1789278793675126727,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793674126714,
+        "st_dev": 64513,
+        "st_ino": 159423,
+        "st_mtime_ns": 1789278793674126714,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 102,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793676126739,
+        "st_dev": 64513,
+        "st_ino": 159426,
+        "st_mtime_ns": 1789278793676126739,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793676126739,
+        "st_dev": 64513,
+        "st_ino": 159426,
+        "st_mtime_ns": 1789278793676126739,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 103,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793677126752,
+        "st_dev": 64513,
+        "st_ino": 159429,
+        "st_mtime_ns": 1789278793677126752,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793677126752,
+        "st_dev": 64513,
+        "st_ino": 159429,
+        "st_mtime_ns": 1789278793677126752,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 104,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793678126764,
+        "st_dev": 64513,
+        "st_ino": 159432,
+        "st_mtime_ns": 1789278793678126764,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793678126764,
+        "st_dev": 64513,
+        "st_ino": 159432,
+        "st_mtime_ns": 1789278793678126764,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 105,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793680126789,
+        "st_dev": 64513,
+        "st_ino": 159435,
+        "st_mtime_ns": 1789278793680126789,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793679126777,
+        "st_dev": 64513,
+        "st_ino": 159435,
+        "st_mtime_ns": 1789278793679126777,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 106,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793681126802,
+        "st_dev": 64513,
+        "st_ino": 159438,
+        "st_mtime_ns": 1789278793681126802,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793680126789,
+        "st_dev": 64513,
+        "st_ino": 159438,
+        "st_mtime_ns": 1789278793680126789,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 107,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793682126814,
+        "st_dev": 64513,
+        "st_ino": 159441,
+        "st_mtime_ns": 1789278793682126814,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793681126802,
+        "st_dev": 64513,
+        "st_ino": 159441,
+        "st_mtime_ns": 1789278793681126802,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 108,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793683126827,
+        "st_dev": 64513,
+        "st_ino": 159444,
+        "st_mtime_ns": 1789278793683126827,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793682126814,
+        "st_dev": 64513,
+        "st_ino": 159444,
+        "st_mtime_ns": 1789278793682126814,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 109,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793684126839,
+        "st_dev": 64513,
+        "st_ino": 159447,
+        "st_mtime_ns": 1789278793684126839,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793683126827,
+        "st_dev": 64513,
+        "st_ino": 159447,
+        "st_mtime_ns": 1789278793683126827,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 110,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793685126852,
+        "st_dev": 64513,
+        "st_ino": 159451,
+        "st_mtime_ns": 1789278793685126852,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793684126839,
+        "st_dev": 64513,
+        "st_ino": 159451,
+        "st_mtime_ns": 1789278793684126839,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 111,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793686126864,
+        "st_dev": 64513,
+        "st_ino": 159455,
+        "st_mtime_ns": 1789278793686126864,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793685126852,
+        "st_dev": 64513,
+        "st_ino": 159455,
+        "st_mtime_ns": 1789278793685126852,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 112,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793687126877,
+        "st_dev": 64513,
+        "st_ino": 159458,
+        "st_mtime_ns": 1789278793687126877,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793686126864,
+        "st_dev": 64513,
+        "st_ino": 159458,
+        "st_mtime_ns": 1789278793686126864,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 113,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793688126889,
+        "st_dev": 64513,
+        "st_ino": 159461,
+        "st_mtime_ns": 1789278793688126889,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793687126877,
+        "st_dev": 64513,
+        "st_ino": 159461,
+        "st_mtime_ns": 1789278793687126877,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 114,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793689126902,
+        "st_dev": 64513,
+        "st_ino": 159464,
+        "st_mtime_ns": 1789278793689126902,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793688126889,
+        "st_dev": 64513,
+        "st_ino": 159464,
+        "st_mtime_ns": 1789278793688126889,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 115,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793690126914,
+        "st_dev": 64513,
+        "st_ino": 159467,
+        "st_mtime_ns": 1789278793690126914,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793689126902,
+        "st_dev": 64513,
+        "st_ino": 159467,
+        "st_mtime_ns": 1789278793689126902,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 116,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793691126927,
+        "st_dev": 64513,
+        "st_ino": 159470,
+        "st_mtime_ns": 1789278793691126927,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793690126914,
+        "st_dev": 64513,
+        "st_ino": 159470,
+        "st_mtime_ns": 1789278793690126914,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 117,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793714127215,
+        "st_dev": 64513,
+        "st_ino": 159473,
+        "st_mtime_ns": 1789278793714127215,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793713127202,
+        "st_dev": 64513,
+        "st_ino": 159473,
+        "st_mtime_ns": 1789278793713127202,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 118,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793715127227,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793715127227,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793714127215,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793714127215,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 119,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793716127240,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793716127240,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793716127240,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793716127240,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 120,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793717127252,
+        "st_dev": 64513,
+        "st_ino": 159417,
+        "st_mtime_ns": 1789278793717127252,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793717127252,
+        "st_dev": 64513,
+        "st_ino": 159417,
+        "st_mtime_ns": 1789278793717127252,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 121,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793718127265,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793718127265,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793718127265,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793718127265,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 122,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793719127277,
+        "st_dev": 64513,
+        "st_ino": 159423,
+        "st_mtime_ns": 1789278793719127277,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793719127277,
+        "st_dev": 64513,
+        "st_ino": 159423,
+        "st_mtime_ns": 1789278793719127277,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 123,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793720127290,
+        "st_dev": 64513,
+        "st_ino": 159426,
+        "st_mtime_ns": 1789278793720127290,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793720127290,
+        "st_dev": 64513,
+        "st_ino": 159426,
+        "st_mtime_ns": 1789278793720127290,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 124,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793721127302,
+        "st_dev": 64513,
+        "st_ino": 159429,
+        "st_mtime_ns": 1789278793721127302,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793721127302,
+        "st_dev": 64513,
+        "st_ino": 159429,
+        "st_mtime_ns": 1789278793721127302,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 125,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793722127315,
+        "st_dev": 64513,
+        "st_ino": 159432,
+        "st_mtime_ns": 1789278793722127315,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793722127315,
+        "st_dev": 64513,
+        "st_ino": 159432,
+        "st_mtime_ns": 1789278793722127315,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 126,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793723127327,
+        "st_dev": 64513,
+        "st_ino": 159409,
+        "st_mtime_ns": 1789278793723127327,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793723127327,
+        "st_dev": 64513,
+        "st_ino": 159409,
+        "st_mtime_ns": 1789278793723127327,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 127,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793724127340,
+        "st_dev": 64513,
+        "st_ino": 159412,
+        "st_mtime_ns": 1789278793724127340,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793724127340,
+        "st_dev": 64513,
+        "st_ino": 159412,
+        "st_mtime_ns": 1789278793724127340,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 128,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793725127352,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793725127352,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793725127352,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793725127352,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 129,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793726127365,
+        "st_dev": 64513,
+        "st_ino": 159417,
+        "st_mtime_ns": 1789278793726127365,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793726127365,
+        "st_dev": 64513,
+        "st_ino": 159417,
+        "st_mtime_ns": 1789278793726127365,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 130,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793727127377,
+        "st_dev": 64513,
+        "st_ino": 159419,
+        "st_mtime_ns": 1789278793727127377,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793727127377,
+        "st_dev": 64513,
+        "st_ino": 159419,
+        "st_mtime_ns": 1789278793727127377,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 131,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793728127390,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793728127390,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793728127390,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793728127390,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 132,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793729127403,
+        "st_dev": 64513,
+        "st_ino": 159423,
+        "st_mtime_ns": 1789278793729127403,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793729127403,
+        "st_dev": 64513,
+        "st_ino": 159423,
+        "st_mtime_ns": 1789278793729127403,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 133,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793731127428,
+        "st_dev": 64513,
+        "st_ino": 159426,
+        "st_mtime_ns": 1789278793731127428,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793730127415,
+        "st_dev": 64513,
+        "st_ino": 159426,
+        "st_mtime_ns": 1789278793730127415,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 134,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793732127440,
+        "st_dev": 64513,
+        "st_ino": 159429,
+        "st_mtime_ns": 1789278793732127440,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793731127428,
+        "st_dev": 64513,
+        "st_ino": 159429,
+        "st_mtime_ns": 1789278793731127428,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 135,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793733127453,
+        "st_dev": 64513,
+        "st_ino": 159432,
+        "st_mtime_ns": 1789278793733127453,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793732127440,
+        "st_dev": 64513,
+        "st_ino": 159432,
+        "st_mtime_ns": 1789278793732127440,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 136,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793733127453,
+        "st_dev": 64513,
+        "st_ino": 159435,
+        "st_mtime_ns": 1789278793733127453,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793733127453,
+        "st_dev": 64513,
+        "st_ino": 159435,
+        "st_mtime_ns": 1789278793733127453,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 137,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793734127465,
+        "st_dev": 64513,
+        "st_ino": 159409,
+        "st_mtime_ns": 1789278793734127465,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793734127465,
+        "st_dev": 64513,
+        "st_ino": 159409,
+        "st_mtime_ns": 1789278793734127465,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 138,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793736127490,
+        "st_dev": 64513,
+        "st_ino": 159412,
+        "st_mtime_ns": 1789278793736127490,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793735127478,
+        "st_dev": 64513,
+        "st_ino": 159412,
+        "st_mtime_ns": 1789278793735127478,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 139,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793737127503,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793737127503,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793736127490,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793736127490,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 140,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793738127515,
+        "st_dev": 64513,
+        "st_ino": 159416,
+        "st_mtime_ns": 1789278793738127515,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793737127503,
+        "st_dev": 64513,
+        "st_ino": 159416,
+        "st_mtime_ns": 1789278793737127503,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 141,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793739127528,
+        "st_dev": 64513,
+        "st_ino": 159419,
+        "st_mtime_ns": 1789278793739127528,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793738127515,
+        "st_dev": 64513,
+        "st_ino": 159419,
+        "st_mtime_ns": 1789278793738127515,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 142,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793740127540,
+        "st_dev": 64513,
+        "st_ino": 159422,
+        "st_mtime_ns": 1789278793740127540,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793739127528,
+        "st_dev": 64513,
+        "st_ino": 159422,
+        "st_mtime_ns": 1789278793739127528,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 143,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793741127553,
+        "st_dev": 64513,
+        "st_ino": 159425,
+        "st_mtime_ns": 1789278793741127553,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793740127540,
+        "st_dev": 64513,
+        "st_ino": 159425,
+        "st_mtime_ns": 1789278793740127540,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 144,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793742127565,
+        "st_dev": 64513,
+        "st_ino": 159428,
+        "st_mtime_ns": 1789278793742127565,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793741127553,
+        "st_dev": 64513,
+        "st_ino": 159428,
+        "st_mtime_ns": 1789278793741127553,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 145,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793743127578,
+        "st_dev": 64513,
+        "st_ino": 159431,
+        "st_mtime_ns": 1789278793743127578,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793742127565,
+        "st_dev": 64513,
+        "st_ino": 159431,
+        "st_mtime_ns": 1789278793742127565,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 146,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793744127590,
+        "st_dev": 64513,
+        "st_ino": 159434,
+        "st_mtime_ns": 1789278793744127590,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793743127578,
+        "st_dev": 64513,
+        "st_ino": 159434,
+        "st_mtime_ns": 1789278793743127578,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 147,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793745127603,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793745127603,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793744127590,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793744127590,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 148,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793746127615,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793746127615,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793745127603,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793745127603,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 149,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793747127628,
+        "st_dev": 64513,
+        "st_ino": 159415,
+        "st_mtime_ns": 1789278793747127628,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793746127615,
+        "st_dev": 64513,
+        "st_ino": 159415,
+        "st_mtime_ns": 1789278793746127615,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 150,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793748127640,
+        "st_dev": 64513,
+        "st_ino": 159418,
+        "st_mtime_ns": 1789278793748127640,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793747127628,
+        "st_dev": 64513,
+        "st_ino": 159418,
+        "st_mtime_ns": 1789278793747127628,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 151,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793749127653,
+        "st_dev": 64513,
+        "st_ino": 159419,
+        "st_mtime_ns": 1789278793749127653,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793748127640,
+        "st_dev": 64513,
+        "st_ino": 159419,
+        "st_mtime_ns": 1789278793748127640,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 152,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793750127665,
+        "st_dev": 64513,
+        "st_ino": 159422,
+        "st_mtime_ns": 1789278793750127665,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793749127653,
+        "st_dev": 64513,
+        "st_ino": 159422,
+        "st_mtime_ns": 1789278793749127653,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 153,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793751127678,
+        "st_dev": 64513,
+        "st_ino": 159425,
+        "st_mtime_ns": 1789278793751127678,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793751127678,
+        "st_dev": 64513,
+        "st_ino": 159425,
+        "st_mtime_ns": 1789278793751127678,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 154,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793752127690,
+        "st_dev": 64513,
+        "st_ino": 159428,
+        "st_mtime_ns": 1789278793752127690,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793752127690,
+        "st_dev": 64513,
+        "st_ino": 159428,
+        "st_mtime_ns": 1789278793752127690,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 155,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793753127703,
+        "st_dev": 64513,
+        "st_ino": 159431,
+        "st_mtime_ns": 1789278793753127703,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793752127690,
+        "st_dev": 64513,
+        "st_ino": 159431,
+        "st_mtime_ns": 1789278793752127690,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 156,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793754127715,
+        "st_dev": 64513,
+        "st_ino": 159434,
+        "st_mtime_ns": 1789278793754127715,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793753127703,
+        "st_dev": 64513,
+        "st_ino": 159434,
+        "st_mtime_ns": 1789278793753127703,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 157,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793755127728,
+        "st_dev": 64513,
+        "st_ino": 159437,
+        "st_mtime_ns": 1789278793755127728,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793754127715,
+        "st_dev": 64513,
+        "st_ino": 159437,
+        "st_mtime_ns": 1789278793754127715,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 158,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793756127740,
+        "st_dev": 64513,
+        "st_ino": 159440,
+        "st_mtime_ns": 1789278793756127740,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793755127728,
+        "st_dev": 64513,
+        "st_ino": 159440,
+        "st_mtime_ns": 1789278793755127728,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 159,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793757127753,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793757127753,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793756127740,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793756127740,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 160,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793758127766,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793758127766,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793757127753,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793757127753,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 161,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793759127778,
+        "st_dev": 64513,
+        "st_ino": 159417,
+        "st_mtime_ns": 1789278793759127778,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793758127766,
+        "st_dev": 64513,
+        "st_ino": 159417,
+        "st_mtime_ns": 1789278793758127766,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 162,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793760127791,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793760127791,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793759127778,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793759127778,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 163,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793761127803,
+        "st_dev": 64513,
+        "st_ino": 159423,
+        "st_mtime_ns": 1789278793761127803,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793760127791,
+        "st_dev": 64513,
+        "st_ino": 159423,
+        "st_mtime_ns": 1789278793760127791,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 164,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793762127816,
+        "st_dev": 64513,
+        "st_ino": 159426,
+        "st_mtime_ns": 1789278793762127816,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793761127803,
+        "st_dev": 64513,
+        "st_ino": 159426,
+        "st_mtime_ns": 1789278793761127803,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 165,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793763127828,
+        "st_dev": 64513,
+        "st_ino": 159429,
+        "st_mtime_ns": 1789278793763127828,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793762127816,
+        "st_dev": 64513,
+        "st_ino": 159429,
+        "st_mtime_ns": 1789278793762127816,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 166,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793764127841,
+        "st_dev": 64513,
+        "st_ino": 159432,
+        "st_mtime_ns": 1789278793764127841,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793764127841,
+        "st_dev": 64513,
+        "st_ino": 159432,
+        "st_mtime_ns": 1789278793764127841,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 167,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793765127853,
+        "st_dev": 64513,
+        "st_ino": 159435,
+        "st_mtime_ns": 1789278793765127853,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793765127853,
+        "st_dev": 64513,
+        "st_ino": 159435,
+        "st_mtime_ns": 1789278793765127853,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 168,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793766127866,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793766127866,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793766127866,
+        "st_dev": 64513,
+        "st_ino": 159411,
+        "st_mtime_ns": 1789278793766127866,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 169,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793767127878,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793767127878,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793767127878,
+        "st_dev": 64513,
+        "st_ino": 159414,
+        "st_mtime_ns": 1789278793767127878,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 170,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793768127891,
+        "st_dev": 64513,
+        "st_ino": 159416,
+        "st_mtime_ns": 1789278793768127891,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793768127891,
+        "st_dev": 64513,
+        "st_ino": 159416,
+        "st_mtime_ns": 1789278793768127891,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 171,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793769127903,
+        "st_dev": 64513,
+        "st_ino": 159419,
+        "st_mtime_ns": 1789278793769127903,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793769127903,
+        "st_dev": 64513,
+        "st_ino": 159419,
+        "st_mtime_ns": 1789278793769127903,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 172,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793770127916,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793770127916,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793770127916,
+        "st_dev": 64513,
+        "st_ino": 159420,
+        "st_mtime_ns": 1789278793770127916,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 173,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793771127928,
+        "st_dev": 64513,
+        "st_ino": 159423,
+        "st_mtime_ns": 1789278793771127928,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793771127928,
+        "st_dev": 64513,
+        "st_ino": 159423,
+        "st_mtime_ns": 1789278793771127928,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 174,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793772127941,
+        "st_dev": 64513,
+        "st_ino": 159426,
+        "st_mtime_ns": 1789278793772127941,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793772127941,
+        "st_dev": 64513,
+        "st_ino": 159426,
+        "st_mtime_ns": 1789278793772127941,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 175,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793773127953,
+        "st_dev": 64513,
+        "st_ino": 159429,
+        "st_mtime_ns": 1789278793773127953,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793773127953,
+        "st_dev": 64513,
+        "st_ino": 159429,
+        "st_mtime_ns": 1789278793773127953,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 176,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793774127966,
+        "st_dev": 64513,
+        "st_ino": 159432,
+        "st_mtime_ns": 1789278793774127966,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793774127966,
+        "st_dev": 64513,
+        "st_ino": 159432,
+        "st_mtime_ns": 1789278793774127966,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 177,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793775127978,
+        "st_dev": 64513,
+        "st_ino": 159435,
+        "st_mtime_ns": 1789278793775127978,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793775127978,
+        "st_dev": 64513,
+        "st_ino": 159435,
+        "st_mtime_ns": 1789278793775127978,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 178,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793776127991,
+        "st_dev": 64513,
+        "st_ino": 159438,
+        "st_mtime_ns": 1789278793776127991,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793776127991,
+        "st_dev": 64513,
+        "st_ino": 159438,
+        "st_mtime_ns": 1789278793776127991,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 179,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793778128016,
+        "st_dev": 64513,
+        "st_ino": 159441,
+        "st_mtime_ns": 1789278793778128016,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793777128003,
+        "st_dev": 64513,
+        "st_ino": 159441,
+        "st_mtime_ns": 1789278793777128003,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 180,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793779128028,
+        "st_dev": 64513,
+        "st_ino": 159444,
+        "st_mtime_ns": 1789278793779128028,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793778128016,
+        "st_dev": 64513,
+        "st_ino": 159444,
+        "st_mtime_ns": 1789278793778128016,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 181,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793780128041,
+        "st_dev": 64513,
+        "st_ino": 159447,
+        "st_mtime_ns": 1789278793780128041,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793779128028,
+        "st_dev": 64513,
+        "st_ino": 159447,
+        "st_mtime_ns": 1789278793779128028,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 182,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793780128041,
+        "st_dev": 64513,
+        "st_ino": 159451,
+        "st_mtime_ns": 1789278793780128041,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793780128041,
+        "st_dev": 64513,
+        "st_ino": 159451,
+        "st_mtime_ns": 1789278793780128041,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 183,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793781128053,
+        "st_dev": 64513,
+        "st_ino": 159455,
+        "st_mtime_ns": 1789278793781128053,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793781128053,
+        "st_dev": 64513,
+        "st_ino": 159455,
+        "st_mtime_ns": 1789278793781128053,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 184,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793782128066,
+        "st_dev": 64513,
+        "st_ino": 159458,
+        "st_mtime_ns": 1789278793782128066,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793782128066,
+        "st_dev": 64513,
+        "st_ino": 159458,
+        "st_mtime_ns": 1789278793782128066,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 185,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793783128078,
+        "st_dev": 64513,
+        "st_ino": 159461,
+        "st_mtime_ns": 1789278793783128078,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793783128078,
+        "st_dev": 64513,
+        "st_ino": 159461,
+        "st_mtime_ns": 1789278793783128078,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 186,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793784128091,
+        "st_dev": 64513,
+        "st_ino": 159464,
+        "st_mtime_ns": 1789278793784128091,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793784128091,
+        "st_dev": 64513,
+        "st_ino": 159464,
+        "st_mtime_ns": 1789278793784128091,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 187,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793785128103,
+        "st_dev": 64513,
+        "st_ino": 159467,
+        "st_mtime_ns": 1789278793785128103,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793785128103,
+        "st_dev": 64513,
+        "st_ino": 159467,
+        "st_mtime_ns": 1789278793785128103,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 188,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793786128116,
+        "st_dev": 64513,
+        "st_ino": 159470,
+        "st_mtime_ns": 1789278793786128116,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793786128116,
+        "st_dev": 64513,
+        "st_ino": 159470,
+        "st_mtime_ns": 1789278793786128116,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 189,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793787128128,
+        "st_dev": 64513,
+        "st_ino": 159473,
+        "st_mtime_ns": 1789278793787128128,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793787128128,
+        "st_dev": 64513,
+        "st_ino": 159473,
+        "st_mtime_ns": 1789278793787128128,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": true,
+      "iteration": 190,
+      "touch_changed_fingerprint": false,
+      "verifier_status": "PASS_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793788128141,
+        "st_dev": 64513,
+        "st_ino": 159476,
+        "st_mtime_ns": 1789278793788128141,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793787128128,
+        "st_dev": 64513,
+        "st_ino": 159476,
+        "st_mtime_ns": 1789278793787128128,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 191,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793789128154,
+        "st_dev": 64513,
+        "st_ino": 159479,
+        "st_mtime_ns": 1789278793789128154,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793788128141,
+        "st_dev": 64513,
+        "st_ino": 159479,
+        "st_mtime_ns": 1789278793788128141,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 192,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793790128166,
+        "st_dev": 64513,
+        "st_ino": 159483,
+        "st_mtime_ns": 1789278793790128166,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793789128154,
+        "st_dev": 64513,
+        "st_ino": 159483,
+        "st_mtime_ns": 1789278793789128154,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 193,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793791128179,
+        "st_dev": 64513,
+        "st_ino": 159486,
+        "st_mtime_ns": 1789278793791128179,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793790128166,
+        "st_dev": 64513,
+        "st_ino": 159486,
+        "st_mtime_ns": 1789278793790128166,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 194,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793792128191,
+        "st_dev": 64513,
+        "st_ino": 159489,
+        "st_mtime_ns": 1789278793792128191,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793791128179,
+        "st_dev": 64513,
+        "st_ino": 159489,
+        "st_mtime_ns": 1789278793791128179,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 195,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793793128204,
+        "st_dev": 64513,
+        "st_ino": 159492,
+        "st_mtime_ns": 1789278793793128204,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793792128191,
+        "st_dev": 64513,
+        "st_ino": 159492,
+        "st_mtime_ns": 1789278793792128191,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 196,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793794128216,
+        "st_dev": 64513,
+        "st_ino": 159495,
+        "st_mtime_ns": 1789278793794128216,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793793128204,
+        "st_dev": 64513,
+        "st_ino": 159495,
+        "st_mtime_ns": 1789278793793128204,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 197,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793795128229,
+        "st_dev": 64513,
+        "st_ino": 159498,
+        "st_mtime_ns": 1789278793795128229,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793794128216,
+        "st_dev": 64513,
+        "st_ino": 159498,
+        "st_mtime_ns": 1789278793794128216,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 198,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    },
+    {
+      "after_touch": {
+        "st_ctime_ns": 1789278793796128241,
+        "st_dev": 64513,
+        "st_ino": 159501,
+        "st_mtime_ns": 1789278793796128241,
+        "st_size": 10240
+      },
+      "before_touch": {
+        "st_ctime_ns": 1789278793795128229,
+        "st_dev": 64513,
+        "st_ino": 159501,
+        "st_mtime_ns": 1789278793795128229,
+        "st_size": 10240
+      },
+      "content_unchanged": true,
+      "guard_inputs_unchanged": false,
+      "iteration": 199,
+      "touch_changed_fingerprint": true,
+      "verifier_status": "FAIL_CUSTODY"
+    }
+  ],
+  "unchanged_touch_passes": 80
+}

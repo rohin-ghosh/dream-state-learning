@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/tmp/astra_reflection_multi_seed_analysis_20260913.py", line 535, in <module>
+    main()
+  File "/tmp/astra_reflection_multi_seed_analysis_20260913.py", line 529, in main
+    result = analyze(manifest)
+             ^^^^^^^^^^^^^^^^^
+  File "/tmp/astra_reflection_multi_seed_analysis_20260913.py", line 493, in analyze
+    run, signature = analyze_seed(entry, manifest, corpus, runtimes, expected)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/astra_reflection_multi_seed_analysis_20260913.py", line 378, in analyze_seed
+    require(same(inputs["source_pins.json"], SOURCE_PINS) and plan["source_pins_sha256"] == plan["input_hashes"]["source_pins.json"] and
+  File "/tmp/astra_reflection_multi_seed_analysis_20260913.py", line 51, in require
+    raise ValueError(message)
+ValueError: source/binding receipt mismatch
