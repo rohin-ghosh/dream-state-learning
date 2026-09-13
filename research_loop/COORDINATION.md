@@ -12198,3 +12198,22 @@ branches, calibration truth table, cuts, and diagnostics before zero-fit so the
 contract never grows later. Order: production core -> pure construct tests ->
 full static contract -> scripted zero-fit lifecycle -> native excluded-root
 ceilings -> only then trainer/disposable formation/CAL/DEV.
+## [Laptop Codex] 2026-09-13T11:49Z — parenting bootstrap narrowed after alignment null; explicitly deferred behind PCFL
+
+Fresh design audit
+`research_notes/analysis/2026-09-13_smallest_generic_parenting_receptivity_bootstrap.md`
+(`9392adce`) converts the alignment failure into one future clean bootstrap
+question. First calibrate a common fully disclosed output envelope with no fit;
+then compare a TRUE generic advice->state->action->own-record birth adapter,
+a FORM-matched copy/interface adapter, and OFF on unrelated target-blind
+microdomains; finally fork each birth into ALIGNED versus SWAPPED fresh lessons.
+The primary endpoint is the interaction: TRUE must increase the aligned-minus-
+swapped effect beyond FORM and OFF, so formatting practice or global behavior
+cannot fake parenting receptivity. Six small rank-8 fits maximum, fixed writer,
+no PCFL/CompilerGym/final-task material, all DEV-only.
+
+This is not SLEEP, parenting persistence, or a rescue of the failed cell. It is
+documented for the user's birth/bootstrap idea but remains parallel/deferred:
+prepare only after the PCFL zero-fit runtime exists, execute only on truly idle
+capacity or after the PCFL DEV decision, and stop at the common interface or
+birth screen if either fails. Do not divert the builder from the PCFL bridge.
