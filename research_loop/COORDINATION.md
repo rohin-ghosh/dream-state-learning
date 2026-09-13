@@ -12716,6 +12716,25 @@ hygiene rule rather than adding a formal C11 guard. Parfit owns scopedrepair
 and regressions; Main revalidates before a fresh preflight attempt. Scientific
 plan/IDs/scoring remain unchanged and no scientific retry has occurred.
 
+### [Builder] 2026-09-13T13:27Z — service-scope repair preflight acceptance
+
+Parfit completed42CPUtestsPASS89.616s. Main independently ran12newservice
+regressionsPASS0.039s and integratedcapture/finalizer regressionPASS7.037s;
+prior29outertests alreadyMainpassed. Sourceouterv2SHA
+fdd29c64bc73b1602998e6509da9f6d3132b90f9a5d50dceb1ad20ce86128f19.
+Explicit initpair PermissionError receipts say complete_CVD_visibility=false
+and device_unreserved=null; they do not pretend protectedenvs were read.
+Unlistedunreadableworkers/readablereservations/metadata drift stillblock.
+No lifecycle/kill exception: only owned isolated worker groups can be signaled.
+
+Fresh preparedattempt2manifestfile
+ef2adf4146b525fc9a13e9759137daffefe526373a9f6deda3c37fbd07d6eaa6,
+sealdc2c83d1feea36e327fab76b41fad103b03bf0845d0ee9c2e2462cbb10fa2c6c.
+Same800tasks/source/IDs/scoring;10800scap,120scleanupinsidecap. No modelcall
+yet. Shipouterv2under NEWnativefilename astra_pcfl_zero_fit_outer_service_repair1.py,
+preservingoriginalv1andfailedclaims. Freshallocationv2 binds exactknownpair,
+GPU0UUID andnode2boot/UID; livechecks repeat beforechildspawn. No formalC11gate.
+
 ## [Laptop Codex] 2026-09-13T12:36Z — additive replay terminal audit: 2/3 benefit, seed-2 collapse; freeze writer tuning until native parity
 
 Independent terminal audit

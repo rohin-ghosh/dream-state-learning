@@ -31,6 +31,21 @@ class FixtureTokenizer:
         return self.encode(text) if tokenize else text
 
 
+def install_service_fixtures(test):
+    cgroup = f"0::/user.slice/user-{test.allocation['uid']}.slice/user@{test.allocation['uid']}.service/init.scope\n"
+    records = []
+    for role, pid, parent, ticks, comm in (("user_manager", 900010, 1, 40, "systemd"),
+                                          ("pam_helper", 900011, 900010, 41, "(sd-pam)")):
+        test.process_record(pid, pgid=900010, sid=900010, ticks=ticks, ppid=parent)
+        path = test.proc / str(pid)
+        (path / "comm").write_bytes((comm + "\n").encode())
+        (path / "cgroup").write_bytes(cgroup.encode())
+        (path / "cmdline").write_bytes(("SYNTHETIC_METADATA_ONLY_" + role + "\0").encode())
+        records.append({"role": role, "identity": outer.identity(pid), "ppid": parent,
+                        "comm": comm, "cgroup": cgroup, "cmdline_sha256": outer.file_hash(path / "cmdline")})
+    test.allocation["service_exceptions"] = records
+
+
 class OuterTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -55,7 +70,7 @@ class OuterTests(unittest.TestCase):
                            "gpu_uuid": "GPU-FIXTURE", "boot_id": "fixture-boot", "uid": os.getuid(),
                            "python": str(Path(sys.executable).resolve()), "queue_dir": str(self.queue),
                            "queue_mode": "direct", "queue_allowlist": {"pending": {}, "running": {}},
-                           "coordination_owners": [], "lease_end": time.time() + 10000,
+                           "coordination_owners": [], "service_exceptions": [], "lease_end": time.time() + 10000,
                            "lease_margin_seconds": 100, "outer_sha256": outer.file_hash(outer.__file__)}
         tokenizer = FixtureTokenizer()
         source_files = outer.driver.source_snapshot()
@@ -412,6 +427,192 @@ class OuterTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "GPU occupied"):
             self.run_controller()
         self.mocks[2].assert_not_called()
+
+    def test_ratified_service_exception_capture_and_finalizer_visibility(self):
+        install_service_fixtures(self)
+        self.save_inputs()
+        original = Path.read_bytes
+        denied = {self.proc / str(pid) / "environ" for pid in (900010, 900011)}
+        def read_bytes(path):
+            if path in denied:
+                raise PermissionError("SYNTHETIC UNREADABLE INIT ENVIRONMENT")
+            return original(path)
+        with patch.object(Path, "read_bytes", read_bytes):
+            captured = self.run_controller()
+            self.assertIsNone(captured["reservation_released"])
+            self.assertFalse(captured["complete_cvd_visibility"])
+            collected = outer.finalize(str(self.out), captured["capture_file_sha256"])
+        self.assertEqual(collected["reservation_check_status"], "PASS_WITH_EXPLICIT_NON_WORKER_SERVICE_EXCEPTIONS")
+        self.assertFalse(collected["complete_cvd_visibility"])
+        self.assertEqual(collected["approved_unreadable_service_pids"], [900010, 900011])
+        self.assertTrue(outer.read(self.out / "final.json")["diagnostic_usable"])
+        self.assertNotIn("complete_cvd_visibility", outer.read(self.out / "release_attestation.json"))
+        self.mocks[4].assert_not_called()
+
+
+class ServiceExceptionTests(unittest.TestCase):
+    process_record = OuterTests.process_record
+
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory(prefix="pcfl_service_metadata_cpu_")
+        self.addCleanup(self.temp.cleanup)
+        self.proc = Path(self.temp.name) / "proc"
+        (self.proc / "sys/kernel/random").mkdir(parents=True)
+        (self.proc / "sys/kernel/random/boot_id").write_text("fixture-boot")
+        self.process_record(os.getpid(), pgid=os.getpid(), sid=os.getpid(), ticks=100)
+        self.allocation = {"uid": os.getuid(), "boot_id": "fixture-boot", "gpu_index": 2,
+                           "gpu_uuid": "GPU-FIXTURE", "coordination_owners": [], "service_exceptions": []}
+        self.proc_patch = patch.object(outer, "PROC", self.proc)
+        self.proc_patch.start()
+        self.addCleanup(self.proc_patch.stop)
+        install_service_fixtures(self)
+
+    def scan(self, *, denied=(900010, 900011), release=False, hook=None, error_type=PermissionError):
+        original = Path.read_bytes
+        attempts = []
+        paths = {self.proc / str(pid) / "environ" for pid in denied}
+        def read_bytes(path):
+            if path in paths:
+                attempts.append(int(path.parent.name))
+                if hook is not None:
+                    hook(path)
+                raise error_type("SYNTHETIC environment access denied")
+            return original(path)
+        with patch.object(Path, "read_bytes", read_bytes):
+            result = outer.check_cvd(self.allocation, time.monotonic() + 20, release=release)
+        return result, attempts
+
+    def test_exact_pair_permissionerror_before_after_receipts(self):
+        result, attempts = self.scan()
+        self.assertTrue(result["clear"])
+        self.assertEqual(attempts, [900010, 900011])
+        self.assertFalse(result["complete_cvd_visibility"])
+        self.assertIsNone(result["device_unreserved"])
+        self.assertEqual(result["unresolved"], [])
+        for record in result["approved_unreadable_services"]:
+            self.assertFalse(record["environment_read"])
+            self.assertEqual(record["error_type"], "PermissionError")
+            self.assertEqual(record["metadata_before"], record["metadata_after"])
+            for member in record["metadata_before"].values():
+                self.assertEqual(len(member["comm_sha256"]), 64)
+                self.assertEqual(len(member["cgroup_sha256"]), 64)
+
+    def test_no_protected_environment_alternative_open(self):
+        original = Path.open
+        attempts = []
+        protected = {self.proc / str(pid) / "environ" for pid in (900010, 900011)}
+        def open_path(path, *args, **kwargs):
+            if path in protected:
+                attempts.append(path)
+                raise AssertionError("alternate open of protected environment")
+            return original(path, *args, **kwargs)
+        with patch.object(Path, "open", open_path):
+            result, _ = self.scan()
+        self.assertTrue(result["clear"])
+        self.assertEqual(attempts, [])
+
+    def test_unlisted_unreadable_worker_still_blocks(self):
+        self.process_record(900012, pgid=900012, sid=900012, ticks=200, cvd="GPU-FIXTURE")
+        result, _ = self.scan(denied=(900010, 900011, 900012))
+        self.assertFalse(result["clear"])
+        self.assertEqual([item["pid"] for item in result["unresolved"]], [900012])
+        self.assertEqual(len(result["approved_unreadable_services"]), 2)
+
+    def test_listed_but_readable_cvd_reservation_blocks_all_phases(self):
+        (self.proc / "900010/environ").write_bytes(b"CUDA_VISIBLE_DEVICES=GPU-FIXTURE\0")
+        for release in (False, True):
+            with self.subTest(release=release):
+                result, _ = self.scan(denied=(900011,), release=release)
+                self.assertFalse(result["clear"])
+                self.assertEqual(result["owners"][0]["identity"]["pid"], 900010)
+                self.assertEqual([item["pid"] for item in result["approved_unreadable_services"]], [900011])
+
+    def test_readable_pair_is_scanned_without_exception(self):
+        result, _ = self.scan(denied=())
+        self.assertTrue(result["clear"])
+        self.assertTrue(result["device_unreserved"])
+        self.assertTrue(result["complete_cvd_visibility"])
+        self.assertEqual(result["approved_unreadable_services"], [])
+
+    def test_non_permission_error_never_uses_exception(self):
+        result, _ = self.scan(error_type=OSError)
+        self.assertFalse(result["clear"])
+        self.assertEqual(result["approved_unreadable_services"], [])
+        self.assertEqual(len(result["unresolved"]), 2)
+
+    def test_command_comm_cgroup_and_parent_drift_before_denial(self):
+        for filename, value in (("cmdline", b"changed\0"), ("comm", b"python\n"),
+                                 ("cgroup", b"0::/other.scope\n"),
+                                 ("stat", b"900010 (systemd) S 42 900010 900010 " + b"0 " * 15 + b"40")):
+            path = self.proc / "900010" / filename
+            original = path.read_bytes()
+            path.write_bytes(value)
+            with self.subTest(filename=filename):
+                result, _ = self.scan()
+                self.assertFalse(result["clear"])
+                self.assertEqual(result["approved_unreadable_services"], [])
+            path.write_bytes(original)
+
+    def test_metadata_drift_after_denial_does_not_pass(self):
+        changed = False
+        def drift(path):
+            nonlocal changed
+            if not changed:
+                (self.proc / "900011/cmdline").write_bytes(b"changed-after-before-check\0")
+                changed = True
+        result, _ = self.scan(hook=drift)
+        self.assertFalse(result["clear"])
+        self.assertEqual(result["approved_unreadable_services"], [])
+
+    def test_peer_disappearance_cannot_hide_still_present_manager(self):
+        def disappear(path):
+            helper = self.proc / "900011"
+            if helper.exists():
+                shutil.rmtree(helper)
+        result, _ = self.scan(hook=disappear)
+        self.assertFalse(result["clear"])
+        self.assertIn(900010, [item["pid"] for item in result["unresolved"]])
+
+    def test_reused_pid_boot_and_uid_bindings(self):
+        self.process_record(900010, pgid=900010, sid=900010, ticks=999, ppid=1)
+        result, _ = self.scan()
+        self.assertFalse(result["clear"])
+        self.assertEqual(result["approved_unreadable_services"], [])
+        self.process_record(900010, pgid=900010, sid=900010, ticks=40, ppid=1)
+        (self.proc / "sys/kernel/random/boot_id").write_text("different-boot")
+        result, _ = self.scan()
+        self.assertFalse(result["clear"])
+        self.allocation["service_exceptions"][0]["identity"]["uid"] += 1
+        with self.assertRaisesRegex(ValueError, "UID/boot"):
+            outer._service_expectations(self.allocation)
+
+    def test_shape_relationship_and_scope_restrictions(self):
+        records = copy.deepcopy(self.allocation["service_exceptions"])
+        variants = [records[:1], records + [records[0]]]
+        for role_index, field, value in ((0, "comm", "python"), (0, "ppid", True),
+                                         (0, "cgroup", "0::/worker.scope\n"), (1, "ppid", 123)):
+            variant = copy.deepcopy(records)
+            variant[role_index][field] = value
+            variants.append(variant)
+        for variant in variants:
+            with self.subTest(variant=variant), self.assertRaises(ValueError):
+                outer._service_expectations({**self.allocation, "service_exceptions": variant})
+        with self.assertRaisesRegex(ValueError, "overlaps"):
+            outer._service_expectations({**self.allocation, "coordination_owners": [records[0]["identity"]]})
+
+    def test_main_supplied_native_pair_metadata_schema_only(self):
+        allocation = {"uid": 2524, "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407", "coordination_owners": []}
+        cgroup = "0::/user.slice/user-2524.slice/user@2524.service/init.scope\n"
+        allocation["service_exceptions"] = [
+            {"role": "user_manager", "identity": {"pid": 36935, "pgid": 36935, "sid": 36935,
+                "start_ticks": 4243834, "boot_id": allocation["boot_id"], "uid": 2524},
+             "ppid": 1, "comm": "systemd", "cgroup": cgroup,
+             "cmdline_sha256": "3127082f907652bfa48e38fddcaf16c3e73b2da5a2d64602eafe88869c222925"},
+            {"role": "pam_helper", "identity": {"pid": 36938, "pgid": 36935, "sid": 36935,
+                "start_ticks": 4243835, "boot_id": allocation["boot_id"], "uid": 2524},
+             "ppid": 36935, "comm": "(sd-pam)", "cgroup": cgroup,
+             "cmdline_sha256": "971490059d839d27af3ded30a476216b92689d837b0236a700723fb13640e370"}]
+        self.assertEqual(set(outer._service_expectations(allocation)), {"user_manager", "pam_helper"})
 
 
 if __name__ == "__main__":

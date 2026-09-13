@@ -18,13 +18,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from gpu import astra_pcfl_zero_fit_dev as driver
 
 
-SCHEMA = "pcfl.zero_fit_outer.v1"
+SCHEMA = "pcfl.zero_fit_outer.v2"
 PROC = Path("/proc")
 COMMAND = Path(__file__).with_name("astra_pcfl_zero_fit_command.py").resolve()
 IDENTITY_FIELDS = {"pid", "pgid", "sid", "start_ticks", "boot_id", "uid"}
 ALLOCATION_FIELDS = {"schema", "gpu_index", "gpu_uuid", "boot_id", "uid", "python",
                      "queue_dir", "queue_mode", "queue_allowlist", "coordination_owners",
-                     "lease_end", "lease_margin_seconds", "outer_sha256"}
+                     "lease_end", "lease_margin_seconds", "outer_sha256", "service_exceptions"}
+SERVICE_FIELDS = {"role", "identity", "ppid", "comm", "cmdline_sha256", "cgroup"}
 require = driver.require
 
 
@@ -76,6 +77,61 @@ def _identity_schema(value):
     require(type(value["boot_id"]) is str and value["boot_id"], "boot identity")
 
 
+def _service_expectations(allocation):
+    records = allocation["service_exceptions"]
+    require(type(records) is list and len(records) in (0, 2), "service exceptions require zero or one complete init pair")
+    expected = {}
+    for record in records:
+        require(type(record) is dict and set(record) == SERVICE_FIELDS, "service exception fields")
+        _identity_schema(record["identity"])
+        member = record["identity"]
+        require(record["role"] in ("user_manager", "pam_helper") and record["role"] not in expected,
+                "unique manager/helper roles required")
+        require(member["uid"] == allocation["uid"] and member["boot_id"] == allocation["boot_id"],
+                "service UID/boot differs from allocation")
+        require(type(record["ppid"]) is int and record["ppid"] > 0, "service parent PID")
+        require(record["comm"] == ("systemd" if record["role"] == "user_manager" else "(sd-pam)"),
+                "only per-user init manager/helper comm allowed")
+        require(record["cgroup"] == f"0::/user.slice/user-{allocation['uid']}.slice/user@{allocation['uid']}.service/init.scope\n",
+                "only exact per-user init cgroup allowed")
+        driver.native.sha(record["cmdline_sha256"])
+        require(member["pid"] != os.getpid()
+                and all(member["pid"] != owner["pid"] for owner in allocation["coordination_owners"]),
+                "service exception overlaps controller/coordination owner")
+        expected[record["role"]] = {**record,
+            "comm_sha256": hashlib.sha256((record["comm"] + "\n").encode()).hexdigest(),
+            "cgroup_sha256": hashlib.sha256(record["cgroup"].encode()).hexdigest()}
+    if expected:
+        manager, helper = expected["user_manager"], expected["pam_helper"]
+        manager_id, helper_id = manager["identity"], helper["identity"]
+        require(manager["ppid"] == 1 and manager_id["pid"] == manager_id["pgid"] == manager_id["sid"],
+                "manager must be a PPID-1 session/group leader")
+        require(helper_id["pid"] != manager_id["pid"] and helper["ppid"] == manager_id["pid"]
+                and helper_id["pgid"] == helper_id["sid"] == manager_id["pid"]
+                and helper_id["start_ticks"] >= manager_id["start_ticks"], "manager/helper relationship differs")
+    return expected
+
+
+def _service_snapshot(expected, deadline):
+    snapshot = {}
+    for role, record in expected.items():
+        remaining(deadline)
+        member = record["identity"]
+        path = PROC / str(member["pid"])
+        before = identity(member["pid"])
+        fields = (path / "stat").read_text().rsplit(")", 1)[1].split()
+        comm = (path / "comm").read_bytes()
+        cgroup = (path / "cgroup").read_bytes()
+        observed = {"role": role, "identity": before, "ppid": int(fields[1]),
+                    "comm": comm.decode("utf-8").removesuffix("\n"),
+                    "comm_sha256": hashlib.sha256(comm).hexdigest(),
+                    "cmdline_sha256": file_hash(path / "cmdline", deadline),
+                    "cgroup": cgroup.decode("utf-8"), "cgroup_sha256": hashlib.sha256(cgroup).hexdigest()}
+        require(identity(member["pid"]) == before and observed == record, "service metadata identity/parent/bytes drift")
+        snapshot[role] = observed
+    return snapshot
+
+
 def validate_allocation(allocation):
     require(type(allocation) is dict and set(allocation) == ALLOCATION_FIELDS, "allocation fields")
     require(allocation["schema"] == SCHEMA + "/allocation", "allocation schema")
@@ -108,6 +164,7 @@ def validate_allocation(allocation):
         require(owner["uid"] == allocation["uid"] and owner["boot_id"] == allocation["boot_id"], "coordination owner allocation")
         require(owner["pid"] not in seen, "duplicate coordination owner")
         seen.add(owner["pid"])
+    _service_expectations(allocation)
 
 
 def check_node(allocation):
@@ -134,7 +191,9 @@ def check_queue(allocation, deadline, *, release=False):
 
 
 def check_cvd(allocation, deadline, *, release=False):
-    owners, unresolved = [], []
+    owners, unresolved, approved = [], [], []
+    services = _service_expectations(allocation)
+    service_pids = {record["identity"]["pid"] for record in services.values()}
     ancestors, parent = [], os.getpid()
     while parent > 1:
         remaining(deadline)
@@ -152,7 +211,31 @@ def check_cvd(allocation, deadline, *, release=False):
             if path.stat().st_uid != allocation["uid"]:
                 continue
             before = identity(int(path.name))
-            entries = (path / "environ").read_bytes().split(b"\0")
+            metadata_before, metadata_error = None, None
+            if before["pid"] in service_pids:
+                try:
+                    metadata_before = _service_snapshot(services, deadline)
+                except (OSError, ValueError) as error:
+                    metadata_error = str(error)
+            try:
+                entries = (path / "environ").read_bytes().split(b"\0")
+            except PermissionError as error:
+                if before["pid"] not in service_pids:
+                    raise
+                try:
+                    require(metadata_before is not None, "service metadata before PermissionError: " + str(metadata_error))
+                    metadata_after = _service_snapshot(services, deadline)
+                    require(metadata_before == metadata_after and identity(before["pid"]) == before,
+                            "service metadata changed across environment denial")
+                    approved.append({"pid": before["pid"], "environment_read": False,
+                                     "error_type": "PermissionError", "error": str(error),
+                                     "exception_scope": "EXPLICIT_MAIN_APPROVED_NON_WORKER_INIT_PAIR",
+                                     "metadata_before": metadata_before, "metadata_after": metadata_after})
+                except (OSError, ValueError) as mismatch:
+                    unresolved.append({"pid": before["pid"], "error_type": type(mismatch).__name__,
+                                       "error": str(mismatch), "environment_read": False,
+                                       "environment_error_type": "PermissionError"})
+                continue
             visible = [entry.split(b"=", 1)[1].decode("utf-8") for entry in entries
                        if entry.startswith(b"CUDA_VISIBLE_DEVICES=")]
             require(identity(int(path.name)) == before, "process changed during CVD scan")
@@ -161,12 +244,15 @@ def check_cvd(allocation, deadline, *, release=False):
         except FileNotFoundError:
             continue
         except (OSError, ValueError) as error:
-            unresolved.append({"pid": int(path.name), "error": str(error)})
+            unresolved.append({"pid": int(path.name), "error_type": type(error).__name__, "error": str(error)})
     unexpected = [owner for owner in owners if owner["identity"] not in allowed]
     return {"scope": "same_uid_explicit_CVD; GPU query covers all compute owners",
             "owners": owners, "unresolved": unresolved, "unexpected": unexpected,
             "excluded_own_ancestors": [owner for owner in owners if owner["identity"] in allowed],
-            "device_unreserved": not unresolved and not owners,
+            "approved_unreadable_services": approved, "complete_cvd_visibility": not unresolved and not approved,
+            "device_unreserved": False if unresolved or owners else None if approved else True,
+            "reservation_check_status": ("BLOCKED" if unresolved or unexpected else
+                                         "PASS_WITH_EXPLICIT_NON_WORKER_SERVICE_EXCEPTIONS" if approved else "PASS"),
             "clear": not unresolved and not unexpected}
 
 
@@ -411,7 +497,9 @@ def controller(manifest_path, manifest_sha256, allocation_path, allocation_sha25
                     "outer_files": hashes, "elapsed_seconds": time.monotonic() - entry,
                     "fits": 0, "updates": 0, "finalized": False,
                     "worker_group_released": True, "gpu_compute_vacant": True,
-                    "reservation_released": read(root / "post_worker_cvd.json")["value"]["device_unreserved"]}
+                    "reservation_released": read(root / "post_worker_cvd.json")["value"]["device_unreserved"],
+                    "reservation_check_status": read(root / "post_worker_cvd.json")["value"]["reservation_check_status"],
+                    "complete_cvd_visibility": read(root / "post_worker_cvd.json")["value"]["complete_cvd_visibility"]}
         remaining(deadline)
         write(root / "capture_complete.json", complete)
         return {**complete, "capture_file_sha256": file_hash(root / "capture_complete.json", deadline)}
@@ -470,6 +558,9 @@ def finalize(outer_dir, capture_sha256):
         collection = {"schema": SCHEMA + "/collection", "files": links,
                       "output_inventory_sha256": driver.digest(complete["output_inventory"]),
                       "release_monotonic": released, "outer_elapsed_seconds": time.monotonic() - context["entry_monotonic"],
+                      "reservation_check_status": cvd["reservation_check_status"],
+                      "complete_cvd_visibility": cvd["complete_cvd_visibility"],
+                      "approved_unreadable_service_pids": [record["pid"] for record in cvd["approved_unreadable_services"]],
                       "fits": 0, "updates": 0, "generation_retries": 0, "full_v22_release": False}
         write(root / "collection.json", collection)
         remaining(deadline)
