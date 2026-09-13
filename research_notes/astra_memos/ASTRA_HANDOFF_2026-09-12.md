@@ -1,6 +1,33 @@
-# Astra current handoff — 2026-09-13T15:04Z
+# Astra current handoff — 2026-09-13T15:22Z
 
-## CURRENT — September 13 15:04 UTC
+## CURRENT — September 13 15:22 UTC
+
+SEQ175: A1 disclosed-READ completed native custody/replay/release but failed
+handshake0/64;64calls,48invalid turns/16length stops,0reads/strict routes.
+Archive gpu_artifacts_local/pcfl_interface_a1_20260913_attempt1/evidence.tar,
+SHA921ab58fc28b2a28ac42687b26b639f62b088e80da57062b4d1b909e6c959805.
+Actual entry15:12:20.694713UTC,210.597s; no signals/errors. Do not retry A1.
+
+Independent supplied-graph diagnostics launched: A2node2GPU0 controller185622;
+A3node2GPU1 controller185678. Roots /localhome/local-rohing/astra_diagnostics/
+pcfl_interface_a2_20260913_attempt1 and pcfl_interface_a3_20260913_attempt1.
+Source /tmp/astra_pcfl_interface_source_20260913_attempt1 from7fdcc127;
+same-controller .outer/.launcher/.launch.json,3600s/120cleanup. A2max64calls,
+A3max448; same64excluded cases, nofits/updates. Exact manifests/allocations
+inSEQ175 and archived prepare logs. Avoid foreground SSH around release.
+Completion is not stage success; independent A2/A3 do not waive failed A1.
+
+EVENT-only importer/writer committeddf9d3ff9, Main26testsPASS. Exact-original-v3
+replay preserved; no new formation. Lagrange owns NEW event-only command/outer
+and tests; Parfit owns new EVENT-only reducer/test. Await EDITSTOP and Main CPU/
+actual-tokenizer prep before fit. Main80interface testsPASS after joint gate
+and non-whitespace THINK fixes. Meitner independent C100 review supported
+engineering-only integration; Main applied its two-caption precision fix.
+Manuscript remains throughSEQ173, UNSENT; new A1 result stays notebook until
+next bounded update. Mission incomplete; no freeze/generalG3/P1/H1/H2/C11.
+Preserve dirty gpu/codex/dream_state.rules and worker-owned files.
+
+## Historical superseded snapshot — September 13 15:04 UTC
 
 Mission active/incomplete. No Main GPU worker remains live; node2 compute-app
 inventory is empty at15:03UTC. SEQ172/173 both failed before fitting: eight

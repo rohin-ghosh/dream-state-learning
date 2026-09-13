@@ -1,4 +1,15 @@
-## Current superseding snapshot — 2026-09-13 15:04 UTC
+## Current superseding snapshot — 2026-09-13 15:22 UTC
+
+A1 native READ diagnostic completed/released but handshakeFAILED0/64,
+48invalid turns/16length stops; no READ served, nofit/update. EvidenceSEQ175.
+A2direct supplied graph and A3required THINK launched independently on node2
+GPU0/1, controllers185622/185678; not a waiver of A1. Source7fdcc127, same64
+excluded cases and freshC0; .outer3600s/120cleanup. HANDOFF current15:22.
+EVENT-only importer/writerdf9d3ff9/Main26testsPASS; command/outer and reducer
+worker-owned/pending. No new EVENT fit/readout yet. No mission/freeze/H1/H2/P1/
+generalG3/clean-ancestry/full-assay/C11 promotion. Simple hygiene remains.
+
+## Historical superseded snapshot — 2026-09-13 15:04 UTC
 
 No Main GPU worker remains live. SEQ172/173 failed before fit, each19calls,
 eight EVENTs/two LINKs; stop full-bank prompt retries. HANDOFF current at15:04.

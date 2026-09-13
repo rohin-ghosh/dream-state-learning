@@ -14111,3 +14111,18 @@ model/queue/CVD checks run by each outer. A1GPU0 is released before reuse.
 A2manifest cea9e8b09d59cde71fe4d2f5a60223779b61d326c6cfdee3b96a9ee4cf8e7e70;
 A3manifest20da7997864601db4066a6a8836f351eb04e62b10abc59e195f4f33936380c2d.
 Main reserves both now; controller PIDs follow in next entry after launch.
+
+## [Builder] 2026-09-13T15:22Z — paired interface controllers started; C100 reviewed
+
+A2controller185622/node2GPU0; A3controller185678/node2GPU1. Fresh .launcher and
+.launch.json beside each root recorded; terminal status pending. Both retain
+same source/roster/limits stated inSEQ175, separate immutable directories.
+
+Meitner independently verified six C100 files and all five failed formation
+archives; no scientific-success inflation. Main adopted the sole low-severity
+caption correction in both TeX files: Calls are attempted generations, whereas
+EVENT/LINK columns count accepted records. New file hashes differ from reviewed
+snapshot; numeric claims/abstracts unchanged. Review archived, collaborator
+UNSENT, no native results added to manuscript beyondSEQ173. An initial patch
+failed on main.tex's different citation syntax; no files in that patch changed.
+The corrected patch now applied; preceding commit only archived review/logs.
