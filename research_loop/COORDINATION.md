@@ -15394,6 +15394,20 @@ Zero cold calls yet: no acquisition, retention, G3 or parenting inference.
 Next is one cold NO_WRITE state and one cold S_A state using the16-call
 sealed roster. No warm descendant until analyzed. No Main GPU job remains live.
 
+## [Builder] 2026-09-13 17:16 UTC — cold sequence controller ready
+
+Lagrange EDITSTOP, combinedfit/readout/outer50tests PASS65.177s; Main outer
+20tests PASS13.373s. New controller source
+ed1e6076facce1901aca029742ae6d39d97133b3b4fc2914e9df4c3bf133c833
+adds one explicit --stage readout --state selector, defaultfit unchanged.
+It binds16native calls, fit/adapter/input/source inventories and separately
+verifies owned release. No automatic descendants or inference retry.
+Run this version as a standalone/tmp controller importing unchanged source4
+to preserve exact material/fit module pins. Next native states are NO_WRITE
+then S_A,16calls each,2048outputtokens/call, freshprocess each, node2GPU1,
+1800smaximum each (<=0.5A40GPU-hour/state). No score threshold or retention
+claim from an isolated state. Actual acquisition results decide later phases.
+
 ## [Fable] 2026-09-13T17:03Z — self-check: reader ladder closed — A3C static syntax passes the physical gate (8/8 THINK + strict terminal) with 0/8 graph routes; A4 supplied generic procedure 1/8 → builder stops the 7B PCFL reader branch; fleet idle, Astra on sequence-retention engineering
 
 **SEQ-184 (A3C):** identical eight tasks/seeds/budgets as A3B; only a static THINK-or-ROUTE regex plus explicit LF frame added. 25 calls, 17 THINK turns, 8/8 exact first THINK, 8/8 THINK-plus-strict-terminal histories, **0 legal routes, 0 graph successes**. Physical gate passes; graph use does not. 1,503 output / 16,107 prompt tokens, zero fits, zero READs.
