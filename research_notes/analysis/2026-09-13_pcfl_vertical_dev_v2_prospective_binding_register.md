@@ -20,10 +20,12 @@ The ten open implementation inputs are closed by two kinds of binding:
   not choose among results using a route, goal, hidden bit, outcome, or model
   behavior.
 
-There is no remaining discretionary choice. Failure to find a valid opaque
-inventory/PAD realization or to certify the request inventory below within ten
-aggregate A40-hours is `VS_ASSAY_INVALID` or `VS_RESOURCE_CAP`; it is not
-permission to tune.
+There is no remaining discretionary scientific choice. Failure to find a valid
+opaque inventory/PAD realization is `VS_ASSAY_INVALID`. The inference allowance
+is an **actual charged-device-time cap**, not a requirement that every
+independent per-call token safety ceiling be jointly consumed inside ten hours;
+Section 9 binds that distinction. Exhausting the actual allowance is
+`VS_RESOURCE_CAP`; neither failure is permission to tune.
 
 ## Compact register
 
@@ -37,7 +39,7 @@ permission to tune.
 | 6 | reachout renders | `RA`/`RB`; root 0 primary `RA`, root 1 primary `RB`; panels alternate 4/4 | FIXED NOW |
 | 7 | opaque IDs | SHA-256/base32 first-valid joint inventory search under the pinned tokenizer | rule FIXED NOW; inventory PREPARE-BIND |
 | 8 | roots/RNG/GPU schedule | domain-separated seeds and node-2 UUID table below | FIXED NOW, with fresh UUID health check |
-| 9 | request inventory | finite inventory below; fixed calibration and `<=10 A40h` acceptance | inventory FIXED NOW; timings PREPARE-BIND |
+| 9 | request inventory | finite inventory below; fixed calibration, actual charged time `<=10 A40h` | inventory FIXED NOW; timings PREPARE-BIND |
 | 10 | resource unit | node 2 A40 device-seconds/3600 only; A100 use forbidden in this DEV | FIXED NOW |
 
 All literal text is UTF-8/ASCII, uses LF (`0x0a`) only, has no trailing spaces,
@@ -70,6 +72,17 @@ It is never a candidate list. Training order is slot-major then `W0..W7`
 before the coupled sealed epoch permutation. Read panels use `W0..W7` once for
 an eight-item panel and twice with the two registered panel seeds for a
 sixteen-item panel. Thus no held-wrapper choice remains after outputs.
+
+Direct-read request assignment is also fixed. The S1 sixteen-item EVENT panel
+uses `READ EVENT e[j mod 8]` at item `j`, with wrapper
+`W[(j+floor(j/8)) mod 8]`. The S1 eight-item LINK panel uses the structural
+request roster `[READ LINKS_FROM e0, READ LINKS_FROM e1, READ LINKS_FROM e3]`
+at `j mod 3`, with wrapper `W[j]`; ATOMS receives these same calls as held-out
+addresses. Each six-item S2 NEW panel uses
+`[READ EVENT e8, READ LINKS_FROM e1, READ LINKS_FROM e8]` twice in that order
+under `W0..W5`; OLD_REPLAY receives the same six calls as held-out addresses.
+Unseen and wrong-root panels each use their eight presealed addresses once under
+`W0..W7`. Opaque spelling never determines roster position.
 
 ## 2. Global prompt templates
 
@@ -106,7 +119,7 @@ with no prefix, suffix, fence, or terminal LF.
 The formation system message is:
 
 ```text
-You are exploring a deterministic public route system and recording what you personally observe. Identifiers are opaque and case-sensitive. Never invent, rename, infer, or repair an identifier. An EXPLORE action can use only a listed public source and port. A memory commitment must copy only prior public receipts and already accepted commitments visible in this same wake context.
+You are exploring a deterministic public route system and recording what you personally observe. Identifiers are opaque and case-sensitive. Never invent, rename, infer, or repair an identifier. An EXPLORE action can use only a listed public source and port. A memory commitment may use public receipts and accepted commitments visible in this wake context. After a reset, it may also use exact identifiers recalled from your own learned memory; no external memory text or hidden information is provided.
 ```
 
 The eight OLD exploration opportunities use the fixed structural source order
@@ -135,7 +148,7 @@ After all eight receipts, exactly four successive LINK requests are issued:
 
 ```text
 COMMIT LINK
-Using only public EVENT commitments visible in this wake context, output one not-yet-recorded directly chained pair in exactly this grammar:
+Using only public EVENT commitments visible in this wake context and exact identifiers you recall from your own learned memory, output one not-yet-recorded directly chained pair in exactly this grammar:
 LINK <link_id> FROM <event_id_1> THEN <event_id_2> VIA <shared_node> EVIDENCE <receipt_id_1>,<receipt_id_2>
 AVAILABLE LINK ADDRESS {FRESH_LINK_ID}
 Use that fresh address as link_id. Output no other text.
@@ -150,11 +163,17 @@ a semantic field, candidate memory, or roster. It is identical across the
 appropriate collision mates and selected by stage/slot before outputs. This
 does not authorize the compiler to fill or repair it after generation.
 
-After reachout, each sealed R continuation receives exactly one EVENT request
-and two LINK requests using the same literal templates. Its context contains
-only the permitted sterile post-S1 material in the passed protocol. In
-particular, no OLD row, receipt, roster, service return, or compiler state is
-substituted into either template.
+After reachout, the ordinary public result in each sealed R continuation reveals
+the applicable public port `q_R`. The child then receives exactly one use of the
+same EXPLORE template with public source `H` and the singleton revealed port,
+commits `EXPLORE H q_R`, and receives the normal public executed-event receipt.
+It then receives exactly one EVENT request and two LINK requests using the same
+literal templates. Its context contains only the permitted sterile post-S1
+material in the passed protocol. In particular, no OLD row, receipt, roster,
+service return, or compiler state is substituted into any template. Permitting
+weight-recalled identifiers in the global LINK instruction is necessary here:
+the two NEW LINKs are otherwise syntactically impossible after the required
+textual OLD-memory deletion. The instruction supplies no identifier or answer.
 
 ### Reachout
 
@@ -164,7 +183,8 @@ The reachout system message is:
 Choose one public experiment that is useful for the stated route goal. Identifiers are opaque and case-sensitive. Use only the public task and your own learned memory. The result is not shown until after commitment. Output exactly one line: PROBE <probe_id>. There is no retry.
 ```
 
-The public task bytes are defined in Section 6 below. All decoding uses
+The public task bytes are defined in Section 6 below. Every scientific actor,
+memory-worker, formation, and canary generation uses
 `temperature=0.7`, `top_p=1.0`, `top_k=-1`, `n=1`, and its registered common
 random seed. Per-task actor output is cumulatively capped at 2,048 tokens;
 memory returns at 4,096 tokens; no call can silently start a second sample.
@@ -246,10 +266,11 @@ occur in a world, corpus, wrapper, PAD target, or scientific task. The forty
 generation seeds are `seed("canary/00")` through `seed("canary/39")`; C0 and
 every authentic candidate use the same prompt/seed pair. Before any fit, C0
 must itself produce legal form on at least 38/40 or the canary is invalid.
-Candidate acceptance remains the passed `>=38/40` and at most `2/40` loss.
-Missing/truncated action, Markdown/private dialect, or a repeated wrong action
-is zero; raw-hash diversity and exact-route correctness are reported alongside
-legal form to expose collapse.
+Candidate acceptance remains legal form `>=38/40` and exact-route correctness
+no more than `2/40` below the paired C0 exact-route score. Missing/truncated
+action or Markdown/private dialect is illegal. A syntactically legal but wrong
+route remains legal and scores zero only in the separate exact-route column;
+raw-hash diversity is reported alongside both columns to expose collapse.
 
 ## 6. Reachout renders
 
@@ -296,15 +317,27 @@ seed(label) = big-endian integer from the first 8 bytes of
 SHA256(ASCII("PCFL-V2.1-PREP\0") || ASCII(label)), masked to 63 bits.
 ```
 
-For each root and namespace, enumerate `salt=0,1,...,999999`. A candidate ID is
-the namespace letter, underscore, and the first ten RFC-4648 base32 characters
+Namespaces use the fixed prefixes `N_` (node), `P_` (port), `E_` (event),
+`L_` (link), `Q_` (probe), `R_` (receipt), and `G_` (goal). PAD requests are the
+literal Section 4 strings and are not part of this opaque inventory. Required
+identifier slots are ordered by root class/index, namespace in the order above,
+then frozen structural index. For each slot enumerate `salt=0,1,...,999999`. A
+candidate ID is the namespace letter, underscore, and the first ten RFC-4648 base32 characters
 of `SHA256(master_seed || NUL || namespace || NUL || decimal_index || NUL ||
 decimal_salt)`. Candidate bytes are fixed-width uppercase ASCII.
 `master_seed` is the unsigned eight-byte big-endian encoding of the applicable
 `seed("opaque/...")` value.
 
-The PREPARE-bound inventory is the first joint salt vector in increasing
-maximum-salt then lexicographic order that satisfies all of:
+For each candidate bare-token length `L=4,...,12`, retain for every slot the
+first 4,096 salt-ordered candidates having bare length `L` and satisfying the
+local uniqueness/keyword tests. Run deterministic depth-first constraint
+search in the slot order above, candidate salt order ascending, immediately
+pruning uniqueness, substring, and every fully instantiated substitution-class
+constraint. The PREPARE-bound inventory is the first complete solution at the
+smallest `L`; within `L` it is the lexicographically first salt vector found by
+that fixed traversal. This replaces an intractable enumeration over all joint
+salt vectors while preserving first-valid, output-blind selection. It must
+satisfy all of:
 
 1. all required IDs from the already-frozen structural topology exist, are
    namespace-disjoint and globally unique, and none is a substring of another;
@@ -320,7 +353,7 @@ maximum-salt then lexicographic order that satisfies all of:
 The acceptance test enumerates the complete structural cube, not a realized
 hidden outcome, and reads no oracle route, future answer, model output, or DEV
 score. Tokenization receipts for every candidate and every accepted
-substitution class are sealed. Exhausting the salt/length domain stops
+substitution class are sealed. Exhausting every fixed candidate pool/length stops
 `VS_ASSAY_INVALID`; there is no redraw after scientific output.
 
 ## 8. Seeds and GPU schedule
@@ -333,7 +366,7 @@ root/{excluded/0..3,disposable/0,dev/0..1}
 fit/dev/{0..1}/{S1,S2}
 dropout/dev/{0..1}/{S1,S2}
 shuffle/dev/{0..1}/{S1,S2}/epoch/{0..4}
-generation/{stage}/{root}/{condition}/{item}/{view}
+generation/{stage}/{root}/{comparison_block}/{item}/{view}/{turn}
 canary/{00..39}
 reachout-panel/{00..07}
 reachout-primary/{0..1}
@@ -341,7 +374,16 @@ reachout-primary/{0..1}
 
 Arms within one root/stage share initialization, dropout, slot/view order, and
 epoch permutation; the arm name is deliberately absent from those seed labels.
-DEV root 0 realizes `O=0`, root 1 `O=1`; their canonical later-life branches
+Every registered matched causal panel also shares the generation seed: all
+conditions in one `comparison_block` omit arm/condition/outcome from the seed,
+and service-loop actor turn `t` and memory-read turn `t` use the same respective
+turn seed across conditions. The R0/R1 NEW continuations likewise share seeds
+after their byte-identical pre-outcome state; only the ordinary public outcome
+differs. Unmatched tasks receive distinct comparison-block/item identities.
+Canary C0 is generated exactly once globally and its forty sealed bytes are
+reused for every paired candidate comparison because checkpoint, prompt,
+decoding configuration, and seed are identical; it is never regenerated or
+selected. DEV root 0 realizes `O=0`, root 1 `O=1`; their canonical later-life branches
 are respectively `R=0` and `R=1`. These assignments are balanced by index and
 cannot be redrawn.
 
@@ -373,9 +415,9 @@ unlaunched descendants but never enlarges a count.
 | disposable + two DEV OLD formation | 0 | 0 | 0 | 60 | 0 |
 | S1 evaluation, two roots | 128 | 96 | 224 | 0 | 80 |
 | reachout, two roots | 18 | 64 | 0 | 0 | 0 |
-| four R continuations/NEW formation | 0 | 0 | 0 | 12 | 0 |
+| four R continuations/NEW formation | 0 | 0 | 0 | 16 | 0 |
 | S2 evaluation, two roots | 256 | 320 | 100 | 0 | 160 |
-| **total** | **1,106** | **576** | **324** | **72** | **280** |
+| **total** | **1,106** | **576** | **324** | **76** | **280** |
 
 The decompositions are fixed:
 
@@ -397,6 +439,13 @@ remains the passed panel size. The twelve direct OLD_REPLAY held-out-NEW calls
 (three addresses x two views x two roots) close its already-required
 zero-usable-false-row check; they do not score route success.
 
+The S2 OLD-retention roster is no longer implicit. For each FULL adapter it is
+exactly sixteen calls: the first eight registered S1 EVENT-panel cells (one
+`READ EVENT e0..e7`, paired to `W0..W7`) plus the complete eight-cell registered
+S1 LINK panel, with the exact same requests, wrappers, item identities, and
+generation seeds used for the S1_AUTH reference. Thus it is 16 calls per FULL,
+32 per root, and 64 total; the `within 1/16` comparison is paired cell by cell.
+
 A service-loop task has at most 13 actor generations (12 READ decisions plus
 one ROUTE), at most 12 memory calls, 2,048 cumulative actor output tokens, and
 4,096 cumulative returned-memory tokens. The 96 zero-fit service tasks use a
@@ -404,15 +453,15 @@ deterministic text backend, not a model memory worker. All other service loops
 (480 tasks) can therefore cause at most 5,760 memory-worker generations.
 Including 324 direct reads, the maximum is 6,084 memory-worker generations.
 Total actor-side generation transactions are at most
-`1,106 + 13*576 + 72 + 280 = 8,946`.
+`1,106 + 13*576 + 76 + 280 = 8,950`.
 
 Formation is independently finite:
 
 ```text
-24 EXPLORE calls x 128 tokens = 3,072
+28 EXPLORE calls x 128 tokens = 3,584
 28 EVENT calls   x 192 tokens = 5,376
 20 LINK calls    x 256 tokens = 5,120
-TOTAL              72 calls    = 13,568 output tokens maximum
+TOTAL              76 calls    = 14,080 output tokens maximum
 ```
 
 No malformed formation output creates a retry. Actor scientific tasks retain
@@ -435,32 +484,33 @@ calibration classes below add exactly four charged preparation loads and are
 separately present in the immutable request ledger: 35 inference-side cold
 loads in the complete maximum schedule.
 
-Before any scientific generation, run exactly four maximum-shape profiles,
+Before any scientific generation, run exactly four excluded-data shape profiles,
 each with a cold load and verified release: (A) single-call native actor; (B)
 one complete 12-read actor+LoRA-worker service loop; (C) one standalone LoRA
 memory read; and (D) formation/canary, using the slower of the fixed 256-token
 LINK shape and 128-token canary shape. Longest means tokenizer length only,
-with canonical hash as the tie-break; it cannot use an answer or model
-behavior. Force the declared maximum output lengths; an ordinary EOS does not
-count as a maximum-shape profile. Record load/release seconds separately from
-generation. No safety multiplier, historical throughput constant, or assumed
-batching gain is introduced.
+with canonical hash as the tie-break; it cannot use an answer or scientific
+model behavior. Record both ordinary fixed-decoding completion and a forced-cap
+stress timing, and record load/release seconds separately from generation. No
+safety multiplier, historical throughput constant, or assumed batching gain is
+introduced.
 
-Calibration device time itself is charged. Mechanically multiply each sealed
-maximum-shape duration by its exact inventory, add 31 scientific cold-load
-bounds and the four actual calibration loads, and require the sum `<=36,000`
-A40-seconds before the first scientific request. Independently, actual charged
-device residence has a hard abort at 36,000 A40-seconds even after that
-projection passes.
+Calibration device time itself is charged. The preparer reports both ordinary
+profile multiplication and the deliberately pessimistic forced-cap joint
+envelope against the exact inventory. The latter is a stress diagnostic, **not
+a launch gate**: Section 14 of the controlling protocol caps actual aggregate
+device time but never states that all per-task token safety ceilings must be
+jointly consumed inside that cap. Treating the stress envelope as controlling
+would add a new, likely impossible assay gate from an accounting memo.
 
-These are different gates: the first certifies that all independent declared
-per-task maxima could jointly occur; the second governs what actually occurs.
-If the scientific owners intend the token maxima only as mutually non-joint
-safety stops, that requires a prospective protocol amendment; the runtime may
-not silently infer it. Under this register the stronger joint-envelope reading
-controls. A timeout, non-A40 device, incomplete inventory, or projection above
-36,000 is `VS_RESOURCE_CAP`; do not shrink denominators, lower maxima, reuse a
-scientific output, raise throughput assumptions, or migrate hardware.
+Actual charged inference residence—including the four calibration loads and
+at most 31 scientific loads—has the controlling hard abort at 36,000
+A40-seconds. The request ledger, call/token ceilings, and load count must be
+complete before launch, but only incomplete accounting, a non-A40 device, or
+actual charged-time exhaustion is `VS_RESOURCE_CAP`. Do not shrink denominators,
+lower per-task safety maxima, reuse a scientific output, raise throughput
+assumptions, or migrate hardware in response. Natural EOS may leave the fixed
+token allowance unused; that is ordinary execution, not denominator tuning.
 
 ## 10. Resource unit
 
