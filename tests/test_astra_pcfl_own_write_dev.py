@@ -171,7 +171,46 @@ class OwnFormationTests(unittest.TestCase):
         self.assertEqual(len(session.calls), 2)
         self.assertFalse(report["admissions"][0]["accepted"])
         self.assertEqual(report["admissions"][0]["raw"], self.outputs[1])
+        self.assertEqual(report["status"], "FORMATION_FAILED")
+        self.assertIsNone(report["writer_payload"])
         self.assert_replay(report)
+
+    def test_missing_terminal_lf_link_not_repaired(self):
+        self.outputs[16] = self.link_raw[0].rstrip("\n")
+        report, session = self.run_formation()
+        self.assertEqual(len(session.calls), 17)
+        self.assertEqual(report["slots"][16]["status"], "FAILED")
+        self.assertIsNone(report["slots"][16]["admission"])
+        self.assertEqual(report["slots"][16]["attempt"]["response"]["text"], self.outputs[16])
+        self.assertEqual(report["counts"]["accepted_links"], 0)
+        self.assertEqual(report["status"], "FORMATION_FAILED")
+        self.assertIsNone(report["writer_payload"])
+        self.assert_replay(report)
+
+    def test_only_twelve_commitment_prompts_append_lf_rule(self):
+        report, _ = self.run_formation()
+        rule = ("End your response with exactly one LF (U+000A) after the last identifier. "
+                "Emit the actual newline character, not the literal characters backslash-n (\\n). "
+                "Do not add a blank line.")
+        self.assertEqual(driver.LF_COMMITMENT_RULE, rule)
+        self.assertEqual(self.config["policy"], "public_session_history_whole_response_stop_only_fail_fast_v2")
+        for index, slot in enumerate(report["slots"]):
+            prompt = slot["attempt"]["request"]["messages"][-1]["content"]
+            if slot["kind"] == "EXPLORE":
+                original = self.config["planner"]["opportunities"][index // 2]["explore_prompt"]
+                self.assertEqual(prompt, original)
+                self.assertNotIn(rule, prompt)
+            else:
+                if slot["kind"] == "EVENT":
+                    original = (report["slots"][index - 1]["world_result"]["public"]
+                                + self.config["planner"]["opportunities"][index // 2]["event_prompt"])
+                else:
+                    original = core.LINK_TEMPLATE.format(
+                        FRESH_LINK_ID=self.config["planner"]["links"][index - 16]["link_handle"])
+                self.assertEqual(prompt, original + "\n" + rule)
+                self.assertEqual(prompt.count(rule), 1)
+        self.assertEqual(sum(slot["kind"] != "EXPLORE" for slot in report["slots"]), 12)
+        self.assertEqual([row["raw"] for row in report["writer_payload"]["rows"]], self.event_raw + self.link_raw)
 
     def test_wrong_event_receipt_rejected(self):
         self.outputs[1] = self.event_raw[0].replace(self.cell.root.lookup("receipt", "r0"),
@@ -205,7 +244,8 @@ class OwnFormationTests(unittest.TestCase):
                 self.assertNotIn("disposable/0", message["content"])
                 self.assertNotIn("expected_bank", message["content"])
         self.assertEqual(report["slots"][1]["attempt"]["request"]["messages"][-1]["content"],
-                         report["slots"][0]["world_result"]["public"] + self.config["planner"]["opportunities"][0]["event_prompt"])
+                         driver.commitment_prompt(report["slots"][0]["world_result"]["public"]
+                                                  + self.config["planner"]["opportunities"][0]["event_prompt"]))
 
     def test_preoutput_config_and_actor_reuse_fail_before_generation(self):
         native, session = self.actor()

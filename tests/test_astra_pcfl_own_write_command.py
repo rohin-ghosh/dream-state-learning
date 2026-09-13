@@ -169,6 +169,19 @@ class CommandTests(unittest.TestCase):
         self.assertFalse(receipt["gpu_released"])
         command._completed(manifest, "formation")
 
+    def test_measured_histories_match_actual_lf_clarified_formation(self):
+        self.prepare()
+        self.formation()
+        measured = command.read(self.output / "measurements.json")
+        prompts = measured["measurements"][:40:2]
+        outputs = measured["measurements"][1:40:2]
+        self.assertEqual(len(prompts), 20)
+        for index, ((actual, _), predicted) in enumerate(zip(self.form_session.calls, prompts)):
+            self.assertEqual(predicted["text"], actual)
+            self.assertEqual(predicted["token_ids"], self.form_session.tokenizer.encode(actual))
+            self.assertEqual(measured["formation_prompt_lengths"][index], len(predicted["token_ids"]))
+            self.assertEqual(outputs[index]["text"], self.form_session.outputs[index])
+
     def test_failed_child_preserved_and_shutdown_still_called_no_retry(self):
         self.prepare()
         def factory(settings):

@@ -148,10 +148,12 @@ def _measure(plan, schedule, roster, tokenizer):
         history.append({"role": "assistant", "content": output})
     for opportunity in plan["opportunities"]:
         history_turn(opportunity["explore_prompt"], opportunity["action"])
-        history_turn(core.RECEIPT_WIRE.format(**opportunity["expected_receipt"]) + opportunity["event_prompt"],
+        history_turn(formation_api.commitment_prompt(
+                         core.RECEIPT_WIRE.format(**opportunity["expected_receipt"]) + opportunity["event_prompt"]),
                      expected[opportunity["event_handle"]])
     for link in plan["links"]:
-        history_turn(core.LINK_TEMPLATE.format(FRESH_LINK_ID=link["link_handle"]), expected[link["link_handle"]])
+        history_turn(formation_api.commitment_prompt(core.LINK_TEMPLATE.format(FRESH_LINK_ID=link["link_handle"])),
+                     expected[link["link_handle"]])
     prefixes = {}
     for row in roster:
         prompt, ids = token_api._render(tokenizer, readout_api.public_messages(row))

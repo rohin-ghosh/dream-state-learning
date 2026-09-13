@@ -13402,3 +13402,21 @@ world/actions/choices/seeds/schedule/LOW recipe and budgets. Parfit owns this
 small scoped driver/measurement/tests amendment. Use new source/manifest/run;
 old failure remains a failure. Same root is development/exploratory, not fresh
 confirmation. This does not relax the original full-assay gate or an invariant.
+
+## [Builder] 2026-09-13T14:24Z — LF-disclosure implementation and CPU acceptance
+
+Resumed at f96fb391; pulled main safely with unrelated rules/manuscripts dirty.
+Parfit EDITSTOP transfers the four LF-prompt implementation/test files to Main.
+Reviewed patch: explicit terminal-LF instruction only on EVENT/LINK, shared
+with structural measurement; eight EXPLORE prompts unchanged, strict admission
+and raw child bytes unchanged. Main reran formation29/29 (19.327s), command21/21
+(20.774s), and scoped diff check. Existing scoped writer/native CPU parity and
+outer validation are inherited unchanged. This is nonmaterial interface repair,
+not learning evidence. No fit is allowed unless all authentic formation passes.
+
+Next preparation is a fresh LF-disclosure development attempt on node2 GPU0,
+at most20 formation calls, retaining the same selected root/actions/recipe.
+Use new source/spec/manifest/run; preserve SEQ169 failure unchanged. Final C11
+guard remains deferred under Rohin's latest ruling. Manuscripts remain under
+independent review and are not staged with this implementation. Node1 migration
+readiness is being inspected independently before its 23:14UTC checkpoint target.

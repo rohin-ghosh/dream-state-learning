@@ -15,7 +15,12 @@ from organism_v6 import pcfl_vertical_formation_plan as planner
 
 
 SCHEMA = "pcfl.own_write_old_formation.v1"
-POLICY = "public_session_history_whole_response_stop_only_fail_fast_v1"
+POLICY = "public_session_history_whole_response_stop_only_fail_fast_v2"
+LF_COMMITMENT_RULE = (
+    "End your response with exactly one LF (U+000A) after the last identifier. "
+    "Emit the actual newline character, not the literal characters backslash-n (\\n). "
+    "Do not add a blank line."
+)
 KINDS = [kind for _ in range(8) for kind in ("EXPLORE", "EVENT")] + ["LINK"] * 4
 CONFIG_FIELDS = {"schema", "policy", "source_pins", "planner", "actor_config",
                  "seed", "limits", "slots", "sha256"}
@@ -23,6 +28,10 @@ CONFIG_FIELDS = {"schema", "policy", "source_pins", "planner", "actor_config",
 
 class FormationError(ValueError):
     pass
+
+
+def commitment_prompt(prompt):
+    return prompt + "\n" + LF_COMMITMENT_RULE
 
 
 def require(condition, message):
@@ -244,9 +253,9 @@ def _form(config, acquire):
             if kind == "EXPLORE":
                 prompt = session.explore_prompt()
             elif kind == "EVENT":
-                prompt = latest["public"] + session.event_prompt(latest["receipt"])
+                prompt = commitment_prompt(latest["public"] + session.event_prompt(latest["receipt"]))
             else:
-                prompt = session.link_prompt()
+                prompt = commitment_prompt(session.link_prompt())
             history.append({"role": "user", "content": prompt})
             request = {"id": slot["id"], "messages": detached(history),
                        "seed": config["seed"], "mount": "C0"}
