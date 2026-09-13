@@ -1,4 +1,15 @@
-## Current superseding snapshot — 2026-09-13 05:12 UTC
+## Current superseding snapshot — 2026-09-13 05:26 UTC
+
+Six live controllers: node2GPU0/1/2 full-dose writers; node3GPU0/1/2 reflection
+seeds0/1/2. Replica seed2 attempt1 failed inventory timeout before launch;
+fresh attempt2 now PID332002 after scoped targeted checker repair/7tests.
+No live root overwrite, foreign kill or outcomes-based replacement. Exact
+PIDs/roots/pins in HANDOFF;117replica CPU fixtures/native encoding passed.
+Reviewed SEQ129 manuscript integrated, UNSENT collaborator. First small L2
+base-start PROMOTE/SHADOW protocol frozen, CPU core/runtime underway; no L2
+launch. FormalC11 remains deferred. Mission incomplete.
+
+## Historical superseded snapshot — 2026-09-13 05:12 UTC
 
 Reflection launched node3GPU0 PID328732,05:12:20UTC;3600scontroller/180scollection,
 two cold fits and144readout calls, no outcomes yet.102CPU/native encoding and

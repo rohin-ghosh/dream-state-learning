@@ -9355,3 +9355,16 @@ ceilings25s each fit within launcher60s cap; no failed query is accepted. Main
 The timeout cause is not proven to be GPU7's known fault; no hardware action.
 Main authorizes one fresh seed2 attempt2 with unchanged data/recipe/seed after
 native preparation and fresh targeted check. Existing live code stays unchanged.
+
+## [Builder] 2026-09-13T05:26Z — seed2 fresh attempt launched after targeted check
+
+Seed2 attempt2 native preparation succeeded with unchanged source/data/recipe;
+plan ebe253e25699cd56dd26800e0e9662aa7f93dd96f55291c36e3c2b4a66cb11ff.
+Fresh targeted inventory+compute+same-user environment check passed without
+relaxing busy/unknown rejection. Launched node3GPU2 PID=PGID332002,
+start_ticks9305586,05:25:46.630600UTC,3600scontroller ceiling/180scollection.
+Root /localhome/local-rohing/astra_diagnostics/reflection_fit_seed2_20260913_attempt2;
+matching source suffix; external stdout /tmp/astra_reflection_fit_seed2_20260913_attempt2.controller.log.
+Attempt1 remains failed/unlaunched and preserved; no root or evidence overwrite.
+Now node3GPU0/1/2 hold reflection seeds0/1/2, node2GPU0/1/2 the full-dose writer
+instances. No scientific results inferred from these six controllers.

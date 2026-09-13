@@ -1,6 +1,33 @@
-# Astra current handoff — 2026-09-13T05:12Z
+# Astra current handoff — 2026-09-13T05:26Z
 
-## CURRENT — September13 05:12UTC
+## CURRENT — September13 05:26UTC
+
+Six controllers: node2 full-dose R0/1/2 unchanged PID4012737/4012889/4013072,
+last monitor reached DERANGED fit after full AUTH fits/readouts, no terminal
+result yet. Node3 reflection seeds0/1/2 PID328732/331133/332002, GPU0/1/2.
+Seed0 root reflection_fit_20260913_attempt1 (start05:12:20); seed1
+reflection_fit_seed1_20260913_attempt1 (start05:23:16,start_ticks9290535);
+seed2 reflection_fit_seed2_20260913_attempt2 (start05:25:46,start_ticks9305586).
+All roots under /localhome/local-rohing/astra_diagnostics;3600s reflection caps.
+Seed2 attempt1 failed allocation BEFORE controller/model work; preserved.
+
+Replication runtime /tmp/astra_reflection_fit_replication_run_20260913.py
+d1f572d094507f85245af2edd95608daffa8322a2d5dbae01ae31957e40ac6c9;
+seed1 plan28e972391ca543c311b4729ead2737c8ce93b0711c4f0e4f956e9ebaa2e5e025;
+seed2 planebe253e25699cd56dd26800e0e9662aa7f93dd96f55291c36e3c2b4a66cb11ff.
+New targeted node3 allocation helper32d366af avoids whole-device queries,
+25s/query,7CPU tests; old failed root/code untouched.117replica CPU tests and
+native encoding passed. Collect only complete captures, never restart roots.
+
+SEQ129 six-file manuscript patch reviewed/integrated70f57f53, collaborator
+UNSENT; no TeX tools/PDF build. Small L2 protocol committedae304738: base-start
+PROMOTE/SHADOW,16independentkeys,two SLEEPs,3fits/100updates/128calls max;
+MISBOUND reserved for follow-up. Curie core/tests and Carver runtime/tests
+are CPU-only in progress; do not launch from unfinished sources. Galileo owns
+reflection three-seed analyzer only /tmp; Noether read-only writer monitor.
+FormalC11 guard deferred; no mechanism freeze or H1/H2 promotion. Mission active.
+
+## Historical superseded snapshot — September13 05:12UTC
 
 Reflection LIVE node3GPU0 PID=PGID328732/start_ticks9224944, launched
 05:12:20.211208UTC,3600scontroller ceiling plus180s separate collection.
