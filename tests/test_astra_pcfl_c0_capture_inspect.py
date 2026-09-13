@@ -331,6 +331,8 @@ class PartialReplayTests(unittest.TestCase):
         self.assertEqual(len(lengths), 1)
         self.assertEqual(panels, report["panels"])
         self.assertEqual(len(groups), 6)
+        self.assertEqual(json.loads(audit.canonical(groups)), groups)
+        self.assertTrue(all(type(counts) is dict for counts in groups.values()))
 
 
 if __name__ == "__main__":

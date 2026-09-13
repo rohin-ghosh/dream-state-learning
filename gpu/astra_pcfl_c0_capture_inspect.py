@@ -112,7 +112,7 @@ def replay_rows(data, manifest, report):
     for identifier, length in lengths.items():
         if "/RA/" in identifier:
             same(length - lengths[identifier.replace("/RA/", "/RB/")], 1, "declared RA/RB length difference")
-    return replay, panels, groups, lengths
+    return replay, panels, {name: dict(counts) for name, counts in groups.items()}, lengths
 
 
 def inspect(diagnostic_dir, outer_dir, *, manifest_sha256, capture_sha256):
