@@ -14977,3 +14977,60 @@ generalization, no-harm, lifetime and whole-organism claims remain missing.
 Do not tune EVENT-only further: next qualify LF-framed READ/THINK use and form
 authentic child-chosen LINKs, then run the two-root vertical with causal cuts.
 No runtime/model/tokenizer/adapter/GPU state was changed by this audit.
+
+## [Independent structured-action result audit] 2026-09-13 — scheduled READ transports exact facts; route composition remains zero
+
+Terminal documentation-only audit:
+`research_notes/analysis/2026-09-13_pcfl_structured_first_read_terminal_audit.md`.
+The paired eight-task controls used identical public prompts/cells/goals/seeds,
+zero fits/updates, and an answer-free generic structured grammar. Grammar-only
+made 0 READs and reached 0/8 goals. Constraining only the first action family
+to READ made the model emit `READ EVENTS_AT <public START>` 8/8, then generate
+32 further READ choices: 40 READs total, 30 non-MISS returns, 46 exact EVENT-row
+instances, 8/8 strict terminal ROUTEs, but still 0/8 goal arrivals. No concrete
+address/answer was in the regex; every later READ address was previously
+visible and every submitted port came from an exact return. Four routes were
+legal two-edge prefixes of required five-edge paths; four spliced different
+branches and became illegal at edge two. Thus scheduled local-memory transport
+passes narrowly; autonomy, recurrent thought, connected use and routing do not.
+
+All node payload/file maps, 56 native call joins, service bytes, independent
+scores and separate custody receipts pass. Helper archive
+SHA256a3745deee039131c037ac2e645e6ab54e6d437eaebd848b8452bc5cad7bdd37c;
+both workers exit0, owned groups release, bound GPUs empty, queue matched and
+CVD clear with only the recorded non-worker init exception. Stage-level
+`gpu_released=false`/replay custody false correctly defer to outer/custody
+receipts; full assay and clean lineage remain false.
+
+Smallest non-narrowing successor: run the already-designed 8-task
+`A3B_NEWLINE_FRAMED` over the same exact five-hop graph first (maximum 56
+calls). Only if recurrent exact-graph composition passes should it be combined
+with the scheduled-first READ service; running READ+THINK immediately would
+reconfound access, branch state and reasoning. No runtime, model, tokenizer,
+adapter, benchmark, GPU, or builder-owned file was changed.
+
+## [Codex recurrent-interface successor] 2026-09-13 PT — isolate physical recurrence, graph reasoning, and incremental memory use before LINK fits
+
+Documentation-only prospective handoff:
+`research_notes/analysis/2026-09-13_pcfl_recurrent_reader_successor.md`.
+Terminal evidence now distinguishes five failures: A2 exact full graph gave
+0/64 shallow routes; A3 began THINK 64/64 but bundled lines so accepted 0/64;
+must-READ prose and constant READ-or-ROUTE grammar each selected READ 0/8;
+externally scheduling the first READ served 8/8 and elicited later READs but
+still produced 0/8 routes. The smallest successor is one common LF-framed A3B
+over the complete graph (8-task/56-call smoke, then 60/64 DEV), conditional
+answer-free A4 only when physical turns work but graph reasoning fails, and
+only after a full reasoner pass an 8 AUTH + 8 MISS first-READ/recurrent
+integration smoke (<=208 calls). The first slot uses a generic READ-only regex
+without enumerating an address; the model must select exact public START.
+Later addresses must be public or present in prior exact returns. A generic
+THINK-only slot follows each service return, then the actor chooses later
+READ/ROUTE. AUTH requires >=7/8 joint post-return THINK + legal follow-on READ
+plus exact evidence-covered route, MISS <=1/8, paired advantage >=6/8. No answer/candidate/private
+address, dynamic ID enumeration, parser repair, prompt retry, fit, or new root.
+If exact graph passes but incremental service fails, that is retrieval/graph
+integration failure—not LoRA/writer failure. ATN-v2.1-AUTO shares LF turns but
+uses target-blind automatic retrieval so autonomous READ policy cannot weaken
+the strong text baseline. Worst pre-full-DEV ceiling is 1,216 calls, zero
+fits/updates; stopped descendants are not spent. No builder/runtime/model/GPU
+file or process was changed.
