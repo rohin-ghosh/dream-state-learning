@@ -7884,3 +7884,16 @@ Controllercap2700s => approximately18:26:10PDT; fullphase/collectionallowance300
 ### 2026-09-12T17:44-07:00 [Builder] Live-readout handoff and future source staged
 
 Handoff now carries exact readoutPID275633/launcher275535, immutable plan/launch hashes,18:26PDT controller/18:31PDT collection bounds and single-collection restart instructions. New tracked source9f51595ec537885543976622b16273903578209e staged onnode3 for future born integration (tar5938bc4dd3ea73a8f2418ed456d9fc6a255a0da58a853fa724fb0850f4911c80 matcheslocal/native). This did not modify live31bsource or run a GPU/native model test. Born role918b9d46/corpus43bf0749 unchanged. Future pipeline CPU work continues in disjoint agents; no extra launch authorized by source copy.
+
+### 2026-09-12T17:43:31.894848-07:00 [Builder] Clock correction for drafted minute headings
+
+The preceding17:34/17:35/17:38/17:40/17:42/17:44 headings were manually drafted minute labels, several slightly ahead of the execution clock. They are not event timestamps. The following Git author timestamps record the corresponding commits; actual GPU start/release times remain their exact machine receipts and are unchanged. The17:44 handoff was committed at17:43:03PDT, not17:44. Future headings use the execution clock directly.
+
+```text
+ab1698b0 2026-09-12T17:43:03-07:00 Checkpoint live readout and born integration source custody
+9f51595e 2026-09-12T17:41:40-07:00 Log exact birth readout launch and finite ownership window
+83c9ed70 2026-09-12T17:40:39-07:00 Record completed birth fit pair and gate controlled readout
+f0afb98a 2026-09-12T17:37:58-07:00 Freeze prospective born-child parenting and retention sample
+f6422ac8 2026-09-12T17:34:47-07:00 Integrate reviewed sequential-memory evidence into sprint manuscript
+6b106e75 2026-09-12T17:33:50-07:00 Log bounded birth fit launch and exact process receipt
+```
