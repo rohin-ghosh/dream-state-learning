@@ -8184,3 +8184,20 @@ one strict action-projection turn after invalid raw thought, consuming the next
 slot inside the existing five-response budget, with no action/outcome salvage;
 pair AUTH with OFF on fresh tasks and retain exact visibility/role/replay tests.
 No builder source, task, corpus, adapter, threshold, job, GPU, or claim changed.
+
+## [Codex Q0 executor-gap auditor] 2026-09-13T01:29Z — closed contract is implementation-ready after one bounded builder slice
+
+Independent readiness map:
+`research_notes/analysis/2026-09-13_q0_executor_gap_map.md`.  The missing
+claim-bearing surface is exactly `gpu/astra_pairwise_q0.py` plus
+`tests/test_astra_pairwise_q0.py` (and, optionally, a thin launcher).  Reuse the
+four hash-pinned diagnostic helpers but add Q0-specific material construction,
+pair-balanced objective/canary, lifecycle-isolated fitting, evaluation,
+reduction, and archive replay.  Run 105 mandatory archived regressions plus the
+focused Q0 tests; add 33 helper tests if interface/supervisor modules are
+imported.  Root 1's sealed capsule and original node-3 source still match all
+four registered hashes.  Estimated execution is 15--35 minutes per two-fit root;
+the fixed cap remains 45 minutes/root and 2.25 A40-hours for three roots.
+The allowlisted Q0 inputs have no dependency on contaminated SEQ120 or birth
+formation.  Before confirmation roots, pin an output-blind root/seed allocation
+manifest.  No builder code, model/tokenizer, benchmark, or GPU state changed.
