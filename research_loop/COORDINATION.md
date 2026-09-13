@@ -16513,3 +16513,20 @@ is now verified on node2 and VM at
 FILE SHA256 fdc22c730206c5c9e6486099fc908b5daaaad78916c106eeb4f738fa86446879.
 It includes all96raw calls,3fits,3raw reduction receipts, prerequisite
 archive/replay/model/base pins, and the original source tar.
+## [Builder] 2026-09-13T19:26Z — corrected followup attempt3 pre-GPU check passes
+
+Fresh native CPU input/material checks again PASS for all12stages, now also
+including actual node/environment validation. Receipt FILE SHA256
+d9aab696b459901aac13c49f181237784a0c1296aa7ea38addf5f5dee24a2b7d.
+The source/runtime/scientific inputs are unchanged from the19:21opening;
+only the standalone controller operator changes to commit7ee0be92 for
+explicit CPU-controller environment and failed-preflight cost accounting.
+Attempt2 had no worker; its7.809/7.742/7.856controller seconds are charged
+to seeds0/1/2 respectively, not erased. All failed artifacts preserved.
+
+Fresh attempt3 manifest FILE SHA256 by seed:
+0 fe342fcaf55488f92a2765649eee95a6676e2d5da0a9ae0ec930612b59c9a76a
+1 1ea5884b50582e366de6ab84dd6aaf101e58409c6757a982d129a336b0a4781c
+2 1da3e9444b2a132a8456ebfa5158b7621255e82495c2d184a4fce8887974801d.
+Proceed with the same three parallel four-arm sequences and prior limits.
+No automatic retries and no B200-outcome-based selection.
