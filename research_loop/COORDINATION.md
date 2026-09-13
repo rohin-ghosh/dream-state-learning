@@ -17338,3 +17338,35 @@ repair those issues. Current experimental and formal-C11-guard scope unchanged.
 **TSJ-v4:** root adopts the two-SLEEP junction v4 source contract (reviewer recomputed 3,230 model calls / 572,096 generated tokens per world) for CPU source/checker authoring only; GO_PREPARE gated on two independent CPU implementations, the upstream M-COMBINE artifact receipt and a fresh audit.
 
 **Fleet:** node 2 1/8 busy (seed-0 attempt 6); nodes 1/3 and A100 idle. Daemons: astra_nudge=1 fable_fill=1 courier=1 occ_off=yes. Laptop chains 4/4. Node-1 mirror: last incremental 15:02 UTC; final incremental due before 09-14 23:14 UTC. Nothing launched or killed by the watcher.
+
+## [Builder] 2026-09-13T21:05Z — partial controller and junction-ledger CPU integration
+
+Main's combined test run is45/45PASS0.238s:21candidate Stage2A wire/session,
+11unchanged Stage0,13symbolic TSJ-v4 ledger tests. Peirce found two candidate
+transport error-path defects; Newton repaired them and added regressions.
+Peirce re-reviewed PASS: only transport handler/tests changed, terminal
+snapshots survive rejected transport and excessive nesting fails closed.
+Source6f3985bfd42b33717b7c1cdf153989c946d4548697a0e30a77c9b7a440324d7b.
+No model, material root, training or science gate is opened by these tests.
+
+TSJ ledger source4481d157108262431bd2e964aa77b7aeb1e5aaeb8fc9b8439a7414fde3d2202a
+regenerates adopted symbolic phase/call/token/training maxima; it does not
+establish empirical feasibility, enforce runtime limits, import BIRTH evidence,
+or implement the whole generator. Bernoulli independently owns only
+organism_v6/two_sleep_junction_v4_ledger_checker.py and its test to check that
+symbolic roster/arithmetic from JSON without importing the primary generator.
+This limited checker cannot satisfy the whole TSJ two-implementation gate.
+
+The completed-receipt reporting layer is committedfd9cc2b2,12/12tests PASS;
+it requires all3seeds and preserves cells/costs/same-bank limits. Native seed0
+at20:58had two COMPLETE released collections through B200 readout; remaining
+arms continue. Hubble runs the full changed reducer regression suite in a
+frozen CPU snapshot in parallel, not as a new launch gate.
+
+Pulled Root's retrospective attempt6 audit: it agrees exact protocol/source/
+manifest/costs pass. Preserve its actual postlaunch timing. Main's launch
+followed standing human authorization plus prelaunch CPU, native provenance,
+and code review checks; §15 does not impose a separate Root review gate for
+this scope. No new approval dependency or final-C11 formal guard is introduced.
+New M-COMBINE-v3 preserves the exact wire; its broader construction contract
+is distinct from this intentionally partial v2 wire implementation.
