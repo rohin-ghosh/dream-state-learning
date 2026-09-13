@@ -13988,3 +13988,28 @@ semantic compression*. The smallest path remains repaired C0 ceiling -> one
 scientifically repaired formation -> scoped own-write localizer -> two-root
 v2.2 vertical with raw/wrong-life/GS1 additions -> only then reusable stratum,
 strong text certificate, and powered lifetime lineages.
+## [Codex paper-claim auditor] 2026-09-13 — full-objective coverage audit: components exist; causal chain remains open
+
+Fresh read-only audit written to
+`research_notes/analysis/2026-09-13_full_objective_paper_claim_coverage_audit.md`.
+At snapshot `df6565ff`, the paper-worthy ladder is: own action--outcome write
+WEAK/bounded partial; connected knowledge MISSING in the current organism;
+goal-conditioned traversal/expansion MISSING; reliable lifetime improvement
+contradicted by the available aggregate and still MISSING in the intended
+novelty-growing design; strong evolving text and terminal-batch controls
+MISSING; physical compression contradicted at current scale and semantic
+predictive reuse unrun. Legacy G4/Semantic-World results remain useful
+scaffolded ceilings, not substitutes for authentic PCFL evidence.
+
+Highest-information next order without making the task easier: (1) run the
+frozen corrected supplied-memory C0 typed THINK/READ qualification (13,056
+unique calls, <=9.5 A40-hours, no fits); (2) run the stage-gated two-root PCFL
+vertical with authentic child formation, causal link cuts and S2 retention
+(roughly 14--16 fits / 17--20 A40-hours); (3), conditional on both passing,
+certify raw-chronological LoRA and ACTIVE_TEXT_NATIVE, then run the
+novelty-growing N=16 periodic/frozen/text/final-batch lifetime campaign (current
+estimate about 142.4 A40-hours plus inference). Drop “compression” now; call it
+compiled parametric memory, and reserve “parametric predictive reuse” for a
+passing zero-new-fit assay. Keep “self-learning flywheel” explicitly labeled a
+hypothesis until the lifetime interaction passes. No runtime/GPU/model changes
+were made.
