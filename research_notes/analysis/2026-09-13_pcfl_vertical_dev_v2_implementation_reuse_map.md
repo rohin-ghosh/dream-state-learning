@@ -2,7 +2,8 @@
 
 **Date:** 2026-09-13 UTC  
 **Status:** analysis only; no source, fixture, model, adapter, or GPU action  
-**Repository cut inspected:** `29bcd1ed`  
+**Repository cut inspected:** `2ae2c62b` plus the prior implementation audit at
+`29bcd1ed`
 **Protocol:** `research_notes/analysis/2026-09-13_pcfl_vertical_dev_v2_synthesis.md`
 
 ## Bottom line
@@ -101,8 +102,9 @@ is preparation, not model execution.
 **New source required:** strict whole-line parsers for
 `EVENT ... EVIDENCE ...` and `LINK ... EVIDENCE ...`; phase-specific visibility
 checks; a query-level materializer that groups accepted spans without adding
-meaning; construction of EVENT_TWIN, LINK_PERMUTE, ATOMS-MISS, OLD_REPLAY-MISS,
-and parser-disjoint padding controls; and a corpus ledger joining every
+meaning; construction of EVENT_TWIN, LINK_PERMUTE, ATOMS held-out LINK
+addresses, OLD_REPLAY held-out NEW addresses, and parser-disjoint padding
+controls; and a corpus ledger joining every
 training item back to raw generation byte offsets, receipt hashes, wrapper,
 token count, mask hash, arm, root, and stage.
 
@@ -122,13 +124,22 @@ READ EVENTS_AT n   -> all matching EVENT lines, event-ID sorted, LF joined
 READ LINKS_FROM e  -> all matching LINK lines, link-ID sorted, LF joined
 ```
 
-The final child row retains its LF. Maximum adjacency is two. At S1 the full
-table has 17 scored requests (8 individual EVENT, 6 EVENTS_AT, 3 LINKS_FROM);
-at S2 it has 19 (9, 6, 4). Three S1 and one S2 disjoint padding requests bring
-both stages to 20 slots. The materializer should reject duplicate inputs,
-contradictory targets, missing required addresses, wrong sort order, any
-semantic field introduced outside an admitted span, and any `MISS` not
-explicitly registered for a control.
+The final child row retains its LF. Maximum adjacency is two. The exact arm
+roster is:
+
+```text
+S1_AUTH / EVENT_TWIN / LINK_PERMUTE: 17 semantic blocks + 3 PAD
+S1_ATOMS:                            14 semantic blocks + 6 PAD
+S2_FULL_R0 / FULL_R1:                19 semantic blocks + 1 PAD
+S2_OLD_REPLAY:                       17 semantic blocks + 3 PAD
+```
+
+ATOMS LINK addresses and OLD_REPLAY NEW addresses are **held out**, not trained
+to say `MISS`; evaluation requires zero usable false rows without requiring an
+exact refusal surface. The materializer should reject duplicate inputs,
+contradictory targets, missing required semantic addresses, wrong sort order,
+any semantic field introduced outside an admitted span, and any absent-address
+response smuggled into a training arm.
 
 There is no current implementation of this table. `l2.training_items` trains
 one target per address and therefore must not be reused as-is. The new tests
@@ -173,9 +184,11 @@ not a smaller-dose adapter.
 Target-token equalization must happen **after real tokenizer rendering** and
 must count the assistant EOS as loss-active, matching L2's current preflight.
 Each stage gets one target-token budget equal to its longest arm plus the fixed
-reserve. Do not use sample weights: the current trainer has no weighted-loss
-path, and whole-token padding already gives exact equality. Assert zero target
-truncation and sequence length `<512` before loading a model.
+reserve. Whole-token PAD targets are the only permitted equalizer: there is no
+per-token weighting, fractional-example, duplicated-semantic-query, trained-
+false-absence, or approximate-match fallback. Assert zero target truncation
+and sequence length `<512` before loading a model; infeasible equality is
+`VS_ASSAY_INVALID`.
 
 ### 2.5 Native runner and stage scheduler
 
@@ -306,10 +319,10 @@ Fourteen fits at thirty A40-minutes is arithmetically seven aggregate A40-hours
 regardless of parallelism. No repository receipt yet proves that the revised
 200-step, max-length-512, batch-four, all-layer rank-8 fit completes in thirty
 minutes. The active L2 runtime budgets ten minutes for only 20/40-step fits,
-and Q0's 128-update custom objective is not the same workload. Follow the
-protocol: profile exactly one fully materialized S1 and one S2 fit before the
-DEV outputs are opened, and fail `VS_RESOURCE_CAP` rather than increasing the
-cap.
+and Q0's 128-update custom objective is not the same workload. Treat the first
+scheduled `S1_AUTH` and, if reached, `S2_FULL_R0` as the two profiles. They are
+inside the fourteen-fit roster, not extra work; if either crosses thirty
+minutes, fail `VS_RESOURCE_CAP` rather than increasing the cap.
 
 The runner must also verify the actual GPU product. Its current `gpu_uuid`
 check proves identity and vacancy, not that the device is an A40. If execution
@@ -356,10 +369,12 @@ GPU time.
    attempt denominators, and the post-S1 no-OLD visibility taint. Test raw
    durability before feedback, no repair, wrong/cross-root evidence, byte
    offsets, and native/mechanistic fork noninterchangeability.
-3. **Query-response materializer and controls.** Implement the 17/19 scored
-   tables, sorted multi-row blocks, ATOMS/OLD_REPLAY MISS, EVENT_TWIN,
-   LINK_PERMUTE, and 20-slot padding. Test duplicate-input contradictions,
-   multi-row addresses, parser-disjoint padding, query-shape matching, and
+3. **Query-response materializer and controls.** Implement the four exact
+   semantic/PAD rosters (17+3, 14+6, 19+1, 17+3), sorted multi-row blocks,
+   held-out ATOMS LINK addresses, held-out OLD_REPLAY NEW addresses,
+   EVENT_TWIN, LINK_PERMUTE, and 20-slot padding. Test duplicate-input
+   contradictions, multi-row addresses, parser-disjoint padding, held-out
+   absence calls producing zero usable false rows, query-shape matching, and
    exact target-token feasibility with a fake tokenizer first.
 4. **Real-tokenizer preparation only.** Reuse L2's native template/EOS/mask
    preflight. Search and seal opaque IDs, render all 14 arm corpora, equalize
@@ -368,8 +383,9 @@ GPU time.
 5. **Trainer closure.** Add explicit AdamW fields, global clipping, and strict
    numerical receipts. Extend `test_train_adapter_v3.py` with a tiny CPU model
    proving clipping, exact defaults, deterministic 200-step accounting,
-   optimizer/RNG/tensor hashes, and nonfinite rejection. Then run one S1 and
-   one S2 resource profile only.
+   optimizer/RNG/tensor hashes, and nonfinite rejection. The resource profiles
+   are the first scheduled `S1_AUTH` and (if reached) `S2_FULL_R0` fits inside
+   the fourteen-fit roster—not two extra fits.
 6. **Zero-fit text/graph/service harness.** Implement deterministic text
    service, finite READ/ROUTE actor loop, semantic/strict scorers, and exact
    graph/text ceilings. Run all CPU or scripted fake-backend tests before any
@@ -408,7 +424,8 @@ world. Before native work, the new tests must explicitly close:
 - initial versus post-S1 visibility, including a proof that OLD bytes cannot
   enter the native S2 prompt and service forks cannot enter lineage;
 - query-level one-row and multi-row materialization, deterministic sorting,
-  MISS policy, and response-shape-matched controls;
+  held-out absence behavior with zero usable false rows, no trained exact
+  `MISS`, and response-shape/work-matched controls;
 - 20 slots, 8 views, 160 items, exact target tokens, singleton sequences,
   five epoch covers, and 200 actual updates for every arm shape;
 - global clipping and the complete numerical receipt without diagnostic state
@@ -458,7 +475,8 @@ blocked until all of these are durable:
 1. both pure CPU oracles agree on the complete cube and every cut;
 2. the projection report has no forbidden deterministic key;
 3. the real-tokenizer materializer produces exact token-matched 20-slot arms
-   with no target truncation;
+   with the 17+3/14+6/19+1/17+3 rosters, no target truncation, and no per-token
+   or approximate fallback;
 4. the trainer manifest proves explicit AdamW/clipping and complete numerical
    receipts at exactly 200 updates;
 5. the exact native request/resource inventory fits the 7+10 A40-hour caps;
