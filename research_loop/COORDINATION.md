@@ -9730,3 +9730,34 @@ Controller visible06:35:19UTC. No scientific result yet, no relaunch/kill.
 Launch reconciliation receipt archived. Manuscript bounded review found
 historical-vs-current base-pin ambiguity and prose issues; Galileo repairs
 only those, not new outcomes. No external send or guard-policy change.
+
+## [Builder] 2026-09-13T06:40Z — diagnostic-only route-check repair/prelaunch
+
+Access attempt1 stopped after163.696seconds: OFF64forwards complete, fit1
+failed before candidate forwards with `LoRA inactive or merged`. Controller
+344660 absent; exact postworker GPU/environment release passes. This is a
+diagnostic implementation failure, not evidence that the original adapter was
+inactive. Root preserved and transferred, failure tar
+1b4877012eeabef901e114aea92898bccade4c9c9d850ebd1ee63f629464cb14
+matches both endpoints (/tmp/astra_l2_access_attempt1_failure.tar on VM).
+
+Root cause verified against installed sources: Transformers exposes
+disable_adapters as a METHOD on its base model, while PEFT BaseTunerLayer
+exposes a BOOLEAN property. The v1 all-module truthiness check incorrectly
+treated the bound method as a disabled layer. V2 restricts checks to actual
+BaseTunerLayer instances, requires nonempty enabled/unmerged/default-route
+layers, and retains loaded-vs-saved tensor identity and frozen/eval checks.
+No scoring/data/model/adapter/training change. Main20CPUtests PASS2.832s;
+native tiny-Qwen CPU fixture passes enabled route and rejects genuinely
+disabled adapters (2tuner layers,0forwards/updates). Native32case encoding
+replay retains exact case pin4644578efc36a24f181a1adffd31fabdcac07e936723b435c72b532c87eeea21.
+
+Fresh read-only attempt2 planned on same node3GPU3, same1200second/192forward/
+0update cap, no old-root writes. New source/root suffix l2_access_20260913_attempt2;
+probea38a089fae5b09b53415655dd8e5346dfbb0f597f34b35cd49921a98b50e22c1,
+controller unchanged29808a870fd4de68354a110cecdb2a9d7cc7138c00d86ffb77295c15a9a33d8c.
+Fresh prechecks/cleanup unchanged. No claim promotion or finalC11guard work.
+Original failed receipts and v1 retained; attempted partial OFF not promoted
+or silently mixed with v2. New complete diagnostic needed before interpreting
+the acquisition/access contrast. LR-only optional config is being prepared,
+not launched or accepted as a remedy; no unchanged science reruns.
