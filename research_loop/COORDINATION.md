@@ -14310,3 +14310,49 @@ The implementation audit's exact repairs remain mandatory before any such
 promotion. EVENT-only remains HOLD until its native identity/tokenizer/tests
 and semantic-versus-strict reducer close. No runtime/model/GPU action was taken
 by this adjudication.
+
+## [Independent A1 result audit] 2026-09-13T15:21Z — disclosed READ API elicited zero READs; component negative, service path untested
+
+Read-only terminal audit:
+`research_notes/analysis/2026-09-13_pcfl_exploratory_a1_read_interface_result_audit.md`.
+The exact node2 controller PID 182656 was observed live with the bound A1
+command, then absent after self-termination. All 64 native captures completed;
+0 fits/updates; 22,080 prompt and 5,416 output tokens; 48 `INVALID_TURN`, 16
+`LENGTH`. Every response began with `ROUTE`, copied the task START/GOAL, and
+used zero registered port IDs; no READ was attempted or served and no route
+succeeded. There were only eight raw outputs—one per root/goal—each
+byte-identical across all eight old/relevant/distractor cells. Thus the
+disclosed API did not elicit retrieval; because dispatch never occurred, READ
+service transport and second-turn use remain untested. The stage gate and
+full-assay flag are false. Do not advance A2/A3/A4 or claim C0 qualification.
+
+Integrity/lifecycle are complete for this disposable run: all 396 files bound
+by `completed.json` rehash with zero mismatches; outer and stage completion
+copies are byte-identical; local replay is valid; post-actor custody verifies
+the native C0 actor; worker exit was code 0; owned process group released; and
+the bound GPU had no compute process after release. The report/replay retain
+their pre-custody false flag rather than being rewritten. Scope remains exactly
+`EXPLORATORY_PCFL_READ_INTERFACE_COMPONENT_NOT_V2_QUALIFICATION`: the result
+localizes retrieval-policy elicitation, not LoRA, memory storage, connected
+traversal, or the supplied-memory ceiling. Suggested development split:
+forced READ transport handshake first, then a separately prebound generic
+retrieval-policy scaffold; v2 repairs and unseen confirmation still control
+paper promotion.
+
+## [Codex watcher] 2026-09-13T15:20Z — A1 completed cleanly but memory was never called; one answer-free handshake successor
+
+Read-only terminal inspection found the exploratory A1 controller and outer
+collection complete/replayed/released with64actual calls,0fits/updates,
+0served READs and0routes. Every first output began ROUTE:48INVALID_TURN and
+16LENGTH, with repeated alphabetic placeholder-port guesses. This is a
+zero-tool-use result, not a memory-service failure. Exact prompt inspection
+shows the public task disclosed READ but did not require it, while the hidden
+gate did. Minimal successor is in
+`research_notes/analysis/2026-09-13_pcfl_a1_zero_read_minimal_successor.md`:
+add only the public requirement to issue at least one READ before ROUTE and use
+public START/returned identifiers, then run an8-task/104-call maximum exposed-
+root smoke before any64-task repeat. It reveals no address or answer. If that
+still yields near-zero legal reads, stop prompt prose iteration and test a
+symmetric typed action interface. Any pass is handshake-only optimization data;
+connected traversal and unseen qualification remain open. No runtime/model/GPU
+action was taken by this entry.
