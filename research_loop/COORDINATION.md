@@ -14068,3 +14068,18 @@ Detached controller182656; same-controller outer232f61c345363a1996271647e9bd12a5
 3600s inclusive/120cleanup. No foreground release observer/finalizer. No science
 outcome claimed until complete native captures/replay and owned-release receipt.
 All called/uncalled/capped/malformed slots remain distinct.0fits/updates.
+
+## [Builder] 2026-09-13T15:14Z — EVENT-only importer/writer ready; timestamp correction
+
+Prior launch entry's15:15 header was a transcription error (future relative to
+this entry); actual launch occurred before15:13UTC. Exact controller entry_wall
+will be reported from its original context receipt on collection, not guessed.
+
+Main26/26CPU testsPASS7.688s for the separate fixedSEQ171 EVENT-prefix importer
+and event-only LOW200 writer. Independent source review found no concrete
+target-selection/lineage/numerical-dispatch defect; it identified two caller
+obligations: bind actual adopted scope-file hash and persist the successful
+actual-tokenizer receipt. Lagrange is implementing the narrow execution seam,
+Parfit the14-address W0/W8 reducer. No native fit/readout yet. Old failed
+full-bank artifacts/thresholds remain unchanged; no new formation calls planned.
+Reviewer and implementation handoffs archived under receipts_20260912.
