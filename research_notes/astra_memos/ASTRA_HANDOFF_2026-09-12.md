@@ -737,3 +737,56 @@ A100startsSep13 05:05UTC=Sep12 22:05Pacific, stillfutureatthischeckpoint.
 Legacy migration script destructivecleanup: doNOTblindlyrun. Do nottouch
 foreignjobs/nodequeues. IdleMaincapacity nowisready forvalidnative-tested
 nextcomparisons, notpermissionforlow-informationreruns.
+
+## 2026-09-12 17:44 PDT / September13 00:44 UTC — birth readout LIVE
+
+Supersedes earlier no-live-job entries. Mission incomplete; do not restart fits.
+SEQ119 birth AUTH/DERANGED seed0 fit pair COMPLETE and RELEASED, capsule
+`d2460cb3be9b357ae1beecad84ae9bcfc7e76b61d296fb7b359ae9e68d8e2474`,
+validation `d403b48b645dcc5ebd971a6527108f21287fd722981f128c8780c58a2f1cf770`.
+All39 metadata members verified by Main; weights excluded and retained natively.
+Total256 optimizer updates;23,296targettokens;376.744928s controller,
+488.560991s launch-to-release including38.730419s collection, not additive.
+No efficacy verdict. Fit controller273803/launcher273748 are gone.
+
+LIVE: node3 GPU0, birth readout controller/PGID275633, launcher/PGID275535.
+Root `~/astra_diagnostics/astra_birth_conditional_readout_seed0_20260912_attempt1`;
+launch root adds `_launch`. Plan
+`1b31178121d91bed8d5233d86f6918357e92541ffe2b09290edaf4af5354ac54`;
+launch hash `731b900590fb98eff04e8fc8f306678890a76ae0dbf6d06720c86babacec9c9b`.
+Actual start17:41:10.778944PDT; controller2700s ends approximately18:26:10PDT,
+full3000s collection allowance18:31:10PDT. Main monitors exact ownership.
+Source `~/astra_sources/31b5535ec9f73f7b32fdaf21ccfc3a2a68a948a6` unchanged.
+Driver `/tmp/astra_birth_conditional_run_20260913.py`
+`072a1333c0411a73ae0fc46c6e70de9afe0bce9b49c74e01bdaae16174195daa`;
+launcher `/tmp/astra_launch_birth_component_20260912.py`
+`c4246f29393a992fdefaf188b2d2069c5526a49bfa84bd7b4a8a38108b3d6c7f`.
+Blind `status` takes root/plan plus launch-root/launch-sha256. Only after
+controller AND launcher AND workers/sessions exit, `collect` takes those four
+args, launcher/launcher-sha256, and a FRESH sibling `_collection` output.
+Use native `/localhome/local-rohing/v2/venv/bin/python -B`, CUDA unset for
+status/collection, source PYTHONPATH. Collect ONCE, timeout320s. Preserve a
+failed collection; do not blindly retry. Full command recipe remains in
+`receipts_20260912/astra_birth_conditional_run_handoff_20260913.md`.
+All384 OFF/AUTH/DERANGED responses close before outcomes are inspected.
+
+Six reviewed manuscript files and final/prior reviews are committed f6422ac8;
+Herschel PASS is consistency review with raw-audit role disclosed, not another
+raw recount. Abstract225words parity; no TeX build claimed; collaborator UNSENT.
+Prospective AUTH born-parenting sample frozen at
+`ASTRA_BORN_PARENTING_SAMPLE_2026-09-12.md` (f0afb98a), not native ready.
+Arendt01a097b5-1d8e-7bb3-bb6b-52e0844e371a owns born formation runner;
+Einstein01a09830-c71d-7fa1-802a-1ddf4dfdf463 warm-writer binding;
+Ampere01a09832-017c-71f1-938c-c8f6b38a665f parent-free readout adapter.
+All own disjoint /tmp scripts/tests/handoffs, CPU only; Main owns Git/native.
+Do not mutate live birth driver/launcher/dependencies.
+
+New source prepared without GPU work at
+`~/astra_sources/9f51595ec537885543976622b16273903578209e`, archived tracked
+organism_v6/gpu/tests/AGENTS.md/CLAUDE.md only; tar
+`5938bc4dd3ea73a8f2418ed456d9fc6a255a0da58a853fa724fb0850f4911c80`
+verified locally/natively. Contains unchanged born role and birth corpus.
+This is future integration source, not the live readout source. Origin remains
+UNRESOLVED_LOCAL_HASHES_ONLY; all work source-authored NOT CLEAN. Formal C11
+guard deferred, simple hygiene active. Preserve unrelated dirty rules file.
+No approval request, foreign kill, external message or new paid allocation.
