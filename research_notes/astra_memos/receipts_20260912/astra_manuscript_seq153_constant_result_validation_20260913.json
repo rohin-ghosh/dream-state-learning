@@ -1,0 +1,207 @@
+{
+  "status": "PASS_LOCAL_MANUSCRIPT_CHECKS",
+  "scope": "SEQ153 completed evaluator-only constant-record qualification; not SEQ154",
+  "files": {
+    "paper_prototype/astra_sprint_draft_20260912.tex": {
+      "sha256": "a7513cbdb039820c1a9d22f50b154c4b1006e5d20ff6383b3d23f2b8c353376c",
+      "previous_sha256": "452d7b6af269edfc7e7b0f52961a029f1fced306de18a88b31f6352e31e6abdf",
+      "added_lines": 21,
+      "removed_lines": 8,
+      "tables_preserved": 48
+    },
+    "paper_prototype/astra_sprint_abstract_20260912.md": {
+      "sha256": "9af3f7223a51e6933350b265dedf712b4a7389844bc05a098f4accd75164e2fb",
+      "previous_sha256": "98e67436b00580189e9de039f8cc912301af9ff88587f58057f7da906e144fee",
+      "added_lines": 10,
+      "removed_lines": 6
+    },
+    "paper_prototype/main.tex": {
+      "sha256": "94796c4eeabd1e626a187eae0a3e6084dd7e2adfb8de60103a8016419b0e13be",
+      "previous_sha256": "e4edc58cc9adf2558ec263d7b8574fb556af8ffd5beb8fafad693d15cd0ca7db",
+      "added_lines": 21,
+      "removed_lines": 8,
+      "tables_preserved": 25
+    },
+    "paper_prototype/README.md": {
+      "sha256": "24b3114a5d90f4c1091570d6875eee70843c5e90656e1f253050ccfcad5abb6e",
+      "previous_sha256": "f86d3ee1d3e155995e0b811ca75026855823c266b4cc50b407651c5a2d414e47",
+      "added_lines": 5,
+      "removed_lines": 3
+    },
+    "research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md": {
+      "sha256": "65b562751b6bfd85f82086a843b278a78d72bf9b6ae3178e7b6cc9f084b350e9",
+      "previous_sha256": "0359ff69cdb82d9472f02072c19b314a2789e9b9bc267d3883eff3901038767b",
+      "added_lines": 29,
+      "removed_lines": 6
+    },
+    "research_notes/astra_memos/ASTRA_COLLABORATOR_DRAFT_2026-09-12.md": {
+      "sha256": "b0879100e348c8af18d989fc3af8cef819550d78624c735ee603559f156ad5ca",
+      "previous_sha256": "e3cbc1b8cd2a6eb56e65c5c6e9cacd8cfc0b8ca2c5bfa1c43486b76c52a487a6",
+      "added_lines": 5,
+      "removed_lines": 3
+    }
+  },
+  "source_pins": {
+    "research_notes/astra_memos/receipts_20260912/astra_l2_high_seed2_greedy_report_20260913.json": "62c01302d039093aef7e87ff2dfe5b28e5633c700d2d78ea3c775decf8d3b062",
+    "research_notes/astra_memos/receipts_20260912/astra_greedy_receipt_replay_20260913.json": "d1bcb45ea778b130bdd5d36f4a1967ac1055f4a3da759c3581d7d70571561fbf",
+    "research_notes/astra_memos/receipts_20260912/astra_l2_high_seed2_independent_analysis_20260913.md": "6d4f46be4b13b62e1c618f6543e7e171df9e5008e46b45cc9cf94aae47552dec",
+    "research_notes/astra_memos/receipts_20260912/astra_actual_memory_analysis_result_20260913/analysis.json": "7bf30652548ed36800f8f1c5ee0c9a34dc79409d50c95b9818ce103364ebd323",
+    "research_notes/astra_memos/receipts_20260912/astra_actual_memory_analysis_result_20260913/analysis.md": "e0d1ee714c0a8f277f281015d789dcac1c8d7c288df8d52b02a06565400ee314",
+    "research_notes/astra_memos/receipts_20260912/astra_actual_memory_custody_audit_20260913.md": "d551d9c493cdbb124c0fbee576f4b7b68d028e24e6d4b5a5a606b1c37c046a26",
+    "/tmp/astra_actual_memory_constant_baseline_20260913.json": "08bdf7627df6eb5d690530faa1784716da2cd9a520ca52556ad7342ee76740af",
+    "/tmp/astra_actual_memory_constant_baseline_20260913.md": "b0798484c941436f990393f80e13e73ed68b3ead5779e7ddf38e3f3291b1bbb9"
+  },
+  "oracle_comparison": [
+    {
+      "seed": 0,
+      "denominator": 14,
+      "exact": {
+        "WRITE": 8,
+        "oracle": 6,
+        "difference": 2
+      },
+      "paraphrase": {
+        "WRITE": 6,
+        "oracle": 6,
+        "difference": 0
+      }
+    },
+    {
+      "seed": 1,
+      "denominator": 8,
+      "exact": {
+        "WRITE": 7,
+        "oracle": 4,
+        "difference": 3
+      },
+      "paraphrase": {
+        "WRITE": 5,
+        "oracle": 4,
+        "difference": 1
+      }
+    },
+    {
+      "seed": 2,
+      "denominator": 8,
+      "exact": {
+        "WRITE": 5,
+        "oracle": 4,
+        "difference": 1
+      },
+      "paraphrase": {
+        "WRITE": 5,
+        "oracle": 4,
+        "difference": 1
+      }
+    }
+  ],
+  "checks": [
+    "source SHA256 research_notes/astra_memos/receipts_20260912/astra_l2_high_seed2_greedy_report_20260913.json",
+    "source SHA256 research_notes/astra_memos/receipts_20260912/astra_greedy_receipt_replay_20260913.json",
+    "source SHA256 research_notes/astra_memos/receipts_20260912/astra_l2_high_seed2_independent_analysis_20260913.md",
+    "source SHA256 research_notes/astra_memos/receipts_20260912/astra_actual_memory_analysis_result_20260913/analysis.json",
+    "source SHA256 research_notes/astra_memos/receipts_20260912/astra_actual_memory_analysis_result_20260913/analysis.md",
+    "source SHA256 research_notes/astra_memos/receipts_20260912/astra_actual_memory_custody_audit_20260913.md",
+    "source SHA256 /tmp/astra_actual_memory_constant_baseline_20260913.json",
+    "source SHA256 /tmp/astra_actual_memory_constant_baseline_20260913.md",
+    "seed0 denominator/raw/source/triples",
+    "seed0/exact oracle/delta",
+    "seed0/exact original production/content/bytes/strict",
+    "seed0/exact wrong-key repertoire",
+    "seed0/paraphrase oracle/delta",
+    "seed0/paraphrase original production/content/bytes/strict",
+    "seed0/paraphrase wrong-key repertoire",
+    "seed0 original scores pin",
+    "seed0 original collection pin",
+    "seed1 denominator/raw/source/triples",
+    "seed1/exact oracle/delta",
+    "seed1/exact original production/content/bytes/strict",
+    "seed1/exact wrong-key repertoire",
+    "seed1/paraphrase oracle/delta",
+    "seed1/paraphrase original production/content/bytes/strict",
+    "seed1/paraphrase wrong-key repertoire",
+    "seed1 original scores pin",
+    "seed1 original collection pin",
+    "seed2 denominator/raw/source/triples",
+    "seed2/exact oracle/delta",
+    "seed2/exact original production/content/bytes/strict",
+    "seed2/exact wrong-key repertoire",
+    "seed2/paraphrase oracle/delta",
+    "seed2/paraphrase original production/content/bytes/strict",
+    "seed2/paraphrase wrong-key repertoire",
+    "seed2 original scores pin",
+    "seed2 original collection pin",
+    "seed0 paraphrase literal constant14rows",
+    "seed0 constant same six correct IDs",
+    "seed2 exact/paraphrase identical bytes",
+    "previous EDITSTOP hash paper_prototype/astra_sprint_draft_20260912.tex",
+    "new exact/paraphrase gains in summary paper_prototype/astra_sprint_draft_20260912.tex",
+    "causal-boundary summary paper_prototype/astra_sprint_draft_20260912.tex",
+    "no obsolete constant pending status paper_prototype/astra_sprint_draft_20260912.tex",
+    "no added whitespace errors paper_prototype/astra_sprint_draft_20260912.tex",
+    "SEQ153-only added scope paper_prototype/astra_sprint_draft_20260912.tex",
+    "all numerical tables preserved paper_prototype/astra_sprint_draft_20260912.tex",
+    "citations preserved paper_prototype/astra_sprint_draft_20260912.tex",
+    "escape-aware braces paper_prototype/astra_sprint_draft_20260912.tex",
+    "environment nesting paper_prototype/astra_sprint_draft_20260912.tex",
+    "unique labels paper_prototype/astra_sprint_draft_20260912.tex",
+    "resolved references paper_prototype/astra_sprint_draft_20260912.tex",
+    "first-divergent definition preserved paper_prototype/astra_sprint_draft_20260912.tex",
+    "previous EDITSTOP hash paper_prototype/astra_sprint_abstract_20260912.md",
+    "new exact/paraphrase gains in summary paper_prototype/astra_sprint_abstract_20260912.md",
+    "causal-boundary summary paper_prototype/astra_sprint_abstract_20260912.md",
+    "no obsolete constant pending status paper_prototype/astra_sprint_abstract_20260912.md",
+    "no added whitespace errors paper_prototype/astra_sprint_abstract_20260912.md",
+    "SEQ153-only added scope paper_prototype/astra_sprint_abstract_20260912.md",
+    "Markdown tables preserved paper_prototype/astra_sprint_abstract_20260912.md",
+    "previous EDITSTOP hash paper_prototype/main.tex",
+    "new exact/paraphrase gains in summary paper_prototype/main.tex",
+    "causal-boundary summary paper_prototype/main.tex",
+    "no obsolete constant pending status paper_prototype/main.tex",
+    "no added whitespace errors paper_prototype/main.tex",
+    "SEQ153-only added scope paper_prototype/main.tex",
+    "all numerical tables preserved paper_prototype/main.tex",
+    "citations preserved paper_prototype/main.tex",
+    "escape-aware braces paper_prototype/main.tex",
+    "environment nesting paper_prototype/main.tex",
+    "unique labels paper_prototype/main.tex",
+    "resolved references paper_prototype/main.tex",
+    "first-divergent definition preserved paper_prototype/main.tex",
+    "previous EDITSTOP hash paper_prototype/README.md",
+    "new exact/paraphrase gains in summary paper_prototype/README.md",
+    "causal-boundary summary paper_prototype/README.md",
+    "no obsolete constant pending status paper_prototype/README.md",
+    "no added whitespace errors paper_prototype/README.md",
+    "SEQ153-only added scope paper_prototype/README.md",
+    "Markdown tables preserved paper_prototype/README.md",
+    "previous EDITSTOP hash research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md",
+    "new exact/paraphrase gains in summary research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md",
+    "causal-boundary summary research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md",
+    "no obsolete constant pending status research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md",
+    "no added whitespace errors research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md",
+    "SEQ153-only added scope research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md",
+    "Markdown tables preserved research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md",
+    "added local evidence link /tmp/astra_actual_memory_constant_baseline_20260913.json",
+    "added local evidence link /tmp/astra_actual_memory_constant_baseline_20260913.md",
+    "previous EDITSTOP hash research_notes/astra_memos/ASTRA_COLLABORATOR_DRAFT_2026-09-12.md",
+    "new exact/paraphrase gains in summary research_notes/astra_memos/ASTRA_COLLABORATOR_DRAFT_2026-09-12.md",
+    "causal-boundary summary research_notes/astra_memos/ASTRA_COLLABORATOR_DRAFT_2026-09-12.md",
+    "no obsolete constant pending status research_notes/astra_memos/ASTRA_COLLABORATOR_DRAFT_2026-09-12.md",
+    "no added whitespace errors research_notes/astra_memos/ASTRA_COLLABORATOR_DRAFT_2026-09-12.md",
+    "SEQ153-only added scope research_notes/astra_memos/ASTRA_COLLABORATOR_DRAFT_2026-09-12.md",
+    "Markdown tables preserved research_notes/astra_memos/ASTRA_COLLABORATOR_DRAFT_2026-09-12.md",
+    "matching TeX sections",
+    "matching three-copy abstract paragraph",
+    "rules sentinel preserved"
+  ],
+  "check_count": 97,
+  "previous_validation": "/tmp/astra_manuscript_seq153_constant_record_validation_20260913.json",
+  "rules_sha256": "2c82a32c5e52d5f8b4fa34714b9388cc29d011da9505816613466501dd133e07",
+  "limitations": [
+    "No scientific scorer/reducer/native/model/tokenizer execution by manuscript writer.",
+    "Constant alternative is evaluator-only post-hoc oracle over unchanged admissible targets, not an executed model baseline.",
+    "Two new sources remain local /tmp artifacts; Main owns repository archival integration.",
+    "PDF build/layout unavailable.",
+    "No Git/native/GPU/network/external operations or unrelated repository edits."
+  ]
+}

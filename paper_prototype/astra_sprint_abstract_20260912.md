@@ -1,13 +1,30 @@
 # FIRST SPRINT DRAFT — companion abstract
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ151 retains both positive and negative findings.
+This evidence cut through SEQ153 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current evidence through SEQ151 — C83–C87; ongoing first draft.**
+**Current evidence through SEQ153 — C88/C89; ongoing first draft.**
+Native greedy exact-TRAIN is now14/16 versus OFF8/16; READOUT remains8/16
+for both. HF forced15/16 remains a different measurement, and its independent
+stored-receipt analysis is complete, not a new forward pass. Same-learner actual
+record writes yield source-faithful exact-cue recall8/14,7/8,5/8 versus zero,
+but held skill falls44/37/17 versus47/48/48:3/11/31 itemwise losses while the
+same12canaries stay correct. The4/5/5 distinct raw targets encode3/5/5 source
+contents (2/4/3 triples). Against an evaluator-only best constant record, exact
+recall gains+2/+3/+1 and paraphrase+0/+1/+1; seed0 paraphrase is literally
+constant. This excludes only a single fixed-response alternative on the saved
+exact panels, not heuristic cue use, and does not prove causal key association.
+This is narrow parametric carriage, not a stable
+substrate, parenting, general G3, H1/H2, a working learning loop or mission
+completion. Post-memory fresh-interaction outcomes and the lower-LR repair
+remain PENDING; a launch or developing runner is not a result. Historical
+pending statements below retain their named earlier cuts. Collaborator UNSENT.
+
+**Historical evidence through SEQ151 — C83–C87.**
 Through SEQ151, all 24 authored Level1 cells are complete, with three canary
 regressions in the second roster. Actual-record v2 executes actions and yields
 source-faithful records under an external prompt scaffold with mandatory priors;
@@ -355,7 +372,7 @@ cases remain unrequested; no G3, parenting, child sleep, H1/H2, clean lineage,
 novel-fact transfer or substrate freeze follows. Model origin remains
 `UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred. Collaborator **UNSENT**.
 
-Internal staging only; the canonical abstract now includes the bounded update through SEQ151 while preserving its historical text. H1/H2 remain the proposed
+Internal staging only; the canonical abstract now includes the bounded update through SEQ153 while preserving its historical text. H1/H2 remain the proposed
 developmental thesis, not established outcomes.
 
 ## Abstract
@@ -406,7 +423,7 @@ and actual-record transfer results remain pending. The learning-flywheel thesis
 and H1/H2 remain open; these results neither complete the mission nor freeze a
 mechanism.
 
-At the SEQ-151 cut, all 24 standalone authored Level1 cells are complete;
+At the historical SEQ-151 cut, all 24 standalone authored Level1 cells are complete;
 the second roster improves held content but incurs three canary regressions.
 Prompt-scaffolded actual-record formation yields OFF7/16 versus14/16,8/16,8/16
 source-faithful records from the same three perception learners, with mandatory
@@ -416,6 +433,21 @@ treatment contrasts. A checkpoint-specific HF diagnostic gives TRAIN15/16 and
 READOUT8/16 by both first-divergent-token and full likelihood, not native greedy accuracy;
 independent analysis remains pending. Actual-memory writing/readback remains
 protocol/CPU-runner development, not a result. H1/H2 and the mission remain open.
+
+Through SEQ-153, native greedy exact-TRAIN at the high-seed2 checkpoint scores
+14/16 versus OFF8/16, while both READOUT scores remain8/16; HF forced15/16 is
+not the native endpoint. Three same-learner actual-record WRITE/LR0 pairs show
+cold source-faithful exact-cue recall8/14,7/8,5/8 versus zero, with paraphrase
+6/14,5/8,5/8. Exact-byte recall is7/14,7/8,5/8 and strict canonical recall
+3/14,0/8,0/8. Held perception falls to44/48,37/48,17/48 from47/48,48/48,48/48:
+3/11/31 itemwise losses despite unchanged12/12canaries. This is narrow native
+parametric carriage of sourced child records, not stable retention, better
+future learning, parenting, general G3, H1/H2 or a working learned loop.
+Against an evaluator-only best constant record, exact recall gains+2/+3/+1
+and paraphrase+0/+1/+1; seed0 paraphrase is literally constant. These saved-panel
+differences exclude only a single fixed-response alternative; they do not establish
+causal key binding.
+Fresh-interaction and lower-LR repair outcomes remain pending; the mission is open.
 
 ## Historical SEQ143 result-table companion — C79–C82
 

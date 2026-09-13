@@ -1,13 +1,30 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ151 retains both positive and negative findings.
+This evidence cut through SEQ153 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current evidence through SEQ151 — C83–C87; ongoing first draft.**
+**Current evidence through SEQ153 — C88/C89; ongoing first draft.**
+Native greedy exact-TRAIN is now14/16 versus OFF8/16; READOUT remains8/16
+for both. HF forced15/16 remains a different measurement, and its independent
+stored-receipt analysis is complete, not a new forward pass. Same-learner actual
+record writes yield source-faithful exact-cue recall8/14,7/8,5/8 versus zero,
+but held skill falls44/37/17 versus47/48/48:3/11/31 itemwise losses while the
+same12canaries stay correct. The4/5/5 distinct raw targets encode3/5/5 source
+contents (2/4/3 triples). Against an evaluator-only best constant record, exact
+recall gains+2/+3/+1 and paraphrase+0/+1/+1; seed0 paraphrase is literally
+constant. This excludes only a single fixed-response alternative on the saved
+exact panels, not heuristic cue use, and does not prove causal key association.
+This is narrow parametric carriage, not a stable
+substrate, parenting, general G3, H1/H2, a working learning loop or mission
+completion. Post-memory fresh-interaction outcomes and the lower-LR repair
+remain PENDING; a launch or developing runner is not a result. Historical
+pending statements below retain their named earlier cuts. Collaborator UNSENT.
+
+**Historical evidence through SEQ151 — C83–C87.**
 Through SEQ151, all 24 authored Level1 cells are complete, with three canary
 regressions in the second roster. Actual-record v2 executes actions and yields
 source-faithful records under an external prompt scaffold with mandatory priors;
@@ -3787,7 +3804,7 @@ archive SHA256 `c2ba707c2bd0cda768665b38d240628d739417e7788f32176d31e857a3b64558
 These are private ignored artifacts, not published logs; the manuscript editor
 reads existing inspection/verification only, without native access or new model hashes.
 
-## C87 — SEQ151: high-seed2 HF discrimination, independent analysis pending
+## C87 — SEQ151: high-seed2 HF discrimination; stored-receipt analysis complete
 
 Saved checkpoint-specific diagnostic,192teacher-forced candidate forwards,
 zero updates; all three states retained. First/full TRAIN counts OFF8/8,
@@ -3796,14 +3813,149 @@ each view; OFF/fit2 first ties0; all full ties0. Fit2 TRAIN old8/8,new7/8 versus
 READOUT old4/8,new4/8. This is stronger keyed candidate discrimination at this
 checkpoint, with a prompt-dependent gap, not demonstrated pure access failure.
 Unequal12/14-token lengths, teacher forcing and candidate restriction persist.
-Native greedy READOUT remains8/16; native greedy exact-TRAIN is unmeasured.
+Native greedy READOUT remains8/16; exact-TRAIN was unmeasured at this HF cut
+and is now reported separately under C88.
 Checkpoint motivation from inspected low loss is exploratory, not confirmation.
 C78's earlier checkpoint and ties remain separate historical evidence.
 
 Source: [archived high-seed2 report](receipts_20260912/astra_l2_access_high_seed2_report_20260913.json), SHA256
 `9cb95809b5ff658c45e39a21a522433d666b2696af8feda698ef2d951604346b`;
 [prospective protocol](ASTRA_SEED2_HIGH_ACCESS_PROTOCOL_2026-09-13.md), SHA256 `be6edc7ae575f8b846b20a81c7d91dbacdee4273fb089f931acaf523ce4e75c4`.
-Independent `/tmp/astra_l2_high_seed2_independent_analysis_20260913.md` is
-**PENDING**, not used as evidence. Native-greedy probe is development only.
+The formerly pending [independent HF analysis](receipts_20260912/astra_l2_high_seed2_independent_analysis_20260913.md), SHA256
+`6d4f46be4b13b62e1c618f6543e7e171df9e5008e46b45cc9cf94aae47552dec`,
+now reproduces the original reduction byte-for-byte, with recorded tensor/prompt
+checks; it is scoped receipt replay, not new HF forward execution or native
+model-memory inspection. C88 separately reports native greedy generation.
 No new fit, native-generation equivalence, general G3, clean-lineage, parenting,
 H1/H2, mechanism freeze or completed mission is asserted. Collaborator UNSENT.
+
+## C88 — SEQ152: native greedy exact-cue acquisition, not HF equivalence
+
+At the saved high-LR learner-seed2 fit2PROMOTE checkpoint, native greedy TRAIN
+is14/16 (old7/8,new7/8), versus OFF8/16 (4/8,4/8). READOUT is8/16 in both
+states (4/8,4/8). All64outputs are legal and stop-completed; exact archived-target
+counts equal correct counts. Cost:64generations, zero fits/updates,351.212s
+controller execution. The earlier HF forced first/full TRAIN15/16 remains
+distinct; one TRAIN slot0 correctness disagreement has HF first-divergent gold
+margin0.25 but native failure. This is exact-cue acquisition without a wording
+transfer gain at one checkpoint, not numerical HF/native parity, proof of pure
+access failure or an explanation for every LR cell.
+
+Sources: [native greedy report](receipts_20260912/astra_l2_high_seed2_greedy_report_20260913.json),
+SHA256 `62c01302d039093aef7e87ff2dfe5b28e5633c700d2d78ea3c775decf8d3b062`;
+[Main's raw-receipt replay](receipts_20260912/astra_greedy_receipt_replay_20260913.json),
+SHA256 `d1bcb45ea778b130bdd5d36f4a1967ac1055f4a3da759c3581d7d70571561fbf`.
+Replay status is `PASS_RAW_RECEIPT_REPLAY`, with64generation-call joins and
+132verified stage files, not a new native/model run. Ledger SEQ152 binds the
+165-member native archive SHA256
+`94b4c06968744cd9ef3b79b40e7e61363167a88ae04394827aab85a2120fd124`.
+
+C87's formerly pending [HF independent analysis](receipts_20260912/astra_l2_high_seed2_independent_analysis_20260913.md),
+SHA256 `6d4f46be4b13b62e1c618f6543e7e171df9e5008e46b45cc9cf94aae47552dec`,
+is complete: byte-for-byte original reduction from192stored candidate-forward
+receipts, prompt/mask joins and recorded tensor/conversion checks. It does not
+re-execute HF forwards, tokenizer or base model, inspect native model memory or
+independently reproduce numerical logits. First still means the first divergent
+candidate token after the shared two-token prefix. C78's earlier checkpoint,
+ties and12/16 forced result are unchanged historical evidence.
+
+## C89 — SEQ153: actual-record parametric carriage with substantial skill damage
+
+All three same-learner WRITE/LR0 pairs start from their respective original
+authored-Level1 perception adapters, with fresh optimizers and unchanged frozen
+base: rank8, batch1, eight passes, LR1e-4 versus0. Every admitted raw child record
+plus EOS is supervised with source-withdrawn conditioning masked; no teacher
+rewriting or held-answer targets enter sleep. Cold inference removes formation
+history, source facts and retrieval; schema cues remain. Formation itself uses
+C85's external prompt scaffold/mandatory prior. Imported parents/raw-source
+dependencies preclude a clean autonomous ancestry or matched-parenting claim.
+
+| Seed | Admitted / possible | Exact P/B/S | Paraphrase P/B/S | Held WRITE/LR0 /48 | Paired held wins/losses | Canary WRITE/LR0 /12 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 0 | 14/16 | 8/7/3 | 6/4/0 | 44/47 | 0/3 | 12/12 |
+| 1 | 8/16 | 7/7/0 | 5/5/0 | 37/48 | 0/11 | 12/12 |
+| 2 | 8/16 | 5/5/0 | 5/5/0 | 17/48 | 0/31 | 12/12 |
+
+P=source-faithful production eligibility (content counts coincide), B=exact raw
+target bytes, S=strict canonical correctness. Memory counts use14/8/8 as their
+respective denominators; **all corresponding LR0 memory counts are zero**.
+All14/8/8 admitted records are retained without deduplication or selection;
+they contain4/5/5 distinct raw targets and2/4/3 admitted triples across8episodes
+per learner. Exact/paraphrase cues concern the same experiences, not independent
+facts. Three learner-specific material sets do not justify a pooled causal rate.
+The completed evaluator-only constant-record diagnostic selects one unchanged
+admitted raw target per seed after seeing the same evaluation executions, using
+the frozen memory/core scorer and hypothetical stop completion. Its full-source
+oracle scores6/14,4/8,4/8 in either view. Exact WRITE exceeds these by+2/+3/+1;
+paraphrase by+0/+1/+1. Seed0 paraphrase literally emits the same raw record on
+all14rows with exactly the oracle's six correct IDs. The4/5/5 raw targets encode
+3/5/5 full source-content records: neither raw-byte nor triple frequency can
+substitute for full-source correctness. Exact wrong-key repertoire assignments
+remain6/1/3; paraphrase8/3/3. Seed0 exact repeats task-level content across turns;
+seed1 shows partly appropriate nonconstant assignment; seed2's+1 is one correct
+minority-record selection, with exact/paraphrase outputs byte-identical on all8rows.
+This rules out only a single fixed-response alternative on the saved exact panels,
+not limited repertoire switching or heuristic cues. C89 claims source-faithful
+recall, not a causal/general key-binding mechanism; no new model output, executed
+baseline, counterfactual key intervention or fresh-record confirmation is supplied.
+
+Archived [constant-record diagnostic JSON](receipts_20260912/astra_actual_memory_constant_baseline_20260913.json),
+SHA256 `08bdf7627df6eb5d690530faa1784716da2cd9a520ca52556ad7342ee76740af`;
+[companion analysis](receipts_20260912/astra_actual_memory_constant_baseline_20260913.md),
+SHA256 `b0798484c941436f990393f80e13e73ed68b3ead5779e7ddf38e3f3291b1bbb9`.
+These diagnostic sources are repository-archived at the pinned hashes;
+public release is not established here. The diagnostic reproduces stored WRITE memory
+scores with the frozen scorer; retention/LR0 panels and training were not rerun.
+It qualifies SEQ153 only and is not an additional native experiment.
+
+Held content/strict losses coincide at3/11/31 with no gains. WRITE raw outputs
+change4/11/31 relative to original parents; LR0 held/canary outputs remain exactly
+the originals. Seed0 has four unparseable held outputs; seeds1/2 have48/48exact
+formats despite11/31content losses. No held output is length-terminated. Thus
+format failure contributes for seed0 but is not a blanket explanation for damage.
+The same12copy/arithmetic canaries pass in all arms and miss this skill loss.
+This is narrow cold parametric carriage, not selective retention, stable capacity,
+a learned working loop, H1/H2, general G3, parenting, freeze or mission completion.
+Costs:176/152/152calls per pair,112/64/64steps per arm;480calls, six fits and
+480steps total (240WRITE,240LR0). LR0 steps do not imply weight change.
+
+Sources: [paired scored-row analysis](receipts_20260912/astra_actual_memory_analysis_result_20260913/analysis.json),
+SHA256 `7bf30652548ed36800f8f1c5ee0c9a34dc79409d50c95b9818ce103364ebd323`;
+[companion analysis](receipts_20260912/astra_actual_memory_analysis_result_20260913/analysis.md),
+SHA256 `e0d1ee714c0a8f277f281015d789dcac1c8d7c288df8d52b02a06565400ee314`.
+These reproduce native summaries from pinned scored rows, not new raw native
+computation, recollection or tensor verification. Seed0/1/2 native score pins:
+`b56a0caa16259e29860efa284d283610ab9bfa9064c64f121fe7cc34266b72bf`,
+`5fe7638aa86e718b36ea00f9a97b9e36acbed4b464c968737acbc86447c71979`,
+`a0182417e86e85ab6a874c7e98d77fd5952e2bb036fe1a2e35d6e7289ecb0cef`.
+
+Separate [local custody audit](receipts_20260912/astra_actual_memory_custody_audit_20260913.md),
+SHA256 `d551d9c493cdbb124c0fbee576f4b7b68d028e24e6d4b5a5a606b1c37c046a26`,
+binds `gpu_artifacts_local/actual_record_memory_20260913_attempt1/evidence.tar`,
+SHA256 `3ed6579e7e885139d78faf3457eb3bec254215d36b533558ef22f8199ff6a003`:
+1166members/1135regular files,1074stage files and480raw-response joins. This is
+local byte-integrity/internal-custody PASS, **not scientific-score review**.
+Original formation, perception parents and frozen source dependencies resolve
+through three separate prior archives (respectively SHA256
+`71671dc02e175be0dafba595aa4e9ef30c409953a0366cc082b4d7e319c055c0`,
+`addc2e61ce05f2b622482adde82f16c2c571db6dd072b0fb7750a4d6dc559a3a`,
+`e2ec97cad381ae4686be3830d02bd7533a20406bb5eb84164a92d369a144b749`),
+not a self-contained clean-lineage capsule. New captures are object-preserving
+compact JSON reserializations, not original formation-file bytes; nested raw
+strings remain unchanged. The audit compares392tensor payload hashes per
+parent/final:392WRITE changes, zero LR0 changes, source/initialized equality,
+and no dtype conversion in these fits. It does not calculate tensor norms or
+changed-element counts; recorded WRITE L2 deltas3.9206653/3.589591/3.1796801
+and zero LR0 deltas are not independently numerically certified.
+
+Three controller exit receipts record rc0. Worker releases remain wrapper-attested
+and emitted in `finally`, with no standalone per-worker exit receipts or raw
+historical GPU/group-vacancy observations. These attestations alone do not prove
+worker success. The audit does not authenticate current vacancy, base weights,
+interpreter/runtime or model execution, or redo a native/VM transfer check.
+
+**PENDING through SEQ153:** post-memory fresh-interaction outcomes (launched only)
+and lower-LR3e-5 retention repair (runner development only). The inspected held
+panel is now exploratory for repair; fresh confirmation is required. C85's prior
+formation-only status remains historical, not a denial of this later bounded
+write result. No later outcomes are incorporated. Collaborator remains UNSENT.

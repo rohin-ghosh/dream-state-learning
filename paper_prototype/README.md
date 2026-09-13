@@ -1,13 +1,30 @@
 # Experience Models — ICLR 2027 submission (revised draft v3, 2026-09-10 fix pass)
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This evidence cut through SEQ151 retains both positive and negative findings.
+This evidence cut through SEQ153 retains both positive and negative findings.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
 independent review, with no later outcomes incorporated.
 
-**Current evidence through SEQ151 — C83–C87; ongoing first draft.**
+**Current evidence through SEQ153 — C88/C89; ongoing first draft.**
+Native greedy exact-TRAIN is now14/16 versus OFF8/16; READOUT remains8/16
+for both. HF forced15/16 remains a different measurement, and its independent
+stored-receipt analysis is complete, not a new forward pass. Same-learner actual
+record writes yield source-faithful exact-cue recall8/14,7/8,5/8 versus zero,
+but held skill falls44/37/17 versus47/48/48:3/11/31 itemwise losses while the
+same12canaries stay correct. The4/5/5 distinct raw targets encode3/5/5 source
+contents (2/4/3 triples). Against an evaluator-only best constant record, exact
+recall gains+2/+3/+1 and paraphrase+0/+1/+1; seed0 paraphrase is literally
+constant. This excludes only a single fixed-response alternative on the saved
+exact panels, not heuristic cue use, and does not prove causal key association.
+This is narrow parametric carriage, not a stable
+substrate, parenting, general G3, H1/H2, a working learning loop or mission
+completion. Post-memory fresh-interaction outcomes and the lower-LR repair
+remain PENDING; a launch or developing runner is not a result. Historical
+pending statements below retain their named earlier cuts. Collaborator UNSENT.
+
+**Historical evidence through SEQ151 — C83–C87.**
 Through SEQ151, all 24 authored Level1 cells are complete, with three canary
 regressions in the second roster. Actual-record v2 executes actions and yields
 source-faithful records under an external prompt scaffold with mandatory priors;
@@ -37,7 +54,51 @@ Historical exclusion statements below apply only to their named earlier cuts.
 This directory holds the paper draft: `main.tex`, `refs.bib`, and this README.
 
 
-## Latest bounded extension — SEQ144–151 / C83–C87
+## Current bounded extension — SEQ152–153 / C88–C89
+
+Both TeX manuscripts add `sec:seq153-extension`, retaining earlier tables.
+Native greedy exact-TRAIN is **14/16** (old7/new7) at high-LR seed2 fit2PROMOTE,
+versus OFF8/16; READOUT is8/16 in both states. This separate64-call, zero-fit,
+zero-update assay is not HF's **15/16** forced TRAIN result. HF independent
+stored-receipt reduction is now complete, not a new forward pass or proof of
+HF/native numerical parity; one TRAIN correctness disagreement remains.
+
+Actual-record WRITE versus LR0 starts from each same learner's imported,
+authored-Level1 perception adapter: eight passes, LR1e-4 versus0. Exact raw child
+records plus EOS are supervised, not teacher-rewritten targets or held answers.
+Cold inference has no formation history, source facts or retrieval; schema cues
+remain. The experiences themselves used an external scaffold and mandatory priors.
+
+| Seed | Admitted / possible | Exact P/B/S | Paraphrase P/B/S | Held WRITE/LR0 /48 | Paired held wins/losses | Canary WRITE/LR0 /12 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 0 | 14/16 | 8/7/3 | 6/4/0 | 44/47 | 0/3 | 12/12 |
+| 1 | 8/16 | 7/7/0 | 5/5/0 | 37/48 | 0/11 | 12/12 |
+| 2 | 8/16 | 5/5/0 | 5/5/0 | 17/48 | 0/31 | 12/12 |
+
+P is source-faithful production eligibility (equal to content here), B exact
+target bytes, S strict canonical correctness; memory entries are WRITE counts
+out of14/8/8 respectively, with all corresponding LR0 counts zero. There are
+only4/5/5 distinct raw targets and2/4/3 admitted triples: repeated records and
+paraphrase cues are not independent facts or task replications. No pooled causal
+rate is claimed. Seed0 has four unparseable held outputs; seeds1/2 remain fully
+canonical despite11/31 content losses. The same12correct canaries do not detect
+this skill damage. Costs:480generations, six fits,480steps (240WRITE,240LR0).
+
+This is narrow parametric carriage with substantial interference, not selective
+retention or a working learned loop. The paired analysis reduces scored rows;
+the separate custody audit verifies local bytes and480raw-response joins, not
+scientific efficacy. Parent/source dependencies require three prior archives;
+captures preserve objects/raw strings, not original file serialization. Worker
+release is wrapper-attested, without raw historical vacancy/per-worker exit
+receipts. No clean-lineage, parenting, general G3, H1/H2 or freeze claim follows.
+
+Sources, exact pins and audit boundaries: [C88–C89 claim map](../research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md#c88--seq152-native-greedy-exact-cue-acquisition-not-hf-equivalence).
+**PENDING at this cut:** post-memory fresh-interaction outcomes (launched only),
+and lower-LR3e-5 retention repair (runner development only). The inspected held
+panel is exploratory for repair; fresh confirmation is required. Collaborator
+remains **UNSENT**; no later outcomes or PDF build are incorporated.
+
+## Historical bounded extension — SEQ144–151 / C83–C87
 
 Both TeX manuscripts add `sec:seq151-extension` without replacing historical
 tables. The second authored roster completes the24cells across eight skills;
