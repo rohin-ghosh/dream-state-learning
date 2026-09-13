@@ -14216,6 +14216,36 @@ failed. A3 did not qualify its byte/interface endpoint: noA4 algorithm scaffold
 or ACTIVE/full-panel launch. Stop this prompt ladder; any successor must be
 separately named/prospective and retain these negative results unchanged.
 
+## [Independent EVENT-only audit] 2026-09-13 — valid SEQ-171 prefix candidate; REWORK before one bounded fit
+
+Fresh read-only audit:
+`research_notes/analysis/2026-09-13_pcfl_event_only_prefix_and_localizer_audit.md`.
+Direct archive inspection confirms the fixed first sixteen SEQ-171 calls are
+eight intact chronological EXPLORE/EVENT pairs, all world-admitted before the
+later LINK failure. Importing that exact prefix is legitimate as a separate
+retrospective component diagnostic, while the enclosing formation remains
+FAILED. It is an externally format-assisted controlled curriculum, not
+autonomous formation.
+
+Verdict is **REWORK/HOLD before fit**. The current uncommitted importer retains
+`native_custody_verified=false`, joins the identity file's bytes without yet
+validating its substantive Qwen/C0/no-LoRA/model binding, and still needs an
+actual-tokenizer receipt plus committed CPU gates and a complete one-shot
+reducer/lifecycle. Before any output, split the content endpoint from the known
+terminal-LF pathology: W8 semantic-stop is the construct-aligned acquisition
+endpoint and strict-stop separately measures exact-byte interface compliance;
+freeze both vectors and thresholds prospectively. If strict-only remains, the
+question must be called exact byte-interface acquisition.
+
+After those repairs, conditional GO for one LOW/r8 fit and symmetric W0/W8
+AUTH-versus-C0 readout only: eight EVENTs -> fourteen addresses, twenty slots,
+800 presentations, 200 updates, fifty-six calls. The experimental unit is one
+life/root/fit, not fourteen or fifty-six. A result cannot support LINK,
+connected knowledge, traversal, expansion, retention, compression, lifetime,
+or baseline-superiority claims. Stop after the one diagnostic and return to
+dynamic-order child-chosen LINK formation plus the corrected connected-memory
+C0/two-root vertical; EVENT-only may not replace either branch.
+
 ## [Independent interface implementation audit] 2026-09-13T15:06Z — current partial source is STOP before native calls
 
 Read-only audit
@@ -14236,3 +14266,31 @@ stops. Required record fields and boundary fixtures are also incomplete. No
 builder source, model, tokenizer, GPU, or runtime was touched. This stop is
 specific to the C0 interface path and does not block the separately scoped
 EVENT-only storage localizer.
+
+## [Dynamic LINK formation designer] 2026-09-13 — remove the hidden/disclosed pair seam; bind the bank the child actually authors
+
+Prospective documentation-only repair:
+`research_notes/analysis/2026-09-13_pcfl_dynamic_child_link_formation_repair.md`.
+SEQ-171's first LINK was world-valid and failed only because it did not match a
+hidden preselected pair; SEQ-172/173 then disclosed the pair and made the
+harness the connection selector. The smallest valid successor deletes
+`link_choices` and all pair-specific prompts/expected LINK rows. After the
+eight exact child EVENTs, the verifier privately seals the complete set of
+directly chained pairs derived from those admitted rows, asks only for one
+not-yet-recorded chain plus a fresh empty LINK address, accepts any valid pair
+in child-chosen order without replacement, and seals the actual resulting
+bank. NEW formation uses the identical rule and requires both chains involving
+the child-authored NEW EVENT without reinjecting any OLD text.
+
+The preflight exhaustively covers 768 valid OLD+NEW histories/orderings,
+fail-closed mutations, prompt leakage, custody timing, downstream control/cut
+order invariance, and rejection of every obsolete preselected-pair field.
+Actual progression remains corrected C0 -> one disposable 20-call formation ->
+two untouched 20-call DEV formations -> S1 -> reachout -> four 4-call NEW
+continuations -> S2. Dynamic binding adds zero calls or fits: formation remains
+76 calls / 14,080 output-token maximum; full v2.2 remains 15--16 fits,
+3,000--3,200 updates and 19--20 aggregate A40-hours. EVENT-only may proceed as
+a storage localizer but cannot replace the dynamic LINK/two-root vertical. A
+formation pass supports format-assisted child emission of the complete direct
+relation set—not discovery, storage, traversal, lifetime gain, or compression.
+No builder/runtime/model/GPU file or process was touched.
