@@ -8868,6 +8868,36 @@ contrast, not learned skill/persistence. Raw failure analysis is in progress
 before its own SEQ. The predeclared two-fit/six-readout comparison remains
 independent and unchanged by these observations; Main native acceptance next.
 
+## [Builder] 2026-09-13T04:06Z — perception birth comparison native pre-GPU acceptance
+
+Two-fit/six-readout driverf62da57d/tests4d9a1128 pass30 Main VM CPU tests4.492s
+and30 native CPU tests3.221s. Actual native preparation passes24 training
+encodings/masks, distinct PAD/EOS, source-disjoint12train/12dev, identical
+target exposure and epoch orders, zero truncation. Native full assistant EOS
+is explicitly supervised once; template-only trailing newline is masked;
+add_eos=false prevents a duplicate end token. Per-epoch supervised tokens372
+in each arm; total sequence tokens3024 absent/3444 present, explicitly unequal
+prompt compute. Four epochs =>1488 supervised tokens and48 presentations/fit.
+
+Prepared root node3 /localhome/local-rohing/astra_diagnostics/perception_fit_20260913_attempt1,
+planf5f2315d5fa35029249f77b075943fa2c0a36b2691037a7700b50cefbe48c837,
+source /localhome/local-rohing/astra_sources/perception_fit_20260913_attempt1,
+sourcecapsule2ec917cc1a085306b9678cf4fb6f529a629f37d11b803dc6d03fc810b7a5f3ce,
+preparedcapsule464979fb4d72ea0521d63c6d98cd92f549ecc6a9cbc6558eff5d929e0bad24bc.
+All source, tests, handoff, plan and prepared evidence archived. Main accepts
+the previously selected seed0 rank8/alpha16/LR1e-4 four-epoch recipe, two cold
+fits and six matched LoRA-enabled readout cells,72calls/max192. Training
+data/targets/gates are unchanged by the independent OFF probe's scores.
+
+Operational readout ceilings raised prospectively140->240s from measured cold
+startup, not outcomes; fit ceilings600s, whole controller2700s, collection180s
+unchanged. Individual ceilings are not summed expected duration or a guarantee;
+the global deadline may stop a slow campaign. Author-sourced development only,
+not teacher distillation, sleep or demonstrated persistence. Main selects
+node3GPU0 after the completed OFF probe, subject to immediate reservation
+recheck. Controller PID follows launch. No inference of general learning or
+claim based on one seed; later independent learner replications remain needed.
+
 ## [Fable] 2026-09-13T04:03Z — self-check: Q0 attempt 2 ran to its own early stop — all three writer fits halted after ONE update (candidate, not yet a terminal claim); per-skill birth corpus CPU-accepted; first anchor-prompt probe on the GPU; fleet otherwise idle
 
 **Q0 attempt 2 (launched 03:23, durable 03:46 UTC; builder 03:52; node-3 files read directly):** the closed pairwise selective-writer test attempted its three fits (P_AUTH, P_DERANGED, P_UNARY_TOOL) and each stopped after its first update under the pre-registered early-stop rule: label `EARLY_XOR_QUARTET_STOP_AUTH`, qualifiers `BOTH_MAP_FIRST_STEP_MISS`, `EARLY_UNARY_TOOL_STOP`, `OPAQUE_TOOL_WRITE_FAILURE_THIS_RECIPE`; 2,925 counted forwards, 12 training forwards, 3 updates, 296 OFF generations; complements 0/128 exact and 0/64 held (empty cells, not measured zeros); reduction classification `CANDIDATE_ONLY_NOT_A_TERMINAL_CLAIM`, scientific_claim false until the separate read-only native replay (PID 312164, CUDA hidden) validates it; 1,378 s of a 2,700 s budget. Builder's boundary, which I share: no completed 128-update fit and no ON readout exist, so this neither qualifies the writer nor shows the architecture cannot learn — it shows that THIS frozen recipe (LR 3e-5, pairwise common-prefix, opaque tool) fails its own first-step criterion on root 1. **What it means for the paper, for Rohin to weigh:** Codex's 23:xx memo asked for "one Q0 kill root, then parallelise"; this is the kill-root outcome. If the replay validates, the closed writer contract has produced its first negative on the first root, and the deadline path (three valid roots by Sep 15 noon PDT) runs through either (a) two more roots of the same frozen recipe, which would make the negative replicable and honest, or (b) a recipe change, which is post-hoc and must be declared as a new contract, not a repair. That choice is a claims decision and therefore Rohin's; Codex's paper audits already say the lower-rung "storage without selective control" abstract is the honest fallback.
