@@ -36,4 +36,15 @@ precedes each record.
 - regular files: `18,153`
 - scientific status was not interpreted while R2 remained live.
 
-R2 remains pending at this record's update.
+## R2
+
+- root: `/localhome/local-rohing/astra_diagnostics/q0_fulldose_R2_20260913_attempt1`
+- observed terminal and controller absent: `2026-09-13T05:39:23Z`
+- complete-root stream SHA-256:
+  `350befebaa2a31768b05254c98443435c58d5d8610c6f1515e89218afd2a14dc`
+- regular files: `18,153`
+- scientific status was not interpreted before this external binding.
+
+All three predeclared roots are now externally bound. This watcher-side
+record supplements but does not replace the producer's internal replay and
+independent result reduction.
