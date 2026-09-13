@@ -81,3 +81,29 @@ full parent-free panel. A teaching-only response would not establish learning.
 
 The formal C11 guard remains deferred. Simple hygiene, parent blindness,
 provenance, paired controls, immutable evidence and resource ownership remain.
+
+## Independent raw review: partial handoff, no promotion
+
+Ampere independently recounted384outputs and verified814readout+39fit capsule
+member hashes. Its partial handoff agrees with the registered headline counts
+and both conjunction failures. It is not a finalized exhaustive frozen-result
+comparison: an independent parser prefix-matches two DERANGED dual-NEXT strings,
+affecting a per-field AUTH-NEXT tally but not the strict/joint headline counts.
+A separately preserved v2 repair/comparison is requested; v1 remains archived.
+Reviewer authored the downstream readout helper, not this birth runner/corpus,
+and was not blinded to Main's expected aggregate counts.
+
+Important inspected raw details: the trained addition failure is31+48=79 but
+both trained arms outputACT89, an arithmetic error, not just syntax. OFF outputs
+contain the correct number in all16addition cases on manual inspection, although
+only8use the registered ACT syntax. That unregistered descriptive observation
+does not replace scores; it prevents describing15/16trained compliance as better
+arithmetic than an incapable base. AUTH's six REVISE failures are template2
+MATCH/KEEP cases choosing the first displayed action rather than the prior one.
+Two DERANGED failures outputNEXT:dax,wug and are not unique decisions. No broad
+reasoning-capability inference follows from OFF's96conditional limit hits.
+
+Partial review, script and JSON are archived with the
+astra_birth_readout_independent_review_20260913 prefix in receipts_20260912.
+No independent tokenizer decode/full base-weight rehash was performed by that
+reviewer; its byte-custody verification and raw recount have this stated limit.
