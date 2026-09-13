@@ -1675,3 +1675,12 @@ Raw: message 26 in `THESIS_RAW_ROHIN_2026-09-11.md`. Why birth first: base promp
 
 ## [VOCABULARY, Rohin 2026-09-13 00:25 UTC] Trained vs learned vs self-learning; why birth is level 1
 Raw: message 27 in `THESIS_RAW_ROHIN_2026-09-11.md`. **Trained**: weights change on material someone else prepared (birth, level 1). **Learned**: self-conducted — training still happens, but the model prepares its own material (level 2 onward, with a parent curating). **Self-learning**: the learned regime running on its own (levels 3–4). Level 0 is the mechanism ground; birth is numbered 1 because it is the first thing in the learned system even though it is trained, not learned. Confirmed: spoon-feeding = level 2. Use these three words exactly in the notebook and the paper.
+
+## [IDEA TO TEST — Rohin: "this whole section is just suggestive", 2026-09-13 00:40 UTC] Birth is a search: several births × several level-2 probes
+Raw: message 28 in `THESIS_RAW_ROHIN_2026-09-11.md`. Which behaviours/habits must be post-trained for level 2 to work is for the builder to figure out by trial and error — build several candidate births and score each on several small level-2 probes (taught-and-learned episodes on the born child), so level 2 is amortised onto the choice of birth. He wants to see what Astra comes up with; he has not formalised the behaviour list.
+
+## [IDEA TO TEST — suggestive, Rohin 2026-09-13 00:40 UTC] Birth data sources
+Strong data matters more than a clever recipe. Candidates he names: instruction sets and diverse examples (a thing Astra already knows how to build); existing datasets online; agentic-planning post-training data; records of goals, perceptions, thoughts and notes in the child's own register (less confident). Test: same recipe, different birth data families, scored on the same level-2 probes.
+
+## [IDEA TO TEST — suggestive, Rohin 2026-09-13 00:40 UTC] Iterative calibration across levels ("like our plasticity thing")
+Get most of level 0 done; then do 1 and append small fixes to 0; then do 2 and append small fixes to 1 and even smaller to 0. If parenting looks decent but the born defaults or the mechanism are not good enough, go back one level with a small append rather than restarting. This is a process suggestion for how the builder schedules work, not a claim.
