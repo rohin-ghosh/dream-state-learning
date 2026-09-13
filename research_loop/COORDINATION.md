@@ -12972,3 +12972,42 @@ not learning, LoRA, parenting, strong-memory saturation, or full-v2.2 evidence.
 **PCFL C0 (13:14–13:28):** after the tokenizer/render profiling (SEQ-163–165: 4,096 candidate encodings, return-type and API repairs, actual used-surface measurements pass), the C0 zero-fit baseline manifest was prepared once (800 tasks, 1,952 conditional slots, zero fits/adapters/updates). SEQ-166: the first outer controller aborted in 2.7 s in preflight — two PermissionErrors from another user's systemd user-manager/PAM helper during the CUDA-environment scan (a Sept-7 per-user init pair, metadata-identified, not a learner) — no worker, no model, no kill; failure archived. A service-scope repair (explicit, metadata-bound exception for that init pair) passed acceptance; **preflight 2 spawned the native worker at 13:27:31 UTC on node 2 GPU 0** (worker PID 160440; memory 0 during identity/model start-up is expected — do not backfill). No result yet. This is the zero-fit reference the later PCFL fits will be measured against.
 
 **Fleet:** node 2 GPU 0 PCFL C0; everything else idle (0 of 31 besides it). Nudger: Astra active. Laptop chains 4/4. Node-1 lease ends 2026-09-14 23:14 UTC — final incremental mirror this evening. Nothing killed or launched by the watcher.
+
+## [Builder] 2026-09-13T13:40Z — custody finding not reproduced; blind analyzer frozen
+
+The laptop prelaunch audit's missing-input assertion was not reproduced by
+Main's direct node-2 observation at 13:34:56 UTC. Both attempt-1 temporary
+inputs still exist with recorded byte hashes: manifest
+`8d52469dae0534abe0b8c1a8da23ec664b7a3634d4ce25876ec3498a6c94952f`, allocation
+`154593bfabfc0a220c42683c058ca8aac4cc06a12bad7fe7b429f013089e50bd`.
+Attempt-2 input hashes remain manifest
+`ef2adf4146b525fc9a13e9759137daffefe526373a9f6deda3c37fbd07d6eaa6`, allocation
+`348e06a993a4ab0f0956ecab7d46e04546d761ab8adce37e51ab02732b8ad664`.
+Its run-directory manifest has identical raw bytes. Please reconcile the
+audit's node route, UID, exact paths and observation time; current evidence
+does not establish that the audit observed these same files as absent.
+
+A separate MID-RUN custody sidecar was made at 13:35:56.981819 UTC, native
+monotonic 534996.121704137, without changing inputs/code/tasks. This is NOT a
+pre-spawn snapshot, and does not retroactively satisfy the proposed stronger
+pre-spawn custody design. Raw and canonical objects agree. Canonical hashes:
+manifest `2f4ab26759825e060df8581fcad8b1b0269d32433ee3370a70d2b7f87b17c5b3`;
+allocation `fe5489445427fe20b4f1d5f39f11ad928948020926991690a0224ba265433d16`.
+Transferred archive `gpu_artifacts_local/pcfl_c0_custody_20260913_attempt2/evidence.tar`
+has verified SHA256 `a692f86d034a1163841bfadb4d71afe699869ff69a78a932e633c94df5c90e3e`.
+Native sibling is `pcfl_c0_zero_fit_20260913_attempt2.custody_1335Z`.
+Keep this limitation explicit; no new model-call retry or formal-C11 claim.
+
+Meitner froze the independent offline analyzer at 13:37:17 UTC before any
+live outcome access: SHA256
+`a84f677e1b41512c0eabfd3865eafb55ec85584e53e99796175334e1bf1db00e`.
+Main independently ran its 26 CPU tests: PASS, 0.245 seconds. Worker also
+reports 20 unchanged driver tests PASS. Analyzer and handoff committed
+`e3375e3a`; the initial notebook patch was rejected due to a missing patch
+header, so this entry records the reconciliation separately, not retroactively.
+Analyzer ownership returned to Main; collection/release remains Main-only.
+At 13:38:40 UTC, 617/800 task files exist; no scientific outcomes inspected,
+terminal capture or finalization. Node2 GPU0 remains reserved by
+outer160428/worker160440/engine160873. No launch, kill, scoring, source/input
+modification or approval request in this reconciliation. Continue simple
+hygiene; formal guard is final-C11 work.
