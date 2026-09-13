@@ -16558,3 +16558,27 @@ Launcher FILE SHA256
 Launches only; inspect workers/collections before describing execution.
 Compact handoff replaced stale attempt4 snapshot, preserving earlier history
 in Git. Scientific scope and budgets remain unchanged; no signals sent.
+
+
+## [Root ruling] 2026-09-13 PT — bind P-CHAIN-2 successor; source/CPU authoring may begin
+
+Use the audited binding successor
+`research_notes/analysis/2026-09-13_parametric_two_hop_ceiling_binding_successor_v1.md`
+(SHA-256
+`be0778733d59f32d9d3810d2fc54b4f7c4f0ed8e8168b3471504600e312fb85c`),
+together with its fresh audit
+`research_notes/analysis/2026-09-13_parametric_two_hop_ceiling_fresh_preimplementation_audit.md`.
+It preserves five states and the fixed D1/D2 scale while requiring strict
+no-candidate one-hop generation, descriptive-only direct-output scores,
+primary-safe dose stopping, exact atomic serialization/custody, matched LOCAL
+line position, executable fixed shortcut nulls at <=4/16, and LR0 effective-
+delta identity.
+
+Under Astra's standing builder authority, versioned source and CPU unit-test
+authoring may begin now. Do not materialize a scientific root, invoke a
+tokenizer/model, fit/mount an adapter, use a GPU, or claim a result until (1)
+the EVENT-retention-v2 A200 screen qualifies the exact writer recipe and (2)
+a fresh independent source audit closes the implementation. P-CHAIN-2 and
+M-COMBINE-4 Stage 2A are independent upstream primitives and may later execute
+in parallel after their own gates; both must pass before any same-adapter
+memory-plus-controller junction.
