@@ -15,7 +15,8 @@ teaching, OFF as well as DERANGED, and PROMOTE versus SHADOW.
 1. Run the closed natural-common-prefix Q0 exactly as registered: shared OFF,
    mandatory `P_AUTH` and `P_DERANGED`, `3e-5`, 128 quartet updates, two fits
    mandatory and three maximum. Only its full exact + held + complementarity +
-   interface + locality conjunction releases birth.
+   interface + locality conjunction allows the claim-bearing program to move
+   to the separately qualified birth; it does not validate the birth recipe.
 2. Then run the already native-audited birth component without changing its
    recipe: `B_AUTH` and `B_DERANGED` from the same fresh initialized rank-8
    adapter, full-response V3 CE at `1e-4`, four epochs, 256 rows, batch 8,
@@ -36,6 +37,20 @@ behavior may tune Q0, and its adapter may not seed claim-bearing Level 2.
 After Q0 and direct birth qualify, skip the historical RuleGame outcome as the
 scientific test. Freeze the nonce protocol below, then run it once. One root is
 only feasibility; it can release replication, not a population claim.
+
+## Q0 and birth are separate qualifications
+
+Q0 is a paper prerequisite and an execution-order firewall, not the selector or
+validator of the current birth optimizer. Its `3e-5` pairwise common-prefix
+objective does not map automatically onto the multivariate full responses below.
+The mapping machinery needed to carry that objective into PROSPECT/REVISE is not
+closed, so this protocol rejects that expansion.
+
+The direct birth therefore keeps its already frozen `1e-4` full-response recipe
+and qualifies **solely** from its own exact-train, held, complementarity,
+interface, and locality panels against contemporary OFF. Q0 cannot compensate
+for a birth failure; birth cannot substitute for Q0. A birth pass establishes
+only this supplied whole-record recipe, never that Q0 validated it.
 
 ## Exact Level-1 arms and corpus
 
@@ -66,10 +81,8 @@ varied/permuted/rephrased and instruction-like forms *during* formation, but is
 only a design prior here; late prompting cannot rescue exact-fit/held-extraction
 failure and direct adherence is not learning-to-learn.
 
-Birth entry gates are noncompensatory:
+Birth qualification gates are noncompensatory:
 
-- Q0 must already have passed its closed thresholds; this `1e-4` full-response birth
-  does not retroactively qualify the `3e-5` pairwise writer.
 - Exact train form, per assigned map: PROSPECT at least `15/16` and REVISE at
   least `29/32` unique semantic sources. Low exact fit stops as acquisition
   failure.
@@ -184,7 +197,8 @@ Call the one-root result `MINIMAL_BIRTH_DISPOSITION_FEASIBLE` only if all hold:
    control of at least `3/16`.
 5. DERANGED is not a damaged comparator: its promoted accuracy is no more than
    `2/32` below OFF at either dose, and both retain native ADDITION/COPY entry
-   gates. AUTH descendants also retain their complete direct birth gates.
+   gates. Final `k=2` AUTH and DERANGED descendants also retain their complete
+   direct assigned-map birth gates.
 6. AUTH admits at least `6/8` grounded records in each block. Admission,
    prediction/revision correctness, correct omission on a separate four-event
    no-new-information panel, target tokens, and gradients are reported as
@@ -223,12 +237,14 @@ roots, analyzed intention-to-treat.
 | direct birth | 2 | builder cap `85` A40-min including its readout; forecast should be lower |
 | nonce Level 2 | 6 x 20 updates | about `0.25--0.5` A40-h; bind `0.75` A40-h ceiling |
 
-The claim track is eight mandatory fits (nine maximum with Q0's optional
+The claim track is ten mandatory fits (eleven maximum with Q0's optional
 diagnostic), roughly `1.2--2.0` A40-hours expected and at most `2.92` A40-hours
 under the existing Q0/birth caps plus the proposed Level-2 cap. Readouts are
 `144` exact-form birth calls in addition to the existing `384`, then `96` nonce
 entry calls and `384` PROMOTE/SHADOW calls across `k=1,2`; complete post-write
-birth/locality panels add `256` calls. These inference calls, tokens, wall time,
+checks add `384` calls: 32 anchor cases after every `k=1` write, then the full
+128-case assigned-map panel for AUTH and DERANGED plus 32 OFF anchors at `k=2`.
+These inference calls, tokens, wall time,
 and reload overhead must be reported separately from fit time.
 
 This is the smallest useful causal separation: direct adherence proves trained

@@ -7935,3 +7935,18 @@ give eight mandatory fits end-to-end after Q0 selection; hard combined ceiling
 `2.92` A40-hours. Exact fit/held/locality, arm-by-evidence-by-promotion,
 retention, contamination, and stop gates are frozen in the memo. Analysis only;
 no builder source, corpus, adapter, job, or GPU changed.
+
+### [Codex watcher correction] 2026-09-13 UTC — Q0 does not validate the birth recipe; fit count corrected
+
+Option A is binding for the minimum protocol. Q0 remains a separate prospective
+paper prerequisite and ordering firewall; its `3e-5` pairwise objective/rate
+does **not** select, validate, or carry into the committed `1e-4` full-response
+birth. That birth qualifies solely on its own exact-train, held,
+complementarity, interface, and locality conjunction against OFF. Neither gate
+can compensate for the other. Carrying Q0 into multivariate birth targets would
+require new unclosed machinery and is not selected. Fit arithmetic is also
+corrected: Q0 `2` + birth `2` + Level 2 `6` = **10 mandatory fits** (`11`
+maximum with Q0's optional diagnostic), while the `2.92` A40-hour hard ceiling
+is unchanged. Post-write checking is 384 calls: 96 anchor calls after `k=1`,
+then 256 full AUTH/DERANGED assigned-map calls plus 32 OFF anchor calls at
+`k=2`. The memo now states this explicitly.
