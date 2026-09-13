@@ -790,3 +790,30 @@ This is future integration source, not the live readout source. Origin remains
 UNRESOLVED_LOCAL_HASHES_ONLY; all work source-authored NOT CLEAN. Formal C11
 guard deferred, simple hygiene active. Preserve unrelated dirty rules file.
 No approval request, foreign kill, external message or new paid allocation.
+
+## September12 18:18PDT / September13 01:18UTC restart reconciliation
+
+Supersedes the preceding LIVE snapshot: SEQ119 fits, SEQ120 readout and SEQ121
+born parenting formation are COMPLETE, collected once and fully released.
+No Main GPU job currently live. Do not collect or restart them again.
+SEQ120 full registered birth conjunction FAILS; see
+ASTRA_BIRTH_COMPONENT_RESULT_2026-09-13.md. SEQ121 has0of4eligible prescribed
+process rows (PAIRED_SHORTAGE), no corpus export and no writes; see
+ASTRA_BORN_PARENTING_FORMATION_2026-09-13.md. Preserve all raw failures.
+
+Immediate Main work: fixed32call OFF/AUTH teacher-free protocol probe. Material
+21tests pass; independent data review finds no public-label/pair error and
+retains formatting-sensitive metric caveat. Prospective specification:
+ASTRA_BIRTH_PROTOCOL_PROBE_2026-09-13.md. Runtime is authored under /tmp,
+not yet CPU/native accepted or launched. Main owns runtime/Git/native.
+Einstein owns its CPU tests; Arendt proposes bounded subsequent birth-data
+options; Ampere independently recounts384SEQ120responses. No further birth
+fit or retry of invalid parenting is selected before the diagnostic.
+
+Downstream born warm-writer/readout helpers are preparation only; repaired
+readout hash793d97ea3f7b8b8af971d20a5d517150b3d3c095f80e5be554e7a9f74443e266.
+Unlaunched combined wrapper remains /tmp/astra_born_learning_run_20260912.py.
+Manuscript evidence is throughSEQ118; update through120/121 after raw review.
+Retain source-authored NOT CLEAN status and unresolved model origin. Formal
+C11guard deferred; simple hygiene/controls/provenance remain. Rules-file dirty
+change is unrelated and must not be staged. No approval request or kill.
