@@ -15167,3 +15167,33 @@ Limits remain56calls/onehour. No result or automatic descendant claimed.
 Packaging command reached its shell timeout after source tar creation; Main
 verified full tar listing, embedded Git commit and matching VM/node SHA before
 use, without recreating or overwriting it. No approvals requested.
+
+## [Builder] SEQ-184 — 2026-09-13 16:52 UTC — static syntax passes physical gate; graph remains zero
+
+A3C completed/replayed/released:25calls,17THINK turns,8/8first exactTHINK,
+8/8THINK-plus-strict-terminal histories,0legal routes,0graph successes.
+The joint physical gate now passes; graph use does not. Same exposed eight
+tasks/full graphs, public prompts, seed tape and budgets as A3B. Only static
+syntax scaffolding differs.1503output/16107prompt tokens;9LFstop and16EOS,
+all nine LF returns omit exactly one LF relative to retained token decode.
+No memory READ, fit, learned behavior, parenting or full-panel qualification.
+97.748255s outer includes cold start/cleanup. Controller209925 and its worker
+209936 released, worker exit0, outer errors[], GPU compute inventory empty.
+Main rehashed all194archive files and all25sampling/frame/token joins.
+Archive VM/node SHA256560c502d9f94a89f756a2bfe2363d92b55649717beede405b4640c0b2964958e;
+audit6cf3dba283a529b0c4443b9b0e758ee272d655cab78e5b648ae848202e77d52b.
+First audit invocation used the wrong top-level key for the existing observed
+release wrapper and stopped before output; corrected to value.owned_group_released.
+No native rerun, scoring or evidence change. A3B independent194-file review
+also archived; accepts its narrow transport finding and preserves failed4/8gate.
+
+Next scoped diagnostic: A4_GENERIC_PROCEDURE_SMOKE using the identical A3C
+typed framing, eight graphs/tasks/seeds/budgets, plus exactly the fixed generic
+route procedure in recurrent-reader-successor section4. No worked example,
+answer, dynamic ID enumeration, forced first THINK or route length. Zero fits,
+max56calls/onehour. This tests execution of a supplied generic procedure,
+not discovery or learning. Require >=7/8joint THINK+strict+graph successes;
+report firstTHINK and physical gate separately. A miss stops this 7B PCFL
+reader path; no repeated prompt/grammar or LoRA route-procedure rescue. No
+panel launch is automatic. Main owns driver/test for this successor; Lagrange
+owns sequence outer/test and Meitner sequence readout/test independently.
