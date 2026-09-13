@@ -10024,3 +10024,29 @@ Review concerns manuscript only; ongoing GPU work never waited on it.
 
 Rohin, verbatim: "i like that recipe idea, it's a good place to start, of course it'll have to be tuned a little depending on the skill and complexity of the skill maybe; good on 2, good on 3, good on 4, good on 5 … lmk when this stuff actually starts and i'll be going to sleep soon so i want astra to basically work recursively on the different skills and getting the l1 working, and then if it gets some success on that testing it on super simple l2 loop, make sure the l2 loop is the correct simplicity to actually make an easy dumb l1 work and then keep working from that point, lmk when the gpus are starting to saturate i won't go to sleep until i know that, i need this to be happening at a fast rate while i'm sleeping, it's perfect work that doesn't really need much of my steering at this point so it should be able to happen overnight, just remembering to look at l2 a bit to try to get minimal loop behavior, then once that happens you can try to improve l2 and then that'll tell you what l1 needs as well sorta thing, so then we can max out l1 before we're working l2 l3 combo."
 The five agreed changes (Fable 07:1x, now his defaults): (1) default recipe for new behaviour cells = SEQ-113 (rank 8, LR 3e-4, four distinct sources per batch, 320 updates, replay), tuned per skill only with a stated reason; (2) skill corpora 64–128 rows × ≥ 4 skins, classroom grammar, generator spec shipped with the data; (3) contrastive records where alternatives are near-identical; (4) permissive-parse the base first, then score format and content apart; (5) three seeds per cell, launched as rosters across nodes 1, 2, 3 and the A100, collected while the next roster runs. Fable will report to Rohin the moment fleet occupancy rises and will watch for [Builder -> Rohin] questions overnight.
+## [Builder] 2026-09-13T07:28Z — SEQ139 four LR loops complete; serial recovery starts
+
+All four original seed1/2 low/high controllers exited and finalized; original
+pinned native collection ran ONCE per root07:27UTC and replayed all completed
+stages successfully. Each completed11stages/128calls/3fits/100updates; total
+512calls/12fits/400updates across these four. All five readout panels in every
+root remain old4/8,new4/8,legal16/16. Final PROMOTE-only0,SHADOW-only0,both8,
+neither8. No measured endpoint gain from the LR change on these two learner
+seeds; not blanket no parameter learning or a three-seed result. Both original
+seed0 endpoints remain missing from infrastructure aborts, never zeroed.
+
+Archives verified both endpoints, under /tmp and being mirrored locally:
+seed1low1401d59cee11e5ff97cfdb1c2f0ba01f5a20e1fefcfc2726032b0a04ef0c37c4;
+seed1high2628dcd977700af08b551bc058bf69a48ef6b0c328fa9b7216d7cf60c921ffde;
+seed2low433516532555360424ef3765d8a936ba6502014924db2c0e3b652e944140675c;
+seed2highd5f91bc56a57a48aad204e1dd3dd8b972c58b97f16d518627e726f8f8cf7082c.
+Collection JSON/logs retain all formation, exposure, seed, plan and seal pins.
+Core native_verified=false/scientific_pass=null intentionally remain; actual
+collector scientific_replay=true does not override them or qualify parenting.
+
+Per predeclared recovery amendment, activate node3GPU0 seed0_low attempt2 with
+same runtime and preparedplan5864a45b34c7735b1bb303c5702f1aafc29e11c323cd9ed25de6a83dae92aef6.
+Main uses original accepted comparison launcher after fresh vacancy; PID follows.
+5400secondcap, unchanged scientist settings. seed0_high waits for low exit and
+release, not concurrently launched. Another infrastructure abort stops this
+retry queue for diagnosis. Independent contrastive screen continues node2GPU0.
