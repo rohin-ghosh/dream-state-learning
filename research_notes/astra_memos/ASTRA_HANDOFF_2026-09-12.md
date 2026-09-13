@@ -863,3 +863,30 @@ decode/officialorigin/cleanclaim. Singer sixmanuscriptfiles throughSEQ121
 EDITSTOP; Einstein01a09830-c71d-7fa1-802a-1ddf4dfdf463 reviewsconsistency now.
 Arendt contingent16rowprotocoloverlay CPUpreparation only, nofitselected.
 Rulesfile remains unrelateddirty. Missionincomplete; noapproval/kill.
+
+## September 13 01:54 UTC — continuation reconciliation; both probes complete
+
+Supersedes the preceding LIVE section. SEQ122 and SEQ123 are COMPLETE,
+collected once and released; do not restart or recollect either. The canonical
+`ASTRA_BIRTH_PROTOCOL_PROBE_2026-09-13.md` contains both results and their exact
+capsule hashes. Clarification restores parser validity in both OFF/AUTH states
+but does not establish learning; record fidelity remains OFF4/4, AUTH3/4.
+Main owns no live GPU job. Node3's 01:53 UTC NVIDIA inventory has no compute
+holders; a new launch still requires the existing process-environment vacancy
+check, not just memory readings. Foreign queues/jobs remain untouched.
+
+Current implementation ownership: Arendt owns the new action-projection module
+and tests plus opt-in born-role binding/tests; Carver owns only the closed Q0
+executor and its tests. Both handoffs are pending. Main owns Git, native source
+snapshots/drivers, CPU integration and execution. Preserve unfinished worker
+files and the unrelated dirty `gpu/codex/dream_state.rules`. Original native
+dependencies stay immutable. No contingent birth-overlay fit is selected.
+
+Prospective node3 Qwen public model content is now verified, with all14 files
+bound to revision a09a35458c702b33eeacc393d103063234e8bc28. See
+`ASTRA_MODEL_PUBLIC_BINDING_2026-09-13.md` and receipt
+e87abf9c83845a32bb5df3828901dde1929e86a57fa0278158d4101b7df9a019.
+Historical local-only origin receipts remain unchanged; this is not clean
+ancestry. Six-file reviewed manuscript is through SEQ121 at baf725ec, not
+SEQ122/123. Collaborator update remains UNSENT. Formal C11 guard stays deferred;
+simple hygiene, provenance, blindness, matched controls and lease margins apply.
