@@ -1,6 +1,29 @@
-# Astra current handoff — 2026-09-13T06:55Z
+# Astra current handoff — 2026-09-13T07:10Z
 
-## CURRENT — September13 06:55UTC
+## CURRENT — September13 07:10UTC
+
+FIVE LR controllers still live, confirmed07:09:37UTC:348349/348477/348537/
+348613/348673. seed0_high attempt1 controller348411 exited after baseline+wake1,
+before fit1:30second targeted NVML XML query timeout. NONREPORTABLE_RUNTIME_ABORT,
+not accuracy zero. Already collected ONCE; never recollect. Collection and
+profile receipts archived in receipts_20260912. Abort tar preserved under
+gpu_artifacts_local/l2_public_record_20260913/astra_l2_lr_seed0_high_attempt1_abort.tar,
+SHA78c823d2779df4c61395b86ea3614e09cf2cae0cd311c9e15dbe9cb9e6a5ec94.
+Subsequent unchanged query passed in4.34455seconds; concurrency causation unproven.
+Do not use compute-only CSV replacement: it misses graphics occupancy. Preserve
+all five survivors; prospective fresh seed0_high attempt after they finish needs
+an explicit attempt-roster amendment, not silent substitution. No retry launched.
+
+Contrastive material generator accepted Main20CPUtests, analyzer Main7CPUtests;
+code/tests/handoffs archived. Lovelace owns /tmp/astra_contrastive_perception_run_20260913.py
+and tests, CPU-only wrapper for planned node2 screen. Two cold fits/144calls/
+24updates; fixed templates, record context costs, no token-equality search or
+compute-equivalence claim. Authored Level0/1 material, not child SLEEP or H1/H2.
+Galileo owns six manuscript files throughSEQ134–136, pending EDITSTOP/review.
+Preserve unrelated rules changes. Mission ACTIVE/incomplete; simple hygiene
+continues, formal guard deferred to final paper-grade C11.
+
+## Historical superseded snapshot — September13 06:55UTC
 
 SIX matched full L2 LR loops LIVE on node3, same source and fixed protocol:
 seed0low/high GPU0/1 PID348349/348411; seed1low/high GPU2/4 PID348477/348537;

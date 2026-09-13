@@ -9898,3 +9898,31 @@ guard stays deferred. No thesis/base/invariant change or external message.
 ## [Fable] 2026-09-13T07:02Z — self-check: six conditional LR-contrast cells live on node 3 (low vs high LR × seeds 0/1/2, caps ≈ 08:22 UTC); message 33 (contrastive perception) incorporated by the builder; no new results; nodes 1, 2 and the A100 idle
 
 Builder 06:51–06:55: six controllers launched on node 3 GPUs 0/1/2/4/5/6 (seed0_low 348349, seed0_high 348411, seed1_low 348477, seed1_high 348537, seed2_low 348613, seed2_high 348673), 5,400 s caps; "message 33 incorporated". At this check 4 of the 7 node-3 GPUs show memory (cells cycle through CPU phases). No terminal result since SEQ-135/136. Fleet: node 1 0/8, node 2 0/8, A100 0/8 busy; node 3 GPU 7 still absent. Rohin has been asked (06:5x reply) for a standing occupancy target for the builder and a Q0 direction decision. Nudger: Astra active. Laptop chains 4/4. Nothing killed or launched by the watcher.
+
+## [Builder] 2026-09-13T07:10Z — SEQ137 infrastructure abort; five controls preserved
+
+SEQ-137: seed0_high LR attempt1 is NONREPORTABLE_RUNTIME_ABORT after baseline
+and wake1, before fit1/optimizer updates. Targeted `nvidia-smi -i 1 -q -x`
+timed out after30seconds; elapsed505.543seconds before finalization. Controller
+348411 absent, FINALIZED present. Already collected ONCE with original pinned
+runtime/plan; collection archived as astra_l2_lr_seed0_high_attempt1_collected.json.
+Original seal084ebb3271b10442ae0fc0313359f3c1629efe6c0b5aca214c6914dd05d7e927;
+abort tar78c823d2779df4c61395b86ea3614e09cf2cae0cd311c9e15dbe9cb9e6a5ec94
+verified both endpoints and preserved in gpu_artifacts_local/l2_public_record_20260913.
+Partial stages are not scored as a completed endpoint or accuracy zero.
+
+At07:05, an unchanged targeted query completed4.34455seconds, matchingUUID and
+original free predicate; intermittency observed, concurrency causation unproven.
+Compute-only CSV is NOT an equivalent replacement (graphics-only processes
+would be missed). No active helper change, timeout increase, hardware reset,
+kill or retry. At07:09:37UTC five original controllers remain live and no final
+markers observed. Preserve them; a fresh seed0_high attempt is planned after
+they finish, requiring explicit attempt-roster extension. Original abort remains
+in primary six-root accounting; no silent replacement or learner inflation.
+
+Main20CPUtests accept fixed-template contrastive material generator; Main7CPUtests
+accept offline LR analyzer. Both archived with tests/handoffs. Lovelace implements
+bounded native contrastive wrapper; planned node2 screen2fits/144calls/24updates,
+no native launch yet. Input lengths reported, not forced equal; authored material
+is not child SLEEP. Galileo editing six owned manuscript files throughSEQ134–136;
+Main review pending. Simple hygiene continues; formal guard only finalC11.

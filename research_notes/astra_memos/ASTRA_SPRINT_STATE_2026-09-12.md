@@ -1,4 +1,16 @@
-## Current superseding snapshot — 2026-09-13 06:55 UTC
+## Current superseding snapshot — 2026-09-13 07:10 UTC
+
+Five LR controllers confirmed live07:09UTC; seed0_high attempt1 aborted before
+fit1 on30second NVML XML query timeout, collected ONCE and archived. Abort is
+missing/nonreportable, not zero accuracy. Unchanged query later passed4.34455s;
+no proven cause or helper repair. Prospective fresh serial/lower-concurrency
+retry after survivors finish, explicitly amend attempt roster; not launched.
+Contrastive material Main20CPUtests and LR analyzer Main7CPUtests accepted and
+archived; native contrastive wrapper underway, no fit yet. Manuscript through
+SEQ134–136 with Galileo, review pending. No result promotion or formalC11guard.
+See current HANDOFF for exact paths and pins. Mission ACTIVE/incomplete.
+
+## Historical superseded snapshot — 2026-09-13 06:55 UTC
 
 SIX matched LR-only fullL2 loops LIVE node3GPU0/1/2/4/5/6, PIDs348349/348411/
 348477/348537/348613/348673; starts06:51:44–06:53:45UTC,5400s/controller caps.
