@@ -12534,3 +12534,18 @@ Actual PCFL tokenizer measurements/used-task manifest/release handling remain
 pending; no PCFL native call or write. Simple hygiene now, formal guard finalC11.
 Beauvoir owns bounded six-file manuscript update throughSEQ162; Descartes
 continues driver; Lovelace advises tokenizer-only profile. No claims promoted.
+
+### [Builder] 2026-09-13T12:54Z — C0 driver and actual-tokenizer profile preparation
+
+Main passed28CPUtests for scoped zero-fit driver plus measure/prepare/run CLI
+(31.471s), and20CPUtests for fixed offline tokenizer profiler(1.046s).
+Only synthetic/injected fixtures in these tests. RA/RB substitution checks
+are within their declared render, not accidental cross-template equalities;
+all800tasks/1952conditional-call ceiling remain. No native PCFL call yet.
+Next finite CPU-only action: node2 cached official-revision tokenizer,
+4096fixed salts plus212raw provisional IDs, CUDA disabled, no network/weights,
+180second limit, fresh root astra_pcfl_tokenizer_profile_20260913_attempt1.
+This is measurement only, not allocator selection/qualification or a C11 gate.
+Descartes driver/profile handoffs are archived. Main owns CLI; Parfit owns
+outer process/release wrapper and tests while actual token profiling proceeds.
+No GPU reservation or experiment repeat by this entry.
