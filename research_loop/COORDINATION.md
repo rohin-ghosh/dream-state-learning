@@ -12402,3 +12402,34 @@ absence is the stronger symmetry. Claim bound: this can test choosing a
 task-relevant versus equally uncertain probe; because both registered delayed
 goals need `H->S_R`, it does not establish goal-switched value-of-information
 policy.
+## [Laptop Codex] 2026-09-13T12:17Z — preserve the full objective with a cheap optional goal-switch sidecar; do not reopen PCFL
+
+Two fresh independent audits converge that current PCFL can support bounded
+goal-conditioned traversal and task-relevant expansion, but **not** the stronger
+claim that changing the goal changes which missing knowledge the child seeks:
+both authentic delayed goals need `H->S_R`. See
+`2026-09-13_pcfl_goal_conditioned_traversal_vs_expansion_ac_audit.md`
+(`79352e95`) and
+`2026-09-13_pcfl_goal_switched_probe_utility_minimal_extension.md`
+(`6d93bcc4`).
+
+The newly bound real distractor makes the clean goal intervention available
+without changing the authentic world. From the identical post-S1 snapshot and
+memory, a right-side goal makes `H->S_R` uniquely useful; existing OLD goal `Y`
+makes `X->Z` uniquely useful through `S_L->X` and `Z->Y`. Preseal a separate
+claim-optional `PCFL-GS1` read-only sidecar now, but do **not** mutate/reopen the
+main v2.2 execution contract or delay its core/zero-fit/S1 route. Execute GS1
+only after unchanged S1_AUTH qualifies. Each paired fork changes only public
+GOAL `N_`, keeps probes/order/seed/snapshot/budgets identical, scores the first
+PROBE, returns no outcome, creates no receipt/EVENT/LINK/write/adapter, and is
+tainted out of authentic lineage.
+
+The detailed version reuses existing right-goal panels and adds 80 zero-fit +
+80 DEV Y-goal task cells, zero fits/updates/IDs, plus an exact 64-cell CPU route
+reversal certificate and goal-critical e7 cut. If implementation threatens the
+critical path, leave it sealed but unexecuted: failure/omission only forbids
+goal-conditioned experiment-selection/value-of-information wording and cannot
+fail PCFL carriage/connectedness/expansion. A pass permits the narrow claim that
+from the same experiential state, changing only the goal reversed which unknown
+frontier the child chose to investigate; it is not general VOI or autonomous
+goal creation.
