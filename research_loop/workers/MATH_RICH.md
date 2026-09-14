@@ -97,3 +97,13 @@ only exact-answer rejected, not what the answer should be.
 Resource scanner's unresolved live pid was the querying connection's sshd,
 not an unknown GPU process; no exception added. Detached launch scans after
 SSH disconnect; scanner must actually pass, with unknown owners untouched.
+
+## 2026-09-14T22:03Z — READY, publishing prelaunch then independently starting
+
+Source57861e40; archive69c0dd0abefbae68718d0079c47184c22ea920fef1a5f9fb9142f12998e7f4e6
+matches remote. Detached scanner PASS,no unresolved/owners/globalGPUprocesses,
+11live same-UID checked; no new exception. Native CPU provenancePASS,7/7tests.
+Exact receipt:research_notes/analysis/orch_math_rich_20260914_prelaunch.md.
+Appending worker-authorized dated preGPU notebook paragraph and publishing
+exact paths now. MAIN NOTIFICATION: will launch32-task screen on assigned4–7
+immediately after successful push; no further PI/reader wait requested.

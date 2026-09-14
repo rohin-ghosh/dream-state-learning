@@ -24987,3 +24987,24 @@ verifiedpreservedinorder. Unrelateddirtygpu/codex/dream_state.rules andthe
 untrackedtwo_sleep_junction_prospective_packet_draft remain untouched.
 The widerresearchgoal is ACTIVE/INCOMPLETE and continues underRohin76 in the
 livefreshorchestrator; finishingtheseassignedarms doesnotcomplete thesprint.
+
+## [Worker MATH-RICH] 2026-09-14T22:03Z — W1 pre-GPU: CPU7/7, native provenance PASS,32 fixed paired math tasks
+
+W1 publication9a9593af; source57861e404477556274294990dd9fd9dbda53368b;
+archive SHA25669c0dd0abefbae68718d0079c47184c22ea920fef1a5f9fb9142f12998e7f4e6,
+verified on node2. Root orch_math_rich_20260914_attempt1; exclusive node2GPU4–7.
+Own CPU7/7passed and bash syntaxPASS; native CPU prepare0calls/0fits/0updates,
+portable37ec manifest/helper and local frozen Qwen2.5-7B base/tokenizer checks
+PASS. Detached physical+/proc CVD precheckPASS (no owner/unresolved,11live,
+no global compute PIDs); per-device guards repeat checks immediately at launch.
+Actual lease2026-09-21T08:43Z,6hmargin;45min/shard+60sgrace,<=128calls.
+32distinct GSM8K tasks,8each named L1miningfamily, prospective roster/hash;
+held L1geometry/agefamilies declared, newL2/L3contents untouched. Initial
+rich>terse eligibility uses same8-task family denominator, never corrections.
+Child150–400tokens for admission,<=512generated/2048context,<=3richturns/task.
+Only actual successful semantically read child responses can become targets;
+no public reference reasoning or gold-answer feedback; guidance removed from
+studentprefix. No fit/transferclaim; all failures/rejections retained.
+Exact protocol/prelaunch:research_notes/analysis/orch_math_rich_20260914_protocol.md
+and orch_math_rich_20260914_prelaunch.md. This paragraph is PRELAUNCH,not a
+claim that inference started; worker independently launches after pushPASS.
