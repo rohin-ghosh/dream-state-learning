@@ -20,22 +20,23 @@ actual coached responses now improves parent-free own-text goals0/4 to3/4:
 trained displays2/2, reversed1/2, retaining16 old facts and audit16/16 (SEQ-250;
 independent review PASS). Task3 reaches the wrong goal. Parametric/unavailable/OFF
 goals remain0/4; no graph EVENT targets were trained. This is persistent
-contextual improvement on one taught graph, not fresh-world generalization.
+contextual improvement on one taught graph.
 Joint rehearsal prevents isolating trajectory supervision's contribution.
 
 One lineage, unequal doses and external scheduling remain; prior unseen MISS
 is0/4 and failures are preserved. No H1/H2 or autonomous learning-rate improvement
 is established. We seek collaborators on executable connected-action controls,
-independent-family recurrence and retention. Fresh-world transfer outcomes are
-excluded. This message remains unsent.
+independent-family recurrence and retention. Fresh-identifier transfer is3/4 versus0/4 (SEQ-251): unchanged topology,
+third-party ORIGINAL context, no fresh parametric write; task3 skips the
+intermediate step. This message remains unsent.
 
 ## Supporting notes—not part of message
 
 **Evidence-backed working update — UNSENT.** No message has been sent.
 
 **September 14, 2026 result update — research question unresolved.**
-SEQ-250 trajectory sleep is terminal with independent review PASS; the
-combined248–250 section retains prior failures. Fresh-world outcomes are excluded.
+SEQ-251 fresh-identifier transfer is terminal with independent review PASS; the
+combined248–251 section retains prior failures. Follow-up designs are not results.
 SEQ-247 shared-writer material control is terminal and independently reduced.
 SEQ-246 matched replay is terminal and independently reduced.
 A3 SEQ-245 is terminal and independently reduced: six stages, one matching
@@ -52,7 +53,7 @@ The sprint TeX and companion abstract are updated; canonical
 No complete cross-draft review is claimed. The collaborator draft stays UNSENT;
 H1/H2 and the program remain open.
 
-### SEQ-248–250: connected failures and taught-graph improvement — September 14, 2026
+### SEQ-248–251: connected learning and identifier transfer — September 14, 2026
 
 **Both independently reduced COMPLETE.** [Original readout](../analysis/2026-09-14_event_two_hop_first_result.md)
 and [turn-bound successor](../analysis/2026-09-14_event_two_hop_turnbound_first_result.md)
@@ -153,13 +154,54 @@ limits remain unchanged.
 Cold opaque names are a transfer probe, not an invariant requiring every task
 to use unseen names. A parent consulting training source records is likewise
 not forbidden: disclose that access rather than claiming source blindness or
-unseen-world generalization. No current fresh-world transfer outcomes are included.
+unseen-world generalization. SEQ251 below separately reports fresh-identifier transfer.
 Source `0b495971f8ecb2353162757abbdb938effa4493b`; raw capsule
 `gpu_artifacts_local/astra_event_two_hop_lesson_terminal_20260914_attempt1/extracted/`
 contains `collect/LESSONS.json`, `train/RESULT.json`, masks/rows/losses, and
 `after/RESULT.json`/episodes/retention/audits. Sibling `terminal.tar.gz` SHA256:
 `2acae64c4be4abd492f7efb0f50675509d7d0650360f7a23e2575e38ceb7f4a6`.
 The released independent PASS supersedes the primary memo's earlier pending status.
+
+**SEQ251: fresh-identifier transfer; independent bounded review PASS.**
+[Primary result](../analysis/2026-09-14_event_two_hop_transfer_first_result.md) and
+[independent review](../analysis/2026-09-14_event_two_hop_transfer_independent_result.md)
+report zero new fits on one fresh DEV graph with unchanged topology/interface.
+The taught child collects4/4 new EVENTs in8 calls; node/port/event/receipt IDs
+are disjoint from the taught graph and16 old facts. Both snapshots receive the
+same captured records and starting prompts. For ORIGINAL this is **third-party
+supplied context**, not its own on-policy experience; later histories diverge
+with actions. ORIGINAL is the saved207ad adapter, not the adapter-disabled base.
+
+| Fresh-identifier endpoint | Taught37ec | Original207ad |
+| --- | ---: | ---: |
+| OWN_TEXT final goals /4 | 3 | 0 |
+| Display order0, tasks0/2 /2 | 2 | 0 |
+| Reversed order1, tasks1/3 /2 | 1 | 0 |
+| UNAVAILABLE final goals /4 | 0 | 0 |
+
+The taught snapshot's earlier same-world SEQ250 score was3/4; its fresh-instance
+SEQ251 score is also3/4, versus ORIGINAL0/4 on that same fresh instance. Taught
+tasks0,1,2 each execute two legal transitions. Task3 reads four records, then
+selects real second-edge port `P_OSJB7PXJ7E` while still at the root: it skips
+the intermediate step and fails `invalid_route` before any commit. This differs
+from SEQ250's task3 wrong-goal `dead_end`. All ORIGINAL own-text cases emit goal
+nodes as ROUTE arguments; unavailable panels fail by duplicate reads.
+
+This supports partial contextual identifier/world-instance transfer, not mere
+memorization of taught IDs, new-topology generalization or generalized planning.
+It remains one graph/lineage and a mixed-sleep versus no-write comparison, not
+trajectory-gradient versus matched rehearsal or whole-life parenting. No fresh
+graph was written into parametric memory. The two follow-up control/write
+designs are pending, not results; SEQ247 limits and H1/H2 boundaries remain.
+There are93 calls (8collection+47taught+38original), zero fits; native state/base/
+file checks pass at unchanged37ec/207ad. Independent source/call/archive joins
+are not fresh tensor authentication. Attempt1's archived-source guard failed
+before admission/model execution; that infrastructure failure remains separate.
+Source `7db26bec1b419d5bb2548dcdec82cdc4f0adca29`; raw collection and
+`TRAINED/RESULT.json`, `ORIGINAL/RESULT.json`/episodes:
+`gpu_artifacts_local/astra_event_two_hop_transfer_terminal_20260914_attempt2/extracted/`.
+Sibling `terminal.tar.gz` SHA256 (locally checked):
+`571296869ce7f3cd855c4700bdbed2555c28b4a8e915919a12fa5d668fa44036`.
 
 ### SEQ-247: executable selector material, shared writer — September 14, 2026
 
