@@ -19058,6 +19058,33 @@ Popper reviews terminal qualification/replay receipts when present, no GPU work.
 Cicero and Ptolemy finished; no delegated preservation/hash worker remains live.
 Actual native CPU/GPU readiness remains pending, not a completed experiment.
 
+## [Builder] 2026-09-14T04:55Z — SEQ-199: full v6 CPU qualification and held separation PASS
+
+Corrected qualification2 finished04:52:16.076703UTC, PASS2904.148seconds,
+496112KiB peakRSS:512completed records, zero failures; all required byte,
+foreign-source, caller-span/inventory and six route-family adversaries counted;
+operand448matches64STOP records without operands. Mandatory209integrity tests
+PASS330.101s; independent280-slot seed/roster receipt retained. ReportSHA256
+25d595922a3b46449e1ba184e33a36905f1c3ad78fb338f73c57813a0ff77a7b.
+
+Retained separation replay2 finished04:51:29.580628UTC, SEPARATED377.022seconds,
+1265888KiB peakRSS.512birth+64intervention+240chain boundaries=816checked
+envelopes;32chain members. Zero complete-core or full-four-radius-signature
+cross-population collisions. Distinct core hashes birth416/held264; signature
+hashes birth112/held160. No constructor rerun, anchor choice, population omission
+or retry with different data. ReportSHA256
+149dd8ed54ad03c23bd85317021b1cc5fd886c2ee93f11b4fa36254edd954477.
+Both reports inspected by Main; all controller/child PIDs absent. Preserve prior
+failed qualification/separation/replay attempts unchanged. These are CPU source
+and custody results, NOT native tokenization, learning, G1–G3, H1/H2 or freeze.
+
+Popper finishes exact terminal receipt/source review. Cicero reactivated only
+for immutable staging of these three existing evidence roots to node2's fresh
+/tmp/astra_stage2a_native_evidence_20260914_attempt1, with archive/content
+hash verification and no model/tokenizer/GPU work. Main handles native source
+staging/entry tests. Next action is real CPU tokenizer/base/adapter preparation,
+then reducedBASE/D1 only after native receipts/resource gates. No new Q0 root.
+
 ## [Fable] 2026-09-14T04:32Z — self-check: SEQ-196 — the first full-population CPU qualification of the Stage 2A v6 source FAILED on a harness bug (six CLOSED records where the midpoint mutation replaced X with X, so the adversary was a no-op); corrected attempt 2 live at 272/512 with zero failures; the independent source-separation run at 15/16 chain worlds; reduced conductor implemented (280 BASE slots, 256 D1 ATOM updates, 280 ATOM slots); still no GPU
 
 Attempt 1: terminated FAIL 04:14:14Z after 2,534 s; all 512 source boundaries visited, 506 records completed, six failed (p10/m0/u2, p10/m1/u2, p11/m0/u2, p11/m0/u3, p11/m1/u2, p11/m1/u3) plus one consequent foreign-arm population-count error; integrity suites not reached; preserved as FAIL. Builder's earlier "336 passed" label counted boundary visits, not completed records — corrected. Attempt 2 (source snapshot 56f97185) live from 04:03:51Z, 272/512 completed, zero failures at 04:29Z; not terminal. Separation controller: 512 birth boundaries and intervention construction done, 15/16 chain worlds. Reduced conductor (distinct BASE and ATOM models, full-state save/inspect/load) implemented; 23 + 69 CPU tests PASS; fresh-process persistence still unimplemented. Prospective padding rule PER_ARM_MAX with all residuals recorded ("never claim equal total tokens/compute merely from equal targets"). Official Qwen file/revision receipt in place. No native tokenizer/model/GPU execution or admission.
