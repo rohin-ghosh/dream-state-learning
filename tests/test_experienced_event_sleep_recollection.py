@@ -1,13 +1,13 @@
 """CPU-only public-transcript and bounded native callback regression tests."""
 
-from contextlib import nullcontext
+from contextlib import contextmanager, nullcontext
 from copy import deepcopy
 import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from types import SimpleNamespace
 import unittest
-from unittest.mock import MagicMock
+from unittest.mock import MagicMock, patch
 
 from gpu import astra_experienced_event_microloop as native
 from gpu import astra_experienced_event_adult_cycle as runner
@@ -232,6 +232,163 @@ class RevisionTests(unittest.TestCase):
             arguments.extend(['--' + name, 'unused'])
         with self.assertRaisesRegex(ValueError, 'explicit_parental_revision_source_required'):
             runner.main(arguments)
+
+
+class DiagnosticModel:
+    def __init__(self, *, restore=True):
+        self.training = False
+        self.layer = SimpleNamespace(lora_A={}, lora_B={}, disable_adapters=False)
+        self.state = 'e' * 64
+        self.restore = restore
+        self.context_entries = self.context_exits = 0
+
+    def named_modules(self):
+        return [('layer', self.layer)]
+
+    def named_parameters(self):
+        return [('layer.lora_A.default.weight', object())]
+
+    @contextmanager
+    def disable_adapter(self):
+        self.context_entries += 1
+        self.layer.disable_adapters = True
+        try:
+            yield
+        finally:
+            self.context_exits += 1
+            if self.restore:
+                self.layer.disable_adapters = False
+
+
+class BaseDiagnosticTests(unittest.TestCase):
+    def fixture(self, root):
+        previous = RevisionTests()
+        directory, collection, current, prompt, note = previous.prior_fixture(root)
+        messages, provenance = previous.load(directory, collection, current)
+        revision_directory = root / 'recollect_revision'
+        revision_directory.mkdir()
+        revision_note = dict(messages=deepcopy(messages), raw='Rejected revision NONE', terminal=True, truncated=False)
+        native.write(revision_directory / 'SLEEP_NOTE.json', revision_note)
+        native.write(revision_directory / 'SLEEP_PROMPT.json', messages)
+        revision_result = dict(deepcopy(current), schema=runner.SCHEMA, phase='recollect_revision',
+            status='RECOLLECTION_CAPTURED_NO_FIT', state='BEFORE', sleep_recipe='parental_revision_v1',
+            parent_present=True, fits=0, model_calls=1, frozen_base_unchanged=True,
+            training_admission='UNREVIEWED_NO_FIT', loaded_adapter_state_sha256='e' * 64,
+            revision_source=provenance, note_sha256=native.file_hash(revision_directory / 'SLEEP_NOTE.json'),
+            terminal=True, truncated=False)
+        native.write(revision_directory / 'RESULT.json', revision_result)
+        return directory, collection, current
+
+    def load(self, directory, collection, current):
+        return runner.load_base_diagnostic_sources(directory, collection, current,
+                                                    expected_adapter_state_sha256='e' * 64)
+
+    def engine(self, *, fail=False, truncated=False, restore=True, mutate=False):
+        model = DiagnosticModel(restore=restore)
+
+        def generate(messages, *, max_new_tokens):
+            self.assertIs(model.layer.disable_adapters, True)
+            self.assertEqual(max_new_tokens, 768)
+            if fail:
+                raise RuntimeError('synthetic generation failure')
+            if mutate:
+                model.state = 'changed'
+            return dict(messages=deepcopy(messages), raw='base-only output', terminal=not truncated, truncated=truncated)
+
+        return SimpleNamespace(model=model, generate=MagicMock(side_effect=generate))
+
+    def test_fixed_two_prompts_calls_flags_restoration_and_archived_on_unchanged(self):
+        with TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            directory, collection, current = self.fixture(root)
+            before = {str(path): path.read_bytes() for path in root.rglob('*.json')}
+            prompts, provenance = self.load(directory, collection, current)
+            self.assertEqual(prompts[0]['messages'], native.read(directory / 'SLEEP_PROMPT.json'))
+            self.assertEqual(prompts[1]['messages'], native.read(root / 'recollect_revision/SLEEP_PROMPT.json'))
+            self.assertEqual(prompts[1]['messages'][2]['content'], native.read(directory / 'SLEEP_NOTE.json')['raw'])
+            engine = self.engine()
+            output = root / 'recollect_base_diagnostic'
+            output.mkdir()
+            with patch('organism_v6.pcfl_vertical_train._state_hash', side_effect=lambda parameters: engine.model.state):
+                result = runner.recollect_base_diagnostic(engine, prompts, output, provenance)
+            self.assertEqual(engine.generate.call_count, 2)
+            self.assertEqual((engine.model.context_entries, engine.model.context_exits), (1, 1))
+            self.assertFalse(engine.model.layer.disable_adapters)
+            self.assertTrue(result['adapter_restored'])
+            self.assertEqual((result['model_calls'], result['fits']), (2, 0))
+            self.assertEqual(result['actor_mode'], 'INFERENCE_ADAPTER_OFF')
+            self.assertFalse(result['own_experience_actor'])
+            self.assertEqual(result['training_admission'], 'EXCLUDED_FROM_TRAINING')
+            for item in prompts:
+                record = result['diagnostic_panels'][item['name']]
+                self.assertEqual(record['parent_present'], item['parent_present'])
+                self.assertEqual(record['model_calls'], 1)
+                self.assertFalse(record['own_experience_actor'])
+                self.assertEqual(record['training_admission'], 'EXCLUDED_FROM_TRAINING')
+                self.assertEqual(native.read(output / (item['name'] + '_PROMPT.json')), item['messages'])
+                self.assertEqual(native.read(output / (item['name'] + '.json'))['raw'], 'base-only output')
+            self.assertEqual(before, {path: Path(path).read_bytes() for path in before})
+            self.assertFalse((output / 'adapter').exists())
+
+    def test_failure_truncation_and_state_drift_restore_or_fail_closed(self):
+        for options, error in ((dict(fail=True), 'synthetic generation failure'),
+                               (dict(truncated=True), 'terminal_untruncated_base_diagnostic'),
+                               (dict(restore=False), 'adapter_not_restored'),
+                               (dict(mutate=True), 'adapter_not_restored')):
+            with self.subTest(options=options), TemporaryDirectory() as temporary:
+                root = Path(temporary)
+                directory, collection, current = self.fixture(root)
+                prompts, provenance = self.load(directory, collection, current)
+                output = root / 'base'
+                output.mkdir()
+                engine = self.engine(**options)
+                with patch('organism_v6.pcfl_vertical_train._state_hash', side_effect=lambda parameters: engine.model.state):
+                    with self.assertRaisesRegex((ValueError, RuntimeError), error):
+                        runner.recollect_base_diagnostic(engine, prompts, output, provenance)
+                self.assertEqual(engine.model.context_exits, 1)
+                if options.get('restore', True):
+                    self.assertFalse(engine.model.layer.disable_adapters)
+                self.assertEqual(engine.generate.call_count, 1 if options.get('fail') else 2)
+                if options.get('truncated'):
+                    self.assertTrue(native.read(output / 'SLEEP_BASE_REHEARSAL.json')['truncated'])
+                    self.assertTrue(native.read(output / 'SLEEP_BASE_REVISION.json')['truncated'])
+
+    def test_both_archived_on_conditions_must_match_sources(self):
+        faults = ('initial_training_result_sha256', 'adult_source', 'loaded_adapter_state_sha256',
+                  'revision_source', 'note_sha256', 'terminal', 'parent_present')
+        for key in faults:
+            with self.subTest(key=key), TemporaryDirectory() as temporary:
+                root = Path(temporary)
+                directory, collection, current = self.fixture(root)
+                path = root / 'recollect_revision/RESULT.json'
+                result = native.read(path)
+                result[key] = False if key in ('terminal', 'parent_present') else 'wrong'
+                path.write_bytes(native.native._json_bytes(result))
+                with self.assertRaises(ValueError):
+                    self.load(directory, collection, current)
+        with TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            directory, collection, current = self.fixture(root)
+            prompt = native.read(root / 'recollect_revision/SLEEP_PROMPT.json')
+            prompt[-1]['content'] += ' altered'
+            (root / 'recollect_revision/SLEEP_PROMPT.json').write_bytes(native.native._json_bytes(prompt))
+            with self.assertRaisesRegex(ValueError, 'on_revision_prompt_mismatch'):
+                self.load(directory, collection, current)
+        with TemporaryDirectory() as temporary:
+            directory, collection, current = self.fixture(Path(temporary))
+            current['adult_source'] = {'wrong': 'collection'}
+            with self.assertRaisesRegex(ValueError, 'previous_recollection_source_mismatch'):
+                self.load(directory, collection, current)
+
+    def test_cli_requires_previous_source_and_forbids_after_and_recipe_selection(self):
+        common = ['--phase', 'recollect_base_diagnostic', '--development-arm', 'CUE_REPLAY']
+        for name in ('model-dir', 'expected-base-sha256', 'initial-adapter-dir', 'expected-initial-adapter-sha256',
+                     'collection', 'cue-collection', 'output', 'gpu-uuid'):
+            common.extend(['--' + name, 'unused'])
+        for extra in ([], ['--state', 'AFTER'], ['--previous-recollection', 'prior', '--sleep-recipe', 'parental_revision_v1'],
+                      ['--previous-recollection', 'prior', '--sleep-recipe', 'rehearsal_allowed_v2']):
+            with self.subTest(extra=extra), self.assertRaises(ValueError):
+                runner.main(common + extra)
 
 
 class GeneratedTokens:

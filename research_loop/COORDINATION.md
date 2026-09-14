@@ -21417,3 +21417,17 @@ OFF never collected these experiences: outputs explicitly excluded training,
 not authentic child-generated targets. No further prompt variants or writer
 changes. Source/prompt checks and existing2048/768limits stay; launch after
 minimal CPU regressions, with independent review behind execution.
+
+[Builder] 2026-09-14T11:12Z adapter-ablation pre-GPU release: node2GPU2,
+new `recollect_base_diagnostic` directory; two unchanged prompts, two OFF calls,
+no ON reruns/fits. Both archived ON sources validated before loading; every
+LoRA layer disabled during inference and restored afterward; parameter state
+unchanged. Main49focused/adjacenttests pass, worker52 across its patterns,
+shellsyntax/diff clean. Existing physical/CVD and lease guard unchanged.
+Material labelled own_experience_actor=false and EXCLUDED_FROM_TRAINING.
+Independent review confirms revision's four EVENT lines are factually grounded;
+its remaining failure is W-label/exclusive-NONE format, not invented outcomes.
+We will not turn cosmetic note compliance into the night's next learning goal.
+After this tiny localization, investigate child-selected corrective replay from
+actual wrong-goal outcomes, with uniform-replay control and fixed short sleep;
+pure source-interface work proceeds in parallel. No selector fit launched yet.

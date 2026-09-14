@@ -257,9 +257,91 @@ def recollect_revision(engine, messages, output, provenance):
         terminal=True, truncated=False)
 
 
+def load_base_diagnostic_sources(directory, collection, current, *, expected_adapter_state_sha256):
+    from organism_v6 import experienced_event_sleep_recollection as recollection
+
+    messages, provenance = load_recollection_revision(directory, collection, current,
+        expected_adapter_state_sha256=expected_adapter_state_sha256)
+    revision_directory = Path(directory).parent / 'recollect_revision'
+    require(not (revision_directory / 'FAILED.json').exists(), 'failed_on_revision_forbidden')
+    revision = source.read(revision_directory / 'RESULT.json')
+    note = source.read(revision_directory / 'SLEEP_NOTE.json')
+    prompt = source.read(revision_directory / 'SLEEP_PROMPT.json')
+    require(revision.get('schema') == SCHEMA and revision.get('phase') == 'recollect_revision'
+            and revision.get('status') == 'RECOLLECTION_CAPTURED_NO_FIT' and revision.get('state') == 'BEFORE'
+            and revision.get('sleep_recipe') == 'parental_revision_v1' and revision.get('parent_present') is True
+            and type(revision.get('fits')) is int and revision['fits'] == 0
+            and type(revision.get('model_calls')) is int and revision['model_calls'] == 1
+            and revision.get('frozen_base_unchanged') is True
+            and revision.get('training_admission') == 'UNREVIEWED_NO_FIT'
+            and revision.get('loaded_adapter_state_sha256') == expected_adapter_state_sha256
+            and revision.get('revision_source') == provenance, 'same_actor_on_revision_required')
+    for key in ('initial_training_result_sha256', 'adult_source', 'memory_source', 'cue_source',
+                'development_arm', 'cycle', 'master'):
+        require(revision.get(key) == current[key], 'on_revision_source_mismatch:' + key)
+    require(prompt == messages and note.get('messages') == messages, 'on_revision_prompt_mismatch')
+    require(source.file_hash(revision_directory / 'SLEEP_NOTE.json') == revision.get('note_sha256'),
+            'on_revision_note_hash_mismatch')
+    require(revision.get('terminal') is True and revision.get('truncated') is False
+            and note.get('terminal') is True and note.get('truncated') is False, 'terminal_on_revision_required')
+    provenance = dict(provenance, on_revision_source=dict(directory=str(revision_directory),
+        source_files={name: source.file_hash(revision_directory / name)
+                      for name in ('RESULT.json', 'SLEEP_PROMPT.json', 'SLEEP_NOTE.json')}))
+    return recollection.base_diagnostic_prompts(collection, messages), provenance
+
+
+def recollect_base_diagnostic(engine, prompts, output, provenance):
+    from organism_v6 import experienced_event_sleep_recollection as recollection
+    from organism_v6.pcfl_vertical_train import _state_hash
+
+    require(len(prompts) == 2 and [(item['name'], item['recipe'], item['parent_present']) for item in prompts]
+            == [('SLEEP_BASE_REHEARSAL', 'rehearsal_allowed_v2', False),
+                ('SLEEP_BASE_REVISION', 'parental_revision_v1', True)], 'fixed_two_base_diagnostic_conditions_required')
+    modules = {name: module for name, module in engine.model.named_modules()
+               if hasattr(module, 'lora_A') and hasattr(module, 'lora_B')}
+    parameters = {name: parameter for name, parameter in engine.model.named_parameters()
+                  if '.lora_A.' in name or '.lora_B.' in name}
+    require(bool(modules) and bool(parameters) and engine.model.training is False, 'loaded_eval_adapter_required')
+    original_flags = {name: module.disable_adapters for name, module in modules.items()}
+    require(all(value is False for value in original_flags.values()), 'initial_adapter_must_be_enabled')
+    before = _state_hash(parameters)
+    source.write(output / 'SLEEP_BASE_SOURCE.json', provenance)
+    for item in prompts:
+        source.write(output / (item['name'] + '_PROMPT.json'), item['messages'])
+    records = {}
+    try:
+        with engine.model.disable_adapter():
+            require(all(module.disable_adapters is True for module in modules.values()), 'adapter_off_context_required')
+            for item in prompts:
+                generation = engine.generate(item['messages'], max_new_tokens=recollection.MAX_NEW_TOKENS)
+                source.write(output / (item['name'] + '.json'), generation)
+                require(generation.get('messages') == item['messages'], 'base_diagnostic_prompt_drift')
+                records[item['name']] = dict(sleep_recipe=item['recipe'], parent_present=item['parent_present'],
+                    actor_mode='INFERENCE_ADAPTER_OFF', own_experience_actor=False,
+                    training_admission='EXCLUDED_FROM_TRAINING', model_calls=1, fits=0,
+                    note_sha256=source.file_hash(output / (item['name'] + '.json')),
+                    prompt_sha256=source.file_hash(output / (item['name'] + '_PROMPT.json')),
+                    terminal=generation.get('terminal'), truncated=generation.get('truncated'))
+    finally:
+        restored_flags = {name: module.disable_adapters for name, module in modules.items()}
+        after = _state_hash(parameters)
+        source.write(output / 'SLEEP_BASE_RESTORATION.json', dict(adapter_state_before=before,
+            adapter_state_after=after, original_disabled_flags=original_flags, restored_disabled_flags=restored_flags))
+        require(restored_flags == original_flags and after == before and engine.model.training is False,
+                'base_diagnostic_adapter_not_restored')
+    require(all(record['terminal'] is True and record['truncated'] is False for record in records.values()),
+            'terminal_untruncated_base_diagnostic_required')
+    return dict(recollection_schema=recollection.SCHEMA, actor_mode='INFERENCE_ADAPTER_OFF',
+        own_experience_actor=False, training_admission='EXCLUDED_FROM_TRAINING', fits=0, model_calls=2,
+        claim='ADAPTER_VS_PROMPT_FAILURE_DIAGNOSTIC_NOT_CHILD_MATERIAL_EFFICACY_OR_PARENTING_SUCCESS',
+        diagnostic_source=provenance, diagnostic_panels=records,
+        adapter_restored=True, adapter_state_before=before, adapter_state_after=after)
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--phase', choices=('collect', 'train', 'readout', 'recollect', 'recollect_revision'), required=True)
+    parser.add_argument('--phase', choices=('collect', 'train', 'readout', 'recollect', 'recollect_revision',
+                                           'recollect_base_diagnostic'), required=True)
     parser.add_argument('--state', choices=('BEFORE', 'AFTER'), default='BEFORE')
     parser.add_argument('--development-arm', choices=development.TRAINING_ARMS, required=True)
     for name in ('model-dir', 'expected-base-sha256', 'initial-adapter-dir', 'expected-initial-adapter-sha256',
@@ -279,7 +361,8 @@ def main(argv=None):
     require(args.state == 'BEFORE' or args.phase == 'readout', 'after_only_for_fresh_readout')
     require(args.phase == 'readout' or args.reader_wrapper == 8, 'reader_variant_only_for_readout')
     require((args.phase == 'recollect_revision') == (args.sleep_recipe == 'parental_revision_v1')
-            and (args.phase == 'recollect_revision') == bool(args.previous_recollection), 'explicit_parental_revision_source_required')
+            and (args.phase in ('recollect_revision', 'recollect_base_diagnostic')) == bool(args.previous_recollection),
+            'explicit_parental_revision_source_required')
     require(args.phase in ('recollect', 'recollect_revision') or args.sleep_recipe == 'novelty_optional_v1', 'sleep_recipe_only_for_recollection')
     require(args.phase == 'collect' or args.adult_collection, 'experienced_adult_source_required')
     require((args.state == 'AFTER') == bool(args.adapter_dir), 'explicit_after_adapter_only')
@@ -299,6 +382,11 @@ def main(argv=None):
         result.update(parent_present=True, fits=0, sleep_recipe='parental_revision_v1',
             training_admission='UNREVIEWED_NO_FIT',
             claim='PARENT_FEEDBACK_RESPONSIVENESS_ONLY_NOT_LEARNING_TRANSFER_OR_UTILITY')
+    if phase == 'recollect_base_diagnostic':
+        result.update(actor_mode='INFERENCE_ADAPTER_OFF', own_experience_actor=False, fits=0,
+            training_admission='EXCLUDED_FROM_TRAINING',
+            parent_present_by_panel=dict(SLEEP_BASE_REHEARSAL=False, SLEEP_BASE_REVISION=True),
+            claim='ADAPTER_VS_PROMPT_FAILURE_DIAGNOSTIC_NOT_CHILD_MATERIAL_EFFICACY_OR_PARENTING_SUCCESS')
     source.write(output / 'REQUEST.json', result)
 
     def check(label):
@@ -338,6 +426,10 @@ def main(argv=None):
             revision_messages, revision_source = load_recollection_revision(args.previous_recollection,
                 collection, result, expected_adapter_state_sha256=initial['adapter_state_after'])
             result['revision_source'] = revision_source
+        if phase == 'recollect_base_diagnostic':
+            diagnostic_prompts, diagnostic_source = load_base_diagnostic_sources(args.previous_recollection,
+                collection, result, expected_adapter_state_sha256=initial['adapter_state_after'])
+            result['diagnostic_source'] = diagnostic_source
         if args.state == 'AFTER':
             check_adult_training(args.adapter_dir, cycle=args.cycle, arm=args.development_arm,
                 expected_base_sha256=args.expected_base_sha256, memory_source=memory_source, cue_source=cue_source,
@@ -354,6 +446,13 @@ def main(argv=None):
                 add_generation_prompt=True, return_dict=False, truncation=False, padding=False)
             require(0 < len(prompt_ids) <= source.MAX_CONTEXT, 'revision_context_bound_exceeded_no_truncation')
             result['revision_prompt_tokens'] = len(prompt_ids)
+        if phase == 'recollect_base_diagnostic':
+            result['diagnostic_prompt_tokens'] = {}
+            for item in diagnostic_prompts:
+                prompt_ids = tokenizer.apply_chat_template(item['messages'], tokenize=True,
+                    add_generation_prompt=True, return_dict=False, truncation=False, padding=False)
+                require(0 < len(prompt_ids) <= source.MAX_CONTEXT, 'base_diagnostic_context_bound_exceeded_no_truncation')
+                result['diagnostic_prompt_tokens'][item['name']] = len(prompt_ids)
         if phase == 'train':
             encode_old_rows(old_rows, tokenizer)
             source.encode_rows(new_rows, tokenizer)
@@ -380,6 +479,8 @@ def main(argv=None):
             result.update(recollect(engine, collection, output, recipe=args.sleep_recipe))
         elif phase == 'recollect_revision':
             result.update(recollect_revision(engine, revision_messages, output, revision_source))
+        elif phase == 'recollect_base_diagnostic':
+            result.update(recollect_base_diagnostic(engine, diagnostic_prompts, output, diagnostic_source))
         else:
             result.update(evaluate(engine, collection, old_bank, old_episodes, output,
                                    reader_wrapper=args.reader_wrapper))
@@ -392,7 +493,7 @@ def main(argv=None):
         status = 'COMPLETE'
         if phase == 'collect':
             status = 'COLLECTION_COMPLETE' if result['accepted_events'] == 4 else 'COLLECTION_INCOMPLETE_NO_FIT'
-        elif phase in ('recollect', 'recollect_revision'):
+        elif phase in ('recollect', 'recollect_revision', 'recollect_base_diagnostic'):
             status = 'RECOLLECTION_CAPTURED_NO_FIT'
         result.update(status=status, frozen_base_unchanged=True, finished_unix=time.time())
         source.write(output / 'RESULT.json', result)

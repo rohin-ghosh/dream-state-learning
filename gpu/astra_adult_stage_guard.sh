@@ -24,13 +24,17 @@ fi
 root="$campaign/$arm"
 case "$stage" in
     train) duration=7440 ;;
-    before|after_w0|recollect|recollect_rehearsal|recollect_revision) duration=1920 ;;
+    before|after_w0|recollect|recollect_rehearsal|recollect_revision|recollect_base_diagnostic) duration=1920 ;;
     *) exit 2 ;;
 esac
-if test "$stage" = recollect_revision; then
+if test "$stage" = recollect_revision || test "$stage" = recollect_base_diagnostic; then
     test -f "$root/recollect_rehearsal/RESULT.json"
     test -f "$root/recollect_rehearsal/SLEEP_NOTE.json"
-    test ! -e "$root/recollect_revision"
+    test ! -e "$root/$stage"
+fi
+if test "$stage" = recollect_base_diagnostic; then
+    test -f "$root/recollect_revision/RESULT.json"
+    test -f "$root/recollect_revision/SLEEP_NOTE.json"
 fi
 mkdir "$root/launch_$stage"
 clear=false
@@ -56,7 +60,9 @@ common=("${extra[@]}" --development-arm "$arm" --initial-adapter-dir "$adapter" 
     --expected-base-sha256 a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992
     --collection /tmp/astra_microloop_20260914_attempt2/collection
     --cue-collection /tmp/astra_cue_lastturn_20260914_attempt1/run --adult-collection "$root/collect")
-if test "$stage" = recollect_revision; then
+if test "$stage" = recollect_base_diagnostic; then
+    timeout --signal=INT --kill-after=60 1860 "$python" -B -m gpu.astra_experienced_event_adult_cycle "${common[@]}" --phase recollect_base_diagnostic --previous-recollection "$root/recollect_rehearsal" --output "$root/recollect_base_diagnostic"
+elif test "$stage" = recollect_revision; then
     timeout --signal=INT --kill-after=60 1860 "$python" -B -m gpu.astra_experienced_event_adult_cycle "${common[@]}" --phase recollect_revision --sleep-recipe parental_revision_v1 --previous-recollection "$root/recollect_rehearsal" --output "$root/recollect_revision"
 elif test "$stage" = recollect_rehearsal; then
     timeout --signal=INT --kill-after=60 1860 "$python" -B -m gpu.astra_experienced_event_adult_cycle "${common[@]}" --phase recollect --sleep-recipe rehearsal_allowed_v2 --output "$root/recollect_rehearsal"

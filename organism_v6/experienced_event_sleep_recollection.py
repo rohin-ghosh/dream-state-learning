@@ -78,3 +78,20 @@ def build_messages(collection, *, recipe="novelty_optional_v1", previous_note=No
     system, suffix = (SYSTEM, USER_SUFFIX) if recipe == RECIPES[0] else (REHEARSAL_SYSTEM, REHEARSAL_SUFFIX)
     return [dict(role="system", content=system),
             dict(role="user", content=USER_PREFIX + "\n".join(transcripts) + suffix)]
+
+
+def base_diagnostic_prompts(collection, revision_messages):
+    """The two existing prompt conditions; neither output is child experience."""
+    rehearsal = build_messages(collection, recipe="rehearsal_allowed_v2")
+    adult.require(type(revision_messages) is list and len(revision_messages) == 4
+                  and revision_messages[:2] == rehearsal
+                  and revision_messages[2].get("role") == "assistant"
+                  and type(revision_messages[2].get("content")) is str
+                  and revision_messages[-1] == dict(role="user", content=PARENT_FEEDBACK),
+                  "exact_two_base_diagnostic_prompts_required")
+    return (
+        dict(name="SLEEP_BASE_REHEARSAL", recipe="rehearsal_allowed_v2", parent_present=False,
+             messages=rehearsal),
+        dict(name="SLEEP_BASE_REVISION", recipe="parental_revision_v1", parent_present=True,
+             messages=revision_messages),
+    )
