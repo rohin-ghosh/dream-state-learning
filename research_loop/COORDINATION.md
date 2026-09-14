@@ -20673,3 +20673,17 @@ sleep uses this same adapter's teacher-stripped trajectories plus old memory
 replay; its next parent-free readout must retain recall AND condition actions on
 retrieved evidence. More repeats of the current incomplete corpus would not
 teach the missing branch. Paper updates and terminal audits proceed in parallel.
+[Builder] 2026-09-14T09:27Z prospective public-feedback cue successor:
+same savedactor8597605e, same8external rawEVENTs, same8tasks, newteacher mode
+public_feedback_v1. Teacher compares only public AT/NODE and GOT/GOAL; it
+explicitly names the unreadaddress after mismatch and observedDID aftermatch.
+This is externally computed parental coaching, NOT child inference or a fixed
+serialization compiler. Actual childoutputs alone form targets; allteacher text
+removedfromstudent prefixes. NativeCLI requires savedactor+explicitreuse.
+28focusedCPUtests pass (15pure+13native); malformedfeedback is infrastructure
+failure, legacydefault preserved. Pytest unavailable; unittest used successfully.
+Freshnode2GPU4root/tmp/astra_cue_feedback_20260914_attempt1; max24calls,
+zero fits/newexperiencecalls,1200sinternal/1800souter+60s, same guards.
+Decision: require observed oneREAD and mismatch→secondREAD successes across
+bothbanks before selecting a trainingrecipe; inspect all8failure-inclusive tasks.
+No automaticfit or successclaim; parent-free ability must be tested aftersleep.

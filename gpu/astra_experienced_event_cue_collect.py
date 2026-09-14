@@ -108,7 +108,7 @@ def load_reused_experiences(directory, *, expected_base_sha256):
         source_cue_rows_used=False, source_cue_scores_used=False)
 
 
-def collect(engine, output, *, reused_experiences=None):
+def collect(engine, output, *, reused_experiences=None, teaching_mode=cue.DEFAULT_TEACHING_MODE):
     captures, reports = [], []
     if reused_experiences is not None:
         source.require(cue.GUIDANCE == EXPLICIT_GUIDANCE, 'explicit_strategy_required_for_reuse')
@@ -168,7 +168,7 @@ def collect(engine, output, *, reused_experiences=None):
             source.write(directory / ("EXPERIENCE_%02d.json" % len(events)), episode)
         source.write(directory / "EXPERIENCES.json", events)
         if len(memories) == 4:
-            report = cue.run_collection(bank, memories, generate)
+            report = cue.run_collection(bank, memories, generate, teaching_mode=teaching_mode)
         else:
             report = dict(status="SOURCE_INCOMPLETE_NO_CUE_EPISODES", episodes=[], student_rows=[],
                           physical_actor_calls=0, selected_successes=0)
@@ -202,6 +202,7 @@ def main(argv=None):
     parser.add_argument('--explicit-cue-strategy', action='store_true')
     parser.add_argument('--cue-adapter-dir')
     parser.add_argument('--adapter-collection')
+    parser.add_argument('--public-feedback', action='store_true')
     args = parser.parse_args(argv)
     if bool(args.reuse_experiences) != args.explicit_cue_strategy:
         parser.error('--reuse-experiences and --explicit-cue-strategy must be supplied together')
@@ -209,6 +210,8 @@ def main(argv=None):
         parser.error('--cue-adapter-dir and --adapter-collection must be supplied together')
     if args.cue_adapter_dir and not args.reuse_experiences:
         parser.error('the selected memory actor requires explicit reused-experience collection')
+    if args.public_feedback and not args.cue_adapter_dir:
+        parser.error('--public-feedback requires the selected saved memory actor')
     source.require(os.environ.get("HF_HUB_OFFLINE") == "1"
                    and os.environ.get("TRANSFORMERS_OFFLINE") == "1", "offline_required")
     source.require(os.environ.get("CUDA_VISIBLE_DEVICES") == args.gpu_uuid, "exact_gpu_required")
@@ -226,10 +229,12 @@ def main(argv=None):
         source.require(time.time() < started + 1200, "collection_deadline:" + phase)
 
     selected_guidance = EXPLICIT_GUIDANCE if args.explicit_cue_strategy else cue.GUIDANCE
+    teaching_mode = cue.PUBLIC_FEEDBACK_MODE if args.public_feedback else cue.DEFAULT_TEACHING_MODE
     result = dict(schema='DEV_GUIDED_EXTERNAL_EVENT_CUE_REUSE_V1' if args.reuse_experiences
                   else "DEV_GUIDED_EXTERNAL_EVENT_CUE_COLLECTION_V1", master=MASTER,
         started_unix=started, arguments=vars(args),
         guidance=selected_guidance, guidance_sha256=sha256(selected_guidance.encode('utf-8')).hexdigest(),
+        teaching_mode=teaching_mode,
         claim="COACHED_DATA_COLLECTION_NOT_AUTONOMOUS_CUE_OR_PARENTING_SUCCESS",
         runner_sha256=source.file_hash(__file__),
         source_sha256={Path(module.__file__).name: source.file_hash(module.__file__)
@@ -263,7 +268,7 @@ def main(argv=None):
                                   if '.lora_A.' in name or '.lora_B.' in name}
             source.require(bool(adapter_parameters), 'loaded_memory_adapter_parameters_required')
             result['actor_adapter_state_before'] = _state_hash(adapter_parameters)
-        result.update(collect(engine, root, reused_experiences=reused))
+        result.update(collect(engine, root, reused_experiences=reused, teaching_mode=teaching_mode))
         engine.verify_base()
         if adapter_parameters is not None:
             result['actor_adapter_state_after'] = _state_hash(adapter_parameters)

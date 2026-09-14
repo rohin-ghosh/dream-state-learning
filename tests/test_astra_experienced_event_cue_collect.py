@@ -236,7 +236,7 @@ class ReuseExperienceTests(unittest.TestCase):
         common = ['--model-dir', 'unused', '--expected-base-sha256', 'a' * 64,
                   '--output', 'unused-output', '--gpu-uuid', 'GPU-test']
         for extra in (['--reuse-experiences', 'unused'], ['--explicit-cue-strategy'],
-                      ['--cue-adapter-dir', 'unused'], ['--adapter-collection', 'unused'],
+                      ['--cue-adapter-dir', 'unused'], ['--adapter-collection', 'unused'], ['--public-feedback'],
                       ['--cue-adapter-dir', 'unused', '--adapter-collection', 'unused']):
             with self.subTest(extra=extra), patch.object(runner.source.native, 'load_local_tokenizer') as load, \
                     self.assertRaises(SystemExit):
@@ -252,7 +252,7 @@ class ReuseExperienceTests(unittest.TestCase):
             arguments = ['--model-dir', 'unused', '--expected-base-sha256', 'a' * 64,
                 '--output', str(output), '--gpu-uuid', 'GPU-test', '--reuse-experiences', str(original),
                 '--explicit-cue-strategy', '--cue-adapter-dir', 'selected-adapter',
-                '--adapter-collection', 'selected-memory-source']
+                '--adapter-collection', 'selected-memory-source', '--public-feedback']
             parameter = SimpleNamespace(requires_grad=False)
             model = Mock()
             model.parameters.return_value = [parameter]
@@ -271,6 +271,7 @@ class ReuseExperienceTests(unittest.TestCase):
             self.assertEqual(validate.call_count, 2)
             result = runner.source.read(output / 'RESULT.json')
             self.assertEqual(result['actor_kind'], 'FROZEN_SAVED_MEMORY_LEARNER')
+            self.assertEqual(result['teaching_mode'], runner.cue.PUBLIC_FEEDBACK_MODE)
             self.assertEqual(result['actor_adapter_state_before'], result['actor_adapter_state_after'])
             self.assertEqual(result['fits'], 0)
 

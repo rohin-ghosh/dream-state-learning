@@ -1,5 +1,39 @@
 # Astra restart handoff — September14,2026,02:49UTC
 
+## CURRENT OVERRIDE — September14,2026,09:25UTC
+
+Mission incomplete. Read this before older status. Main at f11c22b6; no live
+GPU jobs from the most recent block. Do NOT resubmit completed fits/collections.
+Node1 no new work (ends September14 23:14UTC); earlier preservation complete.
+
+- SEQ220: A4-only7/10 versus copy-mixture6/10, both4/8strictchains with identical
+  raw chain action sequences. Canaries4→9/16, PROSPECT3→2/4, CONTINUE0/4 both.
+  Mixture changes outcome dose/order/tokens; not isolated replay causation.
+  Both final adapters locally backed up with verified hashes, no qualification.
+- SEQ221: BASE explicitcue collection5/8selected,11rows,17calls, one successful
+  secondREAD. Then savedmemoryactor c6acab47, node2GPU4 guardian344429,
+  /tmp/astra_cue_current_actor_20260914_attempt1 completed09:22:50UTC:4/8selected,
+  8rows,16calls; all8readonce→ROUTE, no secondREAD. Sourceadapter8597605e,
+  in-memory before/afterc08852cb, unchangedbase. No fit. External raw sourced
+  EVENTs, not model-generated reads. Never treat BASErows as currentactor data.
+- Current experiment: add PUBLIC-feedback teacher option to collect the missing
+  mismatch→secondREAD branch. It infers from displayed task and returned EVENT
+  only; parent reasoning, not compiler semantics. New successor not launched.
+  Main owns gpu/astra_experienced_event_cue_collect.py and its native test.
+  Ohm01a09f3a-a981-7cb0-9bd1-1801a7add334 owns only pure cue module/test.
+- Euclid finishing read-only smallest second-sleep interface recommendation.
+  Confucius owns savedactor result analysis/capture; previous replay done.
+  Carson owns sprint TeX/abstract/unsent collaborator update; no canonicalmain edit.
+- Next: inspect publicfeedback source/CPU tests, collect from savedactor in new
+  root with physical+CVD guard. Inspect branch coverage before any second sleep.
+  Then sameadapter continuation with its own teacher-stripped action trajectories
+  and oldEVENT replay; parent-free held read/route plus oldmemory retention and
+  savedSLEEP1 no-write comparison. No automaticdose, no high-confidence claims.
+
+Preserve unrelated dirty gpu/codex/dream_state.rules and untracked two-sleep
+prospectivepacket. Detailed result memos committed in research_notes/analysis/.
+Paper updates/evidence review proceed in parallel, not a DEV execution gate.
+
 ## CURRENT OVERRIDE — September14,2026,08:49UTC
 
 Read this first. Full mission/goal remains active; no qualified parenting loop,
