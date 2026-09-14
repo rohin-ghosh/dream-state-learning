@@ -1,0 +1,1214 @@
+[
+  {
+    "full_messages": [
+      {
+        "content": "Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "system"
+      },
+      {
+        "content": "Mrs. Taylor bought two smart televisions that cost $650 each. If the total sales price had a 25% discount, how much did Mrs. Taylor pay for the two televisions?",
+        "role": "user"
+      }
+    ],
+    "gold": "975",
+    "kind": "rich",
+    "question": "Mrs. Taylor bought two smart televisions that cost $650 each. If the total sales price had a 25% discount, how much did Mrs. Taylor pay for the two televisions?",
+    "student_prefix": [
+      {
+        "content": "Mrs. Taylor bought two smart televisions that cost $650 each. If the total sales price had a 25% discount, how much did Mrs. Taylor pay for the two televisions?",
+        "role": "user"
+      }
+    ],
+    "target": "First, I identify the given quantities:\n- Cost of one smart television: $650\n- Number of televisions: 2\n- Discount rate: 25%\n\nNext, I calculate the total cost before the discount:\n\\[ \\text{Total cost before discount} = 650 \\times 2 = 1300 \\]\n\nThen, I calculate the discount amount:\n\\[ \\text{Discount amount} = 1300 \\times 0.25 = 325 \\]\n\nNow, I subtract the discount from the total cost to find the final price:\n\\[ \\text{Total cost after discount} = 1300 - 325 = 975 \\]\n\nSo, Mrs. Taylor paid $975 for the two televisions.\n\nFINAL: 975",
+    "target_sha256": "fd73157c6f84880bd85f3b3eefdcb4f2914e855963ecb2766e2da9fb31204a40",
+    "task_id": "gsm8k-train-2217"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Mrs. Taylor bought two smart televisions that cost $650 each. If the total sales price had a 25% discount, how much did Mrs. Taylor pay for the two televisions?",
+        "role": "user"
+      },
+      {
+        "content": "First, I identify the given quantities:\n- Cost of one smart television: $650\n- Number of televisions: 2\n- Discount rate: 25%\n\nNext, I calculate the total cost before the discount:\n\\[ \\text{Total cost before discount} = 650 \\times 2 = 1300 \\]\n\nThen, I calculate the discount amount:\n\\[ \\text{Discount amount} = 1300 \\times 0.25 = 325 \\]\n\nNow, I subtract the discount from the total cost to find the final price:\n\\[ \\text{Total cost after discount} = 1300 - 325 = 975 \\]\n\nSo, Mrs. Taylor paid $975 for the two televisions.\n\nFINAL: 975",
+        "role": "assistant"
+      },
+      {
+        "content": "The final value passed the exact-answer checker. Write your own reusable record: explain the specific operations, when they apply, and a concrete check using this problem. Retain its final answer. Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "user"
+      }
+    ],
+    "gold": "975",
+    "kind": "record",
+    "question": "Mrs. Taylor bought two smart televisions that cost $650 each. If the total sales price had a 25% discount, how much did Mrs. Taylor pay for the two televisions?",
+    "student_prefix": [
+      {
+        "content": "Mrs. Taylor bought two smart televisions that cost $650 each. If the total sales price had a 25% discount, how much did Mrs. Taylor pay for the two televisions?",
+        "role": "user"
+      },
+      {
+        "content": "First, I identify the given quantities:\n- Cost of one smart television: $650\n- Number of televisions: 2\n- Discount rate: 25%\n\nNext, I calculate the total cost before the discount:\n\\[ \\text{Total cost before discount} = 650 \\times 2 = 1300 \\]\n\nThen, I calculate the discount amount:\n\\[ \\text{Discount amount} = 1300 \\times 0.25 = 325 \\]\n\nNow, I subtract the discount from the total cost to find the final price:\n\\[ \\text{Total cost after discount} = 1300 - 325 = 975 \\]\n\nSo, Mrs. Taylor paid $975 for the two televisions.\n\nFINAL: 975",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable record of this solved task.",
+        "role": "user"
+      }
+    ],
+    "target": "Given quantities:\n- Cost of one smart television: $650\n- Number of televisions: 2\n- Discount rate: 25%\n\nUnknown to find:\n- Total cost after applying the discount\n\nOperations:\n1. Calculate the total cost before the discount.\n2. Calculate the discount amount.\n3. Subtract the discount amount from the total cost before the discount to get the final cost.\n\nStep-by-step solution:\n1. Total cost before discount: \\(650 \\times 2 = 1300\\)\n2. Discount amount: \\(1300 \\times 0.25 = 325\\)\n3. Total cost after discount: \\(1300 - 325 = 975\\)\n\nConcrete check:\n- Verify the multiplication: \\(650 \\times 2 = 1300\\)\n- Verify the discount calculation: \\(1300 \\times 0.25 = 325\\)\n- Verify the subtraction: \\(1300 - 325 = 975\\)\n\nAll checks confirm the calculations are correct.\n\nFINAL: 975",
+    "target_sha256": "b75c9eecf29fbb1665d75cf379f625a25cb8a29fa30e14d50dec373bc613b175",
+    "task_id": "gsm8k-train-2217"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "system"
+      },
+      {
+        "content": "If eight liters is 20% the capacity of a container filled with water, calculate the total capacity of 40 such containers filled with water.",
+        "role": "user"
+      }
+    ],
+    "gold": "1600",
+    "kind": "rich",
+    "question": "If eight liters is 20% the capacity of a container filled with water, calculate the total capacity of 40 such containers filled with water.",
+    "student_prefix": [
+      {
+        "content": "If eight liters is 20% the capacity of a container filled with water, calculate the total capacity of 40 such containers filled with water.",
+        "role": "user"
+      }
+    ],
+    "target": "Given that 8 liters is 20% of the capacity of one container, we can find the full capacity of one container by setting up the equation:\n\n\\[ 8 \\text{ liters} = 0.20 \\times \\text{capacity} \\]\n\nTo find the capacity, we divide both sides by 0.20:\n\n\\[ \\text{capacity} = \\frac{8 \\text{ liters}}{0.20} = 40 \\text{ liters} \\]\n\nNow, if one container has a capacity of 40 liters, the total capacity of 40 such containers is:\n\n\\[ 40 \\text{ containers} \\times 40 \\text{ liters/container} = 1600 \\text{ liters} \\]\n\nFINAL: 1600",
+    "target_sha256": "b1df0585a7b245523c29e7671d7b846be2dfe31b3cad3eafc6b7537b4326331e",
+    "task_id": "gsm8k-train-6637"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "If eight liters is 20% the capacity of a container filled with water, calculate the total capacity of 40 such containers filled with water.",
+        "role": "user"
+      },
+      {
+        "content": "Given that 8 liters is 20% of the capacity of one container, we can find the full capacity of one container by setting up the equation:\n\n\\[ 8 \\text{ liters} = 0.20 \\times \\text{capacity} \\]\n\nTo find the capacity, we divide both sides by 0.20:\n\n\\[ \\text{capacity} = \\frac{8 \\text{ liters}}{0.20} = 40 \\text{ liters} \\]\n\nNow, if one container has a capacity of 40 liters, the total capacity of 40 such containers is:\n\n\\[ 40 \\text{ containers} \\times 40 \\text{ liters/container} = 1600 \\text{ liters} \\]\n\nFINAL: 1600",
+        "role": "assistant"
+      },
+      {
+        "content": "The final value passed the exact-answer checker. Write your own reusable record: explain the specific operations, when they apply, and a concrete check using this problem. Retain its final answer. Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "user"
+      }
+    ],
+    "gold": "1600",
+    "kind": "record",
+    "question": "If eight liters is 20% the capacity of a container filled with water, calculate the total capacity of 40 such containers filled with water.",
+    "student_prefix": [
+      {
+        "content": "If eight liters is 20% the capacity of a container filled with water, calculate the total capacity of 40 such containers filled with water.",
+        "role": "user"
+      },
+      {
+        "content": "Given that 8 liters is 20% of the capacity of one container, we can find the full capacity of one container by setting up the equation:\n\n\\[ 8 \\text{ liters} = 0.20 \\times \\text{capacity} \\]\n\nTo find the capacity, we divide both sides by 0.20:\n\n\\[ \\text{capacity} = \\frac{8 \\text{ liters}}{0.20} = 40 \\text{ liters} \\]\n\nNow, if one container has a capacity of 40 liters, the total capacity of 40 such containers is:\n\n\\[ 40 \\text{ containers} \\times 40 \\text{ liters/container} = 1600 \\text{ liters} \\]\n\nFINAL: 1600",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable record of this solved task.",
+        "role": "user"
+      }
+    ],
+    "target": "Given that 8 liters is 20% of the capacity of one container, the first step is to find the full capacity of one container. This can be done by setting up the equation:\n\n\\[ 8 \\text{ liters} = 0.20 \\times \\text{capacity} \\]\n\nTo isolate the capacity, divide both sides by 0.20:\n\n\\[ \\text{capacity} = \\frac{8 \\text{ liters}}{0.20} = 40 \\text{ liters} \\]\n\nThis means each container has a capacity of 40 liters. To find the total capacity of 40 such containers, multiply the capacity of one container by 40:\n\n\\[ 40 \\text{ containers} \\times 40 \\text{ liters/container} = 1600 \\text{ liters} \\]\n\nTo verify, we can check if the calculation is consistent with the given information. If 8 liters is 20% of one container, then 40 liters (the full capacity) should be 100% of one container. For 40 containers, the total capacity should be 40 times 40 liters, which is indeed 1600 liters.\n\nThus, the total capacity of 40 containers is 1600 liters.\n\nFINAL: 1600",
+    "target_sha256": "a5d87fffdf97e3669647742576da5f9189b92ab46f4a9f495feec6e420efd6c7",
+    "task_id": "gsm8k-train-6637"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "system"
+      },
+      {
+        "content": "A certain tree was 100 meters tall at the end of 2017. It will grow 10% more than its previous height each year. How long has the tree grown from 2017 until the end of 2019?",
+        "role": "user"
+      }
+    ],
+    "gold": "21",
+    "kind": "rich",
+    "question": "A certain tree was 100 meters tall at the end of 2017. It will grow 10% more than its previous height each year. How long has the tree grown from 2017 until the end of 2019?",
+    "student_prefix": [
+      {
+        "content": "A certain tree was 100 meters tall at the end of 2017. It will grow 10% more than its previous height each year. How long has the tree grown from 2017 until the end of 2019?",
+        "role": "user"
+      }
+    ],
+    "target": "At the end of 2017, the tree was 100 meters tall. Each year, it grows by 10% of its height at the end of the previous year.\n\nAt the end of 2018, the tree's height is 100 meters + 10% of 100 meters = 100 meters + 10 meters = 110 meters.\n\nAt the end of 2019, the tree's height is 110 meters + 10% of 110 meters = 110 meters + 11 meters = 121 meters.\n\nThe growth from 2017 to the end of 2019 is the difference between the height at the end of 2019 and the height at the end of 2017, which is 121 meters - 100 meters = 21 meters.\n\nThe tree has grown 21 meters from 2017 until the end of 2019.\n\nFINAL: 21",
+    "target_sha256": "55c0ba48be56481170f78cc612ef7a671107fbd479213bc0c51abc9a757af154",
+    "task_id": "gsm8k-train-181"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "system"
+      },
+      {
+        "content": "The pirates plan to explore 4 islands. Two islands require walking 20 miles per day while the other two islands require 25 miles per day. How many miles will they have to walk if it takes 1.5 days to explore each island?",
+        "role": "user"
+      }
+    ],
+    "gold": "135",
+    "kind": "rich",
+    "question": "The pirates plan to explore 4 islands. Two islands require walking 20 miles per day while the other two islands require 25 miles per day. How many miles will they have to walk if it takes 1.5 days to explore each island?",
+    "student_prefix": [
+      {
+        "content": "The pirates plan to explore 4 islands. Two islands require walking 20 miles per day while the other two islands require 25 miles per day. How many miles will they have to walk if it takes 1.5 days to explore each island?",
+        "role": "user"
+      }
+    ],
+    "target": "Given:\n- 2 islands require walking 20 miles per day.\n- 2 islands require walking 25 miles per day.\n- It takes 1.5 days to explore each island.\n\nFor the first type of island:\n- Miles per day: 20\n- Days to explore: 1.5\n- Total miles per island: 20 * 1.5 = 30 miles\n\nFor the second type of island:\n- Miles per day: 25\n- Days to explore: 1.5\n- Total miles per island: 25 * 1.5 = 37.5 miles\n\nTotal miles for all islands:\n- 2 islands of the first type: 2 * 30 = 60 miles\n- 2 islands of the second type: 2 * 37.5 = 75 miles\n- Total: 60 + 75 = 135 miles\n\nFINAL: 135",
+    "target_sha256": "c40e9874c4b7ce27479da542579416f8947b66514494a72eff7d913deed4beb3",
+    "task_id": "gsm8k-train-5561"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "The pirates plan to explore 4 islands. Two islands require walking 20 miles per day while the other two islands require 25 miles per day. How many miles will they have to walk if it takes 1.5 days to explore each island?",
+        "role": "user"
+      },
+      {
+        "content": "Given:\n- 2 islands require walking 20 miles per day.\n- 2 islands require walking 25 miles per day.\n- It takes 1.5 days to explore each island.\n\nFor the first type of island:\n- Miles per day: 20\n- Days to explore: 1.5\n- Total miles per island: 20 * 1.5 = 30 miles\n\nFor the second type of island:\n- Miles per day: 25\n- Days to explore: 1.5\n- Total miles per island: 25 * 1.5 = 37.5 miles\n\nTotal miles for all islands:\n- 2 islands of the first type: 2 * 30 = 60 miles\n- 2 islands of the second type: 2 * 37.5 = 75 miles\n- Total: 60 + 75 = 135 miles\n\nFINAL: 135",
+        "role": "assistant"
+      },
+      {
+        "content": "The final value passed the exact-answer checker. Write your own reusable record: explain the specific operations, when they apply, and a concrete check using this problem. Retain its final answer. Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "user"
+      }
+    ],
+    "gold": "135",
+    "kind": "record",
+    "question": "The pirates plan to explore 4 islands. Two islands require walking 20 miles per day while the other two islands require 25 miles per day. How many miles will they have to walk if it takes 1.5 days to explore each island?",
+    "student_prefix": [
+      {
+        "content": "The pirates plan to explore 4 islands. Two islands require walking 20 miles per day while the other two islands require 25 miles per day. How many miles will they have to walk if it takes 1.5 days to explore each island?",
+        "role": "user"
+      },
+      {
+        "content": "Given:\n- 2 islands require walking 20 miles per day.\n- 2 islands require walking 25 miles per day.\n- It takes 1.5 days to explore each island.\n\nFor the first type of island:\n- Miles per day: 20\n- Days to explore: 1.5\n- Total miles per island: 20 * 1.5 = 30 miles\n\nFor the second type of island:\n- Miles per day: 25\n- Days to explore: 1.5\n- Total miles per island: 25 * 1.5 = 37.5 miles\n\nTotal miles for all islands:\n- 2 islands of the first type: 2 * 30 = 60 miles\n- 2 islands of the second type: 2 * 37.5 = 75 miles\n- Total: 60 + 75 = 135 miles\n\nFINAL: 135",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable record of this solved task.",
+        "role": "user"
+      }
+    ],
+    "target": "Given quantities:\n- 2 islands require walking 20 miles per day.\n- 2 islands require walking 25 miles per day.\n- It takes 1.5 days to explore each island.\n\nUnknown:\n- Total miles to be walked.\n\nOperations:\n1. Calculate the total miles for the first type of island.\n2. Calculate the total miles for the second type of island.\n3. Sum the results from steps 1 and 2.\n\nStep 1: Calculate the total miles for the first type of island.\n- Miles per day: 20\n- Days to explore: 1.5\n- Total miles per island: 20 * 1.5 = 30 miles\n- For 2 islands: 30 * 2 = 60 miles\n\nStep 2: Calculate the total miles for the second type of island.\n- Miles per day: 25\n- Days to explore: 1.5\n- Total miles per island: 25 * 1.5 = 37.5 miles\n- For 2 islands: 37.5 * 2 = 75 miles\n\nStep 3: Sum the results from steps 1 and 2.\n- Total miles: 60 + 75 = 135 miles\n\nConcrete check:\n- Verify the calculation for the first type of island: 20 * 1.5 = 30, then 30 * 2 = 60.\n- Verify the calculation for the second type of island: 25 * 1.5 = 37.5, then 37.5 * 2 = 75.\n- Sum the results: 60 + 75 = 135.\n\nFINAL: 135",
+    "target_sha256": "471f613db08ef06d8edcbe7ca18b201d8a225098b86b5a650b953a7256eed914",
+    "task_id": "gsm8k-train-5561"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "system"
+      },
+      {
+        "content": "There are two babysitters named Mila and Agnes. Mila makes $10 an hour while Agnes makes $15 an hour. Agnes works 8 hours each week. How many hours does Mila need to work to earn as much as Agnes in a month?",
+        "role": "user"
+      }
+    ],
+    "gold": "48",
+    "kind": "rich",
+    "question": "There are two babysitters named Mila and Agnes. Mila makes $10 an hour while Agnes makes $15 an hour. Agnes works 8 hours each week. How many hours does Mila need to work to earn as much as Agnes in a month?",
+    "student_prefix": [
+      {
+        "content": "There are two babysitters named Mila and Agnes. Mila makes $10 an hour while Agnes makes $15 an hour. Agnes works 8 hours each week. How many hours does Mila need to work to earn as much as Agnes in a month?",
+        "role": "user"
+      }
+    ],
+    "target": "First, I identify the given quantities:\n- Mila's hourly wage: $10\n- Agnes's hourly wage: $15\n- Agnes's weekly work hours: 8\n- We need to find out how many hours Mila needs to work in a month to earn as much as Agnes.\n\nNext, I calculate Agnes's weekly earnings:\n\\[ 15 \\text{ dollars/hour} \\times 8 \\text{ hours/week} = 120 \\text{ dollars/week} \\]\n\nThen, I calculate Agnes's monthly earnings assuming 4 weeks in a month:\n\\[ 120 \\text{ dollars/week} \\times 4 \\text{ weeks/month} = 480 \\text{ dollars/month} \\]\n\nNow, I need to find out how many hours Mila needs to work to earn $480 in a month. Since Mila earns $10 per hour, I set up the equation:\n\\[ 10 \\text{ dollars/hour} \\times \\text{hours} = 480 \\text{ dollars} \\]\n\nSolving for the number of hours:\n\\[ \\text{hours} = \\frac{480 \\text{ dollars}}{10 \\text{ dollars/hour}} = 48 \\text{ hours} \\]\n\nSo, Mila needs to work 48 hours in a month to earn as much as Agnes.\n\nFINAL: 48",
+    "target_sha256": "ab427b5e3b37da580a91045dbd71d8d989680faa1f52a6409a1e7fd874387b9d",
+    "task_id": "gsm8k-train-1745"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "There are two babysitters named Mila and Agnes. Mila makes $10 an hour while Agnes makes $15 an hour. Agnes works 8 hours each week. How many hours does Mila need to work to earn as much as Agnes in a month?",
+        "role": "user"
+      },
+      {
+        "content": "First, I identify the given quantities:\n- Mila's hourly wage: $10\n- Agnes's hourly wage: $15\n- Agnes's weekly work hours: 8\n- We need to find out how many hours Mila needs to work in a month to earn as much as Agnes.\n\nNext, I calculate Agnes's weekly earnings:\n\\[ 15 \\text{ dollars/hour} \\times 8 \\text{ hours/week} = 120 \\text{ dollars/week} \\]\n\nThen, I calculate Agnes's monthly earnings assuming 4 weeks in a month:\n\\[ 120 \\text{ dollars/week} \\times 4 \\text{ weeks/month} = 480 \\text{ dollars/month} \\]\n\nNow, I need to find out how many hours Mila needs to work to earn $480 in a month. Since Mila earns $10 per hour, I set up the equation:\n\\[ 10 \\text{ dollars/hour} \\times \\text{hours} = 480 \\text{ dollars} \\]\n\nSolving for the number of hours:\n\\[ \\text{hours} = \\frac{480 \\text{ dollars}}{10 \\text{ dollars/hour}} = 48 \\text{ hours} \\]\n\nSo, Mila needs to work 48 hours in a month to earn as much as Agnes.\n\nFINAL: 48",
+        "role": "assistant"
+      },
+      {
+        "content": "The final value passed the exact-answer checker. Write your own reusable record: explain the specific operations, when they apply, and a concrete check using this problem. Retain its final answer. Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "user"
+      }
+    ],
+    "gold": "48",
+    "kind": "record",
+    "question": "There are two babysitters named Mila and Agnes. Mila makes $10 an hour while Agnes makes $15 an hour. Agnes works 8 hours each week. How many hours does Mila need to work to earn as much as Agnes in a month?",
+    "student_prefix": [
+      {
+        "content": "There are two babysitters named Mila and Agnes. Mila makes $10 an hour while Agnes makes $15 an hour. Agnes works 8 hours each week. How many hours does Mila need to work to earn as much as Agnes in a month?",
+        "role": "user"
+      },
+      {
+        "content": "First, I identify the given quantities:\n- Mila's hourly wage: $10\n- Agnes's hourly wage: $15\n- Agnes's weekly work hours: 8\n- We need to find out how many hours Mila needs to work in a month to earn as much as Agnes.\n\nNext, I calculate Agnes's weekly earnings:\n\\[ 15 \\text{ dollars/hour} \\times 8 \\text{ hours/week} = 120 \\text{ dollars/week} \\]\n\nThen, I calculate Agnes's monthly earnings assuming 4 weeks in a month:\n\\[ 120 \\text{ dollars/week} \\times 4 \\text{ weeks/month} = 480 \\text{ dollars/month} \\]\n\nNow, I need to find out how many hours Mila needs to work to earn $480 in a month. Since Mila earns $10 per hour, I set up the equation:\n\\[ 10 \\text{ dollars/hour} \\times \\text{hours} = 480 \\text{ dollars} \\]\n\nSolving for the number of hours:\n\\[ \\text{hours} = \\frac{480 \\text{ dollars}}{10 \\text{ dollars/hour}} = 48 \\text{ hours} \\]\n\nSo, Mila needs to work 48 hours in a month to earn as much as Agnes.\n\nFINAL: 48",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable record of this solved task.",
+        "role": "user"
+      }
+    ],
+    "target": "Given quantities:\n- Mila's hourly wage: $10\n- Agnes's hourly wage: $15\n- Agnes's weekly work hours: 8\n- Requested unknown: Number of hours Mila needs to work in a month to earn as much as Agnes\n\nOperations:\n1. Calculate Agnes's weekly earnings.\n2. Calculate Agnes's monthly earnings assuming 4 weeks in a month.\n3. Determine the number of hours Mila needs to work to earn the same amount as Agnes in a month.\n\nStep 1: Calculate Agnes's weekly earnings.\n\\[ 15 \\text{ dollars/hour} \\times 8 \\text{ hours/week} = 120 \\text{ dollars/week} \\]\n\nStep 2: Calculate Agnes's monthly earnings.\n\\[ 120 \\text{ dollars/week} \\times 4 \\text{ weeks/month} = 480 \\text{ dollars/month} \\]\n\nStep 3: Determine the number of hours Mila needs to work to earn $480 in a month.\n\\[ \\frac{480 \\text{ dollars}}{10 \\text{ dollars/hour}} = 48 \\text{ hours} \\]\n\nConcrete check:\n- Agnes's monthly earnings: $480\n- Mila's monthly earnings for 48 hours: \\( 48 \\text{ hours} \\times 10 \\text{ dollars/hour} = 480 \\text{ dollars} \\)\n\nThe calculations match the problem statement.\n\nFINAL: 48",
+    "target_sha256": "0efab4c851109d0fadcf311dc1de336b7d64ee6fe2c9ee7d0a8b48e82eb7a86e",
+    "task_id": "gsm8k-train-1745"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "system"
+      },
+      {
+        "content": "Jerry mows 8 acres of lawn each week. He mows ¾ of it with a riding mower that can cut 2 acres an hour. He mows the rest with a push mower that can cut 1 acre an hour. How long does Jerry mow each week?",
+        "role": "user"
+      }
+    ],
+    "gold": "5",
+    "kind": "rich",
+    "question": "Jerry mows 8 acres of lawn each week. He mows ¾ of it with a riding mower that can cut 2 acres an hour. He mows the rest with a push mower that can cut 1 acre an hour. How long does Jerry mow each week?",
+    "student_prefix": [
+      {
+        "content": "Jerry mows 8 acres of lawn each week. He mows ¾ of it with a riding mower that can cut 2 acres an hour. He mows the rest with a push mower that can cut 1 acre an hour. How long does Jerry mow each week?",
+        "role": "user"
+      }
+    ],
+    "target": "First, I identify the quantities given:\n- Total acres mowed per week: 8\n- Acres mowed with a riding mower: ¾ of 8 acres\n- Acres mowed with a push mower: the rest of the 8 acres\n- Riding mower rate: 2 acres per hour\n- Push mower rate: 1 acre per hour\n\nNext, I calculate the acres mowed with each mower:\n- Acres mowed with the riding mower: \\( \\frac{3}{4} \\times 8 = 6 \\) acres\n- Acres mowed with the push mower: \\( 8 - 6 = 2 \\) acres\n\nNow, I calculate the time spent on each:\n- Time with the riding mower: \\( \\frac{6 \\text{ acres}}{2 \\text{ acres/hour}} = 3 \\) hours\n- Time with the push mower: \\( \\frac{2 \\text{ acres}}{1 \\text{ acre/hour}} = 2 \\) hours\n\nFinally, I add the times together to get the total mowing time:\n- Total time: \\( 3 + 2 = 5 \\) hours\n\nFINAL: 5",
+    "target_sha256": "119e2dc2de213d1fe7ef11eed975ee1f56a6689dcddd4759975733311c81c7a3",
+    "task_id": "gsm8k-train-2141"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Jerry mows 8 acres of lawn each week. He mows ¾ of it with a riding mower that can cut 2 acres an hour. He mows the rest with a push mower that can cut 1 acre an hour. How long does Jerry mow each week?",
+        "role": "user"
+      },
+      {
+        "content": "First, I identify the quantities given:\n- Total acres mowed per week: 8\n- Acres mowed with a riding mower: ¾ of 8 acres\n- Acres mowed with a push mower: the rest of the 8 acres\n- Riding mower rate: 2 acres per hour\n- Push mower rate: 1 acre per hour\n\nNext, I calculate the acres mowed with each mower:\n- Acres mowed with the riding mower: \\( \\frac{3}{4} \\times 8 = 6 \\) acres\n- Acres mowed with the push mower: \\( 8 - 6 = 2 \\) acres\n\nNow, I calculate the time spent on each:\n- Time with the riding mower: \\( \\frac{6 \\text{ acres}}{2 \\text{ acres/hour}} = 3 \\) hours\n- Time with the push mower: \\( \\frac{2 \\text{ acres}}{1 \\text{ acre/hour}} = 2 \\) hours\n\nFinally, I add the times together to get the total mowing time:\n- Total time: \\( 3 + 2 = 5 \\) hours\n\nFINAL: 5",
+        "role": "assistant"
+      },
+      {
+        "content": "The final value passed the exact-answer checker. Write your own reusable record: explain the specific operations, when they apply, and a concrete check using this problem. Retain its final answer. Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "user"
+      }
+    ],
+    "gold": "5",
+    "kind": "record",
+    "question": "Jerry mows 8 acres of lawn each week. He mows ¾ of it with a riding mower that can cut 2 acres an hour. He mows the rest with a push mower that can cut 1 acre an hour. How long does Jerry mow each week?",
+    "student_prefix": [
+      {
+        "content": "Jerry mows 8 acres of lawn each week. He mows ¾ of it with a riding mower that can cut 2 acres an hour. He mows the rest with a push mower that can cut 1 acre an hour. How long does Jerry mow each week?",
+        "role": "user"
+      },
+      {
+        "content": "First, I identify the quantities given:\n- Total acres mowed per week: 8\n- Acres mowed with a riding mower: ¾ of 8 acres\n- Acres mowed with a push mower: the rest of the 8 acres\n- Riding mower rate: 2 acres per hour\n- Push mower rate: 1 acre per hour\n\nNext, I calculate the acres mowed with each mower:\n- Acres mowed with the riding mower: \\( \\frac{3}{4} \\times 8 = 6 \\) acres\n- Acres mowed with the push mower: \\( 8 - 6 = 2 \\) acres\n\nNow, I calculate the time spent on each:\n- Time with the riding mower: \\( \\frac{6 \\text{ acres}}{2 \\text{ acres/hour}} = 3 \\) hours\n- Time with the push mower: \\( \\frac{2 \\text{ acres}}{1 \\text{ acre/hour}} = 2 \\) hours\n\nFinally, I add the times together to get the total mowing time:\n- Total time: \\( 3 + 2 = 5 \\) hours\n\nFINAL: 5",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable record of this solved task.",
+        "role": "user"
+      }
+    ],
+    "target": "Given quantities:\n- Total acres mowed per week: 8 acres\n- Riding mower rate: 2 acres per hour\n- Push mower rate: 1 acre per hour\n- Riding mower usage: ¾ of total acres\n- Push mower usage: the remaining acres\n\nUnknown to find:\n- Total time spent mowing each week\n\nOperations:\n1. Calculate the acres mowed with the riding mower: \\( \\frac{3}{4} \\times 8 = 6 \\) acres\n2. Calculate the acres mowed with the push mower: \\( 8 - 6 = 2 \\) acres\n3. Calculate the time spent with the riding mower: \\( \\frac{6 \\text{ acres}}{2 \\text{ acres/hour}} = 3 \\) hours\n4. Calculate the time spent with the push mower: \\( \\frac{2 \\text{ acres}}{1 \\text{ acre/hour}} = 2 \\) hours\n5. Sum the times to get the total mowing time: \\( 3 + 2 = 5 \\) hours\n\nConcrete check:\n- Verify the total acres mowed: \\( 6 \\text{ acres (riding mower)} + 2 \\text{ acres (push mower)} = 8 \\text{ acres} \\)\n- Verify the total time: \\( 3 \\text{ hours (riding mower)} + 2 \\text{ hours (push mower)} = 5 \\text{ hours} \\)\n\nThe operations are correct and the result matches the problem statement.\n\nFINAL: 5",
+    "target_sha256": "a365cf9f56fb69d26f2d1b2346c2fa5504923c152570d78b487b9b4e3bc841eb",
+    "task_id": "gsm8k-train-2141"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "system"
+      },
+      {
+        "content": "After tests in California, the total number of Coronavirus cases was recorded as 2000 positive cases on a particular day. The number of cases increased by 500 on the second day, with 50 recoveries. On the third day, the total number of new cases spiked to 1500 with 200 recoveries. What's the total number of positive cases after the third day?",
+        "role": "user"
+      }
+    ],
+    "gold": "3750",
+    "kind": "rich",
+    "question": "After tests in California, the total number of Coronavirus cases was recorded as 2000 positive cases on a particular day. The number of cases increased by 500 on the second day, with 50 recoveries. On the third day, the total number of new cases spiked to 1500 with 200 recoveries. What's the total number of positive cases after the third day?",
+    "student_prefix": [
+      {
+        "content": "After tests in California, the total number of Coronavirus cases was recorded as 2000 positive cases on a particular day. The number of cases increased by 500 on the second day, with 50 recoveries. On the third day, the total number of new cases spiked to 1500 with 200 recoveries. What's the total number of positive cases after the third day?",
+        "role": "user"
+      }
+    ],
+    "target": "Starting with 2000 positive cases on the first day, the number increased by 500 on the second day but with 50 recoveries. So, the calculation for the second day is:\n2000 (initial cases) + 500 (new cases) - 50 (recoveries) = 2450 cases.\n\nOn the third day, there were 1500 new cases but 200 recoveries. So, the calculation for the third day is:\n2450 (cases from the second day) + 1500 (new cases) - 200 (recoveries) = 3750 cases.\n\nFINAL: 3750",
+    "target_sha256": "fb7e315e7bd2d8c94c17d9514ff60ecdd7f5b1dc58f8dbb7257990a53fb299a6",
+    "task_id": "gsm8k-train-184"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "After tests in California, the total number of Coronavirus cases was recorded as 2000 positive cases on a particular day. The number of cases increased by 500 on the second day, with 50 recoveries. On the third day, the total number of new cases spiked to 1500 with 200 recoveries. What's the total number of positive cases after the third day?",
+        "role": "user"
+      },
+      {
+        "content": "Starting with 2000 positive cases on the first day, the number increased by 500 on the second day but with 50 recoveries. So, the calculation for the second day is:\n2000 (initial cases) + 500 (new cases) - 50 (recoveries) = 2450 cases.\n\nOn the third day, there were 1500 new cases but 200 recoveries. So, the calculation for the third day is:\n2450 (cases from the second day) + 1500 (new cases) - 200 (recoveries) = 3750 cases.\n\nFINAL: 3750",
+        "role": "assistant"
+      },
+      {
+        "content": "The final value passed the exact-answer checker. Write your own reusable record: explain the specific operations, when they apply, and a concrete check using this problem. Retain its final answer. Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "user"
+      }
+    ],
+    "gold": "3750",
+    "kind": "record",
+    "question": "After tests in California, the total number of Coronavirus cases was recorded as 2000 positive cases on a particular day. The number of cases increased by 500 on the second day, with 50 recoveries. On the third day, the total number of new cases spiked to 1500 with 200 recoveries. What's the total number of positive cases after the third day?",
+    "student_prefix": [
+      {
+        "content": "After tests in California, the total number of Coronavirus cases was recorded as 2000 positive cases on a particular day. The number of cases increased by 500 on the second day, with 50 recoveries. On the third day, the total number of new cases spiked to 1500 with 200 recoveries. What's the total number of positive cases after the third day?",
+        "role": "user"
+      },
+      {
+        "content": "Starting with 2000 positive cases on the first day, the number increased by 500 on the second day but with 50 recoveries. So, the calculation for the second day is:\n2000 (initial cases) + 500 (new cases) - 50 (recoveries) = 2450 cases.\n\nOn the third day, there were 1500 new cases but 200 recoveries. So, the calculation for the third day is:\n2450 (cases from the second day) + 1500 (new cases) - 200 (recoveries) = 3750 cases.\n\nFINAL: 3750",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable record of this solved task.",
+        "role": "user"
+      }
+    ],
+    "target": "Given quantities:\n- Initial number of positive cases on the first day: 2000\n- Increase in cases on the second day: 500\n- Recoveries on the second day: 50\n- Increase in cases on the third day: 1500\n- Recoveries on the third day: 200\n\nUnknown:\n- Total number of positive cases after the third day\n\nOperations:\n1. Calculate the number of positive cases at the end of the second day by adding the increase in cases and subtracting the recoveries from the initial number of cases.\n2. Calculate the number of positive cases at the end of the third day by adding the increase in cases and subtracting the recoveries from the number of cases at the end of the second day.\n\nStep-by-step solution:\n1. End of the second day: 2000 (initial cases) + 500 (new cases) - 50 (recoveries) = 2450 cases.\n2. End of the third day: 2450 (cases from the second day) + 1500 (new cases) - 200 (recoveries) = 3750 cases.\n\nConcrete check:\n- Initial cases: 2000\n- Second day: 2000 + 500 - 50 = 2450\n- Third day: 2450 + 1500 - 200 = 3750\n\nThe final number of positive cases after the third day is 3750.\n\nFINAL: 3750",
+    "target_sha256": "89979cecbb63754b7f7b95fbea2abb846e1caacccf346284df26b36cdc71b899",
+    "task_id": "gsm8k-train-184"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "system"
+      },
+      {
+        "content": "Malcolm is trying to find the fastest walk to school and is currently comparing two routes. In the first route, he walks for 6 minutes uphill, walks for twice this amount of time along a path, then finishes the journey in a third of the time it took to walk the first two stages. In the second route, he walks along a flat path for 14 minutes, then finishes the walk in twice this amount of time. In minutes, how much longer was the second route compared with the first?",
+        "role": "user"
+      }
+    ],
+    "gold": "18",
+    "kind": "rich",
+    "question": "Malcolm is trying to find the fastest walk to school and is currently comparing two routes. In the first route, he walks for 6 minutes uphill, walks for twice this amount of time along a path, then finishes the journey in a third of the time it took to walk the first two stages. In the second route, he walks along a flat path for 14 minutes, then finishes the walk in twice this amount of time. In minutes, how much longer was the second route compared with the first?",
+    "student_prefix": [
+      {
+        "content": "Malcolm is trying to find the fastest walk to school and is currently comparing two routes. In the first route, he walks for 6 minutes uphill, walks for twice this amount of time along a path, then finishes the journey in a third of the time it took to walk the first two stages. In the second route, he walks along a flat path for 14 minutes, then finishes the walk in twice this amount of time. In minutes, how much longer was the second route compared with the first?",
+        "role": "user"
+      }
+    ],
+    "target": "First, let's break down the time Malcolm spends on each route.\n\n**First Route:**\n- Walks uphill for 6 minutes.\n- Walks along a path for twice this amount of time, which is \\(2 \\times 6 = 12\\) minutes.\n- Finishes the journey in a third of the time it took to walk the first two stages, which is \\(\\frac{6 + 12}{3} = \\frac{18}{3} = 6\\) minutes.\n\nSo, the total time for the first route is \\(6 + 12 + 6 = 24\\) minutes.\n\n**Second Route:**\n- Walks along a flat path for 14 minutes.\n- Finishes the walk in twice this amount of time, which is \\(2 \\times 14 = 28\\) minutes.\n\nSo, the total time for the second route is \\(14 + 28 = 42\\) minutes.\n\n**Difference in Time:**\nThe second route is \\(42 - 24 = 18\\) minutes longer than the first route.\n\nFINAL: 18",
+    "target_sha256": "bb511ba498646300fcdb4ef7b8217464624d80ca34fbe1f4a06d0ae241fbf56c",
+    "task_id": "gsm8k-train-7163"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Malcolm is trying to find the fastest walk to school and is currently comparing two routes. In the first route, he walks for 6 minutes uphill, walks for twice this amount of time along a path, then finishes the journey in a third of the time it took to walk the first two stages. In the second route, he walks along a flat path for 14 minutes, then finishes the walk in twice this amount of time. In minutes, how much longer was the second route compared with the first?",
+        "role": "user"
+      },
+      {
+        "content": "First, let's break down the time Malcolm spends on each route.\n\n**First Route:**\n- Walks uphill for 6 minutes.\n- Walks along a path for twice this amount of time, which is \\(2 \\times 6 = 12\\) minutes.\n- Finishes the journey in a third of the time it took to walk the first two stages, which is \\(\\frac{6 + 12}{3} = \\frac{18}{3} = 6\\) minutes.\n\nSo, the total time for the first route is \\(6 + 12 + 6 = 24\\) minutes.\n\n**Second Route:**\n- Walks along a flat path for 14 minutes.\n- Finishes the walk in twice this amount of time, which is \\(2 \\times 14 = 28\\) minutes.\n\nSo, the total time for the second route is \\(14 + 28 = 42\\) minutes.\n\n**Difference in Time:**\nThe second route is \\(42 - 24 = 18\\) minutes longer than the first route.\n\nFINAL: 18",
+        "role": "assistant"
+      },
+      {
+        "content": "The final value passed the exact-answer checker. Write your own reusable record: explain the specific operations, when they apply, and a concrete check using this problem. Retain its final answer. Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "user"
+      }
+    ],
+    "gold": "18",
+    "kind": "record",
+    "question": "Malcolm is trying to find the fastest walk to school and is currently comparing two routes. In the first route, he walks for 6 minutes uphill, walks for twice this amount of time along a path, then finishes the journey in a third of the time it took to walk the first two stages. In the second route, he walks along a flat path for 14 minutes, then finishes the walk in twice this amount of time. In minutes, how much longer was the second route compared with the first?",
+    "student_prefix": [
+      {
+        "content": "Malcolm is trying to find the fastest walk to school and is currently comparing two routes. In the first route, he walks for 6 minutes uphill, walks for twice this amount of time along a path, then finishes the journey in a third of the time it took to walk the first two stages. In the second route, he walks along a flat path for 14 minutes, then finishes the walk in twice this amount of time. In minutes, how much longer was the second route compared with the first?",
+        "role": "user"
+      },
+      {
+        "content": "First, let's break down the time Malcolm spends on each route.\n\n**First Route:**\n- Walks uphill for 6 minutes.\n- Walks along a path for twice this amount of time, which is \\(2 \\times 6 = 12\\) minutes.\n- Finishes the journey in a third of the time it took to walk the first two stages, which is \\(\\frac{6 + 12}{3} = \\frac{18}{3} = 6\\) minutes.\n\nSo, the total time for the first route is \\(6 + 12 + 6 = 24\\) minutes.\n\n**Second Route:**\n- Walks along a flat path for 14 minutes.\n- Finishes the walk in twice this amount of time, which is \\(2 \\times 14 = 28\\) minutes.\n\nSo, the total time for the second route is \\(14 + 28 = 42\\) minutes.\n\n**Difference in Time:**\nThe second route is \\(42 - 24 = 18\\) minutes longer than the first route.\n\nFINAL: 18",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable record of this solved task.",
+        "role": "user"
+      }
+    ],
+    "target": "Given quantities:\n- First route: 6 minutes uphill, 12 minutes along a path, and 6 minutes to finish.\n- Second route: 14 minutes flat, and 28 minutes to finish.\n\nUnknown: How much longer is the second route compared to the first?\n\nOperations:\n1. Calculate the total time for the first route.\n2. Calculate the total time for the second route.\n3. Subtract the total time of the first route from the total time of the second route to find the difference.\n\nStep 1: Calculate the total time for the first route.\n- Uphill: 6 minutes\n- Path: 12 minutes\n- Finish: 6 minutes\n- Total: \\(6 + 12 + 6 = 24\\) minutes\n\nStep 2: Calculate the total time for the second route.\n- Flat: 14 minutes\n- Finish: 28 minutes\n- Total: \\(14 + 28 = 42\\) minutes\n\nStep 3: Find the difference in time.\n- Difference: \\(42 - 24 = 18\\) minutes\n\nCheck: The problem asks for how much longer the second route is compared to the first. The calculation shows the second route is 18 minutes longer than the first.\n\nFINAL: 18",
+    "target_sha256": "c9ddd42a230f2a75088b594da25446d3e0007a9c8d133c789e8b260ec92c41bd",
+    "task_id": "gsm8k-train-7163"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "system"
+      },
+      {
+        "content": "Abigail spent 60% of her money on food, and 25% of the remainder on her phone bill. After spending $20 on entertainment, she is left with $40. How much money did Abigail have initially?",
+        "role": "user"
+      }
+    ],
+    "gold": "200",
+    "kind": "rich",
+    "question": "Abigail spent 60% of her money on food, and 25% of the remainder on her phone bill. After spending $20 on entertainment, she is left with $40. How much money did Abigail have initially?",
+    "student_prefix": [
+      {
+        "content": "Abigail spent 60% of her money on food, and 25% of the remainder on her phone bill. After spending $20 on entertainment, she is left with $40. How much money did Abigail have initially?",
+        "role": "user"
+      }
+    ],
+    "target": "Let's denote the initial amount of money Abigail had as \\(X\\).\n\n1. Abigail spent 60% of her money on food, so she spent \\(0.6X\\) on food. The remainder is \\(X - 0.6X = 0.4X\\).\n\n2. She then spent 25% of the remainder on her phone bill, which is \\(0.25 \\times 0.4X = 0.1X\\). After this, the amount left is \\(0.4X - 0.1X = 0.3X\\).\n\n3. After spending $20 on entertainment, she is left with $40. So, \\(0.3X - 20 = 40\\).\n\n4. Solving for \\(X\\):\n   \\[\n   0.3X - 20 = 40 \\\\\n   0.3X = 60 \\\\\n   X = \\frac{60}{0.3} \\\\\n   X = 200\n   \\]\n\nSo, Abigail initially had $200.\n\nFINAL: 200",
+    "target_sha256": "562a6c105fcf02f5038416d41929bf6d80b7949850a40609eb6c69ec7065a598",
+    "task_id": "gsm8k-train-4455"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "system"
+      },
+      {
+        "content": "Jimmy and Irene go shopping for clothes on a Tuesday, where senior citizens get a 10% discount on their purchases.  Jimmy picks out 3 shorts from the $15 rack.  Irene grabs 5 shirts from the $17 rack.  How much money do they give to the cashier?",
+        "role": "user"
+      }
+    ],
+    "gold": "117",
+    "kind": "rich",
+    "question": "Jimmy and Irene go shopping for clothes on a Tuesday, where senior citizens get a 10% discount on their purchases.  Jimmy picks out 3 shorts from the $15 rack.  Irene grabs 5 shirts from the $17 rack.  How much money do they give to the cashier?",
+    "student_prefix": [
+      {
+        "content": "Jimmy and Irene go shopping for clothes on a Tuesday, where senior citizens get a 10% discount on their purchases.  Jimmy picks out 3 shorts from the $15 rack.  Irene grabs 5 shirts from the $17 rack.  How much money do they give to the cashier?",
+        "role": "user"
+      }
+    ],
+    "target": "Jimmy picks out 3 shorts at $15 each, so the cost for Jimmy is 3 * $15 = $45. Irene grabs 5 shirts at $17 each, so the cost for Irene is 5 * $17 = $85. The total cost before discount is $45 + $85 = $130. Since they are senior citizens, they get a 10% discount. The discount amount is 10% of $130, which is 0.10 * $130 = $13. The total cost after the discount is $130 - $13 = $117. \n\nFINAL: 117",
+    "target_sha256": "55979d976d7f8a98c8b60460aed488d385c81819969069ac42149a0755f5977d",
+    "task_id": "gsm8k-train-1293"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Jimmy and Irene go shopping for clothes on a Tuesday, where senior citizens get a 10% discount on their purchases.  Jimmy picks out 3 shorts from the $15 rack.  Irene grabs 5 shirts from the $17 rack.  How much money do they give to the cashier?",
+        "role": "user"
+      },
+      {
+        "content": "Jimmy picks out 3 shorts at $15 each, so the cost for Jimmy is 3 * $15 = $45. Irene grabs 5 shirts at $17 each, so the cost for Irene is 5 * $17 = $85. The total cost before discount is $45 + $85 = $130. Since they are senior citizens, they get a 10% discount. The discount amount is 10% of $130, which is 0.10 * $130 = $13. The total cost after the discount is $130 - $13 = $117. \n\nFINAL: 117",
+        "role": "assistant"
+      },
+      {
+        "content": "The final value passed the exact-answer checker. Write your own reusable record: explain the specific operations, when they apply, and a concrete check using this problem. Retain its final answer. Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "user"
+      }
+    ],
+    "gold": "117",
+    "kind": "record",
+    "question": "Jimmy and Irene go shopping for clothes on a Tuesday, where senior citizens get a 10% discount on their purchases.  Jimmy picks out 3 shorts from the $15 rack.  Irene grabs 5 shirts from the $17 rack.  How much money do they give to the cashier?",
+    "student_prefix": [
+      {
+        "content": "Jimmy and Irene go shopping for clothes on a Tuesday, where senior citizens get a 10% discount on their purchases.  Jimmy picks out 3 shorts from the $15 rack.  Irene grabs 5 shirts from the $17 rack.  How much money do they give to the cashier?",
+        "role": "user"
+      },
+      {
+        "content": "Jimmy picks out 3 shorts at $15 each, so the cost for Jimmy is 3 * $15 = $45. Irene grabs 5 shirts at $17 each, so the cost for Irene is 5 * $17 = $85. The total cost before discount is $45 + $85 = $130. Since they are senior citizens, they get a 10% discount. The discount amount is 10% of $130, which is 0.10 * $130 = $13. The total cost after the discount is $130 - $13 = $117. \n\nFINAL: 117",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable record of this solved task.",
+        "role": "user"
+      }
+    ],
+    "target": "Given quantities:\n- Jimmy's shorts: 3 at $15 each\n- Irene's shirts: 5 at $17 each\n- Senior citizen discount: 10%\n\nOperations:\n1. Calculate the total cost for Jimmy's shorts.\n2. Calculate the total cost for Irene's shirts.\n3. Sum the costs from steps 1 and 2 to get the total cost before discount.\n4. Calculate the discount amount (10% of the total cost before discount).\n5. Subtract the discount amount from the total cost before discount to get the final amount paid.\n\nStep-by-step solution:\n1. Jimmy's total cost: 3 * $15 = $45\n2. Irene's total cost: 5 * $17 = $85\n3. Total cost before discount: $45 + $85 = $130\n4. Discount amount: 10% of $130 = 0.10 * $130 = $13\n5. Final amount paid: $130 - $13 = $117\n\nConcrete check:\n- Jimmy's cost: 3 * $15 = $45 (correct)\n- Irene's cost: 5 * $17 = $85 (correct)\n- Total before discount: $45 + $85 = $130 (correct)\n- Discount: 10% of $130 = $13 (correct)\n- Final amount: $130 - $13 = $117 (correct)\n\nFINAL: 117",
+    "target_sha256": "8dc818986e1bbff63fa9120cd08939177350a011fc66a751ad9cb9040ee1ff67",
+    "task_id": "gsm8k-train-1293"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "system"
+      },
+      {
+        "content": "Ben makes a sandwich that has 1250 calories total that has two strips of bacon with 125 calories each. What percentage of the sandwich's total calories come from bacon?",
+        "role": "user"
+      }
+    ],
+    "gold": "20",
+    "kind": "rich",
+    "question": "Ben makes a sandwich that has 1250 calories total that has two strips of bacon with 125 calories each. What percentage of the sandwich's total calories come from bacon?",
+    "student_prefix": [
+      {
+        "content": "Ben makes a sandwich that has 1250 calories total that has two strips of bacon with 125 calories each. What percentage of the sandwich's total calories come from bacon?",
+        "role": "user"
+      }
+    ],
+    "target": "The sandwich has 1250 calories in total. There are two strips of bacon, each with 125 calories, so the bacon contributes 2 * 125 = 250 calories. To find the percentage of the sandwich's total calories that come from bacon, I use the formula:\n\n\\[ \\text{Percentage} = \\left( \\frac{\\text{Calories from bacon}}{\\text{Total calories}} \\right) \\times 100 \\]\n\nPlugging in the numbers:\n\n\\[ \\text{Percentage} = \\left( \\frac{250}{1250} \\right) \\times 100 = 0.2 \\times 100 = 20\\% \\]\n\nThe bacon contributes 20% of the sandwich's total calories.\n\nFINAL: 20",
+    "target_sha256": "a901cea1facde528789f61b84c3a150fe032c6611f300680fb688be781450953",
+    "task_id": "gsm8k-train-6894"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Ben makes a sandwich that has 1250 calories total that has two strips of bacon with 125 calories each. What percentage of the sandwich's total calories come from bacon?",
+        "role": "user"
+      },
+      {
+        "content": "The sandwich has 1250 calories in total. There are two strips of bacon, each with 125 calories, so the bacon contributes 2 * 125 = 250 calories. To find the percentage of the sandwich's total calories that come from bacon, I use the formula:\n\n\\[ \\text{Percentage} = \\left( \\frac{\\text{Calories from bacon}}{\\text{Total calories}} \\right) \\times 100 \\]\n\nPlugging in the numbers:\n\n\\[ \\text{Percentage} = \\left( \\frac{250}{1250} \\right) \\times 100 = 0.2 \\times 100 = 20\\% \\]\n\nThe bacon contributes 20% of the sandwich's total calories.\n\nFINAL: 20",
+        "role": "assistant"
+      },
+      {
+        "content": "The final value passed the exact-answer checker. Write your own reusable record: explain the specific operations, when they apply, and a concrete check using this problem. Retain its final answer. Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "user"
+      }
+    ],
+    "gold": "20",
+    "kind": "record",
+    "question": "Ben makes a sandwich that has 1250 calories total that has two strips of bacon with 125 calories each. What percentage of the sandwich's total calories come from bacon?",
+    "student_prefix": [
+      {
+        "content": "Ben makes a sandwich that has 1250 calories total that has two strips of bacon with 125 calories each. What percentage of the sandwich's total calories come from bacon?",
+        "role": "user"
+      },
+      {
+        "content": "The sandwich has 1250 calories in total. There are two strips of bacon, each with 125 calories, so the bacon contributes 2 * 125 = 250 calories. To find the percentage of the sandwich's total calories that come from bacon, I use the formula:\n\n\\[ \\text{Percentage} = \\left( \\frac{\\text{Calories from bacon}}{\\text{Total calories}} \\right) \\times 100 \\]\n\nPlugging in the numbers:\n\n\\[ \\text{Percentage} = \\left( \\frac{250}{1250} \\right) \\times 100 = 0.2 \\times 100 = 20\\% \\]\n\nThe bacon contributes 20% of the sandwich's total calories.\n\nFINAL: 20",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable record of this solved task.",
+        "role": "user"
+      }
+    ],
+    "target": "Given the total calories of the sandwich (1250) and the calories from bacon (2 * 125 = 250), the task is to find the percentage of the sandwich's total calories that come from bacon. The operations involved are division and multiplication by 100 to convert the fraction to a percentage.\n\n1. **Identify the quantities:**\n   - Total calories of the sandwich: 1250\n   - Calories from bacon: 250\n\n2. **Set up the formula:**\n   \\[ \\text{Percentage} = \\left( \\frac{\\text{Calories from bacon}}{\\text{Total calories}} \\right) \\times 100 \\]\n\n3. **Substitute the values:**\n   \\[ \\text{Percentage} = \\left( \\frac{250}{1250} \\right) \\times 100 \\]\n\n4. **Perform the division:**\n   \\[ \\frac{250}{1250} = 0.2 \\]\n\n5. **Multiply by 100 to get the percentage:**\n   \\[ 0.2 \\times 100 = 20\\% \\]\n\n6. **Check the result:**\n   - The calculation is correct as it follows the formula and uses the given values.\n   - The percentage of the sandwich's total calories that come from bacon is 20%.\n\nFINAL: 20",
+    "target_sha256": "91dce6f2fdba9a82e218df6b72abef5085a3ac6f524f2b5fffeebfc60da25c06",
+    "task_id": "gsm8k-train-6894"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Ian spent half the money he made on doing online surveys. If he worked 8 hours doing surveys and on average he's able to earn $18 per hour doing surveys, how much money does he have left?",
+        "role": "user"
+      },
+      {
+        "content": "First, I calculate the total money Ian earned from doing surveys. He worked 8 hours at an average rate of $18 per hour, so the total earnings are \\(8 \\times 18 = 144\\) dollars. Since he spent half of this money, he spent \\(144 \\div 2 = 72\\) dollars. Therefore, the amount of money he has left is \\(144 - 72 = 72\\) dollars.\n\nFINAL: 72",
+        "role": "assistant"
+      },
+      {
+        "content": "The final value passed the exact-answer checker. Write your own reusable record: explain the specific operations, when they apply, and a concrete check using this problem. Retain its final answer. Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "user"
+      }
+    ],
+    "gold": "72",
+    "kind": "record",
+    "question": "Ian spent half the money he made on doing online surveys. If he worked 8 hours doing surveys and on average he's able to earn $18 per hour doing surveys, how much money does he have left?",
+    "student_prefix": [
+      {
+        "content": "Ian spent half the money he made on doing online surveys. If he worked 8 hours doing surveys and on average he's able to earn $18 per hour doing surveys, how much money does he have left?",
+        "role": "user"
+      },
+      {
+        "content": "First, I calculate the total money Ian earned from doing surveys. He worked 8 hours at an average rate of $18 per hour, so the total earnings are \\(8 \\times 18 = 144\\) dollars. Since he spent half of this money, he spent \\(144 \\div 2 = 72\\) dollars. Therefore, the amount of money he has left is \\(144 - 72 = 72\\) dollars.\n\nFINAL: 72",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable record of this solved task.",
+        "role": "user"
+      }
+    ],
+    "target": "Given quantities:\n- Ian worked 8 hours.\n- He earns $18 per hour.\n- He spent half of his earnings.\n\nUnknown:\n- How much money does Ian have left?\n\nOperations:\n1. Calculate total earnings: Multiply the number of hours worked by the hourly rate.\n2. Calculate the amount spent: Divide the total earnings by 2.\n3. Calculate the remaining money: Subtract the amount spent from the total earnings.\n\nStep-by-step solution:\n1. Total earnings = 8 hours * $18/hour = $144.\n2. Amount spent = $144 / 2 = $72.\n3. Remaining money = $144 - $72 = $72.\n\nConcrete check:\n- Total earnings: 8 * 18 = 144 (correct).\n- Amount spent: 144 / 2 = 72 (correct).\n- Remaining money: 144 - 72 = 72 (correct).\n\nThe operations are reusable for similar problems involving calculating earnings, spending, and remaining amounts.\n\nFINAL: 72",
+    "target_sha256": "6d571f8c024e42282478249b1c4644ebe1f99caf2beaa30b2b51e1e63f0bba44",
+    "task_id": "gsm8k-train-2894"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "The school is hosting a race after school. The winner is the person who runs the most laps around the school in 12 minutes.  One lap around the school is 100 meters. The winner is awarded a gift certificate equal to $3.5 for every one hundred meters they run. The winner runs 24 laps around the school. On average, how much did they earn per minute?",
+        "role": "user"
+      },
+      {
+        "content": "Given:\n- The winner runs 24 laps.\n- Each lap is 100 meters.\n- The winner earns $3.5 for every 100 meters.\n\nFirst, calculate the total distance run:\n24 laps * 100 meters/lap = 2400 meters\n\nNext, calculate the total earnings:\n2400 meters / 100 meters = 24\n24 * $3.5 = $84\n\nThe race lasts 12 minutes, so to find the average earnings per minute:\n$84 / 12 minutes = $7 per minute\n\nFINAL: 7",
+        "role": "assistant"
+      },
+      {
+        "content": "The final value passed the exact-answer checker. Write your own reusable record: explain the specific operations, when they apply, and a concrete check using this problem. Retain its final answer. Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "user"
+      }
+    ],
+    "gold": "7",
+    "kind": "record",
+    "question": "The school is hosting a race after school. The winner is the person who runs the most laps around the school in 12 minutes.  One lap around the school is 100 meters. The winner is awarded a gift certificate equal to $3.5 for every one hundred meters they run. The winner runs 24 laps around the school. On average, how much did they earn per minute?",
+    "student_prefix": [
+      {
+        "content": "The school is hosting a race after school. The winner is the person who runs the most laps around the school in 12 minutes.  One lap around the school is 100 meters. The winner is awarded a gift certificate equal to $3.5 for every one hundred meters they run. The winner runs 24 laps around the school. On average, how much did they earn per minute?",
+        "role": "user"
+      },
+      {
+        "content": "Given:\n- The winner runs 24 laps.\n- Each lap is 100 meters.\n- The winner earns $3.5 for every 100 meters.\n\nFirst, calculate the total distance run:\n24 laps * 100 meters/lap = 2400 meters\n\nNext, calculate the total earnings:\n2400 meters / 100 meters = 24\n24 * $3.5 = $84\n\nThe race lasts 12 minutes, so to find the average earnings per minute:\n$84 / 12 minutes = $7 per minute\n\nFINAL: 7",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable record of this solved task.",
+        "role": "user"
+      }
+    ],
+    "target": "Given quantities:\n- The winner runs 24 laps.\n- Each lap is 100 meters.\n- The winner earns $3.5 for every 100 meters.\n- The race lasts 12 minutes.\n\nUnknown:\n- The average earnings per minute.\n\nOperations:\n1. Calculate the total distance run.\n2. Calculate the total earnings.\n3. Calculate the average earnings per minute.\n\nStep 1: Calculate the total distance run.\n\\[ \\text{Total distance} = 24 \\text{ laps} \\times 100 \\text{ meters/lap} = 2400 \\text{ meters} \\]\n\nStep 2: Calculate the total earnings.\n\\[ \\text{Total earnings} = \\frac{2400 \\text{ meters}}{100 \\text{ meters}} \\times \\$3.5 = 24 \\times \\$3.5 = \\$84 \\]\n\nStep 3: Calculate the average earnings per minute.\n\\[ \\text{Average earnings per minute} = \\frac{\\$84}{12 \\text{ minutes}} = \\$7 \\text{ per minute} \\]\n\nConcrete check:\n- Total distance: \\(24 \\times 100 = 2400\\) meters (correct).\n- Total earnings: \\(24 \\times 3.5 = 84\\) dollars (correct).\n- Average earnings per minute: \\(\\frac{84}{12} = 7\\) dollars (correct).\n\nFINAL: 7",
+    "target_sha256": "2b35f3fab79d55d7d9f53b28ae0d05ae07c0aa62fc11a1c775321cece6308226",
+    "task_id": "gsm8k-train-3431"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "system"
+      },
+      {
+        "content": "Timothy and Theresa go to the movies very often. Timothy went to the movies 7 more times in 2010 that he did in 2009. In 2009, Timothy went to the movies 24 times. In 2010 Theresa went to see twice as many movies as Timothy did, but in 2009, she only saw half as many as he did. How many movies did Timothy and Theresa go on in both 2009 and 2010?",
+        "role": "user"
+      }
+    ],
+    "gold": "129",
+    "kind": "rich",
+    "question": "Timothy and Theresa go to the movies very often. Timothy went to the movies 7 more times in 2010 that he did in 2009. In 2009, Timothy went to the movies 24 times. In 2010 Theresa went to see twice as many movies as Timothy did, but in 2009, she only saw half as many as he did. How many movies did Timothy and Theresa go on in both 2009 and 2010?",
+    "student_prefix": [
+      {
+        "content": "Timothy and Theresa go to the movies very often. Timothy went to the movies 7 more times in 2010 that he did in 2009. In 2009, Timothy went to the movies 24 times. In 2010 Theresa went to see twice as many movies as Timothy did, but in 2009, she only saw half as many as he did. How many movies did Timothy and Theresa go on in both 2009 and 2010?",
+        "role": "user"
+      }
+    ],
+    "target": "In 2009, Timothy went to the movies 24 times. In 2010, he went 7 more times than in 2009, so he went \\(24 + 7 = 31\\) times. Theresa saw half as many movies as Timothy in 2009, so she went \\(24 / 2 = 12\\) times in 2009. In 2010, Theresa saw twice as many movies as Timothy did, so she went \\(31 \\times 2 = 62\\) times. Adding up all the movies they went to, we get \\(24 + 31 + 12 + 62 = 129\\). \n\nFINAL: 129",
+    "target_sha256": "3a42a8b7784c08d8e8752e882d103fa4c4aa9c20e42ea0c547ea39f10064adfd",
+    "task_id": "gsm8k-train-2488"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "system"
+      },
+      {
+        "content": "There are 48 crayons in the box.  Kiley takes 1/4 of them away.  Joe takes away half of the remaining crayons, how many crayons are left?",
+        "role": "user"
+      }
+    ],
+    "gold": "18",
+    "kind": "rich",
+    "question": "There are 48 crayons in the box.  Kiley takes 1/4 of them away.  Joe takes away half of the remaining crayons, how many crayons are left?",
+    "student_prefix": [
+      {
+        "content": "There are 48 crayons in the box.  Kiley takes 1/4 of them away.  Joe takes away half of the remaining crayons, how many crayons are left?",
+        "role": "user"
+      }
+    ],
+    "target": "Initially, there are 48 crayons in the box. Kiley takes away 1/4 of them. To find out how many crayons Kiley takes, I calculate 1/4 of 48:\n\n48 * (1/4) = 12 crayons\n\nAfter Kiley takes 12 crayons, there are:\n\n48 - 12 = 36 crayons left.\n\nJoe then takes away half of the remaining crayons. To find out how many Joe takes, I calculate half of 36:\n\n36 * (1/2) = 18 crayons\n\nAfter Joe takes 18 crayons, there are:\n\n36 - 18 = 18 crayons left.\n\nFINAL: 18",
+    "target_sha256": "8485c1c69f0c5780d0ffa0cea2ad1deb6126f9415a9fe9b71fa0d2fa2cc870f4",
+    "task_id": "gsm8k-train-6433"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "There are 48 crayons in the box.  Kiley takes 1/4 of them away.  Joe takes away half of the remaining crayons, how many crayons are left?",
+        "role": "user"
+      },
+      {
+        "content": "Initially, there are 48 crayons in the box. Kiley takes away 1/4 of them. To find out how many crayons Kiley takes, I calculate 1/4 of 48:\n\n48 * (1/4) = 12 crayons\n\nAfter Kiley takes 12 crayons, there are:\n\n48 - 12 = 36 crayons left.\n\nJoe then takes away half of the remaining crayons. To find out how many Joe takes, I calculate half of 36:\n\n36 * (1/2) = 18 crayons\n\nAfter Joe takes 18 crayons, there are:\n\n36 - 18 = 18 crayons left.\n\nFINAL: 18",
+        "role": "assistant"
+      },
+      {
+        "content": "The final value passed the exact-answer checker. Write your own reusable record: explain the specific operations, when they apply, and a concrete check using this problem. Retain its final answer. Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "user"
+      }
+    ],
+    "gold": "18",
+    "kind": "record",
+    "question": "There are 48 crayons in the box.  Kiley takes 1/4 of them away.  Joe takes away half of the remaining crayons, how many crayons are left?",
+    "student_prefix": [
+      {
+        "content": "There are 48 crayons in the box.  Kiley takes 1/4 of them away.  Joe takes away half of the remaining crayons, how many crayons are left?",
+        "role": "user"
+      },
+      {
+        "content": "Initially, there are 48 crayons in the box. Kiley takes away 1/4 of them. To find out how many crayons Kiley takes, I calculate 1/4 of 48:\n\n48 * (1/4) = 12 crayons\n\nAfter Kiley takes 12 crayons, there are:\n\n48 - 12 = 36 crayons left.\n\nJoe then takes away half of the remaining crayons. To find out how many Joe takes, I calculate half of 36:\n\n36 * (1/2) = 18 crayons\n\nAfter Joe takes 18 crayons, there are:\n\n36 - 18 = 18 crayons left.\n\nFINAL: 18",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable record of this solved task.",
+        "role": "user"
+      }
+    ],
+    "target": "Given the problem, I identify the following quantities and unknown:\n- Initial number of crayons: 48\n- Crayons taken by Kiley: 1/4 of 48\n- Remaining crayons after Kiley: 48 - (1/4 * 48)\n- Crayons taken by Joe: 1/2 of the remaining crayons\n- Final number of crayons left: Remaining crayons after Joe\n\nFirst, I calculate the crayons taken by Kiley:\n\\[ \\text{Crayons taken by Kiley} = \\frac{1}{4} \\times 48 = 12 \\]\n\nNext, I find the remaining crayons after Kiley:\n\\[ \\text{Remaining crayons} = 48 - 12 = 36 \\]\n\nThen, I calculate the crayons taken by Joe:\n\\[ \\text{Crayons taken by Joe} = \\frac{1}{2} \\times 36 = 18 \\]\n\nFinally, I determine the number of crayons left:\n\\[ \\text{Crayons left} = 36 - 18 = 18 \\]\n\nTo check the result, I verify each step:\n1. Kiley takes 12 crayons (48 * 1/4 = 12)\n2. 36 crayons remain (48 - 12 = 36)\n3. Joe takes 18 crayons (36 * 1/2 = 18)\n4. 18 crayons are left (36 - 18 = 18)\n\nThe result matches the problem statement.\n\nFINAL: 18",
+    "target_sha256": "b810b75574f2906863eec79783f8affaa0c614f76aed1b10b715d2bf17b8c434",
+    "task_id": "gsm8k-train-6433"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Bobby made a big batch of soup weighing 80 kg. Each day the batch gets reduced by half. How many kg will it reach on the fourth day after he made the soup?",
+        "role": "user"
+      },
+      {
+        "content": "On the first day, the soup is reduced by half, so it will be 80 kg / 2 = 40 kg. On the second day, it gets reduced by half again, so it will be 40 kg / 2 = 20 kg. On the third day, it gets reduced by half once more, so it will be 20 kg / 2 = 10 kg. On the fourth day, it gets reduced by half again, so it will be 10 kg / 2 = 5 kg.\n\nFINAL: 5",
+        "role": "assistant"
+      },
+      {
+        "content": "The final value passed the exact-answer checker. Write your own reusable record: explain the specific operations, when they apply, and a concrete check using this problem. Retain its final answer. Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "user"
+      }
+    ],
+    "gold": "5",
+    "kind": "record",
+    "question": "Bobby made a big batch of soup weighing 80 kg. Each day the batch gets reduced by half. How many kg will it reach on the fourth day after he made the soup?",
+    "student_prefix": [
+      {
+        "content": "Bobby made a big batch of soup weighing 80 kg. Each day the batch gets reduced by half. How many kg will it reach on the fourth day after he made the soup?",
+        "role": "user"
+      },
+      {
+        "content": "On the first day, the soup is reduced by half, so it will be 80 kg / 2 = 40 kg. On the second day, it gets reduced by half again, so it will be 40 kg / 2 = 20 kg. On the third day, it gets reduced by half once more, so it will be 20 kg / 2 = 10 kg. On the fourth day, it gets reduced by half again, so it will be 10 kg / 2 = 5 kg.\n\nFINAL: 5",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable record of this solved task.",
+        "role": "user"
+      }
+    ],
+    "target": "Given: Bobby starts with 80 kg of soup. Each day, the soup's weight is halved.\n\nUnknown: The weight of the soup on the fourth day.\n\nOperations:\n1. Halve the initial weight to find the weight after the first day.\n2. Halve the weight from the first day to find the weight after the second day.\n3. Halve the weight from the second day to find the weight after the third day.\n4. Halve the weight from the third day to find the weight after the fourth day.\n\nConcrete check:\n1. Day 1: 80 kg / 2 = 40 kg\n2. Day 2: 40 kg / 2 = 20 kg\n3. Day 3: 20 kg / 2 = 10 kg\n4. Day 4: 10 kg / 2 = 5 kg\n\nThe weight of the soup on the fourth day is 5 kg.\n\nFINAL: 5",
+    "target_sha256": "b32d45f47b87c536f5aafc5a3e74e219b2d1f7c8be4ead1652becfb421c0918f",
+    "task_id": "gsm8k-train-1438"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Every day Tom drinks 5 12-oz cans of soda plus 64 ounces of water. How many ounces of fluid does he drink a week?",
+        "role": "user"
+      },
+      {
+        "content": "First, I identify the given quantities:\n- Tom drinks 5 cans of soda each day, with each can being 12 ounces.\n- Tom also drinks 64 ounces of water each day.\n\nNext, I calculate the total fluid intake per day:\n- Soda intake per day: 5 cans * 12 ounces/can = 60 ounces\n- Water intake per day: 64 ounces\n- Total fluid intake per day: 60 ounces + 64 ounces = 124 ounces\n\nNow, I calculate the weekly fluid intake:\n- Fluid intake per week: 124 ounces/day * 7 days/week = 868 ounces\n\nFINAL: 868",
+        "role": "assistant"
+      },
+      {
+        "content": "The final value passed the exact-answer checker. Write your own reusable record: explain the specific operations, when they apply, and a concrete check using this problem. Retain its final answer. Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "user"
+      }
+    ],
+    "gold": "868",
+    "kind": "record",
+    "question": "Every day Tom drinks 5 12-oz cans of soda plus 64 ounces of water. How many ounces of fluid does he drink a week?",
+    "student_prefix": [
+      {
+        "content": "Every day Tom drinks 5 12-oz cans of soda plus 64 ounces of water. How many ounces of fluid does he drink a week?",
+        "role": "user"
+      },
+      {
+        "content": "First, I identify the given quantities:\n- Tom drinks 5 cans of soda each day, with each can being 12 ounces.\n- Tom also drinks 64 ounces of water each day.\n\nNext, I calculate the total fluid intake per day:\n- Soda intake per day: 5 cans * 12 ounces/can = 60 ounces\n- Water intake per day: 64 ounces\n- Total fluid intake per day: 60 ounces + 64 ounces = 124 ounces\n\nNow, I calculate the weekly fluid intake:\n- Fluid intake per week: 124 ounces/day * 7 days/week = 868 ounces\n\nFINAL: 868",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable record of this solved task.",
+        "role": "user"
+      }
+    ],
+    "target": "Given quantities:\n- Tom drinks 5 cans of soda each day, with each can being 12 ounces.\n- Tom also drinks 64 ounces of water each day.\n\nUnknown:\n- The total fluid intake per week.\n\nOperations:\n1. Calculate daily fluid intake by adding the soda and water intake.\n2. Multiply the daily fluid intake by 7 to get the weekly fluid intake.\n\nStep-by-step solution:\n1. Daily soda intake: 5 cans * 12 ounces/can = 60 ounces\n2. Daily water intake: 64 ounces\n3. Daily fluid intake: 60 ounces + 64 ounces = 124 ounces\n4. Weekly fluid intake: 124 ounces/day * 7 days/week = 868 ounces\n\nConcrete check:\n- Daily fluid intake: 60 ounces (soda) + 64 ounces (water) = 124 ounces\n- Weekly fluid intake: 124 ounces/day * 7 days = 868 ounces\n\nThe calculation matches the problem statement, confirming the result is correct.\n\nFINAL: 868",
+    "target_sha256": "0d385b994cac6c1fde106b92ad749c1a83b3c746b5d0a2e2371f84bcc3d33958",
+    "task_id": "gsm8k-train-4735"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "A local restaurant was offering a \"Build Your Own Hot Brownie\" dessert.  The brownie cost $2.50 and each scoop of ice cream costs $1.00.  Any syrup costs $0.50 and nuts cost $1.50.  If Juanita orders the brownie with 2 scoops of ice cream, double syrup, and nuts, how much will her dessert cost?",
+        "role": "user"
+      },
+      {
+        "content": "The brownie costs $2.50. Each scoop of ice cream is $1.00, so 2 scoops cost $1.00 * 2 = $2.00. Double syrup means 2 * $0.50 = $1.00. Nuts cost $1.50. Adding these up: $2.50 (brownie) + $2.00 (ice cream) + $1.00 (syrup) + $1.50 (nuts) = $7.00. \n\nFINAL: 7",
+        "role": "assistant"
+      },
+      {
+        "content": "The final value passed the exact-answer checker. Write your own reusable record: explain the specific operations, when they apply, and a concrete check using this problem. Retain its final answer. Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "user"
+      }
+    ],
+    "gold": "7",
+    "kind": "record",
+    "question": "A local restaurant was offering a \"Build Your Own Hot Brownie\" dessert.  The brownie cost $2.50 and each scoop of ice cream costs $1.00.  Any syrup costs $0.50 and nuts cost $1.50.  If Juanita orders the brownie with 2 scoops of ice cream, double syrup, and nuts, how much will her dessert cost?",
+    "student_prefix": [
+      {
+        "content": "A local restaurant was offering a \"Build Your Own Hot Brownie\" dessert.  The brownie cost $2.50 and each scoop of ice cream costs $1.00.  Any syrup costs $0.50 and nuts cost $1.50.  If Juanita orders the brownie with 2 scoops of ice cream, double syrup, and nuts, how much will her dessert cost?",
+        "role": "user"
+      },
+      {
+        "content": "The brownie costs $2.50. Each scoop of ice cream is $1.00, so 2 scoops cost $1.00 * 2 = $2.00. Double syrup means 2 * $0.50 = $1.00. Nuts cost $1.50. Adding these up: $2.50 (brownie) + $2.00 (ice cream) + $1.00 (syrup) + $1.50 (nuts) = $7.00. \n\nFINAL: 7",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable record of this solved task.",
+        "role": "user"
+      }
+    ],
+    "target": "Given quantities:\n- Brownie cost: $2.50\n- Ice cream cost per scoop: $1.00\n- Syrup cost per unit: $0.50\n- Nuts cost: $1.50\n- Number of scoops of ice cream: 2\n- Syrup quantity: double (2 units)\n\nUnknown: Total cost of the dessert\n\nOperations:\n1. Calculate the cost of the brownie.\n2. Calculate the total cost of the ice cream.\n3. Calculate the total cost of the syrup.\n4. Add the cost of the nuts.\n5. Sum all the costs to get the total cost of the dessert.\n\nStep-by-step calculation:\n1. Brownie cost: $2.50\n2. Ice cream cost: $1.00 * 2 = $2.00\n3. Syrup cost: $0.50 * 2 = $1.00\n4. Nuts cost: $1.50\n5. Total cost: $2.50 + $2.00 + $1.00 + $1.50 = $7.00\n\nConcrete check:\n- Verify each step with the given values.\n- Ensure the total matches the sum of individual components.\n\nFINAL: 7",
+    "target_sha256": "f53e461f362980b3096d87697ba0e6227b633d5a5c6e5e35cea48876ada88160",
+    "task_id": "gsm8k-train-2376"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "system"
+      },
+      {
+        "content": "Dexter went to the mall and saw that Apple products are on sale. He wants to buy an iPhone 12 with a 15% discount and an iWatch with a 10% discount. The price tag shows that an iPhone 12 costs $800 while an iWatch costs $300. Upon check out, he will receive a further 2% cashback discount. How much would the items cost in total after the discount and cashback?",
+        "role": "user"
+      }
+    ],
+    "gold": "931",
+    "kind": "rich",
+    "question": "Dexter went to the mall and saw that Apple products are on sale. He wants to buy an iPhone 12 with a 15% discount and an iWatch with a 10% discount. The price tag shows that an iPhone 12 costs $800 while an iWatch costs $300. Upon check out, he will receive a further 2% cashback discount. How much would the items cost in total after the discount and cashback?",
+    "student_prefix": [
+      {
+        "content": "Dexter went to the mall and saw that Apple products are on sale. He wants to buy an iPhone 12 with a 15% discount and an iWatch with a 10% discount. The price tag shows that an iPhone 12 costs $800 while an iWatch costs $300. Upon check out, he will receive a further 2% cashback discount. How much would the items cost in total after the discount and cashback?",
+        "role": "user"
+      }
+    ],
+    "target": "First, I identify the given quantities:\n- iPhone 12 price: $800\n- iWatch price: $300\n- iPhone 12 discount: 15%\n- iWatch discount: 10%\n- Cashback discount: 2%\n\nNext, I calculate the discounted prices for each item:\n- iPhone 12 after 15% discount: $800 * (1 - 0.15) = $800 * 0.85 = $680\n- iWatch after 10% discount: $300 * (1 - 0.10) = $300 * 0.90 = $270\n\nNow, I add the discounted prices to get the subtotal:\n- Subtotal: $680 + $270 = $950\n\nFinally, I apply the 2% cashback discount to the subtotal:\n- Total after cashback: $950 * (1 - 0.02) = $950 * 0.98 = $931\n\nFINAL: 931",
+    "target_sha256": "cf5e98b251a2977d80b1852e29e833aa7e03f29f71539bc4382d3d93f62d22b0",
+    "task_id": "gsm8k-train-6805"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Dexter went to the mall and saw that Apple products are on sale. He wants to buy an iPhone 12 with a 15% discount and an iWatch with a 10% discount. The price tag shows that an iPhone 12 costs $800 while an iWatch costs $300. Upon check out, he will receive a further 2% cashback discount. How much would the items cost in total after the discount and cashback?",
+        "role": "user"
+      },
+      {
+        "content": "First, I identify the given quantities:\n- iPhone 12 price: $800\n- iWatch price: $300\n- iPhone 12 discount: 15%\n- iWatch discount: 10%\n- Cashback discount: 2%\n\nNext, I calculate the discounted prices for each item:\n- iPhone 12 after 15% discount: $800 * (1 - 0.15) = $800 * 0.85 = $680\n- iWatch after 10% discount: $300 * (1 - 0.10) = $300 * 0.90 = $270\n\nNow, I add the discounted prices to get the subtotal:\n- Subtotal: $680 + $270 = $950\n\nFinally, I apply the 2% cashback discount to the subtotal:\n- Total after cashback: $950 * (1 - 0.02) = $950 * 0.98 = $931\n\nFINAL: 931",
+        "role": "assistant"
+      },
+      {
+        "content": "The final value passed the exact-answer checker. Write your own reusable record: explain the specific operations, when they apply, and a concrete check using this problem. Retain its final answer. Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "user"
+      }
+    ],
+    "gold": "931",
+    "kind": "record",
+    "question": "Dexter went to the mall and saw that Apple products are on sale. He wants to buy an iPhone 12 with a 15% discount and an iWatch with a 10% discount. The price tag shows that an iPhone 12 costs $800 while an iWatch costs $300. Upon check out, he will receive a further 2% cashback discount. How much would the items cost in total after the discount and cashback?",
+    "student_prefix": [
+      {
+        "content": "Dexter went to the mall and saw that Apple products are on sale. He wants to buy an iPhone 12 with a 15% discount and an iWatch with a 10% discount. The price tag shows that an iPhone 12 costs $800 while an iWatch costs $300. Upon check out, he will receive a further 2% cashback discount. How much would the items cost in total after the discount and cashback?",
+        "role": "user"
+      },
+      {
+        "content": "First, I identify the given quantities:\n- iPhone 12 price: $800\n- iWatch price: $300\n- iPhone 12 discount: 15%\n- iWatch discount: 10%\n- Cashback discount: 2%\n\nNext, I calculate the discounted prices for each item:\n- iPhone 12 after 15% discount: $800 * (1 - 0.15) = $800 * 0.85 = $680\n- iWatch after 10% discount: $300 * (1 - 0.10) = $300 * 0.90 = $270\n\nNow, I add the discounted prices to get the subtotal:\n- Subtotal: $680 + $270 = $950\n\nFinally, I apply the 2% cashback discount to the subtotal:\n- Total after cashback: $950 * (1 - 0.02) = $950 * 0.98 = $931\n\nFINAL: 931",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable record of this solved task.",
+        "role": "user"
+      }
+    ],
+    "target": "Given quantities:\n- iPhone 12 price: $800\n- iWatch price: $300\n- iPhone 12 discount: 15%\n- iWatch discount: 10%\n- Cashback discount: 2%\n\nUnknown: Total cost after all discounts.\n\nOperations:\n1. Calculate the discounted price of each item.\n2. Sum the discounted prices to get the subtotal.\n3. Apply the cashback discount to the subtotal.\n\nStep 1: Calculate the discounted prices.\n- iPhone 12: $800 * (1 - 0.15) = $800 * 0.85 = $680\n- iWatch: $300 * (1 - 0.10) = $300 * 0.90 = $270\n\nStep 2: Sum the discounted prices.\n- Subtotal: $680 + $270 = $950\n\nStep 3: Apply the cashback discount.\n- Total after cashback: $950 * (1 - 0.02) = $950 * 0.98 = $931\n\nCheck: The total cost of $931 matches the problem's requirement after all discounts are applied.\n\nFINAL: 931",
+    "target_sha256": "532465ada35af738e2faf7571fc25c897fd51d1dcca73123aed0534d51b753c7",
+    "task_id": "gsm8k-train-6805"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "system"
+      },
+      {
+        "content": "Eve wants to buy her 3 nieces cooking gear that's made for kids.  The hand mitts cost $14.00 and the apron is $16.00.  A set of 3 cooking utensils is $10.00 and a small knife is twice the amount of the utensils.  The store is offering a 25% off sale on all cooking gear.  How much will Eve spend on the gifts?",
+        "role": "user"
+      }
+    ],
+    "gold": "135",
+    "kind": "rich",
+    "question": "Eve wants to buy her 3 nieces cooking gear that's made for kids.  The hand mitts cost $14.00 and the apron is $16.00.  A set of 3 cooking utensils is $10.00 and a small knife is twice the amount of the utensils.  The store is offering a 25% off sale on all cooking gear.  How much will Eve spend on the gifts?",
+    "student_prefix": [
+      {
+        "content": "Eve wants to buy her 3 nieces cooking gear that's made for kids.  The hand mitts cost $14.00 and the apron is $16.00.  A set of 3 cooking utensils is $10.00 and a small knife is twice the amount of the utensils.  The store is offering a 25% off sale on all cooking gear.  How much will Eve spend on the gifts?",
+        "role": "user"
+      }
+    ],
+    "target": "First, I identify the quantities:\n- Hand mitts cost $14.00 each\n- Apron costs $16.00\n- Set of 3 cooking utensils costs $10.00\n- Small knife costs twice the utensils, so $20.00\n- There are 3 nieces\n- There's a 25% off sale\n\nNext, I calculate the total cost before the discount:\n- Mitts: $14.00 * 3 = $42.00\n- Aprons: $16.00 * 3 = $48.00\n- Utensils: $10.00 * 3 = $30.00\n- Knives: $20.00 * 3 = $60.00\n\nTotal before discount: $42.00 + $48.00 + $30.00 + $60.00 = $180.00\n\nNow, I apply the 25% discount:\n- Discount amount: $180.00 * 0.25 = $45.00\n- Total after discount: $180.00 - $45.00 = $135.00\n\nFINAL: 135",
+    "target_sha256": "0c44db379ddd91ebe62b0649c1232f1bdf01b45b29baf778a8bb5dc8453ace4e",
+    "task_id": "gsm8k-train-335"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "system"
+      },
+      {
+        "content": "Micah can type 20 words per minute and Isaiah can type 40 words per minute. How many more words can Isaiah type than Micah in an hour?",
+        "role": "user"
+      }
+    ],
+    "gold": "1200",
+    "kind": "rich",
+    "question": "Micah can type 20 words per minute and Isaiah can type 40 words per minute. How many more words can Isaiah type than Micah in an hour?",
+    "student_prefix": [
+      {
+        "content": "Micah can type 20 words per minute and Isaiah can type 40 words per minute. How many more words can Isaiah type than Micah in an hour?",
+        "role": "user"
+      }
+    ],
+    "target": "Given:\n- Micah types 20 words per minute.\n- Isaiah types 40 words per minute.\n- We need to find how many more words Isaiah can type than Micah in an hour.\n\nFirst, calculate the number of words each can type in an hour:\n- There are 60 minutes in an hour.\n- Micah types 20 words per minute, so in an hour, Micah types \\(20 \\times 60 = 1200\\) words.\n- Isaiah types 40 words per minute, so in an hour, Isaiah types \\(40 \\times 60 = 2400\\) words.\n\nNext, find the difference in the number of words typed by Isaiah and Micah in an hour:\n- The difference is \\(2400 - 1200 = 1200\\) words.\n\nSo, Isaiah can type 1200 more words than Micah in an hour.\n\nFINAL: 1200",
+    "target_sha256": "2b18c094527cf86285075ca77760afdf16e269e6c48fb8f2c25ca4a7d2f10706",
+    "task_id": "gsm8k-train-1372"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Micah can type 20 words per minute and Isaiah can type 40 words per minute. How many more words can Isaiah type than Micah in an hour?",
+        "role": "user"
+      },
+      {
+        "content": "Given:\n- Micah types 20 words per minute.\n- Isaiah types 40 words per minute.\n- We need to find how many more words Isaiah can type than Micah in an hour.\n\nFirst, calculate the number of words each can type in an hour:\n- There are 60 minutes in an hour.\n- Micah types 20 words per minute, so in an hour, Micah types \\(20 \\times 60 = 1200\\) words.\n- Isaiah types 40 words per minute, so in an hour, Isaiah types \\(40 \\times 60 = 2400\\) words.\n\nNext, find the difference in the number of words typed by Isaiah and Micah in an hour:\n- The difference is \\(2400 - 1200 = 1200\\) words.\n\nSo, Isaiah can type 1200 more words than Micah in an hour.\n\nFINAL: 1200",
+        "role": "assistant"
+      },
+      {
+        "content": "The final value passed the exact-answer checker. Write your own reusable record: explain the specific operations, when they apply, and a concrete check using this problem. Retain its final answer. Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "user"
+      }
+    ],
+    "gold": "1200",
+    "kind": "record",
+    "question": "Micah can type 20 words per minute and Isaiah can type 40 words per minute. How many more words can Isaiah type than Micah in an hour?",
+    "student_prefix": [
+      {
+        "content": "Micah can type 20 words per minute and Isaiah can type 40 words per minute. How many more words can Isaiah type than Micah in an hour?",
+        "role": "user"
+      },
+      {
+        "content": "Given:\n- Micah types 20 words per minute.\n- Isaiah types 40 words per minute.\n- We need to find how many more words Isaiah can type than Micah in an hour.\n\nFirst, calculate the number of words each can type in an hour:\n- There are 60 minutes in an hour.\n- Micah types 20 words per minute, so in an hour, Micah types \\(20 \\times 60 = 1200\\) words.\n- Isaiah types 40 words per minute, so in an hour, Isaiah types \\(40 \\times 60 = 2400\\) words.\n\nNext, find the difference in the number of words typed by Isaiah and Micah in an hour:\n- The difference is \\(2400 - 1200 = 1200\\) words.\n\nSo, Isaiah can type 1200 more words than Micah in an hour.\n\nFINAL: 1200",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable record of this solved task.",
+        "role": "user"
+      }
+    ],
+    "target": "Given quantities:\n- Micah's typing speed: 20 words per minute.\n- Isaiah's typing speed: 40 words per minute.\n- Time period: 1 hour (60 minutes).\n\nUnknown:\n- Difference in the number of words typed by Isaiah and Micah in an hour.\n\nOperations:\n1. Calculate the number of words Micah types in an hour.\n2. Calculate the number of words Isaiah types in an hour.\n3. Find the difference between the number of words typed by Isaiah and Micah.\n\nStep 1: Calculate the number of words Micah types in an hour.\n\\[ \\text{Words typed by Micah} = 20 \\, \\text{words/minute} \\times 60 \\, \\text{minutes} = 1200 \\, \\text{words} \\]\n\nStep 2: Calculate the number of words Isaiah types in an hour.\n\\[ \\text{Words typed by Isaiah} = 40 \\, \\text{words/minute} \\times 60 \\, \\text{minutes} = 2400 \\, \\text{words} \\]\n\nStep 3: Find the difference in the number of words typed by Isaiah and Micah.\n\\[ \\text{Difference} = 2400 \\, \\text{words} - 1200 \\, \\text{words} = 1200 \\, \\text{words} \\]\n\nConcrete check:\n- Micah types 1200 words in an hour.\n- Isaiah types 2400 words in an hour.\n- The difference is \\(2400 - 1200 = 1200\\) words.\n\nThus, the difference in the number of words typed by Isaiah and Micah in an hour is 1200 words.\n\nFINAL: 1200",
+    "target_sha256": "e6d9f4dd69095c78355a00990010ce9466c16bf80c9e1ff24aac7f4f225ed22c",
+    "task_id": "gsm8k-train-1372"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Will's breakfast supplied him 900 calories of energy. Then he decided to jog for half an hour, which used up 10 calories of energy per minute. What is Will's net calorie intake after jogging?",
+        "role": "user"
+      },
+      {
+        "content": "Given:\n- Will's breakfast supplied 900 calories.\n- Jogging for half an hour (30 minutes) used up 10 calories per minute.\n\nTo find the net calorie intake, we need to subtract the calories used during jogging from the calories consumed at breakfast.\n\nCalories used during jogging:\n30 minutes * 10 calories/minute = 300 calories\n\nNet calorie intake:\n900 calories - 300 calories = 600 calories\n\nFINAL: 600",
+        "role": "assistant"
+      },
+      {
+        "content": "The final value passed the exact-answer checker. Write your own reusable record: explain the specific operations, when they apply, and a concrete check using this problem. Retain its final answer. Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "user"
+      }
+    ],
+    "gold": "600",
+    "kind": "record",
+    "question": "Will's breakfast supplied him 900 calories of energy. Then he decided to jog for half an hour, which used up 10 calories of energy per minute. What is Will's net calorie intake after jogging?",
+    "student_prefix": [
+      {
+        "content": "Will's breakfast supplied him 900 calories of energy. Then he decided to jog for half an hour, which used up 10 calories of energy per minute. What is Will's net calorie intake after jogging?",
+        "role": "user"
+      },
+      {
+        "content": "Given:\n- Will's breakfast supplied 900 calories.\n- Jogging for half an hour (30 minutes) used up 10 calories per minute.\n\nTo find the net calorie intake, we need to subtract the calories used during jogging from the calories consumed at breakfast.\n\nCalories used during jogging:\n30 minutes * 10 calories/minute = 300 calories\n\nNet calorie intake:\n900 calories - 300 calories = 600 calories\n\nFINAL: 600",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable record of this solved task.",
+        "role": "user"
+      }
+    ],
+    "target": "Given quantities:\n- Breakfast calorie intake: 900 calories\n- Jogging calorie expenditure rate: 10 calories per minute\n- Jogging duration: 30 minutes\n\nUnknown:\n- Net calorie intake after jogging\n\nOperations:\n1. Calculate total calories burned during jogging.\n2. Subtract the total calories burned from the breakfast calorie intake.\n\nStep 1: Calculate total calories burned during jogging.\n\\[ \\text{Total calories burned} = \\text{Calories per minute} \\times \\text{Duration in minutes} \\]\n\\[ \\text{Total calories burned} = 10 \\, \\text{calories/minute} \\times 30 \\, \\text{minutes} = 300 \\, \\text{calories} \\]\n\nStep 2: Subtract the total calories burned from the breakfast calorie intake.\n\\[ \\text{Net calorie intake} = \\text{Breakfast calorie intake} - \\text{Total calories burned} \\]\n\\[ \\text{Net calorie intake} = 900 \\, \\text{calories} - 300 \\, \\text{calories} = 600 \\, \\text{calories} \\]\n\nConcrete check:\n- Initial breakfast intake: 900 calories\n- Jogging duration: 30 minutes\n- Calories burned per minute: 10 calories\n- Total calories burned: 300 calories\n- Net calorie intake: 900 - 300 = 600 calories\n\nThe net calorie intake after jogging is 600 calories.\n\nFINAL: 600",
+    "target_sha256": "32b37a770eeb5f269e33c46074eb78a99b5ab878c9363755005abac20b1103f7",
+    "task_id": "gsm8k-train-3521"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "system"
+      },
+      {
+        "content": "Mr. Isaac rides his bicycle at the rate of 10 miles per hour for 30 minutes. If he rides for another 15 miles, rests for 30 minutes, and then covers the remaining distance of 20 miles, what's the total time in minutes took to travel the whole journey?",
+        "role": "user"
+      }
+    ],
+    "gold": "270",
+    "kind": "rich",
+    "question": "Mr. Isaac rides his bicycle at the rate of 10 miles per hour for 30 minutes. If he rides for another 15 miles, rests for 30 minutes, and then covers the remaining distance of 20 miles, what's the total time in minutes took to travel the whole journey?",
+    "student_prefix": [
+      {
+        "content": "Mr. Isaac rides his bicycle at the rate of 10 miles per hour for 30 minutes. If he rides for another 15 miles, rests for 30 minutes, and then covers the remaining distance of 20 miles, what's the total time in minutes took to travel the whole journey?",
+        "role": "user"
+      }
+    ],
+    "target": "First, I calculate the distance Mr. Isaac covers in the first 30 minutes. Since he rides at 10 miles per hour, in 30 minutes (which is 0.5 hours), he covers:\n\\[ 10 \\, \\text{miles/hour} \\times 0.5 \\, \\text{hours} = 5 \\, \\text{miles} \\]\n\nNext, he rides an additional 15 miles. The time taken for this part is:\n\\[ \\frac{15 \\, \\text{miles}}{10 \\, \\text{miles/hour}} = 1.5 \\, \\text{hours} = 90 \\, \\text{minutes} \\]\n\nAfter that, he rests for 30 minutes. Then, he covers the remaining 20 miles. The time taken for this part is:\n\\[ \\frac{20 \\, \\text{miles}}{10 \\, \\text{miles/hour}} = 2 \\, \\text{hours} = 120 \\, \\text{minutes} \\]\n\nNow, I sum up all the times:\n\\[ 30 \\, \\text{minutes} + 90 \\, \\text{minutes} + 30 \\, \\text{minutes} + 120 \\, \\text{minutes} = 270 \\, \\text{minutes} \\]\n\nFINAL: 270",
+    "target_sha256": "603f20b81d29fd04bea4dc7962ae6ff6b67a1d01cf6fd13c64b4e0b5ecc11260",
+    "task_id": "gsm8k-train-6003"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Peggy has 6 dolls.  Her grandmother gives Peggy her own collection of 30 dolls.  Over the year, Peggy receives half that amount of dolls between her birthday and Christmas.  How many dolls does Peggy now have?",
+        "role": "user"
+      },
+      {
+        "content": "Peggy starts with 6 dolls. Her grandmother gives her 30 dolls. So, initially, Peggy has:\n\\[ 6 + 30 = 36 \\text{ dolls} \\]\n\nNext, Peggy receives half of 30 dolls between her birthday and Christmas. Half of 30 is:\n\\[ \\frac{30}{2} = 15 \\text{ dolls} \\]\n\nAdding these 15 dolls to her current total:\n\\[ 36 + 15 = 51 \\text{ dolls} \\]\n\nSo, Peggy now has 51 dolls. \n\nFINAL: 51",
+        "role": "assistant"
+      },
+      {
+        "content": "The final value passed the exact-answer checker. Write your own reusable record: explain the specific operations, when they apply, and a concrete check using this problem. Retain its final answer. Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "user"
+      }
+    ],
+    "gold": "51",
+    "kind": "record",
+    "question": "Peggy has 6 dolls.  Her grandmother gives Peggy her own collection of 30 dolls.  Over the year, Peggy receives half that amount of dolls between her birthday and Christmas.  How many dolls does Peggy now have?",
+    "student_prefix": [
+      {
+        "content": "Peggy has 6 dolls.  Her grandmother gives Peggy her own collection of 30 dolls.  Over the year, Peggy receives half that amount of dolls between her birthday and Christmas.  How many dolls does Peggy now have?",
+        "role": "user"
+      },
+      {
+        "content": "Peggy starts with 6 dolls. Her grandmother gives her 30 dolls. So, initially, Peggy has:\n\\[ 6 + 30 = 36 \\text{ dolls} \\]\n\nNext, Peggy receives half of 30 dolls between her birthday and Christmas. Half of 30 is:\n\\[ \\frac{30}{2} = 15 \\text{ dolls} \\]\n\nAdding these 15 dolls to her current total:\n\\[ 36 + 15 = 51 \\text{ dolls} \\]\n\nSo, Peggy now has 51 dolls. \n\nFINAL: 51",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable record of this solved task.",
+        "role": "user"
+      }
+    ],
+    "target": "Given quantities:\n- Peggy initially has 6 dolls.\n- Her grandmother gives her 30 dolls.\n- Peggy receives half of 30 dolls between her birthday and Christmas.\n\nUnknown:\n- The total number of dolls Peggy has after receiving additional dolls.\n\nOperations:\n1. Add the dolls given by her grandmother to Peggy's initial dolls.\n2. Calculate half of the dolls given by her grandmother.\n3. Add the result from step 2 to the total from step 1.\n\nStep-by-step solution:\n1. Initial dolls + dolls from grandmother: \\(6 + 30 = 36\\)\n2. Half of 30 dolls: \\(\\frac{30}{2} = 15\\)\n3. Total dolls after receiving additional dolls: \\(36 + 15 = 51\\)\n\nConcrete check:\n- Initial dolls: 6\n- Dolls from grandmother: 30\n- Total after grandmother: 36\n- Additional dolls received: 15\n- Final total: 51\n\nThe final total matches the problem statement.\n\nFINAL: 51",
+    "target_sha256": "970b0b0e9e6b12659802e291ce228c882fa29a265d598675fbdcaae9b8f84b81",
+    "task_id": "gsm8k-train-4818"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "system"
+      },
+      {
+        "content": "Caroline has 40 pairs of socks. She loses 4 pairs of socks at the laundromat. Of the remaining pairs of socks, she donates two-thirds to the thrift store. Then she purchases 10 new pairs of socks, and she receives 3 new pairs of socks as a gift from her dad. How many pairs of socks does Caroline have in total?",
+        "role": "user"
+      }
+    ],
+    "gold": "25",
+    "kind": "rich",
+    "question": "Caroline has 40 pairs of socks. She loses 4 pairs of socks at the laundromat. Of the remaining pairs of socks, she donates two-thirds to the thrift store. Then she purchases 10 new pairs of socks, and she receives 3 new pairs of socks as a gift from her dad. How many pairs of socks does Caroline have in total?",
+    "student_prefix": [
+      {
+        "content": "Caroline has 40 pairs of socks. She loses 4 pairs of socks at the laundromat. Of the remaining pairs of socks, she donates two-thirds to the thrift store. Then she purchases 10 new pairs of socks, and she receives 3 new pairs of socks as a gift from her dad. How many pairs of socks does Caroline have in total?",
+        "role": "user"
+      }
+    ],
+    "target": "Starting with 40 pairs of socks, Caroline loses 4 pairs at the laundromat. This leaves her with:\n40 - 4 = 36 pairs of socks.\n\nNext, she donates two-thirds of the remaining 36 pairs to the thrift store. Two-thirds of 36 is:\n(2/3) * 36 = 24 pairs of socks.\n\nAfter donating, she has:\n36 - 24 = 12 pairs of socks left.\n\nThen, she purchases 10 new pairs and receives 3 more as a gift. Adding these to her remaining pairs:\n12 + 10 + 3 = 25 pairs of socks.\n\nFINAL: 25",
+    "target_sha256": "00da4c6124ffeb5349c40178249303f088bb9dad2dee81247ede08f49c05175b",
+    "task_id": "gsm8k-train-1450"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Caroline has 40 pairs of socks. She loses 4 pairs of socks at the laundromat. Of the remaining pairs of socks, she donates two-thirds to the thrift store. Then she purchases 10 new pairs of socks, and she receives 3 new pairs of socks as a gift from her dad. How many pairs of socks does Caroline have in total?",
+        "role": "user"
+      },
+      {
+        "content": "Starting with 40 pairs of socks, Caroline loses 4 pairs at the laundromat. This leaves her with:\n40 - 4 = 36 pairs of socks.\n\nNext, she donates two-thirds of the remaining 36 pairs to the thrift store. Two-thirds of 36 is:\n(2/3) * 36 = 24 pairs of socks.\n\nAfter donating, she has:\n36 - 24 = 12 pairs of socks left.\n\nThen, she purchases 10 new pairs and receives 3 more as a gift. Adding these to her remaining pairs:\n12 + 10 + 3 = 25 pairs of socks.\n\nFINAL: 25",
+        "role": "assistant"
+      },
+      {
+        "content": "The final value passed the exact-answer checker. Write your own reusable record: explain the specific operations, when they apply, and a concrete check using this problem. Retain its final answer. Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "user"
+      }
+    ],
+    "gold": "25",
+    "kind": "record",
+    "question": "Caroline has 40 pairs of socks. She loses 4 pairs of socks at the laundromat. Of the remaining pairs of socks, she donates two-thirds to the thrift store. Then she purchases 10 new pairs of socks, and she receives 3 new pairs of socks as a gift from her dad. How many pairs of socks does Caroline have in total?",
+    "student_prefix": [
+      {
+        "content": "Caroline has 40 pairs of socks. She loses 4 pairs of socks at the laundromat. Of the remaining pairs of socks, she donates two-thirds to the thrift store. Then she purchases 10 new pairs of socks, and she receives 3 new pairs of socks as a gift from her dad. How many pairs of socks does Caroline have in total?",
+        "role": "user"
+      },
+      {
+        "content": "Starting with 40 pairs of socks, Caroline loses 4 pairs at the laundromat. This leaves her with:\n40 - 4 = 36 pairs of socks.\n\nNext, she donates two-thirds of the remaining 36 pairs to the thrift store. Two-thirds of 36 is:\n(2/3) * 36 = 24 pairs of socks.\n\nAfter donating, she has:\n36 - 24 = 12 pairs of socks left.\n\nThen, she purchases 10 new pairs and receives 3 more as a gift. Adding these to her remaining pairs:\n12 + 10 + 3 = 25 pairs of socks.\n\nFINAL: 25",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable record of this solved task.",
+        "role": "user"
+      }
+    ],
+    "target": "Given quantities:\n- Initial pairs of socks: 40\n- Lost pairs: 4\n- Donated pairs: 2/3 of the remaining pairs\n- Purchased pairs: 10\n- Gifted pairs: 3\n\nUnknown: Total pairs of socks after all operations.\n\nOperations:\n1. Subtract lost pairs from initial pairs.\n2. Calculate and subtract donated pairs from the remaining pairs.\n3. Add purchased pairs to the remaining pairs.\n4. Add gifted pairs to the total.\n\nStep-by-step solution:\n1. Subtract lost pairs: 40 - 4 = 36 pairs.\n2. Calculate donated pairs: (2/3) * 36 = 24 pairs.\n3. Subtract donated pairs: 36 - 24 = 12 pairs.\n4. Add purchased pairs: 12 + 10 = 22 pairs.\n5. Add gifted pairs: 22 + 3 = 25 pairs.\n\nConcrete check:\n- Initial: 40 pairs\n- Lost: 4 pairs (40 - 4 = 36 pairs)\n- Donated: 24 pairs (36 - 24 = 12 pairs)\n- Purchased: 10 pairs (12 + 10 = 22 pairs)\n- Gifted: 3 pairs (22 + 3 = 25 pairs)\n\nThe final total of pairs of socks is 25.\n\nFINAL: 25",
+    "target_sha256": "4c4eb36355480de7b758f6eb82245c64fc4e84f9f8d1c3d22edbc4a22b6732e9",
+    "task_id": "gsm8k-train-1450"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "system"
+      },
+      {
+        "content": "Sabrina went to the library and found a historical series novel called The Rangers Apprentice. There are 14 books in the series, and each book has 200 pages. She read four books in a month and half the number of books remaining in the second month. What's the total number of pages Sabrina has to read to finish the whole series?",
+        "role": "user"
+      }
+    ],
+    "gold": "1000",
+    "kind": "rich",
+    "question": "Sabrina went to the library and found a historical series novel called The Rangers Apprentice. There are 14 books in the series, and each book has 200 pages. She read four books in a month and half the number of books remaining in the second month. What's the total number of pages Sabrina has to read to finish the whole series?",
+    "student_prefix": [
+      {
+        "content": "Sabrina went to the library and found a historical series novel called The Rangers Apprentice. There are 14 books in the series, and each book has 200 pages. She read four books in a month and half the number of books remaining in the second month. What's the total number of pages Sabrina has to read to finish the whole series?",
+        "role": "user"
+      }
+    ],
+    "target": "First, I identify the given quantities:\n- Total books in the series: 14\n- Pages per book: 200\n- Books read in the first month: 4\n- Books read in the second month: half of the remaining books\n\nCalculate the remaining books after the first month:\n14 - 4 = 10 books remaining\n\nCalculate the books read in the second month:\n10 / 2 = 5 books\n\nCalculate the total books read:\n4 (first month) + 5 (second month) = 9 books\n\nCalculate the total books remaining:\n14 - 9 = 5 books\n\nCalculate the total pages remaining:\n5 books * 200 pages/book = 1000 pages\n\nFINAL: 1000",
+    "target_sha256": "5ad1345e0ff562177524b366386d62f1b6fea0a33ed268a0c1bce4ed45238d2d",
+    "task_id": "gsm8k-train-276"
+  },
+  {
+    "full_messages": [
+      {
+        "content": "Sabrina went to the library and found a historical series novel called The Rangers Apprentice. There are 14 books in the series, and each book has 200 pages. She read four books in a month and half the number of books remaining in the second month. What's the total number of pages Sabrina has to read to finish the whole series?",
+        "role": "user"
+      },
+      {
+        "content": "First, I identify the given quantities:\n- Total books in the series: 14\n- Pages per book: 200\n- Books read in the first month: 4\n- Books read in the second month: half of the remaining books\n\nCalculate the remaining books after the first month:\n14 - 4 = 10 books remaining\n\nCalculate the books read in the second month:\n10 / 2 = 5 books\n\nCalculate the total books read:\n4 (first month) + 5 (second month) = 9 books\n\nCalculate the total books remaining:\n14 - 9 = 5 books\n\nCalculate the total pages remaining:\n5 books * 200 pages/book = 1000 pages\n\nFINAL: 1000",
+        "role": "assistant"
+      },
+      {
+        "content": "The final value passed the exact-answer checker. Write your own reusable record: explain the specific operations, when they apply, and a concrete check using this problem. Retain its final answer. Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+        "role": "user"
+      }
+    ],
+    "gold": "1000",
+    "kind": "record",
+    "question": "Sabrina went to the library and found a historical series novel called The Rangers Apprentice. There are 14 books in the series, and each book has 200 pages. She read four books in a month and half the number of books remaining in the second month. What's the total number of pages Sabrina has to read to finish the whole series?",
+    "student_prefix": [
+      {
+        "content": "Sabrina went to the library and found a historical series novel called The Rangers Apprentice. There are 14 books in the series, and each book has 200 pages. She read four books in a month and half the number of books remaining in the second month. What's the total number of pages Sabrina has to read to finish the whole series?",
+        "role": "user"
+      },
+      {
+        "content": "First, I identify the given quantities:\n- Total books in the series: 14\n- Pages per book: 200\n- Books read in the first month: 4\n- Books read in the second month: half of the remaining books\n\nCalculate the remaining books after the first month:\n14 - 4 = 10 books remaining\n\nCalculate the books read in the second month:\n10 / 2 = 5 books\n\nCalculate the total books read:\n4 (first month) + 5 (second month) = 9 books\n\nCalculate the total books remaining:\n14 - 9 = 5 books\n\nCalculate the total pages remaining:\n5 books * 200 pages/book = 1000 pages\n\nFINAL: 1000",
+        "role": "assistant"
+      },
+      {
+        "content": "Write your own reusable record of this solved task.",
+        "role": "user"
+      }
+    ],
+    "target": "Given quantities:\n- Total books in the series: 14\n- Pages per book: 200\n- Books read in the first month: 4\n- Books read in the second month: half of the remaining books\n\nUnknown to find:\n- Total number of pages Sabrina has to read to finish the series\n\nOperations:\n1. Calculate the remaining books after the first month.\n2. Calculate the books read in the second month.\n3. Calculate the total books read.\n4. Calculate the total books remaining.\n5. Calculate the total pages remaining.\n\nStep-by-step solution:\n1. Remaining books after the first month: 14 - 4 = 10 books\n2. Books read in the second month: 10 / 2 = 5 books\n3. Total books read: 4 (first month) + 5 (second month) = 9 books\n4. Total books remaining: 14 - 9 = 5 books\n5. Total pages remaining: 5 books * 200 pages/book = 1000 pages\n\nConcrete check:\n- Initial total books: 14\n- Books read: 9\n- Books remaining: 14 - 9 = 5\n- Pages per book: 200\n- Total pages remaining: 5 * 200 = 1000\n\nFINAL: 1000",
+    "target_sha256": "c589b35ced6f79772fc4cbec306812072f231d97c70bb9aa8ce24dbc9721f446",
+    "task_id": "gsm8k-train-276"
+  }
+]

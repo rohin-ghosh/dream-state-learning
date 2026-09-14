@@ -1,0 +1,420 @@
+{
+  "created_utc": "2026-09-14T22:55:21.174945+00:00",
+  "entries": [
+    {
+      "domain": "CODE",
+      "task": {
+        "id": 14,
+        "text": "Write a python function to find the volume of a triangular prism.",
+        "arguments": [
+          "l",
+          "b",
+          "h"
+        ],
+        "function": "find_Volume",
+        "family": "scalar arithmetic",
+        "tests": [
+          {
+            "arguments": [
+              10,
+              8,
+              6
+            ],
+            "expected": 240,
+            "source": "assert find_Volume(10,8,6) == 240"
+          },
+          {
+            "arguments": [
+              3,
+              2,
+              2
+            ],
+            "expected": 6,
+            "source": "assert find_Volume(3,2,2) == 6"
+          },
+          {
+            "arguments": [
+              1,
+              2,
+              1
+            ],
+            "expected": 1,
+            "source": "assert find_Volume(1,2,1) == 1"
+          }
+        ],
+        "reference_pass": true
+      },
+      "source_path": "research_notes/analysis/orch_code_bounded_20260914_attempt1/TASKS.json",
+      "source_sha256": "3a031178564eb01c72801a8962888d36a2215e6ddaf30c73c3bafb4b99549869",
+      "initial_messages": [
+        {
+          "role": "system",
+          "content": "Write 150–400 generated tokens in first person before your JSON action last line. Explain actual evidence, relevance to the goal, and a checkable expectation. After failure revise using the feedback; after success write a specific reusable lesson. Do not invent execution results or pad prose."
+        },
+        {
+          "role": "user",
+          "content": "Write a python function to find the volume of a triangular prism.\nArguments: l, b, h\nReturn an expression over the named arguments, not a function definition. Supported: numeric/bool literals, lists/tuples, arithmetic + - * / // %, comparisons, and/or/not, conditional expressions, indexing/slicing, one-generator list comprehensions, and calls sum,min,max,len,abs,round,sorted,reversed,list,tuple,all,any,int,float,range. No attributes, imports, strings, sets, dictionaries, lambdas, recursion or arbitrary execution. All containers/ranges <=256 elements; values abs<=1e12; <=10000 AST steps. Final line must be JSON {\"expression\":\"...\"}, or when requested {\"record\":\"...\"}.\nPublic reference tests: [\"assert find_Volume(10,8,6) == 240\", \"assert find_Volume(3,2,2) == 6\", \"assert find_Volume(1,2,1) == 1\"]\nPropose a solution; use any grounded feedback to correct my prior attempt."
+        }
+      ],
+      "original_receipt_path": "research_notes/analysis/orch_code_bounded_20260914_attempt1/terminal_verified/shard0/CALL_003.json",
+      "original_receipt_sha256": "416771c1db9f03c3bcb9eccf379e0baca5f62b42c1ae9ae0b76f43ab33d4aaaa",
+      "original_target_sha256": "2b0f084e92cd35bd42b7ebe829aeffc30c9c1388713d0da4609e453ff93c354a",
+      "success_record_template_matches_original_receipt": true
+    },
+    {
+      "domain": "CODE",
+      "task": {
+        "id": 17,
+        "text": "Write a function to find the perimeter of a square.",
+        "arguments": [
+          "a"
+        ],
+        "function": "square_perimeter",
+        "family": "scalar arithmetic",
+        "tests": [
+          {
+            "arguments": [
+              10
+            ],
+            "expected": 40,
+            "source": "assert square_perimeter(10)==40"
+          },
+          {
+            "arguments": [
+              5
+            ],
+            "expected": 20,
+            "source": "assert square_perimeter(5)==20"
+          },
+          {
+            "arguments": [
+              4
+            ],
+            "expected": 16,
+            "source": "assert square_perimeter(4)==16"
+          }
+        ],
+        "reference_pass": true
+      },
+      "source_path": "research_notes/analysis/orch_code_bounded_20260914_attempt1/TASKS.json",
+      "source_sha256": "3a031178564eb01c72801a8962888d36a2215e6ddaf30c73c3bafb4b99549869",
+      "initial_messages": [
+        {
+          "role": "system",
+          "content": "Write 150–400 generated tokens in first person before your JSON action last line. Explain actual evidence, relevance to the goal, and a checkable expectation. After failure revise using the feedback; after success write a specific reusable lesson. Do not invent execution results or pad prose."
+        },
+        {
+          "role": "user",
+          "content": "Write a function to find the perimeter of a square.\nArguments: a\nReturn an expression over the named arguments, not a function definition. Supported: numeric/bool literals, lists/tuples, arithmetic + - * / // %, comparisons, and/or/not, conditional expressions, indexing/slicing, one-generator list comprehensions, and calls sum,min,max,len,abs,round,sorted,reversed,list,tuple,all,any,int,float,range. No attributes, imports, strings, sets, dictionaries, lambdas, recursion or arbitrary execution. All containers/ranges <=256 elements; values abs<=1e12; <=10000 AST steps. Final line must be JSON {\"expression\":\"...\"}, or when requested {\"record\":\"...\"}.\nPublic reference tests: [\"assert square_perimeter(10)==40\", \"assert square_perimeter(5)==20\", \"assert square_perimeter(4)==16\"]\nPropose a solution; use any grounded feedback to correct my prior attempt."
+        }
+      ],
+      "original_receipt_path": "research_notes/analysis/orch_code_bounded_20260914_attempt1/terminal_verified/shard1/CALL_001.json",
+      "original_receipt_sha256": "768d9b994025c965dbeaf900a976a73b657105358aa9443ffe9c72ab2abcf269",
+      "original_target_sha256": "e9c9e1828a31deb05732e1d5aed1d4f1038516251451556d9020de8f4de978fc",
+      "success_record_template_matches_original_receipt": true
+    },
+    {
+      "domain": "CODE",
+      "task": {
+        "id": 49,
+        "text": "Write a function to extract every first or specified element from a given two-dimensional list.",
+        "arguments": [
+          "nums",
+          "N"
+        ],
+        "function": "specified_element",
+        "family": "sequence/list transformations",
+        "tests": [
+          {
+            "arguments": [
+              [
+                [
+                  1,
+                  2,
+                  3,
+                  2
+                ],
+                [
+                  4,
+                  5,
+                  6,
+                  2
+                ],
+                [
+                  7,
+                  1,
+                  9,
+                  5
+                ]
+              ],
+              0
+            ],
+            "expected": [
+              1,
+              4,
+              7
+            ],
+            "source": "assert specified_element([[1, 2, 3, 2], [4, 5, 6, 2], [7, 1, 9, 5]],0)==[1, 4, 7]"
+          },
+          {
+            "arguments": [
+              [
+                [
+                  1,
+                  2,
+                  3,
+                  2
+                ],
+                [
+                  4,
+                  5,
+                  6,
+                  2
+                ],
+                [
+                  7,
+                  1,
+                  9,
+                  5
+                ]
+              ],
+              2
+            ],
+            "expected": [
+              3,
+              6,
+              9
+            ],
+            "source": "assert specified_element([[1, 2, 3, 2], [4, 5, 6, 2], [7, 1, 9, 5]],2)==[3, 6, 9]"
+          },
+          {
+            "arguments": [
+              [
+                [
+                  1,
+                  2,
+                  3,
+                  2
+                ],
+                [
+                  4,
+                  5,
+                  6,
+                  2
+                ],
+                [
+                  7,
+                  1,
+                  9,
+                  5
+                ]
+              ],
+              1
+            ],
+            "expected": [
+              2,
+              5,
+              1
+            ],
+            "source": "assert specified_element([[1, 2, 3, 2], [4, 5, 6, 2], [7, 1, 9, 5]],1)==[2,5,1]"
+          }
+        ],
+        "reference_pass": true
+      },
+      "source_path": "research_notes/analysis/orch_code_bounded_20260914_attempt1/TASKS.json",
+      "source_sha256": "3a031178564eb01c72801a8962888d36a2215e6ddaf30c73c3bafb4b99549869",
+      "initial_messages": [
+        {
+          "role": "system",
+          "content": "Write 150–400 generated tokens in first person before your JSON action last line. Explain actual evidence, relevance to the goal, and a checkable expectation. After failure revise using the feedback; after success write a specific reusable lesson. Do not invent execution results or pad prose."
+        },
+        {
+          "role": "user",
+          "content": "Write a function to extract every first or specified element from a given two-dimensional list.\nArguments: nums, N\nReturn an expression over the named arguments, not a function definition. Supported: numeric/bool literals, lists/tuples, arithmetic + - * / // %, comparisons, and/or/not, conditional expressions, indexing/slicing, one-generator list comprehensions, and calls sum,min,max,len,abs,round,sorted,reversed,list,tuple,all,any,int,float,range. No attributes, imports, strings, sets, dictionaries, lambdas, recursion or arbitrary execution. All containers/ranges <=256 elements; values abs<=1e12; <=10000 AST steps. Final line must be JSON {\"expression\":\"...\"}, or when requested {\"record\":\"...\"}.\nPublic reference tests: [\"assert specified_element([[1, 2, 3, 2], [4, 5, 6, 2], [7, 1, 9, 5]],0)==[1, 4, 7]\", \"assert specified_element([[1, 2, 3, 2], [4, 5, 6, 2], [7, 1, 9, 5]],2)==[3, 6, 9]\", \"assert specified_element([[1, 2, 3, 2], [4, 5, 6, 2], [7, 1, 9, 5]],1)==[2,5,1]\"]\nPropose a solution; use any grounded feedback to correct my prior attempt."
+        }
+      ],
+      "original_receipt_path": "research_notes/analysis/orch_code_bounded_20260914_attempt1/terminal_verified/shard0/CALL_007.json",
+      "original_receipt_sha256": "451c7100440895e57e0624bd2b1007c42beb52535062f37ce37fc54f741f33db",
+      "original_target_sha256": "702420ecf70f6b4cdb42bfd8323b8842b0a901bd4475286ad57563ec6a84b01f",
+      "success_record_template_matches_original_receipt": true
+    },
+    {
+      "domain": "CODE",
+      "task": {
+        "id": 62,
+        "text": "Write a python function to find smallest number in a list.",
+        "arguments": [
+          "xs"
+        ],
+        "function": "smallest_num",
+        "family": "sequence/list transformations",
+        "tests": [
+          {
+            "arguments": [
+              [
+                10,
+                20,
+                1,
+                45,
+                99
+              ]
+            ],
+            "expected": 1,
+            "source": "assert smallest_num([10, 20, 1, 45, 99]) == 1"
+          },
+          {
+            "arguments": [
+              [
+                1,
+                2,
+                3
+              ]
+            ],
+            "expected": 1,
+            "source": "assert smallest_num([1, 2, 3]) == 1"
+          },
+          {
+            "arguments": [
+              [
+                45,
+                46,
+                50,
+                60
+              ]
+            ],
+            "expected": 45,
+            "source": "assert smallest_num([45, 46, 50, 60]) == 45"
+          }
+        ],
+        "reference_pass": true
+      },
+      "source_path": "research_notes/analysis/orch_code_bounded_20260914_attempt1/TASKS.json",
+      "source_sha256": "3a031178564eb01c72801a8962888d36a2215e6ddaf30c73c3bafb4b99549869",
+      "initial_messages": [
+        {
+          "role": "system",
+          "content": "Write 150–400 generated tokens in first person before your JSON action last line. Explain actual evidence, relevance to the goal, and a checkable expectation. After failure revise using the feedback; after success write a specific reusable lesson. Do not invent execution results or pad prose."
+        },
+        {
+          "role": "user",
+          "content": "Write a python function to find smallest number in a list.\nArguments: xs\nReturn an expression over the named arguments, not a function definition. Supported: numeric/bool literals, lists/tuples, arithmetic + - * / // %, comparisons, and/or/not, conditional expressions, indexing/slicing, one-generator list comprehensions, and calls sum,min,max,len,abs,round,sorted,reversed,list,tuple,all,any,int,float,range. No attributes, imports, strings, sets, dictionaries, lambdas, recursion or arbitrary execution. All containers/ranges <=256 elements; values abs<=1e12; <=10000 AST steps. Final line must be JSON {\"expression\":\"...\"}, or when requested {\"record\":\"...\"}.\nPublic reference tests: [\"assert smallest_num([10, 20, 1, 45, 99]) == 1\", \"assert smallest_num([1, 2, 3]) == 1\", \"assert smallest_num([45, 46, 50, 60]) == 45\"]\nPropose a solution; use any grounded feedback to correct my prior attempt."
+        }
+      ],
+      "original_receipt_path": "research_notes/analysis/orch_code_bounded_20260914_attempt1/terminal_verified/shard1/CALL_005.json",
+      "original_receipt_sha256": "197e65d778da893c2d6a2ef36fe9f16e91f5ffc1b67cb5722afd777c7bfb79bb",
+      "original_target_sha256": "381c792f4f69aa3b9585db724e3594eed014d29773e4bd85ef41c80fc78c8fb5",
+      "success_record_template_matches_original_receipt": true
+    },
+    {
+      "domain": "MATH",
+      "task": {
+        "id": "gsm8k-train-1649",
+        "question": "In a field of 500 clovers, 20% have four leaves and one quarter of these are purple clovers. Assuming these proportions are exactly correct, how many clovers in the field are both purple and four-leaved?",
+        "question_sha256": "98dcf58a18be1a7dbf401bbe862c5016f5dfd218c2a77e38f8100d37076a31ac",
+        "gold": "25",
+        "family": "percentages"
+      },
+      "source_path": "research_notes/analysis/orch_math_rich_20260914_attempt1/TASKS_VIEW.json",
+      "source_sha256": "a40d89c19d899260a0c7d5896f0a5d784bf768c9a4d9a9f3d30541019b20ac2b",
+      "initial_messages": [
+        {
+          "role": "system",
+          "content": "Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer."
+        },
+        {
+          "role": "user",
+          "content": "In a field of 500 clovers, 20% have four leaves and one quarter of these are purple clovers. Assuming these proportions are exactly correct, how many clovers in the field are both purple and four-leaved?"
+        }
+      ],
+      "original_receipt_path": "research_notes/analysis/orch_math_rich_20260914_attempt1/RAW_ROWS.json",
+      "original_receipt_sha256": "244b7bed7bccb174d81443544335c69c8456859bc2706c261221c04eacd36a12",
+      "original_target_sha256": "7ef78fe89f669acf82feec9769487992f4aab0750638201e837bcdf902d89aac",
+      "success_record_template_matches_original_receipt": true
+    },
+    {
+      "domain": "MATH",
+      "task": {
+        "id": "gsm8k-train-5724",
+        "question": "Jason has to drive home which is 120 miles away. If he drives at 60 miles per hour for 30 minutes, what speed does he have to average for the remainder of the drive to get there in exactly 1 hour 30 minutes?",
+        "question_sha256": "a7a52b205cf909bd2886287dc4dd8a1c70aeed13379f2cd3fb12bf4aeadb2a60",
+        "gold": "90",
+        "family": "work_rates"
+      },
+      "source_path": "research_notes/analysis/orch_math_rich_20260914_attempt1/TASKS_VIEW.json",
+      "source_sha256": "a40d89c19d899260a0c7d5896f0a5d784bf768c9a4d9a9f3d30541019b20ac2b",
+      "initial_messages": [
+        {
+          "role": "system",
+          "content": "Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer."
+        },
+        {
+          "role": "user",
+          "content": "Jason has to drive home which is 120 miles away. If he drives at 60 miles per hour for 30 minutes, what speed does he have to average for the remainder of the drive to get there in exactly 1 hour 30 minutes?"
+        }
+      ],
+      "original_receipt_path": "research_notes/analysis/orch_math_rich_20260914_attempt1/RAW_ROWS.json",
+      "original_receipt_sha256": "244b7bed7bccb174d81443544335c69c8456859bc2706c261221c04eacd36a12",
+      "original_target_sha256": "c2eeb7d0451689f4e0de95c28bf709525a353faea49cf826ef7f50c03a5b4b19",
+      "success_record_template_matches_original_receipt": true
+    },
+    {
+      "domain": "MATH",
+      "task": {
+        "id": "gsm8k-train-3590",
+        "question": "Hallie borrows a book from the library. She reads the entire book in four days. She read 63 pages the first day. On the second day, she read twice the number of pages that she'd read on day one. On the third day, she read 10 mores pages than she read on day two. If the book is 354 pages long, how many pages did she read on the fourth day?",
+        "question_sha256": "ea1b9a0d1493b555a2960bf4179b4805f25497accb9cc82108973e4bf944f955",
+        "gold": "29",
+        "family": "fractional_quantities"
+      },
+      "source_path": "research_notes/analysis/orch_math_rich_20260914_attempt1/TASKS_VIEW.json",
+      "source_sha256": "a40d89c19d899260a0c7d5896f0a5d784bf768c9a4d9a9f3d30541019b20ac2b",
+      "initial_messages": [
+        {
+          "role": "system",
+          "content": "Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer."
+        },
+        {
+          "role": "user",
+          "content": "Hallie borrows a book from the library. She reads the entire book in four days. She read 63 pages the first day. On the second day, she read twice the number of pages that she'd read on day one. On the third day, she read 10 mores pages than she read on day two. If the book is 354 pages long, how many pages did she read on the fourth day?"
+        }
+      ],
+      "original_receipt_path": "research_notes/analysis/orch_math_rich_20260914_attempt1/RAW_ROWS.json",
+      "original_receipt_sha256": "244b7bed7bccb174d81443544335c69c8456859bc2706c261221c04eacd36a12",
+      "original_target_sha256": "4913e8366d98dc2ca226884134de5e2660b1954001149ce0a79ebc22b1d436c2",
+      "success_record_template_matches_original_receipt": true
+    },
+    {
+      "domain": "MATH",
+      "task": {
+        "id": "gsm8k-train-2554",
+        "question": "Chad has 100 apples and each apple has different sizes and different price ranges. Each small apple cost $1.5, medium apple cost $2, and big apples cost $3. If Donny bought 6 small and medium apples and also 8 big apples, how much will Donny have to pay for all of it?",
+        "question_sha256": "66cc7bbdda4b5f338e46626f6731034716e267d40dc5638d1e5e00c68c970164",
+        "gold": "45",
+        "family": "group_accounting"
+      },
+      "source_path": "research_notes/analysis/orch_math_rich_20260914_attempt1/TASKS_VIEW.json",
+      "source_sha256": "a40d89c19d899260a0c7d5896f0a5d784bf768c9a4d9a9f3d30541019b20ac2b",
+      "initial_messages": [
+        {
+          "role": "system",
+          "content": "Solve in your own first-person voice, using 150–400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer."
+        },
+        {
+          "role": "user",
+          "content": "Chad has 100 apples and each apple has different sizes and different price ranges. Each small apple cost $1.5, medium apple cost $2, and big apples cost $3. If Donny bought 6 small and medium apples and also 8 big apples, how much will Donny have to pay for all of it?"
+        }
+      ],
+      "original_receipt_path": "research_notes/analysis/orch_math_rich_20260914_attempt1/RAW_ROWS.json",
+      "original_receipt_sha256": "244b7bed7bccb174d81443544335c69c8456859bc2706c261221c04eacd36a12",
+      "original_target_sha256": "6aa138dd36cbbf13d2df38f0054928e82b0957e36264264cf9d22ca7302e38f4",
+      "success_record_template_matches_original_receipt": "NO_ORIGINAL_SUCCESS_RECORD; shared original domain prompt function"
+    }
+  ],
+  "denominator": 8,
+  "maximum_calls": 32,
+  "generation_tokens": 512,
+  "context_tokens": 2048,
+  "selection": "original_order_first_two_per_CODE_family_first_one_per_MATH_family",
+  "diagnostic_reuse": true,
+  "no_new_gold_targets": true
+}

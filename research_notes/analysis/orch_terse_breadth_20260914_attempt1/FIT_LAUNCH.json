@@ -1,0 +1,65 @@
+{
+  "utc": "2026-09-14T23:04:15.746934+00:00",
+  "receipts": [
+    {
+      "lane": 0,
+      "wrapper": "gpu/a100_ssh.sh",
+      "command": "sleep 15; test $(cat /tmp/orch_terse_breadth_20260914_attempt1/PUBLISHED_FIT_COMMIT.txt) = a5d1b5ce5808604855d860ea2f34bc4d84f618b0 || exit 2; bash /tmp/orch_terse_breadth_20260914_attempt1/source/gpu/orch_terse_breadth_guard.sh /tmp/orch_terse_breadth_20260914_attempt1 0 train e67101fefff3178b7fec282fee1dd95b95a2ba6cbeadceacc34f1a88e9431917 7b398c38339f0c4579a6321666fa0d7d0fb0b41f 5962776cf98f6e7bf509b5887d32f77e6edc267a3b7df2388060ac70448dcb53 /localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28; train_code=$?; printf '%s\\n' \"$train_code\" > /tmp/orch_terse_breadth_20260914_attempt1/chain0_train_exit.txt; if test \"$train_code\" -eq 0; then sleep 15; bash /tmp/orch_terse_breadth_20260914_attempt1/source/gpu/orch_terse_breadth_guard.sh /tmp/orch_terse_breadth_20260914_attempt1 0 after e67101fefff3178b7fec282fee1dd95b95a2ba6cbeadceacc34f1a88e9431917 7b398c38339f0c4579a6321666fa0d7d0fb0b41f 5962776cf98f6e7bf509b5887d32f77e6edc267a3b7df2388060ac70448dcb53 /localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28; printf '%s\\n' \"$?\" > /tmp/orch_terse_breadth_20260914_attempt1/chain0_after_exit.txt; fi; sleep 15; bash /tmp/orch_terse_breadth_20260914_attempt1/source/gpu/orch_terse_breadth_guard.sh /tmp/orch_terse_breadth_20260914_attempt1 0 baseline e67101fefff3178b7fec282fee1dd95b95a2ba6cbeadceacc34f1a88e9431917 7b398c38339f0c4579a6321666fa0d7d0fb0b41f 5962776cf98f6e7bf509b5887d32f77e6edc267a3b7df2388060ac70448dcb53 /localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28; printf '%s\\n' \"$?\" > /tmp/orch_terse_breadth_20260914_attempt1/chain0_baseline_exit.txt; date -u +%FT%TZ > /tmp/orch_terse_breadth_20260914_attempt1/chain0.done",
+      "source_sha256": "e67101fefff3178b7fec282fee1dd95b95a2ba6cbeadceacc34f1a88e9431917",
+      "manifest_sha256": "5962776cf98f6e7bf509b5887d32f77e6edc267a3b7df2388060ac70448dcb53",
+      "batch_sha256": "5aac9c13737516146b7a4ed57961beb349c8198778040b36aeaa7eb3d3ea960e",
+      "pre_fit_publication": "a5d1b5ce5808604855d860ea2f34bc4d84f618b0",
+      "launch_stdout": "2026-09-14T23:04:14Z\n164647\n164648\n164649\n164650\n"
+    },
+    {
+      "lane": 1,
+      "wrapper": "gpu/a100_ssh.sh",
+      "command": "sleep 15; test $(cat /tmp/orch_terse_breadth_20260914_attempt1/PUBLISHED_FIT_COMMIT.txt) = a5d1b5ce5808604855d860ea2f34bc4d84f618b0 || exit 2; bash /tmp/orch_terse_breadth_20260914_attempt1/source/gpu/orch_terse_breadth_guard.sh /tmp/orch_terse_breadth_20260914_attempt1 1 train e67101fefff3178b7fec282fee1dd95b95a2ba6cbeadceacc34f1a88e9431917 7b398c38339f0c4579a6321666fa0d7d0fb0b41f 5962776cf98f6e7bf509b5887d32f77e6edc267a3b7df2388060ac70448dcb53 /localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28; train_code=$?; printf '%s\\n' \"$train_code\" > /tmp/orch_terse_breadth_20260914_attempt1/chain1_train_exit.txt; if test \"$train_code\" -eq 0; then sleep 15; bash /tmp/orch_terse_breadth_20260914_attempt1/source/gpu/orch_terse_breadth_guard.sh /tmp/orch_terse_breadth_20260914_attempt1 1 after e67101fefff3178b7fec282fee1dd95b95a2ba6cbeadceacc34f1a88e9431917 7b398c38339f0c4579a6321666fa0d7d0fb0b41f 5962776cf98f6e7bf509b5887d32f77e6edc267a3b7df2388060ac70448dcb53 /localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28; printf '%s\\n' \"$?\" > /tmp/orch_terse_breadth_20260914_attempt1/chain1_after_exit.txt; fi; date -u +%FT%TZ > /tmp/orch_terse_breadth_20260914_attempt1/chain1.done",
+      "source_sha256": "e67101fefff3178b7fec282fee1dd95b95a2ba6cbeadceacc34f1a88e9431917",
+      "manifest_sha256": "5962776cf98f6e7bf509b5887d32f77e6edc267a3b7df2388060ac70448dcb53",
+      "batch_sha256": "5aac9c13737516146b7a4ed57961beb349c8198778040b36aeaa7eb3d3ea960e",
+      "pre_fit_publication": "a5d1b5ce5808604855d860ea2f34bc4d84f618b0",
+      "launch_stdout": "2026-09-14T23:04:14Z\n164647\n164648\n164649\n164650\n"
+    },
+    {
+      "lane": 2,
+      "wrapper": "gpu/a100_ssh.sh",
+      "command": "sleep 15; test $(cat /tmp/orch_terse_breadth_20260914_attempt1/PUBLISHED_FIT_COMMIT.txt) = a5d1b5ce5808604855d860ea2f34bc4d84f618b0 || exit 2; bash /tmp/orch_terse_breadth_20260914_attempt1/source/gpu/orch_terse_breadth_guard.sh /tmp/orch_terse_breadth_20260914_attempt1 2 train e67101fefff3178b7fec282fee1dd95b95a2ba6cbeadceacc34f1a88e9431917 7b398c38339f0c4579a6321666fa0d7d0fb0b41f 5962776cf98f6e7bf509b5887d32f77e6edc267a3b7df2388060ac70448dcb53 /localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28; train_code=$?; printf '%s\\n' \"$train_code\" > /tmp/orch_terse_breadth_20260914_attempt1/chain2_train_exit.txt; if test \"$train_code\" -eq 0; then sleep 15; bash /tmp/orch_terse_breadth_20260914_attempt1/source/gpu/orch_terse_breadth_guard.sh /tmp/orch_terse_breadth_20260914_attempt1 2 after e67101fefff3178b7fec282fee1dd95b95a2ba6cbeadceacc34f1a88e9431917 7b398c38339f0c4579a6321666fa0d7d0fb0b41f 5962776cf98f6e7bf509b5887d32f77e6edc267a3b7df2388060ac70448dcb53 /localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28; printf '%s\\n' \"$?\" > /tmp/orch_terse_breadth_20260914_attempt1/chain2_after_exit.txt; fi; date -u +%FT%TZ > /tmp/orch_terse_breadth_20260914_attempt1/chain2.done",
+      "source_sha256": "e67101fefff3178b7fec282fee1dd95b95a2ba6cbeadceacc34f1a88e9431917",
+      "manifest_sha256": "5962776cf98f6e7bf509b5887d32f77e6edc267a3b7df2388060ac70448dcb53",
+      "batch_sha256": "5aac9c13737516146b7a4ed57961beb349c8198778040b36aeaa7eb3d3ea960e",
+      "pre_fit_publication": "a5d1b5ce5808604855d860ea2f34bc4d84f618b0",
+      "launch_stdout": "2026-09-14T23:04:14Z\n164647\n164648\n164649\n164650\n"
+    },
+    {
+      "lane": 3,
+      "wrapper": "gpu/a100_ssh.sh",
+      "command": "sleep 15; test $(cat /tmp/orch_terse_breadth_20260914_attempt1/PUBLISHED_FIT_COMMIT.txt) = a5d1b5ce5808604855d860ea2f34bc4d84f618b0 || exit 2; bash /tmp/orch_terse_breadth_20260914_attempt1/source/gpu/orch_terse_breadth_guard.sh /tmp/orch_terse_breadth_20260914_attempt1 3 train e67101fefff3178b7fec282fee1dd95b95a2ba6cbeadceacc34f1a88e9431917 7b398c38339f0c4579a6321666fa0d7d0fb0b41f 5962776cf98f6e7bf509b5887d32f77e6edc267a3b7df2388060ac70448dcb53 /localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28; train_code=$?; printf '%s\\n' \"$train_code\" > /tmp/orch_terse_breadth_20260914_attempt1/chain3_train_exit.txt; if test \"$train_code\" -eq 0; then sleep 15; bash /tmp/orch_terse_breadth_20260914_attempt1/source/gpu/orch_terse_breadth_guard.sh /tmp/orch_terse_breadth_20260914_attempt1 3 after e67101fefff3178b7fec282fee1dd95b95a2ba6cbeadceacc34f1a88e9431917 7b398c38339f0c4579a6321666fa0d7d0fb0b41f 5962776cf98f6e7bf509b5887d32f77e6edc267a3b7df2388060ac70448dcb53 /localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28; printf '%s\\n' \"$?\" > /tmp/orch_terse_breadth_20260914_attempt1/chain3_after_exit.txt; fi; date -u +%FT%TZ > /tmp/orch_terse_breadth_20260914_attempt1/chain3.done",
+      "source_sha256": "e67101fefff3178b7fec282fee1dd95b95a2ba6cbeadceacc34f1a88e9431917",
+      "manifest_sha256": "5962776cf98f6e7bf509b5887d32f77e6edc267a3b7df2388060ac70448dcb53",
+      "batch_sha256": "5aac9c13737516146b7a4ed57961beb349c8198778040b36aeaa7eb3d3ea960e",
+      "pre_fit_publication": "a5d1b5ce5808604855d860ea2f34bc4d84f618b0",
+      "launch_stdout": "2026-09-14T23:04:14Z\n164647\n164648\n164649\n164650\n"
+    },
+    {
+      "lane": 4,
+      "wrapper": "gpu/ovx2_ssh.sh",
+      "command": "sleep 15; test $(cat /tmp/orch_terse_breadth_20260914_attempt1/PUBLISHED_FIT_COMMIT.txt) = a5d1b5ce5808604855d860ea2f34bc4d84f618b0 || exit 2; bash /tmp/orch_terse_breadth_20260914_attempt1/source/gpu/orch_terse_breadth_guard.sh /tmp/orch_terse_breadth_20260914_attempt1 4 train e67101fefff3178b7fec282fee1dd95b95a2ba6cbeadceacc34f1a88e9431917 7b398c38339f0c4579a6321666fa0d7d0fb0b41f 5962776cf98f6e7bf509b5887d32f77e6edc267a3b7df2388060ac70448dcb53 /localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28; train_code=$?; printf '%s\\n' \"$train_code\" > /tmp/orch_terse_breadth_20260914_attempt1/chain4_train_exit.txt; if test \"$train_code\" -eq 0; then sleep 15; bash /tmp/orch_terse_breadth_20260914_attempt1/source/gpu/orch_terse_breadth_guard.sh /tmp/orch_terse_breadth_20260914_attempt1 4 after e67101fefff3178b7fec282fee1dd95b95a2ba6cbeadceacc34f1a88e9431917 7b398c38339f0c4579a6321666fa0d7d0fb0b41f 5962776cf98f6e7bf509b5887d32f77e6edc267a3b7df2388060ac70448dcb53 /localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28; printf '%s\\n' \"$?\" > /tmp/orch_terse_breadth_20260914_attempt1/chain4_after_exit.txt; fi; date -u +%FT%TZ > /tmp/orch_terse_breadth_20260914_attempt1/chain4.done",
+      "source_sha256": "e67101fefff3178b7fec282fee1dd95b95a2ba6cbeadceacc34f1a88e9431917",
+      "manifest_sha256": "5962776cf98f6e7bf509b5887d32f77e6edc267a3b7df2388060ac70448dcb53",
+      "batch_sha256": "5aac9c13737516146b7a4ed57961beb349c8198778040b36aeaa7eb3d3ea960e",
+      "pre_fit_publication": "a5d1b5ce5808604855d860ea2f34bc4d84f618b0",
+      "launch_stdout": "2026-09-14T23:04:15Z\n103899\n103900\n"
+    },
+    {
+      "lane": 5,
+      "wrapper": "gpu/ovx2_ssh.sh",
+      "command": "sleep 15; test $(cat /tmp/orch_terse_breadth_20260914_attempt1/PUBLISHED_FIT_COMMIT.txt) = a5d1b5ce5808604855d860ea2f34bc4d84f618b0 || exit 2; bash /tmp/orch_terse_breadth_20260914_attempt1/source/gpu/orch_terse_breadth_guard.sh /tmp/orch_terse_breadth_20260914_attempt1 5 train e67101fefff3178b7fec282fee1dd95b95a2ba6cbeadceacc34f1a88e9431917 7b398c38339f0c4579a6321666fa0d7d0fb0b41f 5962776cf98f6e7bf509b5887d32f77e6edc267a3b7df2388060ac70448dcb53 /localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28; train_code=$?; printf '%s\\n' \"$train_code\" > /tmp/orch_terse_breadth_20260914_attempt1/chain5_train_exit.txt; if test \"$train_code\" -eq 0; then sleep 15; bash /tmp/orch_terse_breadth_20260914_attempt1/source/gpu/orch_terse_breadth_guard.sh /tmp/orch_terse_breadth_20260914_attempt1 5 after e67101fefff3178b7fec282fee1dd95b95a2ba6cbeadceacc34f1a88e9431917 7b398c38339f0c4579a6321666fa0d7d0fb0b41f 5962776cf98f6e7bf509b5887d32f77e6edc267a3b7df2388060ac70448dcb53 /localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28; printf '%s\\n' \"$?\" > /tmp/orch_terse_breadth_20260914_attempt1/chain5_after_exit.txt; fi; date -u +%FT%TZ > /tmp/orch_terse_breadth_20260914_attempt1/chain5.done",
+      "source_sha256": "e67101fefff3178b7fec282fee1dd95b95a2ba6cbeadceacc34f1a88e9431917",
+      "manifest_sha256": "5962776cf98f6e7bf509b5887d32f77e6edc267a3b7df2388060ac70448dcb53",
+      "batch_sha256": "5aac9c13737516146b7a4ed57961beb349c8198778040b36aeaa7eb3d3ea960e",
+      "pre_fit_publication": "a5d1b5ce5808604855d860ea2f34bc4d84f618b0",
+      "launch_stdout": "2026-09-14T23:04:15Z\n103899\n103900\n"
+    }
+  ]
+}

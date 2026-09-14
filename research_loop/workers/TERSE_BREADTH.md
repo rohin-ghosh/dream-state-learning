@@ -54,3 +54,34 @@ Prospective interpretation caveat: dose4 seeds run on A100, dose16seed7801
 on A40. Despite matched code/runtime/initial state, dose contrast also crosses
 hardware/numerical execution; a16-only gain is not isolated proof of dose.
 Do not hide this assignment-imposed limitation or silently move devices.
+
+2026-09-14T23:01:55Z — source collection COMPLETE, common fit batchREADY.
+4150native calls;2868distinct qualified targets/239pairs;120of128TRAINsources
+eligible,8failed sources+1failed teaching pair retained;2partial HELDsources
+kept in all32held. Native CALL-to-projection replayPASS; actual3090-row
+tokenization/masking/full-reference dose checksPASS. Batch5aac9c13737516146b7a4ed57961beb349c8198778040b36aeaa7eb3d3ea960e.
+Frozen updates5760×fourA100cells and23040×twoA40cells; projected3.06h/12.24h.
+Publishing own pre-fit receipt, then all six fits together. Fresh-process
+readouts+frozen baseline are own guarded follow-ons, never Main-native work.
+No held readout/fit outcome yet; no terminal SEQ request.
+
+2026-09-14T23:08:56Z — OPERATIONAL CORRECTION: six fits were launched as
+one admitted batch, but only node3native fits started. A100four guard scans
+failed closed on unreadable transientsshd164832; no train0–3 native directory
+or fitPID exists. Node3FULL104214update115,OFF104207update116 (dose16seed7801).
+A1004PID164953 is frozen37ec BASELINE,393calls, not a FULL fit. Original
+chain deliberately permits this independent baseline despite a fit admission
+failure; it is never substituted for a missing control. No baseline scores
+are used for recovery/admission. Preserve all failed guard receipts and this
+operational stagger; original data/batch/seeds/updates remain byte-identical.
+
+Non-material transport repair: publish `orch_terse_breadth_retry.py` plus
+twoPASS regressions; repeat ONLY failed physical-admission scans when no native
+output directory exists. Archive each failed guardian directory; no native
+failure, training, source task, or held readout may be regenerated. A100retry
+uses newattempt2 root with identical immutable scientific source/archive and
+5aac9c13batch. A1005–7 can start immediately; A1004 waits for its own already
+running baseline to finish, preserving that unique baseline instead of killing
+or regenerating it. All six cells remain one common prospectively admitted
+batch; scheduling delay is an implementation failure, not seed/data selection.
+No unknown-process kills, scope expansion, node1 use, or Main execution.

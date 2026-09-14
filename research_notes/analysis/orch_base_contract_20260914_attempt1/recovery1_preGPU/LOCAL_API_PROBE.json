@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "device": "cpu",
+  "language_model_calls": 0,
+  "raw_restoration_enables_grad": true,
+  "repair_restores_frozen_flags": true,
+  "parameter_bytes_unchanged": true,
+  "fixture_state_sha256": "429eefd06ce84e598795ffb84273d9d3bf65ced46244dabf558985532f07e5f0",
+  "peft_version": "0.20.0",
+  "enable_adapters_source": "    def enable_adapters(self, enabled: bool) -> None:\n        \"\"\"Toggle the enabling and disabling of adapters\n\n        Takes care of setting the requires_grad flag for the adapter weights.\n\n        Args:\n            enabled (bool): True to enable adapters, False to disable adapters\n        \"\"\"\n        if enabled:\n            self.set_adapter(self.active_adapters)\n            self._disable_adapters = False\n        else:\n            # disable grads on all adapter layers\n            for layer_name in self.adapter_layer_names:\n                module_dict = getattr(self, layer_name)\n                for layer in module_dict.values():\n                    _set_layer_requires_grad(layer, False)\n            self._disable_adapters = True\n",
+  "set_adapter_source": "    def set_adapter(self, adapter_names: str | list[str], inference_mode: bool = False) -> None:\n        \"\"\"Set the active adapter(s).\n\n        Additionally, this function will set the specified adapter to trainable (i.e., requires_grad=True) unless\n        inference_mode is True.\n\n        Args:\n            adapter_names (`str` or `list[str]`):\n                 The name(s) of the adapter(s) to set as active.\n            inference_mode (bool, optional):\n                 Whether the activated adapter should be frozen (i.e. `requires_grad=False`). Default is False.\n        \"\"\"\n        if isinstance(adapter_names, str):\n            adapter_names = [adapter_names]\n\n        # Deactivate grads on the inactive adapter and activate grads on the active adapter (if not in inference mode)\n        for layer_name in self.adapter_layer_names:\n            module_dict = getattr(self, layer_name)\n            for key, layer in module_dict.items():\n                should_require_grad = (key in adapter_names) and (not inference_mode)\n                _set_layer_requires_grad(layer, should_require_grad)\n\n        self._freeze_non_trainable_peft_weights(adapter_names)\n        self._active_adapter = adapter_names\n"
+}
