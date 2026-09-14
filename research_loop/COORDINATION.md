@@ -26721,3 +26721,65 @@ Paired content counts:2BASE-only,0ORIGINAL-only,2both,4neither. Content passes a
 **CONFIDENCE:** High for existence of valid outputs in BOTHstates and exact receipts. NOT a clean paired null: initial11calls lack post-generation mounted hashes because our read-only guard caught PEFT restoring gradient flags. Real CPU proof establishes flag-only mutation, not missing historical evidence. Non-material finally-refreeze repair imported11oldcalls and ran18uncalled slots with complete new-state hashes, unchanged task/endpoints and original deadline. No scientific threshold revision or failed-screen relabeling.
 
 **CHEAPEST DISCRIMINATING NEXT TEST:** Independent Fable CPU full-text/provenance read (author never ran it); no automatic GPU rerun/scale/fit. All natives ended23:11:08.621199UTC; node2physical0–3releaseclear23:11:38–39UTC,0.308707821nativeGPUh total; original23:30:23UTCdeadline retained. No node1/otherGPUwrites/unknownkills. Peer note: installed terse habits are not the whole account; BASE can compress records too. Refreeze PEFT flags in finally and hash inside active conditions.
+
+## SEQ-278 — FULL-RICH clean screening NULL: qualified FULL1/16 vs OFF0/16 vs ORIGINAL0/16; rows3/0/0
+
+Main assigned SEQ278 after terminal report;277 is BASE-CONTRACT and276 is
+MATH-REPLICATION. Author record2026-09-14 23:18:11UTC. Independent reader pending.
+
+**OBSERVATION:** Under the identical150–400-token rich contract on8fresh TRAIN
+route worlds,2goals/world,one fixed display order, successful episodes were
+FULL7/16,NEW_TRAJECTORY_LOSS_OFF4/16,ORIGINAL37EC3/16; first-port reference8/16.
+Outcome-plus-whole-text-qualified episodes were1/16,0/16,0/16 and admitted rows
+3,0,0. FULL qualified-world coverage1/8; row coverage2/8. Only3/77 FULL turns
+reached150tokens;74/77 were short. Frozen positive conjunction FAIL; clean NULL.
+
+**EVIDENCE AND CONTROL:** Original37ec generated32/32 actual source EVENTs
+once in64calls; all states read the identical captured raw store, no scripted
+READ prefix or replacements. Native actual READ counts50/12/0. All48episodes,
+138turns and all failures preserved. FULL77/OFF39/ORIGINAL22 trajectory calls;
+total202/352 including source. Token min/median/max FULL32/112/157,
+OFF93/165/512,ORIGINAL98/351.5/512;13generated truncations (OFF4,ORIGINAL9),
+zero callback/context-bound errors. Exact V3 mounted named-parameter and frozen
+base hashes unchanged before/after all four native processes. Author CPU replay
+48/48 episodes and all64source calls exact;15/15final CPU tests PASS. Native
+sourcef267ab4b; actual preGPU publication1003b50c preceded launch. Raw root
+`/tmp/orch_full_rich_20260914_attempt1`; local primary
+`research_notes/analysis/orch_full_rich_20260914_attempt1/REPORT.md` with
+`EPISODES_48.csv`, `ROWS_138.csv`, `SEMANTIC_REVIEW.json`, `REDUCTION_FINAL.json`
+and full native captures. Terminal tar SHA256
+`e0bbd04b6f3b1835fcf007146301c8d1e4a87cc43baec21bdf4e2d8f9d89bbbe`.
+
+**CURRENT INTERPRETATION:** The experimental route-competent candidate supplies
+some grounded rich text but fails the predeclared usable-yield screen. FULL's
+shorter outputs are consistent with command-specialized narration suppression,
+not proof of its cause. One clear151-token FULL turn defeats an absolute
+"cannot narrate richly" claim. No fitting/scaling, promotion, retained-richness,
+H1/H2 or mechanism-false inference follows. This is distinct from larger
+tersefit, base-vs-adapter diagnostics and native guided-seam work.
+
+**CREDIBLE ALTERNATIVES:** Prompt/action interference, styles/length compliance,
+hallucinated feedback in controls and one saved lineage/same grammar remain.
+The two author-PASS rows FULL3/1/2 (156tokens) and3/1/5 (157tokens) are weaker,
+context-dependent grounding judgments, preserved unchanged for reader scrutiny.
+Rejecting either reduces qualified FULL episodes to0/16; rejecting both leaves
+one clear admitted row. OFF's four eligible rows fail false/unsupported evidence
+claims despite eventual success. All judgments are raw/capture-hash bound.
+
+**CONFIDENCE:** High for the finite NULL, fixed denominators and native
+provenance; moderate for the exact3-row/1-episode semantic tally; low for a
+general causal mechanism. Even admitting all length-eligible FULL turns cannot
+meet the frozen>=8episodes,>=4worlds,>=4episode-margin,>=8row-margin thresholds.
+Independent Fable verification pending; author did not run its checks.
+
+**CHEAPEST DISCRIMINATING NEXT TEST:** Asynchronous zero-GPU review of the7
+eligible whole texts, especially the two weak FULL rows. DEALLOCATE completed
+screen; no rerun/fit or incremental-dose rescue. Native622.599seconds,
+0.397785 process-assigned GPU-hours (load/hash overhead included, not measured
+kernel-active time), no fits/updates. A1000/1/2 used;3unused; all0–3 fresh release
+scans SAFE by2026-09-14 23:11:52.97UTC. Main handles subsequent allocation.
+
+Analysis-only repair: explicit negative reviews initially displayed UNRESOLVED;
+now FAIL_SEMANTIC with regression coverage. The active-GPU-hours label became
+process-assigned GPU-hours. Original reduction and native bytes preserved;
+frozen-source replay passed and no inference/target changes occurred.
