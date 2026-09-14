@@ -9,8 +9,8 @@ authorization, automatic promotion system or claim that queued work is running.
 | Quality-filtered broader terse data | Nash | node3 0–1; GPU2 RELEASED | FITS LIVE; baseline COMPLETE944calls |20:17observation893/890updates; TRAIN forecast21:21UTC plus save/readout; prelaunch logging deviation preserved |
 | Grounded richer targets, separate execution/content | Schrodinger execution complete; Ramanujan content | none; A1000–3 RELEASED | V3terminalSEQ264,372calls,56/64action-complete,336unreviewed turns | full content review underway; no fit/promotion |
 | Critique value versus matched repeat calls | Parfit primary; Schrodinger independent | none; A1004–5 RELEASED | CLOSEDSEQ265,independently checked |6/16vs4/16goals,both1/8pairs,zero six-turn candidates; nofit |
-| Independent content review | Ramanujan0–1; Parfit2–3; Main audit/join | none | first180turns released,remaining156underreview | originalpartial100P48F32U,zeroqualified; one Main ambiguity challenge pending |
-| Canonical draft update through265 | Schrodinger | none | scoped six-file update | keep fullV3content and qualityfit outcomes pending |
+| Independent content review | two primary reviewers; Main audit/join | none | COMPLETE336turns | primary195P108F33U; one adjudication→196P108F32U,1qualifiedepisode6rows; nofit |
+| Canonical draft update through265 | Schrodinger; Ramanujan independent check | none | scoped six-file update | include fullV3contentrollup; qualityfit outcomes remain pending |
 | VM evidence relocation | Main | none | COMPLETE within recorded scope | eight immutable archives preserved; no further cleanup required for current work |
 
 Node2 0–7,node3 2–7,A1000–7 unreserved; do not fill with unbounded work or

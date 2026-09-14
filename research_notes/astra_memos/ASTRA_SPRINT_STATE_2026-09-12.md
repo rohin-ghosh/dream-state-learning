@@ -1,5 +1,11 @@
 ## Current superseding snapshot — after SEQ264, 2026-09-14
 
+LATEST: whole336turnV3reviewcomplete,derived196P108F32Uafteroneagreed
+adjudication;1qualifiedepisode6rows,nooppositegoalpair,no fit. SEQ265critique
+closed/independentlychecked. AllA100 andnode3GPU2released; onlyNashquality
+GPU0/1fitslive. Sixdraftupdate/independentreview underway. Parfitretired;
+fullrole/receiptstate in freshhandover andBOARD. MissionACTIVE/INCOMPLETE.
+
 V3terminal372calls56/64action-complete336candidate turns. A1000–3RELEASED.
 No richfit/contentpromotion. Wholecontentreview split disjoint shards0–1
 Ramanujan,2–3Parfit; Mainaudits/merges exact336IDs. Mainfixedsample4episodes

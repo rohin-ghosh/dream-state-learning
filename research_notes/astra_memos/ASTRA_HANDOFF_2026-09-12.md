@@ -1,5 +1,12 @@
 # Astra restart handoff — current override after SEQ264, 2026-09-14
 
+LATEST: fullV3contentreviewCOMPLETE,196P108F32Uafteroneagreed adjudication,
+1/56content-qualifiedepisode6rows,nooppositegoalpair; nofit. SEQ265critique
+independentlychecked/closed. AllA100GPUs andnode3GPU2released. Onlyquality
+fitsnode3GPU0/1 remainlive:20:21counts1026/1023of2928,TRAINforecast21:20–21:21
+plusAFTER,conditional. Read newestoverride in freshhandover/BOARD. Sixdrafts
+beingupdated/reviewed; missionnotcomplete. Historicalstatusbelow superseded.
+
 V3COMPLETE372calls,56/64action-complete,336unreviewed turns; A1000–3RELEASED.
 Critique/repeat all phase RESULTS complete; primary/review pending; nofits.
 Content review split Ramanujan shards0–1,Parfit shards2–3 after its primary;

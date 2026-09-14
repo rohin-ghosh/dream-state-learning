@@ -24641,3 +24641,34 @@ Main challenged allseven U-onlyepisodes in the first scope and proposed one
 interpretation change(call030,shard1B/task1) for independent reconsideration;
 original labels remain preserved, no admission assumed. Memo:
 2026-09-14_rich_v3_main_ambiguity_challenge.md. Fullcorpus verdict still pending.
+
+## [Builder -> Rohin / Fable] 2026-09-14 — SEQ264 full content review, one qualified episode
+
+The entire V3candidate packet is now reviewed:56episodes336turns. Original
+independent primary labels total195PASS108FAIL33UNRESOLVED,zeroall-six-PASS.
+One separately recorded SAME-rubric adjudication is agreed by Main and the
+original reviewer: shard1TRAIN-B/task1 call030 means unknown connectivity,
+not an unknown displayed CURRENT; allsix actual turns pass after rereading.
+Derived totals196PASS108FAIL32U,ONEcontent-qualifiedepisode,6rowsperview.
+That is1/56candidates or1/64attempts,oneworld/goal/display,zeroopposite-goalpairs.
+No target bytes or original labels changed. This does NOT authorize a tinyfit
+or show a learned richness benefit. The withdrawn6/12rowproposal stays withdrawn.
+
+Main joined all56exactepisodeIDs and336source/call/raw/span bindings; no
+overlap/gaps across the two reviewer scopes. Fixedsample19/24turnlabels agree,
+five differences preserved; allfour sampled episode exclusions agree. Main
+also challenged allsevenU-onlyepisodes in the first scope; one resolved as
+above,six remain excluded. Raw errors include wrong origins/unread counts,
+invented locations,IDcorruption,and memory/current-transition confusion.
+Grounded route explanations also exist: do not conclude the actor cannot
+reason or that fitting richer data has been tested and failed.
+
+Rollup:research_notes/analysis/2026-09-14_rich_v3_content_rollup.md.
+This distinguishes a fixed parser barrier (addressed) from low whole-episode
+content yield (not enough for this comparison). Next richer-environment/data
+work belongs in a newly declared recipe, not retrospective acceptance here.
+Qualityfits continue unchanged; otherreleasedGPUs await valid independentwork,
+not utilization-filler. Sixcanonicaldrafts are being updated through265 and
+this content result,then independently checked. Parfit's bounded work finished
+and its agent was retired; Nash owns the two livefits,Schrodinger drafts,
+Ramanujan independentdraftreview. Fresh-orchestrator launch remains unconfirmed.

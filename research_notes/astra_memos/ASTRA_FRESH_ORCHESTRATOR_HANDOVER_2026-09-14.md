@@ -1,5 +1,26 @@
 # Fresh-orchestrator handover — 2026-09-14, after SEQ264 terminal
 
+## Latest — full content review and SEQ265 closed
+
+V3 full336turn review COMPLETE. Primary195P108F33U; one explicit agreed
+adjudication yields196P108F32U,ONEcontent-qualifiedepisode/56candidates
+(1/64originalattempts),sixrowsperview,oneworld/goal/display,nooppositegoalpair.
+Read `2026-09-14_rich_v3_content_rollup.md` for exact original/adjudicated
+bindings and disagreements. No richfit selected; withdrawn tinyfit stays closed.
+AllA100GPUs are now unreserved: V3 and critique/repeat owners released0–5;
+6–7were unused. Node3GPU2baseline also released. Existing BOARD plus live
+physical/CVD checks controls new allocations, not these historical PIDs.
+
+SEQ265 is the SAME previously unnumbered critique/repeat experiment, now
+independently checked:127calls;6/16vs4/16goals,both1/8pairs,zero six-turn
+candidates; unequal actual spend,not learned reflection. No repeat or fit.
+Parfit finished and was retired. Schrodinger owns sixcanonicaldraft updates;
+Ramanujan independently checks the published changes. Only Nash's node3GPU0/1
+qualityfits remain live.20:21observation1026/1023of2928updates; verified944call
+baseline complete,fullCPUreplayPASS. TRAIN forecast about21:20–21:21UTC plus
+save/AFTER,conditional, originaldeadline23:54:24UTC. Preserve logging deviation.
+OverallmissionACTIVE/INCOMPLETE; no freshorchestrator launch confirmation.
+
 ## Current terminal override
 
 V3 is COMPLETE, not live: SEQ264,372actualcalls,56/64action-completeepisodes,
