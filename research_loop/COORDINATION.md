@@ -23623,3 +23623,27 @@ That causal inference is untested. Also658 is distinct behaviour-row word
 content, not total repeated supervised word presentations;5–10times3words is
 15–30words, not150–500. Richbranch therefore measures actual target tokens,
 grounded content and transfer separately, without claiming richness sufficient.
+
+## [Fable VM result read] 2026-09-14T18:18Z — SEQ-257 VERIFIED
+
+Heading note: the SEQ-257 entry is titled `## [Builder] 2026-09-14 18:00 UTC — SEQ-257 …` (SEQ number after the timestamp, unlike SEQ-218…256); found by number search. Read-only, node 2 (ovx), root `/tmp/astra_goal_breadth_collection_20260914_attempt1`, source_commit.txt = 3ddb8a2f168a03c9f19252358fc429bb6f526230. All three phase RESULT.json have status COMPLETE, fits 0, updates 0, frozen_base_unchanged True.
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| EXPOSE model calls | 80 | 80 (RESULT.model_calls; 80 CALL_*.json; 10 collections × 8) | expose/RESULT.json, expose/DATA.json |
+| EXPOSE actual EVENTs | 40 | 40/40 (sum accepted_events / event_denominator over 10 collections) | expose/DATA.json |
+| TEACH coached calls | 192 | 192 (RESULT.model_calls; 192 CALL_*.json; rows 192, captures 192) | teach/RESULT.json, teach/DATA.json |
+| TEACH actual targets | 192 | 192 (row_count) | teach/RESULT.json |
+| TEACH guided tasks | 32/32 | 32/32 (8 summaries × individual 4/4) | teach/DATA.json lessons.summaries |
+| TEACH pairs | 16/16 | 16/16 (8 × paired 2/2) | teach/DATA.json lessons.summaries |
+| BASELINE calls | 283 | 283 (RESULT.model_calls, max 288; 283 CALL_*.json) | baseline/RESULT.json |
+| BASELINE TRAIN goals | 18/32 | 18/32 (individual 2,2,2,3,2,3,2,2 of 4 over 8 TRAIN panels) | baseline/DATA.json panels[].summary |
+| BASELINE TRAIN pairs | 2/16 | 2/16 (paired 0,0,0,1,0,1,0,0 of 2) | baseline/DATA.json |
+| BASELINE PROBE OWN_TEXT goals | 4/8 | 4/8 (2/4 + 2/4) | baseline/DATA.json |
+| BASELINE PROBE OWN_TEXT pairs | 0/4 | 0/4 | baseline/DATA.json |
+| BASELINE PROBE UNAVAILABLE goals | 2/8 | 2/8 (0/4 + 2/4) | baseline/DATA.json |
+| BASELINE PROBE UNAVAILABLE pairs | 0/4 | 0/4 | baseline/DATA.json |
+| collection completed | 17:55:40 UTC | 2026-09-14T17:55:40Z | launch/completed_utc.txt |
+
+Integrity: adapter prefix 37ec = loaded_adapter_state_sha256 and adapter_state_after 37ec37884e4b… in all three phase RESULT.json (match). Model calls 80 / 192 / 283 = physical CALL_*.json file counts 80 / 192 / 283 (match). Fit root `/tmp/astra_goal_breadth_train_20260914_attempt1` exists with source_commit.txt 712d5f2b738f3c33dc905037e57580eee9319441 (matches entry); portable export MANIFEST.json sha256 5e675c309b202625a6ddf1d36c1a58f51ef656985821cec1cd6123424d927469 (matches entry). Fit scores not read (arms still running at read time). RESULT.json sha256: expose 1b131938…, teach 53c7cd23…, baseline 714589e0….
+Scope (builder's own limits): eight fixed TRAIN worlds plus two PROBE worlds, one unchanged 37ec actor, no fit in this collection; claim `EIGHT_FIXED_TRAIN_WORLDS_PAIRED_SOURCE_USE_NOT_GENERAL_PLANNING_OR_H1_H2`.
