@@ -2,7 +2,7 @@
 
 Updated 2026-09-14 23:08 UTC. Mission ACTIVE / INCOMPLETE. Wave W2/W3.
 Authoritative steering: Rohin's current launch instruction and raw messages
-42–79 (79 read22:57UTC); next full raw-message reread by23:50UTC.
+42–80 (80 read23:10UTC from3d2da5e8); next full raw-message reread by23:50UTC.
 Check notebook updates every orchestration cycle, not just every two hours.
 
 ## Objective and authority
@@ -678,6 +678,51 @@ paired null. MATH-SCALE1024+held64 frozen, not yet claimed running. RAM2.9GiB
 available/swap full; no additional simultaneous worker beyond retired slot.
 Node1 remains unavailable pending a new lease/onboarding receipt despite
 watcher23:04expectation of23:25return; Main neither leased nor onboarded it.
+
+## 23:12 UTC message80 and prospective correction screen
+
+Raw80 is the authority for the ladder: L0 absorb experience into LoRA memory/
+behavior; L1 open-loop thought rich enough to change behavior; L2 guided
+cross-sleep cohesion; L3 convergence toward long-term outcomes; L4 deployment.
+Read verbatim this cycle, not merely Fable's table. Relay heading says~23:15
+but commit arrived23:08:37; arrival/read time governs response, not that estimate.
+This records Rohin's explanation, not a new result or permission to silently
+replace SFT with a policy-gradient objective. Current experiments, masks,
+controls and acceptance denominators are unchanged. Any actual new objective,
+loop/invariant change or paper claim follows the durable architecture intake/
+deliberation path before editing the affected system. Fable's FIRST SUCCESS
+label does not remove266all-world failure or convert273into training replication.
+
+The276result suggests a distinct, cheap test: previous rich-answer corrections
+had mostly ambiguous gold, whereas naturally wrong terse child outputs contain
+verifiable mistakes. ORACLE-REPAIR tests whether explicit grounded rejection
+adds meaningful correction/reusable-record yield beyond the SAME rich retry
+without that feedback. No new task family or hidden-set access. Freeze up to24
+unambiguously wrong-numeric child responses from completed270/276 L1 mining
+receipts by stable task hash; audit gold/question correctness before new calls.
+Gold disputes/format-only failures are excluded from this new prospective
+roster with reasons, never removed from original denominators. If fewer than24
+eligible exist use all and disclose actual N, no collection to fill the quota.
+
+Paired arms share exact task and actual prior wrong child bytes. GUIDED receives
+only truthful deterministic oracle rejection, NO answer/reference solution;
+RETRY receives no verdict. Same first-person150–400rich correction request,
+same512generated/2048context budgets and branch order balanced before outcomes.
+One repair and, only on correct repair, one own-record call per branch:<=96
+new calls overall; child-only neutral prefixes, fulltext semantic and prefix
+review; unchanged frozen37ec. Report correction success, meaningful revision,
+record yield, token distributions and paired contrasts separately. A positive
+local feedback signal requires>=4additional joint outcome-and-rubric repair
+admissions in GUIDED over RETRY; otherwise deallocate this declared screen,
+not declare parenting false. No fit, scale, held-transfer or learned-loop claim.
+
+Allocate node3 0–3 to one sceptical worker, stance: the verdict adds nothing
+beyond a rich retry. Own scoped implementation/CPU/provenance/preGPU publication
+then independent launch, no Main gate.60min/4assignedGPUh including cleanup;
+node3 4/5 remain reserve,6/7 remain breadthfit. This complements the corpus and
+prefix audit; it does not substitute a24case screen for the campaign or claim
+L2 readiness. Strongest alternative is informative feedback versus simply
+re-running richer reasoning, now directly controlled.
 
 ## Active uncertainties and surprises
 
