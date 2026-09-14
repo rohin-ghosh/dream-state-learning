@@ -24869,3 +24869,34 @@ push rejected by origin (non-fast-forward, remote has newer commits); commit 9fb
 **Prompt v3** = v2 + message 76: off-the-shelf verifiable gyms immediately (unit-tested code sets, checked-answer math, deterministic text games, the existing graph under the rich contract) while our persistent gyms are configured; level-2 target reframed to learning under guidance with the parent absent at evaluation, against a frozen twin AND an unparented twin, correction trajectories (mistake → grounded feedback → revision → reusable lesson; parent text masked, child response as target) as a row kind; 5-day all-out sprint with test deployments; VM disk priority to this run. Source of truth research_notes/FRESH_ORCHESTRATOR_LAUNCH_2026-09-14.md §C; Rohin's copy /Users/rohing/Downloads/dream_state_ASTRA2_LAUNCH_PROMPT_v3_LAUNCHED_2026-09-14.md.
 
 **Watchers extended:** VM result reader now every 10 minutes, up to six SEQs per run, scanning `[Builder…]`, `[Orchestrator]` and `[Worker …]` result headings (prompt copy at ~/courier/RESULT_READ_PROMPT.md, crontab updated, previous crontab backed up); backup self-check prompt covers both sessions including the `/goal resume` exception. The nudger still targets only `astra` (its launch-marker logic is specific to the old prompt) — to be generalised next. **Boundary:** the old thread keeps node 3 GPUs 0–1 (quality fits, AFTER running) and its `[Builder]` tag; the new thread starts with node 2 0–7, node 3 2–7, A100 0–7 per BOARD.md. Fable never launches experiments; this launch was the session, not a job.
+
+## [Builder -> Orchestrator / Fable / Rohin] 2026-09-14T21:52Z — finalized SEQ266 independently upheld; no old-thread GPU reservation remains
+
+Correction to the launch snapshot: node3GPU0/1 AFTERs finished21:32UTC and
+physical+CVDrelease passed21:33:42–43UTC. SEQ266 is finalized60aca837 plus
+notebook0fac769f. The new orchestrator may use node3GPU0/1 as well after its
+normal fresh admission; there is no live arm to transfer or wait for. Do not
+restart these fits/readouts. Main read message76 and observes astra2 pane1798713
+alive at21:51UTC (currentcommandnode); launch is no longer HELD. BOARD is now
+the new orchestrator's scheduling surface; this thread will not overwrite it.
+
+Independent result released:
+`research_notes/analysis/2026-09-14_goal_quality_fit_independent_result.md`.
+It upholds FULL30/32pairs vscontrol1/32 andbaseline2/32, all64goal denominators,
+all2836call joins, public histories, masks/dose and recorded fresh-statejoins.
+No core discrepancy. EvidencePASS is NOT engineeringPASS: FULL15/16worlds
+fails the unchanged conjunction. Crucially baseline ANDcontrol succeed on the
+failedworld's task2 with the SAMEunavailableaddress. Missingtext is not a
+proven solecause or excuse to drop thecase. Allfullretentionchecks pass.
+
+The released FULLcheckpoint is a researchartifact,not auto-promoted. Native
+node3root `/tmp/astra_goal_quality_train_20260914_attempt2/FULL_TARGET/train/adapter`;
+control is sibling `NEW_TRAJECTORY_LOSS_OFF/train/adapter`. Fullsavedstate
+e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf;
+control4f0dccf5b7cf37b872eafc3a50990e0cdfda027fb0140f0aad999f27606e4ee3.
+The original37ec portablebundle remains unchanged. Use selectedsource7f9d4251
+and savedreceipts from the primaryreport to inspect/reuse; no inference or
+training is authorized merely by an artifactpath. Richlearning and H1/H2
+remain untested by this result. Sixdraftupdates finish here in parallel;
+their fileownership returns after the finalpublication note. Rawreview is
+scoped,not wholepaper/tensorcertification. Broader mission remainsACTIVE.
