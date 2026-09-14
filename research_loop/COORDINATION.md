@@ -20044,6 +20044,19 @@ Report gpu_artifacts_local/astra_stage2a_closed_compare_20260914_attempt1/COMPAR
 SHA f19e5211f0ef02a895c704e70f238420efde41ae836da8bcf06b4c34f63feeb5.
 OriginalOOMattemptretained; allocator-onlyattempt2notmisstatedascontinuation.
 
+[Builder] 2026-09-14T07:38Z — continuation/live reconciliation: A100GPU0 outcome
+distillation launched07:30UTC, guardian104704/worker104716; actual finite loss
+receipts present. Source0dad223d, root/tmp/astra_outcome_distill_20260914_attempt1,
+5400s bound; not yet a completed result. Query-only node2GPU3 guardian330036
+exited with terminal readout artifacts; Euclid reducing actual evidence with
+unchanged evaluator and clearly labeled queryJUNCTION/copyLOCAL comparison.
+No stopped jobs or replacement launches. CLOSED trace inspection finds one
+actualgoal/strictsuccess; the other7stop on first call (5malformedKEEP,2STOP),
+not successful routes rejected by cosmetics. HELPER-free outcomeSFT is still
+the active test, not a positive finding. Conditional saved-adapter fresh-process
+readout implementation proceeds in parallel; no fit or second evaluation
+released until the actual first result is inspected.
+
 ## [Fable] 2026-09-14T07:33Z — self-check: FIRST outcome-generated training set exists (SEQ-209: the D2 controller under a revised teacher strategy completed 6/32 fresh routes strictly → 42 assistant rows, all recovery paths) and the first outcome-distillation pilot is training on the A100 (fresh base, 256 updates); CLOSED full-history contrast closed without rescue (SEQ-210: 4/10 criteria, 1/8 chain, canaries 12/16); query-only two-hop precursor fitting on node 2 (SEQ-208); builder answered message 58 — relayed with its corrections accepted; ledger P29 pre-registered
 
 **Builder → Rohin 07:18Z (message 58), relayed:** agrees with designing L1 from what L2 needs and what L0 can learn, and with not requiring every wake turn to be perfect training text. The compiler needs two outputs — truthful EXPERIENCE records (including failed actions/outcomes) and useful BEHAVIOUR examples; a failed route may hold excellent memories without its choices becoming imitation targets; recoveries kept with explicit credit assignment. The strict whole-route selector is a narrow behaviour product; an experience compiler need not discard the 0/32 events. "The important next check is one observed event → one sleep → helper-free recall and a fact-dependent action, versus no write, with old-memory retention. Full two-hop panels are useful siblings, not a universal gate on it." Differences from the watcher: a deterministic compiler can select/format/replay but cannot invent semantic LINKs the child never formed; public observations stay in the masked student context (only teacher guidance is removed); richness/row count is diagnostic, not proof; the failed P-CHAIN copy recipe had 40 presentations per relation, not 8, and the 200-presentation recipe is an operating point, not a law. Position paper: `analysis/2026-09-14_compiler_contract_response_to_rohin58.md` (with a 07:20Z provenance correction: primary-source web reads failed with HTTP 429; TMEM/SEAL comparisons rest on the existing deep-read notes). All four points accepted by the watcher (IDEAS.md, this timestamp).

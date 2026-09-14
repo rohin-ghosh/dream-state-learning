@@ -1,6 +1,19 @@
 # Astra restart handoff — September14,2026,02:49UTC
 
-## CURRENT OVERRIDE — September14,2026,07:30UTC
+## CURRENT OVERRIDE — September14,2026,07:38UTC
+
+Live reconciliation supersedes the launch-status details immediately below:
+outcome-distillation DID launch at07:30UTC, A100GPU0, guardian104704,
+worker104716. Actual LOSSES.jsonl confirms updates; no terminal result yet.
+Source0dad223d, root /tmp/astra_outcome_distill_20260914_attempt1/run,
+5400s outer bound. CPU admission passed18.23s,42actual recovery-only rows;
+SEQ209 records dataset and release, SEQ210 records CLOSED result. Last pushed
+commit80d17813. Query-only PCHAIN guardian330036 has exited and its readout
+RESULT/raw exist; Euclid owns CPU reduction and copy/query comparison, not fits.
+Helmholtz owns new outcome_reload runner+test only (no launch), for a conditional
+fresh-process persistence check after the current pilot completes. Confucius
+continues CLOSED preservation; Dewey completed its trace note. Main owns launches.
+No retries or claims follow from this status alone. Full mission remains active.
 
 Read this instead of all older live-status blocks. Main pushed through0dad223d;
 only unrelated gpu/codex/dream_state.rules and unreviewed TSJ draft are dirty.
