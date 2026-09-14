@@ -1,6 +1,7 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
-Current reporting cut: see the appended September 14 SEQ-236 addendum.
+Current reporting cut: see the appended September 14 SEQ-237--239 and
+Main-reported actual-reader audit addendum.
 Earlier dated statuses below remain historical, not current runtime blockers.
 
 **Ongoing first-sprint working draft — research question unresolved.**
@@ -5237,3 +5238,51 @@ now include SEQ-236; no full cross-draft review is claimed. Current runtime is
 not blocked; earlier blocker wording is historical. Main preserves adapters.
 New reselection NOFIT is running; no outcome is included. Independent verification
 follows execution, not a new launch gate. The broader mission remains incomplete.
+
+## Evidence addendum — 2026-09-14 — SEQ-237–239 and actual-reader audit
+
+Released [no-fit variants](../analysis/2026-09-14_corrective_reselection_independent_result.md)
+close SEQ-237: original/full-EVENT choices repeat source2; the pointer output
+fails the ADDRESS contract. Three calls, zero fits; earlier infrastructure
+failure and source-valid negative-option choices remain, not a utility result.
+
+The released [lesson/paired/field audit](../analysis/2026-09-14_reader_audit_lesson_result.md)
+reproduces SEQ-238 collection (80 calls,64 coached DEV,62 successes:
+true30/32,fault32/32) and SEQ-239 matched200-update forks. Parent text is absent
+from student prefixes/targets. DEV and held tasks differ:62/64 versus7/16 is
+not a generic coaching effect. The causal contrast masks only lesson gradients.
+
+| Endpoint | Common BEFORE | SFT | Loss-off |
+| --- | ---: | ---: | ---: |
+| Parent-free held classifier /16 | 7 | 16 | 7 |
+| True /8; fault /8 | 4; 3 | 8; 8 | 4; 3 |
+| Own routing /4 | 3 | 3 | 3 |
+| Old W0/W8 recall, each /8 | 8 | 8 | 8 |
+| A2 exact W0/W8 recall, each /4 | 2 | 1 | 0 |
+| Unseen MISS /4 | 0 | 0 | 0 |
+
+Formal narrow classifier gate PASS. Both AFTERs have102 actual calls.
+SFT source0 stays intact; source2's failure is node-only. OFF sources0/2
+have receipt-only errors, port/outcome correct. Sources1/3 were already wrong
+BEFORE. This is memory-identity fragility, not broad factual erasure.
+
+| Claim level | Evidence and limit |
+| --- | --- |
+| Substrate | Old8/8 retained, but recent EVENT identity is field-fragile; routing unchanged. No broad readiness. |
+| Parenting behavior | Supervised lesson induces a parent-free classifier skill under matched gradient masking; collection DEV/held difference does not isolate generic parent advantage or task-disjoint H1. |
+| Later autonomous learning | One exposed lineage, synthetic fault development and held bodies outside lesson targets only; no autonomous error selection or repair utility established. |
+| Self-improving learning | Neither classification nor sourced choices establish better downstream learning or H2. |
+
+Subsequent actual-reader audit is Main-reported, independent follow-up pending:
+SFT5/7 (accurate NONE2/2, fault3/5), OFF1/7 (all7 faulty); selections[1,3,3]
+versus[1], all source-valid without semantic filtering, zero fits. Actual truth
+mixes differ, unlike the matched classifier panel. Source `adfbdd45`, root
+`/tmp/astra_actual_reader_audit_20260914_attempt1`; sequence label left to Main.
+No write utility follows from source choices, and no pending four-cell repair
+outcome is included.
+
+Lesson source14-file match `f20a8cb651e5b6e2e7154d85c7a0d7dbc9f8b38a`, root
+`/tmp/astra_reader_audit_lesson_20260914_attempt1/`; terminal independent capture
+501 files/6,464,019 bytes. SEQ230 and SEQ-236 remain separate. All six reporting
+surfaces include this cut; historical sections remain unchanged. Independent
+verification follows execution. No H1/H2 or mission-completion promotion.

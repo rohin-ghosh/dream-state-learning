@@ -1,4 +1,20 @@
-## Current superseding snapshot — 2026-09-14 12:26 UTC
+## Current superseding snapshot — 2026-09-14 12:48 UTC
+
+Mission INCOMPLETE. SEQ239 both lesson fits/AFTERs terminal: narrow parent-free
+classifier SFT16/16 vs loss-off7/16, common7/16. Own routing3/4each, oldW0/W8
+8/8each; newexact1/4vs0/4 is field-specific identity fragility, not broad erasure.
+Both adapters independently preserved; dated reader_audit_lesson_result memo.
+SEQ240 actual-reader audits terminal: SFT5/7 with actual pointers[1,3,3],
+loss-off1/7 with[1], different actual stimuli, no write utility yet. Independent
+replay underway. No Main GPU jobs remain from those stages; do not repeat.
+Next four-cell selected-reader repair design/code prepared, CPU integration
+tests in progress, NOT LAUNCHED at this snapshot. Source-matched SELECTED and
+UNIFORM forks from each own post-lesson actor,100updates each. Shared curriculum
+includes audit lessons in both states; formerLOSS_OFF now receives them too.
+No same-stimulus policy or H2 inference. Root, source and launch PIDs to follow.
+Released drafts throughSEQ239/actual audit reviewed; no TeXengine, unsent message.
+
+## Historical superseded snapshot — 2026-09-14 12:26 UTC
 
 SEQ237 same-errorselectionvariantsclosed: fullEVENTold2twice; pointerbareold2
 strictformatreject. No furtherpromptvariant/fit. Source-validnegativeevidence

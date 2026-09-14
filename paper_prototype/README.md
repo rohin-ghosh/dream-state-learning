@@ -21,7 +21,7 @@ Dated statements below about unresolved TODO keys describe earlier snapshots.
 
 **Ongoing first-sprint working draft — research question unresolved.**
 Canonical `main.tex` now includes bounded September14 diagnostics through
-SEQ230 and the separate released SEQ-236 corrective-selection/replay comparison,
+SEQ-239, with SEQ230 and SEQ-236 retained as separate comparisons,
 alongside earlier positive and negative findings. The new section
 separates own-EVENT persistence, outcome-SFT controller fits and coached cue
 collection; none establishes H1/H2 or completes the developmental campaign.
@@ -39,6 +39,37 @@ same-adapter second-sleep comparison supports bounded parent-free retrieval;
 the first adult write/use comparison is complete, with an explicit W8 reader
 failure and a separately reported no-fit W0 interface repair.
 The full sprint remains incomplete. No G3/H1/H2, parenting or freeze promotion.
+
+## SEQ-237–239 and subsequent actual-reader audit — September 14, 2026
+
+- **SEQ-237:** three zero-fit calls close the original/full-EVENT/pointer
+  variants: two source2 repetitions are source-valid; the bare pointer is
+  rejected. Prior infrastructure and output failures remain. No replay utility.
+- **SEQ-238:** 80 calls, zero fits;64 coached DEV calls yield62 successes
+  (true30/32, fault32/32). Parent text is removed from all student training.
+  DEV62/64 versus held BEFORE7/16 compares different tasks, not a coaching effect.
+- **SEQ-239:** matched200-update SFT/masked-lesson-gradient forks yield
+  parent-free held7/16→16/16 versus7/16→7/16; SFT true/fault8/8 each.
+  Formal narrow classifier gate PASS, not general readiness. Each AFTER102 calls.
+  Old W0/W8 both8/8; routing both3/4; unseen MISS0/4.
+- **Identity caveat:** A2 exact W0/W8 common2/4→SFT1/4 versusOFF0/4:
+  SFT source0 intact, source2 node-only error; OFF0/2 receipt-only errors,
+  port/outcome correct. Sources1/3 already wrong BEFORE, not newly forgotten.
+  Exposed source family, one lineage, synthetic faults; held bodies excluded
+  from lesson targets, not all historical memory training. No H1/H2 promotion.
+- **Actual-reader audit, Main-reported; independent follow-up pending:** zero fits;
+  SFT5/7 (NONE2/2, faults3/5), OFF1/7 (all7 faulty), selections[1,3,3] versus[1].
+  All choices source-valid, no semantic filter; different actual truth mixes,
+  not another matched classifier panel. No write utility follows. Source
+  `adfbdd45`, root `/tmp/astra_actual_reader_audit_20260914_attempt1`.
+  Sequence label left to Main; pending four-cell repair outcomes excluded.
+
+Released [lesson/paired/field audit](../research_notes/analysis/2026-09-14_reader_audit_lesson_result.md)
+and [no-fit variants](../research_notes/analysis/2026-09-14_corrective_reselection_independent_result.md).
+Lesson root `/tmp/astra_reader_audit_lesson_20260914_attempt1/`;14 audited source
+files match `f20a8cb651e5b6e2e7154d85c7a0d7dbc9f8b38a`. Terminal independent
+capture501 files/6,464,019 bytes. Independent verification follows execution.
+Earlier SEQ230 and SEQ-236 findings remain separate below.
 
 ## SEQ-236: corrective-selection/replay comparison — September 14, 2026
 
@@ -76,15 +107,16 @@ no outcome from that work is included.
 
 Current edited surfaces: `main.tex`, `astra_sprint_draft_20260912.tex`,
 `astra_sprint_abstract_20260912.md` and this README. Their three active abstracts
-are synchronized; prior active abstracts are archived verbatim in the respective
+are synchronized; earlier archived abstracts remain verbatim in the respective
 files. The explicitly owned companions
 `research_notes/astra_memos/ASTRA_COLLABORATOR_DRAFT_2026-09-12.md` and
 `research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md` also include
-SEQ-236. No complete cross-draft review is claimed. The new reselection NOFIT
-run is in progress; no result from it is included.
+SEQ-237--239 and Main's subsequent actual-reader audit. No complete cross-draft
+review is claimed. SEQ-237 closes the old no-fit variants; the four-cell memory
+repair is pending and no result from it is included.
 
-September 14 static checks: synchronized active abstracts280 words; UNSENT
-message202 words. TeX braces/environments, labels/references, unchanged citations
+September 14 static checks: synchronized active abstracts278 words; UNSENT
+message205 words. TeX braces/environments, labels/references, unchanged citations
 and added analysis links pass. No TeX engine is installed; no PDF build is claimed.
 
 Sources (released independent terminal analyses, not new executions here):

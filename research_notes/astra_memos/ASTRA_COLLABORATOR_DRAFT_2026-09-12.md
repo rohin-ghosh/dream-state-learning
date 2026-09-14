@@ -2,36 +2,38 @@
 
 ## Message — UNSENT
 
-Can developmental teaching help an agent use what it learns from later
-experience? We test this with frozen Qwen2.5-7B-Instruct and persistent LoRA
-adapters, separating memory acquisition from action selection.
+Can developmental teaching produce a skill an agent uses after teaching ends?
+We test frozen Qwen2.5-7B-Instruct with persistent LoRA adapters, separating
+recall, auditing and action selection.
 
-The second sequential adult cycle (SEQ230) prospectively pairs W0 BEFORE/AFTER:
-cue routing improves 2/4 to 4/4 versus unchanged loss-off 2/4. Both arms learn
-four new facts and retain eight old facts. This is one continued pair, not
-independent learner replication.
+A reader-audit lesson collected 62/64 successful coached responses. With all
+parent text removed, matched 200-update forks differ only in lesson-target
+gradients: held classification rises from 7/16 to 16/16 under SFT, versus
+unchanged 7/16 with those gradients masked (SEQ-239). Both true and faulty
+halves reach 8/8. Different DEV and held tasks make collection accuracy itself
+unsuitable for estimating a coaching effect.
 
-A separate 100-update comparison (SEQ-236) forks the same archived collecting
-actor. Externally posed error prompts elicit two sourced replay choices without
-training the selector. Both corrective and uniform replay fix 2/2 original
-errors, but corrective loses previously successful zero-based task3: total
-routing is 3/4 versus uniform 4/4. Conversely, old W8 recall is corrective
-8/8 versus uniform 6/8, from common 7/8. Neither dominates. New recall is
-2/4 versus 4/4; unseen MISS remains 0/4.
+The narrow classifier gate passes, not general readiness. Routing remains
+3/4 in both arms and old recall stays 8/8, while recent exact recall drops
+from 2/4 to SFT 1/4 versus control 0/4. Field audits show node/receipt errors,
+not broad factual erasure. Unseen MISS remains 0/4. The earlier sequential
+adult result and corrective/uniform trade-off remain separate.
 
-Held supplied text is not parametric recall. Reused tasks, external prompts,
-unequal per-fact exposure and shared lineage limit interpretation; no H2 or
-autonomous selector learning is established. Next tests should probe recurrence
-and independent-family transfer. We seek collaborators for failure-inclusive
-trace replication and dose-aware causal controls. New reselection is running,
-not a result reported here. The broader research question remains open.
+This is one lineage with exposed source families and synthetic fault stimuli,
+not H1/H2 or autonomous learning. Main's subsequent no-fit actual-reader audit
+reports sourced choices, not evidence that replaying them helps; independent
+follow-up is pending. We seek collaborators for field-sensitive retention
+controls, independent-family transfer and tests of actual repair utility.
+The next repair comparison is pending; no outcome is claimed. This message
+remains unsent.
 
 ## Supporting notes—not part of message
 
 **Evidence-backed working update — UNSENT.** No message has been sent.
 
 **September 14, 2026 result update — research question unresolved.**
-Independently reduced SEQ230 is included below. Cycle2 prospectively pairs W0 BEFORE/AFTER; cycle1 SEQ227/228 retains
+The released SEQ-237--239 results and Main-reported actual-reader audit are
+included below, separately from SEQ230 and SEQ-236. Cycle2 prospectively pairs W0 BEFORE/AFTER; cycle1 SEQ227/228 retains
 its primary W8 result and missing W0 BEFORE routing baseline. Earlier results
 and failures remain. Scoped
 source gates closed PASS/SEPARATED and native DEV results exist: runtime
@@ -41,6 +43,70 @@ The sprint TeX and companion abstract are updated; canonical
 `paper_prototype/main.tex` was updated separately by Main.
 No complete cross-draft review is claimed. The collaborator draft stays UNSENT;
 H1/H2 and the program remain open.
+
+### SEQ-237–239: parent-free reader-audit competency and identity limits
+
+SEQ-237 closes three no-fit variants on the same actual error: original and
+full-EVENT audit prompts each repeat source2, a source-valid negative-option
+record; the pointer variant emits a bare identifier and fails the strict
+ADDRESS contract. All three calls involve zero fits. The prior infrastructure
+failure before generation and the pointer rejection remain; neither repetition
+nor source validity establishes replay utility.
+
+SEQ-238 collects 64 coached DEV calls: 62 successes (true30/32, fault32/32).
+Together with 16 parent-free held BEFORE calls, collection costs80 calls and
+zero fits. The two failed DEV responses are retained, not trained; the
+62 admitted child outputs use the declared success rule. Parent text is absent
+from student prefixes and targets. DEV and held cases differ, so62/64 versus
+7/16 is not a matched coaching effect.
+
+SEQ-239 compares two200-update forks of the same saved corrective adapter.
+Inputs, memory/cue targets and schedules match; only lesson labels are masked
+in loss-off, with a shared treatment-reference denominator. Each arm presents
+200 memory,200 cue and400 lesson rows; active target tokens differ15,115 versus
+12,538. The causal contrast is taught SFT versus masked lesson gradients.
+
+| Endpoint | Common BEFORE | SFT AFTER | Loss-off AFTER |
+| --- | ---: | ---: | ---: |
+| Parent-free held classifier /16 | 7 | 16 | 7 |
+| True /8; fault /8 | 4; 3 | 8; 8 | 4; 3 |
+| Own W0 routing /4 | 3 | 3 | 3 |
+| Old W0/W8 recall, each /8 | 8 | 8 | 8 |
+| A2 W0/W8 exact recall, each /4 | 2 | 1 | 0 |
+| Unseen MISS /4 | 0 | 0 | 0 |
+
+**The formal narrow classifier gate passes: substantive parent-free competency,
+not general readiness.** A2 exact-match losses are field-specific: SFT source0
+stays intact; source2 has only a node error. Loss-off sources0/2 have only
+receipt errors, with port/outcome correct. Unselected sources1/3 already failed
+BEFORE. This is memory-identity fragility, not broad forgetting. Neither arm
+improves routing. Each fresh AFTER contains102 native calls, independently
+replayed/reduced with all failures retained. Held supplied-text routing stays
+8/8; it is not parametric recall.
+
+The source family is exposed and the lineage shared. Lesson DEV uses explicitly
+synthetic faults; held A2 bodies are disjoint from lesson targets, not a clean
+unopened family (two A2 records already appear in memory training). The result
+does not establish task-disjoint H1, H2 or autonomous selection.
+
+**Subsequent actual-reader audit — Main-reported; independent follow-up pending.**
+Zero-fit audits score SFT5/7 (accurate replies correctly yield NONE2/2;
+faults3/5) and OFF1/7 (all seven replies faulty). Source selections are
+[1,3,3] versus[1], all source-valid without a semantic filter. The panels have
+different actual reader outputs/truth mixes, unlike the paired held classifier;
+5/7 versus1/7 is not the same matched contrast. Source choices do not establish
+write or repair utility. Source `adfbdd45`, root
+`/tmp/astra_actual_reader_audit_20260914_attempt1`; the next sequence label is
+left to Main. No result from the pending four-cell memory-repair experiment
+is included. Independent verification follows execution, not a new launch gate.
+
+Released evidence: [lesson, matched fits and field audit](../analysis/2026-09-14_reader_audit_lesson_result.md)
+and [three no-fit variants](../analysis/2026-09-14_corrective_reselection_independent_result.md).
+Lesson root `/tmp/astra_reader_audit_lesson_20260914_attempt1/`; the14 audited
+source files match `f20a8cb651e5b6e2e7154d85c7a0d7dbc9f8b38a` (not an assertion
+about the whole deployed tree). Terminal independent snapshot contains501 files,
+6,464,019 bytes under
+`gpu_artifacts_local/astra_reader_audit_lesson_independent_20260914/`.
 
 ### September 14, 2026 — SEQ-236 corrective replay comparison
 
@@ -69,8 +135,8 @@ W8 recall. Equal updates/group presentations do not match per-fact dose or
 actual target tokens (17,009 versus16,701). All failures remain evidence.
 Selection prompts are externally posed, not autonomous error detection or
 selector training; no H1/H2 promotion follows. Independent verification follows
-execution. Main preserves adapters and owns the running reselection/next
-recurrence work; their outcomes are excluded.
+execution. SEQ-237 closes the no-fit reselection variants. Main preserves adapters and
+owns the pending four-cell repair experiment; no repair outcome is included.
 
 ### SEQ230: second sequential adult cycle, independently reduced
 

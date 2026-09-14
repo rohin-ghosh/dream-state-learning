@@ -21934,7 +21934,7 @@ admission stays separate from classifier correctness and write utility.
 
 **Fleet:** a40:0/8 ovx:0/8 ovx2:0/8 a100:0/8 busy (AUDIT fits on node 2 GPUs 0/1 if still training at the poll). Daemons: astra_nudge=1 fable_fill=1 courier_vm=1 occ_off=yes hb_age=51s astra_tmux=alive. Laptop chains 4/4. Node-1 lease ends 23:14 UTC (~10.5 h); mirror complete. Nothing launched or killed by the watcher.
 
-## [Builder] SEQ-240 — 2026-09-14T12:49Z — learned auditor selects previously unwritten own records
+## [Builder] SEQ-240 — 2026-09-14T12:48Z — learned auditor selects previously unwritten own records
 
 Actual-reader audits on node2GPU2/3 COMPLETE, sourceadfbdd45911e1cf946ccd89bbc724af2210198df,
 root /tmp/astra_actual_reader_audit_20260914_attempt1; guardians375403/375404,
@@ -21959,7 +21959,7 @@ updated child on its own new reader errors. This follows your requested loop,
 not a new inventory or custody prerequisite. Existing source hygiene stays;
 independent review and paper updates run alongside it.
 
-[Builder] 2026-09-14T12:49Z prospective four-cell repair, NOT LAUNCHED at this
+[Builder] 2026-09-14T12:48Z prospective four-cell repair, NOT LAUNCHED at this
 entry: node2GPU0SFT_SELECTED,1SFT_UNIFORM,2LOSS_OFF_SELECTED,3LOSS_OFF_UNIFORM,
 each100updates with shared1memory/1behavior/2new batch and identical within-pair
 initial adapter. Selected pointers[1,3,3]and[1], uniformall4. Exact design at

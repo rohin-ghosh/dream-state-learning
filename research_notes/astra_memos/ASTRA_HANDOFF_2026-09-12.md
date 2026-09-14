@@ -1,6 +1,36 @@
 # Astra restart handoff — September14,2026,02:49UTC
 
-## CURRENT OVERRIDE — September14,2026,12:26UTC
+## CURRENT OVERRIDE — September14,2026,12:48UTC
+
+Mission INCOMPLETE; continue four-cell selected-reader repair, not completed jobs.
+SEQ239 both200update lesson fits and parent-free AFTERs COMPLETE. Classifier
+7/16→SFT16/16 vs loss-off7/16, routing3/4both, old8/8both; newexact1/4vs0/4,
+field-level node/receipt errors, no blanket forgetting or readiness claim.
+Lesson adapters fully preserved locally; Maxwell independent memo released.
+
+SEQ240 both actual-reader audits COMPLETE onnode2, root
+/tmp/astra_actual_reader_audit_20260914_attempt1; sourceadfbdd45911e1cf946ccd89bbc724af2210198df.
+SFT5/7classification, source-pointers[1,3,3]; loss-off1/7,pointers[1].0fits.
+Different reader stimuli, not isolated policy accuracy contrast. Independent
+actual capture/replay is Maxwell's current task. All prior Main jobs terminal.
+
+NEXT prepared NOT LAUNCHED: gpu/astra_selected_reader_repair.py plus train/guard,
+datedselected_reader_repair_design.md. Four cells node2GPU0/1SFTSELECTED/UNIFORM,
+GPU2/3LOSS_OFFSELECTED/UNIFORM after physical+CVD checks and CPUsource replay.
+100updates/cell, same-state initial adapter, shared memory+behavior/new mix,
+duplicate-preserving actual pointers; shared behavior includes62lessonrows even
+for formerLOSS_OFF. Fresh AFTERs repeat classifier,recall,routing,retention and
+classify updated child's new actual reader replies; no automatic subsequentfit.
+Kant owns driver tests and released trainer; Main driver/guard/source/log/launch;
+Goodall bounded terminal reducer/tests; Maxwell actual evidence read. Carson's
+six writing files released throughSEQ239/current actual audit, not repair results.
+CPU25tests pass, driver integration pending. Source commit/root/PIDs follow.
+Do not touch unrelated dirtyrules or untrackedSeptember13junctiondraft.
+Node1 no newwork; expiresSeptember14 23:14UTC, mirror previously reportedcomplete.
+Node2expiresSeptember21 08:43UTC; keep6hourmargin. Local evidence under
+gpu_artifacts_local (VM/tmp low space). Use unique dirs, preserve all attempts.
+
+## Historical superseded override — September14,2026,12:26UTC
 
 Mission INCOMPLETE. Latest completed manuscript/companion evidence throughSEQ236.
 SEQ237 closes all same-error selection variants without fit: original and audit
