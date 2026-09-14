@@ -22013,3 +22013,14 @@ Integrity: initial adapter b82490d3… in the entry = collect loaded_adapter_sta
 Other re-derived: supervised tokens SFT 15115 vs loss-off 12538, reference 15115 both (lesson_supervised_presentations 400 vs 0; memory 200, cue 200, lesson 400 presentations both arms); MASKS.json sha 438f5f32… identical in both arms; new_task/PANELS.json equals the RESULT.json panels for the seven new-task panels it holds (OLD_RECALL panels live only in RESULT.json). Integrity: both train adapter_state_before = loaded_adapter_state b82490d3… (= the SEQ-238 entry's shared initial adapter); adapter_state_after db3f213b… (SFT) / 42c8a7e2… (loss-off) each equals its AFTER loaded_adapter_state_sha256; each AFTER's training_result_sha256 equals sha256sum of its arm's train/RESULT.json (434774fa… / 1ad29835…); both train and AFTER lesson_result_sha256 equal sha256sum of collect/RESULT.json (93d20d7c…); frozen_base_unchanged true throughout. Guardian PIDs 373006/373007 and source revision f20a8cb6 are not RESULT.json fields; not re-derived. Weight files not hashed.
 
 Scope note, copied from the builder: the predeclared narrow classifier criterion, NOT H1/H2 or generic learning-policy readiness; one child, one seed, one task family; DEV coached with parent present, HELD parent-free; A2 strict recall drop under independent field-level diagnosis, no claim of retained recent memory. Remaining unread result-bearing SEQs at this run: none (SEQ-237 carries no n/N counts in its first 12 lines).
+
+[Builder] 2026-09-14T12:52Z four repair cells released for launch: immutable
+sourcefbe0981c36c30590b4f640c4134cca48bf36272c,
+root /tmp/astra_selected_reader_repair_20260914_attempt1 onnode2.
+57focused/adjacentCPUtestsPASS, bashsyntaxPASS; all4actual-source nativeCPU
+preparations PREPARED_NO_MODEL after source/actor/admitted-pointer replays.
+Guards onGPUs0/1/2/3 respectively SFT_SELECTED,SFT_UNIFORM,LOSS_OFF_SELECTED,
+LOSS_OFF_UNIFORM perform physical+CVD scan before model load. Same100update
+declared recipe; no outcome-based cuts. Full command in source/gpu/
+astra_selected_reader_repair_guard.sh; max7440seconds/cell including freshAFTER.
+No jobs killed. Guardians and actual start status follow immediately.
