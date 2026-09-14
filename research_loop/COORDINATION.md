@@ -25196,3 +25196,35 @@ Why it was held: under the enterprise Codex policy, curl/wget-class tools are he
 **Old thread (21:54Z):** all bounded work complete; six canonical drafts published through SEQ-266; every GPU released; agents closed; it will not overwrite BOARD.
 
 **Fleet:** all 32 GPUs idle at the poll (W1 workers preparing protocols; none admitted yet). VM: memory available 8.7 GB (was 1.5 GB — the cure batch's workers ended), swap still full, root 2.6 GB free, /data 15 GB; astra_nudge=1 fable_fill=1 courier_vm=1, heartbeat 3 s; astra Pursuing goal / Working. Laptop chains 4/4. Node-1 lease ends 23:14 UTC (~1.1 h); mirror complete; node 1 receives no new work. Rohin (message 77): the fresh thread stays on the VM, continuously. Nothing launched or killed by the watcher; one approval pressed (notice above).
+
+## [Worker PERSIST-CODE] 2026-09-14T22:07:11Z — preGPU, no native launch claimed
+
+W1 intake/conditional9a9593af; invariant-preserving L1 persistent-code screen.
+Exact source3766915f6adb67f5d902eeeae6f0a85456fadd79 published; locally on/data
+packaged archive8f66f9b3dd99e331d03a0366669fb3ce1c4f9c822a5ce81ec3cd683f12ea82d6
+matches A100. CPU22/22PASS (0.21s), guard bash-nPASS; source-byte/remote-UID
+regression included. Protocol research_notes/analysis/orch_persist_code_protocol.md.
+Portable local base/tokenizer/adapter inventories PASS both prepare arms;
+RICH receipt0e6baf4287d99e094b08dfe22fba64192c53ad0a633b5eb2b7a857e43e3af915;
+TERSE d3a1b683f72c51b0b4a0066d5690086c23bf4c5d8edab536bc1a21fe48820d69.
+FrozenQwen2.5-7B/37ec readonly; only own native calls; zero fits/updates.
+
+A1004=GPU-31583768-d90f-520c-51ed-5dac761526d0 RICH;
+A1005=GPU-c1650c7f-ac26-f1a0-2ab8-c7354a6f27c9 TERSE.
+Root /localhome/local-rohing/data/orch_persist_code_20260914_attempt1 (A100
+has no/data mount; local archive is on/data). New source directory3766915f;
+old prelaunch source and failed physical scans retained. Earlier scans found
+no GPU owners but correctly rejected transient unreadable SSH environments.
+Guardian must obtain fresh clear physicalUUID/PID+/proc-CVD admission, with
+bounded retries, before either native load; unresolved means no launch.
+Actual lease end2026-09-27T05:05Z minus6h; each arm1800s inclusive ceiling,
+max48calls,8fixed L1tasks,<=6turns,<=1536input+512generated; RICH150–400
+first-person narrative tokens. No other slot, owner kill or process-name kill.
+
+Deterministic independent oracle plus whole-text semantic review, no keyword
+proxy. Child-generated repairs/records only; parent/scaffold text absent from
+stored student prefixes, no authored behavior corpus or automatic admission.
+New L2/L3 family identifiers remain proposal-only/unmined, sent Main for Rohin.
+Own failed push stopped progress until shared history was merged/pushed;
+this preGPU note must also publish before guardian launch. Main runs no cell;
+no PI/reader wait after publication. No result SEQ reserved.

@@ -97,3 +97,18 @@ the same transient and passed detached scans. Bounded admission retries keep
 all reports and do not waive unresolved ownership. Non-material prelaunch
 repair also checks archived source bytes rather than host-specific UID/GID;
 its regression test prevents cross-host metadata from faking source drift.
+
+## 2026-09-14T22:07:11Z — preGPU ready for publication
+
+22CPU tests PASS; final source3766915f, archive8f66f9b3, both current portable
+prepare receipts PASS. Exact preGPU paragraph appended to COORDINATION under
+new explicit Main permission. Failed push was respected: no launch; shared
+merge b525a7ec then push verified source reachable. Fresh admission remains
+fail-closed and will execute in detached guardian. Native launch/PIDs follow
+only after this notebook paragraph publishes. No result SEQ reserved.
+
+Timestamp correction disclosure: an initial journal heading said21:57 at
+21:55, and another said22:05 at22:02. Both were corrected during prelaunch
+editing; original bytes remain in tool/history artifacts. They were NOT
+native launch/test timestamps. This disclosure preserves the error rather
+than representing the preliminary estimates as actual observation times.
