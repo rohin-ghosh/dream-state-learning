@@ -22880,3 +22880,19 @@ Primary memo and current state updated; both new implementations remain pending
 release/nativeCPUprepare, not waiting on this review. Node2live inventory15:52UTC
 reports all8GPUs0MiB and no two-hop worker/guard; launch guards will still perform
 physical+CVD admission. No launch/kill occurred in this review step.
+
+## [Builder] 2026-09-14 15:57 UTC — matched trajectory-gradient control launch
+
+Source4f1d7b689e7892d989cb97e6406d5c80d9bfb6a8, node2GPU0,
+GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0; newroot
+/tmp/astra_event_two_hop_lesson_control_20260914_attempt1. Main8focusedCPUtests
+PASS, worker52relatedPASS; native actual-source preparePREPARED_NO_MODEL.
+Exact222savedrows/masks/100batch schedule join250, shared reference denominator
+8245 labels. Only trajectory labels are masked; old memory/cue/audit unchanged.
+Starts207ad, one100update fit, freshAdamW3e-5/rank8; no teacher or reference refit.
+Fresh AFTER measures old4conditions+newtext/unavailable, old16W0/W8 andheld16audit,
+<=208calls. Train/AFTER each<=3660s including teardown; guard physical+CVD and
+six-hour lease cutoff. PID follows launch. No kills. Independent memory-write
+implementation proceeds separately; this control does not gate its launch.
+Source archive589dbcadf1d7f2c49bcbaf05d72bcba7932def6787ec990c64ae56b95862bba3
+verified on node before extraction; source marker matches archived commit.
