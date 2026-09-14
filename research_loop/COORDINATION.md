@@ -24718,3 +24718,36 @@ SEQ265 preserves the observed6/16vs4/16goals with tied pairs and unequal spend;
 the late P46 index is distinct from its prospectively published protocol.
 Next decisive work is the matched terminal comparison, not further custody
 or parser redesign. Mission remains ACTIVE/INCOMPLETE.
+
+## [Fable VM result read] 2026-09-14T20:47Z — SEQ265 VERIFIED; SEQ264 content review (Builder -> Rohin / Fable, "one qualified episode") VERIFIED
+
+Read-only re-derivation; nothing launched, stopped or edited. Highest previously read: SEQ264 (20:18Z entry, which also verified the then-unnumbered critique/repeat terminal). SEQ263 remains outside the mechanical result-bearing test (no n/N in its first 12 lines), as recorded at 20:18Z.
+
+**SEQ265** ("[Builder] SEQ265 critique/repeat terminal independently checked") — A100 root `/tmp/astra_self_critique_repeat_20260914_attempt1`, per-arm RESULT.json; plus node 3 root `/tmp/astra_goal_quality_train_20260914_attempt2/baseline`.
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| initial goals; pairs | 4/16; 0/8 | 4/16; 0/8 (`summary.goals` 4, `pairs` 0) | common_initial/RESULT.json (sha 6ce60c01…) |
+| critique goals; pairs | 6/16; 1/8 | 6/16; 1/8 | critique/SELF_CRITIQUE_REVISE/RESULT.json (sha dc50ef79…) |
+| repeat goals; pairs | 4/16; 1/8 | 4/16; 1/8 | repeat/REPEAT_NO_FEEDBACK/RESULT.json (sha 36dfdf77…) |
+| calls | 25+54+48 | 25/54/48 (`model_calls`; `CALL_*.json` files 25/54/48); role_calls actor 25 / 38+16 / 32+16 | the three RESULT.json, arm dirs |
+| six-turn candidates; fits | all zero; none | `fits` 0, `updates` 0 in all three arms | the three RESULT.json |
+| native exceptions | none (parsing failures only) | `native_errors` 0 in all three arms; stops: initial callback 9 / dead_end 3 / reached_goal 4; critique callback 8 / invalid_route 2 / reached_goal 6; repeat callback 8 / dead_end 4 / reached_goal 4 | `summary.stops` |
+| quality BASELINE calls; RESULT sha | 944; c2fe5b47… | 944 (`model_calls` 944; `CALL_*.json` 944; status COMPLETE); sha c2fe5b4735ea7252fff27e7ea777093e798df882f57262ab0391ad91b6b671a2 | node 3 attempt2/baseline/RESULT.json |
+| V3 shards 0–1 partial review | 30 episodes / 180 turns: 100 PASS / 48 FAIL / 32 U, zero qualified | 30 / 180: 100 / 48 / 32, all-six-PASS 0 | research_notes/analysis/2026-09-14_rich_v3_content_review.json (sha cc1e7d9f…) |
+
+Integrity: `source_commit.txt` 3b1b07c324d4… matches entry's 3b1b07c3; `loaded_adapter_state_sha256` 37ec3788… in all three arms and in the quality BASELINE RESULT.json. Independent memo 2026-09-14_self_critique_repeat_independent_result.md table reads 4/0, 6/1, 4/1 with 25/54/48 calls and 127 total, matching. Capsule sha 23ddf8f0… not re-derived (no capsule file located under the root listing). FULL/LOSS_OFF progress figures (893/890 of 2928) are live observations, not re-derived.
+Scope (builder's own limits): same 127-call experiment as the unnumbered terminal, one bounded source, 16 tasks / 8 pairs per arm, zero fits, "no learned reflection or grounded-memory-use benefit established".
+
+**SEQ264 content review** ("[Builder -> Rohin / Fable] SEQ264 full content review, one qualified episode") — VM label artifacts under research_notes/analysis/ (no node files involved).
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| reviewed population | 56 episodes / 336 turns | 30+26 = 56 episodes; 180+156 = 336 per-turn `decision` labels | rich_v3_content_review.json, rich_v3_content_shards23_review.json |
+| original primary labels | 195 PASS / 108 FAIL / 33 U, zero all-six-PASS | 100+95 = 195 PASS; 48+60 = 108 FAIL; 32+1 = 33 U; all-six-PASS episodes 0 | same two files |
+| adjudication | shard1 TRAIN-B/task1 call030 U → PASS, six pass | that episode's turns (calls 30–35) = [U, PASS, PASS, PASS, PASS, PASS] in the primary file; adjudication memo changes CALL_030 only | review.json; 2026-09-14_rich_v3_content_review_adjudication.md (sha 024f9ad8…) |
+| derived totals | 196 PASS / 108 FAIL / 32 U, ONE qualified, 1/56, 1/64 | 195+1 / 108 / 33−1 = 196 / 108 / 32; qualified 1 of 56 candidates (64 attempts per SEQ264 read at 20:18Z) | derived from the above |
+| artifact hashes | cc1e7d9f…, 8f4ba727…, 024f9ad8… (rollup) | cc1e7d9f85158d60…, 8f4ba727bde65ee1…, 024f9ad8beb8476f… | sha256sum of the three files |
+
+Integrity: shards 2–3 file summary 95/60/1 and shards 0–1 file summary 100/48/32 match their per-turn recounts; rollup table rows (30/180/100/48/32; 26/156/95/60/1; 56/336/195/108/33; 196/108/32/1) match. Fixed-sample 19/24 agreement and "six remain excluded" not re-derived. Zero opposite-goal pairs for the one qualified episode not re-derived.
+Scope (builder's own limits): content review only, no fit, fit_ready=false unchanged, "does NOT authorize a tiny fit or show a learned richness benefit"; the withdrawn 6/12-row proposal stays withdrawn.
