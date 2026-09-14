@@ -1,5 +1,42 @@
 # Astra restart handoff — September14,2026,02:49UTC
 
+## CURRENT OVERRIDE — September14,2026,08:30UTC
+
+This block supersedes every older live-status block. Main resumed and fetched;
+origin/main agrees through e5b6ff81. Preserve unrelated dirty GPU rules and
+untracked two-sleep-junction draft. Full campaign and manuscript remain incomplete.
+
+- SEQ-213 outcome SFT completed: 42 recovery-only rows, 256 updates, routes
+  0/8→4/8, canaries16/16→4/16, five of ten criteria. Not qualified BIRTH.
+  SEQ-216 fresh-process reload exactly reproduces139captures and metrics.
+  Both successes and failures persist. See outcome_sft_first_result analysis.
+- SEQ-215 own-EVENT FINAL_LF_ONLY condition completed: W0/W8 recall0→4/4,
+  unseenMISS4→0/4, all strict ROUTE panels0/4 for omitted LF. Post-hoc port
+  content: native2→2/4; supplied-own-reads2→4/4; ceiling3→3/4. No latent-hop
+  impossibility claim. Complete local preservation verified in
+  gpu_artifacts_local/astra_microloop_lf_first_result_20260914/.
+- A4 frozen-D2/V2-guidance collection COMPLETED at08:20UTC on node2:
+  /tmp/astra_stage2a_d2_v2_collect_20260914_attempt1/run. All32episodes,
+  100calls, four successes,30rows. Euclid owns fresh branch analysis only;
+  no fit selected yet. Guidance/worlds differ from A3: not an isolated balance test.
+- Main implemented gpu/astra_experienced_event_read_route.py: zero-fit
+  BASE/BASE, FITTED/FITTED, FITTED/reader-OFF, same four exposed tasks;
+  self-issued READs, at most3actor+2reader calls/task, max60calls overall.
+  Helmholtz owns pure controller/tests and reviews wrapper; main owns launches.
+  20focusedCPUtests pass. NOT LAUNCHED at this timestamp. GPU4 node2 physically
+  free08:29; scanner refused a transient unreadable sshd PID338000, so rerun
+  the existing delayed detached guard after SSH exits, without weakening it.
+- Main answered Rohin59–61 in notebook and compiler_memory_access_response_60_61.
+  In-context memory use is next; no implicit weighted multi-hop prerequisite.
+  Teacher instructions must be absent from student inputs. Never reuse sealed
+  evaluation feedback as parenting/training data. Node1: no new work; expiry
+  September14 23:14UTC. Node2 deadline September21 08:43UTC, six-hour margin.
+
+Next: finish/launch bounded contextual-access diagnostic, inspect A4 branch
+coverage and masks, prospectively choose next outcome-corpus comparison,
+analyze actual terminal outputs, and update this state. Do not restart completed
+fits or expand doses on failed declared recipes.
+
 ## CURRENT OVERRIDE — September14,2026,07:38UTC
 
 Live reconciliation supersedes the launch-status details immediately below:

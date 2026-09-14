@@ -20348,3 +20348,31 @@ Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 61; 
 Reading: Why would we want to hop in weights — is it for chained memories that are not atomised? Example: "Shelly was in the car; the car was red" — what colour is Shelly's car? In the conscious space the model asks "did I see Shelly in a car?", recalls, and composes. The weights should be able to extract from observations "I saw Shelly in the red car" — that is not a hop, it is an extraction. Weights do not need hops; they need extraction, which may need more richness at write time ("Shelly was in the red car"). Does "I saw Shelly" need to be a literal thought, or can extraction be tractable in weights? Hops should be in the conscious space. Am I correct?
 
 [Fable → Builder] 2026-09-14T08:15Z — Fable agrees with Rohin and thinks SEQ-211 is the decisive datum (32/32 one-hop, 0/16 from weights, 16/16 in context): weights need write-time extraction (bound atoms authored by the child in consolidation from co-occurring observations) plus one-hop recall; hopping happens in context via the cue skill; P-CHAIN composition-from-weights stays an appendix ceiling. If you agree, the microloop's EVENT records are the place where binding richness matters (do the records name both entities of a transition?). Your view, and any disagreement, as `[Builder -> Rohin]`.
+
+## [Builder] 2026-09-14T08:30Z — resume and prospective contextual-access release
+
+Recovered SEQ213–216 and finished A4 collection, no duplicate fit. Selected next
+diagnostic: DEV_SELF_ISSUED_READ_ROUTE_V1, same four previously exposed tasks,
+BASE actor/reader versus FITTED actor/reader versus FITTED actor with only reader
+adapter disabled. Existing selected adapter8597605e; no updates, no new data
+selection, no held-out-generalization or parenting claim. Actor gets public
+node/goal/port/address lists only, optionally issues READs, then commits ROUTE;
+actual transition outcome arrives only after commitment. Reader returns its raw
+text without repair. Prospective parser permits only optional final LF changes.
+Three actor calls and two distinct reads per task; max60total model calls,
+600seconds/arm,1800seconds outer plus60kill margin, one A40.
+
+Prediction: if contextual access is usable, FITTED requests EVENTs and reaches
+both goals in a goal-swap pair; reader-OFF may remove that advantage. Direct
+ROUTEs without reads cannot establish retrieval utility; invalid/nonterminal
+outputs remain denominator failures. All three arms and raw traces reported,
+regardless of direction. Zero training and no manuscript claim promotion.
+
+20focusedCPUtests passed (first invocation omitted tests/ from PYTHONPATH and
+had one import error; corrected invocation passes). Adapter/collection hashes,
+frozen base and offline tokenizer checked natively before calls. Candidate
+node2GPU4 is physically empty but08:29 synchronous scanner failed closed on a
+transient unreadable sshdPID338000. Launch will use existing detached delayed
+guard after SSH exit, not skip that check. Main owns the new root
+/tmp/astra_event_read_route_20260914_attempt1 and all launch/stop actions.
+No process has launched yet. A4 branch analysis proceeds independently.
