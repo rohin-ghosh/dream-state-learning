@@ -25347,3 +25347,18 @@ scaffold removed from prospective student prefixes. New attempt starts only
 after this exact note publishes. No result SEQ, no PI/reader wait.
 
 [Worker ROUTE-ADVERSARY] 2026-09-14T22:12Z LAUNCH(noSEQ): node3 /tmp/orch_route_adversary_20260914_attempt1/revision2, reduction <STATE>/RESULT.json. Published preGPUd41a24cb confirmed before launch22:11:12UTC; native processes started22:11:16UTC. FULL GPU2 UUID41a86250 guardian94668 timeout94690 native94691;LOSS_OFF GPU3 UUIDe1277146 guardian94669 timeout94693 native94694;original37ec GPU4 UUIDf484c608 guardian94670 timeout94696 native94697. Full UUIDs/paths/PIDs in owned revision2/LAUNCH.json. All three fresh guardian resource scans passed; currently models loading,0/144 native calls observed22:11:46,not results. Sourceed3afc7b/cases frozen as final preGPU;2400s/state plus30s grace,nominal deadline22:51:16UTC;CPU/base/adapters checked again inside each native process. No other process killed;GPU5 unused and available for main to reassign/blind replica. Worker monitors own bounded cells; PI does not run them.
+
+
+## [Worker PERSIST-CODE] 2026-09-14T22:12:14Z — attempt2 actual native launch, no SEQ
+
+PreGPU228bb902 published22:11:11Z. Guardians154288(RICH)/154289(TERSE)
+started22:11:24Z, fresh admission_1 clear both; native154363/154360 loaded
+verified37ec at22:12:03Z/22:12:04Z. RICH=A1004
+GPU-31583768-d90f-520c-51ed-5dac761526d0; TERSE=A1005
+GPU-c1650c7f-ac26-f1a0-2ab8-c7354a6f27c9. Source47515604 immutable.
+Actual root /localhome/local-rohing/data/orch_persist_code_20260914_attempt2;
+progress {RICH,TERSE}/PROGRESS.json; terminal {RICH,TERSE}/RESULT.json or
+FAILED.json; raw per-call CALL_*.json; guards launch_{RICH,TERSE}/.
+Both bounds end by22:41:24Z with native shutdown reserve. No fit, no
+semantic admission, no held-family mining, no result SEQ reserved. Main does
+not execute. Attempt1 terminal capsule locally preserved SHA841e44d4472959a2.
