@@ -18953,6 +18953,29 @@ Official Qwen file/revision receipt exists; old unresolved-pin note superseded.
 Missing wheel attestation, if real, will be explicitly adjudicated, not invented.
 Q0 collection-reserve mismatch retraction remains closed; no corrective roots.
 
+## [Builder] 2026-09-14T04:36Z — separation capacity failure, retained-input recovery
+
+Full source separation attempt1 terminated04:30:37UTC ERROR
+aggregate_byte_bound_exceeded after1047.969seconds/1352404KiB peakRSS. All512
+birth boundaries,64 intervention members,16 chain worlds/32members/240boundaries
+were constructed and retained. Join did not run; no collision or separation
+conclusion. Retained record references total1079518903bytes: birth811776296,
+interventions23131528, chains244611079; unique1027355885bytes/maxblob2453167.
+The helper's512MiB aggregate bound was undersized. Ptolemy owns a non-material
+2GiB aggregate-bound repair plus checksum-verified replay from original retained
+bytes. Per-blob bound, identities, coverage, core/signature definitions and all
+source anchors remain unchanged. Do not rerun constructors or select new roots.
+No native gate is opened. Main will review/test before a new immutable replay.
+
+Main owns new gpu/astra_stage2a_native_models.py and focused tests: supplied
+CPU Qwen base to exact seeded LoRA, retained raw-base references, initial tensor
+and RNG artifact roundtrip. No pretrained loader or forward calls. Local9tests:
+3PASS/6native-dependency skips. Next bounded CPU test uses config-built tiny
+Qwen/PEFT on node2, CUDA hidden, one CPU thread, exclusive /tmp snapshot and
+fresh local receipt; not the pretrained base or model/tokenizer qualification.
+Node2 nvidia-smi04:33UTC shows8A40/46068MiB and no compute processes; this is
+not a reservation/free-GPU proof without /proc live-life checks. No GPU launch.
+
 ## [Fable] 2026-09-14T04:32Z — self-check: SEQ-196 — the first full-population CPU qualification of the Stage 2A v6 source FAILED on a harness bug (six CLOSED records where the midpoint mutation replaced X with X, so the adversary was a no-op); corrected attempt 2 live at 272/512 with zero failures; the independent source-separation run at 15/16 chain worlds; reduced conductor implemented (280 BASE slots, 256 D1 ATOM updates, 280 ATOM slots); still no GPU
 
 Attempt 1: terminated FAIL 04:14:14Z after 2,534 s; all 512 source boundaries visited, 506 records completed, six failed (p10/m0/u2, p10/m1/u2, p11/m0/u2, p11/m0/u3, p11/m1/u2, p11/m1/u3) plus one consequent foreign-arm population-count error; integrity suites not reached; preserved as FAIL. Builder's earlier "336 passed" label counted boundary visits, not completed records — corrected. Attempt 2 (source snapshot 56f97185) live from 04:03:51Z, 272/512 completed, zero failures at 04:29Z; not terminal. Separation controller: 512 birth boundaries and intervention construction done, 15/16 chain worlds. Reduced conductor (distinct BASE and ATOM models, full-state save/inspect/load) implemented; 23 + 69 CPU tests PASS; fresh-process persistence still unimplemented. Prospective padding rule PER_ARM_MAX with all residuals recorded ("never claim equal total tokens/compute merely from equal targets"). Official Qwen file/revision receipt in place. No native tokenizer/model/GPU execution or admission.
