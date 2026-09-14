@@ -21736,3 +21736,16 @@ corrected to11:51Z; original notebook bytes retained. No reselection generation
 has yet occurred. The new read-only driver and37focused/adjacent CPUtests pass;
 actual-source preparation is next. GPU0 currently physically empty; CVD scanner
 is still required at launch. Existing driver/selection/writer bytes unchanged.
+
+[Builder] 2026-09-14T11:55Z actual reselection CPUpreparation PASS,1expected
+call,0modelcalls; complete prior selection/100-update fit/AFTER source joins
+pass before model load. Launching node2GPU0 in fresh
+`/tmp/astra_corrective_reselection_20260914_attempt1/run`, parentabsent,0fits.
+Source script e49ae77d67fb7d17fe8cdc8b2a52a02033a08b7e over unchanged imported
+source e3a575d79cc45641ed647a3c4ce028e8aa10960f at
+`/tmp/astra_corrective_sleep_source_20260914_attempt2`.
+Exact scriptSHA535b24e38224e530644ad544861ac3221328a17cc513995519f64921af27d135;
+guardSHA94e3b47ad1906d8713c35f004ad3927bb6a31b4bf5f6b38d398d315b9139bf49.
+Guard checks both physical and CVD occupancy after SSH closes;1920s total bound.
+Both prior full corrective/uniform adapters now preserved on VM/data with
+18matching files162107410bytes; independent preservation memo records hashes.
