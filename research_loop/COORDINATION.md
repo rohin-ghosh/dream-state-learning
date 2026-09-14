@@ -24839,3 +24839,27 @@ orchestrator receives this finalized comparison and all releasedGPUs,not live
 arms. Message74's launchhold remains in force; no newthread was started here.
 Schrodinger updates the sixdrafts whileRamanujan checks the raw outcomes.
 Mission remains ACTIVE/INCOMPLETE; the current arms are complete, not H1/H2.
+
+## [Fable VM result read] 2026-09-14T21:47Z — SEQ-266 VERIFIED
+
+Read-only recount of SEQ-266 from the preserved archive on this VM, `gpu_artifacts_local/astra_goal_quality_train_terminal_20260914_attempt2/` (`quality_attempt2_terminal.tar.gz`, `extracted/`, `REDUCTION.json`). No node connection was needed: the entry names no `/tmp/astra_...` root, and node 3 GPUs 0/1 are released. SEQ-259..265 have no `## [Builder] SEQ-` heading, so SEQ-266 was the only candidate above SEQ-258.
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| Held OWN_TEXT pairs (BASELINE / FULL / LOSS_OFF) | 2/32, 30/32, 1/32 | 2, 30, 1 (of 32) | REDUCTION.json states.*.metrics.PROBE_OWN_TEXT.pairs |
+| Held OWN_TEXT goals | 33/64, 62/64, 26/64 | 33, 62, 26 (of 64) | ...PROBE_OWN_TEXT.goals; taskwise rows correct=True: 33, 62, 26 of 64 each |
+| Worlds with a correct pair | 2/16, 15/16, 1/16 | 2, 15, 1 | ...PROBE_OWN_TEXT.worlds_with_pair |
+| UNAVAILABLE pairs | 0/32 each | 0, 0, 0 | ...PROBE_UNAVAILABLE.pairs |
+| UNAVAILABLE goals | 3/64, 23/64, 0/64 | 3, 23, 0 (taskwise: 3, 23, 0 of 64) | ...PROBE_UNAVAILABLE.goals; taskwise |
+| Four fixed TRAIN worlds, pairs | 2/8, 8/8, 1/8 | 2, 8, 1 | ...TRAIN_OWN_TEXT.pairs (4 worlds each) |
+| Old W0 / W8 / audit | 16/16 each, all arms | 16/16, 16/16, 16/16 in all three arms | states.*.old_recall, states.*.audit |
+| Original / previously fresh graph goals | 3/4, 4/4, 2/4 each | taught 3/4, 4/4, 2/4; previous_fresh 3/4, 4/4, 2/4 | states.*.taught, states.*.previous_fresh |
+| SHARD-1-BLOCK-0-PROBE-A under FULL | 0/2 pairs | pairs 0, goals 2 (task_correct T,T,F,F) | states.FULL_TARGET.worlds |
+| Inference calls | 2836 total, 944 baseline | 944 + 960 + 932 = 2836; CALL_*.json files in extract: baseline 944, FULL_TARGET 960, NEW_TRAJECTORY_LOSS_OFF 932; inventory.json same | extracted/.../{baseline,FULL_TARGET,NEW_TRAJECTORY_LOSS_OFF} |
+| Updates | 2928 both arms | 2928, 2928 | training.*.updates |
+| Labels | reference 238274; active FULL 238274 vs control 173814 | 238274 / 238274 / 173814 | training.*.reference_labels, active_labels; train/DOSE.json 238274 and 173814 |
+| GPU hours | 3.644 | 3.644000 (sum of assigned_seconds over 3 readouts + 2 fits) | REDUCTION.json states + training |
+| Archive SHA | 0152cafb... | 0152cafb69aa7715b5f4fbb15caa4954f03c62c1f3c063883ed9c17c9aa00deb | sha256sum quality_attempt2_terminal.tar.gz; preservation.json, 9315 entries |
+
+Integrity: source commit 7f9d4251 = REDUCTION.source_commit 7f9d4251ae1f...; protocol 1683ca25 = protocol_sha256 1683ca25...; both arms start state 37ec = states.BASELINE.state 37ec3788...; FULL saved state e226cea2 = training.FULL_TARGET.state and FULL_TARGET/after/RESULT.json adapter_state_after e226cea2...; control 4f0dccf5 = NEW_TRAJECTORY_LOSS_OFF.state and its RESULT.json adapter_state_after. Per-arm RESULT.json sha256 (53756fd0 FULL, 6f50d5ba LOSS_OFF, c2fe5b47 baseline) equal REDUCTION states.*.result_sha256. Model-call check: 2836 CALL files = checks.all_call_files_verified 2836. The arm RESULT.json files carry no `physical_model_calls`/`adapter_sha256` keys (None), so those two named fields could not be read directly; call counts were taken from the file count. The "1674 inputs" figure was not located in the archive and is not re-derived. `engineering_target_met` is false in REDUCTION.json and in every arm, matching the entry's "frozen conjunction still FAILS".
+Scope (builder's own limits): one recipe, one seed per arm, one task family; TRAIN diagnostics cover four fixed worlds, not all 61 eligible TRAIN worlds; selected 944-call baseline (2/32), not the legacy 0/4 prediction; no independent episode-level review yet (Ramanujan pending).
