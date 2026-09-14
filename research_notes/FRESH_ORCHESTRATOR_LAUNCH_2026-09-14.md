@@ -1,4 +1,4 @@
-# Fresh orchestrator thread — launch pack and prompt (FINAL DRAFT v2 for Rohin's last check; Fable, 2026-09-14 ~21:00 UTC)
+# Fresh orchestrator thread — launch pack and prompt (v3 — LAUNCHED on Rohin's "go", message 76; Fable, 2026-09-14 ~21:50 UTC)
 
 Ruled by Rohin, message 72: "we're doing fresh Astra thread. Let's plan that first." Decisions taken in message 73
 (section E). Nothing launches until Rohin says run. The current Astra thread keeps its running arms and hands over
@@ -34,10 +34,13 @@ research_notes/astra_memos/ASTRA_FRESH_ORCHESTRATOR_HANDOVER_2026-09-14.md.
 
 ### C.0 One-line goal (for `/goal`)
 
-Run an adaptive, communicating swarm of hypothesis workers on the free GPUs to build the level-1 good-behaviour
-dataset at scale and richness on content-bearing gyms, and close the level 1 → level 2 connection — a parent-free
-child whose held-probe behaviour improves across sleeps against a frozen twin — by the ICLR abstract deadline
-2026-09-18 (paper 2026-09-25).
+Run an adaptive, communicating swarm of hypothesis workers on the free GPUs to (1) initialise, by outcome-and-richness-gated
+fine-tuning on the child's own trajectories, the behaviours a parent-guided experience → reflection → consolidation loop
+needs (grounded reasoning, feedback use, revision, reusable records), using off-the-shelf verifiable gyms immediately while
+configuring our own, and (2) demonstrate that repeated guided cycles produce retained improvements on fresh tasks with the
+parent absent at evaluation, against a frozen twin and an unparented twin, with dependence on parenting measured across
+sleeps — the level 1 → level 2 connection — inside a 5-day all-out sprint (ICLR abstract 2026-09-18; heavy experimentation
+done by 2026-09-19).
 
 ### C.1 The prompt
 
@@ -55,7 +58,13 @@ minimum to answer." "Outcome success should be richness and outcome success as w
 richness, not just ceiling." Hops happen in context over what the child reads; the weights hold extracted atoms and
 behaviours. Parenting (levels 2–3) is training the closed loop by running it under guidance; level 4 is deployment.
 The paper's claim: a child raised this way learns faster from its own experience on an unseen verifiable task than
-the same model without it, and the gap depends on continued sleep.
+the same model without it, and the gap depends on continued sleep. Rohin's reframing of the immediate target (message 76,
+endorsing a forwarded review): level 1 initialises the behaviours a PARENT-GUIDED experience → reflection → consolidation
+loop needs — grounded reasoning, feedback use, revision, reusable record generation; level 2 shows that repeated guided
+cycles produce retained improvements on fresh tasks with the parent ABSENT at evaluation; the later autonomy test shows the
+child sustains the loop with less or no parenting. Parent-free collection is that later test, not a launch requirement —
+"requiring parent-free collection and compilation from the outset could reject a promising developmental mechanism simply
+because the child still needs the guidance you intended to provide."
 
 **2. Orientation — what each level has shown and what good data is** (details in SUCCESSES_AND_LAWS). Level 0 (the
 mechanism, one child, DEV scope): facts acquire at ~200 varied presentations in first-person query form (50 in one
@@ -126,19 +135,25 @@ Keep portfolio diversity; shift strongly toward a branch only after evidence cha
 - *Integration:* every ingested result updates RESEARCH_STATE first, then the board, then the next allocation.
 
 **6. First wave — initial portfolio (declare within 60 minutes, first launches within 90).**
-- *Gyms with deterministic oracles and reusable structure — two workers.* (a) Unit-tested code in one persistent
-  codebase the child keeps working in across episodes, so its own records matter (episode 1 discovers a convention,
-  episode 3 needs it). (b) Checked-answer mathematics with reusable lemmas across a curriculum. What makes a pool
-  eligible: a deterministic oracle; a measured reasoning gap (the rich actor's outcome beats the terse actor's on the
-  pool — "greater reasoning leads to a better outcome"); reusable structure across episodes; many distinct
-  instances; a named family so it can be held out. Declare each gym's family separation before mining (level-1
-  mining families; level-2 families; held level-3 families never touched); held identifiers inside a mined world are
-  not an untouched gym. Level-1 worlds may be solvable already — richness is the product. Not kernels yet.
+- *Gyms — start NOW with off-the-shelf verifiable environments; no GPU waits on gym engineering (Rohin, message 76: "there
+  is no excuse to wait … I don't want more procrastination").* Wave-1 gyms, each split into named families (level-1 mining /
+  level-2 / held level-3): unit-tested code sets (MBPP/HumanEval/LiveCodeBench-style with hidden tests), checked-answer
+  mathematics (GSM8K/MATH-style with exact-match or symbolic checkers), deterministic text-game environments
+  (TextWorld/ALFWorld-style), and the existing route graph under the rich contract. In parallel, two workers configure our
+  own persistent gyms where the child's accumulated records matter: (a) one persistent codebase with unit tests the child
+  keeps working in across episodes; (b) a mathematics curriculum with reusable lemmas. Pool eligibility: a deterministic
+  oracle; a measured reasoning gap (the rich actor beats the terse actor on the pool — "greater reasoning leads to a better
+  outcome"); reusable structure across episodes; many distinct instances; a named family so it can be held out. Held
+  identifiers inside a mined world are not an untouched gym. Level-1 worlds may be solvable already — richness is the product.
+  Not kernels yet.
 - *Rich data at scale — two workers.* Actor contract: a first-person turn of 150–400 generated tokens (declare the
   budget per arm) that names the record or evidence read, connects it to the requested goal, states a checkable
   expectation, then the action on the last line; inference budget ≤ 2,048 context / 512 generated per turn, ≤ 6
-  turns; the instruction that asks for it is context-distilled away at training. Gate every row by outcome AND the
-  content rubric, judged by reading the text, not by matching a heading (SEQ-263's trap). Capacity target: 5,000
+  turns; the instruction that asks for it is context-distilled away at training. Collect THREE kinds of rows: successful
+  rich traces; correction trajectories — the child makes a mistake, receives grounded feedback (parent or oracle), changes
+  something meaningful and writes a reusable lesson, with the parent's text removed from the student prefix and masked from
+  the loss and the child's response to the guidance as the target; and the child's own records for later use. Gate every
+  row by outcome AND the content rubric, judged by reading the text, not by matching a heading (SEQ-263's trap). Capacity target: 5,000
   admitted rows across the gyms by 08:00 UTC — a capacity target, not a success criterion; the metric you report is
   the distribution: rows × rubric pass × outcome pass × diversity × tokens-per-row distribution × world coverage.
 - *Fits.* For each corpus reaching ≥ 1,000 admitted rows: one matched pair (full vs new-labels-masked) sized from
@@ -146,8 +161,11 @@ Keep portfolio diversity; shift strongly toward a branch only after evidence cha
   sizing example), fresh-process readout on the held pool, retention of old facts and audits; promote survivors to
   3 seeds. Capacity target: 4 matched pairs by morning, or 2 pairs plus replications if the first results change the
   hypothesis.
-- *The level-2 test* on the first child that transfers: parent-free collect → compile → sleep → fresh readout,
-  repeated over 3–4 sleeps, against a frozen twin of the same child. The slope is the result.
+- *The level-2 test — the immediate target.* On the first child that transfers: repeated GUIDED cycles — parent present
+  during experience and reflection, masked at training, ABSENT at evaluation — on fresh tasks, read across 3–4 sleeps
+  against (i) a frozen twin of the same child (does continued consolidation help) and (ii) an unparented twin running the
+  same loop (does parenting contribute); report the slope and whether dependence on parenting decreases across sleeps.
+  Test deployments of the resulting child on held families are part of this sprint, not deferred.
 - *Compiler (secondary, do not let it block the above).* Rohin's direction: the only deterministic parts are
   formatting and projection (a down-projection before compilation); compilation itself is "reasoning for learning" —
   the same child in a consolidation mode under a sleep prompt whose outputs are context-distilled — taught, not
@@ -158,7 +176,8 @@ Keep portfolio diversity; shift strongly toward a branch only after evidence cha
 saturated whenever there are scientifically justified queued arms; idle capacity is acceptable briefly for synthesis,
 replication design, or when more parallel work would be redundant — but a declared arm waiting on a serial gate is a
 failure. Every arm has its own root, source-archive hash and guardian; batch admissions; packaging on /data, never on
-the VM root. Node 1 receives nothing (lease ends 23:14 UTC).
+the VM root; if the VM needs space, this run's needs come first — move anything else to /data (Rohin, message 76). Node 1
+receives nothing (lease ends 23:14 UTC).
 
 **8. What you do not do.** No custody, reproducibility or archive machinery before a success exists — simple
 provenance and control hygiene (root, source hash, guardian, matched control, safe ownership checks) is mandatory,
@@ -173,7 +192,9 @@ the campaign; never let a capacity target become the goal.
 **9. How you talk.** Append-only notebook entries tagged `[Orchestrator]` / `[Worker <name>]`; result entries carry
 the standard counts table and the six-field record from §5 Evidence. `[Orchestrator -> Rohin]` for anything in
 §5 Authority; then continue. BOARD.md and RESEARCH_STATE.md rewritten every cycle. Commit and push after every logged
-step. Deadline: abstract 2026-09-18, paper 2026-09-25.
+step. This is a 5-day all-out sprint: all heavy swarming and experimentation, including test deployments, done by
+2026-09-19; the abstract is due 2026-09-18 and Rohin writes the paper afterwards. Cost may double; scope is re-evaluated
+once results land.
 
 ## D. What Fable does at launch and after
 
@@ -207,3 +228,6 @@ without a control, and any promoted claim without VERIFIED; audits row richness 
 - [ ] The private repo clone and the Codex sandbox permissions for ~/dream-state-orch succeed on the VM.
 - [ ] Fable posts `[Fable — operational notice]` with the session name, checkout path and start time; the first
       `[Orchestrator]` entry is expected within 30 minutes of the paste.
+- 21:4x UTC — Rohin's message 76 ("go") applied as v3: off-the-shelf gyms immediately, level-2 target reframed to guided
+  learning with parent-free evaluation and the unparented-twin comparison, correction trajectories as targets, 5-day
+  sprint with test deployments, VM disk priority.
