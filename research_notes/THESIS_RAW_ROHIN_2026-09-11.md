@@ -604,3 +604,11 @@ Raw:
 > wait dont start eh session yet
 
 Reading (Fable): the go for the fresh-orchestrator launch (clone + tmux session), then a hold before the Codex session is started. The clone and the tmux session were created; Codex was NOT started (the launcher command never reached a shell — see the incident notice in the notebook). Held pending his word.
+
+## Message 75 — (typed, ~21:35 UTC 09-14) the VM also runs his other project (should finish soon); asks what the duplicate is, how close launch is, what to audit; wants the prompt as a distinctly named file in ~/Downloads (the copy he forwarded was judged "the same old one"); RULED: the run is on Astra (Codex), not Claude; Fable stays the watcher on the VM
+
+Raw:
+
+> oh yea the vm has my other porject runnign there not sure if thats a big deal it hsoul dbe done soon, what is the dupltiate, how close are we to ready for laucnh and what should i audit to make sure its good and gimme the pomrpt because i sent it over and i was told it was the same old one so give it a idff name put it in downlaods so ic an just accciess it uqick,     and laso i want the run to be on astra not cladue but we keep th e fable as a watcher on the vm
+
+Reading (Fable): operational. The fresh thread runs in Codex on gpt-6-astra via the codex-astra launcher; Fable remains the VM-side watcher/reader. Prompt delivered as /Users/rohing/Downloads/dream_state_ASTRA2_LAUNCH_PROMPT_v2_2026-09-14.md.
