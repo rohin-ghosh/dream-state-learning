@@ -1,5 +1,12 @@
 ## Current superseding snapshot — 2026-09-14 13:49 UTC, SEQ245
 
+LIVE 13:58:33UTC: matched replay on node2GPU0/1, guardians385258/385259,
+source5312cefb, root/tmp/astra_reader_audit_matched_replay_20260914_attempt1.
+Original SEQ239 auditors, SAME14A3stimuli each, zero fits.45CPUtests andboth
+native PREPARED_NO_MODELPASS. Outputs pending; reserve both GPUs through exit.
+Six manuscripts/companion files now committed through independently verified
+SEQ245 (804e1e77); no TeX engine, PDF/layout unverified; collaborator UNSENT.
+
 Both A3 forks and AFTERs COMPLETE; no automatic further sleep. Same shared
 SEQ241 SFT_SELECTED parent: routing1/4→4/4, newW0/W8 recall0/4→4/4,
 old12/12 retained, classifier16/16 retained. Each AFTER actual audit6/6 true,

@@ -2,6 +2,19 @@
 
 ## CURRENT OVERRIDE — September14,2026,13:49UTC, SEQ245
 
+LIVE matched replay started13:58:33UTC node2GPU0/1 guardians385258/385259,
+source5312cefb18ebbcf37bade654f553d4fcf39a0710,
+root/tmp/astra_reader_audit_matched_replay_20260914_attempt1.
+Inspect {AUDIT_SFT,AUDIT_LOSS_OFF}/RESULT.json orFAILED.json and arm.log.
+14calls/arm, zero fits, originalSEQ239adapters; third-party A3source stimuli.
+45CPUtests andnative CPUpreparePASS; orderedpromptdigest shared. Do not
+restart/retrain or reuse GPUs untilguard exits/physical+CVDscan.
+Maxwell resumed for independent terminal read, one result memo only. Kant and
+Carson closed. Six writingfiles committed804e1e77 through verifiedSEQ245;
+TeX staticchecksPASS, noTeXengine available, draftUNSENT. Uponterminal, capture
+complete root, reduce28outputs and state/promptjoins, log nextSEQ afterreconcile,
+then choose next useful data-loop action. Fullmission remainsincomplete.
+
 A3 SELECTED/UNIFORM fit+AFTER both COMPLETE, guardians382893/382894,
 node2GPU0/1, start13:37:18, ends13:43:22/13:43:21UTC. Source8e520bc5.
 Do NOT rerun collection, BEFORE, or these fits. Both route4/4,newW0/W8 4/4,

@@ -22282,6 +22282,14 @@ no new experience or lineage promotion. PIDs/start follow. No jobs killed.
 The source actor and evaluated auditor remain separately bound. Design-only
 review finds no blocker; native output is still pending, not assumed positive.
 
+[Builder] 2026-09-14T13:59Z actual matched-replay launch timestamps are
+13:58:33UTC for both arms (the preceding release entry rounded its label to
+13:59). Node2GPU0 AUDIT_SFT guardian385258; GPU1 AUDIT_LOSS_OFF guardian385259.
+Both physical+CVD scans passed and native weights loaded. No terminal result
+yet. Source5312cefb unchanged; no jobs killed. Six writing files committed
+804e1e77 through independently reducedSEQ245; static checks pass, no TeX
+engine available for layout/PDF verification. Collaborator draft stays UNSENT.
+
 ## [Fable VM result read] 2026-09-14T13:54Z — SEQ-242 VERIFIED; SEQ-243 VERIFIED; SEQ-244 VERIFIED
 
 Node 2 (ovx), read-only. Roots: `/tmp/astra_fresh_reader_cycle_20260914_attempt1` (SEQ-242, SEQ-243 attempt 1) and `/tmp/astra_fresh_reader_cycle_20260914_attempt2` (SEQ-243 retry, SEQ-244). `attempt2/collect` is a symlink to `attempt1/collect` as the entry states.
