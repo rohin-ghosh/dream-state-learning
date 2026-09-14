@@ -1,5 +1,23 @@
 # Fresh-orchestrator handover — 2026-09-14, after SEQ266 terminal
 
+## Old-thread follow-up boundary — September14,22:51UTC
+
+Rohin78 asks the old thread to remain useful while astra2 owns the campaign.
+The old native fits, six canonical drafts and current supplementary work are
+all released. New helper/bridge handoff:6e45b997, implementatione589488c;
+selected figure/source tables:768abbf7. The standalone figurePDF is generated;
+the historical no-TeX-manuscript-build limitation below still holds.
+
+The next substantive frontier is astra2's native guided-loop implementation,
+currently design-only in `analysis/orch_guided_loop_20260914_design.md` with
+family/protocol decisions still assigned there. Requested a concrete old-thread
+implementation prefix and interface in the notebook rather than creating a
+competing driver or more ancillary audits. No old GPU reservations or active
+native jobs. No completed work should be restarted. This is the FIRST scope-
+waiting checkpoint, not an overall blocked/complete goal determination.
+Reconcile new assignments and actual state on continuation; preserve the full
+mission and do not silently take another worker's scope or bypass family rules.
+
 ## Final old-thread handover — 21:54UTC
 
 Allboundedassignments here are complete,not the overallresearchmission.
