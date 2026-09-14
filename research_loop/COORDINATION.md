@@ -23881,3 +23881,46 @@ A100richallfour phases nowCOMPLETE for eachshard; critique16callseach,
 baseline140/141/137/144calls. Retrieving terminalresult for interpretation;
 no unmeasured outcomes inferred from candidatecount. Independentnext-fit
 designassignedNash; explanation-gate successorproposalSchrodinger.
+
+## [Fable VM result read] 2026-09-14T19:18Z — SEQ-258 VERIFIED; SEQ260 VERIFIED
+
+Read-only re-derivation from raw receipts; nothing launched, stopped or edited. SEQ-258 entry at 18:35 UTC ("[Builder -> Rohin] … SEQ-258"), primary research_notes/analysis/2026-09-14_goal_scale_collection_first_result.md, node 3 root /tmp/astra_goal_scale_20260914_attempt1 (shard0–7, phases expose/teach/baseline). SEQ260 entry at "19:12" (builder-corrected to before 19:08), primary research_notes/analysis/2026-09-14_goal_breadth_fit_first_result.md, node 2 root /tmp/astra_goal_breadth_train_20260914_attempt1 (arms FULL_TARGET, NEW_TRAJECTORY_LOSS_OFF; phases train/after).
+
+SEQ-258 (node 3):
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| EVENT records valid / attempted | 316/320 | 316/320 (per shard 39,39,40,40,39,40,39,40 of 40; 320 records, 316 accepted) | shard*/expose/COLLECTION_0*.json accepted_events / event_denominator / records[].accepted |
+| ROUTE actions committed | 320 | 320 records | same |
+| shards with source failure | 4 (0,1,4,6) | case_failures=1 in shards 0,1,4,6; 0 elsewhere; data_status PARTIAL_SOURCE_FAILURES ×4 | shard*/expose/RESULT.json |
+| guided (TEACH) calls, four shards | 768 | 768 (192 ×4; CALL files 768) | shard{2,3,5,7}/teach/RESULT.json model_calls, CALL_*.json |
+| guided tasks succeeded | 127/128 | 127/128 (episodes complete 32,32,32,31 of 32) | shard{2,3,5,7}/teach/DATA.json lessons.episodes[].complete |
+| TRAIN rows emitted | 576 (of 1536) | 576 = 192+192+192+0 (shard7 row_count 0, PARTIAL_TEACHING_FAILURES) | shard*/teach/RESULT.json row_count |
+| baseline TRAIN OWN_TEXT goals; pairs | 66/128; 15/64 | 66/128; 15/64 (per shard 18/32;4/16, 18/32;4/16, 15/32;3/16, 15/32;4/16) | shard{2,3,5,7}/baseline/RESULT.json summaries[].summary.individual/paired |
+| baseline PROBE OWN_TEXT goals; pairs | 16/32; 1/16 | 16/32; 1/16 (per shard 5/8;1/4, 3/8;0/4, 4/8;0/4, 4/8;0/4) | same |
+| baseline UNAVAILABLE goals; pairs | 1/32; 0/16 | 1/32; 0/16 (shard3 1/8, others 0/8) | same |
+| baseline calls per shard | 285/277/273/276 | 285/277/273/276 (CALL files 285/277/273/276) | shard*/baseline/RESULT.json model_calls |
+| native calls EXPOSE/TEACH/BASELINE/total | 640/768/1111/2519 | 640/768/1111/2519; CALL files 640/768/1111 | RESULT.json model_calls, CALL_*.json counts |
+| phase-seconds EXPOSE/TEACH/BASELINE/total | 1435.159010/737.365429/886.366832/3058.891271 | 1435.159010/737.365429/886.366832/3058.891271 | RESULT.json finished_unix − started_unix, summed |
+| updates / fits | 0 / none | updates=0, fits=0 in all 20 RESULT.json | shard*/*/RESULT.json |
+
+Integrity: adapter 37ec matches loaded_adapter_state_sha256 = adapter_state_after = 37ec3788…b8c0 in all 20 RESULT.json; protocol SHA dd1d078a… matches protocol_sha256; source ff1af2c3… matches source_commit.txt on the root; terminal archive c57a87ef… matches sha256sum of gpu_artifacts_local/astra_goal_scale_terminal_20260914_attempt1/astra_goal_scale_terminal_20260914_attempt1.tar.gz on this VM. Model calls claimed (2519) equal summed model_calls and CALL file counts. Scope, copied from the builder: readonly 37ec, zero updates, four of eight shards measured, remaining cases unmeasured not zero; no fit result.
+
+SEQ260 (node 2):
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| updates per arm | 1632 | 1632 / 1632 | {arm}/train/RESULT.json updates |
+| fresh AFTER calls FULL / LOSS_OFF | 384/374 | 384/374 (CALL files 384/374) | {arm}/after/RESULT.json model_calls, CALL_*.json |
+| TRAIN OWN_TEXT goals; pairs FULL vs LOSS_OFF | 32/32;16/16 vs 17/32;4/16 | 32/32;16/16 vs 17/32;4/16 | after/RESULT.json panels.TRAIN summaries |
+| PROBE OWN_TEXT goals; pairs FULL vs LOSS_OFF | 5/8;1/4 vs 6/8;2/4 | 5/8;1/4 vs 6/8;2/4 (primary.correct 1/4 vs 2/4) | panels.PROBE, primary |
+| PROBE world A / B pairs | 1/2;0/2 vs 2/2;0/2 | 1/2;0/2 vs 2/2;0/2 | primary.worlds |
+| PROBE UNAVAILABLE goals; pairs | 1/8;0/4 vs 0/8;0/4 | 1/8;0/4 vs 0/8;0/4 | panels.PROBE UNAVAILABLE |
+| original taught graph goals | 2/4 vs 2/4 | 2/4 vs 2/4 | taught_graph.OWN_TEXT |
+| previously fresh graph goals | 4/4 vs 3/4 | 4/4 vs 3/4 | previous_fresh_graph.OWN_TEXT |
+| old memory W0/W8 | 16/16;16/16 both arms | 16/16;16/16 both arms | old_recall |
+| held audit | 15/16 vs 16/16 | 15/16 vs 16/16 | held_audit.overall |
+| engineering target | FAIL both | engineering_target_met=false both; failing checks probe_pairs, each_probe_world, taught | engineering_checks |
+| TRAIN / AFTER phase seconds | 3149.808513/3145.064272; 341.226236/344.527447 | 3149.808513/3145.064272; 341.226236/344.527447 | RESULT.json finished_unix − started_unix |
+
+Integrity: both train phases start from loaded_adapter_state_sha256 37ec3788…b8c0; saved states 8a94f4ff… (FULL) and aa282d0b… (LOSS_OFF) match adapter_state_after in train and loaded_adapter_state_sha256 in after; protocol 3f2e4307… matches protocol_sha256; source 712d5f2b… matches source_commit.txt on the root; capsule 2294116da812f48b… matches sha256sum of gpu_artifacts_local/astra_goal_breadth_train_terminal_20260914_attempt1/terminal.tar.gz on this VM. Model calls claimed (384/374) equal model_calls and CALL file counts; updates=0 and fits=0 in both after phases. Scope, copied from the builder: one seed, one exposed DEV lineage, two fixed PROBE worlds; no H1/H2 or whole-life claim; coverage and legacy rehearsal changed together from SEQ256.
