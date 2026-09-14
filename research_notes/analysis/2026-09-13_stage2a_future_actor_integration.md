@@ -77,6 +77,25 @@ with the durable local archive above authoritative. Shared node2 checkout was
 not edited. No node1 writes occurred; earlier bounded preservation audit is
 unchanged and does not certify other owners' data or subsequent writes.
 
+### Native CPU reproduction recipe
+
+This recipe is derived from the pinned test/bundle and observed environment;
+it is not a new execution receipt or a claim to recover the original shell
+command verbatim. Reuse the preserved extracted bundle read-only, or extract
+the hash-verified archive into a fresh attempt directory. Never overwrite
+the original evidence. In that isolated directory on node2, run:
+
+```bash
+env CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+  /localhome/local-rohing/v2/venv/bin/python -c 'import torch, unittest; torch.set_num_threads(1); torch.set_num_interop_threads(1); suite = unittest.defaultTestLoader.loadTestsFromName("tests.test_composition_birth_stage2a_actor.NativeCPUCompatibilityTests"); result = unittest.TextTestRunner(verbosity=2).run(suite); raise SystemExit(0 if result.wasSuccessful() and result.testsRun == 2 and not result.skipped else 1)'
+```
+
+Capture stdout/stderr in a new receipt and verify both tests actually ran
+without skips, along with the printed environment/thread binding. Do not
+install dependencies or substitute a real model/tokenizer to reproduce this
+tiny engineering assay. Reproduction is optional; no need to rerun a passed
+test merely because conversational context changed.
+
 ## Still required
 
 No reply to the remaining source-contract questions was present in the

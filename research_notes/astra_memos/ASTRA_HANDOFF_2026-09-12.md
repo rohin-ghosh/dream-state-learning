@@ -1,6 +1,38 @@
-# Astra restart handoff — September 13, 2026, 23:43 UTC
+# Astra restart handoff — September 14, 2026, 00:06 UTC (September 13 Pacific)
 
-## Current superseding increment at 23:43 UTC
+## Current superseding increment at 00:06 UTC
+
+Single-state reduced-screen runtime source accepted after an independent P2
+rejection/repair. It joins280reservations to public chain/probe calls and
+state/slot/physical/native custody; transport/accounting faults abort after
+capture, while valid wrong-action/length outcomes remain ordinary outcomes.
+Final Main578tests:561PASS/17native-onlyskips,298.369s,54hashesfixed, observed
+September14 00:01:10–00:06:10UTC. Turing's exact-byte re-reviewPASS closesP2.
+Earlier574test green receipt and rejectedsource preserved, not overwritten.
+Pins/receipts/archive: analysis/2026-09-13_stage2a_screen_runtime_integration.md.
+
+Future/actor/manuscript integration already pushed as
+8b71e109001b9abedf6bb067dadf20294c1caf30. Nativeactor2PASS remains a separate
+CPUtinyGPT2/rank8PEFT/synthetictokenizer receipt, not Qwen/CUDA qualification.
+Current abstracts254words, SEQ192/195 synchronized, collaboratorUNSENT.
+NoPDFbuild. Current dispatcher callback sink is NOT crash-durable storage;
+actual custody export and model/state authentication remain runtime duties.
+
+No activeworker/test/GPUexperiment from this continuation. All scoped workers
+closed; no new node1writes, launches/kills, curl/wget retry or approval request.
+Preserve unrelateddirtyrules and unreviewedTSJdraft. Latest00:06pull contains
+no source-owner answer for registered-route boundaries/recovery/termination/
+rendering or coredepth/priorSTEP/recovery-position conventions. Future-ID
+universe/disclosure is already resolved: do not ask/reimplement it again.
+
+Next decisive blocker is that narrow source binding. Then finish complete
+semantic/routeinventory/fullsourceaudit, separate material/tokenizer/runtime
+opening and real reduced560slotBASE/D1screen -> qualifiedauthentictwo-SLEEP.
+No source-only or diagnostic relabel bypass. NoSEQ195/Q0repeat, C11stilldeferred,
+no broadG3/H1/H2/parenting/freeze/missioncompletion. MissionACTIVE/incomplete.
+Node1lease endsSeptember14 23:14UTC; prior boundedpreservationaudit unchanged.
+
+## Historical superseded increment at 23:43 UTC
 
 Future-ID source bridge and actor accepted, independently reviewed on exact
 hashes. Integrated553tests:536PASS/17native-only skips,294.802s;52source/test

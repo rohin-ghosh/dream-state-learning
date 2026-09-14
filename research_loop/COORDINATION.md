@@ -18089,3 +18089,37 @@ No `[Builder -> Rohin]`, `[Root]`, `[Independent]` or `[Codex]` entries since SE
 **VM daemons:** astra_nudge 1, courier_vm 1, tmux session `astra` alive.
 
 **Node-1 mirror:** lease ends 2026-09-14 23:14 UTC, about 23.2 h from this check, outside the 10-hour window; no rsync run. Last logged incremental pass 15:02 UTC 09-13 (find -type f = 15,428 both sides). Final incremental `rsync -a` (no --delete) node 1 `~/v6_out/` -> node 2 mirror remains due inside the last 10 hours, by the laptop watcher/Rohin or this self-check reusing the logged command.
+
+## [Builder] 2026-09-14T00:06Z — reduced dispatcher accepted after accounting-abort repair; source binding still needed
+
+This timestamp is UTC; local date remainsSeptember13Pacific. Initial screen
+dispatcher passed Main574tests557PASS/17skips but independentreview foundP2:
+a malformed generation count could mark a probeERROR yet allow later calls
+and completed_unscored. Original source/test and testreceipt were archived
+before repair, never overwritten. James repaired only two ownedfiles;
+transport/accounting faults now abort after native/drivercapture. Validwrong
+actions and length outcomes remain outcomes. Turing exact-byte re-reviewPASS
+closedP2; no native/scientific gate was inferred from a green test.
+
+Final Main578tests:561PASS/17native-onlyskips,298.369s,54hashes unchanged;
+observed00:01:10–00:06:10UTC. ReceiptSHA256
+c9d7e9a00df980917c903d25b8f214188fd6a796320f815e4fa1d0c026bd89bc.
+Full pins, preserved rejection and repaired acceptance:
+research_notes/analysis/2026-09-13_stage2a_screen_runtime_integration.md.
+No worker/test/GPUexperiment remains active; scopedworkers closed. No new
+Qwen/tokenizer/GPUscience/node1write, launch/kill, curl/wgetretry or approval.
+
+Future/actor/manuscript integration is pushed8b71e109; currentabstracts254words,
+SEQ192/195 evidence synchronized, collaboratorUNSENT, noPDFbuild. The new
+runtime joins suppliedstate/slot/physicalcalls to native custody, but its
+in-memorysink is not crash-durable export or authenticated native identity.
+
+[Builder -> Root/Rohin] Remaining decision request is narrower than23:04:
+future-universe/retained-disclosure is implemented. Please bind registered
+multi-step route membership/boundaries/recovery/termination/rendering and
+core actual_route_depth, recovery SEEK position and prior STEP match history.
+These still affect hashes/leak acceptance; no answer observed at00:06pull.
+After binding: complete semantic/routeinventory/sourceaudit, separate
+material/tokenizer/runtimepreparation, reduced560slotBASE/D1ATOM_LOCAL then
+qualifiedauthentictwo-SLEEP. No emptyinventory/diagnostic bypass, noSEQ195/Q0
+rerun, noC11revival or G3/H1/H2/parenting/freeze/missioncompletion claim.

@@ -1,4 +1,21 @@
-## Current superseding snapshot — 2026-09-13 23:43 UTC
+## Current superseding snapshot — 2026-09-14 00:06 UTC (September 13 Pacific)
+
+Reduced single-state screen dispatcher accepted after P2accounting-abort
+repair. Final integrated578tests:561PASS/17native-onlyskips,298.369s,
+54source/testhashes unchanged; exact-byte independentre-reviewPASS. Original
+574testreceipt/rejectedsource archived, not overwritten. Source/custody:
+analysis/2026-09-13_stage2a_screen_runtime_integration.md. Native17skips remain
+covered only by separate earlier CPUreceipts; no newQwen/tokenizer/GPU science.
+No activeworker/test/GPUexperiment. Handoff00:06UTCcurrent.
+
+Future/actor/source-and-manuscript commit8b71e109 pushed. Actual abstracts
+254words; SEQ192/195 bounded evidence synchronized; collaboratorUNSENT, noPDF.
+Registered-route/coredepth/history binding still unanswered at00:06pull;
+fullsemantic/routeinventory, actualdurablecustody/nativepreparation pending.
+Next reduced560slotBASE/D1screen then qualifiedauthentictwo-SLEEP. Mission
+ACTIVE/incomplete, formalC11deferred; noSEQ195/Q0repeat or broadclaim/freeze.
+
+## Historical superseded snapshot — 2026-09-13 23:43 UTC
 
 MissionACTIVE/incomplete. Future-ID/actor source accepted with independent
 scoped reviews. Integrated553tests:536PASS/17native-onlyskips,294.802s,
