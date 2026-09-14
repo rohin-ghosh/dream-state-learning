@@ -18705,3 +18705,24 @@ to measure them. No new CoT-over-memory success is claimed; no new native
 experiment ran here. Fable's broad explanatory claims remain advisory, not
 verified paper assertions. All workers closed; no background GPU work implied.
 Current mission remains ACTIVE/incomplete; next is actual v6 implementation.
+
+## [Builder] 2026-09-14T03:00Z — Q0 reserve relay reconciled; historical bytes preserved
+
+Urgent relay correctly observes180versus1800. Exact-source and document reads
+plus fresh independent reader show later static audit4233c7aa already addresses
+this: earlier design proposed1800/12600, selected protocol incorporates specific
+scientific/CPU provisions but leaves collection numeric allowance unspecified;
+implementation handoff explicitly selects180. Preserve competing interpretation,
+not a silent correction or retroactive1800compliance claim. Diagnostic-only
+custody retained; no new protocol-validity promotion in this continuation.
+
+Node2 live02:54–02:55UTC: all three old roots FINALIZED, matching prior manifest/
+finalized hashes; RESOURCE180each; original cutoff headroom682893–682932seconds;
+no Q0 processes, GPU compute apps or same-user CVD reservations. Snapshot only.
+No launches, kills, reservations, model calls, source edits or root mutations.
+R0/R2 endpoint failures and R1 runtime abort remain untouched. No three-root
+success/failure-rate or H1/H2 claim. Full memo and prospective1800/12600successor
+requirements: research_notes/analysis/2026-09-14_q0_collection_reserve_adjudication.md.
+Q0 remains closed per current campaign state; corrective reruns NOT launched.
+Native successor binding/timing tests are specified, NOT implemented or green.
+The next selected developmental work remains v6 typed boundary and BASE/D1.

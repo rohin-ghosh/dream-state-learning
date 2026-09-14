@@ -1,5 +1,20 @@
 # Astra restart handoff — September14,2026,02:49UTC
 
+## Reserve-audit relay reconciled — September14,03:00UTC
+
+See research_notes/analysis/2026-09-14_q0_collection_reserve_adjudication.md.
+Fresh node2 reads02:54–02:55UTC show all Q0 roots FINALIZED, no Q0 processes,
+no compute apps or same-user CVD reservations. All three RESOURCE receipts
+say180seconds, with more than682,893seconds before their recorded six-hour
+cutoff. No frozen source or root was changed. Prior static audit4233c7aa already
+adjudicates the difference: design proposed1800/12600, selected protocol omitted
+a numeric collection allowance, implementation explicitly selected180. Preserve
+that disagreement and excluded diagnostic custody; do not claim1800compliance
+or promote new protocol validity. Q0 remains closed, no automatic reruns.
+Any independently selected successor must explicitly bind1800/12600 across
+protocol/source/launcher/manifest and collection supervision with boundary tests.
+These prospective checks are NOT implemented. Next remains v6 below.
+
 ## NEW PRIORITY — v6 typed boundary supersedes full-object promotion
 
 The push raced watcher commits. Source increment committedf966e5ab, then merge
