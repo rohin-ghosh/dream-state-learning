@@ -13,7 +13,8 @@ research_notes/astra_memos/ASTRA_FRESH_ORCHESTRATOR_HANDOVER_2026-09-14.md.
 4. research_notes/SWARM_SPEC_L1_L2_DRAFT_2026-09-14.md — roles, communication, admission rules (its allocation table is superseded; §4 note).
 5. research_notes/related_work/AUTONOMOUS_RESEARCH_SWARMS_2026-09-14.md ("What transfers") and research_notes/forwarded/GPT_SWARM_ORCHESTRATION_REVIEW_2026-09-14.md (Rohin's forwarded review; the constitution below comes from it).
 6. research_notes/IDEAS.md (2026-09-13/14 entries) and research_notes/PREDICTIONS_LEDGER.md (rows P43–P46).
-7. research_loop/COORDINATION.md — the last 400 lines and every `[Rohin — message N, relayed by Fable]` heading; research_loop/BOARD.md if it exists.
+7. gpu/codex/README.md — what works under the enterprise Codex policy on this VM: curl/wget are held for approval by a built-in layer even when allow-listed; fetch the web with python urllib (tools/webtext.py); every sub-command of a `bash -lc` must be allow-listed; unlisted commands run inside the sandbox without prompts under on-request.
+8. research_loop/COORDINATION.md — the last 400 lines and every `[Rohin — message N, relayed by Fable]` heading; research_loop/BOARD.md if it exists.
 
 ## B. Operational plan (Fable executes on "run"; ~30 minutes)
 
