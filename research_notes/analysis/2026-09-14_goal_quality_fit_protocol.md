@@ -5,6 +5,14 @@ paired hypothesis, with Main publishing source and logging before native work.
 This selects a new lower-dose breadth diagnostic, not the blocked scale fit,
 a dose-isolated contrast with SEQ260, or a continuation of its failed adapters.
 
+Scheduling amendment, before any native phase: Main reserves node3 GPU2 for
+the independent readonly baseline, allowing GPU0/1 fits after full CPU/source
+preparation without waiting for baseline generation. This changes no data,
+supervision, dose, seeds, endpoints or reservation budgets. The initially
+published source0e3063d5 was only staged, never prepared or launched; preserve
+that staging and use a newly published source and a new run root for this
+amendment. AFTER, not TRAIN, requires the completed matched baseline receipt.
+
 ## Fixed source and hypotheses
 
 Consume the completed quality assembly at
@@ -72,10 +80,16 @@ Reuse a complete existing baseline ONLY after exact source/task/prompt/runtime/
 state and native-call replay compatibility. Original partial scale baselines
 are not a complete matched battery, especially for the missing-source PROBE.
 Absent a compatible complete receipt, run ONE separate complete baseline from
-37ec on assigned GPU0 BEFORE either fit, <=960calls, fits0/updates0. Both fits
-bind the identical baseline receipt. Baseline outcomes never gate fitting,
-select examples, change dose, or choose checkpoints. Technical baseline failure
-blocks fit admission; task failures remain in the fixed denominator.
+37ec on assigned GPU2, <=960calls, fits0/updates0, concurrently with the fits.
+Both fits bind the same prospective baseline source/task/prompt contract, not
+unavailable future result bytes. TRAIN never reads baseline results. Each
+AFTER requires a COMPLETE baseline receipt matching that contract and binds
+its exact result hash. Baseline outcomes never gate fitting, select examples,
+change dose, or choose checkpoints. Technical baseline failure blocks AFTER
+and comparison, not the fixed fit; task failures remain in fixed denominators.
+The completed train receipt, baseline receipt and AFTER binding must join the
+same source/material/parent/helper/readout contract. No completed fit is
+repeated if a baseline/readout technical failure needs diagnosis.
 
 Each AFTER reloads its own saved train state, not a hardcoded new hash, in a
 fresh process. Save every call, episode, summary, file inventory, state and
@@ -94,7 +108,7 @@ the primary endpoint. Neither a TRAIN gain nor baseline-only gain suffices.
 No automatic checkpoint promotion, seed expansion, population/H1/H2 claim or
 claim that these provided text reads are new parametric memory acquisition.
 
-Reserve node3 GPU0/FULL and GPU1/LOSS_OFF only. Each arm TRAIN<=10800s,
+Reserve node3 GPU0/FULL, GPU1/LOSS_OFF and GPU2/readonly baseline. Each arm TRAIN<=10800s,
 AFTER<=3600s,admission300s+teardown60s:<=14760s (4.1h),8.2GPUh for the pair.
 If needed, baseline<=3600s+300s+60s=3960s (1.1GPUh),total<=9.3GPUh. This is a
 reservation ceiling, not a runtime prediction. Physical+CVD scanner admission,

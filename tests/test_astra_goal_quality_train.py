@@ -81,7 +81,7 @@ def save_training(directory, inputs, encoded, arm):
     receipt = dict(schema=runner.SCHEMA,phase='train',status='COMPLETE',arm=arm,seed=0,fits=1,updates=2928,
         trainingAllowed=True,model_calls=0,
         loaded_adapter_state_sha256=runner.PARENT_STATE,adapter_state_after='a'*64,frozen_base_unchanged=True,
-        parent_present=False,binding=inputs['binding'],baseline_result_sha256='c'*64,
+        parent_present=False,binding=inputs['binding'],baseline_contract_sha256=runner.goal.document_sha256(inputs['binding']['readout']),
         **{key:evidence[key] for key in ('actual_supervised_tokens','reference_supervised_tokens','row_presentations')},
         training_files={name:runner.source.file_hash(directory/name) for name in runner.TRAINING_FILES},
         adapter_files={path.name:runner.source.file_hash(path) for path in (directory/'adapter').iterdir()})
@@ -287,11 +287,29 @@ class QualityFitTests(unittest.TestCase):
         guard=Path(runner.__file__).with_name('astra_goal_quality_train_guard.sh')
         subprocess.run(['bash','-n',str(guard)],check=True)
         body=guard.read_text()
-        for fragment in ('BASELINE:0|FULL_TARGET:0|NEW_TRAJECTORY_LOSS_OFF:1','14760','3960','--phase baseline',
+        for fragment in ('BASELINE:2|FULL_TARGET:0|NEW_TRAJECTORY_LOSS_OFF:1','14760','3960','--phase baseline',
                          'run_stage 10800','run_stage 3600','source_commit.txt','scanner.py','service_exceptions.json','21600'):
             self.assertIn(fragment,body)
         self.assertNotIn('git -C',body)
+        self.assertGreater(body.index('test ! -f "$root/baseline/RESULT.json"'),body.index('run_stage 10800'))
         subprocess.run([sys.executable,'-B','-c',"import sys; from gpu import astra_goal_quality_train; assert not any(name in sys.modules for name in ('torch','transformers','peft','tokenizers'))"],check=True)
+
+    def test_train_enters_without_baseline_results_but_after_requires_them(self):
+        with TemporaryDirectory() as temporary, ExitStack() as stack:
+            root=Path(temporary)
+            fixture(root,stack,self.capsule)
+            self.assertFalse((root/'baseline').exists())
+            with patch.object(runner,'read_baseline',side_effect=AssertionError('TRAIN must not read outcomes')) as reader, \
+                 patch.object(runner,'train',side_effect=ValueError('CPU_TRAIN_ENTRY')) as fit:
+                with self.assertRaisesRegex(ValueError,'CPU_TRAIN_ENTRY'):
+                    runner.main(cli(root,'train',runner.ARMS[0]))
+                fit.assert_called_once()
+                reader.assert_not_called()
+            failed=runner.source.read(root/'train/FAILED.json')
+            self.assertEqual(failed['baseline_status'],'NOT_READ_TRAIN_INDEPENDENT_OF_BASELINE_RESULTS')
+            self.assertIn('baseline_contract_sha256',failed)
+            with self.assertRaises(FileNotFoundError):
+                runner.main(cli(root,'after',runner.ARMS[0]))
 
 
 if __name__ == '__main__':

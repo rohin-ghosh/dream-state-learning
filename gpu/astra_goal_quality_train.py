@@ -32,7 +32,7 @@ SEEDS = (0,)
 GROUPS = ('memory_rows', 'cue_rows', 'audit_rows', 'trajectory_rows', 'new_trajectory_rows')
 GROUP_SIZES = (128, 20, 62, 12, 1452)
 PROTOCOL_PATH = 'research_notes/analysis/2026-09-14_goal_quality_fit_protocol.md'
-PROTOCOL_SHA = 'a8516335bdab55260588284b58f03aa3214d898c132f8712af91bb848c6f8732'
+PROTOCOL_SHA = '1683ca250ef6f95cb41c7972685279a07ec3693fb9ab34e049ffb975e8eb96e9'
 COLLECTION_PROTOCOL_SHA = 'cf742f62dc45810caeea3ec68272a9e1a8c97d3b7c6c06f148639252ba1738f1'
 CLAIM = 'QUALITY_BREADTH_LOWER_DOSE_ONE_EXPOSED_DEV_LINEAGE_NOT_DOSE_ISOLATED_OR_H1_H2'
 ASSEMBLY_SHA = 'cbe638aa1377a98ada6c60a3fc1b264c685a2e31c95b5121f2dd3f860bda1a1e'
@@ -283,6 +283,8 @@ def read_training(directory, inputs, arm, seed=0):
             and receipt['adapter_state_after'] != PARENT_STATE and receipt.get('frozen_base_unchanged') is True
             and receipt.get('parent_present') is False, 'own_completed_goal_arm_required')
     same(receipt['binding'], inputs['binding'], 'saved_goal_fit_binding_drift')
+    require(receipt.get('baseline_contract_sha256') == goal.document_sha256(inputs['binding']['readout']),
+            'saved_baseline_readout_contract_required')
     require(set(receipt['training_files']) == set(TRAINING_FILES), 'goal_training_inventory_required')
     memory.transfer.verify_files(directory, receipt['training_files'])
     collector.portable.verify_inventory(directory / 'adapter', receipt['adapter_files'])
@@ -481,7 +483,7 @@ def main(argv=None):
     parser.add_argument('--gpu-uuid')
     options = parser.parse_args(argv)
     require((options.phase in ('prepare', 'baseline') and options.arm is None) or options.arm in ARMS, 'goal_phase_arm_required')
-    require(bool(options.baseline) == (options.phase in ('train', 'after')), 'baseline_required_before_either_fit')
+    require(bool(options.baseline) == (options.phase in ('train', 'after')), 'baseline_location_required_for_train_after')
     require(bool(options.training) == (options.phase == 'after'), 'saved_training_only_for_after')
     require(os.environ.get('HF_HUB_OFFLINE') == os.environ.get('TRANSFORMERS_OFFLINE') == '1', 'offline_required')
     require(options.phase == 'prepare' or bool(options.gpu_uuid)
@@ -517,7 +519,10 @@ def main(argv=None):
                 probe_training_rows=0, tokenization='VALIDATED_IN_TRAIN_BEFORE_GRADIENT', finished_unix=time.time())
             source.write(output / 'RESULT.json', result)
             return result
-        if options.phase in ('train', 'after'):
+        if options.phase == 'train':
+            result['baseline_contract_sha256'] = goal.document_sha256(inputs['binding']['readout'])
+            result['baseline_status'] = 'NOT_READ_TRAIN_INDEPENDENT_OF_BASELINE_RESULTS'
+        if options.phase == 'after':
             baseline, result['baseline_result_sha256'] = read_baseline(options.baseline, inputs)
         arguments = argparse.Namespace(**inputs['arguments'])
         state = PARENT_STATE
@@ -526,7 +531,8 @@ def main(argv=None):
         files = inputs['parent']['trained_adapter_files']
         if options.phase == 'after':
             trained, result['training_result_sha256'] = read_training(options.training, inputs, options.arm, options.seed)
-            require(trained['baseline_result_sha256'] == result['baseline_result_sha256'], 'same_baseline_train_after_required')
+            require(trained['baseline_contract_sha256'] == goal.document_sha256(inputs['binding']['readout']),
+                    'same_baseline_contract_train_after_required')
             state, files = trained['adapter_state_after'], trained['adapter_files']
             arguments.adapter_dir = str(Path(options.training) / 'adapter')
         engine = source.Engine(arguments, source.native.load_local_tokenizer(arguments.model_dir), check=check)

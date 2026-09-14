@@ -7,7 +7,7 @@ commit="$3"
 index="$4"
 uuid="$5"
 arm="$6"
-case "$arm:$index" in BASELINE:0|FULL_TARGET:0|NEW_TRAJECTORY_LOSS_OFF:1) ;; *) exit 2 ;; esac
+case "$arm:$index" in BASELINE:2|FULL_TARGET:0|NEW_TRAJECTORY_LOSS_OFF:1) ;; *) exit 2 ;; esac
 admission_started=$(date +%s)
 budget=14760
 if test "$arm" = BASELINE; then budget=3960; fi
@@ -19,9 +19,6 @@ run="$root/$arm"
 if test "$arm" = BASELINE; then
     test ! -e "$root/baseline"
     test ! -L "$root/baseline"
-else
-    test -f "$root/baseline/RESULT.json"
-    test ! -e "$root/baseline/FAILED.json"
 fi
 test ! -e "$run"
 test ! -L "$run"
@@ -103,6 +100,10 @@ if test "$arm" = BASELINE; then
     run_stage 3600 --phase baseline --output "$root/baseline"
 else
     run_stage 10800 --phase train --arm "$arm" --baseline "$root/baseline" --output "$run/train"
+    if test ! -f "$root/baseline/RESULT.json" || test -e "$root/baseline/FAILED.json"; then
+        printf '%s\n' AFTER_BLOCKED_BASELINE > "$launch/GUARD_ABORT.txt"
+        exit 1
+    fi
     run_stage 3600 --phase after --arm "$arm" --baseline "$root/baseline" --training "$run/train" --output "$run/after"
 fi
 date -u +%Y-%m-%dT%H:%M:%SZ > "$launch/completed_utc.txt"
