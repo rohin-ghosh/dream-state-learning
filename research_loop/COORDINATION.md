@@ -23999,3 +23999,36 @@ no forcepush, overwrite, stash or dropped watcher entry.
 **Watcher reading:** four recipes now say the same thing at three scales — 12, 48, 192 targets; 100, 400, 1,632 updates — the bridge installs what it is shown and the held worlds do not move. That is the strongest argument yet that the axis is the form of the rows, which is what the rich branch tests, and the builder's own trap (a heading regex deciding richness) shows why the content rubric must be applied by reading the text, not by matching a token. Rohin's message 70 asks for the whole hypothesis space to run at once; the spec draft at research_notes/SWARM_SPEC_L1_L2_DRAFT_2026-09-14.md lays out roles (orchestrator plans only; one worker per arm with its own GPUs; the reader verifies; a results board), a first wave of 24–28 GPUs across data form / breadth / scale / environment / write→use loop, and the admission rules that keep it pre-declared and controlled. A survey of autonomous research swarms is being written to research_notes/related_work/.
 
 **Fleet (from the builder's entries; not re-polled this tick):** node 3 GPUs 0–3 busy since 19:10Z (quality units); A100 rich collection finished, GPUs freeing; node 2 idle since the breadth readouts; node 1 excluded (lease ends 23:14 UTC, ~3.9 h). VM root disk: builder authorised by Rohin to move older /tmp material to /data (relayed). Nothing launched, killed or deleted by the watcher.
+
+## [Builder/Schrodinger] 2026-09-14 19:29 UTC — action-first rich prelaunch packet
+
+Main delegates ONLY A100 GPUs0–3 for four new TEACH processes, no fit, no
+EXPOSE/baseline/critique reruns. Exact execution source
+60dbf789a37f09261015dddf1d9f91bceba55879, prospective protocol SHA256
+509f85c17d4be373eb1e917ee11e5134dcb447257a376163fe6a995d533eece9.
+Full source archive0617b065f721598d5a08b1ce4087ab529eb486eb87ca76753a9876c8f43f8871
+packaged on VM under gpu_artifacts_local, transferred and hash-verified on A100.
+Root /tmp/astra_rich_action_first_20260914_attempt1; shared source/; each
+shard0..3 has source_commit.txt and actual PREPARED_NO_MODEL receipt.
+All four prepares passed with zero model calls, reusing each original rich
+shard's five source-valid EXPOSE worlds. Same portable37ec manifest5e675c30;
+frozen Qwen2.5-7B-Instruct local snapshot a09a35458c702b33eeacc393d103063234e8bc28.
+Main's41 CPU tests PASS is already logged; author38 helper/native tests and
+all20 original EXPOSE plus4 original TEACH exact replays passed; no retest sweep.
+
+Allocation (shard=index):
+- A100GPU0 GPU-ff5f84e9-c70e-272d-a8e0-eb20aad05ac6
+- A100GPU1 GPU-604c4ea8-8c29-099e-76ed-571ec7d9be4b
+- A100GPU2 GPU-8e15ce78-4e9c-4c48-724f-2b753c6c2296
+- A100GPU3 GPU-631f3e6a-fbce-0ec5-b934-f08dd64634f8
+
+Physical observation: all four zero GPU memory/compute processes. Exact original
+A100 scanner/service exceptions retained. Attached scan rejected an unreadable
+live sshd; retained that failure, added no exception. Detached scans19:28:41–42Z
+all clear=true, owners=[], unresolved=[]. Each six-argument guard repeats actual
+physical/CVD admission immediately before native launch. Max96calls/shard,
+512generatedtokens/2048context,16TRAINepisodes/shard,3960s guarded allocation;
+same37ec readonly, all three matched views UNREVIEWED and fit_ready=false.
+Conservative A100 expiry2026-09-26 00:00UTC minus six-hour margin applies.
+GPUs4/5 remain Parfit-reserved; other GPUs/branches untouched. No process launched
+by this packet yet; actual guardian/native PIDs and admission follow immediately.
