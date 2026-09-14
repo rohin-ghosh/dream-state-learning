@@ -111,3 +111,22 @@ receipts are committed/pushed. Guard repeats physical UUID and /proc checks;
 detached launcher waits5s for its SSH session to close. Lease epoch1790485500
 (2026-09-27T05:05Z) minus6h; hard2700s budget including60s kill grace. No SEQ
 reserved; ask Main for publication-order number only at terminal comparison.
+
+## 2026-09-14T22:09:09Z — native launches observed, no SEQ
+
+PreGPU push initially rejected at22:06:43UTC; no launch occurred on rejection.
+Concurrent shared-checkout reconciliation published mergeca8f8b2c with our
+042fa66d packet as an ancestor; verified origin/main equality and ancestry
+before launching. No force/reset/rebase/stash. Timestamp of that preGPU patch
+was rounded ahead to22:07; actual edit clock was22:06:42UTC, publication and
+launch followed by22:07:25UTC. All checks preceded actual native calls.
+
+Guardians RICH152902, TERSE152903 launched22:07:25UTC and started22:07:31UTC.
+Native processes RICH152941, TERSE152938; physical compute/CVD binding captured
+22:08:27UTC in `orch_persist_math_20260914_attempt1/native_ownership.json`:
+RICH GPU6 UUID6de3930d, TERSE GPU7 UUIDf0405a96; exactly own selected CVD each.
+Both LOADED receipts exist, mounted37ec and frozen base verification passed.
+22:09:09UTC progress: RICH3call files, TERSE32call files (postflight pending),
+no FAILED. Native deadline22:51:31UTC, guardian bound22:52:31UTC. Raw root
+`/localhome/local-rohing/data/orch_persist_math_20260914_attempt1`.
+This is an execution update, no result/pool admission/learning claim.

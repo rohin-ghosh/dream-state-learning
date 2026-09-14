@@ -25244,3 +25244,19 @@ portable contract reverified; fixedTASKS hash unchanged. All former FAILED,
 guard and prepare dirs preserved as `.preAdapterRepair`; no processes killed.
 Same32tasks,128calls,45min/shard,assignedGPUs4–7,lease and scientific scope.
 Fresh per-device resource checks precede retry after this publication push.
+
+## [Worker PERSIST-MATH] 2026-09-14T22:09:09Z — both native arms running; PID/UUID receipts
+
+A100 root `/localhome/local-rohing/data/orch_persist_math_20260914_attempt1`.
+Guardians152902/152903 started22:07:31UTC; RICH native152941 on GPU6 UUID
+GPU-6de3930d-104a-f969-7d36-009271368dd1, TERSE native152938 on GPU7 UUID
+GPU-f0405a96-813d-7ac7-d641-3ec31d103037. Physical compute-app list and exact
+/proc CVD+start-tick identities observed22:08:27UTC in
+`research_notes/analysis/orch_persist_math_20260914_attempt1/native_ownership.json`.
+Both LOADED37ec/frozen-base receipts exist;22:09:09UTC RICH3 and TERSE32 raw
+call files, no FAILED; outcomes not yet reduced. Hard guardian22:52:31UTC.
+Initial preGPU push rejection stopped launch; published mergeca8f8b2c includes
+packet042fa66d, ancestry/origin verified before launch22:07:25UTC. No force.
+Prior preGPU heading rounded22:07; actual edit22:06:42UTC, before publication
+and every native call. Scope remains16tasks/arm,64calls maximum,0fits. No SEQ
+reserved; terminal comparison will request Main's publication-order number.
