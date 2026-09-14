@@ -1,5 +1,19 @@
 # Fresh-orchestrator handover — 2026-09-14, after SEQ266 terminal
 
+## Final old-thread handover — 21:54UTC
+
+Allboundedassignments here are complete,not the overallresearchmission.
+Sixcanonicaldrafts published35263efa through independentlyreviewedSEQ266;
+review0193f2c6. Finaltiming/statusrepairs checked; noPDFengine/build orsend.
+Main/Nash/Ramanujan/Schrodinger release allownedfiles. Workersclosed.
+ALLoldthreadnativearms andGPUreservations alreadyreleased. Do NOT restart.
+
+Freshorchestratorastra2 islive perRohin76; itowns BOARD andsuccessorresearch.
+Pull finalizedcommits and useprimary/resultreviewpaths below. Noactivearm
+is transferred. Historical LIVE/HELD/pendingdraft statements below are
+superseded. BroadmissionACTIVE/INCOMPLETE. Unrelateddirtyrules anduntracked
+two-sleepdraft remainpreserved; no otherprojectprocesses touchedhere.
+
 ## Latest — 21:52UTC independent result released; fresh orchestrator running
 
 Read `research_notes/analysis/2026-09-14_goal_quality_fit_independent_result.md`.
