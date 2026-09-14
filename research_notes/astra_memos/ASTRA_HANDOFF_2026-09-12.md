@@ -2,6 +2,20 @@
 
 ## CURRENT OVERRIDE — September14,2026, after SEQ241
 
+CURRENT13:27REPAIR supersedesLIVEbelow: A3BEFOREattempt1FAILED after numerical
+readout, beforeactualaudit. Erroractual_committed_outcome_required: tasks2/3
+invalid_route after2realreadseach, notransitions. Diagnosticown1/4,new0/4,
+old12/12,classifier16/16. Preservebehaviorfailure; noA3fitlaunched.
+CollectionCOMPLETE4/4in8calls; reuse, don'trecollect. Guardian380940exited.
+Mainnewauditnamespaceentry/guard before-onlyretry implemented, notyetvalidated.
+Goodall ownsneworganism_v6/experienced_event_fresh_reader_audit.py+tests;
+Carsonupdatesnativeentrytests for auditnamespace/policytags. Keeporiginalfresh
+collectionhelperUNCHANGED (completedcollectionsourcehash). Newaudit replays
+failedrouteswithoutinventedoutcome; originalactual/goalselectorhelpersunchanged.
+Nextnewrootattempt2symlinkcollect→attempt1/collect, declarelink, nativeprepare,
+newguardstagebeforeONLY, thenCPUreadiness+2forks ifnonemptysourcevalidchoices.
+Nooriginalrootedits. Currentgoalremainsactive/incomplete.
+
 LIVE13:20UPDATE supersedes NOTLAUNCHED below: source9817773e9258baff116d0cea995e82fa2846f291,
 node2root/tmp/astra_fresh_reader_cycle_20260914_attempt1, GPU0observe guardian380940,
 started13:18:41UTC.73CPUtests+actualsourcePREPARED_NO_MODELPASS.

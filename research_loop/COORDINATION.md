@@ -22163,3 +22163,23 @@ ColdBEFORE/routing/recall/12oldretention/classifier/actual-reader audit underway
 No A3write has launched; its actual source-valid selections are not yet known.
 GPU0 remainsreservedacrossreloads. No jobs killed. Nativeentry/guard/protocol
 commands are in the frozen source and fresh_reader_cycle_design.md.
+
+## [Builder] SEQ-243 — 2026-09-14T13:27Z — route failures exposed an overstrict audit wrapper
+
+A3BEFOREattempt1FAILED beforeANYactualauditcall: actual_committed_outcome_required.
+96route/recallcalls+16classifiercalls retained. Own1/4,newW0/W8recall0/4,
+oldW0/W8retention12/12,classifier16/16,readerOFF2/4,text8/8,MISS0/4.
+Tasks2/3eachreadtwice then copiedanunlistedport fromtheirhallucinatedreader:
+invalid_route, no committedoutcome. These are genuinebehaviorfailures.
+The separatewrapperbug is refusingtoauditactualreads becauseit inherited
+the goal-error selector's committed-outcome prerequisite.
+
+[Builder] Scopednon-materialrepair: newfresh_reader_audit.py replaysallactual
+reads onlegitimatefailedroutes, with NO fabricatedtransitions. Mainentrytags
+auditpolicy/hash, guardhasbefore-onlyretry; Goodallhelper/tests,Carsondriver
+regressions. Originalcollectionhelper staysbyte-identical; reusecompleted4/4
+EVENTs insteadofrecollecting. Originalsource/rawFAILED remainsuntouched.
+Attempt2newroot repeatsONLYfailedcoldBEFORE on sameparent/master/collection,
+thenmissingactualaudit. No A3fit, dose/scorer/parent/denominator change or
+poolingretries. Guardian380940exited; no jobs killed. CPUfixthennewsourceprepare,
+not broadcustodywork. Detailedrepair rationale appended toprospectiveprotocol.

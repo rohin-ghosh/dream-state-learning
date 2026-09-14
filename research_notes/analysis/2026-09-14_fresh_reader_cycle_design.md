@@ -66,3 +66,27 @@ If retention fails, use the concrete affected records to choose the next bounded
 data/rehearsal question, not a rank/base/hyperparameter sweep. A successful pass
 supports one more DEV continuation; it does not establish task-general H1,
 unseen-environment H2 slopes, clean ancestry or autonomous improved learning.
+
+## Non-material audit-wrapper repair after failed first BEFORE
+
+September14,2026,13:27UTC. Collection completed4/4in8calls. BEFORE recorded
+96route/recall calls and16classifier calls, then rejected before ANY actual-audit
+call with `actual_committed_outcome_required`. Tasks2/3 ended `invalid_route`
+after two actual memory reads: the child copied an unlisted hallucinated port.
+Own routing1/4, new recall0/4, old12/12 and classifier16/16 remain diagnostics;
+the invalid routes remain behavioral failures, not repaired successes.
+
+The wrapper inherited an irrelevant committed-outcome prerequisite from a
+goal-error selector. Repair only auditing: replay each actual controller
+termination, including uncommitted routes; validate any captured committed
+outcome against its source; never fabricate a missing outcome. Keep the same
+audit prompts, strict scores, source-pointer admission and primary denominators.
+Add invalid-route and absent-versus-fabricated-transition regressions.
+
+Keep the original fresh collection helper byte-identical. Introduce a separate
+audit helper with explicit audit-policy/hash receipt. Preserve attempt1 intact.
+Attempt2 references its completed collection through a declared reuse link,
+then repeats ONLY the failed cold BEFORE for complete state/base checks and
+missing audits. No new experience, parent, dose or prompt variant; no A3 fit yet.
+Retries are not pooled as independent learners. This implements the prospective
+ALLactualreads contract rather than relaxing any learning-success threshold.

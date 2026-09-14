@@ -1,5 +1,11 @@
 ## Current superseding snapshot — 2026-09-14, after SEQ241
 
+CURRENT13:27: A3collection4/4complete; BEFOREfailedwrapper beforeactualaudit
+on legitimateinvalid_routes2/3(no committedoutcome). Recordedown1/4,new0/4,
+old12/12,classifier16/16; retainnegativebehavior. NoA3fits/noMainGPUjobsnow.
+Scopednewaudithelperfix replaysfailedrouteswithoutinventedfeedback; original
+collectionhelperunchanged. Newrootbefore-onlyretryplanned, notlaunched.
+
 LIVE13:20UPDATE: A3observe source9817773elaunched13:18:41UTC node2GPU0guardian380940,
 root/tmp/astra_fresh_reader_cycle_20260914_attempt1. Collection4/4from8calls,
 0fits. ColdBEFORE/auditpending; noA3fit. CurrentHANDOFFhasexactnextcommands.
