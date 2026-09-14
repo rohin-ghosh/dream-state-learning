@@ -1,0 +1,440 @@
+{
+  "arms": {
+    "RICH": {
+      "after_format_reject": 29,
+      "after_native_noop": 3,
+      "episodes": 16,
+      "feasible_format_reject": 11,
+      "feasible_progress": 10,
+      "feasible_regress": 15,
+      "feasible_turns": 36,
+      "first_infeasible_format_reject": 7,
+      "first_infeasible_regress": 9,
+      "first_turn_format_reject": 7,
+      "first_turn_progress": 3,
+      "first_turn_regress": 6,
+      "format_reject": 37,
+      "native_noop": 3,
+      "progress": 30,
+      "regress": 26,
+      "repeat_format_reject": 8,
+      "repeat_native_noop": 1,
+      "same_distance": 3,
+      "turns": 96
+    },
+    "TERSE": {
+      "after_native_noop": 29,
+      "episodes": 16,
+      "feasible_progress": 2,
+      "feasible_regress": 18,
+      "feasible_same_distance": 5,
+      "feasible_turns": 25,
+      "first_infeasible_regress": 12,
+      "first_infeasible_same_distance": 4,
+      "first_turn_progress": 1,
+      "first_turn_regress": 12,
+      "first_turn_same_distance": 3,
+      "native_noop": 38,
+      "progress": 27,
+      "regress": 31,
+      "repeat_native_noop": 15,
+      "same_distance": 38,
+      "turns": 96
+    }
+  },
+  "changes_admission": false,
+  "definition": "Progress reduces native shortest delivery distance. Feasible means remaining turns suffice under an optimal continuation, not observed success.",
+  "episodes": [
+    {
+      "arm": "RICH",
+      "first_budget_infeasible": {
+        "category": "regress",
+        "distance_after": 6,
+        "distance_before": 5,
+        "turn": 1
+      },
+      "id": "mining_G_14002_0",
+      "initial_distance": 5
+    },
+    {
+      "arm": "TERSE",
+      "first_budget_infeasible": {
+        "category": "regress",
+        "distance_after": 6,
+        "distance_before": 5,
+        "turn": 1
+      },
+      "id": "mining_G_14002_0",
+      "initial_distance": 5
+    },
+    {
+      "arm": "RICH",
+      "first_budget_infeasible": {
+        "category": "format_reject",
+        "distance_after": 1,
+        "distance_before": 1,
+        "turn": 6
+      },
+      "id": "mining_G_14002_4",
+      "initial_distance": 4
+    },
+    {
+      "arm": "TERSE",
+      "first_budget_infeasible": {
+        "category": "same_distance",
+        "distance_after": 5,
+        "distance_before": 5,
+        "turn": 2
+      },
+      "id": "mining_G_14002_4",
+      "initial_distance": 4
+    },
+    {
+      "arm": "RICH",
+      "first_budget_infeasible": {
+        "category": "regress",
+        "distance_after": 6,
+        "distance_before": 5,
+        "turn": 2
+      },
+      "id": "mining_R_14001_0",
+      "initial_distance": 5
+    },
+    {
+      "arm": "TERSE",
+      "first_budget_infeasible": {
+        "category": "regress",
+        "distance_after": 6,
+        "distance_before": 5,
+        "turn": 1
+      },
+      "id": "mining_R_14001_0",
+      "initial_distance": 5
+    },
+    {
+      "arm": "RICH",
+      "first_budget_infeasible": {
+        "category": "regress",
+        "distance_after": 4,
+        "distance_before": 3,
+        "turn": 4
+      },
+      "id": "mining_R_14001_4",
+      "initial_distance": 3
+    },
+    {
+      "arm": "TERSE",
+      "first_budget_infeasible": {
+        "category": "regress",
+        "distance_after": 5,
+        "distance_before": 4,
+        "turn": 2
+      },
+      "id": "mining_R_14001_4",
+      "initial_distance": 3
+    },
+    {
+      "arm": "RICH",
+      "first_budget_infeasible": {
+        "category": "format_reject",
+        "distance_after": 3,
+        "distance_before": 3,
+        "turn": 4
+      },
+      "id": "mining_G_14002_1",
+      "initial_distance": 4
+    },
+    {
+      "arm": "TERSE",
+      "first_budget_infeasible": {
+        "category": "regress",
+        "distance_after": 6,
+        "distance_before": 5,
+        "turn": 2
+      },
+      "id": "mining_G_14002_1",
+      "initial_distance": 4
+    },
+    {
+      "arm": "RICH",
+      "first_budget_infeasible": {
+        "category": "format_reject",
+        "distance_after": 6,
+        "distance_before": 6,
+        "turn": 1
+      },
+      "id": "mining_G_14002_5",
+      "initial_distance": 6
+    },
+    {
+      "arm": "TERSE",
+      "first_budget_infeasible": {
+        "category": "regress",
+        "distance_after": 7,
+        "distance_before": 6,
+        "turn": 1
+      },
+      "id": "mining_G_14002_5",
+      "initial_distance": 6
+    },
+    {
+      "arm": "RICH",
+      "first_budget_infeasible": {
+        "category": "format_reject",
+        "distance_after": 6,
+        "distance_before": 6,
+        "turn": 1
+      },
+      "id": "mining_R_14001_1",
+      "initial_distance": 6
+    },
+    {
+      "arm": "TERSE",
+      "first_budget_infeasible": {
+        "category": "regress",
+        "distance_after": 6,
+        "distance_before": 5,
+        "turn": 2
+      },
+      "id": "mining_R_14001_1",
+      "initial_distance": 6
+    },
+    {
+      "arm": "RICH",
+      "first_budget_infeasible": {
+        "category": "regress",
+        "distance_after": 7,
+        "distance_before": 6,
+        "turn": 1
+      },
+      "id": "mining_R_14001_5",
+      "initial_distance": 6
+    },
+    {
+      "arm": "TERSE",
+      "first_budget_infeasible": {
+        "category": "regress",
+        "distance_after": 7,
+        "distance_before": 6,
+        "turn": 1
+      },
+      "id": "mining_R_14001_5",
+      "initial_distance": 6
+    },
+    {
+      "arm": "RICH",
+      "first_budget_infeasible": {
+        "category": "regress",
+        "distance_after": 5,
+        "distance_before": 4,
+        "turn": 2
+      },
+      "id": "mining_G_14002_2",
+      "initial_distance": 5
+    },
+    {
+      "arm": "TERSE",
+      "first_budget_infeasible": {
+        "category": "same_distance",
+        "distance_after": 5,
+        "distance_before": 5,
+        "turn": 2
+      },
+      "id": "mining_G_14002_2",
+      "initial_distance": 5
+    },
+    {
+      "arm": "RICH",
+      "first_budget_infeasible": {
+        "category": "regress",
+        "distance_after": 6,
+        "distance_before": 5,
+        "turn": 2
+      },
+      "id": "mining_G_14002_6",
+      "initial_distance": 4
+    },
+    {
+      "arm": "TERSE",
+      "first_budget_infeasible": {
+        "category": "regress",
+        "distance_after": 5,
+        "distance_before": 4,
+        "turn": 3
+      },
+      "id": "mining_G_14002_6",
+      "initial_distance": 4
+    },
+    {
+      "arm": "RICH",
+      "first_budget_infeasible": {
+        "category": "format_reject",
+        "distance_after": 6,
+        "distance_before": 6,
+        "turn": 1
+      },
+      "id": "mining_R_14001_2",
+      "initial_distance": 6
+    },
+    {
+      "arm": "TERSE",
+      "first_budget_infeasible": {
+        "category": "same_distance",
+        "distance_after": 6,
+        "distance_before": 6,
+        "turn": 1
+      },
+      "id": "mining_R_14001_2",
+      "initial_distance": 6
+    },
+    {
+      "arm": "RICH",
+      "first_budget_infeasible": {
+        "category": "format_reject",
+        "distance_after": 6,
+        "distance_before": 6,
+        "turn": 1
+      },
+      "id": "mining_R_14001_6",
+      "initial_distance": 6
+    },
+    {
+      "arm": "TERSE",
+      "first_budget_infeasible": {
+        "category": "regress",
+        "distance_after": 7,
+        "distance_before": 6,
+        "turn": 1
+      },
+      "id": "mining_R_14001_6",
+      "initial_distance": 6
+    },
+    {
+      "arm": "RICH",
+      "first_budget_infeasible": {
+        "category": "regress",
+        "distance_after": 6,
+        "distance_before": 5,
+        "turn": 2
+      },
+      "id": "mining_G_14002_3",
+      "initial_distance": 5
+    },
+    {
+      "arm": "TERSE",
+      "first_budget_infeasible": {
+        "category": "regress",
+        "distance_after": 6,
+        "distance_before": 5,
+        "turn": 1
+      },
+      "id": "mining_G_14002_3",
+      "initial_distance": 5
+    },
+    {
+      "arm": "RICH",
+      "first_budget_infeasible": {
+        "category": "regress",
+        "distance_after": 5,
+        "distance_before": 4,
+        "turn": 3
+      },
+      "id": "mining_G_14002_7",
+      "initial_distance": 6
+    },
+    {
+      "arm": "TERSE",
+      "first_budget_infeasible": {
+        "category": "same_distance",
+        "distance_after": 6,
+        "distance_before": 6,
+        "turn": 1
+      },
+      "id": "mining_G_14002_7",
+      "initial_distance": 6
+    },
+    {
+      "arm": "RICH",
+      "first_budget_infeasible": {
+        "category": "format_reject",
+        "distance_after": 4,
+        "distance_before": 4,
+        "turn": 3
+      },
+      "id": "mining_R_14001_3",
+      "initial_distance": 3
+    },
+    {
+      "arm": "TERSE",
+      "first_budget_infeasible": {
+        "category": "regress",
+        "distance_after": 5,
+        "distance_before": 4,
+        "turn": 2
+      },
+      "id": "mining_R_14001_3",
+      "initial_distance": 3
+    },
+    {
+      "arm": "RICH",
+      "first_budget_infeasible": {
+        "category": "regress",
+        "distance_after": 6,
+        "distance_before": 5,
+        "turn": 2
+      },
+      "id": "mining_R_14001_7",
+      "initial_distance": 4
+    },
+    {
+      "arm": "TERSE",
+      "first_budget_infeasible": {
+        "category": "regress",
+        "distance_after": 6,
+        "distance_before": 5,
+        "turn": 2
+      },
+      "id": "mining_R_14001_7",
+      "initial_distance": 4
+    }
+  ],
+  "limitations": "Descriptive state/action checks, not a causal test of reflection. Repeated no-op counts include doomed prefixes; feasible categories are separate. No hidden thought quality inference.",
+  "model_calls": 0,
+  "posthoc": true,
+  "source_hashes": {
+    "organism_v6/orch_game_screen.py": "629694a303ddf33d7525cfd8e3a08539ecf478705cef68f0a1d425b7bc792ebe",
+    "research_notes/analysis/orch_game_20260914_attempt1/FROZEN_BANK.json": "8d12ddb1e71df09fde3bacbb7eed83cbf9ee1a88e557667a9209ee0d1455dbc1",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard0/screen/mining_G_14002_0_RICH_EPISODE.json": "72b70f247b7e3ce4ded888bbdc615fd36c72ca0795271b5cf8635e4ffa64bd40",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard0/screen/mining_G_14002_0_TERSE_EPISODE.json": "f6af2eafbf38dc6ec6a2c51274d3b16a988abf01d7805a79c0bd001cbd7b47ab",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard0/screen/mining_G_14002_4_RICH_EPISODE.json": "1eb49fddd2ef8456a31608be05411aaf66bdd85cde5d6c9ac11f25b202890ae0",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard0/screen/mining_G_14002_4_TERSE_EPISODE.json": "4be3b1890dd79c3c3a4598447813dbd286d7b1e8229b5727f3059b7ee7b97fc2",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard0/screen/mining_R_14001_0_RICH_EPISODE.json": "be6fe98f3897d0a77a51a7e2c2c4b6219699dd70a4cee808cec38f77565bc627",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard0/screen/mining_R_14001_0_TERSE_EPISODE.json": "98c5c6f9c0ca4417394e8fcf8e3d9a7cab1d39308c4adb6aa746f5dbb6d06131",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard0/screen/mining_R_14001_4_RICH_EPISODE.json": "8bd8144c0122cda56259f75272ea087b0c266abb56c97d4289809e38969b74d2",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard0/screen/mining_R_14001_4_TERSE_EPISODE.json": "e15949741a52ebf2423c9552c47bf9195204598087fe48497431585248e6d0e2",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard1/screen/mining_G_14002_1_RICH_EPISODE.json": "67dfe472176ba6872df9446c421924c91a7ca379e3dddc795176a49e488ad5f5",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard1/screen/mining_G_14002_1_TERSE_EPISODE.json": "e91b0b07a54895e9bd4f9dc63cc8b934b89707e591c572c8ffd79751cbd1c1fd",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard1/screen/mining_G_14002_5_RICH_EPISODE.json": "603d3c3769e44ff9e81ff8b33a4083445abb53f535b6e765c61f12e0e0b28c39",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard1/screen/mining_G_14002_5_TERSE_EPISODE.json": "3c937179813ce9fe3b2e99d39f6fd8ea77c72e74a1109ed12cfddc891110d578",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard1/screen/mining_R_14001_1_RICH_EPISODE.json": "d24a3a4f3d8f86fc541189a314d7554472f860900739e6ab5ab914a12ae8091d",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard1/screen/mining_R_14001_1_TERSE_EPISODE.json": "c9dc6d7e4e1d7b482d68de52933291eec2238e925b3e63a275a4f876a7b0423e",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard1/screen/mining_R_14001_5_RICH_EPISODE.json": "7beaccc4cdf1bb950fdc04ed97a9cf9e0db6e8c1616825cda61cba408292913f",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard1/screen/mining_R_14001_5_TERSE_EPISODE.json": "c51d9a5fb9377b19ffd2ddba4a6e6f13311c90bed81e8c0e03aacb0f26579a5e",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard2/screen/mining_G_14002_2_RICH_EPISODE.json": "f2f44933148980ed82fc46f8d2faba4a5c9b54d20b6f8b8852d82682e3781af3",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard2/screen/mining_G_14002_2_TERSE_EPISODE.json": "d71e33344664434542447a3bc303b13f814925195dd49ee4d7858a8f46403064",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard2/screen/mining_G_14002_6_RICH_EPISODE.json": "350c5bbc611ac2e0c360b24fd80b7b570f25eea06ead8f9521efce556d559527",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard2/screen/mining_G_14002_6_TERSE_EPISODE.json": "2e5f4aa46c7cf3a000441774741407ec3d1a248390d2b6e4b9cf5d0af74d33fd",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard2/screen/mining_R_14001_2_RICH_EPISODE.json": "4fd5aa60c8f3d2839e314af34f6726e3d737b93e40cbbd999701489863f60cb5",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard2/screen/mining_R_14001_2_TERSE_EPISODE.json": "55a5b368b6b3e61826c1e24018e25fca733ba828e0e8b636cd2caac98f0c59c3",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard2/screen/mining_R_14001_6_RICH_EPISODE.json": "0ff7da8e59fa5793e97cce291b6150248e954b57827379ad41a59933a7839d57",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard2/screen/mining_R_14001_6_TERSE_EPISODE.json": "deeca945737e3dfc2a376fd4b793c37332e3aa0c0f707a678a2178068cb857e6",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard3/screen/mining_G_14002_3_RICH_EPISODE.json": "a886dd5def8f73b39bcb36f17c7f81b91239320ad5edfb10e4eac91623517f6e",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard3/screen/mining_G_14002_3_TERSE_EPISODE.json": "6d32a42b89e7bb12ee1fd8390b070ae9ecb5063562804d8aa75fe85af722747c",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard3/screen/mining_G_14002_7_RICH_EPISODE.json": "67d0367e01ad267a9f5fdacf10ce48ff9ac8fc3162f52b51d658e3832a95861d",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard3/screen/mining_G_14002_7_TERSE_EPISODE.json": "63283469ceedbf0c5bea4854a740d1da7becf1afc6b295567c0d4e5418554a81",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard3/screen/mining_R_14001_3_RICH_EPISODE.json": "11d83a19b9bab9153e69487cac6e1268b0f3d06b321d65d4ac66fb7b52e18e4d",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard3/screen/mining_R_14001_3_TERSE_EPISODE.json": "1a1962c812cfbe5f24f423961c245576fa0c021179ccf0b4303af060f587ed64",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard3/screen/mining_R_14001_7_RICH_EPISODE.json": "d3b0a2f496eea1fdb4d1b2f17e2a47bd3dbe0cd08f3c52c1b2e863147446c485",
+    "research_notes/analysis/orch_game_20260914_attempt1/native_evidence/shard3/screen/mining_R_14001_7_TERSE_EPISODE.json": "e8dee2c75a546bfbc7242c4bcc8d545ae0e43ad48f60721d47cc005de63d2540"
+  }
+}

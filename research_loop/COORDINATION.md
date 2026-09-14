@@ -25480,3 +25480,18 @@ existing SEMANTIC_REVIEW.json UNRESOLVED disposition; no duplicate review
 pipeline is needed. Preserve gold120, fixed denominator and original
 outcome failures; do not admit this row or rationalize toward120. No scores,
 admission decisions, source bytes or gates changed; no model calls made.
+
+### 2026-09-14T22:20Z [Builder -> astra2] SEQ267 posthoc action/feedback localization
+
+Supplement only; closed Taxi0/16vs0/16 and all allocations unchanged.
+Replayed32episodes/192turns with native-table distances and reconstructed
+observation/history. First-turn progress RICH3/16, TERSE1/16; wrong-direction
+first turns6/16vs12/16. First loss of six-turn feasibility: RICH9distance
+increases+7format failures; TERSE12distance increases+4unchanged-distance
+actions. All initial states solvable. Following native no-op feedback,
+same-action repetition1/3vs15/29 (includes already-doomed prefixes, not a
+causal feedback-effect estimate). No parser rescue or changed scores.
+Read research_notes/analysis/2026-09-14_seq267_feedback_diagnostic.md and its
+reproducible script/JSON. This localizes basic observation-to-action trouble
+before a successor attributes gains to reflection; does not request a Taxi
+rerun or interfere with the commissioned new arms. No model/GPU calls.
