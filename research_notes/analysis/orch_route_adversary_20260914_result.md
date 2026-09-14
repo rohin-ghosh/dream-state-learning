@@ -1,4 +1,4 @@
-# ROUTE-ADVERSARY terminal comparison — result SEQ requested from main
+# SEQ-268 — ROUTE-ADVERSARY terminal comparison
 Node: **node3, physical GPUs 2–4** (GPU5 unused).
 Native root: `/tmp/orch_route_adversary_20260914_attempt1/revision2`.
 Reduction: `research_notes/analysis/orch_route_adversary_20260914_attempt1/revision2/COMPARISON.json`.
@@ -6,7 +6,34 @@ Completion: **3/3 states, 72/72 case replays, 144/144 native-call joins**, zero 
 Correct source-switch pairs: **FULL 6/6; loss-off 1/6; original37ec 0/6**.
 Correct display-invariance pairs: **FULL 6/6; loss-off 2/6; original37ec 2/6**.
 Fully positive-source-supported subset: switch **5/5, 1/5, 0/5**, respectively.
-No promotion; same-family DEV conditional routing, not native retrieval or H1/H2.
+FULL reference completion remains **5/6 tasks, 2/3 complete goal-pairs**.
+No promotion; scripted-read DEV continuation, not autonomous retrieval or H1/H2.
+
+## Six-field handoff
+
+1. **Assumptions:** four scripted READs supply the context; at most two native
+   turns measure continuation only. Familiar graph family, three source worlds,
+   fixed missing source, single training seed per state. No fully blind claim.
+2. **Attempted falsification:** hold the public task fixed while swapping source
+   destinations; separately reverse only displayed ports. FULL resists the narrow
+   source-insensitive/display-only account, not every possible shortcut.
+3. **Evidence:**72/72 replayed cases,144/144 joined native calls; source-switch
+   FULL6/6,loss-off1/6,original0/6;display-invariance6/6,2/6,2/6. FULL reference
+   still only5/6 complete tasks and2/3 complete goal-pairs. Rawroot COMPARISON.json
+   and committed raw native archive hold all failures;13/13 CPU tests pass.
+4. **Obstacle:** initial accidental BOARD-summary exposure is disclosed. Scripted
+   histories limit autonomy inference; the missing-world duplicate READ remains.
+   Pre-GPU resource-scan and publication races were repaired without any native
+   retry, unknown-owner kill, repaired original source, or discarded evidence.
+5. **Compute recommendation:** this bounded worker is finished; allocate no more
+   compute to it. GPUs2–4 are physically released,5 was unused. Main has already
+   commissioned a separate blind replica on node3 GPUs0/1/5; this worker does not
+   launch, oversee, or review it.
+6. **Peer message:** ingest these bounded conditional-routing results state-first;
+   keep the residual2/3 reference goal-pair boundary and no-promotion decision.
+   No autonomous, fully blind, unseen-family, H1 or H2 claim follows. Main assigned
+   SEQ-268 only after this terminal comparison was ready; close this worker after
+   publication, preserving every source, call, failure and release receipt.
 
 ## Prospectively fixed task-success denominators
 
@@ -117,5 +144,6 @@ failed against FULL's conditional first-route behavior,6/6 paired switches and
 6/6 invariances versus controls1/6 and0/6 switches. Do not elevate this to general
 planning or promote the failed broader gate. Preserve the missing-world duplicate
 read failure and counterfactual-only status. Resource release and exact result
-paths are in the worker journal. Please allocate the next result SEQ in publication
-order; no SEQ is invented or reserved by this worker.
+paths are in the worker journal. Main assigned SEQ-268 in publication order only
+after the terminal comparison was ready. The bounded worker closes after this
+publication; it starts no new GPU arm or follow-up.

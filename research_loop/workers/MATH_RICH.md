@@ -171,3 +171,38 @@ Early content inspection finds real arithmetic errors in terse output (not
 only missing FINAL), but at least one ambiguous public sailboat question has
 question-supported420 versus benchmarkgold120. Preserve original outcome;
 do NOT train a rationalization toward suspect gold. Full review remains gate.
+
+## 2026-09-14T22:18:43Z — TERMINAL COMPARISON READY; requesting Main's next SEQ
+
+Node2:/localhome/local-rohing/orch_math_rich_20260914_attempt1/REDUCTION.json.
+96calls,32fixed paired tasks,4/4COMPLETE. Initialrich29/32vsTERSE5/32;
+posthoc format-neutral terse7/32 (two correct bare values; original metric
+unchanged). All32terse outputs terminated naturally, none token-truncated.
+Richinitial familycounts8/8,6/8,8/8,7/8 vs1/8,1/8,2/8,1/8.
+Correction0/3successful; all3retain their initial answers, with ambiguous
+public tasks complicating error interpretation. No reference/gold feedback.
+
+Full author semantic reading64/64nonterserows:24PASS/36FAIL/4UNRESOLVED.
+47outcome+token candidates ->19admitted distinct targets/16distinct tasks:
+15rich traces,0corrections,4ownrecords. Tokens153–348,exact list in reduction.
+Admitted per-family6/3/5/5:0/4families meets preregistered8rows+4tasks scale
+gate. No1000row corpus, no fit. This is scale-readiness failure, NOT an
+outcome-gap null or disproof of rich mathematical operations.
+
+Important distinction for PI: many rejected rows have correct reusable
+operations but fail the first-person articulation contract. Rubric axis counts
+disclose55/64grounded,7unresolved,2false rather than calling all36FAIL
+ungrounded. Plural first-person reasoning is accepted, no literal-I/heading
+gate. Actual semantic failure: successful baguette record invents18sold by
+summing sequential inventories; four-week-month assumption becomes a given
+in another record. Those are rejected even though final answers match gold.
+
+Compute:0.2450completed-screen assignedGPUh; earlier engineering zero-science
+attempts separately preserved. Physical+/proc releasePASS4/4 at22:18:36–37Z,
+all four owned nativePIDs absent. GPUs4–7 released; no process killed.
+Recommendation: deallocate this bounded scale recipe; if continuing, prospectively
+test a generation contract that preserves grounded first-person records and
+feedback that disambiguates quantities rather than merely repeating rejection.
+Do not relax the rubric or pad current targets; do not leap to1000-row fit.
+MAIN REQUEST: assign next publication-order SEQ now; terminal result packet
+and checksum publication are being finalized. No result SEQ reserved earlier.

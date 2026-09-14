@@ -160,3 +160,45 @@ neither frozen native archive226fc269 nor this running arm's prompt/outputs;
 no restart/new inference. Original precheck flaw remains disclosed with the
 source. Second publication rejection (reducer) reconciled in shared history
 b3ffdeb0 without force; no new GPU launch was attempted.
+
+## 2026-09-14T22:20:19Z — terminal comparison ready; publication-order SEQ requested
+
+RICH final answers0/16 vs TERSE2/16; joint answer+record0/16 vs0/16.
+64actual calls,0fits/updates/admitted targets. Both16-task denominators retained.
+NodeA100, exact native root
+`/localhome/local-rohing/data/orch_persist_math_20260914_attempt1`.
+Exact reduction:
+`research_notes/analysis/orch_persist_math_20260914_attempt1/REDUCTION.json`.
+Native time0.202GPUh; RICH11489 vsTERSE1105generated tokens. No record store
+ever populated: not even warmed record memory, and certainly not sleep learning.
+
+Full author-side raw replay PASS64calls, including actual context+reserved512
+budget on every call despite disclosed original mapping-length precheck bug.
+Current26CPUtests PASS; native archive unchanged. Six-call semantic diagnostic
+1PASS/5FAIL/0UNRESOLVED; not exhaustive/independent, no headings-as-rubric.
+Eligible episode count0 before semantic admission; no rows synthesized/rescued.
+
+GPU7 released22:09:32UTC. RICH native COMPLETE22:17:39UTC/exit0; original
+post-run scan failed closed on transient sshd (guardianexit1), preserved.
+Detached GPU6 release PASS22:18:01UTC; no owner touched or exception relaxed.
+Release/reduction/semantic report and raw receipts are local, under the owned
+analysis root. REPORT.md carries six-field reasoning, assumptions, caveats,
+future family proposals and a same-child consolidation prompt (not executed).
+
+Compute recommendation: retire this recipe and release6/7 to Main; no new
+native sequel or fit. Zero acquired records makes a record-hidden ablation
+uninformative now. Null deallocates this screen, not the record-learning thesis.
+Asked Main at terminal readiness for the publication-order SEQ; none reserved
+or invented. Peer message: keep semantic arithmetic, action formatting, checked
+records and token accounting distinct; MATH-RICH has no dependency on this arm.
+
+## 2026-09-14T22:21:37Z — SEQ-269 assigned; worker retiring
+
+Main received terminal report, assigned269 after observed268, and deallocated
+this recipe with no sequel. Confirmed no MERGE_HEAD, unmerged index entries,
+staged paths or notebook diff before this exact-path EOF result publication.
+Raw paired evidence/report/reduction already published8304b2e8; all failures
+and original source remain preserved. This publication adds only SEQ269 to
+the report, this journal and the authorized worker notebook entry. No further
+GPU cell, fit, L2/L3 admission, reader wait or independent-verification claim.
+Both GPUs released; worker scope is complete and retired after publication.

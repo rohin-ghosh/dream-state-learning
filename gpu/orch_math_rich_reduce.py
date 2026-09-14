@@ -5,6 +5,7 @@ from collections import Counter
 import hashlib
 import json
 from pathlib import Path
+import re
 
 from organism_v6 import orch_math_rich as math
 
@@ -61,6 +62,18 @@ def reduction(root, reviews=None):
     result['admitted_by_family'] = dict(Counter(row['family'] for row in admitted))
     result['admitted_token_distribution'] = sorted(row['generated_tokens'] for row in admitted)
     result['semantic_status_counts'] = dict(Counter(row['semantic_status'] for row in decisions if row['kind'] != 'terse'))
+    result['rubric_axis_counts'] = {axis: dict(Counter(str(row['review'].get(axis))
+        for row in decisions if 'review' in row)) for axis in
+        ('first_person', 'grounded_operations', 'checkable_expectation', 'reusable_content', 'no_padding')}
+    numeric_successes = 0
+    for row in decisions:
+        if row['kind'] != 'terse':
+            continue
+        matched = re.fullmatch(r'(?:FINAL:\s*)?([+-]?[\d,.]+(?:/\d+)?)\s*(?:%|mph)?', row['target'].strip())
+        if matched:
+            numeric_successes += math.number(matched.group(1)) == math.number(row['gold'])
+    result['posthoc_terse_numeric_sensitivity'] = dict(success=numeric_successes, denominator=len(tasks),
+        purpose='FORMAT_SENSITIVITY_ONLY_NOT_CHANGED_PRIMARY_OR_ELIGIBILITY')
     result['class_metrics'] = {}
     for kind in ('terse', 'rich', 'correction', 'record'):
         group = [row for row in decisions if row['kind'] == kind]
@@ -87,6 +100,9 @@ def main():
     result, decisions = reduction(options.root, read(options.reviews) if options.reviews else None)
     (output / 'REDUCTION.json').write_text(json.dumps(result, indent=2, sort_keys=True) + '\n')
     (output / 'ROWS.json').write_text(json.dumps(decisions, indent=2, sort_keys=True) + '\n')
+    admitted = [{key: row[key] for key in ('task_id', 'family', 'kind', 'student_prefix', 'target', 'target_sha256')}
+                for row in decisions if row['admitted']]
+    (output / 'ADMITTED_ROWS.json').write_text(json.dumps(admitted, indent=2, sort_keys=True) + '\n')
     print(json.dumps({key: value for key, value in result.items() if key not in ('call_file_sha256', 'token_distribution')}, indent=2))
 
 
