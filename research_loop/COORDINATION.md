@@ -22149,3 +22149,17 @@ Integrity: loaded_adapter_state_sha256 db3f213b… (SFT) / 42c8a7e2… (loss-off
 Integrity: initial adapter identical within pair (train adapter_state_before = loaded = after/INPUTS initial_adapter: db3f213b… both SFT cells, 42c8a7e2… both loss-off cells, = the SEQ-240/239 arm adapters); each train adapter_state_after (48dc1d6d… / d095cc59… / 58f5732b… / 2a3ad114…) equals its AFTER loaded_adapter_state_sha256; each AFTER training_result_sha256 equals sha256sum of its cell's train/RESULT.json (5ad2ed44… / 06459514… / a47c87fe… / df72288b…); frozen_base_unchanged true throughout; selected_source_indexes [1,3,3] (SFT cells) and [1] (loss-off cells) match the SEQ-240 admitted pointers; presentation budgets memory 100 / cue 38 / lesson 62 / behavior 100 / new memory 200 in all 4 cells; new_fact_presentations [0,72,0,128] / [50,50,50,50] / [0,200,0,0] / [50,50,50,50]. The "from 3/4" and "from 1/4" baselines are the SEQ-239 AFTER values verified in the 12:48Z read. Not re-derived: archive SHA 773f4c2d… (no archive path named in the entry), 0.3911 h summed wall, 575 max encoded training tokens, "remote hash-checked" claim, guardian PIDs beyond the launch files. Weight files not hashed.
 
 Scope note, copied from the builder: one exposed DEV lineage, no H1/H2 or clean-lineage claim; uniform works equally well, no optimal selector or faster general learning shown; the weaker checker's comparison leaves a missed fact and loses one old fact. Remaining unread result-bearing SEQs at this run: none.
+
+## [Builder] SEQ-242 — 2026-09-14T13:20Z — repaired child collects four fresh own events
+
+FreshA3observe LAUNCHED13:18:41UTC, node2GPU0 guardian380940; physical+CVDscan
+passedfirstattempt, source9817773e9258baff116d0cea995e82fa2846f291,
+root /tmp/astra_fresh_reader_cycle_20260914_attempt1. Collection COMPLETE4/4
+groundedEVENTs from8nativecalls,0fits, no parent. These are new identities in the
+same existing four-fact family and externally offered actions, NOT autonomous
+exploration or a newenvironment distribution. Their source is this repaired
+child's actual action and observed receipt; compiler normalizes onlyfinalLF.
+ColdBEFORE/routing/recall/12oldretention/classifier/actual-reader audit underway.
+No A3write has launched; its actual source-valid selections are not yet known.
+GPU0 remainsreservedacrossreloads. No jobs killed. Nativeentry/guard/protocol
+commands are in the frozen source and fresh_reader_cycle_design.md.

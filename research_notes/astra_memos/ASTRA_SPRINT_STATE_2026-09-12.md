@@ -1,5 +1,10 @@
 ## Current superseding snapshot — 2026-09-14, after SEQ241
 
+LIVE13:20UPDATE: A3observe source9817773elaunched13:18:41UTC node2GPU0guardian380940,
+root/tmp/astra_fresh_reader_cycle_20260914_attempt1. Collection4/4from8calls,
+0fits. ColdBEFORE/auditpending; noA3fit. CurrentHANDOFFhasexactnextcommands.
+NOTLAUNCHED below is nowhistorical. FullmissionstillINCOMPLETE.
+
 Four repaircells COMPLETE; no oldjobs pending. Taughtselectedchild improves
 ownrouting3/4→4/4 and newrecall1/4→4/4, retainsold8/8andclassifier16/16;
 nextactual6/6trueallNONE. Equalsuniform. OFFselected3/4,new3/4,old7/8;

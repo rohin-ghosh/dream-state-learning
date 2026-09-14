@@ -2,6 +2,20 @@
 
 ## CURRENT OVERRIDE — September14,2026, after SEQ241
 
+LIVE13:20UPDATE supersedes NOTLAUNCHED below: source9817773e9258baff116d0cea995e82fa2846f291,
+node2root/tmp/astra_fresh_reader_cycle_20260914_attempt1, GPU0observe guardian380940,
+started13:18:41UTC.73CPUtests+actualsourcePREPARED_NO_MODELPASS.
+SEQ242collectionCOMPLETE4/4freshEVENTs8calls0fits; coldBEFORE/auditunderway.
+Inspectcollect/RESULT.json,before/RESULT.json orFAILED.json,observe.log.
+If beforeCOMPLETE, CPUreplayread_collection/read_before innewdriver, inspect
+actualsourcevalidchoices (no manualrepair/filter), then launchtwo100update
+forksSELECTED/UNIFORM usingfrozenguard onGPU0/1 aftersource/readinesschecks.
+SameSFT_SELECTEDparent,96memoryviews(all12old),20cue+62lesson,200new.
+No A3fit launched atthiscut. PreserveGPU0reservationeven0MiBthroughreloads.
+Goodall persists previousSEQ241reduceroutput; all8stagesCOMPLETE2matchedpairs;
+Maxwellactual/fieldmemosavailable, primaryVMwatcheralsoverifiedSEQ240/241.
+Carson sixwritingfilescommittedthroughSEQ241; A3resultsnotyetadded.
+
 FullmissionINCOMPLETE. All4fbe0981crepairfits/AFTERs COMPLETE, no MainGPUjobs
 remain from those stages. SFTselected=uniform4/4routing,new4/4,old8/8,
 classifier16/16,nextactualaudit6/6trueallNONE. OFFselected3/4routing/new,
