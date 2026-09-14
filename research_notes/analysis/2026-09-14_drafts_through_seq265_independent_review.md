@@ -1,5 +1,9 @@
 # Drafts through SEQ265 — independent change-review
 
+Current disposition: the medium finding below is CLOSED by the separately
+bound repair verification at snapshot8e5213c85370e2725db333a7b3da64f56a1970f0.
+The original reviewed-snapshot finding remains preserved below.
+
 2026-09-14. **Released to Main. Verdict: REVISE one medium-severity
 reporting-status inconsistency, repeated at four TeX locations.** The changed
 result counts and scientific limits otherwise pass this bounded comparison.
@@ -125,3 +129,34 @@ is certified; recorded state/cost claims are checked against released records,
 not new execution. Existing older sections are not reapproved wholesale.
 The four-site repair is a prose-status correction, not an experiment blocker
 or a request to change the rubric, admission gate, or any result.
+
+## Bound repair verification — September 14, 2026
+
+**M1 CLOSED at snapshot `8e5213c85370e2725db333a7b3da64f56a1970f0`.**
+The original finding and original-snapshot verdict above remain preserved.
+This addendum verifies only the four replacements and the raw-label/review
+distinction, not a full rereview or approval of intervening changes.
+
+- `paper_prototype/main.tex:51` and
+  `paper_prototype/astra_sprint_draft_20260912.tex:20` now say
+  `collection with content review complete (one qualified episode; no fit)`.
+- `paper_prototype/main.tex:832` and
+  `paper_prototype/astra_sprint_draft_20260912.tex:1070` now say
+  `content review is complete (one qualified episode; no fit)`.
+- Raw collection labels remain `UNREVIEWED`/`fit_ready=False` at
+  `paper_prototype/main.tex:966` and
+  `paper_prototype/astra_sprint_draft_20260912.tex:1204`; the separate overlay
+  explicitly preserves raw rows and original judgments at
+  `paper_prototype/main.tex:981` and
+  `paper_prototype/astra_sprint_draft_20260912.tex:1219`.
+
+All locations here refer to the repaired snapshot. Its two bounded V3
+execution/content blocks are byte-identical to the original reviewed
+`9ce55e11b0c62323d4d3c1297cc20553be6608bd` blocks. The replacement passages
+retain quality LIVE/not analyzed and the one-episode/no-fit limitation.
+
+Checks: local `git show`, repair-parent-to-commit two-file `git diff`, and
+standard-library assertions for exact replacement occurrences, removed stale
+phrases, preserved overlay language and bounded-block byte identity: PASS.
+Memo whitespace check: PASS. No draft edits, GPU/model/network calls, TeX,
+raw-data rerun or broader manuscript review. Addendum and ownership released.

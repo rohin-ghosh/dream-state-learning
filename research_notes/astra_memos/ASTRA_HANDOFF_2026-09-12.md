@@ -1,5 +1,11 @@
 # Astra restart handoff — current override after SEQ264, 2026-09-14
 
+20:38RESTART: onlyNashqualityfitsremainlive,FULL1553/LOSS_OFF1549of2928,
+samePIDs/root/deadline; TRAINforecast21:21UTCplusAFTER,conditional. No fit
+results yet. Allcollections/contentreviewsclosed; sixdrafts9ce55e11plus
+repair8e5213c8independentlychecked. No PDF/send/fullmissioncompletion.
+Read freshest section in ASTRA_FRESH_ORCHESTRATOR_HANDOVER_2026-09-14.md.
+
 LATEST: fullV3contentreviewCOMPLETE,196P108F32Uafteroneagreed adjudication,
 1/56content-qualifiedepisode6rows,nooppositegoalpair; nofit. SEQ265critique
 independentlychecked/closed. AllA100GPUs andnode3GPU2released. Onlyquality

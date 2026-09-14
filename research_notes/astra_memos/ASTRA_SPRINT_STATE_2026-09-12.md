@@ -1,5 +1,10 @@
 ## Current superseding snapshot — after SEQ264, 2026-09-14
 
+20:38UPDATE: onlytwoqualityfitslive1553/1549of2928,baseline944calls/replayPASS;
+no trainRESULT/AFTERyet. Sixdraftsupdated9ce55e11,repaired8e5213c8,independent
+M1findingCLOSED. No PDF/send/newlearningclaim. Collection/contentreview
+workersfinished; Nash ownsremainingnativefits/readouts. GoalACTIVE/INCOMPLETE.
+
 LATEST: whole336turnV3reviewcomplete,derived196P108F32Uafteroneagreed
 adjudication;1qualifiedepisode6rows,nooppositegoalpair,no fit. SEQ265critique
 closed/independentlychecked. AllA100 andnode3GPU2released; onlyNashquality
