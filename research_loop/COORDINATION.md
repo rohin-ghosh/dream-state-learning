@@ -19867,6 +19867,42 @@ CPU reducer12focusedtestsPASS; exact report in
 gpu_artifacts_local/astra_pchain2_free_reduce_20260914_attempt1/RESULT.json.
 This successor deliberately has no original null/protocol-clearance claim.
 
+## [Builder] SEQ-207 — 2026-09-14T07:13Z — second BASE collection fails; stop prompt-only iteration
+
+A2/v2 collector guardian326602/worker326621 finished32episodes in101s,
+70calls,0strict successes/0draftrows. It reached and stopped atGOAL once;
+30prematureSTOPs and1malformed action.23episodes STOP on their first call.
+No native errors/truncations; base hash unchanged. This is not host goal-detection
+failure: sampled CURRENT andGOAL differ when the actor emitsSTOP. Prompt and
+master both changed, so this does not isolate a causal prompt effect.
+
+[Builder -> Rohin] Rather than keep tuning a long prompt on an untrained base,
+I will use the saved locally skilled D2 controller as the next data collector.
+It is frozen during collection, not trained again. This asks whether the pieces
+we already taught make it easier to obtain its own successful whole trajectories.
+No clean BIRTH label is assigned: D2 is still an excluded DEV controller, and
+this remains developmental data-engineering rather than an authentic flywheel.
+
+[Builder] 2026-09-14T07:13Z — authorize D2guided collection, node2GPU0,
+/tmp/astra_stage2a_d2_collect_20260914_attempt1. Exact saved512update D2state
+2ce34dced3b9c55335d4bdf195b870ecdef69a2bc94de641cb1ccbf151aee2bf and adapter
+5e96317f732aed604691d93f98c02f21dbb0621501381d416f552fe7694bb394; weights-only
+load, verify lineage/initialroster/hash, freeze ALL parameters, verify base and
+adapter before/after. ZERO new updates. SameV1 public teacher strategy, fresh
+TRAINmasterASTRA-OUTCOME-COLLECT-TRAIN-20260914-A3,32cases,strictselector unchanged,
+900s/928slots. No concrete oracle action or scored eval data supplied. General
+learner_factory seam leaves defaultBASE behavior unchanged; old executed source
+copies are immutable. D2moduleSHAc1e04f1feea46db41adbd4273fe1d2d3542d3973ce5b16e2ffef5e4d5f3379d2.
+52CPUtestsPASS, script syntaxPASS; physical+CVD+leasecheck at launch. PID follows.
+
+[Builder] Outcome-SFT runner is prepared, not launched: nonempty verified
+successful source rows required. Student input contains no elicitation guidance;
+freshseed0rank8,256updates,batch4,BASEdisabled-adapter and fitted evaluations
+on separate prospectively fixedASTRA-OUTCOME-EVAL-20260914-A1.11focusedtestsPASS;
+native-template return_dict=False corrected before launch. Only adapter saved,
+not full resume state, and in-process readout alone will not claim fresh reload.
+No empty dataset or authored substitute is used to manufacture a fit.
+
 ## [Fable] 2026-09-14T07:03Z — self-check: D2 closed (SEQ-203: 7/10 criteria, whole chains 0/8); the first outcome-first collector ran the frozen base on 32 fresh instances and yielded 0 whole-route successes (SEQ-205: 14 premature STOP, 12 over-budget, 5 invalid STEP, 1 goal arrival with an extra THINK); CLOSED full-history contrast OOM'd once and is rerunning with expandable segments; the weights-only two-hop DEV sibling (P-CHAIN-2 free-endpoint) fitted three arms and its readouts ran — results not yet in the notebook; two Builder → Rohin messages relayed; ledger P27 updated, P28 pre-registered
 
 **Builder → Rohin 06:40Z (on message 57), relayed:** agrees the next dataset should be the model's actual environment-verified successful trajectories, not a growing library of authored labels; the fixed ATOM/CLOSED comparison stays as a diagnosis of why the first attempt did not chain, not as the data engine. Correction to the watcher: at D1 CONTINUE was 2/4, the other three skills 4/4 (accepted; the ledger says so, my 06:3x advisory line did not). Will NOT train on the scored SEQ-200 evaluation traces and retest those worlds; instead a collector runs the frozen base with generic strategy prompting on 32 fresh TRAIN-only instances (public history only, no oracle/private graph); only environment-verified whole successful traces become draft SFT rows; "masking a teacher prompt alone does not remove its information from a training input" — the guidance is removed from the student prefix entirely, leaving task, public observations and the model's own actions with loss on the selected response; unguided test on separate instances. Overnight order: finish the two controller diagnoses, collect successful guided trajectories, distil them into unguided behaviour, use a working small controller for the first own-experience/update/retest loop; "if collection itself fails, diagnose that concrete failure rather than spend another block on paper-grade guards."

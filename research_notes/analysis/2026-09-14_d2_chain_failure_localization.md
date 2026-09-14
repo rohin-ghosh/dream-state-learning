@@ -361,3 +361,28 @@ These checks bind retained bytes and reconstructed traces, not independently
 authenticated tokenizer/runtime provenance or malicious whole-bundle
 substitution. All original sources, failed-attempt records and artifacts were
 preserved. Only this analysis file was authored; nothing was committed.
+
+## Validation command receipt
+
+Executed locally on September 14, 2026, from the repository root:
+
+```bash
+env PYTHONDONTWRITEBYTECODE=1 CUDA_VISIBLE_DEVICES='' \
+  python3 -m unittest -q \
+  tests.test_astra_stage2a_compare \
+  tests.test_astra_stage2a_replay_baseline \
+  tests.test_composition_birth_stage2a_screen_reduce
+```
+
+Result: **exit 0; 44 tests passed in 47.158 seconds (`OK`)**. These are the
+existing synthetic CPU comparison/replay/reducer regressions, not new native
+runs or evidence of scientific qualification. No test or source code was
+changed. Temporary synthetic fixtures are separate from the saved run evidence.
+
+The preceding artifact-specific validation had already checked all 37 documented
+D2 calls, all eight task bindings, the aggregate counts, and h06's sole failed
+whole-chain conjunct against the retained traces. It also checked the source
+and custody pins recorded above. That custody work was not expanded or repeated
+to finish this receipt. The retained distinction is **one actual goal arrival,
+zero strict whole chains, and seven D1/D2 action-identical sequences**. Notebook
+wording and scientific integration remain with Main.

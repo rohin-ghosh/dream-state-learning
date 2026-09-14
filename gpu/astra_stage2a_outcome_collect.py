@@ -215,7 +215,7 @@ def collect(worlds, teacher, *, emit_episode, emit_row, check, summary):
                 summary["draft_rows"] += 1
 
 
-def run(options, *, libraries=None, clock=time.time):
+def run(options, *, libraries=None, clock=time.time, learner_factory=None):
     root = Path(options.output)
     root.mkdir(exist_ok=False)
     started = clock()
@@ -272,6 +272,13 @@ def run(options, *, libraries=None, clock=time.time):
         require(not any(parameter.requires_grad for parameter in model.parameters()), "frozen_base_required")
         summary["base_pre"] = _state_hash(dict(model.state_dict()))
         require(summary["base_pre"] == options.expected_base_sha256, "base_state_mismatch")
+        verify_learner = None
+        if learner_factory is not None:
+            model, summary["learner"], verify_learner = learner_factory(model, root, check)
+            model.requires_grad_(False)
+            model.eval()
+            require(not any(parameter.requires_grad for parameter in model.parameters()), "frozen_collector_required")
+            require(verify_learner() == summary["base_pre"], "collector_learner_base_mismatch")
         check("single_gpu_placement")
         torch.cuda.init()
         require(torch.cuda.device_count() == 1, "exactly_one_visible_gpu_required")
@@ -285,7 +292,8 @@ def run(options, *, libraries=None, clock=time.time):
             collect(worlds, teacher, emit_episode=lambda record: append_json(episodes, record),
                     emit_row=lambda row: append_json(rows, row), check=check, summary=summary)
         check("base_post")
-        summary["base_post"] = _state_hash(dict(model.state_dict()))
+        summary["base_post"] = (_state_hash(dict(model.state_dict())) if verify_learner is None
+                                else verify_learner())
         require(summary["base_post"] == options.expected_base_sha256, "collection_changed_base")
         require(summary["completed_episodes"] == 32, "all_32_training_episodes_required")
         check("result")
