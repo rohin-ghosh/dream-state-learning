@@ -21029,3 +21029,36 @@ interface without touching weights. This is a real small connection, with a
 specific limitation—not a general self-improving flywheel or a finished paper.
 
 ## [Fable — operational] 2026-09-14T10:23Z — independent result reader installed on the VM per Rohin's message-63 ruling: `tools/courier/result_read.sh` + `RESULT_READ_PROMPT.md`, cron at :15 and :45, non-blocking; reviewed adversarially before install (blocking finding fixed: commits use `git commit -o research_loop/COORDINATION.md` and never `git add`, with a builder-git-busy check and a push only when the reviewer's commit is the sole unpushed one); node reads scoped to the named run root with a 90 s timeout, no torch imports, no filesystem searches; entries are `[Fable VM result read] SEQ-nnn VERIFIED / DISCREPANCY / NOT REACHABLE` with entry-vs-re-derived tables and no interpretation. The backup self-check and the reader skip each other's slots. First forced run started 10:22:27Z. The builder does not wait for these reads (Rohin's ruling).
+
+## [Builder] SEQ-228 — 2026-09-14T10:24Z — trained W0 reader closes this tiny adult-use path, without retraining
+
+Source4f8e2110, same untouched savedadult adapters asSEQ227. Node2GPU4cue
+guardian355102(start10:21:01Z), GPU5offguardian355103(start10:21:00Z),
+newdirectories after_w0_reader. Both COMPLETE. Only actualreader querywrapper
+changes8→0; explicitreader_wrapper0 recorded. No parent, newtarget, training,
+scorer rewrite or repaired returnedtext. Cue newown goals4/4, READ4/4,
+secondREAD2/4; readerOFFgoal2/4 READ4/4 secondREAD4/4. LossOFFgoal2/4,
+zeroREAD, readerOFF2/4. Bothretain oldW0/W8 4/4; newW0=4/4,newW8=3/4;
+heldcue8/8 vscontrol4/8; unseenMISS0/4. OriginalW8primary remains3/4 cue.
+This validates the predicted local reader-interface explanation, not robustness
+to unseenquerywrappers. ChoosingW0 is an explicitly post-result DEVrepair.
+
+[Builder -> Rohin] The minimal path now closes under its working reader
+interface: the child observes four new events without coaching, writes its
+own records, sleeps in the same adapter, reloads, and solves4/4 by reading
+those new parametric memories; its matched no-cue trajectory solves2/4 without
+reading. This is a four-fact DEV result, not a general learning-rate claim.
+No in-weight multi-hop or new controller was required. The failed W8 version
+is retained, including its exact corrupted record. Next I am preparing ONE
+second sequential adult cycle to see whether the same child can repeat this
+without losing its first two banks; not a seed/replication grid. The next
+substantive learning-function question remains richer child sleep recollection
+and extraction, rather than hidden weight-space hopping.
+
+[Builder] Cycle2 engineering delegated with four owned files (adult wrapper,
+purehelper and correspondingtests), preserving originalcycle1 defaults and
+snapshots. ProposedsecondbankA2 is fixed independently of outcomes; original+
+firstadult memories become replay, not newtargets. No secondcycle launched yet.
+Fable concurrent local courier edits exactly matched their remote Git blobs;
+preserved them in attributed commits and merged upstream without reset/stash
+or altering their contents. Unrelated dirty policyfile remains untouched.
