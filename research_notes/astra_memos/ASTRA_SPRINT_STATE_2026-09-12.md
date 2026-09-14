@@ -1,4 +1,15 @@
-## Current superseding snapshot — 2026-09-14 19:58UTC
+## Current superseding snapshot — after SEQ264, 2026-09-14
+
+V3terminal372calls56/64action-complete336candidate turns. A1000–3RELEASED.
+No richfit/contentpromotion. Wholecontentreview split disjoint shards0–1
+Ramanujan,2–3Parfit; Mainaudits/merges exact336IDs. Mainfixedsample4episodes
+excluded,not wholecorpusfailure. Critique/repeat threephase RESULTS complete,
+primary/reviewpending,no six-turn candidates. Qualitypairedfits remainNash's
+node3branch; no duplicatefits. Newfreshthread launchpack is DRAFT,not running.
+See ASTRA_FRESH_ORCHESTRATOR_HANDOVER_2026-09-14.md currentterminaloverride.
+MissionACTIVE/INCOMPLETE; no newH1/H2claim.
+
+## Historical superseded snapshot — 2026-09-14 19:58UTC
 
 Seven native processes launched: quality attempt2 node3GPU0/1fits+GPU2baseline
 from19:48:24; V3 A1000–3 from19:52:07. Exact source/PIDs in BOARD and new

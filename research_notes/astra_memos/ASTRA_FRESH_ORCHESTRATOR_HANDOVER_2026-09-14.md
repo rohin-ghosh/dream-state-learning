@@ -1,4 +1,43 @@
-# Fresh-orchestrator handover — 2026-09-14 19:58 UTC
+# Fresh-orchestrator handover — 2026-09-14, after SEQ264 terminal
+
+## Current terminal override
+
+V3 is COMPLETE, not live: SEQ264,372actualcalls,56/64action-completeepisodes,
+336unreviewed turns; all16TRAINworlds represented. Last native stage ended
+20:03:03.545UTC. A1000–3 explicitly RELEASED in BOARD, subject to new live
+admission. Exact source80368f94 and all historical launch PIDs below remain
+provenance, not a reason to restart the completed collection. Capsule SHA
+`b8b9d7e1eb1b2bda37b602d6c6ea7f26e4b6362371803ce8c3e7edac8d3ca633`;
+local root `gpu_artifacts_local/astra_rich_action_first_v3_terminal_20260914_attempt1`.
+
+Content review: Ramanujan owns shards0–1 only,30episodes180turns, in
+`2026-09-14_rich_v3_content_review.json` and companion memo. Parfit after
+critique primary owns shards2–3 only,26episodes156turns, in separate
+`2026-09-14_rich_v3_content_shards23_review.json` and memo. Main must join
+exact packet IDs once, confirm all336turns covered, and challenge accepted
+episodes/ambiguities. Main's fixed24turnsample excludes its four episodes;
+it is NOT a claim that all56 fail. No rich fit is approved.
+
+Critique/repeat three phase receipts are COMPLETE; primary/review in progress,
+do not relaunch. Root `/tmp/astra_self_critique_repeat_20260914_attempt1`.
+Initial25calls,4/16goals,0/8pairs; critique54calls,6/16goals,1/8pairs;
+repeat48calls,4/16goals,1/8pairs. All have zero six-turn candidate episodes.
+These are observed phase counts, not an established critique benefit or
+learned reflection. Callback/format failures must be distinguished from native
+generation errors in analysis. Capsule and CPU_REDUCTION now locally under
+`gpu_artifacts_local/astra_self_critique_repeat_terminal_20260914_attempt1`.
+Schrodinger owns its independent result review. GPU4/5 release awaits owner
+terminal verification/logging. Quality node3GPU0/1 fits remain the long-running
+branch; use Nash's EXECUTION for the actual latest update/baseline state.
+
+Fresh launch DRAFT now exists at
+`research_notes/FRESH_ORCHESTRATOR_LAUNCH_2026-09-14.md`; approval/new thread
+not assumed. Main notebook review corrects initial listed capacity15,not18
+(19after V3 release), flags obsolete scale cells, and distinguishes hypothesis
+from demonstrated cause. Its quotas are proposals. The existing handover's
+invariants and source-boundary distinctions remain in force.
+
+## Historical launch snapshot
 
 Mission ACTIVE/INCOMPLETE. Prepared under Rohin72. This is a handover, not
 authority to duplicate existing jobs or a claim that a second thread is live.

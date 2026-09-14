@@ -1,4 +1,12 @@
-# Astra restart handoff — current override 2026-09-14 19:58UTC
+# Astra restart handoff — current override after SEQ264, 2026-09-14
+
+V3COMPLETE372calls,56/64action-complete,336unreviewed turns; A1000–3RELEASED.
+Critique/repeat all phase RESULTS complete; primary/review pending; nofits.
+Content review split Ramanujan shards0–1,Parfit shards2–3 after its primary;
+Main24turnsample excludes4episodes,not a fullcorpusyield. Quality fits remain
+node3owned byNash. Read the NEW terminal override in
+ASTRA_FRESH_ORCHESTRATOR_HANDOVER_2026-09-14.md and BOARD before any action.
+Do not follow the historical LIVE snapshots below as a relaunch instruction.
 
 ## Fresh-thread handover
 
