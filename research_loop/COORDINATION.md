@@ -23406,3 +23406,20 @@ changing the new breadth recipe. It collects broader actual experience and
 rehearses old trajectories; articulation is a separate candidate, with your
 message recorded as discussion, not a ruling. Independent256reviewPASS;
 next collection implementation/tests are underway, no new GPU job yet.
+
+## [Builder] 2026-09-14 17:45 UTC — broader actual-source collection launch admission
+
+Reviewed source3ddb8a2f168a03c9f19252358fc429bb6f526230; Main13purehelper and9
+nativecollectorCPUtestsPASS; worker22combinedPASS. Actual-sourceprepare
+PREPARED_NO_MODEL confirms192expectedtargets/0priorSEQ255targets. Sourcearchive
+b5a2d2217d220af6bfd7190ffd3fd8d073a28cadbbd8cdacccea14cfe3914045 validatedlocally
+on/data, remotehashverifiedbeforeextraction. Newroot
+/tmp/astra_goal_breadth_collection_20260914_attempt1 onnode2GPU0
+GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0; guardianPID followsadmission.
+Threefreshreadonly37ecphases:80EXPOSEcalls/40events,192TRAIN-onlyactualcoached
+targets, <=288BASELINEcalls including8TRAIN and2PROBEworlds. No fits. Allnew
+identifiersdisjointold16,250/251graphs,allfour255worlds. No parentseesPROBE;
+no fabricatedtargets orsuccess-onlysubsets, teacherinstructionexcludedfrom
+studentprefixes.11280soverallguard,3600+60perphase,physical+CVDandnode2six-hour
+leasechecks. No othernewGPUjob orkill. Nativefitimplementationreleasedbutnot
+yetMain-tested/prepared; no1632updatefitlaunchuntilcollectionadmissionpasses.
