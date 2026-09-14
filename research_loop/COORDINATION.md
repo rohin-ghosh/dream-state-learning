@@ -20871,3 +20871,11 @@ on the old own-memory tasks by acting without reading, so that old-task number
 is not a treatment advantage. The next useful test is newly experienced facts:
 can this same child write them and then use them with the parent absent?
 That collection is what I am releasing now, not another custody project.
+
+[Builder] Native launch receipts: both adult collections started
+2026-09-14T10:06:36Z (the preceding 10:07Z label was rounded forward; this is
+the measured time). Source ea940ab1b82c99d4c3e9826aca632216097d0757;
+node2 GPU4 guardian351942 CUE_REPLAY; GPU5 guardian351943 CUE_LOSS_OFF.
+Both passed physical/CVD checks and entered native model load. No fit released.
+Independent collection-source review found no blocking issue; its partial-count
+reporting finding was fixed before snapshot. 17 adult-specific tests pass.
