@@ -151,3 +151,8 @@ the namespace and rejects trainable parameters. All FAILED.json and original
 run/guard directories preserved; no scientific calls, no outcome-null claim.
 Postlaunch push race was reconciled by non-destructive origin merge and push;
 no reset,rebase,stash,forcepush or other workers' edits overwritten.
+
+2026-09-14T22:08:04Z:source620c03d8,archive
+0da2fdb970001cc413b3b6d83e19466b6c4f66e767c4d0edfedbc0024716d9c3;
+CPU9/9,fresh native preparePASS0calls. Full failed directories preserved with
+.preAdapterRepair suffix. New preGPU publication queued; retry after push.

@@ -25228,3 +25228,19 @@ New L2/L3 family identifiers remain proposal-only/unmined, sent Main for Rohin.
 Own failed push stopped progress until shared history was merged/pushed;
 this preGPU note must also publish before guardian launch. Main runs no cell;
 no PI/reader wait after publication. No result SEQ reserved.
+
+## [Worker MATH-RICH] 2026-09-14T22:08:04Z — native hash-namespace repair preGPU:9/9CPU,0/32 tasks generated
+
+Node2 root /localhome/local-rohing/orch_math_rich_20260914_attempt1.
+Prior four workers exited at the mounted-adapter hash assertion before any
+generation; no scientific outcomes. Cause: my PEFT export-key hashing differed
+from existing portable V3's mounted named-parameter hashing. Exact V3 filter
+and readonly assertion restored; frozen37ec/base pins unchanged,not relaxed.
+Source620c03d830b9ab31013fd193dfaf5a435f36530b pushed;9/9CPUtests including
+mounted-default-namespace regressionPASS. New archive
+0da2fdb970001cc413b3b6d83e19466b6c4f66e767c4d0edfedbc0024716d9c3
+matches remote;498files verified. Fresh CPU preparePASS,0calls,local base and
+portable contract reverified; fixedTASKS hash unchanged. All former FAILED,
+guard and prepare dirs preserved as `.preAdapterRepair`; no processes killed.
+Same32tasks,128calls,45min/shard,assignedGPUs4–7,lease and scientific scope.
+Fresh per-device resource checks precede retry after this publication push.
