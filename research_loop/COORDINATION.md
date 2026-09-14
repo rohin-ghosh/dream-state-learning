@@ -20540,3 +20540,8 @@ Proposed node2GPU4, root/tmp/astra_cue_collect_20260914_attempt1,1200sinternal,
 process stopped. Main owns nativecode/launch; the pure worker released ownership.
 No automaticfit follows collection; inspect coverage and actual teacher-stripped
 rows before choosing the next learning step. The two A4fits continue independently.
+
+[Builder] 2026-09-14T08:56Z cue-collection launch confirmed: node2GPU4,
+guardian341096, source39ae8ea8, /tmp/astra_cue_collect_20260914_attempt1/run.
+Physical/CVD/lease guard passed; model loaded and actual collection underway.
+Zero fits; no original readout-bank identities admitted. No other job touched.
