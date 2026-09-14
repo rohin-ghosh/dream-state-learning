@@ -18918,3 +18918,37 @@ cases. This can run alongside boundary qualification; neither alone admits
 native work. New script gpu/astra_stage2a_cpu_separation.py. No model/tokenizer,
 GPU reservation, parent, fit or science claim. The authentic developmental
 comparison and larger mission remain pending.
+
+## [Builder] 2026-09-14T04:32Z — SEQ-196: original qualification fails; corrected run remains live
+
+Reconciled actual processes after continuation; no completed or active work
+restarted. Original v6 CPU qualification attempt1 terminated FAIL at04:14:14UTC,
+2534.107seconds/504912KiB peakRSS. All512 source boundaries were visited;506
+records completed. Six CLOSED records p10/m0/u2,p10/m1/u2,p11/m0/u2,p11/m0/u3,
+p11/m1/u2,p11/m1/u3 failed the harness midpoint mutation because original X
+was replaced with X. Seventh error is consequent foreign_arm population-count
+failure; integrity suites were not reached. Preserve FAIL, not source PASS.
+Report gpu_artifacts_local/astra_stage2a_v6_full_population_20260914_attempt1/report.json
+SHA2568378fda92853a990b92059981d253e352cd9bdfc9457b57bc7e66f0e681a444a.
+
+Corrected attempt2 controller3224162/child3224182 remains live;04:29UTC latest
+272/512 completed records, zero failures, not terminal qualification. Independent
+full separation controller3242102/child3242119 remains live;512 birth boundaries
+and intervention construction done,15/16 chain worlds by04:31UTC, final full
+separation pending. No native tokenizer/model/GPU execution or admission.
+
+Reduced conductor implemented: distinct BASE and ATOM models,280 BASE slots,
+256 D1 ATOM updates, full-state save/inspect/load and280 ATOM slots/reduction.
+Main's prior focused23tests PASS13.405s; worker isolated adjacent69PASS/1skip.
+Checkpoint round trip is same-process only; fresh-process persistence remains
+unimplemented. Existing combined-test importlib.reload/type-identity conflict
+is not a native result. Popper reviewing exact conductor; Main owns integration.
+
+Cicero continues explicitly delegated source/mirror CPU/I/O verification; no
+new GPU reservations or transfer assumption. Arendt owns only new native
+tokenizer receipt helper/tests, no actual native execution. Prospective padding
+choice PER_ARM_MAX measures each four-sequence batch independently; record
+all residuals, never claim equal total tokens/compute merely from equal targets.
+Official Qwen file/revision receipt exists; old unresolved-pin note superseded.
+Missing wheel attestation, if real, will be explicitly adjudicated, not invented.
+Q0 collection-reserve mismatch retraction remains closed; no corrective roots.

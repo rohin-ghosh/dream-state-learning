@@ -927,3 +927,44 @@ expiry September14 23:14UTC; preservation deadline September13 23:14UTC.
 Relevant prior prediction adapters/evidence already onVM. Latest acquisition
 also preserved. Followup evidence not yet transferred. No guarantee that
 other agents' node1 data is mirrored; verify if needed, do not assume.
+
+## Continuation override — 2026-09-14T04:32UTC
+
+This section supersedes stale active-job/next-step statements above. Mission
+ACTIVE/incomplete. Selected next path: v6 typed-boundary qualification, reduced
+BASE/D1 ATOM_LOCAL560reserved slots, then qualified authentic two-SLEEP.
+Q0 closed;180/1800 reserve blocking mismatch retracted, no corrective reruns.
+
+SEQ-196 records original qualification FAIL (six unchanged-X mutation fixtures,
+506complete/512visited; population-count failure; integrity suites unreached).
+Immutable report: gpu_artifacts_local/astra_stage2a_v6_full_population_20260914_attempt1/report.json,
+SHA2568378fda92853a990b92059981d253e352cd9bdfc9457b57bc7e66f0e681a444a.
+Corrected attempt2 controller3224162/child3224182 live at04:29,272/512complete,
+zero failures; snapshot immutable. Same master
+ASTRA-STAGE2A-V6-CPU-QUALIFICATION-20260914. Full separation attempt1
+controller3242102/child3242119 live,15/16chain worlds at04:31. Roots are
+gpu_artifacts_local/astra_stage2a_v6_full_population_20260914_attempt2 and
+gpu_artifacts_local/astra_stage2a_held_birth_separation_20260914_attempt1;
+logs append .log. Do not restart. Inspect terminal report/counts/pins/collisions
+and exact independent review before native preparation. Never reselect anchors
+after collisions. No new model/tokenizer/GPU execution or mechanism freeze.
+
+Source native-preparation adapters and separation/held/chain cores committed
+at a24721df or earlier. Reduced conductor and23passing focused tests completed;
+same-process reload only, no fresh-process persistence claim. Main integrating.
+Popper01a09dfd-481e-7131-8854-412e3e0012e1 reviews conductor read-only.
+Arendt01a09e2d-d9ae-7ca2-a980-eab55bbe874a owns ONLY new
+gpu/astra_stage2a_native_tokenizer_receipt.py and corresponding test; synthetic
+CPU work only. PER_ARM_MAX selected prospectively; measure actual lengths.
+Cicero01a09ddb-2bf2-7dd1-9e6f-ce7ca396dee6 owns CPU/I/O old node1 baseline
+verification only, unique output node1_baseline_verification_20260914_attempt1.
+Ask for actual PIDs/status; no duplicate transfer. Node1 expiresSep14 23:14UTC.
+
+Official Qwen revision/file pins are resolved by
+research_notes/astra_memos/receipts_20260912/astra_qwen_public_binding_receipt_20260913_attempt1.json
+and astra_qwen_node2_binding_20260913_attempt1.json. These do not qualify new
+Stage2A tokenization/runtime/initialization; do not invent wheel attestation.
+Node2 interpreter /localhome/local-rohing/v2/venv/bin/python; verified model
+snapshot a09a35458c702b33eeacc393d103063234e8bc28. Use existing wrapper.
+Preserve unrelated dirty gpu/codex/dream_state.rules and untracked two_sleep
+prospective packet. Pull safely before append, scoped commits/push after logs.
