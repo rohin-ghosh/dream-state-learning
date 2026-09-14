@@ -21853,3 +21853,46 @@ follow after launch; independent raw verification remains behind execution.
 **VM reader (11:45–11:48Z):** SEQ-229, 230, 232 VERIFIED; four runs, twelve SEQs, zero discrepancies.
 
 **Fleet:** a40:0/8 ovx:0/8 ovx2:0/8 a100:0/8 busy. Daemons: astra_nudge=1 fable_fill=1 courier_vm=1 occ_off=yes hb_age=55s astra_tmux=alive. Laptop chains 4/4. Node-1 lease ends 23:14 UTC (about 11 h); mirror complete. Nothing launched or killed by the watcher.
+
+## [Fable VM result read] 2026-09-14T12:18Z — SEQ-235 VERIFIED; SEQ-236 VERIFIED
+
+Read-only recount on node 2, root `/tmp/astra_adult_cycle2_20260914_attempt1/CUE_REPLAY` (`select_corrective`, `before`, `corrective_sleep/{CHILD_CORRECTIVE,UNIFORM_REPLAY}/{train,after}`, `collect/COLLECTION.json`). No process touched, nothing launched, nothing written on the node. Node-1 (a40) not involved.
+
+**SEQ-235** (child corrective selection, `select_corrective`)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| selector completion | 11:24:01.756Z | finished_unix → 2026-09-14T11:24:01.756191 | RESULT.json |
+| calls / fits / parent | 2 / 0 / absent | model_calls 2, fits 0, parent_present False; 2 CALL_*.json files | RESULT.json, ls |
+| input tokens | 1016/1006 | correction_prompt_tokens [1016, 1006]; captures prompt_tokens 1016, 1006 | RESULT.json, SELECTION.json |
+| terminal / untruncated | yes | both captures terminal True, truncated False; emitted token_ids len 54, 52 | SELECTION.json |
+| chosen source indexes | [0,2] | selections source_index 0 (call 0), 2 (call 1) | SELECTION.json |
+| wrong-goal task indexes | [1,2] | selections route_index 1, 2; BEFORE OWN_PARAMETRIC reached_goal [True, False, False, True] | SELECTION.json, before/RESULT.json |
+| admitted | 2/2 | admitted_selections 2, actual_wrong_goal_cases 2, task_denominator 4, both admitted True | RESULT.json, SELECTION.json |
+| outputs exactly match experienced EVENTs | yes | both raw outputs byte-equal to collection rows for E_43DKZR6D3S and E_QQ43NOEYBQ (no LF in raw) | SELECTION.json vs collect/COLLECTION.json |
+| RESULT sha | 6fad939d…6212dc | 6fad939ddb10dc22f2ff0ae6d36734f5b4dc1bef510824619bf139445f6212dc | sha256sum RESULT.json |
+
+Integrity: all seven file hashes in the memo (CORRECTION_SOURCE, CORRECTION_CASES, SELECTION, RESULT, REQUEST, CALL_000, CALL_001) match sha256sum on the node. loaded_adapter_state 07ecf4c5… and initial_training_result 3eaad009… as in the memo; status SELECTION_CAPTURED_NO_FIT, frozen_base_unchanged True. Source d13e017c is a git revision, not a RESULT.json field; not re-derived (runner_sha256 2e8b2485… recorded).
+
+**SEQ-236** (CHILD_CORRECTIVE vs UNIFORM_REPLAY, 100 updates each; common BEFORE = `before/RESULT.json`)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| common BEFORE own routing | 2/4 | OWN_PARAMETRIC reached_goal 2/4 | before/RESULT.json |
+| own routing corrective vs uniform | 3/4 vs 4/4 | 3/4 vs 4/4 | */after/RESULT.json OWN_PARAMETRIC |
+| both fix initial wrong tasks [1,2] | yes | corrective episodes 1,2 reached True; uniform episodes 1,2 reached True | OWN_PARAMETRIC episodes |
+| corrective loses task 3 | yes | corrective episode 3 (E_DEX6OHDHJP) reached False; BEFORE True; uniform True | same |
+| new W0 / W8 recall corrective vs uniform | 2/4 vs 4/4 | RECALL_W0 2/4 vs 4/4; RECALL_W8 2/4 vs 4/4 (corrective flags [T,F,T,F] = selected 0,2 correct, unselected 1,3 not) | RECALL_W0/W8 |
+| earlier W0, both | 8/8 | OLD_RECALL_W0 8/8 both (BEFORE 8/8) | OLD_RECALL_W0 |
+| earlier W8 BEFORE → corrective / uniform | 7/8 → 8/8 / 6/8 | 7/8 (E_3FIXU7HBPN False) → 8/8 / 6/8 (E_3FIXU7HBPN, E_3K7UVCYOTM False) | OLD_RECALL_W8 |
+| unknown MISS | 0/4 | 0/4 in BEFORE and both AFTERs | UNSEEN_MISS |
+| supervised tokens corrective vs uniform | 17009 vs 16701 | actual_supervised_tokens 17009 vs 16701 | */train/RESULT.json |
+| common denominator | 16701 each | reference_supervised_tokens 16701, original 16701, both arms | */train/RESULT.json |
+| raw reader errors corrective vs uniform | 3/7 vs 0/6 | corrective 7 memory calls, 3 differ from collection rows (E_VEEAOY3IIH ×1, E_DEX6OHDHJP ×2); uniform 6 memory calls, 0 differ | OWN_PARAMETRIC traces vs collect/COLLECTION.json |
+| updates per arm | 100 | updates 100; 100 LOSSES.jsonl lines, both | */train |
+| completion | 11:39 UTC | AFTER finished 11:39:08.910591 (corrective), 11:39:07.537757 (uniform) | */after/RESULT.json |
+| AFTER calls (memo: 86 / 84) | 86 / 84 | model_calls 86 / 84; files 70 CALL + 16 OLD_RECALL = 86, 68 + 16 = 84 | RESULT.json, ls |
+
+Other re-derived (memo values): second READ 4/4 → 3/4 / 2/4; reader-OFF 2/4 all three; held text 4+4/8 all three; presentations old/cue/new 100/100/200 both arms; MASKS.json 116 entries, sha feeeb242… both arms. Integrity: both train adapter_state_before 07ecf4c5… (= selector's loaded state); adapter_state_after b82490d3… (corrective) / 186accc5… (uniform) each equal to its AFTER loaded_adapter_state_sha256; each AFTER's corrective_training_result_sha256 equals sha256sum of its arm's train/RESULT.json (e719123e… / fd42378e…); selected_source_indexes [0, 2] in all four receipts; fits 1 per train, 0 per AFTER; frozen_base_unchanged True, parent_present False. Source e3a575d7 is a git revision, not re-derived. Weight files not hashed.
+
+Scope note, copied from the builder: local material-selection utility on one A1 child, one task family, four facts, one seed; externally prompted selection, not autonomous improved learning, not an H2 slope; no equal-token or overall dominance claim. Remaining unread result-bearing SEQs at this run: none (SEQ-233, 234, 237 carry no n/N counts in their first 12 lines).
