@@ -1,6 +1,42 @@
 # ICLR 2027 submission checklist
 
-## Current gate status (2026-09-12 PT)
+## Current gate status (2026-09-14 PT)
+
+### September 14 evidence delta
+
+- **Bounded write/retention primitive:** qualified on one exposed eight-EVENT
+  DEV bank across three optimizer seeds and two read views. A-only writes
+  acquired A at `4/4`; B-only continuation learned B but erased A; scheduled
+  replay and clean cumulative retraining ended at A `4/4`, B `4/4`. All 288
+  accepted calls were exact-hash audited with zero truncation. This proves
+  repeatable acquisition and bounded old/new retention on the same semantic
+  bank, not independent-bank generalization, connected use, native action
+  improvement, parenting, or lifetime learning.
+- **Controller birth:** the next claim-bearing model test is the reduced
+  560-slot M-COMBINE Stage2A BASE-versus-D1 screen. The four capabilities stay
+  joint---SEEK, PROSPECT, CHECK, and CONTINUE/STOP. CPU source/tests are active;
+  no model or GPU screen has run. A fresh audit rejected the current
+  full-object alias blacklist as overbuilt and non-total, and selected a
+  smaller exact-public-boundary plus typed-leak-basis repair before execution.
+- **Integrated mechanism:** after a qualifying Stage2A child, the decisive
+  gate remains one authentic same-adapter two-SLEEP junction: own action and
+  public outcome become EVENT/LINK memory, the child later issues its own
+  useful read under a goal, that read changes its next action, and the new
+  outcome is written and used after the second sleep. No such result exists
+  yet.
+- **Strong text baseline:** an exact proposal now exists for
+  `ACTIVE_TEXT_NATIVE-v2.1-AUTO(q16,B8192)`: frozen actor, append-only public
+  ledger, automatic BM25 plus witnessed-transition-graph retrieval, no model
+  reflector or generated query, with a doubled-bandwidth access sensitivity.
+  It is not implemented or certified and therefore cannot yet support a
+  superiority claim.
+- **Manuscript:** `main.tex` now contains the audited SEQ192 null and SEQ195
+  bounded retention result. Headline figures, integrated mechanism/lifetime
+  results, frozen result manifest, official style package, and final author
+  metadata remain missing.
+
+The older September 12 status below is retained as an audit snapshot; where it
+conflicts with this delta, the September 14 evidence controls.
 
 - **Full Experience Models claim:** not established. The minimum decisive
   program is now only three studies: one selective writer (`W0`, plus one
