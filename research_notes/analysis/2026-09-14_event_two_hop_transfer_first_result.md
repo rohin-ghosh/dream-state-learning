@@ -2,7 +2,10 @@
 
 September14,2026. Native collection and both matched readouts COMPLETE, source
 7db26bec1b419d5bb2548dcdec82cdc4f0adca29. Zero new fits or parental turns.
-Independent review pending; Main inspected the actual cases/calls and joins.
+Independent bounded review PASS; Main inspected the actual cases/calls and joins.
+Review: `2026-09-14_event_two_hop_transfer_independent_result.md`. It independently
+replays captured-source episodes, calls, state joins and archive bytes, not live
+tensor contents or complete ancestral histories; it preserves the failed case.
 
 | Fresh-world endpoint | Taught37ec snapshot | Original207ad snapshot |
 |---|---:|---:|

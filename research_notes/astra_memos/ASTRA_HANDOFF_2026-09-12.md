@@ -8,7 +8,7 @@ fresh EVENTs (8 calls), then TRAINED37ec scored OWN_TEXT3/4 versus ORIGINAL207ad
 0/4 on identical context; both UNAVAILABLE0/4. One fresh DEV graph, unchanged
 topology, one lineage, no new fit. Task3 skips the intermediate edge; this is
 not a formatting failure. Primary memo: analysis/2026-09-14_event_two_hop_transfer_first_result.md.
-Independent bounded review pending with Parfit. Terminal capsule:
+Independent bounded review PASS, released by Parfit. Terminal capsule:
 gpu_artifacts_local/astra_event_two_hop_transfer_terminal_20260914_attempt2/extracted.
 
 Next independent jobs, neither launched: Nash owns trajectory-loss-off native
