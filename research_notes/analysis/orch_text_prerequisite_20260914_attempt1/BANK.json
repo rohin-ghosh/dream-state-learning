@@ -1,0 +1,601 @@
+{
+  "environment": "upstream_textworld",
+  "fits": 0,
+  "held": 4,
+  "max_context": 2048,
+  "max_generated": 512,
+  "max_turns": 6,
+  "maximum_calls": 96,
+  "pairs": 8,
+  "tasks": [
+    {
+      "correction_replay": [
+        {
+          "description": "-= Bar =-\nYou find yourself in a bar. A normal one.\n\nYou see an opened safe. The safe contains a pillow.",
+          "feedback": "\nYou open the safe, revealing a pillow.\n\n\n>                                                                                                                                -= Bar =-0/2",
+          "inventory": "You are carrying nothing.",
+          "lost": false,
+          "score": 0,
+          "won": false
+        },
+        {
+          "description": "-= Bar =-\nYou find yourself in a bar. A normal one.\n\nYou see an opened safe. The safe is empty! What a waste of a day!",
+          "feedback": "\nYou take the pillow from the safe.\n\n\n\nYour score has just gone up by one point.\n\n\n                                                       *** The End ***\n\nYou scored 1 out of a possible 1, in 3 turns.\n\n\nWould you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?\n>                                                                                                                                 -= Bar =-0/2",
+          "inventory": "You are carrying: a pillow.",
+          "lost": false,
+          "score": 1,
+          "won": true
+        }
+      ],
+      "family": "retrieve_closed",
+      "game": "TW17_retrieve_closed_31000.z8",
+      "game_sha256": "21d4b894baefffc8cf6262e4d7b807427c3e46fbae03b59f957e5c50fcfb7436",
+      "goal": "Your goal is to be carrying the pillow.",
+      "id": "TW17_retrieve_closed_31000",
+      "initial": {
+        "description": "-= Bar =-\nYou find yourself in a bar. A normal one.\n\nYou see a closed safe.",
+        "feedback": "\n\n\n\n                    ________  ________  __    __  ________        \n                   |        \\|        \\|  \\  |  \\|        \\       \n                    \\$$$$$$$$| $$$$$$$$| $$  | $$ \\$$$$$$$$       \n                      | $$   | $$__     \\$$\\/  $$   | $$          \n                      | $$   | $$  \\     >$$  $$    | $$          \n                      | $$   | $$$$$    /  $$$$\\    | $$          \n                      | $$   | $$_____ |  $$ \\$$\\   | $$          \n                      | $$   | $$     \\| $$  | $$   | $$          \n                       \\$$    \\$$$$$$$$ \\$$   \\$$    \\$$          \n              __       __   ______   _______   __        _______  \n             |  \\  _  |  \\ /      \\ |       \\ |  \\      |       \\ \n             | $$ / \\ | $$|  $$$$$$\\| $$$$$$$\\| $$      | $$$$$$$\\\n             | $$/  $\\| $$| $$  | $$| $$__| $$| $$      | $$  | $$\n             | $$  $$$\\ $$| $$  | $$| $$    $$| $$      | $$  | $$\n             | $$ $$\\$$\\$$| $$  | $$| $$$$$$$\\| $$      | $$  | $$\n             | $$$$  \\$$$$| $$__/ $$| $$  | $$| $$_____ | $$__/ $$\n             | $$$    \\$$$ \\$$    $$| $$  | $$| $$     \\| $$    $$\n              \\$$      \\$$  \\$$$$$$  \\$$   \\$$ \\$$$$$$$$ \\$$$$$$$ \n\nYour goal is to be carrying the pillow.\n\n-= Bar =-\nYou find yourself in a bar. A normal one.\n\nYou see a closed safe.\n\n\n\n>                                                                                                                                -= Bar =-0/1",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "json_sha256": "d0e12ecaf832a4a5dc8c0bacb54e53adaccc6ed365cccdc80146b2c07a395547",
+      "oracle_commands": [
+        "open safe",
+        "take pillow from safe"
+      ],
+      "prerequisite_probe": {
+        "description": "-= Bar =-\nYou find yourself in a bar. A normal one.\n\nYou see a closed safe.",
+        "feedback": "\nYou can't see any such thing.\n\n>                                                                                                                                -= Bar =-0/1",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "seed": 31000,
+      "shard": 0,
+      "split": "mining"
+    },
+    {
+      "correction_replay": [
+        {
+          "description": "-= Spare Room =-\nYou've entered a spare room.\n\nYou see a case. The case contains a shoe.",
+          "feedback": "\nYou open the case, revealing a shoe.\n\n\n>                                                                                                                                -= Spare Room =-0/2",
+          "inventory": "You are carrying nothing.",
+          "lost": false,
+          "score": 0,
+          "won": false
+        },
+        {
+          "description": "-= Spare Room =-\nYou've entered a spare room.\n\nYou see a case. The case is empty! This is the worst thing that could possibly happen, ever!",
+          "feedback": "\nYou take the shoe from the case.\n\n\n\nYour score has just gone up by one point.\n\n\n                                                       *** The End ***\n\nYou scored 1 out of a possible 1, in 3 turns.\n\n\nWould you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?\n>                                                                                                                                 -= Spare Room =-0/2",
+          "inventory": "You are carrying: a shoe.",
+          "lost": false,
+          "score": 1,
+          "won": true
+        }
+      ],
+      "family": "retrieve_closed",
+      "game": "TW17_retrieve_closed_31001.z8",
+      "game_sha256": "b9614e0a6cee22d01e3f17943bf50f8be4a11a06ceefb8b74a3e935c20c9bda1",
+      "goal": "Your goal is to be carrying the shoe.",
+      "id": "TW17_retrieve_closed_31001",
+      "initial": {
+        "description": "-= Spare Room =-\nYou've entered a spare room.\n\nYou see a case.",
+        "feedback": "\n\n\n\n                    ________  ________  __    __  ________        \n                   |        \\|        \\|  \\  |  \\|        \\       \n                    \\$$$$$$$$| $$$$$$$$| $$  | $$ \\$$$$$$$$       \n                      | $$   | $$__     \\$$\\/  $$   | $$          \n                      | $$   | $$  \\     >$$  $$    | $$          \n                      | $$   | $$$$$    /  $$$$\\    | $$          \n                      | $$   | $$_____ |  $$ \\$$\\   | $$          \n                      | $$   | $$     \\| $$  | $$   | $$          \n                       \\$$    \\$$$$$$$$ \\$$   \\$$    \\$$          \n              __       __   ______   _______   __        _______  \n             |  \\  _  |  \\ /      \\ |       \\ |  \\      |       \\ \n             | $$ / \\ | $$|  $$$$$$\\| $$$$$$$\\| $$      | $$$$$$$\\\n             | $$/  $\\| $$| $$  | $$| $$__| $$| $$      | $$  | $$\n             | $$  $$$\\ $$| $$  | $$| $$    $$| $$      | $$  | $$\n             | $$ $$\\$$\\$$| $$  | $$| $$$$$$$\\| $$      | $$  | $$\n             | $$$$  \\$$$$| $$__/ $$| $$  | $$| $$_____ | $$__/ $$\n             | $$$    \\$$$ \\$$    $$| $$  | $$| $$     \\| $$    $$\n              \\$$      \\$$  \\$$$$$$  \\$$   \\$$ \\$$$$$$$$ \\$$$$$$$ \n\nYour goal is to be carrying the shoe.\n\n-= Spare Room =-\nYou've entered a spare room.\n\nYou see a case.\n\n\n\n>                                                                                                                                -= Spare Room =-0/1",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "json_sha256": "c8d4227820079ad9e063886a4c4c9556ba3db011bcf10d4043b241efc94cf6cb",
+      "oracle_commands": [
+        "open case",
+        "take shoe from case"
+      ],
+      "prerequisite_probe": {
+        "description": "-= Spare Room =-\nYou've entered a spare room.\n\nYou see a case.",
+        "feedback": "\nYou can't see any such thing.\n\n>                                                                                                                                -= Spare Room =-0/1",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "seed": 31001,
+      "shard": 1,
+      "split": "mining"
+    },
+    {
+      "correction_replay": [
+        {
+          "description": "-= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out an opened coffer. The coffer contains a monitor. You look at the price tag that's still affixed to the coffer. Forty dollars?! Where'd they buy this coffer, some kind of expensive place?",
+          "feedback": "\nYou open the coffer, revealing a monitor.\n\n\n>                                                                                                                                -= Recreation Zone =-0/2",
+          "inventory": "You are carrying nothing.",
+          "lost": false,
+          "score": 0,
+          "won": false
+        },
+        {
+          "description": "-= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out an opened coffer. Empty! What kind of nightmare TextWorld is this?",
+          "feedback": "\nYou take the monitor from the coffer.\n\n\n\nYour score has just gone up by one point.\n\n\n                                                       *** The End ***\n\nYou scored 1 out of a possible 1, in 3 turns.\n\n\nWould you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?\n>                                                                                                                                 -= Recreation Zone =-0/2",
+          "inventory": "You are carrying: a monitor.",
+          "lost": false,
+          "score": 1,
+          "won": true
+        }
+      ],
+      "family": "retrieve_closed",
+      "game": "TW17_retrieve_closed_31002.z8",
+      "game_sha256": "c535ff227476697e2422a6192c2e20c274431477e1b73d0ff71277d76ed028f2",
+      "goal": "Your goal is to be carrying the monitor.",
+      "id": "TW17_retrieve_closed_31002",
+      "initial": {
+        "description": "-= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out a closed coffer.",
+        "feedback": "\n\n\n\n                    ________  ________  __    __  ________        \n                   |        \\|        \\|  \\  |  \\|        \\       \n                    \\$$$$$$$$| $$$$$$$$| $$  | $$ \\$$$$$$$$       \n                      | $$   | $$__     \\$$\\/  $$   | $$          \n                      | $$   | $$  \\     >$$  $$    | $$          \n                      | $$   | $$$$$    /  $$$$\\    | $$          \n                      | $$   | $$_____ |  $$ \\$$\\   | $$          \n                      | $$   | $$     \\| $$  | $$   | $$          \n                       \\$$    \\$$$$$$$$ \\$$   \\$$    \\$$          \n              __       __   ______   _______   __        _______  \n             |  \\  _  |  \\ /      \\ |       \\ |  \\      |       \\ \n             | $$ / \\ | $$|  $$$$$$\\| $$$$$$$\\| $$      | $$$$$$$\\\n             | $$/  $\\| $$| $$  | $$| $$__| $$| $$      | $$  | $$\n             | $$  $$$\\ $$| $$  | $$| $$    $$| $$      | $$  | $$\n             | $$ $$\\$$\\$$| $$  | $$| $$$$$$$\\| $$      | $$  | $$\n             | $$$$  \\$$$$| $$__/ $$| $$  | $$| $$_____ | $$__/ $$\n             | $$$    \\$$$ \\$$    $$| $$  | $$| $$     \\| $$    $$\n              \\$$      \\$$  \\$$$$$$  \\$$   \\$$ \\$$$$$$$$ \\$$$$$$$ \n\nYour goal is to be carrying the monitor.\n\n-= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out a closed coffer.\n\n\n\n>                                                                                                                                -= Recreation Zone =-0/1",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "json_sha256": "bf94835c8e1395172d2c8e74eb1160c1c4375836d5839394e3f7d146e9fe3232",
+      "oracle_commands": [
+        "open coffer",
+        "take monitor from coffer"
+      ],
+      "prerequisite_probe": {
+        "description": "-= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out a closed coffer.",
+        "feedback": "\nYou can't see any such thing.\n\n>                                                                                                                                -= Recreation Zone =-0/1",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "seed": 31002,
+      "shard": 2,
+      "split": "mining"
+    },
+    {
+      "correction_replay": [
+        {
+          "description": "-= Chamber =-\nYou arrive in a chamber. An ordinary one.\n\nYou can see a chest. Classic TextWorld. The chest contains a worm.",
+          "feedback": "\nYou open the chest, revealing a worm.\n\n\n>                                                                                                                                -= Chamber =-0/2",
+          "inventory": "You are carrying nothing.",
+          "lost": false,
+          "score": 0,
+          "won": false
+        },
+        {
+          "description": "-= Chamber =-\nYou arrive in a chamber. An ordinary one.\n\nYou can see a chest. Classic TextWorld. The chest is empty! What a waste of a day!",
+          "feedback": "\nYou take the worm from the chest.\n\n\n\nYour score has just gone up by one point.\n\n\n                                                       *** The End ***\n\nYou scored 1 out of a possible 1, in 3 turns.\n\n\nWould you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?\n>                                                                                                                                 -= Chamber =-0/2",
+          "inventory": "You are carrying: a worm.",
+          "lost": false,
+          "score": 1,
+          "won": true
+        }
+      ],
+      "family": "retrieve_closed",
+      "game": "TW17_retrieve_closed_31003.z8",
+      "game_sha256": "12d5f93cf59630fda8fa12571f8c442d95da7580b8570c1b64a1acf242c3a8a8",
+      "goal": "Your goal is to be carrying the worm.",
+      "id": "TW17_retrieve_closed_31003",
+      "initial": {
+        "description": "-= Chamber =-\nYou arrive in a chamber. An ordinary one.\n\nYou can see a chest. Classic TextWorld.",
+        "feedback": "\n\n\n\n                    ________  ________  __    __  ________        \n                   |        \\|        \\|  \\  |  \\|        \\       \n                    \\$$$$$$$$| $$$$$$$$| $$  | $$ \\$$$$$$$$       \n                      | $$   | $$__     \\$$\\/  $$   | $$          \n                      | $$   | $$  \\     >$$  $$    | $$          \n                      | $$   | $$$$$    /  $$$$\\    | $$          \n                      | $$   | $$_____ |  $$ \\$$\\   | $$          \n                      | $$   | $$     \\| $$  | $$   | $$          \n                       \\$$    \\$$$$$$$$ \\$$   \\$$    \\$$          \n              __       __   ______   _______   __        _______  \n             |  \\  _  |  \\ /      \\ |       \\ |  \\      |       \\ \n             | $$ / \\ | $$|  $$$$$$\\| $$$$$$$\\| $$      | $$$$$$$\\\n             | $$/  $\\| $$| $$  | $$| $$__| $$| $$      | $$  | $$\n             | $$  $$$\\ $$| $$  | $$| $$    $$| $$      | $$  | $$\n             | $$ $$\\$$\\$$| $$  | $$| $$$$$$$\\| $$      | $$  | $$\n             | $$$$  \\$$$$| $$__/ $$| $$  | $$| $$_____ | $$__/ $$\n             | $$$    \\$$$ \\$$    $$| $$  | $$| $$     \\| $$    $$\n              \\$$      \\$$  \\$$$$$$  \\$$   \\$$ \\$$$$$$$$ \\$$$$$$$ \n\nYour goal is to be carrying the worm.\n\n-= Chamber =-\nYou arrive in a chamber. An ordinary one.\n\nYou can see a chest. Classic TextWorld.\n\n\n\n>                                                                                                                                -= Chamber =-0/1",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "json_sha256": "f1e9d565791f98257b3e904364cbea0f199f5c9fa40258730f6514ec20717147",
+      "oracle_commands": [
+        "open chest",
+        "take worm from chest"
+      ],
+      "prerequisite_probe": {
+        "description": "-= Chamber =-\nYou arrive in a chamber. An ordinary one.\n\nYou can see a chest. Classic TextWorld.",
+        "feedback": "\nYou can't see any such thing.\n\n>                                                                                                                                -= Chamber =-0/1",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "seed": 31003,
+      "shard": 3,
+      "split": "mining"
+    },
+    {
+      "correction_replay": [
+        {
+          "description": "-= Cookery =-\nAh, the cookery. This is some kind of cookery, really great ordinary vibes in this place, a wonderful ordinary atmosphere. And now, well, you're in it. Okay, just remember what you're here to do, and everything will go great.\n\nYou bend down to tie your shoe. When you stand up, you notice a refrigerator. Now why would someone leave that there? The refrigerator contains a spork.",
+          "feedback": "\nYou open the refrigerator, revealing a spork.\n\n\n>                                                                                                                                -= Cookery =-0/2",
+          "inventory": "You are carrying nothing.",
+          "lost": false,
+          "score": 0,
+          "won": false
+        },
+        {
+          "description": "-= Cookery =-\nAh, the cookery. This is some kind of cookery, really great ordinary vibes in this place, a wonderful ordinary atmosphere. And now, well, you're in it. Okay, just remember what you're here to do, and everything will go great.\n\nYou bend down to tie your shoe. When you stand up, you notice a refrigerator. Now why would someone leave that there? The refrigerator is empty! This is the worst thing that could possibly happen, ever!",
+          "feedback": "\nYou take the spork from the refrigerator.\n\n\n\nYour score has just gone up by one point.\n\n\n                                                       *** The End ***\n\nYou scored 1 out of a possible 1, in 3 turns.\n\n\nWould you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?\n>                                                                                                                                 -= Cookery =-0/2",
+          "inventory": "You are carrying: a spork.",
+          "lost": false,
+          "score": 1,
+          "won": true
+        }
+      ],
+      "family": "retrieve_closed",
+      "game": "TW17_retrieve_closed_31004.z8",
+      "game_sha256": "4c16d8792d9dc35856fc59c8809f78d3538eed7f2d284bab88a644a3baeb3de6",
+      "goal": "Your goal is to be carrying the spork.",
+      "id": "TW17_retrieve_closed_31004",
+      "initial": {
+        "description": "-= Cookery =-\nAh, the cookery. This is some kind of cookery, really great ordinary vibes in this place, a wonderful ordinary atmosphere. And now, well, you're in it. Okay, just remember what you're here to do, and everything will go great.\n\nYou bend down to tie your shoe. When you stand up, you notice a refrigerator. Now why would someone leave that there?",
+        "feedback": "\n\n\n\n                    ________  ________  __    __  ________        \n                   |        \\|        \\|  \\  |  \\|        \\       \n                    \\$$$$$$$$| $$$$$$$$| $$  | $$ \\$$$$$$$$       \n                      | $$   | $$__     \\$$\\/  $$   | $$          \n                      | $$   | $$  \\     >$$  $$    | $$          \n                      | $$   | $$$$$    /  $$$$\\    | $$          \n                      | $$   | $$_____ |  $$ \\$$\\   | $$          \n                      | $$   | $$     \\| $$  | $$   | $$          \n                       \\$$    \\$$$$$$$$ \\$$   \\$$    \\$$          \n              __       __   ______   _______   __        _______  \n             |  \\  _  |  \\ /      \\ |       \\ |  \\      |       \\ \n             | $$ / \\ | $$|  $$$$$$\\| $$$$$$$\\| $$      | $$$$$$$\\\n             | $$/  $\\| $$| $$  | $$| $$__| $$| $$      | $$  | $$\n             | $$  $$$\\ $$| $$  | $$| $$    $$| $$      | $$  | $$\n             | $$ $$\\$$\\$$| $$  | $$| $$$$$$$\\| $$      | $$  | $$\n             | $$$$  \\$$$$| $$__/ $$| $$  | $$| $$_____ | $$__/ $$\n             | $$$    \\$$$ \\$$    $$| $$  | $$| $$     \\| $$    $$\n              \\$$      \\$$  \\$$$$$$  \\$$   \\$$ \\$$$$$$$$ \\$$$$$$$ \n\nYour goal is to be carrying the spork.\n\n-= Cookery =-\nAh, the cookery. This is some kind of cookery, really great ordinary vibes in this place, a wonderful ordinary atmosphere. And now, well, you're in it. Okay, just remember what you're here to do, and everything will go great.\n\nYou bend down to tie your shoe. When you stand up, you notice a refrigerator. Now why would someone leave that there?\n\n\n\n>                                                                                                                                -= Cookery =-0/1",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "json_sha256": "077e5044540f40614aaf84ab878c7f5bf276b4c75fbaad89d3dcd986dc8565f8",
+      "oracle_commands": [
+        "open refrigerator",
+        "take spork from refrigerator"
+      ],
+      "prerequisite_probe": {
+        "description": "-= Cookery =-\nAh, the cookery. This is some kind of cookery, really great ordinary vibes in this place, a wonderful ordinary atmosphere. And now, well, you're in it. Okay, just remember what you're here to do, and everything will go great.\n\nYou bend down to tie your shoe. When you stand up, you notice a refrigerator. Now why would someone leave that there?",
+        "feedback": "\nYou can't see any such thing.\n\n>                                                                                                                                -= Cookery =-0/1",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "seed": 31004,
+      "shard": null,
+      "split": "held_L1_DEV"
+    },
+    {
+      "correction_replay": [
+        {
+          "description": "-= Cookery =-\nYou find yourself in a cookery. A standard one. You begin looking for stuff.\n\nYou see an opened standard looking chest here. The chest contains a shadfly.",
+          "feedback": "\nYou open the chest, revealing a shadfly.\n\n\n>                                                                                                                                -= Cookery =-0/2",
+          "inventory": "You are carrying nothing.",
+          "lost": false,
+          "score": 0,
+          "won": false
+        },
+        {
+          "description": "-= Cookery =-\nYou find yourself in a cookery. A standard one. You begin looking for stuff.\n\nYou see an opened standard looking chest here. The chest is empty, what a horrible day!",
+          "feedback": "\nYou take the shadfly from the chest.\n\n\n\nYour score has just gone up by one point.\n\n\n                                                       *** The End ***\n\nYou scored 1 out of a possible 1, in 3 turns.\n\n\nWould you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?\n>                                                                                                                                 -= Cookery =-0/2",
+          "inventory": "You are carrying: a shadfly.",
+          "lost": false,
+          "score": 1,
+          "won": true
+        }
+      ],
+      "family": "retrieve_closed",
+      "game": "TW17_retrieve_closed_31005.z8",
+      "game_sha256": "b631a988cca228efb7d67066a270921018752e9a9d2d56d12321f293fe5cf261",
+      "goal": "Your goal is to be carrying the shadfly.",
+      "id": "TW17_retrieve_closed_31005",
+      "initial": {
+        "description": "-= Cookery =-\nYou find yourself in a cookery. A standard one. You begin looking for stuff.\n\nYou see a closed standard looking chest here.",
+        "feedback": "\n\n\n\n                    ________  ________  __    __  ________        \n                   |        \\|        \\|  \\  |  \\|        \\       \n                    \\$$$$$$$$| $$$$$$$$| $$  | $$ \\$$$$$$$$       \n                      | $$   | $$__     \\$$\\/  $$   | $$          \n                      | $$   | $$  \\     >$$  $$    | $$          \n                      | $$   | $$$$$    /  $$$$\\    | $$          \n                      | $$   | $$_____ |  $$ \\$$\\   | $$          \n                      | $$   | $$     \\| $$  | $$   | $$          \n                       \\$$    \\$$$$$$$$ \\$$   \\$$    \\$$          \n              __       __   ______   _______   __        _______  \n             |  \\  _  |  \\ /      \\ |       \\ |  \\      |       \\ \n             | $$ / \\ | $$|  $$$$$$\\| $$$$$$$\\| $$      | $$$$$$$\\\n             | $$/  $\\| $$| $$  | $$| $$__| $$| $$      | $$  | $$\n             | $$  $$$\\ $$| $$  | $$| $$    $$| $$      | $$  | $$\n             | $$ $$\\$$\\$$| $$  | $$| $$$$$$$\\| $$      | $$  | $$\n             | $$$$  \\$$$$| $$__/ $$| $$  | $$| $$_____ | $$__/ $$\n             | $$$    \\$$$ \\$$    $$| $$  | $$| $$     \\| $$    $$\n              \\$$      \\$$  \\$$$$$$  \\$$   \\$$ \\$$$$$$$$ \\$$$$$$$ \n\nYour goal is to be carrying the shadfly.\n\n-= Cookery =-\nYou find yourself in a cookery. A standard one. You begin looking for stuff.\n\nYou see a closed standard looking chest here.\n\n\n\n>                                                                                                                                -= Cookery =-0/1",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "json_sha256": "f0ae51265b3d198cc657d38072976b36cb3466c46e0d4f213a37ac6d16fa48ca",
+      "oracle_commands": [
+        "open chest",
+        "take shadfly from chest"
+      ],
+      "prerequisite_probe": {
+        "description": "-= Cookery =-\nYou find yourself in a cookery. A standard one. You begin looking for stuff.\n\nYou see a closed standard looking chest here.",
+        "feedback": "\nYou can't see any such thing.\n\n>                                                                                                                                -= Cookery =-0/1",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "seed": 31005,
+      "shard": null,
+      "split": "held_L1_DEV"
+    },
+    {
+      "correction_replay": [
+        {
+          "description": "-= Bedchamber =-\nYou're now in a bedchamber. I guess you better just go and list everything you see here.\n\nYou can make out a chest. The chest is empty! This is the worst thing that could possibly happen, ever!",
+          "feedback": "\nYou pick up the plant from the ground.\n\n\n\n>                                                                                                                                -= Bedchamber =-0/3",
+          "inventory": "You are carrying: a plant.",
+          "lost": false,
+          "score": 0,
+          "won": false
+        },
+        {
+          "description": "-= Bedchamber =-\nYou're now in a bedchamber. I guess you better just go and list everything you see here.\n\nYou can make out a chest. The chest contains a plant. Something scurries by right in the corner of your eye. Probably nothing.",
+          "feedback": "\nYou put the plant into the chest.\n\n\nYour score has just gone up by one point.\n\n\n                                                       *** The End ***\n\nYou scored 1 out of a possible 1, in 4 turns.\n\n\nWould you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?\n>                                                                                                                                 -= Bedchamber =-0/3",
+          "inventory": "You are carrying nothing.",
+          "lost": false,
+          "score": 1,
+          "won": true
+        }
+      ],
+      "family": "stow_loose",
+      "game": "TW17_stow_loose_32000.z8",
+      "game_sha256": "549fc503ed746effe4763b5285554d123cd24580744aa7578bc9629ac42111cc",
+      "goal": "Your goal is for the plant to be inside the chest.",
+      "id": "TW17_stow_loose_32000",
+      "initial": {
+        "description": "-= Bedchamber =-\nYou're now in a bedchamber. I guess you better just go and list everything you see here.\n\nYou can make out a chest. The chest is empty! This is the worst thing that could possibly happen, ever!\n\n\n\nThere is a plant on the floor.",
+        "feedback": "\n\n\n\n                    ________  ________  __    __  ________        \n                   |        \\|        \\|  \\  |  \\|        \\       \n                    \\$$$$$$$$| $$$$$$$$| $$  | $$ \\$$$$$$$$       \n                      | $$   | $$__     \\$$\\/  $$   | $$          \n                      | $$   | $$  \\     >$$  $$    | $$          \n                      | $$   | $$$$$    /  $$$$\\    | $$          \n                      | $$   | $$_____ |  $$ \\$$\\   | $$          \n                      | $$   | $$     \\| $$  | $$   | $$          \n                       \\$$    \\$$$$$$$$ \\$$   \\$$    \\$$          \n              __       __   ______   _______   __        _______  \n             |  \\  _  |  \\ /      \\ |       \\ |  \\      |       \\ \n             | $$ / \\ | $$|  $$$$$$\\| $$$$$$$\\| $$      | $$$$$$$\\\n             | $$/  $\\| $$| $$  | $$| $$__| $$| $$      | $$  | $$\n             | $$  $$$\\ $$| $$  | $$| $$    $$| $$      | $$  | $$\n             | $$ $$\\$$\\$$| $$  | $$| $$$$$$$\\| $$      | $$  | $$\n             | $$$$  \\$$$$| $$__/ $$| $$  | $$| $$_____ | $$__/ $$\n             | $$$    \\$$$ \\$$    $$| $$  | $$| $$     \\| $$    $$\n              \\$$      \\$$  \\$$$$$$  \\$$   \\$$ \\$$$$$$$$ \\$$$$$$$ \n\nYour goal is for the plant to be inside the chest.\n\n-= Bedchamber =-\nYou're now in a bedchamber. I guess you better just go and list everything you see here.\n\nYou can make out a chest. The chest is empty! This is the worst thing that could possibly happen, ever!\n\n\n\nThere is a plant on the floor.\n\n>                                                                                                                                -= Bedchamber =-0/1",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "json_sha256": "8620e203d73ca8e1ebb580a885e90ef2edcca43e08e432a5c5529c3575699f07",
+      "oracle_commands": [
+        "take plant",
+        "insert plant into chest"
+      ],
+      "prerequisite_probe": {
+        "description": "-= Bedchamber =-\nYou're now in a bedchamber. I guess you better just go and list everything you see here.\n\nYou can make out a chest. The chest is empty! This is the worst thing that could possibly happen, ever!\n\n\n\nThere is a plant on the floor.",
+        "feedback": "\nYou need to take the plant first.\n\n\n>                                                                                                                                -= Bedchamber =-0/2",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "seed": 32000,
+      "shard": 0,
+      "split": "mining"
+    },
+    {
+      "correction_replay": [
+        {
+          "description": "-= Cookhouse =-\nYou arrive in a cookhouse. A standard kind of place. You begin to take stock of what's in the room.\n\nYou can make out an opened freezer close by. The freezer is empty, what a horrible day!",
+          "feedback": "\nYou pick up the teapot from the ground.\n\n\n\n>                                                                                                                                -= Cookhouse =-0/3",
+          "inventory": "You are carrying: a teapot.",
+          "lost": false,
+          "score": 0,
+          "won": false
+        },
+        {
+          "description": "-= Cookhouse =-\nYou arrive in a cookhouse. A standard kind of place. You begin to take stock of what's in the room.\n\nYou can make out an opened freezer close by. The freezer contains a teapot. You idly wonder how they came up with the name TextWorld for this place. It's pretty fitting.",
+          "feedback": "\nYou put the teapot into the freezer.\n\n\nYour score has just gone up by one point.\n\n\n                                                       *** The End ***\n\nYou scored 1 out of a possible 1, in 4 turns.\n\n\nWould you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?\n>                                                                                                                                 -= Cookhouse =-0/3",
+          "inventory": "You are carrying nothing.",
+          "lost": false,
+          "score": 1,
+          "won": true
+        }
+      ],
+      "family": "stow_loose",
+      "game": "TW17_stow_loose_32001.z8",
+      "game_sha256": "9ec54be1525b27969fe016ac985e13b6d07a1e889d16a028d709356ad6af0075",
+      "goal": "Your goal is for the teapot to be inside the freezer.",
+      "id": "TW17_stow_loose_32001",
+      "initial": {
+        "description": "-= Cookhouse =-\nYou arrive in a cookhouse. A standard kind of place. You begin to take stock of what's in the room.\n\nYou can make out an opened freezer close by. The freezer is empty, what a horrible day!\n\n\n\nThere is a teapot on the floor.",
+        "feedback": "\n\n\n\n                    ________  ________  __    __  ________        \n                   |        \\|        \\|  \\  |  \\|        \\       \n                    \\$$$$$$$$| $$$$$$$$| $$  | $$ \\$$$$$$$$       \n                      | $$   | $$__     \\$$\\/  $$   | $$          \n                      | $$   | $$  \\     >$$  $$    | $$          \n                      | $$   | $$$$$    /  $$$$\\    | $$          \n                      | $$   | $$_____ |  $$ \\$$\\   | $$          \n                      | $$   | $$     \\| $$  | $$   | $$          \n                       \\$$    \\$$$$$$$$ \\$$   \\$$    \\$$          \n              __       __   ______   _______   __        _______  \n             |  \\  _  |  \\ /      \\ |       \\ |  \\      |       \\ \n             | $$ / \\ | $$|  $$$$$$\\| $$$$$$$\\| $$      | $$$$$$$\\\n             | $$/  $\\| $$| $$  | $$| $$__| $$| $$      | $$  | $$\n             | $$  $$$\\ $$| $$  | $$| $$    $$| $$      | $$  | $$\n             | $$ $$\\$$\\$$| $$  | $$| $$$$$$$\\| $$      | $$  | $$\n             | $$$$  \\$$$$| $$__/ $$| $$  | $$| $$_____ | $$__/ $$\n             | $$$    \\$$$ \\$$    $$| $$  | $$| $$     \\| $$    $$\n              \\$$      \\$$  \\$$$$$$  \\$$   \\$$ \\$$$$$$$$ \\$$$$$$$ \n\nYour goal is for the teapot to be inside the freezer.\n\n-= Cookhouse =-\nYou arrive in a cookhouse. A standard kind of place. You begin to take stock of what's in the room.\n\nYou can make out an opened freezer close by. The freezer is empty, what a horrible day!\n\n\n\nThere is a teapot on the floor.\n\n>                                                                                                                                -= Cookhouse =-0/1",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "json_sha256": "680220a9fb8fc31aa5203fdb66a4914fe67fbcafa8628cedb7efbdab42cf012b",
+      "oracle_commands": [
+        "take teapot",
+        "insert teapot into freezer"
+      ],
+      "prerequisite_probe": {
+        "description": "-= Cookhouse =-\nYou arrive in a cookhouse. A standard kind of place. You begin to take stock of what's in the room.\n\nYou can make out an opened freezer close by. The freezer is empty, what a horrible day!\n\n\n\nThere is a teapot on the floor.",
+        "feedback": "\nYou need to take the teapot first.\n\n\n>                                                                                                                                -= Cookhouse =-0/2",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "seed": 32001,
+      "shard": 1,
+      "split": "mining"
+    },
+    {
+      "correction_replay": [
+        {
+          "description": "-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!",
+          "feedback": "\nYou pick up the insect from the ground.\n\n\n\n>                                                                                                                                -= Kitchen =-0/3",
+          "inventory": "You are carrying: an insect.",
+          "lost": false,
+          "score": 0,
+          "won": false
+        },
+        {
+          "description": "-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet contains an insect.",
+          "feedback": "\nYou put the insect into the cabinet.\n\n\nYour score has just gone up by one point.\n\n\n                                                       *** The End ***\n\nYou scored 1 out of a possible 1, in 4 turns.\n\n\nWould you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?\n>                                                                                                                                 -= Kitchen =-0/3",
+          "inventory": "You are carrying nothing.",
+          "lost": false,
+          "score": 1,
+          "won": true
+        }
+      ],
+      "family": "stow_loose",
+      "game": "TW17_stow_loose_32002.z8",
+      "game_sha256": "00a2b68ce57b55ced2c7367523471297c0730bdef2eee0b828b322f510cb44ff",
+      "goal": "Your goal is for the insect to be inside the cabinet.",
+      "id": "TW17_stow_loose_32002",
+      "initial": {
+        "description": "-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n\n\n\nThere is an insect on the floor.",
+        "feedback": "\n\n\n\n                    ________  ________  __    __  ________        \n                   |        \\|        \\|  \\  |  \\|        \\       \n                    \\$$$$$$$$| $$$$$$$$| $$  | $$ \\$$$$$$$$       \n                      | $$   | $$__     \\$$\\/  $$   | $$          \n                      | $$   | $$  \\     >$$  $$    | $$          \n                      | $$   | $$$$$    /  $$$$\\    | $$          \n                      | $$   | $$_____ |  $$ \\$$\\   | $$          \n                      | $$   | $$     \\| $$  | $$   | $$          \n                       \\$$    \\$$$$$$$$ \\$$   \\$$    \\$$          \n              __       __   ______   _______   __        _______  \n             |  \\  _  |  \\ /      \\ |       \\ |  \\      |       \\ \n             | $$ / \\ | $$|  $$$$$$\\| $$$$$$$\\| $$      | $$$$$$$\\\n             | $$/  $\\| $$| $$  | $$| $$__| $$| $$      | $$  | $$\n             | $$  $$$\\ $$| $$  | $$| $$    $$| $$      | $$  | $$\n             | $$ $$\\$$\\$$| $$  | $$| $$$$$$$\\| $$      | $$  | $$\n             | $$$$  \\$$$$| $$__/ $$| $$  | $$| $$_____ | $$__/ $$\n             | $$$    \\$$$ \\$$    $$| $$  | $$| $$     \\| $$    $$\n              \\$$      \\$$  \\$$$$$$  \\$$   \\$$ \\$$$$$$$$ \\$$$$$$$ \n\nYour goal is for the insect to be inside the cabinet.\n\n-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n\n\n\nThere is an insect on the floor.\n\n>                                                                                                                                -= Kitchen =-0/1",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "json_sha256": "d62eed2dca2ba4f28b728b85ff01f0b9fcdb9cd89afad140c83bea0f4b5828dc",
+      "oracle_commands": [
+        "take insect",
+        "insert insect into cabinet"
+      ],
+      "prerequisite_probe": {
+        "description": "-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n\n\n\nThere is an insect on the floor.",
+        "feedback": "\nYou need to take the insect first.\n\n\n>                                                                                                                                -= Kitchen =-0/2",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "seed": 32002,
+      "shard": 2,
+      "split": "mining"
+    },
+    {
+      "correction_replay": [
+        {
+          "description": "-= Bathroom =-\nLook around you. Take it all in. It's not every day someone gets to be in a bathroom.\n\nYou see an opened box in the corner. The box is empty! This is the worst thing that could possibly happen, ever!",
+          "feedback": "\nYou pick up the fly larva from the ground.\n\n\n\n>                                                                                                                                -= Bathroom =-0/3",
+          "inventory": "You are carrying: a fly larva.",
+          "lost": false,
+          "score": 0,
+          "won": false
+        },
+        {
+          "description": "-= Bathroom =-\nLook around you. Take it all in. It's not every day someone gets to be in a bathroom.\n\nYou see an opened box in the corner. The box contains a fly larva.",
+          "feedback": "\nYou put the fly larva into the box.\n\n\nYour score has just gone up by one point.\n\n\n                                                       *** The End ***\n\nYou scored 1 out of a possible 1, in 4 turns.\n\n\nWould you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?\n>                                                                                                                                 -= Bathroom =-0/3",
+          "inventory": "You are carrying nothing.",
+          "lost": false,
+          "score": 1,
+          "won": true
+        }
+      ],
+      "family": "stow_loose",
+      "game": "TW17_stow_loose_32003.z8",
+      "game_sha256": "8264985e47949627af113577f9d827ca0143f7bae5bd9e90a7fa00448d7ce287",
+      "goal": "Your goal is for the fly larva to be inside the box.",
+      "id": "TW17_stow_loose_32003",
+      "initial": {
+        "description": "-= Bathroom =-\nLook around you. Take it all in. It's not every day someone gets to be in a bathroom.\n\nYou see an opened box in the corner. The box is empty! This is the worst thing that could possibly happen, ever!\n\n\n\nThere is a fly larva on the floor.",
+        "feedback": "\n\n\n\n                    ________  ________  __    __  ________        \n                   |        \\|        \\|  \\  |  \\|        \\       \n                    \\$$$$$$$$| $$$$$$$$| $$  | $$ \\$$$$$$$$       \n                      | $$   | $$__     \\$$\\/  $$   | $$          \n                      | $$   | $$  \\     >$$  $$    | $$          \n                      | $$   | $$$$$    /  $$$$\\    | $$          \n                      | $$   | $$_____ |  $$ \\$$\\   | $$          \n                      | $$   | $$     \\| $$  | $$   | $$          \n                       \\$$    \\$$$$$$$$ \\$$   \\$$    \\$$          \n              __       __   ______   _______   __        _______  \n             |  \\  _  |  \\ /      \\ |       \\ |  \\      |       \\ \n             | $$ / \\ | $$|  $$$$$$\\| $$$$$$$\\| $$      | $$$$$$$\\\n             | $$/  $\\| $$| $$  | $$| $$__| $$| $$      | $$  | $$\n             | $$  $$$\\ $$| $$  | $$| $$    $$| $$      | $$  | $$\n             | $$ $$\\$$\\$$| $$  | $$| $$$$$$$\\| $$      | $$  | $$\n             | $$$$  \\$$$$| $$__/ $$| $$  | $$| $$_____ | $$__/ $$\n             | $$$    \\$$$ \\$$    $$| $$  | $$| $$     \\| $$    $$\n              \\$$      \\$$  \\$$$$$$  \\$$   \\$$ \\$$$$$$$$ \\$$$$$$$ \n\nYour goal is for the fly larva to be inside the box.\n\n-= Bathroom =-\nLook around you. Take it all in. It's not every day someone gets to be in a bathroom.\n\nYou see an opened box in the corner. The box is empty! This is the worst thing that could possibly happen, ever!\n\n\n\nThere is a fly larva on the floor.\n\n>                                                                                                                                -= Bathroom =-0/1",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "json_sha256": "c4b90b83a34f569e99a0ab6eb344253a070a0837b9648aaed559a46c3ea95b23",
+      "oracle_commands": [
+        "take fly larva",
+        "insert fly larva into box"
+      ],
+      "prerequisite_probe": {
+        "description": "-= Bathroom =-\nLook around you. Take it all in. It's not every day someone gets to be in a bathroom.\n\nYou see an opened box in the corner. The box is empty! This is the worst thing that could possibly happen, ever!\n\n\n\nThere is a fly larva on the floor.",
+        "feedback": "\nYou need to take the fly larva first.\n\n\n>                                                                                                                                -= Bathroom =-0/2",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "seed": 32003,
+      "shard": 3,
+      "split": "mining"
+    },
+    {
+      "correction_replay": [
+        {
+          "description": "-= Shower =-\nYou're now in the shower. I guess you better just go and list everything you see here.\n\nYou see a drawer. Suddenly, you bump your head on the ceiling, but it's not such a bad bump that it's going to prevent you from looking at objects and even things. The drawer is empty! What a waste of a day!",
+          "feedback": "\nYou pick up the paper towel from the ground.\n\n\n\n>                                                                                                                                -= Shower =-0/3",
+          "inventory": "You are carrying: a paper towel.",
+          "lost": false,
+          "score": 0,
+          "won": false
+        },
+        {
+          "description": "-= Shower =-\nYou're now in the shower. I guess you better just go and list everything you see here.\n\nYou see a drawer. Suddenly, you bump your head on the ceiling, but it's not such a bad bump that it's going to prevent you from looking at objects and even things. The drawer contains a paper towel.",
+          "feedback": "\nYou put the paper towel into the drawer.\n\n\nYour score has just gone up by one point.\n\n\n                                                       *** The End ***\n\nYou scored 1 out of a possible 1, in 4 turns.\n\n\nWould you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?\n>                                                                                                                                 -= Shower =-0/3",
+          "inventory": "You are carrying nothing.",
+          "lost": false,
+          "score": 1,
+          "won": true
+        }
+      ],
+      "family": "stow_loose",
+      "game": "TW17_stow_loose_32004.z8",
+      "game_sha256": "aec85d47605c4461b732262feaba22a99d53ec0755bbcd6392e70cb569642972",
+      "goal": "Your goal is for the paper towel to be inside the drawer.",
+      "id": "TW17_stow_loose_32004",
+      "initial": {
+        "description": "-= Shower =-\nYou're now in the shower. I guess you better just go and list everything you see here.\n\nYou see a drawer. Suddenly, you bump your head on the ceiling, but it's not such a bad bump that it's going to prevent you from looking at objects and even things. The drawer is empty! What a waste of a day!\n\n\n\nThere is a paper towel on the floor.",
+        "feedback": "\n\n\n\n                    ________  ________  __    __  ________        \n                   |        \\|        \\|  \\  |  \\|        \\       \n                    \\$$$$$$$$| $$$$$$$$| $$  | $$ \\$$$$$$$$       \n                      | $$   | $$__     \\$$\\/  $$   | $$          \n                      | $$   | $$  \\     >$$  $$    | $$          \n                      | $$   | $$$$$    /  $$$$\\    | $$          \n                      | $$   | $$_____ |  $$ \\$$\\   | $$          \n                      | $$   | $$     \\| $$  | $$   | $$          \n                       \\$$    \\$$$$$$$$ \\$$   \\$$    \\$$          \n              __       __   ______   _______   __        _______  \n             |  \\  _  |  \\ /      \\ |       \\ |  \\      |       \\ \n             | $$ / \\ | $$|  $$$$$$\\| $$$$$$$\\| $$      | $$$$$$$\\\n             | $$/  $\\| $$| $$  | $$| $$__| $$| $$      | $$  | $$\n             | $$  $$$\\ $$| $$  | $$| $$    $$| $$      | $$  | $$\n             | $$ $$\\$$\\$$| $$  | $$| $$$$$$$\\| $$      | $$  | $$\n             | $$$$  \\$$$$| $$__/ $$| $$  | $$| $$_____ | $$__/ $$\n             | $$$    \\$$$ \\$$    $$| $$  | $$| $$     \\| $$    $$\n              \\$$      \\$$  \\$$$$$$  \\$$   \\$$ \\$$$$$$$$ \\$$$$$$$ \n\nYour goal is for the paper towel to be inside the drawer.\n\n-= Shower =-\nYou're now in the shower. I guess you better just go and list everything you see here.\n\nYou see a drawer. Suddenly, you bump your head on the ceiling, but it's not such a bad bump that it's going to prevent you from looking at objects and even things. The drawer is empty! What a waste of a day!\n\n\n\nThere is a paper towel on the floor.\n\n>                                                                                                                                -= Shower =-0/1",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "json_sha256": "bf5fe39aa54cfbeb1464dff508bfb65abcfff15ca8815a21ba253c7e98963f55",
+      "oracle_commands": [
+        "take paper towel",
+        "insert paper towel into drawer"
+      ],
+      "prerequisite_probe": {
+        "description": "-= Shower =-\nYou're now in the shower. I guess you better just go and list everything you see here.\n\nYou see a drawer. Suddenly, you bump your head on the ceiling, but it's not such a bad bump that it's going to prevent you from looking at objects and even things. The drawer is empty! What a waste of a day!\n\n\n\nThere is a paper towel on the floor.",
+        "feedback": "\nYou need to take the paper towel first.\n\n\n>                                                                                                                                -= Shower =-0/2",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "seed": 32004,
+      "shard": null,
+      "split": "held_L1_DEV"
+    },
+    {
+      "correction_replay": [
+        {
+          "description": "-= Cellar =-\nYou find yourself in a cellar. A typical kind of place.\n\nOh wow! Is that what I think it is? It is! It's a display. The display is empty! This is the worst thing that could possibly happen, ever!",
+          "feedback": "\nYou pick up the insect from the ground.\n\n\n\n>                                                                                                                                -= Cellar =-0/3",
+          "inventory": "You are carrying: an insect.",
+          "lost": false,
+          "score": 0,
+          "won": false
+        },
+        {
+          "description": "-= Cellar =-\nYou find yourself in a cellar. A typical kind of place.\n\nOh wow! Is that what I think it is? It is! It's a display. The display contains an insect.",
+          "feedback": "\nYou put the insect into the display.\n\n\nYour score has just gone up by one point.\n\n\n                                                       *** The End ***\n\nYou scored 1 out of a possible 1, in 4 turns.\n\n\nWould you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?\n>                                                                                                                                 -= Cellar =-0/3",
+          "inventory": "You are carrying nothing.",
+          "lost": false,
+          "score": 1,
+          "won": true
+        }
+      ],
+      "family": "stow_loose",
+      "game": "TW17_stow_loose_32005.z8",
+      "game_sha256": "cf8a018b79e3b3be8e04b8a22e8328bb2c6ecdac369b86e322e400c69c3357c0",
+      "goal": "Your goal is for the insect to be inside the display.",
+      "id": "TW17_stow_loose_32005",
+      "initial": {
+        "description": "-= Cellar =-\nYou find yourself in a cellar. A typical kind of place.\n\nOh wow! Is that what I think it is? It is! It's a display. The display is empty! This is the worst thing that could possibly happen, ever!\n\n\n\nThere is an insect on the floor.",
+        "feedback": "\n\n\n\n                    ________  ________  __    __  ________        \n                   |        \\|        \\|  \\  |  \\|        \\       \n                    \\$$$$$$$$| $$$$$$$$| $$  | $$ \\$$$$$$$$       \n                      | $$   | $$__     \\$$\\/  $$   | $$          \n                      | $$   | $$  \\     >$$  $$    | $$          \n                      | $$   | $$$$$    /  $$$$\\    | $$          \n                      | $$   | $$_____ |  $$ \\$$\\   | $$          \n                      | $$   | $$     \\| $$  | $$   | $$          \n                       \\$$    \\$$$$$$$$ \\$$   \\$$    \\$$          \n              __       __   ______   _______   __        _______  \n             |  \\  _  |  \\ /      \\ |       \\ |  \\      |       \\ \n             | $$ / \\ | $$|  $$$$$$\\| $$$$$$$\\| $$      | $$$$$$$\\\n             | $$/  $\\| $$| $$  | $$| $$__| $$| $$      | $$  | $$\n             | $$  $$$\\ $$| $$  | $$| $$    $$| $$      | $$  | $$\n             | $$ $$\\$$\\$$| $$  | $$| $$$$$$$\\| $$      | $$  | $$\n             | $$$$  \\$$$$| $$__/ $$| $$  | $$| $$_____ | $$__/ $$\n             | $$$    \\$$$ \\$$    $$| $$  | $$| $$     \\| $$    $$\n              \\$$      \\$$  \\$$$$$$  \\$$   \\$$ \\$$$$$$$$ \\$$$$$$$ \n\nYour goal is for the insect to be inside the display.\n\n-= Cellar =-\nYou find yourself in a cellar. A typical kind of place.\n\nOh wow! Is that what I think it is? It is! It's a display. The display is empty! This is the worst thing that could possibly happen, ever!\n\n\n\nThere is an insect on the floor.\n\n>                                                                                                                                -= Cellar =-0/1",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "json_sha256": "01a446b399661ef2a1111349a6f71a19e2587ea86eb8183d079a88603c26cb28",
+      "oracle_commands": [
+        "take insect",
+        "insert insect into display"
+      ],
+      "prerequisite_probe": {
+        "description": "-= Cellar =-\nYou find yourself in a cellar. A typical kind of place.\n\nOh wow! Is that what I think it is? It is! It's a display. The display is empty! This is the worst thing that could possibly happen, ever!\n\n\n\nThere is an insect on the floor.",
+        "feedback": "\nYou need to take the insect first.\n\n\n>                                                                                                                                -= Cellar =-0/2",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "seed": 32005,
+      "shard": null,
+      "split": "held_L1_DEV"
+    }
+  ],
+  "version": "1.7.0"
+}
