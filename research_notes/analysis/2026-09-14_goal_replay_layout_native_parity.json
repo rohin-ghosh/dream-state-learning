@@ -1,0 +1,61 @@
+{
+  "arms": {
+    "FULL_TARGET": {
+      "all_row_presentations_matched": true,
+      "losses_path": "gpu_artifacts_local/astra_goal_quality_train_terminal_20260914_attempt2/extracted/astra_goal_quality_train_20260914_attempt2/FULL_TARGET/train/LOSSES.jsonl",
+      "losses_sha256": "a1490961d42833ddc1a22907a574dcc16a7f3a4253d9061294ada7e3b537531b",
+      "new_presentations_per_row": 4,
+      "recipe_fields_matched": [
+        "group_order",
+        "group_sizes",
+        "encoded_rows",
+        "batch_size",
+        "updates",
+        "masked_row_indexes",
+        "old_memory_presentations",
+        "old_behavior_presentations",
+        "old_trajectory_presentations",
+        "new_target_presentations",
+        "new_supervised_presentations"
+      ],
+      "recipe_sha256": "94ff26721ca571d4f80138aac1b4abe7c868fe3f7f344a9ff3a32c4503ebe573",
+      "updates_matched": 2928
+    },
+    "NEW_TRAJECTORY_LOSS_OFF": {
+      "all_row_presentations_matched": true,
+      "losses_path": "gpu_artifacts_local/astra_goal_quality_train_terminal_20260914_attempt2/extracted/astra_goal_quality_train_20260914_attempt2/NEW_TRAJECTORY_LOSS_OFF/train/LOSSES.jsonl",
+      "losses_sha256": "f4adf41e0183c84479fb6a2fbafa63bc0dafae360415f3010712786836011657",
+      "new_presentations_per_row": 4,
+      "recipe_fields_matched": [
+        "group_order",
+        "group_sizes",
+        "encoded_rows",
+        "batch_size",
+        "updates",
+        "masked_row_indexes",
+        "old_memory_presentations",
+        "old_behavior_presentations",
+        "old_trajectory_presentations",
+        "new_target_presentations",
+        "new_supervised_presentations"
+      ],
+      "recipe_sha256": "c822e2d60c7b92868eee33716b22562bbf04dcb1ee6a57f1e288d82e6f1c87a0",
+      "updates_matched": 2928
+    }
+  },
+  "cpu_tests": {
+    "frozen_quality_runner": {
+      "passed": 9,
+      "seconds": 60.213
+    },
+    "new_layout": {
+      "passed": 7,
+      "seconds": 0.172
+    }
+  },
+  "frozen_driver_unchanged_since_executed_commit": "7f9d4251ae1ff4c5ff9138adf267d081fffa6331",
+  "helper_sha256": "e3fc9f05dd968f4973f9d371e8d9be6470d00e8c764def108d7364cab2f1451b",
+  "observed_utc": "2026-09-14T22:37:28.748646+00:00",
+  "scope": "CPU_SCHEDULE_REPLAY_ONLY_NOT_NEW_TRAINING_OR_LOOP_VALIDATION",
+  "tests_sha256": "7acc2ef621c442298f9e1bc76babd6472afbac800094c232960ac867f9398d09"
+}
