@@ -60,6 +60,7 @@ CRITIQUE_SYSTEM = (
 PROTOCOL = dict(public_system=PUBLIC_SYSTEM, articulation=ARTICULATION, critique_system=CRITIQUE_SYSTEM)
 STRICT_V1 = 'STRICT_V1'
 ACTION_FIRST_V2 = 'ACTION_FIRST_V2'
+ACTION_FIRST_V3 = 'ACTION_FIRST_V3'
 ACTION_FIRST_PROTOCOL = dict(
     public_system=PUBLIC_SYSTEM.replace(
         'Label forecasts with PREDICTION: ; a prediction is not an observed outcome.',
@@ -132,19 +133,21 @@ def replay_collection(collection, *, old_ids=()):
     return _for_world(collection.get('world'))['replay_collection'](collection, old_ids=old_ids)
 
 
-def project_action(raw):
+def project_action(raw, *, allow_colon_header=False):
     """Exact UTF-8 byte and character spans; never scan for or repair commands."""
-    require(type(raw) is str and raw.startswith('RATIONALE\n') and '\r' not in raw,
+    require(type(allow_colon_header) is bool, 'explicit_header_compatibility_required')
+    header = 'RATIONALE: ' if allow_colon_header and type(raw) is str and raw.startswith('RATIONALE: ') else 'RATIONALE\n'
+    require(type(raw) is str and raw.startswith(header) and '\r' not in raw,
             'exact_rationale_action_envelope_required')
     require(raw.count('\nACTION\n') == 1 and '\nRATIONALE\n' not in raw, 'single_action_delimiter_required')
-    rationale, action = raw[len('RATIONALE\n'):].split('\nACTION\n')
+    rationale, action = raw[len(header):].split('\nACTION\n')
     require(bool(rationale.strip()), 'nonempty_rationale_required')
     goal.hop.commands.parse_command(action)
-    start = len('RATIONALE\n') + len(rationale) + len('\nACTION\n')
+    start = len(header) + len(rationale) + len('\nACTION\n')
     return dict(raw_sha256=hashlib.sha256(raw.encode('utf-8')).hexdigest(),
-        rationale=rationale, action=action, rationale_span=[len('RATIONALE\n'), start - len('\nACTION\n')],
+        rationale=rationale, action=action, rationale_span=[len(header), start - len('\nACTION\n')],
         action_span=[start, len(raw)],
-        rationale_byte_span=[len('RATIONALE\n'), len(raw[:start - len('\nACTION\n')].encode('utf-8'))],
+        rationale_byte_span=[len(header), len(raw[:start - len('\nACTION\n')].encode('utf-8'))],
         action_byte_span=[len(raw[:start].encode('utf-8')), len(raw.encode('utf-8'))])
 
 
@@ -211,9 +214,9 @@ def _critique_messages(episode, protocol):
 
 
 def _collect(shard, collections, old_ids, protocol, invoke, *, with_critiques=True, execution_policy=STRICT_V1):
-    require(type(execution_policy) is str and execution_policy in (STRICT_V1, ACTION_FIRST_V2),
+    require(type(execution_policy) is str and execution_policy in (STRICT_V1, ACTION_FIRST_V2, ACTION_FIRST_V3),
             'known_rich_execution_policy_required')
-    action_first = execution_policy == ACTION_FIRST_V2
+    action_first = execution_policy in (ACTION_FIRST_V2, ACTION_FIRST_V3)
     bound = runtime(shard)
     old_ids = goal._old_ids(old_ids)
     validate_registry(old_ids=old_ids)
@@ -252,7 +255,7 @@ def _collect(shard, collections, old_ids, protocol, invoke, *, with_critiques=Tr
                                        content_review_status='UNREVIEWED')
                     try:
                         raw = _validate_generation(capture, guided)
-                        capture['projection'] = project_action(raw)
+                        capture['projection'] = project_action(raw, allow_colon_header=execution_policy == ACTION_FIRST_V3)
                         if action_first:
                             capture['prediction_label_present'] = any(line.startswith('PREDICTION:')
                                 for line in capture['projection']['rationale'].splitlines())
@@ -318,7 +321,7 @@ def _collect(shard, collections, old_ids, protocol, invoke, *, with_critiques=Tr
         status='RICH_DATA_READY_NO_FIT' if ready else
                ('RICH_PARTIAL_CANDIDATES_NO_FIT' if candidate_count else 'RICH_DATA_INCOMPLETE_NO_FIT'))
     if action_first:
-        evidence.update(execution_policy=ACTION_FIRST_V2, action_complete_count=complete_episodes,
+        evidence.update(execution_policy=execution_policy, action_complete_count=complete_episodes,
             candidate_policy='EVERY_ACTION_COMPLETE_TRAIN_EPISODE_UNREVIEWED',
             candidate_only=True, reviewed=False, content_review_status='UNREVIEWED',
             status='ACTION_FIRST_CANDIDATES_UNREVIEWED_NO_FIT')
@@ -342,8 +345,8 @@ def _rows(evidence):
                 evidence_sha256=evidence['evidence_sha256'], target_eot=TARGET_EOT,
                 action_span=[0, len(assistant)] if form == 'TERSE' else capture['projection']['action_span'],
                 supervision='ACTION_AND_EOT' if form == 'RICH_ACTION_ONLY' else 'ASSISTANT_AND_EOT')
-            if evidence.get('execution_policy') == ACTION_FIRST_V2:
-                row.update(execution_policy=ACTION_FIRST_V2, candidate_only=True, reviewed=False,
+            if evidence.get('execution_policy') in (ACTION_FIRST_V2, ACTION_FIRST_V3):
+                row.update(execution_policy=evidence['execution_policy'], candidate_only=True, reviewed=False,
                            content_review_status='UNREVIEWED', fit_ready=False)
             if index == 0 and form == 'TERSE':
                 row['provenance'] = deepcopy(evidence)
@@ -373,8 +376,9 @@ def collect_lessons(shard, collections, generate, critique_generate, *, old_ids=
 def collect_teaching(shard, collections, generate, *, old_ids=(), protocol=None, execution_policy=STRICT_V1):
     """TEACH only; explicit v2 executes valid actions despite content findings.
 
-    STRICT_V1 keeps its original protocol and exact serialized evidence. V2
-    defaults to ACTION_FIRST_PROTOCOL; every retained row remains unreviewed.
+    STRICT_V1 keeps its original protocol and exact serialized evidence. V2/V3
+    default to ACTION_FIRST_PROTOCOL; V3 additionally accepts RATIONALE: space.
+    Every retained row remains unreviewed.
     """
     require(callable(generate), 'actual_rich_callback_required')
     evidence = _collect(shard, collections, old_ids, protocol,

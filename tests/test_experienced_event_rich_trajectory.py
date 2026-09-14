@@ -688,5 +688,99 @@ class ActionFirstPolicyTests(unittest.TestCase):
         self.assertEqual(strict['candidate_row_count'], 0)
 
 
+class ActionFirstV3Tests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.collections = [rich.collect_world(world, exposed_child) for world in rich.build_worlds(0)['TRAIN']]
+        cls.document = rich.collect_teaching(0, cls.collections, cls.colon_child,
+                                             execution_policy=rich.ACTION_FIRST_V3)
+
+    @staticmethod
+    def colon_child(messages):
+        response = ActionFirstPolicyTests.natural_child(messages)
+        response['raw'] = 'RATIONALE: ' + response['raw'][len('RATIONALE\n'):]
+        return response
+
+    def test_v2_exact_golden_and_colon_rejection_unchanged(self):
+        previous = rich.collect_teaching(0, self.collections, ActionFirstPolicyTests.natural_child,
+                                         execution_policy=rich.ACTION_FIRST_V2)
+        self.assertEqual(rich.document_sha256(previous),
+                         '4c5886e0d04fd34e1972a6307815e0d042c65a0286625da4b93f35ac229fe4ac')
+        for policy in (rich.STRICT_V1, rich.ACTION_FIRST_V2):
+            document = rich.collect_teaching(0, self.collections, self.colon_child, execution_policy=policy)
+            self.assertEqual((document['model_calls'], document['candidate_row_count']), (16, 0))
+            self.assertTrue(all(entry['episode']['memory_calls'] == 0 for entry in document['episodes']))
+            self.assertEqual(rich.replay_teaching(document), document['rows'])
+
+    def test_exact_two_prefixes_and_utf8_action_spans(self):
+        for header in ('RATIONALE\n', 'RATIONALE: '):
+            raw = header + 'Inspect; café 未知.\n\nACTION\nREAD EVENT E_ABCDEFGHIJ\n\n'
+            projection = rich.project_action(raw, allow_colon_header=True)
+            start, end = projection['action_span']
+            byte_start, byte_end = projection['action_byte_span']
+            self.assertEqual(raw[start:end], 'READ EVENT E_ABCDEFGHIJ\n\n')
+            self.assertEqual(raw.encode()[byte_start:byte_end].decode(), projection['action'])
+            self.assertEqual(projection['rationale_span'][0], len(header))
+            self.assertEqual(projection['raw_sha256'], hashlib.sha256(raw.encode()).hexdigest())
+            if header == 'RATIONALE\n':
+                self.assertEqual(projection, rich.project_action(raw))
+            else:
+                with self.assertRaises(ValueError):
+                    rich.project_action(raw)
+
+    def test_only_header_changes_not_prompt_or_content_admission(self):
+        document = self.document
+        self.assertEqual(document['protocol'], rich.ACTION_FIRST_PROTOCOL)
+        self.assertEqual((document['model_calls'], document['complete_episode_count']), (96, 16))
+        self.assertFalse(document['fit_ready'] or document['reviewed'] or document['rationale_truth_verified'])
+        self.assertEqual(rich.replay_teaching(document), document['rows'])
+        previous = rich.collect_teaching(0, self.collections, ActionFirstPolicyTests.natural_child,
+                                         execution_policy=rich.ACTION_FIRST_V2)
+        for capture, old_capture in zip(document['captures'], previous['captures']):
+            self.assertEqual(capture['messages'], old_capture['messages'])
+            self.assertEqual(capture['student_prefix'], old_capture['student_prefix'])
+            self.assertTrue(capture['content_findings'])
+            self.assertIsNone(capture['validation_error'])
+        for form in rich.FORMS:
+            self.assertEqual(len(document['rows'][form]), 96)
+            self.assertTrue(all(row['execution_policy'] == rich.ACTION_FIRST_V3 and row['candidate_only']
+                                and not row['fit_ready'] and not row['reviewed'] for row in document['rows'][form]))
+        encoded = rich.encode_paired_rows(document['rows'], Tokenizer())
+        self.assertEqual({form: len(rows) for form, rows in encoded['encoded'].items()}, dict.fromkeys(rich.FORMS, 96))
+
+    def test_malformed_nonterminal_truncated_never_execute(self):
+        raw = 'RATIONALE: Inspect.\nACTION\nREAD EVENT E_ABCDEFGHIJ'
+        for invalid in (raw.replace('RATIONALE: ', 'RATIONALE:'), raw.replace('RATIONALE: ', 'Rationale: '),
+                        'prefix ' + raw, raw.replace('\nACTION\n', '\r\nACTION\n'),
+                        raw + '\nACTION\nSTOP', raw.replace('Inspect.', ' '),
+                        raw.replace('READ EVENT', 'Read event')):
+            with self.subTest(raw=invalid), self.assertRaises(ValueError):
+                rich.project_action(invalid, allow_colon_header=True)
+        for field, value in (('terminal', False), ('truncated', True), ('raw', 'STOP')):
+            def actor(messages):
+                response = self.colon_child(messages)
+                response[field] = value
+                return response
+            document = rich.collect_teaching(0, self.collections, actor, execution_policy=rich.ACTION_FIRST_V3)
+            self.assertEqual(document['candidate_row_count'], 0)
+            self.assertTrue(all(entry['episode']['memory_calls'] == 0 for entry in document['episodes']))
+            self.assertTrue(all(capture['validation_error'] for capture in document['captures']))
+
+    def test_policy_raw_span_and_row_tamper_rejected(self):
+        for mutation in ('policy', 'raw', 'span', 'row'):
+            document = deepcopy(self.document)
+            if mutation == 'policy':
+                document['execution_policy'] = rich.ACTION_FIRST_V2
+            elif mutation == 'raw':
+                document['captures'][0]['response']['raw'] = document['captures'][0]['response']['raw'].replace('RATIONALE: ', 'RATIONALE\n', 1)
+            elif mutation == 'span':
+                document['captures'][0]['projection']['action_byte_span'][0] += 1
+            else:
+                document['rows']['RICH'][0]['assistant'] += '\n'
+            reseal(document, 'lesson_sha256')
+            with self.subTest(mutation=mutation), self.assertRaises(ValueError):
+                rich.replay_teaching(document)
+
+
 if __name__ == '__main__':
     unittest.main()
