@@ -1,0 +1,32 @@
+{
+  "reviewer": "GAME-ORTHOGONAL author-side full-text diagnostic reading",
+  "independent_review": false,
+  "selection": "First turn of each of all 16 RICH episodes, chosen after outcome reduction; diagnostic not admission",
+  "reviewed_turns": 16,
+  "total_rich_turns": 96,
+  "not_reviewed_turns": 80,
+  "pass": 2,
+  "fail": 13,
+  "unresolved": 1,
+  "admitted_rows": 0,
+  "episodes_with_all_turns_reviewed": 0,
+  "reason_not_admitting": "All16 rich episodes failed the native outcome oracle. Positive sample labels are not qualifying episodes.",
+  "decisions": [
+    {"id": "mining_R_14001_0", "turn": 0, "decision": "FAIL", "span": "The goal is to reach the green (G) destination marker.", "reason": "Observed goal is R, not G; also generates a fictitious later observation instead of action-last."},
+    {"id": "mining_R_14001_4", "turn": 0, "decision": "FAIL", "span": "the green destination (G) is at row 4, column 2", "reason": "Invented destination location; actual goal R is0,0 and G is0,4. Its proposed south/east route also confuses axes."},
+    {"id": "mining_G_14002_0", "turn": 0, "decision": "FAIL", "span": "move south to row 1", "reason": "From observed row2, SOUTH moves to row3, not1; expectation contradicts native transition."},
+    {"id": "mining_G_14002_4", "turn": 0, "decision": "UNRESOLVED", "span": "moving NORTH three times will position the taxi directly above the goal", "reason": "Three north moves from3,4 reach the goal0,4, not above it. Possibly loose phrasing, but single-action expectation is not cleanly distinguished from three-action plan. Exclude ambiguity."},
+    {"id": "mining_R_14001_1", "turn": 0, "decision": "FAIL", "span": "which is still one step away from the destination", "reason": "Its explanation claims2,2 is one step away from0,0, a false relation. Initial south can bypass a wall, but the actual rationale does not ground that correct reason."},
+    {"id": "mining_R_14001_5", "turn": 0, "decision": "FAIL", "span": "after moving west, the taxi will be at row 0, column 2", "reason": "Preceding claimed position is1,3; WEST cannot change row1 to0. Also invents a wall in open row2."},
+    {"id": "mining_G_14002_1", "turn": 0, "decision": "FAIL", "span": "move south to row 1", "reason": "From observed row2, SOUTH increases row to3 and moves away from row0 goal."},
+    {"id": "mining_G_14002_5", "turn": 0, "decision": "FAIL", "span": "I need to move south twice and then east twice", "reason": "From row3, two south moves cannot approach row0; second south hits boundary. The stated closer-to-goal expectation is false."},
+    {"id": "mining_R_14001_2", "turn": 0, "decision": "FAIL", "span": "blocked by a vertical wall at row 2, column 2", "reason": "Row2 is horizontally open in the observed map; rationale invents an obstacle despite choosing a potentially useful north move."},
+    {"id": "mining_R_14001_6", "turn": 0, "decision": "FAIL", "span": "the goal is directly south of the current position", "reason": "Observed taxi3,2 and goal0,0 place goal north and west, not south."},
+    {"id": "mining_G_14002_2", "turn": 0, "decision": "PASS", "span": "moving north will bring me closer to the goal", "reason": "Observed4,4 and goal0,4 align north on an unobstructed column. Reference, goal connection and directional expectation are grounded; does not imply later turns pass."},
+    {"id": "mining_G_14002_6", "turn": 0, "decision": "FAIL", "span": "move south to row 0", "reason": "From row1, SOUTH moves to2, not0. Goal relevance and expectation both invert north/south."},
+    {"id": "mining_R_14001_3", "turn": 0, "decision": "FAIL", "span": "Moving south from the current position at row 1, column 1 will bring the taxi closer", "reason": "Unobstructed R at0,0 requires north/west; SOUTH from1,1 moves farther. The obstacle rationale does not apply."},
+    {"id": "mining_R_14001_7", "turn": 0, "decision": "FAIL", "span": "west to row 3, column 2", "reason": "After SOUTH from2,1, position is3,1. WEST cannot increase column to2; additional proposed south-to-row2 is inverted."},
+    {"id": "mining_G_14002_3", "turn": 0, "decision": "FAIL", "span": "move south to row 2, then south again to row 1", "reason": "From row3, SOUTH increases row and cannot yield rows2/1. Actual expectation of row4 followed by closer-to-goal claim contradicts goal0,4."},
+    {"id": "mining_G_14002_7", "turn": 0, "decision": "PASS", "span": "expecting to be at row 3, column 3 after this action", "reason": "NORTH from observed4,3 goes to3,3. Grounded current/goal reference and north-then-east plan are feasible; does not imply later turns pass."}
+  ]
+}

@@ -1,0 +1,311 @@
+{
+  "admitted_rows": 0,
+  "arm": "TERSE",
+  "final_state": 397,
+  "fit_ready": false,
+  "instance": {
+    "family": "Taxi-v3/aboard-delivery-G",
+    "id": "mining_G_14002_7",
+    "oracle_distance": 6,
+    "seed": 14002,
+    "shard": 3,
+    "split": "mining",
+    "state": 477
+  },
+  "parent_present": false,
+  "semantic_status": "UNREVIEWED",
+  "success": false,
+  "turns": [
+    {
+      "action": "SOUTH",
+      "error": null,
+      "format_pass": true,
+      "messages": [
+        {
+          "content": "Play the deterministic taxi game using only the supplied observations. The passenger is already aboard. Deliver to the named destination. Rows increase southward and columns eastward. A vertical | between cells blocks east/west travel; : is open. Each action consumes one turn. Allowed actions: SOUTH, NORTH, EAST, WEST, PICKUP, DROPOFF. Finish with exactly one final line ACTION: <allowed action>.\nReturn only the final action line, without explanation.",
+          "role": "system"
+        },
+        {
+          "content": "Observation mining_G_14002_7/OBS0\nMap (row0 at top; columns0\u20134):\n+---------+\n|R: | : :G|\n| : | : : |\n| : : : : |\n| | : | : |\n|Y| : |B: |\n+---------+\nTaxi row=4, column=3; passenger=aboard. Goal destination G at row=0, column=4.\nTurn 1/6.\n",
+          "role": "user"
+        }
+      ],
+      "observation": {
+        "reference": "mining_G_14002_7/OBS0",
+        "state": 477,
+        "text": "Observation mining_G_14002_7/OBS0\nMap (row0 at top; columns0\u20134):\n+---------+\n|R: | : :G|\n| : | : : |\n| : : : : |\n| | : | : |\n|Y| : |B: |\n+---------+\nTaxi row=4, column=3; passenger=aboard. Goal destination G at row=0, column=4.\nTurn 1/6.\n"
+      },
+      "outcome": {
+        "reward": -1,
+        "state": 477,
+        "terminal": false
+      },
+      "response": {
+        "messages": [
+          {
+            "content": "Play the deterministic taxi game using only the supplied observations. The passenger is already aboard. Deliver to the named destination. Rows increase southward and columns eastward. A vertical | between cells blocks east/west travel; : is open. Each action consumes one turn. Allowed actions: SOUTH, NORTH, EAST, WEST, PICKUP, DROPOFF. Finish with exactly one final line ACTION: <allowed action>.\nReturn only the final action line, without explanation.",
+            "role": "system"
+          },
+          {
+            "content": "Observation mining_G_14002_7/OBS0\nMap (row0 at top; columns0\u20134):\n+---------+\n|R: | : :G|\n| : | : : |\n| : : : : |\n| | : | : |\n|Y| : |B: |\n+---------+\nTaxi row=4, column=3; passenger=aboard. Goal destination G at row=0, column=4.\nTurn 1/6.\n",
+            "role": "user"
+          }
+        ],
+        "prompt_tokens": 207,
+        "raw": "ACTION: SOUTH",
+        "terminal": true,
+        "token_ids": [
+          41895,
+          25,
+          79615,
+          151645
+        ],
+        "truncated": false
+      },
+      "turn": 0
+    },
+    {
+      "action": "SOUTH",
+      "error": null,
+      "format_pass": true,
+      "messages": [
+        {
+          "content": "Play the deterministic taxi game using only the supplied observations. The passenger is already aboard. Deliver to the named destination. Rows increase southward and columns eastward. A vertical | between cells blocks east/west travel; : is open. Each action consumes one turn. Allowed actions: SOUTH, NORTH, EAST, WEST, PICKUP, DROPOFF. Finish with exactly one final line ACTION: <allowed action>.\nReturn only the final action line, without explanation.",
+          "role": "system"
+        },
+        {
+          "content": "Observation mining_G_14002_7/OBS1\nMap (row0 at top; columns0\u20134):\n+---------+\n|R: | : :G|\n| : | : : |\n| : : : : |\n| | : | : |\n|Y| : |B: |\n+---------+\nTaxi row=4, column=3; passenger=aboard. Goal destination G at row=0, column=4.\nTurn 2/6.\nActual prior action feedback:\nmining_G_14002_7/OBS0: SOUTH -> row=4, column=3, reward=-1, terminal=False.\n",
+          "role": "user"
+        }
+      ],
+      "observation": {
+        "reference": "mining_G_14002_7/OBS1",
+        "state": 477,
+        "text": "Observation mining_G_14002_7/OBS1\nMap (row0 at top; columns0\u20134):\n+---------+\n|R: | : :G|\n| : | : : |\n| : : : : |\n| | : | : |\n|Y| : |B: |\n+---------+\nTaxi row=4, column=3; passenger=aboard. Goal destination G at row=0, column=4.\nTurn 2/6.\nActual prior action feedback:\nmining_G_14002_7/OBS0: SOUTH -> row=4, column=3, reward=-1, terminal=False.\n"
+      },
+      "outcome": {
+        "reward": -1,
+        "state": 477,
+        "terminal": false
+      },
+      "response": {
+        "messages": [
+          {
+            "content": "Play the deterministic taxi game using only the supplied observations. The passenger is already aboard. Deliver to the named destination. Rows increase southward and columns eastward. A vertical | between cells blocks east/west travel; : is open. Each action consumes one turn. Allowed actions: SOUTH, NORTH, EAST, WEST, PICKUP, DROPOFF. Finish with exactly one final line ACTION: <allowed action>.\nReturn only the final action line, without explanation.",
+            "role": "system"
+          },
+          {
+            "content": "Observation mining_G_14002_7/OBS1\nMap (row0 at top; columns0\u20134):\n+---------+\n|R: | : :G|\n| : | : : |\n| : : : : |\n| | : | : |\n|Y| : |B: |\n+---------+\nTaxi row=4, column=3; passenger=aboard. Goal destination G at row=0, column=4.\nTurn 2/6.\nActual prior action feedback:\nmining_G_14002_7/OBS0: SOUTH -> row=4, column=3, reward=-1, terminal=False.\n",
+            "role": "user"
+          }
+        ],
+        "prompt_tokens": 244,
+        "raw": "ACTION: SOUTH",
+        "terminal": true,
+        "token_ids": [
+          41895,
+          25,
+          79615,
+          151645
+        ],
+        "truncated": false
+      },
+      "turn": 1
+    },
+    {
+      "action": "SOUTH",
+      "error": null,
+      "format_pass": true,
+      "messages": [
+        {
+          "content": "Play the deterministic taxi game using only the supplied observations. The passenger is already aboard. Deliver to the named destination. Rows increase southward and columns eastward. A vertical | between cells blocks east/west travel; : is open. Each action consumes one turn. Allowed actions: SOUTH, NORTH, EAST, WEST, PICKUP, DROPOFF. Finish with exactly one final line ACTION: <allowed action>.\nReturn only the final action line, without explanation.",
+          "role": "system"
+        },
+        {
+          "content": "Observation mining_G_14002_7/OBS2\nMap (row0 at top; columns0\u20134):\n+---------+\n|R: | : :G|\n| : | : : |\n| : : : : |\n| | : | : |\n|Y| : |B: |\n+---------+\nTaxi row=4, column=3; passenger=aboard. Goal destination G at row=0, column=4.\nTurn 3/6.\nActual prior action feedback:\nmining_G_14002_7/OBS0: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS1: SOUTH -> row=4, column=3, reward=-1, terminal=False.\n",
+          "role": "user"
+        }
+      ],
+      "observation": {
+        "reference": "mining_G_14002_7/OBS2",
+        "state": 477,
+        "text": "Observation mining_G_14002_7/OBS2\nMap (row0 at top; columns0\u20134):\n+---------+\n|R: | : :G|\n| : | : : |\n| : : : : |\n| | : | : |\n|Y| : |B: |\n+---------+\nTaxi row=4, column=3; passenger=aboard. Goal destination G at row=0, column=4.\nTurn 3/6.\nActual prior action feedback:\nmining_G_14002_7/OBS0: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS1: SOUTH -> row=4, column=3, reward=-1, terminal=False.\n"
+      },
+      "outcome": {
+        "reward": -1,
+        "state": 477,
+        "terminal": false
+      },
+      "response": {
+        "messages": [
+          {
+            "content": "Play the deterministic taxi game using only the supplied observations. The passenger is already aboard. Deliver to the named destination. Rows increase southward and columns eastward. A vertical | between cells blocks east/west travel; : is open. Each action consumes one turn. Allowed actions: SOUTH, NORTH, EAST, WEST, PICKUP, DROPOFF. Finish with exactly one final line ACTION: <allowed action>.\nReturn only the final action line, without explanation.",
+            "role": "system"
+          },
+          {
+            "content": "Observation mining_G_14002_7/OBS2\nMap (row0 at top; columns0\u20134):\n+---------+\n|R: | : :G|\n| : | : : |\n| : : : : |\n| | : | : |\n|Y| : |B: |\n+---------+\nTaxi row=4, column=3; passenger=aboard. Goal destination G at row=0, column=4.\nTurn 3/6.\nActual prior action feedback:\nmining_G_14002_7/OBS0: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS1: SOUTH -> row=4, column=3, reward=-1, terminal=False.\n",
+            "role": "user"
+          }
+        ],
+        "prompt_tokens": 276,
+        "raw": "ACTION: SOUTH",
+        "terminal": true,
+        "token_ids": [
+          41895,
+          25,
+          79615,
+          151645
+        ],
+        "truncated": false
+      },
+      "turn": 2
+    },
+    {
+      "action": "NORTH",
+      "error": null,
+      "format_pass": true,
+      "messages": [
+        {
+          "content": "Play the deterministic taxi game using only the supplied observations. The passenger is already aboard. Deliver to the named destination. Rows increase southward and columns eastward. A vertical | between cells blocks east/west travel; : is open. Each action consumes one turn. Allowed actions: SOUTH, NORTH, EAST, WEST, PICKUP, DROPOFF. Finish with exactly one final line ACTION: <allowed action>.\nReturn only the final action line, without explanation.",
+          "role": "system"
+        },
+        {
+          "content": "Observation mining_G_14002_7/OBS3\nMap (row0 at top; columns0\u20134):\n+---------+\n|R: | : :G|\n| : | : : |\n| : : : : |\n| | : | : |\n|Y| : |B: |\n+---------+\nTaxi row=4, column=3; passenger=aboard. Goal destination G at row=0, column=4.\nTurn 4/6.\nActual prior action feedback:\nmining_G_14002_7/OBS0: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS1: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS2: SOUTH -> row=4, column=3, reward=-1, terminal=False.\n",
+          "role": "user"
+        }
+      ],
+      "observation": {
+        "reference": "mining_G_14002_7/OBS3",
+        "state": 477,
+        "text": "Observation mining_G_14002_7/OBS3\nMap (row0 at top; columns0\u20134):\n+---------+\n|R: | : :G|\n| : | : : |\n| : : : : |\n| | : | : |\n|Y| : |B: |\n+---------+\nTaxi row=4, column=3; passenger=aboard. Goal destination G at row=0, column=4.\nTurn 4/6.\nActual prior action feedback:\nmining_G_14002_7/OBS0: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS1: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS2: SOUTH -> row=4, column=3, reward=-1, terminal=False.\n"
+      },
+      "outcome": {
+        "reward": -1,
+        "state": 377,
+        "terminal": false
+      },
+      "response": {
+        "messages": [
+          {
+            "content": "Play the deterministic taxi game using only the supplied observations. The passenger is already aboard. Deliver to the named destination. Rows increase southward and columns eastward. A vertical | between cells blocks east/west travel; : is open. Each action consumes one turn. Allowed actions: SOUTH, NORTH, EAST, WEST, PICKUP, DROPOFF. Finish with exactly one final line ACTION: <allowed action>.\nReturn only the final action line, without explanation.",
+            "role": "system"
+          },
+          {
+            "content": "Observation mining_G_14002_7/OBS3\nMap (row0 at top; columns0\u20134):\n+---------+\n|R: | : :G|\n| : | : : |\n| : : : : |\n| | : | : |\n|Y| : |B: |\n+---------+\nTaxi row=4, column=3; passenger=aboard. Goal destination G at row=0, column=4.\nTurn 4/6.\nActual prior action feedback:\nmining_G_14002_7/OBS0: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS1: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS2: SOUTH -> row=4, column=3, reward=-1, terminal=False.\n",
+            "role": "user"
+          }
+        ],
+        "prompt_tokens": 308,
+        "raw": "ACTION: NORTH",
+        "terminal": true,
+        "token_ids": [
+          41895,
+          25,
+          74759,
+          151645
+        ],
+        "truncated": false
+      },
+      "turn": 3
+    },
+    {
+      "action": "EAST",
+      "error": null,
+      "format_pass": true,
+      "messages": [
+        {
+          "content": "Play the deterministic taxi game using only the supplied observations. The passenger is already aboard. Deliver to the named destination. Rows increase southward and columns eastward. A vertical | between cells blocks east/west travel; : is open. Each action consumes one turn. Allowed actions: SOUTH, NORTH, EAST, WEST, PICKUP, DROPOFF. Finish with exactly one final line ACTION: <allowed action>.\nReturn only the final action line, without explanation.",
+          "role": "system"
+        },
+        {
+          "content": "Observation mining_G_14002_7/OBS4\nMap (row0 at top; columns0\u20134):\n+---------+\n|R: | : :G|\n| : | : : |\n| : : : : |\n| | : | : |\n|Y| : |B: |\n+---------+\nTaxi row=3, column=3; passenger=aboard. Goal destination G at row=0, column=4.\nTurn 5/6.\nActual prior action feedback:\nmining_G_14002_7/OBS0: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS1: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS2: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS3: NORTH -> row=3, column=3, reward=-1, terminal=False.\n",
+          "role": "user"
+        }
+      ],
+      "observation": {
+        "reference": "mining_G_14002_7/OBS4",
+        "state": 377,
+        "text": "Observation mining_G_14002_7/OBS4\nMap (row0 at top; columns0\u20134):\n+---------+\n|R: | : :G|\n| : | : : |\n| : : : : |\n| | : | : |\n|Y| : |B: |\n+---------+\nTaxi row=3, column=3; passenger=aboard. Goal destination G at row=0, column=4.\nTurn 5/6.\nActual prior action feedback:\nmining_G_14002_7/OBS0: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS1: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS2: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS3: NORTH -> row=3, column=3, reward=-1, terminal=False.\n"
+      },
+      "outcome": {
+        "reward": -1,
+        "state": 397,
+        "terminal": false
+      },
+      "response": {
+        "messages": [
+          {
+            "content": "Play the deterministic taxi game using only the supplied observations. The passenger is already aboard. Deliver to the named destination. Rows increase southward and columns eastward. A vertical | between cells blocks east/west travel; : is open. Each action consumes one turn. Allowed actions: SOUTH, NORTH, EAST, WEST, PICKUP, DROPOFF. Finish with exactly one final line ACTION: <allowed action>.\nReturn only the final action line, without explanation.",
+            "role": "system"
+          },
+          {
+            "content": "Observation mining_G_14002_7/OBS4\nMap (row0 at top; columns0\u20134):\n+---------+\n|R: | : :G|\n| : | : : |\n| : : : : |\n| | : | : |\n|Y| : |B: |\n+---------+\nTaxi row=3, column=3; passenger=aboard. Goal destination G at row=0, column=4.\nTurn 5/6.\nActual prior action feedback:\nmining_G_14002_7/OBS0: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS1: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS2: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS3: NORTH -> row=3, column=3, reward=-1, terminal=False.\n",
+            "role": "user"
+          }
+        ],
+        "prompt_tokens": 340,
+        "raw": "ACTION: EAST",
+        "terminal": true,
+        "token_ids": [
+          41895,
+          25,
+          77625,
+          151645
+        ],
+        "truncated": false
+      },
+      "turn": 4
+    },
+    {
+      "action": "DROPOFF",
+      "error": null,
+      "format_pass": true,
+      "messages": [
+        {
+          "content": "Play the deterministic taxi game using only the supplied observations. The passenger is already aboard. Deliver to the named destination. Rows increase southward and columns eastward. A vertical | between cells blocks east/west travel; : is open. Each action consumes one turn. Allowed actions: SOUTH, NORTH, EAST, WEST, PICKUP, DROPOFF. Finish with exactly one final line ACTION: <allowed action>.\nReturn only the final action line, without explanation.",
+          "role": "system"
+        },
+        {
+          "content": "Observation mining_G_14002_7/OBS5\nMap (row0 at top; columns0\u20134):\n+---------+\n|R: | : :G|\n| : | : : |\n| : : : : |\n| | : | : |\n|Y| : |B: |\n+---------+\nTaxi row=3, column=4; passenger=aboard. Goal destination G at row=0, column=4.\nTurn 6/6.\nActual prior action feedback:\nmining_G_14002_7/OBS0: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS1: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS2: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS3: NORTH -> row=3, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS4: EAST -> row=3, column=4, reward=-1, terminal=False.\n",
+          "role": "user"
+        }
+      ],
+      "observation": {
+        "reference": "mining_G_14002_7/OBS5",
+        "state": 397,
+        "text": "Observation mining_G_14002_7/OBS5\nMap (row0 at top; columns0\u20134):\n+---------+\n|R: | : :G|\n| : | : : |\n| : : : : |\n| | : | : |\n|Y| : |B: |\n+---------+\nTaxi row=3, column=4; passenger=aboard. Goal destination G at row=0, column=4.\nTurn 6/6.\nActual prior action feedback:\nmining_G_14002_7/OBS0: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS1: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS2: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS3: NORTH -> row=3, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS4: EAST -> row=3, column=4, reward=-1, terminal=False.\n"
+      },
+      "outcome": {
+        "reward": -10,
+        "state": 397,
+        "terminal": false
+      },
+      "response": {
+        "messages": [
+          {
+            "content": "Play the deterministic taxi game using only the supplied observations. The passenger is already aboard. Deliver to the named destination. Rows increase southward and columns eastward. A vertical | between cells blocks east/west travel; : is open. Each action consumes one turn. Allowed actions: SOUTH, NORTH, EAST, WEST, PICKUP, DROPOFF. Finish with exactly one final line ACTION: <allowed action>.\nReturn only the final action line, without explanation.",
+            "role": "system"
+          },
+          {
+            "content": "Observation mining_G_14002_7/OBS5\nMap (row0 at top; columns0\u20134):\n+---------+\n|R: | : :G|\n| : | : : |\n| : : : : |\n| | : | : |\n|Y| : |B: |\n+---------+\nTaxi row=3, column=4; passenger=aboard. Goal destination G at row=0, column=4.\nTurn 6/6.\nActual prior action feedback:\nmining_G_14002_7/OBS0: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS1: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS2: SOUTH -> row=4, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS3: NORTH -> row=3, column=3, reward=-1, terminal=False.\nmining_G_14002_7/OBS4: EAST -> row=3, column=4, reward=-1, terminal=False.\n",
+            "role": "user"
+          }
+        ],
+        "prompt_tokens": 372,
+        "raw": "ACTION: DROPOFF",
+        "terminal": true,
+        "token_ids": [
+          41895,
+          25,
+          422,
+          1285,
+          2045,
+          1748,
+          151645
+        ],
+        "truncated": false
+      },
+      "turn": 5
+    }
+  ]
+}
