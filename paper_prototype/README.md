@@ -20,8 +20,8 @@ or layout validation is claimed. Primary sources, scope and receipt:
 Dated statements below about unresolved TODO keys describe earlier snapshots.
 
 **Ongoing first-sprint working draft — research question unresolved.**
-Canonical `main.tex` now includes independently reviewed SEQ-248–253 connected
-readouts, trajectory sleep, control and memory write and independently reduced SEQ-247 material-only
+Canonical `main.tex` now includes independently reviewed SEQ-248–254 connected
+readouts, trajectory sleep, control, memory write and closed replay repair, and independently reduced SEQ-247 material-only
 control and terminal SEQ-246 matched replay
 (independently reduced), separately from A3 SEQ-245 (independent six-stage reduction complete),
 with SEQ-241, SEQ230 and
@@ -44,7 +44,7 @@ the first adult write/use comparison is complete, with an explicit W8 reader
 failure and a separately reported no-fit W0 interface repair.
 The full sprint remains incomplete. No G3/H1/H2, parenting or freeze promotion.
 
-## SEQ-248–253: connected learning, controls and parametric connection — September 14, 2026
+## SEQ-248–254: connected learning, controls and parametric connection — September 14, 2026
 
 **Both independently reduced COMPLETE.** [Original readout](../research_notes/analysis/2026-09-14_event_two_hop_first_result.md)
 and [turn-bound successor](../research_notes/analysis/2026-09-14_event_two_hop_turnbound_first_result.md)
@@ -249,7 +249,7 @@ fresh-text3/4→2/4 is a regression against reused251, not a contemporaneous
 no-write rerun. Taught-text3/4 and old16/audit16 remain. Neither this written
 instance nor a source-scaffolded audit is unseen-world generalization or
 in-loop autonomous truth checking. SEQ247's material/semantic limits and all
-248–251 failures remain; no later replay result is included.
+248–251 failures remain;254 below closes the one stronger-replay repair.
 
 Sources: control `4f1d7b689e7892d989cb97e6406d5c80d9bfb6a8`, memory
 `7c773aacaf0c6a47f510d6f38459ac8270521335`. Primary and released reviews:
@@ -262,6 +262,36 @@ and `gpu_artifacts_local/astra_event_two_hop_memory_terminal_20260914_attempt1/e
 Their sibling archive SHA256 values are respectively
 `602454f836ed759648711af80f6a54cf254aa4b7a13af1529caa0853b305e35c` and
 `82313377e0a72f79ebb6a1cca2439f27a54b97718ce2db6fd6aaf8ed190ba7e4`.
+
+**SEQ254: stronger replay closed failed; bounded independent review PASS.**
+The native fit/AFTER completed, but the specified repair did not: fresh
+PARAMETRIC/OWN_TEXT remain2/4 each, with every case's commands, reads, commits
+and outcomes unchanged from253; opposite-goal pairs remain0/2 and unavailable0/4.
+The goal-blind first-port counterexample still applies. New exact W0/W8 recall
+is4/4 each, old recall16/16 each, taught-text3/4, and actual parametric reads16/16;
+held audit falls16/16 to15/16 (true7/8, fault8/8). This misses both the
+at-least3/4 fresh-goal and16/16 audit repair targets, not a launch failure.
+
+Both253 and254 start37ec: this is a fork, not a sequential write on9d36.
+The same254 source rows and first four batch indexes are retained; two saved
+actual trajectory rows are appended per update. One100-update, batch-six fit
+has212 trajectory and200 new-memory presentations,18,443 labels versus16,175.
+No new exposure, teacher, target rewrite or reference refit;253 BEFORE is reused.
+The six-row mean also changes existing-label normalization, so this is neither
+an equal-token nor isolated additive-gradient comparison. The changed saved
+adapter52658b rules out a no-update artifact. Close this specific recipe,
+not all replay strategies; no dose sweep or further outcome is reported.
+
+SEQ250 **already taught opposite goals (tasks0/2) under one display order**.
+Missing conditional examples is not the established cause. At this reporting
+cut, the new goal-pair helper broadens worlds/orders in a NO-FIT collection
+design pending native execution, not the first goal counterexample or a
+positive transfer result. One DEV lineage and the253 causal limits remain.
+Source `28b44b19a050bbd431bad884f830d05ef0762f64`; [primary result](../research_notes/analysis/2026-09-14_event_two_hop_memory_replay_first_result.md)
+and [released independent review](../research_notes/analysis/2026-09-14_event_two_hop_memory_replay_independent_result.md).
+The latter supersedes the primary's pending-review wording; saved-file/state
+joins do not independently authenticate live tensors. Raw capsule:
+`gpu_artifacts_local/astra_event_two_hop_memory_replay_terminal_20260914_attempt1/extracted/`.
 
 ## SEQ-247: executable selector material, shared writer — September 14, 2026
 
