@@ -22405,3 +22405,45 @@ guardian386793, attempt2/source d0f16e22, physical+CVDscanPASS. At14:14:43UTC
 60/100updates recorded; allocatorOOM/recoverywarning retained, noFAILED.
 One fit+AFTER only; all references remain untouched. Goodall independently
 prepares CPU reduction while Main monitors; no reviewer launch gate.
+
+## [Fable VM result read] 2026-09-14T14:17Z — SEQ-245 VERIFIED; SEQ-246 VERIFIED
+
+Node 2 (ovx), read-only. Roots: `/tmp/astra_fresh_reader_cycle_20260914_attempt2` (SEQ-245, arms SELECTED/ and UNIFORM/, each with train/ and after/) and `/tmp/astra_reader_audit_matched_replay_20260914_attempt1` (SEQ-246, arms AUDIT_SFT/ and AUDIT_LOSS_OFF/).
+
+**SEQ-245** (fresh-bank continuation: SELECTED vs UNIFORM fit + fresh AFTER)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| status | both COMPLETE | train status COMPLETE, fits 1; after status COMPLETE, fits 0 (both arms) | {SELECTED,UNIFORM}/{train,after}/RESULT.json |
+| updates | 100 each | updates 100 / 100 | train/RESULT.json |
+| own routing (AFTER) | 4/4 both | OWN_PARAMETRIC reached_goal 4 / denominator 4 (both) | after/RESULT.json panels |
+| new W0 / W8 recall | 4/4 both | RECALL_W0 4/4, RECALL_W8 4/4 (both) | after/RESULT.json panels |
+| old retention | 12/12 | OLD_RECALL_W0 12/12, OLD_RECALL_W8 12/12 (both) | after/RESULT.json panels |
+| held audit | 16/16 | successes 16; summary fault 8/8, true 8/8, overall 16/16 (both) | after/HELD_AUDIT.json |
+| next actual audit | 6/6 true, all NONE | correct 6 / denominator 6, all six cases kind true expected NONE, admitted_selections 0, chosen_source_indexes all None (both) | after/ACTUAL_READERS.json |
+| reader OFF / text / MISS | 2/4, 8/8, 0/4 | OWN_READER_OFF 2/4; HELD_TEXT_0 4/4 + HELD_TEXT_1 4/4; UNSEEN_MISS 0/4 (both) | after/RESULT.json panels |
+| new-fact doses | SELECTED 48/56/48/48, UNIFORM 50 each | new_fact_presentations [48, 56, 48, 48] / [50, 50, 50, 50] | train/RESULT.json |
+| supervised tokens | 16345 vs 16319 | actual_supervised_tokens 16345 / 16319; reference_supervised_tokens 16319 in both | train/RESULT.json |
+| AFTER calls | 228 | model_calls 114 per arm (22 top-level CALL_*.json + 68 new_task CALL_*.json + 24 recall files = 114); 114 + 114 = 228 | after/ |
+| start / end | 13:37:18; 13:43:22 / 13:43:21 | started 13:37:18Z both; completed 13:43:22Z SELECTED, 13:43:21Z UNIFORM | launch_{SELECTED,UNIFORM}/ |
+| guardians | 382893/382894 | 382893 / 382894 | launch_*/guardian_pid.txt |
+
+Integrity: source commit 8e520bc5 matches `source_commit.txt` (8e520bc5b359163b2e54d70d39f317d0ab914102). Both train roots start from loaded_adapter_state_sha256 48dc1d6d (same as the SEQ-242/244 BEFORE) and record before_result_sha256 a83cbe29…baba7, the SEQ-244 BEFORE RESULT hash verified last read. Each after/RESULT.json training_result_sha256 equals sha256sum of its own arm's train/RESULT.json (c6e31720… SELECTED, 395eedc4… UNIFORM); after-run adapter state 207ad43e (SELECTED) / 3ddf9cc7 (UNIFORM) equals train adapter_state_after. 16 episode files per arm present. Entry's archive SHA 03fc97eb… and the reduction receipt SHA 00a81f14… not re-derived (archive paths not given in the entry). No adapter/base prefix or physical_model_calls named in the entry.
+
+**SEQ-246** (zero-fit matched-auditor replay, SEQ-239 adapters on identical A3 stimuli)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| status | both COMPLETE | status COMPLETE, fits 0, training_allowed False, on_policy False (both) | {AUDIT_SFT,AUDIT_LOSS_OFF}/RESULT.json |
+| fault | SFT 8/8 vs OFF 2/8 | before packet fault correct 8/8 (SFT); 2/8 (LOSS_OFF) | RESULT.json packets[0].summary |
+| true | 4/6 each | SELECTED/after packet true correct 4/6 (SFT); 4/6 (LOSS_OFF) | RESULT.json packets[1].summary |
+| total | 12/14 vs 6/14 | 8+4 = 12/14 (SFT); 2+4 = 6/14 (LOSS_OFF) | packet summaries summed |
+| calls | 14/arm | model_calls 14; 14 CALL_*.json per arm; packets 8 + 6 | RESULT.json, arm dir |
+| prompts | eight distinct, four addresses | unique_prompts 4 per packet (8 total); stimuli.observations "14_CALLS_WITH_REPEATED_PROMPTS_NOT_14_INDEPENDENT_OBSERVATIONS"; prompt_multiplicity 2 each | RESULT.json stimuli |
+| ordered prompt digest | e1cf5d47… | ordered_prompts_sha256 e1cf5d477a0194b09e11d521afe30e590de5d6b16f1bb72495cf4129237ca265 (both arms) | RESULT.json stimuli |
+| SFT source pointers | usable on all four new records | before chosen_source_indexes [1, 0, 1, 0, 3, 2, 3, 2] (SFT) vs [1, None, 1, None, None, None, None, None] (LOSS_OFF) | RESULT.json packets[0] |
+| end | 13:59:34 / 13:59:32 | completed 13:59:34Z SFT, 13:59:32Z LOSS_OFF; started 13:58:33Z both; guardians 385258 / 385259 | launch_AUDIT_*/ |
+
+Integrity: source commit 5312cefb matches both `launch_*/source_commit.txt` (5312cefb18ebbcf37bade654f553d4fcf39a0710). adapter_unchanged True and adapter_files_unchanged True in both arms; adapter_state_before == adapter_state_after (db3f213b SFT, 42c8a7e2 LOSS_OFF); evaluated adapters point at `/tmp/astra_reader_audit_lesson_20260914_attempt1/AUDIT_{SFT,LOSS_OFF}/train/adapter`; expected_base_sha256 a2367093 in both. CASES.json is byte-identical across both arms and both prepare dirs (sha256 ac60ed41…). Not re-derived within the time bound: deduplicated 7/8 vs 4/8, the literal E_id INVALID_POINTER outputs, and that both false flags fall on two copies of one true prompt (both arms' SELECTED/after chosen indexes are [1, None, 1, None, None, None], consistent with the claim, but per-call prompt identity was not read); capsule SHA e613a66b… not re-derived (archive path not given).
+
+Scope note (builder's own limits): SEQ-245 — one fresh bank, one child adapter, one seed per arm, ordering/repetition contrast only, no selection superiority or H1/H2 claim; SEQ-246 — third-party replay of eight distinct prompts (14 calls, not 14 independent observations), not on-policy experience, no selection-utility or H1/H2 claim.
