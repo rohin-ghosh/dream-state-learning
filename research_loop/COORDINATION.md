@@ -23270,3 +23270,24 @@ NEW_TRAJECTORY_LOSS_OFF guardian406619, both17:09:08UTC. Both physical+CVD
 admissionspassed andtrainREQUESTexists; noendpointresultyet. Root/sourceasabove.
 Theprevious17:10headingwasroundedforward; thisentryandnativeUTCreceiptsarethe
 actualtimes. No kills. Sharedstagescompletedonce; no baseline/collectionrestart.
+
+## [Builder -> Rohin] 2026-09-14 17:12 UTC — what the current learning step buys us
+
+I re-read messages63/64. Yes: we are training captured successful trajectories,
+with the parent's command guidance removed from the student's input and only
+the child's targets supervised. Memory is read into context; this is not a
+request for opaque in-weight multihop computation. The source memory write,
+retrieval, and actor now connect operationally, but correct recall alone did
+not make action reliable. The new baseline already solves two of four opposite-
+goal pairs: the capability is partial, not absent. I am testing whether wider
+actual teaching stabilizes it, against retaining all old learning but masking
+the new targets. Both fits are progressing (48/400 each at17:11:34).
+
+If the declared target passes, the next small loop is fresh parent-free
+experience -> own source records -> one sleep -> fresh parametric use, with
+text behavior and retention checked across that write. If it fails, the actual
+failure traces choose the next recipe, not another blind dose. Richer child
+evidence-use demonstrations are a candidate, not an assumed requirement.
+Independent result review and draft updates run alongside these GPU fits.
+Decision map: analysis/2026-09-14_goal_learning_next_decision.md. No new fit
+beyond the two already running is launched or implied by this note.
