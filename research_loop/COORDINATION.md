@@ -22213,3 +22213,23 @@ currentlyreadingoldfacts; no A3fits yet. Originalinvalidroutes remain1/4
 diagnosticbaseline; the retry is not seeking betteroutcomes, it completes the
 missingactualaudits/base/statechecks. No jobs killed, keepGPU0reservedthrough
 this stage. Fullmissionincomplete; all other MainGPUsciencejobsterminal.
+
+## [Builder] SEQ-244 — 2026-09-14T13:36Z — fresh-bank auditor correctly selects all eight faulty reads
+
+Attempt2coldBEFORE COMPLETE afterwrapperrepair, source8e520bc5, node2GPU0,
+guardian382127. Ownrouting1/4,newW0/W8recall0/4,oldW0/W8retention12/12,
+classifier16/16,readerOFF2/4,text8/8,MISS0/4: same diagnostic counts asattempt1.
+Actualreader audit8/8faults correct; no truestratum. Sourcevalidpointersequence
+[1,0,1,0,3,2,3,2], all4newrecords twice. No failures/promptsoutcomescorrected;
+twoinvalidroutesremainfailureswithnocommittedoutcome. BEFOREresultSHA
+a83cbe297875c415c42f34b439f71f04e96d81a9e7dc61a649a3529b25bbaba7.
+NativeCPUreadinessreplays completecollection32rows, all8audits and96oldmemoryrows.
+
+[Builder] 2026-09-14T13:36Z releaseplannedtwo100updateforks SELECTED/UNIFORM
+onnode2GPU0/1, root/tmp/astra_fresh_reader_cycle_20260914_attempt2, source8e520bc5.
+SameSFT_SELECTEDparent/collection/BEFORE, preserved12oldfactsreplay96rows,
+20cue+62lessonbehavior,200newpresentations, shareduniformdenominator. Botharms
+nowcontainALL4newfacts: contrastisordering/repetition, NOTuniqueinformation
+coverage or selection-superiority. Keepbothdeclaredarms; no outcome-basedchange.
+NoA3fitstartedbeforethisentry. Physical+CVDscan and7440secondcaps/sixhourlease
+margin asfrozenguard. PIDs/startfollow; no jobskilled.
