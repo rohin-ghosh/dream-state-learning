@@ -21641,3 +21641,61 @@ After-readout RESULT retains its own driver hash. No metric/fit change is made.
 **VM reader (11:15–11:18Z):** SEQ-226, 227, 228 VERIFIED; three runs, nine SEQs, zero discrepancies. **Node 2 hygiene:** root /tmp filled during source packaging (a zero-byte failed archive preserved as FAILED_ZERO_BYTES); four tarballs moved to `gpu_artifacts_local/source_archives_20260914T1113Z` on /data with symlinks and unchanged SHA256; /tmp now 1.5 GB free, /data 53 GB — worth watching, run roots live under /tmp.
 
 **Fleet:** 0/32 busy at the poll (forks not yet launched). Daemons: astra_nudge=1 fable_fill=1 courier_vm=1 occ_off=yes hb_age=45s astra_tmux=alive. Laptop chains 4/4. Node-1 lease ends 23:14 UTC; mirror complete. Nothing launched or killed by the watcher.
+
+## [Fable VM result read] 2026-09-14T11:48Z — SEQ-229 VERIFIED; SEQ-230 VERIFIED; SEQ-232 VERIFIED
+
+Read-only recount on node 2, root `/tmp/astra_adult_cycle2_20260914_attempt1` (arms `CUE_REPLAY`, `CUE_LOSS_OFF`). No process touched, nothing launched, nothing written on the node.
+
+**SEQ-229** (second adult collection, both arms)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| grounded new EVENTs, cue | 4/4 | accepted_events 4 / event_denominator 4 | CUE_REPLAY/collect/COLLECTION.json, RESULT.json |
+| grounded new EVENTs, control | 4/4 | accepted_events 4 / event_denominator 4 | CUE_LOSS_OFF/collect/COLLECTION.json, RESULT.json |
+| calls per arm | 8 | model_calls 8 (cue), 8 (off); captures len 8 each | */collect/RESULT.json, COLLECTION.json |
+| raw replay rows per arm | 32 | rows len 32 (cue), 32 (off) | */collect/COLLECTION.json |
+| COLLECTION SHA both arms | d5d91628…f55c5 | d5d9162827c5f621644d96791c751283b50cde954c30c9ac87e2ed9a273f55c5 (cue) = same (off) | sha256sum */collect/COLLECTION.json |
+| completion cue / control | 10:30:38.628 / 10:30:37.805 UTC | finished_unix → 10:30:38.627896 / 10:30:37.804954 | */collect/RESULT.json |
+| infrastructure errors | none | infrastructure_failures 0 (both), fits 0 (both) | */collect/COLLECTION.json |
+
+Integrity: initial adapters distinct as stated (loaded_adapter_state cue 07ecf4c5…, off b0693f1a…; initial_training_result cue 3eaad009…, off 9fe1d0eb…). Source c56170d3 is a git revision, not re-derivable from RESULT.json (runner_sha256 1c9993bd… recorded there); not re-derived.
+
+**SEQ-230** (cycle-2 fits and W0 readouts; BEFORE → AFTER from `*/before/RESULT.json` and `*/after/RESULT.json` panels)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| cue new routing (OWN_PARAMETRIC reached_goal) | 2/4 → 4/4 | 2/4 → 4/4 | CUE_REPLAY before/after RESULT.json |
+| cue READ (with_reads) | 4/4 → 4/4 | 4/4 → 4/4 | same |
+| cue second READ | 4/4 → 2/4 | second_reads 4 → 2 (denominator 4) | same |
+| cue reader OFF (OWN_READER_OFF reached_goal) | 2/4 → 2/4 | 2/4 → 2/4 | same |
+| off new routing | 2/4 → 2/4 | 2/4 → 2/4 | CUE_LOSS_OFF before/after RESULT.json |
+| off READ both states | zero | with_reads 0 → 0 | same |
+| off reader OFF | 2/4 → 2/4 | 2/4 → 2/4 | same |
+| new recall W0 / W8, both arms | 0/4 → 4/4 each | RECALL_W0 0/4 → 4/4, RECALL_W8 0/4 → 4/4 (cue and off) | both arms before/after RESULT.json |
+| old recall W0, both arms | 8/8 → 8/8 | 8/8 → 8/8 (cue and off) | same |
+| old recall W8, both arms | 7/8 → 8/8 | 7/8 → 8/8 (cue and off) | same; the one BEFORE miss is OLD_RECALL_W8_07.json correct=False |
+| held-text policy cue | 8/8 → 8/8 | HELD_TEXT_0 4/4 + HELD_TEXT_1 4/4, both states | CUE_REPLAY before/after |
+| held-text policy off | 4/8 → 4/8 | HELD_TEXT_0 2/4 + HELD_TEXT_1 2/4, both states | CUE_LOSS_OFF before/after |
+| unseen MISS, all | 0/4 → 0/4 | UNSEEN_MISS correct 0/4 in all four readouts | both arms before/after |
+| AFTER calls cue / off | 84 / 44 | model_calls 84 / 44; per-call files 68 CALL_*.json + 16 OLD_RECALL_*.json = 84 (cue), 28 + 16 = 44 (off) | */after/RESULT.json, */after/new_task, */after |
+| updates per arm | 400 | updates 400 (cue), 400 (off) | */train/RESULT.json |
+| final tensor SHA cue | 472ea506…cdf40f | 472ea50611c778d0c83a3bde7529062a10f2937e4cf93cec897d37b635cdf40f | sha256sum CUE_REPLAY/train/adapter/adapter_model.safetensors |
+| final tensor SHA off | a426e1f4…2de788 | a426e1f403c67b59fc643295d5c0bf6a920da5476027b55f6683b7012f2de788 | sha256sum CUE_LOSS_OFF/train/adapter/adapter_model.safetensors |
+
+Integrity: BEFORE readouts also match per-call files (cue 72 + 16 = 88 = model_calls 88; off 28 + 16 = 44 = model_calls 44). All six RESULT.json status COMPLETE, fits 0 in readouts, frozen_base_unchanged true. Both AFTER readouts bind the arm's own collection SHA d5d91628… and the arm's initial_training_result (3eaad009… cue, 9fe1d0eb… off).
+
+**SEQ-232** (two sleep-note recipes, root `CUE_REPLAY/recollect` and `CUE_REPLAY/recollect_rehearsal`; memo research_notes/analysis/2026-09-14_sleep_recollection_two_recipe_result.md)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| recipe 1 output | NONE, valid abstention | raw = "NONE", 2 emitted token ids, prompt_tokens 1697 | recollect/SLEEP_NOTE.json |
+| recipe 2 note length | 61-word, terminal, untruncated | 61 whitespace words, terminal true, truncated false | recollect_rehearsal/SLEEP_NOTE.json |
+| recipe 2 prompt / emitted | 1735 / 171 | prompt_tokens 1735, token_ids len 171 | same |
+| correct cited route triples | 4/4 | 4 (source, port, destination) triples in the note; 4/4 exactly equal the 4 episode EVENT triples in collect/COLLECTION.json | recollect_rehearsal/SLEEP_NOTE.json vs CUE_REPLAY/collect/COLLECTION.json |
+| calls / fits | 1 / 0 (each recipe) | model_calls 1, fits 0 (recollect); model_calls 1, fits 0 (recollect_rehearsal) | */RESULT.json |
+| admission | UNREVIEWED_NO_FIT unchanged | status RECOLLECTION_CAPTURED_NO_FIT, training_admission UNREVIEWED_NO_FIT, parent_present false (both) | */RESULT.json |
+| whole eligible notes | 0/1 | not re-derived: this is the builder's source-grounding disposition (uncited opening, ambiguous inter-episode movement), not a receipt field | memo |
+
+Integrity: all eight file hashes listed in the memo (SLEEP_PROMPT, SLEEP_NOTE, RESULT, REQUEST for both recipes) match sha256sum on the node; note_sha256 inside each RESULT.json equals the sha256sum of its SLEEP_NOTE.json. Both recipes loaded_adapter_state 07ecf4c5… = the cycle-2 cue collector's state; initial_training_result 3eaad009…; runner_sha256 029d771f… (recipe 1) and fd6520ff… (recipe 2) as in the memo. Calls claimed (1 each) equal model_calls.
+
+Scope note, copied from the builder: repeated same-child use in a tiny family with scheduled replay, one sequential new bank of four facts; not independent world/lineage reliability, general G3, improved learning-rate slope, or autonomous selection/extraction; two single sleep-note calls are not an isolated causal test of the novelty clause. Remaining unread result-bearing SEQs at this run: SEQ-235.
