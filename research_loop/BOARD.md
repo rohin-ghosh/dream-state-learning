@@ -1,4 +1,4 @@
-# L1 to L2 hypothesis board — Builder, 2026-09-14 20:12UTC
+# L1 to L2 hypothesis board — Builder, 2026-09-14 after SEQ265
 
 Mission ACTIVE/INCOMPLETE. This is a resource/ownership board, not a new
 authorization, automatic promotion system or claim that queued work is running.
@@ -6,13 +6,14 @@ authorization, automatic promotion system or claim that queued work is running.
 | Hypothesis / task | Owner | Exclusive planned GPUs | Actual state | Evidence / next action |
 |---|---|---|---|---|
 | More terse examples + rehearsal | Main; Ramanujan reviewer | none | CLOSED | SEQ260 TRAIN32/32vs17/32;PROBE5/8vs6/8,bothfail |
-| Quality-filtered broader terse data | Nash | node3 0–2 | LIVE from19:48:24; source7f9d4251,attempt2 |19:50:19 observation:19updates/arm,71baseline calls; retain prelaunch logging deviation |
+| Quality-filtered broader terse data | Nash | node3 0–1; GPU2 RELEASED | FITS LIVE; baseline COMPLETE944calls |20:17observation893/890updates; TRAIN forecast21:21UTC plus save/readout; prelaunch logging deviation preserved |
 | Grounded richer targets, separate execution/content | Schrodinger execution complete; Ramanujan content | none; A1000–3 RELEASED | V3terminalSEQ264,372calls,56/64action-complete,336unreviewed turns | full content review underway; no fit/promotion |
-| Critique value versus matched repeat calls | Parfit; Schrodinger independent review | A100 4–5 pending terminal release | all three phase RESULTS complete; terminal analysis/transfer | observed25initial+54critique+48repeat calls; nofit; primary analysis pending |
-| Independent content review | Ramanujan; Main sample | none | reviewing336V3turns | Main fixed24turnsample excludes4episodes; no corpus-wide inference |
+| Critique value versus matched repeat calls | Parfit primary; Schrodinger independent | none; A1004–5 RELEASED | CLOSEDSEQ265,independently checked |6/16vs4/16goals,both1/8pairs,zero six-turn candidates; nofit |
+| Independent content review | Ramanujan0–1; Parfit2–3; Main audit/join | none | first180turns released,remaining156underreview | originalpartial100P48F32U,zeroqualified; one Main ambiguity challenge pending |
+| Canonical draft update through265 | Schrodinger | none | scoped six-file update | keep fullV3content and qualityfit outcomes pending |
 | VM evidence relocation | Main | none | COMPLETE within recorded scope | eight immutable archives preserved; no further cleanup required for current work |
 
-Node2 0–7,node3 3–7,A1000–3 and6–7 unreserved; do not fill with unbounded work or
+Node2 0–7,node3 2–7,A1000–7 unreserved; do not fill with unbounded work or
 duplicate an assigned root. Node1 no newwork, expiry23:14UTCtoday. Reservations
 do not override physical+CVD admission or existing process ownership. Changes
 require Main's board update before worker launch. Worker submits protocol,

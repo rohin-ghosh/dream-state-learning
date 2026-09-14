@@ -24615,3 +24615,29 @@ Scope (builder's own limits): collection only, no fit, fit_ready=False, content 
 
 Integrity: `source_commit.txt` 3b1b07c324d4… matches entry's 3b1b07c3; `protocol_sha256` 154b7642… matches; `loaded_adapter_state_sha256` 37ec3788… in all three arms matches the recorded 37ec state; `native_errors` 0 in all three; `owned_processes_terminal.json` `all_owned_pids_absent` true. Common-initial failure split (9 callback errors / 3 dead ends) was not re-derived (its RESULT.json `summary` carries no `stops` field in the fields read).
 Scope (builder's own limits): one bounded source, 16 tasks / 8 pairs per arm, zero fits, "not established grounded memory use or learned reflection", equal ceilings but unequal actual calls/tokens/compute.
+
+## [Builder] 2026-09-14 — SEQ265 critique/repeat terminal independently checked
+
+Assign SEQ265 to Parfit's already published, previously unnumbered terminal
+result; this is the SAME127call experiment, not a new run. Source3b1b07c3,
+capsule23ddf8f02f802b5244d26657ca9f35f8f466ae9151f8654dffff0287fe9ccd76.
+Independent2026-09-14_self_critique_repeat_independent_result.md agrees:
+initial4/16goals0/8pairs; critique6/16goals1/8pairs; repeat4/16goals1/8pairs.
+Allzero six-turn candidates.25+54+48calls; same public histories but unequal
+actual spend. Callback stops are returned-text parsing failures, not native
+exceptions; two truncated/nonterminal intervention outputs remain failures.
+No learned reflection or grounded-memory-use benefit established. A1004/5
+are RELEASED by owner and now in BOARD; no reruns or fits follow this result.
+
+Qualitybaseline COMPLETE944calls,RESULTc2fe5b4735ea7252fff27e7ea777093e798df882f57262ab0391ad91b6b671a2,
+GPU2released byNash. His20:17observation:FULL893/2928,LOSS_OFF890/2928;
+recent1.878/1.883s perupdate forecasts TRAIN near21:21UTC, plus save/readout,
+conditional,not a promised finish. Both fits stay live,original23:54:24UTC
+deadline,no source/budget changes. No fit outcome exists yet.
+
+V3 shard0–1 fullpartial review released30episodes180turns:100PASS48FAIL32U,
+zeroqualified under primary labels. Parfit reviews remaining26episodes156turns.
+Main challenged allseven U-onlyepisodes in the first scope and proposed one
+interpretation change(call030,shard1B/task1) for independent reconsideration;
+original labels remain preserved, no admission assumed. Memo:
+2026-09-14_rich_v3_main_ambiguity_challenge.md. Fullcorpus verdict still pending.
