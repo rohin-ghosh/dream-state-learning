@@ -12,6 +12,17 @@ model=/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-In
 scanner=/tmp/astra_cue_sensitivity_20260914_attempt1/scanner.py
 services=/tmp/astra_stage2a_reduced_20260914_attempt1/service_exceptions.json
 started=$(date +%s)
+deadline="$((started + 1740))"
+native_seconds=1560
+resume_options=()
+if test -f "$root/../shard${index}/FAILED.json"; then
+    resume_options=(--resume-from "$root/../shard${index}")
+    original_deadline=$(cat "$root/../shard${index}_launch/deadline_epoch.txt")
+    deadline="$original_deadline"
+    native_seconds="$((original_deadline - started - 90))"
+    if test "$native_seconds" -gt 1560; then native_seconds=1560; fi
+    test "$native_seconds" -gt 180
+fi
 lease_end=$(date -u -d '2026-09-21 08:43:00' +%s)
 test "$((started + 1800))" -lt "$((lease_end - 21600))"
 test "$(sha256sum "$root/source.tar" | cut -d' ' -f1)" = "$archive_sha"
@@ -22,7 +33,7 @@ test "$(nvidia-smi -i "$index" --query-gpu=uuid --format=csv,noheader)" = "$uuid
 launch="$root/shard${index}_launch"
 mkdir "$launch"
 printf '%s\n' "$$" > "$launch/guardian_pid.txt"
-printf '%s\n' "$((started + 1740))" > "$launch/deadline_epoch.txt"
+printf '%s\n' "$deadline" > "$launch/deadline_epoch.txt"
 printf '%s\n' "$archive_sha" > "$launch/source_archive_sha256.txt"
 date -u +%FT%TZ > "$launch/started_utc.txt"
 export PYTHONPATH="$source_dir" HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1
@@ -43,9 +54,9 @@ PY
 timeout 30 env CUDA_VISIBLE_DEVICES= python3 "$scanner" "$index" "$uuid" < "$services" > "$launch/resource.json"
 export CUDA_VISIBLE_DEVICES="$uuid"
 set +e
-timeout --signal=INT --kill-after=30 1560 "$runtime" -B -m gpu.orch_base_contract_screen \
+timeout --signal=INT --kill-after=30 "$native_seconds" "$runtime" -B -m gpu.orch_base_contract_screen \
     --phase screen --bundle /tmp/astra_portable_37ec_20260914_attempt1 --model-dir "$model" \
-    --freeze "$freeze" --output "$root/shard${index}" --shard "$index" --gpu-uuid "$uuid"
+    --freeze "$freeze" --output "$root/shard${index}" --shard "$index" --gpu-uuid "$uuid" "${resume_options[@]}"
 status="$?"
 set -e
 printf '%s\n' "$status" > "$launch/exit_code.txt"

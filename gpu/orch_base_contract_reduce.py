@@ -49,6 +49,8 @@ def main():
     assert sum(row['kind'] == 'solution' for row in rows) == 16
     summary = policy.reduce(entries, rows)
     summary.update(full_texts_reviewed=len(rows), independent_review=False,
+                   clean_paired_provenance=not any(run.get('historical_post_mounted_hash_missing') for run in runs),
+                   historical_post_mounted_hash_missing=sum(run.get('imported_model_calls', 0) for run in runs),
                    author='BASE-CONTRACT', native_gpu_hours=sum(run['finished_unix'] - run['started_unix'] for run in runs) / 3600,
                    original_replay=[dict(task_id=entry['task']['id'], exact=next(row for row in rows
                        if row['task_id'] == entry['task']['id'] and row['state'] == 'ORIGINAL' and row['kind'] == 'solution')['target_sha256']

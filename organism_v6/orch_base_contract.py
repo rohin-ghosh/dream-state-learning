@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+from contextlib import contextmanager, nullcontext
 
 from organism_v6 import orch_code_bounded as code
 from organism_v6 import orch_math_rich as math
@@ -9,6 +10,28 @@ from organism_v6 import orch_math_rich as math
 
 MANIFEST = '5e675c309b202625a6ddf1d36c1a58f51ef656985821cec1cd6123424d927469'
 STATES = ('BASE', 'ORIGINAL')
+
+
+@contextmanager
+def readonly_condition(model, state):
+    assert state in STATES
+    assert not any(parameter.requires_grad for parameter in model.parameters())
+    try:
+        with model.disable_adapter() if state == 'BASE' else nullcontext():
+            yield
+    finally:
+        model.requires_grad_(False)
+
+
+def completed_states(rows):
+    grouped = {}
+    for row in rows:
+        grouped.setdefault((row['position'], row['state']), []).append(row)
+    for group in grouped.values():
+        assert group[0]['kind'] == 'solution'
+        assert len(group) == (2 if group[0]['outcome_pass'] else 1)
+        assert len(group) == 1 or group[1]['kind'] == 'record'
+    return set(grouped)
 
 
 def sha(value):

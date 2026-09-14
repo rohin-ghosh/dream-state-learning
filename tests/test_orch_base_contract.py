@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 import unittest
+from contextlib import contextmanager
 
 from organism_v6 import orch_base_contract as policy
 
@@ -64,6 +65,47 @@ class BaseContractTests(unittest.TestCase):
         review['target_sha256'] = 'wrong'
         with self.assertRaises(ValueError):
             policy.admission(row, review)
+
+    def test_peft_restoration_refreezes_without_updates(self):
+        class Parameter:
+            requires_grad = False
+            value = 37
+
+        class Model:
+            parameter = Parameter()
+
+            def parameters(self):
+                return [self.parameter]
+
+            def requires_grad_(self, flag):
+                self.parameter.requires_grad = flag
+
+            @contextmanager
+            def disable_adapter(self):
+                try:
+                    yield
+                finally:
+                    self.parameter.requires_grad = True
+
+        model = Model()
+        for fail in (False, True):
+            try:
+                with policy.readonly_condition(model, 'BASE'):
+                    self.assertFalse(model.parameter.requires_grad)
+                    if fail:
+                        raise RuntimeError('fixture')
+            except RuntimeError:
+                pass
+            self.assertFalse(model.parameter.requires_grad)
+            self.assertEqual(model.parameter.value, 37)
+
+    def test_resume_never_regenerates_completed_states(self):
+        rows = [dict(position=0, state='BASE', kind='solution', outcome_pass=True),
+                dict(position=0, state='BASE', kind='record', outcome_pass=True),
+                dict(position=1, state='ORIGINAL', kind='solution', outcome_pass=False)]
+        self.assertEqual(policy.completed_states(rows), {(0, 'BASE'), (1, 'ORIGINAL')})
+        with self.assertRaises(AssertionError):
+            policy.completed_states(rows[:1])
 
 
 if __name__ == '__main__':
