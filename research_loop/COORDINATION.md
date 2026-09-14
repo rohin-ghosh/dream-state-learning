@@ -19447,3 +19447,65 @@ the saved adapter before held generation. Recovery source5195ecf0 over original
 no live process stopped. Main will inspect terminal output, not infer success
 from activity. Helmholtz replays BASE on CPU from captured outputs in parallel;
 Euclid prepares the separate parametric two-hop DEV runner, not a gate here.
+
+## [Builder] SEQ-200 — 2026-09-14T06:18Z — D1 readout recovered: local transitions improve, complete routes do not
+
+Fresh-process evaluation finished06:14:15UTC in201.64s, zero new updates,
+84physical ATOM calls/280logical slots (196legitimate UNUSED). Original BASE
+captured56physical calls/280slots. Pure captured replay joins both to the
+unchanged ten-criterion reducer; no BASE regeneration. No infrastructure faults,
+same base pre/post and exact saved adapter pre/post hashes. Original failed run
+remains failed; this is a separately identified evaluation recovery, one DEV seed.
+
+|Measure|BASE|saved D1 ATOM|fixed minimum|
+|---|---:|---:|---:|
+|SEEK paired|1/4|4/4|3/4|
+|PROSPECT paired|0/4|4/4|3/4|
+|CHECK paired|0/4|4/4|3/4|
+|CONTINUE paired|0/4|2/4|3/4|
+|Typed interventions|18/32|30/32|30/32|
+|Whole chains|0/8|0/8|6/8|
+|Useful pre-STEP reads|0/8|6/8|7/8|
+|Typed steps|2/8|7/8|7/8|
+|Canaries|16/16|15/16|15/16|
+|Chain gain|—|0/8|2/8|
+
+D1 DOES NOT QUALIFY as BIRTH. This is evidence of specific held decision
+improvements, not L1→L2 integration. All256training losses finite; mean first32
+0.124481, last32 0.000287021. Low training loss and zero complete chains suggest
+that additional local-example dose may not solve sequential control; that is a
+diagnosis to test, not proof about the model's internal mechanism.
+
+Raw: node2 original/run/{TRAINING_OBSERVATIONS.json,BASE,D1}, recovery/run/
+{RESULT.json,ATOM_LOCAL}; combined pure replay:
+/tmp/astra_stage2a_baseline_replay_code_20260914_attempt1/D1_COMBINED_REPLAY.json.
+Both complete trees unchanged by replay. Native/tokenizer provenance remains
+bound by original/recovery source receipts, not inferred from pure reducer flags.
+
+## [Builder -> Rohin] 2026-09-14T06:18Z — first useful answer from trajectory SFT
+
+The trained child now gets SEEK/PROSPECT/CHECK4/4 each versus BASE1/4,0/4,0/4,
+and can make useful memory reads on6/8 routes versus0/8. But it completes0/8
+routes: teaching individual decisions has not yet taught reliable continuation.
+Your concern about connecting the skills is directly relevant to this result.
+This is a working decision-learning result, not the flywheel, and I will not
+hide that distinction behind a passing infrastructure report.
+
+I select the already predeclared single D2 continuation as a bounded dose test:
+only updates257–512, same full optimizer/RNG/tape/seed, then the same280-slot
+panel with its predeclared D2 seeds. No new prompts/rank/IDs or thresholds.
+Canaries15/16 and typed30/32 meet their explicit minima; malformed answers
+remain failures in those denominators, not discarded data. There is no failed
+transport or integrity check. CONTINUE/chain acquisition shortfalls are the
+declared reason for continuation, not arbitrary gain-only tuning. If D2 misses,
+close this recipe; use the observed traces to choose the next prospectively
+declared trajectory curriculum rather than repeating it indefinitely.
+
+Main owns D2 launch at /tmp/astra_stage2a_d2_20260914_attempt1 on node2 GPU1,
+with GPUs0/1 reserved to preserve original two-device RNG topology. No BASE model
+is loaded. Max3600seconds (2reserved A40h, one fitted model). Native5recovery tests,
+16D2/recovery tests, and the explicit loader-injection regression PASS; original
+CPU/load/provenance evidence reused. Helper restores exact full state before any
+new update. Existing process/CVD scan and six-hour lease cutoff remain launch
+conditions. No process is killed; both recovery PIDs have exited. Helmholtz owns
+explicit D2 reduction support; this does not change the fixed metric thresholds.

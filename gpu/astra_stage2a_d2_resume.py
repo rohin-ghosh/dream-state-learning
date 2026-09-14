@@ -57,7 +57,7 @@ def run_d2_resume(*, model, atom_local_actor, trainer_options, trainer_binding,
                   d1_checkpoint_dir, d1_checkpoint_sha256, checkpoint_dir,
                   atom_custody_dir, atom_local_state_id, base_state_id,
                   base_evidence, master, chains, interventions, canaries,
-                  counter_provenance, torch=None):
+                  counter_provenance, torch=None, checkpoint_loader=None):
     """Restore once, train D2 once (updates 257..512), save, read out once.
 
     trainer_options are the existing StatefulTrainer constructor keyword args,
@@ -72,6 +72,8 @@ def run_d2_resume(*, model, atom_local_actor, trainer_options, trainer_binding,
     reducer cannot accept D2; reduction stays None and remaining_seams explains
     why. completed_unreduced is NOT an eligibility or scientific pass decision.
     torch is forwarded only to the custody sink, as in the reduced conductor.
+    checkpoint_loader may provide strict weights-only recovery in an exclusively
+    owned process; the default remains the original checkpoint loader.
     """
     result = D2ResumeRun(inputs=dict(
         model=model, atom_local_actor=atom_local_actor, trainer_options=trainer_options,
@@ -113,7 +115,8 @@ def run_d2_resume(*, model, atom_local_actor, trainer_options, trainer_binding,
 
         phase = "load_D1"
         result.d1_manifest = checkpoint_api.inspect_checkpoint(paths[0])
-        result.d1_checkpoint = checkpoint_api.load_checkpoint(paths[0])
+        loader = checkpoint_api.load_checkpoint if checkpoint_loader is None else checkpoint_loader
+        result.d1_checkpoint = loader(paths[0])
         state = result.d1_checkpoint
         _require(state["sha256"] == d1_checkpoint_sha256 == result.d1_manifest["state_sha256"]
                  and state["binding"] == expected_binding
@@ -161,7 +164,7 @@ def run_d2_resume(*, model, atom_local_actor, trainer_options, trainer_binding,
         result.saved_manifest = checkpoint_api.save_checkpoint(paths[1], state)
         result.inspected_manifest = checkpoint_api.inspect_checkpoint(paths[1])
         _require(result.saved_manifest == result.inspected_manifest, "checkpoint_manifest_roundtrip_mismatch")
-        result.loaded_checkpoint = checkpoint_api.load_checkpoint(paths[1])
+        result.loaded_checkpoint = loader(paths[1])
         loaded = result.loaded_checkpoint
         _require(loaded["sha256"] == state["sha256"] == result.inspected_manifest["state_sha256"]
                  and loaded["binding"] == expected_binding

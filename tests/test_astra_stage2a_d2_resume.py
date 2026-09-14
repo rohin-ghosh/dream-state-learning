@@ -206,6 +206,15 @@ class D2ResumeTests(unittest.TestCase):
         self.save.assert_not_called()
         self.assert_d1_preserved()
 
+    def test_explicit_strict_loader_used_for_both_boundaries(self):
+        with patch.object(source.checkpoint_api, "load_checkpoint",
+                          wraps=source.checkpoint_api.load_checkpoint) as loader:
+            result = self.run_fixture(checkpoint_loader=loader)
+        self.assertEqual(result.terminal_reason, "completed_unreduced")
+        self.assertEqual(loader.call_count, 2)
+        self.assertEqual([str(call.args[0]) for call in loader.call_args_list],
+                         [str(self.d1_dir), str(self.options["checkpoint_dir"])])
+
     def test_existing_failed_output_is_never_overwritten(self):
         directory = self.options["checkpoint_dir"]
         directory.mkdir()
