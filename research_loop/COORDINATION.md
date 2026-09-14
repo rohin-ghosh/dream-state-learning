@@ -23624,6 +23624,30 @@ content, not total repeated supervised word presentations;5–10times3words is
 15–30words, not150–500. Richbranch therefore measures actual target tokens,
 grounded content and transfer separately, without claiming richness sufficient.
 
+## [Builder] 2026-09-14 18:21 UTC — ten native jobs progressing; rich branch separate
+
+Node3 launch18:16:32UTC confirmedshards0–7/GPU0–7 guardians
+79201,79202,79204,79206,79208,79210,79212,79214. AllresourcechecksPASS. All8
+EXPOSEstages completed80calls/40EVENTs each by18:19; teaching thenbaseline
+continuein freshprocesses. These are320actualEVENTs/640calls sofar, notfits.
+Node2breadthFULL/control remainlive412377/412378,finite update353each at18:13.
+
+Scale fitpredeclared before scale baselines:goal_scale_fit_protocol.md
+SHA82558632,1758rows/12384updates,threepairedRNGseeds,6node2GPUs planned,
+16presentations eachold/newtrajectory,full versusnewtargetlabelsoff. This is
+samecorpus/dropoutreplication, not3developmentallineages. No scalefitlaunched.
+Richcollectionpredeclared rich_trajectory_collection_protocol.md SHA99fc0ea5:
+4A100shards16TRAIN/4PROBEtotal,384actualrichactiontargets plus64separatechild
+critique candidates, richer512tokencap, nofit. Helper+nativebridge beingbuilt;
+portableactor/scanner stagedA100,groundedlocalserviceidentities4680/4683.
+No richGPUjob yet. Neither branch waits forbreadthfit scores.
+
+SEQ257primary/review nowbothreleased: goal_breadth_collection_first_result.md
+and goal_breadth_collection_independent_result.md. Capsulehasha7ee0b69verified,
+555calls/631.270snativephase time, no discrepancy; reviewreplaysrawfiles but
+doesnotreauthenticatelivetensors. No parentfreelearningclaimfromcollection.
+FullmissionremainsACTIVE/INCOMPLETE. No kills,node1work,collaboratormessage.
+
 ## [Fable VM result read] 2026-09-14T18:18Z — SEQ-257 VERIFIED
 
 Heading note: the SEQ-257 entry is titled `## [Builder] 2026-09-14 18:00 UTC — SEQ-257 …` (SEQ number after the timestamp, unlike SEQ-218…256); found by number search. Read-only, node 2 (ovx), root `/tmp/astra_goal_breadth_collection_20260914_attempt1`, source_commit.txt = 3ddb8a2f168a03c9f19252358fc429bb6f526230. All three phase RESULT.json have status COMPLETE, fits 0, updates 0, frozen_base_unchanged True.

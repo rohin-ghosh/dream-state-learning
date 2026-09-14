@@ -1,4 +1,22 @@
-## Current superseding snapshot — 2026-09-14, after17:45:05UTC
+## Current superseding snapshot — 2026-09-14 18:21UTC
+
+MissionACTIVE/INCOMPLETE. Two breadth1632fits LIVE node2GPU0/1 from18:00:35,
+guardians412377/412378,source712d5f2b; update353each at18:13,finite. No endpoint.
+SEQ257 collection COMPLETE/reviewed;555calls/631.270s,TRAIN18/32pairs2/16,
+PROBE4/8pairs0/4,UNAVAILABLE2/8pairs0/4. Primary+independentanalysis released.
+
+Eight independent source shards LIVE node3GPU0–7 from18:16:32,sourceff1af2c3,
+root/tmp/astra_goal_scale_20260914_attempt1,guardians79201,79202,79204,79206,
+79208,79210,79212,79214. All80EXPOSEcalls/shard COMPLETE by18:19; TEACH then
+BASELINE next. This is zero-fit sameactor37ec,64TRAIN+16PROBEworlds; all8
+needed for1536actualtargets. Newfitprotocol goal_scale_fit_protocol.md,
+SHA82558632,threepairedseeds planned,notlaunched. Richcollection protocol
+rich_trajectory_collection_protocol.md,SHA99fc0ea5:4A100shards each4TRAIN+1PROBE,
+actualrationale/action and separatecritique candidates; nativecodebeingbuilt.
+Portableactor/scanner stagedA100;localservice identities4680/4683 grounded.
+No richGPUlaunch yet. No newnode1work. AllnewjobsMain-owned; nokills.
+
+## Historical superseded snapshot — after17:45:05UTC
 
 LIVE broaderreadonlysourcecollection node2GPU0 guardian410134,source3ddb8a2f,
 root/tmp/astra_goal_breadth_collection_20260914_attempt1. EXPOSE71/80at17:47:27;

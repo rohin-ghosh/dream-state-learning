@@ -1,6 +1,19 @@
 # Astra restart handoff — current override 2026-09-14 18:12UTC
 
-## CURRENT — breadth fits LIVE; eight-shard scale collection staging
+## CURRENT — breadth fits and eight-shard scale collection LIVE
+
+18:21UTCupdate:node3shards0–7/GPU0–7 launched18:16:32UTC,guardians
+79201,79202,79204,79206,79208,79210,79212,79214;sourceff1af2c3,archive7b38095a.
+All80EXPOSEcalls/shard COMPLETE by18:19; TEACH/BASELINEfollow. Read shardN/run.log,
+phaseRESULT/FAILED.json and CALLcounts. Donotrepeatcompletedphases. CPUprepare
+all8PASS,same registrya6ca12ac. All8requiredforthenew1536targetcorpus.
+Scale fitprotocol82558632,3pairedseedsplanned,codeNash; no scale fit yet.
+Richcollectionprotocol99fc0ea5,4shards4TRAIN+1PROBE each,512rich/critic cap;
+Parfithelper/Schrodingernativedriverinprogress. A100stagingroot
+/tmp/astra_rich_collection_20260914_attempt1,portable37ecpresent andservice
+exceptions4680/4683grounded; no rich launchyet. Ramanujan257reviewPASS;
+nowowns6drafts for2minorwordingfixesonly. Mainownsprimary257/evidence/state.
+Earlierstaging-onlystatementsbelowarehistorical. Missionstillincomplete.
 
 Node2 root/tmp/astra_goal_breadth_train_20260914_attempt1, source712d5f2b:
 FULL_TARGET GPU0 guardian412377, NEW_TRAJECTORY_LOSS_OFF GPU1 guardian412378,
