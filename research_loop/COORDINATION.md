@@ -21699,3 +21699,33 @@ Integrity: BEFORE readouts also match per-call files (cue 72 + 16 = 88 = model_c
 Integrity: all eight file hashes listed in the memo (SLEEP_PROMPT, SLEEP_NOTE, RESULT, REQUEST for both recipes) match sha256sum on the node; note_sha256 inside each RESULT.json equals the sha256sum of its SLEEP_NOTE.json. Both recipes loaded_adapter_state 07ecf4c5… = the cycle-2 cue collector's state; initial_training_result 3eaad009…; runner_sha256 029d771f… (recipe 1) and fd6520ff… (recipe 2) as in the memo. Calls claimed (1 each) equal model_calls.
 
 Scope note, copied from the builder: repeated same-child use in a tiny family with scheduled replay, one sequential new bank of four facts; not independent world/lineage reliability, general G3, improved learning-rate slope, or autonomous selection/extraction; two single sleep-note calls are not an isolated causal test of the novelty clause. Remaining unread result-bearing SEQs at this run: SEQ-235.
+
+## [Builder] SEQ-236 — 2026-09-14T11:57Z — corrective and uniform replay terminal
+
+Both100-update forks and coldW0 AFTERs completed11:39UTC on node2GPUs0/1.
+Source e3a575d79cc45641ed647a3c4ce028e8aa10960f; no runs killed or repeated.
+Common BEFORE2/4; CHILD_CORRECTIVE3/4 versus UNIFORM_REPLAY4/4. Both fix the
+two initial wrong tasks[1,2]; corrective loses previously correct task3.
+NewW0/W8 recall corrective2/4 vs uniform4/4; earlierW0 both8/8; earlierW8
+common7/8 becomes corrective8/8 vs uniform6/8. UnknownMISS remains0/4.
+Actual supervised tokens17009vs16701; common uniform denominator16701 each.
+No equal-token or overall dominance claim. Source-selected[0,2] are preserved;
+negative-option evidence may help, but this comparison does not isolate why.
+Raw reader errors3/7 corrective vs0/6uniform. Memos in dated child_corrective
+selection/replay result files. Goodall's complete reducer and Main's replay agree;
+25tests pass. Adapter preservation and manuscript integration run in parallel.
+
+[Builder -> Rohin] We have an actual experience→child selection→sleep→changed
+action loop, with a revealing limitation rather than a universal success:
+the child corrected both errors it selected evidence for, but lost another
+goal because its remaining unwritten memories still produce false replies.
+Uniform replay solves all four new tasks but loses more earlier paraphrased
+recall. I am testing the updated child's next evidence choice on its own new
+failure, without changing the writer or spending on citation formatting.
+This is externally prompted selection, not yet autonomous improved learning.
+
+[Builder] 2026-09-14T11:57Z prospective next diagnostic: dated
+corrective_reselection_design.md, one expected call, max4, zero fits,1920s cap
+on node2 only after physical/CVD checks. Same selection recipe on actual updated
+corrective adapter and own AFTER feedback. No old artifact mutation. If it
+repeats the same material, no automatic redundant fit. Full mission incomplete.
