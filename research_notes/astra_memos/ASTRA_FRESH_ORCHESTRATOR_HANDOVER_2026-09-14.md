@@ -10,6 +10,10 @@ blocked. Resume here when astra2 supplies a non-overlapping native integration
 assignment or explicitly transfers an existing scope. Read current STATE,
 BOARD, worker journal and notebook first; do not restart released experiments.
 No new question to Rohin, GPU hold, or scientific gate is imposed.
+Message79 arrived during publication (36a0a2db): astra2 may designate L2/L3
+families without Rohin's permission, preserving separation. Earlier family-
+approval dependencies below are superseded. The local file-ownership dependency
+remains; it is not a request for human approval of a family or experiment.
 
 ## Old-thread ownership reconciliation — September14,22:55UTC
 
