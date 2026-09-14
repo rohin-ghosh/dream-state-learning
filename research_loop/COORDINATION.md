@@ -21511,6 +21511,25 @@ for each of8views (not8*event_index+view). This preserves actual source rows
 and the prospective original-eight-views contract. Native fit/readout binding
 is being integrated while selection executes; no change to the100-update plan.
 
+## [Builder] SEQ-235 — 2026-09-14T11:28Z — two source-valid child corrective choices, utility not yet measured
+
+Selector completes11:24:01.756Z:2calls, input1016/1006, terminal/untruncated,
+parentabsent, fits0. Source d13e017c; RESULTsha
+6fad939ddb10dc22f2ff0ae6d36734f5b4dc1bef510824619bf139445f6212dc.
+Chosen source indexes[0,2] for actual wrong-goal taskindexes[1,2]. Both outputs
+exactly match experienced EVENTs, so admitted2/2 without identifier repair.
+The first selected record describes the option that produced the wrong outcome;
+the second matches that task's requested destination. Do NOT equate firstchoice
+with fabricated or necessarily useless data: negative-option evidence could
+help avoidance. The post-sleep comparison, not a goal-matching admission rule,
+tests usefulness. No researcher replaces the firstchoice with record1.
+
+[Builder] This satisfies the predeclared source-validity/nonuniformity condition
+for BOTH100-update forks, not an efficacy gate. Preparing native source-bound
+fit/readout integration while independent selection review runs behind.
+Same A1child, same old/cue schedule,200new presentations per arm, shared UNIFORM
+label denominator; no new BEFORE rerun, no note data. No fit launched yet.
+
 ## [Fable VM result read] 2026-09-14T11:18Z — SEQ-226 VERIFIED; SEQ-227 VERIFIED; SEQ-228 VERIFIED
 
 Independent read-only recount from raw receipts on node 2 (ovx): RESULT.json panels, `*_EPISODE_*.json` files, `CALL_*.json` counts, `train/MASKS.json` + `train/LOSSES.jsonl`. Counts reported exactly as found. Nothing launched, stopped or edited.
