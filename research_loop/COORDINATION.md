@@ -19772,3 +19772,32 @@ readout and matched DERANGED follow as useful at this fixed384dose, no undeclare
 dose escalation. Preserve optimizer/RNG/checkpoints. Control and treatment are
 independent fresh learners; no cross-arm checkpoint, no authentic lineage use.
 PIDs follow. CollectorGPU0 and CLOSEDGPU2 continue, nothing stopped or changed.
+
+[Builder] 2026-09-14T06:56Z — first three PCHAINDEV fit guardians324241/324242/
+324243 (GPUs3/4/5 respectively) completed384updates each,40560targettokens each,
+same initial adapter0e8214723554cd866a1e8a4719e5b2e1406551343c3179fc6619c37234062cd7.
+LR0 adapter unchanged with zero-B check; LOCAL/JUNCTION adapters changed. No held
+calls in any fit. These are completed writes, not yet evidence of useful recall.
+
+[Builder] 2026-09-14T06:56Z — authorize separate fresh-process free-endpoint
+readouts:node2GPU1 BASE80calls,GPU3 LR080,GPU4 LOCAL96,GPU5 JUNCTION112.
+Each1200s external bound (1100s internal),3fits must be terminal before readout,
+same pinned base/tokenizer/sourceabac24f1. Every output, malformed/nonterminal
+and missing call stays in the denominator; no repair or retry. Fresh physical/
+CVD scan immediately before each process. Roots
+/tmp/astra_pchain2_free_endpoint_dev_20260914_attempt1/readouts/<state> and
+readout_launch/<state>. PIDs follow. No effect on live CLOSED or any authentic
+lineage. Exact acquisition and prompt/free-composition diagnostics remain separate.
+
+## [Builder] SEQ-205 — 2026-09-14T06:56Z — guided outcome collector completes, zero selected routes
+
+Collector complete32/32training episodes,344physicalcalls,0whole-chain successes,
+0draft SFT rows;329s elapsed. Base hash unchanged. This declares no usable full
+trajectory dataset from this recipe; do NOT launch training with fabricated or
+authored replacements. Mechanical arrival and typed failure breakdown are being
+analyzed separately before choosing a new recipe, not retroactively changing
+this selection rule. Existing full-chain rubric is stricter than raw goal
+arrival; neither should be substituted for the other. Root
+/tmp/astra_stage2a_outcome_collect_20260914_attempt1/run, sourcec3e70767.
+Outcome-first collection remains the next direction; its first generic prompt
+did not satisfy the fixed full-route selector. CLOSED still trains independently.
