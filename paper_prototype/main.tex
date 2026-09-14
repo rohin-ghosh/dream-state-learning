@@ -44,8 +44,10 @@
 \maketitle
 
 \noindent\textbf{Ongoing first-sprint working draft---research question unresolved.}
-This draft includes bounded September 14 diagnostics through SEQ230 and retains
-earlier positive and negative findings. Section~\ref{sec:seq223} separates
+This draft includes bounded September 14 diagnostics through SEQ230 and the
+separate released SEQ-236 corrective-selection/replay comparison in
+Section~\ref{sec:corrective-replay}. Earlier positive and negative findings
+remain; Section~\ref{sec:seq223} separates
 own-EVENT persistence, outcome-SFT controllers, and coached cue collection.
 SEQ192 fails prediction prompt-package robustness; SEQ195 supports only
 scheduled replay retention on one exposed eight-EVENT DEV bank. Results and
@@ -242,52 +244,30 @@ on unseen verifiable tasks through continued consolidation (H2). Both remain
 proposed questions. We study frozen Qwen2.5-7B-Instruct with learning confined
 to LoRA adapters, separating acquisition, retention and downstream use.
 
-At the earlier SEQ195 cut, two component findings constrain this program. SEQ192 tests
-three existing prediction adapters without new fits on 24 shared authored
-cases in FULL/MINIMAL prompt packages. Typed-content scores are 24/23/19 and
-24/1/18, respectively, versus disabled-adapter baselines of 16/24 and 14/24
-per learner. Two learners fail the predeclared MINIMAL continuation rule; the
-branch stops. Content and strict format differ, and absent same-ID
-counterfactuals preclude isolated evidence-use attribution.
+Prior sequential adult results remain distinct: SEQ230 prospectively pairs W0
+BEFORE/AFTER routing, yielding cue 2/4-to-4/4 versus unchanged loss-off 2/4,
+with eight old facts retained and four new facts learned in each arm. This is
+one trajectory pair, not independent learner replication or an H2 slope.
 
-SEQ195 uses one exposed, format-assisted eight-EVENT DEV bank across three
-optimizer seeds and repeated cold W0/W8 views. After A200 acquires four old A
-records, both new-only writes reduce A from 4/4 to 0/4 while acquiring B 4/4.
-Scheduled replay and clean cumulative training each yield A4/4 and B4/4 in
-every seed/view. Controls match either new-item dose or update/presentation
-work, not both jointly; the saturated cumulative tie is not equivalence.
-Failure-inclusive work is 20 fits, 6,400 updates, 25,600 presentations and 288
-readouts, including five excluded fits and 1,000 updates.
+A separate 100-update fork (SEQ-236) compares child-selected corrective replay with
+uniform replay from the same archived collecting actor. Two externally posed
+public-error prompts elicit two sourced choices; sixteen mechanical training
+views are not sixteen independently selected facts. Selection itself involves
+no fit and does not demonstrate autonomous error detection or selector learning.
 
-This is bounded within-bank rehearsal retention, not independent-bank
-generality, selectivity, action utility, parenting, clean lineage, broad G3 or
-evidence for H1/H2. Later diagnostics obtain fresh-process exact recall of four
-actually experienced records, but initially elicit no self-issued memory reads.
-Outcome-generated controller SFT achieves four of eight strict chains while
-failing continuation and retention controls. Public-feedback coaching then
-collects eight of eight read-and-route successes, including four conditional
-second reads, from the saved memory learner; coaching is removed from all
-prospective student prefixes. This last result concerns teaching-data collection,
-not by itself acquired parent-free competence. A subsequent same-adapter sleep
-with old-memory replay raises held-text routing from4/8 with no reads to8/8
-with reads of researcher-supplied text, not parametric recall of these held
-events, while retaining4/4 old records in both cold views. Three optimizer
-seeds with cue supervision give the same endpoints; matched cue-loss-off fits
-remain4/8 with no reads. These share an initial learner and banks, not independent
-developmental replications. Two controls also score4/4 on old own-memory tasks
-without reading, so that accuracy alone is not a cue advantage. Unknown-address
-rejection remains0/4. Both preselected seed0 children next record4/4 new offered
-events without coaching. After400 adult updates, new recall is4/4 on the trained
-query but3/4 on a held wrapper; cue routing rises1/4 to3/4 versus unchanged2/4
-without cue gradients. A post-result trained-query reader gives4/4 without
-retraining, not a replacement for the3/4 primary endpoint. A second sequential
-adult cycle prospectively uses the trained-query reader before and after sleep:
-cue routing improves2/4 to4/4 versus unchanged2/4 for loss-off. Earlier W0 stays
-8/8 and W8 improves7/8 to8/8 under rehearsal; both acquire4/4 new records.
-This is one continued trajectory
-per arm with externally offered experience, not an H2 slope or independent
-replication. Earlier negatives
-remain; no mechanism freeze follows. The full sprint remains incomplete.
+Both forks fix both initially wrong tasks. From common 2/4 routing, corrective
+reaches 3/4 while uniform reaches 4/4: corrective loses previously successful
+zero-based task 3. Conversely, old W8 recall changes from common 7/8 to
+corrective 8/8 versus uniform 6/8. New W0/W8 recall is 2/4 versus 4/4;
+old W0 remains 8/8. Neither arm dominates all endpoints. Equal update and
+group-presentation budgets do not imply equal per-fact exposure or actual
+target-token counts.
+
+Unseen MISS remains 0/4, and held supplied-text routing is 8/8 in both forks,
+not parametric recall of held records. Adaptive task reuse, external selection
+prompts and shared lineage constrain causal conclusions. Earlier failures remain;
+no autonomous selector training, general selection advantage, H1/H2 result or
+completed self-improving flywheel is established.
 \end{abstract}
 
 \section{Introduction}
@@ -358,6 +338,103 @@ The child is Qwen2.5-7B-Instruct, frozen, plus one LoRA of rank 8 per life. A li
 \paragraph{Separate component assays.} The later component assays use separately specified fresh-base adapters and parent-free probes, rather than the historical life writer. We distinguish native first-action solves, strict formatting, and fixed-shape candidate scores; these endpoints are not pooled with CompilerGym instruction-count reduction. Full recipes and evidence boundaries appear in Appendix~\ref{app:components}.
 
 \section{Results}
+\subsection{SEQ-236: child-selected corrective replay, repairs and regressions}
+\label{sec:corrective-replay}
+
+The two released September 14 analyses distinguish a \textbf{source-valid selection}
+from the outcome of replaying it. The no-fit stage poses two corrective prompts
+externally, one for each actual wrong-goal case in the four-task BEFORE panel.
+Prompts contain public route/error observations and all four actual own EVENTs,
+not a hidden answer or goal-correctness filter. The child selects source indexes
+0 and 2 for wrong task indexes 1 and 2. The first choice records the failed,
+non-goal option; it remains admitted, not replaced with a goal-matching record.
+This may supply negative-option evidence, but neither its usefulness nor an
+internal elimination strategy follows from selection alone. Two calls admit
+2/2 sourced choices and yield 16 mechanical W0--W7 views, with zero fits.
+These are two facts, not sixteen independent choices. Error detection and the
+request to select are externally posed; no autonomous selector is trained.
+
+Both subsequent fresh seed0 forks start from the \textbf{same archived A1 collecting
+actor and common W0 BEFORE}, not from SEQ230's terminal A2 adapter. Each runs
+100 updates with one old-memory, one cue and two new-memory rows per batch.
+This is a separate matched-budget fork, not a third adult cycle or a new seed
+grid. SEQ230's 400-update sequential result remains unchanged and is not a
+third 100-update control. Task indexes below are explicitly zero-based.
+
+\begin{center}
+\small
+\begin{tabular}{lrrr}
+\toprule
+Endpoint & Common BEFORE & Corrective & Uniform \\
+\midrule
+All-four own routing /4 & 2 & 3 & 4 \\
+Originally wrong tasks 1,2 /2 & 0 & 2 & 2 \\
+Originally right tasks 0,3 /2 & 2 & 1 & 2 \\
+Earlier-memory W0 /8 & 8 & 8 & 8 \\
+Earlier-memory W8 /8 & 7 & 8 & 6 \\
+New W0 recall /4 & 0 & 2 & 4 \\
+New W8 recall /4 & 0 & 2 & 4 \\
+Reader-disabled routing /4 & 2 & 2 & 2 \\
+Held supplied-text routing /8 & 8 & 8 & 8 \\
+Unseen MISS /4 & 0 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Both fix the two original errors, but corrective loses previously successful
+zero-based task 3 (episode 4 in the audit's one-based numbering).} It reaches
+3/4 versus uniform 4/4, while its earlier W8 recall is 8/8 versus uniform 6/8,
+from common 7/8. Neither arm dominates all outcomes. Reporting only initially
+wrong tasks would hide corrective's regression; reporting only routing would
+hide uniform's retention loss. All raw failures remain. Both actors READ on all
+four own episodes; corrective makes three second READs versus uniform two.
+Selected-source recall is 2/2 in both; unselected-source recall is corrective
+0/2 versus uniform 2/2 under both wrappers. Corrective can solve an initially
+wrong task despite an inaccurate second reader reply, and its lost task reads
+unsupported content from an unselected record. These traces do not uniquely
+identify a causal mechanism or establish that negative-option evidence is useless.
+
+Both fits present 100 old-memory, 100 cue and 200 new-memory rows. Corrective
+new-source exposures are 104/0/96/0, versus uniform 50/50/50/50. Actual target
+tokens are 17,009 versus 16,701; the same reference-target denominator is used
+per update, not identical actual target counts. Thus update/group-presentation
+matching is not per-fact dose or token matching. Stored masks for unselected
+rows do not imply those rows were sampled. Existing cue targets remain active
+in both arms; this is not another cue-loss-off comparison.
+
+The independent reduction joins both saved train-after states to their fresh
+AFTER receipts, replays all 48 routing episodes, and retains 258 archived/raw
+readout calls (88 common BEFORE, 86 corrective AFTER, 84 uniform AFTER). The
+170 new AFTER calls are separate from the two earlier selection calls and 200
+total optimizer updates; no new BEFORE or selection is charged to these fits.
+Native state/base attestations are checked against sources and receipts, not
+new independent tensor measurements by this writer. Independent verification
+follows execution; it is not a new launch or review gate.
+
+This is one fixed-budget adaptive DEV fork on reused tasks. Sourced choice is
+not beneficial extraction in general, autonomous attention, learned selector
+policy, held-out adaptation or H2 improvement. Held external text is not
+parametric recall. Main retains adapter preservation and the next recurrence
+experiment; no outcome from that work is incorporated here.
+
+\paragraph{Released evidence.}
+The independent selection and replay analyses are
+\path{research_notes/analysis/2026-09-14_child_corrective_selection_result.md}
+and \path{research_notes/analysis/2026-09-14_child_corrective_replay_first_result.md}.
+The selection root is
+\path{/tmp/astra_adult_cycle2_20260914_attempt1/CUE_REPLAY/select_corrective};
+source \path{d13e017c}; SELECTION SHA256
+\path{f27a29e69ea31acde78cdb2a4dc8a5011d5fe535443fecd23446d369acc0d361}.
+Replay runs are under
+\path{/tmp/astra_adult_cycle2_20260914_attempt1/CUE_REPLAY/corrective_sleep/},
+with each arm's separate train/after directories; frozen source
+\path{e3a575d79cc45641ed647a3c4ce028e8aa10960f}.
+Local evidence is \path{gpu_artifacts_local/astra_corrective_replay_first_result_20260914/};
+its manifest binds 227 files and 1,577,413 bytes, not a full adapter backup.
+Main logs this comparison as SEQ-236; no new scientific qualification follows.
+Main retains adapter preservation and recurrence work; running reselection
+outcomes are excluded.
+
 
 \subsection{Own memory, controller writes, and acquired retrieval (SEQ215--228)}
 \label{sec:seq223}
@@ -2503,6 +2580,13 @@ G3, clean-ancestry, C11 or mechanism-freeze qualification follows. [C99]
 \section{Discussion}
 \label{sec:discussion}
 
+\paragraph{Corrective selection is not dominance.}
+Section~\ref{sec:corrective-replay} separates source validity from replay utility:
+both forks repair the original errors, but corrective regresses on a prior
+success while uniform loses more old W8 recall. This externally prompted,
+one-actor DEV fork does not train an autonomous selector or establish H2.
+It does not revise the separate SEQ230 sequential continuation.
+
 % 2026-09-11 update: v3's "Amplifier reading" and a new "What the write learned" paragraph merged and shortened here; interpretation
 % softened per Astra memo 6, objections 10-12 (its wording used where it gave text; spelling normalized). Numbers: E:35 (absorption);
 % E:50 / E:54 (recipe 0.4878, routine 0.5291); SEQ-017..SEQ-022 (the five ungated endpoint adapter-ON values); SEQ-022 / E:72 (disjoint
@@ -3006,6 +3090,64 @@ In root 0 $+/-$, root 1 $+/-$ order, corrected mean conditional log-probability 
 \paragraph{Terminal follow-up provenance (SEQ-087--089).} The exact-row assay adds no fitting or material; the failed first root-0 attempt is archived separately, not spliced into its completed retry. Root 0 $+/-$ and root 1 $+/-$ modal outputs are respectively \texttt{-mem2reg} 104/128, \texttt{-gvn} 124/128, \texttt{-gvn} 128/128 and \texttt{-mem2reg} 113/128. The production audit leaves the original integer-only checker intact; all 16 generations stop normally without length truncation, and no production output has been trained or promoted. The objective control reproduces the original final tensor hash in native receipts; its local capsule omits adapter contents, so this is not a local weight rehash or complete backup. Official model-origin authentication remains unresolved.
 
 \paragraph{Training losses and claim boundaries.} In SEQ-089, second-epoch decision cross entropy is 0.72820924 (full response) versus 0.78711526 (first choice), while full-response cross entropy is 0.09743569 versus 3.58127537. These are online, pre-update, dropout-active measurements, \emph{not final-checkpoint losses}. Auxiliary BF16 decision-prefix scores remain shape-conditioned, not dynamic greedy-generation probabilities. The separately indexed terminal receipts do not establish retention, parenting, H1/H2, G3 qualification, a mechanism freeze or campaign completion. V2 production is now terminal as SEQ-090 (\S\ref{sec:components}); cumulative work still has no terminal evidence in this update and its results remain excluded.
+
+\section*{Historical abstract: before the corrective-replay comparison}
+\noindent Superseded active abstract retained verbatim; not the current summary.
+
+We ask whether developmental teaching produces durable, adapter-mediated
+learning-process competence on task-disjoint situations after reload and
+removal of teacher access and temporary teaching context (H1), and whether it
+increases improvement from new, self-generated, externally grounded experience
+on unseen verifiable tasks through continued consolidation (H2). Both remain
+proposed questions. We study frozen Qwen2.5-7B-Instruct with learning confined
+to LoRA adapters, separating acquisition, retention and downstream use.
+
+At the earlier SEQ195 cut, two component findings constrain this program. SEQ192 tests
+three existing prediction adapters without new fits on 24 shared authored
+cases in FULL/MINIMAL prompt packages. Typed-content scores are 24/23/19 and
+24/1/18, respectively, versus disabled-adapter baselines of 16/24 and 14/24
+per learner. Two learners fail the predeclared MINIMAL continuation rule; the
+branch stops. Content and strict format differ, and absent same-ID
+counterfactuals preclude isolated evidence-use attribution.
+
+SEQ195 uses one exposed, format-assisted eight-EVENT DEV bank across three
+optimizer seeds and repeated cold W0/W8 views. After A200 acquires four old A
+records, both new-only writes reduce A from 4/4 to 0/4 while acquiring B 4/4.
+Scheduled replay and clean cumulative training each yield A4/4 and B4/4 in
+every seed/view. Controls match either new-item dose or update/presentation
+work, not both jointly; the saturated cumulative tie is not equivalence.
+Failure-inclusive work is 20 fits, 6,400 updates, 25,600 presentations and 288
+readouts, including five excluded fits and 1,000 updates.
+
+This is bounded within-bank rehearsal retention, not independent-bank
+generality, selectivity, action utility, parenting, clean lineage, broad G3 or
+evidence for H1/H2. Later diagnostics obtain fresh-process exact recall of four
+actually experienced records, but initially elicit no self-issued memory reads.
+Outcome-generated controller SFT achieves four of eight strict chains while
+failing continuation and retention controls. Public-feedback coaching then
+collects eight of eight read-and-route successes, including four conditional
+second reads, from the saved memory learner; coaching is removed from all
+prospective student prefixes. This last result concerns teaching-data collection,
+not by itself acquired parent-free competence. A subsequent same-adapter sleep
+with old-memory replay raises held-text routing from4/8 with no reads to8/8
+with reads of researcher-supplied text, not parametric recall of these held
+events, while retaining4/4 old records in both cold views. Three optimizer
+seeds with cue supervision give the same endpoints; matched cue-loss-off fits
+remain4/8 with no reads. These share an initial learner and banks, not independent
+developmental replications. Two controls also score4/4 on old own-memory tasks
+without reading, so that accuracy alone is not a cue advantage. Unknown-address
+rejection remains0/4. Both preselected seed0 children next record4/4 new offered
+events without coaching. After400 adult updates, new recall is4/4 on the trained
+query but3/4 on a held wrapper; cue routing rises1/4 to3/4 versus unchanged2/4
+without cue gradients. A post-result trained-query reader gives4/4 without
+retraining, not a replacement for the3/4 primary endpoint. A second sequential
+adult cycle prospectively uses the trained-query reader before and after sleep:
+cue routing improves2/4 to4/4 versus unchanged2/4 for loss-off. Earlier W0 stays
+8/8 and W8 improves7/8 to8/8 under rehearsal; both acquire4/4 new records.
+This is one continued trajectory
+per arm with externally offered experience, not an H2 slope or independent
+replication. Earlier negatives
+remain; no mechanism freeze follows. The full sprint remains incomplete.
 
 \section*{Historical extended abstract: verbatim evidence log}
 \noindent This preserves the previous full abstract, including its dated

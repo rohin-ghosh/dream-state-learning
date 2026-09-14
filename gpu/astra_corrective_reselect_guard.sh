@@ -6,6 +6,7 @@ source_dir="$2"
 commit="$3"
 index="$4"
 uuid="$5"
+recipe="${6:-original}"
 test -f "$root/prepare/RESULT.json"
 test ! -e "$root/run"
 mkdir "$root/launch"
@@ -28,5 +29,5 @@ date -u +%Y-%m-%dT%H:%M:%SZ > "$root/launch/started_utc.txt"
 export PYTHONPATH="$source_dir" CUDA_VISIBLE_DEVICES="$uuid" OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 TOKENIZERS_PARALLELISM=false HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONDONTWRITEBYTECODE=1
 timeout --signal=INT --kill-after=60 1860 /localhome/local-rohing/v2/venv/bin/python -B "$root/source/astra_corrective_reselect.py" \
     --after /tmp/astra_adult_cycle2_20260914_attempt1/CUE_REPLAY/corrective_sleep/CHILD_CORRECTIVE/after \
-    --output "$root/run" --gpu-uuid "$uuid"
+    --output "$root/run" --gpu-uuid "$uuid" --recipe "$recipe"
 date -u +%Y-%m-%dT%H:%M:%SZ > "$root/launch/completed_utc.txt"

@@ -33,6 +33,23 @@ class ReselectionTests(unittest.TestCase):
         self.assertEqual(cases, runner.selector.prepare_cases(self.collection, self.records))
         self.assertNotIn('HIDDEN_READER_METADATA', str([case['messages'] for case in cases['cases']]))
 
+    def test_audit_recipe_changes_only_instruction_and_preserves_admission(self):
+        original = self.prepare()
+        before = deepcopy(original)
+        changed = runner.apply_recipe(original, 'reader_audit')
+        self.assertEqual(original, before)
+        self.assertEqual(changed['sources'], original['sources'])
+        for prior, following in zip(original['cases'], changed['cases']):
+            self.assertEqual(prior['messages'][1:], following['messages'][1:])
+            self.assertEqual(following['messages'][0]['content'], runner.READER_AUDIT_SYSTEM)
+        captured = runner.selector.collect_selection(changed, lambda messages:
+            dict(raw=changed['sources'][0]['canonical'], terminal=True, truncated=False))
+        self.assertEqual(captured['admitted_selections'], changed['expected_calls'])
+        self.assertEqual(captured['chosen_source_indexes'], [0] * changed['expected_calls'])
+        self.assertIs(runner.apply_recipe(original, 'original'), original)
+        with self.assertRaises(ValueError):
+            runner.apply_recipe(original, 'unknown')
+
     def test_ancestor_uniform_or_wrong_receipt_rejected(self):
         for key, value in dict(loaded_adapter_state_sha256='ancestor', replay_arm='UNIFORM_REPLAY',
                 corrective_training_result_sha256='wrong', phase='readout', state='BEFORE', fits=1,
@@ -46,6 +63,14 @@ class ReselectionTests(unittest.TestCase):
 
     def test_request_panel_and_actual_outcome_drift_rejected(self):
         self.request['arguments']['state'] = 'BEFORE'
+        with self.assertRaises(ValueError):
+            self.prepare()
+        self.request = deepcopy(self.after)
+        self.panels['OWN_PARAMETRIC']['denominator'] = 3
+        with self.assertRaises(ValueError):
+            self.prepare()
+        self.panels = deepcopy(self.after['panels'])
+        self.records.pop()
         with self.assertRaises(ValueError):
             self.prepare()
 
@@ -72,14 +97,6 @@ class ReselectionTests(unittest.TestCase):
                 runner.main(['--after', 'after', '--output', str(output), '--gpu-uuid', 'gpu'])
             self.assertEqual(runner.source.read(output / 'RESULT.json')['status'], 'RESELECTION_CAPTURED_NO_FIT')
             self.assertEqual(engine.generate.call_count, cases['expected_calls'])
-        self.request = deepcopy(self.after)
-        self.panels['OWN_PARAMETRIC']['denominator'] = 3
-        with self.assertRaises(ValueError):
-            self.prepare()
-        self.panels = deepcopy(self.after['panels'])
-        self.records.pop()
-        with self.assertRaises(ValueError):
-            self.prepare()
 
 
 if __name__ == '__main__':

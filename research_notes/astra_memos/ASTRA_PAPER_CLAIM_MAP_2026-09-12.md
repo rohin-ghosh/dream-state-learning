@@ -1,5 +1,8 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
+Current reporting cut: see the appended September 14 SEQ-236 addendum.
+Earlier dated statuses below remain historical, not current runtime blockers.
+
 **Ongoing first-sprint working draft — research question unresolved.**
 This draft through SEQ195 retains earlier positive and negative findings;
 SEQ167 and SEQ169--173 are engineering-only logs, excluded from scientific results.
@@ -5205,3 +5208,32 @@ analyses in research_notes/analysis. Independent second-cycle reducer replays64
 routing episodes,276 actual calls,352 raw files;50 focused/adjacent tests pass.
 Neither sleep note enters weights. All source/claim boundaries remain local DEV;
 no clean-lineage, MECHANISM_FROZEN_V0, H1/H2 or mission-completion promotion.
+
+## Evidence addendum — 2026-09-14 — SEQ-236
+
+Main logs the terminal corrective/uniform comparison as SEQ-236. Released
+[selection](../analysis/2026-09-14_child_corrective_selection_result.md) and
+[replay](../analysis/2026-09-14_child_corrective_replay_first_result.md) audits
+support the following bounded update; prior SEQ230 remains a separate sequential
+400-update result, not a third control for these 100-update forks.
+
+Both forks start from the same archived A1 collecting actor. From common own
+routing2/4, corrective reaches3/4 and uniform4/4. Both fix2/2 original errors;
+corrective loses zero-based task3 (audit episode4). Old W8 recall is common7/8,
+corrective8/8, uniform6/8; old W0 stays8/8. New W0/W8 recall is corrective2/4
+versus uniform4/4. Reader-disabled routing stays2/4, held supplied-text routing
+8/8, unseen MISS0/4. **No dominance.** Equal update/group budgets do not equalize
+per-fact exposure or actual target tokens. Failures remain in the evidence.
+
+| Claim level | SEQ-236 evidence and boundary |
+| --- | --- |
+| Substrate | Saved-adapter fit/readout bindings checked by released audits; no new tensor inspection by this writer. |
+| Parenting behavior | Not tested by this parent-free fork; no parenting or H1 promotion. |
+| Later autonomous learning | Bounded replay changes recall/use, but error cases and selection prompts are externally posed; two sourced choices in two calls with zero selector fits do not establish autonomous selection. |
+| Self-improving learning | Trade-off on reused tasks, not general selection advantage, selector training or H2 improvement. One shared actor/bank, not learner replications. |
+
+Canonical manuscript, README, sprint TeX/abstract and UNSENT collaborator draft
+now include SEQ-236; no full cross-draft review is claimed. Current runtime is
+not blocked; earlier blocker wording is historical. Main preserves adapters.
+New reselection NOFIT is running; no outcome is included. Independent verification
+follows execution, not a new launch gate. The broader mission remains incomplete.

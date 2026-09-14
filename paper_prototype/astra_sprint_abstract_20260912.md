@@ -10,40 +10,137 @@ on unseen verifiable tasks through continued consolidation (H2). Both remain
 proposed questions. We study frozen Qwen2.5-7B-Instruct with learning confined
 to LoRA adapters, separating acquisition, retention and downstream use.
 
-The first adult cycle learns four new records in both arms. Primary W8-reader
-cue routing improves from 1/4 to 3/4; loss-off stays 2/4 without READs. A
-post-result, no-fit W0 AFTER diagnostic reaches cue 4/4 but does not replace
-the primary 3/4. No W0 BEFORE routing baseline was measured in that cycle.
+Prior sequential adult results remain distinct: SEQ230 prospectively pairs W0
+BEFORE/AFTER routing, yielding cue 2/4-to-4/4 versus unchanged loss-off 2/4,
+with eight old facts retained and four new facts learned in each arm. This is
+one trajectory pair, not independent learner replication or an H2 slope.
 
-Independent replay confirms a second sequential 400-update adult continuation
-of each same child (SEQ230). This cycle
-prospectively uses W0 for both BEFORE and AFTER: cue goals improve from 2/4
-to 4/4 with READs in all four episodes before and after; loss-off stays 2/4
-without READs. Both arms learn four new facts, with W0/W8 recall rising from
-0/4 to 4/4. Eight old facts are retained: W0 stays 8/8 and W8 rises from
-7/8 to 8/8. Reader-disabled goals remain 2/4; held external-text performance
-remains cue 8/8 versus loss-off 4/8, and unseen MISS remains 0/4.
+A separate 100-update fork (SEQ-236) compares child-selected corrective replay with
+uniform replay from the same archived collecting actor. Two externally posed
+public-error prompts elicit two sourced choices; sixteen mechanical training
+views are not sixteen independently selected facts. Selection itself involves
+no fit and does not demonstrate autonomous error detection or selector learning.
 
-These are sequential continuations, not independent learners or a seed grid.
-Offered exposure, format scaffolding and developmental replay constrain claims
-of autonomous discovery or improved learning rate; held text is not parametric
-recall. The first sleep-note recipe abstains; a second produces four grounded
-triples but fails whole-note admission. Neither is trained. Earlier failures remain; neither H1/H2 nor
-a general self-improving flywheel is established. The mission remains incomplete.
+Both forks fix both initially wrong tasks. From common 2/4 routing, corrective
+reaches 3/4 while uniform reaches 4/4: corrective loses previously successful
+zero-based task 3. Conversely, old W8 recall changes from common 7/8 to
+corrective 8/8 versus uniform 6/8. New W0/W8 recall is 2/4 versus 4/4;
+old W0 remains 8/8. Neither arm dominates all endpoints. Equal update and
+group-presentation budgets do not imply equal per-fact exposure or actual
+target-token counts.
+
+Unseen MISS remains 0/4, and held supplied-text routing is 8/8 in both forks,
+not parametric recall of held records. Adaptive task reuse, external selection
+prompts and shared lineage constrain causal conclusions. Earlier failures remain;
+no autonomous selector training, general selection advantage, H1/H2 result or
+completed self-improving flywheel is established.
 
 ## Supporting evidence notes—not part of the abstract
 
 **September 14, 2026 result update — research question unresolved.**
-Independently reduced SEQ230 is included below. Cycle2 prospectively pairs W0 BEFORE/AFTER; cycle1 SEQ227/228 retains
+The released SEQ-236 corrective-selection/replay comparison is included below, separate
+from independently reduced SEQ230. Cycle2 prospectively pairs W0 BEFORE/AFTER;
+cycle1 SEQ227/228 retains
 its primary W8 result and missing W0 BEFORE routing baseline. Earlier results
 and failures remain. Scoped
 source gates closed PASS/SEPARATED and native DEV results exist: runtime
 blockage is not the current status. Reportability is not qualification.
 Historical engineering logs remain engineering-only; failed attempts are preserved.
-The sprint TeX and companion abstract are updated; canonical
-`paper_prototype/main.tex` was updated separately by Main.
+Canonical `main.tex`, the sprint TeX and this companion now share the updated
+active abstract. The UNSENT collaborator draft and claim map also include SEQ-236.
 No complete cross-draft review is claimed. The collaborator draft stays UNSENT;
 H1/H2 and the program remain open.
+
+### SEQ-236: child-selected corrective replay versus uniform replay
+
+The two released September 14 analyses distinguish a **source-valid selection**
+from the outcome of replaying it. The no-fit stage poses two corrective prompts
+externally, one for each actual wrong-goal case in the four-task BEFORE panel.
+Prompts contain public route/error observations and all four actual own EVENTs,
+not a hidden answer or goal-correctness filter. The child selects source indexes
+0 and 2 for wrong task indexes 1 and 2. The first choice records the failed,
+non-goal option; it remains admitted, not replaced with a goal-matching record.
+This may supply negative-option evidence, but neither its usefulness nor an
+internal elimination strategy follows from selection alone. Two calls admit
+2/2 sourced choices and yield 16 mechanical W0–W7 views, with zero fits.
+These are two facts, not sixteen independent choices. Error detection and the
+request to select are externally posed; no autonomous selector is trained.
+
+Both subsequent fresh seed0 forks start from the **same archived A1 collecting
+actor and common W0 BEFORE**, not from SEQ230's terminal A2 adapter. Each runs
+100 updates with one old-memory, one cue and two new-memory rows per batch.
+This is a separate matched-budget fork, not a third adult cycle or a new seed
+grid. SEQ230's 400-update sequential result remains unchanged and is not a
+third 100-update control. Task indexes below are explicitly zero-based.
+
+| Endpoint | Common BEFORE | Corrective | Uniform |
+| --- | ---: | ---: | ---: |
+| All-four own routing /4 | 2 | 3 | 4 |
+| Originally wrong tasks 1,2 /2 | 0 | 2 | 2 |
+| Originally right tasks 0,3 /2 | 2 | 1 | 2 |
+| Earlier-memory W0 /8 | 8 | 8 | 8 |
+| Earlier-memory W8 /8 | 7 | 8 | 6 |
+| New W0 recall /4 | 0 | 2 | 4 |
+| New W8 recall /4 | 0 | 2 | 4 |
+| Reader-disabled routing /4 | 2 | 2 | 2 |
+| Held supplied-text routing /8 | 8 | 8 | 8 |
+| Unseen MISS /4 | 0 | 0 | 0 |
+
+**Both fix the two original errors, but corrective loses previously successful
+zero-based task 3 (episode 4 in the audit's one-based numbering).** It reaches
+3/4 versus uniform 4/4, while its earlier W8 recall is 8/8 versus uniform 6/8,
+from common 7/8. Neither arm dominates all outcomes. Reporting only initially
+wrong tasks would hide corrective's regression; reporting only routing would
+hide uniform's retention loss. All raw failures remain. Both actors READ on all
+four own episodes; corrective makes three second READs versus uniform two.
+Selected-source recall is 2/2 in both; unselected-source recall is corrective
+0/2 versus uniform 2/2 under both wrappers. Corrective can solve an initially
+wrong task despite an inaccurate second reader reply, and its lost task reads
+unsupported content from an unselected record. These traces do not uniquely
+identify a causal mechanism or establish that negative-option evidence is useless.
+
+Both fits present 100 old-memory, 100 cue and 200 new-memory rows. Corrective
+new-source exposures are 104/0/96/0, versus uniform 50/50/50/50. Actual target
+tokens are 17,009 versus 16,701; the same reference-target denominator is used
+per update, not identical actual target counts. Thus update/group-presentation
+matching is not per-fact dose or token matching. Stored masks for unselected
+rows do not imply those rows were sampled. Existing cue targets remain active
+in both arms; this is not another cue-loss-off comparison.
+
+The independent reduction joins both saved train-after states to their fresh
+AFTER receipts, replays all 48 routing episodes, and retains 258 archived/raw
+readout calls (88 common BEFORE, 86 corrective AFTER, 84 uniform AFTER). The
+170 new AFTER calls are separate from the two earlier selection calls and 200
+total optimizer updates; no new BEFORE or selection is charged to these fits.
+Native state/base attestations are checked against sources and receipts, not
+new independent tensor measurements by this writer. Independent verification
+follows execution; it is not a new launch or review gate.
+
+This is one fixed-budget adaptive DEV fork on reused tasks. Sourced choice is
+not beneficial extraction in general, autonomous attention, learned selector
+policy, held-out adaptation or H2 improvement. Held external text is not
+parametric recall. Main retains adapter preservation and the next recurrence
+experiment; no outcome from that work is incorporated here.
+
+
+Sources (released independent terminal analyses, not new executions here):
+
+- [Corrective selection: source validity, no fit](../research_notes/analysis/2026-09-14_child_corrective_selection_result.md).
+  Root `/tmp/astra_adult_cycle2_20260914_attempt1/CUE_REPLAY/select_corrective`,
+  source `d13e017c`; SELECTION SHA256
+  `f27a29e69ea31acde78cdb2a4dc8a5011d5fe535443fecd23446d369acc0d361`.
+- [Corrective versus uniform replay: terminal comparison](../research_notes/analysis/2026-09-14_child_corrective_replay_first_result.md).
+  Fits/readouts under
+  `/tmp/astra_adult_cycle2_20260914_attempt1/CUE_REPLAY/corrective_sleep/{arm}/{train,after}`;
+  frozen source `e3a575d79cc45641ed647a3c4ce028e8aa10960f`.
+  Local evidence: `gpu_artifacts_local/astra_corrective_replay_first_result_20260914/`;
+  its `remote.sha256` binds 227 files, 1,577,413 bytes. Main owns adapter-binary
+  preservation; this bounded capture is not a full checkpoint backup.
+
+Main logs the comparison as SEQ-236. No scientific promotion, research, send, commit,
+or native run accompanies this documentation update. Earlier evidence and
+whole-note admission failures remain separate; full manuscript review and
+PDF/layout validation are not claimed.
 
 ### SEQ230: second sequential adult cycle, independently reduced
 
@@ -902,6 +999,39 @@ Internal staging only. The sprint abstract includes the September 14 terminal
 results; canonical main.tex was updated separately by Main. No complete
 cross-draft review is claimed. H1/H2 are proposed questions, not established
 outcomes. The earlier dated record is retained.
+
+## Historical abstract — before the corrective-replay comparison
+
+Superseded active abstract retained verbatim; not the current summary.
+
+We ask whether developmental teaching produces durable, adapter-mediated
+learning-process competence on task-disjoint situations after reload and
+removal of teacher access and temporary teaching context (H1), and whether it
+increases improvement from new, self-generated, externally grounded experience
+on unseen verifiable tasks through continued consolidation (H2). Both remain
+proposed questions. We study frozen Qwen2.5-7B-Instruct with learning confined
+to LoRA adapters, separating acquisition, retention and downstream use.
+
+The first adult cycle learns four new records in both arms. Primary W8-reader
+cue routing improves from 1/4 to 3/4; loss-off stays 2/4 without READs. A
+post-result, no-fit W0 AFTER diagnostic reaches cue 4/4 but does not replace
+the primary 3/4. No W0 BEFORE routing baseline was measured in that cycle.
+
+Independent replay confirms a second sequential 400-update adult continuation
+of each same child (SEQ230). This cycle
+prospectively uses W0 for both BEFORE and AFTER: cue goals improve from 2/4
+to 4/4 with READs in all four episodes before and after; loss-off stays 2/4
+without READs. Both arms learn four new facts, with W0/W8 recall rising from
+0/4 to 4/4. Eight old facts are retained: W0 stays 8/8 and W8 rises from
+7/8 to 8/8. Reader-disabled goals remain 2/4; held external-text performance
+remains cue 8/8 versus loss-off 4/8, and unseen MISS remains 0/4.
+
+These are sequential continuations, not independent learners or a seed grid.
+Offered exposure, format scaffolding and developmental replay constrain claims
+of autonomous discovery or improved learning rate; held text is not parametric
+recall. The first sleep-note recipe abstains; a second produces four grounded
+triples but fails whole-note admission. Neither is trained. Earlier failures remain; neither H1/H2 nor
+a general self-improving flywheel is established. The mission remains incomplete.
 
 ## Historical concise abstract — through SEQ226 and SEQ225 collection
 

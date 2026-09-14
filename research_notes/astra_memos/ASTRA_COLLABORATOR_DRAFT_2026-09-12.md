@@ -6,25 +6,25 @@ Can developmental teaching help an agent use what it learns from later
 experience? We test this with frozen Qwen2.5-7B-Instruct and persistent LoRA
 adapters, separating memory acquisition from action selection.
 
-Independent replay confirms a second sequential adult cycle (SEQ230): each child continues
-for 400 updates, not a new seed grid. Prospectively paired W0 BEFORE/AFTER
-routing improves from 2/4 to 4/4 in the cue arm, with READs throughout; loss-off
-stays 2/4 without reading. Both arms learn four new facts under W0/W8 and
-retain eight old facts; old W8 recall improves from 7/8 to 8/8.
+The second sequential adult cycle (SEQ230) prospectively pairs W0 BEFORE/AFTER:
+cue routing improves 2/4 to 4/4 versus unchanged loss-off 2/4. Both arms learn
+four new facts and retain eight old facts. This is one continued pair, not
+independent learner replication.
 
-This is distinct from the first cycle: its primary W8 cue result remains
-1/4-to-3/4. Its later no-fit W0 AFTER result of 4/4 was chosen post-result,
-with no W0 BEFORE routing baseline, and does not replace that primary endpoint.
-Reader-disabled goals remain 2/4, held external-text performance remains 8/8
-versus 4/8, and unseen-address rejection remains broken. One sleep-note recipe
-abstains; another repeats four grounded triples but fails whole-note admission.
-Neither is trained; extraction utility is untested.
+A separate 100-update comparison (SEQ-236) forks the same archived collecting
+actor. Externally posed error prompts elicit two sourced replay choices without
+training the selector. Both corrective and uniform replay fix 2/2 original
+errors, but corrective loses previously successful zero-based task3: total
+routing is 3/4 versus uniform 4/4. Conversely, old W8 recall is corrective
+8/8 versus uniform 6/8, from common 7/8. Neither dominates. New recall is
+2/4 versus 4/4; unseen MISS remains 0/4.
 
-These are shared-lineage developmental trajectories with offered exposure,
-format scaffolding and rehearsal, not independent learners or proof of a better
-learning rate. We welcome collaborators to reproduce the raw-trace reductions,
-design independent-family transfer tests and strengthen causal controls.
-The full mission remains incomplete.
+Held supplied text is not parametric recall. Reused tasks, external prompts,
+unequal per-fact exposure and shared lineage limit interpretation; no H2 or
+autonomous selector learning is established. Next tests should probe recurrence
+and independent-family transfer. We seek collaborators for failure-inclusive
+trace replication and dose-aware causal controls. New reselection is running,
+not a result reported here. The broader research question remains open.
 
 ## Supporting notes—not part of message
 
@@ -41,6 +41,36 @@ The sprint TeX and companion abstract are updated; canonical
 `paper_prototype/main.tex` was updated separately by Main.
 No complete cross-draft review is claimed. The collaborator draft stays UNSENT;
 H1/H2 and the program remain open.
+
+### September 14, 2026 — SEQ-236 corrective replay comparison
+
+The released [selection audit](../analysis/2026-09-14_child_corrective_selection_result.md)
+and [replay audit](../analysis/2026-09-14_child_corrective_replay_first_result.md)
+separate two source-valid, externally requested choices (two calls, zero fits)
+from two 100-update seed0 forks of the same archived A1 collecting actor.
+This is not a third adult cycle or independent replication; SEQ230 remains separate.
+Selected source indexes0/2 are not wrong-task indexes1/2; the negative-option
+record is retained, not replaced by a goal-matching filter.
+
+| Endpoint | Common BEFORE | Corrective | Uniform |
+| --- | ---: | ---: | ---: |
+| Own routing /4 | 2 | 3 | 4 |
+| Original errors fixed /2 | 0 | 2 | 2 |
+| Old W0 recall /8 | 8 | 8 | 8 |
+| Old W8 recall /8 | 7 | 8 | 6 |
+| New W0/W8 recall, each /4 | 0 | 2 | 4 |
+| Reader-disabled routing /4 | 2 | 2 | 2 |
+| Held supplied-text routing /8 | 8 | 8 | 8 |
+| Unseen MISS /4 | 0 | 0 | 0 |
+
+Corrective loses zero-based task3 (audit episode4). Neither arm dominates:
+uniform improves all-four routing/new recall more, corrective retains more old
+W8 recall. Equal updates/group presentations do not match per-fact dose or
+actual target tokens (17,009 versus16,701). All failures remain evidence.
+Selection prompts are externally posed, not autonomous error detection or
+selector training; no H1/H2 promotion follows. Independent verification follows
+execution. Main preserves adapters and owns the running reselection/next
+recurrence work; their outcomes are excluded.
 
 ### SEQ230: second sequential adult cycle, independently reduced
 

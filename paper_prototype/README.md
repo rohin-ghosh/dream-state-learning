@@ -21,7 +21,8 @@ Dated statements below about unresolved TODO keys describe earlier snapshots.
 
 **Ongoing first-sprint working draft — research question unresolved.**
 Canonical `main.tex` now includes bounded September14 diagnostics through
-SEQ230, alongside earlier positive and negative findings. The new section
+SEQ230 and the separate released SEQ-236 corrective-selection/replay comparison,
+alongside earlier positive and negative findings. The new section
 separates own-EVENT persistence, outcome-SFT controller fits and coached cue
 collection; none establishes H1/H2 or completes the developmental campaign.
 SEQ192 fails prediction prompt-package robustness; SEQ195 supports only
@@ -39,7 +40,73 @@ the first adult write/use comparison is complete, with an explicit W8 reader
 failure and a separately reported no-fit W0 interface repair.
 The full sprint remains incomplete. No G3/H1/H2, parenting or freeze promotion.
 
-## Current bounded evidence through SEQ230
+## SEQ-236: corrective-selection/replay comparison — September 14, 2026
+
+This is a separate **100-update fork from the same archived A1 collecting actor**,
+not SEQ230's 400-update sequential continuation or a third adult cycle. The
+externally posed selection task admits two sourced choices in two calls with
+zero fits; selected record indexes0/2 differ from wrong task indexes1/2. The
+negative-option choice is retained without a goal-matching filter. Sixteen
+mechanical views represent two facts, not sixteen selections or selector training.
+
+| Endpoint | Common BEFORE | Corrective | Uniform |
+| --- | ---: | ---: | ---: |
+| All-four own routing /4 | 2 | 3 | 4 |
+| Initially wrong indexes1/2 /2 | 0 | 2 | 2 |
+| Initially right indexes0/3 /2 | 2 | 1 | 2 |
+| Old W0 recall /8 | 8 | 8 | 8 |
+| Old W8 recall /8 | 7 | 8 | 6 |
+| New W0 and W8 recall, each /4 | 0 | 2 | 4 |
+| Held supplied-text routing /8 | 8 | 8 | 8 |
+| Unseen MISS /4 | 0 | 0 | 0 |
+
+**No dominance:** both fix2/2 original errors; corrective loses zero-based task3
+(audit episode4), while uniform loses more old W8 recall. Both budgets are100
+old+100cue+200new presentations, but per-source new exposure is104/0/96/0 versus
+50/50/50/50 and actual target tokens17,009 versus16,701. The shared reference
+loss denominator does not equalize per-fact dose or actual token counts. Reader-OFF
+remains2/4. No autonomous error detection, selector training, general replay
+advantage or H2 claim follows; all wrong outputs remain in the released analyses.
+
+The independent reduction replays48 routing episodes and258 readout calls,
+including88 archived BEFORE and170 fresh AFTER calls; the two no-fit selection
+calls are separate. These are verification after execution, not an execution
+approval gate. Main owns adapter preservation and the next recurrence experiment;
+no outcome from that work is included.
+
+Current edited surfaces: `main.tex`, `astra_sprint_draft_20260912.tex`,
+`astra_sprint_abstract_20260912.md` and this README. Their three active abstracts
+are synchronized; prior active abstracts are archived verbatim in the respective
+files. The explicitly owned companions
+`research_notes/astra_memos/ASTRA_COLLABORATOR_DRAFT_2026-09-12.md` and
+`research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md` also include
+SEQ-236. No complete cross-draft review is claimed. The new reselection NOFIT
+run is in progress; no result from it is included.
+
+September 14 static checks: synchronized active abstracts280 words; UNSENT
+message202 words. TeX braces/environments, labels/references, unchanged citations
+and added analysis links pass. No TeX engine is installed; no PDF build is claimed.
+
+Sources (released independent terminal analyses, not new executions here):
+
+- [Corrective selection: source validity, no fit](../research_notes/analysis/2026-09-14_child_corrective_selection_result.md).
+  Root `/tmp/astra_adult_cycle2_20260914_attempt1/CUE_REPLAY/select_corrective`,
+  source `d13e017c`; SELECTION SHA256
+  `f27a29e69ea31acde78cdb2a4dc8a5011d5fe535443fecd23446d369acc0d361`.
+- [Corrective versus uniform replay: terminal comparison](../research_notes/analysis/2026-09-14_child_corrective_replay_first_result.md).
+  Fits/readouts under
+  `/tmp/astra_adult_cycle2_20260914_attempt1/CUE_REPLAY/corrective_sleep/{arm}/{train,after}`;
+  frozen source `e3a575d79cc45641ed647a3c4ce028e8aa10960f`.
+  Local evidence: `gpu_artifacts_local/astra_corrective_replay_first_result_20260914/`;
+  its `remote.sha256` binds 227 files, 1,577,413 bytes. Main owns adapter-binary
+  preservation; this bounded capture is not a full checkpoint backup.
+
+Main logs the comparison as SEQ-236. No scientific promotion, research, send, commit,
+or native run accompanies this documentation update. Earlier evidence and
+whole-note admission failures remain separate; full manuscript review and
+PDF/layout validation are not claimed.
+
+## Prior bounded evidence through SEQ230 (retained separately)
 
 - **SEQ215:** own-EVENT cold W0/W8 recall0/4→4/4; unseen MISS4/4→0/4.
   LF-relaxed content annotations are not replacement strict action scores.

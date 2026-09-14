@@ -21759,3 +21759,13 @@ existing selector on native dispatch, keeps prepare-only output. Regression
 test exercises actual exclusive writes with fake model;38focused/adjacent pass.
 Fresh attempt2 will reuse identical material, updated adapter, prompt and budget;
 no attempt1 output becomes evidence of selector behavior. No process killed.
+
+[Builder] 2026-09-14T11:58Z reselectionattempt2 terminal,guardian369126,
+started11:56:19Z,finished11:57:17Z. Onecall1010input/52output, source-valid
+EVENTindex2 repeated; unchanged-prompt prediction of new material not supported.
+No repeat fit. Valid negative-option evidence is not rejected as a bad label.
+Next prospective recipe: dated reader_audit_selection_design.md. Same updated
+actor/public payload, system instruction asks to compare reader replies with
+own receipt-grounded EVENTs; no supplied correct choice or new evidence. Onecall,
+0fits,1920scap node2GPU0 after guard. Researcher-guided extraction, not an
+internalized skill. Independent recurrence replay continues behind execution.

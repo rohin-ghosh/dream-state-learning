@@ -1,4 +1,21 @@
-## Current superseding snapshot — 2026-09-14 11:29 UTC
+## Current superseding snapshot — 2026-09-14 11:56 UTC
+
+SEQ236 paired100update terminal: corrective3/4 vs uniform4/4 from common2/4;
+both original errors repaired but corrective loses task3. New recall2/4vs4/4;
+earlier W8 retention8/8vs6/8, earlierW0 both8/8. UnknownMISS0/4. No arm dominates,
+no improved learning-process inference. Full adapters preserved. There are
+258readout calls in the dated replay memo (88reused+86+84).
+Complete reducer25tests and Main replay pass; raw source and failures retained.
+
+Recurrent selection now uses actual updated corrective actor and its own AFTER
+feedback, unchanged prompt,1expected/max4calls,0fits. Node2GPU0 attempt2
+guardian369126; source17599712 over frozen imports e3a575d7. Attempt1 failed
+before generation due exclusive-file collision, preserved;38regression/adjacent
+tests and nativeCPUprep pass. No automatic repeat-fit if material unchanged.
+Manuscript/companion updates throughSEQ236 delegated; independent result reads
+behind execution. Full mission remains incomplete; no blanket freeze/H1/H2.
+
+## Historical superseded snapshot — 2026-09-14 11:29 UTC
 
 SEQ233/234 finish note diagnostics: exact facts do not make the posed note
 contract pass; adapterOFF also lacks a successful-control note. No note fit,

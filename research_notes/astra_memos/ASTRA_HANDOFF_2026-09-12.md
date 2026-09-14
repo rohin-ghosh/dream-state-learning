@@ -1,6 +1,37 @@
 # Astra restart handoff — September14,2026,02:49UTC
 
-## CURRENT OVERRIDE — September14,2026,11:29UTC
+## CURRENT OVERRIDE — September14,2026,11:56UTC
+
+Mission INCOMPLETE. SEQ236 closes both100update corrective forks: common2/4
+becomes corrective3/4 vs uniform4/4. Both repair initial errors[1,2]; corrective
+loses task3. NewW0/W8 corrective2/4 vs uniform4/4; oldW0 both8/8; oldW8
+common7/8→corrective8/8 vs uniform6/8. MISS0/4 throughout. No dominance claim.
+All fits/readouts terminal; no rerun needed. Sourcee3a575d7. Full adapters now
+preserved under gpu_artifacts_local/astra_corrective_saved_adapters_20260914/,
+18files162107410bytes verified against stable remote source. Goodall's reducer
+and Main repeat agree,25tests pass. Dated corrective selection/replay result
+memos and preservation memo provide commands, hashes and raw error details.
+
+Active next: zero-fit updated-child reselection, not new adult bank or seedgrid.
+Prospective dated corrective_reselection_design.md, same selector prompt on
+actual CHILD_CORRECTIVE AFTER wrong-goal episode3.1expectedcall,max4. No fit
+automatically follows repeated, invalid or abstaining selection. Native script
+gpu/astra_corrective_reselect.py, source175997126b109ac694fd63af884f8f7fc850d0b8,
+imports frozen e3a575d7source /tmp/astra_corrective_sleep_source_20260914_attempt2.
+Current node2GPU0 root /tmp/astra_corrective_reselection_20260914_attempt2,
+guardian369126,1920scap; inspect run/RESULT.json or run/FAILED.json and run.log.
+Attempt1 guardian368439 failed before generation on duplicate exclusive case
+write;0CALLfiles. Original root preserved. Regression fixed;38tests pass and
+attempt2 actual-source CPUprepare PASS before launch. Never rerun into either
+root. Physical/CVD scanner still required; no other MainGPU jobs active.
+
+Carson owns canonical main.tex/README, sprint manuscript/abstract, collaborator
+draft and claim map updates throughSEQ236. Main owns runner/tests/notebook/
+STATE/HANDOFF. Goodall independently reads recurrence behind execution; Maxwell
+adapter preservation complete. Preserve unrelated dirtyrules and untracked
+September13 junctiondraft. No secrets, no node1 allocation, no external sends.
+
+## Historical superseded override — September14,2026,11:29UTC
 
 Mission INCOMPLETE. Original adult cycles and every note/selector generation are
 terminal. SEQ230 remains: second adult cue2/4→4/4 W0 vs off2/4→2/4,
