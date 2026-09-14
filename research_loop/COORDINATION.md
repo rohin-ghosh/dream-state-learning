@@ -24901,6 +24901,63 @@ remain untested by this result. Sixdraftupdates finish here in parallel;
 their fileownership returns after the finalpublication note. Rawreview is
 scoped,not wholepaper/tensorcertification. Broader mission remainsACTIVE.
 
+## [Orchestrator] 2026-09-14 21:58 UTC — W1 declared; six independent hypothesis workers, no GPU launch claimed
+
+Read section A in order, including Rohin42–76, inherited laws/corrections,
+handover, swarm constitution, ideas/ledger and notebook. Current message76
+and direct launch instruction supersede historical holds. Read Builder21:52Z:
+all24node2/node3/A100GPUs released; physical/CVD admission still required.
+Next full raw reread by23:50UTC; new relays checked every cycle.
+
+State updated FIRST in RESEARCH_STATE.md: SEQ266 changes the belief that all
+recipes lack held-world contrast. FULL30/32pairs vs1/32control and2/32baseline
+is substantial within-family supplied-text DEV evidence, independently upheld
+by Ramanujan, but15/16worlds FAILS its frozen gate. Missing-source sole-cause
+explanation is not established. No promotion, rich-learning result or H1/H2.
+I do not run Fable's independent checks or wait for them to launch other arms.
+
+BOARD now assigns Faraday/CODE-RICH node2:0–3, Laplace/MATH-RICH node2:4–7,
+Dalton/GAME-ORTHOGONAL A100:0–3, Aquinas/ROUTE-ADVERSARY node3:2–5,
+Beauvoir/PERSIST-CODE A100:4–5, Dirac/PERSIST-MATH A100:6–7. Six workers are
+active preparing disjoint owned files; no cell is claimed RUNNING yet.
+TwentyGPUslots assigned; four node3slots held available for justified
+replication/overflow. Node1 never receives work. Old roots/checkout untouched.
+
+Each direction differs: assume rich transfer; cheapest decisive math test;
+orthogonal observable game; blind shortcut adversary; persistent code memory;
+reusable lemma learning. ROUTE first formulates its hypotheses blind to the
+favored SEQ266 interpretation. Communication goes worker journal → PI state
+→ targeted feedback, not all-to-all. Main does no implementation or GPU cell.
+
+Conditional batch contract: research_notes/analysis/orch_W1_20260914_contract.md.
+Each worker can launch independently after its finite protocol, actual CPU
+tests/provenance and dated pre-GPU notebook receipt are published, plus
+physical ownership/guardian checks. This is NOT a fabricated CPU pass.
+Matched fits share batch/corpus/schedule; independent reader is nonblocking.
+Off-the-shelf pools start first; persistent gyms cannot hold them up. Semantic
+content and outcome both gate rows; no headings-as-content or authored targets.
+
+08:00UTC capacity checkpoint means September15,2026, not the already elapsed
+September14 morning.5000rows/fourpairs remain capacity goals, not evidence.
+Heavy sprint deadlineSeptember19, abstractSeptember18.15GB available on/data
+and2.7GB on VM root at orientation: package only on/data; no cleanup deletion.
+
+## [Orchestrator -> Fable] 2026-09-14 21:58 UTC — preregistration and nonblocking reader
+
+Please preregister the six W1 arm rows from the board/worker protocols before
+their readouts; do not turn this into serial admission. Please read new
+result-bearing [Worker]/[Orchestrator] SEQs from raw receipts as usual.
+SEQ266 is not marked cron-VERIFIED by me unless that reader entry arrives.
+Please relay new Rohin messages here; I check each cycle and act within it.
+
+## [Orchestrator -> Rohin] 2026-09-14 21:58 UTC — family admission boundary
+
+W1 is underway on L1 mining/validation and exposed-DEV adversarial tests,
+not a new L2/3 test-set claim. Two workers are specifying persistent codebase
+and reusable-lemma family boundaries. I will send their exact named L2 and
+held-L3 scopes for your ruling before admitting them as those test sets.
+Their L1 work and all off-the-shelf screens continue without waiting.
+
 ## [Builder -> Orchestrator / Fable / Rohin] 2026-09-14T21:54Z — old-thread bounded work complete; reviewed drafts and all ownership released
 
 Sixcanonicaldrafts published35263efa through independentlycheckedSEQ266:

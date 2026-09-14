@@ -1,28 +1,37 @@
-# L1 to L2 hypothesis board — Builder, 2026-09-14 after SEQ266
+# L1 → L2 hypothesis board — Orchestrator W1
 
-Mission ACTIVE/INCOMPLETE. This is a resource/ownership board, not a new
-authorization, automatic promotion system or claim that queued work is running.
+Updated2026-09-14 21:55UTC. DECLARED is not RUNNING. All arm metrics pending
+unless explicitly measured. State first: RESEARCH_STATE.md. User message76
+and current launch directive supersede historical launch holds.
 
-| Hypothesis / task | Owner | Exclusive planned GPUs | Actual state | Evidence / next action |
-|---|---|---|---|---|
-| More terse examples + rehearsal | Main; Ramanujan reviewer | none | CLOSED | SEQ260 TRAIN32/32vs17/32;PROBE5/8vs6/8,bothfail |
-| Quality-filtered broader terse data | Nash primary complete; Ramanujan reviewing | none; node3 0–2 RELEASED | TERMINALSEQ266; both2928updates and freshAFTER complete | FULL30/32heldpairs vsLOSS_OFF1/32,baseline2/32;FULL15/16worlds,conjunctionFAIL; retentionpasses; noautomaticpromotion |
-| Grounded richer targets, separate execution/content | Schrodinger execution complete; Ramanujan content complete | none; A1000–3 RELEASED | V3terminalSEQ264,372calls,56/64action-complete; all336turns reviewed separately | 1qualifiedepisode6rows after explicit adjudication; no fit/promotion |
-| Critique value versus matched repeat calls | Parfit primary; Schrodinger independent | none; A1004–5 RELEASED | CLOSEDSEQ265,independently checked |6/16vs4/16goals,both1/8pairs,zero six-turn candidates; nofit |
-| Independent content review | two primary reviewers; Main audit/join | none | COMPLETE336turns | primary195P108F33U; one adjudication→196P108F32U,1qualifiedepisode6rows; nofit |
-| Canonical draft update through266 | Schrodinger owns sixdrafts; Main integration | none | IN PROGRESS; through265 published/reviewed | add scopedpositive plus failedworldgate; independentSEQ266reviewpending; noPDFbuild |
-| VM evidence relocation | Main | none | COMPLETE within recorded scope | eight immutable archives preserved; no further cleanup required for current work |
+| Arm / hypothesis | Worker | Exclusive GPUs | State / last SEQ | Held pairs and goals vs reference / control | Retention | Admitted / rubric / tokens / world coverage | BELIEF CHANGE | ALTERNATIVE EXPLANATION | VALUE OF NEXT TEST | Next action |
+|---|---|---|---|---|---|---|---|---|---|---|
+| CODE-RICH: grounded code trajectories transfer | Faraday | node2 0–3 | DECLARED; none | pending | pending | pending | no native evidence | reference-solution leakage / verbosity | high: outcome and richness on real code | off-the-shelf paired screen, then eligible scale |
+| MATH-RICH: checked reasoning and corrections yield reusable targets | Laplace | node2 4–7 | DECLARED; none | pending | pending | pending | no native evidence | copied answers / arithmetic-only shortcut | high: cheapest code-independent pool test | paired rich/terse screen, then eligible scale |
+| GAME-ORTHOGONAL: observable transitions improve grounding | Dalton | A100 0–3 | DECLARED; none | pending | pending | pending | no native evidence | game grammar / trivial route shortcut | medium-high: independent environment form | off-the-shelf game screen; do not build platform |
+| ROUTE-ADVERSARY: apparent transfer may be source/display shortcuts | Aquinas | node3 2–5 | DECLARED; none | pending new interventions | pending | inference only initially | blind independent design first | generic routing vs causal use | high: falsifies explanatory alternatives to266 | new prospective interventions; no old-cell rerun |
+| PERSIST-CODE: useful records across codebase episodes | Beauvoir | A100 4–5 | DECLARED; none | pending | pending | pending | no native evidence | persistent context, not learned retention | high for guided-loop readiness | configure minimal gym + L1 screen; propose L2 families |
+| PERSIST-MATH: reusable lemmas across episodes | Dirac | A100 6–7 | DECLARED; none | pending | pending | pending | no native evidence | repeated answers, not reusable lesson | high orthogonal loop test | configure minimal curriculum + L1 screen; propose L2 families |
+| Replication / adaptive reserve | unassigned | node3 0–1,6–7 UNALLOCATED | AVAILABLE after physical check | none | none | none | preserve diversity and independent replication | redundant parallel work | allocate on evidence / actual readiness | not an admission bottleneck |
+| SEQ266 broader terse quality | old Nash complete, Ramanujan review released | NONE | TERMINAL; SEQ266 | FULL30/32,62/64; baseline2/32,33/64; control1/32,26/64; first-port not asserted here | W0/W8/audit16/16 all |1452new targets; terse;61eligibleTRAIN;16PROBE | strong finite DEV contrast; all-world gate FAIL15/16 | source/display regularities; missing text not sole cause proven | new adversarial test, not extra dose | no promotion; wait asynchronously for reader VERIFIED |
+| SEQ260 lower breadth | old builder | NONE | DEALLOCATED; SEQ260 | FULL1/4,5/8 vs control2/4,6/8 | see primary |192targets/8TRAIN | no incremental advantage at scale | richness/breadth/dose unresolved | redundant exact rerun low | preserve evidence; no rerun |
+| SEQ264 rich opaque graph | old builder | NONE | DEALLOCATED; SEQ264 | collection only | no fit |6rows;196P108F32U;1qualified/64attempts | outcome not grounding | coherent environments may help | new content-bearing arms | preserve failed rows, no tiny fit |
+| SEQ265 critique vs repeat | old builder | NONE | DEALLOCATED; SEQ265 | both1/8;6/16vs4/16 | no fit |0eligibleepisodes | no pair benefit; unequal spend | parsing and power | new feedback experiment on other pool | not disproven |
 
-Node2 0–7,node3 0–7,A1000–7 unreserved; do not fill with unbounded work or
-duplicate an assigned root. Node1 no newwork, expiry23:14UTCtoday. Reservations
-do not override physical+CVD admission or existing process ownership. Changes
-require Main's board update before worker launch. Worker submits protocol,
-exactsource/tests/provenance and launch/stop receipts; records every actual
-launch/kill in the append-only notebook under delegated Builder ownership.
-No best-adapter selection or L2 promotion until the declared transfer and
-retention criteria pass. Future cohorts and H1/H2 remain unproven.
+## Ownership and operating boundary
 
-21:43UTC handover: every old-thread GPUarm is terminal; node3GPU0/1 physically
-released21:33:42–43UTC. The fresh orchestrator receives finalized results and
-released GPUs, not live arms. Message74's launchhold remains. Decision aid:
-`research_notes/analysis/2026-09-14_quality_terminal_decision_aid.md`.
+- Old builder21:52Z released every node2/node3/A100GPU, including node3 0/1;
+  no active arm transferred. Native physical+UUID+/proc CVD check is mandatory.
+- Node1 gets NO NEW WORK; lease ends2026-09-14 23:14UTC. Do not extend leases
+  or onboard nodes. Unknown/service owners are not idle merely from0MiB.
+- Main owns BOARD, RESEARCH_STATE and append-only notebook integration.
+  Workers own only their named new file prefixes and unique run roots.
+  Old checkout, roots and six canonical drafts are not writable worker scope.
+- Every worker writes a dedicated research_loop/workers journal, sends
+  readiness/results upward, gets only relevant discoveries back. ROUTE's
+  favored-interpretation blind period ends only after its own initial design.
+- Independent reader is Fable's VM cron. Main neither runs its checks nor
+  treats a worker's own tests as VERIFIED. No result promotion without required
+  reader evidence; no premise reuse without independent replication.
+- W1 admission: research_notes/analysis/orch_W1_20260914_contract.md.
+  Published conditional slots allow independent launches, not a serial PI gate.
