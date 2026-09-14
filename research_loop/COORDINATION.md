@@ -23163,3 +23163,29 @@ targets across2TRAINworlds/bothorders; twoPROBEinstances withheldfromteaching.
 ParfitpurehelperandSchrodingernativedriver pendingrelease/nativeCPUprepare.
 No nextGPUjoblaunchedyet, noMain-ownedlivejob/no kills. Parentteachingalready
 containedonegoalcounterexamplepair; newwork expandscoverage, notfirstintroduction.
+
+## [Fable VM result read] 2026-09-14T16:46Z — SEQ-254 VERIFIED
+
+Read-only re-derivation from the raw root on node 2 (ovx). Root present; train/RESULT.json and after/RESULT.json both `status` = COMPLETE, `frozen_base_unchanged` = true. The builder's heading form is `## [Builder] <date> — SEQ-254 …`, so the candidate grep was widened as in the previous read. No `## [Builder] … SEQ-255+` entries exist yet.
+
+**SEQ-254** root `/tmp/astra_event_two_hop_memory_replay_20260914_attempt1` (source_commit.txt 28b44b19a050…, entry 28b44b19 — match)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| fresh PARAMETRIC / OWN_TEXT | 2/4 / 2/4 | PARAMETRIC 2/4, OWN_TEXT 2/4 | after/RESULT.json panels |
+| fresh UNAVAILABLE | (not stated) | 0/4 | after/RESULT.json panels |
+| paired goals | 0/2 | goal N_JHDSMLVMTV: 1 of 2 tasks reached; goal N_44AN3UAXYD: 1 of 2 tasks reached → 0/2 goals with both tasks correct | after/RESULT.json panels episodes |
+| four PARAMETRIC command sequences same as SEQ-253 | same | identical 4/4 to `/tmp/astra_event_two_hop_memory_20260914_attempt1/after/RESULT.json` PARAMETRIC traces | both after/RESULT.json |
+| new recall W0 / W8 | 4/4 / 4/4 | 4/4 / 4/4 | after/RESULT.json new_recall |
+| old facts retained W0 / W8 | 16 / 16 | 16/16 / 16/16 | after/RESULT.json old_recall |
+| taught text | 3/4 | taught_graph OWN_TEXT 3/4 | after/RESULT.json |
+| held audit | 16→15/16 | overall 15/16 (fault 8/8, true 7/8); reference_summary held_audit 16/16 | after/RESULT.json |
+| AFTER calls | 166 | model_calls 166; CALL_*.json 166; EPISODE files 16 (4 per FRESH_OWN_TEXT, FRESH_PARAMETRIC, FRESH_UNAVAILABLE, TAUGHT_OWN_TEXT) | after/ |
+| updates / labels | 100 / 18443 | updates 100; actual_supervised_tokens 18443 | train/RESULT.json |
+| train / AFTER seconds | 347.363 / 243.941 | 347.363 / 243.941 (finished_unix − started_unix) | train/, after/RESULT.json |
+| fits | (train only) | train fits 1, model_calls 0; after fits 0 | */RESULT.json |
+| training rows | (not stated) | row_presentations length 254 | train/RESULT.json |
+
+Integrity: train loaded 37ec3788… → adapter_state_after 52658b3efe743409ef69ef67986b77e3d21f0a3ba28552d8bfb5b7471637786d = entry's state hash (full match); after loaded_adapter_state_sha256 = adapter_state_after = 52658b3e… ("fresh loaded" — match); after training_result_sha256 06065336… = sha256sum of train/RESULT.json — match. Calls 166 = model_calls — match. Not re-derived: archive sha f23f71a1… (VM capsule not checked in the time box); "16 actual reader records".
+
+Scope note (copied from the builder's own limits): one increased-budget engineering repair, one recipe, one DEV graph, one lineage; execution/integrity PASS but declared repair target FAIL; not a token-equal causal control; not a new topology or independent replication. Node-1 (a40) not involved. No process touched, nothing launched.
