@@ -1,4 +1,16 @@
-## Current superseding snapshot — 2026-09-14 15:08 UTC
+## Current superseding snapshot — 2026-09-14 15:30 UTC
+
+SEQ250COMPLETE/independentreviewPASS: own-texttwohop0/4→3/4, trained2/2,
+reversed1/2; old16W0/W8 each16 andaudit16retained. Param/unavailable/OFF0/4;
+notnewworldorparametricclosedloop. Current LIVE: freshworldcollection node2GPU0
+guardian395599 root/tmp/astra_event_two_hop_transfer_20260914_attempt2,
+source7db26bec. Nativeprepare/12testsPASS; attempt1waspre-modelgitarchiveguard
+failure, preserved/repaired onlywrapper. Inspectcollectbeforelaunchingtwo
+matchedreadouts (TRAINED37ec vsORIGINAL207ad) onnode2GPU0/1. No newfits.
+See currentHANDOFF exactpaths/commands/owners. Carsonupdatessixdraftsthrough250.
+Fullmission ACTIVE/INCOMPLETE. All jobclaimsbelowarehistorical.
+
+## Historical superseded snapshot — 2026-09-14 15:08 UTC
 
 LIVE actual-trajectory SFT: node2GPU0 guardian393070, start15:05:07UTC,
 `/tmp/astra_event_two_hop_lesson_20260914_attempt1`, frozen0b495971. Both

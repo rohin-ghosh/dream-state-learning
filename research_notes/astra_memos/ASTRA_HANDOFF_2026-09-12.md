@@ -1,4 +1,44 @@
-# Astra restart handoff — current override September 14, 2026, 15:08 UTC
+# Astra restart handoff — current override September 14, 2026, 15:30 UTC
+
+## CURRENT — SEQ250 complete; fresh-world collection LIVE
+
+All other LIVE statements below are historical. SEQ250 lesson COMPLETED at
+15:13:29UTC, independently reviewedPASS. OWN_TEXT3/4 after0/4: taught2/2,
+reversed1/2; old16factsW0/W8 both16/16,audit16/16. Parametric/unavailable/OFF0/4;
+newparametricexactread0/16. Samegraph/contextual improvement, NOTfreshworld
+transfer orparametricloop. Finalstate37ec37884e4b0b679edd1dba1be1dec3474589e992649f3a33e7e3b1ec78b8c0.
+Completecapsule gpu_artifacts_local/astra_event_two_hop_lesson_terminal_20260914_attempt1/extracted,
+archive2acae64c4be4abd492f7efb0f50675509d7d0650360f7a23e2575e38ceb7f4a6.
+Primary+independentreview: analysis/2026-09-14_event_two_hop_lesson_*result.md.
+
+LIVE freshcollection: node2GPU0 guardian395599, launched15:28:54UTC,
+root `/tmp/astra_event_two_hop_transfer_20260914_attempt2`, source
+`7db26bec1b419d5bb2548dcdec82cdc4f0adca29`. NativeCPUpreparePASS;
+12nativeCPUtests+namespace/goldenchecksPASS. Originalattempt1 wrapperfailed
+BEFOREGPUadmission: gitrevparse assumed .git in an archivedsource tree. Preserve
+attempt1 source/prepare/collect.log; no actual experiences existed. Repair only
+uses explicit root/source_commit.txt matching archivedcommit; shellregressionPASS.
+No teacher/newfit; trained37ecchildcollects4newconnectedactualEVENTs under
+freshmaster ASTRA-EVENT-TWOHOP-TRAJECTORY-TRANSFER-20260914-V1.
+
+NEXT: inspect collect/RESULT orFAILED, launch_collect/start/end/PID andcollect.log.
+Only if4events/8calls COMPLETE, launch TRAINED andORIGINAL readouts separately
+using node2GPU0 andGPU1, existingfrozenguard API:
+`root source_dir commit gpuindex uuid readout TRAINED|ORIGINAL`.
+Each<=48calls/1920s; outputroot/TRAINED orORIGINAL, launchroot/launch_ARM.
+GPU0UUIDc70cba10-6ab6-a287-e2db-51dccd617ab0;
+GPU1UUIDe7a322fc-fe84-919f-7534-cdfefb6ce1e4; actual arguments include `GPU-`.
+Write datedlaunchledger, preserveattemptIDs, letguardphysical+CVDscan beforeuse.
+Both actors receive identical newtext and unavailablecontrols; original207ad
+sees thirdpartytext, not its ownexperience. Noheldworld/replicationclaimyet.
+
+Mainowns native/execution/state. Nashreleasedtransferdriver/guard/tests;
+Schrodingerreleasednamespacehelper/tests. Parfitreleased250review, no pending
+edits. Carsonowns sixwritingfiles updating through250 (249committed1d6b8d70);
+do not overwrite hiswork. Unrelated dirtyrules anduntrackedtwo_sleepdraft stay.
+Mission ACTIVE/INCOMPLETE; no claimed H1/H2, blanketfreeze or cleanancestry.
+
+## Historical snapshots follow
 
 ## LIVE NOW — actual coached trajectories, sleep, fresh AFTER
 

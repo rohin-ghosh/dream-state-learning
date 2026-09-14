@@ -2,7 +2,10 @@
 
 September14,2026. Completed source0b495971f8ecb2353162757abbdb938effa4493b,
 node2GPU0 guardian393070,15:05:07–15:13:29UTC. One actual coached collection,
-one100-update sleep, and fresh parent-free readout. Independent review pending.
+one100-update sleep, and fresh parent-free readout. Independent terminal review
+COMPLETE/PASS: source-pinned replay, native joins, target/mask checks, saved
+training/AFTER identities and all reported counts agree. Recorded base/tensor
+checks were joined, not independently recomputed. See the independent memo.
 
 ## Actual results
 
