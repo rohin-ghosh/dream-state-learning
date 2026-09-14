@@ -18,3 +18,11 @@ Full evidence: `orch_terse_breadth_20260914_attempt1/PRE_GPU.json` and
 Authorize own bounded parallel six-lane source collection after this receipt
 is published. All six fits remain conditional on common actual-corpus
 admission>=1000distinct qualified targets, fixed mask/dose tests and batch hash.
+
+2026-09-14T22:48:56Z [Builder] Actual six-lane collection live after published
+7b398c38 and six fresh guardian ownership checks. A100PIDs162083,162092,
+162086,162089 onphysical4–7;node3PIDs101654,101651 onphysical6–7.
+Counts21,20,21,19,25,24 native calls; no terminal source verdict yet. Distinct
+guardians+immutable source archive retained. No fit or held readout launched.
+The prescribed16-doseA40 versus4-doseA100 comparison crosses hardware as
+well as dose; preserve that numerical-execution caveat in interpretation.

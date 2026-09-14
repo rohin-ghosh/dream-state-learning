@@ -39,3 +39,18 @@ Own dated preGPU notebook is `research_notes/analysis/orch_terse_breadth_2026091
 Publishing receipt then launching own six collection lanes; no Main approval
 needed. Common source and corrected fit batch remain frozen, no native results
 yet. Strongest existing266 contrast remains finite/gateFAIL, not a premise.
+
+2026-09-14T22:48:56Z — SIX NATIVE COLLECTION LANES LIVE. Published preGPU
+7b398c38; all fresh guardian scansCLEAR before model creation. A100 physical
+4/5/6/7 nativePIDs162083/162092/162086/162089; node3physical6/7
+nativePIDs101654/101651. Actual CALL counts21/20/21/19/25/24 respectively;
+no lane FAILED/COMPLETE yet. These are collection calls, not held readouts
+or trained results. Own same-named remote root on both hosts:
+`/tmp/orch_terse_breadth_20260914_attempt1`. GuardianPIDs in
+`COLLECTION_LAUNCH.json`; no peers touched. Continue corpus assembly only
+after six complete receipts and all native call/source projection joins.
+
+Prospective interpretation caveat: dose4 seeds run on A100, dose16seed7801
+on A40. Despite matched code/runtime/initial state, dose contrast also crosses
+hardware/numerical execution; a16-only gain is not isolated proof of dose.
+Do not hide this assignment-imposed limitation or silently move devices.
