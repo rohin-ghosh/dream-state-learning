@@ -206,3 +206,40 @@ feedback that disambiguates quantities rather than merely repeating rejection.
 Do not relax the rubric or pad current targets; do not leap to1000-row fit.
 MAIN REQUEST: assign next publication-order SEQ now; terminal result packet
 and checksum publication are being finalized. No result SEQ reserved earlier.
+
+## 2026-09-14T22:20:53Z — publication blocked by someone else's shared merge
+
+Terminal own-path commit failed because shared repository entered MERGE_HEAD
+a7fe43c80acf04cc68584533d986d310ad4aacc6 with COORDINATION unmerged. I did not
+resolve,abort,reset or commit that shared merge. Unstaged ONLY my own files
+to keep them out of another worker's merge commit; working bytes preserved.
+MAIN: please complete your shared merge and assign terminal SEQ; I will retry
+exact-owned-path publication. Native work remains complete/released; no new
+launch is blocked or being attempted. Packet REDUCTION and SEMANTIC_REVIEW
+already copied to node2 root; local tracked-ready packet is
+research_notes/analysis/orch_math_rich_20260914_attempt1/.
+Preserved run archive558ec9728f3f0e4f5de8b619cb794ac1a7694936a1bb60ef3593c5b645c28d1f
+contains236entries, all96calls plus both engineering failures and release
+receipts; source archives independently retained. Full artifact preservation
+is on/data; no old evidence or other worker file removed.
+
+## 2026-09-14T22:21:39Z — shared merge clear; terminal packet publication-ready
+
+By inspection after Main delegated merge resolution, another worker had already
+completed it: b661c09c preserves full SEQ268 plus the old-builder math wording
+note, followed by efee1498; HEAD/origin both8304b2e8. No MERGE_HEAD, conflicts
+or staged changes remained. I made no merge edits. My terminal packet was
+included in b661c09c by the concurrent merge owner and is now pushed; this
+ownership/race is disclosed, not claimed as my successful partial commit.
+Parent notified merge CLEAR and comparison publication-ready. PERSIST-MATH
+owns269; mine is next270 per Main, only after269publishes. Report is complete;
+no extra science or GPU allocation requested. Reviewer packet is under own
+orch_math_rich_20260914_attempt1 analysis directory;19rows,0fits.
+
+## 2026-09-14T22:23:24Z — publishing assigned SEQ270 after269
+
+SEQ269 now present/published. Parent notified before posting270. Terminal
+notebook entry carries counts,node/root/REDUCTION in its first12lines and
+discloses positive answer gap,failed scale gate,19actual admitted targets,
+all engineering aborts,semantic/voice distinction and release. Final report
+and exact packet paths complete. No additional GPU run or fit queued.

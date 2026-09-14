@@ -25617,6 +25617,78 @@ PM_LINEAR_RECURRENCE_V1 remain unadmitted/ungenerated pending Rohin. Proposed
 same-child consolidation and guided/frozen/unparented comparisons are written
 in REPORT only; none was executed, and evaluation would be parent ABSENT.
 
+## SEQ-270 — [Worker MATH-RICH] 2026-09-14T22:23:24Z terminal: rich29/32 vs terse5/32;19admitted rows,0/4scale-ready families
+
+Node2 physicalGPUs4–7; root `/localhome/local-rohing/orch_math_rich_20260914_attempt1`.
+Exact node reduction: `/localhome/local-rohing/orch_math_rich_20260914_attempt1/REDUCTION.json`.
+Repository reduction: `research_notes/analysis/orch_math_rich_20260914_attempt1/REDUCTION.json`.
+Completion4/4shards,96/96saved-call replays,32/32fixed paired tasks,0fits/updates.
+Initialrich29/32 vsTERSE5/32; correction0/3; ownrecords29/29answer-correct.
+Full-text reading64/64non-terse:24PASS/36FAIL/4UNRESOLVED;19/47outcome+token
+candidates admitted,19distinct rows/16tasks;15rich+0correction+4records.
+Main assigned270 after269; notification given before posting; no advance reservation.
+
+OBSERVATION: initial family outcomes percentages8/8vs1/8,work_rates6/8vs1/8,
+fractional_quantities8/8vs2/8,group_accounting7/8vs1/8. Each passes rich>terse;
+admitted family rows6/3/5/5,none reaches the prospective8rows+4tasks scale
+floor. No1000-row corpus or matched fit. This is scale-readiness failure,
+NOT an outcome-gap null or disproof of grounded mathematical operations.
+
+EVIDENCE AND CONTROL: same32prospectively frozen public GSM8K questions,
+unchanged portable37ec,greedy actor,alternating rich/terse order. Posthoc
+format-neutral numeric sensitivity yieldsTERSE7/32(two correct bare values),
+still versus29/32; original scores/eligibility unchanged. All32terse outputs
+terminated naturally,none truncated. Correction feedback contains rejection
+only,no gold answer or public reference reasoning; all3answers unchanged.
+Only actual child target bytes,neutral studentprefixes,no guidance/reference
+targets in ADMITTED_ROWS.json. Actor/base state checks unchanged before/after.
+
+CURRENT INTERPRETATION: rich prompting helps final answers in this bounded
+DEV pool,not proof of learning or faithful internal reasoning. Most own-record
+rubric failures are impersonal exposition despite correct reusable operations;
+do not mislabel all36FAIL as ungrounded mathematics. Axis judgments:55/64
+grounded,7unresolved,2materiallyfalse. Plural first-person accounts accepted;
+no heading/literal-I gate. Actual false content despite correct final answers:
+baguette record sums sequential inventories and invents18sold; salary record
+promotes assumed4-week month to a given. Both rejected. Five semantic-PASS
+traces below150tokens stay excluded without padding or target rewriting.
+
+CREDIBLE ALTERNATIVES: public pretraining contamination unknown; onecheckpoint,
+smallselectedpool; prompt placement and inference spend differ,no equal-budget
+or multi-seed control. Three initialrich failures involve ambiguous sailboat
+fee,hiking-speed and apple-count wording;0/3corrections is not a clean test
+against feedback learning. Sailboat420versusgold120 has independent bounded
+wording corroboration,not full corpus verification. Coarse frozen family
+routing includes two ordinal-based non-fraction tasks; never relabelled after
+outcomes. HeldL1families not generated/read out; newL2/L3contents untouched.
+OldW0/W8/audit and fresh uncoached held evaluations not run because no fit.
+
+CONFIDENCE: high in finite counts,byte replay and resource release; author
+semantic judgments are disclosed,not independent verification or promotion.
+Admitted target tokens153–348,mean222.5263,4228total; all distributions and
+rubric axes in DISTRIBUTION.json. Maxactual context541,generatedcontent457,
+0truncations,max3calls/task; targettokens excludeEOS,native512ceiling includesit.
+Native source620c03d8,archive0da2fdb970001cc413b3b6d83e19466b6c4f66e767c4d0edfedbc0024716d9c3;
+preGPU77e8352e before22:08:52Z actual final-batch launch. Two earlier engineering
+aborts produced0generationcalls and remain preserved; no pins relaxed.
+Current CPU10/10pass; final native launch used9/9preGPU tests.
+REDUCTION SHAd9f799fe01fc5deca038102349d2369fd9b60c649da512a9234ebfe4ac3a61ab;
+SEMANTIC_REVIEW SHAdb1e4789d269840031ac26ee4324b2577808222a2b80022ad8e01f44f4d41905.
+Run archive558ec9728f3f0e4f5de8b619cb794ac1a7694936a1bb60ef3593c5b645c28d1f,
+236entries on/data; source archives separate. Screen0.2450assignedGPUh plus
+162.1122summed seconds for prior native engineering abort. GPU4–7 detached
+physical+/proc releasePASS22:18:36–37Z; allownedPIDs absent,no process killed.
+
+CHEAPEST DISCRIMINATING NEXT TEST / COMPUTE RECOMMENDATION: deallocate this
+bounded scale recipe,not disprove the mechanism. No1000-row scaling or fit.
+A future prospectively separate test could elicit first-person grounded
+records and use unambiguous quantity-level feedback versus matched extra-call
+retry; do not relax this rubric,repair these answers or reroll the denominator.
+Peer message: exact answers cannot certify intermediate checks or reusable
+records; separately audit oracle wording,grounded operations and voice/token
+compliance. Detailed report and everyrawrow:
+`research_notes/analysis/orch_math_rich_20260914_attempt1/REPORT.md`.
+
 ### 2026-09-14 22:24 UTC [Orchestrator] terminal ingestion and W2 replacement allocation
 
 STATE rewritten first, BOARD second. Ingested author reports, not independent
