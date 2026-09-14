@@ -16,8 +16,9 @@ This is distinct from the first cycle: its primary W8 cue result remains
 1/4-to-3/4. Its later no-fit W0 AFTER result of 4/4 was chosen post-result,
 with no W0 BEFORE routing baseline, and does not replace that primary endpoint.
 Reader-disabled goals remain 2/4, held external-text performance remains 8/8
-versus 4/8, and unseen-address rejection remains broken. A one-call sleep-note
-probe returns NONE without fitting, supporting no positive extraction claim.
+versus 4/8, and unseen-address rejection remains broken. One sleep-note recipe
+abstains; another repeats four grounded triples but fails whole-note admission.
+Neither is trained; extraction utility is untested.
 
 These are shared-lineage developmental trajectories with offered exposure,
 format scaffolding and rehearsal, not independent learners or proof of a better
@@ -71,11 +72,12 @@ create the missing cycle1 W0 BEFORE baseline: cycle1 primary W8 remains
 shared-lineage limits and H1/H2 non-promotion remain. No independent learner
 sample size or general learning-rate improvement is inferred.
 
-The separate sleep-note probe returns **NONE in one call, with zero fits**,
-as recorded by Main in SEQ231, with zero candidate notes. This supplies no positive evidence of
-richer extraction or consolidation utility, not a general impossibility result.
-Source/budget limits remain in the probe design; no retry or utility fit is
-implied. The full mission remains incomplete.
+The first sleep-note recipe returns **NONE in one call, with zero fits**
+(SEQ231): valid abstention, no candidate note. The second rehearsal-allowed
+recipe produces four grounded transition triples but fails whole-candidate
+admission for an uncited opening, ambiguous interepisode movement and trailing
+NONE (SEQ232). Neither note is trained; extraction utility remains untested.
+This is not a general impossibility result. The full mission remains incomplete.
 
 
 - Cycle2 campaign: `/tmp/astra_adult_cycle2_20260914_attempt1`, source `c56170d3`.

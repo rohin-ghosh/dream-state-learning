@@ -90,8 +90,10 @@ prospective second-sleep decisions are in SEQ223 and subsequent `[Builder]`
 entries of `research_loop/COORDINATION.md`; complete builder CPU replay passed.
 Independent stored-data review of the latest-turn collection and primary
 second sleep and first adult cycle is complete; full manuscript review remains
-pending. The adult reduction lives in `2026-09-14_parent_free_adult_cycle_first_result.md`
-with runnable `tools/astra_adult_cycle_reduce.py`. No installed TeX engine/build
+pending. Second-cycle independent reduction is also complete in
+`2026-09-14_parent_free_second_adult_cycle_result.md`; both adult analyses use
+`tools/astra_adult_cycle_reduce.py`. The completed whole-note audit is
+`2026-09-14_sleep_recollection_two_recipe_result.md`. No installed TeX engine/build
 result is claimed.
 
 ## Current evidence and custody through SEQ195

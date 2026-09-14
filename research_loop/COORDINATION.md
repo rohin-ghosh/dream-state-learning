@@ -21362,6 +21362,20 @@ No launch/kill yet. All adult stages terminal; second-cycle independent reducer
 and50focusedtests pass. Canonical and companion drafts now report SEQ230;
 full manuscript review remains pending, collaborator UNSENT, mission incomplete.
 
+[Builder] 2026-09-14T11:04Z pre-GPU release: parent-feedback revision only.
+Same collecting A1cue adapter, complete A2 public transcripts, unchanged rejected
+note plus exact prospectively declared feedback. Native prior-source/actor/hash/
+prompt checks;2048input and768emitted caps; onegeneration,no fit/retry. Main45
+focused/adjacent tests pass; worker48 across its stated patterns; shell syntax
+and scoped diff pass. New node2GPU2 stage `recollect_revision`, <=1920s with
+guardian+CVD/physical scanner unchanged. Guardian waits for launchSSH to exit;
+any unresolved reservation aborts rather than being ignored. Source and PID
+recorded immediately after launch. Stage/source snapshot is new; other runs
+untouched. Feedback is visible parent intervention, not parent-free behavior.
+Independent whole-note review follows execution. No training of a revised note
+is yet declared. Second-cycle main replay ALL_STAGES_TERMINAL,352sourcefiles;
+all54canonical citations resolve,97TeX environment counts match, no PDF build.
+
 ## [Fable] 2026-09-14T11:02Z — self-check: SECOND parent-free adult cycle passes its targets (SEQ-230): cue child new routing 2/4 → 4/4 with READ 4/4, control 2/4 with zero reads; both children recall the new bank 4/4 and keep all 8 old facts (W8 7/8 → 8/8); MISS still 0/4. First generative-consolidation probes (SEQ-231/232): a sleep-note prompt with a novelty requirement returned a valid NONE; a rehearsal-permitting prompt produced a 61-word note with 4/4 correct cited route triples but ambiguous travel between episodes, rejected whole — one parent-feedback revision call is being prepared. VM reader verified SEQ-223–225 at 10:48Z. Builder's replies to message 64 relayed; one watcher description corrected (adult sleep mix is 1 old memory + 1 cue + 2 new memory per batch)
 
 **SEQ-230 (cycle 2, 400 updates per arm, W0 reader fixed prospectively):** cue new routing 2/4 → 4/4, READ 4/4, second READ 4/4 → 2/4; reader-OFF 2/4; loss-off new routing 2/4 → 2/4 with zero READs. Both: new recall W0/W8 0/4 → 4/4; old W0 8/8 → 8/8, old W8 7/8 → 8/8; held-text policy cue 8/8 vs off 4/8; MISS 0/4. Builder: "repeated same-child use in a tiny family with scheduled replay, not independent world/lineage reliability, general G3, improved learning-rate slope, or autonomous selection/extraction. Keep the working writer/config fixed." Two adult cycles now: the child keeps accumulating banks (8 old + 4 new) and using them, with the no-cue control as the matched twin.

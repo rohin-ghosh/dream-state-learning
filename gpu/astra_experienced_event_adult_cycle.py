@@ -182,9 +182,84 @@ def recollect(engine, collection, output, *, recipe='novelty_optional_v1'):
         terminal=generation['terminal'], truncated=generation['truncated'])
 
 
+def load_recollection_revision(directory, collection, current, *, expected_adapter_state_sha256):
+    from organism_v6 import experienced_event_sleep_recollection as recollection
+
+    directory = Path(directory)
+    require(not (directory / 'FAILED.json').exists(), 'failed_previous_recollection_forbidden')
+    previous = source.read(directory / 'RESULT.json')
+    request = source.read(directory / 'REQUEST.json')
+    prompt = source.read(directory / 'SLEEP_PROMPT.json')
+    note = source.read(directory / 'SLEEP_NOTE.json')
+    require(all(type(document) is dict for document in (previous, request, note)) and type(prompt) is list,
+            'previous_recollection_documents_required')
+    require(previous.get('schema') == SCHEMA and previous.get('phase') == 'recollect'
+            and previous.get('status') == 'RECOLLECTION_CAPTURED_NO_FIT'
+            and previous.get('state') == 'BEFORE' and previous.get('sleep_recipe') == 'rehearsal_allowed_v2'
+            and previous.get('recollection_schema') == recollection.SCHEMA
+            and previous.get('parent_present') is False and previous.get('frozen_base_unchanged') is True
+            and type(previous.get('fits')) is int and previous['fits'] == 0
+            and type(previous.get('model_calls')) is int and previous['model_calls'] == 1
+            and previous.get('training_admission') == 'UNREVIEWED_NO_FIT', 'previous_rehearsal_no_fit_required')
+    for key in ('initial_training_result_sha256', 'adult_source', 'memory_source', 'cue_source',
+                'development_arm', 'cycle', 'master'):
+        require(key in current and previous.get(key) == current[key], 'previous_recollection_source_mismatch:' + key)
+    require(previous.get('prior_adult_source') == current.get('prior_adult_source'),
+            'previous_recollection_ancestor_mismatch')
+    require(previous.get('loaded_adapter_state_sha256') == expected_adapter_state_sha256,
+            'previous_recollection_actor_state_mismatch')
+    arguments = previous.get('arguments', {})
+    require(arguments.get('sleep_recipe') == 'rehearsal_allowed_v2'
+            and arguments.get('phase') == 'recollect' and arguments.get('state') == 'BEFORE',
+            'previous_rehearsal_arguments_required')
+    for key in ('expected_base_sha256', 'expected_initial_adapter_sha256'):
+        require(key in current['arguments'] and arguments.get(key) == current['arguments'][key],
+                'previous_recollection_identity_mismatch:' + key)
+    require(request.get('arguments') == arguments
+            and all(request.get(key) == previous.get(key) for key in
+                    ('schema', 'phase', 'state', 'cycle', 'master', 'development_arm', 'runner_sha256', 'material_sha256')),
+            'previous_recollection_request_mismatch')
+    require(source.file_hash(directory / 'SLEEP_NOTE.json') == previous.get('note_sha256'),
+            'previous_recollection_note_hash_mismatch')
+    require(previous.get('terminal') is True and previous.get('truncated') is False
+            and note.get('terminal') is True and note.get('truncated') is False,
+            'terminal_previous_recollection_required')
+    require(prompt == recollection.build_messages(collection, recipe='rehearsal_allowed_v2')
+            and note.get('messages') == prompt, 'exact_previous_rehearsal_prompt_required')
+    messages = recollection.build_messages(collection, recipe='parental_revision_v1', previous_note=note)
+    provenance = dict(directory=str(directory),
+        source_files={name: source.file_hash(directory / name) for name in
+                      ('RESULT.json', 'REQUEST.json', 'SLEEP_PROMPT.json', 'SLEEP_NOTE.json')},
+        initial_training_result_sha256=previous['initial_training_result_sha256'],
+        adult_source=previous['adult_source'], loaded_adapter_state_sha256=expected_adapter_state_sha256,
+        prior_note_sha256=previous['note_sha256'], prior_whole_note_disposition='REJECTED_NOT_TRAINING_MATERIAL',
+        feedback=recollection.PARENT_FEEDBACK,
+        feedback_sha256=source.hashlib.sha256(recollection.PARENT_FEEDBACK.encode('utf-8')).hexdigest())
+    return messages, provenance
+
+
+def recollect_revision(engine, messages, output, provenance):
+    from organism_v6 import experienced_event_sleep_recollection as recollection
+
+    require(len(messages) == 4 and messages[-1] == dict(role='user', content=recollection.PARENT_FEEDBACK),
+            'exact_parental_revision_feedback_required')
+    source.write(output / 'SLEEP_PROMPT.json', messages)
+    source.write(output / 'SLEEP_REVISION_SOURCE.json', provenance)
+    generation = engine.generate(messages, max_new_tokens=recollection.MAX_NEW_TOKENS)
+    source.write(output / 'SLEEP_NOTE.json', generation)
+    require(generation.get('messages') == messages, 'revision_generation_prompt_mismatch')
+    require(generation.get('terminal') is True and generation.get('truncated') is False,
+            'terminal_untruncated_revision_required')
+    return dict(recollection_schema=recollection.SCHEMA, sleep_recipe='parental_revision_v1', model_calls=1, fits=0,
+        parent_present=True, training_admission='UNREVIEWED_NO_FIT',
+        claim='PARENT_FEEDBACK_RESPONSIVENESS_ONLY_NOT_LEARNING_TRANSFER_OR_UTILITY',
+        revision_source=provenance, note_sha256=source.file_hash(output / 'SLEEP_NOTE.json'),
+        terminal=True, truncated=False)
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--phase', choices=('collect', 'train', 'readout', 'recollect'), required=True)
+    parser.add_argument('--phase', choices=('collect', 'train', 'readout', 'recollect', 'recollect_revision'), required=True)
     parser.add_argument('--state', choices=('BEFORE', 'AFTER'), default='BEFORE')
     parser.add_argument('--development-arm', choices=development.TRAINING_ARMS, required=True)
     for name in ('model-dir', 'expected-base-sha256', 'initial-adapter-dir', 'expected-initial-adapter-sha256',
@@ -195,14 +270,17 @@ def main(argv=None):
     parser.add_argument('--cycle', type=int, choices=(1, 2), default=1)
     parser.add_argument('--prior-adult-collection')
     parser.add_argument('--reader-wrapper', type=int, choices=(0, 8), default=8)
-    parser.add_argument('--sleep-recipe', choices=('novelty_optional_v1', 'rehearsal_allowed_v2'),
+    parser.add_argument('--sleep-recipe', choices=('novelty_optional_v1', 'rehearsal_allowed_v2', 'parental_revision_v1'),
                         default='novelty_optional_v1')
+    parser.add_argument('--previous-recollection')
     parser.add_argument('--device', default='cuda:0')
     args = parser.parse_args(argv)
     require((args.cycle == 2) == bool(args.prior_adult_collection), 'prior_collection_only_required_for_cycle2')
     require(args.state == 'BEFORE' or args.phase == 'readout', 'after_only_for_fresh_readout')
     require(args.phase == 'readout' or args.reader_wrapper == 8, 'reader_variant_only_for_readout')
-    require(args.phase == 'recollect' or args.sleep_recipe == 'novelty_optional_v1', 'sleep_recipe_only_for_recollection')
+    require((args.phase == 'recollect_revision') == (args.sleep_recipe == 'parental_revision_v1')
+            and (args.phase == 'recollect_revision') == bool(args.previous_recollection), 'explicit_parental_revision_source_required')
+    require(args.phase in ('recollect', 'recollect_revision') or args.sleep_recipe == 'novelty_optional_v1', 'sleep_recipe_only_for_recollection')
     require(args.phase == 'collect' or args.adult_collection, 'experienced_adult_source_required')
     require((args.state == 'AFTER') == bool(args.adapter_dir), 'explicit_after_adapter_only')
     require(os.environ.get('HF_HUB_OFFLINE') == '1' and os.environ.get('TRANSFORMERS_OFFLINE') == '1', 'offline_required')
@@ -217,6 +295,10 @@ def main(argv=None):
         claim=('SINGLE_ADULT_CYCLE_EXOGENOUS_EXPOSURE_NOT_H2_SLOPE_OR_AUTONOMOUS_SELECTION' if args.cycle == 1
                else 'SECOND_ADULT_CYCLE_EXOGENOUS_EXPOSURE_NOT_H2_SLOPE_OR_AUTONOMOUS_SELECTION'),
         runner_sha256=source.file_hash(__file__), material_sha256=source.file_hash(adult.__file__))
+    if phase == 'recollect_revision':
+        result.update(parent_present=True, fits=0, sleep_recipe='parental_revision_v1',
+            training_admission='UNREVIEWED_NO_FIT',
+            claim='PARENT_FEEDBACK_RESPONSIVENESS_ONLY_NOT_LEARNING_TRANSFER_OR_UTILITY')
     source.write(output / 'REQUEST.json', result)
 
     def check(label):
@@ -252,6 +334,10 @@ def main(argv=None):
             development.validate_base_sources(args.expected_base_sha256,
                                                source.read(Path(args.adult_collection) / 'RESULT.json'))
             result['adult_source'] = adult_source
+        if phase == 'recollect_revision':
+            revision_messages, revision_source = load_recollection_revision(args.previous_recollection,
+                collection, result, expected_adapter_state_sha256=initial['adapter_state_after'])
+            result['revision_source'] = revision_source
         if args.state == 'AFTER':
             check_adult_training(args.adapter_dir, cycle=args.cycle, arm=args.development_arm,
                 expected_base_sha256=args.expected_base_sha256, memory_source=memory_source, cue_source=cue_source,
@@ -263,6 +349,11 @@ def main(argv=None):
         args.phase = 'readout'
         tokenizer = source.native.load_local_tokenizer(args.model_dir)
         result['tokenizer'] = source.native.tokenizer_signature(tokenizer)
+        if phase == 'recollect_revision':
+            prompt_ids = tokenizer.apply_chat_template(revision_messages, tokenize=True,
+                add_generation_prompt=True, return_dict=False, truncation=False, padding=False)
+            require(0 < len(prompt_ids) <= source.MAX_CONTEXT, 'revision_context_bound_exceeded_no_truncation')
+            result['revision_prompt_tokens'] = len(prompt_ids)
         if phase == 'train':
             encode_old_rows(old_rows, tokenizer)
             source.encode_rows(new_rows, tokenizer)
@@ -287,6 +378,8 @@ def main(argv=None):
             result.update(train(engine, old_rows, cue_rows, new_rows, output, args.development_arm))
         elif phase == 'recollect':
             result.update(recollect(engine, collection, output, recipe=args.sleep_recipe))
+        elif phase == 'recollect_revision':
+            result.update(recollect_revision(engine, revision_messages, output, revision_source))
         else:
             result.update(evaluate(engine, collection, old_bank, old_episodes, output,
                                    reader_wrapper=args.reader_wrapper))
@@ -299,7 +392,7 @@ def main(argv=None):
         status = 'COMPLETE'
         if phase == 'collect':
             status = 'COLLECTION_COMPLETE' if result['accepted_events'] == 4 else 'COLLECTION_INCOMPLETE_NO_FIT'
-        elif phase == 'recollect':
+        elif phase in ('recollect', 'recollect_revision'):
             status = 'RECOLLECTION_CAPTURED_NO_FIT'
         result.update(status=status, frozen_base_unchanged=True, finished_unix=time.time())
         source.write(output / 'RESULT.json', result)
