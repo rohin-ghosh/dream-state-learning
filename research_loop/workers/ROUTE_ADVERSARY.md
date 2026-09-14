@@ -125,3 +125,14 @@ PID94295 and is preserved, no kill. Only original exact bound service identities
 3792/3797 are exempted from unreadable same-UID environments, never by name.
 Notebook final preGPU line authored; publishing that line and exact receipts
 is next, then worker independently launches with fresh guard scans.
+
+## 2026-09-14T22:12Z — LAUNCHED, no result SEQ
+
+Node3 /tmp/orch_route_adversary_20260914_attempt1/revision2.
+Reduction <STATE>/RESULT.json;0/144 native calls observed22:11:46UTC.
+PreGPUd41a24cb published before request22:11:12UTC; native START22:11:16UTC.
+FULL GPU2 guardian94668/native94691;LOSS_OFF GPU3 guardian94669/native94694;
+ORIGINAL37EC GPU4 guardian94670/native94697. Exact UUIDs,timeoutPIDs and root
+in revision2/LAUNCH.json. All fresh guard scans passed; models loading.
+GPU5 is unused; main may reassign it for a fresh blind replica immediately.
+No new collection, fit, old-arm retry or additional cases authorized by this arm.
