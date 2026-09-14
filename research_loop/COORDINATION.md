@@ -26842,3 +26842,5 @@ SEQ-277 (BASE-CONTRACT, node 2, root /localhome/local-rohing/orch_base_contract_
 | fits | 0 | 0 | fits |
 
 Integrity: adapter prefix "37ec" appears only as a state name in the reduction (no adapter_sha256 field there; not re-derived from RESULT.json); entry's 29 unique calls = 29 raw CALL files on node = 15+14 in reduction. Not re-derived: "unambiguous initial successes 6/8 each" (no field in the reduction), 40/40 and 29/29 CPU replays. Scope (builder's own limits): eight already-exposed MBPP/GSM8K tasks, one frozen base vs one adapter, author-only full-text review, not a clean paired null; +2 content tasks misses the >=3 criterion.
+
+push rejected (origin/main advanced, non-fast-forward): commit left local; not pulled.
