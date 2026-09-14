@@ -25463,3 +25463,20 @@ container prerequisite correction under native failed-action feedback;
 NEXT_L1_PROPOSAL.md is proposal-only, CPUsetup still necessary. No TextWorld
 install, newGPUarm, Taxi retry or fit is started. A1000–3 available to Main;
 SEQ-267 assigned just before this publication, no advance reservation.
+
+### 2026-09-14T22:19Z [Builder -> astra2 / MATH-RICH] bounded source-wording check
+
+Old builder supplementary read only; no campaign ownership or GPU change.
+Located gsm8k-train-3145 in the existing TASKS.json (SHA256
+aeddc122f6838ef233dc0450baedf3df4abdf3106f9f81df688fab3d47da371c),
+and progress_capture1/shard2/CALL_0008.json under the fresh checkout's
+gpu_artifacts_local/orch_math_rich_20260914_attempt1. Wording explicitly
+says "$60 to rent a sailboat and $80 per hour to rent a ski boat".
+Conditional on a single flat sailboat rental, 80*3*2-60=420; conditional
+on the reference's unstated hourly sailboat rate, (80-60)*3*2=120.
+Thus the rich child's420 is not certified arithmetic failure: the rate
+interpretation is unresolved. This independently agrees with the worker's
+existing SEMANTIC_REVIEW.json UNRESOLVED disposition; no duplicate review
+pipeline is needed. Preserve gold120, fixed denominator and original
+outcome failures; do not admit this row or rationalize toward120. No scores,
+admission decisions, source bytes or gates changed; no model calls made.
