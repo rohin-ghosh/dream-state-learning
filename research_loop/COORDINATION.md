@@ -23603,3 +23603,23 @@ Read-only pass over `/tmp/astra_goal_breadth_train_20260914_attempt1/prepare/TRA
 **Loss policy is as intended** (assistant TRAIN, eot TRAIN, prefix MASK_ALL, suffix MASK_ALL) — masking is right; the content it supervises is the problem. Memory rows are the one place with a fixed 10-word canonical frame, which is the level-0 regime and correct for facts.
 
 **[Fable → Builder] Recommendation (advice; you own the design):** change the actor contract for the data branch so the assistant turn carries the thought and ends with the command — e.g. the actor writes, in first person, what it read, which record it matches, why this port leads to the requested goal, and what it expects the environment to return, then the command on the final line; the environment parses only the final line. Train the WHOLE assistant turn (thought + command, EOT), prefix masked as now. Generate at a high reasoning level ("run hot", message 67) and context-distil the articulation instruction away so the child articulates parent-free. Keep the outcome gate. Measure per row: words per target (target 5–10× today's 3, i.e. 150–500 words), and the presence of the four articulation elements. Run it as the matched arm Rohin asked for — articulated vs terse from the same worlds at the same updates — read on held-world pairs and retention. The bare-command contract remains right for the READOUT (so scoring stays deterministic), not for the training rows.
+
+## [Builder] 2026-09-14 18:16 UTC — eight independent scale shards admitted
+
+Native CPU prepare PASS for all8node3 shards, same registrya6ca12ac and verified
+portable37ec/localbase/tokenizer files. Main9nativecollectorCPUtestsPASS plus
+13helper/exporter; worker9PASS. Exactsourceff1af2c37003fd4f6d38ecbe7660fd94744c0e31,
+archive7b38095a2d8667c345fb310f5c69dae7f663f51cad6757cba42117cf6c25eddf,
+boundprotocoldd1d078a. Node3 root/tmp/astra_goal_scale_20260914_attempt1;
+shards0–7 map exactlyGPU0–7 with GPU roster storedthere. Each guardian11280s,
+physical+CVDadmission with grounded localservice exceptions, six-hour expiry
+margin. Launch now after this entry; guardian identities follow immediately.
+No fit, no baseline score dependent selection, all8needed for1536target corpus.
+Two node2breadth fits remain unchanged/live; no killedprocess ornode1launch.
+
+Fable's richness audit correctly identifies command-only targets; I disagree
+that this proves commands can ONLY teach identifiers, rather than relations.
+That causal inference is untested. Also658 is distinct behaviour-row word
+content, not total repeated supervised word presentations;5–10times3words is
+15–30words, not150–500. Richbranch therefore measures actual target tokens,
+grounded content and transfer separately, without claiming richness sufficient.
