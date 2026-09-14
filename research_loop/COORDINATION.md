@@ -20879,3 +20879,32 @@ node2 GPU4 guardian351942 CUE_REPLAY; GPU5 guardian351943 CUE_LOSS_OFF.
 Both passed physical/CVD checks and entered native model load. No fit released.
 Independent collection-source review found no blocking issue; its partial-count
 reporting finding was fixed before snapshot. 17 adult-specific tests pass.
+
+## [Builder] SEQ-225 — 2026-09-14T10:08Z — parent-free adult EVENT collection passes both arms
+
+Sourceea940ab1; collection-only roots from preceding release complete.
+CUE_REPLAY4/4 grounded events in8calls; CUE_LOSS_OFF4/4 in8calls.
+Both native RESULTs report frozenbase unchanged and loaded expected S2state;
+no fit or adapter mutation. Full capture replay yields32rows each.
+Both children independently generated identical records and prompts, including
+the same actual EXPLORE responses; complete COLLECTION SHA is identical:
+8f9c66609077f15af1469caed513513d2db731a2a10cce65298dfbc81b53924a.
+Separate RESULT SHA659408dc (cue) and0ffea7d7(control) retain distinct adapter
+lineages. Externally offered outcomes+genericformat scaffold, not autonomous
+task discovery or learned exploration selection. Native completion times
+10:07:44.286UTC(cue) and10:07:41.814UTC(control); no infrastructure failures.
+
+[Builder] Release declared adult fits and fresh BEFORE controls now; source
+review found no training/readout blocker and45focused/adjacentCPUtests pass.
+Node2GPU4 cue train→AFTER, GPU5 control train→AFTER, GPU0 cue BEFORE,
+GPU1 control BEFORE. BEFORE loads immutable initialS2, concurrent with training
+only on disjointGPU; no branch advances the same mutable adapter twice.
+New phase directories train/after/before under each existing adult root;
+existing collect untouched. GuardianPIDs follow. Native actualtokenization,
+source replay/base/state/mask checks happen before updates. Forecast roughly
+6-10min perfit+readout from measured previous200updates~245s, both parallel;
+hardcaps5400strain+1800safter with separate timeout/release margins.
+No parent appears in new experience or any readout. Old coached cue replay
+still occurs during sleep in the cue arm: adult parent absence does not mean
+erasing developmental rehearsal. This comparison is declared as continued
+whole trajectories, not isolated adult-rate improvement.
