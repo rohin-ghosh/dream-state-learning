@@ -11,6 +11,7 @@ import time
 
 REPO = Path(__file__).resolve().parents[1]
 REMOTE = '/tmp/orch_terse_breadth_20260914_attempt1'
+REMOTE_BY_HOST = dict(a100='/tmp/orch_terse_breadth_20260914_attempt2', node3=REMOTE)
 LOCAL = REPO / 'gpu_artifacts_local/orch_terse_breadth_20260914_attempt1'
 ANALYSIS = REPO / 'research_notes/analysis/orch_terse_breadth_20260914_attempt1'
 WORKER = REPO / 'research_loop/workers/TERSE_BREADTH.md'
@@ -31,7 +32,7 @@ def snapshot():
     for host, wrapper, lanes in HOSTS:
         script = f'''import json
 from pathlib import Path
-root=Path({REMOTE!r})
+root=Path({REMOTE_BY_HOST[host]!r})
 for lane in {lanes!r}:
     stages={{}}
     for phase in ('train','after','baseline'):
@@ -63,7 +64,7 @@ def archive():
         final = LOCAL / f'terminal_{host}.tar.gz'
         if not final.exists():
             with partial.open('xb') as output:
-                remote(wrapper, f'tar -czf - -C {shlex.quote(REMOTE)} .', stdout=output)
+                remote(wrapper, f'tar -czf - -C {shlex.quote(REMOTE_BY_HOST[host])} .', stdout=output)
             subprocess.run(['tar', '-tzf', str(partial)], check=True, stdout=subprocess.DEVNULL, timeout=120)
             partial.rename(final)
         extracted = LOCAL / f'terminal_{host}'

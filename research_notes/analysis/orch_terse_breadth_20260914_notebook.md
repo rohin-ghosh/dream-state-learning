@@ -48,3 +48,14 @@ and CPU_PRE_FIT/BATCH before launching all six fits. Existing bounded guards
 own native train, then fresh-process AFTER for each state; lane0 additionally
 runs frozen37ec baseline in another fresh process. Baseline is not read for
 fit admission or training. No checkpoint result, promotion, or SEQ request yet.
+
+2026-09-14T23:08:56Z [Builder] Non-material admission repair preGPU: A100
+train0–3 never entered native code (no output directories); all failed scans
+name unreadable transientsshd164832, no assigned GPU compute owner. Two
+regression testsPASS enforce that retry cannot regenerate any created native
+output/FAILED result. Preserve original launch/guardian evidence; retry on
+A100attempt2 using unchanged e97975ab scientific source and5aac9c13batch.
+Node3nativeFULL/OFF104214/104207 continue unchanged. A1004baseline164953 is
+retained, not a fit/control, and will not be rerun; FULL waits for its physical
+GPU while A1005–7 resume the already-admitted batch. No outcome-conditioned
+admission, extra seed, missing-control substitution or blanket fleet gate.
