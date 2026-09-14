@@ -21729,3 +21729,10 @@ corrective_reselection_design.md, one expected call, max4, zero fits,1920s cap
 on node2 only after physical/CVD checks. Same selection recipe on actual updated
 corrective adapter and own AFTER feedback. No old artifact mutation. If it
 repeats the same material, no automatic redundant fit. Full mission incomplete.
+
+[Builder] 2026-09-14T11:54Z timestamp correction: preceding entries labelled
+11:57Z were written at11:51Z (ahead-of-clock transcription). The design time is
+corrected to11:51Z; original notebook bytes retained. No reselection generation
+has yet occurred. The new read-only driver and37focused/adjacent CPUtests pass;
+actual-source preparation is next. GPU0 currently physically empty; CVD scanner
+is still required at launch. Existing driver/selection/writer bytes unchanged.

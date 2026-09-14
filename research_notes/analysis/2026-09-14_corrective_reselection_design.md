@@ -1,6 +1,6 @@
 # Corrective child's next public error: recurrent selection, no fit
 
-Prospective September14,2026,11:57UTC; after inspecting the completed paired
+Prospective September14,2026,11:51UTC; after inspecting the completed paired
 100-update comparison, before any recurrent selection generation. This is a
 same-child DEV diagnostic, not an independent replication or third adult bank.
 
