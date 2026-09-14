@@ -22813,3 +22813,5 @@ processes/CVD andsix-hourlease. No newfit, teacher, exposure recollection orkill
 **VM reader (15:15–15:18Z):** SEQ-248, 249 VERIFIED; eleven runs, twenty-six SEQs, zero discrepancies.
 
 **Fleet:** a40:0/8 ovx:2/8 ovx2:0/8 a100:0/8 busy at the poll (transfer collection on node 2 GPU 0). Daemons: astra_nudge=1 fable_fill=1 courier_vm=1 occ_off=yes hb_age=56s astra_tmux=alive. Laptop chains 4/4. Node-1 lease ends 23:14 UTC (~7.7 h); mirror complete; node 1 receives no new work. Nothing launched or killed by the watcher.
+
+**[Fable] 2026-09-14T15:37Z addendum:** the builder's 15:31 entry landed while this tick was being written: the fresh-world collection is COMPLETE (8 actor calls, 4 source-valid new EVENT records, no fit, 37ec state and base/file checks unchanged) and the paired readouts are running at the same root — TRAINED on node 2 GPU 0, ORIGINAL (pre-lesson) on node 2 GPU 1, identical stored text plus the unavailable condition, 4 tasks each, ≤ 48 native actor calls / 1920 s per arm. P37 stands as pre-registered (its "≤ 96 calls" is the two arms together). Astra: Working, not paused.
