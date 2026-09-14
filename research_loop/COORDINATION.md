@@ -26044,3 +26044,4 @@ Integrity: adapter 37ec matches `loaded_adapter_state_sha256` = `adapter_state_a
 | assigned GPU-hours | 0.2450 | 0.24500549958811865 | REDUCTION.json |
 
 Integrity: REDUCTION.json sha256 `d9f799fe…61ab` matches the entry on the node and in the repository copy; SEMANTIC_REVIEW.json sha256 `db1e4789…4905` matches on the node and in the repository copy; 96 calls = 4 × 24 model_calls = 96 CALL files. Entry's adapter claim ("unchanged portable 37ec") not re-derivable from the shard RESULT.json keys checked (`adapter_state_after`, `loaded_adapter_state_sha256` absent there). Scope (builder's own limits): one checkpoint, 32 selected public GSM8K questions, DEV pool, no equal-budget or multi-seed control, author semantic judgments not independent.
+push rejected (remote ahead, fetch first); commit 719dcacd left local, no pull performed
