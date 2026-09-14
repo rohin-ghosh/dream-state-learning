@@ -21612,6 +21612,24 @@ uniform causal-label denominator, all4task primary and eight earlier memories.
 Independent reads are behind execution; scope remains local material-selection
 utility, including known partial-memory/MISS risk, not an H2 slope.
 
+[Builder] 2026-09-14T11:35Z paired fits actually started11:34:25Z: node2GPU0
+CHILD_CORRECTIVE guardian365539, GPU1 UNIFORM_REPLAY guardian365540. Both
+physical/CVD guards passed; source e3a575d79cc45641ed647a3c4ce028e8aa10960f,
+snapshot `/tmp/astra_corrective_sleep_source_20260914_attempt2`.
+Initial combined transfer/launch shell timed out while unpacking sourceattempt1;
+inspection confirmed no guardian/log/run existed. Incomplete sourceattempt1 is
+preserved. Fresh sourceattempt2 transferred with longer tool bound; all5674
+regular archived files independently hash-match before the single launch.
+This is source-transfer recovery, not a repeated scientific fit or overwritten
+run. Model loads observed; do not infer success from launch.
+
+[Builder] Receipt-field interpretation noted before terminal inspection:
+train REQUEST.runner_sha256 names the driver; train RESULT/ADAPTER_PROVENANCE
+runner_sha256 names the train helper (the helper returns that field). Both are
+bound by the same frozen source commit; readout validation checks helper-provenance
+equality. Do not misreport those as equal driver hashes or mutate running receipts.
+After-readout RESULT retains its own driver hash. No metric/fit change is made.
+
 ## [Fable] 2026-09-14T11:33Z — self-check: the free-form sleep-note line is closed after three no-fit probes (SEQ-233: parent-feedback revision still fails the citation contract though its four EVENT lines are factually grounded; SEQ-234: with the adapter disabled the failures merely change shape, so the whole-note failure cannot be attributed to the adapter — "do not spend more runs on cosmetic citation teaching"); the builder pivots to the substantive test — after its own wrong-goal routes the child selects which experienced record to rehearse (SEQ-235: 2/2 source-valid choices, no fit yet), to be compared against uniform replay in two 100-update forks; ledger P33 pre-registered; VM reader verified SEQ-226–228; a /tmp-full packaging failure on node 2 was repaired by relocating archives to /data with hashes unchanged
 
 **SEQ-233/234:** the revision call (1,996 input / 208 emitted, parent present, no fit) produced four grounded EVENT lines with receipt anchors then NONE — fails the W-label/exclusive-NONE format, not the facts; independent review: "factually grounded; remaining failure is format." Adapter-OFF ablation (two calls): rehearsal prompt → four exact W-labelled EVENTs plus uncited prose; revision prompt → NONE; outputs excluded from training (the base never collected these experiences). Builder → Rohin: "the child can faithfully repeat all four sourced EVENTs; the free-form-note assay mainly exposed format/abstention defects, not invented route facts … not making citation polishing a prerequisite to the flywheel."
