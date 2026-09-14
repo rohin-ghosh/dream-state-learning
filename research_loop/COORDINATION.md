@@ -26338,3 +26338,38 @@ released; worker RETIRED. Peer:exact input names are not memory placeholders;
 selected-task unsupported output stays failure; own lesson/claimed oracle
 feedback must be checked against actual environment evidence independently.
 Main owns state/board and reader routing; worker runs no independent reader.
+
+### 2026-09-14 22:49 UTC [Orchestrator] terminal batch273/272/274; state-first W3 allocation
+
+STATE first, BOARD second. Independent reader not rerun; new results pending
+Fable. Original failed266conjunction remains preserved, no paper promotion.
+
+| Result | Treatment | Control / reference | Retention / target yield |
+|---|---:|---:|---|
+|273newroutecohort |FULL16/16pairs;32/32goals |OFF0/16;14/32;original1/16;14/32;firstport0/16;16/32 |W0/W8/audit16/16allstates;0fits |
+|272TextWorld |RICH-prompt8/8 |TERSE8/8 |0admitted;18rich turns28–52tokens |
+|274realMBPPsubset |RICH7/8 |TERSE6/8;referenceprogram8/8isoracleparity |0admitted;19richtexts18F1U |
+
+OBSERVATION:273769/784calls,32/32actual EVENTs, native not scripted READs;
+27241calls, no child prerequisite feedback;27437calls, science complete before
+cleanup failure, no model rerun. EVIDENCE AND CONTROL: published reports and
+SEQ2737e650ab4,27232902079,274c82695f9, all fixed denominators preserved.
+CURRENT INTERPRETATION: finite route contrast independently read out on new
+cohort; not independent training seeds/H1/H2. Two mining recipes deallocated,
+not learnability disproven. CREDIBLE ALTERNATIVES: sharedroutegrammar/ancestry,
+simpletaskceilings, installed short-output habits, prompt compliance.
+CONFIDENCE: author-replayed evidence,273blind initial analysis, reader pending.
+CHEAPEST DISCRIMINATING NEXT TEST: continue breadth4-dose seeds/dosecontrast;
+new FULL-RICH and BASE-CONTRACT diagnose rich-target bottlenecks separately.
+
+NewFULL-RICH A1000–3:8freshTRAINworlds/16episodesperstate, FULL/OFF/original,
+same150–400richcontract;<=64source+288trajectorycalls; no scripted READs,
+scored273worlds, extra turns, or fit. Experimental candidate fork, not promotion.
+NewBASE-CONTRACT node2 0–3:8already-exposed code/math diagnostic tasks,
+same richprompts/ceilings, adapter-disabled SAMEfrozenbase vs37ec;<=32calls.
+Isolate adapter/prompt/compliance rather than repeat unchanged failed screens.
+Only actual child targets, same safe interpreter; no arbitrary code execution.
+GUIDED-BRIDGE CPU worker: minimal prior-adapter binding for collector/trainer/
+freshreadout plus tests, no new framework or actual L2task generation/launch.
+Node3 0/1/5 reserve, not blocked by the CPUtask. All assignments follow publish.
+Family-designation request22:30 still pending; all unblocked L1work continues.

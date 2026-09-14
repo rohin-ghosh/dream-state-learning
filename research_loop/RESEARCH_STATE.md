@@ -1,6 +1,6 @@
 # Research state — Orchestrator
 
-Updated 2026-09-14 22:41 UTC. Mission ACTIVE / INCOMPLETE. Wave W1/W2.
+Updated 2026-09-14 22:49 UTC. Mission ACTIVE / INCOMPLETE. Wave W2/W3.
 Authoritative steering: Rohin's current launch instruction and raw messages
 42–78 (78 read22:28UTC); next full raw-message reread by23:50UTC.
 Check notebook updates every orchestration cycle, not just every two hours.
@@ -421,6 +421,103 @@ and retention gates. No newL2/3test family or compiler prerequisite introduced.
 The released replay-layout helper is optional, worker CPU/native integration
 still required; frozen quality driver remains byte-identical, not modified.
 STATE first, BOARD second, corrected worker scope after publication.
+
+## 22:49 UTC batch — blind route success, two mining failures, next uncertainties
+
+### SEQ273: independently implemented fresh-cohort readout
+
+**OBSERVATION:** FULL16/16 opposite-goal pairs,32/32 goals; loss-off0/16,
+14/32; original37ec1/16,14/32; first-port0/16,16/32. Every state oldW0/W8/
+audit16/16 each. Eight worlds, correlated two display-order pairs/world.
+
+**EVIDENCE AND CONTROL:** prospectively frozen blind protocol and independent
+readout/scorer;32/32 genuine source EVENTs from64original-child calls, same
+captured store across fresh processes. Actual four READs and two ROUTEs, not
+scripted-prefix continuation.769/784calls; no fits/targets. Report
+`research_notes/analysis/orch_replication_20260914_result.md`, publication19232207,
+SEQ2737e650ab4. Worker replay22tests; independent Fable read pending.
+
+**CURRENT INTERPRETATION:** the saved-child contrast replicates on this new
+same-family supplied-text cohort. This is independently implemented readout,
+NOT independent training-seed replication. It does not erase266's failed old
+conjunction, supply unseen-family evidence, or demonstrate repeated sleeps.
+
+**CREDIBLE ALTERNATIVES:** shared topology/grammar/ancestry, public source
+scaffolding, correlated world tasks, one saved training pair. No unique
+causal-mechanism or population-effect claim from16 correlated pairs.
+
+**CONFIDENCE:** promising blind finite result; reader pending, training-seed
+challenge underway. All blind-protocol exposure disclosures remain preserved.
+
+**CHEAPEST DISCRIMINATING NEXT TEST:** already-declared same-dose breadth and
+seed fits; stop further checkpoint rereads. A separate candidate-versus-control
+RICH mining test now has higher expected value: does retained route competence
+yield grounded rich trajectories, or did command SFT narrow output behavior?
+This uses an experimental candidate, not an assertion of checkpoint promotion.
+
+### SEQ272: easy TextWorld ceiling and unrealized richness
+
+**OBSERVATION:** RICH-prompt8/8 vsTERSE8/8;41calls,0admitted rows. All18rich
+turns28–52prose tokens, below150–400. No child missing-prerequisite feedback.
+**EVIDENCE AND CONTROL:** actual TextWorld paired frozen tasks,16episode native
+replays; report `research_notes/analysis/orch_text_prerequisite_20260914_attempt1/REPORT.md`,
+SEQ27232902079. Author full-text review; reader pending.
+**CURRENT INTERPRETATION:** DEALLOCATED exact pool; not a learning null, since
+richness/correction manipulation did not occur. No fit or extrapolated claim.
+**CREDIBLE ALTERNATIVES:** easy optimal-distance2 tasks, ceiling, short-output
+policy; fluent successful actions included unsupported possession claims.
+**CONFIDENCE:** finite author-replayed counts, low on mechanism.
+**CHEAPEST DISCRIMINATING NEXT TEST:** not extra seeds/difficulty rescue here;
+compare base versus installed adapter under the same rich contract separately.
+A1000–3 released22:35:06, Hypatia retired.
+
+### CODE-BOUNDED terminal (SEQ274 assigned after273)
+
+**OBSERVATION:** RICH7/8 vsTERSE6/8;0admitted rows,37calls. All19rich texts
+read:18FAIL,1UNRESOLVED;median60tokens,only2/19total150–400. Official reference
+program8/8 is oracle parity, NOT a non-oracle baseline the learner must beat.
+**EVIDENCE AND CONTROL:** real MBPP,974source/91prospectively supported/8selected
+tasks, supplied public tests visible to both. Report
+`research_notes/analysis/orch_code_bounded_20260914_attempt1/REPORT.md`, evidencee739de55.
+All science calls/final hashes completed before nonexistent Engine.close
+cleanup raised; exit1 retained, CPU-only repair, no native rerun. Reader pending.
+**CURRENT INTERPRETATION:** DEALLOCATED exact easy expression screen, not code
+learning disproven. No hidden-test transfer, retained learning or semantic repair.
+**CREDIBLE ALTERNATIVES:** trivial/exposed tasks, restrictive interpreter,
+installed short-output habits. Fabricated positive oracle feedback is rejected.
+**CONFIDENCE:** complete finite author report, pending reader; limited scope.
+**CHEAPEST DISCRIMINATING NEXT TEST:** separate base/adapter contract diagnostic,
+not broader unsupported-task claims or retries. Node2 0–3 released.
+
+### New allocations from these results, before assignment
+
+FULL-RICH on A1000–3: eight fresh TRAIN route worlds, two goals/world,
+same rich150–400 contract for FULL, loss-off and original37ec. Native source
+capture identical across conditions; no scripted READs. At most64source plus
+288trajectory calls (352total),6turns/episode; no extra post-episode call or fit.
+Compare outcome AND full-text semantic yield on the fixed16episode/state
+denominator, not tokens alone. No scored273worlds used for teaching/mining.
+Question: can the experimental competent route child supply rich trainable
+experience, or does its command-specialized adapter suppress the narrative?
+
+BASE-CONTRACT on node2 0–3: same frozenQwen base, adapter-disabled versus
+original37ec, exactly matched rich prompts on eight fixed diagnostic tasks
+(four already-exposed MBPP, four already-exposed GSM8K; prospectively chosen
+before this arm's outcomes). Same safe interpreter/checkers and budgets;
+no new benchmark, teacher targets, weights or claims. Up to32calls, no fit.
+Primary: grounded outcome-qualified150–400turn/record yield, plus literal
+contract contradictions and actual stop/token behavior. Isolate installed
+adapter versus base instruction-following before spending on more simple pools.
+Explicitly diagnostic re-use, NOT untouched tasks or another rerun of an
+unchanged failed recipe. Original failed denominators remain intact.
+
+GUIDED-BRIDGE CPU-only worker: minimal previous-adapter binding and tests for
+collector/trainer/fresh readout across guided/frozen/unparented arms, using
+existing native APIs and released replay-layout helper. No framework/archive
+project, no GPU, no real L2contents or actual loop launch before family ruling
+and candidate gates. Three freed node3GPUs0/1/5 are adaptive reserve, not held
+by this CPU task. This removes implementation uncertainty while all unblocked
+L1 experiments continue. STATE first, BOARD second, assignment after publish.
 
 ## Active uncertainties and surprises
 
