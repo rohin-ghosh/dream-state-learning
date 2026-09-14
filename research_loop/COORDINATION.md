@@ -22987,3 +22987,60 @@ Nash independently reviews; Parfit reviews252. Successor prospectively declared
 analysis/2026-09-14_event_two_hop_memory_replay_design.md, onefit, no launchyet;
 Schrodingerownsnewdriver/guard/tests, unchanged254rows/from37ec, original4batch
 entries plus2actualtrajectoryrows,100updates. NoMain-ownedlivejobnow; nokills.
+
+## [Fable VM result read] 2026-09-14T16:17Z — SEQ-251 VERIFIED; SEQ-252 VERIFIED; SEQ-253 VERIFIED
+
+Read-only re-derivation from the raw roots on node 2 (ovx). All three roots present; every RESULT.json `status` = COMPLETE, `frozen_base_unchanged` = true. The builder's entries use the newer heading form `## [Builder] <date> — SEQ-nnn`, so the candidate grep was widened to match it.
+
+**SEQ-251** root `/tmp/astra_event_two_hop_transfer_20260914_attempt2` (source_commit.txt 7db26bec…, entry says 7db26bec — match)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| fresh child EVENTs collected | 4 | accepted_events 4 | collect/RESULT.json |
+| collect calls | 8 | model_calls 8; CALL_*.json 8 | collect/ |
+| TRAINED OWN_TEXT | 3/4 | 3/4 | TRAINED/RESULT.json panels |
+| ORIGINAL OWN_TEXT | 0/4 | 0/4 | ORIGINAL/RESULT.json panels |
+| UNAVAILABLE (both arms) | 0/4 | TRAINED 0/4, ORIGINAL 0/4 | */RESULT.json panels |
+| TRAINED / ORIGINAL calls | 47 / 38 | model_calls 47 / 38; CALL_*.json 47 / 38 | TRAINED/, ORIGINAL/ |
+| total calls | 93 | 8+47+38 = 93 | three RESULT.json |
+| fits | 0 | fits 0 in all three | */RESULT.json |
+| EPISODE files per arm | (8 panels ×) | 8 EPISODE_*.json per arm | TRAINED/, ORIGINAL/ |
+
+Integrity: TRAINED loaded/after adapter state 37ec3788… (entry "37ec") and ORIGINAL 207ad43e… (entry "207ad") — match; shared text sha c046ded7… matches the memo. Calls 93 = sum of model_calls — match.
+
+**SEQ-252** root `/tmp/astra_event_two_hop_lesson_control_20260914_attempt1` (source_commit.txt 4f1d7b68…, entry 4f1d7b68 — match)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| old graph OWN_TEXT (control) | 0/4 | ON_OWN_TEXT 0/4 | after/RESULT.json old_panels |
+| fresh graph OWN_TEXT (control) | 0/4 | 0/4 | after/RESULT.json fresh_panels |
+| full-trajectory reference, old / fresh | 3/4 / 3/4 | reference_old_panels ON_OWN_TEXT 3/4; reference_fresh TRAINED OWN_TEXT 3/4 | after/RESULT.json |
+| other control panels | 0/4 | OFF_OWN_TEXT 0/4, ON_PARAMETRIC 0/4, ON_UNAVAILABLE 0/4, fresh UNAVAILABLE 0/4 | after/RESULT.json |
+| updates | 100 | 100 | train/RESULT.json |
+| active / reference labels | 5977 / 8245 | actual_supervised_tokens 5977; reference_supervised_tokens 8245 | train/RESULT.json |
+| AFTER calls | 173 | model_calls 173; CALL_*.json 173 | after/ |
+| retained old facts W0 / W8 | 11/16 / 11/16 | 11/16 / 11/16 | after/RESULT.json retention |
+| held audit | 15/16 | overall 15/16 (fault 8/8, true 7/8) | after/RESULT.json held_audit |
+| reference refit | none | reference_sft_rerun false | after/RESULT.json |
+| trajectory supervised presentations | masked | all 12 rows 0 (presentations 17/16 each) | train/RESULT.json |
+
+Integrity: train loaded 207ad43e… (parent "207ad" — match), after state 1f3d2614… loaded = after, fits 1 in train and 0 in after. Calls 173 = model_calls — match. Not re-derived: "222 rows".
+
+**SEQ-253** root `/tmp/astra_event_two_hop_memory_20260914_attempt1` (source_commit.txt 7c773aac…, entry 7c773aac — match)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| BEFORE new recall W0 / W8 | 0/4 / 0/4 | 0/4 / 0/4 | before/RESULT.json new_recall |
+| BEFORE parametric goals | 0/4 | PARAMETRIC 0/4 | before/RESULT.json panels |
+| AFTER new recall W0 / W8 | 4/4 / 4/4 | 4/4 / 4/4 | after/RESULT.json new_recall |
+| AFTER PARAMETRIC / OWN_TEXT / UNAVAILABLE | 2/4 / 2/4 / 0/4 | 2/4 / 2/4 / 0/4 | after/RESULT.json panels |
+| old facts W0 / W8 | 16 / 16 | 16/16 / 16/16 | after/RESULT.json old_recall |
+| held audit | 16/16 | overall 16/16 | after/RESULT.json held_audit |
+| original taught text retained | 3/4 | taught_graph OWN_TEXT 3/4 | after/RESULT.json |
+| AFTER calls | 166 | model_calls 166; CALL_*.json 166 | after/ |
+| updates / labels | 100 / 16175 | 100 / actual_supervised_tokens 16175 | train/RESULT.json |
+| training rows | 254 (successor design) | row_presentations length 254 | train/RESULT.json |
+
+Integrity: train loaded 37ec3788… → adapter_state_after 9d36743c85f82ef0e064484369393a4761c8e2cdd512e1527818f9c4ca5a9c86 = entry's saved state (full match); after loaded = after = 9d36743c…. Calls 166 = model_calls — match. Not re-derived: "16/16 actual episode-reader records exact" (no matching field in RESULT.json; not recounted from CALL files in the time box) and 623.721 native-phase seconds.
+
+Scope note (copied from the builder's own limits): one DEV graph, one lineage, four tasks per panel; identifier transfer, not a new topology or independent replication; not a whole-life parenting, population or isolated-skill claim; 2/4 on SEQ-253 does not beat a first-branch baseline. Node-1 (a40) not involved. No process touched, nothing launched.
