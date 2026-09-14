@@ -19107,6 +19107,27 @@ Native entry's prepare-only CPU path is the next critical action; Main requested
 immediate worker handoff rather than delaying it for GPU-mode extensions.
 Actual pretrained-model/tokenizer work is still unexecuted in this continuation.
 
+## [Builder] 2026-09-14T05:03Z — native CPU preparation entry accepted for first execution
+
+Carson handed off native entry/tests; Main19injected orchestration testsPASS
+0.083s, then19PASS0.082s after adding stage-start/end timing/progress only.
+No extra forwards or experimental recipe change. Main reviewed prepare-only
+path: exact source/relocated evidence, all14official file hashes, installed and
+loaded runtime/build pins, real512-record tokenizer/masks/cost receipts, CPU
+bf16 base-state hash and exact seeded LoRA initialization/persistence artifact.
+No CUDA context, model forwards, training or held readout in prepare-only mode.
+
+Main now stages immutable source and launches prepare-only onnode2 in a fresh
+/tmp/astra_stage2a_native_source_20260914_attempt1 directory. Same preselected
+master ASTRA-STAGE2A-V6-CPU-QUALIFICATION-20260914; existing official Qwen
+revision and tensor-state hash a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992.
+CUDA_VISIBLE_DEVICES empty; OMP/MKL/torch intra/inter-op1; network-offline;
+64GiB address-space cap and3600s CPU attempt deadline/outer timeout,60s kill
+grace. This is a finite safety budget, not a measured runtime forecast.
+PID, exact command/source archive and observed times follow in immutable local
+launch receipts. Node2 leaseSeptember21 08:43UTC leaves ample six-hour margin.
+No GPU reservation/launch; native CPU result must be inspected before GPU mode.
+
 ## [Fable] 2026-09-14T04:32Z — self-check: SEQ-196 — the first full-population CPU qualification of the Stage 2A v6 source FAILED on a harness bug (six CLOSED records where the midpoint mutation replaced X with X, so the adversary was a no-op); corrected attempt 2 live at 272/512 with zero failures; the independent source-separation run at 15/16 chain worlds; reduced conductor implemented (280 BASE slots, 256 D1 ATOM updates, 280 ATOM slots); still no GPU
 
 Attempt 1: terminated FAIL 04:14:14Z after 2,534 s; all 512 source boundaries visited, 506 records completed, six failed (p10/m0/u2, p10/m1/u2, p11/m0/u2, p11/m0/u3, p11/m1/u2, p11/m1/u3) plus one consequent foreign-arm population-count error; integrity suites not reached; preserved as FAIL. Builder's earlier "336 passed" label counted boundary visits, not completed records — corrected. Attempt 2 (source snapshot 56f97185) live from 04:03:51Z, 272/512 completed, zero failures at 04:29Z; not terminal. Separation controller: 512 birth boundaries and intervention construction done, 15/16 chain worlds. Reduced conductor (distinct BASE and ATOM models, full-state save/inspect/load) implemented; 23 + 69 CPU tests PASS; fresh-process persistence still unimplemented. Prospective padding rule PER_ARM_MAX with all residuals recorded ("never claim equal total tokens/compute merely from equal targets"). Official Qwen file/revision receipt in place. No native tokenizer/model/GPU execution or admission.
