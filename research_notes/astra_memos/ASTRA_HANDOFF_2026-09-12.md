@@ -1,6 +1,32 @@
-# Astra restart handoff — September 14, 2026, 00:32 UTC (September 13 Pacific)
+# Astra restart handoff — September 14, 2026, 00:38 UTC (September 13 Pacific)
 
-## Current superseding increment at 00:32 UTC
+## Current superseding increment at 00:38 UTC
+
+All queued Q0/E0/provenance messages reconciled before successor work.
+Adjudication SHA9747ae5e is present via50c2903c; relay4571f4ec is not a local
+object, equivalence unverified. E0-r is fixed-rendered DEV ceiling only,
+excluded from authentic lineages; supplied MISS is50% of canonical rows,
+not necessarily50% of loss mass. Full M needs child-authored EVENT semantics
+and behaviorally necessary child-authored LINK. Q0 stays closed. Failed
+recipes close, not the overall campaign; prospective successors retain
+controls, finite budgets and untouched confirmation material where required.
+No negative-paper substitution or positive-result promise.
+Reconciliation: analysis/2026-09-14_queued_provenance_and_campaign_reconciliation.md.
+
+Main and Bohr found no source-owner route/core answer; Bohr closed. Completed
+static metadata coverage/dependency audit, not another toy test. Conditional
+full-row encoding alone gives16,800/4,704 EVENT scalar leaves for A/B, above
+the scanner4096 cap. Actual schema-dependent totals remain unknown; no limit
+was changed or inventory produced. Audit/pins/limits:
+analysis/2026-09-14_stage2a_metadata_coverage_dependency_audit.md.
+
+Next remains bound complete inventory -> separate material/native preparation
+-> reduced560slot BASE/D1 ATOM_LOCAL -> qualified authentic two-SLEEP.
+No source/code changes, tests repeated, models/tokenizers loaded, GPU science
+launched/killed or approvals requested. No active worker/test/GPU experiment.
+Preserve dirtyrules and unreviewedTSJdraft. Full mission ACTIVE/incomplete.
+
+## Historical superseded increment at 00:32 UTC
 
 Durable screen_custody.py/test accepted with independent exact-byte scopedPASS.
 ScreenCustodySink implements existing event protocol using bounded exclusive/

@@ -1,4 +1,21 @@
-## Current superseding snapshot — 2026-09-14 00:32 UTC (September 13 Pacific)
+## Current superseding snapshot — 2026-09-14 00:38 UTC (September 13 Pacific)
+
+Queued Q0/E0/provenance rulings processed; E0-r fixed-rendered DEV ceiling
+only,50% supplied MISS rows separately accounted, no authentic-lineage merge.
+Full M requires child-authored EVENT and necessary LINK. Failed recipes close,
+campaign continues through justified prospective successors; no negative-paper
+substitution. Exact sources/history/limits:
+analysis/2026-09-14_queued_provenance_and_campaign_reconciliation.md.
+
+Static metadata dependency audit completed, no code/test/model/GPU execution.
+Full structured EVENT fields alone conditionally exceed scanner4096 leaves
+(A16,800/B4,704); full schema/route bounds still unknown, limits unchanged.
+Audit: analysis/2026-09-14_stage2a_metadata_coverage_dependency_audit.md.
+Source-owner route/core answer still absent, independently checked; worker
+closed. Next completeinventory/separatepreparation/reduced560screen/authenticTSJ.
+Handoff00:38UTCcurrent; fullgoalACTIVE/incomplete, no claimpromotion.
+
+## Historical superseded snapshot — 2026-09-14 00:32 UTC (September 13 Pacific)
 
 Durablescreen sink/verifier implemented, independently reviewed exactbytesPASS.
 Main604tests:584PASS/20native-onlyskips,303.545s,57hashesfixed. SeparateCPU

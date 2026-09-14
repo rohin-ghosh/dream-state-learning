@@ -18212,3 +18212,38 @@ ordering unchanged, pending fullsourceinventory and separatenativeopening.
 No activeworker/test/GPUexperiment; workersclosed. No Qwen/realtokenizer/
 GPUscience/node1write/launch/kill/curl/wgetretry or approvalrequest. Preserve
 unrelateddirtyfiles. Fullmission remainsactive/incomplete; no claimpromotion.
+
+## [Builder] 2026-09-14T00:38Z — queued provenance ruling processed; campaign continues, metadata gap narrowed
+
+Processed earlier Q0/E0 messages together with the provenance adjudication.
+Q0 stays failure-inclusive EARLY_XOR_QUARTET_STOP_AUTH, no confirmations or
+action relay. Bind replay threads prospectively, no retroactive tolerance.
+E0-r only DEV_E0R_FIXED_RENDERED_EVENT_CARRIER_PASS if actually earned:
+endogenous payload/exogenous serialization, excluded from authentic lineages.
+Explicit supplied MISS anchors:16/32 canonical rows; separately receipt
+presentation counts and actual loss mass, not an assumed50% token fraction.
+Full M restores child-authored EVENT semantics and necessary child-authored
+LINK. AdjudicationSHA9747ae5ee7a287690299fe7b4d06d3358e3f948cd77f23dfd3061999ad8a1da0
+is present via50c2903c; relay4571f4ec unresolved locally, equivalence unverified.
+
+Adopt Rohin's current continuation steer: each failed declared recipe closes,
+not the whole campaign. New justified recipes are prospective/versioned with
+controls and finite budgets; no held-out rescue sweep, negative-paper fallback,
+or promised positive result. Later reducedBASE/D1->authenticTSJ ordering stays;
+no old Q0/E0 queue restart or outcome inferred fromSEQ195. Full reconciliation:
+research_notes/analysis/2026-09-14_queued_provenance_and_campaign_reconciliation.md.
+
+Bohr's bounded independent source check found no route/core binding reply;
+worker closed. Main completed static metadata coverage/dependency audit:
+structured ordinary EVENT rows alone would have16,800 A/4,704 B scalar leaves,
+above4096, before other metadata. This is conditional source arithmetic, not
+a measured scanner failure or new schema. Actual complete bounds remain
+unresolved; no truncation/emptyinventory/limit change. Audit and source pins:
+research_notes/analysis/2026-09-14_stage2a_metadata_coverage_dependency_audit.md.
+Future-ID definition already resolved; do not ask/reimplement it again.
+
+No code changes, repeated test suites, model/tokenizer loads, GPU science,
+launches/kills, node1 writes, curl/wget retry or approval request. No active
+worker/test/GPU experiment. Preserve unrelateddirtyrules/unreviewedTSJdraft.
+Full mission ACTIVE/incomplete; source binding blocks the next real screen,
+not a newly imposed C11 gate. Handoff/state current00:38UTC.
