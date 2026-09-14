@@ -24,3 +24,13 @@ Detached retry scans22:34:41–42UTC clear4/4. Initial scans failed closed becau
 our simultaneous CPU-prepare SSH was unreadable; preserved, zeroGPU science.
 Outer per-shard timeout includes scan/loading and termination within common
 2700second deadline; lease1789980180 minus6h. PreGPU notebook publishing now.
+
+2026-09-14T22:37:08Z launch verified: preGPU09948547 merged/pushed58db0feb,
+both append-only notebook branches intact, no merge remains. Launch22:35:59Z,
+common deadline23:20:59Z. ACTOR_READY4/4 at22:36:49UTC, exact mounted37ec.
+NativePIDs436284/436287/436274/436281 on physical4/5/6/7. First persisted
+call22:36:55.815076Z; counts2/1/1/2 at22:37:08.236222Z. Native receipt
+research_notes/analysis/orch_math_record_20260914_attempt1/ACTIVE_RECEIPT.json.
+Question-only gold reading complete:62VALID,1AMBIGUOUS(single worker wage),
+1SUSPECT(orange-juice gold6 despite12 implied); all64 remain denominator.
+No target fulltext yet reviewed; no admission/yield claim at launch.
