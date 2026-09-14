@@ -19,7 +19,7 @@ or layout validation is claimed. Primary sources, scope and receipt:
 `research_notes/analysis/2026-09-14_two_bibliography_placeholders_verified.md`.
 Dated statements below about unresolved TODO keys describe earlier snapshots.
 
-**Reporting cut through SEQ-265 — September 14, 2026.**
+**Reporting cut through SEQ-266 — September 14, 2026.**
 Reviewed SEQ257/258 collection, SEQ259 correction and SEQ260 breadth-fit results
 remain intact: TRAIN acquisition, no incremental PROBE advantage over the active
 control, both arms failing the target. SEQ263 has zero content-qualified
@@ -28,7 +28,9 @@ as collection labels. The full content rollup with separate adjudication qualifi
 1/56 candidate episodes (1/64 attempts), six rows per view and no opposite-goal
 pair; no tiny fit is planned. SEQ265 paired critique/repeat gives 6/16 versus
 4/16 goals, 1/8 pairs each and zero six-turn candidates. Rich learning is UNTESTED;
-quality 2,928-update fits remain LIVE/not analyzed. No external distribution
+SEQ266 now reports FULL30/32 held-identifier pairs versus control1/32 and
+baseline2/32, but15/16-world coverage fails the full engineering conjunction.
+Scoped raw episode-level review agrees; no automatic promotion follows. No external distribution
 is claimed; build availability is checked separately.
 
 **Ongoing first-sprint working draft — research question unresolved.**
@@ -456,7 +458,8 @@ independent authentication of live model tensors.
 were still finishing at that cut. SEQ259's correction review and SEQ260's primary
 fit result are now reported separately below; SEQ260 independent review agrees
 with the primary. Later rich execution/critique results are separated below;
-V3 content qualification is not a fit, and quality fits remain LIVE/not analyzed.
+V3 content qualification is not a fit, and SEQ266 reports a separate
+held-identifier relative positive below, with its full engineering gate failed.
 Neither launch nor candidate retention demonstrates improved learning. No H1/H2,
 broad-transfer, parenting-efficiency or full-flywheel promotion. Collaborator UNSENT.
 
@@ -547,10 +550,10 @@ difference is not matched active dose. Matching old recall does not equate
 audit or previously-fresh retention.
 
 Later rich execution and critique collection are reported separately below.
-Quality 2,928-update fits remain LIVE/not analyzed; the blocked 12,384-update
+SEQ266 reports the separate quality-breadth relative positive below; the blocked 12,384-update
 scale proposal is not revived and SEQ258's failed gate is not relaxed.
 Earlier SEQ253/256 interpretations and the800 presentations of48 distinct targets
-remain unchanged; no generalization or autonomous-flywheel claim is added.
+remain unchanged; SEQ260 adds no generalization or autonomous-flywheel claim.
 
 Sources: [SEQ259 primary](../research_notes/analysis/2026-09-14_scale_source_correction_first_result.md),
 [SEQ259 released artifact review](../research_notes/analysis/2026-09-14_scale_source_correction_independent_result.md),
@@ -621,15 +624,55 @@ nonterminal/truncated; its unavailable-advice marker does not prevent the
 final attempt. No learned reflection, persistent improvement, semantic
 approval or fit follows.
 
-**Quality remains LIVE/not analyzed.** The 1,452-target quality corpus feeds a
-distinct 2,928-update paired fit; no fit/AFTER metrics enter this draft. This
-is not the blocked 12,384-update scale proposal, a reopening of SEQ258 admission
-or a new SEQ260 result. Preserve SEQ245's narrow single-bank write/use success
-with a matching uniform control, not selection superiority, and SEQ260's no
-incremental PROBE advantage over its active control. Exposed DEV observations
-do not settle H1/H2. The collaborator draft stays UNSENT.
+## SEQ-266: outcome-filtered terse transfer, engineering conjunction fails
 
-Sources: [V2 primary](../research_notes/analysis/2026-09-14_rich_action_first_collection_first_result.md),
+By 21:32 UTC on September 14, 2026, both 2,928-update fits and fresh AFTERs
+were complete; TRAIN finished at21:21 UTC. The released primary reports strong
+incremental held-identifier evidence, but the frozen engineering conjunction
+FAILS. Released independent raw episode-level review agrees, without whole-paper
+recertification. FULL reaches30/32 strict opposite-goal pairs and62/64 goals,
+versus loss-off1/32 and26/64, and the selected37ec baseline2/32 and33/64.
+This is the matched944-call baseline, not the legacy0/4 comparator. All32 pairs
+remain scored. FULL has a correct pair in15/16 worlds, failing the requirement
+of at least one pair in EVERY world despite exceeding the24/32 aggregate floor.
+
+The failed world is `SHARD-1-BLOCK-0-PROBE-A`: its preexisting invalid EVENT
+`E_W5YA3H6TNF` produces literal MEMORY UNAVAILABLE in all three states' OWN_TEXT
+panels. FULL's two failed tasks take legal routes to the wrong goal. Missing
+source and failure co-occur; no correction counterfactual proves sole causation.
+Baseline and control both succeed on this same world's task2 with the same
+unavailable address, so the task is not automatically impossible. No world is
+dropped or scored as post-hoc30/30. All states retain16/16 old
+recall at each W0/W8 and16/16 audit. Original/previous-fresh text goals are
+FULL4/4 each, control2/4 each, baseline3/4 each. UNAVAILABLE gives23/64 FULL
+goals versus0/64 control and3/64 baseline, but all have0/32 opposite-goal pairs;
+individual arrivals without provided text do not demonstrate new event memory.
+
+Both arms start37ec with seed0, rank8, fresh AdamW3e-5 and batch4, using
+1,452 outcome-filtered actual terse targets plus222 legacy rows. Each trajectory
+has four presentations:5,808 new and48 old; old memory and cue/audit each have
+2,928 presentations. Inputs and schedule match; only new target labels are
+masked in the control. Active/full-reference labels are238,274/238,274 versus
+173,814/238,274: common per-batch normalization, not equal active supervision.
+Fresh AFTERs reload their respective saved e226cea2/4f0dccf5 states; native
+base/state checks are receipt attestations, not independent tensor authentication.
+
+Actual calls are944 baseline+960 FULL+932 control=2,836; generated tokens35,579.
+Native assigned phase time totals3.644 GPU-hours including baseline, not parallel
+elapsed time or the9.3 GPU-hour reservation ceiling; prior corpus acquisition is
+outside this cost. Physical/CVD release is recorded21:33:42–43 UTC. Preserve the
+logging-order deviation: guard requests preceded the durable prelaunch notebook
+entry; CPU/source/admission checks passed, but the logging gate did not.
+
+The relative positive supports new-label contribution beyond matched legacy
+rehearsal on these same-family/topology held identifiers, not a dose-isolated
+comparison with SEQ260. This one-seed, adaptively outcome-filtered exposed-DEV
+recipe is terse supervision, NOT rich fine-tuning, authentic L2, H1/H2 or clean
+lineage. Full engineering success and automatic promotion do not follow.
+Rich content remains1/56 qualified with no fit and learning benefit UNTESTED;
+SEQ245's narrow positive and SEQ260's no incremental advantage remain intact.
+
+Sources for SEQ263–266: [V2 primary](../research_notes/analysis/2026-09-14_rich_action_first_collection_first_result.md),
 [V2 Main content review](../research_notes/analysis/2026-09-14_rich_v2_content_review.md),
 [V2 independent content review](../research_notes/analysis/2026-09-14_rich_v2_content_independent_review.md),
 [V3 primary](../research_notes/analysis/2026-09-14_rich_action_first_v3_collection_first_result.md),
@@ -638,7 +681,12 @@ Sources: [V2 primary](../research_notes/analysis/2026-09-14_rich_action_first_co
 [shared content contract](../research_notes/analysis/2026-09-14_rich_content_review_contract.md),
 [critique primary](../research_notes/analysis/2026-09-14_self_critique_repeat_collection_first_result.md),
 [critique independent result](../research_notes/analysis/2026-09-14_self_critique_repeat_independent_result.md),
-[LIVE quality protocol](../research_notes/analysis/2026-09-14_goal_quality_fit_protocol.md).
+[quality fit protocol](../research_notes/analysis/2026-09-14_goal_quality_fit_protocol.md).
+SEQ266 [released primary](../gpu_artifacts_local/astra_goal_quality_train_20260914_attempt2/RESULT.md).
+[Independent raw episode-level review](../research_notes/analysis/2026-09-14_goal_quality_fit_independent_result.md).
+Source `7f9d4251ae1ff4c5ff9138adf267d081fffa6331`; terminal archive:
+`gpu_artifacts_local/astra_goal_quality_train_terminal_20260914_attempt2/quality_attempt2_terminal.tar.gz`,
+SHA256 `0152cafb69aa7715b5f4fbb15caa4954f03c62c1f3c063883ed9c17c9aa00deb`.
 
 ## SEQ-247: executable selector material, shared writer — September 14, 2026
 
