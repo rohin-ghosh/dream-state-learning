@@ -1,6 +1,41 @@
-# Astra restart handoff — September14,2026,02:43UTC
+# Astra restart handoff — September14,2026,02:49UTC
 
-## Current increment — complete birth metadata and reduced scoring
+## NEW PRIORITY — v6 typed boundary supersedes full-object promotion
+
+The push raced watcher commits. Source increment committedf966e5ab, then merge
+b3525930fcb08b2f319935caf95278c956391e13 preserved BOTH append-only notebook
+branches and all watcher paper/raw/IDEAS changes; push succeeded. No force,
+reset, stash or discarded entries. Unrelated dirty rules/TSJ draft remain.
+
+New Root02:41entry6e5baaff and complexity auditcd27fb8d correctly distinguish
+complete provenance custody from a lexical blacklist. Main adopts that source
+correction in research_notes/analysis/2026-09-14_stage2a_binding_successor_v6_typed_boundary.md.
+The source_occurrence/v2 full-object machinery below is PRESERVED DIAGNOSTIC
+EVIDENCE, NOT THE SELECTED NATIVE ADMISSION PATH. Do not spend another cycle
+expanding its aliases/capacity or mistake the two passing fixtures for clearance.
+
+NEXT is the v6 three-object join: complete source custody once per case/pair,
+small exact per-arm boundary receipt, and typed finite full-value leak basis.
+Preserve all sources, future IDs, route automaton, causal occurrence receipts,
+controls, training and560reserved slots. Exclude pointer/key-name/index/numeric/
+bool/null/tagged/ID-fragment needles; exact independently reconstructed public
+byte equality protects those structural values. Private categorical/full keys
+remain explicit source-derived items, not a hand-selected blacklist.
+
+Run ALL eight audit gates on64cases/256units/512records before native preparation:
+source totality, boundary equality, inventory equality, clean-source pass, leak
+mutations, receipt adversaries, pair/scoring integrity and resource receipt
+(canonical bytes/counts/peakRSS/walltime). Fresh exact-source review follows.
+Source/held-core definitions and native allocator/model/tokenizer/conductor
+bindings below remain required; no new external-owner wait or C11 expansion.
+
+Rohin message54 is now present: asks for memory-walking CoT status and suggests
+reusing/tweaking the base's capabilities. Keep BASE/D1; do not claim new CoT
+success or silently change the curriculum. Fable's broad claims about latent
+versus contextual reasoning are advisory, not verified scientific conclusions.
+No new GPU/model/tokenizer work; full mission ACTIVE/incomplete.
+
+## Completed diagnostic increment — complete birth metadata and reduced scoring
 
 The resource steer does not revive Q0/E0 or superseded M1. Node2's prior
 02:08:42Z live read found all8devices empty with no same-user CUDA_VISIBLE_DEVICES

@@ -18672,3 +18672,36 @@ Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 54; 
 Reading: Hmm, how is CoT going — any success walking through memory? How do agentic models do it? I am assuming their understanding of goals and things is useful. By the way, the model we are using by default might have some of these capabilities, right? So maybe we do not have to build it from scratch but rather tweak that for our skills, maybe?
 
 [Fable → Builder] 2026-09-14T02:46Z — advisory: Rohin's steer supports keeping the birth corpus minimal — register/interfaces plus the junction — and relying on the base's own decomposition; the BASE headroom panel in the reduced screen is the place to see how much the base already routes when unconstrained. No change requested.
+
+## [Builder] 2026-09-14T02:51Z — complexity audit adopted; v6 typed boundary is the next implementation, not full-tree promotion
+
+The source push raced five watcher commits. Local sourcef966e5ab and remote
+throughf649cdda were merged asb3525930, preserving both entire notebook additions,
+the raw message54/IDEAS changes and paper updates. Push succeeded. No force,
+reset, stash, overwritten raw evidence or unrelated-rules inclusion.
+
+I accept the technical distinction in the02:41Root entry6e5baaff and fresh
+auditcd27fb8d: complete custody is not a lexical blacklist. Full-object v2 and
+source-occurrence repairs remain valid documented CPU diagnostics, NOT the
+native admission path. No further capacity/alias expansion is selected. The
+audit reviewed earlier working bytes; final154unique tests and complete envelope
+are newer, but they do not answer its causal/efficiency objection.
+
+Prospective v6 bound in
+research_notes/analysis/2026-09-14_stage2a_binding_successor_v6_typed_boundary.md
+SHA256119b97eb418e7b9586c1425c091b846f7eb7f100ab337ca03cc8b92df2b7b0b6.
+Three objects: complete reconstructable content-addressed custody once per
+case/pair; small per-arm exact boundary receipt; typed finite full-value leak
+basis plus existing route automaton. Explicitly supersedes v3§8 promotion, not
+claimed equivalent. All experimental invariants, sources, future IDs, causal
+receipts, controls, training, scoring and560reserved slots remain unchanged.
+Eight full-population gates over64cases/256units/512arms and fresh exact-source
+review are still PENDING; only then native preparation. No old passing diagnostic
+receipt substitutes. This is a Builder source change, no invented human
+ratification or external-owner wait. Handoff places v6 first.
+
+Rohin message54 ingested: reuse/adapt existing base capabilities, keep BASE/D1
+to measure them. No new CoT-over-memory success is claimed; no new native
+experiment ran here. Fable's broad explanatory claims remain advisory, not
+verified paper assertions. All workers closed; no background GPU work implied.
+Current mission remains ACTIVE/incomplete; next is actual v6 implementation.

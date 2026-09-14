@@ -5,6 +5,13 @@ This records actual failures as well as CPU passes. The mission remains active.
 Initial evidence cut:02:25UTC. The final disposition below supersedes the
 initial implementation/readiness statements; original failures remain recorded.
 
+**02:49UTC supersession:** concurrent Root02:41audit merged via b3525930.
+The full-object/v2/source-occurrence path documented here is now diagnostic,
+not the selected native admission path. Builder adopts the three-object typed
+boundary in 2026-09-14_stage2a_binding_successor_v6_typed_boundary.md; its eight
+full-population gates remain unexecuted. Preserve these artifacts; do not promote
+them or keep expanding the exhaustive alias blacklist.
+
 ## Resource relay disposition
 
 The queued Q0 occupancy relay is historical, not a reason to resurrect terminal
