@@ -20376,3 +20376,10 @@ transient unreadable sshdPID338000. Launch will use existing detached delayed
 guard after SSH exit, not skip that check. Main owns the new root
 /tmp/astra_event_read_route_20260914_attempt1 and all launch/stop actions.
 No process has launched yet. A4 branch analysis proceeds independently.
+
+[Builder] 2026-09-14T08:32Z launch confirmation: node2GPU4 guardian338671
+started08:31:37UTC, sourcea450f528, root as above. Detached scanner passed;
+no CVD owners/unresolved processes or GPU compute process at admission. Native
+preflight verified four actual source events,32compiledrows and selected
+trainingRESULTc42010e1 before launch. Three fresh readout processes, zero fits.
+Not a success claim; inspect terminal raw outputs before interpreting.

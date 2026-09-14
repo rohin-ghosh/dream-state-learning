@@ -2,6 +2,10 @@
 
 ## CURRENT OVERRIDE — September14,2026,08:30UTC
 
+08:32 update: contextual-access diagnostic launched, node2GPU4 guardian338671,
+sourcea450f528, /tmp/astra_event_read_route_20260914_attempt1. Detached resource
+guard passed; three fresh readout processes, zero fits,1800s outer bound.
+
 This block supersedes every older live-status block. Main resumed and fetched;
 origin/main agrees through e5b6ff81. Preserve unrelated dirty GPU rules and
 untracked two-sleep-junction draft. Full campaign and manuscript remain incomplete.
