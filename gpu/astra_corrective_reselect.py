@@ -97,9 +97,9 @@ def main(argv=None):
     try:
         after, cases, provenance = load_inputs(options.after)
         source.write(output / 'INPUTS.json', provenance)
-        source.write(output / 'CORRECTION_CASES.json', cases)
         result.update(source=provenance, expected_calls=cases['expected_calls'])
         if options.prepare_only:
+            source.write(output / 'CORRECTION_CASES.json', cases)
             result.update(status='PREPARED_NO_MODEL', model_calls=0)
         else:
             arguments = argparse.Namespace(**after['arguments'])

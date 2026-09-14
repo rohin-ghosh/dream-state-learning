@@ -1,7 +1,11 @@
 """Post-sleep public-evidence selection checks without native imports."""
 
 from copy import deepcopy
+from pathlib import Path
+from tempfile import TemporaryDirectory
+from types import SimpleNamespace
 import unittest
+from unittest.mock import MagicMock, patch
 
 from gpu import astra_corrective_reselect as runner
 from tests.test_experienced_event_corrective_replay import fixture
@@ -44,6 +48,30 @@ class ReselectionTests(unittest.TestCase):
         self.request['arguments']['state'] = 'BEFORE'
         with self.assertRaises(ValueError):
             self.prepare()
+
+    def test_native_dispatch_does_not_write_cases_twice(self):
+        with TemporaryDirectory() as temporary:
+            output = Path(temporary) / 'run'
+            after = deepcopy(self.after)
+            after['arguments'].update(model_dir='model', adapter_dir='adapter')
+            cases = self.prepare()
+            engine = MagicMock()
+            engine.model.named_parameters.return_value = [('layer.lora_A.weight', object())]
+            engine.runtime = {}
+            engine.generate.side_effect = [dict(raw=cases['sources'][0]['canonical'],
+                terminal=True, truncated=False) for case in cases['cases']]
+            provenance = dict(expected_actor_state_sha256='updated', adapter_files={}, source_files={})
+            tokenizer = MagicMock()
+            tokenizer.apply_chat_template.return_value = [1, 2, 3]
+            with patch.dict('os.environ', HF_HUB_OFFLINE='1', TRANSFORMERS_OFFLINE='1', CUDA_VISIBLE_DEVICES='gpu'), \
+                    patch.object(runner, 'load_inputs', return_value=(after, cases, provenance)), \
+                    patch.object(runner.source.native, 'load_local_tokenizer', return_value=tokenizer), \
+                    patch.object(runner.source, 'Engine', return_value=engine), \
+                    patch.dict('sys.modules', {'organism_v6.pcfl_vertical_train':
+                        SimpleNamespace(_state_hash=lambda parameters: 'updated')}):
+                runner.main(['--after', 'after', '--output', str(output), '--gpu-uuid', 'gpu'])
+            self.assertEqual(runner.source.read(output / 'RESULT.json')['status'], 'RESELECTION_CAPTURED_NO_FIT')
+            self.assertEqual(engine.generate.call_count, cases['expected_calls'])
         self.request = deepcopy(self.after)
         self.panels['OWN_PARAMETRIC']['denominator'] = 3
         with self.assertRaises(ValueError):

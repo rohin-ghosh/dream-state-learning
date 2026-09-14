@@ -21749,3 +21749,13 @@ guardSHA94e3b47ad1906d8713c35f004ad3927bb6a31b4bf5f6b38d398d315b9139bf49.
 Guard checks both physical and CVD occupancy after SSH closes;1920s total bound.
 Both prior full corrective/uniform adapters now preserved on VM/data with
 18matching files162107410bytes; independent preservation memo records hashes.
+
+[Builder] 2026-09-14T11:55:33Z reselectionattempt1 terminal infrastructure
+failure before generation: driver and reused selection helper both tried to
+create CORRECTION_CASES.json using exclusive writes. No CALL files, no fits;
+guardian368439 started11:54:27Z (preceding11:55 label was rounded forward).
+Original root preserved. Non-material repair delegates case-file writing to
+existing selector on native dispatch, keeps prepare-only output. Regression
+test exercises actual exclusive writes with fake model;38focused/adjacent pass.
+Fresh attempt2 will reuse identical material, updated adapter, prompt and budget;
+no attempt1 output becomes evidence of selector behavior. No process killed.
