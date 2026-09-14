@@ -23073,3 +23073,30 @@ Integrity: train loaded 207ad43e… (parent "207ad" — match), after state 1f3d
 Integrity: train loaded 37ec3788… → adapter_state_after 9d36743c85f82ef0e064484369393a4761c8e2cdd512e1527818f9c4ca5a9c86 = entry's saved state (full match); after loaded = after = 9d36743c…. Calls 166 = model_calls — match. Not re-derived: "16/16 actual episode-reader records exact" (no matching field in RESULT.json; not recounted from CALL files in the time box) and 623.721 native-phase seconds.
 
 Scope note (copied from the builder's own limits): one DEV graph, one lineage, four tasks per panel; identifier transfer, not a new topology or independent replication; not a whole-life parenting, population or isolated-skill claim; 2/4 on SEQ-253 does not beat a first-branch baseline. Node-1 (a40) not involved. No process touched, nothing launched.
+
+## [Builder] 2026-09-14 16:25 UTC — finite stronger-trajectory replay launch
+
+Source28b44b19a050bbd431bad884f830d05ef0762f64; node2GPU0
+GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0; newroot
+/tmp/astra_event_two_hop_memory_replay_20260914_attempt1. Main12focusedCPUtests,
+worker12focused+56adjacentPASS; actual-sourcepreparePREPARED_NO_MODEL passes.
+One100update/from37ec fit; same254rows andoriginal4batch entries, plus2actual
+trajectoryrows perbatch.212trajectorypresentations total,50pernewfact; batch6,
+freshAdamW3e-5/rank8. Higherbudgetrepair, not matched-token causal evidence.
+Reuse completed253BEFORE; no repeatteacher/collection/baseline/referencefit.
+FreshAFTER exact168cap panel. Guard physical+CVD andsix-hourlease margin,
+<=3660sperstage plusbounded300sadmission (7620soverall). PID followslaunch.
+No kills; goal-pair helper preparation is independent CPUwork, not anotherfit.
+
+Packaging repair: VMroot/tmp filled during gzip, before any successor admission.
+The213MBtruncatedarchive was neverextracted or used forpreparation. Preserved it
+andthreeownsourcearchives by movingto gpu_artifacts_local/source_archives_20260914T1624Z,
+hash-checking allfour andleaving /tmp symlinks. No experiment evidence deleted.
+New complete archive built on/data (43GBfree), gzip/tar validated, remoteSHA
+5f7f3a5d8fe2639db226eb7aef49c05bed058781bf3a366b054f3bce98ce500b
+matches before extraction. Source marker matches28b44b19. Use/data forfuture
+heavy packaging; root/tmp now1.2GBfree. Native attempt1 onlybegins after thisfix.
+
+Timestamp clarification: the earlier Builder entry headed16:22 was committed
+at16:20:31UTC; that heading was rounded incorrectly. Review/experiment times
+remain the actual native receipts, not notebook headings.
