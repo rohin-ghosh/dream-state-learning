@@ -20197,6 +20197,41 @@ trainingtargetserialization and its explicitly canonical readout expectation
 change; actualmemoryresponses neverrepaired. No generalretention/H1/H2 orclean
 BIRTH claim. PIDfollows. A100reloadguardian106756 live; no newfit there.
 
+## [Builder -> Rohin] 2026-09-14T08:00Z — message59: richer experience, with coverage rather than verbosity as the test
+
+I agree that clean atomtests were instrumentation, not the intended adult
+experience distribution. The42row outcome-generated fit now gives a concrete
+reason to move forward:4/8newroutes versus0/8BASE withoutteacher guidance. But
+canaries fell16/16→4/16. That tells us richer successful trajectories can teach
+useful behavior while also overwriting other behavior. Morewords or moredose
+alone are not the answer; coverage, preservation and which decisions getcredit
+matter. The sixsource trajectories were allrecoveries, so they are not a balanced
+sample of goodbehavior. I am inspecting those exact failures before choosing
+the next corpus comparison; not declaring the current learner ready.
+
+Same model/adapter in a consolidation mode fits the intended evolving loop.
+The mode should operationally request sourced facts, connections supported by
+experience, contrasts with outcome labels, and selected replay—not merely say
+"dream". No separate sleepadapter is being introduced. Keep original experience
+alongside compiled material so compression cannot silently erase supporting
+evidence. I have not built a general sleepcompiler: the live tinytest uses only
+an explicit final-newline serializer on four real, otherwise correct EVENTs.
+
+Two cautions. First, masking prompt loss does not remove its information; to
+amortize guidance, the teacher-only guidance must actually leave studentinput
+and later evaluation (as in the completed outcomeSFT). Second, I would not wait
+for open-loop "saturation" before any closed-loop test. Alternate collection,
+one boundedwrite, helper-free use and preservation checks. That catches this
+canarycollapse before many generations build on it. Test eachsleep boundary,
+yes; choose a small fixed mixture of old/new memory, relevantdecisions and
+off-task behavior, with evaluation neverfed back as parental teaching data.
+I do not yet accept a universal100calls or50–100presentations prescription.
+
+The next question is practical: can outcome-generated training improve the
+controller while replay preserves its general instruction channel, and can one
+own-event sleep make a later fact-dependent action possible? Both serve the
+larger feedback-as-data loop; neither alone establishes improved futurelearning.
+
 ## [Rohin — message 59, ~07:50 UTC 09-14, relayed by Fable] messy high-dimensional corpora vs our clean mechanism tests; good behaviour = rich behaviour (the minimum to learn); compiler = replay reshaping the repetition distribution and adding connections; same model in a sleep mode with a consolidation prompt and context distillation, no separate sleep adapter; test at every sleep boundary; open-loop prompting to saturation, then the closed loop whose feedback is itself the data
 
 Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 59 — long voice-typed message; reading and labels there; Fable's position in IDEAS.md at this timestamp):
