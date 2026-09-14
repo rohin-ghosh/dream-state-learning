@@ -123,6 +123,7 @@ class EntryTests(unittest.TestCase):
         self.compile = self.mock(source.prepare, "compile_source_curriculum", side_effect=lambda **kwargs: self.event("compile", self.compiled))
         self.gates = self.mock(source.tokens, "_source_gates", side_effect=lambda *args: self.event("gates", {"fake_only": True}))
         self.tokens = self.mock(source.tokens, "prepare_tokenizer_receipt", side_effect=self.token_receipt)
+        self.restore = self.mock(source.tokens, "restore_official_backend", return_value={"fake_only": True})
         self.initialize = self.mock(source.models, "initialize_atom_cpu", side_effect=self.initialize_atom)
         self.mock(source, "base_state_hash", side_effect=state_hash)
         self.versions = self.mock(source.metadata, "version", side_effect=lambda name: source.tokens.RUNTIME_VERSIONS[name] or "0.22.2")

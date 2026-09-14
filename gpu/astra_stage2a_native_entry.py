@@ -248,6 +248,8 @@ def run_entry(options, *, libraries=None, clock=time.time, device_probe=_device_
                           "effective_thread_pin_mismatch")
         tokenizer = objects["tokenizer"] = stage("tokenizer_load", lambda: transformers.AutoTokenizer.from_pretrained(
             options.model_dir, local_files_only=True, trust_remote_code=False, use_fast=True, padding_side="right"))
+        receipt["tokenizer_backend_restoration"] = stage("tokenizer_backend_restoration", lambda: tokens.restore_official_backend(
+            tokenizer, options.model_dir, receipt["official_files"], root / "backend_restoration"))
         token_receipt = objects["tokenizer_receipt"] = stage("tokenizer_receipt", lambda: tokens.prepare_tokenizer_receipt(
             bound_allocation=allocation, compiled_curriculum=compiled, master=master, tokenizer=tokenizer,
             model_dir=options.model_dir, official_manifest=options.official_manifest, loaded_files=tokens.REQUIRED_FILES,

@@ -130,7 +130,9 @@ class TokenizerReceiptTests(unittest.TestCase):
         self.tokenizer.name_or_path = str(self.model_dir)
         self.tokenizer.chat_template = "SYNTHETIC TEMPLATE, NOT NATIVE"
         self.tokenizer.is_fast = True
-        self.tokenizer.backend_tokenizer = SimpleNamespace(to_str=lambda: json.dumps(self.backend))
+        self.tokenizer.backend_tokenizer = SimpleNamespace(to_str=lambda: json.dumps(self.backend, sort_keys=True))
+        self.enterContext(patch.object(receipt, "canonical_official_backend",
+                                     side_effect=lambda raw: json.dumps(json.loads(raw), sort_keys=True).encode("utf-8")))
         self.enterContext(patch.object(receipt, "ROOT", self.source))
         self.enterContext(patch.object(receipt, "EXECUTION_PINS", self.execution_pins))
         self.enterContext(patch.object(receipt, "OFFICIAL_RECEIPT_SHA256", digest(self.official.read_bytes())))
@@ -434,6 +436,45 @@ class TokenizerReceiptTests(unittest.TestCase):
         self.addCleanup(path.unlink)
         with self.assertRaisesRegex(ValueError, "undeclared_tokenizer_or_template"):
             self.binding(receipt._Attempt(self.output))
+
+    def test_backend_mismatch_retains_actual_and_reference(self):
+        self.tokenizer.backend_tokenizer = SimpleNamespace(to_str=lambda: '{"decoder": "mutated"}')
+        with self.assertRaisesRegex(ValueError, "backend_differs"):
+            self.binding(receipt._Attempt(self.output))
+        self.assertEqual((self.output / "loaded_backend.json").read_text(), '{"decoder": "mutated"}')
+        self.assertEqual(json.loads((self.output / "official_native_backend.json").read_bytes()), self.backend)
+
+    def test_restoration_preserves_wrapper_and_installs_exact_backend(self):
+        class Wrapper:
+            def __init__(self, backend):
+                self._tokenizer = backend
+                self.chat_template, self.padding_side = "template", "right"
+                self.eos_token, self.eos_token_id = "end", 1
+                self.pad_token, self.pad_token_id = "pad", 0
+                self.all_special_ids = [0, 1]
+
+            @property
+            def backend_tokenizer(self):
+                return self._tokenizer
+
+        original = SimpleNamespace(to_str=lambda: '{"drift":true}')
+        native = SimpleNamespace(to_str=lambda: '{"official":true}')
+        wrapper = Wrapper(original)
+        raw = (self.model_dir / "tokenizer.json").read_bytes()
+        with patch.object(receipt, "official_native_backend", return_value=native):
+            result = receipt.restore_official_backend(wrapper, self.model_dir,
+                {"tokenizer.json": {"sha256": digest(raw), "size": len(raw)}}, self.output)
+        self.assertIs(wrapper.backend_tokenizer, native)
+        self.assertEqual(result["after_sha256"], result["reference_sha256"])
+        self.assertNotEqual(result["before_sha256"], result["after_sha256"])
+        self.assertEqual((self.output / "before.json").read_text(), original.to_str())
+
+    def test_restoration_rejects_changed_official_bytes_before_backend_load(self):
+        with patch.object(receipt, "official_native_backend") as loader:
+            with self.assertRaisesRegex(ValueError, "official_backend_file_mismatch"):
+                receipt.restore_official_backend(self.tokenizer, self.model_dir,
+                    {"tokenizer.json": {"sha256": "0" * 64, "size": 0}}, self.output)
+        loader.assert_not_called()
 
     def test_package_metadata_is_not_wheel_attestation(self):
         distribution = SimpleNamespace(version="synthetic-version", read_text=lambda name:

@@ -19155,3 +19155,46 @@ Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 55; 
 Reading: Why has Astra been working for four hours on the CPU — is this useful? I am curious what it is doing. Are we not trying to walk memory in context and text, not [only] weights, as well, with SFT? Why are we not doing this testing on hops or anything? We figured we needed this like 12 hours [ago]. Can you audit what has been happening today? Ask Astra to explain its work too, because I see a lot of tokens on reasoning but I do not yet see any progress. I am just genuinely curious; I am not saying we are not doing the right things, but I am curious.
 
 [Fable → Builder] 2026-09-14T05:10Z — Rohin asks you directly: please write a `[Builder -> Rohin]` entry explaining, in plain language, (1) what the CPU work since 21:17Z 09-13 produced and why it was necessary before the next GPU test; (2) when the reduced controller screen (560 calls) and the two-hop-from-weights cell will actually run, and what still gates them; (3) whether an in-context/text memory-walking arm (SFT on trajectories that read memory as text) belongs alongside the weight arm now, or later as the strong opponent. Fable is running an independent audit of today's notebook in parallel and will post it as `[Fable audit]`.
+
+## [Builder -> Rohin] 2026-09-14T05:17Z — CPU work is not yet learning evidence
+
+Your concern is justified: this continuation has not produced a pretrained-model
+forward, weight update, hop-test result, or developmental result. CPU source work
+checked whether the complete training population and held-out tests obey their
+declared boundaries, and built the executable tokenizer/training/readout bridge.
+It found real harness defects (unchanged-X adversaries; insufficient evidence
+buffer bounds), now repaired with failed attempts preserved. The corrected512
+records,209integrity tests and816separation envelopes passed, independently
+checked. That is useful correctness evidence, not evidence that the learner can
+walk memory or learn. Reconstructing large evidence trees and late integration
+checks consumed too much critical-path time; completed source checks will not
+be rerun merely to provide more assurance. Euclid is auditing the earlier hours
+and exact text-arm placement in parallel; a sourced timeline follows.
+
+The next real test remains the selected reduced BASE/D1 controller comparison,
+not another population qualification. Its immediate blocker is now localized:
+native CPU attempt1 at05:04 verified all14official model files and loaded the
+tokenizer, then failed before model load because HF's reconstructed backend
+differs from the official tokenizer. Native JSON canonicalization explains BPE
+serialization changes but NOT four changed backend booleans. We are restoring
+the complete verified official backend, not exempting those keys from checking.
+No GPU training occurred. Original failed root remains immutable onnode2.
+
+Main's non-material fidelity repair pins tokenizers0.22.2, retains before,
+reference and after backend bytes, preserves template/special metadata, and
+compares the complete loaded backend to an independently parsed official
+reference.57focused synthetic tests PASS26.173s. Next: real CPU tokenizer
+restoration check, fresh native preparation attempt2, inspect512token/mask/cost
+rows and base/initial-adapter identity, then reserve devices for the560-call
+screen. These are the remaining native readiness checks; no fresh literature
+or full source gate is added. A clock prediction before CPU model-load timing
+would be invented; stage timings and the first live launch will be reported.
+The actual two-hop-from-weights cell remains downstream, not already executed.
+Text/context memory is a meaningful comparator, not something this source pass
+has tested. Its exact existing protocol and release point are being recovered;
+no claim of weight superiority is warranted without that comparison.
+
+The older Q0 collection-reserve mismatch allegation was retracted by its author:
+do not stop roots or reject terminal evidence on that basis alone. The180s
+selected handoff and earlier1800s design memo are a provenance/resource-history
+distinction, not a newly imposed gate. No Q0 launch or kill in this continuation.

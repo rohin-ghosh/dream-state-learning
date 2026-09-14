@@ -46,7 +46,7 @@ EXECUTION_PINS = {
 REQUIRED_FILES = ("config.json", "generation_config.json", "tokenizer.json",
                   "tokenizer_config.json", "merges.txt", "vocab.json")
 RUNTIME_VERSIONS = {"torch": "2.13.0+cu130", "transformers": "5.5.3",
-                    "peft": "0.20.0", "vllm": "0.27.1", "tokenizers": None}
+                    "peft": "0.20.0", "vllm": "0.27.1", "tokenizers": "0.22.2"}
 MAX_FILE_BYTES = 64 * 1024 * 1024
 MAX_INPUT_BYTES = 4 * 1024 * 1024 * 1024
 MAX_OUTPUT_BYTES = 2 * 1024 * 1024 * 1024
@@ -399,6 +399,48 @@ def _source_gates(attempt, qualification_dir, separation_dir, bound_allocation, 
             "limit": "Existing terminal reports consumed; only retained boundary/allocation artifacts reread, not full custody replay."}
 
 
+def official_native_backend(raw):
+    import tokenizers
+
+    _require(tokenizers.__version__ == RUNTIME_VERSIONS["tokenizers"], "native_tokenizers_version_mismatch")
+    _require(len(raw) <= MAX_FILE_BYTES, "official_backend_byte_bound_exceeded")
+    return tokenizers.Tokenizer.from_str(raw.decode("utf-8"))
+
+
+def canonical_official_backend(raw):
+    return official_native_backend(raw).to_str().encode("utf-8")
+
+
+def restore_official_backend(tokenizer, model_dir, official_files, output_dir):
+    attempt = _Attempt(output_dir)
+    try:
+        raw = attempt.read(Path(model_dir) / "tokenizer.json")
+        expected = official_files["tokenizer.json"]
+        _require(_digest(raw) == expected["sha256"] and len(raw) == expected["size"],
+                 "official_backend_file_mismatch")
+        attempt.write("official.json", raw)
+        before = tokenizer.backend_tokenizer.to_str().encode("utf-8")
+        attempt.write("before.json", before)
+        backend = official_native_backend(raw)
+        reference = backend.to_str().encode("utf-8")
+        attempt.write("reference.json", reference)
+        attributes = ("chat_template", "padding_side", "eos_token", "eos_token_id", "pad_token", "pad_token_id")
+        wrapper = {name: getattr(tokenizer, name) for name in attributes}
+        special_ids = tuple(tokenizer.all_special_ids)
+        tokenizer._tokenizer = backend
+        after = tokenizer.backend_tokenizer.to_str().encode("utf-8")
+        attempt.write("after.json", after)
+        _require(tokenizer.backend_tokenizer is backend and after == reference,
+                 "official_backend_restoration_failed")
+        _require(wrapper == {name: getattr(tokenizer, name) for name in attributes}
+                 and special_ids == tuple(tokenizer.all_special_ids), "backend_restoration_changed_wrapper")
+        return {"kind": "EXACT_OFFICIAL_NATIVE_BACKEND_RESTORATION", "tokenizers": RUNTIME_VERSIONS["tokenizers"],
+                "before_sha256": _digest(before), "reference_sha256": _digest(reference),
+                "after_sha256": _digest(after), "official_sha256": _digest(raw), "wrapper": wrapper}
+    finally:
+        attempt.freeze()
+
+
 def _tokenizer_binding(attempt, tokenizer, model_dir, official_manifest, loaded_files):
     model_dir = Path(model_dir).resolve(strict=True)
     _require(model_dir.is_dir(), "explicit_model_directory_required")
@@ -438,7 +480,10 @@ def _tokenizer_binding(attempt, tokenizer, model_dir, official_manifest, loaded_
     _require(getattr(tokenizer, "is_fast", False) is True and tokenizer.padding_side == "right",
              "fast_right_padding_tokenizer_required")
     backend_raw = tokenizer.backend_tokenizer.to_str().encode("utf-8")
-    _require(len(backend_raw) <= MAX_FILE_BYTES and _json(backend_raw) == documents["tokenizer.json"],
+    attempt.write("loaded_backend.json", backend_raw)
+    reference_raw = canonical_official_backend(attempt.read(attempt.path / "model_tokenizer.json"))
+    attempt.write("official_native_backend.json", reference_raw)
+    _require(len(backend_raw) <= MAX_FILE_BYTES and backend_raw == reference_raw,
              "loaded_backend_differs_from_official_tokenizer")
     _require(documents["tokenizer.json"].get("padding") is None
              and documents["tokenizer.json"].get("truncation") is None, "implicit_backend_padding_or_truncation")
@@ -450,11 +495,11 @@ def _tokenizer_binding(attempt, tokenizer, model_dir, official_manifest, loaded_
                  and getattr(tokenizer, name + "_id") == expected_ids[0], "loaded_special_id_mismatch")
     special_ids = {entry["id"] for entry in documents["tokenizer.json"]["added_tokens"] if entry["special"]}
     _require(set(tokenizer.all_special_ids) == special_ids, "loaded_special_inventory_mismatch")
-    attempt.write("loaded_backend.json", backend_raw)
     attempt.write("loaded_chat_template.txt", tokenizer.chat_template.encode("utf-8"))
     return {"repository": REPOSITORY, "revision": REVISION, "model_directory": str(model_dir),
             "files": files, "loaded_class": type(tokenizer).__module__ + "." + type(tokenizer).__qualname__,
-            "backend_sha256": _digest(backend_raw), "chat_template_sha256": _digest(tokenizer.chat_template.encode("utf-8")),
+            "backend_sha256": _digest(backend_raw), "official_native_backend_sha256": _digest(reference_raw),
+            "chat_template_sha256": _digest(tokenizer.chat_template.encode("utf-8")),
             "eos_token_id": tokenizer.eos_token_id, "pad_token_id": tokenizer.pad_token_id,
             "limit": "File bytes and serialized backend/template match; injected executable class is Main's trust boundary."}
 
