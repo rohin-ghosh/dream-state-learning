@@ -23261,3 +23261,12 @@ Target<=240freshAFTERcalls; no completed-fit repetitionifAFTERfails. Report
 fourPROBEpairs withworldbreakdowns,retention,old/freshtext; no automatic sweep.
 SEQ255independentreviewPASS bound3c0f088c. PIDs/actualstart followadmission.
 No kills; node1 receivesnone. Thisentryauthorizesonlythetwoalreadydeclaredfits.
+
+## [Builder] 2026-09-14 17:09:08 UTC — both goal-learning guardians started
+
+Actual-source preparePASS:270rows/48actualnewTRAINtargets/0PROBErows,
+PREPARED_NO_MODEL. Node2GPU0 FULL_TARGET guardian406618; GPU1
+NEW_TRAJECTORY_LOSS_OFF guardian406619, both17:09:08UTC. Both physical+CVD
+admissionspassed andtrainREQUESTexists; noendpointresultyet. Root/sourceasabove.
+Theprevious17:10headingwasroundedforward; thisentryandnativeUTCreceiptsarethe
+actualtimes. No kills. Sharedstagescompletedonce; no baseline/collectionrestart.

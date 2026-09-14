@@ -1,4 +1,12 @@
-## Current superseding snapshot — 2026-09-14 17:04 UTC
+## Current superseding snapshot — 2026-09-14 17:09:08 UTC
+
+LIVE two400update goallearningfits from37ec:node2GPU0 FULL_TARGET406618,
+GPU1 NEW_TRAJECTORY_LOSS_OFF406619. Sourcef325f9d3, actualCPUpreparePASS,
+bothphysical+CVDadmissionspassed; noresultyet. Root/tmp/astra_goal_pair_train_20260914_attempt1.
+Exactbounds/inspectpathsincurrentHANDOFF. No collectionrepeat;255reviewPASS.
+Carsonowns6draftupdates255; missionACTIVE/INCOMPLETE. NootherMainjobs/no kills.
+
+## Historical superseded snapshot — 2026-09-14 17:04 UTC
 
 SEQ252–255 nativework terminal. No MainGPUjoblive at17:03.254replayfailed,
 recipeCLOSED/reviewPASS.255 actual16EVENT/48TRAINtargets, zero fits,176calls;

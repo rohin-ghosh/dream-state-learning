@@ -1,4 +1,19 @@
-# Astra restart handoff — current override 2026-09-14 17:04 UTC
+# Astra restart handoff — current override 2026-09-14 17:09:08 UTC
+
+## CURRENT — two matched goal-learning fits LIVE
+
+Node2GPU0 FULL_TARGET guardian406618; GPU1 NEW_TRAJECTORY_LOSS_OFF406619,
+bothstarted17:09:08UTC. Root/tmp/astra_goal_pair_train_20260914_attempt1,
+sourcef325f9d3a91ea4f584b97ae17767bbfe1d575678. Main7CPUtestsPASS, worker42PASS;
+actual-sourcepreparePASS270rows/48newtargets/0PROBErows.400updates from37ec,
+thenfreshAFTER<=240calls/arm; guard11220soverall. Inspect eacharm's
+train/{RESULT,FAILED}.json,train/LOSSES.jsonl,after/{RESULT,FAILED}.json,
+launch/ androot/<ARM>.guard.log. No resultyet; never repeatcompletedtrain
+ifonlyAFTERfails. No otherMain-ownedjob; no kills.255independentreviewPASS.
+Carsonowns6draftfiles updating255; latestcommittedwritingthrough254726f209c.
+SEQ254recipeclosednegative. MissionACTIVE/INCOMPLETE. Olderstatusbelowhistorical.
+
+## Historical superseded snapshot — 2026-09-14 17:04 UTC
 
 ## CURRENT — SEQ252–255 terminal; matched goal-learning fits pending
 
