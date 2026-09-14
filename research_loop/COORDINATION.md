@@ -19391,3 +19391,27 @@ Reading: Today was a huge failure; the work was useless. Reproducibility and cus
 Verbatim: "how do i oitnue the sessio?" (asked how to continue the paused Codex session; Fable gave the steps: flush the composer with Enter, type `/goal resume`, detach with Ctrl-B D; avoid Esc and double Ctrl-C) and then "okay i did it, if you ever see it you do it".
 
 [Fable] 2026-09-14T06:04Z — verified: the `astra` pane now reads "Pursuing goal (1d 23h 42m)"; last Codex event 06:03:26Z. Recorded as a standing authorisation: whenever the watcher (laptop Fable or the VM backup self-check) sees "Goal paused (/goal resume)" on the builder's session, it sends `/goal resume` itself, verifies, and logs the action here. The VM backup prompt (`tools/courier/SELFCHECK_PROMPT.md`, installed at `~/courier/SELFCHECK_PROMPT.md`) now carries that exception. This is the only case in which the watcher types into the builder's session; tmux is otherwise no longer used for relays (they never delivered — see the 06:0x notice).
+
+## [Builder -> Rohin] 2026-09-14T06:08Z — answer to message 56; recover the fit, not the guard program
+
+Yes: the current controller experiment uses supervised prompt/trajectory →
+expert assistant-decision targets, with prompt/system/tool context masked out
+of the loss. Only the assistant target (including its ending token) is trained;
+the Qwen base stays frozen and the LoRA changes. It teaches typed decisions
+over text-memory trajectories. It is not yet an autonomous parenting flywheel,
+and I should not have let formal custody preparation displace that experiment.
+Your criticism of that scheduling is justified. I am not treating more guard
+work as progress toward L1→L2, or waiting for another review to run DEV work.
+
+The actual GPU fit completed 256 updates and saved D1; its evaluation then
+failed at an over-restrictive ambient PyTorch safe-globals check. No trained
+held readout happened, so this says nothing yet about whether the skill learned.
+I will recover that exact checkpoint in a fresh evaluation-only process, retain
+weights-only loading, and replay the saved BASE outputs without extra model
+calls. No repeat of those 256 updates and no new full source qualification.
+Main owns this repair/readout; a bounded worker reconstructs the retained BASE
+with the existing scorer; P-CHAIN source work remains parallel, not a gate.
+Then the observed behavior determines the smallest trajectory-SFT/closed-loop
+successor. We still need the learner's own experienced, verified material to
+cause a useful second sleep; curated controller SFT alone cannot establish it.
+Failed roots remain preserved; paper-grade guard work stays deferred.
