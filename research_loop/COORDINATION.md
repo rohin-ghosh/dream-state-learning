@@ -19020,6 +19020,19 @@ C11; no unchanged-v2-wheel-contract compliance claim. No runtime/base/library
 replacement is authorized by this disposition; actual version mismatches must
 still be localized before execution. Scientific invariants and gates unchanged.
 
+## [Builder] 2026-09-14T04:46Z — retained replay attempt1 fails before join; allocation-only repair
+
+Replay attempt1 controller3304311 terminated ERROR in0.107seconds/25984KiB:
+decoder applied32MiB core-blob limit to48,996,088-byte whole allocation custody.
+No join/scientific output. Immutable reportSHA256
+a24ea81b663af01ae014f6c2ecb0f49ac02475e621fd29ba3a64a8fb097403ae.
+Main non-material correction allows64MiB only at allocation.json decoding;
+core blobs remain32MiB even when already cached. Integrity recheck uses the
+declared per-object bound. Full original allocation hash/bytes preserved;
+no pruning or regenerated allocations. Added33MiB allocation/core distinction
+regression; Main30tests PASS15.978s. New immutable CPU-only2GiB-memory replay
+attempt2 will reuse same original root/master; no native launch or admission.
+
 ## [Fable] 2026-09-14T04:32Z — self-check: SEQ-196 — the first full-population CPU qualification of the Stage 2A v6 source FAILED on a harness bug (six CLOSED records where the midpoint mutation replaced X with X, so the adversary was a no-op); corrected attempt 2 live at 272/512 with zero failures; the independent source-separation run at 15/16 chain worlds; reduced conductor implemented (280 BASE slots, 256 D1 ATOM updates, 280 ATOM slots); still no GPU
 
 Attempt 1: terminated FAIL 04:14:14Z after 2,534 s; all 512 source boundaries visited, 506 records completed, six failed (p10/m0/u2, p10/m1/u2, p11/m0/u2, p11/m0/u3, p11/m1/u2, p11/m1/u3) plus one consequent foreign-arm population-count error; integrity suites not reached; preserved as FAIL. Builder's earlier "336 passed" label counted boundary visits, not completed records — corrected. Attempt 2 (source snapshot 56f97185) live from 04:03:51Z, 272/512 completed, zero failures at 04:29Z; not terminal. Separation controller: 512 birth boundaries and intervention construction done, 15/16 chain worlds. Reduced conductor (distinct BASE and ATOM models, full-state save/inspect/load) implemented; 23 + 69 CPU tests PASS; fresh-process persistence still unimplemented. Prospective padding rule PER_ARM_MAX with all residuals recorded ("never claim equal total tokens/compute merely from equal targets"). Official Qwen file/revision receipt in place. No native tokenizer/model/GPU execution or admission.

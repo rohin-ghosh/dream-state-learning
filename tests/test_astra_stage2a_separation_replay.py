@@ -96,6 +96,22 @@ def recovery_fixture(base, *, populate=False, collisions=False):
 
 
 class RetainedDecoderTests(unittest.TestCase):
+    def test_allocation_custody_capacity_does_not_relax_core_bound(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            raw = b"a" * (replay.MAX_BLOB_BYTES + 1)
+            reference = retain(raw, root)
+            decoder = replay.RetainedDecoder(root)
+            with self.assertRaisesRegex(ValueError, "bounded_blob_digest_and_length_required"):
+                decoder.decode(reference)
+            self.assertEqual(decoder.blob(reference, max_bytes=replay.MAX_ALLOCATION_BYTES), raw)
+            decoder.verify_unchanged()
+            with self.assertRaisesRegex(ValueError, "bounded_blob_digest_and_length_required"):
+                decoder.decode(reference)
+            too_large = dict(reference, length=replay.MAX_ALLOCATION_BYTES + 1)
+            with self.assertRaisesRegex(ValueError, "bounded_blob_digest_and_length_required"):
+                decoder.blob(too_large, max_bytes=replay.MAX_ALLOCATION_BYTES)
+
     def test_registry_only_four_classes_and_import_does_not_load_implementation(self):
         self.assertEqual({cls.__name__ for cls in replay.type_registry().values()},
                          {"BirthCoreInputs", "InterventionCoreInputs", "ChainCoreInputs", "ChainCoreBoundary"})

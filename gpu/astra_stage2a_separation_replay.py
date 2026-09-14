@@ -30,6 +30,7 @@ from gpu import astra_stage2a_cpu_separation as snapshot_helper
 
 MEMORY_LIMIT_BYTES = 2 * 1024 * 1024 * 1024
 MAX_BLOB_BYTES = 32 * 1024 * 1024
+MAX_ALLOCATION_BYTES = 64 * 1024 * 1024
 MAX_INDEX_BYTES = 8 * 1024 * 1024
 MAX_INDEX_TOTAL_BYTES = 16 * 1024 * 1024
 MAX_DECODE_NODES = 100000
@@ -173,22 +174,25 @@ class RetainedDecoder:
         self.registry = type_registry()
         self.cache = {}
         self.lengths = {}
+        self.limits = {}
         self.reference_bytes = 0
         self.unique_bytes = 0
         self.nodes = 0
 
-    def blob(self, reference):
+    def blob(self, reference, *, max_bytes=MAX_BLOB_BYTES):
         require(type(reference) is dict and set(reference) == {"bytes_sha256", "length"}, "exact_blob_reference_required")
         checksum, length = reference["bytes_sha256"], reference["length"]
-        require(valid_digest(checksum) and type(length) is int and 0 < length <= MAX_BLOB_BYTES,
+        require(max_bytes in (MAX_BLOB_BYTES, MAX_ALLOCATION_BYTES), "declared_blob_capacity_required")
+        require(valid_digest(checksum) and type(length) is int and 0 < length <= max_bytes,
                 "bounded_blob_digest_and_length_required")
         self.reference_bytes += length
         require(self.reference_bytes <= MEMORY_LIMIT_BYTES, "retained_reference_byte_bound_exceeded")
         if checksum not in self.cache:
-            raw = read_regular(relative_path(self.original, "artifacts/" + checksum), MAX_BLOB_BYTES)
+            raw = read_regular(relative_path(self.original, "artifacts/" + checksum), max_bytes)
             require(len(raw) == length and digest(raw) == checksum, "retained_blob_hash_or_length_mismatch")
             self.cache[checksum] = raw
             self.lengths[checksum] = length
+            self.limits[checksum] = max_bytes
             self.unique_bytes += length
         require(self.lengths[checksum] == length, "duplicate_blob_length_mismatch")
         return self.cache[checksum]
@@ -228,7 +232,7 @@ class RetainedDecoder:
 
     def verify_unchanged(self):
         for checksum, length in self.lengths.items():
-            raw = read_regular(relative_path(self.original, "artifacts/" + checksum), MAX_BLOB_BYTES)
+            raw = read_regular(relative_path(self.original, "artifacts/" + checksum), self.limits[checksum])
             require(len(raw) == length and digest(raw) == checksum, "retained_blob_changed_during_replay")
 
 
@@ -240,7 +244,7 @@ def load_inputs(original, recovery):
         require({"sha256": digest(raw), "length": len(raw)} == recovery["original_files"][name],
                 "retained_index_pin_mismatch")
         if name == "allocation.json":
-            decoder.blob(packed)
+            decoder.blob(packed, max_bytes=MAX_ALLOCATION_BYTES)
         elif name.startswith("birth_"):
             require(type(packed) is dict and set(packed) == {"shared", "records"}
                     and type(packed["records"]) is list and len(packed["records"]) == 16,
@@ -317,6 +321,10 @@ def execute(options):
         require(capture_recovery(original, manifest["source_pins"]) == recovery, "recovery_evidence_changed")
         from organism_v6 import composition_birth_stage2a_separation as separation
         birth, intervention, chain, decoder = load_inputs(original, recovery)
+        print(json.dumps({"stage": "retained_inputs_verified", "birth_records": len(birth),
+                          "intervention_members": len(intervention), "chain_worlds": len(chain),
+                          "unique_bytes": decoder.unique_bytes, "elapsed_seconds": time.time() - started}),
+              flush=True)
         joined = separation.check_held_birth_separation(birth_inputs=birth, intervention_inputs=intervention,
                                                        chain_core_inputs=chain)
         require(joined.counts["chain_boundaries"] == 240, "source_chain_boundary_count_changed")
