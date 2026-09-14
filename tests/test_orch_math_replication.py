@@ -185,6 +185,17 @@ class ReplicationTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 collect_native(self.document, tasks_path, shards)
 
+    def test_known_persistence_service_does_not_exempt_compute_or_cvd(self):
+        snapshot = dict(gpu=dict(index=2, uuid='GPU-test', memory_used_mib=1, utilization_percent=0),
+                        compute_processes=[], processes=[dict(pid=2725, target_device_open=True,
+                        verified_persistence_service=True, cvd=None)])
+        self.assertEqual(evaluate_snapshot(snapshot, 2, 'GPU-test'), [])
+        snapshot['processes'][0]['cvd'] = 'GPU-test'
+        self.assertTrue(evaluate_snapshot(snapshot, 2, 'GPU-test'))
+        snapshot['processes'][0]['cvd'] = None
+        snapshot['compute_processes'] = [dict(pid=2725, gpu_uuid='GPU-test')]
+        self.assertTrue(evaluate_snapshot(snapshot, 2, 'GPU-test'))
+
 
 if __name__ == '__main__':
     unittest.main()

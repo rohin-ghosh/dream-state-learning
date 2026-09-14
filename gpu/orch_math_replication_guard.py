@@ -44,7 +44,7 @@ def evaluate_snapshot(snapshot, index, uuid):
                 reasons.append('reserved_cvd_pid:' + str(process['pid']))
             elif any(not selection.startswith('GPU-') for selection in selections):
                 reasons.append('unknown_numeric_or_special_cvd:' + str(process['pid']))
-        if process.get('target_device_open'):
+        if process.get('target_device_open') and not process.get('verified_persistence_service'):
             reasons.append('open_device_pid:' + str(process['pid']))
     return sorted(set(reasons))
 
@@ -53,9 +53,20 @@ def command_output(command):
     return subprocess.check_output(command, text=True, timeout=20).strip()
 
 
-def scan(index, uuid):
+def scan(index, uuid, service_identity=None):
     if index not in ALLOWED or not uuid.startswith('GPU-'):
         raise ValueError('only_assigned_physical_uuid_scan_allowed')
+    if os.geteuid() != 0:
+        command = ['sudo', '-n', 'env', 'CUDA_VISIBLE_DEVICES=', 'PYTHONDONTWRITEBYTECODE=1',
+                   'python3', str(Path(__file__).resolve()), '--snapshot-only',
+                   '--index', str(index), '--uuid', uuid]
+        if service_identity:
+            command.extend(['--service-identity', str(service_identity)])
+        snapshot = json.loads(subprocess.check_output(command, text=True, timeout=30))
+        if snapshot['blocking_reasons'] != evaluate_snapshot(snapshot, index, uuid):
+            raise ValueError('privileged_snapshot_policy_mismatch')
+        return snapshot
+    expected_service = json.loads(service_identity.read_text()) if service_identity else None
     fields = command_output(['nvidia-smi', '-i', str(index),
               '--query-gpu=index,uuid,memory.used,utilization.gpu', '--format=csv,noheader,nounits']).split(',')
     snapshot = dict(created_utc=datetime.now(timezone.utc).isoformat(), scanner_pid=os.getpid(),
@@ -76,6 +87,7 @@ def scan(index, uuid):
                 continue
             entry['uid'] = directory.stat().st_uid
             entry['command_sha256'] = hashlib.sha256(commandline).hexdigest()
+            entry['start_ticks'] = (directory / 'stat').read_text().rsplit(')', 1)[1].split()[19]
             environment = (directory / 'environ').read_bytes().split(b'\0')
             entry['cvd'] = next((part.split(b'=', 1)[1].decode() for part in environment
                                  if part.startswith(b'CUDA_VISIBLE_DEVICES=')), None)
@@ -85,6 +97,15 @@ def scan(index, uuid):
                     entry['target_device_open'] |= os.readlink(descriptor) == f'/dev/nvidia{index}'
                 except FileNotFoundError:
                     pass
+            if expected_service and entry['pid'] == expected_service['pid']:
+                executable = (directory / 'exe').resolve()
+                entry['executable'] = str(executable)
+                entry['executable_sha256'] = hashlib.sha256(executable.read_bytes()).hexdigest()
+                entry['verified_persistence_service'] = bool(
+                    str(executable) == '/usr/bin/nvidia-persistenced'
+                    and entry['cvd'] is None
+                    and all(entry.get(key) == expected_service.get(key) for key in
+                            ('pid', 'uid', 'start_ticks', 'command_sha256', 'executable', 'executable_sha256')))
         except (FileNotFoundError, ProcessLookupError):
             entry['vanished'] = True
         except (PermissionError, OSError) as error:
@@ -92,6 +113,8 @@ def scan(index, uuid):
         snapshot['processes'].append(entry)
     snapshot['blocking_reasons'] = evaluate_snapshot(snapshot, index, uuid)
     snapshot['clear'] = not snapshot['blocking_reasons']
+    snapshot['scanner_euid'] = os.geteuid()
+    snapshot['service_identity_sha256'] = hashlib.sha256(service_identity.read_bytes()).hexdigest() if service_identity else None
     return snapshot
 
 
@@ -116,21 +139,32 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--index', type=int, choices=sorted(ALLOWED), required=True)
     parser.add_argument('--uuid', required=True)
-    parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--output', type=Path)
+    parser.add_argument('--snapshot-only', action='store_true')
+    parser.add_argument('--service-identity', type=Path)
     parser.add_argument('--launch', action='store_true')
     for name in ('source', 'inventory', 'python', 'bundle', 'model-dir', 'tasks', 'prepared', 'publication'):
         parser.add_argument('--' + name, type=Path)
     options = parser.parse_args()
     require_lease(time.time())
+    if options.snapshot_only:
+        if options.launch or os.geteuid() != 0:
+            raise ValueError('privileged_readonly_snapshot_only')
+        print(json.dumps(scan(options.index, options.uuid, options.service_identity), sort_keys=True))
+        return
+    if options.output is None:
+        raise ValueError('output_required')
     options.output.mkdir(parents=True, exist_ok=False)
     if not options.launch:
-        snapshot = scan(options.index, options.uuid)
+        snapshot = scan(options.index, options.uuid, options.service_identity)
         save(options.output / 'PHYSICAL_SCAN.json', snapshot)
         raise SystemExit(0 if snapshot['clear'] else 3)
     required = (options.source, options.inventory, options.python, options.bundle,
                 options.model_dir, options.tasks, options.prepared, options.publication)
     if any(value is None for value in required):
         raise ValueError('complete_launch_provenance_required')
+    if os.geteuid() == 0:
+        raise ValueError('native_guardian_must_run_unprivileged')
     verify_sources(options.source, options.inventory)
     prepared = json.loads(options.prepared.read_text())
     publication = json.loads(options.publication.read_text())
@@ -141,13 +175,15 @@ def main():
             or publication.get('pre_gpu_evidence_complete') is not True
             or len(publication.get('commit', '')) != 40
             or publication.get('source_inventory_sha256') != hashlib.sha256(options.inventory.read_bytes()).hexdigest()
+            or publication.get('service_identity_sha256') != (
+                hashlib.sha256(options.service_identity.read_bytes()).hexdigest() if options.service_identity else None)
             or publication.get('prepared_sha256') != hashlib.sha256(options.prepared.read_bytes()).hexdigest()):
         raise ValueError('published_cpu_provenance_required')
     for key, relative in (('driver_sha256', 'gpu/orch_math_replication_native.py'),
                           ('policy_sha256', 'organism_v6/orch_math_replication.py')):
         if prepared[key] != hashlib.sha256((options.source / relative).read_bytes()).hexdigest():
             raise ValueError('prepared_source_mismatch')
-    snapshot = scan(options.index, options.uuid)
+    snapshot = scan(options.index, options.uuid, options.service_identity)
     save(options.output / 'PHYSICAL_SCAN.json', snapshot)
     if not snapshot['clear']:
         raise SystemExit(3)

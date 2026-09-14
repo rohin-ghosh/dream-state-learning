@@ -36,3 +36,14 @@ all original outcome values remain unread. Assessment, assumptions,
 falsification, compute recommendation and PI message are in own
 research_notes/analysis/orch_math_replication_20260914_attempt1/ASSESSMENT.md.
 BLOCKER unchanged: authoritative node3 env key needed; no unknown host probe.
+
+2026-09-14T22:45Z [MATH-REPLICATION] Alias resolved by PI: existing
+gpu/ovx2_ssh.sh / OVX2_NODE, physical2–4 only. No earlier results read. Native
+CPU exact portable/base/tokenizer checks pass;16 CPU tests pass on both hosts.
+All three privileged physical UUID/PID+/proc CVD scans pass; ordinary /proc
+permission blocks and sole independently hash-bound nvidia-persistenced
+service identity are preserved in own preGPU evidence. Operational guardian
+repair only; frozen science/prompt/cohort/policy/runner bytes unchanged.
+Publishing preGPU source25a0d9b4816a3ffcc5e5ac9d3e160493a60f04c1f91a93dedd577029d01e7030.
+Terminal-ready after push: REQUEST ORDERED SEQ for assigned node3 GPU2/3/4
+shards, <=45min and<=128 total calls. No Fable/parent gate requested.
