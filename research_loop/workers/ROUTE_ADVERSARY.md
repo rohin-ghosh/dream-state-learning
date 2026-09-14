@@ -86,3 +86,25 @@ then copied intact to new node3 /tmp/orch_route_adversary_20260914_attempt1.
 Historical roots remain read-only. No attempt to create privileged node dirs.
 Main authorized worker-only EOF notebook lines and exact-path commits/pushes;
 BOARD publication 9a9593af is received, no PI serial review gate.
+
+## 2026-09-14T22:07Z — pre-native resource repair
+
+First CPU prepare passed: 24 frozen cases;48 continuation prompts;maximum644
+tokens (limit2048),zero model calls. Native input binding passed for the three
+saved actors, raw exposure inventories, historical missing population and local
+base/tokenizer files. PREPARE hash2271a49a1ef8109efe1be567e29123a4109ca5859b770a9002ed87297eac91cf.
+
+Before launching I identified and repaired a fail-open in my resource scanner:
+unreadable environments were reported but did not veto launch. New scanner uses
+the existing frozen operational service identity bindings (two exact UID/PID/
+start-ticks/boot-ID/parent/content hashes), scans same-UID live environments,
+checks all-UID physical GPU holders, and rejects every unresolved same-UID live
+process. It never selects or kills by process name. This is an operational repair,
+not a science change; new regression tests cover unknown-process and identity/
+content drift rejection. Native calls remain zero. Preserve first archive and
+CPU prepare, then freeze repaired source under the same attempt1/revision2 root.
+
+Clarification for readout: lacking complete positive path-source support is an
+operational diagnostic, not proof that inference is impossible. The branching
+structure may support elimination. There is no abstention command in this API.
+No SEQ requested until terminal comparison; main allocates the next result SEQ.

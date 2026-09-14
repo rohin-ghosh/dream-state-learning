@@ -25,6 +25,8 @@ OWN_FILES = ('gpu/orch_route_adversary.py', 'gpu/orch_route_adversary_guard.sh',
     'organism_v6/orch_route_adversary.py', 'tests/test_orch_route_adversary.py',
     'research_notes/analysis/orch_route_adversary_20260914_protocol.md')
 LEASE = '2026-09-19T00:00:00+00:00'
+SERVICE_FILE = Path('/tmp/astra_goal_scale_20260914_attempt1/service_exceptions.json')
+SERVICE_SHA = 'c45c8724dc88ab42bd594e1dfb7d1bb68726507d7af997fc306aafc300d49cbc'
 
 
 def write(path, document):
@@ -33,7 +35,24 @@ def write(path, document):
         stream.write('\n')
 
 
+def process_identity(path, boot):
+    fields = (path / 'stat').read_text().rsplit(')', 1)[1].split()
+    return dict(pid=int(path.name), pgid=int(fields[2]), sid=int(fields[3]),
+                start_ticks=int(fields[19]), uid=path.stat().st_uid, boot_id=boot), fields[0], int(fields[1])
+
+
+def verify_service(path, identity, parent, services):
+    binding = services.get(int(path.name))
+    source.require(binding is not None and identity == binding['identity'] and parent == binding['ppid'],
+                   'unreadable_process_not_bound_service')
+    for name in ('comm', 'cmdline', 'cgroup'):
+        source.require(source.file_hash(path / name) == binding[name + '_sha256'], 'service_identity_bytes_drift')
+
+
 def scan(index, uuid):
+    source.require(source.file_hash(SERVICE_FILE) == SERVICE_SHA, 'operational_service_binding_drift')
+    services = {entry['identity']['pid']: entry for entry in source.read(SERVICE_FILE).values()}
+    boot = Path('/proc/sys/kernel/random/boot_id').read_text().strip()
     inventory = subprocess.check_output(['nvidia-smi', '--query-gpu=index,uuid,memory.used',
         '--format=csv,noheader,nounits'], text=True)
     processes = subprocess.check_output(['nvidia-smi', '--query-compute-apps=gpu_uuid,pid,used_memory',
@@ -41,26 +60,43 @@ def scan(index, uuid):
     gpu_rows = [line.split(', ') for line in inventory.splitlines()]
     source.require(any(row[0] == str(index) and row[1] == uuid for row in gpu_rows), 'physical_uuid_index_drift')
     holders = [line for line in processes.splitlines() if uuid in line]
-    cvd_rows, unreadable = [], []
+    cvd_rows, unreadable, service_matches = [], [], []
     for proc in Path('/proc').iterdir():
         if not proc.name.isdigit():
             continue
         try:
-            entries = (proc / 'environ').read_bytes().split(b'\0')
+            if proc.stat().st_uid != os.getuid():
+                continue
+            before, state, parent = process_identity(proc, boot)
+            if state == 'Z':
+                continue
+            try:
+                entries = (proc / 'environ').read_bytes().split(b'\0')
+            except PermissionError:
+                verify_service(proc, before, parent, services)
+                after, state, parent = process_identity(proc, boot)
+                source.require(before == after and state != 'Z', 'service_process_changed_during_scan')
+                verify_service(proc, after, parent, services)
+                service_matches.append(before)
+                continue
+            after, state, unused_parent = process_identity(proc, boot)
+            source.require(before == after, 'process_identity_changed_during_scan')
             cvd = [entry.decode(errors='replace').split('=', 1)[1] for entry in entries
                    if entry.startswith(b'CUDA_VISIBLE_DEVICES=')]
             for value in cvd:
                 devices = value.split(',')
-                if str(index) in devices or uuid in devices or any(
+                if str(index) in devices or uuid in devices or 'all' in devices or any(
                         uuid.startswith(device) for device in devices if device.startswith('GPU-')):
-                    cvd_rows.append(dict(pid=int(proc.name), uid=proc.stat().st_uid, cvd=value))
-        except PermissionError:
-            unreadable.append(int(proc.name))
+                    cvd_rows.append(dict(identity=before, cvd=value))
         except (FileNotFoundError, ProcessLookupError):
             pass
+        except Exception as error:
+            unreadable.append(dict(pid=int(proc.name), error_type=type(error).__name__, message=str(error)))
     return dict(utc=datetime.now(timezone.utc).isoformat(), index=index, uuid=uuid,
         inventory=inventory, gpu_processes=processes, holders=holders, cvd_rows=cvd_rows,
-        unreadable_environ_pids=unreadable, free=not holders and not cvd_rows)
+        unresolved_same_uid_processes=unreadable, bound_service_identities=service_matches,
+        service_binding_sha256=SERVICE_SHA, scope='ALL_UID_GPU_HOLDERS_AND_SAME_UID_LIVE_CVD',
+        free=not holders and not cvd_rows and not unreadable)
 
 
 def input_files(options):

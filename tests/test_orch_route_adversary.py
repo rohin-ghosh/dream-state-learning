@@ -80,3 +80,29 @@ def test_native_failure_is_retained_not_retried():
 def test_duplicate_or_incomplete_results_rejected():
     with pytest.raises(ValueError):
         probe.summarize([])
+
+
+def test_unreadable_unknown_process_fails_closed(tmp_path):
+    from gpu import orch_route_adversary as driver
+
+    path = tmp_path / '123'
+    with pytest.raises(ValueError, match='unreadable_process_not_bound_service'):
+        driver.verify_service(path, dict(pid=123), 1, {})
+
+
+def test_bound_service_requires_exact_identity_and_bytes(tmp_path):
+    from gpu import orch_route_adversary as driver
+
+    path = tmp_path / '123'
+    path.mkdir()
+    identity = dict(pid=123, start_ticks=1)
+    entry = dict(identity=identity, ppid=1)
+    for name in ('comm', 'cmdline', 'cgroup'):
+        (path / name).write_text('fixture_' + name)
+        entry[name + '_sha256'] = driver.source.file_hash(path / name)
+    driver.verify_service(path, identity, 1, {123: entry})
+    with pytest.raises(ValueError, match='unreadable_process_not_bound_service'):
+        driver.verify_service(path, dict(identity, start_ticks=2), 1, {123: entry})
+    (path / 'cmdline').write_text('drift')
+    with pytest.raises(ValueError, match='service_identity_bytes_drift'):
+        driver.verify_service(path, identity, 1, {123: entry})
