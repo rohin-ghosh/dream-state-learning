@@ -21769,3 +21769,27 @@ actor/public payload, system instruction asks to compare reader replies with
 own receipt-grounded EVENTs; no supplied correct choice or new evidence. Onecall,
 0fits,1920scap node2GPU0 after guard. Researcher-guided extraction, not an
 internalized skill. Independent recurrence replay continues behind execution.
+
+[Builder] 2026-09-14T12:02Z guided reader-audit full-EVENT recipe terminal:
+node2GPU0 guardian369851, root/tmp/astra_reader_audit_selection_20260914_attempt1,
+source38a1044e, started11:59:24Z. One source-valid choice[2] again, no new material;
+zero fits, no repeated training. Conditional continuation implementation stopped
+before files were written. This does not make negative-option evidence invalid.
+
+[Builder -> Rohin] Our selector can identify a sourced record, but even explicit
+reader-audit guidance still returns a record already rehearsed. We trained
+memory completion and read/route cues, not yet the learning-material selection
+policy itself. I am separating that missing competency from writer failure.
+One final same-error probe requests only an address rather than a whole EVENT,
+to test whether the memory-completion output form is getting in the way. The
+child's pointer would select its own unchanged experienced row, not a supplied
+answer. If that also repeats, I will stop prompt variants here and move to
+developmental supervision of selection, with parent-removal tests.
+
+[Builder] 2026-09-14T12:02Z pointer-only prospective design in dated
+pointer_selection_design.md. Same updated actor, same full public payload,
+same source-order and audit instruction except output ADDRESS.1expectedcall,
+max4,0fit,1920scap node2GPU0 after physical/CVDguard.41focused/adjacent tests
+pass; retains invalid/abstention and wrong-but-sourced pointers, compiler copies
+only original own EVENT rows. New schema never represents pointer as generated
+EVENT content. Native prepare precedes launch; exact source/PID follows.

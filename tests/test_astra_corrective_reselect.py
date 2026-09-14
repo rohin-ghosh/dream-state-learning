@@ -50,6 +50,31 @@ class ReselectionTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             runner.apply_recipe(original, 'unknown')
 
+    def test_pointer_selection_keeps_wrong_sourced_choices_and_raw_output(self):
+        for raw, expected in [('ADDRESS ', 2), ('EVENT ', None), ('NONE', None)]:
+            with self.subTest(raw=raw), TemporaryDirectory() as temporary:
+                cases = runner.apply_recipe(self.prepare(), 'reader_audit_pointer')
+                engine = MagicMock()
+                emitted = raw + cases['sources'][2]['event'] if raw != 'NONE' else raw
+                engine.generate.return_value = dict(raw=emitted, terminal=True, truncated=False)
+                root = Path(temporary)
+                runner.select_pointers(engine, cases, root, {})
+                selected = runner.source.read(root / 'SELECTION.json')
+                self.assertEqual(selected['chosen_source_indexes'], [expected] * cases['expected_calls'])
+                self.assertEqual(selected['captures'][0]['response']['raw'], emitted)
+                if expected is not None:
+                    self.assertEqual(selected['selections'][0]['mechanically_selected_event'],
+                                     cases['sources'][2]['raw'])
+
+    def test_pointer_changes_only_output_instruction(self):
+        self.assertNotEqual(runner.POINTER_SYSTEM, runner.READER_AUDIT_SYSTEM)
+        self.assertIn('Return only ADDRESS <event_id>', runner.POINTER_SYSTEM)
+        before = runner.apply_recipe(self.prepare(), 'reader_audit')
+        after = runner.apply_recipe(self.prepare(), 'reader_audit_pointer')
+        self.assertEqual(before['sources'], after['sources'])
+        self.assertEqual([case['messages'][1] for case in before['cases']],
+                         [case['messages'][1] for case in after['cases']])
+
     def test_ancestor_uniform_or_wrong_receipt_rejected(self):
         for key, value in dict(loaded_adapter_state_sha256='ancestor', replay_arm='UNIFORM_REPLAY',
                 corrective_training_result_sha256='wrong', phase='readout', state='BEFORE', fits=1,

@@ -23,10 +23,16 @@ READER_AUDIT_SYSTEM = (
     'AT <source> DID <port> GOT <destination> EVIDENCE <receipt_id>, with no rationale '
     'or other text. Preserve every identifier exactly. If unable to select, return NONE alone.'
 )
+POINTER_SYSTEM = READER_AUDIT_SYSTEM.replace(
+    'Return only that exact EVENT using EVENT <event_id> AT <source> DID <port> '
+    'GOT <destination> EVIDENCE <receipt_id>, with no rationale or other text.',
+    'Return only ADDRESS <event_id> for that already-experienced EVENT, '
+    'with no rationale or other text.'
+)
 
 
 def apply_recipe(cases, recipe):
-    require(recipe in ('original', 'reader_audit'), 'unknown_selection_recipe')
+    require(recipe in ('original', 'reader_audit', 'reader_audit_pointer'), 'unknown_selection_recipe')
     if recipe == 'original':
         return cases
     changed = driver.adult._copy(cases)
@@ -34,11 +40,59 @@ def apply_recipe(cases, recipe):
         if attempt['public_mismatch']:
             require(attempt['messages'][0] == dict(role='system', content=selector.SYSTEM),
                     'original_selector_instruction_required')
-            attempt['messages'][0]['content'] = READER_AUDIT_SYSTEM
+            attempt['messages'][0]['content'] = (POINTER_SYSTEM if recipe == 'reader_audit_pointer'
+                                               else READER_AUDIT_SYSTEM)
     changed['cases'] = [attempt for attempt in changed['attempts'] if attempt['public_mismatch']]
     changed.pop('preparation_sha256')
     changed['preparation_sha256'] = selector.document_sha256(changed)
     return changed
+
+
+def select_pointers(engine, cases, output, provenance):
+    plan = driver.adult._copy(cases)
+    claimed_hash = plan.pop('preparation_sha256')
+    require(claimed_hash == selector.document_sha256(plan), 'pointer_preparation_drift')
+    require(cases['expected_calls'] == len(cases['cases']) <= selector.MAX_CALLS,
+            'bounded_pointer_calls')
+    source.write(output / 'CORRECTION_CASES.json', cases)
+    source.write(output / 'CORRECTION_SOURCE.json', provenance)
+    captures, selections = [], []
+    for index, case in enumerate(cases['cases']):
+        capture = dict(call_index=index, route_index=case['route_index'], messages=case['messages'],
+                       response=None, error=None)
+        selection = dict(call_index=index, admitted=False, source_index=None, selected_event=None,
+                         row_source_indexes=[], error=None)
+        try:
+            capture['response'] = engine.generate(case['messages'], max_new_tokens=source.MAX_NEW_TOKENS)
+            response = driver.adult._generation(capture['response'], case['messages'])
+            pointer = response['raw'].rstrip('\n')
+            if pointer == 'NONE':
+                selection['status'] = 'ABSTAINED'
+            else:
+                matches = [entry for entry in cases['sources'] if pointer == 'ADDRESS ' + entry['event']]
+                require(len(matches) == 1, 'pointer_not_exact_source_address')
+                entry = matches[0]
+                selection.update(admitted=True, status='SOURCED_POINTER_NOT_UTILITY',
+                    source_index=entry['source_index'], selected_event=entry['event'],
+                    row_source_indexes=entry['row_source_indexes'],
+                    mechanically_selected_event=entry['raw'], source_raw_sha256=entry['source_raw_sha256'])
+        except Exception as error:
+            selection.update(status='REJECTED', error=repr(error))
+            if capture['response'] is None:
+                capture['error'] = repr(error)
+        captures.append(capture)
+        selections.append(selection)
+        source.write(output / ('CALL_%03d.json' % index), capture)
+    record = dict(schema='DEV_OWN_EVENT_POINTER_SELECTION_V1', fits=0, model_calls=len(captures),
+        captures=captures, selections=selections, admitted_selections=sum(item['admitted'] for item in selections),
+        chosen_source_indexes=[item['source_index'] for item in selections],
+        preparation_sha256=claimed_hash, source_document_sha256=cases['source_document_sha256'],
+        compiler='EXACT_ADDRESS_LOOKUP_COPIES_ORIGINAL_OWN_EVENT_NOT_GENERATED_CONTENT')
+    source.write(output / 'SELECTION.json', record)
+    return dict(model_calls=len(captures), fits=0, admitted_selections=record['admitted_selections'],
+                selection_sha256=source.file_hash(output / 'SELECTION.json'),
+                training_admission='SOURCE_VALID_POINTER_ONLY_NO_FIT_AUTHORIZATION',
+                claim='GUIDED_SOURCE_POINTER_SELECTION_NOT_NEW_EVENT_AUTHORSHIP_OR_INTERNALIZED_EXTRACTION')
 
 
 def prepare_after(collection, after, request, panels, records, train, train_sha256):
@@ -106,7 +160,7 @@ def main(argv=None):
     parser.add_argument('--output', required=True)
     parser.add_argument('--gpu-uuid', required=True)
     parser.add_argument('--prepare-only', action='store_true')
-    parser.add_argument('--recipe', choices=('original', 'reader_audit'), default='original')
+    parser.add_argument('--recipe', choices=('original', 'reader_audit', 'reader_audit_pointer'), default='original')
     options = parser.parse_args(argv)
     require(os.environ.get('HF_HUB_OFFLINE') == '1' and os.environ.get('TRANSFORMERS_OFFLINE') == '1',
             'offline_required')
@@ -148,7 +202,8 @@ def main(argv=None):
             before = _state_hash(parameters)
             require(bool(parameters) and before == provenance['expected_actor_state_sha256'],
                     'actual_after_actor_required')
-            result.update(driver.select_corrective(engine, cases, output, provenance))
+            select = select_pointers if options.recipe == 'reader_audit_pointer' else driver.select_corrective
+            result.update(select(engine, cases, output, provenance))
             engine.verify_base()
             require(_state_hash(parameters) == before, 'read_only_adapter_changed')
             for name, digest in provenance['adapter_files'].items():
