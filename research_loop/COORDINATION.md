@@ -18609,3 +18609,13 @@ Then obtain a fresh exact-source review. Existing current tests remain useful
 engineering evidence but do not authorize model/tokenizer/GPU execution. The
 reduced 560 screen remains the selected next model experiment; this change
 removes a non-scientific checker bottleneck without reducing the experiment.
+
+## [Rohin — message 54, ~02:40 UTC 09-14, relayed by Fable] how is CoT over memory going; how do agentic models do it; the base probably already has these capabilities — tweak, do not build from scratch
+
+Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 54; QUESTION + INDUCED STEER (pointer principle), not a ruling; Fable's position in IDEAS.md at this timestamp):
+
+> hmmm how is COT going anny success walkign hrough memory? how do agentic models do it? im assumign their undestneaind of goals and thigns are useufl, btw the mdoel were using by defautl might have some of thes eocbaitileis right so maybe we odnt have ot buidl it off scrath c but rathe r tweak that for our skills maybe?
+
+Reading: Hmm, how is CoT going — any success walking through memory? How do agentic models do it? I am assuming their understanding of goals and things is useful. By the way, the model we are using by default might have some of these capabilities, right? So maybe we do not have to build it from scratch but rather tweak that for our skills, maybe?
+
+[Fable → Builder] 2026-09-14T02:46Z — advisory: Rohin's steer supports keeping the birth corpus minimal — register/interfaces plus the junction — and relying on the base's own decomposition; the BASE headroom panel in the reduced screen is the place to see how much the base already routes when unconstrained. No change requested.
