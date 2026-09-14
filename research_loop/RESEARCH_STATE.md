@@ -1,6 +1,6 @@
 # Research state — Orchestrator
 
-Updated 2026-09-14 22:30 UTC. Mission ACTIVE / INCOMPLETE. Wave W1/W2.
+Updated 2026-09-14 22:39 UTC. Mission ACTIVE / INCOMPLETE. Wave W1/W2.
 Authoritative steering: Rohin's current launch instruction and raw messages
 42–78 (78 read22:28UTC); next full raw-message reread by23:50UTC.
 Check notebook updates every orchestration cycle, not just every two hours.
@@ -356,6 +356,35 @@ Fable22:22 VERIFIED267 is now ingested: finite Taxi counts independently
 re-derived; its semantic16-turn labels remain author-side. Deallocation unchanged.
 STATE first, BOARD second, assignment after publication.
 
+## 22:39 UTC reader ingestion and actual execution status
+
+Fable's22:33UTC independent read marks268,269,270 VERIFIED for the specified
+finite counts, call totals and available hashes. This changes confidence in
+those observations, not promotion or their causal interpretation.268 still
+has four scripted READs and reference2/3 pairs;269 still has empty stores;
+270 still has0/4scale-ready families. Reader re-counted author semantic labels,
+not an independent full-text semantic adjudication. It did not compare268
+base/adapter state fields or rederive270's unchanged-adapter claim from the
+shard fields checked. Preserve these explicit verification limits.
+
+No newly allocated science changes follow from this verification alone.
+Independent cohorts are already running/preparing; no exact null rerun.
+Blind route source collector launched22:32 on node3GPU5, guardian97349/native
+97358, automatically followed by three fresh readouts on0/1/5 under fixed caps.
+MATH-RECORD genuinely generating: ACTOR_READY4/4 at22:36:49, first persisted
+call22:36:55; deadline23:20:59.64fixed questions retain2question-only gold
+concerns (one ambiguous,one suspect), excluded from admission, not denominator.
+No paired outcome or admission claim yet. TextWorld and code CPU/preGPU
+receipts exist; launches are not inferred merely from publication. Breadth
+worker is Plato; its protocolf0a93ca7 is published, stale merge wait cleared.
+
+Measured controller memory22:36:36:7.0GiB available, swap nearly full. Fable's
+earlier2.2GiB sample is a real historical warning, not current capacity. Keep
+six existing distinct workers now, no extra local model loads; reassess if
+available RAM falls below3GiB. Never kill another project/process to free RAM.
+Public fetch approvals must be respected; no alternative client is used to
+bypass a pending or denied runtime approval. Cached approved inputs are fine.
+
 ## Active uncertainties and surprises
 
 1. Which off-the-shelf pools show a measured rich-over-terse reasoning gap AND
@@ -366,10 +395,10 @@ STATE first, BOARD second, assignment after publication.
    above matched loss-off and a fixed deterministic reference without erasure?
 4. Does a persistent task benefit from accumulated records across sleeps,
    beyond in-context scaffolding? Two independent gym proposals address this.
-5. Which SEQ266 behaviors survive source/display intervention? Adversary's
-   independent initial design reports accidental exposure to the BOARD result
-   row during an ownership search. Do NOT call it fully blinded. A fresh
-   blind replication worker is required when a worker slot becomes available.
+5. Do SEQ268's narrow source/display contrasts extend to a fresh cohort?
+   Adversary disclosed initial BOARD exposure and scripted READ scaffolding.
+   Fermat's separately frozen blind prospective cohort is underway; it cannot
+   establish independent training-seed replication. Broader3seed fits are separate.
 
 ## Priority frontier and allocation rationale
 

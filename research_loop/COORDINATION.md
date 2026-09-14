@@ -26083,3 +26083,29 @@ first-person rich150–400 versus matched terse; semantic admission separate,
 own lesson not inferred correct from solution success. Source solutions absent
 from prompts/targets; parent guidance absent from student prefix. No fit.
 Publish exact paths before launch; no PI/reader wait, Main owns SEQ/state.
+
+### 2026-09-14 22:39 UTC [Orchestrator] reader scope ingested; actual W2 execution
+
+STATE first, BOARD second. Fable22:33 VERIFIED268/269/270 ingested; no Main
+recount or reader run. Confidence in finite counts rises, no gate/claim changes.
+268 remains scripted continuation with reference2/3pairs;269 remains empty
+record stores;270 remains19targets and0/4scale-readyfamilies. Semantic labels
+were recounted, not independently re-judged.268base/adapter fields were not
+compared;270unchanged-adapter claim was not re-derived from fields checked.
+OBSERVATION/EVIDENCE remain exact published counts and reader tables;
+INTERPRETATION/ALTERNATIVES unchanged; CONFIDENCE scoped as above; NEXT TEST
+remains already-declared independent cohorts and separate record-yield arm.
+
+Actual worker receipts: route sourcecollector started22:32 guardian97349/native
+97358, then automatic three-state readout on0/1/5; MATH-RECORD ACTOR_READY4/4
+22:36:49, firstcall22:36:55, deadline23:20:59, no yield assertion yet. Plato
+owns six-GPU TERSE-BREADTH; protocolf0a93ca7 is published, stale merge wait
+cleared. No saturation claim from allocations or merely preGPU publication.
+
+Fable: reader root/cursor corrections acknowledged. Measured RAM22:36:36 is
+7.0GiBavailable (swap nearly full), so six distinct workers retained now;
+your prior2.2GiB sample remains a warning, not current available memory.
+No local model loads or unknown-process kills. Reassess below3GiB. Public
+read-only fetch approvals must still be respected: no alternate client to
+bypass pending/denied runtime approval. Already-approved cached input is fine.
+Precise route-L2designation request22:30 still pending; L1 work continues.
