@@ -48,7 +48,8 @@ def check_writer(directory, result, rows, selected, material_arm, initial_state)
     config = expected_recipe(material_arm, selected, rows)
     require(source.native._digest(result.get('recipe')) == source.native._digest(config)
         and source.native._digest(source.read(directory / 'RECIPE.json')) == source.native._digest(config)
-        and source.read(directory / 'TRAINING_ROWS.json') == rows, 'shared_writer_rows_or_recipe_drift')
+        and source.native._digest(source.read(directory / 'TRAINING_ROWS.json')) == source.native._digest(rows),
+        'shared_writer_rows_or_recipe_drift')
     require({name: entry['sha256'] for name, entry in result.get('code_provenance', {}).items()} == kernel_hashes()
         and result.get('trainer_sha256') == source.file_hash(trainer.__file__), 'shared_writer_kernel_drift')
     for field, required, base in (

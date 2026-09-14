@@ -111,6 +111,18 @@ def arguments(root, options, phase, training=None):
 
 
 class TransferWriteTests(unittest.TestCase):
+    def test_native_tuple_cues_match_saved_json_but_changed_content_rejects(self):
+        with TemporaryDirectory() as temporary:
+            directory = Path(temporary)
+            rows = dict(memory_rows=[], cue_rows=({'cue': 'unchanged'},), lesson_rows=[],
+                        new_rows=[{'event': 'E_%d' % index} for index in range(4)])
+            result = writer_fixture(directory, {'rows': rows}, [1, 1])
+            runner.check_writer(directory, result, rows, [1, 1], 'SELECTED', runner.INITIAL_STATE)
+            altered = deepcopy(rows)
+            altered['cue_rows'][0]['cue'] = 'changed'
+            with self.assertRaisesRegex(ValueError, 'shared_writer_rows_or_recipe_drift'):
+                runner.check_writer(directory, result, altered, [1, 1], 'SELECTED', runner.INITIAL_STATE)
+
     def test_import_is_cpu_only(self):
         script = """
 import builtins
