@@ -24452,3 +24452,51 @@ content status, not a learned-reflection claim.
 **Fleet:** a40 0/8, ovx 0/8, ovx2 2/8 (poll caught 2 of the 3 quality processes above 1 GB), a100 4/8 (V3; critique/repeat loading) — 9 GPUs reserved and running of 32 outside node 1; node 2 empty. VM: astra_nudge=1 fable_fill=1 courier_vm=1, heartbeat 11 s, astra tmux alive, Pursuing goal / Working, not paused; root 2.7 GB free. Laptop chains 4/4. Node-1 lease ends 23:14 UTC (~3.2 h); mirror complete; node 1 receives no new work. Next from the watcher: the fresh-thread launch prompt and pack for Rohin's approval. Nothing launched or killed by the watcher.
 
 **[Fable] 2026-09-14T20:05Z — fresh-orchestrator launch pack drafted for Rohin's approval:** research_notes/FRESH_ORCHESTRATOR_LAUNCH_2026-09-14.md — (A) the reading order for the new thread (raw messages 42–72, SUCCESSES_AND_LAWS, the builder's handover memo, the swarm spec, the swarm survey, IDEAS, open ledger rows); (B) the operational plan: separate clone ~/dream-state-orch, tmux session astra2 with the same launcher (model and key from the wrapper/env), start boundary node 2 GPUs 0–7 + node 3 GPUs 3–7 + A100 6–7, old-thread reservations read from BOARD.md and never touched, reader/nudger/self-check extended to both sessions, tags [Orchestrator]/[Worker <name>]; (C) the launch prompt in Rohin's words with explicit numbers (≥ 18 GPUs busy within 90 min; two content-bearing gyms with deterministic oracles — unit-tested code in a persistent codebase, checked-answer math with reusable lemmas — each with level-1 mining / level-2 / held level-3 pools; ≥ 5,000 rubric-passing rich rows by 08:00 UTC; ≥ 4 matched fit pairs of ≥ 5,000 updates; the level-2 slope test vs a frozen twin) and explicit prohibitions (no custody gates before success, no serial admission, no authored corpora, never touch the old thread's GPUs/roots/checkout); (E) three questions for Rohin. Nothing launches until he approves. Builder: the pack cites your handover memo and BOARD.md as the boundary source; corrections welcome in the notebook.
+
+## [Builder/Schrodinger] 2026-09-14T20:08Z — SEQ264 terminal; full public review packet ready
+
+Primary published in a5534d1c, merged/pushed via588a3dde after preserving both
+concurrent Parfit/Fable notebook appends without force/stash/reset:
+`research_notes/analysis/2026-09-14_rich_action_first_v3_collection_first_result.md`.
+Exact executed source80368f94; all four guards/native processes finished on
+A1000–3, post-run physical check0MiB/0percent. Main may reassign these idle
+slots. No further launch, rerun, fit, or V1/V2 reclassification.
+
+All four native stages COMPLETE. Shard calls93/96/92/91; strict action-complete
+14/16/12/14; per-view candidates84/96/72/84. Total372actual native calls,
+64attempted episodes,56six-command-complete episodes,336UNREVIEWEDrows/form.
+Actual goal arrivals58/64 include two three-read arrivals excluded by the
+fixed curriculum gate. All16TRAINworlds represented;9complete four-task worlds;
+24/32matched-order goal pairs. Eight failures retained:3invalid subsequent
+routes,2parser failures,2short-of-plan arrivals,1source coaching stop before
+native generation. The latter gives373actor invocations but372native calls.
+No native generation error, nonterminal response or truncation.
+
+All64initial public/coached prompts AND actual raw responses match V2 exactly.
+The62colon-header execution stops are prospectively removed; this does not
+certify reasoning/content. All four frozen-source replay/native CALL/row/state/
+base/metrics joins pass at37ec, downloaded inventories rechecked. Summed phase
+wall2538.337s (0.705094A100phase-hours, not metered kernel time);209921prompt
+and47082generatedtokens. No equal-compute or learning-benefit claim.
+
+**Ramanujan/Main can review now**, all56episodes/336turns, public-only:
+`gpu_artifacts_local/astra_rich_action_first_v3_terminal_20260914_attempt1/CONTENT_REVIEW_INPUTS.json`
+SHA256 `b7e19b81e347ee0c0e89f97e669f32fd9bef8513067233ab1355962eb76bc92b`.
+V2 packet shape plus native file/hash references; actual student_prefix/raw/
+projection/call/source IDs only, no teacher prompts/source plans/PROBE/future
+observations. Shared content contract3476a141 remains bound. Ramanujan reviews
+all turns; Main audits disagreements and accepted samples. fit_ready=False;
+no fit before corpus/content decision. V2 both episodes remain excluded.
+
+Local terminal capsule:
+`gpu_artifacts_local/astra_rich_action_first_v3_terminal_20260914_attempt1/terminal.tar.gz`
+SHA256 `b8b9d7e1eb1b2bda37b602d6c6ea7f26e4b6362371803ce8c3e7edac8d3ca633`,
+matching A100 `/tmp/astra_rich_action_first_v3_20260914_attempt1_terminal.tar.gz`.
+Extracted under same local directory's
+`extracted/astra_rich_action_first_v3_20260914_attempt1/`; includes review packet
+and CPU_REPLAY_CHECK.json SHA
+`b09238260a5ea5600aa60c0ba4d37606186a257966955b3611968c63b4008e63`.
+Separate exact source archive8671cda5 is retained. Prospective source/protocol/
+CPU/prepare receipt7434b4a4 preceded launch19:52:06; native PID receiptf07866f5;
+final stage finished20:03:03.545UTC. Parfit acknowledged and uses V3 prefix API.
+Code/execution work released; branch's next step is content review, not fitting.
