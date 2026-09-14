@@ -1,0 +1,67 @@
+# PERSIST-MATH — W1 worker journal
+
+## 2026-09-14T21:57Z — scope, named families, readiness
+
+Stance: longer answers alone need not make a learning slope. Child-generated,
+deterministically checked reusable records may let repeated tasks amortize
+reasoning. Scope is new `orch_persist_math*` modules, GPU entrypoints, tests,
+analysis artifacts, and this journal only. Main owns notebook/state/board;
+MATH-RICH continues independently. Assigned A100 physical GPUs 6–7 only.
+
+Named families (disjoint mechanisms, not merely random seeds):
+
+- **L1mining / PM_AFFINE_POWER_V1**: modular affine recurrences; child proposes
+  a reusable affine power table, checked over every residue of the finite ring.
+  Fresh instances vary starting value, exponent and requested residue; a
+  child-built record remains visible across tasks within its curriculum block.
+- **heldL1validation / PM_AFFINE_WORD_V1**: ordered words in two affine maps,
+  requiring checked composition records; no validation trace becomes a target.
+- **L2proposal / PM_CONGRUENCE_JOIN_V1**: accumulating compatible congruence
+  joins across tasks. PROPOSED ONLY, not admitted, generated, mined or run.
+- **heldL3proposal / PM_LINEAR_RECURRENCE_V1**: second-order modular recurrence
+  records and held deployments. PROPOSED ONLY, not admitted/generated/mined/run.
+
+First bounded native screen: 16 fixed L1mining tasks (four recurrence blocks,
+four instances each), paired rich/terse portable37ec child on GPUs6/7; maximum
+two turns/task and 32 calls/arm, 64 total, no fits. Both arms receive identical
+task/checker interfaces and have their own accumulated checked records. Rich
+asks for 150–400 generated first-person tokens connecting evidence, goal,
+testable expectation and final action (no headings-as-rubric). Terse asks for
+only the same final action schema. Context2048/generated512. Failures retained
+raw; grounded checker feedback may elicit a correction. Semantic text reading
+is separate from deterministic answer/record validation; no automatic admission
+from length or headings. No authored proof/solution corpus. This screen tests
+richness feasibility, NOT a slope or causal benefit of memory. A record-hidden
+control is the next distinct test only if this screen warrants one.
+
+Readiness: root/CLAUDE, launch pack C, handover portable/operations and nested
+instruction search read. Native readonly poll21:55UTC observed GPU6 UUID
+GPU-6de3930d-104a-f969-7d36-009271368dd1 and GPU7 UUID
+GPU-f0405a96-813d-7ac7-d641-3ec31d103037, both zero compute entries;
+this is NOT admission without /proc CVD scan. Portable bundle/local model/venv
+exist; no download/history rebuild. CPU implementation in progress.
+Actual lease endpoint still needs authoritative environment metadata; existing
+handover gives an approximate/conservative date, which is not substituted for
+the actual lease. No GPU science calls yet.
+
+Bounded protocol root: `orch_persist_math_20260914_attempt1`; source archive
+SHA and packaging under this /data checkout; fresh remote run root, hard
+45-minute guardian capped by actual lease minus6h. Physical UUID/PIDs plus
+/proc CVD ownership immediately before launch, unknown owner abort/no kills.
+Only environment keys from hosts.env determine hosts/credentials.
+
+Main batched notebook paragraph (append only after CPU/provenance PASS):
+`[Builder / Worker PERSIST-MATH] 2026-09-14: W1 PM_AFFINE_POWER_V1 paired
+rich/terse native screen, root orch_persist_math_20260914_attempt1, A1006–7,
+16 tasks/arm, <=64 total calls, <=2 turns/task, context2048/generated512,
+45min guardian bounded by actual lease. Frozen verified portable37ec; child
+checked records persist within blocks; heldL1validation not mined; proposed
+L2/L3 unadmitted. Own CPU and provenance receipts/source SHA bound in worker
+journal before launch. No fits/admitted targets/learning claims; semantic
+review required, all failures retained.`
+
+Proposed later guided cycles: same-child learned consolidation prompt over
+its successful semantic-passing traces and records; parent guidance absent
+from student prefix or loss-masked, parent ABSENT at evaluation. Compare
+continued sleeps with frozen twin and unparented twin; parent-free collection
+not required. No L2/L3 run until Rohin rules on named family admission.
