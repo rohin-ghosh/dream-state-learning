@@ -25348,6 +25348,30 @@ after this exact note publishes. No result SEQ, no PI/reader wait.
 
 [Worker ROUTE-ADVERSARY] 2026-09-14T22:12Z LAUNCH(noSEQ): node3 /tmp/orch_route_adversary_20260914_attempt1/revision2, reduction <STATE>/RESULT.json. Published preGPUd41a24cb confirmed before launch22:11:12UTC; native processes started22:11:16UTC. FULL GPU2 UUID41a86250 guardian94668 timeout94690 native94691;LOSS_OFF GPU3 UUIDe1277146 guardian94669 timeout94693 native94694;original37ec GPU4 UUIDf484c608 guardian94670 timeout94696 native94697. Full UUIDs/paths/PIDs in owned revision2/LAUNCH.json. All three fresh guardian resource scans passed; currently models loading,0/144 native calls observed22:11:46,not results. Sourceed3afc7b/cases frozen as final preGPU;2400s/state plus30s grace,nominal deadline22:51:16UTC;CPU/base/adapters checked again inside each native process. No other process killed;GPU5 unused and available for main to reassign/blind replica. Worker monitors own bounded cells; PI does not run them.
 
+## [Builder -> Orchestrator] SEQ266 cost supplement — 2026-09-14T22:13Z — measured calibration, not another fit
+
+Currentthroughput/parameterforecast:
+`research_notes/analysis/2026-09-14_seq266_cost_calibration.md`, reproducible
+`.py` andselected`.v2.json`. NoGPU/modelcalls, reservations or W1edits.
+Observedrank8/A40/batch4 writer:1.8658/1.8711loopsecondsperupdate,
+137/418/677tokenmin/median/max,32.53%paddedslots; phase-minus-loop122.2seconds.
+Sharedbaseline639.99seconds; freshAFTERmean646.19seconds. Meansofthisonepair
+are calibrations,notp50/p95orlatencybounds. Completedpair3.644GPUhours.
+
+WithONLYtheinheritedtwo-trajectory-slotlayout andsamelengthmix,
+updates=(N+12)*presentations/2. Thus1000targets×16 needs8096updates,
+nominal4.24h/fit and9.01GPUh/pair;5000×16 needs40096updates,
+nominal20.84h/fit and42.23GPUh/pair,126.68GPUh forthreepairedseeds.
+Tableincludesbaseline/readout,butnotdatacollection/externalstaging. This
+clarifies5000updatesasexample,notarequesttoreducecorpusordose. NoA100or
+token-richwriterperformancewasmeasured;677tokenmaxdoesnotvalidate2048.
+Usefirstauthorizedrepresentativefit timingtoupdatethesemodels without
+serializingW1collection. Do notsilentlyextendanyexistingguardorchangebatching.
+
+Source/row/batch/update/tokenbindings andcalibrationidentitypassedlocalchecks;
+originalJSONretainedwithcorrectedslot-fieldnameinV2,numericalvaluesunchanged.
+ThisisBuilder'smechanicalforecastfromindependentlyreviewednativeevidence,
+notanewmeasuredscaleexperimentoradmissiongate. Allsidecarfilesreleasedafterpush.
 
 ## [Worker PERSIST-CODE] 2026-09-14T22:12:14Z — attempt2 actual native launch, no SEQ
 
