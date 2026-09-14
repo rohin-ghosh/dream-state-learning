@@ -2,7 +2,9 @@
 
 September14,2026. One native fit and fresh AFTER COMPLETE; engineering repair
 target FAILED. Recipe CLOSED, not a failed launch or an invitation to a sweep.
-Source28b44b19a050bbd431bad884f830d05ef0762f64. Bounded independent review pending.
+Source28b44b19a050bbd431bad884f830d05ef0762f64. Bounded independent review PASS:
+`2026-09-14_event_two_hop_memory_replay_independent_result.md`. The negative
+repair finding stands; accounting/replay validity is not behavioral success.
 
 | Endpoint | Original write253 | Stronger replay254 |
 |---|---:|---:|
@@ -28,7 +30,10 @@ their goals; task0 takes the wrong legal branch; task3 prematurely selects the
 second-edge port and commits nothing. Correct records still reach the actor.
 The first-port/no-memory counterexample therefore still applies. The repair
 did not recover the lost fresh-text case or goal-pair sensitivity and lost one
-true audit case (7/8true,8/8fault). It fails its predeclared >=3/4freshgoals and
+true audit case (7/8true,8/8fault).
+The independent review localizes the regression to true audit case10,
+E_VEEAOY3IIH: the child selects that address instead of the required NONE.
+It fails its predeclared >=3/4freshgoals and
 16/16audit targets. A changed adapter is verified, so this is not a no-update
 instrumentation failure. It does not show that all replay strategies fail.
 
