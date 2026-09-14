@@ -26391,6 +26391,24 @@ rejected; SVG/PDF checks and PNG visual inspectionPASS. Uses installed
 Pillow/ReportLab, no new dependencies or model/GPU calls. Standalone figure
 PDF is built, NOT a TeX manuscript PDF. Whole sprint remains incomplete.
 
+### 2026-09-14 [Builder -> astra2] request the next substantive implementation scope
+
+Old-thread work is released: native SEQ266/independent review, six drafts,
+cost/yield calibration, source-bound figure, and tested replay-layout helper.
+Rohin78 explicitly wants this thread useful in parallel. Rather than add more
+auxiliary notes or a competing scheduler, I am available to implement the
+native guided-loop bridge when you assign its exact file prefix and contract.
+Suggested bounded responsibility: prior saved child -> next collection and
+next sleep, using the published layout, with fresh-process readout plumbing.
+I will not instantiate proposed L2 tasks or claim/run the three-arm experiment
+from the current design-only document. You retain protocol/family decisions,
+checkpoint admission, shared BOARD and all GPU allocations.
+
+Please name the owned implementation files and frozen interface/roster when
+ready, or redirect me to a different concrete blocker. No review gate or hold
+is imposed on any of your workers. This is this checkout's coordination
+dependency, not evidence the overall research is blocked or complete. First
+checkpoint waiting on new essential scope; no goal status change made.
 [Worker MATH-RECORD] 2026-09-14T22:50:23Z terminal READY/request-next-SEQ (none reserved): OLD9/64 vs NEW55/64 admitted records,46NEW-only/0OLD-only/9both/9neither, exact pairedp1.4210854715202004e-14; grounded NEW61/64 vs OLD59/64, false1vs3, unresolved1each. Node2physical4–7; root/localhome/local-rohing/orch_math_record_20260914_attempt1; reader file/localhome/local-rohing/orch_math_record_20260914_attempt1/REDUCTION.json; repo research_notes/analysis/orch_math_record_20260914_attempt1/REDUCTION.json. All4shardsCOMPLETE,190/190fulltexts author-read (107PASS82FAIL1UNRESOLVED), not independent review. Separate initial rich28admitted/64; total92distincttargetrows/59tasks, NOT92pairedwins. Common rich63/64 oracle; OLDrecord63/64 vs NEW62/64 (oneNEWtruncation): answer accuracy did not improve. Family OLD2/0/4/3 vs NEW14/11/15/15 in percentages/work_rates/fractional_quantities/group_accounting. NEW6token-overflows vs OLD1; every failure retained. Badgold6butactual12 stays outcome denominator and never admitted; underspecified wage excluded both. Beyond voice, rumor-as-fact fails both; OLD savings/earnings label and reversed reusable subtraction fail. NEW1734 echoes true supplied BOOLEAN checker notice, not gold/reference reasoning; neutral-prefix mismatch explicitly disclosed for any future training audit. Finalnative22:45:48.713285Z, physical/procCVD releaseclear22:46:20UTC; cost0.60809438nativeGPUh/0.61555556guardianGPUh; no unknown PID kills, no scale/fit.19/19finalCPU and190exactprompt/prefix/targethash replays pass. Terminal capsule1570f8ee0684ef428ccac6c893a4451cb7469018cf63a20f416cf6b121585a73; REDUCTION626f7cc4fa5249a87067372a68afb4451494bc14f2ebd033a22bf5d0f1967726. Original270final failure unchanged. Strongest claim is framing-dependent admissible own-record yield, not learning/generalization. Next cheapest discriminating test: blinded same-packet semantic audit and CPU neutral-prefix compatibility; separately authorized actual reuse test before any scale/fit. Main please assign next SEQ only after final packet push; no advance reservation.
 
 [Worker GUIDED-BRIDGE] 2026-09-14T22:53Z preparation only, Main board d7a7e6f2/published45becf56: claimed new orch_guided_bridge* module/test/analysis paths and research_loop/workers/GUIDED_BRIDGE.md. CPU synthetic state-binding/projection tests only; no GPU/model/L2-L3 contents/launch, pending family unchanged. Preserve all peer work. First journal recorded; bounded minimal bridge, explicit native boundary, no framework.
@@ -26428,3 +26446,84 @@ prediction. Actual data may fail. No5000-row claim. Current live breadth:
 six collection lanes observed22:48:56 across A1004–7/node3 6–7, not trained
 results. Its dose contrast also crossesA100/A40 hardware; preserve numerical-
 hardware alternative, not isolateddosecausality. Main executes no cells.
+
+## [Fable VM result read] 2026-09-14T22:53Z — SEQ-271 VERIFIED; SEQ-272 VERIFIED; SEQ-273 VERIFIED; SEQ-274 VERIFIED
+
+Read-only recount from node receipts; nothing launched, stopped or edited. Four lowest unread result-bearing SEQs (271–274); SEQ-231/233/234/237/263 carry no n/N count in their first 12 lines and were not read.
+
+**SEQ-271 (PERSIST-CODE, a100 node, root /localhome/local-rohing/data/orch_persist_code_20260914_attempt2)**
+
+| measure | entry | re-derived | source |
+| --- | --- | --- | --- |
+| RICH task successes | 0/8 | 0/8 (successes=0, 8 episodes) | RICH/RESULT.json |
+| TERSE task successes | 2/8 (ledger_004, ledger_006) | 2/8 (ledger_004, ledger_006) | TERSE/RESULT.json |
+| reference successes | 0/8 both arms | reference_successes=0 both arms | {RICH,TERSE}/RESULT.json |
+| own records RICH/TERSE | 0 vs 2 | 0 vs 2 | own_records |
+| correction chains RICH/TERSE | 0 vs 1 | corrections 0 vs 1 | RESULT.json |
+| RICH / TERSE calls | 40 / 35 (75) | model_calls 40 / 35; CALL_*.json files 40 / 35 | RICH/, TERSE/ |
+| admitted rich rows, fits | 0, 0 | semantic_admitted_rows 0 both arms, fits 0 | RESULT.json |
+
+Integrity: state_after begins 37ec3788… both arms, matches the entry's 37ec; frozen_base_unchanged=true; source_commit 47515604… matches. terminal.tar.gz sha256 33a9421c…c44940 matches the entry. REDUCTION.json (entry hash 394de42c…) is not present on the node root (local-only artifact per entry); not re-hashed. Builder's scope note: one greedy realization, one exposed DEV actor, small toy codebase, no learning/transfer claim.
+
+**SEQ-272 (TEXT-PREREQUISITE, a100 node, root /tmp/orch_text_prerequisite_20260914_attempt1 as named in the worker's REPORT.md)**
+
+| measure | entry | re-derived | source |
+| --- | --- | --- | --- |
+| RICH vs TERSE task successes | 8/8 vs 8/8 | 8/8 vs 8/8 (16 *_EPISODE.json) | shard*/screen/*_EPISODE.json |
+| calls total (RICH/TERSE) | 41 (18/23) | 41 CALL files; arm split RICH 18 / TERSE 23; shard model_calls 12+13+8+8=41 | shard*/screen/ |
+| admitted rows, fits, updates | 0, 0, 0 | admitted 0; fits 0; updates 0 in 4 shard RESULT.json | shard*/screen/RESULT.json |
+| RICH prose tokens per turn | 28–52 | min 28, max 52 over 18 RICH turns | *_RICH_TURN*.json prose_tokens |
+| native byte-exact replays | 16/16 | passed 16 / denominator 16 | NATIVE_REPLAY.json |
+
+Integrity: adapter_after 37ec3788… in all 4 shards, base_unchanged=true; validated_terminal.tar.gz sha256 605b7f6b…c6e6 matches the entry, size 1795102 bytes matches. Builder's scope note: one checkpoint, eight instances, failed richness manipulation, no learning-null claim.
+
+**SEQ-273 (REPLICATION, node 3, root /tmp/orch_replication_20260914_attempt1/revision2)**
+
+| measure | entry | re-derived | source |
+| --- | --- | --- | --- |
+| FULL_TARGET pairs / goals | 16/16, 32/32 | pairs 16/16, goals 32/32 | COMPARISON.json states.FULL_TARGET.routing |
+| NEW_TRAJECTORY_LOSS_OFF pairs / goals | 0/16, 14/32 | 0/16, 14/32 | COMPARISON.json |
+| ORIGINAL37EC pairs / goals | 1/16, 14/32 | 1/16, 14/32 | COMPARISON.json |
+| first-displayed-port reference pairs / goals | 0/16, 16/32 | 0/16, 16/32 | COMPARISON.json reference |
+| old16 W0 / W8 / held audit, all 3 states | 16/16 each | retention 0: 16/16, 8: 16/16, audit 16/16 in all 3 states | COMPARISON.json |
+| source EVENTs | 32/32 | accepted_source_events 32 / denominator 32 | COMPARISON.json, collection/RESULT.json |
+| calls source / readout / total | 64 / 705 / 769 | 64 / (240+230+235)=705 / 769; CALL_*.json files 769 | */RESULT.json model_calls |
+| fits, updates | 0, 0 | new_fits 0; fits 0 in all RESULT.json | COMPARISON.json |
+
+Integrity: ORIGINAL37EC adapter_state 37ec3788…b8c0; cohort sha ec8091eb… and protocol sha 2d023ab9… match the preGPU entry; TERMINAL.json status COMPLETE, elapsed 355.69 s matches. Native archive hash 3f8973b0… not re-hashed (archive path not named in the root). Builder's scope note: one exposed DEV lineage, fresh readout is not independent training-seed replication.
+
+**SEQ-274 (CODE-BOUNDED, node 2, root /tmp/orch_code_bounded_20260914_attempt1)**
+
+| measure | entry | re-derived | source |
+| --- | --- | --- | --- |
+| RICH vs TERSE task successes | 7/8 vs 6/8 | rich 7/8 (task 105 fails), terse 6/8 (tasks 105, 35 fail) | shard*/CALL_*.json feedback.success |
+| calls total (rich/terse) | 37 (19/18) | 37 CALL files; rich 19 / terse 18; shard model_calls 10+8+10+9=37 | shard*/ |
+| admitted episodes / rows | 0/8, 0 | admitted=false on all 37 calls | CALL_*.json |
+| rich full-text judgments on node | 18 FAIL / 1 UNRESOLVED / 0 PASS | node receipts hold semantic_status UNREVIEWED on all 19 rich calls; the FAIL/UNRESOLVED split lives in the worker's local SEMANTIC_REVIEW.json, not re-derived | CALL_*.json |
+| generated tokens rich / terse | 1345 / 241 | 1345 / 241 | CALL_*.json generated_tokens |
+| source pool / eligible | 974 / 91 | total 974, eligible_count 91 | TASKS.json |
+| fits | 0 | fits 0 in 4 shard RESULT.json | shard*/RESULT.json |
+
+Integrity: adapter_state 37ec3788…b8c0 all 4 shards, base_verification.verified=true; terminal_verified.tar.gz sha256 992179b7…8233 matches the entry; guardian exit_code 1 on 4/4 shards as the entry discloses. Builder's scope note: eight easy MBPP tasks, one checkpoint, semantic review author-only.
+
+### 2026-09-14 22:55UTC [Builder -> astra2] bridge ownership resolved; native integration offer
+
+Read your live workers/GUIDED_BRIDGE.md: another worker started22:53 with
+exclusive orch_guided_bridge scope, and its module is already in progress.
+I will not duplicate or edit that worker's files. BOARD's "CPU worker to assign"
+is stale relative to that journal; your scheduler remains authoritative.
+The released replay helper is available unchanged. For a substantive parallel
+assignment, I can implement the native collector/trainer adapter-loading seam
+under a separate prefix once you name its interface and ownership; unlike
+CPU receipt contracts this must actually replace the pinned37ec initialization
+in both next collection and next sleep, without altering historical drivers.
+No real L2 contents, GPU allocation or launch is implied by this offer.
+Existing family/candidate decisions stay with you. No additional ancillary
+audits, model calls, reservations or old-fit restarts here. This is a local
+ownership dependency, not a campaign hold or a completed research mission.
+
+## [Rohin — message 79, ~22:40 UTC, relayed by Fable] 2026-09-14T22:56Z — RULED: L2 / held-L3 family scopes do not need Rohin's permission — the orchestrator decides; level-3 families should be the best-quality, hardest ones (hill-climbing; incremental dependency graphs; math too) and there will need to be MANY ("60 or 120 different ones", scaled further; the parented closed loop similar); the invariant is separation, not approval
+
+> persistent, gym, test, families why don't you mind why why does it need my permission Yeah, it's a good idea to fix the curl into Python. Good idea. Yeah my ruling level three might have math to. I don't know we don't does it matter which ones are for level three or twins are level two the ones for level three should honestly be the best quality ones to be honest with you cause like level three is where we're really trying to do those like finalize like teaching and it's gonna have to be a couple of them too because we found that there's need 60 so we might need 60 on that one too so then maybe this one's just gonna be 60 or 120 different onesscale this even more and then that one's like parented close loop 60 something like that this is just like vague yeah I don't know why you need my permission on this my ruling what what ruling do you need? I do agree. The level three is gonna have more of that hillclimbing sort of incremental dependency graph. Give me a quick update good and bad both system both loops and then tell me tell me why I can't scroll up through our message message history anymore that's kind of annoying. Can you please quickly explain to me what this row stuff is you keep talking about rose. I don't really understand that and then tell me how many GP are being used right now and how close we are to saturation good job
+
+**[Fable → Orchestrator]** This supersedes the escalation clause I wrote into §5 Authority of your launch prompt ("a new environment family becoming a level-2/3 test set" no longer requires Rohin): admit your proposed families now (structured-text-ledger-v1 / dependency-build-graph-v1; PM_CONGRUENCE_JOIN_V1 / PM_LINEAR_RECURRENCE_V1) and any future ones by your own decision; publish each family's name and level in RESEARCH_STATE so separation is auditable; put the hardest, highest-quality families at level 3 and plan for dozens per level, not two. The three remaining escalations stand: a claim entering the paper, spending beyond the leased fleet, a result you believe overturns the thesis. Also confirmed by Rohin: the curl→python instruction to workers.

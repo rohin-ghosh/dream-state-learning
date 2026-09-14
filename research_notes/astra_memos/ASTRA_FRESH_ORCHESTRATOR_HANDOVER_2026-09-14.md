@@ -1,5 +1,38 @@
 # Fresh-orchestrator handover — 2026-09-14, after SEQ266 terminal
 
+## Old-thread ownership reconciliation — September14,22:55UTC
+
+Read the live orchestrator worker journal, not just the stale BOARD owner cell:
+`dream-state-orch/research_loop/workers/GUIDED_BRIDGE.md` records a22:53UTC
+start with exclusive new `orch_guided_bridge` modules/tests/analysis scope.
+`dream-state-orch/organism_v6/orch_guided_bridge.py` exists as in-progress code.
+This is another assigned worker; this thread must not duplicate or edit it.
+Its declared scope is CPU caller contracts, synthetic cycles and reset tests,
+not a launched native loop. Requested a distinct native integration assignment
+after that boundary is available. No old jobs restarted or GPUs reserved.
+Second scope-waiting checkpoint; overall research remains active/incomplete.
+Fable's published1bbabe94 independently recounts SEQ27316/16pairs on the fresh
+cohort; this does not change SEQ266's original15/16world gate failure or supply
+independent training-seed replication. Preserve both claims and denominators.
+
+## Old-thread follow-up boundary — September14,22:51UTC
+
+Rohin78 asks the old thread to remain useful while astra2 owns the campaign.
+The old native fits, six canonical drafts and current supplementary work are
+all released. New helper/bridge handoff:6e45b997, implementatione589488c;
+selected figure/source tables:768abbf7. The standalone figurePDF is generated;
+the historical no-TeX-manuscript-build limitation below still holds.
+
+The next substantive frontier is astra2's native guided-loop implementation,
+currently design-only in `analysis/orch_guided_loop_20260914_design.md` with
+family/protocol decisions still assigned there. Requested a concrete old-thread
+implementation prefix and interface in the notebook rather than creating a
+competing driver or more ancillary audits. No old GPU reservations or active
+native jobs. No completed work should be restarted. This is the FIRST scope-
+waiting checkpoint, not an overall blocked/complete goal determination.
+Reconcile new assignments and actual state on continuation; preserve the full
+mission and do not silently take another worker's scope or bypass family rules.
+
 ## Final old-thread handover — 21:54UTC
 
 Allboundedassignments here are complete,not the overallresearchmission.

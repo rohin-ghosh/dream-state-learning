@@ -1,0 +1,26 @@
+test_fixed_decision_conjunction (tests.test_orch_full_rich.FullRichTests.test_fixed_decision_conjunction) ... ok
+test_frozen_denominators_and_new_namespace (tests.test_orch_full_rich.FullRichTests.test_frozen_denominators_and_new_namespace) ... ok
+test_missing_source_retained_without_replacement (tests.test_orch_full_rich.FullRichTests.test_missing_source_retained_without_replacement) ... ok
+test_native_reads_and_rich_final_action (tests.test_orch_full_rich.FullRichTests.test_native_reads_and_rich_final_action) ... ok
+test_no_extra_calls_after_failure (tests.test_orch_full_rich.FullRichTests.test_no_extra_calls_after_failure) ... ok
+test_prefix_guidance_removed_target_unchanged (tests.test_orch_full_rich.FullRichTests.test_prefix_guidance_removed_target_unchanged) ... ok
+test_rubric_not_length_or_headings (tests.test_orch_full_rich.FullRichTests.test_rubric_not_length_or_headings) ... ok
+test_orch_replication (unittest.loader._FailedTest.test_orch_replication) ... ERROR
+
+======================================================================
+ERROR: test_orch_replication (unittest.loader._FailedTest.test_orch_replication)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_orch_replication
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/unittest/loader.py", line 137, in loadTestsFromName
+    module = __import__(module_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/data/home/rohing/dream-state-orch/tests/test_orch_replication.py", line 3, in <module>
+    import pytest
+ModuleNotFoundError: No module named 'pytest'
+
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.011s
+
+FAILED (errors=1)

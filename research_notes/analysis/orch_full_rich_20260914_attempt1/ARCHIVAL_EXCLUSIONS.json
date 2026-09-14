@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "timestamp_utc": "2026-09-14T22:57:32.801420+00:00",
+  "cohort_sha256": "fda756da466044a08031ddfb7547e171ef990a1fb093fbc49258310793538401",
+  "new_identifier_count": 136,
+  "identifier_list_sha256": "360cdf3cc80bc01291090b196e1b38a02425f50e0df9ea096940b6b2446f408a",
+  "search": "rg --hidden --no-ignore -l -F -f new_identifiers.txt",
+  "scope": [
+    "gpu_artifacts_local",
+    "organism_v6",
+    "research_notes",
+    "research_loop"
+  ],
+  "file_types": [
+    "json",
+    "jsonl",
+    "md",
+    "py"
+  ],
+  "excluded": "own orch_full_rich* and test_orch_full_rich* files only",
+  "match_count": 0,
+  "limitations": "Binary archives not string-searched; all available extracted textual archives scanned; all known route registries separately checked by prepare."
+}
