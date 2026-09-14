@@ -25953,3 +25953,64 @@ questions/held contents read, no model calls, no new grading. Source-bound
 script/JSON and limitations: research_notes/analysis/2026-09-14_math_corpus_capacity.md.
 Current0eligible_scale_families/no-fit unchanged; changed recipe needs a new
 yield measurement. Semantic review and training costs are not included.
+
+## [Fable VM result read] 2026-09-14T22:33Z — SEQ-268 VERIFIED; SEQ-269 VERIFIED; SEQ-270 VERIFIED
+
+Read-only recount against the raw receipts on the nodes; no process touched, no file written on any node.
+
+**SEQ-268** (Worker ROUTE-ADVERSARY, node 3, root `/tmp/orch_route_adversary_20260914_attempt1/revision2`)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| states / case replays / native-call joins | 3/3, 72/72, 144/144 | model_denominator 3, terminal_models 3; replayed_cases 72 / case_denominator 72; actual_native_calls 144 / native_call_cap 144 | COMPARISON.json |
+| fits / updates | 0 / 0 | 0 / 0 | COMPARISON.json |
+| source-switch pairs FULL / LOSS_OFF / ORIGINAL37EC | 6/6, 1/6, 0/6 | 6/6, 1/6, 0/6 | arms[*].summary.paired_interventions.causal_switch_correct |
+| display-invariance pairs FULL / LOSS_OFF / ORIGINAL37EC | 6/6, 2/6, 2/6 | 6/6, 2/6, 2/6 | arms[*].summary.paired_interventions.display_invariant_correct |
+| fully-supported switch subset | 5/5, 1/5, 0/5 | 5/5, 1/5, 0/5 | arms[*].fully_supported_interventions |
+| complete tasks REF/PORT_REVERSE/ROOT_SWAP/UNAVAILABLE, FULL | 5/6, 5/6, 6/6, 2/6 | 5/6, 5/6, 6/6, 2/6 (recounted from 24 rows) | arms[FULL_TARGET].rows |
+| same, LOSS_OFF | 3/6, 1/6, 3/6, 0/6 | 3/6, 1/6, 3/6, 0/6 | arms[NEW_TRAJECTORY_LOSS_OFF].rows |
+| same, ORIGINAL37EC | 4/6, 3/6, 2/6, 0/6 | 4/6, 3/6, 2/6, 0/6 | arms[ORIGINAL37EC].rows |
+| both-goal pairs FULL / LOSS_OFF / ORIGINAL | 2/3,2/3,3/3,0/3 / 1/3,0/3,1/3,0/3 / 1/3,0/3,0/3,0/3 | identical (recounted per master from rows) | arms[*].rows |
+| zero-native first-available-port reference | 3/6 tasks, 0/3 pairs, 0/6 both interventions | complete_correct 3/6 in all four conditions; both_goal_pairs_correct 0/3; paired_interventions 0/6, 0/6 | first_available_reference |
+| raw call files per arm | 48 native calls per state | 48, 48, 48 `CALL_*.json` | `<root>/<ARM>/CALL_*.json` |
+
+Integrity: COMPARISON.json sha256 `ef21b5bb…c198` matches the entry; per-arm `result_sha256` in COMPARISON.json equals the sha256 of each `<ARM>/RESULT.json` (c251843b…, 88849055…, 2999d0f1…); `source_commit` ed3afc7b matches the entry's native source; 144 model calls = 3 × 48 CALL files. Entry names no adapter/base hash; RESULT.json exposes `adapter_state_before/after` and `frozen_base_unchanged`, not compared. Scope (builder's own limits): four scripted READs per case, three read-order seeds not independent training seeds, same-family DEV, author audit with disclosed BOARD-summary exposure, not H1/H2.
+
+**SEQ-269** (Worker PERSIST-MATH, a100, root `/localhome/local-rohing/data/orch_persist_math_20260914_attempt1`; reduction `research_notes/analysis/orch_persist_math_20260914_attempt1/REDUCTION.json`)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| final answer success RICH / TERSE | 0/16 / 2/16 | final_outcomes 0 of tasks 16 / 2 of 16 (task_outcomes recount: 0 true / 2 true) | REDUCTION.json arms; `<root>/RICH/RESULT.json` summary final_outcomes 0, `TERSE/RESULT.json` 2 |
+| joint answer+record | 0/16 vs 0/16 | outcome_and_record 0, 0; paired_joint_counts {"neither":16} | REDUCTION.json |
+| first-turn answers | 0/16 vs 1/16 | first_turn_outcomes 0 / 1 | REDUCTION.json, node RESULT.json summaries |
+| admitted targets / fits / updates | 0 / 0 / 0 | 0 / 0 / 0 | REDUCTION.json, both RESULT.json |
+| tasks / calls | 32 tasks, 64 calls | 16+16 tasks; model_calls 32+32; `CALL_*.json` 32 + 32 on node | node `<root>/RICH`, `<root>/TERSE` |
+| generated tokens RICH / TERSE | 11489 / 1105 | 11489 / 1105 | REDUCTION.json |
+| truncated calls RICH / TERSE | 16/32 / 0/32 | 16 / 0 | REDUCTION.json |
+| tasks with prior records | 0/16 both | 0 / 0 | REDUCTION.json |
+| native seconds | 607.48 + 119.41 | 607.4828 + 119.4106 | REDUCTION.json |
+| RICH rejection mix | 16 truncation + 14 projection + 2 parsed-failure | unterminated 16; one_final_json_line_required 13 + final_must_start_on_its_own_line 1 = 14; parsed_but_answer_or_record_failed 2 | REDUCTION.json |
+| TERSE rejection mix | 31 parsed-failure + 1 record-list-limit | 31 + 1 | REDUCTION.json |
+
+Integrity: adapter 37ec matches `loaded_adapter_state_sha256` = `adapter_state_after` = 37ec3788… in both arm RESULT.json; `base_verification.verified` true (expected base a2367093…); `source_receipt_sha256` in REDUCTION.json equals sha256 of node `RICH/RESULT.json` (bc526000…) and `TERSE/RESULT.json` (3793dc66…); REDUCTION `call_sha256["CALL_000.json"]` equals the node file's sha256 in both arms; 64 calls = 32 + 32 model_calls = 64 CALL files. Scope (builder's own limits): one L1 family, 16 instances, frozen portable 37ec, stores never warmed, not a learning slope or memory causal test.
+
+**SEQ-270** (Worker MATH-RICH, node 2, root `/localhome/local-rohing/orch_math_rich_20260914_attempt1`)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| shards / saved-call replays / fixed paired tasks | 4/4, 96/96, 32/32 | terminal_statuses 4 × COMPLETE; calls 96, call_file_sha256 96 entries, 24+24+24+24 `CALL_*.json`; denominator 32 | REDUCTION.json, `<root>/shard{0..3}/` |
+| fits / updates | 0 | 0 in all four shard RESULT.json | shard RESULT.json |
+| initial rich / terse | 29/32 vs 5/32 | class_metrics.rich.outcome_pass 29 of 32; terse 5 of 32 | REDUCTION.json |
+| correction | 0/3 | correction attempted 3, outcome_pass 0 | REDUCTION.json |
+| own records answer-correct | 29/29 | record attempted 29, outcome_pass 29 | REDUCTION.json |
+| full-text reading non-terse | 64/64: 24 PASS / 36 FAIL / 4 UNRESOLVED | semantic_status_counts PASS 24, FAIL 36, UNRESOLVED 4 (rich 32 + record 29 + correction 3 = 64) | REDUCTION.json |
+| admitted | 19/47 candidates, 19 rows / 16 tasks, 15 rich + 0 correction + 4 records | admitted 19, unreviewed_candidates 47, admitted_distinct_tasks 16; class admitted rich 15 / correction 0 / record 4; ADMITTED_ROWS.json 19 rows, 16 distinct task_id | REDUCTION.json, ADMITTED_ROWS.json |
+| family outcomes rich vs terse (percentages, work_rates, fractional, group) | 8/8 vs 1/8, 6/8 vs 1/8, 8/8 vs 2/8, 7/8 vs 1/8 | 8/1, 6/1, 8/2, 7/1 of 8 | REDUCTION.json families |
+| admitted family rows | 6/3/5/5 | percentages 6, work_rates 3, fractional 5, group 5 | admitted_by_family |
+| scale-ready families | 0/4 | eligible_scale_families [] ; fit_ready false | REDUCTION.json |
+| posthoc TERSE numeric sensitivity | 7/32 | success 7 / denominator 32 | REDUCTION.json |
+| axis judgments | 55 grounded / 7 unresolved / 2 false | grounded_operations True 55 / None 7 / False 2 | rubric_axis_counts |
+| admitted target tokens | 153–348, mean 222.5263, total 4228 | min 153, max 348, sum 4228 over 19 = 222.526 | admitted_token_distribution |
+| assigned GPU-hours | 0.2450 | 0.24500549958811865 | REDUCTION.json |
+
+Integrity: REDUCTION.json sha256 `d9f799fe…61ab` matches the entry on the node and in the repository copy; SEMANTIC_REVIEW.json sha256 `db1e4789…4905` matches on the node and in the repository copy; 96 calls = 4 × 24 model_calls = 96 CALL files. Entry's adapter claim ("unchanged portable 37ec") not re-derivable from the shard RESULT.json keys checked (`adapter_state_after`, `loaded_adapter_state_sha256` absent there). Scope (builder's own limits): one checkpoint, 32 selected public GSM8K questions, DEV pool, no equal-budget or multi-seed control, author semantic judgments not independent.
