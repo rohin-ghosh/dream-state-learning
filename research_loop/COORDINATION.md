@@ -23671,3 +23671,27 @@ Heading note: the SEQ-257 entry is titled `## [Builder] 2026-09-14 18:00 UTC —
 
 Integrity: adapter prefix 37ec = loaded_adapter_state_sha256 and adapter_state_after 37ec37884e4b… in all three phase RESULT.json (match). Model calls 80 / 192 / 283 = physical CALL_*.json file counts 80 / 192 / 283 (match). Fit root `/tmp/astra_goal_breadth_train_20260914_attempt1` exists with source_commit.txt 712d5f2b738f3c33dc905037e57580eee9319441 (matches entry); portable export MANIFEST.json sha256 5e675c309b202625a6ddf1d36c1a58f51ef656985821cec1cd6123424d927469 (matches entry). Fit scores not read (arms still running at read time). RESULT.json sha256: expose 1b131938…, teach 53c7cd23…, baseline 714589e0….
 Scope (builder's own limits): eight fixed TRAIN worlds plus two PROBE worlds, one unchanged 37ec actor, no fit in this collection; claim `EIGHT_FIXED_TRAIN_WORLDS_PAIRED_SOURCE_USE_NOT_GENERAL_PLANNING_OR_H1_H2`.
+
+## [Fable — operational notice → Builder] 2026-09-14T18:34Z — node 3: 4 of 8 scale shards died after EXPOSE (shards 0, 1, 4, 6); 4 completed through baseline (2, 3, 5, 7); all eight guardians gone, all eight GPUs at 1 MiB — read-only observation, nothing relaunched
+
+Root `/tmp/astra_goal_scale_20260914_attempt1` at 18:3xZ: shard0/1/4/6 have `expose/RESULT.json` COMPLETE (80 calls each) and NO teach or baseline directory; their `run.log` ends, right after the teach-stage model load ("Loading weights 100% 339/339"), with
+
+```
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+AssertionError
+```
+
+(a `python3 -c` one-liner assertion, no message). shard2/3/5/7: expose COMPLETE 80, teach COMPLETE 192, baseline COMPLETE 285/277/273/276 calls. Guardian PIDs 79201–79214 no longer alive; GPUs 0–7 at 1 MiB. The 18:21 entry expected all eight to continue; your rule says all 8 are needed for the 1,536-target corpus, so this is on the critical path. `shard0.guard.log` also holds an earlier `TypeError: '<' not supported between instances of 'dict' and 'dict'`. The watcher did not touch the root or launch anything.
+
+## [Fable] 2026-09-14T18:34Z — self-check: the builder moved to the fleet — eight scale shards launched on node 3 (four finished their 192-target collections and baselines, four died at a post-EXPOSE assertion, notice above), the two 1,632-update breadth fits are at update ~353/1,632 on node 2, a 12,384-update × 3-seed scale fit and a 384-target rich collection on the A100 node are pre-declared and not launched; ledger P44/P45 pre-registered; the builder's three objections to my richness audit accepted; VM reader verified SEQ-257 (33/33)
+
+**Builder's objections to the 18:0x audit — accepted:** (1) "commands can ONLY teach identifiers, not relations" was a causal inference I did not test; restated as the hypothesis the rich arm tests. (2) 658 is the DISTINCT behaviour-row word content, not total supervised word presentations (at 16 presentations per trajectory target the presentations are ~16×); my "supervises 658 words in total" conflated the two. (3) Rohin's "5–10×" of a 3-word target is 15–30 words; "150–500 words" was my own proposal for an articulated row, not his multiplier. The audit's fact stands: every behaviour target is 1–10 words and the actor prompt forbids other text. The rich branch measures target tokens, grounded content and transfer separately.
+
+**Fleet as declared by the builder (18:16–18:21Z):** node 3 — 8 shards × (10 worlds / 40 EVENTs / 192 targets / baseline), 1,536-target corpus, EXPOSE done on all 8 by 18:19Z (320 EVENTs, 640 calls), no fit; node 2 — breadth FULL/LOSS_OFF live (412377/412378, update 353 each at 18:13Z); pre-declared, not launched: scale fit (1,758 rows, 12,384 updates, 16 presentations per target, FULL vs LOSS_OFF, 3 paired RNG seeds, 6 node-2 GPUs — "same corpus / dropout replication, not 3 developmental lineages") and rich collection (A100, 4 shards, 16 TRAIN / 4 PROBE worlds, 384 rich action targets + 64 child critique candidates, 512-token cap, no fit). Neither branch waits for breadth-fit scores. **Observed at 18:3xZ:** node 3 all GPUs idle with 4/8 shards complete and 4/8 failed (notice above); A100 idle, no rich root yet; node 2 2/8 busy.
+
+**Ledger:** P44 (scale corpus + fit: baselines near SEQ-257; FULL beats baseline by ≥ 2 pairs in ≥ 2/3 seeds ≈ 50 % — my lean is that identifier breadth alone ties and richness is the lever) and P45 (rich collection: median target ≥ 60 words, success within 10 points of terse; rich beats terse on held pairs when fitted ≈ 55 %) committed before any readout.
+
+**VM reader (18:17–18:18Z):** SEQ-257 VERIFIED in full (80/40, 192/192, 32/32, 16/16, baseline 283, 18/32, 2/16, 4/8, 0/4, 2/8); sixteen runs, thirty-three SEQs, zero discrepancies.
+
+**Fleet:** a40 0/8, ovx 2/8, ovx2 0/8, a100 0/8. VM: astra_nudge=1 fable_fill=1 courier_vm=1, heartbeat 60 s, astra tmux alive, Pursuing goal / Working, not paused; root disk 1.1 GB free. Laptop chains 4 (courier, lease hunter, two onboarding timers; the earlier "5" was a transient). Node-1 lease ends 23:14 UTC (~4.6 h); mirror complete; node 1 receives no new work. Nothing launched or killed by the watcher.
