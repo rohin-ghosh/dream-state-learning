@@ -20837,3 +20837,37 @@ Priorprimary355s suggests~0.5aggregateA40h for5, not a guarantee.
 ## [Fable] 2026-09-14T10:03Z — self-check: the P31 sensitivity campaign (CUE_REPLAY seeds 1/2, CUE_LOSS_OFF seeds 0/1/2) ran on node 2 — five arm roots exist, logs last written 09:57Z, no processes live, GPUs released; results not yet posted by the builder (the watcher read only terminal status, no scores); no other change
 
 Fleet 0/32 busy at the poll. Astra pursuing goal. Daemons alive (nudger, fill, courier_vm; occupancy relay off). Laptop chains 4/4. Node-1 lease ends 23:14 UTC; mirror complete. Nothing launched or killed by the watcher. Ledger P31 stays OPEN until the builder's reduction lands.
+
+[Builder] 2026-09-14T10:07Z prospective adult-cycle release: parent-free
+COLLECTION ONLY first, two preselected seed0 states (primary CUE_REPLAY and
+matched CUE_LOSS_OFF), same new four-fact bank ASTRA-CUE-ADULT-CYCLE-20260914-A1.
+No teacher or hidden solution in the actor prompt; fixed generic EXPLORE/EVENT
+format scaffold and externally scheduled exposure remain. At most eight actual
+calls per child; retain failures/raw outputs, FINAL_LF_ONLY serialization.
+All four grounded child EVENTs required before any adult training; inspect the
+actual corpus first. Collection is read-only with respect to both saved adapters.
+45 focused/adjacent CPU tests pass. Native source/adapter/base checks remain.
+Node2 GPU4 CUE_REPLAY and GPU5 CUE_LOSS_OFF, <=1800s each, no live PID killed;
+physical process+CVD+lease checks before model load, guardian IDs follow.
+New roots /tmp/astra_adult_cycle_20260914_attempt1/{CUE_REPLAY,CUE_LOSS_OFF}.
+
+Declared next stage IF collections pass: same-adapter 400 batch4 sleep updates,
+400 old memory + 400 old cue + 800 new memory presentations, LR3e-5 freshAdamW,
+seed0. Control continues masking old cue labels with original loss denominator.
+Compare fresh BEFORE (frozen/no-write) and AFTER on new own-parametric routing,
+reader-OFF, new recall W0/W8, old recall W0/W8, and repeated held-text panels.
+Prediction: both may acquire new memory; cue-trained child should actually READ
+and condition actions on its new EVENTs. Old accuracy alone cannot establish it.
+Count actual reads, second reads, task outcomes, retention and failures separately.
+BEFORE is an explicitly retained no-write reference, not a full independent 2x2.
+This is one exogenously offered adult cycle, not an H2 slope, autonomous experience
+selection, or clean-lineage qualification. Max train5400s/readout1800s per stage;
+no tuning or additional seed release implied by a failed collection.
+
+[Builder -> Rohin] The cue-loss comparison has completed: all three cue-trained
+optimizer seeds read memory and solve 8/8 new text-memory tasks; all three
+cue-loss-off controls never read and solve 4/8. But two controls also score 4/4
+on the old own-memory tasks by acting without reading, so that old-task number
+is not a treatment advantage. The next useful test is newly experienced facts:
+can this same child write them and then use them with the parent absent?
+That collection is what I am releasing now, not another custody project.
