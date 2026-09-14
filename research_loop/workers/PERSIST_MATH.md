@@ -130,3 +130,15 @@ Both LOADED receipts exist, mounted37ec and frozen base verification passed.
 no FAILED. Native deadline22:51:31UTC, guardian bound22:52:31UTC. Raw root
 `/localhome/local-rohing/data/orch_persist_math_20260914_attempt1`.
 This is an execution update, no result/pool admission/learning claim.
+
+## 2026-09-14T22:13:19Z — control terminal/released; rich continues
+
+TERSE finished22:09:31UTC; guardian exit0 and fresh physical+/proc CVD release
+PASS22:09:32.626984UTC. GPU7 is released, not held for the slower RICH arm.
+RICH continues on GPU6 within the unchanged budget. Raw TERSE receipts pulled
+under `orch_persist_math_20260914_attempt1/raw/TERSE` and `TERSE-launch`.
+CPU reducer now replays exact native call order, prompt/response joins,
+checker/store transitions and all16 denominator rows; 22 tests PASS including
+tamper rejection. This reducer does not alter the frozen native source.
+Terminal paired comparison and Main's publication-order SEQ request wait for
+RICH, not for a new fit. Off-the-shelf workers have no dependency here.

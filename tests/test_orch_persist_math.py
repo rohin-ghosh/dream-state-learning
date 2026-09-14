@@ -107,3 +107,36 @@ def test_prompts_share_task_and_records_and_have_no_reference_answer():
     assert '150–400' in rich[0]['content']
     assert 'reference solution' not in rich[1]['content']
     assert 'FINAL {' not in rich[0]['content']
+
+
+def test_reducer_replays_original_calls_and_rejects_tampering(tmp_path):
+    from gpu import orch_persist_math_reduce as reducer
+
+    tasks = {task['task_id']: task for task in math.curriculum(4)}
+    directory = tmp_path / 'RICH'
+    directory.mkdir()
+    calls = []
+
+    def generate(messages, **metadata):
+        response = dict(raw=answer(tasks[metadata['task_id']]), terminal=True, truncated=False,
+            messages=messages, prompt_tokens=100, token_ids=[1, 2, 3])
+        calls.append(dict(call_index=len(calls), messages=messages, metadata=metadata,
+            error=None, response=response, prose_tokens=0))
+        return response
+
+    data = math.screen(generate, 'RICH')
+    result = dict(status='COMPLETE', fits=0, updates=0, admitted_targets=0, frozen_base_unchanged=True,
+        adapter_state_after='fixture-state', loaded_adapter_state_sha256='fixture-state',
+        model_calls=len(calls), started_unix=0, finished_unix=1,
+        summary={key: value for key, value in data.items() if key != 'episodes'})
+    for filename, document in [('DATA.json', data), ('RESULT.json', result)] + [
+            (f'CALL_{index:03d}.json', capture) for index, capture in enumerate(calls)]:
+        (directory / filename).write_text(json.dumps(document))
+    reduced = reducer.reduce_arm(tmp_path, 'RICH')
+    assert reduced['outcome_and_record'] == 16
+    assert reduced['model_calls'] == 16
+    assert reduced['admitted_targets'] == 0
+    calls[0]['metadata']['task_id'] = 'tampered'
+    (directory / 'CALL_000.json').write_text(json.dumps(calls[0]))
+    with pytest.raises(ValueError, match='call_prefix_or_order_join_failed'):
+        reducer.reduce_arm(tmp_path, 'RICH')
