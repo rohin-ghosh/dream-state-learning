@@ -279,7 +279,7 @@ def run_entry(options, *, libraries=None, clock=time.time, device_probe=_device_
         else:
             base = objects["base"] = stage("base_cpu_load", load_cpu)
             training._require(base is not initialized.model and base is not raw_atom, "distinct_base_atom_models_required")
-            receipt["hashes"]["base_cpu"] = stage("base_cpu_hash", lambda: base_state_hash(_references(base)))
+            receipt["hashes"]["base_cpu"] = stage("base_cpu_hash", lambda: base_state_hash(dict(base.state_dict())))
             training._require(receipt["hashes"]["base_cpu"] == options.base_state_sha256, "base_tensor_pin_mismatch")
             receipt["devices"] = stage("devices", lambda: device_probe(options, check, clock))
             training._require(os.environ.get("CUDA_VISIBLE_DEVICES") == visible and not torch.cuda.is_initialized(),
@@ -332,7 +332,7 @@ def run_entry(options, *, libraries=None, clock=time.time, device_probe=_device_
                       ((base, options.base_device), (initialized.model, options.atom_device))]
             objects["actors"] = actors
             held = objects["held"] = stage("held", lambda: prepare.prepare_reduced_held(bound_allocation=allocation))
-            for label, verify in (("base", lambda: base_state_hash(_references(base))),
+            for label, verify in (("base", lambda: base_state_hash(dict(base.state_dict()))),
                                   ("atom_base", lambda: models.verify_retained_base(initialized, base_state_hash=base_state_hash))):
                 receipt["hashes"][label + "_pre"] = stage(label + "_pre", verify)
                 training._require(receipt["hashes"][label + "_pre"] == options.base_state_sha256, "pre_base_drift")
@@ -344,7 +344,7 @@ def run_entry(options, *, libraries=None, clock=time.time, device_probe=_device_
                     canaries=held.canaries, counter_provenance="TOKENIZER_RECEIPT_SHA256:" + token_receipt.receipt_sha256,
                     base_custody_dir=root / "BASE", atom_custody_dir=root / "ATOM_LOCAL", checkpoint_dir=root / "D1", torch=torch))
             finally:
-                for label, verify in (("base", lambda: base_state_hash(_references(base))),
+                for label, verify in (("base", lambda: base_state_hash(dict(base.state_dict()))),
                                       ("atom_base", lambda: models.verify_retained_base(initialized, base_state_hash=base_state_hash))):
                     try:
                         receipt["hashes"][label + "_post"] = stage(label + "_post", verify)

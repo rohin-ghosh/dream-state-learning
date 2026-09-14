@@ -59,8 +59,7 @@ class TinyCPUInitialization(unittest.TestCase):
                                         for name, value in sorted(references.items())])
 
     def initialize(self, model, destination, **kwargs):
-        references = dict(model.named_parameters())
-        references.update(dict(model.named_buffers()))
+        references = dict(model.state_dict())
         return source.initialize_atom_cpu(
             model, torch=self.torch, peft=self.peft, master=b"stage2a-init-test",
             initial_directory=destination,
@@ -113,6 +112,20 @@ class TinyCPUInitialization(unittest.TestCase):
             with self.torch.no_grad():
                 value.add_(1)
             with self.assertRaisesRegex(ValueError, "retained_frozen_base_changed"):
+                source.verify_retained_base(result, base_state_hash=self.digest)
+
+    def test_nonpersistent_fp32_buffer_separately_bound(self):
+        with tempfile.TemporaryDirectory() as folder:
+            model = self.model()
+            model.register_buffer("native_auxiliary", self.torch.ones(2, dtype=self.torch.float32), persistent=False)
+            expected = self.digest(dict(model.state_dict()))
+            result = self.initialize(model, Path(folder) / "initial")
+            self.assertEqual(source.verify_retained_base(result, base_state_hash=self.digest), expected)
+            self.assertEqual(result.receipt["auxiliary_base_roster"]["native_auxiliary"]["dtype"], "torch.float32")
+            path = result.receipt["auxiliary_base_paths"]["native_auxiliary"]
+            parent_path, attribute = path.rsplit(".", 1)
+            getattr(result.model.get_submodule(parent_path), attribute).add_(1)
+            with self.assertRaisesRegex(ValueError, "retained_auxiliary_base_changed"):
                 source.verify_retained_base(result, base_state_hash=self.digest)
 
     def test_replaced_tensor_cannot_hide_behind_old_reference(self):

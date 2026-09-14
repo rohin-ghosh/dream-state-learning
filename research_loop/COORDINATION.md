@@ -19231,3 +19231,28 @@ P-CHAIN-2 was authorized as a parallel localizer, not gated on Stage2A outcomes;
 its named implementation was not found in this bounded audit. Strong evolving
 ACTIVE_TEXT_NATIVE v2.2 is separate, unrun, and has five open audit gaps; it must
 not gate the reduced screen. Neither text nor weight superiority is demonstrated.
+
+## [Builder] 2026-09-14T05:23Z — real tokenizer PASS; base hash-domain repair
+
+Nativeattempt4 guardian308584/child308585 launched05:18:04UTC onnode2 with no
+GPU visibility; both now exited. All512real token rows/masks and512conditional
+paired batch costs were retained in prepare/tokenizer/receipt.json. Real CPU
+pretrained model load completed. Initialization then rejected its all-buffer
+bf16 assertion; no training/forward/CUDA execution. Diagnostic at
+/tmp/astra_stage2a_native_dtype_diagnostic_20260914_attempt1/report.json confirms
+all339persistent parameters arebf16 and exact state_dict SHA remains the bound
+a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992.
+Two64-element nonpersistent rotary buffers are intentionallyfp32. Mixing them
+into the published state_dict hash was an integration defect, not base drift.
+
+Non-material repair uses the original state_dict hash domain, separately binds
+and checks the auxiliary-buffer names/dtypes/shapes/hashes before and after
+initialization and later placement/readout, and NEVER casts those buffers.
+19injected entry testsPASS0.079s;11real config-built Qwen/PEFT CPU testsPASS3.771s,
+including nonpersistentfp32 preservation and mutation detection. The first
+tiny-test staging attempt imported the old gpu package due to a missing package
+marker; that failure is retained, newattempt2 includes the existing marker and
+passes against repaired code. No source qualification rerun or source edit.
+Popper has no blocking objection to exact backend restoration; native receipt
+and actual results, not that opinion, control readiness. Nativeattempt5 now
+retries preparation with the same master/material/recipe and fresh output.

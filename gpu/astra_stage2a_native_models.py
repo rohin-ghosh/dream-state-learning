@@ -56,14 +56,15 @@ def initialize_atom_cpu(base_model, *, torch, peft, master, initial_directory,
     training._require(not torch.cuda.is_initialized(), "cpu_initialization_before_cuda_required")
     training._require(not hasattr(base_model, "peft_config"), "unwrapped_base_required")
     training._require(base_model.config.model_type == "qwen2", "qwen2_base_required")
-    references = {name: value for name, value in base_model.named_parameters()}
-    references.update(dict(base_model.named_buffers()))
+    references = dict(base_model.state_dict(keep_vars=True))
+    auxiliary = {name: value for name, value in base_model.named_buffers() if name not in references}
     training._require(bool(references), "nonempty_base_required")
-    training._require(all(value.device.type == "cpu" for value in references.values()),
+    training._require(all(value.device.type == "cpu" for value in (references | auxiliary).values()),
                       "cpu_base_required")
     training._require(all(not value.is_floating_point() or value.dtype == torch.bfloat16
                           for value in references.values()), "exact_bfloat16_base_required")
     training._require(base_state_hash(references) == expected_base_sha256, "base_digest_mismatch")
+    auxiliary_hash = base_state_hash(auxiliary)
     directory = Path(initial_directory)
     directory.mkdir(parents=False, exist_ok=False)
     receipt = dict(schema="ASTRA_STAGE2A_CPU_INITIALIZATION_V1", status="STARTED",
@@ -96,8 +97,13 @@ def initialize_atom_cpu(base_model, *, torch, peft, master, initial_directory,
         training._require(all(id(value) in by_identity for value in references.values()),
                           "base_tensor_replaced_during_wrapping")
         base_paths = {name: by_identity[id(value)] for name, value in references.items()}
+        training._require(all(id(value) in by_identity for value in auxiliary.values()),
+                          "auxiliary_buffer_replaced_during_wrapping")
+        auxiliary_paths = {name: by_identity[id(value)] for name, value in auxiliary.items()}
         training._require(base_state_hash(references) == expected_base_sha256,
                           "base_changed_during_initialization")
+        training._require(base_state_hash(auxiliary) == auxiliary_hash,
+                          "auxiliary_buffer_changed_during_initialization")
         named = dict(model.named_parameters())
         tensors = {spec.name: named[spec.name].detach().cpu().clone()
                    for spec in observation.trainable_roster}
@@ -115,6 +121,10 @@ def initialize_atom_cpu(base_model, *, torch, peft, master, initial_directory,
                        rng_after_sha256=training.tensor_sha256(rng_after),
                        gradient_checkpointing_use_reentrant=False,
                        wrapped_base_paths=base_paths,
+                       auxiliary_base_paths=auxiliary_paths,
+                       auxiliary_base_sha256=auxiliary_hash,
+                       auxiliary_base_roster={name: {"dtype": str(value.dtype), "shape": list(value.shape)}
+                                              for name, value in auxiliary.items()},
                        initialized_arms=["ATOM_LOCAL"], closed_copy_executed=False)
         _write(directory / "receipt.json", receipt)
         return InitializedAtom(model, observation, references, base_paths, receipt, directory)
@@ -139,4 +149,8 @@ def verify_retained_base(initialized, *, base_state_hash):
     actual = base_state_hash({name: current[path] for name, path in initialized.base_paths.items()})
     training._require(actual == initialized.receipt["expected_base_sha256"],
                       "retained_frozen_base_changed")
+    auxiliary_paths = initialized.receipt["auxiliary_base_paths"]
+    training._require(all(path in current for path in auxiliary_paths.values())
+                      and base_state_hash({name: current[path] for name, path in auxiliary_paths.items()})
+                      == initialized.receipt["auxiliary_base_sha256"], "retained_auxiliary_base_changed")
     return actual

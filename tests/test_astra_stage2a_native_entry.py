@@ -56,6 +56,9 @@ class Model:
     def named_buffers(self):
         return tuple((name, value) for name, value in self.tensors.items() if "buffer" in name)
 
+    def state_dict(self):
+        return dict(self.tensors)
+
     def requires_grad_(self, value):
         self.requires_grad = value
         return self
@@ -208,7 +211,8 @@ class EntryTests(unittest.TestCase):
         observation = SimpleNamespace(trainable_roster=(source.training.ParameterSpec("layer.lora_A.default.weight", (8, 1), "torch.float32"),),
             layer_count=1, initial_adapter_sha256="b" * 64)
         self.initialized = SimpleNamespace(model=model, observation=observation, base_paths=paths, base_references=references,
-            receipt={"expected_base_sha256": kwargs["expected_base_sha256"]}, directory=directory)
+            receipt={"expected_base_sha256": kwargs["expected_base_sha256"],
+                     "auxiliary_base_paths": {}, "auxiliary_base_sha256": state_hash({})}, directory=directory)
         return self.initialized
 
     def conductor(self, **kwargs):
