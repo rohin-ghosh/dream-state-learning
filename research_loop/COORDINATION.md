@@ -25557,3 +25557,62 @@ Read research_notes/analysis/2026-09-14_seq267_feedback_diagnostic.md and its
 reproducible script/JSON. This localizes basic observation-to-action trouble
 before a successor attributes gains to reflection; does not request a Taxi
 rerun or interfere with the commissioned new arms. No model/GPU calls.
+
+## SEQ-269 — [Worker PERSIST-MATH] 2026-09-14T22:21:37Z terminal rich/terse checked-record screen
+
+Final answer success RICH0/16 vs TERSE2/16; joint answer+nontrivial checked
+record0/16 vs0/16. First-turn answers0/16 vs1/16; admitted targets0, fits0,
+updates0. All32tasks and64calls retained. NodeA100 physical GPU6/7; exact root
+`/localhome/local-rohing/data/orch_persist_math_20260914_attempt1`.
+Reduction: `research_notes/analysis/orch_persist_math_20260914_attempt1/REDUCTION.json`.
+Raw/report publication8304b2e8. GPU7 released22:09:32UTC; GPU6 detached
+releasePASS22:18:01UTC. Main assigned269 after268 and deallocated this recipe;
+no sequel, no fit, no reader wait. Worker retires after this publication.
+
+OBSERVATION: RICH32calls/11489generated tokens, TERSE32calls/1105tokens;
+RICH16/32truncated, TERSE0/32. Both0/16tasks ever received prior accepted
+records, so stores never warmed. Native time607.48+119.41s=0.202GPUhours.
+This is neither demonstrated warm record-memory competence nor sleep learning.
+
+EVIDENCE AND CONTROL: same16 PM_AFFINE_POWER_V1 L1 instances, frozen portable
+37ec, deterministic oracle/action interface, greedy decoding,512token ceiling,
+<=2turns/task and independent record stores. Both RESULT/DATA and all64 raw
+calls replay exactly: prompts/order/native-response joins, oracle/store
+transitions and denominators. REDUCTION binds all call hashes. Both final
+base/adapter checks pass; no changed weights. Semantic text sample6RICHcalls
+1PASS/5FAIL/0UNRESOLVED (illustrative, not exhaustive or independent). Correct
+fixed-point reasoning occurs in one sample; others contain false remainders/
+cycles. Headings/length are not semantic labels. Zero joint candidates means
+zero target admission regardless of the unreviewed remainder. Full report and
+SEMANTIC_REVIEW.md are alongside REDUCTION; original failed attempts preserved.
+
+CURRENT INTERPRETATION: this bounded recipe fails record acquisition and has
+no rich outcome advantage. RICH uses10.4times the generated tokens without a
+joint success. Null deallocates the recipe, not the reusable-record thesis.
+No held-family transfer, retention, parent contribution or H1/H2 was measured.
+
+CREDIBLE ALTERNATIVES: initial difficulty before a first record, unfamiliar
+action contract, enumeration exhausting512tokens, and incorrect arithmetic.
+These are not isolated. RICH has16truncation+14projection+2parsed-failure calls;
+TERSE31parsed-failure+1record-list-limit rejection. No parser rescue or case
+exclusion. The exposed DEV37ec lineage is not a clean initial learner.
+
+CONFIDENCE: high in bounded own replay, low in general learning conclusions;
+not independently VERIFIED. Original tokenizer precheck undercounted mappings;
+the Engine's actual counts prove all64calls satisfy prompt+reserved512<=2048,
+maxima1302RICH/773TERSE. Local repairbff02a9d has26passing CPUtests; native
+archive226fc269 was not replaced or restarted. Initial preGPU suite was21.
+RICH native exit0 was followed by guardianexit1 on transient unreadable sshd;
+original scan preserved, detached release then passed with no owner touched
+or exception relaxed. Initial push rejection stopped launch until published
+mergeca8f8b2c contained preGPU042fa66d; exact chronology remains in REPORT.
+
+CHEAPEST DISCRIMINATING NEXT TEST: none queued; Main says no sequel. A future
+record-visible/hidden ablation is uninformative until records actually form.
+Off-the-shelf MATH-RICH continues independently. Peer message: keep action,
+arithmetic, checked records, semantic richness and true token accounting
+separate; longer explanations alone do not show successful reusable learning.
+Exact L2proposal PM_CONGRUENCE_JOIN_V1 and heldL3proposal
+PM_LINEAR_RECURRENCE_V1 remain unadmitted/ungenerated pending Rohin. Proposed
+same-child consolidation and guided/frozen/unparented comparisons are written
+in REPORT only; none was executed, and evaluation would be parent ABSENT.

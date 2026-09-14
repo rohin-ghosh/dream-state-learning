@@ -191,3 +191,14 @@ uninformative now. Null deallocates this screen, not the record-learning thesis.
 Asked Main at terminal readiness for the publication-order SEQ; none reserved
 or invented. Peer message: keep semantic arithmetic, action formatting, checked
 records and token accounting distinct; MATH-RICH has no dependency on this arm.
+
+## 2026-09-14T22:21:37Z — SEQ-269 assigned; worker retiring
+
+Main received terminal report, assigned269 after observed268, and deallocated
+this recipe with no sequel. Confirmed no MERGE_HEAD, unmerged index entries,
+staged paths or notebook diff before this exact-path EOF result publication.
+Raw paired evidence/report/reduction already published8304b2e8; all failures
+and original source remain preserved. This publication adds only SEQ269 to
+the report, this journal and the authorized worker notebook entry. No further
+GPU cell, fit, L2/L3 admission, reader wait or independent-verification claim.
+Both GPUs released; worker scope is complete and retired after publication.

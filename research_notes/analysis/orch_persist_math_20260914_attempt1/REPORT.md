@@ -1,4 +1,4 @@
-# PERSIST-MATH terminal L1 screen — September 14, 2026
+# SEQ-269 — PERSIST-MATH terminal L1 screen — September 14, 2026
 Final answer success: RICH **0/16**, TERSE **2/16**.
 Answer + checked nontrivial record: **0/16 vs 0/16**; admitted targets **0**.
 Native calls: **32/32 per arm, 64 total**; fits/updates **0/0**.
@@ -7,7 +7,7 @@ Native root: `/localhome/local-rohing/data/orch_persist_math_20260914_attempt1`.
 Reduction: `research_notes/analysis/orch_persist_math_20260914_attempt1/REDUCTION.json`.
 Release: GPU7 PASS22:09:32UTC; GPU6 detached PASS22:18:01UTC.
 Conclusion: retire this bounded recipe; no record-memory or sleep benefit measured.
-Publication-order SEQ requested from Main after terminal reduction; none invented.
+Main assigned SEQ-269 after SEQ-268; recipe deallocated, no sequel.
 
 ## Observation and control
 
