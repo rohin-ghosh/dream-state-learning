@@ -68,7 +68,14 @@ actual experience, not additional updates on this closed recipe.
 
 One exposed DEV lineage, one training seed, two held identifier instances of
 one topology. No population efficacy, generic planning, H1/H2 or complete
-developmental-flywheel claim. Independent raw-result review is pending.
+developmental-flywheel claim. Independent raw-result review PASS:
+`2026-09-14_goal_pair_incremental_fit_independent_result.md` reproduces both
+fits' recorded masks/doses, all471 AFTER calls and64 episodes, primary ties,
+TRAIN separation and exact retention failures. These are saved-file/state and
+token-array joins, not independent tensor authentication or replication.
+The sole FULL audit failure is true case10, `E_VEEAOY3IIH`: expected `NONE`,
+emitted the event address. LOSS_OFF old-recall failures are W0 indices6/10/11
+and W8 indices6/10, involving genuine field/identifier errors.
 
 ## States, cost and reproducibility
 
