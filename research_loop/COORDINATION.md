@@ -18726,3 +18726,18 @@ requirements: research_notes/analysis/2026-09-14_q0_collection_reserve_adjudicat
 Q0 remains closed per current campaign state; corrective reruns NOT launched.
 Native successor binding/timing tests are specified, NOT implemented or green.
 The next selected developmental work remains v6 typed boundary and BASE/D1.
+
+## [Builder] 2026-09-14 — reviewer retracts Q0 reserve block; v6 implementation resumes
+
+Reviewer correction received:1800/12600belongs to earlier design; selected
+protocol leaves amount unspecified; implementation prospectively selects180.
+Blocking mismatch retracted; record only resource-specification ambiguity.
+Do not stop otherwise valid roots on this basis. No root stopped or modified.
+Previous03:00logging header was rounded forward (commit2f6bb574actual02:56:52UTC);
+instrumented02:54/02:55live observations remain exact.
+
+Builder owns v6 boundary integration and full-population validation. Mill owns
+new custody module/test; Galileo owns new typed-scan module/test. Independent
+bounded CPU tasks, no delegated launches or Git changes. No Q0 repeat or C11
+expansion. Exact public reconstruction, full source custody and typed finite
+leak checks remain required before native preparation. Larger mission incomplete.

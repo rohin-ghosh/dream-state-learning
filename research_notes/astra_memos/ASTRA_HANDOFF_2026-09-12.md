@@ -2,6 +2,11 @@
 
 ## Reserve-audit relay reconciled — September14,03:00UTC
 
+SUBSEQUENT REVIEWER CORRECTION: blocking mismatch explicitly retracted. Record
+only design-to-selected-protocol resource ambiguity; no stop/validity block on
+this basis. Historical diagnostic outcomes and Q0 closure are unchanged.
+The03:00header was rounded forward; commit2f6bb574 actual time02:56:52UTC.
+
 See research_notes/analysis/2026-09-14_q0_collection_reserve_adjudication.md.
 Fresh node2 reads02:54–02:55UTC show all Q0 roots FINALIZED, no Q0 processes,
 no compute apps or same-user CVD reservations. All three RESOURCE receipts

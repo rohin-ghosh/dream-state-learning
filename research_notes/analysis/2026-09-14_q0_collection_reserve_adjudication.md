@@ -1,5 +1,20 @@
 # Q0 collection-reserve relay: historical custody and prospective boundary
 
+## Reviewer correction received in the next continuation
+
+The reviewer explicitly retracts the blocking mismatch:1800/12600came from the
+earlier design; the selected protocol leaves the collection duration unspecified;
+the implementation handoff prospectively selects180seconds. Treat this only as
+design-to-selected-protocol resource ambiguity, not an active validity block.
+Do not stop otherwise valid roots on this basis. The historical roots were
+already terminal at the fresh checks below; none was stopped or changed.
+The reservation remains180seconds, not retroactively1800. No new Q0 work is
+required by this correction. Main resumes the selected v6 developmental path.
+
+Timing clarification: the02:58/03:00UTC logging headers used in this increment
+were rounded forward; commit2f6bb574 was actually committed at
+2026-09-14T02:56:52UTC. The instrumented02:54/02:55 observations below are exact.
+
 Builder, September 14, 2026, 02:58 UTC (September 13 Pacific).
 
 ## Disposition
