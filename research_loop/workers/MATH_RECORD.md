@@ -15,3 +15,12 @@ new root absent, native storage455GiB free, physical4–7 UUIDs correct/0MiB.
 CPU suite pending final reducer test; portable native CPU prepare and detached
 resource checks next. Initial implementation complete using original API,
 mounted-state helper and byte verifier, without old-source edits.
+
+2026-09-14T22:34:45Z preGPU: source183add51 published, archive
+f0634bb6f976a37a8962e52966bf9108a03605a1e6c7a9b3737e578b2d0074b6
+verified832files locally published/remote mounted.19/19CPU tests pass, bash
+syntax pass, native PREPARED_NO_MODEL0calls verifies frozen base inventory.
+Detached retry scans22:34:41–42UTC clear4/4. Initial scans failed closed because
+our simultaneous CPU-prepare SSH was unreadable; preserved, zeroGPU science.
+Outer per-shard timeout includes scan/loading and termination within common
+2700second deadline; lease1789980180 minus6h. PreGPU notebook publishing now.
