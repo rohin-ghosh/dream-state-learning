@@ -36,6 +36,13 @@ and task2 issue identical routes although their goals differ. This is **not
 reliable goal-conditioned composition**. Two successes out of four do not by
 themselves beat a simple first-available-branch baseline on this balanced graph;
 unavailable failure alone cannot establish semantic goal-directed memory use.
+Main also executed that deterministic comparator against the saved world using
+the unchanged `hop.run_episode(..., protocol='turnbound')`: choose the first
+currently listed PORT, never READ and never inspect GOAL. It makes two legal
+moves on all four tasks and succeeds on exactly tasks1,2, the same successful
+cases as9d36. Zero model calls/fits. Task3 differs only in failure mode: baseline
+reaches the wrong goal, while the child skips a step. This is a diagnostic
+reference, not an additional learned arm or an independent replicate.
 The evidence is a partial operational connection—experienced source record →
 sleep write → fresh parametric retrieval → actual multistep behavior—not a
 validated general planner, complete flywheel, H1/H2 or learning-efficiency result.

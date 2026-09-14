@@ -1,7 +1,10 @@
 # SEQ-252: trajectory-label ablation fails both contextual two-hop panels
 
 September14,2026. One native TRAJECTORY_LOSS_OFF fit and fresh AFTER are COMPLETE.
-Source4f1d7b689e7892d989cb97e6406d5c80d9bfb6a8. Independent bounded review pending.
+Source4f1d7b689e7892d989cb97e6406d5c80d9bfb6a8. Independent bounded review PASS:
+`2026-09-14_event_two_hop_lesson_control_independent_result.md`. It independently
+replays labels/schedules/episodes and matches captured state/artifact joins;
+no live tensor authentication or complete ancestry audit is claimed.
 
 | Endpoint | Full trajectory sleep (SEQ250/251) | Matched trajectory-loss-off |
 |---|---:|---:|

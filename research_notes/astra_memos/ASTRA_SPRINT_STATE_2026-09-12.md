@@ -1,4 +1,15 @@
-## Current superseding snapshot — 2026-09-14 15:59 UTC
+## Current superseding snapshot — 2026-09-14 16:18 UTC
+
+No Main-owned native job live.252controlterminal/independentreviewPASS,253memory
+terminal/independentreviewpending. Exactnewrecall4/4W0/W8, actualparam16/16exact;
+param=text2/4; old16/audit16/taughttext3retained. A CPUexecuted first-port rule
+also succeeds on exactlythe samecases1,2: no reliablegoalconditioningclaim.
+Next one finite strengthenedtrajectoryreplay repair from37ec; Schrodingernew
+driver/guard/tests pendingrelease/CPUprepare. No memory-dose sweep. Carsonowns
+sixdraftfiles updating252/253. See currentHANDOFF andprimaryanalysis/designs.
+Mission ACTIVE/INCOMPLETE; olderLIVE statements below are historical only.
+
+## Historical superseded snapshot — 2026-09-14 15:59 UTC
 
 LIVE independent native tests: node2GPU0 control398565/train59of100/source4f1d7b68;
 node2GPU1 memory398924/BEFORE/source7c773aac. Exact roots/commands in currentHANDOFF.

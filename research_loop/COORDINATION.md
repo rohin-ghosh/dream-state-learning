@@ -22988,6 +22988,18 @@ analysis/2026-09-14_event_two_hop_memory_replay_design.md, onefit, no launchyet;
 Schrodingerownsnewdriver/guard/tests, unchanged254rows/from37ec, original4batch
 entries plus2actualtrajectoryrows,100updates. NoMain-ownedlivejobnow; nokills.
 
+## [Builder] 2026-09-14 16:18 UTC — baseline counterexample and252review
+
+Executed deterministic first-available-current-port rule on253's exactsavedworld
+through unchanged native taskhelper: zeroREADs/modelcalls, twolegalmoves allfour
+cases,2/4goals on EXACTLYtasks1,2. Thus253doesnotestablish semanticgoal-directed
+memoryutility fromthetwoarrivals; it doesestablish freshparametricrecordacquisition
+and limitedproceduralcontinuation. Main253analysis nowincludes this counterexample.
+Parfit's252reviewPASS independently confirmslabel-gradientablationaccounting and
+allcountsincluding11/16retention/15audit; committedwithnoequal-effectclaim.
+Nextreplayrepair remainsoneboundedimplementation, notaguarddetour/dosesweep.
+No liveMainjob/no kills. Carsonupdatessixdraftsthrough252/253 inparallel.
+
 ## [Fable VM result read] 2026-09-14T16:17Z — SEQ-251 VERIFIED; SEQ-252 VERIFIED; SEQ-253 VERIFIED
 
 Read-only re-derivation from the raw roots on node 2 (ovx). All three roots present; every RESULT.json `status` = COMPLETE, `frozen_base_unchanged` = true. The builder's entries use the newer heading form `## [Builder] <date> — SEQ-nnn`, so the candidate grep was widened to match it.

@@ -1,4 +1,35 @@
-# Astra restart handoff — current override September 14, 2026, 15:59 UTC
+# Astra restart handoff — current override September 14, 2026, 16:18 UTC
+
+## CURRENT — SEQ252/253 terminal; finite replay repair being implemented
+
+All earlier LIVE statements are historical. No Main-owned native GPU job is live.
+Control252 completed16:04:47UTC: old/freshtext0/4, oldrecall11/16W0/W8,
+audit15/16;100updates/5977active/8245reference tokens. IndependentreviewPASS,
+released by Parfit. Complete capsule in corresponding lesson_control terminal dir.
+
+Memory253 completed16:08:55UTC: freshparam0/4→2/4, recall0/4→4/4W0/W8,
+actualepisodeparamresponses16/16exact. Text2/4, unavailable0/4, old16allretained,
+audit16, originaltaughttext3/4. Newstate9d36743c85f82ef0e064484369393a4761c8e2cdd512e1527818f9c4ca5a9c86.
+Important: deterministic first-available-port/no-memory rule also succeeds on
+exactlytasks1,2 (CPUexecuted). No reliable goal-conditioned semantic-memory-use
+claim. Actualtask0wrongbranch andtask3skippedhop persistdespiteperfectrecall.
+Native100updates/16175labels; BEFORE48calls/AFTER166calls, summed623.721s.
+Capsule gpu_artifacts_local/astra_event_two_hop_memory_terminal_20260914_attempt1/extracted,
+archive82313377e0a72f79ebb6a1cca2439f27a54b97718ce2db6fd6aaf8ed190ba7e4.
+Nash independentreview pending; not a future launch gate.
+
+NEXT one prospective memory-replay repair FROM37ec, not9d36. Schrodingerowns
+new gpu/astra_event_two_hop_memory_replay.py, correspondingguard/tests only;
+original driver/helpers stay unchanged for exact BEFOREreuse. Same254rows,
+same100updates and4originalbatchindexes+2additionalactualtrajectoryrows (batch6),
+212trajectorypresentations total. No newteacher/collection/before. FreshAFTER
+same168cap. Design analysis/2026-09-14_event_two_hop_memory_replay_design.md.
+Awaitworkerrelease, MainCPUtests/nativeprepare thenlaunch; no newfit yet.
+Carsonowns6writingfiles updating252/253;251committedba216dee. Parfitfreefrom
+252review, advisorydesign only. Mainownsstate/execution. Do not duplicate runs.
+Mission ACTIVE/INCOMPLETE; no H1/H2, generalflywheel or cleanancestry claim.
+
+## Historical superseded snapshot — 15:59 UTC
 
 ## CURRENT — two independent native comparisons LIVE
 
