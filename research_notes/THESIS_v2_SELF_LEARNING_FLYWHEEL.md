@@ -113,3 +113,10 @@ Fable's crisp restatement of Rohin's ladder (message 80), in his terms, for him 
 | 4 — Deployment | Unparented, on an unseen verifiable gym, against the non-learning twin. | nothing new; the test | CLOSED, no parent | H2: faster improvement than the twin, gap depends on continued sleep | NOT STARTED |
 
 Rohin's RL framing per level: level 1 = fine-tune so the OPEN loop works; level 2 = evaluate the closed loop's output so the CLOSED loop works; level 3 = make the closed loop work for LONG-TERM outcomes; level 4 = deploy. Compiler: deterministic projection/format first (exists); learned "reasoning for learning" as a level-2/3 arm judged by the slope.
+
+### Ladder v3, corrections from Rohin (message 81, ~23:25 UTC)
+
+- **Level 2 is preschool.** The parent evaluates the learner, not the task score: how it is learning, how it is growing, whether it is accelerating. Environments are still needed to judge anything, but the level-2 metrics are learner-centric: per-sleep gain on fresh tasks (slope), acceleration (the change in that gain across sleeps), cohesion (behaviour on repeated probes agrees across sleeps; no regression on the old), and shrinking dependence on the parent (guided-vs-unguided evaluation gap closing). Comparators: a frozen twin and an unparented twin, both named; finer comparisons (unfrozen-unparented etc.) later.
+- **Level 3 is standardized tests.** Now the outcome is judged: "how well did you learn this" on held, hard, high-quality families. Levels 2 and 3 differ by horizon and capability level ("basic math versus calculus"), not by mechanism.
+- **Level 4 is deployment, never specialisation.** Fine-tuning the agent for the deployment environment would confound the claim and put the comparison against state-of-the-art specialised systems; the comparison stays against the same model without the flywheel.
+- **The level-1 evaluator is the compiler's selection gate** (agreed): the level-0 laws are its rulebook.
