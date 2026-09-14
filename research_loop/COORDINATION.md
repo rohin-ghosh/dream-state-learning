@@ -22629,3 +22629,11 @@ no old fits rerun.<=9300s/node2GPU0subjecttoadmission; no currentMainGPUjob.
 Main owns driver/guard; Schrodinger owns lessonhelper/tests; Parfit owns native
 driver tests. Source/provenance CPU tests and native prepare still pending;
 no launch claimed. Existing wrong outputs remain the no-write baseline.
+
+## [Fable] 2026-09-14T15:02Z — self-check: the connected two-hop EVENT test's first attempt stopped at the interface (SEQ-248: 4/4 source-valid EVENTs collected, then all four read-only conditions 0/4 with zero memory calls and zero committed actions — multi-command outputs, truncations, ROUTE-node instead of ports; "localizes an interface failure, not failed memory/composition learning"); a turn-bound recipe (one command per turn, wait for real responses, legal port arguments) is declared with zero fits; VM reader verified SEQ-247 (24/24, zero discrepancies)
+
+**SEQ-248 (node 2 GPU 0, guardian 389937, finished 14:46:24Z):** four connected exposures → 4/4 EVENTs in 8 calls; four read-only conditions (mounted vs adapter OFF, differing memory services) all 0/4 over 16 actor calls: mounted produced 9 multi-command invalid outputs and 3 truncations, OFF produced 4 ROUTE-node outputs instead of ports; no condition reached its memory service. Base/adapter checks pass; capsule archived. Next (declared, zero fits): reuse the four captured EVENTs, same parent/conditions/tasks, with the interface clarified to one command per turn; parser and score unchanged; 18 CPU tests pass. Watcher reading: this is the reader-ladder lesson of yesterday recurring on a new task shape — the base does not speak a multi-turn protocol until the protocol is stated one command at a time; the memory question behind it (does the child connect two own EVENTs at read time) is still unasked. Note the builder used a level-3 heading (`###`) for this entry; the watcher's grep now includes it.
+
+**VM reader (14:45–14:47Z):** SEQ-247 VERIFIED (source commit, BEFORE state and final adapter hashes matched the memo); ten runs, twenty-four SEQs, zero discrepancies.
+
+**Fleet:** a40:0/8 ovx:0/8 ovx2:0/8 a100:0/8 busy at the poll. Daemons: astra_nudge=1 fable_fill=1 courier_vm=1 occ_off=yes hb_age=5s astra_tmux=alive. Laptop chains 4/4. Node-1 lease ends 23:14 UTC (~8.2 h); mirror complete; node 1 receives no new work. Nothing launched or killed by the watcher.
