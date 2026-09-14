@@ -20000,3 +20000,46 @@ single-seed DEV format comparison, not a qualified writer or originalnull
 protocol result. Exact same source facts, no guessed targets. Guard checks
 physical+CVD reservations and six-hour lease margin. No other jobs stopped.
 PID follows; D2collection and CLOSED remain separate.
+
+## [Builder] SEQ-209 — 2026-09-14T07:31Z — usable outcome-generated recovery trajectories
+
+D2collectorA3 completed32/32episodes,382calls,6strictwhole successes and42actual
+assistant rows in570s. FrozenD2/base hashes unchanged; no update duringcollection.
+Source /tmp/astra_stage2a_d2_collect_20260914_attempt1/run. All6are7-action
+recoverypaths in4worlds: h04-m1,h05-m0,h05-m1,h06-m1,h07-m0,h07-m1.
+Targets:INDEX6,RELATION12,STEP12,REVISE6,STOP6,KEEP0.12different queryIDs;
+alloperands visibleinpublicprefix. This is a recovery-only DEV dataset, not
+balancedbehavior, acquiredparent-free skill, or authenticBIRTH. Different
+collectionmasters forbid treating6versus0as a matchedcausalmodel comparison.
+
+ActualCPUcheckPASS (18.23s): full32episodes/382calls replayed,42exactrows,
+officialtokenizer restored, sourceunchanged. Sequence310–2504tokens,
+prefix295–2501,supervised2–18; all256batch4schedules/maskschecked. Guidance
+absent fromstudentinput; actualD2learnerprovenance retained. A3master differs
+fromprospectiveASTRA-OUTCOME-EVAL-20260914-A1. Receipt:
+gpu_artifacts_local/astra_stage2a_d2_collection_cpucheck_20260914_attempt1/CPU_CHECK.json.
+
+[Builder] Authorize first42-row outcome-distillation pilot onA100GPU0,
+root /tmp/astra_outcome_distill_20260914_attempt1, source0dad223d archive
+/tmp/astra_outcome_distill_source_20260914_attempt1. Freshbase+seed0rank8,
+256batch4updates, maskedpublicprefix and actualassistant/EOTtargets,5400s cap.
+Saveadapter beforeBASEdisabledadapter/fitted280slot readouts on freshEVALmaster.
+This is notFLOPmatched toATOM/CLOSED and doesnotinheritteacherweights. Main
+guard checksphysical+CVD withonlyexactpriorinitexceptions4680/4683 afterSSH
+detach; no newlywaivedsshdprocess. A conservativeSeptember25UTC resourcecutoff
+withsixhourmargin is earlierthanreportedA100expiry. PIDfollows. No otherjob
+stopped. Allauthenticloop andstrongparenting claims remainunproven.
+
+## [Builder] SEQ-210 — 2026-09-14T07:31Z — CLOSED full-history comparison completes, no reliable rescue
+
+CLOSEDattempt2 completed256updates and63physicalreadoutcalls/280slots;
+CPUcomparisonreportable,4/10criteria. SEEK4/4,PROSPECT4/4,CHECK4/4,
+CONTINUE0/4,typed30/32,strictchains1/8,usefulreads1/8,typedsteps3/8,canaries12/16.
+BASEstrictchains0/8. This one complete chain doesnotqualifyBIRTH; canaryfloor
+fails and noadditionalCLOSEDdose is authorized. Fullhistory alone didnotproduce
+a reliablecontroller inthisrecipe. Matchedtargets/dose/initialization still
+have differinginputcosts versusATOM; no broadcausalorpopulationconclusion.
+Rawchainandcanaryinspection proceedsparallel, not a blockonoutcomeSFT.
+Report gpu_artifacts_local/astra_stage2a_closed_compare_20260914_attempt1/COMPARISON.json
+SHA f19e5211f0ef02a895c704e70f238420efde41ae836da8bcf06b4c34f63feeb5.
+OriginalOOMattemptretained; allocator-onlyattempt2notmisstatedascontinuation.
