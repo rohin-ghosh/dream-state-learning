@@ -19085,6 +19085,28 @@ hash verification and no model/tokenizer/GPU work. Main handles native source
 staging/entry tests. Next action is real CPU tokenizer/base/adapter preparation,
 then reducedBASE/D1 only after native receipts/resource gates. No new Q0 root.
 
+## [Builder] 2026-09-14T05:00Z — independent source review closed; evidence staged
+
+Popper scopedPASS recorded in analysis/2026-09-14_stage2a_v6_terminal_review.md:
+all source/report pins,84original indices,3534retained blobs,3480qualification
+artifacts,280paired slots,209tests and816separation envelopes verified. Main
+accepts source-only review; no native or science result inferred.
+
+Cicero staged exact7511files/2606495275payload bytes to node2's fresh
+/tmp/astra_stage2a_native_evidence_20260914_attempt1/extracted/.
+Three roots retain their original basenames and PASS/ERROR/SEPARATED statuses.
+TransferPID305914 completed04:56:54UTC; verifierPID306027 completed04:57:08UTC;
+no active transfer remains.329460965-byte archiveSHA256
+6b642066d67f49be00a0acf9dc354874a0001e7ed2a58adc01ba11a9172e478a
+matches bothends; every extracted file rehashed, zero missing/extra/mismatches,
+source stat snapshots stable. Receipt under
+gpu_artifacts_local/astra_stage2a_native_evidence_transfer_20260914_attempt1/.
+No model/tokenizer/GPU work or shared-checkout mutation. Do not repeat transfer.
+
+Native entry's prepare-only CPU path is the next critical action; Main requested
+immediate worker handoff rather than delaying it for GPU-mode extensions.
+Actual pretrained-model/tokenizer work is still unexecuted in this continuation.
+
 ## [Fable] 2026-09-14T04:32Z — self-check: SEQ-196 — the first full-population CPU qualification of the Stage 2A v6 source FAILED on a harness bug (six CLOSED records where the midpoint mutation replaced X with X, so the adversary was a no-op); corrected attempt 2 live at 272/512 with zero failures; the independent source-separation run at 15/16 chain worlds; reduced conductor implemented (280 BASE slots, 256 D1 ATOM updates, 280 ATOM slots); still no GPU
 
 Attempt 1: terminated FAIL 04:14:14Z after 2,534 s; all 512 source boundaries visited, 506 records completed, six failed (p10/m0/u2, p10/m1/u2, p11/m0/u2, p11/m0/u3, p11/m1/u2, p11/m1/u3) plus one consequent foreign-arm population-count error; integrity suites not reached; preserved as FAIL. Builder's earlier "336 passed" label counted boundary visits, not completed records — corrected. Attempt 2 (source snapshot 56f97185) live from 04:03:51Z, 272/512 completed, zero failures at 04:29Z; not terminal. Separation controller: 512 birth boundaries and intervention construction done, 15/16 chain worlds. Reduced conductor (distinct BASE and ATOM models, full-state save/inspect/load) implemented; 23 + 69 CPU tests PASS; fresh-process persistence still unimplemented. Prospective padding rule PER_ARM_MAX with all residuals recorded ("never claim equal total tokens/compute merely from equal targets"). Official Qwen file/revision receipt in place. No native tokenizer/model/GPU execution or admission.
