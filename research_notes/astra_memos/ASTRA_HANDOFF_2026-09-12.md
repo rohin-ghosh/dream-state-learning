@@ -2,6 +2,23 @@
 
 ## CURRENT OVERRIDE — September14,2026,13:49UTC, SEQ245
 
+LIVE NEXT CHECK: shared-writer control guardian386793, node2GPU0,
+started14:12:43UTC, root/tmp/astra_reader_audit_transfer_write_20260914_attempt2,
+frozen source d0f16e22f0b4a5b61998164193ee8d8bf155c0f3.51CPUtests andnative
+CPUpreparePASS (same245parent/rows/kernel/masks/denominator/SFTroster).
+train/LOSSES.jsonl had60updates at14:14:43UTC, expected100; AFTER then runs
+freshprocess. Inspect train/RESULT.json orFAILED.json, after/RESULT.json or
+FAILED.json andrun.log. OOM/recoverywarning retained, notyetfitfailure.
+DO NOTrerunfit if evaluationplumbingfails. Originalattempt1CPUprepareFAILED
+beforemodel becausecue_rows tuple vsJSONlist; samecanonicalcontent/recipes,
+nowcanonicaleqwithchanged-contentregression. No data/kernelchange.
+No245referencefitsrepeated. Goodall01a09f50-4d7e-7aa1-b364-33e5da7bccf5
+owns onlynewtransfer_write_reduce.py/test +independentresultmemo, CPUonly.
+When terminalcopycomplete root incladapter/source; sendGoodalllocalpath;
+reduceallpanels withsameA3collection and12oldfacts, comparematchedreferences,
+lognextSEQ247 afterreconcile andupdate6writingfiles. Noautomaticnewfit.
+SEQ246reviewCOMPLETE anddraftsupdated8b7c1a38; othersclosed. Missionincomplete.
+
 CURRENT 14:08UTC: both246replays COMPLETE, don'trestart. SFTfault8/8,OFF2/8;
 true4/6both; sixOFFfaultfailures literalE_id INVALID_POINTER. Complete root
 gpu_artifacts_local/astra_reader_audit_matched_replay_terminal_20260914_attempt1/extracted,

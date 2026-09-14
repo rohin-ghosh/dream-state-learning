@@ -1,5 +1,15 @@
 ## Current superseding snapshot — 2026-09-14 13:49 UTC, SEQ245
 
+LIVE 14:12:43UTC shared-writer control: node2GPU0 guardian386793,
+root/tmp/astra_reader_audit_transfer_write_20260914_attempt2,
+source d0f16e22f0b4a5b61998164193ee8d8bf155c0f3.51CPUtests/nativepreparePASS;
+100updatefit followedbyfreshAFTER, no reference refits. At14:14:43,60updates,
+allocatorOOM/recoverywarning sameasreference; noFAILEDreceipt. Keepreserved.
+Attempt1CPUpreparefailure was tuple/list comparison, repairedonlyserialized
+equivalence; all recipe/material bytes match. Preserve attempt1 intact.
+SEQ246 independentreviewCOMPLETE, sixwritingfiles8b7c1a38, Goodall owns new
+shared-writer reducer/tests and independentresult; no GPUrights.
+
 CURRENT 14:08UTC: SEQ246 matched replay COMPLETE (not LIVE below), 12/14 SFT
 vs6/14loss-off; fault8/8vs2/8, true4/6both. Six OFFerrors literalE_id, so
 operationalpointer/format advantage, notisolatedsemanticjudgment. Bothfalseflag
