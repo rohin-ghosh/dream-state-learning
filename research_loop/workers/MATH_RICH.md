@@ -107,3 +107,15 @@ Exact receipt:research_notes/analysis/orch_math_rich_20260914_prelaunch.md.
 Appending worker-authorized dated preGPU notebook paragraph and publishing
 exact paths now. MAIN NOTIFICATION: will launch32-task screen on assigned4–7
 immediately after successful push; no further PI/reader wait requested.
+
+## 2026-09-14T22:05Z — non-material pre-GPU guard repair, zero inference
+
+Prelaunch publication4e192e0b pushed before starting guardians431169–431172
+at22:03:59Z. All four stopped BEFORE resource acquisition/model construction:
+tar --diff compares archive uid/gid(root metadata) with remote user ownership.
+No inference/fit occurred; failed guard logs retained. Non-material repair:
+compare every source file SHA256 against archive contents, reject unsafe/link
+members, ignore cross-host uid/gid. New regression proves mismatched UID passes
+unchanged bytes and changed bytes fail. Experiment roster/prompt/oracle/caps
+and claims unchanged. Publishing repair and new archive binding before retry;
+never claim this infrastructure abort as a scientific null.
