@@ -1,6 +1,66 @@
 # Astra restart handoff — September14,2026,02:49UTC
 
-## CURRENT OVERRIDE — September14,2026,06:46UTC
+## CURRENT OVERRIDE — September14,2026,07:30UTC
+
+Read this instead of all older live-status blocks. Main pushed through0dad223d;
+only unrelated gpu/codex/dream_state.rules and unreviewed TSJ draft are dirty.
+Mission/goal remains active and incomplete. No architecture/thesis change.
+
+1. D2 finished and reduced:SEQ203,7/10criteria,strictchains0/8,mechanicalgoal1/8
+   (extraTHINKafterarrival). Its single dose continuation is CLOSED, no sweep.
+   Local full preservation267files/252103430bytes verified. Do not restart.
+2. CLOSEDattempt2 FINISHED: actualCPUcomparison reportable,4/10criteria:
+   SEEK/PROSPECT/CHECK4/4,CONTINUE0/4,typed30/32,chains1/8,useful1/8,
+   typedsteps3/8,canaries12/16. No qualifiedBIRTH or extra dose. Rootnode2
+   /tmp/astra_stage2a_closed_d1_20260914_attempt2/run. Comparison local
+   gpu_artifacts_local/astra_stage2a_closed_compare_20260914_attempt1/COMPARISON.json
+   SHA f19e5211f0ef02a895c704e70f238420efde41ae836da8bcf06b4c34f63feeb5.
+   Confucius preserving; Dewey analyzing rawchains/canaries. Not yet notebookSEQ.
+3. BASEguidedcollectionA1 andA2 both completed0/32strict,one mechanicalgoal each;
+   no data fit. Their recipes are closed. A2moreSTOP, not infrastructurefailure.
+4. D2guidedcollectorA3 COMPLETED32/32,6strictsuccesses,42rows,382calls,570s.
+   FrozenexactD2 weights, no updates, V1teacher-onlyguidance,newTRAINmasterA3.
+   Rootnode2 /tmp/astra_stage2a_d2_collect_20260914_attempt1/run.
+   All6successes are RECOVERY-only7-action paths in4worlds; KEEPexamples0.
+   Label42row/fourworld/recovery-onlyDEV, NOTbalancedBIRTH/autonomousparenting.
+   Data copied to local andA100 /tmp/astra_stage2a_d2_collection_data_20260914_attempt1.
+   Helmholtz running actualCPUload_collection/tokenizer check; do not fabricatepass.
+5. OUTCOME DISTILLATION IS STAGED, NOT YET LAUNCHED. A100 source
+   /tmp/astra_outcome_distill_source_20260914_attempt1 (0dad223d archive), exact
+   venv/model paths same asnode2; source includes officialtokenizer receipt.
+   Main local guard/run/scanner at
+   gpu_artifacts_local/astra_outcome_distill_20260914_attempt1/.
+   Planfreshseed0rank8,256batch4updates,teacher-free42rows, unguidednewmaster
+   ASTRA-OUTCOME-EVAL-20260914-A1,BASEdisabledadapter versus fitted,280slots/arm.
+   A100GPU0UUID GPU-ff5f84e9-c70e-272d-a8e0-eb20aad05ac6.5400scap. Must fresh
+   detachedguardscan: earlierunknownsshd was probeancestor, goneafterdetach;
+   exactpriorinitexceptions4680/4683 only. DetachedCPUclearverified07:13UTC.
+   Adapter-onlysave before in-process evaluation; notfullresume/freshreloadclaim.
+6. PCHAINfree-endpoint3fits+4readouts complete:copyLOCAL/JUNCTIONonehop0/32,
+   suppliedfacttrace16/16,canary16/16;BASE=LR0raw80/80. DERANGEDNOTRUN, notfailed.
+   Noacquisition means no compositionclaim. Original60snulltimeoutalsoCLOSED.
+7. QUERY-ONLYprecursor LIVE(lastknown)node2GPU3,guardian330036, root
+   /tmp/astra_pchain2_query_only_dev_20260914_attempt1; source818c1696.
+   384updateJUNCTION fit then112freshreadout; samefacttargets/tape/seed ascopy,
+   only32atomicUSERpromptsomitanswers. Evaluationsbyte-identical. Native material
+   passed; no dose increase. Existingreadoutsarecontrols. PipelineCVDpersists
+   between reloads,3600soutercap. CheckactualRESULTbeforeanyretry.
+
+User58 compilerdiscussion answered in notebook and
+research_notes/analysis/2026-09-14_compiler_contract_response_to_rohin58.md:
+separate factualexperience (includingfailures) frombehaviorimitation; compiler
+must notinventsemanticLINKs forauthenticlineage; usechild-authored extraction.
+Teacherremoved entirely, publicenvironment stays masked. Correct40PCHAIN
+presentations/relation, not8;200notuniversal law. Literature note corrected
+freshverificationoverclaim: webuninspectable/urllib429; inheritednotes only.
+
+NEXT: actualA3CPUcheck -> launchoutcomeSFTonA100 ifpass; analyzequeryreadout;
+recordCLOSED/A3results andfinalartifactpaths; designfirstone-event/write/reload/
+fact-dependent-action loop with no-write andretention, without waitingforall
+twohopdiagnostics. No claimthisauthenticloopalreadyexists. Paper/campaignstill
+unfinished. Keep remaining scientific hypotheses open; no newpaidresources.
+
+## PREVIOUS OVERRIDE — September14,2026,06:46UTC
 
 This section supersedes the older status below. D1 recovery completed: SEQ-200,
 six of ten criteria, whole chains0/8, useful reads6/8, canaries15/16. No qualified
