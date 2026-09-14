@@ -20510,3 +20510,11 @@ failed admission, repaired syntheticfixture only. Worker11puretests also pass.
 Next native CPUmask/source preflight then A100GPU1, new root
 /tmp/astra_outcome_a4_replay_20260914_attempt1, source commit to follow.
 Physical/CVD/lease guard mandatory. No additional fits or changed readout budget.
+
+[Builder] 2026-09-14T08:49Z copy-replay launch confirmation: A100GPU1
+guardian110517, source2bb752f2, root/tmp/astra_outcome_a4_replay_20260914_attempt1.
+Native CPUpreflight passed42rows/256batches, no model or initializedCUDA;
+combinedrowsSHA c419e013,13431plannedtargettokens. Exact admission note at
+research_notes/analysis/2026-09-14_a4_copy_replay_admission.md. GPU1physical/CVD
+guard passed after prior service identities were reverified; runningGPU0 untouched.
+A4-only guardian109427 is atupdate129. Neither fit has terminal evidence yet.

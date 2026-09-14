@@ -1,5 +1,41 @@
 # Astra restart handoff — September14,2026,02:49UTC
 
+## CURRENT OVERRIDE — September14,2026,08:49UTC
+
+Read this first. Full mission/goal remains active; no qualified parenting loop,
+mechanism freeze or finished paper. Main owns all native integration/launches.
+
+- Contextual diagnostic COMPLETE08:34:31UTC: SEQ218, BASE2/4,FITTED3/4,
+  readerOFF3/4. All12calls are directROUTEs, zeroREADs, no exceptions. Thus
+  reader intervention unexercised; not evidence of retrieval utility or its
+  absence.43files locally preserved/verified. No furtherreadout/fit on that root.
+- A4analysis COMPLETE: SEQ217,4/32strictsuccesses,30rows,2KEEP/2REVISE,
+  perfectskin/branchconfound. SourceCPUreplay and actualtokenizer/masks pass.
+- LIVE A100GPU0 guardian109427, /tmp/astra_outcome_a4_20260914_attempt1,
+  source9adcf503. Freshseed0rank8,256batch4, originalA4rows, unchangedDEVscreen,
+ 5400sbound. Atupdate129 around08:49UTC. No terminalresult yet.
+- LIVE A100GPU1 guardian110517, /tmp/astra_outcome_a4_replay_20260914_attempt1,
+  source2bb752f2. Same A4 but12explicitlyauthoredcopy-prompts targeting actual
+  trainingactionbytes; first3originalslots + onecopy:768outcome/256copy,
+  13431targettokenpresentations. Notoutcome-dose/token/compute matched.
+  NativeCPUadmission42rows passed; actualsourcebytes/masks preserved.
+ 5400sbound. No terminalresult yet. Compare allreadoutcriteria, do notpoolseeds.
+- Helmholtz now owns ONLY new experienced_event_cue_collection.py and matching
+  puretests. Collection-only: guidedactualREAD→rawEVENT→ROUTE on disjoint
+  trainingidentities using sourcedexternaltextmemory; teacherremovedfromstudent
+  histories; nofit. Nativewrapper notyetimplemented/launched. Main owns it.
+- Euclid finished A4copyCPUadmissionnote; Hubble closed afterpurecopycompiler.
+- Rohin62 answered in research_loop and research_loop_review_message62.md.
+  ExternalNavier–Stokesfigures NOT verified; earlier checked-source claim corrected.
+  Optimize decision-relevant grounded evidence, notGPUoccupancy orreviewsforreviews.
+
+Next: inspect BOTHfitoutputs when terminal, analyze branch/skin/canaryprofiles,
+freshreload informative retainedadapter(s), no automatic additionaldose. Advance
+disjointcuecollection independently; it tests teaching the missingaccesspolicy,
+notimplicitweightedhops. Preserve unrelatedGPUrules andtwo-sleepdraft. Pulls/pushes
+done through2bb752f2 beforethisupdate. Node1no newwork, leaseends23:14UTC today;
+earlierpreservationcomplete. Node2endsSeptember21 08:43UTC; six-hourjobmargin.
+
 ## CURRENT OVERRIDE — September14,2026,08:30UTC
 
 08:32 update: contextual-access diagnostic launched, node2GPU4 guardian338671,
