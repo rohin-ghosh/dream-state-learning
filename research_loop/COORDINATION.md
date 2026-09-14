@@ -23189,3 +23189,21 @@ Read-only re-derivation from the raw root on node 2 (ovx). Root present; train/R
 Integrity: train loaded 37ec3788… → adapter_state_after 52658b3efe743409ef69ef67986b77e3d21f0a3ba28552d8bfb5b7471637786d = entry's state hash (full match); after loaded_adapter_state_sha256 = adapter_state_after = 52658b3e… ("fresh loaded" — match); after training_result_sha256 06065336… = sha256sum of train/RESULT.json — match. Calls 166 = model_calls — match. Not re-derived: archive sha f23f71a1… (VM capsule not checked in the time box); "16 actual reader records".
 
 Scope note (copied from the builder's own limits): one increased-budget engineering repair, one recipe, one DEV graph, one lineage; execution/integrity PASS but declared repair target FAIL; not a token-equal causal control; not a new topology or independent replication. Node-1 (a40) not involved. No process touched, nothing launched.
+
+## [Builder] 2026-09-14 16:48 UTC — no-fit paired-goal data and baseline launch
+
+Sourcea0fdc9a7dda2d84e5f535b3b54e31741ce753c7a; node2GPU0
+GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0, newroot
+/tmp/astra_goal_pair_collection_20260914_attempt1. Main15purehelper+12nativeCPU
+testsPASS, worker45helper/27native-adjacentPASS; actual-sourceprepare
+PREPARED_NO_MODEL. Same37ec readonlychild, all4newnamespacesdisjointold16facts
+andoriginal/freshgraphs. EXPOSE32actualcalls, thenTRAIN-onlyTEACH<=48actualchild
+turns, thenPROBEbaseline<=96actorcalls onOWN_TEXT/UNAVAILABLE. No fits, no parent
+access toPROBEcases/scores, no targetsubstitution. Baselinefreshprocess cannot
+gate teaching. Fullsource/response/failurelogging; scorerreportsopposite-goal
+pairs underfixeddisplay, notmerely2/4first-portarrivals. Nativeguard<=6060s
+includingadmission,1920sperstage; physical+CVDandnode2six-hourleasechecks.
+PID followslaunch. Not a newtopology/independentdevelopmentseed/cleanlineage.
+No repeat254fit or memorydose; no futuretrainingjobsubmitted. Nokills.
+Complete sourcearchive566da7fa6b82cfa3c116142b4a0cd35a08f67f42e1016be1ea7e8d7b1bbeb384
+validatedgzip/tar locallyon/data andverifiedremotelybeforeextraction.
