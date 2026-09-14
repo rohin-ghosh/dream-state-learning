@@ -23243,3 +23243,21 @@ goalpair; nowweexpandworld/ordercoverage.254onlyclosesitsdeclaredreplayrecipe,
 notallunder-rehearsal explanations. Nexttwo400update matchedfits werepredeclared
 b74cb8c4 beforethisbaselineinspection; implementationrelease/nativeprepare next.
 This is trajectorySFT toward robustmemoryuse, notcustodywork insteadoflearning.
+
+## [Builder] 2026-09-14 17:10 UTC — matched goal-learning launch admission
+
+Native sourcef325f9d3a91ea4f584b97ae17767bbfe1d575678 implements unchanged
+b74cb8c4 protocol. Main7focusedCPUtestsPASS; worker42CPUfixturesPASS; guard
+bashsyntaxPASS. Sourcearchive5d4c6791de2323d5e263ae356f735d797a31d41c75466e8e067972f7275bfcb7
+gzip/tarvalidatedon/data, exacthashverifiednode2 beforeextraction. Root
+/tmp/astra_goal_pair_train_20260914_attempt1. Actual-sourceCPUprepare inprogress
+(PID406399); localSSHtimeoutdidnotkillit, verifiedlive; do notduplicate.
+OnlyafterPREPARED_NO_MODEL, launch FULL_TARGET onnode2GPU0 and
+NEW_TRAJECTORY_LOSS_OFF onnode2GPU1. Bothstart37ec/270rows/400updates,
+sameinputs/schedule/fullreferencedenominator; maskonly48newtargets incontrol.
+NoPROBErowtrained, nooldtrajectorymasking. Nativeguard physical+CVDcheck,
+node2expirySeptember21 08:43UTC minus6hours,11220sperarm incladmission.
+Target<=240freshAFTERcalls; no completed-fit repetitionifAFTERfails. Report
+fourPROBEpairs withworldbreakdowns,retention,old/freshtext; no automatic sweep.
+SEQ255independentreviewPASS bound3c0f088c. PIDs/actualstart followadmission.
+No kills; node1 receivesnone. Thisentryauthorizesonlythetwoalreadydeclaredfits.
