@@ -22527,3 +22527,29 @@ collecting genuinely connected experiences rather than pretending old receipts
 were connected. Supplied-own-text, unavailable-memory, unwritten-parametric and
 base-actor controls separate remembering from the ability to use a connection.
 This takes no fit; what it actually does determines the next training data.
+
+## [Fable VM result read] 2026-09-14T14:46Z — SEQ-247 VERIFIED
+
+Node 2 (ovx), read-only. Root `/tmp/astra_reader_audit_transfer_write_20260914_attempt2` (arm LOSS_OFF_SELECTOR, train/ then after/; root path taken from the builder's primary memo, the entry itself names none).
+
+**SEQ-247** (shared-writer material consequence: one LOSS_OFF_SELECTOR fit + fresh AFTER)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| status | fit+AFTER COMPLETE | train status COMPLETE, fits 1; after status COMPLETE, fits 0 | train/RESULT.json, after/RESULT.json |
+| updates | 100 | updates 100, max_updates 100 | train/RESULT.json |
+| new W0 / W8 recall | 1/4, 1/4 | RECALL_W0 correct 1 / denominator 4; RECALL_W8 1/4 | after/RESULT.json panels |
+| own routing | 3/4 | OWN_PARAMETRIC reached_goal 3 / denominator 4; 4th episode terminal_reason invalid_route, chosen_port None, outcome None | after/RESULT.json panels |
+| old retention | 12/12 | OLD_RECALL_W0 12/12, OLD_RECALL_W8 12/12 | after/RESULT.json panels |
+| held audit | 16/16 | successes 16; summary fault 8/8, true 8/8, overall 16/16 | after/HELD_AUDIT.json |
+| reader OFF / text / MISS | 2/4, 8/8, 0/4 | OWN_READER_OFF 2/4; HELD_TEXT_0 4/4 + HELD_TEXT_1 4/4; UNSEEN_MISS 0/4 | after/RESULT.json panels |
+| next actual audit | 7/7 = 5 fault 2 true, choices [null,0,null,3,2,3,2] | correct 7 / denominator 7; summary fault 5/5, true 2/2; case kinds true,fault,true,fault,fault,fault,fault; chosen_source_indexes [None, 0, None, 3, 2, 3, 2]; admitted_selections 5; invalid_route_count 1 | after/ACTUAL_READERS.json |
+| new-memory presentations | source 1 only, 200 | new_fact_presentations [0, 200, 0, 0]; new_memory_presentations 200; selected_source_indexes [1, 1] | train/RESULT.json |
+| supervised tokens | 16969 vs 16345/16319; UNIFORM denominator 16319 | actual_supervised_tokens 16969; reference_supervised_tokens 16319; original_supervised_tokens 16319 (16345 is the SEQ-245 SELECTED arm, verified in the 14:17Z read) | train/RESULT.json |
+| AFTER calls | 117 | model_calls 117; 23 top-level CALL_*.json + 70 new_task/CALL_*.json + 24 OLD_RECALL_*.json = 117 | after/ |
+| walls | train 199.256 s, AFTER 172.024 s | finished_unix − started_unix: 199.256 (train), 172.024 (after) | RESULT.json start/finish stamps |
+| start / end / guardian | 14:12:43 / 14:18:56 / 386793 | 2026-09-14T14:12:43Z / 2026-09-14T14:18:56Z / 386793 | launch/ |
+
+Integrity: source commit d0f16e22 matches `launch/source_commit.txt` (d0f16e22f0b4a5b61998164193ee8d8bf155c0f3). Train loaded_adapter_state_sha256 48dc1d6d (same BEFORE state as SEQ-245/242/244); adapter_state_after b4a5383e…5b3d8 equals the memo's final adapter state and equals after/RESULT.json loaded_adapter_state_sha256; after training_result_sha256 9905856b… equals sha256sum of train/RESULT.json. frozen_base_unchanged True in both phases. Terminal archive `/tmp/astra_reader_audit_transfer_write_terminal_20260914_attempt2.tar` sha256 14386b5015b65a5fb3f18e1e57d27915f42c914c4e98638c70f6f2dcb73126db matches the entry; failed-prepare archive a4428bfe… matches the memo. Entry names no adapter/base hash prefix and no physical_model_calls field (model_calls used). Not re-derived: the independent reduction receipt SHA 9c6dfe50…, the 5894-file/484260291-byte local extraction, and the SEQ-245 reference arms (not re-read this run).
+
+Scope note (builder's own limits): counterfactual MATERIAL comparison with a shared taught writer, off-policy replayed choices from earlier auditor checkpoints; one seed, one fit; not a loss-off child becoming a checker nor a parent/no-parent life; six original selector errors were E_id format/address failures, not NONE; uniform still ties taught selection; no H1/H2 or efficiency claim.
