@@ -1,0 +1,169 @@
+{
+  "assumption": "Same implementation, A40 rank8 batch4, observed sequence mix and unchanged readout battery. Not a forecast for richer sequences, A100 hardware, corpus collection, or new batch layouts.",
+  "baseline_calls": 944,
+  "baseline_seconds": 639.9922983646393,
+  "calibration": {
+    "mean_after_seconds": 646.1938014030457,
+    "mean_loop_seconds_per_update": 1.8684441783085735,
+    "mean_residual_seconds": 122.20575393976469
+  },
+  "file_bindings": {
+    "FULL_TARGET/after/RESULT.json": "53756fd01c72648d80db8f9bd075fadc578a03c8a8255373ade6b63d63cc98cd",
+    "FULL_TARGET/train/DOSE.json": "4fab428eb5c3f6cb1f569271c3b2c99d9a77d96b6194c8efbd37de2cc2b278e7",
+    "FULL_TARGET/train/LOSSES.jsonl": "a1490961d42833ddc1a22907a574dcc16a7f3a4253d9061294ada7e3b537531b",
+    "FULL_TARGET/train/REFERENCE_MASKS.json": "f09a89573fa837bc493122c907caffb79c43ac995b810ade3c837f7076c02e91",
+    "FULL_TARGET/train/RESULT.json": "6e01a238a43aa521c93e650a271f459bc4a0f0fc2a0d2b44e7ea77b452f81283",
+    "NEW_TRAJECTORY_LOSS_OFF/after/RESULT.json": "6f50d5bafb5cb32f182dede709da095834214cec0fd6f04b7a78cbf1dca6d440",
+    "NEW_TRAJECTORY_LOSS_OFF/train/DOSE.json": "d6c3c2ef36135f111fbad134c21e8863c90e6a3ba933ffbe9637c1cfae714fd0",
+    "NEW_TRAJECTORY_LOSS_OFF/train/LOSSES.jsonl": "f4adf41e0183c84479fb6a2fbafa63bc0dafae360415f3010712786836011657",
+    "NEW_TRAJECTORY_LOSS_OFF/train/REFERENCE_MASKS.json": "f09a89573fa837bc493122c907caffb79c43ac995b810ade3c837f7076c02e91",
+    "NEW_TRAJECTORY_LOSS_OFF/train/RESULT.json": "b7a05eb433d013405df2f4d3a3437147f59ab61876bcf7d5c69585d8b509f72b",
+    "baseline/RESULT.json": "c2fe5b4735ea7252fff27e7ea777093e798df882f57262ab0391ad91b6b671a2"
+  },
+  "fits": 0,
+  "measurements": {
+    "FULL_TARGET": {
+      "batch_width_max": 677,
+      "batch_width_mean": 566.6543715846994,
+      "batch_width_median": 565.0,
+      "batch_width_min": 326,
+      "effective_nonpadding_tokens_per_loop_second": 819.6712525065602,
+      "input_rows": 1674,
+      "loop_seconds": 5463.162196192992,
+      "loop_seconds_per_update": 1.865834083399246,
+      "nonpadding_token_presentations": 4477997,
+      "padded_token_slots": 6636656,
+      "padding_fraction": 0.32526305416462753,
+      "phase_seconds": 5585.312051057816,
+      "residual_phase_seconds": 122.14985486482328,
+      "row_presentations": 11712,
+      "sequence_max": 677,
+      "sequence_median": 418.0,
+      "sequence_min": 137,
+      "updates": 2928,
+      "width_sensitivities": {
+        "1024": {
+          "linear_proxy": 1.807098032503116,
+          "squared_proxy": 3.194833893203103
+        },
+        "2048": {
+          "linear_proxy": 3.614196065006232,
+          "squared_proxy": 12.779335572812412
+        }
+      }
+    },
+    "NEW_TRAJECTORY_LOSS_OFF": {
+      "batch_width_max": 677,
+      "batch_width_mean": 566.6543715846994,
+      "batch_width_median": 565.0,
+      "batch_width_min": 326,
+      "effective_nonpadding_tokens_per_loop_second": 817.3843923185765,
+      "input_rows": 1674,
+      "loop_seconds": 5478.446911982013,
+      "loop_seconds_per_update": 1.8710542732179007,
+      "nonpadding_token_presentations": 4477997,
+      "padded_token_slots": 6636656,
+      "padding_fraction": 0.32526305416462753,
+      "phase_seconds": 5600.708564996719,
+      "residual_phase_seconds": 122.2616530147061,
+      "row_presentations": 11712,
+      "sequence_max": 677,
+      "sequence_median": 418.0,
+      "sequence_min": 137,
+      "updates": 2928,
+      "width_sensitivities": {
+        "1024": {
+          "linear_proxy": 1.807098032503116,
+          "squared_proxy": 3.194833893203103
+        },
+        "2048": {
+          "linear_proxy": 3.614196065006232,
+          "squared_proxy": 12.779335572812412
+        }
+      }
+    }
+  },
+  "model_calls": 0,
+  "readouts": {
+    "FULL_TARGET": {
+      "calls": 960,
+      "generated_tokens": 11988,
+      "seconds": 647.0241215229034
+    },
+    "NEW_TRAJECTORY_LOSS_OFF": {
+      "calls": 932,
+      "generated_tokens": 11739,
+      "seconds": 645.3634812831879
+    }
+  },
+  "root": "gpu_artifacts_local/astra_goal_quality_train_terminal_20260914_attempt2/extracted/astra_goal_quality_train_20260914_attempt2",
+  "scenarios": [
+    {
+      "ideal_three_gpu_pair_wall_hours": 1.2639251589553786,
+      "new_targets": 1000,
+      "new_trajectory_slots_per_update": 2,
+      "nominal_fit_hours": 1.0844268807878659,
+      "nominal_pair_assigned_gpu_hours": 2.7056259563453793,
+      "nominal_three_pairs_assigned_gpu_hours": 8.116877869036138,
+      "old_trajectory_rows": 12,
+      "presentations_per_trajectory": 4,
+      "updates": 2024
+    },
+    {
+      "ideal_three_gpu_pair_wall_hours": 4.415367673035839,
+      "new_targets": 1000,
+      "new_trajectory_slots_per_update": 2,
+      "nominal_fit_hours": 4.235869394868327,
+      "nominal_pair_assigned_gpu_hours": 9.0085109845063,
+      "nominal_three_pairs_assigned_gpu_hours": 27.0255329535189,
+      "old_trajectory_rows": 12,
+      "presentations_per_trajectory": 16,
+      "updates": 8096
+    },
+    {
+      "ideal_three_gpu_pair_wall_hours": 1.7331122526195315,
+      "new_targets": 1452,
+      "new_trajectory_slots_per_update": 2,
+      "nominal_fit_hours": 1.5536139744520188,
+      "nominal_pair_assigned_gpu_hours": 3.644000143673685,
+      "nominal_three_pairs_assigned_gpu_hours": 10.932000431021054,
+      "old_trajectory_rows": 12,
+      "presentations_per_trajectory": 4,
+      "updates": 2928
+    },
+    {
+      "ideal_three_gpu_pair_wall_hours": 6.29211604769245,
+      "new_targets": 1452,
+      "new_trajectory_slots_per_update": 2,
+      "nominal_fit_hours": 6.112617769524937,
+      "nominal_pair_assigned_gpu_hours": 12.762007733819523,
+      "nominal_three_pairs_assigned_gpu_hours": 38.28602320145857,
+      "old_trajectory_rows": 12,
+      "presentations_per_trajectory": 16,
+      "updates": 11712
+    },
+    {
+      "ideal_three_gpu_pair_wall_hours": 5.416023332974431,
+      "new_targets": 5000,
+      "new_trajectory_slots_per_update": 2,
+      "nominal_fit_hours": 5.236525054806918,
+      "nominal_pair_assigned_gpu_hours": 11.009822304383484,
+      "nominal_three_pairs_assigned_gpu_hours": 33.02946691315045,
+      "old_trajectory_rows": 12,
+      "presentations_per_trajectory": 4,
+      "updates": 10024
+    },
+    {
+      "ideal_three_gpu_pair_wall_hours": 21.023760369112047,
+      "new_targets": 5000,
+      "new_trajectory_slots_per_update": 2,
+      "nominal_fit_hours": 20.844262090944536,
+      "nominal_pair_assigned_gpu_hours": 42.22529637665872,
+      "nominal_three_pairs_assigned_gpu_hours": 126.67588912997614,
+      "old_trajectory_rows": 12,
+      "presentations_per_trajectory": 16,
+      "updates": 40096
+    }
+  ],
+  "schema": "SEQ266_CONDITIONAL_COST_CALIBRATION_V1"
+}
