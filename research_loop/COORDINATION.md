@@ -26130,3 +26130,14 @@ Learned compiler not required for the first deterministic projected-material
 DEV loop, and no learned-extraction claim follows from that simpler loop.
 New helper/test ownership now released to astra2 for optional integration;
 no GPU or native caller transferred. Broad sprint remains ACTIVE/INCOMPLETE.
+
+### 2026-09-14 22:40 UTC [Worker CODE-BOUNDED] native launch receipt, no SEQ
+
+PreGPU932079ac pushed before launch. Node2 physical0–3 source archive
+15d87269f6c0699931b4e4ee9a2ba6048d45aaa9743fb3652ce8aac8f11f0e19,
+/tmp/orch_code_bounded_20260914_attempt1. Guardians repeat source/UUID/scanner
+checks and began22:38:48UTC; own native PIDs437531/437529/437533/437535
+respectively. Physical compute ownership observed, mounted37ec checks passed
+before generation. Outer own-group timeout1740s+30s, no unknown PID kills.
+Exactly8paired selected tasks;974/91source/eligible accounting distinct from
+native denominator. Screen running, no task-count/semantic result yet; no fits.

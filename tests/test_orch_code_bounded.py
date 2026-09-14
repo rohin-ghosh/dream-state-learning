@@ -87,3 +87,13 @@ def test_all_frozen_oracles_have_prospective_reference_parity():
     for task in document['tasks']:
         original = next(record for record in records if record['task_id'] == task['id'])
         assert json.loads(json.dumps(code.extract_task(original))) == task
+
+
+def test_reducer_retains_scientific_denominator_without_calls(tmp_path):
+    import shutil
+    from gpu.orch_code_bounded_reduce import reduce
+    shutil.copy('research_notes/analysis/orch_code_bounded_20260914_attempt1/TASKS.json', tmp_path / 'TASKS.json')
+    summary, rows = reduce(tmp_path)
+    assert summary['scientific_denominator'] == 8 and summary['eligibility']['considered'] == 974
+    assert summary['metrics']['rich']['tasks'] == 8 and summary['metrics']['rich']['attempted'] == 0
+    assert not summary['complete'] and not summary['scale_gate'] and rows == []
