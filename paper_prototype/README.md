@@ -21,7 +21,8 @@ Dated statements below about unresolved TODO keys describe earlier snapshots.
 
 **Ongoing first-sprint working draft — research question unresolved.**
 Canonical `main.tex` now includes bounded September14 diagnostics through
-SEQ-239, with SEQ230 and SEQ-236 retained as separate comparisons,
+SEQ-241 (Main terminal; independent analysis pending), with SEQ230 and
+SEQ-236 retained as separate comparisons,
 alongside earlier positive and negative findings. The new section
 separates own-EVENT persistence, outcome-SFT controller fits and coached cue
 collection; none establishes H1/H2 or completes the developmental campaign.
@@ -40,7 +41,35 @@ the first adult write/use comparison is complete, with an explicit W8 reader
 failure and a separately reported no-fit W0 interface repair.
 The full sprint remains incomplete. No G3/H1/H2, parenting or freeze promotion.
 
-## SEQ-237–239 and subsequent actual-reader audit — September 14, 2026
+## SEQ-240 verified; SEQ-241 repair terminal — September 14, 2026
+
+[Independent SEQ-240 replay](../research_notes/analysis/2026-09-14_actual_reader_audit_result.md)
+confirms all14 no-fit calls: SFT5/7 with selections[1,3,3], OFF1/7 with[1].
+SFT still misses both source2 node-only errors; reader strings differ between
+arms. Source validity does not itself establish usefulness.
+
+[Main's terminal SEQ-241 report](../research_notes/analysis/2026-09-14_selected_reader_repair_first_result.md)
+reports four100-update cells; independent repair reduction/field analysis is
+pending. SFT-selected routing3/4→4/4 and strict A2 W0/W8 recall1/4→4/4 retain
+old8/8 and classifier16/16; uniform matches. OFF-selected remains routing3/4,
+recall3/4, old7/8, classifier12/16; OFF-uniform4/4,4/4,8/8,13/16. This is
+useful taught-selection/write/action integration, not selection superiority.
+Both states receive the62 audit rows during repair; cross-state weights and
+selection sets differ. Same-state selected/uniform parents match.
+
+SFT next audits are6/6 all-true/NONE, no choices and no fault-sensitivity test.
+OFF next audits4/7 and5/6 both admit source1 falsely. Unseen MISS stays0/4;
+reader-OFF2/4 and held supplied-text8/8 stay unchanged.427 AFTER calls,400 total
+updates. Actual tokens16,093/16,449/16,349/16,449; common reference16,449, not
+equal actual tokens or per-fact dose. All four logs retain allocator OOM/recovery
+warnings despite completion; encoded max575 does not validate2048-token headroom.
+Source `fbe0981c36c30590b4f640c4134cca48bf36272c`; terminal root
+`gpu_artifacts_local/astra_selected_reader_repair_terminal_20260914_attempt1/`.
+Main reports3,196 files verified in `local_check_v2.txt`; the earlier empty
+check is not a pass. No H1/H2 or independent-learner claim. Main prepares fresh
+A3 from SFT_SELECTED; no fresh-bank result or further same-bank fit is claimed.
+
+## SEQ-237–240: lesson and actual-reader audit — September 14, 2026
 
 - **SEQ-237:** three zero-fit calls close the original/full-EVENT/pointer
   variants: two source2 repetitions are source-valid; the bare pointer is
@@ -57,12 +86,12 @@ The full sprint remains incomplete. No G3/H1/H2, parenting or freeze promotion.
   port/outcome correct. Sources1/3 already wrong BEFORE, not newly forgotten.
   Exposed source family, one lineage, synthetic faults; held bodies excluded
   from lesson targets, not all historical memory training. No H1/H2 promotion.
-- **Actual-reader audit, Main-reported; independent follow-up pending:** zero fits;
+- **SEQ-240 actual-reader audit, independently verified:** zero fits;
   SFT5/7 (NONE2/2, faults3/5), OFF1/7 (all7 faulty), selections[1,3,3] versus[1].
   All choices source-valid, no semantic filter; different actual truth mixes,
   not another matched classifier panel. No write utility follows. Source
   `adfbdd45`, root `/tmp/astra_actual_reader_audit_20260914_attempt1`.
-  Sequence label left to Main; pending four-cell repair outcomes excluded.
+  Source choices alone do not prove utility; SEQ-241 tests repair separately.
 
 Released [lesson/paired/field audit](../research_notes/analysis/2026-09-14_reader_audit_lesson_result.md)
 and [no-fit variants](../research_notes/analysis/2026-09-14_corrective_reselection_independent_result.md).
@@ -111,12 +140,12 @@ are synchronized; earlier archived abstracts remain verbatim in the respective
 files. The explicitly owned companions
 `research_notes/astra_memos/ASTRA_COLLABORATOR_DRAFT_2026-09-12.md` and
 `research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md` also include
-SEQ-237--239 and Main's subsequent actual-reader audit. No complete cross-draft
-review is claimed. SEQ-237 closes the old no-fit variants; the four-cell memory
-repair is pending and no result from it is included.
+verified SEQ-240 and Main's terminal SEQ-241 repair. Independent repair analysis
+is pending; no full cross-draft review is claimed. The A3 continuation is being
+prepared and no new-bank outcome is included.
 
 September 14 static checks: synchronized active abstracts278 words; UNSENT
-message205 words. TeX braces/environments, labels/references, unchanged citations
+message209 words. TeX braces/environments, labels/references, unchanged citations
 and added analysis links pass. No TeX engine is installed; no PDF build is claimed.
 
 Sources (released independent terminal analyses, not new executions here):

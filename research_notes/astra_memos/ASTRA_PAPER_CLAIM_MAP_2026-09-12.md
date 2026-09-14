@@ -1,7 +1,7 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
-Current reporting cut: see the appended September 14 SEQ-237--239 and
-Main-reported actual-reader audit addendum.
+Current reporting cut: see the appended September 14 SEQ-240 verified /
+SEQ-241 Main-terminal addendum; independent repair analysis remains pending.
 Earlier dated statuses below remain historical, not current runtime blockers.
 
 **Ongoing first-sprint working draft — research question unresolved.**
@@ -5286,3 +5286,53 @@ Lesson source14-file match `f20a8cb651e5b6e2e7154d85c7a0d7dbc9f8b38a`, root
 501 files/6,464,019 bytes. SEQ230 and SEQ-236 remain separate. All six reporting
 surfaces include this cut; historical sections remain unchanged. Independent
 verification follows execution. No H1/H2 or mission-completion promotion.
+
+## Evidence addendum — 2026-09-14 — SEQ-240 verified, SEQ-241 Main terminal
+
+[SEQ-240 independent audit](../analysis/2026-09-14_actual_reader_audit_result.md)
+replays all14 zero-fit calls: SFT5/7, selections[1,3,3]; OFF1/7,[1]. Duplicates
+and failures are preserved; SFT misses both source2 node errors. Different
+reader strings preclude a same-stimulus policy contrast.354 payload files and
+24 source-file matches bind `adfbdd45911e1cf946ccd89bbc724af2210198df`.
+This supersedes the earlier pending actual-audit review, not its causal limits.
+
+[Main's SEQ-241 terminal result](../analysis/2026-09-14_selected_reader_repair_first_result.md)
+reports all four100-update fits/readouts complete; independent reduction and
+field analysis remain pending, behind execution. Each state's own post-lesson
+adapter is forked, not the common pre-lesson state.
+
+| Endpoint | SFT selected | SFT uniform | OFF selected | OFF uniform |
+| --- | ---: | ---: | ---: | ---: |
+| Own routing /4 | 4 | 4 | 3 | 4 |
+| A2 strict W0/W8 recall, each /4 | 4 | 4 | 3 | 4 |
+| Older W0/W8 recall, each /8 | 8 | 8 | 7 | 8 |
+| Classifier /16 | 16 | 16 | 12 | 13 |
+| Unseen MISS /4 | 0 | 0 | 0 | 0 |
+
+SFT prior routing3/4, recall1/4, old8/8 and classifier16/16; OFF prior3/4,
+0/4,8/8,7/16. SFT-selected supplies useful source-choice→write→action repair
+with retained teaching, matching uniform, not superiority. OFF-selected's
+unresolved fact and old-record loss remain. Both states now rehearse62 audit
+rows; cross-state initial weights/selected sources differ, not an isolated
+selection-policy contrast. Reader-OFF stays2/4; held supplied-text stays8/8.
+
+Next SFT audits6/6 all true/NONE, zero choices: no fault stratum and no repeat
+same-bank fit implied. OFF-selected4/7 (true4/5,fault0/2), OFF-uniform5/6
+(all true); both admit source1 falsely, without semantic filtering.
+
+| Claim level | Evidence and boundary |
+| --- | --- |
+| Substrate | SFT selected and uniform recover A2 exact4/4, retain old8/8; OFF-selected loses old recall. No general readiness; MISS0/4 persists. |
+| Parenting behavior | SEQ-239 matched gradients taught a parent-free audit skill; SFT retains16/16 after repair. No generic parent advantage from DEV/held mismatch or task-disjoint H1. |
+| Later autonomous learning | Useful finite source-choice/write/action integration on one externally scheduled, exposed DEV lineage; not autonomous scheduling or superior selection. |
+| Self-improving learning | Uniform ties SFT; one lineage and adaptive task reuse do not establish H2 or an improved learning rate. |
+
+427 AFTER calls (106/106/109/106),400 total updates; each100 memory+38cue+
+62lesson+200new presentations. Actual tokens16,093/16,449/16,349/16,449 versus
+reference16,449; dose/token equality is not claimed. All four logs retain
+allocator OOM/recovery warnings; max encoded575 does not qualify2048-token use.
+Source `fbe0981c36c30590b4f640c4134cca48bf36272c`; Main reports3,196 verified
+files in `gpu_artifacts_local/astra_selected_reader_repair_terminal_20260914_attempt1/`.
+`local_check_v2.txt`, not the earlier empty check, records manifest verification.
+No fresh-bank outcome is included: Main prepares A3 from SFT_SELECTED.
+All historical tables/claim cuts remain; no H1/H2 or mission-completion promotion.

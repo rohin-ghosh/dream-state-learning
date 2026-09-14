@@ -10,36 +10,37 @@ on unseen verifiable tasks through continued consolidation (H2). Both remain
 proposed questions. We study frozen Qwen2.5-7B-Instruct with learning confined
 to LoRA adapters, separating acquisition, retention and downstream use.
 
-Prior findings remain separate: SEQ230's prospective W0 routing improves cue
-2/4-to-4/4 versus unchanged loss-off 2/4, retaining eight old facts. SEQ-236
-corrective replay reaches 3/4 versus uniform 4/4 while retaining more old W8
-recall, 8/8 versus 6/8: neither dominates.
+Earlier sequential adult learning (SEQ230) and the corrective/uniform trade-off
+(SEQ-236) remain separate. Reader-audit teaching subsequently improves matched
+parent-free classification from 7/16 to 16/16 versus unchanged masked-gradient
+control (SEQ-239). Different coached DEV and held tasks do not identify a
+generic parent advantage; the gradient intervention is the matched contrast.
 
-A subsequent reader-audit lesson yields 62/64 successful coached DEV responses
-(SEQ-238). Parent guidance is removed from student prefixes and targets.
-Matched 200-update forks differ only in lesson-target gradients: parent-free
-held classification improves from common 7/16 to SFT 16/16 versus loss-off
-7/16 (SEQ-239), with true/fault halves each 8/8. This is learned parent-free
-competency under a supervised-teaching versus masked-gradient contrast, not
-a coaching effect inferred from different DEV and held tasks.
+Independent actual-reader replay confirms sourced choices [1,3,3] versus [1]
+with zero fits (SEQ-240). Inputs differ between actors, and SFT still misses
+two node-only reader errors; source validity alone is not utility.
 
-The formal narrow classifier gate passes, but routing stays 3/4 in both arms.
-Old W0/W8 retention stays 8/8; recent A2 exact recall falls from common 2/4 to
-SFT 1/4 versus loss-off 0/4. Field audits localize SFT's selected-record failure
-to a node and loss-off's to receipts; these are memory-identity errors, not
-broad factual erasure. Unseen MISS stays 0/4.
+Main's terminal four-cell repair (SEQ-241; independent analysis pending) tests
+those choices in same-parent selected/uniform forks. After 100 updates, SFT
+selected routing rises from 3/4 to 4/4 and strict W0/W8 recall from 1/4 to 4/4,
+retaining eight old facts and classifier 16/16. Uniform matches these outcomes.
+The loss-off-derived selected child reaches recall 3/4, retains 7/8 and routes
+3/4; its uniform sibling reaches 4/4, 8/8 and 4/4. Both receive audit rehearsal.
+SFT's six subsequent accurate reads yield six correct NONE responses, not a
+fault-detection test.
 
-One shared lineage, exposed source families, synthetic fault stimuli and
-held bodies excluded only from lesson targets limit generality. Supplied
-text is not parametric recall. Actual-reader source choices alone establish
-no write utility; no autonomous selection, H1/H2 or general readiness follows.
-Earlier failures remain and the research program is incomplete.
+This is useful taught-selection, persistent write, action repair and retained
+behavior on one adaptively exposed lineage, not selection superiority. Unequal
+per-fact doses, external scheduling, supplied source tables and synthetic lesson
+faults constrain interpretation. Unseen MISS remains 0/4. No H1/H2, general
+readiness or autonomous learning-rate improvement follows; fresh-bank outcomes
+are not yet reported.
 
 ## Supporting evidence notes—not part of the abstract
 
 **September 14, 2026 result update — research question unresolved.**
-The released SEQ-237--239 lesson/field results and Main-reported actual-reader
-audit are included below. SEQ-236 remains separate
+Verified SEQ-240 and Main's terminal SEQ-241 repair (independent analysis
+pending) are included below alongside SEQ-237--239. SEQ-236 remains separate
 from independently reduced SEQ230. Cycle2 prospectively pairs W0 BEFORE/AFTER;
 cycle1 SEQ227/228 retains
 its primary W8 result and missing W0 BEFORE routing baseline. Earlier results
@@ -48,9 +49,68 @@ source gates closed PASS/SEPARATED and native DEV results exist: runtime
 blockage is not the current status. Reportability is not qualification.
 Historical engineering logs remain engineering-only; failed attempts are preserved.
 Canonical `main.tex`, the sprint TeX and this companion now share the updated
-active abstract. The UNSENT collaborator draft and claim map also include SEQ-237--239 and the Main-reported actual-reader audit.
+active abstract. The UNSENT collaborator draft and claim map also include verified SEQ-240 and Main's terminal SEQ-241.
 No complete cross-draft review is claimed. The collaborator draft stays UNSENT;
 H1/H2 and the program remain open.
+
+### SEQ-241: useful selected repair, matching uniform — Main terminal report
+
+All four cells are terminal in [Main's released repair result](../research_notes/analysis/2026-09-14_selected_reader_repair_first_result.md);
+independent reduction and field analysis remain pending, not execution gates.
+Each developmental state's own post-lesson adapter is forked into SELECTED and
+UNIFORM. SFT selections[1,3,3] and OFF[1] come from independently verified
+[SEQ-240 actual audits](../research_notes/analysis/2026-09-14_actual_reader_audit_result.md), not
+semantic filtering or replacement. The two source3 choices remain duplicated.
+
+| Endpoint | SFT selected | SFT uniform | OFF selected | OFF uniform |
+| --- | ---: | ---: | ---: | ---: |
+| Own routing /4 | 4 | 4 | 3 | 4 |
+| A2 strict W0/W8 recall, each /4 | 4 | 4 | 3 | 4 |
+| Older W0/W8 recall, each /8 | 8 | 8 | 7 | 8 |
+| Parent-free classifier /16 | 16 | 16 | 12 | 13 |
+| Reader-OFF routing /4 | 2 | 2 | 2 | 2 |
+| Held supplied-text routing /8 | 8 | 8 | 8 | 8 |
+| Unseen MISS /4 | 0 | 0 | 0 | 0 |
+
+Each prior is its own post-lesson state, not the common pre-lesson checkpoint:
+SFT routing3/4, A2 recall1/4, classifier16/16; OFF routing3/4, recall0/4,
+classifier7/16. Both prior old banks are8/8. **Useful taught-selection →
+persistent fact write → action repair with retained classifier is observed in
+the SFT lineage, matching uniform, not outperforming it.** OFF-selected's
+unresolved fact and old-record loss remain in the result. The earlier SEQ-239
+field-specific identity failures are not retroactively erased.
+
+Fresh post-repair SFT audits are6/6 true, six NONE responses and zero selections
+in each fork. Their fault stratum is absent, not perfect fault detection.
+OFF-selected audits4/7 (true4/5, fault0/2); OFF-uniform5/6 (true5/6, no faults).
+Both OFF forks admit source1 on an accurate reply: source-valid false positives,
+not corrected or filtered outputs. No further same-bank SFT repair is implied.
+
+Each fit completes100 updates:100 prior-memory,38 cue,62 audit-lesson and200
+new-memory presentations. Both developmental states receive the62 lesson rows
+in this common repair curriculum. Within-state parents match; across states,
+weights and chosen source sets differ, so the contrast does not isolate policy.
+New-source doses in table order are[0,72,0,128], [50,50,50,50], [0,200,0,0],
+[50,50,50,50]; actual target tokens16,093/16,449/16,349/16,449 versus common
+reference16,449. No equal-dose/token or independent-learner claim follows.
+
+Main reports427 AFTER calls (106/106/109/106),400 total updates and all four
+saves/readouts complete. All four training logs retain allocator OOM/recovery
+warnings; completion is not evidence of ample memory headroom. Maximum encoded
+training length575 does not validate the configured2048-token limit.
+Source `fbe0981c36c30590b4f640c4134cca48bf36272c`; terminal root
+`gpu_artifacts_local/astra_selected_reader_repair_terminal_20260914_attempt1/`.
+Main reports3,196 manifest-checked files; archive396,359,680 bytes, SHA256
+`773f4c2d34ea6fdad74e2ba8f9057670d20c72c3ac9ec24d8ca1e42f17e6e280`.
+The empty earlier `local_check.txt` is retained, not a successful check;
+`local_check_v2.txt` records verification. This writer does not claim an
+independent repair reduction or fresh tensor inspection.
+
+One exposed DEV lineage, external source-table prompts/scheduling and common
+rehearsal constrain generality. No H1/H2, selection superiority or autonomous
+learning-rate improvement follows. Main prepares one fresh A3 bank from
+SFT_SELECTED; no new-bank collection, fit or outcome is reported here.
+SEQ230 and SEQ-236 remain separate comparisons.
 
 ### SEQ-237–239: parent-free reader-audit competency and identity limits
 
@@ -97,16 +157,19 @@ synthetic faults; held A2 bodies are disjoint from lesson targets, not a clean
 unopened family (two A2 records already appear in memory training). The result
 does not establish task-disjoint H1, H2 or autonomous selection.
 
-**Subsequent actual-reader audit — Main-reported; independent follow-up pending.**
+**SEQ-240 actual-reader audit — independently verified.**
 Zero-fit audits score SFT5/7 (accurate replies correctly yield NONE2/2;
 faults3/5) and OFF1/7 (all seven replies faulty). Source selections are
 [1,3,3] versus[1], all source-valid without a semantic filter. The panels have
 different actual reader outputs/truth mixes, unlike the paired held classifier;
-5/7 versus1/7 is not the same matched contrast. Source choices do not establish
-write or repair utility. Source `adfbdd45`, root
-`/tmp/astra_actual_reader_audit_20260914_attempt1`; the next sequence label is
-left to Main. No result from the pending four-cell memory-repair experiment
-is included. Independent verification follows execution, not a new launch gate.
+5/7 versus1/7 is not the same matched contrast. Independent replay of all14
+calls confirms these counts and source admissions; SFT misses both source2
+node-only errors. The released [SEQ-240 audit](../research_notes/analysis/2026-09-14_actual_reader_audit_result.md)
+binds354 payload files/6,708,655 bytes and24 source-file matches to
+`adfbdd45911e1cf946ccd89bbc724af2210198df`. Root
+`/tmp/astra_actual_reader_audit_20260914_attempt1`. Source choices alone are not
+utility; SEQ-241 separately tests their write/use consequences. Independent
+verification follows execution, not a new launch gate.
 
 Released evidence: [lesson, matched fits and field audit](../research_notes/analysis/2026-09-14_reader_audit_lesson_result.md)
 and [three no-fit variants](../research_notes/analysis/2026-09-14_corrective_reselection_independent_result.md).

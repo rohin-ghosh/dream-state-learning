@@ -3,6 +3,7 @@
 No collection, filtering, model loading or launch. The driver binds each cell
 to its own post-lesson actor, rank-eight adapter, frozen base and source records.
 Lesson encoding retains only the existing parent-safe student behavior corpus.
+Memory replay is explicitly bounded to the original 80 or all-prior-fact 96 rows.
 """
 
 from dataclasses import asdict
@@ -29,30 +30,39 @@ LOSS_NORMALIZATION = 'UNIFORM_BATCH_CAUSAL_LABEL_COUNT'
 require = source.require
 
 
-def selected_new_indexes(material_arm, selected_source_indexes):
+def validate_memory_count(memory_count):
+    require(type(memory_count) is int and memory_count in (80, 96), 'memory_count_80_or_96_required')
+
+
+def selected_new_indexes(material_arm, selected_source_indexes, *, memory_count=MEMORY_COUNT):
+    validate_memory_count(memory_count)
     require(material_arm in MATERIAL_ARMS, 'known_repair_material_arm_required')
     require(type(selected_source_indexes) in (list, tuple) and 1 <= len(selected_source_indexes) <= 8,
             'one_to_eight_actual_selections_required')
     require(all(type(index) is int and 0 <= index < 4 for index in selected_source_indexes),
             'source_event_index_zero_to_three_required')
+    new_offset = memory_count + BEHAVIOR_COUNT
     if material_arm == 'UNIFORM':
-        return tuple(range(NEW_OFFSET, ENCODED_COUNT))
-    return tuple(NEW_OFFSET + 4 * view + index for index in selected_source_indexes for view in range(8))
+        return tuple(range(new_offset, new_offset + NEW_COUNT))
+    return tuple(new_offset + 4 * view + index for index in selected_source_indexes for view in range(8))
 
 
-def training_indexes(update, material_arm, selected_source_indexes):
+def training_indexes(update, material_arm, selected_source_indexes, *, memory_count=MEMORY_COUNT):
     require(type(update) is int and 1 <= update <= UPDATES, 'fixed_100_update_range')
-    pool = selected_new_indexes(material_arm, selected_source_indexes)
+    pool = selected_new_indexes(material_arm, selected_source_indexes, memory_count=memory_count)
+    new_offset = memory_count + BEHAVIOR_COUNT
     offset = update - 1
-    shared = (offset % MEMORY_COUNT, MEMORY_COUNT + offset % BEHAVIOR_COUNT)
+    shared = (offset % memory_count, memory_count + offset % BEHAVIOR_COUNT)
     actual = shared + tuple(pool[(2 * offset + slot) % len(pool)] for slot in range(2))
-    reference = shared + tuple(NEW_OFFSET + (2 * offset + slot) % NEW_COUNT for slot in range(2))
+    reference = shared + tuple(new_offset + (2 * offset + slot) % NEW_COUNT for slot in range(2))
     return actual, reference
 
 
-def training_batch(encoded, update, material_arm, selected_source_indexes):
-    require(len(encoded) == ENCODED_COUNT, 'exact_194_encoded_rows_required')
-    indexes, reference_indexes = training_indexes(update, material_arm, selected_source_indexes)
+def training_batch(encoded, update, material_arm, selected_source_indexes, *, memory_count=MEMORY_COUNT):
+    validate_memory_count(memory_count)
+    encoded_count = memory_count + BEHAVIOR_COUNT + NEW_COUNT
+    require(len(encoded) == encoded_count, 'exact_%d_encoded_rows_required' % encoded_count)
+    indexes, reference_indexes = training_indexes(update, material_arm, selected_source_indexes, memory_count=memory_count)
     batch = source.native.collate([encoded[index] for index in indexes], pad_id=151643)
     require(all(encoded[index].labels and encoded[index].labels[0] == -100
                 for index in indexes + reference_indexes), 'first_causal_label_must_be_masked')
@@ -62,10 +72,11 @@ def training_batch(encoded, update, material_arm, selected_source_indexes):
     return indexes, reference_indexes, batch, reference, actual, actual / reference
 
 
-def validate_row_layout(memory_rows, cue_rows, lesson_rows, new_rows):
-    for rows, count in ((memory_rows, MEMORY_COUNT), (cue_rows, CUE_COUNT),
+def validate_row_layout(memory_rows, cue_rows, lesson_rows, new_rows, *, memory_count=MEMORY_COUNT):
+    validate_memory_count(memory_count)
+    for rows, count in ((memory_rows, memory_count), (cue_rows, CUE_COUNT),
                         (lesson_rows, LESSON_COUNT), (new_rows, NEW_COUNT)):
-        require(type(rows) in (list, tuple) and len(rows) == count, 'exact_80_20_62_32_rows_required')
+        require(type(rows) in (list, tuple) and len(rows) == count, 'exact_%d_20_62_32_rows_required' % memory_count)
     events = [row.get('event') for row in new_rows[:4]]
     require(all(type(event) is str and event for event in events) and len(set(events)) == 4,
             'four_distinct_new_source_events_required')
@@ -73,27 +84,30 @@ def validate_row_layout(memory_rows, cue_rows, lesson_rows, new_rows):
                 for index, row in enumerate(new_rows)), 'original_wrapper_major_new_rows_required')
 
 
-def recipe(material_arm, selected_source_indexes):
-    pool = selected_new_indexes(material_arm, selected_source_indexes)
+def recipe(material_arm, selected_source_indexes, *, memory_count=MEMORY_COUNT):
+    pool = selected_new_indexes(material_arm, selected_source_indexes, memory_count=memory_count)
+    new_offset = memory_count + BEHAVIOR_COUNT
     return dict(schema=SCHEMA, material_arm=material_arm, selected_source_indexes=list(selected_source_indexes),
         updates=UPDATES, batch_size=4, train_seed=0, learning_rate=3e-5, optimizer='FRESH_ADAMW',
         optimizer_kwargs=dict(source.native.OPTIMIZER), expected_lora_rank=8, adapter_dtype='float32',
-        row_order='MEMORY80_CUE20_LESSON62_NEW32_WRAPPER_MAJOR', encoded_row_count=ENCODED_COUNT,
-        memory_row_count=MEMORY_COUNT, cue_row_count=CUE_COUNT, lesson_row_count=LESSON_COUNT,
-        new_row_count=NEW_COUNT, new_row_offset=NEW_OFFSET, arm_new_row_indexes=list(pool),
-        uniform_new_row_indexes=list(range(NEW_OFFSET, ENCODED_COUNT)),
-        schedule=dict(memory='(update-1)%80', behavior='80+(update-1)%82',
+        row_order='MEMORY%d_CUE20_LESSON62_NEW32_WRAPPER_MAJOR' % memory_count,
+        encoded_row_count=new_offset + NEW_COUNT,
+        memory_row_count=memory_count, cue_row_count=CUE_COUNT, lesson_row_count=LESSON_COUNT,
+        new_row_count=NEW_COUNT, new_row_offset=new_offset, arm_new_row_indexes=list(pool),
+        uniform_new_row_indexes=list(range(new_offset, new_offset + NEW_COUNT)),
+        schedule=dict(memory='(update-1)%%%d' % memory_count, behavior='%d+(update-1)%%82' % memory_count,
                       new='arm_new_row_indexes[(2*(update-1)+slot)%pool_length]; slot=0,1'),
         loss_normalization=LOSS_NORMALIZATION, actual_token_equality_claim=False,
         actor_and_source_binding='CALLER_OWNED')
 
 
-def train(engine, memory_rows, cue_rows, lesson_rows, new_rows, output, *, material_arm, selected_source_indexes):
+def train(engine, memory_rows, cue_rows, lesson_rows, new_rows, output, *, material_arm, selected_source_indexes,
+          memory_count=MEMORY_COUNT):
     from organism_v6 import pcfl_vertical_train as writer
 
-    config = recipe(material_arm, selected_source_indexes)
+    config = recipe(material_arm, selected_source_indexes, memory_count=memory_count)
     selected_source_indexes = tuple(config['selected_source_indexes'])
-    validate_row_layout(memory_rows, cue_rows, lesson_rows, new_rows)
+    validate_row_layout(memory_rows, cue_rows, lesson_rows, new_rows, memory_count=memory_count)
     config['new_source_events'] = [row['event'] for row in new_rows[:4]]
     output = Path(output)
     require(output.is_dir() and not any((output / name).exists() for name in
@@ -106,7 +120,8 @@ def train(engine, memory_rows, cue_rows, lesson_rows, new_rows, output, *, mater
               tuple(cue_material.encode_cue_rows(cue_rows, engine.tokenizer)),
               tuple(lesson_material.encode_rows(lesson_rows, engine.tokenizer)),
               tuple(source.encode_rows(new_rows, engine.tokenizer)))
-    require(tuple(map(len, groups)) == (80, 20, 62, 32), 'exact_80_20_62_32_encoded_groups_required')
+    require(tuple(map(len, groups)) == (memory_count, 20, 62, 32),
+            'exact_%d_20_62_32_encoded_groups_required' % memory_count)
     encoded = tuple(row for group in groups for row in group)
     audit.validate_masks(encoded, engine.tokenizer.eos_token_id)
     source.write(output / 'MASKS.json', [asdict(row) for row in encoded])
@@ -135,7 +150,7 @@ def train(engine, memory_rows, cue_rows, lesson_rows, new_rows, output, *, mater
         for update in range(1, UPDATES + 1):
             engine.check('selected_reader_repair_update')
             indexes, reference_indexes, batch, reference, actual, scale = training_batch(
-                encoded, update, material_arm, selected_source_indexes)
+                encoded, update, material_arm, selected_source_indexes, memory_count=memory_count)
             tensors = {name: torch.tensor(value, dtype=torch.long, device=engine.device)
                        for name, value in batch.items()}
             optimizer.zero_grad(set_to_none=True)
@@ -153,7 +168,7 @@ def train(engine, memory_rows, cue_rows, lesson_rows, new_rows, output, *, mater
             actual_tokens += actual
             reference_tokens += reference
             for index in indexes[2:]:
-                new_fact_presentations[(index - NEW_OFFSET) % 4] += 1
+                new_fact_presentations[(index - config['new_row_offset']) % 4] += 1
             stream.write(source.json.dumps(dict(update=update, row_indexes=indexes,
                 reference_row_indexes=reference_indexes, actual_label_count=actual, reference_label_count=reference,
                 active_label_count=actual, original_label_count=reference, loss_scale=scale,

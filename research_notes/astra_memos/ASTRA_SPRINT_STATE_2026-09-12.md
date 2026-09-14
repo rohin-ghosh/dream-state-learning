@@ -1,4 +1,17 @@
-## Current superseding snapshot — 2026-09-14 12:48 UTC
+## Current superseding snapshot — 2026-09-14, after SEQ241
+
+Four repaircells COMPLETE; no oldjobs pending. Taughtselectedchild improves
+ownrouting3/4→4/4 and newrecall1/4→4/4, retainsold8/8andclassifier16/16;
+nextactual6/6trueallNONE. Equalsuniform. OFFselected3/4,new3/4,old7/8;
+OFFuniform4/4,new4/4,old8/8. UNKNOWNMISS0/4. UsefulfiniteDEVchain, notH1/H2.
+Primary/field evidence and complete3196filearchive linked in currentHANDOFF.
+NEXT A3freshbankadapter/nativecode beingintegrated, NOTLAUNCHED; one shared
+SFT_SELECTEDparent/collection/BEFORE/audit then selected/uniformforks. Replayall
+12priorfacts via96memoryviews; same100updatekernel/behaviorpool. CurrentHANDOFF
+records agentownership, exactnewfiles and missingnativeCPUpreparation/launch.
+Missionremainsincomplete; manuscriptupdatedthroughSEQ241, noA3results claimed.
+
+## Historical superseded snapshot — 2026-09-14 12:48 UTC
 
 LIVE12:53UPDATE: fourrepaircells launched12:52:55UTC node2GPU0–3,
 guardians377628–377631, sourcefbe0981c36c30590b4f640c4134cca48bf36272c,

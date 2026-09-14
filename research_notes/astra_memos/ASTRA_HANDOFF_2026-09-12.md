@@ -1,6 +1,37 @@
 # Astra restart handoff — September14,2026,02:49UTC
 
-## CURRENT OVERRIDE — September14,2026,12:48UTC
+## CURRENT OVERRIDE — September14,2026, after SEQ241
+
+FullmissionINCOMPLETE. All4fbe0981crepairfits/AFTERs COMPLETE, no MainGPUjobs
+remain from those stages. SFTselected=uniform4/4routing,new4/4,old8/8,
+classifier16/16,nextactualaudit6/6trueallNONE. OFFselected3/4routing/new,
+old7/8,classifier12/16; OFFuniform4/4routing/new,old8/8,classifier13/16.
+BothOFFnextaudits falselyselectrecord1. No selectionsuperiority/H1/H2 claim.
+All3196terminalfiles inclsource/4adapters preserved/remotehashverified at
+gpu_artifacts_local/astra_selected_reader_repair_terminal_20260914_attempt1/.
+Mainresult datedselected_reader_repair_first_result.md; independentfieldmemo
+available, primaryreducer/tests Goodallreleasedorfinishing (checkagent).
+
+NEXT onefreshA3bank from SAMEterminalSFT_SELECTED parent, then source-matched
+SELECTED/UNIFORM100updates from sharedcollection/BEFORE/audit. NOTLAUNCHED.
+MasterASTRA-READER-AUDIT-CONTINUATION-20260914-A3, samefamilynewidentities.
+All12priorfacts replay96views and evaluateW0/W8; unchangedwriter100updates,
+20cue+62lessonpool,200newpresentations. No chosenpointer means no matchedfit.
+Mainwrotegpu/astra_fresh_reader_cycle.py andguard plusdateddesign.
+Goodall owns neworganism_v6/experienced_event_fresh_reader_cycle.py andtests.
+Kant owns memory_count80(default)/96 option inexistingrepairtrainer+tests.
+Carson owns newtests/test_astra_fresh_reader_cycle.py; sixwritingfilesreleased
+throughSEQ241. Maxwell actual/fieldmemo releasedorfinishing, no native rights.
+Need integrate/test actualsourceprepare, freezecommit, logandlaunch observe on
+node2GPU0, then twofitforksonGPU0/1after BEFOREsource/readinessinspection.
+Do not launch from untestedworkingtree or reruncompleted fbe cells.
+
+Node1expiryreconciliation found no uncovered evidence; survivingarchivesverified,
+no newtransferneeded. Do not use node1. Node2endsSeptember21 08:43UTC with6hour
+cutoff; allnewguards preservephysical+CVDchecks. Preserveunrelateddirtyrules and
+September13junctiondraft. Local/data52GBavailable; never putbigarchivesinVM/tmp.
+
+## Historical superseded override — September14,2026,12:48UTC
 
 LIVE UPDATE12:53UTC: four repaircells LAUNCHED12:52:55UTC, native model load
 underway after57CPUtests and4actual-sourcePREPARED_NO_MODEL receipts. Immutable
