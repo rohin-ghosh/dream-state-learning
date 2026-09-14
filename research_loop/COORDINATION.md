@@ -22083,3 +22083,46 @@ replace this with another hardcoded inventory. Fullmission remains incomplete.
 SEQ-241 cells: SFT_SELECTED and SFT_UNIFORM own 3/4 → 4/4, new recall 1/4 → 4/4, old 8/8, classifier 16/16; LOSS_OFF_SELECTED own 3/4, new 3/4, old 7/8, classifier 12/16; LOSS_OFF_UNIFORM own 4/4, new 4/4, old 8/8, classifier 13/16; reader-OFF 2/4, held text 8/8, MISS 0/4 throughout. Next audit: SFT cells 6/6 true, no selections; OFF cells 4/7 and 5/6 with a false-positive selection [1]. 3,196 terminal files and 4 adapters preserved; summed native wall 0.39 A40-hours. Builder re-read raw messages 57–64 and states the constraint it keeps: own successful behaviour, learning material and subsequent experience stay connected; no teacher procedural text in sleep tokens; no return to a hardcoded inventory. **Builder → Rohin:** "Next I favor a fresh experience bank, not a gratuitous extra sleep on this solved bank. That will test whether this useful little loop continues beyond its exposed examples."
 
 Watcher reading: with SEQ-224/226 (cue), SEQ-227–230 (two adult cycles), SEQ-239 (checker) and SEQ-241 (checker-selected repair), the developmental → adult chain now closes end to end on one tiny family: write → recall → cue → check → select → sleep → use, each step with a masked-gradient or uniform twin. What has NOT been shown, in the builder's words, is an optimal selector or faster learning; and the unknown-address hallucination is still 0/4 everywhere. A fresh bank is the right next stroke — it is the first test outside the exposed examples.
+
+## [Fable VM result read] 2026-09-14T13:18Z — SEQ-240 VERIFIED; SEQ-241 VERIFIED
+
+Read-only recount on node 2. No process touched, nothing launched, nothing written on the node. Node-1 (a40) not involved. Successes were recounted from each capture's raw reply (stripped) against the case's expected string, and agree with the stored `correct` flags on every capture.
+
+**SEQ-240** (actual reader audits, root `/tmp/astra_actual_reader_audit_20260914_attempt1`, `{AUDIT_SFT,AUDIT_LOSS_OFF}/{RESULT,ACTUAL_READERS,ACTUAL_CASES}.json`, `CALL_00*.json`)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| status / calls / fits, both arms | COMPLETE, 7 actual audit calls each, 0 fits | RESULT status COMPLETE, model_calls 7, fits 0, parent_present false; 7 CALL files each; ACTUAL_READERS model_calls 7 | RESULT.json, ACTUAL_READERS.json, ls |
+| AUDIT_SFT correct | 5/7 (true 2/2, fault 3/5) | summary overall 5/7, true 2/2, fault 3/5; raw recount identical; 7 cases = 2 true + 5 fault | AUDIT_SFT/ACTUAL_READERS.json, ACTUAL_CASES.json |
+| AUDIT_SFT admitted pointers | [1,3,3] | chosen_source_indexes [None,None,1,3,None,3,None]; admitted_selections 3; admitted captures at calls 2,3,5 with source_index 1,3,3 | AUDIT_SFT/ACTUAL_READERS.json |
+| AUDIT_SFT misses | its two source-2 node errors | 2 misses, calls 4 and 6, both fault cases expected E_QQ43NOEYBQ, reply NONE | AUDIT_SFT/ACTUAL_READERS.json |
+| AUDIT_LOSS_OFF correct | 1/7, all 7 stimuli faulty | overall 1/7, fault 1/7, true 0/0; 7 cases all kind fault; raw recount identical | AUDIT_LOSS_OFF/ACTUAL_READERS.json, ACTUAL_CASES.json |
+| AUDIT_LOSS_OFF admitted | [1] | chosen_source_indexes [None,None,1,None,None,None,None]; admitted_selections 1 (call 2, source_index 1) | AUDIT_LOSS_OFF/ACTUAL_READERS.json |
+| RESULT hashes | SFT 0641ae59…1aa8, LOSS_OFF 25901598…c92e | 0641ae595365177055bd5dadef054770359f5ef1d82271491cb0f717e33f1aa8; 25901598c1e0be804d17151ab34999ad88ca9be386ff361daf77bbb9235bc92e | sha256sum */RESULT.json |
+| guardians / source | 375403/375404, adfbdd45… | launch_AUDIT_SFT guardian_pid 375403, launch_AUDIT_LOSS_OFF 375404; source_commit adfbdd45911e1cf946ccd89bbc724af2210198df both | launch_*/guardian_pid.txt, source_commit.txt |
+
+Integrity: loaded_adapter_state_sha256 db3f213b… (SFT) / 42c8a7e2… (loss-off) equal the SEQ-239 train adapter_state_after values verified in the 12:48Z read; training_result_sha256 434774fa… / 1ad29835… and lesson_result_sha256 93d20d7c… equal the SEQ-239 values; frozen_base_unchanged true both arms. The `call_sha256` field in each capture does not equal sha256sum of the corresponding CALL_*.json bytes (hashing convention not stated in the file); not a headline count, recorded as not re-derived. Scope note, copied from the builder: 5/7 vs 1/7 is NOT an isolated same-stimulus policy comparison (different actors produced different reader stimuli); actual new record selections observed, downstream write utility UNTESTED at this entry.
+
+**SEQ-241** (four repair cells, root `/tmp/astra_selected_reader_repair_20260914_attempt1`, `<CELL>/{train,after}/RESULT.json`, `after/{AFTER_HELD,NEXT_ACTUAL_READERS,NEXT_ACTUAL_CASES,INPUTS}.json`, `after/new_task/*`, `after/OLD_RECALL_W*_*.json`)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| all 4 cells COMPLETE, 100 updates, fresh AFTER | yes | train status COMPLETE, updates 100, fits 1, 100 LOSSES.jsonl lines, all 4; after status COMPLETE, fits 0, parent_present false, all 4 | */train/RESULT.json, LOSSES.jsonl, */after/RESULT.json |
+| guardians / source | 377628–377631, fbe0981c | guardian_pid 377628 (SFT_SEL), 377629 (SFT_UNI), 377630 (OFF_SEL), 377631 (OFF_UNI); source_commit fbe0981c36c30590b4f640c4134cca48bf36272c all 4 | launch_*/ |
+| SFT_SELECTED and SFT_UNIFORM own | 4/4 | OWN_PARAMETRIC reached_goal 4/4, with_reads 4/4, both | after/RESULT.json panels |
+| SFT both new W0/W8 recall | 4/4 | RECALL_W0 4/4, RECALL_W8 4/4, both | after/RESULT.json |
+| SFT both old W0/W8 | 8/8 | OLD_RECALL_W0 8/8, OLD_RECALL_W8 8/8, both; 16 OLD_RECALL files all correct true | after/RESULT.json, OLD_RECALL_W*_*.json |
+| SFT both held classifier | 16/16 | overall 16/16, true 8/8, fault 8/8, both; cases_sha256 6c95abea… (same held set as SEQ-239) | after/AFTER_HELD.json |
+| LOSS_OFF_SELECTED own / new / old / classifier | 3/4, 3/4, 7/8, 12/16 | OWN_PARAMETRIC 3/4; RECALL_W0 3/4, RECALL_W8 3/4; OLD_RECALL_W0 7/8, OLD_RECALL_W8 7/8; held 12/16 (true 5/8, fault 7/8) | after/RESULT.json, AFTER_HELD.json |
+| LOSS_OFF_UNIFORM own / new / old / classifier | 4/4, 4/4, 8/8, 13/16 | OWN_PARAMETRIC 4/4; RECALL_W0 4/4, RECALL_W8 4/4; OLD_RECALL 8/8 both; held 13/16 (true 6/8, fault 7/8) | after/RESULT.json, AFTER_HELD.json |
+| reader OFF / text / MISS, all 4 | 2/4, 8/8, 0/4 | OWN_READER_OFF 2/4; HELD_TEXT_0 4/4 + HELD_TEXT_1 4/4; UNSEEN_MISS 0/4; all 4 cells | after/RESULT.json |
+| fresh next audit, SFT both | 6/6 all true, no selections | overall 6/6, true 6/6, fault 0/0; 6 cases all kind true; admitted_selections 0, chosen all None; parent_present false | after/NEXT_ACTUAL_READERS.json, NEXT_ACTUAL_CASES.json |
+| fresh next audit, OFF selected | 4/7 (true 4/5, fault 0/2), selects [1] | overall 4/7, true 4/5, fault 0/2; 7 cases = 5 true + 2 fault; admitted 1 at call 2 source_index 1 (status SOURCED_POINTER_NOT_UTILITY), two INVALID_POINTER | after/NEXT_ACTUAL_READERS.json |
+| fresh next audit, OFF uniform | 5/6 all true, selects [1] | overall 5/6, true 5/6, fault 0/0; 6 cases all true; admitted 1 at call 2 source_index 1 | after/NEXT_ACTUAL_READERS.json |
+| AFTER calls | 427 | model_calls 106 + 106 + 109 + 106 = 427; per cell files new_task CALL + OLD_RECALL + held + next = 68+16+16+6 = 106 (SFT_SEL, SFT_UNI, OFF_UNI), 70+16+16+7 = 109 (OFF_SEL) | after/RESULT.json, ls |
+| terminal files preserved | 3196 including 4 adapters | 3196 regular files under the root (600 outside `source/`); 4 `train/adapter` dirs present | find under root only |
+| allocator warnings / skipped / aborted | warnings in all 4 logs, no skipped updates or aborted fit | "allocator" 1 line in each cell log; "skipped" 0, "abort" 0 in each | <CELL>.log |
+
+Integrity: initial adapter identical within pair (train adapter_state_before = loaded = after/INPUTS initial_adapter: db3f213b… both SFT cells, 42c8a7e2… both loss-off cells, = the SEQ-240/239 arm adapters); each train adapter_state_after (48dc1d6d… / d095cc59… / 58f5732b… / 2a3ad114…) equals its AFTER loaded_adapter_state_sha256; each AFTER training_result_sha256 equals sha256sum of its cell's train/RESULT.json (5ad2ed44… / 06459514… / a47c87fe… / df72288b…); frozen_base_unchanged true throughout; selected_source_indexes [1,3,3] (SFT cells) and [1] (loss-off cells) match the SEQ-240 admitted pointers; presentation budgets memory 100 / cue 38 / lesson 62 / behavior 100 / new memory 200 in all 4 cells; new_fact_presentations [0,72,0,128] / [50,50,50,50] / [0,200,0,0] / [50,50,50,50]. The "from 3/4" and "from 1/4" baselines are the SEQ-239 AFTER values verified in the 12:48Z read. Not re-derived: archive SHA 773f4c2d… (no archive path named in the entry), 0.3911 h summed wall, 575 max encoded training tokens, "remote hash-checked" claim, guardian PIDs beyond the launch files. Weight files not hashed.
+
+Scope note, copied from the builder: one exposed DEV lineage, no H1/H2 or clean-lineage claim; uniform works equally well, no optimal selector or faster general learning shown; the weaker checker's comparison leaves a missed fact and loses one old fact. Remaining unread result-bearing SEQs at this run: none.
