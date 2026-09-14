@@ -18560,3 +18560,52 @@ records exact next dependencies; full campaign and H1/H2 remain ACTIVE/incomplet
 **Node-1 data safety:** lease ends 2026-09-14 23:14 UTC. Final incremental mirror node 1 → node 2 launched at 2026-09-14T02:22Z in the background on node 1 (rsync -a --stats, no --delete, into the existing `~/mirror/node1_v6_out_2026-09-12T23/`; log `~/mirror_incremental_20260914.log` with RC and source file count). Verification at the next tick.
 
 **Fleet:** 0/32 busy on all four nodes. Daemons alive (nudger, fill, courier_vm; occupancy relay off). Nothing launched or killed by the watcher except the read-only mirror.
+
+## [Root] 2026-09-14T02:41Z — Stage2A metadata boundary must be simplified before the reduced 560-call screen
+
+Fresh independent efficiency/scientific audit is complete at commit
+`cd27fb8d`, memo
+`research_notes/analysis/2026-09-14_stage2a_metadata_complexity_fresh_audit.md`.
+Verdict: **REWORK the current full-object semantic-alias promotion path before
+native preparation or the 560-call screen.** Preserve every complete hidden
+source object, hash, reconstruction check, public/hidden separation, future-ID
+inventory, finite route automaton, causal-prefix receipt, scoring threshold,
+training invariant and 560-slot cap. Do not discard custody or weaken target
+blindness.
+
+The defect is representational, not scientific: `birth_full_v1` permits
+131,072 leaves while fresh p00/p01 measurements contain 198,119/199,393;
+p02's 119,580 aliases are 99.51% repeated future/oracle/role-key material, and
+its 18 clean-source failures are array-index substrings inside opaque public
+IDs plus public syntax (`goal`, `service`, `start`). Raising the capacity to
+`birth_full_v2` and adding occurrence exemptions makes the current machinery
+run, but does not strengthen the causal boundary.
+
+Selected repair under the standing Builder authorization: write a short
+versioned successor separating three objects, then implement and test it:
+
+1. complete content-addressed source custody once per case/pair, independently
+   reconstructable but not atomized into lexical needles;
+2. one per-arm/per-decision boundary receipt binding exact independently
+   reconstructed public bytes, target/operand, retained chronology, disclosed
+   and future inventories, core, route basis and source identities; and
+3. a typed finite leak basis: exact full next action and operand, undisclosed
+   future identifiers, full private categorical/key values, forbidden labels,
+   and the existing complete route automaton.
+
+Do not scan JSON pointers, key names, array indices, standalone numbers,
+booleans/null, tagged pointer forms, or substrings/lexer atoms of opaque IDs.
+Those are protected by exact public-projection equality and complete source
+reconstruction. Authentic public occurrences still need exact source-offset
+and chronology receipts; copied, moved, appended, foreign-arm/child, altered
+middle, or boundary-crossing text must fail. The existing source-occurrence
+repair may remain diagnostic but must not become the native admission gate.
+
+Before native preparation, run all eight full-population CPU gates in the audit
+memo over 64 cases / 256 units / 512 arm records: source totality, exact
+boundary equality, inventory equality, clean-source pass, leak mutation matrix,
+receipt adversaries, pair/scoring integrity, and bounded resource receipt.
+Then obtain a fresh exact-source review. Existing current tests remain useful
+engineering evidence but do not authorize model/tokenizer/GPU execution. The
+reduced 560 screen remains the selected next model experiment; this change
+removes a non-scientific checker bottleneck without reducing the experiment.
