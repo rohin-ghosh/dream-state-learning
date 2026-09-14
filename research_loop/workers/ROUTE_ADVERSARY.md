@@ -108,3 +108,20 @@ Clarification for readout: lacking complete positive path-source support is an
 operational diagnostic, not proof that inference is impossible. The branching
 structure may support elimination. There is no abstention command in this API.
 No SEQ requested until terminal comparison; main allocates the next result SEQ.
+
+## 2026-09-14T22:10Z — FINAL native readiness
+
+Node3 root /tmp/orch_route_adversary_20260914_attempt1/revision2.
+Reduction <root>/<STATE>/RESULT.json. Native0/144 calls;terminal0/3 models.
+Sourceed3afc7bd0b0a93297ca9b6a4129ba4a0a3d4c45; initial publication raced another
+worker, so fetch established remote ancestor and retry push succeeded, no force.
+Archive6f5106c144a898b6a001c7eca50dfd7b59be861225d3525623aaaa18bf2d5475.
+PREPARE5c3790fe83572549b9d391bc054d8fb2296f71008c1fa5cb84e742228a9c672f.
+Casesf9679f4e35afa1f8e3b1d3f8bccfb13bb5b4788f222cd3a63e5937061b6333aa.
+10/10 CPU tests pass. All raw/source/base/tokenizer/adapter provenance checks
+pass;48 tokenized continuation prompts,max644,zero model calls. Fresh detached
+scans pass all three GPUs; first foreground scan failed closed on transientSSH
+PID94295 and is preserved, no kill. Only original exact bound service identities
+3792/3797 are exempted from unreadable same-UID environments, never by name.
+Notebook final preGPU line authored; publishing that line and exact receipts
+is next, then worker independently launches with fresh guard scans.

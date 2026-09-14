@@ -1,0 +1,2202 @@
+{
+  "archives": [
+    {
+      "path": "/tmp/astra_goal_scale_20260914_attempt1/shard0/expose/DATA.json",
+      "result_sha256": "82c2b5b036dffc461213e54bd0e78989ceea2cd3b81d82ce5175e6a50b3aaca2",
+      "sha256": "492abcc526f47f385f8de150b774743cbf360f08ffaac3c919d6e5f2bc2be80d"
+    },
+    {
+      "path": "/tmp/astra_goal_scale_20260914_attempt1/shard1/expose/DATA.json",
+      "result_sha256": "0ef1766d47544926fa8d7a67d074efe8b47be8eafe36210c374c35000382aa59",
+      "sha256": "ac6444be2185361b0e5b364ad5b8979f5126657cf70a5572e95e9c398a4e0ef4"
+    },
+    {
+      "path": "/tmp/astra_goal_scale_20260914_attempt1/shard2/expose/DATA.json",
+      "result_sha256": "c24169092a7a3339013979727e761a80278cd787d70d99803a1768ef7e583593",
+      "sha256": "328c53a375e2fa07a7a05bd044e8fe74f014e57c4b4648717ecd815087de2735"
+    },
+    {
+      "path": "/tmp/astra_goal_scale_20260914_attempt1/shard3/expose/DATA.json",
+      "result_sha256": "fc3c4cf9f7c792db4123cf3a897450f31708054560cd66acc677277e500f3f68",
+      "sha256": "7825f0d976b449e0d3bb9604c7f9b2215f81e7a4cdec1453c97e4dac403b6a94"
+    },
+    {
+      "path": "/tmp/astra_goal_scale_20260914_attempt1/shard4/expose/DATA.json",
+      "result_sha256": "16b7986bdfba8a8e0f0fa418cbf66f73b81648d18ef0c8c0363d3c1ed9e2d9aa",
+      "sha256": "fda6a6578a1c30721bd5d6d36a2a14209ef2dde8a4dc3bc7663d9b743ce5cd70"
+    },
+    {
+      "path": "/tmp/astra_goal_scale_20260914_attempt1/shard5/expose/DATA.json",
+      "result_sha256": "898b418b856de9238cf8cfaf12295e6b1dfe55853dafea90dc313c03bb96644a",
+      "sha256": "62c0b62d6c87877a6920fb89784b7537e229cfb17b5e275b0231a68fa3e8dbce"
+    },
+    {
+      "path": "/tmp/astra_goal_scale_20260914_attempt1/shard6/expose/DATA.json",
+      "result_sha256": "db16579881541e9c0acbbcc158e3962712d5bfd3956166412c706ca92680c66d",
+      "sha256": "e53e793a0cdc08d55333ba85d9c8701b83ac43bf66aca8c6186433b6627ee412"
+    },
+    {
+      "path": "/tmp/astra_goal_scale_20260914_attempt1/shard7/expose/DATA.json",
+      "result_sha256": "c27f08b3ffb5282338bab77e4ca117420235026b49ac163a5cc45643ffcb722b",
+      "sha256": "debbf8e88432f498892588ca228d514c876f7fdea05fa61f9f197c09b7617fba"
+    }
+  ],
+  "base_verification": {
+    "expected_base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+    "model_dir": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+    "verified": true
+  },
+  "bundle": "/tmp/astra_portable_37ec_20260914_attempt1",
+  "bundle_sha": "5e675c309b202625a6ddf1d36c1a58f51ef656985821cec1cd6123424d927469",
+  "cases": [
+    {
+      "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+      "condition": "REFERENCE",
+      "expected_first_port": "P_HDFNGVPV66",
+      "goal_index": 0,
+      "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+      "original_collection_sha256": "571845ef08079c9be7051b949c2b56692dc13397f871b9d89e50186c4c33b212",
+      "original_missing_addresses": [],
+      "route_sources_available": true,
+      "scripted_read_order": [
+        "E_42OEAHNACB",
+        "E_OMHL7JAMED",
+        "E_XCZRM3HFN2",
+        "E_SAVOZE4RQQ"
+      ],
+      "seed": 914101,
+      "store": {
+        "E_42OEAHNACB": "EVENT E_42OEAHNACB AT N_YSNWF6AJMB DID P_5AC3XPM4YM GOT N_5IWEW5ES3E EVIDENCE R_TTDOLUXFPK",
+        "E_OMHL7JAMED": "EVENT E_OMHL7JAMED AT N_Z75BPRRUIT DID P_HDFNGVPV66 GOT N_ETTHAQSAWC EVIDENCE R_LIFIDLZWFI",
+        "E_SAVOZE4RQQ": "EVENT E_SAVOZE4RQQ AT N_Z75BPRRUIT DID P_XYYSCSBCUJ GOT N_YSNWF6AJMB EVIDENCE R_AKQME6GWP5",
+        "E_XCZRM3HFN2": "EVENT E_XCZRM3HFN2 AT N_ETTHAQSAWC DID P_TIWDWZE6ZF GOT N_HAOJQUZHEH EVIDENCE R_GM6Z3TUF23"
+      },
+      "task": {
+        "events": [
+          "E_42OEAHNACB",
+          "E_OMHL7JAMED",
+          "E_XCZRM3HFN2",
+          "E_SAVOZE4RQQ"
+        ],
+        "goal": "N_HAOJQUZHEH",
+        "node": "N_Z75BPRRUIT",
+        "ports": [
+          "P_XYYSCSBCUJ",
+          "P_HDFNGVPV66"
+        ]
+      },
+      "transformations": [],
+      "world": {
+        "edges": [
+          {
+            "event": "E_OMHL7JAMED",
+            "node": "N_Z75BPRRUIT",
+            "outcome": "N_ETTHAQSAWC",
+            "port": "P_HDFNGVPV66",
+            "receipt": "R_LIFIDLZWFI"
+          },
+          {
+            "event": "E_SAVOZE4RQQ",
+            "node": "N_Z75BPRRUIT",
+            "outcome": "N_YSNWF6AJMB",
+            "port": "P_XYYSCSBCUJ",
+            "receipt": "R_AKQME6GWP5"
+          },
+          {
+            "event": "E_XCZRM3HFN2",
+            "node": "N_ETTHAQSAWC",
+            "outcome": "N_HAOJQUZHEH",
+            "port": "P_TIWDWZE6ZF",
+            "receipt": "R_GM6Z3TUF23"
+          },
+          {
+            "event": "E_42OEAHNACB",
+            "node": "N_YSNWF6AJMB",
+            "outcome": "N_5IWEW5ES3E",
+            "port": "P_5AC3XPM4YM",
+            "receipt": "R_TTDOLUXFPK"
+          }
+        ],
+        "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+        "nodes": [
+          "N_Z75BPRRUIT",
+          "N_ETTHAQSAWC",
+          "N_YSNWF6AJMB",
+          "N_HAOJQUZHEH",
+          "N_5IWEW5ES3E"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    },
+    {
+      "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+      "condition": "REFERENCE",
+      "expected_first_port": "P_XYYSCSBCUJ",
+      "goal_index": 1,
+      "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+      "original_collection_sha256": "571845ef08079c9be7051b949c2b56692dc13397f871b9d89e50186c4c33b212",
+      "original_missing_addresses": [],
+      "route_sources_available": true,
+      "scripted_read_order": [
+        "E_42OEAHNACB",
+        "E_OMHL7JAMED",
+        "E_XCZRM3HFN2",
+        "E_SAVOZE4RQQ"
+      ],
+      "seed": 914101,
+      "store": {
+        "E_42OEAHNACB": "EVENT E_42OEAHNACB AT N_YSNWF6AJMB DID P_5AC3XPM4YM GOT N_5IWEW5ES3E EVIDENCE R_TTDOLUXFPK",
+        "E_OMHL7JAMED": "EVENT E_OMHL7JAMED AT N_Z75BPRRUIT DID P_HDFNGVPV66 GOT N_ETTHAQSAWC EVIDENCE R_LIFIDLZWFI",
+        "E_SAVOZE4RQQ": "EVENT E_SAVOZE4RQQ AT N_Z75BPRRUIT DID P_XYYSCSBCUJ GOT N_YSNWF6AJMB EVIDENCE R_AKQME6GWP5",
+        "E_XCZRM3HFN2": "EVENT E_XCZRM3HFN2 AT N_ETTHAQSAWC DID P_TIWDWZE6ZF GOT N_HAOJQUZHEH EVIDENCE R_GM6Z3TUF23"
+      },
+      "task": {
+        "events": [
+          "E_42OEAHNACB",
+          "E_OMHL7JAMED",
+          "E_XCZRM3HFN2",
+          "E_SAVOZE4RQQ"
+        ],
+        "goal": "N_5IWEW5ES3E",
+        "node": "N_Z75BPRRUIT",
+        "ports": [
+          "P_XYYSCSBCUJ",
+          "P_HDFNGVPV66"
+        ]
+      },
+      "transformations": [],
+      "world": {
+        "edges": [
+          {
+            "event": "E_OMHL7JAMED",
+            "node": "N_Z75BPRRUIT",
+            "outcome": "N_ETTHAQSAWC",
+            "port": "P_HDFNGVPV66",
+            "receipt": "R_LIFIDLZWFI"
+          },
+          {
+            "event": "E_SAVOZE4RQQ",
+            "node": "N_Z75BPRRUIT",
+            "outcome": "N_YSNWF6AJMB",
+            "port": "P_XYYSCSBCUJ",
+            "receipt": "R_AKQME6GWP5"
+          },
+          {
+            "event": "E_XCZRM3HFN2",
+            "node": "N_ETTHAQSAWC",
+            "outcome": "N_HAOJQUZHEH",
+            "port": "P_TIWDWZE6ZF",
+            "receipt": "R_GM6Z3TUF23"
+          },
+          {
+            "event": "E_42OEAHNACB",
+            "node": "N_YSNWF6AJMB",
+            "outcome": "N_5IWEW5ES3E",
+            "port": "P_5AC3XPM4YM",
+            "receipt": "R_TTDOLUXFPK"
+          }
+        ],
+        "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+        "nodes": [
+          "N_Z75BPRRUIT",
+          "N_ETTHAQSAWC",
+          "N_YSNWF6AJMB",
+          "N_HAOJQUZHEH",
+          "N_5IWEW5ES3E"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    },
+    {
+      "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+      "condition": "PORT_REVERSE",
+      "expected_first_port": "P_HDFNGVPV66",
+      "goal_index": 0,
+      "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+      "original_collection_sha256": "571845ef08079c9be7051b949c2b56692dc13397f871b9d89e50186c4c33b212",
+      "original_missing_addresses": [],
+      "route_sources_available": true,
+      "scripted_read_order": [
+        "E_42OEAHNACB",
+        "E_OMHL7JAMED",
+        "E_XCZRM3HFN2",
+        "E_SAVOZE4RQQ"
+      ],
+      "seed": 914101,
+      "store": {
+        "E_42OEAHNACB": "EVENT E_42OEAHNACB AT N_YSNWF6AJMB DID P_5AC3XPM4YM GOT N_5IWEW5ES3E EVIDENCE R_TTDOLUXFPK",
+        "E_OMHL7JAMED": "EVENT E_OMHL7JAMED AT N_Z75BPRRUIT DID P_HDFNGVPV66 GOT N_ETTHAQSAWC EVIDENCE R_LIFIDLZWFI",
+        "E_SAVOZE4RQQ": "EVENT E_SAVOZE4RQQ AT N_Z75BPRRUIT DID P_XYYSCSBCUJ GOT N_YSNWF6AJMB EVIDENCE R_AKQME6GWP5",
+        "E_XCZRM3HFN2": "EVENT E_XCZRM3HFN2 AT N_ETTHAQSAWC DID P_TIWDWZE6ZF GOT N_HAOJQUZHEH EVIDENCE R_GM6Z3TUF23"
+      },
+      "task": {
+        "events": [
+          "E_42OEAHNACB",
+          "E_OMHL7JAMED",
+          "E_XCZRM3HFN2",
+          "E_SAVOZE4RQQ"
+        ],
+        "goal": "N_HAOJQUZHEH",
+        "node": "N_Z75BPRRUIT",
+        "ports": [
+          "P_HDFNGVPV66",
+          "P_XYYSCSBCUJ"
+        ]
+      },
+      "transformations": [],
+      "world": {
+        "edges": [
+          {
+            "event": "E_OMHL7JAMED",
+            "node": "N_Z75BPRRUIT",
+            "outcome": "N_ETTHAQSAWC",
+            "port": "P_HDFNGVPV66",
+            "receipt": "R_LIFIDLZWFI"
+          },
+          {
+            "event": "E_SAVOZE4RQQ",
+            "node": "N_Z75BPRRUIT",
+            "outcome": "N_YSNWF6AJMB",
+            "port": "P_XYYSCSBCUJ",
+            "receipt": "R_AKQME6GWP5"
+          },
+          {
+            "event": "E_XCZRM3HFN2",
+            "node": "N_ETTHAQSAWC",
+            "outcome": "N_HAOJQUZHEH",
+            "port": "P_TIWDWZE6ZF",
+            "receipt": "R_GM6Z3TUF23"
+          },
+          {
+            "event": "E_42OEAHNACB",
+            "node": "N_YSNWF6AJMB",
+            "outcome": "N_5IWEW5ES3E",
+            "port": "P_5AC3XPM4YM",
+            "receipt": "R_TTDOLUXFPK"
+          }
+        ],
+        "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+        "nodes": [
+          "N_Z75BPRRUIT",
+          "N_ETTHAQSAWC",
+          "N_YSNWF6AJMB",
+          "N_HAOJQUZHEH",
+          "N_5IWEW5ES3E"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    },
+    {
+      "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+      "condition": "PORT_REVERSE",
+      "expected_first_port": "P_XYYSCSBCUJ",
+      "goal_index": 1,
+      "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+      "original_collection_sha256": "571845ef08079c9be7051b949c2b56692dc13397f871b9d89e50186c4c33b212",
+      "original_missing_addresses": [],
+      "route_sources_available": true,
+      "scripted_read_order": [
+        "E_42OEAHNACB",
+        "E_OMHL7JAMED",
+        "E_XCZRM3HFN2",
+        "E_SAVOZE4RQQ"
+      ],
+      "seed": 914101,
+      "store": {
+        "E_42OEAHNACB": "EVENT E_42OEAHNACB AT N_YSNWF6AJMB DID P_5AC3XPM4YM GOT N_5IWEW5ES3E EVIDENCE R_TTDOLUXFPK",
+        "E_OMHL7JAMED": "EVENT E_OMHL7JAMED AT N_Z75BPRRUIT DID P_HDFNGVPV66 GOT N_ETTHAQSAWC EVIDENCE R_LIFIDLZWFI",
+        "E_SAVOZE4RQQ": "EVENT E_SAVOZE4RQQ AT N_Z75BPRRUIT DID P_XYYSCSBCUJ GOT N_YSNWF6AJMB EVIDENCE R_AKQME6GWP5",
+        "E_XCZRM3HFN2": "EVENT E_XCZRM3HFN2 AT N_ETTHAQSAWC DID P_TIWDWZE6ZF GOT N_HAOJQUZHEH EVIDENCE R_GM6Z3TUF23"
+      },
+      "task": {
+        "events": [
+          "E_42OEAHNACB",
+          "E_OMHL7JAMED",
+          "E_XCZRM3HFN2",
+          "E_SAVOZE4RQQ"
+        ],
+        "goal": "N_5IWEW5ES3E",
+        "node": "N_Z75BPRRUIT",
+        "ports": [
+          "P_HDFNGVPV66",
+          "P_XYYSCSBCUJ"
+        ]
+      },
+      "transformations": [],
+      "world": {
+        "edges": [
+          {
+            "event": "E_OMHL7JAMED",
+            "node": "N_Z75BPRRUIT",
+            "outcome": "N_ETTHAQSAWC",
+            "port": "P_HDFNGVPV66",
+            "receipt": "R_LIFIDLZWFI"
+          },
+          {
+            "event": "E_SAVOZE4RQQ",
+            "node": "N_Z75BPRRUIT",
+            "outcome": "N_YSNWF6AJMB",
+            "port": "P_XYYSCSBCUJ",
+            "receipt": "R_AKQME6GWP5"
+          },
+          {
+            "event": "E_XCZRM3HFN2",
+            "node": "N_ETTHAQSAWC",
+            "outcome": "N_HAOJQUZHEH",
+            "port": "P_TIWDWZE6ZF",
+            "receipt": "R_GM6Z3TUF23"
+          },
+          {
+            "event": "E_42OEAHNACB",
+            "node": "N_YSNWF6AJMB",
+            "outcome": "N_5IWEW5ES3E",
+            "port": "P_5AC3XPM4YM",
+            "receipt": "R_TTDOLUXFPK"
+          }
+        ],
+        "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+        "nodes": [
+          "N_Z75BPRRUIT",
+          "N_ETTHAQSAWC",
+          "N_YSNWF6AJMB",
+          "N_HAOJQUZHEH",
+          "N_5IWEW5ES3E"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    },
+    {
+      "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+      "condition": "ROOT_SWAP",
+      "expected_first_port": "P_XYYSCSBCUJ",
+      "goal_index": 0,
+      "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+      "original_collection_sha256": "571845ef08079c9be7051b949c2b56692dc13397f871b9d89e50186c4c33b212",
+      "original_missing_addresses": [],
+      "route_sources_available": true,
+      "scripted_read_order": [
+        "E_42OEAHNACB",
+        "E_OMHL7JAMED",
+        "E_XCZRM3HFN2",
+        "E_SAVOZE4RQQ"
+      ],
+      "seed": 914101,
+      "store": {
+        "E_42OEAHNACB": "EVENT E_42OEAHNACB AT N_YSNWF6AJMB DID P_5AC3XPM4YM GOT N_5IWEW5ES3E EVIDENCE R_TTDOLUXFPK",
+        "E_OMHL7JAMED": "EVENT E_OMHL7JAMED AT N_Z75BPRRUIT DID P_HDFNGVPV66 GOT N_YSNWF6AJMB EVIDENCE R_LIFIDLZWFI",
+        "E_SAVOZE4RQQ": "EVENT E_SAVOZE4RQQ AT N_Z75BPRRUIT DID P_XYYSCSBCUJ GOT N_ETTHAQSAWC EVIDENCE R_AKQME6GWP5",
+        "E_XCZRM3HFN2": "EVENT E_XCZRM3HFN2 AT N_ETTHAQSAWC DID P_TIWDWZE6ZF GOT N_HAOJQUZHEH EVIDENCE R_GM6Z3TUF23"
+      },
+      "task": {
+        "events": [
+          "E_42OEAHNACB",
+          "E_OMHL7JAMED",
+          "E_XCZRM3HFN2",
+          "E_SAVOZE4RQQ"
+        ],
+        "goal": "N_HAOJQUZHEH",
+        "node": "N_Z75BPRRUIT",
+        "ports": [
+          "P_XYYSCSBCUJ",
+          "P_HDFNGVPV66"
+        ]
+      },
+      "transformations": [
+        {
+          "address": "E_OMHL7JAMED",
+          "after": "EVENT E_OMHL7JAMED AT N_Z75BPRRUIT DID P_HDFNGVPV66 GOT N_YSNWF6AJMB EVIDENCE R_LIFIDLZWFI",
+          "before": "EVENT E_OMHL7JAMED AT N_Z75BPRRUIT DID P_HDFNGVPV66 GOT N_ETTHAQSAWC EVIDENCE R_LIFIDLZWFI",
+          "label": "RESEARCHER_COUNTERFACTUAL_NOT_ACTUAL_CHILD_TEXT"
+        },
+        {
+          "address": "E_SAVOZE4RQQ",
+          "after": "EVENT E_SAVOZE4RQQ AT N_Z75BPRRUIT DID P_XYYSCSBCUJ GOT N_ETTHAQSAWC EVIDENCE R_AKQME6GWP5",
+          "before": "EVENT E_SAVOZE4RQQ AT N_Z75BPRRUIT DID P_XYYSCSBCUJ GOT N_YSNWF6AJMB EVIDENCE R_AKQME6GWP5",
+          "label": "RESEARCHER_COUNTERFACTUAL_NOT_ACTUAL_CHILD_TEXT"
+        }
+      ],
+      "world": {
+        "edges": [
+          {
+            "event": "E_OMHL7JAMED",
+            "node": "N_Z75BPRRUIT",
+            "outcome": "N_YSNWF6AJMB",
+            "port": "P_HDFNGVPV66",
+            "receipt": "R_LIFIDLZWFI"
+          },
+          {
+            "event": "E_SAVOZE4RQQ",
+            "node": "N_Z75BPRRUIT",
+            "outcome": "N_ETTHAQSAWC",
+            "port": "P_XYYSCSBCUJ",
+            "receipt": "R_AKQME6GWP5"
+          },
+          {
+            "event": "E_XCZRM3HFN2",
+            "node": "N_ETTHAQSAWC",
+            "outcome": "N_HAOJQUZHEH",
+            "port": "P_TIWDWZE6ZF",
+            "receipt": "R_GM6Z3TUF23"
+          },
+          {
+            "event": "E_42OEAHNACB",
+            "node": "N_YSNWF6AJMB",
+            "outcome": "N_5IWEW5ES3E",
+            "port": "P_5AC3XPM4YM",
+            "receipt": "R_TTDOLUXFPK"
+          }
+        ],
+        "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+        "nodes": [
+          "N_Z75BPRRUIT",
+          "N_ETTHAQSAWC",
+          "N_YSNWF6AJMB",
+          "N_HAOJQUZHEH",
+          "N_5IWEW5ES3E"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    },
+    {
+      "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+      "condition": "ROOT_SWAP",
+      "expected_first_port": "P_HDFNGVPV66",
+      "goal_index": 1,
+      "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+      "original_collection_sha256": "571845ef08079c9be7051b949c2b56692dc13397f871b9d89e50186c4c33b212",
+      "original_missing_addresses": [],
+      "route_sources_available": true,
+      "scripted_read_order": [
+        "E_42OEAHNACB",
+        "E_OMHL7JAMED",
+        "E_XCZRM3HFN2",
+        "E_SAVOZE4RQQ"
+      ],
+      "seed": 914101,
+      "store": {
+        "E_42OEAHNACB": "EVENT E_42OEAHNACB AT N_YSNWF6AJMB DID P_5AC3XPM4YM GOT N_5IWEW5ES3E EVIDENCE R_TTDOLUXFPK",
+        "E_OMHL7JAMED": "EVENT E_OMHL7JAMED AT N_Z75BPRRUIT DID P_HDFNGVPV66 GOT N_YSNWF6AJMB EVIDENCE R_LIFIDLZWFI",
+        "E_SAVOZE4RQQ": "EVENT E_SAVOZE4RQQ AT N_Z75BPRRUIT DID P_XYYSCSBCUJ GOT N_ETTHAQSAWC EVIDENCE R_AKQME6GWP5",
+        "E_XCZRM3HFN2": "EVENT E_XCZRM3HFN2 AT N_ETTHAQSAWC DID P_TIWDWZE6ZF GOT N_HAOJQUZHEH EVIDENCE R_GM6Z3TUF23"
+      },
+      "task": {
+        "events": [
+          "E_42OEAHNACB",
+          "E_OMHL7JAMED",
+          "E_XCZRM3HFN2",
+          "E_SAVOZE4RQQ"
+        ],
+        "goal": "N_5IWEW5ES3E",
+        "node": "N_Z75BPRRUIT",
+        "ports": [
+          "P_XYYSCSBCUJ",
+          "P_HDFNGVPV66"
+        ]
+      },
+      "transformations": [
+        {
+          "address": "E_OMHL7JAMED",
+          "after": "EVENT E_OMHL7JAMED AT N_Z75BPRRUIT DID P_HDFNGVPV66 GOT N_YSNWF6AJMB EVIDENCE R_LIFIDLZWFI",
+          "before": "EVENT E_OMHL7JAMED AT N_Z75BPRRUIT DID P_HDFNGVPV66 GOT N_ETTHAQSAWC EVIDENCE R_LIFIDLZWFI",
+          "label": "RESEARCHER_COUNTERFACTUAL_NOT_ACTUAL_CHILD_TEXT"
+        },
+        {
+          "address": "E_SAVOZE4RQQ",
+          "after": "EVENT E_SAVOZE4RQQ AT N_Z75BPRRUIT DID P_XYYSCSBCUJ GOT N_ETTHAQSAWC EVIDENCE R_AKQME6GWP5",
+          "before": "EVENT E_SAVOZE4RQQ AT N_Z75BPRRUIT DID P_XYYSCSBCUJ GOT N_YSNWF6AJMB EVIDENCE R_AKQME6GWP5",
+          "label": "RESEARCHER_COUNTERFACTUAL_NOT_ACTUAL_CHILD_TEXT"
+        }
+      ],
+      "world": {
+        "edges": [
+          {
+            "event": "E_OMHL7JAMED",
+            "node": "N_Z75BPRRUIT",
+            "outcome": "N_YSNWF6AJMB",
+            "port": "P_HDFNGVPV66",
+            "receipt": "R_LIFIDLZWFI"
+          },
+          {
+            "event": "E_SAVOZE4RQQ",
+            "node": "N_Z75BPRRUIT",
+            "outcome": "N_ETTHAQSAWC",
+            "port": "P_XYYSCSBCUJ",
+            "receipt": "R_AKQME6GWP5"
+          },
+          {
+            "event": "E_XCZRM3HFN2",
+            "node": "N_ETTHAQSAWC",
+            "outcome": "N_HAOJQUZHEH",
+            "port": "P_TIWDWZE6ZF",
+            "receipt": "R_GM6Z3TUF23"
+          },
+          {
+            "event": "E_42OEAHNACB",
+            "node": "N_YSNWF6AJMB",
+            "outcome": "N_5IWEW5ES3E",
+            "port": "P_5AC3XPM4YM",
+            "receipt": "R_TTDOLUXFPK"
+          }
+        ],
+        "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+        "nodes": [
+          "N_Z75BPRRUIT",
+          "N_ETTHAQSAWC",
+          "N_YSNWF6AJMB",
+          "N_HAOJQUZHEH",
+          "N_5IWEW5ES3E"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    },
+    {
+      "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+      "condition": "UNAVAILABLE",
+      "expected_first_port": "P_HDFNGVPV66",
+      "goal_index": 0,
+      "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+      "original_collection_sha256": "571845ef08079c9be7051b949c2b56692dc13397f871b9d89e50186c4c33b212",
+      "original_missing_addresses": [],
+      "route_sources_available": false,
+      "scripted_read_order": [
+        "E_42OEAHNACB",
+        "E_OMHL7JAMED",
+        "E_XCZRM3HFN2",
+        "E_SAVOZE4RQQ"
+      ],
+      "seed": 914101,
+      "store": {
+        "E_42OEAHNACB": "MEMORY UNAVAILABLE",
+        "E_OMHL7JAMED": "MEMORY UNAVAILABLE",
+        "E_SAVOZE4RQQ": "MEMORY UNAVAILABLE",
+        "E_XCZRM3HFN2": "MEMORY UNAVAILABLE"
+      },
+      "task": {
+        "events": [
+          "E_42OEAHNACB",
+          "E_OMHL7JAMED",
+          "E_XCZRM3HFN2",
+          "E_SAVOZE4RQQ"
+        ],
+        "goal": "N_HAOJQUZHEH",
+        "node": "N_Z75BPRRUIT",
+        "ports": [
+          "P_XYYSCSBCUJ",
+          "P_HDFNGVPV66"
+        ]
+      },
+      "transformations": [],
+      "world": {
+        "edges": [
+          {
+            "event": "E_OMHL7JAMED",
+            "node": "N_Z75BPRRUIT",
+            "outcome": "N_ETTHAQSAWC",
+            "port": "P_HDFNGVPV66",
+            "receipt": "R_LIFIDLZWFI"
+          },
+          {
+            "event": "E_SAVOZE4RQQ",
+            "node": "N_Z75BPRRUIT",
+            "outcome": "N_YSNWF6AJMB",
+            "port": "P_XYYSCSBCUJ",
+            "receipt": "R_AKQME6GWP5"
+          },
+          {
+            "event": "E_XCZRM3HFN2",
+            "node": "N_ETTHAQSAWC",
+            "outcome": "N_HAOJQUZHEH",
+            "port": "P_TIWDWZE6ZF",
+            "receipt": "R_GM6Z3TUF23"
+          },
+          {
+            "event": "E_42OEAHNACB",
+            "node": "N_YSNWF6AJMB",
+            "outcome": "N_5IWEW5ES3E",
+            "port": "P_5AC3XPM4YM",
+            "receipt": "R_TTDOLUXFPK"
+          }
+        ],
+        "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+        "nodes": [
+          "N_Z75BPRRUIT",
+          "N_ETTHAQSAWC",
+          "N_YSNWF6AJMB",
+          "N_HAOJQUZHEH",
+          "N_5IWEW5ES3E"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    },
+    {
+      "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+      "condition": "UNAVAILABLE",
+      "expected_first_port": "P_XYYSCSBCUJ",
+      "goal_index": 1,
+      "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+      "original_collection_sha256": "571845ef08079c9be7051b949c2b56692dc13397f871b9d89e50186c4c33b212",
+      "original_missing_addresses": [],
+      "route_sources_available": false,
+      "scripted_read_order": [
+        "E_42OEAHNACB",
+        "E_OMHL7JAMED",
+        "E_XCZRM3HFN2",
+        "E_SAVOZE4RQQ"
+      ],
+      "seed": 914101,
+      "store": {
+        "E_42OEAHNACB": "MEMORY UNAVAILABLE",
+        "E_OMHL7JAMED": "MEMORY UNAVAILABLE",
+        "E_SAVOZE4RQQ": "MEMORY UNAVAILABLE",
+        "E_XCZRM3HFN2": "MEMORY UNAVAILABLE"
+      },
+      "task": {
+        "events": [
+          "E_42OEAHNACB",
+          "E_OMHL7JAMED",
+          "E_XCZRM3HFN2",
+          "E_SAVOZE4RQQ"
+        ],
+        "goal": "N_5IWEW5ES3E",
+        "node": "N_Z75BPRRUIT",
+        "ports": [
+          "P_XYYSCSBCUJ",
+          "P_HDFNGVPV66"
+        ]
+      },
+      "transformations": [],
+      "world": {
+        "edges": [
+          {
+            "event": "E_OMHL7JAMED",
+            "node": "N_Z75BPRRUIT",
+            "outcome": "N_ETTHAQSAWC",
+            "port": "P_HDFNGVPV66",
+            "receipt": "R_LIFIDLZWFI"
+          },
+          {
+            "event": "E_SAVOZE4RQQ",
+            "node": "N_Z75BPRRUIT",
+            "outcome": "N_YSNWF6AJMB",
+            "port": "P_XYYSCSBCUJ",
+            "receipt": "R_AKQME6GWP5"
+          },
+          {
+            "event": "E_XCZRM3HFN2",
+            "node": "N_ETTHAQSAWC",
+            "outcome": "N_HAOJQUZHEH",
+            "port": "P_TIWDWZE6ZF",
+            "receipt": "R_GM6Z3TUF23"
+          },
+          {
+            "event": "E_42OEAHNACB",
+            "node": "N_YSNWF6AJMB",
+            "outcome": "N_5IWEW5ES3E",
+            "port": "P_5AC3XPM4YM",
+            "receipt": "R_TTDOLUXFPK"
+          }
+        ],
+        "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+        "nodes": [
+          "N_Z75BPRRUIT",
+          "N_ETTHAQSAWC",
+          "N_YSNWF6AJMB",
+          "N_HAOJQUZHEH",
+          "N_5IWEW5ES3E"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    },
+    {
+      "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+      "condition": "REFERENCE",
+      "expected_first_port": "P_Y3Q7YLM2OU",
+      "goal_index": 0,
+      "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+      "original_collection_sha256": "707b5ee142938152013cbc84d5255f87832c9825c7958f77d36ba0d14af84909",
+      "original_missing_addresses": [],
+      "route_sources_available": true,
+      "scripted_read_order": [
+        "E_VIZ4TGMY22",
+        "E_MLASRZGTMR",
+        "E_P5F3SJEPH7",
+        "E_UC32WLN6KB"
+      ],
+      "seed": 914102,
+      "store": {
+        "E_MLASRZGTMR": "EVENT E_MLASRZGTMR AT N_KNTCF2ATYV DID P_BZ3TP7OXHM GOT N_4DCIMARPHJ EVIDENCE R_6TONT32LVT",
+        "E_P5F3SJEPH7": "EVENT E_P5F3SJEPH7 AT N_6P42JJW43L DID P_J4OTMLPZ5Z GOT N_7L6JQNZT4E EVIDENCE R_NQUB7W3RVI",
+        "E_UC32WLN6KB": "EVENT E_UC32WLN6KB AT N_KNTCF2ATYV DID P_Y3Q7YLM2OU GOT N_6P42JJW43L EVIDENCE R_LMFWAQWA3N",
+        "E_VIZ4TGMY22": "EVENT E_VIZ4TGMY22 AT N_4DCIMARPHJ DID P_X6PV6OIPOX GOT N_BOCVGVBBCJ EVIDENCE R_U752WGVZ33"
+      },
+      "task": {
+        "events": [
+          "E_VIZ4TGMY22",
+          "E_MLASRZGTMR",
+          "E_P5F3SJEPH7",
+          "E_UC32WLN6KB"
+        ],
+        "goal": "N_7L6JQNZT4E",
+        "node": "N_KNTCF2ATYV",
+        "ports": [
+          "P_BZ3TP7OXHM",
+          "P_Y3Q7YLM2OU"
+        ]
+      },
+      "transformations": [],
+      "world": {
+        "edges": [
+          {
+            "event": "E_UC32WLN6KB",
+            "node": "N_KNTCF2ATYV",
+            "outcome": "N_6P42JJW43L",
+            "port": "P_Y3Q7YLM2OU",
+            "receipt": "R_LMFWAQWA3N"
+          },
+          {
+            "event": "E_MLASRZGTMR",
+            "node": "N_KNTCF2ATYV",
+            "outcome": "N_4DCIMARPHJ",
+            "port": "P_BZ3TP7OXHM",
+            "receipt": "R_6TONT32LVT"
+          },
+          {
+            "event": "E_P5F3SJEPH7",
+            "node": "N_6P42JJW43L",
+            "outcome": "N_7L6JQNZT4E",
+            "port": "P_J4OTMLPZ5Z",
+            "receipt": "R_NQUB7W3RVI"
+          },
+          {
+            "event": "E_VIZ4TGMY22",
+            "node": "N_4DCIMARPHJ",
+            "outcome": "N_BOCVGVBBCJ",
+            "port": "P_X6PV6OIPOX",
+            "receipt": "R_U752WGVZ33"
+          }
+        ],
+        "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+        "nodes": [
+          "N_KNTCF2ATYV",
+          "N_6P42JJW43L",
+          "N_4DCIMARPHJ",
+          "N_7L6JQNZT4E",
+          "N_BOCVGVBBCJ"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    },
+    {
+      "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+      "condition": "REFERENCE",
+      "expected_first_port": "P_BZ3TP7OXHM",
+      "goal_index": 1,
+      "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+      "original_collection_sha256": "707b5ee142938152013cbc84d5255f87832c9825c7958f77d36ba0d14af84909",
+      "original_missing_addresses": [],
+      "route_sources_available": true,
+      "scripted_read_order": [
+        "E_VIZ4TGMY22",
+        "E_MLASRZGTMR",
+        "E_P5F3SJEPH7",
+        "E_UC32WLN6KB"
+      ],
+      "seed": 914102,
+      "store": {
+        "E_MLASRZGTMR": "EVENT E_MLASRZGTMR AT N_KNTCF2ATYV DID P_BZ3TP7OXHM GOT N_4DCIMARPHJ EVIDENCE R_6TONT32LVT",
+        "E_P5F3SJEPH7": "EVENT E_P5F3SJEPH7 AT N_6P42JJW43L DID P_J4OTMLPZ5Z GOT N_7L6JQNZT4E EVIDENCE R_NQUB7W3RVI",
+        "E_UC32WLN6KB": "EVENT E_UC32WLN6KB AT N_KNTCF2ATYV DID P_Y3Q7YLM2OU GOT N_6P42JJW43L EVIDENCE R_LMFWAQWA3N",
+        "E_VIZ4TGMY22": "EVENT E_VIZ4TGMY22 AT N_4DCIMARPHJ DID P_X6PV6OIPOX GOT N_BOCVGVBBCJ EVIDENCE R_U752WGVZ33"
+      },
+      "task": {
+        "events": [
+          "E_VIZ4TGMY22",
+          "E_MLASRZGTMR",
+          "E_P5F3SJEPH7",
+          "E_UC32WLN6KB"
+        ],
+        "goal": "N_BOCVGVBBCJ",
+        "node": "N_KNTCF2ATYV",
+        "ports": [
+          "P_BZ3TP7OXHM",
+          "P_Y3Q7YLM2OU"
+        ]
+      },
+      "transformations": [],
+      "world": {
+        "edges": [
+          {
+            "event": "E_UC32WLN6KB",
+            "node": "N_KNTCF2ATYV",
+            "outcome": "N_6P42JJW43L",
+            "port": "P_Y3Q7YLM2OU",
+            "receipt": "R_LMFWAQWA3N"
+          },
+          {
+            "event": "E_MLASRZGTMR",
+            "node": "N_KNTCF2ATYV",
+            "outcome": "N_4DCIMARPHJ",
+            "port": "P_BZ3TP7OXHM",
+            "receipt": "R_6TONT32LVT"
+          },
+          {
+            "event": "E_P5F3SJEPH7",
+            "node": "N_6P42JJW43L",
+            "outcome": "N_7L6JQNZT4E",
+            "port": "P_J4OTMLPZ5Z",
+            "receipt": "R_NQUB7W3RVI"
+          },
+          {
+            "event": "E_VIZ4TGMY22",
+            "node": "N_4DCIMARPHJ",
+            "outcome": "N_BOCVGVBBCJ",
+            "port": "P_X6PV6OIPOX",
+            "receipt": "R_U752WGVZ33"
+          }
+        ],
+        "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+        "nodes": [
+          "N_KNTCF2ATYV",
+          "N_6P42JJW43L",
+          "N_4DCIMARPHJ",
+          "N_7L6JQNZT4E",
+          "N_BOCVGVBBCJ"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    },
+    {
+      "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+      "condition": "PORT_REVERSE",
+      "expected_first_port": "P_Y3Q7YLM2OU",
+      "goal_index": 0,
+      "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+      "original_collection_sha256": "707b5ee142938152013cbc84d5255f87832c9825c7958f77d36ba0d14af84909",
+      "original_missing_addresses": [],
+      "route_sources_available": true,
+      "scripted_read_order": [
+        "E_VIZ4TGMY22",
+        "E_MLASRZGTMR",
+        "E_P5F3SJEPH7",
+        "E_UC32WLN6KB"
+      ],
+      "seed": 914102,
+      "store": {
+        "E_MLASRZGTMR": "EVENT E_MLASRZGTMR AT N_KNTCF2ATYV DID P_BZ3TP7OXHM GOT N_4DCIMARPHJ EVIDENCE R_6TONT32LVT",
+        "E_P5F3SJEPH7": "EVENT E_P5F3SJEPH7 AT N_6P42JJW43L DID P_J4OTMLPZ5Z GOT N_7L6JQNZT4E EVIDENCE R_NQUB7W3RVI",
+        "E_UC32WLN6KB": "EVENT E_UC32WLN6KB AT N_KNTCF2ATYV DID P_Y3Q7YLM2OU GOT N_6P42JJW43L EVIDENCE R_LMFWAQWA3N",
+        "E_VIZ4TGMY22": "EVENT E_VIZ4TGMY22 AT N_4DCIMARPHJ DID P_X6PV6OIPOX GOT N_BOCVGVBBCJ EVIDENCE R_U752WGVZ33"
+      },
+      "task": {
+        "events": [
+          "E_VIZ4TGMY22",
+          "E_MLASRZGTMR",
+          "E_P5F3SJEPH7",
+          "E_UC32WLN6KB"
+        ],
+        "goal": "N_7L6JQNZT4E",
+        "node": "N_KNTCF2ATYV",
+        "ports": [
+          "P_Y3Q7YLM2OU",
+          "P_BZ3TP7OXHM"
+        ]
+      },
+      "transformations": [],
+      "world": {
+        "edges": [
+          {
+            "event": "E_UC32WLN6KB",
+            "node": "N_KNTCF2ATYV",
+            "outcome": "N_6P42JJW43L",
+            "port": "P_Y3Q7YLM2OU",
+            "receipt": "R_LMFWAQWA3N"
+          },
+          {
+            "event": "E_MLASRZGTMR",
+            "node": "N_KNTCF2ATYV",
+            "outcome": "N_4DCIMARPHJ",
+            "port": "P_BZ3TP7OXHM",
+            "receipt": "R_6TONT32LVT"
+          },
+          {
+            "event": "E_P5F3SJEPH7",
+            "node": "N_6P42JJW43L",
+            "outcome": "N_7L6JQNZT4E",
+            "port": "P_J4OTMLPZ5Z",
+            "receipt": "R_NQUB7W3RVI"
+          },
+          {
+            "event": "E_VIZ4TGMY22",
+            "node": "N_4DCIMARPHJ",
+            "outcome": "N_BOCVGVBBCJ",
+            "port": "P_X6PV6OIPOX",
+            "receipt": "R_U752WGVZ33"
+          }
+        ],
+        "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+        "nodes": [
+          "N_KNTCF2ATYV",
+          "N_6P42JJW43L",
+          "N_4DCIMARPHJ",
+          "N_7L6JQNZT4E",
+          "N_BOCVGVBBCJ"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    },
+    {
+      "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+      "condition": "PORT_REVERSE",
+      "expected_first_port": "P_BZ3TP7OXHM",
+      "goal_index": 1,
+      "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+      "original_collection_sha256": "707b5ee142938152013cbc84d5255f87832c9825c7958f77d36ba0d14af84909",
+      "original_missing_addresses": [],
+      "route_sources_available": true,
+      "scripted_read_order": [
+        "E_VIZ4TGMY22",
+        "E_MLASRZGTMR",
+        "E_P5F3SJEPH7",
+        "E_UC32WLN6KB"
+      ],
+      "seed": 914102,
+      "store": {
+        "E_MLASRZGTMR": "EVENT E_MLASRZGTMR AT N_KNTCF2ATYV DID P_BZ3TP7OXHM GOT N_4DCIMARPHJ EVIDENCE R_6TONT32LVT",
+        "E_P5F3SJEPH7": "EVENT E_P5F3SJEPH7 AT N_6P42JJW43L DID P_J4OTMLPZ5Z GOT N_7L6JQNZT4E EVIDENCE R_NQUB7W3RVI",
+        "E_UC32WLN6KB": "EVENT E_UC32WLN6KB AT N_KNTCF2ATYV DID P_Y3Q7YLM2OU GOT N_6P42JJW43L EVIDENCE R_LMFWAQWA3N",
+        "E_VIZ4TGMY22": "EVENT E_VIZ4TGMY22 AT N_4DCIMARPHJ DID P_X6PV6OIPOX GOT N_BOCVGVBBCJ EVIDENCE R_U752WGVZ33"
+      },
+      "task": {
+        "events": [
+          "E_VIZ4TGMY22",
+          "E_MLASRZGTMR",
+          "E_P5F3SJEPH7",
+          "E_UC32WLN6KB"
+        ],
+        "goal": "N_BOCVGVBBCJ",
+        "node": "N_KNTCF2ATYV",
+        "ports": [
+          "P_Y3Q7YLM2OU",
+          "P_BZ3TP7OXHM"
+        ]
+      },
+      "transformations": [],
+      "world": {
+        "edges": [
+          {
+            "event": "E_UC32WLN6KB",
+            "node": "N_KNTCF2ATYV",
+            "outcome": "N_6P42JJW43L",
+            "port": "P_Y3Q7YLM2OU",
+            "receipt": "R_LMFWAQWA3N"
+          },
+          {
+            "event": "E_MLASRZGTMR",
+            "node": "N_KNTCF2ATYV",
+            "outcome": "N_4DCIMARPHJ",
+            "port": "P_BZ3TP7OXHM",
+            "receipt": "R_6TONT32LVT"
+          },
+          {
+            "event": "E_P5F3SJEPH7",
+            "node": "N_6P42JJW43L",
+            "outcome": "N_7L6JQNZT4E",
+            "port": "P_J4OTMLPZ5Z",
+            "receipt": "R_NQUB7W3RVI"
+          },
+          {
+            "event": "E_VIZ4TGMY22",
+            "node": "N_4DCIMARPHJ",
+            "outcome": "N_BOCVGVBBCJ",
+            "port": "P_X6PV6OIPOX",
+            "receipt": "R_U752WGVZ33"
+          }
+        ],
+        "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+        "nodes": [
+          "N_KNTCF2ATYV",
+          "N_6P42JJW43L",
+          "N_4DCIMARPHJ",
+          "N_7L6JQNZT4E",
+          "N_BOCVGVBBCJ"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    },
+    {
+      "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+      "condition": "ROOT_SWAP",
+      "expected_first_port": "P_BZ3TP7OXHM",
+      "goal_index": 0,
+      "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+      "original_collection_sha256": "707b5ee142938152013cbc84d5255f87832c9825c7958f77d36ba0d14af84909",
+      "original_missing_addresses": [],
+      "route_sources_available": true,
+      "scripted_read_order": [
+        "E_VIZ4TGMY22",
+        "E_MLASRZGTMR",
+        "E_P5F3SJEPH7",
+        "E_UC32WLN6KB"
+      ],
+      "seed": 914102,
+      "store": {
+        "E_MLASRZGTMR": "EVENT E_MLASRZGTMR AT N_KNTCF2ATYV DID P_BZ3TP7OXHM GOT N_6P42JJW43L EVIDENCE R_6TONT32LVT",
+        "E_P5F3SJEPH7": "EVENT E_P5F3SJEPH7 AT N_6P42JJW43L DID P_J4OTMLPZ5Z GOT N_7L6JQNZT4E EVIDENCE R_NQUB7W3RVI",
+        "E_UC32WLN6KB": "EVENT E_UC32WLN6KB AT N_KNTCF2ATYV DID P_Y3Q7YLM2OU GOT N_4DCIMARPHJ EVIDENCE R_LMFWAQWA3N",
+        "E_VIZ4TGMY22": "EVENT E_VIZ4TGMY22 AT N_4DCIMARPHJ DID P_X6PV6OIPOX GOT N_BOCVGVBBCJ EVIDENCE R_U752WGVZ33"
+      },
+      "task": {
+        "events": [
+          "E_VIZ4TGMY22",
+          "E_MLASRZGTMR",
+          "E_P5F3SJEPH7",
+          "E_UC32WLN6KB"
+        ],
+        "goal": "N_7L6JQNZT4E",
+        "node": "N_KNTCF2ATYV",
+        "ports": [
+          "P_BZ3TP7OXHM",
+          "P_Y3Q7YLM2OU"
+        ]
+      },
+      "transformations": [
+        {
+          "address": "E_UC32WLN6KB",
+          "after": "EVENT E_UC32WLN6KB AT N_KNTCF2ATYV DID P_Y3Q7YLM2OU GOT N_4DCIMARPHJ EVIDENCE R_LMFWAQWA3N",
+          "before": "EVENT E_UC32WLN6KB AT N_KNTCF2ATYV DID P_Y3Q7YLM2OU GOT N_6P42JJW43L EVIDENCE R_LMFWAQWA3N",
+          "label": "RESEARCHER_COUNTERFACTUAL_NOT_ACTUAL_CHILD_TEXT"
+        },
+        {
+          "address": "E_MLASRZGTMR",
+          "after": "EVENT E_MLASRZGTMR AT N_KNTCF2ATYV DID P_BZ3TP7OXHM GOT N_6P42JJW43L EVIDENCE R_6TONT32LVT",
+          "before": "EVENT E_MLASRZGTMR AT N_KNTCF2ATYV DID P_BZ3TP7OXHM GOT N_4DCIMARPHJ EVIDENCE R_6TONT32LVT",
+          "label": "RESEARCHER_COUNTERFACTUAL_NOT_ACTUAL_CHILD_TEXT"
+        }
+      ],
+      "world": {
+        "edges": [
+          {
+            "event": "E_UC32WLN6KB",
+            "node": "N_KNTCF2ATYV",
+            "outcome": "N_4DCIMARPHJ",
+            "port": "P_Y3Q7YLM2OU",
+            "receipt": "R_LMFWAQWA3N"
+          },
+          {
+            "event": "E_MLASRZGTMR",
+            "node": "N_KNTCF2ATYV",
+            "outcome": "N_6P42JJW43L",
+            "port": "P_BZ3TP7OXHM",
+            "receipt": "R_6TONT32LVT"
+          },
+          {
+            "event": "E_P5F3SJEPH7",
+            "node": "N_6P42JJW43L",
+            "outcome": "N_7L6JQNZT4E",
+            "port": "P_J4OTMLPZ5Z",
+            "receipt": "R_NQUB7W3RVI"
+          },
+          {
+            "event": "E_VIZ4TGMY22",
+            "node": "N_4DCIMARPHJ",
+            "outcome": "N_BOCVGVBBCJ",
+            "port": "P_X6PV6OIPOX",
+            "receipt": "R_U752WGVZ33"
+          }
+        ],
+        "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+        "nodes": [
+          "N_KNTCF2ATYV",
+          "N_6P42JJW43L",
+          "N_4DCIMARPHJ",
+          "N_7L6JQNZT4E",
+          "N_BOCVGVBBCJ"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    },
+    {
+      "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+      "condition": "ROOT_SWAP",
+      "expected_first_port": "P_Y3Q7YLM2OU",
+      "goal_index": 1,
+      "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+      "original_collection_sha256": "707b5ee142938152013cbc84d5255f87832c9825c7958f77d36ba0d14af84909",
+      "original_missing_addresses": [],
+      "route_sources_available": true,
+      "scripted_read_order": [
+        "E_VIZ4TGMY22",
+        "E_MLASRZGTMR",
+        "E_P5F3SJEPH7",
+        "E_UC32WLN6KB"
+      ],
+      "seed": 914102,
+      "store": {
+        "E_MLASRZGTMR": "EVENT E_MLASRZGTMR AT N_KNTCF2ATYV DID P_BZ3TP7OXHM GOT N_6P42JJW43L EVIDENCE R_6TONT32LVT",
+        "E_P5F3SJEPH7": "EVENT E_P5F3SJEPH7 AT N_6P42JJW43L DID P_J4OTMLPZ5Z GOT N_7L6JQNZT4E EVIDENCE R_NQUB7W3RVI",
+        "E_UC32WLN6KB": "EVENT E_UC32WLN6KB AT N_KNTCF2ATYV DID P_Y3Q7YLM2OU GOT N_4DCIMARPHJ EVIDENCE R_LMFWAQWA3N",
+        "E_VIZ4TGMY22": "EVENT E_VIZ4TGMY22 AT N_4DCIMARPHJ DID P_X6PV6OIPOX GOT N_BOCVGVBBCJ EVIDENCE R_U752WGVZ33"
+      },
+      "task": {
+        "events": [
+          "E_VIZ4TGMY22",
+          "E_MLASRZGTMR",
+          "E_P5F3SJEPH7",
+          "E_UC32WLN6KB"
+        ],
+        "goal": "N_BOCVGVBBCJ",
+        "node": "N_KNTCF2ATYV",
+        "ports": [
+          "P_BZ3TP7OXHM",
+          "P_Y3Q7YLM2OU"
+        ]
+      },
+      "transformations": [
+        {
+          "address": "E_UC32WLN6KB",
+          "after": "EVENT E_UC32WLN6KB AT N_KNTCF2ATYV DID P_Y3Q7YLM2OU GOT N_4DCIMARPHJ EVIDENCE R_LMFWAQWA3N",
+          "before": "EVENT E_UC32WLN6KB AT N_KNTCF2ATYV DID P_Y3Q7YLM2OU GOT N_6P42JJW43L EVIDENCE R_LMFWAQWA3N",
+          "label": "RESEARCHER_COUNTERFACTUAL_NOT_ACTUAL_CHILD_TEXT"
+        },
+        {
+          "address": "E_MLASRZGTMR",
+          "after": "EVENT E_MLASRZGTMR AT N_KNTCF2ATYV DID P_BZ3TP7OXHM GOT N_6P42JJW43L EVIDENCE R_6TONT32LVT",
+          "before": "EVENT E_MLASRZGTMR AT N_KNTCF2ATYV DID P_BZ3TP7OXHM GOT N_4DCIMARPHJ EVIDENCE R_6TONT32LVT",
+          "label": "RESEARCHER_COUNTERFACTUAL_NOT_ACTUAL_CHILD_TEXT"
+        }
+      ],
+      "world": {
+        "edges": [
+          {
+            "event": "E_UC32WLN6KB",
+            "node": "N_KNTCF2ATYV",
+            "outcome": "N_4DCIMARPHJ",
+            "port": "P_Y3Q7YLM2OU",
+            "receipt": "R_LMFWAQWA3N"
+          },
+          {
+            "event": "E_MLASRZGTMR",
+            "node": "N_KNTCF2ATYV",
+            "outcome": "N_6P42JJW43L",
+            "port": "P_BZ3TP7OXHM",
+            "receipt": "R_6TONT32LVT"
+          },
+          {
+            "event": "E_P5F3SJEPH7",
+            "node": "N_6P42JJW43L",
+            "outcome": "N_7L6JQNZT4E",
+            "port": "P_J4OTMLPZ5Z",
+            "receipt": "R_NQUB7W3RVI"
+          },
+          {
+            "event": "E_VIZ4TGMY22",
+            "node": "N_4DCIMARPHJ",
+            "outcome": "N_BOCVGVBBCJ",
+            "port": "P_X6PV6OIPOX",
+            "receipt": "R_U752WGVZ33"
+          }
+        ],
+        "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+        "nodes": [
+          "N_KNTCF2ATYV",
+          "N_6P42JJW43L",
+          "N_4DCIMARPHJ",
+          "N_7L6JQNZT4E",
+          "N_BOCVGVBBCJ"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    },
+    {
+      "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+      "condition": "UNAVAILABLE",
+      "expected_first_port": "P_Y3Q7YLM2OU",
+      "goal_index": 0,
+      "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+      "original_collection_sha256": "707b5ee142938152013cbc84d5255f87832c9825c7958f77d36ba0d14af84909",
+      "original_missing_addresses": [],
+      "route_sources_available": false,
+      "scripted_read_order": [
+        "E_VIZ4TGMY22",
+        "E_MLASRZGTMR",
+        "E_P5F3SJEPH7",
+        "E_UC32WLN6KB"
+      ],
+      "seed": 914102,
+      "store": {
+        "E_MLASRZGTMR": "MEMORY UNAVAILABLE",
+        "E_P5F3SJEPH7": "MEMORY UNAVAILABLE",
+        "E_UC32WLN6KB": "MEMORY UNAVAILABLE",
+        "E_VIZ4TGMY22": "MEMORY UNAVAILABLE"
+      },
+      "task": {
+        "events": [
+          "E_VIZ4TGMY22",
+          "E_MLASRZGTMR",
+          "E_P5F3SJEPH7",
+          "E_UC32WLN6KB"
+        ],
+        "goal": "N_7L6JQNZT4E",
+        "node": "N_KNTCF2ATYV",
+        "ports": [
+          "P_BZ3TP7OXHM",
+          "P_Y3Q7YLM2OU"
+        ]
+      },
+      "transformations": [],
+      "world": {
+        "edges": [
+          {
+            "event": "E_UC32WLN6KB",
+            "node": "N_KNTCF2ATYV",
+            "outcome": "N_6P42JJW43L",
+            "port": "P_Y3Q7YLM2OU",
+            "receipt": "R_LMFWAQWA3N"
+          },
+          {
+            "event": "E_MLASRZGTMR",
+            "node": "N_KNTCF2ATYV",
+            "outcome": "N_4DCIMARPHJ",
+            "port": "P_BZ3TP7OXHM",
+            "receipt": "R_6TONT32LVT"
+          },
+          {
+            "event": "E_P5F3SJEPH7",
+            "node": "N_6P42JJW43L",
+            "outcome": "N_7L6JQNZT4E",
+            "port": "P_J4OTMLPZ5Z",
+            "receipt": "R_NQUB7W3RVI"
+          },
+          {
+            "event": "E_VIZ4TGMY22",
+            "node": "N_4DCIMARPHJ",
+            "outcome": "N_BOCVGVBBCJ",
+            "port": "P_X6PV6OIPOX",
+            "receipt": "R_U752WGVZ33"
+          }
+        ],
+        "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+        "nodes": [
+          "N_KNTCF2ATYV",
+          "N_6P42JJW43L",
+          "N_4DCIMARPHJ",
+          "N_7L6JQNZT4E",
+          "N_BOCVGVBBCJ"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    },
+    {
+      "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+      "condition": "UNAVAILABLE",
+      "expected_first_port": "P_BZ3TP7OXHM",
+      "goal_index": 1,
+      "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+      "original_collection_sha256": "707b5ee142938152013cbc84d5255f87832c9825c7958f77d36ba0d14af84909",
+      "original_missing_addresses": [],
+      "route_sources_available": false,
+      "scripted_read_order": [
+        "E_VIZ4TGMY22",
+        "E_MLASRZGTMR",
+        "E_P5F3SJEPH7",
+        "E_UC32WLN6KB"
+      ],
+      "seed": 914102,
+      "store": {
+        "E_MLASRZGTMR": "MEMORY UNAVAILABLE",
+        "E_P5F3SJEPH7": "MEMORY UNAVAILABLE",
+        "E_UC32WLN6KB": "MEMORY UNAVAILABLE",
+        "E_VIZ4TGMY22": "MEMORY UNAVAILABLE"
+      },
+      "task": {
+        "events": [
+          "E_VIZ4TGMY22",
+          "E_MLASRZGTMR",
+          "E_P5F3SJEPH7",
+          "E_UC32WLN6KB"
+        ],
+        "goal": "N_BOCVGVBBCJ",
+        "node": "N_KNTCF2ATYV",
+        "ports": [
+          "P_BZ3TP7OXHM",
+          "P_Y3Q7YLM2OU"
+        ]
+      },
+      "transformations": [],
+      "world": {
+        "edges": [
+          {
+            "event": "E_UC32WLN6KB",
+            "node": "N_KNTCF2ATYV",
+            "outcome": "N_6P42JJW43L",
+            "port": "P_Y3Q7YLM2OU",
+            "receipt": "R_LMFWAQWA3N"
+          },
+          {
+            "event": "E_MLASRZGTMR",
+            "node": "N_KNTCF2ATYV",
+            "outcome": "N_4DCIMARPHJ",
+            "port": "P_BZ3TP7OXHM",
+            "receipt": "R_6TONT32LVT"
+          },
+          {
+            "event": "E_P5F3SJEPH7",
+            "node": "N_6P42JJW43L",
+            "outcome": "N_7L6JQNZT4E",
+            "port": "P_J4OTMLPZ5Z",
+            "receipt": "R_NQUB7W3RVI"
+          },
+          {
+            "event": "E_VIZ4TGMY22",
+            "node": "N_4DCIMARPHJ",
+            "outcome": "N_BOCVGVBBCJ",
+            "port": "P_X6PV6OIPOX",
+            "receipt": "R_U752WGVZ33"
+          }
+        ],
+        "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+        "nodes": [
+          "N_KNTCF2ATYV",
+          "N_6P42JJW43L",
+          "N_4DCIMARPHJ",
+          "N_7L6JQNZT4E",
+          "N_BOCVGVBBCJ"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    },
+    {
+      "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+      "condition": "REFERENCE",
+      "expected_first_port": "P_VD4QGEZVKT",
+      "goal_index": 0,
+      "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+      "original_collection_sha256": "631459b14c8356431977162f02bf849d23ca70a628078c9d1f4f159a5c5dfdfc",
+      "original_missing_addresses": [
+        "E_W5YA3H6TNF"
+      ],
+      "route_sources_available": true,
+      "scripted_read_order": [
+        "E_TOY4J6RVDL",
+        "E_W5YA3H6TNF",
+        "E_LJLZ74OA4U",
+        "E_5PCJ3MU7NU"
+      ],
+      "seed": 914103,
+      "store": {
+        "E_5PCJ3MU7NU": "EVENT E_5PCJ3MU7NU AT N_KMBODMJWIM DID P_3TILLNKUCR GOT N_UATTOS2OXQ EVIDENCE R_AXD7OSDS45",
+        "E_LJLZ74OA4U": "EVENT E_LJLZ74OA4U AT N_KMBODMJWIM DID P_VD4QGEZVKT GOT N_WHI27I4AHY EVIDENCE R_C27EHTHBD2",
+        "E_TOY4J6RVDL": "EVENT E_TOY4J6RVDL AT N_WHI27I4AHY DID P_7QV4OUBPN2 GOT N_QXTYUSWLOZ EVIDENCE R_OSWCC7OOCU",
+        "E_W5YA3H6TNF": "MEMORY UNAVAILABLE"
+      },
+      "task": {
+        "events": [
+          "E_TOY4J6RVDL",
+          "E_W5YA3H6TNF",
+          "E_LJLZ74OA4U",
+          "E_5PCJ3MU7NU"
+        ],
+        "goal": "N_QXTYUSWLOZ",
+        "node": "N_KMBODMJWIM",
+        "ports": [
+          "P_VD4QGEZVKT",
+          "P_3TILLNKUCR"
+        ]
+      },
+      "transformations": [],
+      "world": {
+        "edges": [
+          {
+            "event": "E_LJLZ74OA4U",
+            "node": "N_KMBODMJWIM",
+            "outcome": "N_WHI27I4AHY",
+            "port": "P_VD4QGEZVKT",
+            "receipt": "R_C27EHTHBD2"
+          },
+          {
+            "event": "E_5PCJ3MU7NU",
+            "node": "N_KMBODMJWIM",
+            "outcome": "N_UATTOS2OXQ",
+            "port": "P_3TILLNKUCR",
+            "receipt": "R_AXD7OSDS45"
+          },
+          {
+            "event": "E_TOY4J6RVDL",
+            "node": "N_WHI27I4AHY",
+            "outcome": "N_QXTYUSWLOZ",
+            "port": "P_7QV4OUBPN2",
+            "receipt": "R_OSWCC7OOCU"
+          },
+          {
+            "event": "E_W5YA3H6TNF",
+            "node": "N_UATTOS2OXQ",
+            "outcome": "N_7P5OYA74NA",
+            "port": "P_WHGDNAZ74T",
+            "receipt": "R_GFU5MU33J4"
+          }
+        ],
+        "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+        "nodes": [
+          "N_KMBODMJWIM",
+          "N_WHI27I4AHY",
+          "N_UATTOS2OXQ",
+          "N_QXTYUSWLOZ",
+          "N_7P5OYA74NA"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    },
+    {
+      "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+      "condition": "REFERENCE",
+      "expected_first_port": "P_3TILLNKUCR",
+      "goal_index": 1,
+      "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+      "original_collection_sha256": "631459b14c8356431977162f02bf849d23ca70a628078c9d1f4f159a5c5dfdfc",
+      "original_missing_addresses": [
+        "E_W5YA3H6TNF"
+      ],
+      "route_sources_available": false,
+      "scripted_read_order": [
+        "E_TOY4J6RVDL",
+        "E_W5YA3H6TNF",
+        "E_LJLZ74OA4U",
+        "E_5PCJ3MU7NU"
+      ],
+      "seed": 914103,
+      "store": {
+        "E_5PCJ3MU7NU": "EVENT E_5PCJ3MU7NU AT N_KMBODMJWIM DID P_3TILLNKUCR GOT N_UATTOS2OXQ EVIDENCE R_AXD7OSDS45",
+        "E_LJLZ74OA4U": "EVENT E_LJLZ74OA4U AT N_KMBODMJWIM DID P_VD4QGEZVKT GOT N_WHI27I4AHY EVIDENCE R_C27EHTHBD2",
+        "E_TOY4J6RVDL": "EVENT E_TOY4J6RVDL AT N_WHI27I4AHY DID P_7QV4OUBPN2 GOT N_QXTYUSWLOZ EVIDENCE R_OSWCC7OOCU",
+        "E_W5YA3H6TNF": "MEMORY UNAVAILABLE"
+      },
+      "task": {
+        "events": [
+          "E_TOY4J6RVDL",
+          "E_W5YA3H6TNF",
+          "E_LJLZ74OA4U",
+          "E_5PCJ3MU7NU"
+        ],
+        "goal": "N_7P5OYA74NA",
+        "node": "N_KMBODMJWIM",
+        "ports": [
+          "P_VD4QGEZVKT",
+          "P_3TILLNKUCR"
+        ]
+      },
+      "transformations": [],
+      "world": {
+        "edges": [
+          {
+            "event": "E_LJLZ74OA4U",
+            "node": "N_KMBODMJWIM",
+            "outcome": "N_WHI27I4AHY",
+            "port": "P_VD4QGEZVKT",
+            "receipt": "R_C27EHTHBD2"
+          },
+          {
+            "event": "E_5PCJ3MU7NU",
+            "node": "N_KMBODMJWIM",
+            "outcome": "N_UATTOS2OXQ",
+            "port": "P_3TILLNKUCR",
+            "receipt": "R_AXD7OSDS45"
+          },
+          {
+            "event": "E_TOY4J6RVDL",
+            "node": "N_WHI27I4AHY",
+            "outcome": "N_QXTYUSWLOZ",
+            "port": "P_7QV4OUBPN2",
+            "receipt": "R_OSWCC7OOCU"
+          },
+          {
+            "event": "E_W5YA3H6TNF",
+            "node": "N_UATTOS2OXQ",
+            "outcome": "N_7P5OYA74NA",
+            "port": "P_WHGDNAZ74T",
+            "receipt": "R_GFU5MU33J4"
+          }
+        ],
+        "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+        "nodes": [
+          "N_KMBODMJWIM",
+          "N_WHI27I4AHY",
+          "N_UATTOS2OXQ",
+          "N_QXTYUSWLOZ",
+          "N_7P5OYA74NA"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    },
+    {
+      "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+      "condition": "PORT_REVERSE",
+      "expected_first_port": "P_VD4QGEZVKT",
+      "goal_index": 0,
+      "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+      "original_collection_sha256": "631459b14c8356431977162f02bf849d23ca70a628078c9d1f4f159a5c5dfdfc",
+      "original_missing_addresses": [
+        "E_W5YA3H6TNF"
+      ],
+      "route_sources_available": true,
+      "scripted_read_order": [
+        "E_TOY4J6RVDL",
+        "E_W5YA3H6TNF",
+        "E_LJLZ74OA4U",
+        "E_5PCJ3MU7NU"
+      ],
+      "seed": 914103,
+      "store": {
+        "E_5PCJ3MU7NU": "EVENT E_5PCJ3MU7NU AT N_KMBODMJWIM DID P_3TILLNKUCR GOT N_UATTOS2OXQ EVIDENCE R_AXD7OSDS45",
+        "E_LJLZ74OA4U": "EVENT E_LJLZ74OA4U AT N_KMBODMJWIM DID P_VD4QGEZVKT GOT N_WHI27I4AHY EVIDENCE R_C27EHTHBD2",
+        "E_TOY4J6RVDL": "EVENT E_TOY4J6RVDL AT N_WHI27I4AHY DID P_7QV4OUBPN2 GOT N_QXTYUSWLOZ EVIDENCE R_OSWCC7OOCU",
+        "E_W5YA3H6TNF": "MEMORY UNAVAILABLE"
+      },
+      "task": {
+        "events": [
+          "E_TOY4J6RVDL",
+          "E_W5YA3H6TNF",
+          "E_LJLZ74OA4U",
+          "E_5PCJ3MU7NU"
+        ],
+        "goal": "N_QXTYUSWLOZ",
+        "node": "N_KMBODMJWIM",
+        "ports": [
+          "P_3TILLNKUCR",
+          "P_VD4QGEZVKT"
+        ]
+      },
+      "transformations": [],
+      "world": {
+        "edges": [
+          {
+            "event": "E_LJLZ74OA4U",
+            "node": "N_KMBODMJWIM",
+            "outcome": "N_WHI27I4AHY",
+            "port": "P_VD4QGEZVKT",
+            "receipt": "R_C27EHTHBD2"
+          },
+          {
+            "event": "E_5PCJ3MU7NU",
+            "node": "N_KMBODMJWIM",
+            "outcome": "N_UATTOS2OXQ",
+            "port": "P_3TILLNKUCR",
+            "receipt": "R_AXD7OSDS45"
+          },
+          {
+            "event": "E_TOY4J6RVDL",
+            "node": "N_WHI27I4AHY",
+            "outcome": "N_QXTYUSWLOZ",
+            "port": "P_7QV4OUBPN2",
+            "receipt": "R_OSWCC7OOCU"
+          },
+          {
+            "event": "E_W5YA3H6TNF",
+            "node": "N_UATTOS2OXQ",
+            "outcome": "N_7P5OYA74NA",
+            "port": "P_WHGDNAZ74T",
+            "receipt": "R_GFU5MU33J4"
+          }
+        ],
+        "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+        "nodes": [
+          "N_KMBODMJWIM",
+          "N_WHI27I4AHY",
+          "N_UATTOS2OXQ",
+          "N_QXTYUSWLOZ",
+          "N_7P5OYA74NA"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    },
+    {
+      "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+      "condition": "PORT_REVERSE",
+      "expected_first_port": "P_3TILLNKUCR",
+      "goal_index": 1,
+      "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+      "original_collection_sha256": "631459b14c8356431977162f02bf849d23ca70a628078c9d1f4f159a5c5dfdfc",
+      "original_missing_addresses": [
+        "E_W5YA3H6TNF"
+      ],
+      "route_sources_available": false,
+      "scripted_read_order": [
+        "E_TOY4J6RVDL",
+        "E_W5YA3H6TNF",
+        "E_LJLZ74OA4U",
+        "E_5PCJ3MU7NU"
+      ],
+      "seed": 914103,
+      "store": {
+        "E_5PCJ3MU7NU": "EVENT E_5PCJ3MU7NU AT N_KMBODMJWIM DID P_3TILLNKUCR GOT N_UATTOS2OXQ EVIDENCE R_AXD7OSDS45",
+        "E_LJLZ74OA4U": "EVENT E_LJLZ74OA4U AT N_KMBODMJWIM DID P_VD4QGEZVKT GOT N_WHI27I4AHY EVIDENCE R_C27EHTHBD2",
+        "E_TOY4J6RVDL": "EVENT E_TOY4J6RVDL AT N_WHI27I4AHY DID P_7QV4OUBPN2 GOT N_QXTYUSWLOZ EVIDENCE R_OSWCC7OOCU",
+        "E_W5YA3H6TNF": "MEMORY UNAVAILABLE"
+      },
+      "task": {
+        "events": [
+          "E_TOY4J6RVDL",
+          "E_W5YA3H6TNF",
+          "E_LJLZ74OA4U",
+          "E_5PCJ3MU7NU"
+        ],
+        "goal": "N_7P5OYA74NA",
+        "node": "N_KMBODMJWIM",
+        "ports": [
+          "P_3TILLNKUCR",
+          "P_VD4QGEZVKT"
+        ]
+      },
+      "transformations": [],
+      "world": {
+        "edges": [
+          {
+            "event": "E_LJLZ74OA4U",
+            "node": "N_KMBODMJWIM",
+            "outcome": "N_WHI27I4AHY",
+            "port": "P_VD4QGEZVKT",
+            "receipt": "R_C27EHTHBD2"
+          },
+          {
+            "event": "E_5PCJ3MU7NU",
+            "node": "N_KMBODMJWIM",
+            "outcome": "N_UATTOS2OXQ",
+            "port": "P_3TILLNKUCR",
+            "receipt": "R_AXD7OSDS45"
+          },
+          {
+            "event": "E_TOY4J6RVDL",
+            "node": "N_WHI27I4AHY",
+            "outcome": "N_QXTYUSWLOZ",
+            "port": "P_7QV4OUBPN2",
+            "receipt": "R_OSWCC7OOCU"
+          },
+          {
+            "event": "E_W5YA3H6TNF",
+            "node": "N_UATTOS2OXQ",
+            "outcome": "N_7P5OYA74NA",
+            "port": "P_WHGDNAZ74T",
+            "receipt": "R_GFU5MU33J4"
+          }
+        ],
+        "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+        "nodes": [
+          "N_KMBODMJWIM",
+          "N_WHI27I4AHY",
+          "N_UATTOS2OXQ",
+          "N_QXTYUSWLOZ",
+          "N_7P5OYA74NA"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    },
+    {
+      "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+      "condition": "ROOT_SWAP",
+      "expected_first_port": "P_3TILLNKUCR",
+      "goal_index": 0,
+      "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+      "original_collection_sha256": "631459b14c8356431977162f02bf849d23ca70a628078c9d1f4f159a5c5dfdfc",
+      "original_missing_addresses": [
+        "E_W5YA3H6TNF"
+      ],
+      "route_sources_available": true,
+      "scripted_read_order": [
+        "E_TOY4J6RVDL",
+        "E_W5YA3H6TNF",
+        "E_LJLZ74OA4U",
+        "E_5PCJ3MU7NU"
+      ],
+      "seed": 914103,
+      "store": {
+        "E_5PCJ3MU7NU": "EVENT E_5PCJ3MU7NU AT N_KMBODMJWIM DID P_3TILLNKUCR GOT N_WHI27I4AHY EVIDENCE R_AXD7OSDS45",
+        "E_LJLZ74OA4U": "EVENT E_LJLZ74OA4U AT N_KMBODMJWIM DID P_VD4QGEZVKT GOT N_UATTOS2OXQ EVIDENCE R_C27EHTHBD2",
+        "E_TOY4J6RVDL": "EVENT E_TOY4J6RVDL AT N_WHI27I4AHY DID P_7QV4OUBPN2 GOT N_QXTYUSWLOZ EVIDENCE R_OSWCC7OOCU",
+        "E_W5YA3H6TNF": "MEMORY UNAVAILABLE"
+      },
+      "task": {
+        "events": [
+          "E_TOY4J6RVDL",
+          "E_W5YA3H6TNF",
+          "E_LJLZ74OA4U",
+          "E_5PCJ3MU7NU"
+        ],
+        "goal": "N_QXTYUSWLOZ",
+        "node": "N_KMBODMJWIM",
+        "ports": [
+          "P_VD4QGEZVKT",
+          "P_3TILLNKUCR"
+        ]
+      },
+      "transformations": [
+        {
+          "address": "E_LJLZ74OA4U",
+          "after": "EVENT E_LJLZ74OA4U AT N_KMBODMJWIM DID P_VD4QGEZVKT GOT N_UATTOS2OXQ EVIDENCE R_C27EHTHBD2",
+          "before": "EVENT E_LJLZ74OA4U AT N_KMBODMJWIM DID P_VD4QGEZVKT GOT N_WHI27I4AHY EVIDENCE R_C27EHTHBD2",
+          "label": "RESEARCHER_COUNTERFACTUAL_NOT_ACTUAL_CHILD_TEXT"
+        },
+        {
+          "address": "E_5PCJ3MU7NU",
+          "after": "EVENT E_5PCJ3MU7NU AT N_KMBODMJWIM DID P_3TILLNKUCR GOT N_WHI27I4AHY EVIDENCE R_AXD7OSDS45",
+          "before": "EVENT E_5PCJ3MU7NU AT N_KMBODMJWIM DID P_3TILLNKUCR GOT N_UATTOS2OXQ EVIDENCE R_AXD7OSDS45",
+          "label": "RESEARCHER_COUNTERFACTUAL_NOT_ACTUAL_CHILD_TEXT"
+        }
+      ],
+      "world": {
+        "edges": [
+          {
+            "event": "E_LJLZ74OA4U",
+            "node": "N_KMBODMJWIM",
+            "outcome": "N_UATTOS2OXQ",
+            "port": "P_VD4QGEZVKT",
+            "receipt": "R_C27EHTHBD2"
+          },
+          {
+            "event": "E_5PCJ3MU7NU",
+            "node": "N_KMBODMJWIM",
+            "outcome": "N_WHI27I4AHY",
+            "port": "P_3TILLNKUCR",
+            "receipt": "R_AXD7OSDS45"
+          },
+          {
+            "event": "E_TOY4J6RVDL",
+            "node": "N_WHI27I4AHY",
+            "outcome": "N_QXTYUSWLOZ",
+            "port": "P_7QV4OUBPN2",
+            "receipt": "R_OSWCC7OOCU"
+          },
+          {
+            "event": "E_W5YA3H6TNF",
+            "node": "N_UATTOS2OXQ",
+            "outcome": "N_7P5OYA74NA",
+            "port": "P_WHGDNAZ74T",
+            "receipt": "R_GFU5MU33J4"
+          }
+        ],
+        "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+        "nodes": [
+          "N_KMBODMJWIM",
+          "N_WHI27I4AHY",
+          "N_UATTOS2OXQ",
+          "N_QXTYUSWLOZ",
+          "N_7P5OYA74NA"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    },
+    {
+      "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+      "condition": "ROOT_SWAP",
+      "expected_first_port": "P_VD4QGEZVKT",
+      "goal_index": 1,
+      "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+      "original_collection_sha256": "631459b14c8356431977162f02bf849d23ca70a628078c9d1f4f159a5c5dfdfc",
+      "original_missing_addresses": [
+        "E_W5YA3H6TNF"
+      ],
+      "route_sources_available": false,
+      "scripted_read_order": [
+        "E_TOY4J6RVDL",
+        "E_W5YA3H6TNF",
+        "E_LJLZ74OA4U",
+        "E_5PCJ3MU7NU"
+      ],
+      "seed": 914103,
+      "store": {
+        "E_5PCJ3MU7NU": "EVENT E_5PCJ3MU7NU AT N_KMBODMJWIM DID P_3TILLNKUCR GOT N_WHI27I4AHY EVIDENCE R_AXD7OSDS45",
+        "E_LJLZ74OA4U": "EVENT E_LJLZ74OA4U AT N_KMBODMJWIM DID P_VD4QGEZVKT GOT N_UATTOS2OXQ EVIDENCE R_C27EHTHBD2",
+        "E_TOY4J6RVDL": "EVENT E_TOY4J6RVDL AT N_WHI27I4AHY DID P_7QV4OUBPN2 GOT N_QXTYUSWLOZ EVIDENCE R_OSWCC7OOCU",
+        "E_W5YA3H6TNF": "MEMORY UNAVAILABLE"
+      },
+      "task": {
+        "events": [
+          "E_TOY4J6RVDL",
+          "E_W5YA3H6TNF",
+          "E_LJLZ74OA4U",
+          "E_5PCJ3MU7NU"
+        ],
+        "goal": "N_7P5OYA74NA",
+        "node": "N_KMBODMJWIM",
+        "ports": [
+          "P_VD4QGEZVKT",
+          "P_3TILLNKUCR"
+        ]
+      },
+      "transformations": [
+        {
+          "address": "E_LJLZ74OA4U",
+          "after": "EVENT E_LJLZ74OA4U AT N_KMBODMJWIM DID P_VD4QGEZVKT GOT N_UATTOS2OXQ EVIDENCE R_C27EHTHBD2",
+          "before": "EVENT E_LJLZ74OA4U AT N_KMBODMJWIM DID P_VD4QGEZVKT GOT N_WHI27I4AHY EVIDENCE R_C27EHTHBD2",
+          "label": "RESEARCHER_COUNTERFACTUAL_NOT_ACTUAL_CHILD_TEXT"
+        },
+        {
+          "address": "E_5PCJ3MU7NU",
+          "after": "EVENT E_5PCJ3MU7NU AT N_KMBODMJWIM DID P_3TILLNKUCR GOT N_WHI27I4AHY EVIDENCE R_AXD7OSDS45",
+          "before": "EVENT E_5PCJ3MU7NU AT N_KMBODMJWIM DID P_3TILLNKUCR GOT N_UATTOS2OXQ EVIDENCE R_AXD7OSDS45",
+          "label": "RESEARCHER_COUNTERFACTUAL_NOT_ACTUAL_CHILD_TEXT"
+        }
+      ],
+      "world": {
+        "edges": [
+          {
+            "event": "E_LJLZ74OA4U",
+            "node": "N_KMBODMJWIM",
+            "outcome": "N_UATTOS2OXQ",
+            "port": "P_VD4QGEZVKT",
+            "receipt": "R_C27EHTHBD2"
+          },
+          {
+            "event": "E_5PCJ3MU7NU",
+            "node": "N_KMBODMJWIM",
+            "outcome": "N_WHI27I4AHY",
+            "port": "P_3TILLNKUCR",
+            "receipt": "R_AXD7OSDS45"
+          },
+          {
+            "event": "E_TOY4J6RVDL",
+            "node": "N_WHI27I4AHY",
+            "outcome": "N_QXTYUSWLOZ",
+            "port": "P_7QV4OUBPN2",
+            "receipt": "R_OSWCC7OOCU"
+          },
+          {
+            "event": "E_W5YA3H6TNF",
+            "node": "N_UATTOS2OXQ",
+            "outcome": "N_7P5OYA74NA",
+            "port": "P_WHGDNAZ74T",
+            "receipt": "R_GFU5MU33J4"
+          }
+        ],
+        "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+        "nodes": [
+          "N_KMBODMJWIM",
+          "N_WHI27I4AHY",
+          "N_UATTOS2OXQ",
+          "N_QXTYUSWLOZ",
+          "N_7P5OYA74NA"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    },
+    {
+      "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+      "condition": "UNAVAILABLE",
+      "expected_first_port": "P_VD4QGEZVKT",
+      "goal_index": 0,
+      "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+      "original_collection_sha256": "631459b14c8356431977162f02bf849d23ca70a628078c9d1f4f159a5c5dfdfc",
+      "original_missing_addresses": [
+        "E_W5YA3H6TNF"
+      ],
+      "route_sources_available": false,
+      "scripted_read_order": [
+        "E_TOY4J6RVDL",
+        "E_W5YA3H6TNF",
+        "E_LJLZ74OA4U",
+        "E_5PCJ3MU7NU"
+      ],
+      "seed": 914103,
+      "store": {
+        "E_5PCJ3MU7NU": "MEMORY UNAVAILABLE",
+        "E_LJLZ74OA4U": "MEMORY UNAVAILABLE",
+        "E_TOY4J6RVDL": "MEMORY UNAVAILABLE",
+        "E_W5YA3H6TNF": "MEMORY UNAVAILABLE"
+      },
+      "task": {
+        "events": [
+          "E_TOY4J6RVDL",
+          "E_W5YA3H6TNF",
+          "E_LJLZ74OA4U",
+          "E_5PCJ3MU7NU"
+        ],
+        "goal": "N_QXTYUSWLOZ",
+        "node": "N_KMBODMJWIM",
+        "ports": [
+          "P_VD4QGEZVKT",
+          "P_3TILLNKUCR"
+        ]
+      },
+      "transformations": [],
+      "world": {
+        "edges": [
+          {
+            "event": "E_LJLZ74OA4U",
+            "node": "N_KMBODMJWIM",
+            "outcome": "N_WHI27I4AHY",
+            "port": "P_VD4QGEZVKT",
+            "receipt": "R_C27EHTHBD2"
+          },
+          {
+            "event": "E_5PCJ3MU7NU",
+            "node": "N_KMBODMJWIM",
+            "outcome": "N_UATTOS2OXQ",
+            "port": "P_3TILLNKUCR",
+            "receipt": "R_AXD7OSDS45"
+          },
+          {
+            "event": "E_TOY4J6RVDL",
+            "node": "N_WHI27I4AHY",
+            "outcome": "N_QXTYUSWLOZ",
+            "port": "P_7QV4OUBPN2",
+            "receipt": "R_OSWCC7OOCU"
+          },
+          {
+            "event": "E_W5YA3H6TNF",
+            "node": "N_UATTOS2OXQ",
+            "outcome": "N_7P5OYA74NA",
+            "port": "P_WHGDNAZ74T",
+            "receipt": "R_GFU5MU33J4"
+          }
+        ],
+        "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+        "nodes": [
+          "N_KMBODMJWIM",
+          "N_WHI27I4AHY",
+          "N_UATTOS2OXQ",
+          "N_QXTYUSWLOZ",
+          "N_7P5OYA74NA"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    },
+    {
+      "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+      "condition": "UNAVAILABLE",
+      "expected_first_port": "P_3TILLNKUCR",
+      "goal_index": 1,
+      "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+      "original_collection_sha256": "631459b14c8356431977162f02bf849d23ca70a628078c9d1f4f159a5c5dfdfc",
+      "original_missing_addresses": [
+        "E_W5YA3H6TNF"
+      ],
+      "route_sources_available": false,
+      "scripted_read_order": [
+        "E_TOY4J6RVDL",
+        "E_W5YA3H6TNF",
+        "E_LJLZ74OA4U",
+        "E_5PCJ3MU7NU"
+      ],
+      "seed": 914103,
+      "store": {
+        "E_5PCJ3MU7NU": "MEMORY UNAVAILABLE",
+        "E_LJLZ74OA4U": "MEMORY UNAVAILABLE",
+        "E_TOY4J6RVDL": "MEMORY UNAVAILABLE",
+        "E_W5YA3H6TNF": "MEMORY UNAVAILABLE"
+      },
+      "task": {
+        "events": [
+          "E_TOY4J6RVDL",
+          "E_W5YA3H6TNF",
+          "E_LJLZ74OA4U",
+          "E_5PCJ3MU7NU"
+        ],
+        "goal": "N_7P5OYA74NA",
+        "node": "N_KMBODMJWIM",
+        "ports": [
+          "P_VD4QGEZVKT",
+          "P_3TILLNKUCR"
+        ]
+      },
+      "transformations": [],
+      "world": {
+        "edges": [
+          {
+            "event": "E_LJLZ74OA4U",
+            "node": "N_KMBODMJWIM",
+            "outcome": "N_WHI27I4AHY",
+            "port": "P_VD4QGEZVKT",
+            "receipt": "R_C27EHTHBD2"
+          },
+          {
+            "event": "E_5PCJ3MU7NU",
+            "node": "N_KMBODMJWIM",
+            "outcome": "N_UATTOS2OXQ",
+            "port": "P_3TILLNKUCR",
+            "receipt": "R_AXD7OSDS45"
+          },
+          {
+            "event": "E_TOY4J6RVDL",
+            "node": "N_WHI27I4AHY",
+            "outcome": "N_QXTYUSWLOZ",
+            "port": "P_7QV4OUBPN2",
+            "receipt": "R_OSWCC7OOCU"
+          },
+          {
+            "event": "E_W5YA3H6TNF",
+            "node": "N_UATTOS2OXQ",
+            "outcome": "N_7P5OYA74NA",
+            "port": "P_WHGDNAZ74T",
+            "receipt": "R_GFU5MU33J4"
+          }
+        ],
+        "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+        "nodes": [
+          "N_KMBODMJWIM",
+          "N_WHI27I4AHY",
+          "N_UATTOS2OXQ",
+          "N_QXTYUSWLOZ",
+          "N_7P5OYA74NA"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    }
+  ],
+  "cases_sha256": "f9679f4e35afa1f8e3b1d3f8bccfb13bb5b4788f222cd3a63e5937061b6333aa",
+  "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+  "expected_base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+  "fits": 0,
+  "historical_missing_sources": [
+    {
+      "address": "E_TVGFKY6VPR",
+      "collection_sha256": "6a2f2744eeb5452383fdcbcea9dd638d2a089b3e4d6924a8c122a5bf92aacda7",
+      "error": {
+        "message": "not exact EVENT",
+        "type": "ValueError"
+      },
+      "record_index": 0,
+      "shard": 0,
+      "world_index": 1
+    },
+    {
+      "address": "E_W5YA3H6TNF",
+      "collection_sha256": "631459b14c8356431977162f02bf849d23ca70a628078c9d1f4f159a5c5dfdfc",
+      "error": {
+        "message": "not exact EVENT",
+        "type": "ValueError"
+      },
+      "record_index": 3,
+      "shard": 1,
+      "world_index": 8
+    },
+    {
+      "address": "E_2P4JMFEOJV",
+      "collection_sha256": "6269aeb80c782278f9430bb35b92197fd97f0c051dec91fdc5966e71a511751d",
+      "error": {
+        "message": "EVENT_not_grounded_in_actual_receipt",
+        "type": "ValueError"
+      },
+      "record_index": 0,
+      "shard": 4,
+      "world_index": 7
+    },
+    {
+      "address": "E_IC5TU6ZLTQ",
+      "collection_sha256": "b3af4051e8a6982477c15eb97998d554d6a9d73f926a57686ffffc63b081f32c",
+      "error": {
+        "message": "not exact EVENT",
+        "type": "ValueError"
+      },
+      "record_index": 1,
+      "shard": 6,
+      "world_index": 5
+    }
+  ],
+  "lease_conservative_utc": "2026-09-19T00:00:00+00:00",
+  "max_native_calls_per_arm": 48,
+  "max_seconds_per_arm": 2400,
+  "max_total_native_calls": 144,
+  "model_dir": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+  "models": {
+    "FULL_TARGET": {
+      "adapter_dir": "/tmp/astra_goal_quality_train_20260914_attempt2/FULL_TARGET/train/adapter",
+      "files": {
+        "README.md": "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33",
+        "adapter_config.json": "b2cee0d47d60c55fb7b6b677b244535a77c8fd0c0320e2c2afcea473cdb93743",
+        "adapter_model.safetensors": "a8b69dc8860f8d0ffef92ba42fa55133accd2cf74d134b93f635b8ef30a33c94"
+      },
+      "receipt_sha256": "6e01a238a43aa521c93e650a271f459bc4a0f0fc2a0d2b44e7ea77b452f81283",
+      "state": "e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf"
+    },
+    "NEW_TRAJECTORY_LOSS_OFF": {
+      "adapter_dir": "/tmp/astra_goal_quality_train_20260914_attempt2/NEW_TRAJECTORY_LOSS_OFF/train/adapter",
+      "files": {
+        "README.md": "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33",
+        "adapter_config.json": "79791883ee971feec2ab14a04fda43b4ae321e206c259c0180d690d6d8e73790",
+        "adapter_model.safetensors": "6fdf28286d2a44df5212b14c21a7793a08c357866cefc6bcbefc8ece0cca7d2c"
+      },
+      "receipt_sha256": "b7a05eb433d013405df2f4d3a3437147f59ab61876bcf7d5c69585d8b509f72b",
+      "state": "4f0dccf5b7cf37b872eafc3a50990e0cdfda027fb0140f0aad999f27606e4ee3"
+    },
+    "ORIGINAL37EC": {
+      "adapter_dir": "/tmp/astra_portable_37ec_20260914_attempt1/adapter",
+      "files": {
+        "README.md": "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33",
+        "adapter_config.json": "8570d55121e5624b693201d2c013abba927917e51fc6abbccb94d22016da7683",
+        "adapter_model.safetensors": "3f7029b84d41f0715ee8d11c8fc12540717bc24029abd7d03e999f79ee3ec5f1"
+      },
+      "receipt_sha256": "5e675c309b202625a6ddf1d36c1a58f51ef656985821cec1cd6123424d927469",
+      "state": "37ec37884e4b0b679edd1dba1be1dec3474589e992649f3a33e7e3b1ec78b8c0"
+    }
+  },
+  "new_source_commit": "ed3afc7bd0b0a93297ca9b6a4129ba4a0a3d4c45",
+  "old_prepare_sha256": "6b488f182506d63d9e3db65a8c9ac764d968fefbb22c5685210fabed17725568",
+  "old_source_commit": "7f9d4251ae1ff4c5ff9138adf267d081fffa6331",
+  "own_hashes": {
+    "gpu/orch_route_adversary.py": "3e3b5f3415142dac4b38dd69566a318db84fff9d33490d9d439aad52d3f6a57b",
+    "gpu/orch_route_adversary_guard.sh": "375f5d44bb7c1ca7b03b6afadd39bb0da6f5494af8494416525d31fd3dec5bfa",
+    "organism_v6/orch_route_adversary.py": "717685ace1eb6aa890693dc1d54731a6519ab82590dd005cd0506ac154c88d89",
+    "research_notes/analysis/orch_route_adversary_20260914_protocol.md": "d5fa2a1923d18c726a85f7be3275c6818511ef1a716d391be0d0bd5400408428",
+    "tests/test_orch_route_adversary.py": "43df55a07f2b921cd8e9ea507d0bdc284266d9e98c78e9e37d535d782a4016ab"
+  },
+  "parent_present": false,
+  "portable_contract": {
+    "engine": "gpu.astra_experienced_event_microloop.Engine",
+    "engine_sha256": "8e57909a6c4f2d988a434423a33e7a663c23696ffdb2ce402c2bb03b2fccbb70",
+    "exporter_sha256": "d2e4572f1f33b8ce6a117b131075a3398c8fcae149d500541227e0b3e171de3b",
+    "helpers": {
+      "driver": "0e21e0fc4b205b73651e089e47fd22b2040e6951335b226f9655056b29ca8232",
+      "goal": "9b2223654dcc4f92fdee16114c381d1814f544d3d3befae47d5c9e6d7ae9b52c",
+      "guard": "b0ccefbf96e4509bbbe35560e9eba5d4871b798300faa290ad791f192ee3ee6f",
+      "prior": {
+        "driver": "823ff27836603d41e2e3765bd3c0ba0db3bfb974431d9029e7e0f6e9e121e9bc",
+        "goal": "82f0662deca185b69f696d0c36b6a9bb3976702a0709d122399e6f0ec75a7233",
+        "guard": "5382d40ea594ceda241ffcc12ac91f99cf7a8afaf823db7891daff33e49d098f",
+        "memory": {
+          "audit": "81e447afb444d4f929f0d8e0ae21c0fc21ad0f2ffda48f931b7d272606ecc745",
+          "cues": "02c9e41b4a0382aa4c831ccd127532a885052fdc2937fbbf63a98797ad432846",
+          "driver": "7586678b28309edaa8ece1e16f4c985c394e367b69bedf46e6edc61e50aa64cc",
+          "engine": "8e57909a6c4f2d988a434423a33e7a663c23696ffdb2ce402c2bb03b2fccbb70",
+          "guard": "851b1de47cf1220be5bc8ba21bd40a2d53f1e86e8439efe3065f6b3387b255a1",
+          "hop": "cd45a15e6589955dc13d7705668335dba3536bb3c767595889fa65eb3fe55ac2",
+          "lesson": "8b98c9f2169e5e02f9d6ce0cf69f93f523cab2c80ba91ec427743df8e6ee1098",
+          "memory": "6b320158ff38905d103a19a1586cbb8bb74e1472fca03a9126b8792167ec42a0",
+          "native": "7fc071bf8d614eb2374d812f23e4488a0a719f5f7eafa1ee39f350d81fc4165d",
+          "trajectory": "cb0ca496ff46b3f086541c98299753218d275c55baba6e15d5e6f5124e211450",
+          "transfer": "05fa8812e3e08ae9e343c25a42882ab2b4f552afd5cfe4ce366387c3df10d3a8"
+        }
+      }
+    },
+    "native_sha256": "7fc071bf8d614eb2374d812f23e4488a0a719f5f7eafa1ee39f350d81fc4165d",
+    "runtime": {
+      "peft": "0.20.0",
+      "tokenizers": "0.22.2",
+      "torch": "2.13.0+cu130",
+      "transformers": "5.5.3"
+    },
+    "state_hasher_sha256": "9a392dc17eab4db77416b81642def0842c5b353c5ff9aca5fcdf94a04474b078"
+  },
+  "schema": "ORCH_ROUTE_ADVERSARY_FROZEN_V1",
+  "selected_worlds": [
+    [
+      0,
+      8
+    ],
+    [
+      0,
+      9
+    ],
+    [
+      1,
+      8
+    ]
+  ],
+  "source_archive_sha256": "6f5106c144a898b6a001c7eca50dfd7b59be861225d3525623aaaa18bf2d5475",
+  "source_text_policy": "EXACT_ORIGINAL_EXCEPT_DECLARED_SYNTHETIC_COUNTERFACTUAL_INFERENCE_ONLY",
+  "tokenization": {
+    "context_limit": 2048,
+    "max_new_tokens": 160,
+    "max_tokens": 644,
+    "model_calls": 0,
+    "prompts": 48
+  },
+  "updates": 0
+}
