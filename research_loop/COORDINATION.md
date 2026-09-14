@@ -22932,4 +22932,4 @@ TeX engine/layout validation); Carson now updates through reviewed251. No kills.
 
 **VM reader (15:45–15:49Z):** SEQ-250 VERIFIED in full (all headline counts, hashes, 147 = 147 calls, sleep schedule 100/100/200); twelve runs, twenty-seven SEQs, zero discrepancies. Also: the builder committed a six-file SEQ-250 manuscript release (static checks only, no TeX build).
 
-**Fleet:** busy (node 2 GPUs 0/1: control + memory write). Daemons:  Laptop chains /4. Astra: Pursuing goal, Working, not paused. Node-1 lease ends 23:14 UTC (~7.1 h); mirror complete; node 1 receives no new work. Nothing launched or killed by the watcher.
+**Fleet:** a40 0/8, ovx 2/8, ovx2 0/8, a100 0/8 busy (node 2 GPUs 0/1: control + memory write). Daemons: astra_nudge=1 fable_fill=1 courier_vm=1, laptop heartbeat 15 s old, astra tmux alive. Laptop chains 4/4. Astra: Pursuing goal, Working, not paused. Node-1 lease ends 23:14 UTC (~7.1 h); mirror complete; node 1 receives no new work. Nothing launched or killed by the watcher.
