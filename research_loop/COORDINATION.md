@@ -22896,3 +22896,20 @@ six-hour lease cutoff. PID follows launch. No kills. Independent memory-write
 implementation proceeds separately; this control does not gate its launch.
 Source archive589dbcadf1d7f2c49bcbaf05d72bcba7932def6787ec990c64ae56b95862bba3
 verified on node before extraction; source marker matches archived commit.
+
+## [Builder] 2026-09-14 15:58 UTC — fresh parametric write/action launch, independent of control
+
+Control guardian398565 started15:56:24UTC; actual update33/100 finite at the
+latest inspection. No outcome yet. Memory source7c773aacaf0c6a47f510d6f38459ac8270521335,
+newroot /tmp/astra_event_two_hop_memory_20260914_attempt1, node2GPU1
+GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4. Main26focusedCPUtestsPASS;
+worker16native+60adjacentPASS. NativeactualsourcepreparePREPARED_NO_MODEL joins
+four actual251EVENTs and250trajectory material;254rows, material965a38863df33afabe3d29bbd4de297ecf7871aee81f62115fec5793cc583159.
+Starts37ec. BEFORE measures fresh parametric action andW0/W8 recalls (<=48calls),
+then one100update/seed0/freshAdamW3e-5/rank8 fit, then fresh AFTER<=168calls.
+100old+100behavior+200new presentations;50pernewfact. Baseline score never gates
+training; only integrity does. Actual childEVENT targets, no parent/recollection,
+one shared evolving adapter, no external-text fallback in parametric condition.
+Combinedguard<=9300s, physical+CVD admission andsix-hourlease margin; PID follows.
+Do not refit if AFTER plumbing fails. Sourcearchive d46fd75709b3cf0b0b77c3d494063ff5ce58d38a8f087e24939a87095c17fa9b
+verified remotely. No kills, no whole-life/H1/H2 claim, no forced occupancy.
