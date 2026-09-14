@@ -165,14 +165,15 @@ class Engine:
         self.check("base_hash")
         require(_state_hash(self.base_references) == self.expected_base, "frozen_base_changed")
 
-    def generate(self, messages):
+    def generate(self, messages, *, max_new_tokens=MAX_NEW_TOKENS):
+        require(type(max_new_tokens) is int and 0 < max_new_tokens <= 768, 'bounded_generation_tokens_required')
         self.check("generation")
         tokens = self.tokenizer.apply_chat_template(messages, tokenize=True,
             add_generation_prompt=True, return_dict=False)
         require(0 < len(tokens) <= MAX_CONTEXT, "context_bound_exceeded_no_truncation")
         inputs = self.torch.tensor([tokens], dtype=self.torch.long, device=self.device)
         config = self.transformers.GenerationConfig(do_sample=False, num_beams=1,
-            use_cache=True, max_new_tokens=MAX_NEW_TOKENS, repetition_penalty=1.0,
+            use_cache=True, max_new_tokens=max_new_tokens, repetition_penalty=1.0,
             eos_token_id=self.tokenizer.eos_token_id, pad_token_id=self.tokenizer.pad_token_id)
         with self.torch.inference_mode():
             generated = self.model.generate(input_ids=inputs, attention_mask=self.torch.ones_like(inputs),
@@ -183,7 +184,7 @@ class Engine:
         text = self.tokenizer.decode(tail[:-1] if terminal else tail,
             skip_special_tokens=False, clean_up_tokenization_spaces=False)
         return dict(messages=messages, prompt_tokens=len(tokens), token_ids=tail,
-                    raw=text, terminal=terminal, truncated=not terminal and len(tail) == MAX_NEW_TOKENS)
+                    raw=text, terminal=terminal, truncated=not terminal and len(tail) == max_new_tokens)
 
 
 def collect(engine, output):

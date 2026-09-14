@@ -168,9 +168,23 @@ def evaluate(engine, collection, old_bank, old_episodes, output, *, reader_wrapp
     return result
 
 
+def recollect(engine, collection, output):
+    from organism_v6 import experienced_event_sleep_recollection as recollection
+
+    messages = recollection.build_messages(collection)
+    source.write(output / 'SLEEP_PROMPT.json', messages)
+    generation = engine.generate(messages, max_new_tokens=recollection.MAX_NEW_TOKENS)
+    source.write(output / 'SLEEP_NOTE.json', generation)
+    return dict(recollection_schema=recollection.SCHEMA, model_calls=1, fits=0,
+        parent_present=False, training_admission='UNREVIEWED_NO_FIT',
+        claim='TRACE_SUPPORTED_POSED_SLEEP_NOTE_NOT_LEARNED_SELECTION_OR_UTILITY',
+        note_sha256=source.file_hash(output / 'SLEEP_NOTE.json'),
+        terminal=generation['terminal'], truncated=generation['truncated'])
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--phase', choices=('collect', 'train', 'readout'), required=True)
+    parser.add_argument('--phase', choices=('collect', 'train', 'readout', 'recollect'), required=True)
     parser.add_argument('--state', choices=('BEFORE', 'AFTER'), default='BEFORE')
     parser.add_argument('--development-arm', choices=development.TRAINING_ARMS, required=True)
     for name in ('model-dir', 'expected-base-sha256', 'initial-adapter-dir', 'expected-initial-adapter-sha256',
@@ -268,6 +282,8 @@ def main(argv=None):
             require(collection['infrastructure_failures'] == 0, 'adult_collection_infrastructure_failure')
         elif phase == 'train':
             result.update(train(engine, old_rows, cue_rows, new_rows, output, args.development_arm))
+        elif phase == 'recollect':
+            result.update(recollect(engine, collection, output))
         else:
             result.update(evaluate(engine, collection, old_bank, old_episodes, output,
                                    reader_wrapper=args.reader_wrapper))
@@ -277,8 +293,12 @@ def main(argv=None):
         require(source.file_hash(Path(args.initial_adapter_dir).parent / 'RESULT.json') == initial_receipt
                 and source.file_hash(Path(args.initial_adapter_dir) / 'adapter_model.safetensors')
                 == args.expected_initial_adapter_sha256, 'initial_child_artifact_changed')
-        result.update(status=('COLLECTION_COMPLETE' if result['accepted_events'] == 4 else 'COLLECTION_INCOMPLETE_NO_FIT')
-                      if phase == 'collect' else 'COMPLETE', frozen_base_unchanged=True, finished_unix=time.time())
+        status = 'COMPLETE'
+        if phase == 'collect':
+            status = 'COLLECTION_COMPLETE' if result['accepted_events'] == 4 else 'COLLECTION_INCOMPLETE_NO_FIT'
+        elif phase == 'recollect':
+            status = 'RECOLLECTION_CAPTURED_NO_FIT'
+        result.update(status=status, frozen_base_unchanged=True, finished_unix=time.time())
         source.write(output / 'RESULT.json', result)
     except BaseException as error:
         result.update(status='FAILED', error=repr(error), finished_unix=time.time())

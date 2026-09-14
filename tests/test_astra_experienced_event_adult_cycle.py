@@ -5,7 +5,7 @@ from copy import deepcopy
 from pathlib import Path
 from tempfile import TemporaryDirectory
 import unittest
-from unittest.mock import patch
+from unittest.mock import MagicMock, patch
 
 from gpu import astra_experienced_event_adult_cycle as runner
 from test_astra_experienced_event_microloop import fixture
@@ -13,6 +13,24 @@ from test_astra_experienced_event_cue_sleep import PublicEngine
 
 
 class Tests(unittest.TestCase):
+    def test_recollection_is_one_captured_call_without_training_admission(self):
+        from organism_v6 import experienced_event_sleep_recollection as recollection
+
+        collection = self.cycle_record(2)
+        original = deepcopy(collection)
+        engine = MagicMock()
+        engine.generate.return_value = dict(raw='NONE', terminal=True, truncated=False)
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            result = runner.recollect(engine, collection, root)
+            engine.generate.assert_called_once_with(recollection.build_messages(collection), max_new_tokens=768)
+            self.assertEqual(runner.source.read(root / 'SLEEP_NOTE.json'), engine.generate.return_value)
+            self.assertEqual(result['note_sha256'], runner.source.file_hash(root / 'SLEEP_NOTE.json'))
+            self.assertEqual((result['model_calls'], result['fits'], result['training_admission']),
+                             (1, 0, 'UNREVIEWED_NO_FIT'))
+            self.assertFalse((root / 'adapter').exists())
+        self.assertEqual(collection, original)
+
     def cycle_record(self, cycle):
         bank = runner.adult.build_bank(cycle)
 

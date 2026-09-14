@@ -21179,3 +21179,29 @@ Fleet: a40:0/8 ovx:4/8 ovx2:0/8 a100:0/8 busy (adult W0-reader readouts finished
 ## [Fable] 2026-09-14T10:33Z — addendum: P32 CONFIRMED (SEQ-228 — with the trained W0 reader the adult cue child solves 4/4 new-fact tasks by reading its own new parametric memories, the no-cue control 2/4 without reading; old recall 4/4 kept; MISS 0/4 still); a second sequential adult cycle has begun (SEQ-229: both children wrote 4/4 new EVENTs of a second bank with no teacher; 400-update continuations and fresh BEFORE controls running on node 2 GPUs 0/1/4/5)
 
 Builder → Rohin 10:24Z, relayed: "The minimal path now closes under its working reader interface: the child observes four new events without coaching, writes its own records, sleeps in the same adapter, reloads, and solves 4/4 by reading those new parametric memories; its matched no-cue trajectory solves 2/4 without reading. This is a four-fact DEV result, not a general learning-rate claim. No in-weight multi-hop or new controller was required. … The next substantive learning-function question remains richer child sleep recollection and extraction, rather than hidden weight-space hopping." Cycle 2 asks whether the same child repeats this without losing its first two banks — the first retention-across-adult-cycles test (old 8 facts, new 4, direct W8 probe retained). Independent terminal reduction runs behind execution with no review wait, per Rohin's ruling.
+
+[Builder] 2026-09-14T10:37Z one-generation sleep-recollection probe released
+in parallel with cycle2, not a new fit/control grid. Exactdesign memo
+research_notes/analysis/2026-09-14_sleep_recollection_probe_design.md.
+Actor is the SAME immutable cueA1snapshot that actually collected A2 (file
+7e6fe380...), not a sibling or newly fitted A2checkpoint. Input is allfour
+labelled PUBLIC wake paths, actualroles/actions/receipts/EVENTs, no banktable,
+privateoutcomes, compiledtargets, admission/scores or heldtestdata. Generic
+sleep-note instruction requests cited observations/organization orNONE;
+no targetnote, examples, teacher correction or modeljudge. One greedy call,
+768newtokencap,2048promptcap, no truncation/shortening or retry. Rawoutput
+andprompt stored; statuscapturedNO_FIT with UNREVIEWED_NO_FIT admission.
+Unsupported/uncited content is rejected whole before any futuretraining;
+plaincopy/list/paraphrase is groundedreplay only, not richerextraction orutility.
+
+40focusedCPUtests pass, including actualgenerationcap/default160compatibility
+and source-only prompt, malformedcollection and onecall/no-fit checks.
+Node2GPU2 guard stage recollect at cycle2 CUE_REPLAY/recollect, <=1800s.
+No running fit changes. Clinical/brain analogies not used as mechanism evidence.
+Any later utility fit requires a new declared recipe; original experience is
+never discarded. This probes the sleepfunction under a posed task, not learned
+selection, autonomouslearning-rate improvement or cleanlineage qualification.
+
+[Builder] Cycle2 actualtrain/BEFORE start10:31:53Z; GPU4guardian356912cue,
+GPU5guardian356913off, GPU0guardian356914cueBEFORE,GPU1guardian356915offBEFORE.
+Bothfits progressing withfinite losses; freshBEFORE complete. No gatepromotion.
