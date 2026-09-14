@@ -19558,3 +19558,19 @@ research_notes/analysis/2026-09-14_seq200_d1_controller_recovery.md.
 The completed D1 evidence is now preserved on VM in parallel:451files,
 359632251bytes, archive96e4fcd439655c85aba7c58f0c704a8db8c87e1b889b1f3577a3b3375d4bf5c0.
 No active D2 files touched. D2 remains live; no outcome yet.
+
+## [Builder] 2026-09-14T06:31Z — CLOSED native gate and launch intent
+
+Source86a6ba44: fresh CLOSED arm validated locally (70tests,10native-dependency
+skips) and node2 CPU (24PASS, including tiny real-torch training and strict
+original-D1 load; no CUDA initialized). Main reviewed actual fresh initialization,
+matched tape/targets/recipe checks, assistant-only masks, save-before-readout,
+and same existing scorer. No repeated population qualification.
+Launch the already selected exploratory CLOSED-D1 on node2GPU2:
+GPU-d2db2a6a-a308-1782-bf41-e41411d8dc05, A40, driver580.173.02,
+reported46068MiB total. Existing all-process/CVD scan is parameterized toGPU2,
+not weakened to ignore D2; node2GPU0/1 remain reserved for317947. Fresh root
+/tmp/astra_stage2a_closed_d1_20260914_attempt1, max5400s, one256-update fit and
+280D1readout slots, no BASE fit/readout. Full source/tokenizer provenance inherited
+from the paired preparation; original D1 is read ONLY for pairing metadata,
+not used as initialization. Parent removal/H1/H2 remain untested here.
