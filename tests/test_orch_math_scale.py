@@ -113,6 +113,12 @@ def test_reader_schema_requires_all_axes_and_hashes():
     assert {'raw_call_sha256', 'target_sha256', 'student_prefix_sha256', 'full_text_read'} <= set(properties)
 
 
+@pytest.mark.parametrize('gib,expected', [(1, 0), (1.499, 0), (1.5, 1), (2.99, 1), (3, 2), (20, 2)])
+def test_memory_resource_only_gate(gib, expected):
+    from gpu.orch_math_scale_review import memory_limit
+    assert memory_limit(gib * 1024 ** 3) == expected
+
+
 def test_reducer_rejects_raw_or_generation_prefix_changes(tmp_path):
     from gpu.orch_math_scale_reduce import reduce
     from gpu.orch_math_rich_screen import write

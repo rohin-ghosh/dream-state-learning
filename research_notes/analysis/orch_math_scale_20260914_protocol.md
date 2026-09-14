@@ -95,3 +95,11 @@ grace and inner remaining−60/60s grace, always before documented lease
 Release6/7 after collection with physical receipts; retain4/5 only for declared
 conditional work if gate actually met. Notify ACTOR_READY plus persisted calls,
 not merely PID. Request SEQ only terminal/publication-ready, no reservation.
+
+2026-09-14T23:17:24Z resource-only update per Main: author reader maximum2,
+maximum1 below3GiB MemAvailable, wait below1.5GiB, checked before each spawn.
+43CPUtests pass; no local model/unknown process kills; native collection unchanged.
+Finite author-watch14400s including review waits, each reader600s/1attempt,
+max128batches8tasks, raw failure => unresolved/no admission; no implicit fit.
+First single-reader batch finished with structurally valid fulltext decisions;
+these delegated author-side labels are not the independent Gauss blind audit.

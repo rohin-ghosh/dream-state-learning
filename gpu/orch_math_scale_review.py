@@ -1,7 +1,7 @@
 """Bounded author-side full-text readers using the existing read-only agent API."""
 
 import argparse
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import ThreadPoolExecutor, wait, FIRST_COMPLETED
 import hashlib
 import json
 from pathlib import Path
@@ -98,12 +98,25 @@ def run_batch(batch, workspace, root):
     return str(batch)
 
 
+def memory_limit(available_bytes):
+    if available_bytes < 1.5 * 1024 ** 3:
+        return 0
+    return 1 if available_bytes < 3 * 1024 ** 3 else 2
+
+
+def available_memory():
+    for line in Path('/proc/meminfo').read_text().splitlines():
+        if line.startswith('MemAvailable:'):
+            return int(line.split()[1]) * 1024
+    raise RuntimeError('MemAvailable_missing_fail_closed')
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--root', required=True)
     parser.add_argument('--directory', required=True)
     parser.add_argument('--maximum-batches', type=int, default=128)
-    parser.add_argument('--workers', type=int, default=4, choices=range(1, 5))
+    parser.add_argument('--workers', type=int, default=2, choices=(1, 2))
     options = parser.parse_args()
     workspace = Path.cwd()
     root = Path(options.root).resolve()
@@ -114,10 +127,24 @@ def main():
     make_packets(root, directory)
     pending = [path for path in sorted(directory.glob('batch_*'))
                if not (path / 'reader').exists() and not (path / 'FAILED_REVIEW.json').exists()]
+    deadline = time.time() + 14400
     with ThreadPoolExecutor(max_workers=options.workers) as pool:
-        jobs = [pool.submit(run_batch, batch, workspace, root) for batch in pending[:options.maximum_batches]]
-        for job in as_completed(jobs):
-            print(job.result(), flush=True)
+        jobs = set()
+        pending = pending[:options.maximum_batches]
+        while (pending or jobs) and time.time() < deadline:
+            available = available_memory()
+            allowed = min(options.workers, memory_limit(available))
+            if pending and len(jobs) < allowed:
+                batch = pending.pop(0)
+                write(batch / 'MEMORY_RECEIPT.json', dict(available_bytes=available,
+                    allowed_concurrency=allowed, already_running=len(jobs), observed_unix=time.time()))
+                jobs.add(pool.submit(run_batch, batch, workspace, root))
+            elif jobs:
+                done, jobs = wait(jobs, timeout=15, return_when=FIRST_COMPLETED)
+                for job in done:
+                    print(job.result(), flush=True)
+            else:
+                time.sleep(15)
 
 
 if __name__ == '__main__':
