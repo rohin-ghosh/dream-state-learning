@@ -66,9 +66,12 @@ Extracted root of the same name is under `extracted/`. Raw per-arm
 `train/LOSSES.jsonl`, dose/masks, states and adapters are preserved.
 
 Main reduced aggregate counts from stored panel summaries and retention
-fields. Independent episode-level reduction is pending in
-`2026-09-14_goal_breadth_fit_independent_result.md`; this document does not
-substitute stored summary assertions for that review.
+fields. Independent episode-level reduction in
+`2026-09-14_goal_breadth_fit_independent_result.md` agrees with all headline
+counts and accounts for all758calls, including the control's earlier
+terminations. It verifies recorded state/source joins, not live tensors.
+Active label totals133272versus98744confirm the control is not equal-active-
+token training; both use the common reference denominator.
 
 ## Next experiment implication
 

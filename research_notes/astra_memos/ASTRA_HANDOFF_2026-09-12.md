@@ -1,4 +1,42 @@
-# Astra restart handoff — current override 2026-09-14 19:06UTC
+# Astra restart handoff — current override 2026-09-14 19:29UTC
+
+## CURRENT — worker-owned parallel hypotheses; SEQ260–262 complete
+
+Currentsource for action-first60dbf789a37f09261015dddf1d9f91bceba55879,
+pushed via8c7a431b merge. Fable/reader concurrently commit main; preserveboth
+appendsets on merge, no rebase/reset/stash/force. Dirtyrules/junctionpacket
+remain unrelated. See research_loop/BOARD.md for exclusiveGPUreservations.
+
+SEQ260reviewmatchesprimary: FULLTRAIN32/32vs17/32;PROBE5/8vs6/8;
+strictpairs1/4vs2/4. Bothfail; donotrefit/claimnoabilityorfulltransfer.
+SEQ261richv1allterminal880calls,80validEVENTs,zero64episodecandidates;
+56literalpredictionlabelstops; primary/reviewfiles namedrich_collection_*.
+SEQ262qualityall4units COMPLETE696newcalls1452assembledrows121pairs.
+Root/tmp/astra_goal_quality_20260914_attempt1,assembled/CAPSULE.json;
+capsule10d2bccfverifiedlocal. No qualityfit yet at19:29.
+
+ACTIVE worker tasks (actual launch must be confirmed, not inferred):
+- Schrodinger01a0a06a-da54-7042-9c23-8802acda4e39: owns native action-first
+  prepare/launch/monitor on A1000–3. Newroot/tmp/astra_rich_action_first_20260914_attempt1;
+  same originalEXPOSE reused,4TEACHonly,96calls/shard,3960s guards; nofits.
+  Main41CPUtestsPASS,legacyv1replays unchanged. Contentreview still mandatory.
+- Nash01a0a07d-4184-7a31-9f6c-5438a99a32b2: QUALITY_BREADTH fitcode+protocol,
+  node3 0/1 reserved,1674rows2928updates,pairednewlabelsOFF,seed0; full16PROBE
+  worlds retained. Mustpublish/provenance/testbeforelaunch; nooldscaleoverride.
+- Parfit01a0a06f-7ecb-7650-a20c-0ef627e24f36: sixdirtydrafts through259/260
+  plus SELF_CRITIQUE_REVISE vsREPEAT collectionprotocol/code,A1004/5reserved.
+- Ramanujan01a0a0db-62c9-7d20-b9bc-568361453e47: independent261/262review.
+Mainownsboard/integration; noextraworkerspawnavailable(threadlimitreported).
+
+VMdisk: olddirectorymigrationwasblockedbyincomplete/protectedprocvisibility;
+those two directories unchanged. Maininstead movedEIGHTold sourcearchive
+files to/data preservinghashes andoriginal/tmp symlinks,1,851,130,882bytes.
+Manifestgpu_artifacts_local/vm_archive_preserved_20260914/MANIFEST.json,
+SHAceb403cae2418de3e5878c7849827a8703b975b655d3d86e1feb79dc1eebd11b.
+Rootfree2.8GBafter; keepnewpackageson/data. Node1expiry23:14UTCtoday,nojobs.
+MissionACTIVE/INCOMPLETE; don't mark goal complete or idle on a pending review.
+
+## Historical snapshot — superseded19:06UTC
 
 ## CURRENT — breadth fits COMPLETE; rich collection LIVE; quality successor preparing
 

@@ -1,4 +1,20 @@
-## Current superseding snapshot — 2026-09-14 19:06UTC
+## Current superseding snapshot — 2026-09-14 19:29UTC
+
+SEQ260independentlyverified,nopromotion. SEQ261richv1complete880calls/zero
+candidates;56labelstopsnotgeneralreasoningfailure. SEQ262qualitycomplete
+1452rows/696newcalls,all16PROBEworldsretained,noqualityfityet.
+Action-firstrich60dbf789,41CPUtestsPASS,Schrodingerowns A1000–3nativeprep/
+launch (confirmreceipts). Nashowns newpairedquality2928fit,node3 0–1;
+Parfitownscritique/repeatcollection,A1004–5; Ramanujanreviews261/262.
+BOARD.md isexclusiveassignmentreference; hypotheses share37ec notadapters.
+Fourworkersreusedafterhostspawnlimit; Mainintegrationnotallworkerexecution.
+VM eightoldarchivesmovedwithhashes/symlinks,1.851GB,rootfree2.8GB; original
+two nominateddirectoriesleftunchanged dueincompleteprocvisibility.
+MissionACTIVE/INCOMPLETE; old single-hop continuationSEQ245isnarrowpositive
+butselectionmatchesuniform,unknownMISSfails; don'tconflatewithnewtwo-hop
+transfer, richsupervisionbenefit, H1/H2orfullself-improvement.
+
+## Historical superseded snapshot — 2026-09-14 19:06UTC
 
 Breadth1632-update fits COMPLETE. FULL TRAIN32/32goals16/16pairs versus
 LOSS_OFF17/32,4/16; PROBE5/8,1/4 versus6/8,2/4. Both engineering FAIL;
