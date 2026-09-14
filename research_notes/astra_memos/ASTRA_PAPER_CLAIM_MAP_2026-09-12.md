@@ -1,6 +1,7 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
-Current reporting cut: see the appended September 14 SEQ-246 matched-replay
+Current reporting cut: SEQ-247 shared-writer material control is terminal and
+independently reduced; see its appended addendum. Earlier SEQ-246 matched-replay
 addendum (terminal, independent verification pending), separate from A3 SEQ-245.
 Terminal A3 receipts and Goodall's independent six-stage reduction are complete,
 with one matching pair. SEQ-241 independent reduction is also COMPLETE: eight
@@ -5464,3 +5465,62 @@ Claim levels remain separate: **substrate** unchanged-state replay adds no
 acquisition result; **parenting behavior** gains a source-scaffolded matched
 executable-output contrast, not isolated semantic judgment or task-disjoint H1; **later autonomous learning**
 and **self-improving learning** gain no new fit, selection-utility or H2 evidence.
+
+## Evidence addendum — 2026-09-14 — SEQ-247 shared-writer material control
+
+**Terminal; captured-source independent reduction COMPLETE.** [Main's result](../analysis/2026-09-14_reader_audit_transfer_write_first_result.md)
+and the local reduction receipt bind one new100-update `LOSS_OFF_SELECTOR`
+fit to the SAME taught SEQ245 pre-write parent. The selected/uniform endpoints
+below are reused SEQ245 observations, not repeated fits or independent learners.
+
+| Endpoint | SEQ245 selected/uniform, each (reused) | LOSS_OFF_SELECTOR (new) |
+| --- | ---: | ---: |
+| Own routing /4 (shared BEFORE1/4) | 4 | 3 |
+| New exact W0/W8 recall, each /4 (BEFORE0/4) | 4 | 1 |
+| Old W0/W8 recall, each /12 | 12 | 12 |
+| Original held audit /16 | 16 | 16 |
+| Next actual audit | 6/6 true | 7/7:5 faulty,2 true |
+| Reader-disabled routing /4 | 2 | 2 |
+| Held supplied-text routing /8 | 8 | 8 |
+| Unseen MISS /4 | 0 | 0 |
+
+Only source1 is acquired exactly: the earlier original LOSS_OFF auditor's two
+valid pointers `[1,1]` produce doses `[0,200,0,0]`. Its six literal `E_id`
+INVALID_POINTER outputs are not repaired or interpreted as semantic abstentions.
+This links executable/source-valid selection differences to acquisition and
+action consequences, not isolated semantic judgment. Task3 ends `invalid_route`
+without committed port/outcome; routing3/4 is not complete recall or faithful
+use of every read. The new writer audits its own subsequent reads7/7, choosing
+`[null,0,null,3,2,3,2]`. That changed packet is not a fixed-test gain, and the
+writer is not the original OFF child becoming a better checker. No further fit
+on those choices has occurred.
+
+All writers share62 lesson presentations and the taught parent, with100 old,
+38 cue and200 new presentations. New actual supervised tokens16,969 versus
+reused16,345/16,319 use common reference denominator16,319: not equal-token or
+per-fact-dose matching. Uniform still matches taught selection. This is an
+off-policy material intervention from third-party counterfactual auditor prompts,
+not a whole parented-versus-unparented life, independent seed, H1/H2 or selection
+superiority over uniform.
+
+Attempt1 failed CPU preparation on tuple/list serialization before model loading;
+the non-material comparison fix did not change data/kernel/metrics. Its failure
+receipt remains separate. Attempt2 preserves the allocator OOM/recovery warning,
+all100 updates, saved adapter and117-call fresh AFTER; state binding and unchanged
+base/read-only AFTER receipts pass. Use `extracted_complete`, not the incomplete
+first extraction. Source `d0f16e22f0b4a5b61998164193ee8d8bf155c0f3`; raw capsule:
+`gpu_artifacts_local/astra_reader_audit_transfer_write_terminal_20260914_attempt2/extracted_complete/`
+(`train/RESULT.json`, `after/RESULT.json`, `after/HELD_AUDIT.json`, `after/ACTUAL_READERS.json`).
+Adjacent `SEQ247_independent_reduction_20260914.json` is COMPLETE with no
+failed/invalid/pending checks; receipt consistency and mask/schedule replay do
+not independently reauthenticate tensors/base or re-encode tokenizer inputs.
+Receipt SHA256 `9c6dfe501557b3ff83c4e6875e3f99d477a4607fc56ed7043539da38fb4e3c7c`;
+archive SHA256 `14386b5015b65a5fb3f18e1e57d27915f42c914c4e98638c70f6f2dcb73126db`
+(both locally checked). Earlier pending primary-memo wording predates this receipt.
+
+Claim levels: **substrate** shows source-specific1/4 acquisition with12/12
+retention; **parenting behavior** links executable selector outputs to material
+consequences, not isolated semantics or whole-life H1; **later autonomous
+learning** remains an externally scheduled off-policy intervention; **self-improving
+learning** gains no superiority over uniform or H2 evidence. No further-fit
+outcomes are included.

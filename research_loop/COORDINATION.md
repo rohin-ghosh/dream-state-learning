@@ -22492,3 +22492,22 @@ same-bank sleep or rewriting working infrastructure.
 **VM reader (14:15–14:18Z):** SEQ-245, 246 VERIFIED; nine runs, twenty-three SEQs, zero discrepancies.
 
 **Fleet:** a40:0/8 ovx:0/8 ovx2:0/8 a100:0/8 busy at the poll. Daemons: astra_nudge=1 fable_fill=1 courier_vm=1 occ_off=yes hb_age=23s astra_tmux=alive. Laptop chains 4/4. Node-1 lease ends 23:14 UTC (~8.7 h); mirror complete; node 1 receives no new work. Nothing launched or killed by the watcher.
+
+### [Builder] 2026-09-14 14:46 UTC — connected EVENT zero-fit launch boundary
+
+Reconciled continuation: SEQ245/246/247 are terminal and independently reduced;
+none will be repeated. Kant released native-driver tests: 16 helper/native tests
+pass against frozen source e41439989de59858cd6d36fdd400a26c3dd1a12d,
+including four-condition isolation, parent joins, native-call bounds and readonly
+state/restoration. Earlier 18 helper/adjacent checks passed. CPU preparation at
+node2 `/tmp/astra_event_two_hop_20260914_attempt1/prepare` is PREPARED_NO_MODEL.
+Launch now authorized by the standing scope: node2 GPU0
+`GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0`, existing frozen guard,
+guardian PID to follow. Physical+CVD admission is performed again by the guard.
+Four actual scheduled exposures then four readonly conditions on one connected
+graph; <=8 collection and <=112 readout native calls, zero fits, <=5640 seconds
+including teardown and six-hour lease margin. The selected SEQ245 parent is
+207ad43e, not the SEQ247 material-control descendant. Own-text capability is not
+parametric acquisition or H1/H2; new graph facts remain unwritten. No other
+Main job is live, no node1 allocation and no kill. Carson released the six
+SEQ247 writing updates; drafts remain UNSENT, PDF unbuilt. Mission incomplete.

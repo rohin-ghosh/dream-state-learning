@@ -21,27 +21,30 @@ now completes (A3, SEQ-245). After one shared collection, BEFORE and audit,
 selected and uniform forks each receive 100 updates. Both improve routing
 1/4 to 4/4 and exact W0/W8 recall 0/4 to 4/4, retain twelve prior facts
 12/12 in each view, and preserve the original held classifier 16/16.
-Both materials cover all four facts; supervised tokens differ (16,345 versus
-16,319). Eight faulty BEFORE reads yield eight correct sourced choices;
-six accurate AFTER reads per fork yield six correct NONE responses.
-These changing strata are not a fixed-test classifier improvement.
+Uniform matches selected; both materials cover all four facts.
 
 The original BEFORE wrapper failure and two invalid routes remain recorded;
 collection was reused for the repaired repeat, not recollected. Reader-disabled
 routing stays 2/4, supplied-text routing 8/8 and unseen MISS 0/4. W0/W8 are
 repeated views, not additional facts or learners. One externally scheduled,
 source-scaffolded lineage does not establish independent replication, selection
-superiority, H1/H2 or autonomous learning-rate improvement. Independent
-six-stage reduction confirms one matching pair.
+superiority, H1/H2 or autonomous learning-rate improvement.
 
 Postselected, source-scaffolded zero-fit replay on identical A3 prompts yields
 original SFT/control exact source-valid fault outputs8/8 versus2/8, true4/6 both
 (SEQ-246; independently reduced), not isolated semantic judgment,
 on-policy evidence or selection utility.
 
+One material-only control using the earlier OFF auditor's valid pointers in
+the same taught writer yields recall1/4 and routing3/4 versus reused4/4 in
+both references (SEQ-247), retaining twelve facts and classifier16/16.
+Invalid placeholders constrain semantic interpretation; this is not a whole-life
+parenting comparison.
+
 ## Supporting evidence notes—not part of the abstract
 
 **September 14, 2026 result update — research question unresolved.**
+SEQ-247 shared-writer material control is terminal and independently reduced.
 SEQ-246 matched replay is terminal and independently reduced.
 A3 SEQ-245 is terminal and independently reduced: six stages, one matching
 pair. Its same-parent continuation is reported separately.
@@ -58,6 +61,58 @@ Canonical `main.tex`, the sprint TeX and this companion now share the updated
 active abstract. The UNSENT collaborator draft and claim map also include terminal A3 SEQ-245 alongside SEQ-240/241.
 No complete cross-draft review is claimed. The collaborator draft stays UNSENT;
 H1/H2 and the program remain open.
+
+### SEQ-247: executable selector material, shared writer — September 14, 2026
+
+**Terminal; captured-source independent reduction COMPLETE.** [Main's result](../research_notes/analysis/2026-09-14_reader_audit_transfer_write_first_result.md)
+and the local reduction receipt bind one new100-update `LOSS_OFF_SELECTOR`
+fit to the SAME taught SEQ245 pre-write parent. The selected/uniform endpoints
+below are reused SEQ245 observations, not repeated fits or independent learners.
+
+| Endpoint | SEQ245 selected/uniform, each (reused) | LOSS_OFF_SELECTOR (new) |
+| --- | ---: | ---: |
+| Own routing /4 (shared BEFORE1/4) | 4 | 3 |
+| New exact W0/W8 recall, each /4 (BEFORE0/4) | 4 | 1 |
+| Old W0/W8 recall, each /12 | 12 | 12 |
+| Original held audit /16 | 16 | 16 |
+| Next actual audit | 6/6 true | 7/7:5 faulty,2 true |
+| Reader-disabled routing /4 | 2 | 2 |
+| Held supplied-text routing /8 | 8 | 8 |
+| Unseen MISS /4 | 0 | 0 |
+
+Only source1 is acquired exactly: the earlier original LOSS_OFF auditor's two
+valid pointers `[1,1]` produce doses `[0,200,0,0]`. Its six literal `E_id`
+INVALID_POINTER outputs are not repaired or interpreted as semantic abstentions.
+This links executable/source-valid selection differences to acquisition and
+action consequences, not isolated semantic judgment. Task3 ends `invalid_route`
+without committed port/outcome; routing3/4 is not complete recall or faithful
+use of every read. The new writer audits its own subsequent reads7/7, choosing
+`[null,0,null,3,2,3,2]`. That changed packet is not a fixed-test gain, and the
+writer is not the original OFF child becoming a better checker. No further fit
+on those choices has occurred.
+
+All writers share62 lesson presentations and the taught parent, with100 old,
+38 cue and200 new presentations. New actual supervised tokens16,969 versus
+reused16,345/16,319 use common reference denominator16,319: not equal-token or
+per-fact-dose matching. Uniform still matches taught selection. This is an
+off-policy material intervention from third-party counterfactual auditor prompts,
+not a whole parented-versus-unparented life, independent seed, H1/H2 or selection
+superiority over uniform.
+
+Attempt1 failed CPU preparation on tuple/list serialization before model loading;
+the non-material comparison fix did not change data/kernel/metrics. Its failure
+receipt remains separate. Attempt2 preserves the allocator OOM/recovery warning,
+all100 updates, saved adapter and117-call fresh AFTER; state binding and unchanged
+base/read-only AFTER receipts pass. Use `extracted_complete`, not the incomplete
+first extraction. Source `d0f16e22f0b4a5b61998164193ee8d8bf155c0f3`; raw capsule:
+`gpu_artifacts_local/astra_reader_audit_transfer_write_terminal_20260914_attempt2/extracted_complete/`
+(`train/RESULT.json`, `after/RESULT.json`, `after/HELD_AUDIT.json`, `after/ACTUAL_READERS.json`).
+Adjacent `SEQ247_independent_reduction_20260914.json` is COMPLETE with no
+failed/invalid/pending checks; receipt consistency and mask/schedule replay do
+not independently reauthenticate tensors/base or re-encode tokenizer inputs.
+Receipt SHA256 `9c6dfe501557b3ff83c4e6875e3f99d477a4607fc56ed7043539da38fb4e3c7c`;
+archive SHA256 `14386b5015b65a5fb3f18e1e57d27915f42c914c4e98638c70f6f2dcb73126db`
+(both locally checked). Earlier pending primary-memo wording predates this receipt.
 
 ### SEQ-246: matched actual-reader replay — September 14, 2026
 
