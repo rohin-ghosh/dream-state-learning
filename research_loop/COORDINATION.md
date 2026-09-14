@@ -25245,6 +25245,23 @@ guard and prepare dirs preserved as `.preAdapterRepair`; no processes killed.
 Same32tasks,128calls,45min/shard,assignedGPUs4–7,lease and scientific scope.
 Fresh per-device resource checks precede retry after this publication push.
 
+## [Worker PERSIST-CODE] 2026-09-14T22:09:26Z — attempt1 native launch and infrastructure stop, no SEQ
+
+PreGPU9e2338ae published before22:08:01Z guardians153091/153092 on assigned
+A1004/5 UUIDs31583768/c1650c7f. Both admission_1 scans clear. Native153125
+(RICH)/153128(TERSE) started22:08:02Z, portable base and loaded37ec PASS;
+each made one native call then wrapper token-accounting mismatch FAILED.
+Actual prompt212/184, generated317/21, within caps. Template default mapping
+was counted instead of token list; unchanged Engine uses return_dict=False.
+Non-material wrapper repair explicitly requests that same interface; CPU
+regression asserts the flag. No prompt/task/oracle/scientific boundary change.
+Native and guardian PIDs gone; GPU4/5 physically clear22:09:26Z; no kill.
+Root /localhome/local-rohing/data/orch_persist_code_20260914_attempt1;
+terminal {RICH,TERSE}/FAILED.json and launch_{RICH,TERSE}/exit_code.txt retained.
+No outcome result, no semantic admission, no fit, not a clean science null.
+New attempt2 only after updated CPU/source and preGPU publication; fresh
+physical+CVD gate, same1800s/arm ceiling. Main informed; no reader wait.
+
 ## [Orchestrator] 2026-09-14 22:09 UTC — message77 acted on; native starts distinguished from actual calls
 
 Read raw message77 in THESIS_RAW at22:07UTC: "i dont wanna move new thread

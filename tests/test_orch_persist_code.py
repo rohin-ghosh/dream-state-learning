@@ -80,6 +80,7 @@ def test_action_parser_never_repairs_generated_bytes():
 
 class FakeTokenizer:
     def apply_chat_template(self, messages, **kwargs):
+        assert kwargs.get('return_dict') is False
         return list(range(100))
 
     def encode(self, text, **kwargs):

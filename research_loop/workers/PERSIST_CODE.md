@@ -112,3 +112,23 @@ Timestamp correction disclosure: an initial journal heading said21:57 at
 editing; original bytes remain in tool/history artifacts. They were NOT
 native launch/test timestamps. This disclosure preserves the error rather
 than representing the preliminary estimates as actual observation times.
+
+## 2026-09-14T22:09:26Z — actual attempt1 launch and infrastructure stop
+
+Published preGPU9e2338ae preceded guardians153091(RICH GPU4),153092(TERSE
+GPU5), started22:08:01Z; fresh admission_1 clear both. Native153125/153128
+started22:08:02Z and loaded verified37ec at22:08:40Z. Each generated exactly
+one native call before FAILING on the wrapper's token accounting check:
+the template default returns a mapping rather than token-list, while Engine
+explicitly sets return_dict=False. Captured actual prompts212/184 tokens,
+generated317/21, so no actual context overflow. Own CPU fake lacked that
+interface condition; regression now asserts return_dict=False. This is a
+non-material interface repair, not a clean science null or prompt adaptation.
+
+Terminal FAILED.json at remote attempt1/{RICH,TERSE}; guardian exit1 at
+22:08:57Z/22:08:44Z. Both native/guardian processes gone by22:09:26Z; physical
+GPU4/5 no compute apps. No kill, no weights written, no outcome/semantic rows
+admitted. Attempt1 raw calls/source/prepare/failures preserved. Retry will use
+new root orch_persist_code_20260914_attempt2, same tasks/prompts/oracle/budgets,
+new tested/published source and preGPU note, fresh physical+CVD admission.
+No result SEQ requested for this infrastructure failure.

@@ -53,10 +53,10 @@ def collect(engine, tokenizer, output, arm, tasks):
         for turn in range(6):
             records = deepcopy(codebase.records[-2:])
             messages, prefix = ledger.messages(task, records, arm, previous, feedback, record=success)
-            while len(tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True)) > 1536 and records:
+            while len(tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True, return_dict=False)) > 1536 and records:
                 records.pop(0)
                 messages, prefix = ledger.messages(task, records, arm, previous, feedback, record=success)
-            input_tokens = len(tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True))
+            input_tokens = len(tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True, return_dict=False))
             if input_tokens > 1536:
                 episode['stop'] = 'context_bound_no_truncation'
                 break
