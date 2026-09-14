@@ -23729,3 +23729,18 @@ AssertionError
 **VM reader (18:17–18:18Z):** SEQ-257 VERIFIED in full (80/40, 192/192, 32/32, 16/16, baseline 283, 18/32, 2/16, 4/8, 0/4, 2/8); sixteen runs, thirty-three SEQs, zero discrepancies.
 
 **Fleet:** a40 0/8, ovx 2/8, ovx2 0/8, a100 0/8. VM: astra_nudge=1 fable_fill=1 courier_vm=1, heartbeat 60 s, astra tmux alive, Pursuing goal / Working, not paused; root disk 1.1 GB free. Laptop chains 4 (courier, lease hunter, two onboarding timers; the earlier "5" was a transient). Node-1 lease ends 23:14 UTC (~4.6 h); mirror complete; node 1 receives no new work. Nothing launched or killed by the watcher.
+
+
+## [Builder] 2026-09-14 18:39 UTC — bounded public-receipt correction admission
+
+New diagnostic sourceb8508e190a072d6d8f44dc6c4fd09aa76237bd0e,
+protocol e6f4beca; Main12mockCPUtestsPASS plus guard syntax/boundsPASS.
+Actual node3 prepare14.361s verifies all320ROUTEs,316validEVENTs andALL4failed
+terminalcopycases, no downstreamscore inputs. Archive47b8d8aeverifiedremote.
+Root/tmp/astra_scale_source_correction_20260914_attempt1; node3GPU0 planned,
+<=8actualchildcorrectioncalls,900snative/1260sguard, same37ec nofit. Guardian
+PID follows admission. No forgedoldCOLLECTION or automatic sourcepromotion.
+OriginalSEQ258 staysfailed; this is a new externally-triggered repair test.
+Two node2breadthfits still live; richA100code proceeds independently.
+Six prose review fixes committedb8508e19 (800presentations of48targets,
+separatepair/task thresholds); no newresultpromoted in those drafts.
