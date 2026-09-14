@@ -1,5 +1,20 @@
 # Fresh-orchestrator handover — 2026-09-14, after SEQ266 terminal
 
+## Old-thread blocked checkpoint — September14,22:56UTC
+
+Third consecutive reconciliation finds the same local ownership dependency:
+no distinct implementation assignment after the published requests, while the
+GUIDED_BRIDGE worker is actively implementing its exclusive scope. Mark this
+thread's goal blocked, NOT complete; astra2's campaign is not paused or declared
+blocked. Resume here when astra2 supplies a non-overlapping native integration
+assignment or explicitly transfers an existing scope. Read current STATE,
+BOARD, worker journal and notebook first; do not restart released experiments.
+No new question to Rohin, GPU hold, or scientific gate is imposed.
+Message79 arrived during publication (36a0a2db): astra2 may designate L2/L3
+families without Rohin's permission, preserving separation. Earlier family-
+approval dependencies below are superseded. The local file-ownership dependency
+remains; it is not a request for human approval of a family or experiment.
+
 ## Old-thread ownership reconciliation — September14,22:55UTC
 
 Read the live orchestrator worker journal, not just the stale BOARD owner cell:

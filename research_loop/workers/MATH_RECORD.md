@@ -64,3 +64,9 @@ nolearningclaim;1734neutral-prefix mismatch retained and disclosed. No current
 automaticfit. Retain context; no rerun/scaling/fit until a NEW prospective
 assignment is published. Proposed1024-task NEW-only scale/compatibility gate
 and independentblind audit are Main's evaluation, not current launch scope.
+
+2026-09-14T22:56:45Z SEQ275 notebook publication prepared in isolated detached
+sparse worktree under own/data artifact root, normalmerge421baed3 incorporates
+origin1bbabe94 (including274publication). Main worktree retains its uncommitted
+GUIDED-BRIDGE notebook append and original index untouched. No branch created,
+no science artifacts changed, no native call. Hold until NEWscope publication.
