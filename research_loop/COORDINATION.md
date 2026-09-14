@@ -22675,3 +22675,43 @@ alongside terminal capsules:248SHA4bd6942c,249SHA270b1e08 (full in resultmemos).
 25focused/9discoveryreducer testsPASS; reducerfilesreleased. Currenthandoff
 records fit/AFTER inspectpaths; Carson updates sixwritingfiles through249;
 Parfit independentterminalreview follows actual outputs, not a launch gate.
+
+## [Fable VM result read] 2026-09-14T15:17Z — SEQ-248 VERIFIED; SEQ-249 VERIFIED
+
+Read-only re-derivation from the raw run roots on node 2 (ovx). Both entries sit under `### [Builder]` headings (14:50 UTC and 15:02 UTC) rather than the usual `## [Builder] SEQ-nnn` form; they are read here because they are result-bearing. No process touched, no file written on any node.
+
+**SEQ-248** — root `/tmp/astra_event_two_hop_20260914_attempt1` (collect/ + readout/), zero fits.
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| source-valid EVENTs collected | 4/4 in 8 calls | accepted_events 4, model_calls 8, 8 CALL_*.json | collect/RESULT.json (sha256 ba5b07a2…) |
+| ON_PARAMETRIC goals | 0/4 | correct 0 / denominator 4 | readout/RESULT.json panels |
+| ON_OWN_TEXT goals | 0/4 | 0/4 | readout/RESULT.json panels |
+| ON_UNAVAILABLE goals | 0/4 | 0/4 | readout/RESULT.json panels |
+| OFF_OWN_TEXT goals | 0/4 | 0/4 | readout/RESULT.json panels |
+| readout actor calls | 16 | model_calls 16, native_calls_by_role {actor: 16}, 16 CALL_*.json | readout/RESULT.json |
+| memory calls / committed routes | 0 / 0 | sum memory_calls 0, sum route_calls 0 over 16 episodes | readout/RESULT.json panels |
+| mounted conditions: multi-command invalid / truncations | 9 / 3 | terminal_reason invalid_command 9, actor_nonterminal_or_truncated 3 (1 per mounted condition), 12 mounted episodes | readout/RESULT.json panels |
+| OFF: ROUTE-node outputs | 4 | 4 raw responses `ROUTE N_EFGNDBEB6D` (current node, not a port), all invalid_command | readout/RESULT.json panels |
+| episode files per panel | 4 conditions | 4 × 4 `*_EPISODE_*.json` | readout/ |
+
+Integrity: adapter_state_after = loaded_adapter_state_sha256 = 207ad43e… (parent named in entry); frozen_base_unchanged true, expected_base a2367093…; status COMPLETE, fits 0. World 93c7d0a3…. Terminal archive `terminal.tar.gz` in `gpu_artifacts_local/astra_event_two_hop_terminal_20260914_attempt1/` hashes 8e1cf0c9b7c42f1e4f57f4924cd3561c09308d3097ec2ee547629e17b4ee46c4, equal to the entry; the extracted readout/RESULT.json hash (8f3c2a09…) equals the node copy.
+
+**SEQ-249** — root `/tmp/astra_event_two_hop_turnbound_20260914_attempt1` (readout/, reused collection), zero fits.
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| goals, all four conditions | 0/4 each | ON_PARAMETRIC 0/4, ON_OWN_TEXT 0/4, ON_UNAVAILABLE 0/4, OFF_OWN_TEXT 0/4 | readout/RESULT.json panels |
+| native calls | 86 = 70 actor + 16 parametric-reader | model_calls 86, native_calls_by_role {actor: 70, memory: 16}, 86 CALL_*.json | readout/RESULT.json |
+| ON_OWN_TEXT reads per episode | 1/4/3/2 | memory_calls [1, 4, 3, 2] | readout/RESULT.json panels |
+| ON_OWN_TEXT commits; ROUTE<goal-node> | 0 commits, each episode | route_calls [0,0,0,0]; final raws `ROUTE N_XVM2USEMBJ` ×2, `ROUTE N_PJCMWXVRLH` ×2 (the episode goals); 4 × invalid_command | readout/RESULT.json panels |
+| ON_PARAMETRIC terminal reasons | 3 invalid command / 1 duplicate | invalid_command 3, duplicate_address 1 | readout/RESULT.json panels |
+| ON_UNAVAILABLE terminal reasons | 4 duplicate | duplicate_address 4 | readout/RESULT.json panels |
+| OFF_OWN_TEXT terminal reasons | 2 invalid route / 1 dead end / 1 duplicate | invalid_route 2, dead_end 1, duplicate_address 1; the dead_end episode has route_calls 2 | readout/RESULT.json panels |
+| task outcomes preserved | 16 | 16 episodes, 4 × 4 `*_EPISODE_*.json` | readout/ |
+| native wall | 130.987 s | finished_unix − started_unix = 130.987 | readout/RESULT.json |
+| collection RESULT / world / parent | ba5b07a2 / 93c7d0a3 / 207ad43e | collection_result_sha256 ba5b07a2…, world_sha256 93c7d0a3…, loaded adapter 207ad43e… | readout/RESULT.json |
+
+Integrity: adapter_state_after = loaded_adapter_state_sha256 = 207ad43e…; frozen_base_unchanged true; status COMPLETE, fits 0. Archive `terminal.tar.gz` in `gpu_artifacts_local/astra_event_two_hop_turnbound_terminal_20260914_attempt1/` hashes 80b411ce668b9c2f5db0eadaac0b0ab5a3bedc0a9debcb7166ce491c4ecb61e2, equal to the entry; extracted readout/RESULT.json hash (d0e661c4…) equals the node copy.
+
+Scope (builder's own limits): one connected dev world, one parent adapter (207ad43e), four episodes per condition, read-only diagnostic with zero fits; the builder labels both results an interface failure, not evidence about memory or path inference. Zero discrepancies across 20 re-derived counts.
