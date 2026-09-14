@@ -20568,3 +20568,11 @@ trainingbank, not independentexperience acquisition or learnedparent-free skill.
 Decision criterion: inspect readuptake and goal-pair/world coverage; noautomatic
 fit or dose increase follows. Native reusable-source validation and tests being
 finished in a new version; old39ae root remains immutable.
+
+[Builder] 2026-09-14T09:08Z explicit-guidance successor ready:29CPUtests pass;
+actual preserved originalsource preflight validates2banks/8experiences/14files.
+Flags --reuse-experiences and --explicit-cue-strategy jointly required. New
+REQUEST binds fullguide+hash and sourcefilehashes; zero EXPLORE/EVENTgeneration,
+max24cueactorcalls. Freshroot/tmp/astra_cue_explicit_20260914_attempt1,
+node2GPU4, sourcecommitfollows. No originalcue scores/rows enter studentdata,
+no thresholdchanges, nofit. All basicnative/resource/offline guards unchanged.

@@ -1,6 +1,8 @@
 """DEV guided cue trajectories over child-authored external EVENT text; no fit."""
 
 import argparse
+from hashlib import sha256
+import json
 import os
 from pathlib import Path
 import time
@@ -11,6 +13,17 @@ from organism_v6 import experienced_event_cue_collection as cue
 
 MASTER = "ASTRA-CUE-TRAIN-EXTERNAL-EVENT-20260914-A1"
 MAX_CALLS = 40
+REUSE_MAX_CALLS = 24
+EXPLICIT_GUIDANCE = (
+    '\n\nTeacher strategy for this training collection only: '
+    'Your first decision must be READ EVENT using the first address in the public EVENTS list. '
+    'After each read, compare the returned EVENT AT with the public task NODE and its GOT '
+    'with the public GOAL. If both match, commit ROUTE using that EVENT\'s DID port. '
+    'Otherwise READ EVENT using the unread listed address, if one remains. '
+    'Never ROUTE before a read. If no returned record matches, do not invent evidence. '
+    'Use only listed addresses and ports, within the public call limits. '
+    'Output only the permitted command, without explanation.'
+)
 
 
 def training_banks():
@@ -24,11 +37,86 @@ def training_banks():
     return banks
 
 
-def collect(engine, output):
+def load_reused_experiences(directory, *, expected_base_sha256):
+    """Read original experience evidence only; no original cue rows or scores.
+
+    Individual/aggregate records must agree exactly. Hashes pin this read, not
+    authenticity against coherent replacement of the entire original bundle.
+    """
+    root, hashes = Path(directory).resolve(), {}
+    source.require(not (root / 'FAILED.json').exists(), 'failed_original_collection')
+    source.require(type(expected_base_sha256) is str and len(expected_base_sha256) == 64
+                   and all(char in '0123456789abcdef' for char in expected_base_sha256), 'expected_base_hash_required')
+
+    def read(relative):
+        path = root / relative
+        source.require(path.is_file() and not path.is_symlink() and path.stat().st_size <= 2 * 1024 ** 2,
+                       'bounded_original_file_required:' + relative)
+        raw = path.read_bytes()
+        hashes[relative] = sha256(raw).hexdigest()
+        return json.loads(raw)
+
+    result, request = read('RESULT.json'), read('REQUEST.json')
+    source.require(result.get('schema') == request.get('schema') == 'DEV_GUIDED_EXTERNAL_EVENT_CUE_COLLECTION_V1'
+                   and result.get('master') == request.get('master') == MASTER
+                   and result.get('status') == 'COLLECTION_COMPLETE_NO_FIT'
+                   and result.get('frozen_base_unchanged') is True, 'complete_original_collection_required')
+    for name, expected in dict(banks=2, admitted_events=8, event_denominator=8, cue_task_denominator=8, fits=0).items():
+        source.require(type(result.get(name)) is int and result[name] == expected, 'original_count_mismatch:' + name)
+    for document in (result, request):
+        options = document.get('arguments', {})
+        source.require(options.get('expected_base_sha256') == expected_base_sha256
+                       and options.get('phase') == 'collect' and options.get('adapter_dir') is None,
+                       'original_frozen_base_binding_mismatch')
+    banks = []
+    for bank_index, expected_bank in enumerate(training_banks()):
+        prefix = 'BANK_%02d/' % bank_index
+        bank, experiences = read(prefix + 'BANK.json'), read(prefix + 'EXPERIENCES.json')
+        source.require(bank == expected_bank, 'original_training_bank_mismatch')
+        source.require(type(experiences) is list and len(experiences) == 4, 'four_complete_experiences_required')
+        memories = {}
+        for index, (fact, experience) in enumerate(zip(bank, experiences), 1):
+            individual = read(prefix + 'EXPERIENCE_%02d.json' % index)
+            source.require(individual == experience and experience.get('fact') == fact
+                           and experience.get('admitted') is True and experience.get('error') is None,
+                           'original_experience_record_mismatch')
+            for kind in ('exploration', 'event'):
+                response = experience.get(kind)
+                source.require(type(response) is dict and type(response.get('raw')) is str
+                               and response.get('terminal') is True and response.get('truncated') is False
+                               and response.get('error') is None, 'terminal_original_generation_required')
+                if 'token_ids' in response:
+                    token_ids = response['token_ids']
+                    source.require(type(token_ids) is list and bool(token_ids)
+                                   and all(type(token) is int for token in token_ids)
+                                   and token_ids[-1] == result.get('tokenizer', {}).get('eos_token_id'),
+                                   'original_terminal_token_mismatch')
+            exploration, event = experience['exploration'], experience['event']
+            expected_messages = source.material.observation_messages(fact, exploration['raw'])
+            for response, messages in ((exploration, source.material.exploration_messages(fact)), (event, expected_messages)):
+                if 'messages' in response:
+                    source.require(response['messages'] == messages, 'original_generation_messages_mismatch')
+            source.require(source.material.canonical_event(event['raw']) == source.material._event(fact),
+                           'original_event_grounding_mismatch')
+            memories[fact['event']] = event['raw']
+        cue.validate_memory(bank, memories)
+        banks.append(dict(bank=bank, experiences=experiences, raw_memory_by_address=memories))
+    return dict(source_directory=str(root), input_file_sha256=hashes, banks=banks,
+        source_metadata={name: result[name] for name in ('schema', 'master', 'status', 'admitted_events',
+                         'frozen_base_unchanged')}, expected_base_sha256=expected_base_sha256,
+        source_cue_rows_used=False, source_cue_scores_used=False)
+
+
+def collect(engine, output, *, reused_experiences=None):
     captures, reports = [], []
+    if reused_experiences is not None:
+        source.require(cue.GUIDANCE == EXPLICIT_GUIDANCE, 'explicit_strategy_required_for_reuse')
+        source.write(output / 'REUSED_EXPERIENCES.json', reused_experiences)
+    limit = REUSE_MAX_CALLS if reused_experiences is not None else MAX_CALLS
 
     def generate(messages):
-        source.require(len(captures) < MAX_CALLS, "forty_call_collection_cap")
+        source.require(len(captures) < limit, "twenty_four_cue_call_cap" if reused_experiences is not None
+                       else "forty_call_collection_cap")
         record = dict(call_index=len(captures), messages=messages, response=None, error=None)
         captures.append(record)
         try:
@@ -45,7 +133,13 @@ def collect(engine, output):
         directory.mkdir(exist_ok=False)
         source.write(directory / "BANK.json", bank)
         events, memories = [], {}
-        for fact in bank:
+        if reused_experiences is not None:
+            reused = reused_experiences['banks'][bank_index]
+            source.require(reused['bank'] == bank, 'reused_training_bank_mismatch')
+            events, memories = reused['experiences'], reused['raw_memory_by_address']
+            for index, episode in enumerate(events, 1):
+                source.write(directory / ('EXPERIENCE_%02d.json' % index), episode)
+        for fact in bank if reused_experiences is None else ():
             exploration = generate(source.material.exploration_messages(fact))
             episode = dict(fact=fact, exploration=exploration, event=None, admitted=False, error=None)
             if not exploration["terminal"] or exploration["truncated"]:
@@ -83,12 +177,19 @@ def collect(engine, output):
     source.require(not any(record["error"] is not None for record in captures), "native_callback_failure")
     source.require(not any(report["collection"].get("infrastructure_failures", 0) for report in reports),
                    "cue_infrastructure_failure")
-    return dict(banks=2, event_denominator=8, cue_task_denominator=8,
+    result = dict(banks=2, event_denominator=8, cue_task_denominator=8,
         admitted_events=sum(report["admitted_events"] for report in reports),
         selected_successes=sum(report["collection"]["selected_successes"] for report in reports),
         student_rows=sum(len(report["collection"]["student_rows"]) for report in reports),
         physical_model_calls=len(captures), fits=0,
         memory_kind="EXTERNAL_ADDRESS_ONLY_RAW_CHILD_EVENT_TEXT_NOT_PARAMETRIC_READ")
+    if reused_experiences is not None:
+        source.require(all(source.file_hash(Path(reused_experiences['source_directory']) / name) == digest
+                           for name, digest in reused_experiences['input_file_sha256'].items()),
+                       'original_experiences_changed_during_reuse')
+        result.update(experiences_reused=8, new_exploration_event_calls=0, physical_actor_calls=len(captures),
+                      input_file_sha256=reused_experiences['input_file_sha256'])
+    return result
 
 
 def main(argv=None):
@@ -96,31 +197,48 @@ def main(argv=None):
     for name in ("model-dir", "expected-base-sha256", "output", "gpu-uuid"):
         parser.add_argument("--" + name, required=True)
     parser.add_argument("--device", default="cuda:0")
+    parser.add_argument('--reuse-experiences')
+    parser.add_argument('--explicit-cue-strategy', action='store_true')
     args = parser.parse_args(argv)
+    if bool(args.reuse_experiences) != args.explicit_cue_strategy:
+        parser.error('--reuse-experiences and --explicit-cue-strategy must be supplied together')
     source.require(os.environ.get("HF_HUB_OFFLINE") == "1"
                    and os.environ.get("TRANSFORMERS_OFFLINE") == "1", "offline_required")
     source.require(os.environ.get("CUDA_VISIBLE_DEVICES") == args.gpu_uuid, "exact_gpu_required")
     args.phase, args.adapter_dir = "collect", None
     root = Path(args.output)
+    if args.reuse_experiences:
+        original = Path(args.reuse_experiences).resolve()
+        source.require(not root.resolve().is_relative_to(original) and not original.is_relative_to(root.resolve()),
+                       'fresh_output_separate_from_original_required')
     root.mkdir(parents=True, exist_ok=False)
     started = time.time()
 
     def check(phase):
         source.require(time.time() < started + 1200, "collection_deadline:" + phase)
 
-    result = dict(schema="DEV_GUIDED_EXTERNAL_EVENT_CUE_COLLECTION_V1", master=MASTER,
+    selected_guidance = EXPLICIT_GUIDANCE if args.explicit_cue_strategy else cue.GUIDANCE
+    result = dict(schema='DEV_GUIDED_EXTERNAL_EVENT_CUE_REUSE_V1' if args.reuse_experiences
+                  else "DEV_GUIDED_EXTERNAL_EVENT_CUE_COLLECTION_V1", master=MASTER,
         started_unix=started, arguments=vars(args),
+        guidance=selected_guidance, guidance_sha256=sha256(selected_guidance.encode('utf-8')).hexdigest(),
         claim="COACHED_DATA_COLLECTION_NOT_AUTONOMOUS_CUE_OR_PARENTING_SUCCESS",
         runner_sha256=source.file_hash(__file__),
         source_sha256={Path(module.__file__).name: source.file_hash(module.__file__)
                        for module in (source, cue, source.material, source.native)})
     source.write(root / "REQUEST.json", result)
+    previous_guidance = cue.GUIDANCE
     try:
+        reused = None
+        if args.reuse_experiences:
+            reused = load_reused_experiences(args.reuse_experiences, expected_base_sha256=args.expected_base_sha256)
+            result['input_file_sha256'] = reused['input_file_sha256']
+            cue.GUIDANCE = selected_guidance
         tokenizer = source.native.load_local_tokenizer(args.model_dir)
         result["tokenizer"] = source.native.tokenizer_signature(tokenizer)
         engine = source.Engine(args, tokenizer, check=check)
         result["runtime"] = engine.runtime
-        result.update(collect(engine, root))
+        result.update(collect(engine, root, reused_experiences=reused))
         engine.verify_base()
         result.update(status="COLLECTION_COMPLETE_NO_FIT", frozen_base_unchanged=True,
                       finished_unix=time.time())
@@ -129,6 +247,8 @@ def main(argv=None):
         result.update(status="FAILED", error=repr(error), finished_unix=time.time())
         source.write(root / "FAILED.json", result)
         raise
+    finally:
+        cue.GUIDANCE = previous_guidance
 
 
 if __name__ == "__main__":
