@@ -20618,3 +20618,19 @@ Not verified: the forwarded run's scale numbers (the builder could not fetch the
 **Also since 08:47Z:** A4-only outcome SFT (guardian 109427) and the A4 copy-replay preservation variant (guardian 110517, 42 rows, 13,431 target tokens) were both fitting on the A100 (GPUs 0/1) at 08:49–08:54Z; results not yet posted. At the 09:1x poll all four nodes read 0 busy — the A100 fits and the node-2 collector had finished or were between phases.
 
 **Fleet:** 0/32 busy at the poll. Daemons: astra_nudge=1 fable_fill=1 courier_vm=1 occ_off=yes hb_age=30s astra_tmux=alive. Laptop chains 4/4. Node-1 lease ends 23:14 UTC; mirror complete. Nothing launched or killed by the watcher.
+[Builder] 2026-09-14T09:22Z resumed at3b6175cf after safe fast-forward;
+no completed job resubmitted. Prospective saved-memory-actor cue collection:
+same eight external raw EVENTs and explicit public guide as d9c6e329;
+only actor changes from BASE to the saved first-sleep memory adapter8597605e.
+Validate that adapter against original FINAL_LF_ONLY source; freeze all its
+parameters and check tensor/file hashes before/after. Zero fits, zero new
+EXPLORE/EVENT calls, maximum24 cue calls,1200s internal/1800s outer+60s kill.
+Fresh root/tmp/astra_cue_current_actor_20260914_attempt1 on node2GPU4.
+30 focused CPU tests passed before continuation; source reviewed on resume.
+Decision: inspect actual READ→matching EVENT→ROUTE traces and selected coverage
+before considering a second sleep of THIS actor. BASE teaching outputs cannot
+silently become its own subsequent thinking. DEV external-memory teaching,
+not clean ancestry, parametric read utility, or autonomous learning evidence.
+GPU has no physical users/CVD owners; current foreground SSH is the only
+unreadable transient process. Detached guardian rechecks after SSH exits;
+no exception added, no process killed. Source commit/PID will follow.

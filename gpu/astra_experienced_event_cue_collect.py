@@ -8,6 +8,7 @@ from pathlib import Path
 import time
 
 from gpu import astra_experienced_event_microloop as source
+from gpu import astra_experienced_event_read_route as access
 from organism_v6 import experienced_event_cue_collection as cue
 
 
@@ -199,13 +200,20 @@ def main(argv=None):
     parser.add_argument("--device", default="cuda:0")
     parser.add_argument('--reuse-experiences')
     parser.add_argument('--explicit-cue-strategy', action='store_true')
+    parser.add_argument('--cue-adapter-dir')
+    parser.add_argument('--adapter-collection')
     args = parser.parse_args(argv)
     if bool(args.reuse_experiences) != args.explicit_cue_strategy:
         parser.error('--reuse-experiences and --explicit-cue-strategy must be supplied together')
+    if bool(args.cue_adapter_dir) != bool(args.adapter_collection):
+        parser.error('--cue-adapter-dir and --adapter-collection must be supplied together')
+    if args.cue_adapter_dir and not args.reuse_experiences:
+        parser.error('the selected memory actor requires explicit reused-experience collection')
     source.require(os.environ.get("HF_HUB_OFFLINE") == "1"
                    and os.environ.get("TRANSFORMERS_OFFLINE") == "1", "offline_required")
     source.require(os.environ.get("CUDA_VISIBLE_DEVICES") == args.gpu_uuid, "exact_gpu_required")
-    args.phase, args.adapter_dir = "collect", None
+    args.phase = "readout" if args.cue_adapter_dir else "collect"
+    args.adapter_dir = args.cue_adapter_dir
     root = Path(args.output)
     if args.reuse_experiences:
         original = Path(args.reuse_experiences).resolve()
@@ -234,12 +242,35 @@ def main(argv=None):
             reused = load_reused_experiences(args.reuse_experiences, expected_base_sha256=args.expected_base_sha256)
             result['input_file_sha256'] = reused['input_file_sha256']
             cue.GUIDANCE = selected_guidance
+        if args.cue_adapter_dir:
+            unused_bank, unused_episodes, unused_rows, provenance = source.load_collection(
+                args.adapter_collection, serialization='FINAL_LF_ONLY')
+            result['actor_training_result_sha256'] = access.validate_adapter(args.cue_adapter_dir, provenance)
+            result['actor_adapter_file_sha256'] = access.ADAPTER_SHA256
+            result['actor_memory_collection'] = provenance
+        result['actor_kind'] = 'FROZEN_SAVED_MEMORY_LEARNER' if args.cue_adapter_dir else 'FROZEN_BASE'
         tokenizer = source.native.load_local_tokenizer(args.model_dir)
         result["tokenizer"] = source.native.tokenizer_signature(tokenizer)
         engine = source.Engine(args, tokenizer, check=check)
         result["runtime"] = engine.runtime
+        adapter_parameters = None
+        if args.cue_adapter_dir:
+            from organism_v6.pcfl_vertical_train import _state_hash
+
+            source.require(not any(parameter.requires_grad for parameter in engine.model.parameters()),
+                           'collection_actor_must_be_frozen')
+            adapter_parameters = {name: parameter for name, parameter in engine.model.named_parameters()
+                                  if '.lora_A.' in name or '.lora_B.' in name}
+            source.require(bool(adapter_parameters), 'loaded_memory_adapter_parameters_required')
+            result['actor_adapter_state_before'] = _state_hash(adapter_parameters)
         result.update(collect(engine, root, reused_experiences=reused))
         engine.verify_base()
+        if adapter_parameters is not None:
+            result['actor_adapter_state_after'] = _state_hash(adapter_parameters)
+            source.require(result['actor_adapter_state_after'] == result['actor_adapter_state_before'],
+                           'collection_changed_actor_adapter')
+            source.require(access.validate_adapter(args.cue_adapter_dir, provenance)
+                           == result['actor_training_result_sha256'], 'original_memory_adapter_changed')
         result.update(status="COLLECTION_COMPLETE_NO_FIT", frozen_base_unchanged=True,
                       finished_unix=time.time())
         source.write(root / "RESULT.json", result)

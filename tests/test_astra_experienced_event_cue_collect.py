@@ -235,11 +235,44 @@ class ReuseExperienceTests(unittest.TestCase):
     def test_both_cli_flags_required_before_native_loading(self):
         common = ['--model-dir', 'unused', '--expected-base-sha256', 'a' * 64,
                   '--output', 'unused-output', '--gpu-uuid', 'GPU-test']
-        for extra in (['--reuse-experiences', 'unused'], ['--explicit-cue-strategy']):
+        for extra in (['--reuse-experiences', 'unused'], ['--explicit-cue-strategy'],
+                      ['--cue-adapter-dir', 'unused'], ['--adapter-collection', 'unused'],
+                      ['--cue-adapter-dir', 'unused', '--adapter-collection', 'unused']):
             with self.subTest(extra=extra), patch.object(runner.source.native, 'load_local_tokenizer') as load, \
                     self.assertRaises(SystemExit):
                 runner.main(common + extra)
             load.assert_not_called()
+
+    def test_saved_actor_is_loaded_readonly_and_bound_before_generation(self):
+        from types import SimpleNamespace
+
+        with TemporaryDirectory() as temporary:
+            original = original_fixture(Path(temporary) / 'original')
+            output = Path(temporary) / 'successor'
+            arguments = ['--model-dir', 'unused', '--expected-base-sha256', 'a' * 64,
+                '--output', str(output), '--gpu-uuid', 'GPU-test', '--reuse-experiences', str(original),
+                '--explicit-cue-strategy', '--cue-adapter-dir', 'selected-adapter',
+                '--adapter-collection', 'selected-memory-source']
+            parameter = SimpleNamespace(requires_grad=False)
+            model = Mock()
+            model.parameters.return_value = [parameter]
+            model.named_parameters.return_value = [('model.lora_A.default.weight', parameter)]
+            engine = Mock(generate=PublicReadingActor(), model=model, runtime={'test': 'CPU fixture'})
+            with patch.dict(os.environ, HF_HUB_OFFLINE='1', TRANSFORMERS_OFFLINE='1', CUDA_VISIBLE_DEVICES='GPU-test'), \
+                    patch.object(runner.source.native, 'load_local_tokenizer', return_value=object()), \
+                    patch.object(runner.source.native, 'tokenizer_signature', return_value={}), \
+                    patch.object(runner.source, 'load_collection', return_value=([], [], [], {'source': 'fixture'})), \
+                    patch.object(runner.access, 'validate_adapter', return_value='c' * 64) as validate, \
+                    patch('organism_v6.pcfl_vertical_train._state_hash', return_value='d' * 64), \
+                    patch.object(runner.source, 'Engine', return_value=engine) as construct:
+                runner.main(arguments)
+            self.assertEqual(construct.call_args.args[0].phase, 'readout')
+            self.assertEqual(construct.call_args.args[0].adapter_dir, 'selected-adapter')
+            self.assertEqual(validate.call_count, 2)
+            result = runner.source.read(output / 'RESULT.json')
+            self.assertEqual(result['actor_kind'], 'FROZEN_SAVED_MEMORY_LEARNER')
+            self.assertEqual(result['actor_adapter_state_before'], result['actor_adapter_state_after'])
+            self.assertEqual(result['fits'], 0)
 
     def test_cli_records_guidance_and_validates_before_native_imports(self):
         with TemporaryDirectory() as temporary:
