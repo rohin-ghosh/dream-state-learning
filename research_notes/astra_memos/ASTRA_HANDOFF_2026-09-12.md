@@ -1,4 +1,25 @@
-# Astra restart handoff — current override 2026-09-14 16:28 UTC
+# Astra restart handoff — current override 2026-09-14 17:04 UTC
+
+## CURRENT — SEQ252–255 terminal; matched goal-learning fits pending
+
+No Main-owned GPU job running as of17:03UTC live check. Replay402364 and
+collection404781 are terminal, not live. SEQ254 stronger replay failed its
+behavioral target (param/text2/4, paired0/2); recipe CLOSED, independentPASS.
+SEQ255 collection COMPLETE:16actualEVENTs,48actualTRAINtargets,176calls/zero fits.
+Unchanged37ec PROBE OWN_TEXT5/8tasks,2/4pairs; UNAVAILABLE0/8,0/4. Partial goal
+conditioning already exists. Primary goal_pair_collection_first_result memo;
+Ramanujan independent review pending. Do not repeat collection/baseline.
+
+Next critical action: Nash releases gpu/astra_goal_pair_train.py, its guard,
+tests/test_astra_goal_pair_train.py; Main reviews/tests/prepares and launches
+two400update arms onnode2GPUs0/1 under b74cb8c4 protocol.270rows; start37ec;
+mask onlynew48targets in LOSS_OFF, old12trajectorytargets supervised inboth.
+Sourcecollection root/tmp/astra_goal_pair_collection_20260914_attempt1.
+No futurefit results yet. Carsonowns6draftfiles updatingthrough254; awaitrelease.
+Preserve dirtyrules/untrackedtwo_sleepdraft. Heavyarchivesonly/data (41GBfree);
+VMroot1.2GBfree. No newnode1work; leaseendsSeptember14 23:14UTC. MissionINCOMPLETE.
+
+## Historical superseded snapshot — 2026-09-14 16:28 UTC
 
 ## CURRENT — finite replay repair LIVE;252/253 independently reviewed
 

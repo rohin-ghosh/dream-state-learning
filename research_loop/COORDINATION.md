@@ -23221,3 +23221,25 @@ validatedgzip/tar locallyon/data andverifiedremotelybeforeextraction.
 **VM reader (16:45–16:46Z):** SEQ-254 VERIFIED in full (counts, hashes 37ec → 52658b3e, calls 166 = files, command sequences identical to 253 confirmed against the 253 root); fourteen runs, thirty-one SEQs, zero discrepancies.
 
 **Fleet:** a40 0/8, ovx 0/8, ovx2 0/8, a100 0/8 busy at the poll (the 16:48 collection was between admission and model load). VM: astra_nudge=1 fable_fill=1 courier_vm=1, heartbeat 10 s, astra tmux alive, Pursuing goal / Working, not paused; root disk still 1.2 GB free (unchanged). Laptop chains 4/4. Node-1 lease ends 23:14 UTC (~6.3 h); mirror complete; node 1 receives no new work. Nothing launched or killed by the watcher.
+
+## [Builder] 2026-09-14 17:06 UTC — SEQ-255 actual goal-pair collection and baseline complete
+
+Root/tmp/astra_goal_pair_collection_20260914_attempt1, sourcea0fdc9a7,
+node2GPU0 guardian404781 COMPLETE16:55:36UTC. EXPOSE32calls/16actualEVENTs;
+TEACH48calls/48actualTRAINtargets; BASELINE96calls; zero fits throughout.
+Unchanged37ec PROBE-A OWN_TEXT2/4tasks,1/2pairs; B3/4,1/2. Total5/8tasks,
+2/4pairs versus UNAVAILABLE0/8,0/4. Nativephase394.545s/0.1096A40h. Allsource
+identifiers separated; actualcoachedtargets only, noPROBEtraining/parentexposure.
+Primary analysis/2026-09-14_goal_pair_collection_first_result.md; localcapsule
+gpu_artifacts_local/astra_goal_pair_collection_terminal_20260914_attempt1/extracted,
+archivee66d7d7e1dd3a01189cd454ea7ad9a53970685fcf46de30b1a6732a564585e7e.
+Ramanujanindependentreviewpending. NoMainGPUjoblive17:03; no kills.
+
+[Builder -> Rohin / Fable] The new baseline demonstrates PARTIAL goal-sensitive
+behavior already: two of four opposite-goal pairs succeed before new teaching.
+The17:02watcher phrases "contrast the material never contained" and "takes the
+first branch regardless of goal" are too broad. Original250 taught anopposite
+goalpair; nowweexpandworld/ordercoverage.254onlyclosesitsdeclaredreplayrecipe,
+notallunder-rehearsal explanations. Nexttwo400update matchedfits werepredeclared
+b74cb8c4 beforethisbaselineinspection; implementationrelease/nativeprepare next.
+This is trajectorySFT toward robustmemoryuse, notcustodywork insteadoflearning.

@@ -1,4 +1,15 @@
-## Current superseding snapshot — 2026-09-14 16:28 UTC
+## Current superseding snapshot — 2026-09-14 17:04 UTC
+
+SEQ252–255 nativework terminal. No MainGPUjoblive at17:03.254replayfailed,
+recipeCLOSED/reviewPASS.255 actual16EVENT/48TRAINtargets, zero fits,176calls;
+unchanged37ec baselinePROBEtext5/8tasks,2/4pairs, unavailable0/8. Goalconditioning
+partial, notgloballyabsent. Mainprimarymemo; Ramanujanreviewpending. NextNash
+goal_pair_train implementationrelease/CPU/nativeprepare, thenpredeclared400update
+FULL_TARGET/NEW_TRAJECTORY_LOSS_OFF independentnode2GPUs0/1. Protocolb74cb8c4;
+no collectionrepeat/newPROBEtraining. Carsonowns6draftupdates254. Fullmission
+ACTIVE/INCOMPLETE; currentHANDOFF hasownersandpaths. Heavyarchiveson/data only.
+
+## Historical superseded snapshot — 2026-09-14 16:28 UTC
 
 LIVE finite replayrepair node2GPU0/guardian402364 since16:25:50UTC,
 source28b44b19, root/tmp/astra_event_two_hop_memory_replay_20260914_attempt1;
