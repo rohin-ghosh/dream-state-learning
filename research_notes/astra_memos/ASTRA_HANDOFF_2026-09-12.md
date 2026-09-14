@@ -2,6 +2,18 @@
 
 ## CURRENT OVERRIDE — September14,2026,12:48UTC
 
+LIVE UPDATE12:53UTC: four repaircells LAUNCHED12:52:55UTC, native model load
+underway after57CPUtests and4actual-sourcePREPARED_NO_MODEL receipts. Immutable
+sourcefbe0981c36c30590b4f640c4134cca48bf36272c, node2root
+/tmp/astra_selected_reader_repair_20260914_attempt1, cells
+AUDIT_SFT_SELECTED(GPU0,guardian377628),AUDIT_SFT_UNIFORM(GPU1,377629),
+AUDIT_LOSS_OFF_SELECTED(GPU2,377630),AUDIT_LOSS_OFF_UNIFORM(GPU3,377631).
+Read{cell}/{train,after}/RESULT.json orFAILED.json and{cell}.log. Do not rerun.
+Distinct initialforks100updates, freshAFTER, next actualaudit. Physical+CVD scan
+passed onall4; preserve GPUreservation through model reloads. No terminaldata.
+Goodall implements reducer/tests; Maxwell independent actualaudit capture.
+This supersedes NOTLAUNCHED statements in the12:48historical snapshot below.
+
 Mission INCOMPLETE; continue four-cell selected-reader repair, not completed jobs.
 SEQ239 both200update lesson fits and parent-free AFTERs COMPLETE. Classifier
 7/16→SFT16/16 vs loss-off7/16, routing3/4both, old8/8both; newexact1/4vs0/4,

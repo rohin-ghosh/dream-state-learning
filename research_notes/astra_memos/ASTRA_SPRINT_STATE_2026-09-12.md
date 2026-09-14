@@ -1,5 +1,12 @@
 ## Current superseding snapshot — 2026-09-14 12:48 UTC
 
+LIVE12:53UPDATE: fourrepaircells launched12:52:55UTC node2GPU0–3,
+guardians377628–377631, sourcefbe0981c36c30590b4f640c4134cca48bf36272c,
+root/tmp/astra_selected_reader_repair_20260914_attempt1.57testsPASS,
+4actual-sourceCPUpreparationsPASS, physical+CVDscansPASS. Native loading underway;
+resultsPENDING. CurrentHANDOFF hascells/commands; preserve reservations across
+reloads. NOTLAUNCHED below is superseded, not another set of jobs.
+
 Mission INCOMPLETE. SEQ239 both lesson fits/AFTERs terminal: narrow parent-free
 classifier SFT16/16 vs loss-off7/16, common7/16. Own routing3/4each, oldW0/W8
 8/8each; newexact1/4vs0/4 is field-specific identity fragility, not broad erasure.

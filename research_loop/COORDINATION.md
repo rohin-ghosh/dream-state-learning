@@ -22024,3 +22024,11 @@ LOSS_OFF_UNIFORM perform physical+CVD scan before model load. Same100update
 declared recipe; no outcome-based cuts. Full command in source/gpu/
 astra_selected_reader_repair_guard.sh; max7440seconds/cell including freshAFTER.
 No jobs killed. Guardians and actual start status follow immediately.
+
+[Builder] 2026-09-14T12:53Z LAUNCHED all4repaircells; guards passed first physical+CVD
+scan and started12:52:55UTC. Node2GPU0AUDIT_SFT_SELECTED guardian377628,
+GPU1AUDIT_SFT_UNIFORM377629,GPU2AUDIT_LOSS_OFF_SELECTED377630,
+GPU3AUDIT_LOSS_OFF_UNIFORM377631. All four began native model load; no terminal
+outcomes yet. Root/source/recipe as above; reserve these GPUs across reloads even
+at0MiB. Main observes execution and integrates; independent analyses run in
+parallel. No fits killed or rerun. Actual repair performance remains pending.
