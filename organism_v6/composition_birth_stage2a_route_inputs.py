@@ -90,6 +90,11 @@ def derive_birth_route_inputs(*, case, record, role_tokens, display_master):
     source = source_inputs.validate_birth_source(
         case=case, record=record, role_tokens=role_tokens, display_master=display_master,
     )
+    return _derive_from_source(source)
+
+
+def _derive_from_source(source):
+    """Internal composition over a verifier-owned reconstructed case."""
     construction = source.case.construction
     rows_by_port = {}
     recovery_owners = {}

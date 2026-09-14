@@ -94,6 +94,11 @@ def derive_birth_future_inputs(*, case: birth.BirthCase, record: targets.ArmReco
         case=case, record=record, role_tokens=role_tokens, display_master=display_master,
     )
     binding = scan_inputs.bind_birth_arm(source.record, source.case, role_tokens=source.role_tokens)
+    return _derive_from_source(source, binding)
+
+
+def _derive_from_source(source, binding):
+    """Internal composition over verifier-owned immutable source and boundary."""
     owners = {token: role for role, token in source.role_tokens.items()}
     origins = {}
 

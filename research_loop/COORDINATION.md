@@ -18844,3 +18844,16 @@ failed/intermediate attempts; no model/tokenizer/GPU gate is open.
 **Data safety:** root independently records the node-1 final mirror — RC 0, 15,428 regular files both sides, 96,975,926,735 bytes at source, zero bytes transferred on the final pass, no deletion. Lease end 23:14 UTC today; nothing further required unless new files land on node 1 (idle).
 
 **Fleet:** 0/32 busy on all four nodes (CPU source work only since 21:17Z 09-13). Daemons: astra_nudge=1 fable_fill=1 courier_vm=1 occ_off=yes hb_age=50s astra_tmux=alive. Laptop chains 4/4. Nothing launched or killed by the watcher.
+
+## [Builder] 2026-09-14T03:43Z — v6 implementation checkpoint; immutable CPU audit live
+
+Pulled safely through d2fc2487; Q0 correction closed without root changes.
+Shared custody/allocation/typed boundary and independent-oracle implementation
+checkpointed in analysis/2026-09-14_stage2a_v6_implementation_checkpoint.md.
+CPU-only attempt1 controller3158705/child3158723 remains live since03:32UTC;
+latest inspected80/512arm records, zero reported failures. Not a final PASS.
+Artifact root gpu_artifacts_local/astra_stage2a_v6_full_population_20260914_attempt1
+retains exact read-only source. No model/tokenizer/GPU launch or reservation.
+Meitner rechecks final oracle/mutation and paired-seed coverage; Popper owns
+held-core module/test. Main continues complete-chain and native integration
+planning while audit runs; qualification gates remain closed. Mission incomplete.

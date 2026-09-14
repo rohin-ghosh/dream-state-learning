@@ -74,6 +74,11 @@ def scan_birth_route_language(*, case, record, role_tokens, display_master, cand
     )
     binding = scan_inputs.bind_birth_arm(source.source.record, source.source.case,
                                          role_tokens=source.source.role_tokens)
+    return _scan_from_inputs(source, binding, candidate_prefix=candidate_prefix)
+
+
+def _scan_from_inputs(source, binding, *, candidate_prefix=None):
+    """Internal finite matcher; input authentication remains with the verifier."""
     prefix = binding.projection_bytes if candidate_prefix is None else candidate_prefix
     scanner.normalize_lines(prefix)
     transitions = source.transitions
