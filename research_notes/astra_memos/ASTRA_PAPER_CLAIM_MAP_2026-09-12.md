@@ -1,6 +1,7 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
-Current reporting cut: see the appended September 14 A3 SEQ-245 addendum.
+Current reporting cut: see the appended September 14 SEQ-246 matched-replay
+addendum (terminal, independent verification pending), separate from A3 SEQ-245.
 Terminal A3 receipts and Goodall's independent six-stage reduction are complete,
 with one matching pair. SEQ-241 independent reduction is also COMPLETE: eight
 stages, two matching pairs; see the status correction below. Earlier cuts remain separate.
@@ -5422,3 +5423,44 @@ Independent receipt: `gpu_artifacts_local/astra_selected_reader_repair_terminal_
 failed/invalid/pending checks. This verifies receipt consistency and mask
 structure, not independent upstream actor/base authentication or tokenizer
 re-encoding; existing numerical results and causal limits are unchanged.
+
+## Evidence addendum — 2026-09-14 — SEQ-246 matched replay
+
+**Terminal; Maxwell's independent reduction pending.** Original SEQ-239
+SFT and LOSS_OFF adapters, not their repaired descendants, receive identical
+A3 actual-reader prompts from the shared BEFORE and SELECTED AFTER packets.
+This is a zero-fit, postselected third-party counterfactual diagnostic with
+receipt-grounded source tables, not either auditor's own on-policy reads or
+confirmatory fresh data. Outputs are new; the selected stimuli are archived.
+
+| Matched endpoint | Original SFT | Original LOSS_OFF |
+| --- | ---: | ---: |
+| Exact source-valid faulty-reader outputs /8 calls | 8 | 2 |
+| Accurate-reader classification /6 calls | 4 | 4 |
+| Overall /14 calls | 12 | 6 |
+| Distinct-prompt correctness /8 | 7 | 4 |
+
+SFT emits eight valid source addresses; LOSS_OFF emits two valid addresses
+and six literal `E_id` outputs marked `INVALID_POINTER`, not NONE or semantic
+abstentions. No pointer repair is applied. The improvement is in exact
+executable, source-valid audit outputs, not isolated semantic judgment.
+Both falsely select source/address index1 twice on the same accurate reply.
+Four addresses yield eight distinct prompts repeated across14 calls per arm;
+these are not14 independent observations. Distinct-prompt counts are descriptive,
+subject to the pending independent verification. The original auditors' true4/6
+must not replace the descendants' own SEQ-245 true6/6/all-NONE result.
+Both receipts report unchanged frozen base, adapter tensors and adapter files;
+fits0, training disallowed. No additional fit was run. This narrows the
+same-stimulus executable-output contrast, not selection/write utility, independent-family
+transfer, H1/H2 or autonomous improvement. Prior failures remain unchanged.
+
+Source `5312cefb`; raw `RESULT.json`, `before_AUDIT.json`,
+`SELECTED_after_AUDIT.json` and call captures for `AUDIT_SFT`/`AUDIT_LOSS_OFF`:
+`gpu_artifacts_local/astra_reader_audit_matched_replay_terminal_20260914_attempt1/extracted/`.
+Locally checked transfer archive SHA256:
+`e613a66b1623212fa7d8ed9f68098a2984e69b9dc38fb2e48efcd619925ae708`.
+
+Claim levels remain separate: **substrate** unchanged-state replay adds no
+acquisition result; **parenting behavior** gains a source-scaffolded matched
+executable-output contrast, not isolated semantic judgment or task-disjoint H1; **later autonomous learning**
+and **self-improving learning** gain no new fit, selection-utility or H2 evidence.

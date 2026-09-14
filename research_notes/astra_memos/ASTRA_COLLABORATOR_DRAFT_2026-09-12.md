@@ -21,6 +21,11 @@ recorded; completed collection was reused. Unseen MISS remains 0/4. This is
 one externally scheduled lineage, not independent replication, H1/H2 or an
 autonomous learning-rate improvement. Independent six-stage reduction confirms one matching pair.
 
+Postselected, source-scaffolded zero-fit replay on identical A3 prompts yields
+original SFT/control exact source-valid fault outputs8/8 versus2/8, true4/6 both
+(SEQ-246; independent verification pending), not isolated semantic judgment,
+on-policy evidence or selection utility.
+
 Next tests should separate selection utility from coverage and assess
 independent-family recurrence and retention. We seek collaborators on those
 controls and field-sensitive failure analysis. This message remains unsent.
@@ -30,6 +35,7 @@ controls and field-sensitive failure analysis. This message remains unsent.
 **Evidence-backed working update — UNSENT.** No message has been sent.
 
 **September 14, 2026 result update — research question unresolved.**
+SEQ-246 matched replay is terminal; independent verification remains pending.
 A3 SEQ-245 is terminal and independently reduced: six stages, one matching
 pair. Its same-parent continuation is reported separately.
 Verified SEQ-240 and independently reduced SEQ-241 repair (eight stages,
@@ -43,6 +49,42 @@ The sprint TeX and companion abstract are updated; canonical
 `paper_prototype/main.tex` was updated separately by Main.
 No complete cross-draft review is claimed. The collaborator draft stays UNSENT;
 H1/H2 and the program remain open.
+
+### SEQ-246: matched actual-reader replay — September 14, 2026
+
+**Terminal; Maxwell's independent reduction pending.** Original SEQ-239
+SFT and LOSS_OFF adapters, not their repaired descendants, receive identical
+A3 actual-reader prompts from the shared BEFORE and SELECTED AFTER packets.
+This is a zero-fit, postselected third-party counterfactual diagnostic with
+receipt-grounded source tables, not either auditor's own on-policy reads or
+confirmatory fresh data. Outputs are new; the selected stimuli are archived.
+
+| Matched endpoint | Original SFT | Original LOSS_OFF |
+| --- | ---: | ---: |
+| Exact source-valid faulty-reader outputs /8 calls | 8 | 2 |
+| Accurate-reader classification /6 calls | 4 | 4 |
+| Overall /14 calls | 12 | 6 |
+| Distinct-prompt correctness /8 | 7 | 4 |
+
+SFT emits eight valid source addresses; LOSS_OFF emits two valid addresses
+and six literal `E_id` outputs marked `INVALID_POINTER`, not NONE or semantic
+abstentions. No pointer repair is applied. The improvement is in exact
+executable, source-valid audit outputs, not isolated semantic judgment.
+Both falsely select source/address index1 twice on the same accurate reply.
+Four addresses yield eight distinct prompts repeated across14 calls per arm;
+these are not14 independent observations. Distinct-prompt counts are descriptive,
+subject to the pending independent verification. The original auditors' true4/6
+must not replace the descendants' own SEQ-245 true6/6/all-NONE result.
+Both receipts report unchanged frozen base, adapter tensors and adapter files;
+fits0, training disallowed. No additional fit was run. This narrows the
+same-stimulus executable-output contrast, not selection/write utility, independent-family
+transfer, H1/H2 or autonomous improvement. Prior failures remain unchanged.
+
+Source `5312cefb`; raw `RESULT.json`, `before_AUDIT.json`,
+`SELECTED_after_AUDIT.json` and call captures for `AUDIT_SFT`/`AUDIT_LOSS_OFF`:
+`gpu_artifacts_local/astra_reader_audit_matched_replay_terminal_20260914_attempt1/extracted/`.
+Locally checked transfer archive SHA256:
+`e613a66b1623212fa7d8ed9f68098a2984e69b9dc38fb2e48efcd619925ae708`.
 
 ### SEQ-245: A3 fresh-bank continuation — September 14, 2026
 
