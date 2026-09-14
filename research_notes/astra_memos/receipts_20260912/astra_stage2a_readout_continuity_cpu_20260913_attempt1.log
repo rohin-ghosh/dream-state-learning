@@ -1,0 +1,15 @@
+OBSERVED_START_UTC=2026-09-14T00:15:37.038862+00:00
+COMMAND=bash gpu/ovx_ssh.sh 'cd /tmp/astra_stage2a_readout_continuity_20260913_attempt1 && sha256sum organism_v6/composition_birth_stage2a_actor.py organism_v6/composition_birth_stage2a_training.py tests/test_composition_birth_stage2a_readout_continuity.py && env CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 /localhome/local-rohing/v2/venv/bin/python -c '"'"'import json, torch, unittest; torch.set_num_threads(1); torch.set_num_interop_threads(1); print("BINDING=" + json.dumps({"torch": str(torch.__version__), "device": "cpu", "generation": "SYNTHETIC_CALLBACK_NOT_HF", "tokenizer": "SYNTHETIC_FIXTURE", "intra_threads": torch.get_num_threads(), "interop_threads": torch.get_num_interop_threads()}, sort_keys=True), flush=True); suite=unittest.defaultTestLoader.loadTestsFromName("tests.test_composition_birth_stage2a_readout_continuity.ReadoutTrainingContinuityTests"); result=unittest.TextTestRunner(verbosity=2).run(suite); raise SystemExit(0 if result.wasSuccessful() and result.testsRun == 2 and not result.skipped else 1)'"'"''
+9b376d43a7564b00ef9e75513853a735103bad3b055e527af97e8ede5359957a  organism_v6/composition_birth_stage2a_actor.py
+7b5669dfccb1ab68e27dd14a9f608ec2d746052484ee3e6c3ca96b4e4efd436e  organism_v6/composition_birth_stage2a_training.py
+a259a03dd53b457743d30ed2a1482729372738130e94b114d01a9aa711899f95  tests/test_composition_birth_stage2a_readout_continuity.py
+BINDING={"device": "cpu", "generation": "SYNTHETIC_CALLBACK_NOT_HF", "interop_threads": 1, "intra_threads": 1, "tokenizer": "SYNTHETIC_FIXTURE", "torch": "2.13.0+cu130"}
+test_failed_readout_preserves_state_without_authorizing_continuation (tests.test_composition_birth_stage2a_readout_continuity.ReadoutTrainingContinuityTests.test_failed_readout_preserves_state_without_authorizing_continuation) ... ok
+test_readouts_preserve_training_boundary_and_d2 (tests.test_composition_birth_stage2a_readout_continuity.ReadoutTrainingContinuityTests.test_readouts_preserve_training_boundary_and_d2) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 14.235s
+
+OK
+TEST_EXIT=0
+OBSERVED_END_UTC=2026-09-14T00:15:53.900959+00:00

@@ -1,6 +1,33 @@
-# Astra restart handoff — September 14, 2026, 00:06 UTC (September 13 Pacific)
+# Astra restart handoff — September 13, 2026, 17:19 Pacific
 
-## Current superseding increment at 00:06 UTC
+## Current superseding increment at 17:19 Pacific
+
+New watcher E0-r relay reconciled against actual bytes/history: memo committed
+September13 04:14:24UTC, already acknowledged23:21UTC, not a new E0 outcome.
+Later21:40/21:51UTC Root ordering stays reducedcontroller -> authentictwo-SLEEP.
+Do not implement oldE0verbatim/restartitsqueue or inferE0rPASS/FAIL fromSEQ195.
+Its12resolvedquestions are E0-specific, not Stage2Aroute/coredefinitions.
+Full reconciliation: analysis/2026-09-13_e0_relay_current_path_reconciliation.md.
+
+Main added two readout/training boundary tests. Node2tinyCPU2PASS14.235s,
+CUDAhidden/allthreads1; realautogradtraining but syntheticgeneration/tokenizer.
+Immediate liveadapter/optimizer/RNG/gradient/mode/config equality precedes
+D2-versus-no-read equality. Failurepreservesstate/custody and latchesactor;
+no failedscreenD2 is run or authorized. IndependentTuringreviewPASS. Pins,
+exactcommand and durablearchive: analysis/2026-09-13_stage2a_readout_training_continuity.md.
+No nativeHF/Qwen/CUDA/learningqualification, no activeCPUtest orGPUexperiment.
+
+James01a09d0f-25f9 owns ONLY screen_custody.py and its test: bounded durable
+sink for existing screenprotocol using exclusive/fsyncwrites/typedencoding/
+tensor-onlysidecars; no materialschema/counterpolicy/qualification change.
+Currently implementation inprogress, not accepted. Turing available for
+exact-byte review afterfreeze. Main owns docs/newcontinuitytest/integration.
+Preserve unrelateddirtyrules and unreviewedTSJdraft. No node1writes/launches/
+kills/curl/wgetretry/approval. Registeredroute/core sourceanswer still absent.
+Next remains completeinventory/sourceaudit, separatepreparation, reduced560
+slotBASE/D1screen then qualifiedauthentictwo-SLEEP. MissionACTIVE/incomplete.
+
+## Historical superseded increment at 00:06 UTC
 
 Single-state reduced-screen runtime source accepted after an independent P2
 rejection/repair. It joins280reservations to public chain/probe calls and

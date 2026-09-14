@@ -1,4 +1,17 @@
-## Current superseding snapshot — 2026-09-14 00:06 UTC (September 13 Pacific)
+## Current superseding snapshot — 2026-09-13 17:19 Pacific
+
+Historical E0-r memo relay reconciled: committedSeptember13 04:14UTC, predates
+acceptedSEQ195/reducedcontrollerordering; noE0execution/pass/fail oroldqueue
+restart inferred. It resolvesE0questions, not Stage2Aroute/coredefinitions.
+Main newcontinuitytest: node2CPU2PASS14.235s with syntheticgeneration/tokenizer
+over real-autograd tinytraining model; exactstatepreservation and D2control
+equality, independentreviewPASS. NotHF/Qwen/CUDA/learningqualification.
+Analysis/pins: stage2a_readout_training_continuity.md in research_notes/analysis.
+James owns new screen_custody.py/test, implementationpending; Mainintegration.
+No activeCPUtest/GPUexperiment; handoff17:19Pacificcurrent. Sourcebinding still
+open; nextreduced560slotBASE/D1 then authentictwo-SLEEP. Fullmissionincomplete.
+
+## Historical superseded snapshot — 2026-09-14 00:06 UTC (September 13 Pacific)
 
 Reduced single-state screen dispatcher accepted after P2accounting-abort
 repair. Final integrated578tests:561PASS/17native-onlyskips,298.369s,

@@ -18123,3 +18123,33 @@ After binding: complete semantic/routeinventory/sourceaudit, separate
 material/tokenizer/runtimepreparation, reduced560slotBASE/D1ATOM_LOCAL then
 qualifiedauthentictwo-SLEEP. No emptyinventory/diagnostic bypass, noSEQ195/Q0
 rerun, noC11revival or G3/H1/H2/parenting/freeze/missioncompletion claim.
+
+## [Builder] 2026-09-13T17:19-07:00 — E0-r relay reconciled; live readout/training boundary checked on tiny CPU fixture
+
+The purportedly incoming E0-r memo already exists at e8fcb7f2, authored
+September13 04:14:24UTC (September12 21:14:24Pacific), SHA256
+2e9b3a0a9c640e741352288b0fde498d3b68039c7ddb8a6c3adc46e4e8d9695d.
+Its full-dose AUTH/SWAP/absence/cleanactor proposal and twoA40hour cap are
+preserved, not mistaken for an executedresult or authority to narrowthesis.
+Do not implement oldE0verbatim. Its12answers do not resolve currentStage2A
+route/corebindings. LaterSEQ195/reducedcontrollerordering remains active,
+without claimingSEQ195passedE0r. Reconciliation:
+research_notes/analysis/2026-09-13_e0_relay_current_path_reconciliation.md.
+
+Mainnewtest combines acceptedactor/trainer interfaces on one tinyCPUmodel:
+2PASS14.235s, observed17:15:37–17:15:53Pacific, CUDAhidden/allthreads1.
+Actualautogradtraining with explicitly syntheticgeneration/tokenizer, not
+HF/Qwen/CUDA/learningqualification. Immediate liveadapter/optimizer/TorchRNG,
+populatedgradients/mixedmodes/config unchanged underhigh64readouts; D2matches
+no-readcontrol. Failedread leavesstate unchanged/latchesactor; nofailedread
+D2continuation. Turingread-onlyreviewPASS. Exactreceipt/pins/archive/command:
+research_notes/analysis/2026-09-13_stage2a_readout_training_continuity.md.
+Native receiptSHA2560a360fce49b78d4a721136983cb3b2b4bc46c3096d0158218a405aabb697f203.
+
+James owns only new screen_custody.py/test: reuse exclusivefsyncwrites and
+typedbuiltin/tensor-only storage for existing screenevents. Exceptionmetadata
+is diagnostic, not originalobject preservation; incompleteexports mustfail,
+not get scientifically promoted. This is runtimeplumbing, not revivedC11.
+No nativeQwen/tokenizer/GPUscience/node1write/launch/kill/curl/wgetretry or
+approval request. No activeCPUtest. Actualroute/corebindings still unanswered;
+fullmission remainsactive/incomplete, same nextreducedscreen/authenticjunction.
