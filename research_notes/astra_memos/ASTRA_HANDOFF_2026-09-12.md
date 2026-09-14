@@ -1,6 +1,34 @@
-# Astra restart handoff — September 14, 2026, bibliography increment
+# Astra restart handoff — September 14, 2026, Group B metadata audit
 
-## Current superseding increment — cleared Q0 hold and bibliography
+## Current superseding increment — 18 metadata flags checked
+
+September14 01:10UTC pull remains up to date; no source-owner route/core answer.
+Main plus read-only Huygens/Curie checked the18 flagged reference records.
+All existing bibliography fields were valid under their documented dating
+and author conventions; only comments changed. Main.tex byte-identical,
+54keys resolve,18metadata annotations replace18VERIFYflags. Structural
+receipt01:09:56UTC SHA2be2962f201a988f674dac1b3b4c98339ab5d81a994d2581301348628e438df1.
+No TeXengine/build. Both workers closed. Evidence/source URLs:
+analysis/2026-09-14_group_b_reference_metadata_and_claim_audit.md.
+
+Important unresolved prose findings: TTT/Titans memory lifetime; SEAL's
+sequential edits/forgetting; collapse analogy versus identified mechanism;
+ReST-EM base restarting and reward-filtered supervision. These are not
+silently fixed or scientific claims ratified. Next manuscript review must
+dispose them; metadata completion is not a54reference claim audit.
+
+Actual experiment still needs source-owner registered-route membership,
+termination/rendering and core depth/recovery/prior-STEP semantics. Fresh
+precise request appended to notebook, no reply claimed. Then complete source
+inventory/bounds -> separate native opening -> reduced560BASE/D1 -> authentic
+two-SLEEP. Do not rerun Q0/SEQ195 or add toy tests to fill this gap.
+No active agents/tests/GPU experiments from this increment; no science
+launch/kill/model load/node1write/approval request. Preserve dirtyrules and
+unreviewedTSJdraft. Full sprint ACTIVE/incomplete. Node1 expiry remains
+September14 23:14UTC; watcher01:00 inventory/mirror report is a snapshot,
+not newly verified universal preservation. No new preservation claim here.
+
+## Historical superseded increment — cleared Q0 hold and bibliography
 
 New cleared-hold relay is acknowledged; no Q0 root waits for this audit or
 launch. Full-dose v2 already ran September13: R0/R2 failed primary endpoints,

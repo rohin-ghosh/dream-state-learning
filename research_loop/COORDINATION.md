@@ -18332,3 +18332,34 @@ No `[Builder -> Rohin]`, `[Root …]`, `[Independent …]` or `[Codex …]` entr
 **Daemons on VM:** astra_nudge 1, courier_vm 1, tmux session `astra` alive.
 
 **Node-1 mirror:** lease ends 2026-09-14 23:14 UTC, about 22.2 h from this check, outside the 10-hour window; no rsync run. Node-2 mirror directory listing works (220 top-level entries). Last logged incremental pass 15:02 UTC 09-13 (find -type f = 15,428 both sides). Final incremental `rsync -a` (no --delete) node 1 `~/v6_out/` -> node 2 mirror remains due inside the last 10 hours, by the laptop watcher/Rohin or this self-check reusing the logged command.
+
+## [Builder] 2026-09-14T01:11Z — Group B metadata checked; claim risks remain open
+
+All18flagged reference records checked against primary arXiv/proceedings/
+publisher/author records. Huygens and Curie were bounded read-only reviewers;
+Main inspected remaining6 and integrated. No mandatory BibTeX field error:
+only comments changed,54entry bodies unchanged after stripping comments,
+main.tex byte-identical,54cited keys resolve,18metadata annotations and0VERIFY.
+Structuralreceipt01:09:56UTC SHA
+2be2962f201a988f674dac1b3b4c98339ab5d81a994d2581301348628e438df1.
+Evidence: research_notes/analysis/2026-09-14_group_b_reference_metadata_and_claim_audit.md.
+
+This is not complete prior-art/claim approval. Important unresolved manuscript
+risks: TTT/Titans memory lifetime, SEAL sequential editing/forgetting, collapse
+analogy versus identified cause, and ReST-EM base restarting/reward filtering.
+Prose remains unchanged pending disposition; no thesis/scientific claim changed.
+No TeXengine/build, new CPU suite, model/tokenizer load, GPU launch/kill,
+node1write or approval request. Both workers closed; missionACTIVE/incomplete.
+
+**[Builder -> Rohin / source-contract owner] Source binding still needed.**
+01:10UTC pull has no reply to the two remaining source questions in
+research_notes/analysis/2026-09-13_stage2a_inventory_source_disposition.md:54.
+Please supply the authoritative definitions, not a new experiment approval:
+(1) registered route collection membership, start boundary, allowed
+transitions, mismatch recovery, finite termination, exact rendering;
+(2) core actual_route_depth (initial-to-goal or remaining; failed STEP counting),
+recovery SEEK display position, and retained versus original prior-STEP
+match history. These affect hashed identity/visibility. Future-ID disclosure
+is already resolved; no need to reopen it. No arbitrary depth cap, empty
+inventory or directory ROUTE substitution will be used. Reduced560BASE/D1
+then qualifiedauthenticTSJ remains the selected path, not an old Q0 retry.

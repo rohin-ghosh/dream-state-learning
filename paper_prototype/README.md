@@ -1,6 +1,16 @@
 # Experience Models — ICLR 2027 submission (revised draft v3, 2026-09-10 fix pass)
 
-**Bibliography update — September 14, 2026 UTC.** The two former TODO
+**Group B metadata audit — September 14, 2026 UTC.** The remaining 18 flagged
+references have now been checked against primary records; no BibTeX field
+corrections were required. Only bibliography comments changed. Manuscript
+prose, all 54 citation keys and all bibliographic fields are unchanged.
+This is not a complete claim audit: the review identifies unresolved scope
+problems involving TTT/Titans, SEAL, recursive-data collapse and ReST-EM.
+No TeX build or scientific approval is claimed. Evidence and source locators:
+`research_notes/analysis/2026-09-14_group_b_reference_metadata_and_claim_audit.md`.
+The 18 pending flags in the previous snapshot below are superseded.
+
+**Earlier bibliography update — September 14, 2026 UTC.** The two former TODO
 citations are now verified, versioned arXiv entries: `ye2026autodreamer`
 and `zhang2026faultymemories`. All54 cited keys in `main.tex` resolve; all52
 previous bibliography entries and the abstract/results prose are preserved.

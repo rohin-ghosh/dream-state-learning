@@ -1,4 +1,22 @@
-## Current superseding snapshot — 2026-09-14 bibliography increment
+## Current superseding snapshot — 2026-09-14 Group B metadata audit
+
+18flagged bibliography records now checked against primary sources; no field
+corrections required. All54noncomment entry bodies unchanged, main.tex
+byte-identical,54cited keys resolve. Receipt01:09:56UTC
+SHA2be2962f201a988f674dac1b3b4c98339ab5d81a994d2581301348628e438df1.
+No TeXengine/build, no blanket bibliography/claim approval. Bounded audit
+flags TTT/Titans lifetime, SEAL sequential editing, collapse mechanism analogy,
+and ReST-EM distinction risks; manuscript prose unchanged pending disposition.
+SourceURLs/limits: analysis/2026-09-14_group_b_reference_metadata_and_claim_audit.md.
+
+Source route/core reply still absent at01:10UTC pull. Precise source-owner
+request appended to notebook; no invented route inventory or semantics.
+Next remains completeinventory/bounds -> separatenativeopening -> reduced560
+BASE/D1 -> qualifiedauthenticTSJ. No Q0/SEQ195 rerun, GPU experiment, model
+load, node1write or approval. Both read-only workers closed. Full mission
+ACTIVE/incomplete; scientific conclusions and reserved invariants unchanged.
+
+## Historical superseded snapshot — 2026-09-14 bibliography increment
 
 Q0forensic hold cleared, but roots already terminalSeptember13; no launch
 pending or full-dose-unmeasured claim now. R0/R2 primaryFAIL, R1 missing
