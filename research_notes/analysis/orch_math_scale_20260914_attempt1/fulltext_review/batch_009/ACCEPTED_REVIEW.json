@@ -1,0 +1,339 @@
+{
+  "gold": {
+    "gsm8k-train-1895": {
+      "independent_answer": "180",
+      "question_sha256": "ab215feab94e1c288cfd2b2ae992b5382075066908ef7a73111c1a1d45b395eb",
+      "reason": "Wednesday is 50% less than Tuesday: 50 \u00d7 0.50 = 25 km. Thursday is 40 + 25 = 65 km. Total: 40 + 50 + 25 + 65 = 180.",
+      "status": "VALID"
+    },
+    "gsm8k-train-1953": {
+      "independent_answer": "570",
+      "question_sha256": "8167626c4c2aab70e31e934fa565d5d086198c745d092fa6c33af085da48af5c",
+      "reason": "The school buys 2 + 2\u00d72 = 6 models. A 5% reduction makes each $100 model cost $95, so 6 \u00d7 95 = 570.",
+      "status": "VALID"
+    },
+    "gsm8k-train-3272": {
+      "independent_answer": "1800",
+      "question_sha256": "2c0c231c7df238746296e34bd9eb471a321ad323cc7bee69f2bef02fe1575b7d",
+      "reason": "The saving is 5 \u00d7 0.80 = 4 gallons per flush. Across 15 flushes per day and 30 days in June, the saving is 4 \u00d7 15 \u00d7 30 = 1800 gallons.",
+      "status": "VALID"
+    },
+    "gsm8k-train-3557": {
+      "independent_answer": "1000 or 1001",
+      "question_sha256": "620deb4962d2d652017fb2a5cfedaebfb898ed1034bd4e2f80de2aa103cd60a3",
+      "reason": "The 20% margin is 2000 L \u00d7 0.20 = 400 L = 400,000 ml, equal to 1000 losses of 400 ml. After 1000 jumps the pool is exactly 80% full, while the 1001st makes it below 80%. Thus 1000 is the number of safe completed jumps, but 1001 can be read as the jump that triggers cleaning.",
+      "status": "AMBIGUOUS"
+    },
+    "gsm8k-train-515": {
+      "independent_answer": "Underdetermined",
+      "question_sha256": "4b4badd2334c21d6585ba9e650b8f66849ba93daeed643336ffc3583463846f9",
+      "reason": "The drop is (32\u22128)/3 = 8 intervals, but the initial skidding probability at 32 degrees is unstated, and \u201cincrease 5%\u201d could mean percentage points or a relative increase. The gold 24 follows only by assuming a zero baseline and eight additive 5-point increases: 40% \u00d7 60% = 24%.",
+      "status": "AMBIGUOUS"
+    },
+    "gsm8k-train-5691": {
+      "independent_answer": "38",
+      "question_sha256": "70d9128e3eeeed2e881781564ec5854b6b12e4fd8c7ea4d8ccef9205762f681a",
+      "reason": "The undiscounted meal is 8 + 20 + 2\u00d73 + 6 = 40, so the tip is 40 \u00d7 0.20 = 8. Half off the $20 entr\u00e9e reduces the charged meal to $30; adding the tip gives 38.",
+      "status": "VALID"
+    },
+    "gsm8k-train-801": {
+      "independent_answer": "345",
+      "question_sha256": "1a41c67cfa37ab5932e8605acc5068d2d25276751ad345b879c475f2fef6a9f5",
+      "reason": "Tax and tithe are each 500 \u00d7 0.10 = 50. Total deductions are 50 + 55 + 50 = 155, leaving 500 \u2212 155 = 345.",
+      "status": "VALID"
+    },
+    "gsm8k-train-975": {
+      "independent_answer": "112",
+      "question_sha256": "530070ec2a146eb095d0163efe01debf83a2c9c8765daf41e8e256210768abfe",
+      "reason": "John plays 20 \u00d7 0.80 = 16 games and receives 5 \u00d7 2 = 10 attempts per game, for 160 attempts. He makes 70% of them: 160 \u00d7 0.70 = 112.",
+      "status": "VALID"
+    }
+  },
+  "reviews": {
+    "gsm8k-train-1895:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the distance for Wednesday",
+        "\\(40 + 50 = 90\\)"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All claims are supported by the problem and neutral solved-task history. The explicit arithmetic verification is self-checking, not a claimed external event.",
+      "raw_call_sha256": "0403787e7999a9e2e20b87f48d29925b1fcb2990eebee95bab1115ca50771912",
+      "reason": "The response gives a first-person derivation of 25 km and 65 km, totals them correctly, and verifies the sum through the concrete sequence 90, 115, 180. Its percentage and dependent-day operations are reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "b78344ee24e958ff257ac2cfb0277cbaaf32b0d8b3f9754222437ef7cbf64839",
+      "target_sha256": "75b1093878d332f0bc9256a25c5dfae42761102a031d43712dcb44210c7b0da6"
+    },
+    "gsm8k-train-1895:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "50 - 25 = 25 kilometers",
+        "I add up all the days"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target relies only on the stated daily distances and explicit arithmetic; its first-person summation is a self-performed operation.",
+      "raw_call_sha256": "65452e8a55e75018d91685469f5eaf7c2142ab3ee27a7c53dd7b09b21511fb88",
+      "reason": "It correctly calculates Wednesday as 25 km, Thursday as 65 km, and the four-day total as 180 km. \u201cI add up all the days\u201d is a substantive first-person operational account.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "83e8f7cd52b43620c9ce8cc3a0fc36444c0ffed62c178ea286e099f4c8bc882a",
+      "target_sha256": "dd2f139ddb9124a88a615e9bd64fa3229a418b6d96dba56721352577f0fca250"
+    },
+    "gsm8k-train-1953:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the total cost without the discount",
+        "Correctly calculated the total number of models bought."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": false,
+      "prefix_reason": "The first-person calculations are supported by the supplied problem and solved-task history; \u201cI checked\u201d describes self-checking rather than an external checker event.",
+      "raw_call_sha256": "cbf8d8829ad0d266eda55f263eda60b6a20a6075887722c658ad3bee3ba2c0ba",
+      "reason": "The arithmetic, operational account, numerical expectations, and reusable discount method are sound. However, the three-item verification section merely asserts that steps were \u201cCorrectly\u201d done without performing a new concrete check, making it generic padding.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "c6a63dd0ce6b2f590c4ebfa5a4223f6db435a19742347d21414022d564c33c08",
+      "target_sha256": "91aa4c04b1d8cb4e88f890d90b04e38fa506f59b9291bc729703ebffb1041c17"
+    },
+    "gsm8k-train-1953:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Total models bought = 2 + 4 = 6 models.",
+        "Total cost with discount = $600 - $30 = $570."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every factual claim and calculation follows from the question; there is no claimed external feedback or hidden event.",
+      "raw_call_sha256": "f0728f0acd9d69e5e8db67c4557cc6f3c2f205d3d254bc7b835de1789234b508",
+      "reason": "The response correctly obtains 6 models, a $30 total discount, and a $570 payment, with concrete numerical checks. It fails only because it gives no substantive first-person account of applying the operations.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "d2436af83aba5db786593b9830ab5e9333b3942e972203a468f5b3086ae69069",
+      "target_sha256": "4fb767ad9637974f2f897b2627507a613f5922eeb9040b558ec79e4e964825c6"
+    },
+    "gsm8k-train-3272:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first needed to determine the water usage per flush",
+        "\\[ 60 \\text{ gallons/day} \\times 30 \\text{ days} = 1800 \\text{ gallons} \\]"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All first-person calculations and self-checks follow from the supplied problem and neutral solved-task history; no outside checker or feedback is claimed.",
+      "raw_call_sha256": "cc46da67475eba4c1da141eb871f8c2105bfa60a4ac6181a10068e6aa33fc43b",
+      "reason": "It correctly explains that 80% less leaves 20% usage, calculates 1 gallon per new flush, 60 gallons saved daily, and 1800 gallons over June. The checks are concrete and the percentage-reduction workflow is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "1305c718abcb3857337b8405e640ed8774af61f0f60c21c8dccf05f0ba321829",
+      "target_sha256": "66fa0c105b163282237b78477a288bb1126318f23c931225be11765fc9199fb2"
+    },
+    "gsm8k-train-3272:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "20% of 5 gallons = 0.20 * 5 = 1 gallon per flush.",
+        "60 gallons/day * 30 days = 1800 gallons."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The percentage reduction, daily flush count, and June's 30 days support all calculations, with no external event or hidden guidance claimed.",
+      "raw_call_sha256": "b70bc2c1f49ff9997b3a91b2f0487aa97c7178561673d445c1e8d6c93366a44b",
+      "reason": "The response correctly converts an 80% reduction into 1 gallon remaining per flush, computes daily savings of 60 gallons, and multiplies by 30 days for 1800. It fails because its presentation is entirely impersonal and contains no own operational account.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "7e0f30c49a4c1e6a5cc1252dbfb30c2c0d3eeef94fe709e52a0e134d8113f3af",
+      "target_sha256": "ef34bff0e36410b2271db0a406437b05022b3551cc8998ed64c8a0b93fe5ad5b"
+    },
+    "gsm8k-train-3557:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I needed to determine how many jumps can occur",
+        "1000 jumps * 400 ml/jump = 400,000 ml"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's first-person calculations and inverse multiplication check are supported by the supplied history and arithmetic, with no claimed outside validation. It adopts the supportable interpretation counting jumps that leave the pool at or above 80%.",
+      "raw_call_sha256": "1561ff04c09fb1cba4d70958c0a705c1af2419e950d46e1ee64034d8633a9260",
+      "reason": "It consistently converts liters to milliliters, computes the 400,000 ml boundary margin, divides by 400 ml per jump, and verifies the result by inverse multiplication. It also explains when the conversion-and-rate method is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "b537f1cfa5ff12cfb1a3d85c2272fc8006aad5af72f6495385cffd1e7656e97d",
+      "target_sha256": "32782402e25f6cee308cdb5261ec054ee74a633d665ca5e3bb3997f4857e2066"
+    },
+    "gsm8k-train-3557:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "2000 L = 2,000,000 ml",
+        "400,000 ml / 400 ml per jump = 1000 jumps"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The unit conversion, 80% boundary, and 1000 safe-jump calculation are supportable from the question. The wording does not claim an external check, though the question itself leaves a boundary-count interpretation.",
+      "raw_call_sha256": "f30e30ad6cd2ae2057e1f715ef369da0b1a2412f941b4baafa4a334bfd6c369f",
+      "reason": "The response correctly computes the 400,000 ml margin and 1000 jumps to reach exactly 80%. This is a supportable safe-jump interpretation, but the response is wholly impersonal and therefore lacks the required own operational account.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "fda4cfc3fd61cd4f34cda480435e06f265b2d7b50e7693d99447c0cf85ca0668",
+      "target_sha256": "268293176908b0d2671b9f7ef5ad2aae5abf5d44529a7df209906650498dcf1f"
+    },
+    "gsm8k-train-515:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the number of 3-degree intervals",
+        "This means the chance of skidding is 40%."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "Neither the question nor neutral history supplies a zero baseline or resolves percentage points versus relative percent. Repeating the prior solution does not make the unsupported absolute 40% skidding probability grounded.",
+      "raw_call_sha256": "769d333f5ab0ed8ef6b495f417c10d86e83e9d4629cf08572138323f08aead08",
+      "reason": "The target gives a clear first-person probability method and concrete calculations, but \u201cThis means the chance of skidding is 40%\u201d does not follow without an unstated baseline and interpretation of \u201cincrease 5%.\u201d Consequently its 24% result is not fully grounded.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "53f3fb618b2d50e5bead040e934870001ba33156fc963e150d9b4f7df11b25c9",
+      "target_sha256": "e4607eed8b7f0771822f531491f76b71fc57a8e3cbf2a00df926ff71aa4f1e9a"
+    },
+    "gsm8k-train-515:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I calculate the increase in skidding chance",
+        "Total increase in skidding chance: 8 * 5% = 40%"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The prefix supplies no skidding probability at 32 degrees and does not specify whether each 5% increase is additive percentage points or relative. Thus it cannot support treating the 40% increase as the absolute skidding probability.",
+      "raw_call_sha256": "c7bae2032367426fdd2a4f3f95a616fd0eac13de71197ac3803c0f901aaef905",
+      "reason": "Although the first-person arithmetic is internally consistent under an implicit zero-baseline, additive-percentage-point model, the response unsupportedly equates an eight-step 40% increase with a 40% absolute skidding chance. The final 24% therefore rests on an unstated assumption.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "72f5dc2210f19f09a5c327d42451b2521b52fe0dd88dcf257f5b7924bf679a3b",
+      "target_sha256": "aeba0bd27025917bf64547239ecfd2aa574aa1545560a329a4072fb7b7ee0ec9"
+    },
+    "gsm8k-train-5691:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the total cost before applying the discount",
+        "\\[ 0.20 \\times 40 = 8 \\]"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person work is fully supported by the question and prior neutral solution. \u201cI checked\u201d refers to the shown self-verification, not an unmentioned external checker.",
+      "raw_call_sha256": "804f60400c7a6bfe024d8b53e121221ce5766b4703169e0988daea429cf0603e",
+      "reason": "The response correctly distinguishes the original $40 meal used for the tip from the discounted $30 charge and obtains $38. Its calculations are concrete, relevant, first-person, and reusable for discounts followed by tips on a different base.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "10b0ecd7eb10bd2d90c2384f3a7ff8fd9b917d5d12f580ecbc443cc5772ace6d",
+      "target_sha256": "860806f97c7986ba79009d9bba3e38ec29d92693f257966c4bd233d21c2bfb6d"
+    },
+    "gsm8k-train-5691:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculate the cost of each item",
+        "20% of $40 = 0.20 * $40 = $8"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The item totals, entr\u00e9e discount, and tip basis are stated in the question and verified through explicit arithmetic in the target.",
+      "raw_call_sha256": "f462e389f314626b0e70ff143bbd344f2467322a215af1d1a50a8f1d291268f3",
+      "reason": "It correctly computes the $40 undiscounted total, $30 discounted charge, and $8 tip based on the undiscounted amount, then adds them to obtain $38. The first-person operations and distinct discount/tip bases are clear and reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "4cb0bda01dacaeb74df526c2a1d5f6c633324fd190a345a62039ee16867c355e",
+      "target_sha256": "947f8ee27e5543c4d62822a643827b9728c936ece7f682ebe306fbb20cbe9c71"
+    },
+    "gsm8k-train-801:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the tax deduction",
+        "the sum of the deductions ($50 + $55 + $50) equals $155"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All quantities and calculations are available in the neutral history. The stated verification is an explicit self-check using shown arithmetic, not unsupported checker feedback.",
+      "raw_call_sha256": "e3fe2fa91cbb1f32614ce6f14d643a6199f9a01ba65777d6457f18b53b555a1d",
+      "reason": "The response provides a substantive first-person solution, correctly derives $50 tax and tithe deductions and a $345 remainder, and checks both the $155 deduction total and final subtraction. It states when percentage calculations are reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "8b7c950eec87cd04bed752a24138dbc1bfa761d2a0a8204ccff08cc207d9f45a",
+      "target_sha256": "42d6ab14251aed71c93b383acd0f84e50092a0b29aaf38284accd80d8a1c99af"
+    },
+    "gsm8k-train-801:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I calculate the tax deduction",
+        "$500 - $155 = $345"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The income, deductions, and arithmetic all come directly from the question, and the first-person statements describe the target's own calculation.",
+      "raw_call_sha256": "65a21bdbbc6378ca2793761f0a4553fa57fbeb19fb6bfe8d18a8c5fa8461f1ed",
+      "reason": "It correctly calculates two $50 percentage deductions, combines them with the $55 bill to get $155, and subtracts that from $500. The response is first-person, checkable, concise, and operationally reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "55bab4b585852c0e3eaad65a5979dc58094d3a0b96eb169454332172c4cdb5ab",
+      "target_sha256": "570558339ab737cb6913013a34be893d1297ae438cd2b8b8ed3978284a57cced"
+    },
+    "gsm8k-train-975:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "20 \\times 0.80 = 16 \\text{ games}",
+        "The number of free throws John gets is the total number of attempts"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The prefix supports calculating 160 attempts and then applying the stated 70% hit rate. It does not support equating attempts with the requested made free throws while discarding that rate.",
+      "raw_call_sha256": "193c5e30b2971e8b8bc98ef14f5dd3b4d67f2e38cb3328649733310525d289fc",
+      "reason": "The impersonal response correctly computes 16 games and 160 attempts, but incorrectly reports attempts as the answer and never applies the 70% success rate; the supported result is 112.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "8254fb3f14a3b807f408bba7f1dba99f1dbcd65755fc54ead4450810f5c4cbe6",
+      "target_sha256": "5499d398d05400ba4ed6c90e7a089a5b3fe54f41425f5954f4cab1d5eb03a226"
+    }
+  }
+}

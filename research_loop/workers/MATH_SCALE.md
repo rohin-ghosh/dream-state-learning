@@ -33,3 +33,26 @@ and validators unchanged; original raw reviewer result/FAILED receipt retained.
 Explicit replacement bound in batch008/AUTHOR_REASSESSMENT.json; no new model.
 Complete immutable batches published only; candidate counts are not admissions.
 Independent Gauss historical review and Main conservative join remain separate.
+
+2026-09-14T23:55:42Z bounded progress: capture019 contains1092persisted calls,
+566/1024initial rich attempts and526NEWrecords. Completed immutable batches000–024
+cover386fulltexts/200questions. Strict partial author-side admission228distinct
+targets=83rich+145NEW, NOT whole-corpus admission or an independent blind audit.
+Gold review184VALID/13AMBIGUOUS/3INVALID; suspect gold stays outside admission,
+source outcomes and fixed1024denominator unchanged. Collection/review incomplete;
+fit_ready=false, fits0. Exact reduction and hash bindings:
+research_notes/analysis/orch_math_scale_20260914_attempt1/progress_20260914T235542Z/REDUCTION.json
+and AUTHOR_PROGRESS.json. Native root remains node2
+/localhome/local-rohing/orch_math_scale_20260914_attempt1; finite guardian unchanged.
+Gauss clarification agrees with already-published bounded four-case disposition:
+operation-result expectations during derivation need no separate verification,
+second method or future tense. Three author admissions remain defensible;
+overtime is an axis-only dispute because both original reviewers reject ownership.
+Neither3nor28 is canonized; no old scores or new substantive gates changed.
+Batch021positive reader span failure retained; author independently full-read
+and reassessed1077richPASS with literal raw spans. Batch008/012negative
+reassessments also retain original failures; atomic batch revalidation releases
+other already-bound judgments and changes aggregate bookkeeping explicitly.
+Runtime memory cap remains2/1/0 at3GiB/1.5GiB; existing readers finish after dips,
+no new second reader below3GiB. No local model, unknown kills, fit, expansion,
+or SEQ request. Publishing completed packets only, not running reader logs.

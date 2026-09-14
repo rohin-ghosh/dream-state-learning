@@ -1,0 +1,359 @@
+{
+  "gold": {
+    "gsm8k-train-1799": {
+      "independent_answer": "50",
+      "question_sha256": "f3205b99ee015aec9c06db45b224e6994546bb5ff27255755769193d16225338",
+      "reason": "Guitar Center costs 1,000\u00d70.85+100=950 dollars. Sweetwater costs 1,000\u00d70.90=900 dollars. The cheaper-store saving is 950\u2212900=50 dollars, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-3785": {
+      "independent_answer": "95",
+      "question_sha256": "49aff1d8e6761910aecf3b6712db9eecf0a31fafc24d7ee5d9c27c49009b67bd",
+      "reason": "For three equally weighted tests, (95+80+x)/3\u226590. Thus 175+x\u2265270 and x\u226595, so the minimum required score is 95, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-4883": {
+      "independent_answer": "300",
+      "question_sha256": "7b48ab4604c9aa08d375e78a7db96f6b3188279f4fbdd635db98fa67a74505a9",
+      "reason": "Thirty minutes at 300 dollars per hour costs 150 dollars. The pre-insurance total is 1,200+150+150=1,500 dollars. Tim pays the uncovered 20%, so 1,500\u00d70.20=300, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-5507": {
+      "independent_answer": "550",
+      "question_sha256": "68749ff6f3bc91b38fdb3dfc2a33aa976bf2b26e0219f2f83ba5f6ffff22f787",
+      "reason": "Staying 20% under 1,000 pounds gives a maximum combined load of 1,000\u00d70.80=800 pounds. Subtracting John's 250 pounds leaves 800\u2212250=550 pounds for the bar, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-5634": {
+      "independent_answer": "1104",
+      "question_sha256": "bfe27602749a819f76145073553febb62d9d4db05e7c14e9e0eb88bc0cc85436",
+      "reason": "Paper sales are 32,000\u00d70.20=6,400, giving 6,400\u00d70.06=384. Hardcover sales are 15,000\u00d70.40=6,000, giving 6,000\u00d70.12=720. Total earnings are 384+720=1,104, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-6357": {
+      "independent_answer": "11",
+      "question_sha256": "1f36d291f59f1ad22a65aa86467ed3e6274a7faea9ac703dac2f4a851e568af2",
+      "reason": "The tax is 50\u00d70.10=5 dollars, so the game costs 55 dollars. Nina saves half of 10 dollars, or 5 dollars weekly; 55\u00f75=11 weeks, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-7259": {
+      "independent_answer": "46",
+      "question_sha256": "6827a36f32e0cc4b7f0a50e63d0ab8e19a91bae9b7227583ca63f1785fddbb3c",
+      "reason": "The 30% increase is 20\u00d70.30=6 cups, so this week's sales are 20+6=26. Both weeks total 20+26=46 cups, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-7274": {
+      "independent_answer": "Underdetermined (0%-20%)",
+      "question_sha256": "a06f449615bbb33196425b4a36a93d171f66b61b5548bcfa486c1b3b2947e5a1",
+      "reason": "Night willingness is 100%\u221270%=30%, but the intersection of 20% knowing Excel and 30% accepting nights cannot be computed without their dependence. Its possible probability ranges from 0% to 20%; 6% follows only from an unstated independence assumption. Additionally, literal odds would differ from probability.",
+      "status": "AMBIGUOUS"
+    }
+  },
+  "reviews": {
+    "gsm8k-train-1799:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find the cheaper store and the savings, I calculated the total cost for each store.",
+        "The difference in cost is \\(950 - 900 = 50\\)."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's store totals and comparison are supported by the question and prior response, and its stated comparison is an internal arithmetic check.",
+      "raw_call_sha256": "0a1cff083a11096b1d848c93164578289636bc37fa35bc12df4b2dbc2a09a461",
+      "reason": "The response substantively describes its own calculations, correctly applies each discount and shipping fee, and compares the concrete totals to get $50. Its final-price method is task-grounded and reusable, with no irrelevant material.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "5455d949a517ad3d6ac5d2306a37e6ec08936f8d2c85802046d6bb53660f70ac",
+      "target_sha256": "1fb07976a30dbc4e19049f897c3ac0998bc5741f097018d0aa3bf2e9c17c373d"
+    },
+    "gsm8k-train-1799:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, calculate the price at Guitar Center:",
+        "The difference in cost is \\(950 - 900 = 50\\)."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The discounts, shipping treatment, totals, and difference are all supported by the question and explicit arithmetic; there are no external-event claims.",
+      "raw_call_sha256": "d4067a37e2deb4758ef474e92b6b01ca4edc522b27704670f7f657fcf1e4294e",
+      "reason": "The store totals of $950 and $900 and their $50 difference are correct, concrete, and demonstrate the reusable operation of applying discounts before shipping. The response is entirely impersonal, using commands such as 'calculate,' so it lacks a substantive first-person account.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "fee5fc80d8b267562432dc4e874b9048ffe3d39c4e52c303620b56d94c4327ca",
+      "target_sha256": "47d69f4090e5235f7f3495aadf044d6a8ab2a93cd369e08cee35f6dc62e72ba6"
+    },
+    "gsm8k-train-3785:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To solve for \\( x \\), I first multiplied both sides by 3 to eliminate the denominator:",
+        "\\text{Average} = \\frac{95 + 80 + 95}{3} = \\frac{270}{3} = 90"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's equation and substitution check are supported by the question and prior solution and are explicitly verifiable in the target itself.",
+      "raw_call_sha256": "c87b08180936fb34cfcf692feb47e07bcafa3e5cc3dc1c143bd0881cb6b905ca",
+      "reason": "The first-person account correctly finds the boundary score x=95 and interprets it as the minimum for an average of at least 90. Substitution produces the concrete check 270/3=90, and the average-equation operation is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "4ddeb81baceaf08de452f118090a9e6ff607a8e24594bae8f2e9eaa89c11a9c6",
+      "target_sha256": "ee95babe45f95f0e732efdbc9ee4b3c7d3118d0dbd096d7a69b8771c4ceb27e4"
+    },
+    "gsm8k-train-3785:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I set up the inequality:",
+        "175 + x \\geq 270",
+        "x \\geq 95"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person wording frames Kat's given scores while all mathematical claims are directly supported by the question and displayed algebra; no external event is invoked.",
+      "raw_call_sha256": "784b1ea306836d3a6f6e5c59fb73c02a380f305d8a85d6962b9a91da437b909a",
+      "reason": "The response substantively describes setting up and solving the average inequality. Its arithmetic gives the concrete threshold x\u226595, and the sum-divided-by-count method is a reusable operation for equally weighted averages.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "d16365efb286e31b6d2cd176670ec648d11309cfe9ce464118d682365cda85fd",
+      "target_sha256": "5a314753a94c656ec8e1bd72903813f648d5f8b89c3d90e2c93c65cf56c2fac5"
+    },
+    "gsm8k-train-4883:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the total cost before insurance:",
+        "The operations I used are straightforward arithmetic calculations, and the result aligns with the problem statement."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": false,
+      "prefix_reason": "The target's calculations and self-verification are supported by the question and preceding solution; it does not attribute success to an external checker.",
+      "raw_call_sha256": "22e32b526da255f7b4699f6d8c24add6522f4bb79d8c98438b293bd26eeedaf3",
+      "reason": "The first-person arithmetic is correct, and $1,500\u2212$1,200=$300 supplies a concrete check while the out-of-pocket-cost method is reusable. However, the standalone claim that the operations are straightforward and the result aligns with the statement is generic boilerplate, so no_padding is false.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "571a4027e8b3481df6528c2b92a7794d920ea9e34c6789bd1aea318d94cca90e",
+      "target_sha256": "eeb5bbe64660d35846daa2928e0a31855c090ca22c9d3549e8369d2e0e78850b"
+    },
+    "gsm8k-train-4883:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Doctor's fee: $300/hour * 0.5 hours = $150",
+        "Total cost - Insurance coverage = $1500 - $1200 = $300"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The costs, time conversion, coverage, and subtraction all come from the question and displayed arithmetic, without unsupported feedback or observed events.",
+      "raw_call_sha256": "140827cea2484c4046e76db286f6b471693c1d66a78b84f8b4c256335a5e9489",
+      "reason": "The response correctly converts 30 minutes to 0.5 hours, totals $1,500, and obtains the $300 uncovered amount. These are checkable and reusable operations, but the text consists of impersonal directives such as 'calculate' rather than a substantive own operational account.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "84743a74227711fd8c99ac44cd76ee3f7855a845830e9e6a7e6503e84fcd576d",
+      "target_sha256": "733955c4e45a14553ddf2d715f89e70a3fddbe3d86651b971ca90dfc2842ea5f"
+    },
+    "gsm8k-train-5507:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the safe weight limit by subtracting 20% of the bench's capacity from the total capacity:",
+        "\\[ 250 + 550 = 800 \\text{ pounds} \\]"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target restates and verifies calculations available from the question and preceding solution; its check is explicitly its own arithmetic, not external feedback.",
+      "raw_call_sha256": "37a582434a0d4f538184aa028753653865e2c315a9c27af869cb76f6b64bfdc8",
+      "reason": "It gives a substantive first-person solution, correctly derives the 800-pound safe total and 550-pound bar allowance, and checks that 250+550=800. It also states when to reuse the safety-margin and occupant-subtraction method without irrelevant padding.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "21371e7e5fa7b544b8776350e8dee7d31a32fad90224a2963a7df5b3e1644f60",
+      "target_sha256": "7491aba06c9dbc6246ba3ec2cf468d898de6fb9f4b2f922eafdafa2c4cc52aae"
+    },
+    "gsm8k-train-5507:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Calculate 20% of 1000 pounds: \\(1000 \\times 0.20 = 200\\) pounds",
+        "Since John weighs 250 pounds, we subtract his weight from the safe limit:"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All load, margin, and subtraction claims follow from the question and shown arithmetic, with no external event claimed.",
+      "raw_call_sha256": "f16b11a78f6c1b2aa90289aa72617b6b813e29c6876586a7415181fb85185ba0",
+      "reason": "The safe combined load of 800 pounds and remaining 550 pounds for the bar are correct and checkable, and the safety-margin method is reusable. The response is framed as impersonal instructions such as 'Calculate' and 'we subtract' rather than a substantive own account, so first_person fails.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "170796af4057ab05f41fc1fef7516b477162a5c009f72929e79dc79db60aaebd",
+      "target_sha256": "68a0809925adbad54cbec5b73096d6b6281ad553d8d97f2d7b6be328fef4646e"
+    },
+    "gsm8k-train-5634:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Paper cover version author earnings: $6,400 * 6% = $6,400 * 0.06 = $384",
+        "The operations used were straightforward multiplication and addition, and the result matched the problem's requirements."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": false,
+      "prefix_reason": "The quantities and solution are present in the prefix, and the target's verification is a self-check rather than a claim about an external checker.",
+      "raw_call_sha256": "1faef6e541ed3442eb31751b163e855defbcaa3d1f139985170ae2246c3fdd2f",
+      "reason": "The first-person calculations are correct and provide concrete numerical expectations plus a reusable revenue-and-royalty method. However, the assertion that the operations were straightforward and the result matched requirements is generic boilerplate rather than an actual additional check, so the response fails no_padding.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "d0b0ef5ef97251145d41bbe577d33aca998155e15c49d8240015abd17d4f7729",
+      "target_sha256": "5fe699c599e9e285635529756407061a11068668ae313e28b3796222370e929f"
+    },
+    "gsm8k-train-5634:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Paper cover version author earnings: $6,400 * 6% = $6,400 * 0.06 = $384",
+        "Total author earnings: $384 + $720 = $1,104"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target uses only the sales figures and royalty rates in the question and shows verifiable arithmetic; it claims no external feedback or hidden event.",
+      "raw_call_sha256": "3aaf0acafaab829849fe49befd8afa5a232eef458da002e2e27512974ff41afb",
+      "reason": "The response gives a substantive first-person calculation, correctly computes each version's revenue and royalty, and adds the concrete $384 and $720 expectations to obtain $1,104. The revenue-then-percentage method is reusable and the reasoning is relevant throughout.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "e68600a48f62dff0c0b1e463fa1b662f9f52e342c43970dfa3327a349884ebae",
+      "target_sha256": "b0d2118f923219ef19fcfde1007e41c0b404512b2000ef7df583d371bd5b0467"
+    },
+    "gsm8k-train-6357:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the total cost of the game including tax:",
+        "after 11 weeks, Nina would have saved \\(11 \\times 5 = 55\\) dollars"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target uses only facts in the prefix and shows its own arithmetic check that 11 weeks produces the required $55; no outside checker is claimed.",
+      "raw_call_sha256": "56f76ee9fcaecb0524ac5b1b2a8bfec8e9c7093e29fe7b6b476b41f4a01c8c3b",
+      "reason": "It correctly and substantively calculates the taxed price, weekly saving, and quotient. The inverse check 11\u00d75=55 is concrete, and the described tax-and-weekly-savings process is reusable for similar tasks.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "c1ebc3f92ec08fc1cd0e6e0e9a867ab7aa1e5524eaeb547b1550373a507252a1",
+      "target_sha256": "3234944ba3b55e1ee563bee574ac8010f91b5c0a614589e48cd3edbff7b4727b"
+    },
+    "gsm8k-train-6357:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "The tax on the game is 10% of $50, which is \\(0.10 \\times 50 = 5\\) dollars.",
+        "We divide the total cost by her weekly savings: \\(55 \\div 5 = 11\\) weeks."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every quantity and operation follows from the question, and the inclusive 'we' calculation does not claim external verification or hidden guidance.",
+      "raw_call_sha256": "b68207f0ecdfac3ee7f047c7fddc3e237dff5f629aa9e72cf3e94ff469ab1d6c",
+      "reason": "The plural first-person account applies the operations itself, correctly computing a $55 taxed cost, $5 weekly savings, and 11 weeks. These intermediates are concrete expectations, and the cost-divided-by-savings method is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "e2df53b0c7b10839e89266f1fc82600b19ade38b0c76ae136be7982d2501bf0b",
+      "target_sha256": "c1b15a0c3bb45ae83a918b6927df189ee45726a5e8b4df2ea9f2994d625a0b45"
+    },
+    "gsm8k-train-7259:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I calculated 30% of 20 cups:",
+        "\\[ 20 + 26 = 46 \\text{ cups} \\]"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All facts and calculations appear in the supplied prefix or are explicitly verifiable in the target; the verification is a self-check rather than external feedback.",
+      "raw_call_sha256": "1ec8aeb77abfe012f7f610a068a1d27134c7b00185d103204b649f918443e14d",
+      "reason": "The first-person record correctly calculates a 30% increase of six cups, obtains 26 for this week, and totals 46. It includes a concrete check of the percentage calculation and explains when the percentage-increase operation is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "2ce3fc434465049ed636f827ff7a82533dba25cd654e375caf60a51de10221fd",
+      "target_sha256": "18268790e60accf0c4e00cef955f2a4aca16a14a6ebcf6055c2f7b2ef758cfd3"
+    },
+    "gsm8k-train-7259:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculate 30% of 20:",
+        "20 (last week) + 26 (this week) = 46 cups"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person calculation uses only the stated prior sales and percentage increase, with all deductions shown and no unsupported event claimed.",
+      "raw_call_sha256": "6394b75f5528d2a0c9231f7e4d277be15149311b1fb10f27919b54454a30f537",
+      "reason": "The response gives a substantive own account, correctly computes the six-cup increase, this week's 26 cups, and the 46-cup total. Those numerical roles are checkable, and applying a percentage increase before summing periods is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "4a50977ab94756b9a1598e9fb9d51e2c8715ff9a6895b278b5f13fd476811510",
+      "target_sha256": "f06434f1fe580cd42868ce8884387e1d14732d57fb055c087dc8746c44c9a41f"
+    },
+    "gsm8k-train-7274:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I recognized that these two events (knowing Excel and being willing to work nights) are independent.",
+        "0.20 \\times 0.30 = 0.06"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The preceding assistant message in this row's supplied prefix explicitly describes the events as independent, so the target is semantically compatible with that prefix. This provenance compatibility does not make the assumption mathematically justified by the original question.",
+      "raw_call_sha256": "0f300318b256a2faacba40584e4189ebd3113586b77b397ef8a564c39199bcfe",
+      "reason": "The response gives a first-person operation and a concrete 0.06 expectation, including a probability-range sanity check. Nevertheless, it treats independence as a fact although the original problem gives only marginal percentages. Therefore the probability deduction is ungrounded, and the multiplication rule is not reusable as applied to this task.",
+      "reusable_content": false,
+      "status": "FAIL",
+      "student_prefix_sha256": "61bab3b09523000f2c39d3392fd33d13ca9e6a88764c6b68edb0a3d792542f95",
+      "target_sha256": "0be0ea9b1ac48076f4f65f8125b72420a084d5e8d583e2632fa060976735b6d6"
+    },
+    "gsm8k-train-7274:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "we multiply the probabilities of these two independent events.",
+        "0.20 * 0.30 = 0.06"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The question supplies only the marginal percentages; it never states or establishes that Excel experience and night willingness are independent, so that target claim is unsupported by the sole prefix message.",
+      "raw_call_sha256": "d6c0d75cc315e46a6df73e98d60f83e530ea79347488016d17a948b74d49d409",
+      "reason": "The plural 'we multiply' is a substantive operational account, and 0.20\u00d70.30=0.06 is a concrete numerical expectation. However, multiplying the marginals requires independence, which the question does not provide. That unsupported assumption makes the deduction ungrounded and prevents the operation from being reusable as applied to this task.",
+      "reusable_content": false,
+      "status": "FAIL",
+      "student_prefix_sha256": "891dc4f9402c05136a16dcb438b5403243ffbc54d5ed6a81e35e39b3a27752cc",
+      "target_sha256": "64fc95d532c34b58af0df1e51133a94494412454bcfce33446ab05f76b305a10"
+    }
+  }
+}

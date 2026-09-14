@@ -1,0 +1,354 @@
+{
+  "gold": {
+    "gsm8k-train-2070": {
+      "independent_answer": "384",
+      "question_sha256": "12bf06d59b5e847a5a5523c200a83bd8064a4ad32367c93dfe4c7873c9c4243a",
+      "reason": "The expired quantity is 80 \u00d7 0.40 = 32 packs, so the refund is 32 \u00d7 12 = 384, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-2127": {
+      "independent_answer": "2",
+      "question_sha256": "4c3a18f6248d21df628b15707ab66d5f4670f6dadf23983eb98861de5ac5ae2c",
+      "reason": "Store A costs 125 \u00d7 0.92 = 115 after discount, while Store B costs 130 \u00d7 0.90 = 117. Store A is therefore 117 - 115 = 2 dollars cheaper, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-4243": {
+      "independent_answer": "22000",
+      "question_sha256": "ce9c032c39e811dbda36dedee01976c3e00d541aacc1404dd6f2f1b9bf7027d2",
+      "reason": "The 10% tip is 20000 \u00d7 0.10 = 2000, so the total is 20000 + 2000 = 22000, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-5321": {
+      "independent_answer": "96",
+      "question_sha256": "8d51a0b16485a316ad51b2d03c403a0c3e396c29422dbcdbaf4425766af9355d",
+      "reason": "The store purchases total 20 + (2 \u00d7 2.50) + 15 + 20 + 20 + 15 = 95. The 20% store discount leaves 95 \u00d7 0.80 = 76; adding the separate 20 adoption fee gives 96, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-5330": {
+      "independent_answer": "27200",
+      "question_sha256": "9af2438764eefa05d90556a6635105e2b8bb1bbc6abd39b1d1f6381964ffc14e",
+      "reason": "Taxes are 40000 \u00d7 0.20 = 8000 and healthcare is 40000 \u00d7 0.10 = 4000. After also deducting 800 in dues, take-home pay is 40000 - 8000 - 4000 - 800 = 27200, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-5465": {
+      "independent_answer": "680",
+      "question_sha256": "5d802cc7a88c59e529f4f9fa212fe8318ed3ecce70e443b77237c3465a35d85f",
+      "reason": "The reduction is 800 \u00d7 0.15 = 120, leaving 800 - 120 = 680, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-5729": {
+      "independent_answer": "480",
+      "question_sha256": "4f5a27d54d95158318f2cc3f58b52c7dfb5993e0c37144170d3482720e2692fe",
+      "reason": "The boas require 12 \u00d7 200 = 2400 feathers. Each flamingo safely supplies 20 \u00d7 0.25 = 5 feathers, so 2400 \u00f7 5 = 480 flamingoes, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-961": {
+      "independent_answer": "2475",
+      "question_sha256": "f01401bc69140b14a7b4551825ae06d5e8e97a5f5566fdac739695b87ae3415f",
+      "reason": "Johnny TV makes 220 \u00d7 1.25 = 275 movies per year. Together the companies make 220 + 275 = 495 per year, and over five years they make 495 \u00d7 5 = 2475, equal to the gold.",
+      "status": "VALID"
+    }
+  },
+  "reviews": {
+    "gsm8k-train-2070:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the number of expired packs by multiplying the total number of packs by the percentage of expired packs.",
+        "\\text{Expired packs} = 80 \\times 0.40 = 32",
+        "I confirmed that 40% of 80 is indeed 32, and that 32 packs at $12 each equals $384."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Its claimed self-verification is demonstrated by correct target arithmetic and needs no unsupported checker or outside feedback.",
+      "raw_call_sha256": "fff61eaa330689953110fae00341ceee3cfb850ce309fb1c17a5fcf5ef9ff37c",
+      "reason": "The response correctly applies 40% to 80 and then applies the $12 unit price. It provides an explicit numerical verification, explains the reusable two-stage percentage-and-pricing method, and remains substantively relevant.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "7e2d980f293260c1f95010aa7a3feb1a8f73e51bfa76d27f7a606da5fbb74098",
+      "target_sha256": "ee33286cdfed17ce9eb833dba0d9dcd24d0e208fea2e2feaaf3d16bd3b637d2e"
+    },
+    "gsm8k-train-2070:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Next, I calculate the number of expired packs:",
+        "Expired packs = 80 * 0.40 = 32 packs",
+        "32 packs at $12 each indeed equals $384."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The self-check and calculations use only the stated 80 packs, 40%, and $12 price, and are explicitly verifiable without any external event.",
+      "raw_call_sha256": "b8085aecda55d222e02e1194ea812e2d9b447542effe7060953d1357e5b727fc",
+      "reason": "It gives a first-person operational account, correctly finding 32 expired packs and multiplying by $12 for a $384 refund. The final multiplication is a concrete check, and the percentage-quantity then unit-price method is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "675e681e81f6148da785ed107e3f6510309758e3f2d902321560980222387317",
+      "target_sha256": "c8fdbb7097fc02a8f37c98c2cb782aa3a91b3e8dd3a9bb20f002e4a5c84f70fb"
+    },
+    "gsm8k-train-2127:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find the final price after the discount, I used the operation of calculating the discount amount and then subtracting it from the full price.",
+        "\\( 117 - 115 = 2 \\)",
+        "calculate the discount amount by multiplying the full price by the discount rate"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All calculations and the stated self-recheck are internally verifiable from the neutral history; there is no assertion of external checker access or hidden feedback.",
+      "raw_call_sha256": "e315cfd1b27be7bf4478235b7b19eff80271a36f88d521903ad6b274602c401a",
+      "reason": "It accurately recounts multiplying each list price by its discount rate, subtracting the discount, and comparing 117 with 115. It includes first-person operational choices, checkable values, and an explicit reusable discount method without material filler.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "f985a5e8d378f587c03a6e700a46360465f632cd65ae1cc9fc8ffaaa92b8f7b8",
+      "target_sha256": "f2c66eee89f1406f46ed9342680405f2fab95acd8877fbf456a5002c2e8783b7"
+    },
+    "gsm8k-train-2127:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Next, I calculate the final price for each store after applying the discounts.",
+        "125 - 10 = 115",
+        "117 - 115 = 2"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target uses only the supplied prices and rates with correct arithmetic, and it makes no unsupported claim about feedback or external checking.",
+      "raw_call_sha256": "0960ab3bbb3e800b0cc6974378ec7b4a93126150febb86846a2362e9249178d0",
+      "reason": "It gives a substantive first-person account of applying each discount, obtaining 115 and 117, and comparing them for a difference of 2. These intermediates are checkable and the discount-and-compare procedure is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "2ce5c8390dc383e3d322d6cf36d5f9cb49f16d351a348bd976eb2c514f8c2335",
+      "target_sha256": "71a58f129bf6420f5cb0011ff5bfd8d7af7f5f7bb605d973bb65a392ea110557"
+    },
+    "gsm8k-train-4243:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find the tip amount, I calculated 10% of $20,000.",
+        "I added the tip to the original cost of the crown:",
+        "\\text{Total} = 20,000 + 2,000 = 22,000"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Its quantities and self-check are supported by the supplied problem, the earlier solution, and explicitly correct arithmetic; no external checker or unsupported event is invoked.",
+      "raw_call_sha256": "ffdcd532a7d0bf80efb91a1fd84353362f76d3ba4851d13230003b7004ab1923",
+      "reason": "It substantively recounts calculating a 2,000 tip and adding it to 20,000 for 22,000. The numerical steps provide concrete expectations, and the percentage-plus-base method is reusable and relevant.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "2c65db64ead767d9da3da01b5c2b367b719b2ef1a812ce5dc3bde2d999cf4518",
+      "target_sha256": "d5a287102c0b801c07b1a9476c3b4c3ed6d05b2d89fc33ba534e2795c016ec13"
+    },
+    "gsm8k-train-4243:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find the tip, I calculate 10% of $20,000:",
+        "20,000 \\times 0.10 = 2,000",
+        "20,000 + 2,000 = 22,000"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target relies only on the stated $20,000 cost and 10% tip, plus explicit correct arithmetic; it claims no external feedback or hidden event.",
+      "raw_call_sha256": "72edaca2c30b3bb20f330e7e9cb0fd926775701d36f1384891a27b5727fda65c",
+      "reason": "The response gives its own calculation: 10% of 20,000 is 2,000, then 20,000 + 2,000 = 22,000. These correct, role-labeled intermediates are checkable and the percentage-then-add operation is reusable without filler.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "1036e3bfd375ecacd9c722146c39e889c4eb65022ae048d03e7f876934f0165c",
+      "target_sha256": "95ee138f33da309951f2262ba61fe665a028cdfb3dc040edd2574527a75f6a2e"
+    },
+    "gsm8k-train-5321:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "20 + 20 + (2 \\times 2.50) + 15 + 20 + 20 + 15 = 20 + 20 + 5 + 15 + 20 + 20 + 15 = 115",
+        "\\text{Total cost after discount} = 115 - 23 = 92",
+        "\\text{Total cost} = 92 + 20 = 112"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The target is incompatible with the supplied facts: its 115 subtotal already includes the $20 adoption fee, but it discounts that fee as though it were a store purchase and then adds the same fee again. The supported total is 20 + 0.80 \u00d7 95 = 96, not 112.",
+      "raw_call_sha256": "b50cfe3129065f9d6af10108103f0b8a4daf901e90446b3b32c0db91e1d10a14",
+      "reason": "Although \u201clet's identify\u201d supplies plural first-person operational voice and the response gives checkable, relevant percentage steps, its material setup is wrong: the listed 115 includes the adoption fee, then the response discounts it and adds another adoption fee. This false/double-counted operation makes the response fail.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "bf262ce78bf61ce714c7a3aac33b944bc1516483ec404ce6df47ead12c14eb84",
+      "target_sha256": "bf6eb0c6d6a19ba039c1969d5afc7cc7244bd1fa505dae00aa4452b5e2a2510f"
+    },
+    "gsm8k-train-5330:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the amount lost to taxes:",
+        "Total deductions = Taxes + Healthcare + Union dues = $8,000 + $4,000 + $800 = $12,800",
+        "adding the deductions back to the take-home pay and ensuring it equals the original salary"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The self-check is supportable from the displayed values because 27,200 + 12,800 = 40,000; it does not claim an external checking event.",
+      "raw_call_sha256": "43ac0981888ba1959b297fbd5b1967feca6da02813637ff277f2e84041d88c0f",
+      "reason": "The response correctly applies both percentage deductions to 40,000, adds the fixed 800 dues, and subtracts 12,800. It also states a concrete inverse expectation and identifies the reusable multiple-deduction operation; the prose remains task-relevant.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "f2c107a019f20b6b2316fe5abbdd81670613ebc61544bc4a6105092d14dcc13e",
+      "target_sha256": "ffb446be386377aadbe9dec8b807d7f7de3d073a394ad21475ae649a3badbea6"
+    },
+    "gsm8k-train-5330:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Next, I calculate the amounts lost to each category:",
+        "Total deductions = $8,000 + $4,000 + $800 = $12,800",
+        "Take-home pay = $40,000 - $12,800 = $27,200"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All claims follow from the supplied salary and deductions through shown arithmetic, with no unsupported feedback, checker, or observed event.",
+      "raw_call_sha256": "869e0368e77365b74450a312b60ba9547bd5e7d82c037879e1b3b04f40460b58",
+      "reason": "It correctly computes taxes as 8,000, healthcare as 4,000, total deductions as 12,800, and take-home pay as 27,200. The first-person calculation, numerical intermediates, and subtract-total-deductions method satisfy all axes.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "10b9fc5d761e986bdf25046a3c1f5d09439584f265d3b7948b743addc33a56d2",
+      "target_sha256": "616da642413e92ac0b60c5bb66330e72cddc9ac1a1a7f3095dde24c7bdfadfbe"
+    },
+    "gsm8k-train-5465:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find the reduction amount, I calculated 15% of $800.",
+        "0.15 * $800 = $120",
+        "The operation I would reuse is the calculation of a percentage reduction"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The self-check is explicitly grounded in the true equation 800 - 120 = 680 and does not imply any external checker or unsupported feedback.",
+      "raw_call_sha256": "aca09810ee1183106e8c8fc2867bc74a6bc003e674cfb46320f74a22afb93db0",
+      "reason": "It correctly converts 15% to 0.15, obtains a $120 reduction, and subtracts it for $680. It has first-person operational narration, a concrete numerical check, and a specific explanation of when the percentage-reduction method can be reused.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "5592c9c80276c7fde3950ddc3894ac151c7de6fbbde0c2eb26fcb42ac542c2d9",
+      "target_sha256": "06b0959b2f165a4a9e3d005fe7a0b8b88f9d2da59cf6aa0aaa270323a03636bd"
+    },
+    "gsm8k-train-5465:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find the reduction amount, I calculate 15% of $800:",
+        "15% of $800 = 0.15 * $800 = $120",
+        "$800 - $120 = $680"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The response derives every claim from the stated original price and reduction with true arithmetic; no external feedback or hidden event is asserted.",
+      "raw_call_sha256": "24f1bf47cfaa7bc749778ecdd0e854339ad39ddfd7e926e2779e28521234042c",
+      "reason": "It substantively recounts calculating the $120 reduction and subtracting it from $800 to get $680. The intermediates are concrete expectations, and the percentage-reduction procedure is reusable and concise.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "af96ee014c8e8341dece3ac9de7fdf31e603bd53cb88036941e83cffabcdd33f",
+      "target_sha256": "122726857bd4b7f9e4e50ccf868c31686888c06a29d57188abf26b5a5d5aba92"
+    },
+    "gsm8k-train-5729:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the number of feathers that can be plucked from one flamingo:",
+        "\\frac{2400 \\text{ feathers}}{5 \\text{ feathers/flamingo}} = 480 \\text{ flamingoes}",
+        "480 \\text{ flamingoes} \\times 5 \\text{ feathers/flamingo} = 2400 \\text{ feathers}"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's inverse verification is explicitly shown and true, so it is a supported self-check rather than an unsupported external event.",
+      "raw_call_sha256": "75d4813c6d5da15c3ea5966440cb4af3db281313214e3755fd2824f1be4f0662",
+      "reason": "It accurately computes 5 usable feathers per flamingo, 2400 feathers needed, and 480 flamingoes, then verifies 480 \u00d7 5 = 2400. The narration is first-person, the check is concrete, and the proportional operations are reusable without irrelevant padding.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "be96aed9dd3b18add5373ff2ee2c8820f0847633efbbc7c92346a4e6a8245977",
+      "target_sha256": "ca0b8217e01b6c655f0639f4af8ff4a2114be26b0765e486b31cb1e31951688f"
+    },
+    "gsm8k-train-5729:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculate the total number of feathers needed for 12 boas.",
+        "20 \\text{ feathers} \\times 0.25 = 5 \\text{ feathers}",
+        "\\frac{2400 \\text{ feathers}}{5 \\text{ feathers/flamingo}} = 480 \\text{ flamingoes}"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every quantity and operation follows from the supplied feather counts and safe percentage; the target asserts no external checking event or hidden feedback.",
+      "raw_call_sha256": "f4e26fb1448ef192d2d0a0c1da35bbba364870da46a00be102d35511e1afb525",
+      "reason": "It correctly finds 2400 required feathers, 5 usable feathers per flamingo, and 2400 \u00f7 5 = 480. The first-person calculations and unit-labeled intermediates are checkable, and the total-demand divided by per-source yield method is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "6f580b51ad723f455d6350625b54a1793b716c319bbc83a541ce0d360fa2e131",
+      "target_sha256": "98611ba43fee6764399e9e83b9944cc35b94c9867af15a3fc018f01834c3f7d5"
+    },
+    "gsm8k-train-961:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the number of movies Johnny TV produces in a year.",
+        "Next, I added the number of movies produced by both companies in a year: \\(220 + 275 = 495\\).",
+        "Multiplying 495 by 5 gives 2475"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The stated self-check and all production figures are supported by the supplied facts and explicit true arithmetic, without reliance on external feedback.",
+      "raw_call_sha256": "08017e4052e714c7d9b3f9878c55fcb48583fc1fafc8546045fc759158dbb5f0",
+      "reason": "It correctly recounts finding the 25% increase, combining annual production, and multiplying by five. The 495-per-year and 2475 total are concrete checks, and it explains that the same percentage, addition, and time-scaling operations apply to similar tasks.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "f95fd1aea452fd67db1fbff272933e5df42bdebd734db16a097f015974915808",
+      "target_sha256": "02aa361b8ccc859e5118839ac560481213ad5a8895429f0f2c0aecc202d207bd"
+    },
+    "gsm8k-train-961:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "25% of 220 is \\( 0.25 \\times 220 = 55 \\).",
+        "Combined: \\( 220 + 275 = 495 \\) movies in a year.",
+        "\\( 495 \\times 5 = 2475 \\)."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The mathematical claims are fully supported by the question and correct displayed arithmetic, with no hidden-event or external-feedback claim.",
+      "raw_call_sha256": "31bf5102d9c150bcec49f899af3c2370d4595d3e13d830f00b17b99b473de07e",
+      "reason": "The arithmetic is correct and checkable: 25% of 220 is 55, annual combined production is 495, and five-year production is 2475. However, the response only gives impersonal directives such as \u201ccalculate\u201d and \u201cfind\u201d; it never provides a substantive own account of performing or checking an operation.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "0744ce92deb22a7baa7c490478c5b35a13ec1e7f13637c69af7afbf284246d2e",
+      "target_sha256": "b33dd2f4cae36ebadec4ea6bda5e122666eec3f62eb5859e7323f0aa43f2a8db"
+    }
+  }
+}

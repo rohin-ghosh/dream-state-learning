@@ -1,0 +1,296 @@
+[
+  {
+    "gold": "60",
+    "question": "Alicia has 20 gumballs. Pedro has that many gumballs plus an additional number of gumballs equal to three times the number Alicia has. They put their gumballs in a bowl, and later Pedro takes out 40% of the gumballs to eat. How many gumballs are remaining in the bowl?",
+    "question_sha256": "fcc9ee708ed032347192ba19070649caa649613c287ee2a8cf2a77516d142d2a",
+    "responses": [
+      {
+        "key": "gsm8k-train-7320:rich",
+        "raw_call_sha256": "3318c980a06240ca745f55d70ca543e628d06341879dcc8ad6c47fcef1f4ab30",
+        "student_prefix": [
+          {
+            "content": "Alicia has 20 gumballs. Pedro has that many gumballs plus an additional number of gumballs equal to three times the number Alicia has. They put their gumballs in a bowl, and later Pedro takes out 40% of the gumballs to eat. How many gumballs are remaining in the bowl?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "c38827400bc05240b40cc33c3ddd8befbc95ca625bcae0c30e59caa8abc765d4",
+        "target": "Alicia has 20 gumballs. Pedro has 20 (Alicia's gumballs) plus 3 times 20 (three times Alicia's gumballs), which is 20 + 60 = 80 gumballs. Together, they have 20 (Alicia's) + 80 (Pedro's) = 100 gumballs in the bowl. Pedro then takes out 40% of the gumballs to eat, which is 0.40 * 100 = 40 gumballs. So, 100 - 40 = 60 gumballs remain in the bowl.\n\nFINAL: 60",
+        "target_sha256": "49f9c7dcf797260b823dbe9231dd14a08ab1770dcada58114dcbe5f9d1951d9c"
+      },
+      {
+        "key": "gsm8k-train-7320:new_record",
+        "raw_call_sha256": "363fa5408ccbafe7beb4f8a369af489ca1f539d56977abcf107fdb830e8737fd",
+        "student_prefix": [
+          {
+            "content": "Alicia has 20 gumballs. Pedro has that many gumballs plus an additional number of gumballs equal to three times the number Alicia has. They put their gumballs in a bowl, and later Pedro takes out 40% of the gumballs to eat. How many gumballs are remaining in the bowl?",
+            "role": "user"
+          },
+          {
+            "content": "Alicia has 20 gumballs. Pedro has 20 (Alicia's gumballs) plus 3 times 20 (three times Alicia's gumballs), which is 20 + 60 = 80 gumballs. Together, they have 20 (Alicia's) + 80 (Pedro's) = 100 gumballs in the bowl. Pedro then takes out 40% of the gumballs to eat, which is 0.40 * 100 = 40 gumballs. So, 100 - 40 = 60 gumballs remain in the bowl.\n\nFINAL: 60",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "66ef84b7ef1e58875c562cc12cc0bcaf5f3361f0e4ba38be1a204ecee2b2895a",
+        "target": "Given that Alicia has 20 gumballs and Pedro has 20 plus three times the number Alicia has, I first calculated Pedro's gumballs. Alicia's gumballs are 20, so three times that is 60. Adding these together, Pedro has 20 + 60 = 80 gumballs. Together, they have 20 (Alicia's) + 80 (Pedro's) = 100 gumballs in the bowl. Next, Pedro takes out 40% of the gumballs to eat. To find out how many gumballs that is, I calculated 40% of 100, which is 0.40 * 100 = 40 gumballs. Subtracting these from the total, 100 - 40 = 60 gumballs remain in the bowl.\n\nTo verify, I checked the operations: Alicia's gumballs (20) + Pedro's gumballs (80) = 100 gumballs in the bowl. Then, 40% of 100 gumballs (0.40 * 100 = 40) were taken out, leaving 100 - 40 = 60 gumballs. This matches the problem statement.\n\nThe operation I would reuse is calculating the total gumballs and then finding a percentage of that total. This is useful when combining quantities and then removing a portion of the combined total.\n\nFINAL: 60",
+        "target_sha256": "1bde9ecf514c64e8810669f97b62ee5a777178b9b994e623af038dc014e35256"
+      }
+    ],
+    "task_id": "gsm8k-train-7320"
+  },
+  {
+    "gold": "4",
+    "question": "In a basketball game, Cyrus made exactly eighty percent of the shots he attempted. He attempted twenty shots. How many times did he miss the shots?",
+    "question_sha256": "6ad3827ef9d546302092f0ff2e2bc8e6294556fa0aa96e04c0ebde6e456e0777",
+    "responses": [
+      {
+        "key": "gsm8k-train-2956:rich",
+        "raw_call_sha256": "5c74197fd337c915234ad8758786b1559475c6170a58143ac2e4ef2c39cc7ed9",
+        "student_prefix": [
+          {
+            "content": "In a basketball game, Cyrus made exactly eighty percent of the shots he attempted. He attempted twenty shots. How many times did he miss the shots?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "d5fe894389b08a65f9559220b74a95283d8b260fb588f5d3a0c97383ad1c7703",
+        "target": "Given that Cyrus made eighty percent of his shots and he attempted twenty shots, we can calculate the number of successful shots and then determine how many shots he missed.\n\nFirst, calculate the number of successful shots:\n80% of 20 shots = 0.80 * 20 = 16 shots made.\n\nSince he attempted 20 shots in total and made 16 of them, the number of missed shots is:\n20 - 16 = 4 shots missed.\n\nFINAL: 4",
+        "target_sha256": "e7378afa285aa46dfa5db97eb092c570b0cc975c97090236c9bc96f54f9b6254"
+      },
+      {
+        "key": "gsm8k-train-2956:new_record",
+        "raw_call_sha256": "71c7d4dd2433abb76d6326d934430ff8fb4c6bbfcb5ffcbc381aafdfd8d4cafa",
+        "student_prefix": [
+          {
+            "content": "In a basketball game, Cyrus made exactly eighty percent of the shots he attempted. He attempted twenty shots. How many times did he miss the shots?",
+            "role": "user"
+          },
+          {
+            "content": "Given that Cyrus made eighty percent of his shots and he attempted twenty shots, we can calculate the number of successful shots and then determine how many shots he missed.\n\nFirst, calculate the number of successful shots:\n80% of 20 shots = 0.80 * 20 = 16 shots made.\n\nSince he attempted 20 shots in total and made 16 of them, the number of missed shots is:\n20 - 16 = 4 shots missed.\n\nFINAL: 4",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "ae6da33f4ea725c5a68e7240fbd79051dd7389073f524e35659fe1bfdacf6802",
+        "target": "Given that Cyrus made eighty percent of the shots he attempted and he attempted twenty shots, I first identified the key quantities: the total number of shots attempted (20) and the percentage of shots made (80%). The unknown quantity was the number of shots he missed.\n\nTo find the number of successful shots, I used the formula:\n\\[ \\text{Successful shots} = \\left(\\frac{80}{100}\\right) \\times 20 \\]\n\nThis operation was chosen because it directly translates the percentage into a numerical value, allowing me to determine how many shots were made. I expected this to give me the number of successful shots, which I could then subtract from the total number of shots to find the number of missed shots.\n\nPerforming the calculation:\n\\[ \\text{Successful shots} = 0.80 \\times 20 = 16 \\]\n\nKnowing that he made 16 shots, I then calculated the number of missed shots:\n\\[ \\text{Missed shots} = 20 - 16 = 4 \\]\n\nTo verify this result, I checked that the sum of successful and missed shots equals the total number of shots attempted:\n\\[ 16 + 4 = 20 \\]\n\nThis check confirms the accuracy of the result. The operation I would reuse is the same percentage calculation to determine the number of successful shots, given the total number of shots attempted and the percentage of shots made. This operation is reusable in similar problems where a percentage of a total is needed.\n\nFINAL: 4",
+        "target_sha256": "202fa8b8fc71be45d8fb9a7ce8e63c04c52b4416a3df200d267c53aded389df1"
+      }
+    ],
+    "task_id": "gsm8k-train-2956"
+  },
+  {
+    "gold": "17",
+    "question": "Cody goes to the store and buys $40 worth of stuff.  The taxes were 5%.  After taxes, he got an $8 discount.  Cody and his friend split the final price equally. How much did Cody pay?",
+    "question_sha256": "3df8d88a609351eb75dcde6d4bb357f3b565279fb572d126a9186781138d740d",
+    "responses": [
+      {
+        "key": "gsm8k-train-5283:rich",
+        "raw_call_sha256": "e3adc0866df4314c77a6a996f9055f5f8cfeb53322033b7cd5d0f53584498d55",
+        "student_prefix": [
+          {
+            "content": "Cody goes to the store and buys $40 worth of stuff.  The taxes were 5%.  After taxes, he got an $8 discount.  Cody and his friend split the final price equally. How much did Cody pay?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "97f0d166102fb98a3ac10bdb0c94a750c7bab503a8758d4fe9fe80d87091aff7",
+        "target": "First, I calculate the tax on the $40 purchase. The tax is 5% of $40, which is \\(0.05 \\times 40 = 2\\) dollars. So, the total before the discount is \\(40 + 2 = 42\\) dollars. After applying the $8 discount, the total becomes \\(42 - 8 = 34\\) dollars. Cody and his friend split this final price equally, so Cody pays \\(34 \\div 2 = 17\\) dollars.\n\nFINAL: 17",
+        "target_sha256": "4ccf78f3fe818888a235893e0320f2c66f883b3710414ee5e3765bc9f8a1654b"
+      },
+      {
+        "key": "gsm8k-train-5283:new_record",
+        "raw_call_sha256": "50dbb529b2d0e2c5cfd26472309a5fe1883bd25fe15ed13f96aa50adc6d84d33",
+        "student_prefix": [
+          {
+            "content": "Cody goes to the store and buys $40 worth of stuff.  The taxes were 5%.  After taxes, he got an $8 discount.  Cody and his friend split the final price equally. How much did Cody pay?",
+            "role": "user"
+          },
+          {
+            "content": "First, I calculate the tax on the $40 purchase. The tax is 5% of $40, which is \\(0.05 \\times 40 = 2\\) dollars. So, the total before the discount is \\(40 + 2 = 42\\) dollars. After applying the $8 discount, the total becomes \\(42 - 8 = 34\\) dollars. Cody and his friend split this final price equally, so Cody pays \\(34 \\div 2 = 17\\) dollars.\n\nFINAL: 17",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "3b4c4dba25e4384074630afed31fc5a96e593f61dd744239e1a36a7b27afcfbd",
+        "target": "Given that Cody buys $40 worth of items, with a 5% tax, and then receives an $8 discount, I first calculated the tax amount. The tax is 5% of $40, which I computed as \\(0.05 \\times 40 = 2\\) dollars. Adding this tax to the original $40, the total before the discount is $42. After applying the $8 discount, the final price is \\(42 - 8 = 34\\) dollars. Since Cody and his friend split this final price equally, I divided $34 by 2, resulting in $17. To verify, I checked that the operations were correctly applied: the tax was accurately calculated, the discount was correctly subtracted, and the final amount was correctly split. The operations are reusable for similar problems involving tax and discounts.\n\nThe operations I would reuse are:\n1. Calculating the tax as a percentage of the original amount.\n2. Subtracting the discount from the total after tax.\n3. Dividing the final amount by the number of people splitting the cost.\n\nThese operations are reusable in any scenario where you need to calculate the final cost after tax and discounts, and then split the cost among individuals.\n\nFINAL: 17",
+        "target_sha256": "5484511aebe1ffab34a16170645ac821d951fee60ee48e4c668fe0da83c1d98e"
+      }
+    ],
+    "task_id": "gsm8k-train-5283"
+  },
+  {
+    "gold": "50",
+    "question": "Fran is in charge of counting votes for the book club's next book, but she always cheats so her favorite gets picked. Originally, there were 10 votes for Game of Thrones, 12 votes for Twilight, and 20 votes for The Art of the Deal. Fran throws away 80% of the votes for The Art of the Deal and half the votes for Twilight. What percentage of the altered votes were for Game of Thrones?",
+    "question_sha256": "99221d394364162827aedc9c298f913599b499d16877977a94ade37a8cad46cb",
+    "responses": [
+      {
+        "key": "gsm8k-train-7037:rich",
+        "raw_call_sha256": "dd5a360e3eb69e3b4635ac16053f7f0b0be35741be117d6019df0194443fb5f9",
+        "student_prefix": [
+          {
+            "content": "Fran is in charge of counting votes for the book club's next book, but she always cheats so her favorite gets picked. Originally, there were 10 votes for Game of Thrones, 12 votes for Twilight, and 20 votes for The Art of the Deal. Fran throws away 80% of the votes for The Art of the Deal and half the votes for Twilight. What percentage of the altered votes were for Game of Thrones?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "6af6de7a4789342d1598d39d04d585b4da0d9c92412b334dc4348d1efee8bf1a",
+        "target": "Originally, the votes were as follows: Game of Thrones (10), Twilight (12), and The Art of the Deal (20).\n\nFran throws away 80% of the votes for The Art of the Deal, which means she keeps 20% of 20 votes, or 4 votes. For Twilight, she throws away half of the votes, so she keeps 6 votes.\n\nThe altered vote counts are:\n- Game of Thrones: 10 votes\n- Twilight: 6 votes\n- The Art of the Deal: 4 votes\n\nThe total number of altered votes is 10 + 6 + 4 = 20 votes.\n\nTo find the percentage of the altered votes that were for Game of Thrones, we calculate (10 / 20) * 100 = 50%.\n\nThe percentage of the altered votes for Game of Thrones is 50%.\n\nFINAL: 50",
+        "target_sha256": "0ed10cd22fcecbd8431c389a83479e1aef82a78b06dbd79b854a7982b63eaf63"
+      },
+      {
+        "key": "gsm8k-train-7037:new_record",
+        "raw_call_sha256": "269f81602aeb90745f363e4f33f90837ba1a36e6c134552f01cd9d7b984541d8",
+        "student_prefix": [
+          {
+            "content": "Fran is in charge of counting votes for the book club's next book, but she always cheats so her favorite gets picked. Originally, there were 10 votes for Game of Thrones, 12 votes for Twilight, and 20 votes for The Art of the Deal. Fran throws away 80% of the votes for The Art of the Deal and half the votes for Twilight. What percentage of the altered votes were for Game of Thrones?",
+            "role": "user"
+          },
+          {
+            "content": "Originally, the votes were as follows: Game of Thrones (10), Twilight (12), and The Art of the Deal (20).\n\nFran throws away 80% of the votes for The Art of the Deal, which means she keeps 20% of 20 votes, or 4 votes. For Twilight, she throws away half of the votes, so she keeps 6 votes.\n\nThe altered vote counts are:\n- Game of Thrones: 10 votes\n- Twilight: 6 votes\n- The Art of the Deal: 4 votes\n\nThe total number of altered votes is 10 + 6 + 4 = 20 votes.\n\nTo find the percentage of the altered votes that were for Game of Thrones, we calculate (10 / 20) * 100 = 50%.\n\nThe percentage of the altered votes for Game of Thrones is 50%.\n\nFINAL: 50",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "bb81a83eb6b874a0bf67786a4622549263fd22a9509c7965cd3e2baf4ac242b1",
+        "target": "Given the problem, I identified the initial vote counts for each book: 10 for Game of Thrones, 12 for Twilight, and 20 for The Art of the Deal. Fran's actions were to throw away 80% of the votes for The Art of the Deal and half of the votes for Twilight. I calculated the remaining votes for each book:\n\n1. For The Art of the Deal, 20% of 20 votes remain, which is 4 votes.\n2. For Twilight, half of 12 votes remain, which is 6 votes.\n3. The votes for Game of Thrones remain unchanged at 10.\n\nAdding these up, the total number of altered votes is 10 + 6 + 4 = 20 votes. To find the percentage of the altered votes for Game of Thrones, I used the formula:\n\n\\[ \\text{Percentage} = \\left( \\frac{\\text{Votes for Game of Thrones}}{\\text{Total altered votes}} \\right) \\times 100 \\]\n\nPlugging in the numbers:\n\n\\[ \\text{Percentage} = \\left( \\frac{10}{20} \\right) \\times 100 = 50\\% \\]\n\nI checked this result by ensuring that the sum of the altered votes (10 + 6 + 4) equals 20, and that the percentage calculation is correct. The operations I used are straightforward and reusable for similar problems involving percentage calculations and vote alterations.\n\nFINAL: 50",
+        "target_sha256": "96fd07a1b9566caa1aab21d3e583576ff55c6bcd36d520fd809b175cdb88720d"
+      }
+    ],
+    "task_id": "gsm8k-train-7037"
+  },
+  {
+    "gold": "480",
+    "question": "After negotiating for the price of a phone, Karsyn bought a phone at 20% of the initial price. If the phone's initial price was $600, calculate how much she paid after negotiating.",
+    "question_sha256": "6a39b774a06d8675a3d032782a58025bc2b1db41a675808f6ce6926d9bb92083",
+    "responses": [
+      {
+        "key": "gsm8k-train-4778:rich",
+        "raw_call_sha256": "f0b618a08fc4d4e8775555c1442135c5fedbb41047927e6517261cdb600ecd07",
+        "student_prefix": [
+          {
+            "content": "After negotiating for the price of a phone, Karsyn bought a phone at 20% of the initial price. If the phone's initial price was $600, calculate how much she paid after negotiating.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "2fa78fb65a7e469f68312d7e4f1a58c6348e121f79cc08c9a2630d54a6333f68",
+        "target": "The initial price of the phone is $600. Karsyn bought it at 20% of this initial price. To find out how much she paid, I need to calculate 20% of $600.\n\n20% can be written as 0.20 in decimal form. So, I multiply $600 by 0.20:\n\n$600 * 0.20 = $120\n\nKarsyn paid $120 for the phone after negotiating.\n\nFINAL: 120",
+        "target_sha256": "5a63396b206e2e066a7a99c95335df2b58519ef880963fe0a87a60522ee91303"
+      }
+    ],
+    "task_id": "gsm8k-train-4778"
+  },
+  {
+    "gold": "110",
+    "question": "In Sam's first 100 matches he won 50% of matches.  In his next 100 games, he won 60% of matches.  How many total matches did he win?",
+    "question_sha256": "10a97011068b0498b496fb4fd0f48abe9f23f82834488d83e96e1e3f345cc3c1",
+    "responses": [
+      {
+        "key": "gsm8k-train-6500:rich",
+        "raw_call_sha256": "0359485f2ee059ee39fbb3d5c97167221da252f7dd11b433cb6ed36d14c0281b",
+        "student_prefix": [
+          {
+            "content": "In Sam's first 100 matches he won 50% of matches.  In his next 100 games, he won 60% of matches.  How many total matches did he win?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "18cfe8adcdf9374cc33e82d1c852a39be9a58abec949964174d37518f48fb3f5",
+        "target": "First, I calculate the number of matches Sam won in his first 100 games. Since he won 50% of them, I do 100 * 0.50 = 50 matches. Next, I calculate the number of matches he won in his next 100 games. At 60%, I do 100 * 0.60 = 60 matches. To find the total number of matches he won, I add the two results: 50 + 60 = 110 matches. \n\nFINAL: 110",
+        "target_sha256": "e9d9a00ef1112aee01acb67009731f5b91ab47dd700c20c3082d87cdbef4a853"
+      },
+      {
+        "key": "gsm8k-train-6500:new_record",
+        "raw_call_sha256": "2222f666cd6772d7b870ad725106ec04e0b6c2a12f7d14d78aa7c82ca36cbdb5",
+        "student_prefix": [
+          {
+            "content": "In Sam's first 100 matches he won 50% of matches.  In his next 100 games, he won 60% of matches.  How many total matches did he win?",
+            "role": "user"
+          },
+          {
+            "content": "First, I calculate the number of matches Sam won in his first 100 games. Since he won 50% of them, I do 100 * 0.50 = 50 matches. Next, I calculate the number of matches he won in his next 100 games. At 60%, I do 100 * 0.60 = 60 matches. To find the total number of matches he won, I add the two results: 50 + 60 = 110 matches. \n\nFINAL: 110",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "fe05068f830137d85206daabf5da51cfe247a17bfec69ef530f762ed51d61d30",
+        "target": "Given the problem, I identified the following quantities:\n- In Sam's first 100 matches, he won 50%.\n- In his next 100 matches, he won 60%.\n\nThe unknown I needed to find was the total number of matches Sam won.\n\nTo solve this, I first calculated the number of matches won in the first 100 games. Since he won 50% of them, I used the operation:\n\\[ 100 \\times 0.50 = 50 \\]\nThis calculation was based on the given percentage and the number of matches. I expected this to give me the number of matches won in the first set of games.\n\nNext, I calculated the number of matches won in the next 100 games. Using the given 60%:\n\\[ 100 \\times 0.60 = 60 \\]\nThis operation was straightforward and directly applied the percentage to the number of matches.\n\nTo find the total number of matches won, I added the two results:\n\\[ 50 + 60 = 110 \\]\nThis addition combined the matches won from both sets of games.\n\nTo check the result, I verified that the operations were correctly applied and the arithmetic was accurate. The final number, 110, represented the total number of matches Sam won.\n\nThe operations I used were straightforward percentage calculations and addition, which I would reuse in similar problems involving percentages and totals.\n\nFINAL: 110",
+        "target_sha256": "d897933f5066ed653777babc9fcf173904b583d3e11891634846696adfe61341"
+      }
+    ],
+    "task_id": "gsm8k-train-6500"
+  },
+  {
+    "gold": "2800",
+    "question": "Isabela bought twice as many cucumbers as pencils, with both costing $20 each. If she got a 20% discount on the pencils and bought 100 cucumbers, calculate the total amount she spent to buy the items.",
+    "question_sha256": "ca5c006054890b2211b3fc0efa60c5b68ef8470d64c86b88e628f76e61bc650b",
+    "responses": [
+      {
+        "key": "gsm8k-train-4804:rich",
+        "raw_call_sha256": "429e5bfe1103d77c5676535f381ce342dbbeb5d660443c53954cc60dbd8b6120",
+        "student_prefix": [
+          {
+            "content": "Isabela bought twice as many cucumbers as pencils, with both costing $20 each. If she got a 20% discount on the pencils and bought 100 cucumbers, calculate the total amount she spent to buy the items.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "53fc450fd93bba364d419e35819b3b3b7b33b7441b928d2446c2454487803e3e",
+        "target": "Given:\n- Isabela bought 100 cucumbers.\n- She bought twice as many cucumbers as pencils, so she bought 100 / 2 = 50 pencils.\n- Both cucumbers and pencils cost $20 each.\n- She got a 20% discount on the pencils.\n\nFirst, calculate the cost of the cucumbers:\n- Cost of 100 cucumbers = 100 * $20 = $2000.\n\nNext, calculate the cost of the pencils before the discount:\n- Cost of 50 pencils = 50 * $20 = $1000.\n\nNow, apply the 20% discount to the pencils:\n- Discount on pencils = 20% of $1000 = 0.20 * $1000 = $200.\n- Cost of pencils after discount = $1000 - $200 = $800.\n\nFinally, add the cost of the cucumbers and the discounted pencils:\n- Total cost = $2000 (cucumbers) + $800 (pencils) = $2800.\n\nFINAL: 2800",
+        "target_sha256": "6562e2024792a96aa4502a8f289d1b209c395fed4faf6f119df8fc6a67d79f5d"
+      },
+      {
+        "key": "gsm8k-train-4804:new_record",
+        "raw_call_sha256": "8be1497be78c954afac0ff0bab270f78d5ca1c296e1dc5406702294f99875e07",
+        "student_prefix": [
+          {
+            "content": "Isabela bought twice as many cucumbers as pencils, with both costing $20 each. If she got a 20% discount on the pencils and bought 100 cucumbers, calculate the total amount she spent to buy the items.",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Isabela bought 100 cucumbers.\n- She bought twice as many cucumbers as pencils, so she bought 100 / 2 = 50 pencils.\n- Both cucumbers and pencils cost $20 each.\n- She got a 20% discount on the pencils.\n\nFirst, calculate the cost of the cucumbers:\n- Cost of 100 cucumbers = 100 * $20 = $2000.\n\nNext, calculate the cost of the pencils before the discount:\n- Cost of 50 pencils = 50 * $20 = $1000.\n\nNow, apply the 20% discount to the pencils:\n- Discount on pencils = 20% of $1000 = 0.20 * $1000 = $200.\n- Cost of pencils after discount = $1000 - $200 = $800.\n\nFinally, add the cost of the cucumbers and the discounted pencils:\n- Total cost = $2000 (cucumbers) + $800 (pencils) = $2800.\n\nFINAL: 2800",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "0b79337468bed91648f8d0aecef445cf3347f657d304ade31dfdad4dd6377f4a",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- Isabela bought 100 cucumbers.\n- She bought twice as many cucumbers as pencils, so she bought 50 pencils.\n- Both cucumbers and pencils cost $20 each.\n- She got a 20% discount on the pencils.\n\nThe unknown is the total amount spent by Isabela.\n\nTo solve this, I first calculated the cost of the cucumbers:\n- Cost of 100 cucumbers = 100 * $20 = $2000.\n\nNext, I calculated the cost of the pencils before the discount:\n- Cost of 50 pencils = 50 * $20 = $1000.\n\nThen, I applied the 20% discount to the pencils:\n- Discount on pencils = 20% of $1000 = 0.20 * $1000 = $200.\n- Cost of pencils after discount = $1000 - $200 = $800.\n\nFinally, I added the cost of the cucumbers and the discounted pencils to find the total amount spent:\n- Total cost = $2000 (cucumbers) + $800 (pencils) = $2800.\n\nTo check the result, I verified each step:\n- The cost of 100 cucumbers is correct: 100 * $20 = $2000.\n- The cost of 50 pencils is correct: 50 * $20 = $1000.\n- The discount on pencils is correct: 20% of $1000 = $200.\n- The final cost of pencils after discount is correct: $1000 - $200 = $800.\n- The total cost is correct: $2000 + $800 = $2800.\n\nThe operations used are straightforward arithmetic and percentage calculation, which are reusable in similar problems involving discounts and multiple items.\n\nFINAL: 2800",
+        "target_sha256": "a6390f7c2b95d8f2400e3de161ae8336eadd74fd247729a473b8fae2dfa55980"
+      }
+    ],
+    "task_id": "gsm8k-train-4804"
+  },
+  {
+    "gold": "15",
+    "question": "George wants to borrow $100 from a loan shark. The finance fee starts at 5% and doubles every week. If George plans to borrow for 2 weeks, how much in fees will he have to pay?",
+    "question_sha256": "a9deca9da6187814d645929d43b5f27d3a691228547f00f0d5aceb342667ad49",
+    "responses": [
+      {
+        "key": "gsm8k-train-3675:rich",
+        "raw_call_sha256": "a2b3fab4e523ffdafa957b49ee3136c40323c9477a3508081ff00d8ea3dbc80b",
+        "student_prefix": [
+          {
+            "content": "George wants to borrow $100 from a loan shark. The finance fee starts at 5% and doubles every week. If George plans to borrow for 2 weeks, how much in fees will he have to pay?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "64ce60b9d5f50115aabe1446141266368c467e463af648c957edf5fa696b2e4b",
+        "target": "The initial finance fee is 5% of $100, which is $5. After the first week, the fee doubles, so it becomes 2 * $5 = $10. For the second week, the fee doubles again, making it 2 * $10 = $20. \n\nAdding up the fees for both weeks, George will have to pay $5 (first week) + $20 (second week) = $25 in fees.\n\nFINAL: 25",
+        "target_sha256": "6e07789ec8f9216b53dd32efb4e5f581e9ee752f65f971cad78cc5044faa946d"
+      }
+    ],
+    "task_id": "gsm8k-train-3675"
+  }
+]

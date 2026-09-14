@@ -1,0 +1,380 @@
+{
+  "gold": {
+    "gsm8k-train-1077": {
+      "independent_answer": "25",
+      "question_sha256": "9d4ef5a1d0aef7037b053caec393f9731de2125e8790bd3f344f7b7e5e3bb9c8",
+      "reason": "An 80% score means 20% of the items were mistakes. Therefore 0.20x = 5 and x = 5/0.20 = 25, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-1906": {
+      "independent_answer": "90",
+      "question_sha256": "ba5f058a69c2fe4185c8a2274329f7d7ce6c3f6aeac4a96a095f3f569dac1f6e",
+      "reason": "If 54 pounds is 60% of Nancy's weight, her weight is 54/0.60 = 90 pounds, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-2319": {
+      "independent_answer": "2600",
+      "question_sha256": "6221a93479d46f6ffeef7b8519dc0c608cf66e9e9b23ae56e8c0c01dec84f693",
+      "reason": "The profit per dog is 0.30 \u00d7 1000 = 300, making each selling price 1300. Two dogs cost 2 \u00d7 1300 = 2600, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-3603": {
+      "independent_answer": "900",
+      "question_sha256": "bb52217a66addf102166ec7da714427f324ce2729d8614302e9ed4c5e7e7966c",
+      "reason": "Rudy contributes 4000 + 4000/4 = 5000, so the total is 9000. The profit is 0.20 \u00d7 9000 = 1800, and each equal share is 1800/2 = 900, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-3847": {
+      "independent_answer": "99",
+      "question_sha256": "28cdd9e352f4a81bd297775984a52440f03798957f311288c76f077799dd7940",
+      "reason": "The nice counts are 24, 20/2 = 10, 3/4 \u00d7 80 = 60, and 0.10 \u00d7 50 = 5. Their sum is 24 + 10 + 60 + 5 = 99, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-4091": {
+      "independent_answer": "60",
+      "question_sha256": "59623e4cdd8e3391d7c57c4210a610f71ea4ea023457e8bd61128a9236e86fa5",
+      "reason": "Removing 6 women reduces their floor count by 20%, so 6 is 20% of the original female count: 6/0.20 = 30 women. With equal numbers of men and women, the office has 30 + 30 = 60 people, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-538": {
+      "independent_answer": "3450",
+      "question_sha256": "42ce057a24812334515b37e7194e1fb0dc12b23027432c5962e427a63108a6ae",
+      "reason": "A 15% profit on 3000 is 0.15 \u00d7 3000 = 450, so the selling price is 3000 + 450 = 3450, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-7189": {
+      "independent_answer": "52",
+      "question_sha256": "28fc3fc93d3a24fb3eb0d5fda71266dcea51ca468c550ac1ba072a70adaabfe9",
+      "reason": "After adding one boy, there are 11 + 13 + 1 = 25 students and still 13 girls. Thus 13/25 \u00d7 100 = 52 percent, equal to the gold.",
+      "status": "VALID"
+    }
+  },
+  "reviews": {
+    "gsm8k-train-1077:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "This led me to set up the equation",
+        "0.20x = 5",
+        "20% of 25 is 5",
+        "0.80 \\times 25 = 20"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's equations and both internal checks follow from the supplied score and mistake count. \u201cI verified\u201d refers to displayed arithmetic, not an external checker event.",
+      "raw_call_sha256": "e800fb3a6dc78099ef6886578adf455b858a3fa6fc85af2dcc8481fb9202969e",
+      "reason": "The target gives a first-person account of forming and solving 0.20x = 5, correctly obtains 25, and checks both the five mistakes and twenty correct answers. It explains reuse for recovering a total from a percentage count.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "af31fb81ea724c328750f1d67c6bc57d68ef34a6d43d65dcf03125f628e61735",
+      "target_sha256": "9659b67cfd9583a98f59c950e838f960670c8f3b7d059add6272c1a337f2b4e3"
+    },
+    "gsm8k-train-1077:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "The 5 mistakes represent these 20% of the total items.",
+        "We can set up the equation:",
+        "To find \\( x \\), we solve for \\( x \\):",
+        "x = \\frac{5}{0.20}"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The neutral prefix contains the quiz question only. The80% score and5mistakes support the complementary20% and5/0.20=25. No external checker, parent feedback, or generation-guidance event is claimed. Gold25 is independently supported by20correct and5incorrect out of25.",
+      "raw_call_sha256": "67b846e85f58fe9cfab5b25c6ecf8981b5fa901d8c0276ba12a8fea30f1edae7",
+      "reason": "Author read the complete question, raw target and neutral user-only prefix. The target explicitly relates five mistakes to the complementary 20% of all items, owns defining the unknown and solving the resulting equation with plural agency, and divides the wrong-item count by its fraction to obtain25. These clauses interpret the equation at the problem level and explain when the reusable part-to-rate division applies. This is an operation-result expectation during derivation, not a demand for a separate verification. All reasoning is relevant; the substantive ownership is not inferred from a heading or isolated pronoun.",
+      "reusable_content": true,
+      "reviewer": "MATH_SCALE_AUTHOR_MANUAL_FULLTEXT_REASSESSMENT",
+      "status": "PASS",
+      "student_prefix_sha256": "3a1d5dcfad4236dd41fb06552991ae619198a0c671093c06d039e8722dd735e4",
+      "target_sha256": "7fa6ed405c3706e70a693732b232d2061414691eaa68583e4cd3c638073e638d"
+    },
+    "gsm8k-train-1906:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I decided to isolate it by dividing both sides of the equation by 0.60",
+        "I expected this operation to yield Nancy's weight in pounds",
+        "0.60 \\times 90 = 54"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All claims, including the explicit inverse self-check, are supported by the supplied quantities and valid arithmetic. The target does not attribute the confirmation to an external checker.",
+      "raw_call_sha256": "5b405f012a4c359432958bc0e3f979c54940a939b81498231083a3d615c266d7",
+      "reason": "The target gives a substantive first-person choice to divide by 0.60, correctly obtains 90, and verifies that 60% of 90 is 54. It clearly states when division by the known percentage is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "ab2ef482fafa1752b6badac19efc9ec88c1fe1c94d8f85758b719cd48768d5c0",
+      "target_sha256": "cdb0f69cfcc75ec256e2d65a478eee6e8ff059d919e8afe7a2acbaa5444f6f47"
+    },
+    "gsm8k-train-1906:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "we can set up the equation to find her weight",
+        "0.60 \\times W = 54",
+        "W = \\frac{54}{0.60}",
+        "W = 90"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The equation and solution rely only on the stated percentage and intake, and the plural operational account claims no hidden guidance or external event.",
+      "raw_call_sha256": "02cba68239fc3a12694bdd40ce49d41dbaf6df8061ef1ca3a96c7ec79dfa5489",
+      "reason": "The response substantively describes setting up and solving 0.60W = 54, correctly producing 90. The equation supplies a concrete expectation and illustrates the reusable operation of dividing a known percentage amount by its decimal rate.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "7af9db9bd9cfc94a2a480e97675959626a36a3373c4b0f8b8ff8b750e1c91178",
+      "target_sha256": "e0a3ea0d13ce3c3291326d3e624eceacd8a7413619c40b370052757b587dedae"
+    },
+    "gsm8k-train-2319:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the selling price of one dog",
+        "\\text{Selling price} = 1000 + 300",
+        "\\text{Total cost for two dogs} = 1300 \\times 2"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's quantities, calculations, and self-verification follow from the supplied problem and prior solution. It does not claim an external checker or other unobserved event.",
+      "raw_call_sha256": "4435081381877c3cf7d9a2737ca2b757945dba784307c0552bbd7e7bbe8c3d28",
+      "reason": "The response gives a first-person operational account, correctly obtains 1300 per dog and 2600 for two, and provides concrete intermediate expectations. It also states the general profit-then-quantity method and its applicability without irrelevant padding.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "4347d3d61bf268e25db2c07a02e5fc9fd1efeb47239a9eb664d1687b42758b1f",
+      "target_sha256": "801202009166b12ae915eeff9e38511ab983fd6cb38820433cd47e7855b96a1c"
+    },
+    "gsm8k-train-2319:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, calculate the selling price of one dog",
+        "Selling price = $1000 + $300",
+        "Total cost for two dogs = $1300 * 2"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The calculations use only the supplied price, profit rate, and quantity and make no unsupported claim about external checking or hidden context.",
+      "raw_call_sha256": "9415f5808b878ba805f1e2c6a86052d814e77291abf7b12ef0c025c53ad94bab",
+      "reason": "The arithmetic is correct and checkable: one dog sells for 1000 + 300 = 1300 and two cost 2600. The method is reusable, but the response is an impersonal imperative recipe (\u201ccalculate\u201d) rather than a substantive first-person account.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "06ac8e82d9d9a7c3e9ca2652aace8814a5564e1c09e16b6625e070a167f2d061",
+      "target_sha256": "5fc3bbbcf2928bf38b3d1f8c17e1d7ab4bb2a7cd00d6e342af43357ade942e25"
+    },
+    "gsm8k-train-3603:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "which I calculated as $4000 + (1/4 * $4000) = $5000",
+        "0.20 * $9000 = $1800",
+        "I checked that the total profit ($1800) divided by 2 ($900 each)"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's first-person calculation and self-check are supported by the problem, prior solution, and valid arithmetic; the check is internal and does not assert outside feedback.",
+      "raw_call_sha256": "63481842401c766a493abe5b22e983f28368c9b6902503f1727c18f80f81e75e",
+      "reason": "The target correctly recounts finding 5000, 9000, 1800, and 900, with a concrete division check. It explains the reusable roles of addition, percentage multiplication, and equal division, and remains relevant.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "9f3b8cf395335ce097fdd13db4cdc03a38fb5e19469e71692f8d0d8b80a39846",
+      "target_sha256": "172b808da03a3a40ea64bd8167450d0f187e3d031a24fe032ed7ede85a8830d2"
+    },
+    "gsm8k-train-3603:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I identify the given quantities",
+        "$4000 + (1/4 * $4000) = $4000 + $1000 = $5000",
+        "each gets half of $1800 = $1800 / 2 = $900"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The contribution, profit, and equal-share claims are all derived from the supplied facts and displayed arithmetic, with no unsupported external event.",
+      "raw_call_sha256": "80f10cab66d6d8703bb40f674545c7a32b71734130e3499fd58facbd345097c3",
+      "reason": "The response gives a first-person operational account and correctly computes Rudy's 5000 contribution, the 9000 total, the 1800 profit, and the 900 equal share. These are concrete checks and demonstrate the reusable contribution-profit-sharing sequence.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "9d4ef165288764393d93d9c91c55dfed76b3ed2c9aed6b5e091a5a6cf13f5a7a",
+      "target_sha256": "0d6a2022e0e1e0c3b83c70efc3a093751e15df561c31bea5c5c90f74cad4f48e"
+    },
+    "gsm8k-train-3847:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I broke it down into steps",
+        "Three-fourths of 80 is 60",
+        "24 (Barry) + 10 (Kevin) + 60 (Julie) + 5 (Joe) = 99"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person computations and self-verification are fully supported by the problem, prior solution, and arithmetic; no outside checker or unsupported event is claimed.",
+      "raw_call_sha256": "a0be354f784885182ca5c168d8cc15b9eaef25d7dad71f2e0387004fcf66c91b",
+      "reason": "The target recounts calculating each category's proportion and summing the results. All four intermediate counts and the total 99 are correct and checkable, and the response identifies the method's use for categorical proportion problems.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "4c347f93c814f643f61f3dfaf604589c21b58816eca59729f0f7f8c81a85b586",
+      "target_sha256": "6283c3a187ee7b2ddb87e7ebbddddac3cb77859e7c780125c33ba1cb31f46d5c"
+    },
+    "gsm8k-train-3847:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "we sum the nice people from each group",
+        "Half of 20 people named Kevin are nice, which is 10 people",
+        "24 (Barry) + 10 (Kevin) + 60 (Julie) + 5 (Joe) = 99"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Each group count and the final sum follow directly from the supplied proportions and populations; no external observation or hidden instruction is invoked.",
+      "raw_call_sha256": "319ea78892a4c52f8b7d557fa393cea0ae900a76599981699daf9404b56d3323",
+      "reason": "The response uses a substantive plural account of summing the groups and correctly computes their nice counts as 24, 10, 60, and 5, totaling 99. The proportion-then-sum procedure is checkable, reusable, and concise.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "1c3ce4bbf2966650264adf6e76dc93320c5d00cd091b60690c3bb03e2cab083d",
+      "target_sha256": "51f1c5fceac8396ae51d7a143037f69dd725a399e07eb2b605fb79e3966b9d77"
+    },
+    "gsm8k-train-4091:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I started by focusing on the women's count",
+        "W = \\frac{6}{0.2} = 30",
+        "6 women, which is indeed 20% of 30 women",
+        "4 men in the meeting and 26 men remaining"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's self-checks are supported by the stated meeting composition and the calculated equal office totals: 6 is 20% of 30, 24 women remain, and removing 4 of 30 men leaves 26. No external checker is claimed.",
+      "raw_call_sha256": "93459ae5ae8c8659df700256503ca691856353b2f85414ef57c007faaf796701",
+      "reason": "The response gives a first-person operational account, correctly solves 0.2W = 6, obtains 30 women and 30 men, and totals 60. Its checks of 24 remaining women and 26 remaining men are valid, and it states when the percentage-equation method is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "ee33d7d5d1bf32df402765c6e937022eb0d374472ce5773c7ca8cee89b2eaafc",
+      "target_sha256": "de8d17eb0cec1b5d5cb71e8a0ac6bdabbd3095c7e8a30ac9f11878e238d9c3cf"
+    },
+    "gsm8k-train-4091:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "we can write",
+        "0.2W = 6",
+        "W = \\frac{6}{0.2} = 30",
+        "30 \\text{ men} + 30 \\text{ women} = 60"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The equation follows from the stated 20% reduction, and the equal male and female totals follow from the office composition. No external confirmation or hidden context is asserted.",
+      "raw_call_sha256": "9f78ba6fb4d0985976c2ec5148074d78a823a774cd5367bc6d9d33781f83f63c",
+      "reason": "The response substantively states that \u201cwe can write\u201d the percentage equation, correctly finds 30 women and then 60 total people. The displayed intermediates are checkable and the known-percentage-to-total method is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "83f0fc92d1afb795d10494f9f8ac004882853f952c3e2dab369e4f13f72fdc13",
+      "target_sha256": "c8c1093b330aa193f3e39e535d36475946db0e351d4f71c09f1ba2dd28616a1d"
+    },
+    "gsm8k-train-538:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I needed to calculate the profit amount and then add it to the cost price",
+        "0.15 \\times 3000 = 450",
+        "Selling Price} = 3000 + 450 = 3450"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All factual claims and the self-check are supported by the supplied problem, prior solution, and verifiable arithmetic; \u201cI checked\u201d describes an internal calculation rather than an external checker event.",
+      "raw_call_sha256": "f758a2071eb6590b6e47fba7a33d7941a0560ee446c2b1189ca27faf8cb3edc6",
+      "reason": "The target substantively recounts calculating the 15% profit and adding it to cost. Both 450 and 3450 are correct, the stated check has concrete numerical meaning, and the explanation identifies when the method applies.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "52f3e0c55b0672d3ad42ae97071a354052d9395e0fc547f166bf7a25eb12ac74",
+      "target_sha256": "668ed0e949b023a031a9de06b3a15e6c9491b51ff07d1fbafbf962f71b68aae0"
+    },
+    "gsm8k-train-538:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "we need to calculate 15% of the cost price and add it to the cost price",
+        "0.15 \\times 3000 = 450",
+        "\\text{Selling price} = 3000 + 450 = 3450"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target relies only on the stated cost and profit rate plus displayed arithmetic; its use of \u201cwe\u201d describes the operation being selected, and it claims no external feedback or hidden event.",
+      "raw_call_sha256": "3b7d9853c75f2ba24855ec7d65026e319e83fe31489c8409a99c5fc6b542a81e",
+      "reason": "The response gives an own operational choice, correctly computes 15% of 3000 as 450, and adds it to obtain 3450. These numerical intermediates are checkable and the percentage-plus-base procedure is reusable and relevant.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "84a7a26011172875cb9debc20af1fb088bead5c3951dc7a9dfafaf7f492c6a89",
+      "target_sha256": "72d2ee7c19ace83811d1754c5c7f58b5c1bca74ab5e79e4edfc57d6a10efe227"
+    },
+    "gsm8k-train-7189:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first added 1 boy",
+        "The total number of students then became 24 + 1 = 25",
+        "\\left( \\frac{13}{25} \\right) \\times 100 = 52\\%"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person calculations and self-check are supported by the supplied counts and explicit arithmetic. No sentence depends on an external checker or hidden generation guidance.",
+      "raw_call_sha256": "51d8df0a5dea1449857b9a049a80b8fa8c552d5631d4b0f1ee3335d247de1e3e",
+      "reason": "The target recounts updating the group and applying the subgroup-over-total percentage formula. Its values 25 and 52% are correct concrete expectations, and it explains reuse when a group's composition changes.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "e9cf1b9df4f090eaa53e0522a54568f4526ed4660f4d2538606e2adc677c3551",
+      "target_sha256": "666c11a136c9d798a5f887dbd7dfa3e4b93d779613ed6c180b55ab6161794087"
+    },
+    "gsm8k-train-7189:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "we use the formula",
+        "11 + 13 = 24 students",
+        "\\left( \\frac{13}{25} \\right) \\times 100 = 52\\%"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every factual statement follows from the class counts and the added boy, and the target's plural operational account invokes no hidden instruction or external verification.",
+      "raw_call_sha256": "4018a0ce73d68e61f1e4d2a2dd83eb4101bcc8a3f7cefd754bbb1942c8717dda",
+      "reason": "The response substantively says which formula \u201cwe use,\u201d correctly updates the total from 24 to 25, and computes 13/25 \u00d7 100 = 52%. The ratio-to-percentage operation is task-grounded, checkable, reusable, and concise.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "092d45011889dc88e9b0a579ef8e4637136f33541dc3117fa75ccf71df88cd07",
+      "target_sha256": "3629b91261fd76bf0f83010cb928eb97813d1231174e9b9fd4775bf7236709ca"
+    }
+  }
+}
