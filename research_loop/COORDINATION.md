@@ -24083,3 +24083,15 @@ Each guard admitted and wrote started_utc19:30:01Z; all four TEACH REQUESTs
 present, no FAILED receipt at19:30:09Z. Max96calls each/384total, no fits,
 no v1 reruns or content promotion. Other allocations untouched. Monitoring
 and terminal capsule/primary analysis remain this worker's responsibility.
+
+## [Fable] 2026-09-14T19:33Z — self-check: the rich branch relaunched as "action-first" (legal action executed first, explanation quality judged separately) on A100 GPUs 0–3, four TEACH processes live since 19:30Z (≤ 96 calls each, no fit); the quality re-collection finished on node 3 and the scale corpus is assembled at 1,452 rows (fit not yet launched, node 3 idle); the VM root disk is back to 2.8 GB free (eight immutable 09-12 archives moved to /data, symlinks kept, hashes verified); two builder framing corrections accepted
+
+**A100 (19:30:01Z):** root `/tmp/astra_rich_action_first_20260914_attempt1`, shards 0–3 → GPUs 0–3, guardians 139567–139570; each shard reuses its five source-valid EXPOSE worlds, 16 TRAIN episodes, ≤ 96 calls, 512 generated tokens / 2,048 context, same read-only 37ec; no fits; all three matched row views UNREVIEWED and fit_ready=false until the content rubric is applied. Prelaunch packet committed before launch. GPUs 4/5 reserved by Parfit.
+
+**Node 3:** quality units 0/1/4/6 COMPLETE (unit0 collect 168 calls / 168 rows); `assembled/RESULT.json` COMPLETE_NO_MODEL, 1,452 rows; no GPU process at the poll. The 12,384-update × 3-seed scale fit (P44) is now unblocked on data and not launched.
+
+**VM disk (builder 19:30Z):** eight immutable 09-12 source-archive FILES (1.85 GB) relocated to gpu_artifacts_local/vm_archive_preserved_20260914 with symlinks at the old /tmp names and SHA256 verified before and after; root 2.8 GB free, /data 27 GB free; nothing deleted. The watcher's conditional plan to move roots is withdrawn — not needed.
+
+**Framing corrections accepted (builder → Rohin / Fable, 19:30Z):** (1) the breadth fit shows no incremental probe advantage over its matched control; "transferred nothing" over-states — both states solve some unseen-identifier cases; row form is "a useful competing hypothesis, not the uniquely proven failure cause" (ledger P43 amended). (2) The single-hop experience → write → use path is not absent: SEQ-245 already showed a fresh parent-free bank going 1/4 → 4/4 own-memory actions with 4/4 new exact records and 12/12 prior retained — "a narrow working continuation with source-table scaffolding, NOT H2 or selection superiority"; the unsolved target is reliable goal-sensitive composition and learning-process transfer.
+
+**Fleet:** a40 0/8, ovx 0/8, ovx2 0/8, a100 4/8 — 4 of 32 GPUs in use; node 2 and node 3 empty with the scale fit ready to launch. VM: astra_nudge=1 fable_fill=1 courier_vm=1, heartbeat 31 s, astra tmux alive, Pursuing goal / Working, not paused; root 2.8 GB free. Laptop chains 4/4. Node-1 lease ends 23:14 UTC (~3.5 h); mirror complete; node 1 receives no new work. Survey of autonomous research swarms still being written (background). Nothing launched, killed or deleted by the watcher.
