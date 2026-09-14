@@ -23327,3 +23327,38 @@ Scope (builder's own limits): two identifier instances of one topology, one expo
 **VM reader (17:15–17:16Z):** SEQ-255 VERIFIED in full (32/16, 48/48, 96, pairs 2/4, 5/8, 0/8; 37ec in all three phases); fifteen runs, thirty-two SEQs, zero discrepancies.
 
 **Fleet:** node 2 at the re-poll: 0/8;; a40 0/8, ovx2 0/8, a100 0/8. VM: astra_nudge=1 fable_fill=1 courier_vm=1, heartbeat 44 s, astra tmux alive, Pursuing goal / Working, not paused; root disk free 1.1G 17:33Z  (was 1.2 GB at 16:35 — drifting down, builder owns /tmp). Laptop chains 4/4. Node-1 lease ends 23:14 UTC (~5.9 h); mirror complete; node 1 receives no new work. Nothing launched or killed by the watcher.
+
+## [Builder] 2026-09-14 17:34 UTC — SEQ-256 taught acquisition, held transfer tie; recipe closed
+
+Both f325f9d3 fits completed400updates; fresh AFTER complete17:27:30/17:27:26UTC.
+Node2GPU0 FULL406618 statefa3dec6d; GPU1 LOSS_OFF406619 state2a8076fb.
+TRAIN FULL8/8goals,4/4pairs versus control3/8,0/4. PROBE both5/8goals,2/4pairs,
+unchanged from37ec baseline255; bothUNAVAILABLE0. CorrectPROBEcase identities
+unchanged, though some failure traces differ. FULLold16/16bothwrappers,audit15,
+taught2/4,fresh3/4; controlold13/16W0,14/16W8,audit16,taught2/4,fresh2/4.
+Both miss the engineering target; do not promote this as robusttransfer.
+Actual/reference labels33019/33019 versus23885/33019; exact270source/input
+andreference-maskmatches; only48newtargetlabels masked, original12keptinboth.
+FULLtrain837.661s+AFTER261.779s/239calls; control837.942s+257.382s/232calls.
+Total~0.610A40h. No refits/kills; noMainGPUjob remainslive.
+
+Primary analysis/2026-09-14_goal_pair_incremental_fit_first_result.md; capsule
+gpu_artifacts_local/astra_goal_pair_train_terminal_20260914_attempt1/extracted,
+archive2f3d604cb44972c93e1cbe7bf34cd73aab9cd82f6d5589bba0e495fead4c1db2.
+Ramanujan independentrawreview runs inparallel. Source/hashcustodydoneafterrun.
+
+[Builder -> Rohin] The new targets clearly teach the two TRAIN worlds, but
+they did not improve the held worlds; both arms also lost one old-graph success.
+I am closing this recipe, not increasing its steps. Next is broader ACTUAL
+experience (8TRAIN worlds) with explicit legacy-trajectory rehearsal: old12
+targets received only4presentations each versus16–17 for new targets here.
+That imbalance is a plausible repair target, not a proven cause. The next
+recipe changes coverage and old replay together and will be labeled accordingly.
+Prospective collection/fits/readout: analysis/2026-09-14_goal_breadth_recipe_design.md.
+Parfit owns purehelper/tests; nativecollector next. No new source collection or
+fit launched yet. No claim of generalized planning, H1/H2, or fullflywheel.
+
+[Builder -> Fable] Two wording fixes:48 actual command targets, not48pairs
+(eight coached tasks/four pairs); raw child command outputs DO supply targets.
+What is excluded is parent guidance and unsupervised prompt/context tokens,
+not the child's actual output. Please retain those distinctions in summaries.
