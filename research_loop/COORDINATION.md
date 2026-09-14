@@ -22511,3 +22511,19 @@ including teardown and six-hour lease margin. The selected SEQ245 parent is
 parametric acquisition or H1/H2; new graph facts remain unwritten. No other
 Main job is live, no node1 allocation and no kill. Carson released the six
 SEQ247 writing updates; drafts remain UNSENT, PDF unbuilt. Mission incomplete.
+### [Builder] 2026-09-14 14:44 UTC — launch receipt and timestamp correction
+
+The preceding launch-boundary entry's heading said14:46UTC; that was an
+incorrect heading, not an observed launch time. Actual shell/guard receipts:
+node2GPU0 guardian389937, start2026-09-14T14:43:42Z,
+`/tmp/astra_event_two_hop_20260914_attempt1`, sourcee4143998. Admission passed;
+collection model loaded and generation began. No terminal result yet. No kill.
+Current STATE/HANDOFF now replace stale247-running state with this live job.
+
+[Builder -> Rohin] The next question is narrower than another finetuning sweep:
+can this SAME learner use its own accurate event records to choose a two-action
+path toward a final goal? Its prior tasks ended after one action. We are now
+collecting genuinely connected experiences rather than pretending old receipts
+were connected. Supplied-own-text, unavailable-memory, unwritten-parametric and
+base-actor controls separate remembering from the ability to use a connection.
+This takes no fit; what it actually does determines the next training data.

@@ -1,4 +1,45 @@
-# Astra restart handoff — September14,2026,02:49UTC
+# Astra restart handoff — current override September 14, 2026, 14:44 UTC
+
+## CURRENT — connected two-hop readonly diagnostic LIVE
+
+All historical LIVE statements below this section are superseded.
+SEQ245, SEQ246 and SEQ247 are COMPLETE and independently reduced. Do not repeat
+collection, fits or readouts. SEQ247 final capsule is
+`gpu_artifacts_local/astra_reader_audit_transfer_write_terminal_20260914_attempt2/extracted_complete`;
+`extracted` is an incomplete earlier extraction. Result and independent memos:
+`research_notes/analysis/2026-09-14_reader_audit_transfer_write_{first_result,independent_result}.md`.
+Shared taught writer with OFF valid selections [1,1] recalls1/4 and routes3/4;
+reused SELECTED and UNIFORM both4/4. Old facts12/12, held classifier16/16,
+MISS0/4. Invalid pointers, not isolated semantic judgment; no selection advantage
+over uniform, whole-life parenting comparison or H1/H2. Drafts through247 are
+committed2d467bc2, six writing files released, UNSENT, PDF not built.
+
+LIVE: node2GPU0 guardian389937, started2026-09-14T14:43:42Z;
+`/tmp/astra_event_two_hop_20260914_attempt1`, frozen source
+`e41439989de59858cd6d36fdd400a26c3dd1a12d`.
+Design: `research_notes/analysis/2026-09-14_event_two_hop_readonly_design.md`.
+Four new connected source-valid EVENT exposures, then ON_PARAMETRIC,
+ON_OWN_TEXT, ON_UNAVAILABLE, OFF_OWN_TEXT; four tasks on ONE graph, zero fits.
+Parent is SEQ245 SELECTED207ad43e, not SEQ247 descendant. Graph facts unwritten.
+16 native/helper CPU tests PASS, prior18adjacent PASS; native prepare PASS.
+Guard bounds5640seconds and six-hour lease margin; physical+CVD admission PASS.
+Inspect `collect/{RESULT,FAILED}.json`, `readout/{RESULT,FAILED}.json`, `run.log`;
+do not relaunch a completed stage or change the frozen snapshot.
+
+Kant01a09fa3-a041-7d02-8aa7-9fbed90643f0 now owns ONLY
+`tools/astra_event_two_hop_reduce.py` and `tests/test_astra_event_two_hop_reduce.py`:
+small independent CPU reducer/tests, no model/GPU/remote rights. Main owns
+execution/drivers/state. Carson01a09e1f-9b92-7233-9c25-fd6e735652b0 released
+writing; no pending edits. Preserve dirty `gpu/codex/dream_state.rules` and
+untracked `research_notes/analysis/2026-09-13_two_sleep_junction_prospective_packet_draft.md`.
+
+Next: capture/reduce actual connected collection and readouts, retain all failed
+traces, prospectively choose next learning action. No automatic follow-on fit.
+Supplied-text success is contextual controller capability, not acquired weights.
+Node1 has no new work and expiresSeptember14,23:14UTC; mirror complete per prior
+reconciliation. Node2 endsSeptember21,08:43UTC. Full mission ACTIVE/INCOMPLETE.
+
+## Historical snapshots (not current job state)
 
 ## CURRENT OVERRIDE — September14,2026,13:49UTC, SEQ245
 

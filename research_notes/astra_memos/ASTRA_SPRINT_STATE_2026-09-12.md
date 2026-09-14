@@ -1,4 +1,21 @@
-## Current superseding snapshot — 2026-09-14 13:49 UTC, SEQ245
+## Current superseding snapshot — 2026-09-14 14:44 UTC
+
+SEQ245/246/247 COMPLETE, independently reduced, drafts through247 committed
+2d467bc2. No fit is live. Shared-writer control247: recall1/4,routing3/4 versus
+reused selected/uniform4/4; old12/12,classifier16/16,MISS0/4. Uniform matches
+taught selection; invalid-pointer difference is not isolated semantic judgment.
+Canonical247 evidence uses `extracted_complete` only, as linked in HANDOFF.
+
+LIVE zero-fit connected EVENT diagnostic on node2GPU0, guardian389937,
+start14:43:42UTC, `/tmp/astra_event_two_hop_20260914_attempt1`, frozen source
+e41439989de59858cd6d36fdd400a26c3dd1a12d. Four scheduled exposures then four
+readonly conditions/four tasks on one graph; new facts unwritten. Parent245
+SELECTED207ad43e. Native CPU prepare and16native/helper testsPASS; <=5640s.
+No terminal result yet. Kant owns independent reducer/tests; Main executes.
+See current HANDOFF for exact inspect paths, agent ownership and next actions.
+Mission incomplete; no blanket mechanism freeze, clean ancestry or H1/H2 claim.
+
+## Historical superseded snapshot — 2026-09-14 13:49 UTC, SEQ245
 
 LIVE 14:12:43UTC shared-writer control: node2GPU0 guardian386793,
 root/tmp/astra_reader_audit_transfer_write_20260914_attempt2,
