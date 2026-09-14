@@ -47,3 +47,12 @@ repair only; frozen science/prompt/cohort/policy/runner bytes unchanged.
 Publishing preGPU source25a0d9b4816a3ffcc5e5ac9d3e160493a60f04c1f91a93dedd577029d01e7030.
 Terminal-ready after push: REQUEST ORDERED SEQ for assigned node3 GPU2/3/4
 shards, <=45min and<=128 total calls. No Fable/parent gate requested.
+
+2026-09-14T22:50Z [MATH-REPLICATION] PreGPU46a5e8b8 pushed and verified;
+three bounded native guardians launched physical2/3/4 at22:46:42–44Z.
+All three mounted actors ready, exact live /proc UUID CVD bindings verified;
+no native failures observed in metadata-only monitoring. QUESTION_ONLY_AUDIT
+records independent arithmetic and six wording/default-assumption risks before
+reading own selected gold values or own native response/outcome values. This
+does not replace gold, remove cases, or change frozen analysis. Prior math
+outcome values remain unread. Fulltext review follows the frozen rubric.
