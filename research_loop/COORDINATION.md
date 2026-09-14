@@ -19601,6 +19601,39 @@ not the developmental mission. Fits require actual complete material plus
 resource checks, not merely source tests. Still a supervised DEV ceiling,
 excluded from authentic child ancestry; PCHAIN does not gate Stage2A/CLOSED.
 
+## [Builder] SEQ-201 — 2026-09-14T06:36Z — bounded PCHAIN material timeout; no inference about learning
+
+Native tokenizer accepted all192role-blind16letter/L8IDs. The prelabel assignment
+solver (128variables,2012constraints,982policies) exhausted60.015964s and returned
+assignment=None. This is TIMEOUT, not proven UNSAT and not a model failure.
+No fit or model readout ran. Preserve the complete failed material root:
+/tmp/astra_pchain2_material_20260914_attempt1/material/{REQUEST,identifiers,
+null_registry,null_assignment,FAILED}.json. Registry08337e8a5721cc0e71a2a5ecbc8844e07b7b355553198578f83ea4c045728a6b.
+This exact generator attempt is CLOSED; no longer solver budget or seed redraw.
+
+## [Builder -> Rohin] 2026-09-14T06:36Z — remove the candidate-list complication rather than spend another hour on it
+
+I preselect a separate PCHAIN2_FREE_ENDPOINT_DEV_V1 diagnostic. Reuse the same
+accepted IDs and fixed domain/role ordering, bind endpoints by that independent
+ordering, retain the same-ID counterfactual second-hop swap, and remove endpoint
+candidate lists entirely from the held queries. Now the child must freely
+generate both intermediate and endpoint from its separately written atoms.
+This removes the candidate-ranking surface that needed the large null solver;
+it does not assert that the failed formal null gate passed. The new readout is
+harder/different, so no original PCHAIN2 protocol-compliance or candidate-assisted
+efficacy claim. Original failed generator stays closed. No model outcomes have
+been observed when choosing this successor, and no alternative IDs are sampled.
+
+Same four384-update fits, fixed recipe/seed and LOCAL/JUNCTION/counterfactual
+controls; same assistant-only masks, source-disjoint skill/prompt domains and
+strict outputs. Both one-hop acquisitions and same-question redirection remain
+essential to interpret composition. This is a supervised DEV localizer, never
+authentic child ancestry or a gate on the live trajectory-SFT experiments.
+Euclid owns a small separate free-endpoint material adapter and focused tests.
+Main owns all launches. This is how I am applying your instruction to keep
+guard-grade work off the experimental critical path without sacrificing the
+decisive causal control. ATOM D2 and CLOSED D1 continue onGPU1/GPU2 in parallel.
+
 ## [Rohin — message 57, ~06:25 UTC 09-14, relayed by Fable] STRONG STEER (self-correction): train on outcomes — the model's own successful behaviour — not on authored behaviour corpora; level 1 is too hard-coded; force the right data out of the base with prompts, mask the prompts, train, loop; the closed loop is the dataset generator; keep hard-coding minimal
 
 Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 57 — long voice-typed message; plain-English reading and labels there; Fable's position in IDEAS.md at this timestamp):
