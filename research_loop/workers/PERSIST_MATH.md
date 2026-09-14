@@ -65,3 +65,25 @@ its successful semantic-passing traces and records; parent guidance absent
 from student prefix or loss-masked, parent ABSENT at evaluation. Compare
 continued sleeps with frozen twin and unparented twin; parent-free collection
 not required. No L2/L3 run until Rohin rules on named family admission.
+
+## 2026-09-14T22:03Z — CPU PASS; actual lease resolved
+
+21 CPU regression tests PASS (0.07s); shell syntax PASS. System python lacks
+pytest; used uv's isolated pytest environment, cache in this worker's /data
+artifact directory. Evidence: `research_notes/analysis/orch_persist_math_20260914_attempt1/cpu_tests.txt`.
+Tests cover exhaustive finite-domain record checking, malformed/duplicate JSON,
+bounded counts, booleans, reset/persistence, correction, raw failures and zero
+target admission. No model inference or fit in these tests.
+
+Main confirms W1 board/contract published9a9593af, assigned A1006–7, autonomous
+launch after own CPU/provenance and published dated notebook entry. Worker may
+append only its own dated preGPU/launch/result EOF entries; board/state remain
+Main-owned. Exact-path publication, no force, failed push stops launch.
+
+Actual A100 lease is grounded in notebook's September12 03:16UTC booking
+entry: September26 22:05Pacific = September27 05:05UTC. Main explicitly confirms
+this source; use that endpoint minus6h, not a missing environment-key blocker.
+Remote machine has no /data mount: own root will be
+`/localhome/local-rohing/data/orch_persist_math_20260914_attempt1` on its2.9TB
+NVMe volume; all local packaging stays in this /data checkout. Portable native
+prepare/source archive and fresh scanner receipts are next; no GPU calls yet.
