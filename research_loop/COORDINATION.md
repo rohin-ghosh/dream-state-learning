@@ -23291,3 +23291,25 @@ evidence-use demonstrations are a candidate, not an assumed requirement.
 Independent result review and draft updates run alongside these GPU fits.
 Decision map: analysis/2026-09-14_goal_learning_next_decision.md. No new fit
 beyond the two already running is launched or implied by this note.
+
+## [Fable VM result read] 2026-09-14T17:16Z — SEQ-255 VERIFIED
+
+Read-only re-derivation of the builder's 17:06 UTC SEQ-255 entry from the node-2 root `/tmp/astra_goal_pair_collection_20260914_attempt1` (expose/, teach/, baseline/ RESULT.json plus CALL_*, COLLECTION_*, DATA.json). RESULT.json files use the `model_calls`/`role_calls`/`loaded_adapter_state_sha256` schema, not `physical_model_calls`/`adapter_sha256`.
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| EXPOSE calls | 32 | 32 (`model_calls`=32; 32 CALL_*.json) | expose/RESULT.json, expose/CALL_* |
+| EXPOSE actual EVENTs | 16 | 16 (4 collections x `accepted_events`=4, `records`=4) | expose/COLLECTION_00..03.json |
+| TEACH calls | 48 | 48 (`model_calls`=48, `role_calls.coached_actor`=48; 48 CALL_*.json) | teach/RESULT.json, teach/CALL_* |
+| TEACH actual TRAIN targets | 48 | 48 (`row_count`=48) | teach/RESULT.json, teach/DATA.json |
+| BASELINE calls | 96 | 96 (`model_calls`=96, `role_calls.actor`=96; 96 CALL_*.json) | baseline/RESULT.json, baseline/CALL_* |
+| fits / updates, all phases | 0 / 0 | 0 / 0 in expose, teach, baseline | */RESULT.json |
+| PROBE-A OWN_TEXT tasks / pairs | 2/4, 1/2 | 2/4, 1/2 | baseline/RESULT.json summaries |
+| PROBE-B OWN_TEXT tasks / pairs | 3/4, 1/2 | 3/4, 1/2 | baseline/RESULT.json summaries |
+| Total OWN_TEXT tasks / pairs | 5/8, 2/4 | 5/8, 2/4 | baseline/RESULT.json summaries |
+| UNAVAILABLE tasks / pairs | 0/8, 0/4 | 0/8, 0/4 (PROBE-A 0/4, 0/2; PROBE-B 0/4, 0/2; all 8 terminals `duplicate_address`) | baseline/RESULT.json summaries |
+| native phase seconds | 394.545 (129.193 + 122.094 + 143.258) | 129.193 + 122.094 + 143.258 = 394.545 from `started_unix`/`finished_unix` | */RESULT.json |
+| status | COMPLETE | COMPLETE in all three phases | */RESULT.json |
+
+Integrity: adapter prefix `37ec` in the entry matches `loaded_adapter_state_sha256` = `adapter_state_after` = `37ec37884e4b...78b8c0` in all three phases, `frozen_base_unchanged` true; source `a0fdc9a7` matches `source_commit.txt` (`a0fdc9a7dda2d84e5f535b3b54e31741ce753c7a`). Model calls claimed (32 / 48 / 96, 176 total) equal `model_calls` and the CALL_*.json file counts in each phase. `parent_present` is false in expose and baseline, true in teach, as the entry states.
+Scope (builder's own limits): two identifier instances of one topology, one exposed DEV lineage, guided data collection plus an unchanged-child baseline; not independent seeds, not generalized planning, not H1/H2 evidence. Archive sha256 `e66d7d7e...` and the local capsule were not re-checked (VM filesystem not searched).
