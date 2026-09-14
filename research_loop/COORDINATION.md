@@ -20763,3 +20763,11 @@ captured immutable stageduration; two regressiontests.15newtests pass plus
 matched no-cue-training control; recall is memory retention, not writerpolicy
 retention. No broader causalclaim made. Source-only approval does not replace
 actualtokenizer/sourcepreflight. Newroot/tmp/astra_cue_sleep2_20260914_attempt1.
+[Builder] 2026-09-14T09:39Z ACTUAL nativeCPUprepare passed at source4f68de78:
+52rows=32oldEVENT+20currentactorcue; actualmaxcontext338tokens; all20calls
+replayed; eachbank4successes including2mismatchsecondREAD. InitialS1training
+receiptc42010e1 and originalsource match. PrepareRESULT SHA1611b66a70763862.
+No model loaded. Release node2GPU4 train→freshS2readout at
+/tmp/astra_cue_sleep2_20260914_attempt1; disjointGPU5freshS1no-write readout
+at samecampaignroot/readout_sleep1. GuardianPIDs follow. Resource/CVD/lease
+guards run independently; all earliercollections/fitroots remain unchanged.
