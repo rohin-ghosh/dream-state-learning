@@ -1,0 +1,338 @@
+[
+  {
+    "gold": "14400",
+    "question": "Mario's salary increased by 40% to $4000 this year. Bob's salary from last year was equal to three times Mario's salary this year. If Bob's current salary is 20% more than his salary last year, what is his current salary?",
+    "question_sha256": "281dc2a0ae72396833df31e6f6e3cf4326d97d85571b0c441de16a2c5837ebd0",
+    "responses": [
+      {
+        "key": "gsm8k-train-2225:rich",
+        "raw_call_sha256": "069fb2ece235c93cb7f1980cc7498693d8204e5351b347560c4d038dbe828955",
+        "student_prefix": [
+          {
+            "content": "Mario's salary increased by 40% to $4000 this year. Bob's salary from last year was equal to three times Mario's salary this year. If Bob's current salary is 20% more than his salary last year, what is his current salary?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "9834c2307af04fff7675f5a52ec69b2fda7a929c7ecc5b37e64da9e5dedb305a",
+        "target": "First, I identify the given quantities:\n- Mario's salary increased by 40% to $4000 this year.\n- Bob's salary last year was three times Mario's salary this year.\n- Bob's current salary is 20% more than his salary last year.\n\nFrom Mario's salary increase, I can find his original salary:\nLet \\( x \\) be Mario's original salary. Then, \\( x + 0.4x = 4000 \\).\nThis simplifies to \\( 1.4x = 4000 \\).\nSolving for \\( x \\), I get \\( x = \\frac{4000}{1.4} = 2857.14 \\).\n\nBob's salary last year was three times Mario's salary this year:\nBob's salary last year = \\( 3 \\times 4000 = 12000 \\).\n\nBob's current salary is 20% more than his salary last year:\nBob's current salary = \\( 12000 + 0.2 \\times 12000 = 12000 + 2400 = 14400 \\).\n\nFINAL: 14400",
+        "target_sha256": "7dbe698227b2288d47a0bfaa15db15748d1b1aaf623cefd3b45dbcf17c07f543"
+      },
+      {
+        "key": "gsm8k-train-2225:new_record",
+        "raw_call_sha256": "0aef6ff2d39406343448fd79972d44618fd14972801e26f5b6e290bfdd62f76b",
+        "student_prefix": [
+          {
+            "content": "Mario's salary increased by 40% to $4000 this year. Bob's salary from last year was equal to three times Mario's salary this year. If Bob's current salary is 20% more than his salary last year, what is his current salary?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Mario's salary increased by 40% to $4000 this year.\n- Bob's salary last year was three times Mario's salary this year.\n- Bob's current salary is 20% more than his salary last year.\n\nFrom Mario's salary increase, I can find his original salary:\nLet \\( x \\) be Mario's original salary. Then, \\( x + 0.4x = 4000 \\).\nThis simplifies to \\( 1.4x = 4000 \\).\nSolving for \\( x \\), I get \\( x = \\frac{4000}{1.4} = 2857.14 \\).\n\nBob's salary last year was three times Mario's salary this year:\nBob's salary last year = \\( 3 \\times 4000 = 12000 \\).\n\nBob's current salary is 20% more than his salary last year:\nBob's current salary = \\( 12000 + 0.2 \\times 12000 = 12000 + 2400 = 14400 \\).\n\nFINAL: 14400",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "867d86d4d002d61b28ebb94079c43002c0b755671807ea08c80b69a93be4017d",
+        "target": "Given the problem, I identified the following quantities:\n- Mario's new salary: $4000\n- Mario's salary increase: 40%\n- Bob's salary last year: three times Mario's new salary\n- Bob's current salary: 20% more than his salary last year\n\nI first needed to find Mario's original salary. I set up the equation based on the 40% increase:\n\\[ \\text{Original Salary} + 0.4 \\times \\text{Original Salary} = 4000 \\]\n\\[ 1.4 \\times \\text{Original Salary} = 4000 \\]\n\\[ \\text{Original Salary} = \\frac{4000}{1.4} = 2857.14 \\]\n\nNext, I calculated Bob's salary last year, which was three times Mario's new salary:\n\\[ \\text{Bob's Salary Last Year} = 3 \\times 4000 = 12000 \\]\n\nThen, I determined Bob's current salary, which is 20% more than his salary last year:\n\\[ \\text{Bob's Current Salary} = 12000 + 0.2 \\times 12000 = 12000 + 2400 = 14400 \\]\n\nTo verify, I checked that the operations logically follow the problem statement and that the final salary is indeed 20% more than Bob's salary last year:\n\\[ 12000 + 0.2 \\times 12000 = 12000 + 2400 = 14400 \\]\n\nThe operations are reusable when similar salary increase and percentage calculations are needed. The final answer is confirmed by the problem's conditions.\n\nFINAL: 14400",
+        "target_sha256": "fc26dcca6f5ed68d96f6442bcb5d875d76980c449df78ba2d10f66cc4ac10374"
+      }
+    ],
+    "task_id": "gsm8k-train-2225"
+  },
+  {
+    "gold": "53",
+    "question": "Mary just held tryouts for the high school band. 80% of the 20 flutes got in, half the 30 clarinets got in, 1/3 of the 60 trumpets got in, and 1/10th of the 20 pianists got in. How many people are in the band total?",
+    "question_sha256": "4d0068200f54d90f5e83cb4f086262ac5d0734b5d5dd5743ad212fe420623d53",
+    "responses": [
+      {
+        "key": "gsm8k-train-3808:rich",
+        "raw_call_sha256": "3309975b713d8416dbe5f9987b0b98c273ed1f2697ad83166c556762e6e92af9",
+        "student_prefix": [
+          {
+            "content": "Mary just held tryouts for the high school band. 80% of the 20 flutes got in, half the 30 clarinets got in, 1/3 of the 60 trumpets got in, and 1/10th of the 20 pianists got in. How many people are in the band total?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "231f14c5a6e25ee4f29fca77b5c55515c021e356816fee1d83b704683dfe2e55",
+        "target": "First, I calculate the number of each instrument that got in:\n\n- Flutes: 80% of 20 = 0.8 * 20 = 16\n- Clarinets: Half of 30 = 30 / 2 = 15\n- Trumpets: 1/3 of 60 = 60 / 3 = 20\n- Pianists: 1/10th of 20 = 20 / 10 = 2\n\nNext, I sum these numbers to find the total number of people in the band:\n\n16 (flutes) + 15 (clarinets) + 20 (trumpets) + 2 (pianists) = 53\n\nFINAL: 53",
+        "target_sha256": "aba6e73e270532961c3f44e259e7dd156bfdd35af9745e7b9f17ab316423d789"
+      },
+      {
+        "key": "gsm8k-train-3808:new_record",
+        "raw_call_sha256": "db13cd3539f7057a37af8483aaf5a87e954b495d1978c98b3f04edbaf1607dc3",
+        "student_prefix": [
+          {
+            "content": "Mary just held tryouts for the high school band. 80% of the 20 flutes got in, half the 30 clarinets got in, 1/3 of the 60 trumpets got in, and 1/10th of the 20 pianists got in. How many people are in the band total?",
+            "role": "user"
+          },
+          {
+            "content": "First, I calculate the number of each instrument that got in:\n\n- Flutes: 80% of 20 = 0.8 * 20 = 16\n- Clarinets: Half of 30 = 30 / 2 = 15\n- Trumpets: 1/3 of 60 = 60 / 3 = 20\n- Pianists: 1/10th of 20 = 20 / 10 = 2\n\nNext, I sum these numbers to find the total number of people in the band:\n\n16 (flutes) + 15 (clarinets) + 20 (trumpets) + 2 (pianists) = 53\n\nFINAL: 53",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "993dbd8f5a3567141c26ea11576db5795d51137ffa6106251347a646db1e5bf3",
+        "target": "Given the problem, I identified the following quantities and their relationships:\n- 20 flutes, with 80% getting in.\n- 30 clarinets, with half getting in.\n- 60 trumpets, with 1/3 getting in.\n- 20 pianists, with 1/10 getting in.\n\nThe unknown is the total number of people in the band. To find this, I need to calculate the number of each instrument that got in and then sum these numbers.\n\nFor the flutes:\n- 80% of 20 = 0.8 * 20 = 16\n\nFor the clarinets:\n- Half of 30 = 30 / 2 = 15\n\nFor the trumpets:\n- 1/3 of 60 = 60 / 3 = 20\n\nFor the pianists:\n- 1/10 of 20 = 20 / 10 = 2\n\nSumming these results:\n- 16 (flutes) + 15 (clarinets) + 20 (trumpets) + 2 (pianists) = 53\n\nTo check this result, I can recount the operations and verify the arithmetic:\n- 0.8 * 20 = 16\n- 30 / 2 = 15\n- 60 / 3 = 20\n- 20 / 10 = 2\n- 16 + 15 + 20 + 2 = 53\n\nThe operations are straightforward and can be reused in similar problems involving percentages, fractions, and simple arithmetic. The result is consistent with the problem statement.\n\nFINAL: 53",
+        "target_sha256": "477d99c5ea331c55fa99347eb9aa8e21003f2d7e27eee2e8965649716aba76a6"
+      }
+    ],
+    "task_id": "gsm8k-train-3808"
+  },
+  {
+    "gold": "79",
+    "question": "Phillip is taking a math test and an English test on Monday. The math test has 40 questions and he gets 75% of them right. The English test has 50 questions and he gets 98% of them right. How many total questions does he get right?",
+    "question_sha256": "810cc0e8c5a02fe1a095d2d3317a64420b60819d4eeb49461bcebcd69ffd5490",
+    "responses": [
+      {
+        "key": "gsm8k-train-4362:rich",
+        "raw_call_sha256": "299d43f215245c45522b52a073aa137f2578b64b528ac07567d16581f5854bd2",
+        "student_prefix": [
+          {
+            "content": "Phillip is taking a math test and an English test on Monday. The math test has 40 questions and he gets 75% of them right. The English test has 50 questions and he gets 98% of them right. How many total questions does he get right?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "e42129769d66676922b6085f564a47e6564de34c24b0ce41fff7a0b243d5cee3",
+        "target": "First, I calculate the number of questions Phillip gets right in the math test. He gets 75% of 40 questions right. That's 0.75 * 40 = 30 questions right. \n\nNext, I calculate the number of questions he gets right in the English test. He gets 98% of 50 questions right. That's 0.98 * 50 = 49 questions right.\n\nTo find the total number of questions he gets right, I add the number of questions right from both tests: 30 + 49 = 79 questions.\n\nFINAL: 79",
+        "target_sha256": "571acfc385b2d8fba84eb4ed620e89305f2e556a6257988ce0418f351f5bed01"
+      },
+      {
+        "key": "gsm8k-train-4362:new_record",
+        "raw_call_sha256": "35eff156e0f01258374e72fb2128f5bb63759c4661be93da20c248c8a2acf831",
+        "student_prefix": [
+          {
+            "content": "Phillip is taking a math test and an English test on Monday. The math test has 40 questions and he gets 75% of them right. The English test has 50 questions and he gets 98% of them right. How many total questions does he get right?",
+            "role": "user"
+          },
+          {
+            "content": "First, I calculate the number of questions Phillip gets right in the math test. He gets 75% of 40 questions right. That's 0.75 * 40 = 30 questions right. \n\nNext, I calculate the number of questions he gets right in the English test. He gets 98% of 50 questions right. That's 0.98 * 50 = 49 questions right.\n\nTo find the total number of questions he gets right, I add the number of questions right from both tests: 30 + 49 = 79 questions.\n\nFINAL: 79",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "1d24742803afd9b28ac4fba68c3ce2e7fa2b2c3f55265c31906be5c46b62ca3a",
+        "target": "Given the problem, I identified the following quantities:\n- Math test: 40 questions, with 75% correct.\n- English test: 50 questions, with 98% correct.\n\nThe unknown I needed to find was the total number of questions Phillip got right.\n\nTo solve this, I first calculated the number of correct answers for each test separately. For the math test, I used the operation:\n\\[ \\text{Correct Math Questions} = 40 \\times 0.75 \\]\nThis operation converts the percentage of correct answers into the actual number of questions answered correctly. I expected this to give me a whole number, which it did: 30 correct answers.\n\nFor the English test, I used a similar operation:\n\\[ \\text{Correct English Questions} = 50 \\times 0.98 \\]\nThis operation also converts the percentage into the actual number of questions answered correctly. I expected this to give me a whole number, which it did: 49 correct answers.\n\nNext, I added the correct answers from both tests to find the total number of correct answers:\n\\[ \\text{Total Correct Answers} = 30 + 49 = 79 \\]\n\nTo check this result, I verified that the operations were correctly applied and that the addition was accurate. I also ensured that the percentages were correctly interpreted as decimals.\n\nThe operations I used are reusable in similar problems where percentages of correct answers need to be calculated and summed. I would apply the same method to any problem with a similar structure.\n\nFINAL: 79",
+        "target_sha256": "b5e04d7e4d361c25ae383eec9c6dcde01909b04432a32799dbc7744cf67ec11c"
+      }
+    ],
+    "task_id": "gsm8k-train-4362"
+  },
+  {
+    "gold": "100",
+    "question": "In a town where 60% of the citizens own a pet, half own a dog and 30 own a cat. How many citizens are in the town?",
+    "question_sha256": "cfc9fc112debdc8df448b0117bed82002f4012531c4b9507a5d6807632b9c931",
+    "responses": [
+      {
+        "key": "gsm8k-train-1855:rich",
+        "raw_call_sha256": "19e58ca8b312d07c066cbe7d2b1202916455986e7f2d4439da3ed14ffb1eaa56",
+        "student_prefix": [
+          {
+            "content": "In a town where 60% of the citizens own a pet, half own a dog and 30 own a cat. How many citizens are in the town?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "4c11074d0f8773399578445b3b1ef4c7bd1149ed3b8eccb9cf814b204626073d",
+        "target": "Given:\n- 60% of the citizens own a pet.\n- Half of the pet owners own a dog.\n- 30 citizens own a cat.\n\nLet's denote the total number of citizens as \\( x \\).\n\nFirst, calculate the number of pet owners:\n\\[ 0.60x \\]\n\nSince half of the pet owners own a dog, the other half must own a cat:\n\\[ \\frac{0.60x}{2} = 0.30x \\]\n\nWe know that 30 citizens own a cat, so:\n\\[ 0.30x = 30 \\]\n\nSolve for \\( x \\):\n\\[ x = \\frac{30}{0.30} = 100 \\]\n\nSo, the total number of citizens in the town is 100.\n\nFINAL: 100",
+        "target_sha256": "3578e5851498191f51ab64017d8e382c6be6cdbf0f78d3ad1ce7e3381979e0ed"
+      },
+      {
+        "key": "gsm8k-train-1855:new_record",
+        "raw_call_sha256": "aa373f8ed647666839659de487620b9b5806520d6424002d284b94ec7d5bfc49",
+        "student_prefix": [
+          {
+            "content": "In a town where 60% of the citizens own a pet, half own a dog and 30 own a cat. How many citizens are in the town?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- 60% of the citizens own a pet.\n- Half of the pet owners own a dog.\n- 30 citizens own a cat.\n\nLet's denote the total number of citizens as \\( x \\).\n\nFirst, calculate the number of pet owners:\n\\[ 0.60x \\]\n\nSince half of the pet owners own a dog, the other half must own a cat:\n\\[ \\frac{0.60x}{2} = 0.30x \\]\n\nWe know that 30 citizens own a cat, so:\n\\[ 0.30x = 30 \\]\n\nSolve for \\( x \\):\n\\[ x = \\frac{30}{0.30} = 100 \\]\n\nSo, the total number of citizens in the town is 100.\n\nFINAL: 100",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "b33d9f7cc0c82993a09c8ea0c5bcd2140783eb56e1f089a9073c1f585c4e502f",
+        "target": "Given the problem, I identified the following quantities and the unknown:\n- 60% of the citizens own a pet.\n- Half of the pet owners own a dog.\n- 30 citizens own a cat.\n\nThe unknown is the total number of citizens in the town, which I denoted as \\( x \\).\n\nTo solve this, I first recognized that the number of pet owners is 60% of the total citizens, or \\( 0.60x \\). Since half of these pet owners own a dog, the other half must own a cat. Therefore, the number of cat owners is \\( 0.30x \\), and we know this equals 30 citizens.\n\nI set up the equation:\n\\[ 0.30x = 30 \\]\n\nTo find \\( x \\), I divided both sides by 0.30:\n\\[ x = \\frac{30}{0.30} = 100 \\]\n\nI checked this result by confirming that 60% of 100 is 60, and half of 60 is 30, which matches the number of cat owners given in the problem.\n\nThe operation I would reuse is the proportion calculation and division to find the total number of citizens from the given percentage and a specific count of a subset. This is useful whenever you have a percentage and a specific count of a subset of a larger group.\n\nFINAL: 100",
+        "target_sha256": "c001e17931073d88cd992e345318459eff843a6f5ce071fd52558edafd20b125"
+      }
+    ],
+    "task_id": "gsm8k-train-1855"
+  },
+  {
+    "gold": "2500",
+    "question": "Liz sold her car at 80% of what she originally paid. She uses the proceeds of that sale and needs only $4,000 to buy herself a new $30,000 car. How much cheaper is her new car versus what she originally paid for her old one?",
+    "question_sha256": "1d1ae7966e34e0e5db859b25e4c08b4f5bf73115b6969005156ae682795eed41",
+    "responses": [
+      {
+        "key": "gsm8k-train-6776:rich",
+        "raw_call_sha256": "2f610145d26266abadce46750e006770bb66bcff2ca1dd6656156d428a9f437f",
+        "student_prefix": [
+          {
+            "content": "Liz sold her car at 80% of what she originally paid. She uses the proceeds of that sale and needs only $4,000 to buy herself a new $30,000 car. How much cheaper is her new car versus what she originally paid for her old one?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "56fa7f61cf4803a94803ce100076232fff56431004512e2e896c01bffac9c20f",
+        "target": "Given:\n- Liz sold her car for 80% of what she originally paid.\n- She needs an additional $4,000 to buy a new $30,000 car.\n- We need to find how much cheaper the new car is compared to the original price of the old car.\n\nLet's denote the original price of the old car as \\( P \\).\n\nFrom the problem, we know:\n\\[ \\text{Sale price of old car} = 0.8P \\]\n\nTo buy the new car, she needs:\n\\[ 0.8P + 4000 = 30000 \\]\n\nSolving for \\( P \\):\n\\[ 0.8P = 30000 - 4000 \\]\n\\[ 0.8P = 26000 \\]\n\\[ P = \\frac{26000}{0.8} \\]\n\\[ P = 32500 \\]\n\nThe original price of the old car was $32,500. The new car costs $30,000. The difference in price is:\n\\[ 32500 - 30000 = 2500 \\]\n\nFINAL: 2500",
+        "target_sha256": "b7911f0602ee65c4bf38a81e49c9a02c10a1a089971eee66e40bd644636d55a8"
+      },
+      {
+        "key": "gsm8k-train-6776:new_record",
+        "raw_call_sha256": "dd46734206496c73883dc3854f5f71d4649a6ab8d268efa7e5eb9a3319ea9840",
+        "student_prefix": [
+          {
+            "content": "Liz sold her car at 80% of what she originally paid. She uses the proceeds of that sale and needs only $4,000 to buy herself a new $30,000 car. How much cheaper is her new car versus what she originally paid for her old one?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Liz sold her car for 80% of what she originally paid.\n- She needs an additional $4,000 to buy a new $30,000 car.\n- We need to find how much cheaper the new car is compared to the original price of the old car.\n\nLet's denote the original price of the old car as \\( P \\).\n\nFrom the problem, we know:\n\\[ \\text{Sale price of old car} = 0.8P \\]\n\nTo buy the new car, she needs:\n\\[ 0.8P + 4000 = 30000 \\]\n\nSolving for \\( P \\):\n\\[ 0.8P = 30000 - 4000 \\]\n\\[ 0.8P = 26000 \\]\n\\[ P = \\frac{26000}{0.8} \\]\n\\[ P = 32500 \\]\n\nThe original price of the old car was $32,500. The new car costs $30,000. The difference in price is:\n\\[ 32500 - 30000 = 2500 \\]\n\nFINAL: 2500",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "0864922c4a472223043048daf71a2faaaf2bb084c4159072735ec51212b16ea0",
+        "target": "Given the problem, I identified the following quantities:\n- The new car costs $30,000.\n- Liz needs an additional $4,000 after selling her old car at 80% of its original price to buy the new car.\n\nThe unknown quantity is the original price of the old car, which I denoted as \\( P \\).\n\nTo find \\( P \\), I set up the equation based on the information provided:\n\\[ 0.8P + 4000 = 30000 \\]\n\nI solved for \\( P \\) by isolating it on one side of the equation:\n\\[ 0.8P = 30000 - 4000 \\]\n\\[ 0.8P = 26000 \\]\n\\[ P = \\frac{26000}{0.8} \\]\n\\[ P = 32500 \\]\n\nI expected the result to mean that the original price of the old car was $32,500. To check this, I verified that selling the car at 80% of $32,500 and adding $4,000 would indeed equal $30,000:\n\\[ 0.8 \\times 32500 = 26000 \\]\n\\[ 26000 + 4000 = 30000 \\]\n\nThis confirms the solution is correct. The difference in price between the new car and the original price of the old car is:\n\\[ 32500 - 30000 = 2500 \\]\n\nI would reuse this operation when solving similar problems involving percentages and additional amounts needed to reach a target value. The final answer is:\nFINAL: 2500",
+        "target_sha256": "6031de207a02e648c8cb65bb71649829ec95f94641043afdbf7d8db5db539f64"
+      }
+    ],
+    "task_id": "gsm8k-train-6776"
+  },
+  {
+    "gold": "216",
+    "question": "Borris liquor store uses 90 kilograms of grapes every 6 months. He is thinking of increasing his production by twenty percent. How many grapes does he need in a year after increasing his production?",
+    "question_sha256": "76849b452274f181420278b08924af80ac518606c78666983fc53040e9b2ee6e",
+    "responses": [
+      {
+        "key": "gsm8k-train-169:rich",
+        "raw_call_sha256": "7880d7110c8a3a2add58e04f4a1d50134bf8679cd992593f2d0fece2d5606ec0",
+        "student_prefix": [
+          {
+            "content": "Borris liquor store uses 90 kilograms of grapes every 6 months. He is thinking of increasing his production by twenty percent. How many grapes does he need in a year after increasing his production?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "8cf1895a7123925572aeb90a88c077cb3f906a2e9801610628adda789769de9b",
+        "target": "Given:\n- Borris uses 90 kilograms of grapes every 6 months.\n- He plans to increase his production by 20%.\n\nFirst, calculate the annual usage before the increase:\n- 90 kg every 6 months means 180 kg per year (90 kg * 2).\n\nNext, calculate the 20% increase in production:\n- 20% of 180 kg is 0.20 * 180 = 36 kg.\n\nAdd this increase to the original annual usage:\n- 180 kg + 36 kg = 216 kg.\n\nSo, Borris will need 216 kilograms of grapes in a year after increasing his production.\n\nFINAL: 216",
+        "target_sha256": "243e3568312f90f93b56ab35ba2ef79b98e06c3985ccb3a38d7272a4a9f92c90"
+      },
+      {
+        "key": "gsm8k-train-169:new_record",
+        "raw_call_sha256": "afe7fab6d19b4838db087bbb2b8e783945c5b6ec04b9b4554096a722b7b05548",
+        "student_prefix": [
+          {
+            "content": "Borris liquor store uses 90 kilograms of grapes every 6 months. He is thinking of increasing his production by twenty percent. How many grapes does he need in a year after increasing his production?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Borris uses 90 kilograms of grapes every 6 months.\n- He plans to increase his production by 20%.\n\nFirst, calculate the annual usage before the increase:\n- 90 kg every 6 months means 180 kg per year (90 kg * 2).\n\nNext, calculate the 20% increase in production:\n- 20% of 180 kg is 0.20 * 180 = 36 kg.\n\nAdd this increase to the original annual usage:\n- 180 kg + 36 kg = 216 kg.\n\nSo, Borris will need 216 kilograms of grapes in a year after increasing his production.\n\nFINAL: 216",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "03c28f33fcf877388e256806f79d20dbfe2985dde61968fee6364199662670dd",
+        "target": "Given that Borris uses 90 kilograms of grapes every 6 months, I first needed to determine his annual usage. Since there are two 6-month periods in a year, I calculated the annual usage as follows:\n\\[ 90 \\, \\text{kg} \\times 2 = 180 \\, \\text{kg} \\]\nThis calculation was based on the given information that Borris uses 90 kg of grapes every 6 months. I then needed to account for the 20% increase in production. To find the 20% increase, I calculated:\n\\[ 180 \\, \\text{kg} \\times 0.20 = 36 \\, \\text{kg} \\]\nAdding this increase to the original annual usage:\n\\[ 180 \\, \\text{kg} + 36 \\, \\text{kg} = 216 \\, \\text{kg} \\]\nTo verify this result, I checked that the increase was correctly calculated by ensuring that 36 kg is indeed 20% of 180 kg:\n\\[ \\frac{36 \\, \\text{kg}}{180 \\, \\text{kg}} = 0.20 \\]\nThis confirms that the 20% increase was correctly applied. The final check is to ensure that the total usage after the increase is indeed 216 kg, which matches the problem statement.\n\nFINAL: 216",
+        "target_sha256": "f1ccf80f294cb8c6d1e70f7654c7e935ce58bf1fe2557a91328419f891e40310"
+      }
+    ],
+    "task_id": "gsm8k-train-169"
+  },
+  {
+    "gold": "150",
+    "question": "Tanika is selling boxes of crackers for her scout troop's fund-raiser. On Saturday, she sold 60 boxes. On Sunday, she sold 50% more than on Saturday. How many boxes did she sell, in total, over the two days?",
+    "question_sha256": "ea576da9a581cf8ae1aab773fd95614b0ec9e7a25a5cdfcef514a9e0c3c0335e",
+    "responses": [
+      {
+        "key": "gsm8k-train-652:rich",
+        "raw_call_sha256": "f2cdb461d1c388ff7d82a17783c1e6e679fbcec98a4b6979fc410a0747ec6afa",
+        "student_prefix": [
+          {
+            "content": "Tanika is selling boxes of crackers for her scout troop's fund-raiser. On Saturday, she sold 60 boxes. On Sunday, she sold 50% more than on Saturday. How many boxes did she sell, in total, over the two days?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "8f3d291e4c6971e0708c0b786a97a788eeca560631a15b6b6729007df0ed4751",
+        "target": "On Saturday, Tanika sold 60 boxes. On Sunday, she sold 50% more than on Saturday. To find out how many boxes she sold on Sunday, I calculate 50% of 60, which is 0.50 * 60 = 30 boxes. So, on Sunday, she sold 60 + 30 = 90 boxes. To find the total number of boxes sold over the two days, I add the boxes sold on Saturday and Sunday: 60 + 90 = 150 boxes. \n\nCHECK: The problem asks for the total number of boxes sold over the two days, and the calculation shows that Tanika sold 150 boxes in total. \n\nFINAL: 150",
+        "target_sha256": "5953bb2f5cdbf20149240c0774c401a652fffe645e9fec1a34cc4583274c5f55"
+      },
+      {
+        "key": "gsm8k-train-652:new_record",
+        "raw_call_sha256": "b625a774ad288d4efe334fd11bdf95d2cb1640a2a6dc6002badb43ddb6a23aaa",
+        "student_prefix": [
+          {
+            "content": "Tanika is selling boxes of crackers for her scout troop's fund-raiser. On Saturday, she sold 60 boxes. On Sunday, she sold 50% more than on Saturday. How many boxes did she sell, in total, over the two days?",
+            "role": "user"
+          },
+          {
+            "content": "On Saturday, Tanika sold 60 boxes. On Sunday, she sold 50% more than on Saturday. To find out how many boxes she sold on Sunday, I calculate 50% of 60, which is 0.50 * 60 = 30 boxes. So, on Sunday, she sold 60 + 30 = 90 boxes. To find the total number of boxes sold over the two days, I add the boxes sold on Saturday and Sunday: 60 + 90 = 150 boxes. \n\nCHECK: The problem asks for the total number of boxes sold over the two days, and the calculation shows that Tanika sold 150 boxes in total. \n\nFINAL: 150",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "5ccab11409ef428a13e2f52ffbc179e2523d180d909edfa136fbdc16d47925d4",
+        "target": "Given that Tanika sold 60 boxes on Saturday, I first identified the quantity sold on that day. On Sunday, she sold 50% more than on Saturday. To find the number of boxes sold on Sunday, I calculated 50% of 60, which is 0.50 * 60 = 30 boxes. Adding this to the 60 boxes sold on Saturday, I found that she sold 60 + 30 = 90 boxes on Sunday. To find the total number of boxes sold over the two days, I added the boxes sold on Saturday and Sunday: 60 + 90 = 150 boxes. This calculation directly addressed the problem's request for the total number of boxes sold over the two days.\n\nTo check the result, I re-evaluated the operations: first, I confirmed that 50% of 60 is indeed 30, and then I verified that adding 60 and 90 gives 150. The operations are straightforward and the result is consistent with the problem statement.\n\nThe reusable operation here is calculating a percentage increase and then summing the results. This operation can be applied to similar problems where a quantity is increased by a certain percentage and the total is required.\n\nFINAL: 150",
+        "target_sha256": "735aa4c1002b35fc4041d1e91bba4e84eeee0824d81be52048cf295fcbfc65ce"
+      }
+    ],
+    "task_id": "gsm8k-train-652"
+  },
+  {
+    "gold": "28",
+    "question": "Sadie has 140 math homework problems for the week. 40 percent are Algebra problems, and half of the Algebra problems are solving linear equations.  How many solving linear equations problems does Sadie have to solve?",
+    "question_sha256": "dd72eec112b4f36f68672ecacc3852c6863f8fb8bd6c9e82c2cbfa9780d4f086",
+    "responses": [
+      {
+        "key": "gsm8k-train-6892:rich",
+        "raw_call_sha256": "0b422f98901ca92c1688c87826e98808e038d5323b943d7454aa00830e3feb5e",
+        "student_prefix": [
+          {
+            "content": "Sadie has 140 math homework problems for the week. 40 percent are Algebra problems, and half of the Algebra problems are solving linear equations.  How many solving linear equations problems does Sadie have to solve?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "57dc2d32c0a26a0521dcf4e066ad3adca693a1b4e52a5ddec80c155148d11c41",
+        "target": "First, I identify the given quantities:\n- Total math homework problems: 140\n- Percentage of Algebra problems: 40%\n- Fraction of Algebra problems that are solving linear equations: 1/2\n\nTo find the number of Algebra problems, I calculate 40% of 140:\n\\[ 140 \\times 0.40 = 56 \\]\nSo, Sadie has 56 Algebra problems.\n\nNext, I find the number of solving linear equations problems, which is half of the Algebra problems:\n\\[ 56 \\times \\frac{1}{2} = 28 \\]\n\nThus, Sadie has to solve 28 solving linear equations problems.\n\nFINAL: 28",
+        "target_sha256": "002f61142cad64c0453bb36746bc9f9d4bb2d5202017691fff19df60d87b474f"
+      },
+      {
+        "key": "gsm8k-train-6892:new_record",
+        "raw_call_sha256": "3a1e386c7536e4e79b660697a8b973454a84bf73a493c896bb3508b69488c1c3",
+        "student_prefix": [
+          {
+            "content": "Sadie has 140 math homework problems for the week. 40 percent are Algebra problems, and half of the Algebra problems are solving linear equations.  How many solving linear equations problems does Sadie have to solve?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Total math homework problems: 140\n- Percentage of Algebra problems: 40%\n- Fraction of Algebra problems that are solving linear equations: 1/2\n\nTo find the number of Algebra problems, I calculate 40% of 140:\n\\[ 140 \\times 0.40 = 56 \\]\nSo, Sadie has 56 Algebra problems.\n\nNext, I find the number of solving linear equations problems, which is half of the Algebra problems:\n\\[ 56 \\times \\frac{1}{2} = 28 \\]\n\nThus, Sadie has to solve 28 solving linear equations problems.\n\nFINAL: 28",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "de26638626493354e545c4331308ef4ab4f6ed9ca059d185918738dd68c39ec1",
+        "target": "Given the problem, I started by identifying the key quantities and the unknown I needed to find. The total number of math homework problems is 140, and 40 percent of these are Algebra problems. Half of the Algebra problems are solving linear equations. The unknown is the number of solving linear equations problems Sadie has to solve.\n\nFirst, I calculated the number of Algebra problems by finding 40 percent of 140:\n\\[ 140 \\times 0.40 = 56 \\]\nThis means Sadie has 56 Algebra problems. Next, I needed to find how many of these are solving linear equations. Since half of the Algebra problems are solving linear equations, I calculated:\n\\[ 56 \\times \\frac{1}{2} = 28 \\]\nThis means Sadie has 28 solving linear equations problems.\n\nTo check the result, I reasoned that 28 is indeed half of 56, and 56 is 40 percent of 140. The operations are consistent with the problem statement.\n\nThe operation I would reuse is calculating a percentage of a total and then finding half of that result. This is useful in similar problems where a percentage of a quantity is given, and then a fraction of that percentage is required.\n\nFINAL: 28",
+        "target_sha256": "4cb29bdbfab8f979e020ba4ea16385a891071b7c15887c15bf704dc6e90369c6"
+      }
+    ],
+    "task_id": "gsm8k-train-6892"
+  }
+]

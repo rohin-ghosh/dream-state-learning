@@ -1,0 +1,317 @@
+[
+  {
+    "gold": "20",
+    "question": "Beth is looking at her book collection and is wondering how many comic books she owns. She has 120 books and 65% are novels. 18 are graphic novels. The rest are comic books. What percentage of comic books does she own?",
+    "question_sha256": "4ddae88d2f1aa4f190cd9379822defbe87733eb1e1edf5f0eceb2e766842dd46",
+    "responses": [
+      {
+        "key": "gsm8k-train-2987:rich",
+        "raw_call_sha256": "0ef801141dea97be20e42faeeb24ad0a9a554c8521d55199e40a40daea658247",
+        "student_prefix": [
+          {
+            "content": "Beth is looking at her book collection and is wondering how many comic books she owns. She has 120 books and 65% are novels. 18 are graphic novels. The rest are comic books. What percentage of comic books does she own?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "2130e70e88329c0181deff859f2e9b9260793e54bee3a2687867bad32fc827eb",
+        "target": "First, I identify the given quantities:\n- Total books: 120\n- Percentage of novels: 65%\n- Graphic novels: 18\n\nI need to find the percentage of comic books Beth owns.\n\nStep 1: Calculate the number of novels.\n\\[ \\text{Number of novels} = 120 \\times \\frac{65}{100} = 78 \\]\n\nStep 2: Calculate the number of comic books.\n\\[ \\text{Number of comic books} = 120 - 78 - 18 = 24 \\]\n\nStep 3: Calculate the percentage of comic books.\n\\[ \\text{Percentage of comic books} = \\left( \\frac{24}{120} \\right) \\times 100 = 20\\% \\]\n\nFINAL: 20",
+        "target_sha256": "b3d57b5756fafbe17d90521b0c9d1b1d3897618129afe7bf06330eab06c15a1b"
+      },
+      {
+        "key": "gsm8k-train-2987:new_record",
+        "raw_call_sha256": "d0b81eb1c84b7a5e8c65bf92c8f503e61553cb3ecf9c3a18d77ee2c16114d21f",
+        "student_prefix": [
+          {
+            "content": "Beth is looking at her book collection and is wondering how many comic books she owns. She has 120 books and 65% are novels. 18 are graphic novels. The rest are comic books. What percentage of comic books does she own?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Total books: 120\n- Percentage of novels: 65%\n- Graphic novels: 18\n\nI need to find the percentage of comic books Beth owns.\n\nStep 1: Calculate the number of novels.\n\\[ \\text{Number of novels} = 120 \\times \\frac{65}{100} = 78 \\]\n\nStep 2: Calculate the number of comic books.\n\\[ \\text{Number of comic books} = 120 - 78 - 18 = 24 \\]\n\nStep 3: Calculate the percentage of comic books.\n\\[ \\text{Percentage of comic books} = \\left( \\frac{24}{120} \\right) \\times 100 = 20\\% \\]\n\nFINAL: 20",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "abea24608e631b7e6902b9e13cfc1f9157735181d4b7bbf55558a4db7b9a6d51",
+        "target": "Given the problem, I identified the following quantities:\n- Total number of books: 120\n- Percentage of novels: 65%\n- Number of graphic novels: 18\n\nThe unknown I needed to find was the percentage of comic books in Beth's collection.\n\nStep 1: I calculated the number of novels by applying the percentage to the total number of books.\n\\[ \\text{Number of novels} = 120 \\times \\frac{65}{100} = 78 \\]\n\nStep 2: I then determined the number of comic books by subtracting the number of novels and graphic novels from the total number of books.\n\\[ \\text{Number of comic books} = 120 - 78 - 18 = 24 \\]\n\nStep 3: To find the percentage of comic books, I used the formula for percentage:\n\\[ \\text{Percentage of comic books} = \\left( \\frac{24}{120} \\right) \\times 100 = 20\\% \\]\n\nTo verify the result, I checked if the sum of the percentages of novels, graphic novels, and comic books equals 100%.\n\\[ 65\\% + 15\\% + 20\\% = 100\\% \\]\nThe 15% for graphic novels was calculated as:\n\\[ \\text{Percentage of graphic novels} = \\left( \\frac{18}{120} \\right) \\times 100 = 15\\% \\]\n\nThe operations I used were straightforward and directly connected the given quantities to the unknown. I would reuse these operations whenever I need to find the percentage of a specific category in a collection, given the total and the percentages or counts of other categories.\n\nFINAL: 20",
+        "target_sha256": "877bd66c6b4170cfd588ffa24dc389a35be8afd21f8cb161c0b7f2d5b9491c27"
+      }
+    ],
+    "task_id": "gsm8k-train-2987"
+  },
+  {
+    "gold": "160",
+    "question": "Melody planted sunflowers from two different seed packets. She found that the sunflowers from Packet A were 20% taller than the sunflowers from Packet B. If the sunflowers from Packet A were 192 inches tall, how tall were the sunflowers from Packet B?",
+    "question_sha256": "3fb45cd34a9a20cfb0a237c28816084b5e73b0f36fa230ccdd2e9e0623888abb",
+    "responses": [
+      {
+        "key": "gsm8k-train-193:rich",
+        "raw_call_sha256": "6ecddd22324aea0e190fa14c7647fd57511ebfca6dc23ea98bba76bd33bd805d",
+        "student_prefix": [
+          {
+            "content": "Melody planted sunflowers from two different seed packets. She found that the sunflowers from Packet A were 20% taller than the sunflowers from Packet B. If the sunflowers from Packet A were 192 inches tall, how tall were the sunflowers from Packet B?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "2c6a6bcf0eca2b0aa5e5fd3d38276a4523a449fcaf8c7e3a4cdabc6729903f43",
+        "target": "Given that the sunflowers from Packet A are 20% taller than those from Packet B, and the height of the sunflowers from Packet A is 192 inches, we need to find the height of the sunflowers from Packet B.\n\nFirst, let's denote the height of the sunflowers from Packet B as \\( h \\). Since the sunflowers from Packet A are 20% taller, we can express the height of the sunflowers from Packet A as \\( h + 0.2h \\) or \\( 1.2h \\).\n\nWe know that \\( 1.2h = 192 \\) inches. To find \\( h \\), we solve the equation:\n\\[ h = \\frac{192}{1.2} \\]\n\nPerforming the division:\n\\[ h = \\frac{192}{1.2} = 160 \\]\n\nSo, the height of the sunflowers from Packet B is 160 inches.\n\nFINAL: 160",
+        "target_sha256": "ef985a80535e35bec3c4d8e35cf092731d46766a432ee1c33f1ed742e3b8bcb4"
+      },
+      {
+        "key": "gsm8k-train-193:new_record",
+        "raw_call_sha256": "91d41acede12e63ebef4a07c64519c46bfa9d58aec04ea5dcb9f5a88b6c9c6b0",
+        "student_prefix": [
+          {
+            "content": "Melody planted sunflowers from two different seed packets. She found that the sunflowers from Packet A were 20% taller than the sunflowers from Packet B. If the sunflowers from Packet A were 192 inches tall, how tall were the sunflowers from Packet B?",
+            "role": "user"
+          },
+          {
+            "content": "Given that the sunflowers from Packet A are 20% taller than those from Packet B, and the height of the sunflowers from Packet A is 192 inches, we need to find the height of the sunflowers from Packet B.\n\nFirst, let's denote the height of the sunflowers from Packet B as \\( h \\). Since the sunflowers from Packet A are 20% taller, we can express the height of the sunflowers from Packet A as \\( h + 0.2h \\) or \\( 1.2h \\).\n\nWe know that \\( 1.2h = 192 \\) inches. To find \\( h \\), we solve the equation:\n\\[ h = \\frac{192}{1.2} \\]\n\nPerforming the division:\n\\[ h = \\frac{192}{1.2} = 160 \\]\n\nSo, the height of the sunflowers from Packet B is 160 inches.\n\nFINAL: 160",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "90c7efd813728bfac5558e5808cd495813fabdd27ae7590cecf1b76ebf0c6faf",
+        "target": "Given that the sunflowers from Packet A are 20% taller than those from Packet B, and the height of the sunflowers from Packet A is 192 inches, I needed to find the height of the sunflowers from Packet B. The key information here is that the height of the sunflowers from Packet A is 1.2 times the height of the sunflowers from Packet B. This relationship can be expressed as:\n\n\\[ \\text{Height of Packet A} = 1.2 \\times \\text{Height of Packet B} \\]\n\nGiven that the height of the sunflowers from Packet A is 192 inches, I can set up the equation:\n\n\\[ 192 = 1.2 \\times \\text{Height of Packet B} \\]\n\nTo find the height of the sunflowers from Packet B, I need to solve for the height of Packet B by dividing both sides of the equation by 1.2:\n\n\\[ \\text{Height of Packet B} = \\frac{192}{1.2} \\]\n\nPerforming the division:\n\n\\[ \\text{Height of Packet B} = 160 \\]\n\nTo verify this result, I can check if 160 inches, when increased by 20%, equals 192 inches. Calculating 20% of 160:\n\n\\[ 0.2 \\times 160 = 32 \\]\n\nAdding this to the original height of Packet B:\n\n\\[ 160 + 32 = 192 \\]\n\nThis confirms that the height of the sunflowers from Packet B is indeed 160 inches.\n\nFINAL: 160",
+        "target_sha256": "0cc9d2ed8104cded6fc2c643efcde7886c0f33c6c726575f3df1616f1d882185"
+      }
+    ],
+    "task_id": "gsm8k-train-193"
+  },
+  {
+    "gold": "280",
+    "question": "Martin went to a store to buy a new television set. He decided to spend no more than $1,000 and the sales clerk offered him the TV for $100 less and an additional 20% off. How much lower was the price of the television than the amount Martin decided to spend?",
+    "question_sha256": "b625e65675b93fd9403df8cae3d1f0ca87c9781aa7b47656cbe6df0113d0760c",
+    "responses": [
+      {
+        "key": "gsm8k-train-3650:rich",
+        "raw_call_sha256": "e6991e777c85d77cf96e99d2232a7c3c4cddd5cd83b6e0f5919f5b86b222ff68",
+        "student_prefix": [
+          {
+            "content": "Martin went to a store to buy a new television set. He decided to spend no more than $1,000 and the sales clerk offered him the TV for $100 less and an additional 20% off. How much lower was the price of the television than the amount Martin decided to spend?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "322b08c697e25de68d770ae0f83771da662ef5f1a87bbf614062733bf8a35672",
+        "target": "First, I identify the given quantities:\n- Martin's budget: $1,000\n- Initial price of the TV: Let's call this X\n- Discount: $100 off, then 20% off the reduced price\n\nThe sales clerk offered the TV for $100 less, so the price after the first discount is X - $100. Then, an additional 20% off is applied to this reduced price, which means the final price is 80% of (X - $100).\n\nThe final price can be expressed as:\n\\[ \\text{Final Price} = 0.8 \\times (X - 100) \\]\n\nSince Martin's budget is $1,000, we need to find how much lower the final price is compared to $1,000. To do this, we need to express the final price in terms of X and then compare it to $1,000.\n\nThe difference between Martin's budget and the final price is:\n\\[ 1000 - 0.8 \\times (X - 100) \\]\n\nTo find the exact difference, we need to know the initial price X. However, since the problem does not specify X, we can assume the initial price X is such that the final price is as close to $1,000 as possible without exceeding it. If we assume the initial price X is $1,100 (a common price point for TVs), then:\n\n\\[ \\text{Final Price} = 0.8 \\times (1100 - 100) = 0.8 \\times 1000 = 800 \\]\n\nSo, the final price is $800. The difference between Martin's budget and the final price is:\n\\[ 1000 - 800 = 200 \\]\n\nTherefore, the price of the television was $200 lower than the amount Martin decided to spend.\n\nFINAL: 200",
+        "target_sha256": "8ae2dea6620f95ccc315f963e7acd5eb0a9803aeceb1632af570e27298444897"
+      }
+    ],
+    "task_id": "gsm8k-train-3650"
+  },
+  {
+    "gold": "45",
+    "question": "Lenny bought 20 boxes of pens. Each box contained  5 pens. She gave 40% of the pens to her close friends and one-fourth of what's left to her classmates. How many pens were left for Lenny?",
+    "question_sha256": "883b6cb493a007d66d5fa4ea3fe2421676124f5417c9e8ccd6e89c21b1eee11c",
+    "responses": [
+      {
+        "key": "gsm8k-train-762:rich",
+        "raw_call_sha256": "99b2ea4748e853ad8d41ac6500088de486a4acfab706aac55003e2116dfe8f32",
+        "student_prefix": [
+          {
+            "content": "Lenny bought 20 boxes of pens. Each box contained  5 pens. She gave 40% of the pens to her close friends and one-fourth of what's left to her classmates. How many pens were left for Lenny?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "222639a6ad1eb050910f0970f3f736e7e70f2b76e83e108010a82adc3fbe49e2",
+        "target": "First, I calculate the total number of pens Lenny bought. She bought 20 boxes, with each box containing 5 pens. So, the total number of pens is \\(20 \\times 5 = 100\\) pens.\n\nNext, I find out how many pens she gave to her close friends. She gave 40% of the pens to her friends, so \\(40\\% \\times 100 = 0.4 \\times 100 = 40\\) pens.\n\nAfter giving 40 pens to her friends, the number of pens left is \\(100 - 40 = 60\\) pens.\n\nThen, she gave one-fourth of the remaining pens to her classmates. One-fourth of 60 pens is \\(\\frac{1}{4} \\times 60 = 15\\) pens.\n\nAfter giving 15 pens to her classmates, the number of pens left for Lenny is \\(60 - 15 = 45\\) pens.\n\nFINAL: 45",
+        "target_sha256": "84da8bc71093402658ae13a13683df0b666577245468ba116f36e3879bff2340"
+      },
+      {
+        "key": "gsm8k-train-762:new_record",
+        "raw_call_sha256": "407479ee0e67dc4eb58ce0df7b29d91a5efe63345bfafa455b0a1a315e764633",
+        "student_prefix": [
+          {
+            "content": "Lenny bought 20 boxes of pens. Each box contained  5 pens. She gave 40% of the pens to her close friends and one-fourth of what's left to her classmates. How many pens were left for Lenny?",
+            "role": "user"
+          },
+          {
+            "content": "First, I calculate the total number of pens Lenny bought. She bought 20 boxes, with each box containing 5 pens. So, the total number of pens is \\(20 \\times 5 = 100\\) pens.\n\nNext, I find out how many pens she gave to her close friends. She gave 40% of the pens to her friends, so \\(40\\% \\times 100 = 0.4 \\times 100 = 40\\) pens.\n\nAfter giving 40 pens to her friends, the number of pens left is \\(100 - 40 = 60\\) pens.\n\nThen, she gave one-fourth of the remaining pens to her classmates. One-fourth of 60 pens is \\(\\frac{1}{4} \\times 60 = 15\\) pens.\n\nAfter giving 15 pens to her classmates, the number of pens left for Lenny is \\(60 - 15 = 45\\) pens.\n\nFINAL: 45",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "9562022fcaf74eef1259a34061f6ddfbf065ad9548774a500ee73deb7df819d5",
+        "target": "Given that Lenny bought 20 boxes of pens, with each box containing 5 pens, I first calculated the total number of pens. This was done by multiplying the number of boxes by the number of pens per box: \\(20 \\times 5 = 100\\) pens. This was a straightforward multiplication based on the given quantities.\n\nNext, I determined how many pens Lenny gave to her close friends. Since she gave 40% of the pens to her friends, I calculated 40% of 100 pens: \\(0.4 \\times 100 = 40\\) pens. This calculation was based on the percentage given and the total number of pens.\n\nAfter giving away 40 pens, the number of pens left was \\(100 - 40 = 60\\) pens. This subtraction was necessary to find out how many pens remained after the first distribution.\n\nThen, Lenny gave one-fourth of the remaining pens to her classmates. One-fourth of 60 pens is \\(\\frac{1}{4} \\times 60 = 15\\) pens. This calculation was based on the remaining number of pens and the fraction given.\n\nAfter giving away 15 pens to her classmates, the number of pens left for Lenny was \\(60 - 15 = 45\\) pens. This final subtraction was needed to determine the number of pens Lenny kept.\n\nTo verify the result, I checked each step against the problem statement. The initial multiplication was correct, as it matched the given number of boxes and pens per box. The percentage calculation for the friends was accurate, as it correctly represented 40% of the total pens. The subtraction for the remaining pens after giving to friends was correct, as it accurately reflected the pens left. The fraction calculation for the classmates was correct, as it correctly represented one-fourth of the remaining pens. The final subtraction to find the pens left for Lenny was correct, as it accurately reflected the pens remaining after giving to both friends and classmates.\n\nThe operations used were multiplication, percentage calculation, and subtraction, all of which were directly based on the given facts and led to a logical and verifiable result.\n\nFINAL: 45",
+        "target_sha256": "9a8a1ec0caaf821ca990cda1c336e240d08703c037678443e9ede062e40be5c8"
+      }
+    ],
+    "task_id": "gsm8k-train-762"
+  },
+  {
+    "gold": "14",
+    "question": "Bill is doing weight training before trying out for the boxing team. He gets two 2-gallon jugs and fills them 70% full with sand. If sand has a density of 5 pounds/gallon, how many pounds do Bill's improvised weights weigh?",
+    "question_sha256": "258702e089696a369beb7e74009ef101e20e4741f3157773ed7cf1ea88b04ff3",
+    "responses": [
+      {
+        "key": "gsm8k-train-3911:rich",
+        "raw_call_sha256": "63b63b4da6fe8decbbd233fea8a3fce89db7a606d3be0ae3f88f6bac92c074f7",
+        "student_prefix": [
+          {
+            "content": "Bill is doing weight training before trying out for the boxing team. He gets two 2-gallon jugs and fills them 70% full with sand. If sand has a density of 5 pounds/gallon, how many pounds do Bill's improvised weights weigh?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "ce536547578ea84e7ee8140bdeb71897c3159e421355399a7ca651bb0d26a3eb",
+        "target": "Given:\n- Two 2-gallon jugs\n- Filled 70% full with sand\n- Sand density is 5 pounds/gallon\n\nFirst, calculate the volume of sand in each jug:\n- Each jug is 2 gallons\n- 70% of 2 gallons = 0.70 * 2 = 1.4 gallons\n\nNext, calculate the weight of the sand in each jug:\n- Sand density is 5 pounds/gallon\n- Weight of sand in each jug = 1.4 gallons * 5 pounds/gallon = 7 pounds\n\nSince there are two jugs:\n- Total weight = 7 pounds/jug * 2 jugs = 14 pounds\n\nFINAL: 14",
+        "target_sha256": "1d88db37abc2dc10e63b64e29e7708affd760e83fffd71c0cf1c806bbe8f7069"
+      },
+      {
+        "key": "gsm8k-train-3911:new_record",
+        "raw_call_sha256": "c5bb2ed470a3904d4cd579291e57219780668542836e769c556a1c8aa1ab2d21",
+        "student_prefix": [
+          {
+            "content": "Bill is doing weight training before trying out for the boxing team. He gets two 2-gallon jugs and fills them 70% full with sand. If sand has a density of 5 pounds/gallon, how many pounds do Bill's improvised weights weigh?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Two 2-gallon jugs\n- Filled 70% full with sand\n- Sand density is 5 pounds/gallon\n\nFirst, calculate the volume of sand in each jug:\n- Each jug is 2 gallons\n- 70% of 2 gallons = 0.70 * 2 = 1.4 gallons\n\nNext, calculate the weight of the sand in each jug:\n- Sand density is 5 pounds/gallon\n- Weight of sand in each jug = 1.4 gallons * 5 pounds/gallon = 7 pounds\n\nSince there are two jugs:\n- Total weight = 7 pounds/jug * 2 jugs = 14 pounds\n\nFINAL: 14",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "e444bddcaac998fb48f391f996b9a6fddb1d4bdeee63e600c319bbb3a7cf17d2",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- Two 2-gallon jugs\n- Filled 70% full with sand\n- Sand density is 5 pounds/gallon\n- Unknown: Total weight of the improvised weights\n\nTo find the total weight, I first calculated the volume of sand in each jug:\n- Volume of sand in each jug = 2 gallons * 70% = 1.4 gallons\n\nNext, I used the sand density to find the weight of the sand in each jug:\n- Weight of sand in each jug = 1.4 gallons * 5 pounds/gallon = 7 pounds\n\nSince there are two jugs, I doubled the weight to find the total weight:\n- Total weight = 7 pounds/jug * 2 jugs = 14 pounds\n\nTo check the result, I verified that the calculation was consistent with the given density and volume. The density of 5 pounds per gallon and the 70% fill rate for each 2-gallon jug led to a logical and consistent weight.\n\nThe operations I used are directly applicable to similar problems involving volume, density, and weight calculations. I would reuse this method whenever I need to calculate the weight of a substance based on its volume and density.\n\nFINAL: 14",
+        "target_sha256": "5f1b902015bd54d37844ef55cd43c27c9d0594ee7b71b32165fae9eda9944a9f"
+      }
+    ],
+    "task_id": "gsm8k-train-3911"
+  },
+  {
+    "gold": "420",
+    "question": "Leon ordered 3 sets of toy organizers for $78 per set and 2 gaming chairs for $83 each. If there is a delivery fee that is 5% of the total sales, how much did Leon pay?",
+    "question_sha256": "508393d669742e28a09734c4f5687cc2545e0dd31b558b66671978da6d536174",
+    "responses": [
+      {
+        "key": "gsm8k-train-4673:rich",
+        "raw_call_sha256": "2b3ec4bd482020712dba4f7baeab2d7e500c62eb0d3a5216241738c7b1c5d1fe",
+        "student_prefix": [
+          {
+            "content": "Leon ordered 3 sets of toy organizers for $78 per set and 2 gaming chairs for $83 each. If there is a delivery fee that is 5% of the total sales, how much did Leon pay?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "cdc8c4e852c716e2995edb8aa1554e7b50e533ee174c7a43717ab7248fc782b9",
+        "target": "First, I calculate the cost of the toy organizers. Each set costs $78 and Leon ordered 3 sets, so the total cost for the toy organizers is:\n\\[ 3 \\times 78 = 234 \\]\n\nNext, I calculate the cost of the gaming chairs. Each chair costs $83 and Leon ordered 2 chairs, so the total cost for the gaming chairs is:\n\\[ 2 \\times 83 = 166 \\]\n\nNow, I add the costs of the toy organizers and the gaming chairs to find the total sales:\n\\[ 234 + 166 = 400 \\]\n\nThe delivery fee is 5% of the total sales. To find the delivery fee, I calculate 5% of $400:\n\\[ 0.05 \\times 400 = 20 \\]\n\nFinally, I add the delivery fee to the total sales to find the total amount Leon paid:\n\\[ 400 + 20 = 420 \\]\n\nFINAL: 420",
+        "target_sha256": "3942531c6d5af1fe6e16724c7105817c514e39207a698605592e68e539e9dbaf"
+      },
+      {
+        "key": "gsm8k-train-4673:new_record",
+        "raw_call_sha256": "c5fb38566955342aa767ffd2653c10e165de203456dbfc81d9cb7cac30d9d455",
+        "student_prefix": [
+          {
+            "content": "Leon ordered 3 sets of toy organizers for $78 per set and 2 gaming chairs for $83 each. If there is a delivery fee that is 5% of the total sales, how much did Leon pay?",
+            "role": "user"
+          },
+          {
+            "content": "First, I calculate the cost of the toy organizers. Each set costs $78 and Leon ordered 3 sets, so the total cost for the toy organizers is:\n\\[ 3 \\times 78 = 234 \\]\n\nNext, I calculate the cost of the gaming chairs. Each chair costs $83 and Leon ordered 2 chairs, so the total cost for the gaming chairs is:\n\\[ 2 \\times 83 = 166 \\]\n\nNow, I add the costs of the toy organizers and the gaming chairs to find the total sales:\n\\[ 234 + 166 = 400 \\]\n\nThe delivery fee is 5% of the total sales. To find the delivery fee, I calculate 5% of $400:\n\\[ 0.05 \\times 400 = 20 \\]\n\nFinally, I add the delivery fee to the total sales to find the total amount Leon paid:\n\\[ 400 + 20 = 420 \\]\n\nFINAL: 420",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "2d9f42b0f3f7bdcad6ab4e61870af8751f881facd904849fb21b3f0afbd41804",
+        "target": "Given the problem, I identified the quantities and the unknown:\n- Toy organizers: 3 sets at $78 each\n- Gaming chairs: 2 chairs at $83 each\n- Delivery fee: 5% of the total sales\n- Total amount paid: unknown\n\nFirst, I calculated the total cost of the toy organizers:\n\\[ 3 \\times 78 = 234 \\]\nThis was straightforward multiplication, and I expected the result to be the total cost for the organizers.\n\nNext, I calculated the total cost of the gaming chairs:\n\\[ 2 \\times 83 = 166 \\]\nAgain, this was multiplication, and I expected the result to be the total cost for the chairs.\n\nAdding these two amounts gave me the total sales:\n\\[ 234 + 166 = 400 \\]\nI expected this to be the total sales before the delivery fee.\n\nThen, I calculated the delivery fee, which is 5% of the total sales:\n\\[ 0.05 \\times 400 = 20 \\]\nI expected this to be the delivery fee amount.\n\nFinally, I added the delivery fee to the total sales to find the total amount paid:\n\\[ 400 + 20 = 420 \\]\nI checked this by ensuring the operations were correctly applied and the result made sense in the context of the problem.\n\nThe operations I would reuse are multiplication and addition, as they are fundamental and reliable for solving similar problems involving total costs and percentages.\n\nFINAL: 420",
+        "target_sha256": "54b233354f1639dcf36360762c894b2843cb0b7cdf763d70bc31724c3600cc6e"
+      }
+    ],
+    "task_id": "gsm8k-train-4673"
+  },
+  {
+    "gold": "36",
+    "question": "There were 100 jelly beans in a bag to be given away on Halloween. Out of the 40 children taking part in the Halloween celebration, 80% were allowed to draw jelly beans from the bag. Each child drew two jelly beans out of the bag. How many jelly beans remained in the bag after the children took their share?",
+    "question_sha256": "ffe4e29211030327118b1220f26ccebd653f9e3adc20e50528b22ee44917e88d",
+    "responses": [
+      {
+        "key": "gsm8k-train-533:rich",
+        "raw_call_sha256": "ef66c5aaff9b7a03dc36942c5b00c1acd052d365a5e9cf55c5d2386c0d6b98ee",
+        "student_prefix": [
+          {
+            "content": "There were 100 jelly beans in a bag to be given away on Halloween. Out of the 40 children taking part in the Halloween celebration, 80% were allowed to draw jelly beans from the bag. Each child drew two jelly beans out of the bag. How many jelly beans remained in the bag after the children took their share?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "1d53ba1a1ed1c656d599c853775075abeb584fdd9d6ee5b4f5ea3ccb3442881e",
+        "target": "Initially, there are 100 jelly beans in the bag. Out of 40 children, 80% were allowed to draw jelly beans. So, the number of children allowed to draw is 40 * 0.80 = 32 children. Each of these 32 children drew 2 jelly beans. Therefore, the total number of jelly beans drawn is 32 * 2 = 64 jelly beans. \n\nTo find out how many jelly beans remained in the bag, we subtract the total number of jelly beans drawn from the initial number of jelly beans: 100 - 64 = 36 jelly beans.\n\nFINAL: 36",
+        "target_sha256": "a5d2e5b706114816df98cb6082ab2e2d3bd6d9173784af63c5aa459931571c53"
+      },
+      {
+        "key": "gsm8k-train-533:new_record",
+        "raw_call_sha256": "0dd0626cf2f67ad32437ca8bf5c314b4a046f58fc4332eb0489a653abd71c27c",
+        "student_prefix": [
+          {
+            "content": "There were 100 jelly beans in a bag to be given away on Halloween. Out of the 40 children taking part in the Halloween celebration, 80% were allowed to draw jelly beans from the bag. Each child drew two jelly beans out of the bag. How many jelly beans remained in the bag after the children took their share?",
+            "role": "user"
+          },
+          {
+            "content": "Initially, there are 100 jelly beans in the bag. Out of 40 children, 80% were allowed to draw jelly beans. So, the number of children allowed to draw is 40 * 0.80 = 32 children. Each of these 32 children drew 2 jelly beans. Therefore, the total number of jelly beans drawn is 32 * 2 = 64 jelly beans. \n\nTo find out how many jelly beans remained in the bag, we subtract the total number of jelly beans drawn from the initial number of jelly beans: 100 - 64 = 36 jelly beans.\n\nFINAL: 36",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "41f866508d63dcb67bdc62f09db69d6a423062ed9bcbad25d86124ce373e2b27",
+        "target": "Given the problem, I identified the initial number of jelly beans as 100 and the total number of children as 40. I also noted that 80% of the children were allowed to draw jelly beans, and each child drew 2 jelly beans. The unknown quantity was the number of jelly beans remaining in the bag after the children took their share.\n\nFirst, I calculated the number of children who were allowed to draw jelly beans. This was done by finding 80% of 40:\n\\[ 0.80 \\times 40 = 32 \\]\nSo, 32 children were allowed to draw jelly beans.\n\nNext, I determined the total number of jelly beans drawn by these 32 children. Since each child drew 2 jelly beans:\n\\[ 32 \\times 2 = 64 \\]\nThis means 64 jelly beans were drawn in total.\n\nTo find the number of jelly beans remaining in the bag, I subtracted the total number of jelly beans drawn from the initial number of jelly beans:\n\\[ 100 - 64 = 36 \\]\nThus, 36 jelly beans remained in the bag.\n\nTo verify this result, I checked the operations and the logic:\n- The initial number of jelly beans was 100.\n- 32 children each drew 2 jelly beans, totaling 64 jelly beans drawn.\n- Subtracting 64 from 100 leaves 36 jelly beans.\n\nThe operations used were straightforward arithmetic, and the result matched the problem statement.\n\nFINAL: 36",
+        "target_sha256": "d3ffc8b457de6465e06d8da20f7bdcfa047a8c123b27a9e2c2c58cee2780bac0"
+      }
+    ],
+    "task_id": "gsm8k-train-533"
+  },
+  {
+    "gold": "285",
+    "question": "Erwan went on shopping. He purchased a pair of shoes at $200 but discounted 30%, and two shirts at $80 each. Upon checkout, the cashier said that there is an additional 5% discount. How much did he spend after all the discounts?",
+    "question_sha256": "a4fbfd64e781daded8b58ed1339d8ca6dc76a85c913ae17d6db5cc1cd4940cf0",
+    "responses": [
+      {
+        "key": "gsm8k-train-1159:rich",
+        "raw_call_sha256": "e8634b423e2d44f708a97282e3d1bd186d231ef1c8414378acf9b6d890e6a41c",
+        "student_prefix": [
+          {
+            "content": "Erwan went on shopping. He purchased a pair of shoes at $200 but discounted 30%, and two shirts at $80 each. Upon checkout, the cashier said that there is an additional 5% discount. How much did he spend after all the discounts?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "aeb5f47d0d71b777b65896aa35db37cb722fd41e3319336b8958146c3a53d1fa",
+        "target": "First, I calculate the discounted price of the shoes. The shoes originally cost $200, but there's a 30% discount. So, the discount amount is 30% of $200, which is 0.30 * $200 = $60. Therefore, the price after the discount is $200 - $60 = $140.\n\nNext, I calculate the total cost of the two shirts. Each shirt costs $80, so for two shirts, the total is 2 * $80 = $160.\n\nNow, I add the discounted price of the shoes and the total cost of the shirts to get the subtotal before the additional discount. So, $140 + $160 = $300.\n\nThe cashier then applies an additional 5% discount on the subtotal. The discount amount is 5% of $300, which is 0.05 * $300 = $15. Therefore, the final amount after this discount is $300 - $15 = $285.\n\nFINAL: 285",
+        "target_sha256": "ae1ea5f16ecdaafb38439f262696f392e1acdbf1e4dded490a707e52333456d8"
+      },
+      {
+        "key": "gsm8k-train-1159:new_record",
+        "raw_call_sha256": "c1f61a5564412fb1eb713e5cca0ebbf96ea94440c1b8c37f87de70d5268d6c7a",
+        "student_prefix": [
+          {
+            "content": "Erwan went on shopping. He purchased a pair of shoes at $200 but discounted 30%, and two shirts at $80 each. Upon checkout, the cashier said that there is an additional 5% discount. How much did he spend after all the discounts?",
+            "role": "user"
+          },
+          {
+            "content": "First, I calculate the discounted price of the shoes. The shoes originally cost $200, but there's a 30% discount. So, the discount amount is 30% of $200, which is 0.30 * $200 = $60. Therefore, the price after the discount is $200 - $60 = $140.\n\nNext, I calculate the total cost of the two shirts. Each shirt costs $80, so for two shirts, the total is 2 * $80 = $160.\n\nNow, I add the discounted price of the shoes and the total cost of the shirts to get the subtotal before the additional discount. So, $140 + $160 = $300.\n\nThe cashier then applies an additional 5% discount on the subtotal. The discount amount is 5% of $300, which is 0.05 * $300 = $15. Therefore, the final amount after this discount is $300 - $15 = $285.\n\nFINAL: 285",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "c2f7c3e5cf6d66e4329bda61b1b99f365e184f9330af2b5e502a8a47d184e897",
+        "target": "Given the problem, I identified the following quantities and the unknown:\n- Original price of shoes: $200\n- Discount on shoes: 30%\n- Price of each shirt: $80\n- Number of shirts: 2\n- Additional discount at checkout: 5%\n\nFirst, I calculated the discounted price of the shoes. The discount on the shoes is 30% of $200, which is 0.30 * $200 = $60. Therefore, the price after the discount is $200 - $60 = $140.\n\nNext, I calculated the total cost of the two shirts. Each shirt costs $80, so for two shirts, the total is 2 * $80 = $160.\n\nAdding the discounted price of the shoes and the total cost of the shirts, I got the subtotal: $140 + $160 = $300.\n\nThen, I applied the additional 5% discount on the subtotal. The discount amount is 5% of $300, which is 0.05 * $300 = $15. Therefore, the final amount after this discount is $300 - $15 = $285.\n\nTo verify the result, I checked each step:\n1. The discounted price of the shoes: $200 - $60 = $140 (correct).\n2. The total cost of the shirts: 2 * $80 = $160 (correct).\n3. The subtotal: $140 + $160 = $300 (correct).\n4. The final amount after the additional discount: $300 - $15 = $285 (correct).\n\nThe operations I used are straightforward arithmetic calculations, and I verified each step to ensure accuracy. The final amount after all discounts is $285.\n\nFINAL: 285",
+        "target_sha256": "a21501a80fa4aa0abfab0fafe7682059605a5e2b220ecee1c501b3684aeef0f8"
+      }
+    ],
+    "task_id": "gsm8k-train-1159"
+  }
+]

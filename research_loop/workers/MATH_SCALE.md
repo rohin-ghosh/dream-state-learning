@@ -23,3 +23,13 @@ Finite author-watch14400s including review waits, each reader600s/1attempt,
 max128batches8tasks, raw failure => unresolved/no admission; no implicit fit.
 First single-reader batch finished with structurally valid fulltext decisions;
 these delegated author-side labels are not the independent Gauss blind audit.
+
+2026-09-14T23:32:55Z native541calls in captured snapshot,4shards active; no fit.
+First bounded four-case critique published through Main merge; no labels changed.
+Author readers resource-gated1–2; one batch008 exact-target-hash transcription
+failure preserved. Author fully read affected171NEW, independently reassessed
+FAIL for24seeds=>24trees unsupported premise, no positive promotion. All pins
+and validators unchanged; original raw reviewer result/FAILED receipt retained.
+Explicit replacement bound in batch008/AUTHOR_REASSESSMENT.json; no new model.
+Complete immutable batches published only; candidate counts are not admissions.
+Independent Gauss historical review and Main conservative join remain separate.

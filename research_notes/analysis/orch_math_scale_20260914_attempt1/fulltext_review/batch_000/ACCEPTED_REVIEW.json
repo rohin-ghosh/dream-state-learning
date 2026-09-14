@@ -1,0 +1,339 @@
+{
+  "gold": {
+    "gsm8k-train-2181": {
+      "independent_answer": "1200",
+      "question_sha256": "7666c1bfc74bdca8c9749c97a5ce0bd0b789cf123a9608b128d0e5bc03145f09",
+      "reason": "The weekly fee is 10% of $5000, or $500. Four weeks cost $2000. The friend pays 40% of $2000, or $800, leaving John to pay 2000 \u2212 800 = 1200, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-2213": {
+      "independent_answer": "384",
+      "question_sha256": "9dbbba7ace101ee23ea5dd3f7e96798127b81c7f0e3879cc29798e0233c5e605",
+      "reason": "Nancy pays 40% of $80 each month: 0.40 \u00d7 80 = 32. Over 12 months, 32 \u00d7 12 = 384, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-2626": {
+      "independent_answer": "66",
+      "question_sha256": "5813bf049b93f448ce6130b20c86090a5d4788545c2ef82f01dee1bb0676b2ed",
+      "reason": "The 10% discount is $5, so the slippers cost $45. Embroidery costs 2 \u00d7 $5.50 = $11, and shipping is $10. Thus 45 + 11 + 10 = 66, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-3104": {
+      "independent_answer": "30",
+      "question_sha256": "d993703394524cc90e038aef9f7bff5489bde55323240ff9a68867f5252a6926",
+      "reason": "The desired tip is 20% of $200: 0.20 \u00d7 200 = 40. After the friend's $10 contribution, Mark adds 40 \u2212 10 = 30, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-4424": {
+      "independent_answer": "136",
+      "question_sha256": "f49e7b32cbd4ab74049b655489705691971831da33f4db3c2c02f985f80e6e60",
+      "reason": "There are 0.40 \u00d7 200 = 80 women and 120 men. Rabbit ears are worn by 0.80 \u00d7 80 = 64 women and 0.60 \u00d7 120 = 72 men, totaling 64 + 72 = 136, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-456": {
+      "independent_answer": "460",
+      "question_sha256": "5041b88a19ee845704eb2fb383ba620ec6b5d167c4d9993e94a7a5007f11feb7",
+      "reason": "Chad receives 600 + 250 + 150 + 150 = 1150 dollars. He saves 40% of that: 0.40 \u00d7 1150 = 460, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-5037": {
+      "independent_answer": "88",
+      "question_sha256": "878f6208800defd6007cd653c9ae26a447b146ea5ce476dcd95d53c317726615",
+      "reason": "Julia has 3 \u00d7 20 = 60 bronze watches, so she owns 20 + 60 = 80 watches before the purchase. She buys 10% of 80, which is 8 gold watches, giving 80 + 8 = 88, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-5690": {
+      "independent_answer": "120",
+      "question_sha256": "b36ec44857a8eb06c57b774876eade0f38afac27019fb066eb44b054132077c2",
+      "reason": "Uncle Bob has 12 + 6 = 18 bars, so Fred and Bob have 12 + 18 = 30. Jacqueline has 10 \u00d7 30 = 300, and 40% of 300 is 120, equal to the gold.",
+      "status": "VALID"
+    }
+  },
+  "reviews": {
+    "gsm8k-train-2181:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the weekly rental fee:",
+        "John's payment was correct: \\(1200 = 2000 - 800\\)"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The response's claims and checks are all supported by the supplied problem, prior solution, and displayed arithmetic. Its confirmation is explicitly attributed to context and arithmetic checks rather than an outside checker.",
+      "raw_call_sha256": "0cd66d22a74e580ab5f868f44bbb6f3af2b67f0f3e491433eb59e4e08c6f455e",
+      "reason": "The response correctly recounts and verifies each numerical stage: $500 per week, $2,000 total, $800 from the friend, and $1,200 from John. It gives task-specific reusable percentage, duration-multiplication, and proportional-payment operations.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "c1780b86a4658b11f16a42445c618f9bdeda5cda76f46b29743714a3346cc305",
+      "target_sha256": "0d91bfc17f72c0bc09baa2a00dd14894ac8c846b5b1e76b353006865d3e0e52e"
+    },
+    "gsm8k-train-2181:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Next, I calculate the weekly rental fee:",
+        "\\[ \\text{John's payment} = 2000 - 800 = 1200 \\]"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The camera value, weekly rate, duration, and contribution rate all come from the question, and every resulting amount is explicitly derived without external claims.",
+      "raw_call_sha256": "44b909f7632a0651cef28fa2f45e9c91edeb312a95c6d78225bbcc3f2d507953",
+      "reason": "The response substantively recounts finding the $500 weekly fee, multiplying by four to get $2,000, finding the friend's $800 share, and subtracting it to obtain John's $1,200 payment. The operations and meaningful intermediates are correct and reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "fce2243464ba374ec38ccb6b57e14d1602bc0893c21f042cd31590bfe578aa50",
+      "target_sha256": "e42c366693823cdfc8a74353f35e157fd25e55de0788c8f342a8be52de52076f"
+    },
+    "gsm8k-train-2213:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated her monthly payment:",
+        "I also checked that $32 is indeed 40% of $80 by dividing $32 by $80 and multiplying by 100 to get 40%."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target relies only on the supplied amounts, the prior solution, and explicitly shown arithmetic. Its verification is a self-check, not a claim about an external checker.",
+      "raw_call_sha256": "ad052ef36033c6c0633f7c78b2d944aedd2e5fe5c44a37c5c872e31e0c2c8fa8",
+      "reason": "The response substantively recounts calculating 40% of $80, annualizing $32 over 12 months, and checking the percentage by division. All operations are correct, relevant, concrete, and reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "6d8412356d6c823f917abd319354721224c9864b3337bc15d273c2584becb15b",
+      "target_sha256": "51e89ced3e4fd084b4083f268cafcadec589716a0cd16d3ea5fb318867d193e5"
+    },
+    "gsm8k-train-2213:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "40% of $80 = 0.40 * $80 = $32.",
+        "Nancy's annual payment = $32 * 12 = $384."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every factual claim and calculation follows from the question and ordinary arithmetic; no external event or hidden feedback is claimed.",
+      "raw_call_sha256": "255f88c0c341d3b633ef76d619db1c9253f0bbf8ec1d3bd010743402e1e8f2aa",
+      "reason": "The percentage and annualization are correct and concrete, but the target only gives impersonal directives such as \u201cFirst, calculate\u201d and never provides a substantive first-person operational account.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "50c82e8c7dab70998188c307f1b8e0cce995323b28ee9b75e360049cb24cd934",
+      "target_sha256": "bab816a100ba1b3c58a7229181e423106f928c3938963f7d00dcb39ffc9ee23b"
+    },
+    "gsm8k-train-2626:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the discounted price of the slippers:",
+        "Final total: $45.00 + $11.00 + $10.00 = $66.00"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The response is supported by the question and supplied solution. \u201cTo check the result\u201d introduces an arithmetic self-check whose details are displayed, not an unsupported external event.",
+      "raw_call_sha256": "eef236e07881cd79a7576ed9e8d95dd3489f8e152538a346fe80b310b7a66277",
+      "reason": "It correctly recounts discounting $50 to $45, computing $11 embroidery for two shoes, adding $10 shipping, and checking each numerical stage. The reusable sequence is specific to totals involving discounts and add-on costs.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "2cb0f0b53312a934a6942399a79088b13b3cd62c7ba8cb3af7b27cc5b1b55eaf",
+      "target_sha256": "351b533f8d5b2515fe7b1176afc735514570abaf4b97476092c5749049eaf6d9"
+    },
+    "gsm8k-train-2626:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Next, I calculate the discount on the slippers:",
+        "Total cost: $45.00 (discounted slippers) + $11.00 (embroidery) + $10.00 (shipping) = $66.00"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All quantities come from the question, and the target's discount, two-shoe embroidery, and addition calculations are explicitly verifiable without outside information.",
+      "raw_call_sha256": "b1c00092d8c14c059eac2d2f633f0ff3e88570f64c2ea64bc7d68491ef1ee999",
+      "reason": "The response gives a first-person sequence: subtract the $5 discount, multiply the per-shoe embroidery charge by two, and add $10 shipping. The intermediate and final amounts are correct and meaningful.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "eb6f5f41ccbae1f940989a6152fb734b94a9919392ab2959fcae7360f5408ba9",
+      "target_sha256": "c9f629a6f85b4c231125789092298cdfb4d8a05443fc61c0ee1860bff21ab5d8"
+    },
+    "gsm8k-train-3104:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I subtracted the friend's contribution from the total tip: Mark's contribution = $40 - $10 = $30.",
+        "I verified this by ensuring that $30 plus $10 equals the total tip of $40"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person verification is an explicitly shown inverse arithmetic check based on the supplied values, not an assertion of external checker access.",
+      "raw_call_sha256": "f43895cf7ddc68c9dadb0065c3d91580996c2da9105e8b53c671ee1a5b10f576",
+      "reason": "The response correctly calculates 20% of $200 as $40, subtracts $10, and checks that $30 + $10 restores $40. It also explains when subtracting a known partial contribution is useful.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "67d12a3ae0bc03d5469e39872812cbae2cfa06aa8af081fc89b1d1308e39b2b0",
+      "target_sha256": "0ba8fef1545bd859d511d0768b45b2d883c733664f1198864f781017c4c5be5e"
+    },
+    "gsm8k-train-3104:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculate the 20% tip on a $200 check.",
+        "the amount Mark needs to add is $40 - $10 = $30."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target uses only the check amount, tip percentage, friend's contribution, and valid displayed arithmetic. It claims no unsupported feedback or event.",
+      "raw_call_sha256": "a5fa1105a94d62ea14f85fd1feca4b5bceae43bdc3b4f34b253b6a2b9c5a7cd4",
+      "reason": "The response substantively recounts finding the $40 total tip and subtracting the friend's $10 contribution. Both quantities have concrete meanings, and the operation is reusable for finding a remaining contribution.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "5957a7954acb01d780cac5c77af4eda55b97e57e56e47fcf03e773d8ac27f1c6",
+      "target_sha256": "089f8c5c25315ad53fc8c3199db0797a58fca3ee152775dbc46f76aef5349e0d"
+    },
+    "gsm8k-train-4424:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the number of women and men:",
+        "Total number of people with rabbit ears = 64 (women) + 72 (men) = 136"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All claims are derivable from the supplied guest counts and rates. The stated verification is a self-check of the displayed arithmetic and does not invoke an external event.",
+      "raw_call_sha256": "23d83e8e7a4da255d2e8fe77d1fb1b6325ed3b4367e5ac2fa9e77d34347fd48b",
+      "reason": "The response gives a first-person account of partitioning the guests, applying 80% and 60% to the appropriate groups, and summing the results. The numerical intermediates are correct, concrete expectations, and the subgroup-percentage method is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "e6d07a4b5c43c656c72a83f5a392622a2d9ae1c8d49535c5db264624297b493a",
+      "target_sha256": "9e16a6b4d97df5094c9ea2f19fccb34d8dd2df32e40e313aed93346baf6b708c"
+    },
+    "gsm8k-train-4424:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Women with rabbit ears = 80% of 80 = 0.80 * 80 = 64",
+        "Total = 64 (women) + 72 (men) = 136"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The population split and subgroup percentage calculations are fully supported by the question and explicit arithmetic; no outside feedback or observation is asserted.",
+      "raw_call_sha256": "91dd45fbba5dbe48aaf0ec9da18f8f92cf1fcc79b090d6f2a93ecf5579402922",
+      "reason": "The response correctly partitions 200 guests into 80 women and 120 men, applies the subgroup rates, and sums 64 + 72. However, it is entirely impersonal, using directives such as \u201cFirst, calculate\u201d rather than giving a substantive own operational account.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "f1fd249d0fb7734c1220913a70ec0f87d52e8ff14dc53a9393d1382c8cab8d60",
+      "target_sha256": "a9417d10b9700a44f3d5f2ade352b61429c2cb329a0f394d777250d95bb331a1"
+    },
+    "gsm8k-train-456:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated Chad's total earnings by summing these amounts:",
+        "\\[ 0.40 \\times 1150 = 460 \\]"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The calculation and self-verification are supportable from the supplied amounts, rate, and prior solution. \u201cMatched the expected savings\u201d refers to the result implied by those facts, not hidden checker feedback.",
+      "raw_call_sha256": "672e6064755910a51eca57314bbb804142586225fc94967f8cc9ddeed9c04e99",
+      "reason": "The response correctly recounts totaling $1,150 and calculating 40% as $460. It supplies concrete numerical expectations and explains that finding a percentage of a total applies whenever a portion of a sum is needed.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "93ccd2c92372b02573758a2715e8c6a9513ab1ea65fa6bb37fdd7e2c0d0723ec",
+      "target_sha256": "94810f7054475b1baec6bdff5d7cc1d7aeedd6aef994fee955637c66f8e4f9a2"
+    },
+    "gsm8k-train-456:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculate Chad's total earnings for the year.",
+        "0.40 * $1,150 = $460"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The response uses only the four supplied income amounts and the stated 40% savings rate, with valid arithmetic and no unsupported event claims.",
+      "raw_call_sha256": "7a9ed17d7531ecf7b365541b64129e4e8d11eb85041af5dba86acc6b48424664",
+      "reason": "The target substantively recounts summing the four income sources to $1,150 and applying the 40% savings rate to get $460. These meaningful intermediates and the percentage-of-total operation are correct and reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "89b77c66d2dca5c310fd2ae3ec76f06e8c349cbd109be2356192504ccabf1b9d",
+      "target_sha256": "b1738607184b0477875cc92d2c1d3ac992ae198933233b0eb33ff7af8cde330c"
+    },
+    "gsm8k-train-5037:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "She buys gold watches, which is 10% of all her watches after the purchase.",
+        "Since the number of watches must be a whole number, and typically in such problems, we round to the nearest whole number, \\(G = 9\\)."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The prefix does not say that the gold watches are 10% of the post-purchase total. It naturally supplies 80 currently owned watches, whose 10% is 8. The target invents an after-purchase interpretation and an unsupported rounding convention.",
+      "raw_call_sha256": "4138ffec545194773c227b3b3cac6558f3f389340e9905df400919a5a8d17576",
+      "reason": "Although the response correctly obtains 60 bronze and 80 pre-purchase watches and gives a substantive first-person derivation, it changes the percentage base to the post-purchase total. Its equation gives 80/9 rather than an integral count, and rounding that to 9 makes the claimed 10% relation inexact and produces the wrong total 89.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "1c63a4305568c401c727387cd3386a946cb0e52056918903a4d3218ef535fd5d",
+      "target_sha256": "cadb1cfcb9df8e663e4659dfdcc9610e59403a12d9f93dc7c33c3890b27d6d61"
+    },
+    "gsm8k-train-5690:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I verified this by checking that 40% of 300 is indeed 120, as 0.40 * 300 = 120.",
+        "Given that the final value passed the exact-answer checker, the result is confirmed to be correct."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The arithmetic self-check is supported, but the neutral prefix contains no checker result. The claim that the value \u201cpassed the exact-answer checker\u201d asserts an external event that cannot be supported by the supplied messages or target arithmetic alone.",
+      "raw_call_sha256": "c24e505979dc342bb714d5f650abfb16ca6e1c4f0d6e798c062f8792841ea1e7",
+      "reason": "All mathematical operations are correct and the response gives a substantive first-person account with a concrete 0.40 \u00d7 300 check and reusable percentage method. It nevertheless fails because it additionally claims an exact-answer checker event absent from the prefix.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "a3effe868ecc9df72ac57155b3edceda0690f24e76d9d7c0d831afa239dc9ab4",
+      "target_sha256": "ae18f9c16b35926adab97028d107cec5b09194bd0c7089fe149971900a985478"
+    },
+    "gsm8k-train-5690:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Together, Fred and Uncle Bob have 12 + 18 = 30 candy bars.",
+        "To find 40% of Jacqueline's candy bars, we calculate 40/100 * 300 = 120."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every quantity and operation follows from the question and displayed arithmetic. The plural operational statement \u201cwe calculate\u201d does not rely on any external event.",
+      "raw_call_sha256": "dddc010e0233833182aaa06f31c0704da512c45048ae8704849e51c03dd952c2",
+      "reason": "The response correctly calculates Bob's 18 bars, the combined 30, Jacqueline's 300, and 40% as 120. \u201cWe calculate\u201d is a substantive plural first-person account of applying the final percentage operation.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "892d075e9f5bb339fddc51b5eda63a3d1fccb0404ecc5855599cd4191c5f1d39",
+      "target_sha256": "eceaa8c6e019cdd439cf88212b9e2c43e339e63fd3e8e81977efccaea0038cce"
+    }
+  }
+}

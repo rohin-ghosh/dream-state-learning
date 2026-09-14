@@ -1,0 +1,362 @@
+{
+  "gold": [
+    {
+      "independent_answer": "504",
+      "question_sha256": "7b030a05db48445ab274a8d17b95d688aedc2bceaa1301c4601b598c17d7262b",
+      "reason": "Six T-shirts cost 6\u00d78=48, four sweaters cost 4\u00d718=72, and each discounted jacket costs 80\u00d70.90=72, so five cost 360. The pretax total is 48+72+360=480; adding 5% tax gives 480\u00d71.05=504, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-468"
+    },
+    {
+      "independent_answer": "4",
+      "question_sha256": "d994ec9c5b21efd0af9b61013a2d3c224c459de3611fe1ebdceb8bd835f06e30",
+      "reason": "There are 25 champions. Men are the remaining 40%, so 25\u00d70.40=10 men; 40% of those is 10\u00d70.40=4, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-4841"
+    },
+    {
+      "independent_answer": "80",
+      "question_sha256": "7ee94d117875bf3542a20770f6c1e351a511a97ebe1e10b659b457d739aebb39",
+      "reason": "A 20% decrease leaves 80% of the original price: 100\u00d70.80=80, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-1625"
+    },
+    {
+      "independent_answer": "3",
+      "question_sha256": "9e8a871d642aebc12ed4dc2fd5d1240d1fcad9e58e47b2e1c3920a0cf783160b",
+      "reason": "The two weekend days provide 2\u00d78=16 hours. Reading uses the remaining 25%, or 4 hours, producing 4\u00d760=240 pages. At 80 pages per book, 240\u00f780=3 books, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-6589"
+    },
+    {
+      "independent_answer": "27",
+      "question_sha256": "34a34d550b1816421060923a83badaa76ff1dc7371807a4e88622e94bef28068",
+      "reason": "Tax uses 60\u00d70.10=6 bars, leaving 54. Losing half of the remaining 54 leaves 54\u00f72=27 bars, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-1209"
+    },
+    {
+      "independent_answer": "8",
+      "question_sha256": "4b55c9c57206f82515aa8f0a840c0bf55247f2259154c1af2e57c0168ee4fc76",
+      "reason": "Of 20 computers, 20% gives 4 unfixable and 40% gives 8 waiting for parts. The stated rest is 20\u22124\u22128=8 computers, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-6680"
+    },
+    {
+      "independent_answer": "1800",
+      "question_sha256": "e8975e1302e173a2fddde087ad9696120acaee2bb3ef5f6d975885d6f89ec2b1",
+      "reason": "The SUV sells for 2\u00d730000=60000, making total sales of 90000. A 2% commission is 90000\u00d70.02=1800, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-7251"
+    },
+    {
+      "independent_answer": "14000 or 15400",
+      "question_sha256": "43222b34cb4c4588399bb656cae5a02069cac7ffc48bb547b3bd22021e66d47c",
+      "reason": "The phrase \u201c10 times more money than\u201d is ambiguous. If it means ten times as much, Mike previously earned 1000\u00d710=10000 and now earns 10000\u00d71.40=14000. If interpreted literally as Fred's salary plus ten additional multiples, he earned 1000\u00d711=11000 and now earns 11000\u00d71.40=15400. The gold matches only the latter interpretation.",
+      "status": "AMBIGUOUS",
+      "task_id": "gsm8k-train-321"
+    }
+  ],
+  "reviews": [
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, calculate the cost of each type of item before discounts and taxes:",
+        "- Total cost including tax: $480 + $24 = $504"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-468:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every factual and numerical claim follows from the question and shown arithmetic; no external feedback or hidden event is claimed. However, the response uses imperative/impersonal narration rather than giving a substantive first-person account.",
+      "raw_call_sha256": "c441662addff810577c9f67970ce13c7a16f71390cb42156ad785cb369cdde47",
+      "reason": "The discount, item totals, $480 pretax total, $24 tax, and $504 result are correct and provide task-specific, checkable operations. The response fails only because commands such as \u201cFirst, calculate\u201d do not constitute its own operational account.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "f56bd0feea86456419a281be37e1bbc96dfafc10db683bd9559a4605ed04e8fa",
+      "target_sha256": "62bbd7b8799e5413674d0d6d65fb2f1008e2b6ac123c60478e0fd40a0399b3fd"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the cost of the T-shirts:",
+        "To verify the result, I checked each step:"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-468:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": false,
+      "prefix_reason": "The first-person calculations and self-check are supported by the supplied problem, prior solution, and arithmetic shown in the target; no external checker or feedback is claimed.",
+      "raw_call_sha256": "d2714aa4e5397b6e08ef71e8f892eb8ea0b3980b52f1d6395edd9bb546d5c79a",
+      "reason": "All monetary operations are correct, first-person, checkable, and reusable. The response nevertheless repeats essentially the complete sequence of calculations a second time under \u201cTo verify,\u201d so it fails no_padding.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "6e8f32f9a505d6735844cd5eae1778d3c0e9d9491e6707411d35f7d7f968a1d8",
+      "target_sha256": "97bdc91ca2f491889c0b10da0a2a9af63ea5307eefe1a0dfc1805fe44435848c"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "That means 40% of 25 champions is 0.40 * 25 = 10 men champions.",
+        "So, 40% of 10 is 0.40 * 10 = 4 men with beards have been champions."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-4841:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The complement and chained percentage calculations are fully supported by the question and explicit arithmetic. There are no unsupported events, but there is also no first-person operational account.",
+      "raw_call_sha256": "688157b02426da82e972abad3942981ed594151acfb4ac610cfafc3a4c2d8d02",
+      "reason": "The response correctly takes the 40% male complement and then 40% of the resulting 10 men. These are concrete and reusable calculations, but the entirely impersonal narration makes first_person false.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "9157348d59dc239de249d5eb094f988c5a4c2cf92de5200415575506558e417b",
+      "target_sha256": "18454ed55b0446f3a3adddba48df0d172cc920c19f516206bf2147227c63b91a"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find the number of male champions, I calculated 0.40 * 25 = 10.",
+        "To verify this, I can recheck the calculations:"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-4841:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": false,
+      "prefix_reason": "The first-person work and self-recheck are supportable from the problem and displayed arithmetic; the target claims no external validation.",
+      "raw_call_sha256": "5bb6d850360a4674ea64705e108c9c4f6e3518e8725c3b7e124e998d00373fdb",
+      "reason": "The chained percentages are correct, explicitly attributed to the writer, checkable, and accompanied by a reusable explanation. The verification list simply repeats both calculations already given, making no_padding false.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "b0142a70c2abd4bfc16146e68da5a0f444dc7a8d4dbd772f4418839fdaf2c046",
+      "target_sha256": "d8ffd42cfecd9942d3cd223d80cb2cb68469a1ae2ed5cf60cb15cca6fb99d10f"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find the new price, we subtract this from the original price:",
+        "\\[ 100 - 20 = 80 \\]"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-1625:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The plural first-person subtraction and every numerical claim are supported by the question and shown arithmetic, with no claimed external event.",
+      "raw_call_sha256": "16b3f5a5125dd5009312ed0f620c418c979e03b47f82f47d38c04bf0cf80b953",
+      "reason": "The response substantively says \u201cwe subtract,\u201d correctly computes the $20 reduction and $80 new price, and gives a concrete operation reusable for percentage-decrease problems. It is concise and fully grounded.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "3b4ecbafecdb34e2e07612e0593cd408d03859c61473147480f60f118ffc1a3e",
+      "target_sha256": "3018d57dddc4397eadcf5fde504352fd10094a2755ff6c98626320684570982e"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I then subtracted this $20 from the original price of $100 to find the new price.",
+        "\\[ \\frac{100 - 80}{100} \\times 100 = 20\\% \\]"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-1625:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person calculation and inverse percentage check are explicitly demonstrated and supported solely by the supplied values; \u201cconfirms\u201d refers to that self-check, not an external checker.",
+      "raw_call_sha256": "9cca3d51273250dbd783de2e007490fb4eca269e8c23f684e895dfa9ed6eaf88",
+      "reason": "It correctly computes the decrease, subtracts it, and independently checks that the $20 difference is 20% of $100. The explanation is first-person, concrete, reusable, and relevant throughout.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "aa5060df45791c3cc51e0b652808f9e7e2e0dfe4fc4abd97f4bb32edf45d4731",
+      "target_sha256": "fce580b549c15c8edf1950ea3708708f3f033c22e3b514843f2278129c5946d5"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "This leaves 16 - 12 = 4 hours for reading.",
+        "Since each book contains 80 pages, he can read 240 / 80 = 3 books."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6589:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All time, rate, page, and book calculations are supported by the question and valid arithmetic. The response is third-person throughout, so it supplies no own operational account.",
+      "raw_call_sha256": "42d93b9f1db5fb8e7f12aec4d6fca2e3e7d29e84f09fbfab3423f6dcb4237130",
+      "reason": "The response correctly converts two weekend days to 16 hours, assigns the remaining 25% to reading, converts hours to pages, and pages to books. It fails only first_person.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "058a675f1ed49744b939908eb1b4122db9652fd3342a28039d99c48e007c8a4e",
+      "target_sha256": "098ddd16677b0945ad334530cf65e34eb9d5e9aaff71f5fbb130bdf6e27f67c7"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I determined the number of books he can read by dividing the total pages by the number of pages per book, 240 / 80 = 3 books.",
+        "I checked that 3 books * 80 pages/book = 240 pages"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6589:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person operations and multiplication check use only supplied quantities and displayed arithmetic. The checking claim is a demonstrated self-check, not unsupported outside feedback.",
+      "raw_call_sha256": "dbc4820c897c0f9c431850f2e5b05f768df2e1d8d360f9bb3a46779d70767a20",
+      "reason": "The response correctly moves from total weekend time to reading time, pages, and books, then checks the division by multiplying 3 books by 80 pages. Its explanation of dividing total pages by pages per book is task-specific and reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "5c96c04bf0ae8b20f1b0acfd761a0a3e4a9877a45f0c0c116ec56f080337feb3",
+      "target_sha256": "b04e92a8e29cf1ff798f0a7695d4bb85cfde23351ff4587ed3f93d497388d7f2"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculate 10% of 60 to find out how many bars I use for tax:",
+        "Half of 54 = 54 / 2 = 27 bars"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-1209:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person language presents the solver's application of Jame's quantities, and every claim is supported by the problem and shown arithmetic. No external event or hidden feedback is invoked.",
+      "raw_call_sha256": "a71f338c743bf4b46bf4335d78dad713a4192c4595d161e1d10935931372f4c9",
+      "reason": "The target gives an own operational account, correctly finds 6 tax bars, subtracts to 54, and halves the remainder to 27. The sequential percentage reduction and division are concrete, checkable, and reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "30e083852b522e62c98610a45e1f9a8e99d80bac046ff570f6e14ff252ee9dee",
+      "target_sha256": "16fb904e4e0554386866ff94d8de4bf9c05182e40b357d6f460657509af9e814"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first need to determine how many bars he uses to pay for tax.",
+        "To verify this, I can recheck the steps: first, 60 - 6 = 54, and then 54 / 2 = 27."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-1209:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": false,
+      "prefix_reason": "The first-person calculations and self-recheck are supported by the question, prior solution, and arithmetic in the target; no outside verification is claimed.",
+      "raw_call_sha256": "7b0d34db0c8f2564ac5364e28bc0819369040ad2710bc2308ed1ebc2bdac14c4",
+      "reason": "The percentage, subtraction, and halving operations are all correct, checkable, and reusable. However, the purported verification repeats the same subtraction and division already presented rather than adding a distinct check, so no_padding is false.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "b2a472263f028068a2937ef1722a8297a2f79b91b45f9bf72fb665f01acad2a1",
+      "target_sha256": "6b1d378966f402d3144b747d1650f52f0fb11c25790af3d0853ab5ccbe49d8ee"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Now, I find the number of computers John was able to fix right away by subtracting the unfixable and those needing spare parts from the total:",
+        "20 - 4 - 8 = 8 computers"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6680:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person calculations use only the three categories stated in the question and valid arithmetic. There is no claimed external feedback or unsupported event.",
+      "raw_call_sha256": "4946a95270e4c1538237889a710edf81219ce16bd72aebd25c38720246549846",
+      "reason": "It correctly computes 4 unfixable and 8 waiting computers, then subtracts both from 20 to obtain the remaining 8. The numerical intermediates are checkable and the remainder operation is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "5277e9cb6e272da6f59c697c6e5cea43cc457e6b0476414f3725248f9ad8c2ee",
+      "target_sha256": "1667515fe08b77fe1d63bf8468eb0750c9cff910954f91325575505be41b8db9"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I subtracted the unfixable and those needing spare parts from the total:",
+        "4 (unfixable) + 8 (needing spare parts) + 8 (fixed right away) = 20"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6680:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All first-person operations follow from the problem. The category-sum check is explicitly shown and is a supported self-check rather than external validation.",
+      "raw_call_sha256": "7d9eb0bf8e7d2c6faf2f1af91dea781a24098e0cf205bc4d6ef42ebcb749e175",
+      "reason": "The response correctly computes each percentage category, obtains the remainder, and provides a distinct reconciliation check showing that 4+8+8=20. Its explanation of subtracting known percentage groups to find a remainder is specific and reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "68ed17ce41f26651cf7d88c21401bce5e7bc78bb08013624aeff6b5c7c12debc",
+      "target_sha256": "aa503aa0d5702f1c9dc4cafab06d923ece367dbb8c594f04de2549dc54d5a0fe"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Next, I calculate the total sales amount:",
+        "Finally, I check the result: the total commission calculated is $1,800, which matches the problem's conditions."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-7251:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": false,
+      "prefix_reason": "The first-person calculations are fully supported by the question and arithmetic. The claim that the result matches the conditions is a self-assessment based on shown work, not an external checker event.",
+      "raw_call_sha256": "9883cd98189326de2c74386b6278a13c9dd98cdccc42cfe104156bea9eb83736",
+      "reason": "The SUV price, $90,000 sales total, and 2% commission are correct and provide checkable, reusable operations. The final \u201ccheck\u201d merely asserts that $1,800 matches the conditions without performing a concrete additional check, making it generic padding.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "4d5af8369ec2c4065c386ada97c2dee7273400de3559cf6084b434a53390eac0",
+      "target_sha256": "e53049e1439708651911b267fea27c7a959183df30b1f7d5ddbc783ea77d8675"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find the total commission, I first calculated the total sales amount:",
+        "To verify the result, I checked the calculation by ensuring the multiplication was correct and the commission rate was applied accurately."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-7251:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": false,
+      "prefix_reason": "The target's first-person work is supported by the supplied problem and prior solution. Its verification language denotes self-checking of displayed arithmetic, not an external checker, although it does not show a distinct verification operation.",
+      "raw_call_sha256": "68d548d54398047d5a55244d3cdbaed2d957bf9f786b26c193f5afb3d17ab8f5",
+      "reason": "The $60,000 SUV price, $90,000 total, and $1,800 commission are correct, checkable, and accompanied by a reusable commission method. The verification paragraph is generic\u2014it says the multiplication and rate were checked but supplies no concrete new check\u2014so no_padding is false.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "f015f7b88269c2ce5e7f346437133175ff37f824d37d31ba6d3f27dc7c316ce9",
+      "target_sha256": "dfb7e61f2efc66aa579054ac4835cf30614c9d7d5741487a67a090d4e1c84941"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Mike earned 10 times more than Fred, so Mike's salary five months ago was 10 * $1000 = $10000.",
+        "To find the new salary, we calculate 40% of $10000"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": null,
+      "key": "gsm8k-train-321:rich",
+      "neutral_prefix_compatible": null,
+      "no_padding": true,
+      "prefix_reason": "The arithmetic is explicit and the plural \u201cwe calculate\u201d is an own operational account, but support for the asserted $10,000 starting salary depends on the unresolved meaning of \u201c10 times more than.\u201d No external event is claimed.",
+      "raw_call_sha256": "391df79dcf0cfa5d799d1c1d0cdd5011e5451b993f47a39614e857cfab7785f7",
+      "reason": "Given a $10,000 prior salary, the 40% increase to $14,000 is mathematically correct, checkable, concise, and reusable. However, \u201c10 times more than\u201d can mean either ten times as much or the original amount plus ten multiples; the target assumes the former without resolving that ambiguity, so grounding and prefix compatibility cannot be definitively adjudicated.",
+      "reusable_content": true,
+      "status": "UNRESOLVED",
+      "student_prefix_sha256": "6647737426452564125e75df810f7d7fe264f78e3b1cd55b9550b7796a743eaf",
+      "target_sha256": "cd81fc8f2882da9245a68789ecc6d41306013032970868b31ed5c6dcc2f7591c"
+    }
+  ]
+}

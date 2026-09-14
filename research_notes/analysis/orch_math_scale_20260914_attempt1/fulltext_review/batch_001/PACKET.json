@@ -1,0 +1,338 @@
+[
+  {
+    "gold": "90",
+    "question": "Mo is buying valentine's day cards for the class. There are 30 students and he wants to give a Valentine to 60% of them. They cost $2 each. If he has $40, what percentage of his money will he spend on Valentine?",
+    "question_sha256": "bbad49f9da7d808deb50128f85c4c9509368669c758e4f634c044df95a9c1238",
+    "responses": [
+      {
+        "key": "gsm8k-train-2955:rich",
+        "raw_call_sha256": "795cd0eeb282d98ae0d0f17c3c079681e8f4aef0f78698da0dae1207759777a8",
+        "student_prefix": [
+          {
+            "content": "Mo is buying valentine's day cards for the class. There are 30 students and he wants to give a Valentine to 60% of them. They cost $2 each. If he has $40, what percentage of his money will he spend on Valentine?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "864e20c441c59a6fc9715ea499a3fcb431267e4e7063b8efc054d1603dc49462",
+        "target": "First, I identify the given quantities:\n- Total number of students: 30\n- Percentage of students to give Valentine to: 60%\n- Cost per Valentine: $2\n- Total money Mo has: $40\n\nThe unknown is the percentage of his money Mo will spend on Valentine's cards.\n\nTo find the number of students Mo will give a Valentine to, I calculate 60% of 30:\n\\[ 0.60 \\times 30 = 18 \\]\n\nNext, I calculate the total cost of the Valentine's cards:\n\\[ 18 \\times 2 = 36 \\]\n\nNow, I find the percentage of his money Mo will spend:\n\\[ \\frac{36}{40} \\times 100 = 90\\% \\]\n\nSo, Mo will spend 90% of his money on Valentine's cards.\n\nFINAL: 90",
+        "target_sha256": "d6ca1b9c03c421b77c5b6bb019b560f08069eed6b3a6c6a8554d3534dca97ae4"
+      },
+      {
+        "key": "gsm8k-train-2955:new_record",
+        "raw_call_sha256": "383dfcea169e9108b59822eb66336c0d763835363393bab37969d7fa78243c03",
+        "student_prefix": [
+          {
+            "content": "Mo is buying valentine's day cards for the class. There are 30 students and he wants to give a Valentine to 60% of them. They cost $2 each. If he has $40, what percentage of his money will he spend on Valentine?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Total number of students: 30\n- Percentage of students to give Valentine to: 60%\n- Cost per Valentine: $2\n- Total money Mo has: $40\n\nThe unknown is the percentage of his money Mo will spend on Valentine's cards.\n\nTo find the number of students Mo will give a Valentine to, I calculate 60% of 30:\n\\[ 0.60 \\times 30 = 18 \\]\n\nNext, I calculate the total cost of the Valentine's cards:\n\\[ 18 \\times 2 = 36 \\]\n\nNow, I find the percentage of his money Mo will spend:\n\\[ \\frac{36}{40} \\times 100 = 90\\% \\]\n\nSo, Mo will spend 90% of his money on Valentine's cards.\n\nFINAL: 90",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "bc93b106a49dc117c1fed870c46bc3b56180e0717d7b4e746f3d29ab18f8e768",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- Total number of students: 30\n- Percentage of students to give Valentine's cards to: 60%\n- Cost per Valentine's card: $2\n- Total money Mo has: $40\n\nThe unknown is the percentage of his money Mo will spend on Valentine's cards.\n\nTo solve this, I first calculated the number of students Mo will give Valentine's cards to:\n\\[ 0.60 \\times 30 = 18 \\]\nThis means Mo will give Valentine's cards to 18 students.\n\nNext, I calculated the total cost of the Valentine's cards:\n\\[ 18 \\times 2 = 36 \\]\nSo, the total cost is $36.\n\nTo find the percentage of his money Mo will spend, I used the formula:\n\\[ \\frac{36}{40} \\times 100 = 90\\% \\]\nThis means Mo will spend 90% of his money on Valentine's cards.\n\nTo verify this, I checked the calculation step-by-step:\n1. Correctly calculated 60% of 30 students: \\(0.60 \\times 30 = 18\\).\n2. Correctly calculated the total cost: \\(18 \\times 2 = 36\\).\n3. Correctly calculated the percentage: \\(\\frac{36}{40} \\times 100 = 90\\).\n\nThe operations used are straightforward arithmetic and percentage calculations, which are reliable and reusable for similar problems.\n\nFINAL: 90",
+        "target_sha256": "a38bf0f47665499d0f4e2444b42fa6d0e1767d8155ee0e782bbded77dfcaa232"
+      }
+    ],
+    "task_id": "gsm8k-train-2955"
+  },
+  {
+    "gold": "50",
+    "question": "TreShaun's full marker has enough ink in it to paint three 4 inch by 4 inch squares. If he colors in two 6 inch by 2 inch rectangles, what percentage of ink is left?",
+    "question_sha256": "757cd3cb1d6701ed934f2b9278497145da9c10c49093f1e3b6c1ada6d2a2767a",
+    "responses": [
+      {
+        "key": "gsm8k-train-6716:rich",
+        "raw_call_sha256": "3aa81d6b8b3848dca50aeb43630b6e52967040f92f0f3037b56e62645e3bdcc9",
+        "student_prefix": [
+          {
+            "content": "TreShaun's full marker has enough ink in it to paint three 4 inch by 4 inch squares. If he colors in two 6 inch by 2 inch rectangles, what percentage of ink is left?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "93b4bd0141bbbb3ddbc48195241bee0302123365be69d5ae74041675bb409e54",
+        "target": "Given:\n- Full marker can paint 3 squares, each 4 inches by 4 inches.\n- Each square's area = 4 inches * 4 inches = 16 square inches.\n- Total area the marker can paint = 3 * 16 square inches = 48 square inches.\n- Two rectangles are colored, each 6 inches by 2 inches.\n- Area of one rectangle = 6 inches * 2 inches = 12 square inches.\n- Total area colored = 2 * 12 square inches = 24 square inches.\n- Ink used = 24 square inches.\n- Percentage of ink used = (24 / 48) * 100% = 50%.\n\nTherefore, 50% of the ink is used, so 50% is left.\nFINAL: 50",
+        "target_sha256": "abbff18c79f3ba2a5a2dd8d5c93b289859a8f1613555aeded61222f7177c8d63"
+      },
+      {
+        "key": "gsm8k-train-6716:new_record",
+        "raw_call_sha256": "27f9c71587d5a405915368f48fea7bb8e8dead61fc58c6f2638d9374307fab2d",
+        "student_prefix": [
+          {
+            "content": "TreShaun's full marker has enough ink in it to paint three 4 inch by 4 inch squares. If he colors in two 6 inch by 2 inch rectangles, what percentage of ink is left?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Full marker can paint 3 squares, each 4 inches by 4 inches.\n- Each square's area = 4 inches * 4 inches = 16 square inches.\n- Total area the marker can paint = 3 * 16 square inches = 48 square inches.\n- Two rectangles are colored, each 6 inches by 2 inches.\n- Area of one rectangle = 6 inches * 2 inches = 12 square inches.\n- Total area colored = 2 * 12 square inches = 24 square inches.\n- Ink used = 24 square inches.\n- Percentage of ink used = (24 / 48) * 100% = 50%.\n\nTherefore, 50% of the ink is used, so 50% is left.\nFINAL: 50",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "839a654ad4289ae1640eb08245340643a48754e554bea8bdc5c139a25fd26f21",
+        "target": "Given the problem, I identified the following quantities:\n- A full marker can paint three 4-inch by 4-inch squares.\n- Each square has an area of 16 square inches (4 inches * 4 inches).\n- Therefore, the total area the marker can paint is 48 square inches (3 * 16 square inches).\n- TreShaun colors in two 6-inch by 2-inch rectangles.\n- Each rectangle has an area of 12 square inches (6 inches * 2 inches).\n- Therefore, the total area colored is 24 square inches (2 * 12 square inches).\n\nTo find the percentage of ink used, I calculated the ratio of the area colored to the total area the marker can paint, then converted that ratio to a percentage:\n\\[ \\text{Percentage of ink used} = \\left( \\frac{24 \\text{ square inches}}{48 \\text{ square inches}} \\right) \\times 100\\% = 50\\% \\]\n\nThis means that 50% of the ink is used, and thus, 50% of the ink is left.\n\nTo verify this, I checked the calculation:\n- The total area the marker can paint is 48 square inches.\n- The area colored is 24 square inches.\n- The percentage of ink used is indeed 50%, as calculated.\n\nThe operation I would reuse is the calculation of the percentage of ink used based on the ratio of the area colored to the total area the marker can paint. This operation is reusable whenever a similar problem involving the use of a fixed amount of ink or material needs to be solved.\n\nFINAL: 50",
+        "target_sha256": "6da0585d0d814a0669e354e3096d8876e9c5132e976922888bbbcf8640b17c2e"
+      }
+    ],
+    "task_id": "gsm8k-train-6716"
+  },
+  {
+    "gold": "6",
+    "question": "James bought a gallon of milk for $3, a bunch of bananas for $2, and paid 20% sales tax. How much money did James spend?",
+    "question_sha256": "deee9120d4636429df2a13a2e14f05258c9af77c4453fc67919a68fc8bd0cbcd",
+    "responses": [
+      {
+        "key": "gsm8k-train-5267:rich",
+        "raw_call_sha256": "451ba2c33cb77ba647fe1d82560d6d1eb1726ebed341d81d6524e7c6073bc570",
+        "student_prefix": [
+          {
+            "content": "James bought a gallon of milk for $3, a bunch of bananas for $2, and paid 20% sales tax. How much money did James spend?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "7b73c6cf7b424f8e25270efb7ce9ce802b9ebab896dc668a70140b2810da3515",
+        "target": "First, I identify the given quantities:\n- Milk: $3\n- Bananas: $2\n- Sales tax rate: 20%\n\nNext, I calculate the total cost before tax:\n$3 + $2 = $5\n\nNow, I calculate the sales tax:\n20% of $5 = 0.20 * $5 = $1\n\nAdding the sales tax to the pre-tax total:\n$5 + $1 = $6\n\nSo, James spent $6 in total.\n\nFINAL: 6",
+        "target_sha256": "d4fa879a9d65d20a8d5dba0c722be6df7dc76a5ae18bebf1e27a7bd03cbb0fec"
+      },
+      {
+        "key": "gsm8k-train-5267:new_record",
+        "raw_call_sha256": "88199cdf5e6fd489cfa47e7ddd84b321ba68015ec5023dc686e40cc9baf1ba6b",
+        "student_prefix": [
+          {
+            "content": "James bought a gallon of milk for $3, a bunch of bananas for $2, and paid 20% sales tax. How much money did James spend?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Milk: $3\n- Bananas: $2\n- Sales tax rate: 20%\n\nNext, I calculate the total cost before tax:\n$3 + $2 = $5\n\nNow, I calculate the sales tax:\n20% of $5 = 0.20 * $5 = $1\n\nAdding the sales tax to the pre-tax total:\n$5 + $1 = $6\n\nSo, James spent $6 in total.\n\nFINAL: 6",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "ea169e971729a15b492fb9591eab7fa38d283a26dcd26854bb4c87966ef570d2",
+        "target": "Given the problem, I identified the quantities and the task at hand. The quantities were:\n- Milk: $3\n- Bananas: $2\n- Sales tax rate: 20%\n\nThe unknown was the total amount James spent. To find this, I first calculated the total cost before tax:\n$3 + $2 = $5\n\nNext, I calculated the sales tax:\n20% of $5 = 0.20 * $5 = $1\n\nAdding the sales tax to the pre-tax total:\n$5 + $1 = $6\n\nI then checked this result by ensuring that the operations were correctly applied and that the total included both the original costs and the tax. The operations used were straightforward arithmetic: addition and multiplication. The addition combined the cost of the milk and bananas, and the multiplication calculated the tax based on the total cost before tax.\n\nThe operations are reusable in similar problems where you need to calculate the total cost including tax. The key is to first find the total cost before tax and then apply the tax rate to that amount.\n\nThe final check is to ensure that the total cost after tax is indeed the sum of the pre-tax total and the tax calculated on that total. This check confirms the accuracy of the operations.\n\nFINAL: 6",
+        "target_sha256": "58d2eb0aabd6016a12d2b0d07e69823472765f46459302a5fef5271097cd795f"
+      }
+    ],
+    "task_id": "gsm8k-train-5267"
+  },
+  {
+    "gold": "100",
+    "question": "Chang's Garden has two kinds of apples. Sweet ones and sour ones. He can sell the sweet ones for $.5 an apple. The sour ones sell for $.1 an apple. 75% of the apples he gets are sweet and the rest are sour. If he earns $40, how many apples did his trees give him?",
+    "question_sha256": "1292a25e351ecf9e1ab26b681b41e0a29651ca1e70ea6bea0c0eb6bab25a4415",
+    "responses": [
+      {
+        "key": "gsm8k-train-734:rich",
+        "raw_call_sha256": "5ce27f276e10d67dfc857fd336197f8ecb6d87dcdf29b148cdd559f814c50d57",
+        "student_prefix": [
+          {
+            "content": "Chang's Garden has two kinds of apples. Sweet ones and sour ones. He can sell the sweet ones for $.5 an apple. The sour ones sell for $.1 an apple. 75% of the apples he gets are sweet and the rest are sour. If he earns $40, how many apples did his trees give him?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "5870f3eda3de77ba90dbf2b74ee21451d25ef06c76a7264e62f21c1acabf27b5",
+        "target": "Given:\n- Sweet apples sell for $0.5 each.\n- Sour apples sell for $0.1 each.\n- 75% of the apples are sweet, and the rest (25%) are sour.\n- Total earnings are $40.\n\nLet's denote the total number of apples as \\( x \\).\n\nThe number of sweet apples is \\( 0.75x \\) and the number of sour apples is \\( 0.25x \\).\n\nThe earnings from sweet apples are \\( 0.75x \\times 0.5 = 0.375x \\).\n\nThe earnings from sour apples are \\( 0.25x \\times 0.1 = 0.025x \\).\n\nTotal earnings are the sum of earnings from sweet and sour apples:\n\\[ 0.375x + 0.025x = 0.4x \\]\n\nWe know the total earnings are $40:\n\\[ 0.4x = 40 \\]\n\nSolving for \\( x \\):\n\\[ x = \\frac{40}{0.4} = 100 \\]\n\nSo, Chang's trees gave him 100 apples.\n\nFINAL: 100",
+        "target_sha256": "bf053d872017726c6a83e780183ed96acd819fcead06caada1515458472d8de5"
+      },
+      {
+        "key": "gsm8k-train-734:new_record",
+        "raw_call_sha256": "7e680ca4bcee870a887d605f2a6ef94e5b5dfed7122d64d638025b262c7695eb",
+        "student_prefix": [
+          {
+            "content": "Chang's Garden has two kinds of apples. Sweet ones and sour ones. He can sell the sweet ones for $.5 an apple. The sour ones sell for $.1 an apple. 75% of the apples he gets are sweet and the rest are sour. If he earns $40, how many apples did his trees give him?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Sweet apples sell for $0.5 each.\n- Sour apples sell for $0.1 each.\n- 75% of the apples are sweet, and the rest (25%) are sour.\n- Total earnings are $40.\n\nLet's denote the total number of apples as \\( x \\).\n\nThe number of sweet apples is \\( 0.75x \\) and the number of sour apples is \\( 0.25x \\).\n\nThe earnings from sweet apples are \\( 0.75x \\times 0.5 = 0.375x \\).\n\nThe earnings from sour apples are \\( 0.25x \\times 0.1 = 0.025x \\).\n\nTotal earnings are the sum of earnings from sweet and sour apples:\n\\[ 0.375x + 0.025x = 0.4x \\]\n\nWe know the total earnings are $40:\n\\[ 0.4x = 40 \\]\n\nSolving for \\( x \\):\n\\[ x = \\frac{40}{0.4} = 100 \\]\n\nSo, Chang's trees gave him 100 apples.\n\nFINAL: 100",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "c2f02e2ceda269ace1fce159cb13613ecadec7221aad999e1be4b819cb52c4f3",
+        "target": "Given the problem, I identified the following quantities and the unknown:\n- Sweet apples sell for $0.5 each.\n- Sour apples sell for $0.1 each.\n- 75% of the apples are sweet, and 25% are sour.\n- Total earnings are $40.\n\nThe unknown is the total number of apples, \\( x \\).\n\nTo solve this, I first expressed the number of sweet and sour apples in terms of \\( x \\):\n- Number of sweet apples: \\( 0.75x \\)\n- Number of sour apples: \\( 0.25x \\)\n\nNext, I calculated the earnings from each type of apple:\n- Earnings from sweet apples: \\( 0.75x \\times 0.5 = 0.375x \\)\n- Earnings from sour apples: \\( 0.25x \\times 0.1 = 0.025x \\)\n\nThe total earnings are the sum of these two amounts:\n\\[ 0.375x + 0.025x = 0.4x \\]\n\nSince the total earnings are $40, I set up the equation:\n\\[ 0.4x = 40 \\]\n\nSolving for \\( x \\):\n\\[ x = \\frac{40}{0.4} = 100 \\]\n\nTo check the result, I verified that the earnings from 100 apples (75 sweet and 25 sour) match the given total:\n- Earnings from 75 sweet apples: \\( 75 \\times 0.5 = 37.5 \\)\n- Earnings from 25 sour apples: \\( 25 \\times 0.1 = 2.5 \\)\n- Total earnings: \\( 37.5 + 2.5 = 40 \\)\n\nThis matches the given total earnings, confirming the solution is correct.\n\nFINAL: 100",
+        "target_sha256": "fb6c28cbad027b80da2ec1fe98f52775d5b2e9d35ebb791c6ed3c1796ea50f84"
+      }
+    ],
+    "task_id": "gsm8k-train-734"
+  },
+  {
+    "gold": "9",
+    "question": "Tim decides to do a movie marathon.  The first movie is 2 hours long.  The next movie is 50% longer.  And the last movie is 1 hour shorter than the combined time of the previous 2 movies.  How long was his movie marathon?",
+    "question_sha256": "37647d51c50a976200e5f19bd29ad1320072c3ab4ac87650c7e2bf9a175d7cd4",
+    "responses": [
+      {
+        "key": "gsm8k-train-5694:rich",
+        "raw_call_sha256": "cdc5302e9691820288debb4fabd5607a25cab0c813b30ea87f369fbcce1c55a0",
+        "student_prefix": [
+          {
+            "content": "Tim decides to do a movie marathon.  The first movie is 2 hours long.  The next movie is 50% longer.  And the last movie is 1 hour shorter than the combined time of the previous 2 movies.  How long was his movie marathon?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "092e16ca6758c2a5a56da8cc9dc88f093696df4cd3f4acb73ab2fd72a95a1a15",
+        "target": "The first movie is 2 hours long. The second movie is 50% longer than the first, so it's 2 * 1.5 = 3 hours. The combined time of the first two movies is 2 + 3 = 5 hours. The last movie is 1 hour shorter than the combined time of the first two, so it's 5 - 1 = 4 hours. Adding all three movies together, the total marathon time is 2 + 3 + 4 = 9 hours.\n\nFINAL: 9",
+        "target_sha256": "a42f5ec1dd4d7285b1e1fde1118632aef1ff214c2f7e14f775930ddfd02a9cec"
+      },
+      {
+        "key": "gsm8k-train-5694:new_record",
+        "raw_call_sha256": "abbf4f28163ca6e4f4807dd22455adca7c7689d07cf0e54c97e8646755b3c661",
+        "student_prefix": [
+          {
+            "content": "Tim decides to do a movie marathon.  The first movie is 2 hours long.  The next movie is 50% longer.  And the last movie is 1 hour shorter than the combined time of the previous 2 movies.  How long was his movie marathon?",
+            "role": "user"
+          },
+          {
+            "content": "The first movie is 2 hours long. The second movie is 50% longer than the first, so it's 2 * 1.5 = 3 hours. The combined time of the first two movies is 2 + 3 = 5 hours. The last movie is 1 hour shorter than the combined time of the first two, so it's 5 - 1 = 4 hours. Adding all three movies together, the total marathon time is 2 + 3 + 4 = 9 hours.\n\nFINAL: 9",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "42e78a9b2c25c6e335b39b83332d3506925f5a81c5710b18daca9fdcfde84eff",
+        "target": "Given that the first movie is 2 hours long, I noted this as a key fact. Next, I calculated the length of the second movie, which is 50% longer than the first. To find this, I used the operation: 2 * 1.5 = 3 hours. I expected this to give the length of the second movie, which it did. \n\nTo find the combined time of the first two movies, I added their lengths: 2 + 3 = 5 hours. I then calculated the length of the third movie, which is 1 hour shorter than the combined time of the first two: 5 - 1 = 4 hours. Adding all three movies together, I got: 2 + 3 + 4 = 9 hours. This sum represents the total length of the movie marathon.\n\nTo check the result, I verified each step: the second movie is indeed 50% longer than the first, the combined time of the first two movies is correct, and the third movie is correctly 1 hour shorter than the combined time of the first two. The final total of 9 hours matches the problem statement.\n\nFINAL: 9",
+        "target_sha256": "b8638a36d4156232ca7fb9b40285bfda591ca083e521d7743f9287e45e48963f"
+      }
+    ],
+    "task_id": "gsm8k-train-5694"
+  },
+  {
+    "gold": "700",
+    "question": "Ping pong balls sell for $.10 each.  Johnny buys 10000 for a prank.  He gets a 30% discount for buying in such large bulk.  How much does he pay?",
+    "question_sha256": "7e64da5616e4f5a7b9b7ebc20032fe32cec34c9a8a64462cfb9986285038b715",
+    "responses": [
+      {
+        "key": "gsm8k-train-673:rich",
+        "raw_call_sha256": "b68b057b9e17f4a74714bdff48b65dededaf8ce78294a6663543edf8053c643d",
+        "student_prefix": [
+          {
+            "content": "Ping pong balls sell for $.10 each.  Johnny buys 10000 for a prank.  He gets a 30% discount for buying in such large bulk.  How much does he pay?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "f4c461a481864336674ff1a5b97dd70f907e4c20d4fa1f72b7ecbebf069385ee",
+        "target": "Given:\n- Ping pong balls cost $0.10 each.\n- Johnny buys 10000 balls.\n- He gets a 30% discount.\n\nFirst, calculate the total cost without the discount:\n\\[ 10000 \\text{ balls} \\times \\$0.10/\\text{ball} = \\$1000 \\]\n\nNext, calculate the discount amount:\n\\[ 30\\% \\text{ of } \\$1000 = 0.30 \\times \\$1000 = \\$300 \\]\n\nSubtract the discount from the total cost:\n\\[ \\$1000 - \\$300 = \\$700 \\]\n\nJohnny pays $700.\n\nFINAL: 700",
+        "target_sha256": "a8a44373e9a2965c28b853fbde2d047000147fa96b85bccea71756ce17560b88"
+      },
+      {
+        "key": "gsm8k-train-673:new_record",
+        "raw_call_sha256": "f5de794cab3781aaef6c7b8457e0b67406a99a1fcce77a98d7fab087779bb07f",
+        "student_prefix": [
+          {
+            "content": "Ping pong balls sell for $.10 each.  Johnny buys 10000 for a prank.  He gets a 30% discount for buying in such large bulk.  How much does he pay?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Ping pong balls cost $0.10 each.\n- Johnny buys 10000 balls.\n- He gets a 30% discount.\n\nFirst, calculate the total cost without the discount:\n\\[ 10000 \\text{ balls} \\times \\$0.10/\\text{ball} = \\$1000 \\]\n\nNext, calculate the discount amount:\n\\[ 30\\% \\text{ of } \\$1000 = 0.30 \\times \\$1000 = \\$300 \\]\n\nSubtract the discount from the total cost:\n\\[ \\$1000 - \\$300 = \\$700 \\]\n\nJohnny pays $700.\n\nFINAL: 700",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "872d4d707140635b03d44f7491bf569d6b90a7d9145ddf18e0361dabe8f370aa",
+        "target": "Given the problem, I identified the key quantities: the cost per ping pong ball ($0.10), the number of balls Johnny buys (10000), and the discount rate (30%). The unknown is the total amount Johnny pays after the discount.\n\nFirst, I calculated the total cost without the discount:\n\\[ 10000 \\text{ balls} \\times \\$0.10/\\text{ball} = \\$1000 \\]\n\nNext, I calculated the discount amount:\n\\[ 30\\% \\text{ of } \\$1000 = 0.30 \\times \\$1000 = \\$300 \\]\n\nThen, I subtracted the discount from the total cost to find the final amount Johnny pays:\n\\[ \\$1000 - \\$300 = \\$700 \\]\n\nTo verify the result, I checked the calculation by ensuring the discount was correctly applied and the subtraction was accurate. The operations used were straightforward arithmetic, and the result matched the problem statement.\n\nThe operations I would reuse are the same arithmetic operations: multiplication to find the total cost, multiplication to find the discount, and subtraction to find the final amount. These operations are reusable in similar problems involving bulk purchases with discounts.\n\nFINAL: 700",
+        "target_sha256": "05544c6969aeefffd3f000e1f539d71547c43e7dfc08a7421285785093a6eb23"
+      }
+    ],
+    "task_id": "gsm8k-train-673"
+  },
+  {
+    "gold": "10",
+    "question": "James burned his hand in a freak accident.  It takes him 4 weeks to heal enough to get a skin graft.  After that it takes him 50% longer than that to heal from the skin graft.  How long did he take to recover from everything?",
+    "question_sha256": "85875c1e778d9b650c1519d4031bfe69ea922944e2ed04c6e1ce33bbb205a8f2",
+    "responses": [
+      {
+        "key": "gsm8k-train-3247:rich",
+        "raw_call_sha256": "5e7ae0eaa931533ea56f26ad382558edcb9059bd17a026598004ebc7a62db501",
+        "student_prefix": [
+          {
+            "content": "James burned his hand in a freak accident.  It takes him 4 weeks to heal enough to get a skin graft.  After that it takes him 50% longer than that to heal from the skin graft.  How long did he take to recover from everything?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "9b6af9569c48a11bb403ed436268a2bc666e3a8ac1e8d74ed0887c1d91b203dc",
+        "target": "First, I identify the given quantities:\n- Time to heal enough for a skin graft: 4 weeks\n- Time to heal from the skin graft is 50% longer than the initial 4 weeks\n\nTo find the time to heal from the skin graft, I calculate 50% of 4 weeks:\n50% of 4 weeks = 0.5 * 4 = 2 weeks\n\nNow, I add this to the initial 4 weeks to get the total time for the skin graft healing:\n4 weeks + 2 weeks = 6 weeks\n\nFinally, I add the time to heal enough for the skin graft (4 weeks) to the time to heal from the skin graft (6 weeks):\n4 weeks + 6 weeks = 10 weeks\n\nFINAL: 10",
+        "target_sha256": "7637c72270e0cb0460e0cee3da28c8cbfab65fb4b725be9ee1bc15af42b0566c"
+      },
+      {
+        "key": "gsm8k-train-3247:new_record",
+        "raw_call_sha256": "d2b81b75344eb7932520a42ee74c57d981603508c8074d76236a632fe89d0a7b",
+        "student_prefix": [
+          {
+            "content": "James burned his hand in a freak accident.  It takes him 4 weeks to heal enough to get a skin graft.  After that it takes him 50% longer than that to heal from the skin graft.  How long did he take to recover from everything?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Time to heal enough for a skin graft: 4 weeks\n- Time to heal from the skin graft is 50% longer than the initial 4 weeks\n\nTo find the time to heal from the skin graft, I calculate 50% of 4 weeks:\n50% of 4 weeks = 0.5 * 4 = 2 weeks\n\nNow, I add this to the initial 4 weeks to get the total time for the skin graft healing:\n4 weeks + 2 weeks = 6 weeks\n\nFinally, I add the time to heal enough for the skin graft (4 weeks) to the time to heal from the skin graft (6 weeks):\n4 weeks + 6 weeks = 10 weeks\n\nFINAL: 10",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "acedee39d7e118ca784cea7d4a23b02fa156b62509c11a91123b0cf91af7f1c4",
+        "target": "Given the problem, I identified the key quantities and the operations needed to solve it. The given quantities are:\n- Time to heal enough for a skin graft: 4 weeks\n- Time to heal from the skin graft is 50% longer than the initial 4 weeks\n\nTo find the time to heal from the skin graft, I calculated 50% of 4 weeks:\n50% of 4 weeks = 0.5 * 4 = 2 weeks\n\nNext, I added this to the initial 4 weeks to get the total time for the skin graft healing:\n4 weeks + 2 weeks = 6 weeks\n\nThen, I added the time to heal enough for the skin graft (4 weeks) to the time to heal from the skin graft (6 weeks):\n4 weeks + 6 weeks = 10 weeks\n\nTo verify the result, I checked the calculation by ensuring that the 6 weeks for the skin graft healing was indeed 50% longer than the initial 4 weeks, and that the total recovery time was the sum of the two periods.\n\nThe operations I used were straightforward arithmetic, and I verified each step to ensure accuracy. The final result, 10 weeks, is the total time James took to recover from everything.\n\nFINAL: 10",
+        "target_sha256": "f0d4add51fd6cbf4f98b408e5e0db60f01c9a8cbac7ed38ae569179f23404a53"
+      }
+    ],
+    "task_id": "gsm8k-train-3247"
+  },
+  {
+    "gold": "551",
+    "question": "Selene buys two instant cameras at $110 and three digital photo frames at $120 each. She gets a 5% discount on all the items she purchased. How much does she pay in all?",
+    "question_sha256": "d31583da58586967e25106563116a59cb9e3a2bc7201c50982edf8438be4329a",
+    "responses": [
+      {
+        "key": "gsm8k-train-1521:rich",
+        "raw_call_sha256": "46219ebd4d0479710394dba7113bd9fdcb559003aca6cd011eec28b719803510",
+        "student_prefix": [
+          {
+            "content": "Selene buys two instant cameras at $110 and three digital photo frames at $120 each. She gets a 5% discount on all the items she purchased. How much does she pay in all?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "302803036191fea56db580aaebf089ea18d918b5d1ef21b9cbbdda1475117f60",
+        "target": "First, I identify the given quantities:\n- Two instant cameras at $110 each\n- Three digital photo frames at $120 each\n- A 5% discount on all items\n\nNext, I calculate the total cost before the discount:\n- Cost of two instant cameras: 2 * $110 = $220\n- Cost of three digital photo frames: 3 * $120 = $360\n- Total cost before discount: $220 + $360 = $580\n\nNow, I apply the 5% discount:\n- Discount amount: 5% of $580 = 0.05 * $580 = $29\n- Total cost after discount: $580 - $29 = $551\n\nFINAL: 551",
+        "target_sha256": "adb0d0382eb3e8a72e87b2d536b10ae727a2006364618b37bf9d657376e4de63"
+      },
+      {
+        "key": "gsm8k-train-1521:new_record",
+        "raw_call_sha256": "0131dcb874c874fa64659e4de0e572d4710b8e06e8a28d4b4154c7553929aeac",
+        "student_prefix": [
+          {
+            "content": "Selene buys two instant cameras at $110 and three digital photo frames at $120 each. She gets a 5% discount on all the items she purchased. How much does she pay in all?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Two instant cameras at $110 each\n- Three digital photo frames at $120 each\n- A 5% discount on all items\n\nNext, I calculate the total cost before the discount:\n- Cost of two instant cameras: 2 * $110 = $220\n- Cost of three digital photo frames: 3 * $120 = $360\n- Total cost before discount: $220 + $360 = $580\n\nNow, I apply the 5% discount:\n- Discount amount: 5% of $580 = 0.05 * $580 = $29\n- Total cost after discount: $580 - $29 = $551\n\nFINAL: 551",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "1c992f98fcb514729cb427bf77126df3f6ea1c2075727c8ede40ba9c502d5c3d",
+        "target": "Given the problem, I first identified the quantities involved:\n- Two instant cameras at $110 each\n- Three digital photo frames at $120 each\n- A 5% discount on all items\n\nI then calculated the total cost before the discount:\n- Cost of two instant cameras: 2 * $110 = $220\n- Cost of three digital photo frames: 3 * $120 = $360\n- Total cost before discount: $220 + $360 = $580\n\nNext, I applied the 5% discount:\n- Discount amount: 5% of $580 = 0.05 * $580 = $29\n- Total cost after discount: $580 - $29 = $551\n\nTo verify the result, I checked the calculation by ensuring the discount was correctly applied and the final total made sense in the context of the problem. I confirmed that the discount was indeed 5% of the total, and the final amount was the original total minus the discount.\n\nThe operations I used are:\n1. Multiplication to find the cost of multiple items.\n2. Addition to sum the costs of different items.\n3. Multiplication and subtraction to apply the discount.\n\nI would reuse these operations in similar problems involving multiple items with different prices and a percentage discount. The key is to first calculate the total cost without the discount, then apply the discount to find the final amount.\n\nFINAL: 551",
+        "target_sha256": "ebb2a362dbcec1481a39db6a7dd463f2b755409f0473b5d12416ebba47136974"
+      }
+    ],
+    "task_id": "gsm8k-train-1521"
+  }
+]

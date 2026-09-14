@@ -1,0 +1,296 @@
+[
+  {
+    "gold": "20",
+    "question": "Elsa and her sister watch an opera show every year at Central City Opera. Last year, opera seating cost $85 per ticket. This year, it costs $102. What is the percent increase in the cost of each ticket?",
+    "question_sha256": "7a115d3c0dec9d6847dc78ec8f4a243a58f90c7582ee7cc2b1b75797c0ae0a1c",
+    "responses": [
+      {
+        "key": "gsm8k-train-6617:rich",
+        "raw_call_sha256": "85d8035ff53a0d714fafece98f57fbf50e084bb921c28a9e4cc82d4237393b38",
+        "student_prefix": [
+          {
+            "content": "Elsa and her sister watch an opera show every year at Central City Opera. Last year, opera seating cost $85 per ticket. This year, it costs $102. What is the percent increase in the cost of each ticket?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "c10a33376199adb2e32992180fc08d95485a45d27d44b171469dedd9e8782745",
+        "target": "Last year, the cost per ticket was $85, and this year it is $102. To find the percent increase, I first calculate the difference in cost: $102 - $85 = $17. Then, I divide this difference by the original cost to find the rate of increase: $17 / $85 = 0.2. To convert this to a percentage, I multiply by 100: 0.2 * 100 = 20%. \n\nSo, the percent increase in the cost of each ticket is 20%. \n\nFINAL: 20",
+        "target_sha256": "717049908599e11b82ced98f9233b1218483acd0d68cdd1f59beedc4ec0b4139"
+      },
+      {
+        "key": "gsm8k-train-6617:new_record",
+        "raw_call_sha256": "417a94e587e698e6a8793c3ed8d883ac2821ae399e920aea7e4775c70a5599df",
+        "student_prefix": [
+          {
+            "content": "Elsa and her sister watch an opera show every year at Central City Opera. Last year, opera seating cost $85 per ticket. This year, it costs $102. What is the percent increase in the cost of each ticket?",
+            "role": "user"
+          },
+          {
+            "content": "Last year, the cost per ticket was $85, and this year it is $102. To find the percent increase, I first calculate the difference in cost: $102 - $85 = $17. Then, I divide this difference by the original cost to find the rate of increase: $17 / $85 = 0.2. To convert this to a percentage, I multiply by 100: 0.2 * 100 = 20%. \n\nSo, the percent increase in the cost of each ticket is 20%. \n\nFINAL: 20",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "6181297ee03b76f6f98b527d7476f9591905b0b883f5d6567111079ae3e48d63",
+        "target": "Given the problem, I identified the following quantities:\n- Last year's ticket cost: $85\n- This year's ticket cost: $102\n\nThe unknown I needed to find was the percent increase in the cost of each ticket. To solve this, I first calculated the difference in cost between this year and last year:\n\\[ \\text{Difference} = \\$102 - \\$85 = \\$17 \\]\n\nNext, I determined the percent increase by dividing the difference by the original cost and then converting it to a percentage:\n\\[ \\text{Percent Increase} = \\left( \\frac{\\$17}{\\$85} \\right) \\times 100 \\]\n\nI performed the division:\n\\[ \\frac{17}{85} = 0.2 \\]\n\nThen, I converted this to a percentage:\n\\[ 0.2 \\times 100 = 20\\% \\]\n\nTo verify the result, I checked if the original cost plus the percent increase of the original cost equals the new cost:\n\\[ \\$85 + (0.2 \\times \\$85) = \\$85 + \\$17 = \\$102 \\]\n\nThis matches the given this year's ticket cost, confirming the calculation is correct.\n\nThe operation I would reuse is the formula for percent increase:\n\\[ \\text{Percent Increase} = \\left( \\frac{\\text{New Value} - \\text{Original Value}}{\\text{Original Value}} \\right) \\times 100 \\]\n\nThis formula can be applied to any similar problem where you need to find the percent increase between two values.\n\nFINAL: 20",
+        "target_sha256": "3638224ccd758ffcd309ec9caec9838b23e5689aadf1fd81815a03dbdecbe3b2"
+      }
+    ],
+    "task_id": "gsm8k-train-6617"
+  },
+  {
+    "gold": "6400",
+    "question": "Jackson wants to impress his girlfriend by filling her hot tub with champagne. The hot tub holds 40 gallons of liquid. Each bottle of champagne holds 1 quart. (There are 4 quarts per gallon). If each bottle of champagne costs $50, but Jackson gets a 20% volume discount, how much does he spend on champagne?",
+    "question_sha256": "ef29d8fc1a1c70160f0e14284dfc4fa12273e8278c6e70728db30a5fa9f7823c",
+    "responses": [
+      {
+        "key": "gsm8k-train-469:rich",
+        "raw_call_sha256": "e4cb2b38664d0a6fa78952d5a21cb07222e84810ee9db843f0a5265cdf0a52d1",
+        "student_prefix": [
+          {
+            "content": "Jackson wants to impress his girlfriend by filling her hot tub with champagne. The hot tub holds 40 gallons of liquid. Each bottle of champagne holds 1 quart. (There are 4 quarts per gallon). If each bottle of champagne costs $50, but Jackson gets a 20% volume discount, how much does he spend on champagne?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "b63526774d71a683843ec4b134f6e9e9ec670aff51aed27282a54d9ce1865ae5",
+        "target": "First, I identify the quantities:\n- The hot tub holds 40 gallons.\n- Each bottle of champagne holds 1 quart.\n- There are 4 quarts per gallon.\n- Each bottle costs $50.\n- Jackson gets a 20% volume discount.\n\nTo find out how many bottles are needed, I convert gallons to quarts:\n40 gallons * 4 quarts/gallon = 160 quarts.\n\nSince each bottle is 1 quart, Jackson needs 160 bottles.\n\nNext, I calculate the cost before the discount:\n160 bottles * $50/bottle = $8000.\n\nWith a 20% discount, the cost is reduced by 20%:\n20% of $8000 = 0.20 * $8000 = $1600.\n\nSubtract the discount from the original cost:\n$8000 - $1600 = $6400.\n\nFINAL: 6400",
+        "target_sha256": "3b680f67b04010df105f202c4ff57131450e5c9021c5d8aa898e1671c9ece4cf"
+      },
+      {
+        "key": "gsm8k-train-469:new_record",
+        "raw_call_sha256": "7afbc39d0f1b0ede77b5fa2f5cffadb00a3243954bd1e630d1666d742807f2d0",
+        "student_prefix": [
+          {
+            "content": "Jackson wants to impress his girlfriend by filling her hot tub with champagne. The hot tub holds 40 gallons of liquid. Each bottle of champagne holds 1 quart. (There are 4 quarts per gallon). If each bottle of champagne costs $50, but Jackson gets a 20% volume discount, how much does he spend on champagne?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the quantities:\n- The hot tub holds 40 gallons.\n- Each bottle of champagne holds 1 quart.\n- There are 4 quarts per gallon.\n- Each bottle costs $50.\n- Jackson gets a 20% volume discount.\n\nTo find out how many bottles are needed, I convert gallons to quarts:\n40 gallons * 4 quarts/gallon = 160 quarts.\n\nSince each bottle is 1 quart, Jackson needs 160 bottles.\n\nNext, I calculate the cost before the discount:\n160 bottles * $50/bottle = $8000.\n\nWith a 20% discount, the cost is reduced by 20%:\n20% of $8000 = 0.20 * $8000 = $1600.\n\nSubtract the discount from the original cost:\n$8000 - $1600 = $6400.\n\nFINAL: 6400",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "7cb594212027aa52d439e97dac651a42ea679e809cca221f486ae495261d8bb8",
+        "target": "Given the problem, I first identified the key quantities: the hot tub's capacity (40 gallons), the volume of each bottle of champagne (1 quart), the conversion factor between gallons and quarts (4 quarts per gallon), the cost per bottle ($50), and the discount rate (20%).\n\nI started by converting the hot tub's capacity from gallons to quarts:\n\\[ 40 \\text{ gallons} \\times 4 \\text{ quarts/gallon} = 160 \\text{ quarts} \\]\n\nNext, I calculated the number of bottles needed:\n\\[ 160 \\text{ quarts} \\div 1 \\text{ quart/bottle} = 160 \\text{ bottles} \\]\n\nThen, I computed the total cost before the discount:\n\\[ 160 \\text{ bottles} \\times \\$50/\\text{bottle} = \\$8000 \\]\n\nWith a 20% discount, I determined the discount amount:\n\\[ 20\\% \\times \\$8000 = 0.20 \\times \\$8000 = \\$1600 \\]\n\nSubtracting the discount from the total cost gave the final amount Jackson spends:\n\\[ \\$8000 - \\$1600 = \\$6400 \\]\n\nTo verify the result, I checked the calculation steps and ensured all conversions and operations were correctly applied. The final amount matches the problem's requirements.\n\nFINAL: 6400",
+        "target_sha256": "e8e712ab5bcfe347fb537a00c142e8e8b21ea03e0b2bd1e0c6c28a924526eac4"
+      }
+    ],
+    "task_id": "gsm8k-train-469"
+  },
+  {
+    "gold": "45",
+    "question": "Carla's brush is 12 inches long. If Carmen's brush is 50% longer than Carla's brush, how long is Carmen's brush in centimeters? (There are 2.5 centimeters per inch.)",
+    "question_sha256": "7933070ca81f4c58ebc5f5e2620ad442cfd58800f7e4c16b2245c37ffbbdc303",
+    "responses": [
+      {
+        "key": "gsm8k-train-3265:rich",
+        "raw_call_sha256": "e020c39a184f9e67eaeb5e57b4b908b73630ad53f133c6b5a5787994594646d4",
+        "student_prefix": [
+          {
+            "content": "Carla's brush is 12 inches long. If Carmen's brush is 50% longer than Carla's brush, how long is Carmen's brush in centimeters? (There are 2.5 centimeters per inch.)",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "3f0ad309a3ce948e8aaa451276734f166b8aa42e6040ad8ea42919a869dacb9a",
+        "target": "First, I identify the given quantities:\n- Carla's brush length: 12 inches\n- Carmen's brush is 50% longer than Carla's brush\n- Conversion factor: 2.5 centimeters per inch\n\nNext, I calculate the length of Carmen's brush in inches:\n- 50% of 12 inches is 0.5 * 12 = 6 inches\n- Therefore, Carmen's brush is 12 inches + 6 inches = 18 inches long\n\nNow, I convert the length of Carmen's brush from inches to centimeters:\n- 18 inches * 2.5 centimeters/inch = 45 centimeters\n\nFinally, I check the result:\n- The problem asks for the length in centimeters, and the calculation is correct.\n\nFINAL: 45",
+        "target_sha256": "dceac9cff1fe3b251fc247ea9f077c117594d2a4f41fe525bc8f93f382a1ad70"
+      },
+      {
+        "key": "gsm8k-train-3265:new_record",
+        "raw_call_sha256": "3df437bb120a650a1bc4a50bbb3e0ffe3ef1720c651acc8f9fa35e10a76eea6f",
+        "student_prefix": [
+          {
+            "content": "Carla's brush is 12 inches long. If Carmen's brush is 50% longer than Carla's brush, how long is Carmen's brush in centimeters? (There are 2.5 centimeters per inch.)",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Carla's brush length: 12 inches\n- Carmen's brush is 50% longer than Carla's brush\n- Conversion factor: 2.5 centimeters per inch\n\nNext, I calculate the length of Carmen's brush in inches:\n- 50% of 12 inches is 0.5 * 12 = 6 inches\n- Therefore, Carmen's brush is 12 inches + 6 inches = 18 inches long\n\nNow, I convert the length of Carmen's brush from inches to centimeters:\n- 18 inches * 2.5 centimeters/inch = 45 centimeters\n\nFinally, I check the result:\n- The problem asks for the length in centimeters, and the calculation is correct.\n\nFINAL: 45",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "21ede2626c2be13d56d58ec63a615f430741b9ff63403e2459fc3c4c7e4b8221",
+        "target": "Given the problem, I identified the key quantities and the conversion factor:\n- Carla's brush length: 12 inches\n- Conversion factor: 2.5 centimeters per inch\n- Carmen's brush is 50% longer than Carla's brush\n\nFirst, I calculated the length of Carmen's brush in inches. Since Carmen's brush is 50% longer than Carla's, I determined 50% of 12 inches:\n\\[ 0.5 \\times 12 = 6 \\text{ inches} \\]\nAdding this to Carla's brush length:\n\\[ 12 + 6 = 18 \\text{ inches} \\]\n\nNext, I converted the length of Carmen's brush from inches to centimeters using the given conversion factor:\n\\[ 18 \\text{ inches} \\times 2.5 \\text{ cm/inch} = 45 \\text{ cm} \\]\n\nTo verify the result, I checked the calculation step-by-step:\n1. 50% of 12 inches is indeed 6 inches.\n2. Adding 6 inches to 12 inches gives 18 inches.\n3. Multiplying 18 inches by 2.5 cm/inch results in 45 cm.\n\nThe operations used are straightforward and reusable for similar problems involving percentage increases and unit conversions. I would reuse the method of calculating a percentage increase and then converting the result to another unit.\n\nFINAL: 45",
+        "target_sha256": "d8662166756bb1fa0c821a0f17025a890da77e71bd8ab3f8e415d9e5749a68c8"
+      }
+    ],
+    "task_id": "gsm8k-train-3265"
+  },
+  {
+    "gold": "240",
+    "question": "Cameron is printing her thesis in the school library and has 400 A4 pieces of paper. If 40% of the papers did not print out up to her desired quality and she separated them as invalid, calculate the total number of valid documents.",
+    "question_sha256": "d7906eaeeb8a499786c2a237f49c922bc9aff02323d0c4160e11e8be43ace11c",
+    "responses": [
+      {
+        "key": "gsm8k-train-4586:rich",
+        "raw_call_sha256": "02c371094a6315bc650d4f6cc5d06070101217a78207ec822fa7353ac4f4c75e",
+        "student_prefix": [
+          {
+            "content": "Cameron is printing her thesis in the school library and has 400 A4 pieces of paper. If 40% of the papers did not print out up to her desired quality and she separated them as invalid, calculate the total number of valid documents.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "0896eb64a4ed6159b5090ebf9f1ff10b97524059c7a255f6d0716d0d37a8b20e",
+        "target": "Given that Cameron has 400 A4 pieces of paper and 40% of them did not print out to her desired quality, we need to find the number of valid documents.\n\nFirst, calculate the number of invalid documents:\n40% of 400 = 0.40 * 400 = 160 invalid documents.\n\nNext, subtract the invalid documents from the total to find the valid ones:\n400 - 160 = 240 valid documents.\n\nFINAL: 240",
+        "target_sha256": "90560a807e54fab3d5b6385f75d74645d09445be424f1ba28c14e08a6b7f1588"
+      },
+      {
+        "key": "gsm8k-train-4586:new_record",
+        "raw_call_sha256": "031e61b66a36fb8fac9ef1f8e5e8ef42f738f8c81caaf87ea54ec0e6cb6d1122",
+        "student_prefix": [
+          {
+            "content": "Cameron is printing her thesis in the school library and has 400 A4 pieces of paper. If 40% of the papers did not print out up to her desired quality and she separated them as invalid, calculate the total number of valid documents.",
+            "role": "user"
+          },
+          {
+            "content": "Given that Cameron has 400 A4 pieces of paper and 40% of them did not print out to her desired quality, we need to find the number of valid documents.\n\nFirst, calculate the number of invalid documents:\n40% of 400 = 0.40 * 400 = 160 invalid documents.\n\nNext, subtract the invalid documents from the total to find the valid ones:\n400 - 160 = 240 valid documents.\n\nFINAL: 240",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "7cee6fc24ba82884bfad1cd5e2570c7fd5a8d2db8ea9e4f72f911136ee90eb18",
+        "target": "Given that Cameron has 400 A4 pieces of paper and 40% of them did not print out to her desired quality, I needed to find the total number of valid documents. The first step was to calculate the number of invalid documents. I knew that 40% of 400 papers were invalid, so I performed the calculation:\n\n\\[ 0.40 \\times 400 = 160 \\]\n\nThis meant that 160 papers were invalid. To find the number of valid documents, I subtracted the number of invalid documents from the total number of papers:\n\n\\[ 400 - 160 = 240 \\]\n\nI expected this result to mean that 240 of the 400 papers were valid, which aligns with the problem statement. To check this, I could recompute the percentage of valid documents:\n\n\\[ \\frac{240}{400} \\times 100 = 60\\% \\]\n\nSince 60% of the papers are valid, and 40% are invalid, this confirms my calculation. The operation I would reuse is the subtraction of the invalid documents from the total number of documents, as it directly gives the number of valid documents.\n\nFINAL: 240",
+        "target_sha256": "546a91203fc6232687208e845fd5ac4e42bd23c5a2e4bce117faa7aa3cbeb9b7"
+      }
+    ],
+    "task_id": "gsm8k-train-4586"
+  },
+  {
+    "gold": "60",
+    "question": "Ben bought a lawnmower for his garden. He paid $100 for it. After six months, the value of the mower dropped by about 25%. Over the next year, the value of the mower dropped another 20% in value. How much is Ben's lawnmower worth after this time?",
+    "question_sha256": "04b757fca0dd9bfbbd2db1a41fca6ca818f38d768c73ad3c46901843981e21b1",
+    "responses": [
+      {
+        "key": "gsm8k-train-2178:rich",
+        "raw_call_sha256": "fe9d606dfc047df76f242dd31c9cf797c59991cc79ba3616c41f30874c208512",
+        "student_prefix": [
+          {
+            "content": "Ben bought a lawnmower for his garden. He paid $100 for it. After six months, the value of the mower dropped by about 25%. Over the next year, the value of the mower dropped another 20% in value. How much is Ben's lawnmower worth after this time?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "8d342abd7e19501fbf6a28003233ef4b6900c694f8ddef5449e7c188940a9277",
+        "target": "Initially, Ben paid $100 for the lawnmower. After six months, the value dropped by 25%. To find the new value, I calculate 25% of $100, which is $25. Subtracting this from the original price, the lawnmower is now worth $100 - $25 = $75. \n\nOver the next year, the value dropped another 20%. To find the new value, I calculate 20% of $75, which is $15. Subtracting this from the current price, the lawnmower is now worth $75 - $15 = $60.\n\nFINAL: 60",
+        "target_sha256": "b648e9b6047b98e014d558aa504342b85df4cdea79006bea28198869710d860c"
+      },
+      {
+        "key": "gsm8k-train-2178:new_record",
+        "raw_call_sha256": "f422bb8dc5f3b856a46be4be0b1b642fe463312ba70eb408f0321fd07c024f0b",
+        "student_prefix": [
+          {
+            "content": "Ben bought a lawnmower for his garden. He paid $100 for it. After six months, the value of the mower dropped by about 25%. Over the next year, the value of the mower dropped another 20% in value. How much is Ben's lawnmower worth after this time?",
+            "role": "user"
+          },
+          {
+            "content": "Initially, Ben paid $100 for the lawnmower. After six months, the value dropped by 25%. To find the new value, I calculate 25% of $100, which is $25. Subtracting this from the original price, the lawnmower is now worth $100 - $25 = $75. \n\nOver the next year, the value dropped another 20%. To find the new value, I calculate 20% of $75, which is $15. Subtracting this from the current price, the lawnmower is now worth $75 - $15 = $60.\n\nFINAL: 60",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "45566f6fddd5390945ab5a06b47518b4def91aaf055b34cc94c24dbb74b720e0",
+        "target": "Given that Ben bought a lawnmower for $100, I first noted the initial cost and the subsequent depreciation rates. The problem states that after six months, the value dropped by 25%, and over the next year, it dropped another 20%. To find the final value, I decided to calculate the value step by step.\n\nFirst, I calculated the value after the 25% drop. I knew that a 25% drop means the lawnmower retains 75% of its original value. So, I computed 75% of $100:\n\\[ 100 \\times 0.75 = 75 \\]\nThis means the lawnmower is now worth $75 after six months.\n\nNext, I needed to find the value after another 20% drop over the next year. A 20% drop means the lawnmower retains 80% of its current value. So, I computed 80% of $75:\n\\[ 75 \\times 0.80 = 60 \\]\nThis means the lawnmower is now worth $60 after the additional year.\n\nTo verify, I checked the operations by ensuring that each step logically follows from the previous one and that the final value is consistent with the given depreciation rates. The initial value was $100, it dropped to $75 after 25%, and then to $60 after another 20%.\n\nThe operations I used are straightforward percentage calculations, which are reusable for similar depreciation problems. I would apply the same method to any similar scenario where an initial value undergoes multiple percentage drops.\n\nFINAL: 60",
+        "target_sha256": "639433846e7278ccf9ab64fef3ef033b244b0f8a03039859e666f4fe5c74cc57"
+      }
+    ],
+    "task_id": "gsm8k-train-2178"
+  },
+  {
+    "gold": "11000",
+    "question": "James decides to replace his car.  He sold his $20,000 car for 80% of its value and then was able to haggle to buy a $30,000 sticker price car for 90% of its value.  How much was he out of pocket?",
+    "question_sha256": "b176ac52d47cc5556d6389125d9fb3f560ea516c269a80f39bb092ff95dccfa7",
+    "responses": [
+      {
+        "key": "gsm8k-train-177:rich",
+        "raw_call_sha256": "e4334b4eb472432d8e5dcb184a5e9153e444829780f2d7530e86042dcb8b2077",
+        "student_prefix": [
+          {
+            "content": "James decides to replace his car.  He sold his $20,000 car for 80% of its value and then was able to haggle to buy a $30,000 sticker price car for 90% of its value.  How much was he out of pocket?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "5ff3e89b1e8ee65d10e90c99058f1c9bcbb743c9cfb116c21926ac833a7bac5f",
+        "target": "First, I calculate how much James sold his old car for. He sold it for 80% of its $20,000 value. So, 0.80 * $20,000 = $16,000. \n\nNext, I determine the price James paid for the new car. He bought it for 90% of its $30,000 sticker price. So, 0.90 * $30,000 = $27,000.\n\nTo find out how much James was out of pocket, I subtract the amount he got from selling his old car from the price he paid for the new car. So, $27,000 - $16,000 = $11,000.\n\nFINAL: $11,000",
+        "target_sha256": "c8ac0a7741deb3d8cdfb64a9f2920f7ec08bb82d5ddd93c4e66d0c475334515b"
+      }
+    ],
+    "task_id": "gsm8k-train-177"
+  },
+  {
+    "gold": "94",
+    "question": "The teacher told the class that if they averaged at least 75% on their final exam, they could have a pizza party. Everyone took the exam on Monday, except for William, who was allowed to take it on Tuesday. If there are 30 people in the class, and the average before he took the test was a 74%, what score does he have to get to make sure they get to have a pizza party?",
+    "question_sha256": "d2024c94ed084a067a9761e81c47012fd0c931784f49c844f173531d1a9d77b5",
+    "responses": [
+      {
+        "key": "gsm8k-train-1776:rich",
+        "raw_call_sha256": "756b699ef1cb5299f975e0249b56cc0b3f28a89323584ecbfa5321dd97474c4a",
+        "student_prefix": [
+          {
+            "content": "The teacher told the class that if they averaged at least 75% on their final exam, they could have a pizza party. Everyone took the exam on Monday, except for William, who was allowed to take it on Tuesday. If there are 30 people in the class, and the average before he took the test was a 74%, what score does he have to get to make sure they get to have a pizza party?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "5bdc6b1a4034d8848a6d0a793aff5a930508ff0c13c79ff36af7e09933647dfe",
+        "target": "Given:\n- Class size: 30 students\n- Average score before William took the test: 74%\n- Required average to have a pizza party: 75%\n\nLet's denote William's score as \\( x \\).\n\nThe total score of the 29 students before William took the test is \\( 29 \\times 74 \\).\n\nThe new average after William takes the test should be 75%, so the total score of all 30 students should be \\( 30 \\times 75 \\).\n\nSetting up the equation:\n\\[ 29 \\times 74 + x = 30 \\times 75 \\]\n\nCalculating the left side:\n\\[ 29 \\times 74 = 2146 \\]\n\nCalculating the right side:\n\\[ 30 \\times 75 = 2250 \\]\n\nSo the equation becomes:\n\\[ 2146 + x = 2250 \\]\n\nSolving for \\( x \\):\n\\[ x = 2250 - 2146 \\]\n\\[ x = 104 \\]\n\nWilliam needs to score 104% to ensure the class average is 75%.\n\nFINAL: 104",
+        "target_sha256": "d43b1631e13afc3d31a5d48b54407f0068d9838d5d4fdb2211086f960518618d"
+      }
+    ],
+    "task_id": "gsm8k-train-1776"
+  },
+  {
+    "gold": "48",
+    "question": "Kiaan is doing home delivery of newspapers in his neighborhood of 200 homes. After an hour of work, he has distributed newspapers to 2/5 of the homes. After another 2 hours of working, he realizes he has distributed newspapers to 60 percent of the remaining homes. How many homes does he still need to distribute the newspapers to?",
+    "question_sha256": "f88ee25d22883443b773fb7c4fc7b20a4c0ef6dd9228e80036e5f61c92277cdb",
+    "responses": [
+      {
+        "key": "gsm8k-train-5190:rich",
+        "raw_call_sha256": "f6cc4b784a059f95d9636108fff186c42bb4b9966fa0edab8c3bc6c83f19da78",
+        "student_prefix": [
+          {
+            "content": "Kiaan is doing home delivery of newspapers in his neighborhood of 200 homes. After an hour of work, he has distributed newspapers to 2/5 of the homes. After another 2 hours of working, he realizes he has distributed newspapers to 60 percent of the remaining homes. How many homes does he still need to distribute the newspapers to?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "844957e0ffafb23b75b9947b4f477417a6ff47ec36f51a25beb5a6e2c5078cb1",
+        "target": "Initially, Kiaan has to deliver to 200 homes. After an hour, he has distributed newspapers to \\( \\frac{2}{5} \\) of the homes. So, the number of homes he has already delivered to is \\( \\frac{2}{5} \\times 200 = 80 \\) homes. This leaves \\( 200 - 80 = 120 \\) homes remaining.\n\nAfter another 2 hours, he has distributed newspapers to 60 percent of the remaining 120 homes. So, the number of homes he has delivered to in these 2 hours is \\( 0.60 \\times 120 = 72 \\) homes. This leaves \\( 120 - 72 = 48 \\) homes still needing newspapers.\n\nFINAL: 48",
+        "target_sha256": "b499475b79fc937a2b916b94697761afcd00478de0c58caa9137ae6edcf6e268"
+      },
+      {
+        "key": "gsm8k-train-5190:new_record",
+        "raw_call_sha256": "c3558481ca89f6723ae0b67b902945510ace4d60200c65e3326c2effb65803c4",
+        "student_prefix": [
+          {
+            "content": "Kiaan is doing home delivery of newspapers in his neighborhood of 200 homes. After an hour of work, he has distributed newspapers to 2/5 of the homes. After another 2 hours of working, he realizes he has distributed newspapers to 60 percent of the remaining homes. How many homes does he still need to distribute the newspapers to?",
+            "role": "user"
+          },
+          {
+            "content": "Initially, Kiaan has to deliver to 200 homes. After an hour, he has distributed newspapers to \\( \\frac{2}{5} \\) of the homes. So, the number of homes he has already delivered to is \\( \\frac{2}{5} \\times 200 = 80 \\) homes. This leaves \\( 200 - 80 = 120 \\) homes remaining.\n\nAfter another 2 hours, he has distributed newspapers to 60 percent of the remaining 120 homes. So, the number of homes he has delivered to in these 2 hours is \\( 0.60 \\times 120 = 72 \\) homes. This leaves \\( 120 - 72 = 48 \\) homes still needing newspapers.\n\nFINAL: 48",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "7dfce2d7264ea245869837d24e30e27e179baf4bc23cdf2218e5f112bc48573e",
+        "target": "Given that Kiaan needs to deliver newspapers to 200 homes, I first calculated the number of homes he had delivered to after the first hour. Since he delivered to \\( \\frac{2}{5} \\) of the homes, I used the operation \\( \\frac{2}{5} \\times 200 = 80 \\) homes. This left \\( 200 - 80 = 120 \\) homes remaining. \n\nNext, I considered the second part of his delivery. After another 2 hours, he delivered to 60 percent of the remaining 120 homes. I used the operation \\( 0.60 \\times 120 = 72 \\) homes. This left \\( 120 - 72 = 48 \\) homes still needing newspapers. \n\nTo verify my result, I checked that the total number of homes delivered to (80 + 72) plus the remaining homes (48) equals the original 200 homes. This check is \\( 80 + 72 + 48 = 200 \\), which confirms my solution is correct.\n\nThe operation I would reuse is the calculation of the remaining homes after a certain percentage has been delivered. This can be applied to any similar problem where a percentage of a remaining quantity is known and needs to be subtracted.\n\nFINAL: 48",
+        "target_sha256": "8ddcf4ee7f2c45d049ed3f71963587979d1ced0abdc74cf02a71047ddfe8112f"
+      }
+    ],
+    "task_id": "gsm8k-train-5190"
+  }
+]

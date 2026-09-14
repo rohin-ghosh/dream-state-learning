@@ -1,0 +1,358 @@
+{
+  "gold": {
+    "gsm8k-train-1521": {
+      "independent_answer": "551",
+      "question_sha256": "d31583da58586967e25106563116a59cb9e3a2bc7201c50982edf8438be4329a",
+      "reason": "The cameras cost 2 \u00d7 $110 = $220 and the frames cost 3 \u00d7 $120 = $360, totaling $580. The 5% discount is $29, leaving $580 \u2212 $29 = $551. The gold matches.",
+      "status": "VALID"
+    },
+    "gsm8k-train-2955": {
+      "independent_answer": "90",
+      "question_sha256": "bbad49f9da7d808deb50128f85c4c9509368669c758e4f634c044df95a9c1238",
+      "reason": "60% of 30 is 18 students; 18 cards at $2 cost $36; $36/$40 \u00d7 100 = 90%. The gold is equal to the recomputed result.",
+      "status": "VALID"
+    },
+    "gsm8k-train-3247": {
+      "independent_answer": "10",
+      "question_sha256": "85875c1e778d9b650c1519d4031bfe69ea922944e2ed04c6e1ce33bbb205a8f2",
+      "reason": "The initial healing takes 4 weeks. Healing after the graft takes 50% longer than 4 weeks, or 4 \u00d7 1.5 = 6 weeks. Total recovery is 4 + 6 = 10 weeks. The gold matches.",
+      "status": "VALID"
+    },
+    "gsm8k-train-5267": {
+      "independent_answer": "6",
+      "question_sha256": "deee9120d4636429df2a13a2e14f05258c9af77c4453fc67919a68fc8bd0cbcd",
+      "reason": "The pretax cost is $3 + $2 = $5. Tax is 20% \u00d7 $5 = $1, so the total is $5 + $1 = $6. The gold matches.",
+      "status": "VALID"
+    },
+    "gsm8k-train-5694": {
+      "independent_answer": "9",
+      "question_sha256": "37647d51c50a976200e5f19bd29ad1320072c3ab4ac87650c7e2bf9a175d7cd4",
+      "reason": "The second movie is 2 \u00d7 1.5 = 3 hours. The first two total 5 hours, so the last is 5 \u2212 1 = 4 hours. The marathon lasts 2 + 3 + 4 = 9 hours. The gold matches.",
+      "status": "VALID"
+    },
+    "gsm8k-train-6716": {
+      "independent_answer": "50",
+      "question_sha256": "757cd3cb1d6701ed934f2b9278497145da9c10c49093f1e3b6c1ada6d2a2767a",
+      "reason": "The marker's capacity is 3 \u00d7 (4 \u00d7 4) = 48 square inches. The rectangles use 2 \u00d7 (6 \u00d7 2) = 24 square inches, leaving 24/48 \u00d7 100 = 50%. The gold matches.",
+      "status": "VALID"
+    },
+    "gsm8k-train-673": {
+      "independent_answer": "700",
+      "question_sha256": "7e64da5616e4f5a7b9b7ebc20032fe32cec34c9a8a64462cfb9986285038b715",
+      "reason": "The undiscounted price is 10,000 \u00d7 $0.10 = $1,000. After a 30% discount, he pays 70% \u00d7 $1,000 = $700. The gold matches.",
+      "status": "VALID"
+    },
+    "gsm8k-train-734": {
+      "independent_answer": "100",
+      "question_sha256": "1292a25e351ecf9e1ab26b681b41e0a29651ca1e70ea6bea0c0eb6bab25a4415",
+      "reason": "Average revenue per apple is 0.75 \u00d7 $0.50 + 0.25 \u00d7 $0.10 = $0.40. Thus $40/$0.40 = 100 apples, with 75 sweet and 25 sour. The gold matches.",
+      "status": "VALID"
+    }
+  },
+  "reviews": {
+    "gsm8k-train-1521:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I then calculated the total cost before the discount:",
+        "The key is to first calculate the total cost without the discount, then apply the discount to find the final amount."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's verification is supportable from its displayed computations and neutral prior solution; it does not rely on an external checker or unprovided feedback.",
+      "raw_call_sha256": "0131dcb874c874fa64659e4de0e572d4710b8e06e8a28d4b4154c7553929aeac",
+      "reason": "The response personally performs 2 \u00d7 $110, 3 \u00d7 $120, the $580 sum, and the 5% discount calculation yielding $551. It gives concrete numerical checks and clearly explains when to reuse the multiple-item subtotal and discount sequence.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "1c992f98fcb514729cb427bf77126df3f6ea1c2075727c8ede40ba9c502d5c3d",
+      "target_sha256": "ebb2a362dbcec1481a39db6a7dd463f2b755409f0473b5d12416ebba47136974"
+    },
+    "gsm8k-train-1521:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Next, I calculate the total cost before the discount:",
+        "Total cost after discount: $580 - $29 = $551"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All quantities and calculations are traceable to the question, and the target neither cites external feedback nor claims a hidden checking event.",
+      "raw_call_sha256": "46219ebd4d0479710394dba7113bd9fdcb559003aca6cd011eec28b719803510",
+      "reason": "The response personally computes the category costs, $580 subtotal, $29 discount, and $551 payment. The intermediate totals are concrete expectations, and its sum-then-discount sequence is a reusable operation.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "302803036191fea56db580aaebf089ea18d918b5d1ef21b9cbbdda1475117f60",
+      "target_sha256": "adb0d0382eb3e8a72e87b2d536b10ae727a2006364618b37bf9d657376e4de63"
+    },
+    "gsm8k-train-2955:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To solve this, I first calculated the number of students Mo will give Valentine's cards to:",
+        "To verify this, I checked the calculation step-by-step:"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The prior solution and question support the target, while the target's stated verification is a transparent self-check using displayed arithmetic, not an unsupported external event.",
+      "raw_call_sha256": "383dfcea169e9108b59822eb66336c0d763835363393bab37969d7fa78243c03",
+      "reason": "The target personally describes calculating 18 recipients, a $36 cost, and 90% of the $40 budget. Its numbered verification repeats concrete, correct task-specific expectations, and its percentage procedure is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "bc93b106a49dc117c1fed870c46bc3b56180e0717d7b4e746f3d29ab18f8e768",
+      "target_sha256": "a38bf0f47665499d0f4e2444b42fa6d0e1767d8155ee0e782bbded77dfcaa232"
+    },
+    "gsm8k-train-2955:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find the number of students Mo will give a Valentine to, I calculate 60% of 30:",
+        "Now, I find the percentage of his money Mo will spend:"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target uses only the supplied quantities and explicitly verifiable arithmetic; it makes no claim about an external checker or hidden feedback.",
+      "raw_call_sha256": "795cd0eeb282d98ae0d0f17c3c079681e8f4aef0f78698da0dae1207759777a8",
+      "reason": "The response gives a substantive first-person calculation: 60% of 30 is 18, 18 \u00d7 $2 is $36, and $36/$40 \u00d7 100 is 90%. These numerical stages are concrete checks and the method is reusable for percentage-of-budget problems.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "864e20c441c59a6fc9715ea499a3fcb431267e4e7063b8efc054d1603dc49462",
+      "target_sha256": "d6ca1b9c03c421b77c5b6bb019b560f08069eed6b3a6c6a8554d3534dca97ae4"
+    },
+    "gsm8k-train-3247:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find the time to heal from the skin graft, I calculated 50% of 4 weeks:",
+        "To verify the result, I checked the calculation by ensuring that the 6 weeks for the skin graft healing was indeed 50% longer than the initial 4 weeks"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The stated verification is a self-check against the supplied 50%-longer relationship and the displayed arithmetic, not an unsupported external event.",
+      "raw_call_sha256": "d2b81b75344eb7932520a42ee74c57d981603508c8074d76236a632fe89d0a7b",
+      "reason": "The target gives a first-person calculation of the 2-week increment, 6-week second period, and 10-week total. The explicit check that 6 is 50% longer than 4 is concrete, and the percentage-increase operation is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "acedee39d7e118ca784cea7d4a23b02fa156b62509c11a91123b0cf91af7f1c4",
+      "target_sha256": "f0d4add51fd6cbf4f98b408e5e0db60f01c9a8cbac7ed38ae569179f23404a53"
+    },
+    "gsm8k-train-3247:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find the time to heal from the skin graft, I calculate 50% of 4 weeks:",
+        "4 weeks + 6 weeks = 10 weeks"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target relies only on the two healing periods stated in the question and its correct arithmetic; it claims no outside check or hidden event.",
+      "raw_call_sha256": "5e7ae0eaa931533ea56f26ad382558edcb9059bd17a026598004ebc7a62db501",
+      "reason": "The response personally computes the 50% increment as 2 weeks, forms the 6-week post-graft period, and adds both stages for 10 weeks. These values are concrete expectations and demonstrate the reusable meaning of '50% longer.'",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "9b6af9569c48a11bb403ed436268a2bc666e3a8ac1e8d74ed0887c1d91b203dc",
+      "target_sha256": "7637c72270e0cb0460e0cee3da28c8cbfab65fb4b725be9ee1bc15af42b0566c"
+    },
+    "gsm8k-train-5267:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find this, I first calculated the total cost before tax:",
+        "The key is to first find the total cost before tax and then apply the tax rate to that amount."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The described check is an internal arithmetic check supported by the target's displayed work and neutral history, not a claimed external confirmation.",
+      "raw_call_sha256": "88199cdf5e6fd489cfa47e7ddd84b321ba68015ec5023dc686e40cc9baf1ba6b",
+      "reason": "The response personally calculates the $5 subtotal, $1 tax, and $6 total. Those values give concrete expectations, and the explanation correctly generalizes the subtotal-then-tax operation to similar problems.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "ea169e971729a15b492fb9591eab7fa38d283a26dcd26854bb4c87966ef570d2",
+      "target_sha256": "58d2eb0aabd6016a12d2b0d07e69823472765f46459302a5fef5271097cd795f"
+    },
+    "gsm8k-train-5267:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Next, I calculate the total cost before tax:",
+        "20% of $5 = 0.20 * $5 = $1"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every claim is supported by the listed prices, tax rate, and shown arithmetic; no hidden guidance or external validation is asserted.",
+      "raw_call_sha256": "451ba2c33cb77ba647fe1d82560d6d1eb1726ebed341d81d6524e7c6073bc570",
+      "reason": "The target gives a substantive first-person account of adding the $3 and $2 prices, calculating 20% of $5 as $1, and adding tax for $6. The intermediates are concrete expectations, and applying tax to the pretax subtotal is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "7b73c6cf7b424f8e25270efb7ce9ce802b9ebab896dc668a70140b2810da3515",
+      "target_sha256": "d4fa879a9d65d20a8d5dba0c722be6df7dc76a5ae18bebf1e27a7bd03cbb0fec"
+    },
+    "gsm8k-train-5694:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find this, I used the operation: 2 * 1.5 = 3 hours.",
+        "To check the result, I verified each step:"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's stated verification refers to its own visible arithmetic and the supplied timing relationships, with no unsupported external validation.",
+      "raw_call_sha256": "abbf4f28163ca6e4f4807dd22455adca7c7689d07cf0e54c97e8646755b3c661",
+      "reason": "The response personally applies the 1.5 multiplier, addition, and subtraction to obtain 3, 5, 4, and finally 9 hours. These are concrete expectations, and the same dependency-based operations are useful in similar duration problems.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "42e78a9b2c25c6e335b39b83332d3506925f5a81c5710b18daca9fdcfde84eff",
+      "target_sha256": "b8638a36d4156232ca7fb9b40285bfda591ca083e521d7743f9287e45e48963f"
+    },
+    "gsm8k-train-5694:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "The second movie is 50% longer than the first, so it's 2 * 1.5 = 3 hours.",
+        "Adding all three movies together, the total marathon time is 2 + 3 + 4 = 9 hours."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The movie lengths are derived transparently from the question with valid arithmetic, and the target makes no external-check or hidden-feedback claim.",
+      "raw_call_sha256": "cdc5302e9691820288debb4fabd5607a25cab0c813b30ea87f369fbcce1c55a0",
+      "reason": "The arithmetic is correct and checkable: the movies last 2, 3, and 4 hours, totaling 9. The operations also demonstrate how to handle 'percent longer' and a later dependency. But the target is entirely impersonal and contains no substantive own operational account.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "092e16ca6758c2a5a56da8cc9dc88f093696df4cd3f4acb73ab2fd72a95a1a15",
+      "target_sha256": "a42f5ec1dd4d7285b1e1fde1118632aef1ff214c2f7e14f775930ddfd02a9cec"
+    },
+    "gsm8k-train-6716:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find the percentage of ink used, I calculated the ratio of the area colored to the total area the marker can paint",
+        "The operation I would reuse is the calculation of the percentage of ink used based on the ratio of the area colored to the total area the marker can paint."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's calculations and self-check are supported by the question and neutral prior solution; it does not invoke an external checker or unsupplied feedback.",
+      "raw_call_sha256": "27f9c71587d5a405915368f48fea7bb8e8dead61fc58c6f2638d9374307fab2d",
+      "reason": "The response personally applies area calculations and the used-area/capacity ratio. It correctly obtains 48 square inches of capacity, 24 used, and 50% used and left, and explicitly identifies when the ratio method can be reused.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "839a654ad4289ae1640eb08245340643a48754e554bea8bdc5c139a25fd26f21",
+      "target_sha256": "6da0585d0d814a0669e354e3096d8876e9c5132e976922888bbbcf8640b17c2e"
+    },
+    "gsm8k-train-6716:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Total area the marker can paint = 3 * 16 square inches = 48 square inches.",
+        "Therefore, 50% of the ink is used, so 50% is left."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All factual claims come from the question or from explicit area and percentage arithmetic; no external event or hidden guidance is claimed.",
+      "raw_call_sha256": "3aa81d6b8b3848dca50aeb43630b6e52967040f92f0f3037b56e62645e3bdcc9",
+      "reason": "The area work is correct and checkable: capacity is 48 square inches, 24 are used, and 50% remains. However, the full target is an impersonal list and recipe; it never gives a substantive first-person account of choosing or applying an operation.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "93b4bd0141bbbb3ddbc48195241bee0302123365be69d5ae74041675bb409e54",
+      "target_sha256": "abbff18c79f3ba2a5a2dd8d5c93b289859a8f1613555aeded61222f7177c8d63"
+    },
+    "gsm8k-train-673:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the total cost without the discount:",
+        "The operations I would reuse are the same arithmetic operations: multiplication to find the total cost, multiplication to find the discount, and subtraction to find the final amount."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's check is an internal review of the explicitly shown discount arithmetic and does not assert an external checker or unsupplied feedback.",
+      "raw_call_sha256": "f5de794cab3781aaef6c7b8457e0b67406a99a1fcce77a98d7fab087779bb07f",
+      "reason": "The response personally calculates $1,000, $300, and $700 and ties each value to its role. It also specifically identifies the multiplication-and-subtraction procedure reusable for discounted bulk purchases.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "872d4d707140635b03d44f7491bf569d6b90a7d9145ddf18e0361dabe8f370aa",
+      "target_sha256": "05544c6969aeefffd3f000e1f539d71547c43e7dfc08a7421285785093a6eb23"
+    },
+    "gsm8k-train-673:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, calculate the total cost without the discount:",
+        "Johnny pays $700."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The price, quantity, discount, and resulting arithmetic all come from the question; there is no claim of external feedback or checker access.",
+      "raw_call_sha256": "b68b057b9e17f4a74714bdff48b65dededaf8ce78294a6663543edf8053c643d",
+      "reason": "The target correctly computes $1,000 before discount, a $300 discount, and $700 paid, providing concrete expectations and a reusable discount procedure. It fails first_person because it is an imperative recipe and never substantively recounts its own application of the operations.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "f4c461a481864336674ff1a5b97dd70f907e4c20d4fa1f72b7ecbebf069385ee",
+      "target_sha256": "a8a44373e9a2965c28b853fbde2d047000147fa96b85bccea71756ce17560b88"
+    },
+    "gsm8k-train-734:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To solve this, I first expressed the number of sweet and sour apples in terms of \\( x \\):",
+        "To check the result, I verified that the earnings from 100 apples (75 sweet and 25 sour) match the given total:"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's verification is fully displayed as 75 \u00d7 $0.50 plus 25 \u00d7 $0.10, so it is a supported self-check rather than an unsupported external event.",
+      "raw_call_sha256": "7e680ca4bcee870a887d605f2a6ef94e5b5dfed7122d64d638025b262c7695eb",
+      "reason": "The response personally models the 75%/25% split, forms 0.375x + 0.025x = 0.4x, and solves for 100. Its independent revenue check gives $37.50 + $2.50 = $40, a concrete confirmation of the reusable mixture equation.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "c2f02e2ceda269ace1fce159cb13613ecadec7221aad999e1be4b819cb52c4f3",
+      "target_sha256": "fb6c28cbad027b80da2ec1fe98f52775d5b2e9d35ebb791c6ed3c1796ea50f84"
+    },
+    "gsm8k-train-734:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Let's denote the total number of apples as \\( x \\).",
+        "We know the total earnings are $40:"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target derives its equation solely from the supplied proportions, prices, and earnings; it claims no external observation or checker result.",
+      "raw_call_sha256": "5ce27f276e10d67dfc857fd336197f8ecb6d87dcdf29b148cdd559f814c50d57",
+      "reason": "The plural first-person presentation substantively chooses x, represents the two apple counts, combines their revenue, and applies the known $40 total. The equation 0.4x = 40 and solution x = 100 are correct, concrete, and reusable for weighted-price mixtures.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "5870f3eda3de77ba90dbf2b74ee21451d25ef06c76a7264e62f21c1acabf27b5",
+      "target_sha256": "bf053d872017726c6a83e780183ed96acd819fcead06caada1515458472d8de5"
+    }
+  }
+}
