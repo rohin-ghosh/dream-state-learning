@@ -1,4 +1,17 @@
-## Current superseding snapshot — 2026-09-14 10:58 UTC
+## Current superseding snapshot — 2026-09-14 11:29 UTC
+
+SEQ233/234 finish note diagnostics: exact facts do not make the posed note
+contract pass; adapterOFF also lacks a successful-control note. No note fit,
+no adapter-specific cause. Shift from note style to consequential material choice.
+SEQ235 child selects two actual source EVENTs[0,2] after actual wrong-goal
+tasks[1,2]. Both sourced, first describes failed option; no semantic quality filter.
+Conditional matched100update CHILD_CORRECTIVE vs UNIFORM_REPLAY released,
+native integration underway, no fit launched at this cut. Same A1cue adapter;
+archived W0baseline and existing taskfamily, not thirdcycle or held confirmation.
+Current HANDOFF records exact source/root/ownership/storage relocation. Mission
+incomplete; latest complete manuscript reporting through SEQ230, notes linked.
+
+## Historical superseded snapshot — 2026-09-14 10:58 UTC
 
 SEQ230 completes a second same-adapter parent-free adult cycle: prospective W0
 reader cue routing2/4→4/4, cue-loss-off2/4→2/4; both acquire4/4 new W0/W8

@@ -21588,3 +21588,13 @@ Integrity: adapter states before→after 9d3c97ae→07ecf4c5 (cue) and a160b83a�
 Integrity: `loaded_adapter_state_sha256` 07ecf4c5 (cue) and b0693f1a (off) identical to the primary AFTER readouts and to train `adapter_state_after`, i.e. same untouched saved adult adapters as SEQ-227; `adapter_dir` points at each arm's `train/adapter`. Source prefix 4f8e2110 not a RESULT.json field.
 
 Scope (builder's own limits): SEQ-226 optimizer-seed checks on one S1 and two banks, not independent children/worlds; SEQ-227/228 same-child parent-free offered-experience results, one seed, one task family, four facts, not an H2 slope or across-lineage estimate; W0 reader choice is a post-result DEV repair. Node-1 (a40) not involved.
+
+[Builder] 2026-09-14T11:30Z pre-fit interpretation recorded in corrective design:
+selective replay leaves two new addresses untrained while uniform exposes all4.
+Unknown MISS already fails0/4; partial-memory use is not a qualified envelope.
+Existing raw read/recall traces will distinguish selected/unselected addresses
+and initially wrong/right tasks without new calls or denominator changes.
+If selective utility is worse, do not attribute it solely to poor selection:
+reader failure on unwritten facts can contribute. No choice replacement,
+extra gate, new endpoint, dose change or claim promotion. Fit integration/testing
+continues; none launched at this cut.

@@ -84,3 +84,17 @@ physical+CVD vacancy checks and six-hour lease margin. Source-pinned new roots,
 no overwrite. Log actual call/fit budgets and outcomes before advancing. Model,
 actor, old-memory, cue, A2 collection and BEFORE receipts must agree. All prior
 results and raw note failures remain preserved. Independent review is nonblocking.
+
+## Pre-fit interpretation qualification — 11:30 UTC
+
+Actual child choices are source indexes0 and2; the first describes the failed
+option rather than a goal-reaching option. Preserve it: negative-option evidence
+may or may not help subsequent action. No choice is replaced or goal-filtered.
+The short selective sleep leaves two new addresses without direct rehearsal,
+whereas uniform exposes all four. Unknown-address MISS is already0/4, so poor
+selective utility could involve unsupported reader replies as well as selection
+quality. This deliberately probes that partial-memory interface, not a previously
+qualified operating envelope. Inspect existing read traces and direct recalls by
+selected/unselected address and initially wrong/right task; no new forwards,
+extra gates or changed primary denominator. Do not attribute an aggregate loss
+solely to bad selection or invent an explanation from final accuracy alone.

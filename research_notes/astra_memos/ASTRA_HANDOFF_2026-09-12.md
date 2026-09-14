@@ -1,6 +1,47 @@
 # Astra restart handoff — September14,2026,02:49UTC
 
-## CURRENT OVERRIDE — September14,2026,10:58UTC
+## CURRENT OVERRIDE — September14,2026,11:29UTC
+
+Mission INCOMPLETE. Original adult cycles and every note/selector generation are
+terminal. SEQ230 remains: second adult cue2/4→4/4 W0 vs off2/4→2/4,
+both new4/4 W0/W8 and earlier W0 8/8 retained. No third cycle, no broad H2.
+
+SEQ233 parent revision: four exact EVENTs+NONE, no W labels; source-faithful but
+whole-note contract fails. SEQ234 OFF control: original prompt gives correct
+labelled records plus uncited prose; revision gives NONE. No successful-contract
+control, no adapter-specific cause, no note admitted/trained. OFF outputs are
+excluded from training and are not own-child data. Note-style branch closed.
+Memos: dated sleep_parent_feedback_revision_result and sleep_adapter_ablation_result.
+
+NEXT: child-selected corrective replay, not cosmetic note teaching. Prospective
+design `research_notes/analysis/2026-09-14_child_corrective_replay_design.md`.
+SEQ235 selector completed on node2GPU3, guardian364109, source
+`d13e017c686bca834f4fab060f5e9213f62edc9e`, root
+`/tmp/astra_adult_cycle2_20260914_attempt1/CUE_REPLAY/select_corrective`.
+Two public wrong-goal tasks[1,2], two source-valid chosen EVENT indexes[0,2].
+First is evidence of the failed option, second matches goal; do not filter or
+replace first. Chosen list in SELECTION.json; all source/callback bytes retained.
+Result SHA6fad939ddb10dc22f2ff0ae6d36734f5b4dc1bef510824619bf139445f6212dc.
+
+Both conditional100-update forks released by source-only condition; NOT LAUNCHED
+at this cut. Same A1cue actor, CHILD_CORRECTIVE vs UNIFORM_REPLAY, old100/cue100/
+new200 presentations, shared UNIFORM label denominator, archived W0 BEFORE,
+fresh AFTER including earlier8factretention. No extra seeds or sweep. Kant's
+train helper/tests released and committeda14f6702; Euclid owns in-progress
+native train/readout integration in adult driver/guard/new driver tests.
+Confucius owns read-only selector-result memo. Main owns integration/docs.
+
+Storage: root-/tmp filled during archive packaging. NO evidence deleted: four
+owned source tarballs moved/hash-verified to
+`gpu_artifacts_local/source_archives_20260914T1113Z/`, original successful/tmp
+paths symlinked. Failed zero-byte tar preserved separately; valid archive new.
+Use/data for future packaging (53G available; root1.5G at11:14UTC).
+Never change node1 (no new work); node2 six-hour finish margin remains.
+Preserve unrelated dirtyrules and untracked September13 two-sleep-junction draft.
+Git current c7a063dc plus native worker edits; no automatic pull/reset over dirt.
+
+## HISTORICAL OVERRIDE — September14,2026,10:58UTC
+
 
 Mission INCOMPLETE. SEQ225--230 adult stages are all terminal; DO NOT RERUN.
 First adult W8 primary cue routing1/4→3/4 vs off2/4→2/4; post-result W0
