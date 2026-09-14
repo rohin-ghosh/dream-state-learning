@@ -1,5 +1,10 @@
 ## Current superseding snapshot — 2026-09-14, after SEQ241
 
+LIVE13:34LATEST: A3BEFOREretry2 source8e520bc5 runningnode2GPU0guardian382127
+since13:31:51UTC,root/tmp/astra_fresh_reader_cycle_20260914_attempt2.
+Originalcollectionreused(4/4); noA3fits.69CPUtests+actual8caseCPUreplayPASS.
+SeeHANDOFF forstrictnextphaseCPUreadiness+twoforklaunch, noexperiencerestart.
+
 CURRENT13:27: A3collection4/4complete; BEFOREfailedwrapper beforeactualaudit
 on legitimateinvalid_routes2/3(no committedoutcome). Recordedown1/4,new0/4,
 old12/12,classifier16/16; retainnegativebehavior. NoA3fits/noMainGPUjobsnow.

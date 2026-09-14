@@ -2,6 +2,21 @@
 
 ## CURRENT OVERRIDE — September14,2026, after SEQ241
 
+LIVE13:34LATEST: A3attempt2before-onlyRUNNING node2GPU0guardian382127,
+started13:31:51UTC; source8e520bc5b359163b2e54d70d39f317d0ab914102,
+root/tmp/astra_fresh_reader_cycle_20260914_attempt2.69CPUtests andreal-source
+replay8actualreadcasesPASS preservingtwoinvalidroutes/noinventedtransitions.
+collect symlinksoriginalattempt1/collect(COMPLETE4/4). Beforecoldreadout now
+inprogress, inspectbefore/RESULT.json orFAILED.json,before.log. No A3fits.
+On COMPLETE, runfrozennewdriver read_collection/read_beforeCPU: ifnonempty
+sourcevalidchoices, logandlaunchguardSELECTED/UNIFORMonGPU0/1,100updates each.
+Root/guardalreadyready; don'treruncollection oroldfbe repairfits. Newaudithelper
+andnativeentrysource8e520bc5haveexplicitpolicy/hash tags. Originalfailedroot
+archivedunder gpu_artifacts_local/astra_fresh_reader_cycle_failed_before_20260914_attempt1/.
+Maxwellfieldmemocommitted; GoodallSEQ241reductionpersistedCOMPLETE8stages2pairs:
+gpu_artifacts_local/astra_selected_reader_repair_terminal_20260914_attempt1/SEQ241_independent_reduction_20260914.json.
+Allworkersreleasedcode; none haspermissionfornativejobs. Preserveunrelatedrules.
+
 CURRENT13:27REPAIR supersedesLIVEbelow: A3BEFOREattempt1FAILED after numerical
 readout, beforeactualaudit. Erroractual_committed_outcome_required: tasks2/3
 invalid_route after2realreadseach, notransitions. Diagnosticown1/4,new0/4,

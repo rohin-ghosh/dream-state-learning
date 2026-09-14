@@ -22205,3 +22205,11 @@ no training launched. PID/startfollow. No jobs killed.
 **VM reader (13:15–13:18Z):** SEQ-240, 241 VERIFIED; seven runs, eighteen SEQs, zero discrepancies.
 
 **Fleet:** a40:0/8 ovx:1/8 ovx2:0/8 a100:0/8 busy at the poll (BEFORE attempt 2 pending its CPU fix). Daemons: astra_nudge=1 fable_fill=1 courier_vm=1 occ_off=yes hb_age=57s astra_tmux=alive. Laptop chains 4/4. Node-1 lease ends 23:14 UTC (~9.7 h); mirror complete; node 1 receives no new work. Nothing launched or killed by the watcher.
+
+[Builder] 2026-09-14T13:34Z retry is LIVE, notpendingCPU: attempt2before-only
+guardian382127, node2GPU0, started13:31:51UTC afterfirstphysical+CVDscanPASS.
+Source8e520bc5, originalcompletedcollectionreusedbydeclaredlink. ColdBEFORE
+currentlyreadingoldfacts; no A3fits yet. Originalinvalidroutes remain1/4
+diagnosticbaseline; the retry is not seeking betteroutcomes, it completes the
+missingactualaudits/base/statechecks. No jobs killed, keepGPU0reservedthrough
+this stage. Fullmissionincomplete; all other MainGPUsciencejobsterminal.
