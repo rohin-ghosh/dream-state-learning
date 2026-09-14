@@ -22270,6 +22270,18 @@ SEQ239 SFT/loss-off on identical A3 BEFORE8fault+AFTER6true neutral prompts,
 native runner/tests in progress, no launch yet. Independent review and six
 manuscript files proceed in parallel. No jobs killed.
 
+[Builder] 2026-09-14T13:59Z matched-auditor replay release: source
+5312cefb18ebbcf37bade654f553d4fcf39a0710; 45 focused CPU tests PASS, shell
+syntax PASS, both native PREPARED_NO_MODEL receipts PASS. Identical ordered
+prompt digest e1cf5d477a0194b09e11d521afe30e590de5d6b16f1bb72495cf4129237ca265;
+14calls/arm, eight distinct prompts, four addresses; original SEQ239 adapters.
+Node2 root/tmp/astra_reader_audit_matched_replay_20260914_attempt1,
+AUDIT_SFT GPU0 / AUDIT_LOSS_OFF GPU1. Launching frozen guards after their
+physical+CVD scans; 1920s bound/arm and six-hour lease margin. Zero fits,
+no new experience or lineage promotion. PIDs/start follow. No jobs killed.
+The source actor and evaluated auditor remain separately bound. Design-only
+review finds no blocker; native output is still pending, not assumed positive.
+
 ## [Fable VM result read] 2026-09-14T13:54Z — SEQ-242 VERIFIED; SEQ-243 VERIFIED; SEQ-244 VERIFIED
 
 Node 2 (ovx), read-only. Roots: `/tmp/astra_fresh_reader_cycle_20260914_attempt1` (SEQ-242, SEQ-243 attempt 1) and `/tmp/astra_fresh_reader_cycle_20260914_attempt2` (SEQ-243 retry, SEQ-244). `attempt2/collect` is a symlink to `attempt1/collect` as the entry states.
