@@ -22789,3 +22789,15 @@ checkpointjoins. Launching node2GPU0 collect/TRAINED at
 12CPUtests including archived-shell regressionPASS. <=8actualcalls/1920seconds,
 no parent/fit; guard rechecks GPU/CVD and lease. PIDtofollow. Attempt1 remains
 an unchanged pre-model wrapper failure; no experience is being recollected.
+
+## [Builder] 2026-09-14 15:31 UTC — fresh collection complete, paired transfer launch
+
+Attempt2collect guardian395599/node2GPU0 ran15:28:54–15:30:25UTC and
+COMPLETE:8actualcalls/4source-validnewEVENTs, nofit/parent, unchanged37ecstate
+andbase/filechecksPASS. Launching independentreadouts at SAMEroot
+`/tmp/astra_event_two_hop_transfer_20260914_attempt2`, frozen7db26bec:
+TRAINED onnode2GPU0 (`GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0`), ORIGINAL
+onnode2GPU1 (`GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4`); PIDs tofollow.
+Each sees exactlythe SAMEnewstoredtext plusunavailablecondition,4tasks each,
+<=48nativeactorcalls/1920seconds; guard rechecks completecollection, physical
+processes/CVD andsix-hourlease. No newfit, teacher, exposure recollection orkill.
