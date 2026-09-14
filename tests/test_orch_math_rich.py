@@ -84,3 +84,16 @@ def test_source_verifier_binds_bytes_not_cross_host_uid(tmp_path):
     (directory / 'code.py').write_text('print(2)\n')
     with pytest.raises(ValueError, match='source_bytes_changed'):
         verify_archive(archive, directory)
+
+
+def test_portable_hash_keeps_mounted_default_namespace_and_is_readonly():
+    from types import SimpleNamespace
+    from gpu.orch_math_rich_screen import mounted_adapter_parameters
+    parameters = {'base.layer.lora_A.default.weight': SimpleNamespace(requires_grad=False),
+                  'base.layer.lora_B.default.weight': SimpleNamespace(requires_grad=False),
+                  'base.layer.weight': SimpleNamespace(requires_grad=False)}
+    model = SimpleNamespace(named_parameters=lambda: iter(parameters.items()))
+    assert list(mounted_adapter_parameters(model)) == list(parameters)[:2]
+    parameters['base.layer.weight'].requires_grad = True
+    with pytest.raises(ValueError, match='readonly'):
+        mounted_adapter_parameters(model)

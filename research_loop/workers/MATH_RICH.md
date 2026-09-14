@@ -138,3 +138,16 @@ research_notes/analysis/orch_math_rich_20260914_launch_native.txt.
 MAIN: workers running independently; no SEQ reserved. Will request next SEQ
 only when terminal comparison and reduction are ready; report corrections
 separately from initial rich-vs-terse.
+
+## 2026-09-14T22:06:57Z — zero-call adapter namespace abort; repairing exact API parity
+
+All four native workers loaded the frozen base but stopped at adapter-state
+comparison before first generation. My error: PEFT get_peft_model_state_dict
+strips the mounted `.default` parameter namespace; portable37ec hashes actual
+mounted named_parameters. V3/self-critique callers use the latter. Repair
+uses exactly their lora_A/lora_B named-parameter filter plus readonly assertion,
+not a changed hash/pin/model or weakened state check. New CPU regression binds
+the namespace and rejects trainable parameters. All FAILED.json and original
+run/guard directories preserved; no scientific calls, no outcome-null claim.
+Postlaunch push race was reconciled by non-destructive origin merge and push;
+no reset,rebase,stash,forcepush or other workers' edits overwritten.

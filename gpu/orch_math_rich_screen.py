@@ -15,6 +15,14 @@ def write(path, value):
     Path(path).write_text(json.dumps(value, indent=2, sort_keys=True) + '\n')
 
 
+def mounted_adapter_parameters(model):
+    parameters = {name: parameter for name, parameter in model.named_parameters()
+                  if '.lora_A.' in name or '.lora_B.' in name}
+    if not parameters or any(parameter.requires_grad for name, parameter in model.named_parameters()):
+        raise ValueError('readonly_mounted_adapter_required')
+    return parameters
+
+
 def main():
     parser = argparse.ArgumentParser()
     for name in ('bundle', 'bundle-sha', 'model-dir', 'tasks', 'output'):
@@ -59,8 +67,8 @@ def main():
                                          model_dir=options.model_dir, device='cuda:0', gpu_uuid=options.gpu_uuid)
         engine = portable.source.Engine(arguments, portable.source.native.load_local_tokenizer(options.model_dir), check=check)
         from organism_v6.pcfl_vertical_train import _state_hash
-        import peft
-        assert _state_hash(peft.get_peft_model_state_dict(engine.model)) == portable.PARENT_STATE
+        parameters = mounted_adapter_parameters(engine.model)
+        assert _state_hash(parameters) == portable.PARENT_STATE
         write(output / 'ACTOR_READY.json', dict(binding, runtime=engine.runtime, adapter_state=portable.PARENT_STATE))
 
         def generate(task, kind, previous=None):
@@ -86,7 +94,7 @@ def main():
             if solved['outcome_pass']:
                 generate(task, 'record', solved['target'])
         engine.verify_base()
-        assert _state_hash(peft.get_peft_model_state_dict(engine.model)) == portable.PARENT_STATE
+        assert _state_hash(parameters) == portable.PARENT_STATE
         write(output / 'RESULT.json', dict(binding, status='COMPLETE', model_calls=len(rows),
               finished_unix=time.time(), adapter_state=portable.PARENT_STATE,
               summary=math.reduce_screen(tasks, rows)))
