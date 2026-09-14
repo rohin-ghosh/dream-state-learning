@@ -20545,3 +20545,26 @@ rows before choosing the next learning step. The two A4fits continue independent
 guardian341096, source39ae8ea8, /tmp/astra_cue_collect_20260914_attempt1/run.
 Physical/CVD/lease guard passed; model loaded and actual collection underway.
 Zero fits; no original readout-bank identities admitted. No other job touched.
+
+## [Builder] SEQ-219 — 2026-09-14T09:02Z — grounded cue data, but coaching is usually ignored
+
+Cue collection finished08:55:17UTC:8/8actualEVENTs admitted,27modelcalls,
+2/8read-containing successful routes,5studentrows (3READ+2ROUTE). All six
+unselected attempts immediately choseROUTE withoutreading: threewrong, three
+luckyarrivals excluded. No failedreads/post-readrouteerrors/infrastructureerrors.
+Selecteddata covers2/4worlds,1/2banks,0/4completegoalpairs; notbalancedcoverage.
+IndependentCPUreplay consumes all27captures and reproduces both reports exactly.
+Actualmemoryexternal, unchangedrawchildEVENTs; teacher absentfromstudentinputs.
+Full analysis: research_notes/analysis/2026-09-14_cue_collection_first_result.md.
+Correction: actual launch was08:54:02UTC, not the08:56header on my earlier note.
+
+[Builder] Selected one collection successor, nofit: sameeight sourcedEVENTs,
+sameeightcue tasks, frozenBASE, new explicitpublicstrategy requiring firstlisted
+READ before anyROUTE and then AT/GOT matching or reading the otheraddress.
+No hidden target or prescribed correctport supplied. Reuseexperience receipts
+without newEXPLORATION; retain all oldattempts; max24newactorcalls,1200internal/
+1800outerseconds. This isolates a more explicit teachingstrategy on the same
+trainingbank, not independentexperience acquisition or learnedparent-free skill.
+Decision criterion: inspect readuptake and goal-pair/world coverage; noautomatic
+fit or dose increase follows. Native reusable-source validation and tests being
+finished in a new version; old39ae root remains immutable.
