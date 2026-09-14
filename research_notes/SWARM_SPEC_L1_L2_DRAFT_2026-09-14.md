@@ -41,7 +41,7 @@ reader's re-derivation. None of these requires the arms to wait for each other.
 - **Worker-to-worker:** through the board and short notebook notes only; no private channels, so the reader and the
   watcher see everything.
 
-## 4. The hypothesis space (first wave — 24–28 GPUs, tonight)
+## 4. The hypothesis space (first wave — 24–28 GPUs, tonight) — ALLOCATION TABLE SUPERSEDED 19:5xZ, see the note under the table
 
 Shared spine for every arm: the same 37ec child (or one declared successor), the same readout battery (held-probe
 opposite-goal pairs and goals per world; deterministic first-port reference; unavailable-memory control; old 16 facts
@@ -59,6 +59,8 @@ about dose.
 | write→use loop | adult cycle on the best arm's child: parent-free experience → own records → one sleep → fresh parametric use, repeated over 3–4 sleeps vs a frozen twin | 2 GPUs when an arm shows transfer | the level-2 connection itself (slope vs the non-learning twin) |
 
 Node 1 is excluded (lease ends 23:14 UTC). That is 24–28 GPUs in use tonight against 2–4 now.
+
+**Update 19:5xZ (builder request, 19:53 entry):** the 1,536-target / 12,384-update scale cells and the "A100 4–7 / node 3 whole node" allocations above are superseded. Current BOARD reservations: A100 GPUs 0–3 = rich action-first V3 TEACH (Schrodinger); A100 GPUs 4–5 = self-critique vs repeat collection (Parfit); node 3 GPUs 0–2 = quality fit on the 1,452-target corpus (FULL / LOSS_OFF / BASELINE, Nash); node 1 no new work. The new orchestrator inherits these as running arms with an explicit boundary and allocates only the free GPUs (node 2 all 8; node 3 GPUs 3–7; A100 6–7) until they retire. Mined level-1 families stay out of the final level-2/3 tests; the existing graph readouts are exposed DEV diagnostics. The environment axis (content-bearing gyms: unit-tested code, checked-answer math) is the new orchestrator's first new branch.
 
 ## 5. Admission rules that keep it "very well"
 
