@@ -18493,3 +18493,58 @@ This entry supersedes the open `[Builder -> Rohin / source-contract owner]` requ
 **Daemons on VM:** astra_nudge 1, courier_vm 1, tmux session `astra` alive.
 
 **Node-1 mirror:** lease ends 2026-09-14 23:14 UTC, about 21.2 h from this check, outside the 10-hour window; no rsync run. Last logged incremental pass 15:02 UTC 09-13 (find -type f = 15,428 both sides). Final incremental `rsync -a` (no --delete) node 1 `~/v6_out/` -> node 2 mirror remains due inside the last 10 hours, by the laptop watcher/Rohin or this self-check reusing the logged command.
+
+## [Builder] 2026-09-14T02:08Z — core/route implementations and two concrete scanner repairs; 236 CPU tests PASS
+
+The old M1 relay has been reconciled, not relaunched. Main's28b33279 binds the
+remaining core conventions under standing authorization. No external owner or
+human approval is awaited for these finite implementation definitions. Earlier
+Builder requests implying that dependency are superseded, not erased.
+
+Nietzsche implemented only new core_inputs.py/test: effective total physical
+depth and private completion, separate matched semantic depth, recovery SEEK's
+owning EVENT position, retained-only STEP match, graph/core/checker receipts.
+This is supplied-source consistency: production must first reconstruct with
+validate_birth_source. Main's integration uses the validated route source and
+does not treat a caller-created core receipt as an authority token.
+
+Main implemented route_inputs.py/route_scan.py and tests: complete registered
+transition basis, off-oracle contingencies and cycles, actual mismatch outcomes,
+and typed action/service/mixed/ordered-ID route occurrence matching. No path
+cap, oracle-only pruning or arbitrary-prose coverage claim. Source/science gates
+remain false; this is not a complete protected metadata or literal-route ledger.
+
+**Two observed engineering failures repaired:**
+1. Core-only p00 CLOSED SEEK produced eight PORT/STATE semantic-alias hits in
+   immutable protocol prose. The narrow repair receipts semantic_alias only
+   inside validated exact original protocol bytes at offset0. No global alias
+   exemption; dynamic/copy/cross-boundary occurrences and other categories
+   remain checked. See analysis/2026-09-14_stage2a_fixed_protocol_alias_repair.md.
+2. Peirce caught endpoint-only route authentication: an intervening WORLD could
+   change while STEP endpoints retained exemptions. Main now requires the full
+   causal prefix through the second endpoint to match retained source. Added
+   that mutation and mixed action/row regressions. Peirce's fresh narrow read
+   closes both reported route findings; not a full source/science approval.
+
+**236 unique relevant tests PASS, no double counting:** Main71 in202.953s
+(route basis6, route grammar10 including all512 birth prefixes, scanner53,
+core/route integration2). Nietzsche12 new core tests in574.364s (all512
+case/decision/arm combinations),107 existing in36.274s,46 existing in142.151s.
+Worker's additional rerun of Main's2 integration tests is corroboration only.
+These512 combinations are synthetic fixtures, not independent learner seeds.
+Exact commands, file hashes, limitations and Main's raw log are bound in
+receipts_20260912/astra_stage2a_core_route_validation_20260914_attempt1.json.
+Two intermediate test errors were test-only: semantic role search in opaque
+request text, and wrong ScanReport attribute name; both repaired, final suites
+pass. Initial eight-test route result predates the causal-authentication repair
+and is not substituted for the final rerun.
+
+**Next:** complete the protected birth metadata schema and measured hard
+bounds, integrate semantic/future/literal/structured-route checks and held/core
+coverage, then satisfy native readiness for reduced560BASE/D1 -> authentic
+two-SLEEP. This remains actual Builder work, not an external-owner holding
+pattern, broad literature queue, old Q0 retry, or final-paper C11 expansion.
+No GPU/model/tokenizer/science launch/kill, node1 write or approval request.
+No new whole-fleet/preservation claim; watcher inventories remain snapshots.
+Both workers are finished; no background GPU work implied. Updated handoff
+records exact next dependencies; full campaign and H1/H2 remain ACTIVE/incomplete.

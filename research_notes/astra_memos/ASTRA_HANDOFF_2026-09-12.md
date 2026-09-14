@@ -1,6 +1,55 @@
-# Astra restart handoff — September 14, 2026, Q1 offline replay
+# Astra restart handoff — September 14, 2026, core/route source integration
 
-## Current superseding increment — Q1 relay and archival replay
+## Current increment — Builder-owned definitions implemented; two real bugs repaired
+
+External source-owner waiting was self-imposed, not a direct human reservation.
+Main adopted prospective core definitions in analysis/2026-09-14_stage2a_builder_core_bindings_v1.md
+(commit28b33279): total physical START-to-GOAL depth with private completion,
+separate semantic depth, recovery SEEK's owning EVENT position, retained-only
+STEP match. No new human reply/ratification is claimed and no invariant changed.
+M1 three-route proposal is superseded/unexecuted, not secretly completed by
+later L1/L2 tests. Do not relaunch old M1/Q0/SEQ195.
+
+Implemented core_inputs.py (Nietzsche), route_inputs.py and route_scan.py (Main).
+Core supplied-source consistency MUST follow complete validate_birth_source
+reconstruction in production; Main's integration tests exercise that chain.
+Finite route basis retains all registered branches/effective outcomes, cycles
+and guarded recovery. Structured route matching supports typed action schedules,
+EVENT rows/both skins, mixed action/row fragments, and explicit one-line ordered
+ID lists. Unknown prose is not certified safe. Do not turn a route-only clear
+or caller-created core receipt into full inventory/native approval.
+
+Actual integration revealed eight PORT/STATE semantic-alias collisions inside
+the fixed system prompt. Narrow repaired attribution: semantic_alias only,
+validated exact original protocol span at offset0, occurrence receipt retained.
+No global vocabulary exemption; copied/changed protocol and all other scanner
+categories stay checked. Peirce supported this explicit source reconciliation.
+Peirce also caught endpoint-only route history authentication: repaired to require
+the entire causal prefix through the second endpoint to match retained source,
+with a same-length WORLD mutation regression. Source/science gates remain false.
+
+236 unique relevant CPU tests PASS across recorded commands: Main71; worker12
+new core plus153 existing. Both core and route suites cover all512 birth
+decision/arm combinations; these are fixtures, not independent learner seeds.
+Worker's rerun of Main's2 integration tests is NOT added to the total.
+Exact hashes/counts/commands/limits and Main raw log:
+receipts_20260912/astra_stage2a_core_route_validation_20260914_attempt1.json.
+Notes: analysis/2026-09-14_stage2a_route_language_source_v1.md and
+analysis/2026-09-14_stage2a_fixed_protocol_alias_repair.md.
+
+NEXT ACTUAL WORK: complete protected birth metadata schema and measured hard
+bounds, then combine semantic/future/literal-route/structured-route checks with
+held/core source coverage. This is Builder engineering, not an external-owner
+wait. Preserve all source/independent-checker and native readiness obligations;
+then reduced BASE+D1 560 calls -> qualified authentic two-SLEEP. Do not replace
+this with further Q0 replay, bibliography auditing, or a new C11 project.
+No model/tokenizer/GPU launch/kill, node1 write or approval request in this
+increment. No new fleet or preservation claim; watcher inventories are snapshots.
+Preserve dirty gpu/codex/dream_state.rules and the unreviewed TSJ draft.
+Full developmental campaign, mechanism freeze and paper-grade claims remain
+ACTIVE/incomplete; no background GPU work is implied.
+
+## Historical superseded increment — Q1 relay and archival replay
 
 New map-closeness relay addresses already-completed Q0-FULLDOSE-v2. No launch,
 new fit/forward/arm/gate/denominator or R1 repair. Added pure-stdlib durable

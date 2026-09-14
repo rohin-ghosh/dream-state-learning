@@ -495,6 +495,48 @@ class ForwardScannerTests(unittest.TestCase):
                       fields=(public_field(b"DID " + PORT, PORT, "event_did"),))
         self.assertTrue(any(hit.category == "registered_route" for hit in report.issues))
 
+    def test_constant_protocol_semantic_aliases_get_occurrence_receipts_only(self):
+        protocol = wire.SYSTEM_MESSAGE.encode("ascii")
+        field = public_field(protocol, protocol, "protocol")
+        semantic = canonical_json({"core": {"type_labels": ["PORT", "STATE"]}})
+        report = scan(protocol, semantic_bytes=semantic, fields=(field,))
+        self.assertTrue(report.passed)
+        self.assertTrue({b"PORT", b"STATE"}.issubset(source.derive_semantic_aliases(semantic)))
+        self.assertEqual({hit.value for hit in report.receipts}, {b"PORT", b"STATE"})
+        self.assertEqual(len(report.receipts), 8)
+        for suffix in (b"\nPORT STATE", b"\nport state", b"\n<P-O-R-T> <S-T-A-T-E>"):
+            report = scan(protocol + suffix, semantic_bytes=semantic, fields=(field,))
+            self.assertFalse(report.passed)
+            self.assertTrue(all(hit.start > field.end for hit in report.issues))
+
+    def test_alias_exemption_requires_original_exact_protocol_occurrence(self):
+        protocol = wire.SYSTEM_MESSAGE.encode("ascii")
+        semantic = canonical_json({"core": {"type_labels": ["PORT", "STATE"]}})
+        prefix = b"copy\n" + protocol
+        moved = public_field(prefix, protocol, "protocol")
+        self.assertFalse(scan(prefix, semantic_bytes=semantic, fields=(moved,)).passed)
+        field = public_field(protocol, protocol, "protocol")
+        with self.assertRaisesRegex(ValueError, "protocol_bytes_mismatch"):
+            scan(protocol.lower(), semantic_bytes=semantic, fields=(field,))
+        report = scan(protocol, registered_routes=(b"PORT",), fields=(field,))
+        self.assertFalse(report.passed)
+        self.assertTrue(any(hit.category == "registered_route" for hit in report.issues))
+
+    def test_copied_protocol_aliases_and_cross_boundary_match_still_fail(self):
+        protocol = wire.SYSTEM_MESSAGE.encode("ascii")
+        field = public_field(protocol, protocol, "protocol")
+        semantic = canonical_json({"core": {"type_labels": ["PORT", "STATE"]}})
+        prefix = protocol + b"\n" + protocol
+        copied = public_field(prefix, protocol, "protocol", occurrence=1)
+        report = scan(prefix, semantic_bytes=semantic, fields=(field, copied))
+        self.assertFalse(report.passed)
+        self.assertTrue(all(hit.start > field.end for hit in report.issues))
+        crossing = b"terminate the task.\nLEAK"
+        report = scan(protocol + b"\nLEAK", fields=(field,),
+                      semantic_bytes=canonical_json({"evaluator": {"leak_marker": crossing.decode("ascii")}}))
+        self.assertTrue(any(hit.value == crossing and hit.start < field.end < hit.end
+                            for hit in report.issues))
+
     def test_no_escape_decoding_is_explicitly_partial(self):
         report = scan(rb"\u0053TEP M2AP\u005fFFFFFFFFFFFF")
         self.assertTrue(report.passed)

@@ -498,6 +498,9 @@ def scan_forward_targets(prefix, *, target, phase, decision_index, semantic_byte
     def authorized(category, value, start, end):
         for field in fields:
             if field.kind == "protocol":
+                if (category == "semantic_alias" and field.start == 0
+                        and field.start <= start and end <= field.end):
+                    return field
                 if (category == "full_target" and value == b"STOP" and prefix[start:end] == b"STOP"
                         and field.start <= start and end <= field.end
                         and (start == field.start or prefix[start - 1:start] == b"\n")

@@ -1,0 +1,57 @@
+{
+  "schema_version": "BUILDER_CPU_SOURCE_RECEIPT_V1",
+  "recorded_utc": "2026-09-14T02:05:00Z",
+  "scope": "Synthetic CPU core, route and scanner integration; not complete inventory or native readiness",
+  "unique_tests_passed": 236,
+  "source_case_combinations": "64 birth cases x 4 decisions x 2 arms = 512; fixture coverage, not independent learner seeds",
+  "commands": [
+    {
+      "runner": "Main",
+      "command": "env PYTHONDONTWRITEBYTECODE=1 python3 -m unittest tests.test_composition_birth_stage2a_route_inputs tests.test_composition_birth_stage2a_route_scan tests.test_composition_birth_stage2a_scanner tests.test_composition_birth_stage2a_core_route_integration -q",
+      "tests": 71,
+      "seconds": 202.953,
+      "result": "PASS",
+      "log": "astra_stage2a_core_route_validation_20260914_attempt1.log",
+      "log_sha256": "7c8e1e35e947596603e4923166005cf8e278ba57a7d04fbe656fb45ef4755d33"
+    },
+    {
+      "runner": "Nietzsche worker; exact tool-reported command/count/duration, raw log not separately archived",
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest -v tests.test_composition_birth_stage2a_core_inputs",
+      "tests": 12,
+      "seconds": 574.364,
+      "result": "PASS"
+    },
+    {
+      "runner": "Nietzsche worker; exact tool-reported command/count/duration, raw log not separately archived",
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest tests.test_composition_birth_stage2a_graph tests.test_composition_birth_stage2a_checker tests.test_composition_birth_stage2a_birth tests.test_composition_birth_stage2a_targets",
+      "tests": 107,
+      "seconds": 36.274,
+      "result": "PASS"
+    },
+    {
+      "runner": "Nietzsche worker; exact tool-reported command/count/duration, raw log not separately archived",
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 -m unittest tests.test_composition_birth_stage2a_source_inputs tests.test_composition_birth_stage2a_graph_inputs",
+      "tests": 46,
+      "seconds": 142.151,
+      "result": "PASS"
+    }
+  ],
+  "overlap_not_added": "Worker separately passed the same two Main integration tests in 9.018s; these are already in the 71-test suite.",
+  "sha256": {
+    "organism_v6/composition_birth_stage2a_core_inputs.py": "3d95f7fe979732c441bf0c3adfbb814e46578d02f44bd118da33b97897af14b2",
+    "organism_v6/composition_birth_stage2a_route_inputs.py": "dc9f3d6b2ef3d4fb090b82a12fb86298f54f1f626b16782723efcba1dfd5a456",
+    "organism_v6/composition_birth_stage2a_route_scan.py": "cbaaa5de9bb5389b91ed8754330b951c40473c4cfc8c612909fa1d04f35582b1",
+    "organism_v6/composition_birth_stage2a_scanner.py": "5a5be1c9db8a1e01b112e86ecb139578edf2c3b80c72a292a719480dc0137bf3",
+    "tests/test_composition_birth_stage2a_core_inputs.py": "4094b461da94eea5dff1933617a559313aa35a1194159a996ebd8946ee9e5427",
+    "tests/test_composition_birth_stage2a_route_inputs.py": "be90e4f6074fe2297ea3ee90b825a573e26d4c01066792b495e0d51bf71a929b",
+    "tests/test_composition_birth_stage2a_route_scan.py": "5cd51ab96d49c0911056743e902fbd36f128a37ef5f818c0e3645f07d8834abd",
+    "tests/test_composition_birth_stage2a_scanner.py": "1ff4bb3edb01b5566e22e49ccf8a4df7ab3266da2d2722ed2cb79e65c67bd8d2",
+    "tests/test_composition_birth_stage2a_core_route_integration.py": "cc3d9b7823a3012f9cc06c55b3e4c86a586928ba6a5b27b3865b735aa54ed56b"
+  },
+  "limits": [
+    "Core producer checks supplied source consistency; production integration first reconstructs with validate_birth_source.",
+    "Structured route matching covers its declared typed byte grammar, not arbitrary prose or complete semantic inventories.",
+    "Private core-only scanner regression is not a complete protected-metadata test.",
+    "No canonical material, tokenizer, model, GPU fit, scientific claim, or C11 readiness is certified."
+  ]
+}
