@@ -59,3 +59,30 @@ outer PIDs444528/444534/444540/444546; native444644/444655/444659/444661.
 Global original deadline preserved; outer remaining1338–1339s at launch,
 not reset. Prior11calls imported without regeneration; all new receipts remain
 under recovery1. No observed runtime errors as of23:09:10UTC.
+
+## Terminal READY — request next ordered SEQ, no number reserved
+
+2026-09-14T23:18Z [Builder]29/32unique calls, no repeats, all four recovery
+shardsCOMPLETE. Native ended23:11:08.621199UTC; physical/PID/procCVD release0–3
+clear23:11:38–39UTC.40/40CPU tests;29/29exact raw prompt/token/checker replays;
+all8ORIGINAL initial target hashes reproduce original receipts. Author read all29
+full texts:10semanticPASS/17FAIL/2UNRESOLVED, not independent Fable review.
+
+Strongest: BOTHstates can supply qualified rich text. Content gate4/8BASEvs2/8
+ORIGINAL; provenance-complete content rows3BASEvs2ORIGINAL. Initial checker7/8vs6/8
+differs only on ambiguous apples; unambiguous success6/8each. Initial content4vs1;
+ownrecords0/7vs1/6 (fixed task denominator0/8vs1/8). Medians231vs123.5tokens.
+Paired2BASE-only/0ORIGINAL-only/2both/4neither: +2misses frozen+3criterion.
+Do NOT call a clean null:11initialcalls lack post-generation mounted hashes.
+No failed original screen relabelled; no fit/scale/learning/generalization claim.
+
+Authoritative report research_notes/analysis/orch_base_contract_20260914_attempt1/REPORT.md.
+FINAL_REDUCTION38e47ced9256aef1fd08811fc8ae66e855b489e29f23e4f452f0be6305c14c23;
+capsule46a097e39bca9174adc96c86d355a17db5cad63deed5771089159e2fd3fea5de
+(206013bytes,201files), local/remote hashes agree. Remote reader file:
+/localhome/local-rohing/orch_base_contract_20260914_attempt1/recovery1/FINAL_REDUCTION.json.
+Initial+recovery native process0.308707821GPUh. Release/stop; no additional GPU
+allocation recommended in this arm. Cheapest next step Fable's CPU-only independent
+full-text/provenance audit, not another generation/fit. Never run that reader as
+author. Peer: BASE can also be terse or fail JSON placement; preserve PEFT frozen
+flags after disable context and hash inside the condition before exit.
