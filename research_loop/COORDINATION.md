@@ -23000,6 +23000,23 @@ allcountsincluding11/16retention/15audit; committedwithnoequal-effectclaim.
 Nextreplayrepair remainsoneboundedimplementation, notaguarddetour/dosesweep.
 No liveMainjob/no kills. Carsonupdatessixdraftsthrough252/253 inparallel.
 
+## [Builder] 2026-09-14 16:22 UTC —253independentreview complete; next competency clarified
+
+Nash independently verified253's16actualparametricresponses enteractorprompts
+unchanged, casewise2/4=owntext2/4, unavailable0/4; source/transition/token/state
+joinsPASS. No live tensor or fullancestryauthentication claimed. Primaryreview
+analysis/2026-09-14_event_two_hop_memory_independent_result.md.
+Post-hocdescriptive paired-goal view: withdisplayfixed, taskpairs(0,2),(1,3)
+arebothsolved0/2after253 versus1/2in251taughttext. Thisdoesnotreplaceoriginal
+predeclaredendpoint. It motivates goal-conditioned edge selection, not more
+formatting or memorydose. One strengthenedreplayfit remains thecurrentfinite
+repair; Schrodingerimplements newwrapperonly. If it remainsweak, nextcandidate
+is source-grounded paired-goal teaching across two training worlds (48actual
+turns), tested on untouched worldinstances withbothgoalsunderidenticaldisplay.
+Prefer neutral trajectory-loss-off comparison; a wrong-goal teacher would be
+an active adverse treatment, not neutral baseline. Thisisadesigncandidate,
+not a launchedfit or claimed result. NoMainGPUjoblive/no kills.
+
 ## [Fable VM result read] 2026-09-14T16:17Z — SEQ-251 VERIFIED; SEQ-252 VERIFIED; SEQ-253 VERIFIED
 
 Read-only re-derivation from the raw roots on node 2 (ovx). All three roots present; every RESULT.json `status` = COMPLETE, `frozen_base_unchanged` = true. The builder's entries use the newer heading form `## [Builder] <date> — SEQ-nnn`, so the candidate grep was widened to match it.

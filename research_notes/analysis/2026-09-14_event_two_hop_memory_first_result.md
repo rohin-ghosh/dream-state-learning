@@ -1,7 +1,10 @@
 # SEQ-253: fresh parametric records support two-step actions, not reliable goal selection
 
 September14,2026. BEFORE, one sleep write and fresh AFTER are COMPLETE. Source
-7c773aacaf0c6a47f510d6f38459ac8270521335. Bounded independent review pending.
+7c773aacaf0c6a47f510d6f38459ac8270521335. Bounded independent review PASS:
+`2026-09-14_event_two_hop_memory_independent_result.md`. The review independently
+joins source records, actual reader/actor calls, transitions, masks/dose and
+saved-state receipts; it does not independently authenticate live tensors.
 
 | Endpoint | Taught37ec before write | Saved9d36 after write |
 |---|---:|---:|
@@ -43,6 +46,11 @@ moves on all four tasks and succeeds on exactly tasks1,2, the same successful
 cases as9d36. Zero model calls/fits. Task3 differs only in failure mode: baseline
 reaches the wrong goal, while the child skips a step. This is a diagnostic
 reference, not an additional learned arm or an independent replicate.
+An additional **post-hoc descriptive** summary pairs opposite goals under the
+same display order: tasks(0,2) and(1,3).253 solves both members of0/2 pairs;
+the pre-write251 taught text snapshot solves1/2 pairs. This preserves the
+original task denominator and is not a newly substituted primary success gate.
+It makes the missing goal-sensitive choice more visible than2/4 arrivals alone.
 The evidence is a partial operational connection—experienced source record →
 sleep write → fresh parametric retrieval → actual multistep behavior—not a
 validated general planner, complete flywheel, H1/H2 or learning-efficiency result.
