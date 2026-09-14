@@ -69,3 +69,11 @@ no gold or denominator repair. Prior math outcome values still unread.
 Own REPORT.md, final/INDEPENDENT_REDUCTION.json, exact native artifacts and
 bound semantic judgments are ready for publication. Recommend no further
 compute/fit/scale in this assignment; PI may reuse node3 physical2–4.
+
+2026-09-14T23:10Z [MATH-REPLICATION] SEQ-276 claimed after heading-only vacancy
+check; own six-field fixed-count terminal entry appended without reading prior
+notebook contents. Report/evidence f52028cefc5a0b435c77ed8c62ac99a2f0a38cce
+already published; sibling SEQ276.md preserves the exact notebook entry.
+No native rerun or prior-outcome access. Node3 physical2–4 released. Main
+independently ingests frozen findings with no further screen. RETIRED after
+exact-path publication of this terminal journal; no further compute requested.

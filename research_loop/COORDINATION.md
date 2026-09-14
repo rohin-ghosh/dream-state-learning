@@ -26644,3 +26644,36 @@ no independent preregistration receipt claimed and no reader checks executed.
 
 
 [Builder / Worker BASE-CONTRACT] 2026-09-14T23:07Z NON-MATERIAL REPAIR PRE-GPU PASS, no recovery calls yet. Initial four natives exited on readonly assertion after PEFT disable_adapter context restored requires_grad=True;11calls preserved in research_notes/analysis/orch_base_contract_20260914_attempt1/initial_partial, not task failures. Real installedPEFT0.20.0 CPU fixture reproduces flag change WITHOUT parameter-byte changes and validates finally refreeze;39/39CPU PASS. Publishedsource420cfcd4d7d3b223ffb9269b08aa7b5109ce767a; recoveryarchive59775b7f1ead54d1fc18e0eddcc5290cbc449702551caa85d989756505472dea. Recovery1 preGPU exact portable/source/base/tokenizer check and fresh detached physicalUUID/PID+/procCVD scans0–3 PASS; no other GPUwrites. Import completed11calls byte-exact and skip completed state/task, execute ONLY uncalled frozen slots with original2calls/state/task conditional rule,32aggregate maximum; no repeated prompts, correction, target/task/endpoint change. Original23:30:23UTC guardian deadline retained (no new30minute allocation). New states explicitly hash mountedbase/adapter INSIDE context before restoring and after complete native. Initial11post-generation mounted hashes are UNAVAILABLE after exit; do not retroactively claim this observation or call aggregate a clean null even if CPU mechanism/disk checks support no updates. REPAIR_PROTOCOL.md preserves this limitation. No fit/scale/SEQ request. Publish exact own paths/entry before recovery; no Main/reviewer gate.
+
+## SEQ-276 — MATH-REPLICATION terminal blind replication — 2026-09-14
+
+1. **Strongest result:** Fixed fresh same-family GSM8K cohort32 (8/family):
+   rich31/32 versus terse10/32, +65.625 percentage points; paired rich-only21,
+   terse-only0, exact two-sided McNemar p=9.5367431640625e-7. Fulltext review
+   of all47 candidates:6 semantic PASS across5 tasks (3 rich,3 own records),
+   41 FAIL,0 pending. Own-record yield3/31 calls. Combined >=8 PASS rows across
+   >=4 tasks criterion NOT met; answer improvement is not adequate record yield.
+2. **Evidence:** Frozen report/native/reduction/semantic evidence published in
+   commit f52028cefc5a0b435c77ed8c62ac99a2f0a38cce. Canonical report:
+   research_notes/analysis/orch_math_replication_20260914_attempt1/REPORT.md;
+   sibling final/INDEPENDENT_REDUCTION.json, final/BOUND_SEMANTIC_REVIEWS.json,
+   final/NATIVE_FILE_SHA256.json and native_terminal/ bind counts to raw data.
+   PreGPU commit46a5e8b8ad1ed3f2a0562be17caed0eabe2e4cae;16 CPU tests pass.
+3. **Assumptions:** Unchanged frozen Qwen2.5-7B-Instruct and mounted portable37ec;
+   independent frozen seed, original IDs excluded, original prompts preserved.
+   Six question-only wording/default risks retained; all gold and denominators
+   unchanged. Public-data contamination and upstream revision identity remain
+   unresolved. Prior math outcomes unread; no learning/H1/H2/novel-family claim.
+4. **Falsification:** Nonpositive paired-gap falsifier did not occur, but the
+   prespecified combined semantic-yield criterion failed (6<8). Terse failures
+   comprise15 wrong numeric answers and7 format failures, zero truncations;
+   no rescoring. Sole rich failure and failed correction retained in fixed32.
+5. **Obstacle:** No remaining execution/publication gate. Alias resolution was
+   operational, not a design change. Three shards exit0;96/128 maximum calls
+   used (terse32,rich32,correction1,record31). Semantic yield and unresolved
+   source assumptions limit interpretation, not runtime or missing results.
+6. **Compute recommendation:** Retire this assignment; no native rerun, fitting,
+   scaling or further screen. Aggregate guardian use0.23203955 GPU-hours;
+   node3 physical2–4 released, no kills. Peer message to Main: independently
+   ingest the frozen report as positive checked-answer evidence but insufficient
+   prespecified admissible-record yield; no additional compute requested.
