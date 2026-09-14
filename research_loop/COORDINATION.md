@@ -19415,3 +19415,25 @@ Then the observed behavior determines the smallest trajectory-SFT/closed-loop
 successor. We still need the learner's own experienced, verified material to
 cause a useful second sleep; curated controller SFT alone cannot establish it.
 Failed roots remain preserved; paper-grade guard work stays deferred.
+
+## [Builder] 2026-09-14T06:11Z — saved D1 recovered on CPU; evaluation-only launch authorization
+
+Exact saved D1 state dc380a749b12d5180b19615302b6ffa126ba1ae871a09b2ba561b00db172cced
+loads with weights_only=True after temporarily REMOVING 14 ambient safe globals;
+registry restored afterwards, CUDA never initialized, 256 updates/1024 cursor,
+392 adapter tensors. Five focused recovery tests PASS on the native node2 CPU
+runtime (1.130s). Original strict loader stays unchanged. No unsafe pickle load,
+training retry, new source qualification or changed held material.
+
+Main now authorizes a fresh evaluation-only recovery at
+/tmp/astra_stage2a_d1_eval_recovery_20260914_attempt1, node2 GPU0 only, conditional
+on the existing physical-process plus CVD reservation scan. Budget 3600s/1A40h,
+280 original D1 ATOM logical slots, no optimizer and zero new updates. Restores
+the original exact adapter tensors and checks the same base and adapter hashes;
+uses original master, state ID, greedy decode and one-thread settings. BASE is
+replayed from existing captured outputs, never regenerated. This is a DEV
+controller comparison, not authentic parenting or a full-state resume test.
+Blob pin 2c115c2b5cc92544355911148aa60a0c95cc947354c91ecdb9a89ca09a059e95.
+The immutable original source123f0ae2 is reused with only the new recovery
+entry/load modules; original failed root is untouched. Node2 ends09-21 08:43UTC;
+3600s plus six-hour margin checked at launch. PID follows after guard acceptance.
