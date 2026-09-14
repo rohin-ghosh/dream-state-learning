@@ -203,6 +203,7 @@ def main(argv=None):
     parser.add_argument('--cue-adapter-dir')
     parser.add_argument('--adapter-collection')
     parser.add_argument('--public-feedback', action='store_true')
+    parser.add_argument('--last-turn-feedback', action='store_true')
     args = parser.parse_args(argv)
     if bool(args.reuse_experiences) != args.explicit_cue_strategy:
         parser.error('--reuse-experiences and --explicit-cue-strategy must be supplied together')
@@ -210,8 +211,10 @@ def main(argv=None):
         parser.error('--cue-adapter-dir and --adapter-collection must be supplied together')
     if args.cue_adapter_dir and not args.reuse_experiences:
         parser.error('the selected memory actor requires explicit reused-experience collection')
-    if args.public_feedback and not args.cue_adapter_dir:
+    if (args.public_feedback or args.last_turn_feedback) and not args.cue_adapter_dir:
         parser.error('--public-feedback requires the selected saved memory actor')
+    if args.public_feedback and args.last_turn_feedback:
+        parser.error('select exactly one public feedback placement')
     source.require(os.environ.get("HF_HUB_OFFLINE") == "1"
                    and os.environ.get("TRANSFORMERS_OFFLINE") == "1", "offline_required")
     source.require(os.environ.get("CUDA_VISIBLE_DEVICES") == args.gpu_uuid, "exact_gpu_required")
@@ -230,6 +233,8 @@ def main(argv=None):
 
     selected_guidance = EXPLICIT_GUIDANCE if args.explicit_cue_strategy else cue.GUIDANCE
     teaching_mode = cue.PUBLIC_FEEDBACK_MODE if args.public_feedback else cue.DEFAULT_TEACHING_MODE
+    if args.last_turn_feedback:
+        teaching_mode = cue.LAST_TURN_FEEDBACK_MODE
     result = dict(schema='DEV_GUIDED_EXTERNAL_EVENT_CUE_REUSE_V1' if args.reuse_experiences
                   else "DEV_GUIDED_EXTERNAL_EVENT_CUE_COLLECTION_V1", master=MASTER,
         started_unix=started, arguments=vars(args),

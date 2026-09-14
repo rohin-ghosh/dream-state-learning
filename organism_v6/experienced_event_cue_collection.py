@@ -23,6 +23,7 @@ GUIDANCE = (
 )
 DEFAULT_TEACHING_MODE = 'fixed_guidance_v1'
 PUBLIC_FEEDBACK_MODE = 'public_feedback_v1'
+LAST_TURN_FEEDBACK_MODE = 'last_turn_feedback_v1'
 PUBLIC_FEEDBACK_PREFIX = (
     '\n\nPublic-feedback teacher inference (not compiler or autonomous child inference): '
 )
@@ -111,7 +112,8 @@ def public_feedback(messages):
 
 
 def _check_teaching_mode(teaching_mode):
-    require(teaching_mode in (DEFAULT_TEACHING_MODE, PUBLIC_FEEDBACK_MODE), 'unknown_teaching_mode')
+    require(teaching_mode in (DEFAULT_TEACHING_MODE, PUBLIC_FEEDBACK_MODE, LAST_TURN_FEEDBACK_MODE),
+            'unknown_teaching_mode')
 
 
 def guided_messages(messages, *, teaching_mode=DEFAULT_TEACHING_MODE):
@@ -122,6 +124,9 @@ def guided_messages(messages, *, teaching_mode=DEFAULT_TEACHING_MODE):
     guided[0]['content'] += GUIDANCE
     if teaching_mode == PUBLIC_FEEDBACK_MODE:
         guided[0]['content'] += public_feedback(messages)
+    elif teaching_mode == LAST_TURN_FEEDBACK_MODE:
+        require(guided[-1]['role'] == 'user', 'feedback_requires_latest_public_user_turn')
+        guided[-1]['content'] += public_feedback(messages)
     return guided
 
 

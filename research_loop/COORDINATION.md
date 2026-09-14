@@ -20687,3 +20687,19 @@ zero fits/newexperiencecalls,1200sinternal/1800souter+60s, same guards.
 Decision: require observed oneREAD and mismatch→secondREAD successes across
 bothbanks before selecting a trainingrecipe; inspect all8failure-inclusive tasks.
 No automaticfit or successclaim; parent-free ability must be tested aftersleep.
+## [Builder] SEQ-222 — 2026-09-14T09:31Z — system-placed feedback did not recover the missing branch
+
+Source3400fd19, node2GPU4guardian345664, /tmp/astra_cue_feedback_20260914_attempt1,
+completed09:28:39UTC.12calls,2/8selected,4rows, nosecondREAD. Fourtasksreadonce;
+four neverread (including one malformed ROUTETASK echo). Twolucky noREADarrivals
+excluded. Adapter/baseunchanged. No infrastructureerrors. This recipe closes;
+no fit on its4rows. RawBANK_RESULTS and calls retained; independentanalysispending.
+
+[Builder] New bounded successor changes only placement of the SAME public
+feedback from system to latestuserturn (last_turn_feedback_v1); originalfixed
+guide stays system. No targetmapping enters parent, no newexamples or dose;
+actualoutputs and studentprefixes preserved as before.29CPUtests pass, including
+teacherstripping and exactmode replay. Freshroot/tmp/astra_cue_lastturn_20260914_attempt1,
+node2GPU4, same24call/1200internal/1800outer+60bounds. Collectiononly, oneattempt;
+need bothoneREAD and successfulsecondREAD inbothbanks before sleepselection.
+Second-sleep runner is being prepared in parallel, not released or launched.

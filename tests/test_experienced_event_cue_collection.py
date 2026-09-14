@@ -328,5 +328,32 @@ class CueCollectionTests(unittest.TestCase):
             cue._rows_from_success(record['task'], record['episode'], calls, changed, transitions, 0)
 
 
+    def test_last_turn_feedback_only_placement_changes_and_teacher_stripped(self):
+        actor = PublicReadingActor()
+
+        def follow_public_feedback(messages):
+            public = deepcopy(messages)
+            public[-1]['content'] = public[-1]['content'].split(cue.PUBLIC_FEEDBACK_PREFIX)[0]
+            result = actor(public)
+            result['messages'] = deepcopy(messages)
+            return result
+
+        result = cue.run_collection(self.bank, self.memory, follow_public_feedback,
+                                    teaching_mode=cue.LAST_TURN_FEEDBACK_MODE)
+        self.assertEqual(result['selected_successes'], 4)
+        self.assertEqual(result['external_memory_calls'], 6)
+        for call in result['actor_calls']:
+            public = call['public_messages']
+            system_mode = cue.guided_messages(public, teaching_mode=cue.PUBLIC_FEEDBACK_MODE)
+            self.assertEqual(call['guided_messages'][-1]['content'],
+                             public[-1]['content'] + cue.public_feedback(public))
+            self.assertEqual(call['guided_messages'][0]['content'],
+                             public[0]['content'] + cue.GUIDANCE)
+            self.assertEqual(system_mode[0]['content'], call['guided_messages'][0]['content']
+                             + cue.public_feedback(public))
+        self.assertTrue(all(cue.PUBLIC_FEEDBACK_PREFIX not in json.dumps(row['prefix'])
+                            for row in result['student_rows']))
+
+
 if __name__ == '__main__':
     unittest.main()
