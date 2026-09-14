@@ -30,3 +30,12 @@ Thirteen targeted CPU tests PASS; broader suite partial timeout preserved.
 Native readiness: both hosts have portable37ec/base/tokenizer/python;
 frozen source packaging, legacy CPU provenance export and fresh scans next.
 No Main/reader/fleet approval wait and no inference/fits launched yet.
+
+2026-09-14T22:46:29Z — native READY: sourcee97975ab published, frozen manifest
+5962776cf98f6e7bf509b5887d32f77e6edc267a3b7df2388060ac70448dcb53.
+22CPU testsPASS; exact legacy replay and both local model inventories verified.
+All six detached ownership scansCLEAR; attached-sshd scan failures preserved.
+Own dated preGPU notebook is `research_notes/analysis/orch_terse_breadth_20260914_notebook.md`.
+Publishing receipt then launching own six collection lanes; no Main approval
+needed. Common source and corrected fit batch remain frozen, no native results
+yet. Strongest existing266 contrast remains finite/gateFAIL, not a premise.

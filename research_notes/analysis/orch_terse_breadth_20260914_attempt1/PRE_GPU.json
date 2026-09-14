@@ -1,0 +1,331 @@
+{
+  "a100_base": {
+    "base": {
+      "expected_base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "model_dir": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+      "verified": true
+    },
+    "manifest_sha256": "5962776cf98f6e7bf509b5887d32f77e6edc267a3b7df2388060ac70448dcb53",
+    "model_calls": 0,
+    "utc": "2026-09-14T22:46:28.382690+00:00"
+  },
+  "archives": {
+    "a100_provenance.tar.gz": "5849327b1a310bbe0910de7c243428f16fcdef30084314a791046fc7dbd6eebb",
+    "prepare_node3.tar.gz": "a45af58f05c3049242db71f0eda696c11dbdabbffd7de173e36f8d27e6c998e2",
+    "source.tar.gz": "e67101fefff3178b7fec282fee1dd95b95a2ba6cbeadceacc34f1a88e9431917"
+  },
+  "fits": 0,
+  "manifest_sha256": "5962776cf98f6e7bf509b5887d32f77e6edc267a3b7df2388060ac70448dcb53",
+  "native_calls": 0,
+  "node3_prepare": {
+    "finished_utc": "2026-09-14T22:44:58.985864+00:00",
+    "fits": 0,
+    "manifest_sha256": "5962776cf98f6e7bf509b5887d32f77e6edc267a3b7df2388060ac70448dcb53",
+    "model_calls": 0,
+    "phase": "prepare",
+    "pid": 100248,
+    "started_utc": "2026-09-14T22:43:54.127648+00:00",
+    "status": "PREPARED_NO_MODEL",
+    "updates": 0,
+    "wall_seconds": 64.85823011398315
+  },
+  "physical_scans": [
+    {
+      "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+      "clear": true,
+      "compute_apps": "",
+      "gpus": "0, GPU-0ee6f753-c61e-e18a-8aea-acccd3042939, NVIDIA A40, 580.173.02, 46068, 1\n1, GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821, NVIDIA A40, 580.173.02, 46068, 1\n2, GPU-41a86250-88eb-ed8a-ddfe-9d6f93515da1, NVIDIA A40, 580.173.02, 46068, 1\n3, GPU-e1277146-04f2-c38f-d1ae-1a98132f907e, NVIDIA A40, 580.173.02, 46068, 1\n4, GPU-f484c608-a2d4-0c26-dee1-a06cc5ae69e4, NVIDIA A40, 580.173.02, 46068, 1\n5, GPU-bc211959-642d-664b-3581-42a0dbe434e9, NVIDIA A40, 580.173.02, 46068, 1\n6, GPU-1a83d900-1e95-c7b4-9b12-8117399697f8, NVIDIA A40, 580.173.02, 46068, 1\n7, GPU-319224de-e668-1822-d80b-4b24d15968ae, NVIDIA A40, 580.173.02, 46068, 1\n",
+      "owners": [],
+      "scanned_live": 12,
+      "service_exceptions": [
+        {
+          "cgroup": "0::/user.slice/user-2524.slice/user@2524.service/init.scope\n",
+          "cgroup_sha256": "a24a693fd0ef4e68443721bb82f37eb7546ff55cb046ba640487e4cd98748bed",
+          "cmdline_sha256": "3127082f907652bfa48e38fddcaf16c3e73b2da5a2d64602eafe88869c222925",
+          "comm": "systemd",
+          "comm_sha256": "12e6ff4feb1b552a431b41d3935d33f08f9d75ddb8a88f645f4cf231bc05e820",
+          "identity": {
+            "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+            "pgid": 3792,
+            "pid": 3792,
+            "sid": 3792,
+            "start_ticks": 14019,
+            "uid": 2524
+          },
+          "ppid": 1,
+          "role": "user_manager"
+        },
+        {
+          "cgroup": "0::/user.slice/user-2524.slice/user@2524.service/init.scope\n",
+          "cgroup_sha256": "a24a693fd0ef4e68443721bb82f37eb7546ff55cb046ba640487e4cd98748bed",
+          "cmdline_sha256": "971490059d839d27af3ded30a476216b92689d837b0236a700723fb13640e370",
+          "comm": "(sd-pam)",
+          "comm_sha256": "8e2daf3d78d113ebf2447fc82d98ba4d9c26a8e3e4fac8ac2d01ee34cbbc1dbd",
+          "identity": {
+            "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+            "pgid": 3792,
+            "pid": 3797,
+            "sid": 3792,
+            "start_ticks": 14021,
+            "uid": 2524
+          },
+          "ppid": 3792,
+          "role": "pam_helper"
+        }
+      ],
+      "uid": 2524,
+      "unresolved": [],
+      "utc": "2026-09-14T22:44:51.600234+00:00",
+      "zombies": []
+    },
+    {
+      "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+      "clear": true,
+      "compute_apps": "",
+      "gpus": "0, GPU-0ee6f753-c61e-e18a-8aea-acccd3042939, NVIDIA A40, 580.173.02, 46068, 1\n1, GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821, NVIDIA A40, 580.173.02, 46068, 1\n2, GPU-41a86250-88eb-ed8a-ddfe-9d6f93515da1, NVIDIA A40, 580.173.02, 46068, 1\n3, GPU-e1277146-04f2-c38f-d1ae-1a98132f907e, NVIDIA A40, 580.173.02, 46068, 1\n4, GPU-f484c608-a2d4-0c26-dee1-a06cc5ae69e4, NVIDIA A40, 580.173.02, 46068, 1\n5, GPU-bc211959-642d-664b-3581-42a0dbe434e9, NVIDIA A40, 580.173.02, 46068, 1\n6, GPU-1a83d900-1e95-c7b4-9b12-8117399697f8, NVIDIA A40, 580.173.02, 46068, 1\n7, GPU-319224de-e668-1822-d80b-4b24d15968ae, NVIDIA A40, 580.173.02, 46068, 1\n",
+      "owners": [],
+      "scanned_live": 12,
+      "service_exceptions": [
+        {
+          "cgroup": "0::/user.slice/user-2524.slice/user@2524.service/init.scope\n",
+          "cgroup_sha256": "a24a693fd0ef4e68443721bb82f37eb7546ff55cb046ba640487e4cd98748bed",
+          "cmdline_sha256": "3127082f907652bfa48e38fddcaf16c3e73b2da5a2d64602eafe88869c222925",
+          "comm": "systemd",
+          "comm_sha256": "12e6ff4feb1b552a431b41d3935d33f08f9d75ddb8a88f645f4cf231bc05e820",
+          "identity": {
+            "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+            "pgid": 3792,
+            "pid": 3792,
+            "sid": 3792,
+            "start_ticks": 14019,
+            "uid": 2524
+          },
+          "ppid": 1,
+          "role": "user_manager"
+        },
+        {
+          "cgroup": "0::/user.slice/user-2524.slice/user@2524.service/init.scope\n",
+          "cgroup_sha256": "a24a693fd0ef4e68443721bb82f37eb7546ff55cb046ba640487e4cd98748bed",
+          "cmdline_sha256": "971490059d839d27af3ded30a476216b92689d837b0236a700723fb13640e370",
+          "comm": "(sd-pam)",
+          "comm_sha256": "8e2daf3d78d113ebf2447fc82d98ba4d9c26a8e3e4fac8ac2d01ee34cbbc1dbd",
+          "identity": {
+            "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+            "pgid": 3792,
+            "pid": 3797,
+            "sid": 3792,
+            "start_ticks": 14021,
+            "uid": 2524
+          },
+          "ppid": 3792,
+          "role": "pam_helper"
+        }
+      ],
+      "uid": 2524,
+      "unresolved": [],
+      "utc": "2026-09-14T22:44:51.912012+00:00",
+      "zombies": []
+    },
+    {
+      "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+      "clear": true,
+      "compute_apps": "",
+      "gpus": "0, GPU-ff5f84e9-c70e-272d-a8e0-eb20aad05ac6, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n1, GPU-604c4ea8-8c29-099e-76ed-571ec7d9be4b, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n2, GPU-8e15ce78-4e9c-4c48-724f-2b753c6c2296, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n3, GPU-631f3e6a-fbce-0ec5-b934-f08dd64634f8, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n4, GPU-31583768-d90f-520c-51ed-5dac761526d0, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n5, GPU-c1650c7f-ac26-f1a0-2ab8-c7354a6f27c9, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n6, GPU-6de3930d-104a-f969-7d36-009271368dd1, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n7, GPU-f0405a96-813d-7ac7-d641-3ec31d103037, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n",
+      "owners": [],
+      "scanned_live": 11,
+      "service_exceptions": [
+        {
+          "cgroup": "0::/user.slice/user-1395.slice/user@1395.service/init.scope\n",
+          "cgroup_sha256": "e75850dbf3e053a60bf767a7611e2a6f5e421f36fe9ba742b4f4f60ce329c2b3",
+          "cmdline_sha256": "3127082f907652bfa48e38fddcaf16c3e73b2da5a2d64602eafe88869c222925",
+          "comm": "systemd",
+          "comm_sha256": "12e6ff4feb1b552a431b41d3935d33f08f9d75ddb8a88f645f4cf231bc05e820",
+          "identity": {
+            "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+            "pgid": 4680,
+            "pid": 4680,
+            "sid": 4680,
+            "start_ticks": 3355,
+            "uid": 1395
+          },
+          "ppid": 1,
+          "role": "user_manager"
+        },
+        {
+          "cgroup": "0::/user.slice/user-1395.slice/user@1395.service/init.scope\n",
+          "cgroup_sha256": "e75850dbf3e053a60bf767a7611e2a6f5e421f36fe9ba742b4f4f60ce329c2b3",
+          "cmdline_sha256": "971490059d839d27af3ded30a476216b92689d837b0236a700723fb13640e370",
+          "comm": "(sd-pam)",
+          "comm_sha256": "8e2daf3d78d113ebf2447fc82d98ba4d9c26a8e3e4fac8ac2d01ee34cbbc1dbd",
+          "identity": {
+            "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+            "pgid": 4680,
+            "pid": 4683,
+            "sid": 4680,
+            "start_ticks": 3358,
+            "uid": 1395
+          },
+          "ppid": 4680,
+          "role": "pam_helper"
+        }
+      ],
+      "uid": 1395,
+      "unresolved": [],
+      "utc": "2026-09-14T22:44:50.513060+00:00",
+      "zombies": []
+    },
+    {
+      "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+      "clear": true,
+      "compute_apps": "",
+      "gpus": "0, GPU-ff5f84e9-c70e-272d-a8e0-eb20aad05ac6, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n1, GPU-604c4ea8-8c29-099e-76ed-571ec7d9be4b, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n2, GPU-8e15ce78-4e9c-4c48-724f-2b753c6c2296, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n3, GPU-631f3e6a-fbce-0ec5-b934-f08dd64634f8, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n4, GPU-31583768-d90f-520c-51ed-5dac761526d0, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n5, GPU-c1650c7f-ac26-f1a0-2ab8-c7354a6f27c9, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n6, GPU-6de3930d-104a-f969-7d36-009271368dd1, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n7, GPU-f0405a96-813d-7ac7-d641-3ec31d103037, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n",
+      "owners": [],
+      "scanned_live": 11,
+      "service_exceptions": [
+        {
+          "cgroup": "0::/user.slice/user-1395.slice/user@1395.service/init.scope\n",
+          "cgroup_sha256": "e75850dbf3e053a60bf767a7611e2a6f5e421f36fe9ba742b4f4f60ce329c2b3",
+          "cmdline_sha256": "3127082f907652bfa48e38fddcaf16c3e73b2da5a2d64602eafe88869c222925",
+          "comm": "systemd",
+          "comm_sha256": "12e6ff4feb1b552a431b41d3935d33f08f9d75ddb8a88f645f4cf231bc05e820",
+          "identity": {
+            "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+            "pgid": 4680,
+            "pid": 4680,
+            "sid": 4680,
+            "start_ticks": 3355,
+            "uid": 1395
+          },
+          "ppid": 1,
+          "role": "user_manager"
+        },
+        {
+          "cgroup": "0::/user.slice/user-1395.slice/user@1395.service/init.scope\n",
+          "cgroup_sha256": "e75850dbf3e053a60bf767a7611e2a6f5e421f36fe9ba742b4f4f60ce329c2b3",
+          "cmdline_sha256": "971490059d839d27af3ded30a476216b92689d837b0236a700723fb13640e370",
+          "comm": "(sd-pam)",
+          "comm_sha256": "8e2daf3d78d113ebf2447fc82d98ba4d9c26a8e3e4fac8ac2d01ee34cbbc1dbd",
+          "identity": {
+            "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+            "pgid": 4680,
+            "pid": 4683,
+            "sid": 4680,
+            "start_ticks": 3358,
+            "uid": 1395
+          },
+          "ppid": 4680,
+          "role": "pam_helper"
+        }
+      ],
+      "uid": 1395,
+      "unresolved": [],
+      "utc": "2026-09-14T22:44:50.826205+00:00",
+      "zombies": []
+    },
+    {
+      "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+      "clear": true,
+      "compute_apps": "",
+      "gpus": "0, GPU-ff5f84e9-c70e-272d-a8e0-eb20aad05ac6, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n1, GPU-604c4ea8-8c29-099e-76ed-571ec7d9be4b, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n2, GPU-8e15ce78-4e9c-4c48-724f-2b753c6c2296, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n3, GPU-631f3e6a-fbce-0ec5-b934-f08dd64634f8, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n4, GPU-31583768-d90f-520c-51ed-5dac761526d0, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n5, GPU-c1650c7f-ac26-f1a0-2ab8-c7354a6f27c9, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n6, GPU-6de3930d-104a-f969-7d36-009271368dd1, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n7, GPU-f0405a96-813d-7ac7-d641-3ec31d103037, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n",
+      "owners": [],
+      "scanned_live": 11,
+      "service_exceptions": [
+        {
+          "cgroup": "0::/user.slice/user-1395.slice/user@1395.service/init.scope\n",
+          "cgroup_sha256": "e75850dbf3e053a60bf767a7611e2a6f5e421f36fe9ba742b4f4f60ce329c2b3",
+          "cmdline_sha256": "3127082f907652bfa48e38fddcaf16c3e73b2da5a2d64602eafe88869c222925",
+          "comm": "systemd",
+          "comm_sha256": "12e6ff4feb1b552a431b41d3935d33f08f9d75ddb8a88f645f4cf231bc05e820",
+          "identity": {
+            "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+            "pgid": 4680,
+            "pid": 4680,
+            "sid": 4680,
+            "start_ticks": 3355,
+            "uid": 1395
+          },
+          "ppid": 1,
+          "role": "user_manager"
+        },
+        {
+          "cgroup": "0::/user.slice/user-1395.slice/user@1395.service/init.scope\n",
+          "cgroup_sha256": "e75850dbf3e053a60bf767a7611e2a6f5e421f36fe9ba742b4f4f60ce329c2b3",
+          "cmdline_sha256": "971490059d839d27af3ded30a476216b92689d837b0236a700723fb13640e370",
+          "comm": "(sd-pam)",
+          "comm_sha256": "8e2daf3d78d113ebf2447fc82d98ba4d9c26a8e3e4fac8ac2d01ee34cbbc1dbd",
+          "identity": {
+            "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+            "pgid": 4680,
+            "pid": 4683,
+            "sid": 4680,
+            "start_ticks": 3358,
+            "uid": 1395
+          },
+          "ppid": 4680,
+          "role": "pam_helper"
+        }
+      ],
+      "uid": 1395,
+      "unresolved": [],
+      "utc": "2026-09-14T22:44:51.130955+00:00",
+      "zombies": []
+    },
+    {
+      "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+      "clear": true,
+      "compute_apps": "",
+      "gpus": "0, GPU-ff5f84e9-c70e-272d-a8e0-eb20aad05ac6, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n1, GPU-604c4ea8-8c29-099e-76ed-571ec7d9be4b, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n2, GPU-8e15ce78-4e9c-4c48-724f-2b753c6c2296, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n3, GPU-631f3e6a-fbce-0ec5-b934-f08dd64634f8, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n4, GPU-31583768-d90f-520c-51ed-5dac761526d0, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n5, GPU-c1650c7f-ac26-f1a0-2ab8-c7354a6f27c9, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n6, GPU-6de3930d-104a-f969-7d36-009271368dd1, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n7, GPU-f0405a96-813d-7ac7-d641-3ec31d103037, NVIDIA A100 80GB PCIe, 580.173.02, 81920, 0\n",
+      "owners": [],
+      "scanned_live": 11,
+      "service_exceptions": [
+        {
+          "cgroup": "0::/user.slice/user-1395.slice/user@1395.service/init.scope\n",
+          "cgroup_sha256": "e75850dbf3e053a60bf767a7611e2a6f5e421f36fe9ba742b4f4f60ce329c2b3",
+          "cmdline_sha256": "3127082f907652bfa48e38fddcaf16c3e73b2da5a2d64602eafe88869c222925",
+          "comm": "systemd",
+          "comm_sha256": "12e6ff4feb1b552a431b41d3935d33f08f9d75ddb8a88f645f4cf231bc05e820",
+          "identity": {
+            "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+            "pgid": 4680,
+            "pid": 4680,
+            "sid": 4680,
+            "start_ticks": 3355,
+            "uid": 1395
+          },
+          "ppid": 1,
+          "role": "user_manager"
+        },
+        {
+          "cgroup": "0::/user.slice/user-1395.slice/user@1395.service/init.scope\n",
+          "cgroup_sha256": "e75850dbf3e053a60bf767a7611e2a6f5e421f36fe9ba742b4f4f60ce329c2b3",
+          "cmdline_sha256": "971490059d839d27af3ded30a476216b92689d837b0236a700723fb13640e370",
+          "comm": "(sd-pam)",
+          "comm_sha256": "8e2daf3d78d113ebf2447fc82d98ba4d9c26a8e3e4fac8ac2d01ee34cbbc1dbd",
+          "identity": {
+            "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+            "pgid": 4680,
+            "pid": 4683,
+            "sid": 4680,
+            "start_ticks": 3358,
+            "uid": 1395
+          },
+          "ppid": 4680,
+          "role": "pam_helper"
+        }
+      ],
+      "uid": 1395,
+      "unresolved": [],
+      "utc": "2026-09-14T22:44:51.436125+00:00",
+      "zombies": []
+    }
+  ],
+  "source_commit": "e97975ab70d81bbb9e1fe8ccb65a80f3dde5aa65",
+  "source_sha256": "e67101fefff3178b7fec282fee1dd95b95a2ba6cbeadceacc34f1a88e9431917",
+  "status": "CPU_PROVENANCE_PASS_NO_INFERENCE",
+  "tests": {
+    "earlier_partial_timeout_preserved": true,
+    "targeted_and_layout": 13,
+    "unchanged_quality_runner": 9
+  },
+  "utc": "2026-09-14T22:47:06.852570+00:00"
+}
