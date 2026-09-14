@@ -1,4 +1,14 @@
-## Current superseding snapshot — 2026-09-14 17:35 UTC
+## Current superseding snapshot — 2026-09-14, after17:45:05UTC
+
+LIVE broaderreadonlysourcecollection node2GPU0 guardian410134,source3ddb8a2f,
+root/tmp/astra_goal_breadth_collection_20260914_attempt1. EXPOSE71/80at17:47:27;
+thenTEACH192/BASELINE288caps. No newfitlaunched. Fitcode35ce08d3/Main7CPUtestsPASS
+readyforactual-dataadmissionaftercollection. SEQ256closed/reviewPASS; prose
+through256committedfa0fc2c0, boundedindependentclaimreviewrunning. Rohin65
+articulationdiscussionanswered; no experimentamendment. CurrentHANDOFFpaths.
+FullmissionACTIVE/INCOMPLETE. Preservewatcher-owneddirtyastra_nudge.sh.
+
+## Historical superseded snapshot — 2026-09-14 17:35 UTC
 
 SEQ256terminal; noMainGPUjoblive. Matched400updateFULL/controlprimarytie2/4
 PROBEpairs5/8tasks; TRAIN4/4pairs vs0/4; botholdtaught3→2/4. TargetFAIL,

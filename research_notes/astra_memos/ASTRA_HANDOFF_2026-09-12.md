@@ -1,4 +1,28 @@
-# Astra restart handoff — current override 2026-09-14 17:35 UTC
+# Astra restart handoff — current override 2026-09-14, after17:45:05UTC
+
+## CURRENT — broader source collection LIVE; subsequent fit code tested
+
+Node2GPU0 guardian410134 started17:45:05UTC. Root
+/tmp/astra_goal_breadth_collection_20260914_attempt1; source
+3ddb8a2f168a03c9f19252358fc429bb6f526230. Main13helper+9collectorCPUtestsPASS,
+actual-sourcepreparePASS; physical+CVDadmissionpassed. EXPOSE71/80callsat17:47:27,
+thenTEACH192cap thenBASELINE288cap. Allreadonly37ec, nofits. Inspectstage
+RESULT/FAILED.json, CALLfiles,root/run.log,launch/. Neverrepeatcompletedstages.
+
+Nextcode gpu/astra_goal_breadth_train.py/guard/test committed35ce08d3;
+Main7focusedCPUtestsPASS,worker29combinedPASS. Beforelaunch, waitactual192target
+collection+baselinecompletion, archive reviewedsource, andnativeprepare onreal
+data. Two414row/1632updatearms underb960e20bprotocol; notlaunchedyet. Guardians
+cap11220seach; FULL/controlmaskonlynew192targets, legacy12retained16timeseach.
+SEQ256closedfailure/reviewPASS32f2533d. SummaryCLI committed3ddb8a2f,
+actualcomparison_summary.json matchesallrecordedcommonfields/noissues.
+Writingthrough256committedfa0fc2c0; Ramanujanreviews248–256proseonlyinparallel.
+Rohinmessage65answeredat5bacf836andnotebook; articulation remainsaseparateidea,
+notarulingorsilentchange. No newnode1work/no kills. Preserveadditionaldirty
+gpu/vm_watchers/astra_nudge.sh (notMain-owned), rulesanduntrackedtwo_sleepdraft.
+Heavyarchiveson/data (~37GBfree); VMroot~1.2GBfree. MissionACTIVE/INCOMPLETE.
+
+## Historical superseded snapshot — 2026-09-14 17:35 UTC
 
 ## CURRENT — SEQ256 terminal, recipe closed; broader actual-data collection next
 
