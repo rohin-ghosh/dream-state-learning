@@ -1015,3 +1015,80 @@ prospectively records DEV simple-hygiene exception: installed versions/metadata
 and measured local identity, not original-wheel attestation; final-paperC11 gap
 explicit. Exact torch/build/runtime version mismatches still block until
 localized. No package/base/source science invariant is silently changed.
+
+## OVERRIDE — 2026-09-14T05:38Z — native CPU PASS; reduced GPU screen LIVE
+
+Mission remains ACTIVE/incomplete. Do not rerun source qualification, separation,
+node1 baseline preservation or completed nativeCPU checks. New work below
+supersedes the04:51CPU-only handoff. Read newest COORDINATION entries, including
+Rohin message55 and Fable's05:34audit; prioritize actual experiments over guards.
+
+Source gates: SEQ-199 qualification2PASS512/512,209tests; retained separation
+replay2SEPARATED816envelopes. Popper's independent source reviewPASS. Verified
+evidence remains node2 /tmp/astra_stage2a_native_evidence_20260914_attempt1/extracted/.
+Three original root basenames and hashes remain in the notebook; do not restage.
+
+NativeCPU5 source123f0ae2 PASS; root
+/tmp/astra_stage2a_native_source_20260914_attempt5/prepare.
+RESULT SHAd886562291e4a3270c6e6c29e05378738fad40a43815ce4e4ce896b4b19c8a5d;
+basea2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992;
+initialadapter0a4e56fd1abc67e3e8fbd4e114e728dbf9d423cac2d84f0bdad5e592170a85ce;
+tokenreceipt3b50644edb1671517456970b48bc16d596f136a3a675fad93eea0589b2606f55.
+Full512real records/512conditional batch masks/costs retained. Initial model
+and adapter loaded/checked onCPU, no forward/update in that preparation.
+Failures1/2/3/4 preserved: backend drift; staging empty package marker;
+chat-template BatchEncoding default; nonpersistentfp32rotary hash-domain bug.
+Repairs preserve exact official backend, force return_dict=False interface,
+bind tokenizers0.22.2, use original state_dict hash and separate auxiliary checks.
+No qualified organism_v6 source changed. Native models11tinyCPUtests and entry19
+tests passed; later nonreportable-reporting fix brings entry tests to20.
+
+CPU5 evidence now verified locally under
+gpu_artifacts_local/astra_stage2a_native_success_preservation_20260914_attempt1/:
+845files334971738bytes, archiveSHA055d8531f8b6fbb8f030af51c6285f9b182c3978918526d2ce6b704bab362211.
+Explicitly excludes duplicate preflight/source-boundary custody1037files;
+EXCLUSIONS.json records it. CPU1failure preserved separately under
+gpu_artifacts_local/astra_stage2a_native_failure_preservation_20260914_attempt1/.
+
+LIVE reduced screen: node2 GPUs0BASE/1ATOM, guardian310493, child310509,
+started05:28:37UTC. Root /tmp/astra_stage2a_reduced_20260914_attempt1/;
+read run.log and run/RESULT.json or run/FAILED.json. GPUs0/1 RESERVED even when
+0MiB; CVD includes exactUUIDs in local launch_intent.json. No other newGPUlaunch.
+Models physically placed by05:32; BASE native custody exists; GPU1 training
+uses~36GiB. Completion counts and numerical results NOT yet inspected.
+Command/source/guard/lease bound at
+gpu_artifacts_local/astra_stage2a_reduced_20260914_attempt1/launch_intent.json.
+Source123f0ae2 is immutable; current checkout is newer.10800swall cap, max6
+reservedA40h, source/master/material/recipe unchanged;1exploratorylearner.
+Node2expirySeptember21 08:43UTC, six-hour cutoff checked. Node1expires today
+23:14UTC, no work here; baseline verified offnode already, do not repeat it.
+
+Important terminal caveat: old entry can label invalid empty reduction as
+REDUCED_NUMERICAL_DATA. Local fixec0a6deb checks reduction.reportable and retains
+issues; LIVEsource unchanged. Main bound prospective acceptance of exactly10
+nonempty criteria with original denominators/minima. Reducer emits them only
+when both states are reportable. Empty/incomplete criteria reject regardless
+of status; valid numeric misses stay data. No outcome-based threshold changes.
+New gpu/astra_stage2a_terminal_summary.py provides bounded receipt/criteria/loss
+summary (not independent replay); tests5PASS, not yet committed at this override.
+
+Agents: Euclid01a09e54-08bf-7fe3-96b7-62d6c61ffd48 owns only new
+gpu/astra_pchain2_prepare.py + matching test, still working; no native rights.
+Dewey01a09e64-a8e8-7871-8817-b1bfaa88749f completed source-only D2resume/test:
+14focused/83adjacent syntheticPASS, not yet committed byMain. It restores full
+D1state and runsD2without BASE rerun; existing reducer cannot reduceD2 or reload
+liveBASE from custody, so remains completed_unreduced with explicit missing seam.
+Do not call it launch-ready. Confucius finished preservation. Popper closed after
+native review; resume for terminal review if useful. Main owns integration and
+all existing native files. Preserve unrelated dirty gpu/codex/dream_state.rules
+and untracked two_sleep_junction_prospective_packet_draft.md.
+
+Next: inspect actual terminal screen and finite training receipts, summarize
+criteria/cost/limits, verify hashes and review results. ConditionalD2 only for
+declared eligible acquisition/chain miss with intact canaries/custody/loss; not
+arbitrary gain-only/base-ceiling misses. Complete its remaining analysis/native
+seam only if needed. Advance independent P-CHAIN-2 in parallel; it was never
+implemented before this turn and is NOT a serial prerequisite for recurrent
+controller integration under the later critical-path ruling. Stage2A trains
+TEXT-memory controller behavior; weights-only hopping is distinct. No new H1,
+H2, G1–G3, mechanism freeze, parent-removal comparison or campaign claim yet.
