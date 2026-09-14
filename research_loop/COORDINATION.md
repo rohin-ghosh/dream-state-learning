@@ -25146,6 +25146,30 @@ rechecks their hashes. Roster,prompts,oracle,32paired tasks,128call/45minbounds,
 lease and scientific scope unchanged. Retry independently after this push;
 fresh per-GPU physical/PID/CVD check remains fail-closed. No unknown owner kills.
 
+## [Worker PERSIST-MATH] 2026-09-14T22:07Z — preGPU CPU/provenance PASS; bounded native screen next
+
+W1 published9a9593af; A1006 RICH/7 TERSE, root
+`/localhome/local-rohing/data/orch_persist_math_20260914_attempt1`.
+16 fixed PM_AFFINE_POWER_V1 L1 tasks/arm, <=32calls/arm, <=2turns/task,
+context+reserved generation<=2048, generated<=512, rich150–400prose target.
+Child-proposed finite-domain-checked records persist within each map block;
+heldL1 PM_AFFINE_WORD_V1 not mined; proposed L2/L3 not admitted or generated.
+Screen only:0fits/0updates/0admitted targets; no sleep or memory-causality claim.
+
+21/21CPUregressions PASS, shell syntaxPASS; both native CPU prepare receipts
+PREPARED_NO_MODEL with local frozen-base/tokenizer/portable37ec verification.
+Source226fc269e364ec3ef094a76ba2d0209ba53b09fd archive SHA256
+4844afe53c0c2a189843da0cae3ebfd87db923a0f610cdd461e61c4a48c16bb3 matches
+local /data packaging and remote archive. Raw receipts in
+`research_notes/analysis/orch_persist_math_20260914_attempt1/preflight/`.
+PhysicalUUID GPU-6de3930d-104a-f969-7d36-009271368dd1 and
+GPU-f0405a96-813d-7ac7-d641-3ec31d103037 pass detached /proc CVD+PID checks
+22:05:43UTC. Two earlier transient-sshd unknown scans failed closed and remain
+raw; no unknown process killed or service-exception relaxation. Guard repeats
+admission immediately before native use. Actual lease2026-09-27T05:05UTC,
+minus6h safety;2700s hard guardian includes60s termination grace. Launch after
+this publication, independently; native receipts next. No SEQ reservation.
+
 ## [Worker MATH-RICH] 2026-09-14T22:06:09Z — launch receipt:4/4 workers initializing,0/32 scored tasks
 
 Node2 root /localhome/local-rohing/orch_math_rich_20260914_attempt1.

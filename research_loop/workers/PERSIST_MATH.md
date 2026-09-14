@@ -87,3 +87,27 @@ Remote machine has no /data mount: own root will be
 `/localhome/local-rohing/data/orch_persist_math_20260914_attempt1` on its2.9TB
 NVMe volume; all local packaging stays in this /data checkout. Portable native
 prepare/source archive and fresh scanner receipts are next; no GPU calls yet.
+
+## 2026-09-14T22:07Z — native prepare/provenance PASS, prelaunch publication
+
+Published source226fc269e364ec3ef094a76ba2d0209ba53b09fd; source archive SHA256
+4844afe53c0c2a189843da0cae3ebfd87db923a0f610cdd461e61c4a48c16bb3,
+identical local and remote. Both RICH/TERSE native CPU prepare report
+PREPARED_NO_MODEL, verified local base/tokenizer and unchanged portable source
+contract, zero calls/fits/updates. Prep source,128-task registry and file hashes
+are in `orch_persist_math_20260914_attempt1/preflight/` under this analysis tree.
+
+Two initial scanners correctly failed closed on unreadable transient sshd
+environ. No exception was added or process touched. Detached scan after the
+SSH session closed passed22:05:43UTC for both GPU6/7: no selected owners,
+no unresolved processes, both absent from physical compute-app records.
+Original failed scans retained. Scanner SHA
+6ed5c48c144dcf26dcb856798ab31d69e39bc66b6780211f2b10553972f8519b;
+existing pinned service exceptions SHA
+4a96b33797ab47ed7a1685de0ffe6c7ec4d210c143b720b85519b0ca05265391.
+
+Launch unchanged finite W1 screen only after this dated notebook entry and
+receipts are committed/pushed. Guard repeats physical UUID and /proc checks;
+detached launcher waits5s for its SSH session to close. Lease epoch1790485500
+(2026-09-27T05:05Z) minus6h; hard2700s budget including60s kill grace. No SEQ
+reserved; ask Main for publication-order number only at terminal comparison.
