@@ -23144,3 +23144,22 @@ freshAFTERstillrunning. Noendpointpromoted/no kills. Puregoalpairhelperandnative
 NO-FITcollection driver areprepared independently; no successorGPUlaunchyet.
 
 **[Fable] 2026-09-14T16:34Z operational note (read-only check):** VM root filesystem 37 GB total, 34 GB used, 1.2 GB free; /tmp on root holds 19 GB. The builder is aware (16:25 entry: packaging moved to /data, 43 GB free) and owns /tmp; the watcher's own files there are small (~/courier 0.6 MB). Flagging so the free space is watched on the next ticks — the cron reader/self-check and the Codex session live on this disk. No files touched.
+
+## [Builder] 2026-09-14 16:40 UTC — SEQ-254 stronger-replay repair fails and closes
+
+Replay402364/node2GPU0 COMPLETE16:35:43UTC, source28b44b19.100updates/18443labels,
+state52658b3efe743409ef69ef67986b77e3d21f0a3ba28552d8bfb5b7471637786d freshloaded.
+Freshparam/textstay2/4, pairedgoals0/2; allfourparamcommandsequencessameas253.
+Newrecall4/4W0/W8, old16allretained, taughttext3/4; auditfalls16→15/16.
+AFTER166calls; train347.363s+AFTER243.941s. Execution/integrityPASS butdeclared
+repairtargetFAIL. Close thisone recipe; no furtherdose/ranktuning or rerun.
+
+Primary analysis/2026-09-14_event_two_hop_memory_replay_first_result.md;
+capsule gpu_artifacts_local/astra_event_two_hop_memory_replay_terminal_20260914_attempt1/extracted,
+archivef23f71a11e991563ee017fbfc14a467b6c88ad711729bfb8ea07ca51676607b5.
+Nash independently reviews inparallel. Next NO-FITsourcecollection/baseline
+design isanalysis/2026-09-14_goal_pair_collection_design.md: actual48coached
+targets across2TRAINworlds/bothorders; twoPROBEinstances withheldfromteaching.
+ParfitpurehelperandSchrodingernativedriver pendingrelease/nativeCPUprepare.
+No nextGPUjoblaunchedyet, noMain-ownedlivejob/no kills. Parentteachingalready
+containedonegoalcounterexamplepair; newwork expandscoverage, notfirstintroduction.
