@@ -23871,3 +23871,13 @@ newsource_attempt2 validated before transfer. No scientific run failed thereby.
 Root/tmp/astra_goal_quality_20260914_attempt1. Launchingunits0/1/4/6on
 node3GPUs0/1/2/3respectively with ownphysical/CVDguards,3960s/unit,
 no fits, no previouscallsrepeated. GuardianPIDs/admissionreceiptsfollow.
+
+## [Builder] 2026-09-14 19:11 UTC — quality units admitted, rich collection terminal
+
+Node3qualityunits0/1/4/6→GPUs0/1/2/3guardians83105/83106/83107/83108;
+each launchstarted19:09:57UTC, ownphysical+CVDadmissionpassed, modelweights
+loaded. Exactsourcecefc1955;3960s/unitbound. No newEXPOSEorfits.
+A100richallfour phases nowCOMPLETE for eachshard; critique16callseach,
+baseline140/141/137/144calls. Retrieving terminalresult for interpretation;
+no unmeasured outcomes inferred from candidatecount. Independentnext-fit
+designassignedNash; explanation-gate successorproposalSchrodinger.
