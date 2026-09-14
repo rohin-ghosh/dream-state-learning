@@ -26797,3 +26797,48 @@ fresh16/16pair readout, not another training-seed replication. Parents can
 discuss the child's training outcomes and learning process; sealed panel/test
 scores must remain hidden under the standing invariant. No new design or
 launch gate is being imposed here.
+
+## [Fable VM result read] 2026-09-14T23:37Z — SEQ-276 VERIFIED; SEQ-277 VERIFIED
+
+SEQ-276 (MATH-REPLICATION, node 3; heading untagged `## SEQ-276 — …`). Entry names no node root; receipts read from the repo copy research_notes/analysis/orch_math_replication_20260914_attempt1/ (commit f52028ce, on main). INDEPENDENT_REDUCTION.json sha256 86887e47…; BOUND_SEMANTIC_REVIEWS.json sha256 02d72186…
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| rich correct | 31/32 | 31/32 | final/INDEPENDENT_REDUCTION.json primary.rich/denominator |
+| terse correct | 10/32 | 10/32 | same, primary.terse |
+| paired rich-only / terse-only | 21 / 0 | 21 / 0 | same, primary.rich_only/terse_only |
+| exact McNemar two-sided | 9.5367431640625e-7 | 9.5367431640625e-07 | same, primary.exact_mcnemar_two_sided |
+| fulltext candidates reviewed | 47 | 47 (21 rich + 26 record; reviewed_rows 47) | same, semantic.* and BOUND_SEMANTIC_REVIEWS.json row count |
+| semantic PASS rows / tasks | 6 / 5 | 6 / 5 | same, semantic.pass_rows/pass_tasks |
+| semantic FAIL / pending | 41 / 0 | 41 / 0 | same, semantic.fail_rows/pending_rows |
+| PASS by kind (rich / record) | 3 / 3 | 3 / 3 | final/DIAGNOSTICS.json pass_rows_by_kind |
+| own-record yield | 3/31 | 3 PASS / 31 record calls | DIAGNOSTICS.json pass_rows_by_kind.record, by_kind.record.calls |
+| calls used | 96/128 (terse 32, rich 32, correction 1, record 31) | 96 (32, 32, 1, 31); cap not in file | INDEPENDENT_REDUCTION.json calls, by_kind.*.calls |
+| terse failures wrong-numeric / format / truncated | 15 / 7 / 0 | 15 / 7 / 0 | DIAGNOSTICS.json terse_failures, by_kind.terse.truncated |
+| shards exit 0 | 3 | 3 (index 2,3,4 exit_code 0) | DIAGNOSTICS.json native_terminals |
+| guardian GPU-hours | 0.23203955 | 0.23203955492332978 | DIAGNOSTICS.json aggregate_guardian_gpu_hours |
+| fits / updates | none | 0 / 0 | INDEPENDENT_REDUCTION.json fits, updates |
+
+Integrity: adapter hash "portable37ec" in entry matches all_end_adapter_hashes 37ec3788…; entry calls 96 = native_calls 96 in DIAGNOSTICS.json. Raw node-3 root not named in the entry and not connected to; repo copy is the receipt. Scope (builder's own limits): fixed fresh GSM8K cohort of 32, one frozen base and one adapter, no learning/H1/H2/novel-family claim; combined semantic-yield criterion NOT met (6<8).
+
+SEQ-277 (BASE-CONTRACT, node 2, root /localhome/local-rohing/orch_base_contract_20260914_attempt1/recovery1/). FINAL_REDUCTION.json sha256 on node = 38e47ced9256aef1fd08811fc8ae66e855b489e29f23e4f452f0be6305c14c23 (matches entry and the repo copy byte-for-byte); node CAPSULE_SHA256.txt = 46a097e3…3fea5de (matches entry).
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| tasks with any content pass BASE / ORIGINAL | 4/8 / 2/8 | 4/8 / 2/8 | FINAL_REDUCTION.json states.*.admitted_tasks/denominator |
+| initial content-gate passes | 4/8 / 1/8 | 4 / 1 | states.*.initial_admitted |
+| initial checker successes | 7/8 / 6/8 | 7 / 6 | states.*.initial_success |
+| own-record passes / attempted records | 0/7 / 1/6 | 0/7 / 1/6 | states.*.record_admitted; FINAL_ROWS.json kind=record by state (7, 6) |
+| provenance-complete content tasks | 3/8 / 2/8 | 3 / 2 | provenance_qualified_tasks |
+| paired BASE-only / ORIGINAL-only / both / neither | 2 / 0 / 2 / 4 | 2 / 0 / 2 / 4 | pairs[] BASE/ORIGINAL booleans |
+| CODE content tasks | 1/4 / 0/4 | 1/4 / 0/4 | by_domain.CODE.*.admitted_tasks |
+| MATH content tasks | 3/4 / 2/4 | 3/4 / 2/4 | by_domain.MATH.*.admitted_tasks |
+| unique native calls | 15 / 14; 29 unique / 32 cap | 15 / 14; 29 raw CALL_*.json under recovery1/shard0-3; 29 unique raw_file in FINAL_ROWS.json | states.*.calls; node ls |
+| median generated tokens | 231 / 123.5 | 231 / 123.5 | states.*.tokens |
+| full texts reviewed PASS / FAIL / UNRESOLVED | 29: 10 / 17 / 2 | 29: 10 / 17 / 2 | full_texts_reviewed; FINAL_ROWS.json semantic_status |
+| calls lacking post-mounted hash | 11 | 11 (BASE 7 + ORIGINAL 4) | historical_post_mounted_hash_missing; FINAL_ROWS.json post_mounted_hash_verified=false |
+| original replay exact | 8/8 | original_replay list 8, entry 0 exact=true (others not individually checked) | original_replay |
+| native GPU-hours | 0.308707821 | 0.30870782123671636 | native_gpu_hours |
+| fits | 0 | 0 | fits |
+
+Integrity: adapter prefix "37ec" appears only as a state name in the reduction (no adapter_sha256 field there; not re-derived from RESULT.json); entry's 29 unique calls = 29 raw CALL files on node = 15+14 in reduction. Not re-derived: "unambiguous initial successes 6/8 each" (no field in the reduction), 40/40 and 29/29 CPU replays. Scope (builder's own limits): eight already-exposed MBPP/GSM8K tasks, one frozen base vs one adapter, author-only full-text review, not a clean paired null; +2 content tasks misses the >=3 criterion.
