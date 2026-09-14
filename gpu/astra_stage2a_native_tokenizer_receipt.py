@@ -19,6 +19,7 @@ from collections import Counter
 from collections.abc import Mapping
 from dataclasses import dataclass, fields, is_dataclass
 from datetime import datetime, timezone
+from functools import partial
 from hashlib import sha256
 from importlib import metadata
 import json
@@ -434,9 +435,11 @@ def restore_official_backend(tokenizer, model_dir, official_files, output_dir):
                  "official_backend_restoration_failed")
         _require(wrapper == {name: getattr(tokenizer, name) for name in attributes}
                  and special_ids == tuple(tokenizer.all_special_ids), "backend_restoration_changed_wrapper")
+        tokenizer.apply_chat_template = partial(tokenizer.apply_chat_template, return_dict=False)
         return {"kind": "EXACT_OFFICIAL_NATIVE_BACKEND_RESTORATION", "tokenizers": RUNTIME_VERSIONS["tokenizers"],
                 "before_sha256": _digest(before), "reference_sha256": _digest(reference),
-                "after_sha256": _digest(after), "official_sha256": _digest(raw), "wrapper": wrapper}
+                "after_sha256": _digest(after), "official_sha256": _digest(raw), "wrapper": wrapper,
+                "chat_template_return_dict": False}
     finally:
         attempt.freeze()
 

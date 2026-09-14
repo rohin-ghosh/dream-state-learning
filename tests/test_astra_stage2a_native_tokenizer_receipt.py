@@ -457,6 +457,9 @@ class TokenizerReceiptTests(unittest.TestCase):
             def backend_tokenizer(self):
                 return self._tokenizer
 
+            def apply_chat_template(self, messages, *, return_dict=True):
+                return {"input_ids": [1]} if return_dict else [1]
+
         original = SimpleNamespace(to_str=lambda: '{"drift":true}')
         native = SimpleNamespace(to_str=lambda: '{"official":true}')
         wrapper = Wrapper(original)
@@ -468,6 +471,8 @@ class TokenizerReceiptTests(unittest.TestCase):
         self.assertEqual(result["after_sha256"], result["reference_sha256"])
         self.assertNotEqual(result["before_sha256"], result["after_sha256"])
         self.assertEqual((self.output / "before.json").read_text(), original.to_str())
+        self.assertEqual(wrapper.apply_chat_template([]), [1])
+        self.assertIs(result["chat_template_return_dict"], False)
 
     def test_restoration_rejects_changed_official_bytes_before_backend_load(self):
         with patch.object(receipt, "official_native_backend") as loader:

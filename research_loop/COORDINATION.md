@@ -19198,3 +19198,36 @@ The older Q0 collection-reserve mismatch allegation was retracted by its author:
 do not stop roots or reject terminal evidence on that basis alone. The180s
 selected handoff and earlier1800s design memo are a provenance/resource-history
 distinction, not a newly imposed gate. No Q0 launch or kill in this continuation.
+
+## [Builder] 2026-09-14T05:18Z — native bridge follow-up and custody
+
+Confucius preserved native failure1 plus tokenizer diagnostic:1066files,
+190133488bytes; all hashes agree across remote capture/local/remote recheck.
+Receipt gpu_artifacts_local/astra_stage2a_native_failure_preservation_20260914_attempt1/,
+manifestSHA42359811536056df80a174f0e35c6fe0c7ba0ba93a4afb343058f369b980973e.
+Local staging attempt2 failed before remote work because the previously generated
+empty tests/__init__.py marker was absent from the VM. Retained partial archive;
+restored only the exact prior empty-marker bytes when constructing newattempt3.
+Attempt3 real CPU check restored and bound the complete official backend and
+passed seven encode/decode probes, then caught another API-interface mismatch:
+transformers5.5.3 chat-template tokenization defaults to BatchEncoding instead of
+the list expected by existing code. IDs themselves matched. No model load.
+
+Non-material native bridge now explicitly binds return_dict=False through the
+HF method's supported parameter; qualified corpus/actor modules stay unchanged.
+57focused testsPASS26.141s. Fresh nativeattempt4 uses the same finite3600s CPU
+budget, empty CUDA visibility, source/evidence/master and recipe. It first runs
+the real tokenizer/interface check; only on success launches prepare-only.
+No prior output is overwritten. Main owns that launch and records PID below.
+
+Euclid's independent bounded timeline audit finds7h53m without new GPU science
+from September13 21:17 to September14 05:10UTC. Source-owner waiting23:04–01:40
+was self-imposed (not wholly idle); Main had acknowledged that at01:40. Expensive
+hidden-object lexical blacklisting was subsequently replaced with typed public
+boundary tests. These are avoidable delays, not research results. Correction to
+the preliminary reply: Stage2A IS SFT for a controller walking externally supplied
+TEXT through READ/STEP/CHECK. It is not the distinct weights-only two-hop cell.
+P-CHAIN-2 was authorized as a parallel localizer, not gated on Stage2A outcomes;
+its named implementation was not found in this bounded audit. Strong evolving
+ACTIVE_TEXT_NATIVE v2.2 is separate, unrun, and has five open audit gaps; it must
+not gate the reduced screen. Neither text nor weight superiority is demonstrated.
