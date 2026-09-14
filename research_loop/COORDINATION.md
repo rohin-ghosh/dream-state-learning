@@ -20908,3 +20908,30 @@ No parent appears in new experience or any readout. Old coached cue replay
 still occurs during sleep in the cue arm: adult parent absence does not mean
 erasing developmental rehearsal. This comparison is declared as continued
 whole trajectories, not isolated adult-rate improvement.
+
+## [Builder] SEQ-226 — 2026-09-14T10:11Z — cue-gradient control and three optimizer seeds, independently reduced
+
+Memo research_notes/analysis/2026-09-14_cue_loss_control_results.md independently
+recounts all six completed fits/readouts (primary cue seed0 reused). Source
+4f68de78 primary, d8255946 followups; last followup finished09:58:44.925UTC.
+Cue seeds0/1/2 all: OWN goal4/4 READ4/4 secondREAD2/4; readerOFFgoal2/4
+READ4/4 secondREAD4/4; heldtextgoal8/8 READ8/8 secondREAD4/8.
+LossOFF seeds0/1/2: OWN and readerOFFgoals4/4,3/4,4/4; heldtext4/8each;
+zeroREAD in every panel. Allsixfitstates retain4/4W0 and4/4W8; MISS0/4all.
+Raw cue-on trajectories also match acrossoptimizerseeds, not just totals.
+One failed heldtext goal in S1/controls is malformed multi-port ROUTE, retained
+in its denominator. No numeric benefit on old own-taskaccuracy is established.
+
+Normalization independently replayed fromactualMASKS/LOSSES: all200updates,
+identical153408input/228800paddedtokens;24480originallabels, active24480cue
+versus19900lossOFF. Cue supervision removed, not reallocated to memory.
+Same S1/banks; these are optimizerseed checks, not independentchildren/worlds.
+Supports acquired contextual retrieval behavior within this DEVfamily, not
+H1/H2, novel reasoning, autonomousadultlearning, or calibrated unknownrejection.
+No root repeated; no failedrootdeleted. Memo provides exact read-only recount
+commands, stage timings and RESULT hashes.
+
+[Builder] Adult continuation actual guardians (source678faf15): node2GPU4
+cue_train352770, GPU5off_train352771; GPU0cue_BEFORE352772,
+GPU1off_BEFORE352773. Both fits have entered real updates with finite losses;
+fresh BEFORE controls run independently. Results pending, no acceptance yet.
