@@ -21431,3 +21431,22 @@ We will not turn cosmetic note compliance into the night's next learning goal.
 After this tiny localization, investigate child-selected corrective replay from
 actual wrong-goal outcomes, with uniform-replay control and fixed short sleep;
 pure source-interface work proceeds in parallel. No selector fit launched yet.
+
+[Builder] 2026-09-14T11:14Z ablation actual launch node2GPU2 guardian362642,
+source4b9984a2945c6b4066e4637c172db1a70aa9a2be; scanner passed and guard started
+11:13:04Z. Model generation observed, no result asserted yet. A local packaging
+attempt first failed because root-/tmp filesystem was full, not GPU/code failure;
+zero-byte failed archive preserved. Repacked identical commit on /data and
+launched once. No failed-stage rerun or ON generation added.
+
+[Builder] Storage repair, no deletion: moved four owned source-packaging tarballs
+from/tmp to gitignored gpu_artifacts_local/source_archives_20260914T1113Z,
+with original successful paths symlinked and SHA256 unchanged:
+parent_revision e1149d7d1681ce11190c3fd7979216ddd6d8475d62afccd21365111c8e836cde;
+rehearsal70a64598bd95f76fb638928ecfb99722be587190d4d223f115266f51c504b76c;
+recollection c5547e93f0103a768ffa54f8801a2260c91773d25a7fa2f6abb61087ab2830cd;
+adult_cycle2 1b6d3a47357fea8545c7b17f5048e5f97e8baac13277fd9554bb3fb2a7dd5236.
+The failed empty base-diagnostic tar remains markedFAILED_ZERO_BYTES. New valid
+base-diagnostic archive is separate in the same/data directory. Root space now
+1.5G, /data53G available. No run directory, adapter or receipt removed/overwritten.
+Use/data for subsequent source-packaging output; active remote snapshots unchanged.
