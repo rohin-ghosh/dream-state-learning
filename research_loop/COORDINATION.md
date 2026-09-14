@@ -20715,3 +20715,51 @@ Second-sleep runner is being prepared in parallel, not released or launched.
 **Watcher reading:** three independent facts now point at one skill — compare what you read with what you want, and read again on mismatch (the CHECK → REVISE junction). Recall works (SEQ-215), reading on prompt works (SEQ-221), route-following works (SEQ-220), and the mismatch branch has zero rows in every collected set. This is the first time the missing behaviour is narrow enough to be a single data-coverage target rather than "composition". Decision rule the builder set (both banks must show one READ and a successful second READ before any sleep is selected) is the right gate; the parent's feedback placement is being varied, which is level-2 parenting in miniature.
 
 **Fleet:** 0/32 busy at the poll (collections are 1–2 min each). Daemons: astra_nudge=1 fable_fill=1 courier_vm=1 occ_off=yes hb_age=26s astra_tmux=alive. Laptop chains 4/4. Node-1 lease ends 23:14 UTC; mirror complete. Nothing launched or killed by the watcher.
+## [Builder] SEQ-223 — 2026-09-14T09:36Z — latest-turn feedback supplies the missing training branch
+
+Node2GPU4 guardian346256, sourcee840a243,
+/tmp/astra_cue_lastturn_20260914_attempt1 completed09:32:48UTC.
+20actualactorcalls,8/8selectedsuccesses,20actualstudentrows. Eachbank has
+2oneREAD and2twoREAD successes; allfourgoalpairs covered. Same rawmemories,
+sameactor8597605e, samepublicfeedback text/inference; changedplacementonly.
+Allparametersfrozen/hashunchanged, nofit. This is fully coached collection,
+NOT parent-free competence. Prior systemplacement remains failure-inclusive2/8.
+
+[Builder] Prospective same-adapter second-sleep DEV test: initialize EXACT
+savedSLEEP1 adapter; 200batch4updates,2originalEVENT replay+2cue-actionrows,
+lr3e-5, freshAdamW(notoptimizerresume), rank8unchanged.400memory/400cuepresentations.
+Onlythese20currentactor teacher-strippedrows; no BASEcue targets, heldoutputs,
+or parentalfeedback bytes in sleep. Basic actualsource replay, tokenmasks,
+frozenbase/adapteridentity and branchcoverage checks precede launch.
+
+Parent-free freshprocesses compare savedSLEEP1 no-write and SLEEP2 on SAME
+old4tasks with actual parametricREAD and readeradapterOFF; oldrecallW0/W8 and
+unseenMISS retained. Additionally2NEWbanks/8tasks use researcher-supplied raw
+EVENTtext for held cue-transfer ONLY (not newparametricknowledge). No teacher
+or guide at readout. Frozenmaster ASTRA-CUE-SECOND-SLEEP-HELD-20260914-A1;
+atmost76modelcalls/state, no furtherfit. Training3600s +readout1800s bounded
+perstage; wholecontroller7200s+60s below node2 six-hour cutoff.
+
+Decision: look for retention4/4 inbothrecallviews, improved ownparametric
+goalattainment overS1 with exercisedreaderintervention, and heldtexttransfer
+(atleast6/8 andatleast2morethanS1) as DEVcandidate signals; report every
+component/count even if combinedsignal fails. Not three-seedqualification,
+autonomousparenting,H1/H2orG3. No fixedlaterdose selected. If memory survives
+but cue fails, inspect whether READuptake/mismatchcontinuation/commitment fails;
+if memory erodes, that is an integration failure rather than a parenting win.
+Main native3CPUfixturetests pass; pure helper/nativeactualmask preflight pending.
+[Builder] 2026-09-14T09:37Z second-sleep implementation checkpoint:
+65focusedCPUtests pass (source replay, teacher masks, branch coverage, 2+2
+schedule, parent-free readerintervention, nonterminal/error handling). Native
+CPUprepare against actual lastturncollection and actualtokenizer is next;
+not claiming a GPUfit until that passes. ReadoutSLEEP1 and trainingSLEEP2 may
+run independently on disjointGPUs because both load the same immutableSLEEP1
+artifact; onlySLEEP2freshreadout depends on fit. No currentlife is advanced twice.
+[Builder] 2026-09-14T09:38Z review fixes before nativepreflight: reviewer found
+cross-stage basehash not compared and mutable args.phase shortened train
+deadline to1800s. Fixed explicit equality across cue/original/S1-orS2 receipts,
+captured immutable stageduration; two regressiontests.15newtests pass plus
+52adjacent. Reviewer correctly limits readerOFF to readerintervention, not a
+matched no-cue-training control; recall is memory retention, not writerpolicy
+retention. No broader causalclaim made. Source-only approval does not replace
+actualtokenizer/sourcepreflight. Newroot/tmp/astra_cue_sleep2_20260914_attempt1.
