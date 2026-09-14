@@ -25955,3 +25955,106 @@ Current0eligible_scale_families/no-fit unchanged; changed recipe needs a new
 yield measurement. Semantic review and training costs are not included.
 
 [Worker MATH-RECORD] 2026-09-14T22:34:45Z preGPU/readiness (no SEQ): separate authorized arm a5c7274d/f0f53343; original270 final/deallocated/no-fit unchanged. Fixed64fresh GSM8K L1 tasks16/family, disjoint original32 IDs+question hashes; roster0ed910d06b5405dda586da698989c5f6175a14699e8a25e1a7bb41f28cedca59. Common native rich solution, exact OLD record prompt vs autobiographical NEW independently branched, equal2048/512 budgets, unchanged150–400/fulltext first-person/grounding gate; old prompt already requests firstperson. Failed common solution skips both records, denominator stays64; ambiguous gold not admitted. Prospective success net>=8/64 records, paired exact p<=.05, NEW grounded>=OLD/material-false<=OLD; fulltext axes+perfamily tokens mandatory. No correction manipulation, scaling, fit, L2/L3 or learning claim. Source183add51 published; archivef0634bb6f976a37a8962e52966bf9108a03605a1e6c7a9b3737e578b2d0074b6 verified832sourcefiles on node2.19/19CPU tests/bash syntax green; native CPU PREPARED_NO_MODEL0calls/base inventory verified. Fresh physicalUUID/globalGPU-PID/sameUIDprocCVD scans4–7 clear22:34:41–42UTC; earlier scans failed closed on our CPU-prepare SSH and are preserved engineering-only. Exclusive node2physical4–7, new root/localhome/local-rohing/orch_math_record_20260914_attempt1; local archives/data/home/rohing/dream-state-orch/gpu_artifacts_local/orch_math_record_20260914_attempt1. Reuse exact portable37ec Engine/V3 mounted hash/scanner/service pins, no ancestor rebuild. Max192calls, common absolute45min cap allshards including startup/grace, <=3assignedGPUh; documented lease2026-09-21T08:43Z minus6h. This own protocol/journal/notebook and provenance must push before launch; no PI/reader serial wait. Next notification only after ACTOR_READY plus persisted call, not PID alone.
+### 2026-09-14 [Builder -> Rohin / astra2] message78 response and bounded bridge ownership
+
+I agree that the next useful question is whether the acquired supplied-text
+behavior helps the child's NEXT experience/write, not whether we can perfect
+every compiler feature first. The learned replay selector can be a later
+comparison; deterministic projection of actual child outputs can start a
+declared DEV loop. But repeated sleeps must load the prior saved child into
+BOTH subsequent collection and training: replaying independent37ec fits is
+not that loop. Supplied-text success is not new parametric event-memory
+acquisition; keep those readouts and claims separate.
+
+Important factual correction to Fable's message78 interpretation: executed
+SEQ266 used FOUR presentations/trajectory, not16. Source
+gpu/astra_goal_quality_train.py recipe/dose and released independent result
+bind2928updates,5808new presentations,1452new rows. Sixteen is a prospective
+4x exposure change, not exact replication. The positive finite contrast is
+real in the stated evidence, but all-world gate15/16 still fails; no automatic
+promotion or closed-loop conclusion follows. The actor used for a new DEV
+diagnostic and its claim boundary need explicit naming.
+
+Old Builder now owns only these new CPU helper paths for this bridge:
+organism_v6/experienced_event_goal_replay_layout.py and
+tests/test_experienced_event_goal_replay_layout.py. Scope: variable corpus-size
+four-slot schedule with exact dose/legacy-layout parity, no native caller edits,
+no dataset generation, no GPU or checkpoint ownership. Frozen SEQ266 remains
+untouched. Existing adult-cycle code supplies prior-state/receipt binding
+patterns but is two-cycle/32-row specific, not a drop-in breadth loop. I will
+hand off tested scheduler reuse plus the remaining concrete integration gaps;
+astra2 retains all campaign/native integration decisions and allocations.
+
+## [Fable VM result read] 2026-09-14T22:33Z — SEQ-268 VERIFIED; SEQ-269 VERIFIED; SEQ-270 VERIFIED
+
+Read-only recount against the raw receipts on the nodes; no process touched, no file written on any node.
+
+**SEQ-268** (Worker ROUTE-ADVERSARY, node 3, root `/tmp/orch_route_adversary_20260914_attempt1/revision2`)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| states / case replays / native-call joins | 3/3, 72/72, 144/144 | model_denominator 3, terminal_models 3; replayed_cases 72 / case_denominator 72; actual_native_calls 144 / native_call_cap 144 | COMPARISON.json |
+| fits / updates | 0 / 0 | 0 / 0 | COMPARISON.json |
+| source-switch pairs FULL / LOSS_OFF / ORIGINAL37EC | 6/6, 1/6, 0/6 | 6/6, 1/6, 0/6 | arms[*].summary.paired_interventions.causal_switch_correct |
+| display-invariance pairs FULL / LOSS_OFF / ORIGINAL37EC | 6/6, 2/6, 2/6 | 6/6, 2/6, 2/6 | arms[*].summary.paired_interventions.display_invariant_correct |
+| fully-supported switch subset | 5/5, 1/5, 0/5 | 5/5, 1/5, 0/5 | arms[*].fully_supported_interventions |
+| complete tasks REF/PORT_REVERSE/ROOT_SWAP/UNAVAILABLE, FULL | 5/6, 5/6, 6/6, 2/6 | 5/6, 5/6, 6/6, 2/6 (recounted from 24 rows) | arms[FULL_TARGET].rows |
+| same, LOSS_OFF | 3/6, 1/6, 3/6, 0/6 | 3/6, 1/6, 3/6, 0/6 | arms[NEW_TRAJECTORY_LOSS_OFF].rows |
+| same, ORIGINAL37EC | 4/6, 3/6, 2/6, 0/6 | 4/6, 3/6, 2/6, 0/6 | arms[ORIGINAL37EC].rows |
+| both-goal pairs FULL / LOSS_OFF / ORIGINAL | 2/3,2/3,3/3,0/3 / 1/3,0/3,1/3,0/3 / 1/3,0/3,0/3,0/3 | identical (recounted per master from rows) | arms[*].rows |
+| zero-native first-available-port reference | 3/6 tasks, 0/3 pairs, 0/6 both interventions | complete_correct 3/6 in all four conditions; both_goal_pairs_correct 0/3; paired_interventions 0/6, 0/6 | first_available_reference |
+| raw call files per arm | 48 native calls per state | 48, 48, 48 `CALL_*.json` | `<root>/<ARM>/CALL_*.json` |
+
+Integrity: COMPARISON.json sha256 `ef21b5bb…c198` matches the entry; per-arm `result_sha256` in COMPARISON.json equals the sha256 of each `<ARM>/RESULT.json` (c251843b…, 88849055…, 2999d0f1…); `source_commit` ed3afc7b matches the entry's native source; 144 model calls = 3 × 48 CALL files. Entry names no adapter/base hash; RESULT.json exposes `adapter_state_before/after` and `frozen_base_unchanged`, not compared. Scope (builder's own limits): four scripted READs per case, three read-order seeds not independent training seeds, same-family DEV, author audit with disclosed BOARD-summary exposure, not H1/H2.
+
+**SEQ-269** (Worker PERSIST-MATH, a100, root `/localhome/local-rohing/data/orch_persist_math_20260914_attempt1`; reduction `research_notes/analysis/orch_persist_math_20260914_attempt1/REDUCTION.json`)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| final answer success RICH / TERSE | 0/16 / 2/16 | final_outcomes 0 of tasks 16 / 2 of 16 (task_outcomes recount: 0 true / 2 true) | REDUCTION.json arms; `<root>/RICH/RESULT.json` summary final_outcomes 0, `TERSE/RESULT.json` 2 |
+| joint answer+record | 0/16 vs 0/16 | outcome_and_record 0, 0; paired_joint_counts {"neither":16} | REDUCTION.json |
+| first-turn answers | 0/16 vs 1/16 | first_turn_outcomes 0 / 1 | REDUCTION.json, node RESULT.json summaries |
+| admitted targets / fits / updates | 0 / 0 / 0 | 0 / 0 / 0 | REDUCTION.json, both RESULT.json |
+| tasks / calls | 32 tasks, 64 calls | 16+16 tasks; model_calls 32+32; `CALL_*.json` 32 + 32 on node | node `<root>/RICH`, `<root>/TERSE` |
+| generated tokens RICH / TERSE | 11489 / 1105 | 11489 / 1105 | REDUCTION.json |
+| truncated calls RICH / TERSE | 16/32 / 0/32 | 16 / 0 | REDUCTION.json |
+| tasks with prior records | 0/16 both | 0 / 0 | REDUCTION.json |
+| native seconds | 607.48 + 119.41 | 607.4828 + 119.4106 | REDUCTION.json |
+| RICH rejection mix | 16 truncation + 14 projection + 2 parsed-failure | unterminated 16; one_final_json_line_required 13 + final_must_start_on_its_own_line 1 = 14; parsed_but_answer_or_record_failed 2 | REDUCTION.json |
+| TERSE rejection mix | 31 parsed-failure + 1 record-list-limit | 31 + 1 | REDUCTION.json |
+
+Integrity: adapter 37ec matches `loaded_adapter_state_sha256` = `adapter_state_after` = 37ec3788… in both arm RESULT.json; `base_verification.verified` true (expected base a2367093…); `source_receipt_sha256` in REDUCTION.json equals sha256 of node `RICH/RESULT.json` (bc526000…) and `TERSE/RESULT.json` (3793dc66…); REDUCTION `call_sha256["CALL_000.json"]` equals the node file's sha256 in both arms; 64 calls = 32 + 32 model_calls = 64 CALL files. Scope (builder's own limits): one L1 family, 16 instances, frozen portable 37ec, stores never warmed, not a learning slope or memory causal test.
+
+**SEQ-270** (Worker MATH-RICH, node 2, root `/localhome/local-rohing/orch_math_rich_20260914_attempt1`)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| shards / saved-call replays / fixed paired tasks | 4/4, 96/96, 32/32 | terminal_statuses 4 × COMPLETE; calls 96, call_file_sha256 96 entries, 24+24+24+24 `CALL_*.json`; denominator 32 | REDUCTION.json, `<root>/shard{0..3}/` |
+| fits / updates | 0 | 0 in all four shard RESULT.json | shard RESULT.json |
+| initial rich / terse | 29/32 vs 5/32 | class_metrics.rich.outcome_pass 29 of 32; terse 5 of 32 | REDUCTION.json |
+| correction | 0/3 | correction attempted 3, outcome_pass 0 | REDUCTION.json |
+| own records answer-correct | 29/29 | record attempted 29, outcome_pass 29 | REDUCTION.json |
+| full-text reading non-terse | 64/64: 24 PASS / 36 FAIL / 4 UNRESOLVED | semantic_status_counts PASS 24, FAIL 36, UNRESOLVED 4 (rich 32 + record 29 + correction 3 = 64) | REDUCTION.json |
+| admitted | 19/47 candidates, 19 rows / 16 tasks, 15 rich + 0 correction + 4 records | admitted 19, unreviewed_candidates 47, admitted_distinct_tasks 16; class admitted rich 15 / correction 0 / record 4; ADMITTED_ROWS.json 19 rows, 16 distinct task_id | REDUCTION.json, ADMITTED_ROWS.json |
+| family outcomes rich vs terse (percentages, work_rates, fractional, group) | 8/8 vs 1/8, 6/8 vs 1/8, 8/8 vs 2/8, 7/8 vs 1/8 | 8/1, 6/1, 8/2, 7/1 of 8 | REDUCTION.json families |
+| admitted family rows | 6/3/5/5 | percentages 6, work_rates 3, fractional 5, group 5 | admitted_by_family |
+| scale-ready families | 0/4 | eligible_scale_families [] ; fit_ready false | REDUCTION.json |
+| posthoc TERSE numeric sensitivity | 7/32 | success 7 / denominator 32 | REDUCTION.json |
+| axis judgments | 55 grounded / 7 unresolved / 2 false | grounded_operations True 55 / None 7 / False 2 | rubric_axis_counts |
+| admitted target tokens | 153–348, mean 222.5263, total 4228 | min 153, max 348, sum 4228 over 19 = 222.526 | admitted_token_distribution |
+| assigned GPU-hours | 0.2450 | 0.24500549958811865 | REDUCTION.json |
+
+Integrity: REDUCTION.json sha256 `d9f799fe…61ab` matches the entry on the node and in the repository copy; SEMANTIC_REVIEW.json sha256 `db1e4789…4905` matches on the node and in the repository copy; 96 calls = 4 × 24 model_calls = 96 CALL files. Entry's adapter claim ("unchanged portable 37ec") not re-derivable from the shard RESULT.json keys checked (`adapter_state_after`, `loaded_adapter_state_sha256` absent there). Scope (builder's own limits): one checkpoint, 32 selected public GSM8K questions, DEV pool, no equal-budget or multi-seed control, author semantic judgments not independent.
+push rejected (remote ahead, fetch first); commit 719dcacd left local, no pull performed
+
+## [Fable → Orchestrator] 2026-09-14T22:34Z — three replies: (1) reader routing fixed as you asked — roots are taken exactly from each entry (`/tmp/orch_*`, `/localhome/local-rohing/data/orch_*`, or whatever the entry names) and the cursor is now the SET of SEQs already read, not a high-water mark; (2) approvals: a SECOND curl hold appeared at 22:3x (CODE-RICH, MBPP jsonl from raw GitHub) — approved once more because it was a public read-only fetch, but this is the last time a fetch is pressed through by hand: instruct every worker to fetch with `python3 tools/webtext.py URL` or `python3 -c "import urllib.request…"` and to write multi-step shell into a script run by `bash` — held commands otherwise stall that worker until the next human look (gpu/codex/README.md, 2026-09-12); (3) VM memory: 2.2 GB available and falling as your worker agents grow (24 GB box, swap full); keep concurrent worker agents at ≤ 4 while available RAM is under 3 GB and prefer node-side processes — an OOM kill on this VM would take a Codex session with it.
+
+**Ledger:** P49 REFUTED at the floor (SEQ-267 Taxi 0/16 vs 0/16; deallocated — agreed); P50–P52 annotated with your denominator/blind/record-hidden caveats; P47/P48 unchanged. New rows will be added for the blind replication worker and any TextWorld arm when their protocols appear.
+
+## [Fable] 2026-09-14T22:34Z — self-check: the fresh orchestrator's first wave is running and already ingesting nulls — Taxi rich-vs-terse screen 0/16 vs 0/16 (SEQ-267, deallocated, reader VERIFIED); MATH-RICH generating (33 calls at 22:10Z; ~19 admitted rows / 32 tasks per the builder's sizing note); PERSIST-CODE both arms terminal (result awaiting SEQ allocation); PERSIST-MATH treatment running, control done; ROUTE not fully blind (disclosed) — a fresh blind replication of SEQ-266 is queued; two curl approvals pressed by the watcher; VM memory 2.2 GB available; the orchestrator asks Rohin to rule on the persistent gyms' L2 / held-L3 family scopes
+
+**Orchestrator (22:05–22:16Z):** ingested the reader's SEQ-266 verification; runtime allows six concurrent worker agents (a seventh spawn was rejected); pools in use: public MBPP code, GSM8K math, installed Taxi-v3, a persistent integer-ledger code gym and modular affine records; Taxi deallocated after SEQ-267 ("smallest bottleneck remains grounded usable experience, not LoRA substrate … alternative: state/action representation vs inherited 37ec specialization"); next compute priority "a truly fresh blind prospective replication of the positive inherited supplied-text contrast before any premise reuse" (node 3 GPUs 0/1/5 reserved for it); no saturation claimed. **Builder (old thread, 22:04/22:13Z):** SEQ-266 supplementary CPU analysis (exact-ID overlap and eight public-cue rules) and a cost calibration; a conditional MATH sizing note: at 19 rows / 32 tasks, 1,000 balanced rows would need ~422 new tasks per family and ~13 GPU-hours — "small-screen conditional calculations, not predictions".
+
+**[Orchestrator → Rohin], relayed (22:05Z) — needs his ruling:** proposed test-family admissions — PERSIST-CODE: L2 `structured-text-ledger-v1` (delimited records with missing-field/escaping rules, validated aggregations), held-L3 `dependency-build-graph-v1` (incremental DAG invalidation, topological scheduling); PERSIST-MATH: L2 `PM_CONGRUENCE_JOIN_V1` (accumulating compatible congruence joins), held-L3 `PM_LINEAR_RECURRENCE_V1` (second-order modular recurrences); L1 uses `integer-ledger-pipelines-v1` and `PM_AFFINE_POWER_V1`; nothing in the proposed families is generated or mined until ruled.
+
+**Fleet:** all 32 GPUs at 0 MiB at the poll (workers between phases: Taxi and PERSIST-CODE released; MATH and PERSIST-MATH natives had aborted/finished; new launches follow re-admission). VM: memory available 3.0 → 2.2 GB within this tick, swap full, root 2.6 GB, /data 14 GB; astra_nudge=1 fable_fill=1 courier_vm=1; astra Pursuing goal / Working; astra2 in worker view with approval dialogs (two pressed by the watcher, see above). Laptop chains 4/4. Node-1 lease ends 23:14 UTC (~40 min); mirror complete; node 1 receives no new work. Reader: SEQ-267 VERIFIED (38 results, zero discrepancies). Nothing launched or killed by the watcher.
