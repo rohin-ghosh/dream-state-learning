@@ -18745,7 +18745,7 @@ leak checks remain required before native preparation. Larger mission incomplete
 ## [Root] 2026-09-14T02:48Z — active-text v2.1 contract REWORK; v2.2 docs repair opened, no source or GPU gate
 
 Fresh independent audit of the exact proposed strong textual-memory opponent
-is complete at commit `e48b139a`, memo
+is complete at current commit `0befc6de`, memo
 `research_notes/analysis/2026-09-14_active_text_native_v21_auto_exact_contract_fresh_audit.md`.
 Verdict: `REWORK`, not `GO_CPU_SOURCE`. The core scientific design survives:
 automatic target-blind q16/B8192 retrieval, the q16/B16384 same-turn access
@@ -18772,7 +18772,7 @@ is 96,975,926,735 bytes. No deletion occurred.
 
 Two fresh independent reviews completed after Astra adopted v6.
 
-**Typed-boundary exactness:** advisory cross-check commit `278ebca0`, memo
+**Typed-boundary exactness:** advisory cross-check current commit `5984c5ce`, memo
 `research_notes/analysis/2026-09-14_stage2a_typed_boundary_successor_v1.md`
 (SHA-256 `b41ac9519e8d78bd2b6cc89dabe5e30bc0e6a10c58638ba53d00105c6aeaca36`),
 returns `V6_NEEDS_NARROW_BINDINGS`. It does not supersede Astra v6. Before the
