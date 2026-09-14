@@ -18398,3 +18398,48 @@ old vectorhash identity claim meanwhile; oldaudits preserved unchanged.
 Route/core sourceowner answers stillabsent; reduced560BASE/D1 then qualified
 authenticTSJ remains the nextactualcampaign, not an oldQ0repeat. No node1write,
 model/tokenizerload, GPUlaunch/kill or approval. FullmissionACTIVE/incomplete.
+
+## [Fable backup self-check] 2026-09-14T01:31Z — SEQ-VM-9: two builder entries since 01:00Z (Group B metadata 18/18 checked, claim risks open; Q1 sidecar replay 19 tests PASS); two Builder -> requests relayed; fleet idle; daemons alive
+
+Headless VM self-check (laptop heartbeat stale). Observe/log/relay only; nothing launched, killed or edited outside this entry.
+
+**Builder entries since SEQ-VM-8 (lines 18336, 18367), counts as written:**
+
+1. `[Builder] 2026-09-14T01:11Z — Group B metadata checked; claim risks remain open`. All 18 flagged reference records checked against primary arXiv/proceedings/publisher/author records (Huygens and Curie bounded read-only reviewers; Main inspected remaining 6 and integrated). No mandatory BibTeX field error: only comments changed, 54 entry bodies unchanged after stripping comments, main.tex byte-identical, 54 cited keys resolve, 18 metadata annotations and 0 VERIFY. Structural receipt 01:09:56 UTC SHA 2be2962f…438df1. Evidence: research_notes/analysis/2026-09-14_group_b_reference_metadata_and_claim_audit.md. Stated as not complete prior-art/claim approval; unresolved manuscript risks listed as TTT/Titans memory lifetime, SEAL sequential editing/forgetting, collapse analogy versus identified cause, ReST-EM base restarting/reward filtering. Prose unchanged pending disposition; no thesis/scientific claim changed. No TeX build, new CPU suite, model load, GPU launch/kill, node-1 write or approval request. Both workers closed; mission ACTIVE/incomplete.
+
+2. `[Builder] 2026-09-14T01:29Z — Q1 sidecar replay; chronology and tie conventions qualified`. New map-closeness relay processed as historical; Q0-FULLDOSE-v2 roots already terminal; no new arm, fit, forward, GPU-hour, gate/denominator change, retry or R1 primary repair. Added pure-stdlib math/archive reader and 19 focused tests PASS. All 3 complete-root filename/byte hash streams match external watcher custody. Eight paired C/X/cosine table summaries match at printed precision. Old both-own table counts match tie->gvn, not strictly positive; separately labelled arithmetic conventions, not greedy generation. R1 DERANGED128 remains missing. No trajectory labels recomputed, no new science SEQ; existing SEQ132/134 interpretations not promoted. Native executor f63c77f9 unchanged. Final replay attempt 3 SHA de9346d4…04c4; validation SHA 61d265b7…a62f. Evidence: research_notes/analysis/2026-09-14_q1_sidecar_replay_and_binding_chronology.md. Hegel's bounded mapping review found no bug; not exact-byte final receipt or scientific approval. Full mission ACTIVE/incomplete.
+
+**Relayed verbatim from the 01:11Z entry:**
+
+> **[Builder -> Rohin / source-contract owner] Source binding still needed.**
+> 01:10UTC pull has no reply to the two remaining source questions in
+> research_notes/analysis/2026-09-13_stage2a_inventory_source_disposition.md:54.
+> Please supply the authoritative definitions, not a new experiment approval:
+> (1) registered route collection membership, start boundary, allowed
+> transitions, mismatch recovery, finite termination, exact rendering;
+> (2) core actual_route_depth (initial-to-goal or remaining; failed STEP counting),
+> recovery SEEK display position, and retained versus original prior-STEP
+> match history. These affect hashed identity/visibility. Future-ID disclosure
+> is already resolved; no need to reopen it. No arbitrary depth cap, empty
+> inventory or directory ROUTE substitution will be used. Reduced560BASE/D1
+> then qualifiedauthenticTSJ remains the selected path, not an old Q0 retry.
+
+**Relayed verbatim from the 01:29Z entry (addressed to the laptop Codex watcher):**
+
+> **[Builder -> laptop Codex watcher] Chronology correction/request.** Local
+> 5695d65a authoredSeptember13 04:56:08UTC but committed05:03:15UTC, after raw
+> STARTED R0 05:00:47.837682, R1 05:01:11.974743, R2 05:01:26.393665. The static
+> audit's05:03 no-launch account is contradicted by rawstarts and notebook's
+> 05:04 correction. Exactprelaunchbinding NOT independently established locally;
+> an earlier laptop binding remains possible, no fabrication is inferred.
+> Please supply original full00e11cc2 object plus contemporaneous exact-byte
+> prelaunchreceipt, and historicalvector serialization/order convention. No
+> old vectorhash identity claim meanwhile; oldaudits preserved unchanged.
+
+No `[Root …]`, `[Independent …]` or `[Codex …]` entries since SEQ-VM-8. Repo HEAD dd932720 at this check.
+
+**Fleet (read-only, 01:30Z):** a40 8 GPUs 1 MiB each, no compute apps; ovx 8 GPUs 0 MiB, none; ovx2 8 GPUs 1 MiB, none; a100 8 GPUs 0 MiB, none. Idle is expected while source is being audited.
+
+**Daemons on VM:** astra_nudge 1, courier_vm 1, tmux session `astra` alive.
+
+**Node-1 mirror:** lease ends 2026-09-14 23:14 UTC, about 21.7 h from this check, outside the 10-hour window; no rsync run. Last logged incremental pass 15:02 UTC 09-13 (find -type f = 15,428 both sides). Final incremental `rsync -a` (no --delete) node 1 `~/v6_out/` -> node 2 mirror remains due inside the last 10 hours, by the laptop watcher/Rohin or this self-check reusing the logged command.
