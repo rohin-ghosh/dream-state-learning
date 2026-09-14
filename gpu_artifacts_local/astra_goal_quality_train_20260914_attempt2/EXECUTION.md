@@ -69,3 +69,27 @@ completes, only if the shared baseline has a COMPLETE receipt. Each AFTER
 retains its3600s ceiling within the original14760s guardian deadline; no budget
 extension or repeat fit. Its actual native PID/start and saved-state join will
 be recorded once it starts. No current baseline score is used to change TRAIN.
+
+## [Builder/Nash] 2026-09-14 20:17:33 UTC — baseline complete, both fits progressing
+
+Direct node3 observation: status_20260914T201732Z.json. BASELINE RESULT is
+COMPLETE, fits0/updates0,944modelcalls and944actual CALL files; completion
+marker19:59:05UTC. RESULT SHA256:
+c2fe5b4735ea7252fff27e7ea777093e798df882f57262ab0391ad91b6b671a2.
+Loaded/final adapter states both equal37ec37884e4b0b679edd1dba1be1dec3474589e992649f3a33e7e3b1ec78b8c0;
+frozen_base_unchanged=true. Stored primary:2/32PROBE pairs,33/64goals.
+This is receipt/hash verification, not yet independent full read_baseline
+replay; AFTER performs that required join. Guardian86062/native86114 are gone
+and the physical GPU process query contains only the two fit workers: GPU2
+is released.
+
+FULL_TARGET guardian86063/native86119 is live at893/2928updates;
+LOSS_OFF guardian86064/native86109 is live at890/2928updates.
+Neither arm has a train RESULT/FAILED receipt or an AFTER directory yet.
+Latest fit elapsed1665.875/1664.667seconds; last200-update rates1.877799/
+1.882594seconds per update imply TRAIN completion about21:21:15/21:21:30UTC
+(63.7/63.9minutes remaining at observation), conditional on maintained rate.
+Estimates exclude save/reload and AFTER, and are not predictions of success.
+Both workers use40504MiB; GPU0/1 remain assigned. Original branch deadline
+23:54:24UTC, source, jobs and budgets unchanged. No restart or new launch.
+The disclosed prelaunch logging-order deviation remains intact.
