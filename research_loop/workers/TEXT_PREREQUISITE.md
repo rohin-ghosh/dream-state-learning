@@ -114,3 +114,15 @@ local validated archive202/202 files and committed RAW bytes agree.
 Main orderedSEQ request remains pending; no self-assigned SEQ, Fable run,
 repeat, fit, checkpoint promotion or new allocation. A1000–3 remains released
 by this worker's completed screen; Main controls subsequent reassignment.
+
+## 2026-09-14 22:42 UTC — SEQ272:41 calls;8/8 vs8/8;0 admitted; CLOSED
+
+[Worker TEXT-PREREQUISITE] Main explicitly assigned272 after published271.
+Ordered publication:`research_notes/analysis/orch_text_prerequisite_20260914_attempt1/SEQ272.md`.
+RICH-prompt8/8 versus TERSE8/8 native successes,41calls,0admitted rows.
+Richness manipulation failed: all18rich turns28–52tokens versus150–400.
+No child prerequisite feedback in either arm; CPUoracle probes are not child
+experience. No learning-null claim, no fit, no additional seed/repeat/scale.
+A1000–3 released22:35:06UTC. Exact screen retired by Main. Worker CLOSED
+after publication; no reader wait. Main state-first ingestion follows its
+current dose-correction publication; STATE/BOARD remain Main-owned.

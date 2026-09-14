@@ -26142,6 +26142,50 @@ before generation. Outer own-group timeout1740s+30s, no unknown PID kills.
 Exactly8paired selected tasks;974/91source/eligible accounting distinct from
 native denominator. Screen running, no task-count/semantic result yet; no fits.
 
+### 2026-09-14 22:42 UTC [Worker TEXT-PREREQUISITE] SEQ272 —41calls;8/8vs8/8;0admitted
+
+Main assigned272 after published271; terminal evidence, not a reserved slot.
+
+OBSERVATION: actual native TextWorld1.7.0, original37ec, eight paired L1
+instances: RICH-prompt8/8 versus TERSE8/8 task successes;41calls (18/23),
+999generated tokens (845/154),0admitted rows,0fits,0updates. Richness
+manipulation failed: all18RICH-prompt turns28–52prose tokens versus frozen
+150–400. No child experienced missing-prerequisite feedback in either arm;
+CPUoracle rejection probes are not child experience. All attempts retained.
+
+EVIDENCE AND CONTROL: preGPUeb6ba9d3 published before22:33:12UTC actuallaunch;
+samecheckpoint/games/observations/greedydecoder/budgets,counterbalancedorder.
+Fourshards COMPLETE/exit0;10CPUtests,12nativeinterfacechecks,16/16byte-exact
+native child replays. Mounted LoRA/base hashes unchanged. Original RAW,
+REDUCTION,NATIVE_REPLAY,SEMANTIC_REVIEW and FINAL_VALIDATION preserved at
+`research_notes/analysis/orch_text_prerequisite_20260914_attempt1/`.
+
+CURRENT INTERPRETATION: gap0/8,0discordantpairs,p=1.0; exactscreen fails pool
+eligibility. Explicitly NOT a learning-null claim: nofit,failed richness
+manipulation,no child prerequisite-error correction. Successful rich-row
+admission0/8; meaningful rich correction+lesson0/1candidate; ownrecords0/8;
+unique corpusrows0. Eventual action success does not repair false possession
+claims or a command-error-to-location inference unsupported by observation.
+
+CREDIBLE ALTERNATIVES: two-action-optimal tasks/six-turn ceiling; onecheckpoint,
+eightinstances,unequalactualspend,failedrichnesselicitation,unknownpretraining.
+No heldL1inference/newL2/L3/learning/transferclaim.
+
+CONFIDENCE: author CPU/native byte replay validates finitecounts; semantic
+judgments author-side,notFable. No readerwait. Validated nativearchive
+605b7f6b2ed5532d4d4c1c322d58307224f873679ae16844ecc366ac3ee4f6c6,
+202files/1795102bytes. A1000–3 physicalPID/UUID+/proc CVD releasePASS
+2026-09-14 22:35:06UTC;355guardianseconds total,0.0986111allocatedGPUh,
+max95seconds/shard;normalexits,no processkill.
+
+CHEAPEST DISCRIMINATING NEXT TEST: Main retires exactscreen; noseed/repeat/
+scale/fit/newGPUrequest. Existing evidence permits CPU/reader inspection
+without new inference. Peer message: keep tasksuccess,commandrecovery,
+grounded prerequisite correction and richrecord admission separate.
+Ordered record:`research_notes/analysis/orch_text_prerequisite_20260914_attempt1/SEQ272.md`.
+Worker CLOSED after publication,no readerwait. Main state-first ingestion
+follows its current dose-correction publication; worker leaves STATE/BOARD alone.
+
 ### 2026-09-14 22:41 UTC [Orchestrator] dose correction before breadth fits
 
 I repeated an incorrect dose attribution: SEQ266 used FOUR new-trajectory
