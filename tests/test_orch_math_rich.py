@@ -66,3 +66,21 @@ def test_manifest_strips_reference_solutions_and_freezes_unique_tasks():
     assert 'REFERENCE' not in str(document)
     assert len({task['id'] for task in document['tasks']}) == 32
     assert document == math.build_tasks(records + records)
+
+
+def test_source_verifier_binds_bytes_not_cross_host_uid(tmp_path):
+    import io
+    import tarfile
+    from gpu.orch_math_rich_source import verify_archive
+    archive = tmp_path / 'source.tar'
+    directory = tmp_path / 'source'
+    directory.mkdir()
+    (directory / 'code.py').write_text('print(1)\n')
+    with tarfile.open(archive, 'w') as stream:
+        member = tarfile.TarInfo('code.py')
+        member.uid, member.gid, member.size = 999999, 888888, 9
+        stream.addfile(member, io.BytesIO(b'print(1)\n'))
+    assert verify_archive(archive, directory) == 1
+    (directory / 'code.py').write_text('print(2)\n')
+    with pytest.raises(ValueError, match='source_bytes_changed'):
+        verify_archive(archive, directory)

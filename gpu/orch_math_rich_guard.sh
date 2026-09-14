@@ -18,7 +18,7 @@ bundle_sha=5e675c309b202625a6ddf1d36c1a58f51ef656985821cec1cd6123424d927469
 started=$(date +%s)
 test "$((started + 2760))" -lt "$((lease_end - 21600))"
 test "$(sha256sum "$root/source.tar" | cut -d' ' -f1)" = "$archive_sha"
-tar --diff -f "$root/source.tar" -C "$source_dir"
+python3 "$source_dir/gpu/orch_math_rich_source.py" "$root/source.tar" "$source_dir"
 test "$(sha256sum "$scanner" | cut -d' ' -f1)" = 6ed5c48c144dcf26dcb856798ab31d69e39bc66b6780211f2b10553972f8519b
 test "$(sha256sum "$services" | cut -d' ' -f1)" = ed2c9111a50b09bdf20859d3395769945b79ce8ba1f5554ed7fe55b99cfd5117
 test "$(nvidia-smi -i "$index" --query-gpu=uuid --format=csv,noheader)" = "$uuid"
