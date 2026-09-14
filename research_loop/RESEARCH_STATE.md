@@ -1,6 +1,6 @@
 # Research state — Orchestrator
 
-Updated 2026-09-14 22:24 UTC. Mission ACTIVE / INCOMPLETE. Wave W1/W2.
+Updated 2026-09-14 22:27 UTC. Mission ACTIVE / INCOMPLETE. Wave W1/W2.
 Authoritative steering: Rohin's current launch instruction and raw messages
 42–77 (77 read22:07UTC); next full raw-message reread by23:50UTC.
 Check notebook updates every orchestration cycle, not just every two hours.
@@ -232,6 +232,58 @@ rich/terse screen and no reinterpretation of Taxi. This is L1 mining only;
 new L2/L3 family proposals remain awaiting Rohin. CODE-BOUNDED and
 TEXT-PREREQUISITE are declared here before BOARD rewrite and assignment.
 
+## 22:27 UTC ingestion — SEQ270 and distinct math followups
+
+**OBSERVATION:** Initial rich29/32 vs terse5/32; format-neutral posthoc
+sensitivity gives terse7/32 without changing original scores. Corrections0/3.
+Complete author review64/64 responses:24PASS/36FAIL/4UNRESOLVED;19 admitted
+targets across16 tasks (15initial traces,4records,0corrections). Four families
+each show initial answer gap, but0/4 pass the original scale-yield gate.
+
+**EVIDENCE AND CONTROL:** same32 public GSM8K train tasks, one portable37ec,
+96 calls,10 CPU tests; report `research_notes/analysis/orch_math_rich_20260914_attempt1/REPORT.md`
+and SEQ270 publicationf016099b. Rich/terse inference spending differs; no fit,
+held evaluation or retention read. All64 non-terse texts judged by the author;
+independent reader pending. Target tokens4228 total,min153,median214,max348.
+
+**CURRENT INTERPRETATION:** finite checked-answer advantage makes this math
+pool more promising for rich mining than the failed game/recurrence recipes.
+Admission yield remains limiting; the original scale recipe is DEALLOCATED,
+not silently continued or called a1000-row corpus. Correct answers do not certify
+records: one child record invents a false inventory check. No learning claim.
+
+**CREDIBLE ALTERNATIVES:** prompt/spend and public benchmark familiarity;
+many rubric failures concern impersonal voice rather than false mathematics.
+The3 rejected rich answers all have wording ambiguities, so correction0/3
+does not isolate inability to use meaningful feedback. Oracle gold and original
+denominators remain unchanged; ambiguous candidates are not training targets.
+
+**CONFIDENCE:** author-replayed finite contrast with complete author content
+review, not VERIFIED or independent replication. Low on causal generality.
+
+**CHEAPEST DISCRIMINATING NEXT TEST:** two distinct questions, not a repeat
+of the failed scale recipe. (1) A fresh independent worker blind to outcome
+values repeats rich/terse on a disjoint fixed32-task same-family cohort, node3
+2–4. This replicates a prompting contrast, not a fitted training effect.
+(2) Author worker tests record elicitation on fresh tasks: same child-generated
+solution feeds two equal-budget record prompts, original vs an explicit
+first-person account of actual evidence, decision, check and reusable lesson.
+No exemplar target, answer rewrite, padding or relaxed rubric. Node2 4–7.
+Freeze exact64-task roster (16/family), call cap and paired record admission
+criteria before inference. Initial rich traces shared across branches; compare
+record admission on the fixed denominator, report all failures/ambiguities.
+Successful first-person wording without grounded operations is still a failure.
+No new scale tranche or fit authorized by this declaration; report whether the
+yield intervention works, then decide from evidence. Original19 rows preserved.
+
+Allocation reasoning: new evidence moves expected target-yield value toward
+ordinary math, but keeps code, text prerequisites and blind route replication
+independent. The gap needs replication rather than optimization. The new record
+test isolates a data-contract bottleneck; it does not substitute voice for
+reasoning. Quantity-level feedback vs matched retry remains a separate queued
+hypothesis; do not entangle it with record-prompt manipulation in this screen.
+STATE first, BOARD second, then assignments. Node3 6–7/A1006–7 stay reserve.
+
 ## Active uncertainties and surprises
 
 1. Which off-the-shelf pools show a measured rich-over-terse reasoning gap AND
@@ -267,7 +319,7 @@ redundant arm; replication candidate; alternative needing falsification;
 new hypothesis. One clean null deallocates its declared screen, not the
 mechanism. A worker without a next discriminating test is retired.
 
-## Next cycle
+## Historical readiness snapshot through22:15 (superseded by ingestions above)
 
 - Publish W1 conditional batch contract and request Fable preregistration.
 - Gather workers' actual CPU/provenance/native readiness; log admissions in
