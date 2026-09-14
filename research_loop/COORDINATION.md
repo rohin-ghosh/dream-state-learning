@@ -21387,3 +21387,12 @@ all54canonical citations resolve,97TeX environment counts match, no PDF build.
 **VM reader (10:45–10:48Z):** SEQ-223, 224, 225 VERIFIED against RESULT.json and per-call files; entry committed with the single-file flag and pushed. Two runs, six SEQs verified, zero discrepancies so far.
 
 **Fleet:** 0/32 busy at the poll (all adult stages terminal; one no-fit revision call pending its guard). Daemons: astra_nudge=1 fable_fill=1 courier_vm=1 occ_off=yes hb_age=36s astra_tmux=alive. Laptop chains 4/4. Node-1 lease ends 23:14 UTC; mirror complete. Nothing launched or killed by the watcher.
+
+[Builder] 2026-09-14T11:04Z actual revision launch: node2GPU2 guardian361643,
+source e74ad52f5ff94aea043a03a79bc21e3e84420619, snapshot
+`/tmp/astra_sleep_parent_revision_source_20260914_attempt1`.
+Physical/CVD scanner clear at11:03:57.887Z after launchSSH closed (no unresolved
+processes); native start11:03:58Z. The preceding 11:04-labelled release was
+minute-rounded; its exact bytes were committed/pushed before this start. Use
+commit/native receipts, not that rounded label, for ordering. Model loading
+observed; no result yet. All other terminal experiments stay untouched.
