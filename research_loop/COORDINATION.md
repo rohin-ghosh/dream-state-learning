@@ -26536,3 +26536,32 @@ ownership, not a family ruling or any new launch/review gate.
 > persistent, gym, test, families why don't you mind why why does it need my permission Yeah, it's a good idea to fix the curl into Python. Good idea. Yeah my ruling level three might have math to. I don't know we don't does it matter which ones are for level three or twins are level two the ones for level three should honestly be the best quality ones to be honest with you cause like level three is where we're really trying to do those like finalize like teaching and it's gonna have to be a couple of them too because we found that there's need 60 so we might need 60 on that one too so then maybe this one's just gonna be 60 or 120 different onesscale this even more and then that one's like parented close loop 60 something like that this is just like vague yeah I don't know why you need my permission on this my ruling what what ruling do you need? I do agree. The level three is gonna have more of that hillclimbing sort of incremental dependency graph. Give me a quick update good and bad both system both loops and then tell me tell me why I can't scroll up through our message message history anymore that's kind of annoying. Can you please quickly explain to me what this row stuff is you keep talking about rose. I don't really understand that and then tell me how many GP are being used right now and how close we are to saturation good job
 
 **[Fable → Orchestrator]** This supersedes the escalation clause I wrote into §5 Authority of your launch prompt ("a new environment family becoming a level-2/3 test set" no longer requires Rohin): admit your proposed families now (structured-text-ledger-v1 / dependency-build-graph-v1; PM_CONGRUENCE_JOIN_V1 / PM_LINEAR_RECURRENCE_V1) and any future ones by your own decision; publish each family's name and level in RESEARCH_STATE so separation is auditable; put the hardest, highest-quality families at level 3 and plan for dozens per level, not two. The three remaining escalations stand: a claim entering the paper, spending beyond the leased fleet, a result you believe overturns the thesis. Also confirmed by Rohin: the curl→python instruction to workers.
+
+## [Fable VM result read] 2026-09-14T23:02Z — SEQ-275 VERIFIED
+Read-only re-derivation on node 2 (ovx) from root `/localhome/local-rohing/orch_math_record_20260914_attempt1`; files REDUCTION.json, ADMITTED_ROWS.json, FINAL_CPU_TESTS.txt, SEMANTIC_REVIEW.json, terminal_capsule.tar.gz, shard0–3/CALL_*.json. Candidates SEQ-231/233/234/237/263 carry no n/N count in their first 12 lines and were skipped as non-result-bearing.
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| NEW admitted | 55/64 | 55/64 (`conditions.new_record.admitted`=55, denominator 64) | REDUCTION.json |
+| OLD admitted | 9/64 | 9/64 (`conditions.old_record.admitted`=9) | REDUCTION.json |
+| initial rich admitted | 28 | 28 (`conditions.rich.admitted`=28) | REDUCTION.json |
+| admitted rows per kind | 28 rich + 55 NEW + 9 OLD = 92 | Counter new_record 55, rich 28, old_record 9; 92 rows | ADMITTED_ROWS.json |
+| NEW-only / OLD-only / both / neither | 46 / 0 / 9 / 9 | primary.wins 46, primary.losses 0, difference 46; 46 discordant_pairs all new=true old=false; 55−46=9 both; 64−55=9 neither | REDUCTION.json |
+| oracle outcome rich / OLD / NEW | 63/64, 63/64, 62/64 | outcome_pass rich 63, old_record 63, new_record 62; denominator 64 | REDUCTION.json |
+| grounded NEW vs OLD | 61/64 vs 59/64 | primary.grounded_new 61, grounded_old 59; axes grounded_operations True 61 / 59 | REDUCTION.json |
+| factual false NEW vs OLD | 1 vs 3 | primary.false_new 1, false_old 3 | REDUCTION.json |
+| unresolved | 1 each | new_record grounded_operations None 1; old_record None 1 | REDUCTION.json |
+| paired exact p | 1.4210854715202004e-14 | primary.one_sided_exact_p 1.4210854715202004e-14 | REDUCTION.json |
+| families OLD vs NEW (percentages / work_rates / fractional_quantities / group_accounting) | 2/0/4/3 vs 14/11/15/15 | old_record 2/0/4/3; new_record 14/11/15/15; each denominator 16 | REDUCTION.json `families` |
+| token overflows NEW vs OLD | 6 vs 1 | new_record attempted 63 − token_contract_pass 57 = 6; old_record 63 − 62 = 1 | REDUCTION.json |
+| full-text semantic | 107 PASS / 82 FAIL / 1 UNRESOLVED | PASS 61+9+37=107; FAIL 1+54+27=82; UNRESOLVED 1 | REDUCTION.json `semantic` per condition |
+| gold review | wrong/ambiguous gold present | gold_review_counts VALID 62, SUSPECT 1, AMBIGUOUS 1 | REDUCTION.json |
+| distinct target hashes / tasks | 92 over 59 tasks | 92 distinct target_sha256 over 59 distinct task_id | ADMITTED_ROWS.json |
+| model calls | 190 | `calls`=190; CALL_*.json files shard0 48 + shard1 48 + shard2 48 + shard3 46 = 190 | REDUCTION.json, shard dirs |
+| shards complete | 4/4 | terminal_statuses 0–3 all COMPLETE; `complete`=true | REDUCTION.json |
+| CPU tests | 19/19 | "19 passed in 0.64s" | FINAL_CPU_TESTS.txt |
+| fits | none | `fits`=0, `fit_ready`=false | REDUCTION.json |
+| guardian cost | 0.61555556 GPUh | not re-derived: no guardian-cost field found in RELEASE_GPU4–7.json or release.log; REDUCTION.json carries a different field `assigned_gpu_hours_completed`=0.6080943795707491 | — |
+
+Integrity: REDUCTION.json sha256 `626f7cc4…7726` matches the entry on the node and in the repo copy `research_notes/analysis/orch_math_record_20260914_attempt1/REDUCTION.json`; SEMANTIC_REVIEW.json `306094b6…8318` matches; terminal_capsule.tar.gz `1570f8ee…5a73` matches. Model calls: entry 190 = 190 CALL files = `calls` 190. No base/adapter hash named (collection screen, no fit).
+Scope (builder's own limits): one 64-task screen, author-read full texts, not an independent blind audit; no answer-accuracy or learning claim; no fit.
