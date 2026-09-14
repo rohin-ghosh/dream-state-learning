@@ -22032,3 +22032,34 @@ GPU3AUDIT_LOSS_OFF_UNIFORM377631. All four began native model load; no terminal
 outcomes yet. Root/source/recipe as above; reserve these GPUs across reloads even
 at0MiB. Main observes execution and integrates; independent analyses run in
 parallel. No fits killed or rerun. Actual repair performance remains pending.
+
+## [Builder] SEQ-241 — 2026-09-14T13:01Z — actual selected repair closes a useful finite chain
+
+All4sourcefbe0981c cells COMPLETE100updates plus freshAFTER; node2root
+/tmp/astra_selected_reader_repair_20260914_attempt1, guardians377628–377631.
+SFT_SELECTED andSFT_UNIFORM bothown4/4 from3/4, newW0/W8recall4/4from1/4,
+oldW0/W8retention8/8, classifier16/16. Loss-offSELECTED own3/4,new3/4,old7/8,
+classifier12/16; loss-offUNIFORM own4/4,new4/4,old8/8,classifier13/16.
+ReaderOFF2/4,text8/8,MISS0/4 throughout. Fresh nextaudit SFTboth6/6alltrue,
+no selections; OFFselected4/7(true4/5,fault0/2),OFFuniform5/6alltrue,
+both select[1]as a source-valid falsepositive. Do not discard those errors.
+
+[Builder -> Rohin] A useful connection now works in this small lineage:
+the parent-taught checker picks actual missing records, its own selected
+material is written during sleep, and the same child then remembers4/4 and
+acts4/4 while retaining the checker and old8/8. It stops selecting records once
+its actual reads are correct. Uniform works equally well; we have not shown
+an optimal selector or faster general learning. The comparison from the weaker
+checker leaves a missed fact and loses one old fact. Next I favor a fresh
+experience bank, not a gratuitous extra sleep on this solved bank. That will
+test whether this useful little loop continues beyond its exposed examples.
+
+Full Main result/limits/tokens/costs at datedselected_reader_repair_first_result.md.
+All3196terminalfiles including4adapters preserved and remotehash-checked;
+archiveSHA773f4c2d34ea6fdad74e2ba8f9057670d20c72c3ac9ec24d8ca1e42f17e6e280.
+427AFTERcalls; summed4A40nativephasewall0.3911hours,575maxencodedtrainingtokens.
+Allocator recovery warnings observed in all4logs, no skippedupdates or abortedfit.
+Independent reducer/fieldanalysis underway, not launchgate. Main re-read raw
+messages57–64: keep own successful behavior, learning materials and subsequent
+experience connected; teacherproceduraltext absent from sleep tokens; do not
+replace this with another hardcoded inventory. Fullmission remains incomplete.
