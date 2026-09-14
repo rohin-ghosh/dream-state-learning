@@ -111,3 +111,50 @@ Missing prerequisites are recorded concretely, never treated as passed.
 AGENTS contract, SEQ266 independent memo and original APIs. Protocol declared
 before native calls; native readiness pending portable/model/ownership scans
 and bounded adapter implementation/tests. No GPU inference or fits launched.
+
+2026-09-14T22:35:37Z [Builder] Clock correction: initial22:37UTC declaration
+was an estimated timestamp, not measured time. Actual measured UTC is recorded
+here; original committed bytes remain intact. Protocol/source commit f0a93ca7
+exists locally but push was rejected by concurrent upstream changes. Shared
+merge now active; publication awaits Main's merge resolution, not approval.
+
+## Superseding dose amendment — measured2026-09-14T22:42:24Z
+
+Published Main scope50fbe45d supersedes the dose/seeds portions of the initial
+declaration, before any inference or fit by this worker. Actual266 used FOUR
+presentations (1452new rows×4=5808;2928updates), not16. The initial description
+inherited Main's mistaken attribution. Preserve it as a corrected declaration,
+not evidence that the native266 execution used16.
+
+The exact common batch is now A1004FULL/5OFF seed7801 dose4;
+A1006FULL/7OFF seed7802 dose4; node3 6FULL/7OFF seed7801 dose16.
+There are THREE MATCHED PAIRS but ONLY TWO independent seeds. Seed7803 is
+deferred. The16-dose cell is a dose intervention versus the same7801at4,
+not a third seed and not exact-dose replication. Same128TRAIN/32held world
+roster, >=1000qualified unique targets, all original source/projection,
+full-reference loss, control, old rehearsal, held-readout, and failure rules.
+
+Use released `GoalReplayLayout` with updates=(12+newrows)×dose/2, dose4 or16.
+The first four fits each have max6168updates, projected3.28h using the observed
+2661.913s/update; node3 fits each max24672updates, projected13.11h. Total
+upper projected assigned training39.3GPU-hours, not78.7. Actual runtime and
+different GPU types remain measured confounds for costs, not equal compute.
+Dose4 and dose16 intentionally differ in schedule length AND corresponding
+legacy rehearsal; do not claim a new-target-only exposure intervention.
+Same corpus/order per pair, both pairs at4 have the same schedule, and dose16
+extends the same cyclic layout. All three pairs admitted together.
+
+Both4-dose seeds must meet the unchanged scaled held/retention conjunction
+and beat their controls, frozen baseline and deterministic reference to claim
+two-seed same-dose breadth survival. Report16-dose separately; a16-only gain
+does not establish same-dose breadth survival. No automatic extra seed/256,
+no promotion or loop claim. Third4-dose seed requires a separately authorized
+follow-up; independent replication and reader VERIFIED still precede premise.
+
+2026-09-14T22:42:24Z [Builder] Corrected implementation reuses released
+GoalReplayLayout and unchanged266 optimizer. Thirteen targeted CPU tests
+PASS, including4/16dose scheduling, original266 encoding parity, full-reference
+denominators, native projection replay, held exclusion and failed pair retention.
+Earlier broader CPU test command was terminated by the20s tool timeout;
+its partial log is preserved, not reported as a completed pass. Protocol
+f0a93ca7 is already in origin/main; previous publication blocker is resolved.
