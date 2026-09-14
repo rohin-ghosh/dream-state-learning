@@ -183,3 +183,20 @@ performance difference on a new same-family supplied-text cohort ONLY. NOT
 independent training-seed replication, not H1/H2/latent-hop/unseen-family or a
 unique causal-mechanism demonstration. Preserve all operational failures and
 the initially direction-unknown blind assessment.
+
+## 2026-09-14 22:45 UTC — SEQ273 ordered publication and retirement
+
+Main assigned273 after272 published32902079, only after my terminal report was
+already frozen/published19232207. Publishing standard counts, six fields and
+exact native root in `research_notes/analysis/orch_replication_20260914_attempt1/SEQ273.md`
+and notebook EOF. Original blind protocol/assessment disclosures copied
+verbatim into the ordered record; no independent-training-seed claim. SEQ272
+format consulted only after my own report was frozen; no scientific evidence,
+cohort, source, condition, denominator or interpretation was changed.
+
+Native planned/launched/terminal4/4/4, running0, failed0; source1/1, readouts3/3;
+32/32 genuine EVENTs;769/784 calls; fits0/updates0/newrows0. GPUs0/1/5 remain
+released per preserved terminal scans; no new checkpoint reread, inference,
+fit, test run, GPU action or lease action for this publication. Main handles
+state-first ingestion; STATE/BOARD and peers' edits left untouched. RETIRED
+after successful publication; no remaining work or reader/parent serial wait.

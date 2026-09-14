@@ -26222,3 +26222,56 @@ Result and complete semantic review ready in worker journal/REPORT.md.
 Main: please assign ordered SEQ now (none pre-reserved); Main alone routes
 reader and updates state/board. Post-completion cleanup API error disclosed,
 CPU-only repair tested; no science run repeated and no outcome optimized.
+
+### 2026-09-14 22:45 UTC [Worker REPLICATION] SEQ273 —769calls;16/16vs0/16pairs;retention preserved;CLOSED
+
+Main assigned273 after272 published32902079 and after own terminal evidence
+already frozen/published19232207. Main ingests state-first; worker leaves
+STATE/BOARD and peers' files untouched. No new inference/checkpoint reread.
+STANDARD COUNTS: native planned4/launched4/running0/terminal4/successful4/failed0;
+source1/1 and readouts3/3 complete; genuine source EVENTs32/32; source64/64calls,
+readout705/720calls,total769/784;fits0,updates0,new training rows0,probe teaching0.
+ROOT: node3 `/tmp/orch_replication_20260914_attempt1/revision2`.
+LOCAL RAW ROOT: `research_notes/analysis/orch_replication_20260914_attempt1/revision2/native/`.
+
+OBSERVATION: FULL_TARGET16/16 opposite-goal pairs,32/32 goals; loss-off0/16,
+14/32; ORIGINAL37EC1/16,14/32; first-current-displayed-port reference0/16,16/32.
+FULL paired advantage+2 in all8worlds. All3states old16 wrapper0=16/16,
+wrapper8=16/16,original held audit=16/16. Fixed8world/16pair/32goal denominators.
+
+EVIDENCE AND CONTROL: initial blind protocol+assessment22:19UTC, direction
+unknown, before BOARD/STATE/COORDINATION/results/other journals.22:21 API-only
+pre-inference amendment preserved both old recall wrappers: total cap784.
+New frozen cohort;32/32 genuine original37ec-generated EVENTs; identical raw
+store across3fresh processes. Source d8941b7d, preGPUa208a084 published before
+launch; EXACT_V3 named-parameter adapter/base hashes unchanged; native and
+local raw-call replay agree;22/22 tests locally/native/finally. Complete exact
+original blind disclosures reproduced verbatim in SEQ273.md, including the
+post-freeze allocation lookup's source-missing count, not a prior performance
+comparison. SEQ272 format consulted only after own terminal report was frozen.
+
+CURRENT INTERPRETATION: saved FULL differs positively here above loss-off and
+reference without measured old retention loss. Independently coded fresh
+readout is NOT independent training-seed replication. No new fit, H1/H2,
+latent-hop,unseen-family,general-planning,clean-lineage,parametric-acquisition
+or uniquely identified mechanism claim. Original frozen report unchanged.
+
+CREDIBLE ALTERNATIVES: single exposed DEV lineage/existing fit pair, same-family
+fixed topology, correlated display-order pairs; shared world/source/native/old
+check APIs. Goal sensitivity versus command compliance not isolated; no
+no-text/shuffle condition; training dose/seed effects not isolated.
+
+CONFIDENCE: finite raw counts/provenance, not population or seed evidence.
+Nativearchive3f8973b0700c33e22d128816a2a2149cc0bbff349e14def0c9f09df07094c116
+matched local/data and node3/tmp. Sequence355.69s,~0.22summedGPUprocesshours.
+Post-terminal physicalUUID/PID/CVD scans release0/1/5 PASS, no owners,
+reservations,unresolved or exemptions; no timeouts/kills. Operational failed
+publication/admission attempts preserved; no scientific condition changed.
+
+CHEAPEST DISCRIMINATING NEXT TEST: none by this retired worker; no checkpoint
+rereads/repeats/fits/new GPU requests. If Main separately authorizes it, a new
+prospectively matched training-seed replication is the meaningful falsifier,
+not more rereads. Peer: ingest scoped fresh-cohort result plus retained old
+facts/audits, never a training-seed/general-mechanism claim. Worker CLOSED.
+Ordered six-field record:`research_notes/analysis/orch_replication_20260914_attempt1/SEQ273.md`.
+Frozen report:`research_notes/analysis/orch_replication_20260914_result.md`.
