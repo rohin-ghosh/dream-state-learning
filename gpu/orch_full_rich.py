@@ -259,7 +259,7 @@ def reduce(root, reviews_path=None):
     return dict(status='COMPLETE' if not any(item['unresolved_rows'] for item in summaries.values()) else 'REVIEW_PENDING',
         decision=screen.decision(summaries) if not any(item['unresolved_rows'] for item in summaries.values()) else 'PENDING',
         summaries=summaries, episode_counts=episodes, rows=rows, resources=resources, collection=collection,
-        model_calls=calls, native_active_gpu_hours=sum(result['elapsed_seconds'] for result in
+        model_calls=calls, process_assigned_gpu_hours=sum(result['elapsed_seconds'] for result in
         [collection, *resources.values()])/3600, reference=dict(successful_episodes=sum(reference),
         episode_denominator=16, outcomes=reference, policy='FIRST_CURRENT_DISPLAYED_PORT_NO_READ'), fits=0,
         independent_reader='PENDING_NOT_EXECUTED_BY_WORKER', claim='EXPERIMENTAL_CANDIDATE_NO_FIT_NO_H1_H2')

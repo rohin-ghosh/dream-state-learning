@@ -152,11 +152,13 @@ def row_gate(episode_record, capture, review=None):
     eligible = bool(episode_record['correct'] and capture['prior_reads'] and
                     150 <= tokens <= 400 and response.get('terminal') is True and
                     response.get('truncated') is False and capture.get('command') is not None)
-    semantic = bool(review and review.get('raw_sha256') == digest(response.get('raw')) and
+    reviewed = bool(review and review.get('raw_sha256') == digest(response.get('raw')) and
                     review.get('capture_sha256') == digest(capture) and
-                    all(review.get(item) is True for item in RUBRIC) and review.get('rationale'))
+                    all(type(review.get(item)) is bool for item in RUBRIC) and review.get('rationale'))
+    semantic = reviewed and all(review[item] for item in RUBRIC)
     return dict(eligible_for_semantic_review=eligible, semantic_status='PASS' if semantic else
-                ('UNRESOLVED' if eligible else 'FAIL_NECESSARY_CONDITIONS'), admitted=eligible and semantic,
+                ('FAIL_SEMANTIC' if reviewed else 'UNRESOLVED' if eligible else 'FAIL_NECESSARY_CONDITIONS'),
+                admitted=eligible and semantic,
                 generated_text_tokens=tokens)
 
 

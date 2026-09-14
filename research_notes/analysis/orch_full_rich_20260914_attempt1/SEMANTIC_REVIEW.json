@@ -1,0 +1,51 @@
+{
+  "FULL_TARGET/3/1/2": {
+    "raw_sha256": "64721476d553beb62bf7b3dba26065c28b13dd249f40ece516691c70e3b9079c",
+    "capture_sha256": "66600e110ea5b510c679c987bcf65e2db807aa4ae850f456e981cb7033f07662",
+    "specific_read_evidence": true, "goal_connection": true, "checkable_expectation": true,
+    "action_last": true, "substantive_first_person": true, "no_unsupported_claim": true,
+    "rationale": "Author whole-text PASS, qualified but weaker than WORLD7 turn4. Truthfully identifies read E_INRAU6R5EC, intermediate N_4P5CYQYVBR, port P_B76ON7N25C, goal N_CR4GMX4BXC and receipt R_WTOZPSYENP. Relates the transition to goal-directed movement and predicts the current first port reaches a goal or closer intermediate; the prior actual first read establishes the intermediate, making this broad prediction checkable and correct. Final ROUTE P_Q2GMBCUCMQ is legal and matches that first read. Transportation is a tentative description of node movement, not an invented map fact. The prose is less precise than it could be, but not a heading/length-only pass."
+  },
+  "FULL_TARGET/3/1/5": {
+    "raw_sha256": "e050f0d190ef29717f2d033e50196b86d6a5054da022f71a8ce763399c344dfe",
+    "capture_sha256": "7629376b9935323f4f41c972cfc3d3cfb94c5baaa2e7e093accb024d76a79240",
+    "specific_read_evidence": true, "goal_connection": true, "checkable_expectation": true,
+    "action_last": true, "substantive_first_person": true, "no_unsupported_claim": true,
+    "rationale": "Author whole-text PASS with scope-sensitive goal-relevance interpretation. Accurately summarizes actual E_UOZ2JARHCZ and receipt R_IDWXG7IG6Z, rejects the other branch as not on the current path, acknowledges the preceding expectation was not met, then states a directly checkable expectation of reaching the goal through current P_B76ON7N25C. Actual prior read E_INRAU6R5EC and the current receipt establish that final port. It does not explicitly restate that supporting goal-edge record, so its grounding is contextual and weaker than WORLD7 turn4; nevertheless the stated negative evidence, current-path distinction and final goal action are truthful. Conservative rejection of this row would reduce qualified episodes from1 to0 without changing the frozen NULL decision."
+  },
+  "FULL_TARGET/7/1/4": {
+    "raw_sha256": "da64a10b5d62f1c56dc2b98a0f782f572541b1bbd6e51bf3a19a8994ebe41403",
+    "capture_sha256": "a325e5c2e50f89dbdfe0adf1435320cc935eb9040dd530532e0f607cf85dcdad",
+    "specific_read_evidence": true, "goal_connection": true, "checkable_expectation": true,
+    "action_last": true, "substantive_first_person": true, "no_unsupported_claim": true,
+    "rationale": "Author whole-text PASS, clearest row. Names exact read E_QZPL7PRWOV, intermediate N_DI4ZYJNWBV, goal N_YMSLUU72YH, second port P_C6YN4OH55C and receipt R_Q5SQ46K5AU. Explicitly connects that read to a path to the goal and predicts first port P_W5AV34RUCS reaches the intermediate, supported by actual E_5PCRBHDSXD. Final action is that first port and the actual receipt verifies the prediction. Exact151 generated tokens, no padding or target repair. Its subsequent final ROUTE turn is only118 tokens, so this successful episode is not qualified."
+  },
+  "NEW_TRAJECTORY_LOSS_OFF/5/0/4": {
+    "raw_sha256": "2b9d87cee8d8c6470921065c782af4fb482e3e86b69cde244041da4e54b8798c",
+    "capture_sha256": "1ecdfa04ac1fee1b1dcc457ed8a467382b4a058cae945b5f7abcd2fdee126212",
+    "specific_read_evidence": true, "goal_connection": true, "checkable_expectation": true,
+    "action_last": true, "substantive_first_person": true, "no_unsupported_claim": false,
+    "rationale": "Author whole-text FAIL. Despite correctly summarizing the latest other-branch event and selecting the correct first port, it claims the supplied events do not contain a route from N_YUDAS4YHXF to goal N_KCY4JJ3YHO. The first actual READ E_4753WACPEJ explicitly contains exactly that edge and receipt R_53SJQN66IL. Successful action and153 tokens cannot cure this false evidence claim."
+  },
+  "NEW_TRAJECTORY_LOSS_OFF/5/1/2": {
+    "raw_sha256": "97560d7e448ec8b514f23a56b241945a5f8b6e3f45aa48c9ab782c2b04164c35",
+    "capture_sha256": "3ce1f7dd962f7d4ca9477956140e1f4147f63698c8a4b23d17509ba93e621d2a",
+    "specific_read_evidence": true, "goal_connection": true, "checkable_expectation": false,
+    "action_last": true, "substantive_first_person": true, "no_unsupported_claim": false,
+    "rationale": "Author whole-text FAIL. It correctly identifies the second read's edge to the goal but says evidence R_PRMUOOY6BM is not provided, although it is present in that actual EVENT. It infers nearing completion from a remembered goal edge while still at the original CURRENT with zero committed routes, and its next-read expectation of either additional context or task completion is not a specific grounded prediction. No target correction."
+  },
+  "NEW_TRAJECTORY_LOSS_OFF/5/1/3": {
+    "raw_sha256": "3625a549bd6c67bdaa981454ed655eca80994f7478ced4daf13f1cc6194554a0",
+    "capture_sha256": "243e38edbf20504e108dc503a36912f1f97a1df22c150ae73a5f445dd7c6826a",
+    "specific_read_evidence": true, "goal_connection": true, "checkable_expectation": false,
+    "action_last": true, "substantive_first_person": true, "no_unsupported_claim": false,
+    "rationale": "Author whole-text FAIL. Actual third read accurately describes an edge from the unchanged root to N_YUDAS4YHXF, but the child says the route has looped back to a previous node. No ROUTE has yet occurred and no loop is in the evidence. It also calls the explicit R_GXGYCLELNS evidence unprovided. Its completion-or-context expectation does not repair the invented live history."
+  },
+  "NEW_TRAJECTORY_LOSS_OFF/5/1/4": {
+    "raw_sha256": "b6dc409b227d85fd8592e4c31ebc49a961cfc7c09494ac3046197e967019895c",
+    "capture_sha256": "6fbfbf0b1aa2c1a3ded5a82add669eeb57619570f3ff30e1dc38504317bc1a67",
+    "specific_read_evidence": true, "goal_connection": true, "checkable_expectation": true,
+    "action_last": true, "substantive_first_person": true, "no_unsupported_claim": false,
+    "rationale": "Author whole-text FAIL. Correctly links E_XJLM5UPNGJ's intermediate to the goal and chooses the correct first port. However it says the explicit receipt R_EFZV4TCK6P is not provided and describes this first live move from the still-root CURRENT as confirming the final leg, conflating remembered transitions with the live position. These unsupported statements fail the frozen whole-text criterion even though the eventual episode succeeds."
+  }
+}

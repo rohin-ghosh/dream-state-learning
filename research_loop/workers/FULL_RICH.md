@@ -80,3 +80,42 @@ Fresh launch receipt started23:01:29UTC; fixed native deadline23:45:28UTC,
 cleanup/release by23:46:28UTC. Engine is loading; no result is inferred.
 The worker executes own collection then parallel state readouts; Main executes
 no GPU cells. Terminal48episode reduction/semantic audit and release follow.
+
+## 2026-09-14 23:15:28 UTC — TERMINAL READY / clean frozen NULL / ordered SEQ requested
+
+Main's update acknowledged: native-seam orch_guided_native/e5a4f919 remains
+separate; no operational contact with Old Builder was necessary. SEQ276 stays
+reserved for MATH-REPLICATION. Request next ordered SEQ only now, after terminal.
+
+Own native sequence COMPLETE23:11:51UTC,622.599seconds; all A1000–3 release
+scans SAFE by23:11:52.97UTC. Actual source64 + FULL77 + OFF39 + ORIGINAL22 =
+202/352calls;32/32 source EVENTs. Exact mounted LoRA/base unchanged all states.
+48/48 byte-exact author CPU episode replays; no independent Fable checks run.
+
+Successful episodes FULL7/16,OFF4/16,ORIGINAL3/16; deterministic reference8/16.
+Qualified episodes FULL1/16 versus0/16 versus0/16; admitted actual rows3/0/0.
+FULL length-eligible3/77 only, median112tokens; OFF20/39,median165;
+ORIGINAL8/22,median351.5. Whole-text seven eligible turns reviewed: three
+FULL passes (two context-dependent; one clearly grounded151-token route),
+four OFF failures for false/unsupported evidence claims. No unresolved rows.
+Frozen positive thresholds fail even under the generous best-case FULL token
+upper bound. Main should not treat tiny nonzero yield as a promoted learner,
+retained richness, H1/H2 or a useful fitting corpus. No fits/updates/scaling.
+
+Report: research_notes/analysis/orch_full_rich_20260914_attempt1/REPORT.md.
+Exact48 CSV,138-row rubric/token CSV, worlds, source and admitted-target bytes,
+hash-bound reviews and raw calls preserved alongside. Native tar SHA256
+e0bbd04b6f3b1835fcf007146301c8d1e4a87cc43baec21bdf4e2d8f9d89bbbe.
+0.397785 process-assigned GPU-hours; kernel-active integral not measured.
+Non-material analysis-only repair resolves explicit semantic FAIL statuses
+(previously displayed UNRESOLVED) and corrects the GPU-hours metric name;
+regression tested15/15, no native source/targets changed or inference repeated.
+Replay uses the original frozen source. Initial evidence/failed CPU and
+transport receipts preserved. Primary NULL robust to stricter semantic review.
+
+Strongest result: competence yields a few rich rows but fails usable yield;
+alternative prompt/action interference remains, not causal suppression proven.
+Cheapest next discriminator: asynchronous scrutiny of seven reviewed rows,
+particularly FULL3/1/2 and3/1/5, with zero GPUs. Deallocate clean null; no fit or
+repeat. Peer message goes to Main only: use qualified yield, not7/16 success;
+leave native seam/base diagnostic/terse breadth distinct. Reader pending.

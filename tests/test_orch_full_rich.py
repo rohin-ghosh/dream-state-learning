@@ -52,6 +52,9 @@ class FullRichTests(unittest.TestCase):
         review.update(raw_sha256=screen.digest(capture['response']['raw']),
                       capture_sha256=screen.digest(capture), rationale='CPU fixture only')
         self.assertTrue(screen.row_gate(record, capture, review)['admitted'])
+        rejected = dict(review, no_unsupported_claim=False)
+        self.assertEqual(screen.row_gate(record, capture, rejected)['semantic_status'], 'FAIL_SEMANTIC')
+        self.assertFalse(screen.row_gate(record, capture, rejected)['admitted'])
         for field in ('truncated', 'terminal'):
             broken = deepcopy(capture)
             broken['response'][field] = field == 'truncated'
@@ -116,6 +119,24 @@ class FullRichTests(unittest.TestCase):
         self.assertEqual(guard.LEASE_CUTOFF, 1790463900.0)
         frozen = screen.cohort(runner.excluded_ids({'old_ids': []}))
         self.assertEqual(len(frozen['worlds']), 8)
+
+    def test_author_replay_joins_actual_capture_and_tokens(self):
+        from gpu import orch_full_rich_audit as audit
+        calls = []
+
+        def generate(messages):
+            response = screen.first_port(messages)
+            response.update(token_ids=[1, 2], generated_text_tokens=1)
+            calls.append(dict(messages=deepcopy(messages), response=deepcopy(response), error=None))
+            return response
+
+        record = screen.episode(self.world, self.task, generate, {})
+        replayed = audit.replay_episode(self.world, self.task, dict(episode=record, store={}), iter(calls))
+        self.assertEqual(replayed, calls)
+        changed = deepcopy(calls)
+        changed[0]['response']['generated_text_tokens'] = 999
+        with self.assertRaises(AssertionError):
+            audit.replay_episode(self.world, self.task, dict(episode=record, store={}), iter(changed))
 
 
 if __name__ == '__main__':

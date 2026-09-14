@@ -1,0 +1,3462 @@
+{
+  "claim": "EXPERIMENTAL_CANDIDATE_NO_FIT_NO_H1_H2",
+  "collection": {
+    "accepted_events": 32,
+    "adapter_state_after": "37ec37884e4b0b679edd1dba1be1dec3474589e992649f3a33e7e3b1ec78b8c0",
+    "adapter_state_before": "37ec37884e4b0b679edd1dba1be1dec3474589e992649f3a33e7e3b1ec78b8c0",
+    "attempted_calls": 64,
+    "call_cap": 64,
+    "cohort_sha256": "fda756da466044a08031ddfb7547e171ef990a1fb093fbc49258310793538401",
+    "elapsed_seconds": 148.17151761054993,
+    "event_denominator": 32,
+    "finished_utc": "2026-09-14T23:03:57.804753+00:00",
+    "fits": 0,
+    "frozen_base_unchanged": true,
+    "gpu_uuid": "GPU-8e15ce78-4e9c-4c48-724f-2b753c6c2296",
+    "model_calls": 64,
+    "phase": "collect",
+    "pid": 164044,
+    "prepare_sha256": "5c62b7e07fd281e24ef4f5640d6502fd1aa1a86dddb3a34fca1ba6f128489d8b",
+    "protocol_sha256": "c334db0453c42fbe1e66f15df46122534e411bef0fb1d78a41046131c4f46d82",
+    "runtime": {
+      "distributions": {
+        "peft": "0.20.0",
+        "tokenizers": "0.22.2",
+        "torch": "2.13.0",
+        "transformers": "5.5.3"
+      },
+      "imported": {
+        "peft": "0.20.0",
+        "tokenizers": "0.22.2",
+        "torch": "2.13.0+cu130",
+        "transformers": "5.5.3"
+      }
+    },
+    "source_commit": "f267ab4be87c04f3c7eff07c9a03f051ba22e347",
+    "started_unix": 1789426889.6332784,
+    "state": "ORIGINAL37EC",
+    "state_hash_method": "EXACT_V3_pcfl_vertical_train._state_hash_named_parameters_lora_A_B",
+    "status": "COMPLETE",
+    "store_sha256": "f37e37594ec7ab34f3ebc2d4d01f36a83a98bb934254b49e20360c9f89c899dc",
+    "timestamp_utc": "2026-09-14T23:01:29.633282+00:00",
+    "trainingAllowed": false,
+    "updates": 0
+  },
+  "decision": "NULL",
+  "episode_counts": [
+    {
+      "actor_calls": 1,
+      "goal_index": 0,
+      "qualified": false,
+      "reads": [],
+      "routes": [],
+      "state": "FULL_TARGET",
+      "success": false,
+      "terminal_reason": "invalid_or_duplicate_read",
+      "world_index": 0
+    },
+    {
+      "actor_calls": 5,
+      "goal_index": 1,
+      "qualified": false,
+      "reads": [
+        {
+          "address": "E_EPGJKNU6ET",
+          "raw": "EVENT E_EPGJKNU6ET AT N_RXFVE77M7U DID P_SFSHY4PKPQ GOT N_2SKQL5KMLS EVIDENCE R_4KUEG3ZA25"
+        },
+        {
+          "address": "E_GDY3YYPYFZ",
+          "raw": "EVENT E_GDY3YYPYFZ AT N_2SKQL5KMLS DID P_GG3L4N3OJT GOT N_YQ7Q5LL3RL EVIDENCE R_Q6DY4I6IMP"
+        },
+        {
+          "address": "E_KU53N35YMO",
+          "raw": "EVENT E_KU53N35YMO AT N_RXFVE77M7U DID P_2FLCXTCQOH GOT N_PIT3Y7L2XW EVIDENCE R_P467SRG5VO"
+        }
+      ],
+      "routes": [
+        {
+          "destination": "N_PIT3Y7L2XW",
+          "port": "P_2FLCXTCQOH",
+          "receipt": "R_P467SRG5VO",
+          "source": "N_RXFVE77M7U"
+        }
+      ],
+      "state": "FULL_TARGET",
+      "success": false,
+      "terminal_reason": "invalid_or_duplicate_read",
+      "world_index": 0
+    },
+    {
+      "actor_calls": 4,
+      "goal_index": 0,
+      "qualified": false,
+      "reads": [
+        {
+          "address": "E_A4PCC4NLMZ",
+          "raw": "EVENT E_A4PCC4NLMZ AT N_UKH5L4U3IW DID P_N2EMTS6F4V GOT N_TITVT5X652 EVIDENCE R_MNGCXPQPEM"
+        },
+        {
+          "address": "E_B62YAMYWIO",
+          "raw": "EVENT E_B62YAMYWIO AT N_TITVT5X652 DID P_IE4PJVGJQE GOT N_OWBSNDVLWO EVIDENCE R_C7IVRKJZCN"
+        }
+      ],
+      "routes": [
+        {
+          "destination": "N_TITVT5X652",
+          "port": "P_N2EMTS6F4V",
+          "receipt": "R_MNGCXPQPEM",
+          "source": "N_UKH5L4U3IW"
+        },
+        {
+          "destination": "N_OWBSNDVLWO",
+          "port": "P_IE4PJVGJQE",
+          "receipt": "R_C7IVRKJZCN",
+          "source": "N_TITVT5X652"
+        }
+      ],
+      "state": "FULL_TARGET",
+      "success": true,
+      "terminal_reason": "reached_goal",
+      "world_index": 1
+    },
+    {
+      "actor_calls": 6,
+      "goal_index": 1,
+      "qualified": false,
+      "reads": [
+        {
+          "address": "E_A4PCC4NLMZ",
+          "raw": "EVENT E_A4PCC4NLMZ AT N_UKH5L4U3IW DID P_N2EMTS6F4V GOT N_TITVT5X652 EVIDENCE R_MNGCXPQPEM"
+        },
+        {
+          "address": "E_B62YAMYWIO",
+          "raw": "EVENT E_B62YAMYWIO AT N_TITVT5X652 DID P_IE4PJVGJQE GOT N_OWBSNDVLWO EVIDENCE R_C7IVRKJZCN"
+        },
+        {
+          "address": "E_QIF3CTXPUF",
+          "raw": "EVENT E_QIF3CTXPUF AT N_S5V5OSI5W6 DID P_NAKGMLHKI3 GOT N_HJF5OKYIWE EVIDENCE R_LELAJQZNZ6"
+        },
+        {
+          "address": "E_XHVYGKAMIJ",
+          "raw": "EVENT E_XHVYGKAMIJ AT N_UKH5L4U3IW DID P_Q6K7E4ZJD4 GOT N_S5V5OSI5W6 EVIDENCE R_ECMFVN4KAK"
+        }
+      ],
+      "routes": [
+        {
+          "destination": "N_S5V5OSI5W6",
+          "port": "P_Q6K7E4ZJD4",
+          "receipt": "R_ECMFVN4KAK",
+          "source": "N_UKH5L4U3IW"
+        },
+        {
+          "destination": "N_HJF5OKYIWE",
+          "port": "P_NAKGMLHKI3",
+          "receipt": "R_LELAJQZNZ6",
+          "source": "N_S5V5OSI5W6"
+        }
+      ],
+      "state": "FULL_TARGET",
+      "success": true,
+      "terminal_reason": "reached_goal",
+      "world_index": 1
+    },
+    {
+      "actor_calls": 4,
+      "goal_index": 0,
+      "qualified": false,
+      "reads": [
+        {
+          "address": "E_GMAD4ULW35",
+          "raw": "EVENT E_GMAD4ULW35 AT N_TE32WDZJPB DID P_4KEI35TQMY GOT N_HCD7PJJKAV EVIDENCE R_NOWBG2S2W5"
+        },
+        {
+          "address": "E_HIEREQXFJP",
+          "raw": "EVENT E_HIEREQXFJP AT N_JONOTJLN6O DID P_3EXYLFUPL3 GOT N_FBNAI4RUT5 EVIDENCE R_FA32I2CBBA"
+        }
+      ],
+      "routes": [
+        {
+          "destination": "N_JONOTJLN6O",
+          "port": "P_UGSI653ZA4",
+          "receipt": "R_TXJUM3F24B",
+          "source": "N_KHP2OAYBH3"
+        },
+        {
+          "destination": "N_FBNAI4RUT5",
+          "port": "P_3EXYLFUPL3",
+          "receipt": "R_FA32I2CBBA",
+          "source": "N_JONOTJLN6O"
+        }
+      ],
+      "state": "FULL_TARGET",
+      "success": false,
+      "terminal_reason": "dead_end",
+      "world_index": 2
+    },
+    {
+      "actor_calls": 6,
+      "goal_index": 1,
+      "qualified": false,
+      "reads": [
+        {
+          "address": "E_GMAD4ULW35",
+          "raw": "EVENT E_GMAD4ULW35 AT N_TE32WDZJPB DID P_4KEI35TQMY GOT N_HCD7PJJKAV EVIDENCE R_NOWBG2S2W5"
+        },
+        {
+          "address": "E_HIEREQXFJP",
+          "raw": "EVENT E_HIEREQXFJP AT N_JONOTJLN6O DID P_3EXYLFUPL3 GOT N_FBNAI4RUT5 EVIDENCE R_FA32I2CBBA"
+        },
+        {
+          "address": "E_NAZIOX5JU3",
+          "raw": "EVENT E_NAZIOX5JU3 AT N_KHP2OAYBH3 DID P_UGSI653ZA4 GOT N_JONOTJLN6O EVIDENCE R_TXJUM3F24B"
+        },
+        {
+          "address": "E_SFATPO3GTL",
+          "raw": "EVENT E_SFATPO3GTL AT N_KHP2OAYBH3 DID P_OZMNSWGHH3 GOT N_TE32WDZJPB EVIDENCE R_DM7OCY6T44"
+        }
+      ],
+      "routes": [
+        {
+          "destination": "N_JONOTJLN6O",
+          "port": "P_UGSI653ZA4",
+          "receipt": "R_TXJUM3F24B",
+          "source": "N_KHP2OAYBH3"
+        },
+        {
+          "destination": "N_FBNAI4RUT5",
+          "port": "P_3EXYLFUPL3",
+          "receipt": "R_FA32I2CBBA",
+          "source": "N_JONOTJLN6O"
+        }
+      ],
+      "state": "FULL_TARGET",
+      "success": true,
+      "terminal_reason": "reached_goal",
+      "world_index": 2
+    },
+    {
+      "actor_calls": 6,
+      "goal_index": 0,
+      "qualified": false,
+      "reads": [
+        {
+          "address": "E_FGSOJE7XAU",
+          "raw": "EVENT E_FGSOJE7XAU AT N_J6CZTU255B DID P_Q2GMBCUCMQ GOT N_4P5CYQYVBR EVIDENCE R_5TLA5DSR7C"
+        },
+        {
+          "address": "E_INRAU6R5EC",
+          "raw": "EVENT E_INRAU6R5EC AT N_4P5CYQYVBR DID P_B76ON7N25C GOT N_CR4GMX4BXC EVIDENCE R_WTOZPSYENP"
+        },
+        {
+          "address": "E_R7XB5RBNOA",
+          "raw": "EVENT E_R7XB5RBNOA AT N_45LKSNXIDN DID P_PBPWAC53QQ GOT N_NWZIT72UKV EVIDENCE R_6OFFM3RX2U"
+        },
+        {
+          "address": "E_UOZ2JARHCZ",
+          "raw": "EVENT E_UOZ2JARHCZ AT N_J6CZTU255B DID P_USLXV3VQ7M GOT N_45LKSNXIDN EVIDENCE R_IDWXG7IG6Z"
+        }
+      ],
+      "routes": [
+        {
+          "destination": "N_4P5CYQYVBR",
+          "port": "P_Q2GMBCUCMQ",
+          "receipt": "R_5TLA5DSR7C",
+          "source": "N_J6CZTU255B"
+        },
+        {
+          "destination": "N_CR4GMX4BXC",
+          "port": "P_B76ON7N25C",
+          "receipt": "R_WTOZPSYENP",
+          "source": "N_4P5CYQYVBR"
+        }
+      ],
+      "state": "FULL_TARGET",
+      "success": false,
+      "terminal_reason": "dead_end",
+      "world_index": 3
+    },
+    {
+      "actor_calls": 6,
+      "goal_index": 1,
+      "qualified": true,
+      "reads": [
+        {
+          "address": "E_FGSOJE7XAU",
+          "raw": "EVENT E_FGSOJE7XAU AT N_J6CZTU255B DID P_Q2GMBCUCMQ GOT N_4P5CYQYVBR EVIDENCE R_5TLA5DSR7C"
+        },
+        {
+          "address": "E_INRAU6R5EC",
+          "raw": "EVENT E_INRAU6R5EC AT N_4P5CYQYVBR DID P_B76ON7N25C GOT N_CR4GMX4BXC EVIDENCE R_WTOZPSYENP"
+        },
+        {
+          "address": "E_R7XB5RBNOA",
+          "raw": "EVENT E_R7XB5RBNOA AT N_45LKSNXIDN DID P_PBPWAC53QQ GOT N_NWZIT72UKV EVIDENCE R_6OFFM3RX2U"
+        },
+        {
+          "address": "E_UOZ2JARHCZ",
+          "raw": "EVENT E_UOZ2JARHCZ AT N_J6CZTU255B DID P_USLXV3VQ7M GOT N_45LKSNXIDN EVIDENCE R_IDWXG7IG6Z"
+        }
+      ],
+      "routes": [
+        {
+          "destination": "N_4P5CYQYVBR",
+          "port": "P_Q2GMBCUCMQ",
+          "receipt": "R_5TLA5DSR7C",
+          "source": "N_J6CZTU255B"
+        },
+        {
+          "destination": "N_CR4GMX4BXC",
+          "port": "P_B76ON7N25C",
+          "receipt": "R_WTOZPSYENP",
+          "source": "N_4P5CYQYVBR"
+        }
+      ],
+      "state": "FULL_TARGET",
+      "success": true,
+      "terminal_reason": "reached_goal",
+      "world_index": 3
+    },
+    {
+      "actor_calls": 4,
+      "goal_index": 0,
+      "qualified": false,
+      "reads": [
+        {
+          "address": "E_75N73RHD6Z",
+          "raw": "EVENT E_75N73RHD6Z AT N_4MWNUPPK72 DID P_HTKURZKMK6 GOT N_R22UBPX6TB EVIDENCE R_EB32CDZY5Q"
+        },
+        {
+          "address": "E_IKZHADDHNY",
+          "raw": "EVENT E_IKZHADDHNY AT N_R22UBPX6TB DID P_7M2D2UASCD GOT N_DP65DZUZXZ EVIDENCE R_54NRINI6OC"
+        },
+        {
+          "address": "E_KCLVE2QJMQ",
+          "raw": "EVENT E_KCLVE2QJMQ AT N_4MWNUPPK72 DID P_6W3HSKFEHM GOT N_4XGRI6YUQZ EVIDENCE R_7S73CHQFVJ"
+        }
+      ],
+      "routes": [],
+      "state": "FULL_TARGET",
+      "success": false,
+      "terminal_reason": "invalid_route",
+      "world_index": 4
+    },
+    {
+      "actor_calls": 5,
+      "goal_index": 1,
+      "qualified": false,
+      "reads": [
+        {
+          "address": "E_75N73RHD6Z",
+          "raw": "EVENT E_75N73RHD6Z AT N_4MWNUPPK72 DID P_HTKURZKMK6 GOT N_R22UBPX6TB EVIDENCE R_EB32CDZY5Q"
+        },
+        {
+          "address": "E_IKZHADDHNY",
+          "raw": "EVENT E_IKZHADDHNY AT N_R22UBPX6TB DID P_7M2D2UASCD GOT N_DP65DZUZXZ EVIDENCE R_54NRINI6OC"
+        },
+        {
+          "address": "E_KCLVE2QJMQ",
+          "raw": "EVENT E_KCLVE2QJMQ AT N_4MWNUPPK72 DID P_6W3HSKFEHM GOT N_4XGRI6YUQZ EVIDENCE R_7S73CHQFVJ"
+        },
+        {
+          "address": "E_MFDDNRUYXZ",
+          "raw": "EVENT E_MFDDNRUYXZ AT N_4XGRI6YUQZ DID P_EFVEOHAEZN GOT N_JCL42DU3S4 EVIDENCE R_5OYF4VHOSE"
+        }
+      ],
+      "routes": [],
+      "state": "FULL_TARGET",
+      "success": false,
+      "terminal_reason": "invalid_route",
+      "world_index": 4
+    },
+    {
+      "actor_calls": 6,
+      "goal_index": 0,
+      "qualified": false,
+      "reads": [
+        {
+          "address": "E_4753WACPEJ",
+          "raw": "EVENT E_4753WACPEJ AT N_YUDAS4YHXF DID P_RZE5ZLHI7G GOT N_KCY4JJ3YHO EVIDENCE R_53SJQN66IL"
+        },
+        {
+          "address": "E_SAFEDGKOVW",
+          "raw": "EVENT E_SAFEDGKOVW AT N_KZI4NIJI4Q DID P_Z5HISJZFVB GOT N_PXNC6WOWD2 EVIDENCE R_PRMUOOY6BM"
+        },
+        {
+          "address": "E_WQY5NNVMAT",
+          "raw": "EVENT E_WQY5NNVMAT AT N_77UTW7PPNB DID P_KHRL3IBWNK GOT N_YUDAS4YHXF EVIDENCE R_GXGYCLELNS"
+        },
+        {
+          "address": "E_XJLM5UPNGJ",
+          "raw": "EVENT E_XJLM5UPNGJ AT N_77UTW7PPNB DID P_HGMHD2JO6F GOT N_KZI4NIJI4Q EVIDENCE R_EFZV4TCK6P"
+        }
+      ],
+      "routes": [
+        {
+          "destination": "N_KZI4NIJI4Q",
+          "port": "P_HGMHD2JO6F",
+          "receipt": "R_EFZV4TCK6P",
+          "source": "N_77UTW7PPNB"
+        }
+      ],
+      "state": "FULL_TARGET",
+      "success": false,
+      "terminal_reason": "invalid_or_duplicate_read",
+      "world_index": 5
+    },
+    {
+      "actor_calls": 3,
+      "goal_index": 1,
+      "qualified": false,
+      "reads": [
+        {
+          "address": "E_4753WACPEJ",
+          "raw": "EVENT E_4753WACPEJ AT N_YUDAS4YHXF DID P_RZE5ZLHI7G GOT N_KCY4JJ3YHO EVIDENCE R_53SJQN66IL"
+        },
+        {
+          "address": "E_SAFEDGKOVW",
+          "raw": "EVENT E_SAFEDGKOVW AT N_KZI4NIJI4Q DID P_Z5HISJZFVB GOT N_PXNC6WOWD2 EVIDENCE R_PRMUOOY6BM"
+        }
+      ],
+      "routes": [],
+      "state": "FULL_TARGET",
+      "success": false,
+      "terminal_reason": "invalid_route",
+      "world_index": 5
+    },
+    {
+      "actor_calls": 3,
+      "goal_index": 0,
+      "qualified": false,
+      "reads": [
+        {
+          "address": "E_3ODRTRYEN7",
+          "raw": "EVENT E_3ODRTRYEN7 AT N_7DMXQREJJ4 DID P_FZFCAT2QHK GOT N_UZ6JXA3VRR EVIDENCE R_4VZF5IYFGY"
+        },
+        {
+          "address": "E_HSBRSMU5HJ",
+          "raw": "EVENT E_HSBRSMU5HJ AT N_XXPGQVHSVR DID P_NHGAS3QB2C GOT N_MVHZUHD2LG EVIDENCE R_EZOWXEAPFB"
+        }
+      ],
+      "routes": [],
+      "state": "FULL_TARGET",
+      "success": false,
+      "terminal_reason": "invalid_route",
+      "world_index": 6
+    },
+    {
+      "actor_calls": 6,
+      "goal_index": 1,
+      "qualified": false,
+      "reads": [
+        {
+          "address": "E_3ODRTRYEN7",
+          "raw": "EVENT E_3ODRTRYEN7 AT N_7DMXQREJJ4 DID P_FZFCAT2QHK GOT N_UZ6JXA3VRR EVIDENCE R_4VZF5IYFGY"
+        },
+        {
+          "address": "E_HSBRSMU5HJ",
+          "raw": "EVENT E_HSBRSMU5HJ AT N_XXPGQVHSVR DID P_NHGAS3QB2C GOT N_MVHZUHD2LG EVIDENCE R_EZOWXEAPFB"
+        },
+        {
+          "address": "E_W2XDLCHQTC",
+          "raw": "EVENT E_W2XDLCHQTC AT N_4B43I6YDN2 DID P_HHWM2FEJXQ GOT N_7DMXQREJJ4 EVIDENCE R_5O6AJCUIST"
+        },
+        {
+          "address": "E_XN7RUJEF47",
+          "raw": "EVENT E_XN7RUJEF47 AT N_4B43I6YDN2 DID P_WDQIWDBGXD GOT N_XXPGQVHSVR EVIDENCE R_FR65MMZEN5"
+        }
+      ],
+      "routes": [
+        {
+          "destination": "N_7DMXQREJJ4",
+          "port": "P_HHWM2FEJXQ",
+          "receipt": "R_5O6AJCUIST",
+          "source": "N_4B43I6YDN2"
+        },
+        {
+          "destination": "N_UZ6JXA3VRR",
+          "port": "P_FZFCAT2QHK",
+          "receipt": "R_4VZF5IYFGY",
+          "source": "N_7DMXQREJJ4"
+        }
+      ],
+      "state": "FULL_TARGET",
+      "success": true,
+      "terminal_reason": "reached_goal",
+      "world_index": 6
+    },
+    {
+      "actor_calls": 6,
+      "goal_index": 0,
+      "qualified": false,
+      "reads": [
+        {
+          "address": "E_5PCRBHDSXD",
+          "raw": "EVENT E_5PCRBHDSXD AT N_HDROAA3ARE DID P_W5AV34RUCS GOT N_DI4ZYJNWBV EVIDENCE R_VRILKKOCDC"
+        },
+        {
+          "address": "E_JNCXAKRC7L",
+          "raw": "EVENT E_JNCXAKRC7L AT N_KR4PFNVUZ6 DID P_7OTVADYM6O GOT N_QCC6VGPPWS EVIDENCE R_TQZWZRJIF7"
+        },
+        {
+          "address": "E_LTZPRCNEV2",
+          "raw": "EVENT E_LTZPRCNEV2 AT N_HDROAA3ARE DID P_ZHMZOVBDQ2 GOT N_KR4PFNVUZ6 EVIDENCE R_FEAJYP4QTS"
+        },
+        {
+          "address": "E_QZPL7PRWOV",
+          "raw": "EVENT E_QZPL7PRWOV AT N_DI4ZYJNWBV DID P_C6YN4OH55C GOT N_YMSLUU72YH EVIDENCE R_Q5SQ46K5AU"
+        }
+      ],
+      "routes": [
+        {
+          "destination": "N_KR4PFNVUZ6",
+          "port": "P_ZHMZOVBDQ2",
+          "receipt": "R_FEAJYP4QTS",
+          "source": "N_HDROAA3ARE"
+        },
+        {
+          "destination": "N_QCC6VGPPWS",
+          "port": "P_7OTVADYM6O",
+          "receipt": "R_TQZWZRJIF7",
+          "source": "N_KR4PFNVUZ6"
+        }
+      ],
+      "state": "FULL_TARGET",
+      "success": true,
+      "terminal_reason": "reached_goal",
+      "world_index": 7
+    },
+    {
+      "actor_calls": 6,
+      "goal_index": 1,
+      "qualified": false,
+      "reads": [
+        {
+          "address": "E_5PCRBHDSXD",
+          "raw": "EVENT E_5PCRBHDSXD AT N_HDROAA3ARE DID P_W5AV34RUCS GOT N_DI4ZYJNWBV EVIDENCE R_VRILKKOCDC"
+        },
+        {
+          "address": "E_JNCXAKRC7L",
+          "raw": "EVENT E_JNCXAKRC7L AT N_KR4PFNVUZ6 DID P_7OTVADYM6O GOT N_QCC6VGPPWS EVIDENCE R_TQZWZRJIF7"
+        },
+        {
+          "address": "E_LTZPRCNEV2",
+          "raw": "EVENT E_LTZPRCNEV2 AT N_HDROAA3ARE DID P_ZHMZOVBDQ2 GOT N_KR4PFNVUZ6 EVIDENCE R_FEAJYP4QTS"
+        },
+        {
+          "address": "E_QZPL7PRWOV",
+          "raw": "EVENT E_QZPL7PRWOV AT N_DI4ZYJNWBV DID P_C6YN4OH55C GOT N_YMSLUU72YH EVIDENCE R_Q5SQ46K5AU"
+        }
+      ],
+      "routes": [
+        {
+          "destination": "N_DI4ZYJNWBV",
+          "port": "P_W5AV34RUCS",
+          "receipt": "R_VRILKKOCDC",
+          "source": "N_HDROAA3ARE"
+        },
+        {
+          "destination": "N_YMSLUU72YH",
+          "port": "P_C6YN4OH55C",
+          "receipt": "R_Q5SQ46K5AU",
+          "source": "N_DI4ZYJNWBV"
+        }
+      ],
+      "state": "FULL_TARGET",
+      "success": true,
+      "terminal_reason": "reached_goal",
+      "world_index": 7
+    },
+    {
+      "actor_calls": 2,
+      "goal_index": 0,
+      "qualified": false,
+      "reads": [],
+      "routes": [
+        {
+          "destination": "N_PIT3Y7L2XW",
+          "port": "P_2FLCXTCQOH",
+          "receipt": "R_P467SRG5VO",
+          "source": "N_RXFVE77M7U"
+        },
+        {
+          "destination": "N_D6XFA5WTBN",
+          "port": "P_YAUY5NNN5A",
+          "receipt": "R_XYRTD4F4NH",
+          "source": "N_PIT3Y7L2XW"
+        }
+      ],
+      "state": "NEW_TRAJECTORY_LOSS_OFF",
+      "success": false,
+      "terminal_reason": "dead_end",
+      "world_index": 0
+    },
+    {
+      "actor_calls": 1,
+      "goal_index": 1,
+      "qualified": false,
+      "reads": [],
+      "routes": [],
+      "state": "NEW_TRAJECTORY_LOSS_OFF",
+      "success": false,
+      "terminal_reason": "invalid_final_action",
+      "world_index": 0
+    },
+    {
+      "actor_calls": 2,
+      "goal_index": 0,
+      "qualified": false,
+      "reads": [],
+      "routes": [
+        {
+          "destination": "N_TITVT5X652",
+          "port": "P_N2EMTS6F4V",
+          "receipt": "R_MNGCXPQPEM",
+          "source": "N_UKH5L4U3IW"
+        },
+        {
+          "destination": "N_OWBSNDVLWO",
+          "port": "P_IE4PJVGJQE",
+          "receipt": "R_C7IVRKJZCN",
+          "source": "N_TITVT5X652"
+        }
+      ],
+      "state": "NEW_TRAJECTORY_LOSS_OFF",
+      "success": true,
+      "terminal_reason": "reached_goal",
+      "world_index": 1
+    },
+    {
+      "actor_calls": 2,
+      "goal_index": 1,
+      "qualified": false,
+      "reads": [],
+      "routes": [
+        {
+          "destination": "N_TITVT5X652",
+          "port": "P_N2EMTS6F4V",
+          "receipt": "R_MNGCXPQPEM",
+          "source": "N_UKH5L4U3IW"
+        },
+        {
+          "destination": "N_OWBSNDVLWO",
+          "port": "P_IE4PJVGJQE",
+          "receipt": "R_C7IVRKJZCN",
+          "source": "N_TITVT5X652"
+        }
+      ],
+      "state": "NEW_TRAJECTORY_LOSS_OFF",
+      "success": false,
+      "terminal_reason": "dead_end",
+      "world_index": 1
+    },
+    {
+      "actor_calls": 2,
+      "goal_index": 0,
+      "qualified": false,
+      "reads": [],
+      "routes": [
+        {
+          "destination": "N_JONOTJLN6O",
+          "port": "P_UGSI653ZA4",
+          "receipt": "R_TXJUM3F24B",
+          "source": "N_KHP2OAYBH3"
+        }
+      ],
+      "state": "NEW_TRAJECTORY_LOSS_OFF",
+      "success": false,
+      "terminal_reason": "generation_failure",
+      "world_index": 2
+    },
+    {
+      "actor_calls": 1,
+      "goal_index": 1,
+      "qualified": false,
+      "reads": [],
+      "routes": [],
+      "state": "NEW_TRAJECTORY_LOSS_OFF",
+      "success": false,
+      "terminal_reason": "generation_failure",
+      "world_index": 2
+    },
+    {
+      "actor_calls": 5,
+      "goal_index": 0,
+      "qualified": false,
+      "reads": [
+        {
+          "address": "E_FGSOJE7XAU",
+          "raw": "EVENT E_FGSOJE7XAU AT N_J6CZTU255B DID P_Q2GMBCUCMQ GOT N_4P5CYQYVBR EVIDENCE R_5TLA5DSR7C"
+        },
+        {
+          "address": "E_INRAU6R5EC",
+          "raw": "EVENT E_INRAU6R5EC AT N_4P5CYQYVBR DID P_B76ON7N25C GOT N_CR4GMX4BXC EVIDENCE R_WTOZPSYENP"
+        },
+        {
+          "address": "E_R7XB5RBNOA",
+          "raw": "EVENT E_R7XB5RBNOA AT N_45LKSNXIDN DID P_PBPWAC53QQ GOT N_NWZIT72UKV EVIDENCE R_6OFFM3RX2U"
+        },
+        {
+          "address": "E_UOZ2JARHCZ",
+          "raw": "EVENT E_UOZ2JARHCZ AT N_J6CZTU255B DID P_USLXV3VQ7M GOT N_45LKSNXIDN EVIDENCE R_IDWXG7IG6Z"
+        }
+      ],
+      "routes": [],
+      "state": "NEW_TRAJECTORY_LOSS_OFF",
+      "success": false,
+      "terminal_reason": "invalid_route",
+      "world_index": 3
+    },
+    {
+      "actor_calls": 1,
+      "goal_index": 1,
+      "qualified": false,
+      "reads": [],
+      "routes": [],
+      "state": "NEW_TRAJECTORY_LOSS_OFF",
+      "success": false,
+      "terminal_reason": "invalid_final_action",
+      "world_index": 3
+    },
+    {
+      "actor_calls": 2,
+      "goal_index": 0,
+      "qualified": false,
+      "reads": [],
+      "routes": [
+        {
+          "destination": "N_4XGRI6YUQZ",
+          "port": "P_6W3HSKFEHM",
+          "receipt": "R_7S73CHQFVJ",
+          "source": "N_4MWNUPPK72"
+        },
+        {
+          "destination": "N_JCL42DU3S4",
+          "port": "P_EFVEOHAEZN",
+          "receipt": "R_5OYF4VHOSE",
+          "source": "N_4XGRI6YUQZ"
+        }
+      ],
+      "state": "NEW_TRAJECTORY_LOSS_OFF",
+      "success": false,
+      "terminal_reason": "dead_end",
+      "world_index": 4
+    },
+    {
+      "actor_calls": 2,
+      "goal_index": 1,
+      "qualified": false,
+      "reads": [],
+      "routes": [
+        {
+          "destination": "N_4XGRI6YUQZ",
+          "port": "P_6W3HSKFEHM",
+          "receipt": "R_7S73CHQFVJ",
+          "source": "N_4MWNUPPK72"
+        }
+      ],
+      "state": "NEW_TRAJECTORY_LOSS_OFF",
+      "success": false,
+      "terminal_reason": "invalid_route",
+      "world_index": 4
+    },
+    {
+      "actor_calls": 6,
+      "goal_index": 0,
+      "qualified": false,
+      "reads": [
+        {
+          "address": "E_4753WACPEJ",
+          "raw": "EVENT E_4753WACPEJ AT N_YUDAS4YHXF DID P_RZE5ZLHI7G GOT N_KCY4JJ3YHO EVIDENCE R_53SJQN66IL"
+        },
+        {
+          "address": "E_SAFEDGKOVW",
+          "raw": "EVENT E_SAFEDGKOVW AT N_KZI4NIJI4Q DID P_Z5HISJZFVB GOT N_PXNC6WOWD2 EVIDENCE R_PRMUOOY6BM"
+        },
+        {
+          "address": "E_WQY5NNVMAT",
+          "raw": "EVENT E_WQY5NNVMAT AT N_77UTW7PPNB DID P_KHRL3IBWNK GOT N_YUDAS4YHXF EVIDENCE R_GXGYCLELNS"
+        },
+        {
+          "address": "E_XJLM5UPNGJ",
+          "raw": "EVENT E_XJLM5UPNGJ AT N_77UTW7PPNB DID P_HGMHD2JO6F GOT N_KZI4NIJI4Q EVIDENCE R_EFZV4TCK6P"
+        }
+      ],
+      "routes": [
+        {
+          "destination": "N_YUDAS4YHXF",
+          "port": "P_KHRL3IBWNK",
+          "receipt": "R_GXGYCLELNS",
+          "source": "N_77UTW7PPNB"
+        },
+        {
+          "destination": "N_KCY4JJ3YHO",
+          "port": "P_RZE5ZLHI7G",
+          "receipt": "R_53SJQN66IL",
+          "source": "N_YUDAS4YHXF"
+        }
+      ],
+      "state": "NEW_TRAJECTORY_LOSS_OFF",
+      "success": true,
+      "terminal_reason": "reached_goal",
+      "world_index": 5
+    },
+    {
+      "actor_calls": 6,
+      "goal_index": 1,
+      "qualified": false,
+      "reads": [
+        {
+          "address": "E_4753WACPEJ",
+          "raw": "EVENT E_4753WACPEJ AT N_YUDAS4YHXF DID P_RZE5ZLHI7G GOT N_KCY4JJ3YHO EVIDENCE R_53SJQN66IL"
+        },
+        {
+          "address": "E_SAFEDGKOVW",
+          "raw": "EVENT E_SAFEDGKOVW AT N_KZI4NIJI4Q DID P_Z5HISJZFVB GOT N_PXNC6WOWD2 EVIDENCE R_PRMUOOY6BM"
+        },
+        {
+          "address": "E_WQY5NNVMAT",
+          "raw": "EVENT E_WQY5NNVMAT AT N_77UTW7PPNB DID P_KHRL3IBWNK GOT N_YUDAS4YHXF EVIDENCE R_GXGYCLELNS"
+        },
+        {
+          "address": "E_XJLM5UPNGJ",
+          "raw": "EVENT E_XJLM5UPNGJ AT N_77UTW7PPNB DID P_HGMHD2JO6F GOT N_KZI4NIJI4Q EVIDENCE R_EFZV4TCK6P"
+        }
+      ],
+      "routes": [
+        {
+          "destination": "N_KZI4NIJI4Q",
+          "port": "P_HGMHD2JO6F",
+          "receipt": "R_EFZV4TCK6P",
+          "source": "N_77UTW7PPNB"
+        },
+        {
+          "destination": "N_PXNC6WOWD2",
+          "port": "P_Z5HISJZFVB",
+          "receipt": "R_PRMUOOY6BM",
+          "source": "N_KZI4NIJI4Q"
+        }
+      ],
+      "state": "NEW_TRAJECTORY_LOSS_OFF",
+      "success": true,
+      "terminal_reason": "reached_goal",
+      "world_index": 5
+    },
+    {
+      "actor_calls": 2,
+      "goal_index": 0,
+      "qualified": false,
+      "reads": [],
+      "routes": [
+        {
+          "destination": "N_XXPGQVHSVR",
+          "port": "P_WDQIWDBGXD",
+          "receipt": "R_FR65MMZEN5",
+          "source": "N_4B43I6YDN2"
+        }
+      ],
+      "state": "NEW_TRAJECTORY_LOSS_OFF",
+      "success": false,
+      "terminal_reason": "invalid_route",
+      "world_index": 6
+    },
+    {
+      "actor_calls": 2,
+      "goal_index": 1,
+      "qualified": false,
+      "reads": [],
+      "routes": [
+        {
+          "destination": "N_7DMXQREJJ4",
+          "port": "P_HHWM2FEJXQ",
+          "receipt": "R_5O6AJCUIST",
+          "source": "N_4B43I6YDN2"
+        },
+        {
+          "destination": "N_UZ6JXA3VRR",
+          "port": "P_FZFCAT2QHK",
+          "receipt": "R_4VZF5IYFGY",
+          "source": "N_7DMXQREJJ4"
+        }
+      ],
+      "state": "NEW_TRAJECTORY_LOSS_OFF",
+      "success": true,
+      "terminal_reason": "reached_goal",
+      "world_index": 6
+    },
+    {
+      "actor_calls": 2,
+      "goal_index": 0,
+      "qualified": false,
+      "reads": [],
+      "routes": [
+        {
+          "destination": "N_DI4ZYJNWBV",
+          "port": "P_W5AV34RUCS",
+          "receipt": "R_VRILKKOCDC",
+          "source": "N_HDROAA3ARE"
+        }
+      ],
+      "state": "NEW_TRAJECTORY_LOSS_OFF",
+      "success": false,
+      "terminal_reason": "generation_failure",
+      "world_index": 7
+    },
+    {
+      "actor_calls": 1,
+      "goal_index": 1,
+      "qualified": false,
+      "reads": [],
+      "routes": [],
+      "state": "NEW_TRAJECTORY_LOSS_OFF",
+      "success": false,
+      "terminal_reason": "generation_failure",
+      "world_index": 7
+    },
+    {
+      "actor_calls": 1,
+      "goal_index": 0,
+      "qualified": false,
+      "reads": [],
+      "routes": [],
+      "state": "ORIGINAL37EC",
+      "success": false,
+      "terminal_reason": "generation_failure",
+      "world_index": 0
+    },
+    {
+      "actor_calls": 1,
+      "goal_index": 1,
+      "qualified": false,
+      "reads": [],
+      "routes": [],
+      "state": "ORIGINAL37EC",
+      "success": false,
+      "terminal_reason": "generation_failure",
+      "world_index": 0
+    },
+    {
+      "actor_calls": 1,
+      "goal_index": 0,
+      "qualified": false,
+      "reads": [],
+      "routes": [],
+      "state": "ORIGINAL37EC",
+      "success": false,
+      "terminal_reason": "generation_failure",
+      "world_index": 1
+    },
+    {
+      "actor_calls": 2,
+      "goal_index": 1,
+      "qualified": false,
+      "reads": [],
+      "routes": [
+        {
+          "destination": "N_S5V5OSI5W6",
+          "port": "P_Q6K7E4ZJD4",
+          "receipt": "R_ECMFVN4KAK",
+          "source": "N_UKH5L4U3IW"
+        },
+        {
+          "destination": "N_HJF5OKYIWE",
+          "port": "P_NAKGMLHKI3",
+          "receipt": "R_LELAJQZNZ6",
+          "source": "N_S5V5OSI5W6"
+        }
+      ],
+      "state": "ORIGINAL37EC",
+      "success": true,
+      "terminal_reason": "reached_goal",
+      "world_index": 1
+    },
+    {
+      "actor_calls": 1,
+      "goal_index": 0,
+      "qualified": false,
+      "reads": [],
+      "routes": [],
+      "state": "ORIGINAL37EC",
+      "success": false,
+      "terminal_reason": "invalid_final_action",
+      "world_index": 2
+    },
+    {
+      "actor_calls": 1,
+      "goal_index": 1,
+      "qualified": false,
+      "reads": [],
+      "routes": [],
+      "state": "ORIGINAL37EC",
+      "success": false,
+      "terminal_reason": "generation_failure",
+      "world_index": 2
+    },
+    {
+      "actor_calls": 2,
+      "goal_index": 0,
+      "qualified": false,
+      "reads": [],
+      "routes": [
+        {
+          "destination": "N_4P5CYQYVBR",
+          "port": "P_Q2GMBCUCMQ",
+          "receipt": "R_5TLA5DSR7C",
+          "source": "N_J6CZTU255B"
+        },
+        {
+          "destination": "N_CR4GMX4BXC",
+          "port": "P_B76ON7N25C",
+          "receipt": "R_WTOZPSYENP",
+          "source": "N_4P5CYQYVBR"
+        }
+      ],
+      "state": "ORIGINAL37EC",
+      "success": false,
+      "terminal_reason": "dead_end",
+      "world_index": 3
+    },
+    {
+      "actor_calls": 1,
+      "goal_index": 1,
+      "qualified": false,
+      "reads": [],
+      "routes": [],
+      "state": "ORIGINAL37EC",
+      "success": false,
+      "terminal_reason": "generation_failure",
+      "world_index": 3
+    },
+    {
+      "actor_calls": 1,
+      "goal_index": 0,
+      "qualified": false,
+      "reads": [],
+      "routes": [],
+      "state": "ORIGINAL37EC",
+      "success": false,
+      "terminal_reason": "generation_failure",
+      "world_index": 4
+    },
+    {
+      "actor_calls": 1,
+      "goal_index": 1,
+      "qualified": false,
+      "reads": [],
+      "routes": [],
+      "state": "ORIGINAL37EC",
+      "success": false,
+      "terminal_reason": "generation_failure",
+      "world_index": 4
+    },
+    {
+      "actor_calls": 1,
+      "goal_index": 0,
+      "qualified": false,
+      "reads": [],
+      "routes": [],
+      "state": "ORIGINAL37EC",
+      "success": false,
+      "terminal_reason": "generation_failure",
+      "world_index": 5
+    },
+    {
+      "actor_calls": 2,
+      "goal_index": 1,
+      "qualified": false,
+      "reads": [],
+      "routes": [
+        {
+          "destination": "N_YUDAS4YHXF",
+          "port": "P_KHRL3IBWNK",
+          "receipt": "R_GXGYCLELNS",
+          "source": "N_77UTW7PPNB"
+        },
+        {
+          "destination": "N_KCY4JJ3YHO",
+          "port": "P_RZE5ZLHI7G",
+          "receipt": "R_53SJQN66IL",
+          "source": "N_YUDAS4YHXF"
+        }
+      ],
+      "state": "ORIGINAL37EC",
+      "success": false,
+      "terminal_reason": "dead_end",
+      "world_index": 5
+    },
+    {
+      "actor_calls": 2,
+      "goal_index": 0,
+      "qualified": false,
+      "reads": [],
+      "routes": [
+        {
+          "destination": "N_XXPGQVHSVR",
+          "port": "P_WDQIWDBGXD",
+          "receipt": "R_FR65MMZEN5",
+          "source": "N_4B43I6YDN2"
+        },
+        {
+          "destination": "N_MVHZUHD2LG",
+          "port": "P_NHGAS3QB2C",
+          "receipt": "R_EZOWXEAPFB",
+          "source": "N_XXPGQVHSVR"
+        }
+      ],
+      "state": "ORIGINAL37EC",
+      "success": true,
+      "terminal_reason": "reached_goal",
+      "world_index": 6
+    },
+    {
+      "actor_calls": 2,
+      "goal_index": 1,
+      "qualified": false,
+      "reads": [],
+      "routes": [
+        {
+          "destination": "N_XXPGQVHSVR",
+          "port": "P_WDQIWDBGXD",
+          "receipt": "R_FR65MMZEN5",
+          "source": "N_4B43I6YDN2"
+        },
+        {
+          "destination": "N_MVHZUHD2LG",
+          "port": "P_NHGAS3QB2C",
+          "receipt": "R_EZOWXEAPFB",
+          "source": "N_XXPGQVHSVR"
+        }
+      ],
+      "state": "ORIGINAL37EC",
+      "success": false,
+      "terminal_reason": "dead_end",
+      "world_index": 6
+    },
+    {
+      "actor_calls": 1,
+      "goal_index": 0,
+      "qualified": false,
+      "reads": [],
+      "routes": [],
+      "state": "ORIGINAL37EC",
+      "success": false,
+      "terminal_reason": "generation_failure",
+      "world_index": 7
+    },
+    {
+      "actor_calls": 2,
+      "goal_index": 1,
+      "qualified": false,
+      "reads": [],
+      "routes": [
+        {
+          "destination": "N_DI4ZYJNWBV",
+          "port": "P_W5AV34RUCS",
+          "receipt": "R_VRILKKOCDC",
+          "source": "N_HDROAA3ARE"
+        },
+        {
+          "destination": "N_YMSLUU72YH",
+          "port": "P_C6YN4OH55C",
+          "receipt": "R_Q5SQ46K5AU",
+          "source": "N_DI4ZYJNWBV"
+        }
+      ],
+      "state": "ORIGINAL37EC",
+      "success": true,
+      "terminal_reason": "reached_goal",
+      "world_index": 7
+    }
+  ],
+  "fits": 0,
+  "independent_reader": "PENDING_NOT_EXECUTED_BY_WORKER",
+  "model_calls": 202,
+  "process_assigned_gpu_hours": 0.39778515577316287,
+  "reference": {
+    "episode_denominator": 16,
+    "outcomes": [
+      false,
+      true,
+      true,
+      false,
+      true,
+      false,
+      false,
+      true,
+      false,
+      true,
+      false,
+      true,
+      false,
+      true,
+      false,
+      true
+    ],
+    "policy": "FIRST_CURRENT_DISPLAYED_PORT_NO_READ",
+    "successful_episodes": 8
+  },
+  "resources": {
+    "FULL_TARGET": {
+      "adapter_state_after": "e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf",
+      "adapter_state_before": "e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf",
+      "attempted_calls": 77,
+      "call_cap": 96,
+      "cohort_sha256": "fda756da466044a08031ddfb7547e171ef990a1fb093fbc49258310793538401",
+      "elapsed_seconds": 417.6267144680023,
+      "finished_utc": "2026-09-14T23:10:57.673097+00:00",
+      "fits": 0,
+      "frozen_base_unchanged": true,
+      "gpu_uuid": "GPU-ff5f84e9-c70e-272d-a8e0-eb20aad05ac6",
+      "model_calls": 77,
+      "phase": "readout",
+      "pid": 164503,
+      "prepare_sha256": "5c62b7e07fd281e24ef4f5640d6502fd1aa1a86dddb3a34fca1ba6f128489d8b",
+      "protocol_sha256": "c334db0453c42fbe1e66f15df46122534e411bef0fb1d78a41046131c4f46d82",
+      "runtime": {
+        "distributions": {
+          "peft": "0.20.0",
+          "tokenizers": "0.22.2",
+          "torch": "2.13.0",
+          "transformers": "5.5.3"
+        },
+        "imported": {
+          "peft": "0.20.0",
+          "tokenizers": "0.22.2",
+          "torch": "2.13.0+cu130",
+          "transformers": "5.5.3"
+        }
+      },
+      "source_commit": "f267ab4be87c04f3c7eff07c9a03f051ba22e347",
+      "started_unix": 1789427040.046412,
+      "state": "FULL_TARGET",
+      "state_hash_method": "EXACT_V3_pcfl_vertical_train._state_hash_named_parameters_lora_A_B",
+      "status": "COMPLETE",
+      "store_sha256": "f37e37594ec7ab34f3ebc2d4d01f36a83a98bb934254b49e20360c9f89c899dc",
+      "timestamp_utc": "2026-09-14T23:04:00.046415+00:00",
+      "trainingAllowed": false,
+      "updates": 0
+    },
+    "NEW_TRAJECTORY_LOSS_OFF": {
+      "adapter_state_after": "4f0dccf5b7cf37b872eafc3a50990e0cdfda027fb0140f0aad999f27606e4ee3",
+      "adapter_state_before": "4f0dccf5b7cf37b872eafc3a50990e0cdfda027fb0140f0aad999f27606e4ee3",
+      "attempted_calls": 39,
+      "call_cap": 96,
+      "cohort_sha256": "fda756da466044a08031ddfb7547e171ef990a1fb093fbc49258310793538401",
+      "elapsed_seconds": 469.9035770893097,
+      "finished_utc": "2026-09-14T23:11:50.338532+00:00",
+      "fits": 0,
+      "frozen_base_unchanged": true,
+      "gpu_uuid": "GPU-604c4ea8-8c29-099e-76ed-571ec7d9be4b",
+      "model_calls": 39,
+      "phase": "readout",
+      "pid": 164518,
+      "prepare_sha256": "5c62b7e07fd281e24ef4f5640d6502fd1aa1a86dddb3a34fca1ba6f128489d8b",
+      "protocol_sha256": "c334db0453c42fbe1e66f15df46122534e411bef0fb1d78a41046131c4f46d82",
+      "runtime": {
+        "distributions": {
+          "peft": "0.20.0",
+          "tokenizers": "0.22.2",
+          "torch": "2.13.0",
+          "transformers": "5.5.3"
+        },
+        "imported": {
+          "peft": "0.20.0",
+          "tokenizers": "0.22.2",
+          "torch": "2.13.0+cu130",
+          "transformers": "5.5.3"
+        }
+      },
+      "source_commit": "f267ab4be87c04f3c7eff07c9a03f051ba22e347",
+      "started_unix": 1789427040.4349842,
+      "state": "NEW_TRAJECTORY_LOSS_OFF",
+      "state_hash_method": "EXACT_V3_pcfl_vertical_train._state_hash_named_parameters_lora_A_B",
+      "status": "COMPLETE",
+      "store_sha256": "f37e37594ec7ab34f3ebc2d4d01f36a83a98bb934254b49e20360c9f89c899dc",
+      "timestamp_utc": "2026-09-14T23:04:00.434988+00:00",
+      "trainingAllowed": false,
+      "updates": 0
+    },
+    "ORIGINAL37EC": {
+      "adapter_state_after": "37ec37884e4b0b679edd1dba1be1dec3474589e992649f3a33e7e3b1ec78b8c0",
+      "adapter_state_before": "37ec37884e4b0b679edd1dba1be1dec3474589e992649f3a33e7e3b1ec78b8c0",
+      "attempted_calls": 22,
+      "call_cap": 96,
+      "cohort_sha256": "fda756da466044a08031ddfb7547e171ef990a1fb093fbc49258310793538401",
+      "elapsed_seconds": 396.3247516155243,
+      "finished_utc": "2026-09-14T23:10:37.152806+00:00",
+      "fits": 0,
+      "frozen_base_unchanged": true,
+      "gpu_uuid": "GPU-8e15ce78-4e9c-4c48-724f-2b753c6c2296",
+      "model_calls": 22,
+      "phase": "readout",
+      "pid": 164533,
+      "prepare_sha256": "5c62b7e07fd281e24ef4f5640d6502fd1aa1a86dddb3a34fca1ba6f128489d8b",
+      "protocol_sha256": "c334db0453c42fbe1e66f15df46122534e411bef0fb1d78a41046131c4f46d82",
+      "runtime": {
+        "distributions": {
+          "peft": "0.20.0",
+          "tokenizers": "0.22.2",
+          "torch": "2.13.0",
+          "transformers": "5.5.3"
+        },
+        "imported": {
+          "peft": "0.20.0",
+          "tokenizers": "0.22.2",
+          "torch": "2.13.0+cu130",
+          "transformers": "5.5.3"
+        }
+      },
+      "source_commit": "f267ab4be87c04f3c7eff07c9a03f051ba22e347",
+      "started_unix": 1789427040.828085,
+      "state": "ORIGINAL37EC",
+      "state_hash_method": "EXACT_V3_pcfl_vertical_train._state_hash_named_parameters_lora_A_B",
+      "status": "COMPLETE",
+      "store_sha256": "f37e37594ec7ab34f3ebc2d4d01f36a83a98bb934254b49e20360c9f89c899dc",
+      "timestamp_utc": "2026-09-14T23:04:00.828090+00:00",
+      "trainingAllowed": false,
+      "updates": 0
+    }
+  },
+  "rows": [
+    {
+      "admitted": false,
+      "capture_sha256": "96153ac095040afa4078007520b439ef663ef8751494ea1e135d7990f0b92770",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 40,
+      "raw_sha256": "fce5f7b12ecf309d45b7f7603e1aa936e0cb830c73fdd1b6ff24b3c47ba2de5d",
+      "review": null,
+      "row_id": "FULL_TARGET/0/0/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "fd14d3e04b134487dcb49ebe0b84f0ef50bf832b31b5848594cd21e12de9079d",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 34,
+      "raw_sha256": "9c9dc83742b5ce5aa014b9b5c935105ad25acac6c79b4e882ea82c0416590fb7",
+      "review": null,
+      "row_id": "FULL_TARGET/0/1/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "0ccc7a89cb7991e5d9fe5551f231689f241d2b6e8653be6b287d44cc0b0bb150",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 133,
+      "raw_sha256": "8577dae7072c7061205e9722d0e85648b6a77cfcc56c0b5926320c82cef75062",
+      "review": null,
+      "row_id": "FULL_TARGET/0/1/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "36e9595d9aba54a1d01aad87805a67e78b8fdac541a31b53a5756ab91eeea6da",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 110,
+      "raw_sha256": "075d978f8efd931f0e57eb7921652a1b373bf377f62e3118da83f4e9f88e1ba4",
+      "review": null,
+      "row_id": "FULL_TARGET/0/1/2",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "c67eb3c0b3ee154da8a0538171d34b0312626c25ba24ecdc9b8dd5c2d6d2d3e3",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 134,
+      "raw_sha256": "795aadb6d668ccb50d645edbafa20724859d88ca8166467af516a45546f0b047",
+      "review": null,
+      "row_id": "FULL_TARGET/0/1/3",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "824c5f6ca52a3280777fa47e7b76c6ba66ec936063124c33c6650ae85eb1db71",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 123,
+      "raw_sha256": "0814c543c87c6c05e5bb67d938a1d9776e55498d1e592b8f5e81ad74575e886c",
+      "review": null,
+      "row_id": "FULL_TARGET/0/1/4",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "aba79c074eb685ab102f76826c808251e93fa7ba382a87d19c50c8482fbd81aa",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 36,
+      "raw_sha256": "c992b98c272c9bfbda0f7fd47d1ea45531c578a37b05a7dbeb4f9ad7b61b19cb",
+      "review": null,
+      "row_id": "FULL_TARGET/1/0/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "cf357da91a501d458359c9ad861bc4445c33bcc277676a8e5cb43a832e0e3b53",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 125,
+      "raw_sha256": "c0e86f3e9f9fbd2c31d6587681a1bfefc50ebd1d8417b72b221be76560d5fe6e",
+      "review": null,
+      "row_id": "FULL_TARGET/1/0/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "76840857212dcd9c69e18bcbcc83cf793021e87b4e094a725b64148b0c9ebca1",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 134,
+      "raw_sha256": "39b41710ade2be52f681eb6cd08f94828b79c673f6808562a75c0c2d3272c56e",
+      "review": null,
+      "row_id": "FULL_TARGET/1/0/2",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "7f9584f68592aff15dc467b60aa128735409c32a8afa200eb43a5364a6823b32",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 107,
+      "raw_sha256": "e5245a8879bbf2fb9f4bae65452793e02093a888829553e25ab8ff67c18a45bf",
+      "review": null,
+      "row_id": "FULL_TARGET/1/0/3",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "6a5a390f7b06da81605b9f6fbb227f5723a5f4c09649bbc269f8151f398cfede",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 34,
+      "raw_sha256": "a269411dfc1296b9b2ecc2137323191239153f750552530e4d490ae8524b4078",
+      "review": null,
+      "row_id": "FULL_TARGET/1/1/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "8767ed7b5bc6fef0de2ca23abe1fdee762a5972ec30721ba41a0f3e59e07c79b",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 116,
+      "raw_sha256": "f87c7a9c36bb93ebd865e042dfa3726234cc7dde2bbaafe8b14e1db61be19dd1",
+      "review": null,
+      "row_id": "FULL_TARGET/1/1/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "70bdc1eac0a228cc072ff840436b0f6f1bf5feadc3e1322727e2da2a27e63b89",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 100,
+      "raw_sha256": "1246498d8579aed9f1738120a19c151cfca6bfe15d942d33512f57b1bbeaf04c",
+      "review": null,
+      "row_id": "FULL_TARGET/1/1/2",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "531a93e711369601bb09d8c85a3a55a2607c69b292c6f4ee9b36239e88630bb1",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 108,
+      "raw_sha256": "d4b9c43b2fbbeb63dfb8f21e4188e0b3d35cb0cb30a706c4cd11691f345ba2f1",
+      "review": null,
+      "row_id": "FULL_TARGET/1/1/3",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "17864a4e2873f142ada2fb21f2ede5f9f20b1374b0c99f7a836a06d5eed34a10",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 123,
+      "raw_sha256": "28f7939ce846e15eb800fdaa9cfb1850785b7fc0bfb9e4c7077f6fc648231d81",
+      "review": null,
+      "row_id": "FULL_TARGET/1/1/4",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "48fcf4ce743fbcbd08ea5a2409cfc5222c1ceb84f8ef0a2709b7d4ef466bb0f5",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 95,
+      "raw_sha256": "01b934ea06a84e7fa1d4052dfd37a7d5d66ee505fe8263dddf42fc92bafc1189",
+      "review": null,
+      "row_id": "FULL_TARGET/1/1/5",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "a57cf600625facf53aca65c798849d8aa239c4d034c202ad2207639f58ec0395",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 36,
+      "raw_sha256": "172d9a3b3a2efd4c6734984e1ff78f4fa5b4a410e58b6c265eb9715817e64bb8",
+      "review": null,
+      "row_id": "FULL_TARGET/2/0/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "4e986d1fd74b3de79c443761b16113ebc6b911f8af8057b2f3eb7b98aeb92109",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 112,
+      "raw_sha256": "cb92e221823e88af7e602f5459bc5cc398437d2efceb2dd77eb0065b2ed7763a",
+      "review": null,
+      "row_id": "FULL_TARGET/2/0/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "7e77963346be6276303be4ef090ab0b336853b2dede06424dc47631f31622eab",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 91,
+      "raw_sha256": "f245118ddd49a699c54323dd89712352ff183a669139813fb90dd56c8d1a6c84",
+      "review": null,
+      "row_id": "FULL_TARGET/2/0/2",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "96a3d130d3ea664384ef983bbaa2f59bb51c57de112545b4fcd7ab409fc03aba",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 116,
+      "raw_sha256": "aeddec93a6ad54adb1b16de164f321328ef9b7f42929f138b5d3bcfd6147e790",
+      "review": null,
+      "row_id": "FULL_TARGET/2/0/3",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "eab4b15dd268bc15fd5d63da8a94cfc3462c19e1ae2c45775974710cf15d438f",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 36,
+      "raw_sha256": "172d9a3b3a2efd4c6734984e1ff78f4fa5b4a410e58b6c265eb9715817e64bb8",
+      "review": null,
+      "row_id": "FULL_TARGET/2/1/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "32cf9e52ff33ac58b286bf150556a3011a9067308256eaae03d2db837b87bcf6",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 74,
+      "raw_sha256": "750df8dbb328ddc599cdcc0ed9f19022787f78756f601f9f3179e4248cba18f3",
+      "review": null,
+      "row_id": "FULL_TARGET/2/1/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "76fea3882b324964d878e735e563b3128eeda37ced3834c736ec19d5f4983c53",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 93,
+      "raw_sha256": "891b88139db5433ca695b78e5a73d3dde7ba21652a33317502e5c3dfb4fa967c",
+      "review": null,
+      "row_id": "FULL_TARGET/2/1/2",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "29ae8fea6baf19e92268f3a06bcfc0c719e3da8eac7b721321116de5f8f35959",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 104,
+      "raw_sha256": "5d8d2351d02ebea9ef0fe5fb75a7bda3b4444e9387f7884d8fe69b415f753842",
+      "review": null,
+      "row_id": "FULL_TARGET/2/1/3",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "fe29b3be280ec705b7831335c140a0c43954c124ffe5b9108929a0fbafeead71",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 104,
+      "raw_sha256": "29c715ff738d0946e496efd440d209c382bc898146fc7de7e29265191e32f223",
+      "review": null,
+      "row_id": "FULL_TARGET/2/1/4",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "fa6bd170a21874c370a0f2fe19e2467b311a096fb91ab2024fe45ce05db3bcbb",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 81,
+      "raw_sha256": "2a7e52ef3c450ba24158d7bd98e4043d4bf7fda95343022edae444daf244b799",
+      "review": null,
+      "row_id": "FULL_TARGET/2/1/5",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "657ee8c7483e01d1b4f359c47bc1c99cb816a397a564d82162c37e3ad80807f5",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 43,
+      "raw_sha256": "37e05dcd81ffccc57ab58db3c5624414ce0fea6b2addc495081fdb1950905fa2",
+      "review": null,
+      "row_id": "FULL_TARGET/3/0/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "6f277d7b8e9d7e138a0876f80b7df303418f8e96a82ca7b7f205848336b159b2",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 82,
+      "raw_sha256": "29c08543372bbc1955d59860338c65ab0519ec96a002004719e30c3c0d5da8a3",
+      "review": null,
+      "row_id": "FULL_TARGET/3/0/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "da048a7db4dfeadd260689df99fbed998e6c152923a7e42e73c16bb3f81d9cf4",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 54,
+      "raw_sha256": "22e1f745ed1b5cbce5e1bf8d65ee3463158bd48f2d692ee1e319665d8cbe4655",
+      "review": null,
+      "row_id": "FULL_TARGET/3/0/2",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "63be18d415c39d193b22ea89f103bb5f8b38951fae147629bb16abf40ee04c60",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 54,
+      "raw_sha256": "9450d85079cdf12e80236bbb67e03873fa4972a170ef250fe8666c54ba695210",
+      "review": null,
+      "row_id": "FULL_TARGET/3/0/3",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "fd29a022b78637b1dbeede662dca4c041fa7a7c1e43156506003b3df886ae882",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 56,
+      "raw_sha256": "b3998413266c79712e4b1224cc4b144df98be14d49762d254ef6664bcf3a9f74",
+      "review": null,
+      "row_id": "FULL_TARGET/3/0/4",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "9843601335a42735c6bf2ddc982dcbcb45ce72bbfad898395edbe3b0b45ee951",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 86,
+      "raw_sha256": "d35008e2342a5c0426c62f51cc14e59c256dabbc34a325d398e9b030a6139e32",
+      "review": null,
+      "row_id": "FULL_TARGET/3/0/5",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "23d84ef6ceb5bf20a8cf562c0376cf0f4e0e940bc65a5cfa4f2dbd3541a8ce09",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 35,
+      "raw_sha256": "2bc35455967488eac743e7a2808f014f6a6fa188519048fd213359359704d052",
+      "review": null,
+      "row_id": "FULL_TARGET/3/1/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "704b545fecc47b15714f2f0683052279ca92467763d9199de3e2fdc59cda7668",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 117,
+      "raw_sha256": "e609590fa6ce5497f7bb05e39611313f322bc6f21595e72650051e5093d3759c",
+      "review": null,
+      "row_id": "FULL_TARGET/3/1/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": true,
+      "capture_sha256": "66600e110ea5b510c679c987bcf65e2db807aa4ae850f456e981cb7033f07662",
+      "eligible_for_semantic_review": true,
+      "generated_text_tokens": 156,
+      "raw_sha256": "64721476d553beb62bf7b3dba26065c28b13dd249f40ece516691c70e3b9079c",
+      "review": {
+        "action_last": true,
+        "capture_sha256": "66600e110ea5b510c679c987bcf65e2db807aa4ae850f456e981cb7033f07662",
+        "checkable_expectation": true,
+        "goal_connection": true,
+        "no_unsupported_claim": true,
+        "rationale": "Author whole-text PASS, qualified but weaker than WORLD7 turn4. Truthfully identifies read E_INRAU6R5EC, intermediate N_4P5CYQYVBR, port P_B76ON7N25C, goal N_CR4GMX4BXC and receipt R_WTOZPSYENP. Relates the transition to goal-directed movement and predicts the current first port reaches a goal or closer intermediate; the prior actual first read establishes the intermediate, making this broad prediction checkable and correct. Final ROUTE P_Q2GMBCUCMQ is legal and matches that first read. Transportation is a tentative description of node movement, not an invented map fact. The prose is less precise than it could be, but not a heading/length-only pass.",
+        "raw_sha256": "64721476d553beb62bf7b3dba26065c28b13dd249f40ece516691c70e3b9079c",
+        "specific_read_evidence": true,
+        "substantive_first_person": true
+      },
+      "row_id": "FULL_TARGET/3/1/2",
+      "semantic_status": "PASS",
+      "student": {
+        "loss_policy": "FINAL_ASSISTANT_ONLY_ALL_PREFIX_MASKED",
+        "messages": [
+          {
+            "content": "Use the public task and actual conversation. Identifiers are opaque and case-sensitive. There are at most six turns, four distinct memory reads, and two committed routes. A READ returns actual stored text; a ROUTE commits a currently listed port and returns the actual public receipt and new CURRENT/PORTS. Arrival at GOAL ends the episode. Never simulate a response or another turn. Finish every turn with exactly one action on its last line: READ EVENT <listedaddress> or ROUTE <listedport>. No STOP or retry.",
+            "role": "system"
+          },
+          {
+            "content": "ROUTE TASK\nCURRENT N_J6CZTU255B\nGOAL N_CR4GMX4BXC\nPORTS P_Q2GMBCUCMQ,P_USLXV3VQ7M\nEVENTS E_FGSOJE7XAU,E_INRAU6R5EC,E_R7XB5RBNOA,E_UOZ2JARHCZ",
+            "role": "user"
+          },
+          {
+            "content": "No stored evidence has been read yet. I intend to learn about the task details to understand the goal and available ports.\n\nREAD EVENT E_FGSOJE7XAU\n",
+            "role": "assistant"
+          },
+          {
+            "content": "MEMORY RESULT\nEVENT E_FGSOJE7XAU AT N_J6CZTU255B DID P_Q2GMBCUCMQ GOT N_4P5CYQYVBR EVIDENCE R_5TLA5DSR7C",
+            "role": "user"
+          },
+          {
+            "content": "The event E_FGSOJE7XAU at node N_J6CZTU255B involved port P_Q2GMBCUCMQ and resulted in node N_4P5CYQYVBR with evidence R_5TLA5DSR7C. The evidence suggests that the task might involve some form of transportation or movement, as it mentions a node transition. My expectation is that the next event will either confirm this pattern or provide a different context. I will now read the next event.\n\nREAD EVENT E_INRAU6R5EC\n",
+            "role": "assistant"
+          },
+          {
+            "content": "MEMORY RESULT\nEVENT E_INRAU6R5EC AT N_4P5CYQYVBR DID P_B76ON7N25C GOT N_CR4GMX4BXC EVIDENCE R_WTOZPSYENP",
+            "role": "user"
+          },
+          {
+            "content": "The event E_INRAU6R5EC at node N_4P5CYQYVBR involved port P_B76ON7N25C and resulted in the goal node N_CR4GMX4BXC with evidence R_WTOZPSYENP. This event confirms my expectation that the task involves movement or transportation, as it shows a transition from an intermediate node to the goal node. My next expectation is that the current port P_Q2GMBCUCMQ will lead to a node that is either the goal or an intermediate node that is closer to the goal. I will now route through port P_Q2GMBCUCMQ to see if it leads to the goal or an intermediate node.\n\nROUTE P_Q2GMBCUCMQ",
+            "role": "assistant"
+          }
+        ],
+        "parent_guidance_removed": true,
+        "target": "The event E_INRAU6R5EC at node N_4P5CYQYVBR involved port P_B76ON7N25C and resulted in the goal node N_CR4GMX4BXC with evidence R_WTOZPSYENP. This event confirms my expectation that the task involves movement or transportation, as it shows a transition from an intermediate node to the goal node. My next expectation is that the current port P_Q2GMBCUCMQ will lead to a node that is either the goal or an intermediate node that is closer to the goal. I will now route through port P_Q2GMBCUCMQ to see if it leads to the goal or an intermediate node.\n\nROUTE P_Q2GMBCUCMQ"
+      }
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "05a205c8e39719fdeee980bf480aa927ae15a3e65cf862e8d2331dbc7f598e5c",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 109,
+      "raw_sha256": "dd02983ba9330ffdfb4bccd81df0e724a9102fecdaec2a6e84ed63b60805e9db",
+      "review": null,
+      "row_id": "FULL_TARGET/3/1/3",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "3ee0baecffd9ea23d552a0b9c116355f3f87fa9476f295091e6083fc2d6c95f9",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 144,
+      "raw_sha256": "f05af3983099b46734f42eec113458a6affb9eff14e68d5aaf4e1b56b49fcdc3",
+      "review": null,
+      "row_id": "FULL_TARGET/3/1/4",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": true,
+      "capture_sha256": "7629376b9935323f4f41c972cfc3d3cfb94c5baaa2e7e093accb024d76a79240",
+      "eligible_for_semantic_review": true,
+      "generated_text_tokens": 157,
+      "raw_sha256": "e050f0d190ef29717f2d033e50196b86d6a5054da022f71a8ce763399c344dfe",
+      "review": {
+        "action_last": true,
+        "capture_sha256": "7629376b9935323f4f41c972cfc3d3cfb94c5baaa2e7e093accb024d76a79240",
+        "checkable_expectation": true,
+        "goal_connection": true,
+        "no_unsupported_claim": true,
+        "rationale": "Author whole-text PASS with scope-sensitive goal-relevance interpretation. Accurately summarizes actual E_UOZ2JARHCZ and receipt R_IDWXG7IG6Z, rejects the other branch as not on the current path, acknowledges the preceding expectation was not met, then states a directly checkable expectation of reaching the goal through current P_B76ON7N25C. Actual prior read E_INRAU6R5EC and the current receipt establish that final port. It does not explicitly restate that supporting goal-edge record, so its grounding is contextual and weaker than WORLD7 turn4; nevertheless the stated negative evidence, current-path distinction and final goal action are truthful. Conservative rejection of this row would reduce qualified episodes from1 to0 without changing the frozen NULL decision.",
+        "raw_sha256": "e050f0d190ef29717f2d033e50196b86d6a5054da022f71a8ce763399c344dfe",
+        "specific_read_evidence": true,
+        "substantive_first_person": true
+      },
+      "row_id": "FULL_TARGET/3/1/5",
+      "semantic_status": "PASS",
+      "student": {
+        "loss_policy": "FINAL_ASSISTANT_ONLY_ALL_PREFIX_MASKED",
+        "messages": [
+          {
+            "content": "Use the public task and actual conversation. Identifiers are opaque and case-sensitive. There are at most six turns, four distinct memory reads, and two committed routes. A READ returns actual stored text; a ROUTE commits a currently listed port and returns the actual public receipt and new CURRENT/PORTS. Arrival at GOAL ends the episode. Never simulate a response or another turn. Finish every turn with exactly one action on its last line: READ EVENT <listedaddress> or ROUTE <listedport>. No STOP or retry.",
+            "role": "system"
+          },
+          {
+            "content": "ROUTE TASK\nCURRENT N_J6CZTU255B\nGOAL N_CR4GMX4BXC\nPORTS P_Q2GMBCUCMQ,P_USLXV3VQ7M\nEVENTS E_FGSOJE7XAU,E_INRAU6R5EC,E_R7XB5RBNOA,E_UOZ2JARHCZ",
+            "role": "user"
+          },
+          {
+            "content": "No stored evidence has been read yet. I intend to learn about the task details to understand the goal and available ports.\n\nREAD EVENT E_FGSOJE7XAU\n",
+            "role": "assistant"
+          },
+          {
+            "content": "MEMORY RESULT\nEVENT E_FGSOJE7XAU AT N_J6CZTU255B DID P_Q2GMBCUCMQ GOT N_4P5CYQYVBR EVIDENCE R_5TLA5DSR7C",
+            "role": "user"
+          },
+          {
+            "content": "The event E_FGSOJE7XAU at node N_J6CZTU255B involved port P_Q2GMBCUCMQ and resulted in node N_4P5CYQYVBR with evidence R_5TLA5DSR7C. The evidence suggests that the task might involve some form of transportation or movement, as it mentions a node transition. My expectation is that the next event will either confirm this pattern or provide a different context. I will now read the next event.\n\nREAD EVENT E_INRAU6R5EC\n",
+            "role": "assistant"
+          },
+          {
+            "content": "MEMORY RESULT\nEVENT E_INRAU6R5EC AT N_4P5CYQYVBR DID P_B76ON7N25C GOT N_CR4GMX4BXC EVIDENCE R_WTOZPSYENP",
+            "role": "user"
+          },
+          {
+            "content": "The event E_INRAU6R5EC at node N_4P5CYQYVBR involved port P_B76ON7N25C and resulted in the goal node N_CR4GMX4BXC with evidence R_WTOZPSYENP. This event confirms my expectation that the task involves movement or transportation, as it shows a transition from an intermediate node to the goal node. My next expectation is that the current port P_Q2GMBCUCMQ will lead to a node that is either the goal or an intermediate node that is closer to the goal. I will now route through port P_Q2GMBCUCMQ to see if it leads to the goal or an intermediate node.\n\nROUTE P_Q2GMBCUCMQ",
+            "role": "assistant"
+          },
+          {
+            "content": "RECEIPT R_5TLA5DSR7C AT N_J6CZTU255B DID P_Q2GMBCUCMQ GOT N_4P5CYQYVBR\n\nROUTE TASK\nCURRENT N_4P5CYQYVBR\nGOAL N_CR4GMX4BXC\nPORTS P_B76ON7N25C\nEVENTS E_FGSOJE7XAU,E_INRAU6R5EC,E_R7XB5RBNOA,E_UOZ2JARHCZ",
+            "role": "user"
+          },
+          {
+            "content": "The route through port P_Q2GMBCUCMQ led to node N_4P5CYQYVBR, which is an intermediate node on the path to the goal. My expectation was that this route would either directly lead to the goal or an intermediate node closer to the goal. Since N_4P5CYQYVBR is an intermediate node, I will now check the remaining events to see if they provide any additional information or a direct route to the goal.\n\nREAD EVENT E_R7XB5RBNOA\n",
+            "role": "assistant"
+          },
+          {
+            "content": "MEMORY RESULT\nEVENT E_R7XB5RBNOA AT N_45LKSNXIDN DID P_PBPWAC53QQ GOT N_NWZIT72UKV EVIDENCE R_6OFFM3RX2U",
+            "role": "user"
+          },
+          {
+            "content": "The event E_R7XB5RBNOA at node N_45LKSNXIDN involved port P_PBPWAC53QQ and resulted in node N_NWZIT72UKV with evidence R_6OFFM3RX2U. This event does not seem to be relevant to the current path, as it involves a different node and port. My expectation was that the next event would provide a direct route to the goal or an intermediate node closer to the goal. Since this event does not seem to be part of the current path, I will now read the last event to see if it provides any useful information.\n\nREAD EVENT E_UOZ2JARHCZ\n",
+            "role": "assistant"
+          },
+          {
+            "content": "MEMORY RESULT\nEVENT E_UOZ2JARHCZ AT N_J6CZTU255B DID P_USLXV3VQ7M GOT N_45LKSNXIDN EVIDENCE R_IDWXG7IG6Z",
+            "role": "user"
+          },
+          {
+            "content": "The event E_UOZ2JARHCZ at node N_J6CZTU255B involved port P_USLXV3VQ7M and resulted in node N_45LKSNXIDN with evidence R_IDWXG7IG6Z. This event does not seem to be part of the current path either, as it involves a different node and port. My expectation was that the next event would provide a direct route to the goal or an intermediate node closer to the goal. Since this event does not seem to be part of the current path, I will now route through port P_B76ON7N25C to see if it leads directly to the goal.\n\nROUTE P_B76ON7N25C",
+            "role": "assistant"
+          }
+        ],
+        "parent_guidance_removed": true,
+        "target": "The event E_UOZ2JARHCZ at node N_J6CZTU255B involved port P_USLXV3VQ7M and resulted in node N_45LKSNXIDN with evidence R_IDWXG7IG6Z. This event does not seem to be part of the current path either, as it involves a different node and port. My expectation was that the next event would provide a direct route to the goal or an intermediate node closer to the goal. Since this event does not seem to be part of the current path, I will now route through port P_B76ON7N25C to see if it leads directly to the goal.\n\nROUTE P_B76ON7N25C"
+      }
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "5aeb10ceddbedd83fba09e8655bb44278690b75ab84cd4dda844801819ce7191",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 36,
+      "raw_sha256": "9063c98c065809c3a61e1f0d730a03f8c4a8d5e572ec4b718df069cd096915a1",
+      "review": null,
+      "row_id": "FULL_TARGET/4/0/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "461c43871a1985544700ef77c6ec1a7cad472cb788844a6ff64d3362d2cb472c",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 109,
+      "raw_sha256": "3ddb293ccfe87e9bc9b7ae90f97180aac09d9b902a0afe00b1f8e4b85014cadf",
+      "review": null,
+      "row_id": "FULL_TARGET/4/0/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "a9407ea553fa2624463778d1e50a2a26c0b15648eb13d2ae5ed6bf87c14ed33a",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 116,
+      "raw_sha256": "3079f627c9e552bab4460e4b5be8f1ac15d3e2ae99026baefcc3b89c62d7a897",
+      "review": null,
+      "row_id": "FULL_TARGET/4/0/2",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "b987ef49e5932dc31510678a3b4c5f50b2c454bab7fc585eb16b16bc0ad2e47d",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 135,
+      "raw_sha256": "e0e3ed1309f9e44f4c3e86253caa3a0823a06c056c70bff4c14cd3b9600468b1",
+      "review": null,
+      "row_id": "FULL_TARGET/4/0/3",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "43baac09c3880b6f2e04f810d005998c8f6b1dce90333edd015338fb3545a190",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 38,
+      "raw_sha256": "756e2d66a82619da38df8b64d55f349ba43ec6f3f1c9a5c1a67908a312159477",
+      "review": null,
+      "row_id": "FULL_TARGET/4/1/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "2794deb8f7b8b5411ebf7787265189a8ab59786dc36742de312bb12e646b49d9",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 130,
+      "raw_sha256": "57c0e43dce0ca5e8d19803e1cc2a0c34a9a645218225a7790315c2933115e183",
+      "review": null,
+      "row_id": "FULL_TARGET/4/1/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "d3a984d85c5db4e911b24704e029c9c6b67322001e653063f84cedf94e2fe373",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 129,
+      "raw_sha256": "d16d588f28add751bf0b72aed62def76058e070651e86b823548780caf4eefc4",
+      "review": null,
+      "row_id": "FULL_TARGET/4/1/2",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "c644395d1a924a2232e39f116b5e70389e47cb2d878888213196ff4bb1a2ac10",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 137,
+      "raw_sha256": "d4529b14feaab609e407943085d9439fd9d44faadbb15497212fe2de37e87bf6",
+      "review": null,
+      "row_id": "FULL_TARGET/4/1/3",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "dfbe98c8b827073b4516443c5bc5d4dd29af47523257e095f3b7d41a5a061a52",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 130,
+      "raw_sha256": "a197fc1b47ec2e814654fb953559aaa4707f6bd0e79f894a6e6e33ac4da5b308",
+      "review": null,
+      "row_id": "FULL_TARGET/4/1/4",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "5f352adcff07aac941e25859c1dda1aece294b1ce897f4f5a8c2812f5118aa3e",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 37,
+      "raw_sha256": "6a36b77a387f7b4ed51b0d2526960ddb62455b380eb0f443f0ec1985b13124a4",
+      "review": null,
+      "row_id": "FULL_TARGET/5/0/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "1f188afaffb4c7662c0bfba6c28d6f45a4762aee3a90c0af08e3fc60794015cc",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 135,
+      "raw_sha256": "33487fc8e6d867eaa5270076a734c3ff9e678b609cc503699df95ca4d5a87ee3",
+      "review": null,
+      "row_id": "FULL_TARGET/5/0/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "cd2c83338262ace655a2500d0ba3567281cf206af773f0181a8a9d64b5ef6324",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 126,
+      "raw_sha256": "0f2ad5c46f09208f15c6e0973751e648fcf7e7df4902d98254105ad2a1de5094",
+      "review": null,
+      "row_id": "FULL_TARGET/5/0/2",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "821ae3b358976debfddb3c6ad1b42b2f46c82eca938359f562c82dfc7b69d008",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 133,
+      "raw_sha256": "bf63da43a2fdfc1b7a6eb2abfa70e206b5342366c1ebf4242ca698d60d7f9231",
+      "review": null,
+      "row_id": "FULL_TARGET/5/0/3",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "bdd0dd5d297ae2d2a67b9bead2329baeafc0b885cd320b5326c534c6872ef108",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 140,
+      "raw_sha256": "ad464627dbf47aba7f492310534b033297ac229df1b31593c568dce3669a5aaf",
+      "review": null,
+      "row_id": "FULL_TARGET/5/0/4",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "65b334d49f4007a70f83548470744f675236be8b2d9a6339a536705c552faf4a",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 106,
+      "raw_sha256": "beee1c29019dbd045f6e49ab4b4aa0dd855a3c803229c9adb64aeb013b1766a7",
+      "review": null,
+      "row_id": "FULL_TARGET/5/0/5",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "a23ebf8b0b0720d2c5f2ebd3e409db193c33793b0c3c7df451b10bc85d3120ef",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 37,
+      "raw_sha256": "6a36b77a387f7b4ed51b0d2526960ddb62455b380eb0f443f0ec1985b13124a4",
+      "review": null,
+      "row_id": "FULL_TARGET/5/1/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "d102cd4db881ab4c6709b1bfa7d5536f122e120b7d506e4c9f3ff2ae3238ce15",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 124,
+      "raw_sha256": "b5489e6598caa900c8499dfc249acc5f671c2592351fb1f4df40096a7d443325",
+      "review": null,
+      "row_id": "FULL_TARGET/5/1/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "0b8b1346d7976e955a067c4f0be6ef75ce92b9e4208fc808b1fb67dfd89f8903",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 144,
+      "raw_sha256": "b39dbcaa69229ff6a94c64388367347abf9c6e6017332ff7ef9aedb8b670fa91",
+      "review": null,
+      "row_id": "FULL_TARGET/5/1/2",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "2972babf56ac0ebc65456e9416b0af8cb944fa7741e791641248c3903bca324d",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 35,
+      "raw_sha256": "6c3124847165c6493df85db9083cca7ebb979dedbe8ad2df1a8058d853837dd3",
+      "review": null,
+      "row_id": "FULL_TARGET/6/0/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "d8bff29f8d456f5714b7dcb635a4b052bfb1777c8e1d5f41e3f8495c5866c3b3",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 105,
+      "raw_sha256": "41ba2760c4465883d9f7b6b24fd1bf4ad6ece0e086f70c28b44666d3e02d542d",
+      "review": null,
+      "row_id": "FULL_TARGET/6/0/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "3b6abee18a4b9214ae078b4968a1596756dd881e79d39a42053bf830cdfcedd2",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 113,
+      "raw_sha256": "dda92314c1e2526e77dc7f6611053b9da70a6b7f8c941b19f3cb5145a9b8c4bf",
+      "review": null,
+      "row_id": "FULL_TARGET/6/0/2",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "60f8cad82f307112d62d5dbca2aa454d21f235c577aed6c3f4e694b6640b4f9e",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 32,
+      "raw_sha256": "aa23ef8e6765e8cb71f9a1a8e1bd62e8f03e3a36e1d6cf2e9cefcca265e99bd8",
+      "review": null,
+      "row_id": "FULL_TARGET/6/1/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "db5f401018b60bb25f597435d18b6da353b8b69cef6c22c93483b48e650076db",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 121,
+      "raw_sha256": "72e66ae1cc42f9be6c1e96d480f23c0bd527bdbcad23829fd0f8a15d925fb7c9",
+      "review": null,
+      "row_id": "FULL_TARGET/6/1/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "5f5e060703f10e1ada2b4751aa985c9230fce5188b7a8a58371723c8e1c4fe23",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 91,
+      "raw_sha256": "90f762e714b1fcbdff94fa99debe29867e5fe70fa9bb0c678fd67698ab413057",
+      "review": null,
+      "row_id": "FULL_TARGET/6/1/2",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "955d7a6e54391bfd24790dba49d03348b851fa4dfb8ffa5f0af242fac3db336c",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 115,
+      "raw_sha256": "ee7849d2fab9deeb54c63156681a9114ab27af5ee0ea4ab17f6dbcb079df08c7",
+      "review": null,
+      "row_id": "FULL_TARGET/6/1/3",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "79e00058613b3e62fd72dba02e4da425c8bb0132c04df5e7daaef9d7fe634f42",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 117,
+      "raw_sha256": "0d9f57d65cfa0b6ce3b7c8bd03a83d2468975dd76fe31c959662e36201caf18a",
+      "review": null,
+      "row_id": "FULL_TARGET/6/1/4",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "5522558be80b48e2cf184d8205c666673a7b780a2f2d13b21ba1e118c72f5ee6",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 127,
+      "raw_sha256": "a5a67792333c85b056e859273b61416fa00c734b94aa0694fab67bb530b5c25f",
+      "review": null,
+      "row_id": "FULL_TARGET/6/1/5",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "8cc74af46b0f2ec6d578754061bd206dc6a10926a04e6dc39b22e61151800d4b",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 45,
+      "raw_sha256": "27c8c01c7b2745add705ab2818961a49a6505f82cced6ae4ab6855e195ff7b31",
+      "review": null,
+      "row_id": "FULL_TARGET/7/0/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "50c95e8c7d5673cea4308be66e76fcdde81dcd7b2ff8301971f379c332725320",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 130,
+      "raw_sha256": "84c5564d73bf54c4dab2008d24f430109f2027913c2d48ca351a6041209e83b4",
+      "review": null,
+      "row_id": "FULL_TARGET/7/0/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "5fcfa232d013df2ed318a8e3bd5488135183ae54b9d1c0366b50b62b99995b9a",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 119,
+      "raw_sha256": "e1cc4154c74a6ea4def41de999f4a1f3e574ad5f8ce1056455752439277c147d",
+      "review": null,
+      "row_id": "FULL_TARGET/7/0/2",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "1c235c9d453bb94d2f65ac2af9cbad5eea8b16d703d4a0722174d77c13721068",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 125,
+      "raw_sha256": "498b0cd08e705a9b1a63af2f04ec9128aac8f6727a8ee3627612079254e35271",
+      "review": null,
+      "row_id": "FULL_TARGET/7/0/3",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "6269d4325a423208d95d3000ed6469a6dac2581ce2fe439736404a31579b587c",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 137,
+      "raw_sha256": "524670910213c23b8962cbb8f1188ec0b5d43cba99aed0914edea47644528b21",
+      "review": null,
+      "row_id": "FULL_TARGET/7/0/4",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "87e472e8ca5f72296baf4a05fd0cd4248608abb18024bddf6c35d3b6b5295787",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 99,
+      "raw_sha256": "22a2a3899be2446fff200bce4e667ec1229cc5129800e844ef5b3b8eba8d13be",
+      "review": null,
+      "row_id": "FULL_TARGET/7/0/5",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "b2ef7954a05a024f5290e03ed0f3be353090f54f7dc8b165c8ce3630d9817efb",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 45,
+      "raw_sha256": "27c8c01c7b2745add705ab2818961a49a6505f82cced6ae4ab6855e195ff7b31",
+      "review": null,
+      "row_id": "FULL_TARGET/7/1/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "6469279a0a4601bdaccb63f6df519ee48e56401062c20eba65e22ad8836f2b56",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 134,
+      "raw_sha256": "4f8011da0c02c03162400e15700ef7009250153fae4926889a3604a4ca387487",
+      "review": null,
+      "row_id": "FULL_TARGET/7/1/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "99d02d1a323dd5c08efff9b56921dfc57ceaeb92e34de090df5ae4c8eecca620",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 126,
+      "raw_sha256": "bd459cd01e6098998d2d774fc4d12ff55bd98326e4da41f155d160668b05fcf5",
+      "review": null,
+      "row_id": "FULL_TARGET/7/1/2",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "66f883b9a5bb7e80435458e97143d6294d939ecbeb5fa54d603f378eb7ca4817",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 133,
+      "raw_sha256": "d3fcb9a71b041ad2d078268bac9a342c2c8b52ad9f9d4941163ed700b0c74e58",
+      "review": null,
+      "row_id": "FULL_TARGET/7/1/3",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": true,
+      "capture_sha256": "a325e5c2e50f89dbdfe0adf1435320cc935eb9040dd530532e0f607cf85dcdad",
+      "eligible_for_semantic_review": true,
+      "generated_text_tokens": 151,
+      "raw_sha256": "da64a10b5d62f1c56dc2b98a0f782f572541b1bbd6e51bf3a19a8994ebe41403",
+      "review": {
+        "action_last": true,
+        "capture_sha256": "a325e5c2e50f89dbdfe0adf1435320cc935eb9040dd530532e0f607cf85dcdad",
+        "checkable_expectation": true,
+        "goal_connection": true,
+        "no_unsupported_claim": true,
+        "rationale": "Author whole-text PASS, clearest row. Names exact read E_QZPL7PRWOV, intermediate N_DI4ZYJNWBV, goal N_YMSLUU72YH, second port P_C6YN4OH55C and receipt R_Q5SQ46K5AU. Explicitly connects that read to a path to the goal and predicts first port P_W5AV34RUCS reaches the intermediate, supported by actual E_5PCRBHDSXD. Final action is that first port and the actual receipt verifies the prediction. Exact151 generated tokens, no padding or target repair. Its subsequent final ROUTE turn is only118 tokens, so this successful episode is not qualified.",
+        "raw_sha256": "da64a10b5d62f1c56dc2b98a0f782f572541b1bbd6e51bf3a19a8994ebe41403",
+        "specific_read_evidence": true,
+        "substantive_first_person": true
+      },
+      "row_id": "FULL_TARGET/7/1/4",
+      "semantic_status": "PASS",
+      "student": {
+        "loss_policy": "FINAL_ASSISTANT_ONLY_ALL_PREFIX_MASKED",
+        "messages": [
+          {
+            "content": "Use the public task and actual conversation. Identifiers are opaque and case-sensitive. There are at most six turns, four distinct memory reads, and two committed routes. A READ returns actual stored text; a ROUTE commits a currently listed port and returns the actual public receipt and new CURRENT/PORTS. Arrival at GOAL ends the episode. Never simulate a response or another turn. Finish every turn with exactly one action on its last line: READ EVENT <listedaddress> or ROUTE <listedport>. No STOP or retry.",
+            "role": "system"
+          },
+          {
+            "content": "ROUTE TASK\nCURRENT N_HDROAA3ARE\nGOAL N_YMSLUU72YH\nPORTS P_W5AV34RUCS,P_ZHMZOVBDQ2\nEVENTS E_5PCRBHDSXD,E_JNCXAKRC7L,E_LTZPRCNEV2,E_QZPL7PRWOV",
+            "role": "user"
+          },
+          {
+            "content": "No stored evidence has been read yet. I intend to learn the details of the task by reading the task event. This will provide insight into the goal and the available ports.\n\nREAD EVENT E_5PCRBHDSXD",
+            "role": "assistant"
+          },
+          {
+            "content": "MEMORY RESULT\nEVENT E_5PCRBHDSXD AT N_HDROAA3ARE DID P_W5AV34RUCS GOT N_DI4ZYJNWBV EVIDENCE R_VRILKKOCDC",
+            "role": "user"
+          },
+          {
+            "content": "The event E_5PCRBHDSXD at N_HDROAA3ARE involved port P_W5AV34RUCS and resulted in location N_DI4ZYJNWBV with evidence R_VRILKKOCDC. This evidence does not directly help me understand the goal or the available ports, but it provides a starting point for the journey. My expectation is that the next event will either involve port P_W5AV34RUCS or P_ZHMZOVBDQ2, and it will likely lead to a new location. I will now read the next event.\n\nREAD EVENT E_JNCXAKRC7L",
+            "role": "assistant"
+          },
+          {
+            "content": "MEMORY RESULT\nEVENT E_JNCXAKRC7L AT N_KR4PFNVUZ6 DID P_7OTVADYM6O GOT N_QCC6VGPPWS EVIDENCE R_TQZWZRJIF7",
+            "role": "user"
+          },
+          {
+            "content": "The event E_JNCXAKRC7L at N_KR4PFNVUZ6 involved port P_7OTVADYM6O and resulted in location N_QCC6VGPPWS with evidence R_TQZWZRJIF7. This event does not directly involve either of the available ports, P_W5AV34RUCS or P_ZHMZOVBDQ2. My expectation is that the next event will either involve one of the available ports or provide a direct path to the goal. I will now read the next event.\n\nREAD EVENT E_LTZPRCNEV2",
+            "role": "assistant"
+          },
+          {
+            "content": "MEMORY RESULT\nEVENT E_LTZPRCNEV2 AT N_HDROAA3ARE DID P_ZHMZOVBDQ2 GOT N_KR4PFNVUZ6 EVIDENCE R_FEAJYP4QTS",
+            "role": "user"
+          },
+          {
+            "content": "The event E_LTZPRCNEV2 at N_HDROAA3ARE involved port P_ZHMZOVBDQ2 and resulted in location N_KR4PFNVUZ6 with evidence R_FEAJYP4QTS. This event shows that port P_ZHMZOVBDQ2 leads to N_KR4PFNVUZ6, which is the location of the previous event. My expectation is that the next event will either involve port P_W5AV34RUCS or provide a direct path to the goal. I will now read the final event.\n\nREAD EVENT E_QZPL7PRWOV",
+            "role": "assistant"
+          },
+          {
+            "content": "MEMORY RESULT\nEVENT E_QZPL7PRWOV AT N_DI4ZYJNWBV DID P_C6YN4OH55C GOT N_YMSLUU72YH EVIDENCE R_Q5SQ46K5AU",
+            "role": "user"
+          },
+          {
+            "content": "The event E_QZPL7PRWOV at N_DI4ZYJNWBV involved port P_C6YN4OH55C and resulted in location N_YMSLUU72YH with evidence R_Q5SQ46K5AU. This event shows that there is a path from N_DI4ZYJNWBV to the goal N_YMSLUU72YH. My expectation is that using port P_W5AV34RUCS will lead to N_DI4ZYJNWBV, which in turn will lead to the goal. I will now route through port P_W5AV34RUCS to check this expectation.\n\nROUTE P_W5AV34RUCS",
+            "role": "assistant"
+          }
+        ],
+        "parent_guidance_removed": true,
+        "target": "The event E_QZPL7PRWOV at N_DI4ZYJNWBV involved port P_C6YN4OH55C and resulted in location N_YMSLUU72YH with evidence R_Q5SQ46K5AU. This event shows that there is a path from N_DI4ZYJNWBV to the goal N_YMSLUU72YH. My expectation is that using port P_W5AV34RUCS will lead to N_DI4ZYJNWBV, which in turn will lead to the goal. I will now route through port P_W5AV34RUCS to check this expectation.\n\nROUTE P_W5AV34RUCS"
+      }
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "e36fc7ae759367def7d3873eb16bfa123b932f59b1713f502077c69ea276a305",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 118,
+      "raw_sha256": "49ed795935bae32f91506ac9181f9ddc8d0a6e960bbaf1973954bbf192e756e2",
+      "review": null,
+      "row_id": "FULL_TARGET/7/1/5",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "0a079b809de6238a68619dcf934b6df8e893ba2e77c3d8b97bbf3a2a6d0c3d21",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 161,
+      "raw_sha256": "15976b7e7fa0be927616613f856acd7006a1ff86a9c4b83e5262e6d8b98e86b5",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/0/0/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "4e283d31baf6fcdfd083e04ae80c3f7e59cf16ecfe98116e66fa0468dcdbfed4",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 237,
+      "raw_sha256": "f16851c756e2582e678c323c3c29475d81ac4bd207cc7673c61cc3e9587a3d25",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/0/0/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "23c303eba2e58aa2a735805e780bb930d882dccdae042109a4f70fac0b07222e",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 165,
+      "raw_sha256": "30dff5e821f784ba99865dfa267e8420299f85fe8e28419c703a746243522a72",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/0/1/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "c4379520f0b2cf153486686f8889bf1c54119816e487193adc5548caf022b368",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 149,
+      "raw_sha256": "3929e04425eab715b3ebe63eb1bf12f81247c315931b2e0154e29309c5c1cc3e",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/1/0/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "9e95957bc6b293ee62b8a9e4fe2b47f5588671c3476240e788b34605f31adb52",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 153,
+      "raw_sha256": "8aece1d3dacdf2d4622ded5f21dc0f5778bcf2e77cf88dd9384c3e641d25aae2",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/1/0/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "c0fcdcaf683a3b04b5b51773f33a4a53afe0a89cf7e2285ba2a091b9e84a1ca3",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 333,
+      "raw_sha256": "45f450bf303c2db2bc89bd7fb96e6179ff63f444012b2ec9aa363a271d8bc642",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/1/1/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "17d7f231785802859dcca4d533b10fe0b2da05aca13a7bfc6fa72292c712d5cb",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 364,
+      "raw_sha256": "ccd65ac9f4fd60e65f311670dfe80fd8b31454763a9d7fafbc79929e41291e9e",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/1/1/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "e93df24b65c4388874e9844029a06825f11e0c55f396ba4843d52230049453d0",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 450,
+      "raw_sha256": "4f15db391e914738cc68d87f7675cb0761da05aa65ab055f01d9724744e02b4a",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/2/0/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "d2c1ebfdae2824bb460ce0a50f0258722e4eba4f5bad157c3935156efb9980d8",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 512,
+      "raw_sha256": "50a2198e66a4fedbe9255bf0008ae40ace165dbf9386e1bd8cf1f24bf0d60a8b",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/2/0/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "f03f4202ddbad32c1e872178af2479bf0aa97e83c0a1b6015bc47a991e36c670",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 512,
+      "raw_sha256": "188a8f141db6b6daf85854758fa575239bb08a6ab604ceb139bb3c9ade468ba7",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/2/1/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "8c9fcc6528f015b6dc1d83fd6a0efad7da18c7161d2a99b84646f7834c8b219a",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 96,
+      "raw_sha256": "413882a2a64cfa8623af141e09db94bff5ec287bc95df2872ea37094a3b148a4",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/3/0/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "0c5482f1f611f1dc8075a2da5eb7f1e19d5e298037b55639abae51a8c8af040f",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 129,
+      "raw_sha256": "5b3d4d4698985c271e7a79f1a01e6d63f1d75658f6f18d3dfd2cd10cba854cd3",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/3/0/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "5d2a91193d0f7cb4fddc0136440bdb62592e23616b277d4f35661ec0ca3454cd",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 149,
+      "raw_sha256": "674adc42b079577febfe99845a05dbfa4661d308ab196eea6e4d23b16135975c",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/3/0/2",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "5f1fcdd77899c0d50bd7203094acaf05ad3525bfcf3e34629ddf1793dda705f4",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 104,
+      "raw_sha256": "c3e031188ee45ed9888b88992a7164ddf7591845456b4dabba684d0fd60f3562",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/3/0/3",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "f6e140a41d231fc007632103d1fa320bc8b9a16282cf2d03b4e87bc06d6df064",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 163,
+      "raw_sha256": "9369b9e0b0407466bbc765017ef1aa6bd30f709675802412949b6a7730dfb8be",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/3/0/4",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "5b5f0f003c9fea80e2e0bb2f56de0781ca7b0fc7e06081fbfa992c970bacdc87",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 494,
+      "raw_sha256": "3ea581a6bb9f87c7317f1c111bed52921184f36d78641dc2f20ea71d2546600f",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/3/1/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "813a0459c5f1fed827c73c3bc264b3d0d0af48da8bb8fda739c663bb93390e66",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 283,
+      "raw_sha256": "9160a2fa98c629a308d17d82cf4c1ae254ff5ab2eceab9f6f70b631e8cdcc1de",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/4/0/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "3f8d25b6fba18f88e6ce193a820fbd6908ae3ed3f38cb4fefb94c603bbdf2dcd",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 322,
+      "raw_sha256": "321963af454282fdaa2cdae688133a1453a6819fee10dfafccbcd003df6e9bce",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/4/0/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "a22a807c12b2bb3731be4db79441142c3e251a6a0b9b0902184797c2702e5fd0",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 263,
+      "raw_sha256": "2554dc292bdd08d4a66a9f28b373af45307e0eb1a13d06f8472382f876d0dd19",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/4/1/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "6f7af3af9ead23a6ae25b1add8c5c6a0fe695d21a438e7ea8b29be7efe97c752",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 316,
+      "raw_sha256": "fad063c1d78e34749c6cc175066439a3bafdb01a86eb24198cb37123b7b3d4cf",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/4/1/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "810273bb6c0f9fd173f885c181fc11ffabde4a3ede3b4d52ecf3757b9a7181b3",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 93,
+      "raw_sha256": "bdc25dad94e1f409ee760057bf36b14ffe12a49405de1ebac2cca6572c3b3663",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/5/0/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "881868267e63ad1d82f4d6ae0519956f549dc620ebab5ed0c3c80c79a349442c",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 128,
+      "raw_sha256": "237352b9cb89edbf99529bd08085f17e0b8f50d528e97463f24af5e116e3a047",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/5/0/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "1e4b2f1cacb7a7dfa39292eb4a5276fe196e027bea243780c0abb58bffa3166d",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 137,
+      "raw_sha256": "b36c9e1f07d538ba9c4071af2a6042e0ccdbc3113fa9db5e59057e85a9e02bea",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/5/0/2",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "e29d2a64521ae01fff9f9fb55aefdc814a8c547790ba9902eed7c91e89c5f518",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 139,
+      "raw_sha256": "b181db011ce857f628ec3397f0aaf823a4f3924ae27df188506517df0adba2cc",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/5/0/3",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "1ecdfa04ac1fee1b1dcc457ed8a467382b4a058cae945b5f7abcd2fdee126212",
+      "eligible_for_semantic_review": true,
+      "generated_text_tokens": 153,
+      "raw_sha256": "2b9d87cee8d8c6470921065c782af4fb482e3e86b69cde244041da4e54b8798c",
+      "review": {
+        "action_last": true,
+        "capture_sha256": "1ecdfa04ac1fee1b1dcc457ed8a467382b4a058cae945b5f7abcd2fdee126212",
+        "checkable_expectation": true,
+        "goal_connection": true,
+        "no_unsupported_claim": false,
+        "rationale": "Author whole-text FAIL. Despite correctly summarizing the latest other-branch event and selecting the correct first port, it claims the supplied events do not contain a route from N_YUDAS4YHXF to goal N_KCY4JJ3YHO. The first actual READ E_4753WACPEJ explicitly contains exactly that edge and receipt R_53SJQN66IL. Successful action and153 tokens cannot cure this false evidence claim.",
+        "raw_sha256": "2b9d87cee8d8c6470921065c782af4fb482e3e86b69cde244041da4e54b8798c",
+        "specific_read_evidence": true,
+        "substantive_first_person": true
+      },
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/5/0/4",
+      "semantic_status": "FAIL_SEMANTIC",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "ba09417da670b76302c06d0525b69da7f423dc0bfb8612088387918071b4c556",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 118,
+      "raw_sha256": "2c320fb51c30f6b44a7f9544ec06b7193b48b51e9a8a70c573dabb51f330767b",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/5/0/5",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "0c5350661bbe2a259ebddfd506b1ebdd9544f46906ba26938d7640912542788b",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 94,
+      "raw_sha256": "54c917f40cee4b0637b54c548e9cf684c388b06cc283d1d19bda5a07b92d1e7f",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/5/1/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "e0a9dd2330b5b3487aadf63f9eed638989909b8a667fa34f9284829f79406ba2",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 119,
+      "raw_sha256": "1d4390e8dacd57254190ed8c2b502c078010912b26f556e98ae0e7a4c9d91dcd",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/5/1/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "3ce1f7dd962f7d4ca9477956140e1f4147f63698c8a4b23d17509ba93e621d2a",
+      "eligible_for_semantic_review": true,
+      "generated_text_tokens": 156,
+      "raw_sha256": "97560d7e448ec8b514f23a56b241945a5f8b6e3f45aa48c9ab782c2b04164c35",
+      "review": {
+        "action_last": true,
+        "capture_sha256": "3ce1f7dd962f7d4ca9477956140e1f4147f63698c8a4b23d17509ba93e621d2a",
+        "checkable_expectation": false,
+        "goal_connection": true,
+        "no_unsupported_claim": false,
+        "rationale": "Author whole-text FAIL. It correctly identifies the second read's edge to the goal but says evidence R_PRMUOOY6BM is not provided, although it is present in that actual EVENT. It infers nearing completion from a remembered goal edge while still at the original CURRENT with zero committed routes, and its next-read expectation of either additional context or task completion is not a specific grounded prediction. No target correction.",
+        "raw_sha256": "97560d7e448ec8b514f23a56b241945a5f8b6e3f45aa48c9ab782c2b04164c35",
+        "specific_read_evidence": true,
+        "substantive_first_person": true
+      },
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/5/1/2",
+      "semantic_status": "FAIL_SEMANTIC",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "243e38edbf20504e108dc503a36912f1f97a1df22c150ae73a5f445dd7c6826a",
+      "eligible_for_semantic_review": true,
+      "generated_text_tokens": 160,
+      "raw_sha256": "3625a549bd6c67bdaa981454ed655eca80994f7478ced4daf13f1cc6194554a0",
+      "review": {
+        "action_last": true,
+        "capture_sha256": "243e38edbf20504e108dc503a36912f1f97a1df22c150ae73a5f445dd7c6826a",
+        "checkable_expectation": false,
+        "goal_connection": true,
+        "no_unsupported_claim": false,
+        "rationale": "Author whole-text FAIL. Actual third read accurately describes an edge from the unchanged root to N_YUDAS4YHXF, but the child says the route has looped back to a previous node. No ROUTE has yet occurred and no loop is in the evidence. It also calls the explicit R_GXGYCLELNS evidence unprovided. Its completion-or-context expectation does not repair the invented live history.",
+        "raw_sha256": "3625a549bd6c67bdaa981454ed655eca80994f7478ced4daf13f1cc6194554a0",
+        "specific_read_evidence": true,
+        "substantive_first_person": true
+      },
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/5/1/3",
+      "semantic_status": "FAIL_SEMANTIC",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "6fbfbf0b1aa2c1a3ded5a82add669eeb57619570f3ff30e1dc38504317bc1a67",
+      "eligible_for_semantic_review": true,
+      "generated_text_tokens": 202,
+      "raw_sha256": "b6dc409b227d85fd8592e4c31ebc49a961cfc7c09494ac3046197e967019895c",
+      "review": {
+        "action_last": true,
+        "capture_sha256": "6fbfbf0b1aa2c1a3ded5a82add669eeb57619570f3ff30e1dc38504317bc1a67",
+        "checkable_expectation": true,
+        "goal_connection": true,
+        "no_unsupported_claim": false,
+        "rationale": "Author whole-text FAIL. Correctly links E_XJLM5UPNGJ's intermediate to the goal and chooses the correct first port. However it says the explicit receipt R_EFZV4TCK6P is not provided and describes this first live move from the still-root CURRENT as confirming the final leg, conflating remembered transitions with the live position. These unsupported statements fail the frozen whole-text criterion even though the eventual episode succeeds.",
+        "raw_sha256": "b6dc409b227d85fd8592e4c31ebc49a961cfc7c09494ac3046197e967019895c",
+        "specific_read_evidence": true,
+        "substantive_first_person": true
+      },
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/5/1/4",
+      "semantic_status": "FAIL_SEMANTIC",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "c0787d2ea758269124c2ddaae8513e276a785d682c29256f78698aede25f903b",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 134,
+      "raw_sha256": "8a9120b19ae1b93d7ee662a696274033207e8f3e4bbf35669662ec74a9bad5f1",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/5/1/5",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "f5a8cc69009c0dd2bc31cf031e573fc1590bce314dcd6ba6e4bd121ac79379e6",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 165,
+      "raw_sha256": "014d084d0973c6d729393528227dee6d40d902196efb7da6904bfa5ba757c1ec",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/6/0/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "1acc5e8a038006725b10314042babd4e450400516f8d144bb58be1c39fca4810",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 249,
+      "raw_sha256": "7292f15004e1c9a026b93cf812fa74e4a69c0f6c0ed38f3d378169086ed57cff",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/6/0/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "fcbce3866da93ddf658be999fad21fa6154816e1885d6a6605166261d02d09c7",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 179,
+      "raw_sha256": "16f8ed77119ba3556acb9cbd443fd2ddc4cc40d39bb2518a03cbdf20e0257cd2",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/6/1/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "15bd2df5fa54ad6f8afbaa09e90e4d38fcfe285ebbb997a3af739af162e11655",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 305,
+      "raw_sha256": "7b2665c1eea690cb440f0e043ae1bf12092f4de930c268a3564a618ce0798b1e",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/6/1/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "842e66ba2dcf04ac42127ba2f4b8a8972feb5d9a532f3b84cbbdb06d60d2043f",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 247,
+      "raw_sha256": "9f993bd5831f14cd83647651912d124edc273874e968df7e94f7cf2dc4f21037",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/7/0/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "e7670cd75b9fa03f0915b9f27acd8186fff45da60eb25002d564bda9ca891801",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 512,
+      "raw_sha256": "50890720e0bb2a55e6ed1599ec37b5b3774814c4ce56884901793a85050b981d",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/7/0/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "82a628767df720113d8881047d2a30fa7da967946af9e1453ed0514cd401fdca",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 512,
+      "raw_sha256": "3beb4d8d21149d34065c9e8396637274f3fb1c47931ef0f211bb2062808407ac",
+      "review": null,
+      "row_id": "NEW_TRAJECTORY_LOSS_OFF/7/1/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "e037f0517fcb84a3f5acbd489e35671862cd362431e584de6051ed22c906a603",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 512,
+      "raw_sha256": "0e3473e37665e8d7884923131491ee8f3ec62c1df5a38615757d688c12a12426",
+      "review": null,
+      "row_id": "ORIGINAL37EC/0/0/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "32d862b4a6247564319b59538635d68b7479dc69e4fff1d9b26298b22e36fbaf",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 512,
+      "raw_sha256": "fe066e5dcb00e9cc211467444289c450a70bbca484b2dca8f470f06e500d226d",
+      "review": null,
+      "row_id": "ORIGINAL37EC/0/1/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "66944d2fd672c678555d5c3f7eb39b5d5e28801cf2304ce3b7ba9b64ec61b5e4",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 512,
+      "raw_sha256": "05db87abb152b96d316215afcf2454c2dc64e7bfac3d7ad47e3c8e6010ba7c77",
+      "review": null,
+      "row_id": "ORIGINAL37EC/1/0/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "adfc121acb74f5ee2e512e812348c8d0ec246900434d3242e00bc872c7571357",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 435,
+      "raw_sha256": "50bc03234c1e669bccede62bdd72ad964bde8bba911694be88b1dc4178238ee9",
+      "review": null,
+      "row_id": "ORIGINAL37EC/1/1/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "939fa35ebee33c7bd03738a998526ba57a1f5e4e6f251c7a236d2af76d3c09d1",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 407,
+      "raw_sha256": "2bce34a85e02d36d11bc35fb8c095af865ac3a48eb7b9bfbd67029402e891d3e",
+      "review": null,
+      "row_id": "ORIGINAL37EC/1/1/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "a8f5842a692c0425c57823b689279aa8fb124b03af3595e93b63428f77d1569f",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 162,
+      "raw_sha256": "3372cbc64a8fc972a463c04989105820dc8ee1bf8a6e329ce8842530c3b52d1f",
+      "review": null,
+      "row_id": "ORIGINAL37EC/2/0/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "639424ee5ee6c6f1d85c1061f9f94b3a3ef006540811d27a63fd338b7d1d97ab",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 512,
+      "raw_sha256": "c62f032e795211c7dc23df09fcaebc224966eee8cff7d02c62debddf1db359f5",
+      "review": null,
+      "row_id": "ORIGINAL37EC/2/1/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "b6017d3a3fa4096e227fdbab30bcb31b279a25ecb899f4d92a45dd199416fb64",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 159,
+      "raw_sha256": "8d39f4e7ceb37e26b4318d2223233f1268b1493b800a292bcfd524383eb98bca",
+      "review": null,
+      "row_id": "ORIGINAL37EC/3/0/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "c978fcfcc8e58fffa4c82edfe5c2609bb21779cfd19fafdfab16ccaaae15cd28",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 98,
+      "raw_sha256": "7c02030eab32a5529e74948b7a89310e246204bd6a3f5215e45c9574c99b6043",
+      "review": null,
+      "row_id": "ORIGINAL37EC/3/0/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "58e3f32ca0c841db94da6f7c98b7923ca30541a629bc5a5b5e51e3f2af242860",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 512,
+      "raw_sha256": "6a55806777df8402923c314639723e1e9040c7f94d98a9b9ada1dc1681fa0311",
+      "review": null,
+      "row_id": "ORIGINAL37EC/3/1/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "04a8199ef30e06da3aa6097c37f5f30d21768cb1ea34b273f58d809432117e6c",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 512,
+      "raw_sha256": "3c56837494046deac8f63aeb116b642d77ba340cf34b10839c8c453454d7134d",
+      "review": null,
+      "row_id": "ORIGINAL37EC/4/0/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "c48addfe21837b416110f090f1d09287ae05acc4039d60cfc5fb44b155d07104",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 512,
+      "raw_sha256": "fc4b213b251509b0a9da435f3326e05ab92e20f29f0fe8a997af655b246fedcc",
+      "review": null,
+      "row_id": "ORIGINAL37EC/4/1/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "ae66652bb4810a56af7a443bbab3d76b2f175c5eaa9ba241cf594ff249e5c948",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 512,
+      "raw_sha256": "ff0af467f2f812a986b6df30ec230c88b9b19c4c7dd79f7992a6bb28d8ac1dfe",
+      "review": null,
+      "row_id": "ORIGINAL37EC/5/0/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "24f5bc0d7f9b097e4f365b149f4691135bd23edae30b51943ac81555a6c2b3c9",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 180,
+      "raw_sha256": "86f71697d62fe600ab470d3b2bec04212df2835acb7fb51431378f1bc65ff6d7",
+      "review": null,
+      "row_id": "ORIGINAL37EC/5/1/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "d2cbd1ee9d2f76bfce8975c4d86f2ff1f3c9000c51841e1acb0b54f68b247b8b",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 146,
+      "raw_sha256": "6fe564d02e7d4c89b77ff13fe4fa9548a4d59baac44dd2e5a8c3f9ddc6a61bb3",
+      "review": null,
+      "row_id": "ORIGINAL37EC/5/1/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "82dae57887ab3b912dd8980f87dd369d6ee8f1584c26e454a6d44e67a4ba1cab",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 219,
+      "raw_sha256": "7cd8d1a5ea2af9828a72cfe2cd5a4b50bd633e8e38dda359f0a058b004519d1a",
+      "review": null,
+      "row_id": "ORIGINAL37EC/6/0/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "03f6a76a0be706bbe460080d5cb22a31b63b58ea235c8d2b26b91f7224f0aacf",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 159,
+      "raw_sha256": "d5bc56a2080ef026bf170d41a2c4dbf053eb019b495baa75a3b46751f7b89312",
+      "review": null,
+      "row_id": "ORIGINAL37EC/6/0/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "40db64a76aaaeb803a343320e10ed6027be84db1533dc2c53e0c0fcb9fecb8f7",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 220,
+      "raw_sha256": "b957cc529f46e09044a38cc5304dae46454f5d4e3cc68e613dbfab38e43af6f6",
+      "review": null,
+      "row_id": "ORIGINAL37EC/6/1/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "fa044e4271be8ac2b46b11a4b1ae1a2469884294401bfcff1c0ccfa1985028a7",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 160,
+      "raw_sha256": "4e40a360bd89ad66dc02326098c7ec62fce7aa1734fcaac733bdd4b5e1849a84",
+      "review": null,
+      "row_id": "ORIGINAL37EC/6/1/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "cd0a69124c0299b2e2dc7a8c3995c28cadaab3f98f095519585fc365d022504e",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 512,
+      "raw_sha256": "3c9afb9951c0b43180513843337ec362e09bca93e71653af71c73c4527faaf9c",
+      "review": null,
+      "row_id": "ORIGINAL37EC/7/0/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "510a958e6380a3316be707ad04a739d9a6d2383b166d4dd3ad9410fc8e76f60b",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 296,
+      "raw_sha256": "cd186b7ff1ac4459d296b84cf7121355463d40601a2bf356179ef1ddee24ae64",
+      "review": null,
+      "row_id": "ORIGINAL37EC/7/1/0",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    },
+    {
+      "admitted": false,
+      "capture_sha256": "21c3c7bbf0644bb99a8eac83c3e0f1d00bf7d74be1630dbca43af17092eeaf14",
+      "eligible_for_semantic_review": false,
+      "generated_text_tokens": 141,
+      "raw_sha256": "3de1bf05ca41fee81c65b32e8516d35aa424b86e283fd1961274bdab847b1ca6",
+      "review": null,
+      "row_id": "ORIGINAL37EC/7/1/1",
+      "semantic_status": "FAIL_NECESSARY_CONDITIONS",
+      "student": null
+    }
+  ],
+  "status": "COMPLETE",
+  "summaries": {
+    "FULL_TARGET": {
+      "admitted_rows": 3,
+      "episode_denominator": 16,
+      "per_world": [
+        {
+          "episode_denominator": 2,
+          "qualified_episodes": 0,
+          "successful_episodes": 0,
+          "world_index": 0
+        },
+        {
+          "episode_denominator": 2,
+          "qualified_episodes": 0,
+          "successful_episodes": 2,
+          "world_index": 1
+        },
+        {
+          "episode_denominator": 2,
+          "qualified_episodes": 0,
+          "successful_episodes": 1,
+          "world_index": 2
+        },
+        {
+          "episode_denominator": 2,
+          "qualified_episodes": 1,
+          "successful_episodes": 1,
+          "world_index": 3
+        },
+        {
+          "episode_denominator": 2,
+          "qualified_episodes": 0,
+          "successful_episodes": 0,
+          "world_index": 4
+        },
+        {
+          "episode_denominator": 2,
+          "qualified_episodes": 0,
+          "successful_episodes": 0,
+          "world_index": 5
+        },
+        {
+          "episode_denominator": 2,
+          "qualified_episodes": 0,
+          "successful_episodes": 1,
+          "world_index": 6
+        },
+        {
+          "episode_denominator": 2,
+          "qualified_episodes": 0,
+          "successful_episodes": 2,
+          "world_index": 7
+        }
+      ],
+      "qualified_episodes": 1,
+      "qualified_mask": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "qualified_worlds": 1,
+      "successful_episodes": 7,
+      "successful_worlds": 5,
+      "tokens": {
+        "above_400": 0,
+        "all_generated_text_token_counts": [
+          40,
+          34,
+          133,
+          110,
+          134,
+          123,
+          36,
+          125,
+          134,
+          107,
+          34,
+          116,
+          100,
+          108,
+          123,
+          95,
+          36,
+          112,
+          91,
+          116,
+          36,
+          74,
+          93,
+          104,
+          104,
+          81,
+          43,
+          82,
+          54,
+          54,
+          56,
+          86,
+          35,
+          117,
+          156,
+          109,
+          144,
+          157,
+          36,
+          109,
+          116,
+          135,
+          38,
+          130,
+          129,
+          137,
+          130,
+          37,
+          135,
+          126,
+          133,
+          140,
+          106,
+          37,
+          124,
+          144,
+          35,
+          105,
+          113,
+          32,
+          121,
+          91,
+          115,
+          117,
+          127,
+          45,
+          130,
+          119,
+          125,
+          137,
+          99,
+          45,
+          134,
+          126,
+          133,
+          151,
+          118
+        ],
+        "below_150": 74,
+        "count": 77,
+        "maximum": 157,
+        "median": 112,
+        "minimum": 32,
+        "total": 7652,
+        "within_150_400": 3
+      },
+      "unresolved_rows": 0,
+      "world_denominator": 8
+    },
+    "NEW_TRAJECTORY_LOSS_OFF": {
+      "admitted_rows": 0,
+      "episode_denominator": 16,
+      "per_world": [
+        {
+          "episode_denominator": 2,
+          "qualified_episodes": 0,
+          "successful_episodes": 0,
+          "world_index": 0
+        },
+        {
+          "episode_denominator": 2,
+          "qualified_episodes": 0,
+          "successful_episodes": 1,
+          "world_index": 1
+        },
+        {
+          "episode_denominator": 2,
+          "qualified_episodes": 0,
+          "successful_episodes": 0,
+          "world_index": 2
+        },
+        {
+          "episode_denominator": 2,
+          "qualified_episodes": 0,
+          "successful_episodes": 0,
+          "world_index": 3
+        },
+        {
+          "episode_denominator": 2,
+          "qualified_episodes": 0,
+          "successful_episodes": 0,
+          "world_index": 4
+        },
+        {
+          "episode_denominator": 2,
+          "qualified_episodes": 0,
+          "successful_episodes": 2,
+          "world_index": 5
+        },
+        {
+          "episode_denominator": 2,
+          "qualified_episodes": 0,
+          "successful_episodes": 1,
+          "world_index": 6
+        },
+        {
+          "episode_denominator": 2,
+          "qualified_episodes": 0,
+          "successful_episodes": 0,
+          "world_index": 7
+        }
+      ],
+      "qualified_episodes": 0,
+      "qualified_mask": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "qualified_worlds": 0,
+      "successful_episodes": 4,
+      "successful_worlds": 3,
+      "tokens": {
+        "above_400": 6,
+        "all_generated_text_token_counts": [
+          161,
+          237,
+          165,
+          149,
+          153,
+          333,
+          364,
+          450,
+          512,
+          512,
+          96,
+          129,
+          149,
+          104,
+          163,
+          494,
+          283,
+          322,
+          263,
+          316,
+          93,
+          128,
+          137,
+          139,
+          153,
+          118,
+          94,
+          119,
+          156,
+          160,
+          202,
+          134,
+          165,
+          249,
+          179,
+          305,
+          247,
+          512,
+          512
+        ],
+        "below_150": 13,
+        "count": 39,
+        "maximum": 512,
+        "median": 165,
+        "minimum": 93,
+        "total": 9157,
+        "within_150_400": 20
+      },
+      "unresolved_rows": 0,
+      "world_denominator": 8
+    },
+    "ORIGINAL37EC": {
+      "admitted_rows": 0,
+      "episode_denominator": 16,
+      "per_world": [
+        {
+          "episode_denominator": 2,
+          "qualified_episodes": 0,
+          "successful_episodes": 0,
+          "world_index": 0
+        },
+        {
+          "episode_denominator": 2,
+          "qualified_episodes": 0,
+          "successful_episodes": 1,
+          "world_index": 1
+        },
+        {
+          "episode_denominator": 2,
+          "qualified_episodes": 0,
+          "successful_episodes": 0,
+          "world_index": 2
+        },
+        {
+          "episode_denominator": 2,
+          "qualified_episodes": 0,
+          "successful_episodes": 0,
+          "world_index": 3
+        },
+        {
+          "episode_denominator": 2,
+          "qualified_episodes": 0,
+          "successful_episodes": 0,
+          "world_index": 4
+        },
+        {
+          "episode_denominator": 2,
+          "qualified_episodes": 0,
+          "successful_episodes": 0,
+          "world_index": 5
+        },
+        {
+          "episode_denominator": 2,
+          "qualified_episodes": 0,
+          "successful_episodes": 1,
+          "world_index": 6
+        },
+        {
+          "episode_denominator": 2,
+          "qualified_episodes": 0,
+          "successful_episodes": 1,
+          "world_index": 7
+        }
+      ],
+      "qualified_episodes": 0,
+      "qualified_mask": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "qualified_worlds": 0,
+      "successful_episodes": 3,
+      "successful_worlds": 3,
+      "tokens": {
+        "above_400": 11,
+        "all_generated_text_token_counts": [
+          512,
+          512,
+          512,
+          435,
+          407,
+          162,
+          512,
+          159,
+          98,
+          512,
+          512,
+          512,
+          512,
+          180,
+          146,
+          219,
+          159,
+          220,
+          160,
+          512,
+          296,
+          141
+        ],
+        "below_150": 3,
+        "count": 22,
+        "maximum": 512,
+        "median": 351.5,
+        "minimum": 98,
+        "total": 7390,
+        "within_150_400": 8
+      },
+      "unresolved_rows": 0,
+      "world_denominator": 8
+    }
+  }
+}
