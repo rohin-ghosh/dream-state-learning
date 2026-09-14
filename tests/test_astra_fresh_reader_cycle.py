@@ -29,7 +29,7 @@ def generation(raw, messages=None):
     return result
 
 
-def fresh_fixture(no_reads=False):
+def fresh_fixture(no_reads=False, invalid_routes=False):
     bank = runner.fresh.build_bank()
 
     def generate(messages):
@@ -41,9 +41,10 @@ def fresh_fixture(no_reads=False):
     collection = runner.fresh.collect(generate)
     records = []
     by_address = {fact['event']: runner.source.material._event(fact) for fact in bank}
-    for fact in bank:
+    for episode_index, fact in enumerate(bank):
         commands = [] if no_reads else ['READ EVENT ' + address for address in fact['public_events']]
-        commands = iter(commands + ['ROUTE ' + fact['port']])
+        port = 'P_ZZZZZZZZZZ' if invalid_routes and episode_index >= 2 else fact['port']
+        commands = iter(commands + ['ROUTE ' + port])
         transitions = {other['port']: other['outcome'] for other in bank if other['node'] == fact['node']}
         episode = controller.run_episode(controller.public_task(fact),
             lambda messages: generation(next(commands), messages),
@@ -81,6 +82,9 @@ def stage_fixture(directory, inputs, phase, **changes):
     result = dict(schema=runner.SCHEMA, phase=phase, status='COMPLETE', source=deepcopy(inputs['fresh_source']),
         frozen_base_unchanged=True, parent_present=False, fits=0,
         loaded_adapter_state_sha256=inputs['initial_state'])
+    if phase != 'collect':
+        result.update(audit_policy=runner.AUDIT_POLICY,
+                      audit_helper_sha256=runner.source.file_hash(runner.audit.__file__))
     result.update(changes)
     write(directory / 'RESULT.json', result)
     return runner.source.read(directory / 'RESULT.json')
@@ -95,14 +99,14 @@ def collection_fixture(directory, inputs):
 
 
 def before_fixture(directory, inputs, collection, records, collection_sha='collection-receipt', choices=(1, 3, 3)):
-    cases = runner.fresh.build_cases(collection, records)
+    cases = runner.audit.build_cases(collection, records)
     indexes = iter(list(choices) + [None] * (len(cases['cases']) - len(choices)))
 
     def generate(messages):
         index = next(indexes)
         return generation('NONE' if index is None else cases['sources'][index]['event'], messages)
 
-    document = runner.fresh.collect_audit(cases, generate)
+    document = runner.audit.collect_audit(cases, generate)
     write(directory / 'ACTUAL_CASES.json', cases)
     write(directory / 'ACTUAL_READERS.json', document)
     result = stage_fixture(directory, inputs, 'before', collection_result_sha256=collection_sha,
@@ -116,6 +120,7 @@ def fresh_training_fixture(directory, inputs, arm='SELECTED'):
         source=deepcopy(inputs['fresh_source']), parent_present=False, fits=1,
         adapter_state_before=inputs['initial_state'], adapter_state_after='fresh-' + arm,
         collection_result_sha256='collection-receipt', before_result_sha256='before-receipt',
+        audit_policy=runner.AUDIT_POLICY, audit_helper_sha256=runner.source.file_hash(runner.audit.__file__),
         recipe=trainer.recipe(arm, [1, 3, 3], memory_count=96))
     write(directory / 'RESULT.json', result)
     return runner.source.read(directory / 'RESULT.json')
@@ -272,15 +277,37 @@ class ReceiptTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'failed_fresh_stage_forbidden'):
                 runner.read_stage(directory, inputs, 'collect')
 
+    def test_noncollection_stages_require_current_audit_policy_and_helper_hash(self):
+        for phase in ('before', 'train', 'after'):
+            for field in ('audit_policy', 'audit_helper_sha256'):
+                for value in (None, 'stale-audit-binding'):
+                    with self.subTest(phase=phase, field=field, value=value), TemporaryDirectory() as temporary:
+                        directory = Path(temporary)
+                        inputs = prepared_inputs()
+                        receipt = stage_fixture(directory, inputs, phase)
+                        accepted, unused = runner.read_stage(directory, inputs, phase)
+                        self.assertEqual(accepted, receipt)
+                        if value is None:
+                            receipt.pop(field)
+                        else:
+                            receipt[field] = value
+                        write(directory / 'RESULT.json', receipt)
+                        with self.assertRaisesRegex(ValueError, 'fresh_audit_policy_binding_required'):
+                            runner.read_stage(directory, inputs, phase)
+
     def test_collection_replays_all_four_events_and_binds_actor_and_file(self):
         with TemporaryDirectory() as temporary:
             directory = Path(temporary)
             inputs = prepared_inputs()
             collection, unused, receipt = collection_fixture(directory, inputs)
+            self.assertNotIn('audit_policy', receipt)
+            self.assertNotIn('audit_helper_sha256', receipt)
+            original_bytes = (directory / 'COLLECTION.json').read_bytes()
             record, rows, digest = runner.read_collection(directory, inputs)
             self.assertEqual(record, collection)
             self.assertEqual(rows, runner.fresh.replay_collection(collection))
             self.assertEqual(len(rows), 32)
+            self.assertEqual((directory / 'COLLECTION.json').read_bytes(), original_bytes)
             self.assertEqual(digest, runner.source.file_hash(directory / 'RESULT.json'))
             for field, value in (('loaded_adapter_state_sha256', 'sibling'), ('fits', 1), ('collection_sha256', 'wrong')):
                 with self.subTest(field=field):
@@ -323,6 +350,25 @@ class ReceiptTests(unittest.TestCase):
             selected, digest = runner.read_before(directory, inputs, collection, 'collection-receipt')
             self.assertEqual(selected, [1, 3, 3])
             self.assertEqual(digest, runner.source.file_hash(directory / 'RESULT.json'))
+
+    def test_policy_failed_routes_keep_actual_reads_without_invented_transition(self):
+        with TemporaryDirectory() as temporary:
+            directory = Path(temporary)
+            inputs = prepared_inputs()
+            collection, records = fresh_fixture(invalid_routes=True)
+            original = deepcopy(records)
+            unused, cases, document = before_fixture(directory, inputs, collection, records)
+            selected, unused_digest = runner.read_before(directory, inputs, collection, 'collection-receipt')
+            self.assertEqual(selected, [1, 3, 3])
+            self.assertEqual(records, original)
+            self.assertEqual(len(cases['cases']), 8)
+            self.assertEqual(document['model_calls'], 8)
+            for record in records[2:]:
+                self.assertEqual(record['episode']['terminal_reason'], 'invalid_route')
+                self.assertEqual(record['episode']['memory_calls'], 2)
+                self.assertFalse(record['episode']['reached_goal'])
+                self.assertFalse(any(trace['kind'] == 'transition' for trace in record['episode']['traces']))
+            self.assertEqual(sum(record['episode']['reached_goal'] for record in records), 2)
 
     def test_read_before_rejects_actor_collection_and_fit_mismatch(self):
         for field, value in (('loaded_adapter_state_sha256', 'sibling'), ('fits', 1),
@@ -531,6 +577,8 @@ class DispatchTests(unittest.TestCase):
                 self.assertTrue((output / 'new_task/CALL_001.json').is_file())
                 self.assertEqual(len(list(output.glob('OLD_RECALL_*.json'))), 24)
                 self.assertEqual(result['loaded_adapter_state_sha256'], expected_state)
+                self.assertEqual(result['audit_policy'], runner.AUDIT_POLICY)
+                self.assertEqual(result['audit_helper_sha256'], runner.source.file_hash(runner.audit.__file__))
                 expected_adapter = inputs['adapter_dir'] if phase == 'before' else str(root / 'train/adapter')
                 self.assertEqual(factory.call_args.args[0].adapter_dir, expected_adapter)
                 engine.verify_base.assert_called_once_with()

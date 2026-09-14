@@ -7,10 +7,13 @@ commit="$3"
 index="$4"
 uuid="$5"
 stage="$6"
-case "$stage" in observe) duration=3840 ;; SELECTED|UNIFORM) duration=7440 ;; *) exit 2 ;; esac
+case "$stage" in observe) duration=3840 ;; before) duration=1920 ;; SELECTED|UNIFORM) duration=7440 ;; *) exit 2 ;; esac
 test -f "$root/prepare/RESULT.json"
 if test "$stage" = observe; then
     test ! -e "$root/collect"
+    test ! -e "$root/before"
+elif test "$stage" = before; then
+    test -f "$root/collect/RESULT.json"
     test ! -e "$root/before"
 else
     test -f "$root/before/RESULT.json"
@@ -41,6 +44,8 @@ common=(--base-after /tmp/astra_adult_cycle2_20260914_attempt1/CUE_REPLAY/correc
     --repair-root /tmp/astra_selected_reader_repair_20260914_attempt1 --gpu-uuid "$uuid")
 if test "$stage" = observe; then
     timeout --signal=INT --kill-after=60 1860 "$python" -B -m gpu.astra_fresh_reader_cycle "${common[@]}" --phase collect --output "$root/collect"
+fi
+if test "$stage" = observe || test "$stage" = before; then
     timeout --signal=INT --kill-after=60 1860 "$python" -B -m gpu.astra_fresh_reader_cycle "${common[@]}" --phase before --collection "$root/collect" --output "$root/before"
 else
     common+=(--collection "$root/collect" --before "$root/before" --arm "$stage")

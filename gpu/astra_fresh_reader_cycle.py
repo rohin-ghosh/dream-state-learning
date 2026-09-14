@@ -8,12 +8,14 @@ import time
 from gpu import astra_selected_reader_repair as repair
 from gpu import astra_experienced_event_cue_collect as collector
 from organism_v6 import experienced_event_fresh_reader_cycle as fresh
+from organism_v6 import experienced_event_fresh_reader_audit as audit
 
 
 source = repair.source
 driver = repair.driver
 require = source.require
 SCHEMA = 'DEV_FRESH_READER_AUDIT_CYCLE_V1'
+AUDIT_POLICY = 'ALL_CAPTURED_READS_WITHOUT_SYNTHETIC_TRANSITION_V2'
 
 
 def load_parent(options):
@@ -63,6 +65,9 @@ def read_stage(directory, inputs, phase):
         and result.get('status') == 'COMPLETE' and result.get('source') == inputs['fresh_source']
         and result.get('frozen_base_unchanged') is True
         and result.get('parent_present') is False, 'own_complete_fresh_stage_required')
+    if phase != 'collect':
+        require(result.get('audit_policy') == AUDIT_POLICY
+            and result.get('audit_helper_sha256') == source.file_hash(audit.__file__), 'fresh_audit_policy_binding_required')
     return result, source.file_hash(directory / 'RESULT.json')
 
 
@@ -81,7 +86,7 @@ def read_before(directory, inputs, collection, collection_sha):
     result, digest = read_stage(directory, inputs, 'before')
     require(result.get('loaded_adapter_state_sha256') == inputs['initial_state'] and result.get('fits') == 0
         and result.get('collection_result_sha256') == collection_sha, 'own_fresh_before_required')
-    cases = fresh.build_cases(collection, result['panels']['OWN_PARAMETRIC']['episodes'])
+    cases = audit.build_cases(collection, result['panels']['OWN_PARAMETRIC']['episodes'])
     require(source.read(Path(directory) / 'ACTUAL_CASES.json') == cases, 'fresh_before_case_drift')
     document = source.read(Path(directory) / 'ACTUAL_READERS.json')
     captures = iter(document['captures'])
@@ -91,7 +96,7 @@ def read_before(directory, inputs, collection, collection_sha):
         require(capture['messages'] == messages and capture['error'] is None, 'fresh_before_capture_drift')
         return capture['response']
 
-    replayed = fresh.collect_audit(cases, generate)
+    replayed = audit.collect_audit(cases, generate)
     require(next(captures, None) is None and replayed == document, 'fresh_before_audit_drift')
     selected = [index for index in document['chosen_source_indexes'] if index is not None]
     require(1 <= len(selected) <= 8, 'no_source_selection_no_matched_fit')
@@ -151,6 +156,7 @@ def main(argv=None):
     started = time.time()
     result = dict(schema=SCHEMA, phase=options.phase, arm=options.arm, arguments=vars(options).copy(),
         entry_sha256=source.file_hash(__file__), started_unix=started, fits=0, model_calls=0, parent_present=False,
+        audit_policy=AUDIT_POLICY, audit_helper_sha256=source.file_hash(audit.__file__),
         claim='ONE_FRESH_BANK_SAME_FAMILY_DEV_CONTINUATION_NOT_H1_H2')
     source.write(output / 'REQUEST.json', result)
     captures = []
@@ -220,9 +226,9 @@ def main(argv=None):
         else:
             source.write(output / 'HELD_AUDIT.json', repair.prior.lesson.collect_cases(inputs['held'], generate, coached=False))
             result.update(evaluate(engine, collection, inputs, output))
-            cases = fresh.build_cases(collection, result['panels']['OWN_PARAMETRIC']['episodes'])
+            cases = audit.build_cases(collection, result['panels']['OWN_PARAMETRIC']['episodes'])
             source.write(output / 'ACTUAL_CASES.json', cases)
-            source.write(output / 'ACTUAL_READERS.json', fresh.collect_audit(cases, generate))
+            source.write(output / 'ACTUAL_READERS.json', audit.collect_audit(cases, generate))
         engine.verify_base()
         if options.phase != 'train':
             require(_state_hash(parameters) == state, 'readonly_fresh_stage_changed_adapter')
