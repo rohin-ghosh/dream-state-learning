@@ -6,7 +6,8 @@
 - Frozen matched sign-test p=1.0; pool NOT admitted;0 corpus rows and0 fits.
 - Completed2026-09-14T22:09:07/18/12/50Z for shards0/1/2/3; all exited0.
 - All four physical/UUID/compute/CVD release scans PASS by22:12:06Z.
-- Terminal notebook SEQ requested from Main; not assigned by this worker.
+- Terminal notebook SEQ-267 assigned by Main; this bounded task is closed.
+- Remote reduction `/tmp/orch_game_20260914_attempt1/REDUCTION.json` is a copied posthoc CPU reduction, not a native-generated result.
 
 ## Strongest result
 
@@ -14,6 +15,9 @@ This installed deterministic Taxi pilot supplies no rich-over-terse outcome gap.
 The entire declared screen is deallocated, without a parser rescue, additional
 seeds, pool scaling, or fit. This is not a disproof of grounded reflection,
 general games, coherent state transitions, H1 or H2.
+
+No TextWorld installation or new arm starts. NEXT_L1_PROPOSAL.md is preserved
+as a distinct proposal only; Main may reassign all four released GPUs.
 
 ## Evidence and control
 

@@ -130,3 +130,33 @@ CVD checks bind each known Python PID to its assigned physical UUID. All
 initialization and generation are worker-owned, not Main. No fit processes.
 Receipts LAUNCH_REQUEST.txt, LAUNCH_NATIVE.txt, NATIVE_PID_CVD.json. Native
 result is pending; process existence is not completion or demonstrated gain.
+
+## 2026-09-14T22:14:56Z — terminal SEQ-267 assigned by Main; task closed
+
+Strongest result: native RICH0/16 vs TERSE0/16, p=1.0,192/192calls and32/32
+episodes replayed. Both destination partitions0/8 in each arm;37/96rich
+format failures vs0/96terse. No native errors or truncation. Full-text
+first-turn diagnostic sample2PASS/13FAIL/1UNRESOLVED;80rich turns unreviewed,
+0outcome-qualified episodes,0admitted rows,0fits. No corpus or retained
+transfer claim.15final CPU tests PASS, including paired threshold/replay
+guards and inherited portable capsule tests. Full report RESULT.md.
+
+All four native/guardian processes exited0 by22:09:50Z; physical0–3 released,
+four clear release scans captured by22:12:06Z. Source/calls preserved in
+native root/tmp/orch_game_20260914_attempt1 and local analysis native_evidence/.
+Posthoc CPU reduction copied unchanged to remote root/REDUCTION.json,
+SHA6917e80a2908f4d9c214d7426eb791cf25c54a67d4781bcc1f851230e16124f8;
+posthoc_reducer.py SHAba7fbc7fc73d12f92e686b2ded322f9ab4b7c77b01c2cf9209082b910690583e.
+This copy did not alter native evidence. Results/evidence commit9c5f6567
+published through merge b3ffdeb0, with no force-push or lost peer changes.
+
+Assumptions/falsification: exhaustively checked deterministic Gym oracle and
+bounded native solutions; complete matched denominator and immutableactor
+replay; no independent/blind or untouched-family claim. Obstacle is the
+all-zero behavioral floor plus rich content/format failures, not evidence
+that coherent games cannot help. Recommendation: deallocate this screen;
+no replication/fit/retry on its behalf. Peer message: separate syntactic
+execution, genuine outcome and full-text semantics—fluent headings can state
+false goals and transitions. Distinct TextWorld prerequisite-feedback idea
+preserved in NEXT_L1_PROPOSAL.md only. Main explicitly forbids starting it
+or any new arm in this task. Worker is ready to close after SEQ publication.

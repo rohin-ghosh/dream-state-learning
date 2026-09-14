@@ -25386,3 +25386,47 @@ FAILED.json; raw per-call CALL_*.json; guards launch_{RICH,TERSE}/.
 Both bounds end by22:41:24Z with native shutdown reserve. No fit, no
 semantic admission, no held-family mining, no result SEQ reserved. Main does
 not execute. Attempt1 terminal capsule locally preserved SHA841e44d4472959a2.
+
+## [Worker GAME-ORTHOGONAL] SEQ-267 — 2026-09-14T22:14:56Z — Taxi RICH0/16 vs TERSE0/16; GPUs0–3 released
+
+OBSERVATION: RICH0/16 vs TERSE0/16 native deliveries, paired signp=1.0;
+192/192calls and32/32episodes replayed,0admittedrows/0fits. Fixed pool gateFAIL.
+Node:A100physical0–3; native root:/tmp/orch_game_20260914_attempt1.
+Exact reduction:/tmp/orch_game_20260914_attempt1/REDUCTION.json (posthocCPU,
+copied unchanged after native completion; native evidence not modified).
+Native shards all exited0 by22:09:50Z; four physicalUUID/computePID/CVD
+release scans clear by22:12:06Z. RICHformat59/96pass vs TERSE96/96pass.
+Full-text first-turn diagnostic16/96:2PASS/13FAIL/1UNRESOLVED;80unreviewed.
+Both destination partitions0/8perarm; no native errors/truncation or budgethit.
+
+EVIDENCE AND CONTROL: same16frozen miningstates/observations/greedy37ec,
+counterbalancedRICH/TERSE,<=6turns;16heldL1states untouched by generation.
+Gym0.21Taxi oracle3000/3000native transitions checked. Sourcearchive
+c58f7671411937dbee12246f8c3454bf842eef0843460b6b65dd8f058b7bf043;
+reductionSHA6917e80a2908f4d9c214d7426eb791cf25c54a67d4781bcc1f851230e16124f8;
+posthocreducerSHAba7fbc7fc73d12f92e686b2ded322f9ab4b7c77b01c2cf9209082b910690583e.
+Local receipts:research_notes/analysis/orch_game_20260914_attempt1/
+REDUCTION.json,RESULT.md,SOURCE_RECEIPT.json,FINAL_CPU_TESTS.txt(15PASS),
+SEMANTIC_REVIEW.json,RELEASE0.json–RELEASE3.json,native_evidence/shard*/screen/.
+PreGPU1fd5d077 preceded launch; native base/adapter unchanged; evidence9c5f6567.
+
+CURRENT INTERPRETATION: this installed Taxi readiness screen is NOT admitted;
+deallocate it promptly. No TextWorld-equivalence, unseen-family, fullblind,
+corpus/fit/retained-transfer/H1/H2 result. Main runs no cell.
+
+CREDIBLE ALTERNATIVES: all-zero floor may reflect representation/action
+semantics and instruction-following failures. TERSE96/96valid actions also
+failed, so rich format rejection alone cannot explain both arms. Sampled
+rich prose invents goals/walls and reverses row direction; no semantic
+labels inferred from headings. Same-environment destination split only.
+
+CONFIDENCE: high in bounded counts and resource release from exact ownCPU
+replay and raw receipts; no independent verification claimed. Low in any
+general conclusion about grounded reflection. Outcome gate and denominators
+unchanged; zero rows need further admission review because none pass outcome.
+
+CHEAPEST DISCRIMINATING NEXT TEST: distinct off-the-shelf TextWorld object/
+container prerequisite correction under native failed-action feedback;
+NEXT_L1_PROPOSAL.md is proposal-only, CPUsetup still necessary. No TextWorld
+install, newGPUarm, Taxi retry or fit is started. A1000–3 available to Main;
+SEQ-267 assigned just before this publication, no advance reservation.
