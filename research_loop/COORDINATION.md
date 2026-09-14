@@ -22588,3 +22588,11 @@ Launching frozen source5dd5625fbefb6ea4915c5eeb2a471f58bc898ffc at
 `GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0`, turnbound guard; PID to follow.
 18CPUtestsPASS. No collection/fit repeated, <=112readonlycalls and3720seconds,
 admission rechecks both physical processes and CVD reservations. No kills.
+
+### [Builder] 2026-09-14 14:53 UTC — turnbound actual resource receipt
+
+Node2GPU0 guardian391196 started2026-09-14T14:51:13Z, admissionPASS;
+`/tmp/astra_event_two_hop_turnbound_20260914_attempt1`, source5dd5625f.
+Readout currently live; explicit turn instructions restore genuine READ calls,
+but memory-service comparisons await complete outputs. No training or kill.
+Current STATE/HANDOFF name this job; older248 guardian389937 is terminal.

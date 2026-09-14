@@ -1,6 +1,27 @@
-# Astra restart handoff — current override September 14, 2026, 14:44 UTC
+# Astra restart handoff — current override September 14, 2026, 14:53 UTC
 
-## CURRENT — connected two-hop readonly diagnostic LIVE
+## CURRENT — clarified turn-boundary readonly diagnostic LIVE
+
+This paragraph supersedes the first diagnostic's LIVE details below. Original
+connected diagnostic is terminal SEQ248: collection4/4 (8calls), all conditions
+0/4 with16actor/0memory/0commits.9mounted multi-command errors,3truncations,
+4OFF ROUTE-node errors; no memory/composition comparison exercised. Source and
+complete capsule `gpu_artifacts_local/astra_event_two_hop_terminal_20260914_attempt1/extracted`,
+archive8e1cf0c9b7c42f1e4f57f4924cd3561c09308d3097ec2ee547629e17b4ee46c4.
+
+Actual live job: node2GPU0 guardian391196, started14:51:13UTC,
+`/tmp/astra_event_two_hop_turnbound_20260914_attempt1`, frozen source
+5dd5625fbefb6ea4915c5eeb2a471f58bc898ffc. Inspect `readout/RESULT.json`,
+`readout/FAILED.json`, per-episode files and `run.log`; no new collect/train.
+Same parent/world/conditions; protocol `turnbound` explicitly asks one command
+then wait for real feedback, and port-not-node ROUTE arguments. Same strict
+parser, caps, tasks and scored outcomes.18CPUtests/nativeprepare/source-replay
+PASS.Original collection reused unchanged from original root/collect.<=3720s.
+At14:52:40 four parametric tasks complete0/4, but genuine READ calls now occur;
+own-text/base/unavailable panels not terminal yet. No conclusion before outputs.
+No prompt sweep or automatic fit follows. Main next inspects supplied-text
+control to decide whether memory acquisition or demonstrated turn-taking is
+the next missing interface. Kant reducer also supports explicit reused collection.
 
 All historical LIVE statements below this section are superseded.
 SEQ245, SEQ246 and SEQ247 are COMPLETE and independently reduced. Do not repeat

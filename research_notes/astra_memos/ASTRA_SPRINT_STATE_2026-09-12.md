@@ -1,4 +1,14 @@
-## Current superseding snapshot — 2026-09-14 14:44 UTC
+## Current superseding snapshot — 2026-09-14 14:53 UTC
+
+Latest: SEQ248 original connected zero-fit diagnostic COMPLETE (four valid
+events, all readonly conditions0/4 before memory access). Turnbound protocol
+diagnostic LIVE node2GPU0 guardian391196 start14:51:13UTC, frozen5dd5625f,
+`/tmp/astra_event_two_hop_turnbound_20260914_attempt1`. Only readout; SAME
+collected events/parent, no collection or fit repeated.18CPUtests andnative
+collection joinsPASS, <=112calls/3720seconds. Readonly outcome pending;
+default original protocol and its failed scores preserved. See HANDOFF current
+paragraphs for artifact paths and Kant reducer ownership. All LIVE claims below
+describe prior stages unless expressly repeated here. Mission remains incomplete.
 
 SEQ245/246/247 COMPLETE, independently reduced, drafts through247 committed
 2d467bc2. No fit is live. Shared-writer control247: recall1/4,routing3/4 versus
