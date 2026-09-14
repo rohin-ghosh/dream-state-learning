@@ -1,6 +1,18 @@
 # Astra restart handoff — current override 2026-09-14 18:12UTC
 
-## CURRENT — breadth fits and eight-shard scale collection LIVE
+## CURRENT — breadth fits LIVE; scale collection terminal with failed admission
+
+18:35UTCoverride:all8node3guardians finished. Source316/320valid,4literalcopy
+failures0/1/4/6;fourremainingteach127/128tasks,shard7wrongroute. Only576rows
+emitted; frozen1536corpusFAIL. Nopartialsubsetfit, no completedstageretry.
+SEQ258primary goal_scale_collection_first_result.md; capsulelocalc57a87ef
+atgpu_artifacts_local/astra_goal_scale_terminal_20260914_attempt1/extracted.
+Nextseparateactualchildsourcecorrection<=8callsprotocole6f4beca,codeRamanujan
+gpu/astra_scale_source_correction.py/tests;Mainguardwritten/syntaxPASS.
+Richprotocol now339c25c0 (pre-nativeamendmentkeepsvalidpartialcandidates,
+noautomaticfit),old99fcsuperseded. Parfithelper/Schrodingerbridge;notlaunched.
+Node2originalbreadthfitslive822/824updatesat18:27; inspectLOSSES/resultfiles.
+MissionACTIVE/INCOMPLETE. Earlier node3LIVE/320valid statements superseded.
 
 18:21UTCupdate:node3shards0–7/GPU0–7 launched18:16:32UTC,guardians
 79201,79202,79204,79206,79208,79210,79212,79214;sourceff1af2c3,archive7b38095a.

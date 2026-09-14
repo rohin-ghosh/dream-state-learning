@@ -59,9 +59,20 @@ RICH=actual full response;TERSE=exact emitted action slice;
 RICH_ACTION_ONLY=same full response with rationale/delimiter labels masked.
 All three use identical parent-free prefixes and exact paired action source.
 Neither compiler nor researcher writes an assistant explanation for the child.
-All96targets per shard must pass for a full384-row primary corpus; incomplete
-shards are reported, not swapped after seeing endpoints. Critiques remain a
-separate candidate pool, not silently included in that384 or these three forms.
+Before any native rich calls, amendment2026-09-14 18:32UTC separates candidate
+retention from complete-corpus status. Keep paired candidate rows from EVERY
+complete source-grounded TRAINepisode even when another episode fails. Apply
+the same public outcome/grounding filter to all16attempted tasks per shard;
+never rank shards, swap worlds, select by PROBE scores, or erase failures.
+Retain all64planned TRAINtask denominators in collection reports.384rows is
+the maximum, and all96/shard defines complete_corpus, not permission to discard
+valid partial candidates. All three forms share exactly the same admitted
+episode IDs and action targets. No automatic fit follows a partial or full
+corpus; factual-content review and a finite fit contract remain necessary.
+This prospectively revised candidate policy is specific to rich collection;
+the failed scale protocol's all-eight admission is NOT relaxed retroactively.
+Critiques remain a separate candidate pool, not silently included in that384
+or these three forms.
 No model parameters are trained by this collection-only protocol.
 
 ## Resources and next decision

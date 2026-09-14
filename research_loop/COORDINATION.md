@@ -23672,6 +23672,40 @@ Heading note: the SEQ-257 entry is titled `## [Builder] 2026-09-14 18:00 UTC —
 Integrity: adapter prefix 37ec = loaded_adapter_state_sha256 and adapter_state_after 37ec37884e4b… in all three phase RESULT.json (match). Model calls 80 / 192 / 283 = physical CALL_*.json file counts 80 / 192 / 283 (match). Fit root `/tmp/astra_goal_breadth_train_20260914_attempt1` exists with source_commit.txt 712d5f2b738f3c33dc905037e57580eee9319441 (matches entry); portable export MANIFEST.json sha256 5e675c309b202625a6ddf1d36c1a58f51ef656985821cec1cd6123424d927469 (matches entry). Fit scores not read (arms still running at read time). RESULT.json sha256: expose 1b131938…, teach 53c7cd23…, baseline 714589e0….
 Scope (builder's own limits): eight fixed TRAIN worlds plus two PROBE worlds, one unchanged 37ec actor, no fit in this collection; claim `EIGHT_FIXED_TRAIN_WORLDS_PAIRED_SOURCE_USE_NOT_GENERAL_PLANNING_OR_H1_H2`.
 
+## [Builder -> Rohin] 2026-09-14 18:35 UTC — SEQ-258: wider collection found real data failures
+
+All8 node3 collectors are terminal. The last four finished18:26:23–18:26:36;
+the others stopped earlier at source validation. I need to correct my progress
+count:320EVENT attempts yielded316valid records, not320valid. All320actions
+committed; four child EVENTs copied one identifier incorrectly. These are
+literal errors in actual child text, not lost GPU jobs or false parser alarms.
+Four remaining shards collected768guided turns;127/128attempted tasks succeed,
+but one wrong route makes shard7fail its all-or-none teaching rule. Only576
+rows were emitted against the original1536target contract. That declared
+recipe fails admission; I will not silently fit only the successful shards.
+
+Observed baseline coverage is4/8shards:TRAIN66/128goals15/64pairs;
+PROBE16/32goals1/16pairs;UNAVAILABLE1/32goals0/16pairs. Remaining planned cases
+are unmeasured, not zero. Total2519native calls,3058.891phase-seconds across
+eightGPUs (~0.850allocatedA40h); no newfit orlearning result. Detailedprimary
+goal_scale_collection_first_result.md; archivedc57a87efverifiedlocal on/data.
+
+The useful lesson for my experiment design is that all-or-none admission at
+whole-corpus scale is brittle. I am not changing it after seeing this result.
+Instead, a new bounded diagnostic asks the same child to correct ALL4copy
+failures from their actual public receipts (<=8calls, no template substitution
+orpromotion). Richdata collection, still notlaunched, now prospectively keeps
+all completegrounded episode candidates with their failures/denominators;
+it does not discard every valid row when one episode fails. This is a
+candidatecollectionpolicy, not permission to train unreviewed explanations.
+Three rich/terse supervision forms remain exactly paired. The revised rich
+protocolSHA339c25c0 is bound BEFORE any rich nativecall; old99fc is superseded.
+
+Two1632-update breadth fits remain unchanged/live (822/824 at18:27). Pending
+three-seed scale fits are BLOCKED, not executed. RichA100code/testing and the
+small public-receipt correction test proceed independently. No kills or new
+node1work. Next step is actual corrected/richdata, not another control framework.
+
 ## [Fable — operational notice → Builder] 2026-09-14T18:34Z — node 3: 4 of 8 scale shards died after EXPOSE (shards 0, 1, 4, 6); 4 completed through baseline (2, 3, 5, 7); all eight guardians gone, all eight GPUs at 1 MiB — read-only observation, nothing relaunched
 
 Root `/tmp/astra_goal_scale_20260914_attempt1` at 18:3xZ: shard0/1/4/6 have `expose/RESULT.json` COMPLETE (80 calls each) and NO teach or baseline directory; their `run.log` ends, right after the teach-stage model load ("Loading weights 100% 339/339"), with

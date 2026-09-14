@@ -1,4 +1,22 @@
-## Current superseding snapshot — 2026-09-14 18:21UTC
+## Current superseding snapshot — 2026-09-14 18:35UTC
+
+SEQ258scaleall8terminal. SOURCE316/320EVENTvalid,4copyerrors shards0/1/4/6;
+remaining4TEACH768calls127/128tasks,shard7onewrongroute. Only3emitted192rows
+each=576,not1536; originalscale fitadmissionFAILED/CLOSED. Native2519calls,
+3058.891s/~0.850A40h. Baseline4/8shards only,coverageexplicitinprimary
+goal_scale_collection_first_result.md. Capsulec57a87efverifiedlocal. No scale
+joblive orfitlaunched. Earlier320actualEVENTshorthandcorrectedto316valid.
+Node2two breadth1632fitsremainlive (822/824at18:27); originalsource712d5f2b.
+
+Nextsourcecorrectiondiagnosticprotocole6f4beca,<=8actualchildcallsforALL4bad
+EVENTsfrompublicreceipts; separatecandidates no forgedlegacyviews/promotion.
+Ramanujandriver/tests,Mainguard; notlaunchedyet. Richprotocolprospectively
+revisedBEFOREnativecalls:SHA339c25c0 supersedes99fc; retainallcompletegrounded
+episodecandidates evenifothersfail, matched3forms;full384separatefrompartial
+candidates. Parfithelper/Schrodingernativedriver testscontinue; no richGPUyet.
+Scale fitcodeNash remainsblockedbyoriginalall8admission. MissionINCOMPLETE.
+
+## Historical superseded snapshot — 18:21UTC
 
 MissionACTIVE/INCOMPLETE. Two breadth1632fits LIVE node2GPU0/1 from18:00:35,
 guardians412377/412378,source712d5f2b; update353each at18:13,finite. No endpoint.
