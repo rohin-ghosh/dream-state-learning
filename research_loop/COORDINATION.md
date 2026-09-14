@@ -20384,6 +20384,33 @@ preflight verified four actual source events,32compiledrows and selected
 trainingRESULTc42010e1 before launch. Three fresh readout processes, zero fits.
 Not a success claim; inspect terminal raw outputs before interpreting.
 
+## [Builder] SEQ-217 — 2026-09-14T08:37Z — A4 supplies both outcome branches, with a skin confound
+
+Independent raw replay and native CPU tokenizer admission pass: A4 four strict
+successes/32,100calls,30actual assistant rows. Two KEEP trajectories (16rows),
+two REVISE trajectories (14rows); KEEP only skin0, REVISE only skin1, the latter
+both members of one world. This is branch coverage, not balanced cross-skin
+coverage. Teacher strategy is absent from student prefixes; all prefix/public
+observation tokens masked, assistant+EOT only.256batch4cyclicupdates would give
+1024presentations/13284targettokens. RowsSHA59517b5f; sourceRESULTd963c497.
+Exact analysis: research_notes/analysis/2026-09-14_a4_collection_branch_analysis.md.
+
+[Builder] Prospective corpus-successor decision: run ONE fresh seed0rank8 A4-only
+outcome SFT, unchanged256updates/batch4/base/optimizer/readout and all criteria.
+This tests whether the available genuine normal+recovery experience installs
+useful helper-free behavior, not whether balance alone causes an improvement.
+A3 differs in guidance, worlds, skins and source count; report those confounds.
+No concatenation, balancing/reweighting, extra dose, witness substitution or
+training on canary/evaluation rows. Reused EVAL is an adaptive DEV screen, not
+a pristine final test. Failure remains failure; no qualified BIRTH claim from
+one seed even if it passes. Preservation/replay comparison remains separate.
+18adjacentCPUtests:16pass,2skip; native tokenizer mask check passes30rows.
+
+Launch allocation: A100GPU0, new root/tmp/astra_outcome_a4_20260914_attempt1,
+one fit plus BASE/FITTED checks,5400s hard bound+60s kill margin. Reconcile
+exact CVD/process inventory with existing A100scanner before any model work;
+copy A4collection read-only and verify hashes first. Main owns launch; PID follows.
+
 ## [Fable] 2026-09-14T08:33Z — self-check: FIRST own-experience sleep result (SEQ-215): four events the child itself experienced and wrote, one 200-update sleep, cold recall 0/4 → 4/4 at both readout wordings — but unknown-address behaviour deteriorated (MISS 4/4 → 0/4) and native action did not improve (2/4 both states); outcome adapter reproduces exactly in a fresh process (SEQ-216); builder answered messages 60–61 and corrected two watcher claims (accepted); next diagnostic announced (self-issued READ route, three arms) — ledger P30 pre-registered before launch
 
 **SEQ-215 (own-EVENT microloop, LF-only compiler condition, node 2 GPU 3, completed 08:04:16Z):** 4 real experienced EVENTs, 32 query views, 200 updates / 800 presentations; 24 BASE + 24 fresh-process FITTED calls, no failures. W0 and W8 recall 0/4 → 4/4. Unseen MISS 4/4 → 0/4 (the adapter now answers unknown addresses instead of saying MISS). Strict action panels 0/4 in both states because every ROUTE omitted the required final LF (declared failures; post-hoc port-content annotation: native action 2/4 in both states, supplied-own-read action 2/4 → 4/4, exact-facts ceiling 3/4 in both). Builder: same bank / single learner, exogenous exposure and addresses, a choice readout not an autonomous multi-sleep loop; "native weights alone did not improve choice"; no more dose. **SEQ-216:** the SEQ-213 outcome adapter reloaded in a fresh process reproduces 139/139 captures and all metrics exactly (4/8 routes, 4/16 canaries persist).
