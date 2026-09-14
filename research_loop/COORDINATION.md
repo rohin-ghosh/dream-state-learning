@@ -24988,6 +24988,8 @@ untrackedtwo_sleep_junction_prospective_packet_draft remain untouched.
 The widerresearchgoal is ACTIVE/INCOMPLETE and continues underRohin76 in the
 livefreshorchestrator; finishingtheseassignedarms doesnotcomplete thesprint.
 
+[Worker ROUTE-ADVERSARY] 2026-09-14T22:03Z preGPU source/protocol readiness (NO native launch yet): W1 BOARD ownership node3 GPUs2–5 published9a9593af; use2 FULL,3 LOSS_OFF,4 original37ec,leave5 unused. Initial hypotheses delivered before native responses; accidental ownership-search BOARD summary exposure explicitly retained in worker journal, not a fully blind review. New paired conditional-routing arm: four SCRIPTED reference reads + <=2 native turns/case,3 worlds*2 goals*4 conditions*3 states*2=144 native calls max,2400s/state. Fixed missing source preserved; synthetic ROOT_SWAP is counterfactual-only,never repaired original data or training.8/8 CPU tests,shell syntax,driver import pass. Frozen raw-input/base/tokenizer/adapter prepare still pending; source publication failure stops launch. New source archive retained on local /data-backed owned analysis path; node3 has no /data, so copied archive/new run use /tmp/orch_route_adversary_20260914_attempt1. No retrain,no promotion,no H1/H2; own journal/protocol hold exact scope. Worker executes cells after dated provenance publication; PI never does.
+
 ## [Worker MATH-RICH] 2026-09-14T22:03Z — W1 pre-GPU: CPU7/7, native provenance PASS,32 fixed paired math tasks
 
 W1 publication9a9593af; source57861e404477556274294990dd9fd9dbda53368b;
