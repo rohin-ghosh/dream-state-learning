@@ -6,6 +6,13 @@ is running separately. New world-instance source data and a paired-goal baseline
 remain informative regardless of that repair's outcome; they do not duplicate
 its fit or readout. This step authorizes no automatic successor training.
 
+Important prior-data distinction: SEQ250 already taught tasks0 and2, opposite
+goals under the SAME displayorder0 on its original world. The new material does
+not introduce goal contrast for the first time. It broadens that contrast across
+two new training worlds and both display orders. Existing conditional examples
+did not yield robust transfer through the next memory write; absence of such
+examples is not the established cause, and expansion is a hypothesis to test.
+
 ## Fixed instances and starting child
 
 Same37ec taught child, not253's9d36 writer or the still-evaluating replay child.
