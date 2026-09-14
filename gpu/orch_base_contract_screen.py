@@ -1,13 +1,13 @@
 """Bounded paired same-base/installed-adapter diagnostic using the pinned Engine."""
 
 import argparse
-from contextlib import nullcontext
 import dataclasses
 import hashlib
 import inspect
 import json
 import os
 from pathlib import Path
+import shutil
 import time
 
 from gpu import astra_portable_actor_bundle as portable
@@ -59,6 +59,7 @@ def main():
     parser.add_argument('--phase', choices=('prepare', 'screen'), required=True)
     parser.add_argument('--shard', choices=range(4), type=int, default=0)
     parser.add_argument('--gpu-uuid')
+    parser.add_argument('--resume-from')
     options = parser.parse_args()
     output = Path(options.output)
     output.mkdir(parents=True, exist_ok=False)
@@ -71,6 +72,7 @@ def main():
                    policy_sha256=digest(policy.__file__), trainingAllowed=False, fits=0, updates=0)
     write(output / 'REQUEST.json', binding)
     rows = []
+    imports = []
 
     def deadline(label):
         if time.time() >= started + 1500:
@@ -96,6 +98,20 @@ def main():
         if options.phase == 'prepare':
             write(output / 'RESULT.json', dict(binding, status='PREPARED_NO_MODEL', model_calls=0))
             return
+        if options.resume_from:
+            previous_root = Path(options.resume_from)
+            previous_failure = json.loads((previous_root / 'FAILED.json').read_text())
+            assert previous_failure['freeze_sha256'] == binding['freeze_sha256']
+            for previous_path in sorted(previous_root.glob('CALL_*.json')):
+                previous_row = json.loads(previous_path.read_text())
+                assert policy.sha(previous_row['target']) == previous_row['target_sha256']
+                rows.append(previous_row)
+                shutil.copyfile(previous_path, output / previous_path.name)
+                imports.append(dict(path=str(previous_path), sha256=digest(previous_path)))
+            assert len(rows) == previous_failure['model_calls']
+            write(output / 'RESUME_IMPORTS.json', dict(imports=imports, new_model_calls=0,
+                  historical_post_mounted_hash_missing=True))
+        completed = policy.completed_states(rows)
         assert os.environ['CUDA_VISIBLE_DEVICES'] == options.gpu_uuid
         assert ('CUDA_VISIBLE_DEVICES=' + options.gpu_uuid).encode() in Path('/proc/self/environ').read_bytes().split(b'\0')
         arguments = portable.read_bundle(options.bundle, expected_manifest_sha256=policy.MANIFEST,
@@ -112,9 +128,10 @@ def main():
                 continue
             order = policy.STATES if position % 2 == 0 else tuple(reversed(policy.STATES))
             for state in order:
+                if (position, state) in completed:
+                    continue
                 previous = None
-                context = engine.model.disable_adapter() if state == 'BASE' else nullcontext()
-                with context:
+                with policy.readonly_condition(engine.model, state):
                     active = condition(engine.model, state)
                     for turn in range(2):
                         deadline('call')
@@ -137,12 +154,19 @@ def main():
                         if not row['outcome_pass'] or turn == 1:
                             break
                         previous = row
+                    engine.verify_base()
+                    assert _state_hash(mounted(engine.model)) == portable.PARENT_STATE
+                    write(output / f'STATE_VERIFIED_{position}_{state}.json', dict(
+                          base_sha256=engine.expected_base, adapter_sha256=portable.PARENT_STATE,
+                          condition=condition(engine.model, state), finished_unix=time.time()))
                 condition(engine.model, 'ORIGINAL')
                 assert _state_hash(mounted(engine.model)) == portable.PARENT_STATE
         engine.verify_base()
         assert _state_hash(mounted(engine.model)) == portable.PARENT_STATE
         portable.read_manifest(options.bundle, expected_manifest_sha256=policy.MANIFEST)
         write(output / 'RESULT.json', dict(binding, status='COMPLETE', model_calls=len(rows),
+              new_model_calls=len(rows) - len(imports), imported_model_calls=len(imports),
+              historical_post_mounted_hash_missing=bool(imports),
               finished_unix=time.time(), adapter_sha256=portable.PARENT_STATE,
               base_sha256=engine.expected_base, base_and_adapter_unchanged=True,
               final_condition=condition(engine.model, 'ORIGINAL')))

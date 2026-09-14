@@ -1,0 +1,902 @@
+[
+  {
+    "checkable_expectation": false,
+    "evidence_spans": [
+      "Next, I calculate the total cost before the discount:",
+      "So, Mrs. Taylor paid $975 for the two televisions."
+    ],
+    "first_person": true,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "rich",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "Correct first-person discount operations, but only forward calculation is supplied: no explicit expected constraint, bound, or concrete recheck of the returned price.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "fd73157c6f84880bd85f3b3eefdcb4f2914e855963ecb2766e2da9fb31204a40",
+    "task_id": "gsm8k-train-2217"
+  },
+  {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Subtract the discount amount from the total cost before the discount to get the final cost.",
+      "All checks confirm the calculations are correct."
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "record",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "Useful discount procedure and explicit numerical rechecks, but the full record is impersonal instructions rather than a first-person account of the child's operations.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "b75c9eecf29fbb1665d75cf379f625a25cb8a29fa30e14d50dec373bc613b175",
+    "task_id": "gsm8k-train-2217"
+  },
+  {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "To find the capacity, we divide both sides by 0.20:",
+      "8 \\text{ liters} = 0.20 \\times \\text{capacity}"
+    ],
+    "first_person": true,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "rich",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "The inclusive first-person account actually specifies dividing the known part by its fraction and scaling container count. The explicit 8=0.20*capacity constraint supplies a concrete checkable expectation for the inferred capacity; quantities and operations are sound.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "PASS",
+    "target_sha256": "b1df0585a7b245523c29e7671d7b846be2dfe31b3cad3eafc6b7537b4326331e",
+    "task_id": "gsm8k-train-6637"
+  },
+  {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "To verify, we can check if the calculation is consistent with the given information.",
+      "40 liters (the full capacity) should be 100% of one container."
+    ],
+    "first_person": true,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "record",
+    "no_false_premises": true,
+    "no_padding": true,
+    "operational_record": true,
+    "reason": "Operational part-to-whole then count-scaling record, with substantive first-person verification and explicit consistency of 20%/100% capacities. Not merely an answer or a checking heading.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "PASS",
+    "target_sha256": "a5d87fffdf97e3669647742576da5f9189b92ab46f4a9f495feec6e420efd6c7",
+    "task_id": "gsm8k-train-6637"
+  },
+  {
+    "checkable_expectation": false,
+    "evidence_spans": [
+      "The growth from 2017 to the end of 2019 is the difference between the height at the end of 2019 and the height at the end of 2017",
+      "The tree has grown 21 meters from 2017 until the end of 2019."
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "rich",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "The 100-to-110-to-121 growth and 21-meter increment are coherent under the height-growth interpretation, but the target has neither a first-person account nor a distinct check/expectation. The question-only wording flag is retained separately.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "55c0ba48be56481170f78cc612ef7a671107fbd479213bc0c51abc9a757af154",
+    "task_id": "gsm8k-train-181"
+  },
+  {
+    "checkable_expectation": false,
+    "evidence_spans": [
+      "Total miles per island: 20 * 1.5 = 30 miles",
+      "Total: 60 + 75 = 135 miles"
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "rich",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "Correct rate-times-duration/group accounting, but the impersonal calculation supplies neither first-person ownership nor an actual check/expected consistency condition.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "c40e9874c4b7ce27479da542579416f8947b66514494a72eff7d913deed4beb3",
+    "task_id": "gsm8k-train-5561"
+  },
+  {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Calculate the total miles for the first type of island.",
+      "Verify the calculation for the first type of island: 20 * 1.5 = 30, then 30 * 2 = 60."
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "record",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "Operational and numerically checked record, but the full response remains impersonal procedural instructions, not a first-person account.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "471f613db08ef06d8edcbe7ca18b201d8a225098b86b5a650b953a7256eed914",
+    "task_id": "gsm8k-train-5561"
+  },
+  {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "assuming 4 weeks in a month:",
+      "10 \\text{ dollars/hour} \\times \\text{hours} = 480 \\text{ dollars}"
+    ],
+    "first_person": true,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "rich",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "First-person rate/equal-earnings reasoning with an explicit equal-pay equation as the checkable expectation. Four weeks per month is explicitly an assumption rather than an invented given; this is conditionally sound semantic content, while the source's unstated month convention remains flagged and is not repaired.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "PASS",
+    "target_sha256": "ab427b5e3b37da580a91045dbd71d8d989680faa1f52a6409a1e7fd874387b9d",
+    "task_id": "gsm8k-train-1745"
+  },
+  {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Calculate Agnes's monthly earnings assuming 4 weeks in a month.",
+      "Mila's monthly earnings for 48 hours:"
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "record",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "Correct conditional equal-pay record with a concrete 48*10=480 check, but no first-person account. Its four-week-month assumption is disclosed and the source ambiguity remains separate.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "0efab4c851109d0fadcf311dc1de336b7d64ee6fe2c9ee7d0a8b48e82eb7a86e",
+    "task_id": "gsm8k-train-1745"
+  },
+  {
+    "checkable_expectation": false,
+    "evidence_spans": [
+      "Next, I calculate the acres mowed with each mower:",
+      "Finally, I add the times together to get the total mowing time:"
+    ],
+    "first_person": true,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "rich",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "First-person allocation and rate division are correct and reusable, but the final time is only computed, without an explicit check or expected result constraint.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "119e2dc2de213d1fe7ef11eed975ee1f56a6689dcddd4759975733311c81c7a3",
+    "task_id": "gsm8k-train-2141"
+  },
+  {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Verify the total acres mowed:",
+      "The operations are correct and the result matches the problem statement."
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "record",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "Concrete area conservation and time checks plus useful rate operations, but no first-person account anywhere in the target.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "a365cf9f56fb69d26f2d1b2346c2fa5504923c152570d78b487b9b4e3bc841eb",
+    "task_id": "gsm8k-train-2141"
+  },
+  {
+    "checkable_expectation": false,
+    "evidence_spans": [
+      "2000 (initial cases) + 500 (new cases) - 50 (recoveries) = 2450 cases.",
+      "2450 (cases from the second day) + 1500 (new cases) - 200 (recoveries) = 3750 cases."
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "rich",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "Sequential inflow-minus-recovery accounting is coherent for active cases, but no first-person account or distinct check/expectation is present. Active versus cumulative interpretation stays in the separate ambiguity audit.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "fb7e315e7bd2d8c94c17d9514ff60ecdd7f5b1dc58f8dbb7257990a53fb299a6",
+    "task_id": "gsm8k-train-184"
+  },
+  {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Second day: 2000 + 500 - 50 = 2450",
+      "Third day: 2450 + 1500 - 200 = 3750"
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "record",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "Useful active-case recurrence and explicit numerical rechecks, but the record is wholly impersonal rather than first-person.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "89979cecbb63754b7f7b95fbea2abb846e1caacccf346284df26b36cdc71b899",
+    "task_id": "gsm8k-train-184"
+  },
+  {
+    "checkable_expectation": false,
+    "evidence_spans": [
+      "First, let's break down the time Malcolm spends on each route.",
+      "The second route is"
+    ],
+    "first_person": true,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "rich",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "Inclusive first-person breakdown and correct nested time bases, but the reported 18-minute difference is not accompanied by a distinct numerical check or expected constraint.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "bb511ba498646300fcdb4ef7b8217464624d80ca34fbe1f4a06d0ae241fbf56c",
+    "task_id": "gsm8k-train-7163"
+  },
+  {
+    "checkable_expectation": false,
+    "evidence_spans": [
+      "Check: The problem asks for how much longer the second route is compared to the first.",
+      "The calculation shows the second route is 18 minutes longer than the first."
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "record",
+    "no_false_premises": true,
+    "no_padding": false,
+    "reason": "The record gives correct operational totals but no first-person account. Its checking passage merely restates the requested difference and the answer rather than performing a concrete check; the assurance adds no verification content.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "c9ddd42a230f2a75088b594da25446d3e0007a9c8d133c789e8b260ec92c41bd",
+    "task_id": "gsm8k-train-7163"
+  },
+  {
+    "checkable_expectation": false,
+    "evidence_spans": [
+      "To find the total number of blankets collected over the three days, we add the blankets from each day:",
+      "30 blankets (first day) + 90 blankets (second day) + 22 blankets (last day) = 142 blankets"
+    ],
+    "first_person": true,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "rich",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "The inclusive account correctly combines per-person, tripled-day and fixed-day quantities, but has no explicit numerical recheck or checkable expected constraint beyond the forward total.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "9787b1597392401efb71e0626b6c140653d8f9e27501cd5d31392ee597b04420",
+    "task_id": "gsm8k-train-6263"
+  },
+  {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "multiply the number of team members by the blankets each gave.",
+      "Total: 30 + 90 + 22 = 142"
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "record",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "Operational blanket-counting recipe with concrete arithmetic rechecks, but no first-person account of the operations.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "fcf47d315d5f10806f34a2bc8ec5e9bdd7830984702680c0ea01a55fbf13b5ea",
+    "task_id": "gsm8k-train-6263"
+  },
+  {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "We need to find the total number of laps she swims in five weeks.",
+      "Multiply the number of laps per day by the number of days per week."
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "record",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "The sole inclusive phrase restates the goal; the actual operations and checks are impersonal instructions, not an owned first-person account. The daily-to-weekly arithmetic and reusable application are otherwise sound.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "fd4897b47fa9cb1dc4f13569c2bcb5604e3bfa939c1b44526884c96bccc93cbe",
+    "task_id": "gsm8k-train-3905"
+  },
+  {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "I perform the following operations:",
+      "To check the result, I re-examine the operations:",
+      "24 \\text{ photos} + 27 \\text{ photos} = 51 \\text{ photos}"
+    ],
+    "first_person": true,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "record",
+    "no_false_premises": true,
+    "no_padding": true,
+    "operational_record": true,
+    "reason": "Substantive first-person ownership of grouped-rate multiplication and aggregation, followed by explicit numeric rechecks of both products and the sum. The record communicates reusable operations, not just 51.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "PASS",
+    "target_sha256": "7f4f36727971686a7dd0b970ae92d43526e546925c90bcb6177cf27d143b413c",
+    "task_id": "gsm8k-train-4531"
+  },
+  {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Let's denote the initial amount of money Abigail had as",
+      "0.3X - 20 = 40",
+      "0.25 \\times 0.4X = 0.1X"
+    ],
+    "first_person": true,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "rich",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "Inclusive first-person choice of the unknown and grounded successive-remainder operations. The explicit balance 0.3X-20=40 is a concrete checkable expectation, and the algebra correctly recovers 200 without confusing the percentage bases.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "PASS",
+    "target_sha256": "562a6c105fcf02f5038416d41929bf6d80b7949850a40609eb6c69ec7065a598",
+    "task_id": "gsm8k-train-4455"
+  },
+  {
+    "checkable_expectation": false,
+    "evidence_spans": [
+      "Since they are senior citizens, they get a 10% discount.",
+      "The total cost after the discount is $130 - $13 = $117."
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": false,
+    "kind": "rich",
+    "no_false_premises": false,
+    "no_padding": true,
+    "reason": "The arithmetic is correct only conditional on eligibility, but the target invents as fact that Jimmy and Irene are senior citizens. The question does not say that. It also lacks first-person account and a distinct check; exact gold agreement cannot repair the premise.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "55979d976d7f8a98c8b60460aed488d385c81819969069ac42149a0755f5977d",
+    "task_id": "gsm8k-train-1293"
+  },
+  {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Senior citizen discount: 10%",
+      "Final amount paid: $130 - $13 = $117",
+      "Discount: 10% of $130 = $13 (correct)"
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": false,
+    "kind": "record",
+    "no_false_premises": false,
+    "no_padding": true,
+    "reason": "The record retains unconditional application of a senior discount without grounding the buyers' eligibility. Arithmetic rechecks do not validate that missing premise; the record also lacks first-person ownership.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "8dc818986e1bbff63fa9120cd08939177350a011fc66a751ad9cb9040ee1ff67",
+    "task_id": "gsm8k-train-1293"
+  },
+  {
+    "checkable_expectation": false,
+    "evidence_spans": [
+      "I use the formula:",
+      "The bacon contributes 20% of the sandwich's total calories."
+    ],
+    "first_person": true,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "rich",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "First-person use of the part/whole percentage formula is grounded and reusable, but the text only evaluates that formula. It supplies neither a result check, such as recovering 250 calories from 20%, nor an explicit expected constraint/bound.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "a901cea1facde528789f61b84c3a150fe032c6611f300680fb688be781450953",
+    "task_id": "gsm8k-train-6894"
+  },
+  {
+    "checkable_expectation": false,
+    "evidence_spans": [
+      "The calculation is correct as it follows the formula and uses the given values.",
+      "The percentage of the sandwich's total calories that come from bacon is 20%."
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "record",
+    "no_false_premises": true,
+    "no_padding": false,
+    "reason": "Correct percentage recipe, but no first-person account. The checking passage only assures correctness because the formula was followed and repeats the result; it does not provide a concrete check or expected relation.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "91dce6f2fdba9a82e218df6b72abef5085a3ac6f524f2b5fffeebfc60da25c06",
+    "task_id": "gsm8k-train-6894"
+  },
+  {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Calculate the remaining money: Subtract the amount spent from the total earnings.",
+      "Remaining money: 144 - 72 = 72 (correct)."
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "record",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "The earnings/spending/remaining-money operations and explicit numeric rechecks are sound, but the full record is impersonal instructions rather than a first-person account.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "6d571f8c024e42282478249b1c4644ebe1f99caf2beaa30b2b51e1e63f0bba44",
+    "task_id": "gsm8k-train-2894"
+  },
+  {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Calculate the average earnings per minute.",
+      "Total earnings:"
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "record",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "Correct distance-to-pay-to-time conversion and explicit arithmetic rechecks, but no first-person ownership of the solution or verification.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "2b35f3fab79d55d7d9f53b28ae0d05ae07c0aa62fc11a1c775321cece6308226",
+    "task_id": "gsm8k-train-3431"
+  },
+  {
+    "checkable_expectation": false,
+    "evidence_spans": [
+      "Adding up all the movies they went to, we get",
+      "24 + 31 + 12 + 62 = 129"
+    ],
+    "first_person": true,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "rich",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "The inclusive aggregation account correctly distinguishes person/year bases, but there is no concrete recheck or stated expected consistency relation for the final total.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "3a42a8b7784c08d8e8752e882d103fa4c4aa9c20e42ea0c547ea39f10064adfd",
+    "task_id": "gsm8k-train-2488"
+  },
+  {
+    "checkable_expectation": false,
+    "evidence_spans": [
+      "I calculate half of 36:",
+      "36 - 18 = 18 crayons left."
+    ],
+    "first_person": true,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "rich",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "First-person operations correctly apply the second fraction to the remainder, but the target stops after forward subtraction without a separate check or expected constraint.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "8485c1c69f0c5780d0ffa0cea2ad1deb6126f9415a9fe9b71fa0d2fa2cc870f4",
+    "task_id": "gsm8k-train-6433"
+  },
+  {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Then, I calculate the crayons taken by Joe:",
+      "To check the result, I verify each step:",
+      "36 crayons remain (48 - 12 = 36)"
+    ],
+    "first_person": true,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "record",
+    "no_false_premises": true,
+    "no_padding": true,
+    "operational_record": true,
+    "reason": "The record owns the sequential fraction operations in first person, preserves the correct changing base, and explicitly verifies each numerical step. It conveys a reusable remainder procedure and no invented premise.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "PASS",
+    "target_sha256": "b810b75574f2906863eec79783f8affaa0c614f76aed1b10b715d2bf17b8c434",
+    "task_id": "gsm8k-train-6433"
+  },
+  {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Halve the weight from the third day to find the weight after the fourth day.",
+      "Day 4: 10 kg / 2 = 5 kg"
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "record",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "Correct repeated-halving operational record and concrete four-day arithmetic, but no first-person account.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "b32d45f47b87c536f5aafc5a3e74e219b2d1f7c8be4ead1652becfb421c0918f",
+    "task_id": "gsm8k-train-1438"
+  },
+  {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Multiply the daily fluid intake by 7 to get the weekly fluid intake.",
+      "Weekly fluid intake: 124 ounces/day * 7 days = 868 ounces"
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "record",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "Sound daily-component aggregation and weekly scaling with numeric rechecks, but the full record lacks first-person ownership.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "0d385b994cac6c1fde106b92ad749c1a83b3c746b5d0a2e2371f84bcc3d33958",
+    "task_id": "gsm8k-train-4735"
+  },
+  {
+    "checkable_expectation": false,
+    "evidence_spans": [
+      "Verify each step with the given values.",
+      "Ensure the total matches the sum of individual components."
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "record",
+    "no_false_premises": true,
+    "no_padding": false,
+    "reason": "Correct quantity-price aggregation, but no first-person account. The checking passage is generic instructions to verify rather than a performed concrete check or stated numeric expectation.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "f53e461f362980b3096d87697ba0e6227b633d5a5c6e5e35cea48876ada88160",
+    "task_id": "gsm8k-train-2376"
+  },
+  {
+    "checkable_expectation": false,
+    "evidence_spans": [
+      "Finally, I apply the 2% cashback discount to the subtotal:",
+      "Total after cashback: $950 * (1 - 0.02) = $950 * 0.98 = $931"
+    ],
+    "first_person": true,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "rich",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "First-person staged-discount calculation is grounded and uses the discounted subtotal correctly, but no explicit check/expectation is supplied for the returned cost.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "cf5e98b251a2977d80b1852e29e833aa7e03f29f71539bc4382d3d93f62d22b0",
+    "task_id": "gsm8k-train-6805"
+  },
+  {
+    "checkable_expectation": false,
+    "evidence_spans": [
+      "Check: The total cost of $931 matches the problem's requirement after all discounts are applied."
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "record",
+    "no_false_premises": true,
+    "no_padding": false,
+    "reason": "Useful staged-discount recipe, but no first-person account. The checking sentence asserts that 931 matches the requirement without providing an actual numeric check or expected relation.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "532465ada35af738e2faf7571fc25c897fd51d1dcca73123aed0534d51b753c7",
+    "task_id": "gsm8k-train-6805"
+  },
+  {
+    "checkable_expectation": false,
+    "evidence_spans": [
+      "Next, I calculate the total cost before the discount:",
+      "Total after discount: $180.00 - $45.00 = $135.00"
+    ],
+    "first_person": true,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "rich",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "Correct first-person item-cost scaling and discount application, but only forward arithmetic is shown; no concrete verification or checkable expected constraint is stated.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "0c44db379ddd91ebe62b0649c1232f1bdf01b45b29baf778a8bb5dc8453ace4e",
+    "task_id": "gsm8k-train-335"
+  },
+  {
+    "checkable_expectation": false,
+    "evidence_spans": [
+      "We need to find how many more words Isaiah can type than Micah in an hour.",
+      "Next, find the difference in the number of words typed by Isaiah and Micah in an hour:"
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "rich",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "The inclusive phrase only states the goal; operations are impersonal directions, not first-person ownership. The otherwise correct rate/time difference also lacks a distinct check or expectation.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "2b18c094527cf86285075ca77760afdf16e269e6c48fb8f2c25ca4a7d2f10706",
+    "task_id": "gsm8k-train-1372"
+  },
+  {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Micah types 1200 words in an hour.",
+      "Isaiah types 2400 words in an hour."
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "record",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "The unit conversion, rate scaling and difference are correct, with concrete numerical rechecking, but no first-person account is present.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "e6d9f4dd69095c78355a00990010ce9466c16bf80c9e1ff24aac7f4f225ed22c",
+    "task_id": "gsm8k-train-1372"
+  },
+  {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Subtract the total calories burned from the breakfast calorie intake.",
+      "Net calorie intake: 900 - 300 = 600 calories"
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "record",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "Correct duration conversion and net-calorie arithmetic with a concrete recheck; the record nonetheless remains wholly impersonal.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "32b37a770eeb5f269e33c46074eb78a99b5ab878c9363755005abac20b1103f7",
+    "task_id": "gsm8k-train-3521"
+  },
+  {
+    "checkable_expectation": false,
+    "evidence_spans": [
+      "First, I calculate the distance Mr. Isaac covers in the first 30 minutes.",
+      "Now, I sum up all the times:"
+    ],
+    "first_person": true,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "rich",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "First-person rate/time conversion correctly includes the rest interval, but no explicit check or expected consistency condition accompanies the summed time.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "603f20b81d29fd04bea4dc7962ae6ff6b67a1d01cf6fd13c64b4e0b5ecc11260",
+    "task_id": "gsm8k-train-6003"
+  },
+  {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Calculate half of the dolls given by her grandmother.",
+      "Additional dolls received: 15",
+      "Final total: 51"
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "record",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "Correct operational record under the natural 30-doll antecedent, with concrete intermediate totals, but no first-person account. The source coreference risk remains separately preserved rather than changed to force a score.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "970b0b0e9e6b12659802e291ce228c882fa29a265d598675fbdcaae9b8f84b81",
+    "task_id": "gsm8k-train-4818"
+  },
+  {
+    "checkable_expectation": false,
+    "evidence_spans": [
+      "Next, she donates two-thirds of the remaining 36 pairs to the thrift store.",
+      "12 + 10 + 3 = 25 pairs of socks."
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "rich",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "Correct sequential inventory updates and fraction-of-remainder arithmetic, but no first-person account or distinct check/expectation.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "00da4c6124ffeb5349c40178249303f088bb9dad2dee81247ede08f49c05175b",
+    "task_id": "gsm8k-train-1450"
+  },
+  {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Calculate and subtract donated pairs from the remaining pairs.",
+      "Gifted: 3 pairs (22 + 3 = 25 pairs)"
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "record",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "Specific inventory-update recipe with concrete arithmetic checks, but no first-person ownership of the record.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "4c4eb36355480de7b758f6eb82245c64fc4e84f9f8d1c3d22edbc4a22b6732e9",
+    "task_id": "gsm8k-train-1450"
+  },
+  {
+    "checkable_expectation": false,
+    "evidence_spans": [
+      "First, I identify the given quantities:",
+      "5 books * 200 pages/book = 1000 pages"
+    ],
+    "first_person": true,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "rich",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "First-person quantity identification and correct changing-remainder/page conversion, but only forward calculations, with no concrete recheck or explicit expected constraint.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "5ad1345e0ff562177524b366386d62f1b6fea0a33ed268a0c1bce4ed45238d2d",
+    "task_id": "gsm8k-train-276"
+  },
+  {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Books remaining: 14 - 9 = 5",
+      "Total pages remaining: 5 * 200 = 1000"
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "record",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "The record gives a correct reusable remainder method and explicit book/page numerical checks, but lacks a first-person account.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "c589b35ced6f79772fc4cbec306812072f231d97c70bb9aa8ce24dbc9721f446",
+    "task_id": "gsm8k-train-276"
+  },
+  {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Calculate the profit per cake (selling price - total cost).",
+      "Verify the profit per cake: $15 (selling price) - $7 (total cost) = $8"
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "record",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "Sound per-item cost allocation and profit subtraction with concrete rechecks, but an impersonal recipe rather than an owned first-person account.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "3b06c61e0027fb73ab13390d33515566b795bec045375b580a9fb077b56a0337",
+    "task_id": "gsm8k-train-6581"
+  },
+  {
+    "checkable_expectation": false,
+    "evidence_spans": [
+      "Next, add the deposit to the total installments to find the total amount paid:",
+      "Now, find the difference between the total amount paid and the cash price to determine the savings:"
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "rich",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "Correct deposit/installment aggregation and cash comparison, but no first-person account or concrete check/expected result constraint.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "e25acd2d406465995f63d30d9690ed3cc1b99fc2dc74c7e8633dcb88fdb19b63",
+    "task_id": "gsm8k-train-6160"
+  },
+  {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Unknown:\n- Total amount paid if buying on installment",
+      "The difference is $4000, which is the extra cost of buying on installment."
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "kind": "record",
+    "no_false_premises": true,
+    "no_padding": true,
+    "reason": "Correct operational cost-difference record and concrete compared totals, but no first-person account. The stated unknown is also imprecisely labeled total installment payment even though the later method correctly computes extra cost; that inconsistency is retained rather than repaired.",
+    "reusable_content": true,
+    "reviewer": "MATH-REPLICATION independent assessor",
+    "status": "FAIL",
+    "target_sha256": "6d10c5e787fc4acee81aec73c778c520871cf8f2e88d460f6e11b22dba0bae1f",
+    "task_id": "gsm8k-train-6160"
+  }
+]

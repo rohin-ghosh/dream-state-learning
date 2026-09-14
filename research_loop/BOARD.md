@@ -1,8 +1,13 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
-Updated2026-09-14 22:57UTC. DECLARED is not RUNNING. All arm metrics pending
+Updated2026-09-14 23:04UTC. DECLARED is not RUNNING. All arm metrics pending
 unless explicitly measured. State first: RESEARCH_STATE.md. User message76
 and current launch directive supersede historical launch holds.
+
+Message79 delegates family designation to Main; old per-family permission holds
+are superseded by orch_family_registry_20260914.md. Measured22:59 occupancy:
+4/24eligible GPUs model-resident, only A1004–7, utilization1–7%; NOT saturation.
+The allocation column is ownership, not measured GPU occupancy.
 
 | Arm / hypothesis | Worker | Exclusive GPUs | State / last SEQ | Held pairs and goals vs reference / control | Retention | Admitted / rubric / tokens / world coverage | BELIEF CHANGE | ALTERNATIVE EXPLANATION | VALUE OF NEXT TEST | Next action |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -23,6 +28,7 @@ and current launch directive supersede historical launch holds.
 | BASE-CONTRACT: installed adapter vs base richness compliance | Kierkegaard | node2 0–3conditional | IMPLEMENTING; noSEQ |8fixed already-exposed code/math diagnostic tasks | no weights changed |<=32calls; same richprompts/budgets; no fit | repeated short-output failures need source isolation | simpletasks/prompt conflict vs adapter | high: prevents repeated inappropriate pool screens | safe interpreter; native paired base/37ec; no target repairs |
 | Guided-loop preparation | Orchestrator design; Chandrasekhar CPUbridge | NONE | IMPLEMENTING CPUONLY; no child promoted |3sleeps vs frozen/unparented twins planned | mandatory | minimal previous-state binding/tests; learned compiler separate |78 moves loop preparation forward | in-context parent dependence, not retained learning | highest downstream claim value once gates pass | no realL2contents/GPUlaunch pending family/gates; no framework |
 | Adaptive reserve | unassigned | node3 0/1/5 | UNALLOCATED | none | none | none | no duplicate checkpoint rereads | redundantcompute | next justified experiment or replication | fresh physical checks mandatory |
+| Native evolving-child loading seam | Old Builder separate scoped contributor | NONE | CPU INTEGRATION ASSIGNED | none | preserves base/adapter checks | no native calls, no new claims | old fixed37ec loader is not an evolving loop | false continuity from reset state | high: substantive bridge into existing engine | orch_guided_native only; consume StageBinding; no overlap |
 | SEQ266 broader terse quality | old Nash complete, Ramanujan review released | NONE | VERIFIED Fable21:47Z + independent memo; SEQ266 | FULL30/32,62/64; baseline2/32,33/64; control1/32,26/64; first-port not asserted here | W0/W8/audit16/16 all |1452new targets; terse;61eligibleTRAIN;16PROBE | strong finite DEV contrast; all-world gate FAIL15/16 | source/display regularities; missing text not sole cause proven | new adversarial test, not extra dose | still NOT PROMOTED; fresh independent replication next slot |
 | SEQ260 lower breadth | old builder | NONE | DEALLOCATED; SEQ260 | FULL1/4,5/8 vs control2/4,6/8 | see primary |192targets/8TRAIN | no incremental advantage at scale | richness/breadth/dose unresolved | redundant exact rerun low | preserve evidence; no rerun |
 | SEQ264 rich opaque graph | old builder | NONE | DEALLOCATED; SEQ264 | collection only | no fit |6rows;196P108F32U;1qualified/64attempts | outcome not grounding | coherent environments may help | new content-bearing arms | preserve failed rows, no tiny fit |
