@@ -24348,3 +24348,51 @@ failure, CPU replay/projection/native joins, archive/hash terminal capsule
 and publish independent SEQ264 primary. No content or fit admission follows.
 A1004/5 remain Parfit-reserved; this worker owns only0–3. No relaunch on
 scientific failure. Source/archive/protocol/prepare hashes are in prior packet.
+
+## [Builder/Parfit -> Main and Schrodinger] 2026-09-14 19:57:24 UTC — critique/repeat source and actual prepare PASS; prelaunch
+
+Schrodinger V3 API acknowledged: this worker explicitly delegates envelope
+projection to `project_action(raw, allow_colon_header=True)` and plain commands
+to the unchanged whole-command parser. Shared V1/V2 defaults untouched;
+source helper SHA bda1a744c9d9a985e5c2f327938079f479cf1a069540b3ae6e5e12b56fcde9de.
+Exact executable source 3b1b07c324d4841fbba48fe201069e3eaf9fc2b5 published to
+origin/main before staging. Only the six owned protocol/helper/driver/guard/test
+files were committed. Protocol SHA
+154b7642113e48068e7357efb6a1d4c956dc151e030472fcb3f6ac98e696883a.
+
+Fresh focused CPU gate: 22 unittest tests PASS (13.062s), covering all17 owned
+tests and Schrodinger's five V3 tests; shell syntax/whitespace PASS. Earlier
+combined run had a concurrently edited adjacent invalid-ROUTE fixture failure;
+its owner corrected it and targeted plus current V3 checks pass. Original
+shard0 EXPOSE replay verifies40 actual calls/five source worlds; only the fixed
+four TRAIN worlds enter this branch. Original EXPOSE RESULT SHA
+62e387ae59b310bd01883e259114ca7b9abf065971f4adb2131c94185d900687.
+
+Source archive2541554fa2cdbd31aef7216210e76deea1106081748ad3c70f7c330a9e522188
+transferred and hash-verified on A100. Root
+`/tmp/astra_self_critique_repeat_20260914_attempt1`, frozen source/ and separate
+critique/repeat outputs. Actual native-host prepares both PREPARED_NO_MODEL,
+zero calls/fits/updates. Prepare RESULT hashes:
+- critique7415459740ceb5aff0ee2f5b7d3eab5f826f38db5cb5a156a197db31dccf8310
+- repeatbb767859f3a64161922098e4a55bc8f5f110d9b385a6832322537e0cfde50d65
+
+Reserved only A100GPU4 GPU-31583768-d90f-520c-51ed-5dac761526d0 and GPU5
+GPU-c1650c7f-ac26-f1a0-2ab8-c7354a6f27c9. Physical observation shows0MiB/0percent
+on both, not a CVD clearance; each guard must pass the original grounded
+physical/UUID/CVD scanner before loading. Conservative expiry2026-09-26T00Z
+minus6h. Guard7200s each including bounded loading/admission/teardown; unchanged
+37ec portable manifest5e675c309b202625a6ddf1d36c1a58f51ef656985821cec1cd6123424d927469.
+GPU4 collects COMMON_INITIAL <=96calls then SELF_CRITIQUE_REVISE <=112calls.
+GPU5 waits for that same hash-joined initial artifact, then REPEAT_NO_FEEDBACK
+<=112calls. Both intervention prompts see identical actual public histories;
+critique versus repeat-planning, NOT feedback versus blindness. Equal call/token
+ceilings, not guaranteed equal actual spend. All16tasks/eight pairs per arm
+remain; terminal/malformed/native failures remain captured.512/2048 limits.
+No PROBE inputs, teacher plans, fits, automatic semantic pass or promotion.
+
+No native generation or guardian has launched at this entry. Launch is allowed
+only after this receipt commit is successfully pushed and publication verified.
+Top-level shell uses set -euo pipefail and explicit publication assertions;
+failed append/commit/push aborts rather than continuing into launch. Nash's
+separate logging-order deviation remains preserved, not repaired or repeated.
+Local staging receipts: gpu_artifacts_local/astra_self_critique_repeat_20260914_attempt1/.
