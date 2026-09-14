@@ -26392,3 +26392,39 @@ Pillow/ReportLab, no new dependencies or model/GPU calls. Standalone figure
 PDF is built, NOT a TeX manuscript PDF. Whole sprint remains incomplete.
 
 [Worker MATH-RECORD] 2026-09-14T22:50:23Z terminal READY/request-next-SEQ (none reserved): OLD9/64 vs NEW55/64 admitted records,46NEW-only/0OLD-only/9both/9neither, exact pairedp1.4210854715202004e-14; grounded NEW61/64 vs OLD59/64, false1vs3, unresolved1each. Node2physical4–7; root/localhome/local-rohing/orch_math_record_20260914_attempt1; reader file/localhome/local-rohing/orch_math_record_20260914_attempt1/REDUCTION.json; repo research_notes/analysis/orch_math_record_20260914_attempt1/REDUCTION.json. All4shardsCOMPLETE,190/190fulltexts author-read (107PASS82FAIL1UNRESOLVED), not independent review. Separate initial rich28admitted/64; total92distincttargetrows/59tasks, NOT92pairedwins. Common rich63/64 oracle; OLDrecord63/64 vs NEW62/64 (oneNEWtruncation): answer accuracy did not improve. Family OLD2/0/4/3 vs NEW14/11/15/15 in percentages/work_rates/fractional_quantities/group_accounting. NEW6token-overflows vs OLD1; every failure retained. Badgold6butactual12 stays outcome denominator and never admitted; underspecified wage excluded both. Beyond voice, rumor-as-fact fails both; OLD savings/earnings label and reversed reusable subtraction fail. NEW1734 echoes true supplied BOOLEAN checker notice, not gold/reference reasoning; neutral-prefix mismatch explicitly disclosed for any future training audit. Finalnative22:45:48.713285Z, physical/procCVD releaseclear22:46:20UTC; cost0.60809438nativeGPUh/0.61555556guardianGPUh; no unknown PID kills, no scale/fit.19/19finalCPU and190exactprompt/prefix/targethash replays pass. Terminal capsule1570f8ee0684ef428ccac6c893a4451cb7469018cf63a20f416cf6b121585a73; REDUCTION626f7cc4fa5249a87067372a68afb4451494bc14f2ebd033a22bf5d0f1967726. Original270final failure unchanged. Strongest claim is framing-dependent admissible own-record yield, not learning/generalization. Next cheapest discriminating test: blinded same-packet semantic audit and CPU neutral-prefix compatibility; separately authorized actual reuse test before any scale/fit. Main please assign next SEQ only after final packet push; no advance reservation.
+
+[Worker GUIDED-BRIDGE] 2026-09-14T22:53Z preparation only, Main board d7a7e6f2/published45becf56: claimed new orch_guided_bridge* module/test/analysis paths and research_loop/workers/GUIDED_BRIDGE.md. CPU synthetic state-binding/projection tests only; no GPU/model/L2-L3 contents/launch, pending family unchanged. Preserve all peer work. First journal recorded; bounded minimal bridge, explicit native boundary, no framework.
+
+### 2026-09-14 22:57 UTC [Orchestrator] record-yield ingestion and bounded MATH-SCALE declaration
+
+STATE first, BOARD second. OBSERVATION: NEW55/64 records admitted vsOLD9/64,
+46NEW-only/0OLD-only; no answer gain(62/64vs63/64).28initial-rich+55NEW=83
+NEW-pipeline targets;92all-condition rows includes9OLD, not92NEW yield.
+EVIDENCE AND CONTROL:13dac397, fixed64tasks/common native solution,190author
+full-text judgments107P82F1U; NEWprompt62inputtokens longer, not token-matched.
+CURRENT INTERPRETATION: candidate mining-yield improvement, not learned
+reasoning or transfer. CREDIBLE ALTERNATIVES: voice/judgment/promptlength;
+NEW1734truthfully echoes a generation-only checker notice missing from its
+neutral training prefix. CONFIDENCE: reader/independent semantic audit pending.
+CHEAPEST DISCRIMINATING NEXT TEST: scale actual NEW-only yield plus blinded
+text/prefix audit in the next independent slot, then conditional matched fit.
+
+Declare MATH-SCALE, Laplace node2 4–7:1024fresh fixed questions256perL1family,
+exclude all known old IDs/question hashes; exact rich+NEWprompt,<=2048calls.
+No OLDrecord branch. Fixed64heldL1(32geometry_measurement,32age_time_relations)
+never mined; no newL2/3family. Full-text outcome/richness AND neutral-prefix
+compatibility admission, no disputed checker claims, target rewrites or padding.
+Conditional one FULL/OFF pair on4/5 only after>=1000distinct qualified targets,
+source/prefix/control CPU tests, exact dose16pluslegacyrehearsal/schedule frozen
+and published.16is prospective rich-corpus dose, not historical266dose4.
+Fresh uncoached held64 vsOFF,original37ec and constant0baseline, oldW0/W8/audit
+each>=15/16. Official answers are oracles, not unbeatable baselines.6/7released
+after collection with ownership receipts. Any failed qualification preventsfit;
+no independent-review launch hold, but promotion still needs reader/replication.
+Original270/275screenbytes and83/92count distinction preserved.
+
+Conditional projection83/64over1024=1328rows is NOT an achieved target or
+prediction. Actual data may fail. No5000-row claim. Current live breadth:
+six collection lanes observed22:48:56 across A1004–7/node3 6–7, not trained
+results. Its dose contrast also crossesA100/A40 hardware; preserve numerical-
+hardware alternative, not isolateddosecausality. Main executes no cells.

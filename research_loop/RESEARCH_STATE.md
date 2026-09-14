@@ -1,6 +1,6 @@
 # Research state — Orchestrator
 
-Updated 2026-09-14 22:49 UTC. Mission ACTIVE / INCOMPLETE. Wave W2/W3.
+Updated 2026-09-14 22:57 UTC. Mission ACTIVE / INCOMPLETE. Wave W2/W3.
 Authoritative steering: Rohin's current launch instruction and raw messages
 42–78 (78 read22:28UTC); next full raw-message reread by23:50UTC.
 Check notebook updates every orchestration cycle, not just every two hours.
@@ -518,6 +518,69 @@ project, no GPU, no real L2contents or actual loop launch before family ruling
 and candidate gates. Three freed node3GPUs0/1/5 are adaptive reserve, not held
 by this CPU task. This removes implementation uncertainty while all unblocked
 L1 experiments continue. STATE first, BOARD second, assignment after publish.
+
+## 22:57 UTC ingestion — record-yield result and bounded scale candidate
+
+**OBSERVATION:** MATH-RECORD NEW55/64 admitted records vsOLD9/64;46NEW-only,
+0OLD-only,9both,9neither. Grounded61/64 vs59/64, materially false1vs3.
+Common rich answers63/64; record answersNEW62/64 vsOLD63/64, NOT an accuracy
+gain.190fulltexts author-read:107PASS/82FAIL/1UNRESOLVED.28initial-rich targets
+plus55NEW records =83NEW-pipeline targets.92all-condition targets additionally
+include9OLD records; never count92 as NEW yield or paired wins.
+
+**EVIDENCE AND CONTROL:** fixed64fresh GSM8K tasks, common native solution,
+two independent record branches, equal ceilings but NEWprompt62tokens longer.
+Report `research_notes/analysis/orch_math_record_20260914_attempt1/REPORT.md`,
+evidence13dac397; SEQ275 assigned after274.19CPU tests and190raw joins pass
+by author; reader and independent semantic adjudication pending. Four native
+shards finished22:45:48,GPUs4–7 released22:46:20. No fits.
+
+**CURRENT INTERPRETATION:** autobiographical operation/expectation framing
+improves the frozen record-admission criterion on this sample. Mostly a voice-
+contract/yield effect, not demonstrated new reasoning, useful learned records
+or transfer. The original270failed recipe remains closed. Counts justify a
+prospective scaled collection candidate, not a scientific promotion.
+
+**CREDIBLE ALTERNATIVES:** unblinded semantic judgments, task/sample/prompt
+length effects; many OLD records contain true operations but impersonal voice.
+More overflow withNEW. One NEWtarget1734 truthfully echoes generation-only
+checker confirmation omitted from neutral student prefix. This mismatch must
+be disposed before training, without rewriting target bytes or hiding raw rows.
+Ambiguous wage and suspect juice gold remain original failures/exclusions.
+
+**CONFIDENCE:** finite author-replayed result; strong enough to test scaled
+yield, not enough for a retained-learning claim. Blinded text/neutral-prefix
+audit is next available independent slot; collection need not wait for it.
+
+**CHEAPEST DISCRIMINATING NEXT TEST / ALLOCATION:** MATH-SCALE under the same
+author worker on node2 4–7:1024fresh fixed mining tasks,256perexisting L1
+family, excluding all known previously used IDs/question hashes. Same rich
+solution plus exact NEWrecord elicitation, <=2048generation calls, no OLD
+record branch. Freeze candidate roster and prospective held64 L1 tasks
+(32geometry_measurement,32age_time_relations, never mined) before outcomes.
+No newL2/3family. Admit only actual outcome-qualified full-text-grounded
+150–400targets with neutral-prefix compatibility. Exclude disputed/unsupported
+feedback claims rather than rewrite them; preserve old83/92counts separately.
+
+Conditional one matched FULL/new-labels-masked fit only after>=1000distinct
+admitted new targets and full source/prefix/control CPU checks. No old-packet
+automatic admission. Exact corpus/schedule/hyperparameters/reference-label
+denominator and16presentations plus legacy rehearsal bound before fit;16 is
+the prospective rich-corpus dose, not266's historical4. Fresh parent-absent
+held64readout vs matched control, original37ec and fixed zero-answer reference,
+plus oldW0/W8/audit>=15/16 each. Samebatch FULL/OFF; constant0 is baseline,
+official solutions are oracles. Reader/replication required for promotion,
+not a separate prelaunch approval. No fit below threshold; report inadequate
+yield as such, never pad/copy/replace cases. After collection, initial fit4/5;
+6/7 released with physical receipts for the next allocation. New scope must
+be implemented/frozen/published by worker before any native use.
+
+Conditional projection only:83/64 NEW-pipeline rows per task would imply1328
+rows over1024tasks if yield transferred. That is not a prediction or success
+criterion; actual corpus may fail qualification. This changes smallest
+bottleneck from zero viable record recipe to audited scalable targets followed
+by held uncoached learning. Independent semantic audit and actual learning
+controls now matter more than further narration-prompt optimization.
 
 ## Active uncertainties and surprises
 
