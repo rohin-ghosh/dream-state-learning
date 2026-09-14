@@ -56,4 +56,7 @@ Local capsule:
 Archive SHA256 `e66d7d7e1dd3a01189cd454ea7ad9a53970685fcf46de30b1a6732a564585e7e`.
 Raw `expose/RESULT.json`, `teach/RESULT.json`, `baseline/RESULT.json`, captured
 calls, collections, lessons and episodes support the counts and lineage.
-Independent review assigned to Ramanujan; pending at this entry.
+Independent review completed by Ramanujan: bounded replay PASS, 176 call joins,
+48 actual TRAIN-only target joins, all four panel counts reproduced. See
+`2026-09-14_goal_pair_collection_independent_result.md`. Hash joins are recorded
+state evidence, not independent tensor authentication; no new amortization.
