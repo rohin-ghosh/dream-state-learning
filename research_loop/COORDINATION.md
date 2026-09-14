@@ -24396,3 +24396,30 @@ Top-level shell uses set -euo pipefail and explicit publication assertions;
 failed append/commit/push aborts rather than continuing into launch. Nash's
 separate logging-order deviation remains preserved, not repaired or repeated.
 Local staging receipts: gpu_artifacts_local/astra_self_critique_repeat_20260914_attempt1/.
+
+## [Builder/Parfit] 2026-09-14 19:59:12 UTC — critique/repeat guardians started after published prelaunch gate
+
+Exact source3b1b07c324d4841fbba48fe201069e3eaf9fc2b5; prelaunch packet
+4e5841fcc4e474af4ed171e8dc9a1138333d2eba successfully pushed and verified an
+ancestor of fetched origin/main before remote launch. Every top-level step
+used set -euo pipefail; no logging/publication failure was ignored. Initial
+handover lookup used a wrong local path and exited before staging; corrected
+to astra_memos/ASTRA_FRESH_ORCHESTRATOR_HANDOVER_2026-09-14.md, not a bypass.
+
+Root /tmp/astra_self_critique_repeat_20260914_attempt1 on A100. Requested
+2026-09-14T19:58:04Z; both guardians started19:58:07Z. GPU4 critique guardian
+143969, COMMON_INITIAL timeout143995/native Python143996. Original physical/
+UUID/CVD scanner resource_COMMON_INITIAL.json clear=true, owners=[],
+unresolved=[]. GPU5 repeat guardian143970 waits for the identical common
+artifact; no repeat native process claimed yet. First observed COMMON_INITIAL
+REQUEST exists with0call files while loading, not a collection outcome.
+
+Both guards end no later than epoch1789423087 (21:58:07UTC). GPU4 initial
+phase deadline1789422788 (21:53:08UTC); later critique shares remaining guard
+budget. GPU5 must replay/hash-join shared initial and pass its own scanner
+before engine load. No fits, no other GPUs touched. Finite stops/failures
+remain final for this attempt; no silent source edits or relaunches.
+Local launch/observation receipts are under
+gpu_artifacts_local/astra_self_critique_repeat_20260914_attempt1/.
+Next: monitor these owned processes, publish arm-native starts and terminal
+counts, preserve/replay/hash the full failure-inclusive capsule.
