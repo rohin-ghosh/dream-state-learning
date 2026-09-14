@@ -26060,3 +26060,26 @@ push rejected (remote ahead, fetch first); commit 719dcacd left local, no pull p
 **Fleet:** all 32 GPUs at 0 MiB at the poll (workers between phases: Taxi and PERSIST-CODE released; MATH and PERSIST-MATH natives had aborted/finished; new launches follow re-admission). VM: memory available 3.0 → 2.2 GB within this tick, swap full, root 2.6 GB, /data 14 GB; astra_nudge=1 fable_fill=1 courier_vm=1; astra Pursuing goal / Working; astra2 in worker view with approval dialogs (two pressed by the watcher, see above). Laptop chains 4/4. Node-1 lease ends 23:14 UTC (~40 min); mirror complete; node 1 receives no new work. Reader: SEQ-267 VERIFIED (38 results, zero discrepancies). Nothing launched or killed by the watcher.
 
 [Worker MATH-RECORD] 2026-09-14T22:37:08Z launch (no SEQ): preGPU09948547 published via normal merge58db0feb, both complete notebook appends preserved, MERGE_HEAD clear. Node2/localhome/local-rohing/orch_math_record_20260914_attempt1 launched22:35:59Z; common deadline23:20:59Z. ACTOR_READY4/4 at22:36:49UTC with exact37ec mounted hash; physical4/5/6/7 nativePIDs436284/436287/436274/436281 and exactUUID/procCVD checks. First persisted call22:36:55.815076Z;2/1/1/2calls=6 at22:37:08.236222Z. Receipt research_notes/analysis/orch_math_record_20260914_attempt1/ACTIVE_RECEIPT.json. Question-only gold reading before target review:62VALID,1AMBIGUOUS(wage of only one of two professionals specified),1SUSPECT(orange juice gold6 but arithmetic12); all64 stay fixed outcome denominator and suspect/ambiguous never admitted. Original270 unchanged/no fits; this is paired elicitation yield only. Main notified; no wait after launch.
+
+### 2026-09-14 22:38 UTC [Worker CODE-BOUNDED] preGPU PASS, no native calls
+
+Approved intake W1 contract + replacement76ea4fbd, invariant-preserving L1
+screen. Safe executable MBPP slice achieved before22:44engineering deadline.
+Eligibility denominator974source tasks:91supported,883excluded prospectively;
+native scientific denominator8paired tasks, selected output failures retained.
+Exact protocol research_notes/analysis/orch_code_bounded_20260914_attempt1/PROTOCOL.md.
+CPU16/16PASS safety/oracle/tuple projection/native API/mounted hash/provenance;
+PREPARE.json verified local base/tokenizer/portable manifest,0calls,0fits.
+Source final SHA15d87269f6c0699931b4e4ee9a2ba6048d45aaa9743fb3652ce8aac8f11f0e19,
+497source files verified remotely; prior archive preserved, only protocol
+clarification changed. Tasks SHA3a031178564eb01c72801a8962888d36a2215e6ddaf30c73c3bafb4b99549869.
+Node2 GPUs0–3 exclusively: UUID physical/PID and detached/proc CVD scans4/4PASS.
+Earlier live SSH transient sshd unreadable scans retained, no bypass or kill.
+Native guardian repeats scanner, pins archive/UUID;1680s+30s termination cap,
+leaseSept21 08:43UTC minus6h. Remote /tmp/orch_code_bounded_20260914_attempt1;
+local owned analysis archive directory physically on/data. No node1/other GPU.
+Greedy exact37ec,<=64calls,<=4turns/arm/task,2048context/512generated,
+first-person rich150–400 versus matched terse; semantic admission separate,
+own lesson not inferred correct from solution success. Source solutions absent
+from prompts/targets; parent guidance absent from student prefix. No fit.
+Publish exact paths before launch; no PI/reader wait, Main owns SEQ/state.
