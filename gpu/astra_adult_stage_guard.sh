@@ -24,7 +24,7 @@ fi
 root="$campaign/$arm"
 case "$stage" in
     train) duration=7440 ;;
-    before|after_w0|recollect) duration=1920 ;;
+    before|after_w0|recollect|recollect_rehearsal) duration=1920 ;;
     *) exit 2 ;;
 esac
 mkdir "$root/launch_$stage"
@@ -51,7 +51,9 @@ common=("${extra[@]}" --development-arm "$arm" --initial-adapter-dir "$adapter" 
     --expected-base-sha256 a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992
     --collection /tmp/astra_microloop_20260914_attempt2/collection
     --cue-collection /tmp/astra_cue_lastturn_20260914_attempt1/run --adult-collection "$root/collect")
-if test "$stage" = recollect; then
+if test "$stage" = recollect_rehearsal; then
+    timeout --signal=INT --kill-after=60 1860 "$python" -B -m gpu.astra_experienced_event_adult_cycle "${common[@]}" --phase recollect --sleep-recipe rehearsal_allowed_v2 --output "$root/recollect_rehearsal"
+elif test "$stage" = recollect; then
     timeout --signal=INT --kill-after=60 1860 "$python" -B -m gpu.astra_experienced_event_adult_cycle "${common[@]}" --phase recollect --output "$root/recollect"
 elif test "$stage" = after_w0; then
     timeout --signal=INT --kill-after=60 1860 "$python" -B -m gpu.astra_experienced_event_adult_cycle "${common[@]}" --phase readout --state AFTER --reader-wrapper 0 --adapter-dir "$root/train/adapter" --output "$root/after_w0_reader"

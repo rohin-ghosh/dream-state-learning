@@ -13,6 +13,23 @@ from test_astra_experienced_event_cue_sleep import PublicEngine
 
 
 class Tests(unittest.TestCase):
+    def test_rehearsal_variant_preserves_all_public_transcript_bytes(self):
+        from organism_v6 import experienced_event_sleep_recollection as recollection
+
+        collection = self.cycle_record(2)
+        original = recollection.build_messages(collection)
+        variant = recollection.build_messages(collection, recipe='rehearsal_allowed_v2')
+        self.assertNotEqual(original[0], variant[0])
+        self.assertEqual(original[1]['content'].split('\nEND WAKE TRANSCRIPT\n')[0],
+                         variant[1]['content'].split('\nEND WAKE TRANSCRIPT\n')[0])
+        engine = MagicMock()
+        engine.generate.return_value = dict(raw='NONE', terminal=True, truncated=False)
+        with TemporaryDirectory() as directory:
+            result = runner.recollect(engine, collection, Path(directory), recipe='rehearsal_allowed_v2')
+            engine.generate.assert_called_once_with(variant, max_new_tokens=768)
+            self.assertEqual(result['sleep_recipe'], 'rehearsal_allowed_v2')
+            self.assertEqual(result['fits'], 0)
+
     def test_recollection_is_one_captured_call_without_training_admission(self):
         from organism_v6 import experienced_event_sleep_recollection as recollection
 

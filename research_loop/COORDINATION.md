@@ -21265,3 +21265,18 @@ working path, not replace it with mandatory verbose thoughts. We now have TWO
 actual adult experience→write→reload→use cycles in the same child, the second
 with4/4newrouting and8/8oldretention. Next effort goes to the content it prepares
 for sleep and useful reflection, not another memory-hopping prerequisite.
+
+[Builder] 2026-09-14T10:45Z prospective recollection recipe2, onecall only:
+`rehearsal_allowed_v2` explicitly permits faithful repetition/paraphrase/
+organization; no noveltyrequirement. Exactreplacement system/ending in
+organism_v6/experienced_event_sleep_recollection.py. AllfourPUBLICtranscript
+bytes/order and SAMEcollectingA1actor unchanged. PreserveoriginalNONEroot.
+This is changedposedtask sensitivity, not isolatednoveltyclause causation or
+childlearning. No examples/targetnote/newteacher, no fit or promptsearch.
+One greedycall,768emittedcap,2048promptcap,250wordinstruction, no retry or
+selectiveshortening. Rawclauses/citations reviewed aftercapture; unsupported
+material never enterstraining. Anycopiedlist counts onlygroundedreplay.
+41focusedCPUtests pass, including unchangedtranscriptbytes/defaultbehavior.
+Node2GPU2, stage recollect_rehearsal, separate CUE_REPLAY/recollect_rehearsal
+directory undercycle2root, <=1800s. Guardian/source follow. Alladultfitsdone;
+writer remainsfixed while this exposeddata-creation boundary is investigated.

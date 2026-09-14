@@ -168,14 +168,14 @@ def evaluate(engine, collection, old_bank, old_episodes, output, *, reader_wrapp
     return result
 
 
-def recollect(engine, collection, output):
+def recollect(engine, collection, output, *, recipe='novelty_optional_v1'):
     from organism_v6 import experienced_event_sleep_recollection as recollection
 
-    messages = recollection.build_messages(collection)
+    messages = recollection.build_messages(collection, recipe=recipe)
     source.write(output / 'SLEEP_PROMPT.json', messages)
     generation = engine.generate(messages, max_new_tokens=recollection.MAX_NEW_TOKENS)
     source.write(output / 'SLEEP_NOTE.json', generation)
-    return dict(recollection_schema=recollection.SCHEMA, model_calls=1, fits=0,
+    return dict(recollection_schema=recollection.SCHEMA, sleep_recipe=recipe, model_calls=1, fits=0,
         parent_present=False, training_admission='UNREVIEWED_NO_FIT',
         claim='TRACE_SUPPORTED_POSED_SLEEP_NOTE_NOT_LEARNED_SELECTION_OR_UTILITY',
         note_sha256=source.file_hash(output / 'SLEEP_NOTE.json'),
@@ -195,11 +195,14 @@ def main(argv=None):
     parser.add_argument('--cycle', type=int, choices=(1, 2), default=1)
     parser.add_argument('--prior-adult-collection')
     parser.add_argument('--reader-wrapper', type=int, choices=(0, 8), default=8)
+    parser.add_argument('--sleep-recipe', choices=('novelty_optional_v1', 'rehearsal_allowed_v2'),
+                        default='novelty_optional_v1')
     parser.add_argument('--device', default='cuda:0')
     args = parser.parse_args(argv)
     require((args.cycle == 2) == bool(args.prior_adult_collection), 'prior_collection_only_required_for_cycle2')
     require(args.state == 'BEFORE' or args.phase == 'readout', 'after_only_for_fresh_readout')
     require(args.phase == 'readout' or args.reader_wrapper == 8, 'reader_variant_only_for_readout')
+    require(args.phase == 'recollect' or args.sleep_recipe == 'novelty_optional_v1', 'sleep_recipe_only_for_recollection')
     require(args.phase == 'collect' or args.adult_collection, 'experienced_adult_source_required')
     require((args.state == 'AFTER') == bool(args.adapter_dir), 'explicit_after_adapter_only')
     require(os.environ.get('HF_HUB_OFFLINE') == '1' and os.environ.get('TRANSFORMERS_OFFLINE') == '1', 'offline_required')
@@ -283,7 +286,7 @@ def main(argv=None):
         elif phase == 'train':
             result.update(train(engine, old_rows, cue_rows, new_rows, output, args.development_arm))
         elif phase == 'recollect':
-            result.update(recollect(engine, collection, output))
+            result.update(recollect(engine, collection, output, recipe=args.sleep_recipe))
         else:
             result.update(evaluate(engine, collection, old_bank, old_episodes, output,
                                    reader_wrapper=args.reader_wrapper))
