@@ -1,0 +1,182 @@
+{
+  "states": {
+    "BASE": {
+      "denominator": 8,
+      "calls": 15,
+      "initial_success": 7,
+      "admitted_tasks": 4,
+      "admitted_rows": 4,
+      "initial_admitted": 4,
+      "record_admitted": 0,
+      "tokens": [
+        7,
+        57,
+        66,
+        70,
+        94,
+        180,
+        192,
+        231,
+        251,
+        280,
+        284,
+        310,
+        377,
+        400,
+        474
+      ]
+    },
+    "ORIGINAL": {
+      "denominator": 8,
+      "calls": 14,
+      "initial_success": 6,
+      "admitted_tasks": 2,
+      "admitted_rows": 2,
+      "initial_admitted": 1,
+      "record_admitted": 1,
+      "tokens": [
+        6,
+        7,
+        13,
+        14,
+        87,
+        92,
+        123,
+        124,
+        149,
+        239,
+        242,
+        273,
+        278,
+        457
+      ]
+    }
+  },
+  "pairs": [
+    {
+      "task_id": 14,
+      "domain": "CODE",
+      "BASE": true,
+      "ORIGINAL": false
+    },
+    {
+      "task_id": 17,
+      "domain": "CODE",
+      "BASE": false,
+      "ORIGINAL": false
+    },
+    {
+      "task_id": 49,
+      "domain": "CODE",
+      "BASE": false,
+      "ORIGINAL": false
+    },
+    {
+      "task_id": 62,
+      "domain": "CODE",
+      "BASE": false,
+      "ORIGINAL": false
+    },
+    {
+      "task_id": "gsm8k-train-1649",
+      "domain": "MATH",
+      "BASE": true,
+      "ORIGINAL": true
+    },
+    {
+      "task_id": "gsm8k-train-5724",
+      "domain": "MATH",
+      "BASE": true,
+      "ORIGINAL": true
+    },
+    {
+      "task_id": "gsm8k-train-3590",
+      "domain": "MATH",
+      "BASE": true,
+      "ORIGINAL": false
+    },
+    {
+      "task_id": "gsm8k-train-2554",
+      "domain": "MATH",
+      "BASE": false,
+      "ORIGINAL": false
+    }
+  ],
+  "difference": 2,
+  "local_suppression_support": false,
+  "claim": "EXPOSED_DIAGNOSTIC_REUSE_NOT_LEARNING_OR_GENERALIZATION",
+  "fits": 0,
+  "full_texts_reviewed": 29,
+  "independent_review": false,
+  "admission_scope": "CONTENT_GATE_COUNTS; NOT_TRAINING_ADMISSION",
+  "provenance_qualified_tasks": {
+    "BASE": 3,
+    "ORIGINAL": 2
+  },
+  "clean_paired_provenance": false,
+  "historical_post_mounted_hash_missing": 11,
+  "author": "BASE-CONTRACT",
+  "native_gpu_hours": 0.30870782123671636,
+  "initial_native_gpu_hours": 0.0856631025340822,
+  "recovery_native_gpu_hours": 0.22304471870263418,
+  "original_replay": [
+    {
+      "task_id": 14,
+      "exact": true
+    },
+    {
+      "task_id": 17,
+      "exact": true
+    },
+    {
+      "task_id": 49,
+      "exact": true
+    },
+    {
+      "task_id": 62,
+      "exact": true
+    },
+    {
+      "task_id": "gsm8k-train-1649",
+      "exact": true
+    },
+    {
+      "task_id": "gsm8k-train-5724",
+      "exact": true
+    },
+    {
+      "task_id": "gsm8k-train-3590",
+      "exact": true
+    },
+    {
+      "task_id": "gsm8k-train-2554",
+      "exact": true
+    }
+  ],
+  "by_domain": {
+    "CODE": {
+      "BASE": {
+        "denominator": 4,
+        "admitted_tasks": 1,
+        "initial_success": 3
+      },
+      "ORIGINAL": {
+        "denominator": 4,
+        "admitted_tasks": 0,
+        "initial_success": 3
+      }
+    },
+    "MATH": {
+      "BASE": {
+        "denominator": 4,
+        "admitted_tasks": 3,
+        "initial_success": 4
+      },
+      "ORIGINAL": {
+        "denominator": 4,
+        "admitted_tasks": 2,
+        "initial_success": 3
+      }
+    }
+  }
+}

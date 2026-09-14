@@ -53,3 +53,9 @@ Crucial limitation: initial11lack post-generation mounted hashes; CPU no-change
 proof/disk verification cannot substitute for that missing historical observation.
 Report behavioral counts with provenance gap, NOT a clean paired null. See
 REPAIR_PROTOCOL.md. This entry and receipts must publish before recovery launch.
+
+2026-09-14T23:07:29Z [Builder] Recovery launched after publication8106b2fb;
+outer PIDs444528/444534/444540/444546; native444644/444655/444659/444661.
+Global original deadline preserved; outer remaining1338–1339s at launch,
+not reset. Prior11calls imported without regeneration; all new receipts remain
+under recovery1. No observed runtime errors as of23:09:10UTC.

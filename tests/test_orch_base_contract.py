@@ -107,6 +107,16 @@ class BaseContractTests(unittest.TestCase):
         with self.assertRaises(AssertionError):
             policy.completed_states(rows[:1])
 
+    def test_prospective_difference_is_not_redefined(self):
+        rows = []
+        for position, entry in enumerate(self.entries):
+            for state in policy.STATES:
+                rows.append(dict(task_id=entry['task']['id'], state=state, kind='solution', outcome_pass=True,
+                                 admitted=position < (4 if state == 'BASE' else 2), generated_tokens=200))
+        self.assertFalse(policy.reduce(self.entries, rows)['local_suppression_support'])
+        rows[-2]['admitted'] = True
+        self.assertTrue(policy.reduce(self.entries, rows)['local_suppression_support'])
+
 
 if __name__ == '__main__':
     unittest.main()

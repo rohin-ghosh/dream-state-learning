@@ -1,0 +1,73 @@
+{
+  "adapter_sha256": "37ec37884e4b0b679edd1dba1be1dec3474589e992649f3a33e7e3b1ec78b8c0",
+  "arguments": {
+    "bundle": "/tmp/astra_portable_37ec_20260914_attempt1",
+    "freeze": "/localhome/local-rohing/orch_base_contract_20260914_attempt1/recovery1/source/research_notes/analysis/orch_base_contract_20260914_attempt1/FREEZE.json",
+    "gpu_uuid": "GPU-d2db2a6a-a308-1782-bf41-e41411d8dc05",
+    "model_dir": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+    "output": "/localhome/local-rohing/orch_base_contract_20260914_attempt1/recovery1/shard2",
+    "phase": "screen",
+    "resume_from": "/localhome/local-rohing/orch_base_contract_20260914_attempt1/recovery1/../shard2",
+    "shard": 2
+  },
+  "base_verification": {
+    "expected_base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+    "model_dir": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+    "verified": true
+  },
+  "condition": {
+    "disabled_layers": 0,
+    "model_status": {
+      "active_adapters": [
+        "default"
+      ],
+      "adapter_model_type": "LoraModel",
+      "available_adapters": [
+        "default"
+      ],
+      "base_model_type": "Qwen2ForCausalLM",
+      "devices": {
+        "default": [
+          "cuda"
+        ]
+      },
+      "enabled": true,
+      "merged_adapters": [],
+      "num_adapter_layers": 196,
+      "peft_types": {
+        "default": "LORA"
+      },
+      "quantization_backend": null,
+      "requires_grad": {
+        "default": false
+      },
+      "total_params": 7635801600,
+      "trainable_params": 0
+    },
+    "state": "ORIGINAL",
+    "total_layers": 196,
+    "unmerged": true
+  },
+  "driver_sha256": "5f765ebe159fcf1aa537b7e99147bc90f63d58400b00280020a06b62d78a6ed9",
+  "fits": 0,
+  "freeze_sha256": "56812cebab0f2a9abaf3999ed45a272df562024f2542170f5de04bc7afd3f6c4",
+  "pid": 444659,
+  "policy_sha256": "ba9d6df95e1d9f9eb8dbaa2d32f2acce9e526e56a46eba122cc9cdcc569dad60",
+  "runtime": {
+    "distributions": {
+      "peft": "0.20.0",
+      "tokenizers": "0.22.2",
+      "torch": "2.13.0",
+      "transformers": "5.5.3"
+    },
+    "imported": {
+      "peft": "0.20.0",
+      "tokenizers": "0.22.2",
+      "torch": "2.13.0+cu130",
+      "transformers": "5.5.3"
+    }
+  },
+  "started_unix": 1789427253.3641663,
+  "trainingAllowed": false,
+  "updates": 0
+}
