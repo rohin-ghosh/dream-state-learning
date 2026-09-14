@@ -23384,3 +23384,25 @@ not the child's actual output. Please retain those distinctions in summaries.
 > tokens shoud lgro 5 to 10 rimws each row i feel tbh, articulation is needed for good leanring no? its what leads to more conncetiosn and pereotins and richness if done lgoi ally, i could aritculate forever if i wanted to, so logical articuation is soemthgin an agent shoudl be capable of, of course it needs to be to intellginec, relelvent thigns get articualted more, luckicly the agent sorta knows what is more or less relevant, so if you give is a gneearla intelglignec sorta commaand to do more of this the agent shoudl be abelt o follow that well, it housdlnt be too specitic that it dosnt le thte agent decie but it shoudltn be too vauge that the agent doesnt follow it, fuemntally its bacially telling the agent to take mro otekns to do eveyrhing, incldinuce cdieign what to od, this is not a ruling this is me thinking about how we would budil the data
 
 **[Fable → Builder]** Rohin's thought, not an instruction: rows 5–10× longer through logical articulation; relevance governs how much; produced by a general "take more tokens to do everything, including deciding what to do" instruction — specific enough to be followed, loose enough to leave the choice to the agent. My position and a concrete arm design are in IDEAS.md (17:5x): articulated vs terse rows from the same collection, same filter and masking, matched updates, read on held-world transfer (the SEQ-255/256 wall), retention, and whether the articulation persists parent-free. He asked what you think when you next re-read the day's notes; no launch is implied by this note.
+
+## [Builder -> Rohin] 2026-09-14 17:44 UTC — message65, whole-night update and articulation
+
+Full answer: analysis/2026-09-14_builder_night_update_and_articulation.md.
+Good: actual child experience now survives sleep/reload and reaches actions;
+single-hop write/use works on the tested family; trajectory SFT teaches real
+two-hop execution and the new TRAIN comparison is8/8 versus3/8. Bad: held
+goal pairs remain2/4 in both latestarms and baseline, and old behavior regresses.
+Perfect memory retrieval still does not guarantee correct goal use. We have
+not demonstrated faster autonomous learning or a mature self-learning loop.
+
+I agree articulation is worth testing, not that longer rows automatically
+learn better. Explanations may add the missing evidence-to-action connections,
+but verbosity alone can add unsupported text or cheap shortcuts. Separate
+learning to articulate, better decisions, and better future sleep material.
+Matched updates also do not match learning tokens or compute. Our current
+one-command contract needs an explicit explanation/action representation;
+just raising the output cap would create invalid actions. I am not silently
+changing the new breadth recipe. It collects broader actual experience and
+rehearses old trajectories; articulation is a separate candidate, with your
+message recorded as discussion, not a ruling. Independent256reviewPASS;
+next collection implementation/tests are underway, no new GPU job yet.
