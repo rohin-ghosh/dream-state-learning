@@ -21824,6 +21824,26 @@ and retention test, not H1/H2 or a new autonomous material-selection success.
 pass. Native actual-sourceprepare then node2GPU0 collection80calls0fits,
 1920scap. Paired fit budgets7440s/arm remain conditional; neither is launched.
 
+## [Builder] SEQ-238 — 2026-09-14T12:17Z — actual reader-audit lesson collection ready
+
+Node2GPU0 guardian372093, sourcef20a8cb651e5b6e2e7154d85c7a0d7dbc9f8b38a,
+root/tmp/astra_reader_audit_lesson_20260914_attempt1/collect.80actualcalls,
+0fits, terminalLESSON_READY. Parentfree held baseline7/16: true4/8,fault3/8.
+CoachedDEV62/64: true30/32,fault32/32. All8DEVeventstrata cover trueandfault;
+62actualchildresponses become candidateSFTrows, both incorrecttruecase outputs
+remain archived and excluded by the predeclared public-task success rule.
+Different DEV/HELD tasks mean62/64vs7/16 is NOT an isolated parent advantage.
+Native CPUfullcollection replay matches62rows, same80memory+20existingcues,
+no model required for replay; all5stagedcode hashes match the committed bytes.
+
+[Builder] 2026-09-14T12:17Z predeclared matched fits now released: node2GPU0
+AUDIT_SFT andGPU1 AUDIT_LOSS_OFF, fresh root/{ARM}/{train,after}, samef20a8cb6
+source and sharedb82490d3... initialadapter.200updates each,1memory/1cue/2lesson,
+control masks onlylesson targets, commondenominator.62childrows, no parenttext
+in studentprefix or supervisedbytes. ColdAFTER parentremoved classifier+existing
+recall/routing/retention. Guarded7440sperarm; no control sacrificed. Exact PIDs
+follow after launch; independent raw verification remains behind execution.
+
 ## [Fable] 2026-09-14T12:02Z — self-check: the first child-selected rehearsal loop closed with a mixed result (SEQ-236): rehearsing the two records the child chose fixed both tasks it had failed (2/4 → 3/4) but cost a previously correct task, while uniform replay of everything fixed all four (4/4) at the price of more forgetting of earlier paraphrased recall (W8 6/8 vs 8/8); asked again on its updated state the child picked the same record (no new material); ledger P33 SPLIT; VM reader verified SEQ-229/230/232 (12/12, zero discrepancies); fleet idle between one-call probes
 
 **SEQ-236:** common BEFORE 2/4; CHILD_CORRECTIVE 3/4 vs UNIFORM_REPLAY 4/4; both fix wrong tasks [1, 2]; corrective loses task 3. New W0/W8 recall corrective 2/4 vs uniform 4/4; earlier W0 8/8 both; earlier W8 7/8 → corrective 8/8 vs uniform 6/8; MISS 0/4 both. Supervised tokens 17,009 vs 16,701; raw reader errors 3/7 vs 0/6. Goodall's reducer and Main's replay agree. **Builder → Rohin:** "We have an actual experience → child selection → sleep → changed action loop, with a revealing limitation rather than a universal success: the child corrected both errors it selected evidence for, but lost another goal because its remaining unwritten memories still produce false replies. Uniform replay solves all four new tasks but loses more earlier paraphrased recall. … This is externally prompted selection, not yet autonomous improved learning." Reselection (attempt 2, one call): the child repeated EVENT index 2 — "unchanged-prompt prediction of new material not supported"; no repeat fit. Next one-call probe: a reader-audit selection prompt (compare reader replies with own receipt-grounded EVENTs), no fit.
