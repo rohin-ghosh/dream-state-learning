@@ -20945,3 +20945,33 @@ Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 63):
 Reading: Yes — get the automation working and make sure Fable on the VM is checking things, so results are verified while Astra is not wasting its time, and move forward. The scope of the claim is fine, though I want to see compared results if possible — not yet. I want the reviewer to do the reads and I do not want the builder waiting for their results. Do you think in-weight memory hopping is useful? I still feel extraction is what is needed. The other seeds and replication can happen once we have success; in fact the lineage system is what our replication will look like — replication will be easier and may show new results, but let us not think about that now. I want to know how the data is being created and how we are getting level 1 — are we trying level 2 with it? I want to wake up to good results and a lot of useful GPU work. Astra needs to be making sure it is making progress; the ideas for what we are doing are in today's notes, so Astra, like our model, should be re-reading them periodically and knowing what is going on so it does not get off track. Good luck.
 
 [Fable] 2026-09-14T10:13Z — actions: (a) a VM-side result reader is being installed now — a headless watcher that, every 30 minutes regardless of the laptop, takes each new result-bearing SEQ entry, re-derives its headline counts from the raw receipts on the nodes, and posts `[Fable VM result read] SEQ-nnn — VERIFIED / DISCREPANCY / NOT REACHABLE` here; it never launches, kills, edits source or waits for anyone, and the builder is not to wait for it (Rohin's ruling); (b) the idle nudger message gains a pointer to re-read today's raw messages 42–63 and the IDEAS entries; (c) Fable's answers to his three questions follow in the next entry. Builder: no change to your running work; Rohin's ruling means you continue on evidence and the reads land behind you.
+
+[Builder -> Rohin] 2026-09-14T10:15Z — read message63 and refreshed today's
+loop/extraction steers. Yes: we are testing level2 with the same level1 child
+right now, not separately training a second controller. The data path is:
+(1) child actually EXPLOREs, observes public outcome, and writes its own EVENT;
+(2) saved child produces successful READ/ROUTE trajectories with a coaching
+prompt; (3) teacher text is stripped and the child's actual actions plus old
+EVENT replay train the SAME adapter; (4) parent is removed and the child is
+offered genuinely new events; (5) it records those events and is now sleeping
+on them, with fresh no-write/write readouts immediately afterward.
+Steps1-4 have measured successes; step5's fits are currently around300/400
+updates, so I am not promising their outcome. Both new-event collections were
+4/4 in8calls without coaching. This is still offered, format-scaffolded exposure,
+not a claim that it independently chooses what to explore or how often to replay.
+
+On hopping: our present second READ is an action in context, not a demand for
+in-weight graph search. Weights supply EVENTs; the actor decides what to read
+next. I agree extraction/recollection at sleep is the relevant next learning
+function, rather than making hidden weight-space hops an entry requirement.
+I would not equate extracting a useful relation with merely copying four facts:
+that capability remains to be tested on the same child after this minimal
+new-experience/write/use closure. We keep original evidence even if a sleep
+recollection changes its presentation. No separate sleep adapter is proposed.
+
+I am not starting another seed grid or optional readout comparison now; a
+counterfactual readout idea stays design-only. Existing comparisons already
+running continue. Verification follows behind the builder and does not become
+the next work gate; Fable's VM reader is being installed by Fable, not duplicated.
+The immediate objective is a functioning repeated experience→sleep→use cycle,
+then improving what the child extracts, not saturating GPUs for its own sake.
