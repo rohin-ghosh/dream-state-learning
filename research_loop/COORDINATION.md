@@ -18476,3 +18476,20 @@ permission to weaken route coverage or launch from incomplete source.
 No science/model/tokenizer/GPU launch/kill, node1 write, or approval request.
 Unrelated dirty rules and the unreviewed TSJ draft remain untouched.
 Full mission ACTIVE/incomplete.
+
+## [Fable backup self-check] 2026-09-14T02:01Z — SEQ-VM-10: one builder entry since 01:31Z (release relay reconciled; builder takes ownership of Stage2A core bindings, correction to its own source-owner requests); no Builder -> Rohin request; fleet idle; daemons alive
+
+Headless VM self-check (laptop heartbeat stale). Observe/log/relay only; nothing launched, killed or edited outside this entry.
+
+**Builder entry since SEQ-VM-9 (line 18447), counts as written:**
+
+1. `[Builder] 2026-09-14T01:40Z — release relay reconciled; remove self-imposed source-owner wait`. Wegener's read-only reconciliation finds the old M1 A-SFT/CD-STRIP/P-RS ladder unexecuted and superseded as the required path, not secretly completed by the later L1 roster or L2 refits. Local memo SHA b5b55c53…6c34d1, introducing commit 77b2386f; laptop 68cef9f4 remains unavailable. SEQ135 and 139/141/145 executed flat public-record loops, not M1 release; SEQ142/146 authored skill fits and SEQ192 transfer are distinct; SEQ195 remains exposed same-bank retention, not integrated H1/H2. No stale M1/Q0/SEQ195 rerun.
+   Builder's own correction to its repeated source-owner requests: Peirce independently finds no direct human instruction reserving the finite definitions; the earlier inventory deferral was Builder-authored. Main accepts ownership under standing authorization; no external reply or new human ratification is claimed. Fields stated as affecting acceptance, NOT harmless metadata. Prospectively bound core physical total depth, recovery SEEK EVENT position, and retained-prefix STEP match in research_notes/analysis/2026-09-14_stage2a_builder_core_bindings_v1.md, SHA 04b214f3…250ff. Nietzsche owns only new core_inputs producer/test files; Main owns route coverage and notes. Core implementation underway, not yet tested/complete. Peirce now checks finite route-language coverage. Reduced560 then qualified authentic two-SLEEP stays selected. No science/model/tokenizer/GPU launch/kill, node-1 write, or approval request. Full mission ACTIVE/incomplete.
+
+This entry supersedes the open `[Builder -> Rohin / source-contract owner]` request relayed in SEQ-VM-9: the builder now states it owns those definitions itself. No new `[Builder -> Rohin]` text in this entry. No `[Root …]`, `[Independent …]` or `[Codex …]` entries since SEQ-VM-9. Repo HEAD 28b33279 ("Bind prospective Stage2A core semantics and remove external-owner deferral") at this check; builder working tree dirty by design (new stage2a core_inputs/route_inputs/route_scan modules and tests, untracked).
+
+**Fleet (read-only, 02:00Z):** a40 8 GPUs 1 MiB each, no compute apps; ovx 8 GPUs 0 MiB, none; ovx2 8 GPUs 1 MiB, none; a100 8 GPUs 0 MiB, none. Idle is expected while source is being audited.
+
+**Daemons on VM:** astra_nudge 1, courier_vm 1, tmux session `astra` alive.
+
+**Node-1 mirror:** lease ends 2026-09-14 23:14 UTC, about 21.2 h from this check, outside the 10-hour window; no rsync run. Last logged incremental pass 15:02 UTC 09-13 (find -type f = 15,428 both sides). Final incremental `rsync -a` (no --delete) node 1 `~/v6_out/` -> node 2 mirror remains due inside the last 10 hours, by the laptop watcher/Rohin or this self-check reusing the logged command.
