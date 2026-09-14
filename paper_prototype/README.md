@@ -20,8 +20,8 @@ or layout validation is claimed. Primary sources, scope and receipt:
 Dated statements below about unresolved TODO keys describe earlier snapshots.
 
 **Ongoing first-sprint working draft — research question unresolved.**
-Canonical `main.tex` now includes independently reviewed SEQ-248–255 connected
-readouts, trajectory sleep, control, memory write, closed replay repair and no-fit baseline, and independently reduced SEQ-247 material-only
+Canonical `main.tex` now includes independently reviewed SEQ-248–256 connected
+readouts, trajectory sleep, control, memory write, closed replay repair, no-fit baseline and incremental fit, and independently reduced SEQ-247 material-only
 control and terminal SEQ-246 matched replay
 (independently reduced), separately from A3 SEQ-245 (independent six-stage reduction complete),
 with SEQ-241, SEQ230 and
@@ -44,7 +44,7 @@ the first adult write/use comparison is complete, with an explicit W8 reader
 failure and a separately reported no-fit W0 interface repair.
 The full sprint remains incomplete. No G3/H1/H2, parenting or freeze promotion.
 
-## SEQ-248–255: connected learning, controls and parametric connection — September 14, 2026
+## SEQ-248–256: connected learning, controls and parametric connection — September 14, 2026
 
 **Both independently reduced COMPLETE.** [Original readout](../research_notes/analysis/2026-09-14_event_two_hop_first_result.md)
 and [turn-bound successor](../research_notes/analysis/2026-09-14_event_two_hop_turnbound_first_result.md)
@@ -316,14 +316,61 @@ child exhibits **partial goal conditioning**, not a blanket absence of it.
 No gain or new amortization is attributable to these48 untrained targets.
 SEQ250 already taught an opposite-goal pair; this broadens world/order coverage.
 Two identifier instances of one topology and one exposed DEV lineage are not
-independent development seeds, generalized planning or H1/H2. No subsequent
-400-update outcome is included;253/254 failures and causal limits remain.
+independent development seeds, generalized planning or H1/H2. At255 there was no fit;256 below reports the subsequent400-update comparison.
+The253/254 failures and causal limits remain.
 
 Source `a0fdc9a7dda2d84e5f535b3b54e31741ce753c7a`; [primary result](../research_notes/analysis/2026-09-14_goal_pair_collection_first_result.md)
 and [independent review](../research_notes/analysis/2026-09-14_goal_pair_collection_independent_result.md).
 Bounded review joins all176 calls,48 TRAIN-only targets and all four baseline
 panels; recorded state joins are not independent live tensor authentication.
 Raw capsule: `gpu_artifacts_local/astra_goal_pair_collection_terminal_20260914_attempt1/extracted/`.
+
+**SEQ256: TRAIN acquisition, primary PROBE tie; independent review PASS; recipe closed.**
+Both FULL_TARGET and NEW_TRAJECTORY_LOSS_OFF complete400 updates and fresh-process
+readout from the same37ec parent, ending atfa3dec and2a8076 respectively.
+
+| Endpoint | FULL | New-trajectory loss-off | Prior reference |
+| --- | ---: | ---: | ---: |
+| TRAIN tasks / pairs | 8/8;4/4 | 3/8;0/4 | Unassisted panel not measured |
+| PROBE tasks / pairs (primary) | 5/8;2/4 | 5/8;2/4 | 5/8;2/4 (SEQ255) |
+| PROBE unavailable tasks / pairs | 0/8;0/4 | 0/8;0/4 | 0/8;0/4 |
+| Old recall W0 / W8 | 16/16;16/16 | 13/16;14/16 | 16/16;16/16 |
+| Held audit | 15/16 | 16/16 | 16/16 |
+| Original taught-text goals | 2/4 | 2/4 | 3/4 |
+| Earlier fresh-text goals | 3/4 | 2/4 | 3/4 |
+
+New target gradients support **taught-instance acquisition**, not robust PROBE
+transfer. FULL succeeds on all TRAIN cases; control onlyA0/A1/B3. Both retain
+PROBE successesA0/A2/B0/B1/B3, as at255, but failure trajectories differ: equal
+endpoints are not identical commands. FULL's A3 ends invalid_route; control's
+A3 repeats an address and B2 commits nothing. All unavailable endpoints fail.
+Prior panels are reused receipts, not contemporaneous no-write fits. FULL fails
+the at-least3/4 PROBE-pair and taught-graph requirements; control also fails
+memory and earlier-fresh requirements. Both miss the predeclared target.
+
+The exact270 tokenized inputs/reference masks and400-update schedule match.
+Only new rows222–269 are loss-masked in control; all12 original trajectory
+targets remain supervised. Fresh AdamW3e-5, rank8 and frozen base are unchanged.
+Active/reference labels are33,019/33,019 FULL versus23,885/33,019 control;
+per-batch active/reference scaling preserves the common reference denominator,
+not equal active dose or achieved retention. FULL presents800 new targets;
+control sees the same inputs with zero supervised new presentations. The12 old
+trajectory targets each receive4 presentations versus16–17 per new target.
+That imbalance motivates a hypothesis, **not a proven forgetting cause**.
+FULL retains all old facts but loses one true audit case; control's recall errors
+include record identifiers, not merely whitespace. Original taught-text falls3/4
+to2/4 in both arms. No population efficacy, generic planning or H1/H2 follows.
+
+Summed native-phase cost is2,194.764s, about0.610 A40-hours across both GPUs,
+including loading/checking, not just kernels. No new data or dose extension
+after this outcome; the400-update recipe is closed. A broader eight-world
+actual-data successor is only proposed/in implementation under the b960 protocol;
+no successor launch or outcome is claimed. [Primary result](../research_notes/analysis/2026-09-14_goal_pair_incremental_fit_first_result.md)
+and [released independent review](../research_notes/analysis/2026-09-14_goal_pair_incremental_fit_independent_result.md)
+bind the counts, masks, schedule and receipts; released PASS supersedes pending
+primary wording, not independent live tensor authentication.
+Source `f325f9d3a91ea4f584b97ae17767bbfe1d575678`; raw capsule:
+`gpu_artifacts_local/astra_goal_pair_train_terminal_20260914_attempt1/extracted/`.
 
 ## SEQ-247: executable selector material, shared writer — September 14, 2026
 

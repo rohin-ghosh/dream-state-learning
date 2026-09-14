@@ -2,46 +2,40 @@
 
 ## Message — UNSENT
 
-Can developmental teaching improve how an agent uses its experience after
-learning? We study persistent LoRA adapters on frozen Qwen2.5-7B-Instruct.
-Parent-free audit classification reaches16/16 versus7/16; selected/uniform
-single-hop forks tie4/4. Off-policy material-control recall1/4/routing3/4 and
-invalid pointers limit semantic attribution.
+Can developmental teaching improve how an agent uses experience after learning?
+We study persistent LoRA adapters on frozen Qwen2.5-7B-Instruct. Parent-free
+audit classification reaches16/16 versus7/16; selected/uniform single-hop forks
+tie4/4. Off-policy material controls and invalid pointers limit semantic attribution.
 
-Connected readouts initially fail0/4. Source-guided sleep yields own-text goals3/4
-on taught and fresh-identifier graphs with unchanged topology; ORIGINAL receives
-third-party context. Trajectory-label masking yields0/4 on both, but retention
-falls to11/16 and audit15/16, so control competence is unmatched (SEQ-252).
+Source-guided sleep improves contextual two-hop action, but exact parametric
+retrieval still yields2/4 goals, matching a goal-blind first-port baseline's
+winning cases (SEQ-253). Stronger replay fails to change commands and loses
+one audit case (SEQ-254). These are preserved failures, not reliable composition.
+The unchanged child nevertheless shows partial goal conditioning on two further
+identifier worlds:5/8 tasks,2/4 pairs (SEQ-255).
 
-A mixed write then recalls four new records exactly and supplies16/16 actual
-parametric responses without text fallback (SEQ-253). Parametric goals rise0/4
-to2/4 while fresh own-text falls3/4 to2/4; old16 facts and audit16/16 remain.
-Tasks with opposite goals take identical routes; another skips the intermediate
-step. A CPU-executed, goal-blind first-available-port baseline wins exactly
-the same tasks1/2 (2/4). Post-hoc opposite-goal pairs solved fall1/2 to0/2
-versus251 text, without replacing primary task counts: partial operational
-connection, not reliable composition.
+Matched400-update FULL/control fits now yield TRAIN8/8 tasks,4/4 pairs versus
+3/8,0/4 (SEQ-256). New target gradients support taught-instance acquisition,
+but PROBE ties5/8,2/4 in both arms and baseline. FULL retains16 old facts;
+control retains13/16 W0,14/16 W8. Audit is15/16 versus16/16; original taught-text
+falls to2/4 in both. Neither meets the target; this recipe is closed, not extended.
 
-Stronger replay leaves commands/pairs unchanged but audit falls16/16 to15/16
-(SEQ-254): this repair is closed failed, not a dose sweep.
-
-Unchanged-child SEQ255 baseline yields5/8 tasks and2/4 opposite-goal pairs
-across two identifier worlds: partial goal conditioning, zero new fits or amortization.
-
-Bounded independent reviews PASS; one DEV topology/lineage, mixed
-writes and external scheduling preclude H1/H2 or autonomous-learning claims.
-We seek collaborators on goal-sensitive controls, independent-topology recurrence
-and retention tests, not confirmation of a complete flywheel. This message
-remains unsent.
+Bounded independent review PASS; matched inputs/reference normalization do not
+mean equal active dose or retention. One exposed DEV lineage/topology and
+external scheduling preclude robust-transfer, H1/H2 or autonomous-learning claims.
+We seek collaborators on broader-world goal-sensitive controls and retention,
+not confirmation of a complete flywheel. No successor outcome is claimed;
+this message remains unsent.
 
 ## Supporting notes—not part of message
 
 **Evidence-backed working update — UNSENT.** No message has been sent.
 
 **September 14, 2026 result update — research question unresolved.**
-SEQ-255 collection/baseline is terminal with zero fits and independent review
-PASS, alongside252/253 and the closed failed254 repair. The combined248–255 section preserves earlier failures
-and the first-branch-baseline limit; no outcome beyond255 collection/baseline is included.
+SEQ-256 incremental fits/readouts are terminal with independent review PASS:
+TRAIN acquisition, primary PROBE tie and unequal retention; the recipe is closed.
+SEQ255 remains the separate zero-fit collection/baseline. The combined248–256 section preserves earlier failures
+and the first-branch-baseline limit; no outcome beyond256 is included.
 SEQ-247 shared-writer material control is terminal and independently reduced.
 SEQ-246 matched replay is terminal and independently reduced.
 A3 SEQ-245 is terminal and independently reduced: six stages, one matching
@@ -58,7 +52,7 @@ The sprint TeX and companion abstract are updated; canonical
 No complete cross-draft review is claimed. The collaborator draft stays UNSENT;
 H1/H2 and the program remain open.
 
-### SEQ-248–255: connected learning, controls and parametric connection — September 14, 2026
+### SEQ-248–256: connected learning, controls and parametric connection — September 14, 2026
 
 **Both independently reduced COMPLETE.** [Original readout](../analysis/2026-09-14_event_two_hop_first_result.md)
 and [turn-bound successor](../analysis/2026-09-14_event_two_hop_turnbound_first_result.md)
@@ -330,14 +324,61 @@ child exhibits **partial goal conditioning**, not a blanket absence of it.
 No gain or new amortization is attributable to these48 untrained targets.
 SEQ250 already taught an opposite-goal pair; this broadens world/order coverage.
 Two identifier instances of one topology and one exposed DEV lineage are not
-independent development seeds, generalized planning or H1/H2. No subsequent
-400-update outcome is included;253/254 failures and causal limits remain.
+independent development seeds, generalized planning or H1/H2. At255 there was no fit;256 below reports the subsequent400-update comparison.
+The253/254 failures and causal limits remain.
 
 Source `a0fdc9a7dda2d84e5f535b3b54e31741ce753c7a`; [primary result](../analysis/2026-09-14_goal_pair_collection_first_result.md)
 and [independent review](../analysis/2026-09-14_goal_pair_collection_independent_result.md).
 Bounded review joins all176 calls,48 TRAIN-only targets and all four baseline
 panels; recorded state joins are not independent live tensor authentication.
 Raw capsule: `gpu_artifacts_local/astra_goal_pair_collection_terminal_20260914_attempt1/extracted/`.
+
+**SEQ256: TRAIN acquisition, primary PROBE tie; independent review PASS; recipe closed.**
+Both FULL_TARGET and NEW_TRAJECTORY_LOSS_OFF complete400 updates and fresh-process
+readout from the same37ec parent, ending atfa3dec and2a8076 respectively.
+
+| Endpoint | FULL | New-trajectory loss-off | Prior reference |
+| --- | ---: | ---: | ---: |
+| TRAIN tasks / pairs | 8/8;4/4 | 3/8;0/4 | Unassisted panel not measured |
+| PROBE tasks / pairs (primary) | 5/8;2/4 | 5/8;2/4 | 5/8;2/4 (SEQ255) |
+| PROBE unavailable tasks / pairs | 0/8;0/4 | 0/8;0/4 | 0/8;0/4 |
+| Old recall W0 / W8 | 16/16;16/16 | 13/16;14/16 | 16/16;16/16 |
+| Held audit | 15/16 | 16/16 | 16/16 |
+| Original taught-text goals | 2/4 | 2/4 | 3/4 |
+| Earlier fresh-text goals | 3/4 | 2/4 | 3/4 |
+
+New target gradients support **taught-instance acquisition**, not robust PROBE
+transfer. FULL succeeds on all TRAIN cases; control onlyA0/A1/B3. Both retain
+PROBE successesA0/A2/B0/B1/B3, as at255, but failure trajectories differ: equal
+endpoints are not identical commands. FULL's A3 ends invalid_route; control's
+A3 repeats an address and B2 commits nothing. All unavailable endpoints fail.
+Prior panels are reused receipts, not contemporaneous no-write fits. FULL fails
+the at-least3/4 PROBE-pair and taught-graph requirements; control also fails
+memory and earlier-fresh requirements. Both miss the predeclared target.
+
+The exact270 tokenized inputs/reference masks and400-update schedule match.
+Only new rows222–269 are loss-masked in control; all12 original trajectory
+targets remain supervised. Fresh AdamW3e-5, rank8 and frozen base are unchanged.
+Active/reference labels are33,019/33,019 FULL versus23,885/33,019 control;
+per-batch active/reference scaling preserves the common reference denominator,
+not equal active dose or achieved retention. FULL presents800 new targets;
+control sees the same inputs with zero supervised new presentations. The12 old
+trajectory targets each receive4 presentations versus16–17 per new target.
+That imbalance motivates a hypothesis, **not a proven forgetting cause**.
+FULL retains all old facts but loses one true audit case; control's recall errors
+include record identifiers, not merely whitespace. Original taught-text falls3/4
+to2/4 in both arms. No population efficacy, generic planning or H1/H2 follows.
+
+Summed native-phase cost is2,194.764s, about0.610 A40-hours across both GPUs,
+including loading/checking, not just kernels. No new data or dose extension
+after this outcome; the400-update recipe is closed. A broader eight-world
+actual-data successor is only proposed/in implementation under the b960 protocol;
+no successor launch or outcome is claimed. [Primary result](../analysis/2026-09-14_goal_pair_incremental_fit_first_result.md)
+and [released independent review](../analysis/2026-09-14_goal_pair_incremental_fit_independent_result.md)
+bind the counts, masks, schedule and receipts; released PASS supersedes pending
+primary wording, not independent live tensor authentication.
+Source `f325f9d3a91ea4f584b97ae17767bbfe1d575678`; raw capsule:
+`gpu_artifacts_local/astra_goal_pair_train_terminal_20260914_attempt1/extracted/`.
 
 ### SEQ-247: executable selector material, shared writer — September 14, 2026
 
