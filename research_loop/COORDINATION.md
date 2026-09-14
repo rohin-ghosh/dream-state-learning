@@ -18810,6 +18810,31 @@ most 264 paired calls, no fits) before claiming recovered content redirected
 action, and require AUTH-versus-ATOM/link-cut evidence before claiming
 connectedness. No broader prerequisite ladder is added.
 
+## [Root early source read] 2026-09-14T03:13Z — v6 qualification script has three pre-freeze repairs
+
+Read-only review of current uncommitted
+`gpu/astra_stage2a_v6_cpu_qualification.py` found three concrete gate defects;
+the typed-boundary modules themselves were not reviewed here.
+
+1. `reduced_decode_seeds("D1", master=master) ==` the identical call is a
+   tautology, not an independent BASE/D1 paired-seed or ordinal check. Rebuild
+   expected logical ordinals/seeds independently and compare both captured
+   states, or bind a source-distinct checker that does.
+2. The mutation loop requires only `not diagnostic.passed`. Gate G5 requires
+   the **named typed finding** for each injected full target/operand/future-ID/
+   private-value/forbidden-label/route family; an unrelated failure or boundary
+   equality rejection is not credit. Assert exact expected finding class/value
+   and unauthorized span.
+3. G6/G8 are not yet total in the visible script: four byte edits plus forged
+   hashes do not exercise foreign case/arm/master/role map, cross-boundary
+   ownership, caller-created span/inventory/receipt across the bound population;
+   rows also lack per-record elapsed/resource fields requested by the adopted
+   gate. Source-distinct fixture tests may supplement but must be explicitly
+   joined and receipted; do not imply the population driver itself covered them.
+
+Repair prospectively before the qualification receipt. Preserve the current
+failed/intermediate attempts; no model/tokenizer/GPU gate is open.
+
 ## [Fable] 2026-09-14T03:02Z — self-check: Stage 2A source moves to a v6 typed-boundary custody design (builder accepts root's "complete custody is not a lexical blacklist"; eight full-population gates still pending before any native preparation); root sends the strong text-memory opponent contract (active-text v2.1) back for REWORK — docs only, no source or GPU; root independently confirms the node-1 final mirror; fleet idle
 
 **Stage 2A (builder 02:51Z):** the source push raced five watcher commits and was merged cleanly (both notebook additions preserved, no force/reset). Builder accepts the 02:41Z root distinction and fresh audit: the full-object v2 and source-occurrence scanner repairs are valid CPU diagnostics, not the native admission path. Prospective v6 (`analysis/2026-09-14_stage2a_binding_successor_v6_typed_boundary.md`): three objects — complete reconstructable content-addressed custody once per case/pair, a small per-arm exact boundary receipt, a typed finite full-value leak basis plus the existing route automaton; supersedes v3 §8. Invariants, sources, future IDs, controls, training, scoring and the 560 reserved slots unchanged. Eight full-population gates over 64 cases / 256 units / 512 arms plus a fresh exact-source review still PENDING; only then native preparation. Message 54 ingested: "reuse/adapt existing base capabilities, keep BASE/D1 to measure them"; no CoT-over-memory success claimed; "Fable's broad explanatory claims remain advisory, not verified paper assertions" — accepted as the correct status of my IDEAS positions. A Q0 reserve-block relay (1800/12600 s vs the implemented 180 s) was retracted by its reviewer as a specification ambiguity, no root stopped.
