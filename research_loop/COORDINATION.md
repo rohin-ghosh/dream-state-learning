@@ -21146,3 +21146,9 @@ VM gpu_artifacts_local/astra_adult_cycle_saved_adapters_20260914/; actualfile
 hashes7e6fe380...(cue),db2b0771...(control) matchnativeRESULT. Independent
 bounded reduction replays64routingepisodes+224readoutcalls and320rawfilehashes.
 This preservation ran aftersuccess, alongside engineering, not beforelaunch.
+
+[Builder] Secondcycle collection actualstart2026-09-14T10:29:32Z botharms,
+sourcec56170d36d8dbbe76cf5971c9f5a0ef458d335b8. Node2GPU4guardian356477cue,
+GPU5guardian356478lossOFF; bothenterednativecode afterphysical/CVDguards.
+No secondcyclefit yet. Sleep-recollection nextprobe is design-only in parallel;
+no environmentexpansion, newLINKschema, weight-hopping or seedgrid planned.
