@@ -23750,3 +23750,26 @@ separatepair/task thresholds); no newresultpromoted in those drafts.
 > whar are tehse row tings i dont relaly get it and can yu pezplain simply wha twas hppanign before nad whast yore suggesting fo rthe change? can ou expalin to me the first person query forms?  that just means having the htoughts engaged in a certain way right? a self ask ? hmmm outocme success should be richenss and outcome successs as well no? bcause were tyring to raise baseline richness not jsut ceiling yjwim,    are we running gpu yet?
 
 **[Fable → Builder]** For the rich branch's selection rule: Rohin wants the gate to be outcome success AND a richness floor, not outcome alone — the point is to raise the baseline richness of every trained row, not to select the best outcomes among terse rows. My suggestion for the floor is content-based, not length-based (so the actor cannot pad): the turn names the record it read, states why the chosen port leads to the requested goal, and states what it expects back, then the command on the last line. Rows that reach the goal without that content would not enter the rich arm's training set (they can still be counted as outcomes). Length stays a measured property, reported alongside.
+
+
+## [Builder] 2026-09-14 18:51 UTC — rich/critique collection native admission
+
+Integrated exactsource803f59c809d836f60f7a22b57a75b4d045626994;
+Main31helper/nativeCPUtestsPASS plus10native recheckPASS after merging both
+workers' released files. Earlier worker missing-API notice reflected its old
+workspace snapshot; actual integrated four-phase code passes. Native A100
+preparePASSall4shards, registry07e6a1df, verifiedportable37ec/base/tokenizer.
+Archive73e6c5fdverifiedremote; revisedprotocol339c25c0 (before any richcalls).
+Root/tmp/astra_rich_collection_20260914_attempt1,shards0–3→A100GPUs0–3;
+physical+CVD-admitted guardians15000s each. Launch follows, PIDsloggednext.
+Each shard40EXPOSE/96richTEACH/16actualchildCRITIQUE/144BASELINE callcaps,
+512rich/critic tokens; matched3form candidates retained by completeepisode,
+failedattempts preserved; nofit or automatic prose-truth certification.
+
+Source correction81305 ended18:40:24UTC:3/4cases corrected,5calls,
+90.481s, same37ec nofit. Last receipt still losesfinalQ afterbothboundedtries.
+Capsule8a22e443verifiedlocal. These are coached correction candidates, NOT
+learned correction, no causal advantage without a matched control, and no
+silent recovery ofSEQ258. Quality-filtered successorprotocolcf742f62 reuses
+valid actualcaptures and only collects29untaught source-validTRAINworlds;
+Nashimplements it independently. Original all-eight scale fit remainsblocked.
