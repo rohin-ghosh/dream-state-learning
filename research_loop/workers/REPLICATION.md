@@ -138,3 +138,15 @@ Initial attempted local test-dependency archive used an ephemeral uv path and
 failed; corrected using pytest.__file__, preserved separate archive names.
 No inference occurred during any repair or failed publication. Exact own
 preGPU entry appended to notebook EOF; successful commit/push is last launch gate.
+
+## 2026-09-14 22:32 UTC — LAUNCHED, no SEQ requested
+
+Main resolved concurrent append-only merge8f7a6781 and published exact preGPU
+a208a084. I independently verified both a208a084 and source d8941b7d are
+ancestors of origin/main before launch. Main ran no cells. Guardian97349
+launched ORIGINAL37EC source collector97358 on physical GPU5 after fresh
+admission passed. Root `/tmp/orch_replication_20260914_attempt1/revision2`.
+Its fixed sequence automatically starts three fresh readout processes on0/1/5
+after the single source capture completes, with fresh per-device admission and
+no main/reviewer wait. Collection1200s, readouts2400s/state, sequence3900s.
+No outcome-dependent changes, replacement worlds, new fits, or cap extensions.
