@@ -143,3 +143,12 @@ Fresh admission_1 clear both. Root attempt2 as above, terminal expected
 Hard deadline22:41:24Z, native reserve60s. No SEQ reserved. Exact notebook
 launch notification appended; no PI/reader wait. Attempt1 local terminal
 capsule841e44d4472959a220dea4a1e584bbf657b72fcd2a30dadbc8d348870ab1f6b7.
+
+## 2026-09-14T22:13:53Z — partial status, no comparison/SEQ yet
+
+TERSE terminal COMPLETE2/8,35calls,2ownrecords,1oracle-correction chain;
+guardian exit0 and release scanner PASS. GPU5 no longer needed by this
+screen. RICH7calls/1completed episode, no failure receipt, continues within
+original cap. TERSE raw and RESULT already mirrored in early_snapshot.
+No content admission or partial rich-vs-terse conclusion. Full terminal
+comparison will request Main's ordered SEQ; no pre-reservation.
