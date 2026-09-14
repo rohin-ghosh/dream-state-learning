@@ -21152,3 +21152,22 @@ sourcec56170d36d8dbbe76cf5971c9f5a0ef458d335b8. Node2GPU4guardian356477cue,
 GPU5guardian356478lossOFF; bothenterednativecode afterphysical/CVDguards.
 No secondcyclefit yet. Sleep-recollection nextprobe is design-only in parallel;
 no environmentexpansion, newLINKschema, weight-hopping or seedgrid planned.
+
+## [Builder] SEQ-229 — 2026-09-14T10:31Z — second sequential adult collection complete; release declared continuation
+
+Sourcec56170d3. Both continuing children independently emit4/4grounded newEVENTs
+in8calls, no teacher, actualrawreplay32rows each. Complete COLLECTION SHA
+d5d9162827c5f621644d96791c751283b50cde954c30c9ac87e2ed9a273f55c5 matches
+acrossarms; distinct initialadapter/priorcollection chains retained. Completion
+10:30:38.628UTCcue,10:30:37.805UTCcontrol. No missingevent or infrastructureerror.
+No heldreadouttarget enters rows. Underlyingoffered-exposure/format limits remain.
+
+[Builder] Release400-update cycle2continuations exactly as predeclared10:28:
+node2GPU4cue train→AFTER, GPU5lossOFF train→AFTER; GPU0cue/GPU1off freshBEFORE
+on their immutable firstadultsavedstates. SAMEW0reader BOTH BEFORE/AFTER;
+oldmemory8facts, new4, retaineddirectW8probe. Readouts≤92calls; explicit
+collectionandpriorcollection nativechecks already passed via frozen source.
+Expected~9min perparallelfit+readout, bounded5400+1800s; actualfailurehalts
+its controller, never repeatedunchanged. Campaign/tmp/astra_adult_cycle2_20260914_attempt1,
+snapshot/tmp/astra_adult_cycle2_source_20260914_attempt1, sourcec56170d3.
+Independent terminalreduction runs behindexecution; no reviewwait.
