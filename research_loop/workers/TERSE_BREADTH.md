@@ -98,3 +98,18 @@ Root A100=`/tmp/orch_terse_breadth_20260914_attempt2`; node3 remainsattempt1.
 Owned CPU watcher2161684 monitors both roots, archives terminal evidence and
 requests SEQ only at terminal readiness. Stopped only prior owned CPU watcher
 2138217 after verifying its cmdline; no native/GPU process stopped.
+
+2026-09-14T23:21:54Z — Main utilization question, measured native receipts:
+A100 at23:21:30: lane0FULL7801dose4 has NO train REQUEST/PID; lane1OFF7801
+dose4 PID166693 update550; lane2FULL7802dose4 PID166707 update545;
+lane3OFF7802dose4 PID166700 update548. Node3 at23:21:38: lane4FULL7801
+dose16 PID104214 update520; lane5OFF7801dose16 PID104207 update526.
+All five have REQUEST.json and advancing LOSSES.jsonl, no FAILED.json.
+Immediate lane0 blocker remains its unique baseline PID164953,1699calls at
+23:21:48, no terminal receipt. Queue PID166575 waits for that baseline then
+runs fresh physical admission and FULL; baseline is NOT FULL or OFF. This is
+an admission failure/recovery stagger, not sequential model loading or six
+successful starts. Earlier unreadable transientsshd164832 admission failures
+remain preserved; corpus/batch5aac9c13 and all controls unchanged. Recommend
+continue existing bounded six-GPU allocation, no substitution/new allocation.
+Watcher2161684 alive; four admission-retry lifecycle tests PASS again.

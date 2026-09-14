@@ -66,3 +66,15 @@ A1004FULL queued behind unique existing baseline164953 (959calls), not
 silently substituted. Scientific source/archive and5aac9c13common batch
 unchanged on newA100attempt2. All six remain pre-admitted; five executing.
 Own CPU watcher2161684 runs terminal archive/author-handoff, no promotion.
+
+2026-09-14T23:21:54Z [Builder] Main status response, measured observations:
+A10023:21:30 lane0FULL7801dose4 NO fit REQUEST/PID; lane1OFF7801dose4
+166693/update550; lane2FULL7802dose4 166707/update545; lane3OFF7802dose4
+166700/update548. Node3 23:21:38 lane4FULL7801dose16 104214/update520;
+lane5OFF7801dose16 104207/update526. Five native fits, not six; no FAILED
+receipts among them. A1004 unique baseline164953 has1699calls at23:21:48
+and no terminal receipt; queue166575 waits, then fresh admission starts FULL.
+Baseline never replaces a control. Initial A100 pre-native scan failures and
+recovery stagger preserved; no scientific batch/source/seed changes. Four
+retry lifecycle tests PASS again; watcher2161684 alive. Continue bounded
+allocated compute only; no terminal evidence or SEQ request yet.
