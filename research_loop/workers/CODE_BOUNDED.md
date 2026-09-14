@@ -48,3 +48,20 @@ Postrun physical+/proc release4/4PASS; node2 GPUs0–3 no longer held.
 Frozen conjunction fails: deallocate exact screen, broad opportunity untested.
 No independent reader run; Main owns reader/state/board. Source/archive/raw
 evidence in report; all artifacts preserved, no outcome failure optimized.
+
+## 2026-09-14 22:46 UTC — ordered publication instruction
+
+Main assigns terminal SEQ274 conditional on Fermat publishing273 first. This
+is terminal-result ordering, not preregistration. Wait only for273publication;
+no GPU held, no sequel or model rerun. Clarify official reference8/8 as oracle
+parity, NOT a non-oracle baseline. Matched comparator remains TERSE6/8.
+After274publication, return publicationSHA and retire this worker.
+
+## 2026-09-14 22:46 UTC — SEQ274 publication / RETIRED
+
+SEQ273 remote publication verified7e650ab4 before appending274. Publish274
+exact7/8vs6/8,0admitted,37calls,19full-text judgments and all four post-completion
+Engine.close failures without hiding exit1. Official reference8/8 is oracle
+parity, not a competing non-oracle baseline. No hidden-test/learning claim.
+Node2 GPUs0–3 already physically+/proc released; no sequel, no model cleanup
+rerun, no independent reader. Worker RETIRED after this exact-path publication.

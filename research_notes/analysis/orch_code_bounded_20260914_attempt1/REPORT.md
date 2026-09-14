@@ -1,4 +1,7 @@
-# CODE-BOUNDED — result ready, ordered SEQ requested from Main
+# CODE-BOUNDED — SEQ274 terminal screen
+
+Main assigned274after terminal readiness; SEQ273publication verified on origin
+at7e650ab4 before this ordered entry. Exact screen deallocated; worker retired.
 
 ## Strongest result
 
@@ -24,8 +27,10 @@ Main handles ordered SEQ, state/board and independent Fable reader routing.
 |105 true-boolean count|sequence/list transformations|FAIL|FAIL|Unsupported generated GeneratorExp persists; rich later fabricates positive oracle feedback|
 |106 tuple/list concatenation|sequence/list transformations|PASS|PASS|Both preserve tuple oracle after JSON transport|
 
-Family outcomes: scalar RICH4/4,TERSE3/4; sequence RICH3/4,TERSE3/4. Deterministic
+Family outcomes: scalar RICH4/4,TERSE3/4; sequence RICH3/4,TERSE3/4. Official
 archived reference programs passed8/8 and24/24supplied tests BEFORE inference.
+This is **reference-oracle parity**, not a non-oracle baseline to beat. The
+matched non-oracle comparator is TERSE6/8, not that reference parity check.
 Reference programs were interpreted as oracle checks, never supplied to child
 prompts or targets. Public assertion strings were visible to both arms.
 

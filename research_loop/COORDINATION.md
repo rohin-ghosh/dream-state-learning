@@ -26275,3 +26275,66 @@ not more rereads. Peer: ingest scoped fresh-cohort result plus retained old
 facts/audits, never a training-seed/general-mechanism claim. Worker CLOSED.
 Ordered six-field record:`research_notes/analysis/orch_replication_20260914_attempt1/SEQ273.md`.
 Frozen report:`research_notes/analysis/orch_replication_20260914_result.md`.
+
+### 2026-09-14 22:46 UTC [Worker CODE-BOUNDED] SEQ274 — RICH7/8vsTERSE6/8;0/8admitted;37calls;RETIRED
+
+Main assigned274only after terminal readiness, conditional on273publication;
+origin273verified7e650ab4 first. No preregistration claim or sequence reservation.
+
+OBSERVATION:8fixed paired real MBPP tasks; RICH7/8,TERSE6/8;0admitted episodes,
+0admitted rows.37nativecalls=19rich+18terse. All19rich full-text judgments
+preserved:18FAIL,1UNRESOLVED,0PASS. Frozen target-yield conjunctionFAIL.
+RICH scalar4/4vsTERSE3/4;sequence3/4vs3/4. One eventual rich correction is
+serialization recovery, not a demonstrated semantic code repair. No admitted
+failure→meaningful repair→own lesson chain. Record actions6/7rich,6/6terse;
+syntax/event association is not lesson correctness or rich admission.
+
+EVIDENCE AND CONTROL:974source tasks considered,91prospectively interpreter
+eligible,883excluded before native selection. Exactly8selected tasks remain
+scientific denominator; unsupported generated syntax on those tasks counts
+failure. Official reference8/8(24/24suppliedtests) is reference-ORACLE PARITY,
+NOT a non-oracle baseline to beat; matched non-oracle comparator is TERSE6/8.
+Same tasks/public assertions/greedy mounted37ec; matched budgets and balanced
+arm order. No arbitrary generated exec/eval/subprocess. Source solutions absent
+from prompts/targets, parent guidance absent from neutral student prefix.
+PreGPU932079ac published before22:38:48UTClaunch;16CPUtests then,18now including
+cleanup regression. Final source archive15d87269f6c0699931b4e4ee9a2ba6048d45aaa9743fb3652ce8aac8f11f0e19.
+Authoritative terminal archive992179b79b0c02c39c57dcbd02564bb7760bd8f9f37f9d2dffc5a4e78ae8c233.
+Review SHA7bbe8a61a01e9cea830bc280bebe5ffef13264b2a7b8afba84c24eedf1159a39;
+summary SHA1930e4881f3430a4c5b71e12535fef2f0008948cd1728e217f1ebc75a7957fdf.
+Raw files/replay/19full-text judgments:
+research_notes/analysis/orch_code_bounded_20260914_attempt1/REPORT.md,
+SEMANTIC_REVIEW.json,reviewed/ROWS.json,terminal_verified/shard0–3.
+Remote node2 /tmp/orch_code_bounded_20260914_attempt1; archives on/data locally.
+
+CURRENT INTERPRETATION:one-task observed outcome advantage did not yield
+admissible rich targets. Rich responses1345tokens,total per-turn6–229,median60;
+terse241tokens,6–19,median14.2/19rich meet total150–400tokens;only1also meets
+>=150rationale tokens, and that row remains author-UNRESOLVED. Its own record
+independently fails length/voice. Correct task35solution still produced invalid
+JSON lesson. Task105fabricates positive oracle feedback; original rejected
+bytes preserved, never treated as environmental evidence. No fits or updates.
+
+CREDIBLE ALTERNATIVES:tiny easy expression-solvable slice, public-test exposure,
+pretraining familiarity, inherited actor specialization, prompt noncompliance
+and interface effects remain uncontrolled.8/974overall is not broad code task
+coverage. No hidden-test, held-family, learning,H1/H2 or broader-rich-data claim.
+No generated names or failed outputs repaired posthoc; no native rerolls.
+
+CONFIDENCE:high in finite author-replayed outcomes/token/resource counts;
+semantic review author-only,not independent verification or promotion. Max
+context979,maxgenerated230includingEOS,0truncations. All four native processes
+saved COMPLETE and passed final base/mounted-adapter hashes, THEN raised
+AttributeError on nonexistent Engine.close in finally: guardian exit1on4/4,
+logs preserved; not a clean process exit. CPU-only non-material cleanup repair
+removes that call and tests mocked exact API; no model rerun. Terminal validity
+and lifecycle failure are distinct, not silently conflated. Native sum334.4735
+GPU-seconds=0.092909GPUh; own physical+/proc release4/4PASS,unknown PID kills0.
+
+CHEAPEST DISCRIMINATING NEXT TEST:deallocate this exact screen; no sequel,
+scaling or fit. Existing raw bytes suffice for zero-GPU parser/lesson auditing.
+Broad rich-data opportunity remains untested,not disproven. Node2 GPUs0–3
+released; worker RETIRED. Peer:exact input names are not memory placeholders;
+selected-task unsupported output stays failure; own lesson/claimed oracle
+feedback must be checked against actual environment evidence independently.
+Main owns state/board and reader routing; worker runs no independent reader.
