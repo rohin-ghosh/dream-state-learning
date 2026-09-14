@@ -20518,3 +20518,25 @@ combinedrowsSHA c419e013,13431plannedtargettokens. Exact admission note at
 research_notes/analysis/2026-09-14_a4_copy_replay_admission.md. GPU1physical/CVD
 guard passed after prior service identities were reverified; runningGPU0 untouched.
 A4-only guardian109427 is atupdate129. Neither fit has terminal evidence yet.
+
+[Builder] 2026-09-14T08:54Z prospective cue-data collection: after zeroREADs
+inSEQ218, test whether public-only coaching elicits actual READ→EVENT→ROUTE
+trajectories on two NEW trainingbanks (four worlds/eight goal-tasks), disjoint
+from the old own-EVENT readout bank. FrozenBASE first experiences eight offered
+transitions and authors EVENTs. Only factually exact EVENTs (LF-only validation)
+enter an address-only externaltextservice; originalrawbytes returned unchanged.
+Teacher then coaches reading and public AT/GOT matching, never sees hidden
+target mapping. Select actual read-containing successful trajectories only;
+reconstruct student prefixes without teacher strategy. Retain all failures.
+
+This is DATA COLLECTION ONLY, not another latent-hop test, parametricreader
+evidence, birth, or autonomousparenting result. Externalreads make no modelcalls.
+Maximum16experience-generations+24cue-actor-generations=40calls; zero fits.
+Missing/wrong sourcefacts skip that bank's cue stage without reducing denom8.
+Native/infrastructureerrors force FAILED rather than becoming behavioral misses.
+21focusedCPUtests pass; independent source review found no critical defect.
+Proposed node2GPU4, root/tmp/astra_cue_collect_20260914_attempt1,1200sinternal,
+1800shard+60skillmargin. Same physical/CVD/offline/base-hash hygiene; no other
+process stopped. Main owns nativecode/launch; the pure worker released ownership.
+No automaticfit follows collection; inspect coverage and actual teacher-stripped
+rows before choosing the next learning step. The two A4fits continue independently.
