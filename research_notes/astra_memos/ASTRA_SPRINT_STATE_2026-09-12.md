@@ -1,4 +1,14 @@
-## Current superseding snapshot — 2026-09-14 16:18 UTC
+## Current superseding snapshot — 2026-09-14 16:28 UTC
+
+LIVE finite replayrepair node2GPU0/guardian402364 since16:25:50UTC,
+source28b44b19, root/tmp/astra_event_two_hop_memory_replay_20260914_attempt1;
+train26/100finite at16:27:34. ExactcurrentHANDOFF hascommands/owners.
+252/253terminalindependentreviewsPASS; nosemanticgoal-conditioningclaimfrom253.
+Parfitpreparespuregoalpairhelper/tests only, nofutureGPUlaunchyet. Carsonowns6
+draftsupdating252/253. Keepheavyarchiveson/data; own/tmp archivespreserved/moved
+afterpackagingdiskfailurebeforeadmission. Fullmission ACTIVE/INCOMPLETE.
+
+## Historical superseded snapshot — 2026-09-14 16:18 UTC
 
 No Main-owned native job live.252controlterminal/independentreviewPASS,253memory
 terminal/independentreviewpending. Exactnewrecall4/4W0/W8, actualparam16/16exact;

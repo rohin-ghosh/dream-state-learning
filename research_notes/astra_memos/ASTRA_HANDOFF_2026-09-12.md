@@ -1,4 +1,38 @@
-# Astra restart handoff — current override September 14, 2026, 16:18 UTC
+# Astra restart handoff — current override 2026-09-14 16:28 UTC
+
+## CURRENT — finite replay repair LIVE;252/253 independently reviewed
+
+Node2GPU0 guardian402364 started16:25:50UTC; source28b44b19a050bbd431bad884f830d05ef0762f64,
+root/tmp/astra_event_two_hop_memory_replay_20260914_attempt1. Train26/100finite
+at16:27:34UTC; no result yet. Same37ec parent/254rows,100updates,batch6 with
+200extraactualtrajectorypresentations. Reused253BEFORE; train thenfreshAFTER168cap.
+Guard7620soverall including admission,3660perphase. Main12CPUtests/nativepreparePASS.
+Inspect train/{RESULT,FAILED}.json, train/LOSSES.jsonl, after/{RESULT,FAILED}.json,
+run.log andlaunch. Neverrefit if onlyAFTERplumbingfails. Exactchildstatepending.
+
+Original252control and253memory terminal; both independentreviews nowPASS.
+Stronglimitation persists:253param=text2/4 withperfectrecall, samewinningcases
+asdeterministic no-memory first-port rule.253goalpairedsuccess0/2,251text1/2.
+Do not claimsemanticgoal-directedutility. Primaryreviews committed05272556.
+
+Schrodingerreplayfilesreleased/committed28b44b19. ParfitnowownsONLY new
+organism_v6/experienced_event_goal_pairs.py andtests/test_experienced_event_goal_pairs.py:
+pure two-training-world/four-task source-grounded48target helper, paired-goal
+scorer, two separateprobe worlds; no nativeuse/fit yet. Mainwillchoosenative
+successorcontractaftercurrentrepair; helperpreparationdoesnotauthorizeaGPUrun.
+Nash253reviewreleased; noactivecodeownership. Carsonowns6writingfiles through
+252/253, awaitingrelease;251committedba216dee. Mainownsexecution/state.
+
+VM/tmp packagingdiskfilled before replayadmission; incomplete213MBgzip was
+NEVERextracted/used. Fourownarchives movedwithhashchecks to
+gpu_artifacts_local/source_archives_20260914T1624Z, original/tmp paths symlinked.
+Newvalidatedcomplete sourcearchive SHA5f7f3a5d8fe2639db226eb7aef49c05bed058781bf3a366b054f3bce98ce500b
+isthereasastra_memory_replay_source_28b44b19_complete.tar.gz; remotechecked.
+Allfutureheavyarchivesbelongon/data (43GBfree), notroot/tmp(1.2GBfree).
+No experiment evidence deleted. Preserve dirtyrules andunrelateddraft.
+Mission ACTIVE/INCOMPLETE; olderLIVE/pendingstatusbelowishistoricalonly.
+
+## Historical superseded snapshot — 16:18 UTC
 
 ## CURRENT — SEQ252/253 terminal; finite replay repair being implemented
 
