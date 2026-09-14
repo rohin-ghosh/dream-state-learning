@@ -33,7 +33,7 @@ from organism_v6 import composition_birth_stage2a_worlds as worlds
 STATUS = "PARTIAL_SOURCE_ONLY"
 SCIENCE_GATES = MappingProxyType(dict.fromkeys(wire.SCIENCE_GATES, False))
 BOUNDS = MappingProxyType({"blob_bytes": checker.MAX_BYTES,
-                          "total_bytes": 512 * 1024 * 1024,
+                          "total_bytes": 2 * 1024 * 1024 * 1024,
                           "chain_boundaries_per_member": wire.CALL_CAP})
 GO_WRITE_ROOT = False
 GO_MATERIALIZE = False
@@ -268,7 +268,7 @@ def check_held_birth_separation(*, birth_inputs, intervention_inputs, chain_core
 
     Collision groups losslessly represent their Cartesian identity pairs; they
     are not truncated samples. Counts distinguish groups from pairs. All blobs
-    are nonempty bytes <=32 MiB, aggregate supplied bytes <=512 MiB (counting
+    are nonempty bytes <=32 MiB, aggregate supplied bytes <=2 GiB (counting
     repeated occurrences); each chain member has at most CALL_CAP boundaries.
     This API takes no provenance-approval flags and cannot certify provenance.
     """

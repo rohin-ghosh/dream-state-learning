@@ -115,6 +115,19 @@ class TinyCPUInitialization(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "retained_frozen_base_changed"):
                 source.verify_retained_base(result, base_state_hash=self.digest)
 
+    def test_replaced_tensor_cannot_hide_behind_old_reference(self):
+        with tempfile.TemporaryDirectory() as folder:
+            result = self.initialize(self.model(), Path(folder) / "initial")
+            original_name, wrapped_path = next(iter(result.base_paths.items()))
+            parent_path, attribute = wrapped_path.rsplit(".", 1)
+            parent = result.model.get_submodule(parent_path)
+            old = result.base_references[original_name]
+            setattr(parent, attribute, self.torch.nn.Parameter(old.detach().clone() + 1,
+                                                             requires_grad=False))
+            self.assertEqual(self.digest(result.base_references), result.receipt["expected_base_sha256"])
+            with self.assertRaisesRegex(ValueError, "retained_frozen_base_changed"):
+                source.verify_retained_base(result, base_state_hash=self.digest)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -23,6 +23,7 @@ class InitializedAtom:
     model: object
     observation: object
     base_references: dict
+    base_paths: dict
     receipt: dict
     directory: Path
 
@@ -89,6 +90,12 @@ def initialize_atom_cpu(base_model, *, torch, peft, master, initial_directory,
         observation = initial.inspect_initial_adapter(
             model, torch=torch, layer_count=model.config.num_hidden_layers,
             adapter_name="default")
+        wrapped = dict(model.named_parameters())
+        wrapped.update(dict(model.named_buffers()))
+        by_identity = {id(value): name for name, value in wrapped.items()}
+        training._require(all(id(value) in by_identity for value in references.values()),
+                          "base_tensor_replaced_during_wrapping")
+        base_paths = {name: by_identity[id(value)] for name, value in references.items()}
         training._require(base_state_hash(references) == expected_base_sha256,
                           "base_changed_during_initialization")
         named = dict(model.named_parameters())
@@ -107,9 +114,10 @@ def initialize_atom_cpu(base_model, *, torch, peft, master, initial_directory,
                        rng_before_sha256=training.tensor_sha256(rng_before),
                        rng_after_sha256=training.tensor_sha256(rng_after),
                        gradient_checkpointing_use_reentrant=False,
+                       wrapped_base_paths=base_paths,
                        initialized_arms=["ATOM_LOCAL"], closed_copy_executed=False)
         _write(directory / "receipt.json", receipt)
-        return InitializedAtom(model, observation, references, receipt, directory)
+        return InitializedAtom(model, observation, references, base_paths, receipt, directory)
     except BaseException as error:
         _write(directory / "FAILED.json", dict(receipt, status="FAILED",
                                                error_type=type(error).__name__, error=str(error),
@@ -118,8 +126,17 @@ def initialize_atom_cpu(base_model, *, torch, peft, master, initial_directory,
 
 
 def verify_retained_base(initialized, *, base_state_hash):
-    """Rehash original tensor references, including after PEFT name rewriting."""
-    actual = base_state_hash(initialized.base_references)
+    """Hash current wrapped tensors under original names, even after placement.
+
+    CPU-to-CUDA placement can replace buffer/parameter objects. Hashing only
+    detached old CPU references would not verify the base actually being used.
+    """
+    current = dict(initialized.model.named_parameters())
+    current.update(dict(initialized.model.named_buffers()))
+    training._require(set(initialized.base_paths) == set(initialized.base_references)
+                      and all(path in current for path in initialized.base_paths.values()),
+                      "wrapped_base_inventory_changed")
+    actual = base_state_hash({name: current[path] for name, path in initialized.base_paths.items()})
     training._require(actual == initialized.receipt["expected_base_sha256"],
                       "retained_frozen_base_changed")
     return actual

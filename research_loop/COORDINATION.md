@@ -18976,6 +18976,50 @@ fresh local receipt; not the pretrained base or model/tokenizer qualification.
 Node2 nvidia-smi04:33UTC shows8A40/46068MiB and no compute processes; this is
 not a reservation/free-GPU proof without /proc live-life checks. No GPU launch.
 
+## [Builder] 2026-09-14T04:43Z — SEQ-197: retained-input replay qualified for CPU execution
+
+Main reviewed exact two-line512MiB→2GiB aggregate separation capacity repair;
+per-blob32MiB, source anchors, full-core/four-radius comparison and populations
+unchanged. Main29regression tests PASS15.745s (synthetic COLLISION/ERROR output
+belongs to fixtures, not the actual population). Replay validates original
+capacity-only ERROR, all source/index/retained-blob pins, four explicit types,
+exact fields, source immutability and exclusive new snapshot; no constructors
+rerun. Now launch CPU-only retained replay,2GiB address-space cap, VM output
+gpu_artifacts_local/astra_stage2a_separation_replay_20260914_attempt1; PIDs follow.
+Original attempt remains ERROR. Corrected boundary qualification remains live.
+
+Native initializer actual tiny-config CPU tests onnode2: first9PASS2.521s,
+then prospective wrapped-tensor-path strengthening10PASS2.551s. Separate
+immutable snapshots/commands/logs under gpu_artifacts_local/
+astra_stage2a_native_models_cpu_20260914_attempt{1,2}. No pretrained weights,
+tokenizer, CUDA initialization or forwards. Current base paths prevent stale
+CPU references from hiding replaced tensors after placement. Popper conductor
+review finds no unconditional API blocker; native caller must bind actualBASE
+fingerprint and activeATOM adapter, and inspect aborted return values. Same-
+process reload is not fresh-process persistence. Carson owns only native entry
+script/tests; Arendt tokenizer receipt/tests. No actual native gate is open.
+
+## [Builder] 2026-09-14T04:43Z — SEQ-198: older node1 baseline checksum gap closed
+
+Cicero completed independent source/mirror inventories:15428files,
+96975926735bytes, zero missing/extra/payload/metadata differences or unstable
+files. Workers finished by04:25:20UTC and PIDs absent04:29:22–23. No transfer
+needed. Terminal receipt gpu_artifacts_local/node1_baseline_verification_20260914_attempt1/terminal_validation.json
+SHA2563f21e04a8037d6c12b2f4882bf1fddc2a052a674129a11d088130e19901d98f5.
+This closes selected older baseline byte verification only: no restore test,
+no coverage beyond selected paths or guarantee against subsequent changes.
+Node1 expiresSeptember14 23:14UTC. Preserve existing newer scoped archives.
+
+Bounded node2/A100 lookup found no original runtime-wheel artifacts/hashes in
+searched locations; installedWHEEL/RECORD metadata exists, opaque pipHTTPcache
+not inspected. This is not proof of global absence. Main prospectively treats
+installed package versions/metadata plus measured local code/file identity as
+DEV reproducibility evidence under Rohin's simple-hygiene steer, not original-
+wheel attestation. Original-wheel provenance remains unresolved for paper-grade
+C11; no unchanged-v2-wheel-contract compliance claim. No runtime/base/library
+replacement is authorized by this disposition; actual version mismatches must
+still be localized before execution. Scientific invariants and gates unchanged.
+
 ## [Fable] 2026-09-14T04:32Z — self-check: SEQ-196 — the first full-population CPU qualification of the Stage 2A v6 source FAILED on a harness bug (six CLOSED records where the midpoint mutation replaced X with X, so the adversary was a no-op); corrected attempt 2 live at 272/512 with zero failures; the independent source-separation run at 15/16 chain worlds; reduced conductor implemented (280 BASE slots, 256 D1 ATOM updates, 280 ATOM slots); still no GPU
 
 Attempt 1: terminated FAIL 04:14:14Z after 2,534 s; all 512 source boundaries visited, 506 records completed, six failed (p10/m0/u2, p10/m1/u2, p11/m0/u2, p11/m0/u3, p11/m1/u2, p11/m1/u3) plus one consequent foreign-arm population-count error; integrity suites not reached; preserved as FAIL. Builder's earlier "336 passed" label counted boundary visits, not completed records — corrected. Attempt 2 (source snapshot 56f97185) live from 04:03:51Z, 272/512 completed, zero failures at 04:29Z; not terminal. Separation controller: 512 birth boundaries and intervention construction done, 15/16 chain worlds. Reduced conductor (distinct BASE and ATOM models, full-state save/inspect/load) implemented; 23 + 69 CPU tests PASS; fresh-process persistence still unimplemented. Prospective padding rule PER_ARM_MAX with all residuals recorded ("never claim equal total tokens/compute merely from equal targets"). Official Qwen file/revision receipt in place. No native tokenizer/model/GPU execution or admission.

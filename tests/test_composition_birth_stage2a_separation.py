@@ -285,6 +285,28 @@ class SeparationTests(unittest.TestCase):
                 with patch.object(separation, "BOUNDS", MappingProxyType(dict(separation.BOUNDS, **changed))):
                     self.assert_rejected()
 
+    def test_two_gib_aggregate_exact_boundary_and_one_byte_over(self):
+        self.assertEqual(separation.BOUNDS["total_bytes"], 2 * 1024 * 1024 * 1024)
+        self.assertEqual(separation.BOUNDS["blob_bytes"], 32 * 1024 * 1024)
+        records = [*self.intervention_roster, *self.chain_roster,
+                   *(boundary for chain in self.chain_roster for boundary in chain.boundaries)]
+        other_bytes = sum(len(getattr(record, field.name)) for record in records for field in fields(record)
+                          if field.name.endswith("_bytes") or field.name == "checker_payload")
+        other_bytes += sum(len(getattr(record, name)) for record in self.birth_roster.values()
+                           for name in ("checker_payload", "receipt_bytes"))
+        shared = b"x" * (4 * 1024 * 1024)
+        remaining = separation.BOUNDS["total_bytes"] - other_bytes - 511 * len(shared)
+        self.assertGreater(remaining, 0)
+        self.assertLessEqual(remaining, separation.BOUNDS["blob_bytes"])
+        roster = {identity: replace(record, core_bytes=shared) for identity, record in self.birth_roster.items()}
+        identity = next(iter(roster))
+        roster[identity] = replace(roster[identity], core_bytes=b"y" * remaining)
+        with patch.object(checker, "check_graph_core_json", side_effect=AssertionError("preflight only")):
+            separation._preflight(roster, self.intervention_roster, self.chain_roster)
+            roster[identity] = replace(roster[identity], core_bytes=roster[identity].core_bytes + b"!")
+            with self.assertRaisesRegex(separation.SeparationError, "aggregate_byte_bound_exceeded"):
+                separation._preflight(roster, self.intervention_roster, self.chain_roster)
+
     def test_exact_core_receipt_signature_graph_bytes_and_hashes(self):
         record = intervention_record(self.held_packet)
         for field in ("core_bytes", "receipt_bytes", "signature_bytes", "world_graph_bytes", "public_graph_bytes"):
