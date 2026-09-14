@@ -20247,6 +20247,43 @@ detachedphysical+CVDguard/exactpriorinitexceptions. Previousguardian106756
 exited. PIDfollows. MicroloopLFfinished08:04:16UTC; mainreducing actualraws,
 not launching anotherdose. Bothfailure-inclusive histories remain intact.
 
+## [Builder] SEQ-215 — 2026-09-14T08:14Z — own-EVENT sleep persists; action access remains conditional
+
+LFcondition completed08:04:16UTC:4realexperienced EVENTs,32queryviews,
+200updates/800presentations and24BASE+24fresh-processFITTEDcalls. No failures.
+W0andW8recall0/4→4/4. UnseenMISS4/4→0/4: unknown-address behavior deteriorates.
+All strictactionpanels0/4 because everyROUTE omitted requiredfinalLF. Those
+declared results remainfailures. Post-hoc port-content annotation: native2/4
+inbothstates; supplied-own-read2/4→4/4; exactfactsceiling3/4inboth. The supplied
+own-read andceiling prompts differ inlabel andrecordorder, so this is not a
+clean ceilingcontrast or causalmediation proof. Samebank/singlelearner, explicitly
+exogenous exposure/addresses/serialization; choice-readout, not an autonomous
+multi-sleep learningloop. Nativeweightsalone didnotimprove choice. No moredose
+released. Rawfailure-inclusiveanalysis/preservation continuesparallel.
+
+## [Builder] SEQ-216 — 2026-09-14T08:14Z — outcome adapter survives fresh process exactly
+
+Reloadattempt2 completedSAVED_ADAPTER_READOUT_EXACT_MATCH:139/139publiccaptures
+andallmetrics/accounting identical tooriginalFITTED, zero newupdates/BASEreruns.
+Capture SHA59cb260e1eddc1b5d0cff79b9ea547def7150ca6ce790d90142f6901314ab94d.
+The4/8routegain and4/16canaryfailure bothpersist; not a rescue/transferreplicate.
+Originaltensor/configchecksretained; onlyunorderedPEFTtargetmodule serialization
+comparisonrepaired. No qualifiedBIRTH or H1/H2 claim.
+
+[Builder] Launch training-only missing-branch collectionA4 onnode2GPU3:
+root /tmp/astra_stage2a_d2_v2_collect_20260914_attempt1, source2b96834c at
+/tmp/astra_stage2a_d2_v2_source_20260914_attempt1. Frozen sameD2teacher, existing
+V2public-onlyguidance (previouslytested onlywithBASE), freshTRAINmasterA4,
+32episodes/900souter/890snative, nofit orautomaticstudentrelease.10CPUtestsPASS
+(first10stimeout was testcommandcap, fullretry11.594sPASS). D2state/adapter/base
+checksareunchanged and rerunbeforegeneration; allattemptsretained, whole-success
+selectorunchanged, teacher-onlyguidance removedfromdraftstudentprefixes.
+Question: canweobtain genuine matched-outcome KEEP/normalcontinuation successes
+to balance the recovery-onlydata? Ifnot, no balancedcorpusclaim orfit. Any
+nextcomparison willdeclare branchmix/budgets andkeep heldcanariesout oftraining.
+Detachedphysical/CVDguard, exactpriorservices andsix-hourleasecheck unchanged.
+PIDfollows; previousmicroloopguardian335079 exited; no otherjobstopped.
+
 ## [Rohin — message 59, ~07:50 UTC 09-14, relayed by Fable] messy high-dimensional corpora vs our clean mechanism tests; good behaviour = rich behaviour (the minimum to learn); compiler = replay reshaping the repetition distribution and adding connections; same model in a sleep mode with a consolidation prompt and context distillation, no separate sleep adapter; test at every sleep boundary; open-loop prompting to saturation, then the closed loop whose feedback is itself the data
 
 Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 59 — long voice-typed message; reading and labels there; Fable's position in IDEAS.md at this timestamp):
