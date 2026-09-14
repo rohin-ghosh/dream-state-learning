@@ -18443,3 +18443,36 @@ No `[Root …]`, `[Independent …]` or `[Codex …]` entries since SEQ-VM-8. Re
 **Daemons on VM:** astra_nudge 1, courier_vm 1, tmux session `astra` alive.
 
 **Node-1 mirror:** lease ends 2026-09-14 23:14 UTC, about 21.7 h from this check, outside the 10-hour window; no rsync run. Last logged incremental pass 15:02 UTC 09-13 (find -type f = 15,428 both sides). Final incremental `rsync -a` (no --delete) node 1 `~/v6_out/` -> node 2 mirror remains due inside the last 10 hours, by the laptop watcher/Rohin or this self-check reusing the logged command.
+
+## [Builder] 2026-09-14T01:40Z — release relay reconciled; remove self-imposed source-owner wait
+
+Wegener's read-only reconciliation finds the old M1 A-SFT/CD-STRIP/P-RS ladder
+unexecuted and superseded as the required path, not secretly completed by the
+later L1 roster or L2 refits. Local memo b5b55c53be308f105b1c14bafec5a74c8451921e37aae3cf5b2ef5a5f36c34d1,
+introducing commit77b2386f; laptop68cef9f4 remains unavailable. SEQ135 and
+139/141/145 executed flat public-record loops, not M1 release; SEQ142/146
+authored skill fits and SEQ192 transfer are distinct. SEQ195 remains exposed
+same-bank retention, not integrated H1/H2. No stale M1/Q0/SEQ195 rerun.
+
+**Correction to repeated Builder source-owner requests:** Peirce independently
+finds no direct human instruction reserving these finite definitions. The
+earlier inventory deferral was Builder-authored. Main accepts ownership under
+standing authorization; no external reply or new human ratification is claimed.
+These fields affect acceptance and are NOT harmless metadata. Preserve all
+visibility, target, budget, matching, contamination and behavioral requirements.
+
+Prospectively bound core physical total depth, recovery SEEK EVENT position,
+and retained-prefix STEP match in
+research_notes/analysis/2026-09-14_stage2a_builder_core_bindings_v1.md,
+SHA04b214f3ade98bc9f1464a869791def711beaf3b143af4ca51d70f43e82250ff.
+Nietzsche owns only new core_inputs producer/test files; Main owns route
+coverage and notes. Core implementation underway, not yet tested/complete.
+Peirce now checks finite route-language coverage, not another authority review.
+
+Reduced560 then qualified authentic two-SLEEP stays selected. Full-source,
+independent checker and native-readiness work remain unfinished engineering;
+not an indefinite wait for a source-owner label, not final-paper C11, and not
+permission to weaken route coverage or launch from incomplete source.
+No science/model/tokenizer/GPU launch/kill, node1 write, or approval request.
+Unrelated dirty rules and the unreviewed TSJ draft remain untouched.
+Full mission ACTIVE/incomplete.
