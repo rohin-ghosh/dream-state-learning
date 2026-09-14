@@ -20,7 +20,10 @@ or layout validation is claimed. Primary sources, scope and receipt:
 Dated statements below about unresolved TODO keys describe earlier snapshots.
 
 **Ongoing first-sprint working draft — research question unresolved.**
-This draft through SEQ195 (C105–C106) retains earlier positive and negative findings.
+Canonical `main.tex` now includes bounded September14 diagnostics through
+SEQ225, alongside earlier positive and negative findings. The new section
+separates own-EVENT persistence, outcome-SFT controller fits and coached cue
+collection; none establishes H1/H2 or completes the developmental campaign.
 SEQ192 fails prediction prompt-package robustness; SEQ195 supports only
 scheduled replay retention on one exposed eight-EVENT DEV bank. Both TeX
 manuscripts now report the results and limits in their actual results sections;
@@ -29,11 +32,58 @@ SEQ167 and SEQ169--173 are engineering-only logs, excluded from scientific resul
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
-independent manuscript review; no outcomes beyond SEQ195 are incorporated.
-Stage2A source/runtime remains blocked and supplies no scientific result here;
-the full sprint remains incomplete. No G3/H1/H2, parenting or freeze promotion.
+independent manuscript review. The old Stage2A runtime blocker is repaired;
+completed DEV fits now exist but do not qualify the integrated learner. The
+same-adapter second-sleep comparison supports bounded parent-free retrieval;
+the newly collected adult experience still awaits its write/use comparison.
+The full sprint remains incomplete. No G3/H1/H2, parenting or freeze promotion.
+
+## Current bounded evidence through SEQ225
+
+- **SEQ215:** own-EVENT cold W0/W8 recall0/4→4/4; unseen MISS4/4→0/4.
+  LF-relaxed content annotations are not replacement strict action scores.
+- **SEQ218:** BASE2/4, FITTED3/4, reader-OFF3/4; all12calls directly ROUTE.
+  Zero READs means the reader intervention was never exercised.
+- **SEQ217/220:** four A4 collection successes/32 episodes,30rows, with a
+  perfect branch/skin confound. A4-only versus copy-mixture gives4/8strictchains
+  each, CONTINUE0/4 each, canaries4/16→9/16, PROSPECT3/4→2/4. Not outcome-dose,
+  token or ordering matched; neither fit qualifies a BIRTH controller.
+- **SEQ219/221/222/223:** raw external-EVENT teaching collections progress
+  from mild BASE2/8selected to explicit BASE5/8, explicit saved-memory-actor4/8,
+  system-feedback saved-actor2/8, then latest-turn-feedback saved-actor8/8.
+  The last condition has20actualactionrows, with two one-read and two two-read
+  successes in each bank. These are coached data, not parent-free learning.
+- **SEQ224:** same-adapter second sleep retains old recall4/4 in W0/W8,
+  changes own routing3/4 without READ to4/4 with READ, and held-text routing
+  4/8 without READ to8/8 with READ. Reader-OFF becomes2/4 with READ; MISS0/4
+  remains broken. Primary independent replay checks32 episodes/96 calls.
+- **Completed cue controls:** all three cue-trained optimizer seeds have those
+  same endpoints; cue-loss-off seeds0/1/2 never READ, held text4/8 each, own/OFF
+  goals4/4,3/4,4/4. Thus old own-task accuracy alone is not a cue advantage.
+  Same S1/banks, not independent learner replication. Inputs/update indexes/
+  padding/replay match; cue labels alone masked with original loss denominator.
+- **SEQ225:** both preselected seed0 children independently record4/4 new
+  offered events in8 actual calls without teacher feedback. Raw records match;
+  exposure/format scaffold remains external, not autonomous exploration.
+- **Pending:** adult400-update same-adapter continuation and fresh BEFORE/AFTER
+  comparison on new facts, old recall, reader-OFF and controller retention.
+  Do not infer success from launch or include held readouts in training.
+
+Sources under `research_notes/analysis/`: `2026-09-14_a4_outcome_sft_first_result.md`,
+`2026-09-14_a4_copy_replay_comparison.md`, `2026-09-14_self_issued_read_route_first_result.md`,
+`2026-09-14_cue_collection_first_result.md`, `2026-09-14_explicit_cue_collection_first_result.md`,
+`2026-09-14_saved_actor_cue_first_result.md`,
+`2026-09-14_lastturn_cue_feedback_result.md`, and
+`2026-09-14_cue_second_sleep_first_result.md`. Latest-turn native root and
+prospective second-sleep decisions are in SEQ223 and subsequent `[Builder]`
+entries of `research_loop/COORDINATION.md`; complete builder CPU replay passed.
+Independent stored-data review of the latest-turn collection and primary
+second sleep is complete; full manuscript/adult terminal review remains
+pending. No installed TeX engine/build result is claimed.
 
 ## Current evidence and custody through SEQ195
+
+This section retains the earlier evidence cut, not current run status.
 
 - **C105 / SEQ192 negative:** three existing adapters, 24 shared fresh authored
   cases per FULL/MINIMAL view. FULL post 24/23/19 versus OFF 16/24 each;

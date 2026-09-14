@@ -1,5 +1,89 @@
 # Astra restart handoff — September14,2026,02:49UTC
 
+## CURRENT OVERRIDE — September14,2026,10:12UTC
+
+Full mission INCOMPLETE. All older cue collections/second-sleep fits are
+terminal; never rerun them. Primary second sleep SEQ224 and independent control
+reduction SEQ226 now show the cue-trained saved child actually READs and takes
+conditional second READs without the parent. Held-text8/8 versus loss-off4/8
+for all three optimizer seeds; shared S1 and banks, not learner replications.
+Old own-task cue4/4 versus control4,3,4 /4 is NOT a robust accuracy advantage.
+Every state retains old recall4/4 W0/W8 and still fails unseen MISS0/4.
+
+- Evidence: `research_notes/analysis/2026-09-14_cue_second_sleep_first_result.md`
+  and `2026-09-14_cue_loss_control_results.md`, committed35659f4c.
+- Adult collection SEQ225 COMPLETE in both seed0 arms:4/4grounded new events,
+  eight calls, no coaching. Same new bank, actual identical COLLECTION SHA
+  `8f9c66609077f15af1469caed513513d2db731a2a10cce65298dfbc81b53924a`.
+  Root node2 `/tmp/astra_adult_cycle_20260914_attempt1/{CUE_REPLAY,CUE_LOSS_OFF}/collect`.
+  Sourceea940ab1; fixed offered experience/format scaffold, not autonomous selection.
+- LIVE adult continuation source678faf15321124d3c74a2e9ab2be24f7624ba9f3,
+  snapshot `/tmp/astra_adult_stage_source_20260914_attempt1` on node2.
+  GPU4 cue guardian352770, GPU5 loss-off guardian352771:400update train then
+  fresh AFTER readout; GPU0 cue BEFORE guardian352772 and GPU1 off BEFORE352773.
+  BEFORE may already be terminal. Inspect per-arm `train/RESULT.json`,
+  `before/RESULT.json`, `after/RESULT.json`, and all FAILED/GUARD_ABORT files;
+  never restart merely because guardian exited. Training targets400oldmemory+
+  400oldcue+800newmemory, lr3e-5 freshAdamW seed0, oldcue masked only in control.
+  Fresh no-write baseline reuses initial S2. Not an H2 slope or full independent2x2.
+- Guards/source paths, exact UUIDs/adapters/pins are in
+  `gpu/astra_adult_stage_guard.sh`, preceding notebook release and remote launch receipts.
+  Both actual fits entered updates. No inference from low loss; inspect new
+  parametric routing/READs/readerOFF and all old/new recall after reload.
+- Goodall owns bounded adult reduction script/tests and analysis memo;
+  Euclid released collection/train source reviews (no blocker found).
+  Confucius owns design-only counterfactual readout memo; no new fit/model use.
+  Carson owns alternate draft/abstract/unsent collaborator edits; main owns
+  canonical main.tex/README and this handoff. Doc changes remain uncommitted.
+- Preserve unrelated dirty `gpu/codex/dream_state.rules` and untracked two-sleep
+  junction prospective packet. No node1 work; expiring-node mirror previously
+  complete, node2 lease September21 08:43UTC, six-hour finish margin.
+- Next: inspect adult terminal outputs, independently reduce them, then choose
+  only the next decisive test. Update both manuscripts and abstract to actual
+  results. No TeX engine available; no PDF-build claim. Collaborator UNSENT.
+
+## CURRENT OVERRIDE — September14,2026,09:45UTC
+
+Full mission INCOMPLETE. Main source4f68de78, release logb115c390. Read this
+before older overrides; prior collections/fits are terminal, never resubmit.
+
+- SEQ223 public feedback moved to last user turn gives8/8coachedsuccesses,
+  20ownactoractionrows; eachbank2oneREAD+2twoREAD. Sourcee840a243,
+  /tmp/astra_cue_lastturn_20260914_attempt1, node2, completed09:32:48UTC.
+  Original systemfeedback source3400fd19 gives2/8 andno2READ; nofit selected.
+  These are parent-script-directed examples, not learnedparent-free skill.
+- Second-sleep ACTUAL nativeCPUprepare PASSED:52rows(32oldmemory+20cue),
+  max338tokens, all20calls replayed, teacher absentfromstudentprefixes,
+  prepareRESULT SHA1611b66a70763862164be6f7e4c437aaf04fad19f2efe48288e583d7f9d9e2f0.
+  67CPUtests (15new+52adjacent) before launch; no TeX engine available.
+- LIVE campaign /tmp/astra_cue_sleep2_20260914_attempt1 on node2:
+  train outer347651/guardian347653 onGPU4, starts09:39:46UTC; 200updates
+  completed and trainRESULT exists. SLEEP2freshreadout launched automatically
+  in a NEW process afterward; terminal not yet inspected. Guardroot
+  guard_train.sh, logguardian_train.log, source4f68de78. No secondfit in guard.
+- SLEEP1no-write readout, guardian347652/GPU5, COMPLETE09:41:10UTC:
+  28calls, ownparametric3/4 andreaderOFF3/4 withzeroREADs both;
+  heldtext2/4+2/4 withzeroREADs; recallW0/W8 both4/4, unknownMISS0/4.
+  This is the prospective comparison baseline, not independent confirmation.
+- Fit starts selectedS1adapter8597605e,200batch4=400oldmemory+400cue,
+  lr3e-5rank8,freshoptimizer. Samebase explicitlycrosscheckedallreceipts;
+  sameadapterin-memoryS1hashc08852cb. Model generations no teacher atreadout.
+  Oldrecall andreaderablation separate fromnewheldexternaltexttransfer.
+- Immediate next: inspect S2RESULT/PANELS/rawcalls andcompare toS1;
+  preserve finaladapter andallreceipts, independent narrowterminalreview.
+  No automaticdose orreplication selected untilthisresult. DEVcandidate signal:
+  retain4/4bothviews, improveownparametricwithreaderintervention exercised,
+  heldtext>=6/8 and>=2gain. This is notH1/H2ormultiseedqualification.
+- Main canonicalmain.tex/README edits now add scopedSEQ215--223; Carsonowns
+  alternatefullTeX/abstract/unsentcollaboratordraft, pendingfinalrelease.
+  Confuciusowns lastturn/systemfeedback analysis; savedactoranalysisdone.
+  Euclidhelper/code committed4f68de78; do not redo. Ohmreviewclosed after
+  baseprovenance/deadlinefixes. No completecross-draftreview orPDFbuild claimed.
+
+Node1no newwork; expirySeptember14 23:14UTC, earlierbackupcomplete.
+Node2expirySeptember21 08:43UTC, six-hourmargin. Preserve dirtyGPUrules and
+untrackedtwo-sleepdraft. Currentpaperedits remainuncommitted atthisoverride.
+
 ## CURRENT OVERRIDE — September14,2026,09:25UTC
 
 Mission incomplete. Read this before older status. Main at f11c22b6; no live

@@ -10,42 +10,275 @@ on unseen verifiable tasks through continued consolidation (H2). Both remain
 proposed questions. We study frozen Qwen2.5-7B-Instruct with learning confined
 to LoRA adapters, separating acquisition, retention and downstream use.
 
-Through SEQ195, two component findings constrain this program. SEQ192 tests
-three existing prediction adapters without new fits on 24 shared authored
-cases in FULL/MINIMAL prompt packages. Typed-content scores are 24/23/19 and
-24/1/18, respectively, versus disabled-adapter baselines of 16/24 and 14/24
-per learner. Two learners fail the predeclared MINIMAL continuation rule; the
-branch stops. Content and strict format differ, and absent same-ID
-counterfactuals preclude isolated evidence-use attribution.
+In a bounded same-adapter two-sleep DEV test, the saved first-sleep learner
+continues for 200 updates on original-memory replay and its own actor outputs
+collected under explicit next-action coaching, with teacher text stripped.
+Audited fresh-process readouts change own-memory arrivals from 3/4 to 4/4 and
+READ uptake from 0/4 to 4/4. Disabling only the reader adapter gives 2/4 arrivals
+with READs in all four episodes, so this intervention is now exercised.
+Held external-text arrivals rise from 4/8 to 8/8; these are supplied records,
+not newly learned parametric memories. Known recall remains 4/4 under each
+wrapper, while unseen-address MISS remains 0/4.
 
-SEQ195 uses one exposed, format-assisted eight-EVENT DEV bank across three
-optimizer seeds and repeated cold W0/W8 views. After A200 acquires four old A
-records, both new-only writes reduce A from 4/4 to 0/4 while acquiring B 4/4.
-Scheduled replay and clean cumulative training each yield A4/4 and B4/4 in
-every seed/view. Controls match either new-item dose or update/presentation
-work, not both jointly; the saturated cumulative tie is not equivalence.
-Failure-inclusive work is 20 fits, 6,400 updates, 25,600 presentations and 288
-readouts, including five excluded fits and 1,000 updates.
+Completed optimizer-seed controls reproduce replay-arm own/reader-OFF/held
+arrivals of 4/4, 2/4 and 8/8 with READs throughout. With cue loss masked,
+own and reader-OFF arrivals are 4/4, 3/4 and 4/4 across seeds, and held arrivals
+are 4/8, all without READs. Thus consultation and held-text success differ,
+but old-bank accuracy has no consistent cue advantage.
 
-This is bounded within-bank rehearsal retention, not independent-bank
-generality, selectivity, action utility, parenting, clean lineage, broad G3 or
-evidence for H1/H2. Earlier negatives remain; no mechanism freeze follows.
-Integrated learning and the full sprint remain incomplete.
+All continuations share one saved learner and fixed banks; optimizer seeds
+are not independent learner replications. Earlier robustness, controller and
+preservation failures remain. This supports a narrow coached-policy learning
+result, not autonomous discovery, developmental H1/H2, qualified BIRTH or a
+self-improving learning rate. Both seed0 adult collections yield four grounded
+EVENTs in eight calls each with identical corpora; adult learning is not yet reported.
 
-## Evidence status and historical updates
+## Supporting evidence notes—not part of the abstract
 
-**Ongoing first-sprint working draft — research question unresolved.**
-This draft through SEQ195 (C105–C106) retains earlier positive and negative findings.
-SEQ192 fails prediction prompt-package robustness; SEQ195 supports only
-scheduled replay retention on one exposed eight-EVENT DEV bank. The actual
-abstract below and both manuscripts' results sections carry these bounded findings.
-SEQ167 and SEQ169--173 are engineering-only logs, excluded from scientific results.
-Recipe-level failures are diagnostics to guide repair, not a finished negative
-paper or the endpoint of the research program. Completion refers only to the
-named assays; the research question remains unresolved. Held for bounded
-independent manuscript review; no outcomes beyond SEQ195 are incorporated.
-Stage2A source/runtime remains blocked and supplies no scientific result here;
-the full sprint remains incomplete. No G3/H1/H2, parenting or freeze promotion.
+**September 14, 2026 result update — research question unresolved.**
+Audited SEQ224 and completed SEQ226 cue-loss controls are included below, followed by
+the earlier SEQ215/218/219, A4 and cue results. The controls are SEQ226;
+SEQ225 adds collection-only results, not adult-learning
+outcomes. Earlier positive and negative results remain. Scoped
+source gates closed PASS/SEPARATED and native DEV results exist: runtime
+blockage is not the current status. Reportability is not qualification.
+Historical engineering logs remain engineering-only; failed attempts are preserved.
+The sprint TeX and companion abstract are updated; canonical
+`paper_prototype/main.tex` was updated separately by Main.
+No complete cross-draft review is claimed. The collaborator draft stays UNSENT;
+H1/H2 and the program remain open.
+
+### Audited SEQ224: same-adapter continuation, not an autonomous flywheel
+
+This update supersedes the earlier result cutoff, not earlier failure scores.
+The saved first-sleep actor, rather than BASE, supplies the later cue targets.
+Under the same explicit guide it first selects only 4/8 external-text tasks
+(eight rows), versus BASE's 5/8 (eleven rows); all four wrong-goal first reads
+lack a second READ. Subsequent last-user-turn next-action feedback yields
+8/8 selected successes and 20 actor rows, versus system feedback's 2/8 selected
+and four rows (4/8 actual arrivals). The teacher explicitly computes the public
+comparison and supplies the next action; following it is not unassisted discovery.
+The 20 selected rows are actual saved-actor outputs, not substituted BASE outputs.
+Teacher text is stripped from their training prefixes.
+
+SEQ224 continues that exact S1 adapter for 200 batch-four updates using fresh
+AdamW, not resumed optimizer state: 400 original-memory plus 400 own-cue
+presentations, 24,480 supervised tokens. The 32 memory views represent four
+old EVENTs; 20 cue rows contain 12 READ and eight ROUTE targets. The original
+FINAL_LF_ONLY provenance and strict-collection failure remain unchanged.
+Independent source-only replay reproduces all 32 S1/S2 routing episode objects,
+all 24 recall/MISS outcomes and every captured model call: 28 S1+68 S2=96.
+Readouts run in fresh processes with no teacher in the public prompts.
+
+| Panel | S1 arrivals/correct | S1 episodes with READ | S2 arrivals/correct | S2 episodes with READ |
+| --- | ---: | ---: | ---: | ---: |
+| Own parametric /4 | 3 | 0 | 4 | 4 |
+| Own reader-adapter OFF /4 | 3 | 0 | 2 | 4 |
+| Held supplied text /8 | 4 | 0 | 8 | 8 |
+| Known recall W0 /4 | 4 | direct probes | 4 | direct probes |
+| Known recall W8 /4 | 4 | direct probes | 4 | direct probes |
+| Unseen MISS /4 | 0 | direct probes | 0 | direct probes |
+
+S2 takes two conditional second READs on the own bank and four across the two
+held banks. Its own parametric reader makes six model calls; reader-OFF makes
+eight, returning literal MISS every time, while the actor adapter remains on.
+There are twelve external held lookups, not model calls. Thus episodes with
+READ are not numbers of reader calls. The OFF intervention is exercised here,
+unlike SEQ218, but includes failed memory content/abstention behavior and is not
+an all-base actor comparison. The held replies are researcher-supplied external
+EVENT text, not new parametric-memory acquisition. The reader and actor share
+the updated adapter; unchanged 4/4 recall does not prove identical reader function.
+Unseen failures are not merely newline errors: none even emits bare MISS.
+
+### SEQ226 cue-loss controls: shared-S1 optimizer sensitivity
+
+The completed counts are now independently reduced in the cue-loss control
+analysis, including individual episode outcomes and READ traces (SEQ226).
+No broader scientific qualification is assigned here. Reuse primary
+CUE_REPLAY seed0; additional replay seeds1/2 and CUE_LOSS_OFF seeds0/1/2 all
+start from the **same exact saved S1**, with the same banks, 52 rows, 200 updates,
+batch indices, inputs/padding and 400 memory-replay presentations. CUE_LOSS_OFF
+masks only the two final cue rows per batch and normalizes the remaining loss
+by the original full target count, avoiding upweighting the memory labels.
+Active cue-target supervision differs by design; this is not a fully unparented life.
+
+| Arm / optimizer seed | Own arrivals /4 | Reader-OFF arrivals /4 | Held-text arrivals /8 | Episodes with READ: own / OFF / held |
+| --- | ---: | ---: | ---: | --- |
+| CUE_REPLAY 0 | 4 | 2 | 8 | 4/4 / 4/4 / 8/8 |
+| CUE_REPLAY 1 | 4 | 2 | 8 | 4/4 / 4/4 / 8/8 |
+| CUE_REPLAY 2 | 4 | 2 | 8 | 4/4 / 4/4 / 8/8 |
+| CUE_LOSS_OFF 0 | 4 | 4 | 4 | 0/4 / 0/4 / 0/8 |
+| CUE_LOSS_OFF 1 | 3 | 3 | 4 | 0/4 / 0/4 / 0/8 |
+| CUE_LOSS_OFF 2 | 4 | 4 | 4 | 0/4 / 0/4 / 0/8 |
+
+Every arm retains known recall 4/4 under each wrapper and unseen MISS 0/4.
+Cue-loss-off reader-OFF is unexercised because those actors never READ; its
+accuracy is not a separate retrieval effect. The controls distinguish the
+READ policy and success on the held supplied-text panel, **not a consistent
+old-bank accuracy advantage**: cue-loss-off seeds0/2 already reach 4/4 without
+READs, and seed1 reaches 3/4. Do not pool these as three independent children,
+three independent experiences, or independent fact-bank replications. These
+are optimizer-seed sensitivities of one initialized learner on shared tasks.
+Nor does narrow held-text success establish general conditional reasoning,
+parametric acquisition of held facts, or an improving adult learning rate.
+
+The first SEQ224 audit alone could not separate cue supervision from additional
+memory replay/updates. The subsequent matched-input loss controls address that
+specific contrast at this fixed bank/recipe, not all effects of prior parenting
+or shared actor/reader changes. No cue-specific old-accuracy claim is licensed.
+Substrate persistence, parenting behavior, later autonomous learning and
+self-improving learning remain separate claim levels; no H1/H2 or BIRTH promotion.
+### SEQ225: collection only; adult learning not yet reported
+
+Both seed0 adult collections pass: CUE_REPLAY and CUE_LOSS_OFF each produce
+four grounded EVENTs in eight calls, with 32 replay-compiled rows each.
+No teacher participates, but generic external exposure and format scaffolding
+remain. Both actors generate identical records/prompts and the same complete
+corpus. This is collection fidelity, not an advantage in learning or autonomous
+task discovery. Source `ea940ab1`; Builder's September 14 10:08 UTC SEQ225 entry
+records unchanged base/adapter state, zero fits and no infrastructure failures
+during collection. Collection SHA256:
+`8f9c66609077f15af1469caed513513d2db731a2a10cce65298dfbc81b53924a`.
+Main reports source `678faf15` running the declared 400-update training and
+fresh BEFORE/AFTER phases. These are live work, not adult-learning results;
+no new accuracy, retention or learning-rate outcome is incorporated.
+Canonical main/README were updated separately through SEQ225, including controls;
+no complete cross-draft review is claimed. The collaborator draft remains UNSENT.
+
+- [Saved-actor cue analysis](../research_notes/analysis/2026-09-14_saved_actor_cue_first_result.md).
+- [Last-turn/system feedback analysis](../research_notes/analysis/2026-09-14_lastturn_cue_feedback_result.md).
+- [SEQ224 independent terminal replay](../research_notes/analysis/2026-09-14_cue_second_sleep_first_result.md).
+- Primary campaign: `/tmp/astra_cue_sleep2_20260914_attempt1`, source
+  `4f68de78a036906a679558f31dcd1d31e02b3ded`; local audit:
+  `gpu_artifacts_local/astra_cue_second_sleep_first_result_20260914/`.
+  S2 readout RESULT SHA256
+  `99c5ef35ccb5b15117a7f6c1c1cf1afaf6f216556e35dce1589c3dfbd2c9c721`;
+  final adapter-file SHA256
+  `6ca6b6a300d5b19816eef1e50a03e78e6eb212f699a746d001332e1eae6f21ff`.
+- Control campaign: `/tmp/astra_cue_sensitivity_20260914_attempt1`;
+  recipe binding is the Builder's September 14 09:49/09:52 UTC ledger entry;
+  completed counts are independently reduced in the
+  [cue-loss control analysis](../research_notes/analysis/2026-09-14_cue_loss_control_results.md).
+- [Builder SEQ225 collection record](../research_loop/COORDINATION.md), September 14 10:08 UTC.
+
+Reported native replays and hashes belong to those records, not new execution
+by this document editor. Older dated statements below describe their original
+cutoffs; their scientific limits and negative evidence are retained.
+
+### Own-EVENT persistence and self-issued access
+
+SEQ215's separately named FINAL_LF_ONLY condition uses four actually experienced
+EVENTs, 32 query views and 200 updates/800 presentations, followed by 24 BASE
+and 24 fresh-process FITTED calls. Cold W0/W8 recall is 0/4→4/4, but
+unknown-address MISS falls 4/4→0/4. All strict action panels remain 0/4 because
+ROUTE outputs omit the required final LF. Post-hoc port-content annotations
+are not repaired scores: native action stays 2/4, supplied-own-read rises
+2/4→4/4 and exact-facts ceiling stays 3/4. Prompt labels/order differ, precluding
+a clean mediation inference. Exposure, addresses and writing are externally
+scheduled, not an autonomous multi-sleep loop. The original strict collection
+remains 0/4 admitted with no fit; its successor does not rewrite those failures.
+
+SEQ218 gives BASE 2/4, FITTED 3/4 and FITTED_READER_OFF 3/4 on four exposed
+tasks, with four actor calls per arm and **zero READs in every arm**: 12/60
+allowed calls, zero fits and no observed infrastructure/parse failure.
+Reader-OFF is unexercised, not a successful ablation or evidence that retrieval
+is ineffective. Do not pool correlated same-task arms as independent trials.
+SEQ215's actual fresh-process result is distinct from the conductor's
+same-process roundtrip; neither alone establishes autonomous action utility.
+
+### A4-only and source-action copy mixture: both terminal, neither qualified
+
+Each fresh seed0 rank8 fit completes 256 batch-four updates and 1,024
+presentations. A4's 30 outcome rows originate in four selected successes/32
+attempts; KEEP is skin0-only, REVISE skin1-only and from one recovery world.
+Teacher strategy is absent from student prefixes. This is single-seed DEV,
+not independent-world replication. Counts below are A4-only versus mixture.
+
+| Criterion | A4-only | Copy mixture |
+| --- | ---: | ---: |
+| SEEK paired /4 | 4 | 4 |
+| PROSPECT paired /4 | 3 | 2 |
+| CHECK paired /4 | 4 | 4 |
+| CONTINUE paired /4 | 0 | 0 |
+| Strict chains /8 | 4 | 4 |
+| Copy canaries /16 | 4 | 9 |
+| Individual criteria passed /10 | 7 | 6 |
+
+Both aggregate qualification booleans are false. Typed interventions are 32/32,
+but semantic member correctness is 27/32 versus 26/32; useful reads and typed
+steps are 8/8 in both, not eight successful routes. Each fit uses 56 BASE and
+122 FITTED physical calls, each state reserving 280 slots, with zero recorded
+accounting failures. All eight raw chain action sequences, public response bytes
+and transitions match between fitted arms; strict successes are zero-based
+indices 3,5,6,7. Five chains arrive and STOP, but chain2's two intervening checks
+fail strict success. A4 differs from earlier A3's 4/8 by gaining normal chain5
+and losing strict recovery chain2, not by increasing the total.
+
+The mixture repairs four STOP-copy canaries and one STEP-copy canary, but every
+at-GOAL CONTINUE member still emits READ INDEX instead of STOP. One additional
+wrong-goal PROSPECT member lowers its pair score. Twelve added rows are
+**authored copy prompts around actual training-action bytes**, not new experienced
+trajectories. They replace outcome slots: 768 outcome+256 copy presentations
+versus 1,024 outcome-only. Total supervised tokens are 13,431 versus 13,284;
+outcome tokens are 10,054 versus 13,284. Ordering and per-row/family exposure
+also change. This is a descriptive mixture effect, not isolated replay causality
+or a forgetting-mechanism identification. Adapter-only backups/file hashes
+are not full optimizer-resume checkpoints or fresh-process reload tests.
+
+### Frozen BASE external-text cues, not saved-actor learning
+
+SEQ219 uses frozen **BASE without an adapter**, not the saved first-sleep actor.
+Eight grounded EVENTs require 8 EXPLORE+8 EVENT calls, followed by 11 cue calls:
+27 model calls total. Only 2/8 cue attempts read, both succeed, yielding five
+student rows (3 READ, 2 ROUTE). Six skip reading: three wrong outcomes and three
+lucky arrivals, all excluded by the read-required selector. Actual arrivals are
+5/8; selected coverage is 2/4 worlds, 1/2 banks and 0/4 complete goal pairs.
+
+The explicit-first-READ continuation reuses the same eight EVENTs/tasks with
+14 original file bindings verified, zero new EXPLORE/EVENT calls, 17 new cue
+actor calls and zero fits. Read uptake rises 2/8→8/8, selected arrivals 2/8→5/8,
+but actual arrivals remain 5/8. Nine external READs yield eleven selected rows
+and 1/4 complete selected goal pairs. Of four first reads mismatching GOAL,
+only one elicits the needed second read; three commit the wrong-goal EVENT's
+DID. Both captured-response replays reproduce all reports and consume all
+27 original/17 continuation calls, failures included; no recorded infrastructure,
+nonterminal or truncation failures occur. These are reused training tasks,
+not a new independent evaluation bank.
+
+READ returns **copied, externally stored raw EVENT text, not parametric recall**.
+All original EVENTs fail exactly-one-final-LF syntax but pass the launched
+tolerant grounding check; their raw zero/double-LF strings remain unchanged.
+Teacher coaching is present during collection and stripped from student prefixes.
+Five/eleven selected rows are draft data, not a fitted cue policy; structural
+mask checks are not native-tokenizer/mask admission. These BASE outputs cannot
+silently become the saved memory actor's own later thinking. That earlier
+cutoff is superseded by the separately sourced saved-actor collection and
+SEQ224 continuation above; the BASE collection's provenance is unchanged.
+
+### Claim boundaries and evidence scope
+
+Substrate persistence, parenting behavior, later autonomous learning and
+self-improving learning remain separate claim levels. Bounded writes/recall
+and coached external-text consultation do not establish task-disjoint H1,
+unseen-task continued-learning H2, qualified BIRTH, autonomous parenting or
+a self-improving flywheel. Reused DEV banks, goal pairs and optimizer seeds
+are not independent samples. Earlier findings and failures remain; the research
+continues without mechanism freeze or mission-complete claims.
+
+The terminal-artifact analyses below bind raw outputs, manifests and limitations.
+Their reported replays/audits are not new native executions by this writer or
+a full independent scientific review. No new literature references or sends
+accompany this revision. No local TeX engine/BibTeX was available; PDF/layout
+and length validation remain outstanding.
+
+- [SEQ215 microloop analysis](../research_notes/analysis/2026-09-14_microloop_lf_first_result.md): `/tmp/astra_microloop_lf_20260914_attempt1`.
+- [SEQ218 raw joins](../research_notes/analysis/2026-09-14_self_issued_read_route_first_result.md): `/tmp/astra_event_read_route_20260914_attempt1`.
+- [SEQ219 first cue analysis](../research_notes/analysis/2026-09-14_cue_collection_first_result.md): `/tmp/astra_cue_collect_20260914_attempt1/run`.
+- [A4-only terminal 09:02:52 UTC](../research_notes/analysis/2026-09-14_a4_outcome_sft_first_result.md): `/tmp/astra_outcome_a4_20260914_attempt1/run`. RESULT SHA256 `2c60e299832912db317e6f824a4aba9fdd33f8fc1f390c096ffb5c1336f14736`.
+- [Copy mixture terminal 09:11:49 UTC](../research_notes/analysis/2026-09-14_a4_copy_replay_comparison.md): `/tmp/astra_outcome_a4_replay_20260914_attempt1/run`. RESULT SHA256 `e4140a4c54e6a12643e39ff00eeb89a4bc9e5901a94a2201d2a49d66a5c718a8`.
+- [Explicit cue terminal 09:10:15 UTC](../research_notes/analysis/2026-09-14_explicit_cue_collection_first_result.md): `/tmp/astra_cue_explicit_20260914_attempt1/run`. RESULT SHA256 `8d79dbe0d70ffda6a93264b4a063583bb3354bd9aca3da6a4bcd37e2c6820f6c`.
+
+**Historical through-SEQ195 result detail (preserved).**
 
 **Historical SEQ188 / C104: no exact sequence acquisition; retention undefined.**
 The eligible changed-recipe screen alters output without exact acquisition;
@@ -543,8 +776,80 @@ cases remain unrequested; no G3, parenting, child sleep, H1/H2, clean lineage,
 novel-fact transfer or substrate freeze follows. Model origin remains
 `UNRESOLVED_LOCAL_HASHES_ONLY`; C11 deferred. Collaborator **UNSENT**.
 
-Internal staging only; the canonical abstract now includes the bounded update through SEQ195 while preserving its historical text. H1/H2 remain the proposed
-developmental thesis, not established outcomes.
+Internal staging only. The sprint abstract includes the September 14 terminal
+results; canonical main.tex was updated separately by Main. No complete
+cross-draft review is claimed. H1/H2 are proposed questions, not established
+outcomes. The earlier dated record is retained.
+
+## Historical concise abstract — September 14 before SEQ224
+
+Superseded by the SEQ224 update; retained verbatim.
+
+We ask whether developmental teaching produces durable, adapter-mediated
+learning-process competence on task-disjoint situations after reload and
+removal of teacher access and temporary teaching context (H1), and whether it
+increases improvement from new, self-generated, externally grounded experience
+on unseen verifiable tasks through continued consolidation (H2). Both remain
+proposed questions. We study frozen Qwen2.5-7B-Instruct with learning confined
+to LoRA adapters, separating acquisition, retention and downstream use.
+
+Earlier prompt-robustness failures and bounded same-bank rehearsal retention
+remain. In an own-EVENT write, fresh-process cold recall improves from 0/4 to
+4/4, but unknown-address rejection falls from 4/4 to 0/4 and strict action
+panels remain 0/4. A separate self-issued-access diagnostic scores BASE 2/4,
+FITTED 3/4 and reader-OFF 3/4 with zero READs throughout, leaving reader-OFF
+unexercised.
+
+Outcome-only A4 and source-action copy-mixture fits each complete 256 updates
+and solve 4/8 strict chains with identical chain outputs. Copy canaries improve
+from 4/16 to 9/16, while PROSPECT falls from 3/4 to 2/4 and CONTINUE remains
+0/4. Neither controller qualifies; replacing outcome presentations with copies
+does not isolate replay causality.
+
+Separately, frozen BASE collection consults externally retained raw EVENT text,
+not parametric recall. Explicit first-READ coaching increases read uptake from
+2/8 to 8/8 and read-backed selection from 2/8 to 5/8 on reused tasks, while
+GOAL arrivals stay 5/8. Eleven selected student rows are data, not a fitted
+policy or the saved learner's subsequent experience.
+
+These small, adaptively reused DEV panels distinguish persistence, consultation
+and reliable conditional action. Shared tasks and optimizer seeds are not
+independent banks. No qualified birth, autonomous parenting, H1/H2 result or
+self-improving learning loop is established; the research program continues.
+
+## Historical concise abstract — September 13, 2026
+
+Superseded by the September 14 active abstract; retained verbatim.
+
+We ask whether developmental teaching produces durable, adapter-mediated
+learning-process competence on task-disjoint situations after reload and
+removal of teacher access and temporary teaching context (H1), and whether it
+increases improvement from new, self-generated, externally grounded experience
+on unseen verifiable tasks through continued consolidation (H2). Both remain
+proposed questions. We study frozen Qwen2.5-7B-Instruct with learning confined
+to LoRA adapters, separating acquisition, retention and downstream use.
+
+Through SEQ195, two component findings constrain this program. SEQ192 tests
+three existing prediction adapters without new fits on 24 shared authored
+cases in FULL/MINIMAL prompt packages. Typed-content scores are 24/23/19 and
+24/1/18, respectively, versus disabled-adapter baselines of 16/24 and 14/24
+per learner. Two learners fail the predeclared MINIMAL continuation rule; the
+branch stops. Content and strict format differ, and absent same-ID
+counterfactuals preclude isolated evidence-use attribution.
+
+SEQ195 uses one exposed, format-assisted eight-EVENT DEV bank across three
+optimizer seeds and repeated cold W0/W8 views. After A200 acquires four old A
+records, both new-only writes reduce A from 4/4 to 0/4 while acquiring B 4/4.
+Scheduled replay and clean cumulative training each yield A4/4 and B4/4 in
+every seed/view. Controls match either new-item dose or update/presentation
+work, not both jointly; the saturated cumulative tie is not equivalence.
+Failure-inclusive work is 20 fits, 6,400 updates, 25,600 presentations and 288
+readouts, including five excluded fits and 1,000 updates.
+
+This is bounded within-bank rehearsal retention, not independent-bank
+generality, selectivity, action utility, parenting, clean lineage, broad G3 or
+evidence for H1/H2. Earlier negatives remain; no mechanism freeze follows.
+Integrated learning and the full sprint remain incomplete.
 
 ## Historical extended abstract — verbatim evidence log
 
