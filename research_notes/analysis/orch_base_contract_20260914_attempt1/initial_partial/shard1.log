@@ -1,0 +1,16 @@
+verified_source_files=540
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 7771.73it/s]
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/localhome/local-rohing/orch_base_contract_20260914_attempt1/source/gpu/orch_base_contract_screen.py", line 156, in <module>
+    main()
+  File "/localhome/local-rohing/orch_base_contract_20260914_attempt1/source/gpu/orch_base_contract_screen.py", line 141, in main
+    assert _state_hash(mounted(engine.model)) == portable.PARENT_STATE
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/localhome/local-rohing/orch_base_contract_20260914_attempt1/source/gpu/orch_base_contract_screen.py", line 27, in mounted
+    assert not any(parameter.requires_grad for parameter in model.parameters())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

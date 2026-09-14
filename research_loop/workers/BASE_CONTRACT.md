@@ -39,3 +39,17 @@ Own outer guardian PIDs442252/442256/442260/442264; actual native
 resource scan passed after source archive verification540files. No other GPU
 writes. Up to32calls fixed; author reduction/replay tooling is separate from
 immutable native source. Waiting for raw outcomes and final frozen-state checks.
+
+2026-09-14T23:07Z [Builder] NON-MATERIAL REPAIR PRE-GPU PASS. Initial11calls
+preserved; all native exits are our readonly assertion AFTER BASE context exit.
+Installed PEFT restores requires_grad(True) without altering weights. Real local
+CPU fixture reproduces this and verifies repaired finally restores frozen flags
+with identical parameter bytes;39/39CPU pass. New source420cfcd4d7d3b223ffb9269b08aa7b5109ce767a
+published via concurrent Main sync; archive59775b7f1ead54d1fc18e0eddcc5290cbc449702551caa85d989756505472dea.
+Recovered provenance/base/tokenizer and detached resource scans pass0–3. Recovery
+imports exact11raw calls and skips all completed task/state pairs; no retries or
+regeneration, fixed32aggregate cap. Original23:30:23UTC guardian deadline retained.
+Crucial limitation: initial11lack post-generation mounted hashes; CPU no-change
+proof/disk verification cannot substitute for that missing historical observation.
+Report behavioral counts with provenance gap, NOT a clean paired null. See
+REPAIR_PROTOCOL.md. This entry and receipts must publish before recovery launch.
