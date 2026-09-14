@@ -52,3 +52,20 @@ repeat fits or unowned GPU kills. Source/phase commands, stage timeout PIDs,
 resource scans and deadlines are in each branch's launch directory. Further
 status will report actual token/call/update counts and saved-state joins, not
 inferred results or promotion. Other workers and rich branches are untouched.
+
+## [Builder/Nash] 2026-09-14 19:50:19 UTC — actual GPU work confirmed
+
+Source7f9d4251 is published (Main reports push via7e53aa6b). Node3 GPU0/FULL
+native86119 and GPU1/LOSS_OFF native86109 each completed19/2928updates,
+31.14/31.26fit seconds, using35788MiB each. GPU2 baseline native86114 has71
+actual calls,15560MiB; all three guardians remain alive, no FAILED receipts.
+These are actual jobs, not just reservations. Staging is complete; full native
+CPU preparation was51.44sPASS. The amended launch plan is attempt2/LAUNCH_PLAN.md;
+attempt1's sequential plan and original source staging remain preserved.
+
+Prospective AFTER phase notice: each already-running fit guard is authorized
+to start exactly one fresh readonly AFTER after its fixed2928-update TRAIN
+completes, only if the shared baseline has a COMPLETE receipt. Each AFTER
+retains its3600s ceiling within the original14760s guardian deadline; no budget
+extension or repeat fit. Its actual native PID/start and saved-state join will
+be recorded once it starts. No current baseline score is used to change TRAIN.
