@@ -968,3 +968,50 @@ Node2 interpreter /localhome/local-rohing/v2/venv/bin/python; verified model
 snapshot a09a35458c702b33eeacc393d103063234e8bc28. Use existing wrapper.
 Preserve unrelated dirty gpu/codex/dream_state.rules and untracked two_sleep
 prospective packet. Pull safely before append, scoped commits/push after logs.
+
+## Continuation override —2026-09-14T04:51UTC
+
+SEQ-197/198 and following notebook updates supersede the previous active state.
+Qualification2 completed512boundary/adversary records with zero failures;
+mandatory integrity suites remain live under3224182. No finalPASS yet.
+Original source separation terminated ERROR aggregate_byte_bound_exceeded;
+all inputs preserved. Only join resource bound changed512MiB→2GiB, core blobs
+still32MiB. Retained replay1 failed before join because whole allocation
+48,996,088bytes exceeded core-only limit. Main added allocation-only64MiB
+bound and regression;30testsPASS15.978s. No core/scanner/anchor change.
+
+Retained replay2 started04:45:12.351081UTC, controller3308540/child3308558,
+gpu_artifacts_local/astra_stage2a_separation_replay_20260914_attempt2 (log adds
+.log). Inputs verified512birth/64intervention/16chain worlds,1173299279unique
+bytes including allocation/shared custody; full join pending.2GiB memory cap.
+Do not repeat constructors, switch master, reselect anchors or overwrite roots.
+Popper01a09dfd-481e-7131-8854-412e3e0012e1 reviews exact final CPU receipts.
+
+Older node1 baseline verification now PASS15428files/96975926735bytes, no
+differences/instability; terminal_validation.json in
+gpu_artifacts_local/node1_baseline_verification_20260914_attempt1 hasSHA256
+3f21e04a8037d6c12b2f4882bf1fddc2a052a674129a11d088130e19901d98f5.
+No transfer needed; not an application restore or outside-scope guarantee.
+Cicero and Ptolemy closed. Lease deadlineSeptember14 23:14UTC unchanged.
+
+Main native model initializer tested with real config-built tinyQwen/PEFT on
+node2:10PASS2.551s, no pretrained weights/tokenizer/forward/CUDA initialization.
+Artifact gpu_artifacts_local/astra_stage2a_native_models_cpu_20260914_attempt2.
+Wrapped path mapping detects base changes after tensor-object replacement.
+Native tokenizer receipt bridge47synthetic testsPASS49.859s after empty package
+marker regression. Actual tokenization still pending. Relocation may alter only
+actual filesystem root mapping, never stored original receipt or other fields.
+
+Carson01a09e1f-9b92-7233-9c25-fd6e735652b0 owns ONLY new
+gpu/astra_stage2a_native_entry.py and tests/test_astra_stage2a_native_entry.py;
+no native execution delegated. Main handles integration/review then qualified
+actual preparation. Need actual BASE fingerprints and activeATOM bindings,
+not conductor's ATOM-only noninterference hashes. Aborted conductor returns
+must be handled as failure. Same-process checkpoint roundtrip remains NOT
+fresh-process persistence. Full parenting campaign/manuscript mission incomplete.
+
+Runtime-wheel search bounded negative, not globalabsence. Notebook04:43Z
+prospectively records DEV simple-hygiene exception: installed versions/metadata
+and measured local identity, not original-wheel attestation; final-paperC11 gap
+explicit. Exact torch/build/runtime version mismatches still block until
+localized. No package/base/source science invariant is silently changed.

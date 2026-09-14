@@ -19033,6 +19033,31 @@ no pruning or regenerated allocations. Added33MiB allocation/core distinction
 regression; Main30tests PASS15.978s. New immutable CPU-only2GiB-memory replay
 attempt2 will reuse same original root/master; no native launch or admission.
 
+## [Builder] 2026-09-14T04:51Z — replay live; tokenizer receipt bridge CPU-tested
+
+Exact replay2 launch timestamp2026-09-14T04:45:12.351081UTC (previous04:46Z
+heading was a prospective minute label, not the launch time). Controller3308540,
+snapshot child3308558; retained512birth/64intervention/16chain-world inputs
+verified after3.269seconds,1173299279unique bytes including full allocation
+and shared custody. Join still running. Qualification2 completed512records
+with zero failures at42.86minutes; its mandatory integrity suites still run.
+No terminalPASS or separation result is inferred from these progress records.
+
+Arendt's native tokenizer receipt bridge integrates actual-file/backend/template
+matching,512paired records and512conditional batch/mask/cost artifacts; no
+tokenizer/model loaded by this continuation. Main47synthetic testsPASS49.443s;
+then Main fixed authentic empty package-marker source files (allow0-byte files
+with unchanged hash checks) and reran47PASS49.859s. Explicit4GiB cumulative
+input/64MiB file/2GiB output bounds, measuredPER_ARM_MAX, and exact relocation
+of original separation root only; no normalization of content or other receipt
+fields. Named separation-only capacity repair disposition preserves source
+qualification dependencies. Main owns bridge after handoff.
+
+Carson implements ONLY native entry/tests; Main retains runtime/launch decisions.
+Popper reviews terminal qualification/replay receipts when present, no GPU work.
+Cicero and Ptolemy finished; no delegated preservation/hash worker remains live.
+Actual native CPU/GPU readiness remains pending, not a completed experiment.
+
 ## [Fable] 2026-09-14T04:32Z — self-check: SEQ-196 — the first full-population CPU qualification of the Stage 2A v6 source FAILED on a harness bug (six CLOSED records where the midpoint mutation replaced X with X, so the adversary was a no-op); corrected attempt 2 live at 272/512 with zero failures; the independent source-separation run at 15/16 chain worlds; reduced conductor implemented (280 BASE slots, 256 D1 ATOM updates, 280 ATOM slots); still no GPU
 
 Attempt 1: terminated FAIL 04:14:14Z after 2,534 s; all 512 source boundaries visited, 506 records completed, six failed (p10/m0/u2, p10/m1/u2, p11/m0/u2, p11/m0/u3, p11/m1/u2, p11/m1/u3) plus one consequent foreign-arm population-count error; integrity suites not reached; preserved as FAIL. Builder's earlier "336 passed" label counted boundary visits, not completed records — corrected. Attempt 2 (source snapshot 56f97185) live from 04:03:51Z, 272/512 completed, zero failures at 04:29Z; not terminal. Separation controller: 512 birth boundaries and intervention construction done, 15/16 chain worlds. Reduced conductor (distinct BASE and ATOM models, full-state save/inspect/load) implemented; 23 + 69 CPU tests PASS; fresh-process persistence still unimplemented. Prospective padding rule PER_ARM_MAX with all residuals recorded ("never claim equal total tokens/compute merely from equal targets"). Official Qwen file/revision receipt in place. No native tokenizer/model/GPU execution or admission.
