@@ -327,7 +327,8 @@ def generate_material(tokenizer, *, salt_limit, max_context, canaries=None, chec
 
 def validate_training_manifest(manifest, tokenizer, *, state, max_context):
     _require(state in source.STATES[1:] and manifest["state"] == state
-             and manifest["schema"] == SCHEMA and manifest["material_kind"] == "NATIVE_TOKENIZER_MATERIAL",
+             and manifest["schema"] == SCHEMA and manifest["material_kind"] in (
+                 "NATIVE_TOKENIZER_MATERIAL", "PCHAIN2_FREE_ENDPOINT_DEV_V1"),
              "bound_native_training_state_required")
     _require(manifest["recipe"] == source.fit_recipe(state) and manifest["dose"] == "D1"
              and manifest["learner_seed"] == 0, "fixed_D1_recipe_required")
@@ -344,7 +345,8 @@ def validate_training_manifest(manifest, tokenizer, *, state, max_context):
 
 def validate_readout_manifest(manifest, tokenizer, *, state, max_context):
     _require(state in source.STATES and manifest["state"] == state and manifest["schema"] == SCHEMA
-             and manifest["material_kind"] == "NATIVE_TOKENIZER_MATERIAL", "bound_native_readout_state_required")
+             and manifest["material_kind"] in ("NATIVE_TOKENIZER_MATERIAL", "PCHAIN2_FREE_ENDPOINT_DEV_V1"),
+             "bound_native_readout_state_required")
     _require(manifest["tokenizer"] == tokenizer_signature(tokenizer), "material_tokenizer_mismatch")
     slots = [asdict(slot) for slot in source.d1_readout_slots() if slot.state == state]
     _require([call["slot"] for call in manifest["calls"]] == slots, "exact_state_readout_roster_required")

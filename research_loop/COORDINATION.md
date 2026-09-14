@@ -19738,3 +19738,15 @@ call slots,0.25reservedGPUh. Physical+CVD reservation scan and six-hour lease
 margin required by guard immediately before process. No other job stopped;
 CLOSED attempt2 continuesGPU2 guardian321866/worker321882. Collector launch PID
 follows. This is scaffolded data generation, not autonomous-parenting evidence.
+
+[Builder] 2026-09-14T06:50Z — collector launched node2GPU0, guardian323190,
+worker323206. Guard verified no physical/CVD owner and sufficient lease margin.
+Fresh root /tmp/astra_stage2a_outcome_collect_20260914_attempt1; sourcec3e70767.
+900s bound; no fit or helper retained at later release. CLOSED remainsGPU2.
+
+[Builder] 2026-09-14T06:50Z — free-endpoint material implementation ready:
+64CPUtestsPASS (13free-material,25native,26preparation). Native acceptance delta
+only admits separately labeled PCHAIN2_FREE_ENDPOINT_DEV_V1. Main will generate
+once using original192accepted IDs and bound16canaries; no solver/reallocation.
+No null-clearance or original-protocol claim. Model fits require actual resulting
+token/mask checks, and remain isolated DEV siblings, not ancestry or L1→L2 gates.

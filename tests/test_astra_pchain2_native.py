@@ -215,6 +215,15 @@ class NativePreparationTests(unittest.TestCase):
             native.validate_training_manifest(self.material["training"]["ATOM-JUNCTION"], self.tokenizer,
                                               state="ATOM-JUNCTION", max_context=4096)
 
+    def test_material_kind_allowlist_remains_exact_for_both_native_interfaces(self):
+        for kind in ("DIAGNOSTIC_INJECTED_SOLVER", "TOKENIZER_CANARY_ONLY", "PCHAIN2_FREE_ENDPOINT_DEV_V2", ""):
+            for namespace in ("training", "evaluation"):
+                manifest = self.manifest(namespace, "ATOM-JUNCTION")
+                manifest["material_kind"] = kind
+                validate = native.validate_training_manifest if namespace == "training" else native.validate_readout_manifest
+                with self.subTest(kind=kind, namespace=namespace), self.assertRaisesRegex(ValueError, "bound_native"):
+                    validate(manifest, self.tokenizer, state="ATOM-JUNCTION", max_context=4096)
+
     def test_extra_assistant_special_or_template_suffix_is_rejected(self):
         messages = deepcopy(self.material["training"]["ATOM-JUNCTION"]["rows"][0]["messages"])
         messages[-1]["content"] = "MEMORY <eot>\n"
