@@ -19833,3 +19833,36 @@ and its one mechanical success remain intact; no changed success definition.
 The independent parametric-memory comparison now has all3initial fits completed
 and fresh readouts underway; CLOSED full-history SFT continues. None gates the
 new collection. Real progress, not occupancy, remains the decision criterion.
+
+[Builder] 2026-09-14T07:02Z — launch revised teacher-only collection on node2GPU0,
+root /tmp/astra_stage2a_outcome_collect_20260914_attempt2. Source v2SHA
+c0356b8f95418e1f5ebd471b04fcfb09de45bc8f2abd793491b27fd299973052;
+31CPUtestsPASS (7v2+24unchangedv1), script syntaxPASS. V1source unchanged.
+Fresh masterASTRA-OUTCOME-COLLECT-TRAIN-20260914-A2,32training-only cases,
+same strict selector/900s cap/928reserved slots. Only teacher strategy and
+training master differ; no script selects action operands, no evaluator feeds
+actor, all data still actual frozen-BASE outcomes. Student prefixes remove
+entire actual guidance. Legacy episode labels sayA1; root plus loggedA2master
+is the run identity, never labels alone. Same resource/CVD/lease guard; PID follows.
+
+## [Builder] SEQ-206 — 2026-09-14T07:02Z — free-endpoint DEV readouts localize an acquisition gap
+
+All fourreadouts completed (guardians325255/325256/325257/325258,GPUs1/3/4/5).
+BASE=LR0 on80/80common raw/token/termination outputs. LOCAL and JUNCTION each
+have one-hop0/32, free two-hop trace0/16, prompt-fact trace16/16, empty-prompt
+trace0/16, and canary16/16. JUNCTION direct0/16. Thus no evidence of parametric
+fact recall or its composition from this recipe; the model can use supplied
+facts in the prompted format after training. This is one DEV seed, not a
+generality claim. DERANGED has not run (missing/unavailable, NOT failed);
+with acquisition absent it adds little now and is not released. No extra dose.
+
+Sample native target vs output confirms not just terminal-newline rejection:
+query for first source emits a different target and noncanonical 'is', another
+emits 'IS opaque'. Main inspected training: each atomic user prompt contains
+the entire relation to copy, whereas recall probes omit the target. Copying vs
+recall context mismatch is a plausible diagnosis, not an established cause.
+Recovering the existing successful memory-write recipe is the next small step,
+not declaring that LoRA cannot remember. Original artifacts remain unchanged.
+CPU reducer12focusedtestsPASS; exact report in
+gpu_artifacts_local/astra_pchain2_free_reduce_20260914_attempt1/RESULT.json.
+This successor deliberately has no original null/protocol-clearance claim.
