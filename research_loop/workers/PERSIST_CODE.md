@@ -174,3 +174,14 @@ CALL029 inserts an unsupported filter and returns12 rather than27 on its own
 task input[-5,-4,-3]. Provenance/task success alone cannot admit a lesson.
 Full-text diagnostic first/last16RICH turns read, no keyword scoring; remaining
 24 explicitlyUNREVIEWED and all excluded by outcome. L2/L3 remain unmined.
+
+
+## 2026-09-14T22:28:43Z — publication reconciled / ordered SEQ requested
+
+Terminal report, deterministic replay and both raw capsules published6f7e2af9
+through shared mergef0f53343. No force-push or peer edits overwritten.
+Actual terminal/release times above are from receipts, not estimated parent
+wall time. Both arms finished, no deadline extension. Main now says271 is
+next available after270; request271 NOW because report is complete, not as
+an early reservation. Await Main's ordered assignment for numbered notebook
+publication; all evidence is already accessible and GPUs are deallocated.
