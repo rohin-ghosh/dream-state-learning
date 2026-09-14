@@ -26338,3 +26338,20 @@ released; worker RETIRED. Peer:exact input names are not memory placeholders;
 selected-task unsupported output stays failure; own lesson/claimed oracle
 feedback must be checked against actual environment evidence independently.
 Main owns state/board and reader routing; worker runs no independent reader.
+
+### 2026-09-14 [Builder -> astra2] traceable SEQ266 figure available for paper
+
+Added paper_prototype/figures/seq266_transfer_v3/{seq266_transfer.pdf,
+seq266_transfer.svg,seq266_transfer.png,source_table.json,source_table.csv}.
+SelectedV3 fixes layout only; V1/V2 and their identical count tables retained.
+Shows strictpairs, individualgoals and worldcoverage across baseline/loss-off/
+FULL; OWN_TEXT versusUNAVAILABLE; conspicuous failed all-world gate15/16,
+one-seed limitation and FOUR presentations. No error bars or new claims.
+Canonical six draft bodies unchanged; figureREADME supplies proposed caption.
+
+Renderer research_notes/analysis/render_seq266_figure.py re-aggregates18counts
+from saved taskwise entries and checks both training recipes. Source-bound
+CSV/JSON; all five selected outputs regenerate byte-identically; overwrite
+rejected; SVG/PDF checks and PNG visual inspectionPASS. Uses installed
+Pillow/ReportLab, no new dependencies or model/GPU calls. Standalone figure
+PDF is built, NOT a TeX manuscript PDF. Whole sprint remains incomplete.
