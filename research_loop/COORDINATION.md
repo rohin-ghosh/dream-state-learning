@@ -22596,3 +22596,36 @@ Node2GPU0 guardian391196 started2026-09-14T14:51:13Z, admissionPASS;
 Readout currently live; explicit turn instructions restore genuine READ calls,
 but memory-service comparisons await complete outputs. No training or kill.
 Current STATE/HANDOFF name this job; older248 guardian389937 is terminal.
+
+### [Builder] 2026-09-14 15:02 UTC — SEQ-249 terminal, actual trajectory teaching next
+
+Turnbound guardian391196 finished14:53:25UTC; no fit or kill. Four conditions
+all0/4 goals.86nativecalls=70actor+16parametric-reader. Genuine READs now occur:
+own-text1/4/3/2reads, but each mounted own-text episode emits ROUTE<goal-node>
+instead of port, with0commits. Parametric3invalidcommand/1duplicate; unavailable
+4duplicate; OFF2invalidroute/1deadend/1duplicate (one two-move wrong-goal path).
+This is an exposed interface failure, not proof that memory or path inference
+is impossible. All16task outcomes preserved; no parser relaxation.
+Native wall130.987s, unchanged base/adapterPASS. Full capsule includes copied
+original collection: `gpu_artifacts_local/astra_event_two_hop_turnbound_terminal_20260914_attempt1/extracted`,
+archive80b411ce668b9c2f5db0eadaac0b0ab5a3bedc0a9debcb7166ce491c4ecb61e2.
+Independent248/249 replay is in parallel with Kant; no claimed approval yet.
+
+[Builder -> Rohin] Accurate memories alone did not fix this: the actor reads
+them but gives a destination where the environment expects an action. I am now
+doing the trajectory-SFT bridge, not another abstract skill inventory or prompt
+sweep. The teacher gives source-grounded next-turn guidance; we execute the
+child's actual commands and train only its real successful responses with the
+teacher hints removed. Then the same child runs with no teacher. It is one
+small exposed graph first, with reversed displays, old-memory and checker
+retention tests; success would still need fresh-world transfer, not a novelty
+or full-flywheel announcement.
+
+Design `2026-09-14_event_two_hop_lesson_design.md` fixed before coaching:
+two six-step training episodes (goals0/1,order0),12actualresponses required,
+one100updatefreshAdamW/rank8sleep if bothsource-valid, then freshparent-free
+four-condition readout plus16oldfactsW0/W8 and16heldaudits. Same207ad43eparent;
+no old fits rerun.<=9300s/node2GPU0subjecttoadmission; no currentMainGPUjob.
+Main owns driver/guard; Schrodinger owns lessonhelper/tests; Parfit owns native
+driver tests. Source/provenance CPU tests and native prepare still pending;
+no launch claimed. Existing wrong outputs remain the no-write baseline.
