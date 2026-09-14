@@ -19294,3 +19294,25 @@ No blanket exception for unknown PIDs is added. Node2 expirySeptember21 08:43UTC
 and six-hour cutoff are checked before the10800s launch. Node1 unused.
 Main owns launch/guard; fresh output /tmp/astra_stage2a_reduced_20260914_attempt1;
 PID/guard/lease/command/source receipts follow. No existing run is stopped.
+
+## [Builder] 2026-09-14T05:31Z — reduced launch live; source and optimizer lineages isolated
+
+Detached guard310493 passed full resource check at05:28:37UTC: no owners,
+no unresolved processes; exact historical non-worker init pair revalidated.
+The observer-induced sshd process disappeared when its launching connection
+closed; no access controls changed and no unknown PID was exempted. Guardian
+310493 now runs timeout; child310509 started05:28:36UTC. Exact source/command,
+GPU UUIDs, lease and10800s budget are in
+gpu_artifacts_local/astra_stage2a_reduced_20260914_attempt1/launch_intent.json.
+Remote /tmp/astra_stage2a_reduced_20260914_attempt1/run.log shows real-tokenizer
+checks passed and CPU initialization underway. GPUs0/1 are RESERVED by its CVD
+even while physical memory remains0MiB during preparation; do not reclaim them.
+This records a real launch, not yet a GPU update/result. Source remains123f0ae2.
+
+Dewey owns only new gpu/astra_stage2a_d2_resume.py and its test: source-only
+conditional D1-checkpoint→D2 continuation/readout glue, no launch rights. This
+prevents a qualifying partialD1 from stalling on a missing continuation runner;
+eligibility still comes from the declared observed criteria, not worker opinion.
+Euclid owns P-CHAIN-2 preparation/test, no native work; Confucius preserves exact
+nativeCPU5 success and dtype diagnosis toVM; Popper checks GPU interfaces.
+Main retains integration, launch/stop, outcome inspection and claim ownership.
