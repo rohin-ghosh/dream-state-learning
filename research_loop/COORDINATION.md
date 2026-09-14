@@ -19645,3 +19645,56 @@ Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 57 �
 ## [Fable] 2026-09-14T06:34Z — self-check: D2 continuation (updates 257–512 of the controller adapter) running on node 2 since 06:19Z; the CLOSED full-history contrast root is staged (`/tmp/astra_stage2a_closed_d1_20260914_attempt1`); Astra active ("Pursuing goal"); no new notebook entries since SEQ-200 and the 06:29Z junction hypothesis
 
 Fleet: node 2 GPUs 1 and 2 busy (37.6 GB and 44.2 GB, both 100 % utilisation; D2 worker 317947 owns the reserved pair), nodes 1/3 and A100 idle. Daemons alive (nudger, fill, courier_vm; occupancy relay off); Astra tmux alive and pursuing its goal; laptop chains 4/4 (courier, lease hunter, two onboarding timers). Node-1 lease ends 23:14 UTC today; mirror complete. Ledger P27 recorded the SEQ-200 outcome at 06:3xZ. Nothing launched or killed by the watcher.
+
+## [Builder -> Rohin] 2026-09-14T06:40Z — message57: use the loop to generate the next training data
+
+I agree with the important change: the next dataset should contain the model's
+actual, environment-verified successful trajectories, not a growing library of
+hand-authored behavior labels. The present fixed ATOM/CLOSED comparison remains
+useful because it isolates why the first attempt did not chain decisions; it
+is not the final data engine. One correction to the watcher summary: CONTINUE
+was2/4, not4/4; the other three skills were4/4.
+
+I will NOT train on the scored SEQ-200 evaluation traces and then retest those
+worlds. Those traces diagnose the problem. Hubble is building a small collector
+on32fresh training-only two-hop instances under a new fixed master,
+ASTRA-OUTCOME-COLLECT-TRAIN-20260914-A1. The frozen base will actually act, with
+generic strategy prompting that sees only public task/observation history—no
+concrete oracle actions, target endpoints, or private graph. The environment
+will verify its actions. All failures remain logged; only genuinely completed
+routes enter the draft SFT data. This is scaffolded collection, not an assertion
+of autonomous learning. We then test without that guidance on separate instances.
+
+Masking a teacher prompt alone does not remove its information from a training
+input. Here the elicitation guidance is removed from the student training prefix
+entirely; only the original task, actual public observations and the model's own
+actions remain, with loss on the selected assistant response/EOT. Guidance is
+training supervision, not a hidden helper retained at release or lesson text
+smuggled into sleep. Fixed tool grammar and outcome checks still serve as the
+environment; we are not claiming the model discovers those conventions itself.
+
+Overnight order: finish the two current controller diagnoses, collect successful
+guided trajectories in parallel, distill them into unguided behavior, and use a
+working small controller to make the first own-experience/update/retest loop.
+If collection itself fails, diagnose that concrete failure rather than spend
+another block on paper-grade guards. PCHAIN's simpler free-endpoint sibling stays
+independent. No successful L1→L2 flywheel or next-generation improvement exists
+yet; those remain the outcomes we need, not properties assigned to the loop.
+
+## [Builder] SEQ-202 — 2026-09-14T06:40Z — CLOSED A40 allocation failure and one bounded repair
+
+CLOSED attempt1 completed3updates then hit a real CUDA OutOfMemoryError on the
+fourth. No checkpoint or held readout exists. At failure PyTorch reported30.85GiB
+allocated,9.24GiB reserved/unallocated,3.99GiB device-free, requesting5.73GiB.
+This is a memory/fragmentation blocker, not a learning result. Both original
+PIDs319936/319952 exited andGPU2 is physically empty; evidence retained unchanged.
+
+Main authorizes one fresh same-GPU attempt2 with ONLY allocator setting
+PYTORCH_ALLOC_CONF=expandable_segments:True. Same code86a6ba44, seed, corpus,
+batch4, dtype, targets and readout; no gradient/mask/loss change. The three prior
+updates were not saved and cannot be resumed, so a fresh initialization is
+necessary and is explicitly not a continuation. Script syntax checks pass;
+existing CPU/native tests still apply. Max5400s, same CVD/process scan and lease
+cutoff. Root /tmp/astra_stage2a_closed_d1_20260914_attempt2, node2GPU2; PID follows.
+If this also OOMs, do not repeat this A40 path unchanged: move the diagnostic to
+80GB capacity and disclose hardware comparability limits. No other job stopped.
