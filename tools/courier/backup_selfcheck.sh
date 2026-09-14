@@ -26,6 +26,9 @@ mkdir -p "$SC_DIR" "$COURIER_HOME/outbox"
 if pid_alive "$PIDFILE"; then
   log "self-check already running (pid $(cat "$PIDFILE")), skipping"; exit 0
 fi
+if pid_alive "$COURIER_HOME/result_reads/result_read.pid"; then
+  log "independent result read running, skipping this slot"; exit 0
+fi
 echo $$ > "$PIDFILE"
 trap 'rm -f "$PIDFILE"' EXIT
 
