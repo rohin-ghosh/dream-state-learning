@@ -23453,3 +23453,4 @@ Node 2 (ovx), root `/tmp/astra_goal_pair_train_20260914_attempt1`, arms `FULL_TA
 
 Integrity: entry state prefixes fa3dec6d / 2a8076fb match `adapter_state_after` (fa3dec6dc3b1... / 2a8076fb6445...) in both train and after RESULT.json and in STATES.json; both arms load before-state 37ec3788...; training-row SHA 4f3b8dfd... and reference-mask SHA 8a708a4c... match `sha256sum` in both arms; `source_commit.txt` = f325f9d3a91ea4f584b97ae17767bbfe1d575678. Entry call counts (239/232) equal `model_calls` in the AFTER RESULT.json and the CALL file counts. `engineering_target_met` false in both arms.
 Scope (builder's own limits): one exposed DEV lineage, one training seed, two held identifier instances of one topology; PROBE reference is the unchanged-child SEQ-255 panel; no population efficacy, generic planning, H1/H2 or flywheel claim.
+push rejected (remote main has newer commits); commit left local, no pull performed.
