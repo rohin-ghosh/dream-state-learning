@@ -88,3 +88,12 @@ generated-module regressions, record source joins, prefix guidance removal,
 call ceilings and correction-vs-format-failure accounting. No semantic labels
 are automatically admitted. Main reconfirms actual A100 lease end
 2026-09-27T05:05Z; guardian uses that epoch minus six hours.
+
+22:05Z portable base/tokenizer/adapter inventories PASS both prepare arms;
+native0. Source8c72caf9/archive35675a33 preserved. Physical scanner correctly
+fails closed on transient SSH transports' unreadable environments; no GPU
+owner detected, no unknown PID killed. Peer GAME independently encountered
+the same transient and passed detached scans. Bounded admission retries keep
+all reports and do not waive unresolved ownership. Non-material prelaunch
+repair also checks archived source bytes rather than host-specific UID/GID;
+its regression test prevents cross-host metadata from faking source drift.

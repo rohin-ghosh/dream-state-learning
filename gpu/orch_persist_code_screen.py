@@ -2,9 +2,11 @@
 
 import argparse
 from copy import deepcopy
+import hashlib
 import json
 import os
 from pathlib import Path
+import tarfile
 import time
 
 from organism_v6 import orch_persist_code as ledger
@@ -13,6 +15,25 @@ from organism_v6 import orch_persist_code as ledger
 MANIFEST_SHA = '5e675c309b202625a6ddf1d36c1a58f51ef656985821cec1cd6123424d927469'
 STATE = '37ec37884e4b0b679edd1dba1be1dec3474589e992649f3a33e7e3b1ec78b8c0'
 PROTOCOL = 'research_notes/analysis/orch_persist_code_protocol.md'
+
+
+def verify_archive(archive, directory):
+    directory = Path(directory).resolve()
+    checked = 0
+    with tarfile.open(archive, 'r:gz') as packed:
+        for member in packed.getmembers():
+            path = directory / member.name
+            if member.isfile():
+                if not path.resolve().is_relative_to(directory) or path.is_symlink():
+                    raise ValueError('archive source path escape')
+                if hashlib.sha256(packed.extractfile(member).read()).digest() != hashlib.sha256(path.read_bytes()).digest():
+                    raise ValueError('archive source byte drift: ' + member.name)
+                checked += 1
+            elif member.issym() and (not path.is_symlink() or os.readlink(path) != member.linkname):
+                raise ValueError('archive symlink drift')
+    if not checked:
+        raise ValueError('empty source archive')
+    return checked
 
 
 def write(path, value):

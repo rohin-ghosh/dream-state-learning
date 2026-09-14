@@ -20,7 +20,6 @@ test "$(cat "$root/source_commit.txt")" = "$commit"
 test -f "$root/preGPU_publication.txt"
 test -f "$root/source.tar.gz"
 sha256sum -c "$root/source.sha256"
-tar --compare -f "$root/source.tar.gz" -C "$source_dir"
 mkdir "$root/launch_$arm"
 launch="$root/launch_$arm"
 trap 'printf "%s\n" "$?" > "$launch/exit_code.txt"; date -u +%FT%TZ > "$launch/finished_utc.txt"' EXIT
@@ -32,7 +31,13 @@ printf '%s\n' "$deadline" > "$launch/deadline_epoch.txt"
 printf '%s\n' "$lease_end" > "$launch/lease_end_epoch.txt"
 date -u +%FT%TZ > "$launch/started_utc.txt"
 export PYTHONPATH="$source_dir" HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 TOKENIZERS_PARALLELISM=false PYTHONDONTWRITEBYTECODE=1
-env CUDA_VISIBLE_DEVICES= timeout 30 python3 "$scanner" "$index" "$uuid" < "$exceptions" > "$launch/admission.json"
+env CUDA_VISIBLE_DEVICES= python3 -c 'import sys; from gpu.orch_persist_code_screen import verify_archive; print(verify_archive(sys.argv[1], sys.argv[2]))' "$root/source.tar.gz" "$source_dir" > "$launch/source_files_verified.txt"
+admitted=false
+for attempt in 1 2 3 4 5 6; do
+    if env CUDA_VISIBLE_DEVICES= timeout 30 python3 "$scanner" "$index" "$uuid" < "$exceptions" > "$launch/admission_$attempt.json"; then admitted=true; break; fi
+    sleep 10
+done
+test "$admitted" = true
 env CUDA_VISIBLE_DEVICES= python3 - "$root/prepare_$arm/RESULT.json" "$source_dir" "$commit" "$index" "$uuid" <<'PY'
 import json
 from pathlib import Path

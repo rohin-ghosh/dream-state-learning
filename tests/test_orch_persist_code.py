@@ -137,3 +137,23 @@ def test_format_failure_is_not_grounded_oracle_correction(tmp_path):
                          json.dumps({'record': 'child fixture'})])
     result = driver.collect(engine, FakeTokenizer(), tmp_path, 'TERSE', tasks)
     assert result['successes'] == 1 and result['corrections'] == 0
+
+
+def test_archive_checks_bytes_not_remote_uid(tmp_path):
+    import tarfile
+    from gpu import orch_persist_code_screen as driver
+
+    source = tmp_path / 'source'
+    source.mkdir()
+    path = source / 'module.py'
+    path.write_text('answer = 42\n')
+    archive = tmp_path / 'source.tar.gz'
+    with tarfile.open(archive, 'w:gz') as packed:
+        metadata = packed.gettarinfo(path, arcname='module.py')
+        metadata.uid = 98765
+        with path.open('rb') as content:
+            packed.addfile(metadata, content)
+    assert driver.verify_archive(archive, source) == 1
+    path.write_text('answer = 43\n')
+    with pytest.raises(ValueError):
+        driver.verify_archive(archive, source)
