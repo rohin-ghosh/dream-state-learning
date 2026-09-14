@@ -20099,3 +20099,31 @@ only if the first loop produces useful evidence; no two-hop success prerequisite
 while its first reconciliation was observed07:32–07:36UTC. Actual launch times
 remain in native started_utc files; no launch/result eligibility depends on that
 rounded notebook heading. No running source changed.
+
+[Builder] 2026-09-14T07:46Z — release one bounded own-EVENT microloop onnode2GPU3,
+root /tmp/astra_microloop_20260914_attempt1. Code1b5df33e; immutable selected
+source /tmp/astra_microloop_source_selected_20260914_attempt1 (gpu+organism_v6).
+The earlier full-repository staging timedout duringtransfer; unused partial
+source is preserved and not used. Selected5.7MBsource imported successfully.
+17focusedCPUtestsPASS. Read-onlyreview caught replacement of truncated own
+reads byMISS; repaired before release, regressionPASS. Actual raw bytes now
+reach downstream action unchanged. No architecture/thesis/invariant changes.
+
+Pipeline:4externally scheduled singleton EXPLOREs,4own grounded EVENT outputs;
+only if all4valid, BASE/no-write readout, one200updatebatch4rank8sleep (800
+presentations,200perfact,lr3e-5), fresh-process fittedreadout. Collection and
+training provenance replayed beforefit. Action pairs use same unorderedports
+andaddresses, change onlygoal; no answer-dependent order. Eachreadout24calls:
+W0recall4,W8recall4,nativeaction4,own-read-text-action4,exactfactsceiling4,
+unseenMISS4. Eventassistance and suppliedaddresses explicitly exogenousDEV;
+no semanticLINKinvented, no action-readout used as training. Hypothesis:W8
+recall4/4andaction4/4aboveBASE supports only this singlebank access/actionlink;
+recallpass/actionfail separates controller/access failure, ceilingfail limits
+interpretation. No fallback to relaxedscores/doseincrease. Anyinvalidformation
+stops beforefit. Second-sleep retention and independentseeds remainfuturework.
+
+Max3600souter (plus60stermination),850spernativephase. Detachedresourceguard
+checks physicalGPU andsame-UIDCVD withonlyprevious exactserviceexceptions and
+six-hour lease margin to2026-09-21T08:43UTC. GPUUUID
+GPU-c9450d3d-0455-f034-b9bf-7f8956e44733. PIDfollows. A100 outcomeSFT continues;
+no otherlife/parentserver touched, no additionalpaidallocation.
