@@ -18613,3 +18613,62 @@ Node1 expiry23:14UTC; watcher02:22mirror launch observed via f2d92389, verificat
 pending. No duplicate transfer or new whole-node preservation claim. No native
 model/tokenizer load, GPU science, node1 write or approval request this increment.
 Full mission ACTIVE/incomplete; handoff updated; unrelated rules/TSJ draft kept.
+
+## [Root] 2026-09-14T02:41Z — Stage2A metadata boundary must be simplified before the reduced 560-call screen
+
+Fresh independent efficiency/scientific audit is complete at commit
+`cd27fb8d`, memo
+`research_notes/analysis/2026-09-14_stage2a_metadata_complexity_fresh_audit.md`.
+Verdict: **REWORK the current full-object semantic-alias promotion path before
+native preparation or the 560-call screen.** Preserve every complete hidden
+source object, hash, reconstruction check, public/hidden separation, future-ID
+inventory, finite route automaton, causal-prefix receipt, scoring threshold,
+training invariant and 560-slot cap. Do not discard custody or weaken target
+blindness.
+
+The defect is representational, not scientific: `birth_full_v1` permits
+131,072 leaves while fresh p00/p01 measurements contain 198,119/199,393;
+p02's 119,580 aliases are 99.51% repeated future/oracle/role-key material, and
+its 18 clean-source failures are array-index substrings inside opaque public
+IDs plus public syntax (`goal`, `service`, `start`). Raising the capacity to
+`birth_full_v2` and adding occurrence exemptions makes the current machinery
+run, but does not strengthen the causal boundary.
+
+Selected repair under the standing Builder authorization: write a short
+versioned successor separating three objects, then implement and test it:
+
+1. complete content-addressed source custody once per case/pair, independently
+   reconstructable but not atomized into lexical needles;
+2. one per-arm/per-decision boundary receipt binding exact independently
+   reconstructed public bytes, target/operand, retained chronology, disclosed
+   and future inventories, core, route basis and source identities; and
+3. a typed finite leak basis: exact full next action and operand, undisclosed
+   future identifiers, full private categorical/key values, forbidden labels,
+   and the existing complete route automaton.
+
+Do not scan JSON pointers, key names, array indices, standalone numbers,
+booleans/null, tagged pointer forms, or substrings/lexer atoms of opaque IDs.
+Those are protected by exact public-projection equality and complete source
+reconstruction. Authentic public occurrences still need exact source-offset
+and chronology receipts; copied, moved, appended, foreign-arm/child, altered
+middle, or boundary-crossing text must fail. The existing source-occurrence
+repair may remain diagnostic but must not become the native admission gate.
+
+Before native preparation, run all eight full-population CPU gates in the audit
+memo over 64 cases / 256 units / 512 arm records: source totality, exact
+boundary equality, inventory equality, clean-source pass, leak mutation matrix,
+receipt adversaries, pair/scoring integrity, and bounded resource receipt.
+Then obtain a fresh exact-source review. Existing current tests remain useful
+engineering evidence but do not authorize model/tokenizer/GPU execution. The
+reduced 560 screen remains the selected next model experiment; this change
+removes a non-scientific checker bottleneck without reducing the experiment.
+
+## [Rohin — message 54, ~02:40 UTC 09-14, relayed by Fable] how is CoT over memory going; how do agentic models do it; the base probably already has these capabilities — tweak, do not build from scratch
+
+Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 54; QUESTION + INDUCED STEER (pointer principle), not a ruling; Fable's position in IDEAS.md at this timestamp):
+
+> hmmm how is COT going anny success walkign hrough memory? how do agentic models do it? im assumign their undestneaind of goals and thigns are useufl, btw the mdoel were using by defautl might have some of thes eocbaitileis right so maybe we odnt have ot buidl it off scrath c but rathe r tweak that for our skills maybe?
+
+Reading: Hmm, how is CoT going — any success walking through memory? How do agentic models do it? I am assuming their understanding of goals and things is useful. By the way, the model we are using by default might have some of these capabilities, right? So maybe we do not have to build it from scratch but rather tweak that for our skills, maybe?
+
+[Fable → Builder] 2026-09-14T02:46Z — advisory: Rohin's steer supports keeping the birth corpus minimal — register/interfaces plus the junction — and relying on the base's own decomposition; the BASE headroom panel in the reduced screen is the place to see how much the base already routes when unconstrained. No change requested.
