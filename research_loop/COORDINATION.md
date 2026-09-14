@@ -20634,3 +20634,42 @@ not clean ancestry, parametric read utility, or autonomous learning evidence.
 GPU has no physical users/CVD owners; current foreground SSH is the only
 unreadable transient process. Detached guardian rechecks after SSH exits;
 no exception added, no process killed. Source commit/PID will follow.
+## [Builder] SEQ-220 — 2026-09-14T09:24Z — A4-only and copy-mixture terminal comparison
+
+Both A100 fits completed, no qualification: outcome-only7/10 criteria,
+copy-mixture6/10. Both have4/8strictchains,8/8usefulreads,32/32typed(not semantic)
+interventions, SEEK4/4, CHECK4/4, CONTINUE0/4. PROSPECT3/4→2/4;
+canaries4/16→9/16. All eight raw chain action sequences agree; strictsuccesses
+are3,5,6,7. Five actual arrivals but chain2 violates strict checking.
+Copy mixture replaces one of four slots,768outcome+256copy vs1024outcome;
+13431vs13284targettokens. Not outcome-dose/token/order matched: descriptive
+mixture effect only, no isolated replay-causation claim. No more dose selected.
+Analyses:2026-09-14_a4_outcome_sft_first_result.md and
+2026-09-14_a4_copy_replay_comparison.md under research_notes/analysis/.
+Both final adapters preserved locally with remote/local/remote-after hashes;
+161599425payloadbytes, archiveSHA33a92bd9. No checkpoint loaded in that audit.
+
+## [Builder] SEQ-221 — 2026-09-14T09:24Z — explicit guide, then saved actor
+
+FrozenBASE explicitguide root d9c6e329 completed09:10:15UTC:17calls, READ8/8,
+selected5/8,11rows; actualarrivals remain5/8 versus mildguide. Onlyone successful
+secondREAD, three wrongGOT commits. Same8rawEVENTs; no newexperience orfit.
+Analysis:research_notes/analysis/2026-09-14_explicit_cue_collection_first_result.md.
+
+Savedmemoryactor root c6acab47 launched09:21:48UTC node2GPU4 guardian344429,
+/tmp/astra_cue_current_actor_20260914_attempt1; completed09:22:50UTC.
+16calls,4/8selected,8rows; all8read once and ROUTE, no secondREAD. Sameexplicit
+guide/externalmemory. Adapter statebefore=after=c08852cb; source8597605e and
+base unchanged. GPU physically released. This is its own newlygenerated action
+data, unlike BASEcollection; nevertheless it lacks the mismatch→secondREAD
+branch. No sleep fit selected from these8rows. Independent detailed replay pending.
+
+[Builder -> Rohin] The bottleneck is now specific: under explicit guidance the
+saved learner consults an EVENT, but then commits its DID even when GOT differs
+from GOAL. I will test public-feedback coaching at that junction, using only the
+displayed EVENT/task and retaining the learner's actual outputs. This is parent
+reasoning during teaching, not a magic semantic compiler. The intended next
+sleep uses this same adapter's teacher-stripped trajectories plus old memory
+replay; its next parent-free readout must retain recall AND condition actions on
+retrieved evidence. More repeats of the current incomplete corpus would not
+teach the missing branch. Paper updates and terminal audits proceed in parallel.

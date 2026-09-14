@@ -5033,3 +5033,155 @@ Final evidence tar SHA256
 reduction file SHA256
 `49dad92b29779ccbcd346deba243ab81e38e34d1288f67936050c0f752a5ee1f`.
 [C106]
+
+## Dated evidence addendum — September 14, 2026 UTC — through SEQ219
+
+**Append-only evidence-ledger maintenance, not a manuscript revision or scientific
+promotion.** Historical sections above retain their original cutoff and wording.
+This addendum records the subsequent Builder ledger and linked terminal analyses,
+inspected September 14 around 09:10 UTC. It does not rerun or independently certify
+native evidence. Hashes below are copied from the identified reports, not newly
+computed against remote runs. Main retains execution, admission and root ownership;
+the research program continues. No H1/H2, qualified BIRTH, parenting, autonomous
+learning, mechanism freeze or mission-complete claim follows.
+
+### Required correction to stale status wording
+
+The earlier sentence **“Stage2A source/runtime remains blocked and supplies no
+scientific result here” describes the through-SEQ195 snapshot, not current status.**
+For a future authorized manuscript/abstract synchronization, distinguish:
+
+- SEQ199 closed the scoped source gates: corrected qualification PASS, 512 records
+  with zero failures and 209 integrity tests; held separation SEPARATED over 816
+  envelopes with zero specified cross-population collisions. Independent source
+  review was scoped PASS, not native/scientific approval.
+- Subsequent native preparation and terminal DEV assays exist, including separately
+  identified fresh-process readouts. Their numerical misses are reportable data,
+  not continuing source blockage, and do not qualify BIRTH or H1/H2.
+- Earlier failed attempts remain failed and preserved. CPU source PASS, successful
+  execution, numerical qualification and scientific generality are different claims.
+
+Source: [terminal v6 CPU review](../analysis/2026-09-14_stage2a_v6_terminal_review.md)
+and [Builder coordination ledger](../../research_loop/COORDINATION.md), SEQ199 and
+September 14 05:00 UTC review closure. Qualification root:
+`gpu_artifacts_local/astra_stage2a_v6_full_population_20260914_attempt2`, report SHA256
+`25d595922a3b46449e1ba184e33a36905f1c3ad78fb338f73c57813a0ff77a7b`.
+Separation root:
+`gpu_artifacts_local/astra_stage2a_separation_replay_20260914_attempt2`, report SHA256
+`149dd8ed54ad03c23bd85317021b1cc5fd886c2ee93f11b4fa36254edd954477`.
+No existing manuscript or abstract is changed by this correction notice.
+
+### Four separate claim levels
+
+| Level | Evidence now available | Unestablished claim / required distinction |
+| --- | --- | --- |
+| Substrate | Scoped source separation; native adapter writes and recall; bounded rehearsal retention; actual fresh-process reproduction in SEQ200/215/216. | Persistence is not useful control, composition, general G1–G3 or developmental transfer. Conductor same-process roundtrip/live hashes alone are **not** fresh-process persistence. |
+| Parenting behavior | Public-only coached collections produce some grounded trajectories; guidance is absent from selected student prefixes. | Externally scheduled exposure, addresses and teaching plus selective DEV SFT do not establish autonomous parenting or durable task-disjoint learning-process competence after teacher removal (H1). |
+| Later autonomous learning | SEQ215 writes actually experienced EVENTs; SEQ213 transfers some outcome-trained routes. | Exogenous exposure/writes and a single DEV learner do not show autonomous continued consolidation improving learning on unseen verifiable tasks (H2). Learned self-issued access is not established. |
+| Self-improving learning | These components motivate further tests only. | No demonstrated improvement in the learning process across successive autonomous learning cycles, lifetime superiority, or self-sustaining learning loop. This stronger claim must not be inferred from recall, one fit, or successful collection. |
+
+H1/H2 retain the proposed-question definitions in the current companion abstract;
+neither is promoted. Counts below are within their original panels, not pooled
+independent trials across reused tasks, prompts, seeds or adapters.
+
+### Terminal evidence index and limits
+
+SEQ numbers refer to the exact dated Builder entries in the coordination ledger.
+Linked analyses supply the retained-source manifests and detailed failure traces.
+
+| Ledger item | Observation and accounting | Bound / source locator |
+| --- | --- | --- |
+| SEQ196–199 | Original qualification and separation attempts failed; corrected qualification and retained-input separation replay later pass. SEQ198 closes the older node1 baseline checksum gap. | Engineering/custody only. Preserve original failures; SEQ199 and terminal review above are the current source-gate evidence, not a learning result. |
+| SEQ200 | Saved D1 fresh-process evaluation: 84 physical ATOM calls/280 reservations, original BASE 56/280; zero new updates. Complete routes remain 0/8 in both, canaries 16/16→15/16, CONTINUE 2/4. | Separately identified recovery, not rehabilitation of the failed original run. [D1 recovery](../analysis/2026-09-14_seq200_d1_controller_recovery.md); original/recovery custody under `gpu_artifacts_local/astra_stage2a_d1_result_preservation_20260914_attempt1/evidence/`. |
+| SEQ201–202 | Original PCHAIN assignment times out at 60.015964 seconds, with no fit/readout; CLOSED attempt1 OOMs after three updates, no checkpoint/readout. | TIMEOUT is not UNSAT or learning failure; CLOSED attempt2 is fresh initialization, not continuation. Node2 roots `/tmp/astra_pchain2_material_20260914_attempt1/material` and `/tmp/astra_stage2a_closed_d1_20260914_attempt1`; failed work remains in accounting. |
+| SEQ203 | D2 reaches 512 cumulative updates (256 additional), 85 fitted calls/280 reservations; 7/10 criteria, chains 0/8, useful reads 6/8, canaries 15/16. | Same DEV controller; no route acquisition or qualified BIRTH. [D2 localization](../analysis/2026-09-14_d2_chain_failure_localization.md); node2 `/tmp/astra_stage2a_d2_20260914_attempt1/run`, comparison `gpu_artifacts_local/astra_stage2a_d2_compare_20260914_attempt1/COMPARISON.json`. |
+| SEQ204/206 | Free-endpoint preparation reuses 192 IDs. BASE=LR0 on 80/80 shared outputs; LOCAL/JUNCTION recall 0/32, two-hop trace 0/16, supplied-fact trace 16/16, canaries 16/16. | Source `abac24f1`; node2 `/tmp/astra_pchain2_free_endpoint_dev_20260914_attempt1`, local `gpu_artifacts_local/astra_pchain2_free_reduce_20260914_attempt1/RESULT.json`. New DEV protocol, not clearance of the timed-out original null protocol. DERANGED unrun, not failed. Supplied-fact performance is not weights-only recall. |
+| SEQ205/207 | First guided BASE collection: 32 episodes, 344 calls, zero strict routes/rows. Second: 32 episodes, 70 calls, zero strict routes/rows; one GOAL arrival does not pass selection. | SEQ205 source `c3e70767`, node2 `/tmp/astra_stage2a_outcome_collect_20260914_attempt1/run`; second collection is the SEQ207 A2/v2 ledger entry. Changed prompt and master do not isolate prompt causality; retain all attempts, no fabricated replacement rows. |
+| SEQ208/211 | Query-only preparation omits answers from 32 atomic USER contexts; query JUNCTION recall 32/32 versus copy JUNCTION 0/32, with matched 384 updates/1,536 presentations/40,560 targets and five identical evaluation files. Query two-hop trace/direct 0/16, supplied-fact trace 16/16, canaries 16/16; 112 valid raw calls. | Source `818c1696`; node2 `/tmp/astra_pchain2_query_only_dev_20260914_attempt1`. [Query-only result](../analysis/2026-09-14_pchain_query_only_result.md): trained-query recall, not unseen-fact generalization or composition. Mixed report retains copy-LOCAL, not a query-only factorial. |
+| SEQ209 | Frozen D2 guided collection: 32 episodes, 382 calls, six strict successes, 42 actual assistant rows; every selected path is recovery-only, four worlds. | Node2 `/tmp/astra_stage2a_d2_collect_20260914_attempt1/run`; CPU check `gpu_artifacts_local/astra_stage2a_d2_collection_cpucheck_20260914_attempt1/CPU_CHECK.json`. Teacher absent from student inputs; different masters forbid a matched causal 6-versus-0 comparison to BASE collection. No new updates during collection. |
+| SEQ210 | CLOSED attempt2 completes 256 updates, 63 fitted calls/280 slots, 4/10 criteria; chains 1/8, canaries 12/16. | Source `86a6ba44`, node2 `/tmp/astra_stage2a_closed_d1_20260914_attempt2/run/CLOSED/`; [trace analysis](../analysis/2026-09-14_closed_d1_trace_analysis.md). Full history is no reliable rescue; differing input costs constrain comparison with ATOM. Original OOM cost is not erased. |
+| SEQ212/214 | Microloop attempt1 rejects torch identity before model load. Attempt2 generates four grounded EVENT field sets, but strict serialization admits 0/4 and no fit runs. | Node2 `/tmp/astra_microloop_20260914_attempt2/collection/`; [preserved microloop analysis](../analysis/2026-09-14_microloop_lf_first_result.md). Version-namespace failure is infrastructure; prospective FINAL_LF_ONLY is a separately named compiler condition, not retrospective repair of strict scores. |
+| SEQ213 | Outcome SFT: 256 updates, BASE 56/FITTED 139 physical calls over 560 combined reservations. Routes 0/8→4/8, useful reads 8/8, typed steps 8/8; CHECK and CONTINUE 0/4; canaries 16/16→4/16; 5/10 criteria. | Source `0dad223d`, A100 `/tmp/astra_outcome_distill_20260914_attempt1/run`. [Outcome result](../analysis/2026-09-14_outcome_sft_first_result.md): selective helper-free route progress, not qualified BIRTH; one seed, recovery-only source, preservation failure retained. |
+| SEQ215 | FINAL_LF_ONLY own-EVENT pipeline: four real EVENTs, 32 query views, 200 updates/800 presentations; 24 BASE+24 fresh-process FITTED calls. Cold W0/W8 recall 0/4→4/4, unknown-address MISS 4/4→0/4. Strict action panels remain 0/4. | Node2 `/tmp/astra_microloop_lf_20260914_attempt1/`; [microloop analysis](../analysis/2026-09-14_microloop_lf_first_result.md). Post-hoc port content: native 2/4 unchanged, supplied-own-read 2/4→4/4, exact-facts ceiling 3/4 unchanged. Prompt label/order differ; not causal mediation. Adapter file is not an optimizer-resume checkpoint. |
+| SEQ216 | Actual separate-process outcome-adapter reload reproduces all 139/139 public captures and metrics, with zero new updates or BASE reruns. | A100 `/tmp/astra_outcome_reload_20260914_attempt1`, source `951cdd4a`; ledger records successful reload attempt2 and unordered PEFT target-module serialization comparison repair. Both routes 4/8 and canaries 4/16 persist. Persistence/reproduction, not independent transfer or rescue. |
+| SEQ217 | A4 collection: 32 episodes/100 calls, four strict successes, 30 rows, two KEEP and two REVISE trajectories. | Source `2b96834c`, node2 `/tmp/astra_stage2a_d2_v2_collect_20260914_attempt1/run`; [A4 branch analysis](../analysis/2026-09-14_a4_collection_branch_analysis.md). KEEP only skin0; REVISE only skin1 and one world. Branch coverage is not balanced cross-skin coverage or student success. |
+| SEQ218 | BASE 2/4, FITTED 3/4, reader-OFF 3/4; four calls/arm, **zero READs in every arm**, 12/60 allowed calls, zero fits, no observed infrastructure/parse failures. | Node2 `/tmp/astra_event_read_route_20260914_attempt1`; [independent joins](../analysis/2026-09-14_self_issued_read_route_first_result.md). Reader-OFF was never exercised; neither retrieval ineffectiveness nor replicated improvement follows. Do not pool correlated goal-pair arms. |
+| SEQ219 | First external-EVENT cue collection: eight admitted EVENTs, 27 model calls, two read-backed successful routes/8, five student rows (three READ, two ROUTE). All six unselected episodes skip reading: three wrong outcomes and three lucky arrivals excluded. No recorded infrastructure failures; exact CPU replay consumes all 27 captures. | Source `39ae8ea872b784c4e520c4b49e2b2e5592cdf613`; node2 `/tmp/astra_cue_collect_20260914_attempt1/run`; [cue analysis](../analysis/2026-09-14_cue_collection_first_result.md). Completed 08:55:17 UTC; actual launch 08:54:02 UTC, not the earlier 08:56 header. Selected data spans 2/4 worlds, 1/2 banks, zero complete goal pairs. External raw EVENT dictionary, not parametric memory; no fit. |
+
+SEQ219 grounding uses the launched LF-tolerant condition: **0/8 original EVENT
+strings satisfy exactly-one-final-LF**, but all eight fields are admitted under
+the declared canonical grounding check and unchanged raw strings are served.
+Teacher strategy is absent from student inputs. The five replay-verified targets
+are draft data, not native tokenizer/mask admission, a fit decision or learned
+parent-free competence. The six failures remain in the report.
+
+### Selected immutable result identifiers
+
+These identify the particular results above; full source/file inventories remain
+in the linked analyses. Selective captures must not be represented as complete
+checkpoint or native-custody archives.
+
+| Artifact | SHA256 |
+| --- | --- |
+| SEQ203 local D2 `COMPARISON.json` | `c13fd975a6a95852791771ff34523082b7478294e967cd0c3ddb7dae504ef53f` |
+| SEQ210 `gpu_artifacts_local/astra_stage2a_closed_compare_20260914_attempt1/COMPARISON.json` | `f19e5211f0ef02a895c704e70f238420efde41ae836da8bcf06b4c34f63feeb5` |
+| SEQ211 `gpu_artifacts_local/astra_pchain2_query_only_reduce_20260914_attempt1/QUERY_MIXED_REDUCTION.json` | `5c79ca4b4b4467dd04ee2727d93d38b10e8f9fcb98ff18da5f0947048ddef6e8` |
+| SEQ213 original `run/RESULT.json` (selective local capture: `gpu_artifacts_local/astra_outcome_sft_first_result_20260914_attempt1/`) | `82503714b127618266855603448cb618e97fe1a593120e1283117323034f63f1` |
+| SEQ215 `gpu_artifacts_local/astra_microloop_lf_first_result_20260914/SOURCE_SHA256SUMS` | `2e8ffeb880358e2a6ea0dfc14aad705d2c788d43ca95d9f730a62fdeb77f9c03` |
+| SEQ216 public-capture hash recorded by Builder | `59cb260e1eddc1b5d0cff79b9ea547def7150ca6ce790d90142f6901314ab94d` |
+| SEQ218 `gpu_artifacts_local/astra_event_read_route_20260914_attempt1/AUDIT.json` | `db0ecccfe7ae98a604edcc2105835c16a8d6f3d8561a14475b08a5a853d783c7` |
+| SEQ219 original `run/RESULT.json` | `014677484bfed4556564e67cce167f9105e52e5d698d8f43de4b18ba2f77e680` |
+| SEQ219 `gpu_artifacts_local/astra_cue_collect_20260914_attempt1/TRANSFER_MANIFEST.json` | `acffb8d728f0f4265251a29c030f349106925606b5232de0264b9c5635c36b81` |
+| SEQ219 `gpu_artifacts_local/astra_cue_collect_20260914_attempt1/ANALYSIS.json` | `16058ed58cc01d0fb304b72c0848424aaf59f158e56c2b8331afc76b9f694ecc` |
+
+### Pending work, explicitly outside terminal SEQ219 evidence
+
+- **A4-only:** Main reports terminal 7/10, CHECK 4/4, CONTINUE 0/4,
+  chains 4/8, canaries 4/16, at `/tmp/astra_outcome_a4_20260914_attempt1`.
+  This is an attributed status update, not an independently analyzed result in
+  this addendum; no SEQ assignment or terminal-result hash is supplied here.
+  Keep separate pending the bound result and analysis. Do not infer the omitted
+  criteria, qualification, or a verified A4-versus-A3 improvement.
+- **A4 copy-replay fit:** Main reports running; A100 root
+  `/tmp/astra_outcome_a4_replay_20260914_attempt1`, source
+  `2bb752f273cda66e96b05414caac8e97eaeb40e9`.
+  [CPU admission](../analysis/2026-09-14_a4_copy_replay_admission.md) is preparation
+  evidence only. The recipe uses 768 outcome+256 copy presentations versus 1,024
+  outcome-only, not matched outcome dose, target tokens or compute. Copy prompts
+  are explicitly authored around actual source-action bytes, not new experience.
+  Any later difference is a mixture effect, not isolated replay causality.
+- **Explicit-cue successor:** Main reports running; fresh node2 root
+  `/tmp/astra_cue_explicit_20260914_attempt1`. SEQ219's first collector is already
+  terminal and must not be confused with this successor. The ledger records reuse
+  of the same eight sourced EVENTs/tasks, stronger public strategy, no new
+  EXPLORE/EVENT generation, at most 24 new cue calls and zero fits. No terminal
+  result is incorporated here. It tests coaching uptake on reused training
+  material, not independent experience or learned parent-free behavior.
+
+Running statuses are attributed snapshots, not process monitoring by this editor.
+No new execution, automatic fit, dose, threshold change or launch is authorized.
+
+### Draft index and build status for later synchronization
+
+- Current reporting manuscript: `paper_prototype/main.tex`; parallel sprint draft:
+  `paper_prototype/astra_sprint_draft_20260912.tex`. Their active abstracts and
+  `paper_prototype/astra_sprint_abstract_20260912.md` currently report through
+  SEQ195, not the newer evidence above. Historical extended abstracts are retained.
+- Collaborator draft: `research_notes/astra_memos/ASTRA_COLLABORATOR_DRAFT_2026-09-12.md`,
+  explicitly **UNSENT**. No outbound communication or text revision is made here.
+- The older submission tree designates `paper/iclr2027_experience_models/main.tex`
+  as its main paper; its `PCFL_MANUSCRIPT_MIGRATION.md` labels it historical pending
+  migration. Do not conflate that tree with the active sprint reporting surfaces.
+  `paper/draft.md` is the older pre-lease draft. The submission tree's
+  `ABSTRACT_BRANCHES_2026-09-14.md` is prospective/result-contingent, not a selected
+  factual abstract or authority to claim an authentic two-SLEEP junction.
+- `paper_prototype/README.md` documents, from that directory:
+  `pdflatex main; bibtex main; pdflatex main; pdflatex main`.
+  Local executable checks on September 14 find no `pdflatex`, `bibtex`, `latexmk`,
+  `tectonic`, `xelatex` or `lualatex`. No build was attempted; PDF, layout, length
+  and official submission-style validation remain outstanding.
+
+This is ledger upkeep while Main advances experiments, not paper polishing,
+literature verification, a full campaign audit or a freeze decision. All earlier
+positive/negative findings, failures, custody limitations and claim boundaries
+remain available; this addendum does not replace their evidence.
