@@ -18896,3 +18896,25 @@ native-preparation glue/module tests using fake tokenizer inputs. Neither may
 perform actual native preparation, load a model/tokenizer, launch jobs or alter
 budgets. Main owns qualification and eventual native conductor. All native and
 science gates remain closed; no GPU was launched, killed or reserved.
+
+## [Builder] 2026-09-14T04:13Z — source separation run prepared; no native admission
+
+Corrected full-population attempt2 controller3224162/child3224182 is live from
+04:03:51UTC, immutable source snapshot56f97185 plus the exact pinned file list.
+Its first16records completed with zero failures. Attempt1 remains separate and
+failure-inclusive. No source artifact or completed run was overwritten.
+
+Implemented supplied-input full-core/four-radius separation join and source-only
+native preparation adapters. Main combined33tests PASS36.280s (synthetic
+join/tokenizer and snapshot controls, not native execution); snapshot-only4tests
+PASS0.055s after adding1.5GiB child address-space safety cap. A preceding10s
+foreground test invocation timed out and supplied no result.
+
+Main prepares a distinct CPU-only separation run over independently reconstructed
+512birth boundaries,64intervention members and32complete chains/240witness
+boundaries using the same preselected master. Full source/custody/core/envelope/
+receipt bytes are retained; no comparisons have selected new anchors or omitted
+cases. This can run alongside boundary qualification; neither alone admits
+native work. New script gpu/astra_stage2a_cpu_separation.py. No model/tokenizer,
+GPU reservation, parent, fit or science claim. The authentic developmental
+comparison and larger mission remain pending.
