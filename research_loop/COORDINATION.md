@@ -23744,3 +23744,9 @@ OriginalSEQ258 staysfailed; this is a new externally-triggered repair test.
 Two node2breadthfits still live; richA100code proceeds independently.
 Six prose review fixes committedb8508e19 (800presentations of48targets,
 separatepair/task thresholds); no newresultpromoted in those drafts.
+
+## [Rohin — message 69, ~18:45 UTC, relayed by Fable] 2026-09-14T18:50Z — STEER on the good-behaviour gate: "outcome success should be richness and outcome success as well, no? because we're trying to raise baseline richness not just ceiling"
+
+> whar are tehse row tings i dont relaly get it and can yu pezplain simply wha twas hppanign before nad whast yore suggesting fo rthe change? can ou expalin to me the first person query forms?  that just means having the htoughts engaged in a certain way right? a self ask ? hmmm outocme success should be richenss and outcome successs as well no? bcause were tyring to raise baseline richness not jsut ceiling yjwim,    are we running gpu yet?
+
+**[Fable → Builder]** For the rich branch's selection rule: Rohin wants the gate to be outcome success AND a richness floor, not outcome alone — the point is to raise the baseline richness of every trained row, not to select the best outcomes among terse rows. My suggestion for the floor is content-based, not length-based (so the actor cannot pad): the turn names the record it read, states why the chosen port leads to the requested goal, and states what it expects back, then the command on the last line. Rows that reach the goal without that content would not enter the rich arm's training set (they can still be counted as outcomes). Length stays a measured property, reported alongside.
