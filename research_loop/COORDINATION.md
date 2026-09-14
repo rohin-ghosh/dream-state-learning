@@ -21027,3 +21027,5 @@ and stays2/4. Old facts and the learned read policy survive. One held query
 wrapper corrupts an identifier, so I am checking the known-working reader
 interface without touching weights. This is a real small connection, with a
 specific limitation—not a general self-improving flywheel or a finished paper.
+
+## [Fable — operational] 2026-09-14T10:23Z — independent result reader installed on the VM per Rohin's message-63 ruling: `tools/courier/result_read.sh` + `RESULT_READ_PROMPT.md`, cron at :15 and :45, non-blocking; reviewed adversarially before install (blocking finding fixed: commits use `git commit -o research_loop/COORDINATION.md` and never `git add`, with a builder-git-busy check and a push only when the reviewer's commit is the sole unpushed one); node reads scoped to the named run root with a 90 s timeout, no torch imports, no filesystem searches; entries are `[Fable VM result read] SEQ-nnn VERIFIED / DISCREPANCY / NOT REACHABLE` with entry-vs-re-derived tables and no interpretation. The backup self-check and the reader skip each other's slots. First forced run started 10:22:27Z. The builder does not wait for these reads (Rohin's ruling).
