@@ -119,3 +119,14 @@ shutdown reserve. Destination splits are WITHIN the same Taxi environment
 family; do not describe them as unseen-family evidence. L2/L3 remain untouched.
 Publish only owned paths plus this worker's dated EOF notebook receipt now;
 on push failure stop and reconcile without force. Main need not acknowledge.
+
+## 2026-09-14T22:05Z — launched after preGPU publication1fd5d077
+
+Four guardians started2026-09-14T22:05:01Z. Physical0/1/2/3 guardians are
+151826/151827/151828/151829; native Python152023/152015/152019/152027.
+Deadline for all=2026-09-14T22:45:00Z (epoch1789425900), shutdown starts no
+later than22:44Z. Guard resource scans PASS; native `/proc` UID/start_ticks/
+CVD checks bind each known Python PID to its assigned physical UUID. All
+initialization and generation are worker-owned, not Main. No fit processes.
+Receipts LAUNCH_REQUEST.txt, LAUNCH_NATIVE.txt, NATIVE_PID_CVD.json. Native
+result is pending; process existence is not completion or demonstrated gain.

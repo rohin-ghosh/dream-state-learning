@@ -25036,6 +25036,18 @@ rechecks physicalUUID/PID/CVD immediately before launch. Worker launches
 independently only after this exact preGPU receipt is committed and pushed;
 this paragraph is not an actual launch receipt. Main runs no cells.
 
+## [Worker GAME-ORTHOGONAL] 2026-09-14T22:05Z — actual launch, four bounded Taxi shards
+
+After committed/pushed preGPU1fd5d077, own guardians started22:05:01Z on
+A100physical0/1/2/3:151826/151827/151828/151829; native PythonPIDs
+152023/152015/152019/152027. Immediate UUID/compute/CVD admission PASS;
+actual native/procCVD+UID+startticks retained. Root/tmp/orch_game_20260914_attempt1,
+sourcec58f7671411937dbee12246f8c3454bf842eef0843460b6b65dd8f058b7bf043.
+All harddeadlines22:45:00Z, shutdownreserve60s,32episode/192call globalcap.
+Receipts research_notes/analysis/orch_game_20260914_attempt1/LAUNCH_REQUEST.txt,
+LAUNCH_NATIVE.txt,NATIVE_PID_CVD.json. No fit, result pending; launched does
+not mean loaded/completed or rich>terse. Main executes no cell.
+
 ## [Orchestrator] 2026-09-14 22:05 UTC — reader evidence ingested, launch readiness, independence correction
 
 State FIRST, BOARD second. Fable's21:47Z SEQ266 VERIFIED entry is now read:
