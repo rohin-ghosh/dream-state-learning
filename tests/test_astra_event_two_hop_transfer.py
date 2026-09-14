@@ -2,6 +2,7 @@
 
 from contextlib import ExitStack
 from pathlib import Path
+import os
 import subprocess
 import sys
 from tempfile import TemporaryDirectory
@@ -303,6 +304,32 @@ from gpu import astra_event_two_hop_transfer
                 self.assertEqual(engine.generate.call_count, 48)
                 failure = runner.source.read(root / 'TRAINED/FAILED.json')
                 self.assertEqual(failure['model_calls'], 48)
+
+
+class ArchivedGuardTests(unittest.TestCase):
+    def test_archived_source_reaches_stub_admission_without_git_or_gpu(self):
+        with TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            source_dir = root / 'source'
+            source_dir.mkdir()
+            binaries = root / 'bin'
+            binaries.mkdir()
+            for name, script in (('timeout', '#!/bin/bash\nexit 1\n'), ('sleep', '#!/bin/bash\nexit 0\n')):
+                executable = binaries / name
+                executable.write_text(script)
+                executable.chmod(0o700)
+            write(root / 'prepare/RESULT.json', {'status': 'PREPARED_NO_MODEL'})
+            commit = 'a' * 40
+            (root / 'source_commit.txt').write_text(commit + '\n')
+            guard = Path(runner.__file__).with_name('astra_event_two_hop_transfer_guard.sh')
+            environment = dict(os.environ, PATH=str(binaries) + os.pathsep + os.environ['PATH'])
+            completed = subprocess.run(['bash', str(guard), str(root), str(source_dir), commit, '0',
+                'fake-gpu', 'collect', 'TRAINED'], env=environment, capture_output=True, text=True, timeout=10)
+            self.assertEqual(completed.returncode, 1)
+            self.assertNotIn('not a git repository', completed.stderr)
+            self.assertTrue((root / 'launch_collect/GUARD_ABORT.txt').exists())
+            self.assertFalse((root / 'collect').exists())
+            self.assertFalse((source_dir / '.git').exists())
 
 
 if __name__ == '__main__':

@@ -22762,3 +22762,20 @@ andoriginalgraph. FreshworldSHA db881d8f29674ac6a0005b1b15760a1dab9994c3bdd6947b
 Launching collect/TRAINED only, <=8actualcalls/1920seconds, nofit/parent.
 Guard physical+CVD and six-hourlease checks; PIDtofollow. Four source-valid
 newEVENTs required before the two independent matched readouts. No kills.
+
+## [Builder] 2026-09-14 15:27 UTC — archive-launch wrapper failure, no native collection
+
+Freshtransferattempt1 guardian395060 exited before admission/model loading:
+guard called `git -C source rev-parse HEAD`, but deployed source is deliberately
+a Git archive without .git. `collect.log` retains the exact fatal message;
+there is no collect directory or native call. Existing prepare/source/logs
+are preserved, not overwritten. This is an infrastructure failure, not a failed
+child exposure or a scientific observation. No kill or GPU worker was launched.
+
+Non-material launcher repair: verify a root source_commit.txt marker written
+from the exact archived Git commit, rather than requiring archive contents to
+be a Git working tree. Existing native prepare/runtime helper-byte checks stay
+unchanged. Added an actual shell-guard regression with stub failed admission:
+archived .git-free source reaches admission and exits without a model.12CPUtests
+PASS. Prepare newattempt2 from repaired source; same world, adapters, budgets,
+inputs, protocol and endpoints; do not edit attempt1's frozen snapshot.

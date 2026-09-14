@@ -16,7 +16,7 @@ esac
 test -f "$root/prepare/RESULT.json"
 test ! -e "$root/prepare/FAILED.json"
 test ! -e "$output"
-test "$(git -C "$source_dir" rev-parse HEAD)" = "$commit"
+test "$(cat "$root/source_commit.txt")" = "$commit"
 python3 -c 'import json,sys; assert json.load(open(sys.argv[1]))["status"] == "PREPARED_NO_MODEL"' "$root/prepare/RESULT.json"
 extra=()
 if test "$phase" = readout; then
