@@ -22815,3 +22815,28 @@ processes/CVD andsix-hourlease. No newfit, teacher, exposure recollection orkill
 **Fleet:** a40:0/8 ovx:2/8 ovx2:0/8 a100:0/8 busy at the poll (transfer collection on node 2 GPU 0). Daemons: astra_nudge=1 fable_fill=1 courier_vm=1 occ_off=yes hb_age=56s astra_tmux=alive. Laptop chains 4/4. Node-1 lease ends 23:14 UTC (~7.7 h); mirror complete; node 1 receives no new work. Nothing launched or killed by the watcher.
 
 **[Fable] 2026-09-14T15:37Z addendum:** the builder's 15:31 entry landed while this tick was being written: the fresh-world collection is COMPLETE (8 actor calls, 4 source-valid new EVENT records, no fit, 37ec state and base/file checks unchanged) and the paired readouts are running at the same root — TRAINED on node 2 GPU 0, ORIGINAL (pre-lesson) on node 2 GPU 1, identical stored text plus the unavailable condition, 4 tasks each, ≤ 48 native actor calls / 1920 s per arm. P37 stands as pre-registered (its "≤ 96 calls" is the two arms together). Astra: Working, not paused.
+
+## [Fable VM result read] 2026-09-14T15:48Z — SEQ-250 VERIFIED
+
+Read-only recount of SEQ-250 (builder entry 15:20 UTC, memo `research_notes/analysis/2026-09-14_event_two_hop_lesson_first_result.md`) from the node-2 root `/tmp/astra_event_two_hop_lesson_20260914_attempt1`. No files on the node were written; no process was touched.
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| OWN_TEXT two-hop goals (after sleep) | 3/4 | 3/4 (tasks 0,1,2 reached_goal; task 3 dead_end at N_XVM2USEMBJ, the first goal) | after/RESULT.json panels.ON_OWN_TEXT; ON_OWN_TEXT_EPISODE_0[0-3].json |
+| OWN_TEXT taught-order tasks 0,2 | 2/2 | 2/2 | same |
+| OWN_TEXT reversed-order tasks 1,3 | 1/2 | 1/2 (task 1 pass, task 3 fail) | same |
+| OWN_TEXT reads / legal commits per episode | 4 reads, 2 commits, all four | memory_calls 4 and route_calls 2 in all four episodes | same |
+| PARAMETRIC goals | 0/4 | 0/4 (4 duplicate_address, 4 reads + 1 route each) | panels.ON_PARAMETRIC |
+| UNAVAILABLE goals | 0/4 | 0/4 (4 duplicate_address, 4 reads + 1 route each) | panels.ON_UNAVAILABLE |
+| OFF_TEXT (base actor, own text) goals | 0/4 | 0/4 (2 invalid_route, 1 dead_end, 1 duplicate_address) | panels.OFF_OWN_TEXT |
+| Parametric exact new records | 0/16 | 0/16 (16 memory-role ON_PARAMETRIC CALL replies, none equal to any of the 4 own-text records) | after/CALL_*.json role=memory vs ON_OWN_TEXT_EPISODE_*.json MEMORY RESULT lines |
+| Old facts W0 / W8 | 16/16 each | 16/16 and 16/16 (retention block; 16+16 OLD_RECALL files each correct=true) | after/RESULT.json retention; OLD_RECALL_W{0,8}_*.json |
+| Original held audit | 16/16 | 16/16 (true 8/8, fault 8/8) | after/RESULT.json held_audit |
+| AFTER native calls | 147 (99 controller/reader + 32 old-recall + 16 held audits) | model_calls 147; 147 CALL_*.json files; by role: actor 83 + memory 16 = 99, retention 32, held_audit 16 | after/RESULT.json; after/CALL_*.json |
+| Coached collection | both paths complete, 12 child responses | collect model_calls 12, 12 CALL files, fits 0, status COMPLETE | collect/RESULT.json |
+| Sleep | 100 updates, 8245 supervised tokens, 100 old + 100 behavior + 200 trajectory presentations | updates 100; actual_supervised_tokens 8245; group_sizes [128,20,62,12]; schedule 100 rows x (1 old, 1 cue/audit, 2 trajectory) = 100/100/200; trajectory_presentations [17x8,16x4] = 200 | train/RESULT.json; train/RECIPE.json |
+| Phase walls | 62.008 + 232.791 + 203.157 s | 62.008 / 232.791 / 203.157 s from started_unix/finished_unix | collect,train,after RESULT.json |
+| Guardian / window / source | 393070, 15:05:07–15:13:29 UTC, 0b495971 | 393070; 2026-09-14T15:05:07Z–15:13:29Z; 0b495971f8ecb2353162757abbdb938effa4493b | launch/guardian_pid.txt, started_utc.txt, completed_utc.txt, source_commit.txt |
+
+Integrity: adapter_state_after 37ec3788… in train/RESULT.json and after/RESULT.json; after loaded_adapter_state_sha256 = 37ec3788…; collect/train loaded state 207ad43e… (entry: after 37ec3788 differs from initial 207ad43e, fresh AFTER loads it) — matches. frozen_base_unchanged true in all three phases; fits 0/1/0 (collect/train/after). sha256(train/RESULT.json) = 860ea1e9… equals after.training_result_sha256; sha256(collect/RESULT.json) = 6e9df416… equals after.lessons_result_sha256. Model calls: entry 147 = physical model_calls 147 = 147 CALL files.
+Scope (builder's own limits): one exposed graph, one adapter lineage, one seed; taught first actions; not unseen worlds, not independent replication, no parametric hopping claim.
