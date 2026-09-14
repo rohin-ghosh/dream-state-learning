@@ -1,7 +1,11 @@
 # SEQ-247: executable selections affect a shared writer's acquisition
 
 September14,2026. Main inspected the completed native train and fresh AFTER.
-Independent captured-source reduction is pending. Design:
+Independent captured-source reduction is COMPLETE: both stages, reference
+joins, exact outputs, dose and denominator verified;43CPUtests pass. Receipt
+`SEQ247_independent_reduction_20260914.json` in the preservation directory has
+SHA256 `9c6dfe501557b3ff83c4e6875e3f99d477a4607fc56ed7043539da38fb4e3c7c`.
+See `2026-09-14_reader_audit_transfer_write_independent_result.md`. Design:
 `2026-09-14_reader_audit_transfer_write_design.md`.
 
 ## Results, with unchanged reference observations
