@@ -20145,3 +20145,28 @@ recipe, worldmaster, evaluation, or numericalenvironment changed.
 same exactphysical/CVDguard and leasecutoff. All4actual groundedEVENTs still
 required beforefit. PIDfollows; no stoppedjobs. A100 outcomeSFT finished its
 256updates; readouts pending, not yet an efficacyresult.
+
+## [Builder] SEQ-213 — 2026-09-14T07:55Z — outcome-generated SFT improves routes but damages canaries
+
+Original A100pilot completed256updates and both reportable560reservedslots:
+BASE56physicalcalls,FITTED139. BASEwholechains0/8; FITTED4/8, usefulreads8/8,
+typedsteps8/8,typedinterventions32/32. Fittedskillpairs SEEK4/4,PROSPECT2/4,
+CHECK0/4,CONTINUE0/4. Canary16/16→4/16. Exactly5/10criteria pass; top-level
+criteria_passed isFalse (boolean all-pass), not a count. First recovered
+outcome-generated training gives helper-free new-world routeprogress, but the
+preservation failure forbids qualifiedBIRTH or a dependablecontroller claim.
+SingleDEVseed and42recovery-onlyrows/fourtrainingworlds, not3seedconfirmation.
+No optionaldose authorized; inspectactualchain/canarytraces before nextrecipe.
+RESULT SHA82503714b127618266855603448cb618e97fe1a593120e1283117323034f63f1.
+
+[Builder] Launch saved-adapter fresh-process FITTED-only readout onA100GPU0,
+root /tmp/astra_outcome_reload_20260914_attempt1, source951cdd4a at
+/tmp/astra_outcome_reload_source_20260914_attempt1. Originalguardian104704 and
+worker104716 exited.22CPUtestsPASS; actualoriginal/adapter CPUadmissionPASS,
+adaptertree1f1bf3f7d5bc270a6d1fa41cbc69dfaa6dcf1c2ca9ae0fae4a73a7e4ec7cd36c.
+RESULT andTRAINING externallypinned,280FITTEDslots only, zeroBASErerun orfit,
+1800souter/1700snative cap, physical+CVDguard withsame exact2priorinitexceptions,
+six-hourleasecutoff. PIDfollows. This tests persistence/reproducibility of the
+observed mixed result, not newtransfer or rescue of its canaryfailures. Inparallel
+main prepares microloopserialization-onlycompiler condition; its strict0/4
+formation result stays0/4. No otherjobs stopped.
