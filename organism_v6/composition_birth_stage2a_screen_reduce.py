@@ -1,8 +1,9 @@
-"""Non-material, pure BASE/D1 reduced criteria; never native admission.
+"""Non-material, pure BASE/D1 or BASE/D2 criteria; never native admission.
 
 The post_seq195 critical-path efficiency note supplies the integer thresholds.
-Caller-bound BASE and ATOM_LOCAL identities must be distinct; both use D1 slots
-and the same master. Identity agreement does not authenticate model weights,
+Caller-bound BASE and ATOM_LOCAL identities must be distinct and use the same
+master. BASE always uses D1 slots; ATOM_LOCAL uses the selected D1 or D2 slots
+and their own decode seeds without relabeling. Identity agreement does not authenticate model weights,
 training, source eligibility, tokenizer, losses, nulls or persisted custody.
 ReceiptVerification is deliberately not accepted: its encoded events are not
 joined to these live objects or an authenticated checkpoint. Parent integration
@@ -128,8 +129,9 @@ def _accounting(run):
                           if type(item.native_records) is tuple), len(run.failures))
 
 
-def _captures(run, expected_id, seeds, seen):
-    _require(run.state_id == expected_id and run.stage == "D1", "state_or_stage_identity_mismatch")
+def _captures(run, expected_id, seeds, seen, *, stage="D1"):
+    _require(stage in ("D1", "D2") and run.state_id == expected_id and run.stage == stage,
+             "state_or_stage_identity_mismatch")
     _require(run.status == runtime.STATUS, "unexpected_runtime_status")
     _require(type(run.counter_provenance) is str and bool(run.counter_provenance.strip()),
              "counter_provenance_required_not_authenticated")
@@ -138,7 +140,7 @@ def _captures(run, expected_id, seeds, seen):
     _require(len(run.reservations) == 280, "exact_280_reservations_required")
     captures = []
     first_actor_index = None
-    for row, entry, seed in zip(run.reservations, screen.reduced_screen("D1"), seeds):
+    for row, entry, seed in zip(run.reservations, screen.reduced_screen(stage), seeds):
         _require(type(row) is runtime.Reservation and type(row.entry) is screen.ScreenEntry
                  and row.entry == entry and type(row.entry.index) is int
                  and type(row.entry.member) is type(entry.member)
@@ -187,7 +189,7 @@ def _captures(run, expected_id, seeds, seen):
     return tuple(captures)
 
 
-def _replay(run, captures, *, master, chains, interventions, canaries):
+def _replay(run, captures, *, master, chains, interventions, canaries, stage="D1"):
     position = 0
     records = []
 
@@ -207,7 +209,7 @@ def _replay(run, captures, *, master, chains, interventions, canaries):
         return capture.generation
 
     replayed = runtime.run_reduced_state(
-        state_id=run.state_id, stage="D1", master=master, chains=chains,
+        state_id=run.state_id, stage=stage, master=master, chains=chains,
         interventions=interventions, canaries=canaries, actor=captured_actor,
         actor_calls=records, count_context=count_context,
         counter_provenance=run.counter_provenance, custody_sink=lambda event, payload: None)
@@ -258,11 +260,12 @@ def _metrics(run, *, chains, interventions, canaries):
         tuple(pair_scores), chain_scores, matches)
 
 
-def _reduce_state(run, expected_id, seeds, seen, *, master, chains, interventions, canaries):
+def _reduce_state(run, expected_id, seeds, seen, *, master, chains, interventions, canaries, stage="D1"):
     accounting = _accounting(run)
     try:
-        captures = _captures(run, expected_id, seeds, seen)
-        _replay(run, captures, master=master, chains=chains, interventions=interventions, canaries=canaries)
+        captures = _captures(run, expected_id, seeds, seen, stage=stage)
+        _replay(run, captures, master=master, chains=chains, interventions=interventions,
+                canaries=canaries, stage=stage)
         metrics = _metrics(run, chains=chains, interventions=interventions, canaries=canaries)
     except (ValueError, TypeError, AttributeError, IndexError, KeyError) as error:
         return StateReduction(run, accounting, None, (str(error),))
@@ -281,6 +284,28 @@ def reduce_base_d1(*, base, atom_local, base_state_id, atom_local_state_id,
     Complete malformed/length-limited generations remain scored misses, not
     dropped rows. External parser/loss/null/native gates are not asserted here.
     """
+    return _reduce_base(base=base, atom_local=atom_local, base_state_id=base_state_id,
+                        atom_local_state_id=atom_local_state_id, master=master,
+                        chains=chains, interventions=interventions, canaries=canaries, atom_stage="D1")
+
+
+def reduce_base_d2(*, base, atom_local, base_state_id, atom_local_state_id,
+                   master, chains, interventions, canaries):
+    """Apply unchanged reduced thresholds to retained BASE D1 versus ATOM D2.
+
+    Both are exact ScreenRuns with distinct expected identities and the original
+    master/held bindings. BASE is validated/replayed against D1 slots and seeds;
+    ATOM_LOCAL against D2 slots and seeds. No stage or capture is relabeled.
+    This is numerical reduction only, not conditional-continuation eligibility,
+    checkpoint/training validation or native/scientific authorization.
+    """
+    return _reduce_base(base=base, atom_local=atom_local, base_state_id=base_state_id,
+                        atom_local_state_id=atom_local_state_id, master=master,
+                        chains=chains, interventions=interventions, canaries=canaries, atom_stage="D2")
+
+
+def _reduce_base(*, base, atom_local, base_state_id, atom_local_state_id,
+                 master, chains, interventions, canaries, atom_stage):
     _require(_identity(base_state_id) and _identity(atom_local_state_id)
              and base_state_id != atom_local_state_id, "distinct_explicit_state_identities_required")
     _require(type(base) is runtime.ScreenRun and type(atom_local) is runtime.ScreenRun,
@@ -293,10 +318,11 @@ def reduce_base_d1(*, base, atom_local, base_state_id, atom_local_state_id,
                  "canary_target_public_prompt_mismatch")
         wire.parse_action(canary.target)
     options = dict(master=master, chains=bindings[0], interventions=bindings[1], canaries=bindings[2])
-    seeds = screen.reduced_decode_seeds("D1", master=master)
+    base_seeds = screen.reduced_decode_seeds("D1", master=master)
+    atom_seeds = screen.reduced_decode_seeds(atom_stage, master=master)
     seen = set()
-    baseline = _reduce_state(base, base_state_id, seeds, seen, **options)
-    fitted = _reduce_state(atom_local, atom_local_state_id, seeds, seen, **options)
+    baseline = _reduce_state(base, base_state_id, base_seeds, seen, stage="D1", **options)
+    fitted = _reduce_state(atom_local, atom_local_state_id, atom_seeds, seen, stage=atom_stage, **options)
     criteria = ()
     if baseline.reportable and fitted.reportable:
         metrics = fitted.metrics
