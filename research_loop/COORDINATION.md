@@ -21598,3 +21598,16 @@ If selective utility is worse, do not attribute it solely to poor selection:
 reader failure on unwritten facts can contribute. No choice replacement,
 extra gate, new endpoint, dose change or claim promotion. Fit integration/testing
 continues; none launched at this cut.
+
+[Builder] 2026-09-14T11:32Z paired corrective sleep pre-GPU release. Main78
+focused/adjacenttests pass; worker88 with legacy discovery setup, newdriver11
+passesdotted/discover. New100step receipts cannot satisfy legacy400step gates.
+Both actualsource choices[0,2] retained; same A1cue checkpoint and both source
+receipts replayed before model load; fresh AFTERW0 only, old BEFOREreused.
+Node2GPU0 CHILD_CORRECTIVE andGPU1 UNIFORM_REPLAY, new nested roots
+`CUE_REPLAY/corrective_sleep/{CHILD_CORRECTIVE,UNIFORM_REPLAY}/{train,after}`.
+Guard budgets7440s each; source/PIDs follow. No control sacrificed, no new
+seedgrid, no parent or note text. Exact100old/100cue/200new budget, shared
+uniform causal-label denominator, all4task primary and eight earlier memories.
+Independent reads are behind execution; scope remains local material-selection
+utility, including known partial-memory/MISS risk, not an H2 slope.

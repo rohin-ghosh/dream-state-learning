@@ -429,10 +429,145 @@ def select_corrective(engine, cases, output, provenance):
         claim='CHILD_EXTRACTION_UNDER_EXTERNALLY_POSED_CORRECTION_TASK_NOT_CORRECTION_EFFICACY')
 
 
+def load_corrective_selection(directory, before_directory, collection, current, *, expected_adapter_state_sha256):
+    from organism_v6 import experienced_event_corrective_replay as corrective
+
+    cases, before_source = load_correction_before(before_directory, collection, current,
+        expected_adapter_state_sha256=expected_adapter_state_sha256)
+    directory = Path(directory)
+    require(not (directory / 'FAILED.json').exists(), 'failed_corrective_selection_forbidden')
+    names = ['RESULT.json', 'REQUEST.json', 'CORRECTION_SOURCE.json', 'CORRECTION_CASES.json', 'SELECTION.json']
+    documents = {name: source.read(directory / name) for name in names}
+    result, request = documents['RESULT.json'], documents['REQUEST.json']
+    require(result.get('schema') == SCHEMA and result.get('status') == 'SELECTION_CAPTURED_NO_FIT'
+            and result.get('phase') == 'select_corrective' and result.get('state') == 'BEFORE'
+            and result.get('fits') == 0 and result.get('parent_present') is False
+            and result.get('frozen_base_unchanged') is True, 'completed_no_fit_selection_required')
+    for key in ('initial_training_result_sha256', 'adult_source', 'memory_source', 'cue_source',
+                'prior_adult_source', 'prior_adult_training_result_sha256', 'cycle', 'master', 'development_arm'):
+        require(result.get(key) == current[key], 'corrective_selection_source_drift:' + key)
+    require(result.get('loaded_adapter_state_sha256') == expected_adapter_state_sha256,
+            'corrective_selection_actor_drift')
+    arguments = result.get('arguments', {})
+    require(arguments.get('phase') == 'select_corrective' and arguments.get('state') == 'BEFORE'
+            and arguments.get('cycle') == 2 and arguments.get('development_arm') == 'CUE_REPLAY',
+            'corrective_selection_arguments_drift')
+    for key in ('expected_base_sha256', 'expected_initial_adapter_sha256'):
+        require(arguments.get(key) == current['arguments'][key], 'corrective_selection_identity_drift:' + key)
+    require(request.get('arguments') == arguments and all(request.get(key) == result.get(key) for key in
+        ('schema', 'phase', 'state', 'cycle', 'master', 'development_arm', 'runner_sha256', 'material_sha256')),
+        'corrective_selection_request_drift')
+    require(documents['CORRECTION_SOURCE.json'] == before_source == result.get('selection_source')
+            and documents['CORRECTION_CASES.json'] == cases, 'corrective_selection_before_drift')
+    selection = documents['SELECTION.json']
+    require(source.file_hash(directory / 'SELECTION.json') == result.get('selection_sha256'),
+            'corrective_selection_hash_drift')
+    count = cases['expected_calls']
+    require(result.get('model_calls') == selection['model_calls'] == count
+            and result.get('admitted_selections') == selection['admitted_selections']
+            and result.get('actual_wrong_goal_cases') == count, 'corrective_selection_counts_drift')
+    call_names = ['CALL_%03d.json' % index for index in range(count)]
+    require(sorted(path.name for path in directory.glob('CALL_*.json')) == call_names,
+            'corrective_selection_call_inventory_drift')
+    for name, capture in zip(call_names, selection['captures']):
+        require(source.read(directory / name) == {key: capture[key] for key in
+                ('call_index', 'messages', 'response', 'error')}, 'corrective_selection_call_drift')
+    require(len(selection['captures']) == count and all(capture['error'] is None for capture in selection['captures']),
+            'all_selection_calls_must_succeed')
+    captures = iter(selection['captures'])
+
+    def replay(messages):
+        capture = next(captures)
+        require(capture['messages'] == messages, 'corrective_selection_prompt_drift')
+        return adult._copy(capture['response'])
+
+    require(corrective.collect_selection(cases, replay) == selection, 'corrective_selection_replay_drift')
+    selected = selection['chosen_source_indexes']
+    require(1 <= count <= 4 and selection['admitted_selections'] == count and len(selected) == count,
+            'all_nonempty_cases_must_be_source_valid')
+    require(len({selected.count(index) for index in range(4)}) > 1,
+            'uniform_selection_has_no_sampling_contrast')
+    return selected, dict(directory=str(directory), result_sha256=source.file_hash(directory / 'RESULT.json'),
+        source_files={name: source.file_hash(directory / name) for name in names + call_names},
+        before_source=before_source, selected_source_indexes=selected)
+
+
+def check_corrective_training(adapter_dir, current, *, replay_arm, selected_source_indexes,
+                              expected_adapter_state_sha256):
+    from gpu import astra_corrective_sleep_train as corrective_train
+
+    adapter = Path(adapter_dir)
+    directory = adapter.parent
+    result = source.read(directory / 'RESULT.json')
+    require(not (directory / 'FAILED.json').exists() and result.get('schema') == SCHEMA
+            and result.get('status') == 'COMPLETE' and result.get('phase') == 'train_corrective'
+            and result.get('state') == 'BEFORE' and result.get('updates') == 100
+            and result.get('fits') == 1 and result.get('train_seed') == 0
+            and result.get('replay_arm') == replay_arm and replay_arm in corrective_train.REPLAY_ARMS
+            and result.get('selected_source_indexes') == selected_source_indexes
+            and result.get('frozen_base_unchanged') is True, 'completed_same_corrective_training_required')
+    for key in ('initial_training_result_sha256', 'adult_source', 'memory_source', 'cue_source',
+                'prior_adult_source', 'prior_adult_training_result_sha256', 'cycle', 'master',
+                'development_arm', 'corrective_selection_source'):
+        require(result.get(key) == current[key], 'corrective_training_source_drift:' + key)
+    require(result.get('adapter_state_before') == result.get('loaded_adapter_state_sha256')
+            == expected_adapter_state_sha256 and type(result.get('adapter_state_after')) is str
+            and result['adapter_state_after'] != expected_adapter_state_sha256,
+            'corrective_training_actor_drift')
+    require(result.get('old_fact_count') == 8 and result.get('loss_normalization') == corrective_train.LOSS_NORMALIZATION
+            and result.get('optimizer') == 'FRESH_ADAMW' and result.get('learning_rate') == 3e-5,
+            'corrective_training_recipe_drift')
+    arguments = result.get('arguments', {})
+    require(arguments.get('phase') == 'train_corrective' and arguments.get('replay_arm') == replay_arm,
+            'corrective_training_arguments_drift')
+    for key in ('expected_base_sha256', 'expected_initial_adapter_sha256'):
+        require(arguments.get(key) == current['arguments'][key], 'corrective_training_identity_drift:' + key)
+    require(source.read(directory / 'REQUEST.json').get('arguments') == arguments, 'corrective_training_request_drift')
+    development.validate_base_sources(current['arguments']['expected_base_sha256'], result)
+    require({'adapter_model.safetensors', 'adapter_config.json'} <= set(result.get('adapter_files', {})),
+            'corrective_adapter_files_required')
+    for name, digest in result['adapter_files'].items():
+        require(Path(name).name == name and source.file_hash(adapter / name) == digest, 'corrective_adapter_file_drift')
+    artifacts = result.get('training_artifact_sha256', {})
+    require(set(artifacts) == {'MASKS.json', 'SELECTION_LAYOUT.json', 'LOSSES.jsonl'}, 'corrective_training_artifacts_required')
+    for name, digest in artifacts.items():
+        require(source.file_hash(directory / name) == digest, 'corrective_training_artifact_drift')
+    provenance = source.read(directory / 'ADAPTER_PROVENANCE.json')
+    require(all(provenance.get(key) == result.get(key) for key in ('adapter_state_before', 'adapter_state_after',
+        'adapter_files', 'runner_sha256', 'training_artifact_sha256')), 'corrective_adapter_provenance_drift')
+    require(source.read(directory / 'SELECTION_LAYOUT.json') ==
+            corrective_train.selection_layout(replay_arm, selected_source_indexes), 'corrective_training_layout_drift')
+    masks = source.read(directory / 'MASKS.json')
+    require(len(masks) == 116 and all(row['labels'][0] == -100 for row in masks), 'corrective_training_masks_drift')
+    losses = [source.json.loads(line) for line in (directory / 'LOSSES.jsonl').read_text().splitlines()]
+    require(len(losses) == 100, 'corrective_100_loss_rows_required')
+    actual_total = reference_total = 0
+    for update, row in enumerate(losses, 1):
+        actual_indexes, reference_indexes = corrective_train.training_indexes(update, replay_arm, selected_source_indexes)
+        actual = sum(label != -100 for index in actual_indexes for label in masks[index]['labels'][1:])
+        reference = sum(label != -100 for index in reference_indexes for label in masks[index]['labels'][1:])
+        require(row.get('update') == update and row.get('row_indexes') == list(actual_indexes)
+                and row.get('reference_row_indexes') == list(reference_indexes)
+                and actual > 0 and reference > 0 and row.get('actual_label_count') == row.get('active_label_count') == actual
+                and row.get('reference_label_count') == row.get('original_label_count') == reference
+                and row.get('loss_scale') == actual / reference, 'corrective_training_budget_drift')
+        actual_total += actual
+        reference_total += reference
+    require(result.get('actual_supervised_tokens') == result.get('supervised_tokens') == actual_total
+            and result.get('reference_supervised_tokens') == result.get('original_supervised_tokens') == reference_total,
+            'corrective_training_token_totals_drift')
+    budgets = dict(old_memory_presentations=100, old_cue_presentations=100, new_memory_presentations=200,
+                   original_bank_presentations=64, first_adult_presentations=36)
+    require(result.get('budgets') == budgets and all(result.get(key) == value for key, value in budgets.items()),
+            'corrective_training_presentations_drift')
+    return source.file_hash(directory / 'RESULT.json')
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--phase', choices=('collect', 'train', 'readout', 'recollect', 'recollect_revision',
-                                           'recollect_base_diagnostic', 'select_corrective'), required=True)
+                                           'recollect_base_diagnostic', 'select_corrective',
+                                           'train_corrective', 'readout_corrective'), required=True)
     parser.add_argument('--state', choices=('BEFORE', 'AFTER'), default='BEFORE')
     parser.add_argument('--development-arm', choices=development.TRAINING_ARMS, required=True)
     for name in ('model-dir', 'expected-base-sha256', 'initial-adapter-dir', 'expected-initial-adapter-sha256',
@@ -447,14 +582,22 @@ def main(argv=None):
                         default='novelty_optional_v1')
     parser.add_argument('--previous-recollection')
     parser.add_argument('--correction-before')
+    parser.add_argument('--corrective-selection')
+    parser.add_argument('--replay-arm', choices=('CHILD_CORRECTIVE', 'UNIFORM_REPLAY'))
     parser.add_argument('--device', default='cuda:0')
     args = parser.parse_args(argv)
-    require((args.phase == 'select_corrective') == bool(args.correction_before), 'correction_before_only_for_selection')
+    corrective_phase = args.phase in ('train_corrective', 'readout_corrective')
+    require((args.phase == 'select_corrective' or corrective_phase) == bool(args.correction_before), 'correction_before_only_for_selection')
+    require(corrective_phase == bool(args.corrective_selection) == bool(args.replay_arm), 'explicit_corrective_selection_and_arm_required')
+    require(not corrective_phase or (args.cycle == 2 and args.development_arm == 'CUE_REPLAY'
+            and args.state == ('AFTER' if args.phase == 'readout_corrective' else 'BEFORE')),
+            'corrective_collecting_a1_cycle2_forks_only')
+    require(args.phase != 'readout_corrective' or args.reader_wrapper == 0, 'corrective_cold_readout_w0_required')
     require(args.phase != 'select_corrective' or (args.cycle == 2 and args.development_arm == 'CUE_REPLAY'
             and args.state == 'BEFORE'), 'collecting_a1_cue_actor_only_for_selection')
     require((args.cycle == 2) == bool(args.prior_adult_collection), 'prior_collection_only_required_for_cycle2')
-    require(args.state == 'BEFORE' or args.phase == 'readout', 'after_only_for_fresh_readout')
-    require(args.phase == 'readout' or args.reader_wrapper == 8, 'reader_variant_only_for_readout')
+    require(args.state == 'BEFORE' or args.phase in ('readout', 'readout_corrective'), 'after_only_for_fresh_readout')
+    require(args.phase in ('readout', 'readout_corrective') or args.reader_wrapper == 8, 'reader_variant_only_for_readout')
     require((args.phase == 'recollect_revision') == (args.sleep_recipe == 'parental_revision_v1')
             and (args.phase in ('recollect_revision', 'recollect_base_diagnostic')) == bool(args.previous_recollection),
             'explicit_parental_revision_source_required')
@@ -467,12 +610,15 @@ def main(argv=None):
     output.mkdir(parents=True, exist_ok=False)
     phase = args.phase
     started = time.time()
-    seconds = 5400 if phase == 'train' else 1800
+    seconds = 5400 if phase in ('train', 'train_corrective') else 1800
     result = dict(schema=SCHEMA, phase=phase, state=args.state, development_arm=args.development_arm,
         arguments=vars(args).copy(), started_unix=started, master=adult.master_for_cycle(args.cycle), cycle=args.cycle,
         claim=('SINGLE_ADULT_CYCLE_EXOGENOUS_EXPOSURE_NOT_H2_SLOPE_OR_AUTONOMOUS_SELECTION' if args.cycle == 1
                else 'SECOND_ADULT_CYCLE_EXOGENOUS_EXPOSURE_NOT_H2_SLOPE_OR_AUTONOMOUS_SELECTION'),
         runner_sha256=source.file_hash(__file__), material_sha256=source.file_hash(adult.__file__))
+    if corrective_phase:
+        result.update(replay_arm=args.replay_arm, parent_present=False,
+            claim='CONDITIONAL_CHILD_SELECTED_VS_UNIFORM_REPLAY_DEV_NOT_AUTONOMOUS_SELECTION_OR_H2')
     if phase == 'recollect_revision':
         result.update(parent_present=True, fits=0, sleep_recipe='parental_revision_v1',
             training_admission='UNREVIEWED_NO_FIT',
@@ -533,11 +679,20 @@ def main(argv=None):
             correction_cases, correction_source = load_correction_before(args.correction_before, collection, result,
                 expected_adapter_state_sha256=initial['adapter_state_after'])
             result['selection_source'] = correction_source
+        if corrective_phase:
+            selected_indexes, selection_source = load_corrective_selection(args.corrective_selection,
+                args.correction_before, collection, result, expected_adapter_state_sha256=initial['adapter_state_after'])
+            result.update(corrective_selection_source=selection_source, selected_source_indexes=selected_indexes)
         if args.state == 'AFTER':
-            check_adult_training(args.adapter_dir, cycle=args.cycle, arm=args.development_arm,
-                expected_base_sha256=args.expected_base_sha256, memory_source=memory_source, cue_source=cue_source,
-                adult_source=result['adult_source'], initial_receipt=initial_receipt,
-                prior_adult_source=prior_adult_source)
+            if corrective_phase:
+                result['corrective_training_result_sha256'] = check_corrective_training(args.adapter_dir, result,
+                    replay_arm=args.replay_arm, selected_source_indexes=selected_indexes,
+                    expected_adapter_state_sha256=initial['adapter_state_after'])
+            else:
+                check_adult_training(args.adapter_dir, cycle=args.cycle, arm=args.development_arm,
+                    expected_base_sha256=args.expected_base_sha256, memory_source=memory_source, cue_source=cue_source,
+                    adult_source=result['adult_source'], initial_receipt=initial_receipt,
+                    prior_adult_source=prior_adult_source)
             trained = source.read(Path(args.adapter_dir).parent / 'RESULT.json')
         else:
             args.adapter_dir = args.initial_adapter_dir
@@ -585,6 +740,11 @@ def main(argv=None):
             require(collection['infrastructure_failures'] == 0, 'adult_collection_infrastructure_failure')
         elif phase == 'train':
             result.update(train(engine, old_rows, cue_rows, new_rows, output, args.development_arm))
+        elif phase == 'train_corrective':
+            from gpu import astra_corrective_sleep_train as corrective_train
+
+            result.update(corrective_train.train(engine, old_rows, cue_rows, new_rows, output,
+                replay_arm=args.replay_arm, selected_source_indexes=selected_indexes), fits=1)
         elif phase == 'recollect':
             result.update(recollect(engine, collection, output, recipe=args.sleep_recipe))
         elif phase == 'recollect_revision':
@@ -597,7 +757,7 @@ def main(argv=None):
             result.update(evaluate(engine, collection, old_bank, old_episodes, output,
                                    reader_wrapper=args.reader_wrapper))
         engine.verify_base()
-        if phase != 'train':
+        if phase not in ('train', 'train_corrective'):
             require(_state_hash(parameters) == before, 'read_only_adult_stage_changed_adapter')
         require(source.file_hash(Path(args.initial_adapter_dir).parent / 'RESULT.json') == initial_receipt
                 and source.file_hash(Path(args.initial_adapter_dir) / 'adapter_model.safetensors')

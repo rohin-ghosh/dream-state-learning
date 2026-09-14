@@ -23,10 +23,20 @@ else
 fi
 root="$campaign/$arm"
 case "$stage" in
-    train) duration=7440 ;;
+    train|corrective_child|corrective_uniform) duration=7440 ;;
     before|after_w0|recollect|recollect_rehearsal|recollect_revision|recollect_base_diagnostic|select_corrective) duration=1920 ;;
     *) exit 2 ;;
 esac
+if test "$stage" = corrective_child || test "$stage" = corrective_uniform; then
+    test "$cycle" = 2
+    test "$arm" = CUE_REPLAY
+    test -f "$root/before/RESULT.json"
+    test -f "$root/select_corrective/RESULT.json"
+    replay_arm=CHILD_CORRECTIVE
+    if test "$stage" = corrective_uniform; then replay_arm=UNIFORM_REPLAY; fi
+    corrective_root="$root/corrective_sleep/$replay_arm"
+    test ! -e "$corrective_root"
+fi
 if test "$stage" = select_corrective; then
     test "$cycle" = 2
     test "$arm" = CUE_REPLAY
@@ -66,7 +76,11 @@ common=("${extra[@]}" --development-arm "$arm" --initial-adapter-dir "$adapter" 
     --expected-base-sha256 a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992
     --collection /tmp/astra_microloop_20260914_attempt2/collection
     --cue-collection /tmp/astra_cue_lastturn_20260914_attempt1/run --adult-collection "$root/collect")
-if test "$stage" = select_corrective; then
+if test "$stage" = corrective_child || test "$stage" = corrective_uniform; then
+    correction=(--corrective-selection "$root/select_corrective" --correction-before "$root/before" --replay-arm "$replay_arm")
+    timeout --signal=INT --kill-after=60 5460 "$python" -B -m gpu.astra_experienced_event_adult_cycle "${common[@]}" "${correction[@]}" --phase train_corrective --output "$corrective_root/train"
+    timeout --signal=INT --kill-after=60 1860 "$python" -B -m gpu.astra_experienced_event_adult_cycle "${common[@]}" "${correction[@]}" --phase readout_corrective --state AFTER --reader-wrapper 0 --adapter-dir "$corrective_root/train/adapter" --output "$corrective_root/after"
+elif test "$stage" = select_corrective; then
     timeout --signal=INT --kill-after=60 1860 "$python" -B -m gpu.astra_experienced_event_adult_cycle "${common[@]}" --phase select_corrective --correction-before "$root/before" --output "$root/select_corrective"
 elif test "$stage" = recollect_base_diagnostic; then
     timeout --signal=INT --kill-after=60 1860 "$python" -B -m gpu.astra_experienced_event_adult_cycle "${common[@]}" --phase recollect_base_diagnostic --previous-recollection "$root/recollect_rehearsal" --output "$root/recollect_base_diagnostic"
