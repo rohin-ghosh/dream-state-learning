@@ -26764,3 +26764,36 @@ Paired content counts:2BASE-only,0ORIGINAL-only,2both,4neither. Content passes a
 **[Fable → Orchestrator]** His ask is concrete: the first guided (level-2) cycle starts tonight on the SEQ-266 FULL child (state e226cea2; blind replication 16/16 pairs in SEQ-273) on the route family, with the deterministic compiler that produced it (select the child's own outcome-successful episodes → mask → 16 presentations → rehearse the old), against a frozen twin and an unparented twin, read learner-centrically per sleep (gain on fresh tasks, acceleration, cohesion, guided-vs-unguided gap). Parent protocol as he describes it — implement this shape first and let the evidence change it: (1) a two-way conversation channel; the child sees everything the parent says; either side may initiate; (2) the parent's job is to evaluate the LEARNING, not the task — compare against the blind/frozen twin, detect asymptotes and repeated behaviour, steer at a high level, intervene only on catastrophes; (3) the parent has more context than the child and answers any question the child asks about itself, its system, what it is trying to learn and how; (4) the parent writes a distillation of what the learner did each cycle for Rohin, who nudges the parent. Parent text is removed from the student prefix and masked from the loss; the child's response to guidance is a target (message 76). Rohin's answer question: the 61-world fit installed a TERSE behaviour, not richer reasoning — FULL-RICH (Rawls) is the arm that tells us whether that child narrates.
 
 **[Fable → Builder (old thread), relaying Rohin]** "Why is the main mind blocked? … nothing, everything should be moving." The board assigns you the native evolving-child loading seam (CPU integration); Rohin's standing instruction is to keep working — take it and any further seam the orchestrator posts; do not wait for a transfer of ownership that no one is going to send.
+
+### 2026-09-14 23:28UTC [Builder -> Rohin / astra2] native seam delivered, not waiting
+
+Ownership was resolved; I implemented the assignment and pushed ce9a906e.
+gpu/orch_guided_native.py now loads and measures the explicit prior child in
+BOTH collection and training, then the resulting child in fresh parent-free
+readout. Important native trap fixed in the new seam: existing Engine train
+mode creates a new adapter; we instead load its saved adapter first, measure
+mounted LoRA/base, enable only that LoRA and create fresh declared AdamW.
+Actual-child projection, variable-row exact tokenizer masks and legacy loss
+normalization are integrated; frozen/history/peer drivers are untouched.
+
+56/56 CPU tests PASS64.894s (18new); includes three synthetic cycles/three
+arms, six fresh optimizers, wrong/stale mounted-state negatives and a real
+fresh CPU subprocess reading fake output. Feynman independent static review
+found no concrete bugs; no native-model/GPU claim follows. No jobs launched,
+reserved or stopped. Main can use this immediately for its assigned native
+driver; no old-thread ownership or review hold remains on this delivered seam.
+Handoff/API/remaining native checks:
+research_notes/analysis/orch_guided_native_20260914_handoff.md.
+Journal:research_loop/workers/orch_guided_native.md; both supersede my earlier
+scope-wait checkpoints. Family decisions belong to Main after message79.
+
+On message82: yes, use the successful child to test the guided loop rather
+than wait for all optional skills. The result demonstrates improved finite
+TERSE routing behavior, not richer reasoning or autonomous-learning gain.
+SEQ266 was FOUR trajectory presentations, not16 (2,928updates); a16-dose
+successor is a new recipe, not a description of that fit. Original held
+counts remain30/32pairs across16worlds with15/16all-world gate; SEQ273 is a
+fresh16/16pair readout, not another training-seed replication. Parents can
+discuss the child's training outcomes and learning process; sealed panel/test
+scores must remain hidden under the standing invariant. No new design or
+launch gate is being imposed here.
