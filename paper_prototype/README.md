@@ -1,5 +1,14 @@
 # Experience Models — ICLR 2027 submission (revised draft v3, 2026-09-10 fix pass)
 
+**Bibliography update — September 14, 2026 UTC.** The two former TODO
+citations are now verified, versioned arXiv entries: `ye2026autodreamer`
+and `zhang2026faultymemories`. All54 cited keys in `main.tex` resolve; all52
+previous bibliography entries and the abstract/results prose are preserved.
+The18 existing `% VERIFY` annotations still require checking. No TeX build
+or layout validation is claimed. Primary sources, scope and receipt:
+`research_notes/analysis/2026-09-14_two_bibliography_placeholders_verified.md`.
+Dated statements below about unresolved TODO keys describe earlier snapshots.
+
 **Ongoing first-sprint working draft — research question unresolved.**
 This draft through SEQ195 (C105–C106) retains earlier positive and negative findings.
 SEQ192 fails prediction prompt-package robustness; SEQ195 supports only
@@ -2399,6 +2408,11 @@ or contribution-list rewrite is part of this update.
 - **Numbers deliberately excluded** because their only source is outside the permitted set (`research_notes/certification_report_draft.md`, `research_notes/IDEAS.md`, or the review's own verifier notes): per-sleep absorption values beyond those in COORDINATION; decorated-marker counts 24/74, 25/88, 17/87; per-life corpus-density values; the mibench-vs-cbench IR sizes (121 vs 450; 645 vs 62,452) quoted in RH F2; life speed 22–25 episodes/hour (RH M16). The v1 draft's App. E/G sentences carrying the last two were removed in v2.
 
 ## How to compile
+
+**Current bibliography status (September 14, 2026):** both TODO keys in the
+historical v3 instructions below have been resolved. Before compiling, check
+the18 remaining `% VERIFY` annotations; key resolution alone does not verify
+their metadata or claims. A real TeX/BibTeX build remains outstanding.
 
 No TeX installation (pdflatex, tectonic, latexmk, xelatex, lualatex) was available on the machine where this draft was revised or fixed, so the file was not compiled to PDF. The preamble uses `\IfFileExists{iclr2027_conference.sty}{...}{...}` and `\IfFileExists{iclr2027_conference.bst}{...}{plainnat}` fallbacks so it compiles under `article` defaults when the ICLR kit is absent. A structural check (brace balance, `\begin`/`\end` pairing, `\ref`→`\label` resolution, `\cite`→`refs.bib` resolution, tabular column counts, unescaped `_`, red-line phrase scan) passed after the v3 pass; the only unresolved citations are the two `TODO-*` keys below. Table widths were estimated, not measured: in v2 all four main-text tables exceeded the 5.5-inch ICLR column by character-width estimates (Tables 1–2 by about 35%); v3 moved Tables 1 and 3 to appendices and compacted Tables 2 and 4, but only a compile will confirm the fit.
 

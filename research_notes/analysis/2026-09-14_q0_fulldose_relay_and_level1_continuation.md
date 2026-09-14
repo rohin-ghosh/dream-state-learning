@@ -90,3 +90,27 @@ metadata and zero-B values cannot by themselves prove the Kaiming RNG origin.
 Actual fp32/bf16 adapter storage must be preserved, not assumed from bf16
 forward precision. Complete route/core bindings and material/native opening
 remain separately unresolved. No passed suites are repeated for orientation.
+
+## Subsequent cleared-hold relay, reconciled September14 UTC
+
+The next user relay clears the forensic hold after native gates and calls
+full-dose acquisition unmeasured. The clearance is acknowledged, but the
+unmeasured statement describes the earlier checkpoint, not current evidence.
+The three-root full-dose v2 experiment already terminated on September13:
+R0/R2 have measured failed primary endpoints and R1 lacks its final primary
+readout. No additional root allocation, retry, or primary-contract change
+is inferred from this delayed clearance. There is no pending forensic hold
+on these closed roots; neither are they awaiting a launch.
+
+The relay's commit58a534fb does not resolve locally. The named forensic file
+is present with the SHA and actual local Git history recorded above; laptop
+commit equivalence remains unverified. Its OFF positive-margin count128/128
+must not be confused with greedy exact generation: the forensic reports
+127/128 mem2reg generations. Both support the stated initial action bias,
+not a defect-free guarantee for every later implementation or a proof of
+opaque-tool impossibility. Map-distance remains separate from the primary.
+
+At the September14 00:57UTC pull, no current Stage2A route/core owner answer
+had arrived. Q0 forensic clearance does not supply those unrelated source
+definitions. Bibliography repair proceeds independently; no science run is
+launched to satisfy an obsolete launch-pending snapshot.

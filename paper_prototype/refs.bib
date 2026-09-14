@@ -225,8 +225,8 @@
 % Group A: copied verbatim from paper/iclr2027_experience_models/references.bib (same project; verified there against arXiv).
 % Group B: canonical references added from the standard record (arXiv ID given); each carries "VERIFY" and must be checked
 % against arXiv/DBLP before the 09-15 compile. None of these was invented; the IDs are the well-known ones for each paper.
-% Remaining TODO keys (two): TODO-auto-dreamer (arXiv 2605.20616) and TODO-consolidation-collapse (arXiv 2605.12978);
-% both are in the reading notes by ID and title only (authors not recorded), so they stay as TODO until a person fills them.
+% Former TODO-auto-dreamer and TODO-consolidation-collapse metadata are resolved below as
+% ye2026autodreamer and zhang2026faultymemories; Group B VERIFY requirements remain unchanged.
 
 % --- Group A (from the sibling manuscript's bib) ---
 @article{ge2026leafe,
@@ -433,8 +433,24 @@
   note      = {arXiv:2305.11738}
 }
 
-% ---- Remaining TODO keys (cited as \citep{TODO-...}; in the reading notes by arXiv ID and title only; a person must fill and verify) ----
-% TODO-auto-dreamer: "Learning Offline Memory Consolidation for Language Agents" (Auto-Dreamer), arXiv:2605.20616; authors not in notes.
-% TODO-consolidation-collapse: "Useful Memories Become Faulty When Continuously Updated by LLMs", arXiv:2605.12978; authors not in notes.
+% ---- Resolved metadata for the two former TODO keys (versioned arXiv preprints) ----
+@article{ye2026autodreamer,
+  author  = {Ye, Chongrui and Liu, Yuxiang and Wang, Yu and Yu, Haofei and Zhao, Yining and Liu, Ge and McAuley, Julian and You, Jiaxuan},
+  title   = {{Auto-Dreamer}: Learning Offline Memory Consolidation for Language Agents},
+  journal = {arXiv preprint arXiv:2605.20616},
+  year    = {2026},
+  note    = {Version 1, 20 May 2026, cs.CL},
+  url     = {https://arxiv.org/html/2605.20616v1}
+}
+
+@article{zhang2026faultymemories,
+  author  = {Zhang, Dylan and Lin, Yanshan and Wu, Zhengkun and Sun, Yihang and Li, Bingxuan and Li, Dianqi and Peng, Hao},
+  title   = {Useful Memories Become Faulty When Continuously Updated by {LLMs}},
+  journal = {arXiv preprint arXiv:2605.12978},
+  year    = {2026},
+  note    = {Version 2, revised 29 August 2026; first submitted 13 May 2026, cs.AI},
+  url     = {https://arxiv.org/html/2605.12978v2}
+}
+
 % (Resolved in this pass: TODO-compilergym, TODO-cummins2023, TODO-self-training, TODO-model-collapse, TODO-seal, TODO-ttt-fast-weights,
 %  TODO-memgpt, TODO-silver-sutton, TODO-critic-tutoring, TODO-leafe, TODO-early-experience, TODO-evaf, TODO-memopilot, TODO-spark, TODO-cl-bench.)

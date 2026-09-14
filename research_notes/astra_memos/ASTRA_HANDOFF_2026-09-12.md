@@ -1,6 +1,30 @@
-# Astra restart handoff — September 14, 2026, 00:51 UTC
+# Astra restart handoff — September 14, 2026, bibliography increment
 
-## Current superseding increment at 00:51 UTC
+## Current superseding increment — cleared Q0 hold and bibliography
+
+New cleared-hold relay is acknowledged; no Q0 root waits for this audit or
+launch. Full-dose v2 already ran September13: R0/R2 failed primary endpoints,
+R1 missing final primary readout after runtime abort. The claimed unmeasured
+status is historical. Relay58a534fb unresolved locally; actual forensic bytes
+and commit remain those already recorded. No primary change/retry/distance arm.
+Updated analysis/2026-09-14_q0_fulldose_relay_and_level1_continuation.md.
+
+Two actual manuscript bibliography TODOs resolved from primary versioned arXiv
+records/full texts, without altering scientific prose: ye2026autodreamer and
+zhang2026faultymemories. Main54unique cited keys resolve;52oldentries unchanged;
+18VERIFYannotations remain. No TeX/BibTeX engine/build; no blanket reference
+verification. Source/receipt/limits:
+analysis/2026-09-14_two_bibliography_placeholders_verified.md.
+Russell closed. No runtime code/tests/models/GPU changes in this increment.
+
+No source-owner route/core answer at00:57UTC pull. Those definitions still
+block complete inventory and native screen opening; do not invent them.
+Remaining reference checks are unblocked alongside the pending source request.
+Next actual experiment remains reduced560screen -> qualifiedauthenticTSJ;
+no old Q0/SEQ195 rerun. Full mission ACTIVE/incomplete. Preserve dirtyrules
+and unreviewedTSJdraft. Prior11CPUinitial-adapter tests remain separate evidence.
+
+## Historical superseded increment at 00:51 UTC
 
 New message32 Q0-FULLDOSE hold relay reconciled against actual executed state.
 Forensic is already present; all three native preparations and roots ran on

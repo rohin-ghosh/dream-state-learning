@@ -1,4 +1,19 @@
-## Current superseding snapshot — 2026-09-14 00:51 UTC
+## Current superseding snapshot — 2026-09-14 bibliography increment
+
+Q0forensic hold cleared, but roots already terminalSeptember13; no launch
+pending or full-dose-unmeasured claim now. R0/R2 primaryFAIL, R1 missing
+primary/runtimeabort; no retry, primary change or map-distance arm.
+Actual forensic history recorded; relay58a534fb unavailable locally.
+
+Resolved two bibliography TODOs from primary versioned arXiv sources. All54
+main cited keys resolve,52oldentries preserved;18VERIFYflags still pending.
+No result/abstract changes, TeXbuild or complete bibliography qualification.
+Evidence: analysis/2026-09-14_two_bibliography_placeholders_verified.md.
+No model/GPU/science or new runtime tests; workerclosed. Source route/core
+definitions still absent at00:57pull. FullgoalACTIVE/incomplete; remaining
+citation verification is unblocked while actualscreen waits for sourcebindings.
+
+## Historical superseded snapshot — 2026-09-14 00:51 UTC
 
 Q0-FULLDOSE message32 relay processed: forensic/preparation/three-root execution
 already historical; R0/R2 endpoint failures, R1 runtime-aborted missing primary.
