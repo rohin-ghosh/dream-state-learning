@@ -24573,3 +24573,45 @@ Prelaunchsource/receipt both published before launch. Later11bf3eb0status push
 rejection stopped its shell and was subsequently merged by Main; no extra
 launch or force-push followed. GPU4/5 and implementation/result ownership
 released now; no retries, fits or paper edits queued.
+
+## [Fable VM result read] 2026-09-14T20:18Z — SEQ264 VERIFIED; critique/repeat terminal (Parfit 20:13:51 UTC, unnumbered) VERIFIED
+
+Read-only re-derivation from the A100 run roots. SEQ263 (19:53 UTC) was not read: its first 12 lines contain no `n/N` count in the mechanical sense, so it falls outside this script's result-bearing test. Highest previously read: SEQ262.
+
+**SEQ264** (Builder/Schrodinger 20:08Z) — root `/tmp/astra_rich_action_first_v3_20260914_attempt1`, reduction file `CPU_REPLAY_CHECK.json` (sha256 b0923826…, matches entry).
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| shard model calls | 93/96/92/91 | 93/96/92/91 (`model_calls`; `CALL_*.json` files in `shard{0..3}/teach` = 93/96/92/91) | CPU_REPLAY_CHECK.json, shard*/teach |
+| total native calls | 372 | 372 | sum of `model_calls` |
+| strict action-complete | 14/16/12/14 | 14/16/12/14 (`complete_episodes`) | CPU_REPLAY_CHECK.json |
+| six-command-complete episodes / attempted | 56 / 64 | 56 / 64 (`same_v2_initial_prompts` 16×4 = 64) | CPU_REPLAY_CHECK.json |
+| per-view candidates | 84/96/72/84 | 84/96/72/84 (`row_counts` RICH = RICH_ACTION_ONLY = TERSE) | CPU_REPLAY_CHECK.json |
+| rows per form | 336 | 336 (84+96+72+84) | CPU_REPLAY_CHECK.json |
+| goal arrivals | 58/64 | 58/64 (56 complete + 2 `reached_goal` failures in shard 2) | CPU_REPLAY_CHECK.json `failures` |
+| worlds / complete four-task worlds | 16 / 9 | 16 / 9 (2+4+1+2) | CPU_REPLAY_CHECK.json `worlds` |
+| matched-order goal pairs | 24/32 | 24/32 (`paired_orders` 6+8+4+6) | CPU_REPLAY_CHECK.json `worlds` |
+| failures retained | 8 (3 invalid routes, 2 parser, 2 short-of-plan, 1 coaching stop) | 8 = 2+0+4+2; `invalid_route` 3, `reached_goal` 2, `actor_callback_error` 3 (the entry's 2 parser + 1 coaching stop split is not distinguishable in this file) | CPU_REPLAY_CHECK.json `failures` |
+| colon-header stops | 62 | 62 (`headers.colon` 15+16+16+15) | CPU_REPLAY_CHECK.json |
+| native errors / nonterminal / truncated | 0 / 0 / 0 | 0 / 0 / 0 | CPU_REPLAY_CHECK.json |
+| phase wall | 2538.337 s | 2538.3372 s | sum of `phase_seconds` |
+| prompt / generated tokens | 209921 / 47082 | 209921 / 47082 | `native_metrics` summed |
+| CONTENT_REVIEW_INPUTS.json | sha b7e19b81…, 56 episodes | sha b7e19b81e347ee0c0e89f97e669f32fd9bef8513067233ab1355962eb76bc92b, `episodes` len 56 | root/CONTENT_REVIEW_INPUTS.json |
+
+Integrity: `source_commit` 80368f94b3b9… matches the entry's source 80368f94; `fit_ready` false; status `VERIFIED_INTERNAL_REPLAY_NOT_INDEPENDENT_TENSOR_OR_CONTENT_AUTHENTICATION`. No RESULT.json at root level; no adapter/base sha fields in this reduction file, so the 37ec state join was not re-derived here. `*_EPISODE_*.json` files: none in this layout (calls are `CALL_*.json`).
+Scope (builder's own limits): collection only, no fit, fit_ready=False, content not certified; V2 both episodes remain excluded.
+
+**Critique/repeat terminal** (Builder/Parfit 20:13:51 UTC) — root `/tmp/astra_self_critique_repeat_20260914_attempt1`, per-arm `RESULT.json`.
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| common initial calls; goals; pairs | 25; 4/16; 0/8 | 25; 4/16; 0/8 (`CALL_*.json` = 25) | common_initial/RESULT.json (sha 6ce60c01…) |
+| SELF_CRITIQUE_REVISE calls (intervention/actor); goals; pairs | 54 (16/38); 6/16; 1/8 | 54 (`role_calls` intervention 16, actor 38); 6/16; 1/8 (`CALL_*.json` = 54) | critique/SELF_CRITIQUE_REVISE/RESULT.json (sha dc50ef79…) |
+| REPEAT_NO_FEEDBACK calls (intervention/actor); goals; pairs | 48 (16/32); 4/16; 1/8 | 48 (16/32); 4/16; 1/8 (`CALL_*.json` = 48) | repeat/REPEAT_NO_FEEDBACK/RESULT.json (sha 36dfdf77…) |
+| critique stops | 8 callback errors / 2 invalid routes | `actor_callback_error` 8, `invalid_route` 2, `reached_goal` 6 | critique RESULT.json `summary.stops` |
+| repeat stops | 8 callback errors / 4 dead ends | `actor_callback_error` 8, `dead_end` 4, `reached_goal` 4 | repeat RESULT.json `summary.stops` |
+| outcome-eligible episodes; fit candidates; fits | 0; 0; none | 0; 0; `fits` 0, `updates` 0 in all three | all three RESULT.json |
+| total actual captures | 127 | 127 (25+54+48) | CALL file counts |
+
+Integrity: `source_commit.txt` 3b1b07c324d4… matches entry's 3b1b07c3; `protocol_sha256` 154b7642… matches; `loaded_adapter_state_sha256` 37ec3788… in all three arms matches the recorded 37ec state; `native_errors` 0 in all three; `owned_processes_terminal.json` `all_owned_pids_absent` true. Common-initial failure split (9 callback errors / 3 dead ends) was not re-derived (its RESULT.json `summary` carries no `stops` field in the fields read).
+Scope (builder's own limits): one bounded source, 16 tasks / 8 pairs per arm, zero fits, "not established grounded memory use or learned reflection", equal ceilings but unequal actual calls/tokens/compute.
