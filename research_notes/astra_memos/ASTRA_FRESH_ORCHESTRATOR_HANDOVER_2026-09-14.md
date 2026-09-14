@@ -1,4 +1,31 @@
-# Fresh-orchestrator handover — 2026-09-14, after SEQ264 terminal
+# Fresh-orchestrator handover — 2026-09-14, after SEQ266 terminal
+
+## Current restart point — 21:43UTC, all old-thread GPU arms complete
+
+SEQ266 primary published60aca837. Bothqualityfits2928updates and freshAFTER
+completed21:32; node3GPU0/1 physically+CVDreleased21:33:42–43UTC. Do NOT
+restartfit/AFTER or keep reserving these GPUs from historical snapshots.
+Allnode2/node3/A100GPUs unreserved subjecttofreshadmission. Node1NO NEW WORK.
+
+FULLheldpairs30/32,goals62/64; LOSS_OFF1/32,26/64; selectedbaseline2/32,33/64.
+FULLoldW0/W8/audit16/16each,original/fresh4/4each. FULLworldcoverage15/16:
+frozenconjunctionFAIL despite strongincrementalcontrast. Retainedfailedworld
+has a preexistingunavailableEVENT; no repaircounterfactual or exclusion.
+This is tersequalitydata,exposedDEV,providedtext,samefamily,one seed; not
+richFT,H1/H2,newparametricacquisition or an automaticpromotedcheckpoint.
+Primary:
+`gpu_artifacts_local/astra_goal_quality_train_20260914_attempt2/RESULT.md`.
+Rawroot:
+`gpu_artifacts_local/astra_goal_quality_train_terminal_20260914_attempt2/extracted/astra_goal_quality_train_20260914_attempt2/`.
+Native3.644assignedGPUhours,2836calls; logging-orderdeviation preserved.
+
+Nashfinished/releasesownership. Ramanujanownsindependentresultreview;
+Schrodingerownssixcanonicaldraftupdates through266. Do not edit theirfiles
+untilreleased. Afterreview,Mainupdates thishead andpublishesdrafts. Fresh
+orchestratorcloneexists but CodexlaunchHELD perRohin74/75; nootheractive
+researchthreadassumed. OverallmissionACTIVE/INCOMPLETE.
+
+## Historical restart point — superseded by the terminal result above
 
 ## Restart point — 20:38UTC observation, drafts reviewed
 

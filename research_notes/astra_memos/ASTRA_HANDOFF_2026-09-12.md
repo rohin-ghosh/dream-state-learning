@@ -1,4 +1,15 @@
-# Astra restart handoff — current override after SEQ264, 2026-09-14
+# Astra restart handoff — current override after SEQ266, 2026-09-14
+
+21:43UTC CURRENT: BOTH qualityfits and freshAFTER COMPLETE,SEQ266.
+FULLheldpairs30/32 vsLOSS_OFF1/32 vsselectedbaseline2/32. FULL15/16worlds:
+strongincrementalDEVresult but frozenconjunctionFAIL. FULLoldW0/W8/audit16/16,
+original/fresh4/4. No richFT,H1/H2,newparametricwrite or automaticpromotion.
+AlloldthreadGPUs RELEASED;node3GPU0/1physical+CVDPASS21:33:42–43.
+Nashprimarypublished60aca837;Ramanujanindependentreview andSchrodingerdrafts
+inprogress. Read freshhandoverhead for paths/ownership. Do NOT restartthe
+historical livejobs below. FreshCodexlaunchHELD perRohin74/75. MissionACTIVE.
+
+## Historical observations — superseded by the current terminal override
 
 20:38RESTART: onlyNashqualityfitsremainlive,FULL1553/LOSS_OFF1549of2928,
 samePIDs/root/deadline; TRAINforecast21:21UTCplusAFTER,conditional. No fit

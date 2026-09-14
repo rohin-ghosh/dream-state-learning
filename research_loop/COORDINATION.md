@@ -24775,3 +24775,67 @@ Scope (builder's own limits): content review only, no fit, fit_ready=false uncha
 **Quality fits (P44):** train COMPLETE 2,928 updates in both arms; AFTER directories present, no RESULT.json yet at the poll. **Fleet:** a40 0/8, ovx 0/8, ovx2 2/8, a100 0/8. VM: astra_nudge=1 fable_fill=1 courier_vm=1, heartbeat 23 s, astra Pursuing goal / Working, not paused; tmux astra2 alive holding the duplicate `claude --resume` of the cure session (original also alive); root 2.7 GB free. Laptop chains 4/4. Node-1 lease ends 23:14 UTC (~1.6 h); mirror complete; node 1 receives no new work. Nothing launched or killed by the watcher.
 
 **[Fable — operational notice] 2026-09-14T21:35Z:** on Rohin's word ("kill the tmux window") the watcher killed tmux session `astra2` (pane 1696620, child 1696916 = the duplicate `claude --resume` of the cure session created by the 21:22Z incident). Only the duplicate ended; the original cure session (PID 1522522) is alive; the `astra` session is untouched (gpt-6-astra, Pursuing goal). The fresh-thread session will be recreated as a no-rc shell when Rohin says go.
+
+## [Builder] SEQ-266 — 2026-09-14T21:43Z — quality fits and fresh readouts complete: strong incremental held-pair gain, one-world gate failure
+
+Primary released/published60aca837:
+`gpu_artifacts_local/astra_goal_quality_train_20260914_attempt2/RESULT.md`.
+Both arms completed2928updates and their original automatic fresh AFTERs,
+with no restart, extension or duplicate readout. All denominators are retained.
+
+| Endpoint | Matched baseline | FULL_TARGET | NEW_TRAJECTORY_LOSS_OFF |
+|---|---:|---:|---:|
+| Held OWN_TEXT opposite-goal pairs | 2/32 | 30/32 | 1/32 |
+| Held OWN_TEXT goals | 33/64 | 62/64 | 26/64 |
+| Worlds with a correct pair | 2/16 | 15/16 | 1/16 |
+| UNAVAILABLE pairs | 0/32 | 0/32 | 0/32 |
+| UNAVAILABLE goals | 3/64 | 23/64 | 0/64 |
+| Four fixed TRAIN worlds, pairs | 2/8 | 8/8 | 1/8 |
+| Old W0 / W8 / audit | 16/16 each | 16/16 each | 16/16 each |
+| Original / previously fresh graph goals | 3/4 each | 4/4 each | 2/4 each |
+
+FULL exceeds both selectedcomparators on the primary endpoint and meets the
+retention thresholds. The frozen conjunction stillFAILS: one required world,
+SHARD-1-BLOCK-0-PROBE-A,has0/2pairs. It is the world with the preexistinginvalid
+sourceaddressE_W5YA3H6TNF; allstatesreceive literalMEMORYUNAVAILABLE there.
+FULLtasks2/3take the wrong firstbranch. This cooccurs withmissingtext; no
+repaircounterfactual proves it is the solecause. No posthoc30/30denominator,
+criterionchange, automaticpromotion, seedexpansion or furtherfit follows.
+TRAINdiagnostics cover fourfixedworlds,not all61eligibleTRAINworlds.
+
+Executedsource7f9d4251,protocol1683ca25; bothstart37ec. FULLsaved/reloadedstate
+e226cea2,control4f0dccf5. Identical1674inputs2928updates,fullreference238274labels;
+activeFULL238274vscontrol173814labels. Terseactualqualitytargets,not richFT.
+Total2836inferencecalls and3.644nativeassignedGPUhours including944callbaseline;
+not purekernelcost or collectioncost. The selectedbaseline is2/32pairs,NOT
+the legacyP44prediction's0/4. NineCPUtests and terminalnative-file/episode
+checks recorded byNash; independentepisode-levelreview byRamanujan pending.
+ArchiveSHA0152cafb69aa7715b5f4fbb15caa4954f03c62c1f3c063883ed9c17c9aa00deb,
+`gpu_artifacts_local/astra_goal_quality_train_terminal_20260914_attempt2/quality_attempt2_terminal.tar.gz`.
+Preserve the documented prelaunchnotebookpublication-order deviation.
+
+**Resource release:** Nash's physical+CVDchecksPASS21:33:42–43UTC fornode3GPU0/1;
+originalguardian/nativePIDs exited. Their automaticAFTERPIDs91024/91067 are
+recorded,not newmanuallysubmittedruns. All old-thread GPUarms are terminal;
+node2,node3,A100 GPUs0–7 are unreserved subjecttofreshphysical/CVDadmission.
+Node1 remains NO NEW WORK,expiry23:14UTCtoday. No process was killed here.
+
+## [Builder -> Rohin / Fable] 2026-09-14T21:43Z — update our working interpretation, not the threshold
+
+We now have a meaningful positive answer to the narrow question that was
+stuck: training on the broader outcome-filtered child trajectories improves
+goal-sensitive use of supplied memory on held identifiers, beyond old-row
+rehearsal. It is no longer accurate to say every tested recipe lacks an
+incremental held-world advantage. It is also not accurate to call this a full
+gate pass, new parametric acquisition, rich-supervision success, or the
+parent-free self-improving loop. Those distinctions should survive the handover.
+
+My recommended next decision is to separate missing-source robustness from
+transfer to new content-bearing environments, not add dose to this finished
+recipe. A separately declared missing-source intervention can localize the
+remaining failure; code/math data can test your richer-behavior hypothesis.
+Neither is executed or automatically authorized by this result. The new
+orchestrator receives this finalized comparison and all releasedGPUs,not live
+arms. Message74's launchhold remains in force; no newthread was started here.
+Schrodinger updates the sixdrafts whileRamanujan checks the raw outcomes.
+Mission remains ACTIVE/INCOMPLETE; the current arms are complete, not H1/H2.
