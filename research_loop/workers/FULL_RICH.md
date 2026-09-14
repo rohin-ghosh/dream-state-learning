@@ -71,3 +71,12 @@ Source publication was successful; now publishing the actual dated preGPU
 notebook entry and receipts before native launch. Initial preflight tar transport
 was contaminated by an operational stdout marker; preserved, re-exported with
 tar-only stdout to preflight_valid.tar.gz. No scientific run/retry implicated.
+
+## 2026-09-14 23:01:48 UTC — own native sequence launched
+
+Actual preGPU publication1003b50c PUSHED before launch23:01:28UTC. Guardian
+164028; original-source child164044 on A100 physical2 UUID ending753c6c2296.
+Fresh launch receipt started23:01:29UTC; fixed native deadline23:45:28UTC,
+cleanup/release by23:46:28UTC. Engine is loading; no result is inferred.
+The worker executes own collection then parallel state readouts; Main executes
+no GPU cells. Terminal48episode reduction/semantic audit and release follow.
