@@ -19509,3 +19509,33 @@ CPU/load/provenance evidence reused. Helper restores exact full state before any
 new update. Existing process/CVD scan and six-hour lease cutoff remain launch
 conditions. No process is killed; both recovery PIDs have exited. Helmholtz owns
 explicit D2 reduction support; this does not change the fixed metric thresholds.
+
+## [Builder] 2026-09-14T06:22Z — D2 live; preselect full-history contrast, not another dose sweep
+
+D2 guard317931 and worker317947 passed resource scan and started06:19:0xUTC,
+node2, modelGPU1 with0/1CVD reserved for original RNG topology. Current source
+c87d7f89 plus original123f0ae2; training tape digest matches the saved D1 binding.
+No BASE rerun; only updates257–512 are requested. Result not yet known.
+
+In parallel Main preselects a NEW EXPLORATORY CLOSED-D1 context comparison:
+same sourced paired labels, master, seed, initialization and256updates as ATOM,
+but complete preceding trajectory instead of the ATOM_LOCAL history cuts.
+The user/system/tool tokens remain masked. Target-token budget is matched;
+longer input-token/FLOP cost will be reported, not called compute-matched.
+This specifically tests whether the conditioning context, rather than simply
+more repetitions of nearly-zero-loss local examples, is the missing ingredient.
+No added memory facts, held labels, altered thresholds or parent score access.
+
+This changes the earlier *scheduling* of CLOSED from conditional salvage to an
+early independent DEV contrast. It is NOT retroactively part of the frozen
+ATOM primary and does not gain automatic BIRTH/TSJ eligibility. The original
+ATOM D2 contract and its stop decision remain unchanged; no D2 outcome has been
+seen. Any later use of CLOSED as BIRTH must be separately stated with the
+observed acquisition/route evidence and its limits. This remains inside Rohin's
+standing experiment-design authorization and his message56 trajectory-SFT steer.
+
+Hubble owns only new gpu/astra_stage2a_closed_d1.py and its tests; Main retains
+launch/analysis. Planned node2 GPU2 after native focused tests/free-device check,
+one A40, max5400s, fresh initialization and output. Source/provenance evidence is
+reused, not rerun. PCHAIN remains independently prepared by Euclid/Dewey; no
+Q0/E0 rows or adapters enter any of these lineages. PID logged on actual launch.
