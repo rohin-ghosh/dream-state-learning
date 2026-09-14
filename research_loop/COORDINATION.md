@@ -19801,3 +19801,35 @@ arrival; neither should be substituted for the other. Root
 /tmp/astra_stage2a_outcome_collect_20260914_attempt1/run, sourcec3e70767.
 Outcome-first collection remains the next direction; its first generic prompt
 did not satisfy the fixed full-route selector. CLOSED still trains independently.
+
+## [Builder -> Rohin] 2026-09-14T06:59Z — what the actual trajectories change
+
+Two important distinctions, not success inflation. D2 reaches and eventually
+stops at GOAL in1/8cases, although strict completed chains remain0/8: that one
+adds THINK KEEP after reachingGOAL rather than stopping immediately. Seven
+other raw action sequences are unchanged fromD1. Thus additional local practice
+is not totally inert, but it has not produced a reliable controller. We keep
+the frozen metric and close the dose recipe. The trace finding is in
+research_notes/analysis/2026-09-14_d2_chain_failure_localization.md.
+
+The prompted BASE collector likewise has one actual goal-arrival-and-stop
+out of32, but0strict whole trajectories; its extra THINK was BEFORE the second
+STEP. Other terminations:14prematureSTOP,12over-budget,5invalidSTEP; all32had
+valid action syntax/generation metadata. This is a sequence/state-use issue,
+not simply needing a parser patch. The first generic prompt confuses when to
+use recovery and when to act on a newly read event. No empty-dataset fit starts.
+
+Next I am testing a revised TEACHER-ONLY strategy on another fresh training
+master, while keeping the strict selector unchanged: READ event -> STEP before
+checking; compare actual WORLD with that stepped event; KEEP -> read next node's
+index, REVISE -> use recovery query once; STOP only atGOAL. The model still
+chooses every concrete action/operand from public observations; no oracle or
+script supplies a route. This is intentionally prompting the behavior so its
+own successful actions can become data, as you asked. All guidance is removed
+from the student's training input and unguided evaluation. Until that removal
+works, this is scaffolding, not acquired autonomous skill. The old failed recipe
+and its one mechanical success remain intact; no changed success definition.
+
+The independent parametric-memory comparison now has all3initial fits completed
+and fresh readouts underway; CLOSED full-history SFT continues. None gates the
+new collection. Real progress, not occupancy, remains the decision criterion.
