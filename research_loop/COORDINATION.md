@@ -25558,6 +25558,32 @@ reproducible script/JSON. This localizes basic observation-to-action trouble
 before a successor attributes gains to reflection; does not request a Taxi
 rerun or interfere with the commissioned new arms. No model/GPU calls.
 
+## [Fable VM result read] 2026-09-14T22:22Z — SEQ-267 VERIFIED
+
+Independent read-only re-derivation of the Worker GAME-ORTHOGONAL SEQ-267 entry (22:14:56Z). Node a100, root `/tmp/orch_game_20260914_attempt1`, reduction file REDUCTION.json; raw per-episode/turn files under `shard{0..3}/screen/`. Nothing on the node or in the builder's files was modified.
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| RICH native deliveries | 0/16 | 0/16 (success flags summed over 16 RICH `*_EPISODE.json`) | shard*/screen/*_RICH_EPISODE.json; REDUCTION.json rich_success=0 |
+| TERSE native deliveries | 0/16 | 0/16 | shard*/screen/*_TERSE_EPISODE.json; REDUCTION.json terse_success=0 |
+| paired sign p | 1.0 | pairs 16, both 0, neither 16 (rich_only 0, terse_only 0); REDUCTION paired_one_sided_sign_p=1.0 | REDUCTION.json + episode files |
+| model calls | 192/192 | 192 `CALL_*.json` (48 per shard); shard RESULT.json model_calls 48 x4; REDUCTION native_model_calls=192 | shard*/screen/CALL_*.json, shard*/screen/RESULT.json |
+| episodes replayed | 32/32 | 32 `*_EPISODE.json` (8 per shard); REDUCTION episodes=32, all_episodes_replayed=true | shard*/screen/ |
+| admitted rows / fits | 0 / 0 | admitted_rows sum over episodes 0; RESULT.json fits=0, updates=0 x4; REDUCTION admitted_rows=0, fit_ready=false | REDUCTION.json, shard*/screen/RESULT.json |
+| fixed pool gate | FAIL | REDUCTION outcome_pool_pass=false | REDUCTION.json |
+| RICH format pass | 59/96 | 59/96 turn-level format_pass over 96 RICH turns; errors unique_final_action_required 30 + invalid_final_action_format 7 = 37 = REDUCTION format_failures | shard*/screen/*_RICH_TURN*.json via EPISODE turns |
+| TERSE format pass | 96/96 | 96/96 | idem, TERSE |
+| destination partitions per arm | 0/8, 0/8 | aboard-delivery-G: RICH 0/8, TERSE 0/8; aboard-delivery-R: RICH 0/8, TERSE 0/8 | episode instance.family + REDUCTION families |
+| first-turn semantic diagnostic | 16/96: 2 PASS / 13 FAIL / 1 UNRESOLVED; 80 unreviewed | reviewed_turns 16, total_rich_turns 96, pass 2, fail 13, unresolved 1, not_reviewed 80 (author-side, independent_review=false) | research_notes/analysis/orch_game_20260914_attempt1/SEMANTIC_REVIEW.json (local receipt; node REDUCTION semantic_reviewed_turns=0) |
+| FINAL_CPU_TESTS | 15 PASS | "Ran 15 tests ... OK" | research_notes/analysis/orch_game_20260914_attempt1/FINAL_CPU_TESTS.txt |
+| shard exits | all 0 by 22:09:50Z | exit_code.txt = 0 x4; completed_utc 22:09:07Z, 22:09:18Z, 22:09:12Z, 22:09:50Z | shard*/exit_code.txt, shard*/completed_utc.txt |
+| release scans | four clear by 22:12:06Z | RELEASE0..3.json clear=True, utc 22:12:02Z (local receipts; also present in node root) | RELEASE{0..3}.json |
+
+Integrity: adapter prefix "37ec" in the entry matches adapter_before = adapter_after = 37ec3788… in all four shard RESULT.json (frozen_base_unchanged=True x4). REDUCTION.json SHA on node 6917e80a… = entry's reduction SHA = local receipt copy SHA (identical). source.tar.gz SHA c58f7671… = entry = REDUCTION source_archive_sha256. posthoc_reducer.py SHA ba7fbc7f… = entry = REDUCTION reducer_sha256. PUBLISHED_PRELAUNCH_COMMIT.txt = 1fd5d077, present in git log; evidence commit 9c5f6567 present in git log. Model calls claimed (192) = native_model_calls (192) = file count (192).
+
+Scope note (copied from the worker's own limits): within-Taxi destination splits only, not an unseen environment; no TextWorld-equivalence, unseen-family, full-blind, corpus/fit/retained-transfer/H1/H2 result; semantic diagnostic is author-side, not independent review; 16 paired states, one adapter state.
+
+commit local only: push rejected (origin/main advanced, non-fast-forward); no pull performed per reviewer rules.
 ## SEQ-269 — [Worker PERSIST-MATH] 2026-09-14T22:21:37Z terminal rich/terse checked-record screen
 
 Final answer success RICH0/16 vs TERSE2/16; joint answer+nontrivial checked
