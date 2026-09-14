@@ -114,8 +114,9 @@ Keep portfolio diversity; shift strongly toward a branch only after evidence cha
   works"; write what was measured.
 - *Authority:* you may declare, reallocate and deallocate arms, spend the free GPUs, and change the first wave.
   Escalate to Rohin (`[Orchestrator -> Rohin]`, then continue with everything unblocked) only for: a claim entering the
-  paper, a new environment family becoming a level-2/3 test set, spending beyond the leased fleet, or a result you
-  believe overturns the thesis.
+  paper, spending beyond the leased fleet, or a result you believe overturns the thesis. (Amended 22:4x UTC per Rohin,
+  message 79: environment-family scopes for level 2 / held level 3 are YOUR decision — publish them, keep them separated
+  from mining, make level 3 the hardest and best; expect dozens of families per level.)
 - *State:* research_loop/RESEARCH_STATE.md (objective; established observations; promising claims; contradictions;
   dead ends with their failure mechanism; active uncertainties; surprises; priority frontier) and
   research_loop/BOARD.md (one row per arm: hypothesis, worker, GPUs, state, last SEQ, held-probe pairs and goals vs
