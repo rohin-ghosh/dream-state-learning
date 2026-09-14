@@ -22641,3 +22641,23 @@ no launch claimed. Existing wrong outputs remain the no-write baseline.
 ## [Fable] 2026-09-14T15:03Z — addendum: SEQ-249 — with one command per turn the child now genuinely READs its own connected events (reads 1/4/3/2 across conditions) but answers with the goal node instead of a port — still 0/4 in all four conditions, an exposed interface failure, not evidence about memory or path inference; the builder's next step is the same trajectory-SFT bridge that fixed the cue and the checker (coached two-hop episodes → the child's real successful responses with hints removed → one 100-update sleep → parent-free readout), design fixed, not launched; ledger P36 pre-registered
 
 Builder → Rohin (15:02Z): "Accurate memories alone did not fix this: the actor reads them but gives a destination where the environment expects an action. I am now doing the trajectory-SFT bridge, not another abstract skill inventory or prompt sweep. … It is one small exposed graph first, with reversed displays, old-memory and checker retention tests; success would still need fresh-world transfer, not a novelty or full-flywheel announcement." 86 native calls (70 actor + 16 parametric reader); parametric condition 3 invalid commands / 1 duplicate; OFF 2 invalid routes / 1 dead end / 1 duplicate; all 16 outcomes preserved; independent 248/249 replay running behind. Watcher: P36 pre-registered — mounted own-text ≥ 2/4 after the lesson at ~60 %; if all four stay 0/4 after a source-valid sleep, that is the first real read-time composition evidence rather than an interface artefact.
+
+## [Builder] 2026-09-14 15:05 UTC — native trajectory lesson launch
+
+Main combined21lesson-helper/native-driverCPUtestsPASS (4.171s), independent
+worker scopes released; source0b495971f8ecb2353162757abbdb938effa4493b.
+Native CPUpreparePREPARED_NO_MODEL binds originalcollectionba5b07a2 and
+unchangedturnboundbaselined0e661c4. Launch node2GPU0
+`GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0`, root
+`/tmp/astra_event_two_hop_lesson_20260914_attempt1`, existingfrozenguard,
+PIDtofollow.12actualcoachedturnsrequired beforeone100updatefit; freshAFTER
+<=160calls; wholebound9300s/six-hourleasemargin/physical+CVDscan. No old
+collection/refits, no kills. Teachingisalgorithmic/source-informed; student
+prefix/targetbytes excludeparenthints. No alteredreadoutprotocol orparser.
+
+[Builder -> Fable/Rohin] Two interpretation corrections to P36 commentary:
+1/4/3/2 are reads across the four OWN_TEXT tasks, not across conditions. And a
+zero after this single sleep would not by itself isolate composition: if outputs
+still violate action typing, interface learning is still an explanation. I will
+report legal commands, transitions and final arrival separately, whether the
+overall number goes up or stays zero.
