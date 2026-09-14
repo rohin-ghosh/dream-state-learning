@@ -1,0 +1,88 @@
+{
+  "admitted_targets": 0,
+  "arguments": {
+    "arm": "TERSE",
+    "bundle": "/tmp/astra_portable_37ec_20260914_attempt1",
+    "deadline_epoch": 1789426291,
+    "gpu_uuid": "GPU-f0405a96-813d-7ac7-d641-3ec31d103037",
+    "model_dir": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+    "output": "/localhome/local-rohing/data/orch_persist_math_20260914_attempt1/TERSE",
+    "phase": "screen"
+  },
+  "base_verification": {
+    "expected_base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+    "model_dir": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+    "verified": true
+  },
+  "bundle_manifest_sha256": "5e675c309b202625a6ddf1d36c1a58f51ef656985821cec1cd6123424d927469",
+  "cuda_visible_devices": "GPU-f0405a96-813d-7ac7-d641-3ec31d103037",
+  "curriculum_sha256": "2cf6a7d87c7ee8796a3c8cc4e55fae3a830a6d31989e48102bf44164b6687cab",
+  "families": {
+    "L1mining": "PM_AFFINE_POWER_V1",
+    "L2proposal": "PM_CONGRUENCE_JOIN_V1",
+    "heldL1validation": "PM_AFFINE_WORD_V1",
+    "heldL3proposal": "PM_LINEAR_RECURRENCE_V1"
+  },
+  "fits": 0,
+  "helpers": {
+    "curriculum": "63f64585c8f0ba5b64692a89bf50d9d610c47ae317ac5ff502abddddbaed231c",
+    "driver": "efa31e3d084dc6838ed3d0892a32ae522d5223d6a0f1eb4c50142254220c2c37",
+    "guard": "a12554eeece9f4db4ca434f39d4273d35e8fc4d0f6af1d6e57ead948979e8559",
+    "protocol": "e8682dd53ee0987cf1a766ede1d2ab1a022eda09e652d2299ee41095a474269e"
+  },
+  "loaded_adapter_state_sha256": "37ec37884e4b0b679edd1dba1be1dec3474589e992649f3a33e7e3b1ec78b8c0",
+  "model_calls": 0,
+  "native_pid": 152938,
+  "runtime": {
+    "distributions": {
+      "peft": "0.20.0",
+      "tokenizers": "0.22.2",
+      "torch": "2.13.0",
+      "transformers": "5.5.3"
+    },
+    "imported": {
+      "peft": "0.20.0",
+      "tokenizers": "0.22.2",
+      "torch": "2.13.0+cu130",
+      "transformers": "5.5.3"
+    }
+  },
+  "source_contract": {
+    "engine": "gpu.astra_experienced_event_microloop.Engine",
+    "engine_sha256": "8e57909a6c4f2d988a434423a33e7a663c23696ffdb2ce402c2bb03b2fccbb70",
+    "exporter_sha256": "d2e4572f1f33b8ce6a117b131075a3398c8fcae149d500541227e0b3e171de3b",
+    "helpers": {
+      "driver": "0e21e0fc4b205b73651e089e47fd22b2040e6951335b226f9655056b29ca8232",
+      "goal": "9b2223654dcc4f92fdee16114c381d1814f544d3d3befae47d5c9e6d7ae9b52c",
+      "guard": "b0ccefbf96e4509bbbe35560e9eba5d4871b798300faa290ad791f192ee3ee6f",
+      "prior": {
+        "driver": "823ff27836603d41e2e3765bd3c0ba0db3bfb974431d9029e7e0f6e9e121e9bc",
+        "goal": "82f0662deca185b69f696d0c36b6a9bb3976702a0709d122399e6f0ec75a7233",
+        "guard": "5382d40ea594ceda241ffcc12ac91f99cf7a8afaf823db7891daff33e49d098f",
+        "memory": {
+          "audit": "81e447afb444d4f929f0d8e0ae21c0fc21ad0f2ffda48f931b7d272606ecc745",
+          "cues": "02c9e41b4a0382aa4c831ccd127532a885052fdc2937fbbf63a98797ad432846",
+          "driver": "7586678b28309edaa8ece1e16f4c985c394e367b69bedf46e6edc61e50aa64cc",
+          "engine": "8e57909a6c4f2d988a434423a33e7a663c23696ffdb2ce402c2bb03b2fccbb70",
+          "guard": "851b1de47cf1220be5bc8ba21bd40a2d53f1e86e8439efe3065f6b3387b255a1",
+          "hop": "cd45a15e6589955dc13d7705668335dba3536bb3c767595889fa65eb3fe55ac2",
+          "lesson": "8b98c9f2169e5e02f9d6ce0cf69f93f523cab2c80ba91ec427743df8e6ee1098",
+          "memory": "6b320158ff38905d103a19a1586cbb8bb74e1472fca03a9126b8792167ec42a0",
+          "native": "7fc071bf8d614eb2374d812f23e4488a0a719f5f7eafa1ee39f350d81fc4165d",
+          "trajectory": "cb0ca496ff46b3f086541c98299753218d275c55baba6e15d5e6f5124e211450",
+          "transfer": "05fa8812e3e08ae9e343c25a42882ab2b4f552afd5cfe4ce366387c3df10d3a8"
+        }
+      }
+    },
+    "native_sha256": "7fc071bf8d614eb2374d812f23e4488a0a719f5f7eafa1ee39f350d81fc4165d",
+    "runtime": {
+      "peft": "0.20.0",
+      "tokenizers": "0.22.2",
+      "torch": "2.13.0+cu130",
+      "transformers": "5.5.3"
+    },
+    "state_hasher_sha256": "9a392dc17eab4db77416b81642def0842c5b353c5ff9aca5fcdf94a04474b078"
+  },
+  "started_unix": 1789423651.8893664,
+  "updates": 0
+}
