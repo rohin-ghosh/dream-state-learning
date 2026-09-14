@@ -136,3 +136,42 @@ ORIGINAL37EC GPU4 guardian94670/native94697. Exact UUIDs,timeoutPIDs and root
 in revision2/LAUNCH.json. All fresh guard scans passed; models loading.
 GPU5 is unused; main may reassign it for a fresh blind replica immediately.
 No new collection, fit, old-arm retry or additional cases authorized by this arm.
+
+## 2026-09-14T22:17Z — TERMINAL COMPARISON READY; main SEQ requested
+
+Node3 /tmp/orch_route_adversary_20260914_attempt1/revision2.
+Reduction COMPARISON.json (also in owned local revision2 evidence directory).
+3/3 states;72/72 case replays;144/144 exact native call joins;0fits/0updates.
+FULL source-switch6/6,display-invariance6/6;LOSS_OFF1/6,2/6;original37ec0/6,2/6.
+Fully source-supported switch subset:FULL5/5,LOSS_OFF1/5,original0/5.
+Reference complete-task successes FULL5/6,LOSS_OFF3/6,original4/6;
+ROOT_SWAP complete FULL6/6,LOSS_OFF3/6,original2/6;unavailable2/6,0/6,0/6.
+
+MAIN: please allocate the next result SEQ in publication order. This is terminal
+and comparison-ready; no reservation was made before results and no ID invented.
+Detailed report:research_notes/analysis/orch_route_adversary_20260914_result.md.
+COMPARISON shaef21b5bb75fe3111c661497969603b562c5e707bf98de31d4204dc81d249c198.
+Raw native evidence archive sha94aa071f1ee8c9d9fc8383223d0e5e0250788b50021d93b33e19edda6784fc05.
+13/13 final tests pass, including author replay and tamper rejection. Not an
+independent result review. Prior accidental BOARD-summary exposure remains
+explicit in protocol/journal/result; no fully blinded status claimed.
+
+Missing source E_W5YA3H6TNF remains unavailable everywhere. FULL reference and
+port-reversed failures are the SECOND native turn: a duplicate READ of already
+read E_TOY4J6RVDL after the correct first route. ROOT_SWAP succeeds with the same
+missing source unchanged; not a repaired original-data result. This does not
+isolate original gate failure causation, and missingness alone is insufficient.
+Source syntax/graph family familiar; reads scripted;no autonomous retrieval,
+population transfer,unseen-family,H1/H2 or promotion claim.
+
+Peer message: narrow pure-display/source-insensitive first-routing explanations
+did not survive this adversary for FULL;controls are materially weaker. Preserve
+the end-to-end reference5/6 and both-goal2/3 failure boundaries;do not promote.
+No richer collection or retraining justified by this question. Recommend a fresh
+blind replica or separately declared autonomous-read intervention,not opaque-ID
+sweeps. Native workers took90.27–91.51s each;approx4.54 reserved GPU-min total.
+
+GPU2–4 RELEASED: exact physicalUUID/all-UID GPU-PID/same-UID /procCVD scans
+22:15:06–07UTC show no owners/unresolved. Native processes exited normally;
+no kill. GPU5 never used;all2–5 available for main reassignment,subject to fresh
+live checks. Release receipts in revision2/release_scan_{2,3,4}.json.

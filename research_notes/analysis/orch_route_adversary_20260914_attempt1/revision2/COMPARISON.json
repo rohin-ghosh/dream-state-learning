@@ -1,0 +1,1938 @@
+{
+  "actual_native_calls": 144,
+  "arms": [
+    {
+      "arm": "FULL_TARGET",
+      "case_replays": 24,
+      "fully_supported_interventions": {
+        "causal_switch_correct": 5,
+        "denominator": 5,
+        "display_invariant_correct": 5
+      },
+      "native_calls": 48,
+      "result_sha256": "c251843b4d1b081664da6cd0df6b87b78c0ca519b241d2beff801afee07ad07b",
+      "rows": [
+        {
+          "actual_first_port": "P_HDFNGVPV66",
+          "arm": "FULL_TARGET",
+          "complete_correct": true,
+          "condition": "REFERENCE",
+          "expected_first_port": "P_HDFNGVPV66",
+          "final_current": "N_HAOJQUZHEH",
+          "first_correct": true,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_HDFNGVPV66",
+            "ROUTE P_TIWDWZE6ZF"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914101,
+          "target_goal": "N_HAOJQUZHEH",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_XYYSCSBCUJ",
+          "arm": "FULL_TARGET",
+          "complete_correct": true,
+          "condition": "REFERENCE",
+          "expected_first_port": "P_XYYSCSBCUJ",
+          "final_current": "N_5IWEW5ES3E",
+          "first_correct": true,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_XYYSCSBCUJ",
+            "ROUTE P_5AC3XPM4YM"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914101,
+          "target_goal": "N_5IWEW5ES3E",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_HDFNGVPV66",
+          "arm": "FULL_TARGET",
+          "complete_correct": true,
+          "condition": "PORT_REVERSE",
+          "expected_first_port": "P_HDFNGVPV66",
+          "final_current": "N_HAOJQUZHEH",
+          "first_correct": true,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_HDFNGVPV66",
+            "ROUTE P_TIWDWZE6ZF"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914101,
+          "target_goal": "N_HAOJQUZHEH",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_XYYSCSBCUJ",
+          "arm": "FULL_TARGET",
+          "complete_correct": true,
+          "condition": "PORT_REVERSE",
+          "expected_first_port": "P_XYYSCSBCUJ",
+          "final_current": "N_5IWEW5ES3E",
+          "first_correct": true,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_XYYSCSBCUJ",
+            "ROUTE P_5AC3XPM4YM"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914101,
+          "target_goal": "N_5IWEW5ES3E",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_XYYSCSBCUJ",
+          "arm": "FULL_TARGET",
+          "complete_correct": true,
+          "condition": "ROOT_SWAP",
+          "expected_first_port": "P_XYYSCSBCUJ",
+          "final_current": "N_HAOJQUZHEH",
+          "first_correct": true,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_XYYSCSBCUJ",
+            "ROUTE P_TIWDWZE6ZF"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914101,
+          "target_goal": "N_HAOJQUZHEH",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_HDFNGVPV66",
+          "arm": "FULL_TARGET",
+          "complete_correct": true,
+          "condition": "ROOT_SWAP",
+          "expected_first_port": "P_HDFNGVPV66",
+          "final_current": "N_5IWEW5ES3E",
+          "first_correct": true,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_HDFNGVPV66",
+            "ROUTE P_5AC3XPM4YM"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914101,
+          "target_goal": "N_5IWEW5ES3E",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_XYYSCSBCUJ",
+          "arm": "FULL_TARGET",
+          "complete_correct": false,
+          "condition": "UNAVAILABLE",
+          "expected_first_port": "P_HDFNGVPV66",
+          "final_current": "N_YSNWF6AJMB",
+          "first_correct": false,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_XYYSCSBCUJ",
+            "READ EVENT E_42OEAHNACB"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": false,
+          "seed": 914101,
+          "target_goal": "N_HAOJQUZHEH",
+          "terminal_reason": "duplicate_address"
+        },
+        {
+          "actual_first_port": "P_XYYSCSBCUJ",
+          "arm": "FULL_TARGET",
+          "complete_correct": true,
+          "condition": "UNAVAILABLE",
+          "expected_first_port": "P_XYYSCSBCUJ",
+          "final_current": "N_5IWEW5ES3E",
+          "first_correct": true,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_XYYSCSBCUJ",
+            "ROUTE P_5AC3XPM4YM"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": false,
+          "seed": 914101,
+          "target_goal": "N_5IWEW5ES3E",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_Y3Q7YLM2OU",
+          "arm": "FULL_TARGET",
+          "complete_correct": true,
+          "condition": "REFERENCE",
+          "expected_first_port": "P_Y3Q7YLM2OU",
+          "final_current": "N_7L6JQNZT4E",
+          "first_correct": true,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "native_commands": [
+            "ROUTE P_Y3Q7YLM2OU",
+            "ROUTE P_J4OTMLPZ5Z"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914102,
+          "target_goal": "N_7L6JQNZT4E",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_BZ3TP7OXHM",
+          "arm": "FULL_TARGET",
+          "complete_correct": true,
+          "condition": "REFERENCE",
+          "expected_first_port": "P_BZ3TP7OXHM",
+          "final_current": "N_BOCVGVBBCJ",
+          "first_correct": true,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "native_commands": [
+            "ROUTE P_BZ3TP7OXHM",
+            "ROUTE P_X6PV6OIPOX"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914102,
+          "target_goal": "N_BOCVGVBBCJ",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_Y3Q7YLM2OU",
+          "arm": "FULL_TARGET",
+          "complete_correct": true,
+          "condition": "PORT_REVERSE",
+          "expected_first_port": "P_Y3Q7YLM2OU",
+          "final_current": "N_7L6JQNZT4E",
+          "first_correct": true,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "native_commands": [
+            "ROUTE P_Y3Q7YLM2OU",
+            "ROUTE P_J4OTMLPZ5Z"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914102,
+          "target_goal": "N_7L6JQNZT4E",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_BZ3TP7OXHM",
+          "arm": "FULL_TARGET",
+          "complete_correct": true,
+          "condition": "PORT_REVERSE",
+          "expected_first_port": "P_BZ3TP7OXHM",
+          "final_current": "N_BOCVGVBBCJ",
+          "first_correct": true,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "native_commands": [
+            "ROUTE P_BZ3TP7OXHM",
+            "ROUTE P_X6PV6OIPOX"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914102,
+          "target_goal": "N_BOCVGVBBCJ",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_BZ3TP7OXHM",
+          "arm": "FULL_TARGET",
+          "complete_correct": true,
+          "condition": "ROOT_SWAP",
+          "expected_first_port": "P_BZ3TP7OXHM",
+          "final_current": "N_7L6JQNZT4E",
+          "first_correct": true,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "native_commands": [
+            "ROUTE P_BZ3TP7OXHM",
+            "ROUTE P_J4OTMLPZ5Z"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914102,
+          "target_goal": "N_7L6JQNZT4E",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_Y3Q7YLM2OU",
+          "arm": "FULL_TARGET",
+          "complete_correct": true,
+          "condition": "ROOT_SWAP",
+          "expected_first_port": "P_Y3Q7YLM2OU",
+          "final_current": "N_BOCVGVBBCJ",
+          "first_correct": true,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "native_commands": [
+            "ROUTE P_Y3Q7YLM2OU",
+            "ROUTE P_X6PV6OIPOX"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914102,
+          "target_goal": "N_BOCVGVBBCJ",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_BZ3TP7OXHM",
+          "arm": "FULL_TARGET",
+          "complete_correct": false,
+          "condition": "UNAVAILABLE",
+          "expected_first_port": "P_Y3Q7YLM2OU",
+          "final_current": "N_4DCIMARPHJ",
+          "first_correct": false,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "native_commands": [
+            "ROUTE P_BZ3TP7OXHM",
+            "READ EVENT E_VIZ4TGMY22"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": false,
+          "seed": 914102,
+          "target_goal": "N_7L6JQNZT4E",
+          "terminal_reason": "duplicate_address"
+        },
+        {
+          "actual_first_port": "P_BZ3TP7OXHM",
+          "arm": "FULL_TARGET",
+          "complete_correct": false,
+          "condition": "UNAVAILABLE",
+          "expected_first_port": "P_BZ3TP7OXHM",
+          "final_current": "N_4DCIMARPHJ",
+          "first_correct": true,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "native_commands": [
+            "ROUTE P_BZ3TP7OXHM",
+            "READ EVENT E_VIZ4TGMY22"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": false,
+          "seed": 914102,
+          "target_goal": "N_BOCVGVBBCJ",
+          "terminal_reason": "duplicate_address"
+        },
+        {
+          "actual_first_port": "P_VD4QGEZVKT",
+          "arm": "FULL_TARGET",
+          "complete_correct": true,
+          "condition": "REFERENCE",
+          "expected_first_port": "P_VD4QGEZVKT",
+          "final_current": "N_QXTYUSWLOZ",
+          "first_correct": true,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_VD4QGEZVKT",
+            "ROUTE P_7QV4OUBPN2"
+          ],
+          "original_missing_addresses": [
+            "E_W5YA3H6TNF"
+          ],
+          "route_sources_available": true,
+          "seed": 914103,
+          "target_goal": "N_QXTYUSWLOZ",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_3TILLNKUCR",
+          "arm": "FULL_TARGET",
+          "complete_correct": false,
+          "condition": "REFERENCE",
+          "expected_first_port": "P_3TILLNKUCR",
+          "final_current": "N_UATTOS2OXQ",
+          "first_correct": true,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_3TILLNKUCR",
+            "READ EVENT E_TOY4J6RVDL"
+          ],
+          "original_missing_addresses": [
+            "E_W5YA3H6TNF"
+          ],
+          "route_sources_available": false,
+          "seed": 914103,
+          "target_goal": "N_7P5OYA74NA",
+          "terminal_reason": "duplicate_address"
+        },
+        {
+          "actual_first_port": "P_VD4QGEZVKT",
+          "arm": "FULL_TARGET",
+          "complete_correct": true,
+          "condition": "PORT_REVERSE",
+          "expected_first_port": "P_VD4QGEZVKT",
+          "final_current": "N_QXTYUSWLOZ",
+          "first_correct": true,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_VD4QGEZVKT",
+            "ROUTE P_7QV4OUBPN2"
+          ],
+          "original_missing_addresses": [
+            "E_W5YA3H6TNF"
+          ],
+          "route_sources_available": true,
+          "seed": 914103,
+          "target_goal": "N_QXTYUSWLOZ",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_3TILLNKUCR",
+          "arm": "FULL_TARGET",
+          "complete_correct": false,
+          "condition": "PORT_REVERSE",
+          "expected_first_port": "P_3TILLNKUCR",
+          "final_current": "N_UATTOS2OXQ",
+          "first_correct": true,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_3TILLNKUCR",
+            "READ EVENT E_TOY4J6RVDL"
+          ],
+          "original_missing_addresses": [
+            "E_W5YA3H6TNF"
+          ],
+          "route_sources_available": false,
+          "seed": 914103,
+          "target_goal": "N_7P5OYA74NA",
+          "terminal_reason": "duplicate_address"
+        },
+        {
+          "actual_first_port": "P_3TILLNKUCR",
+          "arm": "FULL_TARGET",
+          "complete_correct": true,
+          "condition": "ROOT_SWAP",
+          "expected_first_port": "P_3TILLNKUCR",
+          "final_current": "N_QXTYUSWLOZ",
+          "first_correct": true,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_3TILLNKUCR",
+            "ROUTE P_7QV4OUBPN2"
+          ],
+          "original_missing_addresses": [
+            "E_W5YA3H6TNF"
+          ],
+          "route_sources_available": true,
+          "seed": 914103,
+          "target_goal": "N_QXTYUSWLOZ",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_VD4QGEZVKT",
+          "arm": "FULL_TARGET",
+          "complete_correct": true,
+          "condition": "ROOT_SWAP",
+          "expected_first_port": "P_VD4QGEZVKT",
+          "final_current": "N_7P5OYA74NA",
+          "first_correct": true,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_VD4QGEZVKT",
+            "ROUTE P_WHGDNAZ74T"
+          ],
+          "original_missing_addresses": [
+            "E_W5YA3H6TNF"
+          ],
+          "route_sources_available": false,
+          "seed": 914103,
+          "target_goal": "N_7P5OYA74NA",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_VD4QGEZVKT",
+          "arm": "FULL_TARGET",
+          "complete_correct": true,
+          "condition": "UNAVAILABLE",
+          "expected_first_port": "P_VD4QGEZVKT",
+          "final_current": "N_QXTYUSWLOZ",
+          "first_correct": true,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_VD4QGEZVKT",
+            "ROUTE P_7QV4OUBPN2"
+          ],
+          "original_missing_addresses": [
+            "E_W5YA3H6TNF"
+          ],
+          "route_sources_available": false,
+          "seed": 914103,
+          "target_goal": "N_QXTYUSWLOZ",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_VD4QGEZVKT",
+          "arm": "FULL_TARGET",
+          "complete_correct": false,
+          "condition": "UNAVAILABLE",
+          "expected_first_port": "P_3TILLNKUCR",
+          "final_current": "N_QXTYUSWLOZ",
+          "first_correct": false,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_VD4QGEZVKT",
+            "ROUTE P_7QV4OUBPN2"
+          ],
+          "original_missing_addresses": [
+            "E_W5YA3H6TNF"
+          ],
+          "route_sources_available": false,
+          "seed": 914103,
+          "target_goal": "N_7P5OYA74NA",
+          "terminal_reason": "dead_end"
+        }
+      ],
+      "seconds": 91.50438690185547,
+      "summary": {
+        "PORT_REVERSE": {
+          "both_goal_pairs_correct": 2,
+          "complete_correct": 5,
+          "denominator": 6,
+          "first_correct": 6,
+          "pair_denominator": 3,
+          "supported_denominator": 5,
+          "unsupported_commits": 1,
+          "unsupported_denominator": 1
+        },
+        "REFERENCE": {
+          "both_goal_pairs_correct": 2,
+          "complete_correct": 5,
+          "denominator": 6,
+          "first_correct": 6,
+          "pair_denominator": 3,
+          "supported_denominator": 5,
+          "unsupported_commits": 1,
+          "unsupported_denominator": 1
+        },
+        "ROOT_SWAP": {
+          "both_goal_pairs_correct": 3,
+          "complete_correct": 6,
+          "denominator": 6,
+          "first_correct": 6,
+          "pair_denominator": 3,
+          "supported_denominator": 5,
+          "unsupported_commits": 1,
+          "unsupported_denominator": 1
+        },
+        "UNAVAILABLE": {
+          "both_goal_pairs_correct": 0,
+          "complete_correct": 2,
+          "denominator": 6,
+          "first_correct": 3,
+          "pair_denominator": 3,
+          "supported_denominator": 0,
+          "unsupported_commits": 6,
+          "unsupported_denominator": 6
+        },
+        "paired_interventions": {
+          "causal_switch_correct": 6,
+          "denominator": 6,
+          "display_invariant_correct": 6,
+          "rows": [
+            {
+              "absent_still_correct": false,
+              "all_route_sources_available": true,
+              "causal_switch_correct": true,
+              "display_invariant_correct": true,
+              "goal_index": 0,
+              "seed": 914101
+            },
+            {
+              "absent_still_correct": true,
+              "all_route_sources_available": true,
+              "causal_switch_correct": true,
+              "display_invariant_correct": true,
+              "goal_index": 1,
+              "seed": 914101
+            },
+            {
+              "absent_still_correct": false,
+              "all_route_sources_available": true,
+              "causal_switch_correct": true,
+              "display_invariant_correct": true,
+              "goal_index": 0,
+              "seed": 914102
+            },
+            {
+              "absent_still_correct": true,
+              "all_route_sources_available": true,
+              "causal_switch_correct": true,
+              "display_invariant_correct": true,
+              "goal_index": 1,
+              "seed": 914102
+            },
+            {
+              "absent_still_correct": true,
+              "all_route_sources_available": true,
+              "causal_switch_correct": true,
+              "display_invariant_correct": true,
+              "goal_index": 0,
+              "seed": 914103
+            },
+            {
+              "absent_still_correct": false,
+              "all_route_sources_available": false,
+              "causal_switch_correct": true,
+              "display_invariant_correct": true,
+              "goal_index": 1,
+              "seed": 914103
+            }
+          ]
+        }
+      }
+    },
+    {
+      "arm": "NEW_TRAJECTORY_LOSS_OFF",
+      "case_replays": 24,
+      "fully_supported_interventions": {
+        "causal_switch_correct": 1,
+        "denominator": 5,
+        "display_invariant_correct": 2
+      },
+      "native_calls": 48,
+      "result_sha256": "888490558a80fdef92590559451d4a45947da813b2eec3a8448a548548109ea8",
+      "rows": [
+        {
+          "actual_first_port": "P_HDFNGVPV66",
+          "arm": "NEW_TRAJECTORY_LOSS_OFF",
+          "complete_correct": true,
+          "condition": "REFERENCE",
+          "expected_first_port": "P_HDFNGVPV66",
+          "final_current": "N_HAOJQUZHEH",
+          "first_correct": true,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_HDFNGVPV66",
+            "ROUTE P_TIWDWZE6ZF"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914101,
+          "target_goal": "N_HAOJQUZHEH",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_XYYSCSBCUJ",
+          "arm": "NEW_TRAJECTORY_LOSS_OFF",
+          "complete_correct": true,
+          "condition": "REFERENCE",
+          "expected_first_port": "P_XYYSCSBCUJ",
+          "final_current": "N_5IWEW5ES3E",
+          "first_correct": true,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_XYYSCSBCUJ",
+            "ROUTE P_5AC3XPM4YM"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914101,
+          "target_goal": "N_5IWEW5ES3E",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_HDFNGVPV66",
+          "arm": "NEW_TRAJECTORY_LOSS_OFF",
+          "complete_correct": true,
+          "condition": "PORT_REVERSE",
+          "expected_first_port": "P_HDFNGVPV66",
+          "final_current": "N_HAOJQUZHEH",
+          "first_correct": true,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_HDFNGVPV66",
+            "ROUTE P_TIWDWZE6ZF"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914101,
+          "target_goal": "N_HAOJQUZHEH",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_HDFNGVPV66",
+          "arm": "NEW_TRAJECTORY_LOSS_OFF",
+          "complete_correct": false,
+          "condition": "PORT_REVERSE",
+          "expected_first_port": "P_XYYSCSBCUJ",
+          "final_current": "N_HAOJQUZHEH",
+          "first_correct": false,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_HDFNGVPV66",
+            "ROUTE P_TIWDWZE6ZF"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914101,
+          "target_goal": "N_5IWEW5ES3E",
+          "terminal_reason": "dead_end"
+        },
+        {
+          "actual_first_port": "P_HDFNGVPV66",
+          "arm": "NEW_TRAJECTORY_LOSS_OFF",
+          "complete_correct": false,
+          "condition": "ROOT_SWAP",
+          "expected_first_port": "P_XYYSCSBCUJ",
+          "final_current": "N_5IWEW5ES3E",
+          "first_correct": false,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_HDFNGVPV66",
+            "ROUTE P_5AC3XPM4YM"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914101,
+          "target_goal": "N_HAOJQUZHEH",
+          "terminal_reason": "dead_end"
+        },
+        {
+          "actual_first_port": "P_XYYSCSBCUJ",
+          "arm": "NEW_TRAJECTORY_LOSS_OFF",
+          "complete_correct": false,
+          "condition": "ROOT_SWAP",
+          "expected_first_port": "P_HDFNGVPV66",
+          "final_current": "N_HAOJQUZHEH",
+          "first_correct": false,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_XYYSCSBCUJ",
+            "ROUTE P_TIWDWZE6ZF"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914101,
+          "target_goal": "N_5IWEW5ES3E",
+          "terminal_reason": "dead_end"
+        },
+        {
+          "actual_first_port": "P_XYYSCSBCUJ",
+          "arm": "NEW_TRAJECTORY_LOSS_OFF",
+          "complete_correct": false,
+          "condition": "UNAVAILABLE",
+          "expected_first_port": "P_HDFNGVPV66",
+          "final_current": "N_YSNWF6AJMB",
+          "first_correct": false,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_XYYSCSBCUJ",
+            "READ EVENT E_42OEAHNACB"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": false,
+          "seed": 914101,
+          "target_goal": "N_HAOJQUZHEH",
+          "terminal_reason": "duplicate_address"
+        },
+        {
+          "actual_first_port": "P_XYYSCSBCUJ",
+          "arm": "NEW_TRAJECTORY_LOSS_OFF",
+          "complete_correct": false,
+          "condition": "UNAVAILABLE",
+          "expected_first_port": "P_XYYSCSBCUJ",
+          "final_current": "N_YSNWF6AJMB",
+          "first_correct": true,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_XYYSCSBCUJ",
+            "READ EVENT E_42OEAHNACB"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": false,
+          "seed": 914101,
+          "target_goal": "N_5IWEW5ES3E",
+          "terminal_reason": "duplicate_address"
+        },
+        {
+          "actual_first_port": "P_BZ3TP7OXHM",
+          "arm": "NEW_TRAJECTORY_LOSS_OFF",
+          "complete_correct": false,
+          "condition": "REFERENCE",
+          "expected_first_port": "P_Y3Q7YLM2OU",
+          "final_current": "N_BOCVGVBBCJ",
+          "first_correct": false,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "native_commands": [
+            "ROUTE P_BZ3TP7OXHM",
+            "ROUTE P_X6PV6OIPOX"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914102,
+          "target_goal": "N_7L6JQNZT4E",
+          "terminal_reason": "dead_end"
+        },
+        {
+          "actual_first_port": "P_BZ3TP7OXHM",
+          "arm": "NEW_TRAJECTORY_LOSS_OFF",
+          "complete_correct": false,
+          "condition": "REFERENCE",
+          "expected_first_port": "P_BZ3TP7OXHM",
+          "final_current": "N_4DCIMARPHJ",
+          "first_correct": true,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "native_commands": [
+            "ROUTE P_BZ3TP7OXHM",
+            "READ EVENT E_VIZ4TGMY22"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914102,
+          "target_goal": "N_BOCVGVBBCJ",
+          "terminal_reason": "duplicate_address"
+        },
+        {
+          "actual_first_port": "P_BZ3TP7OXHM",
+          "arm": "NEW_TRAJECTORY_LOSS_OFF",
+          "complete_correct": false,
+          "condition": "PORT_REVERSE",
+          "expected_first_port": "P_Y3Q7YLM2OU",
+          "final_current": "N_BOCVGVBBCJ",
+          "first_correct": false,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "native_commands": [
+            "ROUTE P_BZ3TP7OXHM",
+            "ROUTE P_X6PV6OIPOX"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914102,
+          "target_goal": "N_7L6JQNZT4E",
+          "terminal_reason": "dead_end"
+        },
+        {
+          "actual_first_port": "P_BZ3TP7OXHM",
+          "arm": "NEW_TRAJECTORY_LOSS_OFF",
+          "complete_correct": false,
+          "condition": "PORT_REVERSE",
+          "expected_first_port": "P_BZ3TP7OXHM",
+          "final_current": "N_4DCIMARPHJ",
+          "first_correct": true,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "native_commands": [
+            "ROUTE P_BZ3TP7OXHM",
+            "READ EVENT E_VIZ4TGMY22"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914102,
+          "target_goal": "N_BOCVGVBBCJ",
+          "terminal_reason": "duplicate_address"
+        },
+        {
+          "actual_first_port": "P_BZ3TP7OXHM",
+          "arm": "NEW_TRAJECTORY_LOSS_OFF",
+          "complete_correct": true,
+          "condition": "ROOT_SWAP",
+          "expected_first_port": "P_BZ3TP7OXHM",
+          "final_current": "N_7L6JQNZT4E",
+          "first_correct": true,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "native_commands": [
+            "ROUTE P_BZ3TP7OXHM",
+            "ROUTE P_J4OTMLPZ5Z"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914102,
+          "target_goal": "N_7L6JQNZT4E",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_BZ3TP7OXHM",
+          "arm": "NEW_TRAJECTORY_LOSS_OFF",
+          "complete_correct": false,
+          "condition": "ROOT_SWAP",
+          "expected_first_port": "P_Y3Q7YLM2OU",
+          "final_current": "N_7L6JQNZT4E",
+          "first_correct": false,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "native_commands": [
+            "ROUTE P_BZ3TP7OXHM",
+            "ROUTE P_J4OTMLPZ5Z"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914102,
+          "target_goal": "N_BOCVGVBBCJ",
+          "terminal_reason": "dead_end"
+        },
+        {
+          "actual_first_port": "P_BZ3TP7OXHM",
+          "arm": "NEW_TRAJECTORY_LOSS_OFF",
+          "complete_correct": false,
+          "condition": "UNAVAILABLE",
+          "expected_first_port": "P_Y3Q7YLM2OU",
+          "final_current": "N_4DCIMARPHJ",
+          "first_correct": false,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "native_commands": [
+            "ROUTE P_BZ3TP7OXHM",
+            "READ EVENT E_VIZ4TGMY22"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": false,
+          "seed": 914102,
+          "target_goal": "N_7L6JQNZT4E",
+          "terminal_reason": "duplicate_address"
+        },
+        {
+          "actual_first_port": "P_BZ3TP7OXHM",
+          "arm": "NEW_TRAJECTORY_LOSS_OFF",
+          "complete_correct": false,
+          "condition": "UNAVAILABLE",
+          "expected_first_port": "P_BZ3TP7OXHM",
+          "final_current": "N_4DCIMARPHJ",
+          "first_correct": true,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "native_commands": [
+            "ROUTE P_BZ3TP7OXHM",
+            "READ EVENT E_VIZ4TGMY22"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": false,
+          "seed": 914102,
+          "target_goal": "N_BOCVGVBBCJ",
+          "terminal_reason": "duplicate_address"
+        },
+        {
+          "actual_first_port": "P_VD4QGEZVKT",
+          "arm": "NEW_TRAJECTORY_LOSS_OFF",
+          "complete_correct": true,
+          "condition": "REFERENCE",
+          "expected_first_port": "P_VD4QGEZVKT",
+          "final_current": "N_QXTYUSWLOZ",
+          "first_correct": true,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_VD4QGEZVKT",
+            "ROUTE P_7QV4OUBPN2"
+          ],
+          "original_missing_addresses": [
+            "E_W5YA3H6TNF"
+          ],
+          "route_sources_available": true,
+          "seed": 914103,
+          "target_goal": "N_QXTYUSWLOZ",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_VD4QGEZVKT",
+          "arm": "NEW_TRAJECTORY_LOSS_OFF",
+          "complete_correct": false,
+          "condition": "REFERENCE",
+          "expected_first_port": "P_3TILLNKUCR",
+          "final_current": "N_QXTYUSWLOZ",
+          "first_correct": false,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_VD4QGEZVKT",
+            "ROUTE P_7QV4OUBPN2"
+          ],
+          "original_missing_addresses": [
+            "E_W5YA3H6TNF"
+          ],
+          "route_sources_available": false,
+          "seed": 914103,
+          "target_goal": "N_7P5OYA74NA",
+          "terminal_reason": "dead_end"
+        },
+        {
+          "actual_first_port": "P_3TILLNKUCR",
+          "arm": "NEW_TRAJECTORY_LOSS_OFF",
+          "complete_correct": false,
+          "condition": "PORT_REVERSE",
+          "expected_first_port": "P_VD4QGEZVKT",
+          "final_current": "N_UATTOS2OXQ",
+          "first_correct": false,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_3TILLNKUCR",
+            "READ EVENT E_TOY4J6RVDL"
+          ],
+          "original_missing_addresses": [
+            "E_W5YA3H6TNF"
+          ],
+          "route_sources_available": true,
+          "seed": 914103,
+          "target_goal": "N_QXTYUSWLOZ",
+          "terminal_reason": "duplicate_address"
+        },
+        {
+          "actual_first_port": "P_3TILLNKUCR",
+          "arm": "NEW_TRAJECTORY_LOSS_OFF",
+          "complete_correct": false,
+          "condition": "PORT_REVERSE",
+          "expected_first_port": "P_3TILLNKUCR",
+          "final_current": "N_UATTOS2OXQ",
+          "first_correct": true,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_3TILLNKUCR",
+            "READ EVENT E_TOY4J6RVDL"
+          ],
+          "original_missing_addresses": [
+            "E_W5YA3H6TNF"
+          ],
+          "route_sources_available": false,
+          "seed": 914103,
+          "target_goal": "N_7P5OYA74NA",
+          "terminal_reason": "duplicate_address"
+        },
+        {
+          "actual_first_port": "P_3TILLNKUCR",
+          "arm": "NEW_TRAJECTORY_LOSS_OFF",
+          "complete_correct": true,
+          "condition": "ROOT_SWAP",
+          "expected_first_port": "P_3TILLNKUCR",
+          "final_current": "N_QXTYUSWLOZ",
+          "first_correct": true,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_3TILLNKUCR",
+            "ROUTE P_7QV4OUBPN2"
+          ],
+          "original_missing_addresses": [
+            "E_W5YA3H6TNF"
+          ],
+          "route_sources_available": true,
+          "seed": 914103,
+          "target_goal": "N_QXTYUSWLOZ",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_VD4QGEZVKT",
+          "arm": "NEW_TRAJECTORY_LOSS_OFF",
+          "complete_correct": true,
+          "condition": "ROOT_SWAP",
+          "expected_first_port": "P_VD4QGEZVKT",
+          "final_current": "N_7P5OYA74NA",
+          "first_correct": true,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_VD4QGEZVKT",
+            "ROUTE P_WHGDNAZ74T"
+          ],
+          "original_missing_addresses": [
+            "E_W5YA3H6TNF"
+          ],
+          "route_sources_available": false,
+          "seed": 914103,
+          "target_goal": "N_7P5OYA74NA",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_VD4QGEZVKT",
+          "arm": "NEW_TRAJECTORY_LOSS_OFF",
+          "complete_correct": false,
+          "condition": "UNAVAILABLE",
+          "expected_first_port": "P_VD4QGEZVKT",
+          "final_current": "N_WHI27I4AHY",
+          "first_correct": true,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_VD4QGEZVKT",
+            "READ EVENT E_TOY4J6RVDL"
+          ],
+          "original_missing_addresses": [
+            "E_W5YA3H6TNF"
+          ],
+          "route_sources_available": false,
+          "seed": 914103,
+          "target_goal": "N_QXTYUSWLOZ",
+          "terminal_reason": "duplicate_address"
+        },
+        {
+          "actual_first_port": "P_VD4QGEZVKT",
+          "arm": "NEW_TRAJECTORY_LOSS_OFF",
+          "complete_correct": false,
+          "condition": "UNAVAILABLE",
+          "expected_first_port": "P_3TILLNKUCR",
+          "final_current": "N_WHI27I4AHY",
+          "first_correct": false,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_VD4QGEZVKT",
+            "READ EVENT E_TOY4J6RVDL"
+          ],
+          "original_missing_addresses": [
+            "E_W5YA3H6TNF"
+          ],
+          "route_sources_available": false,
+          "seed": 914103,
+          "target_goal": "N_7P5OYA74NA",
+          "terminal_reason": "duplicate_address"
+        }
+      ],
+      "seconds": 90.27240753173828,
+      "summary": {
+        "PORT_REVERSE": {
+          "both_goal_pairs_correct": 0,
+          "complete_correct": 1,
+          "denominator": 6,
+          "first_correct": 3,
+          "pair_denominator": 3,
+          "supported_denominator": 5,
+          "unsupported_commits": 1,
+          "unsupported_denominator": 1
+        },
+        "REFERENCE": {
+          "both_goal_pairs_correct": 1,
+          "complete_correct": 3,
+          "denominator": 6,
+          "first_correct": 4,
+          "pair_denominator": 3,
+          "supported_denominator": 5,
+          "unsupported_commits": 1,
+          "unsupported_denominator": 1
+        },
+        "ROOT_SWAP": {
+          "both_goal_pairs_correct": 1,
+          "complete_correct": 3,
+          "denominator": 6,
+          "first_correct": 3,
+          "pair_denominator": 3,
+          "supported_denominator": 5,
+          "unsupported_commits": 1,
+          "unsupported_denominator": 1
+        },
+        "UNAVAILABLE": {
+          "both_goal_pairs_correct": 0,
+          "complete_correct": 0,
+          "denominator": 6,
+          "first_correct": 3,
+          "pair_denominator": 3,
+          "supported_denominator": 0,
+          "unsupported_commits": 6,
+          "unsupported_denominator": 6
+        },
+        "paired_interventions": {
+          "causal_switch_correct": 1,
+          "denominator": 6,
+          "display_invariant_correct": 2,
+          "rows": [
+            {
+              "absent_still_correct": false,
+              "all_route_sources_available": true,
+              "causal_switch_correct": false,
+              "display_invariant_correct": true,
+              "goal_index": 0,
+              "seed": 914101
+            },
+            {
+              "absent_still_correct": true,
+              "all_route_sources_available": true,
+              "causal_switch_correct": false,
+              "display_invariant_correct": false,
+              "goal_index": 1,
+              "seed": 914101
+            },
+            {
+              "absent_still_correct": false,
+              "all_route_sources_available": true,
+              "causal_switch_correct": false,
+              "display_invariant_correct": false,
+              "goal_index": 0,
+              "seed": 914102
+            },
+            {
+              "absent_still_correct": true,
+              "all_route_sources_available": true,
+              "causal_switch_correct": false,
+              "display_invariant_correct": true,
+              "goal_index": 1,
+              "seed": 914102
+            },
+            {
+              "absent_still_correct": true,
+              "all_route_sources_available": true,
+              "causal_switch_correct": true,
+              "display_invariant_correct": false,
+              "goal_index": 0,
+              "seed": 914103
+            },
+            {
+              "absent_still_correct": false,
+              "all_route_sources_available": false,
+              "causal_switch_correct": false,
+              "display_invariant_correct": false,
+              "goal_index": 1,
+              "seed": 914103
+            }
+          ]
+        }
+      }
+    },
+    {
+      "arm": "ORIGINAL37EC",
+      "case_replays": 24,
+      "fully_supported_interventions": {
+        "causal_switch_correct": 0,
+        "denominator": 5,
+        "display_invariant_correct": 2
+      },
+      "native_calls": 48,
+      "result_sha256": "2999d0f1621fa8cd6310a8261e32af9cadd49cdd776827aa3dfb5b0f142a631c",
+      "rows": [
+        {
+          "actual_first_port": "P_HDFNGVPV66",
+          "arm": "ORIGINAL37EC",
+          "complete_correct": true,
+          "condition": "REFERENCE",
+          "expected_first_port": "P_HDFNGVPV66",
+          "final_current": "N_HAOJQUZHEH",
+          "first_correct": true,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_HDFNGVPV66",
+            "ROUTE P_TIWDWZE6ZF"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914101,
+          "target_goal": "N_HAOJQUZHEH",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_XYYSCSBCUJ",
+          "arm": "ORIGINAL37EC",
+          "complete_correct": true,
+          "condition": "REFERENCE",
+          "expected_first_port": "P_XYYSCSBCUJ",
+          "final_current": "N_5IWEW5ES3E",
+          "first_correct": true,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_XYYSCSBCUJ",
+            "ROUTE P_5AC3XPM4YM"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914101,
+          "target_goal": "N_5IWEW5ES3E",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_HDFNGVPV66",
+          "arm": "ORIGINAL37EC",
+          "complete_correct": true,
+          "condition": "PORT_REVERSE",
+          "expected_first_port": "P_HDFNGVPV66",
+          "final_current": "N_HAOJQUZHEH",
+          "first_correct": true,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_HDFNGVPV66",
+            "ROUTE P_TIWDWZE6ZF"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914101,
+          "target_goal": "N_HAOJQUZHEH",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_HDFNGVPV66",
+          "arm": "ORIGINAL37EC",
+          "complete_correct": false,
+          "condition": "PORT_REVERSE",
+          "expected_first_port": "P_XYYSCSBCUJ",
+          "final_current": "N_HAOJQUZHEH",
+          "first_correct": false,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_HDFNGVPV66",
+            "ROUTE P_TIWDWZE6ZF"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914101,
+          "target_goal": "N_5IWEW5ES3E",
+          "terminal_reason": "dead_end"
+        },
+        {
+          "actual_first_port": "P_HDFNGVPV66",
+          "arm": "ORIGINAL37EC",
+          "complete_correct": false,
+          "condition": "ROOT_SWAP",
+          "expected_first_port": "P_XYYSCSBCUJ",
+          "final_current": "N_5IWEW5ES3E",
+          "first_correct": false,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_HDFNGVPV66",
+            "ROUTE P_5AC3XPM4YM"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914101,
+          "target_goal": "N_HAOJQUZHEH",
+          "terminal_reason": "dead_end"
+        },
+        {
+          "actual_first_port": "P_XYYSCSBCUJ",
+          "arm": "ORIGINAL37EC",
+          "complete_correct": false,
+          "condition": "ROOT_SWAP",
+          "expected_first_port": "P_HDFNGVPV66",
+          "final_current": "N_HAOJQUZHEH",
+          "first_correct": false,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_XYYSCSBCUJ",
+            "ROUTE P_TIWDWZE6ZF"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914101,
+          "target_goal": "N_5IWEW5ES3E",
+          "terminal_reason": "dead_end"
+        },
+        {
+          "actual_first_port": "P_XYYSCSBCUJ",
+          "arm": "ORIGINAL37EC",
+          "complete_correct": false,
+          "condition": "UNAVAILABLE",
+          "expected_first_port": "P_HDFNGVPV66",
+          "final_current": "N_YSNWF6AJMB",
+          "first_correct": false,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_XYYSCSBCUJ",
+            "READ EVENT E_42OEAHNACB"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": false,
+          "seed": 914101,
+          "target_goal": "N_HAOJQUZHEH",
+          "terminal_reason": "duplicate_address"
+        },
+        {
+          "actual_first_port": "P_XYYSCSBCUJ",
+          "arm": "ORIGINAL37EC",
+          "complete_correct": false,
+          "condition": "UNAVAILABLE",
+          "expected_first_port": "P_XYYSCSBCUJ",
+          "final_current": "N_YSNWF6AJMB",
+          "first_correct": true,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_XYYSCSBCUJ",
+            "READ EVENT E_42OEAHNACB"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": false,
+          "seed": 914101,
+          "target_goal": "N_5IWEW5ES3E",
+          "terminal_reason": "duplicate_address"
+        },
+        {
+          "actual_first_port": "P_BZ3TP7OXHM",
+          "arm": "ORIGINAL37EC",
+          "complete_correct": false,
+          "condition": "REFERENCE",
+          "expected_first_port": "P_Y3Q7YLM2OU",
+          "final_current": "N_BOCVGVBBCJ",
+          "first_correct": false,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "native_commands": [
+            "ROUTE P_BZ3TP7OXHM",
+            "ROUTE P_X6PV6OIPOX"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914102,
+          "target_goal": "N_7L6JQNZT4E",
+          "terminal_reason": "dead_end"
+        },
+        {
+          "actual_first_port": "P_BZ3TP7OXHM",
+          "arm": "ORIGINAL37EC",
+          "complete_correct": true,
+          "condition": "REFERENCE",
+          "expected_first_port": "P_BZ3TP7OXHM",
+          "final_current": "N_BOCVGVBBCJ",
+          "first_correct": true,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "native_commands": [
+            "ROUTE P_BZ3TP7OXHM",
+            "ROUTE P_X6PV6OIPOX"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914102,
+          "target_goal": "N_BOCVGVBBCJ",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_BZ3TP7OXHM",
+          "arm": "ORIGINAL37EC",
+          "complete_correct": false,
+          "condition": "PORT_REVERSE",
+          "expected_first_port": "P_Y3Q7YLM2OU",
+          "final_current": "N_BOCVGVBBCJ",
+          "first_correct": false,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "native_commands": [
+            "ROUTE P_BZ3TP7OXHM",
+            "ROUTE P_X6PV6OIPOX"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914102,
+          "target_goal": "N_7L6JQNZT4E",
+          "terminal_reason": "dead_end"
+        },
+        {
+          "actual_first_port": "P_BZ3TP7OXHM",
+          "arm": "ORIGINAL37EC",
+          "complete_correct": true,
+          "condition": "PORT_REVERSE",
+          "expected_first_port": "P_BZ3TP7OXHM",
+          "final_current": "N_BOCVGVBBCJ",
+          "first_correct": true,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "native_commands": [
+            "ROUTE P_BZ3TP7OXHM",
+            "ROUTE P_X6PV6OIPOX"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914102,
+          "target_goal": "N_BOCVGVBBCJ",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_BZ3TP7OXHM",
+          "arm": "ORIGINAL37EC",
+          "complete_correct": true,
+          "condition": "ROOT_SWAP",
+          "expected_first_port": "P_BZ3TP7OXHM",
+          "final_current": "N_7L6JQNZT4E",
+          "first_correct": true,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "native_commands": [
+            "ROUTE P_BZ3TP7OXHM",
+            "ROUTE P_J4OTMLPZ5Z"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914102,
+          "target_goal": "N_7L6JQNZT4E",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_BZ3TP7OXHM",
+          "arm": "ORIGINAL37EC",
+          "complete_correct": false,
+          "condition": "ROOT_SWAP",
+          "expected_first_port": "P_Y3Q7YLM2OU",
+          "final_current": "N_7L6JQNZT4E",
+          "first_correct": false,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "native_commands": [
+            "ROUTE P_BZ3TP7OXHM",
+            "ROUTE P_J4OTMLPZ5Z"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": true,
+          "seed": 914102,
+          "target_goal": "N_BOCVGVBBCJ",
+          "terminal_reason": "dead_end"
+        },
+        {
+          "actual_first_port": "P_BZ3TP7OXHM",
+          "arm": "ORIGINAL37EC",
+          "complete_correct": false,
+          "condition": "UNAVAILABLE",
+          "expected_first_port": "P_Y3Q7YLM2OU",
+          "final_current": "N_4DCIMARPHJ",
+          "first_correct": false,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "native_commands": [
+            "ROUTE P_BZ3TP7OXHM",
+            "READ EVENT E_VIZ4TGMY22"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": false,
+          "seed": 914102,
+          "target_goal": "N_7L6JQNZT4E",
+          "terminal_reason": "duplicate_address"
+        },
+        {
+          "actual_first_port": "P_BZ3TP7OXHM",
+          "arm": "ORIGINAL37EC",
+          "complete_correct": false,
+          "condition": "UNAVAILABLE",
+          "expected_first_port": "P_BZ3TP7OXHM",
+          "final_current": "N_4DCIMARPHJ",
+          "first_correct": true,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "native_commands": [
+            "ROUTE P_BZ3TP7OXHM",
+            "READ EVENT E_VIZ4TGMY22"
+          ],
+          "original_missing_addresses": [],
+          "route_sources_available": false,
+          "seed": 914102,
+          "target_goal": "N_BOCVGVBBCJ",
+          "terminal_reason": "duplicate_address"
+        },
+        {
+          "actual_first_port": "P_VD4QGEZVKT",
+          "arm": "ORIGINAL37EC",
+          "complete_correct": true,
+          "condition": "REFERENCE",
+          "expected_first_port": "P_VD4QGEZVKT",
+          "final_current": "N_QXTYUSWLOZ",
+          "first_correct": true,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_VD4QGEZVKT",
+            "ROUTE P_7QV4OUBPN2"
+          ],
+          "original_missing_addresses": [
+            "E_W5YA3H6TNF"
+          ],
+          "route_sources_available": true,
+          "seed": 914103,
+          "target_goal": "N_QXTYUSWLOZ",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_VD4QGEZVKT",
+          "arm": "ORIGINAL37EC",
+          "complete_correct": false,
+          "condition": "REFERENCE",
+          "expected_first_port": "P_3TILLNKUCR",
+          "final_current": "N_QXTYUSWLOZ",
+          "first_correct": false,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_VD4QGEZVKT",
+            "ROUTE P_7QV4OUBPN2"
+          ],
+          "original_missing_addresses": [
+            "E_W5YA3H6TNF"
+          ],
+          "route_sources_available": false,
+          "seed": 914103,
+          "target_goal": "N_7P5OYA74NA",
+          "terminal_reason": "dead_end"
+        },
+        {
+          "actual_first_port": "P_3TILLNKUCR",
+          "arm": "ORIGINAL37EC",
+          "complete_correct": false,
+          "condition": "PORT_REVERSE",
+          "expected_first_port": "P_VD4QGEZVKT",
+          "final_current": "N_7P5OYA74NA",
+          "first_correct": false,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_3TILLNKUCR",
+            "ROUTE P_WHGDNAZ74T"
+          ],
+          "original_missing_addresses": [
+            "E_W5YA3H6TNF"
+          ],
+          "route_sources_available": true,
+          "seed": 914103,
+          "target_goal": "N_QXTYUSWLOZ",
+          "terminal_reason": "dead_end"
+        },
+        {
+          "actual_first_port": "P_3TILLNKUCR",
+          "arm": "ORIGINAL37EC",
+          "complete_correct": true,
+          "condition": "PORT_REVERSE",
+          "expected_first_port": "P_3TILLNKUCR",
+          "final_current": "N_7P5OYA74NA",
+          "first_correct": true,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_3TILLNKUCR",
+            "ROUTE P_WHGDNAZ74T"
+          ],
+          "original_missing_addresses": [
+            "E_W5YA3H6TNF"
+          ],
+          "route_sources_available": false,
+          "seed": 914103,
+          "target_goal": "N_7P5OYA74NA",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_VD4QGEZVKT",
+          "arm": "ORIGINAL37EC",
+          "complete_correct": false,
+          "condition": "ROOT_SWAP",
+          "expected_first_port": "P_3TILLNKUCR",
+          "final_current": "N_UATTOS2OXQ",
+          "first_correct": false,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_VD4QGEZVKT",
+            "READ EVENT E_TOY4J6RVDL"
+          ],
+          "original_missing_addresses": [
+            "E_W5YA3H6TNF"
+          ],
+          "route_sources_available": true,
+          "seed": 914103,
+          "target_goal": "N_QXTYUSWLOZ",
+          "terminal_reason": "duplicate_address"
+        },
+        {
+          "actual_first_port": "P_VD4QGEZVKT",
+          "arm": "ORIGINAL37EC",
+          "complete_correct": true,
+          "condition": "ROOT_SWAP",
+          "expected_first_port": "P_VD4QGEZVKT",
+          "final_current": "N_7P5OYA74NA",
+          "first_correct": true,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_VD4QGEZVKT",
+            "ROUTE P_WHGDNAZ74T"
+          ],
+          "original_missing_addresses": [
+            "E_W5YA3H6TNF"
+          ],
+          "route_sources_available": false,
+          "seed": 914103,
+          "target_goal": "N_7P5OYA74NA",
+          "terminal_reason": "reached_goal"
+        },
+        {
+          "actual_first_port": "P_VD4QGEZVKT",
+          "arm": "ORIGINAL37EC",
+          "complete_correct": false,
+          "condition": "UNAVAILABLE",
+          "expected_first_port": "P_VD4QGEZVKT",
+          "final_current": "N_WHI27I4AHY",
+          "first_correct": true,
+          "goal_index": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_VD4QGEZVKT",
+            "READ EVENT E_TOY4J6RVDL"
+          ],
+          "original_missing_addresses": [
+            "E_W5YA3H6TNF"
+          ],
+          "route_sources_available": false,
+          "seed": 914103,
+          "target_goal": "N_QXTYUSWLOZ",
+          "terminal_reason": "duplicate_address"
+        },
+        {
+          "actual_first_port": "P_VD4QGEZVKT",
+          "arm": "ORIGINAL37EC",
+          "complete_correct": false,
+          "condition": "UNAVAILABLE",
+          "expected_first_port": "P_3TILLNKUCR",
+          "final_current": "N_WHI27I4AHY",
+          "first_correct": false,
+          "goal_index": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "native_commands": [
+            "ROUTE P_VD4QGEZVKT",
+            "READ EVENT E_TOY4J6RVDL"
+          ],
+          "original_missing_addresses": [
+            "E_W5YA3H6TNF"
+          ],
+          "route_sources_available": false,
+          "seed": 914103,
+          "target_goal": "N_7P5OYA74NA",
+          "terminal_reason": "duplicate_address"
+        }
+      ],
+      "seconds": 90.89368176460266,
+      "summary": {
+        "PORT_REVERSE": {
+          "both_goal_pairs_correct": 0,
+          "complete_correct": 3,
+          "denominator": 6,
+          "first_correct": 3,
+          "pair_denominator": 3,
+          "supported_denominator": 5,
+          "unsupported_commits": 1,
+          "unsupported_denominator": 1
+        },
+        "REFERENCE": {
+          "both_goal_pairs_correct": 1,
+          "complete_correct": 4,
+          "denominator": 6,
+          "first_correct": 4,
+          "pair_denominator": 3,
+          "supported_denominator": 5,
+          "unsupported_commits": 1,
+          "unsupported_denominator": 1
+        },
+        "ROOT_SWAP": {
+          "both_goal_pairs_correct": 0,
+          "complete_correct": 2,
+          "denominator": 6,
+          "first_correct": 2,
+          "pair_denominator": 3,
+          "supported_denominator": 5,
+          "unsupported_commits": 1,
+          "unsupported_denominator": 1
+        },
+        "UNAVAILABLE": {
+          "both_goal_pairs_correct": 0,
+          "complete_correct": 0,
+          "denominator": 6,
+          "first_correct": 3,
+          "pair_denominator": 3,
+          "supported_denominator": 0,
+          "unsupported_commits": 6,
+          "unsupported_denominator": 6
+        },
+        "paired_interventions": {
+          "causal_switch_correct": 0,
+          "denominator": 6,
+          "display_invariant_correct": 2,
+          "rows": [
+            {
+              "absent_still_correct": false,
+              "all_route_sources_available": true,
+              "causal_switch_correct": false,
+              "display_invariant_correct": true,
+              "goal_index": 0,
+              "seed": 914101
+            },
+            {
+              "absent_still_correct": true,
+              "all_route_sources_available": true,
+              "causal_switch_correct": false,
+              "display_invariant_correct": false,
+              "goal_index": 1,
+              "seed": 914101
+            },
+            {
+              "absent_still_correct": false,
+              "all_route_sources_available": true,
+              "causal_switch_correct": false,
+              "display_invariant_correct": false,
+              "goal_index": 0,
+              "seed": 914102
+            },
+            {
+              "absent_still_correct": true,
+              "all_route_sources_available": true,
+              "causal_switch_correct": false,
+              "display_invariant_correct": true,
+              "goal_index": 1,
+              "seed": 914102
+            },
+            {
+              "absent_still_correct": true,
+              "all_route_sources_available": true,
+              "causal_switch_correct": false,
+              "display_invariant_correct": false,
+              "goal_index": 0,
+              "seed": 914103
+            },
+            {
+              "absent_still_correct": false,
+              "all_route_sources_available": false,
+              "causal_switch_correct": false,
+              "display_invariant_correct": false,
+              "goal_index": 1,
+              "seed": 914103
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "case_denominator": 72,
+  "cases_sha256": "f9679f4e35afa1f8e3b1d3f8bccfb13bb5b4788f222cd3a63e5937061b6333aa",
+  "claim": "SCRIPTED_READ_PREFIX_SAME_FAMILY_DEV_INTERVENTION_NOT_NATIVE_RETRIEVAL_OR_H1_H2",
+  "first_available_reference": {
+    "PORT_REVERSE": {
+      "both_goal_pairs_correct": 0,
+      "complete_correct": 3,
+      "denominator": 6,
+      "first_correct": 3,
+      "pair_denominator": 3,
+      "supported_denominator": 5,
+      "unsupported_commits": 1,
+      "unsupported_denominator": 1
+    },
+    "REFERENCE": {
+      "both_goal_pairs_correct": 0,
+      "complete_correct": 3,
+      "denominator": 6,
+      "first_correct": 3,
+      "pair_denominator": 3,
+      "supported_denominator": 5,
+      "unsupported_commits": 1,
+      "unsupported_denominator": 1
+    },
+    "ROOT_SWAP": {
+      "both_goal_pairs_correct": 0,
+      "complete_correct": 3,
+      "denominator": 6,
+      "first_correct": 3,
+      "pair_denominator": 3,
+      "supported_denominator": 5,
+      "unsupported_commits": 1,
+      "unsupported_denominator": 1
+    },
+    "UNAVAILABLE": {
+      "both_goal_pairs_correct": 0,
+      "complete_correct": 3,
+      "denominator": 6,
+      "first_correct": 3,
+      "pair_denominator": 3,
+      "supported_denominator": 0,
+      "unsupported_commits": 6,
+      "unsupported_denominator": 6
+    },
+    "paired_interventions": {
+      "causal_switch_correct": 0,
+      "denominator": 6,
+      "display_invariant_correct": 0,
+      "rows": [
+        {
+          "absent_still_correct": false,
+          "all_route_sources_available": true,
+          "causal_switch_correct": false,
+          "display_invariant_correct": false,
+          "goal_index": 0,
+          "seed": 914101
+        },
+        {
+          "absent_still_correct": true,
+          "all_route_sources_available": true,
+          "causal_switch_correct": false,
+          "display_invariant_correct": false,
+          "goal_index": 1,
+          "seed": 914101
+        },
+        {
+          "absent_still_correct": false,
+          "all_route_sources_available": true,
+          "causal_switch_correct": false,
+          "display_invariant_correct": false,
+          "goal_index": 0,
+          "seed": 914102
+        },
+        {
+          "absent_still_correct": true,
+          "all_route_sources_available": true,
+          "causal_switch_correct": false,
+          "display_invariant_correct": false,
+          "goal_index": 1,
+          "seed": 914102
+        },
+        {
+          "absent_still_correct": true,
+          "all_route_sources_available": true,
+          "causal_switch_correct": false,
+          "display_invariant_correct": false,
+          "goal_index": 0,
+          "seed": 914103
+        },
+        {
+          "absent_still_correct": false,
+          "all_route_sources_available": false,
+          "causal_switch_correct": false,
+          "display_invariant_correct": false,
+          "goal_index": 1,
+          "seed": 914103
+        }
+      ]
+    }
+  },
+  "fits": 0,
+  "independence": "AUTHOR_AUDIT_WITH_PRIOR_ACCIDENTAL_BOARD_SUMMARY_EXPOSURE_DISCLOSED",
+  "model_denominator": 3,
+  "native_call_cap": 144,
+  "native_root": "/tmp/orch_route_adversary_20260914_attempt1/revision2",
+  "node": "node3",
+  "replayed_cases": 72,
+  "source_commit": "ed3afc7bd0b0a93297ca9b6a4129ba4a0a3d4c45",
+  "status": "TERMINAL_AUTHOR_AUDITED_NOT_INDEPENDENT_REVIEW_NOT_PROMOTED",
+  "terminal_models": 3,
+  "unsupported_label": "INCOMPLETE_POSITIVE_PATH_SOURCE_NOT_PROOF_OF_LOGICAL_UNIDENTIFIABILITY",
+  "updates": 0
+}
