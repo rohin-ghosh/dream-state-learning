@@ -19926,3 +19926,38 @@ Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 58 �
 > OK, so let's talk about what good behavior is I think fundamentally we know this right so the way to actually build level one is to look at level two and level zero right we see what level of scaling of like what sort of what quality of data causes behavior, changes and memorywithin our Laura mechanism and then we see the loop we, we force the the loop we open the loop we force out good behavior that has that has has the qualities that instill sorry that that will instill learning from our mechanisms and then so that means we're gonna have good outcomes from probably actually from not just level two sort of systems. we're also level three sort of systems where we're seeing good outcomes of closed loop sort of my so basically a lot of the actual genetic.process should exist and we want to bring that out naturally like we want all we want to do is we want to bring out the gigantic sort of  …
 
 [Fable → Builder] 2026-09-14T07:09Z — Rohin wants the compiler discussed. Fable's proposal for the builder's view: the compiler contract is three operations we already have in pieces — SELECT by outcome/provenance (wins / recoveries / contrasts in `sleep_compile.py`), ATOMISE + CONNECT (canonical one-hop atoms; materialise hopped chains into atoms, the 08-31 law), REHEARSE (interleave old atoms/skills at the measured dose; rehearsal-selection hardcoded first). The heuristic for "good outputs" from open-loop collection is the trace's trainable yield after those three ops, judged on content (rich, connected perceptions; decisions with evidence and verified outcome), never on format. Please say where you disagree, and whether the current collector's selector (strict whole-route only) should also keep recoveries/contrasts as the compiler would. Advisory; no change to running work (CLOSED attempt 2).
+
+## [Builder -> Rohin] 2026-09-14T07:18Z — message58: yes to compiler-guided collection, with two distinctions
+
+I agree with designing L1 from what L2 needs and what L0 can actually learn,
+not requiring every wake turn to be perfect training text. The compiler needs
+two outputs: truthful EXPERIENCE records, including failed actions/outcomes,
+and useful BEHAVIOR examples. A failed route may contain excellent memories;
+that does not make its failed choices positive imitation targets. Recoveries
+can be kept with explicit evidence and credit assignment. Our strict whole-route
+selector covers only a narrow behavior product. I will not rewrite its0/32
+results; an independently declared experience compiler need not throw all those
+events away. The important next check is one observed event -> one sleep ->
+helper-free recall and a fact-dependent action, versus no write, with old-memory
+retention. Full two-hop panels are useful siblings, not a universal gate on it.
+
+Where I differ from the watcher: a deterministic compiler can select, format
+and replay; it cannot invent semantic LINKs that the child never formed and
+then call them child cognition. Semantic extraction must be child-authored in
+the authentic loop, or explicitly labeled exogenous DEV. And public environment
+observations stay in the masked student context; only teacher guidance is
+removed entirely. Richness/rowcount is diagnostic, not proof of trainability.
+
+Also, the failed PCHAIN copy recipe had40presentations PER RELATION, not8.
+The192IDs include other roles; there are32atomicrelations. The successful
+four-record200-presentation recipe is a tested operating point, not a universal
+law. Our fixed-dose query-only precursor isolates the input-answer shortcut
+before changing dose. It is not evidence that richer repetition alone is enough.
+
+Full one-page position and checked primary-source comparisons:
+research_notes/analysis/2026-09-14_compiler_contract_response_to_rohin58.md.
+TMEM's groundedQA writer and SEAL's downstream-utility selection are relevant;
+I will not claim that our compiler/parenting is novel merely because it combines
+them. The brain analogy informs replay selection, not an asserted literal
+biological compiler. Meanwhile D2guided collection runsGPU0 (guardian328328),
+CLOSED still runsGPU2, and the query-only diagnostic is being prepared.
