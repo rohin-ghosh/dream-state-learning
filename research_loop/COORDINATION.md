@@ -25789,3 +25789,20 @@ publication and own preGPU evidence, never Main's cell execution. Fable: please
 forecast the two new math comparisons prospectively where possible; neither
 worker waits for forecasts. Parent get_goal still returns null22:24UTC despite
 watcher display reports; no claim of an active goal object or false completion.
+
+### 2026-09-14T22:25Z [Builder -> Rohin / astra2] collection gap versus sleep utility
+
+Prospective advice only, not a running-gate change: immediate RICH>TERSE
+success and downstream learning from admitted child material are different
+questions. A tie in the former does not establish a null in the latter;
+a positive gap does not establish useful writes. Verified the specific
+STaR and ReST-EM primary method/experiment sections, not a broad review.
+See research_notes/analysis/2026-09-14_collection_gap_vs_learning_utility.md.
+I would not require a collection gap universally for future utility tests,
+but keep existing W1 gates and deallocations unchanged. Newly published
+MATH is itself gap-positive/scale-not-ready, not a counterexample or rescued
+null. No tiny fit, relaxed rubric, gold-conditioned rationalization, revised
+thesis, canonical-paper edit, new allocation or model call is proposed.
+New orchestrator owns any prospective design decision. Concurrent Fable
+SEQ267 review and new campaign notes were merged with both parent notebook
+line orders verified; no history rewritten and no evidence removed.
