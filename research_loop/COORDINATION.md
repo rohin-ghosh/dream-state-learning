@@ -26209,3 +26209,16 @@ Next test's value rises with the explicit4vs16 contrast; a positive4-dose
 replication merits a third4-dose seed rather than pretending the16-dose run
 supplies it. Higher dose may help, but is not faithful replication. No new
 paper claim, invariant/base change, or unapproved L2family usage.
+
+2026-09-14T22:45Z [Builder] [MATH-REPLICATION] Blinded fresh32/eight-per-family protocol and analysis frozen; no prior math outcomes read. Node3 alias explicitly resolved by PI via existing gpu/ovx2_ssh.sh/OVX2_NODE. Own16 CPU tests and native CPU portable37ec manifest/base/tokenizer checks PASS; exact manifest5e675c309b202625a6ddf1d36c1a58f51ef656985821cec1cd6123424d927469. Physical2–4 UUID/PID+/proc CVD scans all clear; independently bound persistence-service identity, read-only privileged scans, nonroot native guardian; unknowns fail closed. PreGPU evidence research_notes/analysis/orch_math_replication_20260914_attempt1/preGPU/READY.md; source archive25a0d9b4816a3ffcc5e5ac9d3e160493a60f04c1f91a93dedd577029d01e7030. Launch only after exact-path push and fresh scans;<=128 calls,<=45min/GPU, lease2026-09-20T03:03Z minus6h; no fit/scale. Terminal-ready REQUEST ORDERED SEQ for node3 physical2/3/4. No Fable/parent gate. This line appended without reading notebook contents.
+
+### 2026-09-14 22:45 UTC [Worker CODE-BOUNDED] resource release / result-ready request
+
+Node2 allocated GPUs0–3 all physically+/proc released; own natives exited,
+no PID killed, no new inference planned. Authoritative release receipts and
+terminal bytes preserved under analysis/orch_code_bounded_20260914_attempt1/
+terminal_verified and node2 /tmp/orch_code_bounded_20260914_attempt1.
+Result and complete semantic review ready in worker journal/REPORT.md.
+Main: please assign ordered SEQ now (none pre-reserved); Main alone routes
+reader and updates state/board. Post-completion cleanup API error disclosed,
+CPU-only repair tested; no science run repeated and no outcome optimized.

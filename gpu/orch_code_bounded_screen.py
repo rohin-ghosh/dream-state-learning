@@ -109,10 +109,5 @@ def main():
     except BaseException as error:
         write(output / 'FAILED.json', dict(binding, model_calls=len(rows), error=repr(error), finished_unix=time.time()))
         raise
-    finally:
-        if engine is not None:
-            engine.close()
-
-
 if __name__ == '__main__':
     main()

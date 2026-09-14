@@ -70,12 +70,20 @@ def reduce(root, reviews=None):
                                  successes=sum(item['outcome'] and item['family'] == family for item in current))
                                      for family in sorted({item['family'] for item in current})})
     complete = all((root / f'shard{index}/RESULT.json').exists() for index in range(4))
+    exits = {str(index): int((root / f'shard{index}_launch/exit_code.txt').read_text())
+             if (root / f'shard{index}_launch/exit_code.txt').exists() else None for index in range(4)}
+    if complete:
+        for index in range(4):
+            result = json.loads((root / f'shard{index}/RESULT.json').read_text())
+            assert result['status'] == 'COMPLETE'
+            assert result['model_calls'] == sum(row['row_id'].startswith(f'shard{index}/') for row in rows)
     gate = (complete and metrics['rich']['successes'] > metrics['terse']['successes']
             and metrics['rich']['admitted_episodes'] >= 4
             and sum(item['correction'] and item['admitted'] for item in episodes) >= 2)
     summary = dict(eligibility=dict(considered=document['total'], eligible=document['eligible_count'],
                                      excluded=len(document['exclusions'])), scientific_denominator=8,
-                   complete=complete, metrics=metrics, episodes=episodes, scale_gate=gate, fits=0,
+                   complete=complete, guardian_exit_codes=exits, clean_process_exit=all(value == 0 for value in exits.values()),
+                   metrics=metrics, episodes=episodes, scale_gate=gate, fits=0,
                    training_rows=0, model_calls=len(rows),
                    semantic_counts=dict(Counter(row['semantic_status'] for row in rows if row['arm'] == 'rich')),
                    max_context=max((row['call']['prompt_tokens'] for row in rows), default=0),

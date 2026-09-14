@@ -97,3 +97,52 @@ def test_reducer_retains_scientific_denominator_without_calls(tmp_path):
     assert summary['scientific_denominator'] == 8 and summary['eligibility']['considered'] == 974
     assert summary['metrics']['rich']['tasks'] == 8 and summary['metrics']['rich']['attempted'] == 0
     assert not summary['complete'] and not summary['scale_gate'] and rows == []
+
+
+def test_full_driver_accepts_portable_engine_without_close(tmp_path, monkeypatch):
+    import json
+    import sys
+    from pathlib import Path
+    from types import SimpleNamespace
+    from gpu import orch_code_bounded_screen as screen
+    state = 'test-mounted-state'
+    parameter = SimpleNamespace(requires_grad=False)
+
+    class Tokenizer:
+        def apply_chat_template(self, messages, **kwargs):
+            assert kwargs['return_dict'] is False
+            return [1, 2]
+
+        def encode(self, text, **kwargs):
+            return [1]
+
+    class Engine:
+        def __init__(self, arguments, tokenizer, check):
+            self.tokenizer = tokenizer
+            self.model = SimpleNamespace(named_parameters=lambda: iter([('layer.lora_A.default.weight', parameter)]))
+            self.runtime = 'mock-native-contract'
+
+        def generate(self, messages, max_new_tokens):
+            assert max_new_tokens == 512
+            return dict(raw='{"expression":"0"}', token_ids=[1, 2], terminal=True,
+                        truncated=False, prompt_tokens=2, messages=messages)
+
+        def verify_base(self):
+            return None
+
+    portable = SimpleNamespace(PARENT_STATE=state, verify_base_files=lambda *args, **kwargs: {'verified': True},
+                               read_bundle=lambda *args, **kwargs: None,
+                               source=SimpleNamespace(Engine=Engine, native=SimpleNamespace(load_local_tokenizer=lambda path: Tokenizer())))
+    monkeypatch.setitem(sys.modules, 'gpu.astra_portable_actor_bundle', portable)
+    monkeypatch.setitem(sys.modules, 'organism_v6.pcfl_vertical_train', SimpleNamespace(_state_hash=lambda parameters: state))
+    original = Path.read_bytes
+    monkeypatch.setattr(Path, 'read_bytes', lambda path: b'CUDA_VISIBLE_DEVICES=GPU-test\0'
+                        if str(path) == '/proc/self/environ' else original(path))
+    monkeypatch.setenv('CUDA_VISIBLE_DEVICES', 'GPU-test')
+    output = tmp_path / 'output'
+    monkeypatch.setattr(sys, 'argv', ['screen', '--bundle', 'bundle', '--model-dir', 'model', '--tasks',
+                        'research_notes/analysis/orch_code_bounded_20260914_attempt1/TASKS.json',
+                        '--output', str(output), '--phase', 'screen', '--shard', '0', '--gpu-uuid', 'GPU-test'])
+    screen.main()
+    result = json.loads((output / 'RESULT.json').read_text())
+    assert result['status'] == 'COMPLETE' and result['model_calls'] == 12

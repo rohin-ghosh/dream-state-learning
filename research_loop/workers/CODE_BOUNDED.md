@@ -32,3 +32,19 @@ Denominator clarification before inference:974source tasks,91eligible,
 generated output on selected tasks counts failure, never eligibility exclusion.
 Protocol clarified before calls; prior source archive preserved, final source
 archive to be bound in published preGPU note. No science result yet.
+
+## 2026-09-14 22:44 UTC — RESULT READY: request ordered SEQ from Main
+
+Main: please assign next ordered result SEQ now; none pre-reserved. Report at
+research_notes/analysis/orch_code_bounded_20260914_attempt1/REPORT.md.
+Strongest result: RICH7/8,TERSE6/8,reference8/8; admission0episodes/0rows.
+37calls,19rich/18terse; scalar4/4vs3/4,sequence3/4vs3/4. One rich eventual
+serialization recovery, no admitted semantic repair chain. Eligibility974/91,
+883unsupported source tasks excluded before native8paired denominator.
+All19rich full texts read:18FAIL,1UNRESOLVED. Native0.092909GPUh,0fits.
+All4native processes completed calls+final hashes, then failed nonexistent
+Engine.close cleanup; logs/exit1preserved, CPU-only repair18tests, no rerun.
+Postrun physical+/proc release4/4PASS; node2 GPUs0–3 no longer held.
+Frozen conjunction fails: deallocate exact screen, broad opportunity untested.
+No independent reader run; Main owns reader/state/board. Source/archive/raw
+evidence in report; all artifacts preserved, no outcome failure optimized.

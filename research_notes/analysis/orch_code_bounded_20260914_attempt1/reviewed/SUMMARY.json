@@ -1,0 +1,275 @@
+{
+  "eligibility": {
+    "considered": 974,
+    "eligible": 91,
+    "excluded": 883
+  },
+  "scientific_denominator": 8,
+  "complete": true,
+  "guardian_exit_codes": {
+    "0": 1,
+    "1": 1,
+    "2": 1,
+    "3": 1
+  },
+  "clean_process_exit": false,
+  "metrics": {
+    "rich": {
+      "tasks": 8,
+      "attempted": 8,
+      "successes": 7,
+      "corrected_tasks": 1,
+      "record_actions": 6,
+      "admitted_episodes": 0,
+      "admitted_rows": 0,
+      "row_eligible": 0,
+      "calls": 19,
+      "generated_tokens": 1345,
+      "families": {
+        "scalar arithmetic": {
+          "tasks": 4,
+          "successes": 4
+        },
+        "sequence/list transformations": {
+          "tasks": 4,
+          "successes": 3
+        }
+      }
+    },
+    "terse": {
+      "tasks": 8,
+      "attempted": 8,
+      "successes": 6,
+      "corrected_tasks": 0,
+      "record_actions": 6,
+      "admitted_episodes": 0,
+      "admitted_rows": 0,
+      "row_eligible": 0,
+      "calls": 18,
+      "generated_tokens": 241,
+      "families": {
+        "scalar arithmetic": {
+          "tasks": 4,
+          "successes": 3
+        },
+        "sequence/list transformations": {
+          "tasks": 4,
+          "successes": 3
+        }
+      }
+    }
+  },
+  "episodes": [
+    {
+      "task_id": 14,
+      "family": "scalar arithmetic",
+      "arm": "rich",
+      "calls": 2,
+      "outcome": true,
+      "correction": false,
+      "record_action": true,
+      "admitted": false
+    },
+    {
+      "task_id": 14,
+      "family": "scalar arithmetic",
+      "arm": "terse",
+      "calls": 2,
+      "outcome": true,
+      "correction": false,
+      "record_action": true,
+      "admitted": false
+    },
+    {
+      "task_id": 17,
+      "family": "scalar arithmetic",
+      "arm": "rich",
+      "calls": 2,
+      "outcome": true,
+      "correction": false,
+      "record_action": true,
+      "admitted": false
+    },
+    {
+      "task_id": 17,
+      "family": "scalar arithmetic",
+      "arm": "terse",
+      "calls": 2,
+      "outcome": true,
+      "correction": false,
+      "record_action": true,
+      "admitted": false
+    },
+    {
+      "task_id": 21,
+      "family": "scalar arithmetic",
+      "arm": "rich",
+      "calls": 2,
+      "outcome": true,
+      "correction": false,
+      "record_action": true,
+      "admitted": false
+    },
+    {
+      "task_id": 21,
+      "family": "scalar arithmetic",
+      "arm": "terse",
+      "calls": 2,
+      "outcome": true,
+      "correction": false,
+      "record_action": true,
+      "admitted": false
+    },
+    {
+      "task_id": 35,
+      "family": "scalar arithmetic",
+      "arm": "rich",
+      "calls": 2,
+      "outcome": true,
+      "correction": false,
+      "record_action": false,
+      "admitted": false
+    },
+    {
+      "task_id": 35,
+      "family": "scalar arithmetic",
+      "arm": "terse",
+      "calls": 3,
+      "outcome": false,
+      "correction": false,
+      "record_action": false,
+      "admitted": false
+    },
+    {
+      "task_id": 49,
+      "family": "sequence/list transformations",
+      "arm": "rich",
+      "calls": 4,
+      "outcome": true,
+      "correction": true,
+      "record_action": true,
+      "admitted": false
+    },
+    {
+      "task_id": 49,
+      "family": "sequence/list transformations",
+      "arm": "terse",
+      "calls": 2,
+      "outcome": true,
+      "correction": false,
+      "record_action": true,
+      "admitted": false
+    },
+    {
+      "task_id": 62,
+      "family": "sequence/list transformations",
+      "arm": "rich",
+      "calls": 2,
+      "outcome": true,
+      "correction": false,
+      "record_action": true,
+      "admitted": false
+    },
+    {
+      "task_id": 62,
+      "family": "sequence/list transformations",
+      "arm": "terse",
+      "calls": 2,
+      "outcome": true,
+      "correction": false,
+      "record_action": true,
+      "admitted": false
+    },
+    {
+      "task_id": 105,
+      "family": "sequence/list transformations",
+      "arm": "rich",
+      "calls": 3,
+      "outcome": false,
+      "correction": false,
+      "record_action": false,
+      "admitted": false
+    },
+    {
+      "task_id": 105,
+      "family": "sequence/list transformations",
+      "arm": "terse",
+      "calls": 3,
+      "outcome": false,
+      "correction": false,
+      "record_action": false,
+      "admitted": false
+    },
+    {
+      "task_id": 106,
+      "family": "sequence/list transformations",
+      "arm": "rich",
+      "calls": 2,
+      "outcome": true,
+      "correction": false,
+      "record_action": true,
+      "admitted": false
+    },
+    {
+      "task_id": 106,
+      "family": "sequence/list transformations",
+      "arm": "terse",
+      "calls": 2,
+      "outcome": true,
+      "correction": false,
+      "record_action": true,
+      "admitted": false
+    }
+  ],
+  "scale_gate": false,
+  "fits": 0,
+  "training_rows": 0,
+  "model_calls": 37,
+  "semantic_counts": {
+    "FAIL": 18,
+    "UNRESOLVED": 1
+  },
+  "max_context": 979,
+  "max_generated": 230,
+  "truncations": 0,
+  "generated_token_distribution": [
+    9,
+    19,
+    87,
+    92,
+    17,
+    17,
+    123,
+    136,
+    229,
+    119,
+    6,
+    13,
+    6,
+    14,
+    7,
+    14,
+    7,
+    7,
+    18,
+    18,
+    18,
+    28,
+    15,
+    16,
+    13,
+    15,
+    87,
+    178,
+    60,
+    71,
+    12,
+    11,
+    14,
+    14,
+    48,
+    14,
+    14
+  ],
+  "task_sha256": "3a031178564eb01c72801a8962888d36a2215e6ddaf30c73c3bafb4b99549869"
+}

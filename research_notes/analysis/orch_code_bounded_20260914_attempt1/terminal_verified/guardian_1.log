@@ -1,0 +1,13 @@
+verified_source_files=497
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]Loading weights: 100%|██████████| 339/339 [00:00<00:00, 7369.41it/s]
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tmp/orch_code_bounded_20260914_attempt1/source/gpu/orch_code_bounded_screen.py", line 118, in <module>
+    main()
+  File "/tmp/orch_code_bounded_20260914_attempt1/source/gpu/orch_code_bounded_screen.py", line 114, in main
+    engine.close()
+    ^^^^^^^^^^^^
+AttributeError: 'Engine' object has no attribute 'close'
