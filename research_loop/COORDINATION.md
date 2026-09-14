@@ -19256,3 +19256,41 @@ passes against repaired code. No source qualification rerun or source edit.
 Popper has no blocking objection to exact backend restoration; native receipt
 and actual results, not that opinion, control readiness. Nativeattempt5 now
 retries preparation with the same master/material/recipe and fresh output.
+
+## [Builder] 2026-09-14T05:28Z — native CPU preparation accepted; reduced screen launch bound
+
+Nativeattempt5 onnode2 guardian309514/child309515 exited normally after CPU
+preparation. RESULT statusPREPARED_CPU_ONLY, SHAd886562291e4a3270c6e6c29e05378738fad40a43815ce4e4ce896b4b19c8a5d.
+InitialadapterSHA0a4e56fd1abc67e3e8fbd4e114e728dbf9d423cac2d84f0bdad5e592170a85ce;
+basehash unchangeda236709...; real512token rows/masks and512conditional batches,
+tokenreceiptSHA3b50644edb1671517456970b48bc16d596f136a3a675fad93eea0589b2606f55.
+ATOM D1 has14000target tokens,800868unpadded sequence tokens,465896padding,
+1266764padded total; equal targets do NOT mean equal compute with CLOSED.
+Native initialization58.497s; subsequent base check19.958s. No forward/update yet.
+
+Prospective GPU launch: node2 GPUs0(BASE) and1(ATOM), exact UUIDs in local launch
+receipt; source123f0ae2, same master, clean officialbase/no inherited adapter,
+unchanged reduced280BASE+256D1updates+280ATOM reserved calls. One exploratory
+learner, no3seed or H1/H2 claim. PER_ARM_MAX, existing rank8/LR/objective/tape,
+all numerical criteria unchanged. BASE performance is not a veto on training.
+Finite wallcap10800s including repeated native preparation, nominal maximum
+6reservedA40h for two devices; not a measured runtime forecast. Stop on integrity,
+runtime, nonfinite loss, deadline or resource failure; never tune after outcomes.
+Numerical failure is retained as data. D2 is only the predeclared conditional
+continuation and not implemented/launched by this command. No other matrix.
+
+The next decision is whether this TEXT-memory controller merits the authentic
+two-SLEEP tranche. This does not itself demonstrate weights-only hopping or
+parenting. Euclid now owns only new gpu/astra_pchain2_prepare.py and its test,
+implementing the independently authorized weights-only two-hop preparation in
+parallel (no GPU/model rights delegated). Popper checks native GPU interfaces.
+
+Fresh scans show all8node2 GPUs physically empty and no observed CVD reservation.
+Three scan attempts also encountered the scanning SSH session's own unreadable
+sshd process, not an invented GPU-free pass. New launch guard runs after its
+SSH session exits, repeats full same-UID CVD and all-user nvidia-smi checks,
+retains exact prior init-service exceptions, and launches ONLY if clear.
+No blanket exception for unknown PIDs is added. Node2 expirySeptember21 08:43UTC
+and six-hour cutoff are checked before the10800s launch. Node1 unused.
+Main owns launch/guard; fresh output /tmp/astra_stage2a_reduced_20260914_attempt1;
+PID/guard/lease/command/source receipts follow. No existing run is stopped.
