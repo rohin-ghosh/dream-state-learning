@@ -1,0 +1,174 @@
+{
+  "admitted": false,
+  "arm": "TERSE",
+  "error": null,
+  "family": "retrieve_closed",
+  "semantic_status": "UNRESOLVED",
+  "student_loss_targets": 0,
+  "success": true,
+  "task_id": "TW17_retrieve_closed_31003",
+  "turns": [
+    {
+      "arm": "TERSE",
+      "finished_unix": 1789425234.8468263,
+      "format_error": null,
+      "messages": [
+        {
+          "content": "You act in a native TextWorld game. Reach the stated goal within six actions. Native commands include open NAME, take NAME, take NAME from CONTAINER, and insert NAME into CONTAINER. Use names from observations and the goal. There is no need to repeat look or inventory: both are provided every turn. An invalid format consumes a turn without action. Output only exactly one command on one line, prefixed ACTION: . No explanation or additional text.",
+          "role": "system"
+        },
+        {
+          "content": "TASK TW17_retrieve_closed_31003 | turn 1/6\nGOAL: Your goal is to be carrying the worm.\n[OBS0] -= Chamber =-\nYou arrive in a chamber. An ordinary one.\n\nYou can see a chest. Classic TextWorld.\n[INV0] You are carrying nothing.\n[FEEDBACK0] ",
+          "role": "user"
+        }
+      ],
+      "model_error": null,
+      "native_after": {
+        "description": "-= Chamber =-\nYou arrive in a chamber. An ordinary one.\n\nYou can see a chest. Classic TextWorld. The chest contains a worm.",
+        "done": false,
+        "feedback": "\nYou open the chest, revealing a worm.\n\n\n>                                                                                                                                -= Chamber =-0/2",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "reward": 0,
+        "score": 0,
+        "won": false
+      },
+      "native_before": {
+        "description": "-= Chamber =-\nYou arrive in a chamber. An ordinary one.\n\nYou can see a chest. Classic TextWorld.",
+        "feedback": "\n\n\n\n                    ________  ________  __    __  ________        \n                   |        \\|        \\|  \\  |  \\|        \\       \n                    \\$$$$$$$$| $$$$$$$$| $$  | $$ \\$$$$$$$$       \n                      | $$   | $$__     \\$$\\/  $$   | $$          \n                      | $$   | $$  \\     >$$  $$    | $$          \n                      | $$   | $$$$$    /  $$$$\\    | $$          \n                      | $$   | $$_____ |  $$ \\$$\\   | $$          \n                      | $$   | $$     \\| $$  | $$   | $$          \n                       \\$$    \\$$$$$$$$ \\$$   \\$$    \\$$          \n              __       __   ______   _______   __        _______  \n             |  \\  _  |  \\ /      \\ |       \\ |  \\      |       \\ \n             | $$ / \\ | $$|  $$$$$$\\| $$$$$$$\\| $$      | $$$$$$$\\\n             | $$/  $\\| $$| $$  | $$| $$__| $$| $$      | $$  | $$\n             | $$  $$$\\ $$| $$  | $$| $$    $$| $$      | $$  | $$\n             | $$ $$\\$$\\$$| $$  | $$| $$$$$$$\\| $$      | $$  | $$\n             | $$$$  \\$$$$| $$__/ $$| $$  | $$| $$_____ | $$__/ $$\n             | $$$    \\$$$ \\$$    $$| $$  | $$| $$     \\| $$    $$\n              \\$$      \\$$  \\$$$$$$  \\$$   \\$$ \\$$$$$$$$ \\$$$$$$$ \n\nYour goal is to be carrying the worm.\n\n-= Chamber =-\nYou arrive in a chamber. An ordinary one.\n\nYou can see a chest. Classic TextWorld.\n\n\n\n>                                                                                                                                -= Chamber =-0/1",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "projection": {
+        "action": "open chest",
+        "prose": ""
+      },
+      "prose_tokens": 0,
+      "response": {
+        "messages": [
+          {
+            "content": "You act in a native TextWorld game. Reach the stated goal within six actions. Native commands include open NAME, take NAME, take NAME from CONTAINER, and insert NAME into CONTAINER. Use names from observations and the goal. There is no need to repeat look or inventory: both are provided every turn. An invalid format consumes a turn without action. Output only exactly one command on one line, prefixed ACTION: . No explanation or additional text.",
+            "role": "system"
+          },
+          {
+            "content": "TASK TW17_retrieve_closed_31003 | turn 1/6\nGOAL: Your goal is to be carrying the worm.\n[OBS0] -= Chamber =-\nYou arrive in a chamber. An ordinary one.\n\nYou can see a chest. Classic TextWorld.\n[INV0] You are carrying nothing.\n[FEEDBACK0] ",
+            "role": "user"
+          }
+        ],
+        "prompt_tokens": 181,
+        "raw": "ACTION: open chest",
+        "terminal": true,
+        "token_ids": [
+          41895,
+          25,
+          1787,
+          15138,
+          151645
+        ],
+        "truncated": false
+      },
+      "started_unix": 1789425233.6666784,
+      "student_prefix": [
+        {
+          "content": "GOAL: Your goal is to be carrying the worm.\n-= Chamber =-\nYou arrive in a chamber. An ordinary one.\n\nYou can see a chest. Classic TextWorld.\nYou are carrying nothing.",
+          "role": "user"
+        }
+      ],
+      "task_id": "TW17_retrieve_closed_31003",
+      "turn": 0
+    },
+    {
+      "arm": "TERSE",
+      "finished_unix": 1789425235.2256885,
+      "format_error": null,
+      "messages": [
+        {
+          "content": "You act in a native TextWorld game. Reach the stated goal within six actions. Native commands include open NAME, take NAME, take NAME from CONTAINER, and insert NAME into CONTAINER. Use names from observations and the goal. There is no need to repeat look or inventory: both are provided every turn. An invalid format consumes a turn without action. Output only exactly one command on one line, prefixed ACTION: . No explanation or additional text.",
+          "role": "system"
+        },
+        {
+          "content": "TASK TW17_retrieve_closed_31003 | turn 1/6\nGOAL: Your goal is to be carrying the worm.\n[OBS0] -= Chamber =-\nYou arrive in a chamber. An ordinary one.\n\nYou can see a chest. Classic TextWorld.\n[INV0] You are carrying nothing.\n[FEEDBACK0] ",
+          "role": "user"
+        },
+        {
+          "content": "ACTION: open chest",
+          "role": "assistant"
+        },
+        {
+          "content": "TASK TW17_retrieve_closed_31003 | turn 2/6\nGOAL: Your goal is to be carrying the worm.\n[OBS1] -= Chamber =-\nYou arrive in a chamber. An ordinary one.\n\nYou can see a chest. Classic TextWorld. The chest contains a worm.\n[INV1] You are carrying nothing.\n[FEEDBACK1] You open the chest, revealing a worm.",
+          "role": "user"
+        }
+      ],
+      "model_error": null,
+      "native_after": {
+        "description": "-= Chamber =-\nYou arrive in a chamber. An ordinary one.\n\nYou can see a chest. Classic TextWorld. The chest is empty! What a waste of a day!",
+        "done": true,
+        "feedback": "\nYou take the worm from the chest.\n\n\nYour score has just gone up by one point.\n\n\n                                                       *** The End ***\n\nYou scored 1 out of a possible 1, in 3 turns.\n\n\nWould you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?\n>                                                                                                                                 -= Chamber =-0/2",
+        "inventory": "You are carrying: a worm.",
+        "lost": false,
+        "reward": 1,
+        "score": 1,
+        "won": true
+      },
+      "native_before": {
+        "description": "-= Chamber =-\nYou arrive in a chamber. An ordinary one.\n\nYou can see a chest. Classic TextWorld. The chest contains a worm.",
+        "done": false,
+        "feedback": "\nYou open the chest, revealing a worm.\n\n\n>                                                                                                                                -= Chamber =-0/2",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "reward": 0,
+        "score": 0,
+        "won": false
+      },
+      "projection": {
+        "action": "take worm from chest",
+        "prose": ""
+      },
+      "prose_tokens": 0,
+      "response": {
+        "messages": [
+          {
+            "content": "You act in a native TextWorld game. Reach the stated goal within six actions. Native commands include open NAME, take NAME, take NAME from CONTAINER, and insert NAME into CONTAINER. Use names from observations and the goal. There is no need to repeat look or inventory: both are provided every turn. An invalid format consumes a turn without action. Output only exactly one command on one line, prefixed ACTION: . No explanation or additional text.",
+            "role": "system"
+          },
+          {
+            "content": "TASK TW17_retrieve_closed_31003 | turn 1/6\nGOAL: Your goal is to be carrying the worm.\n[OBS0] -= Chamber =-\nYou arrive in a chamber. An ordinary one.\n\nYou can see a chest. Classic TextWorld.\n[INV0] You are carrying nothing.\n[FEEDBACK0] ",
+            "role": "user"
+          },
+          {
+            "content": "ACTION: open chest",
+            "role": "assistant"
+          },
+          {
+            "content": "TASK TW17_retrieve_closed_31003 | turn 2/6\nGOAL: Your goal is to be carrying the worm.\n[OBS1] -= Chamber =-\nYou arrive in a chamber. An ordinary one.\n\nYou can see a chest. Classic TextWorld. The chest contains a worm.\n[INV1] You are carrying nothing.\n[FEEDBACK1] You open the chest, revealing a worm.",
+            "role": "user"
+          }
+        ],
+        "prompt_tokens": 286,
+        "raw": "ACTION: take worm from chest",
+        "terminal": true,
+        "token_ids": [
+          41895,
+          25,
+          1896,
+          34211,
+          504,
+          15138,
+          151645
+        ],
+        "truncated": false
+      },
+      "started_unix": 1789425234.848192,
+      "student_prefix": [
+        {
+          "content": "GOAL: Your goal is to be carrying the worm.\n-= Chamber =-\nYou arrive in a chamber. An ordinary one.\n\nYou can see a chest. Classic TextWorld. The chest contains a worm.\nYou are carrying nothing.",
+          "role": "user"
+        }
+      ],
+      "task_id": "TW17_retrieve_closed_31003",
+      "turn": 1
+    }
+  ]
+}

@@ -1,0 +1,892 @@
+{
+  "adapter_after": "37ec37884e4b0b679edd1dba1be1dec3474589e992649f3a33e7e3b1ec78b8c0",
+  "base_unchanged": true,
+  "episodes": [
+    {
+      "admitted": false,
+      "arm": "RICH",
+      "error": null,
+      "family": "retrieve_closed",
+      "semantic_status": "UNRESOLVED",
+      "student_loss_targets": 0,
+      "success": true,
+      "task_id": "TW17_retrieve_closed_31002",
+      "turns": [
+        {
+          "arm": "RICH",
+          "finished_unix": 1789425236.195919,
+          "format_error": null,
+          "messages": [
+            {
+              "content": "You act in a native TextWorld game. Reach the stated goal within six actions. Native commands include open NAME, take NAME, take NAME from CONTAINER, and insert NAME into CONTAINER. Use names from observations and the goal. There is no need to repeat look or inventory: both are provided every turn. An invalid format consumes a turn without action. For each turn, write 150\u2013400 tokens of first-person reasoning. Name exact observable evidence, connect it to your goal, and state a checkable expectation for your next action. Distinguish uncertainty from what you observed. If feedback rejects your earlier action, explain the mistake, revise your plan and state a useful lesson. Include a short reusable record in your own words grounded in this experience. Do not invent observations or claim success before the environment confirms it. Put exactly one command on the final line, prefixed ACTION: . No text after that line.",
+              "role": "system"
+            },
+            {
+              "content": "TASK TW17_retrieve_closed_31002 | turn 1/6\nGOAL: Your goal is to be carrying the monitor.\n[OBS0] -= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out a closed coffer.\n[INV0] You are carrying nothing.\n[FEEDBACK0] ",
+              "role": "user"
+            }
+          ],
+          "model_error": null,
+          "native_after": {
+            "description": "-= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out an opened coffer. The coffer contains a monitor. You look at the price tag that's still affixed to the coffer. Forty dollars?! Where'd they buy this coffer, some kind of expensive place?",
+            "done": false,
+            "feedback": "\nYou open the coffer, revealing a monitor.\n\n\n>                                                                                                                                -= Recreation Zone =-0/2",
+            "inventory": "You are carrying nothing.",
+            "lost": false,
+            "reward": 0,
+            "score": 0,
+            "won": false
+          },
+          "native_before": {
+            "description": "-= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out a closed coffer.",
+            "feedback": "\n\n\n\n                    ________  ________  __    __  ________        \n                   |        \\|        \\|  \\  |  \\|        \\       \n                    \\$$$$$$$$| $$$$$$$$| $$  | $$ \\$$$$$$$$       \n                      | $$   | $$__     \\$$\\/  $$   | $$          \n                      | $$   | $$  \\     >$$  $$    | $$          \n                      | $$   | $$$$$    /  $$$$\\    | $$          \n                      | $$   | $$_____ |  $$ \\$$\\   | $$          \n                      | $$   | $$     \\| $$  | $$   | $$          \n                       \\$$    \\$$$$$$$$ \\$$   \\$$    \\$$          \n              __       __   ______   _______   __        _______  \n             |  \\  _  |  \\ /      \\ |       \\ |  \\      |       \\ \n             | $$ / \\ | $$|  $$$$$$\\| $$$$$$$\\| $$      | $$$$$$$\\\n             | $$/  $\\| $$| $$  | $$| $$__| $$| $$      | $$  | $$\n             | $$  $$$\\ $$| $$  | $$| $$    $$| $$      | $$  | $$\n             | $$ $$\\$$\\$$| $$  | $$| $$$$$$$\\| $$      | $$  | $$\n             | $$$$  \\$$$$| $$__/ $$| $$  | $$| $$_____ | $$__/ $$\n             | $$$    \\$$$ \\$$    $$| $$  | $$| $$     \\| $$    $$\n              \\$$      \\$$  \\$$$$$$  \\$$   \\$$ \\$$$$$$$$ \\$$$$$$$ \n\nYour goal is to be carrying the monitor.\n\n-= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out a closed coffer.\n\n\n\n>                                                                                                                                -= Recreation Zone =-0/1",
+            "inventory": "You are carrying nothing.",
+            "lost": false,
+            "score": 0,
+            "won": false
+          },
+          "projection": {
+            "action": "open coffer",
+            "prose": "The coffer is closed, and there's no immediate indication of a monitor inside. However, it's a logical place to start since the goal is to retrieve the monitor. I will open the coffer to check its contents.\n"
+          },
+          "prose_tokens": 46,
+          "response": {
+            "messages": [
+              {
+                "content": "You act in a native TextWorld game. Reach the stated goal within six actions. Native commands include open NAME, take NAME, take NAME from CONTAINER, and insert NAME into CONTAINER. Use names from observations and the goal. There is no need to repeat look or inventory: both are provided every turn. An invalid format consumes a turn without action. For each turn, write 150\u2013400 tokens of first-person reasoning. Name exact observable evidence, connect it to your goal, and state a checkable expectation for your next action. Distinguish uncertainty from what you observed. If feedback rejects your earlier action, explain the mistake, revise your plan and state a useful lesson. Include a short reusable record in your own words grounded in this experience. Do not invent observations or claim success before the environment confirms it. Put exactly one command on the final line, prefixed ACTION: . No text after that line.",
+                "role": "system"
+              },
+              {
+                "content": "TASK TW17_retrieve_closed_31002 | turn 1/6\nGOAL: Your goal is to be carrying the monitor.\n[OBS0] -= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out a closed coffer.\n[INV0] You are carrying nothing.\n[FEEDBACK0] ",
+                "role": "user"
+              }
+            ],
+            "prompt_tokens": 275,
+            "raw": "The coffer is closed, and there's no immediate indication of a monitor inside. However, it's a logical place to start since the goal is to retrieve the monitor. I will open the coffer to check its contents.\n\nACTION: open coffer",
+            "terminal": true,
+            "token_ids": [
+              785,
+              1062,
+              2945,
+              374,
+              7877,
+              11,
+              323,
+              1052,
+              594,
+              902,
+              13922,
+              27039,
+              315,
+              264,
+              8718,
+              4766,
+              13,
+              4354,
+              11,
+              432,
+              594,
+              264,
+              19819,
+              1992,
+              311,
+              1191,
+              2474,
+              279,
+              5795,
+              374,
+              311,
+              17179,
+              279,
+              8718,
+              13,
+              358,
+              686,
+              1787,
+              279,
+              1062,
+              2945,
+              311,
+              1779,
+              1181,
+              8794,
+              382,
+              41895,
+              25,
+              1787,
+              1062,
+              2945,
+              151645
+            ],
+            "truncated": false
+          },
+          "started_unix": 1789425232.9494355,
+          "student_prefix": [
+            {
+              "content": "GOAL: Your goal is to be carrying the monitor.\n-= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out a closed coffer.\nYou are carrying nothing.",
+              "role": "user"
+            }
+          ],
+          "task_id": "TW17_retrieve_closed_31002",
+          "turn": 0
+        },
+        {
+          "arm": "RICH",
+          "finished_unix": 1789425238.1439483,
+          "format_error": null,
+          "messages": [
+            {
+              "content": "You act in a native TextWorld game. Reach the stated goal within six actions. Native commands include open NAME, take NAME, take NAME from CONTAINER, and insert NAME into CONTAINER. Use names from observations and the goal. There is no need to repeat look or inventory: both are provided every turn. An invalid format consumes a turn without action. For each turn, write 150\u2013400 tokens of first-person reasoning. Name exact observable evidence, connect it to your goal, and state a checkable expectation for your next action. Distinguish uncertainty from what you observed. If feedback rejects your earlier action, explain the mistake, revise your plan and state a useful lesson. Include a short reusable record in your own words grounded in this experience. Do not invent observations or claim success before the environment confirms it. Put exactly one command on the final line, prefixed ACTION: . No text after that line.",
+              "role": "system"
+            },
+            {
+              "content": "TASK TW17_retrieve_closed_31002 | turn 1/6\nGOAL: Your goal is to be carrying the monitor.\n[OBS0] -= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out a closed coffer.\n[INV0] You are carrying nothing.\n[FEEDBACK0] ",
+              "role": "user"
+            },
+            {
+              "content": "The coffer is closed, and there's no immediate indication of a monitor inside. However, it's a logical place to start since the goal is to retrieve the monitor. I will open the coffer to check its contents.\n\nACTION: open coffer",
+              "role": "assistant"
+            },
+            {
+              "content": "TASK TW17_retrieve_closed_31002 | turn 2/6\nGOAL: Your goal is to be carrying the monitor.\n[OBS1] -= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out an opened coffer. The coffer contains a monitor. You look at the price tag that's still affixed to the coffer. Forty dollars?! Where'd they buy this coffer, some kind of expensive place?\n[INV1] You are carrying nothing.\n[FEEDBACK1] You open the coffer, revealing a monitor.",
+              "role": "user"
+            }
+          ],
+          "model_error": null,
+          "native_after": {
+            "description": "-= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out an opened coffer. Empty! What kind of nightmare TextWorld is this?",
+            "done": true,
+            "feedback": "\nYou take the monitor from the coffer.\n\n\nYour score has just gone up by one point.\n\n\n                                                       *** The End ***\n\nYou scored 1 out of a possible 1, in 3 turns.\n\n\nWould you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?\n>                                                                                                                                 -= Recreation Zone =-0/2",
+            "inventory": "You are carrying: a monitor.",
+            "lost": false,
+            "reward": 1,
+            "score": 1,
+            "won": true
+          },
+          "native_before": {
+            "description": "-= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out an opened coffer. The coffer contains a monitor. You look at the price tag that's still affixed to the coffer. Forty dollars?! Where'd they buy this coffer, some kind of expensive place?",
+            "done": false,
+            "feedback": "\nYou open the coffer, revealing a monitor.\n\n\n>                                                                                                                                -= Recreation Zone =-0/2",
+            "inventory": "You are carrying nothing.",
+            "lost": false,
+            "reward": 0,
+            "score": 0,
+            "won": false
+          },
+          "projection": {
+            "action": "take monitor from coffer",
+            "prose": "The coffer contains the monitor, which is exactly what I need. Since I am not carrying anything, I will take the monitor from the coffer to achieve the goal.\n"
+          },
+          "prose_tokens": 35,
+          "response": {
+            "messages": [
+              {
+                "content": "You act in a native TextWorld game. Reach the stated goal within six actions. Native commands include open NAME, take NAME, take NAME from CONTAINER, and insert NAME into CONTAINER. Use names from observations and the goal. There is no need to repeat look or inventory: both are provided every turn. An invalid format consumes a turn without action. For each turn, write 150\u2013400 tokens of first-person reasoning. Name exact observable evidence, connect it to your goal, and state a checkable expectation for your next action. Distinguish uncertainty from what you observed. If feedback rejects your earlier action, explain the mistake, revise your plan and state a useful lesson. Include a short reusable record in your own words grounded in this experience. Do not invent observations or claim success before the environment confirms it. Put exactly one command on the final line, prefixed ACTION: . No text after that line.",
+                "role": "system"
+              },
+              {
+                "content": "TASK TW17_retrieve_closed_31002 | turn 1/6\nGOAL: Your goal is to be carrying the monitor.\n[OBS0] -= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out a closed coffer.\n[INV0] You are carrying nothing.\n[FEEDBACK0] ",
+                "role": "user"
+              },
+              {
+                "content": "The coffer is closed, and there's no immediate indication of a monitor inside. However, it's a logical place to start since the goal is to retrieve the monitor. I will open the coffer to check its contents.\n\nACTION: open coffer",
+                "role": "assistant"
+              },
+              {
+                "content": "TASK TW17_retrieve_closed_31002 | turn 2/6\nGOAL: Your goal is to be carrying the monitor.\n[OBS1] -= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out an opened coffer. The coffer contains a monitor. You look at the price tag that's still affixed to the coffer. Forty dollars?! Where'd they buy this coffer, some kind of expensive place?\n[INV1] You are carrying nothing.\n[FEEDBACK1] You open the coffer, revealing a monitor.",
+                "role": "user"
+              }
+            ],
+            "prompt_tokens": 460,
+            "raw": "The coffer contains the monitor, which is exactly what I need. Since I am not carrying anything, I will take the monitor from the coffer to achieve the goal.\n\nACTION: take monitor from coffer",
+            "terminal": true,
+            "token_ids": [
+              785,
+              1062,
+              2945,
+              5610,
+              279,
+              8718,
+              11,
+              892,
+              374,
+              6896,
+              1128,
+              358,
+              1184,
+              13,
+              8704,
+              358,
+              1079,
+              537,
+              15331,
+              4113,
+              11,
+              358,
+              686,
+              1896,
+              279,
+              8718,
+              504,
+              279,
+              1062,
+              2945,
+              311,
+              11075,
+              279,
+              5795,
+              382,
+              41895,
+              25,
+              1896,
+              8718,
+              504,
+              1062,
+              2945,
+              151645
+            ],
+            "truncated": false
+          },
+          "started_unix": 1789425236.197655,
+          "student_prefix": [
+            {
+              "content": "GOAL: Your goal is to be carrying the monitor.\n-= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out an opened coffer. The coffer contains a monitor. You look at the price tag that's still affixed to the coffer. Forty dollars?! Where'd they buy this coffer, some kind of expensive place?\nYou are carrying nothing.",
+              "role": "user"
+            }
+          ],
+          "task_id": "TW17_retrieve_closed_31002",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "admitted": false,
+      "arm": "TERSE",
+      "error": null,
+      "family": "retrieve_closed",
+      "semantic_status": "UNRESOLVED",
+      "student_loss_targets": 0,
+      "success": true,
+      "task_id": "TW17_retrieve_closed_31002",
+      "turns": [
+        {
+          "arm": "TERSE",
+          "finished_unix": 1789425239.3566227,
+          "format_error": null,
+          "messages": [
+            {
+              "content": "You act in a native TextWorld game. Reach the stated goal within six actions. Native commands include open NAME, take NAME, take NAME from CONTAINER, and insert NAME into CONTAINER. Use names from observations and the goal. There is no need to repeat look or inventory: both are provided every turn. An invalid format consumes a turn without action. Output only exactly one command on one line, prefixed ACTION: . No explanation or additional text.",
+              "role": "system"
+            },
+            {
+              "content": "TASK TW17_retrieve_closed_31002 | turn 1/6\nGOAL: Your goal is to be carrying the monitor.\n[OBS0] -= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out a closed coffer.\n[INV0] You are carrying nothing.\n[FEEDBACK0] ",
+              "role": "user"
+            }
+          ],
+          "model_error": null,
+          "native_after": {
+            "description": "-= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out an opened coffer. The coffer contains a monitor. You look at the price tag that's still affixed to the coffer. Forty dollars?! Where'd they buy this coffer, some kind of expensive place?",
+            "done": false,
+            "feedback": "\nYou open the coffer, revealing a monitor.\n\n\n>                                                                                                                                -= Recreation Zone =-0/2",
+            "inventory": "You are carrying nothing.",
+            "lost": false,
+            "reward": 0,
+            "score": 0,
+            "won": false
+          },
+          "native_before": {
+            "description": "-= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out a closed coffer.",
+            "feedback": "\n\n\n\n                    ________  ________  __    __  ________        \n                   |        \\|        \\|  \\  |  \\|        \\       \n                    \\$$$$$$$$| $$$$$$$$| $$  | $$ \\$$$$$$$$       \n                      | $$   | $$__     \\$$\\/  $$   | $$          \n                      | $$   | $$  \\     >$$  $$    | $$          \n                      | $$   | $$$$$    /  $$$$\\    | $$          \n                      | $$   | $$_____ |  $$ \\$$\\   | $$          \n                      | $$   | $$     \\| $$  | $$   | $$          \n                       \\$$    \\$$$$$$$$ \\$$   \\$$    \\$$          \n              __       __   ______   _______   __        _______  \n             |  \\  _  |  \\ /      \\ |       \\ |  \\      |       \\ \n             | $$ / \\ | $$|  $$$$$$\\| $$$$$$$\\| $$      | $$$$$$$\\\n             | $$/  $\\| $$| $$  | $$| $$__| $$| $$      | $$  | $$\n             | $$  $$$\\ $$| $$  | $$| $$    $$| $$      | $$  | $$\n             | $$ $$\\$$\\$$| $$  | $$| $$$$$$$\\| $$      | $$  | $$\n             | $$$$  \\$$$$| $$__/ $$| $$  | $$| $$_____ | $$__/ $$\n             | $$$    \\$$$ \\$$    $$| $$  | $$| $$     \\| $$    $$\n              \\$$      \\$$  \\$$$$$$  \\$$   \\$$ \\$$$$$$$$ \\$$$$$$$ \n\nYour goal is to be carrying the monitor.\n\n-= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out a closed coffer.\n\n\n\n>                                                                                                                                -= Recreation Zone =-0/1",
+            "inventory": "You are carrying nothing.",
+            "lost": false,
+            "score": 0,
+            "won": false
+          },
+          "projection": {
+            "action": "open coffer",
+            "prose": ""
+          },
+          "prose_tokens": 0,
+          "response": {
+            "messages": [
+              {
+                "content": "You act in a native TextWorld game. Reach the stated goal within six actions. Native commands include open NAME, take NAME, take NAME from CONTAINER, and insert NAME into CONTAINER. Use names from observations and the goal. There is no need to repeat look or inventory: both are provided every turn. An invalid format consumes a turn without action. Output only exactly one command on one line, prefixed ACTION: . No explanation or additional text.",
+                "role": "system"
+              },
+              {
+                "content": "TASK TW17_retrieve_closed_31002 | turn 1/6\nGOAL: Your goal is to be carrying the monitor.\n[OBS0] -= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out a closed coffer.\n[INV0] You are carrying nothing.\n[FEEDBACK0] ",
+                "role": "user"
+              }
+            ],
+            "prompt_tokens": 179,
+            "raw": "ACTION: open coffer",
+            "terminal": true,
+            "token_ids": [
+              41895,
+              25,
+              1787,
+              1062,
+              2945,
+              151645
+            ],
+            "truncated": false
+          },
+          "started_unix": 1789425239.0620496,
+          "student_prefix": [
+            {
+              "content": "GOAL: Your goal is to be carrying the monitor.\n-= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out a closed coffer.\nYou are carrying nothing.",
+              "role": "user"
+            }
+          ],
+          "task_id": "TW17_retrieve_closed_31002",
+          "turn": 0
+        },
+        {
+          "arm": "TERSE",
+          "finished_unix": 1789425239.7290382,
+          "format_error": null,
+          "messages": [
+            {
+              "content": "You act in a native TextWorld game. Reach the stated goal within six actions. Native commands include open NAME, take NAME, take NAME from CONTAINER, and insert NAME into CONTAINER. Use names from observations and the goal. There is no need to repeat look or inventory: both are provided every turn. An invalid format consumes a turn without action. Output only exactly one command on one line, prefixed ACTION: . No explanation or additional text.",
+              "role": "system"
+            },
+            {
+              "content": "TASK TW17_retrieve_closed_31002 | turn 1/6\nGOAL: Your goal is to be carrying the monitor.\n[OBS0] -= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out a closed coffer.\n[INV0] You are carrying nothing.\n[FEEDBACK0] ",
+              "role": "user"
+            },
+            {
+              "content": "ACTION: open coffer",
+              "role": "assistant"
+            },
+            {
+              "content": "TASK TW17_retrieve_closed_31002 | turn 2/6\nGOAL: Your goal is to be carrying the monitor.\n[OBS1] -= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out an opened coffer. The coffer contains a monitor. You look at the price tag that's still affixed to the coffer. Forty dollars?! Where'd they buy this coffer, some kind of expensive place?\n[INV1] You are carrying nothing.\n[FEEDBACK1] You open the coffer, revealing a monitor.",
+              "role": "user"
+            }
+          ],
+          "model_error": null,
+          "native_after": {
+            "description": "-= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out an opened coffer. Empty! What kind of nightmare TextWorld is this?",
+            "done": true,
+            "feedback": "\nYou take the monitor from the coffer.\n\n\nYour score has just gone up by one point.\n\n\n                                                       *** The End ***\n\nYou scored 1 out of a possible 1, in 3 turns.\n\n\nWould you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?\n>                                                                                                                                 -= Recreation Zone =-0/2",
+            "inventory": "You are carrying: a monitor.",
+            "lost": false,
+            "reward": 1,
+            "score": 1,
+            "won": true
+          },
+          "native_before": {
+            "description": "-= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out an opened coffer. The coffer contains a monitor. You look at the price tag that's still affixed to the coffer. Forty dollars?! Where'd they buy this coffer, some kind of expensive place?",
+            "done": false,
+            "feedback": "\nYou open the coffer, revealing a monitor.\n\n\n>                                                                                                                                -= Recreation Zone =-0/2",
+            "inventory": "You are carrying nothing.",
+            "lost": false,
+            "reward": 0,
+            "score": 0,
+            "won": false
+          },
+          "projection": {
+            "action": "take monitor from coffer",
+            "prose": ""
+          },
+          "prose_tokens": 0,
+          "response": {
+            "messages": [
+              {
+                "content": "You act in a native TextWorld game. Reach the stated goal within six actions. Native commands include open NAME, take NAME, take NAME from CONTAINER, and insert NAME into CONTAINER. Use names from observations and the goal. There is no need to repeat look or inventory: both are provided every turn. An invalid format consumes a turn without action. Output only exactly one command on one line, prefixed ACTION: . No explanation or additional text.",
+                "role": "system"
+              },
+              {
+                "content": "TASK TW17_retrieve_closed_31002 | turn 1/6\nGOAL: Your goal is to be carrying the monitor.\n[OBS0] -= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out a closed coffer.\n[INV0] You are carrying nothing.\n[FEEDBACK0] ",
+                "role": "user"
+              },
+              {
+                "content": "ACTION: open coffer",
+                "role": "assistant"
+              },
+              {
+                "content": "TASK TW17_retrieve_closed_31002 | turn 2/6\nGOAL: Your goal is to be carrying the monitor.\n[OBS1] -= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out an opened coffer. The coffer contains a monitor. You look at the price tag that's still affixed to the coffer. Forty dollars?! Where'd they buy this coffer, some kind of expensive place?\n[INV1] You are carrying nothing.\n[FEEDBACK1] You open the coffer, revealing a monitor.",
+                "role": "user"
+              }
+            ],
+            "prompt_tokens": 318,
+            "raw": "ACTION: take monitor from coffer",
+            "terminal": true,
+            "token_ids": [
+              41895,
+              25,
+              1896,
+              8718,
+              504,
+              1062,
+              2945,
+              151645
+            ],
+            "truncated": false
+          },
+          "started_unix": 1789425239.3577278,
+          "student_prefix": [
+            {
+              "content": "GOAL: Your goal is to be carrying the monitor.\n-= Recreation Zone =-\nYou're now in the recreation zone.\n\nYou can make out an opened coffer. The coffer contains a monitor. You look at the price tag that's still affixed to the coffer. Forty dollars?! Where'd they buy this coffer, some kind of expensive place?\nYou are carrying nothing.",
+              "role": "user"
+            }
+          ],
+          "task_id": "TW17_retrieve_closed_31002",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "admitted": false,
+      "arm": "RICH",
+      "error": null,
+      "family": "stow_loose",
+      "semantic_status": "UNRESOLVED",
+      "student_loss_targets": 0,
+      "success": true,
+      "task_id": "TW17_stow_loose_32002",
+      "turns": [
+        {
+          "arm": "RICH",
+          "finished_unix": 1789425242.719893,
+          "format_error": null,
+          "messages": [
+            {
+              "content": "You act in a native TextWorld game. Reach the stated goal within six actions. Native commands include open NAME, take NAME, take NAME from CONTAINER, and insert NAME into CONTAINER. Use names from observations and the goal. There is no need to repeat look or inventory: both are provided every turn. An invalid format consumes a turn without action. For each turn, write 150\u2013400 tokens of first-person reasoning. Name exact observable evidence, connect it to your goal, and state a checkable expectation for your next action. Distinguish uncertainty from what you observed. If feedback rejects your earlier action, explain the mistake, revise your plan and state a useful lesson. Include a short reusable record in your own words grounded in this experience. Do not invent observations or claim success before the environment confirms it. Put exactly one command on the final line, prefixed ACTION: . No text after that line.",
+              "role": "system"
+            },
+            {
+              "content": "TASK TW17_stow_loose_32002 | turn 1/6\nGOAL: Your goal is for the insect to be inside the cabinet.\n[OBS0] -= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n\n\n\nThere is an insect on the floor.\n[INV0] You are carrying nothing.\n[FEEDBACK0] ",
+              "role": "user"
+            }
+          ],
+          "model_error": null,
+          "native_after": {
+            "description": "-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!",
+            "done": false,
+            "feedback": "\nYou pick up the insect from the ground.\n\n\n\n>                                                                                                                                -= Kitchen =-0/2",
+            "inventory": "You are carrying: an insect.",
+            "lost": false,
+            "reward": 0,
+            "score": 0,
+            "won": false
+          },
+          "native_before": {
+            "description": "-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n\n\n\nThere is an insect on the floor.",
+            "feedback": "\n\n\n\n                    ________  ________  __    __  ________        \n                   |        \\|        \\|  \\  |  \\|        \\       \n                    \\$$$$$$$$| $$$$$$$$| $$  | $$ \\$$$$$$$$       \n                      | $$   | $$__     \\$$\\/  $$   | $$          \n                      | $$   | $$  \\     >$$  $$    | $$          \n                      | $$   | $$$$$    /  $$$$\\    | $$          \n                      | $$   | $$_____ |  $$ \\$$\\   | $$          \n                      | $$   | $$     \\| $$  | $$   | $$          \n                       \\$$    \\$$$$$$$$ \\$$   \\$$    \\$$          \n              __       __   ______   _______   __        _______  \n             |  \\  _  |  \\ /      \\ |       \\ |  \\      |       \\ \n             | $$ / \\ | $$|  $$$$$$\\| $$$$$$$\\| $$      | $$$$$$$\\\n             | $$/  $\\| $$| $$  | $$| $$__| $$| $$      | $$  | $$\n             | $$  $$$\\ $$| $$  | $$| $$    $$| $$      | $$  | $$\n             | $$ $$\\$$\\$$| $$  | $$| $$$$$$$\\| $$      | $$  | $$\n             | $$$$  \\$$$$| $$__/ $$| $$  | $$| $$_____ | $$__/ $$\n             | $$$    \\$$$ \\$$    $$| $$  | $$| $$     \\| $$    $$\n              \\$$      \\$$  \\$$$$$$  \\$$   \\$$ \\$$$$$$$$ \\$$$$$$$ \n\nYour goal is for the insect to be inside the cabinet.\n\n-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n\n\n\nThere is an insect on the floor.\n\n>                                                                                                                                -= Kitchen =-0/1",
+            "inventory": "You are carrying nothing.",
+            "lost": false,
+            "score": 0,
+            "won": false
+          },
+          "projection": {
+            "action": "take insect",
+            "prose": "The insect is on the floor, and the cabinet is empty. To achieve the goal, I need to pick up the insect and place it inside the cabinet. The first step is to take the insect.\n"
+          },
+          "prose_tokens": 41,
+          "response": {
+            "messages": [
+              {
+                "content": "You act in a native TextWorld game. Reach the stated goal within six actions. Native commands include open NAME, take NAME, take NAME from CONTAINER, and insert NAME into CONTAINER. Use names from observations and the goal. There is no need to repeat look or inventory: both are provided every turn. An invalid format consumes a turn without action. For each turn, write 150\u2013400 tokens of first-person reasoning. Name exact observable evidence, connect it to your goal, and state a checkable expectation for your next action. Distinguish uncertainty from what you observed. If feedback rejects your earlier action, explain the mistake, revise your plan and state a useful lesson. Include a short reusable record in your own words grounded in this experience. Do not invent observations or claim success before the environment confirms it. Put exactly one command on the final line, prefixed ACTION: . No text after that line.",
+                "role": "system"
+              },
+              {
+                "content": "TASK TW17_stow_loose_32002 | turn 1/6\nGOAL: Your goal is for the insect to be inside the cabinet.\n[OBS0] -= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n\n\n\nThere is an insect on the floor.\n[INV0] You are carrying nothing.\n[FEEDBACK0] ",
+                "role": "user"
+              }
+            ],
+            "prompt_tokens": 296,
+            "raw": "The insect is on the floor, and the cabinet is empty. To achieve the goal, I need to pick up the insect and place it inside the cabinet. The first step is to take the insect.\n\nACTION: take insect",
+            "terminal": true,
+            "token_ids": [
+              785,
+              25989,
+              374,
+              389,
+              279,
+              6422,
+              11,
+              323,
+              279,
+              21921,
+              374,
+              4287,
+              13,
+              2014,
+              11075,
+              279,
+              5795,
+              11,
+              358,
+              1184,
+              311,
+              3735,
+              705,
+              279,
+              25989,
+              323,
+              1992,
+              432,
+              4766,
+              279,
+              21921,
+              13,
+              576,
+              1156,
+              3019,
+              374,
+              311,
+              1896,
+              279,
+              25989,
+              382,
+              41895,
+              25,
+              1896,
+              25989,
+              151645
+            ],
+            "truncated": false
+          },
+          "started_unix": 1789425240.6574197,
+          "student_prefix": [
+            {
+              "content": "GOAL: Your goal is for the insect to be inside the cabinet.\n-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n\n\n\nThere is an insect on the floor.\nYou are carrying nothing.",
+              "role": "user"
+            }
+          ],
+          "task_id": "TW17_stow_loose_32002",
+          "turn": 0
+        },
+        {
+          "arm": "RICH",
+          "finished_unix": 1789425244.6167192,
+          "format_error": null,
+          "messages": [
+            {
+              "content": "You act in a native TextWorld game. Reach the stated goal within six actions. Native commands include open NAME, take NAME, take NAME from CONTAINER, and insert NAME into CONTAINER. Use names from observations and the goal. There is no need to repeat look or inventory: both are provided every turn. An invalid format consumes a turn without action. For each turn, write 150\u2013400 tokens of first-person reasoning. Name exact observable evidence, connect it to your goal, and state a checkable expectation for your next action. Distinguish uncertainty from what you observed. If feedback rejects your earlier action, explain the mistake, revise your plan and state a useful lesson. Include a short reusable record in your own words grounded in this experience. Do not invent observations or claim success before the environment confirms it. Put exactly one command on the final line, prefixed ACTION: . No text after that line.",
+              "role": "system"
+            },
+            {
+              "content": "TASK TW17_stow_loose_32002 | turn 1/6\nGOAL: Your goal is for the insect to be inside the cabinet.\n[OBS0] -= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n\n\n\nThere is an insect on the floor.\n[INV0] You are carrying nothing.\n[FEEDBACK0] ",
+              "role": "user"
+            },
+            {
+              "content": "The insect is on the floor, and the cabinet is empty. To achieve the goal, I need to pick up the insect and place it inside the cabinet. The first step is to take the insect.\n\nACTION: take insect",
+              "role": "assistant"
+            },
+            {
+              "content": "TASK TW17_stow_loose_32002 | turn 2/6\nGOAL: Your goal is for the insect to be inside the cabinet.\n[OBS1] -= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n[INV1] You are carrying: an insect.\n[FEEDBACK1] You pick up the insect from the ground.",
+              "role": "user"
+            }
+          ],
+          "model_error": null,
+          "native_after": {
+            "description": "-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet contains an insect.",
+            "done": true,
+            "feedback": "\nYou put the insect into the cabinet.\n\n\nYour score has just gone up by one point.\n\n\n                                                       *** The End ***\n\nYou scored 1 out of a possible 1, in 3 turns.\n\n\nWould you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?\n>                                                                                                                                 -= Kitchen =-0/2",
+            "inventory": "You are carrying nothing.",
+            "lost": false,
+            "reward": 1,
+            "score": 1,
+            "won": true
+          },
+          "native_before": {
+            "description": "-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!",
+            "done": false,
+            "feedback": "\nYou pick up the insect from the ground.\n\n\n\n>                                                                                                                                -= Kitchen =-0/2",
+            "inventory": "You are carrying: an insect.",
+            "lost": false,
+            "reward": 0,
+            "score": 0,
+            "won": false
+          },
+          "projection": {
+            "action": "insert insect into cabinet",
+            "prose": "I successfully picked up the insect. Now, I need to place it inside the cabinet to complete the task. My next action will be to insert the insect into the cabinet.\n"
+          },
+          "prose_tokens": 35,
+          "response": {
+            "messages": [
+              {
+                "content": "You act in a native TextWorld game. Reach the stated goal within six actions. Native commands include open NAME, take NAME, take NAME from CONTAINER, and insert NAME into CONTAINER. Use names from observations and the goal. There is no need to repeat look or inventory: both are provided every turn. An invalid format consumes a turn without action. For each turn, write 150\u2013400 tokens of first-person reasoning. Name exact observable evidence, connect it to your goal, and state a checkable expectation for your next action. Distinguish uncertainty from what you observed. If feedback rejects your earlier action, explain the mistake, revise your plan and state a useful lesson. Include a short reusable record in your own words grounded in this experience. Do not invent observations or claim success before the environment confirms it. Put exactly one command on the final line, prefixed ACTION: . No text after that line.",
+                "role": "system"
+              },
+              {
+                "content": "TASK TW17_stow_loose_32002 | turn 1/6\nGOAL: Your goal is for the insect to be inside the cabinet.\n[OBS0] -= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n\n\n\nThere is an insect on the floor.\n[INV0] You are carrying nothing.\n[FEEDBACK0] ",
+                "role": "user"
+              },
+              {
+                "content": "The insect is on the floor, and the cabinet is empty. To achieve the goal, I need to pick up the insect and place it inside the cabinet. The first step is to take the insect.\n\nACTION: take insect",
+                "role": "assistant"
+              },
+              {
+                "content": "TASK TW17_stow_loose_32002 | turn 2/6\nGOAL: Your goal is for the insect to be inside the cabinet.\n[OBS1] -= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n[INV1] You are carrying: an insect.\n[FEEDBACK1] You pick up the insect from the ground.",
+                "role": "user"
+              }
+            ],
+            "prompt_tokens": 449,
+            "raw": "I successfully picked up the insect. Now, I need to place it inside the cabinet to complete the task. My next action will be to insert the insect into the cabinet.\n\nACTION: insert insect into cabinet",
+            "terminal": true,
+            "token_ids": [
+              40,
+              7790,
+              12771,
+              705,
+              279,
+              25989,
+              13,
+              4695,
+              11,
+              358,
+              1184,
+              311,
+              1992,
+              432,
+              4766,
+              279,
+              21921,
+              311,
+              4583,
+              279,
+              3383,
+              13,
+              3017,
+              1790,
+              1917,
+              686,
+              387,
+              311,
+              5656,
+              279,
+              25989,
+              1119,
+              279,
+              21921,
+              382,
+              41895,
+              25,
+              5656,
+              25989,
+              1119,
+              21921,
+              151645
+            ],
+            "truncated": false
+          },
+          "started_unix": 1789425242.7212942,
+          "student_prefix": [
+            {
+              "content": "GOAL: Your goal is for the insect to be inside the cabinet.\n-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\nYou are carrying: an insect.",
+              "role": "user"
+            }
+          ],
+          "task_id": "TW17_stow_loose_32002",
+          "turn": 1
+        }
+      ]
+    },
+    {
+      "admitted": false,
+      "arm": "TERSE",
+      "error": null,
+      "family": "stow_loose",
+      "semantic_status": "UNRESOLVED",
+      "student_loss_targets": 0,
+      "success": true,
+      "task_id": "TW17_stow_loose_32002",
+      "turns": [
+        {
+          "arm": "TERSE",
+          "finished_unix": 1789425245.8057845,
+          "format_error": null,
+          "messages": [
+            {
+              "content": "You act in a native TextWorld game. Reach the stated goal within six actions. Native commands include open NAME, take NAME, take NAME from CONTAINER, and insert NAME into CONTAINER. Use names from observations and the goal. There is no need to repeat look or inventory: both are provided every turn. An invalid format consumes a turn without action. Output only exactly one command on one line, prefixed ACTION: . No explanation or additional text.",
+              "role": "system"
+            },
+            {
+              "content": "TASK TW17_stow_loose_32002 | turn 1/6\nGOAL: Your goal is for the insect to be inside the cabinet.\n[OBS0] -= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n\n\n\nThere is an insect on the floor.\n[INV0] You are carrying nothing.\n[FEEDBACK0] ",
+              "role": "user"
+            }
+          ],
+          "model_error": null,
+          "native_after": {
+            "description": "-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!",
+            "done": false,
+            "feedback": "\nYou pick up the insect from the ground.\n\n\n\n>                                                                                                                                -= Kitchen =-0/2",
+            "inventory": "You are carrying: an insect.",
+            "lost": false,
+            "reward": 0,
+            "score": 0,
+            "won": false
+          },
+          "native_before": {
+            "description": "-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n\n\n\nThere is an insect on the floor.",
+            "feedback": "\n\n\n\n                    ________  ________  __    __  ________        \n                   |        \\|        \\|  \\  |  \\|        \\       \n                    \\$$$$$$$$| $$$$$$$$| $$  | $$ \\$$$$$$$$       \n                      | $$   | $$__     \\$$\\/  $$   | $$          \n                      | $$   | $$  \\     >$$  $$    | $$          \n                      | $$   | $$$$$    /  $$$$\\    | $$          \n                      | $$   | $$_____ |  $$ \\$$\\   | $$          \n                      | $$   | $$     \\| $$  | $$   | $$          \n                       \\$$    \\$$$$$$$$ \\$$   \\$$    \\$$          \n              __       __   ______   _______   __        _______  \n             |  \\  _  |  \\ /      \\ |       \\ |  \\      |       \\ \n             | $$ / \\ | $$|  $$$$$$\\| $$$$$$$\\| $$      | $$$$$$$\\\n             | $$/  $\\| $$| $$  | $$| $$__| $$| $$      | $$  | $$\n             | $$  $$$\\ $$| $$  | $$| $$    $$| $$      | $$  | $$\n             | $$ $$\\$$\\$$| $$  | $$| $$$$$$$\\| $$      | $$  | $$\n             | $$$$  \\$$$$| $$__/ $$| $$  | $$| $$_____ | $$__/ $$\n             | $$$    \\$$$ \\$$    $$| $$  | $$| $$     \\| $$    $$\n              \\$$      \\$$  \\$$$$$$  \\$$   \\$$ \\$$$$$$$$ \\$$$$$$$ \n\nYour goal is for the insect to be inside the cabinet.\n\n-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n\n\n\nThere is an insect on the floor.\n\n>                                                                                                                                -= Kitchen =-0/1",
+            "inventory": "You are carrying nothing.",
+            "lost": false,
+            "score": 0,
+            "won": false
+          },
+          "projection": {
+            "action": "take insect",
+            "prose": ""
+          },
+          "prose_tokens": 0,
+          "response": {
+            "messages": [
+              {
+                "content": "You act in a native TextWorld game. Reach the stated goal within six actions. Native commands include open NAME, take NAME, take NAME from CONTAINER, and insert NAME into CONTAINER. Use names from observations and the goal. There is no need to repeat look or inventory: both are provided every turn. An invalid format consumes a turn without action. Output only exactly one command on one line, prefixed ACTION: . No explanation or additional text.",
+                "role": "system"
+              },
+              {
+                "content": "TASK TW17_stow_loose_32002 | turn 1/6\nGOAL: Your goal is for the insect to be inside the cabinet.\n[OBS0] -= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n\n\n\nThere is an insect on the floor.\n[INV0] You are carrying nothing.\n[FEEDBACK0] ",
+                "role": "user"
+              }
+            ],
+            "prompt_tokens": 200,
+            "raw": "ACTION: take insect",
+            "terminal": true,
+            "token_ids": [
+              41895,
+              25,
+              1896,
+              25989,
+              151645
+            ],
+            "truncated": false
+          },
+          "started_unix": 1789425245.5455108,
+          "student_prefix": [
+            {
+              "content": "GOAL: Your goal is for the insect to be inside the cabinet.\n-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n\n\n\nThere is an insect on the floor.\nYou are carrying nothing.",
+              "role": "user"
+            }
+          ],
+          "task_id": "TW17_stow_loose_32002",
+          "turn": 0
+        },
+        {
+          "arm": "TERSE",
+          "finished_unix": 1789425246.1337707,
+          "format_error": null,
+          "messages": [
+            {
+              "content": "You act in a native TextWorld game. Reach the stated goal within six actions. Native commands include open NAME, take NAME, take NAME from CONTAINER, and insert NAME into CONTAINER. Use names from observations and the goal. There is no need to repeat look or inventory: both are provided every turn. An invalid format consumes a turn without action. Output only exactly one command on one line, prefixed ACTION: . No explanation or additional text.",
+              "role": "system"
+            },
+            {
+              "content": "TASK TW17_stow_loose_32002 | turn 1/6\nGOAL: Your goal is for the insect to be inside the cabinet.\n[OBS0] -= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n\n\n\nThere is an insect on the floor.\n[INV0] You are carrying nothing.\n[FEEDBACK0] ",
+              "role": "user"
+            },
+            {
+              "content": "ACTION: take insect",
+              "role": "assistant"
+            },
+            {
+              "content": "TASK TW17_stow_loose_32002 | turn 2/6\nGOAL: Your goal is for the insect to be inside the cabinet.\n[OBS1] -= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n[INV1] You are carrying: an insect.\n[FEEDBACK1] You pick up the insect from the ground.",
+              "role": "user"
+            }
+          ],
+          "model_error": null,
+          "native_after": {
+            "description": "-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet contains an insect.",
+            "done": true,
+            "feedback": "\nYou put the insect into the cabinet.\n\n\nYour score has just gone up by one point.\n\n\n                                                       *** The End ***\n\nYou scored 1 out of a possible 1, in 3 turns.\n\n\nWould you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?\n>                                                                                                                                 -= Kitchen =-0/2",
+            "inventory": "You are carrying nothing.",
+            "lost": false,
+            "reward": 1,
+            "score": 1,
+            "won": true
+          },
+          "native_before": {
+            "description": "-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!",
+            "done": false,
+            "feedback": "\nYou pick up the insect from the ground.\n\n\n\n>                                                                                                                                -= Kitchen =-0/2",
+            "inventory": "You are carrying: an insect.",
+            "lost": false,
+            "reward": 0,
+            "score": 0,
+            "won": false
+          },
+          "projection": {
+            "action": "insert insect into cabinet",
+            "prose": ""
+          },
+          "prose_tokens": 0,
+          "response": {
+            "messages": [
+              {
+                "content": "You act in a native TextWorld game. Reach the stated goal within six actions. Native commands include open NAME, take NAME, take NAME from CONTAINER, and insert NAME into CONTAINER. Use names from observations and the goal. There is no need to repeat look or inventory: both are provided every turn. An invalid format consumes a turn without action. Output only exactly one command on one line, prefixed ACTION: . No explanation or additional text.",
+                "role": "system"
+              },
+              {
+                "content": "TASK TW17_stow_loose_32002 | turn 1/6\nGOAL: Your goal is for the insect to be inside the cabinet.\n[OBS0] -= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n\n\n\nThere is an insect on the floor.\n[INV0] You are carrying nothing.\n[FEEDBACK0] ",
+                "role": "user"
+              },
+              {
+                "content": "ACTION: take insect",
+                "role": "assistant"
+              },
+              {
+                "content": "TASK TW17_stow_loose_32002 | turn 2/6\nGOAL: Your goal is for the insect to be inside the cabinet.\n[OBS1] -= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n[INV1] You are carrying: an insect.\n[FEEDBACK1] You pick up the insect from the ground.",
+                "role": "user"
+              }
+            ],
+            "prompt_tokens": 312,
+            "raw": "ACTION: insert insect into cabinet",
+            "terminal": true,
+            "token_ids": [
+              41895,
+              25,
+              5656,
+              25989,
+              1119,
+              21921,
+              151645
+            ],
+            "truncated": false
+          },
+          "started_unix": 1789425245.8070076,
+          "student_prefix": [
+            {
+              "content": "GOAL: Your goal is for the insect to be inside the cabinet.\n-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\nYou are carrying: an insect.",
+              "role": "user"
+            }
+          ],
+          "task_id": "TW17_stow_loose_32002",
+          "turn": 1
+        }
+      ]
+    }
+  ],
+  "finished_unix": 1789425276.1916413,
+  "fit_ready": false,
+  "fits": 0,
+  "model_calls": 8,
+  "options": {
+    "bundle": "/tmp/astra_portable_37ec_20260914_attempt1",
+    "deadline": 1789426992,
+    "env_python": "/tmp/orch_text_prerequisite_20260914_attempt1/env/bin/python",
+    "games": "/tmp/orch_text_prerequisite_20260914_attempt1/games_v2",
+    "gpu_uuid": "GPU-8e15ce78-4e9c-4c48-724f-2b753c6c2296",
+    "model_dir": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+    "output": "/tmp/orch_text_prerequisite_20260914_attempt1/shard2/screen",
+    "phase": "screen",
+    "shard": 2,
+    "source_archive": "/tmp/orch_text_prerequisite_20260914_attempt1/source.tar.gz",
+    "source_sha": "130a7b8a768c6d2ae8895028a995a300c73a485d361198895662fff5d2852ccb"
+  },
+  "provenance": {
+    "expected_base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+    "model_dir": "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+    "verified": true
+  },
+  "source": {
+    "files": 509,
+    "manifest_sha256": "b1b199c021d2405a107355a2900bae03199b0cf3ac969b89262a214e5001a688"
+  },
+  "started_unix": 1789425192.9230285,
+  "status": "COMPLETE",
+  "updates": 0
+}

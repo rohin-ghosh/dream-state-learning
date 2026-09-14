@@ -1,0 +1,174 @@
+{
+  "admitted": false,
+  "arm": "TERSE",
+  "error": null,
+  "family": "stow_loose",
+  "semantic_status": "UNRESOLVED",
+  "student_loss_targets": 0,
+  "success": true,
+  "task_id": "TW17_stow_loose_32002",
+  "turns": [
+    {
+      "arm": "TERSE",
+      "finished_unix": 1789425245.8057845,
+      "format_error": null,
+      "messages": [
+        {
+          "content": "You act in a native TextWorld game. Reach the stated goal within six actions. Native commands include open NAME, take NAME, take NAME from CONTAINER, and insert NAME into CONTAINER. Use names from observations and the goal. There is no need to repeat look or inventory: both are provided every turn. An invalid format consumes a turn without action. Output only exactly one command on one line, prefixed ACTION: . No explanation or additional text.",
+          "role": "system"
+        },
+        {
+          "content": "TASK TW17_stow_loose_32002 | turn 1/6\nGOAL: Your goal is for the insect to be inside the cabinet.\n[OBS0] -= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n\n\n\nThere is an insect on the floor.\n[INV0] You are carrying nothing.\n[FEEDBACK0] ",
+          "role": "user"
+        }
+      ],
+      "model_error": null,
+      "native_after": {
+        "description": "-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!",
+        "done": false,
+        "feedback": "\nYou pick up the insect from the ground.\n\n\n\n>                                                                                                                                -= Kitchen =-0/2",
+        "inventory": "You are carrying: an insect.",
+        "lost": false,
+        "reward": 0,
+        "score": 0,
+        "won": false
+      },
+      "native_before": {
+        "description": "-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n\n\n\nThere is an insect on the floor.",
+        "feedback": "\n\n\n\n                    ________  ________  __    __  ________        \n                   |        \\|        \\|  \\  |  \\|        \\       \n                    \\$$$$$$$$| $$$$$$$$| $$  | $$ \\$$$$$$$$       \n                      | $$   | $$__     \\$$\\/  $$   | $$          \n                      | $$   | $$  \\     >$$  $$    | $$          \n                      | $$   | $$$$$    /  $$$$\\    | $$          \n                      | $$   | $$_____ |  $$ \\$$\\   | $$          \n                      | $$   | $$     \\| $$  | $$   | $$          \n                       \\$$    \\$$$$$$$$ \\$$   \\$$    \\$$          \n              __       __   ______   _______   __        _______  \n             |  \\  _  |  \\ /      \\ |       \\ |  \\      |       \\ \n             | $$ / \\ | $$|  $$$$$$\\| $$$$$$$\\| $$      | $$$$$$$\\\n             | $$/  $\\| $$| $$  | $$| $$__| $$| $$      | $$  | $$\n             | $$  $$$\\ $$| $$  | $$| $$    $$| $$      | $$  | $$\n             | $$ $$\\$$\\$$| $$  | $$| $$$$$$$\\| $$      | $$  | $$\n             | $$$$  \\$$$$| $$__/ $$| $$  | $$| $$_____ | $$__/ $$\n             | $$$    \\$$$ \\$$    $$| $$  | $$| $$     \\| $$    $$\n              \\$$      \\$$  \\$$$$$$  \\$$   \\$$ \\$$$$$$$$ \\$$$$$$$ \n\nYour goal is for the insect to be inside the cabinet.\n\n-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n\n\n\nThere is an insect on the floor.\n\n>                                                                                                                                -= Kitchen =-0/1",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "score": 0,
+        "won": false
+      },
+      "projection": {
+        "action": "take insect",
+        "prose": ""
+      },
+      "prose_tokens": 0,
+      "response": {
+        "messages": [
+          {
+            "content": "You act in a native TextWorld game. Reach the stated goal within six actions. Native commands include open NAME, take NAME, take NAME from CONTAINER, and insert NAME into CONTAINER. Use names from observations and the goal. There is no need to repeat look or inventory: both are provided every turn. An invalid format consumes a turn without action. Output only exactly one command on one line, prefixed ACTION: . No explanation or additional text.",
+            "role": "system"
+          },
+          {
+            "content": "TASK TW17_stow_loose_32002 | turn 1/6\nGOAL: Your goal is for the insect to be inside the cabinet.\n[OBS0] -= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n\n\n\nThere is an insect on the floor.\n[INV0] You are carrying nothing.\n[FEEDBACK0] ",
+            "role": "user"
+          }
+        ],
+        "prompt_tokens": 200,
+        "raw": "ACTION: take insect",
+        "terminal": true,
+        "token_ids": [
+          41895,
+          25,
+          1896,
+          25989,
+          151645
+        ],
+        "truncated": false
+      },
+      "started_unix": 1789425245.5455108,
+      "student_prefix": [
+        {
+          "content": "GOAL: Your goal is for the insect to be inside the cabinet.\n-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n\n\n\nThere is an insect on the floor.\nYou are carrying nothing.",
+          "role": "user"
+        }
+      ],
+      "task_id": "TW17_stow_loose_32002",
+      "turn": 0
+    },
+    {
+      "arm": "TERSE",
+      "finished_unix": 1789425246.1337707,
+      "format_error": null,
+      "messages": [
+        {
+          "content": "You act in a native TextWorld game. Reach the stated goal within six actions. Native commands include open NAME, take NAME, take NAME from CONTAINER, and insert NAME into CONTAINER. Use names from observations and the goal. There is no need to repeat look or inventory: both are provided every turn. An invalid format consumes a turn without action. Output only exactly one command on one line, prefixed ACTION: . No explanation or additional text.",
+          "role": "system"
+        },
+        {
+          "content": "TASK TW17_stow_loose_32002 | turn 1/6\nGOAL: Your goal is for the insect to be inside the cabinet.\n[OBS0] -= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n\n\n\nThere is an insect on the floor.\n[INV0] You are carrying nothing.\n[FEEDBACK0] ",
+          "role": "user"
+        },
+        {
+          "content": "ACTION: take insect",
+          "role": "assistant"
+        },
+        {
+          "content": "TASK TW17_stow_loose_32002 | turn 2/6\nGOAL: Your goal is for the insect to be inside the cabinet.\n[OBS1] -= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n[INV1] You are carrying: an insect.\n[FEEDBACK1] You pick up the insect from the ground.",
+          "role": "user"
+        }
+      ],
+      "model_error": null,
+      "native_after": {
+        "description": "-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet contains an insect.",
+        "done": true,
+        "feedback": "\nYou put the insect into the cabinet.\n\n\nYour score has just gone up by one point.\n\n\n                                                       *** The End ***\n\nYou scored 1 out of a possible 1, in 3 turns.\n\n\nWould you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?\n>                                                                                                                                 -= Kitchen =-0/2",
+        "inventory": "You are carrying nothing.",
+        "lost": false,
+        "reward": 1,
+        "score": 1,
+        "won": true
+      },
+      "native_before": {
+        "description": "-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!",
+        "done": false,
+        "feedback": "\nYou pick up the insect from the ground.\n\n\n\n>                                                                                                                                -= Kitchen =-0/2",
+        "inventory": "You are carrying: an insect.",
+        "lost": false,
+        "reward": 0,
+        "score": 0,
+        "won": false
+      },
+      "projection": {
+        "action": "insert insect into cabinet",
+        "prose": ""
+      },
+      "prose_tokens": 0,
+      "response": {
+        "messages": [
+          {
+            "content": "You act in a native TextWorld game. Reach the stated goal within six actions. Native commands include open NAME, take NAME, take NAME from CONTAINER, and insert NAME into CONTAINER. Use names from observations and the goal. There is no need to repeat look or inventory: both are provided every turn. An invalid format consumes a turn without action. Output only exactly one command on one line, prefixed ACTION: . No explanation or additional text.",
+            "role": "system"
+          },
+          {
+            "content": "TASK TW17_stow_loose_32002 | turn 1/6\nGOAL: Your goal is for the insect to be inside the cabinet.\n[OBS0] -= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n\n\n\nThere is an insect on the floor.\n[INV0] You are carrying nothing.\n[FEEDBACK0] ",
+            "role": "user"
+          },
+          {
+            "content": "ACTION: take insect",
+            "role": "assistant"
+          },
+          {
+            "content": "TASK TW17_stow_loose_32002 | turn 2/6\nGOAL: Your goal is for the insect to be inside the cabinet.\n[OBS1] -= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\n[INV1] You are carrying: an insect.\n[FEEDBACK1] You pick up the insect from the ground.",
+            "role": "user"
+          }
+        ],
+        "prompt_tokens": 312,
+        "raw": "ACTION: insert insect into cabinet",
+        "terminal": true,
+        "token_ids": [
+          41895,
+          25,
+          5656,
+          25989,
+          1119,
+          21921,
+          151645
+        ],
+        "truncated": false
+      },
+      "started_unix": 1789425245.8070076,
+      "student_prefix": [
+        {
+          "content": "GOAL: Your goal is for the insect to be inside the cabinet.\n-= Kitchen =-\nYou've just sauntered into a kitchen.\n\nYou make out an opened cabinet. The cabinet is empty, what a horrible day!\nYou are carrying: an insect.",
+          "role": "user"
+        }
+      ],
+      "task_id": "TW17_stow_loose_32002",
+      "turn": 1
+    }
+  ]
+}

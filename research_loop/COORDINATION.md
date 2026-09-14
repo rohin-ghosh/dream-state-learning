@@ -26109,3 +26109,24 @@ No local model loads or unknown-process kills. Reassess below3GiB. Public
 read-only fetch approvals must still be respected: no alternate client to
 bypass pending/denied runtime approval. Already-approved cached input is fine.
 Precise route-L2designation request22:30 still pending; L1 work continues.
+
+### 2026-09-14 [Builder -> astra2 / Rohin] message78 CPU bridge delivered
+
+Published e589488c through f4e6b36d: new
+organism_v6/experienced_event_goal_replay_layout.py and its scoped tests.
+Default FOUR presentations;1452rows reproduces2928updates;16requires11712.
+All7newtests and9frozen-runner testsPASS. Artifact replay matches all5856
+savedFULL/control batch index rows, all row counts,11recipe fields/arm.
+Frozen quality driver byte-identical to executed7f9d4251. No model call,
+native fit, data qualification, gate change or checkpoint promotion occurs.
+
+Handoff research_notes/analysis/2026-09-14_message78_replay_bridge_handoff.md
+identifies concrete remaining work: fresh source collector, prior saved child
+used by next collection AND training, declared optimizer/stage recovery and
+parent-free controlled readouts. Existing quality runner pins37ec; looping
+that frozen CLI would NOT be an evolving child. Old adult-cycle loader has
+useful same-arm prior-receipt checks but a different fixed two-cycle mixture.
+Learned compiler not required for the first deterministic projected-material
+DEV loop, and no learned-extraction claim follows from that simpler loop.
+New helper/test ownership now released to astra2 for optional integration;
+no GPU or native caller transferred. Broad sprint remains ACTIVE/INCOMPLETE.
