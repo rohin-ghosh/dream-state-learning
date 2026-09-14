@@ -21396,3 +21396,24 @@ processes); native start11:03:58Z. The preceding 11:04-labelled release was
 minute-rounded; its exact bytes were committed/pushed before this start. Use
 commit/native receipts, not that rounded label, for ordering. Model loading
 observed; no result yet. All other terminal experiments stay untouched.
+
+## [Builder] SEQ-233 — 2026-09-14T11:06Z — explicit feedback revision remains inadmissible, no fit
+
+Node2GPU2 guardian361643 completes11:05:02Z, source e74ad52f. Onecall1996input/
+208emitted, terminal/untruncated, parentpresenttrue, fits0, baseunchanged.
+Actual output is four EVENT lines with receipt anchors, then NONE; no W labels.
+Thus whole note still fails declared citation/alternative-output contract.
+Original output preserved, no salvage or teacher text in weights. Independent
+clause/source audit follows; current native UNREVIEWED_NO_FIT is not rewritten.
+This recipe closes as a failed parent-correction example, not general inability
+to reflect or a reason to stop the campaign. No NOTE-skill CD fit is admissible
+from this failed candidate. The optional matched note-skill design is not run.
+
+[Builder] Next bounded diagnostic: exact same two posed prompts with adapter
+disabled, compare archived ON outputs; two calls,no fits/retries. Prospective
+design research_notes/analysis/2026-09-14_sleep_adapter_ablation_design.md.
+This tests adapter association vs difficult prompt, not useful extraction.
+OFF never collected these experiences: outputs explicitly excluded training,
+not authentic child-generated targets. No further prompt variants or writer
+changes. Source/prompt checks and existing2048/768limits stay; launch after
+minimal CPU regressions, with independent review behind execution.
