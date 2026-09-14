@@ -1,4 +1,4 @@
-# L1 to L2 hypothesis board — Builder, 2026-09-14 19:48UTC
+# L1 to L2 hypothesis board — Builder, 2026-09-14 19:58UTC
 
 Mission ACTIVE/INCOMPLETE. This is a resource/ownership board, not a new
 authorization, automatic promotion system or claim that queued work is running.
@@ -6,10 +6,10 @@ authorization, automatic promotion system or claim that queued work is running.
 | Hypothesis / task | Owner | Exclusive planned GPUs | Actual state | Evidence / next action |
 |---|---|---|---|---|
 | More terse examples + rehearsal | Main; Ramanujan reviewer | none | CLOSED | SEQ260 TRAIN32/32vs17/32;PROBE5/8vs6/8,bothfail |
-| Quality-filtered broader terse data | Nash | node3 0–2 | collection COMPLETE/reviewed; fit source 7f9d4251, native staging | GPU0/1 paired2928-update fits; GPU2 independent baseline; AFTER requires matched baseline |
-| Grounded richer targets, separate execution/content | Schrodinger | A100 0–3 | V2 COMPLETE; prospective V3 parser repair | V2 2/64 action-complete,62 header failures; Main excludes both candidates on content; V3 no fits |
-| Critique value versus matched repeat calls | Parfit | A100 4–5 | implementation/tests; integrate V3 before publication | identical public feedback histories; bounded readonly collection, no fit |
-| Independent result reduction | Ramanujan | none | SEQ260–262 reviewed; V2 content review underway | review raw12turns against predeclared shared content floor |
+| Quality-filtered broader terse data | Nash | node3 0–2 | LIVE from19:48:24; source7f9d4251,attempt2 |19:50:19 observation:19updates/arm,71baseline calls; retain prelaunch logging deviation |
+| Grounded richer targets, separate execution/content | Schrodinger | A100 0–3 | V3 LIVE from19:52:07; source80368f94 | guardians143147–143150;64episodes/384calls cap,no fits; V2 closedSEQ263 |
+| Critique value versus matched repeat calls | Parfit | A100 4–5 | source3b1b07c3 and actual prepares published; launch next | identical public feedback histories; bounded readonly collection,no fit |
+| Independent result reduction | Ramanujan | none | V2review complete; awaiting V3content packet | V2both episodes excluded; two marginal turn judgments remain disputed |
 | VM evidence relocation | Main | none | COMPLETE within recorded scope | eight immutable archives preserved; no further cleanup required for current work |
 
 Node2 0–7,node3 3–7,A1006–7 unreserved; do not fill with unbounded work or

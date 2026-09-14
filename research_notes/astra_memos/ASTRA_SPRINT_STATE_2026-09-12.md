@@ -1,4 +1,15 @@
-## Current superseding snapshot — 2026-09-14 19:48UTC
+## Current superseding snapshot — 2026-09-14 19:58UTC
+
+Seven native processes launched: quality attempt2 node3GPU0/1fits+GPU2baseline
+from19:48:24; V3 A1000–3 from19:52:07. Exact source/PIDs in BOARD and new
+ASTRA_FRESH_ORCHESTRATOR_HANDOVER_2026-09-14.md. Preserve Nash's logged
+prelaunch-publication-order deviation; do not relabel as protocol-perfect.
+Parfit source3b1b07c3/prepares published; native launch next. V2closedSEQ263:
+both content reviews admit zero episodes/rows; two marginal turns disputed.
+Rohin72 plans fresh orchestrator; current thread keeps these bounded arms.
+MissionACTIVE/INCOMPLETE. Graph remains exposedDEV,not finalL2/L3environment.
+
+## Historical superseded snapshot — 2026-09-14 19:48UTC
 
 Mission ACTIVE/INCOMPLETE. SEQ260–262 completed and independently reviewed.
 RichV2 source60dbf789 terminal:74calls,2/64 action-complete episodes;62 header

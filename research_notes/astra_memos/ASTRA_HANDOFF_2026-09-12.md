@@ -1,4 +1,14 @@
-# Astra restart handoff — current override 2026-09-14 19:48UTC
+# Astra restart handoff — current override 2026-09-14 19:58UTC
+
+## Fresh-thread handover
+
+Read ASTRA_FRESH_ORCHESTRATOR_HANDOVER_2026-09-14.md first for Rohin72's
+handoff: current thread retains its bounded branches; no second orchestrator
+is claimed running. Quality attempt2 three native processes started19:48:24;
+V3four native TEACH starts19:52:07. Exact roots/PIDs and launch-logging deviation
+in that document and BOARD. Parfit source3b1b07c3/actual prepares published,
+native launch next. V2closedSEQ263,bothcontentreviews exclude all12candidate
+rows; two marginal judgments disputed. Do not restart any completed fits.
 
 ## CURRENT — supersedes the historical 19:29 snapshot below
 

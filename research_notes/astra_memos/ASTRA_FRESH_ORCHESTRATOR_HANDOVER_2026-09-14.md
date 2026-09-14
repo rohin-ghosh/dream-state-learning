@@ -1,4 +1,4 @@
-# Fresh-orchestrator handover — 2026-09-14 19:53 UTC
+# Fresh-orchestrator handover — 2026-09-14 19:58 UTC
 
 Mission ACTIVE/INCOMPLETE. Prepared under Rohin72. This is a handover, not
 authority to duplicate existing jobs or a claim that a second thread is live.
@@ -26,8 +26,8 @@ evaluation families must have separately declared boundaries before use.
 | Branch | Owner / resource | Actual status at last receipt | Bound question |
 |---|---|---|---|
 | Quality breadth | Nash; node3 GPU0/1 fits, GPU2 baseline | Three native processes started19:48:24; alive19:49:12 | Does training1452 sourced terse targets improve the fixed uncoached16-PROBE-world battery over new-target-loss-off? |
-| Rich V3 | Schrodinger; A1000–3 | Source80368f94 published; preparation/launch not confirmed here | Does precise header compatibility expose action-complete, content-qualified trajectories under unchanged V2 prompts? |
-| Self critique vs repeat | Parfit; A1004–5 | Code/tests readying, V3 integration before publication; not confirmed launched | Does critique prompting help reattempts beyond equally budgeted repeat planning with identical public outcomes? |
+| Rich V3 | Schrodinger; A1000–3 | Native starts19:52:07,source80368f94 | Does precise header compatibility expose action-complete, content-qualified trajectories under unchanged V2 prompts? |
+| Self critique vs repeat | Parfit; A1004–5 | Source3b1b07c3 and actual CPU prepares published; launch next | Does critique prompting help reattempts beyond equally budgeted repeat planning with identical public outcomes? |
 | Independent content review | Ramanujan; no GPU | V2 review released | Two candidate episodes both excluded; two marginal turn judgments disputed |
 
 Quality root: `/tmp/astra_goal_quality_train_20260914_attempt2` on node3.
@@ -57,12 +57,19 @@ log as passed or backdate one. EXECUTION records the actual times and cause.
 Preserve this deviation in any subsequent result. New launch orchestration
 must stop when publication fails; do not amend running source bytes.
 
-Planned V3 root: `/tmp/astra_rich_action_first_v3_20260914_attempt1`, shards0–3.
+V3 root: `/tmp/astra_rich_action_first_v3_20260914_attempt1`, shards0–3.
+Native starts19:52:07UTC after published packet7434b4a4 and clean physical/CVD
+admission. Guardians by GPU0–3:143147,143148,143149,143150; native Python
+143198,143214,143212,143206. Observe each shard's teach/RESULT.json or
+teach/FAILED.json and launch/completed_utc.txt or launch/GUARD_ABORT.txt;
+do not relaunch because a snapshot still says LIVE after completion.
 Source/protocol: `gpu/astra_rich_action_first_v3_collection.py`, matching guard,
 `research_notes/analysis/2026-09-14_rich_action_first_v3_collection_protocol.md`.
 384 total calls max,3960s/shard,no fits,new TEACH only,original EXPOSE reused.
 Accept precisely `RATIONALE\n` or `RATIONALE: ` before a unique `\nACTION\n`;
 old V1/V2 defaults stay strict. No command scanning or content repair.
+Critique root: `/tmp/astra_self_critique_repeat_20260914_attempt1`, source3b1b07c3,
+actual prepares and prelaunch packet4e5841fc published; native PIDs pending.
 Critique branch files: `gpu/astra_self_critique_collection.py`, matching guard,
 `organism_v6/experienced_event_self_critique.py` and its dated protocol.
 Use each worker's new launch receipt for exact roots/PIDs, never infer them.
