@@ -19983,3 +19983,20 @@ tokenizer preparation,180s,zero model/fit. Only JUNCTION is planned for an
 initial fit after actual materialchecks; not an automatic4cell campaign or
 an attempt to call40presentations the already-tested200presentation regime.
 This fixed-dose precursor isolates input formatting; it is not a dose-law claim.
+
+## [Builder] SEQ-208 — 2026-09-14T07:23Z — query-only material verified; single fit/readout released
+
+Native tokenizer preparation passed: QUERY_ONLY_MATERIAL_COMPLETE. All32atomic
+users changed and omit their targets; assistant targets/token counts unchanged,
+384steps/40560targettokens, same tape/seed/skillrows. All5evaluation files are
+byte-identical to priorfree material. No model/solver/reallocation calls.
+
+[Builder] Launch node2GPU3, root /tmp/astra_pchain2_query_only_dev_20260914_attempt1,
+source818c1696. Only ATOM-JUNCTION fit384updates followed by fresh-process
+112callreadout, outer3600s cap (fit2400/read900); CVD-owning supervisor persists
+across reload. Compare existing same-budget copy JUNCTION; reuse original
+BASE/LR0 readouts of identical questions. No new LR0 fit asserted. This is
+single-seed DEV format comparison, not a qualified writer or originalnull
+protocol result. Exact same source facts, no guessed targets. Guard checks
+physical+CVD reservations and six-hour lease margin. No other jobs stopped.
+PID follows; D2collection and CLOSED remain separate.
