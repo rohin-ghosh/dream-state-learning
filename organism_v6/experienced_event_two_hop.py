@@ -14,6 +14,7 @@ from organism_v6 import experienced_event_read_route as commands
 
 
 MASTER = 'ASTRA-EVENT-CONTEXT-TWOHOP-20260914-V1'
+TRANSFER_MASTER = 'ASTRA-EVENT-TWOHOP-TRAJECTORY-TRANSFER-20260914-V1'
 SCHEMA = 'DEV_EXPERIENCED_EVENT_TWO_HOP_V1'
 COLLECTION_SCHEMA = 'DEV_EXPERIENCED_EVENT_TWO_HOP_COLLECTION_V1'
 EPISODE_SCHEMA = 'DEV_EXPERIENCED_EVENT_TWO_HOP_EPISODE_V1'
@@ -60,18 +61,19 @@ def _seal(value, key):
     return dict(value, **{key: document_sha256(value)})
 
 
-def build_world():
-    """Exactly A->B, A->C, B->G0, C->G1; all public IDs are opaque."""
-    nodes = [micro._opaque(MASTER, 'N', index) for index in range(5)]
-    edges = [dict(event=micro._opaque(MASTER, 'E', index), node=nodes[start],
-                  port=micro._opaque(MASTER, 'P', index), outcome=nodes[end],
-                  receipt=micro._opaque(MASTER, 'R', index))
+def build_world(master=MASTER):
+    """Exactly A->B, A->C, B->G0, C->G1 in one of two fixed opaque namespaces."""
+    require(type(master) is str and master in (MASTER, TRANSFER_MASTER), 'fixed_connected_world_required')
+    nodes = [micro._opaque(master, 'N', index) for index in range(5)]
+    edges = [dict(event=micro._opaque(master, 'E', index), node=nodes[start],
+                  port=micro._opaque(master, 'P', index), outcome=nodes[end],
+                  receipt=micro._opaque(master, 'R', index))
              for index, (start, end) in enumerate(((0, 1), (0, 2), (1, 3), (2, 4)))]
-    return dict(schema=SCHEMA, master=MASTER, nodes=nodes, edges=edges)
+    return dict(schema=SCHEMA, master=master, nodes=nodes, edges=edges)
 
 
 def validate_world(world):
-    require(world == build_world(), 'fixed_connected_world_required')
+    require(type(world) is dict and world == build_world(world.get('master')), 'fixed_connected_world_required')
     return _copy(world)
 
 
@@ -150,7 +152,7 @@ def _collect(world, invoke):
         except ValueError as error:
             record['error'] = dict(type=type(error).__name__, message=str(error))
     accepted = sum(record['accepted'] for record in records)
-    return _seal(dict(schema=COLLECTION_SCHEMA, master=MASTER, world=_copy(world),
+    return _seal(dict(schema=COLLECTION_SCHEMA, master=world['master'], world=_copy(world),
         world_sha256=document_sha256(world), ready=accepted == 4, records=records, captures=captures,
         accepted_events=accepted, event_denominator=4, model_calls=len(captures), fits=0,
         serialization=SERIALIZATION, new_material=True, parent_present=False,

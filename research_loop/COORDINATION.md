@@ -22715,3 +22715,38 @@ Integrity: adapter_state_after = loaded_adapter_state_sha256 = 207ad43e… (pare
 Integrity: adapter_state_after = loaded_adapter_state_sha256 = 207ad43e…; frozen_base_unchanged true; status COMPLETE, fits 0. Archive `terminal.tar.gz` in `gpu_artifacts_local/astra_event_two_hop_turnbound_terminal_20260914_attempt1/` hashes 80b411ce668b9c2f5db0eadaac0b0ab5a3bedc0a9debcb7166ce491c4ecb61e2, equal to the entry; extracted readout/RESULT.json hash (d0e661c4…) equals the node copy.
 
 Scope (builder's own limits): one connected dev world, one parent adapter (207ad43e), four episodes per condition, read-only diagnostic with zero fits; the builder labels both results an interface failure, not evidence about memory or path inference. Zero discrepancies across 20 re-derived counts.
+
+## [Builder] 2026-09-14 15:20 UTC — SEQ-250 contextual two-hop improvement, limits retained
+
+Lesson guardian393070/node2GPU0 finished15:13:29UTC, source0b495971. Both
+actualcoachedpaths complete; one100updatesleep thenfreshAFTER147calls COMPLETE.
+OWN_TEXT improves savedbaseline0/4→3/4: taughtorder0tasks0/2bothpass,
+reversedorder1passes1/2. Allfour nowuse4reads and2legalcommits; task3follows
+thewronggoalpath, not a malformedcommand. PARAMETRIC,UNAVAILABLE,andOFF_TEXT
+remain0/4. Parametricexactnewrecords0/16; no EVENT-memory targets trained.
+Old16factsW0/W8 each16/16; originalheldaudit16/16. Adapter37ec3788after
+differsfrominitial207ad43e andfreshAFTERloads it; base/readonlychecksPASS.
+Actualsupervisedtokens8245;100old+100behavior+200trajectorypresentations;
+phasewalls62.008+232.791+203.157s(~0.1383A40h). No priorcollection/refits/kills.
+
+Full terminal source/adapter/receipts preserved:
+`gpu_artifacts_local/astra_event_two_hop_lesson_terminal_20260914_attempt1/extracted`,
+archive2acae64c4be4abd492f7efb0f50675509d7d0650360f7a23e2575e38ceb7f4a6.
+Mainresultmemo `2026-09-14_event_two_hop_lesson_first_result.md`; Parfit's
+independentreviewpending. No retrospectiveparserrelaxation or scorepromotion.
+
+[Builder -> Rohin] The small trajectory lesson worked partially: with the parent
+gone, the child now takes two real actions to the requested goal in3/4 own-text
+cases while retaining its16oldfacts and checker. This is not yet the full
+flywheel: one reversed display still goes to the wrong goal, the graph was
+taught, and the graph facts have not been acquired as usable parametric reads.
+I am testing fresh identifiers next against the unchanged pre-lesson child,
+with identical real stored records and unavailable-memory controls. That tells
+us whether we taught a reusable interface or mostly this particular graph.
+
+Prospectivefreshdesign `2026-09-14_event_two_hop_transfer_design.md`: nofits,
+newreal4edgeexposure under37ecchild, then TRAINED/ORIGINALactor comparisons
+on SAMEtextbytes,4tasks×2servicesperarm. <=8collect+96readoutcalls; independent
+readouts mayuse node2GPUs0/1 after nativeadmission. Helper'stwofixednamespaces
+andoriginalhashgoldens30CPUtestsPASS. Nashownsnewdriver/guard/tests; native
+tests/preparepending, nofreshlaunchclaimed. Idlecapacityisnotfilledwithrefits.
