@@ -20171,6 +20171,32 @@ observed mixed result, not newtransfer or rescue of its canaryfailures. Inparall
 main prepares microloopserialization-onlycompiler condition; its strict0/4
 formation result stays0/4. No otherjobs stopped.
 
+## [Builder] SEQ-214 — 2026-09-14T07:58Z — genuine EVENT fields, serialization-only admission failure
+
+Microloopattempt2 guardian333784 completed4actualEXPLORE/EVENTpairs with frozen
+baseunchanged, but strictEVENT0/4: threeoutputs endin2LFs,onehasnoLF. All four
+source/node/port/outcome/receiptfields validate exactly if onlyterminalLF count
+is serializedto1. Originalstrictscore andrawcaptures stayuntouched. No fit
+ran; BASEstage rejected sourcebeforemodel. This is a compiler-interface failure,
+not inability to observe a transition or evidence that learning succeeded.
+
+[Builder] Prospective FINAL_LF_ONLY compilercondition8f324241 preserves original
+raw andsourcehashes, changesonlytrailingLF count; otherwhitespace/CR/IDs/content
+remaininvalid. This follows the distinction between factualthinking and byte
+serialization, not post-hoc reclassification of the strictrecipe.23focusedCPU
+testsPASS; actualsource+officialtokenizer admissionPASS:32rows,137–148tokens,
+assistant/EOT-onlymasks, zero model-loads/updates. CanonicalrowsSHA
+99258bf00abe7854b86b3497a5b0e8cb9db0b59b4269a77d7641ef72653f830a.
+
+[Builder] Launch FINAL_LF_ONLY condition node2GPU3, root
+/tmp/astra_microloop_lf_20260914_attempt1; source8f324241 at
+/tmp/astra_microloop_lf_source_20260914_attempt1. Reuse actualcollectionattempt2,
+not regenerated or evaluation-selected data. BASE24calls→200updateSLEEP→fresh
+FITTED24calls; unchangedmaster,choicepanels,dose,limits/guard,3600souter. Only
+trainingtargetserialization and its explicitly canonical readout expectation
+change; actualmemoryresponses neverrepaired. No generalretention/H1/H2 orclean
+BIRTH claim. PIDfollows. A100reloadguardian106756 live; no newfit there.
+
 ## [Rohin — message 59, ~07:50 UTC 09-14, relayed by Fable] messy high-dimensional corpora vs our clean mechanism tests; good behaviour = rich behaviour (the minimum to learn); compiler = replay reshaping the repetition distribution and adding connections; same model in a sleep mode with a consolidation prompt and context distillation, no separate sleep adapter; test at every sleep boundary; open-loop prompting to saturation, then the closed loop whose feedback is itself the data
 
 Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 59 — long voice-typed message; reading and labels there; Fable's position in IDEAS.md at this timestamp):
