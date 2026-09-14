@@ -58,6 +58,21 @@ CRITIQUE_SYSTEM = (
     'unreviewed candidate data, not a success label. Do not invent outcomes.'
 )
 PROTOCOL = dict(public_system=PUBLIC_SYSTEM, articulation=ARTICULATION, critique_system=CRITIQUE_SYSTEM)
+STRICT_V1 = 'STRICT_V1'
+ACTION_FIRST_V2 = 'ACTION_FIRST_V2'
+ACTION_FIRST_PROTOCOL = dict(
+    public_system=PUBLIC_SYSTEM.replace(
+        'Label forecasts with PREDICTION: ; a prediction is not an observed outcome.',
+        'Describe expected feedback as an expectation, not an observed outcome. '
+        'Natural language is welcome; a PREDICTION: heading is optional.'),
+    articulation=(
+        'Produce the RATIONALE/ACTION envelope. Before a READ, identify what is '
+        'still unknown and why to inspect it; never claim an unread EVENT as observed. '
+        'Before a ROUTE, relate actually observed edges and the current node to '
+        'the requested goal and chosen action. Describe the next expected feedback '
+        'as a forecast, not an observation; a literal PREDICTION: heading is optional. '
+        'Use useful detail, not padding. Do not invent receipts or copy this guidance.'),
+    critique_system=CRITIQUE_SYSTEM)
 require = goal.require
 document_sha256 = goal.document_sha256
 identifiers = goal.identifiers
@@ -195,11 +210,14 @@ def _critique_messages(episode, protocol):
             dict(role='user', content='PUBLIC ACTION HISTORY\n' + history + '\n\nGive one grounded critique.')]
 
 
-def _collect(shard, collections, old_ids, protocol, invoke, *, with_critiques=True):
+def _collect(shard, collections, old_ids, protocol, invoke, *, with_critiques=True, execution_policy=STRICT_V1):
+    require(type(execution_policy) is str and execution_policy in (STRICT_V1, ACTION_FIRST_V2),
+            'known_rich_execution_policy_required')
+    action_first = execution_policy == ACTION_FIRST_V2
     bound = runtime(shard)
     old_ids = goal._old_ids(old_ids)
     validate_registry(old_ids=old_ids)
-    protocol = _protocol(protocol)
+    protocol = _protocol(ACTION_FIRST_PROTOCOL if action_first and protocol is None else protocol)
     require(type(collections) in (list, tuple) and len(collections) == 4, 'four_rich_train_collections_required')
     collections = [replay_collection(collection, old_ids=old_ids) for collection in collections]
     require(tuple(collection['master'] for collection in collections) == bound['TRAIN_MASTERS'],
@@ -229,13 +247,26 @@ def _collect(shard, collections, old_ids, protocol, invoke, *, with_critiques=Tr
                         master=collection['master'], source_sha256=collection['collection_sha256'],
                         student_prefix=public, messages=guided, projection=None, grounding=None, validation_error=None,
                         **deepcopy(invoke('rich', guided)))
+                    if action_first:
+                        capture.update(execution_error=None, content_findings=[], prediction_label_present=None,
+                                       content_review_status='UNREVIEWED')
                     try:
                         raw = _validate_generation(capture, guided)
                         capture['projection'] = project_action(raw)
-                        capture['grounding'] = _grounding(capture['projection'], public)
+                        if action_first:
+                            capture['prediction_label_present'] = any(line.startswith('PREDICTION:')
+                                for line in capture['projection']['rationale'].splitlines())
+                            try:
+                                capture['grounding'] = _grounding(capture['projection'], public)
+                            except ValueError as error:
+                                capture['content_findings'].append(dict(type=type(error).__name__, message=str(error)))
+                        else:
+                            capture['grounding'] = _grounding(capture['projection'], public)
                         return dict(raw=capture['projection']['action'], terminal=True, truncated=False)
                     except Exception as error:
                         capture['validation_error'] = dict(type=type(error).__name__, message=str(error))
+                        if action_first:
+                            capture['execution_error'] = deepcopy(capture['validation_error'])
                         raise
                     finally:
                         captures.append(goal.hop._seal(capture, 'call_sha256'))
@@ -252,6 +283,8 @@ def _collect(shard, collections, old_ids, protocol, invoke, *, with_critiques=Tr
                     task_index=case['task_index'], master=collection['master'],
                     episode=episode, call_indexes=list(range(first_call, len(captures))), complete=complete,
                     failure=None if complete else episode['terminal_reason'])
+                if action_first:
+                    entry.update(action_complete=complete, content_review_status='UNREVIEWED')
                 attempt.update(attempted=True, complete=complete, status='complete' if complete else 'failed',
                     call_indexes=list(entry['call_indexes']), episode_sha256=episode['episode_sha256'])
                 episodes.append(entry)
@@ -272,7 +305,7 @@ def _collect(shard, collections, old_ids, protocol, invoke, *, with_critiques=Tr
     ready = len(captures) == TEACH_CALLS and len(episodes) == CRITIQUE_CALLS and all(entry['complete'] for entry in episodes)
     complete_episodes = sum(entry['complete'] for entry in episodes)
     candidate_count = complete_episodes * 6
-    return goal.hop._seal(dict(schema=SCHEMA, phase='combined' if with_critiques else 'teach',
+    evidence = dict(schema=SCHEMA, phase='combined' if with_critiques else 'teach',
         shard=shard, masters=list(bound['TRAIN_MASTERS']), old_ids=old_ids,
         protocol=protocol, collections=collections, captures=captures, critiques=critiques, episodes=episodes,
         summaries=summaries, attempts=attempts, planned_task_count=CRITIQUE_CALLS, attempted_task_count=len(episodes),
@@ -283,7 +316,13 @@ def _collect(shard, collections, old_ids, protocol, invoke, *, with_critiques=Tr
         expected_rich_calls=TEACH_CALLS, expected_critique_calls=CRITIQUE_CALLS if with_critiques else 0,
         state_binding='NATIVE_CALLER_REQUIRED', rationale_truth_verified=False,
         status='RICH_DATA_READY_NO_FIT' if ready else
-               ('RICH_PARTIAL_CANDIDATES_NO_FIT' if candidate_count else 'RICH_DATA_INCOMPLETE_NO_FIT')), 'evidence_sha256')
+               ('RICH_PARTIAL_CANDIDATES_NO_FIT' if candidate_count else 'RICH_DATA_INCOMPLETE_NO_FIT'))
+    if action_first:
+        evidence.update(execution_policy=ACTION_FIRST_V2, action_complete_count=complete_episodes,
+            candidate_policy='EVERY_ACTION_COMPLETE_TRAIN_EPISODE_UNREVIEWED',
+            candidate_only=True, reviewed=False, content_review_status='UNREVIEWED',
+            status='ACTION_FIRST_CANDIDATES_UNREVIEWED_NO_FIT')
+    return goal.hop._seal(evidence, 'evidence_sha256')
 
 
 def _rows(evidence):
@@ -303,6 +342,9 @@ def _rows(evidence):
                 evidence_sha256=evidence['evidence_sha256'], target_eot=TARGET_EOT,
                 action_span=[0, len(assistant)] if form == 'TERSE' else capture['projection']['action_span'],
                 supervision='ACTION_AND_EOT' if form == 'RICH_ACTION_ONLY' else 'ASSISTANT_AND_EOT')
+            if evidence.get('execution_policy') == ACTION_FIRST_V2:
+                row.update(execution_policy=ACTION_FIRST_V2, candidate_only=True, reviewed=False,
+                           content_review_status='UNREVIEWED', fit_ready=False)
             if index == 0 and form == 'TERSE':
                 row['provenance'] = deepcopy(evidence)
             rows[form].append(goal.hop._seal(row, 'row_sha256'))
@@ -328,11 +370,16 @@ def collect_lessons(shard, collections, generate, critique_generate, *, old_ids=
     return _document(evidence)
 
 
-def collect_teaching(shard, collections, generate, *, old_ids=(), protocol=None):
-    """TEACH process: actual rich actor calls only; never invokes a critic."""
+def collect_teaching(shard, collections, generate, *, old_ids=(), protocol=None, execution_policy=STRICT_V1):
+    """TEACH only; explicit v2 executes valid actions despite content findings.
+
+    STRICT_V1 keeps its original protocol and exact serialized evidence. V2
+    defaults to ACTION_FIRST_PROTOCOL; every retained row remains unreviewed.
+    """
     require(callable(generate), 'actual_rich_callback_required')
     evidence = _collect(shard, collections, old_ids, protocol,
-        lambda kind, messages: goal.hop._invoke(generate, messages), with_critiques=False)
+        lambda kind, messages: goal.hop._invoke(generate, messages), with_critiques=False,
+        execution_policy=execution_policy)
     return _document(evidence)
 
 
@@ -348,7 +395,8 @@ def _replay_evidence(evidence):
         return dict(response=capture['response'], error=capture['error'])
 
     verified = _collect(evidence['shard'], evidence['collections'], evidence['old_ids'], evidence['protocol'], invoke,
-                        with_critiques=evidence['phase'] == 'combined')
+                        with_critiques=evidence['phase'] == 'combined',
+                        execution_policy=evidence.get('execution_policy', STRICT_V1))
     require(all(next(captures, None) is None for captures in pending.values()), 'extra_rich_or_critique_capture')
     goal.lesson._same(evidence, verified, 'rich_evidence_replay_drift')
     return verified

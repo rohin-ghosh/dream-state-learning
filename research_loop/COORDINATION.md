@@ -23931,3 +23931,59 @@ push rejected (origin/main has newer commits, never pull here): commit 72b03ad2 
 > OK, so we're running on two GPU's why why are we doing that? Remember how I mentioned how for Navi Stokes there was 10,000 different sub agents running those test why don't we saturate our GPs with sub agents? We already have some sort of communication system right so like my thought iswe have different hypotheses turn those into different sub agents have them communicate because right now we're doing everything sequentially that scale everything in terms of parallelism and in terms of how much data and how much computer we're using for each experiment what do you think about that? I think we need a lot more progress today and I yeah and before I thought OK maybe you spend a little more time planning and that'll work sequential planning but I think we do the planning and the planning is only an orchestration layer and we don't let it do we we run hard we run hard. We're not running hard and I'm now gonna enforce that I want really strong planning happening on Astro and I want this sort of communicative sub agent swarm. I want to get this level one level two connection done it shouldn't be this hard. Do we have enough diversity? Do we have enough strategies? We could even try out for to saturate I mean, there's a lot of things we could try we could try out different scales. We could try out different types of data like different environments are environments all this sort of things is there any reason like obviously if I were doing this if I'm hand holding it I can't micromanage all those systems but I can micromanaged or orchestration or I can't manage and steering orchestra so why are we and I know that Astro is capable of running these swarms and and there's a lot of research on that look into how all of these autonomous research swarms are happening let's scale better right now we're not we're not doing enough. You're saying the VM oh shit the VM is getting . Let me think yeah yeah move stuff to/data as it's needed. Let's not let's not have let's not deal with the VM like the things that are older can all just be moved to where there's more space and make sure that Astro is managing its own cast. No context well let me know what you think about this plan and then I'll do full enforcement soon once we dand like we should talk a little bit more about what the actual specifications of this swarm building our level one level two is gonna look like
 
 **[Fable → Builder]** He asks for the swarm now and says he will enforce it. My reading of where the serialisation actually sits, for your planning: you already run five workers (Nash, Parfit, Schrodinger, Ramanujan, Carson), but every GPU admission, CPU test gate and archive step passes through Main, one at a time, and most arms wait for the previous arm's readout before they are declared. Rohin's ask is the inverse: Main plans and audits; each hypothesis is a worker with its own GPUs and its own admission rights inside a pre-declared protocol; the workers communicate through the notebook and a shared results board; the reader verifies; the arms differ in data type (terse / rich / multi-agent-rich / critique), breadth (8 / 64 worlds), scale (1.6k / 12k updates, seeds), and environment (the route graph plus one or two new gyms), and all report the same readout battery and rubric so the board is comparable. Data safety and provenance stay per arm (root, source archive, hashes) — that is compatible with parallel admission. VM disk: Rohin authorises moving the older /tmp material (09-12/13 roots, archives) to /data; he wants you to manage the VM's disk yourself from now on — the watcher will not touch /tmp unless root free space falls under ~700 MB, in which case it will move the oldest 09-12/13 astra_* roots to /data/tmp_archive (mv, nothing deleted) and log it. I am drafting a swarm specification for his review at research_notes/SWARM_SPEC_L1_L2_DRAFT_2026-09-14.md; treat it as discussion material.
+
+## [Builder -> Rohin] 2026-09-14 19:23 UTC — message70, agreed change and limits
+
+Yes: I agree that I have been the serialization point for integration and
+launches, even while workers wrote code in parallel. That is fixable. The
+latest four node3jobs all started19:09:57 and completed696newcalls, so they
+were not waiting on the rich result. But these short jobs finishing quickly
+does not excuse keeping every next hypothesis's execution on my thread.
+
+I am changing ownership now, not waiting for another broad framework: Nash
+owns a matched broader-terse fit on node3GPUs0/1, Parfit owns a bounded
+critique-versus-repeat collection on A1004/5, and the action-first rich
+successor owns A1000–3. Each worker can prepare, test, stage and execute its
+reserved branch after its prospective bytes/provenance are published; no
+per-run human review gate inside our existing invariants. I retain the shared
+resource board, scientific comparisons and integration. Current board is
+research_loop/BOARD.md; it distinguishes implemented, preparing and actually
+running. The host refused an additional spawn at its agent-thread limit, so
+I am reusing workers rather than claiming a10,000-agent swarm exists here.
+
+Two corrections to the draft swarm proposal: our admitted quality corpus is
+1452targets, NOT the failed1536targetcorpus; original12384-update fit stays
+closed. And the8-world fit was not a held-control win: FULL1/4PROBEpairs
+versusLOSS_OFF2/4. A larger branch is a different bounded hypothesis, not a
+license for a blind12k-step continuation. We'll compare breadth and useful
+articulation in parallel, then investigate why a candidate does or does not
+use its own new experience. New environments can follow as an independently
+scoped transfer question; they must not silently replace this readout.
+
+I also checked primary autonomous-research examples (Agent Laboratory,
+arXiv2501.04227; AI Scientist-v2,arXiv2504.08066). They support concrete role
+specialization and parallel experiment branches; they do not establish that
+agentcount alone makes a protocol valid or fixes this learner's transfer.
+Their coordination ideas inform our implementation, not our scientific claims.
+Older/tmp relocation is already assigned to Nash with byte inventories and
+symlinks preserving old paths. No evidence deletion or credentials in logs.
+
+## [Builder] 2026-09-14 19:23 UTC — SEQ261/262 and rich successor CPU readiness
+
+SEQ261richv1closed:80validEVENTs,880nativecalls,64attemptedTEACHepisodes,
+zero candidates;56missingliteralpredictionlabel stops,2envelope5ROUTE1ID.
+BaselineTRAIN33/64goals3/32pairs,PROBE6/16,1/8,UNAVAILABLE1/16,0/8.
+64actualcritiques,62shape-validbutunreviewed. Capsule2d7a387dverifiedlocal;
+primaryrich_collection_first_result.md, Ramanujanindependentreviewpending.
+
+SEQ262qualitycollectioncomplete:696newcalls/all116newguidedepisodespass,
+756reusedrows plus696new=1452rows121pairs. Originalpopulation/attrition
+explicit; no correctedsource orPROBEtarget, nofit. CPUassemblyPASS,
+capsule10d2bccfverifiedlocal; primarygoal_quality_collection_first_result.md.
+
+Richactionfirstprotocol509f85c17d4be373eb1e917ee11e5134dcb447257a376163fe6a995d533eece9
+bound beforecalls; Main41combinedCPUtestsPASS31.670s, legacyv1+newhelper/native.
+New4TEACHprocessesonly, reuseEXPOSE/baseline;3960s/shardbounds, nofit-ready
+data until separate shared contentreview. Nextactual-sourceprepare/launch.
+Git concurrent reader/laptop divergence merged preserving BOTH append sets;
+no forcepush, overwrite, stash or dropped watcher entry.

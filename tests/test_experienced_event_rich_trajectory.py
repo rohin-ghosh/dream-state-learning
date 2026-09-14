@@ -510,5 +510,183 @@ from organism_v6 import experienced_event_rich_trajectory
                     rich.encode_paired_rows(self.document['rows'], tokenizer)
 
 
+class ActionFirstPolicyTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.collections = [rich.collect_world(world, exposed_child) for world in rich.build_worlds(0)['TRAIN']]
+        cls.document = rich.collect_teaching(0, cls.collections, cls.natural_child,
+                                             execution_policy=rich.ACTION_FIRST_V2)
+
+    @staticmethod
+    def natural_child(messages):
+        return generation(rich_child(messages)['raw'].replace('PREDICTION: ', ''), messages)
+
+    def test_v1_default_explicit_policy_and_failure_goldens_unchanged(self):
+        self.assertEqual(rich.document_sha256(rich.PROTOCOL),
+                         '96d1440fea071ea688fa038222470081ee1c4f3cb1a33c12a03190371209cd4b')
+        taught = rich.collect_teaching(0, self.collections, rich_child)
+        explicit = rich.collect_teaching(0, self.collections, rich_child, execution_policy=rich.STRICT_V1)
+        self.assertEqual(taught, explicit)
+        combined = rich.collect_lessons(0, self.collections, rich_child, critic_child)
+        missing_label = rich.collect_teaching(0, self.collections, self.natural_child)
+        for document, digest in (
+            (taught, '44e5ef0e60a9cb7890e0b2940b19fa09e0f26ae59793d86a11e8b67f05b585ce'),
+            (combined, '321753adce8edc07df5554d28bee7ceb3bea7f522addfe201466a61144be2136'),
+            (missing_label, '78a1ceca5dfb96647ded2f2ebf586592f23061a691f26a10877f6cc7ba322082')):
+            self.assertEqual(rich.document_sha256(document), digest)
+            self.assertNotIn('execution_policy', document)
+            self.assertEqual(rich.replay_lessons(document), document['rows'])
+        self.assertEqual(missing_label['candidate_row_count'], 0)
+        self.assertTrue(all(entry['episode']['memory_calls'] == 0 for entry in missing_label['episodes']))
+
+    def test_missing_label_executes_all_planned_commands_but_no_semantic_admission(self):
+        document = self.document
+        self.assertEqual(document['execution_policy'], rich.ACTION_FIRST_V2)
+        self.assertEqual(document['protocol'], rich.ACTION_FIRST_PROTOCOL)
+        self.assertEqual((document['rich_calls'], document['critique_calls'], document['action_complete_count']), (96, 0, 16))
+        self.assertTrue(document['complete_corpus'])
+        self.assertFalse(document['fit_ready'] or document['reviewed'] or document['rationale_truth_verified'])
+        for entry in document['episodes']:
+            self.assertTrue(entry['action_complete'])
+            self.assertEqual((entry['episode']['memory_calls'], entry['episode']['route_calls']), (4, 2))
+            self.assertTrue(entry['episode']['reached_goal'])
+        for capture in document['captures']:
+            self.assertIsNone(capture['execution_error'])
+            self.assertIsNone(capture['validation_error'])
+            self.assertFalse(capture['prediction_label_present'])
+            self.assertEqual(capture['content_findings'], [dict(type='ValueError', message='explicit_prediction_line_required')])
+            self.assertEqual(capture['content_review_status'], 'UNREVIEWED')
+            self.assertEqual(capture['response']['messages'], capture['messages'])
+            self.assertNotIn(rich.PARENT_GUIDANCE, str(capture['student_prefix']))
+            self.assertTrue(all(not message['content'].startswith('RATIONALE\n')
+                                for message in capture['student_prefix'] if message['role'] == 'assistant'))
+        rows = rich.replay_teaching(document)
+        tokenizer = Tokenizer()
+        encoded = rich.encode_paired_rows(rows, tokenizer)
+        for form in rich.FORMS:
+            self.assertEqual(len(rows[form]), 96)
+            for row in rows[form]:
+                self.assertTrue(row['candidate_only'])
+                self.assertFalse(row['reviewed'] or row['fit_ready'])
+                self.assertEqual(row['content_review_status'], 'UNREVIEWED')
+                raw = document['captures'][row['call_index']]['response']['raw']
+                if form != 'TERSE':
+                    self.assertEqual(row['assistant'], raw)
+            self.assertEqual(len(encoded['encoded'][form]), 96)
+        for index in range(96):
+            terse, full, masked = [encoded['encoded'][form][index] for form in rich.FORMS]
+            self.assertEqual(terse.target_ids, masked.target_ids)
+            self.assertEqual(full.input_ids, masked.input_ids)
+            self.assertEqual(masked.labels[-1], -100)
+            self.assertLessEqual(len(full.input_ids), 2048)
+
+    def test_hallucinated_prose_and_parent_echo_flagged_without_execution_failure(self):
+        for text, finding in (('I already saw receipt R_AAAAAAAAAA.', 'rationale_unseen_public_identifier'),
+                              (rich.PARENT_GUIDANCE, 'rationale_parent_guidance_echo')):
+            with self.subTest(finding=finding):
+                def actor(messages):
+                    response = rich_child(messages)
+                    response['raw'] = response['raw'].replace('I use the available public observations.', text)
+                    return response
+
+                document = rich.collect_teaching(0, self.collections, actor, execution_policy=rich.ACTION_FIRST_V2)
+                self.assertEqual(document['action_complete_count'], 16)
+                self.assertEqual(document['candidate_row_count'], 96)
+                for capture in document['captures']:
+                    self.assertIsNone(capture['execution_error'])
+                    self.assertTrue(capture['prediction_label_present'])
+                    self.assertEqual(capture['content_findings'][0]['message'], finding)
+                    self.assertNotIn(text, str([message for message in capture['student_prefix'] if message['role'] != 'system']))
+                self.assertEqual(rich.replay_teaching(document), document['rows'])
+                self.assertFalse(document['fit_ready'])
+
+    def test_literal_label_is_diagnostic_never_a_semantic_pass(self):
+        document = rich.collect_teaching(0, self.collections, rich_child, execution_policy=rich.ACTION_FIRST_V2)
+        for capture in document['captures']:
+            self.assertTrue(capture['prediction_label_present'])
+            self.assertEqual(capture['content_findings'], [])
+            self.assertFalse(capture['grounding']['factual_truth_verified'])
+            self.assertEqual(capture['content_review_status'], 'UNREVIEWED')
+        self.assertTrue(document['candidate_rows_ready'])
+        self.assertFalse(document['fit_ready'])
+
+    def test_native_and_action_failures_still_cannot_execute(self):
+        for mutation in ('truncated', 'nonterminal', 'envelope', 'ambiguous', 'action', 'prompt', 'tokens', 'context'):
+            with self.subTest(mutation=mutation):
+                def actor(messages):
+                    response = self.natural_child(messages)
+                    if mutation == 'truncated':
+                        response['truncated'] = True
+                    elif mutation == 'nonterminal':
+                        response['terminal'] = False
+                    elif mutation == 'envelope':
+                        response['raw'] = 'READ EVENT E_AAAAAAAAAA'
+                    elif mutation == 'ambiguous':
+                        response['raw'] += '\nACTION\nREAD EVENT E_AAAAAAAAAA'
+                    elif mutation == 'action':
+                        response['raw'] = response['raw'].split('\nACTION\n')[0] + '\nACTION\nSTOP'
+                    elif mutation == 'prompt':
+                        response['messages'] = []
+                    elif mutation == 'tokens':
+                        response['token_ids'] = [1] * 513
+                    else:
+                        response['prompt_tokens'] = 2049
+                    return response
+
+                document = rich.collect_teaching(0, self.collections, actor, execution_policy=rich.ACTION_FIRST_V2)
+                self.assertEqual((document['rich_calls'], document['action_complete_count'], document['candidate_row_count']), (16, 0, 0))
+                for entry in document['episodes']:
+                    self.assertEqual((entry['episode']['memory_calls'], entry['episode']['route_calls']), (0, 0))
+                    self.assertFalse(entry['action_complete'])
+                for capture in document['captures']:
+                    self.assertEqual(capture['execution_error'], capture['validation_error'])
+                    self.assertIsNotNone(capture['execution_error'])
+                self.assertEqual(rich.replay_teaching(document), dict.fromkeys(rich.FORMS, []))
+
+    def test_replay_binds_policy_content_execution_raw_and_unreviewed_rows(self):
+        for mutation in ('remove_policy', 'strict_policy', 'unknown_policy', 'content', 'label', 'execution', 'complete', 'raw', 'row'):
+            with self.subTest(mutation=mutation):
+                document = deepcopy(self.document)
+                if mutation == 'remove_policy':
+                    document.pop('execution_policy')
+                elif mutation == 'strict_policy':
+                    document['execution_policy'] = rich.STRICT_V1
+                elif mutation == 'unknown_policy':
+                    document['execution_policy'] = 'ACTION_FIRST_V3'
+                elif mutation == 'content':
+                    document['captures'][0]['content_findings'] = []
+                    reseal(document['captures'][0], 'call_sha256')
+                elif mutation == 'label':
+                    document['captures'][0]['prediction_label_present'] = True
+                elif mutation == 'execution':
+                    document['captures'][0]['execution_error'] = dict(type='ValueError', message='invented')
+                elif mutation == 'complete':
+                    document['episodes'][0]['action_complete'] = False
+                elif mutation == 'raw':
+                    document['captures'][0]['response']['raw'] += '\n'
+                else:
+                    document['rows']['RICH'][0]['reviewed'] = True
+                    reseal(document['rows']['RICH'][0], 'row_sha256')
+                reseal(document, 'lesson_sha256')
+                with self.assertRaises(ValueError):
+                    rich.replay_teaching(document)
+
+    def test_policy_is_explicit_closed_and_custom_protocol_replayed(self):
+        callback = Mock(side_effect=self.natural_child)
+        for invalid in (None, True, 'action_first_v2', 'UNKNOWN'):
+            with self.subTest(policy=invalid), self.assertRaisesRegex(ValueError, 'known_rich_execution_policy_required'):
+                rich.collect_teaching(0, self.collections, callback, execution_policy=invalid)
+        callback.assert_not_called()
+        protocol = deepcopy(rich.ACTION_FIRST_PROTOCOL)
+        protocol['articulation'] += ' Keep observations and expectations distinct.'
+        document = rich.collect_teaching(0, self.collections, self.natural_child,
+            execution_policy=rich.ACTION_FIRST_V2, protocol=protocol)
+        self.assertEqual(document['protocol'], protocol)
+        self.assertEqual(rich.replay_teaching(document), document['rows'])
+        strict = rich.collect_teaching(0, self.collections, self.natural_child, protocol=rich.ACTION_FIRST_PROTOCOL)
+        self.assertNotIn('execution_policy', strict)
+        self.assertEqual(strict['candidate_row_count'], 0)
+
+
 if __name__ == '__main__':
     unittest.main()
