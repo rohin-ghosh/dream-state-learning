@@ -4,10 +4,9 @@
 
 Can developmental teaching improve how an agent uses its experience after
 learning? We study persistent LoRA adapters on frozen Qwen2.5-7B-Instruct.
-Matched lesson-gradient masking yields parent-free reader-audit classification
-16/16 versus7/16. Selected and uniform single-hop forks both reach4/4; uniform
-matches selected. An off-policy shared-writer material control yields recall1/4
-and routing3/4 versus reused4/4. Invalid control pointers limit semantic attribution.
+Parent-free audit classification reaches16/16 versus7/16; selected/uniform
+single-hop forks tie4/4. Off-policy material-control recall1/4/routing3/4 and
+invalid pointers limit semantic attribution.
 
 Connected readouts initially fail0/4. Source-guided sleep yields own-text goals3/4
 on taught and fresh-identifier graphs with unchanged topology; ORIGINAL receives
@@ -26,6 +25,9 @@ connection, not reliable composition.
 Stronger replay leaves commands/pairs unchanged but audit falls16/16 to15/16
 (SEQ-254): this repair is closed failed, not a dose sweep.
 
+Unchanged-child SEQ255 baseline yields5/8 tasks and2/4 opposite-goal pairs
+across two identifier worlds: partial goal conditioning, zero new fits or amortization.
+
 Bounded independent reviews PASS; one DEV topology/lineage, mixed
 writes and external scheduling preclude H1/H2 or autonomous-learning claims.
 We seek collaborators on goal-sensitive controls, independent-topology recurrence
@@ -37,9 +39,9 @@ remains unsent.
 **Evidence-backed working update — UNSENT.** No message has been sent.
 
 **September 14, 2026 result update — research question unresolved.**
-SEQ-252/253 and the closed failed SEQ254 repair are terminal; bounded
-independent reviews PASS. The combined248–254 section preserves earlier failures
-and the first-branch-baseline limit; no outcome beyond254 is included.
+SEQ-255 collection/baseline is terminal with zero fits and independent review
+PASS, alongside252/253 and the closed failed254 repair. The combined248–255 section preserves earlier failures
+and the first-branch-baseline limit; no outcome beyond255 collection/baseline is included.
 SEQ-247 shared-writer material control is terminal and independently reduced.
 SEQ-246 matched replay is terminal and independently reduced.
 A3 SEQ-245 is terminal and independently reduced: six stages, one matching
@@ -56,7 +58,7 @@ The sprint TeX and companion abstract are updated; canonical
 No complete cross-draft review is claimed. The collaborator draft stays UNSENT;
 H1/H2 and the program remain open.
 
-### SEQ-248–254: connected learning, controls and parametric connection — September 14, 2026
+### SEQ-248–255: connected learning, controls and parametric connection — September 14, 2026
 
 **Both independently reduced COMPLETE.** [Original readout](../analysis/2026-09-14_event_two_hop_first_result.md)
 and [turn-bound successor](../analysis/2026-09-14_event_two_hop_turnbound_first_result.md)
@@ -295,15 +297,47 @@ adapter52658b rules out a no-update artifact. Close this specific recipe,
 not all replay strategies; no dose sweep or further outcome is reported.
 
 SEQ250 **already taught opposite goals (tasks0/2) under one display order**.
-Missing conditional examples is not the established cause. At this reporting
-cut, the new goal-pair helper broadens worlds/orders in a NO-FIT collection
-design pending native execution, not the first goal counterexample or a
-positive transfer result. One DEV lineage and the253 causal limits remain.
+Missing conditional examples is not the established cause. SEQ255 below reports
+completed NO-FIT collection and baseline across more worlds/orders, not the
+first goal counterexample or a newly learned transfer result. One DEV lineage
+and the253 causal limits remain.
 Source `28b44b19a050bbd431bad884f830d05ef0762f64`; [primary result](../analysis/2026-09-14_event_two_hop_memory_replay_first_result.md)
 and [released independent review](../analysis/2026-09-14_event_two_hop_memory_replay_independent_result.md).
 The latter supersedes the primary's pending-review wording; saved-file/state
 joins do not independently authenticate live tensors. Raw capsule:
 `gpu_artifacts_local/astra_event_two_hop_memory_replay_terminal_20260914_attempt1/extracted/`.
+
+**SEQ255: collection and unchanged-child baseline; bounded independent review PASS.**
+EXPOSE, TEACH and BASELINE completed with **zero fits/updates**, preserving
+already-taught37ec throughout. EXPOSE produced16 source-valid child EVENTs
+in32 calls across two TRAIN and two PROBE identifier worlds. TEACH yielded48
+actual coached TRAIN-only targets in48 calls; all eight guided tasks/four pairs
+completed. Guidance is absent from student prefixes; PROBE records, cases and
+scores do not enter parent input or teaching targets. Guided collection is not
+learned autonomous behavior. Fresh-process, parent-free BASELINE made96 calls.
+
+| Unchanged37ec baseline | OWN_TEXT tasks | OWN_TEXT pairs | UNAVAILABLE tasks/pairs |
+| --- | ---: | ---: | ---: |
+| PROBE-A | 2/4 | 1/2 | 0/4;0/2 |
+| PROBE-B | 3/4 | 1/2 | 0/4;0/2 |
+| Total | 5/8 | 2/4 | 0/8;0/4 |
+
+A pair requires both opposite goals under the same display order, distinct
+source-correct first ports and two legal commits per task. A succeeds on tasks0,2;
+B on tasks0,1,3. All own-text cases make two legal moves, including three wrong-goal
+failures; all unavailable cases end `duplicate_address`. Thus the existing
+child exhibits **partial goal conditioning**, not a blanket absence of it.
+No gain or new amortization is attributable to these48 untrained targets.
+SEQ250 already taught an opposite-goal pair; this broadens world/order coverage.
+Two identifier instances of one topology and one exposed DEV lineage are not
+independent development seeds, generalized planning or H1/H2. No subsequent
+400-update outcome is included;253/254 failures and causal limits remain.
+
+Source `a0fdc9a7dda2d84e5f535b3b54e31741ce753c7a`; [primary result](../analysis/2026-09-14_goal_pair_collection_first_result.md)
+and [independent review](../analysis/2026-09-14_goal_pair_collection_independent_result.md).
+Bounded review joins all176 calls,48 TRAIN-only targets and all four baseline
+panels; recorded state joins are not independent live tensor authentication.
+Raw capsule: `gpu_artifacts_local/astra_goal_pair_collection_terminal_20260914_attempt1/extracted/`.
 
 ### SEQ-247: executable selector material, shared writer — September 14, 2026
 
