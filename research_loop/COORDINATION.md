@@ -22913,3 +22913,11 @@ one shared evolving adapter, no external-text fallback in parametric condition.
 Combinedguard<=9300s, physical+CVD admission andsix-hourlease margin; PID follows.
 Do not refit if AFTER plumbing fails. Sourcearchive d46fd75709b3cf0b0b77c3d494063ff5ce58d38a8f087e24939a87095c17fa9b
 verified remotely. No kills, no whole-life/H1/H2 claim, no forced occupancy.
+
+## [Builder] 2026-09-14 15:59 UTC — both native controllers confirmed live
+
+Control398565/node2GPU0 started15:56:24UTC; finite update59/100 observed.
+Memory398924/node2GPU1 started15:58:28UTC, BEFOREmodel loaded. Exact roots and
+source commits in preceding launch entries/currentHANDOFF. No result promoted.
+SEQ250 six-file manuscript release committed4f1d7b68 (static checks only, no
+TeX engine/layout validation); Carson now updates through reviewed251. No kills.

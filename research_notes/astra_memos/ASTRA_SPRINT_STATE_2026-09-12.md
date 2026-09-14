@@ -1,4 +1,13 @@
-## Current superseding snapshot — 2026-09-14 15:52 UTC
+## Current superseding snapshot — 2026-09-14 15:59 UTC
+
+LIVE independent native tests: node2GPU0 control398565/train59of100/source4f1d7b68;
+node2GPU1 memory398924/BEFORE/source7c773aac. Exact roots/commands in currentHANDOFF.
+Both actual-sourceCPUpreparePASS; Main8control and26memory/helper testsPASS.
+No completed results yet; never repeat completed fits on AFTER failure. 251
+independent reviewPASS; six writing files Carson-owned updating through251.
+Mission ACTIVE/INCOMPLETE; previous statuses below are historical only.
+
+## Historical superseded snapshot — 2026-09-14 15:52 UTC
 
 SEQ251 terminal: fresh actual EVENT collection4/4, TRAINED37ec OWN_TEXT3/4
 versus ORIGINAL207ad0/4, both unavailable0/4. Zero new fits;93native calls;

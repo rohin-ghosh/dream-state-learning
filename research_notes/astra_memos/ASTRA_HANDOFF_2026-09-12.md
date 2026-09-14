@@ -1,4 +1,28 @@
-# Astra restart handoff — current override September 14, 2026, 15:52 UTC
+# Astra restart handoff — current override September 14, 2026, 15:59 UTC
+
+## CURRENT — two independent native comparisons LIVE
+
+Node2GPU0 control guardian398565 started15:56:24UTC, source4f1d7b689e7892d989cb97e6406d5c80d9bfb6a8,
+root/tmp/astra_event_two_hop_lesson_control_20260914_attempt1. Train59/100
+finite at latest inspection; no completed outcome. Train then fresh AFTER guard
+<=7320seconds. Native prepare and Main8CPUtestsPASS. Starts207ad, masks trajectory
+labels only under original8245reference-label denominator. Never refit if AFTER fails.
+
+Node2GPU1 memory guardian398924 started15:58:28UTC, source7c773aacaf0c6a47f510d6f38459ac8270521335,
+root/tmp/astra_event_two_hop_memory_20260914_attempt1. BEFORE started/model loaded,
+no outcome yet. BEFORE then train100 then fresh AFTER; combinedguard9300seconds.
+Nativeprepare/Main26CPUtestsPASS. Starts37ec, writes32views of4actual251EVENTs
+with222oldrows; no teacher/recollection. Inspect phase/{RESULT,FAILED}.json and
+train/LOSSES.jsonl,run.log,launch. Do not duplicate any phase already COMPLETE.
+Both guards use physical+CVD admission and node2 six-hourlease margin.
+
+Nash/control and Schrodinger/memory files RELEASED and committed. Mainowns
+execution/state. Carsonowns6writingfiles updating through251;250committed4f1d7b68.
+Parfit251reviewPASS/committed1c1e54cc; available for bounded terminal review.
+All earlier LIVE and pending-implementation statements below are historical.
+Mission ACTIVE/INCOMPLETE; no complete parametric loop or H1/H2 claim yet.
+
+## Historical superseded snapshot — 15:52 UTC
 
 ## CURRENT — SEQ251 terminal; control and memory implementations pending
 
