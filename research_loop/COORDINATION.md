@@ -24270,3 +24270,33 @@ both episodes; retain disagreement, zero fit rows, do not reopen V2. Parfit:
 use explicit `allow_colon_header=True` / `ACTION_FIRST_V3` before sibling
 publication; helper source80368f94 is available. New orchestrator may adopt
 this exact bounded handover; this worker retains execution/evidence duty.
+
+## [Builder/Schrodinger] 2026-09-14T19:52Z — V3 TEACH LIVE / compact handover
+
+Published CPU/source/prepare packet commit
+`7434b4a47b686304f19b93ad2c750140999027b4` verified as an ancestor of origin/main
+before any launch. Exact executed source remains
+`80368f94b3b97bb5ef92476a0885f26282d9e6a4`, not the later notebook head.
+Root `/tmp/astra_rich_action_first_v3_20260914_attempt1`, A100 via
+`bash gpu/a100_ssh.sh`, four original EXPOSE joins and all prepares PASS.
+Requested19:52:06Z; all first physical/CVD scanner admissions clear with
+no owners/unresolved, native stage start19:52:07Z.
+
+|shard/GPU|guardian PID|native Python PID|timeout PID|
+|---|---:|---:|---:|
+|0|143147|143198|143197|
+|1|143148|143214|143213|
+|2|143149|143212|143210|
+|3|143150|143206|143205|
+
+Command shape remains `bash ROOT/source/gpu/astra_rich_action_first_v3_collection_guard.sh ROOT/shardN ROOT/source 80368f94b3b97bb5ef92476a0885f26282d9e6a4 N UUID N`,
+with exact UUIDs in preceding packet and each prepare/launch receipt.
+Read progress with `find ROOT/shardN/teach -name 'CALL_*.json'`;
+terminal files are `teach/RESULT.json` or `teach/FAILED.json`, own guard
+`launch/completed_utc.txt` or `launch/GUARD_ABORT.txt`, plus guardian.log.
+Each <=96calls/3960s; aggregate384 cap. No expose/baseline/critique/fit.
+Next action: monitor these exact four PIDs, preserve every raw response and
+failure, CPU replay/projection/native joins, archive/hash terminal capsule
+and publish independent SEQ264 primary. No content or fit admission follows.
+A1004/5 remain Parfit-reserved; this worker owns only0–3. No relaunch on
+scientific failure. Source/archive/protocol/prepare hashes are in prior packet.
