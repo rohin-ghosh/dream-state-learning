@@ -19316,3 +19316,24 @@ eligibility still comes from the declared observed criteria, not worker opinion.
 Euclid owns P-CHAIN-2 preparation/test, no native work; Confucius preserves exact
 nativeCPU5 success and dtype diagnosis toVM; Popper checks GPU interfaces.
 Main retains integration, launch/stop, outcome inspection and claim ownership.
+
+## [Builder] 2026-09-14T05:34Z — physical model execution; reporting defect disposition
+
+Node2 child310509 has placed distinct models on GPUs0/1 and entered the conductor;
+BASE raw generation/tensor custody exists. At05:33:33UTC GPU1 used31045MiB at
+100percent utilization; GPU0 used15759MiB. No terminal reduction inspected yet.
+This is actual model execution, not another CPU-only source pass. Training
+completion/update counts will be claimed only from its retained receipts.
+
+Popper found one reporting bug: old entry can label a nonreportable reduction
+REDUCED_NUMERICAL_DATA because it only checks conductor completion. Main's local
+repair explicitly checks reduction.reportable and retains both sets of issues;
+20injected testsPASS0.078s, including invalid reduction and valid numeric misses.
+The running immutable123f0ae2 checkout is NOT changed or stopped. Prospective
+terminal acceptance additionally requires the exact10nonempty declared criteria
+with their original names/denominators/minima: old reducer emits those ONLY when
+both states are reportable. Empty/incomplete criteria will be rejected regardless
+of status. This fixes reporting interpretation, not scientific thresholds; no
+numerical outcome has been used to select the rule. Failed criteria remain data.
+New entry repair applies only to subsequent source versions. Popper found no
+other fatal actor/trainer/device/checkpoint-interface mismatch in this trace.

@@ -354,6 +354,12 @@ def run_entry(options, *, libraries=None, clock=time.time, device_probe=_device_
             run = objects["conductor"]
             training._require(run.terminal_reason == "reduced" and not run.failures and not evidence["errors"],
                               "conductor_or_base_audit_incomplete")
+            receipt["reduction_validation"] = {
+                "reportable": run.reduction.reportable,
+                "base_issues": list(run.reduction.base.issues),
+                "atom_local_issues": list(run.reduction.atom_local.issues),
+            }
+            training._require(run.reduction.reportable, "nonreportable_reduction")
             receipt.update(status="REDUCED_NUMERICAL_DATA", conductor_hashes=run.hashes,
                            criteria=[asdict(item) for item in run.reduction.criteria])
         training._require(export_training(), "training_observations_export_failed")

@@ -224,7 +224,8 @@ class EntryTests(unittest.TestCase):
         kwargs["atom_local_actor"]("ATOM")
         self.after_conductor()
         return SimpleNamespace(terminal_reason="reduced", failures=(), hashes={"d1_adapter": "c" * 64},
-            reduction=SimpleNamespace(criteria=(Criterion(),)))
+            reduction=SimpleNamespace(criteria=(Criterion(),), reportable=True,
+                                      base=SimpleNamespace(issues=()), atom_local=SimpleNamespace(issues=())))
 
     def execute_options(self):
         self.options.mode, self.options.gpu_uuids = "reduced", ["GPU-fake-base", "GPU-fake-atom"]
@@ -283,6 +284,22 @@ class EntryTests(unittest.TestCase):
         observed = json.loads((Path(self.options.output_dir) / "TRAINING_OBSERVATIONS.json").read_bytes())
         self.assertEqual(observed["receipts"], source.tokens.retain(evidence["objects"]["trainer"].receipts))
         self.assertEqual(observed["completed_updates"], 3)
+
+    def test_nonreportable_reduction_retains_issues_and_fails(self):
+        self.execute_options()
+        original = self.conduct.side_effect
+
+        def invalid_reduction(**kwargs):
+            result = original(**kwargs)
+            result.reduction.reportable = False
+            result.reduction.criteria = ()
+            result.reduction.base.issues = ("invalid_driver_custody",)
+            return result
+
+        self.conduct.side_effect = invalid_reduction
+        evidence = self.fail("nonreportable_reduction")
+        self.assertEqual(evidence["receipt"]["reduction_validation"]["base_issues"], ["invalid_driver_custody"])
+        self.assertNotIn("status", evidence["receipt"])
 
     def test_source_failure_stops_before_tokenizer_or_model(self):
         error = ValueError("incomplete_source_gates")
