@@ -9,6 +9,15 @@ uuid="$5"
 arm="$6"
 adapter="$7"
 adapter_sha="$8"
+cycle="${9:-1}"
+prior="${10:-}"
+extra=(--cycle "$cycle")
+if test "$cycle" = 2; then
+    test -n "$prior"
+    extra+=(--prior-adult-collection "$prior")
+else
+    test -z "$prior"
+fi
 root="$campaign/$arm"
 mkdir "$root" "$root/launch_collect"
 clear=false
@@ -29,7 +38,7 @@ printf '%s\n' "$commit" > "$root/launch_collect/source_commit.txt"
 date -u +%Y-%m-%dT%H:%M:%SZ > "$root/launch_collect/started_utc.txt"
 export PYTHONPATH="$source_dir" CUDA_VISIBLE_DEVICES="$uuid" OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 TOKENIZERS_PARALLELISM=false HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONDONTWRITEBYTECODE=1
 timeout --signal=INT --kill-after=60 1860 /localhome/local-rohing/v2/venv/bin/python -B -m gpu.astra_experienced_event_adult_cycle \
-    --phase collect --development-arm "$arm" --initial-adapter-dir "$adapter" \
+    --phase collect "${extra[@]}" --development-arm "$arm" --initial-adapter-dir "$adapter" \
     --expected-initial-adapter-sha256 "$adapter_sha" --gpu-uuid "$uuid" \
     --model-dir /localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28 \
     --expected-base-sha256 a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992 \

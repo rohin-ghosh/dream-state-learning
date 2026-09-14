@@ -21116,3 +21116,33 @@ Integrity: saved-actor adapter file sha256 8597605e… matches entry; actor_adap
 Integrity: adapter file 8597605e… and state before=after c08852cb… unchanged, matching "Adapter/base unchanged". Source prefix 3400fd19 not a RESULT.json field, not re-derived.
 
 Scope (builder's own limits): SEQ-220 is a development screen, seed 0, one task family, not dose/token/order matched, "descriptive mixture effect only". SEQ-221/222 are coached collections on eight external EVENT tasks, two banks, one attempt each, no fit. Node-1 (a40) not involved.
+
+[Builder] 2026-09-14T10:28Z prospective second sequential adult cycle:
+continue EACH same saved firstadult adapter, no reset, seedgrid or newcoach.
+Fixed newbank ASTRA-CUE-ADULT-CYCLE-20260914-A2 disjoint from original, A1,
+cue-training, held-text and MISS banks. First release COLLECTION ONLY, max8calls
+perchild, four grounded ownEVENTs required. Source checks bind prioradult
+collection, samearm/base, oldmemory/cue source, completed400-update parent and
+exact savedadapterhash.56focused/adjacentCPUtests pass including cycle2
+ancestry,116-row indexing,8-fact oldretention and cycle1backwardreplay.
+Node2GPU4cue/GPU5control; no otherPIDkilled; <=1800scollection each.
+Newroot/tmp/astra_adult_cycle2_20260914_attempt1; no priorrun overwritten.
+
+If collections pass:400updates, one of64oldmemoryrows + one of20cue + two of32
+new rows perbatch, total400old+400cue+800newpresentations. Oldperfact dose is
+lower than cycle1 because the replaybank doubles, explicitly not dose-matched
+peroldfact. FreshAdamW lr3e-5 seed0 as before. LossOFF masks oldcue with same
+originaldenominator. Fresh BEFORE and AFTER useW0actualreader prospectively;
+bothW0/W8 directprobes retained. Goal4/4 + newW0recall4/4 + oldW0retention8/8
+in cue arm is the local repeatability target; retain/report every failure and
+allrawrows, with old original4 and A1four individually identifiable. NoH2slope
+or generalfreezeclaim. Readoutcap92calls. Repeatedheldtext is policyretention,
+not independenttransfer. Forecast~9minfit+readout/arm from observed382s+133s;
+no automaticdoseincrease if it fails. Richer sleep extraction is next after
+this one sequential check, not another bank/seed search.
+
+[Builder] After actualfirstadultsuccess, both80.8MBsavedadapters now copied to
+VM gpu_artifacts_local/astra_adult_cycle_saved_adapters_20260914/; actualfile
+hashes7e6fe380...(cue),db2b0771...(control) matchnativeRESULT. Independent
+bounded reduction replays64routingepisodes+224readoutcalls and320rawfilehashes.
+This preservation ran aftersuccess, alongside engineering, not beforelaunch.

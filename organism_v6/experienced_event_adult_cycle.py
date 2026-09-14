@@ -15,6 +15,7 @@ from organism_v6 import experienced_event_microloop as micro
 
 SCHEMA = "DEV_PARENT_FREE_ADULT_CYCLE_COLLECTION_V1"
 MASTER = "ASTRA-CUE-ADULT-CYCLE-20260914-A1"
+SECOND_MASTER = "ASTRA-CUE-ADULT-CYCLE-20260914-A2"
 SERIALIZATION = "FINAL_LF_ONLY"
 CLAIM = "EXOGENOUS_OFFERED_EXPERIENCE_FORMAT_SCAFFOLD_NOT_AUTONOMOUS_SELECTION_OR_H2"
 MAX_CALLS = 8
@@ -44,12 +45,19 @@ def _identities(bank):
             for key in ("world", "event", "node", "port", "outcome", "receipt")}
 
 
-def build_bank():
-    bank = micro.build_bank(MASTER)
+def master_for_cycle(cycle):
+    require(type(cycle) is int and cycle in (1, 2), "exactly_two_adult_cycles")
+    return MASTER if cycle == 1 else SECOND_MASTER
+
+
+def build_bank(cycle=1):
+    bank = micro.build_bank(master_for_cycle(cycle))
     training_banks = collector.training_banks()
     require(len(training_banks) == 2, "two_cue_training_banks_required")
     excluded = [micro.build_bank(source.MASTER), *training_banks]
     excluded.extend(micro.build_bank(cue_sleep.HELD_MASTER + "-" + str(index)) for index in range(2))
+    if cycle == 2:
+        excluded.extend((build_bank(), micro.build_bank(source.MASTER + "-UNSEEN-MISS")))
     identities = _identities(bank)
     require(all(not identities.intersection(_identities(previous)) for previous in excluded),
             "adult_identity_overlap")
@@ -67,8 +75,8 @@ def _generation(response, messages):
     return response
 
 
-def _collect(invoke):
-    bank, episodes, captures = build_bank(), [], []
+def _collect(invoke, cycle=1):
+    bank, episodes, captures = build_bank(cycle), [], []
 
     def generate(messages, episode_index, phase):
         require(len(captures) < MAX_CALLS, "adult_call_cap")
@@ -105,15 +113,18 @@ def _collect(invoke):
     accepted = sum(episode["accepted"] for episode in episodes)
     rows = micro.compile_rows(bank, episodes, serialization=SERIALIZATION) if accepted == 4 else []
     require(not rows or len(rows) == NEW_ROW_COUNT, "all_four_grounded_events_before_rows")
-    return dict(schema=SCHEMA, master=MASTER, serialization=SERIALIZATION, claim=CLAIM,
+    result = dict(schema=SCHEMA, master=master_for_cycle(cycle), serialization=SERIALIZATION, claim=CLAIM,
                 new_material=True, clean_claim=False, parent_present=False, fits=0,
                 bank=bank, episodes=episodes, rows=rows, captures=captures,
                 count=len(captures), accepted_events=accepted, event_denominator=4,
                 infrastructure_failures=sum(episode["infrastructure_failure"] for episode in episodes),
                 status="COLLECTION_COMPLETE_NO_FIT" if accepted == 4 else "COLLECTION_FAILED_NO_FIT")
+    if cycle == 2:
+        result.update(cycle=2, prior_master=MASTER)
+    return result
 
 
-def collect(generate):
+def collect(generate, *, cycle=1):
     """Offer four experiences, retaining every attempted call and failed output."""
     require(callable(generate), "generation_callback_required")
 
@@ -129,7 +140,7 @@ def collect(generate):
                              if type(response.get(key)) in (str, bool, int, type(None))}
             return dict(response=available, error=dict(type=type(error).__name__, message=str(error)))
 
-    return _collect(invoke)
+    return _collect(invoke, cycle)
 
 
 def replay_collection(record):
@@ -154,18 +165,19 @@ def replay_collection(record):
         _same(capture["messages"], messages, "captured_prompt_drift")
         return dict(response=capture["response"], error=capture["error"])
 
-    replayed = _collect(invoke)
+    replayed = _collect(invoke, record.get("cycle", 1))
     require(cursor == len(captures), "unused_actual_calls")
     _same(record, replayed, "adult_collection_replay_drift")
     return replayed["rows"]
 
 
-def adult_indexes(update, cue_count):
-    """Fixed OLD32 + CUE20 + NEW32 layout: one old, one cue, two new."""
+def adult_indexes(update, cue_count, *, old_count=32):
+    """OLD32/64 + CUE20 + NEW32 layout: one old, one cue, two new."""
     require(type(update) is int and 1 <= update <= UPDATES, "fixed_400_update_range")
     require(type(cue_count) is int and cue_count == CUE_ROW_COUNT, "exact_twenty_cue_rows_required")
+    require(type(old_count) is int and old_count in (32, 64), "exact_old_memory_layout_required")
     offset = update - 1
-    new_start = OLD_ROW_COUNT + cue_count
-    return (offset % OLD_ROW_COUNT, OLD_ROW_COUNT + offset % cue_count,
+    new_start = old_count + cue_count
+    return (offset % old_count, old_count + offset % cue_count,
             new_start + (2 * offset) % NEW_ROW_COUNT,
             new_start + (2 * offset + 1) % NEW_ROW_COUNT)

@@ -52,6 +52,51 @@ class AdultCycleTests(unittest.TestCase):
         self.assertEqual(adult.replay_collection(record), record["rows"])
         self.assertEqual(record, original)
 
+    def test_cycle1_capture_bytes_remain_exact(self):
+        record = adult.collect(self.generation)
+        self.assertEqual(hashlib.sha256(adult._bytes(record)).hexdigest(),
+                         'f7946355dc12e56ebb84d63dec90ce8c313d5c8f1e778641cf4c67cf92672ebe')
+        self.assertEqual(adult.collect(self.generation, cycle=1), record)
+        self.assertNotIn('cycle', record)
+
+    def test_cycle2_disjoint_capture_and_replay(self):
+        previous = self.bank
+        self.bank = adult.build_bank(2)
+        reserved = [previous, micro.build_bank(adult.source.MASTER), *adult.collector.training_banks(),
+                    micro.build_bank(adult.source.MASTER + '-UNSEEN-MISS')]
+        reserved.extend(micro.build_bank(adult.cue_sleep.HELD_MASTER + '-' + str(index)) for index in range(2))
+        for bank in reserved:
+            self.assertFalse(adult._identities(self.bank) & adult._identities(bank))
+        record = adult.collect(self.generation, cycle=2)
+        self.assertEqual((record['cycle'], record['master'], record['prior_master']),
+                         (2, 'ASTRA-CUE-ADULT-CYCLE-20260914-A2', adult.MASTER))
+        self.assertEqual((record['count'], record['accepted_events'], len(record['rows'])), (8, 4, 32))
+        self.assertEqual(adult.replay_collection(record), record['rows'])
+        record['cycle'] = 1
+        with self.assertRaises(ValueError):
+            adult.replay_collection(record)
+        for cycle in (0, 3, True, 2.0, '2'):
+            with self.assertRaises(ValueError):
+                adult.build_bank(cycle)
+
+    def test_cycle2_schedule_has_64_old_rows_and_exact_doses(self):
+        counts = Counter()
+        for update in range(1, 401):
+            indexes = adult.adult_indexes(update, 20, old_count=64)
+            old, cue, first, second = indexes
+            self.assertTrue(0 <= old < 64 and 64 <= cue < 84 and 84 <= first < 116 and 84 <= second < 116)
+            self.assertNotEqual(first, second)
+            counts.update(indexes)
+        self.assertEqual(sum(counts[index] for index in range(64)), 400)
+        self.assertEqual(sum(counts[index] for index in range(64, 84)), 400)
+        self.assertEqual(sum(counts[index] for index in range(84, 116)), 800)
+        self.assertEqual({counts[index] for index in range(64)}, {6, 7})
+        self.assertEqual({counts[index] for index in range(64, 84)}, {20})
+        self.assertEqual({counts[index] for index in range(84, 116)}, {25})
+        for old_count in (0, 63, 96, True, 64.0):
+            with self.assertRaises(ValueError):
+                adult.adult_indexes(1, 20, old_count=old_count)
+
     def test_final_lf_only_is_explicit_and_preserves_source(self):
         for final_lfs in (0, 1, 2, 5):
             with self.subTest(final_lfs=final_lfs):
