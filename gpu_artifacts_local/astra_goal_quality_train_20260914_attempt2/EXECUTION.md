@@ -118,3 +118,36 @@ replay, retokenization, launch, restart, source edit or budget change.
 Quality branch monitoring/readout/reduction remains assigned despite other
 workers retiring. Existing guards retain the previously authorized fresh
 AFTER transition within the original23:54:24UTC deadline.
+
+## [Builder/Nash] 2026-09-14 21:33 UTC — terminal fits and original automatic AFTERs
+
+Spaced read-only monitoring continued every300seconds through terminal status;
+full observations in monitor_20260914T2049.jsonl. Both original guardians
+completed without FAILED/abort or deadline change. FULL2928updates finished
+21:21:30UTC, original guard started fresh AFTER native91024 at21:21:31,
+COMPLETE960calls21:32:18; guard86063 completed21:32:19. LOSS_OFF2928updates
+finished21:21:45, automatic fresh AFTER native91067 began21:21:46,
+COMPLETE932calls21:32:32; guard86064 completed21:32:33. No duplicate launches.
+
+Actual labels FULL238274,loss-off173814,commonreference238274; both own saved
+states reloaded unchanged for AFTER. FULL e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf;
+loss-off4f0dccf5b7cf37b872eafc3a50990e0cdfda027fb0140f0aad999f27606e4ee3.
+Shared944call baseline remains33/64goals,2/32pairs, not legacyP44 0/4.
+FULL62/64goals,30/32pairs; control26/64,1/32. Full engineering conjunction
+FAILS because shard1PROBE-A has0/2pairs; remaining15worlds2/2each. Fixed32pair
+denominator retained. Full oldW0/W8/audit16/16 each, original/fresh4/4 each;
+control old/audit16/16 but original/fresh2/4. UNAVAILABLEpairs0/32 allstates.
+
+## [Builder/Nash] 2026-09-14 21:33:43 UTC — GPU0/1 released and evidence preserved
+
+Physical+CVD clearance passed21:33:42.801GPU0 and21:33:43.050GPU1, no owners,
+unresolved entries or GPU compute processes. Initial SSH-session unresolved
+scan retained; detached retry passed unchanged scanner without new exceptions.
+No kill/restart. Original deadline23:54:24 intact. Native phase assigned cost
+3.644GPUh including baseline; actual2836inferencecalls/35579generatedtokens.
+Terminal archive built off VM root and stored locally on/data; SHA256
+0152cafb69aa7715b5f4fbb15caa4954f03c62c1f3c063883ed9c17c9aa00deb.
+9315entries hash-verified remote before/after and local extraction. Final
+RESULT.md/FINAL_CHECKS.json document metrics, retained failures, saved-state
+joins, tests, costs and unchanged logging-order deviation. No checkpoint
+promotion or new experiment follows; both arms and reduction are terminal.

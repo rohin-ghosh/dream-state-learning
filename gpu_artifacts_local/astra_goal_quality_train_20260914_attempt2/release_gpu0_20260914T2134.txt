@@ -1,0 +1,68 @@
+Mon Sep 14 09:33:21 PM UTC 2026
+391M	/tmp/astra_goal_quality_train_20260914_attempt2
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/nvme1n1p2  880G  104G  740G  13% /
+{
+  "utc": "2026-09-14T21:33:21.583175+00:00",
+  "uid": 2524,
+  "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+  "owners": [],
+  "unresolved": [
+    {
+      "pid": "91651",
+      "error_type": "PermissionError",
+      "error": "[Errno 13] Permission denied: '/proc/91651/environ'",
+      "comm": "sshd",
+      "ppid": 91613,
+      "identity": {
+        "pid": 91651,
+        "pgid": 91613,
+        "sid": 91613,
+        "start_ticks": 12786374,
+        "uid": 2524,
+        "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a"
+      }
+    }
+  ],
+  "service_exceptions": [
+    {
+      "role": "user_manager",
+      "comm": "systemd",
+      "cgroup": "0::/user.slice/user-2524.slice/user@2524.service/init.scope\n",
+      "ppid": 1,
+      "identity": {
+        "pid": 3792,
+        "pgid": 3792,
+        "sid": 3792,
+        "start_ticks": 14019,
+        "uid": 2524,
+        "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a"
+      },
+      "comm_sha256": "12e6ff4feb1b552a431b41d3935d33f08f9d75ddb8a88f645f4cf231bc05e820",
+      "cmdline_sha256": "3127082f907652bfa48e38fddcaf16c3e73b2da5a2d64602eafe88869c222925",
+      "cgroup_sha256": "a24a693fd0ef4e68443721bb82f37eb7546ff55cb046ba640487e4cd98748bed"
+    },
+    {
+      "role": "pam_helper",
+      "comm": "(sd-pam)",
+      "cgroup": "0::/user.slice/user-2524.slice/user@2524.service/init.scope\n",
+      "ppid": 3792,
+      "identity": {
+        "pid": 3797,
+        "pgid": 3792,
+        "sid": 3792,
+        "start_ticks": 14021,
+        "uid": 2524,
+        "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a"
+      },
+      "comm_sha256": "8e2daf3d78d113ebf2447fc82d98ba4d9c26a8e3e4fac8ac2d01ee34cbbc1dbd",
+      "cmdline_sha256": "971490059d839d27af3ded30a476216b92689d837b0236a700723fb13640e370",
+      "cgroup_sha256": "a24a693fd0ef4e68443721bb82f37eb7546ff55cb046ba640487e4cd98748bed"
+    }
+  ],
+  "zombies": [],
+  "scanned_live": 11,
+  "gpus": "0, GPU-0ee6f753-c61e-e18a-8aea-acccd3042939, NVIDIA A40, 580.173.02, 46068, 1\n1, GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821, NVIDIA A40, 580.173.02, 46068, 1\n2, GPU-41a86250-88eb-ed8a-ddfe-9d6f93515da1, NVIDIA A40, 580.173.02, 46068, 1\n3, GPU-e1277146-04f2-c38f-d1ae-1a98132f907e, NVIDIA A40, 580.173.02, 46068, 1\n4, GPU-f484c608-a2d4-0c26-dee1-a06cc5ae69e4, NVIDIA A40, 580.173.02, 46068, 1\n5, GPU-bc211959-642d-664b-3581-42a0dbe434e9, NVIDIA A40, 580.173.02, 46068, 1\n6, GPU-1a83d900-1e95-c7b4-9b12-8117399697f8, NVIDIA A40, 580.173.02, 46068, 1\n7, GPU-319224de-e668-1822-d80b-4b24d15968ae, NVIDIA A40, 580.173.02, 46068, 1\n",
+  "compute_apps": "",
+  "clear": false
+}

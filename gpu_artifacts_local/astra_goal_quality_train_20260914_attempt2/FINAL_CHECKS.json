@@ -1,0 +1,1868 @@
+{
+  "archive_sha256": "0152cafb69aa7715b5f4fbb15caa4954f03c62c1f3c063883ed9c17c9aa00deb",
+  "baseline_cpu_replay": {
+    "baseline_result_sha256": "c2fe5b4735ea7252fff27e7ea777093e798df882f57262ab0391ad91b6b671a2",
+    "elapsed_seconds": 52.05828630999895,
+    "model_calls": 944,
+    "new_native_calls": 0,
+    "state": "37ec37884e4b0b679edd1dba1be1dec3474589e992649f3a33e7e3b1ec78b8c0",
+    "status": "PASS",
+    "utc": "2026-09-14T20:21:27.395294+00:00",
+    "verification": "load_inputs_and_full_read_baseline_replay"
+  },
+  "baseline_sha256": "c2fe5b4735ea7252fff27e7ea777093e798df882f57262ab0391ad91b6b671a2",
+  "baseline_warning": "SELECTED_944_CALL_BASELINE_33_OF_64_GOALS_2_OF_32_PAIRS_NOT_LEGACY_0_OF_4",
+  "checks": {
+    "after_episodes_replayed": 288,
+    "all_call_files_verified": 2836,
+    "all_receipt_inventory_hashes": true,
+    "baseline_replayed_again": false,
+    "common_reference_denominator": true,
+    "frozen_base_receipt_attestations": true,
+    "matched_rows_reference_inputs_schedule": true,
+    "native_goal_trace_matches": true,
+    "only_new_labels_masked": true,
+    "physical_and_cvd_release": true,
+    "same_readout_bindings_and_runtime": true,
+    "saved_state_joins": true,
+    "tokenizer_or_model_loaded": false
+  },
+  "cpu_tests": {
+    "commit": "7f9d4251ae1ff4c5ff9138adf267d081fffa6331",
+    "elapsed_seconds": 57.922,
+    "files": {
+      "gpu/astra_goal_quality_train.py": "e84d3ef24007ac8bf56a52daec30a2fb508fe91153908ed0759e75954d0ea7b3",
+      "gpu/astra_goal_quality_train_guard.sh": "2fee8da4497a4a990dad2c7082e3010e1370e4f964966097ba3bc888e487a429",
+      "research_notes/analysis/2026-09-14_goal_quality_fit_protocol.md": "1683ca250ef6f95cb41c7972685279a07ec3693fb9ab34e049ffb975e8eb96e9",
+      "tests/test_astra_goal_quality_train.py": "fa033b8892871b73647f9160b1b854d2a241f262580c45060ce45be8901a3ab1"
+    },
+    "native_phases_launched": 0,
+    "node3_legacy_input_replay": "PASS_429_FILES_NO_MODEL_COPY",
+    "recorded_unix": 1789415095.8128614,
+    "status": "SCHEDULING_AMENDMENT_CPU_PASS_PUBLICATION_PENDING",
+    "tests": 9
+  },
+  "engineering_target_met": false,
+  "incremental_primary_observed": true,
+  "phase_gpu_assigned_hours": 3.644000143673685,
+  "phase_gpu_assigned_seconds": 13118.400517225266,
+  "preservation": {
+    "archive": "/localhome/local-rohing/astra_quality_terminal_preserve_20260914_attempt2/quality_attempt2_terminal.tar.gz",
+    "archive_sha256": "0152cafb69aa7715b5f4fbb15caa4954f03c62c1f3c063883ed9c17c9aa00deb",
+    "bytes": 186969188,
+    "entries": 9315,
+    "inventory_sha256": "3f89c5379a5d8c81ce0bb828e8b992725f587d125e92feee4a1a044cc8cc2287",
+    "originals_preserved": true,
+    "source_unchanged": true,
+    "utc": "2026-09-14T21:34:17.616121+00:00"
+  },
+  "protocol_sha256": "1683ca250ef6f95cb41c7972685279a07ec3693fb9ab34e049ffb975e8eb96e9",
+  "reduction_sha256": "03ed63e97587bdcb671f742f8836923601dbebe50129a9829217ef2d5048fc2b",
+  "release": {
+    "0": {
+      "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+      "clear": true,
+      "compute_apps": "",
+      "gpus": "0, GPU-0ee6f753-c61e-e18a-8aea-acccd3042939, NVIDIA A40, 580.173.02, 46068, 1\n1, GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821, NVIDIA A40, 580.173.02, 46068, 1\n2, GPU-41a86250-88eb-ed8a-ddfe-9d6f93515da1, NVIDIA A40, 580.173.02, 46068, 1\n3, GPU-e1277146-04f2-c38f-d1ae-1a98132f907e, NVIDIA A40, 580.173.02, 46068, 1\n4, GPU-f484c608-a2d4-0c26-dee1-a06cc5ae69e4, NVIDIA A40, 580.173.02, 46068, 1\n5, GPU-bc211959-642d-664b-3581-42a0dbe434e9, NVIDIA A40, 580.173.02, 46068, 1\n6, GPU-1a83d900-1e95-c7b4-9b12-8117399697f8, NVIDIA A40, 580.173.02, 46068, 1\n7, GPU-319224de-e668-1822-d80b-4b24d15968ae, NVIDIA A40, 580.173.02, 46068, 1\n",
+      "owners": [],
+      "unresolved": [],
+      "utc": "2026-09-14T21:33:42.800993+00:00"
+    },
+    "1": {
+      "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+      "clear": true,
+      "compute_apps": "",
+      "gpus": "0, GPU-0ee6f753-c61e-e18a-8aea-acccd3042939, NVIDIA A40, 580.173.02, 46068, 1\n1, GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821, NVIDIA A40, 580.173.02, 46068, 1\n2, GPU-41a86250-88eb-ed8a-ddfe-9d6f93515da1, NVIDIA A40, 580.173.02, 46068, 1\n3, GPU-e1277146-04f2-c38f-d1ae-1a98132f907e, NVIDIA A40, 580.173.02, 46068, 1\n4, GPU-f484c608-a2d4-0c26-dee1-a06cc5ae69e4, NVIDIA A40, 580.173.02, 46068, 1\n5, GPU-bc211959-642d-664b-3581-42a0dbe434e9, NVIDIA A40, 580.173.02, 46068, 1\n6, GPU-1a83d900-1e95-c7b4-9b12-8117399697f8, NVIDIA A40, 580.173.02, 46068, 1\n7, GPU-319224de-e668-1822-d80b-4b24d15968ae, NVIDIA A40, 580.173.02, 46068, 1\n",
+      "owners": [],
+      "unresolved": [],
+      "utc": "2026-09-14T21:33:43.049920+00:00"
+    }
+  },
+  "schema": "QUALITY_ATTEMPT2_TERMINAL_REDUCTION_V1",
+  "source_commit": "7f9d4251ae1ff4c5ff9138adf267d081fffa6331",
+  "states": {
+    "BASELINE": {
+      "assigned_seconds": 639.9922983646393,
+      "audit": {
+        "correct": 16,
+        "denominator": 16
+      },
+      "calls": 944,
+      "engineering_checks": {
+        "audit": true,
+        "each_probe_world": false,
+        "old_w0": true,
+        "old_w8": true,
+        "previous_fresh": true,
+        "probe_pairs": false,
+        "taught": true
+      },
+      "engineering_target_met": false,
+      "finished_unix": 1789415945.0317843,
+      "first_port_reference": {
+        "goals": 32,
+        "pairs": 0
+      },
+      "generated_tokens": 11852,
+      "goal_native_calls_matched": 849,
+      "metrics": {
+        "PROBE_OWN_TEXT": {
+          "actor_calls": 370,
+          "failures": {
+            "correct": 33,
+            "no_first_commit": 6,
+            "wrong_first_port": 25
+          },
+          "goals": 33,
+          "pairs": 2,
+          "reads": 248,
+          "routes": 116,
+          "terminal": {
+            "dead_end": 25,
+            "invalid_command": 2,
+            "invalid_route": 4,
+            "reached_goal": 33
+          },
+          "unavailable_reads": 4,
+          "worlds_with_pair": 2
+        },
+        "PROBE_UNAVAILABLE": {
+          "actor_calls": 384,
+          "failures": {
+            "correct": 3,
+            "second_step_failure": 29,
+            "wrong_first_port": 32
+          },
+          "goals": 3,
+          "pairs": 0,
+          "reads": 256,
+          "routes": 68,
+          "terminal": {
+            "dead_end": 1,
+            "duplicate_address": 60,
+            "reached_goal": 3
+          },
+          "unavailable_reads": 256,
+          "worlds_with_pair": 0
+        },
+        "TRAIN_OWN_TEXT": {
+          "actor_calls": 95,
+          "failures": {
+            "correct": 7,
+            "no_first_commit": 1,
+            "wrong_first_port": 8
+          },
+          "goals": 7,
+          "pairs": 2,
+          "reads": 64,
+          "routes": 30,
+          "terminal": {
+            "dead_end": 8,
+            "invalid_route": 1,
+            "reached_goal": 7
+          },
+          "unavailable_reads": 0,
+          "worlds_with_pair": 2
+        }
+      },
+      "old_recall": {
+        "0": {
+          "correct": 16,
+          "denominator": 16
+        },
+        "8": {
+          "correct": 16,
+          "denominator": 16
+        }
+      },
+      "previous_fresh": {
+        "correct": 3,
+        "denominator": 4
+      },
+      "prompt_tokens": 358222,
+      "result_sha256": "c2fe5b4735ea7252fff27e7ea777093e798df882f57262ab0391ad91b6b671a2",
+      "role_calls": {
+        "actor": 896,
+        "held_audit": 16,
+        "old_recall": 32
+      },
+      "started_unix": 1789415305.0399494,
+      "state": "37ec37884e4b0b679edd1dba1be1dec3474589e992649f3a33e7e3b1ec78b8c0",
+      "taught": {
+        "correct": 3,
+        "denominator": 4
+      },
+      "worlds": [
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-TRAIN-A",
+          "pairs": 1,
+          "split": "TRAIN",
+          "task_correct": [
+            true,
+            false,
+            true,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-TRAIN-A",
+          "pairs": 0,
+          "split": "TRAIN",
+          "task_correct": [
+            true,
+            true,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-4-BLOCK-0-TRAIN-A",
+          "pairs": 0,
+          "split": "TRAIN",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 3,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-6-BLOCK-0-TRAIN-A",
+          "pairs": 1,
+          "split": "TRAIN",
+          "task_correct": [
+            true,
+            true,
+            true,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            false,
+            false,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            true,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            true,
+            true,
+            false
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 3,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-B",
+          "pairs": 1,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            true,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-2-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            true,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-2-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 3,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-2-BLOCK-0-PROBE-B",
+          "pairs": 1,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            true,
+            true,
+            false
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-2-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-3-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            true,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-3-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-3-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-3-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-4-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            true,
+            true,
+            false
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-4-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-4-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            false,
+            false,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-4-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-5-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            false,
+            false,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-5-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-5-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            false,
+            false,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-5-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-6-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            true,
+            true,
+            false
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-6-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-6-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            true,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-6-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            true,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-7-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            false,
+            false,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-7-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-7-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            true,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-7-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      ]
+    },
+    "FULL_TARGET": {
+      "assigned_seconds": 647.0241215229034,
+      "audit": {
+        "correct": 16,
+        "denominator": 16
+      },
+      "calls": 960,
+      "engineering_checks": {
+        "audit": true,
+        "each_probe_world": false,
+        "old_w0": true,
+        "old_w8": true,
+        "previous_fresh": true,
+        "probe_pairs": true,
+        "taught": true
+      },
+      "engineering_target_met": false,
+      "finished_unix": 1789421538.474367,
+      "first_port_reference": {
+        "goals": 32,
+        "pairs": 0
+      },
+      "generated_tokens": 11988,
+      "goal_native_calls_matched": 864,
+      "metrics": {
+        "PROBE_OWN_TEXT": {
+          "actor_calls": 384,
+          "failures": {
+            "correct": 62,
+            "wrong_first_port": 2
+          },
+          "goals": 62,
+          "pairs": 30,
+          "reads": 256,
+          "routes": 128,
+          "terminal": {
+            "dead_end": 2,
+            "reached_goal": 62
+          },
+          "unavailable_reads": 4,
+          "worlds_with_pair": 15
+        },
+        "PROBE_UNAVAILABLE": {
+          "actor_calls": 384,
+          "failures": {
+            "correct": 23,
+            "second_step_failure": 9,
+            "wrong_first_port": 32
+          },
+          "goals": 23,
+          "pairs": 0,
+          "reads": 256,
+          "routes": 111,
+          "terminal": {
+            "dead_end": 24,
+            "duplicate_address": 17,
+            "reached_goal": 23
+          },
+          "unavailable_reads": 256,
+          "worlds_with_pair": 0
+        },
+        "TRAIN_OWN_TEXT": {
+          "actor_calls": 96,
+          "failures": {
+            "correct": 16
+          },
+          "goals": 16,
+          "pairs": 8,
+          "reads": 64,
+          "routes": 32,
+          "terminal": {
+            "reached_goal": 16
+          },
+          "unavailable_reads": 0,
+          "worlds_with_pair": 4
+        }
+      },
+      "old_recall": {
+        "0": {
+          "correct": 16,
+          "denominator": 16
+        },
+        "8": {
+          "correct": 16,
+          "denominator": 16
+        }
+      },
+      "previous_fresh": {
+        "correct": 4,
+        "denominator": 4
+      },
+      "prompt_tokens": 367310,
+      "result_sha256": "53756fd01c72648d80db8f9bd075fadc578a03c8a8255373ade6b63d63cc98cd",
+      "role_calls": {
+        "actor": 912,
+        "held_audit": 16,
+        "old_recall": 32
+      },
+      "started_unix": 1789420891.4506285,
+      "state": "e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf",
+      "taught": {
+        "correct": 4,
+        "denominator": 4
+      },
+      "worlds": [
+        {
+          "condition": "OWN_TEXT",
+          "goals": 4,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-TRAIN-A",
+          "pairs": 2,
+          "split": "TRAIN",
+          "task_correct": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 4,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-TRAIN-A",
+          "pairs": 2,
+          "split": "TRAIN",
+          "task_correct": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 4,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-4-BLOCK-0-TRAIN-A",
+          "pairs": 2,
+          "split": "TRAIN",
+          "task_correct": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 4,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-6-BLOCK-0-TRAIN-A",
+          "pairs": 2,
+          "split": "TRAIN",
+          "task_correct": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 4,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "pairs": 2,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            true
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 4,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "pairs": 2,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            true,
+            true,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            true,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            true,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 4,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-B",
+          "pairs": 2,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            true,
+            true,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 4,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-2-BLOCK-0-PROBE-A",
+          "pairs": 2,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-2-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            true,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 4,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-2-BLOCK-0-PROBE-B",
+          "pairs": 2,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-2-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            true,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 4,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-3-BLOCK-0-PROBE-A",
+          "pairs": 2,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-3-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            false,
+            false,
+            true
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 4,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-3-BLOCK-0-PROBE-B",
+          "pairs": 2,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-3-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            false,
+            false,
+            true
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 4,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-4-BLOCK-0-PROBE-A",
+          "pairs": 2,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-4-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            true,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 4,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-4-BLOCK-0-PROBE-B",
+          "pairs": 2,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-4-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            false,
+            false,
+            true
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 4,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-5-BLOCK-0-PROBE-A",
+          "pairs": 2,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-5-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            true,
+            true,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 4,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-5-BLOCK-0-PROBE-B",
+          "pairs": 2,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-5-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 4,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-6-BLOCK-0-PROBE-A",
+          "pairs": 2,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-6-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            true,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 4,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-6-BLOCK-0-PROBE-B",
+          "pairs": 2,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-6-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            true,
+            true,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 4,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-7-BLOCK-0-PROBE-A",
+          "pairs": 2,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-7-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 4,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-7-BLOCK-0-PROBE-B",
+          "pairs": 2,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-7-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            true,
+            true,
+            false
+          ]
+        }
+      ]
+    },
+    "NEW_TRAJECTORY_LOSS_OFF": {
+      "assigned_seconds": 645.3634812831879,
+      "audit": {
+        "correct": 16,
+        "denominator": 16
+      },
+      "calls": 932,
+      "engineering_checks": {
+        "audit": true,
+        "each_probe_world": false,
+        "old_w0": true,
+        "old_w8": true,
+        "previous_fresh": false,
+        "probe_pairs": false,
+        "taught": false
+      },
+      "engineering_target_met": false,
+      "finished_unix": 1789421552.2744646,
+      "first_port_reference": {
+        "goals": 32,
+        "pairs": 0
+      },
+      "generated_tokens": 11739,
+      "goal_native_calls_matched": 839,
+      "metrics": {
+        "PROBE_OWN_TEXT": {
+          "actor_calls": 363,
+          "failures": {
+            "correct": 26,
+            "no_first_commit": 14,
+            "wrong_first_port": 24
+          },
+          "goals": 26,
+          "pairs": 1,
+          "reads": 249,
+          "routes": 99,
+          "terminal": {
+            "dead_end": 23,
+            "invalid_command": 1,
+            "invalid_route": 14,
+            "reached_goal": 26
+          },
+          "unavailable_reads": 4,
+          "worlds_with_pair": 1
+        },
+        "PROBE_UNAVAILABLE": {
+          "actor_calls": 384,
+          "failures": {
+            "second_step_failure": 32,
+            "wrong_first_port": 32
+          },
+          "goals": 0,
+          "pairs": 0,
+          "reads": 256,
+          "routes": 64,
+          "terminal": {
+            "duplicate_address": 64
+          },
+          "unavailable_reads": 256,
+          "worlds_with_pair": 0
+        },
+        "TRAIN_OWN_TEXT": {
+          "actor_calls": 92,
+          "failures": {
+            "correct": 8,
+            "no_first_commit": 2,
+            "wrong_first_port": 6
+          },
+          "goals": 8,
+          "pairs": 1,
+          "reads": 62,
+          "routes": 28,
+          "terminal": {
+            "dead_end": 6,
+            "invalid_route": 2,
+            "reached_goal": 8
+          },
+          "unavailable_reads": 0,
+          "worlds_with_pair": 1
+        }
+      },
+      "old_recall": {
+        "0": {
+          "correct": 16,
+          "denominator": 16
+        },
+        "8": {
+          "correct": 16,
+          "denominator": 16
+        }
+      },
+      "previous_fresh": {
+        "correct": 2,
+        "denominator": 4
+      },
+      "prompt_tokens": 350646,
+      "result_sha256": "6f50d5bafb5cb32f182dede709da095834214cec0fd6f04b7a78cbf1dca6d440",
+      "role_calls": {
+        "actor": 884,
+        "held_audit": 16,
+        "old_recall": 32
+      },
+      "started_unix": 1789420906.9113626,
+      "state": "4f0dccf5b7cf37b872eafc3a50990e0cdfda027fb0140f0aad999f27606e4ee3",
+      "taught": {
+        "correct": 2,
+        "denominator": 4
+      },
+      "worlds": [
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-TRAIN-A",
+          "pairs": 0,
+          "split": "TRAIN",
+          "task_correct": [
+            true,
+            false,
+            false,
+            true
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-TRAIN-A",
+          "pairs": 0,
+          "split": "TRAIN",
+          "task_correct": [
+            true,
+            true,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-4-BLOCK-0-TRAIN-A",
+          "pairs": 0,
+          "split": "TRAIN",
+          "task_correct": [
+            false,
+            false,
+            true,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 3,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-6-BLOCK-0-TRAIN-A",
+          "pairs": 1,
+          "split": "TRAIN",
+          "task_correct": [
+            true,
+            true,
+            true,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            false,
+            false,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            true,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-0-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            true,
+            false
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            true,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-1-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-2-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-2-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 3,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-2-BLOCK-0-PROBE-B",
+          "pairs": 1,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            true,
+            true,
+            false
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-2-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-3-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            true,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-3-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-3-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            true,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-3-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-4-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            true,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-4-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-4-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-4-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-5-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            false,
+            false,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-5-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-5-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-5-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-6-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            true,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-6-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-6-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            false,
+            false,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-6-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 2,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-7-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            false,
+            false,
+            true
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-7-BLOCK-0-PROBE-A",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "OWN_TEXT",
+          "goals": 1,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-7-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            true,
+            false,
+            false,
+            false
+          ]
+        },
+        {
+          "condition": "UNAVAILABLE",
+          "goals": 0,
+          "master": "ASTRA-GOALSCALE-20260914-V1-SHARD-7-BLOCK-0-PROBE-B",
+          "pairs": 0,
+          "split": "PROBE",
+          "task_correct": [
+            false,
+            false,
+            false,
+            false
+          ]
+        }
+      ]
+    }
+  },
+  "total_generated_tokens": 35579,
+  "total_model_calls": 2836,
+  "total_prompt_tokens": 1076178,
+  "training": {
+    "FULL_TARGET": {
+      "active_labels": 238274,
+      "adapter_files": {
+        "README.md": "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33",
+        "adapter_config.json": "b2cee0d47d60c55fb7b6b677b244535a77c8fd0c0320e2c2afcea473cdb93743",
+        "adapter_model.safetensors": "a8b69dc8860f8d0ffef92ba42fa55133accd2cf74d134b93f635b8ef30a33c94"
+      },
+      "assigned_seconds": 5585.312051057816,
+      "finished_unix": 1789420890.3644428,
+      "fit_seconds": 5463.162196192992,
+      "input_token_presentations": 4477997,
+      "new_trajectory_presentations": 5808,
+      "old_behavior_presentations": 2928,
+      "old_memory_presentations": 2928,
+      "old_trajectory_presentations": 48,
+      "reference_labels": 238274,
+      "result_sha256": "6e01a238a43aa521c93e650a271f459bc4a0f0fc2a0d2b44e7ea77b452f81283",
+      "started_unix": 1789415305.0523949,
+      "state": "e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf",
+      "updates": 2928
+    },
+    "NEW_TRAJECTORY_LOSS_OFF": {
+      "active_labels": 173814,
+      "adapter_files": {
+        "README.md": "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33",
+        "adapter_config.json": "79791883ee971feec2ab14a04fda43b4ae321e206c259c0180d690d6d8e73790",
+        "adapter_model.safetensors": "6fdf28286d2a44df5212b14c21a7793a08c357866cefc6bcbefc8ece0cca7d2c"
+      },
+      "assigned_seconds": 5600.708564996719,
+      "finished_unix": 1789420905.7382147,
+      "fit_seconds": 5478.446911982013,
+      "input_token_presentations": 4477997,
+      "new_trajectory_presentations": 5808,
+      "old_behavior_presentations": 2928,
+      "old_memory_presentations": 2928,
+      "old_trajectory_presentations": 48,
+      "reference_labels": 238274,
+      "result_sha256": "b7a05eb433d013405df2f4d3a3437147f59ab61876bcf7d5c69585d8b509f72b",
+      "started_unix": 1789415305.029654,
+      "state": "4f0dccf5b7cf37b872eafc3a50990e0cdfda027fb0140f0aad999f27606e4ee3",
+      "updates": 2928
+    }
+  }
+}
