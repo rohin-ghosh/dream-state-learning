@@ -1,0 +1,2374 @@
+{
+  "caps": {
+    "all_calls": 8648,
+    "child_context": 2048,
+    "child_generation": 512,
+    "child_turns_per_episode": 6,
+    "hours": 12,
+    "learner_calls_per_lane": 1600,
+    "parent_calls_per_parented_lane": 600,
+    "short_gpu_hours": 36,
+    "short_parent_distillation_calls": 3,
+    "short_parent_opportunities_per_episode": 3,
+    "short_parent_response_tokens": 160,
+    "source_calls": 448,
+    "updates_per_sleep": 216
+  },
+  "denominators": {
+    "experience_episodes_per_cycle": 16,
+    "experience_worlds_per_cycle": 8,
+    "held_episodes_per_readout": 16,
+    "held_worlds_per_readout": 8,
+    "independent_training_seeds": 1,
+    "max_new_rows_per_sleep": 96,
+    "parent_opportunities_per_short_cycle": 48,
+    "readouts_per_lane": 4,
+    "science_lanes": 4,
+    "sleep_cycles_per_learning_lane": 3
+  },
+  "exclusions_sha256": "5f8a5afb75915f69e8d59521e33ee1514a3264b55b799d7e2488e6d2fb101e83",
+  "family": "ROUTE_GUIDED_CYCLES_L2_V1",
+  "held": [
+    [
+      {
+        "edges": [
+          {
+            "event": "E_BXV5XSL6QU",
+            "node": "N_HNDEVL6CBX",
+            "outcome": "N_7LCTPSCV6X",
+            "port": "P_LQHI34YQCE",
+            "receipt": "R_ICLVDC7LOG"
+          },
+          {
+            "event": "E_NS2JMT52KZ",
+            "node": "N_HNDEVL6CBX",
+            "outcome": "N_72I5EWIE2Q",
+            "port": "P_MF5UV4IKJY",
+            "receipt": "R_II27NAETYS"
+          },
+          {
+            "event": "E_IBMHN4CEL3",
+            "node": "N_7LCTPSCV6X",
+            "outcome": "N_FEPHGNYVOV",
+            "port": "P_Q36YOPEUVW",
+            "receipt": "R_OOBVTLC6QC"
+          },
+          {
+            "event": "E_AAG2DPGUQ6",
+            "node": "N_72I5EWIE2Q",
+            "outcome": "N_GEQJRG573O",
+            "port": "P_OVAXA5EBYR",
+            "receipt": "R_KINODDRG6A"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R0-W0",
+        "nodes": [
+          "N_HNDEVL6CBX",
+          "N_7LCTPSCV6X",
+          "N_72I5EWIE2Q",
+          "N_FEPHGNYVOV",
+          "N_GEQJRG573O"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_U5IOJMSVSF",
+            "node": "N_QT7QXV2OHM",
+            "outcome": "N_ZVHY2AD23K",
+            "port": "P_ZK3XMQXEN2",
+            "receipt": "R_WCLASUAPGP"
+          },
+          {
+            "event": "E_SRYGSODFYE",
+            "node": "N_QT7QXV2OHM",
+            "outcome": "N_QG7R6CBXJ2",
+            "port": "P_JAS6L3WOMV",
+            "receipt": "R_G4YIYBGOS5"
+          },
+          {
+            "event": "E_B4T3WI6YQB",
+            "node": "N_ZVHY2AD23K",
+            "outcome": "N_UBI73E7ZX2",
+            "port": "P_B7ADMSOCD4",
+            "receipt": "R_BRE3DGCSBG"
+          },
+          {
+            "event": "E_K6BEQXVJWZ",
+            "node": "N_QG7R6CBXJ2",
+            "outcome": "N_CA3H5366TW",
+            "port": "P_J6RTGE2IVV",
+            "receipt": "R_37CG3PSLV5"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R0-W1",
+        "nodes": [
+          "N_QT7QXV2OHM",
+          "N_ZVHY2AD23K",
+          "N_QG7R6CBXJ2",
+          "N_UBI73E7ZX2",
+          "N_CA3H5366TW"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_YJM34B4M33",
+            "node": "N_5M2DZPYRJR",
+            "outcome": "N_RBV6LFDYMM",
+            "port": "P_A6LJFFZ4LC",
+            "receipt": "R_YJYWADJIB2"
+          },
+          {
+            "event": "E_3ODAOWO3GN",
+            "node": "N_5M2DZPYRJR",
+            "outcome": "N_JWIP5VAI3Q",
+            "port": "P_Z4S3BIN5OD",
+            "receipt": "R_ABIWMBTKEU"
+          },
+          {
+            "event": "E_P37KAKYGKF",
+            "node": "N_RBV6LFDYMM",
+            "outcome": "N_X6NLN3A3K7",
+            "port": "P_I4LBP72J6A",
+            "receipt": "R_L3XEXYMTH6"
+          },
+          {
+            "event": "E_44WDJ5SBQR",
+            "node": "N_JWIP5VAI3Q",
+            "outcome": "N_FPQYLK7TNI",
+            "port": "P_K4TKFIHWV2",
+            "receipt": "R_NBYAY7L3Y2"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R0-W2",
+        "nodes": [
+          "N_5M2DZPYRJR",
+          "N_RBV6LFDYMM",
+          "N_JWIP5VAI3Q",
+          "N_X6NLN3A3K7",
+          "N_FPQYLK7TNI"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_F5BMAMJ4ST",
+            "node": "N_PJKJZFZFXD",
+            "outcome": "N_KOOSSPAGRN",
+            "port": "P_FB6JDOLI2N",
+            "receipt": "R_INQRIQ6PJQ"
+          },
+          {
+            "event": "E_L7WUWO4XIY",
+            "node": "N_PJKJZFZFXD",
+            "outcome": "N_733KTXRZI5",
+            "port": "P_U4XS3MKVWS",
+            "receipt": "R_ELCEDIDQS6"
+          },
+          {
+            "event": "E_ALNBDKKGC2",
+            "node": "N_KOOSSPAGRN",
+            "outcome": "N_FEW2QWO7MO",
+            "port": "P_7LBZH4A27T",
+            "receipt": "R_V4PO7HINJT"
+          },
+          {
+            "event": "E_Y45IACRE32",
+            "node": "N_733KTXRZI5",
+            "outcome": "N_JZMPHM2KJH",
+            "port": "P_ECLO2VD3KM",
+            "receipt": "R_VIE4LO52KY"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R0-W3",
+        "nodes": [
+          "N_PJKJZFZFXD",
+          "N_KOOSSPAGRN",
+          "N_733KTXRZI5",
+          "N_FEW2QWO7MO",
+          "N_JZMPHM2KJH"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_HVCBC7CLVW",
+            "node": "N_6MZYZEMQZW",
+            "outcome": "N_RSKTYO7GJ6",
+            "port": "P_WKDOHRVX4E",
+            "receipt": "R_TIFGTF4GVK"
+          },
+          {
+            "event": "E_R2CY4YLD4W",
+            "node": "N_6MZYZEMQZW",
+            "outcome": "N_XSJIRSPCD3",
+            "port": "P_MOPZ7SJXG6",
+            "receipt": "R_EFDD7UO7LK"
+          },
+          {
+            "event": "E_7TVHO32D2A",
+            "node": "N_RSKTYO7GJ6",
+            "outcome": "N_2PNEORSKQN",
+            "port": "P_4F4LE6SUPT",
+            "receipt": "R_Y2TR5RI423"
+          },
+          {
+            "event": "E_SZCX7647WS",
+            "node": "N_XSJIRSPCD3",
+            "outcome": "N_CXTULIOQAQ",
+            "port": "P_C4MXSAIWIH",
+            "receipt": "R_RE3Z4W7W4M"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R0-W4",
+        "nodes": [
+          "N_6MZYZEMQZW",
+          "N_RSKTYO7GJ6",
+          "N_XSJIRSPCD3",
+          "N_2PNEORSKQN",
+          "N_CXTULIOQAQ"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_KYXCCLW4ZN",
+            "node": "N_B4M2GS3DBZ",
+            "outcome": "N_2KYJK46S3N",
+            "port": "P_LAEB6YT6AY",
+            "receipt": "R_QCVAEFMLD5"
+          },
+          {
+            "event": "E_WAJAZQXY6O",
+            "node": "N_B4M2GS3DBZ",
+            "outcome": "N_IEUYMVBJER",
+            "port": "P_6SAGI7UWRX",
+            "receipt": "R_ILHP4OR42N"
+          },
+          {
+            "event": "E_A6DUM7EHM4",
+            "node": "N_2KYJK46S3N",
+            "outcome": "N_7JKO6UKLF4",
+            "port": "P_GS4DA6YUCX",
+            "receipt": "R_7R2PPQHYXK"
+          },
+          {
+            "event": "E_JV3VBMSDZB",
+            "node": "N_IEUYMVBJER",
+            "outcome": "N_MF2A3TWWBU",
+            "port": "P_3IAEDQGNJV",
+            "receipt": "R_UHZCP4MIOO"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R0-W5",
+        "nodes": [
+          "N_B4M2GS3DBZ",
+          "N_2KYJK46S3N",
+          "N_IEUYMVBJER",
+          "N_7JKO6UKLF4",
+          "N_MF2A3TWWBU"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_ACSKX543DI",
+            "node": "N_KSNI5ERHQ6",
+            "outcome": "N_ZGGPZBDL5G",
+            "port": "P_UZ52YT2KLW",
+            "receipt": "R_JO7QLGZUIP"
+          },
+          {
+            "event": "E_ATCKV3S6IG",
+            "node": "N_KSNI5ERHQ6",
+            "outcome": "N_GQJ5KDRK54",
+            "port": "P_VFIG4PIWTS",
+            "receipt": "R_JP65W3KNAM"
+          },
+          {
+            "event": "E_P2KS73MKL3",
+            "node": "N_ZGGPZBDL5G",
+            "outcome": "N_45ASMGYP2C",
+            "port": "P_EOT26UMXHS",
+            "receipt": "R_LYDTBJDGMH"
+          },
+          {
+            "event": "E_BD4G34EE2H",
+            "node": "N_GQJ5KDRK54",
+            "outcome": "N_5UGRCMZ72K",
+            "port": "P_4HWWLIE5GK",
+            "receipt": "R_3ELKUXYOTA"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R0-W6",
+        "nodes": [
+          "N_KSNI5ERHQ6",
+          "N_ZGGPZBDL5G",
+          "N_GQJ5KDRK54",
+          "N_45ASMGYP2C",
+          "N_5UGRCMZ72K"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_VLASUV4WYU",
+            "node": "N_O2WSDPZZI2",
+            "outcome": "N_7Y6EQZOUFP",
+            "port": "P_FA6LXPL7GK",
+            "receipt": "R_WBCHBKXRVN"
+          },
+          {
+            "event": "E_4QKCBGLRCB",
+            "node": "N_O2WSDPZZI2",
+            "outcome": "N_7JISTIDI5Q",
+            "port": "P_BSVS6ZFKKR",
+            "receipt": "R_SIAJM4ZC56"
+          },
+          {
+            "event": "E_2JTZ6HXNI4",
+            "node": "N_7Y6EQZOUFP",
+            "outcome": "N_GNQ326GXGW",
+            "port": "P_TDH6Y2NWUR",
+            "receipt": "R_4R6ZBX2K4K"
+          },
+          {
+            "event": "E_E5WZHAQL4L",
+            "node": "N_7JISTIDI5Q",
+            "outcome": "N_H2DOXPYZU4",
+            "port": "P_7EIRA5U5GL",
+            "receipt": "R_IJD6INCPQJ"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R0-W7",
+        "nodes": [
+          "N_O2WSDPZZI2",
+          "N_7Y6EQZOUFP",
+          "N_7JISTIDI5Q",
+          "N_GNQ326GXGW",
+          "N_H2DOXPYZU4"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    ],
+    [
+      {
+        "edges": [
+          {
+            "event": "E_RZWUWNXLN3",
+            "node": "N_3R7NS42MYD",
+            "outcome": "N_CRDTECCSKZ",
+            "port": "P_XBKYG2MIZ5",
+            "receipt": "R_C65RBBEQJJ"
+          },
+          {
+            "event": "E_EEHGJULGZL",
+            "node": "N_3R7NS42MYD",
+            "outcome": "N_NCSR6NQDTZ",
+            "port": "P_JFHODZ2QOI",
+            "receipt": "R_QBHSH4R22K"
+          },
+          {
+            "event": "E_4EOOHLYY5I",
+            "node": "N_CRDTECCSKZ",
+            "outcome": "N_TAEUY5HCBV",
+            "port": "P_4KOABSFQT7",
+            "receipt": "R_O2IT7LDKKJ"
+          },
+          {
+            "event": "E_OFYHAJZQTB",
+            "node": "N_NCSR6NQDTZ",
+            "outcome": "N_TM2F22FTG6",
+            "port": "P_MBPPRR7UC4",
+            "receipt": "R_SETAM7JFSL"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R1-W0",
+        "nodes": [
+          "N_3R7NS42MYD",
+          "N_CRDTECCSKZ",
+          "N_NCSR6NQDTZ",
+          "N_TAEUY5HCBV",
+          "N_TM2F22FTG6"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_Y55NR6A4NB",
+            "node": "N_QOK6KL3ZM3",
+            "outcome": "N_72ZKTMIZCK",
+            "port": "P_W2LFDINY2Q",
+            "receipt": "R_MLU2I6I7HU"
+          },
+          {
+            "event": "E_IPIZZK4ZVP",
+            "node": "N_QOK6KL3ZM3",
+            "outcome": "N_DKJRMQXJQL",
+            "port": "P_SMLO3TGX64",
+            "receipt": "R_NSR5XYJIXB"
+          },
+          {
+            "event": "E_BNR7OBY5L5",
+            "node": "N_72ZKTMIZCK",
+            "outcome": "N_IOMDEGTZEM",
+            "port": "P_CAV5P3RBBA",
+            "receipt": "R_ZF66XG4UZT"
+          },
+          {
+            "event": "E_TUCIMHBAXV",
+            "node": "N_DKJRMQXJQL",
+            "outcome": "N_IYBMTABRK6",
+            "port": "P_7J6P6RBOYN",
+            "receipt": "R_DWP36KCXHK"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R1-W1",
+        "nodes": [
+          "N_QOK6KL3ZM3",
+          "N_72ZKTMIZCK",
+          "N_DKJRMQXJQL",
+          "N_IOMDEGTZEM",
+          "N_IYBMTABRK6"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_NCVWGIC4MY",
+            "node": "N_A6MCXNMBJ2",
+            "outcome": "N_BXLKV4UQNW",
+            "port": "P_KZJYDTMA2G",
+            "receipt": "R_WVSABHIHOY"
+          },
+          {
+            "event": "E_5A7JPYJB7U",
+            "node": "N_A6MCXNMBJ2",
+            "outcome": "N_FPBLABHCTE",
+            "port": "P_6FVO6WAV2I",
+            "receipt": "R_DIT7QY7SHU"
+          },
+          {
+            "event": "E_RLRZGCHJ6C",
+            "node": "N_BXLKV4UQNW",
+            "outcome": "N_MYVDRBZHGX",
+            "port": "P_HBXGKNA5CZ",
+            "receipt": "R_RPNOYWP4SA"
+          },
+          {
+            "event": "E_3XP3IBRCPC",
+            "node": "N_FPBLABHCTE",
+            "outcome": "N_Q53GYNMBEO",
+            "port": "P_2AZOO7IOIY",
+            "receipt": "R_32CD2AUS3O"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R1-W2",
+        "nodes": [
+          "N_A6MCXNMBJ2",
+          "N_BXLKV4UQNW",
+          "N_FPBLABHCTE",
+          "N_MYVDRBZHGX",
+          "N_Q53GYNMBEO"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_P57HIG3B2M",
+            "node": "N_X5FO3LQILX",
+            "outcome": "N_XWZPYESTZR",
+            "port": "P_CYFZQTEKYS",
+            "receipt": "R_7YG3EXRAKG"
+          },
+          {
+            "event": "E_HLKDGUIQ4E",
+            "node": "N_X5FO3LQILX",
+            "outcome": "N_L4DK3TKCHO",
+            "port": "P_BA53M7J335",
+            "receipt": "R_G5V3CU4WXD"
+          },
+          {
+            "event": "E_LIOIM6RJZM",
+            "node": "N_XWZPYESTZR",
+            "outcome": "N_XQOYGZRO2N",
+            "port": "P_CQ2UK222BV",
+            "receipt": "R_2QRP4OOW67"
+          },
+          {
+            "event": "E_BU3ZMF2VMC",
+            "node": "N_L4DK3TKCHO",
+            "outcome": "N_5UEJVWOLXF",
+            "port": "P_DVNPNNUC7W",
+            "receipt": "R_SBGPHJSKI7"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R1-W3",
+        "nodes": [
+          "N_X5FO3LQILX",
+          "N_XWZPYESTZR",
+          "N_L4DK3TKCHO",
+          "N_XQOYGZRO2N",
+          "N_5UEJVWOLXF"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_DMDAIJORYR",
+            "node": "N_WIU7ZWHF4X",
+            "outcome": "N_5IURK6JT6W",
+            "port": "P_HPWDLIUVFO",
+            "receipt": "R_FGWXLBYBJU"
+          },
+          {
+            "event": "E_RYAEXU6TN4",
+            "node": "N_WIU7ZWHF4X",
+            "outcome": "N_MUAD3EDLGZ",
+            "port": "P_KMHO2CFNB2",
+            "receipt": "R_LVZ5G6PNVQ"
+          },
+          {
+            "event": "E_OE6VBB6ECM",
+            "node": "N_5IURK6JT6W",
+            "outcome": "N_5LVCF7JMJI",
+            "port": "P_Q6QVTJG37K",
+            "receipt": "R_MXEDSQHCM3"
+          },
+          {
+            "event": "E_Y3XMYA7HDW",
+            "node": "N_MUAD3EDLGZ",
+            "outcome": "N_4MHT5UAV4C",
+            "port": "P_ZVRFLZGM7X",
+            "receipt": "R_F72N3ETDC4"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R1-W4",
+        "nodes": [
+          "N_WIU7ZWHF4X",
+          "N_5IURK6JT6W",
+          "N_MUAD3EDLGZ",
+          "N_5LVCF7JMJI",
+          "N_4MHT5UAV4C"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_23VKGAUR33",
+            "node": "N_RA3GNG4BGY",
+            "outcome": "N_HDRWYWKAFG",
+            "port": "P_VW42ZVBTOF",
+            "receipt": "R_NGOCO2XJ6R"
+          },
+          {
+            "event": "E_M23J27UL7L",
+            "node": "N_RA3GNG4BGY",
+            "outcome": "N_UFPBEKNT65",
+            "port": "P_FVAK7ZLDGC",
+            "receipt": "R_C4YFTX73YR"
+          },
+          {
+            "event": "E_LI4P3YKIWD",
+            "node": "N_HDRWYWKAFG",
+            "outcome": "N_F74LA7NRDC",
+            "port": "P_WHLGCJJ4L2",
+            "receipt": "R_F2ZD5AT2PC"
+          },
+          {
+            "event": "E_3VEOGMFD5Q",
+            "node": "N_UFPBEKNT65",
+            "outcome": "N_USC3BQ4YIJ",
+            "port": "P_W2BG3AI7HR",
+            "receipt": "R_ST4ARX6LYT"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R1-W5",
+        "nodes": [
+          "N_RA3GNG4BGY",
+          "N_HDRWYWKAFG",
+          "N_UFPBEKNT65",
+          "N_F74LA7NRDC",
+          "N_USC3BQ4YIJ"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_IES2R5RAK4",
+            "node": "N_SPG3HPMVSV",
+            "outcome": "N_EG7ROIK3P4",
+            "port": "P_CCQQB5E6EY",
+            "receipt": "R_ZBY35ZYFUX"
+          },
+          {
+            "event": "E_IBJVLEMFF7",
+            "node": "N_SPG3HPMVSV",
+            "outcome": "N_LHZ77G7HMO",
+            "port": "P_UZXJ4NLGTQ",
+            "receipt": "R_MS3QWXUWQI"
+          },
+          {
+            "event": "E_S2XLNXYVNE",
+            "node": "N_EG7ROIK3P4",
+            "outcome": "N_RHDUH2RENT",
+            "port": "P_NBJ6SIZSBR",
+            "receipt": "R_HD3VS3L4E7"
+          },
+          {
+            "event": "E_KFB53CICVU",
+            "node": "N_LHZ77G7HMO",
+            "outcome": "N_KECN2LYRCL",
+            "port": "P_ZICRHHDPNP",
+            "receipt": "R_EGCDVPSSRW"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R1-W6",
+        "nodes": [
+          "N_SPG3HPMVSV",
+          "N_EG7ROIK3P4",
+          "N_LHZ77G7HMO",
+          "N_RHDUH2RENT",
+          "N_KECN2LYRCL"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_D56EW4S5MU",
+            "node": "N_WIDX2ADVSM",
+            "outcome": "N_W2BPZ53RQW",
+            "port": "P_AONWV4PU43",
+            "receipt": "R_2GWNM76CIJ"
+          },
+          {
+            "event": "E_MHFMOR54IH",
+            "node": "N_WIDX2ADVSM",
+            "outcome": "N_Y5JDP5OWDV",
+            "port": "P_5MHFBW3YF2",
+            "receipt": "R_QCDY7LBRQB"
+          },
+          {
+            "event": "E_VGH43O425C",
+            "node": "N_W2BPZ53RQW",
+            "outcome": "N_657WRUCQUZ",
+            "port": "P_VCOCXAZV5W",
+            "receipt": "R_7DT36AIT5H"
+          },
+          {
+            "event": "E_MAD5QFMG4G",
+            "node": "N_Y5JDP5OWDV",
+            "outcome": "N_6EYMWTHPXG",
+            "port": "P_GBQXBIJVTS",
+            "receipt": "R_I3JI3W5KCM"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R1-W7",
+        "nodes": [
+          "N_WIDX2ADVSM",
+          "N_W2BPZ53RQW",
+          "N_Y5JDP5OWDV",
+          "N_657WRUCQUZ",
+          "N_6EYMWTHPXG"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    ],
+    [
+      {
+        "edges": [
+          {
+            "event": "E_CEY7WYSTUM",
+            "node": "N_P637AKOPHG",
+            "outcome": "N_JB6XQG24M7",
+            "port": "P_LFIHSENL7R",
+            "receipt": "R_WGDOBGKMTA"
+          },
+          {
+            "event": "E_2CUWYNW3G4",
+            "node": "N_P637AKOPHG",
+            "outcome": "N_EQUCX2CX2T",
+            "port": "P_73HWN4FPXY",
+            "receipt": "R_BJNWIEQGBG"
+          },
+          {
+            "event": "E_UDHQGKBVFA",
+            "node": "N_JB6XQG24M7",
+            "outcome": "N_FCHCY2EB57",
+            "port": "P_GPI6KHSUAK",
+            "receipt": "R_PJUGV5HYKE"
+          },
+          {
+            "event": "E_R2CTKVWCDQ",
+            "node": "N_EQUCX2CX2T",
+            "outcome": "N_5UHWNVS26L",
+            "port": "P_EGI4OTGBQF",
+            "receipt": "R_LEHDMPSNJW"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R2-W0",
+        "nodes": [
+          "N_P637AKOPHG",
+          "N_JB6XQG24M7",
+          "N_EQUCX2CX2T",
+          "N_FCHCY2EB57",
+          "N_5UHWNVS26L"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_LY6KD5FPA6",
+            "node": "N_FLYR36DNET",
+            "outcome": "N_EV2RPVFEY6",
+            "port": "P_Z6LHMDTKGL",
+            "receipt": "R_PIUOLSYYTG"
+          },
+          {
+            "event": "E_ZPEUYQY6K7",
+            "node": "N_FLYR36DNET",
+            "outcome": "N_33J74TYBE2",
+            "port": "P_YCYBWRBAG3",
+            "receipt": "R_POUMMLVS3O"
+          },
+          {
+            "event": "E_TAUGELAAUA",
+            "node": "N_EV2RPVFEY6",
+            "outcome": "N_4B7W7HR7MO",
+            "port": "P_JAGUVEVMUX",
+            "receipt": "R_C6T6D5CDP7"
+          },
+          {
+            "event": "E_C4H65DGSSK",
+            "node": "N_33J74TYBE2",
+            "outcome": "N_XK2ABCBARI",
+            "port": "P_RTEFIECTWR",
+            "receipt": "R_EYV5HCBOW2"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R2-W1",
+        "nodes": [
+          "N_FLYR36DNET",
+          "N_EV2RPVFEY6",
+          "N_33J74TYBE2",
+          "N_4B7W7HR7MO",
+          "N_XK2ABCBARI"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_4JHOXYE3P5",
+            "node": "N_UEGSIGY5Z2",
+            "outcome": "N_2ICJ6PHCA6",
+            "port": "P_WH3BLL2YY5",
+            "receipt": "R_BAJ3QOANVQ"
+          },
+          {
+            "event": "E_O6H4LE7TRH",
+            "node": "N_UEGSIGY5Z2",
+            "outcome": "N_ZK2U2FN5PZ",
+            "port": "P_DYX4YPZDO6",
+            "receipt": "R_Z74FZZOPBO"
+          },
+          {
+            "event": "E_MEO6CBF6VB",
+            "node": "N_2ICJ6PHCA6",
+            "outcome": "N_EWYTF4HSNS",
+            "port": "P_EJRDX7X7KO",
+            "receipt": "R_2D3WBOYJIW"
+          },
+          {
+            "event": "E_QCZS5VFQRN",
+            "node": "N_ZK2U2FN5PZ",
+            "outcome": "N_3B7JGHUX4J",
+            "port": "P_PFHMDMM6UL",
+            "receipt": "R_LE4GQSHCI4"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R2-W2",
+        "nodes": [
+          "N_UEGSIGY5Z2",
+          "N_2ICJ6PHCA6",
+          "N_ZK2U2FN5PZ",
+          "N_EWYTF4HSNS",
+          "N_3B7JGHUX4J"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_XUP4GAPXJJ",
+            "node": "N_2QQU23KQCK",
+            "outcome": "N_OVFR6LXDA2",
+            "port": "P_CTHMU7SI4G",
+            "receipt": "R_YVKCOMNRPL"
+          },
+          {
+            "event": "E_RHLGBUGLRG",
+            "node": "N_2QQU23KQCK",
+            "outcome": "N_D2LR5EDU3P",
+            "port": "P_OZHXPE5NQH",
+            "receipt": "R_KS7FJXXUBS"
+          },
+          {
+            "event": "E_B56LOGZS2G",
+            "node": "N_OVFR6LXDA2",
+            "outcome": "N_HK3Z4CY3OS",
+            "port": "P_CKUEVZC6RR",
+            "receipt": "R_WNBUQLD763"
+          },
+          {
+            "event": "E_U2R2XHJT4C",
+            "node": "N_D2LR5EDU3P",
+            "outcome": "N_IYYL5UQ2BZ",
+            "port": "P_VIL63YF5YW",
+            "receipt": "R_D5M7PZT7SL"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R2-W3",
+        "nodes": [
+          "N_2QQU23KQCK",
+          "N_OVFR6LXDA2",
+          "N_D2LR5EDU3P",
+          "N_HK3Z4CY3OS",
+          "N_IYYL5UQ2BZ"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_CN5G4PYKRS",
+            "node": "N_THAPYK5QSY",
+            "outcome": "N_EH3ANQTPT6",
+            "port": "P_JE6C4LRW3I",
+            "receipt": "R_K4SATS3JTN"
+          },
+          {
+            "event": "E_GHMHRVATW6",
+            "node": "N_THAPYK5QSY",
+            "outcome": "N_NF7PXCQJBO",
+            "port": "P_F2TWCLLA5F",
+            "receipt": "R_YXJCWLK7VE"
+          },
+          {
+            "event": "E_MCAEI6WW7T",
+            "node": "N_EH3ANQTPT6",
+            "outcome": "N_YZC76ASM7J",
+            "port": "P_ICVITMDFXX",
+            "receipt": "R_UB2FE4MGVY"
+          },
+          {
+            "event": "E_763V6BRDDS",
+            "node": "N_NF7PXCQJBO",
+            "outcome": "N_XDJ3KTN4XV",
+            "port": "P_3E36F4I7QP",
+            "receipt": "R_XGNT7FVOXT"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R2-W4",
+        "nodes": [
+          "N_THAPYK5QSY",
+          "N_EH3ANQTPT6",
+          "N_NF7PXCQJBO",
+          "N_YZC76ASM7J",
+          "N_XDJ3KTN4XV"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_2LQHB3773A",
+            "node": "N_3IRM4MGIUS",
+            "outcome": "N_FLK5UAWWFI",
+            "port": "P_F4Q5EM72PX",
+            "receipt": "R_CWQ2PPU4VD"
+          },
+          {
+            "event": "E_PJR2TU7GBS",
+            "node": "N_3IRM4MGIUS",
+            "outcome": "N_NNWAORIK5J",
+            "port": "P_VQZCLWK4GZ",
+            "receipt": "R_C522YTJ7RF"
+          },
+          {
+            "event": "E_RNYVSFA3G3",
+            "node": "N_FLK5UAWWFI",
+            "outcome": "N_XEELFSSZ6E",
+            "port": "P_6CQWINO6JW",
+            "receipt": "R_BI7CP2SWYC"
+          },
+          {
+            "event": "E_MEJHT5N6EP",
+            "node": "N_NNWAORIK5J",
+            "outcome": "N_2IVR2MHHFW",
+            "port": "P_QMYTZJUKNL",
+            "receipt": "R_J67MY7SLAX"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R2-W5",
+        "nodes": [
+          "N_3IRM4MGIUS",
+          "N_FLK5UAWWFI",
+          "N_NNWAORIK5J",
+          "N_XEELFSSZ6E",
+          "N_2IVR2MHHFW"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_XZFECNT5OD",
+            "node": "N_E5Q6ZEHIHZ",
+            "outcome": "N_AIZHYPPVM7",
+            "port": "P_5KJNR2SEXU",
+            "receipt": "R_CHNWXCEODV"
+          },
+          {
+            "event": "E_AI3AXECGNJ",
+            "node": "N_E5Q6ZEHIHZ",
+            "outcome": "N_GJPEKYKKQJ",
+            "port": "P_VSUG6OBU7B",
+            "receipt": "R_P4K7BSI6A7"
+          },
+          {
+            "event": "E_IRFQ3KZ47G",
+            "node": "N_AIZHYPPVM7",
+            "outcome": "N_HWX53B5765",
+            "port": "P_5SCIRQ3ATT",
+            "receipt": "R_D3EAUYJCHA"
+          },
+          {
+            "event": "E_AMGLITNJUK",
+            "node": "N_GJPEKYKKQJ",
+            "outcome": "N_FM3H2OMDYI",
+            "port": "P_4OYBB4NI45",
+            "receipt": "R_TEXD2QUU3T"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R2-W6",
+        "nodes": [
+          "N_E5Q6ZEHIHZ",
+          "N_AIZHYPPVM7",
+          "N_GJPEKYKKQJ",
+          "N_HWX53B5765",
+          "N_FM3H2OMDYI"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_Z6ZGNGBM3P",
+            "node": "N_BXKQVX3MFA",
+            "outcome": "N_7C7YP6MGOS",
+            "port": "P_FKU4NZSTYG",
+            "receipt": "R_5GHORZLL2C"
+          },
+          {
+            "event": "E_3GTCZI6THN",
+            "node": "N_BXKQVX3MFA",
+            "outcome": "N_DXPLSIYJ3L",
+            "port": "P_W5BQ533PPH",
+            "receipt": "R_ZMI476Q6MG"
+          },
+          {
+            "event": "E_E5ZWBG6AS5",
+            "node": "N_7C7YP6MGOS",
+            "outcome": "N_ZK3Y7EJPBN",
+            "port": "P_USFT25347D",
+            "receipt": "R_MFYUXDCL63"
+          },
+          {
+            "event": "E_XWADGRPA32",
+            "node": "N_DXPLSIYJ3L",
+            "outcome": "N_BCMOSEW4AE",
+            "port": "P_3LRX6QSSYS",
+            "receipt": "R_WHFUSX4D2N"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R2-W7",
+        "nodes": [
+          "N_BXKQVX3MFA",
+          "N_7C7YP6MGOS",
+          "N_DXPLSIYJ3L",
+          "N_ZK3Y7EJPBN",
+          "N_BCMOSEW4AE"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    ],
+    [
+      {
+        "edges": [
+          {
+            "event": "E_GFMWOEQYGB",
+            "node": "N_QRICLIVZ27",
+            "outcome": "N_GHW6CLSO6P",
+            "port": "P_5I65X47OIT",
+            "receipt": "R_UL4RW2E55F"
+          },
+          {
+            "event": "E_3WTHOGAWP3",
+            "node": "N_QRICLIVZ27",
+            "outcome": "N_VJQS7KIQMI",
+            "port": "P_TWGBUZDYQK",
+            "receipt": "R_BJ5FSDAKVR"
+          },
+          {
+            "event": "E_JE4FB43C3P",
+            "node": "N_GHW6CLSO6P",
+            "outcome": "N_PZ4RSMD4OZ",
+            "port": "P_PJKW6HKSA6",
+            "receipt": "R_TZAKKXQ6ZE"
+          },
+          {
+            "event": "E_PJC3BGLBMW",
+            "node": "N_VJQS7KIQMI",
+            "outcome": "N_RQZD6IWFP3",
+            "port": "P_3YV253RB3B",
+            "receipt": "R_N76HTQFFWF"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R3-W0",
+        "nodes": [
+          "N_QRICLIVZ27",
+          "N_GHW6CLSO6P",
+          "N_VJQS7KIQMI",
+          "N_PZ4RSMD4OZ",
+          "N_RQZD6IWFP3"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_GHSDSN5GDO",
+            "node": "N_ANWHUIMQWU",
+            "outcome": "N_L2WVVKL42W",
+            "port": "P_55T6IRLKT5",
+            "receipt": "R_WB3OGLRPZL"
+          },
+          {
+            "event": "E_Y36HFRN7UP",
+            "node": "N_ANWHUIMQWU",
+            "outcome": "N_TPJNJDTMVV",
+            "port": "P_NPBU2HLVCX",
+            "receipt": "R_IDIDHDSR25"
+          },
+          {
+            "event": "E_C557C7BSBV",
+            "node": "N_L2WVVKL42W",
+            "outcome": "N_7DUO6VZO65",
+            "port": "P_LWWEJTFOB3",
+            "receipt": "R_OW3SJIVKOE"
+          },
+          {
+            "event": "E_FS27L273U5",
+            "node": "N_TPJNJDTMVV",
+            "outcome": "N_PJFPMD4TRA",
+            "port": "P_5HOLLSASLJ",
+            "receipt": "R_Y7GTW7YF76"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R3-W1",
+        "nodes": [
+          "N_ANWHUIMQWU",
+          "N_L2WVVKL42W",
+          "N_TPJNJDTMVV",
+          "N_7DUO6VZO65",
+          "N_PJFPMD4TRA"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_5DG7XCAEA7",
+            "node": "N_R7DVHU2YXO",
+            "outcome": "N_6IANLBC37V",
+            "port": "P_P5ZVOHYXLU",
+            "receipt": "R_PR5FHO3KFW"
+          },
+          {
+            "event": "E_ECZZFSNA25",
+            "node": "N_R7DVHU2YXO",
+            "outcome": "N_6KQLQDK7TG",
+            "port": "P_DRW25L5ODJ",
+            "receipt": "R_XDA7TKDA5L"
+          },
+          {
+            "event": "E_DNAMLUQQSO",
+            "node": "N_6IANLBC37V",
+            "outcome": "N_AP54EF2BOY",
+            "port": "P_QZEHLNZQS7",
+            "receipt": "R_ILIE2IWR62"
+          },
+          {
+            "event": "E_G6OMYRYSKS",
+            "node": "N_6KQLQDK7TG",
+            "outcome": "N_UB7DTLI7SC",
+            "port": "P_Q2ZDZJXB5P",
+            "receipt": "R_3C6US5K5TR"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R3-W2",
+        "nodes": [
+          "N_R7DVHU2YXO",
+          "N_6IANLBC37V",
+          "N_6KQLQDK7TG",
+          "N_AP54EF2BOY",
+          "N_UB7DTLI7SC"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_5UVV2MYU7E",
+            "node": "N_ZRHMCKUX6Q",
+            "outcome": "N_2XU3TPXFCF",
+            "port": "P_7DXEJ2GRZC",
+            "receipt": "R_N2U7ZIDBGF"
+          },
+          {
+            "event": "E_DHQHUBVP2G",
+            "node": "N_ZRHMCKUX6Q",
+            "outcome": "N_4KL7Q6XB3K",
+            "port": "P_BJLU6FRU7L",
+            "receipt": "R_R6WNLQ577U"
+          },
+          {
+            "event": "E_MX3LX264AH",
+            "node": "N_2XU3TPXFCF",
+            "outcome": "N_R6UF2DCC2W",
+            "port": "P_4U2VVNGD4Q",
+            "receipt": "R_HZP4EX5AJH"
+          },
+          {
+            "event": "E_MD7ZVJDQCZ",
+            "node": "N_4KL7Q6XB3K",
+            "outcome": "N_4M3MVZ3ZIA",
+            "port": "P_RWKTJM6OWU",
+            "receipt": "R_QOOX5LDBS4"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R3-W3",
+        "nodes": [
+          "N_ZRHMCKUX6Q",
+          "N_2XU3TPXFCF",
+          "N_4KL7Q6XB3K",
+          "N_R6UF2DCC2W",
+          "N_4M3MVZ3ZIA"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_D5B3DQGAPK",
+            "node": "N_XYX6RS33HI",
+            "outcome": "N_FJEPGLR5F3",
+            "port": "P_XVMR6MU4EB",
+            "receipt": "R_NWDNH2VSDI"
+          },
+          {
+            "event": "E_LKVHIKIZ66",
+            "node": "N_XYX6RS33HI",
+            "outcome": "N_OYDMG2CMIG",
+            "port": "P_OPYEOGGQHM",
+            "receipt": "R_MMVBD5NSA6"
+          },
+          {
+            "event": "E_T74UFKRWD3",
+            "node": "N_FJEPGLR5F3",
+            "outcome": "N_T2W5MVD4TI",
+            "port": "P_X2FF2QLA62",
+            "receipt": "R_M6EKLFVV6V"
+          },
+          {
+            "event": "E_4EINVFCIPB",
+            "node": "N_OYDMG2CMIG",
+            "outcome": "N_ZMQOSWIENW",
+            "port": "P_THU5EZL7KZ",
+            "receipt": "R_GYZHQC3TYK"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R3-W4",
+        "nodes": [
+          "N_XYX6RS33HI",
+          "N_FJEPGLR5F3",
+          "N_OYDMG2CMIG",
+          "N_T2W5MVD4TI",
+          "N_ZMQOSWIENW"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_RTSYRT4GQX",
+            "node": "N_42AW3CGRJD",
+            "outcome": "N_BP3L55NDHW",
+            "port": "P_2ZJJRAXRIG",
+            "receipt": "R_GENO6QZKT2"
+          },
+          {
+            "event": "E_K334A43XZW",
+            "node": "N_42AW3CGRJD",
+            "outcome": "N_DUMHUIKLQJ",
+            "port": "P_S4M4ZJE5MC",
+            "receipt": "R_WOH6NMJYAQ"
+          },
+          {
+            "event": "E_B6AP2VQ7KL",
+            "node": "N_BP3L55NDHW",
+            "outcome": "N_4AQICJVSJZ",
+            "port": "P_5EC76RMRP5",
+            "receipt": "R_V6UDIIXHGF"
+          },
+          {
+            "event": "E_DUXBSQ3RFX",
+            "node": "N_DUMHUIKLQJ",
+            "outcome": "N_MK2EE6DZPP",
+            "port": "P_T7ADARZBBX",
+            "receipt": "R_7P33I5WUSK"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R3-W5",
+        "nodes": [
+          "N_42AW3CGRJD",
+          "N_BP3L55NDHW",
+          "N_DUMHUIKLQJ",
+          "N_4AQICJVSJZ",
+          "N_MK2EE6DZPP"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_X7PNDRVY65",
+            "node": "N_TYYT2MTABO",
+            "outcome": "N_GY2PN75FHG",
+            "port": "P_VLRBEQM32K",
+            "receipt": "R_RR4KC5X4WS"
+          },
+          {
+            "event": "E_LEDGDI3PXB",
+            "node": "N_TYYT2MTABO",
+            "outcome": "N_KF3MR3GKAR",
+            "port": "P_IXIYGIT7KU",
+            "receipt": "R_PHMPJVB3N3"
+          },
+          {
+            "event": "E_VQAAY6JWMQ",
+            "node": "N_GY2PN75FHG",
+            "outcome": "N_LJFDYH6LZY",
+            "port": "P_FUA7C5YZQN",
+            "receipt": "R_XQTLNX34FM"
+          },
+          {
+            "event": "E_DZBAZQOVJB",
+            "node": "N_KF3MR3GKAR",
+            "outcome": "N_IXAEBO6ESQ",
+            "port": "P_CLZFDUUBS4",
+            "receipt": "R_XSYEHLYZLK"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R3-W6",
+        "nodes": [
+          "N_TYYT2MTABO",
+          "N_GY2PN75FHG",
+          "N_KF3MR3GKAR",
+          "N_LJFDYH6LZY",
+          "N_IXAEBO6ESQ"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_ORJGFFRIBD",
+            "node": "N_GYCIWNTECC",
+            "outcome": "N_LYAUHBLWPK",
+            "port": "P_33DJE3G3NI",
+            "receipt": "R_ODGIODUJTD"
+          },
+          {
+            "event": "E_OKXKYZRS4U",
+            "node": "N_GYCIWNTECC",
+            "outcome": "N_4NMZ32MR26",
+            "port": "P_NXH7KMAZRX",
+            "receipt": "R_2OMSLHXDWC"
+          },
+          {
+            "event": "E_SK2BA77NQG",
+            "node": "N_LYAUHBLWPK",
+            "outcome": "N_KQNUZTC4GA",
+            "port": "P_IFX7AUSFKG",
+            "receipt": "R_SMUBOUR7C3"
+          },
+          {
+            "event": "E_FAYYTB66UB",
+            "node": "N_4NMZ32MR26",
+            "outcome": "N_P6QYP75D5M",
+            "port": "P_HEFS7W3VJQ",
+            "receipt": "R_G2CE5OCGYY"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-HELD-R3-W7",
+        "nodes": [
+          "N_GYCIWNTECC",
+          "N_LYAUHBLWPK",
+          "N_4NMZ32MR26",
+          "N_KQNUZTC4GA",
+          "N_P6QYP75D5M"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    ]
+  ],
+  "initial_state": "e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf",
+  "recipe": {
+    "batch_size": 4,
+    "cumulative_new_rows": false,
+    "gradient_clip": null,
+    "learning_rate": 3e-05,
+    "legacy_sizes": [
+      128,
+      20,
+      62,
+      12
+    ],
+    "optimizer": "AdamW",
+    "optimizer_kwargs": {
+      "amsgrad": false,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "foreach": false,
+      "fused": false,
+      "weight_decay": 0.01
+    },
+    "seed": 8203,
+    "trajectory_presentations": 4,
+    "zero_yield": "NO_UPDATE_PRESERVE_PREVIOUS_CHILD_AND_FRESH_READOUT"
+  },
+  "schema": "ORCH_L2_SHARED_V1",
+  "train": [
+    [
+      {
+        "edges": [
+          {
+            "event": "E_IRORW6WGTL",
+            "node": "N_DXSBHHPO43",
+            "outcome": "N_IWXF7XR6QA",
+            "port": "P_IR5R4HMQ3Y",
+            "receipt": "R_JU7TTTUW7V"
+          },
+          {
+            "event": "E_PSTYFX2FIG",
+            "node": "N_DXSBHHPO43",
+            "outcome": "N_UR2TVWAQMZ",
+            "port": "P_QISZ5DPORV",
+            "receipt": "R_G4NGG3AUHP"
+          },
+          {
+            "event": "E_STOMZ5TIZG",
+            "node": "N_IWXF7XR6QA",
+            "outcome": "N_AYBQAMW6MU",
+            "port": "P_MBJXFKNSFB",
+            "receipt": "R_TREH5YPOYU"
+          },
+          {
+            "event": "E_XC7SI7VGIA",
+            "node": "N_UR2TVWAQMZ",
+            "outcome": "N_UZKVYGBO4F",
+            "port": "P_LU4D3HVRIU",
+            "receipt": "R_LD5OEYJN6U"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-TRAIN-C1-W0",
+        "nodes": [
+          "N_DXSBHHPO43",
+          "N_IWXF7XR6QA",
+          "N_UR2TVWAQMZ",
+          "N_AYBQAMW6MU",
+          "N_UZKVYGBO4F"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_5GQQ64ERIS",
+            "node": "N_44B2RJYNNU",
+            "outcome": "N_PCQJQVOM5E",
+            "port": "P_7W6H3TI63J",
+            "receipt": "R_RCUIN3WHWT"
+          },
+          {
+            "event": "E_OWHZ2EHVGO",
+            "node": "N_44B2RJYNNU",
+            "outcome": "N_YYKEABYB7V",
+            "port": "P_VNG3AP2WUT",
+            "receipt": "R_VZTJZ34DFM"
+          },
+          {
+            "event": "E_7XIADVIG72",
+            "node": "N_PCQJQVOM5E",
+            "outcome": "N_GI56KUERC6",
+            "port": "P_2TTXG7CZAM",
+            "receipt": "R_RB5LFBHKS4"
+          },
+          {
+            "event": "E_63MAGWA5OC",
+            "node": "N_YYKEABYB7V",
+            "outcome": "N_2KEK4UC4QX",
+            "port": "P_7DDUOCCLDG",
+            "receipt": "R_IW75FMRKBP"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-TRAIN-C1-W1",
+        "nodes": [
+          "N_44B2RJYNNU",
+          "N_PCQJQVOM5E",
+          "N_YYKEABYB7V",
+          "N_GI56KUERC6",
+          "N_2KEK4UC4QX"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_7JET3BB7VO",
+            "node": "N_G2GUFSIZAB",
+            "outcome": "N_OQKUVGEIEY",
+            "port": "P_5HOO4L4PWH",
+            "receipt": "R_B4UHVABZ54"
+          },
+          {
+            "event": "E_BKA2NH2UKS",
+            "node": "N_G2GUFSIZAB",
+            "outcome": "N_XSGHVARLK7",
+            "port": "P_D2OIRGETSX",
+            "receipt": "R_LYSMQWOC5M"
+          },
+          {
+            "event": "E_2RDV4HW6TZ",
+            "node": "N_OQKUVGEIEY",
+            "outcome": "N_TDEOZNNDH3",
+            "port": "P_HJAE7IMSVP",
+            "receipt": "R_H5ROM6YCJ7"
+          },
+          {
+            "event": "E_J5GVPKD6KN",
+            "node": "N_XSGHVARLK7",
+            "outcome": "N_WDMI7N4TLI",
+            "port": "P_VKHI4ADI62",
+            "receipt": "R_TFT76GKTH2"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-TRAIN-C1-W2",
+        "nodes": [
+          "N_G2GUFSIZAB",
+          "N_OQKUVGEIEY",
+          "N_XSGHVARLK7",
+          "N_TDEOZNNDH3",
+          "N_WDMI7N4TLI"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_MNQOM6NA37",
+            "node": "N_LZEEYPENDB",
+            "outcome": "N_DRESXQDO5Q",
+            "port": "P_46QB3ZPS7N",
+            "receipt": "R_JM4ABKKM63"
+          },
+          {
+            "event": "E_QOKXCRB6SL",
+            "node": "N_LZEEYPENDB",
+            "outcome": "N_XWH7FTPKNA",
+            "port": "P_6LWQQR3VMG",
+            "receipt": "R_4P523RF6OF"
+          },
+          {
+            "event": "E_LNRKKAKCEW",
+            "node": "N_DRESXQDO5Q",
+            "outcome": "N_77Q26GRINT",
+            "port": "P_X4F64D5O73",
+            "receipt": "R_YOZOZQ4JWV"
+          },
+          {
+            "event": "E_776DPD3NO7",
+            "node": "N_XWH7FTPKNA",
+            "outcome": "N_TJYKG2Y5EY",
+            "port": "P_S7DVI2JR6K",
+            "receipt": "R_7OIJE45P6L"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-TRAIN-C1-W3",
+        "nodes": [
+          "N_LZEEYPENDB",
+          "N_DRESXQDO5Q",
+          "N_XWH7FTPKNA",
+          "N_77Q26GRINT",
+          "N_TJYKG2Y5EY"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_OBG2UNLWWE",
+            "node": "N_GAK4CJW53K",
+            "outcome": "N_TZ2HQHNS62",
+            "port": "P_7XLOSQ5V7N",
+            "receipt": "R_66OYAQPSLC"
+          },
+          {
+            "event": "E_AAWVH5X2BT",
+            "node": "N_GAK4CJW53K",
+            "outcome": "N_7YPLBQFHRX",
+            "port": "P_PT3HWKDDCQ",
+            "receipt": "R_JN444YF2PF"
+          },
+          {
+            "event": "E_HL6W2UJIW5",
+            "node": "N_TZ2HQHNS62",
+            "outcome": "N_6AJPAVJMPM",
+            "port": "P_OOCNXC6IWN",
+            "receipt": "R_7CK7M7NOYH"
+          },
+          {
+            "event": "E_F5M2IZVVZV",
+            "node": "N_7YPLBQFHRX",
+            "outcome": "N_XVSMBUFC5L",
+            "port": "P_HTAJ54PIG2",
+            "receipt": "R_XWRTVX5XBW"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-TRAIN-C1-W4",
+        "nodes": [
+          "N_GAK4CJW53K",
+          "N_TZ2HQHNS62",
+          "N_7YPLBQFHRX",
+          "N_6AJPAVJMPM",
+          "N_XVSMBUFC5L"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_5AQBQTBRM4",
+            "node": "N_EVBGY2NWOS",
+            "outcome": "N_SPCQATE5YV",
+            "port": "P_64NQPS6BAX",
+            "receipt": "R_3WCOUHJLLH"
+          },
+          {
+            "event": "E_DR2ZHLLV3M",
+            "node": "N_EVBGY2NWOS",
+            "outcome": "N_7PFPE4WZVN",
+            "port": "P_O3A3R2MZZR",
+            "receipt": "R_F7L27DW3RN"
+          },
+          {
+            "event": "E_MO3JWIPG3D",
+            "node": "N_SPCQATE5YV",
+            "outcome": "N_4FX5PWAB2D",
+            "port": "P_QSN5GP57VD",
+            "receipt": "R_UK7OTBCQ6L"
+          },
+          {
+            "event": "E_5ZSELESOR3",
+            "node": "N_7PFPE4WZVN",
+            "outcome": "N_ZDTKO7IXE7",
+            "port": "P_2EK2ZXMBKA",
+            "receipt": "R_3GX3YY6ADY"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-TRAIN-C1-W5",
+        "nodes": [
+          "N_EVBGY2NWOS",
+          "N_SPCQATE5YV",
+          "N_7PFPE4WZVN",
+          "N_4FX5PWAB2D",
+          "N_ZDTKO7IXE7"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_QBZLISR6AI",
+            "node": "N_IJ4XF5BJ4N",
+            "outcome": "N_LVI2AFX7KJ",
+            "port": "P_CZ26B7UZH7",
+            "receipt": "R_Q4N2OC7LAK"
+          },
+          {
+            "event": "E_XA3O6L3STT",
+            "node": "N_IJ4XF5BJ4N",
+            "outcome": "N_JGDTUWLQ6Z",
+            "port": "P_C2DK7MWMIJ",
+            "receipt": "R_I5ZHQTJ7KF"
+          },
+          {
+            "event": "E_3AFGYDHBFJ",
+            "node": "N_LVI2AFX7KJ",
+            "outcome": "N_VRR4GWGD3G",
+            "port": "P_3MTTFLRBEW",
+            "receipt": "R_SGAGIIZHJM"
+          },
+          {
+            "event": "E_7FUVY3AEIP",
+            "node": "N_JGDTUWLQ6Z",
+            "outcome": "N_E5WAMPV3OE",
+            "port": "P_YLVOXFHL52",
+            "receipt": "R_QINXNO2Y3U"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-TRAIN-C1-W6",
+        "nodes": [
+          "N_IJ4XF5BJ4N",
+          "N_LVI2AFX7KJ",
+          "N_JGDTUWLQ6Z",
+          "N_VRR4GWGD3G",
+          "N_E5WAMPV3OE"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_O2UNCX5EDS",
+            "node": "N_MEFP2G6CKW",
+            "outcome": "N_4GW7DNEKW6",
+            "port": "P_EUMA4P7DEH",
+            "receipt": "R_HB6MLBBITO"
+          },
+          {
+            "event": "E_KDIE6E7Q23",
+            "node": "N_MEFP2G6CKW",
+            "outcome": "N_OXPG6QKZWS",
+            "port": "P_LVKZ425N2I",
+            "receipt": "R_Z7RMBZPILK"
+          },
+          {
+            "event": "E_NKBBGSP6EG",
+            "node": "N_4GW7DNEKW6",
+            "outcome": "N_6YENGFCHPK",
+            "port": "P_ERGRQMGTPU",
+            "receipt": "R_DUSNDWZMTL"
+          },
+          {
+            "event": "E_M5QPZZGLBE",
+            "node": "N_OXPG6QKZWS",
+            "outcome": "N_WL5MOVCJVJ",
+            "port": "P_YQXVHYSZVD",
+            "receipt": "R_JB4EBCQFXA"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-TRAIN-C1-W7",
+        "nodes": [
+          "N_MEFP2G6CKW",
+          "N_4GW7DNEKW6",
+          "N_OXPG6QKZWS",
+          "N_6YENGFCHPK",
+          "N_WL5MOVCJVJ"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    ],
+    [
+      {
+        "edges": [
+          {
+            "event": "E_GNSCG5LCA6",
+            "node": "N_2ANUL5TCSP",
+            "outcome": "N_S6D4P3YUHS",
+            "port": "P_A6SOBZXHYJ",
+            "receipt": "R_4MY7QB7X4K"
+          },
+          {
+            "event": "E_4FDEDP2TJ3",
+            "node": "N_2ANUL5TCSP",
+            "outcome": "N_2QSWUM2KW7",
+            "port": "P_OE7BRE5R6B",
+            "receipt": "R_VRCCIYFM7O"
+          },
+          {
+            "event": "E_RJNB46YZEZ",
+            "node": "N_S6D4P3YUHS",
+            "outcome": "N_VEI6A4JELO",
+            "port": "P_NXEX7ODN7V",
+            "receipt": "R_RY6KILU3IP"
+          },
+          {
+            "event": "E_ZY2V3I2ZYO",
+            "node": "N_2QSWUM2KW7",
+            "outcome": "N_GBWATJL23D",
+            "port": "P_2NXSPPPFFD",
+            "receipt": "R_Y5PRC5AUOT"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-TRAIN-C2-W0",
+        "nodes": [
+          "N_2ANUL5TCSP",
+          "N_S6D4P3YUHS",
+          "N_2QSWUM2KW7",
+          "N_VEI6A4JELO",
+          "N_GBWATJL23D"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_N2MONK6Y4P",
+            "node": "N_6F5G4VCRBA",
+            "outcome": "N_SRJUUEGX5J",
+            "port": "P_ROHOE5JYME",
+            "receipt": "R_E6MN2TX2F3"
+          },
+          {
+            "event": "E_IJHXLEVBFE",
+            "node": "N_6F5G4VCRBA",
+            "outcome": "N_7WONJF7AMX",
+            "port": "P_I2DWSFJMT4",
+            "receipt": "R_O65JWGSNOU"
+          },
+          {
+            "event": "E_U4GXI3CU2W",
+            "node": "N_SRJUUEGX5J",
+            "outcome": "N_6RR7OAXBZW",
+            "port": "P_SUE43JLKOW",
+            "receipt": "R_DYIHDB54BU"
+          },
+          {
+            "event": "E_G3ETOG6IDP",
+            "node": "N_7WONJF7AMX",
+            "outcome": "N_ZMYFKKHD2T",
+            "port": "P_XPRCFNX4W5",
+            "receipt": "R_LD2K2CTSEQ"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-TRAIN-C2-W1",
+        "nodes": [
+          "N_6F5G4VCRBA",
+          "N_SRJUUEGX5J",
+          "N_7WONJF7AMX",
+          "N_6RR7OAXBZW",
+          "N_ZMYFKKHD2T"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_OBEXSDGA3K",
+            "node": "N_4W2S2U6ZUF",
+            "outcome": "N_KIZSSKSU3V",
+            "port": "P_QJCRPPKWPC",
+            "receipt": "R_KHYNJOF6QA"
+          },
+          {
+            "event": "E_XQNSO4SCVN",
+            "node": "N_4W2S2U6ZUF",
+            "outcome": "N_AGLZEWE2WV",
+            "port": "P_KUQVEKRNA3",
+            "receipt": "R_74PKE4J2JB"
+          },
+          {
+            "event": "E_5W7KZLUXLR",
+            "node": "N_KIZSSKSU3V",
+            "outcome": "N_AZV3YPFNKL",
+            "port": "P_RPARN5KU25",
+            "receipt": "R_AYOLTZWGEY"
+          },
+          {
+            "event": "E_XBXH3DZXAZ",
+            "node": "N_AGLZEWE2WV",
+            "outcome": "N_35IUL3VHXA",
+            "port": "P_WSHOATIMC3",
+            "receipt": "R_47NVSIXNBI"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-TRAIN-C2-W2",
+        "nodes": [
+          "N_4W2S2U6ZUF",
+          "N_KIZSSKSU3V",
+          "N_AGLZEWE2WV",
+          "N_AZV3YPFNKL",
+          "N_35IUL3VHXA"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_UAFFIRXWIS",
+            "node": "N_H3EMW3MYU3",
+            "outcome": "N_RDJMJJRHPQ",
+            "port": "P_SPUK27YWC7",
+            "receipt": "R_I2D6WYST53"
+          },
+          {
+            "event": "E_M2LM2VPTT7",
+            "node": "N_H3EMW3MYU3",
+            "outcome": "N_IHOMCP4NTN",
+            "port": "P_BJ7B262VKK",
+            "receipt": "R_SK5ZOFYS44"
+          },
+          {
+            "event": "E_UR4YHUYHPO",
+            "node": "N_RDJMJJRHPQ",
+            "outcome": "N_LWY47CDT5F",
+            "port": "P_BFFFBENZWA",
+            "receipt": "R_SOJJW5MMOA"
+          },
+          {
+            "event": "E_FCAMDJZUNG",
+            "node": "N_IHOMCP4NTN",
+            "outcome": "N_UYWQQK4ZOJ",
+            "port": "P_AIQ5RB72V4",
+            "receipt": "R_LD6XQHPQBK"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-TRAIN-C2-W3",
+        "nodes": [
+          "N_H3EMW3MYU3",
+          "N_RDJMJJRHPQ",
+          "N_IHOMCP4NTN",
+          "N_LWY47CDT5F",
+          "N_UYWQQK4ZOJ"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_XMUFPYSIPE",
+            "node": "N_WMUCNFPE6D",
+            "outcome": "N_GNRJCYSP2Z",
+            "port": "P_CRLD4PFKC6",
+            "receipt": "R_CC6SJDDUQL"
+          },
+          {
+            "event": "E_RXFB2CN2IH",
+            "node": "N_WMUCNFPE6D",
+            "outcome": "N_CJBQGMQSL6",
+            "port": "P_YHN5WP73NB",
+            "receipt": "R_7SI5VXMGOG"
+          },
+          {
+            "event": "E_SIUTW2KW4I",
+            "node": "N_GNRJCYSP2Z",
+            "outcome": "N_CMFTJTLZ7A",
+            "port": "P_WRCZWYC4EF",
+            "receipt": "R_SD7YPP4P3N"
+          },
+          {
+            "event": "E_XBKUYWH6ZY",
+            "node": "N_CJBQGMQSL6",
+            "outcome": "N_NBUMOBM6I2",
+            "port": "P_JVTGL277DP",
+            "receipt": "R_3SKCUTRAS4"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-TRAIN-C2-W4",
+        "nodes": [
+          "N_WMUCNFPE6D",
+          "N_GNRJCYSP2Z",
+          "N_CJBQGMQSL6",
+          "N_CMFTJTLZ7A",
+          "N_NBUMOBM6I2"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_AUGJS6HOTM",
+            "node": "N_WOVPDHMWX5",
+            "outcome": "N_UH65ZA7KR3",
+            "port": "P_EQTI44U5UR",
+            "receipt": "R_XUO45IOVHP"
+          },
+          {
+            "event": "E_EFW7N2GMG6",
+            "node": "N_WOVPDHMWX5",
+            "outcome": "N_2LFA547EAE",
+            "port": "P_UZK53TGMYZ",
+            "receipt": "R_OUXERQWPXC"
+          },
+          {
+            "event": "E_G4MC72W3IC",
+            "node": "N_UH65ZA7KR3",
+            "outcome": "N_CFK5CNKAD3",
+            "port": "P_CRTFRQZ76P",
+            "receipt": "R_ZICUUOGHGU"
+          },
+          {
+            "event": "E_6KOJZAQKR5",
+            "node": "N_2LFA547EAE",
+            "outcome": "N_FPZJGOYU7D",
+            "port": "P_TAQRNI2VQP",
+            "receipt": "R_YCJJIHKQMN"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-TRAIN-C2-W5",
+        "nodes": [
+          "N_WOVPDHMWX5",
+          "N_UH65ZA7KR3",
+          "N_2LFA547EAE",
+          "N_CFK5CNKAD3",
+          "N_FPZJGOYU7D"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_GYWDGML2N4",
+            "node": "N_6AFEBY5AJF",
+            "outcome": "N_EFIDHOX4K6",
+            "port": "P_ONEQRTJP3T",
+            "receipt": "R_6O2AE2AAWC"
+          },
+          {
+            "event": "E_S3A4NURXWP",
+            "node": "N_6AFEBY5AJF",
+            "outcome": "N_7W3LI4SG5U",
+            "port": "P_YBWDVQUCLA",
+            "receipt": "R_TK2ROS7WRO"
+          },
+          {
+            "event": "E_YLWEUGLVM7",
+            "node": "N_EFIDHOX4K6",
+            "outcome": "N_GFNTRURYNF",
+            "port": "P_CJKLI75OGG",
+            "receipt": "R_3KMYTKRTXW"
+          },
+          {
+            "event": "E_UXBOPNVVZS",
+            "node": "N_7W3LI4SG5U",
+            "outcome": "N_CASS4NHTGB",
+            "port": "P_Z3AZQT73VP",
+            "receipt": "R_I5CNFU4NUS"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-TRAIN-C2-W6",
+        "nodes": [
+          "N_6AFEBY5AJF",
+          "N_EFIDHOX4K6",
+          "N_7W3LI4SG5U",
+          "N_GFNTRURYNF",
+          "N_CASS4NHTGB"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_IPME2DOYFN",
+            "node": "N_3F6APKCP7D",
+            "outcome": "N_U7NV6L3VD7",
+            "port": "P_XHHNNWYSP4",
+            "receipt": "R_GFGOXPEQRU"
+          },
+          {
+            "event": "E_COCPXBFGJ5",
+            "node": "N_3F6APKCP7D",
+            "outcome": "N_6SNUY35KGW",
+            "port": "P_5NQC2XIE4D",
+            "receipt": "R_PNCQR7IQEC"
+          },
+          {
+            "event": "E_5B6WJ5JESK",
+            "node": "N_U7NV6L3VD7",
+            "outcome": "N_BPAXLKKDEP",
+            "port": "P_WXSQVBEG4D",
+            "receipt": "R_C5Y3KCE74J"
+          },
+          {
+            "event": "E_JDWUUP2246",
+            "node": "N_6SNUY35KGW",
+            "outcome": "N_LCGB3UDOKU",
+            "port": "P_X3DLUUTEJP",
+            "receipt": "R_MHVVGV4ZWT"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-TRAIN-C2-W7",
+        "nodes": [
+          "N_3F6APKCP7D",
+          "N_U7NV6L3VD7",
+          "N_6SNUY35KGW",
+          "N_BPAXLKKDEP",
+          "N_LCGB3UDOKU"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    ],
+    [
+      {
+        "edges": [
+          {
+            "event": "E_PY2XFYG3RP",
+            "node": "N_WUFQRQNNUB",
+            "outcome": "N_V6IZQZYRWJ",
+            "port": "P_RZXHOF2HXG",
+            "receipt": "R_SOMDUINTQG"
+          },
+          {
+            "event": "E_KL3CPYU7CL",
+            "node": "N_WUFQRQNNUB",
+            "outcome": "N_HX5TZJ6US6",
+            "port": "P_YWOIDPMYPS",
+            "receipt": "R_CUM7SGYVBF"
+          },
+          {
+            "event": "E_BNV2DBJXXC",
+            "node": "N_V6IZQZYRWJ",
+            "outcome": "N_NZUN6GI3PW",
+            "port": "P_KE54ZIG2SJ",
+            "receipt": "R_CMOKHOEUPN"
+          },
+          {
+            "event": "E_V5B377CPED",
+            "node": "N_HX5TZJ6US6",
+            "outcome": "N_VGEHUDJKHE",
+            "port": "P_C6KITLS6ZW",
+            "receipt": "R_ZMDIB3WGFG"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-TRAIN-C3-W0",
+        "nodes": [
+          "N_WUFQRQNNUB",
+          "N_V6IZQZYRWJ",
+          "N_HX5TZJ6US6",
+          "N_NZUN6GI3PW",
+          "N_VGEHUDJKHE"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_VCMUJTZCME",
+            "node": "N_KBOPA7YFFI",
+            "outcome": "N_A7AEO76TFS",
+            "port": "P_LM4XRV2QUS",
+            "receipt": "R_QC3267NKE6"
+          },
+          {
+            "event": "E_2X63JFGJ33",
+            "node": "N_KBOPA7YFFI",
+            "outcome": "N_AGC3YNHDYU",
+            "port": "P_TBSMVNCJLG",
+            "receipt": "R_T6WUJO3VBS"
+          },
+          {
+            "event": "E_7WP7MFIFVX",
+            "node": "N_A7AEO76TFS",
+            "outcome": "N_EYFGTZL64M",
+            "port": "P_2RIHIDABTN",
+            "receipt": "R_XFNEA232A7"
+          },
+          {
+            "event": "E_IDODYFQEH5",
+            "node": "N_AGC3YNHDYU",
+            "outcome": "N_2Q4F4JAYC2",
+            "port": "P_HFLYXECYUQ",
+            "receipt": "R_V2NOCD7Z4U"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-TRAIN-C3-W1",
+        "nodes": [
+          "N_KBOPA7YFFI",
+          "N_A7AEO76TFS",
+          "N_AGC3YNHDYU",
+          "N_EYFGTZL64M",
+          "N_2Q4F4JAYC2"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_UJYCWI37WS",
+            "node": "N_QFVWZG6W5U",
+            "outcome": "N_FKNKTYZL3L",
+            "port": "P_IYLAGHA7ET",
+            "receipt": "R_DN447XISYS"
+          },
+          {
+            "event": "E_OGFCPKU4PY",
+            "node": "N_QFVWZG6W5U",
+            "outcome": "N_F7P6FBXBXE",
+            "port": "P_XVQOUCLXON",
+            "receipt": "R_272CW77J7B"
+          },
+          {
+            "event": "E_JJS5DZSU67",
+            "node": "N_FKNKTYZL3L",
+            "outcome": "N_ESETQWUJK2",
+            "port": "P_NL2DVQMV3I",
+            "receipt": "R_OPB2I3P7KK"
+          },
+          {
+            "event": "E_P6UHP3NEB4",
+            "node": "N_F7P6FBXBXE",
+            "outcome": "N_HAPHOV6722",
+            "port": "P_ZNBMIHM5KW",
+            "receipt": "R_2ZC7IFX7OO"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-TRAIN-C3-W2",
+        "nodes": [
+          "N_QFVWZG6W5U",
+          "N_FKNKTYZL3L",
+          "N_F7P6FBXBXE",
+          "N_ESETQWUJK2",
+          "N_HAPHOV6722"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_YBUQRFXXKJ",
+            "node": "N_KXKEBB23J6",
+            "outcome": "N_RNLZ6BCRHZ",
+            "port": "P_BNVVD6DAAI",
+            "receipt": "R_DAZMS3FSIJ"
+          },
+          {
+            "event": "E_2R4KSAJWGJ",
+            "node": "N_KXKEBB23J6",
+            "outcome": "N_6D2YUJIOTN",
+            "port": "P_PXCHFHYOI4",
+            "receipt": "R_JQNGXMSAIB"
+          },
+          {
+            "event": "E_WNGNEAIK7I",
+            "node": "N_RNLZ6BCRHZ",
+            "outcome": "N_C4UUSGZPFT",
+            "port": "P_6DEVUEBY5H",
+            "receipt": "R_DV32XWS4UA"
+          },
+          {
+            "event": "E_PW3HASLX2M",
+            "node": "N_6D2YUJIOTN",
+            "outcome": "N_RXGSQI3UWZ",
+            "port": "P_BCK7OQZTVM",
+            "receipt": "R_WP33O5HBI5"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-TRAIN-C3-W3",
+        "nodes": [
+          "N_KXKEBB23J6",
+          "N_RNLZ6BCRHZ",
+          "N_6D2YUJIOTN",
+          "N_C4UUSGZPFT",
+          "N_RXGSQI3UWZ"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_W7LTRNCZ4M",
+            "node": "N_O2THCTM7V4",
+            "outcome": "N_3POBJJY7J7",
+            "port": "P_4P76TAW7WR",
+            "receipt": "R_FDZL26DKMC"
+          },
+          {
+            "event": "E_NNL7CWQE7C",
+            "node": "N_O2THCTM7V4",
+            "outcome": "N_PSWV6UNA6Y",
+            "port": "P_E5EOSGO6KC",
+            "receipt": "R_S5LHZPKW7T"
+          },
+          {
+            "event": "E_LN5JBDAIU3",
+            "node": "N_3POBJJY7J7",
+            "outcome": "N_GE4NESGWGN",
+            "port": "P_N2QYMLN4NV",
+            "receipt": "R_VOUMTDXSFN"
+          },
+          {
+            "event": "E_MC3QZTUP42",
+            "node": "N_PSWV6UNA6Y",
+            "outcome": "N_IBPTZNADOZ",
+            "port": "P_GYDP4EGJCQ",
+            "receipt": "R_4JLFLUOCLB"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-TRAIN-C3-W4",
+        "nodes": [
+          "N_O2THCTM7V4",
+          "N_3POBJJY7J7",
+          "N_PSWV6UNA6Y",
+          "N_GE4NESGWGN",
+          "N_IBPTZNADOZ"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_ENPJP3C3NN",
+            "node": "N_HCGAPWCPCY",
+            "outcome": "N_RLJFUGADQC",
+            "port": "P_NW6FXDR7WR",
+            "receipt": "R_IW7GJ5WTXW"
+          },
+          {
+            "event": "E_3I2NQHKBPV",
+            "node": "N_HCGAPWCPCY",
+            "outcome": "N_3VWNRQXNXS",
+            "port": "P_ABPNAGPZFZ",
+            "receipt": "R_NKOKDBR3QS"
+          },
+          {
+            "event": "E_FTVOZICKAO",
+            "node": "N_RLJFUGADQC",
+            "outcome": "N_FVECV3CNWT",
+            "port": "P_IWKVHHWJ64",
+            "receipt": "R_LY7WPIC7YM"
+          },
+          {
+            "event": "E_SAO7V3HNLB",
+            "node": "N_3VWNRQXNXS",
+            "outcome": "N_KTZDFGUZP7",
+            "port": "P_USOKJFJHJA",
+            "receipt": "R_QVTF7CFDGC"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-TRAIN-C3-W5",
+        "nodes": [
+          "N_HCGAPWCPCY",
+          "N_RLJFUGADQC",
+          "N_3VWNRQXNXS",
+          "N_FVECV3CNWT",
+          "N_KTZDFGUZP7"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_2A6HGLC44F",
+            "node": "N_DX5NWCC6VA",
+            "outcome": "N_EF63VOGRX5",
+            "port": "P_ESV5EDRQWY",
+            "receipt": "R_C7NOWTI4WJ"
+          },
+          {
+            "event": "E_X4QZFI7G27",
+            "node": "N_DX5NWCC6VA",
+            "outcome": "N_S5VS3MRKWC",
+            "port": "P_7VGAKRSEKV",
+            "receipt": "R_N53FLEZMXO"
+          },
+          {
+            "event": "E_OJ3IZ7IQSY",
+            "node": "N_EF63VOGRX5",
+            "outcome": "N_YOQHS3N4U4",
+            "port": "P_E5CMU43IJW",
+            "receipt": "R_RZJO4WTUDD"
+          },
+          {
+            "event": "E_RKU6C44DGS",
+            "node": "N_S5VS3MRKWC",
+            "outcome": "N_UJM2JW2CMC",
+            "port": "P_UGEWRRLBSN",
+            "receipt": "R_YNTILEWRGM"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-TRAIN-C3-W6",
+        "nodes": [
+          "N_DX5NWCC6VA",
+          "N_EF63VOGRX5",
+          "N_S5VS3MRKWC",
+          "N_YOQHS3N4U4",
+          "N_UJM2JW2CMC"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      },
+      {
+        "edges": [
+          {
+            "event": "E_MMQ225IYNX",
+            "node": "N_QCIJJG3WQ7",
+            "outcome": "N_KQGT3T432D",
+            "port": "P_VIH3WBK25Q",
+            "receipt": "R_GZJKHP2XRM"
+          },
+          {
+            "event": "E_L2FWHH6724",
+            "node": "N_QCIJJG3WQ7",
+            "outcome": "N_WVX43UMD6E",
+            "port": "P_EOCKLL2CIU",
+            "receipt": "R_4UK6WNMJGL"
+          },
+          {
+            "event": "E_NYGRJROLGI",
+            "node": "N_KQGT3T432D",
+            "outcome": "N_AAEEGJIR3K",
+            "port": "P_42UCFS3CXY",
+            "receipt": "R_XILKDOUPO3"
+          },
+          {
+            "event": "E_YX3VJFLXDA",
+            "node": "N_WVX43UMD6E",
+            "outcome": "N_6V4JVJPZ2Q",
+            "port": "P_YTCGOQOWPU",
+            "receipt": "R_NLGIQIL34G"
+          }
+        ],
+        "master": "ORCH-L2-SHARED-20260914-V1-TRAIN-C3-W7",
+        "nodes": [
+          "N_QCIJJG3WQ7",
+          "N_KQGT3T432D",
+          "N_WVX43UMD6E",
+          "N_AAEEGJIR3K",
+          "N_6V4JVJPZ2Q"
+        ],
+        "schema": "DEV_EXPERIENCED_EVENT_TWO_HOP_V1"
+      }
+    ]
+  ]
+}
