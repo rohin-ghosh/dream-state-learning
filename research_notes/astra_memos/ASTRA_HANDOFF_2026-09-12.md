@@ -1,5 +1,27 @@
 # Astra restart handoff — September14,2026,02:49UTC
 
+## CURRENT OVERRIDE — September14,2026,13:49UTC, SEQ245
+
+A3 SELECTED/UNIFORM fit+AFTER both COMPLETE, guardians382893/382894,
+node2GPU0/1, start13:37:18, ends13:43:22/13:43:21UTC. Source8e520bc5.
+Do NOT rerun collection, BEFORE, or these fits. Both route4/4,newW0/W8 4/4,
+oldW0/W8 12/12,classifier16/16,actual6/6true allNONE; MISS0/4 unresolved.
+Both contain all4facts; no selection superiority, H1/H2 or new seed.
+Primary report: research_notes/analysis/2026-09-14_fresh_reader_cycle_first_result.md.
+Complete source/adapters/receipts plus dereferenced collection in
+gpu_artifacts_local/astra_fresh_reader_cycle_terminal_20260914_attempt2/extracted.
+Archive SHA03fc97eb83923a0c8a32f6e3f25e77a5b7d39499398a0f5aab75880421e8bc7c
+matches remote. Independent reducer Goodall01a09f50-4d7e-7aa1-b364-33e5da7bccf5
+owns tools/astra_fresh_reader_cycle_reduce.py + its test, expected report beside
+extracted. Carson01a09e1f-9b92-7233-9c25-fd6e735652b0 owns six writing files.
+Maxwell01a09fc1-874b-7892-a30e-95f4994be366 reviews next causal check only.
+Main owns notes/state and any next execution. No new GPU run planned yet;
+actual-stimulus matched checker comparison is a proposal, not authorized bytes
+or executed evidence. No jobs killed. Node1 receives no new work, expires
+today23:14UTC; previous mirror reconciliation remains valid.
+Preserve unrelated dirty rules and untracked two_sleep_junction draft.
+Mission ACTIVE/INCOMPLETE. Historical live entries below are superseded.
+
 ## CURRENT OVERRIDE — September14,2026, after SEQ241
 
 LIVE13:34LATEST: A3attempt2before-onlyRUNNING node2GPU0guardian382127,

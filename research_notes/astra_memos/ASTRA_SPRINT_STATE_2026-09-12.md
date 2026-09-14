@@ -1,4 +1,15 @@
-## Current superseding snapshot — 2026-09-14, after SEQ241
+## Current superseding snapshot — 2026-09-14 13:49 UTC, SEQ245
+
+Both A3 forks and AFTERs COMPLETE; no automatic further sleep. Same shared
+SEQ241 SFT_SELECTED parent: routing1/4→4/4, newW0/W8 recall0/4→4/4,
+old12/12 retained, classifier16/16 retained. Each AFTER actual audit6/6 true,
+all NONE; unknown MISS remains0/4. SELECTED equals UNIFORM, all4facts in both.
+See analysis/2026-09-14_fresh_reader_cycle_first_result.md and current HANDOFF.
+Complete capsule transferred with matching remote SHA; independent reduction
+under Goodall; six writing files under Carson. Main selecting next causal test,
+not another arbitrary same-bank fit. Full mission remains INCOMPLETE.
+
+## Historical superseded snapshot — 2026-09-14, after SEQ241
 
 LIVE13:34LATEST: A3BEFOREretry2 source8e520bc5 runningnode2GPU0guardian382127
 since13:31:51UTC,root/tmp/astra_fresh_reader_cycle_20260914_attempt2.

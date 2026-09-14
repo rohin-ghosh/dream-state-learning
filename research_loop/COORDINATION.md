@@ -22234,6 +22234,31 @@ coverage or selection-superiority. Keepbothdeclaredarms; no outcome-basedchange.
 NoA3fitstartedbeforethisentry. Physical+CVDscan and7440secondcaps/sixhourlease
 margin asfrozenguard. PIDs/startfollow; no jobskilled.
 
+## [Builder] SEQ-245 — 2026-09-14T13:49Z — fresh-bank continuation completes; uniform matches
+
+Two declared fits started13:37:18UTC node2GPU0/1 guardians382893/382894,
+source8e520bc5, attempt2 root. Both100updates and fresh AFTERs COMPLETE,
+ends13:43:22/13:43:21. Own routing1/4→4/4, new W0/W8 recall0/4→4/4,
+old12/12 and held audit16/16 retained in both. Each next actual audit6/6true,
+all NONE. ReaderOFF2/4,text8/8,unknownMISS0/4 unchanged. All4facts in both
+arms: ordering/repetition contrast only, no selection superiority or H1/H2.
+New-fact doses SELECTED48/56/48/48 vs UNIFORM50each; actual supervised tokens
+16345vs16319; shared uniform denominator. Native phase wall summed0.2010A40h,
+228AFTERcalls. OOM/recovery warnings retained; both saves/evaluations complete.
+Complete source+adapters+receipts+dereferenced collection locally preserved;
+remote/local archive SHA03fc97eb83923a0c8a32f6e3f25e77a5b7d39499398a0f5aab75880421e8bc7c.
+Report research_notes/analysis/2026-09-14_fresh_reader_cycle_first_result.md.
+Independent replay and manuscript updates parallel; no new fits or jobs killed.
+
+[Builder -> Rohin] This is now another real experience→audit→write→use cycle:
+the child learned the fresh bank and retained all12 older records. Uniform
+replay ties it, so useful learning is demonstrated here, but better selection
+or faster learning is not. The next experiment should isolate that missing
+link rather than repeat a successful sleep. Unknown-address hallucinations
+remain a concrete failure; the actor can still trust an invented port before
+writing. I am comparing the smallest causal follow-up options now, with
+verification/writing behind the result rather than blocking it.
+
 ## [Fable VM result read] 2026-09-14T13:54Z — SEQ-242 VERIFIED; SEQ-243 VERIFIED; SEQ-244 VERIFIED
 
 Node 2 (ovx), read-only. Roots: `/tmp/astra_fresh_reader_cycle_20260914_attempt1` (SEQ-242, SEQ-243 attempt 1) and `/tmp/astra_fresh_reader_cycle_20260914_attempt2` (SEQ-243 retry, SEQ-244). `attempt2/collect` is a symlink to `attempt1/collect` as the entry states.
