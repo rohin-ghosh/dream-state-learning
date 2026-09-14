@@ -69,3 +69,22 @@ exceptions and the portable bundle exist. Lease source is
 (September 27 05:05 UTC). Use the earlier September 26 00:00 UTC as a
 conservative guard cutoff until any discrepancy is resolved; 30min screen
 is far inside both. No lease extension requested.
+
+## 2026-09-14T22:02Z — implementation and preGPU preparation
+
+Exact Rohin scope request: `structured-text-ledger-v1` (L2proposal),
+`dependency-build-graph-v1` (heldL3proposal), with meanings above. No contents
+generated. L1 now has 64 unique specifications with independent oracle;
+prospective screen fixes IDs ledger_000..007. Main confirms board/contract
+published `9a9593af`, explicit worker EOF notebook append authorized.
+Initial CPU suite 18/18 passes through `uv run --with pytest` (system Python
+has no pytest). Added native callback/budget/record-reuse tests next. No model
+load yet; protocol at `research_notes/analysis/orch_persist_code_protocol.md`.
+Own source staging only, coordinated via this journal; never blanket staging.
+
+22:02Z expanded CPU suite: 21/21 passed in 0.17s; guard `bash -n` PASS.
+Tests include AST escape rejection, all64 independent oracles, persistent
+generated-module regressions, record source joins, prefix guidance removal,
+call ceilings and correction-vs-format-failure accounting. No semantic labels
+are automatically admitted. Main reconfirms actual A100 lease end
+2026-09-27T05:05Z; guardian uses that epoch minus six hours.
