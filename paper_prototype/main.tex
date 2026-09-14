@@ -43,6 +43,12 @@
 \begin{document}
 \maketitle
 
+\noindent\textbf{Reviewed reporting cut through SEQ-258, September 14, 2026.}
+Section~\ref{sec:breadth-scale-collection} adds SEQ257's zero-fit broader collection
+and baseline, and SEQ258's failed original whole-corpus admission with partial
+baseline coverage. Neither is a training result; separate1,632-update breadth
+fit outcomes are not included. Earlier findings and claim boundaries remain.
+
 \noindent\textbf{Ongoing first-sprint working draft---research question unresolved.}
 This draft includes terminal A3 SEQ-245 in Section~\ref{sec:fresh-reader-cycle}
 (independent six-stage reduction complete; SEQ-246 matched replay is
@@ -274,6 +280,12 @@ Matched400-update FULL/control fits then yield TRAIN8/8 tasks,4/4 pairs versus
 5/8,2/4 in both arms and baseline; unavailable stays0/8. FULL/control old recall
 is16/16 each wrapper versus13/16 W0,14/16 W8; audit15/16 versus16/16, taught-text2/4
 both. Neither meets the target; the recipe is closed, without robust transfer.
+
+Broader zero-fit collection yields192 guided targets, but unchanged-child PROBE
+goals4/8 and pairs0/4; unavailable goals are2/8 (SEQ-257). Eight-shard collection
+then admits316/320 source records and576/1,536 required targets, failing the
+original whole-corpus gate before any fit (SEQ-258). Its baselines cover only
+four of eight shards. This is a data-admission failure, not a training result.
 
 Bounded independent reviews PASS. Shared inputs/reference normalization do not
 make active doses or achieved retention equal. One exposed DEV lineage/topology,
@@ -702,7 +714,7 @@ Only new rows222--269 are loss-masked in control; all12 original trajectory
 targets remain supervised. Fresh AdamW3e-5, rank8 and frozen base are unchanged.
 Active/reference labels are33,019/33,019 FULL versus23,885/33,019 control.
 Per-batch active/reference scaling preserves the reference denominator, not
-equal active dose or achieved retention. FULL has800 new-target presentations;
+equal active dose or achieved retention. FULL has800 presentations of48 distinct new targets;
 control sees the same inputs with zero supervised new presentations. Each of12
 old trajectory targets receives4 presentations versus16--17 per new target:
 a hypothesis for future rehearsal, not a proven forgetting cause. FULL retains
@@ -713,15 +725,97 @@ planning, H1/H2 or reliable transfer claim.
 
 Summed native phases take2,194.764s, about0.610 A40-hours across both GPUs,
 including loading/checking, not just kernels. No new data or dose extension
-after this outcome: the recipe is closed. A broader eight-world actual-data
-successor is only proposed/in implementation under b960; no successor launch
-or outcome is claimed. Primary/review:
+after this outcome: the recipe is closed. The broader b960 successor was
+proposed at that reporting cut; its zero-fit collection/baseline is now reported
+separately as SEQ-257 below. No successor-fit outcome is included. Primary/review:
 \path{research_notes/analysis/2026-09-14_goal_pair_incremental_fit_first_result.md},
 \path{research_notes/analysis/2026-09-14_goal_pair_incremental_fit_independent_result.md}.
 Released PASS verifies counts/masks/schedule/receipt joins and supersedes pending
 primary wording, not independent live tensor authentication. Source
 \path{f325f9d3a91ea4f584b97ae17767bbfe1d575678}; raw capsule:
 \path{gpu_artifacts_local/astra_goal_pair_train_terminal_20260914_attempt1/extracted/}.
+
+\subsection{SEQ-257--258: reviewed collection and failure-inclusive admission}
+\label{sec:breadth-scale-collection}
+
+\textbf{Both independently reviewed; zero fits/updates in these collections.}
+SEQ257 succeeds at collecting a broader guided corpus; SEQ258 fails its original
+all-eight-shard corpus gate. Neither measures training performance. The released
+independent review supersedes SEQ258 primary's pending-review wording, not its
+failed admission decision.
+
+\paragraph{SEQ257: broader source and unchanged baseline.}
+Eight TRAIN/two PROBE worlds yield40 valid actual child EVENTs in80 exposure
+calls and192 actual TRAIN targets in192 guided calls. All32 guided tasks/16pairs
+succeed. Parent guidance is absent from student prefixes but retained in captured
+provenance: this is source-informed coaching, not autonomous plan discovery.
+All48 baseline episodes are present in283 calls rather than288; shorter episodes,
+not omitted cases, explain the difference.
+\begin{center}
+\small
+\begin{tabular}{lrr}
+\toprule
+Observed panel & Goals & Strict pairs \\
+\midrule
+SEQ257 TRAIN OWN\_TEXT & 18/32 & 2/16 \\
+SEQ257 PROBE OWN\_TEXT & 4/8 & 0/4 \\
+SEQ257 PROBE UNAVAILABLE & 2/8 & 0/4 \\
+SEQ258 TRAIN OWN\_TEXT, four shards & 66/128 & 15/64 \\
+SEQ258 PROBE OWN\_TEXT, four shards & 16/32 & 1/16 \\
+SEQ258 PROBE UNAVAILABLE, four shards & 1/32 & 0/16 \\
+\bottomrule
+\end{tabular}
+\end{center}
+SEQ257's two unavailable successes are recorded despite missing memory, not zero.
+A review-only goal-blind first-displayed-port CPU reference matches its PROBE
+OWN\_TEXT winning identities; this is not a native arm or proof of the actor's
+algorithm. Marginal accuracy does not establish goal-sensitive composition.
+Different namespaces also prevent a same-instance decline claim against SEQ255.
+The interpretations and endpoints of SEQ253/256 remain unchanged.
+
+\paragraph{SEQ258: original whole-corpus admission failed, not a failed fit.}
+All320 exposure ROUTEs commit and yield public receipts, but only316/320 attempted
+EVENT records are valid. Four actual child identifier-copying errors remain
+preserved; the earlier320-valid progress shorthand is corrected, not the native
+outputs. Shards0/1/4/6 each have39/40 valid records and stop at the source gate
+before TEACH, not during training or model loading.
+
+Shards2/3/5 each admit192 targets. Shard7 records192 guided replies, but one task
+commits the wrong first branch and then an invalid route, failing that shard's
+whole192-row admission. Only576 top-level rows are admitted, not the required
+1,536. Four shards make768 guided calls:127/128 attempted tasks succeed; another
+128 planned tasks are unattempted. Shard7's embedded successful block rows remain
+evidence, not an admitted replacement corpus. No subset is silently fitted;
+the later rich candidate-retention policy does not relax the original scale rule.
+
+The SEQ258 baseline table covers only four of eight shards:192 episodes/1,111
+calls. Full planned denominators remain TRAIN256 goals/128 pairs and PROBE64
+goals/32 pairs per condition. Unattempted cases are unmeasured, not zeros or
+removed denominators. Source-based attrition limits observed-shard aggregates.
+Shard7's valid source permits an unchanged-actor baseline despite failed teaching
+admission; none of these panels is a learned-treatment contrast.
+
+\paragraph{Costs, provenance and reporting boundary.}
+SEQ257 totals555 calls/631.270138 summed native-phase seconds (0.175353 allocated
+A40-hours); SEQ258 totals2,519 calls/3,058.891271 seconds (0.849692 allocated
+A40-hours). These are allocated phase costs, not parallel wall time or GPU
+utilization. Executed stages record unchanged37ec adapter/base checks and zero
+optimizer updates; independent file/hash/capture replay is not live tensor
+authentication. Main reports the separate original1,632-update breadth fits still
+finishing at this cut, with no outcomes included here. Richer-data collection is
+live work, not a reviewed learning result; quality review and fitting remain
+prospective here. No later diagnostic outcome, broad transfer, parenting
+efficiency, H1/H2 or full-flywheel promotion follows.
+
+Primary/review pairs:
+\path{research_notes/analysis/2026-09-14_goal_breadth_collection_first_result.md},
+\path{research_notes/analysis/2026-09-14_goal_breadth_collection_independent_result.md};
+\path{research_notes/analysis/2026-09-14_goal_scale_collection_first_result.md},
+\path{research_notes/analysis/2026-09-14_goal_scale_collection_independent_result.md}.
+SEQ257 source \path{3ddb8a2f168a03c9f19252358fc429bb6f526230}, archive
+\path{a7ee0b69d392b7d078072c1685f12ffced60346052c6751f4e8eed078375f7de};
+SEQ258 source \path{ff1af2c37003fd4f6d38ecbe7660fd94744c0e31}, archive
+\path{c57a87efedd39b84ff0c316a2cb3d23e4dc26f70c2d4eae44d45409d45eaea0c}.
 
 \subsection{SEQ-247: executable selector material in a shared writer}
 \label{sec:selector-transfer-write}

@@ -1,6 +1,10 @@
 # FIRST SPRINT DRAFT — evidence and integration claim map
 
-Current reporting cut: SEQ-251 fresh-identifier transfer is terminal with
+Current reporting cut: reviewed SEQ-257 zero-fit breadth collection/baseline
+and SEQ-258 failed whole-corpus scale admission are included in the final
+addendum. Neither is a fit result; the original 1,632-update breadth fits have
+no outcomes in this cut. Rich/quality successors remain proposed or live,
+not reviewed results. SEQ-251 fresh-identifier transfer is terminal with
 independent review PASS; terminal252/253, closed failed254, zero-fit255 and closed256 incremental
 fits have released bounded independent review PASS. The combined248–256 addendum preserves failures and the first-branch limit. SEQ-247 shared-writer material control is terminal and
 independently reduced; see its appended addendum. Earlier SEQ-246 matched-replay
@@ -10,14 +14,14 @@ with one matching pair. SEQ-241 independent reduction is also COMPLETE: eight
 stages, two matching pairs; see the status correction below. Earlier cuts remain separate.
 Earlier dated statuses below remain historical, not current runtime blockers.
 
-**Ongoing first-sprint working draft — research question unresolved.**
-This draft through SEQ195 retains earlier positive and negative findings;
+**Historical through-SEQ195 snapshot — research question unresolved.**
+This earlier draft cut retains positive and negative findings;
 SEQ167 and SEQ169--173 are engineering-only logs, excluded from scientific results.
 Recipe-level failures are diagnostics to guide repair, not a finished negative
 paper or the endpoint of the research program. Completion refers only to the
 named assays; the research question remains unresolved. Held for bounded
-independent review. The newest bounded result is C106 below; no outcome after
-SEQ195 is incorporated.
+independent review. At that earlier cut the newest bounded result was C106;
+subsequent addenda extend the current reporting cut without replacing it.
 
 **Through SEQ195 / C106: bounded same-bank EVENT retention passes.**
 On one exposed eight-EVENT DEV bank, all three optimizer seeds learned A at
@@ -5853,8 +5857,9 @@ to2/4 in both arms. No population efficacy, generic planning or H1/H2 follows.
 Summed native-phase cost is2,194.764s, about0.610 A40-hours across both GPUs,
 including loading/checking, not just kernels. No new data or dose extension
 after this outcome; the400-update recipe is closed. A broader eight-world
-actual-data successor is only proposed/in implementation under the b960 protocol;
-no successor launch or outcome is claimed. [Primary result](../analysis/2026-09-14_goal_pair_incremental_fit_first_result.md)
+actual-data successor was proposed under b960 at that cut; its zero-fit
+collection/baseline is now reported separately as SEQ257. No successor-fit
+outcome is included. [Primary result](../analysis/2026-09-14_goal_pair_incremental_fit_first_result.md)
 and [released independent review](../analysis/2026-09-14_goal_pair_incremental_fit_independent_result.md)
 bind the counts, masks, schedule and receipts; released PASS supersedes pending
 primary wording, not independent live tensor authentication.
@@ -5869,3 +5874,80 @@ with an inferior-retention loss-off control, not H1 or reliable goal selection;
 child experience, not an autonomous selector or validated learning process;
 **self-improving learning** gains no H2 or learning-efficiency evidence.
 Prior single-hop results and SEQ247 material-control limits remain unchanged.
+
+## SEQ-257–258: reviewed collection and failure-inclusive admission — September 14, 2026
+
+**Both independently reviewed; zero fits/updates in these collections.** SEQ257
+succeeds at collecting a broader guided corpus. SEQ258 fails its original
+all-eight-shard corpus gate. Neither result measures training performance.
+Released independent review supersedes SEQ258 primary's pending-review wording;
+it does not change that failed admission decision.
+
+**SEQ257 — eight TRAIN/two PROBE worlds.** Eighty exposure calls produce40 valid
+actual child EVENTs;192 guided calls produce192 TRAIN-only targets across all32
+tasks/16pairs. Student prefixes omit parent hints; actual guided captures remain
+in provenance. This is source-informed teaching, not autonomous plan discovery.
+All48 unassisted baseline episodes are represented by283 calls, not288: shorter
+completed/failed episodes explain the difference, not dropped cases.
+
+| Collection / observed panel | Goals | Strict opposite-goal pairs |
+| --- | ---: | ---: |
+| SEQ257 TRAIN OWN_TEXT |18/32|2/16|
+| SEQ257 PROBE OWN_TEXT |4/8|0/4|
+| SEQ257 PROBE UNAVAILABLE |2/8|0/4|
+| SEQ258 TRAIN OWN_TEXT, observed four shards only |66/128|15/64|
+| SEQ258 PROBE OWN_TEXT, observed four shards only |16/32|1/16|
+| SEQ258 PROBE UNAVAILABLE, observed four shards only |1/32|0/16|
+
+SEQ257's two unavailable successes are recorded outcomes despite missing memory,
+not zero. A review-only goal-blind first-displayed-port CPU reference matches its
+PROBE OWN_TEXT winning task identities; this is not an emitted native arm or
+proof of the actor's policy. Marginal accuracy does not establish goal-sensitive
+composition, and different namespaces prevent a same-instance decline claim
+against SEQ255. SEQ253/256 interpretations and endpoints remain unchanged.
+
+**SEQ258 — original whole-corpus admission FAILED.** All320 exposure ROUTEs
+commit and yield public receipts, but only **316/320 attempted EVENT records**
+are valid: four actual child identifier-copying errors remain preserved. This
+corrects the earlier progress shorthand, not the captured outputs. Shards0/1/4/6
+each have39/40 valid records and stop at the source gate before TEACH; these are
+not training failures, model-loading failures, or unrecorded zero-score readouts.
+
+Shards2/3/5 each admit192 targets. Shard7 makes192 guided calls but one task takes
+the wrong first branch and then an invalid route; its whole192-row admission
+fails under the frozen rule. Thus **576 top-level rows are admitted, not the
+required1,536**. Four shards make768 guided calls:127/128 attempted tasks succeed;
+another128 planned TRAIN tasks are unattempted. Embedded successful block rows
+in shard7 are preserved evidence, not an admitted replacement scale corpus.
+No successful subset is silently used for fitting, and the later rich candidate
+policy does not retroactively relax this original failure.
+
+The SEQ258 baseline table covers **four of eight shards**,192 episodes and1,111
+calls. Full planned denominators remain TRAIN256 goals/128 pairs and PROBE64
+goals/32 pairs per condition. Unattempted cases are unmeasured, not zeros or
+removed denominators; source-based attrition limits the observed aggregates.
+Shard7's baseline is valid collection-only evidence despite failed teaching
+admission, because its source and unchanged actor remain usable.
+
+SEQ257 totals555 native calls and631.270138 summed phase-seconds, approximately
+0.175353 allocated A40-hours; SEQ258 totals2,519 calls and3,058.891271 phase-seconds,
+approximately0.849692 allocated A40-hours. These are allocated phase costs,
+not parallel wall time or utilization. Both record unchanged37ec adapter/base
+checks and zero optimizer updates. Independent file/hash/capture replay is not
+independent authentication of live model tensors.
+
+**Reporting boundary.** Main reports the separate original1,632-update breadth
+fits still finishing at this cut; no outcome from them is included. Richer-data
+collection is live work reported by Main, while its quality/content review and
+any fit remain prospective here. Neither launch nor candidate retention is a
+result of improved learning. No later diagnostic result, H1/H2, broad transfer,
+parenting-efficiency or full-flywheel promotion is added. Collaborator UNSENT.
+
+Sources: [SEQ257 primary](../analysis/2026-09-14_goal_breadth_collection_first_result.md),
+[SEQ257 released independent review](../analysis/2026-09-14_goal_breadth_collection_independent_result.md),
+[SEQ258 primary](../analysis/2026-09-14_goal_scale_collection_first_result.md),
+[SEQ258 released independent review](../analysis/2026-09-14_goal_scale_collection_independent_result.md).
+SEQ257 source`3ddb8a2f168a03c9f19252358fc429bb6f526230`, capsule archive
+`a7ee0b69d392b7d078072c1685f12ffced60346052c6751f4e8eed078375f7de`;
+SEQ258 source`ff1af2c37003fd4f6d38ecbe7660fd94744c0e31`, archive
+`c57a87efedd39b84ff0c316a2cb3d23e4dc26f70c2d4eae44d45409d45eaea0c`.

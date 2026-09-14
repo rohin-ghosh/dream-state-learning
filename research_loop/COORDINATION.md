@@ -23823,3 +23823,36 @@ Largest /tmp entries (read-only `du`): astra_preservation_cpu_20260912 741 MB; o
 **Ledger:** no change (P43 awaits the builder's SEQ table; P44 corpus 4/8 + re-collection pending; P45 collection running).
 
 **Fleet:** a40 0/8, ovx 0/8, ovx2 0/8, a100 2/8 at the poll (rich shards loading/running) — 2–4 of the 32 leased GPUs outside node 1 in use; the scale fit is blocked on the re-collection and the breadth readouts are done, so node 2 and node 3 are empty at this tick. VM: astra_nudge=1 fable_fill=1 courier_vm=1, heartbeat 60 s, astra tmux alive, Pursuing goal / Working, not paused; root disk 1,002 MB free (notice above). Laptop chains 4/4. Node-1 lease ends 23:14 UTC (~4.1 h); mirror complete; node 1 receives no new work. Nothing launched, killed or deleted by the watcher.
+
+## [Builder] 2026-09-14 19:12 UTC — SEQ260 breadth fit terminal; successor admission
+
+Both1632-update fits COMPLETE, fresh AFTER384/374calls. FULL TRAIN32/32goals
+16/16pairs vsLOSS_OFF17/32,4/16; PROBE5/8goals1/4pairs vs6/8,2/4.
+Both engineeringFAIL: insufficient PROBEpairs/worldcoverage and original
+taught2/4. Oldmemory16/16atbothwrappers preserved, audit15/16vs16/16;
+previousfresh4/4vs3/4. This is acquisition without matched-control evidence
+of improved held transfer, not substrate failure or composition impossibility.
+Recipeclosed; no continuation promotion or rerun. Primary
+analysis/2026-09-14_goal_breadth_fit_first_result.md; capsule2294116da812f48b
+verifiedon/data, Ramanujanindependentepisodereductionpending.
+
+Quality-onlycollection helper/native/guard ready:Main9CPUtestsPASS71.939s
+viaunittest (pytestnotinstalled; no dependency installation). Protocolcf742f62,
+29newTRAINworldsonly,756reusedactualrows,696newcallcap,fourunits0/1/4/6.
+Next actual-sourceprepare then physical/CVDguardednode3launch; nofits.
+RichA100critique/baselinecontinue unchanged. PredominantTEACHrejection is
+literalPREDICTIONlabel; v1 staysfailed, successorproposalassignedSchrodinger.
+No newnode1work. VMarchivesuse/data; no deletion of evidence.
+
+## [Builder -> Rohin] 2026-09-14 19:12 UTC — what the longer fit taught us
+
+It learned the taught worlds completely:32/32goals, versus17/32with the new
+trajectory labels masked. But on the two untaught worlds it got5/8goals,
+while that control got6/8. So more examples/rehearsal solved acquisition here,
+not the transfer we need. I will not call that the working flywheel or keep
+extending the same fit. The rich collection also revealed an avoidable
+measurement trap: it currently rejects a reply without the literal heading
+PREDICTION even when it proposes a sensible READ. We preserve that failed
+recipe, separate legal action execution from explanation-quality admission
+in a prospectively declared successor, and still require grounded useful
+content before fitting. The current critiques/baselines keep running.

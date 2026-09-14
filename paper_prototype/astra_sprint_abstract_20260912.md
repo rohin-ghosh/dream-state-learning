@@ -33,6 +33,12 @@ Matched400-update FULL/control fits then yield TRAIN8/8 tasks,4/4 pairs versus
 is16/16 each wrapper versus13/16 W0,14/16 W8; audit15/16 versus16/16, taught-text2/4
 both. Neither meets the target; the recipe is closed, without robust transfer.
 
+Broader zero-fit collection yields192 guided targets, but unchanged-child PROBE
+goals4/8 and pairs0/4; unavailable goals are2/8 (SEQ-257). Eight-shard collection
+then admits316/320 source records and576/1,536 required targets, failing the
+original whole-corpus gate before any fit (SEQ-258). Its baselines cover only
+four of eight shards. This is a data-admission failure, not a training result.
+
 Bounded independent reviews PASS. Shared inputs/reference normalization do not
 make active doses or achieved retention equal. One exposed DEV lineage/topology,
 external scheduling and preserved failures preclude population efficacy,
@@ -44,7 +50,8 @@ generic planning, H1/H2 or autonomous learning-rate claims.
 SEQ-256 incremental fits/readouts are terminal with independent review PASS:
 TRAIN acquisition, primary PROBE tie and unequal retention; the recipe is closed.
 SEQ255 remains the separate zero-fit collection/baseline. The combined248–256 section preserves earlier failures
-and the first-branch-baseline limit; no outcome beyond256 is included.
+and the first-branch-baseline limit. Reviewed SEQ257/258 collection-only outcomes
+are reported separately below; no successor-fit outcome is included.
 SEQ-247 shared-writer material control is terminal and independently reduced.
 SEQ-246 matched replay is terminal and independently reduced.
 A3 SEQ-245 is terminal and independently reduced: six stages, one matching
@@ -389,13 +396,91 @@ to2/4 in both arms. No population efficacy, generic planning or H1/H2 follows.
 Summed native-phase cost is2,194.764s, about0.610 A40-hours across both GPUs,
 including loading/checking, not just kernels. No new data or dose extension
 after this outcome; the400-update recipe is closed. A broader eight-world
-actual-data successor is only proposed/in implementation under the b960 protocol;
-no successor launch or outcome is claimed. [Primary result](../research_notes/analysis/2026-09-14_goal_pair_incremental_fit_first_result.md)
+actual-data successor was proposed under b960 at that cut; its zero-fit
+collection/baseline is now reported separately as SEQ257. No successor-fit
+outcome is included. [Primary result](../research_notes/analysis/2026-09-14_goal_pair_incremental_fit_first_result.md)
 and [released independent review](../research_notes/analysis/2026-09-14_goal_pair_incremental_fit_independent_result.md)
 bind the counts, masks, schedule and receipts; released PASS supersedes pending
 primary wording, not independent live tensor authentication.
 Source `f325f9d3a91ea4f584b97ae17767bbfe1d575678`; raw capsule:
 `gpu_artifacts_local/astra_goal_pair_train_terminal_20260914_attempt1/extracted/`.
+
+### SEQ-257–258: reviewed collection and failure-inclusive admission — September 14, 2026
+
+**Both independently reviewed; zero fits/updates in these collections.** SEQ257
+succeeds at collecting a broader guided corpus. SEQ258 fails its original
+all-eight-shard corpus gate. Neither result measures training performance.
+Released independent review supersedes SEQ258 primary's pending-review wording;
+it does not change that failed admission decision.
+
+**SEQ257 — eight TRAIN/two PROBE worlds.** Eighty exposure calls produce40 valid
+actual child EVENTs;192 guided calls produce192 TRAIN-only targets across all32
+tasks/16pairs. Student prefixes omit parent hints; actual guided captures remain
+in provenance. This is source-informed teaching, not autonomous plan discovery.
+All48 unassisted baseline episodes are represented by283 calls, not288: shorter
+completed/failed episodes explain the difference, not dropped cases.
+
+| Collection / observed panel | Goals | Strict opposite-goal pairs |
+| --- | ---: | ---: |
+| SEQ257 TRAIN OWN_TEXT |18/32|2/16|
+| SEQ257 PROBE OWN_TEXT |4/8|0/4|
+| SEQ257 PROBE UNAVAILABLE |2/8|0/4|
+| SEQ258 TRAIN OWN_TEXT, observed four shards only |66/128|15/64|
+| SEQ258 PROBE OWN_TEXT, observed four shards only |16/32|1/16|
+| SEQ258 PROBE UNAVAILABLE, observed four shards only |1/32|0/16|
+
+SEQ257's two unavailable successes are recorded outcomes despite missing memory,
+not zero. A review-only goal-blind first-displayed-port CPU reference matches its
+PROBE OWN_TEXT winning task identities; this is not an emitted native arm or
+proof of the actor's policy. Marginal accuracy does not establish goal-sensitive
+composition, and different namespaces prevent a same-instance decline claim
+against SEQ255. SEQ253/256 interpretations and endpoints remain unchanged.
+
+**SEQ258 — original whole-corpus admission FAILED.** All320 exposure ROUTEs
+commit and yield public receipts, but only **316/320 attempted EVENT records**
+are valid: four actual child identifier-copying errors remain preserved. This
+corrects the earlier progress shorthand, not the captured outputs. Shards0/1/4/6
+each have39/40 valid records and stop at the source gate before TEACH; these are
+not training failures, model-loading failures, or unrecorded zero-score readouts.
+
+Shards2/3/5 each admit192 targets. Shard7 makes192 guided calls but one task takes
+the wrong first branch and then an invalid route; its whole192-row admission
+fails under the frozen rule. Thus **576 top-level rows are admitted, not the
+required1,536**. Four shards make768 guided calls:127/128 attempted tasks succeed;
+another128 planned TRAIN tasks are unattempted. Embedded successful block rows
+in shard7 are preserved evidence, not an admitted replacement scale corpus.
+No successful subset is silently used for fitting, and the later rich candidate
+policy does not retroactively relax this original failure.
+
+The SEQ258 baseline table covers **four of eight shards**,192 episodes and1,111
+calls. Full planned denominators remain TRAIN256 goals/128 pairs and PROBE64
+goals/32 pairs per condition. Unattempted cases are unmeasured, not zeros or
+removed denominators; source-based attrition limits the observed aggregates.
+Shard7's baseline is valid collection-only evidence despite failed teaching
+admission, because its source and unchanged actor remain usable.
+
+SEQ257 totals555 native calls and631.270138 summed phase-seconds, approximately
+0.175353 allocated A40-hours; SEQ258 totals2,519 calls and3,058.891271 phase-seconds,
+approximately0.849692 allocated A40-hours. These are allocated phase costs,
+not parallel wall time or utilization. Both record unchanged37ec adapter/base
+checks and zero optimizer updates. Independent file/hash/capture replay is not
+independent authentication of live model tensors.
+
+**Reporting boundary.** Main reports the separate original1,632-update breadth
+fits still finishing at this cut; no outcome from them is included. Richer-data
+collection is live work reported by Main, while its quality/content review and
+any fit remain prospective here. Neither launch nor candidate retention is a
+result of improved learning. No later diagnostic result, H1/H2, broad transfer,
+parenting-efficiency or full-flywheel promotion is added. Collaborator UNSENT.
+
+Sources: [SEQ257 primary](../research_notes/analysis/2026-09-14_goal_breadth_collection_first_result.md),
+[SEQ257 released independent review](../research_notes/analysis/2026-09-14_goal_breadth_collection_independent_result.md),
+[SEQ258 primary](../research_notes/analysis/2026-09-14_goal_scale_collection_first_result.md),
+[SEQ258 released independent review](../research_notes/analysis/2026-09-14_goal_scale_collection_independent_result.md).
+SEQ257 source`3ddb8a2f168a03c9f19252358fc429bb6f526230`, capsule archive
+`a7ee0b69d392b7d078072c1685f12ffced60346052c6751f4e8eed078375f7de`;
+SEQ258 source`ff1af2c37003fd4f6d38ecbe7660fd94744c0e31`, archive
+`c57a87efedd39b84ff0c316a2cb3d23e4dc26f70c2d4eae44d45409d45eaea0c`.
 
 ### SEQ-247: executable selector material, shared writer — September 14, 2026
 

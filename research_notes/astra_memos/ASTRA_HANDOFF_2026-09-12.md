@@ -1,4 +1,30 @@
-# Astra restart handoff — current override 2026-09-14 18:12UTC
+# Astra restart handoff — current override 2026-09-14 19:06UTC
+
+## CURRENT — breadth fits COMPLETE; rich collection LIVE; quality successor preparing
+
+Both node2 breadth fits finished1632updates and fresh AFTER. FULL TRAIN32/32
+goals16/16pairs versus LOSS_OFF17/32,4/16; PROBE FULL5/8goals1/4pairs versus
+LOSS_OFF6/8,2/4. Both fail declared engineering target; original taught2/4
+in both. Old recall16/16 at both wrappers retained in both; audit15/16 vs16/16.
+Do not refit or promote to autonomous continuation. Capsule2294116da812f48b
+verified under gpu_artifacts_local/astra_goal_breadth_train_terminal_20260914_attempt1/.
+Main writing primary; Ramanujan independently reviewing.
+
+A100 rich root /tmp/astra_rich_collection_20260914_attempt1, source803f59c8:
+guardians136645/136646/136648/136650 live19:02. All80EVENTs valid; allTEACH
+complete but zero candidates, predominantly missing literal PREDICTION label.
+This does NOT establish inability to reason. CRITIQUE/baseline continue;
+Schrodinger owns prospective minimal repair proposal, not changing runningv1.
+No rich fits authorized by collection protocol; content gate pending.
+
+Quality protocolcf742f62: Nash helper/native/tests, Main guard/admission/launch.
+Only29previously untaught source-valid TRAINworlds; reuse756actual rows;
+no newEXPOSE or correction candidates. No quality launches as of19:06.
+SEQ259source correction complete3/4,5calls; primary/independent files ready.
+Parfit owns six draft files; preserve dirty rules and junction packet.
+Node1 expires TODAY23:14UTC; no new work there. MissionACTIVE/INCOMPLETE.
+
+## Historical snapshot — superseded below
 
 ## CURRENT — breadth fits LIVE; scale collection terminal with failed admission
 

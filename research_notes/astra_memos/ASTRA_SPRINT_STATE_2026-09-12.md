@@ -1,4 +1,18 @@
-## Current superseding snapshot — 2026-09-14 18:35UTC
+## Current superseding snapshot — 2026-09-14 19:06UTC
+
+Breadth1632-update fits COMPLETE. FULL TRAIN32/32goals16/16pairs versus
+LOSS_OFF17/32,4/16; PROBE5/8,1/4 versus6/8,2/4. Both engineering FAIL;
+not held-probe improvement over matched control. Old recall32/32 each;
+audit15/16 vs16/16; original graph2/4each; previous fresh4/4 vs3/4.
+Capsule2294116da812f48b locally verified; primary/review in progress.
+Rich A100four guardians live19:02,all80EVENTvalid,TEACHzero candidates
+primarily literal prediction-label gate. Preservev1; critiques/baselines
+continue. Prospective content/action separation proposal delegated.
+Quality successor61source-validTRAINworlds,756reused rows,29newworlds only;
+implementation nearly ready, no native collection yet. Sourcecorrection259
+completed3/4,5calls,no training/promotion. MissionACTIVE/INCOMPLETE.
+
+## Historical superseded snapshot — 2026-09-14 18:35UTC
 
 SEQ258scaleall8terminal. SOURCE316/320EVENTvalid,4copyerrors shards0/1/4/6;
 remaining4TEACH768calls127/128tasks,shard7onewrongroute. Only3emitted192rows
