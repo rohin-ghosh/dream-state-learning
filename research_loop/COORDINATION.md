@@ -19574,3 +19574,29 @@ not weakened to ignore D2; node2GPU0/1 remain reserved for317947. Fresh root
 280D1readout slots, no BASE fit/readout. Full source/tokenizer provenance inherited
 from the paired preparation; original D1 is read ONLY for pairing metadata,
 not used as initialization. Parent removal/H1/H2 remain untested here.
+
+## [Builder] 2026-09-14T06:34Z — CLOSED running; bounded PCHAIN material next in parallel
+
+CLOSED guardian319936/worker319952 on node2GPU2 started06:30:5xUTC, resource
+scan passed; same frozen source86a6ba44. Paired preparation underway, no result
+yet. D2 worker317947 remains onGPU1; no stopping or reassignment.
+
+PCHAIN source/native preparation ready: worker26preparation+24native testsPASS;
+nulls24testsPASS including5actual pinned-SciPy tests. Main uses the existing
+masterASTRA-PCHAIN2-DEV-20260914-A1, seed0, L8role-blind16letter IDs, fixed
+transpositions and taped384updates, no seed redraw. Canaries prospectively fixed
+in receipts_20260912/astra_pchain2_canaries_20260914_v1.json (16generic copy tasks,
+canonical LF; untested, not asserted to pass). Numerical implementation is the
+tested bf16base/fp32LoRA/untouched fp32rotary/AdamW-no-clip recipe, threads1,
+nonreentrant checkpointing; same for all arms.
+
+Run material once on node2 CPU with the official tokenizer, no model/GPU:
+/tmp/astra_pchain2_material_20260914_attempt1/material. Whole180s budget,
+solver60s, per-ID4096salt bound, maxcontext16384. The material command includes
+the tokenizer checks, so no redundant standalone tokenizer-canary pass first.
+Pinned SciPy1.15.3/NumPy1.26.4 copied to a separate /tmp target and imports checked;
+shared model environment untouched and this target will NOT enter training's
+PYTHONPATH. A solver or token-matching failure closes this generator attempt,
+not the developmental mission. Fits require actual complete material plus
+resource checks, not merely source tests. Still a supervised DEV ceiling,
+excluded from authentic child ancestry; PCHAIN does not gate Stage2A/CLOSED.
