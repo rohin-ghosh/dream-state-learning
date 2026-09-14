@@ -119,3 +119,8 @@ members, ignore cross-host uid/gid. New regression proves mismatched UID passes
 unchanged bytes and changed bytes fail. Experiment roster/prompt/oracle/caps
 and claims unchanged. Publishing repair and new archive binding before retry;
 never claim this infrastructure abort as a scientific null.
+
+Repair CPU8/8PASS;sourceac45ae1f,new archive
+2d72d1c35d924cfe5f3249b0218763b55f4dbbbadedfddda547c8f7163ed9143;
+remote all498files byte-verified. Preparing retry only after updated notebook
+publication. Original four guardian PIDs are absent; no process was killed.

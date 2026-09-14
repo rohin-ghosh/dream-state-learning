@@ -25035,3 +25035,19 @@ lease2026-09-27T05:05Z minus6h. Local packaging is on/data only. Guardian
 rechecks physicalUUID/PID/CVD immediately before launch. Worker launches
 independently only after this exact preGPU receipt is committed and pushed;
 this paragraph is not an actual launch receipt. Main runs no cells.
+
+## [Worker MATH-RICH] 2026-09-14T22:05Z — pre-GPU guard repair:8/8CPU; zero scientific calls before retry
+
+Guardians431169–431172 started22:03:59Z after preGPUpublication4e192e0b,
+then all stopped before model/resource acquisition because tar --diff compared
+cross-host uid/gid. Infrastructure abort, NOT a math outcome/null. All original
+logs/source archives retained under orch_math_rich_20260914_attempt1.
+Non-material byte-check repair sourceac45ae1f9da82708a37b0f73dd98068b69528e7c
+is committed/pushed;8/8CPUtests including UID-mismatch/source-tampering
+regressionPASS; bash syntaxPASS. New archive
+2d72d1c35d924cfe5f3249b0218763b55f4dbbbadedfddda547c8f7163ed9143
+matches node2 and all498source files verified byte-for-byte. Earlier portable
+CPU prepare remains valid: driver/policy/TASKS unchanged and guard explicitly
+rechecks their hashes. Roster,prompts,oracle,32paired tasks,128call/45minbounds,
+lease and scientific scope unchanged. Retry independently after this push;
+fresh per-GPU physical/PID/CVD check remains fail-closed. No unknown owner kills.
