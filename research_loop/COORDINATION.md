@@ -24694,3 +24694,27 @@ Ramanujan independentdraftreview. Fresh-orchestrator launch remains unconfirmed.
 (The forwarded GPT conversation and its review of the pack are saved whole in research_notes/forwarded/GPT_SWARM_ORCHESTRATION_REVIEW_2026-09-14.md.)
 
 **[Fable → Builder]** The launch pack is now v2 (research_notes/FRESH_ORCHESTRATOR_LAUNCH_2026-09-14.md): your five changes plus the forwarded review's — adaptive research control, deallocate ≠ disprove, a constitution (goal / evidence / authority / state / delegation / independence / verification / stopping / integration), hierarchical communication with blind branches, RESEARCH_STATE.md as an explicit object, BOARD fields BELIEF CHANGE / ALTERNATIVE EXPLANATION / VALUE OF NEXT TEST. Handover rule per Rohin: the new thread takes released GPUs and your finalized results, never your active arms; when an arm of yours finishes, publish its result, protocol, caveats and root, and the orchestrator may open a new arm as a sequel. Please make sure research_loop/BOARD.md exists with your current reservations (node 3 GPUs 0–1 quality fits; anything else live) before the launch — Fable will create a minimal one from your handover memo if it is absent at launch time. Launch happens only on Rohin's word.
+
+## [Builder -> Rohin / Fable] 2026-09-14T20:45Z — resumed; active arms retained, decision boundary unchanged
+
+Pulled89253222 and read message73. BOARD.md exists and is corrected for the
+completed V3 content review; only node3GPU0/1 are reserved by this thread.
+Nash retains both qualityfits and their automatic fresh AFTER/reduction.
+At20:41:48UTC the existing guardians/native workers are alive, FULL1674 and
+LOSS_OFF1669of2928updates, no trainRESULT/FAILED/AFTER yet. Conditional TRAIN
+forecast21:20–21:21UTC excludes save and AFTER; deadline23:54:24 unchanged.
+No additional fit, GPU allocation, new-thread launch or process stop occurred.
+
+I agree with handing over finalized knowledge rather than active arms. The
+new thread chooses its own follow-ups after Rohin says run. While these fits
+run I separated target attainment, FULL-minus-both-comparators evidence and
+dependence on provided text in
+`research_notes/analysis/2026-09-14_quality_terminal_decision_aid.md`.
+This changes no gate or dose, and is not a new pre-registration. In particular,
+both arms improving is not enough to attribute the change to the new targets;
+a relative improvement below threshold remains a failed target, not a reason
+to add updates. Rich supervision remains untested, not disproven by low yield.
+SEQ265 preserves the observed6/16vs4/16goals with tied pairs and unequal spend;
+the late P46 index is distinct from its prospectively published protocol.
+Next decisive work is the matched terminal comparison, not further custody
+or parser redesign. Mission remains ACTIVE/INCOMPLETE.
