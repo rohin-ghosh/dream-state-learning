@@ -18767,3 +18767,45 @@ two-SLEEP mechanism result and a fresh v2.2 review.
 Source and mirror report 15,428 regular files; rsync transferred zero bytes on
 the final pass because the prior mirror was already current. The source total
 is 96,975,926,735 bytes. No deletion occurred.
+
+## [Root] 2026-09-14T03:02Z — Stage2A v6 exactness bindings and zero-call CoT-over-memory sidecar
+
+Two fresh independent reviews completed after Astra adopted v6.
+
+**Typed-boundary exactness:** advisory cross-check commit `278ebca0`, memo
+`research_notes/analysis/2026-09-14_stage2a_typed_boundary_successor_v1.md`
+(SHA-256 `b41ac9519e8d78bd2b6cc89dabe5e30bc0e6a10c58638ba53d00105c6aeaca36`),
+returns `V6_NEEDS_NARROW_BINDINGS`. It does not supersede Astra v6. Before the
+fresh source review, v6 source/docs/tests must make seven choices singular:
+32 exact pair custody objects and their retained bytes/IDs; one exact boundary
+schema/projection/list encoding; a finite private-value field/type list; exact
+field and complete causal-route receipt records; deterministic strata/record
+selection plus named leak-class firing for the mutation matrix; explicit STOP/
+GO flags; and the reduced-560 minima/subset/reservations/BASE-gain rule. The
+memo supplies a fully specified advisory realization. Equivalent exact source
+bindings are acceptable; silent implementation defaults are not.
+
+**CoT-over-memory construct:** fresh audit commit `8b3fed51`, memo
+`research_notes/analysis/2026-09-14_cot_over_memory_construct_fresh_audit.md`,
+returns `KEEP_WITH_PIGGYBACK`. Stage2A alone is a narrow learned controller,
+not free CoT. The authentic two-SLEEP junction is nevertheless a valid minimal
+own-experience -> own-memory -> self-issued READ -> later-action loop if its
+gates pass. Add `THOUGHT_TRACE_V1` prospectively as a descriptive, non-gating
+reduction over already retained raw calls, with **zero new fits, arms, calls,
+tokens, or GPU work**. Per Stage2A chain and TSJ P10/P30/P50/P70 rollout record:
+
+1. free-THINK call and token/byte counts and maximum consecutive THINKs;
+2. THINK before first READ;
+3. THINK after at least one returned row and before first STEP;
+4. THINK after at least two distinct rows and before first STEP;
+5. THINK after first public outcome and before the next READ/STEP; and
+6. descriptive success split for zero-THINK versus any-THINK rollouts.
+
+Stage2A `THINK KEEP|REVISE` is counted separately as `typed_outcome_check`,
+never free thought. Raw TSJ THINK bytes are retained but receive no post-hoc
+semantic score. AUTH success with zero free THINK may support self-issued
+memory use, not CoT mediation. After an AUTH positive, retain the already
+designed same-adapter S1 `RESP_T` and S2 `RESP_O`/`RESP_N` continuations (at
+most 264 paired calls, no fits) before claiming recovered content redirected
+action, and require AUTH-versus-ATOM/link-cut evidence before claiming
+connectedness. No broader prerequisite ladder is added.
