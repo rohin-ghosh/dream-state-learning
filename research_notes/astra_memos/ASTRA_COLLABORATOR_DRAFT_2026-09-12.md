@@ -4,41 +4,36 @@
 
 Can developmental teaching help an agent choose experience and use it after
 learning? We study persistent LoRA adapters on frozen Qwen2.5-7B-Instruct.
-Matched lesson-gradient masking previously isolated parent-free reader-audit
-classification: 16/16 versus 7/16 held cases.
+Matched lesson-gradient masking isolated parent-free reader-audit classification:
+16/16 versus7/16 held cases.
 
-A fresh same-family bank now extends the repaired taught child (A3, SEQ-245).
-One shared four-event collection, BEFORE and audit precedes selected/uniform
-forks, each trained for 100 updates. Both improve routing 1/4 to 4/4 and exact
-W0/W8 recall 0/4 to 4/4, retain twelve prior facts, and preserve classifier
-16/16.
+A fresh same-family continuation (SEQ-245) improves single-hop routing1/4 to4/4
+and recall0/4 to4/4 in selected and uniform forks, retaining twelve facts and
+classifier16/16. Uniform matches selected. In a shared-writer control (SEQ-247),
+the earlier OFF auditor's valid pointers yield recall1/4 and routing3/4, with
+retention intact. Its six invalid E_id placeholders limit semantic attribution:
+this is executable-material utility, not whole-life parenting or superiority
+over uniform. The selectors used postselected, source-scaffolded prompts.
 
-Uniform matches selected; both include all four facts, with unequal per-fact
-and token doses. The original wrapper failure and two invalid routes remain
-recorded; completed collection was reused. Unseen MISS remains 0/4. This is
-one externally scheduled lineage, not independent replication, H1/H2 or an
-autonomous learning-rate improvement.
+Independently verified connected two-hop readouts now remain0/4 in every
+condition (SEQ-248/249). Initially no reads/actions occur; a turn-bound revision
+enables reads, but all four own-text episodes emit a goal node instead of a
+port. No connected-memory write occurred. This exposes an action-interface gap,
+not composition impossibility or evidence of parametric-memory failure.
 
-Postselected, source-scaffolded zero-fit replay on identical A3 prompts yields
-original SFT/control exact source-valid fault outputs8/8 versus2/8, true4/6 both
-(SEQ-246; independently reduced), not isolated semantic judgment,
-on-policy evidence or selection utility.
-
-One material-only control using the earlier OFF auditor's valid pointers in
-the same taught writer yields recall1/4 and routing3/4 versus reused4/4 in
-both references (SEQ-247), retaining twelve facts and classifier16/16.
-Invalid placeholders constrain semantic interpretation; this is not a whole-life
-parenting comparison.
-
-Next tests should separate selection utility from coverage and assess
-independent-family recurrence and retention. We seek collaborators on those
-controls and field-sensitive failure analysis. This message remains unsent.
+One lineage, unequal doses and external scheduling remain; prior unseen MISS
+is0/4 and failures are preserved. No H1/H2 or autonomous learning-rate improvement
+is established. We seek collaborators on executable connected-action controls,
+independent-family recurrence and retention. Unfinished coaching outcomes are
+excluded. This message remains unsent.
 
 ## Supporting notes—not part of message
 
 **Evidence-backed working update — UNSENT.** No message has been sent.
 
 **September 14, 2026 result update — research question unresolved.**
+SEQ-248–249 connected readouts are independently verified COMPLETE; no
+unfinished coaching or later-fit outcomes are included.
 SEQ-247 shared-writer material control is terminal and independently reduced.
 SEQ-246 matched replay is terminal and independently reduced.
 A3 SEQ-245 is terminal and independently reduced: six stages, one matching
@@ -54,6 +49,60 @@ The sprint TeX and companion abstract are updated; canonical
 `paper_prototype/main.tex` was updated separately by Main.
 No complete cross-draft review is claimed. The collaborator draft stays UNSENT;
 H1/H2 and the program remain open.
+
+### SEQ-248–249: connected readout, no goal arrival — September 14, 2026
+
+**Both independently reduced COMPLETE.** [Original readout](../analysis/2026-09-14_event_two_hop_first_result.md)
+and [turn-bound successor](../analysis/2026-09-14_event_two_hop_turnbound_first_result.md)
+use the SEQ245 SELECTED parent, not a new learner. SEQ248 collects4/4 actual
+receipt-grounded EVENTs in8 calls on a genuinely connected new world: one graph,
+two final goals, two display orders, not four independent worlds. SEQ249 reuses
+that same collection and parent. Both are zero-fit readouts; no new-memory write.
+
+| Condition | SEQ248 goals /4; reads; legal routes | SEQ249 goals /4 | SEQ249 actor calls | Service reads | Legal routes |
+| --- | --- | ---: | ---: | ---: | ---: |
+| ON_PARAMETRIC | 0;0;0 | 0 | 21 | 16 | 1 |
+| ON_OWN_TEXT | 0;0;0 | 0 | 14 | 10 | 0 |
+| ON_UNAVAILABLE | 0;0;0 | 0 | 24 | 16 | 4 |
+| OFF_OWN_TEXT | 0;0;0 | 0 | 11 | 3 | 5 |
+
+SEQ248 uses4 actor calls/condition,16 total. Each mounted condition emits three
+invalid multi-command continuations and one nonterminal/truncated continuation;
+OFF emits four node-valued ROUTE commands. The13 invalid-command and3
+nonterminal/truncated failures contain no actual memory access or committed
+action. Simulated multi-turn output is not an environment receipt, and the
+memory-condition contrast was never exercised.
+
+SEQ249's explicit single-command turn rule enables real service reads but no
+physical goal arrival. All four ON_OWN_TEXT episodes read exact stored records
+(1,4,3,2 respectively), then emit `ROUTE <goal-node>`, not a port, and commit
+nothing. ON_PARAMETRIC ends3 invalid-command/1 duplicate-address; its16 reader
+answers concern facts never trained into memory. ON_UNAVAILABLE has4 duplicate
+addresses; OFF has2 invalid-route,1 dead-end,1 duplicate-address, including one
+two-move episode ending at the wrong goal. All failures remain unchanged.
+The86 new native calls comprise70 actor+16 parametric-reader calls; text and
+unavailable services are not additional model forwards.
+
+Prior successes through247 are **single-hop**; connected capability remains
+open. Read availability is not usable action selection. Wrong argument typing
+remains an alternative to a path-inference failure, and absent memory writing
+precludes treating this as failed parametric acquisition. No composition
+impossibility, H1/H2, independent-world or parenting-efficiency claim follows.
+The247 same-writer/off-policy/invalid-pointer limits remain; no coaching or
+later-fit outcomes are included. Base and adapter read-only receipts pass;
+parent state stays `207ad43ef65f1f6ba7c50d37f5d5dfa8c2253d1cb301e585d7b6b7a78bb93990`.
+
+Sources: SEQ248 `e41439989de59858cd6d36fdd400a26c3dd1a12d`, SEQ249
+`5dd5625fbefb6ea4915c5eeb2a471f58bc898ffc`. Raw `readout/RESULT.json` and episode
+captures reside under `gpu_artifacts_local/astra_event_two_hop_terminal_20260914_attempt1/extracted/`
+and `gpu_artifacts_local/astra_event_two_hop_turnbound_terminal_20260914_attempt1/extracted/`;
+the latter retains `collection_source/`. Adjacent independent receipts:
+`SEQ248_independent_reduction_20260914.json` SHA256
+`4bd6942c1441c232e0d07ea1b7d19fd23fa8aec24e3f95464698ebefe7a123d4`;
+`SEQ249_independent_reduction_20260914.json` SHA256
+`270b1e08a52371b6a79aa95c16953c741cd63242b806c1e88d54a6a33c535249`.
+Both hashes/statuses checked locally; earlier pending memo wording is superseded
+by these receipts. No model replay or tensor authentication was performed here.
 
 ### SEQ-247: executable selector material, shared writer — September 14, 2026
 

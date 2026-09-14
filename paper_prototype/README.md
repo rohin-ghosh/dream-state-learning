@@ -20,7 +20,8 @@ or layout validation is claimed. Primary sources, scope and receipt:
 Dated statements below about unresolved TODO keys describe earlier snapshots.
 
 **Ongoing first-sprint working draft — research question unresolved.**
-Canonical `main.tex` now includes independently reduced SEQ-247 material-only
+Canonical `main.tex` now includes independently verified SEQ-248–249 connected
+readouts and independently reduced SEQ-247 material-only
 control and terminal SEQ-246 matched replay
 (independently reduced), separately from A3 SEQ-245 (independent six-stage reduction complete),
 with SEQ-241, SEQ230 and
@@ -42,6 +43,60 @@ same-adapter second-sleep comparison supports bounded parent-free retrieval;
 the first adult write/use comparison is complete, with an explicit W8 reader
 failure and a separately reported no-fit W0 interface repair.
 The full sprint remains incomplete. No G3/H1/H2, parenting or freeze promotion.
+
+## SEQ-248–249: connected readout, no goal arrival — September 14, 2026
+
+**Both independently reduced COMPLETE.** [Original readout](../research_notes/analysis/2026-09-14_event_two_hop_first_result.md)
+and [turn-bound successor](../research_notes/analysis/2026-09-14_event_two_hop_turnbound_first_result.md)
+use the SEQ245 SELECTED parent, not a new learner. SEQ248 collects4/4 actual
+receipt-grounded EVENTs in8 calls on a genuinely connected new world: one graph,
+two final goals, two display orders, not four independent worlds. SEQ249 reuses
+that same collection and parent. Both are zero-fit readouts; no new-memory write.
+
+| Condition | SEQ248 goals /4; reads; legal routes | SEQ249 goals /4 | SEQ249 actor calls | Service reads | Legal routes |
+| --- | --- | ---: | ---: | ---: | ---: |
+| ON_PARAMETRIC | 0;0;0 | 0 | 21 | 16 | 1 |
+| ON_OWN_TEXT | 0;0;0 | 0 | 14 | 10 | 0 |
+| ON_UNAVAILABLE | 0;0;0 | 0 | 24 | 16 | 4 |
+| OFF_OWN_TEXT | 0;0;0 | 0 | 11 | 3 | 5 |
+
+SEQ248 uses4 actor calls/condition,16 total. Each mounted condition emits three
+invalid multi-command continuations and one nonterminal/truncated continuation;
+OFF emits four node-valued ROUTE commands. The13 invalid-command and3
+nonterminal/truncated failures contain no actual memory access or committed
+action. Simulated multi-turn output is not an environment receipt, and the
+memory-condition contrast was never exercised.
+
+SEQ249's explicit single-command turn rule enables real service reads but no
+physical goal arrival. All four ON_OWN_TEXT episodes read exact stored records
+(1,4,3,2 respectively), then emit `ROUTE <goal-node>`, not a port, and commit
+nothing. ON_PARAMETRIC ends3 invalid-command/1 duplicate-address; its16 reader
+answers concern facts never trained into memory. ON_UNAVAILABLE has4 duplicate
+addresses; OFF has2 invalid-route,1 dead-end,1 duplicate-address, including one
+two-move episode ending at the wrong goal. All failures remain unchanged.
+The86 new native calls comprise70 actor+16 parametric-reader calls; text and
+unavailable services are not additional model forwards.
+
+Prior successes through247 are **single-hop**; connected capability remains
+open. Read availability is not usable action selection. Wrong argument typing
+remains an alternative to a path-inference failure, and absent memory writing
+precludes treating this as failed parametric acquisition. No composition
+impossibility, H1/H2, independent-world or parenting-efficiency claim follows.
+The247 same-writer/off-policy/invalid-pointer limits remain; no coaching or
+later-fit outcomes are included. Base and adapter read-only receipts pass;
+parent state stays `207ad43ef65f1f6ba7c50d37f5d5dfa8c2253d1cb301e585d7b6b7a78bb93990`.
+
+Sources: SEQ248 `e41439989de59858cd6d36fdd400a26c3dd1a12d`, SEQ249
+`5dd5625fbefb6ea4915c5eeb2a471f58bc898ffc`. Raw `readout/RESULT.json` and episode
+captures reside under `gpu_artifacts_local/astra_event_two_hop_terminal_20260914_attempt1/extracted/`
+and `gpu_artifacts_local/astra_event_two_hop_turnbound_terminal_20260914_attempt1/extracted/`;
+the latter retains `collection_source/`. Adjacent independent receipts:
+`SEQ248_independent_reduction_20260914.json` SHA256
+`4bd6942c1441c232e0d07ea1b7d19fd23fa8aec24e3f95464698ebefe7a123d4`;
+`SEQ249_independent_reduction_20260914.json` SHA256
+`270b1e08a52371b6a79aa95c16953c741cd63242b806c1e88d54a6a33c535249`.
+Both hashes/statuses checked locally; earlier pending memo wording is superseded
+by these receipts. No model replay or tensor authentication was performed here.
 
 ## SEQ-247: executable selector material, shared writer — September 14, 2026
 
