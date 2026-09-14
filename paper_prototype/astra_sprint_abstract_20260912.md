@@ -3,48 +3,47 @@
 ## Abstract
 
 We ask whether developmental teaching produces durable, adapter-mediated
-learning-process competence on task-disjoint situations after reload and
-teacher/context removal (H1), and whether it improves learning from new,
-self-generated, externally grounded experience on unseen verifiable tasks
-through continued consolidation (H2). Both remain proposed questions. We study
-frozen Qwen2.5-7B-Instruct with learning confined to LoRA adapters.
+learning-process competence after reload and teacher/context removal (H1), and
+improves learning from new, self-generated, externally grounded experience
+through continued consolidation (H2). Both remain open. We study frozen
+Qwen2.5-7B-Instruct with learning confined to LoRA adapters.
 
-SEQ230 and SEQ236 remain separate. Matched lesson-gradient masking isolates parent-free
-reader-audit classification: 7/16 to 16/16 versus unchanged control (SEQ-239),
-not a generic parenting advantage across different DEV and held tasks.
+Matched lesson-gradient masking yields parent-free reader-audit classification
+16/16 versus7/16 (SEQ-239), not generic parenting advantage across different
+tasks. Fresh same-family selected/uniform forks both improve single-hop routing
+1/4 to4/4 and recall0/4 to4/4, retaining twelve facts and classifier16/16
+(SEQ-245). Uniform matches selected. Postselected source-scaffolded audit replay
+produces six invalid control pointers (SEQ-246); using only its valid pointers
+in the same taught writer yields recall1/4 and routing3/4 versus reused4/4
+references (SEQ-247). This off-policy material intervention does not isolate
+semantic judgment or whole-life parenting.
 
-In a fresh four-event same-family continuation (SEQ-245), selected/uniform
-forks each receive 100 updates. Both improve single-hop routing 1/4 to 4/4
-and exact W0/W8 recall 0/4 to 4/4, retain twelve facts and classifier16/16.
-Uniform matches selected; both materials cover all four facts.
+Connected readouts initially fail0/4 (SEQ-248/249). Sleep on twelve actual
+source-guided responses yields own-text goals3/4 on taught and fresh-identifier
+graphs versus0/4 original (SEQ-250/251), with unchanged topology and third-party
+ORIGINAL context. Trajectory-label masking yields0/4 on both graphs (SEQ-252),
+but old recall falls to11/16 and audit15/16: rehearsal competence is unmatched.
 
-Postselected, source-scaffolded zero-fit replay yields original SFT/control
-executable fault outputs8/8 versus2/8, true4/6 both (SEQ-246). The control's
-six invalid placeholders do not isolate semantic judgment. Using its valid
-pointers in the same taught writer yields recall1/4 and routing3/4 versus
-reused4/4 in both references, retaining twelve facts and classifier16/16
-(SEQ-247). This is an off-policy material intervention, not whole-life parenting.
+A subsequent mixed write yields exact new recall4/4 at W0/W8 and16/16 actual
+parametric responses without text fallback (SEQ-253). Parametric goals rise0/4
+to2/4; fresh own-text falls3/4 to2/4, unavailable remains0/4, and old recall16/16,
+audit16/16 and taught-text3/4 remain. Tasks0/2 take identical routes despite
+opposite goals; task3 skips the intermediate step. A CPU-executed, goal-blind
+first-available-port baseline also wins exactly tasks1/2 (2/4). Post-hoc
+opposite-goal pairs solved fall1/2 to0/2 versus251 text; task denominators
+remain primary. This is a partial operational parametric connection,
+not reliable goal-directed composition.
 
-Connected readouts initially fail0/4 (SEQ-248/249). Source-guided sleep on12
-actual coached responses then improves parent-free own-text goals0/4 to3/4:
-trained displays2/2, reversed1/2, with old recall16/16 and audit16/16 (SEQ-250;
-independent review PASS). Parametric/unavailable/OFF goals remain0/4; exact
-new-graph reads0/16. No graph EVENT targets were trained. Joint rehearsal
-does not isolate trajectory supervision: this is persistent contextual
-interface improvement on one taught graph.
-
-Original failures remain evidence. Unseen MISS stays0/4 in the prior single-hop
-assays; unequal doses, repeated views, supplied scaffolds and one externally
-scheduled lineage preclude independent replication, selection superiority,
-H1/H2 or autonomous learning-rate claims. Fresh-identifier transfer is3/4 versus0/4 (SEQ-251): unchanged topology,
-third-party ORIGINAL context, no fresh parametric write; task3 skips the
-intermediate step.
+Bounded independent reviews PASS. Repeated reads of four facts, one
+DEV topology/lineage, mixed writes, external scheduling and preserved failures
+preclude replication, selection-superiority, H1/H2 or autonomous learning-rate claims.
 
 ## Supporting evidence notes—not part of the abstract
 
 **September 14, 2026 result update — research question unresolved.**
-SEQ-251 fresh-identifier transfer is terminal with independent review PASS; the
-combined248–251 section retains prior failures. Follow-up designs are not results.
+SEQ-252/253 control and memory write are terminal; both bounded independent
+reviews PASS. The combined248–253 section preserves earlier failures
+and the first-branch-baseline limit; no later replay outcome is included.
 SEQ-247 shared-writer material control is terminal and independently reduced.
 SEQ-246 matched replay is terminal and independently reduced.
 A3 SEQ-245 is terminal and independently reduced: six stages, one matching
@@ -63,7 +62,7 @@ active abstract. The UNSENT collaborator draft and claim map also include termin
 No complete cross-draft review is claimed. The collaborator draft stays UNSENT;
 H1/H2 and the program remain open.
 
-### SEQ-248–251: connected learning and identifier transfer — September 14, 2026
+### SEQ-248–253: connected learning, controls and parametric connection — September 14, 2026
 
 **Both independently reduced COMPLETE.** [Original readout](../research_notes/analysis/2026-09-14_event_two_hop_first_result.md)
 and [turn-bound successor](../research_notes/analysis/2026-09-14_event_two_hop_turnbound_first_result.md)
@@ -200,9 +199,9 @@ nodes as ROUTE arguments; unavailable panels fail by duplicate reads.
 This supports partial contextual identifier/world-instance transfer, not mere
 memorization of taught IDs, new-topology generalization or generalized planning.
 It remains one graph/lineage and a mixed-sleep versus no-write comparison, not
-trajectory-gradient versus matched rehearsal or whole-life parenting. No fresh
-graph was written into parametric memory. The two follow-up control/write
-designs are pending, not results; SEQ247 limits and H1/H2 boundaries remain.
+trajectory-gradient versus matched rehearsal or whole-life parenting. At251 no
+fresh graph had been written into parametric memory;252/253 below report the
+subsequent control/write, with SEQ247 limits and H1/H2 boundaries unchanged.
 There are93 calls (8collection+47taught+38original), zero fits; native state/base/
 file checks pass at unchanged37ec/207ad. Independent source/call/archive joins
 are not fresh tensor authentication. Attempt1's archived-source guard failed
@@ -212,6 +211,75 @@ Source `7db26bec1b419d5bb2548dcdec82cdc4f0adca29`; raw collection and
 `gpu_artifacts_local/astra_event_two_hop_transfer_terminal_20260914_attempt2/extracted/`.
 Sibling `terminal.tar.gz` SHA256 (locally checked):
 `571296869ce7f3cd855c4700bdbed2555c28b4a8e915919a12fa5d668fa44036`.
+
+**SEQ252–253: trajectory-label control and parametric connection; bounded independent reviews PASS.**
+The released control review passes artifact joins, masks, schedule and loss
+scaling; the memory review independently checks saved traces and read-to-actor
+joins. These supersede the primary memos' earlier pending-review status, not
+an independent recomputation of live base/adapter tensor hashes.
+
+| Endpoint | Full sleep / before write (reused250/251) | SEQ252 trajectory-loss-off | SEQ253 mixed write |
+| --- | ---: | ---: | ---: |
+| Taught graph OWN_TEXT goals | 3/4 | 0/4 | 3/4 |
+| Fresh graph OWN_TEXT goals | 3/4 | 0/4 | 2/4 |
+| Fresh PARAMETRIC goals | 0/4 (measured253 BEFORE) | Not measured | 2/4 |
+| New exact recall W0/W8 each | 0/4 (measured253 BEFORE) | Not measured | 4/4 |
+| Old exact recall W0/W8 each | 16/16 | 11/16 | 16/16 |
+| Held source-scaffolded audit | 16/16 | 15/16 | 16/16 |
+
+SEQ252 starts the original207ad parent and masks only trajectory labels in
+rows210–221 of the same222 saved rows. Inputs,100 batch-index tuples and common
+labels remain matched to250; each batch preserves its full-reference loss
+denominator (5,977 active labels /8,245 summed reference labels). All eight
+own-text episodes emit goal NODEs as ROUTE arguments, with no commits; original
+parametric/unavailable/OFF and fresh unavailable goals remain0/4. The action
+contrast supports trajectory-target contribution beyond matched rehearsal on
+this recipe, **not an isolated skill-only effect**: five old facts and one audit
+case are lost. Full endpoints are reused, not refit; optimizer trajectories and
+achieved rehearsal competence differ.
+
+SEQ253 starts taught37ec, not the ablated child. Four actual251 EVENT records
+supply32 query-wrapper views. One100-update mixed write presents100 old-memory,
+100 behavior (including trajectory replay) and200 new-memory rows,50 per new
+fact:16,175 supervised labels,254 source rows. Same rank8/frozen base,
+fresh AdamW3e-5 and seed0; no new teacher, collection or automatic refit.
+Separate BEFORE/TRAIN/AFTER phases bind a fresh saved-adapter reload to9d36.
+All16 in-episode parametric outputs exactly match the four records (final-LF
+canonicalization); the reader gets only an address, not goal/graph/context or
+stored-text fallback. Actual outputs reach the actor unchanged, using the same
+adapter. These are repeated reads of four facts, not sixteen independent memories.
+
+PARAMETRIC and OWN_TEXT commands match taskwise; tasks1/2 succeed with four
+reads and two legal commits each. Task0 takes two legal edges to the wrong goal;
+task3 selects a genuine second-edge port at the root and commits nothing.
+**Tasks0/2 take identical routes despite opposite goals. Main's CPU-executed
+first-available-port baseline also scores2/4, winning exactly tasks1/2.**
+The goal-blind comparator never READs and makes two legal moves on every task,
+with zero model calls/fits: a diagnostic, not another learned arm. Its task3
+failure reaches the wrong goal rather than skipping a step. Post-hoc pairing
+of opposite goals under each display order, tasks(0,2) and(1,3), yields both
+members solved in0/2 pairs after253 versus1/2 for251 taught text. This is
+**descriptive**, not a replacement for the primary four-task denominator or
+evidence of goal-directed memory use. UNAVAILABLE remains0/4. Exact record acquisition and
+its operational connection to multistep action are observed, not reliable
+goal-directed composition. The mixed write does not isolate memory gradients;
+fresh-text3/4→2/4 is a regression against reused251, not a contemporaneous
+no-write rerun. Taught-text3/4 and old16/audit16 remain. Neither this written
+instance nor a source-scaffolded audit is unseen-world generalization or
+in-loop autonomous truth checking. SEQ247's material/semantic limits and all
+248–251 failures remain; no later replay result is included.
+
+Sources: control `4f1d7b689e7892d989cb97e6406d5c80d9bfb6a8`, memory
+`7c773aacaf0c6a47f510d6f38459ac8270521335`. Primary and released reviews:
+- [lesson control first result](../research_notes/analysis/2026-09-14_event_two_hop_lesson_control_first_result.md)
+- [lesson control independent result](../research_notes/analysis/2026-09-14_event_two_hop_lesson_control_independent_result.md)
+- [memory first result](../research_notes/analysis/2026-09-14_event_two_hop_memory_first_result.md)
+- [memory independent result](../research_notes/analysis/2026-09-14_event_two_hop_memory_independent_result.md)
+Raw capsules are `gpu_artifacts_local/astra_event_two_hop_lesson_control_terminal_20260914_attempt1/extracted/`
+and `gpu_artifacts_local/astra_event_two_hop_memory_terminal_20260914_attempt1/extracted/`.
+Their sibling archive SHA256 values are respectively
+`602454f836ed759648711af80f6a54cf254aa4b7a13af1529caa0853b305e35c` and
+`82313377e0a72f79ebb6a1cca2439f27a54b97718ce2db6fd6aaf8ed190ba7e4`.
 
 ### SEQ-247: executable selector material, shared writer — September 14, 2026
 
