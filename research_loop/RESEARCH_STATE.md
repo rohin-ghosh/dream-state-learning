@@ -1,6 +1,6 @@
 # Research state — Orchestrator
 
-Updated September14,2026,23:25UTC. ACTIVE / INCOMPLETE. Current synthesis,
+Updated September14,2026,23:31UTC. ACTIVE / INCOMPLETE. Current synthesis,
 not an experiment transcript. Prior detailed state remains in git66d134c5
 and the append-only notebook; no evidence, failed denominator or raw directive
 is deleted by this compaction. BOARD owns current GPU allocations.
@@ -8,7 +8,10 @@ is deleted by this compaction. BOARD owns current GPU allocations.
 ## Objective, steering and invariants
 
 Read launch pack in order in the initial orchestration; continued from durable
-handoff. Raw42–80 authoritative;79read22:57,80read23:10 from3d2da5e8.
+handoff. Raw42–83 authoritative;79read22:57,80read23:10;81/82read23:27
+after upstream reconciliation(acf15f0e). Message82 ARRIVED23:25, not its
+approximate~23:30spoken-time heading.83read23:31 from39c15c90,arrival23:30.
+Both newest steers acted on this cycle; no prior-richness/promotion hold.
 Read new relays every cycle; full raw-message reread due23:50UTC.
 Raw80 relay estimates~23:15 but arrived23:08:37; actual arrival/read times govern.
 
@@ -192,7 +195,12 @@ collection unblocked, no automatic expansion or lowering1000floor. Conservative
 46/64prior makes1000yield less assured. A new paired instruction test asks for
 an explicit numerical consistency check, retaining the same semantic standard.
 
-## New allocation after this evidence: CHECK-CONTRACT
+## Superseded allocation: CHECK-CONTRACT (NOT launched)
+
+Raw82 immediately takes priority. This unstarted screen is deferred; no worker
+was spawned and no GPU/model call occurred. A1000–3 go to L2-GUIDED below.
+Keep the prospective idea, not its reservation. Existing mining, breadthfit and
+already-assigned ORACLE-REPAIR continue independently.
 
 The largest unresolved loss is initial-rich admission, not answer correctness.
 On64fresh L1 mining math tasks(16/family), compare exact oldrich instruction
@@ -277,6 +285,75 @@ to declare a mechanism false. No further identical screens are queued.
   No fit, newheldpool or L2claim. Node3 4/5remain reserve.
 
 ## Guided-loop integration and families
+
+### Raw81/82 — start the existing child in Level2 NOW
+
+Rohin explicitly selects266FULL/273child for a guided Level2 test; no waiting
+for a richmathfit, another trainingseed, richcorpus threshold or child-promotion
+ceremony. This is experimental use of the named artifact, not a retrospective
+claim that it satisfied every oldgate. Facts:266used61eligibleTRAINworlds and
+terse targets;273was8newheldworlds/16pairs;278does NOT show richreasoning
+installed (7/16success,1/16qualified). Explain that distinction to Rohin.
+
+L2 is preschool/learner-centric: per-sleep fresh-task gain, quality/use of own
+records, meaningful feedback use, repeated-probe cohesion/retention, failures
+and possible acceleration; not merely maximizing environment score. L3 is
+longer-horizon outcome tests. L4 means no special preparatory tuning to the
+deployment benchmark; H2 still requires testing continued own-experience sleep,
+not silently turning that learning off because of a paraphrase of81.
+
+Parent is an actual conversational evaluator, not canned rejection only. Child
+sees complete parent messages during experience/reflection. Parent can initiate
+or respond, discuss the learning system and use full NONSEALED experience,
+public learner telemetry and context; no keys/hostnames or sealedscores enter
+its context. It may decline a speaking opportunity; log all choices/messages.
+Teacher text still removed/masked at training; parent absent at fresh readouts.
+High-level feedback and morecontext do not authorize changing frozenbase or
+revealing sealed evaluation. ORACLE-REPAIR remains a separate narrow test, NOT
+the definition of parenting and NOT a prerequisite to this loop.
+
+**Allocation amended immediately by83:** two independent parenting workers,
+one shared three-sleep batch on the exact existingFULLcheckpoint. SHORT owns
+A1000(GUIDED+SLEEP),2(sharedFROZEN),3(sharedUNPARENTED+SLEEP); LONG owns
+A1001(LONG_GUIDED+SLEEP).12hours/48GPUh total. Shared starting child, cohort,
+source/readout contracts and controls; all four learner lanes on samehardware.
+SHORT owns shared protocol/cohort/control artifacts, LONG its disjoint lane.
+Parents use an existing authorized evaluator runtime, not another leasednode.
+SHORT chooses episode-local/dense steering; LONG chooses cross-episode/sleep
+cohesion/sparse steering, with at leasttwo declared involvement scales. Exact
+message/token caps frozen beforecalls. Both are conversational parents,
+not scripted answers. More mixed variants are adaptive, not obligatory now.
+Start real guided collection after
+ownCPU/provenance/preGPU publication while native training-seam integration
+continues independently. No serial Main/reviewer approval. Main executes no
+cells. Node2 0–3 andnode3 4/5 reserve remain available for a separate justified
+arm; CHECK-CONTRACT never acquires them by default.
+
+Prospective envelope:<=32experienceworlds/cycle and<=16freshheldworlds/readout,
+threecycles plusinitialreadout; exact cohort/call/dose/optimizer protocol frozen
+by worker before newcalls,<=20000all modelcalls and<=6000updates/sleep/arm.
+All oldheld273/266worlds excluded from teaching; distinct named L2route scope
+alreadydesignated. Identical task distribution/budgets across arms; no parent
+at sealed fresh readouts. Fourpresentations of actual admissible newtargets
+plusoldrehearsal is starting dose, freshAdamW eachsleep; actual counts/yields
+may differ naturally and must be disclosed. Never pad or discard zero-yield/
+unchanged-weight cycles to fit a helper's fixed-count assumptions; preserve
+them with no-update readouts. No guaranteed success/acceleration inferred from
+continuity or a task ceiling. Learner-centricmetrics and outcome/retention
+counts are both reported; negative or ceiling-limited results remain visible.
+
+SHORT owns orch_l2_guided* and shared orch_l2_shared* protocol/driver/guardian/
+tests; LONG owns orch_l2_long* only. OldBuilder retains orch_guided_native*
+loading seam, now deliveredce9a906e/f2e76c43 with56CPUtests (18new), not a
+nativeGPUclaim. Existing exact-byte projection is enough to
+start; child-reasoned compiler is a later nonblockingvariant. No newframework.
+Parent backend and full prompt/context/mask plan must be declared in worker
+protocol; powerful evaluator uses only alreadyauthorized runtime/connections,
+no credential-in-files or backend substitution around deniedapprovals.
+83explicit: use RICH actor contract from cycle1, not a terse-only loop.
+Rich prompt is context-distilled away at training; actual own successful,
+rubric-passing responses only. Existingchild's deficient richness is a measured
+starting point to improve with parenting, not a reason to defer this experiment.
 
 CPU bridgee5a4f919 complete22tests; Chandrasekhar retired. Only synthetic
 continuity demonstrated. Old Builder assigned orch_guided_native prefixes
