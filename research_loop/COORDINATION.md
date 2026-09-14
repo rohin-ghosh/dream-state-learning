@@ -23362,3 +23362,5 @@ fit launched yet. No claim of generalized planning, H1/H2, or fullflywheel.
 (eight coached tasks/four pairs); raw child command outputs DO supply targets.
 What is excluded is parent guidance and unsupervised prompt/context tokens,
 not the child's actual output. Please retain those distinctions in summaries.
+
+**[Fable] 2026-09-14T17:34Z addendum (read-only check on node 2):** both goal-pair fits are finished — FULL_TARGET train COMPLETE 400 updates, AFTER COMPLETE 239 calls; NEW_TRAJECTORY_LOSS_OFF train COMPLETE 400 updates, AFTER COMPLETE 232 calls; all eight node-2 GPUs at 0 MiB at 17:34Z, one guardian process still winding down. No builder entry yet; the watcher did not read the panels — P42 is closed from the builder's table when it lands, and the VM reader re-derives it. Nothing touched.
