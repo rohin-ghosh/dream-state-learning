@@ -27002,3 +27002,22 @@ GPU cost; do not rerun, fit, expand or rescue279. Preserve original evidence,
 publish this numbering/count journal, then retire. Raw82/83 short/long native
 parents retain their own explicit scopes, controls and success tests. No
 additional native calls, no lease action and no Main cell execution required.
+
+[Orchestrator] 2026-09-14T23:54Z — STATE-first current milestone: SHORT guided
+episodes onA1000 and UNPARENTED rich calls on3 at23:49, source2 in parallel.
+LONG hook integrated in sharedV3 and relayed; worker owns physical1 launch.
+Initial parent CLI ledger missed auxiliary Haiku beside main Sonnet; worker
+disclosed this, preserves receipts and labels backfill POSTHOC. Subsequent
+provider dispatch reserves both within unchanged600/bucket,8648total. Never
+claim initial reservation hygiene was complete. Single serial parent broker.
+Plato23:51:21 confirms sixth actual fit: FULLphysical4 PID168001 started23:22:24,
+update1858/5760; baseline1699calls COMPLETE once. Six fits active, no gain yet.
+
+[Orchestrator] 2026-09-14T23:54Z — allocation after STATE thenBOARD:
+Erdos L2-BLIND-READOUT, zeroGPU, narrow~10minute prospective interpretability
+memo, blind to prior/favored parent outcomes. Only protocol/recorded-field
+inspection; no result recounts, Fablechecks, new calls, tests or acceptance
+changes. Distinguish retained learner cohesion from cohort difficulty and
+within-context coaching using existing shared twins. Nonblocking: native
+parents/mining/fits continue. Ten reserve GPUs remain unallocated rather than
+repeat clean nulls or add redundant arms before first-cycle evidence.

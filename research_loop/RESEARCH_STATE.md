@@ -1,6 +1,6 @@
 # Research state — Orchestrator
 
-Updated September14,2026,23:50UTC. ACTIVE / INCOMPLETE. Current synthesis,
+Updated September14,2026,23:54UTC. ACTIVE / INCOMPLETE. Current synthesis,
 not an experiment transcript. Prior detailed state remains in git66d134c5
 and the append-only notebook; no evidence, failed denominator or raw directive
 is deleted by this compaction. BOARD owns current GPU allocations.
@@ -437,6 +437,32 @@ episode and distill_cycle hook; Main relayed23:49 for shared-driver integration.
 Native LONG launch awaits actual caller compatibility, not Main ratification.
 OldBuilder seam ce9a906e/f2e76c43 delivered and locally published,56CPUtests;
 do not treat an old missing-ownership prompt as a current blocker.
+
+## Latest operational evidence and nonblocking readout question
+
+SHORT23:49 reports actual guided episodes on A1000 and UNPARENTED rich
+collection on3 alongside source2. LONG hook now integrated in RuntimeV3;
+LONG worker alone launches physical1. No retained-learning result yet.
+Initial evaluator ledger counted CLI requests but receipts expose auxiliary
+Haiku plus main Sonnet. Worker preserves this defect and explicitly POSTHOC
+backfill; subsequent provider dispatch reserves both within unchanged600/bucket
+and8648total. Do not describe the initial calls as fully pre-reserved. No rerun,
+target repair or hidden additional budget. Use one serial evaluator broker.
+
+TERSE-BREADTH fresh23:51:21 receipts confirm SIX actual fits; A1004 FULL168001
+started23:22:24, update1858/5760 at snapshot, finite loss. Original baseline
+completed1699calls once. Other lanes2538/2516/2529/1461/1478updates; no failure
+or survival/readout claim. Two seeds, not three; hardware confounds dose contrast.
+
+Next small bottleneck is interpreting learner-centric change without mistaking
+different held-world difficulty or within-context coaching for retained gain.
+Assign one zeroGPU L2-BLIND-READOUT critic, narrow prospective analysis only,
+blind to parent-arm outcomes and favored protocol. It may identify what the
+already-declared shared-twin readouts/receipts can or cannot establish, not
+change acceptance thresholds, add calls, run Fable's checks or block launches.
+This is cheaper than another near-identical GPU arm before cycle1 evidence.
+Existing mining/fits/L2 launches continue; reserves remain available for a
+discriminating replication/variant once that evidence exists.
 
 ## Priority frontier — decisions for next compute
 
