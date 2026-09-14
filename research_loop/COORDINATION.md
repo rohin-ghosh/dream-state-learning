@@ -23423,3 +23423,33 @@ no fabricatedtargets orsuccess-onlysubsets, teacherinstructionexcludedfrom
 studentprefixes.11280soverallguard,3600+60perphase,physical+CVDandnode2six-hour
 leasechecks. No othernewGPUjob orkill. Nativefitimplementationreleasedbutnot
 yetMain-tested/prepared; no1632updatefitlaunchuntilcollectionadmissionpasses.
+
+## [Fable VM result read] 2026-09-14T17:48Z — SEQ-256 VERIFIED
+
+Node 2 (ovx), root `/tmp/astra_goal_pair_train_20260914_attempt1`, arms `FULL_TARGET` (GPU0, guardian 406618) and `NEW_TRAJECTORY_LOSS_OFF` (GPU1, guardian 406619). Sources: `<arm>/train/RESULT.json`, `<arm>/after/RESULT.json`, `<arm>/after/*_OWN_TEXT_[0-3].json`, `<arm>/after/OLD_RECALL_W{0,8}_*.json`, `<arm>/after/HELD_AUDIT.json`, `<arm>/after/CALL_*.json`, `<arm>/train/{TRAINING_ROWS,MASKS,REFERENCE_MASKS}.json`, `<arm>/launch/*.txt`.
+
+| measure | entry | re-derived FULL / LOSS_OFF | source |
+|---|---|---|---|
+| updates | 400 both | 400 / 400 | train/RESULT.json `updates` |
+| train status / AFTER status | complete both | COMPLETE / COMPLETE, COMPLETE / COMPLETE | train + after RESULT.json `status` |
+| completed UTC | 17:27:30 / 17:27:26 | 2026-09-14T17:27:30Z / 17:27:26Z (started 17:09:08Z both) | launch/completed_utc.txt |
+| TRAIN goals | 8/8 vs 3/8 | 8/8 (4/4 + 4/4) / 3/8 (2/4 + 1/4) | panels TRAIN individual + per-episode `reached_goal` |
+| TRAIN pairs | 4/4 vs 0/4 | 4/4 (2/2 + 2/2) / 0/4 (0/2 + 0/2) | panels TRAIN paired |
+| PROBE goals | 5/8 both | 5/8 (2/4 A + 3/4 B) / 5/8 (2/4 A + 3/4 B) | primary.individual + per-episode |
+| PROBE pairs (primary) | 2/4 both | 2/4 (1/2 + 1/2) / 2/4 (1/2 + 1/2) | after RESULT.json `primary` |
+| PROBE UNAVAILABLE | 0 both | 0/8 goals, 0/4 pairs / 0/8, 0/4 | panels PROBE UNAVAILABLE + per-episode |
+| correct PROBE case identities | A0/A2, B0/B1/B3 unchanged | A [T,F,T,F], B [T,T,F,T] in both arms | PROBE_{0,1}_OWN_TEXT_[0-3].json |
+| old recall W0 | 16/16 vs 13/16 | 16/16 / 13/16 (fails idx 6,10,11) | OLD_RECALL_W0_*.json `correct` |
+| old recall W8 | 16/16 vs 14/16 | 16/16 / 14/16 (fails idx 6,10) | OLD_RECALL_W8_*.json `correct` |
+| held audit | 15 vs 16 | 15/16 (true 7/8, fault 8/8) / 16/16 | HELD_AUDIT.json `successes`, `summary` |
+| taught graph text | 2/4 both | 2/4 / 2/4 | TAUGHT_OWN_TEXT_EPISODE_*.json |
+| earlier fresh graph text | 3/4 vs 2/4 | 3/4 / 2/4 | PREVIOUS_FRESH_OWN_TEXT_EPISODE_*.json |
+| actual/reference labels | 33019/33019 vs 23885/33019 | 33019/33019 / 23885/33019 | train/RESULT.json `actual_supervised_tokens`, `reference_supervised_tokens` |
+| rows | 270 | 270 / 270 | train/RESULT.json `row_presentations` length |
+| masked rows | only 48 new targets, 12 original kept | MASKS vs REFERENCE_MASKS differ in 0 rows / 48 rows (222..269); rows 0..11 presented 4x each in both | train/MASKS.json, REFERENCE_MASKS.json |
+| new-target presentations | 800 in FULL | rows 222..269 sum 800 (32x17 + 16x16), same schedule both arms | train/RESULT.json `row_presentations` |
+| AFTER calls | 239 vs 232 | model_calls 239 / 232; CALL_*.json files 239 / 232 | after/RESULT.json, after/CALL_*.json |
+| train / AFTER seconds | 837.661+261.779 vs 837.942+257.382 | 837.661+261.779 / 837.942+257.382 | RESULT.json finished_unix - started_unix |
+
+Integrity: entry state prefixes fa3dec6d / 2a8076fb match `adapter_state_after` (fa3dec6dc3b1... / 2a8076fb6445...) in both train and after RESULT.json and in STATES.json; both arms load before-state 37ec3788...; training-row SHA 4f3b8dfd... and reference-mask SHA 8a708a4c... match `sha256sum` in both arms; `source_commit.txt` = f325f9d3a91ea4f584b97ae17767bbfe1d575678. Entry call counts (239/232) equal `model_calls` in the AFTER RESULT.json and the CALL file counts. `engineering_target_met` false in both arms.
+Scope (builder's own limits): one exposed DEV lineage, one training seed, two held identifier instances of one topology; PROBE reference is the unchanged-child SEQ-255 panel; no population efficacy, generic planning, H1/H2 or flywheel claim.
