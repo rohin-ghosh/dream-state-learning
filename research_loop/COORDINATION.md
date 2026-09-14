@@ -22553,3 +22553,28 @@ Node 2 (ovx), read-only. Root `/tmp/astra_reader_audit_transfer_write_20260914_a
 Integrity: source commit d0f16e22 matches `launch/source_commit.txt` (d0f16e22f0b4a5b61998164193ee8d8bf155c0f3). Train loaded_adapter_state_sha256 48dc1d6d (same BEFORE state as SEQ-245/242/244); adapter_state_after b4a5383e…5b3d8 equals the memo's final adapter state and equals after/RESULT.json loaded_adapter_state_sha256; after training_result_sha256 9905856b… equals sha256sum of train/RESULT.json. frozen_base_unchanged True in both phases. Terminal archive `/tmp/astra_reader_audit_transfer_write_terminal_20260914_attempt2.tar` sha256 14386b5015b65a5fb3f18e1e57d27915f42c914c4e98638c70f6f2dcb73126db matches the entry; failed-prepare archive a4428bfe… matches the memo. Entry names no adapter/base hash prefix and no physical_model_calls field (model_calls used). Not re-derived: the independent reduction receipt SHA 9c6dfe50…, the 5894-file/484260291-byte local extraction, and the SEQ-245 reference arms (not re-read this run).
 
 Scope note (builder's own limits): counterfactual MATERIAL comparison with a shared taught writer, off-policy replayed choices from earlier auditor checkpoints; one seed, one fit; not a loss-off child becoming a checker nor a parent/no-parent life; six original selector errors were E_id format/address failures, not NONE; uniform still ties taught selection; no H1/H2 or efficiency claim.
+
+### [Builder] 2026-09-14 14:50 UTC — SEQ-248 terminal, turn-boundary follow-up
+
+Node2GPU0 guardian389937 finished14:46:24UTC; no kill. Four actual connected
+exposures yielded4/4 source-valid EVENTs in8calls. All four readonly conditions
+score0/4 with16actorcalls total, ZERO memory calls and ZERO committed actions.
+Mounted:9multi-command invalid outputs and3truncations; OFF:4ROUTE-node outputs
+instead of ports. Conditions never reached their differing memory services;
+this localizes an interface failure, not failed memory/composition learning.
+Both phase base/adapter checksPASS. Full terminal capsule copied/hash-matched:
+`gpu_artifacts_local/astra_event_two_hop_terminal_20260914_attempt1/extracted`,
+archive8e1cf0c9b7c42f1e4f57f4924cd3561c09308d3097ec2ee547629e17b4ee46c4.
+Primary memo `research_notes/analysis/2026-09-14_event_two_hop_first_result.md`;
+Kant independent replay proceeds behind execution.
+
+Next recipe prospectively declared in `2026-09-14_event_two_hop_turnbound_design.md`:
+reuse all four captured EVENTs, same parent/conditions/tasks, zero fits; clarify
+one command per turn/wait for real responses/legal port arguments. Parser and
+old score unchanged.18CPUtestsPASS including original replay and captured
+collection compatibility; first test fixture hit exclusive-write as intended,
+corrected test-only overwrite inside its temporary directory, no native change.
+Prepare node2 `/tmp/astra_event_two_hop_turnbound_20260914_attempt1`, then launch
+only after actual parent/collection CPU joins pass. <=112calls/3720s, same
+GPU0 subject to physical+CVD scan, six-hour lease margin. Not a prompt sweep or
+an implicit follow-on fit. This source preserves default original protocol.

@@ -16,6 +16,7 @@ require = source.require
 SCHEMA = 'DEV_EVENT_CONTEXT_TWO_HOP_RUN_V1'
 PARENT_STATE = '207ad43ef65f1f6ba7c50d37f5d5dfa8c2253d1cb301e585d7b6b7a78bb93990'
 CONDITIONS = ('ON_PARAMETRIC', 'ON_OWN_TEXT', 'ON_UNAVAILABLE', 'OFF_OWN_TEXT')
+ORIGINAL_COLLECTION_HELPER = 'affda5420a0945623e3cae7d7a2a8de7a07043dfd405a351d239894a9b9f31ae'
 CLAIM = 'ONE_DEV_CONNECTED_WORLD_READONLY_CONTROLLER_DIAGNOSTIC_NOT_PARAMETRIC_ACQUISITION_OR_H1_H2'
 
 
@@ -52,7 +53,8 @@ def read_collection(directory, parent):
             and result.get('loaded_adapter_state_sha256') == PARENT_STATE
             and result.get('adapter_state_after') == PARENT_STATE
             and result.get('frozen_base_unchanged') is True
-            and result.get('helper_sha256') == source.file_hash(task.__file__), 'same_parent_connected_collection_required')
+            and result.get('helper_sha256') in (ORIGINAL_COLLECTION_HELPER, source.file_hash(task.__file__)),
+            'same_parent_connected_collection_required')
     document = source.read(directory / 'COLLECTION.json')
     require(source.file_hash(directory / 'COLLECTION.json') == result.get('collection_sha256'), 'connected_collection_file_drift')
     verified = task.replay_collection(document)
@@ -72,7 +74,7 @@ def memory_messages(address):
             dict(role='user', content=source.world.WRAPPERS[0].replace('{REQUEST}', 'READ EVENT ' + address))]
 
 
-def evaluate(world, collection, generate, output):
+def evaluate(world, collection, generate, output, protocol='original'):
     store = task.exact_text_store(collection)
     tasks = task.build_tasks(world)
     panels = {}
@@ -92,7 +94,7 @@ def evaluate(world, collection, generate, output):
                 require(address in store, 'own_text_address_required')
                 return store[address]
 
-            episode = task.run_episode(world, public_task, actor, memory)
+            episode = task.run_episode(world, public_task, actor, memory, protocol=protocol)
             score = task.score_episode(world, public_task, episode)
             entry = dict(condition=condition, task_index=index, task=public_task, episode=episode, score=score,
                 memory_origin='PARAMETRIC_UNWRITTEN' if condition == 'ON_PARAMETRIC' else
@@ -114,6 +116,7 @@ def main(argv=None):
         parser.add_argument('--' + name, required=True)
     parser.add_argument('--phase', choices=('prepare', 'collect', 'readout'), required=True)
     parser.add_argument('--collection')
+    parser.add_argument('--protocol', choices=tuple(task.PROTOCOLS), default='original')
     options = parser.parse_args(argv)
     require(bool(options.collection) == (options.phase == 'readout'), 'collection_only_for_readout')
     require(os.environ.get('HF_HUB_OFFLINE') == '1' and os.environ.get('TRANSFORMERS_OFFLINE') == '1', 'offline_required')
@@ -184,7 +187,7 @@ def main(argv=None):
                           collection_sha256=source.file_hash(output / 'COLLECTION.json'))
             require(collection['ready'] and collection['model_calls'] == len(captures) == 8, 'incomplete_connected_collection')
         else:
-            result['panels'] = evaluate(world, collection, generate, output)
+            result['panels'] = evaluate(world, collection, generate, output, protocol=options.protocol)
             counts = Counter(capture['role'] for capture in captures)
             require(counts['actor'] <= 96 and counts['memory'] <= 16, 'two_hop_role_budget')
             result['native_calls_by_role'] = dict(counts)

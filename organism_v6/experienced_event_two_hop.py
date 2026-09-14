@@ -39,6 +39,12 @@ COLLECTION_SYSTEM = (
     'Identifiers are opaque and case-sensitive. Execute only the offered ROUTE, then '
     'record only the actual public receipt. Do not invent, infer, rename or repair identifiers.'
 )
+TURNBOUND_SYSTEM = PUBLIC_SYSTEM + (
+    ' Output exactly one command per assistant turn, then wait for the actual memory '
+    'or environment response. Never simulate that response or output another turn. '
+    'A ROUTE command must use a port identifier from the current PORTS list, never a node.'
+)
+PROTOCOLS = {'original': PUBLIC_SYSTEM, 'turnbound': TURNBOUND_SYSTEM}
 
 
 def _copy(value):
@@ -192,13 +198,16 @@ def _public(current, goal, ports, events):
     return f"ROUTE TASK\nCURRENT {current}\nGOAL {goal}\nPORTS {','.join(ports)}\nEVENTS {','.join(events)}"
 
 
-def _run(world, task, invoke):
-    messages = [dict(role='system', content=PUBLIC_SYSTEM),
+def _run(world, task, invoke, protocol='original'):
+    require(protocol in PROTOCOLS, 'known_two_hop_protocol_required')
+    messages = [dict(role='system', content=PROTOCOLS[protocol]),
                 dict(role='user', content=_public(task['node'], task['goal'], task['ports'], task['events']))]
     result = dict(schema=EPISODE_SCHEMA, world_sha256=document_sha256(world), task=_copy(task),
         task_sha256=document_sha256(task), fits=0, reached_goal=False, terminal_reason='actor_call_cap',
         current=task['node'], actor_calls=0, action_calls=0, memory_calls=0, route_calls=0,
         routes=[], traces=[], messages=messages)
+    if protocol != 'original':
+        result['protocol'] = protocol
     addresses = set()
     ports = list(task['ports'])
 
@@ -268,7 +277,7 @@ def _run(world, task, invoke):
     return finish('actor_call_cap')
 
 
-def run_episode(world, task, actor, memory):
+def run_episode(world, task, actor, memory, protocol='original'):
     """One conversation, <=4 distinct reads and <=2 actual committed routes.
 
     Actor returns a native generation dict. Memory returns either that shape or
@@ -278,7 +287,7 @@ def run_episode(world, task, actor, memory):
     world = validate_world(world)
     require(task in build_tasks(world), 'fixed_public_two_hop_task_required')
     require(callable(actor) and callable(memory), 'actor_and_memory_callbacks_required')
-    return _run(world, _copy(task), lambda kind, argument: _invoke(actor if kind == 'actor' else memory, argument))
+    return _run(world, _copy(task), lambda kind, argument: _invoke(actor if kind == 'actor' else memory, argument), protocol)
 
 
 def replay_episode(world, task, record):
@@ -294,7 +303,7 @@ def replay_episode(world, task, record):
                 'episode_callback_or_prompt_drift')
         return dict(response=trace['response'], error=trace['error'])
 
-    verified = _run(world, _copy(task), invoke)
+    verified = _run(world, _copy(task), invoke, record.get('protocol', 'original'))
     require(next(callbacks, None) is None and verified == record, 'episode_replay_drift')
     return verified
 
