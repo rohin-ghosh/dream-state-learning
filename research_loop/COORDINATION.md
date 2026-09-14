@@ -19698,3 +19698,43 @@ existing CPU/native tests still apply. Max5400s, same CVD/process scan and lease
 cutoff. Root /tmp/astra_stage2a_closed_d1_20260914_attempt2, node2GPU2; PID follows.
 If this also OOMs, do not repeat this A40 path unchanged: move the diagnostic to
 80GB capacity and disclose hardware comparability limits. No other job stopped.
+
+## [Builder] SEQ-203 — 2026-09-14T06:49Z — D2 dose continuation closes without chain acquisition
+
+D2 completed512cumulative updates (256new, exact optimizer/RNG continuation)
+at06:43:02UTC; guardian317931/worker317947 exited. Node2 root
+/tmp/astra_stage2a_d2_20260914_attempt1/run retained. CPU replay of original BASE
+D1 slots and fitted D2 slots is reportable, no receipt issues:85physical fitted
+calls/280reserved versus56/280BASE. Seven of ten criteria pass:SEEK4/4,
+PROSPECT4/4,CHECK4/4,CONTINUE3/4,typed31/32,steps7/8,canaries15/16. Whole chains
+remain0/8, useful reads6/8, gain0/8. BASE chains0/8. More ATOM dose improved a
+local decision but did not yield a completed route. This single-seed DEV screen
+does NOT qualify BIRTH or demonstrate parenting; the declared dose recipe is
+closed, with no arbitrary further dose sweep. Actual trace localization is
+parallel CPU work, not a block on fresh collection or live CLOSED.
+
+Comparison:gpu_artifacts_local/astra_stage2a_d2_compare_20260914_attempt1/COMPARISON.json,
+SHA c13fd975a6a95852791771ff34523082b7478294e967cd0c3ddb7dae504ef53f.
+D2 checkpoint2ce34dced3b9c55335d4bdf195b870ecdef69a2bc94de641cb1ccbf151aee2bf;
+adapter5e96317f732aed604691d93f98c02f21dbb0621501381d416f552fe7694bb394.
+Compare/replay CPU suite44testsPASS; no new model calls for reduction.
+
+## [Builder] 2026-09-14T06:49Z — fresh guided outcome collection launch authorization
+
+Rohin57 executable next step: frozen BASE actually acts on32fresh TRAIN-only
+instances, all16dose_chain worlds×2members, fixed independent master
+ASTRA-OUTCOME-COLLECT-TRAIN-20260914-A1. Generic strategy sees public history only;
+no private graph/oracle action. All failures retained; only environment-verified
+whole successful traces become DRAFT rows, actual assistant output plus EOT.
+Teacher guidance is removed from student prefixes entirely, not merely masked.
+No SEQ200 evaluation rows reused. Future test is unguided, separate instances.
+
+Native source gpu/astra_stage2a_outcome_collect.py SHA
+0c4bec22c9fd68626010f4a9831e5b0f0942761fde50d64186897038af545faf;
+24focused testsPASS; adjacent combined54PASS/2native-only skips. Source/privacy/
+actual-action alignment checks pass. Main authorizes one node2GPU0 root
+/tmp/astra_stage2a_outcome_collect_20260914_attempt1,900s hard bound,928maximum
+call slots,0.25reservedGPUh. Physical+CVD reservation scan and six-hour lease
+margin required by guard immediately before process. No other job stopped;
+CLOSED attempt2 continuesGPU2 guardian321866/worker321882. Collector launch PID
+follows. This is scaffolded data generation, not autonomous-parenting evidence.

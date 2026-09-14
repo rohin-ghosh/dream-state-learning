@@ -1,6 +1,45 @@
 # Astra restart handoff — September14,2026,02:49UTC
 
-## CURRENT OVERRIDE — September14,2026,06:13UTC
+## CURRENT OVERRIDE — September14,2026,06:46UTC
+
+This section supersedes the older status below. D1 recovery completed: SEQ-200,
+six of ten criteria, whole chains0/8, useful reads6/8, canaries15/16. No qualified
+BIRTH. Original D1 root remains FAILED; its256-update checkpoint was recovered
+without retraining. Complete preservation already verified (451files); do not
+repeat it. Analysis: research_notes/analysis/2026-09-14_seq200_d1_controller_recovery.md.
+
+D2 continuation COMPLETED at06:43:02UTC, node2
+/tmp/astra_stage2a_d2_20260914_attempt1/run:512cumulative updates,256new updates,
+RESULT=D2_COMPLETE_REDUCTION_PENDING. Original PIDs317931/317947 exited. Main
+is replaying actual BASE(D1 slots)+ATOM_LOCAL(D2 slots) using the updated CPU
+compare/replay/reducer modules, not relabeling either stage. Confucius owns new
+local D2 preservation only. D2 is the single declared dose continuation, not
+permission for further dose sweeps. Check its reduced outcome next.
+
+CLOSED attempt1 OOM after3updates is preserved, no checkpoint/readout (SEQ-202).
+Allocator-only attempt2 LIVE node2GPU2, guardian321866/worker321882, root
+/tmp/astra_stage2a_closed_d1_20260914_attempt2. Same recipe86a6ba44; only
+PYTORCH_ALLOC_CONF=expandable_segments:True changed. Training began06:43:44UTC;
+5400s bound from06:41UTC. If another OOM, do not repeat A40 unchanged; use verified
+80GB capacity and disclose hardware limits. CLOSED is exploratory, not primary.
+
+Rohin57 answered at06:40UTC: next data are actual environment-verified successful
+model trajectories on fresh TRAIN-only instances, never scored SEQ-200 worlds.
+Hubble owns gpu/astra_stage2a_outcome_collect.py and test:32instances, guided
+frozen BASE,900s cap; student prefixes omit guidance entirely, targets are actual
+assistant actions/EOT. Main launches only after focused tests/resource scan.
+Helmholtz owns gpu/astra_stage2a_compare.py/test. Euclid owns free-endpoint PCHAIN
+material/native adapter/tests: original60s null timeout is CLOSED, not UNSAT;
+successor reuses192IDs, removes candidate lists, keeps same-ID causal permutation.
+PCHAIN remains supervised DEV and excluded from authentic ancestry. No worker
+has launch rights. Preserve unrelated dirty rules and unreviewed TSJ draft.
+
+NEXT: reduce D2, launch guided collection, inspect CLOSED, train on genuinely
+successful fresh collected rows if available and evaluate unguided on separate
+instances. Authentic two-sleep loop, parenting comparison, complete campaign
+and manuscript remain unfinished. Overall goal remains active.
+
+## PREVIOUS OVERRIDE — September14,2026,06:13UTC
 
 Read this before older live-status notes. Original reduced root
 /tmp/astra_stage2a_reduced_20260914_attempt1/run is FAILED after a completed
