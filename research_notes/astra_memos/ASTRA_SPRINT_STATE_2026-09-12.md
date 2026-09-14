@@ -1,4 +1,22 @@
-## Current superseding snapshot — 2026-09-14 Q1 offline replay
+## Current superseding snapshot — 2026-09-14 10:58 UTC
+
+SEQ230 completes a second same-adapter parent-free adult cycle: prospective W0
+reader cue routing2/4→4/4, cue-loss-off2/4→2/4; both acquire4/4 new W0/W8
+records and retain8/8 earlier W0 records. One pair, offered four-fact banks,
+scheduled replay; NOT autonomous selection, an H2 slope or general freeze.
+First-cycle W8 primary3/4 remains separate from post-result W0 AFTER4/4.
+All corresponding collect/train/before/after stages terminal; no reruns needed.
+Independent source replay and full adapters preserved locally; see current
+HANDOFF and dated parent-free second-adult-cycle analysis for exact paths.
+
+Recollection recipe1 valid NONE; recipe2 has four grounded cited route triples
+but whole candidate fails citation/ambiguous bridge/output contract. Neither
+note enters training; no successful generative extractor or utility claim.
+Next is bounded parent-feedback diagnosis, not a writer redesign or seed grid.
+Canonical/companion writing integration underway. Full mission ACTIVE/incomplete.
+Node1 no new work; verify node2 physical/CVD vacancy before launch.
+
+## Historical superseded snapshot — 2026-09-14 Q1 offline replay
 
 Delayed sidecar relay reconciled against completed Q0roots, no newlaunch.
 Durable stdlibreader/math plus19focusedtests; all3archived rootdigests match;

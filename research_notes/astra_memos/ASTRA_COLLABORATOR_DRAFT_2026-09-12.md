@@ -2,40 +2,37 @@
 
 ## Message — UNSENT
 
-Can developmental teaching change how an agent learns from its own experience,
-rather than merely improve its answers? We are testing that question with a
-frozen Qwen2.5-7B-Instruct base and a persistent LoRA adapter.
+Can developmental teaching help an agent use what it learns from later
+experience? We test this with frozen Qwen2.5-7B-Instruct and persistent LoRA
+adapters, separating memory acquisition from action selection.
 
-Our latest small development experiment connects two writes in the same adapter.
-After retaining four experienced records, the learner trains on its own actions
-collected under explicit coaching, with teacher text removed from training
-inputs. Fresh-process readouts then show self-issued memory consultation and
-conditional second reads. Cue-supervised continuations reach 8/8 goals on held
-external-text tasks; matched cue-loss-off controls reach 4/8 without reading.
-Known-record recall remains 4/4, but unknown-address rejection remains 0/4.
+Independent replay confirms a second sequential adult cycle (SEQ230): each child continues
+for 400 updates, not a new seed grid. Prospectively paired W0 BEFORE/AFTER
+routing improves from 2/4 to 4/4 in the cue arm, with READs throughout; loss-off
+stays 2/4 without reading. Both arms learn four new facts under W0/W8 and
+retain eight old facts; old W8 recall improves from 7/8 to 8/8.
 
-The important limits are substantial: all optimizer seeds share one starting
-learner and fixed banks; held text is supplied externally, not recalled from
-newly learned weights. Old-bank accuracy has no consistent cue advantage.
-These are coached-policy results, not autonomous discovery or an improving
-learning rate. Both subsequent adult collections produce identical grounded
-corpora without a teacher, but retain generic exposure and format scaffolding;
-adult-learning outcomes are not yet reported.
+This is distinct from the first cycle: its primary W8 cue result remains
+1/4-to-3/4. Its later no-fit W0 AFTER result of 4/4 was chosen post-result,
+with no W0 BEFORE routing baseline, and does not replace that primary endpoint.
+Reader-disabled goals remain 2/4, held external-text performance remains 8/8
+versus 4/8, and unseen-address rejection remains broken. A one-call sleep-note
+probe returns NONE without fitting, supporting no positive extraction claim.
 
-Next we will assess the adult before/after comparisons and test genuinely
-independent learners and task families. We would welcome collaborators to design
-those transfer tests, challenge the causal controls, and independently reproduce
-the raw-trace analyses.
+These are shared-lineage developmental trajectories with offered exposure,
+format scaffolding and rehearsal, not independent learners or proof of a better
+learning rate. We welcome collaborators to reproduce the raw-trace reductions,
+design independent-family transfer tests and strengthen causal controls.
+The full mission remains incomplete.
 
 ## Supporting notes—not part of message
 
 **Evidence-backed working update — UNSENT.** No message has been sent.
 
 **September 14, 2026 result update — research question unresolved.**
-Audited SEQ224 and completed SEQ226 cue-loss controls are included below, followed by
-the earlier SEQ215/218/219, A4 and cue results. The controls are SEQ226;
-SEQ225 adds collection-only results, not adult-learning
-outcomes. Earlier positive and negative results remain. Scoped
+Independently reduced SEQ230 is included below. Cycle2 prospectively pairs W0 BEFORE/AFTER; cycle1 SEQ227/228 retains
+its primary W8 result and missing W0 BEFORE routing baseline. Earlier results
+and failures remain. Scoped
 source gates closed PASS/SEPARATED and native DEV results exist: runtime
 blockage is not the current status. Reportability is not qualification.
 Historical engineering logs remain engineering-only; failed attempts are preserved.
@@ -43,6 +40,130 @@ The sprint TeX and companion abstract are updated; canonical
 `paper_prototype/main.tex` was updated separately by Main.
 No complete cross-draft review is claimed. The collaborator draft stays UNSENT;
 H1/H2 and the program remain open.
+
+### SEQ230: second sequential adult cycle, independently reduced
+
+The bounded independent reduction confirms all eight terminal stages and the
+following counts from captured outputs. This is another
+400-update continuation of each same seed0 child, not a seed grid or independent
+learner replication. Unlike cycle1's post-result W0 AFTER diagnostic, cycle2
+prospectively fixes W0 for **both BEFORE and AFTER routing**.
+
+| Cycle2 measure | Cue BEFORE→AFTER | Loss-off BEFORE→AFTER |
+| --- | --- | --- |
+| New W0-reader goals /4 | 2→4 | 2→2 |
+| New routing episodes with READ /4 | 4→4 | 0→0 |
+| New exact recall W0 /4 | 0→4 | 0→4 |
+| New exact recall W8 /4 | 0→4 | 0→4 |
+| Old exact recall W0 /8 | 8→8 | 8→8 |
+| Old exact recall W8 /8 | 7→8 | 7→8 |
+| Reader-OFF goals /4 | 2→2 | 2→2 |
+| Held supplied-text goals /8 | 8→8 | 4→4 |
+| Unseen MISS /4 | 0→0 | 0→0 |
+
+The original four facts remain 4/4 under both wrappers throughout. The prior
+adult bank remains W0 4/4 and improves W8 3/4 to 4/4 under rehearsal; these
+are the two components of the eight-fact total. Four new facts are learned in both arms;
+behavioral use differs, not raw acquisition success. Held records remain
+externally supplied text. This matched cycle2 2/4→4/4 W0 contrast does not
+create the missing cycle1 W0 BEFORE baseline: cycle1 primary W8 remains
+1/4→3/4, and its post-result W0 AFTER 4/4 remains supplemental. All failures,
+shared-lineage limits and H1/H2 non-promotion remain. No independent learner
+sample size or general learning-rate improvement is inferred.
+
+The separate sleep-note probe returns **NONE in one call, with zero fits**,
+as recorded by Main in SEQ231, with zero candidate notes. This supplies no positive evidence of
+richer extraction or consolidation utility, not a general impossibility result.
+Source/budget limits remain in the probe design; no retry or utility fit is
+implied. The full mission remains incomplete.
+
+
+- Cycle2 campaign: `/tmp/astra_adult_cycle2_20260914_attempt1`, source `c56170d3`.
+  [Builder SEQ229](../../research_loop/COORDINATION.md) predeclares matched W0 BEFORE/AFTER.
+  [Independent SEQ230 reduction](../analysis/2026-09-14_parent_free_second_adult_cycle_result.md)
+  confirms terminal counts; local evidence is
+  `gpu_artifacts_local/astra_second_adult_cycle_first_result_20260914/`.
+  The NONE output is Main's SEQ231 receipt, not an extraction result.
+- [One-call sleep-recollection design](../analysis/2026-09-14_sleep_recollection_probe_design.md): no fit or positive extraction result.
+
+### SEQ227: completed adult write/use, with the W8 failure retained
+
+Both seed0 arms finish 400 updates in their respective existing adapters, then
+fresh BEFORE/AFTER readouts. Their SEQ225 collections and new-memory targets
+are identical, but the starting adapters and prior cue-loss trajectories differ.
+Each update uses one old-memory, one old-cue and two new-memory rows: 400 old,
+400 cue and 800 new presentations per arm. The loss-off arm masks the cue row
+while retaining the original full-target loss denominator. No teacher participates
+in new experience or readouts, but externally offered exposure/format scaffolding
+and developmental rehearsal remain. This is a whole-trajectory comparison,
+not an isolated adult-gradient intervention or H2 learning-rate estimate.
+
+Primary W8-reader BEFORE→AFTER counts are:
+
+- Cue new-own routing 1/4→3/4, with READ uptake 4/4→4/4 and second READs 2/4→3/4.
+- Loss-off new-own routing 2/4→2/4, with zero READs; new reader-OFF routing stays
+  2/4 in both arms (cue still reads in all four episodes, loss-off never reads).
+- Both arms learn new recall W0 0/4→4/4 and W8 0/4→3/4; old W0/W8 recall stays
+  4/4 under each wrapper. These are the same four records, not eight memories.
+- Held external-text arrivals remain cue 8/8 versus loss-off 4/8; these are
+  supplied records, not newly learned held parametric memories. Unseen MISS
+  remains 0/4 everywhere.
+
+The failed new address under W8 has corrupted source/port/outcome identifiers
+in both arms, with different wrong text, not whitespace or truncation errors.
+Cue's actual reader reply matches its failed W8 probe; it then reads the other
+EVENT and commits a wrong-goal port. W0 direct recall of the trained fact is
+exact. This localizes a wrapper-sensitive failure without erasing the primary
+miss or asserting an internal mechanism. The independent reduction preserves
+all original outputs and replays 64 BEFORE/AFTER routing episodes and 224 model
+calls; the 16 collection calls are separate. Each fresh AFTER loaded-state
+receipt matches its own train-after state; the audit does not newly measure
+base tensors or independently rehash full adapter weights.
+
+### SEQ228: post-result W0 AFTER diagnostic, not endpoint replacement
+
+Both supplemental AFTER readouts use the same untouched saved adult adapters,
+with zero new fits or updates. Only the learned/disabled-reader query wrapper
+changes W8→W0; actor rules, tasks, decoding, external text and standalone probe
+wrappers are unchanged. Cue new-own routing is 4/4, READ uptake 4/4, second READ
+2/4; loss-off is 2/4 with zero READs. Reader-adapter OFF remains 2/4 in both arms;
+cue reads twice per episode while its actor adapter stays enabled. Held-text,
+old recall and MISS outcomes are unchanged. New direct W8 recall remains 3/4
+in both arms even though new W0 recall is 4/4. The supplement replays all 32
+routing episodes and 112 captured model calls; it is not new training.
+
+**This interface was chosen after inspecting the W8 result. Primary cue routing
+remains 3/4, not replaced by 4/4. No W0 BEFORE routing baseline was measured;
+there is no matched 1/4→4/4 W0 routing comparison.** The measured 1/4→3/4 contrast
+uses W8. Exact W0 direct recall before training is a different probe and cannot
+supply the missing W0 routing baseline. The W0 supplement supports the narrow
+reader-interface diagnosis, not unseen-wrapper robustness or a general learning
+advantage. Formation/new-memory acquisition succeeds similarly in both arms;
+behavioral use distinguishes these trajectories at this fixed DEV scope.
+
+Earlier failures, broken unseen abstention, shared-bank/optimizer-seed limits
+and H1/H2 non-promotion remain. The then-prepared second cycle now has the
+separate terminal report above; its prospective W0 pairing does not alter
+this first-cycle endpoint or supply its missing W0 baseline.
+Canonical is updated separately by Main; no complete cross-draft review is
+claimed. The collaborator message remains UNSENT.
+
+
+- [Adult-cycle independent reduction and W0 supplement](../analysis/2026-09-14_parent_free_adult_cycle_first_result.md).
+- [Builder SEQ227/228 ledger](../../research_loop/COORDINATION.md), September 14 10:20/10:24 UTC.
+- Campaign: `/tmp/astra_adult_cycle_20260914_attempt1`, arms
+  `CUE_REPLAY` and `CUE_LOSS_OFF`, primary `collect/train/before/after` and
+  separate `after_w0_reader` directories. Local evidence:
+  `gpu_artifacts_local/astra_adult_cycle_first_result_20260914/`, including
+  `w0_supplement/`. Training/BEFORE source `678faf15321124d3c74a2e9ab2be24f7624ba9f3`;
+  no-fit W0 source `4f8e21100131dbadec861c77f95d4d6e38bdd166`.
+- Primary AFTER RESULT SHA256: cue
+  `57bb4b58005163643721689a4bfda4eb777dd404cde73e291e6f62bfcb92e44b`,
+  loss-off `0376cd4e7f667756da40104340bb4d7e1a93ba08aea277597dae665034a9950e`.
+
+Source-only audit replays and captured hashes belong to these records; this
+writer runs no model, tokenizer or native experiment. Historical supporting
+notes below retain their dated scopes and failure-inclusive evidence.
 
 ### Audited SEQ224: same-adapter continuation, not an autonomous flywheel
 
@@ -124,7 +245,7 @@ specific contrast at this fixed bank/recipe, not all effects of prior parenting
 or shared actor/reader changes. No cue-specific old-accuracy claim is licensed.
 Substrate persistence, parenting behavior, later autonomous learning and
 self-improving learning remain separate claim levels; no H1/H2 or BIRTH promotion.
-### SEQ225: collection only; adult learning not yet reported
+### Historical SEQ225 collection-stage result
 
 Both seed0 adult collections pass: CUE_REPLAY and CUE_LOSS_OFF each produce
 four grounded EVENTs in eight calls, with 32 replay-compiled rows each.
@@ -135,9 +256,9 @@ task discovery. Source `ea940ab1`; Builder's September 14 10:08 UTC SEQ225 entry
 records unchanged base/adapter state, zero fits and no infrastructure failures
 during collection. Collection SHA256:
 `8f9c66609077f15af1469caed513513d2db731a2a10cce65298dfbc81b53924a`.
-Main reports source `678faf15` running the declared 400-update training and
-fresh BEFORE/AFTER phases. These are live work, not adult-learning results;
-no new accuracy, retention or learning-rate outcome is incorporated.
+At the SEQ225 collection cut, source `678faf15` training and BEFORE/AFTER
+were live. Their completed primary results and separate W0 diagnostic are now
+reported above; this does not recast collection as learning.
 Canonical main/README were updated separately through SEQ225, including controls;
 no complete cross-draft review is claimed. The collaborator draft remains UNSENT.
 
@@ -1903,3 +2024,33 @@ Gibbs' OFF-only bound makes30/64half-nat requirements impossible for the reducer
 Historical routine carriage, the15 failed A1/A2 selectivity artifacts, W0's assay-invalid/failed-replay status and P0's faithful-record shortage remain supporting context, not a replacement thesis or a blanket impossibility conclusion. Reliable joint/repeated-write retention beyond C48–C50, independent developmental replication and the integrated adult-learning comparison remain unestablished. Model origin is locally hash-bound but not officially authenticated. C11's final paper-grade work remains deferred under the latest steer; this writing adds no guard framework or launch requirement.
 
 Please review the staged complete prose draft `paper_prototype/astra_sprint_draft_20260912.tex`, companion abstract, and exact assertion-to-receipt links in `ASTRA_PAPER_CLAIM_MAP_2026-09-12.md`, through C56. Canonical `main.tex` receives bounded component evidence without changing its characterization abstract, intent, historical tables or appendix; `refs.bib` and the scientific thesis are unchanged. Literature identities were not expanded. No TeX compiler is available locally, so source-level validation is not a PDF build or layout approval. This unsent evidence update to the existing full draft does not complete canonical manuscript integration, P1/G5, the campaign, or collaborator outreach.
+
+
+### Historical UNSENT message — through SEQ226 and SEQ225 collection
+
+Superseded by the current message; supporting history only.
+
+Can developmental teaching change how an agent learns from its own experience,
+rather than merely improve its answers? We are testing that question with a
+frozen Qwen2.5-7B-Instruct base and a persistent LoRA adapter.
+
+Our latest small development experiment connects two writes in the same adapter.
+After retaining four experienced records, the learner trains on its own actions
+collected under explicit coaching, with teacher text removed from training
+inputs. Fresh-process readouts then show self-issued memory consultation and
+conditional second reads. Cue-supervised continuations reach 8/8 goals on held
+external-text tasks; matched cue-loss-off controls reach 4/8 without reading.
+Known-record recall remains 4/4, but unknown-address rejection remains 0/4.
+
+The important limits are substantial: all optimizer seeds share one starting
+learner and fixed banks; held text is supplied externally, not recalled from
+newly learned weights. Old-bank accuracy has no consistent cue advantage.
+These are coached-policy results, not autonomous discovery or an improving
+learning rate. Both subsequent adult collections produce identical grounded
+corpora without a teacher, but retain generic exposure and format scaffolding;
+adult-learning outcomes are not yet reported.
+
+Next we will assess the adult before/after comparisons and test genuinely
+independent learners and task families. We would welcome collaborators to design
+those transfer tests, challenge the causal controls, and independently reproduce
+the raw-trace analyses.

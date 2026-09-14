@@ -21,7 +21,7 @@ Dated statements below about unresolved TODO keys describe earlier snapshots.
 
 **Ongoing first-sprint working draft — research question unresolved.**
 Canonical `main.tex` now includes bounded September14 diagnostics through
-SEQ225, alongside earlier positive and negative findings. The new section
+SEQ230, alongside earlier positive and negative findings. The new section
 separates own-EVENT persistence, outcome-SFT controller fits and coached cue
 collection; none establishes H1/H2 or completes the developmental campaign.
 SEQ192 fails prediction prompt-package robustness; SEQ195 supports only
@@ -35,10 +35,11 @@ named assays; the research question remains unresolved. Held for bounded
 independent manuscript review. The old Stage2A runtime blocker is repaired;
 completed DEV fits now exist but do not qualify the integrated learner. The
 same-adapter second-sleep comparison supports bounded parent-free retrieval;
-the newly collected adult experience still awaits its write/use comparison.
+the first adult write/use comparison is complete, with an explicit W8 reader
+failure and a separately reported no-fit W0 interface repair.
 The full sprint remains incomplete. No G3/H1/H2, parenting or freeze promotion.
 
-## Current bounded evidence through SEQ225
+## Current bounded evidence through SEQ230
 
 - **SEQ215:** own-EVENT cold W0/W8 recall0/4→4/4; unseen MISS4/4→0/4.
   LF-relaxed content annotations are not replacement strict action scores.
@@ -65,9 +66,19 @@ The full sprint remains incomplete. No G3/H1/H2, parenting or freeze promotion.
 - **SEQ225:** both preselected seed0 children independently record4/4 new
   offered events in8 actual calls without teacher feedback. Raw records match;
   exposure/format scaffold remains external, not autonomous exploration.
-- **Pending:** adult400-update same-adapter continuation and fresh BEFORE/AFTER
-  comparison on new facts, old recall, reader-OFF and controller retention.
-  Do not infer success from launch or include held readouts in training.
+- **SEQ227:** adult400-update continuation yields new W0 recall0/4→4/4 in
+  both arms, W8 0/4→3/4, and old W0/W8 retention4/4. Cue new-routing1/4→3/4
+  with READs; loss-off2/4→2/4 without READs. Held policy and MISS unchanged.
+- **SEQ228:** no-fit W0-reader AFTER repair gives cue4/4 versus loss-off2/4;
+  W8 still3/4 on direct recall. Post-result interface selection, not a replacement
+  primary score or a matched W0 BEFORE→AFTER contrast. All old failures retained.
+- **SEQ229/230:** second sequential adult cycle is complete: prospectively W0
+  BEFORE/AFTER cue routing2/4→4/4 versus off2/4→2/4; both new recall4/4 in
+  W0/W8 and earlier W0 retention8/8. Earlier W8 improves7/8→8/8 with replay.
+  One continued pair, not independent learner replication or an H2 slope.
+- **Next:** grounded child sleep recollection is under investigation, not a seed
+  grid. The first note abstains; the second is rejected whole for citation and
+  ambiguous interepisode movement. Neither is trained. Extraction utility is open.
 
 Sources under `research_notes/analysis/`: `2026-09-14_a4_outcome_sft_first_result.md`,
 `2026-09-14_a4_copy_replay_comparison.md`, `2026-09-14_self_issued_read_route_first_result.md`,
@@ -78,8 +89,10 @@ Sources under `research_notes/analysis/`: `2026-09-14_a4_outcome_sft_first_resul
 prospective second-sleep decisions are in SEQ223 and subsequent `[Builder]`
 entries of `research_loop/COORDINATION.md`; complete builder CPU replay passed.
 Independent stored-data review of the latest-turn collection and primary
-second sleep is complete; full manuscript/adult terminal review remains
-pending. No installed TeX engine/build result is claimed.
+second sleep and first adult cycle is complete; full manuscript review remains
+pending. The adult reduction lives in `2026-09-14_parent_free_adult_cycle_first_result.md`
+with runnable `tools/astra_adult_cycle_reduce.py`. No installed TeX engine/build
+result is claimed.
 
 ## Current evidence and custody through SEQ195
 

@@ -1,6 +1,42 @@
 # Astra restart handoff — September14,2026,02:49UTC
 
-## CURRENT OVERRIDE — September14,2026,10:12UTC
+## CURRENT OVERRIDE — September14,2026,10:58UTC
+
+Mission INCOMPLETE. SEQ225--230 adult stages are all terminal; DO NOT RERUN.
+First adult W8 primary cue routing1/4→3/4 vs off2/4→2/4; post-result W0
+AFTER-only repair4/4 vs2/4 is separate, with no cycle1 W0 BEFORE baseline.
+Second adult cycle prospectively W0 BEFORE/AFTER: cue2/4→4/4 vs off2/4→2/4;
+both acquire4/4 new records W0/W8 and retain8/8 earlier W0 records. W8 old
+7/8→8/8 reflects rehearsal repair. One continued pair, not independent seeds,
+autonomous selection, H2 slope, general G3, clean-lineage or mechanism freeze.
+
+Canonical second-cycle root on node2:
+`/tmp/astra_adult_cycle2_20260914_attempt1/{CUE_REPLAY,CUE_LOSS_OFF}`;
+source `c56170d36d8dbbe76cf5971c9f5a0ef458d335b8`.
+Independent replay memo: `research_notes/analysis/2026-09-14_parent_free_second_adult_cycle_result.md`.
+Local352-file capture: `gpu_artifacts_local/astra_second_adult_cycle_first_result_20260914/`.
+Full adapters copied/hash-verified:
+`gpu_artifacts_local/astra_second_adult_saved_adapters_20260914/`.
+
+Sleep notes (neither trained): recipe1 `recollect/` yields valid NONE;
+recipe2 `recollect_rehearsal/` yields four correct cited route triples, but
+uncited opening, ambiguous interepisode movement and trailing NONE reject the
+whole note. Keep original bytes and native UNREVIEWED_NO_FIT receipt;
+grounding disposition is in the two-recipe analysis memo. Do not salvage clauses
+into training. Next bounded question: can explicit source-grounded parent feedback
+elicit a faithful child revision? No next fit is yet declared.
+
+Main owns canonical main.tex/README/state/claim map; Carson owns three companion
+drafts, Goodall releases reducer/tests/second-cycle memo, Confucius owns note
+audit. Preserve dirty rules and untracked two-sleep-junction draft. Node1 is closed
+to new work (expires23:14UTC today); mirror reported complete. Node2 finish margin
+six hours before September21 08:43UTC. Recheck physical processes AND CVD before
+any launch. No pending science stages at this cut; no inferred GPU occupancy.
+
+No TeX engine installed: static validation only. Collaborator remains UNSENT.
+
+## HISTORICAL OVERRIDE — September14,2026,10:12UTC
+
 
 Full mission INCOMPLETE. All older cue collections/second-sleep fits are
 terminal; never rerun them. Primary second sleep SEQ224 and independent control

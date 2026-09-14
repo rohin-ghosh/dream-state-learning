@@ -5185,3 +5185,23 @@ This is ledger upkeep while Main advances experiments, not paper polishing,
 literature verification, a full campaign audit or a freeze decision. All earlier
 positive/negative findings, failures, custody limitations and claim boundaries
 remain available; this addendum does not replace their evidence.
+
+## Superseding active reporting cut — 2026-09-14 10:58 UTC
+
+Canonical main.tex, companion sprint draft, both abstract surfaces and UNSENT
+collaborator draft now integrate SEQ224--230. Earlier dated draft-index notes
+are historical. No TeX engine is available; no PDF/build is claimed.
+
+| Claim | Status and evidence | Limits / next test |
+|---|---|---|
+| Cue supervision induces parent-free READ policy in this tiny task | Observed: SEQ224/226; all three shared-S1 optimizer seeds held supplied text8/8 vs loss-off4/8, READs present vs absent | Not newly stored held memories; own old-task accuracy4/4 vs4,3,4/4 is not a consistent cue advantage; independent learners untested |
+| First adult experience can be written and used | Observed: SEQ225/227; both child collections4/4, cold new recall4/4 W0 and3/4 W8; W8 cue routing1/4→3/4 vs2/4→2/4 | Four offered facts, same family, one trajectory per arm; no autonomous selection or H2 slope |
+| Trained reader interface repairs first adult routing | Observed post-result DEV diagnostic: SEQ228, untouched adapters, W0 AFTER cue4/4 vs off2/4 | No W0 BEFORE baseline in cycle1; do not replace primary3/4 or claim arbitrary-wrapper robustness |
+| Second sequential adult cycle retains and uses learned records | Observed: SEQ230, prospective W0 BEFORE/AFTER cue2/4→4/4 vs off2/4→2/4; both new4/4 W0/W8, earlier W0 8/8→8/8, earlier W8 7/8→8/8 | Single continued pair;208 original/192 prior-adult replay doses; developmental confounding; not general G3, faster learning or independent replication |
+| Useful generative sleep extraction | Unproven: recipe1 abstains; recipe2 has four correct cited triples but whole note rejected, zero fits | Source-only feedback revision next; faithful listing alone is replay, not extraction utility or parent-free transfer |
+
+Sources: dated cue-loss-control, first-adult, second-adult and two-recipe sleep
+analyses in research_notes/analysis. Independent second-cycle reducer replays64
+routing episodes,276 actual calls,352 raw files;50 focused/adjacent tests pass.
+Neither sleep note enters weights. All source/claim boundaries remain local DEV;
+no clean-lineage, MECHANISM_FROZEN_V0, H1/H2 or mission-completion promotion.

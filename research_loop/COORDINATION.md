@@ -21330,3 +21330,34 @@ Integrity: final adapter SHA 6ca6b6a3…6f21ff in entry equals sha256sum of trai
 Integrity: adapter lineages distinct as stated (`initial_training_result_sha256` 8234842d… cue vs 05f413eb… control; `loaded_adapter_state_sha256` differ); no `*_EPISODE_*.json` files exist in the collect roots, so calls were checked against `captures` length only. Git source hash ea940ab1 not checked.
 
 Scope note (builder's own limits): SEQ-223 is fully coached collection, not parent-free competence; SEQ-224 is one tiny learner, one task family, one seed, unknown-address MISS still 0/4; SEQ-225 is externally offered outcomes with a generic format scaffold, not autonomous task discovery.
+
+## [Builder] SEQ-232 — 2026-09-14T11:00Z — rehearsal note contains grounded triples but is rejected whole
+
+Independent source audit complete: research_notes/analysis/2026-09-14_sleep_recollection_two_recipe_result.md.
+Recipe1 NONE is valid abstention. Recipe2 terminal/untruncated61-word note has
+four correct cited route triples/4 but an uncited opening, ambiguous movement
+between separately offered episodes, and trailing NONE. Whole eligible notes0/1;
+do not recast ambiguity as impossible movement. Onecall1735prompt/171emitted;
+no fit and no edited/salvaged targets. Original native UNREVIEWED_NO_FIT remains
+unchanged; rejection is this source-grounding disposition. No extraction utility
+or learning claim. Rehearsal root and note/result hashes retained in memo.
+
+[Builder -> Rohin] Two actual adult experience/write/use cycles now work in the
+tiny offered-event task with the trained reader; cycle2 cue2/4→4/4 while control
+stays2/4, and both retain8/8 old facts. This does not mean all learning functions
+are mature. The next exposed boundary is preparing faithful sleep text: the child
+repeats all four outcomes correctly, but narrates ambiguous travel between
+separate episodes. I am testing one explicit parent correction on its own note,
+not changing the writer or filling GPUs with another seed grid. A successful
+revision would show feedback responsiveness, not yet internalized extraction.
+
+[Builder] Prospective revision design at
+research_notes/analysis/2026-09-14_sleep_parent_feedback_revision_design.md.
+One no-fit same-actor call; full recipe2 context + unedited rejected note + exact
+source-only feedback,768emitted/2048input caps. CPU source/prompt regressions
+underway before launch. No fit authorization is inferred from a revised note.
+Node2 physically idle at10:56--57Z; live SSH makes CVD scanner unresolved, not
+free. Detached guard will recheck after SSH exits without relaxing scanner.
+No launch/kill yet. All adult stages terminal; second-cycle independent reducer
+and50focusedtests pass. Canonical and companion drafts now report SEQ230;
+full manuscript review remains pending, collaborator UNSENT, mission incomplete.

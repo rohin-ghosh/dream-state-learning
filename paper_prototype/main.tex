@@ -44,7 +44,7 @@
 \maketitle
 
 \noindent\textbf{Ongoing first-sprint working draft---research question unresolved.}
-This draft includes bounded September 14 diagnostics through SEQ225 and retains
+This draft includes bounded September 14 diagnostics through SEQ230 and retains
 earlier positive and negative findings. Section~\ref{sec:seq223} separates
 own-EVENT persistence, outcome-SFT controllers, and coached cue collection.
 SEQ192 fails prediction prompt-package robustness; SEQ195 supports only
@@ -57,8 +57,10 @@ named assays; the research question remains unresolved. Held for bounded
 independent manuscript review. The earlier Stage2A runtime blockage has been
 repaired: completed DEV fits are reported, but none qualifies the integrated
 learner. A same-adapter second sleep now supports bounded parent-free retrieval
-and held-text routing; new adult experience has been collected without coaching,
-but its subsequent write/use comparison is pending at this cut. The full sprint
+and held-text routing; two sequential parent-free adult write/use cycles improve
+routing within the same tiny family. The first has a held-reader-wrapper failure
+and a separately reported working-interface readout; the second prospectively
+uses that interface and retains eight earlier records. The full sprint
 remains incomplete. No G3/H1/H2, parenting or freeze promotion.
 
 \noindent\textbf{Historical SEQ-188 (C104): no exact sequence acquisition; retention undefined.}
@@ -275,7 +277,15 @@ remain4/8 with no reads. These share an initial learner and banks, not independe
 developmental replications. Two controls also score4/4 on old own-memory tasks
 without reading, so that accuracy alone is not a cue advantage. Unknown-address
 rejection remains0/4. Both preselected seed0 children next record4/4 new offered
-events without coaching; adult write/use remains pending. Earlier negatives
+events without coaching. After400 adult updates, new recall is4/4 on the trained
+query but3/4 on a held wrapper; cue routing rises1/4 to3/4 versus unchanged2/4
+without cue gradients. A post-result trained-query reader gives4/4 without
+retraining, not a replacement for the3/4 primary endpoint. A second sequential
+adult cycle prospectively uses the trained-query reader before and after sleep:
+cue routing improves2/4 to4/4 versus unchanged2/4 for loss-off, while both retain
+8/8 earlier records and acquire4/4 new records. This is one continued trajectory
+per arm with externally offered experience, not an H2 slope or independent
+replication. Earlier negatives
 remain; no mechanism freeze follows. The full sprint remains incomplete.
 \end{abstract}
 
@@ -348,7 +358,7 @@ The child is Qwen2.5-7B-Instruct, frozen, plus one LoRA of rank 8 per life. A li
 
 \section{Results}
 
-\subsection{Own memory, controller writes, and acquired retrieval (SEQ215--225)}
+\subsection{Own memory, controller writes, and acquired retrieval (SEQ215--228)}
 \label{sec:seq223}
 These are sequentially chosen DEV diagnostics, initially single-seed with
 three-optimizer-seed sensitivity checks for second sleep, separate from the
@@ -464,16 +474,82 @@ independent learner nor bank replications; deterministic small-cell agreement
 does not establish general reliability or a novel reasoning mechanism.
 MISS0/4 remains an important counterexample to robust memory judgment.
 
-\paragraph{First parent-free adult experience, not yet adult learning.}
+\paragraph{First parent-free adult experience, write and use.}
 SEQ225 offers a disjoint four-fact bank to the preselected seed0 cue-trained
 and loss-off children. Each generates four actual EXPLORE commands followed by
 four grounded EVENT records, without teacher feedback; both yield the same
 32 compiled query rows, with raw outputs preserved and only final LF count
 canonicalized. Exposure and generic formatting instructions are externally
 scheduled. New experience formation passes in both arms; this is not evidence
-for superior exploration or self-selected learning material. A declared400-update
-continuation with old-memory/cue replay and fresh BEFORE/AFTER readouts is
-underway. No adult write/use result or learning-rate slope is inferred here.
+for superior exploration or self-selected learning material. Each400-update
+continuation mixes400 original-memory,400 old-cue and800 new-memory
+presentations; cue-loss-off again masks only the cue slot while retaining the
+original label denominator. Both arms expose66,080 original labels, with66,080
+versus61,500 active labels. These are different continued developmental
+trajectories, not a switch isolating only the adult gradient.
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+First adult cycle, BEFORE $\to$ AFTER & Cue & Cue-loss-off \\
+\midrule
+New own routing, W8 reader &1/4$\to$3/4&2/4$\to$2/4\\
+New own READ uptake &4/4$\to$4/4&0/4$\to$0/4\\
+Reader-OFF routing &2/4$\to$2/4&2/4$\to$2/4\\
+New recall W0 &0/4$\to$4/4&0/4$\to$4/4\\
+New recall W8 &0/4$\to$3/4&0/4$\to$3/4\\
+Old recall W0 and W8, each &4/4$\to$4/4&4/4$\to$4/4\\
+Held supplied-text routing &8/8$\to$8/8&4/8$\to$4/8\\
+Unknown-address MISS &0/4$\to$0/4&0/4$\to$0/4\\
+\bottomrule
+\end{tabular}
+\end{center}
+SEQ227 therefore separates new-memory acquisition, which occurs in both arms,
+from use by the learned reading policy. In the cue arm's failed task the W8
+reader corrupts identifiers in one EVENT; the actor asks for the other record
+and commits its wrong-goal port. This is not merely a newline error.
+SEQ228 changes only the actual reader prompt to the trained W0 query, leaving
+weights, actor prompts, all direct recall probes, and all other panels unchanged.
+Fresh cue routing becomes4/4, with two conditional second reads, versus2/4
+without reads for cue-loss-off; reader-OFF remains2/4. W8 direct recall remains3/4.
+This post-result interface repair supports the localized explanation, not
+held-wrapper robustness or a replacement primary endpoint. There is no matched
+W0-reader BEFORE routing measurement. Neither one-cycle result estimates an
+H2 slope, independent-lineage reliability, or self-selected extraction quality.
+
+\paragraph{Second sequential adult cycle.}
+SEQ229--230 continues each first-adult adapter, rather than resetting to the
+development checkpoint. Both children record four newly offered events in
+eight calls without a teacher; their complete collection bytes match. The
+actual reader uses W0 in both BEFORE and AFTER, selected prospectively for
+this cycle after the first-cycle diagnostic. Each400-update fit presents400
+old-memory,400 cue and800 new-memory rows, at the unchanged writer settings.
+Old rehearsal is208 original-bank and192 first-adult presentations, not equal
+subgroup doses. Original label counts are66,912 in each arm; active labels
+are66,912 versus62,332 because the control masks cue targets while retaining
+the original denominator.
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+Second adult cycle, BEFORE $\to$ AFTER & Cue & Cue-loss-off \\
+\midrule
+New own routing, W0 reader &2/4$\to$4/4&2/4$\to$2/4\\
+New own READ uptake &4/4$\to$4/4&0/4$\to$0/4\\
+New recall W0 and W8, each &0/4$\to$4/4&0/4$\to$4/4\\
+Earlier recall W0 &8/8$\to$8/8&8/8$\to$8/8\\
+Earlier recall W8 &7/8$\to$8/8&7/8$\to$8/8\\
+Reader-OFF routing &2/4$\to$2/4&2/4$\to$2/4\\
+Held supplied-text routing &8/8$\to$8/8&4/8$\to$4/8\\
+Unknown-address MISS &0/4$\to$0/4&0/4$\to$0/4\\
+\bottomrule
+\end{tabular}
+\end{center}
+Rehearsal also repairs the first-adult W8 identifier failure; this does not
+establish robustness to other query wrappers. The result supports two bounded
+experience--write--reload--use cycles with an externally scheduled curriculum,
+not autonomous experience selection or improving learning efficiency. All
+between-arm developmental differences persist; this is not a pure adult
+gradient intervention. It remains one preselected trajectory pair, with four
+new facts per cycle and repeated task-family evaluation.
 
 \paragraph{Evidence and scope.}
 The dated A4-only, copy-mixture, self-issued-access and cue-collection analyses
@@ -485,7 +561,19 @@ calls and matches442 preserved file hashes including the full saved adapter.
 Primary fit245.0s plus fresh S2 readout108.0s span354.0s with S1 readout
 overlapped; total allocated-stage time is0.12154 A40-hours, excluding teaching
 collection and not equivalent to billed cost. The cue-control reduction is
-separate; adult terminal review and complete manuscript review remain pending.
+separate. The first adult stored-data reduction replays64 routing episodes and
+224 readout calls, preserving both BEFORE and AFTER failures. Adult fits take
+382.4s and381.5s; AFTER readouts take132.9s and103.1s. Both saved adapters are
+copied to VM storage after success and match recorded file hashes. Complete
+second-cycle reduction replays64 routing episodes across352 preserved raw
+files, covering276 actual generation calls. The two fits take381.1s and381.5s;
+AFTER readouts take140.1s and114.4s. These setup-inclusive durations overlap
+other stages and are not kernel times or additive campaign wall time. Both
+second-adult adapters are copied and hash-verified on VM storage. The exact
+cycle2 source is\texttt{c56170d3}; its dated parent-free second-adult-cycle
+analysis records schedule, source lineage and reproduction commands. Complete
+manuscript review remains pending; localized new-prose review corrected the
+seed description and supplied-text attribution.
 These small shared-task cells are not independent
 learner replications. H1/H2, an improving learning policy, and a dependable
 multi-sleep parenting loop remain unproven.

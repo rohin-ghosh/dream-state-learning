@@ -111,8 +111,9 @@ def collection_summary(directory, result, runtime):
     return summary, record
 
 
-def audit_mixture(masks, losses, arm, indexes):
-    require(arm in ARMS and len(masks) == 84 and len(losses) == 400, "complete_fixed_adult_mixture")
+def audit_mixture(masks, losses, arm, indexes, old_count=32):
+    require(old_count in (32, 64) and arm in ARMS and len(masks) == old_count + 52
+            and len(losses) == 400, "complete_fixed_adult_mixture")
     for mask in masks:
         inputs, labels, targets = mask["input_ids"], mask["labels"], mask["target_ids"]
         require(len(inputs) == len(labels) and labels[0] == -100, "first_label_or_length")
@@ -123,7 +124,11 @@ def audit_mixture(masks, losses, arm, indexes):
         require(targets[-1] == 151645 and inputs[positions[-1] + 1:] == [198], "eot_and_masked_template_lf")
     counts, original_total, active_total = Counter(), 0, 0
     for update, loss in enumerate(losses, 1):
-        selected = list(indexes(update, 20))
+        selected = list(indexes(update, 20) if old_count == 32 else indexes(update, 20, old_count=old_count))
+        expected = [(update - 1) % old_count, old_count + (update - 1) % 20,
+                    old_count + 20 + (2 * (update - 1)) % 32,
+                    old_count + 20 + (2 * (update - 1) + 1) % 32]
+        require(selected == expected, "source_schedule_drift")
         require(type(loss["update"]) is int and loss["update"] == update
                 and loss["row_indexes"] == selected and math.isfinite(loss["loss"]), "loss_or_index_drift")
         original = sum(sum(label != -100 for label in masks[index]["labels"][1:]) for index in selected)
@@ -134,27 +139,34 @@ def audit_mixture(masks, losses, arm, indexes):
         counts.update(selected)
         original_total += original
         active_total += active
-    doses = [sum(counts[index] for index in group) for group in (range(32), range(32, 52), range(52, 84))]
+    doses = [sum(counts[index] for index in group) for group in
+             (range(old_count), range(old_count, old_count + 20), range(old_count + 20, old_count + 52))]
     require(doses == [400, 400, 800], "group_dose_drift")
     return {"updates": 400, "old_memory_presentations": doses[0], "old_cue_presentations": doses[1],
             "new_memory_presentations": doses[2], "original_supervised_tokens": original_total,
-            "supervised_tokens": active_total, "row_counts": dict(counts),
+            "supervised_tokens": active_total, "row_counts": dict(counts), "mask_count": len(masks),
+            "original_memory_presentations": sum(counts[index] for index in range(32)),
+            "prior_adult_presentations": sum(counts[index] for index in range(32, old_count)),
             "loss_first": losses[0]["loss"], "loss_last": losses[-1]["loss"],
             "loss_scale_min": min(loss["loss_scale"] for loss in losses),
             "loss_scale_max": max(loss["loss_scale"] for loss in losses)}
 
 
-def training_summary(directory, result, collection, runtime, cue_capture=None):
+def training_summary(directory, result, collection, runtime, cue_capture=None, prior_collection=None):
+    old_count = 64 if prior_collection is not None else 32
     rows, masks = read(directory / "TRAINING_ROWS.json"), read(directory / "MASKS.json")
     require(set(rows) == {"old_memory", "cue", "new_memory"}, "training_groups")
-    require([len(rows[key]) for key in ("old_memory", "cue", "new_memory")] == [32, 20, 32], "training_group_sizes")
+    require([len(rows[key]) for key in ("old_memory", "cue", "new_memory")] == [old_count, 20, 32], "training_group_sizes")
     require(rows["new_memory"] == runtime.adult.replay_collection(collection), "new_targets_not_actual_child_rows")
-    require(hashlib.sha256(canonical(rows["old_memory"]) + b"\n").hexdigest()
+    require(hashlib.sha256(canonical(rows["old_memory"][:32]) + b"\n").hexdigest()
             == result["memory_source"]["compiled_rows_sha256"], "old_rows_provenance")
+    if prior_collection is not None:
+        require(rows["old_memory"][32:] == runtime.adult.replay_collection(prior_collection),
+                "prior_adult_rows_drift")
     require(hashlib.sha256(canonical(rows["cue"])).hexdigest() == result["cue_source"]["rows_sha256"],
             "cue_rows_provenance")
     new_ids_checked = 0
-    for row, mask in zip(rows["new_memory"], masks[52:]):
+    for row, mask in zip(rows["new_memory"], masks[old_count + 20:]):
         episode = next(episode for episode in collection["episodes"] if episode["fact"]["event"] == row["event"])
         if row["messages"][-1]["content"] == episode["event"]["raw"]:
             require(mask["target_ids"] == episode["event"]["token_ids"], "new_target_token_drift")
@@ -162,12 +174,12 @@ def training_summary(directory, result, collection, runtime, cue_capture=None):
     if cue_capture is not None:
         for name, expected in result["cue_source"]["source_files"].items():
             require(digest(cue_capture / name) == expected, "upstream_cue_file_drift:" + name)
-        for row, mask, origin in zip(rows["cue"], masks[32:52], result["cue_source"]["row_origins"]):
+        for row, mask, origin in zip(rows["cue"], masks[old_count:old_count + 20], result["cue_source"]["row_origins"]):
             captured = read(cue_capture / ("CALL_%03d.json" % origin["global_call_index"]))
             require(row["assistant"] == captured["response"]["raw"]
                     and mask["target_ids"] == captured["response"]["token_ids"], "actual_cue_target_drift")
     losses = [json.loads(line) for line in (directory / "LOSSES.jsonl").read_text().splitlines()]
-    summary = audit_mixture(masks, losses, result["development_arm"], runtime.adult.adult_indexes)
+    summary = audit_mixture(masks, losses, result["development_arm"], runtime.adult.adult_indexes, old_count)
     for key in ("updates", "old_memory_presentations", "old_cue_presentations", "new_memory_presentations",
                 "original_supervised_tokens", "supervised_tokens"):
         require(result[key] == summary[key], "training_receipt_count:" + key)
@@ -181,7 +193,7 @@ def training_summary(directory, result, collection, runtime, cue_capture=None):
     return summary
 
 
-def audit_route_panel(directory, name, bank, panel, consume, runtime):
+def audit_route_panel(directory, name, bank, panel, consume, runtime, reader_wrapper=8):
     episodes = []
     for number, fact in enumerate(bank, 1):
         record = read(directory / (name + "_EPISODE_%02d.json" % number))
@@ -205,7 +217,7 @@ def audit_route_panel(directory, name, bank, panel, consume, runtime):
                                          source="RESEARCHER_SUPPLIED_EVAL_TEXT_NOT_PARAMETRIC_MEMORY"),
                         "held_external_bytes_drift")
                 return response
-            messages = memory_messages(runtime, address, 8)
+            messages = memory_messages(runtime, address, reader_wrapper)
             return consume(name, "reader", response, messages, name == "OWN_READER_OFF")
 
         transitions = {other["port"]: other["outcome"] for other in bank if other["node"] == fact["node"]}
@@ -229,7 +241,7 @@ def memory_messages(runtime, address, wrapper):
 
 
 def audit_probes(rows, bank, wrapper, consume, runtime, miss=False):
-    require(len(rows) == 4, "four_probe_denominator")
+    require(len(rows) == len(bank) and len(bank) in (4, 8), "probe_denominator")
     correct, outputs = 0, []
     for row, fact in zip(rows, bank):
         response = generation(row["generation"])
@@ -241,10 +253,10 @@ def audit_probes(rows, bank, wrapper, consume, runtime, miss=False):
         require(row["correct"] is success, "probe_score_drift")
         correct += success
         outputs.append(response["raw"])
-    return dict(denominator=4, correct=correct, raw_outputs=outputs)
+    return dict(denominator=len(bank), correct=correct, raw_outputs=outputs)
 
 
-def readout_summary(directory, result, collection, runtime):
+def readout_summary(directory, result, collection, runtime, prior_collection=None):
     require(result["parent_present"] is False and result["fits"] == 0, "readout_parent_or_fit")
     root = directory / "new_task"
     panels = read(root / "PANELS.json")
@@ -265,12 +277,16 @@ def readout_summary(directory, result, collection, runtime):
         return generation(response)
 
     summaries = {}
+    reader_wrapper = result.get("reader_wrapper", 8)
+    require(type(reader_wrapper) is int and reader_wrapper in (0, 8), "reader_wrapper")
+    if "arguments" in result:
+        require(result["arguments"].get("reader_wrapper", 8) == reader_wrapper, "reader_wrapper_argument_drift")
     bank = collection["bank"]
     banks = {"OWN_PARAMETRIC": bank, "OWN_READER_OFF": bank}
     banks.update({"HELD_TEXT_" + str(index): runtime.micro.build_bank(runtime.development.HELD_MASTER + "-" + str(index))
                   for index in range(2)})
     for name, facts in banks.items():
-        summaries[name] = audit_route_panel(root, name, facts, panels[name], consume, runtime)
+        summaries[name] = audit_route_panel(root, name, facts, panels[name], consume, runtime, reader_wrapper)
     for name, wrapper, facts, miss in (
             ("RECALL_W0", 0, bank, False), ("RECALL_W8", 8, bank, False),
             ("UNSEEN_MISS", 8, runtime.micro.build_bank(runtime.source.MASTER + "-UNSEEN-MISS"), True)):
@@ -280,27 +296,69 @@ def readout_summary(directory, result, collection, runtime):
                 "probe_panel_total")
     require(cursor == len(calls), "unused_readout_calls")
     old_calls = []
+    old_bank = runtime.micro.build_bank(runtime.source.MASTER)
+    if prior_collection is not None:
+        old_bank += prior_collection["bank"]
     for wrapper in (0, 8):
         name = "OLD_RECALL_W" + str(wrapper)
-        rows = [read(directory / (name + "_%02d.json" % number)) for number in range(1, 5)]
+        rows = [read(directory / (name + "_%02d.json" % number)) for number in range(1, len(old_bank) + 1)]
         require(result["panels"][name]["rows"] == rows, "old_recall_join")
 
         def old_consume(response, messages):
             require(response["messages"] == messages, "old_recall_prompt")
             old_calls.append(dict(role="old_memory_probe", generation=response))
 
-        summaries[name] = audit_probes(rows, runtime.micro.build_bank(runtime.source.MASTER), wrapper, old_consume, runtime)
+        summaries[name] = audit_probes(rows, old_bank, wrapper, old_consume, runtime)
         require(summaries[name]["correct"] == result["panels"][name]["correct"]
-                and result["panels"][name]["denominator"] == 4, "old_recall_total")
-    require(len(calls) + len(old_calls) == result["model_calls"] <= 84, "complete_readout_call_count")
+                and result["panels"][name]["denominator"] == len(old_bank), "old_recall_total")
+        if prior_collection is not None:
+            summaries[name]["original_correct"] = sum(row["correct"] for row in rows[:4])
+            summaries[name]["prior_adult_correct"] = sum(row["correct"] for row in rows[4:])
+    require(len(calls) + len(old_calls) == result["model_calls"] <= 76 + 2 * len(old_bank), "complete_readout_call_count")
     all_calls = calls + old_calls
-    return dict(panels=summaries, model_calls=len(all_calls),
+    return dict(panels=summaries, model_calls=len(all_calls), reader_wrapper=reader_wrapper,
                 roles=dict(Counter(call["role"] for call in all_calls)),
                 prompt_tokens=sum(call["generation"]["prompt_tokens"] for call in all_calls),
                 output_tokens=sum(len(call["generation"]["token_ids"]) for call in all_calls))
 
 
-def reduce_campaign(root, runtime, cue_capture=None):
+def prior_binding(root, arm, result, runtime):
+    require(root is not None, "prior_capture_root_required")
+    directory = Path(root) / arm
+    prior_result = read(directory / "collect/RESULT.json")
+    training = read(directory / "train/RESULT.json")
+    require(terminal(directory / "collect")["status"] == "COLLECTION_COMPLETE"
+            and terminal(directory / "train")["status"] == "COMPLETE", "prior_terminal_required")
+    _, record = collection_summary(directory / "collect", prior_result, runtime)
+    require(record.get("cycle", 1) == prior_result.get("cycle", 1) == training.get("cycle", 1) == 1
+            and record["master"] == prior_result["master"] == training["master"] == runtime.adult.MASTER,
+            "prior_cycle_master_drift")
+    provenance = dict(path=prior_result["arguments"]["output"],
+                      result_sha256=digest(directory / "collect/RESULT.json"),
+                      collection_sha256=digest(directory / "collect/COLLECTION.json"))
+    require(result["prior_adult_source"] == training["adult_source"] == provenance
+            and result["prior_master"] == runtime.adult.MASTER
+            and result["arguments"]["prior_adult_collection"] == provenance["path"], "prior_collection_binding_drift")
+    require(result["initial_training_result_sha256"] == result["prior_adult_training_result_sha256"]
+            == digest(directory / "train/RESULT.json")
+            and training["initial_training_result_sha256"] == prior_result["initial_training_result_sha256"],
+            "prior_training_receipt_drift")
+    require(result["arguments"]["initial_adapter_dir"] == training["arguments"]["output"] + "/adapter"
+            and result["arguments"]["expected_initial_adapter_sha256"] == training["adapter_files"]["adapter_model.safetensors"],
+            "prior_adapter_file_binding_drift")
+    if result["phase"] != "readout" or result["state"] != "AFTER":
+        require(result["loaded_adapter_state_sha256"] == training["adapter_state_after"], "prior_adapter_state_drift")
+    for receipt in (prior_result, training):
+        require(receipt["development_arm"] == arm and receipt["frozen_base_unchanged"] is True,
+                "prior_arm_base_drift")
+        for key in ("memory_source", "cue_source", "tokenizer"):
+            require(receipt[key] == result[key], "prior_sources_drift:" + key)
+        require(receipt["arguments"]["expected_base_sha256"] == result["arguments"]["expected_base_sha256"],
+                "prior_base_drift")
+    return record
+
+
+def reduce_campaign(root, runtime, cue_capture=None, prior_capture_root=None):
     root = Path(root)
     report = {"arms": {}, "claim": "SINGLE_CYCLE_WHOLE_TRAJECTORY_CONFOUNDED_NOT_H2", "pending": []}
     collections = {}
@@ -324,15 +382,28 @@ def reduce_campaign(root, runtime, cue_capture=None):
             require(result["development_arm"] == arm and result["runner_sha256"] == runner_hash
                     and result["material_sha256"] == material_hash and result["frozen_base_unchanged"] is True,
                     "stage_source_arm_base_binding")
+            cycle = result.get("cycle", 1)
+            require(type(cycle) is int and cycle in (1, 2), "cycle_drift")
+            master = runtime.adult.MASTER if cycle == 1 else runtime.adult.master_for_cycle(cycle)
+            require(result["master"] == master and result["arguments"].get("cycle", 1) == cycle, "cycle_master_drift")
+            prior = prior_binding(prior_capture_root, arm, result, runtime) if cycle == 2 else None
+            old_count = 4 if prior is None else 8
+            require(result.get("old_fact_count", 4) == old_count
+                    and result.get("old_memory_rows", 32) == old_count * 8
+                    and result.get("new_fact_count", 4) == 4, "cycle_fact_counts_drift")
+            info.update(cycle=cycle, old_fact_count=old_count)
             info.update(initial_training_result_sha256=result["initial_training_result_sha256"],
                         initial_adapter_sha256=result["arguments"]["expected_initial_adapter_sha256"],
                         loaded_adapter_state_sha256=result["loaded_adapter_state_sha256"],
                         base_sha256=result["arguments"]["expected_base_sha256"])
             if stage == "collect":
                 detail, collection = collection_summary(directory, result, runtime)
+                require(collection.get("cycle", 1) == cycle and collection["master"] == master,
+                        "collection_cycle_master_drift")
                 collections[arm] = collection
             else:
                 require("collect" in results, "terminal_collection_required_for_stage")
+                require(results["collect"].get("cycle", 1) == cycle, "stage_cycle_drift")
                 for key in ("initial_training_result_sha256", "memory_source", "cue_source", "tokenizer"):
                     require(result[key] == results["collect"][key], "same_child_provenance:" + key)
                 for key in ("expected_initial_adapter_sha256", "initial_adapter_dir", "model_dir", "expected_base_sha256"):
@@ -343,8 +414,8 @@ def reduce_campaign(root, runtime, cue_capture=None):
                 expected_state = (results["train"]["adapter_state_after"] if stage == "after"
                                   else results["collect"]["loaded_adapter_state_sha256"])
                 require(result["loaded_adapter_state_sha256"] == expected_state, "same_loaded_child_or_saved_after_state")
-                detail = (training_summary(directory, result, collection, runtime, cue_capture) if stage == "train"
-                          else readout_summary(directory, result, collection, runtime))
+                detail = (training_summary(directory, result, collection, runtime, cue_capture, prior) if stage == "train"
+                          else readout_summary(directory, result, collection, runtime, prior))
             info.update(detail)
         report["arms"][arm] = summaries
     if len(collections) == 2:
@@ -356,6 +427,7 @@ def reduce_campaign(root, runtime, cue_capture=None):
     report.update(runner_sha256=runner_hash, material_sha256=material_hash,
                   status="PARTIAL_TERMINAL_EVIDENCE" if report["pending"] else "ALL_STAGES_TERMINAL",
                   no_native_imports=not any(name in sys.modules for name in ("torch", "transformers", "tokenizers", "peft")))
+    report["claim"] = "BOUNDED_ADULT_CYCLES_WHOLE_TRAJECTORY_CONFOUNDED_NOT_H2"
     return report
 
 
@@ -364,9 +436,10 @@ def main(argv=None):
     parser.add_argument("--capture-root", required=True, type=Path)
     parser.add_argument("--source-root", required=True, type=Path)
     parser.add_argument("--cue-capture", type=Path)
+    parser.add_argument("--prior-capture-root", type=Path)
     parser.add_argument("--output", required=True, type=Path)
     args = parser.parse_args(argv)
-    report = reduce_campaign(args.capture_root, load_source(args.source_root), args.cue_capture)
+    report = reduce_campaign(args.capture_root, load_source(args.source_root), args.cue_capture, args.prior_capture_root)
     args.output.write_text(json.dumps(report, sort_keys=True, indent=2) + "\n")
     print(json.dumps(dict(status=report["status"], pending=report["pending"], no_native_imports=report["no_native_imports"])))
 
