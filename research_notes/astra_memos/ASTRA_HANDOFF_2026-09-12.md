@@ -1,4 +1,29 @@
-# Astra restart handoff — current override September 14, 2026, 15:30 UTC
+# Astra restart handoff — current override September 14, 2026, 15:52 UTC
+
+## CURRENT — SEQ251 terminal; control and memory implementations pending
+
+This snapshot supersedes every LIVE statement below. No Main-owned GPU job is
+running as of the completed transfer readouts. SEQ251 collected four actual
+fresh EVENTs (8 calls), then TRAINED37ec scored OWN_TEXT3/4 versus ORIGINAL207ad
+0/4 on identical context; both UNAVAILABLE0/4. One fresh DEV graph, unchanged
+topology, one lineage, no new fit. Task3 skips the intermediate edge; this is
+not a formatting failure. Primary memo: analysis/2026-09-14_event_two_hop_transfer_first_result.md.
+Independent bounded review pending with Parfit. Terminal capsule:
+gpu_artifacts_local/astra_event_two_hop_transfer_terminal_20260914_attempt2/extracted.
+
+Next independent jobs, neither launched: Nash owns trajectory-loss-off native
+driver/guard/tests; Schrodinger owns fresh EVENT write helper/native/guards/tests.
+Prospective designs: analysis/2026-09-14_event_two_hop_lesson_control_design.md
+and analysis/2026-09-14_event_two_hop_memory_design.md. Control starts207ad and
+preserves the exact250 loss denominator while masking trajectory targets only.
+Memory starts37ec, measures fresh parametric BEFORE, writes actual251 EVENTs,
+then reloads for action/recall/retention. Main reviews CPU preparation and owns
+remote launches; workers have no GPU rights. Do not repeat completed250 fits or
+251 collection/readouts. Carson owns six manuscript files updating through250;
+await release. Preserve dirty gpu/codex/dream_state.rules and unrelated draft.
+Mission ACTIVE/INCOMPLETE; no parametric loop/H1/H2/clean-ancestry claim.
+
+## Historical superseded snapshot — 15:30 UTC
 
 ## CURRENT — SEQ250 complete; fresh-world collection LIVE
 

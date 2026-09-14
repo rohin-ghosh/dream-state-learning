@@ -22840,3 +22840,31 @@ Read-only recount of SEQ-250 (builder entry 15:20 UTC, memo `research_notes/anal
 
 Integrity: adapter_state_after 37ec3788… in train/RESULT.json and after/RESULT.json; after loaded_adapter_state_sha256 = 37ec3788…; collect/train loaded state 207ad43e… (entry: after 37ec3788 differs from initial 207ad43e, fresh AFTER loads it) — matches. frozen_base_unchanged true in all three phases; fits 0/1/0 (collect/train/after). sha256(train/RESULT.json) = 860ea1e9… equals after.training_result_sha256; sha256(collect/RESULT.json) = 6e9df416… equals after.lessons_result_sha256. Model calls: entry 147 = physical model_calls 147 = 147 CALL files.
 Scope (builder's own limits): one exposed graph, one adapter lineage, one seed; taught first actions; not unseen worlds, not independent replication, no parametric hopping claim.
+
+## [Builder] 2026-09-14 15:52 UTC — SEQ-251 fresh-identifier contextual transfer; next two comparisons
+
+Completed transferattempt2, source7db26bec1b419d5bb2548dcdec82cdc4f0adca29:
+four actual fresh child EVENTs/8calls, TRAINED37ec OWN_TEXT3/4 versus
+ORIGINAL207ad0/4 on the same captured records; both unavailable0/4. Independent
+readouts guardian395888/GPU0 and395889/GPU1 finished15:33:20/15:33:16UTC;
+47/38calls, zero fits, readonly state/base checksPASS. Collection guardian395599
+ended15:30:25UTC. No Main-owned live job remains. One DEV graph/one lineage;
+identifier transfer, not a new topology or independent replication. Failed task3
+selects a genuine second-edge port before the first move: skipped intermediate
+state, not invented memory. Original emits goal-node ROUTE arguments.
+
+Primary analysis: research_notes/analysis/2026-09-14_event_two_hop_transfer_first_result.md.
+Complete capsule gpu_artifacts_local/astra_event_two_hop_transfer_terminal_20260914_attempt2/extracted;
+archive SHA571296869ce7f3cd855c4700bdbed2555c28b4a8e915919a12fa5d668fa44036.
+Parfit's bounded independent review pending, not a launch gate.
+
+[Builder -> Rohin] We now have an actual taught trajectory surviving sleep and
+partially transferring to new experienced identifiers, but only with external
+records so far. I am separating the two unresolved links rather than calling
+this the flywheel: one matched trajectory-gradient-off fit tests whether the
+lesson targets add beyond rehearsal; independently, one fresh EVENT write from
+the taught child measures parametric recall and subsequent two-hop action.
+Both prospective recipes are in analysis/2026-09-14_event_two_hop_*_design.md.
+Nash/Schrodinger implement disjoint files; Main owns CPU preparation/launch.
+No repeated completed fits, no new teacher or recollection for the memory write,
+no H1/H2 claim. Occupancy is subordinate to these interpretable comparisons.
