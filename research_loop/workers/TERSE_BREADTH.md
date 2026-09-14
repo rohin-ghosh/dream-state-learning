@@ -54,3 +54,13 @@ Prospective interpretation caveat: dose4 seeds run on A100, dose16seed7801
 on A40. Despite matched code/runtime/initial state, dose contrast also crosses
 hardware/numerical execution; a16-only gain is not isolated proof of dose.
 Do not hide this assignment-imposed limitation or silently move devices.
+
+2026-09-14T23:01:55Z — source collection COMPLETE, common fit batchREADY.
+4150native calls;2868distinct qualified targets/239pairs;120of128TRAINsources
+eligible,8failed sources+1failed teaching pair retained;2partial HELDsources
+kept in all32held. Native CALL-to-projection replayPASS; actual3090-row
+tokenization/masking/full-reference dose checksPASS. Batch5aac9c13737516146b7a4ed57961beb349c8198778040b36aeaa7eb3d3ea960e.
+Frozen updates5760×fourA100cells and23040×twoA40cells; projected3.06h/12.24h.
+Publishing own pre-fit receipt, then all six fits together. Fresh-process
+readouts+frozen baseline are own guarded follow-ons, never Main-native work.
+No held readout/fit outcome yet; no terminal SEQ request.

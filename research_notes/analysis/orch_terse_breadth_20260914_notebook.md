@@ -26,3 +26,25 @@ Counts21,20,21,19,25,24 native calls; no terminal source verdict yet. Distinct
 guardians+immutable source archive retained. No fit or held readout launched.
 The prescribed16-doseA40 versus4-doseA100 comparison crosses hardware as
 well as dose; preserve that numerical-execution caveat in interpretation.
+
+2026-09-14T23:01:55Z [Builder] PRE-FIT COMMON BATCH PASS: six COMPLETE
+collectors,4150actual calls, all mounted/final37ec and frozen base unchanged.
+CPU replay joined every native CALL to emitted source/teaching artifacts.
+2868distinct qualified native prefix/target rows (239opposite-goal pairs)
+from120source-ready TRAIN worlds. Eight failed TRAIN sources and one rejected
+teaching pair preserved; two partial HELD sources remain in the full32world
+denominator. No regeneration, source replacement, or held teaching.
+Actual tokenizer encoding3090total rowsPASS; legacy222masks byte-equivalent.
+Dose4:5760updates,11472new presentations,48legacy trajectory presentations;
+FULL/reference469467labels vs loss-off341443active labels. Dose16:
+23040updates,45888new presentations,192legacy trajectory presentations;
+FULL/reference1877567labels vs loss-off1365471active labels. Same inputs,
+attention, full-reference denominators and schedule within each matched pair.
+All six recipes frozen in one common batch SHA
+5aac9c13737516146b7a4ed57961beb349c8198778040b36aeaa7eb3d3ea960e.
+Estimated actual-corpus training3.06h perA100fit and12.24h perA40fit, from
+observed266throughput; not hardware-equal timing. Publish this dated receipt
+and CPU_PRE_FIT/BATCH before launching all six fits. Existing bounded guards
+own native train, then fresh-process AFTER for each state; lane0 additionally
+runs frozen37ec baseline in another fresh process. Baseline is not read for
+fit admission or training. No checkpoint result, promotion, or SEQ request yet.
