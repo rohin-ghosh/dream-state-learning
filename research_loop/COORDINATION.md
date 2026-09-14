@@ -26887,3 +26887,118 @@ launch gate is being imposed here.
 **Watcher housekeeping:** the reader's 23:00 and 23:30 slots were lost to the backup self-check's lock; reader cron moved to :05/:15/:25/:35/:45/:55 (crontab backed up).
 
 **Fleet:** ovx 4/8 (MATH-SCALE), ovx2 2/8, a100 4/8 (FULL-RICH / dose arms loading), node 1 unavailable — 10 of 24 reachable GPUs busy. VM: memory 3.0–3.6 GB available, swap full, root 2.1 GB, /data 13 GB. Laptop chains 4/4. Nothing launched or killed by the watcher.
+
+[Orchestrator] 2026-09-14T23:50Z — raw42–83 full reread completed23:48UTC,
+including final901–991 raw-only lines; next full reread September15,01:48UTC.
+New relays still checked every cycle. Raw82/83 were already acted on23:27/31
+and published b89e85d7/3ec516da/e1028963; watcher23:33's awaiting-acknowledgement
+description is stale, not a current Main hold. STATE first ingests terminal
+279 and independent audit clarification, BOARD second releasesnode3 0–3.
+Gauss and Sartre retired; no repeated null screen or occupancy-only allocation.
+
+[Orchestrator] 2026-09-14T23:50Z — L2 real native source170357 physicalA1002
+started23:45:38: actual childe226cea2/basea2367093 verified,48calls reserved,
+5world receipts at first snapshot. Not yet guided-learning/sleep success.
+SHORT0/2/3 and LONG1 retain12h/48GPUh ownership; LONG constructor/episode and
+distillation hooks delivered23:44, relayed through Main23:49 for integration.
+Prospectively corrected8648 total call cap adds genuine response-aware SHORT
+guidance to FROZEN; shared frozen is not a LONG-policy-matched telemetry arm.
+Parent receives only sanitized nonsealed experience through tool-free backend,
+child sees full parent message, parent absent at readout and masked at training.
+No1000-row/promotion/reader hold. Zero-row sleeps preserve unchanged readouts.
+Main executed no experimental cell and no independent-reader checks.
+
+[Orchestrator] 2026-09-14T23:50Z — SEQ275 Fable23:02 VERIFIED scope now ingested:
+55/64NEW,9/64OLD,28initialrich,190CALL files, reduction/review/archive hashes;
+not a blind semantic certification. Guardian cost was not re-derived and the
+0.61556 versus0.608094GPUh discrepancy remains. Gauss's separate clarification
+preserves all frozen audit bytes, acknowledges some reasons imposed an extra
+second-verification demand not required by explicit operation-result expectation.
+Four cases are not arithmetic errors and do not explain the whole3-versus28gap;
+neither total is automatically canonical. Author critique requested; MATH-SCALE
+prospective gate unchanged, no stricter second-check rule or automatic pass.
+
+## SEQ-279 — ORACLE-REPAIR terminal screening null: GUIDED8/24 vs RETRY8/24
+
+Main assigns279 after published277/278. Author publication2026-09-14UTC.
+Administrative numbering/publication only; frozen protocol,93 calls, source,
+tests, denominators, judgments and physical0–3 release evidence are unchanged.
+
+**OBSERVATION:** The prospective joint-qualified repair advantage is0,
+GUIDED8/24 versus RETRY8/24, below the required+4. Four pairs admit both,
+four GUIDED only, four RETRY only, twelve neither. Terminal/deallocated.
+
+| Exact measure | GUIDED | RETRY |
+|---|---:|---:|
+| Repair calls / frozen tasks |24/24|24/24|
+| Checked correction success |22/24|23/24|
+| Meaningful mathematical revision |24/24|23/24|
+| Repair150–400-token contract |24/24|22/24|
+| Repair fulltext semantic-rubric pass |9/24|9/24|
+| Repair neutral-prefix support |16/24|23/24|
+| Repair outcome AND semantic-rubric pass |9/24|9/24|
+| Joint outcome/token/rubric/prefix repair admissions |8/24|8/24|
+| Conditional own-record calls |22|23|
+| Checked own-record success |22/22|22/23|
+| Own-record fulltext semantic-rubric pass |2/22|3/23|
+| Own-record neutral-prefix support |21/22|20/23|
+| Own-record150–400-token contract |21/22|23/23|
+| Qualified own-record yield / frozen tasks |2/24|3/24|
+
+**EVIDENCE AND CONTROL:** Exactly24 old natural wrong-numeric child outputs,
+14 from completed270 and10 from276, frozen by normalized-question hash after
+question-only arithmetic/gold audit. Both original32-task denominators remain
+unchanged. Same task/prior raw/rich instruction in both branches; GUIDED adds
+only truthful rejection, no gold or solution. Branch order12/12 globally and
+3/3 on each assigned GPU; one repair and only conditionally one own record.
+93 calls total:48 repairs and45 records; no additional native after terminal.
+All93 full texts/prefixes reviewed; all93 raw/token/prefix-mask replays PASS.
+18 own CPU tests passed locally and isolated-native before launch;19 final
+analysis tests PASS. Actual mounted V3 named_parameters37ec and392 per-tensor
+hashes per GPU, frozen base and final states verified; not PEFT export hashes.
+Node3 physical0–3 released: all1MiB/0percent at2026-09-14T23:28:19UTC;
+exact owned PID/start identities subsequently confirmed gone.4/5reserve and
+6/7peer fits untouched. Guardian333.573seconds/0.370637 assignedGPUh including
+startup and owned-process cleanup, within60min/4GPUh; zero fits/updates.
+Repair token min/median/max GUIDED154/254.5/359, RETRY143/235/358; record
+GUIDED220/275.5/413, RETRY182/274/400;24978 generated nonterminal tokens.
+Exact evidence root `research_notes/analysis/orch_oracle_repair_20260914_attempt1/`:
+`reviewed/SUMMARY.json`, `SEMANTIC_REVIEWS.json`, `TOKEN_PROVENANCE_REPLAY.json`,
+`terminal/run/`, `package2/SOURCE_SHA256.json`, `EVIDENCE_INDEX.json` and
+`ARCHIVE_RECEIPT.json`. Original178-file archive remains byte-identical at
+`/data/home/rohing/dream-state-orch/gpu_artifacts_local/orch_oracle_repair_20260914_attempt1/evidence.tar.gz`,
+SHA`d6bdb6c5c7ca98228fe393be0de387e5deb99a703dc194a402b37e01f0643e5a`.
+
+**CURRENT INTERPRETATION:** This complete finite screen finds no incremental
+joint-admission advantage from the rejection sentence beyond the same rich
+retry. It does not establish statistical equivalence or that guidance or
+parenting is false. Six GUIDED repairs recount actual teacher-verdict events
+absent from neutral student prefixes; these are prefix-support failures,
+not six fabricated verdicts in the actor context. Main has already relayed
+this lesson to L2 workers. Boolean oracle rejection is this screen's narrow
+intervention, **not a definition of parenting**. New short/long native-parent
+L2 experiments authorized by raw82/83 are separate arms, not rescues of279.
+
+**CREDIBLE ALTERNATIVES:** Small selected public DEV cohort, unresolved
+pretraining contamination, one frozen actor, greedy decoding, prompt/style
+effects and author semantic judgments limit generalization. Two GUIDED
+failures contain correct mathematics but invalid FINAL placement; a manual
+mathematical-content diagnostic is24vs23, not a rescore. Relaxing only the
+first-person axis posthoc gives16vs21; frozen primary8vs8 remains unchanged.
+Some record judgments conservatively reject unsupported biography or a
+contradictory unknown despite correct final arithmetic; exact texts/reasons
+remain available. No held64/math1024 tasks, new mining or target rewriting.
+
+**CONFIDENCE:** High in the captured counts, bounded execution, exact source/
+token replay and preserved release evidence. Conditional confidence in the
+author's exact semantic/prefix tally; no independent or fully blinded review
+claim. Aggregate correction counts were known during A/B-alias review, and
+verdict mentions can disclose branch identity. Low confidence in extrapolating
+a24-case fixed-actor screen to broader parental guidance or learned loops.
+
+**CHEAPEST DISCRIMINATING NEXT TEST:** None executed or queued by this worker.
+If later requested, inspect the existing fulltext/prefix judgments at zero
+GPU cost; do not rerun, fit, expand or rescue279. Preserve original evidence,
+publish this numbering/count journal, then retire. Raw82/83 short/long native
+parents retain their own explicit scopes, controls and success tests. No
+additional native calls, no lease action and no Main cell execution required.

@@ -1,6 +1,6 @@
 # Research state — Orchestrator
 
-Updated September14,2026,23:31UTC. ACTIVE / INCOMPLETE. Current synthesis,
+Updated September14,2026,23:50UTC. ACTIVE / INCOMPLETE. Current synthesis,
 not an experiment transcript. Prior detailed state remains in git66d134c5
 and the append-only notebook; no evidence, failed denominator or raw directive
 is deleted by this compaction. BOARD owns current GPU allocations.
@@ -12,7 +12,9 @@ handoff. Raw42–83 authoritative;79read22:57,80read23:10;81/82read23:27
 after upstream reconciliation(acf15f0e). Message82 ARRIVED23:25, not its
 approximate~23:30spoken-time heading.83read23:31 from39c15c90,arrival23:30.
 Both newest steers acted on this cycle; no prior-richness/promotion hold.
-Read new relays every cycle; full raw-message reread due23:50UTC.
+Read new relays every cycle; full raw42–83 reread completed23:48UTC from
+raw-only extraction, following prior chunks1–900 and final901–991. Next full
+reread due September15,01:48UTC; new relays still acted on within one cycle.
 Raw80 relay estimates~23:15 but arrived23:08:37; actual arrival/read times govern.
 
 - L0: correct experience can change LoRA memory/behavior and be retained.
@@ -102,7 +104,10 @@ Record answers NEW62/64 versus OLD63/64; not an accuracy gain.190texts author
 107PASS/82FAIL/1unresolved.83NEW-pipeline targets=28rich+55NEW;92all-condition
 includes9OLD, not92NEW. Common initial rich63/64;59tasks across all admissions.
 **EVIDENCE AND CONTROL:** publication14c7ee4a/evidence13dac397, paired same
-64tasks; report orch_math_record_20260914_attempt1/REPORT.md. Reader pending.
+64tasks; report orch_math_record_20260914_attempt1/REPORT.md. Fable23:02VERIFIED
+published counts,190CALL files and reduction/review/archive hashes. This is
+not independent semantic certification. Guardian cost0.61556GPUh was NOT
+re-derived; reduction instead carries0.608094GPUh. Preserve discrepancy.
 **INTERPRETATION:** autobiographical framing increases author-rated usability.
 **ALTERNATIVES:** voice/judgment,62additional prompt tokens, neutral-prefix
 mismatch; NEW1734echoes real generation-only checker success absent in student
@@ -189,11 +194,40 @@ operation-result expectation can count without future tense or a second method;
 neither headings nor performed arithmetic automatically satisfy every axis.
 **CONFIDENCE:** strong objective support defects; finite frozen subjective
 judgments with unresolved boundaries. No automatic reviewer/author override.
-**NEXT TEST:** separate Gauss clarification and author-side critique preserve
-frozen bytes; no old-row fit. MATH-SCALE keeps its prospectively frozen gate,
-collection unblocked, no automatic expansion or lowering1000floor. Conservative
-46/64prior makes1000yield less assured. A new paired instruction test asks for
-an explicit numerical consistency check, retaining the same semantic standard.
+**NEXT TEST:** Gauss's separate ADDENDUM_RICH_TRACE_CLARIFICATION.md now
+acknowledges some frozen reasons demanded unjustified verification distinct
+from derivation. Four representative disputes are not arithmetic errors or a
+quantitative explanation of the whole gap. Crayon conservation can express a
+falsifiable expected relation; causal unit-cost/directional difference and
+plural operational agency can qualify. Overtime ownership remains contestable.
+Frozen bytes/counts unchanged; neither3 nor28 is automatically canonical.
+Author critique requested. MATH-SCALE keeps its prospective substantive gate;
+no new second-check requirement, automatic expansion or lowering1000floor.
+Collection unblocked; CHECK-CONTRACT stays deferred, not a mandatory remedy.
+
+### SEQ279 — truthful oracle rejection versus the same rich retry
+
+**OBSERVATION:** joint-qualified repairs8/24GUIDED versus8/24RETRY; four both,
+four GUIDED-only, four RETRY-only, twelve neither. Checked corrections22/24
+versus23/24; qualified own records2/24 versus3/24.93calls, no fit/updates.
+**EVIDENCE AND CONTROL:** same24 legitimate old L1 natural numeric errors,
+14from270/10from276; rich instructions/prior outputs matched, order balanced.
+GUIDED adds only truthful rejection, no solution/gold. All93 raw/token/prefix
+replays and19author CPUtests pass; actual mounted37ec/base checks reported.
+Own fulltext author labels, not independent reader certification; readerpending.
+Report orch_oracle_repair_20260914_attempt1/SEQ279.md; archive d6bdb6c5.
+**CURRENT INTERPRETATION:** zero admission advantage misses prospective+4.
+Deallocated at declared scale, not disproven or statistically equivalent.
+Six GUIDED targets echo real verdict events absent from neutral prefixes;
+unsupported at training, not fabricated in the actual guided experience.
+**CREDIBLE ALTERNATIVES:** selected public DEV tasks, fixed actor, style/token/
+prefix effects and author semantic thresholds. Dropping first-person alone
+posthoc yields16versus21, not a hidden GUIDED advantage; primary unchanged.
+**CONFIDENCE:** strong finite captured contrast; semantics author-dependent,
+low confidence extrapolating to conversational parenting or learned loops.
+**CHEAPEST DISCRIMINATING NEXT TEST:** zeroGPU independent evidence scrutiny;
+no rerun/fit/scale. Rich conversational SHORT/LONG loops test a different
+intervention, not rescue279. Node3 0–3 released23:28:19, worker retired.
 
 ## Superseded allocation: CHECK-CONTRACT (NOT launched)
 
@@ -377,6 +411,33 @@ Names/designations do not assert generated content, certified hardness or runs.
 Keep strongest difficult high-quality families for L3; grow genuine reusable
 structure diversity toward dozens, not renamed seeds. No family approval hold.
 
+## Native L2 milestone — September14,23:45:38UTC
+
+SHORT reports actual sourcePID170357 on A100physical2, mounted childe226cea2
+and basea2367093 both verified;48calls reserved and5world receipts complete at
+that snapshot. This is real source generation, not yet guided learning or a
+successful sleep. Own59CPUtests include sanitized-neutral semantic gate.
+Tool-free parent service ready with empty tools/MCP and no skills/retries;
+only sanitized nonsealed requests supplied, never global SOURCE/held paths.
+
+Shared cap8648 prospectively supersedes8048:448source+4×1600learner+3×600parent.
+FROZEN is genuinely SHORT-guided, response-aware with its own parent bucket.
+LONG shares that frozen fresh readout, but it is not a matched sparse-guidance
+training-telemetry control; guidance amount and horizon remain confounded.
+Archivecbf75f94, module633d699b, protocol16fa840e; exact receipts in workers.
+No new cohort/dose. Existing4presentations/new target+legacy, atmost216updates
+per sleep; no cumulative prior-new replay, a disclosed retention limitation.
+Zero admitted rows means unchanged child/readout, not invented targets or
+discarded cycles. V2 may consume exact first8 completed TRAIN source receipts
+while one immutable source stream finishes; initial parent-free readout remains
+before first sleep. No source regeneration and no held information to parent.
+
+LONG delivered disjoint build_parent constructor, observe_episode after every
+episode and distill_cycle hook; Main relayed23:49 for shared-driver integration.
+Native LONG launch awaits actual caller compatibility, not Main ratification.
+OldBuilder seam ce9a906e/f2e76c43 delivered and locally published,56CPUtests;
+do not treat an old missing-ownership prompt as a current blocker.
+
 ## Priority frontier — decisions for next compute
 
 1. **Belief change:** independent math answer gain is more credible; qualified
@@ -388,8 +449,9 @@ structure diversity toward dozens, not renamed seeds. No family approval hold.
    breadth batch supplies two, not three. Avoid extra same-child rereads.
 4. **Adversarial explanation:** prompt/voice/removed-feedback artifacts could
    explain record-yield gain; blind fulltext audit addresses them before fit.
-5. **New hypothesis:** feedback may help genuine simple child mistakes even
-   when ambiguous rich-answer failures do not; paired ORACLE-REPAIR tests this.
+5. **New evidence:** simple truthful rejection alone did not add qualified
+   repair yield in279. Conversational parent coaching over learner history is
+   distinct and now primary; do not repeat the boolean-feedback screen.
 6. **Redundant/deallocated:** unchanged small code/text/Taxi/original-record
    screens. Reallocate only on distinct discriminating predictions, not quota.
 
