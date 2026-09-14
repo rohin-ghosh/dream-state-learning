@@ -1,7 +1,12 @@
 # Fresh-bank continuation: SEQ-245
 
-Observed September 14, 2026, 13:45 UTC. Both declared forks completed;
-independent CPU reduction is pending at this initial report.
+Observed September 14, 2026, 13:45 UTC. Both declared forks completed.
+Independent CPU reduction subsequently confirmed all six stages and one
+matching pair; 79 CPU tests passed. Its local receipt is
+`SEQ245_independent_reduction_20260914.json` beside the terminal archive,
+SHA256 `00a81f14e0517750d00697db2935c23577ffdcc88fd2866c6edd6e06218448cb`.
+Source/parent identities, corpora/masks, uniform denominator and saved-adapter
+joins pass. The independent replay preserves the two invalid BEFORE routes.
 
 ## Prediction and result
 

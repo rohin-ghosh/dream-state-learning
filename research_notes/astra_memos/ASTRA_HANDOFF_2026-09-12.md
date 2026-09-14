@@ -15,9 +15,15 @@ matches remote. Independent reducer Goodall01a09f50-4d7e-7aa1-b364-33e5da7bccf5
 owns tools/astra_fresh_reader_cycle_reduce.py + its test, expected report beside
 extracted. Carson01a09e1f-9b92-7233-9c25-fd6e735652b0 owns six writing files.
 Maxwell01a09fc1-874b-7892-a30e-95f4994be366 reviews next causal check only.
-Main owns notes/state and any next execution. No new GPU run planned yet;
-actual-stimulus matched checker comparison is a proposal, not authorized bytes
-or executed evidence. No jobs killed. Node1 receives no new work, expires
+Independent reduction now COMPLETE six stages/one matching pair, 79 CPU tests;
+Goodall closed. Receipt SEQ245_independent_reduction_20260914.json SHA
+00a81f14e0517750d00697db2935c23577ffdcc88fd2866c6edd6e06218448cb beside extracted.
+Main owns notes/state and next execution. Matched checker replay is predeclared
+in analysis/2026-09-14_matched_reader_audit_replay_design.md, not yet launched.
+Kant01a09fa3-a041-7d02-8aa7-9fbed90643f0 owns new runner/tests; Main guard ready.
+Original SEQ239 SFT vs loss-off, SAME A3 BEFORE8fault+SELECTED AFTER6true
+prompts, 14calls/arm, zero fits; explicit third-party replay, not own experience.
+No jobs killed. Node1 receives no new work, expires
 today23:14UTC; previous mirror reconciliation remains valid.
 Preserve unrelated dirty rules and untracked two_sleep_junction draft.
 Mission ACTIVE/INCOMPLETE. Historical live entries below are superseded.

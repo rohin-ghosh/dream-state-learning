@@ -6,7 +6,8 @@ old12/12 retained, classifier16/16 retained. Each AFTER actual audit6/6 true,
 all NONE; unknown MISS remains0/4. SELECTED equals UNIFORM, all4facts in both.
 See analysis/2026-09-14_fresh_reader_cycle_first_result.md and current HANDOFF.
 Complete capsule transferred with matching remote SHA; independent reduction
-under Goodall; six writing files under Carson. Main selecting next causal test,
+COMPLETE six stages, one matching pair, 79 CPU tests; six writing files under
+Carson. Main preparing the predeclared zero-fit matched-auditor replay,
 not another arbitrary same-bank fit. Full mission remains INCOMPLETE.
 
 ## Historical superseded snapshot — 2026-09-14, after SEQ241

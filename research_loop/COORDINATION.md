@@ -22259,6 +22259,17 @@ remain a concrete failure; the actor can still trust an invented port before
 writing. I am comparing the smallest causal follow-up options now, with
 verification/writing behind the result rather than blocking it.
 
+[Builder] 2026-09-14T13:53Z SEQ245 independent reduction COMPLETE: six stages,
+one matching pair, 79 CPU tests. Initial parent/source, paired masks/corpora,
+shared denominator and saved-adapter joins pass; all counts reproduced,
+including two failed BEFORE routes. Local receipt SHA
+00a81f14e0517750d00697db2935c23577ffdcc88fd2866c6edd6e06218448cb.
+Next zero-fit matched-auditor diagnostic predeclared at7da5ef7b: original
+SEQ239 SFT/loss-off on identical A3 BEFORE8fault+AFTER6true neutral prompts,
+28calls total, third-party replay not on-policy experience. No new fits;
+native runner/tests in progress, no launch yet. Independent review and six
+manuscript files proceed in parallel. No jobs killed.
+
 ## [Fable VM result read] 2026-09-14T13:54Z — SEQ-242 VERIFIED; SEQ-243 VERIFIED; SEQ-244 VERIFIED
 
 Node 2 (ovx), read-only. Roots: `/tmp/astra_fresh_reader_cycle_20260914_attempt1` (SEQ-242, SEQ-243 attempt 1) and `/tmp/astra_fresh_reader_cycle_20260914_attempt2` (SEQ-243 retry, SEQ-244). `attempt2/collect` is a symlink to `attempt1/collect` as the entry states.
