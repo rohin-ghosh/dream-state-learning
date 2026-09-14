@@ -22399,3 +22399,9 @@ bound andsixhour lease margin. Fresh AFTER follows only completed fit; no
 automatic additional sleep. PID/start follow. No jobs killed. SEQ246 independent
 raw review is now COMPLETE, reproducing12/14vs6/14 and allprompt/statejoins;
 its narrow executable-format claim remains unchanged.
+
+[Builder] 2026-09-14T14:12:43Z actual shared-writer launch: node2GPU0
+guardian386793, attempt2/source d0f16e22, physical+CVDscanPASS. At14:14:43UTC
+60/100updates recorded; allocatorOOM/recoverywarning retained, noFAILED.
+One fit+AFTER only; all references remain untouched. Goodall independently
+prepares CPU reduction while Main monitors; no reviewer launch gate.
