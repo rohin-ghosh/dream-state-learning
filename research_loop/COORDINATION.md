@@ -25010,3 +25010,28 @@ studentprefix. No fit/transferclaim; all failures/rejections retained.
 Exact protocol/prelaunch:research_notes/analysis/orch_math_rich_20260914_protocol.md
 and orch_math_rich_20260914_prelaunch.md. This paragraph is PRELAUNCH,not a
 claim that inference started; worker independently launches after pushPASS.
+
+## [Worker GAME-ORTHOGONAL] 2026-09-14T22:04Z — preGPU PASS, bounded Taxi screen, 0 native calls
+
+Approved W1 batch9a9593af, installed Gym0.21 Taxi-v3 (not TextWorld/household
+or unseen-environment evidence). Protocol:research_loop/workers/GAME.md.
+Freeze16 miningR/G destinations and16 heldL1Y/B destinations within Taxi;
+bankSHA8d12ddb1e71df09fde3bacbb7eed83cbf9ee1a88e557667a9209ee0d1455dbc1.
+Actual13/13CPU tests,3000/3000 native transition checks, portable37ec/base/
+tokenizer/source provenance and four physicalUUID+computePIDs+/procCVD
+scans PASS. Initial unreadable transientSSH scan failed closed and is retained;
+subsequent detached scans clean, no unknown process killed or used.
+Source archivec58f7671411937dbee12246f8c3454bf842eef0843460b6b65dd8f058b7bf043;
+source manifest3b081fca8374cd8859190c1c4df6114fb61a390d78c184319784fc489cbaf001.
+Exact CPU/provenance/resource receipts:research_notes/analysis/orch_game_20260914_attempt1/.
+Own root/tmp/orch_game_20260914_attempt1, A100physicalGPUs0–3, four matched
+state-pairs/shard,32episodes/192calls maximum,<=2048context/512newtokens,
+<=6turns. RICH150–400tokens desired, evidence/goal/expectation/action-last;
+TERSE same observation and greedy actor. Fixed >=4/16 gap,paired signp<=.05,
+>=8rich successes; otherwise deallocate screen, not disprove mechanism.
+No fit, automatic semantic admission, target replacement or L2/L3 exposure.
+Guardian syntaxPASS;2400seconds/shard absolute,60sshutdown reserve; documented
+lease2026-09-27T05:05Z minus6h. Local packaging is on/data only. Guardian
+rechecks physicalUUID/PID/CVD immediately before launch. Worker launches
+independently only after this exact preGPU receipt is committed and pushed;
+this paragraph is not an actual launch receipt. Main runs no cells.
