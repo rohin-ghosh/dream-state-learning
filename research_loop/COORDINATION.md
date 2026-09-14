@@ -18560,3 +18560,56 @@ records exact next dependencies; full campaign and H1/H2 remain ACTIVE/incomplet
 **Node-1 data safety:** lease ends 2026-09-14 23:14 UTC. Final incremental mirror node 1 → node 2 launched at 2026-09-14T02:22Z in the background on node 1 (rsync -a --stats, no --delete, into the existing `~/mirror/node1_v6_out_2026-09-12T23/`; log `~/mirror_incremental_20260914.log` with RC and source file count). Verification at the next tick.
 
 **Fleet:** 0/32 busy on all four nodes. Daemons alive (nudger, fill, courier_vm; occupancy relay off). Nothing launched or killed by the watcher except the read-only mirror.
+
+## [Builder] 2026-09-14T02:45Z — SEQ-CPU-STAGE2A-METADATA-20260914: complete birth schema, measured capacity, source attribution and reduced scoring
+
+The queued Q0 resource steer is historical. Node2's02:08:42Z read found all8
+devices empty/no compute apps/no same-user CVD entries (systemd/sd-pam envs
+unreadable; one PID vanished). No GPU3–7 reservation, launch or kill here.
+Q0/E0/superseded M1 stay out of authentic ancestry. Work is not waiting for Q0.
+
+Avicenna implemented complete protected12 metadata, with lossless structured
+actions/services, all off-trace rows/edges/roles, exact targets, paired FOR swaps,
+effective mismatches, core/future/route sources and immutable snapshots. Four
+CPU shards measured all64cases/512records: maxima5870321bytes/260563nodes/
+200244leaves/depth8/422196aliases;256Arecords exceed old v1 leaves. Explicit
+birth_full_v2 raises only leaves to262144; old v1/default failures and all
+schema/alias bytes remain unchanged. Measurement is NOT512combined scan passes.
+
+Main's full B scan initially failed18occurrences: numeric array-index aliases
+inside opaque IDs and goal/start/service aliases on original wire keywords.
+No fields/IDs were dropped or reselected. Prospectively bound optional source
+attribution in analysis/2026-09-14_stage2a_source_occurrence_repair_v1.md:
+exact original complete IDs/whole shared keywords only, original prefix bound,
+only semantic_alias receipts; every other category and legacy default unchanged.
+Descartes' contract/provenance caution and Boole's narrow source-bound support
+are recorded, not erased. No human ratification invented; allocator provenance
+remains a separate native prerequisite. Boole found terminal ACK/ID+X boundary
+bug; Main fixed candidate-side boundaries and regression-tested it. Boole
+closed that narrow finding statically, not complete source or science approval.
+Complete B and max-A combined source projections now clear with explicit repair
+(A also needs v2). All native/provenance/science flags remain false.
+
+Dirac implemented pure reduced BASE/D1 scoring using existing captures/drivers:
+exact280reservations/state, paired seeds, full identity/replay joins, retained
+failures/UNUSED slots and unchanged thresholds. No persisted-custody/weights
+authority comes from caller flags. BASE is a state identity; both use D1 slots.
+typed_steps follows upstream strict per-chain typing, not an executed STEP count.
+
+Main final153testsPASS106.249s plus new largest-case integration1PASS12.676s;
+154unique across two commands. Prior152-test invocation failed only stale
+unknown-v2 assertion; attempt1 preserved, corrected unknown-name test and final
+attempt2 pass. Worker53+7commands overlap and are not added to that total.
+Raw logs, all four envelope shards and initial interrupted measurement preserved.
+Receipt: research_notes/astra_memos/receipts_20260912/astra_stage2a_full_metadata_validation_20260914_attempt2.json
+SHA256 b25e5875f0138e1db893978ed692629fd04fa7b41cc0bbd89d99536bddab18be.
+Details: analysis/2026-09-14_stage2a_full_metadata_integration_progress.md.
+
+Next: held core/checker assembly, explicit local intervention depth/initial-STOP
+root conventions, complete core/signature disjointness/nulls, authenticated
+allocator/model/tokenizer/native conductor -> actual reduced560 -> authentic
+same-adapter two-SLEEP. No new external-owner wait and no repeat Q0/SEQ195.
+Node1 expiry23:14UTC; watcher02:22mirror launch observed via f2d92389, verification
+pending. No duplicate transfer or new whole-node preservation claim. No native
+model/tokenizer load, GPU science, node1 write or approval request this increment.
+Full mission ACTIVE/incomplete; handoff updated; unrelated rules/TSJ draft kept.

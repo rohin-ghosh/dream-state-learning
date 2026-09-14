@@ -37,6 +37,12 @@ SCIENCE_GATES = MappingProxyType(dict.fromkeys((
 BOUNDS = MappingProxyType({"bytes": 1048576, "fields": 4096, "leaves": 4096, "nodes": 32768,
                           "aliases": 32768, "depth": 64, "hits": 16384,
                           "domains": 16, "future_identifiers": 16384})
+SEMANTIC_PROFILES = MappingProxyType({
+    "birth_full_v1": MappingProxyType({"bytes": 16777216, "leaves": 131072,
+                                       "nodes": 524288, "aliases": 524288, "depth": 64}),
+    "birth_full_v2": MappingProxyType({"bytes": 16777216, "leaves": 262144,
+                                       "nodes": 524288, "aliases": 524288, "depth": 64}),
+})
 LIMITATIONS = (
     "Caller must authenticate field spans, chronology, implicated IDs, and latest CURRENT.",
     "Caller must supply complete semantic, future-ID, and registered-route inventories.",
@@ -240,28 +246,40 @@ def check_namespace_separation(domains, *, certificate_payload, tiny_source=None
     return NamespaceReport(tuple(issues), tuple(sorted(snapshots)), certificate)
 
 
-def _semantic_object(raw):
-    value = parse_canonical_json(_bytes(raw))
+def _semantic_limits(profile):
+    if type(profile) is not str or profile not in ("legacy", *SEMANTIC_PROFILES):
+        raise ValueError("unknown_semantic_profile")
+    return BOUNDS if profile == "legacy" else SEMANTIC_PROFILES[profile]
+
+
+def _semantic_object(raw, *, semantic_profile="legacy"):
+    limits = _semantic_limits(semantic_profile)
+    if type(raw) is not bytes or len(raw) > limits["bytes"]:
+        raise ValueError("bounded_semantic_bytes_required")
+    if not raw.isascii() or b"\r" in raw or b"\0" in raw:
+        raise ValueError("invalid_ascii_utf8_lf_bytes")
+    value = parse_canonical_json(raw)
     if type(value) is not dict:
         raise ValueError("semantic_object_required")
     return value
 
 
-def _nodes(value, path=()):
-    if len(path) > BOUNDS["depth"]:
+def _nodes(value, path=(), *, semantic_profile="legacy"):
+    if len(path) > _semantic_limits(semantic_profile)["depth"]:
         raise ValueError("semantic_depth_bound_exceeded")
     yield path, value
     if type(value) is dict:
         for key in sorted(value):
-            yield from _nodes(value[key], path + (key,))
+            yield from _nodes(value[key], path + (key,), semantic_profile=semantic_profile)
     elif type(value) is list:
         for index, item in enumerate(value):
-            yield from _nodes(item, path + (str(index),))
+            yield from _nodes(item, path + (str(index),), semantic_profile=semantic_profile)
 
 
-def _leaves(value):
-    for count, (path, item) in enumerate(_nodes(value), 1):
-        if count > BOUNDS["nodes"]:
+def _leaves(value, *, semantic_profile="legacy"):
+    limits = _semantic_limits(semantic_profile)
+    for count, (path, item) in enumerate(_nodes(value, semantic_profile=semantic_profile), 1):
+        if count > limits["nodes"]:
             raise ValueError("semantic_node_bound_exceeded")
         if type(item) not in (dict, list):
             yield path, item
@@ -271,16 +289,17 @@ def _pointer(path):
     return ("/" + "/".join(part.replace("~", "~0").replace("/", "~1") for part in path)).encode("ascii")
 
 
-def derive_semantic_aliases(semantic_bytes):
+def derive_semantic_aliases(semantic_bytes, *, semantic_profile="legacy"):
     """Derive the exhaustive v3 §8 ledger; no hand-entered alias extension.
 
     Causal operands are complete public IDs and are already excluded exactly.
     No global exemption is inferred from an operand-like substring.
     """
-    semantic = _semantic_object(semantic_bytes)
+    limits = _semantic_limits(semantic_profile)
+    semantic = _semantic_object(semantic_bytes, semantic_profile=semantic_profile)
     aliases = set()
-    for count, (path, value) in enumerate(_leaves(semantic), 1):
-        if count > BOUNDS["leaves"]:
+    for count, (path, value) in enumerate(_leaves(semantic, semantic_profile=semantic_profile), 1):
+        if count > limits["leaves"]:
             raise ValueError("semantic_leaf_bound_exceeded")
         if path[0] not in PROTECTED_ROOTS:
             continue
@@ -301,26 +320,27 @@ def derive_semantic_aliases(semantic_bytes):
             if (len(proposal) >= 3 and proposal not in SHARED_LINES and proposal not in SHARED_ATOMS
                     and not _identifier(proposal)):
                 aliases.add(proposal)
-        if len(aliases) > BOUNDS["aliases"]:
+        if len(aliases) > limits["aliases"]:
             raise ValueError("semantic_alias_bound_exceeded")
     return tuple(sorted(aliases))
 
 
-def semantic_alias_ledger(semantic_bytes):
-    return b"\n".join(derive_semantic_aliases(semantic_bytes))
+def semantic_alias_ledger(semantic_bytes, *, semantic_profile="legacy"):
+    return b"\n".join(derive_semantic_aliases(semantic_bytes, semantic_profile=semantic_profile))
 
 
-def forbidden_semantic_labels(semantic_bytes):
+def forbidden_semantic_labels(semantic_bytes, *, semantic_profile="legacy"):
     """Report certificate-label aliases anywhere, and LINK/OLD/NEW edge labels.
 
     Edge recognition is deliberately limited to a `label` leaf under `edges`;
     this is not an alternative graph-schema checker.
     """
-    semantic = _semantic_object(semantic_bytes)
+    limits = _semantic_limits(semantic_profile)
+    semantic = _semantic_object(semantic_bytes, semantic_profile=semantic_profile)
     forbidden = {label.translate(None, _COMPACT_DELETE) for label in FORBIDDEN_CORE_LABELS}
     issues = []
-    for count, (path, value) in enumerate(_nodes(semantic), 1):
-        if count > BOUNDS["nodes"]:
+    for count, (path, value) in enumerate(_nodes(semantic, semantic_profile=semantic_profile), 1):
+        if count > limits["nodes"]:
             raise ValueError("semantic_node_bound_exceeded")
         for text in path[-1:] + ((value,) if type(value) is str else ()):
             compact = b"\n".join(normalize_lines(text.encode("ascii"))[2])
@@ -349,6 +369,57 @@ class PublicField:
     observed_at: int
     evidence: str
     owner: bytes | None = None
+
+
+@dataclass(frozen=True)
+class SemanticSourceSpan:
+    path: str
+    start: int
+    end: int
+    kind: str
+    value: bytes
+    evidence: str
+
+
+@dataclass(frozen=True)
+class SemanticSource:
+    original_prefix: bytes
+    spans: tuple[SemanticSourceSpan, ...]
+
+
+def _validate_semantic_source(prefix, source):
+    if source is None:
+        return ()
+    if type(source) is not SemanticSource:
+        raise ValueError("typed_semantic_source_required")
+    original = _bytes(source.original_prefix)
+    if not original or not prefix.startswith(original):
+        raise ValueError("semantic_source_prefix_changed")
+    if type(source.spans) is not tuple or len(source.spans) > BOUNDS["fields"]:
+        raise ValueError("bounded_semantic_source_spans_required")
+    previous_end = 0
+    paths = set()
+    for span in source.spans:
+        if (type(span) is not SemanticSourceSpan or type(span.start) is not int
+                or type(span.end) is not int or not previous_end <= span.start < span.end <= len(original)
+                or type(span.path) is not str or not span.path or not span.path.isascii()
+                or span.path in paths or type(span.evidence) is not str
+                or not span.evidence or not span.evidence.isascii()
+                or type(span.value) is not bytes or original[span.start:span.end] != span.value
+                or (span.start and original[span.start - 1:span.start] not in (b" ", b"\t", b"\n"))
+                or (span.end < len(prefix) and prefix[span.end:span.end + 1] not in (b" ", b"\t", b"\n"))):
+            raise ValueError("invalid_semantic_source_span")
+        if span.kind == "identifier":
+            if not _public_identifier(span.value):
+                raise ValueError("complete_semantic_source_identifier_required")
+        elif span.kind == "syntax":
+            if span.value not in SHARED_ATOMS and span.value not in SHARED_LINES:
+                raise ValueError("shared_semantic_source_syntax_required")
+        else:
+            raise ValueError("invalid_semantic_source_kind")
+        paths.add(span.path)
+        previous_end = span.end
+    return source.spans
 
 
 @dataclass(frozen=True)
@@ -439,7 +510,7 @@ def scan_forward_targets(prefix, *, target, phase, decision_index, semantic_byte
                          fields=(), future_identifiers=(), registered_routes=(),
                          task_start=None, task_goal=None, current=None,
                          implicated_query=None, implicated_event=None,
-                         observed_contradiction=False):
+                         observed_contradiction=False, semantic_profile="legacy", semantic_source=None):
     """Scan only the next target/future ledger, not every past truthful answer.
 
     Phases: SEEK, PROSPECT, CHECK (or READ_CHECK/STEP_CHECK), CONTINUE.
@@ -452,6 +523,7 @@ def scan_forward_targets(prefix, *, target, phase, decision_index, semantic_byte
     """
     _bytes(prefix)
     _bytes(target)
+    semantic_spans = _validate_semantic_source(prefix, semantic_source)
     if type(decision_index) is not int or decision_index < 1:
         raise ValueError("positive_decision_index_required")
     if type(observed_contradiction) is not bool:
@@ -484,8 +556,8 @@ def scan_forward_targets(prefix, *, target, phase, decision_index, semantic_byte
                 raise ValueError("empty_forbidden_ledger_value")
     if any(not _public_identifier(value) for value in future_identifiers):
         raise ValueError("future_ledger_requires_exact_identifiers")
-    aliases = derive_semantic_aliases(semantic_bytes)
-    semantic_issues = forbidden_semantic_labels(semantic_bytes)
+    aliases = derive_semantic_aliases(semantic_bytes, semantic_profile=semantic_profile)
+    semantic_issues = forbidden_semantic_labels(semantic_bytes, semantic_profile=semantic_profile)
     issues, receipts = [], []
     candidates = [("full_target", target)]
     if operand is not None:
@@ -496,6 +568,11 @@ def scan_forward_targets(prefix, *, target, phase, decision_index, semantic_byte
     candidates.extend(("forbidden_core", value) for value in FORBIDDEN_CORE_LABELS)
 
     def authorized(category, value, start, end):
+        if category == "semantic_alias":
+            for span in semantic_spans:
+                if ((span.kind == "identifier" and span.start <= start < end <= span.end)
+                        or (span.kind == "syntax" and start == span.start and end == span.end)):
+                    return span
         for field in fields:
             if field.kind == "protocol":
                 if (category == "semantic_alias" and field.start == 0

@@ -112,6 +112,7 @@ class ScanInventory:
     semantic_bytes: bytes
     future_identifiers: tuple[bytes, ...]
     registered_routes: tuple[bytes, ...]
+    semantic_profile: str = "legacy"
 
 
 @dataclass(frozen=True)
@@ -170,6 +171,8 @@ class BirthScanReport(_Partial):
     semantic_sha256: str
     future_identifiers: tuple[bytes, ...]
     registered_routes: tuple[bytes, ...]
+    semantic_profile: str = "legacy"
+    source_semantic_occurrences: bool = False
 
     @property
     def supplied_projection_clear(self):
@@ -371,7 +374,30 @@ def bind_birth_arm(record, case, *, role_tokens):
     return _bind(record, case, target)
 
 
-def _scan(binding, inventory):
+def _semantic_source(binding):
+    spans = []
+    for observation in binding.observations:
+        if scanner._public_identifier(observation.value):
+            spans.append(scanner.SemanticSourceSpan(
+                observation.path, observation.start, observation.end, "identifier", observation.value,
+                observation.evidence + ":projection-sha256:" + binding.projection_sha256,
+            ))
+    for message, span in zip(binding.public_messages[1:], binding.message_spans[1:]):
+        for line_index, line in enumerate(_tokens(message.content)):
+            for token_index, (token, start, end) in enumerate(line):
+                raw = token.encode("ascii")
+                if raw in scanner.SHARED_ATOMS or raw in scanner.SHARED_LINES:
+                    spans.append(scanner.SemanticSourceSpan(
+                        f"/messages/{span.message_index}/syntax/{line_index}/{token_index}",
+                        span.start + start, span.start + end, "syntax", raw,
+                        f"source-message:{span.message_index}:sha256:{span.content_sha256}"
+                        + ":projection-sha256:" + binding.projection_sha256,
+                    ))
+    return scanner.SemanticSource(binding.projection_bytes, tuple(sorted(spans, key=lambda item: item.start)))
+
+
+def _scan(binding, inventory, *, source_semantic_occurrences=False):
+    _require(type(source_semantic_occurrences) is bool, "boolean_source_semantic_occurrences_required")
     _require(type(inventory) is ScanInventory, "explicit ScanInventory required")
     _require(type(inventory.semantic_bytes) is bytes, "explicit semantic bytes required")
     for values in (inventory.future_identifiers, inventory.registered_routes):
@@ -383,18 +409,23 @@ def _scan(binding, inventory):
         task_start=binding.task_start, task_goal=binding.task_goal, current=binding.current,
         implicated_query=binding.implicated_query, implicated_event=binding.implicated_event,
         observed_contradiction=binding.observed_contradiction,
+        semantic_profile=inventory.semantic_profile,
+        semantic_source=_semantic_source(binding) if source_semantic_occurrences else None,
     )
     return BirthScanReport(binding, report, sha256(inventory.semantic_bytes).hexdigest(),
-                           inventory.future_identifiers, inventory.registered_routes)
+                           inventory.future_identifiers, inventory.registered_routes, inventory.semantic_profile,
+                           source_semantic_occurrences)
 
 
-def scan_birth_arm(record, case, *, role_tokens, semantic_bytes, future_identifiers, registered_routes):
+def scan_birth_arm(record, case, *, role_tokens, semantic_bytes, future_identifiers, registered_routes,
+                   semantic_profile="legacy", source_semantic_occurrences=False):
     """Always reconstruct source bindings; never accept caller exemption spans."""
     binding = bind_birth_arm(record, case, role_tokens=role_tokens)
-    return _scan(binding, ScanInventory(semantic_bytes, future_identifiers, registered_routes))
+    return _scan(binding, ScanInventory(semantic_bytes, future_identifiers, registered_routes, semantic_profile),
+                 source_semantic_occurrences=source_semantic_occurrences)
 
 
-def scan_birth_pair(pair, case, *, role_tokens, closed_inventory, atom_inventory):
+def scan_birth_pair(pair, case, *, role_tokens, closed_inventory, atom_inventory, source_semantic_occurrences=False):
     """Paired source validation with separate explicit inventory for each arm."""
     _require(type(pair) is targets.PairedTarget and type(pair.closed) is targets.ArmRecord
              and type(pair.atom_local) is targets.ArmRecord, "source PairedTarget required")
@@ -405,5 +436,7 @@ def scan_birth_pair(pair, case, *, role_tokens, closed_inventory, atom_inventory
     closed_target = _select(pair.closed, pairs, case)
     atom_target = _select(pair.atom_local, pairs, case)
     _require(closed_target == atom_target, "pair crosses decision boundaries")
-    return PairedScanReport(_scan(_bind(pair.closed, case, closed_target), closed_inventory),
-                            _scan(_bind(pair.atom_local, case, atom_target), atom_inventory))
+    return PairedScanReport(_scan(_bind(pair.closed, case, closed_target), closed_inventory,
+                                 source_semantic_occurrences=source_semantic_occurrences),
+                            _scan(_bind(pair.atom_local, case, atom_target), atom_inventory,
+                                  source_semantic_occurrences=source_semantic_occurrences))

@@ -1,6 +1,72 @@
-# Astra restart handoff — September 14, 2026, core/route source integration
+# Astra restart handoff — September14,2026,02:43UTC
 
-## Current increment — Builder-owned definitions implemented; two real bugs repaired
+## Current increment — complete birth metadata and reduced scoring
+
+The resource steer does not revive Q0/E0 or superseded M1. Node2's prior
+02:08:42Z live read found all8devices empty with no same-user CUDA_VISIBLE_DEVICES
+entry; that is a bounded snapshot. GPUs3–7 remain untouched in this increment.
+No model/tokenizer/native/GPU job was launched, reserved or killed here.
+
+Complete protected12 birth metadata is implemented in
+organism_v6/composition_birth_stage2a_metadata_inputs.py. Reuses constructor,
+core/future/route producers; preserves every row, off-trace edge, role, trace,
+target and paired FOR/effective-mismatch metadata with exact structured
+round trips.64cases/512records measured: max5870321bytes,260563nodes,
+200244leaves,depth8,422196aliases. These were counts/aliases, not512prefix scans.
+V1 overflow on256Arecords retained. Select capacity birth_full_v2 explicitly
+for full A; only leaves increase to262144, other limits/schema unchanged.
+Default v1 and legacy behavior remain unchanged.
+
+Full inventory adapter: organism_v6/composition_birth_stage2a_inventory.py.
+It reconstructs metadata itself and joins semantic/future plus mandatory typed
+finite-route checks at identical source/boundary. Optional explicit
+source_semantic_occurrences=True adds source-local semantic receipts: complete
+original wire keywords and contained original opaque-ID hits only. Legacy
+strict failures/alias ledgers remain unchanged; full-target, operand, future-ID,
+route and forbidden-core checks never inherit this permission. Candidate must
+retain the full original prefix and candidate token boundaries. Boole's terminal
+ACK/ID+X bug is repaired/regression-tested and narrowly closed by static review.
+This is NOT independent allocator provenance or native/scientific approval.
+
+Representative complete B and maximum A projections pass with the explicit
+repair (A also needs v2). This is NOT a whole512combined-scan claim. See
+research_notes/analysis/2026-09-14_stage2a_full_metadata_integration_progress.md
+and source_occurrence_repair_v1 / birth_metadata_capacity_v2 notes for the
+original failures, review disagreement, exact scope and outstanding gates.
+
+Native numerical reducer now exists:
+organism_v6/composition_birth_stage2a_screen_reduce.py: reduce_base_d1.
+Exact280reservations/state, paired D1 logical seeds, complete captured replay/
+accounting and unchanged reduced thresholds. BASE is state identity, not stage.
+Native weights/receipt custody/finite loss/nulls remain separate. No D2/full
+matrix or dose qualification is inferred.21new tests included in Main suite.
+
+Validation: Main153testsPASS106.249s plus one new max-case integration test
+PASS12.676s;154unique across two commands. Earlier152-test attempt failed only
+the stale unknown-v2 test and is retained. Worker53 plus7 commands overlap Main
+coverage and are not added. Raw logs and all four measurement shards preserved
+under receipts_20260912/astra_stage2a_metadata_envelope_20260914_attempt1 and
+astra_stage2a_full_metadata_validation_20260914_attempt{1,2}.log.
+
+NEXT concrete integration: held core/checker envelope assembly using existing
+build_intervention_graph_packet/build_chain_graph_packet, then native
+allocator/model/tokenizer/initialization/padding/custody/conductor bindings.
+Do not invent depth2 for one-turn intervention constructions that lack registered
+continuations. Explicitly dispose initially reached CONTINUE's root/goal-side
+conventions. These are local Builder source definitions, not another external
+owner wait. Complete core/signature disjointness/null/source checks remain;
+then execute reduced BASE+D1 -> qualified authentic same-adapter two-SLEEP.
+Do not rerun Q0/SEQ195 or substitute metadata success for H1/H2 evidence.
+
+Preservation: node1 expiry September14 23:14UTC. Read-only audit found no
+demonstrated missing Builder payload in documented scope, not complete-node
+safety. New watcher commitf2d92389 reports incremental mirror started02:22UTC;
+completion/content verification pending. Do not duplicate its transfer or run
+the destructive migration script. No new whole-node preservation claim here.
+Preserve unrelated dirty gpu/codex/dream_state.rules and the unreviewed TSJ draft.
+Full mission ACTIVE/incomplete; no experiment background work implied.
+
+## Previous increment — Builder-owned definitions and core/route integration
 
 External source-owner waiting was self-imposed, not a direct human reservation.
 Main adopted prospective core definitions in analysis/2026-09-14_stage2a_builder_core_bindings_v1.md
