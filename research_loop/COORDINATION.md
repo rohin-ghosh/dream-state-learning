@@ -22779,3 +22779,13 @@ unchanged. Added an actual shell-guard regression with stub failed admission:
 archived .git-free source reaches admission and exits without a model.12CPUtests
 PASS. Prepare newattempt2 from repaired source; same world, adapters, budgets,
 inputs, protocol and endpoints; do not edit attempt1's frozen snapshot.
+
+## [Builder] 2026-09-14 15:29 UTC — corrected fresh collection launch
+
+Attempt2 nativepreparePREPARED_NO_MODEL, same worlddb881d8f andsame37ec/207ad
+checkpointjoins. Launching node2GPU0 collect/TRAINED at
+`/tmp/astra_event_two_hop_transfer_20260914_attempt2`, source
+7db26bec1b419d5bb2548dcdec82cdc4f0adca29 with matching root source marker.
+12CPUtests including archived-shell regressionPASS. <=8actualcalls/1920seconds,
+no parent/fit; guard rechecks GPU/CVD and lease. PIDtofollow. Attempt1 remains
+an unchanged pre-model wrapper failure; no experience is being recollected.
