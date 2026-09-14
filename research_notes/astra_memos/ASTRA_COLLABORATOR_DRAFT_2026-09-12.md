@@ -2,38 +2,38 @@
 
 ## Message — UNSENT
 
-Can developmental teaching help an agent select experience and use it after
-learning? We study frozen Qwen2.5-7B-Instruct with persistent LoRA adapters.
+Can developmental teaching help an agent choose experience and use it after
+learning? We study persistent LoRA adapters on frozen Qwen2.5-7B-Instruct.
 Matched lesson-gradient masking previously isolated parent-free reader-audit
-learning: 16/16 versus 7/16 held classifications.
+classification: 16/16 versus 7/16 held cases.
 
-Independent replay now verifies actual source choices [1,3,3] from the taught
-auditor (SEQ-240). Main's four terminal repair cells (SEQ-241; independent
-analysis pending) test selected versus uniform material from each same parent.
-After 100 updates, taught-selected routing improves 3/4 to 4/4 and W0/W8 recall
-1/4 to 4/4, while retaining eight old facts and classifier 16/16. Uniform
-matches it: useful integration, not selection superiority. The loss-off-derived
-selected fork leaves one new fact unresolved and loses one old fact; its
-uniform sibling repairs all four and retains eight.
+A fresh same-family bank now extends the repaired taught child (A3, SEQ-245).
+One shared four-event collection, BEFORE and audit precedes selected/uniform
+forks, each trained for 100 updates. Both improve routing 1/4 to 4/4 and exact
+W0/W8 recall 0/4 to 4/4, retain twelve prior facts, and preserve classifier
+16/16. Eight faulty BEFORE reads produce eight source-valid choices; six
+accurate AFTER reads per fork produce six correct NONE responses. The audit
+strata differ, so this is not a fixed-test classifier gain.
 
-The repaired taught child correctly abstains on all six accurate reader replies;
-this all-true panel does not test fault detection or justify another repair fit.
-Both developmental states receive audit rehearsal during repair, so this is
-not continued withholding of teaching. One exposed lineage, unequal source
-doses and external prompts/scheduling limit causal claims; unseen MISS remains
-0/4. No H1/H2 or autonomous learning-rate improvement is established.
+Uniform matches selected; both include all four facts, with unequal per-fact
+and token doses. The original wrapper failure and two invalid routes remain
+recorded; completed collection was reused. Unseen MISS remains 0/4. This is
+one externally scheduled lineage, not independent replication, H1/H2 or an
+autonomous learning-rate improvement. Independent six-stage reduction confirms one matching pair.
 
-We seek collaborators for independent-family recurrence, field-sensitive
-retention and causal controls. A fresh-bank continuation is being prepared;
-no outcome is reported. This message remains unsent.
+Next tests should separate selection utility from coverage and assess
+independent-family recurrence and retention. We seek collaborators on those
+controls and field-sensitive failure analysis. This message remains unsent.
 
 ## Supporting notes—not part of message
 
 **Evidence-backed working update — UNSENT.** No message has been sent.
 
 **September 14, 2026 result update — research question unresolved.**
-Verified SEQ-240 and Main's terminal SEQ-241 repair (independent analysis
-pending) are included below, separately from SEQ230 and SEQ-236. Cycle2 prospectively pairs W0 BEFORE/AFTER; cycle1 SEQ227/228 retains
+A3 SEQ-245 is terminal and independently reduced: six stages, one matching
+pair. Its same-parent continuation is reported separately.
+Verified SEQ-240 and independently reduced SEQ-241 repair (eight stages,
+two matching pairs) are included below, separately from SEQ230 and SEQ-236. Cycle2 prospectively pairs W0 BEFORE/AFTER; cycle1 SEQ227/228 retains
 its primary W8 result and missing W0 BEFORE routing baseline. Earlier results
 and failures remain. Scoped
 source gates closed PASS/SEPARATED and native DEV results exist: runtime
@@ -44,10 +44,81 @@ The sprint TeX and companion abstract are updated; canonical
 No complete cross-draft review is claimed. The collaborator draft stays UNSENT;
 H1/H2 and the program remain open.
 
+### SEQ-245: A3 fresh-bank continuation — September 14, 2026
+
+Both forks are terminal in [Main's A3 result](../analysis/2026-09-14_fresh_reader_cycle_first_result.md).
+The local `SEQ245_independent_reduction_20260914.json` reports COMPLETE,
+no failed/invalid/pending checks and matching initial-state bindings. This is
+receipt consistency, not independent base/adapter authentication or tokenizer
+re-encoding. Goodall's independent reduction is complete: six stages, one
+matching pair; Main reports79 associated CPU tests passed, not rerun here.
+One repaired SEQ-241 `SFT_SELECTED` child supplies one shared parent-free
+collection (4/4 grounded events, 8 calls), BEFORE and actual-reader audit.
+SELECTED and UNIFORM fork from that same saved adapter, not separate learners.
+
+| Endpoint | Shared BEFORE | SELECTED AFTER | UNIFORM AFTER |
+| --- | ---: | ---: | ---: |
+| A3 own parametric routing /4 | 1 | 4 | 4 |
+| A3 exact W0/W8 recall, each /4 | 0 | 4 | 4 |
+| Prior W0/W8 recall, each /12 | 12 | 12 | 12 |
+| Original held audit classifier /16 | 16 | 16 | 16 |
+| Actual-reader audit correct / calls | 8/8 faulty | 6/6 true | 6/6 true |
+| Reader-disabled routing /4 | 2 | 2 | 2 |
+| Held supplied-text routing /8 | 8 | 8 | 8 |
+| Unseen MISS /4 | 0 | 0 | 0 |
+
+`HELD_AUDIT.json` retains true8/8 and fault8/8 in all three stages: the original
+A2 classifier panel, not a fresh A3 held-classifier transfer test.
+`ACTUAL_READERS.json` records BEFORE choices `[1,0,1,0,3,2,3,2]`, all source-valid,
+without semantic filtering. Both materials cover all four A3 facts. AFTER has
+six accurate replies, six correct NONE responses and no selections per fork;
+its fault stratum is0/0, not demonstrated perfect fault detection. Changing
+actual-reader strata are not a fixed-test classification gain.
+
+**Failure-inclusive history:** the first BEFORE had two genuine `invalid_route`
+actions copying unlisted ports after two reads each. The wrapper then rejected
+missing committed outcomes before any actual-audit call. SEQ-243 removed only
+that prerequisite; completed collection was reused. SEQ-244 repeats BEFORE
+with all eight actual reads auditable and no fabricated transition. Routing
+remains1/4, including the two invalid routes. Original failed artifacts remain.
+
+Each fork completes100 updates:38 cue+62 lesson+100 old-memory+200 new-memory
+presentations, using96 replay views covering all12 prior facts. New-fact doses
+are `[48,56,48,48]` selected versus `[50,50,50,50]` uniform. Actual supervised
+tokens16,345 versus16,319 use common uniform causal-label denominator16,319;
+neither token nor per-fact dose equality is claimed. Fresh AFTER processes
+load their own saved output adapters; receipts bind loaded states to training
+outputs and report unchanged frozen base. Shared BEFORE uses120 calls, each
+AFTER114. Both training logs retain allocator OOM/recovery warnings despite
+completion; no headroom claim follows.
+
+This is a same-family continuation of the taught child, not an independent
+seed or new environment. Supplied source tables, externally offered actions,
+audit prompts/scheduling and shared lesson rehearsal remain. Parametric recall
+is separate from supplied external-text routing; W0/W8 are repeated views of
+four new facts, not eight facts or independent learners. Uniform matches
+selected: no selection superiority, H1/H2, autonomous learning-rate improvement
+or mission completion. SEQ230 and the earlier corrective trade-off remain separate.
+
+Source `8e520bc5b359163b2e54d70d39f317d0ab914102`; raw capsule
+`gpu_artifacts_local/astra_fresh_reader_cycle_terminal_20260914_attempt2/extracted/`,
+with `RESULT.json`, `HELD_AUDIT.json`, `ACTUAL_READERS.json` under
+`before`, `SELECTED/after`, `UNIFORM/after`, and both training receipts.
+Independent reduction receipt SHA256 (locally checked):
+`00a81f14e0517750d00697db2935c23577ffdcc88fd2866c6edd6e06218448cb`.
+Transfer archive SHA256 (locally checked):
+`03fc97eb83923a0c8a32f6e3f25e77a5b7d39499398a0f5aab75880421e8bc7c`.
+
 ### SEQ-241: useful selected repair, matching uniform — Main terminal report
 
 All four cells are terminal in [Main's released repair result](../analysis/2026-09-14_selected_reader_repair_first_result.md);
-independent reduction and field analysis remain pending, not execution gates.
+independent reduction is COMPLETE: eight stages, two matching pairs.
+Independent receipt: `gpu_artifacts_local/astra_selected_reader_repair_terminal_20260914_attempt1/SEQ241_independent_reduction_20260914.json`; locally verified SHA256
+`5e876d5e6a4328e178bed80682f67d3ca81be3ee806392f875d2e13e19669cad`. All eight stages and both same-parent pairs pass, with no
+failed/invalid/pending checks. This verifies receipt consistency and mask
+structure, not independent upstream actor/base authentication or tokenizer
+re-encoding; existing numerical results and causal limits are unchanged.
+
 Each developmental state's own post-lesson adapter is forked into SELECTED and
 UNIFORM. SFT selections[1,3,3] and OFF[1] come from independently verified
 [SEQ-240 actual audits](../analysis/2026-09-14_actual_reader_audit_result.md), not
@@ -99,8 +170,8 @@ independent repair reduction or fresh tensor inspection.
 
 One exposed DEV lineage, external source-table prompts/scheduling and common
 rehearsal constrain generality. No H1/H2, selection superiority or autonomous
-learning-rate improvement follows. Main prepares one fresh A3 bank from
-SFT_SELECTED; no new-bank collection, fit or outcome is reported here.
+learning-rate improvement follows. The later A3 continuation is reported
+separately in the SEQ-245 section, not pooled with this repair.
 SEQ230 and SEQ-236 remain separate comparisons.
 
 ### SEQ-237–239: parent-free reader-audit competency and identity limits
@@ -198,7 +269,7 @@ actual target tokens (17,009 versus16,701). All failures remain evidence.
 Selection prompts are externally posed, not autonomous error detection or
 selector training; no H1/H2 promotion follows. Independent verification follows
 execution. SEQ-237 closes the no-fit reselection variants. Main preserves adapters and
-owns the pending fresh-bank continuation; no new-bank outcome is included.
+owns adapter preservation; the later A3 outcome is reported separately above.
 
 ### SEQ230: second sequential adult cycle, independently reduced
 

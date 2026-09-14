@@ -21,7 +21,8 @@ Dated statements below about unresolved TODO keys describe earlier snapshots.
 
 **Ongoing first-sprint working draft — research question unresolved.**
 Canonical `main.tex` now includes bounded September14 diagnostics through
-SEQ-241 (Main terminal; independent analysis pending), with SEQ230 and
+A3 SEQ-245 (independent six-stage reduction complete),
+with SEQ-241, SEQ230 and
 SEQ-236 retained as separate comparisons,
 alongside earlier positive and negative findings. The new section
 separates own-EVENT persistence, outcome-SFT controller fits and coached cue
@@ -41,7 +42,78 @@ the first adult write/use comparison is complete, with an explicit W8 reader
 failure and a separately reported no-fit W0 interface repair.
 The full sprint remains incomplete. No G3/H1/H2, parenting or freeze promotion.
 
+## SEQ-245: A3 fresh-bank continuation — September 14, 2026
+
+Both forks are terminal in [Main's A3 result](../research_notes/analysis/2026-09-14_fresh_reader_cycle_first_result.md).
+The local `SEQ245_independent_reduction_20260914.json` reports COMPLETE,
+no failed/invalid/pending checks and matching initial-state bindings. This is
+receipt consistency, not independent base/adapter authentication or tokenizer
+re-encoding. Goodall's independent reduction is complete: six stages, one
+matching pair; Main reports79 associated CPU tests passed, not rerun here.
+One repaired SEQ-241 `SFT_SELECTED` child supplies one shared parent-free
+collection (4/4 grounded events, 8 calls), BEFORE and actual-reader audit.
+SELECTED and UNIFORM fork from that same saved adapter, not separate learners.
+
+| Endpoint | Shared BEFORE | SELECTED AFTER | UNIFORM AFTER |
+| --- | ---: | ---: | ---: |
+| A3 own parametric routing /4 | 1 | 4 | 4 |
+| A3 exact W0/W8 recall, each /4 | 0 | 4 | 4 |
+| Prior W0/W8 recall, each /12 | 12 | 12 | 12 |
+| Original held audit classifier /16 | 16 | 16 | 16 |
+| Actual-reader audit correct / calls | 8/8 faulty | 6/6 true | 6/6 true |
+| Reader-disabled routing /4 | 2 | 2 | 2 |
+| Held supplied-text routing /8 | 8 | 8 | 8 |
+| Unseen MISS /4 | 0 | 0 | 0 |
+
+`HELD_AUDIT.json` retains true8/8 and fault8/8 in all three stages: the original
+A2 classifier panel, not a fresh A3 held-classifier transfer test.
+`ACTUAL_READERS.json` records BEFORE choices `[1,0,1,0,3,2,3,2]`, all source-valid,
+without semantic filtering. Both materials cover all four A3 facts. AFTER has
+six accurate replies, six correct NONE responses and no selections per fork;
+its fault stratum is0/0, not demonstrated perfect fault detection. Changing
+actual-reader strata are not a fixed-test classification gain.
+
+**Failure-inclusive history:** the first BEFORE had two genuine `invalid_route`
+actions copying unlisted ports after two reads each. The wrapper then rejected
+missing committed outcomes before any actual-audit call. SEQ-243 removed only
+that prerequisite; completed collection was reused. SEQ-244 repeats BEFORE
+with all eight actual reads auditable and no fabricated transition. Routing
+remains1/4, including the two invalid routes. Original failed artifacts remain.
+
+Each fork completes100 updates:38 cue+62 lesson+100 old-memory+200 new-memory
+presentations, using96 replay views covering all12 prior facts. New-fact doses
+are `[48,56,48,48]` selected versus `[50,50,50,50]` uniform. Actual supervised
+tokens16,345 versus16,319 use common uniform causal-label denominator16,319;
+neither token nor per-fact dose equality is claimed. Fresh AFTER processes
+load their own saved output adapters; receipts bind loaded states to training
+outputs and report unchanged frozen base. Shared BEFORE uses120 calls, each
+AFTER114. Both training logs retain allocator OOM/recovery warnings despite
+completion; no headroom claim follows.
+
+This is a same-family continuation of the taught child, not an independent
+seed or new environment. Supplied source tables, externally offered actions,
+audit prompts/scheduling and shared lesson rehearsal remain. Parametric recall
+is separate from supplied external-text routing; W0/W8 are repeated views of
+four new facts, not eight facts or independent learners. Uniform matches
+selected: no selection superiority, H1/H2, autonomous learning-rate improvement
+or mission completion. SEQ230 and the earlier corrective trade-off remain separate.
+
+Source `8e520bc5b359163b2e54d70d39f317d0ab914102`; raw capsule
+`gpu_artifacts_local/astra_fresh_reader_cycle_terminal_20260914_attempt2/extracted/`,
+with `RESULT.json`, `HELD_AUDIT.json`, `ACTUAL_READERS.json` under
+`before`, `SELECTED/after`, `UNIFORM/after`, and both training receipts.
+Independent reduction receipt SHA256 (locally checked):
+`00a81f14e0517750d00697db2935c23577ffdcc88fd2866c6edd6e06218448cb`.
+Transfer archive SHA256 (locally checked):
+`03fc97eb83923a0c8a32f6e3f25e77a5b7d39499398a0f5aab75880421e8bc7c`.
+
 ## SEQ-240 verified; SEQ-241 repair terminal — September 14, 2026
+
+Independent receipt: `gpu_artifacts_local/astra_selected_reader_repair_terminal_20260914_attempt1/SEQ241_independent_reduction_20260914.json`; locally verified SHA256
+`5e876d5e6a4328e178bed80682f67d3ca81be3ee806392f875d2e13e19669cad`. All eight stages and both same-parent pairs pass, with no
+failed/invalid/pending checks. This verifies receipt consistency and mask
+structure, not independent upstream actor/base authentication or tokenizer
+re-encoding; existing numerical results and causal limits are unchanged.
 
 [Independent SEQ-240 replay](../research_notes/analysis/2026-09-14_actual_reader_audit_result.md)
 confirms all14 no-fit calls: SFT5/7 with selections[1,3,3], OFF1/7 with[1].
@@ -49,8 +121,8 @@ SFT still misses both source2 node-only errors; reader strings differ between
 arms. Source validity does not itself establish usefulness.
 
 [Main's terminal SEQ-241 report](../research_notes/analysis/2026-09-14_selected_reader_repair_first_result.md)
-reports four100-update cells; independent repair reduction/field analysis is
-pending. SFT-selected routing3/4→4/4 and strict A2 W0/W8 recall1/4→4/4 retain
+reports four100-update cells; independent reduction is COMPLETE: eight stages,
+two matching pairs. SFT-selected routing3/4→4/4 and strict A2 W0/W8 recall1/4→4/4 retain
 old8/8 and classifier16/16; uniform matches. OFF-selected remains routing3/4,
 recall3/4, old7/8, classifier12/16; OFF-uniform4/4,4/4,8/8,13/16. This is
 useful taught-selection/write/action integration, not selection superiority.
@@ -66,8 +138,8 @@ warnings despite completion; encoded max575 does not validate2048-token headroom
 Source `fbe0981c36c30590b4f640c4134cca48bf36272c`; terminal root
 `gpu_artifacts_local/astra_selected_reader_repair_terminal_20260914_attempt1/`.
 Main reports3,196 files verified in `local_check_v2.txt`; the earlier empty
-check is not a pass. No H1/H2 or independent-learner claim. Main prepares fresh
-A3 from SFT_SELECTED; no fresh-bank result or further same-bank fit is claimed.
+check is not a pass. No H1/H2 or independent-learner claim. The later A3
+continuation is reported separately above; it does not revise these repair cells.
 
 ## SEQ-237–240: lesson and actual-reader audit — September 14, 2026
 
@@ -140,9 +212,9 @@ are synchronized; earlier archived abstracts remain verbatim in the respective
 files. The explicitly owned companions
 `research_notes/astra_memos/ASTRA_COLLABORATOR_DRAFT_2026-09-12.md` and
 `research_notes/astra_memos/ASTRA_PAPER_CLAIM_MAP_2026-09-12.md` also include
-verified SEQ-240 and Main's terminal SEQ-241 repair. Independent repair analysis
-is pending; no full cross-draft review is claimed. The A3 continuation is being
-prepared and no new-bank outcome is included.
+verified SEQ-240 and independently reduced SEQ-241 repair (eight stages, two
+matching pairs), alongside independently reduced A3 SEQ-245. No full cross-draft
+review is claimed.
 
 September 14 static checks: synchronized active abstracts278 words; UNSENT
 message209 words. TeX braces/environments, labels/references, unchanged citations
