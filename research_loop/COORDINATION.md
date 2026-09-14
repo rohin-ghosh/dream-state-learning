@@ -21933,3 +21933,83 @@ admission stays separate from classifier correctness and write utility.
 **VM reader (12:15–12:18Z):** SEQ-235, 236 VERIFIED; five runs, fourteen SEQs, zero discrepancies.
 
 **Fleet:** a40:0/8 ovx:0/8 ovx2:0/8 a100:0/8 busy (AUDIT fits on node 2 GPUs 0/1 if still training at the poll). Daemons: astra_nudge=1 fable_fill=1 courier_vm=1 occ_off=yes hb_age=51s astra_tmux=alive. Laptop chains 4/4. Node-1 lease ends 23:14 UTC (~10.5 h); mirror complete. Nothing launched or killed by the watcher.
+
+## [Builder] SEQ-240 — 2026-09-14T12:49Z — learned auditor selects previously unwritten own records
+
+Actual-reader audits on node2GPU2/3 COMPLETE, sourceadfbdd45911e1cf946ccd89bbc724af2210198df,
+root /tmp/astra_actual_reader_audit_20260914_attempt1; guardians375403/375404,
+7actual audit calls each,0fits. AUDIT_SFT5/7correct (true2/2,fault3/5),
+admitted pointers[1,3,3]; AUDIT_LOSS_OFF1/7correct (all7stimuli faulty),
+admitted[1]. Preserve duplicates and all source-valid choices, not efficacy-filtered.
+SFTmisses its two source2node errors. Different actors produced different reader
+stimuli:5/7vs1/7is NOT an isolated same-stimulus policy comparison. Actual new
+record selections are observed; downstream write utility remains UNTESTED.
+RESULT hashes SFT0641ae595365177055bd5dadef054770359f5ef1d82271491cb0f717e33f1aa8,
+LOSS_OFF25901598c1e0be804d17151ab34999ad88ca9be386ff361daf77bbb9235bc92e.
+Maxwell owns independent capture/replay, behind execution.
+
+[Builder -> Rohin] This now connects the taught checking behavior to the child's
+own later reader mistakes: after parent removal it chooses previously unwritten
+records1and3, rather than endlessly reselecting priorrecord2. That is a useful
+new link, not yet evidence that its choice improves learning. Next is one real
+repair sleep from those choices, alongside uniform material from the identical
+starting child. Both developmental states get that comparison, four small cells.
+We retain old facts and the learned behavior in the sleep mix and test the next
+updated child on its own new reader errors. This follows your requested loop,
+not a new inventory or custody prerequisite. Existing source hygiene stays;
+independent review and paper updates run alongside it.
+
+[Builder] 2026-09-14T12:49Z prospective four-cell repair, NOT LAUNCHED at this
+entry: node2GPU0SFT_SELECTED,1SFT_UNIFORM,2LOSS_OFF_SELECTED,3LOSS_OFF_UNIFORM,
+each100updates with shared1memory/1behavior/2new batch and identical within-pair
+initial adapter. Selected pointers[1,3,3]and[1], uniformall4. Exact design at
+research_notes/analysis/2026-09-14_selected_reader_repair_design.md.
+The common behavior pool includes62audit lessons even for formerLOSS_OFF;
+this is not ongoing withholding of audit supervision. Main owns driver/guard,
+Kant trainer/tests;25focused/adjacentCPUtestsPASS, driver tests pending.
+Source-bound prepare and physical+CVD free checks required before launch.
+Max7440s/cell including fit/reload/readout (8.27A40h worstcase total, not estimate),
+node2leaseSeptember21 08:43UTC with6hourmargin. Node1receives no newwork.
+Decision: compare material utility/retention and next audit selections, no tuning
+or automatic further fit; one exposedDEVlineage, no H1/H2 or clean-lineage claim.
+
+## [Fable VM result read] 2026-09-14T12:48Z — SEQ-238 VERIFIED; SEQ-239 VERIFIED
+
+Read-only recount on node 2, root `/tmp/astra_reader_audit_lesson_20260914_attempt1` (`collect/{RESULT,BEFORE_HELD,LESSON,DEV_CASES,HELD_CASES}.json`, `collect/CALL_*.json`, `{AUDIT_SFT,AUDIT_LOSS_OFF}/{train,after}`). No process touched, nothing launched, nothing written on the node. Node-1 (a40) not involved. Successes were recounted from each capture's raw reply against the case's expected string (terminal, untruncated), not from the stored success flags; the two agree on every capture.
+
+**SEQ-238** (reader-audit lesson collection, `collect`)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| calls / fits / terminal | 80 / 0 / LESSON_READY | model_calls 80, fits 0, status LESSON_READY; 80 CALL_*.json files (16 HELD + 64 DEV) | collect/RESULT.json, ls |
+| parent-free held baseline | 7/16 (true 4/8, fault 3/8) | overall 7/16, true 4/8, fault 3/8; raw recount true 4/8, fault 3/8; parent_present false, 16 calls | collect/BEFORE_HELD.json |
+| coached DEV | 62/64 (true 30/32, fault 32/32) | overall 62/64, true 30/32, fault 32/32; raw recount identical; parent_present true, 64 calls | collect/LESSON.json |
+| all 8 DEV strata cover true and fault | yes | 8 events, 8 with true_successes > 0 and fault_successes > 0; coverage_complete true | collect/LESSON.json coverage |
+| candidate SFT rows | 62 | rows 62; row set equals the set of successful captures (the 2 incorrect true-case outputs excluded) | collect/LESSON.json |
+| DEV vs HELD tasks differ | different | DEV cases_sha256 ca45e975…, HELD cases_sha256 6c95abea…; disjoint event lists | DEV_CASES.json, HELD_CASES.json |
+| RESULT sha | (not named) | 93d20d7ca7051e8d7f2ee27ad9d4f7d91f0b35aaf351fbe0a24c0eaa0031d5a5 | sha256sum collect/RESULT.json |
+
+Integrity: initial adapter b82490d3… in the entry = collect loaded_adapter_state_sha256 b82490d3d1f8…; the entry's 80 calls = physical model_calls 80 = 80 CALL files. Source f20a8cb6 is a git revision, not a RESULT.json field; not re-derived. The "5 staged code hashes match committed bytes" and native CPU replay claims were not re-derived (would require running code).
+
+**SEQ-239** (AUDIT_SFT vs AUDIT_LOSS_OFF, 200 updates each; cold parent-free AFTER)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| start / updates | 12:17:34 UTC / 200 each | started_unix → 12:17:34.94 (SFT), 12:17:34.98 (loss-off); updates 200 each; 200 LOSSES.jsonl lines each | */train |
+| parent-free held classifier BEFORE | 7/16 (4/8, 3/8) | 7/16, true 4/8, fault 3/8 | collect/BEFORE_HELD.json |
+| held classifier AFTER SFT | 16/16 (8/8 each) | overall 16/16, true 8/8, fault 8/8; raw recount 8/8, 8/8; parent_present false | AUDIT_SFT/after/AFTER_HELD.json |
+| held classifier AFTER loss-off | 7/16 (4/8, 3/8) | overall 7/16, true 4/8, fault 3/8; raw recount identical | AUDIT_LOSS_OFF/after/AFTER_HELD.json |
+| same held cases in BEFORE and both AFTERs | (implied) | cases_sha256 6c95abea… in all three | BEFORE_HELD, AFTER_HELD ×2 |
+| old W0 / W8, both arms | 8/8 | OLD_RECALL_W0 8/8, OLD_RECALL_W8 8/8, both arms | */after/RESULT.json |
+| held-text routing, both arms | 8/8 | HELD_TEXT_0 4/4 + HELD_TEXT_1 4/4, both arms | */after/RESULT.json |
+| own routing, both arms | 3/4 with READ 4/4 | OWN_PARAMETRIC reached_goal 3/4 (E_DEX6OHDHJP False), with_reads 4/4, both arms | */after/RESULT.json |
+| reader OFF, both arms | 2/4 | OWN_READER_OFF reached_goal 2/4, both arms | */after/RESULT.json |
+| unknown MISS, both arms | 0/4 | UNSEEN_MISS 0/4, both arms | */after/RESULT.json |
+| A2 strict recall SFT vs loss-off | 1/4 vs 0/4, W0 and W8 | RECALL_W0 1/4 vs 0/4; RECALL_W8 1/4 vs 0/4 | */after/RESULT.json |
+| A2 strict recall common BEFORE | 2/4 | 2/4 = CHILD_CORRECTIVE AFTER RECALL_W0/W8, verified in the 12:18Z read (SEQ-236); after_source in collect/RESULT.json arguments points to that directory | prior read, collect/RESULT.json |
+| cold AFTER calls | 102 each | model_calls 102 each; files 70 new_task/CALL + 16 OLD_RECALL + 16 held CALL = 102, both arms | */after/RESULT.json, ls |
+| fits / parent in AFTER | (cold, parent removed) | fits 0, parent_present false, both arms | */after/RESULT.json |
+
+Other re-derived: supervised tokens SFT 15115 vs loss-off 12538, reference 15115 both (lesson_supervised_presentations 400 vs 0; memory 200, cue 200, lesson 400 presentations both arms); MASKS.json sha 438f5f32… identical in both arms; new_task/PANELS.json equals the RESULT.json panels for the seven new-task panels it holds (OLD_RECALL panels live only in RESULT.json). Integrity: both train adapter_state_before = loaded_adapter_state b82490d3… (= the SEQ-238 entry's shared initial adapter); adapter_state_after db3f213b… (SFT) / 42c8a7e2… (loss-off) each equals its AFTER loaded_adapter_state_sha256; each AFTER's training_result_sha256 equals sha256sum of its arm's train/RESULT.json (434774fa… / 1ad29835…); both train and AFTER lesson_result_sha256 equal sha256sum of collect/RESULT.json (93d20d7c…); frozen_base_unchanged true throughout. Guardian PIDs 373006/373007 and source revision f20a8cb6 are not RESULT.json fields; not re-derived. Weight files not hashed.
+
+Scope note, copied from the builder: the predeclared narrow classifier criterion, NOT H1/H2 or generic learning-policy readiness; one child, one seed, one task family; DEV coached with parent present, HELD parent-free; A2 strict recall drop under independent field-level diagnosis, no claim of retained recent memory. Remaining unread result-bearing SEQs at this run: none (SEQ-237 carries no n/N counts in its first 12 lines).
