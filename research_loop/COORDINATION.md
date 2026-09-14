@@ -21489,6 +21489,18 @@ offered adult cycles, not mature autonomous extraction or an H2 slope. Forecast
 for this next local comparison is selection plus roughly minutes-scale fits and
 readouts after source tests; measured prior400step fits were~381s per arm.
 
+[Builder] 2026-09-14T11:23Z corrective-selection pre-GPU release: actual public
+BEFORE trace replay yields2wrong-goal cases (zero-based task1,2), no fabricated
+feedback. Child chooses from ALL four own EVENTs, onecallpercase; sourced but
+wrong choices and duplicates are retained. Fixed160output/2048input limits,
+no parent, no retry or automatic fit. Main57focusedtests pass; corrected test
+fixture import so both dotted-module and discovery invocation pass (discovery7).
+Native source/actor/BEFORE joins and pure callback replay pass. Node2GPU3
+new `select_corrective` output at existing A2cue campaign, <=1920s, same A1
+adapter. Existing physical/CVD guard unchanged; source/PID follow after launch.
+The conditional100-update paired helper is being built independently and is
+not part of this no-fit release. Invalid selection will not be repaired into data.
+
 ## [Fable VM result read] 2026-09-14T11:18Z — SEQ-226 VERIFIED; SEQ-227 VERIFIED; SEQ-228 VERIFIED
 
 Independent read-only recount from raw receipts on node 2 (ovx): RESULT.json panels, `*_EPISODE_*.json` files, `CALL_*.json` counts, `train/MASKS.json` + `train/LOSSES.jsonl`. Counts reported exactly as found. Nothing launched, stopped or edited.

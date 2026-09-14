@@ -338,10 +338,101 @@ def recollect_base_diagnostic(engine, prompts, output, provenance):
         adapter_restored=True, adapter_state_before=before, adapter_state_after=after)
 
 
+def load_correction_before(directory, collection, current, *, expected_adapter_state_sha256):
+    from organism_v6 import experienced_event_corrective_replay as corrective
+
+    directory = Path(directory)
+    require(not (directory / 'FAILED.json').exists(), 'failed_correction_before_forbidden')
+    pins = {}
+
+    def read(name):
+        path = directory / name
+        document = source.read(path)
+        pins[name] = source.file_hash(path)
+        return document
+
+    before, request = read('RESULT.json'), read('REQUEST.json')
+    require(type(before) is dict and type(request) is dict and before.get('schema') == SCHEMA
+            and before.get('status') == 'COMPLETE' and before.get('phase') == 'readout'
+            and before.get('state') == 'BEFORE' and type(before.get('cycle')) is int and before['cycle'] == 2
+            and before.get('development_arm') == 'CUE_REPLAY' and before.get('frozen_base_unchanged') is True
+            and type(before.get('fits')) is int and before['fits'] == 0, 'complete_own_correction_before_required')
+    for key in ('initial_training_result_sha256', 'adult_source', 'memory_source', 'cue_source',
+                'prior_adult_source', 'prior_adult_training_result_sha256', 'cycle', 'master', 'development_arm'):
+        require(key in current and before.get(key) == current[key], 'correction_before_source_mismatch:' + key)
+    require(before.get('loaded_adapter_state_sha256') == expected_adapter_state_sha256,
+            'correction_before_actor_state_mismatch')
+    arguments = before.get('arguments', {})
+    require(arguments.get('phase') == 'readout' and arguments.get('state') == 'BEFORE'
+            and arguments.get('cycle') == 2 and arguments.get('development_arm') == 'CUE_REPLAY',
+            'correction_before_arguments_mismatch')
+    for key in ('expected_base_sha256', 'expected_initial_adapter_sha256'):
+        require(key in current['arguments'] and arguments.get(key) == current['arguments'][key],
+                'correction_before_identity_mismatch:' + key)
+    require(type(before.get('reader_wrapper')) is int and before['reader_wrapper'] in (0, 8)
+            and arguments.get('reader_wrapper') == before['reader_wrapper'], 'correction_before_reader_binding_mismatch')
+    require(request.get('arguments') == arguments and all(request.get(key) == before.get(key) for key in
+            ('schema', 'phase', 'state', 'cycle', 'master', 'development_arm', 'runner_sha256', 'material_sha256')),
+            'correction_before_request_mismatch')
+    panel = before.get('panels', {}).get('OWN_PARAMETRIC')
+    require(type(panel) is dict and panel.get('denominator') == 4, 'four_before_own_tasks_required')
+    require(read('new_task/PANELS.json').get('OWN_PARAMETRIC') == panel, 'correction_before_panel_drift')
+    names = ['OWN_PARAMETRIC_EPISODE_%02d.json' % index for index in range(1, 5)]
+    require(sorted(path.name for path in (directory / 'new_task').glob('OWN_PARAMETRIC_EPISODE_*.json')) == names,
+            'complete_before_own_episode_inventory_required')
+    records = [read('new_task/' + name) for name in names]
+    require(records == panel.get('episodes'), 'correction_before_episode_drift')
+    cases = corrective.prepare_cases(collection, records)
+    require(cases['expected_calls'] == len(cases['cases']) <= corrective.MAX_CALLS,
+            'bounded_correction_cases_required')
+    provenance = dict(directory=str(directory), result_sha256=pins['RESULT.json'], source_files=pins,
+        initial_training_result_sha256=before['initial_training_result_sha256'],
+        loaded_adapter_state_sha256=expected_adapter_state_sha256, adult_source=before['adult_source'],
+        reader_wrapper=before['reader_wrapper'], helper_sha256=source.file_hash(corrective.__file__),
+        preparation_sha256=cases['preparation_sha256'])
+    return cases, provenance
+
+
+def select_corrective(engine, cases, output, provenance):
+    from organism_v6 import experienced_event_corrective_replay as corrective
+
+    require(cases['expected_calls'] == len(cases['cases']) <= corrective.MAX_CALLS,
+            'bounded_correction_cases_required')
+    source.write(output / 'CORRECTION_SOURCE.json', provenance)
+    source.write(output / 'CORRECTION_CASES.json', cases)
+    calls = []
+
+    def generate(messages):
+        index = len(calls)
+        require(index < cases['expected_calls'] and index < corrective.MAX_CALLS,
+                'corrective_callback_cap')
+        require(messages == cases['cases'][index]['messages'], 'corrective_callback_prompt_order_drift')
+        capture = dict(call_index=index, messages=adult._copy(messages), response=None, error=None)
+        calls.append(capture)
+        try:
+            capture['response'] = engine.generate(messages, max_new_tokens=source.MAX_NEW_TOKENS)
+            return capture['response']
+        except Exception as error:
+            capture['error'] = dict(type=type(error).__name__, message=str(error))
+            raise
+        finally:
+            source.write(output / ('CALL_%03d.json' % index), capture)
+
+    selection = corrective.collect_selection(cases, generate)
+    require(selection['model_calls'] == len(calls) == cases['expected_calls'], 'corrective_call_count_mismatch')
+    source.write(output / 'SELECTION.json', selection)
+    return dict(corrective_schema=corrective.SCHEMA, model_calls=len(calls), fits=0, parent_present=False,
+        own_experience_actor=True, task_denominator=4, selection_source=provenance,
+        actual_wrong_goal_cases=cases['expected_calls'], admitted_selections=selection['admitted_selections'],
+        selection_sha256=source.file_hash(output / 'SELECTION.json'),
+        training_admission='SOURCE_VALID_SELECTION_ONLY_NO_FIT_AUTHORIZATION',
+        claim='CHILD_EXTRACTION_UNDER_EXTERNALLY_POSED_CORRECTION_TASK_NOT_CORRECTION_EFFICACY')
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--phase', choices=('collect', 'train', 'readout', 'recollect', 'recollect_revision',
-                                           'recollect_base_diagnostic'), required=True)
+                                           'recollect_base_diagnostic', 'select_corrective'), required=True)
     parser.add_argument('--state', choices=('BEFORE', 'AFTER'), default='BEFORE')
     parser.add_argument('--development-arm', choices=development.TRAINING_ARMS, required=True)
     for name in ('model-dir', 'expected-base-sha256', 'initial-adapter-dir', 'expected-initial-adapter-sha256',
@@ -355,8 +446,12 @@ def main(argv=None):
     parser.add_argument('--sleep-recipe', choices=('novelty_optional_v1', 'rehearsal_allowed_v2', 'parental_revision_v1'),
                         default='novelty_optional_v1')
     parser.add_argument('--previous-recollection')
+    parser.add_argument('--correction-before')
     parser.add_argument('--device', default='cuda:0')
     args = parser.parse_args(argv)
+    require((args.phase == 'select_corrective') == bool(args.correction_before), 'correction_before_only_for_selection')
+    require(args.phase != 'select_corrective' or (args.cycle == 2 and args.development_arm == 'CUE_REPLAY'
+            and args.state == 'BEFORE'), 'collecting_a1_cue_actor_only_for_selection')
     require((args.cycle == 2) == bool(args.prior_adult_collection), 'prior_collection_only_required_for_cycle2')
     require(args.state == 'BEFORE' or args.phase == 'readout', 'after_only_for_fresh_readout')
     require(args.phase == 'readout' or args.reader_wrapper == 8, 'reader_variant_only_for_readout')
@@ -387,6 +482,10 @@ def main(argv=None):
             training_admission='EXCLUDED_FROM_TRAINING',
             parent_present_by_panel=dict(SLEEP_BASE_REHEARSAL=False, SLEEP_BASE_REVISION=True),
             claim='ADAPTER_VS_PROMPT_FAILURE_DIAGNOSTIC_NOT_CHILD_MATERIAL_EFFICACY_OR_PARENTING_SUCCESS')
+    if phase == 'select_corrective':
+        result.update(parent_present=False, fits=0, own_experience_actor=True,
+            training_admission='SOURCE_VALID_SELECTION_ONLY_NO_FIT_AUTHORIZATION',
+            claim='CHILD_EXTRACTION_UNDER_EXTERNALLY_POSED_CORRECTION_TASK_NOT_CORRECTION_EFFICACY')
     source.write(output / 'REQUEST.json', result)
 
     def check(label):
@@ -430,6 +529,10 @@ def main(argv=None):
             diagnostic_prompts, diagnostic_source = load_base_diagnostic_sources(args.previous_recollection,
                 collection, result, expected_adapter_state_sha256=initial['adapter_state_after'])
             result['diagnostic_source'] = diagnostic_source
+        if phase == 'select_corrective':
+            correction_cases, correction_source = load_correction_before(args.correction_before, collection, result,
+                expected_adapter_state_sha256=initial['adapter_state_after'])
+            result['selection_source'] = correction_source
         if args.state == 'AFTER':
             check_adult_training(args.adapter_dir, cycle=args.cycle, arm=args.development_arm,
                 expected_base_sha256=args.expected_base_sha256, memory_source=memory_source, cue_source=cue_source,
@@ -453,6 +556,13 @@ def main(argv=None):
                     add_generation_prompt=True, return_dict=False, truncation=False, padding=False)
                 require(0 < len(prompt_ids) <= source.MAX_CONTEXT, 'base_diagnostic_context_bound_exceeded_no_truncation')
                 result['diagnostic_prompt_tokens'][item['name']] = len(prompt_ids)
+        if phase == 'select_corrective':
+            result['correction_prompt_tokens'] = []
+            for case in correction_cases['cases']:
+                prompt_ids = tokenizer.apply_chat_template(case['messages'], tokenize=True,
+                    add_generation_prompt=True, return_dict=False, truncation=False, padding=False)
+                require(0 < len(prompt_ids) <= source.MAX_CONTEXT, 'correction_context_bound_exceeded_no_truncation')
+                result['correction_prompt_tokens'].append(len(prompt_ids))
         if phase == 'train':
             encode_old_rows(old_rows, tokenizer)
             source.encode_rows(new_rows, tokenizer)
@@ -481,6 +591,8 @@ def main(argv=None):
             result.update(recollect_revision(engine, revision_messages, output, revision_source))
         elif phase == 'recollect_base_diagnostic':
             result.update(recollect_base_diagnostic(engine, diagnostic_prompts, output, diagnostic_source))
+        elif phase == 'select_corrective':
+            result.update(select_corrective(engine, correction_cases, output, correction_source))
         else:
             result.update(evaluate(engine, collection, old_bank, old_episodes, output,
                                    reader_wrapper=args.reader_wrapper))
@@ -495,6 +607,8 @@ def main(argv=None):
             status = 'COLLECTION_COMPLETE' if result['accepted_events'] == 4 else 'COLLECTION_INCOMPLETE_NO_FIT'
         elif phase in ('recollect', 'recollect_revision', 'recollect_base_diagnostic'):
             status = 'RECOLLECTION_CAPTURED_NO_FIT'
+        elif phase == 'select_corrective':
+            status = 'SELECTION_CAPTURED_NO_FIT'
         result.update(status=status, frozen_base_unchanged=True, finished_unix=time.time())
         source.write(output / 'RESULT.json', result)
     except BaseException as error:
