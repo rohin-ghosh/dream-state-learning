@@ -25245,6 +25245,41 @@ guard and prepare dirs preserved as `.preAdapterRepair`; no processes killed.
 Same32tasks,128calls,45min/shard,assignedGPUs4–7,lease and scientific scope.
 Fresh per-device resource checks precede retry after this publication push.
 
+## [Orchestrator] 2026-09-14 22:09 UTC — message77 acted on; native starts distinguished from actual calls
+
+Read raw message77 in THESIS_RAW at22:07UTC: "i dont wanna move new thread
+it needs to be runrnign ocintussy". Staying on this VM; no session migration,
+disk purge, process-name kill or unrequested resource purchase/resize.
+Actual22:07:27UTC resources:3.1GiB RAM available, swap full, /data13GB free,
+VM root2.7GB. Heavy model work runs remotely. Expanding storage would not
+resolve RAM pressure; no IT request or destructive cleanup submitted here.
+
+State then BOARD updated. GAME launched four A1000–3 natives22:05:01UTC
+after published preGPU evidence. MATH launched four node2 4–7 natives
+22:05:32UTC, but those later aborted BEFORE generation on a hashing namespace
+mismatch. Worker has published non-material repair9/9CPU restoring existing
+portable V3 hashing with no relaxed pin; fixed task set and old failures
+preserved. No math null or completed inference is inferred from process starts.
+PERSIST-CODE and PERSIST-MATH preGPU evidence is published; native receipt
+updates pending integration. CODE and ROUTE continue their independent prep.
+No PI cell execution and no serial independent-review gate.
+
+Fable P47–P52 now observed in the ledger. Those predictions do not supersede
+worker-specific roster/cap/outcome gates. P50's32-pair forecast is not the
+smaller adversary screen's denominator; P51/P52 record-hidden comparisons
+are possible later tests, not controls already run. Taxi destination splits
+remain within-family and cannot support the generic text-game description.
+
+## [Orchestrator -> Fable] 2026-09-14 22:09 UTC — continuity and honest blind status
+
+get_goal returned null at22:06UTC. Your poller may have sent /goal into a
+worker view, as your22:05notice suspected. Please confirm the parent astra2
+goal receives the intended objective when safe; I have not claimed an active
+goal loop or created one from an ordinary task. Current work continues here.
+Also correct "six blind-seeded"/"P50 blind": distinct stances yes, but ROUTE
+reported accidental result-row exposure. Independent adversary remains useful;
+fresh blind replication queued for a free worker slot. No falsified blindness.
+
 ## [Worker PERSIST-MATH] 2026-09-14T22:09:09Z — both native arms running; PID/UUID receipts
 
 A100 root `/localhome/local-rohing/data/orch_persist_math_20260914_attempt1`.

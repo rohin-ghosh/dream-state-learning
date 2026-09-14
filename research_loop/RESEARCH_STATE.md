@@ -1,8 +1,8 @@
 # Research state — Orchestrator
 
-Updated 2026-09-14 22:05 UTC. Mission ACTIVE / INCOMPLETE. Wave W1.
+Updated 2026-09-14 22:09 UTC. Mission ACTIVE / INCOMPLETE. Wave W1.
 Authoritative steering: Rohin's current launch instruction and raw messages
-42–76; next mandatory raw-message reread no later than 23:50 UTC.
+42–77 (77 read22:07UTC); next full raw-message reread by23:50UTC.
 Check notebook updates every orchestration cycle, not just every two hours.
 
 ## Objective and authority
@@ -132,13 +132,30 @@ mechanism. A worker without a next discriminating test is retired.
   batches. Own CPU receipts received: MATH7/7; GAME9screen+4portable plus
   native environment3000transition equivalence; PERSIST-CODE21tests. These
   are worker reports, not Main-repeated tests or reader VERIFIED results.
-  GPU/source/lease checks remain per worker; no actual launch yet ingested.
+  GAME actual launch22:05:01UTC: four A1000–3 native workers; MATH repaired
+  launch22:05:32UTC: four node2 4–7 native workers, initializing at22:06:09.
+  Update22:08: MATH initialization subsequently failed mounted-adapter hash
+  comparison before any generation (PEFT export naming vs V3 named-parameter
+  hashing). Worker restored existing contract with9/9CPU tests, preserving
+  pins and old failure artifacts; retry pending actual ready/call receipt.
+  Process starts are not completed calls or results. MATH's earlier
+  cross-host UID/GID archive check abort had zero scientific calls; preserved
+  non-material repair8/8CPU, not a scientific null. PERSIST-MATH reports
+  21/21CPU and clean preGPU; PERSIST-CODE preGPU published22:07:11UTC.
   Worker EOF-only preGPU/launch/result appends are authorized after9a9593af;
   publication failures stop that launch, not unrelated workers.
 - Worker concurrency ceiling is six (seventh spawn rejected, no worker
   created). Keep four reserve GPUs free until a slot can own useful work;
   do not merge unrelated hypotheses to pretend greater independence.
 - Escalate exact proposed L2/L3 families, leaving those families untouched.
+- Exact four family scopes sent22:05UTC; no ruling yet observed. Message77:
+  keep orchestrator on VM continuously. No migration, resize or destructive
+  cleanup. Local22:07:27UTC: RAM3.1GiB available, swap full, /data13GB free,
+  VM root2.7GB. Heavy native work stays remote. Goal tool returned null22:06;
+  notify watcher that autonomous goal scheduling is not yet confirmed, while
+  current orchestration continues.
+- Fable P47–P52 now present. Their hypotheses do not change frozen worker
+  screen denominators or turn contextual-memory comparisons into sleep tests.
 - Ingest independent-reader status asynchronously, never silently promote.
 - Capacity checkpoint: 2026-09-15 08:00UTC (next morning),5000 admitted rows
   and four pairs OR two pairs plus justified replication; distributions and
