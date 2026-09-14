@@ -1,4 +1,14 @@
-## Current superseding snapshot — 2026-09-14 17:09:08 UTC
+## Current superseding snapshot — 2026-09-14 17:35 UTC
+
+SEQ256terminal; noMainGPUjoblive. Matched400updateFULL/controlprimarytie2/4
+PROBEpairs5/8tasks; TRAIN4/4pairs vs0/4; botholdtaught3→2/4. TargetFAIL,
+recipeclosed. Mainprimaryb960e20b; independentreviewpending. Broaderactualdata
+protocolb960e20b:8TRAIN/2PROBE,192actualtargets,unchanged37ecsource,thenmatched
+414row/1632updatefitswith16presentations/old+newtrajectory. Notlaunchedyet.
+Parfitpurehelper; Schrodingersummarythennewnativecollector; Carson6drafts255.
+Exactpaths/ownersinnewHANDOFF. MissionACTIVE/INCOMPLETE.
+
+## Historical superseded snapshot — 2026-09-14 17:09:08 UTC
 
 LIVE two400update goallearningfits from37ec:node2GPU0 FULL_TARGET406618,
 GPU1 NEW_TRAJECTORY_LOSS_OFF406619. Sourcef325f9d3, actualCPUpreparePASS,

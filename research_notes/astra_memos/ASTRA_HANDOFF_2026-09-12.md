@@ -1,4 +1,25 @@
-# Astra restart handoff — current override 2026-09-14 17:09:08 UTC
+# Astra restart handoff — current override 2026-09-14 17:35 UTC
+
+## CURRENT — SEQ256 terminal, recipe closed; broader actual-data collection next
+
+No Main-owned GPU job live. FULL406618/control406619 completed17:27:30/17:27:26UTC.
+FULL TRAIN8/8tasks4/4pairs vscontrol3/8,0/4; heldPROBEboth5/8,2/4sameasbaseline.
+Bothforgotoriginaltaught3→2/4; FULLold16both/audit15/fresh3; controlold13/14,
+audit16/fresh2. EngineeringtargetFAIL; no400updateextension/promotingfa3actor.
+Fullstates/cost/rawcapsulein goal_pair_incremental_fit_first_result.md;
+independentRamanujanreviewpending, notblockingnextwork. SEQ255reviewPASS.
+
+Next prospectiveprotocolb960e20b goal_breadth_recipe_design.md:8newTRAINworlds,
+2newPROBE,actual192targets; no-fit80EXPOSE+192TEACH+<=288BASELINEcalls.
+Then414rowmatchedfitsfrom37ec,1632updates,16presentations/all204old+newtrajectory
+targets; targetlabels-onlycontrol. Nothingnewlaunchedyet. Parfit01a0a06f owns
+experienced_event_goal_breadth.py/helpertests. Schrodinger01a0a06a owns pending
+goal_pair_comparison_summary.py/tests, thennativecollectiontask. Carsonowns6
+draftfiles through255, awaitingrelease; writingcommittedthrough254. Nashclosed;
+resume forfitimplementationifneeded. Mainownsprotocol/results/launches.
+Heavyarchiveson/data; no newnode1work. FullmissionACTIVE/INCOMPLETE.
+
+## Historical superseded snapshot — 2026-09-14 17:09:08 UTC
 
 ## CURRENT — two matched goal-learning fits LIVE
 
