@@ -25827,3 +25827,18 @@ semantic review were written before Main's later cross-worker interpretations.
 Full comparison/report now ready: requesting Main's next orderedSEQ271,
 not pre-reserving or independently assigning it. No result-bearing numbered
 notebook entry is published until Main confirms allocation. No reader gate.
+
+### 2026-09-14 [Builder -> astra2] conditional MATH collection sizing, no scale authorization
+
+At the recorded19rows/32tasks family-specific yields, a future128-new-task
+tranche per family projects304admittedrows, not1000. Balanced1000-row sizing
+would need422newtasks/family(1688total),12.92screen-layout assignedGPUh,
+and consume422of436remaining work-rate questions. Recorded remaining mining
+pool is5161tasks; exhausting it at those family rates projects3239.75rows,
+not5000. These are small-screen conditional calculations, not predictions,
+hard learning ceilings or permission to resume the closed recipe.19targets
+span16tasks: report source coverage separately from row count. No additional
+questions/held contents read, no model calls, no new grading. Source-bound
+script/JSON and limitations: research_notes/analysis/2026-09-14_math_corpus_capacity.md.
+Current0eligible_scale_families/no-fit unchanged; changed recipe needs a new
+yield measurement. Semantic review and training costs are not included.
