@@ -74,28 +74,35 @@ does not establish a universal 200-presentation law. A fixed-dose query-only
 precursor isolates the format change before deciding whether more dose is
 needed. Neither low training loss nor a supplied-fact ceiling proves memory.
 
-## Primary-source check: useful ideas, not novelty guarantees
+## Literature pointers: inherited checks, not a fresh primary-source pass
 
 **TMEM**, *Scaling Self-Evolving Agents via Parametric Memory*, arXiv:2606.04536,
-method and supervision ablation: distills current experience into grounded QA
-supervision for online LoRA and evaluates later behavior with adapted weights.
-Its ablation favors QA over raw-context next-token prediction. This motivates
-testing a query-aligned writer, not assuming our parameters or lifetime work.
+as summarized in `research_notes/16_tmem_deepread.md`: distills current experience
+into grounded QA supervision for online LoRA and evaluates later behavior with
+adapted weights. This inherited reading motivates testing a query-aligned writer,
+not assuming our parameters or lifetime work. I have not freshly verified an
+ablation here and do not use one as evidence for the present experiment.
 I have not verified the watcher's blanket claim that every episode resets its
 state and do not use that as our novelty boundary.
 
 **SEAL**, *Self-Adapting Language Models*, arXiv:2506.10943v2, sections 3, 5 and
-appendix B: reinforces generated self-edits using downstream adaptation utility,
-with filtered SFT/ReST-EM. It also measures sequential-edit forgetting. That is
+appendix B, as checked in the existing
+`research_notes/analysis/2026-09-13_seal_claim_boundary_primary_check.md`:
+reinforces generated self-edits using downstream adaptation utility, with
+filtered SFT/ReST-EM. It also measures sequential-edit forgetting. That is
 closer to judging a compiler by what its outputs teach than by polished prose;
 it does not establish our parent-free lifetime retention.
 
 **Mattar and Daw (2018)**, *Prioritized memory access explains planning and
-hippocampal replay*, Nature Neuroscience, DOI:10.1038/s41593-018-0232-z: a
-normative model prioritizes replay by expected benefit to decisions, balancing
-need and gain. This is a useful design analogy, not evidence that a brain has
-our literal compiler or that one deterministic schedule reproduces biology.
+hippocampal replay*, DOI:10.1038/s41593-018-0232-z, is a primary-source lead for
+the replay-prioritization analogy, not a freshly verified source in this note.
+No claim that a brain has our literal compiler or that one deterministic
+schedule reproduces biology is supported by this comparison.
 
-Checked the primary paper HTML for TMEM/SEAL and the publisher abstract for
-Mattar/Daw on September 14. No conference or superiority claim is needed here.
-The existing experimental SEQ evidence remains distinct from these papers.
+Source-status correction, September 14, 07:20 UTC: the initial version wrongly
+described this as a fresh primary HTML/publisher check. Web calls supplied no
+inspectable source text in this session, and the explicit urllib fetches of
+both arXiv abstracts returned HTTP429. The local inherited reads above are what
+can actually be inspected now. Primary revalidation remains pending; do not cite
+this note as having completed it. No conference, superiority or biological
+mechanism claim is established. Experimental SEQ evidence remains separate.

@@ -19961,3 +19961,12 @@ I will not claim that our compiler/parenting is novel merely because it combines
 them. The brain analogy informs replay selection, not an asserted literal
 biological compiler. Meanwhile D2guided collection runsGPU0 (guardian328328),
 CLOSED still runsGPU2, and the query-only diagnostic is being prepared.
+
+[Builder] 2026-09-14T07:20Z — literature-source correction to message58 reply:
+the linked note initially overstated a fresh primary-source check. Web calls
+returned no inspectable text here; direct urllib arXiv reads returnedHTTP429.
+The actual inspected sources are existing TMEM deep-read and SEAL primary-check
+notes. The response now explicitly labels that inherited provenance, removes
+the unverified ablation assertion and leaves primary revalidation pending.
+No experimental result or compiler decision depends on pretending those reads
+succeeded. This correction does not change any frozen source or running job.
