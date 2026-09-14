@@ -21450,3 +21450,62 @@ The failed empty base-diagnostic tar remains markedFAILED_ZERO_BYTES. New valid
 base-diagnostic archive is separate in the same/data directory. Root space now
 1.5G, /data53G available. No run directory, adapter or receipt removed/overwritten.
 Use/data for subsequent source-packaging output; active remote snapshots unchanged.
+
+## [Fable VM result read] 2026-09-14T11:18Z — SEQ-226 VERIFIED; SEQ-227 VERIFIED; SEQ-228 VERIFIED
+
+Independent read-only recount from raw receipts on node 2 (ovx): RESULT.json panels, `*_EPISODE_*.json` files, `CALL_*.json` counts, `train/MASKS.json` + `train/LOSSES.jsonl`. Counts reported exactly as found. Nothing launched, stopped or edited.
+
+**SEQ-226** — roots `/tmp/astra_cue_sleep2_20260914_attempt1/readout_sleep{1,2}` and `/tmp/astra_cue_sensitivity_20260914_attempt1/{CUE_REPLAY_seed1,CUE_REPLAY_seed2,CUE_LOSS_OFF_seed0,CUE_LOSS_OFF_seed1,CUE_LOSS_OFF_seed2}/readout_sleep2`. All seven RESULT.json status COMPLETE, fits=0, panels == PANELS.json, episode files == recorded episodes in every panel. RESULT.json sha256 prefixes 4049c89e (S1), 99c5ef35, 55658923, 4c612785, 9b900d7c, 4ea6a067, 160001f1 match the memo's hash table.
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| cue seeds 0/1/2 OWN goal / READ / second READ | 4/4, 4/4, 2/4 | 4/4, 4/4, 2/4 in all three | OWN_PARAMETRIC episodes |
+| cue seeds reader-OFF goal / READ / second READ | 2/4, 4/4, 4/4 | 2/4, 4/4, 4/4 in all three | OWN_READER_OFF episodes |
+| cue seeds held text goal / READ / second READ | 8/8, 8/8, 4/8 | 4+4/8, 4+4/8, 2+2/8 in all three | HELD_TEXT_0 + HELD_TEXT_1 |
+| loss-OFF seeds 0/1/2 OWN and reader-OFF goals | 4/4, 3/4, 4/4 | 4/4, 3/4, 4/4 (both panels each seed) | episodes |
+| loss-OFF held text | 4/8 each | 2+2/8 each | HELD_TEXT_0 + HELD_TEXT_1 |
+| loss-OFF READ | zero in every panel | 0 reads in all 4 routing panels, all 3 seeds | episode traces |
+| W0 / W8 retention, all six | 4/4, 4/4 | 4/4, 4/4 in all six (and S1) | RECALL_W0/W8 rows |
+| MISS, all six | 0/4 | 0/4 in all six | UNSEEN_MISS rows |
+| updates per fit | 200 | 200 LOSSES lines, 52 mask rows, all six | train/LOSSES.jsonl |
+| original labels | 24480 | 24480 replayed from MASKS in all six | train/MASKS.json |
+| active labels cue vs loss-OFF | 24480 vs 19900 | 24480 (seeds 1,2; seed0 has no per-line field) vs 19900 (all three) | LOSSES active_label_count |
+| CALL files per readout | — | 68 per cue readout, 28 per loss-OFF readout and S1 | ls |
+
+Integrity: entry names no adapter/base hash for these roots; `initial_artifact_sha256` differs per root as expected (8234842d for cue seed0, 05f413eb for loss-OFF seed0). Input/padded token totals 153408/228800 NOT re-derived (time budget). The source prefixes 4f68de78/d8255946 are not RESULT.json fields.
+
+**SEQ-227** — roots `/tmp/astra_adult_cycle_20260914_attempt1/{CUE_REPLAY,CUE_LOSS_OFF}/{train,before,after}`. All four readouts status COMPLETE, fits=0, parent_present=False, frozen_base_unchanged=True. RESULT.json prefixes dfc25781 / 57bb4b58 (cue before/after), c96f46ca / 0376cd4e (off before/after); the two AFTER prefixes match the memo. Episode files are not stored separately in these roots; goal/READ counts re-derived from the episode objects inside RESULT.json.
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| cue new-own goal BEFORE→AFTER | 1/4→3/4 | 1/4→3/4 | OWN_PARAMETRIC |
+| cue READ / second READ BEFORE→AFTER | 4/4→4/4, 2/4→3/4 | 4/4→4/4, 2/4→3/4 | OWN_PARAMETRIC traces |
+| cue reader-OFF goal (READ) | 2/4→2/4 (4/4) | 2/4→2/4 (4/4, second 4/4) | OWN_READER_OFF |
+| cue held text | 8/8→8/8 | 4+4→4+4 /8 | HELD_TEXT_0/1 |
+| loss-OFF new-own / reader-OFF / held | 2/4→2/4, 2/4→2/4, 4/8→4/8 | 2/4→2/4, 2/4→2/4, 2+2→2+2 /8 | episodes |
+| loss-OFF READs | zero | 0 in every routing panel, both states | traces |
+| new recall W0, both arms | 0/4→4/4 | 0/4→4/4, 0/4→4/4 | RECALL_W0 |
+| new recall W8, both arms | 0/4→3/4 | 0/4→3/4, 0/4→3/4 | RECALL_W8 |
+| old recall W0/W8, both arms | 4/4→4/4 | 4/4→4/4 all | OLD_RECALL_W0/W8 |
+| unseen MISS, both arms | 0/4→0/4 | 0/4→0/4 both | UNSEEN_MISS |
+| updates per arm | 400 | updates=400 in train/RESULT.json, 400 LOSSES lines, both arms | train/ |
+| model calls (memo: cue 74/78, off 36/36) | 74/78, 36/36 | model_calls 74/78, 36/36; CALL files 66/70, 28/28 plus 8 OLD_RECALL_*.json each = same totals | RESULT.json, ls |
+
+Integrity: adapter states before→after 9d3c97ae→07ecf4c5 (cue) and a160b83a→b0693f1a (off) in train/RESULT.json; each AFTER readout's `loaded_adapter_state_sha256` equals its arm's `adapter_state_after`; each BEFORE's equals `adapter_state_before`. Saved-file hashes 7e6fe380/db2b0771 NOT re-derived (weight files not hashed). The corrupted W8 reader text for E_3FIXU7HBPN NOT re-derived (CALL_010.json confirmed role=reader, panel=OWN_PARAMETRIC; output text not extracted in budget). Source prefix 678faf15 not a RESULT.json field.
+
+**SEQ-228** — roots `/tmp/astra_adult_cycle_20260914_attempt1/{CUE_REPLAY,CUE_LOSS_OFF}/after_w0_reader`. Both status COMPLETE, fits=0, parent_present=False, frozen_base_unchanged=True, `arguments.reader_wrapper` = 0. RESULT.json prefixes 451005a6 (cue), 9ee1f2b7 (off).
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| cue new-own goal / READ / second READ | 4/4, 4/4, 2/4 | 4/4, 4/4, 2/4 | OWN_PARAMETRIC |
+| cue reader-OFF goal / READ / second READ | 2/4, 4/4, 4/4 | 2/4, 4/4, 4/4 | OWN_READER_OFF |
+| loss-OFF goal / READ; reader-OFF | 2/4, zero; 2/4 | 2/4, 0 reads; 2/4, 0 reads | episodes |
+| held cue vs control | 8/8 vs 4/8 | 4+4/8 vs 2+2/8 | HELD_TEXT_0/1 |
+| old W0/W8, both arms | 4/4 | 4/4, 4/4 both | OLD_RECALL_* |
+| new W0 / new W8, both arms | 4/4, 3/4 | 4/4, 3/4 both | RECALL_W0/W8 |
+| unseen MISS | 0/4 | 0/4 both | UNSEEN_MISS |
+| model calls (memo: cue 76, off 36) | 76, 36 | model_calls 76, 36; CALL files 68, 28 plus 8 OLD_RECALL files each | RESULT.json, ls |
+
+Integrity: `loaded_adapter_state_sha256` 07ecf4c5 (cue) and b0693f1a (off) identical to the primary AFTER readouts and to train `adapter_state_after`, i.e. same untouched saved adult adapters as SEQ-227; `adapter_dir` points at each arm's `train/adapter`. Source prefix 4f8e2110 not a RESULT.json field.
+
+Scope (builder's own limits): SEQ-226 optimizer-seed checks on one S1 and two banks, not independent children/worlds; SEQ-227/228 same-child parent-free offered-experience results, one seed, one task family, four facts, not an H2 slope or across-lineage estimate; W0 reader choice is a post-result DEV repair. Node-1 (a40) not involved.
