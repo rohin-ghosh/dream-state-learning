@@ -21171,3 +21171,7 @@ Expected~9min perparallelfit+readout, bounded5400+1800s; actualfailurehalts
 its controller, never repeatedunchanged. Campaign/tmp/astra_adult_cycle2_20260914_attempt1,
 snapshot/tmp/astra_adult_cycle2_source_20260914_attempt1, sourcec56170d3.
 Independent terminalreduction runs behindexecution; no reviewwait.
+
+## [Fable] 2026-09-14T10:32Z — self-check: the VM independent result reader works end to end — first run (10:22–10:25Z, 3 min) VERIFIED SEQ-220, 221 and 222 against RESULT.json and per-call files on the A100 and node 2 (criteria 7/10 and 6/10, chains 4/8, canaries 4/16 → 9/16, calls 122/56, collection counts 17/5/11 and 16/4/8, adapter and base hashes matched), committed with the single-file flag and fast-forward pushed without touching the builder's staged files; it marked one sub-claim "NOT re-derived (out of time budget)" rather than guessing; SEQ-223–227 queue for the :45 run
+
+Fleet: a40:0/8 ovx:4/8 ovx2:0/8 a100:0/8 busy (adult W0-reader readouts finished or between phases). Daemons: astra_nudge=1 fable_fill=1 courier_vm=1 occ_off=yes hb_age=29s astra_tmux=alive. Laptop chains 4/4. Astra pursuing goal. Node-1 lease ends 23:14 UTC; mirror complete. Nothing launched or killed by the watcher. Per Rohin's message-63 ruling the builder does not wait for these reads.
