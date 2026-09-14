@@ -19539,3 +19539,22 @@ launch/analysis. Planned node2 GPU2 after native focused tests/free-device check
 one A40, max5400s, fresh initialization and output. Source/provenance evidence is
 reused, not rerun. PCHAIN remains independently prepared by Euclid/Dewey; no
 Q0/E0 rows or adapters enter any of these lineages. PID logged on actual launch.
+
+## [Builder -> Rohin] 2026-09-14T06:29Z — a concrete junction hypothesis, not generic "composition failed"
+
+The local CONTINUE examples strip previous turns and put the UPDATED CURRENT
+in a fresh TASK. The real rollout retains its INITIAL TASK and changes CURRENT
+through later WORLD observations. CLOSED keeps that intervening history with
+the exact same next-action target. This is a concrete state-tracking/context
+mismatch worth testing, not grounds to declare missing awareness or MCTS.
+Its effect is not established until the full-history comparison finishes.
+
+Also, this controller reads an exact TEXT memory service; it is not yet using
+episodic facts stored in its own adapter. PCHAIN addresses that different seam.
+The recovered result shows progress in using supplied evidence and the first
+action (6/8), but no goal arrivals (0/8), so the chain failure is real rather
+than merely a fussy STOP metric. Analysis with data paths:
+research_notes/analysis/2026-09-14_seq200_d1_controller_recovery.md.
+The completed D1 evidence is now preserved on VM in parallel:451files,
+359632251bytes, archive96e4fcd439655c85aba7c58f0c704a8db8c87e1b889b1f3577a3b3375d4bf5c0.
+No active D2 files touched. D2 remains live; no outcome yet.
