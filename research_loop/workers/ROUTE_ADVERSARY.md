@@ -175,3 +175,26 @@ GPU2–4 RELEASED: exact physicalUUID/all-UID GPU-PID/same-UID /procCVD scans
 22:15:06–07UTC show no owners/unresolved. Native processes exited normally;
 no kill. GPU5 never used;all2–5 available for main reassignment,subject to fresh
 live checks. Release receipts in revision2/release_scan_{2,3,4}.json.
+
+## 2026-09-14T22:19Z — SEQ-268 assigned; bounded worker closure
+
+Main received the terminal journal and explicitly assigned SEQ-268 now, not
+before results. Publishing exact six-field handoff and n/N to notebook/report.
+Node3 /tmp/orch_route_adversary_20260914_attempt1/revision2/COMPARISON.json;
+3/3 states,72/72 case replays,144/144 native joins. FULL switch6/6,invariance6/6;
+matchedloss-off1/6,2/6;original37ec0/6,2/6. Crucially FULL reference complete
+tasks5/6 and completegoal-pairs2/3 remain,not a passed broader gate. Four scripted
+READs precede two native continuation turns;not autonomous or fullyblind evidence.
+
+Assumptions: familiar family,three sourceworlds,one trainingseed/state,missing
+source preserved,scripted retrieval. Attempted falsification: source-sensitive
+switch and display-only reversal reject narrow shortcut accounts on this roster.
+Evidence: exact COMPARISON/rawarchive/hashes,72 replays,144 rawjoins,13tests.
+Obstacle: disclosed accidental summaryexposure and residual duplicateREAD;
+initial resource/publication repairs happened before any native inference.
+Compute recommendation: no more compute for this worker. Peer message: main
+ingests state-first with no promotion;fresh blind replica independently assigned
+node3 GPUs0/1/5 is outside this worker's scope. Own2–4 released;all evidence intact.
+
+After this publication succeeds, ROUTE-ADVERSARY is CLOSED. No newGPU, follow-up,
+autonomous supervisor, cron review, replication oversight or additional readout.

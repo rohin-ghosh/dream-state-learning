@@ -25463,3 +25463,65 @@ container prerequisite correction under native failed-action feedback;
 NEXT_L1_PROPOSAL.md is proposal-only, CPUsetup still necessary. No TextWorld
 install, newGPUarm, Taxi retry or fit is started. A1000–3 available to Main;
 SEQ-267 assigned just before this publication, no advance reservation.
+
+## SEQ-268 — [Worker ROUTE-ADVERSARY] 2026-09-14T22:19Z terminal paired continuation
+
+Node3, physical GPUs2–4; root `/tmp/orch_route_adversary_20260914_attempt1/revision2`.
+Exact rawroot reduction: `/tmp/orch_route_adversary_20260914_attempt1/revision2/COMPARISON.json`.
+Completion:3/3 states,72/72 case replays,144/144 native-call joins,0fits/0updates.
+Correct source-switch pairs:FULL6/6,NEW_TRAJECTORY_LOSS_OFF1/6,ORIGINAL37EC0/6.
+Correct display-invariance pairs:FULL6/6,LOSS_OFF2/6,ORIGINAL37EC2/6.
+FULL reference residual:5/6 complete tasks,2/3 complete goal-pairs;no promotion.
+Main assignedSEQ-268 only after terminal comparison-ready;no advance reservation.
+
+**ASSUMPTIONS:** Four explicitly SCRIPTED READs/case provide the prefix;up to2
+native turns measure continuation,not autonomous retrieval.24cases/state from
+3worlds*2goals*4conditions;three read-order seeds are not independent training
+seeds. Frozen original missing source remains unavailable;familiar same-family
+DEV,not unseen-family,H1,H2 or clean-ancestry proof. Initial ownership-search
+BOARD-summary exposure was disclosed;NOT a fullyblind independent review.
+
+**ATTEMPTED FALSIFICATION:** ROOT_SWAP holds the complete public task constant
+and changes only two root-source destination tokens plus the disposable oracle
+world;PORT_REVERSE changes only displayed rootports. FULL correctly switches
+6/6 and remains display-invariant6/6 versuscontrols1/6,0/6 switches and2/6,2/6
+invariances. Fully positive-source-supported switch subset5/5,1/5,0/5. Narrow
+pure-display/source-insensitive first-routing alternatives fail this test for
+FULL;this does not establish general planning or universal shortcut resistance.
+
+**EVIDENCE:** Complete-task n/6 in REFERENCE/PORT_REVERSE/ROOT_SWAP/UNAVAILABLE:
+FULL5/6,5/6,6/6,2/6;LOSS_OFF3/6,1/6,3/6,0/6;ORIGINAL4/6,3/6,2/6,0/6.
+Both-goal n/3:FULL2/3,2/3,3/3,0/3;LOSS_OFF1/3,0/3,1/3,0/3;
+ORIGINAL1/3,0/3,0/3,0/3. Zero-native first-available-port reference3/6 tasks
+but0/3 goal-pairs in every condition and0/6 both intervention joint tests.
+Author-side replay joins every native prompt/response/error and preserves every
+failure;13/13 CPU tests include raw-call and summary tamper rejection. All mounted
+adapter/base states unchanged,no-grad;not independent scientific review.
+Native sourceed3afc7b;preGPUd41a24cb;terminal evidence publication37907197.
+COMPARISON SHAef21b5bb75fe3111c661497969603b562c5e707bf98de31d4204dc81d249c198;
+rawarchive SHA94aa071f1ee8c9d9fc8383223d0e5e0250788b50021d93b33e19edda6784fc05.
+Local evidence:`research_notes/analysis/orch_route_adversary_20260914_attempt1/revision2/`;
+report:`research_notes/analysis/orch_route_adversary_20260914_result.md`.
+
+**OBSTACLE:** MissingE_W5YA3H6TNF is never repaired. FULL's reference/reversed
+missing-world secondgoal selects the correct firstport,then duplicates READ of
+already-readE_TOY4J6RVDL. ROOT_SWAP succeeds with the same unavailable source.
+Missingness alone is therefore insufficient;original gate causation not isolated.
+The synthetic counterfactual texts are NOT actual child memories or repaired
+original-data success,and never train/parent. Incomplete positive path evidence
+does not preclude elimination;no abstention command exists. Resource scanner
+repaired before native use;transientSSH denied then detached scans passed. Push
+race reconciled without force. All revision1 evidence retained;only one native
+batch ran,revision2. No unknown-owner kill or discarded case.
+
+**COMPUTE RECOMMENDATION:** Close this bounded worker;NO newGPU or follow-up.
+Eachstate90.27–91.51s,approx4.54 reserved GPU-min including admission/loading.
+OwnGPUs2–4 physically released22:15:06–07UTC,no GPUholder/CVDowner/unresolved;
+5neverused. Main's separate genuinelyblind replica on node3 0/1/5 is commissioned
+already and outside this worker's scope. Preserve every archive/source/receipt.
+
+**PEER MESSAGE:** Main ingests state-first. FULL survived these narrow adversarial
+continuation tests,not the broader reference conjunction:retain residual2/3
+complete goal-pairs,no promotion,no autonomous/fullyblind/unseen-family/H1/H2
+claim. SEQ-268 is terminal author-audited evidence only. ROUTE-ADVERSARY closes
+after publication;no PI cells,replication oversight,cron review or additional run.
