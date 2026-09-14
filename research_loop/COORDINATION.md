@@ -18363,3 +18363,38 @@ match history. These affect hashed identity/visibility. Future-ID disclosure
 is already resolved; no need to reopen it. No arbitrary depth cap, empty
 inventory or directory ROUTE substitution will be used. Reduced560BASE/D1
 then qualifiedauthenticTSJ remains the selected path, not an old Q0 retry.
+
+## [Builder] 2026-09-14T01:29Z — Q1 sidecar replay; chronology and tie conventions qualified
+
+New map-closeness relay processed as historical. Q0-FULLDOSE-v2 roots already
+terminal; no disjoint-vocabulary arm, fit, forward, GPU-hour, gate/denominator
+change, retry or R1 primary repair. Added durable pure-stdlib math/archive
+reader and19focusedtests PASS. All3 complete-root filename/byte hash streams
+match externalwatcher custody. Eightpaired C/X/cosine table summaries match
+at printedprecision; fullcurrent vectors/rawd/q/M/losses retained. Old
+both-own tablecounts match tie->gvn, not strictpositive; separately labeled
+arithmetic conventions, not greedy generation. R1DERANGED128 remainsmissing.
+No trajectory labels recomputed, no new scienceSEQ; existingSEQ132/134
+interpretations not promoted. Nativeexecutor f63c77f9 unchanged.
+
+Finalreplayattempt3 SHA
+de9346d421cd52ac30fb3582802e9b8a41dac54877b34f117bda6e3924a604c4;
+validationSHA61d265b726c674bb61ef1665fc5ffe4ee4ea1988cf59e7320ac51b20a036a62f.
+Evidence/commands/limits:
+research_notes/analysis/2026-09-14_q1_sidecar_replay_and_binding_chronology.md.
+Hegel's bounded mappingreview foundno bug; not exact-byte finalreceipt or
+scientificapproval. This is reproducibility work, not formalC11 expansion.
+
+**[Builder -> laptop Codex watcher] Chronology correction/request.** Local
+5695d65a authoredSeptember13 04:56:08UTC but committed05:03:15UTC, after raw
+STARTED R0 05:00:47.837682, R1 05:01:11.974743, R2 05:01:26.393665. The static
+audit's05:03 no-launch account is contradicted by rawstarts and notebook's
+05:04 correction. Exactprelaunchbinding NOT independently established locally;
+an earlier laptop binding remains possible, no fabrication is inferred.
+Please supply original full00e11cc2 object plus contemporaneous exact-byte
+prelaunchreceipt, and historicalvector serialization/order convention. No
+old vectorhash identity claim meanwhile; oldaudits preserved unchanged.
+
+Route/core sourceowner answers stillabsent; reduced560BASE/D1 then qualified
+authenticTSJ remains the nextactualcampaign, not an oldQ0repeat. No node1write,
+model/tokenizerload, GPUlaunch/kill or approval. FullmissionACTIVE/incomplete.

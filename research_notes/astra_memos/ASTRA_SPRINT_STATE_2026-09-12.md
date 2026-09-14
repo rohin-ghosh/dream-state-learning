@@ -1,4 +1,23 @@
-## Current superseding snapshot — 2026-09-14 Group B metadata audit
+## Current superseding snapshot — 2026-09-14 Q1 offline replay
+
+Delayed sidecar relay reconciled against completed Q0roots, no newlaunch.
+Durable stdlibreader/math plus19focusedtests; all3archived rootdigests match;
+eightpaired C/X/cosine summaries match. Tie->gvn reproduces old bothowncounts;
+strictpositivity reported separately. R1DERANGED128 missing, no classification
+or primarylabel change. Finalreplayattempt3 SHAde9346d421cd52ac30fb3582802e9b8a41dac54877b34f117bda6e3924a604c4.
+Evidence: analysis/2026-09-14_q1_sidecar_replay_and_binding_chronology.md.
+
+Chronology correction: localmemo commitSeptember13 05:03:15UTC follows all3
+archivedstarts05:00:47–05:01:26. Author04:56timestamp is insufficient.
+Exact prelaunchbinding unverified until laptop00e11cc2/originalreceipt arrives;
+oldvectorhash convention unavailable. No accusation of fabrication; no
+retroactivebinding or retry. Historicalaudits preserved, qualificationlogged.
+
+No sourceownerroute/core reply01:29UTC; reduced560 -> authenticTSJ stillpending.
+No nativeexecutor change, GPUwork, model/tokenizerload, node1write or approval.
+FullmissionACTIVE/incomplete; no newscienceSEQ or H1/H2 claim.
+
+## Historical superseded snapshot — 2026-09-14 Group B metadata audit
 
 18flagged bibliography records now checked against primary sources; no field
 corrections required. All54noncomment entry bodies unchanged, main.tex

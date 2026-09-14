@@ -1,6 +1,32 @@
-# Astra restart handoff — September 14, 2026, Group B metadata audit
+# Astra restart handoff — September 14, 2026, Q1 offline replay
 
-## Current superseding increment — 18 metadata flags checked
+## Current superseding increment — Q1 relay and archival replay
+
+New map-closeness relay addresses already-completed Q0-FULLDOSE-v2. No launch,
+new fit/forward/arm/gate/denominator or R1 repair. Added pure-stdlib durable
+reader/math/tests; all3 original archived whole-root hash streams match.
+19focusedtests PASS; eight paired printed C/X/cosine summaries match. Old
+both-own counts match tie->gvn, not strictpositive; both conventions explicit.
+R1DERANGED128 staysmissing. No trajectory classification recomputed.
+
+Important correction: local sidecar5695d65a committed05:03:15UTC September13,
+AFTER three nativeSTARTED times05:00:47–05:01:26. Author04:56:08 is not proof
+ofpublication. Laptop00e11cc2 unresolved. Exact prelaunchbinding NOT established
+locally; not a claim of fabrication. Old vectorhash serialization/order also
+unknown. Requests to laptopwatcher logged; old audits preserved unchanged.
+Evidence/replaycommands: analysis/2026-09-14_q1_sidecar_replay_and_binding_chronology.md.
+
+Current replayattempt3 SHAde9346d421cd52ac30fb3582802e9b8a41dac54877b34f117bda6e3924a604c4;
+validationSHA61d265b726c674bb61ef1665fc5ffe4ee4ea1988cf59e7320ac51b20a036a62f.
+Earlierattempt1/2 retained intermediate receipts, not finalinterpretation.
+Frozen nativeexecutorf63c77f9 unchanged. Hegel mappingreview no identifiedbug,
+not exact-byte attempt3 or scienceapproval. FullmissionACTIVE/incomplete.
+Route/core sourceanswers stillabsent01:29UTC pull; next reduced560 then
+authenticTSJ remains blocked by that actual contract gap. No node1write,
+model/tokenizerload, GPUlaunch/kill or approvalrequest; preserve dirtyrules
+and unreviewedTSJdraft. Bibliography metadata done; recorded prose risks remain.
+
+## Historical superseded increment — 18 metadata flags checked
 
 September14 01:10UTC pull remains up to date; no source-owner route/core answer.
 Main plus read-only Huygens/Curie checked the18 flagged reference records.

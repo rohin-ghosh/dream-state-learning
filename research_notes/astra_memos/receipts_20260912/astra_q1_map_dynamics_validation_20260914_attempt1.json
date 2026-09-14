@@ -1,0 +1,123 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "*q1_map_dynamics*.py",
+    "-v"
+  ],
+  "comparison_convention": "Decimal strings within half of last published decimal place; no scientific tolerance changed",
+  "comparisons": [
+    {
+      "audit_both": 7,
+      "cosine": 0.991892873817471,
+      "root": "R0",
+      "shared_C": -4.671875,
+      "split_X": 0.0,
+      "strict_both": 1,
+      "update": 32,
+      "zero_rows": 16
+    },
+    {
+      "audit_both": 22,
+      "cosine": 0.9955784719273353,
+      "root": "R0",
+      "shared_C": -5.6484375,
+      "split_X": 0.0,
+      "strict_both": 17,
+      "update": 64,
+      "zero_rows": 38
+    },
+    {
+      "audit_both": 42,
+      "cosine": 0.996054846437307,
+      "root": "R0",
+      "shared_C": -5.3125,
+      "split_X": 0.03125,
+      "strict_both": 28,
+      "update": 128,
+      "zero_rows": 43
+    },
+    {
+      "audit_both": 15,
+      "cosine": 0.9933058991007021,
+      "root": "R1",
+      "shared_C": -4.9609375,
+      "split_X": 0.015625,
+      "strict_both": 12,
+      "update": 32,
+      "zero_rows": 19
+    },
+    {
+      "audit_both": 29,
+      "cosine": 0.9957409085146919,
+      "root": "R1",
+      "shared_C": -5.34375,
+      "split_X": 0.03125,
+      "strict_both": 15,
+      "update": 64,
+      "zero_rows": 49
+    },
+    {
+      "audit_both": 9,
+      "cosine": 0.9917670631315978,
+      "root": "R2",
+      "shared_C": -4.6640625,
+      "split_X": -0.015625,
+      "strict_both": 5,
+      "update": 32,
+      "zero_rows": 13
+    },
+    {
+      "audit_both": 11,
+      "cosine": 0.9973506169088358,
+      "root": "R2",
+      "shared_C": -6.140625,
+      "split_X": 0.0,
+      "strict_both": 3,
+      "update": 64,
+      "zero_rows": 27
+    },
+    {
+      "audit_both": 28,
+      "cosine": 0.9972518532814778,
+      "root": "R2",
+      "shared_C": -5.515625,
+      "split_X": 0.0625,
+      "strict_both": 16,
+      "update": 128,
+      "zero_rows": 62
+    }
+  ],
+  "inherited_vector_hashes": "NOT_REPRODUCED; old serialization/order convention unavailable",
+  "input_hashes": {
+    "research_notes/analysis/2026-09-13_q0_fulldose_v2_terminal_independent_raw_reduction.md": "5eec18ad7c51e3a1b568f60eba7c3935f71639f52fb25eb53013f2e5294637a8",
+    "research_notes/astra_memos/receipts_20260912/astra_q1_map_dynamics_replay_20260914_attempt3.json": "de9346d421cd52ac30fb3582802e9b8a41dac54877b34f117bda6e3924a604c4"
+  },
+  "local_commit_after_all_three_starts": true,
+  "observed_utc": "2026-09-14T01:26:14.861957+00:00",
+  "paired_checkpoint_summaries_matched_at_reported_precision": 8,
+  "primary_results_changed": false,
+  "scientific_classifications_recomputed": false,
+  "source_hashes": {
+    "gpu/q1_map_dynamics_math.py": "8ee658190a634c6bdd841d02201b4d58347a47c8c1fbc341bf10a982c2d79a74",
+    "gpu/replay_q1_map_dynamics.py": "0f599d272bbd2e6aa6510f233d22fd07e46ae41937346a16c57c4e7827dd13c6"
+  },
+  "starts_utc": {
+    "R0": "2026-09-13T05:00:47.837682+00:00",
+    "R1": "2026-09-13T05:01:11.974743+00:00",
+    "R2": "2026-09-13T05:01:26.393665+00:00"
+  },
+  "status": "SCOPED_REPLAY_VALIDATION_PASS",
+  "test_returncode": 0,
+  "test_stderr": "test_128_rows_preserve_quartet_vectors_and_inclusive_quantiles (test_q1_map_dynamics_math.Q1MapDynamicsMathTests.test_128_rows_preserve_quartet_vectors_and_inclusive_quantiles) ... ok\ntest_common_motion_and_orthogonal_cosines (test_q1_map_dynamics_math.Q1MapDynamicsMathTests.test_common_motion_and_orthogonal_cosines) ... ok\ntest_constant_shift_and_singleton_quantiles (test_q1_map_dynamics_math.Q1MapDynamicsMathTests.test_constant_shift_and_singleton_quantiles) ... ok\ntest_cosine_scales_without_norm_overflow_or_underflow (test_q1_map_dynamics_math.Q1MapDynamicsMathTests.test_cosine_scales_without_norm_overflow_or_underflow) ... ok\ntest_each_walsh_basis_and_reconstruction (test_q1_map_dynamics_math.Q1MapDynamicsMathTests.test_each_walsh_basis_and_reconstruction) ... ok\ntest_invalid_inputs_in_every_argument (test_q1_map_dynamics_math.Q1MapDynamicsMathTests.test_invalid_inputs_in_every_argument) ... ok\ntest_no_input_mutation_or_result_aliasing (test_q1_map_dynamics_math.Q1MapDynamicsMathTests.test_no_input_mutation_or_result_aliasing) ... ok\ntest_pair_128_both_correct_uses_all_rows (test_q1_map_dynamics_math.Q1MapDynamicsMathTests.test_pair_128_both_correct_uses_all_rows) ... ok\ntest_public_schema_and_stdlib_only_import_boundary (test_q1_map_dynamics_math.Q1MapDynamicsMathTests.test_public_schema_and_stdlib_only_import_boundary) ... ok\ntest_raw_margins_not_deltas_determine_own_map_correctness (test_q1_map_dynamics_math.Q1MapDynamicsMathTests.test_raw_margins_not_deltas_determine_own_map_correctness) ... ok\ntest_ties_are_separate_and_never_both_correct (test_q1_map_dynamics_math.Q1MapDynamicsMathTests.test_ties_are_separate_and_never_both_correct) ... ok\ntest_unequal_valid_lengths_and_invalid_arms (test_q1_map_dynamics_math.Q1MapDynamicsMathTests.test_unequal_valid_lengths_and_invalid_arms) ... ok\ntest_unrepresentable_delta_is_rejected (test_q1_map_dynamics_math.Q1MapDynamicsMathTests.test_unrepresentable_delta_is_rejected) ... ok\ntest_xor_signs_and_opposite_own_maps (test_q1_map_dynamics_math.Q1MapDynamicsMathTests.test_xor_signs_and_opposite_own_maps) ... ok\ntest_zero_norm_in_either_arm (test_q1_map_dynamics_math.Q1MapDynamicsMathTests.test_zero_norm_in_either_arm) ... ok\ntest_links_rejected_without_extraction (test_replay_q1_map_dynamics.ArchiveReplayTests.test_links_rejected_without_extraction) ... ok\ntest_prefix_integrity_and_missing_not_zero (test_replay_q1_map_dynamics.ArchiveReplayTests.test_prefix_integrity_and_missing_not_zero) ... ok\ntest_readonly_regular_archive_and_pinned_stream (test_replay_q1_map_dynamics.ArchiveReplayTests.test_readonly_regular_archive_and_pinned_stream) ... ok\ntest_tie_conventions_are_explicit_and_not_generation (test_replay_q1_map_dynamics.ArchiveReplayTests.test_tie_conventions_are_explicit_and_not_generation) ... ok\n\n----------------------------------------------------------------------\nRan 19 tests in 0.021s\n\nOK\n",
+  "test_stdout": "",
+  "tests": 19,
+  "tie_convention": "Table agreement supports tie-to-gvn interpretation; strict counts separately preserved; not greedy generation",
+  "tie_gvn_arithmetic_counts_matching_old_table": 8
+}
