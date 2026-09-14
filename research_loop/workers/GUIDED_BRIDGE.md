@@ -52,3 +52,23 @@ separately published launch protocol remain yours, not Main-executed cells.
 
 Next action: exact-owned-path commit/push only, after this log; no blanket
 staging/reset/stash/rebase/force and no peer files included.
+
+2026-09-14T23:03Z — Main follow-up applied after reading raw Rohin79 in
+36a0a2db (raw THESIS + authority amendment, not only relay). Earlier pending-
+family statements above are historical, superseded: Main designates named
+families; no additional Rohin-permission gate. CallerContract now accepts
+PENDING or MAIN_APPROVED with Main's supplied designation hash; named family
+is not hardcoded to one route proposal. No registry lookup/creation or approval
+inference. Removed launch_authorized entirely; manifest only declares
+CPU_PREPARATION_ONLY execution scope. Same metadata is bound into prior receipts.
+
+Frozen public seam: research_notes/analysis/orch_guided_bridge_INTERFACE_V1.md,
+including AdapterIdentity path/state_sha256/base_sha256/files and the exact
+StageBinding.verify_loaded signature (observed state, base, parent, fresh
+process, transient context, sleep prompt). Old Builder owns all disjoint
+orch_guided_native* paths; none touched. Coordinate through Main only, no
+actual L2/L3 material, model/GPU calls or launch. The loader must measure actual
+loaded tensors and cannot echo expectations.22/22 bridge CPU tests PASS0.342s,
+including Main-approved different named families, absent launch_authorized,
+required designation hash, and rejection of historical designation substitution.
+Interface ready for Old Builder via Main; publishing follow-up exact paths.

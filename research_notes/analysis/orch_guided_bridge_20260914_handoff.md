@@ -2,7 +2,9 @@
 
 2026-09-14. Preparation only under Main board d7a7e6f2, published 45becf56.
 No global invariant, frozen driver, released helper, claim or promotion gate
-changed. `ROUTE_GUIDED_CYCLES_L2_V1` remains PENDING. No GPU, model call,
+changed. Update after reading raw Rohin79 (`36a0a2db`): Main owns family
+designation; this contract represents PENDING or MAIN_APPROVED named families
+without performing approval or issuing launch authority. No GPU, model call,
 actual L2/L3 material, allocation, native launch, result SEQ or paper work.
 
 ## Delivered API
@@ -13,7 +15,8 @@ released `GoalReplayLayout`; it has no CLI, process launcher or model imports.
 - `AdapterIdentity`: canonical absolute directory, loaded-state SHA256,
   frozen-base SHA256, exact immutable relative-file/hash manifest. Verifies
   files by streaming, rejects traversal, aliases, missing/extra/changed files.
-- `CallerContract`: explicit pending family, fixed per-lineage row count,
+- `CallerContract`: explicit named family/status and Main-designation hash
+  when MAIN_APPROVED, fixed per-lineage row count,
   presentations, AdamW reset policy, complete AdamW options, learning rate,
   seed and prospective native-protocol hash. No optimizer defaults inferred.
 - `ArmLineage` and `plan_cycle`: reconstruct each completed same-arm receipt
@@ -47,8 +50,8 @@ receipt locators are checked. A changed prior receipt invalidates later use.
 
 ## Prospective caller sequence, not executable native integration
 
-1. Main/next worker publishes the actual protocol after qualification/family
-   permission. Bind initial loaded state/base and adapter-file hashes. Keep
+1. Main/next worker publishes the actual protocol and Main's family designation
+   while preserving the qualification gates. Bind initial loaded state/base and adapter-file hashes. Keep
    the frozen Qwen2.5-7B-Instruct/one-LoRA invariant; this module does not choose
    or qualify that model. Declare matched arm budgets and actual yield outside
    this adapter bridge; never select from sealed readouts.
@@ -160,9 +163,28 @@ Limits/falsifiers, not claims hidden by green tests:
 
 Compute recommendation: zero additional GPUs for this bridge. Do not hold
 node3 reserve0/1/5. Continue independently authorized work; actual loop launch
-waits for family/child qualification and a separately bound native protocol.
+requires Main's family designation, child qualification and a separately bound
+native protocol. No further Rohin family-permission gate is imposed here.
 
 Peer message to Main/next native worker: consume both collection AND training
 bindings, not just AFTER adapter reload. The old quality runner is untouched
 and still cannot provide continuity by repeated invocation. CPU boundary is
 ready for review; native integration and all launch decisions remain yours.
+
+## Message79 correction and frozen loader seam
+
+The first patch only accepted the then-pending route-family proposal. After
+reading raw message79 and Main's follow-up, named families may instead carry
+`family_status='MAIN_APPROVED'` and `family_designation_sha256` for Main's
+published designation. This helper neither reads a registry nor authenticates
+Main's decision; it binds caller-supplied metadata. There is no
+`launch_authorized` field, only `execution_scope='CPU_PREPARATION_ONLY'`.
+The designation is frozen into the plan/receipt just like the native recipe;
+changing it beneath an existing lineage fails. It should be settled before
+native cycle1, not retroactively substituted into old receipts.
+
+Public loader seam is frozen in `orch_guided_bridge_INTERFACE_V1.md` beside
+this handoff. Old Builder's disjoint `orch_guided_native*` paths remain untouched.
+Coordinate through Main only. The substantive next work is actually loading
+and measuring the requested adapter, not another registry. The authority-fix
+test log records22 passing bridge CPU tests; previous logs remain historical.

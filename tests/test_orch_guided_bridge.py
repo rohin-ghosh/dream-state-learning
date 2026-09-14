@@ -127,6 +127,28 @@ class GuidedBridgeTests(unittest.TestCase):
             with self.subTest(changes=changes), self.assertRaises(ValueError):
                 bridge.plan_cycle(self.lineage(), replace(self.contract, **changes))
 
+    def test_main_designated_family_is_representable_without_launch_authority(self):
+        for family in (bridge.FAMILY, 'SYNTHETIC_OTHER_NAMED_FAMILY'):
+            contract = replace(self.contract, family=family, family_status='MAIN_APPROVED',
+                               family_designation_sha256=digest('synthetic-main-designation'))
+            plan = bridge.plan_cycle(self.lineage(), contract)
+            manifest = plan.document()['contract']
+            self.assertEqual(manifest['family'], family)
+            self.assertEqual(manifest['family_status'], 'MAIN_APPROVED')
+            self.assertEqual(manifest['execution_scope'], 'CPU_PREPARATION_ONLY')
+            self.assertNotIn('launch_authorized', manifest)
+            self.assertNotIn('launch_authorized', self.contract.manifest(bridge.ARMS[0]))
+            lineage, readout = bridge.complete_cycle(plan, self.receipt(plan))
+            self.assertEqual(bridge.plan_cycle(lineage, contract).input_adapter, readout.adapter)
+            with self.assertRaises(ValueError):
+                bridge.plan_cycle(lineage, replace(contract, family_designation_sha256=digest('different-designation')))
+
+    def test_approved_family_needs_explicit_designation_not_cpu_autoapproval(self):
+        for changes in (dict(family_status='MAIN_APPROVED'), dict(family=''), dict(family='../foreign'),
+                        dict(family_designation_sha256=digest('pending-cannot-claim-designation'))):
+            with self.subTest(changes=changes), self.assertRaises(ValueError):
+                bridge.plan_cycle(self.lineage(), replace(self.contract, **changes))
+
     def test_optimizer_defaults_cannot_be_silently_inherited(self):
         recipe = json.loads(self.contract.recipe_json)
         del recipe['optimizer_kwargs']['weight_decay']

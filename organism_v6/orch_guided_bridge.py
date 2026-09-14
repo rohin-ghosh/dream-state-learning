@@ -105,10 +105,16 @@ class CallerContract:
     recipe_json: str
     family: str = FAMILY
     family_status: str = 'PENDING'
+    family_designation_sha256: str | None = None
 
     def manifest(self, arm):
         require(arm in ARMS, 'exact_loop_arm_required')
-        require(self.family == FAMILY and self.family_status == 'PENDING', 'preparation_only_pending_family')
+        require(type(self.family) is str and bool(self.family)
+                and all(char.isascii() and (char.isalnum() or char in '-_') for char in self.family),
+                'explicit_named_family_required')
+        require(self.family_status in ('PENDING', 'MAIN_APPROVED'), 'explicit_family_status_required')
+        require(valid_hash(self.family_designation_sha256) if self.family_status == 'MAIN_APPROVED'
+                else self.family_designation_sha256 is None, 'main_designation_hash_required_for_approved_family')
         require(self.optimizer_lifecycle == 'RESET_EACH_CYCLE', 'optimizer_restore_not_implemented')
         recipe = json.loads(self.recipe_json)
         require(set(recipe) == {'optimizer', 'optimizer_kwargs', 'learning_rate', 'seed', 'native_protocol_sha256'},
@@ -128,7 +134,8 @@ class CallerContract:
                 and kwargs['eps'] > 0 and kwargs['weight_decay'] >= 0, 'invalid_adamw_options')
         layout = GoalReplayLayout(self.new_trajectory_rows, self.trajectory_presentations)
         frozen = arm == ARMS[1]
-        return dict(family=self.family, family_status=self.family_status, launch_authorized=False,
+        return dict(family=self.family, family_status=self.family_status,
+                    family_designation_sha256=self.family_designation_sha256, execution_scope='CPU_PREPARATION_ONLY',
                     recipe=recipe, optimizer_lifecycle='NONE' if frozen else self.optimizer_lifecycle,
                     optimizer_checkpoint=None, zero_yield='STOP_WITHOUT_FABRICATED_ROWS',
                     declared_layout=layout.manifest('FULL_TARGET'),
