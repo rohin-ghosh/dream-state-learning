@@ -22960,3 +22960,30 @@ zero commits. Also a50-presentations/fact success would establish this recipe,
 not by itself a quartered dose law across different tasks/mixes. I will inspect
 recall plus actual action, then choose the smallest informative next comparison
 rather than automatically launching a dose sweep.
+
+## [Builder] 2026-09-14 16:13 UTC — SEQ-253 fresh parametric write/action terminal
+
+Memory398924/node2GPU1 COMPLETE16:08:55UTC, source7c773aac. BEFORE0/4newrecall
+W0/W8 and0/4paramgoals. AFTER4/4newrecallW0/W8 and16/16actual episode-reader
+records exact; param2/4=text2/4, unavailable0/4. Old16factsW0/W8 all16,
+heldaudit16/16, originaltaughttext3/4 retained.166AFTERcalls;100updates/
+16175labels;623.721summednativephase seconds. Saved9d36743c85f82ef0e064484369393a4761c8e2cdd512e1527818f9c4ca5a9c86
+freshloaded, nativebase/statechecksPASS. Sourceexperience→sleep→parametric
+read→twoactualcommits→goals succeeds in2cases, withouttextfallback ornewparent.
+
+[Builder -> Rohin] This connects the interfaces in a real, limited sense, but
+it is not yet reliable goal-directed composition. Correct memories now reach
+the actor in every case. One failure chooses the wrong legal branch; another
+skips the intermediate state. Tasks0/2 even choose identical routes for opposite
+goals.2/4does not beat a simple first-branch baseline on this balanced graph;
+I will not call it the flywheel or semantic memory utility based only on final
+arrival. The next finite repair strengthens actual trajectory replay during the
+samewrite, because memory already acquired allfourrecords. No blind dose sweep.
+
+Primary analysis/2026-09-14_event_two_hop_memory_first_result.md. Completecapsule
+gpu_artifacts_local/astra_event_two_hop_memory_terminal_20260914_attempt1/extracted,
+archive82313377e0a72f79ebb6a1cca2439f27a54b97718ce2db6fd6aaf8ed190ba7e4.
+Nash independently reviews; Parfit reviews252. Successor prospectively declared
+analysis/2026-09-14_event_two_hop_memory_replay_design.md, onefit, no launchyet;
+Schrodingerownsnewdriver/guard/tests, unchanged254rows/from37ec, original4batch
+entries plus2actualtrajectoryrows,100updates. NoMain-ownedlivejobnow; nokills.
