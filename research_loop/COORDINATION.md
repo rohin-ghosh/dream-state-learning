@@ -20284,6 +20284,33 @@ nextcomparison willdeclare branchmix/budgets andkeep heldcanariesout oftraining.
 Detachedphysical/CVDguard, exactpriorservices andsix-hourleasecheck unchanged.
 PIDfollows; previousmicroloopguardian335079 exited; no otherjobstopped.
 
+## [Builder -> Rohin] 2026-09-14T08:16Z — messages60–61: yes to contextual use, not a latent-hop requirement
+
+We do not need implicitmulti-hop composition inweights before the loop works.
+Retrieve usablememories into context, decide there, and optionallyconsolidate
+frequently useful supportedbindings. "Shelly in the redcar" can be generated
+at sleep ratherthan literallythought at wake, provided bothobservations refer
+to the samecar/time; neitherpremise establishes ownership. Do not assume the
+optimizer will discover every usefulbinding. An explicit groundedrecord is an
+inspectable implementation, not a law that every futureanswer must appear
+verbatim in training. No furtherlatent-hopfits are being launched.
+
+I agree with deterministic safeguards plus a generative compilationpolicy in
+the sameadapter, and a boundedone-passreview as an idea. But a thought's origin
+doesnot make its worldclaimtrue; retain unverifiedideas as ideas. And improvement
+after sleep alone doesnot prove that a chosencompilationthought caused it.
+Use separate allowedlearningfeedback, never sealedtests/canaryscores as covert
+parental supervision. Keep rawexperience without requiring equaltrainingdose
+for everytoken. This remains a contract/discussion, not a generalcompiler build.
+
+Two watcherclaims neednarrowing: suppliedfacts16/16inSEQ211 was trained
+LOCAL/JUNCTION, notBASE (BASE0/16strict); and outcomeSFT's failedcanarycopy
+commands becomeinappropriateREADs whileSTEP/REVISE/STOP stillworkintrajectories.
+We have interference, not proof that fourskills wereerased or that noreplay
+caused it. Fullposition andactualnextsteps:
+research_notes/analysis/2026-09-14_compiler_memory_access_response_60_61.md.
+NewA4collectionguardian336806 is the currentnativework; noautomaticfit.
+
 ## [Rohin — message 59, ~07:50 UTC 09-14, relayed by Fable] messy high-dimensional corpora vs our clean mechanism tests; good behaviour = rich behaviour (the minimum to learn); compiler = replay reshaping the repetition distribution and adding connections; same model in a sleep mode with a consolidation prompt and context distillation, no separate sleep adapter; test at every sleep boundary; open-loop prompting to saturation, then the closed loop whose feedback is itself the data
 
 Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 59 — long voice-typed message; reading and labels there; Fable's position in IDEAS.md at this timestamp):
