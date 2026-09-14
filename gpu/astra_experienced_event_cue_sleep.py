@@ -155,7 +155,8 @@ def check_second_sleep(adapter_dir, memory_source, cue_source, *, training_arm=N
     return source.file_hash(adapter.parent / 'RESULT.json')
 
 
-def evaluate(engine, bank, episodes, output):
+def evaluate(engine, bank, episodes, output, *, reader_wrapper=8):
+    require(type(reader_wrapper) is int and reader_wrapper in (0, 8), 'known_reader_wrapper_required')
     captures, panels = [], {}
 
     def generate(messages, panel, role, *, reader_off=False):
@@ -174,7 +175,7 @@ def evaluate(engine, bank, episodes, output):
                 return dict(raw=external_memory[address], terminal=True, truncated=False,
                             source='RESEARCHER_SUPPLIED_EVAL_TEXT_NOT_PARAMETRIC_MEMORY')
             messages = [dict(role='system', content=source.world.MEMORY_SYSTEM),
-                        dict(role='user', content=source.world.WRAPPERS[8].replace('{REQUEST}', 'READ EVENT ' + address))]
+                        dict(role='user', content=source.world.WRAPPERS[reader_wrapper].replace('{REQUEST}', 'READ EVENT ' + address))]
             return generate(messages, panel, 'reader', reader_off=reader_off)
 
         for fact in facts:

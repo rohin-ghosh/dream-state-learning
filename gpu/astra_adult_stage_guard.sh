@@ -13,7 +13,7 @@ stage="$9"
 root="$campaign/$arm"
 case "$stage" in
     train) duration=7440 ;;
-    before) duration=1920 ;;
+    before|after_w0) duration=1920 ;;
     *) exit 2 ;;
 esac
 mkdir "$root/launch_$stage"
@@ -40,7 +40,9 @@ common=(--development-arm "$arm" --initial-adapter-dir "$adapter" --expected-ini
     --expected-base-sha256 a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992
     --collection /tmp/astra_microloop_20260914_attempt2/collection
     --cue-collection /tmp/astra_cue_lastturn_20260914_attempt1/run --adult-collection "$root/collect")
-if test "$stage" = train; then
+if test "$stage" = after_w0; then
+    timeout --signal=INT --kill-after=60 1860 "$python" -B -m gpu.astra_experienced_event_adult_cycle "${common[@]}" --phase readout --state AFTER --reader-wrapper 0 --adapter-dir "$root/train/adapter" --output "$root/after_w0_reader"
+elif test "$stage" = train; then
     timeout --signal=INT --kill-after=60 5460 "$python" -B -m gpu.astra_experienced_event_adult_cycle "${common[@]}" --phase train --output "$root/train"
     timeout --signal=INT --kill-after=60 1860 "$python" -B -m gpu.astra_experienced_event_adult_cycle "${common[@]}" --phase readout --state AFTER --adapter-dir "$root/train/adapter" --output "$root/after"
 else

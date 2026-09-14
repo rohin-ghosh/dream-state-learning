@@ -86,10 +86,12 @@ def train(engine, old_rows, cue_rows, new_rows, output, arm):
         adapter_files={path.name: source.file_hash(path) for path in (output / 'adapter').iterdir() if path.is_file()})
 
 
-def evaluate(engine, collection, old_bank, old_episodes, output):
+def evaluate(engine, collection, old_bank, old_episodes, output, *, reader_wrapper=8):
     directory = output / 'new_task'
     directory.mkdir(exist_ok=False)
-    result = development.evaluate(engine, collection['bank'], collection['episodes'], directory)
+    result = development.evaluate(engine, collection['bank'], collection['episodes'], directory,
+                                  reader_wrapper=reader_wrapper)
+    result['reader_wrapper'] = reader_wrapper
     for view in (0, 8):
         rows = []
         for fact, episode in zip(old_bank, old_episodes):
@@ -116,9 +118,11 @@ def main(argv=None):
         parser.add_argument('--' + name, required=True)
     parser.add_argument('--adult-collection')
     parser.add_argument('--adapter-dir')
+    parser.add_argument('--reader-wrapper', type=int, choices=(0, 8), default=8)
     parser.add_argument('--device', default='cuda:0')
     args = parser.parse_args(argv)
     require(args.state == 'BEFORE' or args.phase == 'readout', 'after_only_for_fresh_readout')
+    require(args.phase == 'readout' or args.reader_wrapper == 8, 'reader_variant_only_for_readout')
     require(args.phase == 'collect' or args.adult_collection, 'experienced_adult_source_required')
     require((args.state == 'AFTER') == bool(args.adapter_dir), 'explicit_after_adapter_only')
     require(os.environ.get('HF_HUB_OFFLINE') == '1' and os.environ.get('TRANSFORMERS_OFFLINE') == '1', 'offline_required')
@@ -195,7 +199,8 @@ def main(argv=None):
         elif phase == 'train':
             result.update(train(engine, old_rows, cue_rows, new_rows, output, args.development_arm))
         else:
-            result.update(evaluate(engine, collection, old_bank, old_episodes, output))
+            result.update(evaluate(engine, collection, old_bank, old_episodes, output,
+                                   reader_wrapper=args.reader_wrapper))
         engine.verify_base()
         if phase != 'train':
             require(_state_hash(parameters) == before, 'read_only_adult_stage_changed_adapter')

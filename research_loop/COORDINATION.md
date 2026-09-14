@@ -20985,3 +20985,45 @@ then improving what the child extracts, not saturating GPUs for its own sake.
 **Watcher reading, on the ladder and against Rohin's morning steers:** train-on-outcomes (msg 57) produced the first parent-free cue behaviour; the causal control shows the child's own coached trajectories, not replay volume, carried it; the write → recall → cue → act chain now holds on one family with seed robustness. What remains before H1 in any form: an independent world (not seed), an unseen task family, the unknown-address MISS repair (rehearse MISS exemplars — the hardcoded compiler REHEARSE step), and the frozen-twin slope (H2). Rohin's ruling: seeds/replication later via lineage; the adult phase running now is the right next stroke.
 
 **Operational:** the VM independent result reader (`tools/courier/result_read.sh` + `RESULT_READ_PROMPT.md`) is under adversarial review before installation (cron every 30 min at :15/:45, non-blocking, notebook-only); the idle nudger now tells the builder to re-read today's raw messages 42–63 and IDEAS entries before choosing its next step (Rohin, msg 63) — deployed and restarted 10:16Z. Fleet at 10:1x: node 2 GPUs 0/1/4/5 busy (adult fits + BEFORE controls); others idle. Nothing launched or killed by the watcher.
+
+## [Builder] SEQ-227 — 2026-09-14T10:20Z — adult write/use terminal, partial success with localized W8 corruption
+
+Both source678faf15 adult fits COMPLETE400updates; fresh AFTER endpoints COMPLETE.
+Cue BEFORE→AFTER: newown goals1/4→3/4, READ4/4→4/4, secondREAD2/4→3/4;
+readerOFF2/4→2/4 (READ4/4); heldtext8/8→8/8. LossOFFnewown2/4→2/4 with
+zeroREADs, readerOFF2/4→2/4, heldtext4/8→4/8. BOTH: newrecallW0 0/4→4/4,
+newW8 0/4→3/4; oldrecallW0/W8 4/4→4/4; unseenMISS0/4→0/4.
+These are same-child parent-free offered-experience→write→reload→use results,
+not an H2 slope or across-lineage estimate. Formation succeeds equally in both
+arms; behavioral usage, not better raw new-memory acquisition, distinguishes them.
+
+Readoutfailure localized fromactualrawcalls: new E_3FIXU7HBPN underW8 returns
+corrupted source/port/outcome identifiers in BOTHarms (not merely whitespace).
+Cue actualreader returns N_Q5JLOL7SKZ4 / P_XN2MTIYXEC / N_7G6JCNMNEQ
+instead of N_Q5JLOL7SKZ / P_XN2MTIYXOF / N_7G6JCNMNEO. The actor then
+correctly asks for the other EVENT but commits its wrong-goal port. W0direct
+recall of this same trained artifact is exact. Full raw reduction continues
+independently; builder did not wait for its memo to inspect the failed path.
+
+[Builder] Prospective smallest interface repair: fresh AFTER readout with
+reader wrapper W0, the already measured trained query protocol, in BOTHarms.
+No new fit, target, update, seed, teacher, or repaired readertext. Preserve all
+original W8 endpoints and direct W8 probes, which still report3/4. This is a
+DEV interface choice based on observedfailure, NOT held-wrapper success or a
+replacement primary score. Prediction: cue newrouting4/4 if readercorruption
+was the remaining local cause; otherwise diagnose actor behavior. Control may
+remain2/4 withoutREAD. Keep original loss-off and reader-OFF panels.
+Default8 source behavior unchanged; one new CPUregression checks only reader
+prompts vary while actor/probe messages stay fixed.46focusedtests pass.
+Node2GPU4cue andGPU5control, stageafter_w0, <=1800s each, no model mutation,
+newdirectories after_w0_reader under each adultroot; guards run again beforeload.
+This closes an observed interface weakness before repeating the loop, not a
+new optional comparison campaign. Guardian IDs and frozen source follow.
+
+[Builder -> Rohin] The adult child now remembers all four new events under the
+trained query and uses memory to improve new-task success from1/4 to3/4 after
+sleep; the no-cue child acquires the facts too but still acts without reading
+and stays2/4. Old facts and the learned read policy survive. One held query
+wrapper corrupts an identifier, so I am checking the known-working reader
+interface without touching weights. This is a real small connection, with a
+specific limitation—not a general self-improving flywheel or a finished paper.

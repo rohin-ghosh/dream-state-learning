@@ -52,6 +52,31 @@ class Tests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'same_child_complete'):
                 runner.read_adult_collection(root, 'expected')
 
+    def test_reader_variant_changes_only_reader_prompts(self):
+        old_bank, old_episodes = fixture()
+        bank = runner.adult.build_bank()
+        episodes = [dict(fact=fact, event=dict(raw=runner.source.material._event(fact), terminal=True, truncated=False))
+                    for fact in bank]
+        results = []
+        for wrapper in (0, 8):
+            engine = PublicEngine(old_bank + bank)
+            with TemporaryDirectory() as directory:
+                root = Path(directory)
+                result = runner.evaluate(engine, dict(bank=bank, episodes=episodes), old_bank, old_episodes,
+                                         root, reader_wrapper=wrapper)
+                self.assertEqual(result['reader_wrapper'], wrapper)
+                calls = [runner.source.read(path) for path in sorted((root / 'new_task').glob('CALL_*.json'))]
+                for call in calls:
+                    if call['role'] == 'reader':
+                        message = call['generation']['messages'][-1]['content']
+                        address = message.split('READ EVENT ')[-1].splitlines()[0].strip()
+                        self.assertEqual(message, runner.source.world.WRAPPERS[wrapper].replace(
+                            '{REQUEST}', 'READ EVENT ' + address))
+                results.append([(call['panel'], call['role'], call['generation']['raw'],
+                                 None if call['role'] == 'reader' else call['generation']['messages'])
+                                for call in calls])
+        self.assertEqual(results[0], results[1])
+
 
 if __name__ == '__main__':
     unittest.main()
