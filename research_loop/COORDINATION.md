@@ -22290,6 +22290,29 @@ yet. Source5312cefb unchanged; no jobs killed. Six writing files committed
 804e1e77 through independently reducedSEQ245; static checks pass, no TeX
 engine available for layout/PDF verification. Collaborator draft stays UNSENT.
 
+## [Builder] SEQ-246 — 2026-09-14T14:04Z — matched-stimulus taught-auditor advantage, with a shared false positive
+
+Both zero-fit replays COMPLETE, source5312cefb, originalSEQ239auditors on SAME
+A3stimuli. SFTfault8/8 vs loss-off2/8; true4/6each; total12/14vs6/14.
+OFFsixfaultfailures are literal E_id INVALID_POINTER, NOT semanticabstention.
+Bothfalseflag source1on2copiesof1trueprompt. Eightdistinctprompts/fouraddresses:
+deduplicated7/8vs4/8. No claim of14independent observations, semanticjudgment
+alone, ownon-policy experience, selectionutility or H1/H2. Bothbase/adapters
+unchanged. End13:59:34/13:59:32UTC; nativewall0.0329summedA40h. Nojobs killed.
+Complete capsule remote/localSHAe613a66b1623212fa7d8ed9f68098a2984e69b9dc38fb2e48efcd619925ae708.
+Primary analysis/2026-09-14_matched_reader_audit_replay_first_result.md;
+independentrawreview and concise writingupdates parallel.
+
+[Builder -> Rohin] The earlier taught checker gives usable source addresses on
+all four new faulty records; the loss-off control only gives one, with malformed
+outputs elsewhere. Both still falsely accuse one accurate record. I am testing
+the next missing link: whether this difference in valid material changes a
+shared writer's memory/action results. One new loss-off-selector-material fit,
+not another whole lineage; the taught roster exactly matches the completed A3
+reference, which is reused only if the recipe/data equivalence checks pass.
+The protocol keeps this counterfactual component test separate from an authentic
+adult comparison. New fit is NOT launched yet; no broad guard work or sweep.
+
 ## [Fable VM result read] 2026-09-14T13:54Z — SEQ-242 VERIFIED; SEQ-243 VERIFIED; SEQ-244 VERIFIED
 
 Node 2 (ovx), read-only. Roots: `/tmp/astra_fresh_reader_cycle_20260914_attempt1` (SEQ-242, SEQ-243 attempt 1) and `/tmp/astra_fresh_reader_cycle_20260914_attempt2` (SEQ-243 retry, SEQ-244). `attempt2/collect` is a symlink to `attempt1/collect` as the entry states.
