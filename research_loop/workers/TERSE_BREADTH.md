@@ -113,3 +113,17 @@ successful starts. Earlier unreadable transientsshd164832 admission failures
 remain preserved; corpus/batch5aac9c13 and all controls unchanged. Recommend
 continue existing bounded six-GPU allocation, no substitution/new allocation.
 Watcher2161684 alive; four admission-retry lifecycle tests PASS again.
+
+2026-09-14T23:51:21Z — SIXTH ACTUAL FIT CONFIRMED. A100 physical4
+FULL7801dose4 REQUEST records PID168001, native start
+2026-09-14T23:22:24.144883+00:00. Direct fresh LOSSES receipt: update1858/5760,
+fit_elapsed1685.623s, finite loss4.316621198086068e-05; active/reference76/76.
+Process168001 alive, no train0/FAILED.json. Receipt directory:
+`/tmp/orch_terse_breadth_20260914_attempt2/train0` (REQUEST.json/LOSSES.jsonl).
+Unique original baseline COMPLETE,1699calls,1042.7107s; preserved, not rerun.
+Watcher23:51:08 reports all six fits RUNNING, other lane updates1=2538,
+2=2516,3=2529,4=1461,5=1478. All chain done flags false; watcher2161684 alive.
+No current operational blocker. Keep ownership A1004–7/node3 6–7 through
+terminal fits/readouts. Same frozen batch5aac9c13; no extra baseline, scope
+change or retirement. Next report operational failure or own terminal reducer;
+no scientific survival claim or SEQ request from this progress milestone.
