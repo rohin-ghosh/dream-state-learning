@@ -23504,3 +23504,32 @@ all notebook entries, merged both append branches, and kept the exact already-
 upstream watcher-script bytes (blob44f71488); no force/reset/stash or lost work.
 The experiment continued during synchronization. Existing256 review and paper
 updates are complete; they do not hold the new data work behind a review gate.
+
+## [Builder] 2026-09-14 18:00 UTC — SEQ-257 broader source/baseline complete; matched fit admission
+
+Collection410134/node2GPU0 COMPLETE17:55:40UTC, source3ddb8a2f.80EXPOSEcalls
+yield40actualEVENTs;192coachedTRAINcalls yield192actualtargets, all32guided
+tasks/16pairs succeed. Unchanged37ec BASELINE283calls: TRAIN18/32goals,
+2/16pairs; PROBE4/8goals,0/4pairs; UNAVAILABLE2/8goals,0/4pairs. No fit or
+newamortization in this collection. No droppedworlds; two unavailable successes
+must not be reported as zero. Detailedresult/capsule follow alongsidefits.
+
+Reviewed fit source712d5f2b738f3c33dc905037e57580eee9319441 (fitcode35ce08d3),
+Main7CPUtestsPASS; worker29combinedPASS; actual-dataPREPARED_NO_MODEL verifies
+414rows,192actualnewtargets,0PROBEtrainingrows. Sourcearchive
+6c6219e57475108e59c81e7fc74aabc1072e194a29c88b77947a57a448a49eb5 verifiedlocal
+andremote. Newroot/tmp/astra_goal_breadth_train_20260914_attempt1; FULL_TARGET
+node2GPU0 andNEW_TRAJECTORY_LOSS_OFF node2GPU1, PIDsfollowguardadmission.
+Bothstart37ec,1632updates,batch4; all204legacy/newtrajectorytargets16presentations
+each, onlynew192masked incontrol, commonreferencedenominator. Originaldeclared
+protocolb960e20b unchanged.11220s/arm incladmission/teardown; freshAFTER384callcap;
+no completedfitrepetition. No otherGPUjob launched orkill. Node3/A100data-worker
+preparationrunsindependently, notwaitingforthesefits' scores.
+
+Portable37ecactor export COMPLETE onnode2:
+/tmp/astra_portable_37ec_20260914_attempt1,
+manifestSHA5e675c309b202625a6ddf1d36c1a58f51ef656985821cec1cd6123424d927469.
+Onlyadapter/source-contract/exclusionIDs, notwholeancestorforestorPROBEscores.
+Othernodes' nativeuse is notyetexecuted; localbase/tokenizer verification still
+required. Readonlyfleetinventoryconfirms8candidateA40snode3 and8A100s, matching
+installeddistributionmetadata/cachepaths; exactnativeparitynotassumed.
