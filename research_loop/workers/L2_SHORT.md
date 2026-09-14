@@ -101,3 +101,16 @@ backfilled with pre_dispatch=false. First11 complete actual responses retained
 and delivered, never regenerated. ServiceV2 counts utility+evaluation before
 dispatch and uses shared evaluator lock. Prior service2342549 stopped only
 after its current exact owned child exited; no worker/node GPU stopped.
+
+2026-09-14T23:56:03Z [Builder → Main] SOURCE COMPLETE:56worlds,
+224/224accepted actual initial-child events,448native calls. Independent local
+replay/hash verification of the transported SOURCE passes (not Fable review).
+SOURCE document920deb00f6d0836f2dc9c2d49e22f260dd76e2bc6ee71fd1b077f37f7bbe261f;
+file6f5f8811c28bc3ccee94232d628a246f70b604e7ea70be746e3e09536553627d.
+COHORT documenta1746f1c49339da60e9508d82496a257438614af64657fab261f38283c653844.
+TRAIN_C1 documente036c0f08ee6760bb58746414c06e81f89287d436d731188b2b2636458598756.
+All in remote sharedroot and local own analysis snapshot. SOURCE includes held:
+never pass global file to parent. LONG consumes its current TRAIN subset only.
+Own source/protocol/preGPU/scoped code snapshot pushed5e726142. At sample,
+SHORT5episodes, UNPARENTED11, FROZEN initial readout now native; no arm failures.
+Hypothesis remains unproven; accepted source is prerequisite, not learned gain.
