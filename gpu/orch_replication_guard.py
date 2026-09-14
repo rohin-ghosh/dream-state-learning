@@ -30,6 +30,15 @@ def query(fields, kind):
     return [list(map(str.strip, row)) for row in csv.reader(io.StringIO(output)) if row]
 
 
+def environment_bytes(entry):
+    try:
+        return (entry / 'environ').read_bytes(), False
+    except PermissionError:
+        raw = subprocess.check_output(['sudo', '-n', '/usr/bin/cat', str(entry / 'environ')],
+                                      stderr=subprocess.DEVNULL, timeout=5)
+        return raw, True
+
+
 def scan(index, uuid):
     gpus = query('index,uuid,memory.used', 'gpu')
     matches = [row for row in gpus if row[0] == str(index)]
@@ -37,7 +46,7 @@ def scan(index, uuid):
         raise ValueError('physical_uuid_changed')
     compute = query('gpu_uuid,pid,used_gpu_memory', 'compute-apps')
     owners = [row for row in compute if row[0] == uuid]
-    unresolved, reservations = [], []
+    unresolved, reservations, privileged_reads = [], [], []
     checked = 0
     for entry in Path('/proc').iterdir():
         if not entry.name.isdigit() or int(entry.name) == os.getpid():
@@ -49,11 +58,14 @@ def scan(index, uuid):
             if not arguments[0]:
                 continue
             executable = Path(arguments[0].decode(errors='replace')).name
-            environment = (entry / 'environ').read_bytes().split(b'\0')
+            raw_environment, privileged = environment_bytes(entry)
+            environment = raw_environment.split(b'\0')
             visible = next((item.split(b'=', 1)[1].decode() for item in environment
                             if item.startswith(b'CUDA_VISIBLE_DEVICES=')), None)
             checked += 1
             row = dict(pid=int(entry.name), executable=executable, cuda_visible_devices=visible)
+            if privileged:
+                privileged_reads.append(row)
             if visible is not None:
                 devices = visible.split(',')
                 if str(index) in devices or uuid in devices or visible.lower() == 'all':
@@ -62,11 +74,12 @@ def scan(index, uuid):
                 unresolved.append(row)
         except FileNotFoundError:
             continue
-        except (PermissionError, ProcessLookupError) as error:
+        except (PermissionError, ProcessLookupError, subprocess.SubprocessError) as error:
             if entry.exists():
                 unresolved.append(dict(pid=int(entry.name), error=type(error).__name__))
     return dict(index=index, uuid=uuid, gpu=matches[0], compute_owners=owners,
                 cuda_reservations=reservations, unresolved=unresolved, checked_processes=checked,
+                privileged_environment_reads=privileged_reads, process_exemptions=[],
                 timestamp_utc=datetime.now(timezone.utc).isoformat(),
                 safe=not owners and not reservations and not unresolved and int(matches[0][2]) <= 2)
 

@@ -94,3 +94,32 @@ unchanged. This correction is API-derived before any new generation/outcomes.
 After the initial freeze I searched only notebook allocation/preGPU/launch
 lines, seeing another worker's source-missing count in provenance text; no old
 performance comparison was read. This does not alter the frozen assessment.
+
+## 2026-09-14 22:27 UTC — implementation and CPU-only admission
+
+Independent bounded readout/scorer and source-only corpus joins implemented;
+21/21 CPU tests pass. Source commit6177741b, local archive SHA
+93bbe4621ec60e277cbaefe0c44d50bfaeb683f328a446cb415c18f6bcc949f5.
+Archive copied and SHA matched at node3 `/tmp/orch_replication_20260914_attempt1`.
+CPU-only portable/base/tokenizer/cohort/old16/held16 prepare running there.
+No inference launched. Push was rejected by a concurrent remote update; ordinary
+pull could not merge a peer's dirty notebook. Subsequent shared-head merge is
+currently unresolved in COORDINATION; do not touch peers' hunks, stash, force,
+or launch until a verified successful push plus own preGPU entry exists.
+Main/peer operational message (not a SEQ request): source publication is the
+current barrier, not scientific review; worker will execute cells when clear.
+
+### 2026-09-14 22:28 UTC — no-inference admission repair
+
+Publication is now verified: source6177741b is an ancestor of origin/main.
+CPU prepare passed all portable/base/tokenizer/saved-adapter checks and exact
+old16 corpus/held16 joins. Cohort ec8091eb21a18799e94ce8eba1125faf66376aeea1c30ceb31827afe299fb6f6.
+Scanner correctly failed closed on unreadable same-UID process environments:
+PID3792 systemd --user, PID3797 sd-pam (identity inspected, not whitelisted).
+Non-material admission repair: use a bounded readonly `sudo -n cat` on exactly
+that same-UID /proc/PID/environ when the normal read is denied; extract only CVD
+in memory, never log/write other environment bytes. Sudo availability confirmed.
+Failure still blocks admission; no process exemption and no unknown-user kill.
+Add regression test; preserve original failed scan and prepare; revision2 uses
+new source archive/provenance before inference. Cohort, conditions, budgets,
+scientific assessment, and all invariants unchanged. Zero native calls so far.

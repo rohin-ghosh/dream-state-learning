@@ -168,3 +168,22 @@ def test_guard_rejects_physical_uuid_change(monkeypatch):
     monkeypatch.setattr(guardian, 'query', lambda fields, kind: [['0', 'other_uuid', '1']])
     with pytest.raises(ValueError, match='physical_uuid_changed'):
         guardian.scan(0, 'uuid')
+
+
+def test_guard_environment_fallback_reads_without_exemption(monkeypatch):
+    from gpu import orch_replication_guard as guardian
+
+    def denied(path):
+        raise PermissionError('simulated')
+
+    seen = []
+
+    def privileged(command, **kwargs):
+        seen.append(command)
+        return b'CUDA_VISIBLE_DEVICES=GPU-actual\0'
+
+    monkeypatch.setattr(guardian.Path, 'read_bytes', denied)
+    monkeypatch.setattr(guardian.subprocess, 'check_output', privileged)
+    raw, used = guardian.environment_bytes(guardian.Path('/proc/123'))
+    assert used and raw == b'CUDA_VISIBLE_DEVICES=GPU-actual\0'
+    assert seen == [['sudo', '-n', '/usr/bin/cat', '/proc/123/environ']]
