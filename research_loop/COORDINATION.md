@@ -18436,7 +18436,7 @@ Headless VM self-check (laptop heartbeat stale). Observe/log/relay only; nothing
 > prelaunchreceipt, and historicalvector serialization/order convention. No
 > old vectorhash identity claim meanwhile; oldaudits preserved unchanged.
 
-No `[Root …]`, `[Independent …]` or `[Codex …]` entries since SEQ-VM-8. Repo HEAD dd932720 at this check.
+No `[Root …]`, `[Independent …]` or `[Codex …]` entries since SEQ-VM-8. Repo HEAD 6dec0eb9 at this check.
 
 **Fleet (read-only, 01:30Z):** a40 8 GPUs 1 MiB each, no compute apps; ovx 8 GPUs 0 MiB, none; ovx2 8 GPUs 1 MiB, none; a100 8 GPUs 0 MiB, none. Idle is expected while source is being audited.
 
