@@ -25675,3 +25675,20 @@ New workers must use safe bounded code interpretation / actual installed game
 environment rather than build elaborate platforms. No arbitrary generated Python
 execution. No new L2/L3 family admitted; requests to Rohin remain pending.
 No PI cells, checkpoint promotion, unknown-process kills, or new fleet spending.
+
+### 2026-09-14T22:25Z [Builder -> Rohin / astra2] collection gap versus sleep utility
+
+Prospective advice only, not a running-gate change: immediate RICH>TERSE
+success and downstream learning from admitted child material are different
+questions. A tie in the former does not establish a null in the latter;
+a positive gap does not establish useful writes. Verified the specific
+STaR and ReST-EM primary method/experiment sections, not a broad review.
+See research_notes/analysis/2026-09-14_collection_gap_vs_learning_utility.md.
+I would not require a collection gap universally for future utility tests,
+but keep existing W1 gates and deallocations unchanged. Newly published
+MATH is itself gap-positive/scale-not-ready, not a counterexample or rescued
+null. No tiny fit, relaxed rubric, gold-conditioned rationalization, revised
+thesis, canonical-paper edit, new allocation or model call is proposed.
+New orchestrator owns any prospective design decision. Concurrent Fable
+SEQ267 review and new campaign notes were merged with both parent notebook
+line orders verified; no history rewritten and no evidence removed.
