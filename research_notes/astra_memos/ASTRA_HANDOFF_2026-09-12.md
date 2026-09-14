@@ -1,4 +1,39 @@
-# Astra restart handoff — current override 2026-09-14 19:29UTC
+# Astra restart handoff — current override 2026-09-14 19:48UTC
+
+## CURRENT — supersedes the historical 19:29 snapshot below
+
+Mission ACTIVE/INCOMPLETE. Main resumed and contacted all four existing workers.
+Do not restart completed breadth fits or source collections. SEQ260–262 reviews
+are complete. Actual V2 collection source60dbf789 completed74calls,2/64episodes,
+12candidate turns;62 episodes rejected only by the rationale header envelope.
+Capsule508b12e464ee4379fce750675822235d4c23096ac6149ad6c39545dca1f672e7.
+Main substantive review:8PASS/3FAIL/1UNRESOLVED; both episodes excluded, zero
+fit rows. Independent review assigned to Ramanujan; no retrospective admission.
+See rich_v2_content_review.md and rich_action_first_collection_first_result.md.
+
+Schrodinger owns prospective V3: accept exactly RATIONALE newline or
+RATIONALE colon-space, preserve ACTION delimiter/grammar and old V1/V2 defaults.
+Same prompts/sources, four TEACH shards,384call ceiling, no fits. A1000–3.
+Parfit owns critique/repeat collection on A1004–5; integrates V3 before its
+publication/launch. Identical feedback histories; this is not feedback vs blindness.
+Nash owns new1452-target/2928-update paired quality fit. Source7f9d4251
+prospectively separates node3GPU2 readonly baseline from GPU0/1 fits. AFTER
+requires complete matched baseline; TRAIN cannot inspect baseline outcomes.
+Native staging underway, not yet confirmed launched at this snapshot.
+Original12384-update scale fit remains BLOCKED; do not reuse that trainer.
+BOARD.md is authoritative for reservations, subject to physical/CVD admission.
+
+Six canonical drafts were committed through reviewedSEQ260 at0e3063d5.
+Unrelated dirty rules and untracked junction packet remain untouched. Worker
+files are shared live; use explicit commit paths and preserve concurrent edits.
+Node1 expiry23:14UTC today; no new work. Scoped preserved deltas were rechecked
+19:39UTC; this does not certify the whole97GB mirror. All new large archives
+stay in gpu_artifacts_local, not root-disk /tmp. No cleanup rerun is needed.
+
+Next: publish/execute V3 and critique branches; continue native quality fits;
+inspect substantive outputs before any rich fit; answer Rohin71 in notebook.
+
+## Historical snapshot — 2026-09-14 19:29UTC
 
 ## CURRENT — worker-owned parallel hypotheses; SEQ260–262 complete
 

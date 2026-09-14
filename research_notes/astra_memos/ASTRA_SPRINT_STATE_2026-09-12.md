@@ -1,4 +1,20 @@
-## Current superseding snapshot — 2026-09-14 19:29UTC
+## Current superseding snapshot — 2026-09-14 19:48UTC
+
+Mission ACTIVE/INCOMPLETE. SEQ260–262 completed and independently reviewed.
+RichV2 source60dbf789 terminal:74calls,2/64 action-complete episodes;62 header
+format failures. Main content review excludes both complete episodes:
+8PASS/3FAIL/1UNRESOLVED turns,zero fit rows; independent review pending.
+Schrodinger preparing explicitV3 minimal header compatibility, no prompt/data
+change,no fits,A1000–3. Parfit critique/repeat branch integrating same interface,
+A1004–5,not yet launched. Nash quality-fit source7f9d4251: node3GPU0/1 fits,
+GPU2 independent readonly baseline; new1452-target/2928-update experiment.
+Actual launches await worker receipts. Original12384-update scale stays blocked.
+Main maintains integration/content review, workers own bounded hypothesis
+execution. BOARD/HANDOFF updated. Node1 no newwork,expiry23:14UTCtoday.
+Historical positiveSEQ245 remains narrow; these diagnostics are exposedDEV,
+not clean ancestry, H2, or held-out environment-family transfer.
+
+## Historical superseded snapshot — 2026-09-14 19:29UTC
 
 SEQ260independentlyverified,nopromotion. SEQ261richv1complete880calls/zero
 candidates;56labelstopsnotgeneralreasoningfailure. SEQ262qualitycomplete

@@ -24128,6 +24128,51 @@ proposal is withdrawn; no fit prepared. New V3 wrapper/guard are separate
 files, reusing unchanged V2 loader via an explicit bound V3 configuration;
 native wrapper CPU tests and frozen-source preparation are next, not launched.
 
+## [Builder -> Rohin / Fable] 2026-09-14 19:49UTC — message71, findings and next bounded work
+
+I agree with the immediate objective: elicit useful capabilities the model
+already has, retain actual grounded outputs, and test whether training makes
+them available without the coaching. We should not spend this phase designing
+a larger cognitive architecture. The present evidence identifies two different
+obstacles rather than one vague failure of reasoning: breadth fitting acquired
+TRAIN behavior but did not beat its matched control on PROBE (SEQ260); richV2
+mostly stopped on our overly literal header parser (62/64 episodes). In the
+two completed rich episodes, useful route explanations coexist with false
+memory/state assertions. Format compatibility will expose more content; it
+will not by itself repair those substantive errors. We have not yet tested
+whether fitting a qualified rich corpus improves uncoached behavior.
+
+Your diversity point is right. The current graph is an exposedDEV instrument
+for controlling memory/action dependencies, not a sufficient environment pool
+or futureL2/L3 test. I will not relabel a new identifier split from that same
+mined family as unseen-environment transfer. A content-bearing L1 environment
+branch is a useful next distinct assignment once a worker releases its bounded
+collection; it must not displace the experiments already ready to answer
+breadth, richer-target, and critique-value questions. A fresh orchestrator can
+take over from the updated BOARD/HANDOFF without restarting completed fits;
+there is no second orchestrator running merely because we discussed one.
+
+Current worker tasks: Schrodinger V3 header compatibility+TEACH on A1000–3;
+Parfit critique versus repeat with identical feedback on A1004–5; Nash finite
+quality breadth fits on node3GPU0/1 with independently scheduled readonly
+baseline onGPU2; Ramanujan independent content review. Reservations, not a
+claim all jobs are live. The V3 API has been relayed to Parfit. Main owns
+integration and substantive interpretation, not duplicate native launches.
+
+Correction to Fable19:33: the ORIGINAL12384-update scale fit is still blocked
+by its1536-target admission failure. The1452-target/2928-update paired quality
+protocol is a separately declared experiment, now at source7f9d4251. GPU2 is
+explicitly reserved in BOARD before its native baseline; AFTER requires the
+complete matched baseline, TRAIN never inspects its outcome.
+
+SEQ262 independent source/count review is released:1452rows/242episodes/
+121pairs,696newcalls and116/116newepisodes. Its minor timing precision is
+recorded:26.702149s is input admission,26.751752s total prepare wall; assembly
+35.032524s includes its own admission and must not be double-counted. Main
+V2 content review at rich_v2_content_review.md finds8PASS/3FAIL/1UNRESOLVED;
+both completed episodes excluded,zero fit rows. Independent content review
+is in progress. No positive learning or richness claim is inferred.
+
 ## [Fable VM result read] 2026-09-14T19:48Z — SEQ261 VERIFIED; SEQ262 VERIFIED
 
 Read-only re-derivation from raw receipts; nothing launched, stopped or edited. Both SEQs come from the single builder entry "[Builder] 2026-09-14 19:23 UTC — SEQ261/262 and rich successor CPU readiness". SEQ261 primary research_notes/analysis/2026-09-14_rich_collection_first_result.md, A100 root /tmp/astra_rich_collection_20260914_attempt1 (shard0–3, phases expose/teach/critique/baseline). SEQ262 primary research_notes/analysis/2026-09-14_goal_quality_collection_first_result.md, node 3 root /tmp/astra_goal_quality_20260914_attempt1 (unit0/1/4/6 phase collect; prepare; assembled). No SEQ-259 heading exists in the notebook.
