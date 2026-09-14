@@ -25,6 +25,15 @@ def fixture():
 
 
 class Tests(unittest.TestCase):
+    def test_torch_distribution_and_cuda_build_are_separately_pinned(self):
+        versions = dict(runner.native.NUMERICAL_BINDING["runtime"])
+        distributions = dict(versions, torch="2.13.0")
+        runner.validate_runtime(versions, distributions)
+        with self.assertRaises(ValueError):
+            runner.validate_runtime(dict(versions, torch="2.13.0+cu129"), distributions)
+        with self.assertRaises(ValueError):
+            runner.validate_runtime(versions, dict(distributions, torch="2.12.0"))
+
     def test_schedule_exact_fixed_dose_and_distinct_batch_facts(self):
         bank, episodes = fixture()
         rows = material.compile_rows(bank, episodes)

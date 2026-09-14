@@ -79,6 +79,13 @@ def batch_indexes(update):
     return tuple(((update - 1) * 4 + offset) % 32 for offset in range(4))
 
 
+def validate_runtime(imported, distributions):
+    for name, expected in native.NUMERICAL_BINDING["runtime"].items():
+        require(imported.get(name) == expected, "native_runtime_drift:" + name)
+        expected_distribution = expected.split("+", 1)[0] if name == "torch" else expected
+        require(distributions.get(name) == expected_distribution, "native_distribution_drift:" + name)
+
+
 def load_collection(directory):
     root = Path(directory)
     result = read(root / "RESULT.json")
@@ -100,16 +107,17 @@ class Engine:
         import torch
         import peft
         import transformers
+        import tokenizers
 
         self.torch, self.check, self.tokenizer = torch, check, tokenizer
         torch.set_num_threads(1)
         if torch.get_num_interop_threads() != 1:
             torch.set_num_interop_threads(1)
-        self.runtime = dict(torch=torch.__version__, transformers=transformers.__version__,
-                            peft=peft.__version__)
-        for name, expected in native.NUMERICAL_BINDING["runtime"].items():
-            actual = importlib.metadata.version(name)
-            require(actual == expected, "native_runtime_drift:" + name)
+        versions = dict(torch=torch.__version__, transformers=transformers.__version__,
+                        peft=peft.__version__, tokenizers=tokenizers.__version__)
+        distributions = {name: importlib.metadata.version(name) for name in versions}
+        validate_runtime(versions, distributions)
+        self.runtime = dict(imported=versions, distributions=distributions)
         base = transformers.AutoModelForCausalLM.from_pretrained(options.model_dir,
             local_files_only=True, trust_remote_code=False, use_safetensors=True,
             torch_dtype=torch.bfloat16, attn_implementation="sdpa", device_map=None)
