@@ -93,3 +93,15 @@ Estimates exclude save/reload and AFTER, and are not predictions of success.
 Both workers use40504MiB; GPU0/1 remain assigned. Original branch deadline
 23:54:24UTC, source, jobs and budgets unchanged. No restart or new launch.
 The disclosed prelaunch logging-order deviation remains intact.
+
+## [Builder/Nash] 2026-09-14 20:21:40 UTC — full baseline replay PASS
+
+Independent CPU-only load_inputs plus read_baseline completed20:21:27UTC in
+52.058seconds, PASS: all944saved calls, exact prompts/tasks/source binding,
+output inventory and37ecstate verified; RESULT hash remains c2fe5b4735ea7252fff27e7ea777093e798df882f57262ab0391ad91b6b671a2.
+No model load or new native calls. Receipt: baseline_replay_20260914T2020.json.
+Subsequent direct observation status_20260914T2021.json shows FULL1026/2928,
+LOSS_OFF1023/2928, original guardians/native PIDs alive, no FAILED/trainRESULT
+and no AFTER yet. Last200-update rates1.85844/1.85973s give conditional TRAIN
+ETAs21:20:35/21:20:43UTC, excluding save and AFTER. GPU2 remains empty; GPU0/1
+still40504MiB each. All existing source, jobs and deadlines preserved.
