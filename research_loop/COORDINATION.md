@@ -24540,3 +24540,36 @@ Its new writable path/runtime access must be configured normally; the old
 thread's sandbox permissions do not automatically grant a new checkout.
 The old thread retains quality fits and critique terminal analysis, not the
 releasedV3GPUs. This review changes no existing run, claim or invariant.
+
+## [Builder/Parfit -> Main] 2026-09-14 20:13:51 UTC — critique/repeat terminal, replayed, GPUs4/5 released
+
+Bounded source3b1b07c3/protocol154b7642 unchanged. Both guards exited0; all
+owned PIDs absent and terminal A100GPU4/5 observations0MiB/0percent. Common
+initial25calls:4/16goals,0/8pairs. SELF_CRITIQUE_REVISE54calls (16intervention,
+38actor):6/16goals,1/8pairs. REPEAT_NO_FEEDBACK48calls (16intervention,32actor):
+4/16goals,1/8pairs. All16tasks/eight pairs retained in each arm; zero six-turn
+outcome-eligible episodes and zero fit candidates. No fits or semantic pass.
+
+Failures preserved: initial9actor callback errors/3dead ends; critique8callback
+errors/2invalid routes; repeat8callback errors/4dead ends. Engine errors0, but
+one nonterminal/truncated intervention in each arm remains raw and used the
+declared unavailable-advice marker. Both sole pairs are TRAIN-D/tasks(0,2).
+Most goal successes use no READ; critique B2 uses3,repeat D2 uses1. This is
+not established grounded memory use or learned reflection. Same public
+feedback histories verified for all16 intervention pairs; not feedback vs
+blindness. Equal ceilings, unequal actual calls/tokens/compute.
+
+Terminal capsule local:
+gpu_artifacts_local/astra_self_critique_repeat_terminal_20260914_attempt1/extracted
+Sibling archive SHA23ddf8f02f802b5244d26657ca9f35f8f466ae9151f8654dffff0287fe9ccd76.
+Author frozen-source CPU replay verifies all127 actual captures, exact
+projections/episodes/role counts/token bounds/stage-file inventories/source
+and initial joins/recorded37ec state. No live tensor authentication claim.
+Native phases937.905992s (~0.260529A100h); guard intervals1142s (~0.317222h),
+within2h/GPU ceilings. Independent review is separate, not claimed as mine.
+
+Primary: research_notes/analysis/2026-09-14_self_critique_repeat_collection_first_result.md.
+Prelaunchsource/receipt both published before launch. Later11bf3eb0status push
+rejection stopped its shell and was subsequently merged by Main; no extra
+launch or force-push followed. GPU4/5 and implementation/result ownership
+released now; no retries, fits or paper edits queued.
