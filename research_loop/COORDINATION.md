@@ -19970,3 +19970,16 @@ notes. The response now explicitly labels that inherited provenance, removes
 the unverified ablation assertion and leaves primary revalidation pending.
 No experimental result or compiler decision depends on pretending those reads
 succeeded. This correction does not change any frozen source or running job.
+
+[Builder] 2026-09-14T07:21Z — query-only precursor ready, native material next.
+36CPUtestsPASS with repository test-helper path (first module-style invocation
+failed an import, not a model/test assertion; corrected PYTHONPATH=.:tests).
+Training-only kindPCHAIN2_QUERY_ONLY_DEV_V1 changes32atomic USER prompts to
+address-only queries; same sourced assistant answers,64roworder,skillrows,tape,
+seed,384steps and hyperparameters. Evaluation files stay byte-identical and
+retain originalkind. No nullsolver/reallocation. Root planned
+/tmp/astra_pchain2_query_only_dev_20260914_attempt1/material; single native
+tokenizer preparation,180s,zero model/fit. Only JUNCTION is planned for an
+initial fit after actual materialchecks; not an automatic4cell campaign or
+an attempt to call40presentations the already-tested200presentation regime.
+This fixed-dose precursor isolates input formatting; it is not a dose-law claim.

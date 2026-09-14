@@ -224,6 +224,18 @@ class NativePreparationTests(unittest.TestCase):
                 with self.subTest(kind=kind, namespace=namespace), self.assertRaisesRegex(ValueError, "bound_native"):
                     validate(manifest, self.tokenizer, state="ATOM-JUNCTION", max_context=4096)
 
+    def test_query_only_kind_is_training_only(self):
+        manifest = self.manifest("training", "ATOM-JUNCTION")
+        manifest["material_kind"] = "PCHAIN2_QUERY_ONLY_DEV_V1"
+        rows, tape = native.validate_training_manifest(manifest, self.tokenizer,
+            state="ATOM-JUNCTION", max_context=4096)
+        self.assertEqual((len(rows), len(tape)), (64, 384))
+        evaluation = self.manifest("evaluation", "ATOM-JUNCTION")
+        evaluation["material_kind"] = "PCHAIN2_QUERY_ONLY_DEV_V1"
+        with self.assertRaisesRegex(ValueError, "bound_native_readout"):
+            native.validate_readout_manifest(evaluation, self.tokenizer,
+                state="ATOM-JUNCTION", max_context=4096)
+
     def test_extra_assistant_special_or_template_suffix_is_rejected(self):
         messages = deepcopy(self.material["training"]["ATOM-JUNCTION"]["rows"][0]["messages"])
         messages[-1]["content"] = "MEMORY <eot>\n"

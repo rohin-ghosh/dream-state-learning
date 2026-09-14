@@ -328,7 +328,7 @@ def generate_material(tokenizer, *, salt_limit, max_context, canaries=None, chec
 def validate_training_manifest(manifest, tokenizer, *, state, max_context):
     _require(state in source.STATES[1:] and manifest["state"] == state
              and manifest["schema"] == SCHEMA and manifest["material_kind"] in (
-                 "NATIVE_TOKENIZER_MATERIAL", "PCHAIN2_FREE_ENDPOINT_DEV_V1"),
+                 "NATIVE_TOKENIZER_MATERIAL", "PCHAIN2_FREE_ENDPOINT_DEV_V1", "PCHAIN2_QUERY_ONLY_DEV_V1"),
              "bound_native_training_state_required")
     _require(manifest["recipe"] == source.fit_recipe(state) and manifest["dose"] == "D1"
              and manifest["learner_seed"] == 0, "fixed_D1_recipe_required")
