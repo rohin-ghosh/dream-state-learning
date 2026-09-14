@@ -15,16 +15,18 @@ retention intact. Its six invalid E_id placeholders limit semantic attribution:
 this is executable-material utility, not whole-life parenting or superiority
 over uniform. The selectors used postselected, source-scaffolded prompts.
 
-Independently verified connected two-hop readouts now remain0/4 in every
-condition (SEQ-248/249). Initially no reads/actions occur; a turn-bound revision
-enables reads, but all four own-text episodes emit a goal node instead of a
-port. No connected-memory write occurred. This exposes an action-interface gap,
-not composition impossibility or evidence of parametric-memory failure.
+Connected readouts initially fail0/4 (SEQ-248/249). Source-guided sleep on12
+actual coached responses now improves parent-free own-text goals0/4 to3/4:
+trained displays2/2, reversed1/2, retaining16 old facts and audit16/16 (SEQ-250;
+independent review PASS). Task3 reaches the wrong goal. Parametric/unavailable/OFF
+goals remain0/4; no graph EVENT targets were trained. This is persistent
+contextual improvement on one taught graph, not fresh-world generalization.
+Joint rehearsal prevents isolating trajectory supervision's contribution.
 
 One lineage, unequal doses and external scheduling remain; prior unseen MISS
 is0/4 and failures are preserved. No H1/H2 or autonomous learning-rate improvement
 is established. We seek collaborators on executable connected-action controls,
-independent-family recurrence and retention. Unfinished coaching outcomes are
+independent-family recurrence and retention. Fresh-world transfer outcomes are
 excluded. This message remains unsent.
 
 ## Supporting notes—not part of message
@@ -32,8 +34,8 @@ excluded. This message remains unsent.
 **Evidence-backed working update — UNSENT.** No message has been sent.
 
 **September 14, 2026 result update — research question unresolved.**
-SEQ-248–249 connected readouts are independently verified COMPLETE; no
-unfinished coaching or later-fit outcomes are included.
+SEQ-250 trajectory sleep is terminal with independent review PASS; the
+combined248–250 section retains prior failures. Fresh-world outcomes are excluded.
 SEQ-247 shared-writer material control is terminal and independently reduced.
 SEQ-246 matched replay is terminal and independently reduced.
 A3 SEQ-245 is terminal and independently reduced: six stages, one matching
@@ -50,7 +52,7 @@ The sprint TeX and companion abstract are updated; canonical
 No complete cross-draft review is claimed. The collaborator draft stays UNSENT;
 H1/H2 and the program remain open.
 
-### SEQ-248–249: connected readout, no goal arrival — September 14, 2026
+### SEQ-248–250: connected failures and taught-graph improvement — September 14, 2026
 
 **Both independently reduced COMPLETE.** [Original readout](../analysis/2026-09-14_event_two_hop_first_result.md)
 and [turn-bound successor](../analysis/2026-09-14_event_two_hop_turnbound_first_result.md)
@@ -83,13 +85,13 @@ two-move episode ending at the wrong goal. All failures remain unchanged.
 The86 new native calls comprise70 actor+16 parametric-reader calls; text and
 unavailable services are not additional model forwards.
 
-Prior successes through247 are **single-hop**; connected capability remains
-open. Read availability is not usable action selection. Wrong argument typing
+Prior successes through247 are **single-hop**; at the249 cut, connected
+execution remained unsuccessful. SEQ250 below supplies partial improvement. Read availability is not usable action selection. Wrong argument typing
 remains an alternative to a path-inference failure, and absent memory writing
 precludes treating this as failed parametric acquisition. No composition
 impossibility, H1/H2, independent-world or parenting-efficiency claim follows.
-The247 same-writer/off-policy/invalid-pointer limits remain; no coaching or
-later-fit outcomes are included. Base and adapter read-only receipts pass;
+The247 same-writer/off-policy/invalid-pointer limits remain. The248/249 base
+and adapter read-only receipts pass;
 parent state stays `207ad43ef65f1f6ba7c50d37f5d5dfa8c2253d1cb301e585d7b6b7a78bb93990`.
 
 Sources: SEQ248 `e41439989de59858cd6d36fdd400a26c3dd1a12d`, SEQ249
@@ -103,6 +105,61 @@ the latter retains `collection_source/`. Adjacent independent receipts:
 `270b1e08a52371b6a79aa95c16953c741cd63242b806c1e88d54a6a33c535249`.
 Both hashes/statuses checked locally; earlier pending memo wording is superseded
 by these receipts. No model replay or tensor authentication was performed here.
+
+**SEQ250: source-guided trajectory sleep; independent terminal review PASS.**
+[Primary result](../analysis/2026-09-14_event_two_hop_lesson_first_result.md) and
+[independent review](../analysis/2026-09-14_event_two_hop_lesson_independent_result.md)
+extend, rather than replace, the failed248/249 baselines:
+
+| Parent-free endpoint | Saved SEQ249 no-write parent | SEQ250 AFTER |
+| --- | ---: | ---: |
+| Own-text connected goals /4 | 0 | 3 |
+| Trained displays, tasks0/2 /2 | 0 | 2 |
+| Reversed displays, tasks1/3 /2 | 0 | 1 |
+| Parametric/unavailable/OFF own-text goals, each /4 | 0 | 0 |
+
+All four AFTER own-text episodes make four reads and two legal commits.
+Tasks0,1,2 succeed; task3 follows the first-goal path and reaches the wrong
+terminal (`dead_end`), not a formatting or STOP-rule rejection. Exact old
+recall is16/16 at each W0/W8, held audit16/16 (true8/8, fault8/8). The16 old
+facts were supported across prior stages; there is no newly paired16-fact
+SEQ249 retention baseline. Parametric graph reads are exact0/16, and both
+parametric/unavailable conditions fail by duplicate address; OFF stays0/4.
+
+An algorithmic, source-informed parent hints the next command from actual
+child EVENT records. Two successful coached paths supply12 actual child
+responses, not substituted expected commands. Parent hints are removed from
+student inputs; only the final actual response+EOT is supervised, with preceding
+child history masked. Source facts remain in masked prefixes: not wholly hidden
+training information. One100-update sleep uses8,245 supervised tokens and200
+trajectory presentations, alongside100 old-memory and100 behavior presentations.
+Stored rows are128 old+20 cue+62 audit+12 trajectory; the100 old presentations
+visit indexes0–99, not all128 rows equally. No new graph EVENT-memory targets
+are trained. This is researcher-prepared source-guided teaching, not autonomous
+plan discovery or curriculum selection.
+
+Fresh AFTER loads state `37ec37884e4b0b679edd1dba1be1dec3474589e992649f3a33e7e3b1ec78b8c0`
+and retains it through147 calls (83actor+16memory+32retention+16audit); saved
+file and runtime base/read-only checks pass. Independent review verifies source,
+archive/call joins, masks and replay; no new local tensor/base authentication.
+One graph, one adapter lineage and one fit support **persistent contextual
+interface improvement on the taught graph**, not fresh-world generalization,
+order invariance, parametric hopping, composition proof or H1/H2. The saved
+no-write parent is not a matched additional-sleep control; OFF disables the
+whole adapter. Joint old-memory/cue/audit rehearsal prevents isolating the
+trajectory supervision's causal contribution. SEQ247's off-policy/material
+limits remain unchanged.
+
+Cold opaque names are a transfer probe, not an invariant requiring every task
+to use unseen names. A parent consulting training source records is likewise
+not forbidden: disclose that access rather than claiming source blindness or
+unseen-world generalization. No current fresh-world transfer outcomes are included.
+Source `0b495971f8ecb2353162757abbdb938effa4493b`; raw capsule
+`gpu_artifacts_local/astra_event_two_hop_lesson_terminal_20260914_attempt1/extracted/`
+contains `collect/LESSONS.json`, `train/RESULT.json`, masks/rows/losses, and
+`after/RESULT.json`/episodes/retention/audits. Sibling `terminal.tar.gz` SHA256:
+`2acae64c4be4abd492f7efb0f50675509d7d0650360f7a23e2575e38ceb7f4a6`.
+The released independent PASS supersedes the primary memo's earlier pending status.
 
 ### SEQ-247: executable selector material, shared writer — September 14, 2026
 
