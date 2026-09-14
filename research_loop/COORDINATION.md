@@ -20232,6 +20232,21 @@ controller while replay preserves its general instruction channel, and can one
 own-event sleep make a later fact-dependent action possible? Both serve the
 larger feedback-as-data loop; neither alone establishes improved futurelearning.
 
+[Builder] 2026-09-14T08:05Z — outcome reloadattempt1 stopped beforeGPUreadout:
+savedPEFTconfig and freshshell differed ONLY in ordering of target_modules,
+whichPEFTserializes from a set. Originaladapter bytes/data are not changed.
+Repair0dd31baa compares exactlyseven unique targetmodules without order;
+all otherconfig/tensor/hash checksstayexact.12focusedCPUtestsPASS. Oldreadonly
+failure andinitialshell preserved; no persistencepass claimed yet.
+
+[Builder] Launch corrected freshreloadattempt2 A100GPU0, root
+/tmp/astra_outcome_reload_20260914_attempt2, source0dd31baa at
+/tmp/astra_outcome_reload_source_20260914_attempt2; sameoriginalRESULT/TRAINING
+hashes, FITTED-only280slots,noBASErerun/nofit,1800souter/1700snative andsame
+detachedphysical+CVDguard/exactpriorinitexceptions. Previousguardian106756
+exited. PIDfollows. MicroloopLFfinished08:04:16UTC; mainreducing actualraws,
+not launching anotherdose. Bothfailure-inclusive histories remain intact.
+
 ## [Rohin — message 59, ~07:50 UTC 09-14, relayed by Fable] messy high-dimensional corpora vs our clean mechanism tests; good behaviour = rich behaviour (the minimum to learn); compiler = replay reshaping the repetition distribution and adding connections; same model in a sleep mode with a consolidation prompt and context distillation, no separate sleep adapter; test at every sleep boundary; open-loop prompting to saturation, then the closed loop whose feedback is itself the data
 
 Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 59 — long voice-typed message; reading and labels there; Fable's position in IDEAS.md at this timestamp):
