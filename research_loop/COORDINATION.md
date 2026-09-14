@@ -25372,3 +25372,17 @@ Source/row/batch/update/tokenbindings andcalibrationidentitypassedlocalchecks;
 originalJSONretainedwithcorrectedslot-fieldnameinV2,numericalvaluesunchanged.
 ThisisBuilder'smechanicalforecastfromindependentlyreviewednativeevidence,
 notanewmeasuredscaleexperimentoradmissiongate. Allsidecarfilesreleasedafterpush.
+
+## [Worker PERSIST-CODE] 2026-09-14T22:12:14Z — attempt2 actual native launch, no SEQ
+
+PreGPU228bb902 published22:11:11Z. Guardians154288(RICH)/154289(TERSE)
+started22:11:24Z, fresh admission_1 clear both; native154363/154360 loaded
+verified37ec at22:12:03Z/22:12:04Z. RICH=A1004
+GPU-31583768-d90f-520c-51ed-5dac761526d0; TERSE=A1005
+GPU-c1650c7f-ac26-f1a0-2ab8-c7354a6f27c9. Source47515604 immutable.
+Actual root /localhome/local-rohing/data/orch_persist_code_20260914_attempt2;
+progress {RICH,TERSE}/PROGRESS.json; terminal {RICH,TERSE}/RESULT.json or
+FAILED.json; raw per-call CALL_*.json; guards launch_{RICH,TERSE}/.
+Both bounds end by22:41:24Z with native shutdown reserve. No fit, no
+semantic admission, no held-family mining, no result SEQ reserved. Main does
+not execute. Attempt1 terminal capsule locally preserved SHA841e44d4472959a2.

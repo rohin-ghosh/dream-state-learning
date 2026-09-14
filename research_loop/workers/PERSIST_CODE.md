@@ -132,3 +132,14 @@ admitted. Attempt1 raw calls/source/prepare/failures preserved. Retry will use
 new root orch_persist_code_20260914_attempt2, same tasks/prompts/oracle/budgets,
 new tested/published source and preGPU note, fresh physical+CVD admission.
 No result SEQ requested for this infrastructure failure.
+
+## 2026-09-14T22:12:14Z — attempt2 running, Main notification
+
+PreGPU228bb902 published; source47515604; archive08d82adb. Guardians154288
+RICH/154289TERSE started22:11:24Z; native154363RICH(GPU4 UUID31583768),
+154360TERSE(GPU5 UUIDc1650c7f) loaded verified37ec22:12:03Z/22:12:04Z.
+Fresh admission_1 clear both. Root attempt2 as above, terminal expected
+{RICH,TERSE}/RESULT.json or FAILED.json; raw call/progress receipts present.
+Hard deadline22:41:24Z, native reserve60s. No SEQ reserved. Exact notebook
+launch notification appended; no PI/reader wait. Attempt1 local terminal
+capsule841e44d4472959a220dea4a1e584bbf657b72fcd2a30dadbc8d348870ab1f6b7.
