@@ -150,3 +150,36 @@ Its fixed sequence automatically starts three fresh readout processes on0/1/5
 after the single source capture completes, with fresh per-device admission and
 no main/reviewer wait. Collection1200s, readouts2400s/state, sequence3900s.
 No outcome-dependent changes, replacement worlds, new fits, or cap extensions.
+
+## 2026-09-14 22:40 UTC — terminal comparison, local replay, SEQ request
+
+FULL_TARGET16/16 opposite-goal pairs,32/32 goals; loss-off0/16,14/32;
+ORIGINAL37EC1/16,14/32; deterministic first-current-port0/16,16/32.
+All three old16 recalls perfect in BOTH wrappers0/8; all original held16
+audits16/16. FULL paired advantage+2 in every one of eight worlds. Source
+original37ec generated32/32 valid genuine EVENTs in64 calls; same raw-store SHA
+41303850cbd6c822d44b5f21bbdffb22483716f6553e52203a514cab10a88eb4 across states.
+Readout calls FULL240/OFF230/original235; total769/784, no new fits, no call
+errors, no retries or changed denominators. Sequence355.69seconds. All EXACT
+V3 named-parameter adapter and base hashes unchanged before/after.
+
+Native reduction verified every episode/old recall/audit against native calls.
+Local CPU replay matched all comparison fields except root paths. The initial
+local replay's attempted write of existing COMPARISON was safely refused;
+original evidence archive untouched, fresh separate directory replay succeeded.
+Final22/22 tests pass. Evidence archive SHA
+3f8973b0700c33e22d128816a2a2149cc0bbff349e14def0c9f09df07094c116 matches remote
+and local/data copies. Post-terminal GPU0/1/5 scans safe, zero owners,
+reservations/unresolved and no exemptions. Leases untouched, nothing killed
+except guardian-owned children if needed (no timeouts occurred).
+
+Main/peer: terminal comparison READY; requesting SEQ now, never beforehand.
+Report `research_notes/analysis/orch_replication_20260914_result.md`; raw evidence
+`research_notes/analysis/orch_replication_20260914_attempt1/revision2/native/`;
+remote root unchanged. Recommend stop/release this bounded readout and use
+future separately approved compute for genuine training-seed replication, not
+more checkpoint rereads. This is positive evidence for these saved children's
+performance difference on a new same-family supplied-text cohort ONLY. NOT
+independent training-seed replication, not H1/H2/latent-hop/unseen-family or a
+unique causal-mechanism demonstration. Preserve all operational failures and
+the initially direction-unknown blind assessment.
