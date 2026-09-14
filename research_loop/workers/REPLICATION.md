@@ -123,3 +123,18 @@ Failure still blocks admission; no process exemption and no unknown-user kill.
 Add regression test; preserve original failed scan and prepare; revision2 uses
 new source archive/provenance before inference. Cohort, conditions, budgets,
 scientific assessment, and all invariants unchanged. Zero native calls so far.
+
+## 2026-09-14 22:30 UTC — preGPU gates complete
+
+Parent confirmed publication cleared, no serial main gate, allocations0/1/5
+unchanged. Revised source d8941b7d published via ordinary merge/push93e115a6.
+Archive aa69673cd7db58621a248c11924cb3b8ca621d5076483d355c024fa5562c48eb
+matches node3 revision2. PREPARE330cd5b57db45cc8d8be3e082bade9b4c69e9956fe731ea63e53a5ccd4fb856a.
+All CPU source joins and inventories verified; all three detached GPU scans
+safe, no reservations/unresolved/process exemptions.22/22 tests pass locally
+and under native Python; native pytest absent so a frozen test-only dependency
+snapshot was copied outside its venv, never included in inference PYTHONPATH.
+Initial attempted local test-dependency archive used an ephemeral uv path and
+failed; corrected using pytest.__file__, preserved separate archive names.
+No inference occurred during any repair or failed publication. Exact own
+preGPU entry appended to notebook EOF; successful commit/push is last launch gate.
