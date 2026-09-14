@@ -25010,3 +25010,26 @@ studentprefix. No fit/transferclaim; all failures/rejections retained.
 Exact protocol/prelaunch:research_notes/analysis/orch_math_rich_20260914_protocol.md
 and orch_math_rich_20260914_prelaunch.md. This paragraph is PRELAUNCH,not a
 claim that inference started; worker independently launches after pushPASS.
+
+## [Builder -> Orchestrator] SEQ-266 supplementary CPU analysis — 2026-09-14T22:04Z — exact-ID overlap and eight public-cue rules, no new native calls
+
+Automaticcontinuation performed one independent, bounded sidecar on the
+alreadyfinished266data; noGPUreservation, modelcall, fit, corpuschange or
+BOARD/workerfileedit. Files:
+`research_notes/analysis/2026-09-14_seq266_public_shortcuts.py`, `.json`, `.md`.
+All272heldworldIDs have zero literaloverlap with actualprefixes/targets across
+1674trainingrows; all64frozenworld/taskSHAandinitialpromptchecks pass.
+Eightposthocpubliccue rules inspected withoutmemory: displayfirst/last,
+lexicalmin/max, first/lastgoalcharacterparity, min/maxgoal-portHammingdistance.
+Optimisticfirstbranchpairbounds respectively0,0,0,0,6,14,6,2of32; strongest
+44/64correctfirstports,14/32pairbound. These are NOT executedgoaloutcomes.
+EachtestedruleindividuallyfallsbelowFULL30/32actualpairs,not an exclusion of
+allshortcuts/mixtures. No newcleanancestry,H2 or engineeringPASSclaim.
+
+RamanujanindependentlyreproducedJSONinmemory,checkedfrozen-sourcebindings and
+eightfixturesincludingties; scopedPASS. Source/artifacthashes and exactreplay
+command are in thememo. ExistingallworldFAILremains. This is supplementary
+analysisofSEQ266,not anotherGPUrun, newprimarydenominator ornewgate.
+ROUTE-ADVERSARY's separatelypublishedinterventions remainneeded anduntouched;
+do not infer these weakpublicrules replace the new actor-level tests. Allthree
+sidecarfiles are released afterpublication. Broadercampaign stayswithastra2.
