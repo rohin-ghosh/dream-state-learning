@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 import json
 import os
 from pathlib import Path
+import statistics
 import time
 
 from gpu import astra_portable_actor_bundle as portable
@@ -243,6 +244,16 @@ def reduce(root, reviews_path=None):
             episode_denominator=16, admitted_rows=row_count, unresolved_rows=unresolved, qualified_mask=mask,
             successful_worlds=sum(any(outcomes[index:index+2]) for index in range(0, 16, 2)),
             qualified_worlds=sum(any(mask[index:index+2]) for index in range(0, 16, 2)), world_denominator=8)
+        state_rows = [row for row in rows if row['row_id'].startswith(state + '/')]
+        tokens = [row['generated_text_tokens'] for row in state_rows if row['generated_text_tokens'] >= 0]
+        summaries[state]['tokens'] = dict(count=len(tokens), total=sum(tokens),
+            minimum=min(tokens) if tokens else None, maximum=max(tokens) if tokens else None,
+            median=statistics.median(tokens) if tokens else None,
+            within_150_400=sum(150 <= value <= 400 for value in tokens),
+            below_150=sum(value < 150 for value in tokens), above_400=sum(value > 400 for value in tokens),
+            all_generated_text_token_counts=tokens)
+        summaries[state]['per_world'] = [dict(world_index=index, successful_episodes=sum(outcomes[2*index:2*index+2]),
+            qualified_episodes=sum(mask[2*index:2*index+2]), episode_denominator=2) for index in range(8)]
     calls = collection['model_calls'] + sum(result['model_calls'] for result in resources.values())
     source.require(calls <= screen.TOTAL_CAP, 'total_native_cap')
     return dict(status='COMPLETE' if not any(item['unresolved_rows'] for item in summaries.values()) else 'REVIEW_PENDING',

@@ -37,3 +37,23 @@ Observed A1000–3 are A10080GB,0MiB; this is not yet final process admission.
 GPU0=FULL,1=OFF,2=ORIGINAL/source sequential,3=unused conditional reserve.
 Guardian native deadline2640seconds,60seconds for own-child cleanup/release;
 total scope<=2700seconds and lease cutoff2026-09-26 23:05UTC.
+
+## 2026-09-14 22:58:16 UTC — Main-directed publication coordination
+
+Owned source/protocol/CPU receipts are staged by exact path. The attempted
+`git commit --only` refused because Main's concurrent merge is in progress
+(MERGE_HEAD36a0a2db; COORDINATION conflicted). I do not resolve/commit Main's
+merge or alter peers' index. Main: please preserve/finish your merge; my staged
+FULL_RICH files may be included if your merge commits the shared index. I will
+bind whichever actual published source commit contains them. No native launch
+until own provenance/preGPU publication succeeds. Preparing CPU/transfer only.
+
+## 2026-09-14 22:58:40 UTC — extended portable CPU gate
+
+Own10 + unchanged portable4 tests PASS14/14 in CPU_PORTABLE.txt using python3
+unittest (no dependency install). Rich prompts replace the contradictory
+command-only instruction; underlying neutral action protocol and actual receipt
+remain. Native counts exclude EOS and record actual V3 token_ids. Reducer
+retains all48 episodes, full per-turn lengths, all8 world cells, raw hashes and
+unresolved semantic reviews. Source/readouts recheck frozen file inventory,
+exact mounted LoRA parameters and base unchanged; no promoted learner premise.
