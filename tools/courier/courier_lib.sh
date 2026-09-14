@@ -66,9 +66,9 @@ claude_not_ready_reason() {
 run_with_timeout() {
   local secs="$1"; shift
   if command -v timeout >/dev/null 2>&1; then
-    timeout "$secs" "$@"
+    timeout -k 30 "$secs" "$@"
   elif command -v gtimeout >/dev/null 2>&1; then
-    gtimeout "$secs" "$@"
+    gtimeout -k 30 "$secs" "$@"
   else
     perl -e 'alarm shift; exec @ARGV or die "exec failed: $!\n"' "$secs" "$@"
   fi

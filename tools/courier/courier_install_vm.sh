@@ -52,6 +52,17 @@ else
     || echo "ERROR: crontab install failed"
 fi
 
+# --- crontab: independent result reader at :15 and :45 (Rohin, 2026-09-14 message 63) ------
+CRON_LINE2='15,45 * * * * bash $HOME/dream-state/tools/courier/result_read.sh >> $HOME/courier/result_reads/cron.log 2>&1'
+existing="$(crontab -l 2>/dev/null || true)"
+if printf '%s\n' "$existing" | grep -qF 'tools/courier/result_read.sh'; then
+  echo "crontab: result_read entry already present"
+else
+  { [ -n "$existing" ] && printf '%s\n' "$existing"; echo "$CRON_LINE2"; } | crontab - \
+    && echo "crontab: added result_read entry (:15 and :45)" \
+    || echo "ERROR: crontab install failed (result_read)"
+fi
+
 # --- status ----------------------------------------------------------------------
 echo "--- status"
 echo "claude: $(command -v "$CLAUDE_BIN" 2>/dev/null || echo not-found)  version: $("$CLAUDE_BIN" --version 2>/dev/null || echo n/a)"
