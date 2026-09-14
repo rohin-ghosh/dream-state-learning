@@ -18075,3 +18075,17 @@ No GPU science launch/kill, node1write, curl/wget retry or approval request.
 FormalC11deferred; no mechanismfreeze/H1/H2/parenting/missioncompletion.
 Precision correction to23:21historicalQ0cross-reference: original sealed-file
 count was16098, not the approximate16100; no revalidation performed now.
+
+## [Fable backup self-check] 2026-09-14T00:01Z — SEQ-VM-6: one builder entry since 23:32Z (23:43Z, future/actor source accepted, 536/553 PASS + 17 native-only skips); fleet idle; daemons alive
+
+Backup self-check on the VM (laptop heartbeat stale > 45 min). Observe/log/relay only; nothing launched, killed, pulled or edited in the builder's files.
+
+**Builder since SEQ-VM-5 (one entry, `[Builder] 2026-09-13T23:43Z`):** integrated 553 tests completed 23:28:58–23:33:54 UTC: 536 PASS / 17 native-only skips, 294.802 s, 52 source/test hashes unchanged. Separate node-2 native CPU actor: 2 PASS, 2.657 s (23:27:47–23:27:52 UTC), tiny GPT2 / rank-8 PEFT, synthetic tokenizer, CUDA hidden, all replay threads 1. Prior 9 trainer + 6 checkpoint receipts remain separate; no combined 17-native run. Mendel independently accepts exact future, scanner and actor bytes within stated source boundaries. Evidence: research_notes/analysis/2026-09-13_stage2a_future_actor_integration.md. Builder states no Qwen / real tokenizer / CUDA / learning or science promotion follows. Hypatia synchronized manuscripts/abstract/UNSENT collaborator through SEQ192/SEQ195; Turing checked C105/C106, scoped PASS, corrected two wording findings; three identical 254-word current abstracts; Main checked all 3 active and 3 historical payload hashes; no TeX/PDF build, citation holes remain (research_notes/analysis/2026-09-13_manuscript_seq192_seq195_sync_review.md). Builder states the future-universe/retained-disclosure component is implemented, not complete inventory validation; registered-route membership/rendering and core depth/recovery/history definitions still lack a source-owner reply. James owns only the new screen_runtime.py/test slice. Next per builder: reduced 560-slot BASE/D1 ATOM_LOCAL, then qualified same-adapter authentic two-SLEEP. Formal C11 deferred. Precision correction: the 23:21 historical Q0 sealed-file count was 16098, not the approximate 16100; no revalidation performed. Working tree shows new untracked screen_runtime source/test and a 23:51Z integration receipt, not yet committed.
+
+No `[Builder -> Rohin]`, `[Root]`, `[Independent]` or `[Codex]` entries since SEQ-VM-5.
+
+**Fleet (read-only, 00:00 UTC):** a40 8 GPUs 1 MiB each, no compute apps; ovx 8 GPUs 0 MiB, none; ovx2 8 GPUs 1 MiB, none; a100 8 GPUs 0 MiB, none. All four wrappers succeeded. Idle is expected during source audit.
+
+**VM daemons:** astra_nudge 1, courier_vm 1, tmux session `astra` alive.
+
+**Node-1 mirror:** lease ends 2026-09-14 23:14 UTC, about 23.2 h from this check, outside the 10-hour window; no rsync run. Last logged incremental pass 15:02 UTC 09-13 (find -type f = 15,428 both sides). Final incremental `rsync -a` (no --delete) node 1 `~/v6_out/` -> node 2 mirror remains due inside the last 10 hours, by the laptop watcher/Rohin or this self-check reusing the logged command.
