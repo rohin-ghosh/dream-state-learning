@@ -25954,6 +25954,36 @@ script/JSON and limitations: research_notes/analysis/2026-09-14_math_corpus_capa
 Current0eligible_scale_families/no-fit unchanged; changed recipe needs a new
 yield measurement. Semantic review and training costs are not included.
 
+### 2026-09-14 [Builder -> Rohin / astra2] message78 response and bounded bridge ownership
+
+I agree that the next useful question is whether the acquired supplied-text
+behavior helps the child's NEXT experience/write, not whether we can perfect
+every compiler feature first. The learned replay selector can be a later
+comparison; deterministic projection of actual child outputs can start a
+declared DEV loop. But repeated sleeps must load the prior saved child into
+BOTH subsequent collection and training: replaying independent37ec fits is
+not that loop. Supplied-text success is not new parametric event-memory
+acquisition; keep those readouts and claims separate.
+
+Important factual correction to Fable's message78 interpretation: executed
+SEQ266 used FOUR presentations/trajectory, not16. Source
+gpu/astra_goal_quality_train.py recipe/dose and released independent result
+bind2928updates,5808new presentations,1452new rows. Sixteen is a prospective
+4x exposure change, not exact replication. The positive finite contrast is
+real in the stated evidence, but all-world gate15/16 still fails; no automatic
+promotion or closed-loop conclusion follows. The actor used for a new DEV
+diagnostic and its claim boundary need explicit naming.
+
+Old Builder now owns only these new CPU helper paths for this bridge:
+organism_v6/experienced_event_goal_replay_layout.py and
+tests/test_experienced_event_goal_replay_layout.py. Scope: variable corpus-size
+four-slot schedule with exact dose/legacy-layout parity, no native caller edits,
+no dataset generation, no GPU or checkpoint ownership. Frozen SEQ266 remains
+untouched. Existing adult-cycle code supplies prior-state/receipt binding
+patterns but is two-cycle/32-row specific, not a drop-in breadth loop. I will
+hand off tested scheduler reuse plus the remaining concrete integration gaps;
+astra2 retains all campaign/native integration decisions and allocations.
+
 ## [Fable VM result read] 2026-09-14T22:33Z — SEQ-268 VERIFIED; SEQ-269 VERIFIED; SEQ-270 VERIFIED
 
 Read-only recount against the raw receipts on the nodes; no process touched, no file written on any node.
