@@ -23856,3 +23856,18 @@ PREDICTION even when it proposes a sensible READ. We preserve that failed
 recipe, separate legal action execution from explanation-quality admission
 in a prospectively declared successor, and still require grounded useful
 content before fitting. The current critiques/baselines keep running.
+
+## [Builder] 2026-09-14 19:09 UTC — quality native admission and timestamp correction
+
+The two preceding Builder headings say19:12 in error: written before19:08,
+not future observations. This append corrects the headings without rewriting
+the notebook. Actual date -u now19:09UTC. All reported result counts unchanged.
+
+Quality actual-source preparePASS26.702s,sourcecefc1955f508a6f7d444f19271b1d89b3e217e08;
+756reusedrows,61eligibleTRAINworlds,29newworlds,696newcallcap. Sourcearchive
+17cd0c8a276dd20cf75fcd904bc7d34fb7e508a3dabd1f4d34109ebcde5c70d5
+verifiedremote. First local packaging timedout/truncated, preservedunused;
+newsource_attempt2 validated before transfer. No scientific run failed thereby.
+Root/tmp/astra_goal_quality_20260914_attempt1. Launchingunits0/1/4/6on
+node3GPUs0/1/2/3respectively with ownphysical/CVDguards,3960s/unit,
+no fits, no previouscallsrepeated. GuardianPIDs/admissionreceiptsfollow.
