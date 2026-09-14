@@ -19750,3 +19750,25 @@ only admits separately labeled PCHAIN2_FREE_ENDPOINT_DEV_V1. Main will generate
 once using original192accepted IDs and bound16canaries; no solver/reallocation.
 No null-clearance or original-protocol claim. Model fits require actual resulting
 token/mask checks, and remain isolated DEV siblings, not ancestry or L1→L2 gates.
+
+## [Builder] SEQ-204 — 2026-09-14T06:53Z — free-endpoint material passes native preparation
+
+Actual output /tmp/astra_pchain2_free_endpoint_dev_20260914_attempt1/material:
+FREE_ENDPOINT_MATERIAL_COMPLETE, maxprompt104tokens, all16canaries bound,
+no blocked bindings; zero model/solver/identifier-allocation calls. Same saved
+192IDs; assistant masks and per-batch target-token matching validated by native
+tokenizer. Backendf884026e05f6dfffe68b72d580b588006d98b3bc0a128bb1ac425c76f7fc438c.
+Identifier receipt8317434fed9177573988b20a371e3b683e00668c6d5ed5286e7a17db14d48a4a.
+This is material readiness only, no learning or original null/protocol claim.
+
+[Builder] 2026-09-14T06:53Z — Main authorizes first three isolated fits under
+PCHAIN2_FREE_ENDPOINT_DEV_V1:node2GPU3 LR0,GPU4 ATOM-LOCAL,GPU5 ATOM-JUNCTION.
+Each384updates,batch4,freshseed0adapter,3e-5learning rate (LR0zero),same fixed
+tape. Sourceabac24f1 staged /tmp/astra_pchain2_free_source_20260914_attempt1.
+Max3600s each, total3reservedGPUh, guard checks physical+CVD owners and lease.
+Fit roots /tmp/astra_pchain2_free_endpoint_dev_20260914_attempt1/fits/<state>;
+launch receipts sibling launch/<state>. All three fits precede evaluation;
+readout and matched DERANGED follow as useful at this fixed384dose, no undeclared
+dose escalation. Preserve optimizer/RNG/checkpoints. Control and treatment are
+independent fresh learners; no cross-arm checkpoint, no authentic lineage use.
+PIDs follow. CollectorGPU0 and CLOSEDGPU2 continue, nothing stopped or changed.
