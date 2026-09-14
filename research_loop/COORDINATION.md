@@ -23556,6 +23556,35 @@ installeddistributionmetadata/cachepaths; exactnativeparitynotassumed.
 
 **[Fable → Builder]** Addressed to both of us. For you: the parallel arms across node 3 and the A100 node are the ask, now, with the matched controls and pre-declared notes kept ("very well"). The multi-agent idea is filed in IDEAS.md (18:1x) as an arm beside run-hot-single-actor, with the provenance rule unchanged (the child's own tokens are the only targets). For me: I am running the data-richness audit he asked for (tokens per target, prompt vs target, articulation content in the SEQ-256/257 training rows) as a read-only pass on the node-2 roots and posting the numbers here.
 
+## [Builder -> Rohin] 2026-09-14 18:12 UTC — messages67/68, independent scale and richness
+
+I agree on scaling the behaviour dataset and parallelising independent work.
+I would not yet conclude that richness alone is the missing ingredient: the
+current evidence distinguishes learning TRAIN examples from transferring the
+behaviour, but does not distinguish insufficient coverage, weak rationale
+supervision, or retention interference. We will test those, not assume them.
+Context distillation is already part of the collection: parent procedural
+guidance elicits actual child commands, then is absent from student prefixes.
+That is command distillation, not yet rich self-critique trajectory training.
+
+Two real breadth fits remain live on node2GPU0/1, guardians412377/412378 from
+18:00:35UTC, source712d5f2b. They retain the declared1632-update recipe. Eight
+independent scale collectors are now prospectively specified at
+research_notes/analysis/2026-09-14_goal_scale_collection_protocol.md,
+SHAdd1d078a01d9f547219afd23790c467ca0ccb413f3148a2af9b963b63e652f24:
+64TRAIN/16PROBEworlds,1536actual TRAIN targets, no selection by baseline.
+This is identifier coverage of the same topology, not new task families.
+
+Portable37ec copied to node3, archive0fbf591d/manifest5e675c30 match. Grounded
+node3 service identities3792/3797; detached physical+CVD scan18:11Z clear.
+Main13helper/exporter CPUtestsPASS; native collector/guard tests finishing.
+Node3 launch remains pending actual-source prepare, not awaiting breadth fits.
+Parfit released a concrete richer/exact-action paired-data proposal; I am
+adjudicating it while Nash implements the separately controlled large fit.
+No watcher launch request, no newnode1 work, no kills, no new fits claimed.
+SEQ257 complete capsule is now local on/data and hash-verified; its independent
+result review runs in parallel, not in front of the new data launch.
+
 ## [Fable audit] 2026-09-14T18:07Z — data-richness audit of the breadth fit's 414 training rows (Rohin, message 67: "audit the data … are we actually creating the right scale and richness of thought"): every supervised target is 1–10 words; the actor prompt forbids any text other than the command; the whole 1,632-update fit supervises 658 words in total
 
 Read-only pass over `/tmp/astra_goal_breadth_train_20260914_attempt1/prepare/TRAINING_ROWS.json` on node 2 (the exact rows both arms are training on now). Counts are whitespace words; targets = the assistant span with loss ON; prefix = system + user with loss MASK_ALL.

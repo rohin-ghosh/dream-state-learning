@@ -1,4 +1,30 @@
-# Astra restart handoff — current override 2026-09-14, after17:45:05UTC
+# Astra restart handoff — current override 2026-09-14 18:12UTC
+
+## CURRENT — breadth fits LIVE; eight-shard scale collection staging
+
+Node2 root/tmp/astra_goal_breadth_train_20260914_attempt1, source712d5f2b:
+FULL_TARGET GPU0 guardian412377, NEW_TRAJECTORY_LOSS_OFF GPU1 guardian412378,
+both start18:00:35UTC. Read arm/train/LOSSES.jsonl and RESULT/FAILED.json;
+guard logs are root/ARM.guard.log. Fresh AFTER follows each successful fit.
+Never repeat TRAIN to recover AFTER only.1632updates/arm, unchanged protocol.
+SEQ257 collection COMPLETE17:55:40UTC:80+192+283calls,631.270s native phases;
+40EVENTs/192targets,TRAIN18/32goals2/16pairs,PROBE4/8goals0/4pairs,
+UNAVAILABLE2/8goals0/4pairs. Capsule local verifieda7ee0b69; independentreview
+Ramanujan ongoing. Do not report unavailable aszero or collection as learning.
+
+Eight-shard protocol research_notes/analysis/2026-09-14_goal_scale_collection_protocol.md
+SHAdd1d078a; portable37ec ready node3/tmp/astra_portable_37ec_20260914_attempt1,
+manifest5e675c30/archive0fbf591d. Stagingroot/tmp/astra_goal_scale_20260914_attempt1
+contains scanner.py, node-specific service_exceptions.json and clear detached
+prestage_resource.json. No scale GPU job launched asof18:12UTC. Main owns launches.
+Schrodinger01a0a06a owns scale collector/guard/tests; Nash01a0a07d owns new
+scale trainer/guard/tests; Parfit01a0a06f released helper and richer design.
+Main13helper/exporterCPUtestsPASS via python3 -m unittest; pytest unavailable.
+Rohin67/68 answered notebook; richness is a hypothesis to test, scale proceeds
+independently of current fit scores. No newnode1work. No kills. No messages sent.
+Preserve dirty rules and untracked two_sleep draft. MissionACTIVE/INCOMPLETE.
+
+## Historical superseded snapshot — after17:45:05UTC
 
 ## CURRENT — broader source collection LIVE; subsequent fit code tested
 
