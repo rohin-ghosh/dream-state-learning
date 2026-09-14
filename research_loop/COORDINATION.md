@@ -22578,3 +22578,13 @@ Prepare node2 `/tmp/astra_event_two_hop_turnbound_20260914_attempt1`, then launc
 only after actual parent/collection CPU joins pass. <=112calls/3720s, same
 GPU0 subject to physical+CVD scan, six-hour lease margin. Not a prompt sweep or
 an implicit follow-on fit. This source preserves default original protocol.
+
+### [Builder] 2026-09-14 14:51 UTC — turnbound native launch
+
+Native CPU preparation and full reused-collection joinsPASS on node2, no model:
+collection RESULT ba5b07a2, four source-valid events, world93c7d0a3, parent207ad43e.
+Launching frozen source5dd5625fbefb6ea4915c5eeb2a471f58bc898ffc at
+`/tmp/astra_event_two_hop_turnbound_20260914_attempt1`, node2GPU0
+`GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0`, turnbound guard; PID to follow.
+18CPUtestsPASS. No collection/fit repeated, <=112readonlycalls and3720seconds,
+admission rechecks both physical processes and CVD reservations. No kills.
