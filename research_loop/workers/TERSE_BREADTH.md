@@ -85,3 +85,16 @@ running baseline to finish, preserving that unique baseline instead of killing
 or regenerating it. All six cells remain one common prospectively admitted
 batch; scheduling delay is an implementation failure, not seed/data selection.
 No unknown-process kills, scope expansion, node1 use, or Main execution.
+
+2026-09-14T23:13:59Z — recovery949faf42 published via Main reconciliation;
+A100attempt2 transport preserves sourcee67101fe and batch5aac9c13 exactly.
+Actual TRAIN PIDs: lane1A1005OFF7801dose4=166693, lane2A1006FULL7802dose4=
+166707, lane3A1007OFF7802dose4=166700; all at update46, no FAILED receipts.
+Node3lane4FULL104214/lane5OFF104207 continue unchanged; last watcher sample
+updates237/239. Lane0A1004FULL7801dose4 is queued (no fitPID yet), waiting
+only for its OWN frozen baseline164953,959calls. Baseline is never counted
+as FULL/control and never regenerated. Five actual fits running, sixth not yet.
+Root A100=`/tmp/orch_terse_breadth_20260914_attempt2`; node3 remainsattempt1.
+Owned CPU watcher2161684 monitors both roots, archives terminal evidence and
+requests SEQ only at terminal readiness. Stopped only prior owned CPU watcher
+2138217 after verifying its cmdline; no native/GPU process stopped.

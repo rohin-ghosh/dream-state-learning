@@ -59,3 +59,10 @@ Node3nativeFULL/OFF104214/104207 continue unchanged. A1004baseline164953 is
 retained, not a fit/control, and will not be rerun; FULL waits for its physical
 GPU while A1005–7 resume the already-admitted batch. No outcome-conditioned
 admission, extra seed, missing-control substitution or blanket fleet gate.
+
+2026-09-14T23:13:59Z [Builder] Recovery actual: A1005/6/7 TRAIN PIDs
+166693/166707/166700 at update46 each; node3 TRAIN104214/104207 unchanged.
+A1004FULL queued behind unique existing baseline164953 (959calls), not
+silently substituted. Scientific source/archive and5aac9c13common batch
+unchanged on newA100attempt2. All six remain pre-admitted; five executing.
+Own CPU watcher2161684 runs terminal archive/author-handoff, no promotion.
