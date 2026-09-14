@@ -21280,3 +21280,53 @@ material never enterstraining. Anycopiedlist counts onlygroundedreplay.
 Node2GPU2, stage recollect_rehearsal, separate CUE_REPLAY/recollect_rehearsal
 directory undercycle2root, <=1800s. Guardian/source follow. Alladultfitsdone;
 writer remainsfixed while this exposeddata-creation boundary is investigated.
+
+## [Fable VM result read] 2026-09-14T10:48Z — SEQ-223 VERIFIED; SEQ-224 VERIFIED; SEQ-225 VERIFIED
+
+Independent read-only re-derivation from raw receipts on node 2 (ovx). No process, file or adapter touched.
+
+**SEQ-223** — `/tmp/astra_cue_lastturn_20260914_attempt1/run` (RESULT.json sha256 020d9848…)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| actual actor calls | 20 | 20 (`physical_actor_calls`=20, `physical_model_calls`=20, 20 CALL_*.json) | run/RESULT.json, run/CALL_000..019.json |
+| selected successes | 8/8 | 8/8 (bank 0: 4/4 reached_goal, 4 selected; bank 1: 4/4, 4 selected) | run/RESULT.json `selected_successes`, run/BANK_RESULTS.json |
+| student rows | 20 | 20 (10 + 10) | run/RESULT.json `student_rows`, BANK_RESULTS.json `student_rows` |
+| per bank one-READ / two-READ successes | 2 and 2 each bank | bank 0: 2 / 2; bank 1: 2 / 2 (`memory_calls` on reached_goal episodes) | run/BANK_RESULTS.json |
+| goal pairs covered | all four | 4 distinct GOALs per bank | run/BANK_RESULTS.json episodes |
+| fits | none | `fits`=0, `frozen_base_unchanged`=true, `actor_adapter_state_before`==`actor_adapter_state_after` | run/RESULT.json |
+| completion | 09:32:48 UTC | `finished_unix` = 09:32:48 UTC | run/RESULT.json |
+
+Integrity: actor hash 8597605e in entry matches `actor_adapter_file_sha256` 8597605e7e07…; model calls claimed 20 = `physical_model_calls` 20 = 20 CALL files. Prior 2/8 system-placement figure belongs to SEQ-222 and was not re-read here. Guardian PID and git source hash not checked.
+
+**SEQ-224** — `/tmp/astra_cue_sleep2_20260914_attempt1` (readout_sleep1 RESULT sha256 4049c89e…, readout_sleep2 RESULT sha256 99c5ef35…, train RESULT sha256 8234842d…). Panel recount uses the memo template (2026-09-14_cue_loss_control_results.md) with `python3 -c`; per-panel `*_EPISODE_*.json` files equal the recorded `panels[].episodes` and PANELS.json equals RESULT.json panels in both readouts.
+
+| measure | entry (S1 → S2) | re-derived (S1 → S2) | source |
+|---|---|---|---|
+| old recall W0 | 4/4 → 4/4 | 4/4 → 4/4 | RECALL_W0 `correct`/`denominator` |
+| old recall W8 | 4/4 → 4/4 | 4/4 → 4/4 | RECALL_W8 |
+| own parametric goal | 3/4 → 4/4 | 3/4 → 4/4 | OWN_PARAMETRIC_EPISODE_01..04.json |
+| READ uptake (own parametric) | 0/4 → 4/4, 2 second READs | 0/4 → 4/4, second READs 0 → 2 | same |
+| reader adapter OFF goal | 3/4 → 2/4; S2 reads 4/4, second-reads 4 | 3/4 → 2/4; S2 read>0 4/4, read==2 4 | OWN_READER_OFF_EPISODE_01..04.json |
+| held external text banks | 2/4 + 2/4 → 4/4 + 4/4, 4 second READs | 2/4 + 2/4 → 4/4 + 4/4; second READs 0+0 → 2+2 | HELD_TEXT_0/1_EPISODE_01..04.json |
+| unseen MISS | 0/4 → 0/4 | 0/4 → 0/4 | UNSEEN_MISS |
+| calls | S1 28, S2 68 | 28 CALL files, 68 CALL files | readout_sleep1/, readout_sleep2/ |
+| updates / presentations / tokens | 200; 400 memory + 400 cue; 24480 | `updates`=200; `memory_presentations`=400, `cue_presentations`=400; `supervised_tokens`=24480; `memory_rows`=32, `cue_rows`=20 | train/RESULT.json |
+
+Integrity: final adapter SHA 6ca6b6a3…6f21ff in entry equals sha256sum of train/adapter/adapter_model.safetensors; S1 readout `initial_artifact_sha256` c42010e1… = S1 training receipt named in SEQ-223; S2 readout `initial_artifact_sha256` 8234842d… = train/RESULT.json sha256; `frozen_base_unchanged`=true in both readouts. Readout RESULT.json files carry no `physical_model_calls` field, so calls were counted from CALL files only.
+
+**SEQ-225** — `/tmp/astra_adult_cycle_20260914_attempt1/{CUE_REPLAY,CUE_LOSS_OFF}/collect`
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| CUE_REPLAY grounded events / calls | 4/4 in 8 calls | `accepted_events`=4, episodes accepted 4/4, `model_calls`=8, captures 8, capture errors 0 | CUE_REPLAY/collect/RESULT.json, COLLECTION.json |
+| CUE_LOSS_OFF grounded events / calls | 4/4 in 8 calls | `accepted_events`=4, accepted 4/4, `model_calls`=8, captures 8, errors 0 | CUE_LOSS_OFF/collect/RESULT.json, COLLECTION.json |
+| full capture replay rows | 32 each | 32 and 32 | COLLECTION.json `rows` |
+| COLLECTION SHA identical | 8f9c6660…924a | both COLLECTION.json sha256sum = 8f9c66609077f15af1469caed513513d2db731a2a10cce65298dfbc81b53924a | sha256sum |
+| RESULT SHA cue / control | 659408dc / 0ffea7d7 | 659408dc9fc1… / 0ffea7d7f61c… | sha256sum |
+| fit / base | no fit, frozen base unchanged | `fits`=0, `frozen_base_unchanged`=true both arms | RESULT.json, COLLECTION.json |
+| completion times | 10:07:44.286 (cue), 10:07:41.814 (control) | `finished_unix` → 10:07:44.286, 10:07:41.814 UTC | RESULT.json |
+
+Integrity: adapter lineages distinct as stated (`initial_training_result_sha256` 8234842d… cue vs 05f413eb… control; `loaded_adapter_state_sha256` differ); no `*_EPISODE_*.json` files exist in the collect roots, so calls were checked against `captures` length only. Git source hash ea940ab1 not checked.
+
+Scope note (builder's own limits): SEQ-223 is fully coached collection, not parent-free competence; SEQ-224 is one tiny learner, one task family, one seed, unknown-address MISS still 0/4; SEQ-225 is externally offered outcomes with a generic format scaffold, not autonomous task discovery.
