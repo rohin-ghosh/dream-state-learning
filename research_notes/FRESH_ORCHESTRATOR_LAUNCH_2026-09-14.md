@@ -19,7 +19,7 @@ research_notes/astra_memos/ASTRA_FRESH_ORCHESTRATOR_HANDOVER_2026-09-14.md.
 
 1. Clone: `git clone <private repo> ~/dream-state-orch` on the VM — a SEPARATE checkout; the new thread may pull and
    rebase freely there; it never touches ~/dream-state (the old thread's dirty tree). gpu/hosts.env copied (gitignored).
-2. Session: `tmux new-session -d -s astra2 -c ~/dream-state-orch`; launcher `~/.local/bin/codex-astra --sandbox
+2. Session: `tmux new-session -d -s astra2 -c ~/dream-state-orch 'CURE_AUTO_RESUMED=1 bash --noprofile --norc'` — the VM's ~/.bashrc auto-resumes an unrelated Claude Code session in every interactive SSH bash, so the pane MUST be a no-rc shell (incident 21:22Z); confirm the pane shows a plain prompt, then start the launcher and confirm the Codex status line (gpt-6-astra) before pasting anything; launcher `~/.local/bin/codex-astra --sandbox
    workspace-write` (model and key from the wrapper and env, never from files); Codex writable-path/runtime access
    configured for the new checkout (the old thread's permissions do not carry over). Paste C.1; then `/goal` with C.0.
 3. GPU boundary at start, from BOARD.md: node 2 GPUs 0–7, node 3 GPUs 2–7, A100 0–7 (per the builder's BOARD.md after SEQ265: "Node2 0–7, node3 2–7, A100 0–7 unreserved")
