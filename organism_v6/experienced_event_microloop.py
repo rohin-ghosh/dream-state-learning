@@ -148,15 +148,27 @@ def validate_episode(fact, exploration_raw, event_raw) -> bool:
     return True
 
 
-def compile_rows(bank, episodes) -> list[dict]:
+def canonical_event(raw) -> str:
+    """Serialize only trailing LF count; reject every other grammar defect."""
+    _require(type(raw) is str, "raw EVENT text required")
+    target = raw.rstrip("\n") + "\n"
+    parse_event_line(target)
+    return target
+
+
+def compile_rows(bank, episodes, serialization="EXACT") -> list[dict]:
     """Episodes: fact, exploration generation, event generation (or None).
 
     Require all four attempts so failures cannot disappear from the denominator.
     Failed outputs produce no rows. Missing/unknown/duplicate source records raise.
-    Success produces eight W0-W7 rows; targets are the actual unmodified raw text.
+    EXACT produces targets from unmodified raw text and preserves the original
+    row shape. FINAL_LF_ONLY changes only the final LF count, validates grounding,
+    and adds source/target UTF-8 SHA256 hashes plus the serialization condition.
+    Neither condition changes source records or strict collection acceptance.
     Rows are wrapper-major, then bank order, keeping four distinct facts per
     batch of four when all attempts succeed.
     """
+    _require(serialization in ("EXACT", "FINAL_LF_ONLY"), "unknown EVENT serialization")
     _check_bank(bank)
     _require(type(episodes) is list and len(episodes) == 4, "retain all four attempts")
     indexed = {}
@@ -181,17 +193,25 @@ def compile_rows(bank, episodes) -> list[dict]:
                generation["truncated"] is not False for generation in generations):
             continue
         try:
-            validate_episode(fact, episode["exploration"]["raw"], episode["event"]["raw"])
+            source_raw = episode["event"]["raw"]
+            target = canonical_event(source_raw) if serialization == "FINAL_LF_ONLY" else source_raw
+            validate_episode(fact, episode["exploration"]["raw"], target)
         except ValueError:
             continue
+        provenance = {} if serialization == "EXACT" else dict(
+            source_raw_sha256=hashlib.sha256(source_raw.encode("utf-8")).hexdigest(),
+            target_sha256=hashlib.sha256(target.encode("utf-8")).hexdigest(),
+            serialization=serialization,
+        )
         for wrapper_index, wrapper in enumerate(WRAPPERS[:8]):
             rows.append(dict(
                 world=fact["world"], event=fact["event"], wrapper=f"W{wrapper_index}",
                 messages=[
                     dict(role="system", content=MEMORY_SYSTEM),
                     dict(role="user", content=wrapper.format(REQUEST="READ EVENT " + fact["event"])),
-                    dict(role="assistant", content=episode["event"]["raw"]),
+                    dict(role="assistant", content=target),
                 ],
+                **provenance,
             ))
     bank_index = {fact["event"]: index for index, fact in enumerate(bank)}
     return sorted(rows, key=lambda row: (int(row["wrapper"][1:]), bank_index[row["event"]]))

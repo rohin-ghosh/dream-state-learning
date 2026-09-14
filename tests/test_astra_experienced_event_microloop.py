@@ -84,6 +84,27 @@ class Tests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 runner.load_collection(root)
 
+    def test_explicit_serialization_does_not_relabel_original_strict_failure(self):
+        bank, episodes = fixture()
+        for episode in episodes:
+            episode["event"]["raw"] += "\n"
+            episode["accepted"] = False
+        original = deepcopy(episodes)
+        with TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            for name, value in (("BANK.json", bank), ("EPISODES.json", episodes), ("ROWS.json", [])):
+                runner.write(root / name, value)
+            runner.write(root / "RESULT.json", dict(schema=runner.SCHEMA, phase="collect", status="COMPLETE",
+                accepted_events=0, event_denominator=4, frozen_base_unchanged=True,
+                files={name: runner.file_hash(root / name) for name in ("BANK.json", "EPISODES.json", "ROWS.json")}))
+            with self.assertRaises(ValueError):
+                runner.load_collection(root)
+            restored = runner.load_collection(root, serialization="FINAL_LF_ONLY")
+            self.assertEqual(restored[1], original)
+            self.assertEqual(len(restored[2]), 32)
+            self.assertEqual(restored[3]["original_strict_accepted_events"], 0)
+            self.assertEqual(runner.read(root / "RESULT.json")["accepted_events"], 0)
+
     def test_failure_inclusive_readout_roster_and_ceiling(self):
         bank, episodes = fixture()
 

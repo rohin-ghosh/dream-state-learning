@@ -86,20 +86,29 @@ def validate_runtime(imported, distributions):
         require(distributions.get(name) == expected_distribution, "native_distribution_drift:" + name)
 
 
-def load_collection(directory):
+def load_collection(directory, *, serialization="EXACT"):
     root = Path(directory)
     result = read(root / "RESULT.json")
     require(result.get("schema") == SCHEMA and result.get("phase") == "collect"
-            and result.get("status") == "COMPLETE" and result.get("accepted_events") == 4,
-            "complete_four_actual_events_required")
+            and result.get("status") == "COMPLETE", "complete_actual_collection_required")
+    require(serialization in ("EXACT", "FINAL_LF_ONLY"), "unknown_serialization")
+    if serialization == "EXACT":
+        require(result.get("accepted_events") == 4, "complete_four_actual_events_required")
+    else:
+        require(result.get("event_denominator") == 4 and result.get("frozen_base_unchanged") is True,
+                "complete_frozen_four_event_source_required")
     require(not (root / "FAILED.json").exists(), "failed_collection_not_trainable")
     for name, expected in result["files"].items():
         require(Path(name).name == name and file_hash(root / name) == expected, "collection_file_drift")
     bank, episodes = read(root / "BANK.json"), read(root / "EPISODES.json")
     require(bank == material.build_bank(MASTER), "prospective_world_master_mismatch")
-    rows = material.compile_rows(bank, episodes)
-    require(rows == read(root / "ROWS.json"), "compiled_rows_must_replay_actual_events")
-    return bank, episodes, rows, {"path": str(root.resolve()), "result_sha256": file_hash(root / "RESULT.json")}
+    rows = material.compile_rows(bank, episodes, serialization=serialization)
+    require(len(rows) == 32, "four_grounded_terminal_events_required_before_fit")
+    if serialization == "EXACT":
+        require(rows == read(root / "ROWS.json"), "compiled_rows_must_replay_actual_events")
+    return bank, episodes, rows, dict(path=str(root.resolve()), result_sha256=file_hash(root / "RESULT.json"),
+        serialization=serialization, original_strict_accepted_events=result["accepted_events"],
+        compiled_rows_sha256=native._digest(rows))
 
 
 class Engine:
@@ -243,7 +252,7 @@ def train(engine, rows, output):
         adapter_files={path.name: file_hash(path) for path in (output / "adapter").iterdir() if path.is_file()})
 
 
-def evaluate(engine, bank, episodes, output):
+def evaluate(engine, bank, episodes, output, *, serialization="EXACT"):
     rows, memory = [], {}
 
     def call(panel, fact, messages, expected):
@@ -259,7 +268,10 @@ def evaluate(engine, bank, episodes, output):
             request = "READ EVENT " + fact["event"]
             messages = [dict(role="system", content=world.MEMORY_SYSTEM),
                 dict(role="user", content=world.WRAPPERS[view].replace("{REQUEST}", request))]
-            raw = call("recall_W" + str(view), fact, messages, episode["event"]["raw"])
+            expected = episode["event"]["raw"]
+            if serialization == "FINAL_LF_ONLY":
+                expected = material.canonical_event(expected)
+            raw = call("recall_W" + str(view), fact, messages, expected)
             if view == 8:
                 memory[fact["event"]] = raw
     for fact in bank:
@@ -268,8 +280,9 @@ def evaluate(engine, bank, episodes, output):
         observed = "\n".join(memory[address] for address in fact["public_events"])
         call("supplied_addresses_own_read_action", fact,
              material.action_messages(fact, memory_text=observed), expected)
-        ceiling = "".join(episode["event"]["raw"] for other, episode in zip(bank, episodes)
-                              if other["world"] == fact["world"])
+        ceiling = "".join((material.canonical_event(episode["event"]["raw"])
+                            if serialization == "FINAL_LF_ONLY" else episode["event"]["raw"])
+                           for other, episode in zip(bank, episodes) if other["world"] == fact["world"])
         call("exact_facts_ceiling", fact, material.action_messages(fact, memory_text=ceiling, ceiling=True), expected)
     for fact in material.build_bank(MASTER + "-UNSEEN-MISS"):
         request = "READ EVENT " + fact["event"]
@@ -289,6 +302,7 @@ def main(argv=None):
         parser.add_argument("--" + name, required=True)
     parser.add_argument("--collection")
     parser.add_argument("--adapter-dir")
+    parser.add_argument("--serialization", choices=("EXACT", "FINAL_LF_ONLY"), default="EXACT")
     parser.add_argument("--device", default="cuda:0")
     parser.add_argument("--deadline-seconds", type=float, default=1800)
     args = parser.parse_args(argv)
@@ -296,6 +310,7 @@ def main(argv=None):
     require(os.environ.get("HF_HUB_OFFLINE") == "1" and os.environ.get("TRANSFORMERS_OFFLINE") == "1", "offline_required")
     require(os.environ.get("CUDA_VISIBLE_DEVICES") == args.gpu_uuid, "exact_physical_gpu_binding_required")
     require(args.phase == "readout" or args.adapter_dir is None, "no_warm_start_or_collection_adapter_in_v1")
+    require(args.phase != "collect" or args.serialization == "EXACT", "collection_keeps_original_strict_rule")
     output = Path(args.output).resolve()
     output.mkdir(parents=True, exist_ok=False)
     started = time.time()
@@ -311,8 +326,9 @@ def main(argv=None):
     try:
         if args.phase != "collect":
             require(args.collection, "source_collection_required")
-            bank, episodes, rows, provenance = load_collection(args.collection)
+            bank, episodes, rows, provenance = load_collection(args.collection, serialization=args.serialization)
             summary["collection"] = provenance
+            write(output / "COMPILED_ROWS.json", rows)
         if args.adapter_dir:
             parent = Path(args.adapter_dir).resolve().parent
             terminal = read(parent / "RESULT.json")
@@ -332,7 +348,7 @@ def main(argv=None):
         elif args.phase == "train":
             summary.update(train(engine, rows, output))
         else:
-            summary.update(evaluate(engine, bank, episodes, output))
+            summary.update(evaluate(engine, bank, episodes, output, serialization=args.serialization))
         engine.verify_base()
         summary.update(status="COMPLETE", finished_unix=time.time(), frozen_base_unchanged=True)
         write(output / "RESULT.json", summary)

@@ -1,4 +1,5 @@
 import copy
+import hashlib
 import json
 import unittest
 
@@ -127,6 +128,69 @@ class ExperiencedEventMicroloopTests(unittest.TestCase):
         self.assertEqual(len(rows), 8)
         self.assertEqual({row["event"] for row in rows}, {self.bank[3]["event"]})
         self.assertEqual(records, saved)
+
+    def test_final_lf_only_retains_strict_failures_sources_and_provenance(self):
+        records = self.records()
+        for index, record in enumerate(records):
+            record["event"]["raw"] = record["event"]["raw"].rstrip("\n") + ("\n\n" if index < 3 else "")
+            record["accepted"] = False
+            record["error"] = "not exact EVENT"
+        saved = copy.deepcopy(records)
+        self.assertEqual(micro.compile_rows(self.bank, records), [])
+        rows = micro.compile_rows(self.bank, records, serialization="FINAL_LF_ONLY")
+        self.assertEqual(len(rows), 32)
+        for index, row in enumerate(rows):
+            source = records[index % 4]["event"]["raw"]
+            target = self.episodes[index % 4]["event_raw"]
+            self.assertEqual(row["event"], self.bank[index % 4]["event"])
+            self.assertEqual(row["wrapper"], f"W{index // 4}")
+            self.assertEqual(row["messages"][-1]["content"], target)
+            self.assertEqual(row["source_raw_sha256"], hashlib.sha256(source.encode("utf-8")).hexdigest())
+            self.assertEqual(row["target_sha256"], hashlib.sha256(target.encode("utf-8")).hexdigest())
+            self.assertEqual(row["serialization"], "FINAL_LF_ONLY")
+        self.assertEqual(records, saved)
+        for record in records:
+            with self.assertRaises(ValueError):
+                micro.validate_episode(record["fact"], record["exploration"]["raw"], record["event"]["raw"])
+
+    def test_exact_serialization_preserves_row_shape(self):
+        rows = micro.compile_rows(self.bank, self.records())
+        self.assertEqual(rows, micro.compile_rows(self.bank, self.records(), serialization="EXACT"))
+        self.assertTrue(all(set(row) == {"world", "event", "wrapper", "messages"} for row in rows))
+        for mode in (None, "", "STRIP", "final_lf_only"):
+            with self.assertRaises(ValueError):
+                micro.compile_rows(self.bank, self.records(), serialization=mode)
+
+    def test_canonical_event_changes_only_final_lfs(self):
+        raw = self.episodes[0]["event_raw"]
+        for count in (0, 1, 2, 5):
+            self.assertEqual(micro.canonical_event(raw.rstrip("\n") + "\n" * count), raw)
+        for invalid in (None, "", "\n", " " + raw, "\n" + raw,
+                        raw.replace(" AT ", "  AT "), raw.replace(" DID ", "\nDID "),
+                        raw.replace(" GOT ", "\tGOT "), raw.rstrip("\n") + "\r\n",
+                        raw.rstrip("\n") + " \n", raw + "explanation\n",
+                        raw.replace(self.bank[0]["event"], "E_BAD")):
+            with self.subTest(raw=invalid):
+                with self.assertRaises(ValueError):
+                    micro.canonical_event(invalid)
+                records = self.records()
+                records[0]["event"]["raw"] = invalid
+                rows = micro.compile_rows(self.bank, records, serialization="FINAL_LF_ONLY")
+                self.assertEqual(len(rows), 24)
+                self.assertNotIn(self.bank[0]["event"], {row["event"] for row in rows})
+
+    def test_final_lf_only_does_not_repair_ids_actions_or_generation_flags(self):
+        for field in ("event", "node", "port", "outcome", "receipt"):
+            records = self.records()
+            records[0]["event"]["raw"] = records[0]["event"]["raw"].replace(
+                self.bank[0][field], self.bank[2][field]).rstrip("\n")
+            self.assertEqual(len(micro.compile_rows(self.bank, records, serialization="FINAL_LF_ONLY")), 24)
+        records = self.records()
+        records[0]["exploration"]["raw"] += "\n"
+        records[1]["event"]["terminal"] = False
+        records[2]["event"]["truncated"] = True
+        records[3]["event"] = None
+        self.assertEqual(micro.compile_rows(self.bank, records, serialization="FINAL_LF_ONLY"), [])
 
     def test_goal_swap_only_changes_goal_not_lists_or_hidden_target(self):
         for offset in (0, 2):
