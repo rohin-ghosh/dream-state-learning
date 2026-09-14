@@ -20576,3 +20576,35 @@ REQUEST binds fullguide+hash and sourcefilehashes; zero EXPLORE/EVENTgeneration,
 max24cueactorcalls. Freshroot/tmp/astra_cue_explicit_20260914_attempt1,
 node2GPU4, sourcecommitfollows. No originalcue scores/rows enter studentdata,
 no thresholdchanges, nofit. All basicnative/resource/offline guards unchanged.
+
+## [Fable loop review] 2026-09-14T09:12Z — the seven loop metrics from the forwarded analysis, measured on this notebook for 2026-09-13T16:00Z → 09-14T08:30Z (two-agent measure + adversarial recount; corrected numbers), with limitations and proposed changes
+
+**1. Discriminating experiments: 19 of 27 GPU runs (70 %; stricter reading 16/27).** Runs with a pre-declared gate whose outcome could go either way and did change the next decision (reader ladder stops, retention gates, SEQ-200/203/205–207/209–211/213/215/217/218). Non-discriminating: 8 infrastructure recoveries/reruns (SEQ-186/187/191/202/212/214/216 and one). The pre-declared-gate habit is a genuine strength.
+
+**2. New hypotheses vs rediscoveries: ~30 distinct new designs vs ~12 restatement clusters.** Seven of the restatements were reconciliations of already-closed relays with zero new results; the "SEQ-142/146 were 24 separate fits" fact was re-derived four times in 1.5 h; the level-0 dose/format law was rediscovered three times (S_A40, P-CHAIN copy, then query-only). Rediscovery is the visible cost of not carrying laws forward as constraints.
+
+**3. Invalid branches: 12–13 of 46–47 GPU-acquiring controllers (26–28 %) and 7 of 32 fits died on validator/environment bugs, plus ~16 pre-worker/CPU infrastructure failures; 9 real design flaws were caught by independent audit** (prediction-panel label leak, depth-one shortcut in the eight dev tasks, copy-vs-recall format, adaptive-panel impossibility, r1 overflow, alias-ordinal leak, null-solver timeout, "atom-matched UNLINKED impossible", S_A40 no-denominator). The audits earned their cost; the custody plumbing did not — every GPU run lost was lost to the harness, never to the material.
+
+**4. Steering effect: 8 of 21 Rohin messages changed the next block of builder work (38 %).** Strong steers moved work within 15–25 min (messages 56 → 06:08Z reply and recovered fit; 57 → 06:40Z collector); ideas and questions were answered "without changing the current experiment" (42, 46, 47, 49, 53, 54, 58–61). The loop is steerable at branch points, which is the regime the forwarded analysis recommends; heading times for messages 49, 51–52, 62 are relay times, so those latencies are unreliable.
+
+**5. Convergence and disagreement: 6 independent convergences** (interface-not-capacity on the reader ladder by watcher, root and builder; the message-43 prior-art synthesis by root and watcher; "train on outcomes" by Rohin, builder and watcher after SEQ-200; the dose law; P-CHAIN never implemented; the five-arm two-hop cell). **Disagreements resolved:** manual continuation of a terminal root (root right); the source-owner wait (builder self-corrected); Q0 reserve 180 vs 1,800 s (retracted); "P-CHAIN before the junction" vs "does not gate" (resolved toward in-context use). One unresolved: the attempt-5 sequencing violation.
+
+**6. Findings surviving adversarial re-test: 3 of 3 evening rows (P23/P24/P25) confirmed at stated scope after independent audit, 1 promotion (SEQ-195); 4 morning rows (P27–P30) resolved as SPLIT/REFUTED on one seed with NO independent read** — root/independent entries per period: 37 in the GPU-active evening, 10 in the CPU gap, 0 since 03:13Z. **11 watcher over-claims corrected in-window** (6 by the builder, 5 self), all over-readings of the builder's own numbers. **Pre-registration hygiene (git recount):** only P27, P29, P30 have a committed OPEN state before their result; P25's claim text was amended pre-result (disclosed); P24 and P28 rest on self-reported "Written" times (P28 was committed a minute after SEQ-206 was posted, as its row says). Claim columns are unchanged after results for all seven rows.
+
+**7. Durable state per period:** ledger rows 6 in the GPU-active hours vs 1 in the 8.2-h gap; 1 promotion; 82 memos (38 / 38 / 6 by period — gap memos are integration receipts and audits, evening memos results); ~31–36 new modules (21 in the gap); 26–27 GPU SEQ results in 8.3 GPU-active hours vs 0 in the gap. Builder entries per hour 12.9 / 5.6 / 20.5. The gap produced source and no results; the morning produced results and no audits.
+
+**Limitations, in the forwarded analysis's terms:**
+- *Evaluation quality* is our bottleneck and it is lopsided in time: heavy pre-execution gating in the evening (≈16 pauses/reworks/rejects) and none after 03:13Z, so the day's most important results (first outcome-SFT, first own-experience sleep, self-issued-read null) have no adversarial read. We audit source before DEV runs and results not at all.
+- *Search diversity* is nominal: every "independent" sub-agent (Euclid, Hubble, Popper…) is the same builder session and model with shared context. Watcher workflows are the only truly independent reads, and they arrive hours late.
+- *Information sharing* works through one channel (this notebook); the tmux channel silently failed for 12 h; watcher summaries added noise (11 corrections).
+- *Compute* is not the constraint: 24–31 GPUs idle at every poll while one seed runs at a time.
+
+**Proposed changes (for Rohin and the builder; the watcher instructs no one):**
+1. Audit results, not plumbing: a bounded independent read (≤ 30 min) of every result-bearing SEQ within the hour, and no source-custody gate before a DEV run beyond the builder's own CPU tests (Rohin's 09-12 instruction; his message 56).
+2. Real branch diversity on idle GPUs: a second builder instance with a different design brief on one seam (e.g. the cue/self-issued-read skill or the own-memory microloop with rehearsal), consolidated through the notebook — the Navier–Stokes pattern in miniature (diverse groups, one consolidator), affordable with 24 idle GPUs.
+3. Seeds before claims: any morning-style one-seed SPLIT gets its two extra seeds before it is discussed further; cheap (minutes) and it converts "one DEV seed" rows into rows that can be promoted.
+4. Carry laws forward as constraints: the dose/format law and the erasure law go into the runner as pre-flight checks (presentations per item, answer-omitting prompts, rehearsal share), so they stop being rediscovered.
+5. Pre-registration means a committed OPEN row before launch (watcher rule from now on), and watcher numbers come only from the builder's tables.
+6. Instrument posterior movement: every SEQ names the ledger row(s) it moves, so "rows resolved per GPU-hour" becomes the running metric (yesterday: ~0.7/h GPU-active, 0.1/h in the gap).
+
+Not verified: the forwarded run's scale numbers (the builder could not fetch the source either). The comparison's structure holds without them.
