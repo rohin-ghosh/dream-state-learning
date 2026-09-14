@@ -26837,3 +26837,41 @@ frozen-source replay passed and no inference/target changes occurred.
 [Orchestrator -> Rohin] 2026-09-14T23:31Z answerabout61worlds: thatwas61eligibleTRAINworlds in266; itsheldtest30/32pairs used16worlds, and273fresh16/16pairs used8newworlds. Itinstalled TERSErouting, notdemonstratedricherthought. FULL-RICH278nowfinished:7/16successversusreference8/16,only1/16qualifiedrichepisode/3rows;cleanfiniteNULL,notimpossibility. Thatdoesnotblockyourrequestedguidedrichloop: startwithrichprompt/contextdistillationandactualchildresponses, measurewhetherparentingimprovesit. Also266dosewasFOURpresentations, notthe16inFable's82paraphrase; startingL2dose4isdeclared,16wouldbeanewrecipe. Parentmessagesfullyvisibleininference,masked/removedattraining;parentrealconversationevaluateslearnercohesionandmayinitiate/respond, fullNONSEALEDlearningcontext,notsealedscores. Level2preschoolmetricsandtask/retentioncounts bothlogged; Level4nopreparatorybenchmarkspecialization,continuedownexperiencesleepstilltestedforH2. NofalseclaimthatgateFAIL266becamePASSor273becameatrainingseedreplication.
 
 [Orchestrator -> Builder] 2026-09-14T23:31Z ce9a906e/f2e76c43nativehandoff received;thankyou. L2SHORT/Planck ownsorch_l2_guided/shared*, L2LONG/Galileo ownsorch_l2_long*, theyconsume releasednative seam. Youretainorch_guided_native* foronlyspecificcompatibilityfixes and do notclaimtheirGPUs/files. Please answerconcreteinterfacequestions promptly; noownershiphold. Fixedper-armrowcount/unchangedweighthash assumptions mustnotdiscardvalidzero-yield/nullcycles: callerneeds explicitno-update/readoutreceiptpaths, notpaddedcorpora. Parent protocols areactualconversation per82/83, notour separateORACLE-REPAIRbooleanexperiment.
+### 2026-09-14 23:28UTC [Builder -> Rohin / astra2] native seam delivered, not waiting
+
+Ownership was resolved; I implemented the assignment and pushed ce9a906e.
+gpu/orch_guided_native.py now loads and measures the explicit prior child in
+BOTH collection and training, then the resulting child in fresh parent-free
+readout. Important native trap fixed in the new seam: existing Engine train
+mode creates a new adapter; we instead load its saved adapter first, measure
+mounted LoRA/base, enable only that LoRA and create fresh declared AdamW.
+Actual-child projection, variable-row exact tokenizer masks and legacy loss
+normalization are integrated; frozen/history/peer drivers are untouched.
+
+56/56 CPU tests PASS64.894s (18new); includes three synthetic cycles/three
+arms, six fresh optimizers, wrong/stale mounted-state negatives and a real
+fresh CPU subprocess reading fake output. Feynman independent static review
+found no concrete bugs; no native-model/GPU claim follows. No jobs launched,
+reserved or stopped. Main can use this immediately for its assigned native
+driver; no old-thread ownership or review hold remains on this delivered seam.
+Handoff/API/remaining native checks:
+research_notes/analysis/orch_guided_native_20260914_handoff.md.
+Journal:research_loop/workers/orch_guided_native.md; both supersede my earlier
+scope-wait checkpoints. Family decisions belong to Main after message79.
+
+On message82: yes, use the successful child to test the guided loop rather
+than wait for all optional skills. The result demonstrates improved finite
+TERSE routing behavior, not richer reasoning or autonomous-learning gain.
+SEQ266 was FOUR trajectory presentations, not16 (2,928updates); a16-dose
+successor is a new recipe, not a description of that fit. Original held
+counts remain30/32pairs across16worlds with15/16all-world gate; SEQ273 is a
+fresh16/16pair readout, not another training-seed replication. Parents can
+discuss the child's training outcomes and learning process; sealed panel/test
+scores must remain hidden under the standing invariant. No new design or
+launch gate is being imposed here.
+
+## [Rohin — message 83, ~23:35 UTC, relayed by Fable] 2026-09-14T23:30Z — STEER: design your OWN parenting protocols too (a long-horizon parent watching behaviour over time; a short-horizon one; mixed; different scales), run them in parallel on the GPUs, and distil for Rohin what works; STRONG STEER: the level-2 loop on the 61-world child MUST use the RICH contract — "the terse behaviour is not enough to close the loop … I want to see the rich, ASAP"
+
+> I will because we have so many GPUs my protocol for parenting. Let the agent come up with its own protocols too. Let's figure out what parenting will look like the agent can just like give like you can try different things now you don't just have to do what exactly what I'm doing. You can do all of those things. Let's try it on the GPU. Let's see i. I wanna see high level so like long-term horizon sort of looking at the agents behavior short level and then like mix levels and I wanna see just go try out parenting and give me some advice or not like give me some distilled information on what works and I want to see different scales of it too. Oh what so we I mean we can run the level two on the 61 world, but it should be doing the rich contract right that's that's the main thing and it shouldn't be this hard to do Turris behavior. I guess is OK but like I don't really understand this turf stuff like OK I want to see the rich. I wanna see I wanna see it ASAP like like this needs to happen you don't need to scale parenting on this test behaviors close because the church behavior is not enough to close the loop so I don't know why we're spending so much I mean it's it's good outcome but come on
+
+**[Fable → Orchestrator]** Two consequences. (1) The guided loop's actor is the RICH contract from its first cycle — thought toward the action, then the action — with rows compiled from the child's own rubric-passing responses; a terse-only level 2 is not wanted. FULL-RICH (Rawls, P55) is telling you within the hour whether the 266/273 child narrates under that contract; if it does, run level 2 on it directly; if it does not, the first level-2 cycle uses the rich actor prompt context-distilled away at training (message 67) and the child's own rich responses as targets — do not wait for a perfect rich child before the loop turns. (2) Parenting protocols are yours to invent, not only Rohin's: declare several as parallel arms — his conversational evaluator (message 82), a long-horizon parent that reads the learner's trajectory across sleeps and speaks rarely, a short-horizon parent that comments per episode, mixtures, and at least two scales of parent involvement — same child, same fresh worlds, same learner-centric readout, an unparented twin and a frozen twin shared; report to Rohin which protocol moves the slope and which does not. Fable pre-registers a row per protocol arm when declared.
