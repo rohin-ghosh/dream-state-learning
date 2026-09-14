@@ -26470,6 +26470,36 @@ Integrity: ORIGINAL37EC adapter_state 37ec3788…b8c0; cohort sha ec8091eb… an
 
 Integrity: adapter_state 37ec3788…b8c0 all 4 shards, base_verification.verified=true; terminal_verified.tar.gz sha256 992179b7…8233 matches the entry; guardian exit_code 1 on 4/4 shards as the entry discloses. Builder's scope note: eight easy MBPP tasks, one checkpoint, semantic review author-only.
 
+### 2026-09-14T22:56:45Z [Worker MATH-RECORD] SEQ275 — NEW55/64vsOLD9/64 admitted records; no accuracy gain/learning
+Main assigned275 after274/publishedc82695f9. Native node2physicalGPUs4–7.
+Root: /localhome/local-rohing/orch_math_record_20260914_attempt1
+Reader reduction: /localhome/local-rohing/orch_math_record_20260914_attempt1/REDUCTION.json
+Repo reduction: research_notes/analysis/orch_math_record_20260914_attempt1/REDUCTION.json
+NEW-pipeline targets83=28initialrich+55NEW;92allconditions includes9OLD.
+Fixed64tasks:46NEW-only admissions,0OLD-only,9both,9neither; all190fulltexts
+author-read, not independentblind audit. Oracle outcomes commonrich63/64,
+OLDrecord63/64 vs NEW62/64; no answer-accuracy or learning improvement claim.
+NEWtask1734 echoes booleanchecker feedback absent from its neutral student
+prefix: compatibility mismatch disclosed, not rewritten or silently filtered.
+Grounded NEW61/64 vs OLD59/64, factualfalse1vs3, unresolved1each; paired exact
+p1.4210854715202004e-14. Families OLD2/0/4/3 vs NEW14/11/15/15 in percentages,
+work_rates,fractional_quantities,group_accounting. NEW6token-overflows vs OLD1;
+wrong/ambiguous gold preserved in outcome denominator and never admitted.
+Fulltext107PASS82FAIL1UNRESOLVED; admission additionally requires outcome,
+token and gold gates.92distincttargethashes over59tasks is allconditions,
+not a NEW-only corpus. All4shards complete/released22:46:20UTC; guardian
+cost0.61555556GPUh;19/19CPUtests and190exactprompt/prefix/hashreplays pass.
+Terminalpacket13dac397; supplement research_notes/analysis/orch_math_record_20260914_attempt1/SEQ275.md.
+REDUCTION SHA256626f7cc4fa5249a87067372a68afb4451494bc14f2ebd033a22bf5d0f1967726;
+SEMANTIC_REVIEW306094b67ff3965d200a98af2f7d05dde8898357337a7f798bc5826449af8318;
+terminalcapsule1570f8ee0684ef428ccac6c893a4451cb7469018cf63a20f416cf6b121585a73.
+Original270 and this64-task screen's gates/outputs/reduction remain unchanged.
+No currentautomaticfit. Hold context for NEWassignment; do not rerun, scale or
+fit until a new prospectivescope is published. Main's possible1024-task
+NEW-only scale with prefixcompatibility and independentblind audit is not
+authorized by this publication. Isolateddetached sparse worktree used for
+normalmerge/no-forcepush so GUIDED-BRIDGE's uncommitted main-worktree notebook
+append and shared index are untouched; no new branch or native call.
 ### 2026-09-14 22:55UTC [Builder -> astra2] bridge ownership resolved; native integration offer
 
 Read your live workers/GUIDED_BRIDGE.md: another worker started22:53 with

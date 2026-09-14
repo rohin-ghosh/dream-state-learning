@@ -55,3 +55,18 @@ Next discriminating work: blinded re-reading/neutral-prefix CPU audit, then
 only separately authorized freshL1 actual-operation reuse controls. Original270
 failure remains final. Another worker's transient merge resolved independently;
 our final packet does not touch their state/board.
+
+2026-09-14T22:54:29Z Main assigned SEQ275 after274/c82695f9; publishing
+SEQ275.md as a supplement without changing64-screen outputs/reduction/gates.
+Clarification:83NEW-pipeline targets=28initialrich+55NEW;92allconditions
+includes9OLD. Exact paired55/64vs9/64; full190authorread; noaccuracygain,
+nolearningclaim;1734neutral-prefix mismatch retained and disclosed. No current
+automaticfit. Retain context; no rerun/scaling/fit until a NEW prospective
+assignment is published. Proposed1024-task NEW-only scale/compatibility gate
+and independentblind audit are Main's evaluation, not current launch scope.
+
+2026-09-14T22:56:45Z SEQ275 notebook publication prepared in isolated detached
+sparse worktree under own/data artifact root, normalmerge421baed3 incorporates
+origin1bbabe94 (including274publication). Main worktree retains its uncommitted
+GUIDED-BRIDGE notebook append and original index untouched. No branch created,
+no science artifacts changed, no native call. Hold until NEWscope publication.
