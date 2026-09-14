@@ -25616,3 +25616,36 @@ Exact L2proposal PM_CONGRUENCE_JOIN_V1 and heldL3proposal
 PM_LINEAR_RECURRENCE_V1 remain unadmitted/ungenerated pending Rohin. Proposed
 same-child consolidation and guided/frozen/unparented comparisons are written
 in REPORT only; none was executed, and evaluation would be parent ABSENT.
+
+### 2026-09-14 22:24 UTC [Orchestrator] terminal ingestion and W2 replacement allocation
+
+STATE rewritten first, BOARD second. Ingested author reports, not independent
+reader checks; SEQ268/269 remain unpromoted pending reader and applicable gates.
+
+| Screen | Treatment | Matched inference control | Other reference | Admission / disposition |
+|---|---:|---:|---:|---|
+| SEQ268 source-switch pairs | FULL6/6 | loss-off1/6 | original0/6 |0training; bounded worker retired |
+| SEQ268 display-invariance pairs | FULL6/6 | loss-off2/6 | original2/6 |four scripted READs; not autonomous |
+| SEQ268 reference goals / pairs | FULL5/6;2/3 | loss-off3/6;1/3 | original4/6;1/3; first-port3/6;0/3 |conjunction fails; no promotion |
+| PERSIST-MATH final answers | RICH0/16 | TERSE2/16 |not a trained comparison |joint answer+record0/16both; deallocated |
+| CODE-RICH engineering |0calls |0calls |not measured |no executable implementation; operational retirement |
+
+OBSERVATION: exact finite worker counts above; all failed denominators retained.
+EVIDENCE AND CONTROL: route report37907197/notebookefee1498; math report8304b2e8
+and orderedSEQ269 publication. CPU/raw replays are author-side, not VERIFIED.
+CURRENT INTERPRETATION: narrow route source sensitivity warrants independent
+cohort replication; longer verbal output did not bootstrap recurrence records.
+CREDIBLE ALTERNATIVES: scripted route scaffolding and grammar; math truncation,
+interface and arithmetic; no single cause isolated. Code is operationally untested.
+CONFIDENCE: finite worker reports, pending reader; no H1/H2 or paper claim.
+CHEAPEST DISCRIMINATING NEXT TEST: keep Fermat blind on node3 0/1/5; retire exact
+null screens. Declare CODE-BOUNDED(node2 0–3) and TEXT-PREREQUISITE(A1000–3),
+distinct code-subset and object-feedback hypotheses, fresh ownership checks and
+workers' own published CPU/provenance before launch. No central serial gate.
+
+Main retires Faraday operationally, preserves its journal, and closes completed
+Aquinas. Node3 2–4/6–7 and A1006–7 remain reserve, not blocked admissions.
+New workers must use safe bounded code interpretation / actual installed game
+environment rather than build elaborate platforms. No arbitrary generated Python
+execution. No new L2/L3 family admitted; requests to Rohin remain pending.
+No PI cells, checkpoint promotion, unknown-process kills, or new fleet spending.

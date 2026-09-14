@@ -1,6 +1,6 @@
 # Research state — Orchestrator
 
-Updated 2026-09-14 22:15 UTC. Mission ACTIVE / INCOMPLETE. Wave W1.
+Updated 2026-09-14 22:24 UTC. Mission ACTIVE / INCOMPLETE. Wave W1/W2.
 Authoritative steering: Rohin's current launch instruction and raw messages
 42–77 (77 read22:07UTC); next full raw-message reread by23:50UTC.
 Check notebook updates every orchestration cycle, not just every two hours.
@@ -142,6 +142,95 @@ not kill controls or rerun the reader. Next allocation after BOARD rewrite:
 fresh blind replication worker on node3 0/1/5 when GAME publishes and retires;
 node3 6/7 and A1000–3/7 remain adaptive reserve. No inherited failed-gate
 checkpoint is automatically promoted by commissioning a diagnostic replication.
+
+## 22:24 UTC ingestion — terminal reports, then replacement allocations
+
+### SEQ268: source/display intervention, not promoted
+
+**OBSERVATION:** Correct source-switch pairs FULL6/6, loss-off1/6,
+original37ec0/6; display-invariance pairs6/6,2/6,2/6. Reference completion
+FULL5/6 tasks and2/3 goal-pairs, versus control3/6 and1/3, original4/6
+and1/3. First-port reference3/6 tasks,0/3 pairs. All72 cases/144 calls retained.
+
+**EVIDENCE AND CONTROL:** worker terminal report
+`research_notes/analysis/orch_route_adversary_20260914_result.md`, evidence
+37907197 and notebook publication efee1498. Three frozen states in one batch;
+13 author CPU tests. Reader VERIFIED pending; Main does not repeat the checks.
+Four scripted READ turns precede two native continuation turns. Same-family
+DEV and disclosed initial BOARD-summary exposure: neither autonomous retrieval
+nor fully blind independent confirmation.
+
+**CURRENT INTERPRETATION:** Narrow first-port/display-only explanations are
+weakened on this small intervention. The broader reference conjunction still
+fails; no promoted transfer, unseen-family, learning-loop or H1/H2 result.
+
+**CREDIBLE ALTERNATIVES:** Scripted evidence scaffolding, familiar grammar,
+cohort-specific behavior and prior training. Missing source alone is insufficient:
+the remaining FULL reference failure duplicates a READ after a correct first port;
+the transformed-root condition succeeds despite the same unavailable source.
+
+**CONFIDENCE:** finite author-replayed contrast only, awaiting independent reader;
+limited causal generality. Transformed sources are not child training targets.
+
+**CHEAPEST DISCRIMINATING NEXT TEST:** already commissioned genuinely blind
+fresh-cohort readout replication; do not disclose this result to that worker.
+A new cohort is not an independent training seed. Retire ROUTE-ADVERSARY;
+node3 2–4 released22:15,5 already assigned to replication.
+
+### PERSIST-MATH terminal null: SEQ269 assigned for publication
+
+**OBSERVATION:** RICH final answers0/16 vs TERSE2/16; answer-plus-checked-record
+0/16 both. No record store populated;64 calls,0 admitted rows,0 fits. RICH
+16/32 calls truncated; generated tokens11489 vs1105. Fixed16-task denominators.
+
+**EVIDENCE AND CONTROL:** same16 tasks and two-turn ceiling in one paired
+inference batch; report `research_notes/analysis/orch_persist_math_20260914_attempt1/REPORT.md`
+and terminal publication8304b2e8. Worker replay64 calls and26 CPU tests;
+six-call semantic diagnostic1PASS/5FAIL is not a whole-corpus admission rate.
+Original token-precheck defect and transient failed release scan are preserved;
+actual native budgets pass worker replay. Independent reader pending.
+
+**CURRENT INTERPRETATION:** this curriculum/interface/budget recipe failed to
+bootstrap reusable records. DEALLOCATED, not a disproof of record learning.
+No retention, transfer or sleep improvement was measured.
+
+**CREDIBLE ALTERNATIVES:** difficult initial tasks, unfamiliar action/record
+contract, truncation, modular arithmetic errors. No single cause isolated.
+
+**CONFIDENCE:** high in worker-replayed finite counts, low in mechanism inference.
+
+**CHEAPEST DISCRIMINATING NEXT TEST:** a separately declared simpler
+feedback/prerequisite screen, not more seeds or hidden-record ablation with empty
+stores. A1006/7 released; no new math sequel allocated on this null alone.
+
+### CODE-RICH operational retirement (no scientific result)
+
+Faraday returned0 native calls,0 runs and no executable implementation; the
+namespace sandbox was unavailable and a proposed replacement was not built.
+Preserve `research_loop/workers/CODE_RICH.md`; do not report a clean null or
+benchmark failure. Retire worker. This leaves an untested high-value code pool,
+not evidence against code reasoning. Replacement CODE-BOUNDED gets node2 0–3
+only after its fresh physical/CVD checks. Narrow scope: real unit-tested
+off-the-shelf tasks executable with an explicitly restricted, safe interpreter;
+no arbitrary generated Python execution, no fresh sandbox platform project.
+If safe eligible tasks cannot be obtained quickly, report operational blockage
+and a concrete alternative instead of reserving GPUs indefinitely.
+
+### Adaptive decision after the batch
+
+Belief change: script-supported source sensitivity survives narrow adversarial
+interventions, while richer verbal contracts do not automatically produce usable
+game/math records. Smallest bottleneck remains outcome-plus-semantic target yield,
+not admission machinery. Architecture-changing evidence remains retained guided
+cycle gains over frozen/unparented twins. Redundant spend: exact Taxi/recurrence
+reruns and more dose without records. Replicate the promising finite route
+contrast independently before premise reuse. New discriminating hypothesis:
+explicit object prerequisites and grounded feedback may be more learnable than
+ASCII navigation or modular recurrence. Declare TEXT-PREREQUISITE on A1000–3,
+actual TextWorld off-the-shelf if available, with a narrow preregistered
+rich/terse screen and no reinterpretation of Taxi. This is L1 mining only;
+new L2/L3 family proposals remain awaiting Rohin. CODE-BOUNDED and
+TEXT-PREREQUISITE are declared here before BOARD rewrite and assignment.
 
 ## Active uncertainties and surprises
 
