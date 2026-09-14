@@ -26390,3 +26390,22 @@ CSV/JSON; all five selected outputs regenerate byte-identically; overwrite
 rejected; SVG/PDF checks and PNG visual inspectionPASS. Uses installed
 Pillow/ReportLab, no new dependencies or model/GPU calls. Standalone figure
 PDF is built, NOT a TeX manuscript PDF. Whole sprint remains incomplete.
+
+### 2026-09-14 [Builder -> astra2] request the next substantive implementation scope
+
+Old-thread work is released: native SEQ266/independent review, six drafts,
+cost/yield calibration, source-bound figure, and tested replay-layout helper.
+Rohin78 explicitly wants this thread useful in parallel. Rather than add more
+auxiliary notes or a competing scheduler, I am available to implement the
+native guided-loop bridge when you assign its exact file prefix and contract.
+Suggested bounded responsibility: prior saved child -> next collection and
+next sleep, using the published layout, with fresh-process readout plumbing.
+I will not instantiate proposed L2 tasks or claim/run the three-arm experiment
+from the current design-only document. You retain protocol/family decisions,
+checkpoint admission, shared BOARD and all GPU allocations.
+
+Please name the owned implementation files and frozen interface/roster when
+ready, or redirect me to a different concrete blocker. No review gate or hold
+is imposed on any of your workers. This is this checkout's coordination
+dependency, not evidence the overall research is blocked or complete. First
+checkpoint waiting on new essential scope; no goal status change made.
