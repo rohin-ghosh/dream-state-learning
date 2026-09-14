@@ -18,6 +18,7 @@ bundle_sha=5e675c309b202625a6ddf1d36c1a58f51ef656985821cec1cd6123424d927469
 started=$(date +%s)
 test "$((started + 2760))" -lt "$((lease_end - 21600))"
 test "$(sha256sum "$root/source.tar" | cut -d' ' -f1)" = "$archive_sha"
+tar --diff -f "$root/source.tar" -C "$source_dir"
 test "$(sha256sum "$scanner" | cut -d' ' -f1)" = 6ed5c48c144dcf26dcb856798ab31d69e39bc66b6780211f2b10553972f8519b
 test "$(sha256sum "$services" | cut -d' ' -f1)" = ed2c9111a50b09bdf20859d3395769945b79ce8ba1f5554ed7fe55b99cfd5117
 test "$(nvidia-smi -i "$index" --query-gpu=uuid --format=csv,noheader)" = "$uuid"
@@ -30,12 +31,19 @@ printf '%s\n' "$archive_sha" > "$launch/source_archive_sha256.txt"
 date -u +%FT%TZ > "$launch/started_utc.txt"
 export PYTHONPATH="$source_dir" HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1
 export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 TOKENIZERS_PARALLELISM=false PYTHONDONTWRITEBYTECODE=1
-python3 - "$root/prepare/RESULT.json" <<'PY'
+python3 - "$root/prepare/RESULT.json" "$root/TASKS.json" <<'PY'
+import hashlib
 import json
 import sys
+from pathlib import Path
+from gpu import orch_math_rich_screen as screen
+from organism_v6 import orch_math_rich as math
 result = json.load(open(sys.argv[1]))
 assert result['status'] == 'PREPARED_NO_MODEL' and result['model_calls'] == 0
 assert result['base_verification']['verified']
+assert result['driver_sha256'] == hashlib.sha256(Path(screen.__file__).read_bytes()).hexdigest()
+assert result['policy_sha256'] == hashlib.sha256(Path(math.__file__).read_bytes()).hexdigest()
+assert result['tasks_sha256'] == hashlib.sha256(Path(sys.argv[2]).read_bytes()).hexdigest()
 PY
 clear=false
 for attempt in 1 2 3 4 5 6; do

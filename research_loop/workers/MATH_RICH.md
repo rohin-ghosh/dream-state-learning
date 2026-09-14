@@ -78,3 +78,22 @@ missing from hosts.env; please supply a verified value. Preparing source
 publication using exact owned paths only, never other workers' staging.
 The prelaunch paragraph can now cite7/7tests; native base verification and
 archive hash follow next. No GPU inference yet.
+
+## 2026-09-14T22:02Z — native CPU provenance passes; lease resolved
+
+Main confirms conservative human-supplied node2 deadline2026-09-21T08:43Z,
+epoch1789980180. Matches allocation receipt; guard receives it as nonsecret
+argument with6h margin, no environment lookup dependency. CPU-only native
+prepare PASSES,zero model calls/fits/updates: local base/tokenizer inventories,
+portable manifest and helper contract all verified. Expected frozen base hash
+a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992.
+TASKS SHAaeddc122f6838ef233dc0450baedf3df4abdf3106f9f81df688fab3d47da371c.
+CPU7/7. Initial code publication6162517b pushed; guard/protocol lease update
+will be republished before source archival/notebook. Main authorized exact
+dated worker EOF notebook appends; no additional PI/reader wait.
+Correction outcomes never enter initial rich-vs-terse eligibility. Public
+reference answers/reasoning are never in guidance; correction feedback says
+only exact-answer rejected, not what the answer should be.
+Resource scanner's unresolved live pid was the querying connection's sshd,
+not an unknown GPU process; no exception added. Detached launch scans after
+SSH disconnect; scanner must actually pass, with unknown owners untouched.

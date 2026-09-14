@@ -80,9 +80,12 @@ held uncoached readout, oldW0/W8/audit>=15/16 each. No fit is launched here.
 
 Root orch_math_rich_20260914_attempt1; packaging under repository
 gpu_artifacts_local on /data (not VM root).45min/shard timeout plus60s grace,
-<=3.1 assigned GPU-hours total. Actual node2 lease deadline must be supplied
-from hosts.env and exceeds the bound plus6h margin. Never infer deadline from
-old launcher comments. Existing same-UID /proc scanner and hash-bound service
+<=3.1 assigned GPU-hours total. Actual node2 lease deadline is2026-09-21T08:43Z,
+epoch1789980180, explicitly confirmed by Main from standing human §15.7 and
+research_notes/astra_memos/receipts_20260912/astra_node12_inventory_20260913.md:74
+(supplied by user); independently matches the old allocation receipt. Use this
+conservative documented bound, passed as a nonsecret guard argument, with6h
+margin. No lease lookup service or extension needed. Existing same-UID /proc scanner and hash-bound service
 exceptions plus global nvidia compute PID check immediately before launch;
 known limitation: other users' idle CVD reservations are not readable and
 exclusive W1 ownership supplies scheduler-level protection. Unknown owners
