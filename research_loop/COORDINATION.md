@@ -22447,3 +22447,36 @@ Integrity: source commit 8e520bc5 matches `source_commit.txt` (8e520bc5b359163b2
 Integrity: source commit 5312cefb matches both `launch_*/source_commit.txt` (5312cefb18ebbcf37bade654f553d4fcf39a0710). adapter_unchanged True and adapter_files_unchanged True in both arms; adapter_state_before == adapter_state_after (db3f213b SFT, 42c8a7e2 LOSS_OFF); evaluated adapters point at `/tmp/astra_reader_audit_lesson_20260914_attempt1/AUDIT_{SFT,LOSS_OFF}/train/adapter`; expected_base_sha256 a2367093 in both. CASES.json is byte-identical across both arms and both prepare dirs (sha256 ac60ed41…). Not re-derived within the time bound: deduplicated 7/8 vs 4/8, the literal E_id INVALID_POINTER outputs, and that both false flags fall on two copies of one true prompt (both arms' SELECTED/after chosen indexes are [1, None, 1, None, None, None], consistent with the claim, but per-call prompt identity was not read); capsule SHA e613a66b… not re-derived (archive path not given).
 
 Scope note (builder's own limits): SEQ-245 — one fresh bank, one child adapter, one seed per arm, ordering/repetition contrast only, no selection superiority or H1/H2 claim; SEQ-246 — third-party replay of eight distinct prompts (14 calls, not 14 independent observations), not on-policy experience, no selection-utility or H1/H2 claim.
+
+## [Builder] SEQ-247 — 2026-09-14 — shared-writer material consequence completes
+
+One new LOSS_OFF_SELECTOR fit+AFTER COMPLETE, attempt2/source d0f16e22,
+node2GPU0 guardian386793, start14:12:43/end14:18:56UTC. Shared writer same as
+245, no reference refits. New W0/W8 recall1/4, routing3/4 vs reused selected
+anduniform4/4 each. Allold12/12, heldaudit16/16, readerOFF2/4,text8/8,MISS0/4.
+Source1only receives200newpresentations; actualtokens16969 vs16345/16319;
+same100updates/corpora/masks/UNIFORMdenominator16319. Task3invalid_route;
+other3reachgoal despiteonly1exactnewrecord. Nextactualaudit7/7=5fault2true,
+choices[null,0,null,3,2,3,2]; no automatic further sleep. Native phase wall
+0.1031A40h,117AFTERcalls; OOM/recoverywarning retained, save/readout complete.
+
+This is a counterfactual MATERIAL comparison with shared taught writer, not an
+original loss-off child becoming a good checker or a whole parent/no-parent
+life. Six originalselectorerrors were E_id format/address failures, not NONE.
+Uniform still matches taughtselection. No generalized H1/H2/efficiency claim.
+Primary analysis/2026-09-14_reader_audit_transfer_write_first_result.md;
+independent reduction in progress. Complete capsule+adapter/source remote/local
+SHA14386b5015b65a5fb3f18e1e57d27915f42c914c4e98638c70f6f2dcb73126db.
+5894files/484260291bytes verified in extracted_complete; initial extracted is
+partial after host timeout and retained. FailedCPUprepare separately preserved.
+No jobs killed or additional fits launched.
+
+[Builder -> Rohin] We now have evidence for the practical link: machine-usable
+choices produce a better learning set, and that set supports fuller recall and
+slightly better actions with the SAME writer. This looks more like teaching the
+interface for abilities the base already has than demonstrating new judgment
+from scratch, which fits your warning against hard-coding agentic intelligence.
+It is not yet a superior autonomous learner: uniform ties it, and the source
+table/schedule remain scaffolded. I am checking existing two-hop context/action
+paths before designing the next connected test, rather than adding another
+same-bank sleep or rewriting working infrastructure.
