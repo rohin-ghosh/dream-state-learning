@@ -39,8 +39,16 @@ then admits316/320 source records and576/1,536 required targets, failing the
 original whole-corpus gate before any fit (SEQ-258). Its baselines cover only
 four of eight shards. This is a data-admission failure, not a training result.
 
-Bounded independent reviews PASS. Shared inputs/reference normalization do not
-make active doses or achieved retention equal. One exposed DEV lineage/topology,
+Externally prompted correction repairs3/4 failed records in5 calls without
+fitting or promoting candidates (SEQ-259). The separate1,632-update breadth
+fit result reports TRAIN32/32 versus17/32 goals, but PROBE5/8 versus6/8 goals
+and1/4 versus2/4 pairs for FULL versus new-label-masked control (SEQ-260).
+Both fail the declared target; complete TRAIN acquisition is not demonstrated
+generalization. SEQ260's released independent episode-level review agrees with the primary.
+
+Released reviews support these bounded results, including SEQ260.
+Shared inputs/reference normalization do not make active doses or achieved
+retention equal. One exposed DEV lineage/topology,
 external scheduling and preserved failures preclude population efficacy,
 generic planning, H1/H2 or autonomous learning-rate claims.
 
@@ -51,7 +59,8 @@ SEQ-256 incremental fits/readouts are terminal with independent review PASS:
 TRAIN acquisition, primary PROBE tie and unequal retention; the recipe is closed.
 SEQ255 remains the separate zero-fit collection/baseline. The combined248–256 section preserves earlier failures
 and the first-branch-baseline limit. Reviewed SEQ257/258 collection-only outcomes
-are reported separately below; no successor-fit outcome is included.
+are reported separately below. SEQ259 has a released artifact review; the
+SEQ260 breadth-fit result is included with released independent review agreeing.
 SEQ-247 shared-writer material control is terminal and independently reduced.
 SEQ-246 matched replay is terminal and independently reduced.
 A3 SEQ-245 is terminal and independently reduced: six stages, one matching
@@ -397,8 +406,8 @@ Summed native-phase cost is2,194.764s, about0.610 A40-hours across both GPUs,
 including loading/checking, not just kernels. No new data or dose extension
 after this outcome; the400-update recipe is closed. A broader eight-world
 actual-data successor was proposed under b960 at that cut; its zero-fit
-collection/baseline is now reported separately as SEQ257. No successor-fit
-outcome is included. [Primary result](../research_notes/analysis/2026-09-14_goal_pair_incremental_fit_first_result.md)
+collection/baseline is now reported separately as SEQ257. The later SEQ260
+breadth-fit result is included separately, with released independent review agreeing. [Primary result](../research_notes/analysis/2026-09-14_goal_pair_incremental_fit_first_result.md)
 and [released independent review](../research_notes/analysis/2026-09-14_goal_pair_incremental_fit_independent_result.md)
 bind the counts, masks, schedule and receipts; released PASS supersedes pending
 primary wording, not independent live tensor authentication.
@@ -466,12 +475,12 @@ not parallel wall time or utilization. Both record unchanged37ec adapter/base
 checks and zero optimizer updates. Independent file/hash/capture replay is not
 independent authentication of live model tensors.
 
-**Reporting boundary.** Main reports the separate original1,632-update breadth
-fits still finishing at this cut; no outcome from them is included. Richer-data
-collection is live work reported by Main, while its quality/content review and
-any fit remain prospective here. Neither launch nor candidate retention is a
-result of improved learning. No later diagnostic result, H1/H2, broad transfer,
-parenting-efficiency or full-flywheel promotion is added. Collaborator UNSENT.
+**Historical reporting boundary for SEQ257/258.** The separate breadth fits
+were still finishing at that cut. SEQ259's correction review and SEQ260's primary
+fit result are now reported separately below; SEQ260 independent review agrees
+with the primary. Rich/quality work remains separate status, not new metrics here.
+Neither launch nor candidate retention demonstrates improved learning. No H1/H2,
+broad-transfer, parenting-efficiency or full-flywheel promotion. Collaborator UNSENT.
 
 Sources: [SEQ257 primary](../research_notes/analysis/2026-09-14_goal_breadth_collection_first_result.md),
 [SEQ257 released independent review](../research_notes/analysis/2026-09-14_goal_breadth_collection_independent_result.md),
@@ -481,6 +490,98 @@ SEQ257 source`3ddb8a2f168a03c9f19252358fc429bb6f526230`, capsule archive
 `a7ee0b69d392b7d078072c1685f12ffced60346052c6751f4e8eed078375f7de`;
 SEQ258 source`ff1af2c37003fd4f6d38ecbe7660fd94744c0e31`, archive
 `c57a87efedd39b84ff0c316a2cb3d23e4dc26f70c2d4eae44d45409d45eaea0c`.
+
+### SEQ-259–260: prompted correction and breadth fits — September 14, 2026
+
+**Evidence status:** SEQ259 has a released retrospective artifact review agreeing
+with its primary. The reviewer previously authored the correction driver/tests:
+this is independent artifact reduction, **not a fresh-author implementation
+audit**. SEQ260 has a **released independent episode-level review by Ramanujan**.
+Raw-call/episode reductions agree with Main's primary counts. This is bounded
+result verification, not broader scientific-claim approval.
+
+**SEQ259: bounded correction, no fitting or promotion.** All four failed EVENT
+records from SEQ258 were selected, rather than a successful subset. The unchanged
+child received externally requested mismatch feedback and the original public
+receipt, never a canonical corrected EVENT. With at most two calls per case and
+stopping on first validity, three cases corrected on their first call; the fourth
+repeated the same error twice: **3/4 cases in 5 actual calls**, attempts
+`[1,1,1,2]`. The remaining receipt was `R_FB3YG5OKD` instead of
+`R_FB3YG5OKDQ`. One selected source was PROBE, but this was receipt-copying only:
+no PROBE goal, policy answer, score or parameter-training example was supplied.
+
+Zero fits/updates ran; recorded adapter37ec/base joins remain unchanged. These
+are recorded state/file checks, not independent live-tensor authentication.
+The three accepted candidates remain **separate and unpromoted**. Original
+SEQ258 remains 320 committed ROUTEs / 316 valid EVENTs; neither its failed
+whole-corpus admission nor its separate guided-route error is repaired. Without
+a matched no-feedback retry, 3/4 supports only descriptive prompted correction,
+not feedback efficacy, persistent correction learning, autonomous discovery or
+learning efficiency. Native correction took90.481151s (about0.025134 allocated
+A40-hours); CPU preparation14.361258s is separate, and the outer guardian was92s.
+
+**SEQ260: acquisition without demonstrated generalization; both arms fail.**
+Both declared **1,632-update** fits and fresh-process parent-free AFTER readouts
+completed. FULL_TARGET and NEW_TRAJECTORY_LOSS_OFF both start from37ec, using
+frozen Qwen, rank8, seed0, batch4, AdamW3e-5 and414 rows. There are16 presentations
+per old/new trajectory target. Only new rows222–413 have labels masked in the
+control, with common full-reference normalization. This is an **active old-row
+and rehearsal control**, not no-update; matched inputs/reference normalization
+do not equate active gradient dose or compute.
+
+| Primary-reported readout | FULL_TARGET | NEW_TRAJECTORY_LOSS_OFF |
+|---|---:|---:|
+| TRAIN OWN_TEXT goals | 32/32 | 17/32 |
+| TRAIN opposite-goal pairs | 16/16 | 4/16 |
+| PROBE OWN_TEXT goals | 5/8 | 6/8 |
+| PROBE opposite-goal pairs (primary) | 1/4 | 2/4 |
+| PROBE world A / B pairs | 1/2; 0/2 | 2/2; 0/2 |
+| PROBE UNAVAILABLE goals | 1/8 | 0/8 |
+| PROBE UNAVAILABLE pairs | 0/4 | 0/4 |
+| Original taught graph goals | 2/4 | 2/4 |
+| Previously fresh graph goals | 4/4 | 3/4 |
+| Old recall W0 / W8 | 16/16; 16/16 | 16/16; 16/16 |
+| Held audit | 15/16 | 16/16 |
+
+The unchanged37ec SEQ257 baseline was TRAIN18/32 goals,2/16 pairs; PROBE4/8
+goals,0/4 pairs; UNAVAILABLE2/8 goals,0/4 pairs. New labels support TRAIN-instance
+acquisition, but FULL trails the active control on the observed primary PROBE
+endpoint. Both fail PROBE>=3/4 pairs, at least one pair in each PROBE world, and
+original taught graph>=3/4. Old-memory, audit and previously-fresh thresholds
+pass. **The recipe is closed; neither adapter is promoted.** No retrospective
+checkpoint selection is made. One seed, an exposed DEV lineage and two fixed
+PROBE worlds do not identify a unique failure cause, population effect,
+impossibility of composition, or H1/H2. Coverage and legacy rehearsal both changed
+since SEQ256, so this is not an isolated breadth-effect estimate.
+
+The primary reports saved FULL state
+`8a94f4ff0eb297c49c0383e7522db17a66eb6baf17a7b4c79f564ec3a99abb42`
+and LOSS_OFF state
+`aa282d0ba3c34b398fd7795f5daaec759f786aef7f023623b641655c42a8908e`,
+loaded by their respective AFTER processes. TRAIN elapsed3149.808513/3145.064272s;
+AFTER341.226236/344.527447s and384/374 native calls, respectively. About1.939
+allocated A40-hours covers both fits plus AFTER, excluding earlier collection
+and outer guards; these phase times include setup, not just GPU kernels. No fit
+restart is reported. Released review verifies all758 actual calls, masks,
+schedule and saved-file/state joins, not live-tensor authentication. Active/
+reference labels are133,272/133,272 versus98,744/133,272; the34,528-label
+difference is not matched active dose. Matching old recall does not equate
+audit or previously-fresh retention.
+
+Quality-filtered and richer-trajectory work remains separate collection/design
+status, not a new result here or a retrospective relaxation of SEQ258's gate.
+Earlier SEQ253/256 interpretations and the800 presentations of48 distinct targets
+remain unchanged; no generalization or autonomous-flywheel claim is added.
+
+Sources: [SEQ259 primary](../research_notes/analysis/2026-09-14_scale_source_correction_first_result.md),
+[SEQ259 released artifact review](../research_notes/analysis/2026-09-14_scale_source_correction_independent_result.md),
+[SEQ260 primary](../research_notes/analysis/2026-09-14_goal_breadth_fit_first_result.md),
+[SEQ260 released independent review](../research_notes/analysis/2026-09-14_goal_breadth_fit_independent_result.md),
+and [SEQ260 recipe](../research_notes/analysis/2026-09-14_goal_breadth_recipe_design.md).
+SEQ259 source`b8508e190a072d6d8f44dc6c4fd09aa76237bd0e`, archive
+`8a22e4435bc492644bd02ee1e7b3113ddd6c51daa57136da9e89486bf30b0257`;
+SEQ260 source`712d5f2b738f3c33dc905037e57580eee9319441`, archive
+`2294116da812f48bfac1beba25b43d64c89a88e477c2976c55c22444bf19e323`.
 
 ### SEQ-247: executable selector material, shared writer — September 14, 2026
 
