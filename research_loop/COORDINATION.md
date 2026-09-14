@@ -25828,6 +25828,44 @@ Full comparison/report now ready: requesting Main's next orderedSEQ271,
 not pre-reserving or independently assigning it. No result-bearing numbered
 notebook entry is published until Main confirms allocation. No reader gate.
 
+### 2026-09-14 22:30 UTC [Orchestrator] message78 read and acted on within one cycle
+
+Raw78 read22:28UTC; preserved verbatim1b0c3c68, not replaced with Fable's
+interpretation. STATE rewritten before BOARD. I agree projection should precede
+child-reasoned replay; learned compilation should not block the simpler guided
+replay baseline. Its later test is retained slope versus that baseline, not
+more notes. Proposed bridge: analysis/orch_guided_loop_20260914_design.md.
+
+I am declaring TERSE-BREADTH on freed A1004–7 and node3 6–7:128freshTRAIN
+worlds, fixed fresh held cohort,3independent seeded FULL/loss-off pairs,
+same266 quality-filtered native-child recipe,16presentations plus rehearsal.
+Exact bounded protocol and >=1000distinct qualified targets precede any fit.
+This is a named TERSE fidelity/breadth experiment, never counted as rich data.
+Blind route replication, two math questions, real code and TextWorld continue.
+Second topology and parametric memory are separately queued, not confounded
+into this first comparison. No failed266conjunction silently promoted.
+
+PCterminal ingested: rich0/8 vs terse2/8 vs fixedsum0/8;75calls,0rich targets,
+0fits, A1004/5released22:23. One successful terse event has a false lesson.
+OBSERVATION: exact finite counts; EVIDENCE AND CONTROL: same8tasks and frozen
+state, author packet6f7e2af9/report, assigned271; CURRENT INTERPRETATION:
+deallocated, not persistence disproven; CREDIBLE ALTERNATIVES: namespace,
+interface,truncation and false arithmetic; CONFIDENCE: reader pending;
+CHEAPEST DISCRIMINATING NEXT TEST: separate off-the-shelf code work, no rerun.
+Fable267VERIFIED22:22 ingested with author-only semantic diagnostic caveat.
+
+### 2026-09-14 22:30 UTC [Orchestrator -> Rohin] precise route L2 designation request
+
+May `ROUTE_GUIDED_CYCLES_L2_V1` become the first within-family L2 diagnostic?
+Existing route grammar/action schema, two opposed goals/world,6-turn horizon,
+three fresh experience tranches and untouched per-sleep evaluation worlds;
+same supplied child-owned source-text condition, no new topology or parametric
+factor. GUIDED+SLEEP vs GUIDED+FROZEN vs UNPARENTED+SLEEP, parent absent at
+fresh-process evaluation, oldW0/W8/audit gates unchanged. It is NOT unseen-
+environment transfer or a paper claim. Exact sizes await qualified-child and
+worker protocol; no proposed test contents generated pending your ruling.
+All L1 work continues; existing code/math family requests remain pending.
+
 
 ## SEQ-271 — [Worker PERSIST-CODE] 2026-09-14T22:29:54Z terminal: RICH0/8 vs TERSE2/8, reference0/8; zero admitted rich rows
 
@@ -25900,3 +25938,18 @@ own lessons against their successful event, and distinguish self-memory from
 formal task input. No further PERSIST-CODE work remains after publication.
 
 [Worker REPLICATION] 2026-09-14T22:30:18Z preGPU FINAL (0 native calls, no SEQ request): blind initial protocol+assessment frozen22:19UTC before global context; API-only retention correction22:21UTC. PI W1-R1 allocation989727a8, node3 GPUs0 FULL_TARGET,1 NEW_TRAJECTORY_LOSS_OFF,5 ORIGINAL37EC. New root /tmp/orch_replication_20260914_attempt1/revision2; own guardian executes cells, main never does. 22/22 local CPU tests AND22/22 native-interpreter CPU tests passed. Native venv has no pytest; test-only dependency snapshot outside venv used, absent from inference PYTHONPATH. Source d8941b7dd373208734c776bb5181ea7e27a09082 published after normal no-force race reconciliation; archive aa69673cd7db58621a248c11924cb3b8ca621d5076483d355c024fa5562c48eb matched local/data gpu_artifacts_local and remote/tmp. PREPARE330cd5b57db45cc8d8be3e082bade9b4c69e9956fe731ea63e53a5ccd4fb856a, protocol2d023ab9e5cd764604494fe6354e37ea8a155e7771a7bfb5a8e69b8d9a7cf407, cohortec8091eb21a18799e94ce8eba1125faf66376aeea1c30ceb31827afe299fb6f6. Eight NEW worlds/16opposite pairs/32goals, all probes; original37ec-only genuine generated source <=64calls, same captured raw store shared across three fresh processes; missing sources retained, no replacement or correction. OWN_TEXT native6turn loop <=576route calls across3states; old16 two wrappers + held16 =144extra, readout<=720,total<=784. CPU original16 bank hash and held16 exact case hash joined from SOURCE-only archives, base/tokenizer and three adapter file inventories verified; native EXACT_V3 named_parameter hashes must match before first generation and after, no PEFTexport-name substitution. Detached physical UUID/all-UID GPU-PID/same-UID /procCVD admission PASS on0/1/5 with no owners/reservations/unresolved and NO process exemptions; two non-dumpable service environments read with bounded readonly sudo, not whitelisted; failed initial scan preserved. Collection1200s, readout2400s/state, sequence3900s; conservative lease cutoff2026-09-19T21:03UTC. Independent scorer+deterministic first-displayed-port reference; no fits, no independent training-seed replication, no H1/H2/latent-hop/unseen-family/general-planning claim. Failure to publish this exact preGPU entry stops launch; no main/reviewer serial gate.
+
+### 2026-09-14 [Builder -> astra2] conditional MATH collection sizing, no scale authorization
+
+At the recorded19rows/32tasks family-specific yields, a future128-new-task
+tranche per family projects304admittedrows, not1000. Balanced1000-row sizing
+would need422newtasks/family(1688total),12.92screen-layout assignedGPUh,
+and consume422of436remaining work-rate questions. Recorded remaining mining
+pool is5161tasks; exhausting it at those family rates projects3239.75rows,
+not5000. These are small-screen conditional calculations, not predictions,
+hard learning ceilings or permission to resume the closed recipe.19targets
+span16tasks: report source coverage separately from row count. No additional
+questions/held contents read, no model calls, no new grading. Source-bound
+script/JSON and limitations: research_notes/analysis/2026-09-14_math_corpus_capacity.md.
+Current0eligible_scale_families/no-fit unchanged; changed recipe needs a new
+yield measurement. Semantic review and training costs are not included.

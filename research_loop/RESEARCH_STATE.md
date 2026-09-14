@@ -1,8 +1,8 @@
 # Research state — Orchestrator
 
-Updated 2026-09-14 22:27 UTC. Mission ACTIVE / INCOMPLETE. Wave W1/W2.
+Updated 2026-09-14 22:30 UTC. Mission ACTIVE / INCOMPLETE. Wave W1/W2.
 Authoritative steering: Rohin's current launch instruction and raw messages
-42–77 (77 read22:07UTC); next full raw-message reread by23:50UTC.
+42–78 (78 read22:28UTC); next full raw-message reread by23:50UTC.
 Check notebook updates every orchestration cycle, not just every two hours.
 
 ## Objective and authority
@@ -283,6 +283,78 @@ test isolates a data-contract bottleneck; it does not substitute voice for
 reasoning. Quantity-level feedback vs matched retry remains a separate queued
 hypothesis; do not entangle it with record-prompt manipulation in this screen.
 STATE first, BOARD second, then assignments. Node3 6–7/A1006–7 stay reserve.
+
+## 22:30 UTC steering78, persistent-code ingestion and breadth allocation
+
+Raw message78 is preserved verbatim in THESIS_RAW and notebook commit1b0c3c68;
+read in the first cycle after arrival. Directive: elevate the successful recipe
+with scale/diversity and bind it to guided closed loops; projection before
+model-reasoned replay, compiler not a blocker. Fable's suggestions are advice,
+not ratification or evidence that266 passed its failed conjunction. Preserve
+all invariants and old-thread ownership; old thread continues independently.
+
+### PERSIST-CODE terminal (SEQ271 assigned)
+
+**OBSERVATION:** RICH0/8 complete tasks vs TERSE2/8 and fixed sum(values)0/8;
+40 vs35 native calls,12831 vs976 generated tokens. RICH0records,TERSE2;
+one terse repair succeeds but its lesson fails the very same task's example.
+Zero admitted rich rows/fits. Both slots released22:23:03UTC.
+
+**EVIDENCE AND CONTROL:** report
+`research_notes/analysis/orch_persist_code_result.md`, packet6f7e2af9. Same8
+integer-ledger tasks, frozen37ec and ceilings;75 calls in the completed batch,
+separate2-call failed engineering attempt retained. Author replay and16/40
+rich-turn semantic diagnostic, remaining24 UNREVIEWED; reader pending.
+
+**CURRENT INTERPRETATION:** DEALLOCATED screen, not a persistence disproof;
+rich side never created useful records, so reuse was not exercised. Lesson
+correctness needs its own grounded check rather than task-success inheritance.
+
+**CREDIBLE ALTERNATIVES:** function-input vs memory namespace confusion,
+28invalid/missing rich actions,3truncations, invented arithmetic; no single
+cause isolated. Posthoc alias substitution is diagnostic only, not rescued
+native scores or edited targets. Public codebase learning remains untested.
+
+**CONFIDENCE:** worker-replayed finite result, pending independent read;
+no sleep, retention, transfer or parenting claim.
+
+**CHEAPEST DISCRIMINATING NEXT TEST:** no immediate ledger sequel; off-the-shelf
+code worker is already independent. Spend freed compute on message78's
+prospective broader recipe instead of more failed-protocol retries.
+
+### New TERSE-BREADTH diagnostic and loop design
+
+Declare a separate fidelity/breadth replication of266:128 new same-family TRAIN
+worlds, fixed fresh held cohort, three independently seeded matched FULL versus
+new-labels-masked fits,16 presentations per new target and legacy rehearsal.
+One worker owns A1004–7 and node3 6–7 after fresh admission. Reuse exact266
+quality-filtered child-native trajectory recipe; freeze all rosters, scales,
+source hashes, schedule, deterministic reference and failures before outcomes.
+Three pairs admitted as one batch; independent train seeds, not three read-order
+seeds. >=1000 distinct qualified new targets before any fit. This is explicitly
+a TERSE replication per78, not rich-corpus admission, not an exception allowing
+terse commands into the rich mining corpus. Old failed conjunction stays failed.
+Changing topology and parametric memory are separate queued hypotheses, not
+bundled factors in this first breadth test. No new L2/3 family is admitted.
+
+Changed belief: the finite266 contrast justifies a prospective scale/seed test,
+not a validated L2 starting premise. Blind fresh-cohort replication continues;
+breadth experiment does not wait on it because it tests a hypothesis rather
+than promoting a result. Preserve code/text/math diversity. Freed PC worker
+slot becomes the single breadth-worker slot; no PI-native execution.
+
+Loop preparation proceeds in parallel as PI design: three guided sleeps,
+same-child frozen twin and unparented-sleep twin, parents blind to sealed
+held readouts and absent at evaluation. A projection/replay baseline needs no
+learned compiler; child-reasoned consolidation is a separately controlled
+later arm, not prerequisite. Launch requires a prospectively specified
+qualifying child and appropriate held-family admission; don't silently waive
+the frozen transfer conjunction. No result currently meets that full gate.
+Escalate a precise proposed route L2 family to Rohin while all L1 work runs.
+
+Fable22:22 VERIFIED267 is now ingested: finite Taxi counts independently
+re-derived; its semantic16-turn labels remain author-side. Deallocation unchanged.
+STATE first, BOARD second, assignment after publication.
 
 ## Active uncertainties and surprises
 

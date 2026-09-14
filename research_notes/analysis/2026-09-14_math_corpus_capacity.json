@@ -1,0 +1,84 @@
+{
+  "all_remaining_mining_tasks": 5161,
+  "conditional_128_each_screen_gpu_hours": 3.9200879934098984,
+  "conditional_128_each_total_rows": 304.0,
+  "conditional_all_remaining_rows_at_family_rates": 3239.75,
+  "conditional_rows_at_balanced_pool_limit": 1035.5,
+  "current_eligible_scale_families": [],
+  "current_fit_ready": false,
+  "families": {
+    "fractional_quantities": {
+      "admitted_distinct_tasks": 4,
+      "admitted_rows": 5,
+      "conditional_128_new_tasks_rows": 80.0,
+      "conditional_all_remaining_rows": 920.625,
+      "observed_rows_per_task": "5/8",
+      "recorded_unique_pool": 1481,
+      "remaining_unscreened_metadata_count": 1473,
+      "screen_tasks": 8
+    },
+    "group_accounting": {
+      "admitted_distinct_tasks": 3,
+      "admitted_rows": 5,
+      "conditional_128_new_tasks_rows": 80.0,
+      "conditional_all_remaining_rows": 1416.875,
+      "observed_rows_per_task": "5/8",
+      "recorded_unique_pool": 2275,
+      "remaining_unscreened_metadata_count": 2267,
+      "screen_tasks": 8
+    },
+    "percentages": {
+      "admitted_distinct_tasks": 6,
+      "admitted_rows": 6,
+      "conditional_128_new_tasks_rows": 96.0,
+      "conditional_all_remaining_rows": 738.75,
+      "observed_rows_per_task": "3/4",
+      "recorded_unique_pool": 993,
+      "remaining_unscreened_metadata_count": 985,
+      "screen_tasks": 8
+    },
+    "work_rates": {
+      "admitted_distinct_tasks": 3,
+      "admitted_rows": 3,
+      "conditional_128_new_tasks_rows": 48.0,
+      "conditional_all_remaining_rows": 163.5,
+      "observed_rows_per_task": "3/8",
+      "recorded_unique_pool": 444,
+      "remaining_unscreened_metadata_count": 436,
+      "screen_tasks": 8
+    }
+  },
+  "held_contents_opened": false,
+  "limits": "Eight measured tasks/family, not an IID yield estimate or confidence interval. Prompt/decoding/review changes invalidate extrapolation. Complete-screen task cost is not marginal generation, review, fit, checkpoint, or transfer cost. Old zero-call engineering overhead excluded; no capacity here is currently approved to scale.",
+  "max_balanced_new_tasks_per_family": 436,
+  "observed_assigned_screen_gpu_hours_per_task": 0.007656421862128708,
+  "observed_distinct_tasks_per_19_rows": 16,
+  "scenarios": [
+    {
+      "balanced_tasks_per_family_at_observed_rates": 422,
+      "conditional_calls_at_observed_three_per_task": 5064,
+      "conditional_new_admitted_rows": 1002.25,
+      "conditional_screen_only_gpu_hours": 12.924040103273258,
+      "fits_recorded_remaining_pool": true,
+      "target_new_admitted_rows": 1000,
+      "total_new_tasks": 1688
+    },
+    {
+      "balanced_tasks_per_family_at_observed_rates": 2106,
+      "conditional_calls_at_observed_three_per_task": 25272,
+      "conditional_new_admitted_rows": 5001.75,
+      "conditional_screen_only_gpu_hours": 64.49769776657223,
+      "fits_recorded_remaining_pool": false,
+      "target_new_admitted_rows": 5000,
+      "total_new_tasks": 8424
+    }
+  ],
+  "scope": "Uses recorded family counts and screen metadata only; no new source questions, held items, model calls or semantic re-review.",
+  "source_sha256": {
+    "ADMITTED_ROWS.json": "7b7cd23bac72172c1495fb0545bae62d1a7134a222218813b1ce4998c9133331",
+    "DISTRIBUTION.json": "f36e1dac0efc5c2cf506dd154ca1428b1208693597e2721139f82c087ddd2475",
+    "REDUCTION.json": "d9f799fe01fc5deca038102349d2369fd9b60c649da512a9234ebfe4ac3a61ab",
+    "TASKS_VIEW.json": "a40d89c19d899260a0c7d5896f0a5d784bf768c9a4d9a9f3d30541019b20ac2b"
+  },
+  "status": "POSTHOC_CONDITIONAL_SIZING_NOT_AUTHORIZATION"
+}
