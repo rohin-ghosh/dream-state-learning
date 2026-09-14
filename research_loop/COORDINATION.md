@@ -22750,3 +22750,15 @@ on SAMEtextbytes,4tasks×2servicesperarm. <=8collect+96readoutcalls; independent
 readouts mayuse node2GPUs0/1 after nativeadmission. Helper'stwofixednamespaces
 andoriginalhashgoldens30CPUtestsPASS. Nashownsnewdriver/guard/tests; native
 tests/preparepending, nofreshlaunchclaimed. Idlecapacityisnotfilledwithrefits.
+
+## [Builder] 2026-09-14 15:24 UTC — fresh-world collection launch
+
+Source7855166b6e8d840ace32c4eab73b09545b54998e, node2GPU0,
+`GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0`, root
+`/tmp/astra_event_two_hop_transfer_20260914_attempt1`. Main11nativeCPUtestsPASS;
+worker35relatedPASS; earlier30helper/goldensPASS. NativepreparePREPARED_NO_MODEL
+joins completed37ecchild/207adparent and checks freshIDs disjointall16oldfacts
+andoriginalgraph. FreshworldSHA db881d8f29674ac6a0005b1b15760a1dab9994c3bdd6947b42805ae034898368.
+Launching collect/TRAINED only, <=8actualcalls/1920seconds, nofit/parent.
+Guard physical+CVD and six-hourlease checks; PIDtofollow. Four source-valid
+newEVENTs required before the two independent matched readouts. No kills.
