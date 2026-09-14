@@ -5,13 +5,14 @@ that the research sprint is complete.
 
 ## What transfers from the comparison
 
-OpenAI's September 8 announcement reports approximately 10,000 concurrent
-agents in the successful group, 88 hours to the result, another 17 hours for
-Lean formalization/verification, and 130 billion output tokens on Navier–Stokes.
-It also describes diverse groups and later consolidation of useful intermediate
-results. I checked that primary announcement, not the proof or its formalization:
-`https://openai.com/index/navier-stokes-solution/` (accessed September 14).
-Those are reported figures, not independently audited performance measurements.
+The forwarded account reports approximately 10,000 concurrent agents, 88 hours
+to a result, another 17 hours for Lean verification, and 130 billion output tokens
+on Navier–Stokes. It also describes diverse groups and later consolidation.
+These numbers remain unverified here. Attempts to search and open the referenced
+`https://openai.com/index/navier-stokes-solution/` on September 14 did not return
+inspectable source content in this tool session. The earlier wording that I had
+checked the announcement was unsupported and is corrected here. The proof and
+formalization have not been reviewed either.
 Our cached-input totals, output tokens, model capabilities and dollars are not
 comparable from those figures alone. There is no justified token-efficiency ratio.
 

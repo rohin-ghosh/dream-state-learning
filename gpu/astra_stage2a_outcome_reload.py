@@ -74,7 +74,7 @@ def load_original(directory, *, result_sha256, training_sha256):
     pilot._same(receipt.get('optimizer'), dict(pilot.training.OPTIMIZER_RECIPE), 'saved_training_recipe_mismatch')
     require(pilot.training._sha(values.get('adapter_sha256'))
             and receipt.get('adapter_sha256') == values['adapter_sha256'], 'adapter_digest_binding_mismatch')
-    require(receipt.get('rows_sha256') == values['collection']['rows_sha256']
+    require(receipt.get('rows_sha256') == values.get('training_rows_sha256', values['collection']['rows_sha256'])
             and pilot.training._sha(receipt.get('rows_sha256'))
             and receipt.get('source_label') == values.get('source_label'), 'saved_source_binding_mismatch')
     expected_base = options.get('expected_base_sha256')

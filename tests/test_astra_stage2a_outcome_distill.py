@@ -38,11 +38,12 @@ class FakeTokenizer(TemplateFixture):
         return result
 
 
-def collected_fixture(worlds, *, master=source.collector.MASTER, guidance=source.collector.GUIDANCE, success=True):
+def collected_fixture(worlds, *, master=source.collector.MASTER, guidance=source.collector.GUIDANCE,
+                      success=True, success_positions=(0,)):
     outputs = {}
     for position, world in enumerate(worlds):
         for member in world.members:
-            actions = [turn.action for turn in member.expected_trace] if success and position == 0 else ["STOP"]
+            actions = [turn.action for turn in member.expected_trace] if success and position in success_positions else ["STOP"]
             for ordinal, raw in enumerate(actions):
                 slot = source.collector.native_prepare.screen.primitives.chain_slot(
                     "D1", position, int(member.member[1:]), ordinal)
@@ -201,6 +202,35 @@ class OutcomeDistillTests(unittest.TestCase):
         self.assertEqual(batch["labels"][0][-1], -100)
         self.assertEqual(batch["attention_mask"][0][-1], 0)
         self.assertEqual(batch["input_ids"][0][-1], 0)
+
+    def test_copy_replay_batch_preserves_first_three_outcome_slots(self):
+        rows = tuple(source.StudentRow(index, (2, 3), (-100, 3), (1, 1), 1, 1)
+                     for index in range(42))
+        outcome_presentations, replay_presentations = 0, 0
+        for update in range(1, 257):
+            original = source.cyclic_batch(rows[:30], update, 0)[0]
+            indexes, selected, batch = source.cyclic_batch(rows, update, 0, outcome_row_count=30)
+            self.assertEqual(indexes[:3], original[:3])
+            self.assertEqual(indexes[3], 30 + (update - 1) % 12)
+            self.assertEqual(tuple(row.source_call_index for row in selected), indexes)
+            self.assertTrue(all(labels[0] == -100 for labels in batch["labels"]))
+            outcome_presentations += sum(index < 30 for index in indexes)
+            replay_presentations += sum(index >= 30 for index in indexes)
+        self.assertEqual((outcome_presentations, replay_presentations), (768, 256))
+
+    def test_actual_source_copy_rows_tokenize_without_teacher_or_witness(self):
+        from organism_v6.outcome_action_replay import compile_copy_rows
+
+        originals = self.validate(collected_fixture(self.worlds, success_positions=(0, 4)))
+        rows, metadata = compile_copy_rows(originals)
+        self.assertEqual(len(rows), 12)
+        self.assertTrue(metadata)
+        tokenized, unused_pad = source.tokenize_rows(rows, FakeTokenizer(), guidance=source.collector.GUIDANCE)
+        for row, encoded in zip(rows, tokenized):
+            self.assertEqual(encoded.source_call_index, row["source_call_index"])
+            self.assertIn(row["assistant"], row["prefix"][-1]["content"])
+            self.assertTrue(all(label == -100 for label in encoded.labels[:encoded.prefix_tokens]))
+            self.assertEqual(sum(label != -100 for label in encoded.labels), encoded.target_tokens)
 
     def test_deadlines_and_import_are_bounded_without_native_imports(self):
         for deadline in (float("inf"), 100.0, 5501.0):

@@ -67,6 +67,23 @@ class AdmissionTests(unittest.TestCase):
             self.assertEqual(evidence['result']['values'], result)
             self.assertEqual(evidence['training']['values'], trained)
 
+    def test_transformed_training_rows_bind_separately_from_source_collection(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            options, result, trained = fixture(Path(temporary))
+            result['training_rows_sha256'] = 'd' * 64
+            trained['rows_sha256'] = 'd' * 64
+            root = Path(options.original_run)
+            options.result_sha256 = write(root / 'RESULT.json', result)
+            options.training_sha256 = write(root / 'adapter' / 'TRAINING.json', trained)
+            evidence = source.load_original(root, result_sha256=options.result_sha256,
+                                            training_sha256=options.training_sha256)
+            self.assertEqual(evidence['training']['values']['rows_sha256'], 'd' * 64)
+            result['training_rows_sha256'] = 'e' * 64
+            options.result_sha256 = write(root / 'RESULT.json', result)
+            with self.assertRaisesRegex(ValueError, 'source_binding'):
+                source.load_original(root, result_sha256=options.result_sha256,
+                                     training_sha256=options.training_sha256)
+
     def test_incomplete_wrong_master_recipe_and_base_rejected(self):
         cases = [('status', 'INCOMPLETE', 'completed_original'), ('master_hex', '00', 'eval_identity'),
                  ('completed_updates', 255, 'training_recipe'), ('frozen_base_hashes', {}, 'frozen_base')]

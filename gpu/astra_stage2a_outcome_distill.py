@@ -257,9 +257,13 @@ def tokenize_rows(rows, tokenizer, *, guidance=None):
     return tuple(tokenized), pad
 
 
-def cyclic_batch(rows, update_number, pad_token_id):
+def cyclic_batch(rows, update_number, pad_token_id, *, outcome_row_count=None):
     require(bool(rows) and type(update_number) is int and 1 <= update_number <= UPDATES, "bounded_cyclic_update_required")
     indexes = tuple(((update_number - 1) * BATCH_SIZE + offset) % len(rows) for offset in range(BATCH_SIZE))
+    if outcome_row_count is not None:
+        from organism_v6.outcome_action_replay import scheduled_indexes
+
+        indexes = scheduled_indexes(outcome_row_count, len(rows) - outcome_row_count, update_number)
     selected = tuple(rows[index] for index in indexes)
     width = max(len(row.input_ids) for row in selected)
     batch = {name: tuple(getattr(row, name) + (padding,) * (width - len(row.input_ids)) for row in selected)
@@ -267,7 +271,7 @@ def cyclic_batch(rows, update_number, pad_token_id):
     return indexes, selected, batch
 
 
-def train_updates(model, rows, *, pad_token_id, torch, device, emit, check):
+def train_updates(model, rows, *, pad_token_id, torch, device, emit, check, outcome_row_count=None):
     """Exactly 256 actual batch-four AdamW updates, no paired-batch validator."""
     trainable = [parameter for parameter in model.parameters() if parameter.requires_grad]
     require(bool(trainable) and all(parameter.dtype == torch.float32 for parameter in trainable),
@@ -279,7 +283,7 @@ def train_updates(model, rows, *, pad_token_id, torch, device, emit, check):
     model.train()
     for update in range(1, UPDATES + 1):
         check("train_update")
-        indexes, selected, batch = cyclic_batch(rows, update, pad_token_id)
+        indexes, selected, batch = cyclic_batch(rows, update, pad_token_id, outcome_row_count=outcome_row_count)
         inputs = {name: torch.tensor(values, dtype=torch.long, device=device) for name, values in batch.items()}
         optimizer.zero_grad(set_to_none=True)
         with torch.autocast(device_type=torch.device(device).type, dtype=torch.bfloat16):
@@ -292,9 +296,16 @@ def train_updates(model, rows, *, pad_token_id, torch, device, emit, check):
         check("optimizer_step")
         optimizer.step()
         require(all(bool(torch.isfinite(parameter).all()) for parameter in trainable), "finite_adapter_weights_required")
-        emit(dict(update_number=update, loss=float(loss.detach().item()), row_indexes=indexes,
+        receipt = dict(update_number=update, loss=float(loss.detach().item()), row_indexes=indexes,
                   source_call_indexes=[row.source_call_index for row in selected],
-                  supervised_tokens=sum(row.target_tokens for row in selected), batch_size=BATCH_SIZE, seed=SEED))
+                  supervised_tokens=sum(row.target_tokens for row in selected), batch_size=BATCH_SIZE, seed=SEED)
+        if outcome_row_count is not None:
+            receipt["source_kinds"] = ["OUTCOME" if index < outcome_row_count else "SOURCE_ACTION_COPY"
+                                       for index in indexes]
+            receipt["supervised_tokens_by_kind"] = {
+                kind: sum(row.target_tokens for row, actual in zip(selected, receipt["source_kinds"]) if actual == kind)
+                for kind in ("OUTCOME", "SOURCE_ACTION_COPY")}
+        emit(receipt)
         del output, loss, inputs
     optimizer.zero_grad(set_to_none=True)
 
@@ -383,6 +394,16 @@ def run(options, *, libraries=None, clock=time.time):
         rows, provenance = load_collection(options.collection, source_label=options.source_label, check=check)
         summary["collection"] = provenance
         collector.write_json(root / "COLLECTION_RECHECK.json", provenance)
+        outcome_row_count = None
+        if getattr(options, "source_action_copy_replay", False):
+            from organism_v6.outcome_action_replay import compile_copy_rows
+
+            outcome_row_count = len(rows)
+            copy_rows, replay = compile_copy_rows(rows)
+            rows = tuple(rows) + tuple(copy_rows)
+            summary["source_action_copy_replay"] = replay
+            collector.write_json(root / "SOURCE_ACTION_COPY_REPLAY.json", replay)
+        summary["training_rows_sha256"] = sha256(_json_bytes(rows)).hexdigest()
         with (root / "STUDENT_ROWS.jsonl").open("x") as stream:
             for row in rows:
                 collector.append_json(stream, row)
@@ -449,7 +470,8 @@ def run(options, *, libraries=None, clock=time.time):
                 collector.append_json(stream, receipt)
                 summary["completed_updates"] = receipt["update_number"]
 
-            train_updates(model, tokenized, pad_token_id=pad, torch=torch, device="cuda:0", emit=emit, check=check)
+            train_updates(model, tokenized, pad_token_id=pad, torch=torch, device="cuda:0", emit=emit, check=check,
+                          outcome_row_count=outcome_row_count)
         require(summary["completed_updates"] == UPDATES, "exact_256_completed_updates_required")
         hash_base("after_training")
         check("adapter_checkpoint_before_evaluation")
@@ -462,7 +484,7 @@ def run(options, *, libraries=None, clock=time.time):
                 and (adapter_dir / "adapter_model.safetensors").stat().st_size > 0, "saved_peft_adapter_required")
         collector.write_json(adapter_dir / "TRAINING.json", dict(claim=CLAIM, completed_updates=UPDATES,
             seed=SEED, batch_size=BATCH_SIZE, optimizer=dict(training.OPTIMIZER_RECIPE),
-            rows_sha256=provenance["rows_sha256"], source_label=options.source_label,
+            rows_sha256=summary["training_rows_sha256"], source_label=options.source_label,
             adapter_sha256=adapter_hash, files_sha256=summary["adapter_files_sha256"],
             checkpoint_kind="PEFT_ADAPTER_ONLY_NOT_FULL_RESUME_STATE"))
         model.eval()
@@ -504,6 +526,7 @@ def parse_args(argv=None):
     for name in ("collection", "source-label", "model-dir", "output", "gpu-uuid", "expected-base-sha256"):
         parser.add_argument("--" + name, required=True)
     parser.add_argument("--deadline-unix", required=True, type=float)
+    parser.add_argument("--source-action-copy-replay", action="store_true")
     return parser.parse_args(argv)
 
 

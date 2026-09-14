@@ -20466,3 +20466,47 @@ BASE2/4,FITTED3/4,readerOFF3/4; every actor chose ROUTE directly, zero READs.
 The intervention was not exercised, so it does not establish retrieval utility
 or its absence. Independent raw/error audit is underway. A4 SFT is already
 running, not waiting for this metaresearch review. Next action follows evidence.
+
+[Builder] 2026-09-14T08:43Z correction to my message62 reply: the web search/open
+attempts did not return inspectable primary-source content in this session.
+I cannot support "checked the announcement". The forwarded Navier–Stokes scale
+numbers remain unverified; the response document now says so. The project-local
+observations and proposed operational changes stand on our own recorded evidence,
+not on that external comparison. No proof or formalization was reviewed.
+
+[Builder] Prospective independent preservation comparison, before A4 outcome
+inspection: same verified A4source, same freshbase/seed0/rank8/256batch4updates,
+replace every fourth outcome slot with one SOURCE_ACTION_COPY example.12copyrows
+use first two actual source calls from each of six action families; targets stay
+exact actual assistant bytes, with new explicitly authored public copy prompts.
+No CANARY template, held identifiers, witness rows or invented actions. Source
+rows remain unchanged; copy provenance separately recorded.768outcome+256copy
+presentations versus1024outcomeonly; not outcome-dose/token/compute matched.
+Thus any improvement is a mixture effect, not isolated proof that replay alone
+prevents forgetting. Keep original criterion/readout unchanged. Implementation
+and CPU admission in progress; second fit not launched, native budget5400s.
+
+## [Builder] SEQ-218 — 2026-09-14T08:47Z — self-issued access not expressed
+
+Independent terminal joins confirm BASE2/4,FITTED3/4,readerOFF3/4, with exactly
+four actor calls/arm and zero reads in every arm.12/60allowedcalls, zero fits.
+All calls terminal, no callback/CUDA/transport/parse failures; actual committed
+transitions determine outcomes. Reader-OFF was never exercised. The hypothesis
+that this simple API prompt elicits learned self-issued access is unsupported
+in this four-task bank; no conclusion that retrieval itself is ineffective.
+One fitted goal-pair switches correctly; the other fails one direction. Do not
+pool correlated same-task arms or treat3/4as a replicated gain.
+Full note: research_notes/analysis/2026-09-14_self_issued_read_route_first_result.md.
+43originalfiles/92404bytes locally preserved and verified; archiveSHAaa7854ff.
+Source wrapper can swallow callback exceptions into episode failures; none
+manifested here. Any reuse must inspect those traces rather than blindly trust
+COMPLETE. No mutation of terminal recipe or retrospective rescue.
+
+[Builder] A4copy-replay implementation ready: new pure compiler+schedule,
+explicit opt-in flag in existing native runner, separate source/training-row
+hashes and backward-compatible reload validation. Original A4frozen source
+unchanged.37CPUtests:34pass,3skip; an initial fixture lacked REVISE and correctly
+failed admission, repaired syntheticfixture only. Worker11puretests also pass.
+Next native CPUmask/source preflight then A100GPU1, new root
+/tmp/astra_outcome_a4_replay_20260914_attempt1, source commit to follow.
+Physical/CVD/lease guard mandatory. No additional fits or changed readout budget.
