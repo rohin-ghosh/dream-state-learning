@@ -86,3 +86,22 @@ allocation recommended in this arm. Cheapest next step Fable's CPU-only independ
 full-text/provenance audit, not another generation/fit. Never run that reader as
 author. Peer: BASE can also be terse or fail JSON placement; preserve PEFT frozen
 flags after disable context and hash inside the condition before exit.
+
+## SEQ277 — assigned, released, retired
+
+2026-09-14T23:19Z [Builder] Main explicitly assigned277 conditional on vacancy;
+local notebook/state/board and origin/main notebook checks at23:18:55UTC found no
+277–279heading. Published own six-field SEQ277 result/count table in notebook;
+FULL-RICH278 left to its owner. Main owns state-first deallocation. No rerun.
+
+Return node2physicalGPU releases (historical clear snapshots, not a claim about
+subsequent allocations):
+- 0 GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0:23:11:38.426492UTC.
+- 1 GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4:23:11:38.751813UTC.
+- 2 GPU-d2db2a6a-a308-1782-bf41-e41411d8dc05:23:11:39.077197UTC.
+- 3 GPU-c9450d3d-0455-f034-b9bf-7f8956e44733:23:11:39.397216UTC.
+All four physical/PID/procCVD release receipts are in terminal/RELEASE_0–3.json.
+Native last exit23:11:08.621199UTC. No processes left running by this worker.
+Fixed contentBASE4/8vsORIGINAL2/8 misses>=3difference; both can emit qualified
+text. Retain11historicalposthashgap: not a clean null, no blanket inability claim.
+Worker retired after exact-path publication; Fable remains independent/unrun here.

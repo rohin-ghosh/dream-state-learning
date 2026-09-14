@@ -26689,13 +26689,30 @@ no independent preregistration receipt claimed and no reader checks executed.
 [Worker MATH-SCALE] 2026-09-14T23:13:42Z actual native LAUNCH receipt: preGPU3ee946d7 pushed before23:08:46Z launch. All4 ACTOR_READY23:09:35.971–36.100UTC, at leastCALL_0001 each persisted by23:09:51Z, raw firstcalls now hash-preserved. PIDs physical4=445214,5=445217,6=445223,7=445220; source0a25d493/archive2f9a3a5b7eda295de84672232735ac72c96096c454c08f4d8245f1db90017b67; root /localhome/local-rohing/orch_math_scale_20260914_attempt1. Absolute outer deadline2026-09-15T01:38:46Z including grace, no fits.42calls byte-replayed in first snapshot, no admissions asserted.37CPUtests pass after strict reducer additions. Fulltext review delegated to bounded fresh-context author-side read-only Codex via existing research_loop.agents API,8tasks/batch,128batches max,4concurrent,600seconds/reader,1attempt; preserve every raw review and failure, no auto-pass/keyword filter. Exact task/target/neutralprefix/rawcall hashes and gold re-solution validated; reviewer instructions orch_math_scale_20260914_review_instructions.md. This is NOT Main independent blind audit. No changes to native source/prompts/gates and no old count edits. Local publication duplicates18 moved after byte comparison to origin, primary merge Main-owned; no further worker conflict resolution.
 
 
-## [Worker BASE-CONTRACT] 2026-09-14T23:18:41Z terminal READY/request-next-SEQ — content4/8vs2/8; provenance-complete3/8vs2/8
+## [Worker BASE-CONTRACT] SEQ277 — 2026-09-14T23:18:41Z terminal — content4/8vs2/8; provenance-complete3/8vs2/8
 
-No SEQ reserved; Main assign next ordered number after terminal publication.
+Main assigned SEQ277 after local and origin/main vacancy checks at2026-09-14T23:18:55UTC. FULL-RICH gets278; BASE-CONTRACT does not claim it. Main owns state-first deallocation. This worker retires after publication: no rerun, scale or fit.
 
 **OBSERVATION:** Both frozen LoRA-disabled BASE and installed original37ec can produce truthful first-person150–400token text under unchanged rich prompts. Author content gate4/8BASEvs2/8ORIGINAL; initial4vs1, records0/7vs1/6 (task-denominator0/8vs1/8); paired2BASE-only/0ORIGINAL-only/2both/4neither. Fully post-mounted-hash-backed passes3BASE and2ORIGINAL.29unique calls/32cap, no repeats or rewritten targets.
 
 **EVIDENCE AND CONTROL:** Same8exposed MBPP14/17/49/62 and GSM8K1649/5724/3590/2554, frozenFREEZE56812ce; original rich roles/budgets/checkers; all8ORIGINAL initial raw hashes exactly replay original receipts.40/40CPU,29/29prompt/token/safe-checker replays. Author read29fulltexts (10semanticPASS17FAIL2UNRESOLVED); not Fable independent review. FINAL_REDUCTION38e47ced9256aef1fd08811fc8ae66e855b489e29f23e4f452f0be6305c14c23; capsule46a097e39bca9174adc96c86d355a17db5cad63deed5771089159e2fd3fea5de,206013bytes/201files, local/remote checksum agreement. Report research_notes/analysis/orch_base_contract_20260914_attempt1/REPORT.md; reader path /localhome/local-rohing/orch_base_contract_20260914_attempt1/recovery1/FINAL_REDUCTION.json.
+
+| Fixed metric | BASE | ORIGINAL37ec |
+|---|---:|---:|
+| Diagnostic task denominator |8|8|
+| Initial checker successes |7/8|6/8|
+| Unambiguous initial successes, fixed denominator |6/8|6/8|
+| Initial content-gate passes |4/8|1/8|
+| Own-record content passes / attempted records |0/7|1/6|
+| Own-record content passes / all tasks |0/8|1/8|
+| Tasks with any content pass |4/8|2/8|
+| Content-passing tasks with complete post-mounted proof |3/8|2/8|
+| CODE content-passing tasks |1/4|0/4|
+| MATH content-passing tasks |3/4|2/4|
+| Unique native calls |15|14|
+| Median generated tokens, excluding EOS |231|123.5|
+
+Paired content counts:2BASE-only,0ORIGINAL-only,2both,4neither. Content passes are not certified training admissions;11initial calls retain their historical posthash gap.
 
 **CURRENT INTERPRETATION:** +2content tasks misses frozen>=3suppression criterion. Longer BASE responses (median231vs123.5tokens) do not imply adequate own-record yield. BASE also emits bare7token min action and violates final-JSON on CODE49. No new base, fit, learning/generalization or original-screen promotion.
 
