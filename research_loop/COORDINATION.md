@@ -20771,3 +20771,53 @@ No model loaded. Release node2GPU4 train→freshS2readout at
 /tmp/astra_cue_sleep2_20260914_attempt1; disjointGPU5freshS1no-write readout
 at samecampaignroot/readout_sleep1. GuardianPIDs follow. Resource/CVD/lease
 guards run independently; all earliercollections/fitroots remain unchanged.
+## [Builder] SEQ-224 — 2026-09-14T09:49Z — first same-adapter two-sleep DEV result
+
+Source4f68de78, node2GPU4, /tmp/astra_cue_sleep2_20260914_attempt1.
+200updates complete09:43:51UTC; freshS2readout complete09:45:40UTC;
+controller exits09:45:41UTC. FinaladapterSHA6ca6b6a300d5b19816eef1e50a03e78e6eb212f699a746d001332e1eae6f21ff.
+400originalmemory+400owncuepresentations,24480supervisedtokens,
+one existing rank8adapter continued; baseunchanged, sourceS1fileunchanged.
+
+S1no-write→S2: oldrecallW0 4/4→4/4, W8 4/4→4/4; ownparametricgoal3/4→4/4,
+READuptake0/4→4/4, with2conditional secondREADs. ReaderadapterOFF3/4→2/4;
+S2 stillreads4/4 andtakessecondREADall4, so thisintervention is now exercised.
+Newheldexternaltext banks2/4+2/4→4/4+4/4, including4conditionalsecondREADs.
+UnseenMISS0/4→0/4: unknown-address rejection remainsbroken, NOT repaired.
+AllprospectiveDEVcandidate signals pass. S1has28calls,S2has68calls.
+Independentrawreduction/preservation assigned to freshGoodall; pending review.
+
+[Builder -> Rohin] We now have the small connection: the SAME adapter retains
+its earlier experienced memories and, after sleeping on its own coached action
+trajectories, consults those memories and reads again on mismatch WITHOUT the
+teacher. It also does this on new externallysuppliedtext memories. That is
+stronger than separately learning memory and controller skills. It is still
+one tiny learner/taskfamily; no improving-adult-learning-rate or generalflywheel
+claim, and the existing unknown-address hallucination remains. I am checking
+whether cue gradients, rather than extra replay/updates alone, cause the new
+policy, plus its sensitivity to optimizerseed. This is the next missing evidence,
+not another round of latent-hop plumbing.
+
+[Builder] Prospective followups: reuseprimary CUE_REPLAY seed0 (no rerun),
+add CUE_REPLAY seeds1/2 and CUE_LOSS_OFF seeds0/1/2 from the EXACT SAME savedS1.
+All share20actualcue rows, original32memoryrows,200batch4/indexes/inputs/padding,
+400memoryreplaypresentations andheldreadouts. CUE_LOSS_OFF masks ONLY finaltwo
+cue rows perbatch; normalize remainingmemory loss by originalfulltargetcount
+so memory gradients are notupweighted. Cue supervision withheld intentionally;
+record active/originallabels andscale. Thus matchedinputs/update/replaydose,
+not matchedactivecue-targetcount (theintervention), nor a fullyunparentedlife.
+Optimizerseeds shareoneinitialmemorylearner/twocuebanks; notindependentworld
+replications. Exactsamecriteria, noheldreadoutfeedbacktochild, no furtherdose.
+Forecast ~6minutes/fit+readout fromprimary355seconds; eachcontroller cap3600s.
+Allocate5free node2GPUs afterphysical/CVD guards; no otherPIDkilled.
+Implementation/CPUtests pending beforelaunch. Fullmissionremainsincomplete.
+[Builder] 2026-09-14T09:52Z cue-loss followup implementation ready:
+72focusedCPUtests pass; defaultCUE_REPLAYseed0 retains original numericrecipe.
+Newarm masksfinal2rows only; scalesHFmeanloss by active/originalcausallabels.
+Exact200updates/indexes/inputs/padding/replaydose unchanged. Preserveprimary
+4f68de78 evidence; newsource includes explicitarm/seed/countmetadata and
+backwardcompatible readoutchecks. BotharmsactualMASKSpreflight next, then
+CUE_REPLAYseed1/GPU0,seed2/GPU1; CUE_LOSS_OFFseed0/GPU2,seed1/GPU3,seed2/GPU6
+onnode2. Freshcampaignroot/tmp/astra_cue_sensitivity_20260914_attempt1;
+eachtrain→freshS2readout controller3600smaximum, no baseline reruns.
+Priorprimary355s suggests~0.5aggregateA40h for5, not a guarantee.

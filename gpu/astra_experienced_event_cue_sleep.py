@@ -17,7 +17,47 @@ from organism_v6 import experienced_event_read_route as controller
 SCHEMA = 'DEV_SAME_ADAPTER_CUE_SECOND_SLEEP_V1'
 HELD_MASTER = 'ASTRA-CUE-SECOND-SLEEP-HELD-20260914-A1'
 UPDATES = 200
+TRAINING_ARMS = ('CUE_REPLAY', 'CUE_LOSS_OFF')
+TRAIN_SEEDS = (0, 1, 2)
 require = source.require
+
+
+def validate_training_choice(training_arm, train_seed):
+    require(training_arm in TRAINING_ARMS, 'known_training_arm_required')
+    require(type(train_seed) is int and train_seed in TRAIN_SEEDS, 'known_train_seed_required')
+
+
+def recorded_training_choice(result):
+    training_arm = result.get('training_arm', 'CUE_REPLAY')
+    train_seed = result.get('train_seed', 0)
+    validate_training_choice(training_arm, train_seed)
+    arguments = result.get('arguments', {})
+    require(arguments.get('training_arm', training_arm) == training_arm
+            and type(arguments.get('train_seed', train_seed)) is int
+            and arguments.get('train_seed', train_seed) == train_seed, 'recorded_training_choice_mismatch')
+    return training_arm, train_seed
+
+
+def training_batch(encoded, update, cue_count, pad_id, training_arm='CUE_REPLAY'):
+    validate_training_choice(training_arm, 0)
+    indexes = material.mixed_indexes(update, cue_count)
+    batch = source.native.collate([encoded[index] for index in indexes], pad_id=pad_id)
+    if training_arm == 'CUE_LOSS_OFF':
+        batch['labels'][2:] = [[-100] * len(labels) for labels in batch['labels'][2:]]
+    return indexes, batch
+
+
+def supervised_token_count(batch):
+    return sum(label != -100 for labels in batch['labels'] for label in labels)
+
+
+def loss_normalization(encoded, indexes, batch):
+    require(all(encoded[index].labels[0] == -100 for index in indexes)
+            and all(labels[0] == -100 for labels in batch['labels']), 'first_causal_label_must_be_masked')
+    original = sum(label != -100 for index in indexes for label in encoded[index].labels[1:])
+    active = sum(label != -100 for labels in batch['labels'] for label in labels[1:])
+    require(0 < active <= original, 'positive_matched_loss_denominator_required')
+    return original, active, active / original
 
 
 def validate_base_sources(expected, *receipts):
@@ -45,49 +85,64 @@ def enable_existing_adapter(engine):
     return selected
 
 
-def train(engine, memory_rows, cue_rows, output):
+def train(engine, memory_rows, cue_rows, output, *, training_arm='CUE_REPLAY', train_seed=0):
     from organism_v6.pcfl_vertical_train import _state_hash
 
+    validate_training_choice(training_arm, train_seed)
     torch = engine.torch
     encoded = source.encode_rows(memory_rows, engine.tokenizer) + material.encode_cue_rows(cue_rows, engine.tokenizer)
     parameters = enable_existing_adapter(engine)
     before = _state_hash(parameters)
     optimizer = torch.optim.AdamW(list(parameters.values()), lr=3e-5, **source.native.OPTIMIZER)
-    torch.manual_seed(source.SEED)
+    torch.manual_seed(train_seed)
     engine.model.train()
     supervised_tokens = 0
+    original_supervised_tokens = 0
     with (output / 'LOSSES.jsonl').open('x') as stream:
         for update in range(1, UPDATES + 1):
             engine.check('second_sleep_update')
-            indexes = material.mixed_indexes(update, len(cue_rows))
-            batch = source.native.collate([encoded[index] for index in indexes],
-                                          pad_id=engine.tokenizer.pad_token_id)
+            indexes, batch = training_batch(encoded, update, len(cue_rows),
+                                           engine.tokenizer.pad_token_id, training_arm)
+            original_count, active_count, loss_scale = loss_normalization(encoded, indexes, batch)
             tensors = {name: torch.tensor(value, dtype=torch.long, device=engine.device)
                        for name, value in batch.items()}
             optimizer.zero_grad(set_to_none=True)
             with torch.autocast(device_type='cuda', dtype=torch.bfloat16):
                 loss = engine.model(**tensors, use_cache=False).loss
+                if training_arm == 'CUE_LOSS_OFF':
+                    loss = loss * loss_scale
             require(bool(torch.isfinite(loss)) and loss.requires_grad, 'invalid_second_sleep_loss')
             loss.backward()
             require(all(parameter.grad is not None and bool(torch.isfinite(parameter.grad).all())
                         for parameter in parameters.values()), 'invalid_second_sleep_gradient')
             optimizer.step()
-            supervised_tokens += sum(len(encoded[index].target_ids) for index in indexes)
-            stream.write(source.json.dumps(dict(update=update, loss=loss.item(), row_indexes=indexes)) + '\n')
+            supervised_tokens += active_count
+            original_supervised_tokens += original_count
+            stream.write(source.json.dumps(dict(update=update, loss=loss.item(), row_indexes=indexes,
+                original_label_count=original_count, active_label_count=active_count, loss_scale=loss_scale)) + '\n')
             stream.flush()
     require(all(bool(torch.isfinite(parameter).all()) for parameter in parameters.values()), 'nonfinite_adapter')
     after = _state_hash(parameters)
     require(after != before, 'no_parameter_update')
     engine.model.save_pretrained(output / 'adapter', safe_serialization=True, save_embedding_layers=False)
     return dict(updates=UPDATES, memory_presentations=400, cue_presentations=400,
-        supervised_tokens=supervised_tokens, adapter_state_before=before, adapter_state_after=after,
+        training_arm=training_arm, train_seed=train_seed, cue_forward_presentations=400,
+        cue_supervised_presentations=400 if training_arm == 'CUE_REPLAY' else 0,
+        supervised_tokens=supervised_tokens, actual_supervised_tokens=supervised_tokens,
+        original_supervised_tokens=original_supervised_tokens,
+        loss_normalization='ORIGINAL_UNMASKED_BATCH_CAUSAL_LABEL_COUNT',
+        adapter_state_before=before, adapter_state_after=after,
         optimizer='FRESH_ADAMW_NOT_PREVIOUS_OPTIMIZER_RESUME', learning_rate=3e-5,
         adapter_files={path.name: source.file_hash(path) for path in (output / 'adapter').iterdir() if path.is_file()})
 
 
-def check_second_sleep(adapter_dir, memory_source, cue_source):
+def check_second_sleep(adapter_dir, memory_source, cue_source, *, training_arm=None, train_seed=None):
     adapter = Path(adapter_dir)
     result = source.read(adapter.parent / 'RESULT.json')
+    recorded_arm, recorded_seed = recorded_training_choice(result)
+    require((training_arm is None or training_arm == recorded_arm)
+            and (train_seed is None or type(train_seed) is int and train_seed == recorded_seed),
+            'requested_training_choice_mismatch')
     require(result.get('schema') == SCHEMA and result.get('status') == 'COMPLETE'
             and result.get('phase') == 'train' and result.get('updates') == UPDATES
             and result.get('frozen_base_unchanged') is True
@@ -177,6 +232,8 @@ def main(argv=None):
         parser.add_argument('--' + name, required=True)
     parser.add_argument('--state', choices=('SLEEP1', 'SLEEP2'), default='SLEEP1')
     parser.add_argument('--device', default='cuda:0')
+    parser.add_argument('--training-arm', choices=TRAINING_ARMS, default='CUE_REPLAY')
+    parser.add_argument('--train-seed', type=int, choices=TRAIN_SEEDS, default=0)
     args = parser.parse_args(argv)
     require(args.phase == 'readout' or args.state == 'SLEEP1', 'train_from_selected_sleep1_only')
     require(os.environ.get('HF_HUB_OFFLINE') == '1' and os.environ.get('TRANSFORMERS_OFFLINE') == '1', 'offline_required')
@@ -187,6 +244,7 @@ def main(argv=None):
     started = time.time()
     allowed_seconds = stage_seconds(args.phase)
     result = dict(schema=SCHEMA, phase=args.phase, state=args.state, arguments=vars(args).copy(),
+        training_arm=args.training_arm, train_seed=args.train_seed,
         started_unix=started, held_master=HELD_MASTER, claim='SINGLE_SEED_DEV_SECOND_SLEEP_NOT_PARENTING_OR_H1_H2',
         runner_sha256=source.file_hash(__file__), source_sha256=source.file_hash(material.__file__))
     source.write(output / 'REQUEST.json', result)
@@ -199,7 +257,8 @@ def main(argv=None):
         cue_rows, cue_provenance = material.load_cue_rows(args.cue_collection, expected_actor_sha256=access.ADAPTER_SHA256)
         result.update(memory_source=provenance, cue_source=cue_provenance)
         result['initial_artifact_sha256'] = (access.validate_adapter(args.adapter_dir, provenance)
-            if args.state == 'SLEEP1' else check_second_sleep(args.adapter_dir, provenance, cue_provenance))
+            if args.state == 'SLEEP1' else check_second_sleep(args.adapter_dir, provenance, cue_provenance,
+                training_arm=args.training_arm, train_seed=args.train_seed))
         validate_base_sources(args.expected_base_sha256,
             source.read(Path(args.cue_collection) / 'RESULT.json'),
             source.read(Path(args.collection) / 'RESULT.json'),
@@ -231,7 +290,8 @@ def main(argv=None):
         if args.state == 'SLEEP1':
             require(result['loaded_adapter_state_sha256'] == 'c08852cb6eb2c8bfa106cf2b7976fc5a2ba5f4cb06d79d53a3a3ac7222b865db',
                     'selected_initial_adapter_state_required')
-        result.update(train(engine, memory_rows, cue_rows, output) if phase == 'train'
+        result.update(train(engine, memory_rows, cue_rows, output,
+                            training_arm=args.training_arm, train_seed=args.train_seed) if phase == 'train'
                       else evaluate(engine, bank, episodes, output))
         engine.verify_base()
         if phase == 'readout':
