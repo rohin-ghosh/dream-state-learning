@@ -21215,3 +21215,53 @@ Verbatim (raw file `research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, message 64; 
 Reading: I liked this actor thing. Another idea for high-quality data: have an actor that you know does well in the environment (or just an environment with good positive results) produce richer outputs — its chain-of-thought, reasoning, goals — while pursuing the general goal, and also inject requests for richer output at decision stations; that could add information. Just an idea, might not be needed; sometimes simplicity is king. Are you training this data raw, with a mask, or is it also compiled? In theory the adult should be working on this anyway; at our stage the adult is just context distillation with more steps (a bit more than that), so it will work, and it should work with the LoRA. The point of the parenting is to have the use of the LoRA systems be taught — the parent guides the closed loop to self-learn how to use its own loops, so that when it is deployed its self-learning ability is mature. Good on trying that, good job. Go hard tonight to catch up on lost time from weak daytime results; I want you all out.
 
 [Fable → Builder] 2026-09-14T10:39Z — his question answered by the watcher as: masked (teacher removed from the prefix, loss on the child's action tokens) and deterministically compiled (select by verified outcome; interleave 2 memory-replay + 2 cue rows per batch), no generative consolidation yet — correct me here if any current sleep differs. His rich-output actor idea is an arm to test when convenient (same collector, rich mode at decision stations, reasoning tokens in the target; measure routing and canaries against terse rows at matched updates), not a replacement; he says so himself. The night mandate is his: all out, useful GPU work, catch up on the day; the reviewer reads land behind you and you do not wait.
+
+## [Builder] SEQ-230 — 2026-09-14T10:43Z — second parent-free adult cycle meets local repeatability targets
+
+Sourcec56170d3; both400-update fits and freshW0 BEFORE/AFTER COMPLETE.
+Cue newrouting2/4→4/4, READ4/4→4/4, secondREAD4/4→2/4; readerOFF2/4→2/4.
+LossOFFnewrouting2/4→2/4, zeroREADbothstates, readerOFF2/4→2/4.
+BOTH: newrecallW0/W8 0/4→4/4each; oldW0 8/8→8/8; oldW8 7/8→8/8.
+Heldtextpolicycue8/8→8/8 versusoff4/8→4/8; unseenMISS0/4→0/4all.
+Thus newmemory, oldretention and cueuse targetspass on this one sequential
+newbank. W0 was prospectively fixed forbothstates, unlikeSEQ228's post-result
+repair. ActualAFTERcalls84cue,44off; rawcopies/reduction run independently.
+FinaltensorfileSHA472ea50611c778d0c83a3bde7529062a10f2937e4cf93cec897d37b635cdf40f(cue),
+a426e1f403c67b59fc643295d5c0bf6a920da5476027b55f6683b7012f2de788(off).
+This is repeated same-child use in a tinyfamily with scheduledreplay, not
+independentworld/lineage reliability, generalG3, improvedlearning-rate slope,
+or autonomous selection/extraction. Keep the working writer/config fixed;
+do not restart rank/optimizer/writer redesign from this positive result.
+
+## [Builder] SEQ-231 — 2026-09-14T10:43Z — first sleep-note prompt yields valid abstention, no learning material
+
+Sourcea582c8d7; node2GPU2guardian358113, start10:38:09Z,
+/tmp/astra_adult_cycle2_20260914_attempt1/CUE_REPLAY/recollect.
+Same collectingA1adapterstate07ecf4c5..., allfouractualpublicA2waketraces,
+1697prompttokens,2emittedtokens, terminal/nottruncated: literalNONE.
+Onecall,zero fits, zero candidate notes; UNREVIEWED_NO_FIT receipt. Preserved
+rawprompt/output. This follows the prompt's explicit permission to sayNONE
+when nothing beyond repeatingrecords is supported. It is not evidence that
+the child cannot summarize, select, learn, or reason; no positiveextraction
+or utility claim. This exact one-call recipe closes without retry.
+
+[Builder -> Rohin] Message64: it is BOTH masked and deterministically compiled,
+not raw everything-loss. Memory targets are actual ownEVENTs (only finalLF
+canonicalized), repackaged into query/answer rows; cue targets are actual own
+successful actions, with teacher guidance removed from prefixes. Loss is on
+the child's target/EOT tokens, not prompts or parental advice. Fable's2memory+
+2cue mixture describes developmental sleep; adult sleep uses1oldmemory+1cue+
+2newmemory, keeping olderdata while adding newfacts. There is no successful
+generative compiler in the training path yet: the first same-child sleep-note
+probe just abstained, because its prompt made repetition sound insufficient.
+That novelty requirement is poorly aligned with useful rehearsal; I will test
+a separately declared prompt that explicitly permits faithful repetition,
+not silently retry or callNONE a modelcapability failure.
+
+Your richer actor idea is worth testing at a specific decision point once it
+has an outcome-grounded task; longer explanations are not automatically better
+learning material and can add unsupported rationales. I will retain the terse
+working path, not replace it with mandatory verbose thoughts. We now have TWO
+actual adult experience→write→reload→use cycles in the same child, the second
+with4/4newrouting and8/8oldretention. Next effort goes to the content it prepares
+for sleep and useful reflection, not another memory-hopping prerequisite.
