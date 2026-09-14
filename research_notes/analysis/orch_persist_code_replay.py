@@ -26,6 +26,7 @@ def replay(root):
         assert tasks == ledger.build_tasks(count=8)
         assert ledger.digest(tasks) == result['binding']['task_roster_sha256']
         assert hashlib.sha256(Path(ledger.__file__).read_bytes()).hexdigest() == result['binding']['helper_sha256']
+        assert hashlib.sha256(Path(driver.__file__).read_bytes()).hexdigest() == result['binding']['driver_sha256']
         captures = [read(path) for path in sorted(directory.glob('CALL_*.json'))]
         assert [call['id'] for call in captures] == list(range(result['model_calls']))
         assert [call_id for episode in result['episodes'] for call_id in episode['calls']] == list(range(len(captures)))
@@ -62,6 +63,15 @@ def replay(root):
                             raw_result_sha256=hashlib.sha256((directory / 'RESULT.json').read_bytes()).hexdigest(),
                             source_commit=result['binding']['source_commit'],
                             replay='PASS', semantic='NOT_AUTOMATICALLY_ADMITTED')
+        summary[arm]['record_expression_rechecks'] = []
+        for record in codebase.records:
+            try:
+                ledger.validate_expression(record['text'])
+            except (ValueError, SyntaxError):
+                continue
+            summary[arm]['record_expression_rechecks'].append(dict(
+                task_id=record['task_id'], call_id=record['call_id'],
+                outcome=ledger.check_expression(indexed[record['task_id']], record['text'])))
     summary['rich_minus_terse_tasks'] = summary['RICH']['successes'] - summary['TERSE']['successes']
     return summary
 

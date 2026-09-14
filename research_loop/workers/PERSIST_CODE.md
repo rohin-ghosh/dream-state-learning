@@ -152,3 +152,25 @@ screen. RICH7calls/1completed episode, no failure receipt, continues within
 original cap. TERSE raw and RESULT already mirrored in early_snapshot.
 No content admission or partial rich-vs-terse conclusion. Full terminal
 comparison will request Main's ordered SEQ; no pre-reservation.
+
+## 2026-09-14T22:23:04Z — TERMINAL, SEQ REQUEST, both slots deallocated
+
+MAIN: full comparison ready for next publication-order SEQ. RICH0/8 versus
+TERSE2/8 and fixed reference0/8; own native40/35calls; both frozen37ec states
+unchanged, zero fits/updates. CPU receipt replayPASS both. No RICH outcome
+eligible episode, zero admitted rows. Prospective rich>terse gate FAILS;
+deallocated, not disproven. No repeat/scale/fit planned. A1004/5 release-CVD
+bothPASS, guards exit0; four owned PIDs absent and physicalGPU4/5 clear at
+22:23:03Z. Main can reclaim both slots immediately; no kill/lease change.
+
+Report `research_notes/analysis/orch_persist_code_result.md`; exact terminal
+capsule33a9421ce15d494d1b3b792a01ea1ad9dd988ae98db9c73aec3c9e43f3c44940;
+local attempt2/REDUCTION.json and POSTHOC_ALIAS_DIAGNOSTIC.json. Guard-inclusive
+cost0.2186GPUh, plus0.0275 failed-attempt overhead =0.2461GPUh. Rich12,831
+generated tokens versus976; equal ceilings did not mean equal realized cost.
+
+Strongest record finding: TERSE task6 successful repair16/16, then own lesson
+CALL029 inserts an unsupported filter and returns12 rather than27 on its own
+task input[-5,-4,-3]. Provenance/task success alone cannot admit a lesson.
+Full-text diagnostic first/last16RICH turns read, no keyword scoring; remaining
+24 explicitlyUNREVIEWED and all excluded by outcome. L2/L3 remain unmined.

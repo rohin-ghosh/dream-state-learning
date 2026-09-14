@@ -1,0 +1,251 @@
+{
+  "arms": {
+    "RICH": {
+      "changed_calls": 3,
+      "counterfactual_success_tasks": [
+        "ledger_000"
+      ],
+      "rows": [
+        {
+          "call_id": 0,
+          "counterfactual_expression": "sum(affine(ge(values, -4), -2, -5))",
+          "counterfactual_outcome": {
+            "passed": 16,
+            "success": true,
+            "total": 16
+          },
+          "original_expression": "sum(affine(ge(xs, -4), -2, -5))",
+          "original_outcome": {
+            "error": "ValueError: unknown identifier",
+            "expected": 0,
+            "input": [],
+            "passed": 0,
+            "success": false,
+            "total": 16
+          },
+          "raw_call_sha256": "679297efa9e44aaff3a9115115c8805c5b70ba15572bb06950d0d297a255c198",
+          "task_id": "ledger_000"
+        },
+        {
+          "call_id": 2,
+          "counterfactual_expression": "sum(affine(ge(values, -4), -2, -5))",
+          "counterfactual_outcome": {
+            "passed": 16,
+            "success": true,
+            "total": 16
+          },
+          "original_expression": "sum(affine(ge(xs, -4), -2, -5))",
+          "original_outcome": {
+            "error": "ValueError: unknown identifier",
+            "expected": 0,
+            "input": [],
+            "passed": 0,
+            "success": false,
+            "total": 16
+          },
+          "raw_call_sha256": "e3d84798b18674fb6f9276796ad3ea3a346253e16799bb848d13a8ac863980ec",
+          "task_id": "ledger_000"
+        },
+        {
+          "call_id": 4,
+          "counterfactual_expression": "sum(affine(ge(values, -4), -2, -5))",
+          "counterfactual_outcome": {
+            "passed": 16,
+            "success": true,
+            "total": 16
+          },
+          "original_expression": "sum(affine(ge(xs, -4), -2, -5))",
+          "original_outcome": {
+            "error": "ValueError: unknown identifier",
+            "expected": 0,
+            "input": [],
+            "passed": 0,
+            "success": false,
+            "total": 16
+          },
+          "raw_call_sha256": "2a5d4c6a9621b99305cd01b7687728f6b48149685e4e6c05558abb9d0c6f8edf",
+          "task_id": "ledger_000"
+        }
+      ]
+    },
+    "TERSE": {
+      "changed_calls": 8,
+      "counterfactual_success_tasks": [
+        "ledger_002",
+        "ledger_003"
+      ],
+      "rows": [
+        {
+          "call_id": 5,
+          "counterfactual_expression": "sum(unique(clip(affine(map(lambda x: 3 * x + 0, values), -4, 4))))",
+          "counterfactual_outcome": {
+            "error": "ValueError: helper arity mismatch",
+            "expected": 0,
+            "input": [],
+            "passed": 0,
+            "success": false,
+            "total": 16
+          },
+          "original_expression": "sum(unique(clip(affine(map(lambda x: 3*x+(0), xs), -4, 4))))",
+          "original_outcome": {
+            "error": "ValueError: helper arity mismatch",
+            "expected": 0,
+            "input": [],
+            "passed": 0,
+            "success": false,
+            "total": 16
+          },
+          "raw_call_sha256": "92f2405908b5ac1d01d3f2bb75ab83f42a111a7c3da851338f38d0b15b019b5e",
+          "task_id": "ledger_001"
+        },
+        {
+          "call_id": 6,
+          "counterfactual_expression": "sum(unique(clip(map(lambda x: 3 * x + 0, values), -4, 4)))",
+          "counterfactual_outcome": {
+            "error": "ValueError: only ledger helper calls",
+            "expected": 0,
+            "input": [],
+            "passed": 0,
+            "success": false,
+            "total": 16
+          },
+          "original_expression": "sum(unique(clip(map(lambda x: 3*x+(0), xs), -4, 4)))",
+          "original_outcome": {
+            "error": "ValueError: only ledger helper calls",
+            "expected": 0,
+            "input": [],
+            "passed": 0,
+            "success": false,
+            "total": 16
+          },
+          "raw_call_sha256": "ca580594cba6d15a03fcdfd9045f9d7dc0a6937ab335ca21ebffb890b9bc3b3b",
+          "task_id": "ledger_001"
+        },
+        {
+          "call_id": 10,
+          "counterfactual_expression": "sum(affine(unique(ge(values, 2)), -3, 5))",
+          "counterfactual_outcome": {
+            "passed": 16,
+            "success": true,
+            "total": 16
+          },
+          "original_expression": "sum(affine(unique(ge(xs, 2)), -3, 5))",
+          "original_outcome": {
+            "error": "ValueError: unknown identifier",
+            "expected": 0,
+            "input": [],
+            "passed": 0,
+            "success": false,
+            "total": 16
+          },
+          "raw_call_sha256": "a0c7a13260dc7f9b29603a78e558738167c12febed7cdf6df41180090ac1cc5d",
+          "task_id": "ledger_002"
+        },
+        {
+          "call_id": 15,
+          "counterfactual_expression": "len(ge(affine(clip(values, -3, 6), 2, -1), -4))",
+          "counterfactual_outcome": {
+            "passed": 16,
+            "success": true,
+            "total": 16
+          },
+          "original_expression": "len(ge(affine(clip(xs, -3, 6), 2, -1), -4))",
+          "original_outcome": {
+            "error": "ValueError: unknown identifier",
+            "expected": 0,
+            "input": [],
+            "passed": 0,
+            "success": false,
+            "total": 16
+          },
+          "raw_call_sha256": "1eb3d5ee9c30842b8fbc624ea010918b0a10be840d04b2bf3e403b40756aaf78",
+          "task_id": "ledger_003"
+        },
+        {
+          "call_id": 16,
+          "counterfactual_expression": "len(ge(affine(clip(values, -3, 6), 2, -1), -4))",
+          "counterfactual_outcome": {
+            "passed": 16,
+            "success": true,
+            "total": 16
+          },
+          "original_expression": "len(ge(affine(clip(xs, -3, 6), 2, -1), -4))",
+          "original_outcome": {
+            "error": "ValueError: unknown identifier",
+            "expected": 0,
+            "input": [],
+            "passed": 0,
+            "success": false,
+            "total": 16
+          },
+          "raw_call_sha256": "57138d007b8eca236c227edac7db1bb597101dcf66741b0322bfa2571ab6b81f",
+          "task_id": "ledger_003"
+        },
+        {
+          "call_id": 17,
+          "counterfactual_expression": "len(ge(affine(clip(values, -3, 6), 2, -1), -4))",
+          "counterfactual_outcome": {
+            "passed": 16,
+            "success": true,
+            "total": 16
+          },
+          "original_expression": "len(ge(affine(clip(xs, -3, 6), 2, -1), -4))",
+          "original_outcome": {
+            "error": "ValueError: unknown identifier",
+            "expected": 0,
+            "input": [],
+            "passed": 0,
+            "success": false,
+            "total": 16
+          },
+          "raw_call_sha256": "cb203848e50a93d8d95382fc9a91b8f5218d79f2ef8e7074ee8c3456554b8bc2",
+          "task_id": "ledger_003"
+        },
+        {
+          "call_id": 18,
+          "counterfactual_expression": "len(ge(affine(clip(values, -3, 6), 2, -1), -4))",
+          "counterfactual_outcome": {
+            "passed": 16,
+            "success": true,
+            "total": 16
+          },
+          "original_expression": "len(ge(affine(clip(xs, -3, 6), 2, -1), -4))",
+          "original_outcome": {
+            "error": "ValueError: unknown identifier",
+            "expected": 0,
+            "input": [],
+            "passed": 0,
+            "success": false,
+            "total": 16
+          },
+          "raw_call_sha256": "0fbeba0f218f073942d16e6c0ed7df74daa8fb4f02c612722e9517a98cc046bc",
+          "task_id": "ledger_003"
+        },
+        {
+          "call_id": 19,
+          "counterfactual_expression": "len(ge(affine(clip(values, -3, 6), 2, -1), -4))",
+          "counterfactual_outcome": {
+            "passed": 16,
+            "success": true,
+            "total": 16
+          },
+          "original_expression": "len(ge(affine(clip(xs, -3, 6), 2, -1), -4))",
+          "original_outcome": {
+            "error": "ValueError: unknown identifier",
+            "expected": 0,
+            "input": [],
+            "passed": 0,
+            "success": false,
+            "total": 16
+          },
+          "raw_call_sha256": "e18452617cbca14909286a0e3a7451fa11c64eb42ec1121569ac56f048cb63f1",
+          "task_id": "ledger_003"
+        }
+      ]
+    }
+  },
+  "claim": "COUNTERFACTUAL_INTERFACE_DIAGNOSTIC_NOT_EXECUTED_SUCCESS",
+  "native_calls": 0,
+  "posthoc": true,
+  "training_allowed": false
+}
