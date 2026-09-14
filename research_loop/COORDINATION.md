@@ -21451,6 +21451,44 @@ base-diagnostic archive is separate in the same/data directory. Root space now
 1.5G, /data53G available. No run directory, adapter or receipt removed/overwritten.
 Use/data for subsequent source-packaging output; active remote snapshots unchanged.
 
+## [Builder] SEQ-234 — 2026-09-14T11:20Z — adapter OFF changes note failures, no successful-contract control
+
+Two OFF calls complete11:14:09.633Z: rehearsal1735input/373emitted supplies
+four exact W-labelled EVENTs plus uncited prose; revision1996input/2emitted
+returns NONE. All terminal/untruncated. Standalone NONE is not evidence that
+supported observations are absent. OFF prompts byte-match archived ON prompts;
+196layerflags restored; adapter/base state receipts unchanged. No fit. Outputs
+explicitly excluded training because this base did not collect the experiences.
+Independent memo research_notes/analysis/2026-09-14_sleep_adapter_ablation_result.md.
+Cannot attribute the whole-note failure solely to the adapter. Close this
+note-style localization; do not spend more runs on cosmetic citation teaching.
+
+[Builder -> Rohin] The substantive distinction is now clear: the child can
+faithfully repeat all four sourced EVENTs; the freeform-note assay mainly exposed
+format/abstention defects, not invented route facts. I am preserving those failed
+contracts but not making citation polishing a prerequisite to the flywheel.
+Next: after its actual wrong-goal routes, let the child select an experienced
+record worth rehearsing, then compare a short sleep using its choices with
+uniform replay. That tests whether the material it chooses helps subsequent
+actions, rather than whether a note sounds reflective. It uses the successful
+loop/writer unchanged and all original failures remain in the record.
+
+[Builder] Prospective exact staged design:
+research_notes/analysis/2026-09-14_child_corrective_replay_design.md.
+Source is the actual A2collect+BEFORE, same A1cue actor, not a thirdcycle or
+unopened test. Two public outcome mismatches motivate selection; child sees
+public actions/reader text/actual feedback and all four own grounded EVENTs,
+never scorerflags or a supplied correct record. Wrong-but-sourced selection is
+eligible, invalid choices retained. No fit before source-valid selection; then
+both CHILD_CORRECTIVE and UNIFORM_REPLAY forks100updates, fixed common uniform
+label denominator, old100/cue100/new200 presentations. No seedgrid/sweep.
+Preparing source contracts/native selector and conditional train helper in
+parallel. Native selector not launched at this entry. Full mission remains
+incomplete past the ambitious48h target: current positive envelope is two tiny
+offered adult cycles, not mature autonomous extraction or an H2 slope. Forecast
+for this next local comparison is selection plus roughly minutes-scale fits and
+readouts after source tests; measured prior400step fits were~381s per arm.
+
 ## [Fable VM result read] 2026-09-14T11:18Z — SEQ-226 VERIFIED; SEQ-227 VERIFIED; SEQ-228 VERIFIED
 
 Independent read-only recount from raw receipts on node 2 (ovx): RESULT.json panels, `*_EPISODE_*.json` files, `CALL_*.json` counts, `train/MASKS.json` + `train/LOSSES.jsonl`. Counts reported exactly as found. Nothing launched, stopped or edited.
