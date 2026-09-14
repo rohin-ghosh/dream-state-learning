@@ -1,8 +1,8 @@
 # Research state — Orchestrator
 
-Updated 2026-09-14 22:57 UTC. Mission ACTIVE / INCOMPLETE. Wave W2/W3.
+Updated 2026-09-14 23:04 UTC. Mission ACTIVE / INCOMPLETE. Wave W2/W3.
 Authoritative steering: Rohin's current launch instruction and raw messages
-42–78 (78 read22:28UTC); next full raw-message reread by23:50UTC.
+42–79 (79 read22:57UTC); next full raw-message reread by23:50UTC.
 Check notebook updates every orchestration cycle, not just every two hours.
 
 ## Objective and authority
@@ -19,8 +19,10 @@ plus AGENTS.md standing authorization and ASTRA_LAUNCH_PROMPT §15. W1 changes
 experimental implementation, not base model, invariants or paper claims.
 No material architecture intake or human ratification is fabricated. Reserved
 changes use architecture_deliberation.py and architecture_intake.py before
-implementation. New L2/L3 test-family admission, paper claims, extra fleet
-spend and thesis-overturning interpretations go to Rohin; other work continues.
+implementation. Message79 delegates L2/L3 family designation to Main, preserving
+separation. Paper claims, extra fleet spend and thesis-overturning interpretations
+still go to Rohin; other work continues. Historical family-approval holds below
+are superseded by the23:04registry, not silently deleted.
 
 ## Established observations (inherited, not re-derived here)
 
@@ -581,6 +583,44 @@ criterion; actual corpus may fail qualification. This changes smallest
 bottleneck from zero viable record recipe to audited scalable targets followed
 by held uncoached learning. Independent semantic audit and actual learning
 controls now matter more than further narration-prompt optimization.
+
+## 23:04 UTC message79 applied, family registry and measured utilization
+
+Raw79 preserved verbatim36a0a2db, read first cycle after arrival22:57UTC.
+Main now designates L2/L3 families without per-family human permission.
+Separation, quality, held invisibility, candidate gates and all other scientific
+invariants remain. This is direct human delegation, not inferred model consensus.
+Exact registry: `research_notes/analysis/orch_family_registry_20260914.md`.
+Admit route within-family diagnostic, structured-text ledger and congruence-join
+L2 design scopes; reserve dependency-build graphs and linear recurrence for
+heldL3 qualification. They are not certified hardest merely by their names.
+Expand toward dozens of substantively different high-quality families;
+60–120 is a scale horizon, not an achieved inventory or count of renamed IDs.
+
+The route candidate is already ceiling32/32 on273; a repeated same-difficulty
+loop cannot establish positive slope at that ceiling. The bridge must measure
+new-task learning opportunity, not claim progress from repeated perfect scores.
+Family designation removes a permission hold, not this experimental-design
+question or a qualification gate. CPU/native loading integration proceeds now.
+
+Live read-only nvidia-smi snapshot22:59:12–14UTC: node2 no model-residentGPU;
+node3 all1MiB/no model-residentGPU; A1004–7 resident15981–16109MiB,
+utilization1/7/3/7percent. Thus4/24eligibleGPUs resident (16.7%), NOT saturation;
+node1's8excluded from campaign and receives no new work. Allocated slots do
+not equal busy compute. Earlier six-lane launches are historical, not current
+occupancy. Main ran only read-only monitoring commands, no experiment cell.
+New1024-task math collection and fits are being prepared; finished screens
+released their devices. Continue avoiding serial admission and gratuitous
+reruns, while improving sustained useful work, not occupancy theater.
+
+Old Builder is assigned a substantive disjoint native adapter-loading seam
+under orch_guided_native prefixes. CPU bridge worker keeps orch_guided_bridge;
+StageBinding.adapter supplies path/state_sha256/base_sha256/files, with
+verify_loaded checking actual state and visibility. Old Builder must load
+that explicit prior child for collector AND trainer, fresh readout for new
+child; never quietly37ec. CPU mocked parity/tests only until a separate native
+protocol; no GPU allocation or new framework. Binding worker and native seam
+communicate through Main and frozen public interface, not overlapping edits.
 
 ## Active uncertainties and surprises
 
