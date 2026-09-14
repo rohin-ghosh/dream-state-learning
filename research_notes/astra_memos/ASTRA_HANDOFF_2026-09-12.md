@@ -1,4 +1,31 @@
-# Astra restart handoff — current override September 14, 2026, 14:53 UTC
+# Astra restart handoff — current override September 14, 2026, 15:08 UTC
+
+## LIVE NOW — actual coached trajectories, sleep, fresh AFTER
+
+All earlier live-job details below are superseded. Node2GPU0 guardian393070,
+started15:05:07UTC, `/tmp/astra_event_two_hop_lesson_20260914_attempt1`, source
+`0b495971f8ecb2353162757abbdb938effa4493b`. Nativeprepare and21combinedCPUtestsPASS.
+Collection COMPLETE: both actual six-command coached paths;12source-valid
+responses, actual transitions, parent hints excluded from student training
+prefixes. Training LIVE at35/100updates at15:07:39UTC (finite loss0.001287).
+Fresh AFTER automatically follows successful save; no parent, same turnbound
+four conditions plus16oldfactsW0/W8 and16heldaudit. No learned result yet.
+Inspect `collect/RESULT.json`, `train/{RESULT,FAILED}.json`,
+`train/LOSSES.jsonl`, `after/{RESULT,FAILED}.json`, `run.log`. Never repeat
+the fit on evaluation failure. Guard<=9300seconds; same207ad43eparent.
+
+SEQ248/249 readonly diagnostics are terminal and independently reduced;
+bothall0/4, but249genuineREADs expose goal-node-as-port errors in OWN_TEXT.
+Primary/resultdesign memos `research_notes/analysis/2026-09-14_event_two_hop_*`.
+Receipts in their corresponding gpu_artifacts_local terminal directories,
+SHA4bd6942c(248),270b1e08(249). Reducer/tests released by Kant; no review gate.
+Schrodinger helper/tests released. Parfit01a0a06f-7ecb-7650-a20c-0ef627e24f36
+owns only future independent trajectory-result memo, awaiting capsule. Carson
+01a09e1f-9b92-7233-9c25-fd6e735652b0 owns six writing files updating through249.
+Do not overwrite his edits. Main owns execution/native/state. Prior unrelated
+dirty files remain preserved. Mission ACTIVE/INCOMPLETE; no H1/H2 claim.
+
+## Earlier snapshots, retained only as history
 
 ## CURRENT — clarified turn-boundary readonly diagnostic LIVE
 

@@ -33,7 +33,11 @@ root, source, calls and launch receipts copied and extracted successfully:
 `gpu_artifacts_local/astra_event_two_hop_terminal_20260914_attempt1/extracted`.
 Local/remote archive SHA256:
 `8e1cf0c9b7c42f1e4f57f4924cd3561c09308d3097ec2ee547629e17b4ee46c4`.
-Independent CPU replay/reduction is pending with Kant; do not call it complete.
+Independent CPU replay/reduction COMPLETE with Kant: captured-source replay,
+native calls, failure classifications and recorded readonly joins agree.
+Permanent receipt `SEQ248_independent_reduction_20260914.json` beside extracted
+has SHA256 `4bd6942c1441c232e0d07ea1b7d19fd23fa8aec24e3f95464698ebefe7a123d4`.
+The reducer verifies recorded state joins, not a new tensor/base authentication.
 
 Next prospective diagnostic: same parent/world/collected bytes, zero fits,
 explicit single-command-per-turn instruction. Preserve this original failure

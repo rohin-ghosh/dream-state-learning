@@ -33,6 +33,11 @@ post-terminal custody copy of the original collection in `collection_source/`:
 `gpu_artifacts_local/astra_event_two_hop_turnbound_terminal_20260914_attempt1/extracted`.
 Archive local/remote SHA256:
 `80b411ce668b9c2f5db0eadaac0b0ab5a3bedc0a9debcb7166ce491c4ecb61e2`.
-Independent CPU reducer pending. Next recipe is actual coached trajectory
+Independent CPU replay/reduction COMPLETE with Kant: counts, captured-source
+episodes, protocol, native calls, recorded readonly joins and all14 reused
+collection files agree. Permanent receipt `SEQ249_independent_reduction_20260914.json`
+beside extracted has SHA256
+`270b1e08a52371b6a79aa95c16953c741cd63242b806c1e88d54a6a33c535249`.
+This is recorded-state verification, not new tensor authentication. Next recipe is actual coached trajectory
 collection and response-only SFT, not another prompt rewrite or an unchanged
 memory fit that leaves the action-interface failure unaddressed.

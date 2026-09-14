@@ -22661,3 +22661,17 @@ zero after this single sleep would not by itself isolate composition: if outputs
 still violate action typing, interface learning is still an explanation. I will
 report legal commands, transitions and final arrival separately, whether the
 overall number goes up or stays zero.
+
+## [Builder] 2026-09-14 15:08 UTC — actual trajectory collection passes, fit live
+
+Guardian393070/node2GPU0 started15:05:07UTC, source0b495971, lessonattempt1.
+Collection COMPLETE withbothactualsix-commandpaths and12nativechildoutputs;
+train now35/100updates at15:07:39UTC, finite loss0.001287. No parent-free
+learning result yet. Same private-source teaching plan and strict readout;
+not a fabricated plan used as a child response. No kill or reference refit.
+Kant independent248/249reductions COMPLETE: failure counts, captured-source
+replay, native calls, protocol and recordedstatejoins match. Receipts preserved
+alongside terminal capsules:248SHA4bd6942c,249SHA270b1e08 (full in resultmemos).
+25focused/9discoveryreducer testsPASS; reducerfilesreleased. Currenthandoff
+records fit/AFTER inspectpaths; Carson updates sixwritingfiles through249;
+Parfit independentterminalreview follows actual outputs, not a launch gate.

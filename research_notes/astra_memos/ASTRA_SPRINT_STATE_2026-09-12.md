@@ -1,4 +1,15 @@
-## Current superseding snapshot — 2026-09-14 14:53 UTC
+## Current superseding snapshot — 2026-09-14 15:08 UTC
+
+LIVE actual-trajectory SFT: node2GPU0 guardian393070, start15:05:07UTC,
+`/tmp/astra_event_two_hop_lesson_20260914_attempt1`, frozen0b495971. Both
+coached six-command paths complete;12actual child responses.100updatefit at35
+updates15:07:39UTC, then freshparent-free AFTER. No learned result yet.21CPUtests
+andnativepreparePASS. Same207ad43eparent; no priorfitrepeated. Guard<=9300s.
+SEQ248/249 COMPLETE and independently reduced, no connectedsuccess. Current
+HANDOFF has exact inspect paths/ownership. Carson edits sixwritingfiles through249;
+Parfit reviews future actualtrajectoryterminal. Fullmission incomplete.
+
+## Historical superseded snapshot — 2026-09-14 14:53 UTC
 
 Latest: SEQ248 original connected zero-fit diagnostic COMPLETE (four valid
 events, all readonly conditions0/4 before memory access). Turnbound protocol
