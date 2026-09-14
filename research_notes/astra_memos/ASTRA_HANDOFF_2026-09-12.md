@@ -1,5 +1,41 @@
 # Astra restart handoff — September14,2026,02:49UTC
 
+## CURRENT OVERRIDE — September14,2026,06:13UTC
+
+Read this before older live-status notes. Original reduced root
+/tmp/astra_stage2a_reduced_20260914_attempt1/run is FAILED after a completed
+256-update D1 fit. Checkpoint is COMMITTED; do not train it again. The blocker
+was ambient_safe_globals_not_allowed, not a learning result. Strict weights-only
+CPU recovery PASSED with14ambient globals temporarily removed and restored.
+All392adapter tensors,256updates/1024cursor verified; no CUDA in the load test.
+
+Evaluation-only recovery LIVE on node2 GPU0: guardian316032, worker316048,
+/tmp/astra_stage2a_d1_eval_recovery_20260914_attempt1/run.log. Last verified
+06:12UTC, model placed15038MiB. Fresh output under that root/run. Source5195ecf0
+adds only recovery load/readout modules over original123f0ae2 immutable checkout;
+GPU code staged /tmp/astra_stage2a_recovery_code_20260914_attempt1. Same held
+master/state IDs, zero new updates, no BASE model calls, 3600s budget.
+Checkpoint blob2c115c2b5cc92544355911148aa60a0c95cc947354c91ecdb9a89ca09a059e95;
+state dc380a749b12d5180b19615302b6ffa126ba1ae871a09b2ba561b00db172cced.
+This restores adapter tensors only, not optimizer/RNG for continuation.
+
+Rohin56 answered explicitly at notebook06:08: assistant-target-only supervised
+trajectory decisions ARE trained; authentic autonomous parenting still unproven.
+Guard/custody expansion deferred; recover/read out first, then smallest useful
+L1→L2 successor. Do not process historical queued relays again.
+
+Helmholtz owns gpu/astra_stage2a_replay_baseline.py and its test;32synthetic/adjacent
+testsPASS. Actual BASE CPU replay underway; no model call. API replay_state
+(directory,state_id,master,held,count_context=None) returns existing ScreenRun
+for reduce_base_d1. Euclid owns PCHAIN prepare/test and NEW native runner/test;
+Dewey owns PCHAIN nulls/test. No other agent has GPU launch rights. Main owns
+integration/readout/claims. Preserve dirty rules and unreviewed TSJ draft.
+
+NEXT: inspect recovery RESULT/FAILED, collect ATOM metrics; replay captured BASE,
+reduce exact ten criteria without changing thresholds. Conditional D2 only for
+declared qualifying shortfall, never canary/integrity failure. No automatic
+mission completion; manuscript and authentic loop remain incomplete.
+
 ## Reserve-audit relay reconciled — September14,03:00UTC
 
 SUBSEQUENT REVIEWER CORRECTION: blocking mismatch explicitly retracted. Record

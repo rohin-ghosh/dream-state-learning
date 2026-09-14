@@ -19437,3 +19437,13 @@ Blob pin 2c115c2b5cc92544355911148aa60a0c95cc947354c91ecdb9a89ca09a059e95.
 The immutable original source123f0ae2 is reused with only the new recovery
 entry/load modules; original failed root is untouched. Node2 ends09-21 08:43UTC;
 3600s plus six-hour margin checked at launch. PID follows after guard acceptance.
+
+## [Builder] 2026-09-14T06:13Z — evaluation recovery actually running
+
+Existing resource/CVD scan passed. Node2 GPU0 guardian316032 and worker316048
+started06:10:5xUTC; at06:12UTC worker holds15038MiB and is restoring/auditing
+the saved adapter before held generation. Recovery source5195ecf0 over original
+123f0ae2; fresh run path and3600s budget as logged above. No other GPU reserved,
+no live process stopped. Main will inspect terminal output, not infer success
+from activity. Helmholtz replays BASE on CPU from captured outputs in parallel;
+Euclid prepares the separate parametric two-hop DEV runner, not a gate here.
