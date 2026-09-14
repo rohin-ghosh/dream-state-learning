@@ -1,6 +1,6 @@
 # Research state — Orchestrator
 
-Updated 2026-09-14 21:55 UTC. Mission ACTIVE / INCOMPLETE. Wave W1.
+Updated 2026-09-14 22:05 UTC. Mission ACTIVE / INCOMPLETE. Wave W1.
 Authoritative steering: Rohin's current launch instruction and raw messages
 42–76; next mandatory raw-message reread no later than 23:50 UTC.
 Check notebook updates every orchestration cycle, not just every two hours.
@@ -54,7 +54,10 @@ unavailable goals vs baseline3/64 and control0/64. All denominators retained.
 research_notes/analysis/2026-09-14_goal_quality_fit_independent_result.md and
 Builder handover21:52Z. Same1674inputs/2928updates, new-label loss masked in
 control, fresh AFTERs. Independent author-side reviewer reports Evidence PASS;
-Fable cron VERIFIED for SEQ266 not yet observed here. Original prelaunch
+Fable cron VERIFIED entry21:47Z now ingested (not re-run by Main); it
+recounts primary counts/hashes but explicitly did not locate1674inputs.
+The later independent episode review supplies a different, broader scope.
+Original prelaunch
 notebook-publication-order deviation remains part of the evidence.
 
 **CURRENT INTERPRETATION:** substantial incremental supplied-text,
@@ -97,8 +100,10 @@ content-bearing mining tests do not depend on this result being true.
    above matched loss-off and a fixed deterministic reference without erasure?
 4. Does a persistent task benefit from accumulated records across sleeps,
    beyond in-context scaffolding? Two independent gym proposals address this.
-5. Which SEQ266 behaviors survive source/display intervention? Blind adversary
-   first reports an analysis without favored interpretation.
+5. Which SEQ266 behaviors survive source/display intervention? Adversary's
+   independent initial design reports accidental exposure to the BOARD result
+   row during an ownership search. Do NOT call it fully blinded. A fresh
+   blind replication worker is required when a worker slot becomes available.
 
 ## Priority frontier and allocation rationale
 
@@ -124,7 +129,15 @@ mechanism. A worker without a next discriminating test is retired.
 
 - Publish W1 conditional batch contract and request Fable preregistration.
 - Gather workers' actual CPU/provenance/native readiness; log admissions in
-  batches. No main-run cell or wait for independent result-reader approval.
+  batches. Own CPU receipts received: MATH7/7; GAME9screen+4portable plus
+  native environment3000transition equivalence; PERSIST-CODE21tests. These
+  are worker reports, not Main-repeated tests or reader VERIFIED results.
+  GPU/source/lease checks remain per worker; no actual launch yet ingested.
+  Worker EOF-only preGPU/launch/result appends are authorized after9a9593af;
+  publication failures stop that launch, not unrelated workers.
+- Worker concurrency ceiling is six (seventh spawn rejected, no worker
+  created). Keep four reserve GPUs free until a slot can own useful work;
+  do not merge unrelated hypotheses to pretend greater independence.
 - Escalate exact proposed L2/L3 families, leaving those families untouched.
 - Ingest independent-reader status asynchronously, never silently promote.
 - Capacity checkpoint: 2026-09-15 08:00UTC (next morning),5000 admitted rows
