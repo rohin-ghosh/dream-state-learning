@@ -1,4 +1,21 @@
-## Current superseding snapshot — 2026-09-14 00:38 UTC (September 13 Pacific)
+## Current superseding snapshot — 2026-09-14 00:51 UTC
+
+Q0-FULLDOSE message32 relay processed: forensic/preparation/three-root execution
+already historical; R0/R2 endpoint failures, R1 runtime-aborted missing primary.
+No Q0 roots relaunched or contract/distance-arm change. Q1 one-step diagnosis
+does not overturn full-dose outcomes. Chronology/pins:
+analysis/2026-09-14_q0_fulldose_relay_and_level1_continuation.md.
+
+Level1 initial-adapter CPU inspection helper implemented and scoped reviewed.
+Main11PASS/no skips2.654s,31hashes fixed, including real fp32/bf16 tensors and
+tiny random-config Qwen2/PEFT. Not pretrained Qwen7B/tokenizer/GPU or native
+preparation/provenance proof. No repeated large suite or combined615test claim.
+Evidence: analysis/2026-09-14_stage2a_initial_adapter_integration.md.
+Workers/tests finished; source-owner route/core bindings still unanswered.
+Next complete inventory/bounds then separate nativeopening/reduced560screen/
+authenticTSJ. Handoff00:51current; fullgoalACTIVE/incomplete, no claimpromotion.
+
+## Historical superseded snapshot — 2026-09-14 00:38 UTC (September 13 Pacific)
 
 Queued Q0/E0/provenance rulings processed; E0-r fixed-rendered DEV ceiling
 only,50% supplied MISS rows separately accounted, no authentic-lineage merge.

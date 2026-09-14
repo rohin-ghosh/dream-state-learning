@@ -1,0 +1,97 @@
+OBSERVED_START_UTC=2026-09-14T00:49:57.535210+00:00
+ARCHIVE_SHA256=a88b6646580d792a9ce0f476491c0533d1f9ebe991051bd68f204a9a879637ba
+SOURCE_FILES=31
+COMMAND=bash gpu/ovx_ssh.sh 'mkdir -m 700 /tmp/astra_stage2a_initial_adapter_cpu_20260914_attempt1 && tar -xf - -C /tmp/astra_stage2a_initial_adapter_cpu_20260914_attempt1 && cd /tmp/astra_stage2a_initial_adapter_cpu_20260914_attempt1 && sha256sum -c SOURCE_SHA256SUMS && env CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONDONTWRITEBYTECODE=1 /localhome/local-rohing/v2/venv/bin/python -B -c '"'"'import importlib.metadata, json, os, torch, unittest
+torch.set_num_threads(1)
+torch.set_num_interop_threads(1)
+assert os.environ['"'"'"'"'"'"'"'"'CUDA_VISIBLE_DEVICES'"'"'"'"'"'"'"'"'] == '"'"'"'"'"'"'"'"''"'"'"'"'"'"'"'"' and not torch.cuda.is_initialized()
+versions = {name: importlib.metadata.version(name) for name in ('"'"'"'"'"'"'"'"'torch'"'"'"'"'"'"'"'"', '"'"'"'"'"'"'"'"'transformers'"'"'"'"'"'"'"'"', '"'"'"'"'"'"'"'"'peft'"'"'"'"'"'"'"'"')}
+print('"'"'"'"'"'"'"'"'BINDING='"'"'"'"'"'"'"'"' + json.dumps(dict(versions=versions, device='"'"'"'"'"'"'"'"'cpu'"'"'"'"'"'"'"'"', intra_threads=torch.get_num_threads(), interop_threads=torch.get_num_interop_threads(), pretrained_weights=False, tokenizer=False, fixture='"'"'"'"'"'"'"'"'random config-built tiny Qwen2 plus real torch tensors'"'"'"'"'"'"'"'"'), sort_keys=True), flush=True)
+suite = unittest.defaultTestLoader.loadTestsFromName('"'"'"'"'"'"'"'"'tests.test_composition_birth_stage2a_initial_adapter'"'"'"'"'"'"'"'"')
+result = unittest.TextTestRunner(verbosity=2).run(suite)
+assert not torch.cuda.is_initialized()
+raise SystemExit(0 if result.wasSuccessful() and result.testsRun == 11 and not result.skipped else 1)
+'"'"' ; test_exit=$?; printf "TEST_EXIT=%s\n" "$test_exit"; if test "$test_exit" -eq 0; then sha256sum -c /tmp/astra_stage2a_initial_adapter_cpu_20260914_attempt1/SOURCE_SHA256SUMS; else exit "$test_exit"; fi'
+organism_v6/__init__.py: OK
+organism_v6/composition_birth_stage2a.py: OK
+organism_v6/composition_birth_stage2a_actor.py: OK
+organism_v6/composition_birth_stage2a_birth.py: OK
+organism_v6/composition_birth_stage2a_canaries.py: OK
+organism_v6/composition_birth_stage2a_checker.py: OK
+organism_v6/composition_birth_stage2a_checkpoint.py: OK
+organism_v6/composition_birth_stage2a_curriculum.py: OK
+organism_v6/composition_birth_stage2a_future_inputs.py: OK
+organism_v6/composition_birth_stage2a_graph.py: OK
+organism_v6/composition_birth_stage2a_graph_inputs.py: OK
+organism_v6/composition_birth_stage2a_held.py: OK
+organism_v6/composition_birth_stage2a_initial_adapter.py: OK
+organism_v6/composition_birth_stage2a_null_audit.py: OK
+organism_v6/composition_birth_stage2a_nulls.py: OK
+organism_v6/composition_birth_stage2a_primitives.py: OK
+organism_v6/composition_birth_stage2a_probe.py: OK
+organism_v6/composition_birth_stage2a_rollout.py: OK
+organism_v6/composition_birth_stage2a_scan_inputs.py: OK
+organism_v6/composition_birth_stage2a_scanner.py: OK
+organism_v6/composition_birth_stage2a_scoring.py: OK
+organism_v6/composition_birth_stage2a_screen.py: OK
+organism_v6/composition_birth_stage2a_screen_custody.py: OK
+organism_v6/composition_birth_stage2a_screen_runtime.py: OK
+organism_v6/composition_birth_stage2a_source_inputs.py: OK
+organism_v6/composition_birth_stage2a_tape.py: OK
+organism_v6/composition_birth_stage2a_targets.py: OK
+organism_v6/composition_birth_stage2a_tokenization.py: OK
+organism_v6/composition_birth_stage2a_training.py: OK
+organism_v6/composition_birth_stage2a_worlds.py: OK
+tests/test_composition_birth_stage2a_initial_adapter.py: OK
+BINDING={"device": "cpu", "fixture": "random config-built tiny Qwen2 plus real torch tensors", "interop_threads": 1, "intra_threads": 1, "pretrained_weights": false, "tokenizer": false, "versions": {"peft": "0.20.0", "torch": "2.13.0", "transformers": "5.5.3"}}
+test_exact_storage_hash_and_no_model_mode_or_rng_mutation (tests.test_composition_birth_stage2a_initial_adapter.InitialAdapterRealTorchTests.test_exact_storage_hash_and_no_model_mode_or_rng_mutation) ... ok
+test_cpu_preflight_includes_frozen_parameters_and_buffers (tests.test_composition_birth_stage2a_initial_adapter.InitialAdapterSourceTests.test_cpu_preflight_includes_frozen_parameters_and_buffers) ... ok
+test_every_layer_and_adapter_name_are_bound (tests.test_composition_birth_stage2a_initial_adapter.InitialAdapterSourceTests.test_every_layer_and_adapter_name_are_bound) ... ok
+test_expected_hash_is_optional_byte_agreement_only (tests.test_composition_birth_stage2a_initial_adapter.InitialAdapterSourceTests.test_expected_hash_is_optional_byte_agreement_only) ... ok
+test_extra_or_inactive_adapters_and_dependency_mismatch (tests.test_composition_birth_stage2a_initial_adapter.InitialAdapterSourceTests.test_extra_or_inactive_adapters_and_dependency_mismatch) ... ok
+test_import_is_lazy_and_gates_remain_closed (tests.test_composition_birth_stage2a_initial_adapter.InitialAdapterSourceTests.test_import_is_lazy_and_gates_remain_closed) ... ok
+test_initial_value_rejections_before_hashing (tests.test_composition_birth_stage2a_initial_adapter.InitialAdapterSourceTests.test_initial_value_rejections_before_hashing) ... ok
+test_ordered_immutable_observation_reuses_existing_helpers (tests.test_composition_birth_stage2a_initial_adapter.InitialAdapterSourceTests.test_ordered_immutable_observation_reuses_existing_helpers) ... ok
+test_required_policy_and_effective_metadata_rejections (tests.test_composition_birth_stage2a_initial_adapter.InitialAdapterSourceTests.test_required_policy_and_effective_metadata_rejections) ... ok
+test_roster_and_base_rejections_use_training_contract (tests.test_composition_birth_stage2a_initial_adapter.InitialAdapterSourceTests.test_roster_and_base_rejections_use_training_contract) ... ok
+test_config_built_cpu_qwen_peft_inventory_and_binding (tests.test_composition_birth_stage2a_initial_adapter.InitialAdapterTinyPeftTests.test_config_built_cpu_qwen_peft_inventory_and_binding) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 2.654s
+
+OK
+TEST_EXIT=0
+organism_v6/__init__.py: OK
+organism_v6/composition_birth_stage2a.py: OK
+organism_v6/composition_birth_stage2a_actor.py: OK
+organism_v6/composition_birth_stage2a_birth.py: OK
+organism_v6/composition_birth_stage2a_canaries.py: OK
+organism_v6/composition_birth_stage2a_checker.py: OK
+organism_v6/composition_birth_stage2a_checkpoint.py: OK
+organism_v6/composition_birth_stage2a_curriculum.py: OK
+organism_v6/composition_birth_stage2a_future_inputs.py: OK
+organism_v6/composition_birth_stage2a_graph.py: OK
+organism_v6/composition_birth_stage2a_graph_inputs.py: OK
+organism_v6/composition_birth_stage2a_held.py: OK
+organism_v6/composition_birth_stage2a_initial_adapter.py: OK
+organism_v6/composition_birth_stage2a_null_audit.py: OK
+organism_v6/composition_birth_stage2a_nulls.py: OK
+organism_v6/composition_birth_stage2a_primitives.py: OK
+organism_v6/composition_birth_stage2a_probe.py: OK
+organism_v6/composition_birth_stage2a_rollout.py: OK
+organism_v6/composition_birth_stage2a_scan_inputs.py: OK
+organism_v6/composition_birth_stage2a_scanner.py: OK
+organism_v6/composition_birth_stage2a_scoring.py: OK
+organism_v6/composition_birth_stage2a_screen.py: OK
+organism_v6/composition_birth_stage2a_screen_custody.py: OK
+organism_v6/composition_birth_stage2a_screen_runtime.py: OK
+organism_v6/composition_birth_stage2a_source_inputs.py: OK
+organism_v6/composition_birth_stage2a_tape.py: OK
+organism_v6/composition_birth_stage2a_targets.py: OK
+organism_v6/composition_birth_stage2a_tokenization.py: OK
+organism_v6/composition_birth_stage2a_training.py: OK
+organism_v6/composition_birth_stage2a_worlds.py: OK
+tests/test_composition_birth_stage2a_initial_adapter.py: OK
+LOCAL_SOURCE_HASHES_UNCHANGED=True
+REMOTE_EXIT=0
+OBSERVED_END_UTC=2026-09-14T00:50:03.256897+00:00

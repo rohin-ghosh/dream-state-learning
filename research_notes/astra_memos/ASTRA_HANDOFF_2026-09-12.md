@@ -1,6 +1,33 @@
-# Astra restart handoff — September 14, 2026, 00:38 UTC (September 13 Pacific)
+# Astra restart handoff — September 14, 2026, 00:51 UTC
 
-## Current superseding increment at 00:38 UTC
+## Current superseding increment at 00:51 UTC
+
+New message32 Q0-FULLDOSE hold relay reconciled against actual executed state.
+Forensic is already present; all three native preparations and roots ran on
+September13. R0/R2 endpoint FAIL; R1 runtime-aborted missing final primary
+readout, later supplement is not a repaired primary. No Q0 relaunch, new
+distance arm or primary-contract change. Q1 geometry rejects a one-step
+learnability veto, not the later measured full-dose endpoint failures.
+Chronology/source pins: analysis/2026-09-14_q0_fulldose_relay_and_level1_continuation.md.
+
+Implemented thin CPU-only initial-adapter inspection helper and focused tests.
+Returns actual all-layer roster/storage dtype and trainer-compatible initial
+hash; validates existing recipe plus finite nonzero-A/zero-B. Does not prove
+Kaiming/seed/copy history or base/tokenizer/runtime authentication. No model
+loading/initialization in helper, no native opening or route/core inference.
+Main isolated node2 CPU run11PASS/no skips in2.654s,31source hashes unchanged;
+includes real-torch fp32/bf16 checks and tiny random-config Qwen2/PEFT, not
+pretrained Qwen7B or tokenizer/GPU use. Independent exact-byte reviewPASS.
+All receipts/pins/limits: analysis/2026-09-14_stage2a_initial_adapter_integration.md.
+No prior large suite repeated; no combined615-test receipt claimed.
+
+Workers closed; no active test/GPU experiment. Owner route/core definitions
+remain unanswered at00:51 pull; next complete sourceinventory/bounds then
+separate material/native preparation, reduced560screen, qualified authentic
+two-SLEEP. No node1 writes, Q0 launch/kill or approval request. Preserve dirty
+rules/unreviewedTSJdraft. Full mission ACTIVE/incomplete; no claim promotion.
+
+## Historical superseded increment at 00:38 UTC
 
 All queued Q0/E0/provenance messages reconciled before successor work.
 Adjudication SHA9747ae5e is present via50c2903c; relay4571f4ec is not a local

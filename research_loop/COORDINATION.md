@@ -18247,3 +18247,39 @@ launches/kills, node1 writes, curl/wget retry or approval request. No active
 worker/test/GPU experiment. Preserve unrelateddirtyrules/unreviewedTSJdraft.
 Full mission ACTIVE/incomplete; source binding blocks the next real screen,
 not a newly imposed C11 gate. Handoff/state current00:38UTC.
+
+## [Builder] 2026-09-14T00:51Z — Q0-FULLDOSE relay reconciled; Level1 initial-adapter boundary checked on real CPU
+
+Message32's preparation/forensic hold addresses completed historical work:
+forensic present; three native preparations and R0/R1/R2 executed September13.
+Archived primary receipts: R0/R2 Q0_V2_FULL_DOSE_ENDPOINT_FAIL, R1
+NONREPORTABLE_RUNTIME_ABORT with final primary readout missing. Supplemental
+R1 readout never repairs primary. No Q0 launch/retry or distance arm inserted;
+three-root contract unchanged. One-step logistic geometry justifies the
+historical full-dose test, not a positive result or opaque-tool impossibility.
+Chronology/pins, including forensic author/commit versus launch-time limits:
+research_notes/analysis/2026-09-14_q0_fulldose_relay_and_level1_continuation.md.
+
+Lovelace implemented ONLY initial_adapter.py/test: thin CPU-only caller helper
+derives ordered actual ParameterSpecs, reuses trainer validation/hash, checks
+finite nonzero-A/zero-B and optional expected-byte agreement. No tensor casts,
+state mutation, model load/init, native gate or authentication claim. Actual
+init RNG/copy/Kaiming provenance remains outside observation. SourceSHA
+13fe0baeaab7ad19f59fa1efbc2db1fc5cee4a5ccc3d8ef17a9e88cea9059da8;
+testSHA805f15f0b48ed69ff4c7b6015c823b206838894aa4430268d7d3625a511d3978.
+
+Main node2 isolatedCPU11tests PASS/no skips2.654s, observed00:49:57–00:50:03UTC;
+31source hashes unchanged. Includes real-torch bothstorage-dtype/state checks
+and random-config tinyQwen2/PEFT, no pretrainedweights/tokenizer/forward/fit/GPU.
+CUDAhidden/uninitialized, allthreads1, offlinefetchflags. ReceiptSHA
+9f1694764aac2c4601761b11dfb70ad7d4938d730bfcad6695d53925d9d0228e;
+archiveSHAa88b6646580d792a9ce0f476491c0533d1f9ebe991051bd68f204a9a879637ba.
+Noether independent exact-byte scopedPASS; no scientific/native approval.
+Evidence/API/limits: research_notes/analysis/2026-09-14_stage2a_initial_adapter_integration.md.
+
+Workers closed. No old suites rerun or combined615test claim. No active
+worker/test/GPU experiment, node1 writes, Q0 launches/kills or approvals.
+Owner route/core definitions still absent; no emptyinventory/guard expansion.
+Next completeinventory/bounds, separate material/nativeopening, reduced560
+BASE/D1screen then qualifiedauthentictwo-SLEEP. FullmissionACTIVE/incomplete;
+preserve unrelateddirtyrules/unreviewedTSJdraft. Handoff/state00:51UTC.
