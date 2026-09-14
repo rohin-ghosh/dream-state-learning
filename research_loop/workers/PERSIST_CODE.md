@@ -1,0 +1,71 @@
+# PERSIST-CODE worker journal
+
+## 2026-09-14T21:55Z — narrow design / readiness / intended protocol
+
+Own only `organism_v6/orch_persist_code*`, `gpu/orch_persist_code*`,
+`tests/test_orch_persist_code*`, `research_notes/analysis/orch_persist_code*`,
+and this journal. Exclusive prospective A100 physical GPUs 4–5; no other
+collector depends on this work. Main owns notebook, board and state.
+
+Hypothesis: repairing functions in one persistent integer-ledger codebase,
+with deterministic regression tests and the child's own episode records,
+can produce reusable grounded learning material where isolated QA does not.
+This is an L1 diagnostic, not evidence of learned transfer or H1/H2.
+
+L1 mining family `integer-ledger-pipelines-v1`: bounded integer-list
+transformations combining stable filter, affine-map, clamp, unique and
+reduction helpers. Many parameterized task specifications; accepted functions
+remain in a real Python module, and every subsequent patch reruns earlier
+function tests. A deliberately restricted expression AST avoids executing
+arbitrary child code. No authored behavioral traces or lessons.
+
+Exact escalation to Rohin (proposal only; no task generation or mining):
+L2proposal `structured-text-ledger-v1` = parsing delimited records with
+missing-field and escaping rules followed by validated aggregations.
+heldL3proposal `dependency-build-graph-v1` = incremental dependency DAG
+invalidation and topological scheduling with deterministic tests. These are
+distinct environment families, not held identifiers of L1. Admission requires
+Rohin; contents remain unmined and unimplemented.
+
+Bounded native screen: 8 matched L1 task specifications per arm, RICH on GPU4
+and TERSE on GPU5, independent persistent stores, identical 37ec starting
+adapter and oracle. At most 6 calls per episode, input+generation <=2048
+tokens, <=512 generated per call. RICH requests 150–400 first-person tokens
+plus final JSON action. Five repair attempts maximum; after success the
+remaining sixth-or-earlier turn writes the child's own reusable record.
+Feedback includes actual failed test input/expected/observed, not a proposed
+solution. Previous self-authored records are readable next episode.
+Semantic whole-text review and oracle success are separate gates; no keyword
+score, no length-as-quality, UNRESOLVED excluded. No fit in this screen.
+
+Future comparison is parent-guided+sleep versus frozen twin AND
+unparented+sleep with mandatory parent-free evaluation, not autonomous
+collection as prerequisite. Student prefixes remove parent guidance and
+only sourced child targets receive loss. A future compiler is the same child
+prompted to consolidate its experienced events; deterministic projection only.
+
+Readiness: contracts, launch/handover, §15 invariants and portable API read;
+no nested AGENTS/CLAUDE files found in owned trees. CPU implementation/tests
+and live physical/UUID/PID+/proc-CVD admission pending. Portable manifest
+expected `5e675c309b202625a6ddf1d36c1a58f51ef656985821cec1cd6123424d927469`.
+Remote root must be new `/data/orch_persist_code_20260914_attempt1` (adjust
+only to observed writable /data subdirectory), packaged published source SHA,
+hard timeout <=30 minutes and actual A100 lease minus safety margin.
+No launch before owned tests/provenance/preGPU paragraph are committed/pushed
+and Main's standing conditional batch admission is published. No reader wait.
+
+Peer message: off-the-shelf collectors should launch independently; this worker
+uses only A1004–5 and supplies a distinct persistent-code L1 diagnostic.
+
+21:55Z physical inventory: GPUs4/5 report no compute apps; UUIDs respectively
+`GPU-31583768-d90f-520c-51ed-5dac761526d0` and
+`GPU-c1650c7f-ac26-f1a0-2ab8-c7354a6f27c9`. This is not yet CVD admission.
+A100 has no `/data` mount; its `/localhome/local-rohing` is on the 2.9TB
+NVMe root (2.7TB free). Proposed remote equivalent is
+`/localhome/local-rohing/data/orch_persist_code_20260914_attempt1`; local
+packaging remains in this checkout on `/data`. Existing scanner/service
+exceptions and the portable bundle exist. Lease source is
+`research_notes/HANDOFF_2026-09-12.md:42`: ends September 26 22:05 Pacific
+(September 27 05:05 UTC). Use the earlier September 26 00:00 UTC as a
+conservative guard cutoff until any discrepancy is resolved; 30min screen
+is far inside both. No lease extension requested.
