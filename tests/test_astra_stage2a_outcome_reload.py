@@ -170,6 +170,42 @@ class ComparisonTests(unittest.TestCase):
         self.assertEqual(mismatch['mismatched_call_indexes'], [0])
 
 
+class ConfigOrderTests(unittest.TestCase):
+    def test_only_target_module_permutation_is_accepted(self):
+        original = dict(r=8, lora_alpha=16, target_modules=[
+            'up_proj', 'q_proj', 'k_proj', 'v_proj', 'o_proj', 'gate_proj', 'down_proj'])
+        expected = dict(original, target_modules=[
+            'v_proj', 'k_proj', 'q_proj', 'up_proj', 'gate_proj', 'o_proj', 'down_proj'])
+        faults = [dict(original, target_modules=original['target_modules'][:-1]),
+                  dict(original, target_modules=original['target_modules'] + ['up_proj']),
+                  dict(original, target_modules=original['target_modules'] + ['extra_proj']),
+                  dict(original, target_modules='q_proj'),
+                  dict(original, target_modules=original['target_modules'][:-1] + [7]),
+                  {key: value for key, value in original.items() if key != 'target_modules'},
+                  dict(original, r=16), dict(original, lora_alpha=32), dict(original, extra=True)]
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            initial, saved = root / 'initial', root / 'saved'
+            initial.mkdir()
+            saved.mkdir()
+            initialized = SimpleNamespace(directory=initial)
+            for changed_side in ('saved', 'expected'):
+                for candidate in [original] + faults:
+                    with self.subTest(side=changed_side, config=candidate):
+                        write(initial / 'adapter_config.json', expected if changed_side == 'saved' else candidate)
+                        write(saved / 'adapter_config.json', candidate if changed_side == 'saved' else expected)
+                        before = [(directory / 'adapter_config.json').read_bytes() for directory in (initial, saved)]
+                        loader = Mock(side_effect=RuntimeError('validated_before_tensor_load'))
+                        valid = candidate == original
+                        with self.assertRaisesRegex(RuntimeError if valid else ValueError,
+                                'validated_before_tensor_load' if valid else 'config_mismatch'):
+                            source.restore_saved_adapter(initialized, saved, torch=None, peft=None,
+                                                          expected_sha256='c' * 64, load_file=loader)
+                        self.assertEqual(loader.call_count, int(valid))
+                        self.assertEqual(before, [(directory / 'adapter_config.json').read_bytes()
+                                                   for directory in (initial, saved)])
+
+
 @unittest.skipUnless(importlib.util.find_spec('torch'), 'CPU torch unavailable')
 class RestoreTests(unittest.TestCase):
     def test_cpu_weights_restored_exactly_without_fit_or_dtype_cast(self):
@@ -180,7 +216,7 @@ class RestoreTests(unittest.TestCase):
             initial.mkdir()
             saved.mkdir()
             for directory in (initial, saved):
-                write(directory / 'adapter_config.json', {'r': 8})
+                write(directory / 'adapter_config.json', {'r': 8, 'target_modules': list(source.pilot.training.TARGET_MODULES)})
             model = torch.nn.Linear(2, 1, bias=False)
             model.register_buffer('rotary', torch.tensor([0.5], dtype=torch.float32), persistent=False)
             roster = (source.pilot.training.ParameterSpec('weight', (1, 2), 'torch.float32'),)
@@ -210,7 +246,7 @@ class RestoreTests(unittest.TestCase):
                 with self.subTest(bad=bad), self.assertRaisesRegex(ValueError, 'saved_adapter_tensor'):
                     source.restore_saved_adapter(initialized, saved, torch=torch, peft=peft,
                                                   expected_sha256=digest, load_file=Mock(return_value=bad))
-            write(saved / 'adapter_config.json', {'r': 16})
+            write(saved / 'adapter_config.json', {'r': 16, 'target_modules': list(source.pilot.training.TARGET_MODULES)})
             with self.assertRaisesRegex(ValueError, 'config_mismatch'):
                 source.restore_saved_adapter(initialized, saved, torch=torch, peft=peft,
                                               expected_sha256=digest, load_file=loader)

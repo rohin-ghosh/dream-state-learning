@@ -104,6 +104,13 @@ def restore_saved_adapter(initialized, directory, *, torch, peft, expected_sha25
     directory = Path(directory)
     expected_config = _document(initialized.directory / 'adapter_config.json')['values']
     saved_config = _document(directory / 'adapter_config.json')['values']
+    for config in (expected_config, saved_config):
+        modules = config.get('target_modules')
+        require(type(modules) is list and all(type(name) is str for name in modules)
+                and len(modules) == len(set(modules))
+                and set(modules) == set(pilot.training.TARGET_MODULES),
+                'saved_adapter_config_mismatch:target_modules')
+        config['target_modules'] = sorted(modules)
     require(saved_config == expected_config, 'saved_adapter_config_mismatch')
     state = load_file(str(directory / 'adapter_model.safetensors'), device='cpu')
     model = initialized.model
