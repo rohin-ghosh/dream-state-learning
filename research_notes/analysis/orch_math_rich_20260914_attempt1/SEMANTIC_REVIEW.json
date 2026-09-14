@@ -1,0 +1,901 @@
+{
+  "gsm8k-train-1379:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Calculate the first spring remaining kittens:"
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Correct reusable stock-flow operations; first-person account absent. Summary remaining55 includes returns already represented in calculations.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "07544b425bd5735f469b3ddfe7102cf38ddfd1475a9d3abbc02c2aa2dc7e3fec"
+  },
+  "gsm8k-train-1379:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Now, I calculate the number of kittens remaining after adoptions and returns:"
+    ],
+    "first_person": true,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Own stock-flow account separates breeding stock, additions, returns and removals across two springs;65+56=121.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "PASS",
+    "target_sha256": "658f31d8d0c8200d3c052d0a25ca1a2462f19264df1e0aa341c8f27d03ae2964"
+  },
+  "gsm8k-train-1436:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Add the totals from Charlie and Carli:"
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Grounded proportional category counts and sum; impersonal recipe rather than first-person account.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "6f59fa73459d5fa52baa1ee12ab315a9e7b698609a10506b91ee47c04f7bfac6"
+  },
+  "gsm8k-train-1436:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Now, let's calculate the total number of instruments each owns:"
+    ],
+    "first_person": true,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Own first-person plural invitation to calculate is followed by grounded per-owner counts4 and3 and aggregation7; accepts plural voice, not only literalI.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "PASS",
+    "target_sha256": "5f75e12513594afc884d09cb07f1cd7314c0be0e5b2c6287044b6800a8cc6984"
+  },
+  "gsm8k-train-1613:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Weekly sales: $1000 * 5 days = $5000."
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Grounded reusable rate/split/week procedure, but entirely impersonal exposition rather than the required first-person account. This is a voice-contract exclusion, not false arithmetic.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "e0a6d51da7972ceef2fe520fea77af840bcd4239ac3eaa6097db14a89a5dc093"
+  },
+  "gsm8k-train-1613:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Now, I calculate the daily sales:"
+    ],
+    "first_person": true,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Own calculation composes conversion rate, split purchase values and workdays;10 buyers,1000/day,5000/week are grounded.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "PASS",
+    "target_sha256": "eb52358ed3010d4bc8445ef3264f6cb3f228f8a62c8dbc7f003c09113f3aff3b"
+  },
+  "gsm8k-train-1649:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "First, I calculated the number of four-leaved clovers:"
+    ],
+    "first_person": true,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Own account identifies the conditional subset, computes100 then25 and checks both operations; reusable nested-proportion procedure.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "PASS",
+    "target_sha256": "5edc502978ecbb1aa427c18bc9ad7905278bb6f291d85c73e4f2a49034be3587"
+  },
+  "gsm8k-train-1649:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "we first calculate"
+    ],
+    "first_person": true,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Nested proportions are correctly applied to the four-leaved subset; first-person plural computation is grounded. Below150 tokens separately.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "PASS",
+    "target_sha256": "7ef78fe89f669acf82feec9769487992f4aab0750638201e837bcdf902d89aac"
+  },
+  "gsm8k-train-1703:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Subtract the total cost for Coach B from the total cost for Coach A"
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Correct category-cost/difference recipe, but impersonal exposition rather than first-person account.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "68052221d47d6843904aefce80e3a41b2ac131d1f9c8a1d22f1a80b1148fb944"
+  },
+  "gsm8k-train-1703:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Now, I find the difference between what Coach A and Coach B spent:"
+    ],
+    "first_person": true,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Own account separately totals each coach then subtracts; grounded arithmetic290-53=237.143tokens separately below floor.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "PASS",
+    "target_sha256": "f7b1c42f7870bb4a44f77a1612a95a57666fa8fff7f2a54c027c52d873939677"
+  },
+  "gsm8k-train-1916:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Sum the earnings from all families to get the total earnings."
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Grounded weighted-sum recipe and repeated arithmetic check; no first-person account.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "0d1cd8da4cf520ac319c931d991d657956ac89195de8afcac49afe338f0c107d"
+  },
+  "gsm8k-train-1916:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Next, I calculate the earnings for each family:"
+    ],
+    "first_person": true,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Own account applies each distinct wage to matching hours, then sums105+108+60; reusable weighted-sum operation.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "PASS",
+    "target_sha256": "5518ce2693ca3174551aadb3ddae54a884cd560625f9797ea2ba484008961dec"
+  },
+  "gsm8k-train-2554:correction": {
+    "checkable_expectation": null,
+    "evidence_spans": [
+      "the calculation based on the simplest assumption is correct."
+    ],
+    "first_person": true,
+    "grounded_operations": null,
+    "meaningful_revision": false,
+    "no_padding": false,
+    "reason": "Rejection triggers repeated defense of arbitrary equal split, not meaningful correction or actionable lesson; recognizes ambiguity but still reports unsupported unique34.5.",
+    "reusable_content": false,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "ee0a0d1f1cde5d5b4e3c1ffe2143b29171183ac93513ae3da4fa5365a92412d8"
+  },
+  "gsm8k-train-2554:rich": {
+    "checkable_expectation": null,
+    "evidence_spans": [
+      "Assume 3 apples are small and 3 are medium"
+    ],
+    "first_person": false,
+    "grounded_operations": null,
+    "no_padding": true,
+    "reason": "Invents equal3+3 split under an ambiguous six-small-and-medium statement; gold45 interprets6each. No uniquely supported34.5 answer; cannot coerce gold with reference reasoning.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "UNRESOLVED",
+    "target_sha256": "6aa138dd36cbbf13d2df38f0054928e82b0957e36264264cf9d22ca7302e38f4"
+  },
+  "gsm8k-train-2730:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Total flowers planted by all 5 people in 2 days:"
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Grounded normalization with reverse multiplication restoring200; impersonal recipe, not first-person account.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "b8c2a494c01a6a3c0699a3aba5d6b99465d0cf4ca5dc7505fbde20fcbbea6092"
+  },
+  "gsm8k-train-2730:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "200 flowers / 5 people = 40 flowers per person"
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Correct equal-share per-person/per-day calculation, but impersonal instructions and128tokens.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "783c1e73ff1b7424dd1df79c8f53fa1034ca2ab7fbd57cfddf0fbc59d3cc9f2b"
+  },
+  "gsm8k-train-2998:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Calculate the time Naomi takes to develop one website."
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Grounded proportional time increase then repetition, but entirely impersonal exposition.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "787b424266acb15656247471e1df1af353166dfe712ffd4ba4c20a02206e8387"
+  },
+  "gsm8k-train-2998:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "20 + (1/4 * 20) = 20 + 5 = 25 hours per website."
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Correct25hours times30sites, but impersonal exposition and84tokens; not repairable by padding.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "aabee43e1b2b588a42ec31f991e5599cedb0427f43dfd20eb0b176f0da298146"
+  },
+  "gsm8k-train-3145:correction": {
+    "checkable_expectation": null,
+    "evidence_spans": [
+      "the exact-answer checker might have been looking for a specific format"
+    ],
+    "first_person": true,
+    "grounded_operations": null,
+    "meaningful_revision": false,
+    "no_padding": false,
+    "reason": "No meaningful revision or reusable correction lesson: repeats420 and speculates checker-format trouble. Gold ambiguity means rejection must not coerce a120 rationalization.",
+    "reusable_content": false,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "654c31c5ad3c24ed71833cf0cc79886c34b171c9a955a7699377c3e02e58555e"
+  },
+  "gsm8k-train-3145:rich": {
+    "checkable_expectation": null,
+    "evidence_spans": [
+      "Ken's total cost = $60 (since he only paid for the sailboat rental)"
+    ],
+    "first_person": false,
+    "grounded_operations": null,
+    "no_padding": true,
+    "reason": "Question says sailboat60 but ski boat80/hour; literal flat-fee reading yields420, whereas gold120 assumes sailboat60/hour. Reference ambiguity, not certified learner arithmetic error.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "UNRESOLVED",
+    "target_sha256": "de103c706be2c0bb03c70405bdcc3753a3bdfe7880202c5000cf35d947d42edf"
+  },
+  "gsm8k-train-3289:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Add the total number of rooms in the first wing to the total number of rooms in the second wing"
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Good reusable hierarchical aggregation with units; impersonal exposition rather than first-person account.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "f4064e87ceed7584e44021b17d92375244fa4ead0c87f45741056b5db06e1d79"
+  },
+  "gsm8k-train-3289:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "First, I'll calculate the number of rooms in the first wing."
+    ],
+    "first_person": true,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Own account nests floor/hall/room factors separately for each wing then sums1728+2520; avoids crossing wing rates.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "PASS",
+    "target_sha256": "8241e57b27621aad6f309d089b29caa7e6e25f8d19aa6669af8b82a307ab2b8a"
+  },
+  "gsm8k-train-3322:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Verify the average speed with the calculated speed of the fifth coaster:"
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Correct equation-solving recipe with substitution yielding59; fails first-person account, not arithmetic or missing headings.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "27e40f203d76332a4c04c6bd9eb2c9020cf272289d5e5f331dc6b0124c226441"
+  },
+  "gsm8k-train-3322:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Multiply both sides by 5 to clear the denominator:"
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Correct arithmetic-mean equation and solution40 under dataset interpretation, but impersonal derivation rather than first-person account.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "db9c7dce9f1eee9444de8914d2b5055b96ad4eda97f586c4b082d6b039f2df66"
+  },
+  "gsm8k-train-3426:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Confirm the total number of pieces of bills is 17."
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Grounded denomination-conversion recipe, but impersonal exposition. The final count restatement is not an independent conservation check.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "67d9dce6022c120fba367ac755e5f07c85e60585bc69cfe6fae068f0c00964c5"
+  },
+  "gsm8k-train-3426:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Adding these up, 2 + 5 + 10 = 17 pieces of bills."
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Correct split-amount/denomination counts2,5,10, but exclusively third-person narration, not first-person account.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "fe4944625581397da670c50d26a3a4d1f62541949fc011654e89058f41fc38bb"
+  },
+  "gsm8k-train-3501:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "To solve this, I perform the following steps:"
+    ],
+    "first_person": true,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Own reusable residual-cost/unit-price account with concrete18,6,4 checks; all quantities grounded in task.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "PASS",
+    "target_sha256": "5b473d7347f42a2bb92811c8043b8819a8b160a94d01930275c5228aef82d0b3"
+  },
+  "gsm8k-train-3501:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Next, I subtract the cost of the plates"
+    ],
+    "first_person": true,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Own account subtracts known plate subtotal then divides residual cost by spoon unit price; grounded inverse-purchase operation.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "PASS",
+    "target_sha256": "49fb74bfe630838ed67333e5c394057b778cb93852a34cd4806a0aab50cfb507"
+  },
+  "gsm8k-train-3590:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "63 (day 1) + 126 (day 2) + 136 (day 3) + 29 (day 4) = 354 pages"
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Useful conservation check recovers354 pages, but impersonal recipe rather than first-person account.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "5aed25b5912a659ff7f2cc0d6f7f4373b77bd59c504aa7aef558b6f8cedfa11d"
+  },
+  "gsm8k-train-3590:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "354 - 325 = 29 pages."
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Correct dependent day counts and conservation29, but impersonal exposition and149tokens; do not pad the one-token deficit.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "4913e8366d98dc2ca226884134de5e2660b1954001149ce0a79ebc22b1d436c2"
+  },
+  "gsm8k-train-4062:record": {
+    "checkable_expectation": false,
+    "evidence_spans": [
+      "Weeks in a month: 4"
+    ],
+    "first_person": true,
+    "grounded_operations": false,
+    "no_padding": true,
+    "reason": "Record turns the earlier four-week assumption into an alleged given quantity. Correct benchmark answer does not establish this invented premise.",
+    "reusable_content": false,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "fcaa98e3bc0918f09ebb8300eb0a829b8d16333292d4c02b96ebb22667730c34"
+  },
+  "gsm8k-train-4062:rich": {
+    "checkable_expectation": null,
+    "evidence_spans": [
+      "Assuming there are 4 weeks in a month"
+    ],
+    "first_person": true,
+    "grounded_operations": null,
+    "no_padding": true,
+    "reason": "Arithmetic is correct conditional on a four-week month, explicitly admitted as an assumption; question does not establish that calendar/payroll convention. Conservatively unresolved, not silently fitted.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "UNRESOLVED",
+    "target_sha256": "25cc1fdc886bd43854a2d8dab4514ece936cd47c9b3fd3c39a6a834121cc01b4"
+  },
+  "gsm8k-train-441:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Calculate the remaining invitations as 20% of the total from step 2."
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Grounded subgroup/add-on operations, but no first-person account. Final-match assertion is only a restatement, not independent external evidence.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "715e420702d4c5295d3a35537c5eba3dc554a0112cd7d228714cacc064f44402"
+  },
+  "gsm8k-train-441:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "First, I identify the given quantities:"
+    ],
+    "first_person": true,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Own account correctly constructs5+10+15 and adds20% of that30; reusable subgroup aggregation and proportional add-on.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "PASS",
+    "target_sha256": "8b17ecd829930307a1c5882503113ea74a8052d758dc4be9130904697784579f"
+  },
+  "gsm8k-train-4442:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Since 18 ingots are more than 10, apply the 20% discount"
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Useful grounded unit conversion and conditional discount recipe, but impersonal exposition, not first-person account.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "f5888e163bfb9f10ce5c3d36de9cde81b2c75e50abafccf3fc18f0f9350aa6e5"
+  },
+  "gsm8k-train-4442:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "First, I calculate the additional weight needed:"
+    ],
+    "first_person": true,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Own calculation converts36additional pounds to18ingots, applies qualifying20%discount to90; does not confuse extra and total vest weight.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "PASS",
+    "target_sha256": "8f11c2588ff29d726f8a1c335f7235c180149bc5b767d9c500a564f4a8e3f760"
+  },
+  "gsm8k-train-4789:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Subtract one from the total number of burgers"
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Correct capacity-minus-host recipe and concrete guest/host count; impersonal exposition.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "1dd3c685ff614dcb74405a3eca6c25b62723e1ab0bee0c8fdec68b78150b65bb"
+  },
+  "gsm8k-train-4789:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "we need to subtract one"
+    ],
+    "first_person": true,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Own first-person plural account converts packages to burgers and subtracts host; reusable capacity-minus-reserved-unit operation.131tokens separately fail floor.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "PASS",
+    "target_sha256": "9f85c719a47e45e634f66d36be1c9d516f516af4de4aec66fa3997f0a54c3ec7"
+  },
+  "gsm8k-train-5449:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "we need to distribute the total number of pieces of junk mail evenly"
+    ],
+    "first_person": true,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Own first-person plural explanation links even distribution to division and checks8times6=48; reusable relevance filtering plus normalization.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "PASS",
+    "target_sha256": "d5b7b78bdfce65d3dbd8eeeb19abfbf980ec386b4c84d454f079f446b5997e56"
+  },
+  "gsm8k-train-5449:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "we assume each house, regardless of mailbox color"
+    ],
+    "first_person": true,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Own first-person plural account identifies equal distribution and irrelevant mailbox colors; explicitly states equal-share assumption rather than inventing color-specific rules.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "PASS",
+    "target_sha256": "757e603fed5a112c4b02a1853fdb9ec1bc31ba412c580e296f3cc9781912cc1d"
+  },
+  "gsm8k-train-5714:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Determine the total number of jalapeno slices needed."
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Grounded reusable dimensional conversion chain with numeric checks, but impersonal recipe.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "e031e3d621bc0f4f755f9e47120ce6bac9db3904600e0852c73dcb64209d483a"
+  },
+  "gsm8k-train-5714:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "First, calculate the number of sandwiches served in an 8-hour day:"
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Correct time\u2192sandwiches\u2192slices\u2192peppers dimensional chain, but impersonal instructions, not first-person account.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "77aeafb44857df618530b172799b0bf21e310e8e30a82a8718a3e012aae131e7"
+  },
+  "gsm8k-train-5724:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Required average speed for the remainder of the drive"
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Correct reusable residual-distance/time operation but impersonal exposition; separately457tokens exceeds400, no truncation or target shortening permitted.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "eacd717897054c0b584412e5d6a74bde6579e2c0dfee0af2cb07f17e52f60342"
+  },
+  "gsm8k-train-5724:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Total time: 0.5 hours + 1 hour = 1.5 hours"
+    ],
+    "first_person": true,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Own route calculation conserves120miles and1.5hours, computes remaining distance/time and checks the full timeline.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "PASS",
+    "target_sha256": "c2eeb7d0451689f4e0de95c28bf709525a353faea49cf826ef7f50c03a5b4b19"
+  },
+  "gsm8k-train-5895:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Calculate James's jump height by taking 2/3 of Jacob's jump height."
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Correct reusable multiplicative chain and stated checks, but impersonal exposition.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "bf46b0097685c3909dfc8fd33d0a046c0889f9824c6ee70c3939ca0f1049f8b1"
+  },
+  "gsm8k-train-5895:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Now, I calculate the height of each jump:"
+    ],
+    "first_person": true,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Own account composes two doublings then2/3 to16 with grounded units;143tokens separately exclude it from training.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "PASS",
+    "target_sha256": "1ae61ab568d6ce40d37af142bc40646434145ac0ff9cb84efd9a1c4fcfb0d3dc"
+  },
+  "gsm8k-train-6388:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "To check the result, substitute"
+    ],
+    "first_person": true,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Own account records exact state equation and performs concrete substitution22\u219216\u219224, a genuinely reusable operation with a constraint check.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "PASS",
+    "target_sha256": "a3a113976dbf08717fb47d468c78d9117331286aa9d95f40094c5569d7821fb0"
+  },
+  "gsm8k-train-6388:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "we can set up the equation:"
+    ],
+    "first_person": true,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Own first-person plural equation-building uses the post-removal amount as the half-increase base; invert1.5 then restore6, yielding22.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "PASS",
+    "target_sha256": "940b7fa42a69ec2afb19048eef44b3d61534e65c9f86be0c4cae7e0d801a513f"
+  },
+  "gsm8k-train-6513:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "The operations are reusable for similar problems involving a constant rate"
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Explicitly reusable rate-plus-adjustment content is good; still an impersonal recipe rather than first-person account.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "446d32bb4aad74e8e361deefe12dffc4d50894b4a1d6187281f104cdd981e3a2"
+  },
+  "gsm8k-train-6513:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "First, calculate the total number of fish caught:"
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Correct rate-times-time minus loss, but impersonal imperative and135tokens. Voice/token exclusion, not an arithmetic criticism.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "317569cc9925a2851f1e756a988a1a296525d44e959cd6c56762f882129e0530"
+  },
+  "gsm8k-train-6550:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Subtract the number of hybrids with only one headlight from the total number of hybrids"
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Correct complementary subset calculation and check; nevertheless impersonal recipe rather than required first-person account.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "0f0200ed6708dccba51d79da16ca43ee8af0e491d4ac1b5c5b593a81ad716565"
+  },
+  "gsm8k-train-6550:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Next, I calculate the number of hybrid cars:"
+    ],
+    "first_person": true,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Own account uses hybrid subset360, subtracts144 deficient headlights to216; grounded complement-within-subset operation.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "PASS",
+    "target_sha256": "2a47e23af00f6fff643e79692c5678a35cb8a06bfe3e96801c3b4534f4c1f554"
+  },
+  "gsm8k-train-6712:correction": {
+    "checkable_expectation": null,
+    "evidence_spans": [
+      "initial speed) - 4 miles per hour (reduction) = 8"
+    ],
+    "first_person": false,
+    "grounded_operations": null,
+    "meaningful_revision": false,
+    "no_padding": false,
+    "reason": "Repeats terminal-speed8 without distinguishing average from terminal speed or producing a meaningful correction/lesson; rejection-only feedback did not help.",
+    "reusable_content": false,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "ebd67c1fd66f10066ad875e551220393e97b37a4dfe9072dfbde55efcfadc808"
+  },
+  "gsm8k-train-6712:rich": {
+    "checkable_expectation": null,
+    "evidence_spans": [
+      "after accounting for the blisters, is 12 - 4 = 8"
+    ],
+    "first_person": false,
+    "grounded_operations": null,
+    "no_padding": true,
+    "reason": "Answer8 is terminal speed after two blisters; gold11 is time-average of12 and10 across the two intervals. Question asks speed without explicitly distinguishing these. Preserve oracle failure and ambiguity.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "UNRESOLVED",
+    "target_sha256": "bfb438ec74236b07bb7335c68f350b8fedc83cbeec55cee21cc0b15d8b4cbc41"
+  },
+  "gsm8k-train-6898:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Sum the capacities of all three coolers to get the total capacity."
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Correct reusable multiplicative changes and total, but impersonal recipe rather than first-person account; not rejected for missing a heading.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "8af6b599f13dc2b2248bed9f12f6984eb5ef149355bd9ff38d433aebb8be4562"
+  },
+  "gsm8k-train-6898:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Adding these together, the total capacity is 100 + 150 + 75 = 325 liters."
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Correct capacity chain150,75,325, but impersonal exposition; also104tokens, independently below the floor.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "e9ac5eb0a80c505b88478c5a4a963ae147f5b84bdab668cef5bdca7d8a207d17"
+  },
+  "gsm8k-train-6932:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Difference: 432 - 360 = 72 minutes."
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Grounded before/after difference with concrete432-360 check, but impersonal exposition does not meet first-person contract.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "57306c0ce00b54550c03139b71ed4572302887604fb6df3b5b33eb87a8fc6e73"
+  },
+  "gsm8k-train-6932:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Finally, I find the difference between the new and original total video game time:"
+    ],
+    "first_person": true,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Own account distinguishes extra reward72 from new reward432; operations link rate change to12hours.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "PASS",
+    "target_sha256": "62c999ff9d541fe189628df656074ec8c7c437c6de23c79ee4d8d245547535dc"
+  },
+  "gsm8k-train-7054:record": {
+    "checkable_expectation": false,
+    "evidence_spans": [
+      "24 - 18 (sold) = 6"
+    ],
+    "first_person": false,
+    "grounded_operations": false,
+    "no_padding": true,
+    "reason": "Material false check despite correct FINAL6: sums successive inventory states to24, then invents18sold. Actual total sold138 and states must not be summed. Also impersonal exposition.",
+    "reusable_content": false,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "a20f972fe62a644e1d68bdbf9b09fc84f6eeae1a154906edb793a639867ae12f"
+  },
+  "gsm8k-train-7054:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "since we already had 11 from the first batch"
+    ],
+    "first_person": true,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "First-person plural account tracks carryover inventory11,7,6; 52sold after batch2 uses earlier surplus, not negative physical inventory. Grounded reusable state-update operation.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "PASS",
+    "target_sha256": "9212ce0e084be98ebabe947b2bafca49bfdb1a7af30c354aad5469f26d773a49"
+  },
+  "gsm8k-train-7073:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Recognize that the sweater cost represents 1/4 of her total savings."
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Correct inverse-proportion recipe, but impersonal exposition and several repetitive restatements of20times4.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "f1a07ea6682ce51f0fd613dfa1c080b3a300b85f70cf52cad04e096fc11a5e92"
+  },
+  "gsm8k-train-7073:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "I need to determine what 1/4 of her savings is"
+    ],
+    "first_person": true,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Own account inverts the remaining quarter to recover80, with explicit operation and known20 evidence;99tokens separately below the floor.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "PASS",
+    "target_sha256": "15cccbd2b2ca1e35c431c1873e442d72b9acceb44e0bee04c1acb5fd63857d9d"
+  },
+  "gsm8k-train-7458:record": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Calculate Gerald's speed, which is half of Polly's speed."
+    ],
+    "first_person": false,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Correct reusable unit/rate chain, but impersonal recipe; detailed equations alone do not satisfy first-person contract.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "FAIL",
+    "target_sha256": "4044cafc40bec367782d928e4634a2a9e6ada7f1b8e00bb8e1d0f7c8148ce872"
+  },
+  "gsm8k-train-7458:rich": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "To find Polly's speed, I calculate the total distance she traveled:"
+    ],
+    "first_person": true,
+    "grounded_operations": true,
+    "no_padding": true,
+    "reason": "Own calculation composes laps times quarter-mile, divides by half-hour, then halves speed; units and intermediate3miles/6mph are grounded.",
+    "reusable_content": true,
+    "reviewer": "MATH-RICH full-text author reading, not independent verification",
+    "status": "PASS",
+    "target_sha256": "a1f0e7cc15029150ff8080c37fc89848f5cc4d159542a61726b763baf7a6e611"
+  }
+}
