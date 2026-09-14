@@ -352,17 +352,23 @@ transfer. FULL succeeds on all TRAIN cases; control onlyA0/A1/B3. Both retain
 PROBE successesA0/A2/B0/B1/B3, as at255, but failure trajectories differ: equal
 endpoints are not identical commands. FULL's A3 ends invalid_route; control's
 A3 repeats an address and B2 commits nothing. All unavailable endpoints fail.
-Prior panels are reused receipts, not contemporaneous no-write fits. FULL fails
-the at-least3/4 PROBE-pair and taught-graph requirements; control also fails
-memory and earlier-fresh requirements. Both miss the predeclared target.
+Prior panels are reused receipts, not contemporaneous no-write fits. FULL misses
+both separate thresholds: at least 3 of 4 PROBE pairs and at least 3 of 4
+original-taught tasks; control also fails memory and earlier-fresh requirements.
+Both miss the predeclared target.
+The target requires all of the following: at least 3/4 PROBE pairs, including
+at least one pair in each world; at least 15/16 old recall separately at W0
+and W8 and at least 15/16 held audit; and at least 3/4 tasks on each
+original-taught and previous-fresh graph.
 
 The exact270 tokenized inputs/reference masks and400-update schedule match.
 Only new rows222–269 are loss-masked in control; all12 original trajectory
 targets remain supervised. Fresh AdamW3e-5, rank8 and frozen base are unchanged.
 Active/reference labels are33,019/33,019 FULL versus23,885/33,019 control;
 per-batch active/reference scaling preserves the common reference denominator,
-not equal active dose or achieved retention. FULL presents800 new targets;
-control sees the same inputs with zero supervised new presentations. The12 old
+not equal active dose or achieved retention. FULL makes 800 supervised
+presentations of the 48 new targets; control sees the same inputs with zero
+supervised new-target presentations. The12 old
 trajectory targets each receive4 presentations versus16–17 per new target.
 That imbalance motivates a hypothesis, **not a proven forgetting cause**.
 FULL retains all old facts but loses one true audit case; control's recall errors
