@@ -56,3 +56,16 @@ records independent arithmetic and six wording/default-assumption risks before
 reading own selected gold values or own native response/outcome values. This
 does not replace gold, remove cases, or change frozen analysis. Prior math
 outcome values remain unread. Fulltext review follows the frozen rubric.
+
+2026-09-14T23:02Z [MATH-REPLICATION] TERMINAL: all3 native shards exit0,
+96 calls, unchanged frozen base/mounted37ec,263–297s/shard,~0.232 aggregate
+guardian GPU-hours. Physical2–4 returned to idle; no kills/fit/scale. Independent
+fixed32 reduction: rich31/32 versus terse10/32;21 rich-only,0 terse-only,
+nominal exact paired p9.5367431640625e-7. All47 candidate full texts reviewed:
+6 semanticPASS across5 tasks (3 rich,3 own records),41 FAIL,0 pending. Combined
+>=8-row threshold NOT met. Terse failures include15 wrong numeric values and7
+format failures; no terse truncation. Question-only ambiguity flags preserved;
+no gold or denominator repair. Prior math outcome values still unread.
+Own REPORT.md, final/INDEPENDENT_REDUCTION.json, exact native artifacts and
+bound semantic judgments are ready for publication. Recommend no further
+compute/fit/scale in this assignment; PI may reuse node3 physical2–4.

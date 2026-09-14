@@ -1,0 +1,126 @@
+{
+  "aggregate_guardian_gpu_hours": 0.23203955492332978,
+  "all_end_adapter_hashes": "37ec37884e4b0b679edd1dba1be1dec3474589e992649f3a33e7e3b1ec78b8c0",
+  "by_kind": {
+    "correction": {
+      "above400": 0,
+      "below150": 0,
+      "calls": 1,
+      "checked_successes": 0,
+      "correct_but_outside_token_contract": [],
+      "max_tokens": 197,
+      "median_tokens": 197,
+      "min_tokens": 197,
+      "terminal": 1,
+      "truncated": 0
+    },
+    "record": {
+      "above400": 5,
+      "below150": 0,
+      "calls": 31,
+      "checked_successes": 29,
+      "correct_but_outside_token_contract": [
+        "gsm8k-train-181",
+        "gsm8k-train-4455",
+        "gsm8k-train-2488"
+      ],
+      "max_tokens": 512,
+      "median_tokens": 310,
+      "min_tokens": 206,
+      "terminal": 29,
+      "truncated": 2
+    },
+    "rich": {
+      "above400": 0,
+      "below150": 10,
+      "calls": 32,
+      "checked_successes": 31,
+      "correct_but_outside_token_contract": [
+        "gsm8k-train-3905",
+        "gsm8k-train-4531",
+        "gsm8k-train-2894",
+        "gsm8k-train-3431",
+        "gsm8k-train-1438",
+        "gsm8k-train-4735",
+        "gsm8k-train-2376",
+        "gsm8k-train-3521",
+        "gsm8k-train-4818",
+        "gsm8k-train-6581"
+      ],
+      "max_tokens": 312,
+      "median_tokens": 162.0,
+      "min_tokens": 104,
+      "terminal": 32,
+      "truncated": 0
+    },
+    "terse": {
+      "above400": 0,
+      "below150": 32,
+      "calls": 32,
+      "checked_successes": 10,
+      "correct_but_outside_token_contract": [
+        "gsm8k-train-2217",
+        "gsm8k-train-181",
+        "gsm8k-train-5561",
+        "gsm8k-train-1745",
+        "gsm8k-train-3905",
+        "gsm8k-train-4455",
+        "gsm8k-train-2894",
+        "gsm8k-train-3431",
+        "gsm8k-train-4818",
+        "gsm8k-train-276"
+      ],
+      "max_tokens": 8,
+      "median_tokens": 5.0,
+      "min_tokens": 2,
+      "terminal": 32,
+      "truncated": 0
+    }
+  },
+  "candidate_axis_failures": {
+    "checkable_expectation": 22,
+    "first_person": 30,
+    "grounded_operations": 2,
+    "no_false_premises": 2,
+    "no_padding": 4,
+    "reusable_content": 0
+  },
+  "fixed_tasks": 32,
+  "frozen_protocol_and_scientific_sources_unchanged": true,
+  "native_archive_sha256": "388daa11e102dff7b30aac896967ea49885ff046be1d76939d3aba194b15aa52",
+  "native_calls": 96,
+  "native_terminals": [
+    {
+      "elapsed_seconds": 297.17866539099487,
+      "exit_code": 0,
+      "finished_utc": "2026-09-14T22:51:39.526818+00:00",
+      "index": 2
+    },
+    {
+      "elapsed_seconds": 263.2939080990036,
+      "exit_code": 0,
+      "finished_utc": "2026-09-14T22:51:06.752086+00:00",
+      "index": 3
+    },
+    {
+      "elapsed_seconds": 274.86982423398877,
+      "exit_code": 0,
+      "finished_utc": "2026-09-14T22:51:19.433992+00:00",
+      "index": 4
+    }
+  ],
+  "pass_rows_by_kind": {
+    "record": 3,
+    "rich": 3
+  },
+  "terse_failures": {
+    "all_terminated_without_truncation": true,
+    "manually_observed_correct_numeric_but_invalid_format": [
+      "gsm8k-train-2141",
+      "gsm8k-train-6894"
+    ],
+    "no_rescoring": true,
+    "parseable_wrong_numeric": 15,
+    "unparseable_contract": 7
+  }
+}
