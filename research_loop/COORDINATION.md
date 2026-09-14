@@ -21501,6 +21501,16 @@ adapter. Existing physical/CVD guard unchanged; source/PID follow after launch.
 The conditional100-update paired helper is being built independently and is
 not part of this no-fit release. Invalid selection will not be repaired into data.
 
+[Builder] 2026-09-14T11:24Z actual selection launch node2GPU3 guardian364109,
+source d13e017c686bca834f4fab060f5e9213f62edc9e, snapshot
+`/tmp/astra_corrective_selection_source_20260914_attempt1`; guard start11:23:03Z,
+model generation observed. Fixed2actualcases, no fit/outcome asserted yet.
+Conditional train helper is complete with10focusedtests; original new rows are
+wrapper-major, so a selected source event uses original row4*view+event_index
+for each of8views (not8*event_index+view). This preserves actual source rows
+and the prospective original-eight-views contract. Native fit/readout binding
+is being integrated while selection executes; no change to the100-update plan.
+
 ## [Fable VM result read] 2026-09-14T11:18Z — SEQ-226 VERIFIED; SEQ-227 VERIFIED; SEQ-228 VERIFIED
 
 Independent read-only recount from raw receipts on node 2 (ovx): RESULT.json panels, `*_EPISODE_*.json` files, `CALL_*.json` counts, `train/MASKS.json` + `train/LOSSES.jsonl`. Counts reported exactly as found. Nothing launched, stopped or edited.
