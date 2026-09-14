@@ -26,6 +26,16 @@ def helpers():
         protocol=Path(__file__).resolve().parents[1] / PROTOCOL).items()}
 
 
+def check_context(tokenizer, messages):
+    tokens = tokenizer.apply_chat_template(messages, tokenize=True,
+        add_generation_prompt=True, return_dict=False)
+    if type(tokens) is not list or not tokens or any(type(token) is not int for token in tokens):
+        raise ValueError('explicit_flat_prompt_token_list_required')
+    if len(tokens) + curriculum.MAX_GENERATED > curriculum.MAX_CONTEXT:
+        raise ValueError('context_plus_generation_exceeds_2048_no_truncation')
+    return len(tokens)
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ('bundle', 'model-dir', 'output'):
@@ -82,9 +92,7 @@ def main(argv=None):
             check('call')
             if len(calls) >= curriculum.MAX_CALLS:
                 raise ValueError('native_call_budget')
-            prompt_tokens = engine.tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True)
-            if len(prompt_tokens) + curriculum.MAX_GENERATED > curriculum.MAX_CONTEXT:
-                raise ValueError('context_plus_generation_exceeds_2048_no_truncation')
+            check_context(engine.tokenizer, messages)
             capture = dict(call_index=len(calls), messages=deepcopy(messages), metadata=metadata,
                 response=None, error=None, started_unix=time.time())
             calls.append(capture)

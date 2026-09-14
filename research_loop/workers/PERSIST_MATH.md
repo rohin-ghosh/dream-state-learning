@@ -142,3 +142,21 @@ checker/store transitions and all16 denominator rows; 22 tests PASS including
 tamper rejection. This reducer does not alter the frozen native source.
 Terminal paired comparison and Main's publication-order SEQ request wait for
 RICH, not for a new fit. Off-the-shelf workers have no dependency here.
+
+## 2026-09-14T22:14:43Z — non-material context-accounting repair, no native restart
+
+Main relayed PERSIST-CODE's tokenizer mapping-default finding. Our native
+precheck also omitted return_dict=False, so len(mapping) could undercount;
+the unchanged Engine still counts the actual flat token list and records it.
+Reducer already reads those Engine integer counts, not mappings. Observed
+RICH25calls maximum actual prompt789/output512, TERSE32calls maximum actual
+prompt261/output164: all well inside2048 including512 reserved generation.
+No failure or limit violation observed; final reduction will enforce this
+against every raw call rather than assert safety from a faulty precheck.
+
+Non-material local repair makes return_dict=False explicit, rejects mappings,
+tests exact1536/1537 boundary, and adds actual-budget replay checks. It changes
+neither frozen native archive226fc269 nor this running arm's prompt/outputs;
+no restart/new inference. Original precheck flaw remains disclosed with the
+source. Second publication rejection (reducer) reconciled in shared history
+b3ffdeb0 without force; no new GPU launch was attempted.

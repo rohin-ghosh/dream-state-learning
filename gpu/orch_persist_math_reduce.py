@@ -39,6 +39,11 @@ def reduce_arm(root, arm):
             raise ValueError('call_prefix_or_order_join_failed')
         if capture['error'] is not None or capture['response']['messages'] != messages:
             raise ValueError('actual_response_join_failed')
+        prompt_count = capture['response']['prompt_tokens']
+        if type(prompt_count) is not int or not 0 < prompt_count <= curriculum.MAX_CONTEXT - curriculum.MAX_GENERATED:
+            raise ValueError('actual_prompt_plus_reserved_generation_budget_failed')
+        if not 0 < len(capture['response']['token_ids']) <= curriculum.MAX_GENERATED:
+            raise ValueError('actual_generation_budget_failed')
         cursor += 1
         return capture['response']
 
@@ -67,6 +72,9 @@ def reduce_arm(root, arm):
         truncated_calls=sum(capture['response']['truncated'] for capture in captures),
         generated_tokens=sum(len(capture['response']['token_ids']) for capture in captures),
         prompt_tokens=sum(capture['response']['prompt_tokens'] for capture in captures),
+        max_actual_prompt_tokens=max(capture['response']['prompt_tokens'] for capture in captures),
+        max_actual_generated_tokens=max(len(capture['response']['token_ids']) for capture in captures),
+        actual_context_plus_reserved_generation_verified=True,
         parsed_prose_token_range=[min(prose_counts), max(prose_counts)] if prose_counts else None,
         parsed_prose_token_median=statistics.median(prose_counts) if prose_counts else None,
         calls_in_150_400_prose_range=sum(150 <= count <= 400 for count in prose_counts),

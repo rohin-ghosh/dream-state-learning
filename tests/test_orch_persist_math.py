@@ -140,3 +140,39 @@ def test_reducer_replays_original_calls_and_rejects_tampering(tmp_path):
     (directory / 'CALL_000.json').write_text(json.dumps(calls[0]))
     with pytest.raises(ValueError, match='call_prefix_or_order_join_failed'):
         reducer.reduce_arm(tmp_path, 'RICH')
+    calls[0]['metadata']['task_id'] = data['episodes'][0]['task']['task_id']
+    calls[0]['response']['prompt_tokens'] = 1537
+    (directory / 'CALL_000.json').write_text(json.dumps(calls[0]))
+    with pytest.raises(ValueError, match='actual_prompt_plus_reserved_generation_budget_failed'):
+        reducer.reduce_arm(tmp_path, 'RICH')
+    calls[0]['response']['prompt_tokens'] = 100
+    calls[0]['response']['token_ids'] = [1] * 513
+    (directory / 'CALL_000.json').write_text(json.dumps(calls[0]))
+    with pytest.raises(ValueError, match='actual_generation_budget_failed'):
+        reducer.reduce_arm(tmp_path, 'RICH')
+
+
+@pytest.mark.parametrize('size,valid', [(1536, True), (1537, False), (0, False)])
+def test_prompt_budget_explicit_flat_list_not_default_mapping(size, valid):
+    from gpu.orch_persist_math_screen import check_context
+
+    class Tokenizer:
+        def apply_chat_template(self, messages, *, tokenize, add_generation_prompt, return_dict=True):
+            return {'input_ids': [1] * size} if return_dict else [1] * size
+
+    if valid:
+        assert check_context(Tokenizer(), []) == size
+    else:
+        with pytest.raises(ValueError):
+            check_context(Tokenizer(), [])
+
+
+def test_prompt_mapping_is_never_mistaken_for_a_short_prompt():
+    from gpu.orch_persist_math_screen import check_context
+
+    class Tokenizer:
+        def apply_chat_template(self, *args, **kwargs):
+            return {'input_ids': [1] * 10000}
+
+    with pytest.raises(ValueError, match='explicit_flat_prompt_token_list_required'):
+        check_context(Tokenizer(), [])
