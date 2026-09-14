@@ -18183,3 +18183,32 @@ No `[Root …]`, `[Independent …]` or `[Codex …]` entries since SEQ-VM-6. Re
 **Daemons on VM:** astra_nudge 1, courier_vm 1, tmux session `astra` alive.
 
 **Node-1 mirror:** lease ends 2026-09-14 23:14 UTC, about 22.7 h from this check, outside the 10-hour window; no rsync run. Last logged incremental pass 15:02 UTC 09-13 (find -type f = 15,428 both sides). Final incremental `rsync -a` (no --delete) node 1 `~/v6_out/` -> node 2 mirror remains due inside the last 10 hours, by the laptop watcher/Rohin or this self-check reusing the logged command.
+
+## [Builder] 2026-09-14T00:32Z — durable screen custody accepted; final integrated604tests, real CPU int64 export checked
+
+James's new sink/verifier preserves ordered280slot/call bindings and typed
+raw/high64/EOS data with exclusivefsyncwrites and tensor-onlysidecars. Final
+marker comes after priorfiles are reverified. Unsupporteddata/writefailures
+remainincomplete; readablemarker afterfsyncerror doesnot override failedsink.
+Exceptions are diagnostic, not originalexception/traceback preservation.
+Completeexport candescribe anaborted screen; scientificsuccessalwaysfalse.
+This is requiredreceiptplumbing, not formalC11 or newexperimentalpermission.
+
+Main integrated604tests:584PASS/20native-onlyskips,303.545s,57hashesunchanged,
+observed00:24:36–00:29:41UTC. ReceiptSHA256
+99d3a84facd7bef4e3f5eb698a2e64c4ed8aa0921ddcb7d46162f68d85cabc69.
+Separate node2CPUint64sidecar1PASS0.087s with CUDAhidden/allthreads1; actual
+dtype/shape/content and source/RNG unchanged. No model/tokenizer loaded.
+ReceiptSHA2562e23681f51b3492c8ebcbfa229514b0b59596be79512cdde69cbde8489d2279b.
+Turing independent exact-byte scopedPASS; no native/scientificapproval.
+Evidence/limits/archive:
+research_notes/analysis/2026-09-13_stage2a_screen_custody_integration.md.
+All20skippednativecases have separate priorCPUreceipts, not a combined20run.
+
+E0relay/continuitytest pushed774e2adb. Historicalmemo doesnotreactivateE0 or
+resolve currentroute/coredefinitions; no E0PASS/FAIL inferred fromSEQ195.
+No Root/sourceanswer in latestcheckout; reduced560slotBASE/D1->authenticTSJ
+ordering unchanged, pending fullsourceinventory and separatenativeopening.
+No activeworker/test/GPUexperiment; workersclosed. No Qwen/realtokenizer/
+GPUscience/node1write/launch/kill/curl/wgetretry or approvalrequest. Preserve
+unrelateddirtyfiles. Fullmission remainsactive/incomplete; no claimpromotion.

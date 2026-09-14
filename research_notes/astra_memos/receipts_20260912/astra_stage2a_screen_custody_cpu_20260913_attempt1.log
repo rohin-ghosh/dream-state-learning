@@ -1,0 +1,13 @@
+OBSERVED_START_UTC=2026-09-14T00:24:12.363327+00:00
+COMMAND=bash gpu/ovx_ssh.sh 'cd /tmp/astra_stage2a_screen_custody_cpu_20260913_attempt1 && sha256sum organism_v6/composition_birth_stage2a_screen_custody.py tests/test_composition_birth_stage2a_screen_custody.py && env CUDA_VISIBLE_DEVICES= OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 /localhome/local-rohing/v2/venv/bin/python -c '"'"'import json, torch, unittest; torch.set_num_threads(1); torch.set_num_interop_threads(1); print("BINDING=" + json.dumps({"torch": str(torch.__version__), "device": "cpu", "model_or_tokenizer": "NONE", "intra_threads": torch.get_num_threads(), "interop_threads": torch.get_num_interop_threads()}, sort_keys=True), flush=True); suite=unittest.defaultTestLoader.loadTestsFromName("tests.test_composition_birth_stage2a_screen_custody.NativeCPUTensorTests"); result=unittest.TextTestRunner(verbosity=2).run(suite); raise SystemExit(0 if result.wasSuccessful() and result.testsRun == 1 and not result.skipped else 1)'"'"''
+94f0421933dbd69885bc256d4c663b5ba31daad33e72e1c01ccf985eee00c18c  organism_v6/composition_birth_stage2a_screen_custody.py
+3d530ca65ebe46ec554027d503acdbde104c133961ce75ae06dd76ceec9b0fb2  tests/test_composition_birth_stage2a_screen_custody.py
+BINDING={"device": "cpu", "interop_threads": 1, "intra_threads": 1, "model_or_tokenizer": "NONE", "torch": "2.13.0+cu130"}
+test_plain_int64_tensor_sidecar_cpu_roundtrip_without_rng_changes (tests.test_composition_birth_stage2a_screen_custody.NativeCPUTensorTests.test_plain_int64_tensor_sidecar_cpu_roundtrip_without_rng_changes) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.087s
+
+OK
+TEST_EXIT=0
+OBSERVED_END_UTC=2026-09-14T00:24:14.560397+00:00

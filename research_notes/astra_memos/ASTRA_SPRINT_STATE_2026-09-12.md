@@ -1,4 +1,20 @@
-## Current superseding snapshot — 2026-09-13 17:19 Pacific
+## Current superseding snapshot — 2026-09-14 00:32 UTC (September 13 Pacific)
+
+Durablescreen sink/verifier implemented, independently reviewed exactbytesPASS.
+Main604tests:584PASS/20native-onlyskips,303.545s,57hashesfixed. SeparateCPU
+int64export1PASS0.087s; no model/tokenizer/GPU. Earlier2readoutcontinuitytests
+use syntheticgeneration overtinyrealautograd; notHF/nativequalification.
+Sources/receipts/limits: analysis/2026-09-13_stage2a_screen_custody_integration.md.
+Completeexport may beaborted; exceptionsdiagnostic; fsyncfailureneveroverridden
+byreadablemarker. No actualnative/provenance/C11/scientific gate follows.
+
+E0relay reconciled/pushed774e2adb, nooldqueue restart orE0PASS/FAIL inferred.
+No activeworker/test/GPUexperiment. Sourceownerroute/corebinding unanswered;
+nextcompleteinventory/sourceaudit, separatematerial/nativeopening, reduced560
+slotBASE/D1screen thenauthentictwo-SLEEP. FullgoalACTIVE/incomplete, sameclaims.
+Handoff00:32UTCcurrent. Preserve unrelateddirtyrules/unreviewedTSJdraft.
+
+## Historical superseded snapshot — 2026-09-13 17:19 Pacific
 
 Historical E0-r memo relay reconciled: committedSeptember13 04:14UTC, predates
 acceptedSEQ195/reducedcontrollerordering; noE0execution/pass/fail oroldqueue

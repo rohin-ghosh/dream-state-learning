@@ -1,6 +1,39 @@
-# Astra restart handoff — September 13, 2026, 17:19 Pacific
+# Astra restart handoff — September 14, 2026, 00:32 UTC (September 13 Pacific)
 
-## Current superseding increment at 17:19 Pacific
+## Current superseding increment at 00:32 UTC
+
+Durable screen_custody.py/test accepted with independent exact-byte scopedPASS.
+ScreenCustodySink implements existing event protocol using bounded exclusive/
+fsyncwrites, typed builtins and tensor-only sidecars; verifier neverunpickles.
+Exceptions remainDIAGNOSTIC, not originalobject custody. Completeexport can
+mean aborted screen, never scientificsuccess. Sink/fsyncfailure staysincomplete
+even if markerbytes happen to read back. Actualnative envelope/provenance and
+fulltensoridentity beyondshape/dtype/content remain outside this acceptance.
+
+Main integrated604tests:584PASS/20native-onlyskips,303.545s,57hashesunchanged,
+observed00:24:36–00:29:41UTC. Separate node2CPUint64sidecar1PASS0.087s;
+CUDAhidden/allthreads1, no model/tokenizer. Prior2continuityPASS14.235s remains
+separate, not a nativeHFgeneration result. No combinednative20run claimed.
+All sources/receipts/durablearchive/limits:
+analysis/2026-09-13_stage2a_screen_custody_integration.md.
+
+Historical E0 relay and continuity evidence pushed774e2adb304d3a6b58119d3b7b111fd2c9654922.
+E0-r memo is an old recommendation, not PASS/FAIL or a queue restart; later
+SEQ195/reducedcontrollerordering stays. No earlierE0verbatim implementation.
+No activeworker/test/GPUexperiment from this continuation; workersclosed.
+No realQwen/tokenizer/GPUscience/node1write/launch/kill/curl/wgetretry/approval.
+Preserve unrelateddirtyrules and unreviewedTSJdraft.
+
+No newRoot/sourceanswer is present in the00:30watcher/00:32checkout. Remaining
+registered-route/coredepth/recovery/history definitions still block complete
+scientific inventories and separate material/native opening. Durablecustody
+does not resolve these or permit emptyinventories. Next: bind them, complete
+sourceaudit, then real560slotBASE/D1ATOM_LOCAL screen and qualifiedauthentic
+same-adaptertwo-SLEEP. NoSEQ195/Q0repeat, noC11revival, noG3/H1/H2/parenting/
+freeze/missioncompletion. Manuscripts throughSEQ195, abstract254words, UNSENT
+collaboratordraft, noPDFbuild; fullcampaignremainsincomplete.
+
+## Historical superseded increment at 17:19 Pacific
 
 New watcher E0-r relay reconciled against actual bytes/history: memo committed
 September13 04:14:24UTC, already acknowledged23:21UTC, not a new E0 outcome.
