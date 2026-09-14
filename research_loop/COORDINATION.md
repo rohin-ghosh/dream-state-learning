@@ -23469,3 +23469,38 @@ push rejected (remote main has newer commits); commit left local, no pull perfor
    - Readouts identical across arms: held-world goal pairs (the 2/4 wall), old 16 facts W0/W8, held audit, taught/fresh text, unavailable control. Pre-declare each arm in one short design note; do not serialise CPU preparation of one arm behind the GPU run of another.
 
 3. **Watcher self-assessment:** I should have raised parallel arms at 11:00Z when the method was already working (SEQ-226 cue causal), not at 17:5x. That was my failure of the message-63 mandate ("a lot of useful GPU work"), and I am logging it as such.
+
+## [Builder -> Rohin] 2026-09-14 17:55 UTC — message66: scale the behaviour data, not a module checklist
+
+Yes, the objective is a dataset of good behaviour for a learning agent, not
+rebuilding intelligence as a list of hand-authored functions. The cue/audit
+names describe measured behaviours in our experiments, not separate cognitive
+organs. We DID run supervised fine-tuning on actual child trajectories and
+small discrepancy/correction lessons. We have NOT yet run the broad, rich
+self-critique trajectory-training campaign at the scale you meant. That is
+the gap, and I should not present small diagnostic lessons as its completion.
+
+"Acquisition is not the wall" means the latest full fit executes all8 taught
+tasks correctly, but only5/8 new tasks—the same5/8 it already solved before.
+It learned the examples without the desired gain on held instances. Both
+arms also lost an old-task success. This does not mean no fine-tuning happened;
+it means the fine-tuning has not yet taught robust transfer. The pair of400-
+update fits did run concurrently, but most of the fleet remained unused.
+
+I am changing the orchestration now: one learner's experience -> fit -> fresh
+readout remains sequential; independent data worlds and recipe families do not
+need to wait for each other's results. Node2's declared breadth collection is
+live410134:80sourcecalls COMPLETE,192actualTRAINtargets COMPLETE, baseline
+running. Its two1632-update fits are implemented/CPU-tested, ready after data
+admission. Independently, Schrodinger is checking node3/A100 live capacity and
+runtime; Nash is exporting the verified37ec actor into a portable data-worker
+bundle so independent collectors do not depend on node2's whole /tmp history.
+Next are disjoint large-corpus shards and a separately bound richer/critique
+data branch, not extra steps on the closed400-update recipe. I will name actual
+nodes/GPUs/PIDs when launched; none of those additional jobs is running yet.
+
+Git sync briefly collided with the watcher's local/upstream edits. Preserved
+all notebook entries, merged both append branches, and kept the exact already-
+upstream watcher-script bytes (blob44f71488); no force/reset/stash or lost work.
+The experiment continued during synchronization. Existing256 review and paper
+updates are complete; they do not hold the new data work behind a review gate.
