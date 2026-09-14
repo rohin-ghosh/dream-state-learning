@@ -22233,3 +22233,58 @@ nowcontainALL4newfacts: contrastisordering/repetition, NOTuniqueinformation
 coverage or selection-superiority. Keepbothdeclaredarms; no outcome-basedchange.
 NoA3fitstartedbeforethisentry. Physical+CVDscan and7440secondcaps/sixhourlease
 margin asfrozenguard. PIDs/startfollow; no jobskilled.
+
+## [Fable VM result read] 2026-09-14T13:54Z — SEQ-242 VERIFIED; SEQ-243 VERIFIED; SEQ-244 VERIFIED
+
+Node 2 (ovx), read-only. Roots: `/tmp/astra_fresh_reader_cycle_20260914_attempt1` (SEQ-242, SEQ-243 attempt 1) and `/tmp/astra_fresh_reader_cycle_20260914_attempt2` (SEQ-243 retry, SEQ-244). `attempt2/collect` is a symlink to `attempt1/collect` as the entry states.
+
+**SEQ-242** (fresh A3 observe collection)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| grounded EVENTs | 4/4 | accepted_events 4, event_denominator 4, bank len 4 | attempt1/collect/RESULT.json, COLLECTION.json |
+| native calls | 8 | model_calls 8; 8 CALL_*.json; captures len 8 | attempt1/collect/ |
+| fits | 0 | fits 0 | attempt1/collect/RESULT.json |
+| parent | none | parent_present False | attempt1/collect/RESULT.json |
+| status | COMPLETE | status COMPLETE; COLLECTION status COLLECTION_COMPLETE_NO_FIT | same |
+
+Integrity: source commit 9817773e matches `attempt1/source_commit.txt` (9817773e9258baff116d0cea995e82fa2846f291). collect/RESULT.json sha256 e50af9ce…84ba7 is the value later recorded as collection_result_sha256 in both BEFORE files. loaded_adapter_state_sha256 48dc1d6d (no adapter prefix named in entry).
+
+**SEQ-243** (cold BEFORE attempt 1, FAILED at audit stage)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| status | FAILED, actual_committed_outcome_required | status FAILED; error ValueError('actual_committed_outcome_required') | attempt1/before/FAILED.json |
+| route/recall calls | 96 | model_calls 96 | FAILED.json |
+| classifier calls | 16 | captured_calls 16; 16 CALL_*.json; HELD_AUDIT captures 16 | attempt1/before/ |
+| own routing | 1/4 | OWN_PARAMETRIC reached_goal 1 / denominator 4 | FAILED.json panels |
+| new W0 / W8 recall | 0/4, 0/4 | RECALL_W0 0/4, RECALL_W8 0/4 | FAILED.json panels |
+| old W0 / W8 retention | 12/12 | OLD_RECALL_W0 12/12, OLD_RECALL_W8 12/12 | FAILED.json panels |
+| classifier | 16/16 | HELD_AUDIT success 16 of 16 captures (kinds fault+true) | attempt1/before/HELD_AUDIT.json |
+| reader OFF | 2/4 | OWN_READER_OFF reached_goal 2/4 | FAILED.json panels |
+| text | 8/8 | HELD_TEXT_0 4/4 + HELD_TEXT_1 4/4 | FAILED.json panels |
+| MISS | 0/4 | UNSEEN_MISS 0/4 | FAILED.json panels |
+| tasks 2/3 read twice, invalid_route, no committed outcome | yes | OWN_PARAMETRIC terminal [reached_goal, wrong_outcome, invalid_route, invalid_route]; memory_calls [2,2,2,2]; chosen_port None for episodes 2,3 | FAILED.json panels |
+
+Integrity: episode files new_task/*_EPISODE_*.json (4 per panel, 16 total) equal the recorded episodes byte-for-byte. Retry source commit 8e520bc5 matches `attempt2/source_commit.txt`. Entry's archived-root SHA f0ccf142…68fd0: no file under either root names it (grepped prepare/, before/, RECOVERED_CASES_CPU.json, logs), so not re-derived; the notebook path of the archive is not given.
+
+**SEQ-244** (cold BEFORE attempt 2 with audit wrapper repair)
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| status | COMPLETE | status COMPLETE; fits 0; frozen_base_unchanged True | attempt2/before/RESULT.json |
+| own routing | 1/4 | OWN_PARAMETRIC 1/4 | RESULT.json panels |
+| new W0 / W8 recall | 0/4, 0/4 | 0/4, 0/4 | RESULT.json panels |
+| old W0 / W8 retention | 12/12 | 12/12, 12/12 | RESULT.json panels |
+| classifier | 16/16 | HELD_AUDIT success 16 of 16 | attempt2/before/HELD_AUDIT.json |
+| reader OFF | 2/4 | 2/4 | RESULT.json panels |
+| text | 8/8 | 4/4 + 4/4 | RESULT.json panels |
+| MISS | 0/4 | UNSEEN_MISS 0/4 | RESULT.json panels |
+| actual reader audit | 8/8 faults correct, no true stratum | actual_reader_calls 8, admitted 8, correct 8/8, all 8 case kinds 'fault' | attempt2/before/ACTUAL_READERS.json, ACTUAL_CASES.json |
+| pointer sequence | [1,0,1,0,3,2,3,2] | source_index [1, 0, 1, 0, 3, 2, 3, 2]; addresses each of 4 new records twice | ACTUAL_READERS.json |
+| two invalid routes remain, no committed outcome | yes | terminal [reached_goal, wrong_outcome, invalid_route, invalid_route]; ports None for 2,3 | RESULT.json panels |
+| BEFORE result SHA | a83cbe29…baba7 | sha256sum a83cbe297875c415c42f34b439f71f04e96d81a9e7dc61a649a3529b25bbaba7 | attempt2/before/RESULT.json |
+
+Integrity: model_calls 120 (entry gives none; 24 top-level CALL_*.json = 16 classifier + 8 audit, plus 96 route/recall in new_task/), audit_policy ALL_CAPTURED_READS_WITHOUT_SYNTHETIC_TRANSITION_V2, loaded_adapter_state_sha256 48dc1d6d same as attempt 1 and the collection. Episode files equal recorded episodes (16/16). Observation, not a headline count: in both BEFORE roots `new_task/PANELS.json` does not compare equal to the `panels` object in RESULT/FAILED.json (the builder's memo template asserts equality for the cue roots; not checked further within the time bound).
+
+Scope note (builder's own limits): one fresh bank of four new identities in the same four-fact family, externally offered actions, one child adapter, no parent, no fit; own-routing baseline 1/4 is diagnostic, not an outcome claim.
