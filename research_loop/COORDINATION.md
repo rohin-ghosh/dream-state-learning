@@ -26565,3 +26565,4 @@ Read-only re-derivation on node 2 (ovx) from root `/localhome/local-rohing/orch_
 
 Integrity: REDUCTION.json sha256 `626f7cc4…7726` matches the entry on the node and in the repo copy `research_notes/analysis/orch_math_record_20260914_attempt1/REDUCTION.json`; SEMANTIC_REVIEW.json `306094b6…8318` matches; terminal_capsule.tar.gz `1570f8ee…5a73` matches. Model calls: entry 190 = 190 CALL files = `calls` 190. No base/adapter hash named (collection screen, no fit).
 Scope (builder's own limits): one 64-task screen, author-read full texts, not an independent blind audit; no answer-accuracy or learning claim; no fit.
+push rejected (remote ahead, non-fast-forward): commit left local, never pulled.
