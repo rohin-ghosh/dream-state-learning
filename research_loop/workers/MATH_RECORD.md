@@ -34,3 +34,24 @@ research_notes/analysis/orch_math_record_20260914_attempt1/ACTIVE_RECEIPT.json.
 Question-only gold reading complete:62VALID,1AMBIGUOUS(single worker wage),
 1SUSPECT(orange-juice gold6 despite12 implied); all64 remain denominator.
 No target fulltext yet reviewed; no admission/yield claim at launch.
+
+2026-09-14T22:50:23Z terminal/publication-ready; requesting next SEQ from Main,
+none reserved. OLD9/64 vs NEW55/64 admitted records,46wins0losses; exact paired
+p1.4210854715202004e-14; grounding NEW61 vs OLD59, false1vs3, unresolved1each.
+All190responses fully read,107PASS82FAIL1UNRESOLVED. Independent initial rich
+admissions28/64; combined92distinct target rows over59distincttasks, not92
+paired wins.63/64 common rich outcomes; OLD63/64 NEW62/64 record outcomes
+(oneNEWtruncation): NOT improvement in answer accuracy. Families OLD2/0/4/3,
+NEW14/11/15/15. SixNEW and oneOLD >400token failures preserved. Source-gold
+wrong6vs12 question retained; one wage ambiguity excluded symmetrically.
+Fullfalse cases: rumor-as-fact both arms; OLD savings/earnings check label;
+OLD reversed reusable subtraction. NEW1734 true boolean-checker notice echo
+disclosed as neutral-prefix mismatch, no gold/reasoning leakage or rewrite.
+All4shards complete by22:45:48.713285Z; released22:46:20UTC. Native0.60809438
+GPUh/guardian0.61555556GPUh.19/19 finalCPU tests+190exactprompt/prefix/hash
+replays pass. No further native/scaling/fits. Final report and canonical
+REDUCTION at own analysis prefix and node2 own root; publication in progress.
+Next discriminating work: blinded re-reading/neutral-prefix CPU audit, then
+only separately authorized freshL1 actual-operation reuse controls. Original270
+failure remains final. Another worker's transient merge resolved independently;
+our final packet does not touch their state/board.
