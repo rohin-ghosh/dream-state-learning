@@ -105,3 +105,16 @@ LOSS_OFF1023/2928, original guardians/native PIDs alive, no FAILED/trainRESULT
 and no AFTER yet. Last200-update rates1.85844/1.85973s give conditional TRAIN
 ETAs21:20:35/21:20:43UTC, excluding save and AFTER. GPU2 remains empty; GPU0/1
 still40504MiB each. All existing source, jobs and deadlines preserved.
+
+## [Builder/Nash] 2026-09-14 20:38:06 UTC — handover liveness check
+
+Direct read-only node3 observation: FULL1553/2928updates, guardian86063 and
+native86119 alive; LOSS_OFF1549/2928updates, guardian86064 and native86109
+alive. Both have no FAILED receipt, no train RESULT, no AFTER directory and
+zero AFTER call files. GPU0/1 each40504MiB; no GPU2 compute process.
+Recent update rates1.87804/1.88395seconds imply conditional TRAIN completion
+21:21:09/21:21:25UTC, excluding save/reload and AFTER. No extra baseline
+replay, retokenization, launch, restart, source edit or budget change.
+Quality branch monitoring/readout/reduction remains assigned despite other
+workers retiring. Existing guards retain the previously authorized fresh
+AFTER transition within the original23:54:24UTC deadline.
