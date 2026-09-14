@@ -32,3 +32,10 @@ identities only. Native guardian must repeat scan after transport disconnect.
 Remote root /localhome/local-rohing/orch_base_contract_20260914_attempt1.
 No fits/scale regardless of outcome. Parent remains DEV; task2554 wording may
 be ambiguous and will not be replaced or treated as unqualified evidence.
+
+2026-09-14T23:01:20Z [Builder] LAUNCHED after preGPU publication4212a4db.
+Own outer guardian PIDs442252/442256/442260/442264; actual native
+442428/442436/442440/442442 physically bound node2UUIDs0–3. Every guardian
+resource scan passed after source archive verification540files. No other GPU
+writes. Up to32calls fixed; author reduction/replay tooling is separate from
+immutable native source. Waiting for raw outcomes and final frozen-state checks.
