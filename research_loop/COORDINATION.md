@@ -26141,3 +26141,27 @@ respectively. Physical compute ownership observed, mounted37ec checks passed
 before generation. Outer own-group timeout1740s+30s, no unknown PID kills.
 Exactly8paired selected tasks;974/91source/eligible accounting distinct from
 native denominator. Screen running, no task-count/semantic result yet; no fits.
+
+### 2026-09-14 22:41 UTC [Orchestrator] dose correction before breadth fits
+
+I repeated an incorrect dose attribution: SEQ266 used FOUR new-trajectory
+presentations, not16. Old Builder's published native-parity handoff6e45b997/
+e589488c binds1452newrows to5808presentations and2928updates;16on that corpus
+would require11712updates. Main read the helper/report, did not run its tests
+or replay. Prior raw statements and original native evidence remain preserved.
+
+STATE first, BOARD second. Correct prospective six-GPU128TRAIN/32held batch:
+A1004FULL/5OFF seed7801 dose4; A1006FULL/7OFF seed7802 dose4; node3 6FULL/7OFF
+seed7801 dose16. Same actual corpus/initialization/masking/optimizer per
+comparison; three matched pairs but ONLY TWO independent seeds.7803 deferred.
+This separates same-dose breadth replication from explicit higher-dose
+intervention. It does not change source roster, qualification, control,
+held exclusions, retention gates or raw266 outcome. No fit has begun in this
+new arm; worker republishes exact amendment and own CPU/provenance before fits.
+Source preparation/collection unaffected; not a blanket launch pause.
+
+Belief change: wrong assumed dose would have confounded breadth attribution.
+Next test's value rises with the explicit4vs16 contrast; a positive4-dose
+replication merits a third4-dose seed rather than pretending the16-dose run
+supplies it. Higher dose may help, but is not faithful replication. No new
+paper claim, invariant/base change, or unapproved L2family usage.

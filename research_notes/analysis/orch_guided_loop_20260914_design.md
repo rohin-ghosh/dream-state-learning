@@ -10,9 +10,11 @@ changes. This file does not ratify new held-family usage or promote an adapter.
 
 The finite SEQ266 contrast motivates broader same-recipe tests and readiness
 for repeated guided cycles. Its failed all-world conjunction stays failed.
-Independent prospective cohort replication and three-seed broader fits are
-separate tests, not retroactive repairs. Neither is evidence of a learned
-compiler or repeated consolidation until measured.
+Independent prospective cohort replication and broader fits are separate tests,
+not retroactive repairs. Dose correction22:41UTC:266 used FOUR presentations,
+not16. The prospective breadth batch now has two4-dose training seeds and one
+16-dose same-seed contrast; it is not three independent seeds. Neither result
+is evidence of a learned compiler or repeated consolidation until measured.
 
 ## Compiler answer
 

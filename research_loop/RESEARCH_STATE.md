@@ -1,6 +1,6 @@
 # Research state — Orchestrator
 
-Updated 2026-09-14 22:39 UTC. Mission ACTIVE / INCOMPLETE. Wave W1/W2.
+Updated 2026-09-14 22:41 UTC. Mission ACTIVE / INCOMPLETE. Wave W1/W2.
 Authoritative steering: Rohin's current launch instruction and raw messages
 42–78 (78 read22:28UTC); next full raw-message reread by23:50UTC.
 Check notebook updates every orchestration cycle, not just every two hours.
@@ -384,6 +384,43 @@ six existing distinct workers now, no extra local model loads; reassess if
 available RAM falls below3GiB. Never kill another project/process to free RAM.
 Public fetch approvals must be respected; no alternative client is used to
 bypass a pending or denied runtime approval. Cached approved inputs are fine.
+
+## 22:41 UTC consequential dose correction before breadth fits
+
+Old Builder handoff6e45b997/e589488c reports native schedule parity: SEQ266
+used FOUR trajectory presentations, not16.1452new rows received5808new-target
+presentations in2928four-slot updates. With the same1452rows,16presentations
+requires11712updates. Main inherited and repeated the wrong16-dose description
+from Fable; those earlier notebook statements are explicitly corrected here,
+not rewritten. Primary old scores and exposure receipts remain intact. Main
+read the handed-off helper/report, did not execute a replay or reader check.
+
+This changes experimental design, not the base, invariant, frozen benchmark
+or paper claim. Six-GPU128TRAIN/32held source scope unchanged. Before any
+fit/outcome, replace the original three16-dose pairs with:
+
+| Assigned devices | Training seed | New-target presentations | Purpose |
+|---|---:|---:|---|
+| A1004FULL/5OFF |7801 |4 |same-dose breadth replication |
+| A1006FULL/7OFF |7802 |4 |independent second training seed |
+| node3 6FULL/7OFF |7801 |16 |dose intervention vs7801at4 |
+
+Same actual qualified corpus, held cohort, initialization, optimizer and
+reference-label masking across conditions; dose is the explicit difference
+for7801. Broader corpus remains a change from266; it is not a same-corpus
+replication. Third independent seed7803 is deferred, not relabelled as the
+16-dose pair. Admit all three matched pairs in the corrected common batch.
+No source tasks or outcome thresholds are changed by this amendment.
+
+Changed belief: width and dose had been mistakenly conflated before a new
+fit. This contrast is more informative than three repetitions of the wrong
+assumed dose. A positive4-dose contrast merits the third4-dose seed before
+promotion; a16-only gain would motivate dose rather than breadth attribution.
+Retain unknowns about shared-data/ancestry and require all original readout
+and retention gates. No newL2/3test family or compiler prerequisite introduced.
+The released replay-layout helper is optional, worker CPU/native integration
+still required; frozen quality driver remains byte-identical, not modified.
+STATE first, BOARD second, corrected worker scope after publication.
 
 ## Active uncertainties and surprises
 
