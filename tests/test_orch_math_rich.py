@@ -97,3 +97,15 @@ def test_portable_hash_keeps_mounted_default_namespace_and_is_readonly():
     parameters['base.layer.weight'].requires_grad = True
     with pytest.raises(ValueError, match='readonly'):
         mounted_adapter_parameters(model)
+
+
+def test_reducer_preserves_denominator_before_calls(tmp_path):
+    import json
+    from gpu.orch_math_rich_reduce import reduction
+    tasks = [dict(id=f'{family}-{index}', family=family) for family in math.MINING for index in range(8)]
+    (tmp_path / 'TASKS.json').write_text(json.dumps(dict(tasks=tasks)))
+    report, rows = reduction(tmp_path)
+    assert report['denominator'] == 32 and not report['complete']
+    assert not report['eligible_scale_families'] and not report['fit_ready']
+    assert report['class_metrics']['correction']['attempted'] == 0
+    assert rows == []

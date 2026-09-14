@@ -156,3 +156,18 @@ no reset,rebase,stash,forcepush or other workers' edits overwritten.
 0da2fdb970001cc413b3b6d83e19466b6c4f66e767c4d0edfedbc0024716d9c3;
 CPU9/9,fresh native preparePASS0calls. Full failed directories preserved with
 .preAdapterRepair suffix. New preGPU publication queued; retry after push.
+
+## 2026-09-14T22:10:26Z — ACTOR_READY plus persisted calls, actual confirmed generation
+
+After preGPUpublication77e8352e, guardians432343/432344/432345/432346
+started22:08:52Z. NativePIDs432448/432444/432442/432446 map toGPUs4/5/6/7.
+All four ACTOR_READY bind mounted adapter37ec exactly; /proc CVD and physical
+compute PID agree. Persistedcalls8/9/8/8=33 at22:10:26. Evidence
+research_notes/analysis/orch_math_rich_20260914_active_actor.json.
+Both earlier failures remain explicitly zero-science engineering aborts.
+MAIN STATUS: now genuinely generating; not merely PIDs. No SEQ requested yet.
+Outcome replay reducer CPU10/10 added locally; correction outcomes separated.
+Early content inspection finds real arithmetic errors in terse output (not
+only missing FINAL), but at least one ambiguous public sailboat question has
+question-supported420 versus benchmarkgold120. Preserve original outcome;
+do NOT train a rationalization toward suspect gold. Full review remains gate.

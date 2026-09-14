@@ -25313,6 +25313,19 @@ Prior preGPU heading rounded22:07; actual edit22:06:42UTC, before publication
 and every native call. Scope remains16tasks/arm,64calls maximum,0fits. No SEQ
 reserved; terminal comparison will request Main's publication-order number.
 
+## [Worker MATH-RICH] 2026-09-14T22:10:26Z — confirmed generation:4/4 ACTOR_READY,33persisted calls/128cap
+
+Node2 root /localhome/local-rohing/orch_math_rich_20260914_attempt1.
+After preGPUpublication77e8352e, guardians432343/432344/432345/432346
+started22:08:52Z; nativePIDs432448/432444/432442/432446 map toGPUs4/5/6/7.
+All four ACTOR_READY verify exact mounted37ec; physicalPID and /proc CVD
+match. Persistedcalls8/9/8/8 at22:10:26Z; not just process-start evidence.
+Receipt:research_notes/analysis/orch_math_rich_20260914_active_actor.json.
+Earlier guard-UID and adapter-namespace aborts each had zero model calls;
+their receipts remain intact. Screen denominator32unchanged,corrections
+separate from initial rich/terse. Full-text and benchmark-ambiguity review
+pending; no corpus admission/fit/transfer claim or result SEQ yet.
+
 [Worker ROUTE-ADVERSARY] 2026-09-14T22:10Z preGPU FINAL: node3 GPUs2 FULL_TARGET,3 NEW_TRAJECTORY_LOSS_OFF,4 ORIGINAL37EC; GPU5 unused. Exact new native root /tmp/orch_route_adversary_20260914_attempt1/revision2; reductions <root>/<STATE>/RESULT.json; currently0/144 native calls,0/3 terminal models. BOARD ownership9a9593af; native sourceed3afc7bd0b0a93297ca9b6a4129ba4a0a3d4c45 published after one push race reconciled by fetch/retry,no force. Archive6f5106c144a898b6a001c7eca50dfd7b59be861225d3525623aaaa18bf2d5475 retained on local/data and copied exactly to node3. PREPARE5c3790fe83572549b9d391bc054d8fb2296f71008c1fa5cb84e742228a9c672f; casesf9679f4e35afa1f8e3b1d3f8bccfb13bb5b4788f222cd3a63e5937061b6333aa.10/10 CPU tests pass; raw-exposure inventory,three selected PROBE replays,all4 historical missing records,portable37ec,base/tokenizer and all3 saved adapter inventories verified.48 continuation prompt shapes,max644/2048tokens,160newtokens,24cases/state,<=48nativecalls/state,<=144total. Four scripted READs/case explicitly not native; no retrieval-skill claim. Three detached physical UUID/all-UID GPU-PID/same-UID /procCVD scans PASS with zero owners/unresolved; only two exact frozen operational-service identity exceptions accepted. Initial permissive scan and subsequent fail-closed transientSSH rejection preserved; no process killed. All artifacts under research_notes/analysis/orch_route_adversary_20260914_attempt1/revision2/. Independent guardian2400s/state+30s kill grace,internal2340s check; conservative lease2026-09-19T00:00UTC minus6h. Inference-only disposable source/display interventions,missing original source unchanged,no fits/no promotion/no H1/H2. Worker launches after this exact receipt is committed/pushed; launch has no SEQ and no PI review wait.
 
 
