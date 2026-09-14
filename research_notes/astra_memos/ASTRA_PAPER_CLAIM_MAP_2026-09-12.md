@@ -5,7 +5,14 @@ externally requested correction are included, with SEQ259 implementation-author
 review overlap disclosed. SEQ-260 adds the primary 1,632-update breadth-fit
 comparison; released independent episode-level review by Ramanujan agrees. Complete
 TRAIN acquisition does not establish generalization and both arms fail the
-predeclared target. Rich/quality work remains status only, not new metrics. SEQ-251 fresh-identifier transfer is terminal with
+predeclared target; no incremental PROBE advantage is established. A new
+SEQ263–265 addendum separates V2's zero content-qualified
+episodes, V3's 56/64 action-complete episodes/336 UNREVIEWED rows per view, and
+critique 6/16 versus repeat 4/16 goals with 1/8 pairs each and zero six-turn
+candidates. The full rollup with separate adjudication qualifies 1/56 candidate
+episodes (1/64 attempts), six rows per view and no opposite-goal pair; no tiny
+fit is planned. Rich learning remains UNTESTED. Quality 2,928-update fits remain
+LIVE/not analyzed. SEQ-251 fresh-identifier transfer is terminal with
 independent review PASS; terminal252/253, closed failed254, zero-fit255 and closed256 incremental
 fits have released bounded independent review PASS. The combined248–256 addendum preserves failures and the first-branch limit. SEQ-247 shared-writer material control is terminal and
 independently reduced; see its appended addendum. Earlier SEQ-246 matched-replay
@@ -5940,7 +5947,8 @@ independent authentication of live model tensors.
 **Historical reporting boundary for SEQ257/258.** The separate breadth fits
 were still finishing at that cut. SEQ259's correction review and SEQ260's primary
 fit result are now reported separately below; SEQ260 independent review agrees
-with the primary. Rich/quality work remains separate status, not new metrics here.
+with the primary. Later rich execution/critique results are separated below;
+V3 content qualification is not a fit, and quality fits remain LIVE/not analyzed.
 Neither launch nor candidate retention demonstrates improved learning. No H1/H2,
 broad-transfer, parenting-efficiency or full-flywheel promotion. Collaborator UNSENT.
 
@@ -6030,8 +6038,9 @@ reference labels are133,272/133,272 versus98,744/133,272; the34,528-label
 difference is not matched active dose. Matching old recall does not equate
 audit or previously-fresh retention.
 
-Quality-filtered and richer-trajectory work remains separate collection/design
-status, not a new result here or a retrospective relaxation of SEQ258's gate.
+Later rich execution and critique collection are reported separately below.
+Quality 2,928-update fits remain LIVE/not analyzed; the blocked 12,384-update
+scale proposal is not revived and SEQ258's failed gate is not relaxed.
 Earlier SEQ253/256 interpretations and the800 presentations of48 distinct targets
 remain unchanged; no generalization or autonomous-flywheel claim is added.
 
@@ -6044,3 +6053,81 @@ SEQ259 source`b8508e190a072d6d8f44dc6c4fd09aa76237bd0e`, archive
 `8a22e4435bc492644bd02ee1e7b3113ddd6c51daa57136da9e89486bf30b0257`;
 SEQ260 source`712d5f2b738f3c33dc905037e57580eee9319441`, archive
 `2294116da812f48bfac1beba25b43d64c89a88e477c2976c55c22444bf19e323`.
+
+## SEQ-263–265: execution versus content admission
+
+**V2: zero content-qualified episodes, no fit.** SEQ263 makes 74 actual calls,
+attempts 64 episodes and retains two action-complete episodes/12 candidate
+turns per view. Main's 8 PASS/3 FAIL/1 UNRESOLVED and independent
+6 PASS/3 FAIL/3 UNRESOLVED turn reviews differ on marginal turns but exclude
+both episodes. Zero qualified episodes/rows means no 12-row fit; all 62
+header-envelope failures remain V2 failures.
+
+**V3: prospective compatibility, not content promotion.** SEQ264 adds only the
+exact `RATIONALE: ` prefix with the same unique ACTION delimiter and unchanged
+command bytes. No command scanning, semantic repair, prompt tuning or V1/V2
+relabeling occurs. Same37ec, V2 prompt and original exposure yield 372/384
+capped calls, 64 attempted and 56 action-complete episodes in four new TEACH-only
+shards. All 64 initial public/coached prompts and raw responses match V2.
+All 16 TRAIN worlds contribute; eight episode failures remain. TERSE, RICH
+and `RICH_ACTION_ONLY` each retain 336 matched rows, all **UNREVIEWED,
+fit_ready=False**. The looser 58/64 goal arrivals include two three-read
+arrivals excluded from the six-command candidate gate.
+
+**Full V3 content rollup: one qualified episode, no fit.**
+Main's published rollup joins all56 action-complete episodes/336 turns without
+missing or duplicate cases. The disjoint primary reviews retain shards0–1 at
+100 PASS/48 FAIL/32 UNRESOLVED over30 episodes and shards2–3 at
+95 PASS/60 FAIL/1 UNRESOLVED over26 episodes; neither primary qualifies an
+episode. Their preserved union is 195 PASS/108 FAIL/33 UNRESOLVED and
+zero qualified episodes. A separate same-rubric Main/Ramanujan adjudication
+accepts shard1 TRAIN-B/task1, calls30–35, at 6/6 PASS. Applying only that
+addendum gives 196 PASS/108 FAIL/32 UNRESOLVED and ONE qualified episode
+out of56 candidates (1/64 original attempts): six rows per matched view,
+one world/goal/display instance and no complete opposite-goal pair.
+Collection packets retain their UNREVIEWED labels and fit_ready=False;
+the review overlay does not rewrite raw rows or original primary judgments.
+Structural joins do not substitute for substantive review, and preserved
+review disagreements limit claims about grading reliability. No individually
+passing turns are salvaged from rejected episodes. The shared stage-specific
+content floor remains separate from execution. No tiny fit is planned or
+authorized; the learning benefit of rich supervision remains UNTESTED.
+
+**SEQ265 paired critique/repeat: no six-turn candidates.** The notebook assigns
+SEQ265 to the same 127-call terminal experiment, not a new run.
+Both arms share 16 initial tasks/eight opposite-goal pairs and actual public
+histories; only critique-versus-repeat-planning instructions differ. Initial
+outcomes are 4/16 goals, 0/8 pairs. Critique gives 6/16 goals versus repeat 4/16,
+but both have 1/8 pairs and zero four-read/two-route/six-target candidates.
+Goal or pair success is not curriculum admission. All 16 interventions and
+final attempts per arm remain, including failures; `NO_FEEDBACK` is not
+blindness to prior public outcomes. Independent reduction agrees with the primary.
+
+Actual calls are 25 shared initial, 54 critique and 48 repeat; final-arm
+generated tokens are 7,518 versus 5,474. Equal ceilings of 112 native calls
+per arm and 512 generated tokens per call are
+**not equal spent calls, tokens or compute**. Across phases 25 actor callback
+stops follow malformed returned commands/envelopes, not native exceptions.
+All 127 native exception fields are null, but one intervention per arm is
+nonterminal/truncated; its unavailable-advice marker does not prevent the
+final attempt. No learned reflection, persistent improvement, semantic
+approval or fit follows.
+
+**Quality remains LIVE/not analyzed.** The 1,452-target quality corpus feeds a
+distinct 2,928-update paired fit; no fit/AFTER metrics enter this draft. This
+is not the blocked 12,384-update scale proposal, a reopening of SEQ258 admission
+or a new SEQ260 result. Preserve SEQ245's narrow single-bank write/use success
+with a matching uniform control, not selection superiority, and SEQ260's no
+incremental PROBE advantage over its active control. Exposed DEV observations
+do not settle H1/H2. The collaborator draft stays UNSENT.
+
+Sources: [V2 primary](../analysis/2026-09-14_rich_action_first_collection_first_result.md),
+[V2 Main content review](../analysis/2026-09-14_rich_v2_content_review.md),
+[V2 independent content review](../analysis/2026-09-14_rich_v2_content_independent_review.md),
+[V3 primary](../analysis/2026-09-14_rich_action_first_v3_collection_first_result.md),
+[V3 scoped adjudication](../analysis/2026-09-14_rich_v3_content_review_adjudication.md),
+[V3 full content rollup](../analysis/2026-09-14_rich_v3_content_rollup.md),
+[shared content contract](../analysis/2026-09-14_rich_content_review_contract.md),
+[critique primary](../analysis/2026-09-14_self_critique_repeat_collection_first_result.md),
+[critique independent result](../analysis/2026-09-14_self_critique_repeat_independent_result.md),
+[LIVE quality protocol](../analysis/2026-09-14_goal_quality_fit_protocol.md).
