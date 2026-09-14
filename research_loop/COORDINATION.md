@@ -24423,3 +24423,20 @@ Local launch/observation receipts are under
 gpu_artifacts_local/astra_self_critique_repeat_20260914_attempt1/.
 Next: monitor these owned processes, publish arm-native starts and terminal
 counts, preserve/replay/hash the full failure-inclusive capsule.
+
+## [Builder/Parfit] 2026-09-14 20:03:18 UTC — paired arm natives admitted; common initial terminal
+
+Source3b1b07c3 unchanged. COMMON_INITIAL completed25actualcalls across all16
+planned TRAIN tasks:4/16goals,0/8pairs,0six-turn candidate episodes. Stops:
+9actor_callback_error,3dead_end,4reached_goal. These are preserved failures,
+not a success-selected seed. Recorded37ec/base unchanged. Shared RESULT SHA
+6ce60c01e4a7400c55d4f2153cdd2f34b64f7c81f0c1b68cb0e29c5ac8becef8.
+
+Both fresh arm preparations replayed/hashed that identical source and initial
+artifact. Each physical/CVD scanner reports clear=true,owners=[],unresolved=[].
+SELF_CRITIQUE_REVISE native144358/timeout144357 started20:01:12.400UTC onGPU4;
+REPEAT_NO_FEEDBACK native144367/timeout144366 started20:01:15.575UTC onGPU5.
+Observed20:02:48UTC with6/10callfiles respectively, both alive; not terminal
+arm results. Guardians143969/143970 retain original21:58:07UTC ceilings.
+No fits/retries/new exposure. Next: terminal replay/counts/capsule and bounded
+content status, not a learned-reflection claim.
