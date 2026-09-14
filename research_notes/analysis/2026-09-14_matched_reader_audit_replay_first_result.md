@@ -1,7 +1,11 @@
 # SEQ-246: original taught and loss-off auditors on identical A3 stimuli
 
 September 14, 2026. Two native zero-fit replays completed; independent raw
-reduction is in progress. Frozen source `5312cefb18ebbcf37bade654f553d4fcf39a0710`.
+reduction confirms all counts, identical prompts, original auditor identities,
+distinct stimulus producers and unchanged-state receipts. No native failures.
+See `2026-09-14_matched_reader_audit_replay_independent_result.md` and its
+83-file local audit capsule/completion receipt. Frozen source
+`5312cefb18ebbcf37bade654f553d4fcf39a0710`.
 Protocol: `2026-09-14_matched_reader_audit_replay_design.md`.
 
 | Exact executable audit | Original AUDIT_SFT | Original AUDIT_LOSS_OFF |

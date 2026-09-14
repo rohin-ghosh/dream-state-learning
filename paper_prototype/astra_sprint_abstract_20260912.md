@@ -36,13 +36,13 @@ six-stage reduction confirms one matching pair.
 
 Postselected, source-scaffolded zero-fit replay on identical A3 prompts yields
 original SFT/control exact source-valid fault outputs8/8 versus2/8, true4/6 both
-(SEQ-246; independent verification pending), not isolated semantic judgment,
+(SEQ-246; independently reduced), not isolated semantic judgment,
 on-policy evidence or selection utility.
 
 ## Supporting evidence notes—not part of the abstract
 
 **September 14, 2026 result update — research question unresolved.**
-SEQ-246 matched replay is terminal; independent verification remains pending.
+SEQ-246 matched replay is terminal and independently reduced.
 A3 SEQ-245 is terminal and independently reduced: six stages, one matching
 pair. Its same-parent continuation is reported separately.
 Verified SEQ-240 and independently reduced SEQ-241 repair (eight stages,
@@ -61,7 +61,7 @@ H1/H2 and the program remain open.
 
 ### SEQ-246: matched actual-reader replay — September 14, 2026
 
-**Terminal; Maxwell's independent reduction pending.** Original SEQ-239
+**Terminal; Maxwell's independent reduction complete.** Original SEQ-239
 SFT and LOSS_OFF adapters, not their repaired descendants, receive identical
 A3 actual-reader prompts from the shared BEFORE and SELECTED AFTER packets.
 This is a zero-fit, postselected third-party counterfactual diagnostic with

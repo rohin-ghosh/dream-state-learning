@@ -21,7 +21,7 @@ Dated statements below about unresolved TODO keys describe earlier snapshots.
 
 **Ongoing first-sprint working draft — research question unresolved.**
 Canonical `main.tex` now includes terminal SEQ-246 matched replay
-(independent verification pending), separately from A3 SEQ-245 (independent six-stage reduction complete),
+(independently reduced), separately from A3 SEQ-245 (independent six-stage reduction complete),
 with SEQ-241, SEQ230 and
 SEQ-236 retained as separate comparisons,
 alongside earlier positive and negative findings. The new section
@@ -44,7 +44,7 @@ The full sprint remains incomplete. No G3/H1/H2, parenting or freeze promotion.
 
 ## SEQ-246: matched actual-reader replay — September 14, 2026
 
-**Terminal; Maxwell's independent reduction pending.** Original SEQ-239
+**Terminal; Maxwell's independent reduction complete.** Original SEQ-239
 SFT and LOSS_OFF adapters, not their repaired descendants, receive identical
 A3 actual-reader prompts from the shared BEFORE and SELECTED AFTER packets.
 This is a zero-fit, postselected third-party counterfactual diagnostic with

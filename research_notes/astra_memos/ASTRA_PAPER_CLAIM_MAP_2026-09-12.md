@@ -5426,7 +5426,7 @@ re-encoding; existing numerical results and causal limits are unchanged.
 
 ## Evidence addendum — 2026-09-14 — SEQ-246 matched replay
 
-**Terminal; Maxwell's independent reduction pending.** Original SEQ-239
+**Terminal; Maxwell's independent reduction complete.** Original SEQ-239
 SFT and LOSS_OFF adapters, not their repaired descendants, receive identical
 A3 actual-reader prompts from the shared BEFORE and SELECTED AFTER packets.
 This is a zero-fit, postselected third-party counterfactual diagnostic with
