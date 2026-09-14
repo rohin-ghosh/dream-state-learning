@@ -1,7 +1,8 @@
 # PERSIST-CODE — terminal L1 screen, 2026-09-14
 
-Status: **DEALLOCATED after completed negative screen.** Main owns the ordered
-result SEQ and board/state update; no SEQ pre-reserved. A1004–5 released.
+Status: **SEQ271; RETIRED after completed negative screen.** Main assigned the
+ordered result number after270 published; Main owns board/state. A1004–5
+released. Final instruction: no code-recipe followup.
 
 ## Observation and evidence
 
@@ -62,10 +63,10 @@ ambiguity contributes but does not establish that the full gap is superficial.
   record list are plausibly confusable. This is a genuine interface limitation
   in this protocol, not permission to reinterpret failed native outputs.
 - Stop/deallocate both slots; no larger corpus/fit or repeated identical run.
-  Cheapest new discriminating hypothesis: explicitly separated function-input
-  and memory namespaces, crossed with record-visible versus record-cleared
-  replay. Preregister a small same-family follow-up before any new GPU use;
-  do not treat this proposal as an admitted run or a persistence benefit.
+  A pre-retirement diagnostic idea was separated function-input and memory
+  namespaces crossed with record-visible versus record-cleared replay. This
+  is not being pursued: Main explicitly retired the recipe. Rohin78's separate
+  breadth/loop portfolio is not a rescue or reinterpretation of this null.
 - Future learning comparison remains guided+sleep vs frozen twin AND
   unparented+sleep, with parent-free evaluation. Autonomous collection is not
   a prerequisite. Consolidation remains the same child prompted from its own

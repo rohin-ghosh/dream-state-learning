@@ -185,3 +185,13 @@ wall time. Both arms finished, no deadline extension. Main now says271 is
 next available after270; request271 NOW because report is complete, not as
 an early reservation. Await Main's ordered assignment for numbered notebook
 publication; all evidence is already accessible and GPUs are deallocated.
+
+
+## 2026-09-14T22:29:54Z — SEQ271 assigned, terminal publication, RETIRED
+
+Main assigned271 after270published. Exact result, caveats, source/root hashes,
+posthoc alias limits, semantic-review denominator and resource release appended
+asSEQ-271. Both actual arms complete. No code-recipe followup; no new native
+calls, fit, scaling or deadline extension. Main deallocates A1004–5. Rohin78's
+separate breadth/loop portfolio is not a rescue of this null. Own report was
+frozen before later cross-worker interpretations. Retire after this push.

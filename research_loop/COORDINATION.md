@@ -25827,3 +25827,74 @@ semantic review were written before Main's later cross-worker interpretations.
 Full comparison/report now ready: requesting Main's next orderedSEQ271,
 not pre-reserving or independently assigning it. No result-bearing numbered
 notebook entry is published until Main confirms allocation. No reader gate.
+
+
+## SEQ-271 — [Worker PERSIST-CODE] 2026-09-14T22:29:54Z terminal: RICH0/8 vs TERSE2/8, reference0/8; zero admitted rich rows
+
+Main assigned271 after270publication; both actual arms are terminal. Worker
+retires now; no code-recipe followup, fit, scaling or deadline extension.
+
+**OBSERVATION:** Eight identical L1 integer-ledger task specifications per arm,
+16deterministic tests/task: RICH0/8 versus TERSE2/8 (ledger_004,ledger_006),
+fixed sum(values) reference0/8. RICH40nativecalls,12,831generated tokens;
+TERSE35calls,976tokens. Own records0vs2; grounded error->changed successful
+repair->own record chains0vs1. Zero RICH outcome-eligible episodes and zero
+admitted rich rows. TERSE's second own record fails its originating task:
+input[-5,-4,-3], expected27, record recipe returns12, despite successful
+preceding repair16/16. The first TERSE record rechecks16/16.
+
+**EVIDENCE AND CONTROL:** Matched source47515604d0b81a44458cbbabf0e029671f6e0ab1,
+portable frozenQwen2.5-7B/37ec, same task rosterba9eaaf8, same oracle and
+maximum6turns/1536input+512generated; observed prompt maxima320/499 and
+output maxima512/39. Both before/after adapter states37ec and frozen base
+checksPASS, zero updates/fits. Parent/richness instructions absent from stored
+student prefixes; no authored targets or other workers' native calls. Exact
+CPU receipt replayPASS both;22CPUtestsPASS. No old-fact/audit retention or
+held-family evaluation was run; no transfer/H1/H2 claim.
+
+**CURRENT INTERPRETATION:** Declared rich>terse screen gate fails. Deallocated,
+not disproven. RICH never created a successful function/record, so this does
+not measure the causal benefit of persistence or learning from sleep. RICH
+has28invalid/missing finalJSON,3truncations,9parsed actions (all task-failing).
+All9parseable actions have150–400narrative tokens; length is not semantic
+admission. Full-text first/last-turn diagnostic16/40 gives1PASS15FAIL; remaining
+24retainUNREVIEWED, and all8episodes already fail the outcome gate. Recurrent
+memory-vs-task-input confusion, false feedback diagnoses and invented
+arithmetic are preserved verbatim. The lesson-error counterexample shows
+success/provenance alone is insufficient to admit a child record.
+
+**CREDIBLE ALTERNATIVES:** Small append-only toy codebase, selected exposedDEV
+actor, one greedy realization, ambiguous xs/values namespace and empty record
+list. Equal ceilings are not equal actual compute. Posthoc CPU-only xs->values
+replacement in parsed actions would rescue1RICH task and2additional TERSE
+tasks; these are NOT native successes, repaired targets or semantic admissions.
+Namespace ambiguity contributes but is not established as the sole cause.
+
+**CONFIDENCE:** High in the finite deterministic counts and preserved joins;
+low for broader mechanism/transfer generalization. Author-side replay and
+semantic diagnosis are not an independent-reader verdict. Prior attempt1
+wrapper token-accounting failure preserved separately:2calls, no rows,
+not included in this75call comparison and not itself a scientific null.
+
+**CHEAPEST DISCRIMINATING NEXT TEST:** None queued for this retired recipe.
+Do not repeat/scale/fit it. Main's separate Rohin78 breadth/loop portfolio
+is not a rescue or reinterpretation of this null. Both proposed L2/L3 families
+remain unmined/unimplemented pending Rohin's family admission.
+
+**OPERATIONS / ROOTS:** Attempt2 guardians154288/154289, native154363/154360;
+RICH finished22:22:33Z, TERSE22:13:22Z on September14, before22:41:24Zdeadline.
+Both guardian exit0, release-CVDclear; all4ownedPIDs absent, physicalA1004/5
+0MiB/no compute apps verified22:23:03Z. No kill or lease change; Main now
+owns their deallocation. Guard-inclusive attempt2cost787GPU-seconds0.2186h;
+failed attempt1overhead99seconds0.0275h; combined0.2461GPUh (wall allocation,
+not utilization). Remote root
+/localhome/local-rohing/data/orch_persist_code_20260914_attempt2;
+local research_notes/analysis/orch_persist_code_20260914_attempt2/ includes
+REDUCTION.json, POSTHOC_ALIAS_DIAGNOSTIC.json, terminal.tar.gz and expanded
+terminal/RICH,terminal/TERSE. Terminal capsule SHA256
+33a9421ce15d494d1b3b792a01ea1ad9dd988ae98db9c73aec3c9e43f3c44940;
+REDUCTION394de42c2e353c740be136e730255d49f36d740353bad26d8fa09d54e6839a82.
+Report/semantic review/capsules published6f7e2af9. Source and failed-attempt
+artifacts retained; unrelated peer files untouched. Peer message: validate
+own lessons against their successful event, and distinguish self-memory from
+formal task input. No further PERSIST-CODE work remains after publication.
