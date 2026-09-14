@@ -1,6 +1,6 @@
 # Research state — Orchestrator
 
-Updated 2026-09-14 23:04 UTC. Mission ACTIVE / INCOMPLETE. Wave W2/W3.
+Updated 2026-09-14 23:08 UTC. Mission ACTIVE / INCOMPLETE. Wave W2/W3.
 Authoritative steering: Rohin's current launch instruction and raw messages
 42–79 (79 read22:57UTC); next full raw-message reread by23:50UTC.
 Check notebook updates every orchestration cycle, not just every two hours.
@@ -621,6 +621,63 @@ that explicit prior child for collector AND trainer, fresh readout for new
 child; never quietly37ec. CPU mocked parity/tests only until a separate native
 protocol; no GPU allocation or new framework. Binding worker and native seam
 communicate through Main and frozen public interface, not overlapping edits.
+
+## 23:08 UTC independent math result and next evidence allocation
+
+**OBSERVATION:** terminal blind MATH-REPLICATION, assigned SEQ276 pending
+worker publication: rich31/32 versus terse10/32;21rich-only,0terse-only.
+96calls;47candidate texts author-read,6PASS/41FAIL/0unresolved across5tasks,
+including3own records from31record calls. Frozen combined>=8row gate FAIL.
+
+**EVIDENCE AND CONTROL:** independent protocol and fresh32public questions,
+eight per existing mining family; report
+research_notes/analysis/orch_math_replication_20260914_attempt1/REPORT.md.
+Three clean terminal shards; prior math results hidden through frozen analysis.
+Paired prompting controls, not trained FULL/loss-off controls; no training.
+Author-reported exact counts await Fable; no Main reader checks performed.
+
+**CURRENT INTERPRETATION:** the rich-versus-terse answer contrast independently
+recurs on another finite cohort, while the original record recipe still yields
+too few qualified examples. This distinguishes answer performance from training
+material quality. Deallocate completed screen; do not repeat it or call the
+mechanism disproven.
+
+**CREDIBLE ALTERNATIVES:** prompt roles, spend, public pretraining familiarity,
+first-person/check rubric interpretation and six preflagged question ambiguities.
+Terse failures15wrong numeric/7format, zero truncations; formatting alone is
+not enough to explain the whole contrast. All denominators/golds preserved.
+
+**CONFIDENCE:** finite author-reported contrast and independent analysis;
+unverified by reader, no retained-learning or generalization claim.
+
+**CHEAPEST DISCRIMINATING NEXT TEST:** independent semantic and neutral-prefix
+audit of already captured paired record-prompt texts, no extra GPU prompting.
+Gauss receives all190raw targets sorted by target hash, generation prompts,
+neutral prefixes and gold, but no prior labels/counts/favored interpretation.
+Packet SHA4a459a9bea6415ef43c0db936587f50d713e7096cbafca83d7f2074d7a5214c9.
+Prompts make conditions inferable; independence is from favored interpretation,
+not magically from wording. Freeze per-target findings before comparison.
+MATH-SCALE collection remains unblocked; no mismatched-prefix targets fit.
+
+Changed belief: answer contrast more credible, usable-row gate remains smallest
+bottleneck. Redundant work: another unchanged prompting replication. Highest
+architecture-value result remains retained guided-cycle slope, absent so far.
+New uncertainty is whether apparent record-yield gain survives blind semantic
+and removed-guidance checks. Guided bridge22CPU tests complete, native seam
+assigned Old Builder; no native cycle exists yet and route ceiling cannot show
+positive slope by repetition. Independent training seeds remain TERSE-BREADTH.
+
+Operational update23:07:42–44UTC:6/24eligible GPUs model-resident, not saturation:
+node2none;node3 6/7 at100%;A1000/1/2/4 at44–46%,others zero. This is an
+instant snapshot, not integrated utilization. TERSE collected2868distinct
+qualified terse targets,120/128eligible TRAINsources;4150calls; fixed fits
+5760updates for fourA100cells and23040for twoA40cells, actual start receipts
+requested. FULL-RICH source/readouts active; BASE repair preserves initial11
+calls but lacks their post-generation mounted hash observation: not a clean
+paired null. MATH-SCALE1024+held64 frozen, not yet claimed running. RAM2.9GiB
+available/swap full; no additional simultaneous worker beyond retired slot.
+Node1 remains unavailable pending a new lease/onboarding receipt despite
+watcher23:04expectation of23:25return; Main neither leased nor onboarded it.
 
 ## Active uncertainties and surprises
 
