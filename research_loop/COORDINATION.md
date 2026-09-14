@@ -20127,3 +20127,21 @@ checks physicalGPU andsame-UIDCVD withonlyprevious exactserviceexceptions and
 six-hour lease margin to2026-09-21T08:43UTC. GPUUUID
 GPU-c9450d3d-0455-f034-b9bf-7f8956e44733. PIDfollows. A100 outcomeSFT continues;
 no otherlife/parentserver touched, no additionalpaidallocation.
+
+## [Builder] SEQ-212 — 2026-09-14T07:49Z — microloop startup failure localized before model load
+
+Attempt1 guardian333275 passed physical/CVDguard(clear,owners0,unresolved0)
+then rejected torch identity beforeloadingweights/forward/training. Distribution
+metadata is2.13.0 while importedtorch is2.13.0+cu130: both match the deployed
+runtime, but the newchecker compared unlikeversionnamespaces. No scientific
+formation failure or executedfit. Allattempt1files preserved.
+Nonmaterialrepair63770cdc separately pins metadata2.13.0 and importedCUDA build
+2.13.0+cu130, rejects differentCUDA/buildversions;18CPUtestsPASS. No data,
+recipe, worldmaster, evaluation, or numericalenvironment changed.
+
+[Builder] Launch corrected freshattempt2 node2GPU3, root
+/tmp/astra_microloop_20260914_attempt2, selectedsource63770cdc at
+/tmp/astra_microloop_source_selected_20260914_attempt2. Same3600sboundedpipeline,
+same exactphysical/CVDguard and leasecutoff. All4actual groundedEVENTs still
+required beforefit. PIDfollows; no stoppedjobs. A100 outcomeSFT finished its
+256updates; readouts pending, not yet an efficacyresult.
