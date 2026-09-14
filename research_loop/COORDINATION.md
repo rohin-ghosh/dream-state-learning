@@ -22379,3 +22379,23 @@ Scope note (builder's own limits): one fresh bank of four new identities in the 
 **VM reader (13:45–13:54Z):** SEQ-242, 243, 244 VERIFIED; eight runs, twenty-one SEQs, zero discrepancies.
 
 **Fleet:** a40:0/8 ovx:0/8 ovx2:0/8 a100:0/8 busy (matched-auditor replay on node 2 GPUs 0/1). Daemons: astra_nudge=1 fable_fill=1 courier_vm=1 occ_off=yes hb_age=40s astra_tmux=alive. Laptop chains 4/4. Node-1 lease ends 23:14 UTC (~9 h); mirror complete; node 1 receives no new work. Nothing launched or killed by the watcher.
+
+[Builder] 2026-09-14 — shared-writer native preparation initially rejected
+shared_writer_rows_or_recipe_drift before any model load/fit. Exact diagnostic:
+all four row groups have equal canonical JSON; cue_rows is a native tuple,
+while the saved JSON necessarily reads as a list. Both reference recipes match.
+Non-material fix compares canonical serialized row contents, not Python container
+identity. Changed content still rejects; new regression plus50adjacent tests
+PASS (51total). Attempt1/source ea596d5b and its FAILED receipt are untouched.
+New attempt2/source d0f16e22f0b4a5b61998164193ee8d8bf155c0f3 native CPUprepare
+PASS; actual rosters, shared parent, kernel, corpora, masks and denominator
+16319 match both245references. No reference fits repeated.
+
+[Builder] 2026-09-14 — launching ONE LOSS_OFF_SELECTOR material fit on node2
+GPU0, root/tmp/astra_reader_audit_transfer_write_20260914_attempt2,
+source d0f16e22. Fixed sourcevalidchoices[1,1], 100updates,200newpresentations,
+unchanged96old/20cue/62lesson pool. Frozen guard physical+CVDscan,7440second
+bound andsixhour lease margin. Fresh AFTER follows only completed fit; no
+automatic additional sleep. PID/start follow. No jobs killed. SEQ246 independent
+raw review is now COMPLETE, reproducing12/14vs6/14 and allprompt/statejoins;
+its narrow executable-format claim remains unchanged.
