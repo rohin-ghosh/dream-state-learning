@@ -1,6 +1,6 @@
 # Research state — Orchestrator
 
-Updated 2026-09-14 22:09 UTC. Mission ACTIVE / INCOMPLETE. Wave W1.
+Updated 2026-09-14 22:15 UTC. Mission ACTIVE / INCOMPLETE. Wave W1.
 Authoritative steering: Rohin's current launch instruction and raw messages
 42–77 (77 read22:07UTC); next full raw-message reread by23:50UTC.
 Check notebook updates every orchestration cycle, not just every two hours.
@@ -90,6 +90,59 @@ content-bearing mining tests do not depend on this result being true.
   quality recipe; do not resurrect it or equate their predictions.
 - No claim of unseen-environment developmental improvement has passed.
 
+## W1 result ingestion: GAME Taxi screen (SEQ267 assigned, reader pending)
+
+**OBSERVATION:** RICH0/16 deliveries vs TERSE0/16;192/192 native calls,
+32/32 episodes worker-replayed. Format pass59/96rich vs96/96terse; median
+generated tokens160.5vs4.0.65/96rich turns within150–400tokens.0admitted rows,
+0fits. Rich initial-turn diagnostic2PASS/13FAIL/1UNRESOLVED out of16;
+80/96rich turns unreviewed. This is NOT a whole-episode semantic pass rate.
+
+**EVIDENCE AND CONTROL:** worker RESULT.md / REDUCTION.json under
+research_notes/analysis/orch_game_20260914_attempt1; same16fixed states,
+37ec,observations,decoder,six-turn horizon; native Gym oracle. Source/archive
+c58f7671,bank8d12ddb1. All four workers terminal by22:09:50UTC and GPUs
+released after physical/CVD checks by22:12:06UTC. Independent reader pending.
+
+**CURRENT INTERPRETATION:** declared installed-Taxi pool fails its eligibility
+gate and is DEALLOCATED. Greater verbal output did not improve this finite
+outcome measure. This is a small within-family diagnostic, not campaign
+completion and not a disproof of reflection or text-game learning.
+
+**CREDIBLE ALTERNATIVES:** state/action representation, inherited37ec policy
+specialization, instruction following, six-turn horizon. Rich parsing alone
+is not sufficient explanation because terse parsed96/96 but solved0/16.
+Native token caps did not bind (maximum context444,generation282). Fluent
+explanations sometimes invented goals/walls or inverted north/south.
+
+**CONFIDENCE:** high on worker-replayed finite counts, pending independent
+read; weak on cause and no generalization claim. No gate relaxed.
+
+**CHEAPEST DISCRIMINATING NEXT TEST:** distinct TextWorld prerequisite-feedback
+proposal preserved (open-before-take, take-before-put), not launched. A later
+plain frozen-base comparison could isolate adapter specialization; neither
+proposal rescues or extends this failed Taxi screen.
+
+### Belief and allocation update after this batch
+
+Changed belief: observable coherent state alone is insufficient for this actor
+on Taxi; richness tokens can coexist with incorrect relations. Smallest
+bottleneck remains semantic/outcome yield in a genuinely usable pool; no
+evidence yet that another gym shares Taxi's failure. A positive guided-cycle
+slope vs both twins would still most change the developmental architecture.
+Exact Taxi reruns/more dose are redundant. SEQ266's finite positive contrast
+still needs a fresh blind prospective replication; prioritize that next free
+worker slot rather than optimizing Taxi. Alternative needing a separate test:
+37ec-specialization vs task representation. New implied hypothesis: explicit
+prerequisite feedback may be easier to ground than ASCII spatial reasoning.
+
+AllA1000–3 released by GAME; node3GPU5 released unused by ROUTE; A100GPU7
+released after PERSIST-MATH control terminal (treatment continues). Main does
+not kill controls or rerun the reader. Next allocation after BOARD rewrite:
+fresh blind replication worker on node3 0/1/5 when GAME publishes and retires;
+node3 6/7 and A1000–3/7 remain adaptive reserve. No inherited failed-gate
+checkpoint is automatically promoted by commissioning a diagnostic replication.
+
 ## Active uncertainties and surprises
 
 1. Which off-the-shelf pools show a measured rich-over-terse reasoning gap AND
@@ -112,9 +165,9 @@ pools, followed by retained held-family transfer; not rebuilding the LoRA
 substrate. Highest architecture-changing result would be durable guided-cycle
 gain disappearing in frozen and unparented twins; no such result yet.
 
-W1 allocates20GPUs to six independently seeded workers: code4, math4, game4,
-route-adversary4, persistent-code2, persistent-math2. Four node3 GPUs remain
-unallocated for replication/fit overflow after evidence, not a serial gate.
+Initial W1 allocated20GPUs to six differently seeded workers. The22:15UTC
+batch reallocates on GAME's null and actual releases as described above;
+do not preserve its initial reservations. Reserve capacity is not a serial gate.
 All24 node2/node3/A100 slots were released by old builder21:52Z; each requires
 fresh physical and CVD admission. Node1 excluded. No new leases authorized.
 
@@ -156,6 +209,12 @@ mechanism. A worker without a next discriminating test is retired.
   current orchestration continues.
 - Fable P47–P52 now present. Their hypotheses do not change frozen worker
   screen denominators or turn contextual-memory comparisons into sleep tests.
+- MATH now genuinely generating: ACTOR_READY and33saved calls at22:10:26UTC
+  after published repair; original guard/native failures remain zero-science.
+  PERSIST-CODE attempt2 running after a token-accounting interface repair;
+  attempt1 has one call/arm, not a clean null, all failures preserved.
+  PERSIST-MATH treatment running; control complete and released.
+  ROUTE native3state batch started22:11:16UTC, loading at last receipt.
 - Ingest independent-reader status asynchronously, never silently promote.
 - Capacity checkpoint: 2026-09-15 08:00UTC (next morning),5000 admitted rows
   and four pairs OR two pairs plus justified replication; distributions and

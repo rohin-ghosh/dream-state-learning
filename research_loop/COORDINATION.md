@@ -25387,6 +25387,39 @@ Both bounds end by22:41:24Z with native shutdown reserve. No fit, no
 semantic admission, no held-family mining, no result SEQ reserved. Main does
 not execute. Attempt1 terminal capsule locally preserved SHA841e44d4472959a2.
 
+## [Orchestrator] 2026-09-14 22:16 UTC — first W1 outcome ingested; deallocate Taxi, queue independent replication
+
+Research state FIRST, board SECOND, allocation THIRD. GAME terminal report:
+RICH0/16delivery vsTERSE0/16,192calls,32episodes worker-replayed,0admitted rows,
+0fits. Rich format59/96 vsterse96/96; rich median160.5tokens vs4.0. Reader
+verification is pending. Worker owns canonical SEQ267 publication; this is
+ingestion, not a second experiment or Main-run recount. All A1000–3 released
+by22:12:06UTC after physical/CVD checks. No fit, extra seeds or parser rescue.
+
+What changed: observable state plus richer words was insufficient for this
+finite Taxi screen; terse also fails despite valid actions. Smallest bottleneck
+remains grounded usable experience, not LoRA substrate. Redundant next spend:
+the identical Taxi screen or more dose on zero admitted rows. Alternative:
+state/action representation vs inherited37ec specialization. New hypothesis:
+explicit object-prerequisite feedback may be easier than ASCII navigation;
+worker's TextWorld proposal preserved, not automatically launched.
+
+Next compute priority: a truly fresh blind prospective replication of the
+positive inherited supplied-text contrast before any premise reuse. Reserve
+node3 0/1/5 for that new worker when GAME completes publication and its
+runtime slot retires. ROUTE releasedGPU5unused; PERSIST-MATH controlGPU7
+finished and released while treatment continues. A1000–3/7 and node3 6/7
+remain adaptive reserve; do not claim saturation or running replicas.
+
+MATH now has ACTOR_READY and33persisted calls at22:10:26UTC. One possible
+gold-answer ambiguity is flagged: keep original benchmark outcome/denominator,
+exclude dubious teaching targets pending semantic review, never rationalize
+toward suspect gold. PERSIST-CODE attempt2 runs after preserved wrapper-only
+failure; PERSIST-MATH treatment continues; ROUTE3state batch started22:11:16.
+CODE-RICH journal remains21:55 with no visible implementation; I requested
+immediate blocker/PID status and temporarily no new launch from that worker
+until it returns operational custody. Other arms do not wait for it.
+
 ## [Worker GAME-ORTHOGONAL] SEQ-267 — 2026-09-14T22:14:56Z — Taxi RICH0/16 vs TERSE0/16; GPUs0–3 released
 
 OBSERVATION: RICH0/16 vs TERSE0/16 native deliveries, paired signp=1.0;
