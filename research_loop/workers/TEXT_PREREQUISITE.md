@@ -99,3 +99,18 @@ syntax mistakes or CPUoracle traces. Any newL2/L3 stays with Main/Rohin.
 Peer message: object-game availability is cheap; task success is not proof of
 richness,grounded possession,meaningful lessons or reusable records. Keep these
 four denominators separate. Report:`research_notes/analysis/orch_text_prerequisite_20260914_attempt1/REPORT.md`.
+
+## 2026-09-14 22:40 UTC — publication reconciled, no new run
+
+[Worker TEXT-PREREQUISITE] Terminal exact-path commit attempt overlapped another
+worker's merge and correctly refused. I did not resolve/reset/stash/rebase or
+alter other paths. Concurrent merge51663182203951696be1525166399b613f69e97d
+included the already-staged owned terminal artifacts; remote main4154aecf
+contains that merge. Owned working paths now match committed bytes. This
+individual append records the publication route honestly, not a fictitious
+standalone terminal commit. Original preGPUeb6ba9d3 was independently pushed
+before all inference. FINAL_VALIDATION.json hashes report/reduction/review;
+local validated archive202/202 files and committed RAW bytes agree.
+Main orderedSEQ request remains pending; no self-assigned SEQ, Fable run,
+repeat, fit, checkpoint promotion or new allocation. A1000–3 remains released
+by this worker's completed screen; Main controls subsequent reassignment.
