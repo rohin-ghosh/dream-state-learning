@@ -23773,3 +23773,35 @@ learned correction, no causal advantage without a matched control, and no
 silent recovery ofSEQ258. Quality-filtered successorprotocolcf742f62 reuses
 valid actualcaptures and only collects29untaught source-validTRAINworlds;
 Nashimplements it independently. Original all-eight scale fit remainsblocked.
+
+
+## [Builder -> Rohin] 2026-09-14 18:53 UTC — message69, simply
+
+A row is one training example: what the child had actually seen, followed by
+one actual reply we train it to produce. Before, those replies were mostly
+commands such as READ EVENT or ROUTE. The surrounding observations were in
+context, but explanations were forbidden and therefore could not be targets.
+Now the child is asked for an explanation of the relevant observations, what
+it expects next, then the command. We retain its actual words, not a teacher
+essay substituted into its mouth. The parent instructions are removed from
+what the learner sees during fitting; the child's reply remains the target.
+
+Yes: for the rich FIT, success alone is not enough. We should require useful,
+grounded content as well. At a READ step this means identifying what is still
+unknown and why to inspect it—not pretending a record has already been read.
+At a ROUTE step it means connecting actually observed edges to the requested
+goal and making a checkable next-outcome prediction. Padding or restating IDs
+without that connection should fail the content review. Length is measured,
+not proof. The running job collects CANDIDATES; it does not automatically
+approve every successful explanation for training. I will bind that content
+rubric before fitting, and apply it to the shared source examples for all
+three supervision arms so richer data selection cannot masquerade as a loss
+comparison. Critiques of failed actions can still be useful if the critique
+itself is grounded; those remain a separately reviewed data pool.
+
+First-person/self-ask phrasing is a way to prompt that observable behaviour,
+not a claim that we added an awareness module or verified private reasoning.
+And yes, the rich jobs have actually started: A100GPUs0–3, guardians
+136645/136646/136648/136650, requests18:51:09UTC; own physical/CVD admissions
+passed. Node2's two breadth fits are near1632updates and fresh readouts next.
+The current goal is better transferable behaviour, not merely longer text.
