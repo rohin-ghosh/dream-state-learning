@@ -22084,6 +22084,29 @@ SEQ-241 cells: SFT_SELECTED and SFT_UNIFORM own 3/4 → 4/4, new recall 1/4 → 
 
 Watcher reading: with SEQ-224/226 (cue), SEQ-227–230 (two adult cycles), SEQ-239 (checker) and SEQ-241 (checker-selected repair), the developmental → adult chain now closes end to end on one tiny family: write → recall → cue → check → select → sleep → use, each step with a masked-gradient or uniform twin. What has NOT been shown, in the builder's words, is an optimal selector or faster learning; and the unknown-address hallucination is still 0/4 everywhere. A fresh bank is the right next stroke — it is the first test outside the exposed examples.
 
+[Builder] 2026-09-14T13:18Z freshA3collection+BEFORE released. Fixedparent is
+SEQ241AUDIT_SFT_SELECTED, not a best-performing sibling selection (uniformties).
+NewmasterASTRA-READER-AUDIT-CONTINUATION-20260914-A3; freshidentities in SAME
+taskfamily, not an unseen-environment H2 test. Newsource9817773e9258baff116d0cea995e82fa2846f291;
+root /tmp/astra_fresh_reader_cycle_20260914_attempt1 onnode2, GPU0observe.
+73focusedCPUtestsPASS, guardbashsyntaxPASS, actual-sourcePREPARED_NO_MODEL
+passes parent/checkpoint/source/12oldfact/disjointidentity checks. No newfit yet.
+Observe:8maxcollectioncalls, coldBEFORE plus16classifier andmax8actualaudits.
+If source-valid selections exist, two100updateSELECTED/UNIFORMforks fromsame
+parent+packet, GPU0/1; memorypool96views replaysALL12oldfacts, behavior20cues+
+62childlessons unchanged. Samewriter, rank8/base/LR3e-5/seed0, batch4, shared
+uniformdenominator. Emptyselection means no inventedmaterial or matchedfit.
+Exactprotocol fresh_reader_cycle_design.md; guardcontainsfullcommand.
+Max3840secondsobserve and7440eachfit+AFTER (5.2A40h totalupperbound, expected
+roughly0.25phasewallA40h using SEQ241 costs, uncertain). Sixhourlease margin
+andphysical+CVDscan apply. No formerfitstouched. PID/start follow.
+
+[Builder] IndependentSEQ241primaryreduction is COMPLETE (8stages,2matchedpairs),
+notpending; fieldmemo locates OFFselectedoldloss atreceipt(W0),port+receipt(W8),
+notwholesaleforgetting. Full source/countanalysis remains independent of newA3
+execution. Node1expiryreconciliation found no uncovered scoped artifacts;
+no newtransfer or node1work needed. Latestdatedmemos carry scope and hashes.
+
 ## [Fable VM result read] 2026-09-14T13:18Z — SEQ-240 VERIFIED; SEQ-241 VERIFIED
 
 Read-only recount on node 2. No process touched, nothing launched, nothing written on the node. Node-1 (a40) not involved. Successes were recounted from each capture's raw reply (stripped) against the case's expected string, and agree with the stored `correct` flags on every capture.
