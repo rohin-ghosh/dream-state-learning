@@ -21068,3 +21068,51 @@ or altering their contents. Unrelated dirty policyfile remains untouched.
 **SEQ-227 (adult continuation, 400 updates per arm, node 2):** cue BEFORE → AFTER: new-own goals 1/4 → 3/4, READ 4/4 → 4/4, second READ 2/4 → 3/4; reader-OFF 2/4 → 2/4 (READ 4/4); held text 8/8 → 8/8. Loss-OFF: new-own 2/4 → 2/4 with zero READs; reader-OFF 2/4; held text 4/8. BOTH arms: new recall W0 0/4 → 4/4, W8 0/4 → 3/4; old recall W0/W8 4/4 → 4/4; unseen MISS 0/4 → 0/4. Builder: "same-child parent-free offered-experience → write → reload → use results, not an H2 slope or across-lineage estimate. Formation succeeds equally in both arms; behavioral usage, not better raw new-memory acquisition, distinguishes them." Failure localised from raw calls: under W8 the reader returns a new EVENT with corrupted source/port/outcome identifiers in both arms (not whitespace), while W0 direct recall of the same artifact is exact; the actor correctly asks for the other EVENT and then commits the wrong-goal port. Repair (no fit): fresh AFTER readouts with the W0 reader wrapper, ≤ 1,800 s each; builder's prediction: cue new routing 4/4 if the reader corruption was the remaining cause. Ledger P32 pre-registered on that.
 
 **Watcher reading, on the ladder:** this is the first stroke of the adult loop on the same tiny family — the developmental phase (S1 write → S2 coached cue sleep) produced a child that, with no parent present, writes new experience and uses it, while the control that had the same experience and the same replay but no cue gradient writes it equally well and does not use it. Level 4 in miniature, one seed, one family; the interface defect and the unknown-address hallucination remain the two hygiene items.
+
+## [Fable VM result read] 2026-09-14T10:25Z — SEQ-220 VERIFIED; SEQ-221 VERIFIED; SEQ-222 VERIFIED
+
+Independent read-only recount from raw receipts on the nodes (RESULT.json and CALL_*.json counts only). Counts reported exactly as found.
+
+**SEQ-220** — a100, roots `/tmp/astra_outcome_a4_20260914_attempt1/run` (A4-only) and `/tmp/astra_outcome_a4_replay_20260914_attempt1/run` (copy mixture). RESULT.json sha256 2c60e299… and e4140a4c…; both status DEV_OUTCOME_SFT_COMPLETE, reportable=true, criteria_passed=false.
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| criteria passed, A4-only | 7/10 | 7/10 (SEEK, PROSPECT, CHECK, typed_interventions, useful_reads, typed_steps, chain_gain) | RESULT.json criteria |
+| criteria passed, mixture | 6/10 | 6/10 (PROSPECT additionally fails) | RESULT.json criteria |
+| whole (strict) chains, both | 4/8 | 4/8, 4/8 | screens.FITTED.metrics.whole_chains |
+| useful reads, both | 8/8 | 8/8, 8/8 | screens.FITTED.metrics.useful_reads |
+| typed interventions, both | 32/32 | 32/32, 32/32 | criteria typed_interventions |
+| SEEK / CHECK / CONTINUE, both | 4/4, 4/4, 0/4 | 4/4, 4/4, 0/4 in both | criteria |
+| PROSPECT A4-only → mixture | 3/4 → 2/4 | 3/4 → 2/4 | criteria PROSPECT |
+| canaries A4-only → mixture | 4/16 → 9/16 | 4/16 → 9/16 | criteria canaries |
+| FITTED physical calls (memo: 122) | 122 | 122, 122; BASE 56, 56; failures 0 | screens.*.accounting |
+| completed updates | 256 (planned) | 256, 256 | completed_updates |
+
+Integrity: base hash a2367093… identical at all four frozen_base_hashes checkpoints in both RESULT.json files; adapter_sha256 cdb6826c… (A4-only) and 79ddd718… (mixture) recorded. The archive SHA 33a92bd9 named in the entry is a local tarball hash and was not re-derived on the node. Copy-mixture dose (768+256 rows, 13431 vs 13284 target tokens) not re-derived; RESULT.json records copy_rows=12 source rows, source_rows=30.
+
+**SEQ-221** — ovx (node 2), roots `/tmp/astra_cue_explicit_20260914_attempt1/run` (frozen BASE explicit guide) and `/tmp/astra_cue_current_actor_20260914_attempt1/run` (saved actor). RESULT.json sha256 8d79dbe0… and 42695124…; both status COLLECTION_COMPLETE_NO_FIT, fits=0, frozen_base_unchanged=true, new_exploration_event_calls=0.
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| explicit-guide calls | 17 | physical_model_calls 17, physical_actor_calls 17, CALL_*.json files 17 | RESULT.json, ls |
+| explicit-guide selected | 5/8 | selected_successes 5, cue_task_denominator 8 | RESULT.json |
+| explicit-guide rows | 11 | student_rows 11 | RESULT.json |
+| saved-actor calls | 16 | physical_model_calls 16, CALL_*.json files 16 | RESULT.json, ls |
+| saved-actor selected | 4/8 | selected_successes 4 / 8 | RESULT.json |
+| saved-actor rows | 8 | student_rows 8 | RESULT.json |
+| READ 8/8, one successful second READ, three wrong GOT commits; actor all 8 read once, no second READ | as stated | NOT re-derived (per-task records nested under BANK_RESULTS.json collection; out of time budget) | — |
+
+Integrity: saved-actor adapter file sha256 8597605e… matches entry; actor_adapter_state_before = actor_adapter_state_after = c08852cb… matches entry; explicit-guide run has adapter_dir null (BASE) and expected base a2367093…. The source-commit prefix d9c6e329 is not a field in RESULT.json and was not re-derived.
+
+**SEQ-222** — ovx (node 2), root `/tmp/astra_cue_feedback_20260914_attempt1/run`. RESULT.json sha256 684ccd7a…; status COLLECTION_COMPLETE_NO_FIT, fits=0, teaching_mode public_feedback_v1, frozen_base_unchanged=true.
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| calls | 12 | physical_model_calls 12, CALL_*.json files 12 | RESULT.json, ls |
+| selected | 2/8 | selected_successes 2 / cue_task_denominator 8 | RESULT.json |
+| rows | 4 | student_rows 4 | RESULT.json |
+| four read once, four never read, no second READ, two no-READ arrivals excluded | as stated | NOT re-derived (same reason as SEQ-221) | — |
+
+Integrity: adapter file 8597605e… and state before=after c08852cb… unchanged, matching "Adapter/base unchanged". Source prefix 3400fd19 not a RESULT.json field, not re-derived.
+
+Scope (builder's own limits): SEQ-220 is a development screen, seed 0, one task family, not dose/token/order matched, "descriptive mixture effect only". SEQ-221/222 are coached collections on eight external EVENT tasks, two banks, one attempt each, no fit. Node-1 (a40) not involved.
