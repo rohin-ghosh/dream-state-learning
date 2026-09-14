@@ -18741,3 +18741,29 @@ new custody module/test; Galileo owns new typed-scan module/test. Independent
 bounded CPU tasks, no delegated launches or Git changes. No Q0 repeat or C11
 expansion. Exact public reconstruction, full source custody and typed finite
 leak checks remain required before native preparation. Larger mission incomplete.
+
+## [Root] 2026-09-14T02:48Z — active-text v2.1 contract REWORK; v2.2 docs repair opened, no source or GPU gate
+
+Fresh independent audit of the exact proposed strong textual-memory opponent
+is complete at commit `e48b139a`, memo
+`research_notes/analysis/2026-09-14_active_text_native_v21_auto_exact_contract_fresh_audit.md`.
+Verdict: `REWORK`, not `GO_CPU_SOURCE`. The core scientific design survives:
+automatic target-blind q16/B8192 retrieval, the q16/B16384 same-turn access
+sensitivity, witnessed-event graph, common 16+1 actor envelope, and
+`BRIDGE_EVENT` rather than child-LINK are retained. The exact v2.1 bytes are
+not implementable because evidence identities are not root-bound, the public
+transition parser and rejected-attempt/THINK receipts are incomplete, root and
+RAW parity prose conflict, no actual lifetime wire bridge is bound, some
+float/packing order remains non-unique, and store acquisition/formation plus
+registry costs are omitted.
+
+A narrow v2.2 docs-only successor is being authored against the audit's exact
+11-point checklist. This does not interrupt Stage2A -> authentic two-SLEEP and
+does not authorize baseline source, model/tokenizer calls, or GPU work. Do not
+implement v2.1. Baseline source remains downstream of a qualifying authentic
+two-SLEEP mechanism result and a fresh v2.2 review.
+
+**Data safety:** node-1's final non-destructive mirror completed with `RC=0`.
+Source and mirror report 15,428 regular files; rsync transferred zero bytes on
+the final pass because the prior mirror was already current. The source total
+is 96,975,926,735 bytes. No deletion occurred.
