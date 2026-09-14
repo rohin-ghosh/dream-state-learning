@@ -22183,3 +22183,15 @@ Attempt2newroot repeatsONLYfailedcoldBEFORE on sameparent/master/collection,
 thenmissingactualaudit. No A3fit, dose/scorer/parent/denominator change or
 poolingretries. Guardian380940exited; no jobs killed. CPUfixthennewsourceprepare,
 not broadcustodywork. Detailedrepair rationale appended toprospectiveprotocol.
+
+[Builder] 2026-09-14T13:31Z before-onlyretryreleased: source8e520bc5b359163b2e54d70d39f317d0ab914102,
+node2root/tmp/astra_fresh_reader_cycle_20260914_attempt2, GPU0.69CPUtestsPASS,
+nativePREPARED_NO_MODEL and exactactual-sourceCPUreplayPASS32collectionrows,
+8actualreadcases, routeoutcomes1success/1wrong/2invalidunchanged. Twoinvalid
+routesretainnullport/outcome andZEROtransitions; no feedback invented.
+Attempt2/collect is an explicit symlink to preservedattempt1/collect; no write
+or recollection there. OriginalfailedrootarchivedSHA
+f0ccf1428bb76bb1f5447b5a363a4c4d29bc5bb41b469e50019bbc9ba0e68fd0.
+Newfrozen guardstagebefore only,1920sbound,sameparent anddata, physical+CVDscan
+beforeload. This rerunsFAILEDreadout forfullchecks, thenmissingactualaudit;
+no training launched. PID/startfollow. No jobs killed.
