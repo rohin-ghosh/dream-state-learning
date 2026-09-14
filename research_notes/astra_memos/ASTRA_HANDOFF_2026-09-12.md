@@ -2,6 +2,22 @@
 
 ## CURRENT OVERRIDE — September14,2026,13:49UTC, SEQ245
 
+CURRENT 14:08UTC: both246replays COMPLETE, don'trestart. SFTfault8/8,OFF2/8;
+true4/6both; sixOFFfaultfailures literalE_id INVALID_POINTER. Complete root
+gpu_artifacts_local/astra_reader_audit_matched_replay_terminal_20260914_attempt1/extracted,
+archiveSHAe613a66b1623212fa7d8ed9f68098a2984e69b9dc38fb2e48efcd619925ae708.
+Mainmemoanalysis/2026-09-14_matched_reader_audit_replay_first_result.md;
+Maxwellindependent246reviewpending. Sixwritingfilescommitted9f8047dbthrough246,
+reviewpending, UNSENT/noPDF. No MainGPUjobsnow. Next declaredONE fit:
+gpu/astra_reader_audit_transfer_write.py + test ownedKant; Main guard/design
+committedd383e1cb. SameA3parent/data/100updatekernel, materialOFFvalid[1,1].
+Reuse245selected/uniformonlyifSFTroster/referenceequivalencepasses. This is
+COUNTERFACTUAL_SELECTOR_MATERIAL_SHARED_WRITER_DEV, notwholeparentinglineage.
+Plannedroot/tmp/astra_reader_audit_transfer_write_20260914_attempt1, node2GPU0;
+NOTprepared/launchedyet. Finishfocusedtests+nativeCPUprepare, logthenlaunch
+existingguard, inspecttrainthenAFTERwithoutrepeatingcompletedfits. Fullmission
+incomplete. Currentworkerownsnewfilesonly; noexistingwriteconflicts.
+
 LIVE matched replay started13:58:33UTC node2GPU0/1 guardians385258/385259,
 source5312cefb18ebbcf37bade654f553d4fcf39a0710,
 root/tmp/astra_reader_audit_matched_replay_20260914_attempt1.

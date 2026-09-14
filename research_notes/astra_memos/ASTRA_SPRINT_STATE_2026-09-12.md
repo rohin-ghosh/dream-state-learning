@@ -1,5 +1,14 @@
 ## Current superseding snapshot — 2026-09-14 13:49 UTC, SEQ245
 
+CURRENT 14:08UTC: SEQ246 matched replay COMPLETE (not LIVE below), 12/14 SFT
+vs6/14loss-off; fault8/8vs2/8, true4/6both. Six OFFerrors literalE_id, so
+operationalpointer/format advantage, notisolatedsemanticjudgment. Bothfalseflag
+same1correctrecord. Capsule preserved; sixwritingfiles committed9f8047db.
+Next one shared-writer LOSS_OFF_SELECTOR material fit predeclared, NOTLAUNCHED:
+sameA3initialstate/data/kernel, sourcevalidOFF[1,1], 100updates; reuse245
+SELECTED/UNIFORM onlywithbyte/recipeequivalence. Kantownsnewdriver/tests;
+Main guard/design ready, Maxwellindependentlyreviews246. No active MainGPUjobs.
+
 LIVE 13:58:33UTC: matched replay on node2GPU0/1, guardians385258/385259,
 source5312cefb, root/tmp/astra_reader_audit_matched_replay_20260914_attempt1.
 Original SEQ239 auditors, SAME14A3stimuli each, zero fits.45CPUtests andboth
