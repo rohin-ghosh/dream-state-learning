@@ -58,6 +58,45 @@ def reject(call, counters, name):
     raise AssertionError("mutation_was_accepted: " + name)
 
 
+def boundary_byte_mutations(projection):
+    require(type(projection) is bytes and bool(projection), "nonempty_projection_required")
+    midpoint = len(projection) // 2
+    changed = projection[:midpoint] + bytes((projection[midpoint] ^ 1,)) + projection[midpoint + 1:]
+    mutations = {"copy": projection + projection, "delete": projection[:-1],
+                 "move": projection[1:] + projection[:1], "middle": changed}
+    require(all(candidate != projection for candidate in mutations.values()), "noop_byte_mutation")
+    return mutations
+
+
+def expected_reduced_slots():
+    slots = [("CHAIN", task, 0, None, "D1_CHAIN", 29 * task + call)
+             for task in (0, 4, 8, 12, 16, 20, 24, 28) for call in range(29)]
+    for transition_index, transition in enumerate(("SEEK", "PROSPECT", "CHECK", "CONTINUE")):
+        slots.extend(("INTERVENTION", pair, member, transition, "D1_INTERVENTION_" + transition,
+                      928 + 16 * transition_index + 2 * pair + member)
+                     for pair in (0, 2, 4, 6) for member in (0, 1))
+    slots.extend(("CANARY", index, None, None, "D1_CANARY", 992 + index) for index in range(16))
+    return tuple(slots)
+
+
+def verify_reduced_pairing(master):
+    expected = expected_reduced_slots()
+    expected_seeds = tuple(int.from_bytes(sha256(
+        master + b"\0decode\0" + slot[4].encode("ascii") + b"\0"
+        + slot[5].to_bytes(4, "big")).digest()[-8:], "big") for slot in expected)
+    states = {}
+    for state in ("BASE", "D1_ATOM_LOCAL"):
+        captured = screen.reduced_screen("D1")
+        observed = tuple((entry.kind, entry.index, entry.member, entry.transition,
+                          entry.slot.panel_label, entry.slot.global_ordinal) for entry in captured)
+        require(observed == expected, "independent_logical_slot_mismatch:" + state)
+        seeds = screen.reduced_decode_seeds("D1", master=master)
+        require(seeds == expected_seeds, "independent_paired_seed_derivation_mismatch:" + state)
+        states[state] = {"slots": observed, "seeds": seeds}
+    require(len(expected) == 280 and states["BASE"] == states["D1_ATOM_LOCAL"], "changed_screen_pairing")
+    return states
+
+
 def source_pins():
     paths = [*ROOT.glob("organism_v6/composition_birth_stage2a*.py"),
              *ROOT.glob("tests/test_composition_birth_stage2a*.py"),
@@ -182,7 +221,7 @@ def independent_inventories(source, result):
         require(actual == expected, "route_effective_source_or_recovery_mismatch")
 
 
-def mutation_values(source, record, result):
+def mutation_values(source, record, result, *, route_probes=None):
     mutations = {"full_target": record.unit.target_bytes}
     if record.unit.operand is not None:
         mutations["operand"] = record.unit.operand.encode("ascii")
@@ -200,33 +239,23 @@ def mutation_values(source, record, result):
             mutations[name] = raw
     for value in (*scanner.FORBIDDEN_CORE_LABELS, *typed_scan.FORBIDDEN_EDGE_LABELS):
         mutations["label_" + value.decode("ascii")] = value
-    pair = next(((first, second) for first in result.route_inputs.transitions
-                 for second in result.route_inputs.successors(first)), None)
-    if pair is not None:
-        first, second = pair
-        actions = f"STEP {first}\nSTEP {second}".encode("ascii")
-        mutations["route_actions_literal"] = actions
-        mutations["route_actions_spacing"] = actions.replace(b" ", b"  ")
-        mutations["route_actions_compact"] = actions.replace(b" ", b"").replace(b"_", b"")
-        mutations["route_ordered_ids"] = f"{first},{second}".encode("ascii")
-        by_port = {row.port: (block, position)
-                   for block in result.route_inputs.source.case.construction.blocks.values()
-                   if block.kind == "EVENTS" for position, row in enumerate(block.rows)}
-        first_block, first_position = by_port[first]
-        second_block, second_position = by_port[second]
-        first_row = first_block.raw.splitlines()[first_position + 1].encode("ascii")
-        second_row = second_block.raw.splitlines()[second_position + 1].encode("ascii")
-        mutations["route_event_rows"] = first_row + b"\n" + second_row
-        mutations["route_mixed"] = first_row + b"\nSTEP " + second.encode("ascii")
+    if route_probes is None:
+        route_probes = oracles.expected_route_probes(source)
+    require(set(route_probes) == {"route_actions_literal", "route_actions_spacing", "route_actions_compact",
+                                 "route_ordered_ids", "route_event_rows", "route_mixed"},
+            "all_source_route_families_required")
+    mutations.update({name: probe["raw"] for name, probe in route_probes.items()})
     return mutations
 
 
-def intended_detector(diagnostic, name, raw, offset):
+def intended_detector(diagnostic, name, raw, offset, *, route_probe=None):
     if name.startswith("route_"):
-        grammar = ("actions" if name.startswith("route_actions") else
-                   "ordered_ids" if name == "route_ordered_ids" else
-                   "event_rows" if name == "route_event_rows" else "mixed")
-        return any(issue.grammar == grammar and issue.second_span[0] >= offset
+        require(route_probe is not None and route_probe["raw"] == raw, "independent_route_probe_required")
+        first_span = tuple(offset + value for value in route_probe["first_span"])
+        second_span = tuple(offset + value for value in route_probe["second_span"])
+        return any(issue.grammar == route_probe["grammar"]
+                   and (issue.first_port, issue.second_port) == (route_probe["first_port"], route_probe["second_port"])
+                   and (issue.first_span, issue.second_span) == (first_span, second_span)
                    for issue in diagnostic.route_scan.issues)
     if name.startswith("private_"):
         return any(issue.category == name.split(":")[0] and issue.value == raw and issue.start >= offset
@@ -294,11 +323,23 @@ def run(options):
                 world=world, role_tokens=foreign_roles, display_master=master,
             )
             reject(lambda: verifier.verify_shared(foreign_role_custody.shared_bytes), counts, "foreign_roles_custody")
+            foreign_custodies = {"foreign_master": foreign_master, "foreign_roles": foreign_role_custody}
+            foreign_records = {
+                name: {(candidate.unit.unit_id, candidate.arm): candidate
+                       for case in custody.cases
+                       for paired in targets.serialize_birth_case(
+                           case, role_tokens=role_tokens if name == "foreign_master" else foreign_roles)
+                       for candidate in (paired.closed, paired.atom_local)}
+                for name, custody in foreign_custodies.items()
+            }
+            foreign_shared_hashes = {name: keep(custody.shared_bytes) for name, custody in foreign_custodies.items()}
             twins = {(record.unit.unit_id, record.arm): record for record in verifier.records}
             counts["pairs"] += 1
             counts["cases"] += 2
             for record in verifier.records:
                 identity = record.unit.unit_id + "/" + record.arm
+                record_started = time.perf_counter()
+                record_cpu_started = time.process_time()
                 try:
                     source = verifier._custody.source_for(record)
                     messages, indices = expected_public(source.case, record)
@@ -314,7 +355,8 @@ def run(options):
                     if record.arm == "CLOSED":
                         commands[record.unit.command] += 1
                         counts["units"] += 1
-                    for name, raw in mutation_values(source, record, result).items():
+                    route_probes = oracles.expected_route_probes(source)
+                    for name, raw in mutation_values(source, record, result, route_probes=route_probes).items():
                         mutated = projection + b"\n" + raw
                         reject(lambda candidate=mutated: verifier.verify(record, public_projection=candidate),
                                counts, "boundary_injection_" + name)
@@ -324,12 +366,11 @@ def run(options):
                                 source=source, binding=result.binding, future_inputs=result.future_inputs,
                                 route_inputs=result.route_inputs, candidate_prefix=mutated,
                             )
-                            require(not diagnostic.passed and intended_detector(diagnostic, name, raw, len(projection) + 1),
+                            require(not diagnostic.passed and intended_detector(
+                                diagnostic, name, raw, len(projection) + 1, route_probe=route_probes.get(name)),
                                     "intended_category_detector_did_not_reject: " + name)
                             category_probes.add(probe_key)
-                    for name, changed in (("copy", projection + projection), ("delete", projection[:-1]),
-                                          ("move", projection[1:] + projection[:1]),
-                                          ("middle", projection[:len(projection)//2] + b"X" + projection[len(projection)//2+1:])):
+                    for name, changed in boundary_byte_mutations(projection).items():
                         reject(lambda candidate=changed: verifier.verify(record, public_projection=candidate), counts, name)
                     forged = replace(record, prefix_sha256="0" * 64)
                     reject(lambda: verifier.verify(forged), counts, "forged_record")
@@ -337,15 +378,39 @@ def run(options):
                            counts, "forged_boundary")
                     twin = twins[record.unit.unit_id, "ATOM_LOCAL" if record.arm == "CLOSED" else "CLOSED"]
                     reject(lambda: verifier.verify(twin, candidate_boundary_bytes=result.boundary_bytes), counts, "foreign_arm")
-                    foreign_case = replace(record, unit=replace(record.unit, unit_id="p99/m0/u0"))
-                    reject(lambda: verifier.verify(foreign_case), counts, "foreign_case")
-                    for name, foreign in (("foreign_master", foreign_master), ("foreign_roles", foreign_role_custody)):
+                    malformed = replace(record, unit=replace(record.unit, unit_id="p99/m0/u0"))
+                    reject(lambda: verifier.verify(malformed), counts, "malformed_case")
+                    other_member = "m1" if source.case.descriptor.member == "m0" else "m0"
+                    other_unit = f"{world}/{other_member}/" + record.unit.unit_id.rsplit("/", 1)[1]
+                    foreign_case = twins[other_unit, record.arm]
+                    reject(lambda: verifier.verify(foreign_case, candidate_boundary_bytes=result.boundary_bytes),
+                           counts, "foreign_case")
+                    for name, foreign in foreign_custodies.items():
                         envelope = primitives.parse_canonical_json(result.boundary_bytes)
                         envelope["shared_custody_sha256"] = foreign.shared_sha256
+                        foreign_record = foreign_records[name][record.unit.unit_id, record.arm]
+                        foreign_source = foreign.source_for(foreign_record)
+                        envelope.update({"source_provenance": {"bytes_hex": foreign_source.provenance_bytes.hex()},
+                                         "source_provenance_sha256": foreign_source.provenance_sha256,
+                                         "case_sha256": foreign_source.case_sha256,
+                                         "record_sha256": foreign_source.record_sha256})
                         foreign_boundary = primitives.canonical_json(envelope)
-                        reject(lambda raw=foreign_boundary: verifier.verify(record, candidate_boundary_bytes=raw), counts, name)
-                    crossing = projection[:-1] + record.unit.target_bytes + projection[-1:]
-                    reject(lambda: verifier.verify(record, public_projection=crossing), counts, "boundary_crossing")
+                        reject(lambda raw=foreign_boundary, candidate=foreign_record:
+                               verifier.verify(candidate, public_messages=candidate.prefix, candidate_boundary_bytes=raw),
+                               counts, name)
+                    envelope = primitives.parse_canonical_json(result.boundary_bytes)
+                    envelope["message_spans"][0]["end"] = envelope["message_spans"][1]["end"]
+                    crossing = primitives.canonical_json(envelope)
+                    reject(lambda: verifier.verify(record, candidate_boundary_bytes=crossing), counts, "boundary_crossing")
+                    for name in ("field_observations", "candidate_inventory", "typed_occurrence_receipts"):
+                        envelope = primitives.parse_canonical_json(result.boundary_bytes)
+                        if name == "field_observations":
+                            envelope[name][0]["end"] = envelope["message_spans"][1]["end"]
+                        else:
+                            envelope[name]["count"] += 1
+                        counterfeit = primitives.canonical_json(envelope)
+                        reject(lambda raw=counterfeit: verifier.verify(record, candidate_boundary_bytes=raw),
+                               counts, "caller_" + name)
                     artifact_hashes = {
                         "boundary": keep(result.boundary_bytes), "shared": shared_digest,
                         "candidates": keep(result.candidate_inventory_bytes),
@@ -355,6 +420,7 @@ def run(options):
                         "typed_receipts": keep(result.typed_receipts_bytes),
                         "core": keep(result.core_inputs.core_bytes), "checker": keep(result.core_inputs.checker_payload),
                         "checker_receipt": keep(result.core_inputs.receipt_bytes),
+                        **foreign_shared_hashes,
                     }
                     counts["canonical_boundary_bytes"] += len(result.boundary_bytes)
                     maxima["boundary_bytes"] = max(maxima["boundary_bytes"], len(result.boundary_bytes))
@@ -364,8 +430,15 @@ def run(options):
                                  "counts": dict(result.scan.counts)})
                 except Exception as error:
                     failures.append({"identity": identity, "error": str(error), "traceback": traceback.format_exc()})
-                    rows.append({"identity": identity, "status": "FAIL"})
-            print(json.dumps({"world": world, "passed_records": counts["arm_records"], "failures": len(failures),
+                    rows.append({"identity": identity, "status": "FAIL", "error": str(error)})
+                    print(json.dumps(failures[-1]), flush=True)
+                rows[-1].update({"elapsed_seconds": time.perf_counter() - record_started,
+                                 "cpu_seconds": time.process_time() - record_cpu_started,
+                                 "process_peak_rss_kib": resource.getrusage(resource.RUSAGE_SELF).ru_maxrss})
+                with (out / "records.jsonl").open("ab") as stream:
+                    stream.write(json.dumps(rows[-1], sort_keys=True).encode("ascii") + b"\n")
+            print(json.dumps({"world": world, "processed_records": len(rows),
+                              "passed_records": sum(row["status"] == "PASS" for row in rows), "failures": len(failures),
                               "elapsed_seconds": time.time() - started}), flush=True)
         require(counts["pairs"] == 32 and counts["cases"] == 64 and counts["units"] == 256
                 and counts["arm_records"] == 512, "incomplete_population")
@@ -374,15 +447,14 @@ def run(options):
                            ("SEEK", "PROSPECT", "READ_CHECK", "STEP_CHECK", "CONTINUE")
                            for arm in ("CLOSED", "ATOM_LOCAL")}
         require(set(phases) == expected_phases, "missing_phase_arm_coverage")
-        for name in ("foreign_arm", "foreign_case", "foreign_master", "foreign_roles", "boundary_crossing"):
+        for name in ("foreign_arm", "foreign_case", "foreign_master", "foreign_roles", "boundary_crossing",
+                     "caller_field_observations", "caller_candidate_inventory", "caller_typed_occurrence_receipts"):
             require(counts[name] == 512, "incomplete_population_adversary: " + name)
-        entries = screen.reduced_screen("D1")
-        require(len(entries) * 2 == 560, "changed_screen_reservations")
-        expected_seeds = tuple(int.from_bytes(sha256(
-            master + b"\0decode\0" + entry.slot.panel_label.encode("ascii") + b"\0"
-            + entry.slot.global_ordinal.to_bytes(4, "big")).digest()[-8:], "big") for entry in entries)
-        require(screen.reduced_decode_seeds("D1", master=master) == expected_seeds,
-                "independent_paired_seed_derivation_mismatch")
+        for name in ("literal", "spacing", "compact"):
+            require(counts["boundary_injection_route_actions_" + name] == 512, "incomplete_route_action_family:" + name)
+        for name in ("ordered_ids", "event_rows", "mixed"):
+            require(counts["boundary_injection_route_" + name] == 512, "incomplete_route_family:" + name)
+        write_once(out / "paired_screen_slots.json", encoded(verify_reduced_pairing(master)))
         test_command = [sys.executable, "-B", "-m", "unittest", *SUITES, "-v"]
         write_once(out / "integrity_tests_command.json", encoded(test_command))
         with (out / "integrity_tests.log").open("xb") as stream:

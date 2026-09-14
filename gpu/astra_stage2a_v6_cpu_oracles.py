@@ -273,6 +273,61 @@ def _route_basis(source):
                 unavailable_recover_queries=frozenset(recoveries) - queries)
 
 
+def expected_route_probes(source) -> dict[str, dict]:
+    """Derive six unchanged route probes and exact relative endpoint spans.
+
+    Select the lexicographically first physically/recovery-compatible source
+    pair, independently of production route inputs and successor methods.
+    Missing compatible pairs fail qualification rather than erase probes.
+    """
+    _bounded_source(source)
+    basis = _route_basis(source)
+    transitions = basis["transitions"]
+    pair = next(((first, second)
+                 for first, edge in sorted(transitions.items())
+                 for second in basis["ports_by_current"].get(edge["actual"], ())
+                 if transitions[second]["recovery_owner_port"] is None
+                 or (transitions[second]["recovery_owner_port"] == first
+                     and edge["actual"] != edge["predicted"])), None)
+    _require(pair is not None, "source route probes require a compatible pair")
+    first_port, second_port = pair
+
+    def source_row(port):
+        path = transitions[port]["source_path"]
+        request, position = path[3], int(path[5])
+        construction = source.case.construction
+        block = construction.blocks[request]
+        parsed = wire.parse_service(block.raw, skin=construction.skin)
+        _require(parsed == block and construction.registry.get(request) == block.raw,
+                 "route probe raw block ownership")
+        _require(parsed.rows[position].port == port, "route probe row ownership")
+        return block.raw.encode("ascii").split(b"\n")[position + 1]
+
+    def probe(raw, grammar, first_span, second_span):
+        return dict(raw=raw, grammar=grammar, first_port=first_port, second_port=second_port,
+                    first_span=first_span, second_span=second_span)
+
+    def lines(first, second, grammar):
+        raw = first + b"\n" + second
+        return probe(raw, grammar, (0, len(first)), (len(first) + 1, len(raw)))
+
+    first_action = ("STEP " + first_port).encode("ascii")
+    second_action = ("STEP " + second_port).encode("ascii")
+    identifiers = (first_port + "," + second_port).encode("ascii")
+    first_row, second_row = source_row(first_port), source_row(second_port)
+    return {
+        "route_actions_literal": lines(first_action, second_action, "actions"),
+        "route_actions_spacing": lines(first_action.replace(b" ", b"  "),
+                                       second_action.replace(b" ", b"  "), "actions"),
+        "route_actions_compact": lines(first_action.replace(b" ", b"").replace(b"_", b""),
+                                       second_action.replace(b" ", b"").replace(b"_", b""), "actions"),
+        "route_ordered_ids": probe(identifiers, "ordered_ids", (0, len(identifiers)),
+                                   (0, len(identifiers))),
+        "route_event_rows": lines(first_row, second_row, "event_rows"),
+        "route_mixed": lines(first_row, second_action, "mixed"),
+    }
+
+
 def verify_inventory_ownership(source, result) -> None:
     """Raise ValueError on source-derived binding, inventory, byte or hash drift.
 

@@ -18861,3 +18861,38 @@ planning while audit runs; qualification gates remain closed. Mission incomplete
 ## [Fable] 2026-09-14T04:02Z — self-check: Stage 2A v6 full-population CPU audit is running (attempt 1, live since 03:32Z; 80/512 arm records inspected, zero reported failures, not a final PASS); no GPU work; fleet idle; daemons and chains alive
 
 Builder 03:43Z: shared custody/allocation/typed boundary and independent-oracle implementation checkpointed (`analysis/2026-09-14_stage2a_v6_implementation_checkpoint.md`); CPU-only controller 3158705 / child 3158723 on the VM auditing the full population (64 cases / 256 units / 512 arms), artifact root `astra_stage2a_v6_full_population_20260914_attempt1`; qualification gates remain closed; no model/tokenizer/GPU launch or reservation. Fleet 0/32 busy on all four nodes. Daemons: astra_nudge=1 fable_fill=1 courier_vm=1 occ_off=yes hb_age=11s astra_tmux=alive. Laptop chains 4/4. Node-1 mirror complete (lease end 23:14 UTC today). Nothing launched or killed by the watcher.
+
+## [Builder] 2026-09-14T04:04Z — qualification harness repair; held sources implemented
+
+Attempt1 remains immutable/live, not PASS: at p20 it reports336 source-boundary
+visits and six failed records. The progress label passed_records counted visits
+before all adversaries completed; do not interpret336 as completed records.
+Bounded exact-snapshot diagnosis isolated p10/m0,u2 and p10/m1,u2 CLOSED failures:
+the harness replaced the midpoint with X when the original was already X.
+Exact public boundaries and six intended route detectors pass on that fixture.
+No failed record is promoted; retain the full attempt1 terminal report.
+
+Prospective non-material harness repair guarantees a changed byte; independently
+derives280ordinal slots and paired BASE/D1 seeds; adds per-record wall/CPU/peak
+RSS and JSONL; uses source-derived route pairs with six mandatory families and
+exact two-port/two-span detector matching; tests genuine opposite-member and
+foreign-master/role source substitutions, real cross-message/field spans, and
+fabricated inventory/receipt counts. No targets, source boundaries, scoring,
+optimizer or experimental budget changed. Focused harness7PASS0.059s; independent
+oracle18PASS77.474s; exact p10 adversary/foreign-source checks passed. Fresh
+independent review of final harness pending. New full attempt2 will retain its
+own immutable source; no hot edit or relabel of attempt1.
+
+Held-core source handoff:15new tests(all64members),130existing tests PASS.
+Complete-chain producer and prospective binding implemented; all32chains and
+240pre-action witness boundaries checked by six tests, PASS786.092s. The first
+foreground chain test timed out at200s with no result; preserved as incomplete,
+not success. Background attempt2 PID3194078 completed; its log remains at
+gpu_artifacts_local/astra_stage2a_chain_core_tests_20260914_attempt2.log.
+These are source/checker results, not held/birth separation or learning.
+
+Ptolemy owns only separation join/module tests; Sartre owns only source-level
+native-preparation glue/module tests using fake tokenizer inputs. Neither may
+perform actual native preparation, load a model/tokenizer, launch jobs or alter
+budgets. Main owns qualification and eventual native conductor. All native and
+science gates remain closed; no GPU was launched, killed or reserved.

@@ -3,6 +3,7 @@
 from contextlib import ExitStack
 from dataclasses import fields, replace
 from hashlib import sha256
+from types import MappingProxyType
 import unittest
 from unittest.mock import patch
 
@@ -190,6 +191,85 @@ class CPUOracleTests(unittest.TestCase):
                     document[reference][key] = "0" * 64 if key == "sha256" else document[reference][key] + 1
                     self.reject(replace(self.result, boundary_bytes=primitives.canonical_json(document)), "reference")
         self.reject(replace(self.result, boundary_bytes=self.result.boundary_bytes + b"\n"), "noncanonical")
+
+    def test_route_probes_ignore_production_successors_and_producers(self):
+        expected = oracles.expected_route_probes(self.source)
+        with patch.object(routes.BirthRouteInputs, "successors", return_value=()) as successor, \
+                patch.object(routes, "_derive_from_source", side_effect=AssertionError("production route")):
+            self.assertEqual(self.result.route_inputs.successors(next(iter(self.result.route_inputs.transitions))), ())
+            successor.reset_mock()
+            self.assertEqual(oracles.expected_route_probes(self.source), expected)
+            successor.assert_not_called()
+
+    def test_route_probes_exact_source_pair_raw_grammar_and_relative_spans(self):
+        for number, verifier in self.verifiers.items():
+            source = verifier._custody.source_for(verifier.records[0])
+            construction = source.case.construction
+            owners, recoveries, raw_rows = {}, {}, {}
+            for request, block in construction.blocks.items():
+                if block.kind == "EVENTS":
+                    query = request.removeprefix("READ RELATION ")
+                    for position, row in enumerate(block.rows):
+                        owners[row.port] = query, row
+                        recoveries[row.recover] = row.port
+                        raw_rows[row.port] = block.raw.split("\n")[position + 1].encode("ascii")
+            pairs = []
+            for first, (first_query, first_row) in owners.items():
+                actual = construction.world_edges[first_row.node, first]
+                for second, (second_query, second_row) in owners.items():
+                    if (second_row.node == actual and (second_query not in recoveries
+                            or (recoveries[second_query] == first and actual != first_row.got))):
+                        pairs.append((first, second))
+            first, second = min(pairs)
+            actions = f"STEP {first}\nSTEP {second}".encode("ascii")
+            expected = {
+                "route_actions_literal": (actions, "actions"),
+                "route_actions_spacing": (actions.replace(b" ", b"  "), "actions"),
+                "route_actions_compact": (actions.replace(b" ", b"").replace(b"_", b""), "actions"),
+                "route_ordered_ids": (f"{first},{second}".encode("ascii"), "ordered_ids"),
+                "route_event_rows": (raw_rows[first] + b"\n" + raw_rows[second], "event_rows"),
+                "route_mixed": (raw_rows[first] + b"\nSTEP " + second.encode("ascii"), "mixed"),
+            }
+            probes = oracles.expected_route_probes(source)
+            self.assertEqual(tuple(probes), tuple(expected))
+            for name, (raw, grammar) in expected.items():
+                with self.subTest(world=number, probe=name):
+                    separator = raw.find(b"\n")
+                    first_span = (0, len(raw)) if grammar == "ordered_ids" else (0, separator)
+                    second_span = (0, len(raw)) if grammar == "ordered_ids" else (separator + 1, len(raw))
+                    self.assertEqual(probes[name], dict(raw=raw, grammar=grammar, first_port=first,
+                                                       second_port=second, first_span=first_span,
+                                                       second_span=second_span))
+
+    def test_route_probe_pair_selection_ignores_source_mapping_order(self):
+        construction = self.source.case.construction
+        reordered = replace(construction,
+                            blocks=MappingProxyType(dict(reversed(tuple(construction.blocks.items())))),
+                            world_edges=MappingProxyType(dict(reversed(tuple(construction.world_edges.items())))))
+        source = replace(self.source, case=replace(self.source.case, construction=reordered))
+        self.assertEqual(oracles.expected_route_probes(source), oracles.expected_route_probes(self.source))
+
+    def test_route_probes_fail_closed_without_compatible_source_edges(self):
+        construction = self.source.case.construction
+        for blocks, edges in ((construction.blocks, {key: "M2AN_NO_SOURCE_CURRENT" for key in construction.world_edges}),
+                              ({}, {})):
+            changed = replace(construction, blocks=MappingProxyType(blocks), world_edges=MappingProxyType(edges))
+            source = replace(self.source, case=replace(self.source.case, construction=changed))
+            with self.subTest(edges=len(edges)), self.assertRaisesRegex(ValueError, "require a compatible pair"):
+                oracles.expected_route_probes(source)
+
+    def test_route_probe_rows_require_exact_raw_registry_ownership(self):
+        probes = oracles.expected_route_probes(self.source)
+        port = probes["route_event_rows"]["first_port"]
+        construction = self.source.case.construction
+        request = next(request for request, block in construction.blocks.items()
+                       if block.kind == "EVENTS" and any(row.port == port for row in block.rows))
+        registry = dict(construction.registry)
+        registry[request] = "MISS"
+        changed = replace(construction, registry=MappingProxyType(registry))
+        source = replace(self.source, case=replace(self.source.case, construction=changed))
+        with self.assertRaisesRegex(ValueError, "raw block ownership"):
+            oracles.expected_route_probes(source)
 
     def test_boundary_ownership_fields_cannot_drift(self):
         for name in ("field_observations", "scanner_fields", "message_spans", "retained_trace_indices",
