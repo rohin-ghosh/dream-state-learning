@@ -24032,3 +24032,22 @@ same37ec readonly, all three matched views UNREVIEWED and fit_ready=false.
 Conservative A100 expiry2026-09-26 00:00UTC minus six-hour margin applies.
 GPUs4/5 remain Parfit-reserved; other GPUs/branches untouched. No process launched
 by this packet yet; actual guardian/native PIDs and admission follow immediately.
+
+## [Builder/Schrodinger] 2026-09-14 19:30 UTC — four action-first TEACH processes LIVE
+
+Prelaunch packet committed/pushed ebb72508 BEFORE launch. Exact60db source,
+unchanged protocol509f85c1, root /tmp/astra_rich_action_first_20260914_attempt1.
+Launch requested19:30:00Z; all four original physical/CVD scanners passed on
+resource_1.json at19:30:01Z: clear=true, owners=[], unresolved=[].
+
+| Shard / A100 GPU | Guardian PID | Native Python PID |
+|---|---:|---:|
+| 0 | 139567 | 139637 |
+| 1 | 139568 | 139618 |
+| 2 | 139569 | 139631 |
+| 3 | 139570 | 139628 |
+
+Each guard admitted and wrote started_utc19:30:01Z; all four TEACH REQUESTs
+present, no FAILED receipt at19:30:09Z. Max96calls each/384total, no fits,
+no v1 reruns or content promotion. Other allocations untouched. Monitoring
+and terminal capsule/primary analysis remain this worker's responsibility.
