@@ -57,3 +57,17 @@ remain. Native counts exclude EOS and record actual V3 token_ids. Reducer
 retains all48 episodes, full per-turn lengths, all8 world cells, raw hashes and
 unresolved semantic reviews. Source/readouts recheck frozen file inventory,
 exact mounted LoRA parameters and base unchanged; no promoted learner premise.
+
+## 2026-09-14 23:00:44 UTC — native preflight ready; publishing before inference
+
+Main completed merge ab171aff including initial staged source; subsequent owned
+changes committed/pushed f267ab4b. Exact18,257,920-byte source tar SHA256
+9362d06a619f3820b3769f9ec945e63f500b14b1aacb68dacd8e4b6ac8666476.
+Remote14/14 tests PASS; base/inventories/source provenance PASS; initial prompt
+306–312tokens+512budget. Fresh0/1/2 physical+/proc scans safe,12processes each,
+zero holders/unresolved. PREPARE SHA256
+5c62b7e07fd281e24ef4f5640d6502fd1aa1a86dddb3a34fca1ba6f128489d8b.
+Source publication was successful; now publishing the actual dated preGPU
+notebook entry and receipts before native launch. Initial preflight tar transport
+was contaminated by an operational stdout marker; preserved, re-exported with
+tar-only stdout to preflight_valid.tar.gz. No scientific run/retry implicated.
