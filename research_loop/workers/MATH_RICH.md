@@ -124,3 +124,17 @@ Repair CPU8/8PASS;sourceac45ae1f,new archive
 2d72d1c35d924cfe5f3249b0218763b55f4dbbbadedfddda547c8f7163ed9143;
 remote all498files byte-verified. Preparing retry only after updated notebook
 publication. Original four guardian PIDs are absent; no process was killed.
+
+## 2026-09-14T22:06:09Z — first native launch receipt, no SEQ reserved
+
+After repaired preGPUpublicationb13ac0db, guardians started22:05:32Z.
+Shards0–3 guardianPIDs431597/431598/431599/431600; nativePIDs
+431698/431702/431696/431700, respective physicalGPUs4/5/6/7.
+All four per-device resource checks PASS and /proc CVD equals assigned UUID.
+At22:06:09Z model initialization ongoing,0savedcalls,ACTOR_READY not yet;
+do not call this completed inference or scientific evidence. Deadline22:50:32Z
+plus60s termination grace. Exact receipt
+research_notes/analysis/orch_math_rich_20260914_launch_native.txt.
+MAIN: workers running independently; no SEQ reserved. Will request next SEQ
+only when terminal comparison and reduction are ready; report corrections
+separately from initial rich-vs-terse.
