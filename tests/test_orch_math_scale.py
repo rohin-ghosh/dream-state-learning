@@ -104,3 +104,31 @@ def test_no_automatic_fit_or_padding():
     assert policy.corpus_gate(rows, True, True)['corpus_threshold_met']
     assert not policy.corpus_gate(rows, True, True)['fit_ready']
     assert not policy.corpus_gate(rows, True, False)['corpus_threshold_met']
+
+
+def test_reader_schema_requires_all_axes_and_hashes():
+    from gpu.orch_math_scale_review import schema
+    properties = schema()['properties']['reviews']['items']['properties']
+    assert set(policy.AXES) <= set(properties)
+    assert {'raw_call_sha256', 'target_sha256', 'student_prefix_sha256', 'full_text_read'} <= set(properties)
+
+
+def test_reducer_rejects_raw_or_generation_prefix_changes(tmp_path):
+    from gpu.orch_math_scale_reduce import reduce
+    from gpu.orch_math_rich_screen import write
+    task = roster()['tasks'][0]
+    guided, student = policy.prompt(task, 'rich')
+    target = 'I compute the answer.\nFINAL: ' + task['gold']
+    row = original.capture(task, 'rich', dict(raw=target, messages=guided, token_ids=list(range(201)),
+        terminal=True, truncated=False, prompt_tokens=40), student)
+    write(tmp_path / 'TASKS.json', roster())
+    directory = tmp_path / 'shard0'
+    directory.mkdir()
+    write(directory / 'CALL_0001.json', row)
+    result, _ = reduce(tmp_path)
+    assert result['denominator'] == 1024 and result['calls'] == 1
+    assert not result['complete'] and result['admitted_distinct_targets'] == 0
+    row['call']['messages'] = student
+    write(directory / 'CALL_0001.json', row)
+    with pytest.raises(AssertionError):
+        reduce(tmp_path)
