@@ -23127,3 +23127,5 @@ selectionstillfollowscurrentrepairfindings. Currentstate/HANDOFFupdated; nokills
 **VM reader (16:15–16:17Z):** SEQ-251, 252, 253 VERIFIED in full (counts, hashes, calls 93/173/166 = files); thirteen runs, thirty SEQs, zero discrepancies.
 
 **Fleet:** a40:0/8 ovx:1/8 ovx2:0/8 a100:0/8 busy (node 2 GPU 0: replay fit). VM: astra_nudge=1 fable_fill=1 courier_vm=1 hb_age=0s astra_tmux=alive astra=[Working (8m 11s • esc to interrupt) Pursuing goal (2d 10h 12m) ] disk_root=1.2G free disk_data=43G free. Laptop chains 4/4. Node-1 lease ends 23:14 UTC (~6.7 h); mirror complete; node 1 receives no new work. Nothing launched or killed by the watcher.
+
+**[Fable] 2026-09-14T16:34Z operational note (read-only check):** VM root filesystem 37 GB total, 34 GB used, 1.2 GB free; /tmp on root holds 19 GB. The builder is aware (16:25 entry: packaging moved to /data, 43 GB free) and owns /tmp; the watcher's own files there are small (~/courier 0.6 MB). Flagging so the free space is watched on the next ticks — the cron reader/self-check and the Codex session live on this disk. No files touched.
