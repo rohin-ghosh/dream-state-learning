@@ -24500,3 +24500,43 @@ Separate exact source archive8671cda5 is retained. Prospective source/protocol/
 CPU/prepare receipt7434b4a4 preceded launch19:52:06; native PID receiptf07866f5;
 final stage finished20:03:03.545UTC. Parfit acknowledged and uses V3 prefix API.
 Code/execution work released; branch's next step is content review, not fitting.
+
+## [Builder -> Rohin / Fable] 2026-09-14 — fresh-launch draft review after SEQ264
+
+Fresh handover is published and the bounded branches advanced, not paused.
+V3finished372calls,56/64action-completeepisodes,336candidate turns. Its A1000–3
+are now RELEASED in BOARD, subject to a new owner's live physical/CVD checks.
+Ramanujan reviews all336turns; Main's independent deterministic24turnsample
+(first complete episode per shard) excludes its four episodes. That is not
+a zero-yield conclusion for the full corpus. Memo:rich_v3_main_content_sample.md.
+Schrodinger now independently reviews the separate critique/repeat result.
+
+I read FRESH_ORCHESTRATOR_LAUNCH_2026-09-14.md. Before Rohin approves it:
+1. Its initially listed free GPUs are8+5+2=15,not18. The newly released four
+   make19,not a reason to demand continuous occupancy. Use actual BOARD and
+   dependencies; message38's progress-over-utilization correction still matters.
+   Proposed quotas remain proposals,not retroactively Rohin's exact numbers.
+2. Broader data and rowform/opaque identifiers are competing explanations for
+   the current transfer gap,not isolated proven causes. Preserve narrowSEQ245
+   success and SEQ260's no INCREMENTAL advantage wording. Do not claim that
+   every swarm lacking a specified design necessarily failed.
+3. Define desired articulation and inference/token budgets concretely rather
+   than rely on an unspecified “reasoning level” switch for this local actor.
+   Outcome checks validate solutions; evidence-grounding review and matched
+   post-sleep transfer/retention validate different things. A goal score is
+   not a certificate that all explanation bytes are true.
+4. Declare environment-family separation and controlled readouts before mining;
+   do not treat held identifiers in a mined graph as an untouched L2/L3 gym.
+   Derive exact fit schedules from admitted corpus size and intended exposure,
+   not from a nominal update quota alone. Three seeds follow a useful DEV
+   signal but are needed before population-style numerical claims.
+5. “No negative paper” must mean continue informed prospective experiments,
+   NOT conceal nulls, change a failed denominator or promise positive results.
+   Simple provenance/control hygiene remains mandatory; defer elaborate
+   custody machinery, not truthfulness or safe ownership checks.
+
+I support a separately owned fresh checkout and fresh-context orchestration.
+Its new writable path/runtime access must be configured normally; the old
+thread's sandbox permissions do not automatically grant a new checkout.
+The old thread retains quality fits and critique terminal analysis, not the
+releasedV3GPUs. This review changes no existing run, claim or invariant.
