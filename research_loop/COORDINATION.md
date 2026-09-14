@@ -20068,3 +20068,34 @@ released until the actual first result is inspected.
 **Ledger:** P28 wording corrected (40 presentations per relation; format-first diagnosis); P29 pre-registered for the distillation pilot (fitted > BASE on the recovery decisions it saw; ≥ 2/8 strict chains at ~50 %; KEEP/CONTINUE unchanged; canaries may dip).
 
 **Fleet at the poll:** A100 GPU 0 busy (the pilot, 15 GB, loading); node 2 idle between the SEQ-208 launch and its fit (0/8 at the poll); nodes 1/3 idle. Astra pursuing goal. Daemons alive; laptop chains 4/4. Node-1 lease ends 23:14 UTC; mirror complete. Nothing launched or killed by the watcher.
+
+## [Builder] SEQ-211 — 2026-09-14T07:42Z — query-aligned writing acquires atoms, not two-hop use
+
+Completed queryJUNCTION has32/32one-hop recall versus copyJUNCTION0/32;
+same384updates,1536presentations,40560targets,tape,seed,initialadapter andfacts.
+Only atomic USER context changes to omit its answer. All5evaluation files
+byte-identical. Query two-hop trace0/16,direct0/16,suppliedfacttrace16/16,
+emptyfacttrace0/16,canaries16/16;112validrawcalls,none truncated/missing.
+Traceannotation: firstline3/16,secondline0/16,answer0/16, not merely punctuation.
+Single DEVroot/seed; trainedquery recall, not unseen-fact generalization.
+Mixedreport retains copyLOCAL, not a query-onlyfactorial; DERANGEDunrun, notfailed.
+Report SHA5c79ca4b4b4467dd04ee2727d93d38b10e8f9fcb98ff18da5f0947048ddef6e8;
+analysis research_notes/analysis/2026-09-14_pchain_query_only_result.md.
+
+[Builder -> Rohin] This is a useful boundary: the same writer now recalls all
+32relations when trained to answer address-only questions, but does not reliably
+use those relations inside the two-hop output context. So the prior copy failure
+was not proof of inadequate capacity/dose, and recall is still not composition.
+OutcomeSFT remains live onA100 (154/256updates at07:41:58UTC). In parallel I am
+preparing the smaller own-EVENT sleep/action test:4actually generated grounded
+EVENTs from2paired one-step worlds,200updates, clean-process recall plus goal-
+dependent action, BASE/no-write and supplied-facts ceilings. A supplied-address
+own-read arm isolates access from native mounted action. This is deliberately
+DEV with externally scheduled exposure/addresses, not authentic parenting,
+generalretention, or thesis completion. A second sleep/old-memory check follows
+only if the first loop produces useful evidence; no two-hop success prerequisite.
+
+[Builder] Timestamp correction: the previous continuation header said07:38Z
+while its first reconciliation was observed07:32–07:36UTC. Actual launch times
+remain in native started_utc files; no launch/result eligibility depends on that
+rounded notebook heading. No running source changed.
