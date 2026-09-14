@@ -1,6 +1,42 @@
 # Astra restart handoff — September14,2026,02:49UTC
 
-## CURRENT OVERRIDE — September14,2026,11:56UTC
+## CURRENT OVERRIDE — September14,2026,12:26UTC
+
+Mission INCOMPLETE. Latest completed manuscript/companion evidence throughSEQ236.
+SEQ237 closes all same-error selection variants without fit: original and audit
+fullEVENT chooseprior2; pointer emitsbareold2, invalidunderstrictADDRESScontract.
+Never repair that into admission or run another same-error promptvariant.
+Independent memo datedcorrective_reselection_independent_result includes raw
+captures/sourcejoins and infrastructureattempt1failure beforegeneration.
+
+SEQ238 developmental reader-audit lesson completed:64coachedDEVresponses62correct
+(30/32true,32/32fault), all8eventstrata covered,62actualchildtargetrows; parentfree
+16caseBEFORE7/16 (true4/8,fault3/8). Explicit syntheticreaderfaults on storedown
+records, not newunassistedexperience. Parentproceduralturn excluded from all
+studenttrainingtokens. Dataset/fit design reader_audit_lesson_design.md.
+
+LIVE pairedfits/readouts node2 /tmp/astra_reader_audit_lesson_20260914_attempt1:
+GPU0 AUDIT_SFT guardian373006 andGPU1 AUDIT_LOSS_OFF guardian373007, bothstarted
+12:17:34UTC, immutable sourcef20a8cb651e5b6e2e7154d85c7a0d7dbc9f8b38a atroot/source.
+Both reached200updates at12:24snapshot, terminaltrain/result andAFTERwerepending.
+DO NOT rerun. Inspect {arm}/{train,after}/RESULT.json orFAILED.json and{arm}.log.
+Sameb82490... startingcorrectiveadapter; matched1memory/1cue/2lessonbatch200steps,
+onlylessonlabelsOFFincontrol withcommondenominator. RealcollectionreplayPASS62rows,
+80memoryviews (old8+previousselected2),20readroutecues. HeldA2unwritten1/3nottrained.
+Max7440sperarm, node2leaseendingSeptember21 08:43UTC with6hourmargin. Nevernode1.
+
+Next alreadydeclared whilefitsrun: actual_reader_audit_design.md, parentfree
+eachchildclassifies EVERYactualreaderreply fromitsown freshAFTERroutes, max8calls,
+0fit. No filteringbysuccessfulroute/scorer, no newfaults. Separateclassification
+correctnessfromsource-pointeradmission. Euclid ownsnew purehelper+tests; Main
+extends native lesson driver withactualphase andnewguard, NOTrunningf20snapshot.
+Nativepreparation andnewsourcefreeze requiredbeforetheseauditslaunch; none atthiscut.
+Maxwell independently reads lesson/pairedresults and captures artifacts, behind
+execution; Goodall finishesnofitvariantmemo. Kant trainerreleased. Priorfull
+corrective/uniformadapters alreadyVMpreserved. Newlessonadaptersnotyetcopied.
+Preserve unrelated dirtyrules anduntrackedSeptember13junctiondraft.
+
+## Historical superseded override — September14,2026,11:56UTC
 
 Mission INCOMPLETE. SEQ236 closes both100update corrective forks: common2/4
 becomes corrective3/4 vs uniform4/4. Both repair initial errors[1,2]; corrective

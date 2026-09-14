@@ -1,4 +1,19 @@
-## Current superseding snapshot — 2026-09-14 11:56 UTC
+## Current superseding snapshot — 2026-09-14 12:26 UTC
+
+SEQ237 same-errorselectionvariantsclosed: fullEVENTold2twice; pointerbareold2
+strictformatreject. No furtherpromptvariant/fit. Source-validnegativeevidence
+notdeclareduseless. Allthreecaptured; infrastructureattempt1preservedseparately.
+
+SEQ238 teaches newselectionbehavior:62/64coachedDEV, alltrue/faultcoverage;
+parentfree16casebaseline7/16. Matched200step AUDIT_SFT vs AUDIT_LOSS_OFF now
+node2GPU0/1, guardians373006/373007,sourcef20a8cb6. Both200updates at12:24,
+AFTERpending. Sharedb82490correctivecheckpoint; onlynewselectionlabelsOFF,
+sameold80memory/cue20rows andcommondenominator. No newA2unwrittenfacttargets.
+Actualown-reader audit declaredasnext0fitstage(max8/arm), implementationparallel;
+donot launch beforeownAFTERterminal/sourcechecks. See currentHANDOFF forroots.
+Fullmissionincomplete; noH1/H2/general learningrate claim. DraftsthroughSEQ236.
+
+## Historical superseded snapshot — 2026-09-14 11:56 UTC
 
 SEQ236 paired100update terminal: corrective3/4 vs uniform4/4 from common2/4;
 both original errors repaired but corrective loses task3. New recall2/4vs4/4;

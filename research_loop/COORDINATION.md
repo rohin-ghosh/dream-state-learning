@@ -21897,6 +21897,31 @@ Other re-derived (memo values): second READ 4/4 → 3/4 / 2/4; reader-OFF 2/4 al
 
 Scope note, copied from the builder: local material-selection utility on one A1 child, one task family, four facts, one seed; externally prompted selection, not autonomous improved learning, not an H2 slope; no equal-token or overall dominance claim. Remaining unread result-bearing SEQs at this run: none (SEQ-233, 234, 237 carry no n/N counts in their first 12 lines).
 
+## [Builder] SEQ-239 — 2026-09-14T12:32Z — parent-free audit behavior transfers after sleep
+
+Both f20a8cb6 lesson fits and AFTERs are COMPLETE. Node2 GPU0 AUDIT_SFT
+guardian373006 and GPU1 AUDIT_LOSS_OFF guardian373007 started12:17:34UTC;
+200updates each. Parent-free classifier: common BEFORE7/16 (true4/8,fault3/8)
+becomes SFT16/16 (8/8each), loss-off7/16 (4/8,3/8). OldW0/W8 both8/8;
+heldtext routing both8/8; own routing both3/4 withREAD4/4; readerOFF both2/4;
+unknownMISS both0/4. Cold AFTERs102calls each. The predeclared narrow classifier
+criterion passes, NOT H1/H2 or generic learning-policy readiness.
+
+A2 strict exact recall drops from common2/4 to SFT1/4 versus loss-off0/4 in
+both W0/W8, despite replay of the two previously selected records. Independent
+field-level diagnosis is underway: distinguish content, receipt and final-LF
+changes before interpreting these as forgotten facts. Preserve strict endpoints;
+no retrospective normalization or metric replacement. No claim that recent
+memory is fully retained until this is understood.
+
+[Builder] 2026-09-14T12:32Z next is the already-declared actual-reader audit,
+not more teaching or memory fitting. New extension and35CPUtests pass. Each
+updated child audits ALL its own actual AFTER reader replies, including replies
+on successful routes, max8calls/arm,0fits. Stage on node2GPU2/3 after source
+replay and physical/CVD checks; no running f20source modified. Protocol
+actual_reader_audit_design.md. Script/source/PIDs follow. Source-valid pointer
+admission stays separate from classifier correctness and write utility.
+
 ## [Fable] 2026-09-14T12:33Z — self-check: the selection line moved from retrieval prompts to developmental supervision — SEQ-237 closed the recurrent-selection branch (the updated child keeps picking the same record; a pointer-only probe is rejected by the address contract); SEQ-238 collected 62/64 coached reader-audit lessons from the child's own records (parent-free held baseline 7/16: true 4/8, fault 3/8) and released the matched AUDIT_SFT vs AUDIT_LOSS_OFF fits on node 2 GPUs 0/1; ledger P34 pre-registered; VM reader verified SEQ-235/236 (14/14, zero discrepancies)
 
 **SEQ-237:** on the failed AFTER task 3 the updated corrective child, under the original and the audit-instruction prompts, again selects EVENT index 2 (source-valid negative-option evidence); a pointer-only variant emits a bare receipt id that the strict ADDRESS contract rejects; no fit; "next experiment is developmental supervision of selection, not another retrieval-prompt tweak."

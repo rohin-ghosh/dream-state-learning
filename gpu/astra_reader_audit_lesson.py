@@ -104,22 +104,52 @@ def checked_training(directory, inputs, arm, lesson_sha256):
     return result, source.file_hash(directory / 'RESULT.json')
 
 
+def actual_cases(directory, inputs, arm, training_sha256, expected_state):
+    from organism_v6 import experienced_event_actual_reader_audit as actual
+
+    directory = Path(directory)
+    require(not (directory / 'FAILED.json').exists(), 'failed_actual_after_forbidden')
+    result = source.read(directory / 'RESULT.json')
+    require(result.get('schema') == SCHEMA and result.get('phase') == 'after'
+            and result.get('status') == 'COMPLETE' and result.get('arm') == arm
+            and result.get('source') == inputs['provenance'] and result.get('fits') == 0
+            and result.get('training_result_sha256') == training_sha256
+            and result.get('loaded_adapter_state_sha256') == expected_state
+            and result.get('frozen_base_unchanged') is True, 'own_actual_after_actor_required')
+    panel = result['panels']['OWN_PARAMETRIC']
+    require(source.read(directory / 'new_task/PANELS.json')['OWN_PARAMETRIC'] == panel,
+            'actual_panel_file_drift')
+    names = ['new_task/OWN_PARAMETRIC_EPISODE_%02d.json' % index for index in range(1, 5)]
+    records = [source.read(directory / name) for name in names]
+    require(records == panel['episodes'] and panel['denominator'] == 4, 'all_own_actual_routes_required')
+    cases = actual.build_cases(inputs['collection'], records)
+    provenance = dict(directory=str(directory), helper_sha256=source.file_hash(actual.__file__),
+        source_files={name: source.file_hash(directory / name)
+                      for name in ['RESULT.json', 'new_task/PANELS.json', *names]})
+    return cases, provenance
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--phase', choices=('prepare', 'collect', 'train', 'after'), required=True)
+    parser.add_argument('--phase', choices=('prepare', 'collect', 'train', 'after', 'actual'), required=True)
     parser.add_argument('--after-source', required=True)
     parser.add_argument('--output', required=True)
     parser.add_argument('--gpu-uuid', required=True)
     parser.add_argument('--lesson')
     parser.add_argument('--training')
+    parser.add_argument('--own-after')
+    parser.add_argument('--prepare-only', action='store_true')
     parser.add_argument('--arm', choices=ARMS)
     options = parser.parse_args(argv)
-    require((options.phase in ('train', 'after')) == bool(options.lesson) == bool(options.arm),
+    require((options.phase in ('train', 'after', 'actual')) == bool(options.lesson) == bool(options.arm),
             'explicit_paired_lesson_arm_required')
-    require((options.phase == 'after') == bool(options.training), 'after_requires_own_training')
+    require((options.phase in ('after', 'actual')) == bool(options.training), 'after_requires_own_training')
+    require((options.phase == 'actual') == bool(options.own_after), 'actual_requires_own_after')
+    require(not options.prepare_only or options.phase == 'actual', 'prepare_only_for_actual')
     require(os.environ.get('HF_HUB_OFFLINE') == '1' and os.environ.get('TRANSFORMERS_OFFLINE') == '1',
             'offline_required')
-    require(options.phase == 'prepare' or os.environ.get('CUDA_VISIBLE_DEVICES') == options.gpu_uuid,
+    require(options.phase == 'prepare' or options.prepare_only
+            or os.environ.get('CUDA_VISIBLE_DEVICES') == options.gpu_uuid,
             'exact_gpu_required')
     output = Path(options.output)
     output.mkdir(parents=True, exist_ok=False)
@@ -152,11 +182,19 @@ def main(argv=None):
         if options.lesson:
             rows, lesson_sha256 = replay_lesson(options.lesson, inputs)
             result['lesson_result_sha256'] = lesson_sha256
-        if options.phase == 'after':
+        if options.phase in ('after', 'actual'):
             trained, train_sha256 = checked_training(options.training, inputs, options.arm, lesson_sha256)
             arguments.adapter_dir = str(Path(options.training) / 'adapter')
             expected_state = trained['adapter_state_after']
             result['training_result_sha256'] = train_sha256
+        if options.phase == 'actual':
+            cases, provenance = actual_cases(options.own_after, inputs, options.arm, train_sha256, expected_state)
+            source.write(output / 'ACTUAL_CASES.json', cases)
+            result['actual_source'] = provenance
+            if options.prepare_only:
+                result.update(status='PREPARED_NO_MODEL', finished_unix=time.time())
+                source.write(output / 'RESULT.json', result)
+                return
         tokenizer = source.native.load_local_tokenizer(arguments.model_dir)
         engine = source.Engine(arguments, tokenizer, check=check)
         from organism_v6.pcfl_vertical_train import _state_hash
@@ -196,6 +234,13 @@ def main(argv=None):
                                         output, arm=options.arm))
             result.update(schema=SCHEMA, status='COMPLETE', fits=1, arm=options.arm,
                           trainer_sha256=source.file_hash(trainer.__file__), parent_present=False)
+        elif options.phase == 'actual':
+            from organism_v6 import experienced_event_actual_reader_audit as actual
+
+            selected = actual.collect_cases(cases, generate)
+            source.write(output / 'ACTUAL_READERS.json', selected)
+            result.update(status='COMPLETE', parent_present=False,
+                          claim='PARENT_FREE_CLASSIFICATION_OF_OWN_READER_REPLIES_NOT_WRITE_UTILITY')
         else:
             held = lesson.collect_cases(inputs['held'], generate, coached=False)
             source.write(output / 'AFTER_HELD.json', held)
