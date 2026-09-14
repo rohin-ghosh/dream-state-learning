@@ -18153,3 +18153,33 @@ not get scientifically promoted. This is runtimeplumbing, not revivedC11.
 No nativeQwen/tokenizer/GPUscience/node1write/launch/kill/curl/wgetretry or
 approval request. No activeCPUtest. Actualroute/corebindings still unanswered;
 fullmission remainsactive/incomplete, same nextreducedscreen/authenticjunction.
+
+## [Fable backup self-check] 2026-09-14T00:30Z — SEQ-VM-7: two builder entries since 00:01Z (reduced dispatcher accepted 561/578 PASS; E0-r relay reconciled, 2 PASS CPU fixture); fleet idle; daemons alive
+
+Headless VM self-check (laptop heartbeat stale). Observe/log/relay only; nothing launched, killed or edited outside this entry.
+
+**Builder entries since SEQ-VM-6 (lines 18093 and 18127), counts as written:**
+
+1. `[Builder] 2026-09-14T00:06Z — reduced dispatcher accepted after accounting-abort repair; source binding still needed`. Initial screen dispatcher passed Main 574 tests 557 PASS / 17 skips; independent review found a P2 (malformed generation count could mark a probe ERROR yet allow later calls and completed_unscored). Original source/test/receipt archived before repair; James repaired two owned files; Turing exact-byte re-review PASS closed the P2. Final Main 578 tests: 561 PASS / 17 native-only skips, 298.369 s, 54 hashes unchanged, observed 00:01:10–00:06:10 UTC. Receipt SHA256 c9d7e9a00df980917c903d25b8f214188fd6a796320f815e4fa1d0c026bd89bc; pins in research_notes/analysis/2026-09-13_stage2a_screen_runtime_integration.md. Future/actor/manuscript integration pushed as 8b71e109; abstracts 254 words, SEQ192/195 evidence synchronized, collaborator UNSENT, no PDF build. No worker/test/GPU experiment active; no node-1 write, launch/kill, or approval request.
+
+   Relayed verbatim:
+
+   > [Builder -> Root/Rohin] Remaining decision request is narrower than23:04:
+   > future-universe/retained-disclosure is implemented. Please bind registered
+   > multi-step route membership/boundaries/recovery/termination/rendering and
+   > core actual_route_depth, recovery SEEK position and prior STEP match history.
+   > These still affect hashes/leak acceptance; no answer observed at00:06pull.
+   > After binding: complete semantic/routeinventory/sourceaudit, separate
+   > material/tokenizer/runtimepreparation, reduced560slotBASE/D1ATOM_LOCAL then
+   > qualifiedauthentictwo-SLEEP. No emptyinventory/diagnostic bypass, noSEQ195/Q0
+   > rerun, noC11revival or G3/H1/H2/parenting/freeze/missioncompletion claim.
+
+2. `[Builder] 2026-09-13T17:19-07:00 — E0-r relay reconciled; live readout/training boundary checked on tiny CPU fixture` (= 00:19Z 09-14). The E0-r memo already exists at e8fcb7f2 (authored 2026-09-13 04:14:24 UTC), SHA256 2e9b3a0a9c640e741352288b0fde498d3b68039c7ddb8a6c3adc46e4e8d9695d; builder states its 12 answers do not resolve current Stage2A route/core bindings and old E0 is not to be implemented verbatim. Reconciliation: research_notes/analysis/2026-09-13_e0_relay_current_path_reconciliation.md. New test on one tiny CPU model: 2 PASS, 14.235 s, observed 17:15:37–17:15:53 Pacific, synthetic generation/tokenizer (not HF/Qwen/CUDA). Turing read-only review PASS. Receipt/pins: research_notes/analysis/2026-09-13_stage2a_readout_training_continuity.md; native receipt SHA256 0a360fce49b78d4a721136983cb3b2b4bc46c3096d0158218a405aabb697f203. James owns only new screen_custody.py/test (untracked in the builder's tree at this check). Builder states actual route/core bindings still unanswered; full mission remains active/incomplete.
+
+No `[Root …]`, `[Independent …]` or `[Codex …]` entries since SEQ-VM-6. Repo HEAD 774e2adb.
+
+**Fleet (read-only, 00:30Z):** a40 8 GPUs 1 MiB each, no compute apps; ovx 8 GPUs 0 MiB, none; ovx2 8 GPUs 1 MiB, none; a100 8 GPUs 0 MiB, none. Idle is expected while source is being audited.
+
+**Daemons on VM:** astra_nudge 1, courier_vm 1, tmux session `astra` alive.
+
+**Node-1 mirror:** lease ends 2026-09-14 23:14 UTC, about 22.7 h from this check, outside the 10-hour window; no rsync run. Last logged incremental pass 15:02 UTC 09-13 (find -type f = 15,428 both sides). Final incremental `rsync -a` (no --delete) node 1 `~/v6_out/` -> node 2 mirror remains due inside the last 10 hours, by the laptop watcher/Rohin or this self-check reusing the logged command.
