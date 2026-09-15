@@ -1,0 +1,49 @@
+{
+  "observed_utc": "2026-09-15T07:35:00Z",
+  "ready_sha256": "9ca55b02870134947fa63e94e4095120e2a1ddde8700bb3579d3cbe540d8b587",
+  "physical_gpu": 5,
+  "uuid": "GPU-c1650c7f-ac26-f1a0-2ab8-c7354a6f27c9",
+  "guardian_pid": 812404,
+  "native_pid": 819570,
+  "native_start_ticks": 17851276,
+  "loaded_unix": 1789457397.5104988,
+  "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+  "adapter": null,
+  "optimizer": null,
+  "no_lora": true,
+  "all_parameter_tensors_frozen": 339,
+  "training_updates": 0,
+  "first_parent": {
+    "actual_model": "openai/openai/gpt-6-astra",
+    "started_unix": 1789457412.8639448,
+    "finished_unix": 1789457450.8870707,
+    "node_archive_verified_unix": 1789457482.790112,
+    "http_attempts": 1,
+    "retries": 0,
+    "input_tokens": 1642,
+    "output_tokens": 1558,
+    "provider_reasoning_tokens_not_child": 1034,
+    "plan_sha256": "973cbfdd49fdfd96710bc43a3739a43c7792c597d96f086662b90c9ddd8d6330",
+    "raw_response_sha256": "55facb50a26bf2abac44408c0ea4f8b491fbb69d562ea86f5ac991105c6ad5c4"
+  },
+  "first_coached_child": {
+    "file": "cycle1/experience/CALL_002.json",
+    "purpose": "check",
+    "started_unix": 1789457486.5908022,
+    "finished_unix": 1789457492.0152774,
+    "emitted_tokens": 242,
+    "sha256": "3ab0e43afa1323482a36e2bb2af458e306829c90243236f4648f4ea8e11018e9"
+  },
+  "cycle1_experience": {
+    "status": "COMPLETE",
+    "calls": 6,
+    "original_tokens": [312, 170],
+    "check_tokens": [242, 306],
+    "revision_tokens": [438, 544],
+    "last_response_finished_unix": 1789457601.4742458
+  },
+  "behavioral_improvement_claim": false,
+  "weight_learning_claim": false,
+  "raw_in_repository": false,
+  "node_campaign": "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_feedback_uptake_base_r107_5"
+}
