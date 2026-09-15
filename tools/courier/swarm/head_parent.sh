@@ -13,7 +13,7 @@ HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$HERE/../courier_lib.sh"
 SW="$COURIER_HOME/swarm"; mkdir -p "$SW/cycles" "$SW/prompts"
 COURIER_LOG="$SW/head_parent.log"; PIDFILE="$SW/head_parent.pid"
-CAP_S="${HEAD_PARENT_CAP_S:-1200}"; BUDGET_USD="${HEAD_PARENT_BUDGET_USD:-4}"
+CAP_S="${HEAD_PARENT_CAP_S:-1200}"; BUDGET_USD="${HEAD_PARENT_BUDGET_USD:-10}"
 PRINC="$SW/PARENTING_PRINCIPLES_ROHIN_2026-09-15.md"; export MAKE_PROMPTS_PLAN="$SW/PARENTING_BATTLE_PLAN_v4_2026-09-15.md"
 [ -r "$PRINC" ] && [ -r "$MAKE_PROMPTS_PLAN" ] || { echo "$(date -u +%FT%TZ) missing plan/principles copies in $SW" >> "$SW/head_parent.log"; exit 0; }
 BRANCHES="$SW/branches.json"; STATE="$SW/head_state.json"
@@ -37,19 +37,19 @@ new_any = False; digests = {}
 for name, b in B.items():
     node, root = b['node'], b['root']
     cmd = f"""R={root}; latest=$(ls -td $R/cycle_* $R/*/cycle_* $R/cycle* $R/*/cycle* 2>/dev/null | head -1); nread=$(ls -d $R/readout_* $R/*/readout_* 2>/dev/null | wc -l); echo "LATEST ${{latest:-none}} readouts=$nread results=$(ls $R/parent_transcripts/*/RESULT.json $R/*/parent_transcripts/*/RESULT.json 2>/dev/null | wc -l)";
-    for f in $(ls -t $R/STATUS.json $R/*/STATUS.json $R/PENDING_TRIPLE.json $R/*/PENDING_TRIPLE.json $R/readout_*/COMPLETE.json $R/*/readout_*/COMPLETE.json $R/readout_*/*MEASURE*.json $R/cycle_*/UPDATES.jsonl $R/parent_transcripts/*/RESULT.json $R/parent_transcripts/*/REQUEST.json $R/*/parent_transcripts/*/RESULT.json 2>/dev/null | head -16); do echo "=== $f"; head -c 2500 $f; echo; done"""
+    for f in $(ls -t $R/STATUS.json $R/*/STATUS.json $R/PENDING_TRIPLE.json $R/*/PENDING_TRIPLE.json $R/readout_*/COMPLETE.json $R/*/readout_*/COMPLETE.json $R/readout_*/*MEASURE*.json $R/cycle_*/UPDATES.jsonl $R/parent_transcripts/*/RESULT.json $R/parent_transcripts/*/REQUEST.json $R/*/parent_transcripts/*/RESULT.json 2>/dev/null | head -10); do echo "=== $f"; head -c 1200 $f; echo; done"""
     try:
         out = subprocess.run(['bash', f'{repo}/gpu/{node}_ssh.sh', cmd], capture_output=True, text=True, timeout=120).stdout
     except Exception as e:
         out = f'DIGEST_ERROR {e}'
-    out = out[:40000]
+    out = out[:12000]
     marker = out.split('\n', 1)[0]
     digests[name] = out
     if name.startswith('F') and marker != state.get(name):
         new_any = True
     state[name] = marker
 json.dump(digests, open(f'{cyc}/digests.json', 'w'))
-json.dump(state, open(state_p, 'w'))
+json.dump(state, open(f'{cyc}/state_candidate.json', 'w'))
 open(f'{cyc}/NEW_SLEEP', 'w').write('1' if new_any else '0')
 PY
 if [ "$(cat "$CYC/NEW_SLEEP")" != "1" ]; then log "no new Fable sleep/cycle since last run; no head-parent call"; exit 0; fi
@@ -68,12 +68,14 @@ if os.path.exists(exch):
 msg = {'current_fields': fields, 'digests': json.load(open(cyc + '/digests.json')), 'astra_last_two_exchange_entries': astra}
 open(cyc + '/user.json', 'w').write(json.dumps(msg)[:900000])
 PY
-SYSTEM="$(cat "$HERE/head_parent.md"; echo; echo; cat "$PRINC")"
+cat "$HERE/head_parent.md" > "$CYC/system.md"; echo >> "$CYC/system.md"; cat "$PRINC" >> "$CYC/system.md"
 log "head parent call (cap ${CAP_S}s, budget ${BUDGET_USD} USD) -> $CYC"
+# prompt via stdin and system prompt via file: the earlier argv form failed with "Argument list too long" (rc=126)
 ( cd "$COURIER_REPO" && run_with_timeout "$CAP_S" "$CLAUDE_BIN" -p --model claude-fable-5-1 --effort max --output-format json \
     --tools "" --no-session-persistence --max-turns 1 --max-budget-usd "$BUDGET_USD" \
-    --system-prompt "$SYSTEM" "$(cat "$CYC/user.json")" ) > "$CYC/reply.json" 2> "$CYC/reply.err" < /dev/null
+    --system-prompt-file "$CYC/system.md" < "$CYC/user.json" ) > "$CYC/reply.json" 2> "$CYC/reply.err"
 rc=$?; [ $rc -eq 0 ] || { log "head parent call failed rc=$rc ($(head -c 200 "$CYC/reply.err" | tr '\n' ' '))"; exit 3; }
+cp "$CYC/state_candidate.json" "$STATE"
 
 # 3. validate + apply fields (STYLE/FOCUS/REFLECTION only), write exchange entries
 python3 - "$SW/prompts" "$CYC" "$COURIER_REPO" "$TS" <<'PY'
