@@ -1,0 +1,923 @@
+{
+  "actual_inference_cells": 64,
+  "adapter_files_verified": {
+    "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+    "files": [
+      [
+        "README.md",
+        "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+      ],
+      [
+        "adapter_config.json",
+        "55071a8dba6da1a337307d26644c4e1d8089fa42d47bf5c3904bffe0971f7d4f"
+      ],
+      [
+        "adapter_model.safetensors",
+        "6f1770f6c9179bf26f046386b25f8e3fd8950aebc602b5b371485c9bef84cfd0"
+      ]
+    ],
+    "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/FULL/checkpoints/000008932/adapter",
+    "state_sha256": "121655d491bc55ba6bbd8eb732bc4f7a65215a07d3b6b2492f4fa623026f80f1"
+  },
+  "after_sha256": "ca9fc673976cd32027ac39a1ad8dd333ab289ce30f2889a42b402060e93f9678",
+  "aggregate_reserved_cap": 64,
+  "all_cells_recorded": true,
+  "all_pairs_complete": true,
+  "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+  "checkpoint_sha256": "121655d491bc55ba6bbd8eb732bc4f7a65215a07d3b6b2492f4fa623026f80f1",
+  "claim_boundary": "Fixed synthetic32 diagnostic only; no broad capability, semantic thinking, training or causal-generalization proof.",
+  "complete_sha256": "bcfa66ff7efd224fbc955c3287ee5664e7cd01152c1b2c1a0a59e2d8237a38d4",
+  "expected_cells": 64,
+  "families": {
+    "code": {
+      "arms": {
+        "OFF": {
+          "all_responses_complete": true,
+          "completion_counts": {
+            "complete": 8,
+            "execution_error": 0,
+            "incomplete": 0,
+            "missing": 0,
+            "truncated": 0
+          },
+          "denominator": 8,
+          "generation_metrics": {
+            "content_tokens": {
+              "known_count": 8,
+              "known_sum": 156,
+              "unknown_count": 0
+            },
+            "generated_tokens": {
+              "known_count": 8,
+              "known_sum": 164,
+              "unknown_count": 0
+            },
+            "prompt_tokens": {
+              "known_count": 8,
+              "known_sum": 954,
+              "unknown_count": 0
+            }
+          },
+          "outcome_categories": {
+            "correct": 2,
+            "invalid_json": 2,
+            "unsafe_or_invalid_expression": 2,
+            "wrong_answer": 2
+          },
+          "passed": 2,
+          "recorded": 8
+        },
+        "ON": {
+          "all_responses_complete": true,
+          "completion_counts": {
+            "complete": 8,
+            "execution_error": 0,
+            "incomplete": 0,
+            "missing": 0,
+            "truncated": 0
+          },
+          "denominator": 8,
+          "generation_metrics": {
+            "content_tokens": {
+              "known_count": 8,
+              "known_sum": 127,
+              "unknown_count": 0
+            },
+            "generated_tokens": {
+              "known_count": 8,
+              "known_sum": 135,
+              "unknown_count": 0
+            },
+            "prompt_tokens": {
+              "known_count": 8,
+              "known_sum": 954,
+              "unknown_count": 0
+            }
+          },
+          "outcome_categories": {
+            "correct": 1,
+            "invalid_json": 5,
+            "unsafe_or_invalid_expression": 2
+          },
+          "passed": 1,
+          "recorded": 8
+        }
+      },
+      "pairs": {
+        "complete": 8,
+        "counts": {
+          "OFF_only": 2,
+          "ON_only": 1,
+          "both_fail": 5,
+          "both_pass": 0,
+          "incomplete_pair": 0
+        },
+        "denominator": 8
+      }
+    },
+    "concise_instruction": {
+      "arms": {
+        "OFF": {
+          "all_responses_complete": true,
+          "completion_counts": {
+            "complete": 8,
+            "execution_error": 0,
+            "incomplete": 0,
+            "missing": 0,
+            "truncated": 0
+          },
+          "denominator": 8,
+          "generation_metrics": {
+            "content_tokens": {
+              "known_count": 8,
+              "known_sum": 18,
+              "unknown_count": 0
+            },
+            "generated_tokens": {
+              "known_count": 8,
+              "known_sum": 26,
+              "unknown_count": 0
+            },
+            "prompt_tokens": {
+              "known_count": 8,
+              "known_sum": 381,
+              "unknown_count": 0
+            }
+          },
+          "outcome_categories": {
+            "correct": 7,
+            "exact_constraint_failure": 1
+          },
+          "passed": 7,
+          "recorded": 8
+        },
+        "ON": {
+          "all_responses_complete": true,
+          "completion_counts": {
+            "complete": 8,
+            "execution_error": 0,
+            "incomplete": 0,
+            "missing": 0,
+            "truncated": 0
+          },
+          "denominator": 8,
+          "generation_metrics": {
+            "content_tokens": {
+              "known_count": 8,
+              "known_sum": 18,
+              "unknown_count": 0
+            },
+            "generated_tokens": {
+              "known_count": 8,
+              "known_sum": 26,
+              "unknown_count": 0
+            },
+            "prompt_tokens": {
+              "known_count": 8,
+              "known_sum": 381,
+              "unknown_count": 0
+            }
+          },
+          "outcome_categories": {
+            "correct": 6,
+            "exact_constraint_failure": 2
+          },
+          "passed": 6,
+          "recorded": 8
+        }
+      },
+      "pairs": {
+        "complete": 8,
+        "counts": {
+          "OFF_only": 1,
+          "ON_only": 0,
+          "both_fail": 1,
+          "both_pass": 6,
+          "incomplete_pair": 0
+        },
+        "denominator": 8
+      }
+    },
+    "math": {
+      "arms": {
+        "OFF": {
+          "all_responses_complete": true,
+          "completion_counts": {
+            "complete": 8,
+            "execution_error": 0,
+            "incomplete": 0,
+            "missing": 0,
+            "truncated": 0
+          },
+          "denominator": 8,
+          "generation_metrics": {
+            "content_tokens": {
+              "known_count": 8,
+              "known_sum": 26,
+              "unknown_count": 0
+            },
+            "generated_tokens": {
+              "known_count": 8,
+              "known_sum": 34,
+              "unknown_count": 0
+            },
+            "prompt_tokens": {
+              "known_count": 8,
+              "known_sum": 433,
+              "unknown_count": 0
+            }
+          },
+          "outcome_categories": {
+            "correct": 7,
+            "wrong_answer": 1
+          },
+          "passed": 7,
+          "recorded": 8
+        },
+        "ON": {
+          "all_responses_complete": true,
+          "completion_counts": {
+            "complete": 8,
+            "execution_error": 0,
+            "incomplete": 0,
+            "missing": 0,
+            "truncated": 0
+          },
+          "denominator": 8,
+          "generation_metrics": {
+            "content_tokens": {
+              "known_count": 8,
+              "known_sum": 20,
+              "unknown_count": 0
+            },
+            "generated_tokens": {
+              "known_count": 8,
+              "known_sum": 28,
+              "unknown_count": 0
+            },
+            "prompt_tokens": {
+              "known_count": 8,
+              "known_sum": 433,
+              "unknown_count": 0
+            }
+          },
+          "outcome_categories": {
+            "correct": 7,
+            "wrong_answer": 1
+          },
+          "passed": 7,
+          "recorded": 8
+        }
+      },
+      "pairs": {
+        "complete": 8,
+        "counts": {
+          "OFF_only": 0,
+          "ON_only": 0,
+          "both_fail": 1,
+          "both_pass": 7,
+          "incomplete_pair": 0
+        },
+        "denominator": 8
+      }
+    },
+    "toolcall": {
+      "arms": {
+        "OFF": {
+          "all_responses_complete": true,
+          "completion_counts": {
+            "complete": 8,
+            "execution_error": 0,
+            "incomplete": 0,
+            "missing": 0,
+            "truncated": 0
+          },
+          "denominator": 8,
+          "generation_metrics": {
+            "content_tokens": {
+              "known_count": 8,
+              "known_sum": 149,
+              "unknown_count": 0
+            },
+            "generated_tokens": {
+              "known_count": 8,
+              "known_sum": 157,
+              "unknown_count": 0
+            },
+            "prompt_tokens": {
+              "known_count": 8,
+              "known_sum": 1136,
+              "unknown_count": 0
+            }
+          },
+          "outcome_categories": {
+            "correct": 8
+          },
+          "passed": 8,
+          "recorded": 8
+        },
+        "ON": {
+          "all_responses_complete": true,
+          "completion_counts": {
+            "complete": 8,
+            "execution_error": 0,
+            "incomplete": 0,
+            "missing": 0,
+            "truncated": 0
+          },
+          "denominator": 8,
+          "generation_metrics": {
+            "content_tokens": {
+              "known_count": 8,
+              "known_sum": 149,
+              "unknown_count": 0
+            },
+            "generated_tokens": {
+              "known_count": 8,
+              "known_sum": 157,
+              "unknown_count": 0
+            },
+            "prompt_tokens": {
+              "known_count": 8,
+              "known_sum": 1136,
+              "unknown_count": 0
+            }
+          },
+          "outcome_categories": {
+            "correct": 7,
+            "invalid_tool_schema": 1
+          },
+          "passed": 7,
+          "recorded": 8
+        }
+      },
+      "pairs": {
+        "complete": 8,
+        "counts": {
+          "OFF_only": 1,
+          "ON_only": 0,
+          "both_fail": 0,
+          "both_pass": 7,
+          "incomplete_pair": 0
+        },
+        "denominator": 8
+      }
+    }
+  },
+  "loaded_sha256": "384f555d15e3c241f6788ad4b57f273fd2de389f75c7fe0355ce388893e34324",
+  "max_new_tokens": 512,
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "native_calls": 0,
+  "overall": {
+    "arms": {
+      "OFF": {
+        "all_responses_complete": true,
+        "completion_counts": {
+          "complete": 32,
+          "execution_error": 0,
+          "incomplete": 0,
+          "missing": 0,
+          "truncated": 0
+        },
+        "denominator": 32,
+        "generation_metrics": {
+          "content_tokens": {
+            "known_count": 32,
+            "known_sum": 349,
+            "unknown_count": 0
+          },
+          "generated_tokens": {
+            "known_count": 32,
+            "known_sum": 381,
+            "unknown_count": 0
+          },
+          "prompt_tokens": {
+            "known_count": 32,
+            "known_sum": 2904,
+            "unknown_count": 0
+          }
+        },
+        "outcome_categories": {
+          "correct": 24,
+          "exact_constraint_failure": 1,
+          "invalid_json": 2,
+          "unsafe_or_invalid_expression": 2,
+          "wrong_answer": 3
+        },
+        "passed": 24,
+        "recorded": 32
+      },
+      "ON": {
+        "all_responses_complete": true,
+        "completion_counts": {
+          "complete": 32,
+          "execution_error": 0,
+          "incomplete": 0,
+          "missing": 0,
+          "truncated": 0
+        },
+        "denominator": 32,
+        "generation_metrics": {
+          "content_tokens": {
+            "known_count": 32,
+            "known_sum": 314,
+            "unknown_count": 0
+          },
+          "generated_tokens": {
+            "known_count": 32,
+            "known_sum": 346,
+            "unknown_count": 0
+          },
+          "prompt_tokens": {
+            "known_count": 32,
+            "known_sum": 2904,
+            "unknown_count": 0
+          }
+        },
+        "outcome_categories": {
+          "correct": 21,
+          "exact_constraint_failure": 2,
+          "invalid_json": 5,
+          "invalid_tool_schema": 1,
+          "unsafe_or_invalid_expression": 2,
+          "wrong_answer": 1
+        },
+        "passed": 21,
+        "recorded": 32
+      }
+    },
+    "pairs": {
+      "complete": 32,
+      "counts": {
+        "OFF_only": 4,
+        "ON_only": 1,
+        "both_fail": 7,
+        "both_pass": 20,
+        "incomplete_pair": 0
+      },
+      "denominator": 32
+    }
+  },
+  "parent_calls": 0,
+  "plan_sha256": "8b6a9bdf9a5e65a9e3f26cd916071155f092dea7786e3925478137d3ba8535fe",
+  "process_boundary_disclosure": "Three cells retained from V2; CODE01 ON/OFF pair crosses fresh processes.",
+  "raw_text_included": false,
+  "recorded_cells": 64,
+  "reducer_sha256": "cc3c8f90ae6b54068ad6830ef558f68068ce29f0ffe8342755c66f345679a4f5",
+  "schema": "ORCH_R107_CAPABILITY_V1",
+  "source": "FIXED_SYNTHETIC_DIAGNOSTIC_NOT_TRAIN",
+  "source_receipts": [
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_000.json",
+      "sha256": "5597cd4886a0a620218d7617648e482c3d15f5c4a01c526b490977a0bb7d9699"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_001.json",
+      "sha256": "f467ca4d66b8f298e7d82615a8622c486191086e246ce5fc245a86f922a7b20b"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_002.json",
+      "sha256": "af12e35ceb9a02db5c6ec1d26dd2f7c7b014b7681ab9428a86cc17043d743382"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_003.json",
+      "sha256": "528e7263a4957a6c4967929bb8df9e907620581eccb5188a63bed25bc12d9103"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_004.json",
+      "sha256": "6c1a8a71315feaa44727a9025669f4ffd81d756d7b022ec23ba3e417705dcf54"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_005.json",
+      "sha256": "a856d397dce121efbea769fc04894bcaef2ad5a0bd2639d2627ad4c9cc57e5e3"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_006.json",
+      "sha256": "35525addb4a20dd384c8bbd30c8a02fad9c0f8d42d4aa3002141455f0c2fdc31"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_007.json",
+      "sha256": "05d6a3186519748f8ecb09662dc6cf9164272731e1ffbb55960197d54a0dc4b2"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_008.json",
+      "sha256": "cae0fb25b99172dab0c52bbda0360c9f84019a42a001060f32a3e16ce5f86d19"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_009.json",
+      "sha256": "26d609a8c1f7f5b822aa634660fc18458ba0b223648e395bebfb9cc618387376"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_010.json",
+      "sha256": "4a97b00f1d188284175d7294745676a85e927546abb1d79bdd9d4135405d9aa6"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_011.json",
+      "sha256": "f40d710950ea778578a8848aa31d24e4eda3fa2428802cc1192de0e97a4bb58e"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_012.json",
+      "sha256": "1de60b64f6a5a0a1e62a6368682ac8831d9c9c890e8d2055967f1810a771562d"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_013.json",
+      "sha256": "8a625b26f514b7562a7ecf0418700292a7a5aead9ec4ec4c0e1afe9383971b95"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_014.json",
+      "sha256": "cdb0dcdc889dcd1313231cf736e77dd5df5b20ceaffed2dd7660e413fe4dbee1"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_015.json",
+      "sha256": "65087d86fc09404d8d83f24d7c6dbac8c563b6c3daf8ed733157871b7ce3ab1b"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_016.json",
+      "sha256": "f4a9572a8863c2e6a7adf4d5bf322578598b65d46f142f8a0740ca20247ee9d8"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_017.json",
+      "sha256": "0b7e2bbbca328efcadd0f422aa05eb4efe525cf99978407dbca99e3ceb0220af"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_018.json",
+      "sha256": "fbdd5417c25f384bd5905b6690c834ef8370730fb8c519828e426b61ec2b229b"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_019.json",
+      "sha256": "a14ed1afbfbe27437749eea8c334759bc320ccb973709ea8d0f4fa102448cf1d"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_020.json",
+      "sha256": "b4d6b3c756c1f68833f7717da94556cb8d8fce645376e45f39d4e4660a9add59"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_021.json",
+      "sha256": "f158b9d573d5fdf3e70eae3f33ed302aa48cf8b4749c96e89fe9de8e4246a257"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_022.json",
+      "sha256": "ee5d6cfd61b71460217c34412c839a080c93e6cca8662a38ba70c186a4e920d8"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_023.json",
+      "sha256": "88539e76eb23c61a4a0caaa63882e274e7546f958d069f80e724338f9e18c9a9"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_024.json",
+      "sha256": "6ac4b43f04b14dadf7d3d5112d8acb70f981968a165044f1177c291a7a594fd8"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_025.json",
+      "sha256": "77271f51ffa622bad85f788ec745b76c0a401020554a4ef5ce6656318ef04a9d"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_026.json",
+      "sha256": "97956387de0ecb5c8702549bfac96b313c9b5a70b62600687f403145638634d2"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_027.json",
+      "sha256": "63ee99fbd51c18f06ad13911d5607ede1c8d45b8a7a9edb41a492ca182dc474b"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_028.json",
+      "sha256": "3728090a9142af2d88bd9ada49f5462583c62286e5c97ff24d124f90b627d692"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_029.json",
+      "sha256": "059aab9cc66036bb3ab982394a4114938870803b5c6d636c73f6df8f56db81b3"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_030.json",
+      "sha256": "3422e6de2dfebe5b345c67370b9e4e71c5f84dade31c9ed805e0a35186c20cf9"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_031.json",
+      "sha256": "18dd56c43c794958d44e50292321a18efd1ecc265606c2f2e05936c69ed7e461"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_032.json",
+      "sha256": "76ec6674f34bf5d85967dbf6c67faea7f456aebf81a0eb143e61eba246d04ab3"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_033.json",
+      "sha256": "38eb03db26d2b67de090cb5e246600b425d775fd2dcef82655b905449e16b877"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_034.json",
+      "sha256": "cb3e7b57ccd70a35246e0e285aafb7192b81c2ff934c438d2429002239bb0bec"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_035.json",
+      "sha256": "17bf2a1e71704fd022b7cb45cef9fb1c04dca674da7cc9978bdec38031600b16"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_036.json",
+      "sha256": "4c2f067c93fbda0e0bee5cf68fef2259ec77f97945bca9b0c55c63025b675736"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_037.json",
+      "sha256": "3d82173f9ab5e451fb41be29a550660dec5fd5ce53de63899edc7a163912f76e"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_038.json",
+      "sha256": "dabc6af9b48d4fe6081c1f646a93ee948249f9a4f56ebbfb8aa6d9fbb4b42ab5"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_039.json",
+      "sha256": "73b665f80d9b614009207de16030044ec69e0c2e566bb034a1200c1b4490cf18"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_040.json",
+      "sha256": "abd992343289deba9739d952e08d2fef6f4a82f5bf292799e5c492e7abc237d8"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_041.json",
+      "sha256": "c4815997e7cfc5bc63e070bca44ffce1df0eb50230301bb1c42ff114a63ad8b3"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_042.json",
+      "sha256": "e2f12af7a072bf85ff6cd30a2cc7f16ecdb7b7872576f84c76f544964885e037"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_043.json",
+      "sha256": "61673371fee440c333c3e5e9707dddeda82738fd32dd8dbfeafdc6feaf1717f6"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_044.json",
+      "sha256": "c1085fa77d4f7e43fc7d7f0662c05bf0b35d343b8c19cd2454822db9a71d52bc"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_045.json",
+      "sha256": "f11557ddc383e167fec0e1ad745ce57a13e412662ae5aceb22d6b8ea34252a2f"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_046.json",
+      "sha256": "966aaec69dae25ea910eed467e161e763ad089479b59a57d2940b1e7051be24a"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_047.json",
+      "sha256": "8b3bd0d20ac0ff916aa9e3769eadcc77057da63c34011c0e63c27864261e071d"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_048.json",
+      "sha256": "857b6a3e21f242437705ab4376a31fb9a8f9086d32b6e1bbbbe47a94e79f286c"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_049.json",
+      "sha256": "b4a68cda9dfaeac03ca56ed7e8379e1eba979ff69b709d5ca0d5f45229bd4a01"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_050.json",
+      "sha256": "c63ead5492403db3b044c2fbfcf1b6239da1dd05d11fd011065a354c268f51e0"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_051.json",
+      "sha256": "eb13426cf5ef1b4ece8729f293cda09ccaffa9f9d4ef2909044739f82040a092"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_052.json",
+      "sha256": "009e0473a3d26fc65fbc32d7f6a3ce8508a6baeab139afe1e2f5e2b50f4377ba"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_053.json",
+      "sha256": "1b47bd83c33d7ca88181afed82a95513afb32a3ebe4f2e297276293fc876502e"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_054.json",
+      "sha256": "16b41293f4bc90eb07d60abf97409c99eda3a5572ff57d851a5601a91993aefd"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_055.json",
+      "sha256": "ab477e71ee68cb49ead0a6ffb380e004fe6ba25fcc8a2d34de15b40dd161dca1"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_056.json",
+      "sha256": "94f1699118c5b0f8d3f8ba9d86c1b4646eb6959a2008fc72a26d416da82386cb"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_057.json",
+      "sha256": "9aee01474d80cb6fd413e6f86bb3f29d5864243bd289b5e24eaea8357d5d1698"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_058.json",
+      "sha256": "8f4a46a8b4fae1358f5780a4f04300dbc3f93fba2458914cfe1d951ebfb9fa3a"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_059.json",
+      "sha256": "07f5250262b6c3cc4685a4cd93bbf926b54ed5de53ce3fedd7cf6eb3f40364fd"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_060.json",
+      "sha256": "e100fdad00971ce5a571fc91635b58bd4676ba4eb3bfac48a6f892ee0b0be6ac"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_061.json",
+      "sha256": "9717b6174d42e409d0a87c9e1f85f4040bdfffc167837026dcee83725b8d0c27"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_062.json",
+      "sha256": "b498f66e131fb4d9a69827968dba494ff267f7a3d39260fe0fb4d355b17b2078"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1/readout/CALL_063.json",
+      "sha256": "be4b6d647dd2a761b0b3b05ef0bfc7f137bd9357ebd95c332dc52af3d4fa5152"
+    }
+  ],
+  "suite_sha256": "32a1d71ff23e168f42366ec4c96777aceb59247020e7a3ae98b6f64b4b9b602c",
+  "task_pairs": [
+    {
+      "category": "both_fail",
+      "complete": true,
+      "family": "code",
+      "task_id": "R107_CODE_00"
+    },
+    {
+      "category": "ON_only",
+      "complete": true,
+      "family": "code",
+      "task_id": "R107_CODE_01"
+    },
+    {
+      "category": "OFF_only",
+      "complete": true,
+      "family": "code",
+      "task_id": "R107_CODE_02"
+    },
+    {
+      "category": "both_fail",
+      "complete": true,
+      "family": "code",
+      "task_id": "R107_CODE_03"
+    },
+    {
+      "category": "both_fail",
+      "complete": true,
+      "family": "code",
+      "task_id": "R107_CODE_04"
+    },
+    {
+      "category": "OFF_only",
+      "complete": true,
+      "family": "code",
+      "task_id": "R107_CODE_05"
+    },
+    {
+      "category": "both_fail",
+      "complete": true,
+      "family": "code",
+      "task_id": "R107_CODE_06"
+    },
+    {
+      "category": "both_fail",
+      "complete": true,
+      "family": "code",
+      "task_id": "R107_CODE_07"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "math",
+      "task_id": "R107_MATH_00"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "math",
+      "task_id": "R107_MATH_01"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "math",
+      "task_id": "R107_MATH_02"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "math",
+      "task_id": "R107_MATH_03"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "math",
+      "task_id": "R107_MATH_04"
+    },
+    {
+      "category": "both_fail",
+      "complete": true,
+      "family": "math",
+      "task_id": "R107_MATH_05"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "math",
+      "task_id": "R107_MATH_06"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "math",
+      "task_id": "R107_MATH_07"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "toolcall",
+      "task_id": "R107_TOOLCALL_00"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "toolcall",
+      "task_id": "R107_TOOLCALL_01"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "toolcall",
+      "task_id": "R107_TOOLCALL_02"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "toolcall",
+      "task_id": "R107_TOOLCALL_03"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "toolcall",
+      "task_id": "R107_TOOLCALL_04"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "toolcall",
+      "task_id": "R107_TOOLCALL_05"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "toolcall",
+      "task_id": "R107_TOOLCALL_06"
+    },
+    {
+      "category": "OFF_only",
+      "complete": true,
+      "family": "toolcall",
+      "task_id": "R107_TOOLCALL_07"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "concise_instruction",
+      "task_id": "R107_CONCISE_INSTRUCTION_00"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "concise_instruction",
+      "task_id": "R107_CONCISE_INSTRUCTION_01"
+    },
+    {
+      "category": "both_fail",
+      "complete": true,
+      "family": "concise_instruction",
+      "task_id": "R107_CONCISE_INSTRUCTION_02"
+    },
+    {
+      "category": "OFF_only",
+      "complete": true,
+      "family": "concise_instruction",
+      "task_id": "R107_CONCISE_INSTRUCTION_03"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "concise_instruction",
+      "task_id": "R107_CONCISE_INSTRUCTION_04"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "concise_instruction",
+      "task_id": "R107_CONCISE_INSTRUCTION_05"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "concise_instruction",
+      "task_id": "R107_CONCISE_INSTRUCTION_06"
+    },
+    {
+      "category": "both_pass",
+      "complete": true,
+      "family": "concise_instruction",
+      "task_id": "R107_CONCISE_INSTRUCTION_07"
+    }
+  ],
+  "thinking_metrics": null
+}

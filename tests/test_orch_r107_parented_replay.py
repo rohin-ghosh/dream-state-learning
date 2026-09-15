@@ -4,7 +4,12 @@ import pytest
 
 from organism_v6 import orch_math_feedback_uptake as history_policy
 from organism_v6 import orch_r107_parented_replay as replay
-from tests.orch_math_feedback_uptake_test import Tokenizer, tasks
+from tests.orch_math_feedback_uptake_test import Tokenizer as OriginalTokenizer, tasks
+
+
+class Tokenizer(OriginalTokenizer):
+    def decode(self, token_ids, **unused):
+        return ''.join(chr(token) for token in token_ids)
 
 
 def records(terminal=True):
@@ -18,7 +23,9 @@ def records(terminal=True):
             dict(role='user', content=task['question'] + (' Parent: inspect the product.' if purpose != 'experience' else ''))]
         response = dict(raw=raw, messages=messages, token_ids=tokenizer.encode(raw)
             + ([tokenizer.eos_token_id] if terminal else []), terminal=terminal,
-            truncated=not terminal, input_truncated=False)
+            truncated=not terminal, input_truncated=False,
+            prompt_tokens=len(tokenizer.apply_chat_template(messages, tokenize=True,
+                add_generation_prompt=True, return_dict=False)))
         history.append(history_policy.record(task, purpose, response))
     return task, history, [['inspect the product.'], ['Do not retain unsupported conclusions.']]
 
@@ -93,5 +100,27 @@ def test_token_substitution_rejected_by_encoder():
     task, history, teachers = records()
     row = replay.sleep_rows(task, history, teachers)[0]
     row['source_generated_token_ids'][0] += 1
-    with pytest.raises(ValueError, match='native_generated_tokens_must_match'):
+    with pytest.raises(ValueError, match='native_generated_text_must_match'):
+        replay.encode_row(row, Tokenizer(), 16384)
+
+
+def test_noncanonical_generation_tokenization_is_preserved():
+    task, history, teachers = records()
+    row = replay.sleep_rows(task, history, teachers)[0]
+    row['source_generated_token_ids'] = [9001, 1]
+
+    class AlternateTokenizer(Tokenizer):
+        def decode(self, token_ids, **unused):
+            assert tuple(token_ids) == (9001,)
+            return row['target']
+
+    encoded = replay.encode_row(row, AlternateTokenizer(), 16384)
+    assert encoded.labels[-2:] == (9001, 1)
+
+
+def test_prompt_token_count_must_match_actual_source():
+    task, history, teachers = records()
+    row = replay.sleep_rows(task, history, teachers)[0]
+    row['source_prompt_tokens'] += 1
+    with pytest.raises(ValueError, match='native_prompt_token_count'):
         replay.encode_row(row, Tokenizer(), 16384)

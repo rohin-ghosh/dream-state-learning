@@ -36,7 +36,10 @@ def sleep_rows(task, history, teacher_rounds):
         history_policy.require(isinstance(token_ids, list) and token_ids
             and all(type(token) is int and token >= 0 for token in token_ids),
             'actual_generated_token_ids_required')
+        history_policy.require(type(response.get('prompt_tokens')) is int
+            and response['prompt_tokens'] > 0, 'actual_prompt_token_count_required')
         row.update(student_prefix=deepcopy(messages), source_prompt_sha256=history_policy.digest(messages),
+            source_prompt_tokens=response['prompt_tokens'],
             source_generated_token_ids=list(token_ids), append_eos=response['terminal'],
             continuation_only=not response['terminal'], replay_mode=MODE,
             teacher_in_prefix=any(text and text in message['content']
@@ -50,7 +53,8 @@ def verify_source(row, call):
     response = call['response']
     history_policy.require(row['replay_mode'] == MODE, 'replay_mode_required')
     history_policy.require(row['student_prefix'] == response['messages']
-        and row['source_prompt_sha256'] == history_policy.digest(response['messages']),
+        and row['source_prompt_sha256'] == history_policy.digest(response['messages'])
+        and row['source_prompt_tokens'] == response['prompt_tokens'],
         'actual_prompt_binding')
     history_policy.require(row['target'] == response['raw']
         and row['target_sha256'] == history_policy.text_sha(response['raw']), 'actual_target_binding')
@@ -68,14 +72,17 @@ def encode_row(row, tokenizer, context_limit):
     prompt = tokenizer.apply_chat_template(row['student_prefix'], tokenize=False,
         add_generation_prompt=True, return_dict=False)
     prefix_ids = tuple(tokenizer.encode(prompt, add_special_tokens=False))
-    target_ids = tuple(tokenizer.encode(row['target'], add_special_tokens=False))
+    history_policy.require(len(prefix_ids) == row['source_prompt_tokens'], 'native_prompt_token_count')
+    generated = tuple(row['source_generated_token_ids'])
+    history_policy.require(generated and all(type(token) is int and token >= 0 for token in generated),
+        'actual_generated_token_ids_required')
+    history_policy.require(not row['append_eos'] or generated[-1] == tokenizer.eos_token_id,
+        'native_terminal_eos_required')
+    target_ids = generated[:-1] if row['append_eos'] else generated
     history_policy.require(target_ids and not set(tokenizer.all_special_ids).intersection(target_ids),
         'nonempty_special_free_child_target')
-    history_policy.require(tuple(tokenizer.encode(prompt + row['target'], add_special_tokens=False))
-        == prefix_ids + target_ids, 'actual_prompt_target_boundary')
-    generated = target_ids + ((tokenizer.eos_token_id,) if row['append_eos'] else ())
-    history_policy.require(generated == tuple(row['source_generated_token_ids']),
-        'native_generated_tokens_must_match')
+    history_policy.require(tokenizer.decode(target_ids, skip_special_tokens=False,
+        clean_up_tokenization_spaces=False) == row['target'], 'native_generated_text_must_match')
     sequence = prefix_ids + generated
     history_policy.require(0 < len(sequence) <= context_limit, 'full_source_no_truncation')
     labels = (-100,) * len(prefix_ids) + generated

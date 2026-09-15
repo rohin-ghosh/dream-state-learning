@@ -1,5 +1,25 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## [Builder] R108 allocation / continual capability — 2026-09-15 08:28 UTC
+
+Destination14L1/18parenting, >=12parenting floor, no productive mid-run
+preemption. Exact wrapper/device transition table:
+`research_notes/analysis/orch_r108_allocation_20260915.md`.
+This is an allocation, NOT32/32 observed use or a native preGPU receipt.
+Parent both genuine BASE and learned children with intervention classes rather
+than answers; preserve state/intervention/change triples, two episodes per L2
+sleep, one shared control triple. Separately labelled corrected-L2-child
+post-training arm authorized; no retroactive L2 ingestion into completed L1.
+
+Continual FULL8932 capability COMPLETE08:10:13Z: tokens ON346/OFF381/BASE381,
+score21/32 vs24/32 vs24/32 (OFF=adapter disabled, NOT masked-trained child).
+Code1/2, math7/7, tools7/8, concise6/7 (ON/OFF, each outof8); BASE/OFF31/32
+exact outputs, mismatch CODE03. Thinking metrics unassessed by short panel.
+Final reduction/report at `research_notes/analysis/orch_r107_continual_capability_20260915_attempt1/FINAL_RESULT.md`.
+Native private-host source remains on-node; sanitized repository candidate is
+not the execution bytes. No capability preservation or retained-learning success
+claim. Parenting repair success requires actual parent receipts, not launch intent.
+
 ## [Builder] R107 BASE / OFF / ON result — 2026-09-15 07:52 UTC
 
 PUREBASE COMPLETE07:51:40,92.13s launch-to-completion,32newcalls. BASE24/32,
@@ -885,3 +905,54 @@ Mandatory fresh existing A100 full/proc/UUID/kernel-minor admission beforelaunch
 Native root /localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1;
 rawonlyA100. Own source/test newprefix; published paired/context-repair unchanged.
 No broad benchmark, thinking, persistence or improvement claim from this panel.
+
+## [Builder / Anscombe] 2026-09-15T08:18Z — node3 additional BASE treatments0/3
+
+Main direct08:03/08:07 allocation: node3 physical0 GPU-0ee6f753-c61e-e18a-8aea-acccd3042939 micro/short/harsh-critical; physical3 GPU-e1277146-04f2-c38f-d1ae-1a98132f907e creative/long/harsh-critical. Treatments ONLY; exactly one shared canonical control system, descriptive temporal/task comparisons only. Genuine frozen BASE a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992; no adapter/optimizer/sleep weights, no L2 to L1.
+
+Two cycles each, two sequential originals then two Astra interactive parent/check/revision rounds and eight fresh parent-free tests/cycle. +56native/+8parents (28/4 per lane), aggregate2218/58, 30min per lane/1GPUh combined, original24GPUh ceiling/native11:39:15/hard11:42:15. No extra controls, retries or outcome intervention. Prior0 FAILED preserved/Main reassigned, prior3 diagnostic COMPLETE; both original PIDs absent, strict full/proc/UUID/CVD/service admission each new process, no peer signals.
+
+62 node CPU tests PASS including actual missing-input_truncated response shape, complete tokenization/context validation, both two-cycle seams and reflection-only guard. Earlier unlaunched candidate retained under pre_response_contract_candidate, invalidated; corrected cycle CLI bounds1/2. No engine generation change for tasks/checks/readouts. Pasteur exact guard1fe38d9fea6bed06f07c3a5eb0ccbb029635d7af148b38367d8cd51dddfc2ceb, actual reasons/rawprefix/noauto-fit, semantic novelty UNKNOWN. Frozen fresh cohort excludes2906IDs/2898question hashes. Raw node-only, verified private Astra broker/transcript hashes.
+
+Root /localhome/local-rohing/orch_math_feedback_uptake_node3_extra_20260915_attempt1
+FAMILY_READY fcfbe1a48d0538d64746ba9c5d17594c3cffd3d7418481ac07511cedbf3f630c
+READY0 4d8d80371dab09bd1b6c4a7bea65e61df645c6bab1a5120cf75a9c03e95af0be
+READY3 dfaa12ac0e97703de1d4cf977fff09726887076454f25049fee7053080f1e542
+CPU_RESULT 8df70009822bf027c9a939b7909622f80676cabaf49033cc5c2d3a5b50e1ead9
+Source full exact manifest in NODE3_EXTRA_RESPONSE_READY.json; preGPU receipt authorizes fresh strict dispatch, no additional Main ack.
+
+## [Builder / Anscombe] 2026-09-15T08:23Z — node3 1/2 metadata-only recovery
+
+Same allocated node3physical1 GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821 and2 GPU-41a86250-88eb-ed8a-ddfe-9d6f93515da1, same original style/cohort/base and native/hard deadlines. NOT new treatment lives/controls/budget. Prior processes FAILED after exactly1 actual original each,0parents, on missing input_truncated metadata; original FAILED/FAILED_AFTER/CALL000 preserved in original root. Actual base hash verified after failures,0updates/noadapter/nooptimizer. New immutable recovery root records process discontinuity and imports only already-generated CALL000 without regeneration. Raw/tokens/prompt/cap/original process retained; one spent ledger reservation copied; exactly27remaining native/4parents per lane, original aggregate2162/50 (plus separately allocated0/3 total2218/58); original24GPUh ceiling. No deadline/counter reset, no source overwrite, no outcome intervention.
+
+67 node CPU tests PASS including both two-cycle recovery seams with28total records but exactly27generator invocations, imported raw/tokens/process unchanged, actual minimal direct-engine response schema, refusal of prompt mismatch/cropping/context violations, parent visibility and all guard regressions. Actual complete-tokenization check plus pinned engine full-input prefix assertion supplies metadata only; task generation unchanged. First parent will be an actual verified Astra response, not prior native-only receipts. Parent broker node-only archive and verified hash cleanup, no L2 to L1. Strict fresh full/proc/UUID/CVD/service admission each native process; no peers signalled.
+
+Root /localhome/local-rohing/orch_math_feedback_uptake_node3_recovery_20260915_attempt1
+FAMILY_READY cb3808de09cf18aa04bf66a25c92451ac1bbfe882ceae9e9e2b6463bf03663bb
+READY1 684016bbc84e915ea160fe3ba094b788a7d8621342d2434aa4044801fca7d7b9
+READY2 262a8e4a32a9cdff341e0aac66fd11f9cb55e6a5bffb018953cce92f9eed0cb7
+Full immutable source manifest in FAMILY_READY.json. Own dated CPU/provenance receipt authorizes only this recovery, no extra Main acknowledgment. No new L2 implementation.
+
+## [Builder / Anscombe] 2026-09-15T08:21:41.377681+00:00 — strict admission-only retry for node3 lane2
+
+No model retry: preceding recovery guardian923899 FAILED strict_fresh_admission
+at08:19:31.361, with ZERO native REQUESTs/parents. Preserve that root/terminal
+and original298token first response. Current lane1/extra0/3 unchanged. Same lane2
+UUID GPU-41a86250-88eb-ed8a-ddfe-9d6f93515da1, original creative/long/supportive,
+same cohort/style/base, original1spent+27remaining native/4parents, no additional
+budget; total2218/58 including extra0/3, original24GPUh. No deadline reset.
+Admission polling bounded600seconds/stage within original native09:00:32.388/
+hard09:03:32.388; no full/proc/owner/UUID/CVD check weakened or process filtered.
+Current complete-tokenization/metadata repair unchanged. Historical first response
+imported without generation. No model/native retry, controls, adapters or fitting.
+
+73 node CPU tests PASS, including actual-shape repair and refusal to dispatch
+other live lane1. Prior failed guardian absent, no native outputs or parent requests.
+Root /localhome/local-rohing/orch_math_feedback_uptake_node3_recovery2_20260915_attempt1
+FAMILY_READY d9af1fa6a521ab8cb3580a13002134cf19314868c278f4a02f281ec826edfaf6
+READY2 cc33da47d636f431ca578e9da5e19d33fc4b872c44c738d3bc989c0ea4fed3f8
+All exact source bindings in FAMILY_READY. Own preGPU receipt; dispatch fresh
+admission now. Private broker starts only after actual native admission to avoid
+self-created SSH churn; raw transcripts remain node-only. No new L2 implementation.
+
+[Builder] 2026-09-15T08:23:55.449995+00:00 R107_ROUTE_PARENT DISCOVERY exactprospective allocation BEFOREdispatch: A100physical1 UUIDGPU-604c4ea8-8c29-099e-76ed-571ec7d9be4b/kernelminor2 training-wheels/supportive; A100physical5 UUIDGPU-c1650c7f-ac26-f1a0-2ab8-c7354a6f27c9/kernelminor6 creative/supportive. ROOT=/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1. Genuine frozenQwen2.5-7B BASEtensor a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992, zeroPEFT/adapter/trainable/LoRA/optimizer/updates. Two fixedsequential TRAINepisodes/cycle; actualscheduled child-authored sourceevents, actualprivateAstra interventions aftereach TRAINepisode, ownreflection/contextcarry;2cycles/arm; fresh4parent-freeheldroutes/cycle withseparate newworld+actualchildsource, noheldexposuretoparent. No controltriples/retainedweightlearning/L2toL1feed. ExplicitNEW+280native/+8Astra max, <=140native+4parent/arm;plannedupper108native/arm, nooldcounterreset/oldledgerwrites. Fixedstart2026-09-15T08:22:08.990134+00:00, nativeend2026-09-15T09:50:08.990134+00:00, hardend2026-09-15T09:52:08.990134+00:00, <=1.5GPUh/arm;existinglease2026-09-26T23:05:00+00:00/6hmargin. Requested8192output/remaining32768context/noinputcropping/noRoPEchange/nopadding. Reflectiononly helper1fe38d9fea6bed06f07c3a5eb0ccbb029635d7af148b38367d8cd51dddfc2ceb pinned.48local+48nativeCPU PASS incl actualEngine.generate returnshape/fullprefixassert/input_truncatedFalse regression and route/brokerdigestcontract; genuineBASECPUhash PASS. Full8UUID/kernel/minormapping, strictprivilegedproc/CVD/openminor admissions1clearPRE_SCAN_1_11 SHA76597eb7df218da6e8b7537404c562ae2604ab6dbd7432615456d2994fe424fa;5clearPRE_SCAN_5_02 SHA5edf564c140040dc5fd5ed6c27d301b5d1d7132ae1d853465bc902bb6626937a; earlieridentityraces preserved, no waiver.104sourcepins SHA629dc116791531c9373b1205799bf341730cd602cc1ec230db363a8f44eb35ce; cohortSHAfbe959feb71b6a4f22256b24411569dbac31dee98084b42bcafc3ce066505746 disjoint10680knownIDs/768metadatafiles acrossrepo+fourwrappers+compiledregistries. PREPARED1dee0a3575238c4ea379c387afe933465c1acbdb5fb36aef8f473af7d9f75cb9; READY1=162ad532ecfe6d37259b5c745055e300f81cd36a8ae9f8cd4f0b8c0c8cee63b7;READY5=334df37a468dc57ef34aef04e84cfde627fc1e04222f157bd068c1407ec1897d. Existing qualifiedprivateAstra broker/tool-free/singleattempt/nodearchived transcripts, bounded/tmp transportbuffer only. DiagnosticUNKNOWN pendingaudit; no auditgate. PROTECT0Cicero/2/3/6Laplace/4oldlane/7Main andallothernodes. No foreignsignals/replays/Gitmutation; rawNODEonly. Launchafterthis publication under directassignment/standingauthorization, noextraMainack.

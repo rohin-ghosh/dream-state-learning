@@ -22,10 +22,12 @@ synthetic EOS. Prefix masking, target token identity, no silent cropping and
 source-call joins are tested explicitly. No branch count, minimum prose length,
 template slot or outcome-based sample selection is introduced.
 
-Candidate: `organism_v6/orch_r107_parented_replay.py`. Fourteen focused tests;
-41combined tests plus9subtests pass with existing feedback-uptake tests. The first
+Candidate: `organism_v6/orch_r107_parented_replay.py`. Sixteen focused tests;
+43combined tests plus9subtests pass with existing feedback-uptake tests. The first
 fixture incorrectly put FINAL on a prose line; corrected to the unchanged
-parser's standalone final line. No production parser/scoring change.
+parser's standalone final line. No production parser/scoring change. Generated
+token IDs are preserved directly and decoded against raw text, rather than
+incorrectly requiring raw-text retokenization to recover the native token IDs.
 
 ## Planned native scope, not allocation or readiness
 

@@ -8,6 +8,26 @@ from gpu import orch_r107_capability_run as run
 from organism_v6 import orch_r107_capability as policy
 
 
+def process_provenance(sources, retained_count):
+    by_task, processes, receipts = {}, set(), {}
+    for item in sources:
+        path = Path(item['path'])
+        assert run.sha(path) == item['sha256']
+        call = run.read(path)
+        loaded_path = path.parent / 'LOADED.json'
+        loaded = run.read(loaded_path)
+        process = tuple(loaded['process'])
+        assert len(process) == 3
+        processes.add(process)
+        by_task.setdefault(call['task_id'], set()).add(process)
+        receipts[str(loaded_path)] = dict(sha256=run.sha(loaded_path), process=list(process))
+    crossings = sorted(task for task, identities in by_task.items() if len(identities) > 1)
+    return dict(retained_cells=retained_count, native_process_count=len(processes),
+        cross_process_task_ids=crossings, source_process_receipts=receipts,
+        process_boundary_disclosure=f'{retained_count} retained cells; {len(processes)} native processes; '
+            f'{len(crossings)} task pairs cross processes: {", ".join(crossings) or "none"}.')
+
+
 def reduce(root):
     plan = run.read(root / 'PLAN.json')
     output = root / 'readout'
@@ -42,12 +62,12 @@ def reduce(root):
         base_sha256=plan['base_sha256'], max_new_tokens=plan['max_new_tokens'])
     assert result['all_pairs_complete'] and result['recorded_cells'] == 64
     result.update(native_calls=0, parent_calls=0, raw_text_included=False,
-        process_boundary_disclosure='Three cells retained from V2; CODE01 ON/OFF pair crosses fresh processes.',
         actual_inference_cells=64, aggregate_reserved_cap=plan.get('aggregate_reserved_cap', 64),
         source_receipts=sources, plan_sha256=run.sha(root / 'PLAN.json'),
         complete_sha256=run.sha(output / 'COMPLETE.json'), after_sha256=run.sha(output / 'AFTER.json'),
         loaded_sha256=run.sha(output / 'LOADED.json'), reducer_sha256=run.sha(__file__),
         adapter_files_verified=run.bridge.AdapterIdentity.from_document(plan['adapter']).verify().document())
+    result.update(process_provenance(sources, len(plan.get('retained_calls', []))))
     return result
 
 
