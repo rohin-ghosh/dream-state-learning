@@ -1,5 +1,31 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## [Builder] September15 17:00 FINAL allocation — prepared during training
+
+Separate evaluation-only scope17:00–17:20UTC, subject to earlier verified lease
+margins and actual predecessor release: node5 F1/A1route0/4, F2/A2math1/5,
+F3/A3code2/6, F4/A4grid3/7. No parent/optimizer/training calls, no early sealed
+reads, no old quota extension or repeated morningFINAL. Main's CPU-only canonical
+selector provides one committed checkpoint to every family. Owners retain exact
+registered held8IDs/decoder; family call ceilings and real scheduler receipts
+are separately required. This is not an assertion that FINAL ran or that its
+GPU custody is already available. Selector contract and16+16CPU tests are in
+`research_notes/analysis/orch_r118_final_selection_20260915/CONTRACT.md`.
+
+## [Builder] 2026-09-15 12:55 UTC — blind DEV annotation on CPUs
+
+Main allocates16 node5 CPU threads and zero GPUs to frozen Qwen2.5-14B-Instruct
+annotation of ALL F1 pre-shared DEV checkpoints0–6:56 task-trajectories,110
+verified native captures, the same eight DEV tasks each checkpoint. Fixed v4
+judge prompt0466c6fa..., greedy CPUbfloat16,4096 output-token maximum,300seconds
+per call,3600seconds total. No parent calls, training, FINAL access, outcome
+selection, branch stopping or GPU custody changes. CPU/GPU judgment equivalence
+is not assumed.12 local+12 native CPU tests PASS; no annotation completed yet.
+Native root `/localhome/local-rohing/orch_r118_cpu_judge_20260915_attempt1`.
+PLAN SHA2c07a78c4dc77ec9cf3f786b913041b269e392376659e24507a4e8df37077011.
+This supplies model-judged observable composition, not causal or retained-learning
+proof. The entire checkpoint distribution, including UNRESOLVED, will be reported.
+
 ## [Builder] 2026-09-15 12:39 UTC — actual shared state and readout caveats
 
 Shared child initialized12:23:54 from the latest released F1cycle6, preserving
@@ -1249,3 +1275,4 @@ Main exclusion handoff: native R108_EXCLUSION_REGISTRY.json in the above root; S
 - [Builder GRID R118 node3_5 recovery allocation] 2026-09-15T11:33:17.172881+00:00: retain/recover own node3 physical5 UUID GPU-bc211959-642d-664b-3581-42a0dbe434e9 after confirmed oldnative1312675/guard1305262 exited FAILED11:21:51 (partial parent JSON). Same original R109 root/corpus/prompt/cadences/memory and 1858native/298parent lifetime caps (1015/46 alreadycharged), native16:57/hard17:02UTC, lease1789689600 unchanged. No freshlife/quota/reset/otherGPUtouch. New scoped CPUreplay+atomicbrokerrepair and fresh fullprivilegedUUID/CVD admission BEFORE recoverylaunch; no Mainackwait. Node3_6 existingresident untouched; node3_7 notowned.
 
 - [Builder Main] 2026-09-15T12:03Z Actual40/40memory-resident and20/40positiveinstantaneousutilization at11:57:50; no new GPU allocation. Node5 paired F1/A1=0/4 route, F2/A2=1/5 math, F3/A3=2/6 code, F4/A4=3/7 grid continue existing fallback lives. Shared single-F1 optimizer adoption pending executableeight/commoncycleboundary; no resets or premature stop. Detailed delivery/exposure table research_notes/analysis/orch_r118_shared_adoption_20260915/HOURLY_1202.md.
+- [Builder Main] 2026-09-15T13:27Z Canonical FINAL CPU waiter actually running on ovx3, native1519259; existing eight GPU allocations unchanged. First pooled sleep484updates remains UNCOMMITTED at13:26:30. Route OPEN/full-text visibility verified; no retained-thinking gain claimed. FINAL selection17:00/evaluation17:20 bounded, family-specific release/dedup required. Receipt: research_notes/analysis/orch_r118_final_selection_20260915/ARMED_1325.md.

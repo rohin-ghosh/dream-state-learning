@@ -1,0 +1,61 @@
+{
+  "broker_pid": 1411249,
+  "claim_boundary": "Actual provider completion and native context acceptance, not evidence of a shared optimizer update or improvement.",
+  "claim_published": true,
+  "cycle": 7,
+  "native": {
+    "disposition_status": "COMPLETE",
+    "observed_unix": 1789476472.143561,
+    "received": {
+      "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parent_received/P0034.json",
+      "sha256": "d7cd5ed233a3ccdd979a3eef41ae4bda988d1db8b127863d8f909e61890e063e"
+    },
+    "subsequent_native_number": 494,
+    "subsequent_purpose": "presleep",
+    "subsequent_reserved_unix": 1789476488.0501754
+  },
+  "native_pid": 1108400,
+  "observed_unix": 1789476496.10522,
+  "old_failed_terminal_preserved_sha256": "fd5da7b25d73ac79b73b36aa00ca1106cd12f0d5dc38766daf48648085eda7ab",
+  "own_native_launches": 0,
+  "own_signals": 0,
+  "parent_number": 34,
+  "phase": "open_turn",
+  "provider": {
+    "actual_model": "openai/openai/gpt-6-astra",
+    "finished_unix": 1789476436.764687,
+    "response": {
+      "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parent_queue/P0034.response.json",
+      "sha256": "50e981be4297d6a79623b39ce33d6fd2e8adc801c04797e3c55c5a84378fb69b"
+    },
+    "retry": false,
+    "status": "COMPLETE"
+  },
+  "raw_node_only": true,
+  "ready_sha256": "5716e34f1303a11052e37aec6bca6114ecb64fb2f0a771bf716c52a1b5f7b43e",
+  "repair_terminal_absent": true,
+  "requests32and33": {
+    "broker_claims": 0,
+    "native_status": "MISSING",
+    "retried": false
+  },
+  "root": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4",
+  "source_files": {
+    "gpu/orch_r118_a4_repair_broker.py": "00d538513b958718836f4eeab896002c081514c4ccd092310a7f38435648e7d8",
+    "tests/test_orch_r118_a4_repair_broker.py": "8c25664f41f0b9723b5117f6c886cafb889c5aab25ed9dedcec7844e1b5d70d2"
+  },
+  "status": "FIRST_PROSPECTIVE_REPAIR_PARENT_COMPLETE_AND_NATIVE_ACCEPTED",
+  "terminal_filename": "R118_SHARED_REPAIR_TERMINAL.json",
+  "tests": {
+    "frozen_vm": 20,
+    "local": 20,
+    "skips": 0
+  },
+  "unchanged": {
+    "config": true,
+    "hard_end_unix": 1789491720.0,
+    "max_parent_calls": 298,
+    "shared_child": true,
+    "wait_seconds": 120
+  }
+}

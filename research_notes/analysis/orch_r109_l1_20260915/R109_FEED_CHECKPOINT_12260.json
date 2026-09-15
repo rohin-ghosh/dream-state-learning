@@ -1,0 +1,368 @@
+{
+  "actual_ingestion": {
+    "admissions": {
+      "last_admission_unix": 1789477158.8111253,
+      "new_unique_total": 10,
+      "newly_admitted_last3600": 10
+    },
+    "arms": {
+      "CONTROL": {
+        "checkpoints": [
+          {
+            "adapter": {
+              "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+              "files": [
+                [
+                  "README.md",
+                  "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+                ],
+                [
+                  "adapter_config.json",
+                  "e0176c21a2e91b2669a08db83f728be06559a79cd2a1ba08453a405bd0a9ef83"
+                ],
+                [
+                  "adapter_model.safetensors",
+                  "6343cb0c04cd4dbf625dd12bb1660eccb43a52d4c6353f513ed4e085fc5fae11"
+                ]
+              ],
+              "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/versions/000/fit/CONTROL/checkpoints/000012260/adapter",
+              "state_sha256": "f0d72fda28f31b4760039163b36fd23066d8ddfd370c2cdebfb48e7e3e70df8d"
+            },
+            "checkpoint": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/versions/000/fit/CONTROL/checkpoints/000012260",
+            "commit_sha256": "dc54c7a9d6e23e7093478fdf93041345cb260b348cafb02bdb4210c863a86d3a",
+            "eligible_sha256": "7456476427bcf5aca6363997b5d0a734f855eb29aff1a16537b3033b1263d5ba",
+            "eligible_supervised_tokens": 0,
+            "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/versions/000/fit/CONTROL/segment000/COMPLETE.json",
+            "readout_required": true,
+            "readouts": {},
+            "sha256": "babe87f8b6a4f71c06a2e158314a88b30abe2af597707c158887d02b73f37834",
+            "update": 12260
+          }
+        ],
+        "heartbeat": {
+          "cohort_id": "R109_EXPERIENCE_C2_B000",
+          "condition": "ON",
+          "eligible_sha256": "7456476427bcf5aca6363997b5d0a734f855eb29aff1a16537b3033b1263d5ba",
+          "hard_end_unix": 1789491360,
+          "identity": {
+            "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+            "pid": 1152154,
+            "start_ticks": "70603592",
+            "uid": 2524
+          },
+          "index": 6,
+          "observed_unix": 1789477658.8446102,
+          "phase": "readout",
+          "resume": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/versions/000/fit/CONTROL/checkpoints/000012260",
+          "segment": 0,
+          "version": 0
+        },
+        "last_new_target_feed_unix": null,
+        "latest_update": 12260,
+        "loaded": [
+          {
+            "cohort_id": "R109_EXPERIENCE_C2_B000",
+            "eligible_sha256": "7456476427bcf5aca6363997b5d0a734f855eb29aff1a16537b3033b1263d5ba",
+            "global_cursor_preserved": true,
+            "observed_unix": 1789477369.9750347,
+            "optimizer_restored": true,
+            "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/versions/000/fit/CONTROL/segment000/RANK0_LOADED.json",
+            "process": [
+              "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+              1142441,
+              70575474
+            ],
+            "rng_restored": true,
+            "sha256": "adb58da93e469138f504da0b240b08130a5ddd4c98f4eb14e168557b457c49e0",
+            "state_sha256": "4195487a4c2b3c9b8bb5d76372359c4b0b192aa59e76ea31613493e23b5c7f7b",
+            "update": 12132,
+            "uuid": "GPU-a064bca2-bddc-73ad-faf1-a4fbcb49fecf"
+          }
+        ],
+        "new_target_exposures": 0,
+        "new_target_tokens": 0,
+        "trained_new_targets": [],
+        "trained_new_unique": 0
+      },
+      "FULL": {
+        "checkpoints": [
+          {
+            "adapter": {
+              "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+              "files": [
+                [
+                  "README.md",
+                  "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+                ],
+                [
+                  "adapter_config.json",
+                  "932899c67f1ef85d0c461add0014f7b666755cbb217547757a7a53871f183da1"
+                ],
+                [
+                  "adapter_model.safetensors",
+                  "17a91bb7f74a7cc5d736273897609fecc0b1c8e3f6315529c9ad210aeed201fa"
+                ]
+              ],
+              "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/versions/000/fit/FULL/checkpoints/000012260/adapter",
+              "state_sha256": "8f127661e165069143ee65e63b36cb29e8461a47192b838ab7c530be25b60dc2"
+            },
+            "checkpoint": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/versions/000/fit/FULL/checkpoints/000012260",
+            "commit_sha256": "75da45c4ce7293e4955826e0fcfd8294adb6e8ce51c78523b2cc6ca71129c3df",
+            "eligible_sha256": "7456476427bcf5aca6363997b5d0a734f855eb29aff1a16537b3033b1263d5ba",
+            "eligible_supervised_tokens": 53922,
+            "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/versions/000/fit/FULL/segment000/COMPLETE.json",
+            "readout_required": true,
+            "readouts": {},
+            "sha256": "40d66d8d7207460972ca449d8ffe613a4444c08febcc63ab2777a20cebe84a75",
+            "update": 12260
+          }
+        ],
+        "heartbeat": {
+          "cohort_id": "R109_EXPERIENCE_C2_B000",
+          "condition": "ON",
+          "eligible_sha256": "7456476427bcf5aca6363997b5d0a734f855eb29aff1a16537b3033b1263d5ba",
+          "hard_end_unix": 1789491360,
+          "identity": {
+            "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+            "pid": 1152151,
+            "start_ticks": "70603568",
+            "uid": 2524
+          },
+          "index": 5,
+          "observed_unix": 1789477658.604606,
+          "phase": "readout",
+          "resume": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/versions/000/fit/FULL/checkpoints/000012260",
+          "segment": 0,
+          "version": 0
+        },
+        "last_new_target_feed_unix": 1789477546.2872176,
+        "latest_update": 12260,
+        "loaded": [
+          {
+            "cohort_id": "R109_EXPERIENCE_C2_B000",
+            "eligible_sha256": "7456476427bcf5aca6363997b5d0a734f855eb29aff1a16537b3033b1263d5ba",
+            "global_cursor_preserved": true,
+            "observed_unix": 1789477370.2113478,
+            "optimizer_restored": true,
+            "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/versions/000/fit/FULL/segment000/RANK0_LOADED.json",
+            "process": [
+              "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+              1142392,
+              70575450
+            ],
+            "rng_restored": true,
+            "sha256": "dc9fd2f5057e5bf8e27153d6e6e73d8e68f8b322dc6f5ba64881acf83f9af9cd",
+            "state_sha256": "ced34f46a2385ce0224a46f875eaadfd8845063c06c2078673adeabb6dc83e4f",
+            "update": 12132,
+            "uuid": "GPU-0cc84073-37a0-4f7a-e555-11671425bd03"
+          }
+        ],
+        "new_target_exposures": 10,
+        "new_target_tokens": 1798,
+        "trained_new_targets": [
+          {
+            "eligible_supervised_tokens": 112,
+            "finished_unix": 1789477388.1219223,
+            "source_call_sha256": "a22f5ebc5b5a16996895c3eed65bf9da2265424b711109a2d0d1d4537ea570f9",
+            "source_task_id": "gsm8k-train-5392",
+            "target_sha256": "d9ab03ba61cc1190b9affcadc008852379570dadf0eeeea96a39fb303d3968e8",
+            "update": 12141
+          },
+          {
+            "eligible_supervised_tokens": 250,
+            "finished_unix": 1789477403.435508,
+            "source_call_sha256": "896ff684166ff0aa0995c1be5373af3e6392679dbe4af48757755b4b1941f833",
+            "source_task_id": "gsm8k-train-2180",
+            "target_sha256": "ad870574773a92bd4ac97f9c75829181c2ec734ae65acd7a8432518771d91ca7",
+            "update": 12149
+          },
+          {
+            "eligible_supervised_tokens": 185,
+            "finished_unix": 1789477419.5355928,
+            "source_call_sha256": "876a188ab70a4a1391e9b8fc558ec27e0665ae35294803a6b669abbff03d36f1",
+            "source_task_id": "gsm8k-train-1657",
+            "target_sha256": "ee2c834a19da2453db6d30ce93192b5eed29ffc6a0e33316a293290f09bb00b6",
+            "update": 12157
+          },
+          {
+            "eligible_supervised_tokens": 201,
+            "finished_unix": 1789477436.0548363,
+            "source_call_sha256": "4da8f82d80cbced4d190cedd44726ec6b9ecfc4dce07195ed5cac5b01fcb343e",
+            "source_task_id": "gsm8k-train-4065",
+            "target_sha256": "87bb85d414f0bbabef8598d622cef15f6ffbafdc96b73e4fef135988f691e8ef",
+            "update": 12165
+          },
+          {
+            "eligible_supervised_tokens": 151,
+            "finished_unix": 1789477451.6496615,
+            "source_call_sha256": "9c5e2a9a51cc1b47703be9199b963dcb25b653ae03106d085a79b7c11cdc5d7b",
+            "source_task_id": "gsm8k-train-2565",
+            "target_sha256": "511ead2feaed9d2f48e44724540b5f321ccbe0bf04e8d908e28daf88e91e9a2a",
+            "update": 12173
+          },
+          {
+            "eligible_supervised_tokens": 112,
+            "finished_unix": 1789477505.4842722,
+            "source_call_sha256": "a22f5ebc5b5a16996895c3eed65bf9da2265424b711109a2d0d1d4537ea570f9",
+            "source_task_id": "gsm8k-train-5392",
+            "target_sha256": "d9ab03ba61cc1190b9affcadc008852379570dadf0eeeea96a39fb303d3968e8",
+            "update": 12213
+          },
+          {
+            "eligible_supervised_tokens": 250,
+            "finished_unix": 1789477513.4463582,
+            "source_call_sha256": "896ff684166ff0aa0995c1be5373af3e6392679dbe4af48757755b4b1941f833",
+            "source_task_id": "gsm8k-train-2180",
+            "target_sha256": "ad870574773a92bd4ac97f9c75829181c2ec734ae65acd7a8432518771d91ca7",
+            "update": 12221
+          },
+          {
+            "eligible_supervised_tokens": 185,
+            "finished_unix": 1789477524.5909996,
+            "source_call_sha256": "876a188ab70a4a1391e9b8fc558ec27e0665ae35294803a6b669abbff03d36f1",
+            "source_task_id": "gsm8k-train-1657",
+            "target_sha256": "ee2c834a19da2453db6d30ce93192b5eed29ffc6a0e33316a293290f09bb00b6",
+            "update": 12229
+          },
+          {
+            "eligible_supervised_tokens": 201,
+            "finished_unix": 1789477537.306071,
+            "source_call_sha256": "4da8f82d80cbced4d190cedd44726ec6b9ecfc4dce07195ed5cac5b01fcb343e",
+            "source_task_id": "gsm8k-train-4065",
+            "target_sha256": "87bb85d414f0bbabef8598d622cef15f6ffbafdc96b73e4fef135988f691e8ef",
+            "update": 12237
+          },
+          {
+            "eligible_supervised_tokens": 151,
+            "finished_unix": 1789477546.2872176,
+            "source_call_sha256": "9c5e2a9a51cc1b47703be9199b963dcb25b653ae03106d085a79b7c11cdc5d7b",
+            "source_task_id": "gsm8k-train-2565",
+            "target_sha256": "511ead2feaed9d2f48e44724540b5f321ccbe0bf04e8d908e28daf88e91e9a2a",
+            "update": 12245
+          }
+        ],
+        "trained_new_unique": 5
+      }
+    },
+    "measured_persistence_claim": false,
+    "observed_unix": 1789477658.883466,
+    "original_unique": 4,
+    "root": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1",
+    "source_bindings": {
+      "ADMISSION_DECISIONS.json": {
+        "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/ADMISSION_DECISIONS.json",
+        "sha256": "fdbdd75bf43a5a4f4f6cfb2428ed80c6260272a4ab4e04bfaa968ba428fa356a"
+      },
+      "REVIEWS.json": {
+        "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/REVIEWS.json",
+        "sha256": "9df558cebf8ed0aba981377f6c34d272619a671c12115297f9ddb110190e3fab"
+      },
+      "RUNTIME.json": {
+        "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/RUNTIME.json",
+        "sha256": "be379a95e5c7c1bfeffbfa6b21e0f7544d743417f21e32c01ec7dd3eae6048db"
+      }
+    },
+    "teacher_l2_admitted": 0
+  },
+  "checkpoint": {
+    "arms": {
+      "CONTROL": {
+        "adapter_state_sha256": "f0d72fda28f31b4760039163b36fd23066d8ddfd370c2cdebfb48e7e3e70df8d",
+        "checkpoint": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/versions/000/fit/CONTROL/checkpoints/000012260",
+        "commit_sha256": "dc54c7a9d6e23e7093478fdf93041345cb260b348cafb02bdb4210c863a86d3a",
+        "eligible_tokens_after": 0,
+        "eligible_tokens_before": 0,
+        "heartbeat": {
+          "cohort_id": "R109_EXPERIENCE_C2_B000",
+          "condition": "ON",
+          "eligible_sha256": "7456476427bcf5aca6363997b5d0a734f855eb29aff1a16537b3033b1263d5ba",
+          "hard_end_unix": 1789491360,
+          "identity": {
+            "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+            "pid": 1152154,
+            "start_ticks": "70603592",
+            "uid": 2524
+          },
+          "index": 6,
+          "observed_unix": 1789477618.8083982,
+          "phase": "readout",
+          "resume": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/versions/000/fit/CONTROL/checkpoints/000012260",
+          "segment": 0,
+          "version": 0
+        },
+        "optimizer_before_after": [
+          {
+            "optimizer_sha256": "62b792be499387320a93076f674622df0daa6e405a978bdf5dc7ba222a179422",
+            "parameter_states": 392,
+            "step_max": 12132.0,
+            "step_min": 12132.0
+          },
+          {
+            "optimizer_sha256": "eecfe7b04f3ad81ef5fa5e5cc84d4ab597e3c5b882f4a93cb04264d25b810113",
+            "parameter_states": 392,
+            "step_max": 12260.0,
+            "step_min": 12260.0
+          }
+        ],
+        "parent_link_matches": true,
+        "prior_checkpoint": "/localhome/local-rohing/orch_r109_l1_20260915/experience_c1/fit/CONTROL/checkpoints/000012132",
+        "prior_commit_sha256": "8e727a5a9b88e746910c4f8efb9f6469ca4a76adc7c145a5276ee54a5aba9a7f",
+        "rng_hashes": {
+          "rank0.pt": "c56962fc867dce17eb7abc547fac6287ab26a0455934d79f3896caaedadd5f58",
+          "rank1.pt": "ae61a463b33e64785ab91111d5d218349751fecb856e378ce3efb615464bc977"
+        },
+        "update": 12260
+      },
+      "FULL": {
+        "adapter_state_sha256": "8f127661e165069143ee65e63b36cb29e8461a47192b838ab7c530be25b60dc2",
+        "checkpoint": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/versions/000/fit/FULL/checkpoints/000012260",
+        "commit_sha256": "75da45c4ce7293e4955826e0fcfd8294adb6e8ce51c78523b2cc6ca71129c3df",
+        "eligible_tokens_after": 53922,
+        "eligible_tokens_before": 51240,
+        "heartbeat": {
+          "cohort_id": "R109_EXPERIENCE_C2_B000",
+          "condition": "ON",
+          "eligible_sha256": "7456476427bcf5aca6363997b5d0a734f855eb29aff1a16537b3033b1263d5ba",
+          "hard_end_unix": 1789491360,
+          "identity": {
+            "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+            "pid": 1152151,
+            "start_ticks": "70603568",
+            "uid": 2524
+          },
+          "index": 5,
+          "observed_unix": 1789477618.5670223,
+          "phase": "readout",
+          "resume": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/versions/000/fit/FULL/checkpoints/000012260",
+          "segment": 0,
+          "version": 0
+        },
+        "optimizer_before_after": [
+          {
+            "optimizer_sha256": "60ecf709a588fe8d2711b427c6828785444efcef1aabafa9238cdd3268efd57c",
+            "parameter_states": 392,
+            "step_max": 12132.0,
+            "step_min": 12132.0
+          },
+          {
+            "optimizer_sha256": "61157c7b82e2d043e27d4e66b556063943252bb6422af606cbb7c22154fb737b",
+            "parameter_states": 392,
+            "step_max": 12260.0,
+            "step_min": 12260.0
+          }
+        ],
+        "parent_link_matches": true,
+        "prior_checkpoint": "/localhome/local-rohing/orch_r109_l1_20260915/experience_c1/fit/FULL/checkpoints/000012132",
+        "prior_commit_sha256": "37d586001bf01e02c2bc4c8b59f0ff63579f8974680f159256846d37d127fbec",
+        "rng_hashes": {
+          "rank0.pt": "c56962fc867dce17eb7abc547fac6287ab26a0455934d79f3896caaedadd5f58",
+          "rank1.pt": "ae61a463b33e64785ab91111d5d218349751fecb856e378ce3efb615464bc977"
+        },
+        "update": 12260
+      }
+    },
+    "cuda_initialized": false,
+    "observed_unix": 1789477617.8924131
+  },
+  "schema": "R109_FEED_CHECKPOINT_12260_PROOF"
+}

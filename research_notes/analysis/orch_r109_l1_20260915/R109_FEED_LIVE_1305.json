@@ -1,0 +1,961 @@
+{
+  "accounting": {
+    "anchors": "one per update, 42-row roster, supervised-token-normalized objective",
+    "control_eligible_labels": "all -100",
+    "eligible": "one every eight optimizer updates, replacing second prior",
+    "fixed_anchor_lambda": null,
+    "new16_old1": false,
+    "on_off_fixed32_and_held16": "required after every checkpoint; original12132 complete for both arms before handoff",
+    "original_child_update": 8932,
+    "original_schedule_seed_update": 9444
+  },
+  "actual_ingestion": {
+    "admissions": {
+      "last_admission_unix": 1789477158.8111253,
+      "new_unique_total": 10,
+      "newly_admitted_last3600": 10
+    },
+    "arms": {
+      "CONTROL": {
+        "checkpoints": [],
+        "heartbeat": {
+          "cohort_id": "R109_EXPERIENCE_C2_B000",
+          "condition": null,
+          "eligible_sha256": "7456476427bcf5aca6363997b5d0a734f855eb29aff1a16537b3033b1263d5ba",
+          "hard_end_unix": 1789491360,
+          "identity": {
+            "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+            "pid": 1142441,
+            "start_ticks": "70575474",
+            "uid": 2524
+          },
+          "index": 6,
+          "observed_unix": 1789477507.766207,
+          "phase": "train",
+          "resume": "/localhome/local-rohing/orch_r109_l1_20260915/experience_c1/fit/CONTROL/checkpoints/000012132",
+          "segment": 0,
+          "version": 0
+        },
+        "last_new_target_feed_unix": null,
+        "latest_update": 12215,
+        "loaded": [
+          {
+            "cohort_id": "R109_EXPERIENCE_C2_B000",
+            "eligible_sha256": "7456476427bcf5aca6363997b5d0a734f855eb29aff1a16537b3033b1263d5ba",
+            "global_cursor_preserved": true,
+            "observed_unix": 1789477369.9750347,
+            "optimizer_restored": true,
+            "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/versions/000/fit/CONTROL/segment000/RANK0_LOADED.json",
+            "process": [
+              "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+              1142441,
+              70575474
+            ],
+            "rng_restored": true,
+            "sha256": "adb58da93e469138f504da0b240b08130a5ddd4c98f4eb14e168557b457c49e0",
+            "state_sha256": "4195487a4c2b3c9b8bb5d76372359c4b0b192aa59e76ea31613493e23b5c7f7b",
+            "update": 12132,
+            "uuid": "GPU-a064bca2-bddc-73ad-faf1-a4fbcb49fecf"
+          }
+        ],
+        "new_target_exposures": 0,
+        "new_target_tokens": 0,
+        "trained_new_targets": [],
+        "trained_new_unique": 0
+      },
+      "FULL": {
+        "checkpoints": [],
+        "heartbeat": {
+          "cohort_id": "R109_EXPERIENCE_C2_B000",
+          "condition": null,
+          "eligible_sha256": "7456476427bcf5aca6363997b5d0a734f855eb29aff1a16537b3033b1263d5ba",
+          "hard_end_unix": 1789491360,
+          "identity": {
+            "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+            "pid": 1142392,
+            "start_ticks": "70575450",
+            "uid": 2524
+          },
+          "index": 5,
+          "observed_unix": 1789477507.5258665,
+          "phase": "train",
+          "resume": "/localhome/local-rohing/orch_r109_l1_20260915/experience_c1/fit/FULL/checkpoints/000012132",
+          "segment": 0,
+          "version": 0
+        },
+        "last_new_target_feed_unix": 1789477505.4842722,
+        "latest_update": 12216,
+        "loaded": [
+          {
+            "cohort_id": "R109_EXPERIENCE_C2_B000",
+            "eligible_sha256": "7456476427bcf5aca6363997b5d0a734f855eb29aff1a16537b3033b1263d5ba",
+            "global_cursor_preserved": true,
+            "observed_unix": 1789477370.2113478,
+            "optimizer_restored": true,
+            "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/versions/000/fit/FULL/segment000/RANK0_LOADED.json",
+            "process": [
+              "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+              1142392,
+              70575450
+            ],
+            "rng_restored": true,
+            "sha256": "dc9fd2f5057e5bf8e27153d6e6e73d8e68f8b322dc6f5ba64881acf83f9af9cd",
+            "state_sha256": "ced34f46a2385ce0224a46f875eaadfd8845063c06c2078673adeabb6dc83e4f",
+            "update": 12132,
+            "uuid": "GPU-0cc84073-37a0-4f7a-e555-11671425bd03"
+          }
+        ],
+        "new_target_exposures": 6,
+        "new_target_tokens": 1011,
+        "trained_new_targets": [
+          {
+            "eligible_supervised_tokens": 112,
+            "finished_unix": 1789477388.1219223,
+            "source_call_sha256": "a22f5ebc5b5a16996895c3eed65bf9da2265424b711109a2d0d1d4537ea570f9",
+            "source_task_id": "gsm8k-train-5392",
+            "target_sha256": "d9ab03ba61cc1190b9affcadc008852379570dadf0eeeea96a39fb303d3968e8",
+            "update": 12141
+          },
+          {
+            "eligible_supervised_tokens": 250,
+            "finished_unix": 1789477403.435508,
+            "source_call_sha256": "896ff684166ff0aa0995c1be5373af3e6392679dbe4af48757755b4b1941f833",
+            "source_task_id": "gsm8k-train-2180",
+            "target_sha256": "ad870574773a92bd4ac97f9c75829181c2ec734ae65acd7a8432518771d91ca7",
+            "update": 12149
+          },
+          {
+            "eligible_supervised_tokens": 185,
+            "finished_unix": 1789477419.5355928,
+            "source_call_sha256": "876a188ab70a4a1391e9b8fc558ec27e0665ae35294803a6b669abbff03d36f1",
+            "source_task_id": "gsm8k-train-1657",
+            "target_sha256": "ee2c834a19da2453db6d30ce93192b5eed29ffc6a0e33316a293290f09bb00b6",
+            "update": 12157
+          },
+          {
+            "eligible_supervised_tokens": 201,
+            "finished_unix": 1789477436.0548363,
+            "source_call_sha256": "4da8f82d80cbced4d190cedd44726ec6b9ecfc4dce07195ed5cac5b01fcb343e",
+            "source_task_id": "gsm8k-train-4065",
+            "target_sha256": "87bb85d414f0bbabef8598d622cef15f6ffbafdc96b73e4fef135988f691e8ef",
+            "update": 12165
+          },
+          {
+            "eligible_supervised_tokens": 151,
+            "finished_unix": 1789477451.6496615,
+            "source_call_sha256": "9c5e2a9a51cc1b47703be9199b963dcb25b653ae03106d085a79b7c11cdc5d7b",
+            "source_task_id": "gsm8k-train-2565",
+            "target_sha256": "511ead2feaed9d2f48e44724540b5f321ccbe0bf04e8d908e28daf88e91e9a2a",
+            "update": 12173
+          },
+          {
+            "eligible_supervised_tokens": 112,
+            "finished_unix": 1789477505.4842722,
+            "source_call_sha256": "a22f5ebc5b5a16996895c3eed65bf9da2265424b711109a2d0d1d4537ea570f9",
+            "source_task_id": "gsm8k-train-5392",
+            "target_sha256": "d9ab03ba61cc1190b9affcadc008852379570dadf0eeeea96a39fb303d3968e8",
+            "update": 12213
+          }
+        ],
+        "trained_new_unique": 5
+      }
+    },
+    "measured_persistence_claim": false,
+    "observed_unix": 1789477508.2389433,
+    "original_unique": 4,
+    "root": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1",
+    "source_bindings": {
+      "ADMISSION_DECISIONS.json": {
+        "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/ADMISSION_DECISIONS.json",
+        "sha256": "fdbdd75bf43a5a4f4f6cfb2428ed80c6260272a4ab4e04bfaa968ba428fa356a"
+      },
+      "REVIEWS.json": {
+        "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/REVIEWS.json",
+        "sha256": "9df558cebf8ed0aba981377f6c34d272619a671c12115297f9ddb110190e3fab"
+      },
+      "RUNTIME.json": {
+        "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/RUNTIME.json",
+        "sha256": "be379a95e5c7c1bfeffbfa6b21e0f7544d743417f21e32c01ec7dd3eae6048db"
+      }
+    },
+    "teacher_l2_admitted": 0
+  },
+  "created_utc": "2026-09-15T13:06:14.263249+00:00",
+  "diagnostic_samples": {
+    "node1": {
+      "candidate_pairs": [],
+      "lanes": [
+        {
+          "counts": {
+            "family:code": 36,
+            "family:math": 35,
+            "family:route": 697,
+            "outcome:bounded_oracle_failed": 34,
+            "outcome:missing_exact_FINAL": 3,
+            "outcome:missing_exact_expression_JSON": 2,
+            "outcome:parsed_wrong": 1,
+            "outcome:registered_correct": 31,
+            "outcome:route_response_requires_task_receipt": 697,
+            "persistence_true": 0
+          },
+          "index": 0,
+          "sampled_completed_rows": 768,
+          "wrong_to_correct_pairs": 0
+        },
+        {
+          "counts": {
+            "family:code": 66,
+            "family:math": 66,
+            "family:route": 636,
+            "outcome:bounded_oracle_failed": 66,
+            "outcome:missing_exact_FINAL": 6,
+            "outcome:registered_correct": 60,
+            "outcome:route_response_requires_task_receipt": 636,
+            "paired_math": 33,
+            "persistence_true": 0
+          },
+          "index": 1,
+          "sampled_completed_rows": 768,
+          "wrong_to_correct_pairs": 0
+        },
+        {
+          "counts": {
+            "family:code": 64,
+            "family:math": 64,
+            "family:route": 640,
+            "outcome:bounded_oracle_failed": 40,
+            "outcome:missing_exact_FINAL": 6,
+            "outcome:missing_exact_expression_JSON": 24,
+            "outcome:parsed_wrong": 4,
+            "outcome:registered_correct": 54,
+            "outcome:route_response_requires_task_receipt": 640,
+            "paired_math": 32,
+            "persistence_true": 0
+          },
+          "index": 2,
+          "sampled_completed_rows": 768,
+          "wrong_to_correct_pairs": 0
+        },
+        {
+          "counts": {
+            "family:code": 66,
+            "family:math": 65,
+            "family:route": 637,
+            "outcome:bounded_oracle_failed": 66,
+            "outcome:missing_exact_FINAL": 4,
+            "outcome:registered_correct": 61,
+            "outcome:route_response_requires_task_receipt": 637,
+            "paired_math": 32,
+            "persistence_true": 0
+          },
+          "index": 3,
+          "sampled_completed_rows": 768,
+          "wrong_to_correct_pairs": 0
+        },
+        {
+          "counts": {
+            "family:code": 66,
+            "family:math": 66,
+            "family:route": 636,
+            "outcome:bounded_oracle_failed": 43,
+            "outcome:missing_exact_FINAL": 4,
+            "outcome:missing_exact_expression_JSON": 23,
+            "outcome:parsed_wrong": 4,
+            "outcome:registered_correct": 58,
+            "outcome:route_response_requires_task_receipt": 636,
+            "paired_math": 33,
+            "persistence_true": 0
+          },
+          "index": 4,
+          "sampled_completed_rows": 768,
+          "wrong_to_correct_pairs": 0
+        },
+        {
+          "counts": {
+            "family:code": 35,
+            "family:math": 35,
+            "family:route": 698,
+            "outcome:bounded_oracle_failed": 32,
+            "outcome:missing_exact_FINAL": 1,
+            "outcome:missing_exact_expression_JSON": 3,
+            "outcome:parsed_wrong": 3,
+            "outcome:registered_correct": 31,
+            "outcome:route_response_requires_task_receipt": 698,
+            "persistence_true": 0
+          },
+          "index": 5,
+          "sampled_completed_rows": 768,
+          "wrong_to_correct_pairs": 0
+        },
+        {
+          "counts": {
+            "family:code": 65,
+            "family:math": 64,
+            "family:route": 639,
+            "outcome:bounded_oracle_failed": 61,
+            "outcome:missing_exact_FINAL": 1,
+            "outcome:missing_exact_expression_JSON": 4,
+            "outcome:parsed_wrong": 6,
+            "outcome:registered_correct": 57,
+            "outcome:route_response_requires_task_receipt": 639,
+            "paired_math": 32,
+            "persistence_true": 0
+          },
+          "index": 6,
+          "sampled_completed_rows": 768,
+          "wrong_to_correct_pairs": 0
+        }
+      ],
+      "node": "node1",
+      "observed_utc": "2026-09-15T12:48:13.061187+00:00",
+      "plan_sha256": "387dfbbc88a46e2766c19ece5e8b4dabdf31e3d39cba5709806dc05471a43457",
+      "tasks_sha256": "84c33c95dfa39a160457902ab895d75e2a9e5f06636707201d379b1ea27d4ad8"
+    },
+    "node2": {
+      "candidate_pairs": [],
+      "lanes": [
+        {
+          "counts": {
+            "family:code": 66,
+            "family:math": 66,
+            "family:route": 636,
+            "outcome:bounded_oracle_failed": 62,
+            "outcome:missing_exact_FINAL": 2,
+            "outcome:missing_exact_expression_JSON": 4,
+            "outcome:registered_correct": 64,
+            "outcome:route_response_requires_task_receipt": 636,
+            "paired_math": 33,
+            "persistence_true": 0
+          },
+          "index": 4,
+          "sampled_completed_rows": 768,
+          "wrong_to_correct_pairs": 0
+        }
+      ],
+      "node": "node2",
+      "observed_utc": "2026-09-15T12:48:12.933395+00:00",
+      "plan_sha256": "739c730ae78b8a637eb6602a7e02c893dba8108918c4591cc6c06d4b6684690f",
+      "tasks_sha256": "84c33c95dfa39a160457902ab895d75e2a9e5f06636707201d379b1ea27d4ad8"
+    }
+  },
+  "disposition": {
+    "generation_slots": 8,
+    "natural_release_now": [],
+    "readout_slots": 3,
+    "training_slots": 3
+  },
+  "limitations": [
+    "Author-selected ten targets, not a random prevalence estimate or novel TRAIN tasks.",
+    "No persistence or retained-metacognition claim.",
+    "No teacher/parented-derived L2 admissions.",
+    "Batch001 is prepared, not yet trained; future admissions still need substantive semantic review.",
+    "Old C1 heartbeat remains historical; experience_feed_v1/feed_status/LATEST.json is current experience custody."
+  ],
+  "native_receipts": {
+    "observed_unix": 1789477507.5225475,
+    "receipts": {
+      "CPU_LAUNCH_CONTROL.json": {
+        "document": {
+          "arguments": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-u",
+            "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/source/orch_r109_l1_feed.py",
+            "supervise",
+            "--arm",
+            "CONTROL"
+          ],
+          "handoff_sha256": "2851a1240d9eba102841af4a527261d7f653a0d7469ac8c32fc04374a6437a22",
+          "hard_end_unix": 1789491360,
+          "identity": {
+            "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+            "pid": 1142315,
+            "start_ticks": "70575356",
+            "uid": 2524
+          },
+          "original_slot": 6,
+          "source_sha256": "dc4528d03aa95ee4a5320c77d49bb6b40197ab77ed20403b3bf4285810435dee",
+          "started_unix": 1789477314.430075
+        },
+        "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/CPU_LAUNCH_CONTROL.json",
+        "sha256": "2279ba3691a574f9838f2e1dd6d28ff0610dbac4d4a3b47f4c724c1fad91890c"
+      },
+      "CPU_LAUNCH_FULL.json": {
+        "document": {
+          "arguments": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "-u",
+            "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/source/orch_r109_l1_feed.py",
+            "supervise",
+            "--arm",
+            "FULL"
+          ],
+          "handoff_sha256": "2851a1240d9eba102841af4a527261d7f653a0d7469ac8c32fc04374a6437a22",
+          "hard_end_unix": 1789491360,
+          "identity": {
+            "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+            "pid": 1142312,
+            "start_ticks": "70575332",
+            "uid": 2524
+          },
+          "original_slot": 5,
+          "source_sha256": "dc4528d03aa95ee4a5320c77d49bb6b40197ab77ed20403b3bf4285810435dee",
+          "started_unix": 1789477314.185032
+        },
+        "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/CPU_LAUNCH_FULL.json",
+        "sha256": "1b9daaf2f183605db0fd8589f4975dec4259efdf039106ac4a99a7e98ed066e8"
+      },
+      "HANDOFF.json": {
+        "document": {
+          "arms": {
+            "CONTROL": {
+              "checkpoint": "/localhome/local-rohing/orch_r109_l1_20260915/experience_c1/fit/CONTROL/checkpoints/000012132",
+              "commit_sha256": "8e727a5a9b88e746910c4f8efb9f6469ca4a76adc7c145a5276ee54a5aba9a7f",
+              "cpu": {
+                "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+                "pid": 829677,
+                "start_ticks": "69458535",
+                "uid": 2524
+              },
+              "heartbeat": {
+                "cohort_id": "R109_EXPERIENCE_C1",
+                "condition": "OFF",
+                "eligible_sha256": "89723bdcd062518f3a5d93550abc85492345c97ec1531dc50df06978912bd659",
+                "hard_end_unix": 1789491360,
+                "identity": {
+                  "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+                  "pid": 1137069,
+                  "start_ticks": "70563249",
+                  "uid": 2524
+                },
+                "index": 6,
+                "observed_unix": 1789477213.3733044,
+                "phase": "readout",
+                "resume": "/localhome/local-rohing/orch_r109_l1_20260915/experience_c1/fit/CONTROL/checkpoints/000012132",
+                "segment": 20
+              },
+              "optimizer_sha256": "62b792be499387320a93076f674622df0daa6e405a978bdf5dc7ba222a179422",
+              "readouts": {
+                "OFF": {
+                  "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_c1/fit/CONTROL/segment020/readout/OFF/COMPLETE.json",
+                  "sha256": "97809f5bdd967cf6bd1e9387e6740c2b1237eec3b4163ba8904b78d34f3ed287"
+                },
+                "ON": {
+                  "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_c1/fit/CONTROL/segment020/readout/ON/COMPLETE.json",
+                  "sha256": "c52781c1c0721ab153a7162527b954ce15096cc074d341b8fd8e4d5bba8af07d"
+                }
+              },
+              "update": 12132
+            },
+            "FULL": {
+              "checkpoint": "/localhome/local-rohing/orch_r109_l1_20260915/experience_c1/fit/FULL/checkpoints/000012132",
+              "commit_sha256": "37d586001bf01e02c2bc4c8b59f0ff63579f8974680f159256846d37d127fbec",
+              "cpu": {
+                "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+                "pid": 829676,
+                "start_ticks": "69458534",
+                "uid": 2524
+              },
+              "heartbeat": {
+                "cohort_id": "R109_EXPERIENCE_C1",
+                "condition": "OFF",
+                "eligible_sha256": "89723bdcd062518f3a5d93550abc85492345c97ec1531dc50df06978912bd659",
+                "hard_end_unix": 1789491360,
+                "identity": {
+                  "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+                  "pid": 1137192,
+                  "start_ticks": "70563499",
+                  "uid": 2524
+                },
+                "index": 5,
+                "observed_unix": 1789477211.870918,
+                "phase": "readout",
+                "resume": "/localhome/local-rohing/orch_r109_l1_20260915/experience_c1/fit/FULL/checkpoints/000012132",
+                "segment": 20
+              },
+              "optimizer_sha256": "60ecf709a588fe8d2711b427c6828785444efcef1aabafa9238cdd3268efd57c",
+              "readouts": {
+                "OFF": {
+                  "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_c1/fit/FULL/segment020/readout/OFF/COMPLETE.json",
+                  "sha256": "ae2eb495c736d2fc23ba8b4d71e8f5cc45f390b324519a27d7278f39d8ffd5b7"
+                },
+                "ON": {
+                  "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_c1/fit/FULL/segment020/readout/ON/COMPLETE.json",
+                  "sha256": "f84582e2a4b4c5efb0f1e3d87695f4963816d19c84ba805f4c2405da7ff7a73a"
+                }
+              },
+              "update": 12132
+            }
+          },
+          "native_processes_signalled": false,
+          "observed_unix": 1789477293.3495185,
+          "optimizer_reset": false,
+          "original_C1_artifacts_unchanged": true
+        },
+        "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/HANDOFF.json",
+        "sha256": "2851a1240d9eba102841af4a527261d7f653a0d7469ac8c32fc04374a6437a22"
+      },
+      "HANDOFF_LAUNCH.json": {
+        "document": {
+          "hard_end_unix": 1789491360,
+          "identity": {
+            "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+            "pid": 1138079,
+            "start_ticks": "70565186",
+            "uid": 2524
+          },
+          "source_sha256": "dc4528d03aa95ee4a5320c77d49bb6b40197ab77ed20403b3bf4285810435dee",
+          "started_unix": 1789477212.7231743
+        },
+        "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/HANDOFF_LAUNCH.json",
+        "sha256": "92f83bdd0a7bea9fe6fdd201c17245d545764769b633c44b89b19b201420d083"
+      },
+      "OBSERVER_LAUNCH.json": {
+        "document": {
+          "arguments": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/observer_source/orch_r109_l1_feed_status.py",
+            "--root",
+            "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1",
+            "--watch"
+          ],
+          "cadence_seconds": 60,
+          "hard_end_unix": 1789491360,
+          "identity": {
+            "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+            "pid": 1146239,
+            "start_ticks": "70585567",
+            "uid": 2524
+          },
+          "readonly_native_science": true,
+          "source_sha256": "c190dc83fc2b96048fc5715f3f5075205cb7fe1d8abd8d718ecd2ec6bf144d65",
+          "started_unix": 1789477416.5360053,
+          "tests_sha256": "fac9caa318c96becb0ac1f5413583901d9fb7956af1a7b48d91c8b1b80633aa3"
+        },
+        "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/OBSERVER_LAUNCH.json",
+        "sha256": "f1416903b4565d92b3bd9e239d93311de5ced21ac0a2e8b038fa16264489df79"
+      },
+      "PRE_GPU.json": {
+        "document": {
+          "builder_line": "[Builder] 2026-09-15T13:00Z R109 prospective L1 feed repair; exact source/tests/provenance and safe readout boundary receipt in COORDINATION.md.",
+          "cpu_passed": true,
+          "observed_unix": 1789477212.4167337,
+          "runtime_sha256": "be379a95e5c7c1bfeffbfa6b21e0f7544d743417f21e32c01ec7dd3eae6048db",
+          "tests_sha256": "8b87f0fa4470a3ce072f5b5b1e6fc16746c386696bf8404a833fccd0ff13f1a0"
+        },
+        "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/PRE_GPU.json",
+        "sha256": "5c3d20bc56e66c70944351afdd7394dc0c389ee08b5787ebb1d6c875fd6459f6"
+      },
+      "RUNTIME.json": {
+        "document": {
+          "archive_sha256": "6ec91c7f23b9d09ad24a35a4080ac9a41a64a3164b4e474df2b491ff7213b31c",
+          "experience_source_sha256": "e97c759ac7573b62c09c4f68ebfd6b30ec66d897dd6e08bfc792111048830a61",
+          "original_archive_sha256": "862b2c27a45631ae5c25fbc692ab32af35505ce05b80bc095578191f8698087e",
+          "reviews_sha256": "9df558cebf8ed0aba981377f6c34d272619a671c12115297f9ddb110190e3fab",
+          "source_files": 3,
+          "source_sha256": "dc4528d03aa95ee4a5320c77d49bb6b40197ab77ed20403b3bf4285810435dee"
+        },
+        "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_feed_v1/RUNTIME.json",
+        "sha256": "be379a95e5c7c1bfeffbfa6b21e0f7544d743417f21e32c01ec7dd3eae6048db"
+      }
+    },
+    "versions": {
+      "000": {
+        "cohort_id": "R109_EXPERIENCE_C2_B000",
+        "counts": {
+          "anchor": 42,
+          "eligible": 9,
+          "legacy": 222,
+          "prior": 3635
+        },
+        "eligible_sha256": "7456476427bcf5aca6363997b5d0a734f855eb29aff1a16537b3033b1263d5ba",
+        "encoded_sha256": "cf4f6a67462463aeebbd2343cc9df29e3aeb0f3e33700294f415f6de5d3c6944",
+        "lifetime": {
+          "hard_deadline_unix": 1789491360.0,
+          "lease_end_unix": 1789980180.0,
+          "max_gpu_hours": 112,
+          "max_gpus": 14,
+          "native_deadline_unix": 1789491060.0,
+          "started_unix": 1789462560.0
+        },
+        "newly_admitted": 5,
+        "plan_sha256": "1ff7d69d14efc1dfbf7aee1f3c19fa7db511d5119dbc2c03a29486b95bfbd3a8",
+        "recipe": "C1_ONE_ACTUAL_ELIGIBLE_ROW_EVERY_8_UPDATES_REPLACES_SECOND_PRIOR;CONTROL_MASKS_ONLY_ELIGIBLE;BOTH_KEEP_BASE_ANCHORS"
+      },
+      "001": {
+        "cohort_id": "R109_EXPERIENCE_C2_B001",
+        "counts": {
+          "anchor": 42,
+          "eligible": 14,
+          "legacy": 222,
+          "prior": 3635
+        },
+        "eligible_sha256": "6adc2b48ff55b3366afcf797d27376e445eb0d18746e67a48be95cc9271a15be",
+        "encoded_sha256": "c25a954a6c8c6eaefb7fa39699bd698a6abb913f7cd9233d4ab3f64d388fa327",
+        "lifetime": {
+          "hard_deadline_unix": 1789491360.0,
+          "lease_end_unix": 1789980180.0,
+          "max_gpu_hours": 112,
+          "max_gpus": 14,
+          "native_deadline_unix": 1789491060.0,
+          "started_unix": 1789462560.0
+        },
+        "newly_admitted": 5,
+        "plan_sha256": "a6075e08fd1c204c1c121d771dc7710e434ac3dae04b233bffbdca5184a2348d",
+        "recipe": "C1_ONE_ACTUAL_ELIGIBLE_ROW_EVERY_8_UPDATES_REPLACES_SECOND_PRIOR;CONTROL_MASKS_ONLY_ELIGIBLE;BOTH_KEEP_BASE_ANCHORS"
+      }
+    }
+  },
+  "nonmaterial_repair": "Existing task-grounded functional review criteria unchanged; explicit new C2 cohorts at complete readout boundaries, own optimizer/RNG/global cursor preserved.",
+  "root_cause": "C1 prepare asserts four rows and freezes reviews/eligible/encoding; no new-batch consumer. V3 metrics never admit.",
+  "schema": "R109_PROSPECTIVE_FEED_LIVE_V1",
+  "scope": {
+    "main_owns_git": true,
+    "slots": {
+      "node2": [
+        5,
+        6
+      ]
+    },
+    "unchanged": [
+      "rehearsal0-3",
+      "generation",
+      "parent7",
+      "grid",
+      "sharedCONFIG",
+      "L2 candidate audit"
+    ]
+  },
+  "slot_summary": {
+    "node1": {
+      "generation": [
+        {
+          "alive": true,
+          "identity": {
+            "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+            "pid": 139537,
+            "start_ticks": "3622423",
+            "uid": 2524
+          },
+          "index": 0,
+          "progress": {
+            "batch": 104,
+            "calls": 9048,
+            "condition": "ORDINARY_CONTROL",
+            "finished_unix": 1789477459.568694,
+            "inherited_calls": 3446,
+            "new_segment_calls": 5602,
+            "position": 10,
+            "semantic_admissions": 0
+          },
+          "terminal_receipts": {}
+        },
+        {
+          "alive": true,
+          "identity": {
+            "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+            "pid": 139642,
+            "start_ticks": "3623532",
+            "uid": 2524
+          },
+          "index": 1,
+          "progress": {
+            "batch": 81,
+            "calls": 7693,
+            "condition": "PERSISTENCE",
+            "finished_unix": 1789477457.1058006,
+            "inherited_calls": 1709,
+            "new_segment_calls": 5984,
+            "position": 15,
+            "semantic_admissions": 0
+          },
+          "terminal_receipts": {}
+        },
+        {
+          "alive": true,
+          "identity": {
+            "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+            "pid": 139540,
+            "start_ticks": "3622457",
+            "uid": 2524
+          },
+          "index": 2,
+          "progress": {
+            "batch": 68,
+            "calls": 6479,
+            "condition": "FUNCTIONAL_METACOGNITION",
+            "finished_unix": 1789477450.7899323,
+            "inherited_calls": 1819,
+            "new_segment_calls": 4660,
+            "position": 8,
+            "semantic_admissions": 0
+          },
+          "terminal_receipts": {}
+        },
+        {
+          "alive": true,
+          "identity": {
+            "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+            "pid": 139556,
+            "start_ticks": "3622740",
+            "uid": 2524
+          },
+          "index": 3,
+          "progress": {
+            "batch": 75,
+            "calls": 7095,
+            "condition": "PERCEPTION",
+            "finished_unix": 1789477464.2908022,
+            "inherited_calls": 1321,
+            "new_segment_calls": 5774,
+            "position": 3,
+            "semantic_admissions": 0
+          },
+          "terminal_receipts": {}
+        },
+        {
+          "alive": true,
+          "identity": {
+            "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+            "pid": 139949,
+            "start_ticks": "3633170",
+            "uid": 2524
+          },
+          "index": 4,
+          "progress": {
+            "batch": 65,
+            "calls": 6098,
+            "condition": "EVIDENCE_HOPS",
+            "finished_unix": 1789477446.6641705,
+            "inherited_calls": 1161,
+            "new_segment_calls": 4937,
+            "position": 4,
+            "semantic_admissions": 0
+          },
+          "terminal_receipts": {}
+        },
+        {
+          "alive": true,
+          "identity": {
+            "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+            "pid": 139513,
+            "start_ticks": "3622116",
+            "uid": 2524
+          },
+          "index": 5,
+          "progress": {
+            "batch": 109,
+            "calls": 9480,
+            "condition": "ORDINARY_CONTROL",
+            "finished_unix": 1789477463.9746642,
+            "inherited_calls": 2929,
+            "new_segment_calls": 6551,
+            "position": 9,
+            "semantic_admissions": 0
+          },
+          "terminal_receipts": {}
+        },
+        {
+          "alive": true,
+          "identity": {
+            "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+            "pid": 139628,
+            "start_ticks": "3623285",
+            "uid": 2524
+          },
+          "index": 6,
+          "progress": {
+            "batch": 70,
+            "calls": 6610,
+            "condition": "PERSISTENCE",
+            "finished_unix": 1789477455.1787288,
+            "inherited_calls": 1785,
+            "new_segment_calls": 4825,
+            "position": 14,
+            "semantic_admissions": 0
+          },
+          "terminal_receipts": {}
+        }
+      ],
+      "gpu": [
+        {
+          "index": 0,
+          "memory_mib": 15793,
+          "utilization_percent": 73
+        },
+        {
+          "index": 1,
+          "memory_mib": 15929,
+          "utilization_percent": 71
+        },
+        {
+          "index": 2,
+          "memory_mib": 16007,
+          "utilization_percent": 72
+        },
+        {
+          "index": 3,
+          "memory_mib": 15873,
+          "utilization_percent": 70
+        },
+        {
+          "index": 4,
+          "memory_mib": 15767,
+          "utilization_percent": 72
+        },
+        {
+          "index": 5,
+          "memory_mib": 15795,
+          "utilization_percent": 71
+        },
+        {
+          "index": 6,
+          "memory_mib": 15863,
+          "utilization_percent": 72
+        }
+      ],
+      "observed_utc": "2026-09-15T13:04:25.736240+00:00"
+    },
+    "node2": {
+      "generation": [
+        {
+          "alive": true,
+          "identity": {
+            "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+            "pid": 869758,
+            "start_ticks": "69649086",
+            "uid": 2524
+          },
+          "index": 4,
+          "progress": {
+            "batch": 83,
+            "calls": 7799,
+            "condition": "PERSISTENCE",
+            "finished_unix": 1789477455.0680044,
+            "inherited_calls": 2253,
+            "new_segment_calls": 5546,
+            "position": 4,
+            "semantic_admissions": 0
+          },
+          "terminal_receipts": {}
+        }
+      ],
+      "gpu": [
+        {
+          "index": 0,
+          "memory_mib": 15047,
+          "utilization_percent": 6
+        },
+        {
+          "index": 1,
+          "memory_mib": 15047,
+          "utilization_percent": 0
+        },
+        {
+          "index": 2,
+          "memory_mib": 15047,
+          "utilization_percent": 7
+        },
+        {
+          "index": 3,
+          "memory_mib": 31637,
+          "utilization_percent": 10
+        },
+        {
+          "index": 4,
+          "memory_mib": 16097,
+          "utilization_percent": 84
+        },
+        {
+          "index": 5,
+          "memory_mib": 42949,
+          "utilization_percent": 100
+        },
+        {
+          "index": 6,
+          "memory_mib": 42949,
+          "utilization_percent": 100
+        }
+      ],
+      "guardian_alive": true,
+      "observed_utc": "2026-09-15T13:04:26.731294+00:00",
+      "rehearsal_heartbeat": {
+        "arms": {
+          "CONTROL": {
+            "pending": false,
+            "phase": "train",
+            "processes": [
+              {
+                "alive": true,
+                "identity": {
+                  "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+                  "pid": 1136874,
+                  "start_ticks": "70561206",
+                  "uid": 2524
+                },
+                "index": 3
+              }
+            ],
+            "resume": "/localhome/local-rohing/orch_r109_l1_20260915/fit/CONTROL/checkpoints/000012516",
+            "segment": 28,
+            "terminal": false
+          },
+          "FULL": {
+            "pending": false,
+            "phase": "readout",
+            "processes": [
+              {
+                "alive": true,
+                "identity": {
+                  "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+                  "pid": 1146257,
+                  "start_ticks": "70585728",
+                  "uid": 2524
+                },
+                "index": 0
+              },
+              {
+                "alive": true,
+                "identity": {
+                  "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+                  "pid": 1146313,
+                  "start_ticks": "70585791",
+                  "uid": 2524
+                },
+                "index": 1
+              },
+              {
+                "alive": true,
+                "identity": {
+                  "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+                  "pid": 1146335,
+                  "start_ticks": "70585852",
+                  "uid": 2524
+                },
+                "index": 2
+              }
+            ],
+            "resume": "/localhome/local-rohing/orch_r109_l1_20260915/fit/FULL/checkpoints/000013668",
+            "segment": 36,
+            "terminal": false
+          }
+        },
+        "compare_only_matched_updates": true,
+        "hard_end_unix": 1789491360,
+        "independent_arms": true,
+        "maximum_total_segments_per_arm": 512,
+        "native_cutoff_unix": 1789491060,
+        "observed_unix": 1789477465.4954545,
+        "source_sha256": "a220eb7616c4dd8aee83d8e6e594a2a3baed861612adad1efbef7faa2b58f7e0"
+      }
+    }
+  },
+  "tests": {
+    "all_pass": true,
+    "local": 19,
+    "native_feed": 10,
+    "native_observer": 3
+  }
+}

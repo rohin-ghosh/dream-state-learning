@@ -1,0 +1,91 @@
+{
+  "actual_FINAL_calls": 0,
+  "controller_pids": {
+    "FINAL_A1_CPU": 1496788,
+    "FINAL_F1_CPU": 1496784,
+    "cutoff_fuse": 1271060,
+    "cutoff_monitor": 1271059
+  },
+  "created_utc": "2026-09-15T13:26:29.270151+00:00",
+  "entries": [
+    {
+      "bytes": 31729,
+      "path": "gpu/orch_r111_shared_cutoff.py",
+      "sha256": "99e94e78fa3ff8ee8c166cbf6981243f6229df5aab3818b788602af844a705d1"
+    },
+    {
+      "bytes": 18447,
+      "path": "tests/test_orch_r111_shared_cutoff.py",
+      "sha256": "272d1b528e9e9ffc85349cd6c36af5584582c41c4a6f60d9aa5a4158504d686e"
+    },
+    {
+      "bytes": 7254,
+      "path": "research_notes/analysis/orch_r111_parent_20260915/R118_COMMON_COMPLETION_WATCHDOG_PLAN.md",
+      "sha256": "b8cb54a11e9ba44aaadacdd9a481919e1b9d4a0587fab7d4fe3ba7dc6327bb70"
+    },
+    {
+      "bytes": 14027,
+      "path": "research_notes/analysis/orch_r111_parent_20260915/R118_CUTOFF_DEPLOYED_1300.md",
+      "sha256": "4dcb0977c9b61e69ecc7a58e4844e34200184e5d365d823ecc8d7d32f46bc30d"
+    },
+    {
+      "bytes": 13831,
+      "path": "research_notes/analysis/orch_r111_parent_20260915/CUTOFF_DEPLOYED_COMPACT_1259.json",
+      "sha256": "a2467f8f8ec1ca5bd4132972084f20ca0077a3b2dc38c645a19896a9f7e96364"
+    },
+    {
+      "bytes": 2456,
+      "path": "research_notes/analysis/orch_r111_parent_20260915/FIRST_SERIAL_TIMING_1302.json",
+      "sha256": "23577e75b59ced817e1264381673350396274914b9e73099443cf5de9ff79aec"
+    },
+    {
+      "bytes": 13493,
+      "path": "research_notes/analysis/orch_r111_parent_20260915/FIRST_POOLED_SERIAL_COMPACT_1307.json",
+      "sha256": "edb9b1b50388b263f1591f80cfdacc9db6d545894ee8cf96f09cba7259dce1bf"
+    },
+    {
+      "bytes": 18342,
+      "path": "gpu/orch_r111_route_final.py",
+      "sha256": "dbe2cf05b614ab374964249324c02d5e19f8b8bc29684fe5da398be505d9c618"
+    },
+    {
+      "bytes": 18238,
+      "path": "tests/test_orch_r111_route_final.py",
+      "sha256": "d1156f26b4f36963573488424bcff573c9151ecfbdffdf2c2c7b37588c487806"
+    },
+    {
+      "bytes": 9337,
+      "path": "research_notes/analysis/orch_r111_parent_20260915/R118_ROUTE_FINAL_SCHEDULERS_1324.md",
+      "sha256": "3ce4fbd67d34eaa392597822494e08f4e0e66e230c65c74a09ebb77c8a9fd367"
+    },
+    {
+      "bytes": 8027,
+      "path": "research_notes/analysis/orch_r111_parent_20260915/FINAL_SCHEDULERS_COMPACT_1324.json",
+      "sha256": "6f08f5461337b047dd8ddda3fa133bbba21fa094d17dcfcfea6ed07ed396d89a"
+    },
+    {
+      "bytes": 34127,
+      "path": "research_loop/workers/R111_PARENT.md",
+      "sha256": "742d24378f93e7fb3a1e2186ff1a0eca7f56b275cf67639904fa6372de433d4a"
+    }
+  ],
+  "git_owner": "Main",
+  "no_Git_mutation": true,
+  "old_training_unchanged": true,
+  "publication_notes": "Use these current exact hashes; earlier manifests remain historical. Exclude peer sources, full COORDINATION/BOARD, raw calls and checkpoint/optimizer binaries.",
+  "raw_on_node_only": true,
+  "schema": "R118_ROUTE_FINAL_AND_CUTOFF_STAGE_V1",
+  "selector_dependency": {
+    "included_for_staging": false,
+    "owner": "Main",
+    "sha256": "64ccee2884b1dddafde70da8ccc2795127c8a4553fb6eb1a301484da369334ed",
+    "source_path": "gpu/orch_r118_final_selection.py"
+  },
+  "status": "CPU_FINAL_TIMERS_ARMED_NO_FINAL_GPU_LAUNCH_BEFORE_1700",
+  "tests": {
+    "combined_local": 72,
+    "cutoff_native": 29,
+    "final_native": 27,
+    "final_own_local": 27
+  }
+}

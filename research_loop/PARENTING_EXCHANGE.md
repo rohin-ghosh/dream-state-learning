@@ -425,3 +425,30 @@ No sealed readout, answer key, or private score is passed into a parent prompt.
 - Other-half pointer: Fable node5 physical0–3, this shared exchange; no matched grid-cycle counterpart bound.
 - Request/disagreement: please review source-linked parent/child turns for functional effort allocation, persistence and control. Action changes alone do not establish learning; no substantive agreement/disagreement inferred.
 - Compact: `/data/home/rohing/dream-state-orch/research_notes/analysis/orch_r109_grid_20260915_attempt1/EXCHANGE/node2_7_segment_06.json` SHA256 `55d8bd230bc3c6e1ce95b06073d89a2e28edefd64903be8a746691f6aa420bb8`. Raw on owning node only; TRAIN-only telemetry, never live prompt feedback.
+
+
+<!-- MAIN_GRID/node3_5/segment/C03 -->
+## [Main / Laplace] 2026-09-15T12:48:41.207984+00:00 — node3_5 segment cycle 3
+- Parent did (verified delivery, not intent): 32 spoken / 0 silent action interventions; metacognitive reply spoken=1, silent=0; actual Astra. Semantic intent UNASSESSED.
+- Child changed (observed only): executed ACTION differs from pre-intervention proposal 13 times; unchanged 19; invalid ACTION before/after=0/3. Metacognitive continuation completed; semantic revision/helpfulness UNASSESSED, no causal or weight-learning claim.
+- Other-half pointer: Fable node5 physical0–3, this shared exchange; no matched grid-cycle counterpart bound.
+- Request/disagreement: please review source-linked parent/child turns for functional effort allocation, persistence and control. Action changes alone do not establish learning; no substantive agreement/disagreement inferred.
+- Compact: `/data/home/rohing/dream-state-orch/research_notes/analysis/orch_r109_grid_20260915_attempt1/EXCHANGE/node3_5_segment_03.json` SHA256 `9556b3de6754c6ce03c6c2d3e49242696f14741ceaea7a81c0fd86047f14ab78`. Raw on owning node only; TRAIN-only telemetry, never live prompt feedback.
+
+
+<!-- MAIN_GRID/node2_7/segment/C07 -->
+## [Main / Laplace] 2026-09-15T13:01:41.583022+00:00 — node2_7 segment cycle 7
+- Parent did (verified delivery, not intent): 32 spoken / 0 silent action interventions; metacognitive reply spoken=1, silent=0; actual Astra. Semantic intent UNASSESSED.
+- Child changed (observed only): executed ACTION differs from pre-intervention proposal 10 times; unchanged 22; invalid ACTION before/after=0/1. Metacognitive continuation completed; semantic revision/helpfulness UNASSESSED, no causal or weight-learning claim.
+- Other-half pointer: Fable node5 physical0–3, this shared exchange; no matched grid-cycle counterpart bound.
+- Request/disagreement: please review source-linked parent/child turns for functional effort allocation, persistence and control. Action changes alone do not establish learning; no substantive agreement/disagreement inferred.
+- Compact: `/data/home/rohing/dream-state-orch/research_notes/analysis/orch_r109_grid_20260915_attempt1/EXCHANGE/node2_7_segment_07.json` SHA256 `b7effa92aaa5f55364b7116b9464140de0df8bf869bb2205ab4d6079046dc89f`. Raw on owning node only; TRAIN-only telemetry, never live prompt feedback.
+
+
+<!-- MAIN_GRID/node3_5/segment/C04 -->
+## [Main / Laplace] 2026-09-15T13:20:06.523971+00:00 — node3_5 segment cycle 4
+- Parent did (verified delivery, not intent): 32 spoken / 0 silent action interventions; metacognitive reply spoken=1, silent=0; actual Astra. Semantic intent UNASSESSED.
+- Child changed (observed only): executed ACTION differs from pre-intervention proposal 12 times; unchanged 20; invalid ACTION before/after=0/2. Metacognitive continuation completed; semantic revision/helpfulness UNASSESSED, no causal or weight-learning claim.
+- Other-half pointer: Fable node5 physical0–3, this shared exchange; no matched grid-cycle counterpart bound.
+- Request/disagreement: please review source-linked parent/child turns for functional effort allocation, persistence and control. Action changes alone do not establish learning; no substantive agreement/disagreement inferred.
+- Compact: `/data/home/rohing/dream-state-orch/research_notes/analysis/orch_r109_grid_20260915_attempt1/EXCHANGE/node3_5_segment_04.json` SHA256 `8ee0e12b9a78ffb2f909f28d155ea04304a6773d9f5b1fa55879ba60582f2f3f`. Raw on owning node only; TRAIN-only telemetry, never live prompt feedback.

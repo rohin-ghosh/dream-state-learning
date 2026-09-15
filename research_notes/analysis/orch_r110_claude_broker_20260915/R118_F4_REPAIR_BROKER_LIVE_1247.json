@@ -1,0 +1,67 @@
+{
+  "first_request": "P0037",
+  "launch": {
+    "boundary": {
+      "path": "/localhome/local-rohing/orch_r118_f4_repair_claude_20260915_v1/BOUNDARY.json",
+      "sha256": "0341d3c720fa33e7a86c9ed7cd6f5feb2fd774677c2be9c02ea77f4a157ca616"
+    },
+    "carried_claims": 36,
+    "carried_publications_sha256": "8cdad1d72b28e168eb7a0a90c1b0f71cbecc08abd8bd265248b0e4d7a66e1b4f",
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "/localhome/local-rohing/orch_r118_f4_repair_claude_20260915_v1/source/gpu/orch_r110_claude_broker.py",
+      "--config",
+      "/localhome/local-rohing/orch_r118_f4_repair_claude_20260915_v1/CONFIG.json",
+      "--launch-receipt",
+      "/localhome/local-rohing/orch_r118_f4_repair_claude_20260915_v1/LAUNCH.json",
+      "--prompt-root",
+      "/localhome/local-rohing/courier_swarm/prompts",
+      "--principles",
+      "/localhome/local-rohing/orch_r118_f4_repair_claude_20260915_v1/source/research_notes/PARENTING_PRINCIPLES_ROHIN_2026-09-15.md"
+    ],
+    "config": {
+      "path": "/localhome/local-rohing/orch_r118_f4_repair_claude_20260915_v1/CONFIG.json",
+      "sha256": "8ff36d67256330dbbf728fedf191e307719070b268edcd3eb124a04f84ac8f3b"
+    },
+    "deadline_unix": 1789491720.0,
+    "launch": {
+      "path": "/localhome/local-rohing/orch_r118_f4_repair_claude_20260915_v1/LAUNCH.json",
+      "sha256": "7d851fcc0071f9e00e52c783be54029a064bdf047b97a4834ca02087dc6e8362"
+    },
+    "launch_source": {
+      "path": "/localhome/local-rohing/orch_r118_f4_repair_claude_20260915_v1/LAUNCH_SOURCE.py",
+      "sha256": "555ab2527e08f8ade52faf5832b0758a988cbbda8f22e48e58ad51a57fc379d8"
+    },
+    "max_parent_calls": 298,
+    "old_claims_retried": false,
+    "parent_effort": "max",
+    "pid": 1155392,
+    "ready": {
+      "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/shared_repair_v1/READY.json",
+      "sha256": "55d586a02551b4809c75f37637b353cf24e9f09c602ee8340ef6db42c2312908"
+    },
+    "started_unix": 1789476297.518996,
+    "terminal_filename": "R118_SHARED_REPAIR_TERMINAL.json",
+    "tests": {
+      "path": "/localhome/local-rohing/orch_r118_f4_repair_claude_20260915_v1/CPU_TESTS.json",
+      "sha256": "f58186faeb2f46f5092b89b07b9b7f5226919e5b6cdfa5e37294c1318029b65e"
+    }
+  },
+  "local_CPU_tests": 91,
+  "native_CPU_tests": 86,
+  "no_old_claim_retries": true,
+  "original_request_deadline_utc": "2026-09-15T12:51:36.754875+00:00",
+  "other_brokers_unchanged": true,
+  "provider_cutoff_utc": "2026-09-15T12:51:06.754875+00:00",
+  "provider_test_calls": 0,
+  "schema": "ORCH_R118_F4_REPAIR_BROKER_LIVE_V1",
+  "source_change": "Exact terminal allowlist addition only; historical FAILED shared terminal retained.",
+  "status": {
+    "broker_alive": true,
+    "broker_pid": 1155392,
+    "id": "P0037",
+    "observed_utc": "2026-09-15T12:46:55.897440+00:00",
+    "status": "PENDING"
+  }
+}

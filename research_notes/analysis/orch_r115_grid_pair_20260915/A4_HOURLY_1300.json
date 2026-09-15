@@ -1,0 +1,390 @@
+{
+  "current_cycle": 7,
+  "cycle7_submission": {
+    "document": {
+      "branch_optimizer_steps": 0,
+      "optimizer_owner": "F1",
+      "packet": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/shared_cycles/0007/PACKET.json",
+        "sha256": "966574947350191cf4fd15765ad3eacea012d2c06186948fc24921453f583b7d"
+      },
+      "status": "SUBMITTED_WAITING_SHARED_GENERATION",
+      "submission": {
+        "generation": 0,
+        "path": "/localhome/local-rohing/orch_r116_shared_node5_20260915_attempt1/generation_000000/A4.json",
+        "sha256": "7b725bac727d9238b6a616e509d27e679cded37f2979a0cc2c223f8f161ea5cb"
+      }
+    },
+    "reference": {
+      "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/shared_cycles/0007/SUBMITTED.json",
+      "sha256": "c6b20b01e5c65c2e104c5e4ce99805e7e7cef2865d5e501b3d69e5c1b5ed0fe7"
+    }
+  },
+  "definitions": {
+    "adoption": "P0031+/N00457+",
+    "class_label": "literal parent metadata, not semantic reannotation",
+    "initial_shared_attempt": "P0031/N00457; P31 disposition reconstructed by Herschel after packaging crash",
+    "pending": "reserved parent with no native-consumed disposition; response completion alone does not count",
+    "recovery": "P0032+/N00458+; disjoint from initial attempt"
+  },
+  "initial_shared_attempt": {
+    "by_parent_declared_class": {
+      "feedback-grounded replanning": {
+        "COMPLETE": 1
+      }
+    },
+    "by_phase": {
+      "experience": {
+        "COMPLETE": 1
+      }
+    },
+    "by_tag": {
+      "SHIFT": {
+        "COMPLETE": 1
+      }
+    },
+    "child_tokens": {
+      "TRAIN": 264
+    },
+    "native_calls": {
+      "TRAIN_complete": 1
+    },
+    "native_consumed_statuses": {
+      "COMPLETE": 1,
+      "MISSING": 0,
+      "SILENT": 0,
+      "pending": 0
+    },
+    "parents": [
+      {
+        "class_label": "feedback-grounded replanning",
+        "cycle": 7,
+        "native_observed_unix": 1789475446.087176,
+        "native_status": "COMPLETE",
+        "number": 31,
+        "phase": "experience",
+        "provider_finished_unix": 1789475408.0957792,
+        "received": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parent_received/P0031.json",
+          "sha256": "9cfefb6c7b7d1a1363e13a827782685b12f566a3d8e028ca7248a9a37ce84379"
+        },
+        "received_metadata_keys": [
+          "observation_clock_basis",
+          "observed_unix",
+          "parent_redispatched",
+          "reconstructed_after_missing_reference_failure",
+          "recovered_unix",
+          "request",
+          "response"
+        ],
+        "response_status": "COMPLETE",
+        "tag": "SHIFT"
+      }
+    ]
+  },
+  "latest_charge": {
+    "attached_readout": false,
+    "cycle": 7,
+    "kind": "NATIVE",
+    "number": 495,
+    "purpose": "reflection",
+    "reserved_unix": 1789476600.9955175,
+    "split": "TRAIN",
+    "task_id": "R114_F4_TRAIN_15"
+  },
+  "observed_unix": 1789477247.262865,
+  "provider_calls_added": 0,
+  "ready": {
+    "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/shared_repair_v1/READY.json",
+    "sha256": "5716e34f1303a11052e37aec6bca6114ecb64fb2f0a771bf716c52a1b5f7b43e"
+  },
+  "root": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4",
+  "schema": "A4_SHARED_HOURLY_COMPACT_V1",
+  "shared_config": {
+    "path": "/localhome/local-rohing/orch_r116_shared_node5_20260915_attempt1/CONFIG.json",
+    "sha256": "e5ac72af0d88e4481174f853fbf3951294278b1c9f62c88080f7d4b816cceb51"
+  },
+  "since_adoption": {
+    "by_parent_declared_class": {
+      "UNCLASSIFIED_OR_NO_RESPONSE": {
+        "MISSING": 2
+      },
+      "evidence_sensitive_replanning": {
+        "COMPLETE": 1
+      },
+      "feedback-grounded replanning": {
+        "COMPLETE": 1
+      },
+      "grounded_presleep_reflection": {
+        "COMPLETE": 1
+      }
+    },
+    "by_phase": {
+      "experience": {
+        "COMPLETE": 1,
+        "MISSING": 1
+      },
+      "open_turn": {
+        "COMPLETE": 1,
+        "MISSING": 1
+      },
+      "presleep_metacognition": {
+        "COMPLETE": 1
+      }
+    },
+    "by_tag": {
+      "SHIFT": {
+        "COMPLETE": 3
+      },
+      "UNCLASSIFIED_OR_NO_RESPONSE": {
+        "MISSING": 2
+      }
+    },
+    "child_tokens": {
+      "TRAIN": 6026
+    },
+    "native_calls": {
+      "TRAIN_complete": 39
+    },
+    "native_consumed_statuses": {
+      "COMPLETE": 3,
+      "MISSING": 2,
+      "SILENT": 0,
+      "pending": 0
+    },
+    "parents": [
+      {
+        "class_label": "feedback-grounded replanning",
+        "cycle": 7,
+        "native_observed_unix": 1789475446.087176,
+        "native_status": "COMPLETE",
+        "number": 31,
+        "phase": "experience",
+        "provider_finished_unix": 1789475408.0957792,
+        "received": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parent_received/P0031.json",
+          "sha256": "9cfefb6c7b7d1a1363e13a827782685b12f566a3d8e028ca7248a9a37ce84379"
+        },
+        "received_metadata_keys": [
+          "observation_clock_basis",
+          "observed_unix",
+          "parent_redispatched",
+          "reconstructed_after_missing_reference_failure",
+          "recovered_unix",
+          "request",
+          "response"
+        ],
+        "response_status": "COMPLETE",
+        "tag": "SHIFT"
+      },
+      {
+        "class_label": "UNCLASSIFIED_OR_NO_RESPONSE",
+        "cycle": 7,
+        "native_observed_unix": 1789476135.6695037,
+        "native_status": "MISSING",
+        "number": 32,
+        "phase": "open_turn",
+        "provider_finished_unix": null,
+        "received": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parent_received/P0032.json",
+          "sha256": "cfe9ce1eb14248504b3275adcdaa8b787c381511fcdc9c8d9491b1e4b0d6ad8f"
+        },
+        "received_metadata_keys": [
+          "observed_unix",
+          "request",
+          "response"
+        ],
+        "response_status": null,
+        "tag": "UNCLASSIFIED_OR_NO_RESPONSE"
+      },
+      {
+        "class_label": "UNCLASSIFIED_OR_NO_RESPONSE",
+        "cycle": 7,
+        "native_observed_unix": 1789476268.4157157,
+        "native_status": "MISSING",
+        "number": 33,
+        "phase": "experience",
+        "provider_finished_unix": null,
+        "received": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parent_received/P0033.json",
+          "sha256": "16624c9cf525952d5ce9d6b4c24c38d526d0d114ac92886889e6c51ad6154365"
+        },
+        "received_metadata_keys": [
+          "observed_unix",
+          "request",
+          "response"
+        ],
+        "response_status": null,
+        "tag": "UNCLASSIFIED_OR_NO_RESPONSE"
+      },
+      {
+        "class_label": "evidence_sensitive_replanning",
+        "cycle": 7,
+        "native_observed_unix": 1789476472.143561,
+        "native_status": "COMPLETE",
+        "number": 34,
+        "phase": "open_turn",
+        "provider_finished_unix": 1789476436.764687,
+        "received": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parent_received/P0034.json",
+          "sha256": "d7cd5ed233a3ccdd979a3eef41ae4bda988d1db8b127863d8f909e61890e063e"
+        },
+        "received_metadata_keys": [
+          "observed_unix",
+          "request",
+          "response"
+        ],
+        "response_status": "COMPLETE",
+        "tag": "SHIFT"
+      },
+      {
+        "class_label": "grounded_presleep_reflection",
+        "cycle": 7,
+        "native_observed_unix": 1789476600.9885855,
+        "native_status": "COMPLETE",
+        "number": 35,
+        "phase": "presleep_metacognition",
+        "provider_finished_unix": 1789476566.5393076,
+        "received": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parent_received/P0035.json",
+          "sha256": "69bfaeaa1507db69bc20339f8b80c1e46372b8dbd333f52cff6fba0a3aec3d75"
+        },
+        "received_metadata_keys": [
+          "observed_unix",
+          "request",
+          "response"
+        ],
+        "response_status": "COMPLETE",
+        "tag": "SHIFT"
+      }
+    ]
+  },
+  "since_recovery": {
+    "by_parent_declared_class": {
+      "UNCLASSIFIED_OR_NO_RESPONSE": {
+        "MISSING": 2
+      },
+      "evidence_sensitive_replanning": {
+        "COMPLETE": 1
+      },
+      "grounded_presleep_reflection": {
+        "COMPLETE": 1
+      }
+    },
+    "by_phase": {
+      "experience": {
+        "MISSING": 1
+      },
+      "open_turn": {
+        "COMPLETE": 1,
+        "MISSING": 1
+      },
+      "presleep_metacognition": {
+        "COMPLETE": 1
+      }
+    },
+    "by_tag": {
+      "SHIFT": {
+        "COMPLETE": 2
+      },
+      "UNCLASSIFIED_OR_NO_RESPONSE": {
+        "MISSING": 2
+      }
+    },
+    "child_tokens": {
+      "TRAIN": 5762
+    },
+    "native_calls": {
+      "TRAIN_complete": 38
+    },
+    "native_consumed_statuses": {
+      "COMPLETE": 2,
+      "MISSING": 2,
+      "SILENT": 0,
+      "pending": 0
+    },
+    "parents": [
+      {
+        "class_label": "UNCLASSIFIED_OR_NO_RESPONSE",
+        "cycle": 7,
+        "native_observed_unix": 1789476135.6695037,
+        "native_status": "MISSING",
+        "number": 32,
+        "phase": "open_turn",
+        "provider_finished_unix": null,
+        "received": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parent_received/P0032.json",
+          "sha256": "cfe9ce1eb14248504b3275adcdaa8b787c381511fcdc9c8d9491b1e4b0d6ad8f"
+        },
+        "received_metadata_keys": [
+          "observed_unix",
+          "request",
+          "response"
+        ],
+        "response_status": null,
+        "tag": "UNCLASSIFIED_OR_NO_RESPONSE"
+      },
+      {
+        "class_label": "UNCLASSIFIED_OR_NO_RESPONSE",
+        "cycle": 7,
+        "native_observed_unix": 1789476268.4157157,
+        "native_status": "MISSING",
+        "number": 33,
+        "phase": "experience",
+        "provider_finished_unix": null,
+        "received": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parent_received/P0033.json",
+          "sha256": "16624c9cf525952d5ce9d6b4c24c38d526d0d114ac92886889e6c51ad6154365"
+        },
+        "received_metadata_keys": [
+          "observed_unix",
+          "request",
+          "response"
+        ],
+        "response_status": null,
+        "tag": "UNCLASSIFIED_OR_NO_RESPONSE"
+      },
+      {
+        "class_label": "evidence_sensitive_replanning",
+        "cycle": 7,
+        "native_observed_unix": 1789476472.143561,
+        "native_status": "COMPLETE",
+        "number": 34,
+        "phase": "open_turn",
+        "provider_finished_unix": 1789476436.764687,
+        "received": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parent_received/P0034.json",
+          "sha256": "d7cd5ed233a3ccdd979a3eef41ae4bda988d1db8b127863d8f909e61890e063e"
+        },
+        "received_metadata_keys": [
+          "observed_unix",
+          "request",
+          "response"
+        ],
+        "response_status": "COMPLETE",
+        "tag": "SHIFT"
+      },
+      {
+        "class_label": "grounded_presleep_reflection",
+        "cycle": 7,
+        "native_observed_unix": 1789476600.9885855,
+        "native_status": "COMPLETE",
+        "number": 35,
+        "phase": "presleep_metacognition",
+        "provider_finished_unix": 1789476566.5393076,
+        "received": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parent_received/P0035.json",
+          "sha256": "69bfaeaa1507db69bc20339f8b80c1e46372b8dbd333f52cff6fba0a3aec3d75"
+        },
+        "received_metadata_keys": [
+          "observed_unix",
+          "request",
+          "response"
+        ],
+        "response_status": "COMPLETE",
+        "tag": "SHIFT"
+      }
+    ]
+  },
+  "terminal_present": false
+}
