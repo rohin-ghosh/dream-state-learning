@@ -1,0 +1,17 @@
+{
+  "observed_utc": "2026-09-15T18:43:11Z",
+  "schema": "ORCHESTRATOR_GPU_WRAPPER_CENSUS_V1",
+  "columns": ["physical_index", "memory_used_mib", "instantaneous_utilization_percent"],
+  "nodes": {
+    "a100": [[0,15383,7],[1,15201,1],[2,16121,46],[3,16061,39],[4,16073,45],[5,15931,45],[6,18203,45],[7,15965,42]],
+    "a40r": [[0,19373,97],[1,25553,0],[2,19297,97],[3,21413,97],[4,15753,97],[5,15753,96],[6,16251,97],[7,26865,0]],
+    "ovx2": [[0,16072,85],[1,17642,98],[2,17950,98],[3,16684,86],[4,16660,86],[5,16084,0],[6,16364,89],[7,38622,0]],
+    "ovx3": [[0,15294,0],[1,1,0],[2,17238,83],[3,39706,86],[4,24114,100],[5,39642,100],[6,19546,86],[7,24368,100]],
+    "ovx": [[0,15789,89],[1,15823,87],[2,15871,89],[3,15941,89],[4,15771,84],[5,15797,85],[6,18325,97],[7,15841,91]]
+  },
+  "resident_threshold_mib_exclusive": 1024,
+  "resident_count": 39,
+  "positive_utilization_count": 34,
+  "saturated": false,
+  "note": "All previously empty old-fleet allocations are now resident. Node5 F2 is the single nonresident slot in this sample; transition versus failure requires its lifecycle receipt, not inference."
+}
