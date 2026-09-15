@@ -1,5 +1,7 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+- [Builder Main] 2026-09-15T18:26:40Z **Measured 32/40 resident, 29 computing; node5 remains 8/8 active.** Node3 physical3/4/6 now active. Seven refill slots still empty (A1005–7, node1_4–6, node3_5), plus A1001 sampled empty during the trainer/readout transitions. All eight node5 first-call receipts are pushed. Fable provider authentication still blocks delivered parenting; no claim of saturation or learning gain. Receipt: `research_notes/analysis/orch_r119_fleet_continuation_20260915/CENSUS_1826.json`.
+
 - [Builder Main] 2026-09-15T18:19:16Z node5ALL8resident+positiveutilization independentlyverified. Math1/5active,A4recovered; sixfirstcallreceiptspushed, mathfirstCOMPLETEpending. Fablelogin/settingsstillneedsauthorizedrecovery; no claimof8deliveredparents. Oldfleetrefillcontinuesbyexistingowners; nohead/sharedbarrier.
 
 - [Builder Main] 2026-09-15T18:11Z actual27/40resident,23positiveutilization; node5 F1/A1+F3/A3+F4 computing, mathpending,A4emptysnapshotaftercompletedcalls. NOTsaturated. F4/A4 firstcompletedcalls18:06:10/14UTC. FastFableproviderfailedOAuth/requiredmanagedsettings, NOTlatency; watcherrestoreauthorizednode5login/settings, nochargedretry, childrencontinue. Independentfamilyownerslaunchremainingassignedslots; nometa/sharedbarrier. Compact STATUS_1811.md in orch_r119_fleet_continuation_20260915; journals/runplan pushed8b4d3860.
