@@ -52,3 +52,22 @@ binds the43-line UPDATES prefix, actual process, PLAN and restored state.
 Those updates were not yet checkpointed at this observation; committed counters
 therefore correctly remained3555/N292/P66. Zero old inputs regenerated and zero
 new generation calls yet: partial-C13 sleep precedes its fresh DEV and C14.
+
+## Bounded phase snapshot — 2026-09-15T18:55:39.666479Z node clock
+
+- F2 current actor is R123 PID3673007, **not dead R121 attempt3 PID3403682**.
+  Partial-C13 sleep had187 complete updates; last update file mtime18:55:34.691368.
+  No new checkpoint/DEV yet. Durable counters remain3555steps/N292/P66 until save.
+  Allocator OOM warnings appeared, but subsequent update rows establish progress;
+  no terminal failure was present. No new child generation yet.
+- A2 R121 PID3403683 is in **C10 sleep**,80 completed updates,
+  last update mtime18:55:38.977409. This is not a parent-queue wait.
+  Last child response: C10 CALL194 reflection,377tokens, COMPLETE18:54:23.947637.
+  Durable counters3837steps/N194/P44. Last saved C9 at18:52:59.448572:
+  CHECKPOINT SHA `2ad6f934d73a739c08c132a13b8851f2233991472aa18a14165df49274ec7268`,
+  optimizer/RNG SHA `b88feeaea1eee19a9c47fc177dc72f32e9fb49b91f45df437e5aa13a5faac321`.
+  C9 fresh DEV remained FAILED_NO_RETRY at18:53:38.415297 from the existing
+  overlapping-model memory problem. No successful DEV claim or live A2 change.
+
+Snapshot timestamp is the native clock above; the incoming message labelled18:59
+does not change the evidence timestamp. Read-only check, no signals/inference/retries.

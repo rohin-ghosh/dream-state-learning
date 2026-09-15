@@ -515,3 +515,120 @@ PREDECESSORS.json binds all three actual exited identities and zero dispatch.
 Same roots' quotas/context/nextC27/lease/frozenweights, new execution namespace;
 no oldcalls retried. a40r6 v1 guard1133664 started18:20:20.625Z, own8native
 CPUtests PASS before guard. Neither guard-start nor model-load is output evidence.
+
+### 18:26 UTC — [Builder] exact existing kernel proof for remaining two slots
+
+ovx2_4 native2485856 andovx2_6 native2487674 reached ACTOR_READY with samegen1
+adapter tensorab3755; ovx2_3 already completing native work. ovx2_5 anda40r6
+v2 exhausted bounded fresh scans on transient process/argv identity drift only,
+zero LAUNCH/NATIVE_ONCE/cells; all scans/logs/actualexited identities preserved.
+New own orch_r119_code_old_admission reuses exact existing Math bind_scan AST,
+pidfd two-kernel-exit proof and >=3stable-executable/non-target-FD/CVD argv
+observations. Original raw reports and individual reconciliation proofs retained;
+unknown/actualGPU blockers remain blocking. No GPU-source, decoder, quota,
+ancestor/cursor or liveactor change.13local/13ovx2native/13a40rnative PASS.
+Only oldforkv3 ovx2_5/a40r6 guards authorized after this preGPU receipt;
+alreadyliveovx2_3/4/6 andnode5F3/A3 untouched. Exact zero-model prior failures
+bound in each v3 PREDECESSORS.json before new single guarded execution.
+
+### 18:31 UTC — [Builder] fast independent parent custody, CPU-only
+
+All five oldfleet natives loaded and first TRAIN responses actually COMPLETE;
+compact R119_OLD_{ovx2,a40r}_LIVE_1828.json records identities,callhashes,
+timestamps,counters and node-local roots. No optimizer or sharedbarrier.
+Per-episode nonblockingqueues are live; no oldfork parentdelivery claim yet.
+New own orch_r119_code_old_parent CPUtransport binds actual PLAN/cohort/lifeID,
+remaining372parent claims (500absolute minus128inherited), actual pernode lease,
+Fablelow512, existing globalCLIlock/memoryfloor/no-retry and fixedv4 fields.
+Turn-accounting parser records native num_turns rather than equating one
+providerattempt to one main/utility turn. No opaque model substitution.
+
+A3 interim broker3324454 exited naturally at provider-boundary after truthful
+cancelled-before-dispatch record on unused sharedservice2; no signal/hotpatch
+to healthy independentnative. Actual63/63claims PUBLISHED, RUNNER.lock absent;
+oldledgerCONFIG0bec5d unchanged. New independent low-effort Astra512 transport
+uses same HTTP4slots/20sreserve/memoryfloor; one provider only for experience
+phase, auxiliary requests operationalMISSING without APIcall. Preserve charges;
+never retry or rewrite original queue/claim/providerartifacts. Low is requested,
+not claimed minimum-supported until actual provider acceptance is observed.
+
+14local+14actualfrozen CPUtests PASS. Preparation1830 failed before anycalls:
+historical1543provider transport lacked loweffortconfigkey. Preserved;1832
+uses Main's existing low-capable transport bytes, fixedprompt unchanged,
+own wrappers/parser source frozen separately. Directories /tmp/orch_r119_code_fast_parents_1832
+and native originalqueues; only bounded transient packet onVM, rawarchives
+stay nodes. Source/tests/compact publication goes to Main, no Gitmutation.
+
+### 18:33 UTC — Actual five-slot completion handoff and publication freeze
+
+Actual oldfleet first TRAIN input/COMPLETE (UTC, Sep15):
+ovx2_3 native2472507 18:19:20.262686 /18:19:34.036834,317tokens;
+ovx2_4 native2485856 18:21:57.464474 /18:22:12.042449,317tokens;
+ovx2_5 native2511930 18:27:02.968899 /18:27:16.449854,317tokens;
+ovx2_6 native2487674 18:22:28.509157 /18:22:41.839859,317tokens;
+a40r6 native1187943 18:27:05.938623 /18:27:15.054719,269tokens.
+Allfive remain live; snapshots18:33:31–32 show TRAINcompleted57/44/28/44/28,
+one currently STARTED each, cyclescomplete5/4/2/4/2 (same order). These are
+actual observations, not qualified/semantic learning counts. Native original
+v1/v2/v3 source versions are explicit in each root; all previous rejected
+scans and zero-model attempts preserved. No repeat of charged native inputs.
+
+Fast CPUbrokers actual launched18:32:01Z: ovx2_3/4/5/6 PIDs3514084/5/6/7,
+a40r6 PID3514088, independentA3 PID3514089. Allsix alive18:33:31Z;
+queued/published does NOT imply delivered COMPLETE. FastA3 at18:33:33Z had
+two auxiliary MISSING/no-provider receipts and no newlyverifiedfastCOMPLETE
+yet; native ownwork proceeds. Oldfive queues have responses but contents/
+functional benefit not yet audited. F3fastFable remains Hubble-owned.
+Original active node5 caps100cycles/8192native/1000parent remain unchanged;
+prospective lease-long quota/cohort continuation is next work, not silently
+extended here. No new morningFINALtimer claim; prior06:00boundary trigger
+limitation still applies. Source/test freeze37PASS0.83s. Compact custody and
+oldfleet snapshots are ready; exact readyallowlist in R119_STAGE_READY_1835.json.
+
+### R124 prospective lease-capacity design — CPU only, September 15
+
+Latest user includes Main's r123 a40r4/5 alongside own a40r6/ovx2_3–6.
+All seven actual PLAN hashes bound in R124_CAPACITY_PROPOSAL_1852.json;
+all seven actors live at the included18:45 delivery census. Published versus
+consumed remains separate: ovx2_3/4/5/6 consumed COMPLETE4/5/0/2; a40r4/5/6
+2/0/4, seventeen verified injections total. Own ovx2_5/6 CPUbrokers exited
+queue_filename before next claim; historical logs preserved, no retry performed.
+Other actors/brokers continue; this receipt does not claim repaired delivery.
+
+New disjoint gpu/orch_r124_code_capacity.py and focusedtests define a proposal,
+NOT an armed runtime. Fresh C101+ deterministic CODE variants use original
+bounded interpreter, task-appropriate prompts, two TRAIN episodes and four
+parent-free held tasks/cycle. Each immutable64cycle chunk has128TRAIN/256HELD
+tasks,960native/128episode-parent slots. ChunkIDs, ordered content and registry
+hashes bind before dispatch; old planned IDs/prompts/questions cannot be reused.
+Variants are not a new-skill/broad-benchmark independence claim. All known
+exclusion manifests still must bind before native activation; no held outcomes
+or raw registries exported to VM/parent.
+
+Proposed finite lifetime capacity: at most64chunks (4096additional cycles,
+C101..4196),61440additional native/8192additional parent calls PER branch,
+always bounded by the existing actual lease minus6h, TRAIN120s earlier.
+These are proposed new increments, never edits/resets to1500/500 historical
+caps. Actual ancestry+all predecessor charges carry forward, including failures;
+new absolute caps are actual boundary usage plus explicit increments.
+Late pending parents retain original IDs/queue references/TTL; no API reissue.
+Frozen BASE(a40r) or gen1read-onlyLoRA(ovx2),optimizer0,nonblockingepisode600TTL
+remain unchanged. Capacity cannot auto-increase beyond the proposed ceiling.
+
+Important lifecycle constraint: current immutable loops have NO cooperative
+release/reload hook. First safe existing transition is natural C100 COMPLETE,
+with settled native slots, exact saved C100 TRAIN context, AFTER hashes and
+actor+guard exits. No arbitrary partial-cycle cutoff, source hotpatch or signal.
+Prearmed CPU custody can preserve ownership and avoid manual admission idle;
+a fresh exact scan and read-only model reload still take nonzero time. Do not
+claim literal gap-free residency. Future successor should roll chunks inside
+its resident loop; current actors remain completely untouched.
+
+17focused/54combined tests PASS2.81s: all seven allocations, exact oldcap/wall
+preservation, deterministic disjoint content, existing bounded code validator,
+pending-reference carry, rejection of partial/failed/fabricated boundary.
+Remaining activation work is explicit in proposal: successor integration,
+native CPU provenance, prearmed custody and broker/cohort bindings. No GPU,
+provider call, quota change or actor stop performed for this CPU design.
+Main owns Git; ready publication scope only new capacity source/test, this
+journal and compact proposal/allowlist. Existing r123/old frozen files untouched.
