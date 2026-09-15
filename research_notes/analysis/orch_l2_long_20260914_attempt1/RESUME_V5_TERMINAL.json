@@ -1,0 +1,41 @@
+{
+  "assigned_gpu_hours": 0.06033870213561588,
+  "elapsed_seconds": 0.6096231937408447,
+  "error": {
+    "message": "native_long_stage_failed:experience",
+    "type": "RuntimeError"
+  },
+  "finished_unix": 1789431896.815867,
+  "stages": [
+    {
+      "command": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-m",
+        "gpu.orch_l2_shared_run",
+        "--root",
+        "/tmp/orch_l2_shared_20260914_attempt1",
+        "--arm",
+        "LONG",
+        "--cycle",
+        "1",
+        "--phase",
+        "experience",
+        "--resume-experience"
+      ],
+      "cycle": 1,
+      "elapsed_seconds": 0.36620140075683594,
+      "exit_code": 1,
+      "gpu_uuid": "GPU-604c4ea8-8c29-099e-76ed-571ec7d9be4b",
+      "phase": "experience",
+      "process": {
+        "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+        "pgid": 209663,
+        "pid": 209663,
+        "start_ticks": "15304964"
+      },
+      "started_unix": 1789431896.448747
+    }
+  ],
+  "status": "FAILED",
+  "unknown_process_signals": 0
+}
