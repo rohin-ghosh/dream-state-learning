@@ -1,0 +1,4305 @@
+{
+  "analysis": {
+    "causal_claim": false,
+    "comparisons": {
+      "GUIDED_C2_minus_SEED": {
+        "left": "GUIDED_C2",
+        "metrics": {
+          "accepted_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.09375,
+              0.5
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.28125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.11151186409227197,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "action_calls": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.09375,
+              0.59375
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.3125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.13597640726733934,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "any_read_before_first_route": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "correct": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.1875
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.0625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0625,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "environment_feedback_reaction": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "generated_text_tokens": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "generated_tokens_including_eos": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.96875,
+              6.34375
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 3.34375,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 1.4646663086974225,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "missing_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "prompt_tokens": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              51.125,
+              287.32031249999994
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 158.15625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 64.67632099459456,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "read_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.09375,
+              0.5
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.28125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.11151186409227197,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "reads_before_first_route": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.09375,
+              0.5
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.28125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.11151186409227197,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "rejected_action_calls": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.1875,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": -0.0625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0625,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "repeated_read_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "route_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.09375
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.03125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.03125,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "supplied_evidence_content_use": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "supplied_memory_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.09375,
+              0.5
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.28125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.11151186409227197,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "task_completed": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.1875
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.0625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0625,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "terminal_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.09375,
+              0.59375
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.3125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.13597640726733934,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "truncated_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "unavailable_memory_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          }
+        },
+        "right": "SEED"
+      },
+      "GUIDED_C2_minus_UNPARENTED_C2": {
+        "left": "GUIDED_C2",
+        "metrics": {
+          "accepted_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.09375,
+              0.4375
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.25,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.09128709291752768,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "action_calls": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.09375,
+              0.4375
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.25,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.09128709291752768,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "any_read_before_first_route": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "correct": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.25
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.09375,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.06798820363366967,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "environment_feedback_reaction": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "generated_text_tokens": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "generated_tokens_including_eos": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.96875,
+              4.78125
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 2.71875,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 1.011361242336288,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "missing_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "prompt_tokens": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              49.30859375,
+              225.48046874999994
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 131.28125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 46.70351897765128,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "read_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.09375,
+              0.4375
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.25,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.09128709291752768,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "reads_before_first_route": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.09375,
+              0.5
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.28125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.11151186409227197,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "rejected_action_calls": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.1875,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": -0.0625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0625,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "repeated_read_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "route_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "supplied_evidence_content_use": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "supplied_memory_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.09375,
+              0.4375
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.25,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.09128709291752768,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "task_completed": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.1875
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.0625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0625,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "terminal_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.09375,
+              0.4375
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.25,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.09128709291752768,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "truncated_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "unavailable_memory_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          }
+        },
+        "right": "UNPARENTED_C2"
+      },
+      "GUIDED_C4_minus_SEED": {
+        "left": "GUIDED_C4",
+        "metrics": {
+          "accepted_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.375,
+              0.9375
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.65625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.14943469867024414,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "action_calls": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.4375,
+              1.15625
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.78125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.19879192429942083,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "any_read_before_first_route": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "correct": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.03125,
+              0.3125
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.08539125638299665,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "environment_feedback_reaction": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "generated_text_tokens": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "generated_tokens_including_eos": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              4.78125,
+              12.875
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 8.625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 2.2241571437288328,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "missing_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "prompt_tokens": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              226.03828125,
+              559.3140624999999
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 386.03125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 92.07671698043883,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "read_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.375,
+              0.9375
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.65625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.14943469867024414,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "reads_before_first_route": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.40625,
+              1.125
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.75,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.18819316317727025,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "rejected_action_calls": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.3125,
+              -0.03125
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": -0.15625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.07525996611745185,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "repeated_read_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "route_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.03125,
+              0.25
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.05590169943749474,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "supplied_evidence_content_use": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "supplied_memory_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.375,
+              0.9375
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.65625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.14943469867024414,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "task_completed": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.03125,
+              0.3125
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.15625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.07525996611745185,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "terminal_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.4375,
+              1.15625
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.78125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.19879192429942083,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "truncated_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "unavailable_memory_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          }
+        },
+        "right": "SEED"
+      },
+      "GUIDED_C4_minus_UNPARENTED_C4": {
+        "left": "GUIDED_C4",
+        "metrics": {
+          "accepted_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.125,
+              0.6875
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.375,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.1479019945774904,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "action_calls": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.125,
+              0.84375
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.4375,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.1875,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "any_read_before_first_route": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "correct": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.0625,
+              0.125
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.03125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.055316325197298975,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "environment_feedback_reaction": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "generated_text_tokens": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "generated_tokens_including_eos": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              1.40625,
+              9.59375
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 4.9375,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 2.1495517943670643,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "missing_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "prompt_tokens": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              69.71640625,
+              416.62734374999997
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 221.125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 90.03607494591635,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "read_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.125,
+              0.6875
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.375,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.1479019945774904,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "reads_before_first_route": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.125,
+              0.6875
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.375,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.1479019945774904,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "rejected_action_calls": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.15625,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": -0.0625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.042695628191498324,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "repeated_read_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "route_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.15625
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.0625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.042695628191498324,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "supplied_evidence_content_use": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "supplied_memory_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.125,
+              0.6875
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.375,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.1479019945774904,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "task_completed": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.15625
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.0625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.042695628191498324,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "terminal_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.125,
+              0.84375
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.4375,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.1875,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "truncated_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "unavailable_memory_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          }
+        },
+        "right": "UNPARENTED_C4"
+      },
+      "GUIDED_C6_minus_SEED": {
+        "left": "GUIDED_C6",
+        "metrics": {
+          "accepted_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.25,
+              0.65625
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.28125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.2413881297136764,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "action_calls": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.40703124999999996,
+              0.78125
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.28125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.31612481053111496,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "any_read_before_first_route": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 1,
+            "mean_difference": 0,
+            "paired_worlds": 15,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "correct": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.15625,
+              0.21875
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.03125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.09648780147424509,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "environment_feedback_reaction": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "generated_text_tokens": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "generated_tokens_including_eos": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              2.75,
+              8.594531249999996
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 5.625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 1.5695673501531135,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "missing_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "prompt_tokens": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -158.4203125,
+              391.196875
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 163.4375,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 144.65764810838726,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "read_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.0625,
+              0.65625
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.34375,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.1866299256996762,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "reads_before_first_route": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.3,
+              0.7
+            ],
+            "excluded_worlds": 1,
+            "mean_difference": 0.5,
+            "paired_worlds": 15,
+            "seed": 0,
+            "standard_error": 0.10910894511799618,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "rejected_action_calls": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.21875,
+              0.15625
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": -0.03125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.09648780147424509,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "repeated_read_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "route_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.34375,
+              0.125
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": -0.0625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.13597640726733934,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "supplied_evidence_content_use": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "supplied_memory_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.25,
+              0.65625
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.28125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.2413881297136764,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "task_completed": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.15625,
+              0.21875
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.03125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.09648780147424509,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "terminal_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.40703124999999996,
+              0.78125
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.28125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.31612481053111496,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "truncated_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "unavailable_memory_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          }
+        },
+        "right": "SEED"
+      },
+      "GUIDED_C6_minus_UNPARENTED_C6": {
+        "left": "GUIDED_C6",
+        "metrics": {
+          "accepted_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.09375,
+              1.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.5,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.29226129861250305,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "action_calls": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.25,
+              1.125
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.5,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.3679900360969936,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "any_read_before_first_route": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 1,
+            "mean_difference": 0,
+            "paired_worlds": 15,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "correct": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.125,
+              0.1875
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.03125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.08500919067959652,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "environment_feedback_reaction": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "generated_text_tokens": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "generated_tokens_including_eos": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              3.8125,
+              12.782031249999996
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 8.03125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 2.449263813713555,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "missing_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "prompt_tokens": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -70.503125,
+              578.0828124999997
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 277.8125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 173.96106410032294,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "read_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.09375,
+              1.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.5625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.24526771087935728,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "reads_before_first_route": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.4,
+              0.9333333333333333
+            ],
+            "excluded_worlds": 1,
+            "mean_difference": 0.6333333333333333,
+            "paired_worlds": 15,
+            "seed": 0,
+            "standard_error": 0.1419814430083388,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "rejected_action_calls": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.09375,
+              0.1875
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.03125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.07171631032524377,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "repeated_read_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "route_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.34375,
+              0.125
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": -0.0625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.13597640726733934,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "supplied_evidence_content_use": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "supplied_memory_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.09375,
+              1.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.5,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.29226129861250305,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "task_completed": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.1875,
+              0.09375
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": -0.03125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.07171631032524377,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "terminal_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.25,
+              1.125
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.5,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.3679900360969936,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "truncated_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "unavailable_memory_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          }
+        },
+        "right": "UNPARENTED_C6"
+      },
+      "UNPARENTED_C2_minus_SEED": {
+        "left": "UNPARENTED_C2",
+        "metrics": {
+          "accepted_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.09375
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.03125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.03125,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "action_calls": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.1875
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.0625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0625,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "any_read_before_first_route": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "correct": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.09375,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": -0.03125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.03125,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "environment_feedback_reaction": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "generated_text_tokens": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "generated_tokens_including_eos": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              1.875
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.625,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "missing_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "prompt_tokens": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.5625,
+              81.1875
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 26.875,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 27.075646345009016,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "read_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.09375
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.03125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.03125,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "reads_before_first_route": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "rejected_action_calls": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "repeated_read_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "route_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.09375
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.03125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.03125,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "supplied_evidence_content_use": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "supplied_memory_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.09375
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.03125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.03125,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "task_completed": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "terminal_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.1875
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.0625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0625,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "truncated_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "unavailable_memory_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          }
+        },
+        "right": "SEED"
+      },
+      "UNPARENTED_C4_minus_SEED": {
+        "left": "UNPARENTED_C4",
+        "metrics": {
+          "accepted_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0625,
+              0.53125
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.28125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.12049161450767712,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "action_calls": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0625,
+              0.65625
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.34375,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.15625,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "any_read_before_first_route": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "correct": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.25
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.09375,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.06798820363366967,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "environment_feedback_reaction": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "generated_text_tokens": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "generated_tokens_including_eos": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.6875,
+              7.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 3.6875,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 1.6594897559189692,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "missing_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "prompt_tokens": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              34.125,
+              310.5695312499998
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 164.90625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 72.34371400287081,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "read_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0625,
+              0.53125
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.28125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.12049161450767712,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "reads_before_first_route": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0625,
+              0.75
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.375,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.1796988221070652,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "rejected_action_calls": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.25,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": -0.09375,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.06798820363366967,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "repeated_read_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "route_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.15625
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.0625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.042695628191498324,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "supplied_evidence_content_use": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "supplied_memory_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0625,
+              0.53125
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.28125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.12049161450767712,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "task_completed": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.25
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.09375,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.06798820363366967,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "terminal_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0625,
+              0.65625
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.34375,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.15625,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "truncated_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "unavailable_memory_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          }
+        },
+        "right": "SEED"
+      },
+      "UNPARENTED_C6_minus_SEED": {
+        "left": "UNPARENTED_C6",
+        "metrics": {
+          "accepted_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.5,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": -0.21875,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.13669270585270207,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "action_calls": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.5625,
+              0.0625
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": -0.21875,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.16437222747978647,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "any_read_before_first_route": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "correct": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.125,
+              0.125
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.06454972243679029,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "environment_feedback_reaction": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "generated_text_tokens": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "generated_tokens_including_eos": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -6.0953125,
+              0.71875
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": -2.40625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 1.8485460221031376,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "missing_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "prompt_tokens": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -276.88515625,
+              24.40625
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": -114.375,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 81.65773973318962,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "read_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.5,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": -0.21875,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.13669270585270207,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "reads_before_first_route": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.34375,
+              0.03125
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": -0.125,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.10704360482220941,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "rejected_action_calls": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.21875,
+              0.0625
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": -0.0625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.07739239842086129,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "repeated_read_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "route_attempts": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.09375,
+              0.09375
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.04564354645876384,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "supplied_evidence_content_use": {
+            "bootstrap_samples": 2000,
+            "ci95": null,
+            "excluded_worlds": 16,
+            "mean_difference": null,
+            "paired_worlds": 0,
+            "seed": 0,
+            "standard_error": null,
+            "uncertainty_status": "INSUFFICIENT_PAIRED_WORLDS",
+            "uncertainty_unit": "world"
+          },
+          "supplied_memory_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.5,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": -0.21875,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.13669270585270207,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "task_completed": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.0625,
+              0.21875
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0.0625,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.07739239842086129,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "terminal_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              -0.5625,
+              0.0625
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": -0.21875,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.16437222747978647,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "truncated_responses": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          },
+          "unavailable_memory_reads": {
+            "bootstrap_samples": 2000,
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "excluded_worlds": 0,
+            "mean_difference": 0,
+            "paired_worlds": 16,
+            "seed": 0,
+            "standard_error": 0.0,
+            "uncertainty_status": "DESCRIPTIVE_PAIRED_WORLD_PERCENTILE_BOOTSTRAP",
+            "uncertainty_unit": "world"
+          }
+        },
+        "right": "SEED"
+      }
+    },
+    "conditions": {
+      "GUIDED_C2": {
+        "call_coverage": {
+          "action_error": {
+            "missing": 0,
+            "observed": 177,
+            "total": 177
+          },
+          "generated_text_tokens": {
+            "missing": 177,
+            "observed": 0,
+            "total": 177
+          },
+          "generated_tokens_including_eos": {
+            "missing": 0,
+            "observed": 177,
+            "total": 177
+          },
+          "prompt_tokens": {
+            "missing": 0,
+            "observed": 177,
+            "total": 177
+          },
+          "terminal": {
+            "missing": 0,
+            "observed": 177,
+            "total": 177
+          },
+          "truncated": {
+            "missing": 0,
+            "observed": 177,
+            "total": 177
+          }
+        },
+        "checkpoint": {
+          "checkpoint_state_sha256": "a64a273b9b9f1fa2714fcd4cad39ca8a410b1abe48ef811a2bee2ac0987b7dd7",
+          "cycle": 2,
+          "updates": 104
+        },
+        "episodes": 32,
+        "metrics": {
+          "accepted_reads": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 3.625,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "action_calls": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 5.53125,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "any_read_before_first_route": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 1,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "correct": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0.875,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "SECONDARY",
+            "status": "OBSERVED"
+          },
+          "environment_feedback_reaction": {
+            "complete_worlds": 0,
+            "excluded_worlds": 16,
+            "mean": null,
+            "missing_episodes": 32,
+            "observed_episodes": 0,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "UNKNOWN"
+          },
+          "generated_text_tokens": {
+            "complete_worlds": 0,
+            "excluded_worlds": 16,
+            "mean": null,
+            "missing_episodes": 32,
+            "observed_episodes": 0,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "UNAVAILABLE"
+          },
+          "generated_tokens_including_eos": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 61.75,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "missing_responses": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "prompt_tokens": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 2098.625,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "read_attempts": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 3.625,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "reads_before_first_route": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 3.53125,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "rejected_action_calls": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0.125,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "repeated_read_attempts": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "route_attempts": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 1.90625,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "supplied_evidence_content_use": {
+            "complete_worlds": 0,
+            "excluded_worlds": 16,
+            "mean": null,
+            "missing_episodes": 32,
+            "observed_episodes": 0,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "UNKNOWN"
+          },
+          "supplied_memory_reads": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 3.625,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "task_completed": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0.875,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "SECONDARY",
+            "status": "OBSERVED"
+          },
+          "terminal_responses": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 5.53125,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "truncated_responses": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "unavailable_memory_reads": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          }
+        },
+        "terminal_reasons": {
+          "capture_error": 4,
+          "reached_goal": 28
+        },
+        "worlds": 16
+      },
+      "GUIDED_C4": {
+        "call_coverage": {
+          "action_error": {
+            "missing": 0,
+            "observed": 192,
+            "total": 192
+          },
+          "generated_text_tokens": {
+            "missing": 192,
+            "observed": 0,
+            "total": 192
+          },
+          "generated_tokens_including_eos": {
+            "missing": 0,
+            "observed": 192,
+            "total": 192
+          },
+          "prompt_tokens": {
+            "missing": 0,
+            "observed": 192,
+            "total": 192
+          },
+          "terminal": {
+            "missing": 0,
+            "observed": 192,
+            "total": 192
+          },
+          "truncated": {
+            "missing": 0,
+            "observed": 192,
+            "total": 192
+          }
+        },
+        "checkpoint": {
+          "checkpoint_state_sha256": "ca93baa38bd4282155f352896933594618681cc7dacfcf07f11e9909b091d19b",
+          "cycle": 4,
+          "updates": 320
+        },
+        "episodes": 32,
+        "metrics": {
+          "accepted_reads": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 4,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "action_calls": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 6,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "any_read_before_first_route": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 1,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "correct": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0.9375,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "SECONDARY",
+            "status": "OBSERVED"
+          },
+          "environment_feedback_reaction": {
+            "complete_worlds": 0,
+            "excluded_worlds": 16,
+            "mean": null,
+            "missing_episodes": 32,
+            "observed_episodes": 0,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "UNKNOWN"
+          },
+          "generated_text_tokens": {
+            "complete_worlds": 0,
+            "excluded_worlds": 16,
+            "mean": null,
+            "missing_episodes": 32,
+            "observed_episodes": 0,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "UNAVAILABLE"
+          },
+          "generated_tokens_including_eos": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 67.03125,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "missing_responses": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "prompt_tokens": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 2326.5,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "read_attempts": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 4,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "reads_before_first_route": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 4,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "rejected_action_calls": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0.03125,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "repeated_read_attempts": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "route_attempts": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 2,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "supplied_evidence_content_use": {
+            "complete_worlds": 0,
+            "excluded_worlds": 16,
+            "mean": null,
+            "missing_episodes": 32,
+            "observed_episodes": 0,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "UNKNOWN"
+          },
+          "supplied_memory_reads": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 4,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "task_completed": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0.96875,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "SECONDARY",
+            "status": "OBSERVED"
+          },
+          "terminal_responses": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 6,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "truncated_responses": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "unavailable_memory_reads": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          }
+        },
+        "terminal_reasons": {
+          "capture_error": 1,
+          "dead_end": 1,
+          "reached_goal": 30
+        },
+        "worlds": 16
+      },
+      "GUIDED_C6": {
+        "call_coverage": {
+          "action_error": {
+            "missing": 0,
+            "observed": 176,
+            "total": 176
+          },
+          "generated_text_tokens": {
+            "missing": 176,
+            "observed": 0,
+            "total": 176
+          },
+          "generated_tokens_including_eos": {
+            "missing": 0,
+            "observed": 176,
+            "total": 176
+          },
+          "prompt_tokens": {
+            "missing": 0,
+            "observed": 176,
+            "total": 176
+          },
+          "terminal": {
+            "missing": 0,
+            "observed": 176,
+            "total": 176
+          },
+          "truncated": {
+            "missing": 0,
+            "observed": 176,
+            "total": 176
+          }
+        },
+        "checkpoint": {
+          "checkpoint_state_sha256": "c25b92bb1a94e3ce02cb683cd71b7b66dfb3e0a1383526dac8c51195567db12a",
+          "cycle": 6,
+          "updates": 424
+        },
+        "episodes": 32,
+        "metrics": {
+          "accepted_reads": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 3.625,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "action_calls": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 5.5,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "any_read_before_first_route": {
+            "complete_worlds": 15,
+            "excluded_worlds": 1,
+            "mean": 1,
+            "missing_episodes": 2,
+            "observed_episodes": 30,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "correct": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0.84375,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "SECONDARY",
+            "status": "OBSERVED"
+          },
+          "environment_feedback_reaction": {
+            "complete_worlds": 0,
+            "excluded_worlds": 16,
+            "mean": null,
+            "missing_episodes": 32,
+            "observed_episodes": 0,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "UNKNOWN"
+          },
+          "generated_text_tokens": {
+            "complete_worlds": 0,
+            "excluded_worlds": 16,
+            "mean": null,
+            "missing_episodes": 32,
+            "observed_episodes": 0,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "UNAVAILABLE"
+          },
+          "generated_tokens_including_eos": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 64.03125,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "missing_responses": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "prompt_tokens": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 2103.90625,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "read_attempts": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 3.6875,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "reads_before_first_route": {
+            "complete_worlds": 15,
+            "excluded_worlds": 1,
+            "mean": 3.7,
+            "missing_episodes": 2,
+            "observed_episodes": 30,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "rejected_action_calls": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0.15625,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "repeated_read_attempts": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "route_attempts": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 1.8125,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "supplied_evidence_content_use": {
+            "complete_worlds": 0,
+            "excluded_worlds": 16,
+            "mean": null,
+            "missing_episodes": 32,
+            "observed_episodes": 0,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "UNKNOWN"
+          },
+          "supplied_memory_reads": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 3.625,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "task_completed": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0.84375,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "SECONDARY",
+            "status": "OBSERVED"
+          },
+          "terminal_responses": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 5.5,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "truncated_responses": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "unavailable_memory_reads": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          }
+        },
+        "terminal_reasons": {
+          "capture_error": 5,
+          "reached_goal": 27
+        },
+        "worlds": 16
+      },
+      "SEED": {
+        "call_coverage": {
+          "action_error": {
+            "missing": 0,
+            "observed": 167,
+            "total": 167
+          },
+          "generated_text_tokens": {
+            "missing": 167,
+            "observed": 0,
+            "total": 167
+          },
+          "generated_tokens_including_eos": {
+            "missing": 0,
+            "observed": 167,
+            "total": 167
+          },
+          "prompt_tokens": {
+            "missing": 0,
+            "observed": 167,
+            "total": 167
+          },
+          "terminal": {
+            "missing": 0,
+            "observed": 167,
+            "total": 167
+          },
+          "truncated": {
+            "missing": 0,
+            "observed": 167,
+            "total": 167
+          }
+        },
+        "checkpoint": {
+          "checkpoint_state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f",
+          "cycle": 0,
+          "updates": 0
+        },
+        "episodes": 32,
+        "metrics": {
+          "accepted_reads": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 3.34375,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "action_calls": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 5.21875,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "any_read_before_first_route": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 1,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "correct": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0.8125,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "SECONDARY",
+            "status": "OBSERVED"
+          },
+          "environment_feedback_reaction": {
+            "complete_worlds": 0,
+            "excluded_worlds": 16,
+            "mean": null,
+            "missing_episodes": 32,
+            "observed_episodes": 0,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "UNKNOWN"
+          },
+          "generated_text_tokens": {
+            "complete_worlds": 0,
+            "excluded_worlds": 16,
+            "mean": null,
+            "missing_episodes": 32,
+            "observed_episodes": 0,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "UNAVAILABLE"
+          },
+          "generated_tokens_including_eos": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 58.40625,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "missing_responses": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "prompt_tokens": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 1940.46875,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "read_attempts": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 3.34375,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "reads_before_first_route": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 3.25,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "rejected_action_calls": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0.1875,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "repeated_read_attempts": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "route_attempts": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 1.875,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "supplied_evidence_content_use": {
+            "complete_worlds": 0,
+            "excluded_worlds": 16,
+            "mean": null,
+            "missing_episodes": 32,
+            "observed_episodes": 0,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "UNKNOWN"
+          },
+          "supplied_memory_reads": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 3.34375,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "task_completed": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0.8125,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "SECONDARY",
+            "status": "OBSERVED"
+          },
+          "terminal_responses": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 5.21875,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "truncated_responses": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "unavailable_memory_reads": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          }
+        },
+        "terminal_reasons": {
+          "capture_error": 6,
+          "reached_goal": 26
+        },
+        "worlds": 16
+      },
+      "UNPARENTED_C2": {
+        "call_coverage": {
+          "action_error": {
+            "missing": 0,
+            "observed": 169,
+            "total": 169
+          },
+          "generated_text_tokens": {
+            "missing": 169,
+            "observed": 0,
+            "total": 169
+          },
+          "generated_tokens_including_eos": {
+            "missing": 0,
+            "observed": 169,
+            "total": 169
+          },
+          "prompt_tokens": {
+            "missing": 0,
+            "observed": 169,
+            "total": 169
+          },
+          "terminal": {
+            "missing": 0,
+            "observed": 169,
+            "total": 169
+          },
+          "truncated": {
+            "missing": 0,
+            "observed": 169,
+            "total": 169
+          }
+        },
+        "checkpoint": {
+          "checkpoint_state_sha256": "36c66c85c7259c1f5d5e24246a6ab09fb9ca07c4c320e938f74cb906c5d7c5b1",
+          "cycle": 2,
+          "updates": 104
+        },
+        "episodes": 32,
+        "metrics": {
+          "accepted_reads": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 3.375,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "action_calls": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 5.28125,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "any_read_before_first_route": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 1,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "correct": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0.78125,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "SECONDARY",
+            "status": "OBSERVED"
+          },
+          "environment_feedback_reaction": {
+            "complete_worlds": 0,
+            "excluded_worlds": 16,
+            "mean": null,
+            "missing_episodes": 32,
+            "observed_episodes": 0,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "UNKNOWN"
+          },
+          "generated_text_tokens": {
+            "complete_worlds": 0,
+            "excluded_worlds": 16,
+            "mean": null,
+            "missing_episodes": 32,
+            "observed_episodes": 0,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "UNAVAILABLE"
+          },
+          "generated_tokens_including_eos": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 59.03125,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "missing_responses": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "prompt_tokens": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 1967.34375,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "read_attempts": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 3.375,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "reads_before_first_route": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 3.25,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "rejected_action_calls": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0.1875,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "repeated_read_attempts": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "route_attempts": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 1.90625,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "supplied_evidence_content_use": {
+            "complete_worlds": 0,
+            "excluded_worlds": 16,
+            "mean": null,
+            "missing_episodes": 32,
+            "observed_episodes": 0,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "UNKNOWN"
+          },
+          "supplied_memory_reads": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 3.375,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "task_completed": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0.8125,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "SECONDARY",
+            "status": "OBSERVED"
+          },
+          "terminal_responses": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 5.28125,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "truncated_responses": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "unavailable_memory_reads": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          }
+        },
+        "terminal_reasons": {
+          "capture_error": 6,
+          "dead_end": 1,
+          "reached_goal": 25
+        },
+        "worlds": 16
+      },
+      "UNPARENTED_C4": {
+        "call_coverage": {
+          "action_error": {
+            "missing": 0,
+            "observed": 178,
+            "total": 178
+          },
+          "generated_text_tokens": {
+            "missing": 178,
+            "observed": 0,
+            "total": 178
+          },
+          "generated_tokens_including_eos": {
+            "missing": 0,
+            "observed": 178,
+            "total": 178
+          },
+          "prompt_tokens": {
+            "missing": 0,
+            "observed": 178,
+            "total": 178
+          },
+          "terminal": {
+            "missing": 0,
+            "observed": 178,
+            "total": 178
+          },
+          "truncated": {
+            "missing": 0,
+            "observed": 178,
+            "total": 178
+          }
+        },
+        "checkpoint": {
+          "checkpoint_state_sha256": "ebf5ac477871ab9cb03d4468aeb33b20ce271664cfbb1ab70cad95006354fdc4",
+          "cycle": 4,
+          "updates": 320
+        },
+        "episodes": 32,
+        "metrics": {
+          "accepted_reads": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 3.625,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "action_calls": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 5.5625,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "any_read_before_first_route": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 1,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "correct": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0.90625,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "SECONDARY",
+            "status": "OBSERVED"
+          },
+          "environment_feedback_reaction": {
+            "complete_worlds": 0,
+            "excluded_worlds": 16,
+            "mean": null,
+            "missing_episodes": 32,
+            "observed_episodes": 0,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "UNKNOWN"
+          },
+          "generated_text_tokens": {
+            "complete_worlds": 0,
+            "excluded_worlds": 16,
+            "mean": null,
+            "missing_episodes": 32,
+            "observed_episodes": 0,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "UNAVAILABLE"
+          },
+          "generated_tokens_including_eos": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 62.09375,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "missing_responses": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "prompt_tokens": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 2105.375,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "read_attempts": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 3.625,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "reads_before_first_route": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 3.625,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "rejected_action_calls": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0.09375,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "repeated_read_attempts": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "route_attempts": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 1.9375,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "supplied_evidence_content_use": {
+            "complete_worlds": 0,
+            "excluded_worlds": 16,
+            "mean": null,
+            "missing_episodes": 32,
+            "observed_episodes": 0,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "UNKNOWN"
+          },
+          "supplied_memory_reads": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 3.625,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "task_completed": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0.90625,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "SECONDARY",
+            "status": "OBSERVED"
+          },
+          "terminal_responses": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 5.5625,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "truncated_responses": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "unavailable_memory_reads": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          }
+        },
+        "terminal_reasons": {
+          "capture_error": 3,
+          "reached_goal": 29
+        },
+        "worlds": 16
+      },
+      "UNPARENTED_C6": {
+        "call_coverage": {
+          "action_error": {
+            "missing": 0,
+            "observed": 160,
+            "total": 160
+          },
+          "generated_text_tokens": {
+            "missing": 160,
+            "observed": 0,
+            "total": 160
+          },
+          "generated_tokens_including_eos": {
+            "missing": 0,
+            "observed": 160,
+            "total": 160
+          },
+          "prompt_tokens": {
+            "missing": 0,
+            "observed": 160,
+            "total": 160
+          },
+          "terminal": {
+            "missing": 0,
+            "observed": 160,
+            "total": 160
+          },
+          "truncated": {
+            "missing": 0,
+            "observed": 160,
+            "total": 160
+          }
+        },
+        "checkpoint": {
+          "checkpoint_state_sha256": "6c42e849956d99338f5a00991240dbf5f5effc03f3bfa23c9aa5f5433dfbe253",
+          "cycle": 6,
+          "updates": 536
+        },
+        "episodes": 32,
+        "metrics": {
+          "accepted_reads": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 3.125,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "action_calls": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 5.0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "any_read_before_first_route": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 1,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "correct": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0.8125,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "SECONDARY",
+            "status": "OBSERVED"
+          },
+          "environment_feedback_reaction": {
+            "complete_worlds": 0,
+            "excluded_worlds": 16,
+            "mean": null,
+            "missing_episodes": 32,
+            "observed_episodes": 0,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "UNKNOWN"
+          },
+          "generated_text_tokens": {
+            "complete_worlds": 0,
+            "excluded_worlds": 16,
+            "mean": null,
+            "missing_episodes": 32,
+            "observed_episodes": 0,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "UNAVAILABLE"
+          },
+          "generated_tokens_including_eos": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 56.0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "missing_responses": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "prompt_tokens": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 1826.09375,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "read_attempts": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 3.125,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "reads_before_first_route": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 3.125,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "rejected_action_calls": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0.125,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "repeated_read_attempts": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "route_attempts": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 1.875,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "supplied_evidence_content_use": {
+            "complete_worlds": 0,
+            "excluded_worlds": 16,
+            "mean": null,
+            "missing_episodes": 32,
+            "observed_episodes": 0,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "UNKNOWN"
+          },
+          "supplied_memory_reads": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 3.125,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "task_completed": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0.875,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "SECONDARY",
+            "status": "OBSERVED"
+          },
+          "terminal_responses": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 5.0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "truncated_responses": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          },
+          "unavailable_memory_reads": {
+            "complete_worlds": 16,
+            "excluded_worlds": 0,
+            "mean": 0,
+            "missing_episodes": 0,
+            "observed_episodes": 32,
+            "role": "DESCRIPTIVE_BEHAVIOR_PROXY",
+            "status": "OBSERVED"
+          }
+        },
+        "terminal_reasons": {
+          "capture_error": 4,
+          "dead_end": 2,
+          "reached_goal": 26
+        },
+        "worlds": 16
+      }
+    },
+    "generalization": "FRESH_WORLD_SAME_FAMILY_NOT_NEW_TASK_FAMILY",
+    "interpretation": "OBSERVATIONAL_SYSTEMS_COMPARISON_NOT_ISOLATED_PARENTING_CONTENT_EFFECT",
+    "normalized_groups_sha256": "732db3e06eb203ed559f7cd9718899d2278eb68f054a6933a223fcbc005ff5b4",
+    "plan_sha256": "c1b72c0f0dc55dd6c3ea249d41ad742e43c6ff67e58c904a536083151add20c9",
+    "proxy_boundary": "VALIDITY_REPETITION_EVIDENCE_ACCESS_NOT_LATENT_METACOGNITION",
+    "schema": "R127_ROUTE_TRANSFER_REDUCTION_V1",
+    "seed_reference": "ONE_FIXED_INITIAL_EVALUATION_CONDITION_REUSED_NOT_EXTRA_LIVE_BASELINE",
+    "source_boundary": "Shared child-written accepted event text; failed source records stay unavailable. No world filtering. Source readiness is not evidence completeness; unavailable memory is not a learning effect.",
+    "source_ready": true,
+    "source_store_sha256": "d131dddebc97efed6a9de9fffdeb1a590157334fd771cb61109f096d9cb01022",
+    "store_size": 64,
+    "tasks_per_world": 2,
+    "uncertainty_boundary": "Conditional on fixed checkpoints/store; not independent training-seed uncertainty. Pointwise descriptive intervals, not multiplicity-corrected tests. No across-checkpoint pooling.",
+    "unknown_reasons": {
+      "environment_feedback_reaction": "UNKNOWN: canonical episodes end on invalid commands; no recovery opportunity.",
+      "supplied_evidence_content_use": "Reading does not establish semantic use of supplied evidence."
+    },
+    "world_count": 16
+  },
+  "errors": [],
+  "inputs": {
+    "cohort": {
+      "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/bundle/COHORT.json",
+      "sha256": "a0101a93be8b9be1edebefb37f6a05ca3235a8edb7715ed31a8080c704f16c56"
+    },
+    "export": {
+      "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/bundle/EXPORT.json",
+      "sha256": "4c4ba2cce039ff479afd7fb5ed00720ecb7d402ee53a14d3df0c94582f7d441f"
+    },
+    "plan": {
+      "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/PLAN.json",
+      "sha256": "12710e14684045bd5e5b31187bac6094ac4e00e65e318a2b6a11d724d0139846"
+    },
+    "root": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1"
+  },
+  "schema": "R127_VERIFIED_RESULTS_V1",
+  "source": {
+    "accepted_events": 64,
+    "complete_worlds": 16,
+    "offered_events": 64,
+    "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1/SOURCE/STORE.json",
+    "sha256": "3c2024acb3744abe3c84a806f6e6a414334aaff84ecaaf8747430909c5cc0e7a",
+    "source_store_sha256": "d131dddebc97efed6a9de9fffdeb1a590157334fd771cb61109f096d9cb01022",
+    "worlds": 16
+  },
+  "source_ready": true,
+  "stages": {
+    "GUIDED_C2": {
+      "call_refs_sha256": "1ea5bae73d20a9f1c1ea349fff8311c4fe1c6b817bdbcb34e1a2832ea2432658",
+      "calls": 177,
+      "checkpoint_state_sha256": "a64a273b9b9f1fa2714fcd4cad39ca8a410b1abe48ef811a2bee2ac0987b7dd7",
+      "complete": {
+        "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1/GUIDED_C2/COMPLETE.json",
+        "sha256": "eba3124f1803c056b16c35250b14058da7ac62953890c1f26090d6ba45059669"
+      },
+      "episode_refs_sha256": "f2feb7015cc3cf35b35056e1e185e2962a836f9fb175c0438f49cba93b977287",
+      "episodes": 32,
+      "exit": {
+        "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1/GUIDED_C2_EXIT.json",
+        "sha256": "773bff156f16dbe2513017de5ff79766948e027aeab169109c262c727100f733"
+      },
+      "loaded": {
+        "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1/GUIDED_C2/LOADED.json",
+        "sha256": "6c5497bc1133108c03b1358a9ae9e60e3e99446dfbec7c8846dd1a86453ab88e"
+      },
+      "status": "VERIFIED"
+    },
+    "GUIDED_C4": {
+      "call_refs_sha256": "c25bd418072a0dbb68d75fafd4ccffa8dcb467a4d7317aabed478fc089b11663",
+      "calls": 192,
+      "checkpoint_state_sha256": "ca93baa38bd4282155f352896933594618681cc7dacfcf07f11e9909b091d19b",
+      "complete": {
+        "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1/GUIDED_C4/COMPLETE.json",
+        "sha256": "845a1e727c35416e27c431ebdee23597b228951076999eae73c95696715727f2"
+      },
+      "episode_refs_sha256": "e578f27a79faebd69df400a383d459da6d9a4499a023edb895bb85d0286ed861",
+      "episodes": 32,
+      "exit": {
+        "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1/GUIDED_C4_EXIT.json",
+        "sha256": "a868c1930c8b4b5a31666ab114aaaffe69abc4016de91ba9286d30fcdb544163"
+      },
+      "loaded": {
+        "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1/GUIDED_C4/LOADED.json",
+        "sha256": "5595d56049ca79af3c6216e9d8dcaeaf0aee03ef8c23b06d5bb9a2f6e4585c0a"
+      },
+      "status": "VERIFIED"
+    },
+    "GUIDED_C6": {
+      "call_refs_sha256": "eb18170fe8a5f4a13ceab4a5714753ee2d8639170128c74611cc6ca89e68324c",
+      "calls": 176,
+      "checkpoint_state_sha256": "c25b92bb1a94e3ce02cb683cd71b7b66dfb3e0a1383526dac8c51195567db12a",
+      "complete": {
+        "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1/GUIDED_C6/COMPLETE.json",
+        "sha256": "745a212e5f55a750f3c5057aa2a1404f1a480a7b59d62db35c2cb63a119db76b"
+      },
+      "episode_refs_sha256": "ea93cc98aeffb740ece08e72e71251f99e22a6c553f969d268778128fcd6f483",
+      "episodes": 32,
+      "exit": {
+        "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1/GUIDED_C6_EXIT.json",
+        "sha256": "e8c8c60b9b768bce654630d67d40c57c7fea3bc0aea06cac8e63267dbccbeecb"
+      },
+      "loaded": {
+        "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1/GUIDED_C6/LOADED.json",
+        "sha256": "a68c86d01ae2a728f2f951f8cef2e191539a25b8a377a9bc7808b3ff72c7d029"
+      },
+      "status": "VERIFIED"
+    },
+    "SEED": {
+      "call_refs_sha256": "8eea9370516e107399d577e646217e6ac24a7bbdd2a71cbc0d19bf25b05d3f44",
+      "calls": 167,
+      "checkpoint_state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f",
+      "complete": {
+        "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1/SEED/COMPLETE.json",
+        "sha256": "7bd8cce62330075bd5948ed8444f4639b6aa8f64d2c2dba13479b681902c8155"
+      },
+      "episode_refs_sha256": "2f4fea7e2bf28337c9563a441cbe131d248ef17e2198686863dc75caf714e715",
+      "episodes": 32,
+      "exit": {
+        "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1/SEED_EXIT.json",
+        "sha256": "d5c6ca8b66a365c23f9de7b95769e3b6045c06629fa88589a93a4f328caec18c"
+      },
+      "loaded": {
+        "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1/SEED/LOADED.json",
+        "sha256": "580fc1ee64fe6ab2627a32825803f959895605ae13c2221e4bfb58506c0c4c64"
+      },
+      "status": "VERIFIED"
+    },
+    "SOURCE": {
+      "call_refs_sha256": "fa933b34b50b5b6c10a1c830a0f755c77686daa05c25662c489d2cec0c4f4097",
+      "calls": 128,
+      "checkpoint_state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f",
+      "complete": {
+        "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1/SOURCE/COMPLETE.json",
+        "sha256": "5c63e5ec24fe2a133902f9156e40f6e02eb381b9a1b7028c6e93eeef0d8605d8"
+      },
+      "episode_refs_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "episodes": 0,
+      "exit": {
+        "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1/SOURCE_EXIT.json",
+        "sha256": "c442c049683c5b7c949dfd064b346fac9ba98c40957f91f9a8a5b15fb3f77b39"
+      },
+      "loaded": {
+        "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1/SOURCE/LOADED.json",
+        "sha256": "3791540298b7cdae78d5979ea9c60ee47388a3225b8d8040a339b3ace29ef138"
+      },
+      "status": "VERIFIED"
+    },
+    "UNPARENTED_C2": {
+      "call_refs_sha256": "7d7324932b4fc9fb6579d3d45498aa755d2c74905d2e9e33b2e767a783c6b493",
+      "calls": 169,
+      "checkpoint_state_sha256": "36c66c85c7259c1f5d5e24246a6ab09fb9ca07c4c320e938f74cb906c5d7c5b1",
+      "complete": {
+        "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1/UNPARENTED_C2/COMPLETE.json",
+        "sha256": "693d7cf041e98be05e654a79f4fc6be92977ad4c8fad046e4252b7ecea586e8f"
+      },
+      "episode_refs_sha256": "4d60f8f27a869afad9bd84237fb0bd93b299930c0f854b10c39b1e46ace5c67e",
+      "episodes": 32,
+      "exit": {
+        "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1/UNPARENTED_C2_EXIT.json",
+        "sha256": "382ec2652366c7cc095a9a5cec080d8bda59593398ca1fba9bf9ccfeb738121e"
+      },
+      "loaded": {
+        "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1/UNPARENTED_C2/LOADED.json",
+        "sha256": "92aa3ee2375f0803d503bd2741e44ad5cb1fb6c524f0bbed4be1ff021e2bb23f"
+      },
+      "status": "VERIFIED"
+    },
+    "UNPARENTED_C4": {
+      "call_refs_sha256": "1d1dd983b7fbc4db28e135a7a0e654ff5e1c782537051287ae825bbd37d9560b",
+      "calls": 178,
+      "checkpoint_state_sha256": "ebf5ac477871ab9cb03d4468aeb33b20ce271664cfbb1ab70cad95006354fdc4",
+      "complete": {
+        "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1/UNPARENTED_C4/COMPLETE.json",
+        "sha256": "9d6ae359658029145648afb44f65dc1fdf87ddda8fc1ea7879b42e2dfe4c8fa5"
+      },
+      "episode_refs_sha256": "8646be487b21b5b4e573d596aecd68491fca1bf97892be1d65bc2f4726a3fa6d",
+      "episodes": 32,
+      "exit": {
+        "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1/UNPARENTED_C4_EXIT.json",
+        "sha256": "c86159640135569e2860ef1de5217cbeb55f6017d6752fe76ee6761c53eca642"
+      },
+      "loaded": {
+        "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1/UNPARENTED_C4/LOADED.json",
+        "sha256": "06bce2d32102bf14c597def4a4f61dcbca682a1de8be97b98b28abd1eccdc47c"
+      },
+      "status": "VERIFIED"
+    },
+    "UNPARENTED_C6": {
+      "call_refs_sha256": "17bbd9751e389d9a1b672fea07d1d321bd554e7e53a98465d08a1b2fb0b99394",
+      "calls": 160,
+      "checkpoint_state_sha256": "6c42e849956d99338f5a00991240dbf5f5effc03f3bfa23c9aa5f5433dfbe253",
+      "complete": {
+        "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1/UNPARENTED_C6/COMPLETE.json",
+        "sha256": "a751d86c82bd55f871c5452ae2909098a6df1d0df28909989f99e14ad27bc748"
+      },
+      "episode_refs_sha256": "56ef18ea6d000316240bb77f4a682ead23b4d9cbf59b8d88856390e8b65c9674",
+      "episodes": 32,
+      "exit": {
+        "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1/UNPARENTED_C6_EXIT.json",
+        "sha256": "0e7cfa9805d983d9e4ef41931d77b00c3ae28f01fccfaa39a8d64973e62cd1a9"
+      },
+      "loaded": {
+        "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/run1/UNPARENTED_C6/LOADED.json",
+        "sha256": "51864c004a0a81237a0a4645d45eab698b4bd6fb9c2a87b35ad142499be0c1d0"
+      },
+      "status": "VERIFIED"
+    }
+  },
+  "status": "COMPLETE",
+  "store_size": 64,
+  "verified_file_count": 3971,
+  "verified_files_sha256": "c8201b2b128538789eecfb8ec4f0b2a49a0e605561e22be6aa349dac0df1288e"
+}

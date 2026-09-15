@@ -1,0 +1,86 @@
+{
+  "conditions": {
+    "GUIDED_C2": {
+      "calls": 177,
+      "generated_tokens_including_eos": 1976,
+      "literal_protocol_only": 177,
+      "max_tokens_per_call_including_eos": 13,
+      "median_tokens_per_call_including_eos": 11,
+      "min_tokens_per_call_including_eos": 8,
+      "other_text_not_necessarily_reasoning": 0,
+      "reasoning_quality": "NOT_MEASURED"
+    },
+    "GUIDED_C4": {
+      "calls": 192,
+      "generated_tokens_including_eos": 2145,
+      "literal_protocol_only": 192,
+      "max_tokens_per_call_including_eos": 13,
+      "median_tokens_per_call_including_eos": 11.0,
+      "min_tokens_per_call_including_eos": 8,
+      "other_text_not_necessarily_reasoning": 0,
+      "reasoning_quality": "NOT_MEASURED"
+    },
+    "GUIDED_C6": {
+      "calls": 176,
+      "generated_tokens_including_eos": 2049,
+      "literal_protocol_only": 174,
+      "max_tokens_per_call_including_eos": 51,
+      "median_tokens_per_call_including_eos": 11.0,
+      "min_tokens_per_call_including_eos": 8,
+      "other_text_not_necessarily_reasoning": 2,
+      "reasoning_quality": "NOT_MEASURED"
+    },
+    "SEED": {
+      "calls": 167,
+      "generated_tokens_including_eos": 1869,
+      "literal_protocol_only": 167,
+      "max_tokens_per_call_including_eos": 13,
+      "median_tokens_per_call_including_eos": 11,
+      "min_tokens_per_call_including_eos": 8,
+      "other_text_not_necessarily_reasoning": 0,
+      "reasoning_quality": "NOT_MEASURED"
+    },
+    "UNPARENTED_C2": {
+      "calls": 169,
+      "generated_tokens_including_eos": 1889,
+      "literal_protocol_only": 169,
+      "max_tokens_per_call_including_eos": 13,
+      "median_tokens_per_call_including_eos": 11,
+      "min_tokens_per_call_including_eos": 8,
+      "other_text_not_necessarily_reasoning": 0,
+      "reasoning_quality": "NOT_MEASURED"
+    },
+    "UNPARENTED_C4": {
+      "calls": 178,
+      "generated_tokens_including_eos": 1987,
+      "literal_protocol_only": 178,
+      "max_tokens_per_call_including_eos": 13,
+      "median_tokens_per_call_including_eos": 11.0,
+      "min_tokens_per_call_including_eos": 8,
+      "other_text_not_necessarily_reasoning": 0,
+      "reasoning_quality": "NOT_MEASURED"
+    },
+    "UNPARENTED_C6": {
+      "calls": 160,
+      "generated_tokens_including_eos": 1792,
+      "literal_protocol_only": 160,
+      "max_tokens_per_call_including_eos": 13,
+      "median_tokens_per_call_including_eos": 11.0,
+      "min_tokens_per_call_including_eos": 8,
+      "other_text_not_necessarily_reasoning": 0,
+      "reasoning_quality": "NOT_MEASURED"
+    }
+  },
+  "definition": "Entire stripped raw response is one literal READ EVENT or ROUTE command.",
+  "interpretation": "Other text is not automatically reasoning; protocol-only text exposes no written rationale.",
+  "model_calls": 0,
+  "optimizer_steps": 0,
+  "posthoc": true,
+  "raw_text_exported": false,
+  "schema": "R127_POSTHOC_PROTOCOL_SHAPE_V1",
+  "source_sha256": "9ff9265bdf53f7dd0773370c7fec37821fae2d255a796716d8e676de67a572f3",
+  "verified": {
+    "path": "/localhome/local-rohing/orch_r127_route_transfer_20260915/reductions/COMPLETE_VERIFIED_1.json",
+    "sha256": "627a63796a66b04ee098ba0763a12c835a978dd0daa9b489f8d41114b65deaf6"
+  }
+}
