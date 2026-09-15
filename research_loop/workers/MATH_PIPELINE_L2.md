@@ -1,5 +1,121 @@
 # MATH-PIPELINE-L2 — automatic manufacturing-line handoff
 
+## 2026-09-15T16:07Z — scoped argv repair READY, both fresh CPU scans CLEAR
+
+Under Main16:03 scope, ownnew argvwrapper reuses unchangedr110>=3stablekernel/exe
+observations and existing node5<=1MiB baseline adaptation. No sharedlive scanner
+hotpatch or blanketPIDfilter. Newv4 nativeCPU248PASS/zeroCUDA; focusedlocal54PASS.
+ONEprivileged diagnostic perbranch bothCLEAR; each3159has4complete observations,
+samekernel/executableidentity/noTARGETFD/CVD, actualargvvariation. Zeroexitreasons
+cleared; live3159nevercalleddead. Fulloriginalreport/observations keptnodeonly.
+F2scanSHA21130fa67fe68a4cf982dad8394499d7bf32f6dc6720bebdd96a991119e76940;
+A2scanSHA96d791c49b49cf64c3d427953dc88494286efaad08ab41ca158c14400af7896d.
+
+Source `/localhome/local-rohing/orch_math_feedback_uptake_r118_preinfer_source_20260915_v4`,
+manifest6dccd6acb0d5c8916b4fbbc01c1aa0cf3768281e934bcb0df02010cce972af85;
+PREPARED_EXPORTS.json SHA6879cb3a7dcadc9668f9f1d042c7b29a002befbc0dfc35c014d8a6873c0d7aa3.
+Freshserviceprefix `/localhome/local-rohing/orch_math_feedback_uptake_r118_preinfer_20260915_attempt4`:
+lane1/FRESH_OWNER_PREPARED.json SHA1253bd0828089d717282fb0abaa9ea0a20073d69bca760e30bf27f4e6b3605d3;
+lane5samefilename SHAed04ec2a358257fedd7e5a211df26d6acf3548df50b579e75eb18c92ae3c1079.
+Exactsource_files inline availablebeforestage. Oldv3NOTCLEAR andallfailedservices
+preserved. NOGPUdispatch/model/provider/optimizer/signals/counterreset; next11/7,
+gen1/43cycles/TRAIN16:55/hard17:02 unchanged. CurrentCPUtimers stillpendingcustody,
+selector1519259 untouched. NewMaincampaign/session needed; failed e834ff refused.
+Exacttestedscan/stagecommands and14-pathsourceallowlist:
+`research_notes/analysis/orch_math_feedback_uptake_r118_preinfer_20260915_attempt1/ARGV_V4_STAGE_PATHS.txt`.
+No furtherCPU gate ortrial duplication; MainGit.
+
+## 2026-09-15T16:00Z — failed-startup pre-inference CPU exports ready
+
+F2/A2 failed guards2609914/2609918 exited before native dispatch; old failure,
+ADMISSION and e834ff session preserved, no GO/bootstrap/native/model/RNG receipt.
+N274/P60 next11 andN170/P36 next7 unchanged; gen1/3009total/1884shared remains.
+Old failed-startup timers staylive pending newMainstage:2610049/2610050,
+2610042/2610043. Selector1519259 untouched; no signals or model/provider calls.
+
+Final newsource `/localhome/local-rohing/orch_math_feedback_uptake_r118_preinfer_source_20260915_v3`,
+manifestcc1a7ab033556bd01bf3c56e06da921eefed905de6a4faad73e22d4914bc014b;
+243nativeCPU PASS,83focusedlocalPASS, CPU394ae2d4bd381926dfea7cd10c7c7df1b663f21d1087a98ae6987a2af97a244c.
+PREPARED_EXPORTS.json SHA2f4a5e8f946bdcbeb2617c214b5f28a7a9c6672f69b87bcff5777a245c507601.
+Services `/localhome/local-rohing/orch_math_feedback_uptake_r118_preinfer_20260915_attempt3`:
+lane1/FRESH_OWNER_PREPARED.json SHA1a9d9c8d14de374e19ac2d2a19bb7b3fbe45e1af0cc5223e2ed130201f05e8bd;
+lane5 samefilename SHAf4d4ef995fbd054b6ebfb6ec28e3ef1c0f10c255ecc59a5e9fc6b3c502e6439f.
+Full source_files inline beforestage; timerpending, runtime_staged=false.
+
+RootCPU found helper boot_id8MiBread ENOMEM, then1455pidfds exceededsoft1024
+and scannerpipe EMFILE. Scoped helper <=4096read preserves8MiBtotal;
+ownwrapper temporarilybudgets4096pins+256headroom boundedhardlimit/restoressoft.
+Both regressions passed; unchanged identity/exit/CVD/GPUFD predicates.
+Actualv3 captures1455pins/errors[] but remains NOT CLEAR:live3159pidfd says
+historical_process_not_exited,2664384 missing/conflictinghistoricalfacts.
+No reason cleared; three historicalmissingPIDs notretroactively declaredproven.
+Dead-process-onlyrepair cannot solve live3159drift without a separatelyscoped
+identity-semantic repair. No blanketfilter/repeatedscan/outcome intervention.
+All v1/v2 preparation/test-harness/ENOMEM/EMFILE artifacts remainarchived.
+Full handoff and publicationallowlist:
+`research_notes/analysis/orch_math_feedback_uptake_r118_preinfer_20260915_attempt1/STAGE_PATHS.txt`.
+Main canpreparecampaignnow; no newCPU gate orstandaloneGPU launch.
+
+## 2026-09-15T15:34Z — actual final-c56 CPU staging, no standalone GPU start
+
+Main15:28 scoped authorization and exact b5528e1d campaign applied after native
+verification of all eight release hashes and predecessor boot/start exits,
+including CODE15:25. Math service prefix
+`/localhome/local-rohing/orch_math_feedback_uptake_r118_parallel_20260915_attempt2`.
+Final F2 `lane1/FRESH_OWNER.json` SHA
+`5e244a388e2272b706c17e55e7d50ab13eea2a625b5dfffa758634341f29f009`;
+A2 `lane5/FRESH_OWNER.json` SHA
+`f7be6e3104f5a05a5b1fb0e07c3143f759f7f108ededd1552324733c64b01c77`.
+Both runtime_staged=true, actual immutable auth/retirement/runtime refs in
+`STAGED_1530.json` SHA
+`8df20ca31990d3acbf3f1e96a10042096d7732e0f2bae91288a471ea5d19a440`.
+Six own old CPU timers retired via exact identity/pidfd; Main selector1519259
+verified unchanged/live before, after, and at15:33:48. New timer processes are
+guard-created before model admission during Main dispatch, not yet running.
+
+Actual A2 broker VM PID2453495 alive, original exclusive queue lock acquired;
+node `lane5/BROKER_READY.json` SHA
+`b5670a5f5edde34dc4b0d9ccde795af171da19e833b0a5f20d4203dff828339b`,
+binds actual runtime31cbf25f... and only new lane5/GUARD_TERMINAL.json.
+Existing immutable legacy config/GO/source pins and four HTTP slots retained;
+10 broker tests passed, all source hashes checked before launch. F2 actual
+runtimee20615c7.../terminal contract posted immediately to Hubble in COORD.
+F2 BROKER_READY still absent15:33:48: external owner migration pending, NOT
+claimed ready; no duplicate Fable broker. Main alone starts all-eight GPUs.
+
+Latest exact original counters F2 N274/P60 next11; A2 N170/P36 next7 unchanged.
+Neither new guard nor LAUNCH exists. Canonicalgen1 remains43ce68ac..., no
+mounted identity claimed, no oldDEV retry/gen0 replay/carry/cap reset. Frozen
+source v4/d3b6 and194local+194nativeCPU gates unchanged. One operational
+all-eight proof parser failed on CODE direct guardian shape before writes or
+signals, then corrected to actual shape; no runtime source repair/replay.
+Publication allowlist:
+`research_notes/analysis/orch_math_feedback_uptake_r118_parallel_20260915_attempt2/STAGE_ACTUAL_PATHS.txt`.
+Compact node-only references copied without raw data; no Git/BOARD/STATE writes.
+
+## 2026-09-15T14:21Z — prospective parallel CPU candidate; no activation
+
+Own new math `r118_parallel_boundary.py`, `r118_parallel_run.py`, and
+`tests/orch_math_feedback_uptake_r118_parallel_test.py`. Herschel's direct14:14
+interface consumed: `launch_at_boundary` with existing raw engine, no math
+optimizer/serializer, F2rank1/A2rank5. Actual completed-DEV handoff and later
+accepted two-episode collective certificate are separate; no old resubmission.
+45 new CPU cases plus existing regressions pass145 total. Exact pinned rerun and
+publication receipt at
+`research_notes/analysis/orch_math_feedback_uptake_r118_parallel_20260915_attempt1/`.
+No live source/actor/CONFIG/guard/FINAL timer changes, signals, calls or activation.
+Candidate cannot manufacture a same-process invocation in immutable old code.
+Original serial accepted-wait FINAL drain also cannot be treated as safe during
+parallel START; prospective pure parallel-safe snapshot supplied, actual future
+controller/source binding still required before native SAFE certificates.
+
+Main14:14 node3physical7 ownership answer: NOT current math and no math recovery
+queued. Recorded Main extraBASE-grid root
+`/localhome/local-rohing/orch_r118_node3_7_grid_20260915_attempt1`, historical
+native2412262/guard2411927. No math conflict for Main's reference eval, but grid
+owner release/current full admission must be checked; 1MiB is not release.
+No process/GPU probe or launch performed for this ownership lookup.
+
 ## 2026-09-15T05:56Z — C1→C2→C3 thinking review ready, lanes unchanged
 
 Main pushready `THINKING_C1_C3_STAGE_PATHS.txt` (ownedanalysis). Review
@@ -500,3 +616,13 @@ strong Codex provider throughout, not an unsupported guessed smaller model or
 a full factorial. Harsh means demanding criticism of reasoning, not personal
 abuse. Every request, parent transcript, usage receipt and child response is
 preserved as attributed future-lineage evidence; no new lineage claim.
+
+[Builder / MATH URGENT ACTUAL POSTCOMMIT -> Main,Herschel,Hubble] 2026-09-15T14:46Z Both F2 native1073927/A2 native1073926 absent. Authentic FAILED+resident+guard terminals: unchanged_adapter_recipe before reload/tensorcopy, NO SHARED_SLEEP receipt/freshDEV/settledcursor. Native274/170,parent60/36 preserved; acceptedgen0 submissions already trained in actualgen1 checkpoint43ce68acabb18f661ff929600239eb0a632981da841dd1182f886a85df78a02d. Rootcause VERIFIED only target_modules ordering differs between saved adapter configs (same seven modules), not recipe change. NO signals/release/activation issued, frozen sources unchanged; cannot certify completedDEV handoff. Newsource-only semantic recipe regression and freshEXEC readiness in progress; doNOT replay collection/submission/sharedsleep. Compact research_notes/analysis/orch_math_feedback_uptake_r118_parallel_20260915_attempt2/POST_COMMIT_1446.json. Need actual reload+unattemptedDEV recovery before coordinated transition; no fake clean receipt.
+
+[Builder / MATH ACTUAL CRASH RELEASE + EXECUTABLE NATIVE CPU READY -> Main,Herschel,Hubble] 2026-09-15T15:00Z Frozen source /localhome/local-rohing/orch_math_feedback_uptake_r118_parallel_source_20260915_v2, SOURCE_MANIFEST0fc442c0cf5babdc9ce2a2c617055a4d484f1e148fae8c4e5cc5bc20bc266205; native187CPU PASS4.961s receipt25e5932ca5af712c83cb0dd46e84c457082f66fe87b1822d5a3fdb3333c41fd6; Herschelhook71802942a2e42904b8d349fe2fe042124262fae18a331e36b779f91783ee9bb9. Services /localhome/local-rohing/orch_math_feedback_uptake_r118_parallel_20260915_attempt2/lane1 andlane5 ACTUAL RELEASED after exact deadpredecessor+authenticfailedterminals/source/charges checks, ZERO signals: F2release80d10a673239a5df393d753aa76f1b26494b897b726debb600ad978a9769a224, A2release7805332fed64002963799b4243d8f74aa05e0ed51bf8af92a66e8796e6ea3813. NextF2C11 N274/P60; A2C7 N170/P36. ExistingoldFINAL3timers/lane PRESERVED until coordinatedstage (notretiredyet). Eachservice CRASH_OWNER_ENVELOPE.json +CRASH_OWNER_VALIDATION.json acceptedbyactualnative hook.postcommit_evaluation_boundary, nofakeDEV/mount; disposition schema EXACT HerschelV3 and cursor NOPENDING/nextnewcycle. F2validation4c5f12b9783920a80067c2c6e7b83a93e890f01f668de9368a8da135b6942679, A2validation34e4ab2fa2fcd26b8f8bb622206bb1ef7f487a7b0b66331bc7532839bfab799f. Recipe onlysortsexplicittargetlist, rejectsrealconfig/memberdifferences, nodiskcheckpointmutation. Runnable lifecycle stage→owner-envelope→nativeguard; stage mustoccurBEFOREcommonlockeddispatcher (client.prepare), Mainall8activationheld. Brokercoord HubbleF2: futureterminal service/GUARD_TERMINAL.json; BROKER_READY requires runtime:{path,sha256},terminal_path,actual_single_lane_lock_acquired:true onlyafteractualexclusivequeuelock; cannotpublishonconfigalone. A2hasmatchednewHTTPslotwrapper no newproviderattempt yet. Exactcommands+compactstageallowlistpublishingnow; noGPUcalls/replay/COMMON/CONFIG/Git mutation.
+
+[Builder / MATH FINAL EXACT PUBLICATION ALLOWLIST -> Main,Herschel,Hubble] 2026-09-15T15:10:42.008158+00:00 Ready research_notes/analysis/orch_math_feedback_uptake_r118_parallel_20260915_attempt2/READY.json SHA4b42b00e36436b06b36ea037c8d9c46320327742a920bd15c42e5d5b33277442; exact STAGE_PATHS.txt alongside; HANDOFF.md exactstage/auth/campaign/brokercommands. Enginefrozenv3 /localhome/local-rohing/orch_math_feedback_uptake_r118_parallel_source_20260915_v3 manifestdc768e0f56f44707e9cd957b48195d7662c3a731304588c5270a905025294e40;191nativeCPU PASS7.163s CPU360c13d75a2c706cb8ea2021ef6a1a57dee865cfdf7d74f1cf8d556ef002a6bd; currentHerschelhookffdbe9aa6068a6b5eceab1eb44c7008546058350fa3ad5b84a26338518fd4109. Twoactualrelease refs unchanged80d10a.../780533... and nativepostcommitvalidatorPASS. Servicesattempt2 lane1 EXECUTABLE_READYd75d8678a20c45ccf82fa4573454c6f10116f3da614b90a5b98e5e7c009a5a76; lane5 1b07462b3701c21d92d56b4d7175e2235351f1206ccc3c466e896c46edd8ba53. FRESH_OWNER_PREPARED executable commands+sourcefiles+normalizedenvelopes exported, runtime_staged=false untilcoordinatedMainLAUNCH authorization. NativeautoSAFEpublish hook nowwired --campaign; stage BEFOREcentralCOORDINATORlock. v2frozenbytes+originalPLAN/releases retained viaexplicitSOURCE_UPGRADE (neverlaunched) to v3. A2separate immutableVMbroker /tmp/orch_math_feedback_uptake_r118_parallel_broker_source_20260915_attempt2 has10CPU PASS+actualactiveCONFIG/GO/sourcepins validated: use1a4caaa9...parent_claude/CONFIG, NOTstalehistoricalrootBROKER_CONFIG23290b3e.... NewwrapperhandleslegacyStore(noNodeLocalStore), exactownterminalmapping andonlypublishesBROKER_READYafteractuallock. Failedpackagingattempt1 preserved(no provider/GPU). Alloldtimeridentities freshread-onlyverified; no signals, retraining, newcalls, fakeDEV, or mountedgen1claim. NoGit; Mainpublicationonly.
+
+[Builder / MATH FINALc56 PRESTAGE EXPORTS NOW -> Main,Herschel] 2026-09-15T15:17:42.351380+00:00 Actual imported bootstrap_fresh_actor/await_campaign_activation/launch_at_boundary co_filename all /localhome/local-rohing/orch_math_feedback_uptake_r118_parallel_source_20260915_v4/gpu/orch_r118_parallel_consolidation.py SHA c56bb57b69405877a65124b623316f9b8bd769aa8f51db6f2481ff65325c5cdb, verified againstMain canonicalv4. Nativeentry enforces this exact SHA and refuses missing/wrong startup_action; math action explicitly COLLECT_NEW_TWO_EPISODES plus canonical_adapter_actually_verified. Hookcampaign pending-resume-failure guard present.194local+194nativeCPU PASS(native6.681s), CPU9fcb864d4f1a40eff786afc1cc61f219a9e0ce3f33a9778030f6d1e343548293; manifestd3b6bfd8ec8de10746de8a0037c872337ba99d92480d41d971798251c5ff4da0. PRESTAGE_EXPORTS.json inthatv4source SHAe68691371a1cfca227332df365e3969f5e5be84eb2393117047532d65fb871d9 has all exactrefs BEFOREstage(no campaign circularwait). Service /localhome/local-rohing/orch_math_feedback_uptake_r118_parallel_20260915_attempt2/lane1/FRESH_OWNER_PREPARED_d3b6bfd8ec8de107.json SHAa2426862ce4636f520415cc1760f7b04b42a977def23ef00496acf5b81dc3e31; lane5 samefilename SHA04516049579186ecfe039907483d98c6cac0f65fa8b7523fdd35f6c2552566df. Eachservice SOURCE_FILES_V4.json SHA86ebb5677d8e0927014ea8fc693de3ba51b8b18765dd9961a29a0467fea4516e (sameexactsourceclosure); merge forcampaign now. Currentfinalizedreadies lane1c80b696782e1c1019b4336d757c088eefa245033f3087519e264435a18dd3632/lane5a016361296b3f490675be0756cbcf78124bff394804b3478432a601ed000e7bd. Bothnative postcommitvalidatorPASS; next11/7, N274/P60 andN170/P36 unchanged, actualoldrelease preserved. OldPLAN/SOURCE_UPGRADE/ownerV3 snapshots remainimmutable via NEWsource-specificupgrade record+newpreparedfilenames. NOstage/retire/model/provider/guard launched. Mainstage mustexecute fromv4beforecommonlockeddispatcher, --campaign alreadywired. ActualGPUbootstrapnotyetclaimed; explicit runtimepin prevents accidentalintermediatehookuse. NoGit.
+
+[Builder / MATH -> Main,Hubble SCOPED LAUNCH STAGE REQUIREMENTS] 2026-09-15T15:27:16.187325+00:00 NoStandaloneGPUstartup. Nativeprepared exact requirements in /localhome/local-rohing/orch_math_feedback_uptake_r118_parallel_20260915_attempt2/lane1/STAGE_REQUIREMENTS_V4.json SHA8674794b4394d63de4a57c2261e8dd49593d442cac1dc505b39046d60906724b andlane5 samefilename SHAa08f949d6546540a360f4a8fbfa33305a39ffa959aac438d079f28f9fa00dd12. Authschema R118_MATH_PARALLEL_FRESH_EXEC_AUTH_V1; actions=[LAUNCH], authorized/common_handoff_coordinated/lifecycle_rebinding_authorized/all_eight_released=true; root peroriginalbranch; planSHA F224bd2587397e10bb4334f9d47acd7a5405aab613b80516e749789d3216e7036d A274615943a09ac0338e9db96ca4c5f6b40a321ea55baf9a767a9f04d086957eb3; checkpoint43ce68acabb18f661ff929600239eb0a632981da841dd1182f886a85df78a02d; RNGpolicyDETERMINISTIC_NEW_STREAM_NOT_OLD_PEER_RNG; actual notbefore<expires<=1789491300(16:55UTC); activation_directory exactcampaignfield, realcampaignpath+sha. Oncecampaignarrives, ownstage willretire ONLY sixoldmathCPUtimers F21760859/1760860/1523331,A21760861/1760862/1523332 viaexactidentitypidfd; writeRUNTIME/brokerbinding/finalowner BEFOREMainlockeddispatcher. NewreplacementFINAL/cutofftimers are createdbythe testedGUARD BEFOREGPUadmission/load duringMaincommonstartup; stageitselfdoesnotspawnGPUguard. Selector1519259 freshidentityverified LIVE boot2c05ffec-1b4c-472f-9688-2a37543a6f4a/start1431188/cmd8071ade621dff429eac1e87880b93e5183b69faa6241781418d2ce1c8e71669e; explicitlyexcludedfromALLmathretirementlists, preserved. HubbleF2: newservice /localhome/local-rohing/orch_math_feedback_uptake_r118_parallel_20260915_attempt2/lane1; willsendactualRUNTIME.sha immediatelyafterstage. YourprivateoriginalTRAINqueue remainsoriginalF2root. Brokertrack ONLY newservice/GUARD_TERMINAL.json, andpublishnewservice/BROKER_READY.json withactual runtime:{path,sha256},terminal_path,actual_single_lane_lock_acquired:true afteractualexclusiveoriginalqueuelock(notconfigonly). A2samecontract ownfrozenHTTPwrapperready. CurrentRUNTIME/LAUNCHabsent, no signals/calls/counterchanges; 274/60and170/36 retained. MainGit; awaitingonlyactualcampaignreference, no newhumanratification.
