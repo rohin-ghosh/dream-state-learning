@@ -1,0 +1,112 @@
+{
+  "CPU_READY": {
+    "path": "/localhome/local-rohing/orch_r118_node3_6_grid_20260915_attempt1/recovery_1336_v1/CPU_READY.json",
+    "sha256": "de45f41791810416c06e17c12245884fa59af5743fb52445917b7fd54ced4818"
+  },
+  "actual_charges": {
+    "NATIVE": 559,
+    "PARENT": 41
+  },
+  "admission_clear": true,
+  "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+  "broker_started": {
+    "claims_reset": false,
+    "command": [
+      "python3",
+      "-B",
+      "-m",
+      "gpu.orch_r118_node3_6_grid_recover_broker",
+      "--config",
+      "/tmp/orch_r118_node3_6_grid_configs/BROKER_CONFIG.json",
+      "--launch-receipt",
+      "/tmp/orch_r118_node3_6_grid_configs/BROKER_LAUNCH.json",
+      "--prompt-root",
+      "/data/home/rohing/courier/swarm/prompts",
+      "--principles",
+      "/tmp/orch_r118_node3_6_grid_recovery_broker_source_20260915_v1/research_notes/PARENTING_PRINCIPLES_ROHIN_2026-09-15.md"
+    ],
+    "new_parent_requests_only_after": 40,
+    "old_pid_exited": 969715,
+    "pid": 1750708,
+    "source": "/tmp/orch_r118_node3_6_grid_recovery_broker_source_20260915_v1",
+    "source_sha256": "d6867661b992b1ef6170ddb2f8c2617c52cf8b4b1a5d41c261140c24be513efd",
+    "started_unix": 1789479699.3988938
+  },
+  "changed_old_files": [],
+  "failed_DEV_preserved": {
+    "path": "/localhome/local-rohing/orch_r118_node3_6_grid_20260915_attempt1/readouts/0008/dev/STARTED.json",
+    "sha256": "ec7d277ea80618791dc7f695603b93c6e938d15cc30e6ba6bed90e46f1a647e7"
+  },
+  "failure_cause": "C8 fresh DEV model load OOM alongside retained resident32.43GiB; source now offloads resident toCPU around unchanged fresh-process readout",
+  "first_new_call": {
+    "cycle": 9,
+    "finished_unix": 1789479706.1985173,
+    "purpose": "episode",
+    "reference": {
+      "path": "/localhome/local-rohing/orch_r118_node3_6_grid_20260915_attempt1/calls/N00559.json",
+      "sha256": "3c8c579b3504466a54c724ecdb0918040587828ac95d409ac936da13824d99e6"
+    },
+    "status": "COMPLETE",
+    "tokens": 163
+  },
+  "fresh_admission": {
+    "path": "/localhome/local-rohing/orch_r118_node3_6_grid_20260915_attempt1/recovery_1336_v1/admission/000.json",
+    "sha256": "5883e9b1eeca1540f4771c91418cf9cbaa5c7fdbfdaff8cf5055c1983c6ddc09"
+  },
+  "guard": {
+    "path": "/localhome/local-rohing/orch_r118_node3_6_grid_20260915_attempt1/recovery_1336_v1/GUARD_STARTED.json",
+    "sha256": "c8c4e0318d52d22f80b3e5d504baf24b04f8cbdd59ccd14ac96bf436d6ab5db8"
+  },
+  "hard_end_unix": 1789491720.0,
+  "inherited_native_charges": 558,
+  "inherited_parent_charges": 40,
+  "launch": {
+    "path": "/localhome/local-rohing/orch_r118_node3_6_grid_20260915_attempt1/recovery_1336_v1/LAUNCH.json",
+    "sha256": "e624f483b05b25198d0419fe6cfb047f5b56b88de14df6918cff88ac8f8c1f2f"
+  },
+  "lease_end_unix": 1789689600.0,
+  "loaded": {
+    "path": "/localhome/local-rohing/orch_r118_node3_6_grid_20260915_attempt1/recovery_1336_v1/LOADED.json",
+    "sha256": "19b15e9865144d1d2c054b41d5b65c2009ade928df264add592b253d6e67ccc0"
+  },
+  "local_tests_passed": 23,
+  "max_native_calls": 1858,
+  "max_parent_calls": 298,
+  "native_pid": 3824093,
+  "native_tests_passed": 19,
+  "next_DEV_offload_native_validation": "PENDING_future_C9",
+  "next_cycle": 9,
+  "no_adapter": {
+    "adapter_parameter_count": 0,
+    "hf_peft_config_loaded": false,
+    "model_class": "Qwen2ForCausalLM",
+    "peft_wrapper_count": 0,
+    "trainable_parameter_count": 0
+  },
+  "no_other_GPU_signals": true,
+  "node5_unchanged": true,
+  "observed_unix": 1789479771.3094237,
+  "old_failure": {
+    "path": "/localhome/local-rohing/orch_r118_node3_6_grid_20260915_attempt1/TERMINAL.json",
+    "sha256": "7f68c9cf541fa2d3d10c78f8ebfa48ebfbc78afd436d2272b387aaa783444b7c"
+  },
+  "old_files_preserved": 1340,
+  "old_ledger_prefix_sha256": "575d4b0b0ce53acfdec29672f15b9aa51db721531a86c26092e97930968e6ead",
+  "optimizer_steps": 0,
+  "original_carry_sha256": "fc2d28473eac4991ccc400fa13531d29c69f0122a516b3cbbfcead56ccdd6a50",
+  "parent41": {
+    "status": "PENDING"
+  },
+  "physical": 6,
+  "preparation_failure": "v1 CPU check mislocated readout-attached TRAIN capture N102; excluded attached readout and added regression; no native retry or altered captures",
+  "raw_node_only": true,
+  "readout_retries": 0,
+  "root": "/localhome/local-rohing/orch_r118_node3_6_grid_20260915_attempt1",
+  "schema": "R118_NODE3_6_SAME_LIFE_RECOVERY_ACTUAL_V1",
+  "source": {
+    "path": "/localhome/local-rohing/orch_r118_node3_6_grid_recovery_source_20260915_v2/RECOVERY_SOURCE.json",
+    "sha256": "c5aae06f1129a14b057fd26749c3ffdc67be1476537d8b63ef938c0b98e478f9"
+  },
+  "train_end_unix": 1789491300.0,
+  "uuid": "GPU-1a83d900-1e95-c7b4-9b12-8117399697f8"
+}

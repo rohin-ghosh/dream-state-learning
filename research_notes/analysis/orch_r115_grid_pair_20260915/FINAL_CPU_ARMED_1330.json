@@ -1,0 +1,218 @@
+{
+  "actual_native_calls": 0,
+  "branches": [
+    {
+      "actual_native_calls": 0,
+      "armed": {
+        "path": "/localhome/local-rohing/orch_r118_grid_final_20260915_attempt2/F4/drain/ARMED.json",
+        "sha256": "52a8099c8b14e6c581ec0f2b364444750066c8170c96426cf64d9d4243cf3d99"
+      },
+      "branch": "F4",
+      "final_contents_read": false,
+      "old_predecessors_still_alive": true,
+      "plan": {
+        "path": "/localhome/local-rohing/orch_r118_grid_final_20260915_attempt2/F4/PLAN.json",
+        "sha256": "8c173f12d1cbcd86e9c8c113cd7a88967b6fa3f282def46f74189a2f3d158393"
+      },
+      "processes": [
+        {
+          "command": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "/localhome/local-rohing/orch_r118_grid_final_source_20260915_v2/gpu/orch_r118_grid_final_drain.py",
+            "--plan",
+            "/localhome/local-rohing/orch_r118_grid_final_20260915_attempt2/F4/PLAN.json",
+            "--plan-sha256",
+            "8c173f12d1cbcd86e9c8c113cd7a88967b6fa3f282def46f74189a2f3d158393",
+            "--source-sha256",
+            "e33bf395a4cad2da896e1024fcfef64067e1d0ab4fbf7f8e0e23f1952f341615"
+          ],
+          "identity": {
+            "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+            "pid": 1533423,
+            "ppid": 1,
+            "start_ticks": "1440564",
+            "state": "S",
+            "uid": 2524
+          },
+          "pid": 1533423,
+          "role": "drain"
+        },
+        {
+          "command": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "/localhome/local-rohing/orch_r118_grid_final_source_20260915_v2/gpu/orch_r118_grid_final.py",
+            "guard",
+            "--plan",
+            "/localhome/local-rohing/orch_r118_grid_final_20260915_attempt2/F4/PLAN.json",
+            "--plan-sha256",
+            "8c173f12d1cbcd86e9c8c113cd7a88967b6fa3f282def46f74189a2f3d158393"
+          ],
+          "identity": {
+            "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+            "pid": 1533424,
+            "ppid": 1,
+            "start_ticks": "1440565",
+            "state": "S",
+            "uid": 2524
+          },
+          "pid": 1533424,
+          "role": "eval"
+        }
+      ],
+      "ready": {
+        "path": "/localhome/local-rohing/orch_r118_grid_final_20260915_attempt2/F4/CPU_READY.json",
+        "sha256": "b23535fa9cc21788c20d02a512963403db80c0301bab5e5b8e07b84aa2a62c20"
+      },
+      "root": "/localhome/local-rohing/orch_r118_grid_final_20260915_attempt2/F4",
+      "signals_sent": 0,
+      "timers": {
+        "path": "/localhome/local-rohing/orch_r118_grid_final_20260915_attempt2/F4/CPU_TIMERS_STARTED.json",
+        "sha256": "9a8062e750451b95b10691264465c1326241adc40dac8d40e38008fa4d066114"
+      },
+      "waiting": {
+        "path": "/localhome/local-rohing/orch_r118_grid_final_20260915_attempt2/F4/SCHEDULER_STARTED.json",
+        "sha256": "4c4b9e7266f94afd39490fb3641310bc2c706ad900b2831ee68e380a73e505e4"
+      }
+    },
+    {
+      "actual_native_calls": 0,
+      "armed": {
+        "path": "/localhome/local-rohing/orch_r118_grid_final_20260915_attempt2/A4/drain/ARMED.json",
+        "sha256": "f36f919252182d2226b988eac977dcf0bcbfd1ff54e10e6b9b50ede9baf37d18"
+      },
+      "branch": "A4",
+      "final_contents_read": false,
+      "old_predecessors_still_alive": true,
+      "plan": {
+        "path": "/localhome/local-rohing/orch_r118_grid_final_20260915_attempt2/A4/PLAN.json",
+        "sha256": "b11445364cf8411ea8e4b71c97932b669c605b100d04e1ea93ce47cdd88ad83d"
+      },
+      "processes": [
+        {
+          "command": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "/localhome/local-rohing/orch_r118_grid_final_source_20260915_v2/gpu/orch_r118_grid_final_drain.py",
+            "--plan",
+            "/localhome/local-rohing/orch_r118_grid_final_20260915_attempt2/A4/PLAN.json",
+            "--plan-sha256",
+            "b11445364cf8411ea8e4b71c97932b669c605b100d04e1ea93ce47cdd88ad83d",
+            "--source-sha256",
+            "e33bf395a4cad2da896e1024fcfef64067e1d0ab4fbf7f8e0e23f1952f341615"
+          ],
+          "identity": {
+            "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+            "pid": 1533431,
+            "ppid": 1,
+            "start_ticks": "1440566",
+            "state": "S",
+            "uid": 2524
+          },
+          "pid": 1533431,
+          "role": "drain"
+        },
+        {
+          "command": [
+            "/localhome/local-rohing/v2/venv/bin/python",
+            "-B",
+            "/localhome/local-rohing/orch_r118_grid_final_source_20260915_v2/gpu/orch_r118_grid_final.py",
+            "guard",
+            "--plan",
+            "/localhome/local-rohing/orch_r118_grid_final_20260915_attempt2/A4/PLAN.json",
+            "--plan-sha256",
+            "b11445364cf8411ea8e4b71c97932b669c605b100d04e1ea93ce47cdd88ad83d"
+          ],
+          "identity": {
+            "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+            "pid": 1533432,
+            "ppid": 1,
+            "start_ticks": "1440566",
+            "state": "S",
+            "uid": 2524
+          },
+          "pid": 1533432,
+          "role": "eval"
+        }
+      ],
+      "ready": {
+        "path": "/localhome/local-rohing/orch_r118_grid_final_20260915_attempt2/A4/CPU_READY.json",
+        "sha256": "574fbe1ae6af580597eaf8e4a2d9b688e508e7c19e76bb292dffbcdc573475f5"
+      },
+      "root": "/localhome/local-rohing/orch_r118_grid_final_20260915_attempt2/A4",
+      "signals_sent": 0,
+      "timers": {
+        "path": "/localhome/local-rohing/orch_r118_grid_final_20260915_attempt2/A4/CPU_TIMERS_STARTED.json",
+        "sha256": "c976a87dc7797560342270216250b7a73769771ab8af2a1cf71c977e759283a2"
+      },
+      "waiting": {
+        "path": "/localhome/local-rohing/orch_r118_grid_final_20260915_attempt2/A4/SCHEDULER_STARTED.json",
+        "sha256": "47ecd3e89d4ae20ccdf183d5348e69d0dd39fcc043502265f96b8f552b73e27a"
+      }
+    }
+  ],
+  "consumer_api": "validate_selection only; no writer or fallback",
+  "cpu_tests": {
+    "path": "/localhome/local-rohing/orch_r118_grid_final_source_20260915_v2/CPU_TESTS.log",
+    "sha256": "ca3d42a7c3ca14099764c8be853fe8a04e7786ac111b7cf8a7fd7ff01a8bb339"
+  },
+  "decoder": {
+    "context_limit": 16384,
+    "do_sample": false,
+    "held_batch_size": 8,
+    "held_max_new_tokens": 2048,
+    "no_repeat_ngram_size": 4,
+    "num_beams": 1,
+    "post_generation_deletion": false,
+    "repetition_penalty": 1.0,
+    "truncate_inputs": false
+  },
+  "drain_unix": 1789491300,
+  "eval_end_unix": 1789492800,
+  "eval_start_unix": 1789491600,
+  "final_contents_read": false,
+  "final_file_sha256": "ae12939950f8c57fe35e11fc40509b109a88661d3615671d7b371d1ec2f5c578",
+  "final_ids": [
+    "R114_F4_FINAL_01",
+    "R114_F4_FINAL_02",
+    "R114_F4_FINAL_03",
+    "R114_F4_FINAL_04",
+    "R114_F4_FINAL_05",
+    "R114_F4_FINAL_06",
+    "R114_F4_FINAL_07",
+    "R114_F4_FINAL_08"
+  ],
+  "final_ids_sha256": "03d1003ead56474fc269cb54fc3fed38ba5d6528f1924401fb00ba2c31a5ac9c",
+  "lease_end_unix": 1789617840,
+  "local_tests_passed": 66,
+  "max_native_calls_pair": 16,
+  "max_native_calls_per_branch": 8,
+  "native_tests_passed": 66,
+  "observed_unix": 1789478891.2220519,
+  "optimizer_steps": 0,
+  "parent_calls": 0,
+  "prior_preparation": "v1/attempt1 retained superseded; never armed",
+  "raw_node_only": true,
+  "schema": "R118_GRID_FINAL_CPU_ARMED_COMPACT_V2",
+  "selector_file": "FINAL_SELECTION.json",
+  "selector_schema": "R118_FINAL_SELECTION_V1",
+  "selector_sha256": "64ccee2884b1dddafde70da8ccc2795127c8a4553fb6eb1a301484da369334ed",
+  "signals_sent": 0,
+  "source": {
+    "path": "/localhome/local-rohing/orch_r118_grid_final_source_20260915_v2/SOURCE.json",
+    "sha256": "b24bc1a95587c0694517b116f1532b8350d96de5622985f6a7ddcf7bb599ff88"
+  },
+  "source_files": {
+    "gpu/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gpu/orch_r118_final_selection.py": "64ccee2884b1dddafde70da8ccc2795127c8a4553fb6eb1a301484da369334ed",
+    "gpu/orch_r118_grid_final.py": "c7912247f70ee798d6833431bbb470f059a82234bc2776aaded7fb571fb744a0",
+    "gpu/orch_r118_grid_final_drain.py": "e33bf395a4cad2da896e1024fcfef64067e1d0ab4fbf7f8e0e23f1952f341615",
+    "gpu/orch_r118_grid_l2_candidate_audit.py": "1f31539f2abb429110c6a6cefc452f391687cedd9784335518d024d3d17c7140",
+    "tests/test_orch_r118_final_selection.py": "c43677672a84f3f8698150830b62e13d16d1c2bb9823502da4a52e25cfc2609c",
+    "tests/test_orch_r118_grid_final.py": "47c028c10576a312486aec520b73abc8e0d5b08bb470ab0c13a1d01b7e71fa29",
+    "tests/test_orch_r118_grid_final_drain.py": "59acc9481aacb2b7e01cfbabfc22d6481f34df481f21508c5970b4a408ed543b",
+    "tests/test_orch_r118_grid_l2_candidate_audit.py": "901e5dad5c181f121de68cc72191d0e1a913f672e39cc1a6ed1000b5aebc9291"
+  },
+  "training_calls": 0
+}

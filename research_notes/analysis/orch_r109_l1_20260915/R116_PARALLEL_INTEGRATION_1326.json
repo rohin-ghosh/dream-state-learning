@@ -1,0 +1,98 @@
+{
+  "activation": "Main only, after current serial checkpoint/readout and all-eight safe boundary; never mid-sleep",
+  "arguments_from_prepared": [
+    "encoded_new",
+    "encoded_old",
+    "encoded_anchors",
+    "schedule",
+    "source_manifest_sha256"
+  ],
+  "backend": "gloo",
+  "boundary_contract": "run max_steps and lease callback must agree on all ranks; failed collective poisons segment; no publish or retry without explicit recovery",
+  "caller_owns": [
+    "process_group_with_finite_timeout",
+    "rank_local_raw_engines",
+    "same_F1_AdamW",
+    "native_atomic_checkpoint_and_publication",
+    "source_closure",
+    "leases",
+    "FINAL_scheduler"
+  ],
+  "checkpoint_contract": "Collective checkpoint: only rank0 gets CPU payload containing LoRA, same optimizer state, cursor, schema/binding, eight RNG states. Caller atomically saves before publication.",
+  "checkpoint_serializer_adapter": {
+    "commit": "Caller atomically binds adapter, original-format owner optimizer/RNG, all-rank sidecar and source/recipe hashes. Publish only a completed sleep; never a partially reduced/half-applied step.",
+    "failure": "A failed backend refuses further run/checkpoint until explicit restore. Do not silently restart or regenerate charged captures. Reserve deadline time for bounded segment checkpointing and FINAL.",
+    "owner_compatibility": "Store rank0 optimizer and rank0 cpu/cuda RNG in existing owner format; save the complete parallel payload as a separately hashed native sidecar. Do not discard seven worker RNG states.",
+    "parallel_sidecar_fields": [
+      "format",
+      "binding",
+      "schema",
+      "cursor",
+      "lora",
+      "optimizer",
+      "rng",
+      "metrics"
+    ],
+    "preserve_existing_owner_file_keys": [
+      "optimizer",
+      "cpu_rng",
+      "cuda_rng"
+    ]
+  },
+  "collective_tensors": "CPU",
+  "comparison": "Average-gradient batch8 AdamW, not serial-equivalent; partial tail divides by active ranks, no padding",
+  "counter_adapter": {
+    "anchor_presentations": 1884,
+    "anchor_token_exposures": 35885,
+    "child_token_exposures": 319802,
+    "comparison": "Serial exposures identical, AdamW trajectory explicitly different.",
+    "new_row_presentations": 1824,
+    "optimizer_steps": "Add actual logical AdamW steps (236 for measured frozen1884-row schedule), not serial presentation count. Existing global optimizer steps persist.",
+    "rehearsal_row_presentations": 60,
+    "tail": "Four active ranks in final measured batch; other four perform no forward/backward but join CPU collectives. No padding/repeats/drops.",
+    "weights": "Each active rank mean child loss*.75 plus mean anchor loss*.25, then average active-rank gradients before one F1 step."
+  },
+  "created_utc": "2026-09-15T13:26:28.907377+00:00",
+  "engine_fields": [
+    "torch",
+    "model",
+    "device",
+    "verify_base"
+  ],
+  "measured_speedup": null,
+  "model_contract": "Existing enabled fp32 LoRA; frozen base; no DDP/reducing hooks or readonly decoder wrapper",
+  "native_gpu_tested": false,
+  "native_manifest_sha256": "9d12c7101dbcef72c9711ea2140bf264f0d673cceacd9ba1e5c4467ad68996b4",
+  "no_current_integration": true,
+  "optimizer_contract": "Exactly rank0 existing AdamW owns exactly those same LoRA parameter objects; workers None",
+  "rank_order": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "A1",
+    "A2",
+    "A3",
+    "A4"
+  ],
+  "required_boundary": [
+    "Current serial sleep finishes normally; preserve checkpoint, optimizer steps, readouts and every charged capture.",
+    "Main chooses a future generation after all-eight safe handoff; unchanged commonCONFIG/leases/FINAL scheduler.",
+    "Caller supplies same common-checkpoint adapter on every existing raw engine, preserving parameter objects and F1 existing AdamW reference.",
+    "Caller owns finite-timeout Gloo group; never fork already-loaded CUDA engines. All ranks invoke constructor/run/checkpoint/restore in lockstep.",
+    "Validate new-source frozen closure and manifest before activation; current CPU readiness is not authorization to alter current sleep."
+  ],
+  "restore_contract": "Collective restore(owner_payload on rank0, None elsewhere), in-place copy, existing optimizer object and all rank RNG; no automatic recovery/replay",
+  "row_adapter": "prepare_native_cohort: verify native captures, same replay encoder and exact42 BASE inventory; retain encoding rejections",
+  "schema": "R116_PARALLEL_INTEGRATION_CONTRACT_V2",
+  "source_sha256": "0f73264f6bcb980ffed932ccd000457db857e2f64d7bafd22de33f9f181bf58b",
+  "status": "PROSPECTIVE_CPU_CANDIDATE_NOT_ACTIVATION",
+  "usable_call_sequence": [
+    "prepared = parallel.prepare_native_cohort(shared=pinned_shared, anchor_module=pinned_anchors, root=common_root, tokenizer=raw_engine.tokenizer, anchors=actual_F1_anchor_order, anchor_root=anchor_root, expected_config_sha256=config_sha, expected_state_sha256=state_sha, source_files=frozen_source_files)",
+    "arguments = {name: prepared[name] for name in ('encoded_new','encoded_old','encoded_anchors','schedule','source_manifest_sha256')}",
+    "backend = parallel.ParallelSleep(raw_engine, existing_F1_AdamW if group_rank == 0 else None, group=gloo_group, **arguments)",
+    "metrics = backend.run(max_steps=bounded_steps, check=lambda: lease_check('shared_parallel_boundary'))",
+    "owner_payload = backend.checkpoint()",
+    "backend.restore(owner_payload if group_rank == 0 else None)"
+  ]
+}
