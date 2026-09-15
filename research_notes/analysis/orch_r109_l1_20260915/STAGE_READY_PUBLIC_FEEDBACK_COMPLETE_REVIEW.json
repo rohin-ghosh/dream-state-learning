@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-09-15T16:53:38.301657+00:00",
+  "exclude": [
+    "research_loop/COORDINATION.md",
+    "PUBLIC_FEEDBACK_PILOT_ALLOCATION_1636.md",
+    "node-local raw captures/model/checkpoints"
+  ],
+  "files": {
+    "gpu/orch_r109_l1_public_feedback.py": "7460e322ddf5b09a96f1fb4a9dde78f4c0d21fb48109eac1810dcb6791abea82",
+    "gpu/orch_r109_l1_public_feedback_review.py": "1387a753bcec5866e102be1969d8222d70eab8729382fc795e4ff0dbafce8f48",
+    "research_loop/workers/R109_L1.md": "00f41c6656ed7174848e7ad836be07fcb795a9bf6c549a4d4a5bdd909057765a",
+    "research_notes/analysis/orch_r109_l1_20260915/PUBLIC_FEEDBACK_COMPLETION_REVIEW_1653.json": "0065d5a73d7b0193e928e7d842d41c4135072036091601792e6274bd268e2c4d",
+    "research_notes/analysis/orch_r109_l1_20260915/PUBLIC_FEEDBACK_COMPLETION_REVIEW_1653.md": "0f33aed11e52c87805667cd94786c8ca2e237dc525e866e5ea2b87b891df4b72",
+    "research_notes/analysis/orch_r109_l1_20260915/PUBLIC_FEEDBACK_READY_1642.json": "188cf27e640cf8c88d5d5460c982097906a4281f762c1ebde13a8da085eb9e87",
+    "tests/test_orch_r109_l1_public_feedback.py": "576d293462a5473c36121fa843ebd47b513e496fb6a1de89fcfbe30e47eeb32a",
+    "tests/test_orch_r109_l1_public_feedback_review.py": "c8b2e7c2663095d2629d54699602a3a55a673b5ee6b27babb08112c2fbe38939"
+  },
+  "main_owns_git": true,
+  "native_review_sha256": "ccf648ccbd08fd4e0f3446dc7b5fb4f3953e0d81801fa9cbb9a857dbf41dcad8",
+  "no_fit_no_ingestion_no_retry": true,
+  "schema": "R109_EXACT_STAGE_ALLOWLIST_V1",
+  "status": "STAGE_READY_PUBLIC_FEEDBACK_COMPLETE_REVIEW",
+  "tests": {
+    "collection_native": 12,
+    "command": "python3 -m unittest discover -s tests -p 'test_orch_r109_l1_public_feedback*.py' -q",
+    "local_result": "PASS",
+    "local_unittest": 18,
+    "native_result": "PASS",
+    "review_native": 6
+  }
+}

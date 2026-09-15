@@ -162,3 +162,165 @@ this worker neither launched nor modified Hubble broker. Both service3 native
 LAUNCH absent; FINAL_STAGER_FAILED absent; actual rebind not yet complete.
 Main receives final owner and checked CPU preflight refs for central dispatch.
 No standalone GPU calls/Git, no additional approval gate.
+
+## 2026-09-15 16:21 UTC — Second failed-startup admission diagnosis; no retry
+
+Main reports session2987f2cba47868934fd6d465f0001c94e7d754d3b7972bb56c328ed6f081e641
+FAILED fresh_owner_command_failed_A3. Actual A3guard2752426 failed before native
+spawn at immutable loop.py453. It calls scan then require, and writes ADMISSION
+only afterward: rejected snapshot and its exact reasons were not persisted.
+Original A3 rejection cannot be reconstructed honestly; no new scan is labeled
+that missing artifact. No evidence yet for a source-root/UUID/minor defect.
+
+One separately recorded diagnostic using the exact original privileged scanner,
+root/source returned CLEAR16:19:19: euid0, correct physical6/UUID/minor6, 1MiB,
+0util, no target compute and no retained blocker. Existing reconciler identified
+argv-only non-GPU drift for four processes. This does not establish the original
+failure cause. Full scan NODE only; compact V6_A3_ADMISSION_DIAGNOSTIC_1619.json.
+
+Second-failure proof: A3 no NATIVE_ONCE/LAUNCH/bootstrap/model call; F3native
+2753108/guard2752422 exited after common failure, no bootstrap/collection.
+No new reservations or provider claim directories; charges735/100 and274/40
+unchanged, all preserved hashes and canonical gen1/checkpoint/optimizer unchanged.
+F3 FINAL successfully rebound to timer2753110 before native failure; A3 remains
+on2610330. Both live, selector1519259 untouched. No signals or automatic relaunch.
+
+Prospective CPU-only repair candidate: preserve every scanner report BEFORE
+predicate evaluation, including rejected reports; record scanner exceptions.
+Keep original privileged/UUID/minor/blocker predicate unchanged. Default one
+scan; optional future Main-bound maximum3 read-only observations within the SAME
+startup deadline, never accepting a denied report or waiving a blocker. No
+current driver integration, service/source mutation, scan retry or GPU launch.
+Pre-native failure terminal/broker cleanup also needs a new-era guard finally
+receipt; existing A3service3 lacks one and is preserved, not fabricated here.
+
+### 16:29 UTC — Runnable proof guard and actual prepared exports, no restage
+
+Main directs reuse of Math combined proof, not a broad waiver. New guard wrapper
+loads the exact pinned Math bind_scan body (no foreign actor configuration),
+reuses orch_admission_transient_exit and Math argv_admission unchanged, then
+retains original CODE admission predicate. One scan only in actual wrapper;
+report and decision are written BEFORE rejection. Pre-native exceptions produce
+a new-era GUARD_TERMINAL with actual guard identity/native_started=false, so
+future brokers cannot poll a failed pre-native guard indefinitely. No current
+service3 terminal was fabricated and no existing GPU/native source was edited.
+
+Local/native50tests+79subtestsPASS; nativeCUDA uninitialized, pins unchanged.
+Initial author test compared opcode encodings affected by compilation context;
+changed the test to compare decoded opcode/argument semantics plus names against
+the same pinned full-source compile. No admission guard or proof was weakened.
+Actual combined privileged diagnostic16:28:52 returned CLEAR: correct UUID6/
+minor6,1MiB,0util, no blockers, no pidfd errors/clears and two live argv-only
+proofs. Full report NODE only. It is explicitly not the lost original rejection.
+
+A3guard2752426 exact UID/start/command hash recovered from the contemporaneous
+F3 accepted ADMISSION process row, verified against A3 actual owner argv and
+current /proc absence. Original failed snapshot itself remains unrecoverable.
+All failed-native/guard predecessors now bound in new release envelopes; no
+calls/charges/rows/caps changed. Existing F3C22/A3C8 pending submissions preserved.
+
+Prepared before16:30 at each original root parallel_v4/proof_recovery_1629:
+F3OWNER_PREPARED3e4e069b0e8423891b2d1959080fdd296ea73b21e57c2f6305f99175c18642c9;
+A3OWNER_PREPARED466973f7f0454f7c0939d9f6e8dac555b34c6234a47c870d66ce7ac6f67e6bc0.
+Both full absolute source maps553ee6deb833e614a5a7abf163548fda1619a39d800974908559354a238f6be8
+include actor211 unchanged plus the separately frozen proof auxiliary/dependencies.
+Future service4/final4 declared, not staged/dispatched. Guardian command runs the
+new wrapper; native command remains original immutable loop. Do NOT use V5
+owner-equality staging verbatim: retain new prepared guardian command/source map
+after unchanged core runtime validation. FINAL wrapper arm-final handles either
+failed pre-native or failed loaded actor predecessor list and original quota.
+Main alone binds next campaign/session and authorizes execution. No signals/Git.
+
+### 16:36 UTC — service4 staged; cutoff prevented FINAL custody transfer
+
+Main campaign fb9bd9419d7621684ea41f93778ebb5c83de6076e46993a68d2a83189f62cab0
+bound to new service4 runtime/owner requests on F3/A3. CPU validate_runtime passed
+for both. Initial staging-helper FunctionType call omitted keyword-only clock;
+preserved failed helper node-local, continued metadata binding with explicit
+clock. No actor/proof guard source changed, model retry, GPU scan or GPU launch.
+
+Native exact owner/preflight/custody/armed references are in
+/localhome/local-rohing/orch_r118_code_proof_guard_20260915_v1/SERVICE4_CPU_STAGE_RESULTS.json
+SHA17db127fc6ece690742e0dab75337236974c92d6d584870a3cbec2213415e9f5.
+F3 OWNER_REQUEST664e5d22d97dc4b79ac902ab9ad80f34cfe870182d6d54469fd7a5f592b5c576;
+A3 OWNER_REQUEST6f7a1894d1223f80870e8546c923a03f8069f7d292cadadd389a827ad6547a71.
+Hubble F3 custody57c94fa41c8ee00c3117a94b122f240f2078f698ccc4ca989f525f6ee568e39e.
+
+A3 predecessor2681761 verified exact PID/UID/start/command/boot identity, log
+hash preserved, SIGINT delivered through pidfd. Actual exit and original queue
+lock absence confirmed before new CPU broker2824574 started16:34:59. Original
+1543 provider source/config reused unchanged; service4 custody only. At16:35
+follow-up new broker alive, log empty, queue lock acquired. No provider retry.
+
+Both FINAL stagers actually ARMED before cutoff, then FAILED at16:35:00.197(F3)
+and16:35:00.112(A3): finite_Main_authorization. Neither service4 LAUNCH exists;
+neither FINAL_STAGER_COMPLETE exists. No FINAL timer cancellation/rebind occurred;
+old timers and Main selector untouched. Expired authorization means these owners
+are NOT currently dispatch-ready. No silent authorization extension, stager
+retry, new service or GPU dispatch. Main notified immediately; await explicit
+renewed CPU binding scope if proceeding. All failure artifacts preserved.
+
+### 16:36–16:38 UTC — actual surviving FINAL waiters and release blocker
+
+Main explicitly declines late dispatch/extension. Read-only exact identity check:
+F3final3 timer2753110 alive, A3final2 timer2610330 alive, recorded dispatch identities
+match. Both service4 stagers exited; FINAL4 absent and neither native launched.
+No new signals. Main selector1519259 process present, untouched.
+
+Important: survival does NOT establish runnable17:00 evaluation. Both bound old
+services lack CLEAN_RELEASE.json (F3service3, A3service2), though GUARD_TERMINAL
+exists. Existing parallel FINAL wait_release requires both and validates a settled
+cursor. Failed-startup actors never reached that clean release. Timers therefore
+wait on absent release proof, not just17:00 selection. Reported immediately to Main;
+no fabricated clean release, no old source patch, no timer restart. Eight calls
+each/zero parent remain allocated17:00–17:20 against canonical FINAL_SELECTION.json.
+Needs explicit scoped failed-startup FINAL release recovery, not learning restart.
+Compact exact identities/status: V7_FINAL_WAITER_SURVIVAL_1636.json.
+
+### 16:43 UTC — [Builder] FINAL-only factual failed-startup recovery
+
+Main explicitly authorizes replacing unused FINAL waiters before16:50, retaining
+eight calls/branch17:00–17:20 and canonical selector. New owned
+gpu/orch_r118_code_final_failed_release.py uses failed guard/native exit identities,
+immutable failed-startup proofs, original pending/charge hashes, zero new training
+and old/sibling FINAL dedup. It never writes CLEAN_RELEASE. Original evaluator,
+decoder, cutoff/selection guard, native quotas and admission remain unchanged.
+Replacement must be alive/ARMED with exact plan+facts before old timer is stopped
+by existing exact pidfd helper; durable intent then commit transfers custody.
+Uncommitted replacement cannot evaluate. No retries or source hotpatch.
+
+Local12testsPASS; native12testsPASS0.43s, CUDA uninitialized and before/after source
+hashes unchanged. Native dependency preparation first lacked pytest import path,
+then the copied actor211 lacked existing timer helper; reused installed native
+pytest support and exact frozen timer/stage dependencies, no production weakening.
+Frozen source215 manifest54072f7d36f7c93d2dd7838131a75d2fd06ebcc429d5cb87ca6e62b9f7cbcd23
+at /localhome/local-rohing/orch_r118_code_final_failed_release_20260915_v1.
+Only upcoming FINAL scheduler may perform original eight calls after17:00; no
+TRAIN/provider/optimizer or current GPU scans/launch. Main alone owns Git.
+
+### 16:45–16:46 UTC — actual replacement custody committed, both waiters live
+
+Both replacements were validated and ARMED before stopping either old timer.
+Exact pidfd cancellation succeeded, but the original handoff.alive post-stop
+check raced /proc cmdline disappearance on each old PID and interrupted commit.
+Preserved each TRANSFER_INTENT; no second cancellation, new process, quota or
+model retry. Separate CPU-only orch_r118_code_final_transfer_completion.py checks
+the same intent/armed plan+facts, replacement live and old /proc PID fully absent
+(not a weaker identity-drift exception), then completes the original transaction.
+Existing frozen scheduler source unchanged; no CLEAN_RELEASE fabricated.
+
+Local14testsPASS and native14testsPASS0.18s with exact before/after source pins,
+CUDA uninitialized. Completion helper hashd50e23e256721ed4e8f905c6020ca28f84207475b0e8ea3888444f2552b81b6c.
+Native FINAL_CUSTODY_TRANSFER_COMPLETE.json observed16:45:24 proves:
+F3new2944819 alive, old2753110 dead; A3new2945019 alive, old2610330 dead.
+Both SCHEDULER_STARTED, empty logs, zero native launches/attempts/reservations.
+Both now wait for17:00 and Main canonical selection, no clean-release deadlock.
+Main selector1519259 process present and untouched. Original8calls/branch,
+17:00–17:20 bound, original decoder/task IDs and parent-free route retained.
+No TRAIN restart, parents, optimizer, GPU scan or early sealed task read.
+
+Native custody root /localhome/local-rohing/orch_r118_code_final_failed_release_20260915_v1;
+branch destinations each original root /parallel_v4/final_failed_recovery.
+F3 TRANSFER_COMMITTEDd3fe7926ec637aa473faeeae5afe72475a0ee6b46b9c7935b178ca260cfa5652;
+A3 TRANSFER_COMMITTED2bef1e80435b4c3f78ead78ebd797f5ea467fda86fce3a132e4606227edbe59a.
+Raw remains native; publication includes only owned sources/tests/compact receipts.

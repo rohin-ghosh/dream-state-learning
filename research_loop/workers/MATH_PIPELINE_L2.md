@@ -1,5 +1,21 @@
 # MATH-PIPELINE-L2 — automatic manufacturing-line handoff
 
+## 2026-09-15T16:45Z — FINAL-only custody armed; no startup extension
+
+ActualF2CPU2956733/A22956814 live17:00waiters, started16:44:42/43 before16:50; selector1519259preserved. Same8FINAL/branch17:00–17:20, frozenbase/selectedcanonicalLoRAread-only, parent/train/optimizer/OPEN/retry0. Authenticfailed-predecessors plus neverdispatchedattempt5 and retiredtimers; nofakeCLEAN. Recursiveoldallocationdedup and originalbranchwrite-oncequota claim.73local+73nativeCPU PASS, frozenv4manifest883c4bc9e043b5bb20738e358e14ce82a0831b95f08c290b93546d0dada16494; earlierCPUmissingdependencyfailures archived,noGPU. ARMreceipta44a7f68497b89aeeb2956e005e4b583b5259de500639ef674efddf6a4d5f9b5. No claims/ledger/model at16:45:11; ARMED_NOT_EVALUATED. Fullready/allowlist FINAL_ONLY_READY_1645.md. NoGit/rawVM/extraallocation.
+
+## 2026-09-15T16:36Z — urgent FINAL custody gap, startup closed
+
+Main didnotpublishSESSION/dispatch before16:35; noextension. Readonly confirms oldfourmathCPUtimersretired/absent and no attempt5replacementguards/timers/finaldirectories. BOTHFINAL UNARMED; selector1519259LIVEuntouched. Charges274/60,170/36unchanged. Proposed FINAL-only custody underexisting8calls/branch17:00–17:20, noadditionalquota, no earlymodel/sealedaccess; actualnever-dispatchedproof replaces impossible newguardcleanterminal requirement WITHOUT fabrication. Recursive priorFINALnoduplicatechecks needed.38existingFINAL/drainCPUtestsPASS; no successor or scheduler launched. Exactproof+proposal FINAL_CUSTODY_GAP_1636.md; source unchanged, no signals/Git.
+
+## 2026-09-15T16:33Z — attempt5 CPU stage/brokers/preflight actual COMPLETE
+
+Actual Mainfb9bd941 campaign, both finalowners now staged in attempt5; F2owner128b1e0e477630d9f532f468377ea3a9292e9f238e957a692f53bd80bde1d52c, A2owner3ff5a92739cc0272961cba549c1eb8975e6f38dd76bb9a457d6fd0d38c79a4e6. F2Hubble2843647/A2VM2808906 actual original queue locks and new runtime terminals; both BROKER_READY verified. CPUpreflight PASS, no scan/model/provider call. Proper newstagebound retirement of exactfour old mathCPUtimers complete; selector1519259unchanged. Originalcounters/carry/gen1/bounds preserved; guard_started=false both. CPUauthorization16:35, Mainonlydispatch. Fullrefs and exactpreflight command `research_notes/analysis/orch_math_feedback_uptake_r118_preinfer_20260915_attempt1/STAGED_1633_READY.md`; STAGED_1632.json plus two broker compactreceipts ready Mainpublication. NoGit.
+
+## 2026-09-15T16:26Z — second-session CPU recovery prepared, NO launch
+
+Main may build campaign NOW from actual frozen `/localhome/local-rohing/orch_math_feedback_uptake_r118_second_exit_source_20260915_v1/SECOND_PREPARED_EXPORTS.json` SHA6a9f7c8b9a23cd332fab7ff246765bdf48adf07d211453508f8eeb9dbc5cde95;188-entry source map SECOND_SOURCE_FILES_ABSOLUTE.json SHA4e3fe24a702ec8a6e91972a5d211f83291e18d42189e87167efa8216a03a9a5b. New attempt5 lane1/lane5 FRESH_OWNER_PREPARED refs ffda65e825523c3fe62fe98721619966b1d5d2aa4f394b59cd84a2949843c096 /51221d3dd6b8942a170ac5224f68c293686640f1eb24edb03c4fa09b35ec43ca.29 local+29 native CPU PASS; original186 sourcefiles unchanged. New wrapper preserves both CPU-child LAUNCH/FAILED identities from2987f2, zero model bootstrap/input charges;457 original file hashes unchanged, F2N274/P60next11,A2N170/P36next7,gen1/3009steps unchanged. Old/second cutoff+FINAL timers untouched; no scans/signals/provider/model/start. CPU auth ends16:35, TRAIN16:55/native16:59/hard17:02 unchanged. Exact stage requirements, scan imports forCode/Route,HubbleF2brokerfutureterminal, publicationallowlist in SECOND_EXIT_READY.md beside exports. Main campaign/dispatch/Git only.
+
 ## 2026-09-15T16:15Z — actual recovery stage/both brokers ready, preflight PASS
 
 Bound Main7ea22b7f newcampaign. Finalowners underpreinfer_attempt4:

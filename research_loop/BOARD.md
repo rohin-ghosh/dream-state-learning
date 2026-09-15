@@ -1,5 +1,28 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## [Builder] 2026-09-15 16:52 UTC — FINAL custody restored; claims bounded
+
+All four node5 pairs have verified live CPU FINAL waiters for the original
+17:00–17:20UTC window, with selector1519259 untouched and no quota reset.
+This is ARMED_NOT_EVALUATED, not GPU occupancy. Shared generation1 remains
+the only committed pooled sleep; the final startup campaign missed its16:35
+cut and was not dispatched. No resumed-learning claim.
+
+The11:36 route visibility question is resolved: OPEN_TRAIN/open_readouts
+contain executed actions, and raw generated text/token IDs are preserved.
+Most route outputs are genuinely protocol-only; sleep0 lacked open turns.
+F2/F3 DEV capture preserves raw text too. Semantic thinking gains remain
+unproven. Detailed answer and pair custody identities:
+`research_notes/analysis/orch_r118_readout_visibility_20260915/STATUS_1652.md`.
+
+Public-feedback pilot finished48paired episodes/96responses at16:46:50UTC,
+zero training/admission, all three arms0/16 final success. Completed descriptive
+review finds1task-aligned partial edit in CHILDfeedback,0 in CHILDcontrol,
+3 in BASEfeedback; all remain invalid. Every probe stops at parser/schema/AST
+diagnostics: no executed interpreter output, no functional correction claim.
+See PUBLIC_FEEDBACK_COMPLETION_REVIEW_1653.md in the R109 analysis directory.
+Raw remains node-local. Main36math/pilot/reviewer unittest tests PASS.
+
 ## [Builder] 2026-09-15 15:59 UTC — matched frozen reference, ovx7
 
 Main reassigns node2 physical7 (gpu/ovx_ssh.sh) from Hubble's explicitly

@@ -1,0 +1,1609 @@
+{
+  "broker_changes": 0,
+  "control_checks": {
+    "canonical_source_store_hash_matches": true,
+    "eighteen_distinct_readout_processes": true,
+    "exact_checkpoint_file_hashes_verified_all": true,
+    "historical_decoder_and_environment_source_hashes_match": true,
+    "initial_adapter_and_base_match": true,
+    "initial_public_messages_match": true,
+    "loaded_saved_identities_verified_all": true,
+    "matched_to_pooled_R118_lineage": false,
+    "ordered_tasks_match_all_six_groups": true,
+    "parent_free_all": true,
+    "realized_training_dose_matched": false
+  },
+  "frozen_plan": {
+    "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/PLAN.json",
+    "sha256": "4567e302366fc8b65801372ec0c4706f3fadbda6f3d73b8f8eeabcb8b688f47a"
+  },
+  "frozen_terminal": {
+    "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/TERMINAL.json",
+    "sha256": "02bf9b90d1e194299b8e43fe99186a44337ee46f5429d3f4a5fccd15c09b9580"
+  },
+  "frozen_terminal_summary": {
+    "finished_unix": 1789488473.5758755,
+    "groups": [
+      {
+        "complete": true,
+        "cycle": 1,
+        "pid": 1368939,
+        "returncode": 0,
+        "timed_out": false
+      },
+      {
+        "complete": true,
+        "cycle": 2,
+        "pid": 1370022,
+        "returncode": 0,
+        "timed_out": false
+      },
+      {
+        "complete": true,
+        "cycle": 3,
+        "pid": 1370723,
+        "returncode": 0,
+        "timed_out": false
+      },
+      {
+        "complete": true,
+        "cycle": 4,
+        "pid": 1371420,
+        "returncode": 0,
+        "timed_out": false
+      },
+      {
+        "complete": true,
+        "cycle": 5,
+        "pid": 1371961,
+        "returncode": 0,
+        "timed_out": false
+      },
+      {
+        "complete": true,
+        "cycle": 6,
+        "pid": 1372506,
+        "returncode": 0,
+        "timed_out": false
+      }
+    ],
+    "optimizer_steps": 0,
+    "parent_calls": 0,
+    "retries": 0,
+    "status": "COMPLETE"
+  },
+  "groups": [
+    {
+      "adapter": {
+        "adapter_files_verified": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+      },
+      "arm": "GUIDED",
+      "artifact_files": 17,
+      "artifact_inventory_sha256": "820c622eee8deab69073fd64a937af3dc28da547c3646255a9732c6334142c7e",
+      "binding": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle1/readout/BINDING.json",
+        "sha256": "7400b970bc1aaeac0371925a883f3f5b3106e8387a234c184ac73d46a8116fc7"
+      },
+      "calls": 9,
+      "command_only": 9,
+      "complete": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle1/readout/COMPLETE.json",
+        "sha256": "f83554e3e6e46fd3c78abc0f27b5b792c2ab77029ede39112015649454943a75"
+      },
+      "correct": 1,
+      "cumulative_updates": 0,
+      "cycle": 1,
+      "episode_denominator": 2,
+      "episode_parent_messages_empty": true,
+      "episode_refs": [
+        {
+          "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle1/readout/EPISODE_01.json",
+          "sha256": "d18c77b70276212a2137c82c025fb3dbdc4a42f50a02ce401249872c66f507db"
+        },
+        {
+          "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle1/readout/EPISODE_02.json",
+          "sha256": "9528a8a4b3c0d8f7dfcf6c4b048b68576065037289569e2d603f54b1b5746bd3"
+        }
+      ],
+      "finished_unix": 1789449799.5532115,
+      "folder": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle1/readout",
+      "fresh_vs_previous_process": true,
+      "generated_text_tokens": 88,
+      "generated_token_ids": 97,
+      "group_updates": 0,
+      "initial_public_prompt_hashes": [
+        "1bd251db2868099ba92f9c242e443f01d6d2b39e4bbbf542ea218ff2df23af8f",
+        "88783c513c3521e4362bdcd97a7bcd94e9d69f0427f4a8eeae5ffb294a2a8cbe"
+      ],
+      "loaded": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle1/readout/LOADED.json",
+        "sha256": "2d153a95418d85f5e65dbebc90d39ab13e37b06ffbe878ceff518490576c59e6"
+      },
+      "loaded_identity_matches_saved": true,
+      "max_token_ids_per_response": 12,
+      "median_text_tokens_per_response": 10,
+      "median_token_ids_per_response": 11,
+      "min_token_ids_per_response": 10,
+      "parent_absent": true,
+      "previous_stage": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle1/sleep/COMPLETE.json",
+        "sha256": "498c5ad648ebf34226f9667f8fcf6ed717402a19877af93e3df97ad6b0e02a5f"
+      },
+      "process_digest": "37da7e72862f244969ae00d6312e84af647106b5cae581b88c0f214e8e00fbd2",
+      "response_lengths": [
+        12,
+        10,
+        10,
+        11,
+        11,
+        10,
+        12,
+        10,
+        11
+      ],
+      "saved_terminal_flags": 9,
+      "semantic_measures": "NOT_MEASURED",
+      "task_hashes": [
+        "bb77a458d668aed40ebe1b157bcdbb1d3b18c71eb152a0ec9d4ba1278c260b6d",
+        "8691718d31af37a3c47cbc24c91cd5ab014b89961f9ec0e2c0075688ac36fb93"
+      ],
+      "truncated": 0
+    },
+    {
+      "adapter": {
+        "adapter_files_verified": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "state_sha256": "a64a273b9b9f1fa2714fcd4cad39ca8a410b1abe48ef811a2bee2ac0987b7dd7"
+      },
+      "arm": "GUIDED",
+      "artifact_files": 17,
+      "artifact_inventory_sha256": "3da47bc8880037ac33f9104110c4ea5c77dada4398a9d8c964ae2777934c896a",
+      "binding": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle2/readout/BINDING.json",
+        "sha256": "876856178a21df319ab55d51e201969a2b3ee593d3db53daa60e7df400d198b1"
+      },
+      "calls": 8,
+      "command_only": 8,
+      "complete": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle2/readout/COMPLETE.json",
+        "sha256": "04cc10d33014b058b7f3a71ada51212c7f4e75730d8e9577a144e273ddba8378"
+      },
+      "correct": 1,
+      "cumulative_updates": 104,
+      "cycle": 2,
+      "episode_denominator": 2,
+      "episode_parent_messages_empty": true,
+      "episode_refs": [
+        {
+          "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle2/readout/EPISODE_01.json",
+          "sha256": "27d5c42856935acac0db70aa43da84455899dd9c9c4cfcea2860de80ae94ee6b"
+        },
+        {
+          "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle2/readout/EPISODE_02.json",
+          "sha256": "78244ac0fa432073d88c2cf8f4ab1981f2b9c345ccf7dc5834afd39155235e35"
+        }
+      ],
+      "finished_unix": 1789451096.06116,
+      "folder": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle2/readout",
+      "fresh_vs_previous_process": true,
+      "generated_text_tokens": 83,
+      "generated_token_ids": 91,
+      "group_updates": 104,
+      "initial_public_prompt_hashes": [
+        "5ebcde139c65bab3e817e9d13fed8280da403aeed8dabc950c031e2bc38bf136",
+        "05c0de6adfc26352a6c3f78e95ffdc28d83a6f58d7f3affcc3fa76d71559e81d"
+      ],
+      "loaded": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle2/readout/LOADED.json",
+        "sha256": "86c40ca97f1a41a397f14f687609029435eccf9a24533f1961d1cf0864fd7b75"
+      },
+      "loaded_identity_matches_saved": true,
+      "max_token_ids_per_response": 14,
+      "median_text_tokens_per_response": 10.0,
+      "median_token_ids_per_response": 11.0,
+      "min_token_ids_per_response": 9,
+      "parent_absent": true,
+      "previous_stage": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle2/sleep/COMPLETE.json",
+        "sha256": "2bd33a4bffadd9f7fb93d912e18b280d1bf101df97cf653ba9ce2d3a6f135775"
+      },
+      "process_digest": "e66fe7113e2fb2a05e43022c5086a14c84ca5173f473f6c52ca1eae7eba11cbc",
+      "response_lengths": [
+        14,
+        11,
+        11,
+        10,
+        11,
+        9,
+        14,
+        11
+      ],
+      "saved_terminal_flags": 8,
+      "semantic_measures": "NOT_MEASURED",
+      "task_hashes": [
+        "56e8c4e6eeb4f2ba6169d2c8a48b9ef1b0e70ac95f4b686f7b56fe3a83b869af",
+        "cc713b9c5d2ac57b2c4a66f6f5cdebbd4c32b32a8f0ae2718ab0524aa6d697f5"
+      ],
+      "truncated": 0
+    },
+    {
+      "adapter": {
+        "adapter_files_verified": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "state_sha256": "568172d890a73c9802dda90e33fdc82a5d63b4fa79aee6eb89c98452084814ec"
+      },
+      "arm": "GUIDED",
+      "artifact_files": 21,
+      "artifact_inventory_sha256": "fdc5923f9823bfcc3ec19a92e0505c56c3bb8833219c54a1e274906ff2a96a7f",
+      "binding": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle3/readout/BINDING.json",
+        "sha256": "cca1c212a045382366ef690d9fa909289e5444461ad83b00f5288342aa3385cc"
+      },
+      "calls": 12,
+      "command_only": 12,
+      "complete": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle3/readout/COMPLETE.json",
+        "sha256": "61d8f4682b90460acbed43e7b6263324a276409c70d2364c06581506625467a0"
+      },
+      "correct": 2,
+      "cumulative_updates": 208,
+      "cycle": 3,
+      "episode_denominator": 2,
+      "episode_parent_messages_empty": true,
+      "episode_refs": [
+        {
+          "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle3/readout/EPISODE_01.json",
+          "sha256": "f6b26e4182d78b4d6c9971d537d85b03852fa1ee7bffd2294e4a0b4de7f30700"
+        },
+        {
+          "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle3/readout/EPISODE_02.json",
+          "sha256": "b414a08779fec7fa5c19a6b7f143e293746418a937e067e470c663e8d32b3943"
+        }
+      ],
+      "finished_unix": 1789452634.2203696,
+      "folder": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle3/readout",
+      "fresh_vs_previous_process": true,
+      "generated_text_tokens": 121,
+      "generated_token_ids": 133,
+      "group_updates": 104,
+      "initial_public_prompt_hashes": [
+        "e40544ec38ea948775a633d3fc2aac0cd71bf5c22f5d9a8deed56b6479b69f91",
+        "75af7b3b030d21d8f545249e613670032cf3eee9865eb3eb4d86b272bb81052d"
+      ],
+      "loaded": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle3/readout/LOADED.json",
+        "sha256": "917c7bbfb736bdf4350d019f38b57e71ae403862fcd636c6809906700a544b77"
+      },
+      "loaded_identity_matches_saved": true,
+      "max_token_ids_per_response": 13,
+      "median_text_tokens_per_response": 10.0,
+      "median_token_ids_per_response": 11.0,
+      "min_token_ids_per_response": 10,
+      "parent_absent": true,
+      "previous_stage": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle3/sleep/COMPLETE.json",
+        "sha256": "b5b5614828d880dfc973f6072a3f2abf32ef4c144a0afd3753b688b92c8c3539"
+      },
+      "process_digest": "c0aa52f3fbbeeb8f47d68ad15ef3f014ae642fcbc742e571aa2be279e518e511",
+      "response_lengths": [
+        12,
+        10,
+        11,
+        13,
+        10,
+        10,
+        12,
+        10,
+        11,
+        13,
+        11,
+        10
+      ],
+      "saved_terminal_flags": 12,
+      "semantic_measures": "NOT_MEASURED",
+      "task_hashes": [
+        "123957b0a005a5a5bd8de3b7c295e520f26a3c866d232f610e695677b0612ce5",
+        "24abd3b0a6a52f57fdd2bfbb927ac353a8ffe418e5cab854ba5e515a39216d19"
+      ],
+      "truncated": 0
+    },
+    {
+      "adapter": {
+        "adapter_files_verified": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "state_sha256": "ca93baa38bd4282155f352896933594618681cc7dacfcf07f11e9909b091d19b"
+      },
+      "arm": "GUIDED",
+      "artifact_files": 21,
+      "artifact_inventory_sha256": "ed09f6395a139b138addf9fce9040ae3ab93c5d5683a83d54546c6e4850c0666",
+      "binding": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle4/readout/BINDING.json",
+        "sha256": "6f1d1193f698c605e3a1d37d774eb4eb4d6042607c8f90fb6a7fde6e697fbc6c"
+      },
+      "calls": 12,
+      "command_only": 12,
+      "complete": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle4/readout/COMPLETE.json",
+        "sha256": "c03b0deb9260399ed42b34826d65ff03d7c4af5efc5350bcb39b2cd3f4ceb681"
+      },
+      "correct": 2,
+      "cumulative_updates": 320,
+      "cycle": 4,
+      "episode_denominator": 2,
+      "episode_parent_messages_empty": true,
+      "episode_refs": [
+        {
+          "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle4/readout/EPISODE_01.json",
+          "sha256": "499f293c293293378dc8849aac35ea6ca6f40933635444587a1e554770381a07"
+        },
+        {
+          "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle4/readout/EPISODE_02.json",
+          "sha256": "91b1e26107b0d7bda11def068a036b34966b23b1f723a33865da748b48e1b2ee"
+        }
+      ],
+      "finished_unix": 1789454233.908783,
+      "folder": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle4/readout",
+      "fresh_vs_previous_process": true,
+      "generated_text_tokens": 123,
+      "generated_token_ids": 135,
+      "group_updates": 112,
+      "initial_public_prompt_hashes": [
+        "9d97ef424e04d48ec2410c95d3ee75c1552e6b124eff0a3f357ba4c2493d338c",
+        "74c84b1946edb3862777cb538082a0815848c320d9b841dffb6894be5b41f7e7"
+      ],
+      "loaded": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle4/readout/LOADED.json",
+        "sha256": "97efc1d129dbeccf421ca7633fc5ed6ba6b2d43aeed1d324881abab06bd524e1"
+      },
+      "loaded_identity_matches_saved": true,
+      "max_token_ids_per_response": 13,
+      "median_text_tokens_per_response": 10.0,
+      "median_token_ids_per_response": 11.0,
+      "min_token_ids_per_response": 10,
+      "parent_absent": true,
+      "previous_stage": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle4/sleep/COMPLETE.json",
+        "sha256": "9c726e10218b8a5f1428e476083698a3593bcaf0e2a0a1111f0f773d1050771a"
+      },
+      "process_digest": "4e5a1c5c024325d74e662c364af5aad2c452f042a551fbb7e4e0c92387381073",
+      "response_lengths": [
+        11,
+        12,
+        13,
+        10,
+        10,
+        13,
+        11,
+        12,
+        13,
+        10,
+        10,
+        10
+      ],
+      "saved_terminal_flags": 12,
+      "semantic_measures": "NOT_MEASURED",
+      "task_hashes": [
+        "8852455eb099e6335660bc0b4be699c4c29eea4d0952610ca737c65890d24cee",
+        "b0fda5e156b1269db6e5b6c98f8e1d751c660eccacac15edd735918d300267a7"
+      ],
+      "truncated": 0
+    },
+    {
+      "adapter": {
+        "adapter_files_verified": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "state_sha256": "c25b92bb1a94e3ce02cb683cd71b7b66dfb3e0a1383526dac8c51195567db12a"
+      },
+      "arm": "GUIDED",
+      "artifact_files": 21,
+      "artifact_inventory_sha256": "762c9a289df64e997628fadec6616f3ddc8709819adc974fa65fd9d85c52b86b",
+      "binding": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle5/readout/BINDING.json",
+        "sha256": "2a0f87da72a1f8c492cf60e2dca85f502af459732facdf8a3c44edd206c1bb69"
+      },
+      "calls": 12,
+      "command_only": 12,
+      "complete": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle5/readout/COMPLETE.json",
+        "sha256": "e3506025cde1f7b60792b28a1aea6675694364d4b8e8a5efdfc9896bd2edc785"
+      },
+      "correct": 2,
+      "cumulative_updates": 424,
+      "cycle": 5,
+      "episode_denominator": 2,
+      "episode_parent_messages_empty": true,
+      "episode_refs": [
+        {
+          "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle5/readout/EPISODE_01.json",
+          "sha256": "8193c1e65785d6e585663e224389e6cb86951e3098928915d94098e8eba80297"
+        },
+        {
+          "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle5/readout/EPISODE_02.json",
+          "sha256": "9da7b83a3999886ff5c149194295617bd621e84a57486bcb26361df14b3386d2"
+        }
+      ],
+      "finished_unix": 1789455958.5406022,
+      "folder": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle5/readout",
+      "fresh_vs_previous_process": true,
+      "generated_text_tokens": 121,
+      "generated_token_ids": 133,
+      "group_updates": 104,
+      "initial_public_prompt_hashes": [
+        "a329f0ab138551a743ad274816690d84f7f480d0ec135a68db126c592f386958",
+        "39e111ca7b4ea5415c34c0b50974d58afe497b0f8d25c3b39539ba7a50723342"
+      ],
+      "loaded": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle5/readout/LOADED.json",
+        "sha256": "02d7d12372ee7ab24ac35984bed3c9d36860038a194670104ba74bc28d879026"
+      },
+      "loaded_identity_matches_saved": true,
+      "max_token_ids_per_response": 13,
+      "median_text_tokens_per_response": 10.0,
+      "median_token_ids_per_response": 11.0,
+      "min_token_ids_per_response": 9,
+      "parent_absent": true,
+      "previous_stage": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle5/sleep/COMPLETE.json",
+        "sha256": "48e2fd8d22340ba762fd327f5045d4ffb4dd09943d4f6e6c1bca458c19314100"
+      },
+      "process_digest": "58602af5509a600ed310107b0871dd4db13829bab2b5ced86a9b9c006d43fb96",
+      "response_lengths": [
+        11,
+        11,
+        11,
+        11,
+        13,
+        11,
+        11,
+        11,
+        11,
+        11,
+        12,
+        9
+      ],
+      "saved_terminal_flags": 12,
+      "semantic_measures": "NOT_MEASURED",
+      "task_hashes": [
+        "fca953c7593ffdbb0ee6d49b82ee21a764af53f9925e6c90d6adf66da1cd8810",
+        "1bcd888d25f7359526072fae14e7fa025fa52b1f8b431ae789194e35c11a34d6"
+      ],
+      "truncated": 0
+    },
+    {
+      "adapter": {
+        "adapter_files_verified": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "state_sha256": "c25b92bb1a94e3ce02cb683cd71b7b66dfb3e0a1383526dac8c51195567db12a"
+      },
+      "arm": "GUIDED",
+      "artifact_files": 21,
+      "artifact_inventory_sha256": "e2678fd47d3b2950ce422bfa86f94ee9a5ddbb20dff3664ff1eb5a5cec2e86fb",
+      "binding": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle6/readout/BINDING.json",
+        "sha256": "ba9d1b50b3a8cf4fc82fc3024fda71d6baebcff52dae3a4db972d6fbaf103ac5"
+      },
+      "calls": 12,
+      "command_only": 12,
+      "complete": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle6/readout/COMPLETE.json",
+        "sha256": "a442fb18711994d8eed3e30eae1e4f0e6b12c7e150cb5b426d7cb7a13d313e55"
+      },
+      "correct": 2,
+      "cumulative_updates": 424,
+      "cycle": 6,
+      "episode_denominator": 2,
+      "episode_parent_messages_empty": true,
+      "episode_refs": [
+        {
+          "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle6/readout/EPISODE_01.json",
+          "sha256": "d7ae00049c3dacbdc756d9ad71e935f771a93184274e4beb8d1c2571ea64ba4a"
+        },
+        {
+          "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle6/readout/EPISODE_02.json",
+          "sha256": "fd30da2b204ef18d8f09520b289d95a2e1a7d048f4ecdbd4379d0899045b0715"
+        }
+      ],
+      "finished_unix": 1789457435.0430603,
+      "folder": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle6/readout",
+      "fresh_vs_previous_process": true,
+      "generated_text_tokens": 119,
+      "generated_token_ids": 131,
+      "group_updates": 0,
+      "initial_public_prompt_hashes": [
+        "01af431e4d2c9b64a41c82b04f0ad0e27afc748ccf27953f9b7c853f395c5a6a",
+        "e382dcff732a7c0a0f958f588c6c96ad577531e0fa69fa06503b75b8f24807e8"
+      ],
+      "loaded": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle6/readout/LOADED.json",
+        "sha256": "d80605a686bd6b17174f696b8c6ccf2af6bcce7f7f28dcca37227b6e4c07575e"
+      },
+      "loaded_identity_matches_saved": true,
+      "max_token_ids_per_response": 12,
+      "median_text_tokens_per_response": 10.0,
+      "median_token_ids_per_response": 11.0,
+      "min_token_ids_per_response": 10,
+      "parent_absent": true,
+      "previous_stage": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle6/sleep/COMPLETE.json",
+        "sha256": "542b439f1156fbaa4d0643a8fba05182563f09e84b7af5dbd089ccbb128cc38e"
+      },
+      "process_digest": "bf5d64bb8893f1836f0a2c291206eb5e26a9d6858b28a12a4b395b3e467d5c96",
+      "response_lengths": [
+        12,
+        11,
+        12,
+        10,
+        10,
+        11,
+        12,
+        11,
+        12,
+        10,
+        10,
+        10
+      ],
+      "saved_terminal_flags": 12,
+      "semantic_measures": "NOT_MEASURED",
+      "task_hashes": [
+        "9361f06b1adec41b1bc1c955c2e1c93aec3288496380267c3451cb9d81c493d3",
+        "b133977abbc985ec3c139491d53522e50df29074d656514e19ea7824ef4cbfee"
+      ],
+      "truncated": 0
+    },
+    {
+      "adapter": {
+        "adapter_files_verified": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+      },
+      "arm": "UNPARENTED",
+      "artifact_files": 17,
+      "artifact_inventory_sha256": "e5e204235454fc3911c6a055205475fc2b02e3fe90011448de56f410c4a43491",
+      "binding": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle1/readout/BINDING.json",
+        "sha256": "e2f66bd3c8844d4495c0de03fbc24269f096c5fbd7f6e1cc35b31193905fdd9f"
+      },
+      "calls": 9,
+      "command_only": 9,
+      "complete": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle1/readout/COMPLETE.json",
+        "sha256": "01ca7ebb33bef21206ed16e61607a488930bd5d6d19f38a5ce60fb231d1859bc"
+      },
+      "correct": 1,
+      "cumulative_updates": 0,
+      "cycle": 1,
+      "episode_denominator": 2,
+      "episode_parent_messages_empty": true,
+      "episode_refs": [
+        {
+          "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle1/readout/EPISODE_01.json",
+          "sha256": "d18c77b70276212a2137c82c025fb3dbdc4a42f50a02ce401249872c66f507db"
+        },
+        {
+          "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle1/readout/EPISODE_02.json",
+          "sha256": "9528a8a4b3c0d8f7dfcf6c4b048b68576065037289569e2d603f54b1b5746bd3"
+        }
+      ],
+      "finished_unix": 1789449554.9041483,
+      "folder": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle1/readout",
+      "fresh_vs_previous_process": true,
+      "generated_text_tokens": 88,
+      "generated_token_ids": 97,
+      "group_updates": 0,
+      "initial_public_prompt_hashes": [
+        "1bd251db2868099ba92f9c242e443f01d6d2b39e4bbbf542ea218ff2df23af8f",
+        "88783c513c3521e4362bdcd97a7bcd94e9d69f0427f4a8eeae5ffb294a2a8cbe"
+      ],
+      "loaded": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle1/readout/LOADED.json",
+        "sha256": "6fa525505fcef5c4613702d1a3fb1aca74de51da65e393e6165cff92a827dbf7"
+      },
+      "loaded_identity_matches_saved": true,
+      "max_token_ids_per_response": 12,
+      "median_text_tokens_per_response": 10,
+      "median_token_ids_per_response": 11,
+      "min_token_ids_per_response": 10,
+      "parent_absent": true,
+      "previous_stage": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle1/sleep/COMPLETE.json",
+        "sha256": "094b625c637332bc0343f61d52c402e899e544784f9bace95105c063e285f8d9"
+      },
+      "process_digest": "4f5786534d12ae84a2fb537f25b2dbd43926861b03ed08c9ba562a0e499ddca2",
+      "response_lengths": [
+        12,
+        10,
+        10,
+        11,
+        11,
+        10,
+        12,
+        10,
+        11
+      ],
+      "saved_terminal_flags": 9,
+      "semantic_measures": "NOT_MEASURED",
+      "task_hashes": [
+        "bb77a458d668aed40ebe1b157bcdbb1d3b18c71eb152a0ec9d4ba1278c260b6d",
+        "8691718d31af37a3c47cbc24c91cd5ab014b89961f9ec0e2c0075688ac36fb93"
+      ],
+      "truncated": 0
+    },
+    {
+      "adapter": {
+        "adapter_files_verified": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "state_sha256": "36c66c85c7259c1f5d5e24246a6ab09fb9ca07c4c320e938f74cb906c5d7c5b1"
+      },
+      "arm": "UNPARENTED",
+      "artifact_files": 17,
+      "artifact_inventory_sha256": "f7717081820cbf551a14d8d5d7c95b659ea9507e3d020ae3eeaaad86f23d555c",
+      "binding": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle2/readout/BINDING.json",
+        "sha256": "d90b5f52757bb4465bbf6709ff4d56ae5f00dac7b94984d8b4a565e16b3ef7f8"
+      },
+      "calls": 8,
+      "command_only": 8,
+      "complete": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle2/readout/COMPLETE.json",
+        "sha256": "a59c1dac1961073de53fc679caca4e11aea016f219b128f1678becfd498069e0"
+      },
+      "correct": 1,
+      "cumulative_updates": 104,
+      "cycle": 2,
+      "episode_denominator": 2,
+      "episode_parent_messages_empty": true,
+      "episode_refs": [
+        {
+          "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle2/readout/EPISODE_01.json",
+          "sha256": "27d5c42856935acac0db70aa43da84455899dd9c9c4cfcea2860de80ae94ee6b"
+        },
+        {
+          "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle2/readout/EPISODE_02.json",
+          "sha256": "78244ac0fa432073d88c2cf8f4ab1981f2b9c345ccf7dc5834afd39155235e35"
+        }
+      ],
+      "finished_unix": 1789450137.0046213,
+      "folder": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle2/readout",
+      "fresh_vs_previous_process": true,
+      "generated_text_tokens": 83,
+      "generated_token_ids": 91,
+      "group_updates": 104,
+      "initial_public_prompt_hashes": [
+        "5ebcde139c65bab3e817e9d13fed8280da403aeed8dabc950c031e2bc38bf136",
+        "05c0de6adfc26352a6c3f78e95ffdc28d83a6f58d7f3affcc3fa76d71559e81d"
+      ],
+      "loaded": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle2/readout/LOADED.json",
+        "sha256": "62cd342975f04c34e0aba0bdfbdfd34fe0555f18dbf97c1e8706cce893827b5f"
+      },
+      "loaded_identity_matches_saved": true,
+      "max_token_ids_per_response": 14,
+      "median_text_tokens_per_response": 10.0,
+      "median_token_ids_per_response": 11.0,
+      "min_token_ids_per_response": 9,
+      "parent_absent": true,
+      "previous_stage": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle2/sleep/COMPLETE.json",
+        "sha256": "4677bbab3797f0612eb834600d2d91632a722745688120581be6758cac924c7a"
+      },
+      "process_digest": "ff51c5170f149ca7dec5633bd3fb21be9d604808a6781a9245210b283c83545e",
+      "response_lengths": [
+        14,
+        11,
+        11,
+        10,
+        11,
+        9,
+        14,
+        11
+      ],
+      "saved_terminal_flags": 8,
+      "semantic_measures": "NOT_MEASURED",
+      "task_hashes": [
+        "56e8c4e6eeb4f2ba6169d2c8a48b9ef1b0e70ac95f4b686f7b56fe3a83b869af",
+        "cc713b9c5d2ac57b2c4a66f6f5cdebbd4c32b32a8f0ae2718ab0524aa6d697f5"
+      ],
+      "truncated": 0
+    },
+    {
+      "adapter": {
+        "adapter_files_verified": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "state_sha256": "d4f80c0601c6ee2de2e12a24669dccd362083d34cf171dac2f6258810d88318e"
+      },
+      "arm": "UNPARENTED",
+      "artifact_files": 21,
+      "artifact_inventory_sha256": "532a7fbe753701ada2c879725de88cf89d301a3aa1873abdde121a5884375fa7",
+      "binding": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle3/readout/BINDING.json",
+        "sha256": "a0b4a756d706495341e430e10ca140093b87395b00900b4b39d220166b10cb9f"
+      },
+      "calls": 12,
+      "command_only": 12,
+      "complete": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle3/readout/COMPLETE.json",
+        "sha256": "525721f76b79203588014dde88084581215192b746c1816e7e11c973cc916d03"
+      },
+      "correct": 2,
+      "cumulative_updates": 208,
+      "cycle": 3,
+      "episode_denominator": 2,
+      "episode_parent_messages_empty": true,
+      "episode_refs": [
+        {
+          "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle3/readout/EPISODE_01.json",
+          "sha256": "f6b26e4182d78b4d6c9971d537d85b03852fa1ee7bffd2294e4a0b4de7f30700"
+        },
+        {
+          "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle3/readout/EPISODE_02.json",
+          "sha256": "b414a08779fec7fa5c19a6b7f143e293746418a937e067e470c663e8d32b3943"
+        }
+      ],
+      "finished_unix": 1789450713.0148797,
+      "folder": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle3/readout",
+      "fresh_vs_previous_process": true,
+      "generated_text_tokens": 121,
+      "generated_token_ids": 133,
+      "group_updates": 104,
+      "initial_public_prompt_hashes": [
+        "e40544ec38ea948775a633d3fc2aac0cd71bf5c22f5d9a8deed56b6479b69f91",
+        "75af7b3b030d21d8f545249e613670032cf3eee9865eb3eb4d86b272bb81052d"
+      ],
+      "loaded": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle3/readout/LOADED.json",
+        "sha256": "2834576b669769351af988816b0793b2ea12c07ce557e58ef8443d1981358a20"
+      },
+      "loaded_identity_matches_saved": true,
+      "max_token_ids_per_response": 13,
+      "median_text_tokens_per_response": 10.0,
+      "median_token_ids_per_response": 11.0,
+      "min_token_ids_per_response": 10,
+      "parent_absent": true,
+      "previous_stage": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle3/sleep/COMPLETE.json",
+        "sha256": "f84410b6267bd5e512575328b0e6878a8f20c27c559a1a8e0eba2d7684a5d673"
+      },
+      "process_digest": "02e46b5a7078ff9bd65e3a2ab703e08e8cf1d4af97d5c3ef3a76844b100edf54",
+      "response_lengths": [
+        12,
+        10,
+        11,
+        13,
+        10,
+        10,
+        12,
+        10,
+        11,
+        13,
+        11,
+        10
+      ],
+      "saved_terminal_flags": 12,
+      "semantic_measures": "NOT_MEASURED",
+      "task_hashes": [
+        "123957b0a005a5a5bd8de3b7c295e520f26a3c866d232f610e695677b0612ce5",
+        "24abd3b0a6a52f57fdd2bfbb927ac353a8ffe418e5cab854ba5e515a39216d19"
+      ],
+      "truncated": 0
+    },
+    {
+      "adapter": {
+        "adapter_files_verified": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "state_sha256": "ebf5ac477871ab9cb03d4468aeb33b20ce271664cfbb1ab70cad95006354fdc4"
+      },
+      "arm": "UNPARENTED",
+      "artifact_files": 21,
+      "artifact_inventory_sha256": "813bc9cfeebab2bb3d33fa3c7c038b337dd1742ab636b2586b9c5eea8bc7b273",
+      "binding": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle4/readout/BINDING.json",
+        "sha256": "6a05da3fe002adff19f9786b88dd090821ecd1c76ed4e4efc9abbb26e5d370e4"
+      },
+      "calls": 12,
+      "command_only": 12,
+      "complete": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle4/readout/COMPLETE.json",
+        "sha256": "14c57d7f266a2a3f8f2a4f9ff9cfa09c367d864c556f31cfb5ff1d4758fb1cc7"
+      },
+      "correct": 1,
+      "cumulative_updates": 320,
+      "cycle": 4,
+      "episode_denominator": 2,
+      "episode_parent_messages_empty": true,
+      "episode_refs": [
+        {
+          "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle4/readout/EPISODE_01.json",
+          "sha256": "499f293c293293378dc8849aac35ea6ca6f40933635444587a1e554770381a07"
+        },
+        {
+          "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle4/readout/EPISODE_02.json",
+          "sha256": "caf47fd113c1b5adfe8f50f15c2af9d9261e325fb8f9fe9d4652d6f5ffa101ee"
+        }
+      ],
+      "finished_unix": 1789451324.3866158,
+      "folder": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle4/readout",
+      "fresh_vs_previous_process": true,
+      "generated_text_tokens": 123,
+      "generated_token_ids": 135,
+      "group_updates": 112,
+      "initial_public_prompt_hashes": [
+        "9d97ef424e04d48ec2410c95d3ee75c1552e6b124eff0a3f357ba4c2493d338c",
+        "74c84b1946edb3862777cb538082a0815848c320d9b841dffb6894be5b41f7e7"
+      ],
+      "loaded": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle4/readout/LOADED.json",
+        "sha256": "9913e79d42d7e73a8292ee8e163d1499d0ae1802de2b99c1f85bf1c5c86f7fc7"
+      },
+      "loaded_identity_matches_saved": true,
+      "max_token_ids_per_response": 13,
+      "median_text_tokens_per_response": 10.0,
+      "median_token_ids_per_response": 11.0,
+      "min_token_ids_per_response": 10,
+      "parent_absent": true,
+      "previous_stage": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle4/sleep/COMPLETE.json",
+        "sha256": "17654b9b00c8f39daf7b53b9505921c721731ad33fa0a26a2d8fdf6a51f45d4e"
+      },
+      "process_digest": "da1544bda2d549d8b900e3a5810e26eb2fdca4ddaea030baacc7717c456e8964",
+      "response_lengths": [
+        11,
+        12,
+        13,
+        10,
+        10,
+        13,
+        11,
+        10,
+        12,
+        13,
+        10,
+        10
+      ],
+      "saved_terminal_flags": 12,
+      "semantic_measures": "NOT_MEASURED",
+      "task_hashes": [
+        "8852455eb099e6335660bc0b4be699c4c29eea4d0952610ca737c65890d24cee",
+        "b0fda5e156b1269db6e5b6c98f8e1d751c660eccacac15edd735918d300267a7"
+      ],
+      "truncated": 0
+    },
+    {
+      "adapter": {
+        "adapter_files_verified": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "state_sha256": "09b39bb4d47d439cb58a2513b984bcb0f2c458532ac6ef42ddfab285990e03b2"
+      },
+      "arm": "UNPARENTED",
+      "artifact_files": 20,
+      "artifact_inventory_sha256": "b4e2552ef48405576f833cd2b59ba3a357b05dab96bc9cb280d3394a4f417290",
+      "binding": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle5/readout/BINDING.json",
+        "sha256": "3dd0935b5d31ecbae0ce1fdbc2eaf35ebfbd97bebd6f947e41940d45e8f56f7c"
+      },
+      "calls": 11,
+      "command_only": 11,
+      "complete": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle5/readout/COMPLETE.json",
+        "sha256": "aa565b83c99ceab2f515c35601fb79ab1715f38f4a411ba3992a346f6f6570a3"
+      },
+      "correct": 2,
+      "cumulative_updates": 424,
+      "cycle": 5,
+      "episode_denominator": 2,
+      "episode_parent_messages_empty": true,
+      "episode_refs": [
+        {
+          "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle5/readout/EPISODE_01.json",
+          "sha256": "46af50f5b073936980b3c50dea91cd4e12179bf425557cdf7ecc4b5af9980052"
+        },
+        {
+          "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle5/readout/EPISODE_02.json",
+          "sha256": "9da7b83a3999886ff5c149194295617bd621e84a57486bcb26361df14b3386d2"
+        }
+      ],
+      "finished_unix": 1789451897.041034,
+      "folder": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle5/readout",
+      "fresh_vs_previous_process": true,
+      "generated_text_tokens": 111,
+      "generated_token_ids": 122,
+      "group_updates": 104,
+      "initial_public_prompt_hashes": [
+        "a329f0ab138551a743ad274816690d84f7f480d0ec135a68db126c592f386958",
+        "39e111ca7b4ea5415c34c0b50974d58afe497b0f8d25c3b39539ba7a50723342"
+      ],
+      "loaded": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle5/readout/LOADED.json",
+        "sha256": "40b0ae6fe8d15c4478484cf27db5856720e4cf4cc5232c7a17f34a511b7f20c4"
+      },
+      "loaded_identity_matches_saved": true,
+      "max_token_ids_per_response": 13,
+      "median_text_tokens_per_response": 10,
+      "median_token_ids_per_response": 11,
+      "min_token_ids_per_response": 9,
+      "parent_absent": true,
+      "previous_stage": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle5/sleep/COMPLETE.json",
+        "sha256": "876fe0d582eab8ddb6927a67992e091d9fb31d3eff45e5112a4f64394051f766"
+      },
+      "process_digest": "f498d34ad7d607dfd606e181f1841e09eab7f1adda08e8a671bcd2c66b6db433",
+      "response_lengths": [
+        11,
+        11,
+        11,
+        13,
+        11,
+        11,
+        11,
+        11,
+        11,
+        12,
+        9
+      ],
+      "saved_terminal_flags": 11,
+      "semantic_measures": "NOT_MEASURED",
+      "task_hashes": [
+        "fca953c7593ffdbb0ee6d49b82ee21a764af53f9925e6c90d6adf66da1cd8810",
+        "1bcd888d25f7359526072fae14e7fa025fa52b1f8b431ae789194e35c11a34d6"
+      ],
+      "truncated": 0
+    },
+    {
+      "adapter": {
+        "adapter_files_verified": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "state_sha256": "6c42e849956d99338f5a00991240dbf5f5effc03f3bfa23c9aa5f5433dfbe253"
+      },
+      "arm": "UNPARENTED",
+      "artifact_files": 17,
+      "artifact_inventory_sha256": "a4963f381b6dcc5a73baf0ddebe12bf7b2a57409fddf46a3274967875ac25be8",
+      "binding": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle6/readout/BINDING.json",
+        "sha256": "df10efdcf595fbf300f57281b4d9154abd3ef2d736f8defe8d3bd96b8ec92d72"
+      },
+      "calls": 8,
+      "command_only": 8,
+      "complete": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle6/readout/COMPLETE.json",
+        "sha256": "24e1be6322535e762e2120b87b905390a6f70a8e2f459d3c5ed6d57a0cba374f"
+      },
+      "correct": 1,
+      "cumulative_updates": 536,
+      "cycle": 6,
+      "episode_denominator": 2,
+      "episode_parent_messages_empty": true,
+      "episode_refs": [
+        {
+          "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle6/readout/EPISODE_01.json",
+          "sha256": "d7ae00049c3dacbdc756d9ad71e935f771a93184274e4beb8d1c2571ea64ba4a"
+        },
+        {
+          "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle6/readout/EPISODE_02.json",
+          "sha256": "b3d8044e8ab5fbf53145e43cad596309a26cebdfe46f1ebd5ef2592baa6bfdd3"
+        }
+      ],
+      "finished_unix": 1789452500.3368688,
+      "folder": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle6/readout",
+      "fresh_vs_previous_process": true,
+      "generated_text_tokens": 80,
+      "generated_token_ids": 88,
+      "group_updates": 112,
+      "initial_public_prompt_hashes": [
+        "01af431e4d2c9b64a41c82b04f0ad0e27afc748ccf27953f9b7c853f395c5a6a",
+        "e382dcff732a7c0a0f958f588c6c96ad577531e0fa69fa06503b75b8f24807e8"
+      ],
+      "loaded": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle6/readout/LOADED.json",
+        "sha256": "c91774f44bcf51e27efc890ac44768d4866440529df49f1163d28de2c18f6d56"
+      },
+      "loaded_identity_matches_saved": true,
+      "max_token_ids_per_response": 12,
+      "median_text_tokens_per_response": 10.0,
+      "median_token_ids_per_response": 11.0,
+      "min_token_ids_per_response": 10,
+      "parent_absent": true,
+      "previous_stage": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle6/sleep/COMPLETE.json",
+        "sha256": "8897161e01ee8072c42f6cd08b1d712cb9e3e860a991bc8ad223e95d629c01e9"
+      },
+      "process_digest": "def5cd4a55bdf9a82249c1161968ab44993e95bcc7753fa46f8493aa53842539",
+      "response_lengths": [
+        12,
+        11,
+        12,
+        10,
+        10,
+        11,
+        12,
+        10
+      ],
+      "saved_terminal_flags": 8,
+      "semantic_measures": "NOT_MEASURED",
+      "task_hashes": [
+        "9361f06b1adec41b1bc1c955c2e1c93aec3288496380267c3451cb9d81c493d3",
+        "b133977abbc985ec3c139491d53522e50df29074d656514e19ea7824ef4cbfee"
+      ],
+      "truncated": 0
+    },
+    {
+      "adapter": {
+        "adapter_files_verified": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+      },
+      "arm": "FROZEN_INITIAL",
+      "artifact_files": 14,
+      "artifact_inventory_sha256": "9d546d0e13b40ac7ca1fbd1f02f72d39eeda11da38855e79f807d91d3c0874b0",
+      "binding": {
+        "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_01/BINDING.json",
+        "sha256": "bdd889a3ce12ca6d2e45bfd9dd599431e7d6bae9b95754b3b883724d2ff540d7"
+      },
+      "calls": 9,
+      "command_only": 9,
+      "complete": {
+        "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_01/COMPLETE.json",
+        "sha256": "4933a4a0b249df0db14112fd4fdc103375aece2248dcaefe468aea227b6d5400"
+      },
+      "correct": 1,
+      "cumulative_updates": 0,
+      "cycle": 1,
+      "episode_denominator": 2,
+      "episode_parent_messages_empty": true,
+      "episode_refs": [
+        {
+          "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_01/EPISODE_01.json",
+          "sha256": "d18c77b70276212a2137c82c025fb3dbdc4a42f50a02ce401249872c66f507db"
+        },
+        {
+          "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_01/EPISODE_02.json",
+          "sha256": "9528a8a4b3c0d8f7dfcf6c4b048b68576065037289569e2d603f54b1b5746bd3"
+        }
+      ],
+      "finished_unix": 1789488034.7955978,
+      "folder": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_01",
+      "fresh_vs_previous_process": true,
+      "generated_text_tokens": 88,
+      "generated_token_ids": 97,
+      "group_updates": 0,
+      "initial_public_prompt_hashes": [
+        "1bd251db2868099ba92f9c242e443f01d6d2b39e4bbbf542ea218ff2df23af8f",
+        "88783c513c3521e4362bdcd97a7bcd94e9d69f0427f4a8eeae5ffb294a2a8cbe"
+      ],
+      "loaded": {
+        "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_01/LOADED.json",
+        "sha256": "9b56772ea7153b7f19714becf1c8b3a30312164b7911607b93da3cdc8fc57672"
+      },
+      "loaded_identity_matches_saved": true,
+      "max_token_ids_per_response": 12,
+      "median_text_tokens_per_response": 10,
+      "median_token_ids_per_response": 11,
+      "min_token_ids_per_response": 10,
+      "parent_absent": true,
+      "previous_stage": {
+        "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/SUPERVISOR.json",
+        "sha256": "35ad0deb17a4195140f8d7341f7015d1d0c97de9e21faa9eb2c3bb657fd87291"
+      },
+      "process_digest": "af9ff1f7dffd9fc65ee97e8ffe83d878dd8a3fd656c3cc752138874c90039b08",
+      "response_lengths": [
+        12,
+        10,
+        10,
+        11,
+        11,
+        10,
+        12,
+        10,
+        11
+      ],
+      "saved_terminal_flags": 9,
+      "semantic_measures": "NOT_MEASURED",
+      "task_hashes": [
+        "bb77a458d668aed40ebe1b157bcdbb1d3b18c71eb152a0ec9d4ba1278c260b6d",
+        "8691718d31af37a3c47cbc24c91cd5ab014b89961f9ec0e2c0075688ac36fb93"
+      ],
+      "truncated": 0
+    },
+    {
+      "adapter": {
+        "adapter_files_verified": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+      },
+      "arm": "FROZEN_INITIAL",
+      "artifact_files": 13,
+      "artifact_inventory_sha256": "c9f1db0b4fc7f0bc2f841ab223c9527a5eb92b96a6ee4021e7915170b150b6d8",
+      "binding": {
+        "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_02/BINDING.json",
+        "sha256": "24568e91bc3ec776dcec2f0526c41ca2bcd1d605470a9777c6218dffd54be758"
+      },
+      "calls": 8,
+      "command_only": 8,
+      "complete": {
+        "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_02/COMPLETE.json",
+        "sha256": "758e42d5dc6e1159b00342cdee2a3cc328800ab1ea12fb289190b6c51e9d72b6"
+      },
+      "correct": 1,
+      "cumulative_updates": 0,
+      "cycle": 2,
+      "episode_denominator": 2,
+      "episode_parent_messages_empty": true,
+      "episode_refs": [
+        {
+          "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_02/EPISODE_01.json",
+          "sha256": "27d5c42856935acac0db70aa43da84455899dd9c9c4cfcea2860de80ae94ee6b"
+        },
+        {
+          "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_02/EPISODE_02.json",
+          "sha256": "78244ac0fa432073d88c2cf8f4ab1981f2b9c345ccf7dc5834afd39155235e35"
+        }
+      ],
+      "finished_unix": 1789488122.185689,
+      "folder": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_02",
+      "fresh_vs_previous_process": true,
+      "generated_text_tokens": 83,
+      "generated_token_ids": 91,
+      "group_updates": 0,
+      "initial_public_prompt_hashes": [
+        "5ebcde139c65bab3e817e9d13fed8280da403aeed8dabc950c031e2bc38bf136",
+        "05c0de6adfc26352a6c3f78e95ffdc28d83a6f58d7f3affcc3fa76d71559e81d"
+      ],
+      "loaded": {
+        "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_02/LOADED.json",
+        "sha256": "ce2cf3e0289facdbb68ebce8e7cbfe46c3508744d38d87992cb319f6a0360d0f"
+      },
+      "loaded_identity_matches_saved": true,
+      "max_token_ids_per_response": 14,
+      "median_text_tokens_per_response": 10.0,
+      "median_token_ids_per_response": 11.0,
+      "min_token_ids_per_response": 9,
+      "parent_absent": true,
+      "previous_stage": {
+        "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/SUPERVISOR.json",
+        "sha256": "35ad0deb17a4195140f8d7341f7015d1d0c97de9e21faa9eb2c3bb657fd87291"
+      },
+      "process_digest": "79ea9d5bfa756f35c92e968373584e5caa58e930c9fd79a80b301da0de00d3fc",
+      "response_lengths": [
+        14,
+        11,
+        11,
+        10,
+        11,
+        9,
+        14,
+        11
+      ],
+      "saved_terminal_flags": 8,
+      "semantic_measures": "NOT_MEASURED",
+      "task_hashes": [
+        "56e8c4e6eeb4f2ba6169d2c8a48b9ef1b0e70ac95f4b686f7b56fe3a83b869af",
+        "cc713b9c5d2ac57b2c4a66f6f5cdebbd4c32b32a8f0ae2718ab0524aa6d697f5"
+      ],
+      "truncated": 0
+    },
+    {
+      "adapter": {
+        "adapter_files_verified": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+      },
+      "arm": "FROZEN_INITIAL",
+      "artifact_files": 15,
+      "artifact_inventory_sha256": "d76c150bc1e2148a66ab21edb8fa74964a4e31b7ea9d497894324018de7af6a8",
+      "binding": {
+        "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_03/BINDING.json",
+        "sha256": "654cd9088c088899b75579fb5459623ee5483c98f4f945f19be53c9e61e25164"
+      },
+      "calls": 10,
+      "command_only": 10,
+      "complete": {
+        "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_03/COMPLETE.json",
+        "sha256": "62bd5dbc68b70a1c5a84d7d8d221e8184d30439072d601d5b43506c1e6bda67b"
+      },
+      "correct": 2,
+      "cumulative_updates": 0,
+      "cycle": 3,
+      "episode_denominator": 2,
+      "episode_parent_messages_empty": true,
+      "episode_refs": [
+        {
+          "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_03/EPISODE_01.json",
+          "sha256": "f6b26e4182d78b4d6c9971d537d85b03852fa1ee7bffd2294e4a0b4de7f30700"
+        },
+        {
+          "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_03/EPISODE_02.json",
+          "sha256": "5ccc2076ba27773b862e7caa12f7db205b2acd9c32381c84a34c6edb12d62221"
+        }
+      ],
+      "finished_unix": 1789488210.3704698,
+      "folder": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_03",
+      "fresh_vs_previous_process": true,
+      "generated_text_tokens": 99,
+      "generated_token_ids": 109,
+      "group_updates": 0,
+      "initial_public_prompt_hashes": [
+        "e40544ec38ea948775a633d3fc2aac0cd71bf5c22f5d9a8deed56b6479b69f91",
+        "75af7b3b030d21d8f545249e613670032cf3eee9865eb3eb4d86b272bb81052d"
+      ],
+      "loaded": {
+        "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_03/LOADED.json",
+        "sha256": "97ea5213385676d7d314c7f87744073688285955484001b1a748ac8d4dc07f51"
+      },
+      "loaded_identity_matches_saved": true,
+      "max_token_ids_per_response": 13,
+      "median_text_tokens_per_response": 9.5,
+      "median_token_ids_per_response": 10.5,
+      "min_token_ids_per_response": 10,
+      "parent_absent": true,
+      "previous_stage": {
+        "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/SUPERVISOR.json",
+        "sha256": "35ad0deb17a4195140f8d7341f7015d1d0c97de9e21faa9eb2c3bb657fd87291"
+      },
+      "process_digest": "085109e622f6c173c82a70ec760d0865cb744164363de5581048e55221b80fda",
+      "response_lengths": [
+        12,
+        10,
+        11,
+        13,
+        10,
+        10,
+        12,
+        10,
+        11,
+        10
+      ],
+      "saved_terminal_flags": 10,
+      "semantic_measures": "NOT_MEASURED",
+      "task_hashes": [
+        "123957b0a005a5a5bd8de3b7c295e520f26a3c866d232f610e695677b0612ce5",
+        "24abd3b0a6a52f57fdd2bfbb927ac353a8ffe418e5cab854ba5e515a39216d19"
+      ],
+      "truncated": 0
+    },
+    {
+      "adapter": {
+        "adapter_files_verified": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+      },
+      "arm": "FROZEN_INITIAL",
+      "artifact_files": 13,
+      "artifact_inventory_sha256": "92e3f84aa6c13da02f3796bd80e83214e39a145d56a1ac3f7ae3daa227fcac91",
+      "binding": {
+        "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_04/BINDING.json",
+        "sha256": "ff42694808428311187b45c360cda297ea60288efabded3709a0a1213f1e5262"
+      },
+      "calls": 8,
+      "command_only": 8,
+      "complete": {
+        "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_04/COMPLETE.json",
+        "sha256": "dbfa367e1c51e1ea9ee67a08e4b240eaba1f1ae4990a671d8c8954b5297ddbb5"
+      },
+      "correct": 1,
+      "cumulative_updates": 0,
+      "cycle": 4,
+      "episode_denominator": 2,
+      "episode_parent_messages_empty": true,
+      "episode_refs": [
+        {
+          "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_04/EPISODE_01.json",
+          "sha256": "499f293c293293378dc8849aac35ea6ca6f40933635444587a1e554770381a07"
+        },
+        {
+          "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_04/EPISODE_02.json",
+          "sha256": "edf989e60fd804908e8a24dbaac667e9b9d56a63fc16f35d345549632fa5a152"
+        }
+      ],
+      "finished_unix": 1789488296.926961,
+      "folder": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_04",
+      "fresh_vs_previous_process": true,
+      "generated_text_tokens": 82,
+      "generated_token_ids": 90,
+      "group_updates": 0,
+      "initial_public_prompt_hashes": [
+        "9d97ef424e04d48ec2410c95d3ee75c1552e6b124eff0a3f357ba4c2493d338c",
+        "74c84b1946edb3862777cb538082a0815848c320d9b841dffb6894be5b41f7e7"
+      ],
+      "loaded": {
+        "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_04/LOADED.json",
+        "sha256": "dc3d74d944d68de9a95d6d21a8d7652507333cbb652e6009f79f4d7f39f10f58"
+      },
+      "loaded_identity_matches_saved": true,
+      "max_token_ids_per_response": 13,
+      "median_text_tokens_per_response": 10.0,
+      "median_token_ids_per_response": 11.0,
+      "min_token_ids_per_response": 10,
+      "parent_absent": true,
+      "previous_stage": {
+        "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/SUPERVISOR.json",
+        "sha256": "35ad0deb17a4195140f8d7341f7015d1d0c97de9e21faa9eb2c3bb657fd87291"
+      },
+      "process_digest": "a69dfe010cc6062a27371cf527345b84b294af11a2ca4d6c0ef34545594ede39",
+      "response_lengths": [
+        11,
+        12,
+        13,
+        10,
+        10,
+        13,
+        11,
+        10
+      ],
+      "saved_terminal_flags": 8,
+      "semantic_measures": "NOT_MEASURED",
+      "task_hashes": [
+        "8852455eb099e6335660bc0b4be699c4c29eea4d0952610ca737c65890d24cee",
+        "b0fda5e156b1269db6e5b6c98f8e1d751c660eccacac15edd735918d300267a7"
+      ],
+      "truncated": 0
+    },
+    {
+      "adapter": {
+        "adapter_files_verified": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+      },
+      "arm": "FROZEN_INITIAL",
+      "artifact_files": 16,
+      "artifact_inventory_sha256": "71ebf76ed7e85637be7805ea18dd738f5addb5875b636a0962e943c3013a5f9a",
+      "binding": {
+        "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_05/BINDING.json",
+        "sha256": "fc8915358f979ee613a7a13596181b33a7e99876a5cfc69d28c3430ee1081ac4"
+      },
+      "calls": 11,
+      "command_only": 11,
+      "complete": {
+        "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_05/COMPLETE.json",
+        "sha256": "518d2be5e696fc3d76c09afdd90f609298a013940aa5f2d5d25f594816b42763"
+      },
+      "correct": 1,
+      "cumulative_updates": 0,
+      "cycle": 5,
+      "episode_denominator": 2,
+      "episode_parent_messages_empty": true,
+      "episode_refs": [
+        {
+          "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_05/EPISODE_01.json",
+          "sha256": "46af50f5b073936980b3c50dea91cd4e12179bf425557cdf7ecc4b5af9980052"
+        },
+        {
+          "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_05/EPISODE_02.json",
+          "sha256": "720bdb3810c4ead93be129994cdd7392624314eda146b68e24a0540f9996926d"
+        }
+      ],
+      "finished_unix": 1789488385.7255006,
+      "folder": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_05",
+      "fresh_vs_previous_process": true,
+      "generated_text_tokens": 115,
+      "generated_token_ids": 126,
+      "group_updates": 0,
+      "initial_public_prompt_hashes": [
+        "a329f0ab138551a743ad274816690d84f7f480d0ec135a68db126c592f386958",
+        "39e111ca7b4ea5415c34c0b50974d58afe497b0f8d25c3b39539ba7a50723342"
+      ],
+      "loaded": {
+        "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_05/LOADED.json",
+        "sha256": "4c7583632e79d8e9d82820f5388b86754df28f0d7112204b6c23f59bc60ceda0"
+      },
+      "loaded_identity_matches_saved": true,
+      "max_token_ids_per_response": 13,
+      "median_text_tokens_per_response": 10,
+      "median_token_ids_per_response": 11,
+      "min_token_ids_per_response": 11,
+      "parent_absent": true,
+      "previous_stage": {
+        "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/SUPERVISOR.json",
+        "sha256": "35ad0deb17a4195140f8d7341f7015d1d0c97de9e21faa9eb2c3bb657fd87291"
+      },
+      "process_digest": "5fae98e6d790c218a059f9e51a6f2f22ead42cca344298e33045cfde3d23e517",
+      "response_lengths": [
+        11,
+        11,
+        11,
+        13,
+        11,
+        11,
+        11,
+        13,
+        11,
+        11,
+        12
+      ],
+      "saved_terminal_flags": 11,
+      "semantic_measures": "NOT_MEASURED",
+      "task_hashes": [
+        "fca953c7593ffdbb0ee6d49b82ee21a764af53f9925e6c90d6adf66da1cd8810",
+        "1bcd888d25f7359526072fae14e7fa025fa52b1f8b431ae789194e35c11a34d6"
+      ],
+      "truncated": 0
+    },
+    {
+      "adapter": {
+        "adapter_files_verified": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+      },
+      "arm": "FROZEN_INITIAL",
+      "artifact_files": 17,
+      "artifact_inventory_sha256": "cd2e810f0b7e7d0908b0ce9c4d1a295ed87a3654d0ee6c49ddc4a4ae7dc96c91",
+      "binding": {
+        "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_06/BINDING.json",
+        "sha256": "f6fe2f48adf6b89da5444d4c89b4ed12ab9a84f47b74e1022d9f9e361bdadd71"
+      },
+      "calls": 12,
+      "command_only": 12,
+      "complete": {
+        "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_06/COMPLETE.json",
+        "sha256": "7b767ca406d7b6d6326d42471f094555673857ea5b0300daa2c01bfaf318829d"
+      },
+      "correct": 2,
+      "cumulative_updates": 0,
+      "cycle": 6,
+      "episode_denominator": 2,
+      "episode_parent_messages_empty": true,
+      "episode_refs": [
+        {
+          "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_06/EPISODE_01.json",
+          "sha256": "d7ae00049c3dacbdc756d9ad71e935f771a93184274e4beb8d1c2571ea64ba4a"
+        },
+        {
+          "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_06/EPISODE_02.json",
+          "sha256": "fd30da2b204ef18d8f09520b289d95a2e1a7d048f4ecdbd4379d0899045b0715"
+        }
+      ],
+      "finished_unix": 1789488472.8147545,
+      "folder": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_06",
+      "fresh_vs_previous_process": true,
+      "generated_text_tokens": 119,
+      "generated_token_ids": 131,
+      "group_updates": 0,
+      "initial_public_prompt_hashes": [
+        "01af431e4d2c9b64a41c82b04f0ad0e27afc748ccf27953f9b7c853f395c5a6a",
+        "e382dcff732a7c0a0f958f588c6c96ad577531e0fa69fa06503b75b8f24807e8"
+      ],
+      "loaded": {
+        "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/group_06/LOADED.json",
+        "sha256": "ee462a5d8161cf0db3df7f12b9749081304f37ac7447f1560ba46dba45649b3e"
+      },
+      "loaded_identity_matches_saved": true,
+      "max_token_ids_per_response": 12,
+      "median_text_tokens_per_response": 10.0,
+      "median_token_ids_per_response": 11.0,
+      "min_token_ids_per_response": 10,
+      "parent_absent": true,
+      "previous_stage": {
+        "path": "/localhome/local-rohing/orch_r118_frozen_seed_reference_20260915_attempt2/RESULTS/SUPERVISOR.json",
+        "sha256": "35ad0deb17a4195140f8d7341f7015d1d0c97de9e21faa9eb2c3bb657fd87291"
+      },
+      "process_digest": "0849e9820284ab74f8987c6c62a3abb15a56c218a6d7c963edbe2080aeebfd01",
+      "response_lengths": [
+        12,
+        11,
+        12,
+        10,
+        10,
+        11,
+        12,
+        11,
+        12,
+        10,
+        10,
+        10
+      ],
+      "saved_terminal_flags": 12,
+      "semantic_measures": "NOT_MEASURED",
+      "task_hashes": [
+        "9361f06b1adec41b1bc1c955c2e1c93aec3288496380267c3451cb9d81c493d3",
+        "b133977abbc985ec3c139491d53522e50df29074d656514e19ea7824ef4cbfee"
+      ],
+      "truncated": 0
+    }
+  ],
+  "historical_source_hashes": {
+    "gpu/astra_experienced_event_microloop.py": "8e57909a6c4f2d988a434423a33e7a663c23696ffdb2ce402c2bb03b2fccbb70",
+    "gpu/orch_guided_native.py": "559d8e6ea7002f2651748ba192a57c5cf627381f6a3994d93cb02d63011a3157",
+    "gpu/orch_route_parent_campaign_canonical.py": "68669b19476df8e7c05c71aee29a5df60262651d53db27e26c6f8e285c429c50",
+    "gpu/orch_route_parent_campaign_run.py": "a2fabc4074b3023b71962be2cd95eb67798ba3f3a095f32f201bfe58078124ee",
+    "organism_v6/orch_full_rich.py": "88d90dc424f44ed8e752275880dc8b4cf9dc07472c96fb5c2ac410d63f2cc0ba",
+    "organism_v6/orch_l2_guided.py": "fb724beb5a437cc6c360df5a224e6899a98581a206c5b106006efaa5742932f0",
+    "organism_v6/orch_l2_shared.py": "633d699b6c6f87cae7eb3dfdb3e1e8e3598aab46d1a2daa18473029a6c789ebc",
+    "organism_v6/orch_route_parent_campaign_canonical.py": "62098443bff269aa8807e7dd02438ca92cbfe787ba878f0a926d1caf2c005fa2"
+  },
+  "initial_experience_joins": [
+    {
+      "arm": "GUIDED",
+      "initial_experience_input_matches_prepared": true,
+      "request_path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle1/experience/REQUEST.json",
+      "request_sha256": "0d0ccd75627f30053172ff6ee19d0df902032b4b50534d990950213dfffa2f97"
+    },
+    {
+      "arm": "UNPARENTED",
+      "initial_experience_input_matches_prepared": true,
+      "request_path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle1/experience/REQUEST.json",
+      "request_sha256": "6a590910009a8734144b7875870cabe207e0986221f2ef608071c0ead29c8689"
+    }
+  ],
+  "limitations": [
+    "Only two episodes/one world per group, changing tasks; not same-task longitudinal retention",
+    "Realized GUIDED424 vs UNPARENTED536 update doses unequal; GUIDED C1/C6 zero updates",
+    "Frozen reference measured later on another node; not simultaneous randomized paired replicas",
+    "Command-only is literal output-form measurement, not absence of internal computation or a semantic thinking measure",
+    "Original parented bare-BASE NO_LORA is not this seeded-frozen reference and is excluded",
+    "No pooled-learner control or causal parenting/retained-thinking claim"
+  ],
+  "method": {
+    "decoder": "Shared historical greedy decoder (do_sample=False, num_beams=1), 512 output-token cap, 8192 context cap",
+    "generated_text_tokens_exclude_recorded_EOS": true,
+    "outcome": "Original episode.correct and COMPLETE.successes/correct equality checked; not a semantic quality score",
+    "regex_fullmatch_of_stripped_raw": "(?:READ EVENT|ROUTE)\\s+\\S+",
+    "response_medians": "Within-group medians; aggregate median computed over all actual responses, not group medians",
+    "token_ids_include_EOS": true,
+    "truncation": "Native response.truncated, zero throughout; all saved terminal/EOS flags true"
+  },
+  "new_judge_calls": 0,
+  "new_native_calls": 0,
+  "new_provider_calls": 0,
+  "observed_utc": "2026-09-15T16:26:15.798214+00:00",
+  "operational_note": "Main-reported second startup 2987f2 failure preserved; no recovery action in this audit",
+  "raw_exported": false,
+  "reducer_sha256": "01312bbf68567d0e39ddb176ed8737a8bf330573228ff8323887f414c3f98402",
+  "schema": "R118_SEEDED_FROZEN_CANONICAL_COMPARISON_V1",
+  "scope": "Original held[1]..held[6], 12 tasks; GUIDED/UNPARENTED vs later seeded-frozen reference only",
+  "shared_provenance": {
+    "cohort": {
+      "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/COHORT.json",
+      "sha256": "c848fdec7335795a38c0982e4ec88d31eed54f44484bdfc86690ae90580c355d"
+    },
+    "initial_adapter": {
+      "adapter_files_verified": true,
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+    },
+    "prepare": {
+      "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/PREPARE.json",
+      "sha256": "4a0652429d0298e213f91485762c2a7758da5311228b2458b9eb3b6694d8378c"
+    },
+    "source_store": {
+      "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/SOURCE.json",
+      "sha256": "d8d2e513dad61c705be90ef91ae63c9ca289712e95b9cd676ef91c02c23a5116"
+    }
+  },
+  "totals": {
+    "FROZEN_INITIAL": {
+      "calls": 58,
+      "command_only": 58,
+      "correct": 8,
+      "episode_denominator": 12,
+      "generated_text_tokens": 586,
+      "generated_token_ids": 644,
+      "group_updates": 0,
+      "median_text_tokens_per_response": 10,
+      "median_token_ids_per_response": 11.0,
+      "truncated": 0
+    },
+    "GUIDED": {
+      "calls": 65,
+      "command_only": 65,
+      "correct": 10,
+      "episode_denominator": 12,
+      "generated_text_tokens": 655,
+      "generated_token_ids": 720,
+      "group_updates": 424,
+      "median_text_tokens_per_response": 10,
+      "median_token_ids_per_response": 11,
+      "truncated": 0
+    },
+    "UNPARENTED": {
+      "calls": 60,
+      "command_only": 60,
+      "correct": 8,
+      "episode_denominator": 12,
+      "generated_text_tokens": 606,
+      "generated_token_ids": 666,
+      "group_updates": 536,
+      "median_text_tokens_per_response": 10,
+      "median_token_ids_per_response": 11.0,
+      "truncated": 0
+    }
+  }
+}

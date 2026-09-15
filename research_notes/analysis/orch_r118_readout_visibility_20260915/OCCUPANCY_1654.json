@@ -1,0 +1,18 @@
+{
+  "observed_end_utc": "2026-09-15T16:54:22Z",
+  "method": "Sequential nvidia-smi index,memory.used,utilization.gpu queries through existing wrappers; MiB and percent",
+  "resident_proxy": "memory.used > 1 MiB; not a verified compute-process identity",
+  "computing_proxy": "utilization.gpu > 0 percent at query time; not an interval duty cycle",
+  "nodes": {
+    "a40r": {"memory_mib": [0,0,0,0,0,0,0,30743], "utilization_percent": [0,0,0,0,0,0,0,0]},
+    "ovx": {"memory_mib": [0,0,0,0,0,0,0,0], "utilization_percent": [0,0,0,0,0,0,0,0]},
+    "ovx2": {"memory_mib": [16740,19550,23794,23106,16786,1,24254,23506], "utilization_percent": [0,0,96,0,0,0,0,90]},
+    "a100": {"memory_mib": [19805,27425,73325,44171,15217,36061,58863,0], "utilization_percent": [0,0,0,41,0,0,43,0]},
+    "ovx3": {"memory_mib": [1,1,1,1,1,1,1,1], "utilization_percent": [0,0,0,0,0,0,0,0]}
+  },
+  "resident_proxy_total": 15,
+  "computing_proxy_total": 4,
+  "queried_gpus": 40,
+  "saturation_claim": false,
+  "node5_disposition": "Original FINAL evaluation CPU waiters armed for 17:00–17:20 UTC, not model-resident; no TRAIN restart authorized by this census"
+}

@@ -1,0 +1,600 @@
+{
+  "branches": {
+    "BASE_PUBLIC_FEEDBACK": {
+      "counts": {
+        "exact_key_introduced": 0,
+        "expression_changed": 12,
+        "frozen_after_success": 0,
+        "frozen_before_success": 0,
+        "frozen_success_candidate": 0,
+        "general_values_introduced": 0,
+        "list_literal_removed": 0,
+        "raw_changed": 12,
+        "unknown_identifiers_removed": 1
+      },
+      "diagnostic_transitions": {
+        "EXPRESSION_SYNTAX->EXPRESSION_SYNTAX": 1,
+        "JSON_DECODE->JSON_DECODE": 4,
+        "JSON_SCHEMA->JSON_SCHEMA": 9,
+        "UNKNOWN_IDENTIFIER->UNKNOWN_IDENTIFIER": 2
+      },
+      "episodes": 16,
+      "shape_counts": {
+        "after_shape": {
+          "alternate_expr_key": 13,
+          "exact_expression_key": 3,
+          "original_expression_AST_valid": 0,
+          "uses_list_literal": 3,
+          "whole_response_json": 16
+        },
+        "before_shape": {
+          "alternate_expr_key": 13,
+          "exact_expression_key": 3,
+          "original_expression_AST_valid": 0,
+          "uses_list_literal": 5,
+          "whole_response_json": 16
+        }
+      }
+    },
+    "CHILD_NO_FEEDBACK": {
+      "counts": {
+        "exact_key_introduced": 0,
+        "expression_changed": 1,
+        "frozen_after_success": 0,
+        "frozen_before_success": 0,
+        "frozen_success_candidate": 0,
+        "general_values_introduced": 0,
+        "list_literal_removed": 0,
+        "raw_changed": 8,
+        "unknown_identifiers_removed": 0
+      },
+      "diagnostic_transitions": {
+        "JSON_DECODE->JSON_DECODE": 15,
+        "JSON_SCHEMA->JSON_DECODE": 1
+      },
+      "episodes": 16,
+      "shape_counts": {
+        "after_shape": {
+          "alternate_expr_key": 12,
+          "exact_expression_key": 0,
+          "original_expression_AST_valid": 0,
+          "uses_list_literal": 6,
+          "whole_response_json": 13
+        },
+        "before_shape": {
+          "alternate_expr_key": 13,
+          "exact_expression_key": 0,
+          "original_expression_AST_valid": 0,
+          "uses_list_literal": 7,
+          "whole_response_json": 14
+        }
+      }
+    },
+    "CHILD_PUBLIC_FEEDBACK": {
+      "counts": {
+        "exact_key_introduced": 0,
+        "expression_changed": 1,
+        "frozen_after_success": 0,
+        "frozen_before_success": 0,
+        "frozen_success_candidate": 0,
+        "general_values_introduced": 0,
+        "list_literal_removed": 0,
+        "raw_changed": 7,
+        "unknown_identifiers_removed": 0
+      },
+      "diagnostic_transitions": {
+        "JSON_DECODE->JSON_DECODE": 15,
+        "JSON_SCHEMA->JSON_SCHEMA": 1
+      },
+      "episodes": 16,
+      "shape_counts": {
+        "after_shape": {
+          "alternate_expr_key": 13,
+          "exact_expression_key": 0,
+          "original_expression_AST_valid": 0,
+          "uses_list_literal": 7,
+          "whole_response_json": 14
+        },
+        "before_shape": {
+          "alternate_expr_key": 13,
+          "exact_expression_key": 0,
+          "original_expression_AST_valid": 0,
+          "uses_list_literal": 7,
+          "whole_response_json": 14
+        }
+      }
+    }
+  },
+  "completion": {
+    "episodes": 48,
+    "first_response_utc": "2026-09-15T16:43:25Z",
+    "guard_exit_utc": "2026-09-15T16:46:51Z",
+    "last_pair_utc": "2026-09-15T16:46:23Z",
+    "optimizer_loaded": false,
+    "original_optimizer_sha256": "f05ea93f7326f14764085ee481aedd9d6aca2cfaaabb70f6849b44f30f6e4c51",
+    "responses": 96,
+    "seed_update": 15332
+  },
+  "diagnostic_only_attempts": 96,
+  "executed_field_caveat": "Frozen public_tests_executed=1 counts attempted probes even if parsing failed; not executed-code or passed-test count.",
+  "fit_updates": 0,
+  "frozen_scores_unchanged": true,
+  "guard_terminal_sha256": "9354f85a31c19a9966f07045a443834f2255831d97d8a92b890450c915cfd53f",
+  "interpreter_outputs": 0,
+  "native_table": {
+    "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_review_20260915_1647/results_v2/NATIVE_REVISION_TABLE.json",
+    "sha256": "ccf648ccbd08fd4e0f3446dc7b5fb4f3953e0d81801fa9cbb9a857dbf41dcad8"
+  },
+  "observed_unix": 1789490916.0721958,
+  "raw_and_expressions_node_only": true,
+  "release": {
+    "both_pids_absent": true,
+    "guard_pid": 1387933,
+    "guard_returncode": 0,
+    "memory_mib": 0,
+    "native_pid": 1387951,
+    "new_work_launched": false,
+    "observed_utc": "2026-09-15T16:49:59.963927+00:00",
+    "physical": 7,
+    "utilization_percent": 0,
+    "uuid": "GPU-7c213554-a6c0-5c5a-1117-0422c8eee4ed"
+  },
+  "responses": 96,
+  "review_correction": {
+    "v1_retained": true,
+    "v2_fix": "Require both expression ASTs parse before claiming identifier/literal removal. V1 false removal from failed parse is not scientific evidence.",
+    "v2_native_directory": "/localhome/local-rohing/orch_r109_l1_public_feedback_review_20260915_1647/results_v2"
+  },
+  "review_source_sha256": "1387a753bcec5866e102be1969d8222d70eab8729382fc795e4ff0dbafce8f48",
+  "root": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2",
+  "rows_admitted": 0,
+  "salvaged_text_never_executed_or_rescored": true,
+  "schema": "R109_POST_COMPLETION_DESCRIPTIVE_REVISION_V1",
+  "semantic_review": {
+    "causal_feedback_benefit_established": false,
+    "expression_syntax_restored": {
+      "BASE_PUBLIC_FEEDBACK": 1,
+      "CHILD_NO_FEEDBACK": 0,
+      "CHILD_PUBLIC_FEEDBACK": 0
+    },
+    "method": "Author qualitative review of all 14 changed extracted-expression pairs against PUBLIC task specifications and AST structure; no execution, hidden expected values or rescoring.",
+    "pairs": [
+      {
+        "admitted": false,
+        "branch": "BASE_PUBLIC_FEEDBACK",
+        "descriptive_label": "REGRESSION_TASK_ALIGNMENT",
+        "executed_or_rescored": false,
+        "review": "Removed filtering required by the public task; unknown input identifier remains.",
+        "source_files": {
+          "COMPLETE.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_000/BASE_PUBLIC_FEEDBACK/COMPLETE.json",
+            "sha256": "f15d04b5c1b461796fd901e3cd58619278b36eeaf13a8234fd5a433daac166b7"
+          },
+          "continuation.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_000/BASE_PUBLIC_FEEDBACK/continuation.CALL.json",
+            "sha256": "c1a98fd78b918c1780300d7be43a9f13520dc13b0e101f0bfb4710a878669d78"
+          },
+          "continuation.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_000/BASE_PUBLIC_FEEDBACK/continuation.PUBLIC.json",
+            "sha256": "a2564c86ad501c7d435e21d0af65c46c95c55921f70d008827887c6f7e2646b9"
+          },
+          "draft.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_000/BASE_PUBLIC_FEEDBACK/draft.CALL.json",
+            "sha256": "ecc4702d7cb14f6ebe93d6c1cc930eb8133e0da334eb8b1e1ef1ce3499198be5"
+          },
+          "draft.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_000/BASE_PUBLIC_FEEDBACK/draft.PUBLIC.json",
+            "sha256": "488e8f07dc6e76de2c99407c38bfea3f8dc7ac3c57d3abfd8703b9b2aa548b6c"
+          }
+        },
+        "task": "ledger_000"
+      },
+      {
+        "admitted": false,
+        "branch": "BASE_PUBLIC_FEEDBACK",
+        "descriptive_label": "PARTIAL_TASK_ALIGNMENT",
+        "executed_or_rescored": false,
+        "review": "Removed an unrequested filter, aligning helper order with public map/clamp/deduplicate/sum specification. Unknown input identifier and wrong key remain; parameters and outcomes not reverified.",
+        "source_files": {
+          "COMPLETE.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_001/BASE_PUBLIC_FEEDBACK/COMPLETE.json",
+            "sha256": "d43642fd359ac53c206227eec23dc032c61f79ac65acbd541a13feeee837e774"
+          },
+          "continuation.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_001/BASE_PUBLIC_FEEDBACK/continuation.CALL.json",
+            "sha256": "f556e7f6e8b0efb2f3ebfbecf23a85366f77e63a167c3e93cdc1b9e3f153a733"
+          },
+          "continuation.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_001/BASE_PUBLIC_FEEDBACK/continuation.PUBLIC.json",
+            "sha256": "c18e9867a82b4420fc9fc08d062e850c2be1f9208b40f0991cc41af3627284e8"
+          },
+          "draft.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_001/BASE_PUBLIC_FEEDBACK/draft.CALL.json",
+            "sha256": "c3ab604d9b1166dc157cb7d30c7e5f647d99420a8769f4cf194178848991c49d"
+          },
+          "draft.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_001/BASE_PUBLIC_FEEDBACK/draft.PUBLIC.json",
+            "sha256": "c18e9867a82b4420fc9fc08d062e850c2be1f9208b40f0991cc41af3627284e8"
+          }
+        },
+        "task": "ledger_001"
+      },
+      {
+        "admitted": false,
+        "branch": "BASE_PUBLIC_FEEDBACK",
+        "descriptive_label": "REGRESSION_PARSE",
+        "executed_or_rescored": false,
+        "review": "Previously parseable extracted expression becomes unparseable; frozen schema error unchanged. Missing identifiers/literals in a failed parse are not repairs.",
+        "source_files": {
+          "COMPLETE.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_004/BASE_PUBLIC_FEEDBACK/COMPLETE.json",
+            "sha256": "12132613dc42968e29940a115c10e42c86cc9e07b3e45a5b97596b3e57cb567a"
+          },
+          "continuation.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_004/BASE_PUBLIC_FEEDBACK/continuation.CALL.json",
+            "sha256": "c8179a0dd8f4bc70f93c772c2b96172386f15f29e08c836f82485753a9e3d93d"
+          },
+          "continuation.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_004/BASE_PUBLIC_FEEDBACK/continuation.PUBLIC.json",
+            "sha256": "ab5ff7c5c0dc2bd41984005e3ec51c3b6efa1bea28fb83a5c69819334b047abd"
+          },
+          "draft.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_004/BASE_PUBLIC_FEEDBACK/draft.CALL.json",
+            "sha256": "53bf46de4650216966c47bcd8de132e702b4f6f2bf2a670798241e9073d7a3a1"
+          },
+          "draft.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_004/BASE_PUBLIC_FEEDBACK/draft.PUBLIC.json",
+            "sha256": "ab5ff7c5c0dc2bd41984005e3ec51c3b6efa1bea28fb83a5c69819334b047abd"
+          }
+        },
+        "task": "ledger_004"
+      },
+      {
+        "admitted": false,
+        "branch": "CHILD_PUBLIC_FEEDBACK",
+        "descriptive_label": "PARTIAL_TASK_ALIGNMENT",
+        "executed_or_rescored": false,
+        "review": "Removed an unrequested filtering operation. Deduplication still precedes mapping/clamping rather than following clamping; literal input and wrong JSON key remain. No executable correction or causal feedback-use conclusion.",
+        "source_files": {
+          "COMPLETE.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_005/CHILD_PUBLIC_FEEDBACK/COMPLETE.json",
+            "sha256": "0d6cbcd93acb5d079eeed098d6e990317f404058f5aab4fc12cdb681733a79d5"
+          },
+          "continuation.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_005/CHILD_PUBLIC_FEEDBACK/continuation.CALL.json",
+            "sha256": "e0379d4cf9c28f1c5c3d9536d1b0c272380b7221a5f73c498988a001d064f3a7"
+          },
+          "continuation.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_005/CHILD_PUBLIC_FEEDBACK/continuation.PUBLIC.json",
+            "sha256": "6826440568e8371dfc71b0fceb8e68269ee5460f90756dfac0f37fdd7744ff4b"
+          },
+          "draft.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_005/CHILD_PUBLIC_FEEDBACK/draft.CALL.json",
+            "sha256": "f1d20d6ca359dca156fe210d9b66d139d86be015029404e392879e45a2084498"
+          },
+          "draft.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_005/CHILD_PUBLIC_FEEDBACK/draft.PUBLIC.json",
+            "sha256": "6826440568e8371dfc71b0fceb8e68269ee5460f90756dfac0f37fdd7744ff4b"
+          }
+        },
+        "task": "ledger_005"
+      },
+      {
+        "admitted": false,
+        "branch": "CHILD_NO_FEEDBACK",
+        "descriptive_label": "REGRESSION_PARSE",
+        "executed_or_rescored": false,
+        "review": "Previously parseable extracted expression becomes unparseable; public error changes JSON_SCHEMA to JSON_DECODE.",
+        "source_files": {
+          "COMPLETE.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_005/CHILD_NO_FEEDBACK/COMPLETE.json",
+            "sha256": "63fecee844c2dbbce2912aba8b7604ac7f1b5be708fd04f93cc5284f1ac36bb5"
+          },
+          "continuation.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_005/CHILD_NO_FEEDBACK/continuation.CALL.json",
+            "sha256": "31a44f6039a227c93da1ed6500e07ff8a67b43101b524e238a0a4765697da3f2"
+          },
+          "continuation.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_005/CHILD_NO_FEEDBACK/continuation.PUBLIC.json",
+            "sha256": "6bed7a65522940b15e197123607bfc3e21b5ea202afdfef4115f49ad62f34e4f"
+          },
+          "draft.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_005/CHILD_NO_FEEDBACK/draft.CALL.json",
+            "sha256": "988fd05f0310cf1432b1c8cc5ed08f3c350e096125e7441315f2b44d9e486f09"
+          },
+          "draft.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_005/CHILD_NO_FEEDBACK/draft.PUBLIC.json",
+            "sha256": "6826440568e8371dfc71b0fceb8e68269ee5460f90756dfac0f37fdd7744ff4b"
+          }
+        },
+        "task": "ledger_005"
+      },
+      {
+        "admitted": false,
+        "branch": "BASE_PUBLIC_FEEDBACK",
+        "descriptive_label": "REGRESSION_PARSE",
+        "executed_or_rescored": false,
+        "review": "Previously parseable extracted expression becomes unparseable; frozen schema error unchanged. Missing identifiers/literals in a failed parse are not repairs.",
+        "source_files": {
+          "COMPLETE.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_005/BASE_PUBLIC_FEEDBACK/COMPLETE.json",
+            "sha256": "65ff3943c622077688c2f9c9a798c55c92a65388b0a384cbedcbce69ce3286af"
+          },
+          "continuation.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_005/BASE_PUBLIC_FEEDBACK/continuation.CALL.json",
+            "sha256": "70a8c0e0fff1ca9889c5e906eb75a82b9dc75ab927d81a0ef93806d151f0f903"
+          },
+          "continuation.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_005/BASE_PUBLIC_FEEDBACK/continuation.PUBLIC.json",
+            "sha256": "6826440568e8371dfc71b0fceb8e68269ee5460f90756dfac0f37fdd7744ff4b"
+          },
+          "draft.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_005/BASE_PUBLIC_FEEDBACK/draft.CALL.json",
+            "sha256": "9f51cee5094c8534fbf9566a7c5e37718649071d5c40153d346f67eb54347e8a"
+          },
+          "draft.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_005/BASE_PUBLIC_FEEDBACK/draft.PUBLIC.json",
+            "sha256": "6826440568e8371dfc71b0fceb8e68269ee5460f90756dfac0f37fdd7744ff4b"
+          }
+        },
+        "task": "ledger_005"
+      },
+      {
+        "admitted": false,
+        "branch": "BASE_PUBLIC_FEEDBACK",
+        "descriptive_label": "REGRESSION_PARSE",
+        "executed_or_rescored": false,
+        "review": "Previously parseable extracted expression becomes unparseable; frozen schema error unchanged. Missing identifiers/literals in a failed parse are not repairs.",
+        "source_files": {
+          "COMPLETE.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_006/BASE_PUBLIC_FEEDBACK/COMPLETE.json",
+            "sha256": "b4bf2179b4eed7b4a1c3a122bd55faa13cb501447993985d565b381494282121"
+          },
+          "continuation.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_006/BASE_PUBLIC_FEEDBACK/continuation.CALL.json",
+            "sha256": "0c6ddaf505d89c0e6fda7b02e8e9880b49cda846c39432540846e00106c2b2fa"
+          },
+          "continuation.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_006/BASE_PUBLIC_FEEDBACK/continuation.PUBLIC.json",
+            "sha256": "885ca9669be941cfb92725ab8abfa080062f8fb891b2b6bc49381b8fee06b8e3"
+          },
+          "draft.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_006/BASE_PUBLIC_FEEDBACK/draft.CALL.json",
+            "sha256": "173e8791a6e383b46925fae2ddd50b09658833730ec08c1b6d633121c096b652"
+          },
+          "draft.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_006/BASE_PUBLIC_FEEDBACK/draft.PUBLIC.json",
+            "sha256": "885ca9669be941cfb92725ab8abfa080062f8fb891b2b6bc49381b8fee06b8e3"
+          }
+        },
+        "task": "ledger_006"
+      },
+      {
+        "admitted": false,
+        "branch": "BASE_PUBLIC_FEEDBACK",
+        "descriptive_label": "UNRESOLVED_MALFORMED_REVISION",
+        "executed_or_rescored": false,
+        "review": "Extracted expressions malformed before and after; no supported semantic improvement conclusion.",
+        "source_files": {
+          "COMPLETE.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_007/BASE_PUBLIC_FEEDBACK/COMPLETE.json",
+            "sha256": "772369f25bcdd699bfce6b606306ea5cc24c7ed6223fab54c33debc994df5adc"
+          },
+          "continuation.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_007/BASE_PUBLIC_FEEDBACK/continuation.CALL.json",
+            "sha256": "c268a45041214a2533995c079c7239f1af57666dd4acb3d19234cfd794b503d7"
+          },
+          "continuation.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_007/BASE_PUBLIC_FEEDBACK/continuation.PUBLIC.json",
+            "sha256": "98d2d6ded11156842a5dfdd972408baebc228d4ae4341f9c662dac370fd0b0e2"
+          },
+          "draft.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_007/BASE_PUBLIC_FEEDBACK/draft.CALL.json",
+            "sha256": "b64fda9a63c9c89ec91cc92cc92721b67ef99535eca9250baf2f6631132589bd"
+          },
+          "draft.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_007/BASE_PUBLIC_FEEDBACK/draft.PUBLIC.json",
+            "sha256": "98d2d6ded11156842a5dfdd972408baebc228d4ae4341f9c662dac370fd0b0e2"
+          }
+        },
+        "task": "ledger_007"
+      },
+      {
+        "admitted": false,
+        "branch": "BASE_PUBLIC_FEEDBACK",
+        "descriptive_label": "PARTIAL_TASK_ALIGNMENT",
+        "executed_or_rescored": false,
+        "review": "Removed an unrequested filter, aligning helper order with public map/clamp/deduplicate/sum specification. Unknown input identifier and wrong key remain; parameters and outcomes not reverified.",
+        "source_files": {
+          "COMPLETE.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_009/BASE_PUBLIC_FEEDBACK/COMPLETE.json",
+            "sha256": "d230ee81e56f4d64e0714fdad15e85b98617745cc6691fced95690e809312049"
+          },
+          "continuation.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_009/BASE_PUBLIC_FEEDBACK/continuation.CALL.json",
+            "sha256": "eb6c984bcbe16c12696503bcfa64298b91142428b4c1d2d87705a2794ed9b9f8"
+          },
+          "continuation.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_009/BASE_PUBLIC_FEEDBACK/continuation.PUBLIC.json",
+            "sha256": "cb5e10c0554e9e90226e0a1527e48e32bab8acf441bf1c238d653874aefaa706"
+          },
+          "draft.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_009/BASE_PUBLIC_FEEDBACK/draft.CALL.json",
+            "sha256": "426df707ce4c571c3a848b7a72d08363303361d196613b6179d7f58109e0e9c1"
+          },
+          "draft.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_009/BASE_PUBLIC_FEEDBACK/draft.PUBLIC.json",
+            "sha256": "cb5e10c0554e9e90226e0a1527e48e32bab8acf441bf1c238d653874aefaa706"
+          }
+        },
+        "task": "ledger_009"
+      },
+      {
+        "admitted": false,
+        "branch": "BASE_PUBLIC_FEEDBACK",
+        "descriptive_label": "INPUT_SUBSTITUTION_NOT_REPAIR",
+        "executed_or_rescored": false,
+        "review": "Replaced an undefined input name with a comprehension over the already-public input; still no general values reference. Unsupported comprehension and a missing helper argument prevent executable repair. Removed-identifier count is not successful identifier repair.",
+        "source_files": {
+          "COMPLETE.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_010/BASE_PUBLIC_FEEDBACK/COMPLETE.json",
+            "sha256": "b692c1b49c7365f2a1ba4fae2d49c7a621366756c22e8b6662e0ecd1022e8c26"
+          },
+          "continuation.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_010/BASE_PUBLIC_FEEDBACK/continuation.CALL.json",
+            "sha256": "3ceebe7185c443c53ff332cf6526803e505699763183d0f4d82fca5986ef6624"
+          },
+          "continuation.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_010/BASE_PUBLIC_FEEDBACK/continuation.PUBLIC.json",
+            "sha256": "1967f3c62c123dc2a9204655430d7e4c00ecf428f8acfb96afdbc568ca227399"
+          },
+          "draft.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_010/BASE_PUBLIC_FEEDBACK/draft.CALL.json",
+            "sha256": "6093280ebe80eebccc1d7f874e354ef2df01977ac1ba92f91f14ec0b7f560dac"
+          },
+          "draft.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_010/BASE_PUBLIC_FEEDBACK/draft.PUBLIC.json",
+            "sha256": "1967f3c62c123dc2a9204655430d7e4c00ecf428f8acfb96afdbc568ca227399"
+          }
+        },
+        "task": "ledger_010"
+      },
+      {
+        "admitted": false,
+        "branch": "BASE_PUBLIC_FEEDBACK",
+        "descriptive_label": "UNRESOLVED_MALFORMED_REVISION",
+        "executed_or_rescored": false,
+        "review": "Extracted expressions malformed before and after; no supported semantic improvement conclusion.",
+        "source_files": {
+          "COMPLETE.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_011/BASE_PUBLIC_FEEDBACK/COMPLETE.json",
+            "sha256": "c94257d95573df86fe06bc369f02158dc6e5afe75c77ce4e0ca15eeb1b7f26d4"
+          },
+          "continuation.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_011/BASE_PUBLIC_FEEDBACK/continuation.CALL.json",
+            "sha256": "d14f634339bb1d8d644ebb906c5dd5145be45ea01b94dc62c17e1b4c3e21c244"
+          },
+          "continuation.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_011/BASE_PUBLIC_FEEDBACK/continuation.PUBLIC.json",
+            "sha256": "19c1e0fc8880006a96a8ca8e349ef7badcb9120060fca1a87ed4fa2772eb1728"
+          },
+          "draft.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_011/BASE_PUBLIC_FEEDBACK/draft.CALL.json",
+            "sha256": "26bda275f46a397fed5f7727367182335ce12bc6ac5d82b9399162f98b78f789"
+          },
+          "draft.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_011/BASE_PUBLIC_FEEDBACK/draft.PUBLIC.json",
+            "sha256": "19c1e0fc8880006a96a8ca8e349ef7badcb9120060fca1a87ed4fa2772eb1728"
+          }
+        },
+        "task": "ledger_011"
+      },
+      {
+        "admitted": false,
+        "branch": "BASE_PUBLIC_FEEDBACK",
+        "descriptive_label": "PARTIAL_TASK_ALIGNMENT",
+        "executed_or_rescored": false,
+        "review": "Removed an unrequested filter, aligning helper order with public map/clamp/deduplicate/sum specification. Unknown input identifier and wrong key remain; parameters and outcomes not reverified.",
+        "source_files": {
+          "COMPLETE.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_013/BASE_PUBLIC_FEEDBACK/COMPLETE.json",
+            "sha256": "fcaf7ce0dde332863ba220a29df3f989dd8921cdb19d30a5c88d7856094789f4"
+          },
+          "continuation.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_013/BASE_PUBLIC_FEEDBACK/continuation.CALL.json",
+            "sha256": "2b308dc8d1f6c08a77cea75831cb0ab31146cd21d75778e34884fb4b67068a31"
+          },
+          "continuation.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_013/BASE_PUBLIC_FEEDBACK/continuation.PUBLIC.json",
+            "sha256": "aa0babd8554bb720ff3d6e3ebb153ca0e253c2be8791ba1f8e79f7ef27b6ddb4"
+          },
+          "draft.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_013/BASE_PUBLIC_FEEDBACK/draft.CALL.json",
+            "sha256": "dbf7fecc0ca07b8316106a9846349e971f1dfec01bcf71b9fa473ff8afd587fb"
+          },
+          "draft.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_013/BASE_PUBLIC_FEEDBACK/draft.PUBLIC.json",
+            "sha256": "aa0babd8554bb720ff3d6e3ebb153ca0e253c2be8791ba1f8e79f7ef27b6ddb4"
+          }
+        },
+        "task": "ledger_013"
+      },
+      {
+        "admitted": false,
+        "branch": "BASE_PUBLIC_FEEDBACK",
+        "descriptive_label": "REGRESSION_PARSE",
+        "executed_or_rescored": false,
+        "review": "Previously parseable extracted expression becomes unparseable; frozen schema error unchanged. Missing identifiers/literals in a failed parse are not repairs.",
+        "source_files": {
+          "COMPLETE.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_014/BASE_PUBLIC_FEEDBACK/COMPLETE.json",
+            "sha256": "d462fae121b89e72001d4fbd01b0c3e989e94fccc87a813d1125c28bbb379d49"
+          },
+          "continuation.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_014/BASE_PUBLIC_FEEDBACK/continuation.CALL.json",
+            "sha256": "112dde6fcf08d0f948082256521d9c5bd4b4753e4fcd5cbd7f6578b83095bba2"
+          },
+          "continuation.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_014/BASE_PUBLIC_FEEDBACK/continuation.PUBLIC.json",
+            "sha256": "0e5b450ff08ff63ba04a629b9784efed69cffa2ff130d9c17fa2f9b904c66a75"
+          },
+          "draft.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_014/BASE_PUBLIC_FEEDBACK/draft.CALL.json",
+            "sha256": "50bb72c1388c100bc85a3f763b91745130444cdc7df695eb0e28ec0354310130"
+          },
+          "draft.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_014/BASE_PUBLIC_FEEDBACK/draft.PUBLIC.json",
+            "sha256": "0e5b450ff08ff63ba04a629b9784efed69cffa2ff130d9c17fa2f9b904c66a75"
+          }
+        },
+        "task": "ledger_014"
+      },
+      {
+        "admitted": false,
+        "branch": "BASE_PUBLIC_FEEDBACK",
+        "descriptive_label": "PARTIAL_EXPRESSION_SYNTAX",
+        "executed_or_rescored": false,
+        "review": "Extracted expression becomes Python-AST parseable. Original response still fails last-line JSON parsing; unknown identifiers, unsupported helper and helper arity remain. Syntax improvement only, not task correctness.",
+        "source_files": {
+          "COMPLETE.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_015/BASE_PUBLIC_FEEDBACK/COMPLETE.json",
+            "sha256": "3daf6bf41f561dd4b9c84986de9f9231339dd5d08a665344223ab3aa642f286e"
+          },
+          "continuation.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_015/BASE_PUBLIC_FEEDBACK/continuation.CALL.json",
+            "sha256": "1028b3d00c17568e36f7226a9387029a12da6ea374eb98b84c3329d23bb1a8b8"
+          },
+          "continuation.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_015/BASE_PUBLIC_FEEDBACK/continuation.PUBLIC.json",
+            "sha256": "f3021ce31ee493a98cac5a5e91b03396c30e12b6d21a83e633bd06535d53132e"
+          },
+          "draft.CALL.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_015/BASE_PUBLIC_FEEDBACK/draft.CALL.json",
+            "sha256": "83c6a5cbba0cc110f7af619ee5e6164504e2b7e3abde51a90cc117039ad9ba50"
+          },
+          "draft.PUBLIC.json": {
+            "path": "/localhome/local-rohing/orch_r109_l1_public_feedback_20260915_attempt2/episodes/R109-PUBLIC-ledger_015/BASE_PUBLIC_FEEDBACK/draft.PUBLIC.json",
+            "sha256": "f3021ce31ee493a98cac5a5e91b03396c30e12b6d21a83e633bd06535d53132e"
+          }
+        },
+        "task": "ledger_015"
+      }
+    ],
+    "runtime_error_category_improvements": 0,
+    "scope": "Four task-aligned edits all remove an unrequested filter in the same task family; not four independent capabilities. Syntax-only improvement counted separately.",
+    "task_aligned_partial_edits": {
+      "BASE_PUBLIC_FEEDBACK": 3,
+      "CHILD_NO_FEEDBACK": 0,
+      "CHILD_PUBLIC_FEEDBACK": 1
+    }
+  },
+  "terminal_sha256": "fd508dc66da3172b068c11ecff86367c759a764b31cb2ced42389990b84f5a70",
+  "tests": {
+    "collection_native": 12,
+    "command": "python3 -m unittest discover -s tests -p 'test_orch_r109_l1_public_feedback*.py' -q",
+    "local_result": "PASS",
+    "local_unittest": 18,
+    "native_result": "PASS",
+    "review_native": 6
+  }
+}
