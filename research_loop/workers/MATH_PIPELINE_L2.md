@@ -4,6 +4,13 @@
 
 ## 2026-09-15T05:32Z — GPU4 allocated continuation READY
 
+05:33:34Z actual launch update: oldfailedC2readout56COMPLETE+AFTER,
+terminal05:32:59.704909Z; strictprivilegedrelease05:33:22.607881Z followedby
+freshsecondadmission. Newtraining4 native553960 launched05:33:30.496071Z,
+guardian550637. Initialmount/optimizerconfirmation pending model load atthis
+snapshot; not inferred fromallocatedGPU or requestedcheckpoint. Compact
+R104_TRAINING4_LAUNCH_RECEIPT.json bindsrelease/test/nativePID/provenance.
+
 [Builder] Authority934a71f9,58CPUtestsPASS; training-wheels/long/supportive
 READYfca4cca97a2a2cce49f90744bb670b4fbe03d9b69332859d71c53df9ada3504e.
 Additional144native/+8Astra,aggregate2064/36; exact original deadlines/24GPUh.
