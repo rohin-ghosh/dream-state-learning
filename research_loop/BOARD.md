@@ -1,5 +1,33 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## Conditional teacher dose4 allocation — 2026-09-15 06:58 UTC
+
+Assign node1physical4 (GPU-f83fb491-34ce-4176-5852-c94652151a9f) and5
+(GPU-2e7eb3b8-9b0b-3729-f5ff-2bbdad6a4a30) to one separate
+TEACHER_DISTILLATION FULL_TARGET/new-labels-masked pair, after runnable native
+driver+handoff CPU/provenance tests and exact published readiness hashes. Existing
+TWO_PASS generation continues until both payload and safe full-pair boundary are
+ready; this is NOT immediate release, a hold, or authorization to kill mid-pair.
+Preserve unhinted0/1 and premise3; original generation SEEN/counters/deadlines.
+
+Source: existing16teacher TRAIN rows (8math/8route), original37ec/frozenQwen,
+compiler manifest976a0258d053f783c1cc3b5383614c7502e56d43d7e830c9782aaf9bba1fe527.
+Each arm56updates,4presentations/newrow, unchanged222legacy rows/reference
+normalization and matched inputs; new labels/EOS masked only in control.
+Fresh minimal-system math16 +strict-route<=48 +legacy48 calls perarm;
+224pair ceiling,4096math/route output and160legacy, context16384. Task-requested
+checks retained/labelled, not spontaneous behavior. R106 mid-line/terminal/method
+measures separate. No provider/parent/source-generation calls, no teacher→ongoingL1.
+
+Native root `/localhome/local-rohing/orch_teacher_branching_pilot_20260915_dose4`.
+One common activation after safe release;7200s/4GPUh ceiling, lease-minus6h,
+no retries/reset/dose16. Planning40–100min total (unmeasured),120min hard stop.
+Strict physical/minor/UUID/proc/CVD/open-device admission; only current owned
+workers4/5 may stop at completed two-pass task boundaries. Main publishes exact
+driver/readiness before launch; Poincare owns handoff, Laplace fit/readout.
+Prospective allocation17generation/9training-or-readout/6parenting; actual remains
+19/7/6 until handoff. Teacher-only success does not satisfy own-trajectory goal.
+
 ## Verified update — 2026-09-15 06:41 UTC
 
 - R106 audit: departure/return positives exist (partial-review lowerbounds

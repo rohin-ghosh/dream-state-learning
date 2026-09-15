@@ -1,0 +1,48 @@
+{
+  "author_observation": "Reflection acknowledges incorrect verifier outcome but repeats candidate684 and attributes failure to presentation rather than repairing the false arithmetic.",
+  "disagreement_stopping_rule_delivered": true,
+  "episode_sha256": "ce4731db6fae73925dd9165c59918895848befc8cf2095279a8570a863fd8c5a",
+  "full_episode_guidance_delivered": true,
+  "independently_computed_arithmetic": {
+    "candidate_from_correct_product": 678,
+    "product_31_by_21": 651,
+    "wrong_candidate_mod31": 2,
+    "wrong_candidate_mod37": 18
+  },
+  "input_truncated": false,
+  "intervention": false,
+  "measured_utc": "2026-09-15T07:00:15.104635+00:00",
+  "native_calls": 0,
+  "outcome": {
+    "correct": false,
+    "final_parseable": true,
+    "parsed_answer": "684",
+    "status": "INCORRECT",
+    "terminal": true,
+    "truncated": false
+  },
+  "parent_may_read": false,
+  "parent_plan_sha256": "991efc82e069d6926e5d47e6e11eadb79088063abe0dd2174dfd2c4f0bc57b2c",
+  "product_recompute_instruction_delivered": true,
+  "raw_text_included": false,
+  "reflection_call_sha256": "548e0257957b46512d8a66fd1b8c7128b1540128e6b663330b9a2e55ad008a28",
+  "retained_rows": [
+    {
+      "kind": "past_attempt",
+      "outcome": "INCORRECT",
+      "presentations": 55,
+      "source_sha256": "83bfb7f90d88e4d9acf509baf99c9cf10b670e94a337beb8fa888601008d8076",
+      "teacher_in_prefix": false
+    },
+    {
+      "kind": "past_reflection",
+      "outcome": "INCORRECT",
+      "presentations": 55,
+      "source_sha256": "548e0257957b46512d8a66fd1b8c7128b1540128e6b663330b9a2e55ad008a28",
+      "teacher_in_prefix": false
+    }
+  ],
+  "selection": "POST_HOC_SINGLE_INCORRECT_CASE_NOT_PREVALENCE_OR_CAUSAL_ESTIMATE",
+  "source_sha256": "974d3695c8ebd4a3f3d943435a2176b875cdba7c69cb193c3c4d32511ec8e2eb",
+  "task_id": "MATH_PIPELINE_L2_R102_20260915_N0_TRAIN_C6_E10"
+}

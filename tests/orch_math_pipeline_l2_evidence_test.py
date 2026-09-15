@@ -28,6 +28,52 @@ class EvidenceTest(unittest.TestCase):
             with self.assertRaises(AssertionError):
                 evidence.join_transition(Path(directory), 'FROZEN', 2)
 
+    def test_two_episode_missing_transition_keeps_declared_denominator(self):
+        with tempfile.TemporaryDirectory() as directory:
+            current = Path(directory) / 'GUIDED_SLEEP/cycle7/experience'
+            current.mkdir(parents=True)
+            (current / 'DENOMINATORS.json').write_text(json.dumps(dict(
+                task_denominator=2, planned_tasks=['TRAIN_0', 'TRAIN_1'])))
+            result = evidence.join_transition(Path(directory), 'GUIDED_SLEEP', 7)
+        self.assertEqual((result['planned_denominator'], result['missing']), (2, 2))
+        self.assertIsNone(result['saved_child_to_next_cycle_verified'])
+
+    def test_two_episode_late_cycle_observer_writes_once(self):
+        with tempfile.TemporaryDirectory() as directory:
+            campaign = Path(directory) / 'campaign_fixture'
+            previous = campaign / 'GUIDED_SLEEP/cycle6/experience'
+            current = campaign / 'GUIDED_SLEEP/cycle7/experience'
+            previous.mkdir(parents=True)
+            current.mkdir(parents=True)
+            (previous / 'COMPLETE.json').write_text(json.dumps(dict(status='COMPLETE',
+                output_adapter=dict(state_sha256='saved'))))
+            (current / 'REQUEST.json').write_text(json.dumps(dict(
+                input_adapter=dict(state_sha256='saved'))))
+            (current / 'DENOMINATORS.json').write_text(json.dumps(dict(
+                task_denominator=2, planned_tasks=['TRAIN_0', 'TRAIN_1'])))
+            for position in range(2):
+                (current / f'EPISODE_{position:02d}.json').write_text(json.dumps(dict(
+                    task=dict(id=f'TRAIN_{position}', split='TRAIN'), outcome=dict(correct=False))))
+            written = measure.observe(Path(directory))
+            self.assertEqual(len(written), 1)
+            result = json.loads(Path(written[0]).read_text())
+            self.assertEqual((result['planned_denominator'], result['captured'], result['missing']), (2, 2, 0))
+            self.assertTrue(result['saved_child_to_next_cycle_verified'])
+            self.assertEqual(measure.observe(Path(directory)), [])
+
+    def test_rejects_wrong_preceding_child(self):
+        with tempfile.TemporaryDirectory() as directory:
+            previous = Path(directory) / 'GUIDED_SLEEP/cycle1/experience'
+            current = Path(directory) / 'GUIDED_SLEEP/cycle2/experience'
+            previous.mkdir(parents=True)
+            current.mkdir(parents=True)
+            (previous / 'COMPLETE.json').write_text(json.dumps(dict(status='COMPLETE',
+                output_adapter=dict(state_sha256='saved'))))
+            (current / 'REQUEST.json').write_text(json.dumps(dict(
+                input_adapter=dict(state_sha256='wrong'))))
+            with self.assertRaisesRegex(AssertionError, 'preceding saved child'):
+                evidence.join_transition(Path(directory), 'GUIDED_SLEEP', 2)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,5 +1,30 @@
 # Research state — Orchestrator
 
+## Verified stop and late parenting evidence — September 15, 2026, 07:08 UTC
+
+The 07:03:31 census supersedes the earlier full-fleet snapshot: A1000/1/2/3/5/6/7
+had no compute processes; continual training stopped at its original training
+cutoff. Checkpoint/optimizer continuation of the SAME evolving FULL/OFF children
+is assigned to Laplace, not a fresh initialization or a claimed live extension.
+Node3physical3/4/5 are assigned to Poincare for bounded R106 generation refill;
+physical1 remains occupied by creative parenting and must not be taken over.
+A1005/7 parenting backfills require natural guardian release verification.
+Allocations and actual first updates are separate receipts; no 32/32 claim yet.
+
+The repaired two-episode observer has six passing regression tests and 16 new
+sleep-to-next-original-attempt joins. Fresh, parent-free latest completed
+MICROC7/CREATIVEC6/training-wheelsC3 readouts use mean278.375/320/309.75 tokens;
+cycles last1147.955/898.503/1266.687 seconds. Prompted terminal checks are not
+spontaneous mid-line branching. A preserved C6 arithmetic-feedback failure
+shows delivered guidance without correction; outcome-tagged SFT is not negative
+gradient training. Details and compact hashes are in
+research_notes/analysis/orch_l2_observer_repair_20260915/RESULTS.md.
+No retained parenting-dependent improvement is established.
+
+Git publication at06:45:40UTC was f30355df, verified synchronized at07:03:30;
+the notice's04:37last-push timestamp does not describe this clone's state.
+Raw transcripts stay on nodes. This entry is not a fresh fleet measurement.
+
 ## R106 composition and actual parenting — September 15, 2026, 06:41 UTC
 
 Method count is separate from branching. Main confirmed checks/judgments with

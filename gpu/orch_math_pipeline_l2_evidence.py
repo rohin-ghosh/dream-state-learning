@@ -26,6 +26,26 @@ def join_transition(campaign, arm, cycle):
     current = campaign / arm / f'cycle{cycle}/experience'
     prior = [read(path) for path in sorted(previous.glob('EPISODE_*.json'))]
     actual = [read(path) for path in sorted(current.glob('EPISODE_*.json'))]
+    denominator_path = current / 'DENOMINATORS.json'
+    denominator = read(denominator_path) if denominator_path.exists() else None
+    planned = denominator['task_denominator'] if denominator else 8
+    assert type(planned) is int and planned > 0
+    if denominator is not None:
+        tasks = denominator['planned_tasks']
+        assert len(tasks) == len(set(tasks)) == planned
+        actual_ids = [episode['task']['id'] for episode in actual]
+        assert len(actual_ids) == len(set(actual_ids))
+        assert set(actual_ids) <= set(tasks)
+    assert len(actual) <= planned
+    prior_complete_path = previous / 'COMPLETE.json'
+    prior_complete = read(prior_complete_path) if prior_complete_path.exists() else None
+    phase_request_path = current / 'REQUEST.json'
+    request = read(phase_request_path) if phase_request_path.exists() else None
+    checkpoint_join = None
+    if prior_complete is not None and request is not None:
+        checkpoint_join = (prior_complete['output_adapter']['state_sha256']
+                           == request['input_adapter']['state_sha256'])
+        assert checkpoint_join, 'next cycle must load the preceding saved child'
     parent_plan = previous / 'PARENT_PLAN.json'
     request_path = campaign / 'parent_queue' / f'{arm}_C{cycle}.request.json'
     parent_request_time = request_path.stat().st_mtime if request_path.exists() else None
@@ -57,11 +77,15 @@ def join_transition(campaign, arm, cycle):
             parent_free_before_next_guidance=True, preceding_same_family_reflections=sources,
             semantic_guidance_uptake='AUTHOR_REVIEW_PENDING_NOT_AUTO_ADMISSION'))
     return dict(campaign=campaign.name, arm=arm, from_cycle=cycle - 1, to_cycle=cycle,
-        planned_denominator=8, captured=len(rows), missing=8 - len(rows),
+        planned_denominator=planned, captured=len(rows), missing=planned - len(rows),
+        denominator_source=reference(denominator_path, campaign) if denominator else 'HISTORICAL_EIGHT_EPISODE_FALLBACK',
         correct=sum(row['outcome'].get('correct', False) for row in rows),
         previous_plan=reference(parent_plan, campaign) if parent_plan.exists() else None,
         inherited_learning_claim=arm != 'FROZEN', new_native_calls=0, rows=rows,
-        parents_may_read_this_file=False, prior_learning_complete=(previous / 'COMPLETE.json').exists())
+        parents_may_read_this_file=False, prior_learning_complete=bool(prior_complete and prior_complete.get('status') == 'COMPLETE'),
+        saved_child_to_next_cycle_verified=checkpoint_join,
+        current_request=reference(phase_request_path, campaign) if request else None,
+        previous_complete=reference(prior_complete_path, campaign) if prior_complete else None)
 
 
 def phase_summary(path, root):

@@ -585,3 +585,24 @@ worked methods; not a new/current-population sample. Bound annotation hash
 and exact provenance/process/count contracts in compact snapshot. Qualified
 throughput deliberately null. Only compact metrics and this journal changed;
 raw remains native. Available for Hubble sourceAPI questions, no review launch.
+
+## 2026-09-15T06:50Z — R106 META diagnostic and proposal only
+
+R106 supersedes two-method branching operationalization. Prior0of7method
+statistic must not be reported as0R106branches; preserved historical evidence
+unchanged. Own TRAIN-only outcome-independent4final sample from META6/7 frozen
+before reading; all4finals+4actualdrafts fully read, no provider calls or rawVM
+files.4of4show terminal departure/return checks,0of4resume intermediate
+computation. Grounding separate: threshold check misses equality boundary;
+changed-rate counterfactual makes an unsupported validation inference; overlap
+and conservation checks use actual constraints. No outcome rescore/admission.
+
+Second pass:2byte-identical,1case-only,1adds consistency conclusion; no new
+mid-solution excursion.2488draft versus2533finalcontent tokens across4pairs,
+not population/learning effect. META6/7 identities live at06:46:46UTC;
+last600s22/11rawcaptures=132/66hour, not qualified rows. Proposal changes
+location-sensitive META instructions only at a future bound safe task boundary,
+with16matched TRAIN tasks/two passes/two arms=64totalexisting-allowance calls;
+not installed, allocated, tested or GPU-ready. Exact proposal/rubric/hashes in
+own `META_R106_AUDIT_AND_PROPOSAL.md`, sample and pair comparison JSONs.
+No live source/budget/stop-marker/provider/publisher/GPU changes, no git mutation.
