@@ -606,3 +606,23 @@ with16matched TRAIN tasks/two passes/two arms=64totalexisting-allowance calls;
 not installed, allocated, tested or GPU-ready. Exact proposal/rubric/hashes in
 own `META_R106_AUDIT_AND_PROPOSAL.md`, sample and pair comparison JSONs.
 No live source/budget/stop-marker/provider/publisher/GPU changes, no git mutation.
+
+## 2026-09-15T07:10Z — fresh compact throughput and explicit publication allowlist
+
+At07:10:01.914769UTC:8exactlive node2generator identities,7positive-utilization
+GPUs, guardian live.3852completed captures; trailing600s238=1428rawcaptures/hour,
+67553content tokens;20math/21CODE/197ROUTE. Rates include all response stages,
+not unique tasks or accepted training rows. Qualified/hour remains null/not
+measured, never inferred from raw success or treated as zero. Arm rates:
+derived0unhinted390;37ec1unhinted42;37ec2–3light444;37ec4–5two-pass294;
+37ec6–7meta258/hour. Two-slot arms aggregate both devices.6recent repetition
+screen flags are mechanical, separate from branching/grounding.
+
+No re-audit: preserved R106four-META-task diagnostic4terminal departures/returns,
+0mid-computation returns;2identical/1case-only/1consistency-conclusion secondpass
+changes. Earlier mixed-family method diagnostic0of7with>=2distinct methods is a
+different sample, not zeroR106branches. Proposal remains documentation only,
+not installed/GPU-ready. Native raw remains onnode2. New metrics and explicit
+hashed publication allowlist accompany the three untracked METAcompact/docs;
+only this journal additionally updated. No new executable source/test changes,
+publisher work, model/provider calls, generator signals, budget or git changes.

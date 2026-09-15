@@ -49,6 +49,21 @@ wall time is not instrumented. These totals also omit some loading/handoff time.
 Reflection, rather than original experience generation, dominates generation
 in the two slow examples. No within-lane episode batching was introduced.
 
+The slow cases each contain one **8192-token truncated reflection**, taking
+387.77 seconds (MICRO C7) and 381.60 seconds (training-wheels C3). Their
+repeated-fourgram fractions are 0.9623 and 0.9535 respectively. This is a
+lexical proxy, not a semantic quality score. Native head/tail inspection at
+07:12 UTC confirms repeated future-check paragraphs in MICRO and repeated
+transfer-limitation paragraphs in training-wheels. These are not thousands of
+tokens of additional useful branching. The zero-truncation statement in the
+main table applies only to held readouts, **not** these reflections. No live
+lane was stopped or tuned in response to this observation.
+
+Native source call hashes (same lane roots):
+
+- `campaign_03_r102_micro5/GUIDED_SLEEP/cycle7/experience/CALL_0075.json`: `224d091200d52ba6b674a1ed9d2b7eb2b4545a908303f9d2820ac7f347fe5b0c`.
+- `campaign_05_r104_training4/GUIDED_SLEEP/cycle3/experience/CALL_0027.json`: `96cf8b07dadb8fd168c4095482f0d12a3b73739cbabb68a0f148dc5f57313c9a`.
+
 Sources under native `/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1`:
 
 - `campaign_03_r102_micro5/C7_experience_REDUCTION.json`, SHA256 `63db3770183874b5091c00070f107e1b4b394499a829380cbde0937df387c345`.

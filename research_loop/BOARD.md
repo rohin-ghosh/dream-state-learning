@@ -1,5 +1,16 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## R107 node3 physical3 capability assignment — 2026-09-15
+
+Per latest user directive, node3 physical3 ONLY is assigned to Main's R107
+32-task/checkpoint LoRAON/OFF capability diagnostic (approximately64calls,
+15–30min estimate). Full UUID GPU-e1277146-04f2-c38f-d1ae-1a98132f907e,
+kernel minor3. Existing R106 refill never launched there; no stop was required.
+Main owns exact diagnostic readiness/budget and fresh privileged admission
+before launch. RICH_HOT_NODE3 refill work is restricted to physical4/5;
+no refill may start on3. Do not touch CREATIVE physical1 or other live lanes.
+
+
 ## Conditional teacher dose4 allocation — 2026-09-15 06:58 UTC
 
 Assign node1physical4 (GPU-f83fb491-34ce-4176-5852-c94652151a9f) and5
@@ -658,3 +669,7 @@ it tests a same-cohort sleep contrast, not an untouched confirmation.
   reader evidence; no premise reuse without independent replication.
 - W1 admission: research_notes/analysis/orch_W1_20260914_contract.md.
   Published conditional slots allow independent launches, not a serial PI gate.
+
+## [Builder — R107 bounded continual continuation] 2026-09-15T07:17Z
+
+Allocate A100 physical0/2/6 FULL and1/3 matched OFF, same existing five-rank topology, conditional only on own CPU/provenance and fresh strict admission. Do not use4/5/7 or stop any foreign guard. Resume exact durable6628/V13/3635, adapter+optimizer+all rank RNG+cursor+exposure counters; never37ec or fresh optimization. Preserve historical117 extra physical OFF recovery updates. One explicit extension only: TRAIN through first matched128-update boundary at/after08:00Z; native deadline09:00Z, hard end09:03Z, lease-minus6h and <=10 additional conservative GPUh. Then existing416 parent-free terminal calls only (1824 aggregate including BASE); no capability calls, criteria changes, FIFO deployment, teacher/L2 intake or automatic further extension. Accepted external batch receiver follows same extended TRAIN cutoff. Source controller gpu/orch_combined_l1_continuation_r107.py reuses unchanged native source4859efad...; no launch yet at this publication. Teacher16 remains deferred; node1conditional4/5 not consumed. Postcompletion fleet rebalance belongs to Main.
