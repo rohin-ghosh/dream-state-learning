@@ -44,3 +44,14 @@ verification or a learning-benefit claim. Saved scoped observation1 JSON.
 Initial wrong-node read found no files; corrected from authoritative A100
 BOARD/interface rather than inferring absent runs. Concurrent notebook merges
 preserved both parent sequences. No completed stage restarted.
+
+2026-09-15 01:20UTC: checked the concrete compatibility hypothesis that native
+projection caused SHORT's zero updates. No recorded projection errors across
+SHORTC1–C3, UNPARENTEDC1 and LONGC1; every semantic admission survives encoding.
+SHORT154turns:148fail necessary conditions;5UNRESOLVED;1semanticFAIL.
+The five unresolved C2 candidates have empty reviews after JSONDecodeError
+and evaluator_failed_no_fallback:1, not negative content judgments. No new
+parser, retroactive admission or duplicate run. Existing parent worker owns
+transport and already uses the strict envelope helper. Exact receipt/episode
+hashes and count assertions saved under own projection_diagnostic1 JSON/MD.
+No native-seam code repair indicated; no model calls/fits/PID changes.

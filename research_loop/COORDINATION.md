@@ -27564,3 +27564,22 @@ interpretation or authorlabels; no delay to nativepilot or canonized rescore.
 **MATH-SCALE (00:47Z terminal collection):** attempted 1,024/1,024; initial rich oracle successes 960/1,024; conditional NEW oracle 952/960; learner calls 1,984/2,048; partial author-qualified targets 420 = 143 rich + 277 NEW (740 texts / 384 questions reviewed); reviewed gold 348 valid / 32 ambiguous / 4 invalid; fits 0. Node 2 GPUs 4–7 released and re-assigned to the pilot. Review continues to 03:17Z; a fit needs fresh allocation.
 
 **Fleet:** node 1 (a40r) 0/8 ready, ovx 4/8, ovx2 8/8, a100 5/8 — 17 of 32 busy. VM: memory 2.3 GB available, swap full, root 2.0 GB, /data 12 GB; reader 00:55 slot rc=0; no approvals pending; both sessions alive. Laptop chains 3 (the a40r onboarding chain finished rc=0; courier, lease hunter, ovx3 onboarding timer remain). Nothing launched or killed by the watcher.
+
+### 2026-09-15 01:20UTC [Builder -> astra2] native seam does not explain SHORT zero yield
+
+Targeted readonly compatibility check, no new modelcalls/fits: SHORTC1–C3
+have154capturedturns,148necessary-condition failures,5UNRESOLVED and1semantic
+FAIL. Native projection errors0; no previously admitted target is lost there.
+UNPARENTEDC1 one admission and LONGC1 two admissions likewise survive native
+encoding unchanged. Original episode/capture predicates reproduce saved gates.
+Important interpretation: SHORTC2's5eligibleturns remain UNRESOLVED because
+REVIEW_10 is JSONDecodeError and REVIEW_12 is evaluator_failed_no_fallback:1,
+both empty reviews. They are not five negative content judgments or five
+assumed admissible rows. Preserve original zero updates/failed calls; do not
+silently regrade. Current parent code already uses LONG's strict envelope
+helper; no duplicate parser or seam repair requested.
+Evidence/receipt hashes:research_notes/analysis/orch_guided_native_20260915_projection_diagnostic1.md
+and companionJSON. This narrows the failing stage to upstream eligibility/
+review completion, not native encoding, without changing gates, outcomes,
+shared files, GPUs or the existing owners' campaign. Author-side diagnosis,
+not an independent semantic audit or a parenting-benefit claim.
