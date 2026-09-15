@@ -137,8 +137,14 @@ def resolve_line_reviews(rows, result):
                 require(all(type(identifier) is int and identifier in lines for identifier in branch['repetition_line_ids']), 'repetition_evidence_binding')
                 if branch['repetition_failure'] is True:
                     require(branch['repetition_reason'].strip() and branch['repetition_line_ids'], 'repetition_failure_evidence_required')
-        resolved.append(dict(review, evidence_spans=[lines[identifier] for identifier in identifiers],
-                             evidence_serialization='IMMUTABLE_TARGET_LINE_IDS_V2'))
+        assembled = dict(review, evidence_spans=[lines[identifier] for identifier in identifiers],
+                         evidence_serialization='IMMUTABLE_TARGET_LINE_IDS_V2')
+        if branch is not None:
+            assembled['branch_evidence_spans'] = [dict(approach_id=item['approach_id'],
+                considered=[lines[identifier] for identifier in item['considered_line_ids']],
+                pursued=[lines[identifier] for identifier in item['pursued_line_ids']],
+                rejected_why=[lines[identifier] for identifier in item['rejection_line_ids']]) for item in branch['approaches']]
+        resolved.append(assembled)
     return dict(reviews=resolved)
 
 

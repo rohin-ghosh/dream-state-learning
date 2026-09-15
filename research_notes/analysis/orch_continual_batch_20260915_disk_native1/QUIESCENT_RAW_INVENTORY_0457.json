@@ -1,0 +1,621 @@
+{
+  "active_controller_pid": 3443504,
+  "active_controller_present": true,
+  "caveats": [
+    "All listed raw/archive scopes are quiescent from this worker; payload hashes and node-copy verification remain Main-owned prerequisites.",
+    "No files deleted or moved. Recheck readers before pruning; this snapshot cannot rule out future readers or inaccessible namespaces.",
+    "Keep batch metadata, candidate/review/decision/ROWS/manifest files and batch_*_ingest_v2; historical consumer paths may still refer to raw.",
+    "Keep old quota/deadline/seen/usage/failure/pilot labels. New controller uses inherited hashes in outside-git CONFIG, not old raw.",
+    "Never prune /tmp/orch_continual_batch_control_20260915_disk1, disk_native1 reductions, or native active roots.",
+    "Publish native relocation path+hash receipts rather than rewriting immutable historical manifests."
+  ],
+  "entries": [
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 9425130,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_000/RAW_INVENTORY.json",
+        "sha256": "57dcf7e3eea33716fb0e5ca31d3a2ff227e42eecf9b132790fcc041414d52eab"
+      },
+      "files": 1050,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_000/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 2178438,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_000/RAW_INVENTORY.json",
+        "sha256": "57dcf7e3eea33716fb0e5ca31d3a2ff227e42eecf9b132790fcc041414d52eab"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_000/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 31382726,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_001/RAW_INVENTORY.json",
+        "sha256": "357f297f9e0cc6c1516b25bb20e2f7a4e317ea3de1fe9f8f5b5dcdd798ec2f11"
+      },
+      "files": 3342,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_001/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 5659191,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_001/RAW_INVENTORY.json",
+        "sha256": "357f297f9e0cc6c1516b25bb20e2f7a4e317ea3de1fe9f8f5b5dcdd798ec2f11"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_001/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 32246735,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_002/RAW_INVENTORY.json",
+        "sha256": "b2de0c0a543c0fdf4b4ae8a7b9bd554e26485113a3e8f8eb9fe7402c4ce057cd"
+      },
+      "files": 3496,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_002/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 5767344,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_002/RAW_INVENTORY.json",
+        "sha256": "b2de0c0a543c0fdf4b4ae8a7b9bd554e26485113a3e8f8eb9fe7402c4ce057cd"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_002/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 32592683,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_003/RAW_INVENTORY.json",
+        "sha256": "3fda78fa5b7fb57c8d0642e32385a10311d27e1311b0e9b5aa4f1c0daa42d7e6"
+      },
+      "files": 3563,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_003/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 5805170,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_003/RAW_INVENTORY.json",
+        "sha256": "3fda78fa5b7fb57c8d0642e32385a10311d27e1311b0e9b5aa4f1c0daa42d7e6"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_003/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 32947911,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_004/RAW_INVENTORY.json",
+        "sha256": "2282a9470e8ba069953f9a17ce4fdf17a929403db4fb47d9dd0bbc7dc1d74220"
+      },
+      "files": 3631,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_004/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 5851857,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_004/RAW_INVENTORY.json",
+        "sha256": "2282a9470e8ba069953f9a17ce4fdf17a929403db4fb47d9dd0bbc7dc1d74220"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_004/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 33339465,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_005/RAW_INVENTORY.json",
+        "sha256": "dcd68b81369a222bcd1a30c9eeefe46a55943e822a3a17f045d59c9706899ba2"
+      },
+      "files": 3698,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_005/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 5894500,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_005/RAW_INVENTORY.json",
+        "sha256": "dcd68b81369a222bcd1a30c9eeefe46a55943e822a3a17f045d59c9706899ba2"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_005/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 33430664,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_006/RAW_INVENTORY.json",
+        "sha256": "d8d23befc578541a9455ed281dc187d60126be43aff4528da566f8de0c15319d"
+      },
+      "files": 3719,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_006/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 5908047,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_006/RAW_INVENTORY.json",
+        "sha256": "d8d23befc578541a9455ed281dc187d60126be43aff4528da566f8de0c15319d"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_006/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 33501537,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_007/RAW_INVENTORY.json",
+        "sha256": "ba3e2841b2ee6c1e0b08c9740bbff4fcaa3d9328ebb126f359f1786514fcdbfd"
+      },
+      "files": 3733,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_007/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 5922363,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_007/RAW_INVENTORY.json",
+        "sha256": "ba3e2841b2ee6c1e0b08c9740bbff4fcaa3d9328ebb126f359f1786514fcdbfd"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_007/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 33591708,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_008/RAW_INVENTORY.json",
+        "sha256": "ac6a7bff8fd894bf4a267eef178908fec14894859b2dcf7bc2d287d936703331"
+      },
+      "files": 3748,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_008/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 5934707,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_008/RAW_INVENTORY.json",
+        "sha256": "ac6a7bff8fd894bf4a267eef178908fec14894859b2dcf7bc2d287d936703331"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_008/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 33672745,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_009/RAW_INVENTORY.json",
+        "sha256": "41cc9931b64dc2a0c18f97b1594c4a5340f22bddc890ae1d36279c4f9d0a8eca"
+      },
+      "files": 3764,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_009/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 5945991,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_009/RAW_INVENTORY.json",
+        "sha256": "41cc9931b64dc2a0c18f97b1594c4a5340f22bddc890ae1d36279c4f9d0a8eca"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_009/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 33759718,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_010/RAW_INVENTORY.json",
+        "sha256": "4aa62214b8603c74a5b3df929080019f5c98451664f2715feeb3691845d7e81b"
+      },
+      "files": 3782,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_010/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 5958530,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_010/RAW_INVENTORY.json",
+        "sha256": "4aa62214b8603c74a5b3df929080019f5c98451664f2715feeb3691845d7e81b"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_010/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 33804472,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_011/RAW_INVENTORY.json",
+        "sha256": "20db3974e4f4e32a9f4ac22f7044bce5b009062b54e29aeb3f4c326012fa375d"
+      },
+      "files": 3792,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_011/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 5966726,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_011/RAW_INVENTORY.json",
+        "sha256": "20db3974e4f4e32a9f4ac22f7044bce5b009062b54e29aeb3f4c326012fa375d"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_011/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 33897639,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_012/RAW_INVENTORY.json",
+        "sha256": "784233daa7ab86bb6e905022942aeca40b904728a4c8256f62a8167e20bb2e05"
+      },
+      "files": 3811,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_012/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 5983903,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_012/RAW_INVENTORY.json",
+        "sha256": "784233daa7ab86bb6e905022942aeca40b904728a4c8256f62a8167e20bb2e05"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_012/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 33975694,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_013/RAW_INVENTORY.json",
+        "sha256": "2d46557a2773a159a9ff5e9af5bbcc0b351b40c447f08d1c411f0417199eba2c"
+      },
+      "files": 3826,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_013/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 5988314,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_013/RAW_INVENTORY.json",
+        "sha256": "2d46557a2773a159a9ff5e9af5bbcc0b351b40c447f08d1c411f0417199eba2c"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_013/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 34039170,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_014/RAW_INVENTORY.json",
+        "sha256": "9cd0bac1fa6d61c90ee844b8cf71ed0bfe3dcd0ad60a6f481cf0ff0500572f0f"
+      },
+      "files": 3841,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_014/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 6002875,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_014/RAW_INVENTORY.json",
+        "sha256": "9cd0bac1fa6d61c90ee844b8cf71ed0bfe3dcd0ad60a6f481cf0ff0500572f0f"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_014/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 34120436,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_015/RAW_INVENTORY.json",
+        "sha256": "8ee92250e57ec7afb28436e85da3dedbedec877043841aeb33d3d4b6b8177939"
+      },
+      "files": 3859,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_015/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 6018186,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_015/RAW_INVENTORY.json",
+        "sha256": "8ee92250e57ec7afb28436e85da3dedbedec877043841aeb33d3d4b6b8177939"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_015/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 34201163,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_016/RAW_INVENTORY.json",
+        "sha256": "524cc6b1fd2715b5f33643fbde417db9c5efbbbb6e0330d795f9c738c5a38bf5"
+      },
+      "files": 3873,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_016/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 6023210,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_016/RAW_INVENTORY.json",
+        "sha256": "524cc6b1fd2715b5f33643fbde417db9c5efbbbb6e0330d795f9c738c5a38bf5"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_016/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 34743949,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_017/RAW_INVENTORY.json",
+        "sha256": "0ff9365ef9d93925218087efd15a87ea06b0fdeaa6f985511757af63d6235990"
+      },
+      "files": 3966,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_017/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 6088920,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_017/RAW_INVENTORY.json",
+        "sha256": "0ff9365ef9d93925218087efd15a87ea06b0fdeaa6f985511757af63d6235990"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_017/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 35054109,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_018/RAW_INVENTORY.json",
+        "sha256": "0fac574ef79857b5670c29ab582b5cd4feed3c9b0cebab92f8e430a131368344"
+      },
+      "files": 4019,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_018/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 6113382,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_018/RAW_INVENTORY.json",
+        "sha256": "0fac574ef79857b5670c29ab582b5cd4feed3c9b0cebab92f8e430a131368344"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_018/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 35327116,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_019/RAW_INVENTORY.json",
+        "sha256": "03e7851d3148e9cf4b18b5fa198de58196b2df10a50dd5d92446a3b8e61f0562"
+      },
+      "files": 4068,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_019/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 6148195,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_019/RAW_INVENTORY.json",
+        "sha256": "03e7851d3148e9cf4b18b5fa198de58196b2df10a50dd5d92446a3b8e61f0562"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_019/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 35546036,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_020/RAW_INVENTORY.json",
+        "sha256": "f689ae6e21501f3be2f9cbf6e0e5194b772c29e74f1e290c07f9ac9982fefc1c"
+      },
+      "files": 4105,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_020/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 6177217,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_020/RAW_INVENTORY.json",
+        "sha256": "f689ae6e21501f3be2f9cbf6e0e5194b772c29e74f1e290c07f9ac9982fefc1c"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_020/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 35952180,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_021/RAW_INVENTORY.json",
+        "sha256": "c31ae0e7c37a2ee8c106af1b86b3a9de4b7595f86173e54509bbcb9c14e82e5c"
+      },
+      "files": 4167,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_021/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 6212606,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_021/RAW_INVENTORY.json",
+        "sha256": "c31ae0e7c37a2ee8c106af1b86b3a9de4b7595f86173e54509bbcb9c14e82e5c"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_021/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 36188434,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_022/RAW_INVENTORY.json",
+        "sha256": "a7b351275175c5f5d40734fbcaa829e7cbba66c8a7fc8c53f2cc03d4a391eaec"
+      },
+      "files": 4209,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_022/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 6235163,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_022/RAW_INVENTORY.json",
+        "sha256": "a7b351275175c5f5d40734fbcaa829e7cbba66c8a7fc8c53f2cc03d4a391eaec"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_022/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 36443470,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_023/RAW_INVENTORY.json",
+        "sha256": "adfd7e43275e9781c34fb5851946e9a1291b5c7a0771d455cd1af483a4e5b7d9"
+      },
+      "files": 4251,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_023/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 6256117,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_023/RAW_INVENTORY.json",
+        "sha256": "adfd7e43275e9781c34fb5851946e9a1291b5c7a0771d455cd1af483a4e5b7d9"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_023/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 36722991,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_024/RAW_INVENTORY.json",
+        "sha256": "8a2acbba9beabe73a9880e958dce040879e177d6e2c22cc067b1fdff2f2363f0"
+      },
+      "files": 4300,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_024/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 6301153,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_024/RAW_INVENTORY.json",
+        "sha256": "8a2acbba9beabe73a9880e958dce040879e177d6e2c22cc067b1fdff2f2363f0"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_024/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 36950127,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_025/RAW_INVENTORY.json",
+        "sha256": "12c56bd06001c1b033052df445c8054afa3d577d3abdd1359c47e4fd63cfcbb6"
+      },
+      "files": 4344,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_025/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 6313877,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_025/RAW_INVENTORY.json",
+        "sha256": "12c56bd06001c1b033052df445c8054afa3d577d3abdd1359c47e4fd63cfcbb6"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_025/SOURCE_SNAPSHOT.tar.gz"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 37229147,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_026/RAW_INVENTORY.json",
+        "sha256": "98810efb7e01cf00b8107d0b176e002478a751d2dba65ee8e0540ed9cb3916e5"
+      },
+      "files": 4396,
+      "kind": "raw_extraction",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_026/raw"
+    },
+    {
+      "all_payload_hashes_reverified_this_scan": false,
+      "bytes": 6352552,
+      "existing_raw_inventory": {
+        "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_026/RAW_INVENTORY.json",
+        "sha256": "98810efb7e01cf00b8107d0b176e002478a751d2dba65ee8e0540ed9cb3916e5"
+      },
+      "files": 1,
+      "kind": "archive",
+      "path": "research_notes/analysis/orch_continual_batch_20260915_segment2/batch_026/SOURCE_SNAPSHOT.tar.gz"
+    }
+  ],
+  "lsof": "No readers printed; tracefs/overlay stat warnings mean cross-namespace inspection incomplete.",
+  "observed_unix": 1789448250.2503479,
+  "old_publisher_pid": 3305113,
+  "old_publisher_present": false,
+  "proc_scan": {
+    "old_root_fd_or_cwd_references": [],
+    "permission_denied_processes": 499,
+    "processes": 538
+  },
+  "schema": "ORCH_CONTINUAL_BATCH_QUIESCENT_RAW_INVENTORY_V1",
+  "stage": "IDENTIFICATION_ONLY_NOT_PRUNE_AUTHORIZATION",
+  "total_bytes": 1063095689,
+  "total_files": 102380
+}

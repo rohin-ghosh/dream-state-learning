@@ -1,4 +1,4 @@
 #!/bin/bash
 set -euo pipefail
 [[ "${1:-}" == exec ]]
-exec "${ORCH_CONTINUAL_BATCH_CODEX_REAL:?}" exec --json "${@:2}"
+exec "${ORCH_CONTINUAL_BATCH_CODEX_REAL:?}" exec --json --skip-git-repo-check "${@:2}"
