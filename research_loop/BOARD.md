@@ -1,5 +1,23 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## R107 capability pre-GPU allocation — 2026-09-15 07:24 UTC
+
+Main owns node3 physical3 only (GPU-e1277146-04f2-c38f-d1ae-1a98132f907e,
+minor3), MATH764 FULL checkpoint a970d311de6a3a77881f95fa1b042069d708c6bf814306980f8fe36467c8e792.
+Exactly32 fixed diagnostic tasks × actual LoRAON/OFF =64 maximum calls;
+512-token paired greedy caps, no updates/parents/held ingestion. 122local
+suite+runner tests PASS; native CPU32prompts encoded, max146tokens,
+base+adapter files verified,631source pins. READY
+b279d498ac718bbab06ffa6f43859d0b96b030f5ee8d82482d1540d147623066;
+PLAN2701c2866897254e044a019306b1e30daab5a01d3ee1a077dd59956858afc696;
+SUITE32a1d71ff23e168f42366ec4c96777aceb59247020e7a3ae98b6f64b4b9b602c.
+Native deadline1789459663.705532, hard1789459693.705532 (45minutes from
+preparation, no reset); estimate10–35minutes. Wrapper gpu/ovx2_ssh.sh only.
+Fresh privileged UUID/minor/process admission before launch; partial/failure
+receipts retained. Native root /localhome/local-rohing/orch_r107_capability_math764_full_20260915.
+No otherGPU changes. Teacher branching dose4 remains DEFERRED underR107;
+earlier conditional node1handoff is superseded, generation continues there.
+
 ## R107 node3 refill allocation — 2026-09-15T07:19:58.909689+00:00
 
 Only physical4 UUIDGPU-f484c608-a2d4-0c26-dee1-a06cc5ae69e4/minor4
