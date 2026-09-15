@@ -1,0 +1,559 @@
+{
+  "diagnostics": "UNKNOWN_PENDING_AUTHOR_AUDIT",
+  "lanes": [
+    {
+      "actor_ready": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "index": 1,
+        "input_truncated_contract": "EXPLICIT_FALSE_AFTER_FULL_PREFIX_ASSERTION",
+        "no_adapter": {
+          "adapter_parameter_count": 0,
+          "hf_peft_config_loaded": false,
+          "model_class": "Qwen2ForCausalLM",
+          "peft_wrapper_count": 0,
+          "trainable_parameter_count": 0
+        },
+        "pid": 1000266,
+        "ready_unix": 1789460698.0699997,
+        "uuid": "GPU-604c4ea8-8c29-099e-76ed-571ec7d9be4b"
+      },
+      "actual_parent_responses": 4,
+      "all_completed_responses_full_prompt_verified": true,
+      "complete": false,
+      "completed_native_calls": 98,
+      "first_native": {
+        "content_tokens": 76,
+        "finished_utc": "2026-09-15T08:25:00.557013+00:00",
+        "full_prompt_prefix_verified": true,
+        "input_truncated": false,
+        "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_1/native/CALL_0001.json",
+        "sha256": "1b20d7568f08351dc5a45a94c3e52515cd281ae9b702b0dce03e303405d5d285"
+      },
+      "first_parent_conditioned_reflection": {
+        "content_tokens": 474,
+        "finished_utc": "2026-09-15T08:27:00.150114+00:00",
+        "full_prompt_prefix_verified": true,
+        "helper_sha256": "1fe38d9fea6bed06f07c3a5eb0ccbb029635d7af148b38367d8cd51dddfc2ceb",
+        "input_truncated": false,
+        "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_1/native/CALL_0014.json",
+        "sha256": "b92f913531c3361f82220b78564206e21c309b93ceb5fe7ef882788e3cfea825",
+        "stop_reason": "EOS"
+      },
+      "index": 1,
+      "launch": {
+        "identity": {
+          "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+          "command_sha256": "a0c734e53dc009143222b4a386e1a01f4f81d8a618322e41ca5d8d47637980c0",
+          "pid": 1000266,
+          "start_ticks": "18182414",
+          "uid": 1395
+        },
+        "pid": 1000266,
+        "ready_sha256": "162ad532ecfe6d37259b5c745055e300f81cd36a8ae9f8cd4f0b8c0c8cee63b7",
+        "started_unix": 1789460670.9541688,
+        "uuid": "GPU-604c4ea8-8c29-099e-76ed-571ec7d9be4b"
+      },
+      "native_failed": false,
+      "parents": [
+        {
+          "actual_primary_model": "openai/openai/gpt-6-astra",
+          "no_held_identifiers": true,
+          "observed_utc": "2026-09-15T08:26:49.792458+00:00",
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_1/PARENT_C1_P1.json",
+          "plan_sha256": "5815ba694d752b0807280c4801569d7b9e00491d885a181a1f311dec71d21999",
+          "provider_finished_utc": "2026-09-15T08:26:14.631255+00:00",
+          "public_train_only": true,
+          "raw_response_sha256": "d94f735b29c6fb893476e271e277929aa8b3ac2081952375f760510a8f069d1a",
+          "request_sha256": "ccd79b514c1e0822ca33a196c8a85be20be278f703528167d37ee20fb0cf2184",
+          "sha256": "0945adb9bf813e5a79b1bfff8910d8ea8426f41ac9ddc351e502dab47e948cb0",
+          "status": "COMPLETE",
+          "usage": {
+            "cost": null,
+            "input_tokens": 1741,
+            "input_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 1738,
+              "cached_tokens": 0,
+              "text_tokens": null
+            },
+            "output_tokens": 1900,
+            "output_tokens_details": {
+              "reasoning_tokens": 1377,
+              "text_tokens": null
+            },
+            "total_tokens": 3641
+          }
+        },
+        {
+          "actual_primary_model": "openai/openai/gpt-6-astra",
+          "no_held_identifiers": true,
+          "observed_utc": "2026-09-15T08:28:23.714904+00:00",
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_1/PARENT_C1_P2.json",
+          "plan_sha256": "56bc49757a314735d9395394042bf60e9d956f5a8e54889edfc3f5a31d6a2c5f",
+          "provider_finished_utc": "2026-09-15T08:27:47.381093+00:00",
+          "public_train_only": true,
+          "raw_response_sha256": "6d2fe0bfb0fd22ed688456ef14b12ff25f67f9f9d851fe5ffff45de6968be48d",
+          "request_sha256": "72f342ab5072283072f4733daae66d9f447ad14e677fcff5764edb6c431bf6ee",
+          "sha256": "11671eeedbc2335923af9c14d01f9b7271f1305cb2b74ad7ef1d0cbb0c867871",
+          "status": "COMPLETE",
+          "usage": {
+            "cost": null,
+            "input_tokens": 2701,
+            "input_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 2698,
+              "cached_tokens": 0,
+              "text_tokens": null
+            },
+            "output_tokens": 1611,
+            "output_tokens_details": {
+              "reasoning_tokens": 1034,
+              "text_tokens": null
+            },
+            "total_tokens": 4312
+          }
+        },
+        {
+          "actual_primary_model": "openai/openai/gpt-6-astra",
+          "no_held_identifiers": true,
+          "observed_utc": "2026-09-15T08:31:35.352161+00:00",
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_1/PARENT_C2_P1.json",
+          "plan_sha256": "b0db76cb2a38c7ff26602a75b9776e4972c35f91ff5282a92c8503155e1c6ace",
+          "provider_finished_utc": "2026-09-15T08:30:59.898320+00:00",
+          "public_train_only": true,
+          "raw_response_sha256": "bd0ce93374e53c929f27bd2c2abb21b2cfb74e792459f89beb00b76c5897d009",
+          "request_sha256": "51996b792d062a75c1b86da959895bba40dcb0cc36c4ace981b04a0d1a0d329a",
+          "sha256": "52b92893bb1a31bdb328ce65ede39cc9361878de54e1a92fe9a871ea2122a38f",
+          "status": "COMPLETE",
+          "usage": {
+            "cost": null,
+            "input_tokens": 3150,
+            "input_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 3147,
+              "cached_tokens": 0,
+              "text_tokens": null
+            },
+            "output_tokens": 2653,
+            "output_tokens_details": {
+              "reasoning_tokens": 2070,
+              "text_tokens": null
+            },
+            "total_tokens": 5803
+          }
+        },
+        {
+          "actual_primary_model": "openai/openai/gpt-6-astra",
+          "no_held_identifiers": true,
+          "observed_utc": "2026-09-15T08:33:30.889416+00:00",
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_1/PARENT_C2_P2.json",
+          "plan_sha256": "0490ded5c84eb3f2726500557936f1ac8149e9226c3a8a145b5fc6924cee5b39",
+          "provider_finished_utc": "2026-09-15T08:32:55.391795+00:00",
+          "public_train_only": true,
+          "raw_response_sha256": "6242183a40d08a5cc94771f4a79ead94a2424a74607318e31e776c8041fb6286",
+          "request_sha256": "469cfbe403dacb8b05b496fd4d8a62237c6d7c55f2d7b3d3dcd046d6309ef7d0",
+          "sha256": "4cfa815d06a9f6a05e4b5e82c6c613ae33dd1c65cffe3f699f0edd23e19d6d83",
+          "status": "COMPLETE",
+          "usage": {
+            "cost": null,
+            "input_tokens": 3146,
+            "input_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 3143,
+              "cached_tokens": 0,
+              "text_tokens": null
+            },
+            "output_tokens": 2171,
+            "output_tokens_details": {
+              "reasoning_tokens": 1536,
+              "text_tokens": null
+            },
+            "total_tokens": 5317
+          }
+        }
+      ],
+      "process_identity_matches": true,
+      "strict_admission": {
+        "clear": true,
+        "minor": 2,
+        "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_1/ADMISSION_07.json",
+        "sha256": "dc2657ed0c11660a5311aefa0fd4e7d8e9bf93f4f9778b476a7209ff7ab76d56"
+      }
+    },
+    {
+      "GUARDIAN_FAILED.json": {
+        "document": {
+          "error": "strict_privileged_clear_required",
+          "finished_unix": 1789460768.0719094,
+          "type": "ValueError"
+        },
+        "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_5/GUARDIAN_FAILED.json",
+        "sha256": "1c6fe2a5503e641a2d71489176a7a48b5447708e4efd6d4eb4da3555e95da0f1"
+      },
+      "R108_RUNTIME.json": {
+        "document": {
+          "fixed_quota": true,
+          "original_lane1_unchanged": true,
+          "parent_addendum_sha256": "cdbae4100f2391394d4f27c2ef79e6f34eeb415f8ce2a537190810a05f77b15b",
+          "reflection_system_sha256": "096243df8bc37f073cda11e2cdef00f33974152e0d5fda39abd396b4f91ebe89",
+          "runtime_source_sha256": "1c41354eccdb7741eec0c70a89cb4122048457b4c24a27ce8a4be783a5feef71",
+          "started_unix": 1789461006.914337
+        },
+        "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_5/R108_RUNTIME.json",
+        "sha256": "28ccd874fcaec0f5af8ea1a1ef731a3612e61aa88814c8b1af0d975b026468d1"
+      },
+      "RECOVERY_CPU_TESTS.json": {
+        "document": {
+          "passed": true,
+          "prior_native_calls": 0,
+          "tests": 3
+        },
+        "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_5/RECOVERY_CPU_TESTS.json",
+        "sha256": "d663fd02448776b5c78a625042c56c5a2f9ee291944d1196f24ca3a57cc815cb"
+      },
+      "RECOVERY_PUBLICATION.json": {
+        "document": {
+          "R108_before_first_native": true,
+          "dated_builder_publication": "[Builder] 2026-09-15T08:29:50.299604+00:00 R107_ROUTE_PARENT A1005 PRE_GPU_ADMISSION_RECOVERY + R108 prospectivepromptbinding; original1alreadyRUNNING with2actualAstraparentresponses, untouched. Original5guardian failedstrict-clear after30 retainedscans; GUARDIAN_FAILED SHA1c6fe2a5503e641a2d71489176a7a48b5447708e4efd6d4eb4da3555e95da0f1/TERMINAL9938fecfd5ffd3060ab8733884822129cd151f8877922dd6ab3e4eaed870b257 preservedinplace. NO5LAUNCH/nativefolder/reservations/parentcalls;3local+3nativeCPU PASS checks forbid anyreplay. NEWsidecarSHA1c41354eccdb7741eec0c70a89cb4122048457b4c24a27ce8a4be783a5feef71/tests20fe3839249e805c705ddb85a850ac0a8976ec1921610092a1bd0b1373075fd1 retriesstrictfullprivilegedscan ONLY thenruns originalimmutableBASE routeengine once. Samephysical5 UUIDGPU-c1650c7f-ac26-f1a0-2ab8-c7354a6f27c9/minor6; sameREADY334df37a468dc57ef34aef04e84cfde627fc1e04222f157bd068c1407ec1897d/root/140native+4parent/aggregate280+8/original09:50:08.990134nativecutoff09:52:08.990134hardend/lease6hmargin, noreset. Before5firstlaunch R108 eightinterventionclasses bound in creative/supportiveparentrationale instructions, failure-grounded NEVERsolvedroute/answer; ownreflectionmulti-angleperception+exact1fe38stop. Original1R107bytes/state/parents preserved, distinctlineages. R10814L1/18parentingtarget and>=12floor acknowledged, notmeasuredfleetclaim; no extraallocations. Capturestate/intervention/followingbehaviorjoin, diagnosticsUNKNOWN untilaudit; recurring/helpful/unhelpfultablethreshold50 requiresfuturecoordinateddata, currentfixedquota NOTexpanded. Existingbrokernew5process honorsseparateRECOVERY_TERMINAL, oldfailurekept; privateprovider/singleattempt/noheld/noL2feed unchanged. FreshstrictCLEARmandatory, novisibilitywaiver/foreignsignals. Sourcepublishedbeforedispatch; noMainackwait.",
+          "original_deadline_unchanged": true,
+          "original_failure_sha256": "1c6fe2a5503e641a2d71489176a7a48b5447708e4efd6d4eb4da3555e95da0f1",
+          "quota_delta": 0,
+          "ready_sha256": "334df37a468dc57ef34aef04e84cfde627fc1e04222f157bd068c1407ec1897d",
+          "source_sha256": "1c41354eccdb7741eec0c70a89cb4122048457b4c24a27ce8a4be783a5feef71"
+        },
+        "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_5/RECOVERY_PUBLICATION.json",
+        "sha256": "9f044175f31d9929afaa6fda5e437fb8bee63924c87170f1fbb7538d628acd2b"
+      },
+      "TERMINAL.json": {
+        "document": {
+          "finished_unix": 1789460768.072449,
+          "no_refill": true,
+          "status": "FAILED"
+        },
+        "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_5/TERMINAL.json",
+        "sha256": "9938fecfd5ffd3060ab8733884822129cd151f8877922dd6ab3e4eaed870b257"
+      },
+      "actor_ready": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "index": 5,
+        "input_truncated_contract": "EXPLICIT_FALSE_AFTER_FULL_PREFIX_ASSERTION",
+        "no_adapter": {
+          "adapter_parameter_count": 0,
+          "hf_peft_config_loaded": false,
+          "model_class": "Qwen2ForCausalLM",
+          "peft_wrapper_count": 0,
+          "trainable_parameter_count": 0
+        },
+        "pid": 1020257,
+        "ready_unix": 1789461034.242585,
+        "uuid": "GPU-c1650c7f-ac26-f1a0-2ab8-c7354a6f27c9"
+      },
+      "actual_parent_responses": 1,
+      "all_completed_responses_full_prompt_verified": true,
+      "complete": false,
+      "completed_native_calls": 20,
+      "first_native": {
+        "content_tokens": 76,
+        "finished_utc": "2026-09-15T08:30:36.708239+00:00",
+        "full_prompt_prefix_verified": true,
+        "input_truncated": false,
+        "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_5/native/CALL_0001.json",
+        "sha256": "7a0f233935c83393fea9c35a5676c508f1f8979912aef86232f9da9b97ff196c"
+      },
+      "first_parent_conditioned_reflection": {
+        "content_tokens": 257,
+        "finished_utc": "2026-09-15T08:33:11.739824+00:00",
+        "full_prompt_prefix_verified": true,
+        "helper_sha256": "1fe38d9fea6bed06f07c3a5eb0ccbb029635d7af148b38367d8cd51dddfc2ceb",
+        "input_truncated": false,
+        "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_5/native/CALL_0014.json",
+        "sha256": "6a3de37acd3fa09403c504d31568db43b5df4035ced4995d3f5488b196c5406d",
+        "stop_reason": "EOS"
+      },
+      "index": 5,
+      "launch": {
+        "identity": {
+          "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+          "command_sha256": "860fd17db0df23de1958f0827e47627acfb326ad5fcc8db63093840ea5ea8f7e",
+          "pid": 1020257,
+          "start_ticks": "18215979",
+          "uid": 1395
+        },
+        "no_prior_native_calls": true,
+        "pid": 1020257,
+        "recovery_source_sha256": "1c41354eccdb7741eec0c70a89cb4122048457b4c24a27ce8a4be783a5feef71",
+        "started_unix": 1789461006.6072154,
+        "uuid": "GPU-c1650c7f-ac26-f1a0-2ab8-c7354a6f27c9"
+      },
+      "native_failed": false,
+      "parents": [
+        {
+          "actual_primary_model": "openai/openai/gpt-6-astra",
+          "no_held_identifiers": true,
+          "observed_utc": "2026-09-15T08:33:06.156526+00:00",
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_5/PARENT_C1_P1.json",
+          "plan_sha256": "7f6f5c079a53897cd0dfbc27887c291e4ecfb84bd5df6460c7c78a86d92ed410",
+          "provider_finished_utc": "2026-09-15T08:32:32.601288+00:00",
+          "public_train_only": true,
+          "raw_response_sha256": "8f00120bdec32c43a213fa8e30a2cc2557f5b61386ef48407dfe3b852baa5fe3",
+          "request_sha256": "0491ac8fa74e0c75fc5fef6a577d44cdcc04f1b18335b6d4baefa7cfb798fe15",
+          "sha256": "5ef63ba4eb1b4f669371daeb238fbe3d749db578bcafacb0089631b3e5cfd663",
+          "status": "COMPLETE",
+          "usage": {
+            "cost": null,
+            "input_tokens": 1949,
+            "input_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 1946,
+              "cached_tokens": 0,
+              "text_tokens": null
+            },
+            "output_tokens": 3480,
+            "output_tokens_details": {
+              "reasoning_tokens": 2887,
+              "text_tokens": null
+            },
+            "total_tokens": 5429
+          }
+        }
+      ],
+      "process_identity_matches": true,
+      "strict_admission": {
+        "clear": true,
+        "minor": 6,
+        "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_5/RECOVERY_ADMISSION_004.json",
+        "sha256": "6f760369f85152c02fe7dda403c2d0eea7c9117a500a15ead34a61f9990085ea"
+      }
+    }
+  ],
+  "ledger_sha256": "662d48c269e3e65096657d59f108da761422f4a92e25b41acff4eaf5626073c9",
+  "lifetime": {
+    "hard_deadline_unix": 1789465928.9901345,
+    "lease_end_unix": 1790463900,
+    "lease_margin_seconds": 21600,
+    "maximum_gpu_hours_per_arm": 1.5,
+    "native_deadline_unix": 1789465808.9901345,
+    "started_unix": 1789460528.9901345
+  },
+  "observed_utc": "2026-09-15T08:34:19.991205+00:00",
+  "raw_embedded": false,
+  "reservations": {
+    "NATIVE": 118,
+    "PARENT": 6
+  },
+  "retained_learning_claim": false,
+  "root": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1",
+  "supplemental_sources": {
+    "orch_r107_route_parent_recover.py": "1c41354eccdb7741eec0c70a89cb4122048457b4c24a27ce8a4be783a5feef71",
+    "orch_r107_route_parent_triples.py": "e52d2b480ab4f2789016bc538ff4657c7aec65756fcc4cf7c8ee4626e2a51ea0",
+    "test_orch_r107_route_parent_recover.py": "20fe3839249e805c705ddb85a850ac0a8976ec1921610092a1bd0b1373075fd1",
+    "test_orch_r107_route_parent_triples.py": "2e03b9a58f68db7ff78f5941cb44e86f868b8193117e61e72fb6b58efdf74055"
+  },
+  "trainingAllowed": false,
+  "triples": {
+    "all_raw_remains_in_original_node_captures": true,
+    "model_calls": 0,
+    "no_automatic_refill": true,
+    "observed_unix": 1789461233.0640771,
+    "raw_embedded": false,
+    "table": {
+      "automatic_keyword_or_outcome_qualification": false,
+      "completed_train_episodes": 6,
+      "helpful": null,
+      "minimum_review_episodes": 50,
+      "parent_intervention_triples": 5,
+      "recurring": null,
+      "requested_review_range": [
+        50,
+        100
+      ],
+      "status": "INSUFFICIENT_EPISODES_NO_QUOTA_EXPANSION",
+      "sufficient_episode_count": false,
+      "unaudited_triples": 5,
+      "unhelpful": null
+    },
+    "trainingAllowed": false,
+    "triples": [
+      {
+        "actual_parent_plan": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/parent_transcripts/campaign_route_parent_1/GUIDED_SLEEP_C1_P1/PLAN.json",
+          "sha256": "5815ba694d752b0807280c4801569d7b9e00491d885a181a1f311dec71d21999"
+        },
+        "actual_parent_raw_envelope": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/parent_transcripts/campaign_route_parent_1/GUIDED_SLEEP_C1_P1/RAW_RESPONSE.json",
+          "sha256": "d94f735b29c6fb893476e271e277929aa8b3ac2081952375f760510a8f069d1a"
+        },
+        "behavioral_change": "UNKNOWN_PENDING_AUTHOR_AUDIT",
+        "child_state": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_1/native/TRAIN_C1_E1.json",
+          "sha256": "f13a7b50cac88fdadf7e8e38d7de05c0089ac66e2b475386155098b414daec1f"
+        },
+        "cycle": 1,
+        "episode_index": 1,
+        "held_behavior_never_sent_to_parent": true,
+        "helpfulness": "UNKNOWN",
+        "index": 1,
+        "intervention_classes": "UNKNOWN_UNTIL_REVIEW_OF_PARENT_RATIONALE",
+        "lineage_policy": "training-wheels/supportive/R107",
+        "next_behavior": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_1/native/CALL_0015.json",
+          "sha256": "20f648f4f871c3744b4d8e1d3d4dd5c13c0e767dce0a87df62ee5b72d4290f2e"
+        },
+        "next_behavior_context": "train_episode",
+        "no_outcome_criterion": true,
+        "own_reflection": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_1/native/CALL_0014.json",
+          "sha256": "b92f913531c3361f82220b78564206e21c309b93ceb5fe7ef882788e3cfea825"
+        },
+        "parent_intervention": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_1/PARENT_C1_P1.json",
+          "sha256": "0945adb9bf813e5a79b1bfff8910d8ea8426f41ac9ddc351e502dab47e948cb0"
+        }
+      },
+      {
+        "actual_parent_plan": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/parent_transcripts/campaign_route_parent_1/GUIDED_SLEEP_C1_P2/PLAN.json",
+          "sha256": "56bc49757a314735d9395394042bf60e9d956f5a8e54889edfc3f5a31d6a2c5f"
+        },
+        "actual_parent_raw_envelope": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/parent_transcripts/campaign_route_parent_1/GUIDED_SLEEP_C1_P2/RAW_RESPONSE.json",
+          "sha256": "6d2fe0bfb0fd22ed688456ef14b12ff25f67f9f9d851fe5ffff45de6968be48d"
+        },
+        "behavioral_change": "UNKNOWN_PENDING_AUTHOR_AUDIT",
+        "child_state": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_1/native/TRAIN_C1_E2.json",
+          "sha256": "79cb0c60a30871d64425f73bfcbcb2875b29fc7ccd73e3294166acf4c0e3a06e"
+        },
+        "cycle": 1,
+        "episode_index": 2,
+        "held_behavior_never_sent_to_parent": true,
+        "helpfulness": "UNKNOWN",
+        "index": 1,
+        "intervention_classes": "UNKNOWN_UNTIL_REVIEW_OF_PARENT_RATIONALE",
+        "lineage_policy": "training-wheels/supportive/R107",
+        "next_behavior": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_1/native/CALL_0029.json",
+          "sha256": "fb1117eb6d67fcbb2a6a6b3dc15ca4f1bb00e8b6327d51cac2d3e7a5f22cb5f1"
+        },
+        "next_behavior_context": "held_episode",
+        "no_outcome_criterion": true,
+        "own_reflection": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_1/native/CALL_0020.json",
+          "sha256": "eef344b4da1233d094d84e1f4cba2a247d7ed6cc4723e83ca7a396f83eedaddc"
+        },
+        "parent_intervention": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_1/PARENT_C1_P2.json",
+          "sha256": "11671eeedbc2335923af9c14d01f9b7271f1305cb2b74ad7ef1d0cbb0c867871"
+        }
+      },
+      {
+        "actual_parent_plan": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/parent_transcripts/campaign_route_parent_1/GUIDED_SLEEP_C2_P1/PLAN.json",
+          "sha256": "b0db76cb2a38c7ff26602a75b9776e4972c35f91ff5282a92c8503155e1c6ace"
+        },
+        "actual_parent_raw_envelope": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/parent_transcripts/campaign_route_parent_1/GUIDED_SLEEP_C2_P1/RAW_RESPONSE.json",
+          "sha256": "bd0ce93374e53c929f27bd2c2abb21b2cfb74e792459f89beb00b76c5897d009"
+        },
+        "behavioral_change": "UNKNOWN_PENDING_AUTHOR_AUDIT",
+        "child_state": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_1/native/TRAIN_C2_E1.json",
+          "sha256": "40986fec925fc99814e3e5593c661397947d31acb6b63e7c3fa0171d0a213428"
+        },
+        "cycle": 2,
+        "episode_index": 1,
+        "held_behavior_never_sent_to_parent": true,
+        "helpfulness": "UNKNOWN",
+        "index": 1,
+        "intervention_classes": "UNKNOWN_UNTIL_REVIEW_OF_PARENT_RATIONALE",
+        "lineage_policy": "training-wheels/supportive/R107",
+        "next_behavior": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_1/native/CALL_0063.json",
+          "sha256": "2b7c382c98ade964e1a4641c80150ee8f7c6f989c31988ef000b5f02baeeafdd"
+        },
+        "next_behavior_context": "train_episode",
+        "no_outcome_criterion": true,
+        "own_reflection": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_1/native/CALL_0062.json",
+          "sha256": "c421af0e9413c8db65e9e441cc936d651d5347ca6b4dc3a601c5fcc512d022f1"
+        },
+        "parent_intervention": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_1/PARENT_C2_P1.json",
+          "sha256": "52b92893bb1a31bdb328ce65ede39cc9361878de54e1a92fe9a871ea2122a38f"
+        }
+      },
+      {
+        "actual_parent_plan": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/parent_transcripts/campaign_route_parent_1/GUIDED_SLEEP_C2_P2/PLAN.json",
+          "sha256": "0490ded5c84eb3f2726500557936f1ac8149e9226c3a8a145b5fc6924cee5b39"
+        },
+        "actual_parent_raw_envelope": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/parent_transcripts/campaign_route_parent_1/GUIDED_SLEEP_C2_P2/RAW_RESPONSE.json",
+          "sha256": "6242183a40d08a5cc94771f4a79ead94a2424a74607318e31e776c8041fb6286"
+        },
+        "behavioral_change": "UNKNOWN_PENDING_AUTHOR_AUDIT",
+        "child_state": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_1/native/TRAIN_C2_E2.json",
+          "sha256": "cdaf3273a7ea1932cde54facca42988d233b9bbcfaa9bda030773012c5b6bb0e"
+        },
+        "cycle": 2,
+        "episode_index": 2,
+        "held_behavior_never_sent_to_parent": true,
+        "helpfulness": "UNKNOWN",
+        "index": 1,
+        "intervention_classes": "UNKNOWN_UNTIL_REVIEW_OF_PARENT_RATIONALE",
+        "lineage_policy": "training-wheels/supportive/R107",
+        "next_behavior": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_1/native/CALL_0077.json",
+          "sha256": "d771fd76de2a38074680749e4a9da03a1876cdbb32faf161583d677146f28225"
+        },
+        "next_behavior_context": "held_episode",
+        "no_outcome_criterion": true,
+        "own_reflection": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_1/native/CALL_0069.json",
+          "sha256": "d1b3b3c54b791ea038a9c4724d306f3a97ff1e9fa3a29867f03a8178182edbf7"
+        },
+        "parent_intervention": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_1/PARENT_C2_P2.json",
+          "sha256": "4cfa815d06a9f6a05e4b5e82c6c613ae33dd1c65cffe3f699f0edd23e19d6d83"
+        }
+      },
+      {
+        "actual_parent_plan": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/parent_transcripts/campaign_route_parent_5/GUIDED_SLEEP_C1_P1/PLAN.json",
+          "sha256": "7f6f5c079a53897cd0dfbc27887c291e4ecfb84bd5df6460c7c78a86d92ed410"
+        },
+        "actual_parent_raw_envelope": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/parent_transcripts/campaign_route_parent_5/GUIDED_SLEEP_C1_P1/RAW_RESPONSE.json",
+          "sha256": "8f00120bdec32c43a213fa8e30a2cc2557f5b61386ef48407dfe3b852baa5fe3"
+        },
+        "behavioral_change": "UNKNOWN_PENDING_AUTHOR_AUDIT",
+        "child_state": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_5/native/TRAIN_C1_E1.json",
+          "sha256": "f13a7b50cac88fdadf7e8e38d7de05c0089ac66e2b475386155098b414daec1f"
+        },
+        "cycle": 1,
+        "episode_index": 1,
+        "held_behavior_never_sent_to_parent": true,
+        "helpfulness": "UNKNOWN",
+        "index": 5,
+        "intervention_classes": "UNKNOWN_UNTIL_REVIEW_OF_PARENT_RATIONALE",
+        "lineage_policy": "creative/supportive/R108",
+        "next_behavior": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_5/native/CALL_0015.json",
+          "sha256": "147a84aafe13771e2aaf11ebbe5b79a46957ae961bd9b79afeb0ec0719b527b0"
+        },
+        "next_behavior_context": "train_episode",
+        "no_outcome_criterion": true,
+        "own_reflection": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_5/native/CALL_0014.json",
+          "sha256": "6a3de37acd3fa09403c504d31568db43b5df4035ced4995d3f5488b196c5406d"
+        },
+        "parent_intervention": {
+          "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt1/campaign_route_parent_5/PARENT_C1_P1.json",
+          "sha256": "5ef63ba4eb1b4f669371daeb238fbe3d749db578bcafacb0089631b3e5cfd663"
+        }
+      }
+    ]
+  }
+}

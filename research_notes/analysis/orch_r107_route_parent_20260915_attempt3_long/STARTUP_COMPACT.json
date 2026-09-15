@@ -1,0 +1,115 @@
+{
+  "functional_change": "UNKNOWN_PENDING_AUTHOR_AUDIT",
+  "lanes": [
+    {
+      "actual_parent_responses": 0,
+      "all_completed_full_prompt_verified": true,
+      "completed_by_purpose": {},
+      "completed_content_tokens": 0,
+      "completed_native_calls": 0,
+      "first_native": null,
+      "first_parent_conditioned_reflection": null,
+      "index": 1,
+      "launch": null,
+      "launch_utc": null,
+      "native_failure": false,
+      "parents": [],
+      "raw_throughput_window": {
+        "completed_native_calls": 0,
+        "full_600s": false,
+        "normalized_calls_per_hour": null,
+        "observed_seconds": 0,
+        "qualified_functional_count": null,
+        "qualified_rate": null
+      },
+      "recorded_call_intents": 0,
+      "terminal": null
+    },
+    {
+      "actor_ready": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "index": 5,
+        "input_truncated_contract": "EXPLICIT_FALSE_AFTER_FULL_PREFIX_ASSERTION",
+        "no_adapter": {
+          "adapter_parameter_count": 0,
+          "hf_peft_config_loaded": false,
+          "model_class": "Qwen2ForCausalLM",
+          "peft_wrapper_count": 0,
+          "trainable_parameter_count": 0
+        },
+        "pid": 1140054,
+        "ready_unix": 1789462622.4227362,
+        "uuid": "GPU-c1650c7f-ac26-f1a0-2ab8-c7354a6f27c9"
+      },
+      "actual_parent_responses": 0,
+      "all_completed_full_prompt_verified": true,
+      "completed_by_purpose": {
+        "train_source": 2
+      },
+      "completed_content_tokens": 193,
+      "completed_native_calls": 2,
+      "first_native": {
+        "content_tokens": 96,
+        "finished_utc": "2026-09-15T08:57:05.433695+00:00",
+        "full_prompt_prefix_verified": true,
+        "helper_sha256": null,
+        "input_truncated": false,
+        "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt3_long/campaign_route_parent_5/native/CALL_0001.json",
+        "purpose": "train_source",
+        "sha256": "eb7dffab4106a0262dfb2457a4c64867b56957a7d22596c7d759a239f56b95d2",
+        "terminal": true
+      },
+      "first_parent_conditioned_reflection": null,
+      "index": 5,
+      "launch": {
+        "identity": {
+          "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+          "command_sha256": "8c618db111b38852563f1f59a91e9c14ba1220eef6c4d00c1a41e7b420670d8f",
+          "pid": 1140054,
+          "start_ticks": "18374759",
+          "uid": 1395
+        },
+        "pid": 1140054,
+        "ready_sha256": "e19b1a35f07c0f73c808e1fa80342206277ed0d028322bba217bb7cfdba1dde9",
+        "started_unix": 1789462594.4039247,
+        "uuid": "GPU-c1650c7f-ac26-f1a0-2ab8-c7354a6f27c9"
+      },
+      "launch_utc": "2026-09-15T08:56:34.403925+00:00",
+      "native_failure": false,
+      "parents": [],
+      "raw_throughput_window": {
+        "completed_native_calls": 2,
+        "full_600s": false,
+        "normalized_calls_per_hour": 1367.8848829255164,
+        "observed_seconds": 5.263600826263428,
+        "qualified_functional_count": null,
+        "qualified_rate": null
+      },
+      "recorded_call_intents": 3,
+      "strict_admission": {
+        "blocking_reasons": [],
+        "clear": true,
+        "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt3_long/campaign_route_parent_5/ADMISSION_08.json",
+        "scanner_euid": 0,
+        "sha256": "1ca260e9ccaccdeceb2a25b4193ccabdc954f92493d5d8c1607682ee055fab11"
+      },
+      "terminal": null
+    }
+  ],
+  "ledger": {
+    "path": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt3_long/RESERVATIONS.jsonl",
+    "sha256": "6991b9e4d2dbb6b909abe9c7aba7f6b4dfea24970310bcc99e46fd260cbf2bcc"
+  },
+  "observed_utc": "2026-09-15T08:57:07.704582+00:00",
+  "raw_embedded": false,
+  "reservations_by_kind": {
+    "NATIVE": 3
+  },
+  "reservations_by_slot": {
+    "1": {},
+    "5": {
+      "NATIVE": 3
+    }
+  },
+  "root": "/localhome/local-rohing/orch_r107_route_parent_20260915_attempt3_long"
+}
