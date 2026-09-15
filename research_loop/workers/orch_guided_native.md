@@ -55,3 +55,17 @@ parser, retroactive admission or duplicate run. Existing parent worker owns
 transport and already uses the strict envelope helper. Exact receipt/episode
 hashes and count assertions saved under own projection_diagnostic1 JSON/MD.
 No native-seam code repair indicated; no model calls/fits/PID changes.
+
+2026-09-15 02:24UTC: added opt-in orch_guided_native_generation.generate over
+the already bound child with explicit prompt/new-token budgets. Addresses
+legacy2048/768 caps for future replay callers, without changing those defaults,
+any active driver, loader or peer INTENSITY generator.26CPU tests pass0.503s,
+including8new fake-generation checks. Positional budget bound is not measured
+GPU memory/runtime; existing pre-call deadline hook is not an interrupt.
+Handoff: orch_guided_native_20260915_generation_handoff.md. Main must adopt
+prospectively with resource bounds; no native call, task generation, allocation
+or launch by this contributor. Independent focused static review requested.
+
+2026-09-15 02:25UTC: Linnaeus returned no concrete correctness regressions;
+8generation CPU-fake tests independently pass. No fixes requested. Reviewer
+closed; caller still owns boundary tensor verification and prospective use.
