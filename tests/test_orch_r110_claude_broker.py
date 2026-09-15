@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 import shutil
 import subprocess
+import sys
 import tempfile
 import time
 import unittest
@@ -106,7 +107,7 @@ class ClaudeBrokerTests(unittest.TestCase):
         self.assertEqual(candidate[index], 'high')
         candidate[index] = 'max'
         self.assertEqual(candidate, original)
-        for value in ('low', 'medium', None, True):
+        for value in ('minimal', 'LOW', None, True):
             with self.assertRaisesRegex(ValueError, 'bounded_parent_effort'):
                 broker.validate_config(dict(self.config, parent_effort=value))
         self.config['parent_effort'] = 'high'
@@ -118,6 +119,60 @@ class ClaudeBrokerTests(unittest.TestCase):
         argv = self.runner.call_args.args[0]
         self.assertEqual(argv[argv.index('--effort')+1], 'high')
         self.assertEqual(json.loads((directory/'DISPATCH.json').read_text())['effort'], 'high')
+
+    def test_low_and_medium_change_only_effort_with_fresh_launch_binding(self):
+        for effort in ('low', 'medium'):
+            with self.subTest(effort=effort):
+                original = broker.command('EXACT SYSTEM', 2, 'high')
+                candidate = broker.command('EXACT SYSTEM', 2, effort)
+                index = original.index('--effort')+1
+                self.assertEqual(candidate[index], effort)
+                candidate[index] = 'high'
+                self.assertEqual(candidate, original)
+                self.config.update(parent_effort=effort, provider_lock_scope='branch',
+                    queue_transport='node_local')
+                with self.assertRaisesRegex(ValueError, 'launch_config_binding'):
+                    self.evaluate()
+                self.rebind()
+                result, directory = self.evaluate()
+                self.assertEqual(result['status'], 'COMPLETE')
+                self.assertEqual(result['consumption_status'], 'UNKNOWN')
+                self.assertEqual(result['parent_effort'], effort)
+                self.assertGreaterEqual(result['timing']['provider_elapsed_seconds'], 0)
+                self.assertEqual(json.loads((directory/'DISPATCH.json').read_text())['effort'], effort)
+                self.assertEqual(self.runner.call_args.args[2], self.request['lane_deadline_unix']-30)
+
+    def test_async_next_guidance_bound_to_exact_prompt_without_template_changes(self):
+        fields = dict(self.head_fields, NEXT_GUIDANCE='Notice how attention is allocated.')
+        broker.validate_head_update(self.head_fields, fields)
+        self.assertEqual(broker.render_parent_prompt(fields), broker.render_parent_prompt(self.head_fields))
+        prompt_path = self.prompts/'F1.md'
+        settings_path = prompt_path.with_suffix('.fields.json')
+        settings = dict(schema='ORCH_R114_HEAD_FIELDS_V1', prompt_sha256=broker.sha(prompt_path), fields=fields)
+        settings_path.write_text(json.dumps(settings))
+        result, directory = self.evaluate()
+        self.assertIn(fields['NEXT_GUIDANCE'], (directory/'SYSTEM.txt').read_text())
+        self.assertFalse(result['prompt_binding']['head_waited'])
+        self.assertEqual(result['prompt_binding']['next_guidance_sha256'],
+            broker.hashlib.sha256(fields['NEXT_GUIDANCE'].encode()).hexdigest())
+        settings['prompt_sha256'] = '0'*64
+        settings_path.write_text(json.dumps(settings))
+        result, directory = self.evaluate()
+        self.assertNotIn(fields['NEXT_GUIDANCE'], (directory/'SYSTEM.txt').read_text())
+        self.assertEqual(result['status'], 'COMPLETE')
+        with self.assertRaisesRegex(ValueError, 'bounded_next_guidance'):
+            broker.render_parent_prompt(dict(fields, NEXT_GUIDANCE='x'*1025))
+
+    def test_expired_low_request_has_no_provider_time_or_consumption_claim(self):
+        self.config['parent_effort'] = 'low'
+        self.request['lane_deadline_unix'] = time.time()-1
+        self.rebind()
+        result, directory = self.evaluate()
+        self.assertEqual(result['status'], 'MISSING')
+        self.assertFalse(result['provider_dispatched'])
+        self.assertIsNone(result['timing']['provider_elapsed_seconds'])
+        self.assertEqual(result['consumption_status'], 'UNKNOWN')
+        self.assertFalse((directory/'DISPATCH.json').exists())
 
     def test_future_600_second_lane_keeps_reserve_and_hard_deadline(self):
         self.request['lane_deadline_unix'] = time.time()+600
@@ -812,6 +867,43 @@ class ClaudeBrokerTests(unittest.TestCase):
         with patch.object(broker, 'STDOUT_CAP', 2), self.assertRaisesRegex(ValueError, 'output_bytes_limit'):
             broker.run_cli(['/bin/sh', '-c', 'printf oversized'], directory, time.time()+2, 100)
         self.assertEqual((directory/'stdout.json').stat().st_size, 2)
+
+    def test_captured_auth_exit_metadata_classified_without_retry_or_acceptance(self):
+        fixtures = [
+            dict(name='F3_C023_E0_PARENT', stdout='',
+                stderr='Your organization requires remote managed settings to load, but they could not be loaded. '
+                    'Run `claude auth login` to re-authenticate, check your network connection, or contact your administrator.\n',
+                expected='provider_required_managed_settings_unavailable'),
+            dict(name='F4_P0041', stderr='', stdout=json.dumps(dict(type='result', subtype='success',
+                is_error=True, num_turns=1, modelUsage={},
+                result='Failed to authenticate: OAuth session expired and could not be refreshed')),
+                expected='provider_oauth_session_unavailable'),
+        ]
+        for fixture in fixtures:
+            with self.subTest(fixture=fixture['name']):
+                directory = self.root/fixture['name']
+                directory.mkdir()
+                argv = [sys.executable, '-c',
+                    'import sys; sys.stdout.write(sys.argv[1]); sys.stderr.write(sys.argv[2]); sys.exit(1)',
+                    fixture['stdout'], fixture['stderr']]
+                with self.assertRaisesRegex(ValueError, fixture['expected']):
+                    broker.run_cli(argv, directory, time.time()+5, 100)
+                status = json.loads((directory/'CLI_STATUS.json').read_text())
+                self.assertEqual(status['exit_code_after_cleanup'], 1)
+                self.assertEqual(status['error']['code'], fixture['expected'])
+                self.assertEqual(status['attempts'], 1)
+                self.assertFalse(status['retry'])
+                self.assertFalse(status['cleanup_terminated_process'])
+                self.assertEqual((directory/'stdout.json').read_text(), fixture['stdout'])
+                self.assertEqual((directory/'stderr.txt').read_text(), fixture['stderr'])
+
+    def test_auth_words_in_nonerror_envelope_not_auth_classification(self):
+        directory = self.root/'nonerror'
+        directory.mkdir()
+        (directory/'stderr.txt').write_text('')
+        (directory/'stdout.json').write_text(json.dumps(dict(is_error=False,
+            result='Failed to authenticate: OAuth session expired and could not be refreshed')))
+        self.assertEqual(broker.cli_exit_failure_code(directory), 'provider_exit_failure')
 
     def test_long_guidance_never_cropped(self):
         reply = dict(self.reply, guidance='word '*201)

@@ -34,7 +34,8 @@ ROOT = Path(__file__).resolve().parents[1]
 BATTLEPLAN = ROOT / 'research_notes/PARENTING_BATTLE_PLAN_v4_2026-09-15.md'
 MORNING_CUT_UNIX = 1789491600
 NODE5_HARD_WALL_UNIX = 1789596240
-HEAD_EDITABLE_FIELDS = ('FOCUS', 'STYLE', 'REFLECTION')
+HEAD_EDITABLE_FIELDS = ('FOCUS', 'STYLE', 'REFLECTION', 'NEXT_GUIDANCE')
+PARENT_EFFORTS = ('max', 'high', 'medium', 'low')
 MUTABLE_PROMPT_ROOT = Path('/data/home/rohing/courier/swarm/prompts')
 OPT_IN_MIN_AVAILABLE_BYTES = 1024 * 1024 * 1024
 FALLBACK_PARENT_FIELDS = {
@@ -169,7 +170,7 @@ def validate_config(config):
         require(all(prior[key] == config[key] for key in ('branch', 'family', 'remote_root',
             'life_id', 'max_parent_calls', 'max_budget_usd', 'max_output_tokens', 'train_tasks',
             'excluded_task_ids', 'cohort_sha256', 'principles_sha256')), 'predecessor_caps_and_identity')
-    require(config.get('parent_effort', 'max') in ('max', 'high'), 'bounded_parent_effort')
+    require(config.get('parent_effort', 'max') in PARENT_EFFORTS, 'bounded_parent_effort')
     require(config.get('provider_lock_scope', 'shared') in ('shared', 'branch'), 'provider_lock_scope')
     require(config.get('provider_lock_scope', 'shared') != 'branch'
         or config.get('queue_transport') == 'node_local', 'branch_lock_node_only')
@@ -285,7 +286,7 @@ def validate_request(request, config):
 def command(system_content, max_budget_usd, effort='max'):
     require(isinstance(system_content, str) and bool(system_content.strip()), 'actual_system_content')
     require(finite(max_budget_usd) and max_budget_usd > 0, 'positive_provider_cap')
-    require(effort in ('max', 'high'), 'bounded_parent_effort')
+    require(effort in PARENT_EFFORTS, 'bounded_parent_effort')
     return ['claude', '-p', '--model', MODEL, '--effort', effort, '--output-format', 'json',
         '--tools', '', '--no-session-persistence', '--max-turns', '1',
         '--max-budget-usd', str(max_budget_usd), '--system-prompt', system_content,
@@ -306,7 +307,11 @@ def fixed_parent_template():
 
 
 def render_parent_prompt(fields):
-    require(set(fields) == {'GAME', 'STYLE', 'NUDGING', 'FOCUS', 'REFLECTION'}, 'head_fields_keys')
+    required = {'GAME', 'STYLE', 'NUDGING', 'FOCUS', 'REFLECTION'}
+    require(required <= set(fields) <= required | {'NEXT_GUIDANCE'}, 'head_fields_keys')
+    if 'NEXT_GUIDANCE' in fields:
+        require(isinstance(fields['NEXT_GUIDANCE'], str)
+            and len(fields['NEXT_GUIDANCE'].encode()) <= 1024, 'bounded_next_guidance')
     require(all(isinstance(fields[key], str) for key in ('GAME', 'STYLE', 'NUDGING', 'FOCUS')),
         'head_text_fields')
     reflection = fields['REFLECTION']
@@ -389,6 +394,9 @@ def build_system(transcript, config, prompt_root, principles_path):
     principles = principles_bytes.decode('utf-8')
     transport_contract = output_transport_contract(config['family'])
     parent_policy = prompt + '\n\n' + principles + '\n\n' + transport_contract
+    next_guidance = settings['fields'].get('NEXT_GUIDANCE', '')
+    if next_guidance:
+        parent_policy += '\n\nASYNCHRONOUS HEAD NEXT_GUIDANCE:\n' + next_guidance
     system = parent_policy + '\n\nTRAIN TRANSCRIPT:\n' + json.dumps(transcript, sort_keys=True)
     require(len(system.encode()) <= PACKET_CAP, 'bounded_system_content_no_crop')
     binding = dict(schema='ORCH_R111_COMMON_PARENT_PROMPT_V1',
@@ -402,6 +410,8 @@ def build_system(transcript, config, prompt_root, principles_path):
         principles_sha256=config['principles_sha256'],
         fixed_parent_template_sha256=hashlib.sha256(fixed_parent_template().encode()).hexdigest(),
         head_settings=settings, head_settings_sha256=digest(settings),
+        next_guidance_sha256=hashlib.sha256(next_guidance.encode()).hexdigest(),
+        head_waited=False,
         transport_contract_sha256=hashlib.sha256(transport_contract.encode()).hexdigest(),
         parent_policy_sha256=hashlib.sha256(parent_policy.encode()).hexdigest(),
         system_sha256=hashlib.sha256(system.encode()).hexdigest(),
@@ -570,6 +580,23 @@ def stop_process(process):
             pass
 
 
+def cli_exit_failure_code(directory):
+    directory = Path(directory)
+    stderr = (directory/'stderr.txt').read_text(errors='replace')
+    if ('Your organization requires remote managed settings to load' in stderr
+            and 'they could not be loaded' in stderr):
+        return 'provider_required_managed_settings_unavailable'
+    try:
+        envelope = loads((directory/'stdout.json').read_text())
+    except (ValueError, UnicodeError):
+        return 'provider_exit_failure'
+    if (isinstance(envelope, dict) and envelope.get('is_error') is True
+            and envelope.get('result') ==
+                'Failed to authenticate: OAuth session expired and could not be refreshed'):
+        return 'provider_oauth_session_unavailable'
+    return 'provider_exit_failure'
+
+
 def run_cli(argv, directory, cutoff, output_cap):
     environment = dict(os.environ, CUDA_VISIBLE_DEVICES='', CLAUDE_CODE_MAX_OUTPUT_TOKENS=str(output_cap))
     started_unix = time.time()
@@ -599,7 +626,10 @@ def run_cli(argv, directory, cutoff, output_cap):
                 streams[name].write(chunk[:allowed])
                 sizes[name] += min(allowed, len(chunk))
                 require(len(chunk) <= allowed, 'provider_output_bytes_limit')
-        require(child.wait(timeout=max(.01, cutoff - time.time())) == 0, 'provider_exit_failure')
+        if child.wait(timeout=max(.01, cutoff - time.time())) != 0:
+            for stream in streams.values():
+                stream.flush()
+            raise ValueError(cli_exit_failure_code(directory))
     except BaseException as error:
         terminal_error = dict(type=type(error).__name__,
             code=str(error) if re.fullmatch('[a-z0-9_]{1,100}', str(error)) else 'captured_cli_failure')
@@ -641,6 +671,10 @@ def evaluate(request, directory, deadline, *, config, launch, prompt_root, princ
     result = None
     prompt_binding = None
     memory_admission = None
+    started_unix = time.time()
+    started_monotonic = time.monotonic()
+    provider_started_unix = None
+    provider_started_monotonic = None
     try:
         transcript = validate_request(request, config)
         cutoff = min(cutoff, request['lane_deadline_unix'] - 30)
@@ -667,7 +701,9 @@ def evaluate(request, directory, deadline, *, config, launch, prompt_root, princ
                 child_visible_environment_feedback_preserved=True))
             validate_launch(config, launch, time.time())
             require(time.time() < cutoff, 'lane_cutoff_before_dispatch')
-            write(directory / 'DISPATCH.json', dict(request_id=request['id'], started_unix=time.time(),
+            provider_started_unix = time.time()
+            provider_started_monotonic = time.monotonic()
+            write(directory / 'DISPATCH.json', dict(request_id=request['id'], started_unix=provider_started_unix,
                 cutoff_unix=cutoff, requested_model=MODEL, effort=config.get('parent_effort', 'max'), attempts=1,
                 prompt_sha256=prompt_binding['prompt_sha256'],
                 parent_policy_sha256=prompt_binding['parent_policy_sha256'],
@@ -685,7 +721,13 @@ def evaluate(request, directory, deadline, *, config, launch, prompt_root, princ
     result.update(id=request.get('id'), request_sha256=digest(request), payload_sha256=request.get('payload_sha256'),
         lane_deadline_unix=request.get('lane_deadline_unix'),
         prompt_binding=prompt_binding, memory_admission=memory_admission,
-        provider_dispatched=dispatched, retry=False, finished_unix=time.time())
+        provider_dispatched=dispatched, retry=False, finished_unix=time.time(),
+        timing=dict(started_unix=started_unix, elapsed_seconds=time.monotonic()-started_monotonic,
+            provider_started_unix=provider_started_unix,
+            provider_elapsed_seconds=(time.monotonic()-provider_started_monotonic)
+                if dispatched else None,
+            cutoff_unix=cutoff),
+        parent_effort=config.get('parent_effort', 'max'), consumption_status='UNKNOWN')
     write(directory / 'RESULT.json', result)
     return result
 
@@ -800,6 +842,8 @@ def process_request(store, config, launch, name, buffer, prompt_root, principles
     write(published / 'PUBLISHED.json', dict(id=identifier, status=result['status'],
         published_unix=time.time(), response_sha256=sha(local_response),
         provider_dispatched=result['provider_dispatched'],
+        consumption_status='UNKNOWN',
+        timing=result.get('timing'),
         late=bool(result.get('delivery_error')) or result.get('error', {}).get('code') in (
             'lane_cutoff_before_dispatch', 'late_parent_missing', 'provider_timeout')))
     archive(store, published, claim)

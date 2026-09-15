@@ -1,0 +1,43 @@
+{
+  "created_utc": "2026-09-15T18:12:39.042729+00:00",
+  "files": [
+    {
+      "path": "gpu/orch_r110_claude_broker.py",
+      "sha256": "d967f99c2c90578fb53a89ccf2e2563c8a922cc364cf80d7b21d2d9c8f9a9c63"
+    },
+    {
+      "path": "tests/test_orch_r110_claude_broker.py",
+      "sha256": "cff7abb7bd4c5a2f6f4d5e32e1903845b59e3e5a10d4bedcb86db90a4d77a04c"
+    },
+    {
+      "path": "research_notes/analysis/orch_r110_claude_broker_20260915/R119_AUTH_FAILURE_DIAGNOSIS_1810.json",
+      "sha256": "d265fb228f9b3a9736b15717a1dc1fa68d50c21d0fa57da7aafe950046c60e6f"
+    },
+    {
+      "path": "research_notes/analysis/orch_r110_claude_broker_20260915/R119_WATCHER_AUTH_RECOVERY_REQUEST_1812.md",
+      "sha256": "4eb7646db42d41092ac57827a12ed498816e87e713ec654d4965f5afb10b1b67"
+    }
+  ],
+  "historical_live_source_sha256": "8350caa377e782f09a5edc4e97f98367b2ddf8a16d0be863075fc18370826eb2",
+  "historical_manifest_unchanged": true,
+  "native_candidate_source": "/localhome/local-rohing/orch_r119_claude_auth_diagnostics_20260915_v2/source",
+  "native_candidate_source_hashes_verified": true,
+  "no_credential_export_or_mutation": true,
+  "no_failed_claim_retry": true,
+  "no_git_mutation": true,
+  "no_live_hotpatch": true,
+  "no_policy_bypass": true,
+  "note": "Diagnosis-only prospective patch. Preserve historical 18:03 manifest as binding to its original immutable LOW runtime, not current worktree source.",
+  "schema": "R119_CURRENT_PROSPECTIVE_BROKER_STAGE_V2",
+  "status": "CURRENT_SOURCE_CPU_READY_AUTHENTICATION_RECOVERY_REQUIRED_NOT_DEPLOYED",
+  "supersedes_for_current_worktree_staging": {
+    "path": "research_notes/analysis/orch_r110_claude_broker_20260915/R119_FAST_LOW_STAGE_READY.json",
+    "sha256": "606e5b5884b7d3b4e0fd06b243670feac3d02c41bc72f1b600f76592012029c3"
+  },
+  "tests": {
+    "command": "python3 -m unittest discover -s tests -p test_orch_r110_claude_broker.py -q",
+    "local_passed": 95,
+    "local_rerun_utc": "2026-09-15T18:11:59Z",
+    "native_passed": 95
+  }
+}

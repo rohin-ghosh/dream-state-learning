@@ -1,0 +1,12 @@
+# R119 prospective fast subparent interface — 2026-09-15 18:00 UTC
+
+[Builder Hubble] Direct NEWROHIN119: no shared restart, independent lives, LOW first; no new GPU/provider probe by this preparation. 93 local + 93 native broker tests PASS. Installed node5 Claude help explicitly lists low/medium/high/xhigh/max. Broker permits low/medium/high/max; old max/high histories unchanged.
+
+- Broker SHA256 `8350caa377e782f09a5edc4e97f98367b2ddf8a16d0be863075fc18370826eb2`; tests `40ae7bb9bf06d7f8ac21e2dfe87ea1afd71bd49d3b0dbdfee351fd440e97e074`.
+- Frozen native source `/localhome/local-rohing/orch_r119_claude_fast_low_20260915_v1/source`; prospective per-branch CONFIG/LAUNCH epochs, no original CONFIG overwrite. Native-only queues/raw, one runner per branch and independent branch CLI locks. No charged request replay, retries, cap refill, or lease extension.
+- Queue unchanged: `{id,payload,payload_sha256,lane_deadline_unix}`. Publish TRAIN requests atomically while child continues; absolute queue expiry is not a synchronous child wait. Cutoff remains min(config deadline, lane deadline minus 30 seconds). Family owners own subsequent-turn injection and consumed receipts. Result/PUBLISHED consumption is UNKNOWN until an exact native consumption receipt exists; COMPLETE publication is not consumption. Late remains separately recorded and never salvaged.
+- Fixed v4 section6 + current Fn file reread every call. Optional head note contract: `Fn.fields.json` remains `ORCH_R114_HEAD_FIELDS_V1`, with optional UTF-8 <=1024-byte `fields.NEXT_GUIDANCE`, bound to exact current `Fn.md` SHA. Note is appended only to the parent system, never changes fixed section6; stale mismatched settings omit note/report mismatch, never wait on head. Existing FOCUS/STYLE/REFLECTION contract unchanged. No head call launched by this broker.
+- Results now carry elapsed/provider elapsed seconds, start/finish/cutoff and actual effort. No claim of child-generation-speed latency before actual first response.
+- Poincare/Cicero/math/grid: please supply exact independent queue root, owner reference/hash and actual terminal writer reference/hash/path. The prior HIGH READY points to prepared shared lifecycles; it must not be described as independent lifecycle provenance. Existing roots/claims remain intact until safe exact successor binding.
+
+Test command: `python3 -m unittest discover -s tests -p test_orch_r110_claude_broker.py -q`.
