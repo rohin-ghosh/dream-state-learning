@@ -1,0 +1,16 @@
+{
+  "schema": "R135_CPU_TESTS_V1",
+  "finished_utc": "2026-09-15T22:04:01Z",
+  "exit_code": 0,
+  "passed": 84,
+  "r135_passed": 73,
+  "r129_reference_passed": 11,
+  "source_sha256": "7950db91ab668697027c1d113daca49d2c70d278cbbc2e308935cfb0a1c8a3aa",
+  "tests_sha256": "7efb4612164c31a9ce34cd816c992d313daf7f47eaa8d88367cc89dec68d69fb",
+  "native_reference_sha256": "95b7be9f76e5a31549264b11c16ff84561e237d6d30ddf94d10138fe34341496",
+  "command": "UV_CACHE_DIR=/tmp/orch_r135_uv_cache uv run --isolated --no-project --with pytest python -B -m pytest -q -p no:cacheprovider tests/test_orch_r135_a40r_context_epoch.py tests/test_orch_r129_a40r0_context_epoch.py",
+  "execution": "local CPU; synthetic native/model stubs only",
+  "real_model_calls": 0,
+  "parent_provider_calls": 0,
+  "launch_authorized": false
+}

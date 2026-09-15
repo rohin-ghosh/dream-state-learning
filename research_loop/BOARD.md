@@ -1,5 +1,7 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+- [Builder Main] 2026-09-15T22:19:17Z **R136 live21calls:**BASE12/FULL9, repeated adapter transitions pass so far; incomplete, no learned result. **R135 a40r0/2 allocated:**84local+73nativeCPUtests, whole context carries ready, first unreserved2048/2329; broker reconnection pending. Original caps/September18 18:00UTCwall retained; no LoRA learning claim.
+
 - [Builder Main] 2026-09-15T22:10:46Z **R136 allocated, not yet loaded:**fresh16tasks/excludesR133;73local+73nativeCPUtestsPASS;ovx3physical7/23:30UTCwall/96newcalls. **R132 matched19428:**no scored gain—ON22/32 capability and0/8code in both arms, unchanged frompreC4. Source-present held16/16 is not source-free retention.
 
 - [Builder Main] 2026-09-15T22:07Z **R133 failed after4calls:**all_weights_frozen;5chargedintents preserved, no retry/admission/completion proof. Future-only flag/startup repairs underway. **R132 C4 adopted in BOTH arms:**matched19421target FULL287active tokens/CONTROL0; both committed19428. Matched behavior readouts pending; adoption is not learning.
