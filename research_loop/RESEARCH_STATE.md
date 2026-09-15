@@ -1,5 +1,28 @@
 # Research state — Orchestrator
 
+## Execution update — September 15, 2026, 05:26 UTC
+
+- Measured05:23:12 fleet30/32resident,27positive utilization; node1 all8live.
+  A1004 parenting and node3 4 generation recoveries assigned to current owners.
+- TWO sequential episodes per sleep now produces completed math cycles:
+  MICRO698.890seconds/550updates; CREATIVE818.189seconds/554updates;
+  each fresh8held readout complete, bothC2in progress. Actual strong Astra
+  parented no-LoRA route learner response observed05:19:02; one canonical triple.
+- Meaningful rejected branching not established:0/4 unhintedV3 diagnostic;
+  route segment2 proxies are not semantic certification or a causal slope.
+  Historical segment2C2 held GUIDED/OFF/FROZEN=5/8,5/8,6/8, ancillary only.
+- ContinualV7/3260, durable paired1892; currently1636adaptiveDEV with resume
+  planned from1892. New accepted native batches beyondV7 not verified ingested.
+- Historical prompted MATH764FULL/OFF mean tokens211.89/196.84, EOS64/64each;
+  lexical repetition0.05956/0.04876. Semantic/coherence pending. Secondary
+  correctness54/64vs59/64. Minimal-prompt paired readouts actually live;
+  untrained-base response not yet verified. No improvement/promotion claim.
+- FULL256 own-output32pilot rejected10/12samplePASS with fatalgrounding/gold;
+ 0admitted and no pairedfit. Native failures/transcripts retained.
+- VM71GiBfree/72%used; verified archive/pruning receipts already pushed.
+  No raw capture forests added. Ongoing goal remains active.
+
+
 ## Execution update — September 15, 2026, 05:03 UTC
 
 - Continual append is ACTUAL: matched1152 receipt installs corpusV7/3260,

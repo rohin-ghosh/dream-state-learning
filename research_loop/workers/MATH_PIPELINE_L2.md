@@ -1,5 +1,49 @@
 # MATH-PIPELINE-L2 — automatic manufacturing-line handoff
 
+## 2026-09-15T05:18Z — R104 negative examples and measured cycles
+
+05:20Z update: CREATIVE C1test8COMPLETE+AFTER05:19:24.090480Z,
+readout214.260878s/fullcycle818.188570s=13m38s. BothR102lanes now inC2
+experience. CREATIVE final test COMPLETEbc6dbf4d4d0866f5291a645e2729baaf9e49031b91c80e93a095e22ed842a993,
+AFTERd06984ebd1c402c000d699b5c9b597e591f10cbbeecfd19822d6d84a76187d90.
+Own `R104_STAGE_PATHS.txt`/`R104_STAGE_HASHES.sha256` expose new audit/tests,
+source-bound evidence, measured table and design-only next arm for Main; no
+git mutation. PublishedR102native/policy/run/broker files remain unchanged.
+
+Received: exactly2episodes/sleep; exactlyONEshared3armbaseline, all other parent
+GPUs treatments. R102 unchanged; no performance stopping/tuning or old-rowmix
+change. MICRO C1 saved550updates05:13:38.917886Z, test8/8COMPLETE+AFTER
+05:17:24.798829Z; fullcycle698.890s=11m39s including load/parent/gaps/test,
+not2.5h. MICRO C2 experience already started. CREATIVE C1 saved554updates
+05:15:38.486826Z; test stillpartial at05:17:51Z. Own52CPUtests PASS.
+
+Walltime table and auditable phase hashes are published NOW in
+`R104_TIMINGS_AND_NEGATIVE_COVERAGE.md` / `R104_COVERAGE_TIMING_VERIFIED.json`.
+MICRO generation13.586s,parentqueue96.623s(HTTP54.247),reflection19.665s,
+sleepenvelope291.868s,totalexperience473.009s,test211.654s/8calls. CREATIVE
+generation13.899s,parentqueue200.373s(HTTP66.440),reflection33.602s,
+sleepenvelope307.022s,totalexperience592.585s,test121.685selapsed/3responses.
+Sleep includes reflection/write/rehearsal/save; columns overlap. Isolated
+optimizer duration unknown. Prior8episodeGUIDED fullcycle2184.250s with56test;
+OFF1204.565s with56test. Different held sizes, not matched speedup evidence.
+
+Negative source coverage actually verified: earlierpairedGUIDED/OFF C1 each
+has1INCORRECT/8episode; failed original AND reflection retainedINCORRECT and
+written68/68presentationsGUIDED,67/67OFF. Source SHA, exact target SHA, masks,
+prefixnonendorsement, and loss-row counts checked. R102 C1both had0negative/2;
+do not pretend its negative path was exercised yet. Fourrows/lane verified;
+222legacyupdates unchanged. This is outcome-conditioned positive-CE SFT on
+negative-example RECORDS, NOT negative-gradient/unlikelihood and not proof
+that wrong-token probability decreases. Actual failed attempts remain negative
+examples, never certified solutions. Author thinking/trajectory review remains
+separate from ancillary outcomes.
+
+NEXT separate design, not launched: `R104_FADING_REHEARSAL_DESIGN.md` proposes
+TRAIN-refreshed age/use weights then fixedcycle5 lowerLR/fresh-reflection-only
+no-replay stage; explicit objective delta, no hidden reset, no heldfeedback,
+no new baseline. Exact phase semantics/tests/budget/cohort still must be frozen
+before any future dispatch. No live R102 file/guardian changed. Raw node-only.
+
 ## 2026-09-15T05:08Z — R102 launched; first native responses verified
 
 05:10:56Z latest: BOTH actual Astra parents COMPLETE, both node transcript

@@ -1,5 +1,36 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## Rohin104 measured checkpoint — 2026-09-15 05:26 UTC
+
+- Allocation remains 21 generation / 5 training+readout / 6 parenting destinations.
+  Census05:23:12: 30/32 GPUs have compute residents, 27/32 positive instantaneous
+  utilization. Node1 all8 admitted and computing. A1004 and node3 4 empty;
+  Anscombe/Poincare are restoring their owned parenting/generation lanes after
+  strict release/admission. Assignment is not saturation; no32/32 claim.
+- Two-episode math C1 cycles COMPLETE: MICRO698.890s (11m39s),
+  CREATIVE818.189s (13m38s), each including saved sleep and8held tests.
+  Both nowC2. Exactly one route canonical triple runs on node3 0/1/2;
+  actual parented NO_LORA response verified05:19:02, not just source orC0.
+- Exhaustion diagnostic: 0 consequential rejected branches in4 unhinted V3
+  outputs (nonrandom diagnostic, not prevalence). Segment2 C2 held goals:
+  GUIDED5/8, OFF5/8, historical FROZEN6/8; thinking proxies and limitations
+  are in the canonical reader. No outcome-driven tuning/deallocation.
+- Continual latest durable paired checkpoint1892, corpusV7/3260. Currently
+  running immutable1636 adaptiveDEV, not optimizer updates during that phase;
+  resume1892 requested. BeyondV7 ingestion remains UNVERIFIED despite accepted
+  producer backlog. Do not describe this as uninterrupted fitting/feeding.
+- Historical prompted MATH764 complete: FULL211.89 vs OFF196.84 mean tokens;
+  all64/cell EOS, zero ceilings. Lexical4gram repetition0.05956 vs0.04876;
+  semantic approaches/rejections/coherence unreviewed. Ancillary accuracy
+  FULL54/64 vs OFF59/64. This is NOT default behaviour or demonstrated benefit.
+  Actual minimal-prompt FULL/OFF readouts now running0/1; true base pending.
+- Separate FULL256 own-output32pilot rejected (10/12samplePASS; fatal
+  grounding/gold flag);0admitted, no compiled fit/readout. Preserve failure.
+- Main focused validation:79PASS/3SKIP/1missing-native-fixture failure;
+  worker repairs the source-only fixture check in parallel, no science gate.
+  Raw stays node-local; only source/tests/compact evidence published.
+
+
 ## MATH764 readout recovery — 2026-09-15 05:05 UTC
 
 Both fits are actually COMPLETE6208updates: OFF05:01:26,FULL05:02:57.

@@ -196,3 +196,49 @@ source replacement, reset, raw VM transfer or additional model calls required.
 DEFAULT minimal-prompt DEV and pairedP64 add-on remain separate from historical
 promptedP64. Main has authorized the128-call add-on inside1760 total; preparation
 continues alongside running last-tested science, not as a training launch gate.
+
+## 2026-09-15T05:20Z — actual milestones, readout repairs, stage readiness
+
+V7/3260 ACTUALLY ingested at1152,04:55:13.873Z; receiptSHA
+9ef8c87091a00b2336ace701726772548413e3134ae05f49e781aab9c6747377.
+EXPOSURE_1536_COMPACT.json reports each source/batch min/median/max and histogram:
+retained1536/cell; additional117 physical OFF reconstruction updates separate.
+At1536, initial2394+76+473+64 had one presentation each; newest63 had53 seen,
+remaining10+64+62+64 unseen. OFF exposure is NOT supervised-new-label exposure.
+First full traversal paired1636 is saved. FULLcommit50f67311b0b565beb7854e4729e61bb74adc5d5835c890981b46240601bb3e61;
+OFFcommit10621749d58e763eb0b76295664aecacc0962a95af8226acc9134e3421dec481.
+
+Owned failure at1536: old guard read auxiliary `releases` but old math terminal
+uses `release`; both1536 durable, no discarded update. Repaired source4859efad8a0a26ed8de120ed42fa9ac7c74d5d75786447ac9c6a255cc2c86a55,
+guardian496950 resumed05:06:52.906; native498045/498046 FULL2+6,498047 OFF3.
+Actual1549/1544 verified05:08:42. Later firstDEV admission saw zero memory but
+residual utilization, failed BEFORE any jobs/calls; guard preserved and resumed.
+DEV_REPAIR driverf9c9720f7d581d3cec65a5e06a7a7c30f76e3fd929ca010684c6959eb2d6139e
+has14local+14nativePASS and waits for a NEW fully clear scan without removing
+any blocker. Controller515256 requests guardian-only matched stop, preserves
+latest checkpoint1892, reads immutable1636, resumes1892 afterward without reset.
+Failed zero-call attempt archived under native PRECALL_FAILURES. No scores retry.
+
+Both auxiliary math764 fits COMPLETE6208. Original guardian admission mistook
+physical-index /dev/nvidiaN for kernel minor, ending readout0/release-unverified.
+Actual mapping0->minor3,1->minor2,2->minor1,3->minor0; peer463012/463010 were not
+waived. Correct full UUID/minor scans cleared0/1; original failed scans preserved.
+Exact unchanged historical source8e16039061bfb36001826e7d0d29a9f091dae4ae3017307220faebd4310303c5
+fresh readouts491853 OFF1 /491860 FULL0: first calls05:05:18.165/05:05:21.908.
+Both completed112calls. Historical math64/cell: OFF mean196.84 tokens, all64EOS,
+FULL211.89/all64EOS; zero ceilings. Lexical4gram repetition0.04876/0.05956;
+semantic/coherence NOT YET REVIEWED. Accuracy secondary OFF59/64 FULL54/64.
+This remains PROMPTED first-person150–400 historicalP64, never DEFAULT or improved.
+
+DEFAULT DEV source/plan/native-preflight READY receipts staged in own analysis.
+DEFAULT P64 FULL/OFF128 add-on plus TRUE no-adapter BASE64 prospectively registered:
+old1760 ledger retained, ceiling1824,08:06:10 hardend unchanged. BASE uses native
+Engine adapter_dir=None/model=base branch, not37ec or disabled adapter; baseSHAa2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992.
+BASEV1 auxiliary watcher also hit post-exit residual-utilization onFULL; it stopped
+OFF before any call/LOADED record. Preserve this zero-call failure. TestedV2 uses
+the strict settling wait (31local+31nativePASS), no reason/PID waiver; readiness
+source d20b0d637dd9b7bd64dbfaa2f3dd0c80634e8598bbab93abb71107fd62126a76.
+No DEFAULT/BASE result claimed here. All raw remains NODE; repo compact reductions.
+New announced27/33/34/36/38/40 batches NOT yet claimed ingested. Bounded source/
+native-encoder adaptation to run alongside fitting/readout, never a training gate.
+Main owns git/BOARD/census; no git mutation or raw VM artifacts by this worker.
