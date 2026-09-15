@@ -429,3 +429,112 @@ node2root, hence no later accepted manifests despite healthy receiver polls. No 
 source/registry/root extension. New untrained/base exhaustion segment needs separate
 explicit provenance binding; teacher-distillation dose4 pilot remains quarantined,
 never fed to ongoingL1. No slots changed and no git mutation by this worker.
+
+## 2026-09-15 06:29Z — separate exhaustion receiver CPU/native READY
+
+Hubble exact API read from RUNNING_HANDOFF_0618.json and native publisher source:
+new root orch_continual_exhaustion_publish_20260915_segment1, snapshot directories
+orch_continual_exhaustion_feed_batch_NNN/MANIFEST.json, accepted batch IDs
+orch_continual_exhaustion_segment1_NNN, NNN000..063. No old root/registry extension.
+Registry9c290dddda5c4958f3dde8d1b0c09289dcf410a3b3abafdb78d57e84560a6431;
+source registryd3441e8f2edd9e9eab653f6b6d34554a76bccec9e2c2134805050e0ca0445ec6.
+37ec shards1–7 only; per-row EXHAUSTION_ONLY/STEERED retained, noBASE/checkpoint0,
+teacher/L2/parenting. Batch000 veto4/12 stays rejected; no accepted manifests yet.
+
+86CPUtestsPASS; native Node2 and A100 tokenizer-only source replay64PASS/22341
+supervised labels. This tests encoding/provenance, NOT admission of vetoed rows.
+First probe KeyError raw/PREPARE.json preserved: publisher archive lacks source
+PREPARE/TASKS. New sidecar includes exact original registry-pinned bytes in proof;
+no edited targets/packet rescue. Raw crosses node-to-node pipes, never VM files.
+Receiver independently replays native source calls, exact gold, all held exclusions,
+neutral boundary/EOS/labels, eligibility and unchanged original row. Shared atomic
+intake lock, exactly-once batch hash, corpus-wide dedup, immutable isolated CPU source.
+Default original receiver/watcher behavior preserved; live trainer source untouched.
+
+READY source/native hashes: EXHAUSTION_SEGMENT1_READY_0629_COMPACT.json,
+SHAc188790c26125d58ad4bc6c6355bdc277535262b7cdb503d1fb69d5d87101adf.
+Own dated Builder CPU/provenance receipt appended before separate watcher start.
+Poll60s,max4; failedhash not automatically retried; only actual accepted manifests
+can queue. Stop TRAIN07:03:10.779610Z; no new training or readout calls/allocations.
+Five native training ranks still run; latest exposure monitor FULL4214/V13, all375
+presented exactly once at that snapshot. No optimizer/RNG/cursor/sampler change.
+
+Readout/dose audit now available READOUT_BUDGET_DOSE_20260915T0613_COMPACT.json:
+1408COMPLETE/1824 ceiling, exactly416 reserved terminal calls (perarm64math+
+96route+48legacy), no extra intermediate reservation. First matched128-window after
+07:03:10TRAIN cutoff; conditional estimate07:04:40–45 startup,07:20–25completion,
+not guaranteed; dispatcher33min/native08:03:10/global08:06:10 bounds unchanged.
+All375 first-covered by3647 (06:09:47.874FULL/48.089OFF), well before terminal.
+At matched3684, original3260 total6957 (437x3,2823x2); new375 total375/allonce;
+legacy memory3684/cue900/audit2784/trajectory36. Exact distributions in audit.
+Logical counts exclude separately charged117extra OFF physical recovery updates.
+
+Main06:22 new FIFO scheduler authorized for CPU implementation only, after this
+binding. No live changes until exact version/delta/tests sent prospectively. Earlier
+0615swap/repayment proposal was CPU counterfactual only. New implementation will
+preserve protected legacy slots and checkpoint state, explicitly count changed
+trajectory dose/order, and label FULL/OFF comparisons within scheduler version;
+prior-vs-new is NOT isolated scheduler causal evidence.
+
+## 2026-09-15 06:37Z — receiver live; future FIFO CPU implementation ready, NOT native
+
+Separate receiver watcher PID3843859 firstpoll06:29:27.688894Z; repeated healthy
+polls see0accepted manifests. Batch000 veto4/12 remains excluded, no candidate
+admission or reset. Existing old-root watcher remains independently pinned.
+Exact new source/API and native probe checks are in0629READY; no source-policy
+waiver or automatic failedhash retry. Qualified future arrival can transfer only
+after actual MANIFEST.json acceptance, then native validation and matched intake.
+
+Current native monitor FULL5220/OFF5220/V13, allfive ranks continuing. New375
+eachone actual presentation so far; terminal work/readout budgets unchanged.
+Immutable matched4964 receipt: original3260 total9517 (375x4,2247x3,638x2),
+new375 total375/allonce; legacy memory4964,cue1220,audit3744,trajectory36.
+FULL1,604,942 supervised labels/OFF294,166; commonreference1,604,942. OFFnew
+labels masked despite identical row exposure. Extra117physical OFFrecoveryupdates
+remain separate. All per-source distributions and exact native commit hashes:
+FEED_FIFO_CPU_STATUS_20260915T0637_COMPACT.json,
+SHAb8ea6d751a4f45f0932416035f6bcb09ae412418af6297845536022093a3bd10.
+
+New CPU-only source organism_v6/orch_combined_l1_fifo_v1.py;
+tests/orch_combined_l1_fifo_v1_test.py;20focusedPASS, combined140PASS4SKIP
+(3existingtorch unavailable locally,1node-only immutable packet). Explicit paired
+global4/factcalendar/masking/nativecollator, FIFO/fairness, exactly-once intake,
+hash-bound pendingqueue/adapter+optimizer+allrankRNG checkpoint tests. Actual native
+optimizer integration/equivalence NOT claimed by these CPU tests. Current native
+driver does not import new scheduler and is untouched.
+
+Refinement: persistent rehearsal round cannot grow mid-round; already-exposed
+future rows join next round, preventing perpetual append-induced starvation.
+Current375/history never requeued; futureacceptedrows only. First210legacy-fact
+calendar exact; legacy12trajectory timing/dose deliberately changes with one
+rehearsal slot while FIFO nonempty, not hidden as equal-dose. Noqueue uses two
+rehearsal slots. No16presentation stopping count, no replacement child or RNGreset.
+Synthetic fixedgeometry4964+64: FIFO first4965/all5028 versus appendfirst5535/
+all5567; CPU planning+validatedcommit23.7ms/update for64steps, NOT native throughput.
+Logical FIFO deadline Q+B updates assumes training continues; no time guarantee.
+
+Exact scope/limitations/ETA in FIFO_V1_CPU_SCOPE_0636.md. Future native integration
+estimate10–15min once requested, plus at most current128-update safe-boundary wait;
+not a scheduled stop. No newnative source/gate bypass and no gatedGPUidle.
+Existing terminal416readout calls remain reserved, roughly07:04–05launch conditional
+and07:20–25finish if lengths/throughput persist, hardend08:06:10.779610unchanged.
+Future FULL/OFF comparison within newversion only, not old-vs-new causal isolation.
+No git mutation, raw VM copies, parenting/L2/teacher intake, or new model calls.
+
+## 2026-09-15 06:40Z — compact live status for Main / R106 scope
+
+Newsegment receiver PID3843859 alive, last heartbeat06:39:48.005730UTC,
+POLL_COMPLETE/found0/attempted0. Fresh native discovery:0accepted exhaustion
+manifests,0queued segment1 batches,0receiver receipts; not falsely claimed consumed.
+Allfive native optimizer ranks now5348/V13 (FULLranks0/1/2 at06:39:57.77,
+OFFranks0/1 at06:39:56.80UTC). Existing3635corpus retained. New375 distinct375,
+total505 presentations perarm:245rows once/130twice, min1/median1/max2. FULL
+supervises newlabels; OFF masks them. Extra117physical OFFrecoveryupdates separate.
+Receipt CURRENT_FEED_20260915T0640_COMPACT.json,
+SHA68d3349f2124686f254f5a1aac44bfb93cf23e1a71eb08550ab31c7589adc31a.
+
+R106 acknowledged: branching departure/return including checks, judgments and
+what-ifs is distinct from independent method count. No such new measurements,
+held outputs, parenting/L2 or teacher data enter TRAIN. No relabeling live packets.
+FIFO staysCPU-only; originaltrainingsampler/deadline07:03:10.779610Z preserved;
+416existingterminal readout calls retained under1824ceiling, no new calls.

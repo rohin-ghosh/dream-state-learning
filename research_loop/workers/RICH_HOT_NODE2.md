@@ -561,3 +561,27 @@ service restart, rawVMpull, shared-file edit or git mutation. Next: Main stages
 exact source/tests/compact receipts; Hubble source-registers/samples native
 immutable batches before training admission. Keep generators live while
 reporting quality limitations, not heading counts as realized exhaustion.
+
+## 2026-09-15T06:17Z — current generation metrics only; publisher handoff untouched
+
+Main confirms feed code/receipts pushed b090d15d; Hubble integrates publisher.
+No duplicate publisher work, provider calls, generation changes or GPU signals.
+One compact observation `GENERATION_METRICS_0616Z.json` under own analysis root
+actually observed06:17:06.962127UTC (filename reflects observation preparation).
+All8exact PID/UID/start/boot identities and guardian live,0execution errors,
+no V3guardian failure.2405completed response captures; trailing600seconds261,
+1566raw captures/hour,94198content tokens. Counts include drafts, ROUTE exposure
+and goal actions, not unique tasks or qualified rows;125recent captures are
+exhaustion-applicable. Recent family counts29math/28CODE/204ROUTE.
+
+Per-arm trailing600second captures / hourly normalized rate:
+derived0 EXHAUSTION_ONLY66/396;37ec1 EXHAUSTION_ONLY1/6;
+37ec2–3 STEERED_LIGHT62/372;37ec4–5 TWO_PASS51/306;
+37ec6–7 META81/486. Two-slot arms aggregate both physical slots. Native latest
+capture06:17:04UTC.53cumulative repetition-screen flags,7recent;800of1112
+applicable captures claim>=2headings, NOT semantic passes. Earlier frozen
+diagnostic remains7fully read/1partially read with0of7demonstrating2distinct
+worked methods; not a new/current-population sample. Bound annotation hash
+and exact provenance/process/count contracts in compact snapshot. Qualified
+throughput deliberately null. Only compact metrics and this journal changed;
+raw remains native. Available for Hubble sourceAPI questions, no review launch.
