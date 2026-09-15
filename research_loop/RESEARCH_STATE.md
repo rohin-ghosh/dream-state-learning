@@ -1,6 +1,6 @@
 # Research state — Orchestrator
 
-Updated September15,2026,00:10UTC. ACTIVE / INCOMPLETE. Current synthesis,
+Updated September15,2026,00:13UTC. ACTIVE / INCOMPLETE. Current synthesis,
 not an experiment transcript. Prior detailed state remains in git66d134c5
 and the append-only notebook; no evidence, failed denominator or raw directive
 is deleted by this compaction. BOARD owns current GPU allocations.
@@ -552,6 +552,63 @@ Fable00:03 says replacementnode1 went RESERVED→DELETING23:53; quota prevents
 return tonight. Fleet remains24, no node1 allocation or Main lease action.
 Reader23:55 ran successfully but no new scoped276–279verification entry has
 been received; do not upgrade statuses from cron exit0 alone.
+
+## Raw84 read00:11UTC; immediate portfolio amendment00:13
+
+Raw84 arrived00:09:08 via758980b0, approximate spokenheading00:10. Read full raw
+paragraph, not just Fable's proposals. Richness means relevant branching and
+importance-weighted exploration/evaluation of conclusions, not evenly padded
+narration. L1 may initialize imperfect richness; L2 makes it useful/cohesive.
+Rohin requests idle GPUs try prospective generators now and minimal necessary
+CPU work, not custody or long serial testing. Current source/controls/safety
+remain mandatory; no paper claim, base change or acceptance relaxation.
+
+Answer to Rohin's terse question:266/273 measured improved goal-conditioned
+READ/ROUTE use from supplied text after a terse trajectory fit. They did NOT
+demonstrate rich thinking, child reflection, improvement across sleeps or a
+working learning Level2 loop. The current rich guided loop is a TEST of those
+next steps, not evidence they already succeeded. Preserve the narrow transfer
+and all-world failure; do not call command-only success rich learning.
+
+**Allocation changes, before new worker execution:** defer L2-ADJACENT before
+new native calls, preserve CPU work/pointer contract. Its methodological value
+stands, but generators now outrank waiting for a checkpoint. Erdos reassigned
+RICH-TWO-PASS on node2 0–3; new RICH-INTENSITY worker on node3 0–5. These ten
+previous reserve/conditional GPUs are distinct from mining, six fits and L2
+repair/continuation ownership. No node1 or additional lease. Six worker slots.
+
+RICH-INTENSITY owns a single fresh256-task L1 mathematics roster,64per existing
+family, exact IDs AND normalized questions excluding prior128, activeSCALE1024
+and held64. Publish roster first for TWO-PASS; do not inspect held outcomes.
+Same frozen37ec Qwen+LoRA actor, three paired conditions: exact old rich control;
+explicit two-consideration comparison; adaptive importance-weighted branching
+that evaluates its provisional conclusion and explores a useful follow-on.
+Six GPUs, two shards/condition. One initial+conditional NEW own-record call
+per task/condition, <=1536 learner calls,120native minutes/12assignedGPUh.
+No API reasoning-effort knob invented for this Qwen runtime. Same150–400 target,
+512generation/2048context limits, no hand-authored target/data or final-answer
+oracle hints. Brief own CPU/provenance preGPU publication then independentlaunch.
+
+RICH-TWO-PASS consumes that same256-task roster, owns its own per-task initial
+draft shared across two arms. Compare draft→self-evaluate/select useful branch→
+final versus draft→equal-budget ordinary continuation→final. Then existing NEW
+record on each successful final. At most5calls/task=1280, two shards/condition
+on its4GPUs,120native minutes/8assignedGPUh. Prior child draft stays truthful
+neutral context; added branch/continuation guidance removed/masked for training.
+Do not present another model's text as this child's target. No source/held
+regeneration, solution hints or target rewrites. Equal extra call opportunity
+does not guarantee equal realized tokens; report both.
+
+Existing outcome+substantive rubric and support/gold gate stay unchanged.
+Branching, concentration on decisive evidence, and evaluation/follow-through
+are fulltext DESCRIPTIVE axes, not heading regexes or new acceptance thresholds.
+Declare condition-specific predictions before calls; report all256denominators,
+admitted/rubric/outcome counts, actual token distributions, family coverage and
+representative contrary texts. These are generator selection batches, NOT a
+campaign or fits; <=512targets/condition cannot satisfy1000fitfloor by padding.
+After terminal yield/quality contrast, Main reallocates to an independently
+frozen larger cohort for a promising generator, or deallocates a clean null.
+No automaticscale/newfits or extra replicas while corpus quality is unknown.
 
 ## Priority frontier — decisions for next compute
 
