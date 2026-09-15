@@ -530,3 +530,59 @@ checkpoint metadata ABSENT. DoNOTreinterpretpre-sharedBASEcaptures asshared
 LoRAreplay. NextimmutableclientmustaddmetadataBEFOREdispatch andexcludeall
 DEV/FINAL/attachedreadoutopen; actualTRAINopen_observationalias reportedtoMain.
 No sharedoptimizer/adapter/sleep appliedyet; lambdaNOT_APPLIED.
+
+## 2026-09-15T11:07Z — first Fable proof, both owned handoffs, A3 armed
+
+First F3 parent COMPLETE C003_E1_PARENT finished10:59:05.393869UTC,
+actualmodelclaude-fable-5-1; responseSHA
+614f64171041c7dbcdf47a923b519f5934dbc4e39e7a4b238ff871b89c490402.
+Next COMPLETE C004_E0/C004_E1 at11:00:51/11:02:18. ObservedcompactSTATUS_1103
+binds42nativeCOMPLETE6493tokens (includesreadouts),70failedpreserved,
+3parentCOMPLETE/6MISSING; notsemanticimprovement/learningclaim.
+Current Hubble node broker431453, migratedownperbranchlock; doNOTrestartVM.
+
+Physical4 exactnative58848 released atcompletedC4 11:02:56.498966UTC;
+nativeR115_RELEASE_COMPLETEsha
+8885c95214ddd80bc740df4761d67febd27febff44a40a403f8e02dac5a65aab.
+Poincare notified. Bothold4/5raw/charges preserved; no samecallreplay.
+
+Concrete Unicode wire failure: legacy policy hash usedensure_asciiFalse,
+broker canonicalhash usesTrue. PreserveC3open/metaMISSING payload_binding;
+onlyprospectivewirehashnowusesbroker.digest(payload), no normalization of
+childtext. AddedUnicodeCPUregression. F3live source_v2 UNCHANGED pending
+safesuccessor; A3receivedfix BEFOREfirstcall and retains source_pre_unicode/
+PRE_UNICODE hashes. A3current sourceSHA
+5a33cfe937c29e993db795a3dc2f42303f8191b9f7e56bbc570b8396414bb22a.
+This makes STAGE_READY_1100 stale forcurrentcandidate; keepashistoryonly.
+
+A3CPUwaiter463460, broker836804 preparedwaiting, NOTGPU/providerutilization.
+Gridowner watchdog449790 armedold6; noownforeignsignal. Waiter requiresowner
+RELEASE.json(exitedtrue,physical6,receiverCicero,exactpriorPID), copieshashes,
+thenfreshprivilegedUUID/minor/proc/CVDadmission beforeactualnative. Original
+PLAN/deadline/capsunchanged. As11:06 noA3LAUNCH/requests, notcompletedpair.
+42ownCPUtestsPASS1.94s includingwrongowner/slot/unreleased/CPU-only guards.
+Allrawstaysnode; onlycompacts/source/tests/provenance eligibleforpublication.
+Sharedgeneration/checkpoint metadata willbeactualBEFOREdispatch innewclient;
+oldBASEcaptures notreforged and no sharedtrainingclaim.
+
+## 2026-09-15T11:29Z — R118 bounded A3 HTTP delivery repair
+
+A3 actual native517503 launched11:12:39 after owner6 release and full admission;
+first parent COMPLETE C001_E1 at11:16:22.064965UTC, actual model
+openai/openai/gpt-6-astra, responseSHA
+75289a3f4ace67e5e78fdd00b9230b4550cf49e0a5a9d872f9378bb18cd7e2c7.
+Earlier global evaluator lock failures are operational MISSING, not child outcomes.
+
+Nonmaterial prospective transport-only scope: reuse Main R118 four shared HTTP
+slots, independent of CLI lock; retain 1GiB memory floor, 20s provider margin,
+original one-attempt reservations/caps/cutoffs. No child/model/prompt changes.
+19 focused CPU tests PASS0.35s (own Astra7, migration7, Main slots5).
+Successor CPU runtime /tmp/orch_r108_code_parent_r118_astra_runtime_1128,
+75-file source manifest SHA
+fcb5b64b37a22126cc54c47c4b060f317be2890680d23ee8efe5f22021044664.
+Old broker836804 exact UID/start/boot/command preserved. Migration may stop ONLY
+that broker at child-process-free/all-claims-PUBLISHED boundary; original
+source/stdout/claims remain, native517503 untouched, no retry/reset. Publication
+candidate differs from old runtime; actual successor launch proof follows.
+Shared CODE client remains undeployed pending own tests and Main initialization;
+do not label SHARED_CLIENT_READY yet or forge old BASE capture metadata.

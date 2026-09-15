@@ -1,0 +1,66 @@
+{
+  "action_transitions": {
+    "DOWN->DOWN": 6,
+    "DOWN->LEFT": 1,
+    "DOWN->RIGHT": 1,
+    "LEFT->DOWN": 1,
+    "LEFT->LEFT": 1,
+    "LEFT->RIGHT": 1,
+    "LEFT->UP": 1,
+    "RIGHT->DOWN": 1,
+    "RIGHT->RIGHT": 1,
+    "UP->UP": 5,
+    "WAIT->DOWN": 1,
+    "WAIT->INVALID": 1,
+    "WAIT->UP": 2,
+    "WAIT->WAIT": 9
+  },
+  "cadence": "segment",
+  "causal_helpfulness": "UNASSESSED",
+  "counts": {
+    "changed_action": 10,
+    "invalid_after": 1,
+    "invalid_before": 0,
+    "metacognitive_spoken": 1,
+    "spoken": 32,
+    "unchanged_action": 22
+  },
+  "cycle": 3,
+  "entry_id": "MAIN_GRID/node2_7/segment/C03",
+  "finished_utc": "2026-09-15T11:00:00.853170+00:00",
+  "half": "Main",
+  "lane": "node2_7",
+  "metacognitive_continuation_completed": true,
+  "note": "Proposal versus executed action is observed, not a semantic or causal inference; held outputs and prior outcome scores never read; no live prompt/learning feedback",
+  "parent_model": "openai/openai/gpt-6-astra",
+  "ready": {
+    "path": "/localhome/local-rohing/orch_r109_grid_20260915_attempt1/READY.json",
+    "sha256": "20e88eff72cb6e84f1709f0781c51996a20cb09bfbd30b3b2767fc527b7f588d"
+  },
+  "schema": "R111_GRID_TRAIN_CYCLE_EXCHANGE_V1",
+  "semantic_child_change": "UNASSESSED",
+  "semantic_parent_intent": "UNASSESSED",
+  "source": {
+    "path": "/localhome/local-rohing/orch_r109_grid_20260915_attempt1/SOURCE_SHA256.json",
+    "sha256": "40f0ff7884492041df7a953045dc1f1fccf09220188de90acbe207b6de41fe56"
+  },
+  "source_evidence": [
+    {
+      "path": "/localhome/local-rohing/orch_r109_grid_20260915_attempt1/segment/cycle03/train/COMPLETE.json",
+      "sha256": "e4c50c46f3cade965cece17f037a9b9f506a4188516be374963bfd6104a3843c"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r109_grid_20260915_attempt1/segment/cycle03/train/episode1/EPISODE.json",
+      "sha256": "a645dde8a773dec9f08ea50b2c4858c61966c85baec1ebcf2458c438498e82cd"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r109_grid_20260915_attempt1/segment/cycle03/train/episode2/EPISODE.json",
+      "sha256": "3e20df23a6ebeb818dc113720bf63e0bce821a060c6aa5d3e0d09f7798c1a53d"
+    },
+    {
+      "path": "/localhome/local-rohing/orch_r109_grid_20260915_attempt1/segment/cycle03/train/METACOGNITIVE_TRIPLE.json",
+      "sha256": "7aec9105d348d8f250064ca77e9b2490adcfe29a6c08079fae671a627c73a852"
+    }
+  ],
+  "weight_updates": 0
+}
