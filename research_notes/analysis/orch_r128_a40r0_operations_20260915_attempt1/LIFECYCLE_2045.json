@@ -1,0 +1,1145 @@
+{
+  "admission_claim": false,
+  "checkpoint_refs": [
+    {
+      "mtime": 1789498334.2518957,
+      "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/CHECKPOINT_C49.json",
+      "sha256": "136e48e203846d869fd0240af2d50bdf4afb605ba2f5233f6058397e6453ef85"
+    },
+    {
+      "mtime": 1789498918.4528542,
+      "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/CHECKPOINT_C50.json",
+      "sha256": "2975f017dfe2167ccca171a1984f40e1a642b9642d9cd9668ed3070c050b62c2"
+    },
+    {
+      "mtime": 1789499994.3099954,
+      "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/CHECKPOINT_C51.json",
+      "sha256": "5d3f9376329e6074c1af1a8de937a6027853ca7e1223f9f68fe6d60a17a16968"
+    }
+  ],
+  "compute": {
+    "exit": 0,
+    "rows": []
+  },
+  "gpu": {
+    "exit": 0,
+    "rows": [
+      [
+        "0",
+        " GPU-5b370d4d-bdcc-21d5-cf06-e9bea52e602d",
+        " 0",
+        " 0"
+      ]
+    ]
+  },
+  "latest_calls": [
+    {
+      "cycle": 52,
+      "finished_unix": 1789500410.434652,
+      "purpose": "train_episode",
+      "reference": {
+        "mtime": 1789500410.4384177,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/native/CALL_002003.json",
+        "sha256": "6f75e9644fb5310dd2777322a1a286df427de4a9190e7f75706d87edc6b47a17"
+      },
+      "status": "COMPLETE"
+    },
+    {
+      "cycle": 52,
+      "finished_unix": 1789500690.3814704,
+      "purpose": "train_episode",
+      "reference": {
+        "mtime": 1789500690.3852851,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/native/CALL_002004.json",
+        "sha256": "94eb39a923c802c002b5dcf3e5d48bc77385663551dbd38dcab79d3636cbb6d8"
+      },
+      "status": "COMPLETE"
+    },
+    {
+      "cycle": 52,
+      "finished_unix": 1789501110.6481225,
+      "purpose": "reflection",
+      "reference": {
+        "mtime": 1789501110.6515026,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/native/CALL_002005.json",
+        "sha256": "a263693ee599f6eaeb4489608855f88c4b76c1b674b8b14502c625f055b088fa"
+      },
+      "status": "COMPLETE"
+    }
+  ],
+  "ledger": {
+    "mtime": 1789501110.6826272,
+    "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/RESERVATIONS.jsonl",
+    "sha256": "bbeb048c36dcc4f88bfea9e38b5a4c0b325273512845fc876628ac9e0e7a823c"
+  },
+  "native_capture_count": 458,
+  "observed_unix": 1789505073.429253,
+  "original_guard_present": false,
+  "original_native": {
+    "pid": 774742,
+    "present": false
+  },
+  "physical": 0,
+  "raw_exported": false,
+  "receipts": {
+    "ACTOR_READY.json": {
+      "keys": [
+        "base_sha256",
+        "lane",
+        "learned",
+        "loaded_unix",
+        "no_adapter",
+        "pid",
+        "principles_sha256",
+        "uuid"
+      ],
+      "metadata": {
+        "learned": false,
+        "pid": 774742
+      },
+      "reference": {
+        "mtime": 1789493191.9332607,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/ACTOR_READY.json",
+        "sha256": "be2c905f1d472568666cc8ae8c1517e3f51ae7ef68660196b08a850f4522f243"
+      }
+    },
+    "ADMISSION_000.json": {
+      "keys": [
+        "blocking_reasons",
+        "clear",
+        "compute_processes",
+        "created_utc",
+        "devices",
+        "gpu",
+        "host_sha256",
+        "processes",
+        "scanner_euid",
+        "service_sha256"
+      ],
+      "metadata": {},
+      "reference": {
+        "mtime": 1789493164.9630497,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/ADMISSION_000.json",
+        "sha256": "c8e1e382edec08a4e4a97a653841924de97b52040ac31003dd8d213de9fe9ab5"
+      }
+    },
+    "FAILED.json": {
+      "keys": [
+        "error",
+        "finished_unix",
+        "held_episodes",
+        "native_completed",
+        "optimizer_updates",
+        "parent_completed",
+        "parent_missing",
+        "semantic_verified_changes",
+        "sleeps",
+        "train_episodes",
+        "train_segments",
+        "triples"
+      ],
+      "metadata": {
+        "finished_unix": 1789501277.880947,
+        "held_episodes": 196,
+        "native_completed": 2005,
+        "optimizer_updates": 0,
+        "parent_completed": 78,
+        "parent_missing": 30,
+        "sleeps": 49,
+        "train_episodes": 104,
+        "train_segments": 711
+      },
+      "reference": {
+        "mtime": 1789501277.881309,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/FAILED.json",
+        "sha256": "da28b0e3e954145e34e68b3bc08993bfcb255bf53812f73aef8c16d738ff56a4"
+      }
+    },
+    "GUARDIAN_FAILED.json": {
+      "keys": [
+        "error",
+        "finished_unix"
+      ],
+      "metadata": {
+        "finished_unix": 1789501280.1523035
+      },
+      "reference": {
+        "mtime": 1789501280.1526093,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/GUARDIAN_FAILED.json",
+        "sha256": "061ad8a2e832ed00e64324b817f790690756ed5bad640e138767a5a9b8f5940d"
+      }
+    },
+    "GUARD_LAUNCH.json": {
+      "keys": [
+        "campaign",
+        "pid",
+        "publication",
+        "source",
+        "started_unix"
+      ],
+      "metadata": {
+        "pid": 774733
+      },
+      "reference": {
+        "mtime": 1789493163.035509,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/GUARD_LAUNCH.json",
+        "sha256": "b24f87ce566e726564c3d2117fccff4a104f14546784bc13f92801400acc1f55"
+      }
+    },
+    "LAUNCH.json": {
+      "keys": [
+        "identity",
+        "pid",
+        "ready_sha256",
+        "started_unix",
+        "uuid"
+      ],
+      "metadata": {
+        "pid": 774742
+      },
+      "reference": {
+        "mtime": 1789493164.9655645,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/LAUNCH.json",
+        "sha256": "f14023a3a7a8e24dac73aeb27fd48fc3477e5c317019d1b4c26ffffc8a9ebe9f"
+      }
+    },
+    "PARENT_00086.json": {
+      "keys": [
+        "archive",
+        "behavior_change",
+        "cycle",
+        "held_exposed",
+        "kind",
+        "lane",
+        "mode",
+        "no_retry",
+        "number",
+        "observed_unix",
+        "request_sha256",
+        "reserved_unix",
+        "response_sha256",
+        "status",
+        "turn"
+      ],
+      "metadata": {
+        "cycle": 41,
+        "observed_unix": 1789493321.7295175,
+        "status": "COMPLETE"
+      },
+      "reference": {
+        "mtime": 1789493321.7326121,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PARENT_00086.json",
+        "sha256": "e74fbd2d155de48a2edd16fe9a84e3f12bed023211fbde38fb808723520b3c3a"
+      }
+    },
+    "PARENT_00087.json": {
+      "keys": [
+        "archive",
+        "behavior_change",
+        "cycle",
+        "held_exposed",
+        "kind",
+        "lane",
+        "mode",
+        "no_retry",
+        "number",
+        "observed_unix",
+        "request_sha256",
+        "reserved_unix",
+        "response_sha256",
+        "status",
+        "turn"
+      ],
+      "metadata": {
+        "cycle": 41,
+        "observed_unix": 1789493488.5453997,
+        "status": "COMPLETE"
+      },
+      "reference": {
+        "mtime": 1789493488.5484908,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PARENT_00087.json",
+        "sha256": "ab98f3237cf6f599dfab421ee7ca30620e2844c64c6ca95346f1b428ad70e6e6"
+      }
+    },
+    "PARENT_00088.json": {
+      "keys": [
+        "archive",
+        "behavior_change",
+        "cycle",
+        "held_exposed",
+        "kind",
+        "lane",
+        "mode",
+        "no_retry",
+        "number",
+        "observed_unix",
+        "request_sha256",
+        "reserved_unix",
+        "response_sha256",
+        "status",
+        "turn"
+      ],
+      "metadata": {
+        "cycle": 42,
+        "observed_unix": 1789493950.7074609,
+        "status": "COMPLETE"
+      },
+      "reference": {
+        "mtime": 1789493950.7111716,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PARENT_00088.json",
+        "sha256": "3f243944709e8af632d3f112acc6ae4a2a6c320a4d134f72a7b0fd8dc7d4946b"
+      }
+    },
+    "PARENT_00089.json": {
+      "keys": [
+        "archive",
+        "behavior_change",
+        "cycle",
+        "held_exposed",
+        "kind",
+        "lane",
+        "mode",
+        "no_retry",
+        "number",
+        "observed_unix",
+        "request_sha256",
+        "reserved_unix",
+        "response_sha256",
+        "status",
+        "turn"
+      ],
+      "metadata": {
+        "cycle": 42,
+        "observed_unix": 1789494126.6070054,
+        "status": "COMPLETE"
+      },
+      "reference": {
+        "mtime": 1789494126.6103399,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PARENT_00089.json",
+        "sha256": "d4858a7a471740bbd957462b3eb3092281a5b838683b695f0ce60783fbe27efc"
+      }
+    },
+    "PARENT_00090.json": {
+      "keys": [
+        "archive",
+        "behavior_change",
+        "cycle",
+        "held_exposed",
+        "kind",
+        "lane",
+        "mode",
+        "no_retry",
+        "number",
+        "observed_unix",
+        "request_sha256",
+        "reserved_unix",
+        "response_sha256",
+        "status",
+        "turn"
+      ],
+      "metadata": {
+        "cycle": 43,
+        "observed_unix": 1789494545.362629,
+        "status": "COMPLETE"
+      },
+      "reference": {
+        "mtime": 1789494545.36549,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PARENT_00090.json",
+        "sha256": "c30a886ea87469ac6c8d20fffa363d396c5993cf5c1c251d407bb9ab4102ab2b"
+      }
+    },
+    "PARENT_00091.json": {
+      "keys": [
+        "archive",
+        "behavior_change",
+        "cycle",
+        "held_exposed",
+        "kind",
+        "lane",
+        "mode",
+        "no_retry",
+        "number",
+        "observed_unix",
+        "request_sha256",
+        "reserved_unix",
+        "response_sha256",
+        "status",
+        "turn"
+      ],
+      "metadata": {
+        "cycle": 43,
+        "observed_unix": 1789494678.7715728,
+        "status": "COMPLETE"
+      },
+      "reference": {
+        "mtime": 1789494678.7748353,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PARENT_00091.json",
+        "sha256": "abb1427f1959d2a39ea58f68c0d950153ed93f94349925e49a92249157f700b0"
+      }
+    },
+    "PARENT_00092.json": {
+      "keys": [
+        "archive",
+        "behavior_change",
+        "cycle",
+        "held_exposed",
+        "kind",
+        "lane",
+        "mode",
+        "no_retry",
+        "number",
+        "observed_unix",
+        "request_sha256",
+        "reserved_unix",
+        "response_sha256",
+        "status",
+        "turn"
+      ],
+      "metadata": {
+        "cycle": 43,
+        "observed_unix": 1789494834.3397682,
+        "status": "COMPLETE"
+      },
+      "reference": {
+        "mtime": 1789494834.3429508,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PARENT_00092.json",
+        "sha256": "da06008c9fca103d4a55dcfcb27947f77b258a4033b94428af6507cf955234fb"
+      }
+    },
+    "PARENT_00093.json": {
+      "keys": [
+        "archive",
+        "behavior_change",
+        "cycle",
+        "held_exposed",
+        "kind",
+        "lane",
+        "mode",
+        "no_retry",
+        "number",
+        "observed_unix",
+        "request_sha256",
+        "reserved_unix",
+        "response_sha256",
+        "status",
+        "turn"
+      ],
+      "metadata": {
+        "cycle": 44,
+        "observed_unix": 1789495190.8939893,
+        "status": "COMPLETE"
+      },
+      "reference": {
+        "mtime": 1789495190.8973396,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PARENT_00093.json",
+        "sha256": "1e8236d9e231a2c51ecd3b6eb82ad8dcd1e8ba29046961b728383de55aa75b07"
+      }
+    },
+    "PARENT_00094.json": {
+      "keys": [
+        "archive",
+        "behavior_change",
+        "cycle",
+        "held_exposed",
+        "kind",
+        "lane",
+        "mode",
+        "no_retry",
+        "number",
+        "observed_unix",
+        "request_sha256",
+        "reserved_unix",
+        "response_sha256",
+        "status",
+        "turn"
+      ],
+      "metadata": {
+        "cycle": 44,
+        "observed_unix": 1789495346.178488,
+        "status": "COMPLETE"
+      },
+      "reference": {
+        "mtime": 1789495346.1813715,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PARENT_00094.json",
+        "sha256": "9eb45001dfb3ff1be54710d402f8628b7268892827b4e425c5aeea26fcdb54b1"
+      }
+    },
+    "PARENT_00095.json": {
+      "keys": [
+        "behavior_change",
+        "cycle",
+        "held_exposed",
+        "kind",
+        "lane",
+        "mode",
+        "no_retry",
+        "number",
+        "observed_unix",
+        "reason",
+        "request_sha256",
+        "reserved_unix",
+        "status",
+        "turn"
+      ],
+      "metadata": {
+        "cycle": 45,
+        "observed_unix": 1789495707.8524525,
+        "status": "MISSING"
+      },
+      "reference": {
+        "mtime": 1789495707.8532426,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PARENT_00095.json",
+        "sha256": "0c978194cf9f861193ad1a50df0336d3d4cfb0cf7cdf6720c7b423a859a0bcca"
+      }
+    },
+    "PARENT_00096.json": {
+      "keys": [
+        "archive",
+        "behavior_change",
+        "cycle",
+        "held_exposed",
+        "kind",
+        "lane",
+        "mode",
+        "no_retry",
+        "number",
+        "observed_unix",
+        "request_sha256",
+        "reserved_unix",
+        "response_sha256",
+        "status",
+        "turn"
+      ],
+      "metadata": {
+        "cycle": 45,
+        "observed_unix": 1789495916.8668022,
+        "status": "COMPLETE"
+      },
+      "reference": {
+        "mtime": 1789495916.8699727,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PARENT_00096.json",
+        "sha256": "e38555625b5d26364b4993f39a1e7fc603da0658f1e7389da67a15f45701c422"
+      }
+    },
+    "PARENT_00097.json": {
+      "keys": [
+        "archive",
+        "behavior_change",
+        "cycle",
+        "held_exposed",
+        "kind",
+        "lane",
+        "mode",
+        "no_retry",
+        "number",
+        "observed_unix",
+        "request_sha256",
+        "reserved_unix",
+        "response_sha256",
+        "status",
+        "turn"
+      ],
+      "metadata": {
+        "cycle": 46,
+        "observed_unix": 1789496223.2041106,
+        "status": "COMPLETE"
+      },
+      "reference": {
+        "mtime": 1789496223.2074616,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PARENT_00097.json",
+        "sha256": "debac49cc5b53041348014ea28a3da75214e184313d3dea95bf471bfa5ddb551"
+      }
+    },
+    "PARENT_00098.json": {
+      "keys": [
+        "archive",
+        "behavior_change",
+        "cycle",
+        "held_exposed",
+        "kind",
+        "lane",
+        "mode",
+        "no_retry",
+        "number",
+        "observed_unix",
+        "request_sha256",
+        "reserved_unix",
+        "response_sha256",
+        "status",
+        "turn"
+      ],
+      "metadata": {
+        "cycle": 46,
+        "observed_unix": 1789496428.1994133,
+        "status": "COMPLETE"
+      },
+      "reference": {
+        "mtime": 1789496428.201975,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PARENT_00098.json",
+        "sha256": "73520062fa684c3ff94ab8f2b63b09e7f4205b0b738360d43e5db18d0b4d0423"
+      }
+    },
+    "PARENT_00099.json": {
+      "keys": [
+        "archive",
+        "behavior_change",
+        "cycle",
+        "held_exposed",
+        "kind",
+        "lane",
+        "mode",
+        "no_retry",
+        "number",
+        "observed_unix",
+        "request_sha256",
+        "reserved_unix",
+        "response_sha256",
+        "status",
+        "turn"
+      ],
+      "metadata": {
+        "cycle": 47,
+        "observed_unix": 1789496772.868719,
+        "status": "COMPLETE"
+      },
+      "reference": {
+        "mtime": 1789496772.87214,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PARENT_00099.json",
+        "sha256": "c02b7430aec8b20c92d480afa42e3b2f11330dec5464d619870b17441aafa584"
+      }
+    },
+    "PARENT_00100.json": {
+      "keys": [
+        "archive",
+        "behavior_change",
+        "cycle",
+        "held_exposed",
+        "kind",
+        "lane",
+        "mode",
+        "no_retry",
+        "number",
+        "observed_unix",
+        "request_sha256",
+        "reserved_unix",
+        "response_sha256",
+        "status",
+        "turn"
+      ],
+      "metadata": {
+        "cycle": 47,
+        "observed_unix": 1789496983.2026134,
+        "status": "COMPLETE"
+      },
+      "reference": {
+        "mtime": 1789496983.2058887,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PARENT_00100.json",
+        "sha256": "e5ddfbf847ab251b2b976bbaeb35a67efe1f382d5c5b20fac099619dcfda6a17"
+      }
+    },
+    "PARENT_00101.json": {
+      "keys": [
+        "archive",
+        "behavior_change",
+        "cycle",
+        "held_exposed",
+        "kind",
+        "lane",
+        "mode",
+        "no_retry",
+        "number",
+        "observed_unix",
+        "request_sha256",
+        "reserved_unix",
+        "response_sha256",
+        "status",
+        "turn"
+      ],
+      "metadata": {
+        "cycle": 48,
+        "observed_unix": 1789497355.0022154,
+        "status": "COMPLETE"
+      },
+      "reference": {
+        "mtime": 1789497355.0056448,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PARENT_00101.json",
+        "sha256": "f3a4bcebb4e972360467881fb829391e00e2af0cda2faf96ba75d822b78c1796"
+      }
+    },
+    "PARENT_00102.json": {
+      "keys": [
+        "archive",
+        "behavior_change",
+        "cycle",
+        "held_exposed",
+        "kind",
+        "lane",
+        "mode",
+        "no_retry",
+        "number",
+        "observed_unix",
+        "request_sha256",
+        "reserved_unix",
+        "response_sha256",
+        "status",
+        "turn"
+      ],
+      "metadata": {
+        "cycle": 48,
+        "observed_unix": 1789497583.9087486,
+        "status": "COMPLETE"
+      },
+      "reference": {
+        "mtime": 1789497583.912083,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PARENT_00102.json",
+        "sha256": "31ebb53db2111cf25c977095eb9a4f0ab7847fc73df72d4eaeb98369ecf9b12a"
+      }
+    },
+    "PARENT_00103.json": {
+      "keys": [
+        "archive",
+        "behavior_change",
+        "cycle",
+        "held_exposed",
+        "kind",
+        "lane",
+        "mode",
+        "no_retry",
+        "number",
+        "observed_unix",
+        "request_sha256",
+        "reserved_unix",
+        "response_sha256",
+        "status",
+        "turn"
+      ],
+      "metadata": {
+        "cycle": 49,
+        "observed_unix": 1789497995.1291618,
+        "status": "COMPLETE"
+      },
+      "reference": {
+        "mtime": 1789497995.1327448,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PARENT_00103.json",
+        "sha256": "60651a4e0d442a76080c3ab15672af6b09c9311a6d81174e12bc0dbbee5cb4ef"
+      }
+    },
+    "PARENT_00104.json": {
+      "keys": [
+        "archive",
+        "behavior_change",
+        "cycle",
+        "held_exposed",
+        "kind",
+        "lane",
+        "mode",
+        "no_retry",
+        "number",
+        "observed_unix",
+        "request_sha256",
+        "reserved_unix",
+        "response_sha256",
+        "status",
+        "turn"
+      ],
+      "metadata": {
+        "cycle": 49,
+        "observed_unix": 1789498228.1893902,
+        "status": "COMPLETE"
+      },
+      "reference": {
+        "mtime": 1789498228.1915092,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PARENT_00104.json",
+        "sha256": "6655bee661c6e227d99045536064ec53899fd6c375a8f85a2e35d10b67ca0240"
+      }
+    },
+    "PARENT_00105.json": {
+      "keys": [
+        "archive",
+        "behavior_change",
+        "cycle",
+        "held_exposed",
+        "kind",
+        "lane",
+        "mode",
+        "no_retry",
+        "number",
+        "observed_unix",
+        "request_sha256",
+        "reserved_unix",
+        "response_sha256",
+        "status",
+        "turn"
+      ],
+      "metadata": {
+        "cycle": 50,
+        "observed_unix": 1789498634.5166728,
+        "status": "COMPLETE"
+      },
+      "reference": {
+        "mtime": 1789498634.5207539,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PARENT_00105.json",
+        "sha256": "480cbc39aea013a4c2aa1e871b0a1552d0121f00332be7b924fde5bbc4ebb8a6"
+      }
+    },
+    "PARENT_00106.json": {
+      "keys": [
+        "archive",
+        "behavior_change",
+        "cycle",
+        "held_exposed",
+        "kind",
+        "lane",
+        "mode",
+        "no_retry",
+        "number",
+        "observed_unix",
+        "request_sha256",
+        "reserved_unix",
+        "response_sha256",
+        "status",
+        "turn"
+      ],
+      "metadata": {
+        "cycle": 50,
+        "observed_unix": 1789498854.8534174,
+        "status": "COMPLETE"
+      },
+      "reference": {
+        "mtime": 1789498854.8553386,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PARENT_00106.json",
+        "sha256": "37dbd067ed0e9938a4a137b9850bc022ee828c8dae8fddc095ad677c34aec428"
+      }
+    },
+    "PARENT_00107.json": {
+      "keys": [
+        "archive",
+        "behavior_change",
+        "cycle",
+        "held_exposed",
+        "kind",
+        "lane",
+        "mode",
+        "no_retry",
+        "number",
+        "observed_unix",
+        "request_sha256",
+        "reserved_unix",
+        "response_sha256",
+        "status",
+        "turn"
+      ],
+      "metadata": {
+        "cycle": 51,
+        "observed_unix": 1789499235.1663888,
+        "status": "COMPLETE"
+      },
+      "reference": {
+        "mtime": 1789499235.1699555,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PARENT_00107.json",
+        "sha256": "2b248d891ae79686bd8ea29d133b43f024a40709e3173dae35cb7632db62b538"
+      }
+    },
+    "PARENT_00108.json": {
+      "keys": [
+        "archive",
+        "behavior_change",
+        "cycle",
+        "held_exposed",
+        "kind",
+        "lane",
+        "mode",
+        "no_retry",
+        "number",
+        "observed_unix",
+        "request_sha256",
+        "reserved_unix",
+        "response_sha256",
+        "status",
+        "turn"
+      ],
+      "metadata": {
+        "cycle": 51,
+        "observed_unix": 1789499680.9400015,
+        "status": "COMPLETE"
+      },
+      "reference": {
+        "mtime": 1789499680.9439607,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PARENT_00108.json",
+        "sha256": "b373453f8e34a985cd87b91fbdb5ec7b19c344cedb5e869b58b72dab48460fb2"
+      }
+    },
+    "PARENT_00109.json": {
+      "keys": [
+        "archive",
+        "behavior_change",
+        "cycle",
+        "held_exposed",
+        "kind",
+        "lane",
+        "mode",
+        "no_retry",
+        "number",
+        "observed_unix",
+        "request_sha256",
+        "reserved_unix",
+        "response_sha256",
+        "status",
+        "turn"
+      ],
+      "metadata": {
+        "cycle": 52,
+        "observed_unix": 1789500859.0258322,
+        "status": "COMPLETE"
+      },
+      "reference": {
+        "mtime": 1789500859.0309253,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PARENT_00109.json",
+        "sha256": "c46048c6d960ba04d1258f2d9388a3b396ddf65cbeeb46b4ce1b417ba1c57e4d"
+      }
+    },
+    "PARENT_00110.json": {
+      "keys": [
+        "archive",
+        "behavior_change",
+        "cycle",
+        "held_exposed",
+        "kind",
+        "lane",
+        "mode",
+        "no_retry",
+        "number",
+        "observed_unix",
+        "request_sha256",
+        "reserved_unix",
+        "response_sha256",
+        "status",
+        "turn"
+      ],
+      "metadata": {
+        "cycle": 52,
+        "observed_unix": 1789501277.7812803,
+        "status": "COMPLETE"
+      },
+      "reference": {
+        "mtime": 1789501277.7855818,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PARENT_00110.json",
+        "sha256": "2b9ba9f087bfe1dad57e90f3a743cb6cd071f0d70a93e5488065735d90ec3515"
+      }
+    },
+    "PUBLICATION.json": {
+      "keys": [
+        "allocation_sha256",
+        "dated_builder_publication",
+        "ready_sha256",
+        "target_allocation"
+      ],
+      "metadata": {},
+      "reference": {
+        "mtime": 1789493163.0327756,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/PUBLICATION.json",
+        "sha256": "b39b19f266b8be3fb9a2d9f43185f92fb772881b38500f9c07e324230f541402"
+      }
+    },
+    "READY.json": {
+      "keys": [
+        "base",
+        "config_sha256",
+        "context",
+        "continuation_authority",
+        "continuation_started_unix",
+        "cycles",
+        "files",
+        "hard_deadline_unix",
+        "lane",
+        "learned",
+        "lease_end_unix",
+        "lease_margin_seconds",
+        "max_gpu_hours",
+        "model_dir",
+        "native_cap",
+        "native_deadline_unix",
+        "no_quota_reset",
+        "output_cap",
+        "parent_cap",
+        "prepared_sha256",
+        "principles_sha256",
+        "provider_files",
+        "reflection_turns",
+        "started_unix",
+        "version"
+      ],
+      "metadata": {
+        "cycles": 256,
+        "hard_deadline_unix": 1789754400.0,
+        "learned": false,
+        "native_cap": 16384,
+        "parent_cap": 640
+      },
+      "reference": {
+        "mtime": 1789493116.6172204,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/READY.json",
+        "sha256": "955c7a27edbef65c65dc9a1c56faac69856bdad917844572885a0b9a2ed7632e"
+      }
+    },
+    "RECOVERY.json": {
+      "keys": [
+        "checkpoint",
+        "counters",
+        "document",
+        "first_cycle",
+        "lease_end_unix",
+        "no_ledger_reset",
+        "old_reservations",
+        "old_rows",
+        "original_pid",
+        "own_memory",
+        "partial_cycle_preserved_not_regenerated",
+        "pending_rows",
+        "previous_recipe",
+        "prior_root",
+        "recovery_source",
+        "relocation",
+        "source",
+        "uuid"
+      ],
+      "metadata": {},
+      "reference": {
+        "mtime": 1789493116.6302383,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/RECOVERY.json",
+        "sha256": "1088a041dccae7739f6e47e43c41a9cd84ba266ec2ef19d1d93e6cea51c0c310"
+      }
+    },
+    "RELEASE.json": {
+      "keys": [
+        "blocking_reasons",
+        "clear",
+        "compute_processes",
+        "created_utc",
+        "devices",
+        "gpu",
+        "host_sha256",
+        "processes",
+        "scanner_euid",
+        "service_sha256"
+      ],
+      "metadata": {},
+      "reference": {
+        "mtime": 1789501281.6670332,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/RELEASE.json",
+        "sha256": "9121140c07232c7e3a4be92c38dd6fc46cbe1e6be63c8285dea4ffb7a7e68110"
+      }
+    },
+    "STATUS.json": {
+      "keys": [
+        "hard_deadline_unix",
+        "held_episodes",
+        "native_completed",
+        "observed_unix",
+        "optimizer_updates",
+        "parent_completed",
+        "parent_missing",
+        "phase",
+        "pid",
+        "semantic_verified_changes",
+        "sleeps",
+        "train_episodes",
+        "train_segments",
+        "triples",
+        "uuid",
+        "version"
+      ],
+      "metadata": {
+        "hard_deadline_unix": 1789754400.0,
+        "held_episodes": 196,
+        "native_completed": 2005,
+        "observed_unix": 1789501110.6537418,
+        "optimizer_updates": 0,
+        "parent_completed": 77,
+        "parent_missing": 30,
+        "phase": "PARENT_METACOGNITION_CONVERSATION",
+        "pid": 774742,
+        "sleeps": 49,
+        "train_episodes": 104,
+        "train_segments": 711
+      },
+      "reference": {
+        "mtime": 1789501110.6538434,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/STATUS.json",
+        "sha256": "7db95deb36dc6e51a1907082cdf0220983b9ad81b67a6bba2bff7a958c516551"
+      }
+    },
+    "TERMINAL.json": {
+      "keys": [
+        "automatic_refill",
+        "finished_unix",
+        "status"
+      ],
+      "metadata": {
+        "finished_unix": 1789501280.1528041,
+        "status": "FAILED"
+      },
+      "reference": {
+        "mtime": 1789501280.152948,
+        "path": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7/TERMINAL.json",
+        "sha256": "d01b50ec2d98a5a152097c45d6d831140c854b727bee06c8861ce1fa57128fda"
+      }
+    }
+  },
+  "root": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2",
+  "runtime": "/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/lease_r120_v2/campaign_node1_7",
+  "schema": "R128_A40R0_READONLY_LIFECYCLE_V1",
+  "top_level_names": [
+    "ACTOR_READY.json",
+    "ADMISSION_000.json",
+    "CHECKPOINT_C41.json",
+    "CHECKPOINT_C42.json",
+    "CHECKPOINT_C43.json",
+    "CHECKPOINT_C44.json",
+    "CHECKPOINT_C45.json",
+    "CHECKPOINT_C46.json",
+    "CHECKPOINT_C47.json",
+    "CHECKPOINT_C48.json",
+    "CHECKPOINT_C49.json",
+    "CHECKPOINT_C50.json",
+    "CHECKPOINT_C51.json",
+    "FAILED.json",
+    "GUARDIAN_FAILED.json",
+    "GUARD_LAUNCH.json",
+    "LAUNCH.json",
+    "PARENT_00086.json",
+    "PARENT_00087.json",
+    "PARENT_00088.json",
+    "PARENT_00089.json",
+    "PARENT_00090.json",
+    "PARENT_00091.json",
+    "PARENT_00092.json",
+    "PARENT_00093.json",
+    "PARENT_00094.json",
+    "PARENT_00095.json",
+    "PARENT_00096.json",
+    "PARENT_00097.json",
+    "PARENT_00098.json",
+    "PARENT_00099.json",
+    "PARENT_00100.json",
+    "PARENT_00101.json",
+    "PARENT_00102.json",
+    "PARENT_00103.json",
+    "PARENT_00104.json",
+    "PARENT_00105.json",
+    "PARENT_00106.json",
+    "PARENT_00107.json",
+    "PARENT_00108.json",
+    "PARENT_00109.json",
+    "PARENT_00110.json",
+    "PUBLICATION.json",
+    "READY.json",
+    "RECOVERY.json",
+    "RELEASE.json",
+    "STATUS.json",
+    "TERMINAL.json",
+    "guardian.log",
+    "native.log"
+  ],
+  "wrapper": "a40r"
+}

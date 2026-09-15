@@ -1,5 +1,13 @@
 # Refusals and substitutions are different outcomes
 
+## Superseding disposition — September 15, 2026, 20:55 UTC
+
+The prospective safeguard-motivated model switch described below is withdrawn before activation. Do not automatically retry refused inputs, or route subsequent instances of the same blocked workflow to another model to avoid the safeguard. No prompt obfuscation, credential changes, or diagnostic provider probes are authorized. The head-parent configuration is unchanged.
+
+Preserve refusal envelopes, original request identity, charges and MISSING outcomes. A successful provider-served envelope is a distinct accounting observation, not proof that a refused request was usable or that the learner consumed it. Any existing successful substitution receipts keep their original model attribution; this update does not relabel historical evidence.
+
+The scoped non-material repair is explicit rejection of `stop_reason="refusal"`, even if other envelope fields misleadingly indicate success. Regression tests must establish that identity aliases or a substitute-model allowlist cannot turn refusal text into child-facing guidance. No new model configuration or GPU launch is part of that repair. The earlier prospective-model-choice section is retained below as superseded history, not operating authorization.
+
 September 15, 2026. This disposition uses existing captures only; no diagnostic provider calls were made.
 
 ## Verified distinction
