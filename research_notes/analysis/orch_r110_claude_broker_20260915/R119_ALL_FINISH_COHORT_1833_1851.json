@@ -1,0 +1,3367 @@
+{
+  "actions": {
+    "claim_retries": 0,
+    "credential_actions": 0,
+    "gpu_actions": 0,
+    "provider_calls": 0,
+    "source_changes": 0
+  },
+  "all_selected_hash_joins_valid": true,
+  "branches": [
+    {
+      "all_published": {
+        "COMPLETE": 2,
+        "MISSING": 0,
+        "SILENT": 0,
+        "UNKNOWN": 0
+      },
+      "application_scope": "Completed child capture hash joins for F1/F3/F4; F2 acceptance is not assumed to imply completed child application.",
+      "auth_errors": [],
+      "branch": "F1",
+      "config": {
+        "path": "/localhome/local-rohing/orch_r119_claude_auth_diagnostics_20260915_v2/F1/CONFIG.json",
+        "sha256": "f5b9bf6f253d482a09bf3462144c9fe1b1570c081e6d3fade14995ecb9c5ecfa"
+      },
+      "expired_unresolved_count": 0,
+      "finish_cohort_total": 2,
+      "first_complete": {
+        "application_receipt": {
+          "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/cycle_0013/TRIPLE_000735_000074_F1_C0012.json",
+          "sha256": "d2ff65459cc5f66db2405f2d452dcf0338e5d189fa5e93b273df3405a0531698"
+        },
+        "application_started_unix": 1789497957.860077,
+        "applied_to_completed_child_verified": true,
+        "child_capture": {
+          "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/cycle_0013/CALL_000735.json",
+          "sha256": "7e2078699d57e59d25c83aa7c5449105b6655ba8508e2444e16d8d7b0ad52a0e"
+        },
+        "cross_boundary": false,
+        "error": null,
+        "finished_unix": 1789497547.7371254,
+        "finished_utc": "2026-09-15T18:39:07.737125+00:00",
+        "id": "000074_F1_C0012",
+        "late": false,
+        "native_observed_status": "COMPLETE",
+        "native_observed_unix": 1789497957.8467712,
+        "native_observed_utc": "2026-09-15T18:45:57.846771+00:00",
+        "native_receipt": {
+          "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000074_F1_C0012.observed.json",
+          "sha256": "25102ddedb5b5dfeff10f5b5adb64753dc9ba7fb3bd2edb638c1ff57fd705b15"
+        },
+        "provider_elapsed_seconds": 14.325310863998311,
+        "publication_after_observation": false,
+        "publication_hash_join_valid": true,
+        "published_receipt": {
+          "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_claude/000074_F1_C0012.claim/PUBLISHED.json",
+          "sha256": "ff2e15dea5cdab0c335b076c1039787efdca3d43e568b3a1752465dec07a7d5a"
+        },
+        "published_unix": 1789497547.7551954,
+        "request": {
+          "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000074_F1_C0012.request.json",
+          "sha256": "f9aadd29c24ab828658e7c8c3cacf9428f2c576885f5b01eb799c449268c6767"
+        },
+        "request_response_join_valid": true,
+        "request_time_source": {
+          "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/R121_PARENT_DELIVERY/000074_F1_C0012.json",
+          "sha256": "9488d9f76667b46b59c08a562704c0060f82c9be16b8a919dae686f68e875003"
+        },
+        "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+        "request_to_finish_seconds": 15.83965253829956,
+        "requested_unix": 1789497531.8974729,
+        "requested_utc": "2026-09-15T18:38:51.897473+00:00",
+        "response": {
+          "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000074_F1_C0012.response.json",
+          "sha256": "7321e3ff8a9ffcf2ab9fe938af755cab455e7c42ca2a1d578d8b4ed72b61152f"
+        },
+        "status": "COMPLETE"
+      },
+      "live_pending_count": 0,
+      "missing_finished_time_unassigned": [],
+      "native_observed": {
+        "COMPLETE": 2
+      },
+      "pending_unfinished_separate_from_finish_cohort": [],
+      "queued_at_or_after_cut": {
+        "COMPLETE": 2,
+        "MISSING": 0,
+        "SILENT": 0,
+        "UNKNOWN": 0
+      },
+      "queued_before_cut": {
+        "COMPLETE": 0,
+        "MISSING": 0,
+        "SILENT": 0,
+        "UNKNOWN": 0
+      },
+      "rows": [
+        {
+          "application_receipt": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/cycle_0013/TRIPLE_000735_000074_F1_C0012.json",
+            "sha256": "d2ff65459cc5f66db2405f2d452dcf0338e5d189fa5e93b273df3405a0531698"
+          },
+          "application_started_unix": 1789497957.860077,
+          "applied_to_completed_child_verified": true,
+          "child_capture": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/cycle_0013/CALL_000735.json",
+            "sha256": "7e2078699d57e59d25c83aa7c5449105b6655ba8508e2444e16d8d7b0ad52a0e"
+          },
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497547.7371254,
+          "finished_utc": "2026-09-15T18:39:07.737125+00:00",
+          "id": "000074_F1_C0012",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497957.8467712,
+          "native_observed_utc": "2026-09-15T18:45:57.846771+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000074_F1_C0012.observed.json",
+            "sha256": "25102ddedb5b5dfeff10f5b5adb64753dc9ba7fb3bd2edb638c1ff57fd705b15"
+          },
+          "provider_elapsed_seconds": 14.325310863998311,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_claude/000074_F1_C0012.claim/PUBLISHED.json",
+            "sha256": "ff2e15dea5cdab0c335b076c1039787efdca3d43e568b3a1752465dec07a7d5a"
+          },
+          "published_unix": 1789497547.7551954,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000074_F1_C0012.request.json",
+            "sha256": "f9aadd29c24ab828658e7c8c3cacf9428f2c576885f5b01eb799c449268c6767"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/R121_PARENT_DELIVERY/000074_F1_C0012.json",
+            "sha256": "9488d9f76667b46b59c08a562704c0060f82c9be16b8a919dae686f68e875003"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 15.83965253829956,
+          "requested_unix": 1789497531.8974729,
+          "requested_utc": "2026-09-15T18:38:51.897473+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000074_F1_C0012.response.json",
+            "sha256": "7321e3ff8a9ffcf2ab9fe938af755cab455e7c42ca2a1d578d8b4ed72b61152f"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "application_receipt": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/cycle_0013/TRIPLE_000741_000075_F1_C0013.json",
+            "sha256": "e06a8db65a4629e11cf8d5225f804dbf3ba161d5962a017aca2a97e8fa5ef9b5"
+          },
+          "application_started_unix": 1789497982.028457,
+          "applied_to_completed_child_verified": true,
+          "child_capture": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/cycle_0013/CALL_000741.json",
+            "sha256": "9910f4ecd026285284c1e42ec296ec066ad7c348812b9bc708dd941466bb6aae"
+          },
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497979.4325767,
+          "finished_utc": "2026-09-15T18:46:19.432577+00:00",
+          "id": "000075_F1_C0013",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497982.0249562,
+          "native_observed_utc": "2026-09-15T18:46:22.024956+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000075_F1_C0013.observed.json",
+            "sha256": "5cdf9a0ad5ec87e18d008a093f852f025c3224348a53aa8162d8636b33408316"
+          },
+          "provider_elapsed_seconds": 13.256586822004465,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_claude/000075_F1_C0013.claim/PUBLISHED.json",
+            "sha256": "aee03452906f9744650b8e7388fb01f65fdefe719629c0ba8993728565d4770f"
+          },
+          "published_unix": 1789497979.4524527,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000075_F1_C0013.request.json",
+            "sha256": "744d049d906c70a64baca95620e1ed24290e21a89e79a4eb43dffff7fe3a90c1"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/R121_PARENT_DELIVERY/000075_F1_C0013.json",
+            "sha256": "d8c923841b00a4095c5a39bff3c8a212f90556989f37e7bb61fc9b33459c5dca"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 14.15550422668457,
+          "requested_unix": 1789497965.2770724,
+          "requested_utc": "2026-09-15T18:46:05.277072+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000075_F1_C0013.response.json",
+            "sha256": "270b0a07abb46fb17729c3bc77e4b131d275b93aa3b53819379ebfcde76799a0"
+          },
+          "status": "COMPLETE"
+        }
+      ],
+      "unknown_request_time": {
+        "COMPLETE": 0,
+        "MISSING": 0,
+        "SILENT": 0,
+        "UNKNOWN": 0
+      },
+      "verified_complete_applications": 2
+    },
+    {
+      "all_published": {
+        "COMPLETE": 2,
+        "MISSING": 0,
+        "SILENT": 0,
+        "UNKNOWN": 0
+      },
+      "application_scope": "Completed child capture hash joins for F1/F3/F4; F2 acceptance is not assumed to imply completed child application.",
+      "auth_errors": [],
+      "branch": "F2",
+      "config": {
+        "path": "/localhome/local-rohing/orch_r119_claude_auth_diagnostics_20260915_v2/F2/CONFIG.json",
+        "sha256": "2c08f19a0f20ca9707404b8bc9b4082b01028537aa03a998573f1ea1f0adb5ab"
+      },
+      "expired_unresolved_count": 0,
+      "finish_cohort_total": 2,
+      "first_complete": {
+        "applied_to_completed_child_verified": false,
+        "cross_boundary": false,
+        "error": null,
+        "finished_unix": 1789497758.1413665,
+        "finished_utc": "2026-09-15T18:42:38.141366+00:00",
+        "id": "R121_C000013_E0_experience",
+        "late": false,
+        "native_injected_before_phase": "reflection",
+        "native_observed_status": "COMPLETE",
+        "native_observed_unix": 1789497764.1747828,
+        "native_observed_utc": "2026-09-15T18:42:44.174783+00:00",
+        "native_receipt": {
+          "path": "/localhome/local-rohing/orch_math_feedback_uptake_r121_independent_20260915_attempt3/lane1/parent_delivered/R121_C000013_E0_experience.json",
+          "sha256": "2a915547edbec86473f7a76c2166cf2d1406d8c76acdf91d316cdd4b09302df8"
+        },
+        "pending_request_binding": {
+          "path": "/localhome/local-rohing/orch_math_feedback_uptake_r121_independent_20260915_attempt3/lane1/parent_pending/R121_C000013_E0_experience.json",
+          "sha256": "6065437da4a4e7f918736bcb4fc6abb5420d0a44f8d43df8779c716967f9eba7"
+        },
+        "provider_elapsed_seconds": 16.509965368997655,
+        "publication_after_observation": false,
+        "publication_hash_join_valid": true,
+        "published_receipt": {
+          "path": "/localhome/local-rohing/orch_math_feedback_uptake_r115_f2_20260915_attempt1/lane1/parent_claude/R121_C000013_E0_experience.claim/PUBLISHED.json",
+          "sha256": "01ec863b2502ae38fa49905d49d21eb6a83fd44bb86843ba80bdfcd5948798cd"
+        },
+        "published_unix": 1789497758.1602862,
+        "request": {
+          "path": "/localhome/local-rohing/orch_math_feedback_uptake_r115_f2_20260915_attempt1/lane1/parent_queue/R121_C000013_E0_experience.request.json",
+          "sha256": "2f44cf55144b386d8d721131f26a09f77458c0eed084d20b7791b233a9bee300"
+        },
+        "request_response_join_valid": true,
+        "request_time_source": {
+          "path": "/localhome/local-rohing/orch_math_feedback_uptake_r121_independent_20260915_attempt3/lane1/reservations/parent_00000065.json",
+          "sha256": "ccb13a7e33bae414d0d7021dd24c010d227da5357f13cfad42543d7a813a1a06"
+        },
+        "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+        "request_to_finish_seconds": 16.94391655921936,
+        "requested_unix": 1789497741.19745,
+        "requested_utc": "2026-09-15T18:42:21.197450+00:00",
+        "response": {
+          "path": "/localhome/local-rohing/orch_math_feedback_uptake_r115_f2_20260915_attempt1/lane1/parent_queue/R121_C000013_E0_experience.response.json",
+          "sha256": "4aed71eae50b7b0e3fe3bab32c6f3ef6817371ccd2c297dc2b0da562f1df47ba"
+        },
+        "status": "COMPLETE"
+      },
+      "live_pending_count": 0,
+      "missing_finished_time_unassigned": [],
+      "native_observed": {
+        "COMPLETE": 1,
+        "UNKNOWN": 1
+      },
+      "pending_unfinished_separate_from_finish_cohort": [],
+      "queued_at_or_after_cut": {
+        "COMPLETE": 2,
+        "MISSING": 0,
+        "SILENT": 0,
+        "UNKNOWN": 0
+      },
+      "queued_before_cut": {
+        "COMPLETE": 0,
+        "MISSING": 0,
+        "SILENT": 0,
+        "UNKNOWN": 0
+      },
+      "rows": [
+        {
+          "applied_to_completed_child_verified": false,
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497758.1413665,
+          "finished_utc": "2026-09-15T18:42:38.141366+00:00",
+          "id": "R121_C000013_E0_experience",
+          "late": false,
+          "native_injected_before_phase": "reflection",
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497764.1747828,
+          "native_observed_utc": "2026-09-15T18:42:44.174783+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_math_feedback_uptake_r121_independent_20260915_attempt3/lane1/parent_delivered/R121_C000013_E0_experience.json",
+            "sha256": "2a915547edbec86473f7a76c2166cf2d1406d8c76acdf91d316cdd4b09302df8"
+          },
+          "pending_request_binding": {
+            "path": "/localhome/local-rohing/orch_math_feedback_uptake_r121_independent_20260915_attempt3/lane1/parent_pending/R121_C000013_E0_experience.json",
+            "sha256": "6065437da4a4e7f918736bcb4fc6abb5420d0a44f8d43df8779c716967f9eba7"
+          },
+          "provider_elapsed_seconds": 16.509965368997655,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_math_feedback_uptake_r115_f2_20260915_attempt1/lane1/parent_claude/R121_C000013_E0_experience.claim/PUBLISHED.json",
+            "sha256": "01ec863b2502ae38fa49905d49d21eb6a83fd44bb86843ba80bdfcd5948798cd"
+          },
+          "published_unix": 1789497758.1602862,
+          "request": {
+            "path": "/localhome/local-rohing/orch_math_feedback_uptake_r115_f2_20260915_attempt1/lane1/parent_queue/R121_C000013_E0_experience.request.json",
+            "sha256": "2f44cf55144b386d8d721131f26a09f77458c0eed084d20b7791b233a9bee300"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_math_feedback_uptake_r121_independent_20260915_attempt3/lane1/reservations/parent_00000065.json",
+            "sha256": "ccb13a7e33bae414d0d7021dd24c010d227da5357f13cfad42543d7a813a1a06"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 16.94391655921936,
+          "requested_unix": 1789497741.19745,
+          "requested_utc": "2026-09-15T18:42:21.197450+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_math_feedback_uptake_r115_f2_20260915_attempt1/lane1/parent_queue/R121_C000013_E0_experience.response.json",
+            "sha256": "4aed71eae50b7b0e3fe3bab32c6f3ef6817371ccd2c297dc2b0da562f1df47ba"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "applied_to_completed_child_verified": false,
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497769.3809898,
+          "finished_utc": "2026-09-15T18:42:49.380990+00:00",
+          "id": "R121_C000013_E1_experience",
+          "late": false,
+          "native_observed_status": "UNKNOWN",
+          "pending_request_binding": {
+            "path": "/localhome/local-rohing/orch_math_feedback_uptake_r121_independent_20260915_attempt3/lane1/parent_pending/R121_C000013_E1_experience.json",
+            "sha256": "82ad75f81b8b4c10c494e50154cbc7c02b9c56665a8d010b2ce88529c8980760"
+          },
+          "provider_elapsed_seconds": 9.176702398995985,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_math_feedback_uptake_r115_f2_20260915_attempt1/lane1/parent_claude/R121_C000013_E1_experience.claim/PUBLISHED.json",
+            "sha256": "32140ca10fe2ee38558175b627e11b8e00d4e4339d195212d951fda882dae614"
+          },
+          "published_unix": 1789497769.3970644,
+          "request": {
+            "path": "/localhome/local-rohing/orch_math_feedback_uptake_r115_f2_20260915_attempt1/lane1/parent_queue/R121_C000013_E1_experience.request.json",
+            "sha256": "9f8a81a7be48a9b089c10b7d278197477ec39a2c74806e129731ff955f3b6285"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_math_feedback_uptake_r121_independent_20260915_attempt3/lane1/reservations/parent_00000066.json",
+            "sha256": "00bdbde2408b40fb248fd4a2293aa0c38fb19be636facccabaefcd257374808e"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 24.39665389060974,
+          "requested_unix": 1789497744.984336,
+          "requested_utc": "2026-09-15T18:42:24.984336+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_math_feedback_uptake_r115_f2_20260915_attempt1/lane1/parent_queue/R121_C000013_E1_experience.response.json",
+            "sha256": "9f6c919082e61c4026f981b0354d544099c8c7a783d7636a60d1e18efff277cd"
+          },
+          "status": "COMPLETE"
+        }
+      ],
+      "unknown_request_time": {
+        "COMPLETE": 0,
+        "MISSING": 0,
+        "SILENT": 0,
+        "UNKNOWN": 0
+      },
+      "verified_complete_applications": 0
+    },
+    {
+      "all_published": {
+        "COMPLETE": 23,
+        "MISSING": 15,
+        "SILENT": 0,
+        "UNKNOWN": 0
+      },
+      "application_scope": "Completed child capture hash joins for F1/F3/F4; F2 acceptance is not assumed to imply completed child application.",
+      "auth_errors": [],
+      "branch": "F3",
+      "config": {
+        "path": "/localhome/local-rohing/orch_r119_claude_auth_diagnostics_20260915_v2/F3/CONFIG.json",
+        "sha256": "7364c144e5018cc4f76f5a7904900c15255e786d841190da6ea9267491ff90fd"
+      },
+      "expired_unresolved_count": 0,
+      "finish_cohort_total": 38,
+      "first_complete": {
+        "application_started_unix": 1789497247.7325168,
+        "applied_to_completed_child_verified": true,
+        "child_capture": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C034_E0_ORIGINAL.json",
+          "sha256": "2047f39c1ddfe06de0b6bc8dab1e0b030c83f005d290ad7ca6ce7863d18b7bbb"
+        },
+        "cross_boundary": false,
+        "error": null,
+        "finished_unix": 1789497223.3087249,
+        "finished_utc": "2026-09-15T18:33:43.308725+00:00",
+        "id": "C033_E1_OPEN_PARENT",
+        "late": false,
+        "native_observed_status": "COMPLETE",
+        "native_observed_unix": 1789497247.7298875,
+        "native_observed_utc": "2026-09-15T18:34:07.729887+00:00",
+        "native_receipt": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C033_E1_OPEN_PARENT.json",
+          "sha256": "b5aeb2469e82417f4d24ef173cf33ae5724969b1547332ae87986259bb27e737"
+        },
+        "provider_elapsed_seconds": 16.63403911900241,
+        "publication_after_observation": false,
+        "publication_hash_join_valid": true,
+        "published_receipt": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C033_E1_OPEN_PARENT.claim/PUBLISHED.json",
+          "sha256": "d3528a1cd2b552ef1bbc2abb3da3941542875ed509a50f12dd92a37f97eb57ae"
+        },
+        "published_unix": 1789497223.325842,
+        "request": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C033_E1_OPEN_PARENT.request.json",
+          "sha256": "06414a02a2980e8fdfec7af7157cdf6334690cd9fcd845502ea1201ca2134db6"
+        },
+        "request_response_join_valid": true,
+        "request_time_source": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C033_E1_OPEN_PARENT.json",
+          "sha256": "b5aeb2469e82417f4d24ef173cf33ae5724969b1547332ae87986259bb27e737"
+        },
+        "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+        "request_to_finish_seconds": 17.59957218170166,
+        "requested_unix": 1789497205.7091527,
+        "requested_utc": "2026-09-15T18:33:25.709153+00:00",
+        "response": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C033_E1_OPEN_PARENT.response.json",
+          "sha256": "451fa8900e34257235526bf739fbdc9ad276f15b9b31cb4c77b68174096abaf8"
+        },
+        "status": "COMPLETE"
+      },
+      "live_pending_count": 2,
+      "missing_finished_time_unassigned": [],
+      "native_observed": {
+        "COMPLETE": 23,
+        "MISSING": 15
+      },
+      "pending_unfinished_separate_from_finish_cohort": [
+        {
+          "id": "C041_E1_PARENT",
+          "precut_by_artifact_mtime": false,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C041_E1_PARENT.request.json",
+            "sha256": "610431b68c33688c44f2abb14ebaeca004eef68bf2b860364230c0ccb09020d1"
+          },
+          "request_file_mtime": 1789498302.4803429,
+          "unresolved_expired": false
+        },
+        {
+          "id": "C041_E0_OPEN_PARENT",
+          "precut_by_artifact_mtime": false,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C041_E0_OPEN_PARENT.request.json",
+            "sha256": "9d311a59910f362175335e11827a5c544357ce811e1fcadbdf937ee9042ce944"
+          },
+          "request_file_mtime": 1789498301.1006851,
+          "unresolved_expired": false
+        }
+      ],
+      "queued_at_or_after_cut": {
+        "COMPLETE": 23,
+        "MISSING": 15,
+        "SILENT": 0,
+        "UNKNOWN": 0
+      },
+      "queued_before_cut": {
+        "COMPLETE": 0,
+        "MISSING": 0,
+        "SILENT": 0,
+        "UNKNOWN": 0
+      },
+      "rows": [
+        {
+          "application_started_unix": 1789497247.7325168,
+          "applied_to_completed_child_verified": true,
+          "child_capture": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C034_E0_ORIGINAL.json",
+            "sha256": "2047f39c1ddfe06de0b6bc8dab1e0b030c83f005d290ad7ca6ce7863d18b7bbb"
+          },
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497223.3087249,
+          "finished_utc": "2026-09-15T18:33:43.308725+00:00",
+          "id": "C033_E1_OPEN_PARENT",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497247.7298875,
+          "native_observed_utc": "2026-09-15T18:34:07.729887+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C033_E1_OPEN_PARENT.json",
+            "sha256": "b5aeb2469e82417f4d24ef173cf33ae5724969b1547332ae87986259bb27e737"
+          },
+          "provider_elapsed_seconds": 16.63403911900241,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C033_E1_OPEN_PARENT.claim/PUBLISHED.json",
+            "sha256": "d3528a1cd2b552ef1bbc2abb3da3941542875ed509a50f12dd92a37f97eb57ae"
+          },
+          "published_unix": 1789497223.325842,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C033_E1_OPEN_PARENT.request.json",
+            "sha256": "06414a02a2980e8fdfec7af7157cdf6334690cd9fcd845502ea1201ca2134db6"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C033_E1_OPEN_PARENT.json",
+            "sha256": "b5aeb2469e82417f4d24ef173cf33ae5724969b1547332ae87986259bb27e737"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 17.59957218170166,
+          "requested_unix": 1789497205.7091527,
+          "requested_utc": "2026-09-15T18:33:25.709153+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C033_E1_OPEN_PARENT.response.json",
+            "sha256": "451fa8900e34257235526bf739fbdc9ad276f15b9b31cb4c77b68174096abaf8"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "applied_to_completed_child_verified": false,
+          "cross_boundary": false,
+          "error": {
+            "code": "lane_guidance_limit_no_cropping",
+            "type": "ValueError"
+          },
+          "finished_unix": 1789497248.7187688,
+          "finished_utc": "2026-09-15T18:34:08.718769+00:00",
+          "id": "C033_META_PARENT",
+          "late": false,
+          "native_observed_status": "MISSING",
+          "native_observed_unix": 1789497251.5278986,
+          "native_observed_utc": "2026-09-15T18:34:11.527899+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C033_META_PARENT.json",
+            "sha256": "621205815540d9490b7adde0fa1522963473f0f36c222c24c24cb23a0cec5e88"
+          },
+          "provider_elapsed_seconds": 23.333652916000574,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C033_META_PARENT.claim/PUBLISHED.json",
+            "sha256": "1fcaff999ffbb6634d0e2e4d2c2e4a8f0fa4ef8716e6c502eb66ce87feb17921"
+          },
+          "published_unix": 1789497248.7372754,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C033_META_PARENT.request.json",
+            "sha256": "b6b59c55abf06cc4e86d61ec7bfd1bf93a757062a060295945f70f7e5355a56d"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C033_META_PARENT.json",
+            "sha256": "621205815540d9490b7adde0fa1522963473f0f36c222c24c24cb23a0cec5e88"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 32.641645193099976,
+          "requested_unix": 1789497216.0771236,
+          "requested_utc": "2026-09-15T18:33:36.077124+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C033_META_PARENT.response.json",
+            "sha256": "02e765d8d7e7528e2adf84dab4c57aa76fe4d4ccb8d210884ed0626a10c5f5c8"
+          },
+          "status": "MISSING"
+        },
+        {
+          "application_started_unix": 1789497272.1375244,
+          "applied_to_completed_child_verified": true,
+          "child_capture": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C034_E0_OPEN.json",
+            "sha256": "c72b36703e1b5d51cd7cde6d0abb1bb24f61c7505777bce10d073f1244d90f31"
+          },
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497263.1803598,
+          "finished_utc": "2026-09-15T18:34:23.180360+00:00",
+          "id": "C034_E0_PARENT",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497272.1357136,
+          "native_observed_utc": "2026-09-15T18:34:32.135714+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C034_E0_PARENT.json",
+            "sha256": "d8cffa65f67d6416abd840e9a982a085ac41cc08a847537d71ae0495ed33e3db"
+          },
+          "provider_elapsed_seconds": 10.371784374001436,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C034_E0_PARENT.claim/PUBLISHED.json",
+            "sha256": "4b3072159ddc95fa00f32a00e257e4aca41d9b2165ad88bac2c4dbd8edbdcacd"
+          },
+          "published_unix": 1789497263.197083,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C034_E0_PARENT.request.json",
+            "sha256": "6a56f02d7acf3bef97e1724f44c1772286b51c9dbdda55e86c2f24f714e27493"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C034_E0_PARENT.json",
+            "sha256": "d8cffa65f67d6416abd840e9a982a085ac41cc08a847537d71ae0495ed33e3db"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 11.651298522949219,
+          "requested_unix": 1789497251.5290613,
+          "requested_utc": "2026-09-15T18:34:11.529061+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C034_E0_PARENT.response.json",
+            "sha256": "bf25f583ae105cb9008acc0da72cb92d37bf153302181c79d9f66dceb83a7cc2"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "applied_to_completed_child_verified": false,
+          "cross_boundary": false,
+          "error": {
+            "code": "lane_guidance_limit_no_cropping",
+            "type": "ValueError"
+          },
+          "finished_unix": 1789497322.386856,
+          "finished_utc": "2026-09-15T18:35:22.386856+00:00",
+          "id": "C034_E0_OPEN_PARENT",
+          "late": false,
+          "native_observed_status": "MISSING",
+          "native_observed_unix": 1789497332.8388164,
+          "native_observed_utc": "2026-09-15T18:35:32.838816+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C034_E0_OPEN_PARENT.json",
+            "sha256": "1f00a16d0375e10bb2a28020037d81ee945316b0ca27be453b88969c9aa67428"
+          },
+          "provider_elapsed_seconds": 18.77654351700039,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C034_E0_OPEN_PARENT.claim/PUBLISHED.json",
+            "sha256": "514bb17914c03ca5c4416ace02aea7037c8ad61d58efdf63922de11d90f168ff"
+          },
+          "published_unix": 1789497322.4047678,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C034_E0_OPEN_PARENT.request.json",
+            "sha256": "3653989589540c0ef3c4deadb8a1183a4b83172e1bde20b48adca7ad1d29d60d"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C034_E0_OPEN_PARENT.json",
+            "sha256": "1f00a16d0375e10bb2a28020037d81ee945316b0ca27be453b88969c9aa67428"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 21.253363370895386,
+          "requested_unix": 1789497301.1334927,
+          "requested_utc": "2026-09-15T18:35:01.133493+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C034_E0_OPEN_PARENT.response.json",
+            "sha256": "2eef033b1c9e333865888c84522453aa9474ea0076033c7bdef76b76129a0b67"
+          },
+          "status": "MISSING"
+        },
+        {
+          "application_started_unix": 1789497372.3211558,
+          "applied_to_completed_child_verified": true,
+          "child_capture": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C035_E0_ORIGINAL.json",
+            "sha256": "0503750784e08ab07fbb8e45988d56861bc6b535fee13eb8d892d4837528dfed"
+          },
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497341.5575254,
+          "finished_utc": "2026-09-15T18:35:41.557525+00:00",
+          "id": "C034_E1_PARENT",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497372.3180737,
+          "native_observed_utc": "2026-09-15T18:36:12.318074+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C034_E1_PARENT.json",
+            "sha256": "18116a958e7c0dec0f1546b541bcb75354a11f235aa90f70415811494aa83fc8"
+          },
+          "provider_elapsed_seconds": 17.097752114998002,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C034_E1_PARENT.claim/PUBLISHED.json",
+            "sha256": "5197f7986ea5f632bf6c676087a2d18a9b70676f0a78a353f85fcf7a81a67c61"
+          },
+          "published_unix": 1789497341.5758557,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C034_E1_PARENT.request.json",
+            "sha256": "dc7b28fa0857f1256b3b2ff7e91c11e0792d9a67495fb3c79ba43b51ccb3bce0"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C034_E1_PARENT.json",
+            "sha256": "18116a958e7c0dec0f1546b541bcb75354a11f235aa90f70415811494aa83fc8"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 37.88155651092529,
+          "requested_unix": 1789497303.675969,
+          "requested_utc": "2026-09-15T18:35:03.675969+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C034_E1_PARENT.response.json",
+            "sha256": "1fab01e3c01b0e3476c9aa9b1ebd1395abfc855155754bfdcaa5904dfc8c8473"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "applied_to_completed_child_verified": false,
+          "cross_boundary": false,
+          "error": {
+            "code": "lane_guidance_limit_no_cropping",
+            "type": "ValueError"
+          },
+          "finished_unix": 1789497360.6081696,
+          "finished_utc": "2026-09-15T18:36:00.608170+00:00",
+          "id": "C034_E1_OPEN_PARENT",
+          "late": false,
+          "native_observed_status": "MISSING",
+          "native_observed_unix": 1789497372.3180737,
+          "native_observed_utc": "2026-09-15T18:36:12.318074+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C034_E1_OPEN_PARENT.json",
+            "sha256": "e8e700b253948952f53bdc116512208908125bc78c745904bd733f294f706528"
+          },
+          "provider_elapsed_seconds": 16.97832826800004,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C034_E1_OPEN_PARENT.claim/PUBLISHED.json",
+            "sha256": "3042af046688f07d6433920f3ea93bd28baba29223257df967fe118cda20bc1e"
+          },
+          "published_unix": 1789497360.6239693,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C034_E1_OPEN_PARENT.request.json",
+            "sha256": "887d66933ac367c5bf9d760c3a264902b0be26ff325bc01e473bea564a3b9eb2"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C034_E1_OPEN_PARENT.json",
+            "sha256": "e8e700b253948952f53bdc116512208908125bc78c745904bd733f294f706528"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 27.768244743347168,
+          "requested_unix": 1789497332.8399248,
+          "requested_utc": "2026-09-15T18:35:32.839925+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C034_E1_OPEN_PARENT.response.json",
+            "sha256": "661c14fd05de9a53cebae0c5024e0e79c5d1f55657ed3c74424e396dd532f4fb"
+          },
+          "status": "MISSING"
+        },
+        {
+          "applied_to_completed_child_verified": false,
+          "cross_boundary": false,
+          "error": {
+            "code": "lane_guidance_limit_no_cropping",
+            "type": "ValueError"
+          },
+          "finished_unix": 1789497378.8408487,
+          "finished_utc": "2026-09-15T18:36:18.840849+00:00",
+          "id": "C034_META_PARENT",
+          "late": false,
+          "native_observed_status": "MISSING",
+          "native_observed_unix": 1789497385.9235637,
+          "native_observed_utc": "2026-09-15T18:36:25.923564+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C034_META_PARENT.json",
+            "sha256": "838130075bd25ae5c69b91ca9f10ba8f86f1e0d6ac6ee6bf6109238d749600e3"
+          },
+          "provider_elapsed_seconds": 18.175449069000024,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C034_META_PARENT.claim/PUBLISHED.json",
+            "sha256": "4c675a0156caee43d83cf9ab13f1c682f8227ec5bea584b692c995ce12d888ad"
+          },
+          "published_unix": 1789497378.8570187,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C034_META_PARENT.request.json",
+            "sha256": "39aee41a785228533eff957b6bd40351d8182fa74d90730a4294f3b870f216e3"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C034_META_PARENT.json",
+            "sha256": "838130075bd25ae5c69b91ca9f10ba8f86f1e0d6ac6ee6bf6109238d749600e3"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 38.238720655441284,
+          "requested_unix": 1789497340.602128,
+          "requested_utc": "2026-09-15T18:35:40.602128+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C034_META_PARENT.response.json",
+            "sha256": "7c83e29f06aa3e52645adcf60b71871a52afa6ac241168c1e7906bda14adea2a"
+          },
+          "status": "MISSING"
+        },
+        {
+          "applied_to_completed_child_verified": false,
+          "cross_boundary": false,
+          "error": {
+            "code": "parent_tag_class",
+            "type": "ValueError"
+          },
+          "finished_unix": 1789497403.684873,
+          "finished_utc": "2026-09-15T18:36:43.684873+00:00",
+          "id": "C035_E0_PARENT",
+          "late": false,
+          "native_observed_status": "MISSING",
+          "native_observed_unix": 1789497405.0842614,
+          "native_observed_utc": "2026-09-15T18:36:45.084261+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C035_E0_PARENT.json",
+            "sha256": "59acb95ec5eab95d51ce511a1bb6547a7430ba46562c6925f3481557f7d7f0a1"
+          },
+          "provider_elapsed_seconds": 16.71816969700012,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C035_E0_PARENT.claim/PUBLISHED.json",
+            "sha256": "a0ddb45fba976af92dd570f18f08049b6f929831a2de04ee8060b2b7829ac45b"
+          },
+          "published_unix": 1789497403.7008202,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C035_E0_PARENT.request.json",
+            "sha256": "bd7408e41aedda6223fd9efcbe1815f75540055ca811387c71dc068d74fec2ea"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C035_E0_PARENT.json",
+            "sha256": "59acb95ec5eab95d51ce511a1bb6547a7430ba46562c6925f3481557f7d7f0a1"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 17.760223388671875,
+          "requested_unix": 1789497385.9246497,
+          "requested_utc": "2026-09-15T18:36:25.924650+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C035_E0_PARENT.response.json",
+            "sha256": "a2e4ad564345715a382161d90963e1939c880f87db7d996ae5b371f0dbb42611"
+          },
+          "status": "MISSING"
+        },
+        {
+          "application_started_unix": 1789497447.674878,
+          "applied_to_completed_child_verified": true,
+          "child_capture": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C035_E1_OPEN.json",
+            "sha256": "137546b4ca91cb7089b8df88f7bb08791dad3045d0bb5074ef9eef6386a2e683"
+          },
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497445.2062626,
+          "finished_utc": "2026-09-15T18:37:25.206263+00:00",
+          "id": "C035_E0_OPEN_PARENT",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497447.6726613,
+          "native_observed_utc": "2026-09-15T18:37:27.672661+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C035_E0_OPEN_PARENT.json",
+            "sha256": "7597bbf06a20f97634192f1e497efa6cf9153a52c1b949ed0fa85e4f49100402"
+          },
+          "provider_elapsed_seconds": 17.292664758002502,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C035_E0_OPEN_PARENT.claim/PUBLISHED.json",
+            "sha256": "555ee3f368c725cc5b80bf0a0661391c4bc9257f7a72685a0b17561f8b696ae8"
+          },
+          "published_unix": 1789497445.2228117,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C035_E0_OPEN_PARENT.request.json",
+            "sha256": "26697ef88c8453c6db3a0ed0638338215acb3e0f502fbfe2dafdeb4d52121882"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C035_E0_OPEN_PARENT.json",
+            "sha256": "7597bbf06a20f97634192f1e497efa6cf9153a52c1b949ed0fa85e4f49100402"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 18.195815086364746,
+          "requested_unix": 1789497427.0104475,
+          "requested_utc": "2026-09-15T18:37:07.010448+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C035_E0_OPEN_PARENT.response.json",
+            "sha256": "830113e787cd08eb2ca47a6f1394e7981ef2621ddb2888c17994a40bbbf630d6"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "application_started_unix": 1789497469.5364268,
+          "applied_to_completed_child_verified": true,
+          "child_capture": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C035_META.json",
+            "sha256": "2b5677f0c6893c798f980a8363c0ed71ec70de005728ad471b12116c56ce0963"
+          },
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497464.838307,
+          "finished_utc": "2026-09-15T18:37:44.838307+00:00",
+          "id": "C035_E1_PARENT",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497469.1891844,
+          "native_observed_utc": "2026-09-15T18:37:49.189184+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C035_E1_PARENT.json",
+            "sha256": "75ea381da8780f5dd299caf30b29bfa051788af412058b839be24825d718038c"
+          },
+          "provider_elapsed_seconds": 17.55898730899935,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C035_E1_PARENT.claim/PUBLISHED.json",
+            "sha256": "7df818bbd2da355eb10abf548f76a1565ba5da20d5ba30d54ba66fb467fd457b"
+          },
+          "published_unix": 1789497464.848566,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C035_E1_PARENT.request.json",
+            "sha256": "1429aede7ca446aeb04c3131b741bee6f0f8f8260f1ab1611d003ba5533088dd"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C035_E1_PARENT.json",
+            "sha256": "75ea381da8780f5dd299caf30b29bfa051788af412058b839be24825d718038c"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 35.73398423194885,
+          "requested_unix": 1789497429.1043227,
+          "requested_utc": "2026-09-15T18:37:09.104323+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C035_E1_PARENT.response.json",
+            "sha256": "3e694550ad32258c9720cec719620d711fa521781b07dc7306c301e661179dc9"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "applied_to_completed_child_verified": false,
+          "cross_boundary": false,
+          "error": {
+            "code": "lane_guidance_limit_no_cropping",
+            "type": "ValueError"
+          },
+          "finished_unix": 1789497493.7618046,
+          "finished_utc": "2026-09-15T18:38:13.761805+00:00",
+          "id": "C035_E1_OPEN_PARENT",
+          "late": false,
+          "native_observed_status": "MISSING",
+          "native_observed_unix": 1789497513.6629603,
+          "native_observed_utc": "2026-09-15T18:38:33.662960+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C035_E1_OPEN_PARENT.json",
+            "sha256": "0d3886b92d0078f52d6823f6818f660cc4aaea8499c05b5a718e59a7c53e35b7"
+          },
+          "provider_elapsed_seconds": 22.818890451002517,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C035_E1_OPEN_PARENT.claim/PUBLISHED.json",
+            "sha256": "c918648de5cf7ba35e3fa73db5f59e1f871a95a7e5b613ace9884308edece36f"
+          },
+          "published_unix": 1789497493.779946,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C035_E1_OPEN_PARENT.request.json",
+            "sha256": "dbc1df04b80ae36c1f539dcb7761eb07af35c3a6f48b063fd8d6bb0245d170cb"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C035_E1_OPEN_PARENT.json",
+            "sha256": "0d3886b92d0078f52d6823f6818f660cc4aaea8499c05b5a718e59a7c53e35b7"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 24.57110285758972,
+          "requested_unix": 1789497469.1907017,
+          "requested_utc": "2026-09-15T18:37:49.190702+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C035_E1_OPEN_PARENT.response.json",
+            "sha256": "43642532cf45449dc4dac2564f2f02f51244941b68b05b6d3719cae41688a098"
+          },
+          "status": "MISSING"
+        },
+        {
+          "application_started_unix": 1789497513.6668787,
+          "applied_to_completed_child_verified": true,
+          "child_capture": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C036_E0_ORIGINAL.json",
+            "sha256": "25436d05d87d659aaf665f9d8fcff81121be8cba94b46c0a07c4e27671787ce7"
+          },
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497512.6455426,
+          "finished_utc": "2026-09-15T18:38:32.645543+00:00",
+          "id": "C035_META_PARENT",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497513.6629603,
+          "native_observed_utc": "2026-09-15T18:38:33.662960+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C035_META_PARENT.json",
+            "sha256": "4d9468357a0bf380e68edb2aa0a5ddfb3946dbef65ed4d55cae8a2ce490427a1"
+          },
+          "provider_elapsed_seconds": 16.802749237998796,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C035_META_PARENT.claim/PUBLISHED.json",
+            "sha256": "6c82d660e6c8d82367eab83f1a13755af81cfbe9e31401d84a5a5d8debf91a0d"
+          },
+          "published_unix": 1789497512.6637318,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C035_META_PARENT.request.json",
+            "sha256": "e5445b030c084d9c214f80170a092cfdd8a3b342010271c31f2c9be4a2ab1cc9"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C035_META_PARENT.json",
+            "sha256": "4d9468357a0bf380e68edb2aa0a5ddfb3946dbef65ed4d55cae8a2ce490427a1"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 30.44193172454834,
+          "requested_unix": 1789497482.203611,
+          "requested_utc": "2026-09-15T18:38:02.203611+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C035_META_PARENT.response.json",
+            "sha256": "671d2df8c6ad948a6d625394309a263241c678deaf2ee2607c3f3fb3484e23c0"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "application_started_unix": 1789497555.264547,
+          "applied_to_completed_child_verified": true,
+          "child_capture": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C036_E0_OPEN.json",
+            "sha256": "5758a647e531d3644453c47cb39e80abb555a4ad4b86a86f2351e3671ea3b2df"
+          },
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497543.3202662,
+          "finished_utc": "2026-09-15T18:39:03.320266+00:00",
+          "id": "C036_E0_PARENT",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497555.262579,
+          "native_observed_utc": "2026-09-15T18:39:15.262579+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C036_E0_PARENT.json",
+            "sha256": "49facfb11063c7cf04937b27162425fb84c5b42523c75fb42fded87bb1110be3"
+          },
+          "provider_elapsed_seconds": 14.467263446000288,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C036_E0_PARENT.claim/PUBLISHED.json",
+            "sha256": "3ff6f6d8c8142070fc3d00b767775e1c8e370d83a1e7f8e7d06644e8368134d9"
+          },
+          "published_unix": 1789497543.3382697,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C036_E0_PARENT.request.json",
+            "sha256": "11a518375a093940a783e3ef573c826da162c63cb6feed2ee6dbf81999c805f5"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C036_E0_PARENT.json",
+            "sha256": "49facfb11063c7cf04937b27162425fb84c5b42523c75fb42fded87bb1110be3"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 15.228734970092773,
+          "requested_unix": 1789497528.0915313,
+          "requested_utc": "2026-09-15T18:38:48.091531+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C036_E0_PARENT.response.json",
+            "sha256": "e248ed7b2e4a46c014a4306c8cc75e5b41bd4867183ed7888a6eb5da1559eaa6"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "applied_to_completed_child_verified": false,
+          "cross_boundary": false,
+          "error": {
+            "code": "lane_guidance_limit_no_cropping",
+            "type": "ValueError"
+          },
+          "finished_unix": 1789497598.608535,
+          "finished_utc": "2026-09-15T18:39:58.608535+00:00",
+          "id": "C036_E0_OPEN_PARENT",
+          "late": false,
+          "native_observed_status": "MISSING",
+          "native_observed_unix": 1789497599.1052856,
+          "native_observed_utc": "2026-09-15T18:39:59.105286+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C036_E0_OPEN_PARENT.json",
+            "sha256": "685e2bbb48c39e4f56bef9f0cb372178f16ae93b67ddb9b201e019a14926c22c"
+          },
+          "provider_elapsed_seconds": 16.84432681099861,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C036_E0_OPEN_PARENT.claim/PUBLISHED.json",
+            "sha256": "edcc34c0eb71767c69a557237ee7fb2fd18e7fb9a9ff5858bc850d2b41d09909"
+          },
+          "published_unix": 1789497598.6246178,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C036_E0_OPEN_PARENT.request.json",
+            "sha256": "753ef5d23d76f6255963e0886a76f5e145f848256b10805191ede0a8a04145ab"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C036_E0_OPEN_PARENT.json",
+            "sha256": "685e2bbb48c39e4f56bef9f0cb372178f16ae93b67ddb9b201e019a14926c22c"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 18.237805128097534,
+          "requested_unix": 1789497580.37073,
+          "requested_utc": "2026-09-15T18:39:40.370730+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C036_E0_OPEN_PARENT.response.json",
+            "sha256": "b5fff5017f762a3e416229dd8e523e9c3cc1e4d9941e07f35e035892889cd5ae"
+          },
+          "status": "MISSING"
+        },
+        {
+          "application_started_unix": 1789497618.3509014,
+          "applied_to_completed_child_verified": true,
+          "child_capture": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C036_META.json",
+            "sha256": "17cbc72872e2df0bc7a309b181c09d64820760c54492c545edb8a9ee912ebedd"
+          },
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497612.623829,
+          "finished_utc": "2026-09-15T18:40:12.623829+00:00",
+          "id": "C036_E1_PARENT",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497618.0040052,
+          "native_observed_utc": "2026-09-15T18:40:18.004005+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C036_E1_PARENT.json",
+            "sha256": "4339e7ff15907979709f1adb02866ca0ef6592e68e124858385ca79012a6eb8c"
+          },
+          "provider_elapsed_seconds": 11.939242328997352,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C036_E1_PARENT.claim/PUBLISHED.json",
+            "sha256": "cfeedac13fb9613f3e7de9f49fe5ae608f06afa68eb1b9b3ce0987739d1f53bb"
+          },
+          "published_unix": 1789497612.6406894,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C036_E1_PARENT.request.json",
+            "sha256": "77c125c8b789b8f0e95df35d17bd32ec2936e06c3aa2c04c4f75515e4e0f45d9"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C036_E1_PARENT.json",
+            "sha256": "4339e7ff15907979709f1adb02866ca0ef6592e68e124858385ca79012a6eb8c"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 30.504500150680542,
+          "requested_unix": 1789497582.1193287,
+          "requested_utc": "2026-09-15T18:39:42.119329+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C036_E1_PARENT.response.json",
+            "sha256": "66655afbce0c6e7206dceae9be0ef217223ac94906ffcbdae8f6289c1d468e84"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "applied_to_completed_child_verified": false,
+          "cross_boundary": false,
+          "error": {
+            "code": "lane_guidance_limit_no_cropping",
+            "type": "ValueError"
+          },
+          "finished_unix": 1789497634.6311567,
+          "finished_utc": "2026-09-15T18:40:34.631157+00:00",
+          "id": "C036_E1_OPEN_PARENT",
+          "late": false,
+          "native_observed_status": "MISSING",
+          "native_observed_unix": 1789497638.6660316,
+          "native_observed_utc": "2026-09-15T18:40:38.666032+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C036_E1_OPEN_PARENT.json",
+            "sha256": "5b0b49e1d4abe451c093ed8f57fd1a6fe9aa1861bd549def571b67e83949ba06"
+          },
+          "provider_elapsed_seconds": 15.890369865002867,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C036_E1_OPEN_PARENT.claim/PUBLISHED.json",
+            "sha256": "b5e2d0731d95ee099ce653f819c3a15d6358e4f9463651fbb7645d3c0536e458"
+          },
+          "published_unix": 1789497634.6423135,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C036_E1_OPEN_PARENT.request.json",
+            "sha256": "b3f84a1d760183182677753689950797de415c15bb6e7dd8a40a38adf4346674"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C036_E1_OPEN_PARENT.json",
+            "sha256": "5b0b49e1d4abe451c093ed8f57fd1a6fe9aa1861bd549def571b67e83949ba06"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 16.62563419342041,
+          "requested_unix": 1789497618.0055225,
+          "requested_utc": "2026-09-15T18:40:18.005522+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C036_E1_OPEN_PARENT.response.json",
+            "sha256": "7c6a67e228ca8da07afdc26bd34e6465150bfc9ac6d57750469760ac3d296c2b"
+          },
+          "status": "MISSING"
+        },
+        {
+          "applied_to_completed_child_verified": false,
+          "cross_boundary": false,
+          "error": {
+            "code": "lane_guidance_limit_no_cropping",
+            "type": "ValueError"
+          },
+          "finished_unix": 1789497659.8661711,
+          "finished_utc": "2026-09-15T18:40:59.866171+00:00",
+          "id": "C036_META_PARENT",
+          "late": false,
+          "native_observed_status": "MISSING",
+          "native_observed_unix": 1789497670.6841896,
+          "native_observed_utc": "2026-09-15T18:41:10.684190+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C036_META_PARENT.json",
+            "sha256": "c0a170a712bc9319b9016631b84b89a6cace89bbfaf737deba4eedc59d57f606"
+          },
+          "provider_elapsed_seconds": 19.127666678003152,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C036_META_PARENT.claim/PUBLISHED.json",
+            "sha256": "4d5f3a127b32848be8b1d65c2d195716577d90fa4d0a682dcf1e75012a4dd8bb"
+          },
+          "published_unix": 1789497659.8757305,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C036_META_PARENT.request.json",
+            "sha256": "9adfb5c0cb61de22ab43bfbb4c0f0d5f26332a248a6dce39f5c4938e2f93897f"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C036_META_PARENT.json",
+            "sha256": "c0a170a712bc9319b9016631b84b89a6cace89bbfaf737deba4eedc59d57f606"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 21.199079751968384,
+          "requested_unix": 1789497638.6670914,
+          "requested_utc": "2026-09-15T18:40:38.667091+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C036_META_PARENT.response.json",
+            "sha256": "5add6f7fb02d8b75e6886c7510f1c660f6d63ed06969eb2f177eed5a06805cd3"
+          },
+          "status": "MISSING"
+        },
+        {
+          "application_started_unix": 1789497707.7502766,
+          "applied_to_completed_child_verified": true,
+          "child_capture": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C037_E0_OPEN.json",
+            "sha256": "c75a1a9ce0d0ba154ca575af94ed425291a63bccf0e6f78f321940b3f55a4fce"
+          },
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497688.3004968,
+          "finished_utc": "2026-09-15T18:41:28.300497+00:00",
+          "id": "C037_E0_PARENT",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497707.748231,
+          "native_observed_utc": "2026-09-15T18:41:47.748231+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C037_E0_PARENT.json",
+            "sha256": "ba846a2b971aeed1f7d79b3d2d81be2d3dc2e1d0f215c4247df6ffef4f6c5893"
+          },
+          "provider_elapsed_seconds": 14.247359713997866,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C037_E0_PARENT.claim/PUBLISHED.json",
+            "sha256": "02354b7196efd185ceaf676cb2119cce17169cde0b1f41aa490bc0a4ff930571"
+          },
+          "published_unix": 1789497688.3188293,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C037_E0_PARENT.request.json",
+            "sha256": "d16c943f38b58bffd14c9c78ceba57f7904eceb96a242d0f1c528f4056d7ec85"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C037_E0_PARENT.json",
+            "sha256": "ba846a2b971aeed1f7d79b3d2d81be2d3dc2e1d0f215c4247df6ffef4f6c5893"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 15.829408407211304,
+          "requested_unix": 1789497672.4710884,
+          "requested_utc": "2026-09-15T18:41:12.471088+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C037_E0_PARENT.response.json",
+            "sha256": "a8ba57a3c6698e46ca20679f78cef77e333b51a30d9c0b0dbbcf16f67f6e0e84"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "applied_to_completed_child_verified": false,
+          "cross_boundary": false,
+          "error": {
+            "code": "lane_guidance_limit_no_cropping",
+            "type": "ValueError"
+          },
+          "finished_unix": 1789497761.0533166,
+          "finished_utc": "2026-09-15T18:42:41.053317+00:00",
+          "id": "C037_E0_OPEN_PARENT",
+          "late": false,
+          "native_observed_status": "MISSING",
+          "native_observed_unix": 1789497764.1511946,
+          "native_observed_utc": "2026-09-15T18:42:44.151195+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C037_E0_OPEN_PARENT.json",
+            "sha256": "203550b1d2ad7a11a7bde2a6ae004c12a95768a241ac20e752f464fba813421f"
+          },
+          "provider_elapsed_seconds": 18.1337267409981,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C037_E0_OPEN_PARENT.claim/PUBLISHED.json",
+            "sha256": "d15eabbac7feaf8de0a3303e94bec8e3d19856647ea29f7cd4d7b2eef3f2a414"
+          },
+          "published_unix": 1789497761.0688615,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C037_E0_OPEN_PARENT.request.json",
+            "sha256": "7d71e04c4f0024b4defacbc816053098c981a9a5c272b6e5b37611835fb6d299"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C037_E0_OPEN_PARENT.json",
+            "sha256": "203550b1d2ad7a11a7bde2a6ae004c12a95768a241ac20e752f464fba813421f"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 19.276348114013672,
+          "requested_unix": 1789497741.7769685,
+          "requested_utc": "2026-09-15T18:42:21.776968+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C037_E0_OPEN_PARENT.response.json",
+            "sha256": "9b8e2d0b1b19aa47126113aa7f22a16ff5d74b58f0f80c46054e9be1e6a48028"
+          },
+          "status": "MISSING"
+        },
+        {
+          "application_started_unix": 1789497780.7559974,
+          "applied_to_completed_child_verified": true,
+          "child_capture": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C037_META.json",
+            "sha256": "ce7ce3db8523c9f821866cd60a40b773888b9b69f00aebc264e455839c6529b2"
+          },
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497778.3482707,
+          "finished_utc": "2026-09-15T18:42:58.348271+00:00",
+          "id": "C037_E1_PARENT",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497780.2428634,
+          "native_observed_utc": "2026-09-15T18:43:00.242863+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C037_E1_PARENT.json",
+            "sha256": "f1e16ab169a11a683e1cebbf7b63eaac675c211dc764073e03f9c2fbfe0211d0"
+          },
+          "provider_elapsed_seconds": 15.221184904003167,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C037_E1_PARENT.claim/PUBLISHED.json",
+            "sha256": "bf0c6d593b87469c81c15c63df07562790510ce2d81999860df57cdf712f02f6"
+          },
+          "published_unix": 1789497778.3648713,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C037_E1_PARENT.request.json",
+            "sha256": "ece3987499f6dfaf0044fa1161de6b144b3cc73a421b6605be44e98164ef380e"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C037_E1_PARENT.json",
+            "sha256": "f1e16ab169a11a683e1cebbf7b63eaac675c211dc764073e03f9c2fbfe0211d0"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 33.549344539642334,
+          "requested_unix": 1789497744.798926,
+          "requested_utc": "2026-09-15T18:42:24.798926+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C037_E1_PARENT.response.json",
+            "sha256": "097c99e338a26705672268ad87a19608db7b01f277cf7d1cab5a2230c0ed7c18"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "applied_to_completed_child_verified": false,
+          "cross_boundary": false,
+          "error": {
+            "code": "lane_guidance_limit_no_cropping",
+            "type": "ValueError"
+          },
+          "finished_unix": 1789497798.4180498,
+          "finished_utc": "2026-09-15T18:43:18.418050+00:00",
+          "id": "C037_E1_OPEN_PARENT",
+          "late": false,
+          "native_observed_status": "MISSING",
+          "native_observed_unix": 1789497809.0038633,
+          "native_observed_utc": "2026-09-15T18:43:29.003863+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C037_E1_OPEN_PARENT.json",
+            "sha256": "0615574c7a8fb8be56ce52302a2aaa28790c86d9dc4e6cb45a3f75e7990dd872"
+          },
+          "provider_elapsed_seconds": 15.985491111998272,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C037_E1_OPEN_PARENT.claim/PUBLISHED.json",
+            "sha256": "8c009b576fe89c781fc380934ede12287d9d6ab8ea387275c0f562be5ecc254c"
+          },
+          "published_unix": 1789497798.4343545,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C037_E1_OPEN_PARENT.request.json",
+            "sha256": "08b3bb011c6f2a097aa5b00966fbbe5b6fa53b2576d8f92cad491a2ae952045b"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C037_E1_OPEN_PARENT.json",
+            "sha256": "0615574c7a8fb8be56ce52302a2aaa28790c86d9dc4e6cb45a3f75e7990dd872"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 18.173622369766235,
+          "requested_unix": 1789497780.2444274,
+          "requested_utc": "2026-09-15T18:43:00.244427+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C037_E1_OPEN_PARENT.response.json",
+            "sha256": "81f4c6f10319b56ddbc29996a9504ef85a50cfeaeb68f97f3f1c465a42e45d74"
+          },
+          "status": "MISSING"
+        },
+        {
+          "applied_to_completed_child_verified": false,
+          "cross_boundary": false,
+          "error": {
+            "code": "lane_guidance_limit_no_cropping",
+            "type": "ValueError"
+          },
+          "finished_unix": 1789497834.8529174,
+          "finished_utc": "2026-09-15T18:43:54.852917+00:00",
+          "id": "C037_META_PARENT",
+          "late": false,
+          "native_observed_status": "MISSING",
+          "native_observed_unix": 1789497840.7880535,
+          "native_observed_utc": "2026-09-15T18:44:00.788054+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C037_META_PARENT.json",
+            "sha256": "7f207b174cdfeffe8e7d94fb16aabc8768339c1b537c94c461d4994b1470e930"
+          },
+          "provider_elapsed_seconds": 24.251084631003323,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C037_META_PARENT.claim/PUBLISHED.json",
+            "sha256": "b4a911982e5a5aa9515040f07cc824f078b4521875e311e1a5a5b501e44b6e62"
+          },
+          "published_unix": 1789497834.8702347,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C037_META_PARENT.request.json",
+            "sha256": "8bb16209a9746cf1183ef82cb233d4d3145fa38409c44d52ad46cbf891fc8a50"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C037_META_PARENT.json",
+            "sha256": "7f207b174cdfeffe8e7d94fb16aabc8768339c1b537c94c461d4994b1470e930"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 25.847900867462158,
+          "requested_unix": 1789497809.0050166,
+          "requested_utc": "2026-09-15T18:43:29.005017+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C037_META_PARENT.response.json",
+            "sha256": "94dd69b8113ea35a0aa337bac34ec3cac3299a0b1da5fc20cb89026c33a8b24e"
+          },
+          "status": "MISSING"
+        },
+        {
+          "application_started_unix": 1789497862.1078746,
+          "applied_to_completed_child_verified": true,
+          "child_capture": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C038_E0_OPEN.json",
+            "sha256": "9c2d4e2c6d7e5dbfe428e8afa9b230ea81f1feae9873ba9567065560896b3e07"
+          },
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497854.4182105,
+          "finished_utc": "2026-09-15T18:44:14.418211+00:00",
+          "id": "C038_E0_PARENT",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497862.1056147,
+          "native_observed_utc": "2026-09-15T18:44:22.105615+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C038_E0_PARENT.json",
+            "sha256": "7468d2830ee4ddd8b6dc44ec0d345dea90a98a19f4cd439c03fe86c73d614699"
+          },
+          "provider_elapsed_seconds": 11.426819473002979,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C038_E0_PARENT.claim/PUBLISHED.json",
+            "sha256": "673da157051bc5876fd060924984c023c0570e053fee72a6beb2aa78010f58b6"
+          },
+          "published_unix": 1789497854.4362633,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C038_E0_PARENT.request.json",
+            "sha256": "83e1b5368ea8515c5eaa74478adc0e13e20e4ed6654305f764828d51da5f8855"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C038_E0_PARENT.json",
+            "sha256": "7468d2830ee4ddd8b6dc44ec0d345dea90a98a19f4cd439c03fe86c73d614699"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 12.16358470916748,
+          "requested_unix": 1789497842.2546258,
+          "requested_utc": "2026-09-15T18:44:02.254626+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C038_E0_PARENT.response.json",
+            "sha256": "cb2a05207b67e2eacbb82e77a22eb90b6ae10d4f8ae1c284981c0fe7c5cea9da"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "application_started_unix": 1789497903.9852064,
+          "applied_to_completed_child_verified": true,
+          "child_capture": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C038_E1_OPEN.json",
+            "sha256": "ff65252cbf6dd82ec59efa27bdd85a9c6db38eee4929bf0670c393d155375144"
+          },
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497889.707165,
+          "finished_utc": "2026-09-15T18:44:49.707165+00:00",
+          "id": "C038_E0_OPEN_PARENT",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497903.9812863,
+          "native_observed_utc": "2026-09-15T18:45:03.981286+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C038_E0_OPEN_PARENT.json",
+            "sha256": "391e448a7c0d4e809200ff86dde0c38a9997b8bedc6dd2a503abf3bfe116b810"
+          },
+          "provider_elapsed_seconds": 19.061266865996004,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C038_E0_OPEN_PARENT.claim/PUBLISHED.json",
+            "sha256": "0137c95cbaada98c1d9ec88b8a99fa9a72606125aa65edabd060830792c80e88"
+          },
+          "published_unix": 1789497889.7248561,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C038_E0_OPEN_PARENT.request.json",
+            "sha256": "a394dedf5cb938988ccbc2579861caec3652050d6842849e2e9cc31678133f38"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C038_E0_OPEN_PARENT.json",
+            "sha256": "391e448a7c0d4e809200ff86dde0c38a9997b8bedc6dd2a503abf3bfe116b810"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 20.528352737426758,
+          "requested_unix": 1789497869.1788123,
+          "requested_utc": "2026-09-15T18:44:29.178812+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C038_E0_OPEN_PARENT.response.json",
+            "sha256": "56ee3af4ed4d8557c00803a82826848bfbfb5d0b4d714173224d7746f18756cc"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "application_started_unix": 1789497903.9852064,
+          "applied_to_completed_child_verified": true,
+          "child_capture": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C038_E1_OPEN.json",
+            "sha256": "ff65252cbf6dd82ec59efa27bdd85a9c6db38eee4929bf0670c393d155375144"
+          },
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497902.8462055,
+          "finished_utc": "2026-09-15T18:45:02.846205+00:00",
+          "id": "C038_E1_PARENT",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497903.9812863,
+          "native_observed_utc": "2026-09-15T18:45:03.981286+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C038_E1_PARENT.json",
+            "sha256": "1e49ad92af446c37ba2585099fcd834ea9f462b66d7d1d97584b4e2e7c52890f"
+          },
+          "provider_elapsed_seconds": 11.08665473000292,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C038_E1_PARENT.claim/PUBLISHED.json",
+            "sha256": "ad271f039b31a13e2aee834a936e9c50bacb398469230850faed1a63f242a765"
+          },
+          "published_unix": 1789497902.8601487,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C038_E1_PARENT.request.json",
+            "sha256": "4921b219d63dcdb0a17a7309cc9a27dac50f39ce2d2d74c162547b6fd5fc3fa3"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C038_E1_PARENT.json",
+            "sha256": "1e49ad92af446c37ba2585099fcd834ea9f462b66d7d1d97584b4e2e7c52890f"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 31.661962270736694,
+          "requested_unix": 1789497871.1842432,
+          "requested_utc": "2026-09-15T18:44:31.184243+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C038_E1_PARENT.response.json",
+            "sha256": "32fd2e0f57e3013ad55a8f6296581eb6338accdd430323a0e17c1ffa8a4741a8"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "application_started_unix": 1789497977.040389,
+          "applied_to_completed_child_verified": true,
+          "child_capture": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C039_E0_ORIGINAL.json",
+            "sha256": "a8a4c8a989bf50f9a1deea9a8c376b11e60d676ec35efad574c7d70d19c30162"
+          },
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497959.1245365,
+          "finished_utc": "2026-09-15T18:45:59.124537+00:00",
+          "id": "C038_E1_OPEN_PARENT",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497977.0376642,
+          "native_observed_utc": "2026-09-15T18:46:17.037664+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C038_E1_OPEN_PARENT.json",
+            "sha256": "2b40b969d77d4e22ef714762651ce40cacee6b3b0c2f87157290c7dccae31c37"
+          },
+          "provider_elapsed_seconds": 19.845966368993686,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C038_E1_OPEN_PARENT.claim/PUBLISHED.json",
+            "sha256": "ccfeef10910ccbfe7c6d0d2e834f528f338c714a198e6ccc221e2014ee93bb44"
+          },
+          "published_unix": 1789497959.1364787,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C038_E1_OPEN_PARENT.request.json",
+            "sha256": "544e127c0c0c36cc03de7cf6bc5c9741ae76da167baf65dee7ae35ca30879a53"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C038_E1_OPEN_PARENT.json",
+            "sha256": "2b40b969d77d4e22ef714762651ce40cacee6b3b0c2f87157290c7dccae31c37"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 22.17413330078125,
+          "requested_unix": 1789497936.9504032,
+          "requested_utc": "2026-09-15T18:45:36.950403+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C038_E1_OPEN_PARENT.response.json",
+            "sha256": "7a76454668b8532649c93eece5d38e43c986cd883f7fcd9ee4298a99765e5fe9"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "application_started_unix": 1789497998.8473516,
+          "applied_to_completed_child_verified": true,
+          "child_capture": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C039_E0_OPEN.json",
+            "sha256": "263dbb151f4d8cc4136148ae941691f0bc13011ca928ce8b2fce828d9ecd9d33"
+          },
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497980.48246,
+          "finished_utc": "2026-09-15T18:46:20.482460+00:00",
+          "id": "C038_META_PARENT",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497998.8436813,
+          "native_observed_utc": "2026-09-15T18:46:38.843681+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C038_META_PARENT.json",
+            "sha256": "e6c9ba1682e5239c52fe45a9542e11f4edd1aca7cd460f00d3dc802718037dcb"
+          },
+          "provider_elapsed_seconds": 19.306964217001223,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C038_META_PARENT.claim/PUBLISHED.json",
+            "sha256": "fd50e3e369016863b1dfe5ff105e553ba5dee4679303938e10b5228a9c9f8a8d"
+          },
+          "published_unix": 1789497980.4999623,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C038_META_PARENT.request.json",
+            "sha256": "1320ba7af7cfefff58ec14e2c8d3e70e8f8288975b852293dffd6723caaac57b"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C038_META_PARENT.json",
+            "sha256": "e6c9ba1682e5239c52fe45a9542e11f4edd1aca7cd460f00d3dc802718037dcb"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 35.17103886604309,
+          "requested_unix": 1789497945.3114212,
+          "requested_utc": "2026-09-15T18:45:45.311421+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C038_META_PARENT.response.json",
+            "sha256": "a6e25c76d979d55a1d22a28b4f17c41a2797fb6ba5f0dbb6a953454cc4e9846b"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "application_started_unix": 1789497998.8473516,
+          "applied_to_completed_child_verified": true,
+          "child_capture": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C039_E0_OPEN.json",
+            "sha256": "263dbb151f4d8cc4136148ae941691f0bc13011ca928ce8b2fce828d9ecd9d33"
+          },
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497998.2401505,
+          "finished_utc": "2026-09-15T18:46:38.240150+00:00",
+          "id": "C039_E0_PARENT",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497998.8436813,
+          "native_observed_utc": "2026-09-15T18:46:38.843681+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C039_E0_PARENT.json",
+            "sha256": "716a4538dce6d434a827be41751fefb31080727c6f11b4f1dbfb6c7a9c39cbcd"
+          },
+          "provider_elapsed_seconds": 15.681427299998177,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C039_E0_PARENT.claim/PUBLISHED.json",
+            "sha256": "285efb67a84757fef3585de770ef91be1d60d1375e69466489e89885276ed680"
+          },
+          "published_unix": 1789497998.2566805,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C039_E0_PARENT.request.json",
+            "sha256": "96df03e88264b22a2fd4132dc194a37db36ea46e5d1bf60a42b3ccf9d8a72593"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C039_E0_PARENT.json",
+            "sha256": "716a4538dce6d434a827be41751fefb31080727c6f11b4f1dbfb6c7a9c39cbcd"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 20.75590419769287,
+          "requested_unix": 1789497977.4842463,
+          "requested_utc": "2026-09-15T18:46:17.484246+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C039_E0_PARENT.response.json",
+            "sha256": "320cf139a5368b25888cf15d24a52529bb42306e08cce8a50f37f7229356a15b"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "applied_to_completed_child_verified": false,
+          "cross_boundary": false,
+          "error": {
+            "code": "lane_guidance_limit_no_cropping",
+            "type": "ValueError"
+          },
+          "finished_unix": 1789498046.1244698,
+          "finished_utc": "2026-09-15T18:47:26.124470+00:00",
+          "id": "C039_E0_OPEN_PARENT",
+          "late": false,
+          "native_observed_status": "MISSING",
+          "native_observed_unix": 1789498066.4345415,
+          "native_observed_utc": "2026-09-15T18:47:46.434541+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C039_E0_OPEN_PARENT.json",
+            "sha256": "86ce25f1199ffa514a0c7c312fdfe319cae695bac8ec132443f53e6a87cd2f15"
+          },
+          "provider_elapsed_seconds": 19.52654434899887,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C039_E0_OPEN_PARENT.claim/PUBLISHED.json",
+            "sha256": "a3d05e94b3150405fe22fb62e71d70c189bc0ba2df18f075a314783dd5eedb52"
+          },
+          "published_unix": 1789498046.1422582,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C039_E0_OPEN_PARENT.request.json",
+            "sha256": "f898ddf373e95a648e4d56cb531b70fd4d4f1b8dac6ceeaf65302e8bca18bc5a"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C039_E0_OPEN_PARENT.json",
+            "sha256": "86ce25f1199ffa514a0c7c312fdfe319cae695bac8ec132443f53e6a87cd2f15"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 20.686625719070435,
+          "requested_unix": 1789498025.437844,
+          "requested_utc": "2026-09-15T18:47:05.437844+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C039_E0_OPEN_PARENT.response.json",
+            "sha256": "a125e7e060f8414c09bc0d1eaf7bcd6d6507a3a169072808750be00361acecf1"
+          },
+          "status": "MISSING"
+        },
+        {
+          "application_started_unix": 1789498066.8799193,
+          "applied_to_completed_child_verified": true,
+          "child_capture": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C039_META.json",
+            "sha256": "480dbd3242ff78285763b2806561b2c2e8a1844cd00dc2cb4e291ca4da6132b8"
+          },
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789498062.51723,
+          "finished_utc": "2026-09-15T18:47:42.517230+00:00",
+          "id": "C039_E1_PARENT",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789498066.4345415,
+          "native_observed_utc": "2026-09-15T18:47:46.434541+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C039_E1_PARENT.json",
+            "sha256": "603c4fee69594031f38e0ff9dd616301a3a56d6aeae299ea022d72856952493a"
+          },
+          "provider_elapsed_seconds": 14.328925383000751,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C039_E1_PARENT.claim/PUBLISHED.json",
+            "sha256": "202040499b7b3070f5b92e48da6d4b5e687ffb5417c51fe7b4a8c78d8cf19f0b"
+          },
+          "published_unix": 1789498062.5336843,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C039_E1_PARENT.request.json",
+            "sha256": "f2cb352f26a50c8e96a4d4ffa86872ce282a7961780b5076490b6781b5d94a30"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C039_E1_PARENT.json",
+            "sha256": "603c4fee69594031f38e0ff9dd616301a3a56d6aeae299ea022d72856952493a"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 34.69036674499512,
+          "requested_unix": 1789498027.8268633,
+          "requested_utc": "2026-09-15T18:47:07.826863+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C039_E1_PARENT.response.json",
+            "sha256": "8afd53b35f39cc749be392cbded0380335946b480599b335e76066cefb2da39c"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "application_started_unix": 1789498122.8461068,
+          "applied_to_completed_child_verified": true,
+          "child_capture": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C040_E0_ORIGINAL.json",
+            "sha256": "4cf31450dbc6882619a898668b5fd3275f6e357a3107ce2ff2e13eadcdd5fd76"
+          },
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789498085.073934,
+          "finished_utc": "2026-09-15T18:48:05.073934+00:00",
+          "id": "C039_E1_OPEN_PARENT",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789498090.488107,
+          "native_observed_utc": "2026-09-15T18:48:10.488107+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C039_E1_OPEN_PARENT.json",
+            "sha256": "0d2ec5aea183876fdec58ee20889e94a470a6436297392931d1d9915487bffe4"
+          },
+          "provider_elapsed_seconds": 16.436203797995404,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C039_E1_OPEN_PARENT.claim/PUBLISHED.json",
+            "sha256": "44eafb26d1dc84ab9a582c487b013ee46f0d88d4c5c923de4f6df0a73e51d1d6"
+          },
+          "published_unix": 1789498085.0850494,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C039_E1_OPEN_PARENT.request.json",
+            "sha256": "5e1b198a30b09da1656067287c58da7872dcdcb9325830d8c7d6d0b74dd3e32a"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C039_E1_OPEN_PARENT.json",
+            "sha256": "0d2ec5aea183876fdec58ee20889e94a470a6436297392931d1d9915487bffe4"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 18.63640809059143,
+          "requested_unix": 1789498066.437526,
+          "requested_utc": "2026-09-15T18:47:46.437526+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C039_E1_OPEN_PARENT.response.json",
+            "sha256": "58a61c199632ba5a43e018be4294b0ffec46eb6005e09e0fb6b7d5483c1d7fae"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "applied_to_completed_child_verified": false,
+          "cross_boundary": false,
+          "error": {
+            "code": "lane_guidance_limit_no_cropping",
+            "type": "ValueError"
+          },
+          "finished_unix": 1789498106.073948,
+          "finished_utc": "2026-09-15T18:48:26.073948+00:00",
+          "id": "C039_META_PARENT",
+          "late": false,
+          "native_observed_status": "MISSING",
+          "native_observed_unix": 1789498122.8442655,
+          "native_observed_utc": "2026-09-15T18:48:42.844265+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C039_META_PARENT.json",
+            "sha256": "0660981353ede00ae4a60c6dfc65dcb562cb3f5968d66493092a9f4fbcbb4271"
+          },
+          "provider_elapsed_seconds": 14.885446755004523,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C039_META_PARENT.claim/PUBLISHED.json",
+            "sha256": "52e3beeb482b45a4f9ba6a9c49da82563569ae3920f05daeca4ea9632a23cf74"
+          },
+          "published_unix": 1789498106.090955,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C039_META_PARENT.request.json",
+            "sha256": "dee14b1a1a57b2ff573de9aac1cd557bcc8cd74decd44f769b4c798d7c67397f"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C039_META_PARENT.json",
+            "sha256": "0660981353ede00ae4a60c6dfc65dcb562cb3f5968d66493092a9f4fbcbb4271"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 15.58411169052124,
+          "requested_unix": 1789498090.4898362,
+          "requested_utc": "2026-09-15T18:48:10.489836+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C039_META_PARENT.response.json",
+            "sha256": "192381ac423027fa0e6cd43313098f119e73e36a0247d44e52ef94833c839224"
+          },
+          "status": "MISSING"
+        },
+        {
+          "application_started_unix": 1789498181.3656704,
+          "applied_to_completed_child_verified": true,
+          "child_capture": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C040_E1_ORIGINAL.json",
+            "sha256": "3727aff9caa7cbdb00de811751c122b4107a1f9fd9379eab55d1c774c1d78ff4"
+          },
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789498149.9920745,
+          "finished_utc": "2026-09-15T18:49:09.992074+00:00",
+          "id": "C040_E0_PARENT",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789498181.0081687,
+          "native_observed_utc": "2026-09-15T18:49:41.008169+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C040_E0_PARENT.json",
+            "sha256": "91a2c08a16bcfd740393c7b41434120e343f8484288bda71647eac890dee54fd"
+          },
+          "provider_elapsed_seconds": 13.526097956004378,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C040_E0_PARENT.claim/PUBLISHED.json",
+            "sha256": "40aac095bfb738cfc3874dd886e587c69e2c7123078b2e41fa692f3694900fed"
+          },
+          "published_unix": 1789498150.0106514,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C040_E0_PARENT.request.json",
+            "sha256": "571f1ad4484c99ea8ae3605e6f49c56d51427867ebf2785cbf949f4a1fa65aa6"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C040_E0_PARENT.json",
+            "sha256": "91a2c08a16bcfd740393c7b41434120e343f8484288bda71647eac890dee54fd"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 14.794685125350952,
+          "requested_unix": 1789498135.1973894,
+          "requested_utc": "2026-09-15T18:48:55.197389+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C040_E0_PARENT.response.json",
+            "sha256": "e58fac62e0af3dcb91dcf077126ac6963a928f9d436360edcfe08abeaf960ad5"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "application_started_unix": 1789498202.500574,
+          "applied_to_completed_child_verified": true,
+          "child_capture": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C040_E1_OPEN.json",
+            "sha256": "425513789a0daf841426397251142d100e0c14d7800947e7fe374b55d7ee4b6e"
+          },
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789498200.4935327,
+          "finished_utc": "2026-09-15T18:50:00.493533+00:00",
+          "id": "C040_E0_OPEN_PARENT",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789498202.4982746,
+          "native_observed_utc": "2026-09-15T18:50:02.498275+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C040_E0_OPEN_PARENT.json",
+            "sha256": "c4dc1558230b6f57996fe314f856d4f68e7fc4f7ce38db8cec5189eac83de9ed"
+          },
+          "provider_elapsed_seconds": 18.10975199999666,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C040_E0_OPEN_PARENT.claim/PUBLISHED.json",
+            "sha256": "84634552d0d6a354cd4e45dc4c6fd1269484ad5462b895b75b69b55377a70458"
+          },
+          "published_unix": 1789498200.513273,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C040_E0_OPEN_PARENT.request.json",
+            "sha256": "76acbc8fef66f017e8ae2261062662930ba31d2e3152a13c0310b07bd9fe72b1"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C040_E0_OPEN_PARENT.json",
+            "sha256": "c4dc1558230b6f57996fe314f856d4f68e7fc4f7ce38db8cec5189eac83de9ed"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 19.483774662017822,
+          "requested_unix": 1789498181.009758,
+          "requested_utc": "2026-09-15T18:49:41.009758+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C040_E0_OPEN_PARENT.response.json",
+            "sha256": "88a59a63a673d80f5b017d3a10c0440c910b04a940b27229b476b2febdef0ffd"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "application_started_unix": 1789498219.4518793,
+          "applied_to_completed_child_verified": true,
+          "child_capture": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C040_META.json",
+            "sha256": "4c6b943e5c413adc5afe56f63ecf6f7981d37be7aad75b968254b509c1166994"
+          },
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789498211.57843,
+          "finished_utc": "2026-09-15T18:50:11.578430+00:00",
+          "id": "C040_E1_PARENT",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789498218.9485226,
+          "native_observed_utc": "2026-09-15T18:50:18.948523+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C040_E1_PARENT.json",
+            "sha256": "d6737e6f90473785a02fda19fc90ce07c1100050cb1cd910beed44bd187f73bc"
+          },
+          "provider_elapsed_seconds": 11.031467463995796,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C040_E1_PARENT.claim/PUBLISHED.json",
+            "sha256": "cb31e4579175ed0abc324b1c3c5c4f2a270dc4f1807b393eef47752f3c38d2e3"
+          },
+          "published_unix": 1789498211.5957794,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C040_E1_PARENT.request.json",
+            "sha256": "41ff21602e01433a0b36fceabf228c4d5376f6396e8181c1687863f0fcd2f8e0"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C040_E1_PARENT.json",
+            "sha256": "d6737e6f90473785a02fda19fc90ce07c1100050cb1cd910beed44bd187f73bc"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 29.612661600112915,
+          "requested_unix": 1789498181.9657683,
+          "requested_utc": "2026-09-15T18:49:41.965768+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C040_E1_PARENT.response.json",
+            "sha256": "9dee16b7a99451438c61ee97b33aa0ce08cf2f7a29758017b2fc6c13f9cee7e4"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "applied_to_completed_child_verified": false,
+          "cross_boundary": false,
+          "error": {
+            "code": "lane_guidance_limit_no_cropping",
+            "type": "ValueError"
+          },
+          "finished_unix": 1789498238.1323602,
+          "finished_utc": "2026-09-15T18:50:38.132360+00:00",
+          "id": "C040_E1_OPEN_PARENT",
+          "late": false,
+          "native_observed_status": "MISSING",
+          "native_observed_unix": 1789498248.8873243,
+          "native_observed_utc": "2026-09-15T18:50:48.887324+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C040_E1_OPEN_PARENT.json",
+            "sha256": "928ce1d94c4f8048289b5c9eeba79c024fe530fe31b56368a04ba61a59a128bd"
+          },
+          "provider_elapsed_seconds": 18.420259947997693,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C040_E1_OPEN_PARENT.claim/PUBLISHED.json",
+            "sha256": "e5e3c178f909f6ecc082a4f559d738232957a9685d40424f5bd6837aec2905d5"
+          },
+          "published_unix": 1789498238.1482637,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C040_E1_OPEN_PARENT.request.json",
+            "sha256": "330f57494b8c79ad2ecfb30507839adb394f2dd65b76a3bb0a8677b476ca02a3"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C040_E1_OPEN_PARENT.json",
+            "sha256": "928ce1d94c4f8048289b5c9eeba79c024fe530fe31b56368a04ba61a59a128bd"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 19.18217921257019,
+          "requested_unix": 1789498218.950181,
+          "requested_utc": "2026-09-15T18:50:18.950181+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C040_E1_OPEN_PARENT.response.json",
+            "sha256": "d0452333d8efc8ded32c563709f3a9aecfca381cdc73600ebf7adfb175924944"
+          },
+          "status": "MISSING"
+        },
+        {
+          "application_started_unix": 1789498280.4049118,
+          "applied_to_completed_child_verified": true,
+          "child_capture": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C041_E0_ORIGINAL.json",
+            "sha256": "28fb5ee201482d97524cc1a356925351c44be941edff05e91c4a53139fc55c41"
+          },
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789498267.878575,
+          "finished_utc": "2026-09-15T18:51:07.878575+00:00",
+          "id": "C040_META_PARENT",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789498280.4025168,
+          "native_observed_utc": "2026-09-15T18:51:20.402517+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C040_META_PARENT.json",
+            "sha256": "3d15096a4f5da3aaaa79699ce47b1f41b502f8cacd7cbb4ff2868137be99ea1a"
+          },
+          "provider_elapsed_seconds": 17.55662523399951,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C040_META_PARENT.claim/PUBLISHED.json",
+            "sha256": "f8d05ae31f1e09459c21e752c921545391f62717a129b815354f01da068457d3"
+          },
+          "published_unix": 1789498267.8978405,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C040_META_PARENT.request.json",
+            "sha256": "dcab85246e84e30d4933105eb9a97df629db89b6291b31978a1c6ad1e2673a4d"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C040_META_PARENT.json",
+            "sha256": "3d15096a4f5da3aaaa79699ce47b1f41b502f8cacd7cbb4ff2868137be99ea1a"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 18.99010181427002,
+          "requested_unix": 1789498248.8884733,
+          "requested_utc": "2026-09-15T18:50:48.888473+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C040_META_PARENT.response.json",
+            "sha256": "8308fada581809b11cbee58aa1044fdd5dbb2258edbb6e80e31f21006064c85b"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "application_started_unix": 1789498301.172294,
+          "applied_to_completed_child_verified": true,
+          "child_capture": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C041_E1_ORIGINAL.json",
+            "sha256": "a41671a802e5a9277bdeb13cb474d887862f531d805a3c9468b448113c338d3b"
+          },
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789498295.3291974,
+          "finished_utc": "2026-09-15T18:51:35.329197+00:00",
+          "id": "C041_E0_PARENT",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789498300.732523,
+          "native_observed_utc": "2026-09-15T18:51:40.732523+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C041_E0_PARENT.json",
+            "sha256": "1cabf4696b6c0685403b581ac9f8e79b727a1e552e0ee0db893c24e39918d917"
+          },
+          "provider_elapsed_seconds": 11.20960077700147,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C041_E0_PARENT.claim/PUBLISHED.json",
+            "sha256": "f7105f19df6b83e2ee5ac6498469cf1b862d7f2eca9967a5b92b08451a701957"
+          },
+          "published_unix": 1789498295.3474672,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C041_E0_PARENT.request.json",
+            "sha256": "0d6f8384aab7f455b5d5e6c1084517f6d2119a0f22225a38fa780cfa65c64be6"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C041_E0_PARENT.json",
+            "sha256": "1cabf4696b6c0685403b581ac9f8e79b727a1e552e0ee0db893c24e39918d917"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 13.501787900924683,
+          "requested_unix": 1789498281.8274095,
+          "requested_utc": "2026-09-15T18:51:21.827410+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C041_E0_PARENT.response.json",
+            "sha256": "107b7594ce13126ac772ccc6baefeb1fecc6c5a1b48d16fe91f0ffca1fccff95"
+          },
+          "status": "COMPLETE"
+        }
+      ],
+      "unknown_request_time": {
+        "COMPLETE": 0,
+        "MISSING": 0,
+        "SILENT": 0,
+        "UNKNOWN": 0
+      },
+      "verified_complete_applications": 23
+    },
+    {
+      "all_published": {
+        "COMPLETE": 13,
+        "MISSING": 6,
+        "SILENT": 0,
+        "UNKNOWN": 0
+      },
+      "application_scope": "Completed child capture hash joins for F1/F3/F4; F2 acceptance is not assumed to imply completed child application.",
+      "auth_errors": [],
+      "branch": "F4",
+      "config": {
+        "path": "/localhome/local-rohing/orch_r119_claude_auth_diagnostics_20260915_v2/F4/CONFIG.json",
+        "sha256": "f63cf8c9e293eb59e70361a75e26ed03a9a42c76ce4ed514411ddeac593ca7f3"
+      },
+      "expired_unresolved_count": 0,
+      "finish_cohort_total": 19,
+      "first_complete": {
+        "application_receipt": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/independent_r119_v1/parent_applied/P0068.json",
+          "sha256": "fc84961e861de11bf7be7cccb8a447565d65e5709896e8c40a8f667f70756cc0"
+        },
+        "application_receipt_unix": 1789497325.5735,
+        "applied_to_completed_child_verified": true,
+        "child_captures": [
+          {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/calls/N00776.json",
+            "sha256": "2b6a36c5540ee391e1f316662bb3e5f3716c76d5b8d08d1e6b3f1a48335ae3e9"
+          }
+        ],
+        "cross_boundary": false,
+        "error": null,
+        "finished_unix": 1789497317.1373775,
+        "finished_utc": "2026-09-15T18:35:17.137378+00:00",
+        "id": "P0068",
+        "late": false,
+        "native_observed_status": "COMPLETE",
+        "native_observed_unix": 1789497320.0366485,
+        "native_observed_utc": "2026-09-15T18:35:20.036649+00:00",
+        "native_receipt": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_received/P0068.json",
+          "sha256": "eec77822feb0d726ef0f40313f789f6eafb78748c8b48c31e20314800bf1ef11"
+        },
+        "provider_elapsed_seconds": 10.148853427999711,
+        "publication_after_observation": false,
+        "publication_hash_join_valid": true,
+        "published_receipt": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_claude/P0068.claim/PUBLISHED.json",
+          "sha256": "6c8714aac552b16f61c9f7d51b163de846746f72d044fcaf06fd3752869e014e"
+        },
+        "published_unix": 1789497317.1536207,
+        "request": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0068.request.json",
+          "sha256": "36f09d34f5002ba0a5b45828dd0d77fea59a3a8e6a601be48924f5b4c1949fa6"
+        },
+        "request_response_join_valid": true,
+        "request_time_source": {
+          "captured_ledger_sha256": "4844f70f609441a34cb602f4bae4bbee4a0dbc902489765a3a9c708de04947fb",
+          "line": 839,
+          "line_sha256": "8c6f4503cb3a28f4f03f76f8a1b563cd95943622d6800f138f1c41a1fc92446f",
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/LEDGER.jsonl"
+        },
+        "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+        "request_to_finish_seconds": 12.060218572616577,
+        "requested_unix": 1789497305.077159,
+        "requested_utc": "2026-09-15T18:35:05.077159+00:00",
+        "response": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0068.response.json",
+          "sha256": "ec1d9ab704de894eb3ad4bf4eda365d6ab9a5d866a45cf05b7a07a3be02df385"
+        },
+        "status": "COMPLETE"
+      },
+      "live_pending_count": 0,
+      "missing_finished_time_unassigned": [],
+      "native_observed": {
+        "COMPLETE": 13,
+        "MISSING": 6
+      },
+      "pending_unfinished_separate_from_finish_cohort": [],
+      "queued_at_or_after_cut": {
+        "COMPLETE": 13,
+        "MISSING": 6,
+        "SILENT": 0,
+        "UNKNOWN": 0
+      },
+      "queued_before_cut": {
+        "COMPLETE": 0,
+        "MISSING": 0,
+        "SILENT": 0,
+        "UNKNOWN": 0
+      },
+      "rows": [
+        {
+          "applied_to_completed_child_verified": false,
+          "cross_boundary": false,
+          "error": {
+            "code": "parent_tag_class",
+            "type": "ValueError"
+          },
+          "finished_unix": 1789497237.3342896,
+          "finished_utc": "2026-09-15T18:33:57.334290+00:00",
+          "id": "P0066",
+          "late": false,
+          "native_observed_status": "MISSING",
+          "native_observed_unix": 1789497237.6382344,
+          "native_observed_utc": "2026-09-15T18:33:57.638234+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_received/P0066.json",
+            "sha256": "7145db083b6fde1fc6831b4af589030d4a2db56478d2b0914d76a986ad333f02"
+          },
+          "provider_elapsed_seconds": 11.235522265000327,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_claude/P0066.claim/PUBLISHED.json",
+            "sha256": "6f782c9ce7d6754f4c7e1fe380d545a2e35c2d359d609c12a4255b5b45d9f0ad"
+          },
+          "published_unix": 1789497237.3459706,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0066.request.json",
+            "sha256": "99ff83b86608a43d7d6129f46ddc48037aee49baa1bc8b73eb2deba49253f440"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "captured_ledger_sha256": "4844f70f609441a34cb602f4bae4bbee4a0dbc902489765a3a9c708de04947fb",
+            "line": 819,
+            "line_sha256": "aeffe6a5a5dc5f869000ac3036b984a3ceeb9d06a66c69bc7d0987c831cce893",
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/LEDGER.jsonl"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 12.981568098068237,
+          "requested_unix": 1789497224.3527215,
+          "requested_utc": "2026-09-15T18:33:44.352721+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0066.response.json",
+            "sha256": "c4540590c15c6f36c1b98a9c5459aa742f4af1edc5cf7ee04eacf968b71edc27"
+          },
+          "status": "MISSING"
+        },
+        {
+          "applied_to_completed_child_verified": false,
+          "cross_boundary": false,
+          "error": {
+            "code": "lane_guidance_limit_no_cropping",
+            "type": "ValueError"
+          },
+          "finished_unix": 1789497298.8876004,
+          "finished_utc": "2026-09-15T18:34:58.887600+00:00",
+          "id": "P0067",
+          "late": false,
+          "native_observed_status": "MISSING",
+          "native_observed_unix": 1789497305.0743237,
+          "native_observed_utc": "2026-09-15T18:35:05.074324+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_received/P0067.json",
+            "sha256": "d647c3d0392ceebc8b41de0fd58c66f763b1c1468c7fd956890f21d49a3a0e07"
+          },
+          "provider_elapsed_seconds": 17.293231097995886,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_claude/P0067.claim/PUBLISHED.json",
+            "sha256": "4b889a3553ec5c8f25f456041b6e92c10c46d5aa00fa886428772fea87c3f73f"
+          },
+          "published_unix": 1789497298.9044466,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0067.request.json",
+            "sha256": "3522624c69241ef38543db6cbaa3edb98fa9fea44810102a6b09869c3549dadd"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "captured_ledger_sha256": "4844f70f609441a34cb602f4bae4bbee4a0dbc902489765a3a9c708de04947fb",
+            "line": 836,
+            "line_sha256": "cf9373b0451ebf57d005919d9c850d3b5a7350a2022aeae7262c5d066be7100e",
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/LEDGER.jsonl"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 18.52493643760681,
+          "requested_unix": 1789497280.362664,
+          "requested_utc": "2026-09-15T18:34:40.362664+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0067.response.json",
+            "sha256": "2b8397127b7ea34029a7ec2ddc08181c797fafcdc03419cc85cda07130f3d9db"
+          },
+          "status": "MISSING"
+        },
+        {
+          "application_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/independent_r119_v1/parent_applied/P0068.json",
+            "sha256": "fc84961e861de11bf7be7cccb8a447565d65e5709896e8c40a8f667f70756cc0"
+          },
+          "application_receipt_unix": 1789497325.5735,
+          "applied_to_completed_child_verified": true,
+          "child_captures": [
+            {
+              "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/calls/N00776.json",
+              "sha256": "2b6a36c5540ee391e1f316662bb3e5f3716c76d5b8d08d1e6b3f1a48335ae3e9"
+            }
+          ],
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497317.1373775,
+          "finished_utc": "2026-09-15T18:35:17.137378+00:00",
+          "id": "P0068",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497320.0366485,
+          "native_observed_utc": "2026-09-15T18:35:20.036649+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_received/P0068.json",
+            "sha256": "eec77822feb0d726ef0f40313f789f6eafb78748c8b48c31e20314800bf1ef11"
+          },
+          "provider_elapsed_seconds": 10.148853427999711,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_claude/P0068.claim/PUBLISHED.json",
+            "sha256": "6c8714aac552b16f61c9f7d51b163de846746f72d044fcaf06fd3752869e014e"
+          },
+          "published_unix": 1789497317.1536207,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0068.request.json",
+            "sha256": "36f09d34f5002ba0a5b45828dd0d77fea59a3a8e6a601be48924f5b4c1949fa6"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "captured_ledger_sha256": "4844f70f609441a34cb602f4bae4bbee4a0dbc902489765a3a9c708de04947fb",
+            "line": 839,
+            "line_sha256": "8c6f4503cb3a28f4f03f76f8a1b563cd95943622d6800f138f1c41a1fc92446f",
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/LEDGER.jsonl"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 12.060218572616577,
+          "requested_unix": 1789497305.077159,
+          "requested_utc": "2026-09-15T18:35:05.077159+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0068.response.json",
+            "sha256": "ec1d9ab704de894eb3ad4bf4eda365d6ab9a5d866a45cf05b7a07a3be02df385"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "applied_to_completed_child_verified": false,
+          "cross_boundary": false,
+          "error": {
+            "code": "lane_guidance_limit_no_cropping",
+            "type": "ValueError"
+          },
+          "finished_unix": 1789497427.5717425,
+          "finished_utc": "2026-09-15T18:37:07.571743+00:00",
+          "id": "P0069",
+          "late": false,
+          "native_observed_status": "MISSING",
+          "native_observed_unix": 1789497447.3473713,
+          "native_observed_utc": "2026-09-15T18:37:27.347371+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_received/P0069.json",
+            "sha256": "a13a96480d20ef3a6380fcf50fc54080908df743096911fd75ae7bb36043ddde"
+          },
+          "provider_elapsed_seconds": 17.886542323998583,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_claude/P0069.claim/PUBLISHED.json",
+            "sha256": "f08a304c26283ce119b3a52361149e591e9b89d39ffa6ab87bba697931b5e15c"
+          },
+          "published_unix": 1789497427.5897205,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0069.request.json",
+            "sha256": "696ef4604d00e3ede544572e28e053cdd4f86a8d1499f9d54269f2f3a4091e6e"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "captured_ledger_sha256": "4844f70f609441a34cb602f4bae4bbee4a0dbc902489765a3a9c708de04947fb",
+            "line": 856,
+            "line_sha256": "3059f93d035d2872717e535ee0a6f56d14d0abaa915af5ec57949a21d4d65889",
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/LEDGER.jsonl"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 19.639833211898804,
+          "requested_unix": 1789497407.9319093,
+          "requested_utc": "2026-09-15T18:36:47.931909+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0069.response.json",
+            "sha256": "6c3314410a4f719334660b677a4158b3e0196c46011332ab1f4e42f7a7119a5f"
+          },
+          "status": "MISSING"
+        },
+        {
+          "application_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/independent_r119_v1/parent_applied/P0070.json",
+            "sha256": "1c2b4606c592c2aab58d3bd2b64f2b6e937086319b069b985c94f9311e971614"
+          },
+          "application_receipt_unix": 1789497479.4285765,
+          "applied_to_completed_child_verified": true,
+          "child_captures": [
+            {
+              "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/calls/N00795.json",
+              "sha256": "9ee0893a161c3dabbb56e0153e86d5c4249198af0c9b862eff6e7d88393fae72"
+            }
+          ],
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497472.782271,
+          "finished_utc": "2026-09-15T18:37:52.782271+00:00",
+          "id": "P0070",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497475.8760834,
+          "native_observed_utc": "2026-09-15T18:37:55.876083+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_received/P0070.json",
+            "sha256": "b24a51ccc8fa75f674a3d4650448fc6a34d9473703795db5f4e64411bf742892"
+          },
+          "provider_elapsed_seconds": 8.95474682799977,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_claude/P0070.claim/PUBLISHED.json",
+            "sha256": "225c1742c439435dfe79bfb86c759650d94e921a0a8bb8055b7398fcf122cd81"
+          },
+          "published_unix": 1789497472.7988582,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0070.request.json",
+            "sha256": "9680f71692966776739e20eb32b40c25d72656dd63d2764e56162bd9759896f4"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "captured_ledger_sha256": "4844f70f609441a34cb602f4bae4bbee4a0dbc902489765a3a9c708de04947fb",
+            "line": 860,
+            "line_sha256": "8e583011cdc2e03529dafab3919d60d2825a652df1a87b36d3c4167b43895b41",
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/LEDGER.jsonl"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 9.92166519165039,
+          "requested_unix": 1789497462.8606057,
+          "requested_utc": "2026-09-15T18:37:42.860606+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0070.response.json",
+            "sha256": "bb314f3db6cba16ec500e5b6b9ef9e47bf1480f2b6573c2fb4f0f1cee2ee5857"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "application_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/independent_r119_v1/parent_applied/P0071.json",
+            "sha256": "26247803400aa90ecf21dab1feb2a424f576957f867f0fdcda4a68d2d89e6fa2"
+          },
+          "application_receipt_unix": 1789497554.5554702,
+          "applied_to_completed_child_verified": true,
+          "child_captures": [
+            {
+              "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/calls/N00809.json",
+              "sha256": "d896244999806181afa8a3d63887c5905b6d09ebd15b1cc27a9fe42c34d20f57"
+            }
+          ],
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497545.3230922,
+          "finished_utc": "2026-09-15T18:39:05.323092+00:00",
+          "id": "P0071",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497546.8775237,
+          "native_observed_utc": "2026-09-15T18:39:06.877524+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_received/P0071.json",
+            "sha256": "f44ddbb21712a9d3f16c5e8d0e3a21f727bdc6ea0da9f0e92eeb65e8458f9089"
+          },
+          "provider_elapsed_seconds": 16.160207208995416,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_claude/P0071.claim/PUBLISHED.json",
+            "sha256": "47299014c32fc7171453ee42da681e52fdce0facd726a225478654682a90e9a2"
+          },
+          "published_unix": 1789497545.3407829,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0071.request.json",
+            "sha256": "65ade8e29be48ec76a924f3b7b189dcfc25a19d5bb075f84efd1d3af7e428caa"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "captured_ledger_sha256": "4844f70f609441a34cb602f4bae4bbee4a0dbc902489765a3a9c708de04947fb",
+            "line": 877,
+            "line_sha256": "f79c92f1206a47e763f8d12751bf5ffc5a2573fa36e2a80ca9cb6324679bc356",
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/LEDGER.jsonl"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 16.35264229774475,
+          "requested_unix": 1789497528.97045,
+          "requested_utc": "2026-09-15T18:38:48.970450+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0071.response.json",
+            "sha256": "bde0187d52ee44dba9b3f56450ba0cfff2f97fa14ff050cfcf46bba7aa0b1fed"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "application_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/independent_r119_v1/parent_applied/P0072.json",
+            "sha256": "f4768275d4e55c7ce3466e44bebc51c53b9266c1e5bb3ec654604ba30bbc603f"
+          },
+          "application_receipt_unix": 1789497579.9800625,
+          "applied_to_completed_child_verified": true,
+          "child_captures": [
+            {
+              "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/calls/N00811.json",
+              "sha256": "ddf00d14cc0a47dc589edd9d0b193f57cb8fcc16827216c9bc9998ac537c3d30"
+            }
+          ],
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497557.9835896,
+          "finished_utc": "2026-09-15T18:39:17.983590+00:00",
+          "id": "P0072",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497569.1284,
+          "native_observed_utc": "2026-09-15T18:39:29.128400+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_received/P0072.json",
+            "sha256": "35a535a30691b96ff18876426d074c07ef7aa6f5525a607f24852956ae37833a"
+          },
+          "provider_elapsed_seconds": 10.59481750199484,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_claude/P0072.claim/PUBLISHED.json",
+            "sha256": "c777cf1b7ea6c97082a5ac73e158ca9fa7e3bbcbff7fddd2f957418cfd414bf8"
+          },
+          "published_unix": 1789497558.0014088,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0072.request.json",
+            "sha256": "df4f83ea3922103e7c667bf019aff5d63be65966cb9d52dc85317478c496ce92"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "captured_ledger_sha256": "4844f70f609441a34cb602f4bae4bbee4a0dbc902489765a3a9c708de04947fb",
+            "line": 880,
+            "line_sha256": "ae4d07e226baaf4e6aa0665a01bc67938517069fb44c0beed6afe0d3e48395ac",
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/LEDGER.jsonl"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 11.102948665618896,
+          "requested_unix": 1789497546.880641,
+          "requested_utc": "2026-09-15T18:39:06.880641+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0072.response.json",
+            "sha256": "628fbe3528fa21b0ba976bdf143263a95e393d0eafe083f5b02b1f594db322c7"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "application_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/independent_r119_v1/parent_applied/P0073.json",
+            "sha256": "7960650641e1f137f093fa1f8f17ea4ac2c9befa2030263472eb07df18e5badf"
+          },
+          "application_receipt_unix": 1789497797.4186354,
+          "applied_to_completed_child_verified": true,
+          "child_captures": [
+            {
+              "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/calls/N00827.json",
+              "sha256": "3436a1d3ab9a33c2029a8f42ea03aca3501754c4a61fe6bb61cc0e6ccdc054bb"
+            }
+          ],
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497757.0337548,
+          "finished_utc": "2026-09-15T18:42:37.033755+00:00",
+          "id": "P0073",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497774.9829323,
+          "native_observed_utc": "2026-09-15T18:42:54.982932+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_received/P0073.json",
+            "sha256": "1459e6fd14f9fffd1556f03d65366ef6057fdf1b521ac5e6f6350326649f4097"
+          },
+          "provider_elapsed_seconds": 13.936809897997591,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_claude/P0073.claim/PUBLISHED.json",
+            "sha256": "7344ece443114b2847da2f9c07f2ffcfc8e9510df68954be0a8fc8978d365e3a"
+          },
+          "published_unix": 1789497757.0509698,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0073.request.json",
+            "sha256": "bf686af6d7d10ecb06e64a28c0cdc116940152b2d6baa8ce26932fa260dce6cb"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "captured_ledger_sha256": "4844f70f609441a34cb602f4bae4bbee4a0dbc902489765a3a9c708de04947fb",
+            "line": 897,
+            "line_sha256": "c3eed084676a41f438bb370aab4d95569b0f1721cb86c6b0d3ff4687003b8393",
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/LEDGER.jsonl"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 14.700157165527344,
+          "requested_unix": 1789497742.3335977,
+          "requested_utc": "2026-09-15T18:42:22.333598+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0073.response.json",
+            "sha256": "9333ceed17d79a51757d274d0518979a328d05bbc4ffd46f6a5e8466c7c8bd85"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "application_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/independent_r119_v1/parent_applied/P0074.json",
+            "sha256": "77c2882ba18e169ed7060dbe02d006926626625b3db538f5ee91207500174ebc"
+          },
+          "application_receipt_unix": 1789497800.62279,
+          "applied_to_completed_child_verified": true,
+          "child_captures": [
+            {
+              "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/calls/N00828.json",
+              "sha256": "bb1ee6ad23300a2c88b6651d568a28e21a93d7b73980b14460741069f155e5b2"
+            }
+          ],
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497796.2846334,
+          "finished_utc": "2026-09-15T18:43:16.284633+00:00",
+          "id": "P0074",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497797.4339824,
+          "native_observed_utc": "2026-09-15T18:43:17.433982+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_received/P0074.json",
+            "sha256": "f9bac32e9d484d7ee0229910bbf6d8c3ae761b879969dbae9a89fff47f5db31c"
+          },
+          "provider_elapsed_seconds": 21.088370892000967,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_claude/P0074.claim/PUBLISHED.json",
+            "sha256": "5ce62034155a0579240ac53589dbd15fec0b4934413bc719e0a11430261c3332"
+          },
+          "published_unix": 1789497796.304019,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0074.request.json",
+            "sha256": "5e17b6f0b458f416245576f9276e6bbc34880716a81caf40a69604cb619c4000"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "captured_ledger_sha256": "4844f70f609441a34cb602f4bae4bbee4a0dbc902489765a3a9c708de04947fb",
+            "line": 900,
+            "line_sha256": "f668a319d1f383dbf105324d37c93b06ca5a9ffdbd9d686222e402e7c616c3b3",
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/LEDGER.jsonl"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 21.298696756362915,
+          "requested_unix": 1789497774.9859366,
+          "requested_utc": "2026-09-15T18:42:54.985937+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0074.response.json",
+            "sha256": "af9c755532bacc3c86e7267ceb6aa423157deed8f9148b230f5acdffde1a4107"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "application_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/independent_r119_v1/parent_applied/P0075.json",
+            "sha256": "473908fd98042b839e43e4301a462a786aa3cd76745fe85eef639ae3bd7ee4ce"
+          },
+          "application_receipt_unix": 1789497820.5984151,
+          "applied_to_completed_child_verified": true,
+          "child_captures": [
+            {
+              "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/calls/N00835.json",
+              "sha256": "cf5a2ebc5b3411ed051f7cc05e3b0cf87382ee778182f6e0e25e3f6a41a457fd"
+            }
+          ],
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497817.3848023,
+          "finished_utc": "2026-09-15T18:43:37.384802+00:00",
+          "id": "P0075",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497817.627957,
+          "native_observed_utc": "2026-09-15T18:43:37.627957+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_received/P0075.json",
+            "sha256": "764c30c9dd1d6a15f8f6a039c889f54ce110d758df7890cbd0a81c57078461ae"
+          },
+          "provider_elapsed_seconds": 15.014240680000512,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_claude/P0075.claim/PUBLISHED.json",
+            "sha256": "fdae888501a6bd66707d2c504b78786fbdaeda1d0608741de8cc3d1e491b9900"
+          },
+          "published_unix": 1789497817.403732,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0075.request.json",
+            "sha256": "560e74145d2a54062390344ebd9a60eb1a6599256311c375ab20d7feb2f3843e"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "captured_ledger_sha256": "4844f70f609441a34cb602f4bae4bbee4a0dbc902489765a3a9c708de04947fb",
+            "line": 903,
+            "line_sha256": "4fd9430729bf30da44e601a4f2455961da4795dcd16577ab1d0884887c1ed3c7",
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/LEDGER.jsonl"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 16.74855613708496,
+          "requested_unix": 1789497800.6362462,
+          "requested_utc": "2026-09-15T18:43:20.636246+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0075.response.json",
+            "sha256": "d3345f3f75ef14a3603811e4459cfe1c0c316ca3f04052ad4bedeb52b9ee2317"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "applied_to_completed_child_verified": false,
+          "cross_boundary": false,
+          "error": {
+            "code": "parent_tag_class",
+            "type": "ValueError"
+          },
+          "finished_unix": 1789497880.6517694,
+          "finished_utc": "2026-09-15T18:44:40.651769+00:00",
+          "id": "P0076",
+          "late": false,
+          "native_observed_status": "MISSING",
+          "native_observed_unix": 1789497882.985475,
+          "native_observed_utc": "2026-09-15T18:44:42.985475+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_received/P0076.json",
+            "sha256": "a27aad414dfc478348ae28b9caade7ec00f143d8b059eb0470cdfd7c754a14cc"
+          },
+          "provider_elapsed_seconds": 14.941653244997724,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_claude/P0076.claim/PUBLISHED.json",
+            "sha256": "4e063a9456e029c4467c955192fcb19ac9644619adc0611af172996618e80821"
+          },
+          "published_unix": 1789497880.6696465,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0076.request.json",
+            "sha256": "42e8f59dbe2be03a77efe0f3ae20d3f167f9c2a0743b956498cf47f982b5edbb"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "captured_ledger_sha256": "4844f70f609441a34cb602f4bae4bbee4a0dbc902489765a3a9c708de04947fb",
+            "line": 920,
+            "line_sha256": "e5c6cec24ad3eb05eb58007dc1a439b0be153491143f32fd95993f61a2e5ef38",
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/LEDGER.jsonl"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 16.063670873641968,
+          "requested_unix": 1789497864.5880985,
+          "requested_utc": "2026-09-15T18:44:24.588099+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0076.response.json",
+            "sha256": "10ec1fa0c4ea18b10a2f4ce868f1031a7545de3c39a376ed86dc2cd8ffd32937"
+          },
+          "status": "MISSING"
+        },
+        {
+          "application_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/independent_r119_v1/parent_applied/P0077.json",
+            "sha256": "07e36df7ffbc1414482c1ca5a554b925fc91ece8cfc1255707901fefc4f1dfd2"
+          },
+          "application_receipt_unix": 1789497906.6964564,
+          "applied_to_completed_child_verified": true,
+          "child_captures": [
+            {
+              "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/calls/N00852.json",
+              "sha256": "dafbd61bbb4ce24ce72f7385bb2060a68fd44f0da390504b678db3b56af59e52"
+            }
+          ],
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497898.7581196,
+          "finished_utc": "2026-09-15T18:44:58.758120+00:00",
+          "id": "P0077",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789497901.5939708,
+          "native_observed_utc": "2026-09-15T18:45:01.593971+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_received/P0077.json",
+            "sha256": "3f1a6cad5b5ae3de43303f4799344f2274f9bdfaa4001602057e55c91e181a86"
+          },
+          "provider_elapsed_seconds": 14.028980748000322,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_claude/P0077.claim/PUBLISHED.json",
+            "sha256": "6dd2c85b7d621cc96b1a03ab32e1d7cfa91e596fac6aff974c539d84754e452d"
+          },
+          "published_unix": 1789497898.7771473,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0077.request.json",
+            "sha256": "9eba71daf7081f55a8209489f0b4111f2760b1723689ede97443b4578b27ac36"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "captured_ledger_sha256": "4844f70f609441a34cb602f4bae4bbee4a0dbc902489765a3a9c708de04947fb",
+            "line": 923,
+            "line_sha256": "b703b2b61b2755f604d0b7fe2dcd339b619b9975f12092108aad2e99c617cac9",
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/LEDGER.jsonl"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 15.769500017166138,
+          "requested_unix": 1789497882.9886196,
+          "requested_utc": "2026-09-15T18:44:42.988620+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0077.response.json",
+            "sha256": "1ed8ca3ba0b134440d348fb2869ff6b5162c70b2e9f6f558d8cda5b719289db5"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "application_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/independent_r119_v1/parent_applied/P0078.json",
+            "sha256": "8924d602cc5d870602888a2178284c861341e9746d0a9c5d5e46ea896a25c443"
+          },
+          "application_receipt_unix": 1789498027.6112494,
+          "applied_to_completed_child_verified": true,
+          "child_captures": [
+            {
+              "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/calls/N00864.json",
+              "sha256": "bc750c3e87f4c902644d87f8891016b4d1c189d96dfe141028955407cd2a06f3"
+            }
+          ],
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789497983.075548,
+          "finished_utc": "2026-09-15T18:46:23.075548+00:00",
+          "id": "P0078",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789498003.8961518,
+          "native_observed_utc": "2026-09-15T18:46:43.896152+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_received/P0078.json",
+            "sha256": "73b732acf0ca4242f38c84b4aa2f41b94de42e3262edd0acc2bdef9f9c1458cf"
+          },
+          "provider_elapsed_seconds": 15.843829010002082,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_claude/P0078.claim/PUBLISHED.json",
+            "sha256": "8f67b44ad466912ea93565951d540a496ae1fe144777b98e21804b8412df01fa"
+          },
+          "published_unix": 1789497983.0926147,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0078.request.json",
+            "sha256": "6a47d0794f3dfa6abec8611df577348601a5fe6f098c784302cbb8aa5805c780"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "captured_ledger_sha256": "4844f70f609441a34cb602f4bae4bbee4a0dbc902489765a3a9c708de04947fb",
+            "line": 940,
+            "line_sha256": "f152ee799154b778180e966a88ae3c2e5f6d32627bf8c8655ef1845f2ef57b0c",
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/LEDGER.jsonl"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 17.667612552642822,
+          "requested_unix": 1789497965.4079354,
+          "requested_utc": "2026-09-15T18:46:05.407935+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0078.response.json",
+            "sha256": "669e3ef78293e12626fa4b92a381ec4f933fe48553afc1dfadc9d56b7cbaf14a"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "applied_to_completed_child_verified": false,
+          "cross_boundary": false,
+          "error": {
+            "code": "lane_guidance_limit_no_cropping",
+            "type": "ValueError"
+          },
+          "finished_unix": 1789498020.0965378,
+          "finished_utc": "2026-09-15T18:47:00.096538+00:00",
+          "id": "P0079",
+          "late": false,
+          "native_observed_status": "MISSING",
+          "native_observed_unix": 1789498027.6261318,
+          "native_observed_utc": "2026-09-15T18:47:07.626132+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_received/P0079.json",
+            "sha256": "93a6c5f95115901a1858a059f01e4e4a098983c3bbad2436a4f3fdcf678deacd"
+          },
+          "provider_elapsed_seconds": 14.831876058997295,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_claude/P0079.claim/PUBLISHED.json",
+            "sha256": "5da9f270274d31c7cfdb8609478283a5b62d2251f3d2680ed8985e72908248d6"
+          },
+          "published_unix": 1789498020.106821,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0079.request.json",
+            "sha256": "2b148e918bc3d93b285f0b7860de8f9183d82a86e048615a9031b49e174116cf"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "captured_ledger_sha256": "4844f70f609441a34cb602f4bae4bbee4a0dbc902489765a3a9c708de04947fb",
+            "line": 942,
+            "line_sha256": "ab40e228ec126c8fb5ed78dc80cd18b8dc577966d7e8a138abe993d481edad16",
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/LEDGER.jsonl"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 16.197232961654663,
+          "requested_unix": 1789498003.8993049,
+          "requested_utc": "2026-09-15T18:46:43.899305+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0079.response.json",
+            "sha256": "3f2ab3f97d2d460e63344758b7273742b8dab4411abc15be11a7e4ccc9f523e6"
+          },
+          "status": "MISSING"
+        },
+        {
+          "application_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/independent_r119_v1/parent_applied/P0080.json",
+            "sha256": "5b9dac5539aa64aa9d88350c9bdfc4b0f212b48b64ca15d52c1e599bee83bba4"
+          },
+          "application_receipt_unix": 1789498057.5561202,
+          "applied_to_completed_child_verified": true,
+          "child_captures": [
+            {
+              "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/calls/N00872.json",
+              "sha256": "bced78173f8ca9ca58ea6652d2b261f103ce67c1656614ee34a969a81f736db3"
+            }
+          ],
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789498050.286183,
+          "finished_utc": "2026-09-15T18:47:30.286183+00:00",
+          "id": "P0080",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789498051.6111133,
+          "native_observed_utc": "2026-09-15T18:47:31.611113+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_received/P0080.json",
+            "sha256": "32c423ca1cb1be0ceafaeacd2864b1193cbaadbcaab558066b71978a9c3f5f0d"
+          },
+          "provider_elapsed_seconds": 14.084471258000121,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_claude/P0080.claim/PUBLISHED.json",
+            "sha256": "cfc98d15bdaa9dbaec472addce90490be1b5751a27e74d13d5c2f5298895072d"
+          },
+          "published_unix": 1789498050.3035169,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0080.request.json",
+            "sha256": "c28782be1cf09085f82b72e5b19d27c35eb4dd7f29c3832247d35398455393a6"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "captured_ledger_sha256": "4844f70f609441a34cb602f4bae4bbee4a0dbc902489765a3a9c708de04947fb",
+            "line": 945,
+            "line_sha256": "7a6ec5b403824dcfd9172edc87c4259e5f83eb4104dbd15159065ff0666b3078",
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/LEDGER.jsonl"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 15.336146116256714,
+          "requested_unix": 1789498034.950037,
+          "requested_utc": "2026-09-15T18:47:14.950037+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0080.response.json",
+            "sha256": "4922579de336f26dff2e65311e19b83f5e19eeb3e1e87734abd1d2bc97da3645"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "application_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/independent_r119_v1/parent_applied/P0081.json",
+            "sha256": "b981abcff536cd57214b17c7aa87348fe66f5d1781a1db5d4f2799ebdb913e6a"
+          },
+          "application_receipt_unix": 1789498141.2856715,
+          "applied_to_completed_child_verified": true,
+          "child_captures": [
+            {
+              "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/calls/N00885.json",
+              "sha256": "9a6b7eec13ae652800984408b3e99f4f2f1ec0c8afa934ae5936a8aa2f57ddae"
+            }
+          ],
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789498119.1717608,
+          "finished_utc": "2026-09-15T18:48:39.171761+00:00",
+          "id": "P0081",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789498124.817258,
+          "native_observed_utc": "2026-09-15T18:48:44.817258+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_received/P0081.json",
+            "sha256": "a707aa92d85998f6605d81df43130712ffdfdb36f982bc776110ea3f2c44f9e9"
+          },
+          "provider_elapsed_seconds": 14.49755107099918,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_claude/P0081.claim/PUBLISHED.json",
+            "sha256": "08dce3625de27b2bea26a4b96efc4633983ca04adf73c00fb03cca090602e313"
+          },
+          "published_unix": 1789498119.188983,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0081.request.json",
+            "sha256": "f50241ffd2fadaaebcd60926557f694066e64bf5714c791de0177f1e721a844b"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "captured_ledger_sha256": "4844f70f609441a34cb602f4bae4bbee4a0dbc902489765a3a9c708de04947fb",
+            "line": 962,
+            "line_sha256": "0016b30b4f16cfa71b11a1681a80b059953f6360c0c8259ca67fb848a214e011",
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/LEDGER.jsonl"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 15.540976524353027,
+          "requested_unix": 1789498103.6307843,
+          "requested_utc": "2026-09-15T18:48:23.630784+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0081.response.json",
+            "sha256": "b021e7d4da1191d61528dc6230fef9e71dfe73bf20153c494c45a775fb720c28"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "application_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/independent_r119_v1/parent_applied/P0082.json",
+            "sha256": "3f39fedc61e1baa9477727391338d736d9158d93c6e4deb82b44c9492b1f1526"
+          },
+          "application_receipt_unix": 1789498268.0328515,
+          "applied_to_completed_child_verified": true,
+          "child_captures": [
+            {
+              "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/calls/N00900.json",
+              "sha256": "cb0615a21094c7f9bd243dbb40d664d0d5a44bb28641d0e943b4e4270bf965fb"
+            }
+          ],
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789498233.0759952,
+          "finished_utc": "2026-09-15T18:50:33.075995+00:00",
+          "id": "P0082",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789498245.0489461,
+          "native_observed_utc": "2026-09-15T18:50:45.048946+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_received/P0082.json",
+            "sha256": "575308a344f789efee69d18fabf8dd0892586cbe7cd0810d8cd1dce638ba1ee0"
+          },
+          "provider_elapsed_seconds": 15.258331133998581,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_claude/P0082.claim/PUBLISHED.json",
+            "sha256": "997289dbee79b5bb17b63fd726f371dc124769ae2e0cfcac3382b2b1a2586f49"
+          },
+          "published_unix": 1789498233.0932508,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0082.request.json",
+            "sha256": "8978769a0e22547dd64dc4ba4caee5d025765d6522e6ea3d87839a97feedda07"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "captured_ledger_sha256": "4844f70f609441a34cb602f4bae4bbee4a0dbc902489765a3a9c708de04947fb",
+            "line": 980,
+            "line_sha256": "2c76c9836164c3008db46edffd8ed533de55a86047b5b75f2326ccb241a619de",
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/LEDGER.jsonl"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 16.473677396774292,
+          "requested_unix": 1789498216.6023178,
+          "requested_utc": "2026-09-15T18:50:16.602318+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0082.response.json",
+            "sha256": "74eb0573e1cb3f37c3cfd687b6b1e068e3f6ec1a084a96f4172bd69a92a5f64b"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "applied_to_completed_child_verified": false,
+          "cross_boundary": false,
+          "error": {
+            "code": "lane_guidance_limit_no_cropping",
+            "type": "ValueError"
+          },
+          "finished_unix": 1789498262.8104343,
+          "finished_utc": "2026-09-15T18:51:02.810434+00:00",
+          "id": "P0083",
+          "late": false,
+          "native_observed_status": "MISSING",
+          "native_observed_unix": 1789498268.048433,
+          "native_observed_utc": "2026-09-15T18:51:08.048433+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_received/P0083.json",
+            "sha256": "1c15b3e6c360904e03b24fcd0d63e68dda1dba391c7750c0510581334fab0b26"
+          },
+          "provider_elapsed_seconds": 17.601738792996912,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_claude/P0083.claim/PUBLISHED.json",
+            "sha256": "70d424cf732860c9d8ae08230073a746b2d34ee01cc05146f48af0b2411adbf7"
+          },
+          "published_unix": 1789498262.8286498,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0083.request.json",
+            "sha256": "2094e65ee3cc0ff9cf90e101fd7988b8ede4a0f1d14ef6e42218a69992fce2f4"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "captured_ledger_sha256": "4844f70f609441a34cb602f4bae4bbee4a0dbc902489765a3a9c708de04947fb",
+            "line": 982,
+            "line_sha256": "d3678cfdc38fc17169ecf087ab709805f3138e9f22fffe049382236fed786232",
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/LEDGER.jsonl"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 17.75816535949707,
+          "requested_unix": 1789498245.052269,
+          "requested_utc": "2026-09-15T18:50:45.052269+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0083.response.json",
+            "sha256": "5904f1c4e5db57bd34b225a9658a2ee4b79620d1a824ee1b2f00f93703c9d656"
+          },
+          "status": "MISSING"
+        },
+        {
+          "application_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/independent_r119_v1/parent_applied/P0084.json",
+            "sha256": "ac9087f06a0a9373960f3614da3b505669626dbd80c96bff2a0cd983604084f9"
+          },
+          "application_receipt_unix": 1789498299.6915805,
+          "applied_to_completed_child_verified": true,
+          "child_captures": [
+            {
+              "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/calls/N00908.json",
+              "sha256": "8b11f707324868b024f1f8fcc90599db9fcf193bf3cf8483ac00c1913a6d1cd0"
+            }
+          ],
+          "cross_boundary": false,
+          "error": null,
+          "finished_unix": 1789498291.7254224,
+          "finished_utc": "2026-09-15T18:51:31.725422+00:00",
+          "id": "P0084",
+          "late": false,
+          "native_observed_status": "COMPLETE",
+          "native_observed_unix": 1789498293.0188978,
+          "native_observed_utc": "2026-09-15T18:51:33.018898+00:00",
+          "native_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_received/P0084.json",
+            "sha256": "1d5148bed9d93df7c9dc356d73bb25b9101d0df7f6e8f68f0a2c686e635a62c0"
+          },
+          "provider_elapsed_seconds": 12.75937134099513,
+          "publication_after_observation": false,
+          "publication_hash_join_valid": true,
+          "published_receipt": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_claude/P0084.claim/PUBLISHED.json",
+            "sha256": "4b1f3d0f73c01e4c4ea39b532f75ac5ad7673bae2bd654b684a0827898899443"
+          },
+          "published_unix": 1789498291.7433538,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0084.request.json",
+            "sha256": "e486fe16272c670c2673aa8de9ee2b2ef6531d5a45b77152b541f2a458d5a924"
+          },
+          "request_response_join_valid": true,
+          "request_time_source": {
+            "captured_ledger_sha256": "4844f70f609441a34cb602f4bae4bbee4a0dbc902489765a3a9c708de04947fb",
+            "line": 985,
+            "line_sha256": "770ef9c6f72441d8e86b0f4dab8279d8e484a74825769191e4bd49cd78e43ce5",
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/LEDGER.jsonl"
+          },
+          "request_time_status": "EXACT_NATIVE_RESERVED_OR_SUBMITTED",
+          "request_to_finish_seconds": 14.442044019699097,
+          "requested_unix": 1789498277.2833784,
+          "requested_utc": "2026-09-15T18:51:17.283378+00:00",
+          "response": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0084.response.json",
+            "sha256": "3eb0b2f38cb8156c89fb68153af785239f0b51caa7fb3478570be830891546ba"
+          },
+          "status": "COMPLETE"
+        }
+      ],
+      "unknown_request_time": {
+        "COMPLETE": 0,
+        "MISSING": 0,
+        "SILENT": 0,
+        "UNKNOWN": 0
+      },
+      "verified_complete_applications": 13
+    }
+  ],
+  "cross_boundary": "Response finished in interval; exact native request reservation/submission time <18:33. Unknown request times remain separately counted, never silently excluded.",
+  "cut_unix": 1789497180.0,
+  "cut_utc": "2026-09-15T18:33:00+00:00",
+  "inclusion": "Enumerate ALL final parent_queue/*.response.json files. Include every numeric finished_unix in [cut, through], independently of request existence, age, task metadata, or native consumption. No request-cohort prefilter.",
+  "native_consumption": "Separately checked native observation/receipt; accepting a response or updating settings does not alone prove subsequent child generation or guidance use.",
+  "publication": "Final response file visible at observation (not .partial); exact claim PUBLISHED hash joins reported independently. No request timestamp or PUBLISHED absence excludes an otherwise in-window response.",
+  "reducer": {
+    "native_path": "/tmp/orch_r119_finish_cohort_supplement_20260915_v2.py",
+    "sha256": "99ad3705e36583fa7115a57faf0f34627dcee4ac7f715a991e9e05ab686aa233"
+  },
+  "schema": "R119_ALL_PUBLISHED_FINISH_COHORT_V1",
+  "through_unix": 1789498310.929972,
+  "through_utc": "2026-09-15T18:51:50.929972+00:00"
+}

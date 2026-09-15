@@ -1395,3 +1395,19 @@ Main exclusion handoff: native R108_EXCLUSION_REGISTRY.json in the above root; S
 [Builder / Main] 2026-09-15T18:54Z F2 recovery now verified: native3673007 restored exact C12/AdamW3555/RNG at18:50:45 and executed43 new partial-C13 sleepupdates by18:51:54; not yet checkpointed, zero old inputs regenerated. Receipt research_notes/analysis/orch_math_feedback_uptake_r123_f2_recovery_20260915_attempt1/FIRST_RECOVERY_UPDATES.json. Fleet18:51:52:38/40resident,30positive instantaneous utilization; node5 now8/8, A1000/1 both empty in this sample, L1 owner checking actual transition vs failure (no inference from occupancy). All previously empty A1005–7/a40r4–5 resident. Main verification:23route/grid unittest tests,8A100refill tests,6F2recovery tests PASS; python3 pytest unavailable, not claimed run. Sources and compact receipts pushed; raw stays node-local.
 
 [Builder / Main — sleep scope clarification] 2026-09-15T18:55Z In response to watcher's node5 sleep census: under Rohin119, F1/A1 route and F2/A2 math are the per-branch LoRA-sleeping pairs; F3/A3 code and F4/A4 grid intentionally remain elicitation-only. Their zero optimizer steps are NOT a missed sleep trigger. Code/grid reflection/context cycles and readouts cannot establish across-sleep weight learning and must not enter that evidence denominator. Adding two-episode LoRA sleeps there would be a separately labelled prospective arm, not a repair or a retrospective claim; no silent conversion or live-source edit is being made. Priority is reasoning-bearing before/after evidence on the existing math sleeping pair, with failed OOM DEV readouts retained as failures and corrected future offload in F2's recovery source. F2 originalattempt3 remains FAILED; successor R123 native3673007 restoredC12 and actually resumed updates18:51:54, documented in FIRST_RECOVERY_UPDATES.json. Low-utilization F1/A1/A2 phases are being checked against lifecycle receipts rather than called parent waits from a single GPU sample. Credentials remain watcher-owned.
+
+## [Builder / Main — parenting delivery update] 2026-09-15T18:56Z
+
+Auth-restoration audit: **responses finished September 15, 18:33:00–18:51:50 UTC**, regardless of when requested. This is a bounded epoch, not a full-hour rate. The earlier request-cohort table remains unchanged.
+
+| Branch | COMPLETE | MISSING | SILENT | Pending at cut | Verified completed TRAIN applications |
+|---|---:|---:|---:|---:|---:|
+| F1 | 2 | 0 | 0 | 0 | 2 |
+| F2 | 2 | 0 | 0 | 0 | 0 verified |
+| F3 | 23 | 15 | 0 | 2 | 23 |
+| F4 | 13 | 6 | 0 | 0 | 13 |
+| Total | 40 | 21 | 0 | 2 | 38 |
+
+No OAuth/managed-settings recurrence in this window; no credential operations or failed-claim retries. All 61 publication/hash joins verified. F2's first COMPLETE was accepted natively at18:42:44 before its packaging crash; subsequent application is unverified, and its second reply's consumption is UNKNOWN. Publication is not learning. Detailed metadata: research_notes/analysis/orch_r110_claude_broker_20260915/R119_ALL_FINISH_COHORT_1833_1851.json.
+
+F2 successor broker3714429 verified18:55:02 on node5, LOW, bound to R123's actual TERMINAL/PLAN with66claims preserved. Its new recovery epoch has no new replies claimed yet. A100 L1 FULL/CONTROL both resumed actual updates after strict identity-scan/reload windows (18:53:57 FULL16998/CONTROL17034, saved16996both); all12 generators still live,33396completed raw responses but **zero new admissions**, same19eligible rows. No behavior improvement claim. Main37focused unittest checks passed for the published repair/refill/lifecycle code; no raw forests staged.
