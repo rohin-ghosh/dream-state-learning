@@ -1,5 +1,19 @@
 # Research state — Orchestrator
 
+## Context-bound reflection audit — September 15, 2026, 08:04 UTC
+
+Fixed2guarded reflections:0/2have an author-identified grounded new substantive
+observation/correction relative to full source/parent/carry context;1117non-EOS
+tokens total.1/2stays on current task,1/2repeats old carry task despite explicit
+parent correction.2/2semantically restate supplied propositions, notwithstanding
+zero exact duplicate paragraphs. This is a bounded binary author audit, not a
+semantic token-yield estimate or retained learning result. Machine novelty stays
+UNKNOWN. Actual cap2048both, not historical8192. CPU prefix replay of the two
+specified historical8192-token loops triggers pinned guard at848/784tokens;
+counterfactual stop positions, no live runtime savings claim.34native source,
+parent and context files hash-verified unchanged. Report/receipt in
+research_notes/analysis/orch_route_parent_campaign_20260915_reflection_stop_audit/.
+
 ## Guarded BASE cycle finished — September 15, 2026, 08:03 UTC
 
 A1005 guarded contextual cycle is COMPLETE at07:59:46; experience-to-readout

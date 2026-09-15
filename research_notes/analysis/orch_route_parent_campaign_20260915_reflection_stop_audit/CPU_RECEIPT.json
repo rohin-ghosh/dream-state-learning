@@ -1,0 +1,606 @@
+{
+  "schema": "FIXED_CPU_REFLECTION_AUDIT_V1",
+  "completed_utc": "2026-09-15T08:01:32.824510+00:00",
+  "source_sha256": "1fe38d9fea6bed06f07c3a5eb0ccbb029635d7af148b38367d8cd51dddfc2ceb",
+  "historical": [
+    {
+      "path": "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_03_r102_micro5/GUIDED_SLEEP/cycle7/experience/CALL_0075.json",
+      "input_sha256": "224d091200d52ba6b674a1ed9d2b7eb2b4545a908303f9d2820ac7f347fe5b0c",
+      "actual_tokens": 8192,
+      "actual_terminal": false,
+      "actual_truncated": true,
+      "decoded_raw_exact_match": true,
+      "counterfactual_first_stop_token": 848,
+      "counterfactual_unemitted_tail_tokens": 7344,
+      "measured_runtime_saved_seconds": null,
+      "counterfactual_metadata": {
+        "schema": "EXACT_PARAGRAPH_STOP_V1",
+        "raw_prefix_sha256": "2402ae99080ddad14801a22786bafe68dc5e4eccd161c3c47bb52571dac93f3f",
+        "policy": {
+          "min_generated_tokens": 512,
+          "min_paragraph_chars": 160,
+          "min_block_chars": 320,
+          "min_repeats": 3,
+          "max_block_paragraphs": 4,
+          "check_every_tokens": 16
+        },
+        "stop_reason": "EXACT_REPEATED_PARAGRAPH",
+        "early_stopped": true,
+        "eos_reached": false,
+        "terminal": false,
+        "length_cap_reached": false,
+        "truncated": false,
+        "repetition_stop_requested": true,
+        "repetition_stop_honored": true,
+        "repetition_stop_at_final_prefix": true,
+        "repetition_stop_coincides_with_cap": false,
+        "stop_requested_at_generated_tokens": 848,
+        "trigger_witness": {
+          "block_paragraphs": 3,
+          "complete_copies": 3,
+          "block_content_characters": 573,
+          "long_paragraphs": 2,
+          "repeated_content_characters": 1193,
+          "matched_next_copy_characters": 47,
+          "partial_final_paragraph": true,
+          "block_sha256": "41a6d0496f4330dbb40c813f9b557e4eddbe3092c726dcb0c484ef87562e20d3"
+        },
+        "final_repeat_witness": {
+          "block_paragraphs": 3,
+          "complete_copies": 3,
+          "block_content_characters": 573,
+          "long_paragraphs": 2,
+          "repeated_content_characters": 1193,
+          "matched_next_copy_characters": 47,
+          "partial_final_paragraph": true,
+          "block_sha256": "41a6d0496f4330dbb40c813f9b557e4eddbe3092c726dcb0c484ef87562e20d3"
+        },
+        "generated_tokens_including_special": 848,
+        "generated_tokens_excluding_terminal_eos": 848,
+        "repeated_content_characters": 1193,
+        "repeated_content_tokens": null,
+        "repeated_content_tokens_status": "NOT_MEASURED_CHARACTER_COUNTS_ARE_NOT_TOKEN_COUNTS",
+        "lexical_novelty_proxy": {
+          "unit": "characters_in_eligible_paragraph_segments",
+          "eligible_segments": 13,
+          "eligible_content_characters": 4033,
+          "exact_duplicate_segments": 6,
+          "exact_duplicate_content_characters": 1545,
+          "unique_content_fraction": 0.6169104884701215,
+          "scope": "THIS_OUTPUT_ONLY_EXACT_DUPLICATION_NOT_SEMANTIC_YIELD",
+          "final_segment_may_be_incomplete": true
+        },
+        "semantic_novelty_yield": "UNKNOWN",
+        "semantic_review_status": "PENDING_AUTHOR_REVIEW",
+        "fit_eligibility": "NOT_DECIDED_BY_THIS_SAFEGUARD"
+      }
+    },
+    {
+      "path": "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_05_r104_training4/GUIDED_SLEEP/cycle3/experience/CALL_0027.json",
+      "input_sha256": "96cf8b07dadb8fd168c4095482f0d12a3b73739cbabb68a0f148dc5f57313c9a",
+      "actual_tokens": 8192,
+      "actual_terminal": false,
+      "actual_truncated": true,
+      "decoded_raw_exact_match": true,
+      "counterfactual_first_stop_token": 784,
+      "counterfactual_unemitted_tail_tokens": 7408,
+      "measured_runtime_saved_seconds": null,
+      "counterfactual_metadata": {
+        "schema": "EXACT_PARAGRAPH_STOP_V1",
+        "raw_prefix_sha256": "a2334a526915975bf43bb52d4fba0972803bc07ecd487ac97d9dac2c9cd59d4e",
+        "policy": {
+          "min_generated_tokens": 512,
+          "min_paragraph_chars": 160,
+          "min_block_chars": 320,
+          "min_repeats": 3,
+          "max_block_paragraphs": 4,
+          "check_every_tokens": 16
+        },
+        "stop_reason": "EXACT_REPEATED_PARAGRAPH",
+        "early_stopped": true,
+        "eos_reached": false,
+        "terminal": false,
+        "length_cap_reached": false,
+        "truncated": false,
+        "repetition_stop_requested": true,
+        "repetition_stop_honored": true,
+        "repetition_stop_at_final_prefix": true,
+        "repetition_stop_coincides_with_cap": false,
+        "stop_requested_at_generated_tokens": 784,
+        "trigger_witness": {
+          "block_paragraphs": 1,
+          "complete_copies": 3,
+          "block_content_characters": 431,
+          "long_paragraphs": 1,
+          "repeated_content_characters": 939,
+          "matched_next_copy_characters": 77,
+          "partial_final_paragraph": true,
+          "block_sha256": "a46a2d7d4609c41652518c9b6165fd157bb4d7a06cb34f907963526b9e71bd54"
+        },
+        "final_repeat_witness": {
+          "block_paragraphs": 1,
+          "complete_copies": 3,
+          "block_content_characters": 431,
+          "long_paragraphs": 1,
+          "repeated_content_characters": 939,
+          "matched_next_copy_characters": 77,
+          "partial_final_paragraph": true,
+          "block_sha256": "a46a2d7d4609c41652518c9b6165fd157bb4d7a06cb34f907963526b9e71bd54"
+        },
+        "generated_tokens_including_special": 784,
+        "generated_tokens_excluding_terminal_eos": 784,
+        "repeated_content_characters": 939,
+        "repeated_content_tokens": null,
+        "repeated_content_tokens_status": "NOT_MEASURED_CHARACTER_COUNTS_ARE_NOT_TOKEN_COUNTS",
+        "lexical_novelty_proxy": {
+          "unit": "characters_in_eligible_paragraph_segments",
+          "eligible_segments": 9,
+          "eligible_content_characters": 3623,
+          "exact_duplicate_segments": 2,
+          "exact_duplicate_content_characters": 862,
+          "unique_content_fraction": 0.7620756279326525,
+          "scope": "THIS_OUTPUT_ONLY_EXACT_DUPLICATION_NOT_SEMANTIC_YIELD",
+          "final_segment_may_be_incomplete": true
+        },
+        "semantic_novelty_yield": "UNKNOWN",
+        "semantic_review_status": "PENDING_AUTHOR_REVIEW",
+        "fit_eligibility": "NOT_DECIDED_BY_THIS_SAFEGUARD"
+      }
+    }
+  ],
+  "reflections": [
+    {
+      "path": "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_feedback_uptake_stopped_r107_5/cycle1/experience/CALL_004.json",
+      "task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_FEEDBACK_UPTAKE_TRAIN_C1_E1000",
+      "parent_present": true,
+      "updates": 0,
+      "started_utc": "2026-09-15T07:55:59.263719+00:00",
+      "finished_utc": "2026-09-15T07:56:12.196257+00:00",
+      "wall_seconds": 12.932538747787476,
+      "effective_cap": 2048,
+      "prompt_tokens": 2142,
+      "input_truncated": false,
+      "guard": {
+        "application_scope": "OWN_REFLECTION_ONLY",
+        "early_stopped": false,
+        "eos_reached": true,
+        "final_repeat_witness": null,
+        "fit_eligibility": "NOT_APPLICABLE_BASE_NO_WEIGHT_WRITES_NOT_AUTO_ADMITTED",
+        "generated_tokens_excluding_terminal_eos": 587,
+        "generated_tokens_including_special": 588,
+        "length_cap_reached": false,
+        "lexical_novelty_proxy": {
+          "eligible_content_characters": 2003,
+          "eligible_segments": 9,
+          "exact_duplicate_content_characters": 0,
+          "exact_duplicate_segments": 0,
+          "final_segment_may_be_incomplete": true,
+          "scope": "THIS_OUTPUT_ONLY_EXACT_DUPLICATION_NOT_SEMANTIC_YIELD",
+          "unique_content_fraction": 1.0,
+          "unit": "characters_in_eligible_paragraph_segments"
+        },
+        "policy": {
+          "check_every_tokens": 16,
+          "max_block_paragraphs": 4,
+          "min_block_chars": 320,
+          "min_generated_tokens": 512,
+          "min_paragraph_chars": 160,
+          "min_repeats": 3
+        },
+        "raw_prefix_sha256": "6f77183865f2963de868c704db8e87e4f1877a6b043229fab6c3b12cabc89b7b",
+        "repeated_content_characters": 0,
+        "repeated_content_tokens": null,
+        "repeated_content_tokens_status": "NOT_MEASURED_CHARACTER_COUNTS_ARE_NOT_TOKEN_COUNTS",
+        "repetition_stop_at_final_prefix": false,
+        "repetition_stop_coincides_with_cap": false,
+        "repetition_stop_honored": false,
+        "repetition_stop_requested": false,
+        "schema": "EXACT_PARAGRAPH_STOP_V1",
+        "semantic_novelty_yield": "UNKNOWN",
+        "semantic_review_status": "PENDING_AUTHOR_REVIEW",
+        "source_sha256": "1fe38d9fea6bed06f07c3a5eb0ccbb029635d7af148b38367d8cd51dddfc2ceb",
+        "stop_reason": "EOS",
+        "stop_requested_at_generated_tokens": null,
+        "terminal": true,
+        "trigger_witness": null,
+        "truncated": false
+      },
+      "context_joins_exact": true,
+      "messages": [
+        {
+          "index": 0,
+          "role": "system",
+          "characters": 2049,
+          "content_sha256": "693a695f84aee19179716f1701a0b0fcecba4b4eb4af4d42e0ff0a6273aebe41"
+        },
+        {
+          "index": 1,
+          "role": "user",
+          "characters": 3071,
+          "content_sha256": "e859fba4c7b0a4b8a6839e44b581b0ccaea6e7dcb1ab4e1703c4007f2cb9ce3f"
+        },
+        {
+          "index": 2,
+          "role": "user",
+          "characters": 83,
+          "content_sha256": "2c89cc7e16817164df3ed54eb431585a42aad7b62cf6313f861fa5426edb7afd"
+        },
+        {
+          "index": 3,
+          "role": "assistant",
+          "characters": 773,
+          "content_sha256": "977297fb41e77daf45a21610a38a25c29952f9da07da0623445eb36bb25160f8"
+        },
+        {
+          "index": 4,
+          "role": "user",
+          "characters": 192,
+          "content_sha256": "500d698d874e685e7fff481f0b1663a03f65b83e5ae6f9c122774193f6709c38"
+        },
+        {
+          "index": 5,
+          "role": "assistant",
+          "characters": 1877,
+          "content_sha256": "03fe59b3abc73ef70f333fbed859d2a4d36a179ea59b2fb14c46d1d47eae8d36"
+        },
+        {
+          "index": 6,
+          "role": "user",
+          "characters": 192,
+          "content_sha256": "500d698d874e685e7fff481f0b1663a03f65b83e5ae6f9c122774193f6709c38"
+        },
+        {
+          "index": 7,
+          "role": "user",
+          "characters": 327,
+          "content_sha256": "18e7cb167e4133b258875994432a6db33ba225327043a5a8f788e32e3b3927bd"
+        }
+      ]
+    },
+    {
+      "path": "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_feedback_uptake_stopped_r107_5/cycle1/experience/CALL_005.json",
+      "task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_FEEDBACK_UPTAKE_TRAIN_C1_E1001",
+      "parent_present": true,
+      "updates": 0,
+      "started_utc": "2026-09-15T07:56:12.206687+00:00",
+      "finished_utc": "2026-09-15T07:56:23.852851+00:00",
+      "wall_seconds": 11.646163940429688,
+      "effective_cap": 2048,
+      "prompt_tokens": 1771,
+      "input_truncated": false,
+      "guard": {
+        "application_scope": "OWN_REFLECTION_ONLY",
+        "early_stopped": false,
+        "eos_reached": true,
+        "final_repeat_witness": null,
+        "fit_eligibility": "NOT_APPLICABLE_BASE_NO_WEIGHT_WRITES_NOT_AUTO_ADMITTED",
+        "generated_tokens_excluding_terminal_eos": 530,
+        "generated_tokens_including_special": 531,
+        "length_cap_reached": false,
+        "lexical_novelty_proxy": {
+          "eligible_content_characters": 1824,
+          "eligible_segments": 8,
+          "exact_duplicate_content_characters": 0,
+          "exact_duplicate_segments": 0,
+          "final_segment_may_be_incomplete": true,
+          "scope": "THIS_OUTPUT_ONLY_EXACT_DUPLICATION_NOT_SEMANTIC_YIELD",
+          "unique_content_fraction": 1.0,
+          "unit": "characters_in_eligible_paragraph_segments"
+        },
+        "policy": {
+          "check_every_tokens": 16,
+          "max_block_paragraphs": 4,
+          "min_block_chars": 320,
+          "min_generated_tokens": 512,
+          "min_paragraph_chars": 160,
+          "min_repeats": 3
+        },
+        "raw_prefix_sha256": "ea6fa9ffa89d114ea3a83e1b261b97cb90c808892b40614885d093ef66dac563",
+        "repeated_content_characters": 0,
+        "repeated_content_tokens": null,
+        "repeated_content_tokens_status": "NOT_MEASURED_CHARACTER_COUNTS_ARE_NOT_TOKEN_COUNTS",
+        "repetition_stop_at_final_prefix": false,
+        "repetition_stop_coincides_with_cap": false,
+        "repetition_stop_honored": false,
+        "repetition_stop_requested": false,
+        "schema": "EXACT_PARAGRAPH_STOP_V1",
+        "semantic_novelty_yield": "UNKNOWN",
+        "semantic_review_status": "PENDING_AUTHOR_REVIEW",
+        "source_sha256": "1fe38d9fea6bed06f07c3a5eb0ccbb029635d7af148b38367d8cd51dddfc2ceb",
+        "stop_reason": "EOS",
+        "stop_requested_at_generated_tokens": null,
+        "terminal": true,
+        "trigger_witness": null,
+        "truncated": false
+      },
+      "context_joins_exact": true,
+      "messages": [
+        {
+          "index": 0,
+          "role": "system",
+          "characters": 1692,
+          "content_sha256": "5dc1ca98948d1c0c36dd30734a0c27b501ddadd5cd5fcc18c222e4cfe1a715d2"
+        },
+        {
+          "index": 1,
+          "role": "user",
+          "characters": 3071,
+          "content_sha256": "e859fba4c7b0a4b8a6839e44b581b0ccaea6e7dcb1ab4e1703c4007f2cb9ce3f"
+        },
+        {
+          "index": 2,
+          "role": "user",
+          "characters": 144,
+          "content_sha256": "41e26f2e345d7151605fb2e3e1f46354c0c025c44976d65cfd271d903ed72f4f"
+        },
+        {
+          "index": 3,
+          "role": "assistant",
+          "characters": 411,
+          "content_sha256": "667c500e458dc24985700134abc45a10f0f612e048765ee929774d140018a847"
+        },
+        {
+          "index": 4,
+          "role": "user",
+          "characters": 189,
+          "content_sha256": "72d053e4016cb89aa112788b10d01f52674d166b69db63bf522d8f039dbd1e6d"
+        },
+        {
+          "index": 5,
+          "role": "assistant",
+          "characters": 1090,
+          "content_sha256": "19fa48f30bce6e955b163d5006db72ed9e429221930df8ff0f00e2bf4b33f6be"
+        },
+        {
+          "index": 6,
+          "role": "user",
+          "characters": 189,
+          "content_sha256": "72d053e4016cb89aa112788b10d01f52674d166b69db63bf522d8f039dbd1e6d"
+        },
+        {
+          "index": 7,
+          "role": "user",
+          "characters": 327,
+          "content_sha256": "18e7cb167e4133b258875994432a6db33ba225327043a5a8f788e32e3b3927bd"
+        }
+      ]
+    }
+  ],
+  "parents": [
+    {
+      "round": 1,
+      "request_path": "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_feedback_uptake_stopped_r107_5/base_parent_queue_r107/GUIDED_SLEEP_C1_P1.request.json",
+      "ready_sha256": "41c0576f40f1e22828100b48c16fb585947059025b28bd97b2084f79d9982e66",
+      "archive": {
+        "all_verified": true,
+        "files": {
+          "API_REQUEST.json": "2c54b6e9ae5b8ae5c9fdca951b5401c3f851956a223fb79fbbe16f809a9d196e",
+          "COMPLETE.json": "68c1fbfbc5cc91c528768dbda2238d8513c8aa2c9949650012d5d6c57fadb96f",
+          "INVOCATION.json": "bffa1e39702110d397c89b91ff1db1b3dd854dc1afa8df398ab3739d356766a7",
+          "PLAN.json": "0515c93b8282d0c210f20dfc3dc2b07d73d1b557be050565f409e9c091988d0d",
+          "PROMPT.txt": "844fbf9707fe98ca1d3b2931cc96feb23e2870d55e032fe6621d43ce2a51083c",
+          "RAW_RESPONSE.json": "719d62eff5919fbb18a95560f67a4e48db927b03f73e7e3111226ad25bb15c72",
+          "REQUEST.json": "4fc3c6460d90ca5ae60a7e1f032493267b9acc1f653fca84367030cc505814f4",
+          "SCHEMA.json": "d5f6225cb5914d9cfc63ac7c0f1cf8f6d343492c5ca41b3d069ba2dd3755470f",
+          "TRANSPORT_RESULT.json": "1c3158893e37f7bd351c0e302fc97a183724f6a915d7d2981ee55c7201c73f54"
+        },
+        "remote_root": "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/parent_transcripts/campaign_feedback_uptake_stopped_r107_5/GUIDED_SLEEP_C1_P1",
+        "verified_unix": 1789458856.3956745
+      },
+      "actual_response_model": "openai/openai/gpt-6-astra",
+      "requested_model": "openai/openai/gpt-6-astra",
+      "started_utc": "2026-09-15T07:52:31.805994+00:00",
+      "finished_utc": "2026-09-15T07:53:44.719192+00:00",
+      "wall_seconds": 72.91319751739502,
+      "usage": {
+        "cost": null,
+        "input_tokens": 2239,
+        "input_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": 2236,
+          "cached_tokens": 0,
+          "text_tokens": null
+        },
+        "output_tokens": 3056,
+        "output_tokens_details": {
+          "reasoning_tokens": 2470,
+          "text_tokens": null
+        },
+        "total_tokens": 5295
+      },
+      "http_attempts": 1
+    },
+    {
+      "round": 2,
+      "request_path": "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_feedback_uptake_stopped_r107_5/base_parent_queue_r107/GUIDED_SLEEP_C1_P2.request.json",
+      "ready_sha256": "41c0576f40f1e22828100b48c16fb585947059025b28bd97b2084f79d9982e66",
+      "archive": {
+        "all_verified": true,
+        "files": {
+          "API_REQUEST.json": "acf3083d66789f041d497163f1a42ba1a2d0ca397224533a83236278d2e91feb",
+          "COMPLETE.json": "071cfb994a12061ee9dfa52c99b3b1216d4ef8c0e8cf878c1a95b9f4f5560d89",
+          "INVOCATION.json": "c59924cd8d4356a5cc64c71333b467d562c7dfaf80e5a409e9aa353736162eaf",
+          "PLAN.json": "17055cb78f0ceb71cede39a5dbfc1c191798c43b9355043220a4319bdf9363d4",
+          "PROMPT.txt": "d09d9ae4e35b308357aa88191266c9b919a83cd6d122cdcb19192ba1a8246445",
+          "RAW_RESPONSE.json": "f43143adf7948082089d4d2a460407c6891ad1148d8d0d7c18b5b9809c3f2604",
+          "REQUEST.json": "b2778fda9df1b63e72be9a33c26c40416615628039d1326d36867370928e094c",
+          "SCHEMA.json": "d5f6225cb5914d9cfc63ac7c0f1cf8f6d343492c5ca41b3d069ba2dd3755470f",
+          "TRANSPORT_RESULT.json": "54fa65917bb91d0cb547429dc655b91a0e53cafa3e17ed29e6403b136012e966"
+        },
+        "remote_root": "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/parent_transcripts/campaign_feedback_uptake_stopped_r107_5/GUIDED_SLEEP_C1_P2",
+        "verified_unix": 1789458954.162101
+      },
+      "actual_response_model": "openai/openai/gpt-6-astra",
+      "requested_model": "openai/openai/gpt-6-astra",
+      "started_utc": "2026-09-15T07:54:43.543166+00:00",
+      "finished_utc": "2026-09-15T07:55:24.012694+00:00",
+      "wall_seconds": 40.46952772140503,
+      "usage": {
+        "cost": null,
+        "input_tokens": 3153,
+        "input_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": 3150,
+          "cached_tokens": 0,
+          "text_tokens": null
+        },
+        "output_tokens": 1556,
+        "output_tokens_details": {
+          "reasoning_tokens": 873,
+          "text_tokens": null
+        },
+        "total_tokens": 4709
+      },
+      "http_attempts": 1
+    }
+  ],
+  "native_input_manifest": {
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/feedback_uptake_stopped_source_v1/gpu/orch_reflection_repetition_stop.py": {
+      "sha256": "1fe38d9fea6bed06f07c3a5eb0ccbb029635d7af148b38367d8cd51dddfc2ceb",
+      "bytes": 12277
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/PREPARE.json": {
+      "sha256": "3dd81f024242012db7df35aa71fccbcebb8e41c4f418b8ca95e14587ca981df2",
+      "bytes": 1625
+    },
+    "/localhome/local-rohing/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28/tokenizer.json": {
+      "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "bytes": 7031645
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_03_r102_micro5/GUIDED_SLEEP/cycle7/experience/CALL_0075.json": {
+      "sha256": "224d091200d52ba6b674a1ed9d2b7eb2b4545a908303f9d2820ac7f347fe5b0c",
+      "bytes": 145813
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_05_r104_training4/GUIDED_SLEEP/cycle3/experience/CALL_0027.json": {
+      "sha256": "96cf8b07dadb8fd168c4095482f0d12a3b73739cbabb68a0f148dc5f57313c9a",
+      "bytes": 149527
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_feedback_uptake_stopped_r107_5/cycle1/experience/CALL_000.json": {
+      "sha256": "4c010584da3a8a1ad4e1ac75d2e6de042b11ecb09d2ec6b396a300401312c58b",
+      "bytes": 12746
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_feedback_uptake_stopped_r107_5/cycle1/experience/CALL_001.json": {
+      "sha256": "2f28582b389d1571328851ddd6ae704b7d920524048e13e5396b499d4d2b62c5",
+      "bytes": 10550
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_feedback_uptake_stopped_r107_5/cycle1/experience/CALL_002.json": {
+      "sha256": "a860be91f08f8a46fbc86e639ae4ae6506f00a2809c0accc4e4705a7941ecb47",
+      "bytes": 20816
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_feedback_uptake_stopped_r107_5/cycle1/experience/CALL_003.json": {
+      "sha256": "be9e61774e0a9362ba2fa1a4f827ef79992efdd7193967784fb17dbc6fa2fc07",
+      "bytes": 17351
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_feedback_uptake_stopped_r107_5/cycle1/experience/CALL_004.json": {
+      "sha256": "dc2b22944a60994a13393c6d05d54abdbbe02e3531a68f824afe4d4688f56a2d",
+      "bytes": 33334
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_feedback_uptake_stopped_r107_5/cycle1/experience/CALL_005.json": {
+      "sha256": "7f98be546f33eff30f0d4502a2d873a08f3dfb6d8f859a41e4d6d01188ea4169",
+      "bytes": 29035
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_feedback_uptake_stopped_r107_5/PREVIOUS_CARRY.json": {
+      "sha256": "162ae319b8d12044b78a9203683879c2ee031a6724980d11227ec1b6e3d46a04",
+      "bytes": 3069
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_feedback_uptake_stopped_r107_5/base_parent_queue_r107/GUIDED_SLEEP_C1_P1.request.json": {
+      "sha256": "4fc3c6460d90ca5ae60a7e1f032493267b9acc1f653fca84367030cc505814f4",
+      "bytes": 6772
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_feedback_uptake_stopped_r107_5/base_parent_queue_r107/GUIDED_SLEEP_C1_P1.response.json": {
+      "sha256": "f84df67a91b6ae28c32ecd79f03d020e823042256f482f81e47c6c0a1f0db765",
+      "bytes": 4183
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/parent_transcripts/campaign_feedback_uptake_stopped_r107_5/GUIDED_SLEEP_C1_P1/API_REQUEST.json": {
+      "sha256": "2c54b6e9ae5b8ae5c9fdca951b5401c3f851956a223fb79fbbe16f809a9d196e",
+      "bytes": 9000
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/parent_transcripts/campaign_feedback_uptake_stopped_r107_5/GUIDED_SLEEP_C1_P1/COMPLETE.json": {
+      "sha256": "68c1fbfbc5cc91c528768dbda2238d8513c8aa2c9949650012d5d6c57fadb96f",
+      "bytes": 758
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/parent_transcripts/campaign_feedback_uptake_stopped_r107_5/GUIDED_SLEEP_C1_P1/INVOCATION.json": {
+      "sha256": "bffa1e39702110d397c89b91ff1db1b3dd854dc1afa8df398ab3739d356766a7",
+      "bytes": 652
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/parent_transcripts/campaign_feedback_uptake_stopped_r107_5/GUIDED_SLEEP_C1_P1/PLAN.json": {
+      "sha256": "0515c93b8282d0c210f20dfc3dc2b07d73d1b557be050565f409e9c091988d0d",
+      "bytes": 2921
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/parent_transcripts/campaign_feedback_uptake_stopped_r107_5/GUIDED_SLEEP_C1_P1/PROMPT.txt": {
+      "sha256": "844fbf9707fe98ca1d3b2931cc96feb23e2870d55e032fe6621d43ce2a51083c",
+      "bytes": 7614
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/parent_transcripts/campaign_feedback_uptake_stopped_r107_5/GUIDED_SLEEP_C1_P1/RAW_RESPONSE.json": {
+      "sha256": "719d62eff5919fbb18a95560f67a4e48db927b03f73e7e3111226ad25bb15c72",
+      "bytes": 30425
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/parent_transcripts/campaign_feedback_uptake_stopped_r107_5/GUIDED_SLEEP_C1_P1/REQUEST.json": {
+      "sha256": "4fc3c6460d90ca5ae60a7e1f032493267b9acc1f653fca84367030cc505814f4",
+      "bytes": 6772
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/parent_transcripts/campaign_feedback_uptake_stopped_r107_5/GUIDED_SLEEP_C1_P1/SCHEMA.json": {
+      "sha256": "d5f6225cb5914d9cfc63ac7c0f1cf8f6d343492c5ca41b3d069ba2dd3755470f",
+      "bytes": 1085
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/parent_transcripts/campaign_feedback_uptake_stopped_r107_5/GUIDED_SLEEP_C1_P1/TRANSPORT_RESULT.json": {
+      "sha256": "1c3158893e37f7bd351c0e302fc97a183724f6a915d7d2981ee55c7201c73f54",
+      "bytes": 170
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_feedback_uptake_stopped_r107_5/base_parent_queue_r107/GUIDED_SLEEP_C1_P2.request.json": {
+      "sha256": "b2778fda9df1b63e72be9a33c26c40416615628039d1326d36867370928e094c",
+      "bytes": 10768
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_feedback_uptake_stopped_r107_5/base_parent_queue_r107/GUIDED_SLEEP_C1_P2.response.json": {
+      "sha256": "0be03de64620ff76095e16b2a7e07235f046372d49a6503a8ae843e1753a6de6",
+      "bytes": 4730
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/parent_transcripts/campaign_feedback_uptake_stopped_r107_5/GUIDED_SLEEP_C1_P2/API_REQUEST.json": {
+      "sha256": "acf3083d66789f041d497163f1a42ba1a2d0ca397224533a83236278d2e91feb",
+      "bytes": 12805
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/parent_transcripts/campaign_feedback_uptake_stopped_r107_5/GUIDED_SLEEP_C1_P2/COMPLETE.json": {
+      "sha256": "071cfb994a12061ee9dfa52c99b3b1216d4ef8c0e8cf878c1a95b9f4f5560d89",
+      "bytes": 757
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/parent_transcripts/campaign_feedback_uptake_stopped_r107_5/GUIDED_SLEEP_C1_P2/INVOCATION.json": {
+      "sha256": "c59924cd8d4356a5cc64c71333b467d562c7dfaf80e5a409e9aa353736162eaf",
+      "bytes": 653
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/parent_transcripts/campaign_feedback_uptake_stopped_r107_5/GUIDED_SLEEP_C1_P2/PLAN.json": {
+      "sha256": "17055cb78f0ceb71cede39a5dbfc1c191798c43b9355043220a4319bdf9363d4",
+      "bytes": 3469
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/parent_transcripts/campaign_feedback_uptake_stopped_r107_5/GUIDED_SLEEP_C1_P2/PROMPT.txt": {
+      "sha256": "d09d9ae4e35b308357aa88191266c9b919a83cd6d122cdcb19192ba1a8246445",
+      "bytes": 11250
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/parent_transcripts/campaign_feedback_uptake_stopped_r107_5/GUIDED_SLEEP_C1_P2/RAW_RESPONSE.json": {
+      "sha256": "f43143adf7948082089d4d2a460407c6891ad1148d8d0d7c18b5b9809c3f2604",
+      "bytes": 15193
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/parent_transcripts/campaign_feedback_uptake_stopped_r107_5/GUIDED_SLEEP_C1_P2/REQUEST.json": {
+      "sha256": "b2778fda9df1b63e72be9a33c26c40416615628039d1326d36867370928e094c",
+      "bytes": 10768
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/parent_transcripts/campaign_feedback_uptake_stopped_r107_5/GUIDED_SLEEP_C1_P2/SCHEMA.json": {
+      "sha256": "d5f6225cb5914d9cfc63ac7c0f1cf8f6d343492c5ca41b3d069ba2dd3755470f",
+      "bytes": 1085
+    },
+    "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/parent_transcripts/campaign_feedback_uptake_stopped_r107_5/GUIDED_SLEEP_C1_P2/TRANSPORT_RESULT.json": {
+      "sha256": "54fa65917bb91d0cb547429dc655b91a0e53cafa3e17ed29e6403b136012e966",
+      "bytes": 171
+    }
+  },
+  "all_inputs_unchanged": true,
+  "torch_or_transformers_imported": false,
+  "new_model_calls": 0,
+  "gpu_execution": false,
+  "caveat": "Historical results are counterfactual prefix replay, not measured runtime/token savings. Actual guarded reflections reached EOS without a stop. Machine semantic novelty remains UNKNOWN; separate author audit is provisional.",
+  "local_validation": {
+    "command": "python3 -m unittest tests.test_orch_reflection_repetition_stop -q",
+    "tests_passed": 35,
+    "tests_sha256": "52788acb8f91a781c25d2e08446f17e6d6c90e4ad4acfc51bda4e863e466dc95",
+    "initial_command_failure": "python executable unavailable; rerun with python3 passed; no code change"
+  }
+}

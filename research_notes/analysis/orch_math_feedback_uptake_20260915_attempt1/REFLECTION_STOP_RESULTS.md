@@ -22,9 +22,21 @@ to training. Main verification:40tests and16subtests passed.
 
 Both actually ran the hash-bound guard and ended naturally; neither required an
 early stop. These observations verify deployment, NOT a causal speedup or proof
-that an actual pathological generation was stopped. Semantic novel-thought yield
-per reflection token remains UNKNOWN pending comparison to the source experience
-and parent feedback. Zero exact duplicate paragraphs is only a lexical measure.
+that an actual pathological generation was stopped. Machine semantic novel-thought
+yield remains UNKNOWN. A separate context-bound author audit now finds0/2with an
+identified grounded new substantive observation/correction:1117non-EOS tokens
+across the two reflections, but no new substantive content identified. This is
+a limited binary sample audit, not a semantic token classifier or population
+yield estimate. One response stays on the current task; the other solves the
+old carry task despite explicit parent correction. Both substantially restate
+supplied propositions. Zero exact duplicate paragraphs is only a lexical measure.
+
+Both new reflections had an actual2048-token cap, not8192. Historical CPU prefix
+replay of the two specified8192-token failures triggers the same guard at848
+and784tokens, respectively, including the mixed long–short-formula–long block.
+These are counterfactual stop positions on preserved recordings, NOT measured
+runtime savings. Native source/parent/context hashes and the author audit are in
+`../orch_route_parent_campaign_20260915_reflection_stop_audit/AUTHOR_AUDIT.md`.
 
 Earlier degenerate LoRA reflections used8192tokens,381.60–387.77seconds and
 repeated-fourgram fractions0.953–0.962. They are different tasks/model states;
