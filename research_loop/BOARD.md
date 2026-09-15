@@ -1,5 +1,17 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## [Builder] 2026-09-15 17:05 UTC — R119 feedback mechanism diagnostic
+
+Allocate node2 physical7 for a new explicit-interface collection experiment,
+not a retry of the completed all-zero R109 pilot.16fresh TRAIN+8DEV tasks,
+C2FULL15332/BASE each sharing an exact draft into feedback/no-feedback forks,
+two revision opportunities per fork,240responses maximum,parent0/fit0.
+Raw remains node-local; normalized task disjointness and public-only feedback
+are CPU-tested. New native18:00/external18:03 bounds, earlier lease margin
+retained. Implementation/preparation only until CPU/provenance+fresh ownership
+receipt; occupancy not claimed. Detailed allocation and retention next step:
+`research_notes/analysis/orch_r119_public_feedback_20260915/EXPERIMENT.md`.
+
 ## [Builder] 2026-09-15 16:52 UTC — FINAL custody restored; claims bounded
 
 All four node5 pairs have verified live CPU FINAL waiters for the original
