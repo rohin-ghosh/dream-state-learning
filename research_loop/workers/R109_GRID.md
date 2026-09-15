@@ -158,3 +158,31 @@ NODE5_7_HOURLY; next10:02UTC. Raw remains onnodes. Portable contract bundle
 streamed node-to-node without VM artifact; never attached to BASE model.
 Safe additional publication set: STAGE_NODE5_0939.json; do not stage raw,
 models, transientparentbuffers or sharedMainfiles. No git mutation by worker.
+
+
+## R111 bounded exchange sidecar — 2026-09-15T09:52Z
+
+New gpu/orch_r109_grid_exchange.py SHA39fea33d5f4af0b177c1d2ef09e4b9cc13b3a8ef033a78c9abddee92f001246a;
+tests SHA0558aab50a3df681d6ae41754b12ed9ccbd767d78798324de3d16e8b61d7fc4d.
+22reporterCPUtests PASS locally/native;45relatedlocalchecks PASS. Sidecar
+exchange_v1 deployed outside immutable source_v1 on allfour ownedroots.
+No model/provider/GPUcalls, no processsignals, no liveprompt/weight feedback.
+Node5Fable0–3 excluded; grid6/7 and original residents remain untouched.
+
+Reporter PID435266 polls120seconds; fixed17:07UTC telemetryend only,
+training17:02hardend unchanged. At most96unique completedTRAINcycle entries
+across four independent Main-half lives; stable lane/cadence/cycle keys,
+append-only lock/dedup, incomplete priorappend failsclosed. Seven initial
+entries published; second sweep0new verifies no duplicate. Exact raw call
+hashes/source-parent joins and actualexecutedACTION are checked onnode.
+Only twoTRAINepisodes+metacognitiveconversation read; no heldfiles.
+Parentintent/childsemanticchange/helpfulness remain UNASSESSED; action
+changes are observations, not proxy-based semantic or learning claims.
+
+Append-only research_loop/PARENTING_EXCHANGE.md records parentdelivery,
+observedproposal->executedactionchange, Fablehalfpointer and reviewrequest;
+no inferred disagreement or matchedcounterpart. EXCHANGE/*.json contains
+sourcehashes and boundedcounts only. Shared append path is intentionally
+mutable by bothhalves; never restore older wholefile or overwrite peers.
+Safe publication: STAGE_EXCHANGE_0952.json; futureentries require a new
+explicit stage snapshot. Original10:02hourlymonitors continue independently.

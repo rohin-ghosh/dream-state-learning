@@ -204,3 +204,120 @@ failed parent without API retry, missing-parent own reflection followed by next
 scheduled parent, invalid JSON quarantine, archive/hash mismatch fails closed,
 no missing-intervention triple claim, and unchanged lifetime/caps. New source,
 CPU/provenance plus own COORD receipt precede fresh node3physical4 admission.
+
+## 2026-09-15 09:33 UTC — zero-dispatch admission repair, preserved attempt1
+
+Continuation attempt1 guard1360279 ended before any native LAUNCH/dispatch.
+Its privileged scan found only process-identity races; target4 had1MiB,0util,
+no compute PID. The reused A100-specific transient helper demanded0MiB and
+checked an unrelated pinned A100 UUID. New attempt2 candidate fixes only rescan
+eligibility to bind node3physical4 UUID and the existing scanner's<=32MiB idle
+threshold. It never converts a blocked scan into CLEAR: full privileged
+UUID/proc/CVD/minor CLEAR still independently mandatory. Any owner, utilization,
+memory above existing threshold or non-race reason blocks. Regression covers
+1MiB race, owner FD, target compute process and33MiB. All attempt1 bytes/scans/
+READY/guard/TERMINAL preserved; no GPU/provider call or original clock reset.
+
+## 2026-09-15 09:37 UTC — actual continuation; node5 preGPU scope
+
+Node3 attempt2 strict CLEAR after19scans; native1382504/UID2524/start17118536
+launched09:35:23.029802UTC. Own broker351121/UID158984/start157198662.
+Recovered FAILED parent remained charged/unaccepted, no API retry. Child's own
+reflection completed09:36:02.316606UTC(417tokens), continuation09:36:03.424847
+(32tokens); second episode segments completed, NEXT scheduled parentP2S2
+queued. Total native6 includes2inherited+4new;1missing intervention,0accepted
+parents/real triples at09:36:33. No completed context boundary yet;0updates.
+Missing-intervention continuation is explicitly NOT counted as a parent triple.
+
+User's new node5/ovx3 physical4/5 allocation now has repaired normal SSH trust;
+no bypass. Native discovery binds hostSHA
+`0cb7eb43862102b79ae0a30d2babfedfbf9598b31967a1a04122c3cf849c746d`;
+4UUID `GPU-94c9a79c-8b13-5679-ad35-8dda3fe5c94d`,
+5UUID `GPU-65595cff-c6c2-c798-bc62-427168079270`.
+New separate lives:4every-segment/perceptual-metacognitive reflection2048,
+5episode/goal-persistence-curiosity reflection512. Each100cycles/200TRAIN/
+400HELD:1700native+700Astra and1500native+500Astra respectively; new node5
+combined3200native+1200Astra, not any other lane's refunded/reset quota.
+09:30allocation through17:02UTC hard/native17:00, <=8GPUh/card; lease ends
+September17 04:04UTC, six-hour margin. Frozen genuine BASE/noadapter/optimizer.
+Separate deterministic node5 question markers/IDs exclude original registered
+cohorts/fixed32/anchors/knownheld; paired prompts across new arms, not broad
+independence or pure cadence causal claims. Exact shared principles unchanged.
+
+Reuse operational missing-parent handling in NEW node5 source/processes only.
+Keep node3 and A100 live source untouched. CPU tests bind physicalUUID/hosthash,
+new caps/lifetime/cohort and no inherited calls, plus existing operational
+failure regressions. Native CPU tensor/tokenizer provenance and dated own
+COORD/BOARD precede full privileged per-slot admission. Raw remains on-node;
+source transfer may stream node-to-node, no raw VM pull or teacher/L2 ingestion.
+
+## 2026-09-15 09:40 UTC — A100 terminal confirmed; authorized recovery scope
+
+Main's census prompted fresh A100 evidence, not assumption it stayed live.
+Original A100 TERMINAL FAILED09:26:44.662664UTC; native6COMPLETE,
+accepted parents2/charged parents3/triples2/0cycles. P2S1 provider response was
+unusable with AssertionError; exact raw SHA
+`c834dcca84e17a5a74eb7ac3d2d78f8743c3e72375ca32bd34ea1d7566915f8a`.
+AFTER frozen BASE/noadapter/0updates PASS. Distinguish this parent validation
+failure from node3's JSONDecodeError; no child-quality inference or retry.
+
+User now authorizes A100 immutable resilient continuation too. New A100-only
+module/root reuses all6completed native cells and both accepted parent records
+exactly, retains the third charged FAILED parent as missing, restores prior
+own-reflection context from those exact cells, then continues next unissued
+native/parent reservations. Same original1700native/700Astra total and09:02
+start/native17:00/hard17:02; no clock/cap/roster reset. No live source patch.
+PreGPU tests add completed-parent exact archive join/no API dispatch, dynamic
+charged accounting, unsupported partial-native rejection, and replay-free
+inherited-cell restoration, alongside the operational failure regression suite.
+Both node5 guards have started after new132CPU+16subtests and nativeCPUbase
+verification/publication; startup is not asserted as GPU occupancy yet.
+
+## 2026-09-15 09:44 UTC — node5 scanner dispatch repair, zero model calls
+
+Node5 attempt1 guards terminated before any scan receipt or native LAUNCH.
+Concrete adapter defect: privileged subprocess used the original R109 scanner
+CLI, whose fresh-process arm choices do not include node5 arms. New attempt2
+dispatches privileged scanning through the node5 module, configuring exact
+physicalUUID/hosthash before invoking the SAME full scanner. No safety waiver;
+regression checks the exact subprocess binding and complete returned identity.
+Original attempt1 sources/READY/CPU/guard failures remain immutable on-node.
+No model/provider calls were charged; same node5 allocation09:30, original
+17:00/17:02 deadlines and3200/1200 combined ceilings are not reset. NativeCPU
+BASE hashes already verified both lanes; new source/preGPU receipts follow.
+
+## 2026-09-15 09:51 UTC — all four actual natives verified live
+
+Fresh exact process identities, not reservations:
+
+| Lane | Native PID | Launch UTC | Native COMPLETE | Accepted parents | Actual triples | Missing interventions |
+| --- | --- | --- | --- | --- | --- | --- |
+| A1000 continuation | 1536241 | 09:46:38.251536 | 10 | 3 | 3 | 1 |
+| node3physical4 continuation | 1382504 | 09:35:23.029802 | 23 | 5 | 5 | 2 |
+| node5physical4 segment | 58848 | 09:46:44.665962 | 3 | 1 | 1 | 0 |
+| node5physical5 episode | 51670 | 09:45:46.623776 | 6 | 1 | 1 | 0 |
+
+A100 counts include6inherited native/3charged original parents; node3 includes
+2inherited native/1charged original parent. No same API retry or regeneration.
+Node3 completed1cycle/1context-distillation session and continued through a
+second unusable intervention; other lanes0cycles/0context sessions so far.
+All0updates; semantic helpfulness/behavior change UNREVIEWED. Parent-started
+counts include pending turns and are not conflated with archived HTTP attempts.
+Native residency is verified at this timestamp, not promised future utilization.
+
+Native CPU, own137tests+16subtests before node5 attempt2 dispatch; combined
+139tests+16subtests PASS including exchange tests, with final exchange-only
+2tests PASS after compact-write refinement. All current GPU source bytes stay
+frozen, new model/API calls only from existing reserved schedules. No git action.
+
+R111 node5otherhalf0–3 reserved to Fable/Poincare; no accesses or launches there.
+Own CPU exchange sidecar427351/UID158984/start157284740 reads only completed
+node5physical4/5 cycle metadata and appends once per cycle to
+`research_loop/PARENTING_EXCHANGE.md`. It includes accepted/missing counts,
+self-declared parent operations, measured changed TRAIN continuation wording,
+native pointers and questions/disagreements. Excludes sealed scores, raw text,
+teacher answers and semantic benefit claims. Missing interventions are not
+parent triples. No live-source patch/provider/GPU calls; no claim existing
+parents consumed exchange text. No node5 cycle completed yet, so0entries then.
+Keep four resident lives running; next action is first node5 cycle exchange
+and bounded progress checks, not another launch or full-row semantic re-audit.

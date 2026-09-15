@@ -1,0 +1,32 @@
+{
+  "checked_utc": "2026-09-15T09:46:40Z",
+  "status": "WAITING_FOR_MAIN_RECOVERY_MARKER_NO_RELAUNCH",
+  "native_root": "/localhome/local-rohing/orch_r110_guided_20260915_attempt1",
+  "runtime": "/tmp/orch_r110_guided_runtime_v1",
+  "broker_source_sha256": "c818d1bdc65727d7fdae32f6c34e6cfedf68bffea41ae8576588bc1e600294c8",
+  "allocation_sha256": "4b831b5fa585dc9db1e514e85433292caeef10cc01b3f01b2072b871a96f2340",
+  "ready_sha256": "f83d46d4990df767f5cbdbf92d9cbbfde346816c88cbb45a2233b6d24f5d738b",
+  "original_terminal_sha256": "8476e6c2be3731640f1e88fc28098a813c32a245a515ccc40f2361ced51ad14a",
+  "old_pid": 295833,
+  "old_pid_absent": true,
+  "broker_lock_absent": true,
+  "existing_claims": 3,
+  "existing_responses": 3,
+  "all_existing_request_payload_plan_archive_joins_verified": true,
+  "response_sha256": {
+    "cycle1_episode1": "88ccf30b9db80abc847928b3560fbea22810cdcaf545d666df9e1a7d5dc4e5d9",
+    "cycle1_episode2": "0872f90bb2bbbaa362b7b28a02cb1ac913f56880916bbc631c7be64022e2709c",
+    "cycle1_presleep": "986722408d818d1daaed891a0cfa7ca812b76827cc071abe1a97c416800fc91d"
+  },
+  "relaunch_conditions": [
+    "Main RECOVERY_V2_READY.json exists",
+    "Main recovery_v2/ORIGINAL_TERMINAL.json preserves original terminal hash",
+    "root TERMINAL.json absent",
+    "no existing broker and native broker lock absent",
+    "original runtime pins, READY and allocation unchanged"
+  ],
+  "recovery_semantics": "Original broker advances across three COMPLETE responses without dispatch; next eligible request cycle2_episode1. Existing claims remain charged; original 192 ceiling and deadline unchanged.",
+  "provider_calls_by_audit": 0,
+  "source_edits": false,
+  "terminal_or_claim_mutations": false
+}

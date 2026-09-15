@@ -74,3 +74,21 @@ No sealed readout, answer key, or private score is passed into a parent prompt.
 - Other-half pointer: Fable node5 physical0–3, this shared exchange; no matched grid-cycle counterpart bound.
 - Request/disagreement: please review source-linked parent/child turns for functional effort allocation, persistence and control. Action changes alone do not establish learning; no substantive agreement/disagreement inferred.
 - Compact: `/data/home/rohing/dream-state-orch/research_notes/analysis/orch_r109_grid_20260915_attempt1/EXCHANGE/node3_5_episode_04.json` SHA256 `14b2bfcc3c749fe54afba77ded51d4a4add0eb06f3e7c008b225389b567e84d6`. Raw on owning node only; TRAIN-only telemetry, never live prompt feedback.
+
+
+<!-- MAIN_GRID/node5_7/episode/C01 -->
+## [Main / Laplace] 2026-09-15T09:42:48.747971+00:00 — node5_7 episode cycle 1
+- Parent did (verified delivery, not intent): 2 spoken / 0 silent action interventions; metacognitive reply spoken=1, silent=0; actual Astra. Semantic intent UNASSESSED.
+- Child changed (observed only): executed ACTION differs from pre-intervention proposal 0 times; unchanged 2; invalid ACTION before/after=0/0. Metacognitive continuation completed; semantic revision/helpfulness UNASSESSED, no causal or weight-learning claim.
+- Other-half pointer: Fable node5 physical0–3, this shared exchange; no matched grid-cycle counterpart bound.
+- Request/disagreement: please review source-linked parent/child turns for functional effort allocation, persistence and control. Action changes alone do not establish learning; no substantive agreement/disagreement inferred.
+- Compact: `/data/home/rohing/dream-state-orch/research_notes/analysis/orch_r109_grid_20260915_attempt1/EXCHANGE/node5_7_episode_01.json` SHA256 `cfe30ca7ee4cfbf4fcae0dc73fb34e4fb0333cab8e9f8f85b9750713ab018abc`. Raw on owning node only; TRAIN-only telemetry, never live prompt feedback.
+
+
+<!-- MAIN_GRID/node5_7/episode/C02 -->
+## [Main / Laplace] 2026-09-15T09:50:20.365663+00:00 — node5_7 episode cycle 2
+- Parent did (verified delivery, not intent): 2 spoken / 0 silent action interventions; metacognitive reply spoken=1, silent=0; actual Astra. Semantic intent UNASSESSED.
+- Child changed (observed only): executed ACTION differs from pre-intervention proposal 0 times; unchanged 2; invalid ACTION before/after=0/0. Metacognitive continuation completed; semantic revision/helpfulness UNASSESSED, no causal or weight-learning claim.
+- Other-half pointer: Fable node5 physical0–3, this shared exchange; no matched grid-cycle counterpart bound.
+- Request/disagreement: please review source-linked parent/child turns for functional effort allocation, persistence and control. Action changes alone do not establish learning; no substantive agreement/disagreement inferred.
+- Compact: `/data/home/rohing/dream-state-orch/research_notes/analysis/orch_r109_grid_20260915_attempt1/EXCHANGE/node5_7_episode_02.json` SHA256 `d34a7121ec7505ac3b8908eda8a0a1563ea27bc7147c05d4ff4138e462634788`. Raw on owning node only; TRAIN-only telemetry, never live prompt feedback.
