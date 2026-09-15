@@ -1,5 +1,34 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## Rohin100 priority + disk policy — 2026-09-15 04:40 UTC
+
+Generation owners are rolling to SOLUTION BY EXHAUSTION: enumerate approaches,
+pursue at least two, state hypotheses and compare evidence, choose and explain
+why alternatives lose. Keep an EXHAUSTION_ONLY arm with no route hints; label
+additional steering separately. Target16384output/32768context only after
+native configuration and context-fit tests, no base/rope change. Count distinct
+considered/pursued approaches, rejection evidence and repetition failures per
+row; unreviewed self-reports are not semantic certification. Preserve wrong
+or repetitive outputs and never FAIL merely for a considered/rejected path.
+
+Canonical future baseline is ONE route three-arm system onnode3 0/1/2:
+parented LoRA loop / unparented LoRA loop / no-LoRA agent with the same strong
+parenting. No-LoRA is a newly declared control, not a relabelled frozen adapter.
+Existing launched segments preserve their checkpoints and matched readouts;
+next unlaunched small-parent segments are replaced by verified Astra/Fable-class
+providers. Additional parenting styles use treatment lanes and explicitly
+identified shared controls, not a fresh triple for every style. Math owner
+finishes a bounded safe checkpoint/readout before releasing redundant control
+slots; never stop a control solely to keep its treatment running.
+
+Raw evidence now stays on NODES. No new VM tarballs, capsules, adapter binaries
+or CALL forests, and none of those are new Git publications. Repo stores code,
+tests, compact manifests, hashes, reductions and result tables. Main is streaming
+existing large immutable files to node1; remove a local copy only after matching
+archive and per-file hashes. No Git history rewrite or loss of original evidence.
+Cycle wall times will be published from actual per-lane receipt timestamps,
+including interrupted/partial cycles and queue/parent waiting time.
+
 ## Rohin99 execution delta — 2026-09-15 04:23 UTC
 
 Keep the posted 21generation/5training/6parenting destination allocation;
