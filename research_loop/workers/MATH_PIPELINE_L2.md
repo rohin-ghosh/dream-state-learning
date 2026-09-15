@@ -1,5 +1,28 @@
 # MATH-PIPELINE-L2 — automatic manufacturing-line handoff
 
+## 2026-09-15T16:15Z — actual recovery stage/both brokers ready, preflight PASS
+
+Bound Main7ea22b7f newcampaign. Finalowners underpreinfer_attempt4:
+lane1/FRESH_OWNER.json SHAe7ba4f22bf35c0d9d09a5e1616a67b29b6eb5c6b0b855349461360e2a6ad3a25;
+lane5/FRESH_OWNER.json SHA044160376c8715911e7acc3bcc6083aaf3c27c022b5b566875d020336f5b4516.
+Both source_files still exact186-entryv4/campaign, no GPUcodechange.
+F2broker2722783(Hubble) actualqueue lock andBROKER_READY7f0af2d8... verified;
+A2VMbroker2690776 alive/exclusivelock, BROKER_READY3cef41dd... verified,
+newruntimeccc1e81c.../newlane5GUARD_TERMINAL only. Eightlocal+eightfrozenbroker
+CPU tests/configGO/runtime/releasepinsPASS; no budget/claim reset.
+
+Four own failed-startup timers were reparentedto1; newCPUstagehelper verifies
+allbootPIDstartUIDcommandexec/cwdunchanged, recordsbothidentities, allowsONLY
+PPIDchange andusesactualfreshidentityforCPUFD/CVD+pidfdretirement.4local+4native
+regressionsPASS; no selector signal. Oldtimers2610049/2610050/2610042/2610043
+actuallyretired; historicalreceipts preserved. SeparateCPUhelper source pinned
+inauth, no frozenGPUclosuremutation. STAGED.json SHA6fa2e1adfa55ed08b84155710517ed1b9d625e573dbd21d26037d591a6e1e761
+at `/localhome/local-rohing/orch_math_feedback_uptake_r118_stage_cpu_20260915_1612`.
+Read-onlyPREFLIGHT.py there alreadyPASS: source/owners/brokers/locks/charges/
+auth/selector; zeroscans/model/providercalls. Newguardsstillabsent.
+N274/P60next11,N170/P36next7/gen1/deadlines unchanged. MainsoleGPUdispatch/Git.
+Exactcommands+10pathallowlist `research_notes/analysis/orch_math_feedback_uptake_r118_preinfer_20260915_attempt1/STAGED_1615_PATHS.txt`.
+
 ## 2026-09-15T16:07Z — scoped argv repair READY, both fresh CPU scans CLEAR
 
 Under Main16:03 scope, ownnew argvwrapper reuses unchangedr110>=3stablekernel/exe

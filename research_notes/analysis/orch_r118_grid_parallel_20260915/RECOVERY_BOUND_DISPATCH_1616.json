@@ -1,0 +1,82 @@
+{
+  "GPU_dispatches": 0,
+  "broker_ready": {
+    "A4": {
+      "identity_location": "VM",
+      "observed_preflight_unix": 1789488912.7013133,
+      "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parallel_recovery_1548/BROKER_READY.json",
+      "pid": 2677812,
+      "sha256": "74839263ca340b06b273af8b2103a39ceee4e605afcf67c7c8c1b271f4fbfd9c"
+    },
+    "F4": {
+      "identity_location": "node5",
+      "observed_preflight_unix": 1789488930.478186,
+      "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parallel_recovery_1548/BROKER_READY.json",
+      "pid": 2717390,
+      "sha256": "773238b5afc434d1ccfb161fe64d4709f39042737a5fc80d07f451bf782035cd"
+    }
+  },
+  "campaign": {
+    "path": "/localhome/local-rohing/orch_r118_main_startup_recovery_20260915_1610/CAMPAIGN.json",
+    "sha256": "7ea22b7fe4637ac344df140c7b56d49304091d067ec32d2558975ea1759e6610"
+  },
+  "checked_dispatch_preflight_fields": {
+    "cwd": "/data/home/rohing/dream-state-orch",
+    "env": {
+      "CUDA_VISIBLE_DEVICES": "",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "preflight_commands": [
+      [
+        "/usr/bin/python3",
+        "-B",
+        "-c",
+        "import hashlib,runpy,sys;path='/tmp/orch_r118_grid_recovery_preflight_source_20260915_v1/gpu/orch_r118_grid_recovery_preflight.py';assert hashlib.sha256(open(path,\"rb\").read()).hexdigest()=='b41337564c218ab10183453041bdb6b19bbad91f83fa114edd48facd39e73905';sys.argv=[path,\"--branch\",'F4',\"--wrapper\",'/data/home/rohing/dream-state-orch/gpu/ovx3_ssh.sh'];runpy.run_path(path,run_name=\"__main__\")"
+      ],
+      [
+        "/usr/bin/python3",
+        "-B",
+        "-c",
+        "import hashlib,runpy,sys;path='/tmp/orch_r118_grid_recovery_preflight_source_20260915_v1/gpu/orch_r118_grid_recovery_preflight.py';assert hashlib.sha256(open(path,\"rb\").read()).hexdigest()=='b41337564c218ab10183453041bdb6b19bbad91f83fa114edd48facd39e73905';sys.argv=[path,\"--branch\",'A4',\"--wrapper\",'/data/home/rohing/dream-state-orch/gpu/ovx3_ssh.sh'];runpy.run_path(path,run_name=\"__main__\")"
+      ]
+    ],
+    "preflight_timeout_seconds": 90
+  },
+  "dispatcher_command": "Main supplies separately; this receipt neither invokes nor authorizes owner GPU dispatch",
+  "final_timers_retained": {
+    "A4": 2610801,
+    "F4": 2610920
+  },
+  "hard_end_utc": "2026-09-15T17:02:00Z",
+  "local_source_files": {
+    "gpu/orch_r118_grid_recovery_preflight.py": "b41337564c218ab10183453041bdb6b19bbad91f83fa114edd48facd39e73905",
+    "tests/test_orch_r118_grid_recovery_preflight.py": "efe5e4b80802bdc9a4186f9ec9f3992a4ccb76e1b8923a24e108ccc97f4e221c"
+  },
+  "owners": {
+    "A4": {
+      "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parallel_recovery_1548/FRESH_OWNER_FINAL.json",
+      "sha256": "29c58e47b04208f9fbf6a9e11c2088dab8e16c4d8f83b24776d564194ecbe9da"
+    },
+    "F4": {
+      "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parallel_recovery_1548/FRESH_OWNER_FINAL.json",
+      "sha256": "9d81dd699eca744bc10f88e07e70c190da14353411b3667b3a027a15f4275d55"
+    }
+  },
+  "pending_A4": "Accepted C8 consolidation before new TRAIN C9; no duplicate submission",
+  "preflight_execution_location": "VM (A4 broker identity is VM-local; these complete checks cannot run unchanged on node5)",
+  "preflight_results": {
+    "A4": "PASS_LIVE_BROKER_AND_CPU_PROVENANCE",
+    "F4": "PASS_LIVE_BROKER_AND_CPU_PROVENANCE"
+  },
+  "preflight_source": {
+    "path": "/tmp/orch_r118_grid_recovery_preflight_source_20260915_v1/gpu/orch_r118_grid_recovery_preflight.py",
+    "sha256": "b41337564c218ab10183453041bdb6b19bbad91f83fa114edd48facd39e73905"
+  },
+  "preflight_tests_passed": 2,
+  "provider_calls_during_stage": 0,
+  "recorded_utc": "2026-09-15T16:16:18.784117+00:00",
+  "schema": "R118_GRID_RECOVERY_BOUND_DISPATCH_HANDOFF_V1",
+  "selector_1519259_untouched": true,
+  "status": "BOUND_CPU_PREFLIGHT_PASS_NO_GPU_DISPATCH",
+  "train_end_utc": "2026-09-15T16:55:00Z"
+}

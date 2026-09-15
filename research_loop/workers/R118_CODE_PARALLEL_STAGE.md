@@ -122,3 +122,43 @@ Prepared owners are deliberately not dispatchable until Main binds its new
 campaign/session. This is the requested central assembly dependency, not a new
 permission gate. Original e834ff FAILED, service_2 markers, old timer receipts,
 queues, source bytes and common state remain unchanged. No standalone GPU launch.
+
+## 2026-09-15 16:11 UTC — Main new campaign CPU-stage authorization
+
+Main authorizes service3/FINAL/A3 CPU custody through16:25 against actual new
+campaign7ea22b7fe4637ac344df140c7b56d49304091d067ec32d2558975ea1759e6610,
+1815pins including original211actor and five auxiliary files. No GPU dispatch.
+Own32native CPU tests and hashes already bound; current preparation revalidates
+all own campaign pins, pending rows/charges, canonical gen1, exact failed-era
+exits and unused parallel FINAL timers before writing fresh service3 metadata.
+Authorization uses existing validator LAUNCH schema for CPU custody only; it
+does not assert foreign readiness or authorize standalone/all8 GPU dispatch.
+Foreign branch entries are root-only/out-of-scope. Main remains dispatcher.
+Original failed SESSION/service2/once markers remain immutable. No model calls.
+
+### 16:13 UTC — Actual service3 stage, FINAL CPU arms and broker custody
+
+Both service3 runtime/owner exports exist against Main campaign7ea22b7f.
+Native exact command preflights eachPASS using unchanged validate_runtime;
+no guard/native spawn. F3owner e1c92c8d6c3ea26cbdd1a6c49095b4758bb01eb8eea785b4b851cd63fef754c7;
+A3owner1b1d7fe898596ce2925aa9e0366fd17c9d0ade3a57c06074b3dc4ddf6da3a7bd.
+Full paths, argv/env/cwd and immutable hashes in V5_SERVICE3_PREFLIGHT_1613.json.
+
+CPU FINAL helpers F3PID2710573/A3PID2710576 actually armed under fresh service3,
+awaiting Main actual LAUNCH. Old FINAL timers2610340/2610330 still exact/live;
+no cancellation/rebind occurred and final3 has not been evaluated. Mainselector
+1519259 remains alive/untouched. New helpers may transfer only after actual
+guard/native identity exists; arm is not GPU use or completed custody transfer.
+
+A3broker2681761 actually started from unchanged runtime1543 source/config and
+original provider/HTTPslots; former2520979 absent and RUNNER lock free verified
+before new acquisition. New service3 custody505df5dd; actual ready receipt
+1d76eb150eb615e7b3fdaaa69739daae74a51df4149b5fc256d1c20015b55329
+records VMCPU execution identity and exclusive original queue lock. Native root
+terminal target only service3/GUARD_TERMINAL.json. No quota/queue/source reset.
+Hubble F3service3 BROKER_READY now present SHA
+00b9f4d5021a1c5fb82a2f23f367ee8f9b177bfa600f3c1ce1fed6c9c9bd78de;
+this worker neither launched nor modified Hubble broker. Both service3 native
+LAUNCH absent; FINAL_STAGER_FAILED absent; actual rebind not yet complete.
+Main receives final owner and checked CPU preflight refs for central dispatch.
+No standalone GPU calls/Git, no additional approval gate.

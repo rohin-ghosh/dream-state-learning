@@ -1,0 +1,104 @@
+{
+  "Main_selector_exists": true,
+  "branches": {
+    "A3": {
+      "GPU_dispatches_by_worker": 0,
+      "command": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-c",
+        "import sys; sys.path.insert(0,'/localhome/local-rohing/orch_r118_code_parallel_source_20260915_v4_drain/source'); from gpu import orch_r118_code_parallel_loop as loop; loop.validate_runtime('/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/parallel_v4/service_3'); print(\"CODE_CPU_PREFLIGHT_PASS\")"
+      ],
+      "cwd": "/localhome/local-rohing/orch_r118_code_parallel_source_20260915_v4_drain/source",
+      "env": {
+        "CUDA_VISIBLE_DEVICES": "",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "final_stager": {
+        "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/parallel_v4/service_3/FINAL_STAGER_ARMED.json",
+        "sha256": "e7d385ea891900ba518a4a2eba9e8350dd37e6f2beac831f20302c107b4e04b5"
+      },
+      "final_stager_identity": {
+        "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+        "command_sha256": "19182e30bd5eee5a175876cb4bbf099cb5d7bdb0c3606096ef3302afc5c24da7",
+        "pid": 2710576,
+        "start_ticks": "2429164",
+        "uid": 2524
+      },
+      "new_GPU_native_started": false,
+      "observed_unix": 1789488793.9560442,
+      "old_FINAL_timer": {
+        "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+        "command_sha256": "b7b8c3709a1a2f4563ea966cbae6b75be25565629030c812e2970c6971ef3ab8",
+        "pid": 2610330,
+        "start_ticks": "2257944",
+        "uid": 2524
+      },
+      "owner": {
+        "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/parallel_v4/service_3/OWNER_REQUEST.json",
+        "sha256": "1b1d7fe898596ce2925aa9e0366fd17c9d0ade3a57c06074b3dc4ddf6da3a7bd"
+      },
+      "passed": true,
+      "preflight": {
+        "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/parallel_v4/service_3/CPU_PREFLIGHT.json",
+        "sha256": "afa90a777bf10e4b1972514cf22c201cbc8447526e17a8f9bc7ad3942e67088f"
+      },
+      "returncode": 0,
+      "runtime": {
+        "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/parallel_v4/service_3/RUNTIME.json",
+        "sha256": "d85e6174c48247cb0bba8493f9e3b8e204e5b9d4abe369bc1e5345f188a5a2e2"
+      },
+      "stdout": "CODE_CPU_PREFLIGHT_PASS"
+    },
+    "F3": {
+      "GPU_dispatches_by_worker": 0,
+      "command": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-c",
+        "import sys; sys.path.insert(0,'/localhome/local-rohing/orch_r118_code_parallel_source_20260915_v4_drain/source'); from gpu import orch_r118_code_parallel_loop as loop; loop.validate_runtime('/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parallel_v4/service_3'); print(\"CODE_CPU_PREFLIGHT_PASS\")"
+      ],
+      "cwd": "/localhome/local-rohing/orch_r118_code_parallel_source_20260915_v4_drain/source",
+      "env": {
+        "CUDA_VISIBLE_DEVICES": "",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "final_stager": {
+        "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parallel_v4/service_3/FINAL_STAGER_ARMED.json",
+        "sha256": "33b7ab77e502fcb8e52f835b42fe66633626c879c28b59231972264bd61e9b8a"
+      },
+      "final_stager_identity": {
+        "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+        "command_sha256": "6b4d0e7f650421c0276e8b06a70b3d1f41c7c652084ab82612e2902d7943f6f3",
+        "pid": 2710573,
+        "start_ticks": "2429050",
+        "uid": 2524
+      },
+      "new_GPU_native_started": false,
+      "observed_unix": 1789488792.4782534,
+      "old_FINAL_timer": {
+        "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+        "command_sha256": "263742ca383ce0a1773b360e6bda8dddb2422d3e6b8be55cfe5c56bed198c07f",
+        "pid": 2610340,
+        "start_ticks": "2257978",
+        "uid": 2524
+      },
+      "owner": {
+        "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parallel_v4/service_3/OWNER_REQUEST.json",
+        "sha256": "e1c92c8d6c3ea26cbdd1a6c49095b4758bb01eb8eea785b4b851cd63fef754c7"
+      },
+      "passed": true,
+      "preflight": {
+        "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parallel_v4/service_3/CPU_PREFLIGHT.json",
+        "sha256": "4ec6e698aac8427f4a4c04f113ba05645145f3e29eb7c02a23412193d2f3a638"
+      },
+      "returncode": 0,
+      "runtime": {
+        "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parallel_v4/service_3/RUNTIME.json",
+        "sha256": "0b6378a23e2707a2caa2478bf23cf4860824912f4846ec67b36afada19ff11ac"
+      },
+      "stdout": "CODE_CPU_PREFLIGHT_PASS"
+    }
+  },
+  "observed_unix": 1789488793.9574509
+}
