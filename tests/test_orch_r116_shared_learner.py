@@ -247,6 +247,33 @@ class SharedLearnerTests(unittest.TestCase):
         engine.verify_base.assert_called_once()
         model.requires_grad_.assert_called_once_with(False)
 
+    def test_changed_configuration_rejected_before_barrier(self):
+        config = shared.read(self.shared / 'CONFIG.json')
+        config['anchor_loss_weight'] = 0
+        shared.write(self.shared / 'CONFIG.json', config, replace=True)
+        with self.assertRaisesRegex(ValueError, 'configuration_hash'):
+            shared.barrier_status(self.shared)
+
+    def test_saved_checkpoint_publication_recovers_without_optimizer_replay(self):
+        self.all_arrive()
+        metrics = dict(optimizer_steps=256, child_token_exposures=512, anchor_token_exposures=256)
+        def save(folder, generation, result):
+            return self.make_checkpoint(folder, 'pooled')
+        original = shared.write
+        def crash_state_publication(path, value, replace=False):
+            if Path(path) == self.shared / 'STATE.json' and replace:
+                raise RuntimeError('crash after saved complete checkpoint')
+            return original(path, value, replace)
+        with patch.object(shared, 'write', side_effect=crash_state_publication):
+            with self.assertRaisesRegex(RuntimeError, 'saved complete'):
+                shared.consolidate(self.shared, 'F1', self.checkpoint['path_sha256'], None,
+                    None, [], save, None, train_call=lambda *args: metrics)
+        self.assertEqual(shared.read(self.shared / 'STATE.json')['generation'], 0)
+        result = shared.recover_published_checkpoint(self.shared)
+        self.assertEqual(result['optimizer_updates_replayed'], 0)
+        self.assertEqual(result['state']['optimizer_steps'], 256)
+        self.assertEqual(result['state']['generation'], 1)
+
 
 if __name__ == '__main__':
     unittest.main()

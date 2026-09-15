@@ -171,10 +171,31 @@ def schedule(new_count, old_count, anchor_count=42):
 def barrier_status(root):
     root = Path(root)
     state = read(root / 'STATE.json')
+    require(state['config_sha256'] == sha(root / 'CONFIG.json'), 'configuration_hash')
     folder = root / f"generation_{state['generation']:06d}"
     present = [branch for branch in BRANCHES if (folder / (branch + '.json')).exists()]
     return dict(generation=state['generation'], present=present,
                 missing=[branch for branch in BRANCHES if branch not in present], state=state)
+
+
+def recover_published_checkpoint(root):
+    with locked(root) as root:
+        state = barrier_status(root)['state']
+        complete = root / f"generation_{state['generation']:06d}" / 'sleep' / 'COMPLETE.json'
+        require(complete.exists(), 'no_complete_checkpoint_to_recover')
+        receipt = read(complete)
+        next_state = receipt['state']
+        require(receipt['source_checkpoint'] == state['checkpoint']
+                and next_state['generation'] == state['generation'] + 1
+                and next_state['config_sha256'] == state['config_sha256'], 'recovery_lineage_mismatch')
+        checked_checkpoint(next_state['checkpoint'])
+        for name in METRICS:
+            require(next_state['shared_' + name] == state['shared_' + name] + receipt['metrics'][name],
+                    'recovery_counter_mismatch')
+            expected = None if state[name] is None else state[name] + receipt['metrics'][name]
+            require(next_state[name] == expected, 'recovery_lifetime_counter_mismatch')
+        write(root / 'STATE.json', next_state, replace=True)
+        return dict(status='RECOVERED_PUBLISHED_CHECKPOINT', state=next_state, optimizer_updates_replayed=0)
 
 
 def pooled_rows(root, generation):

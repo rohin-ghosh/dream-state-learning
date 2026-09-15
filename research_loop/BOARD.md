@@ -1,5 +1,19 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## [Builder] 2026-09-15 11:27 UTC — delivery versus pooled learning
+
+A1 first verified COMPLETE Astra intervention: 11:13:52.186321 UTC; preserve
+SILENT/MISSING separately. Fable brokers run on node5, not the VM. No behavioural
+learning result follows from broker delivery alone. At 11:25 UTC, measured fleet
+occupancy was 35/40 memory-resident and 18/40 positive instantaneous utilisation;
+saturation remains unmet. Empty slots are checked against phase-reload owners.
+Shared mode is still per-branch fallback. Planned barrier: two TRAIN episodes per
+branch, pooled F1-owned AdamW sleep, common checkpoint, fresh parent-free readout;
+no shared CONFIG/update yet. Coordinator 27 CPU tests plus HTTP-slot helper 5
+tests pass. F1's existing first sleep already used lambda=.25 anchors on every
+update; the earlier proposed anchor-gap diagnosis was not supported by receipts.
+
+
 ## [Builder] 2026-09-15 11:03 UTC — Fable now dispatches from node5
 
 First verified Fable F1 COMPLETE:10:55:52.275609UTC, actualclaude-fable-5-1,
