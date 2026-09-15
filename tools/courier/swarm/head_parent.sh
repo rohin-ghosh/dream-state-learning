@@ -1,0 +1,114 @@
+#!/bin/bash
+# head_parent.sh — the Fable head parent (PARENTING_BATTLE_PLAN_v4 §6). Cron on the VM: 5,35 * * * *.
+# Each run: skip if another headless Claude (reader / self-check / previous head parent) is running; wait for
+# ~/courier/swarm/branches.json (branch → {node, root} posted after Astra launches the lanes); act only when at least
+# one Fable branch has a NEW sleep/cycle marker since the last run; pre-fetch a ≤ 40 KB digest per node-5 branch
+# read-only through the gpu/<node>_ssh.sh wrapper; run ONE `claude -p --effort max` call with head_parent.md +
+# PARENTING_PRINCIPLES as the system prompt and the digests as the user message; validate the returned fields;
+# rewrite ~/courier/swarm/prompts/F<n>.md + .fields.json (the broker re-reads them every call); append the exchange
+# entry to research_loop/PARENTING_EXCHANGE.md and COORDINATION.md; commit -o those two files; push if fast-forward.
+# Never touches Astra's clone, never types into Codex, never stops a branch. Logs: ~/courier/swarm/head_parent.log.
+set -u
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$HERE/../courier_lib.sh"
+SW="$COURIER_HOME/swarm"; mkdir -p "$SW/cycles" "$SW/prompts"
+COURIER_LOG="$SW/head_parent.log"; PIDFILE="$SW/head_parent.pid"
+CAP_S="${HEAD_PARENT_CAP_S:-1200}"; BUDGET_USD="${HEAD_PARENT_BUDGET_USD:-4}"
+PRINC="$COURIER_REPO/research_notes/PARENTING_PRINCIPLES_ROHIN_2026-09-15.md"
+BRANCHES="$SW/branches.json"; STATE="$SW/head_state.json"
+
+if pid_alive "$PIDFILE"; then log "head parent already running"; exit 0; fi
+for other in "$COURIER_HOME/selfcheck/selfcheck.pid" "$COURIER_HOME/result_reads/result_read.pid"; do
+  if pid_alive "$other"; then log "another headless Claude is running ($other); skipping"; exit 0; fi
+done
+echo $$ > "$PIDFILE"; trap 'rm -f "$PIDFILE"' EXIT
+if ! claude_ready; then log "claude not ready ($(claude_not_ready_reason))"; exit 0; fi
+[ -r "$BRANCHES" ] || { log "waiting for $BRANCHES (branch roots not posted yet)"; exit 0; }
+MEM_AVAIL_MB=$(free -m | awk '/Mem:/{print $7}'); [ "${MEM_AVAIL_MB:-0}" -ge 1500 ] || { log "RAM available ${MEM_AVAIL_MB} MB < 1500; skipping"; exit 0; }
+
+TS="$(date -u +%Y%m%dT%H%M%SZ)"; CYC="$SW/cycles/$TS"; mkdir -p "$CYC"
+# 1. digests (read-only, size-capped) and new-sleep detection
+python3 - "$BRANCHES" "$STATE" "$CYC" "$COURIER_REPO" <<'PY'
+import json, subprocess, sys, os, hashlib
+branches, state_p, cyc, repo = sys.argv[1:5]
+B = json.load(open(branches)); state = json.load(open(state_p)) if os.path.exists(state_p) else {}
+new_any = False; digests = {}
+for name, b in B.items():
+    node, root = b['node'], b['root']
+    cmd = f"""R={root}; latest=$(ls -td $R/*/cycle* $R/cycle* 2>/dev/null | head -1); echo "LATEST $latest";
+    for f in $(ls -t $latest/readout/COMPLETE.json $latest/sleep/COMPLETE.json $latest/experience/CALL_*.json $latest/open_turn/*.json $latest/presleep*/CALL_*.json $latest/*PARENT*.json $latest/*TRIPLES*.jsonl 2>/dev/null | head -14); do echo "=== $f"; head -c 3000 $f; echo; done"""
+    try:
+        out = subprocess.run(['bash', f'{repo}/gpu/{node}_ssh.sh', cmd], capture_output=True, text=True, timeout=120).stdout
+    except Exception as e:
+        out = f'DIGEST_ERROR {e}'
+    out = out[:40000]
+    marker = out.split('\n', 1)[0]
+    digests[name] = out
+    if name.startswith('F') and marker != state.get(name):
+        new_any = True
+    state[name] = marker
+json.dump(digests, open(f'{cyc}/digests.json', 'w'))
+json.dump(state, open(state_p, 'w'))
+open(f'{cyc}/NEW_SLEEP', 'w').write('1' if new_any else '0')
+PY
+if [ "$(cat "$CYC/NEW_SLEEP")" != "1" ]; then log "no new Fable sleep/cycle since last run; no head-parent call"; exit 0; fi
+
+# 2. build the user message (current fields + digests + Astra's last two exchange entries)
+python3 - "$SW/prompts" "$CYC" "$COURIER_REPO/research_loop/PARENTING_EXCHANGE.md" <<'PY'
+import json, sys, glob, os, re
+prompts, cyc, exch = sys.argv[1:4]
+fields = {}
+for f in sorted(glob.glob(prompts + '/F*.fields.json')):
+    name = os.path.basename(f).split('.')[0]; fields[name] = json.load(open(f))['fields']
+astra = []
+if os.path.exists(exch):
+    parts = re.split(r'\n(?=## \[)', open(exch).read())
+    astra = [p for p in parts if p.startswith('## [Astra') or p.startswith('## [Main') or p.startswith('## [Builder')][-2:]
+msg = {'current_fields': fields, 'digests': json.load(open(cyc + '/digests.json')), 'astra_last_two_exchange_entries': astra}
+open(cyc + '/user.json', 'w').write(json.dumps(msg)[:900000])
+PY
+SYSTEM="$(cat "$HERE/head_parent.md"; echo; echo; cat "$PRINC")"
+log "head parent call (cap ${CAP_S}s, budget ${BUDGET_USD} USD) -> $CYC"
+( cd "$COURIER_REPO" && run_with_timeout "$CAP_S" "$CLAUDE_BIN" -p --model claude-fable-5-1 --effort max --output-format json \
+    --tools "" --no-session-persistence --max-turns 1 --max-budget-usd "$BUDGET_USD" \
+    --system-prompt "$SYSTEM" "$(cat "$CYC/user.json")" ) > "$CYC/reply.json" 2> "$CYC/reply.err" < /dev/null
+rc=$?; [ $rc -eq 0 ] || { log "head parent call failed rc=$rc ($(head -c 200 "$CYC/reply.err" | tr '\n' ' '))"; exit 3; }
+
+# 3. validate + apply fields (STYLE/FOCUS/REFLECTION only), write exchange entries
+python3 - "$SW/prompts" "$CYC" "$COURIER_REPO" "$TS" <<'PY'
+import json, sys, os, hashlib, re, glob
+prompts, cyc, repo, ts = sys.argv[1:5]
+sys.path.insert(0, repo + '/tools/courier/swarm')
+from make_prompts import fixed_parent_template, render, verify_binding
+raw = json.load(open(cyc + '/reply.json'))
+text = raw.get('result') if isinstance(raw, dict) else raw
+m = re.search(r'\{.*\}', text, flags=re.S); out = json.loads(m.group(0))
+template = fixed_parent_template(__import__('pathlib').Path(repo + '/research_notes/PARENTING_BATTLE_PLAN_v4_2026-09-15.md'))
+changed = []
+for name, upd in out.get('branches', {}).items():
+    if name in out.get('unchanged', []): continue
+    fp = f'{prompts}/{name}.fields.json'
+    if not os.path.exists(fp): continue
+    cur = json.load(open(fp))['fields']
+    new = dict(cur); new['STYLE'] = str(upd['STYLE']); new['FOCUS'] = str(upd['FOCUS'])
+    r = upd['REFLECTION']; new['REFLECTION'] = {'mode': r['mode'], 'max_new_tokens': int(r['max_new_tokens'])}
+    bad = any(tok in new['FOCUS'] for tok in ('%', 'D&R', 'ratio', 'score', 'accuracy')) or re.search(r'\d', new['FOCUS'])
+    if bad: new['FOCUS'] = cur['FOCUS']  # FOCUS never carries a measure or a number
+    prompt = render(new, template); assert verify_binding(prompt, template), name
+    open(f'{prompts}/{name}.md', 'wb').write(prompt.encode())
+    json.dump({'schema': 'ORCH_R114_HEAD_FIELDS_V1', 'prompt_sha256': hashlib.sha256(prompt.encode()).hexdigest(), 'fields': new},
+              open(fp, 'w'), indent=1, sort_keys=True)
+    changed.append(f"{name}: STYLE='{new['STYLE']}' REFLECTION={new['REFLECTION']['mode']}/{new['REFLECTION']['max_new_tokens']} FOCUS='{new['FOCUS']}'")
+entry = out.get('exchange_entry', '').strip()
+hdr = f"\n\n## [Fable-VM swarm — head parent] {ts[:4]}-{ts[4:6]}-{ts[6:8]}T{ts[9:11]}:{ts[11:13]}Z\n"
+body = entry + ("\n\nField changes: " + "; ".join(changed) if changed else "\n\nField changes: none") + f"\n\nDigest cycle: ~/courier/swarm/cycles/{ts} (VM-local; no raw transcripts in git)."
+open(repo + '/research_loop/PARENTING_EXCHANGE.md', 'a').write(hdr + body + '\n')
+open(repo + '/research_loop/COORDINATION.md', 'a').write(hdr.replace('head parent', 'head parent, mirrored from PARENTING_EXCHANGE') + body[:1500] + '\n')
+print('applied', len(changed), 'field changes')
+PY
+# 4. publish the exchange entry (this checkout only; never Astra's clone)
+cd "$COURIER_REPO" || exit 0
+if [ -d .git/rebase-merge ] || [ -d .git/rebase-apply ] || [ -f .git/MERGE_HEAD ]; then log "git busy; entry left uncommitted"; exit 0; fi
+git commit -q -o research_loop/PARENTING_EXCHANGE.md research_loop/COORDINATION.md -m "Fable-VM head parent $TS: exchange entry + field changes" && \
+  { git diff --cached --quiet && [ "$(git rev-list --count origin/main..HEAD)" = 1 ] && git push -q origin HEAD:main 2>/dev/null && log "pushed" || log "commit local (push deferred)"; }
+log "head parent cycle done -> $CYC"

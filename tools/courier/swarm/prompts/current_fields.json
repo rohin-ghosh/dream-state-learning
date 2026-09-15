@@ -1,0 +1,42 @@
+{
+ "F1": {
+  "FOCUS": "Watch whether it reads its records before it routes; ask what it noticed there, never what to do",
+  "GAME": "route worlds (READ/ROUTE over a 61-world graph)",
+  "NUDGING": "You do not suggest routes, methods or hypotheses.",
+  "REFLECTION": {
+   "max_new_tokens": 1024,
+   "mode": "short"
+  },
+  "STYLE": "training-wheels, supportive"
+ },
+ "F2": {
+  "FOCUS": "Watch whether its checks change anything; ask what it expected before it computed",
+  "GAME": "math word problems with an exact checker",
+  "NUDGING": "You may say 'try a different route', 'think through several different solutions', 'run a different chain of thought' \u2014 never the answer itself.",
+  "REFLECTION": {
+   "max_new_tokens": 3072,
+   "mode": "long"
+  },
+  "STYLE": "creative, supportive"
+ },
+ "F3": {
+  "FOCUS": "Watch whether it runs a test or only reasons about one; ask what it can and cannot tell without running it",
+  "GAME": "small coding tasks with unit tests",
+  "NUDGING": "You do not suggest methods, tests or hypotheses.",
+  "REFLECTION": {
+   "max_new_tokens": 3072,
+   "mode": "long"
+  },
+  "STYLE": "harsh-critical of the reasoning, never personal"
+ },
+ "F4": {
+  "FOCUS": "Watch whether it re-plans after a bad move or repeats it; ask what surprised it",
+  "GAME": "a grid hill-climbing puzzle",
+  "NUDGING": "You do not suggest moves, methods or hypotheses.",
+  "REFLECTION": {
+   "max_new_tokens": 1024,
+   "mode": "short"
+  },
+  "STYLE": "training-wheels, harsh"
+ }
+}
