@@ -119,6 +119,12 @@ fi
 [ "${HEAD_PARENT_PUBLISH:-1}" = "1" ] || { log "field changes complete; publication delegated to orchestrator"; exit 0; }
 cd "$COURIER_REPO" || exit 0
 if [ -d .git/rebase-merge ] || [ -d .git/rebase-apply ] || [ -f .git/MERGE_HEAD ]; then log "git busy; entry left uncommitted"; exit 0; fi
-git commit -q -o research_loop/PARENTING_EXCHANGE.md research_loop/COORDINATION.md -m "Fable-VM head parent $TS: exchange entry + field changes" && \
-  { git push -q origin HEAD:refs/heads/vm-watcher 2>/dev/null && log "pushed to origin/vm-watcher (laptop watcher mirrors into main)" || log "commit local (push to vm-watcher failed)"; }
+# PARENTING_EXCHANGE.md is untracked in the old VM checkout, so `commit -o` silently produced nothing for the first three
+# cycles (found 18:55Z); stage the two files explicitly and log every outcome.
+git add -- research_loop/PARENTING_EXCHANGE.md research_loop/COORDINATION.md 2>/dev/null
+if git commit -q -m "Fable-VM head parent $TS: exchange entry + field changes" -- research_loop/PARENTING_EXCHANGE.md research_loop/COORDINATION.md 2>>"$COURIER_LOG"; then
+  git push -q origin HEAD:refs/heads/vm-watcher 2>/dev/null && log "pushed to origin/vm-watcher (laptop watcher mirrors into main)" || log "commit local (push to vm-watcher failed)"
+else
+  log "commit FAILED (entry left in working tree)"
+fi
 log "head parent cycle done -> $CYC"
