@@ -1,6 +1,6 @@
 # Research state — Orchestrator
 
-Updated September15,2026,00:13UTC. ACTIVE / INCOMPLETE. Current synthesis,
+Updated September15,2026,00:21UTC. ACTIVE / INCOMPLETE. Current synthesis,
 not an experiment transcript. Prior detailed state remains in git66d134c5
 and the append-only notebook; no evidence, failed denominator or raw directive
 is deleted by this compaction. BOARD owns current GPU allocations.
@@ -609,6 +609,45 @@ campaign or fits; <=512targets/condition cannot satisfy1000fitfloor by padding.
 After terminal yield/quality contrast, Main reallocates to an independently
 frozen larger cohort for a promising generator, or deallocates a clean null.
 No automaticscale/newfits or extra replicas while corpus quality is unknown.
+
+## Raw85 read00:17UTC — prospective heavy-budget amendment
+
+Arrived00:16, approximate spokenheading00:20; actual read precedes that rounded
+heading. Raw85 explicitly asks higher token usage, guidance-versus-overguidance,
+first richness success into L2, and keeping route long/short loops. Ladder
+0mechanism→1richness→2cohesive learning loop→3generalized outcomes→4deployment
+is a research hypothesis/abstract shape, NOT newly measured results. THESIS_v2
+already records raw steering; no paper claim promoted or invariant changed.
+
+Before new generator model calls, supersede raw84's conservative512-only source
+budget: all NEW generator contexts4096; INTENSITY oldrich control512generated,
+light importance-weighted branching1536, densely specified branching1536.
+Thus heavy light/dense compare equal token ceilings; old-control comparisons
+mix prompt and budget, explicitly not pure intensity causation. Exact old
+control text retained; new heavy instructions need not force source prose into
+150–400. TWO-PASS draft512, both branch/continuation finals1536, all conditional
+NEW-record calls512. Total call/task/cohort/GPU/time ceilings unchanged.
+
+Crucial distinction: long thought is a SOURCE, not automatically an admitted
+training row. Own NEW records remain150–400 and pass unchanged substantive/
+outcome/gold/neutral-support gate. Direct source targets only qualify if they
+already satisfy that same row contract; no truncation, hand segmentation or
+padding to make long thoughts pass. New arms declare4096 context validation
+prospectively; prior experiments, currentL2 and historical rows are NOT rescored.
+Report actual source/record tokens separately, meaningful considerations and
+decisive evidence, not just higher usage. If any new native calls already
+occurred, preserve that started batch and declare a separate bounded revision;
+never silently change it or regenerate completed calls.
+
+First actual qualifying richness batch is a trigger for an L2 trial, not for
+waiting on1000-row preparatory L1 fit, a perfect child or promotion ceremony.
+Workers report that early evidence immediately; Main assigns the next available
+scientifically useful GPUs from finished/weaker screens to a controlled L2
+trial with that generator and actual child. It remains an experiment, not a
+promoted premise. Long/short route loops continue unchanged through repairs;
+terse route skills can be developmental content at L1 or L2, not proof of H2.
+No new L2family implicit in a rename; use declared scopes or prospectively
+designate genuine family structure under Rohin79's delegated authority.
 
 ## Priority frontier — decisions for next compute
 
