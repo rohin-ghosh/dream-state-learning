@@ -1,0 +1,81 @@
+{
+  "schema": "R110_CYCLES_ACTUAL_EXPOSURE_COMPACT_V1",
+  "observed_utc": "2026-09-15T10:28:53Z",
+  "root": "/localhome/local-rohing/orch_r110_guided_20260915_attempt1",
+  "cycles": [
+    {
+      "cycle": 1,
+      "optimizer_updates": 113,
+      "new_child_target_token_exposures_including_eos": 28313,
+      "old_l1_token_exposures": "NOT_REDUCED",
+      "anchor_token_exposures": "NOT_REDUCED",
+      "new_presentations": [
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        15
+      ],
+      "actual_objective_weights": {
+        "broad_base_anchors": 0.1,
+        "new_own": 0.7,
+        "old_rehearsal": 0.2
+      },
+      "collection_seconds": 538.7475774288177,
+      "collection_native_generation_seconds": 94.16435265541077,
+      "parent_wait_plus_bookkeeping_seconds": 444.583224773407,
+      "optimizer_seconds": 241.38286924362183,
+      "readout_seconds": 262.1395387649536,
+      "readout_calls": 72,
+      "collection_child_tokens": 2010,
+      "source_hashes": {
+        "cycle1/sleep/SLEEP.json": "f3dd386c9922be85b4d3bfaf9f0c43af0316385ae63c694e22acb7840f5fcd12",
+        "cycle1/collection/COMPLETE.json": "947f86333be12eff8f70d08cdd124ccd902590b106af9a284342eaefb31a5d08",
+        "cycle1/readout/COMPLETE.json": "c527fc9f242a0c5c52df622475cb0ca8621e61fa440a89702b162941285e2b5e"
+      },
+      "older_l2_child_target_token_exposures_including_eos": 0
+    },
+    {
+      "cycle": 2,
+      "optimizer_updates": 79,
+      "new_child_target_token_exposures_including_eos": 26848,
+      "old_l1_token_exposures": "NOT_REDUCED",
+      "anchor_token_exposures": "NOT_REDUCED",
+      "new_presentations": [
+        9,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "actual_objective_weights": {
+        "broad_base_anchors": 0.1,
+        "new_own": 0.7,
+        "old_rehearsal": 0.2
+      },
+      "collection_seconds": 603.1590464115143,
+      "collection_native_generation_seconds": 126.37677359580994,
+      "parent_wait_plus_bookkeeping_seconds": 476.78227281570435,
+      "optimizer_seconds": 241.36333394050598,
+      "readout_seconds": 239.4947748184204,
+      "readout_calls": 72,
+      "collection_child_tokens": 2752,
+      "source_hashes": {
+        "cycle2/sleep/SLEEP.json": "b46c9f3b89a4c35d63a7573996e45a9b43ec4e45567cb75c5aa20bc75e773b2a",
+        "cycle2/collection/COMPLETE.json": "46f6221f3911d0f44be2a0a5cc43940b84466990adb976119da33a5baa779a10",
+        "cycle2/readout/COMPLETE.json": "1362a285cc1c8117543a6841188bcbc947ebce8237544e205c008e222384a7e2"
+      },
+      "older_l2_child_target_token_exposures_including_eos": 19590
+    }
+  ],
+  "adapter_start_step": 8932,
+  "through_cycle2_step": 9124,
+  "original_recipe_not_v3_v4": true,
+  "no_learning_claim": true
+}

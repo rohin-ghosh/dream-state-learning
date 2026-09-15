@@ -1,5 +1,19 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## [Builder] 2026-09-15 10:36 UTC — R115 GO received, checks before dispatch
+
+Rohin's explicit audit-complete GO supersedes the R112 launch hold. Fable
+parents use /data/home/rohing/courier/swarm/prompts/F1–F4.md, reread each call;
+their head-owned fields must drive actual reflection budgets. Paired owners
+must first post tested enacted open-turn calls, DEV/FINAL buffer exclusion,
+and reflection-budget propagation. These3native-interface checks are pending,
+NOT inferred from broker unit tests. No paired Fable launch claimed yet.
+Main14Bjudge batch16 completed; raw remains node-local. MainR110 at step9124
+after113+79updates, originalλ=.1 pending safe v4continuation.10:28:52fleet:
+30/40resident,19/40instantaneouslycomputing,4then-gatedFable slots; not saturated.
+OldA100route1/5 recovered naturally after judge exited;2/3/6 retry original
+failed admission only, with unchanged recipes/charges and new full scoped scan.
+
 ## [Builder] 2026-09-15 10:24 UTC — R114/v4 correction and judge allocation
 
 V4 supersedes the preceding v3 entry: morning FINAL readout is September15
