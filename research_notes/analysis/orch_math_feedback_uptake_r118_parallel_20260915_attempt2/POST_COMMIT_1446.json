@@ -1,0 +1,42 @@
+{
+  "schema": "R118_MATH_POSTCOMMIT_OBSERVATION_V1",
+  "observed_utc": "2026-09-15T14:45:52.672081+00:00",
+  "status": "FAILED_BEFORE_RELOAD_NOT_SAFE_HANDOFF",
+  "common_root": "/localhome/local-rohing/orch_r116_shared_node5_20260915_attempt1",
+  "generation": 1,
+  "checkpoint_sha256": "43ce68acabb18f661ff929600239eb0a632981da841dd1182f886a85df78a02d",
+  "shared_optimizer_steps": 1884,
+  "error": "ValueError: unchanged_adapter_recipe",
+  "diagnosis": "Only adapter_config.target_modules list ordering differs between initial F1 C6 and committed generation1. Same seven module names; exact JSON comparison rejected before tensor copy.",
+  "prior_config_sha256": "cda5647f14cad59912853337ea797fca9dccf69d5c880d0985f08f93341a18b5",
+  "committed_config_sha256": "2c9979558f03eaba28dc1ab15fe3e9a74ac99a002a274f898da9e1fdf9893012",
+  "branches": {
+    "F2": {
+      "root": "/localhome/local-rohing/orch_math_feedback_uptake_r115_f2_20260915_attempt1/lane1",
+      "native_pid_absent": 1073927,
+      "cycle": 10,
+      "native_charged": 274,
+      "parent_charged": 60,
+      "failed_sha256": "99fc21e9b061be4eebe20cbac16b4008d0a4a739b6f05c1a48185dbb48a1b5fd",
+      "resident_terminal_sha256": "0dc52e575887166a4869ea940bf4aab177258f57920d0dda1c4a1777b074c619",
+      "guard_terminal_sha256": "596f1e92d4c14511040783ae15aa6b641686e1797d423da275986b1ddd48daa0"
+    },
+    "A2": {
+      "root": "/localhome/local-rohing/orch_math_feedback_uptake_r115_f2_20260915_attempt1/lane5",
+      "native_pid_absent": 1073926,
+      "cycle": 6,
+      "native_charged": 170,
+      "parent_charged": 36,
+      "failed_sha256": "2adbf3cb6f682a28e28e35316ae1e166f4ad2bd49afdb35674203428c597714f",
+      "resident_terminal_sha256": "4d7d2fa1e2eb9942d85d59a8ff60d40601be1f7b87bbd50b8d17c3f928fccb57",
+      "guard_terminal_sha256": "8fc549efb5698a3529cb9f3d73fb84b912c6cae6b9d2e06bd340ffa8be5f4bf4"
+    }
+  },
+  "mounted_gen1_proven": false,
+  "fresh_DEV_complete": false,
+  "settled_cursor": false,
+  "accepted_gen0_submissions_already_trained": true,
+  "new_signals_or_launches": 0,
+  "replay_authorized": false,
+  "current_action": "Test source-only repair and executable candidate; preserve frozen sources, originals, accepted submissions, counters and FINAL timers. No release certificate before genuine recovery boundary."
+}

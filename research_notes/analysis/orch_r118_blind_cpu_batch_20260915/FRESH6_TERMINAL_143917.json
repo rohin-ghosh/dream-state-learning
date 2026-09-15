@@ -1,0 +1,254 @@
+{
+  "broker_or_native_source_changes": false,
+  "completed_before_hard_global_deadline": true,
+  "failed_fresh10_claims_preserved": 4,
+  "failed_fresh10_results": 0,
+  "guard": {
+    "path": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2/GUARD_STARTED.json",
+    "sha256": "b38e761777c0104b6f0e145290578fce4e957bd0232f63b5f6e772c833a459ff"
+  },
+  "guard_kill_grace_seconds": 5,
+  "guard_timeout_argv": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=5s",
+    "2561.73823094368s",
+    "/localhome/local-rohing/v2/venv/bin/python"
+  ],
+  "hard_global_deadline_utc": "2026-09-15T15:10:00Z",
+  "judge_source_sha256": "84c7cc88c49dcf7170d9ca05f1eac30df04fed2bc6123d43ccf7558ea15c8399",
+  "legacy_attempts_preserved": 29,
+  "legacy_unresolved_preserved": 7,
+  "lifecycle_COMPLETE_does_not_mean_all_annotations_COMPLETE": true,
+  "lifecycle_status": "COMPLETE",
+  "locks": {
+    "GUARD.lock": "RELEASED",
+    "RUNNER.lock": "RELEASED"
+  },
+  "member_row_statuses": {
+    "COMPLETE": 1,
+    "UNRESOLVED": 8
+  },
+  "member_rows": 9,
+  "new_scope_charged_calls": 6,
+  "observed_utc": "2026-09-15T14:39:17.150935+00:00",
+  "optimizer_updates": 0,
+  "original_new_scope_total_charges": 10,
+  "per_batch_seconds": 300,
+  "per_batch_timer": "COOPERATIVE_CHECK_AROUND_FORWARD_NOT_HARD_PREEMPTION",
+  "plan": {
+    "path": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2/PLAN.json",
+    "sha256": "334eeaf9249c21d60a12ab4214ab99ee847787580e29fadd52570b40ea5d3de6"
+  },
+  "prior_bindings_unchanged": {
+    "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh10_attempt1": true,
+    "/localhome/local-rohing/orch_r118_cpu_judge_20260915_attempt1": true
+  },
+  "processes_present": {
+    "2068372": false,
+    "2068375": false
+  },
+  "provider_calls": 0,
+  "raw_node_only": true,
+  "remaining_new_scope_budget": 0,
+  "response_hashes_verified": true,
+  "result_count": 6,
+  "result_records": [
+    {
+      "claim": {
+        "path": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2/cache/272f4bb0467824934ea81c443693449accef47615be9f2e5801d6e4d7a373566/CLAIM.json",
+        "sha256": "a32d0d104e162256134f4b1ec679553024ab7092e2d4ec65433f4cbb8e6710d5"
+      },
+      "elapsed_seconds": 340.4664297103882,
+      "finished_utc": "2026-09-15T14:33:27.974607+00:00",
+      "key": "272f4bb0467824934ea81c443693449accef47615be9f2e5801d6e4d7a373566",
+      "member_rows": 1,
+      "reason": "deadline",
+      "response": {
+        "path": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2/cache/272f4bb0467824934ea81c443693449accef47615be9f2e5801d6e4d7a373566/RESPONSE.json",
+        "sha256": "83289f03bae2ccfcfdff268aa740eb13cf0cef7a8a8549d1611b70335c56bc3c"
+      },
+      "result": {
+        "path": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2/cache/272f4bb0467824934ea81c443693449accef47615be9f2e5801d6e4d7a373566/RESULT.json",
+        "sha256": "0680468ae29521c44d27308d3c37174066d4d4ec1e67cc265e0210ab1cc0b70b"
+      },
+      "started_utc": "2026-09-15T14:27:47.508178+00:00",
+      "status": "UNRESOLVED",
+      "termination": "deadline",
+      "tokens": 1
+    },
+    {
+      "claim": {
+        "path": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2/cache/31217768e12b51af7e1ccfd89108528878aa08cd37e71097b2f898c9c22bc76e/CLAIM.json",
+        "sha256": "d635e96c95204011d3da279794052a355e20930aa952243786751e33b463586c"
+      },
+      "elapsed_seconds": 340.4661400318146,
+      "finished_utc": "2026-09-15T14:33:27.974318+00:00",
+      "key": "31217768e12b51af7e1ccfd89108528878aa08cd37e71097b2f898c9c22bc76e",
+      "member_rows": 4,
+      "reason": "deadline",
+      "response": {
+        "path": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2/cache/31217768e12b51af7e1ccfd89108528878aa08cd37e71097b2f898c9c22bc76e/RESPONSE.json",
+        "sha256": "bed9c1ce5836a38769c90408f8a452aaedefe8b5e31b74972870c6cd44c3c4d1"
+      },
+      "result": {
+        "path": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2/cache/31217768e12b51af7e1ccfd89108528878aa08cd37e71097b2f898c9c22bc76e/RESULT.json",
+        "sha256": "6f8a597cf17b20d82027c5278f9f3d2d3d7018716d0eb543fd4e8c9504a75f2c"
+      },
+      "started_utc": "2026-09-15T14:27:47.508178+00:00",
+      "status": "UNRESOLVED",
+      "termination": "deadline",
+      "tokens": 1
+    },
+    {
+      "claim": {
+        "path": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2/cache/4802cb02b846cb0bf7fa809392fed1864096f8265cd17ef8390b5663900237dc/CLAIM.json",
+        "sha256": "3daca1927d0e5b4717161173deffae4353a1f41e7e0e6b9d95dd747bda536786"
+      },
+      "elapsed_seconds": 300.70102548599243,
+      "finished_utc": "2026-09-15T14:38:28.750749+00:00",
+      "key": "4802cb02b846cb0bf7fa809392fed1864096f8265cd17ef8390b5663900237dc",
+      "member_rows": 1,
+      "reason": "deadline",
+      "response": {
+        "path": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2/cache/4802cb02b846cb0bf7fa809392fed1864096f8265cd17ef8390b5663900237dc/RESPONSE.json",
+        "sha256": "f85d06620046c53c249fd2d282094533aee18adaf56c01e62c3befd1d62bc24f"
+      },
+      "result": {
+        "path": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2/cache/4802cb02b846cb0bf7fa809392fed1864096f8265cd17ef8390b5663900237dc/RESULT.json",
+        "sha256": "d10b4a784b63a1d8c810f33a3a2de4dad51eddf1f6a38632e278a1e40092522c"
+      },
+      "started_utc": "2026-09-15T14:33:28.049724+00:00",
+      "status": "UNRESOLVED",
+      "termination": "deadline",
+      "tokens": 164
+    },
+    {
+      "claim": {
+        "path": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2/cache/6bda67e5292bba2df9f5d12a1409703c603378103e3fed2a4cb9c3414ef9b38b/CLAIM.json",
+        "sha256": "a6b2bc6c358d14a44f072268b96a4285f091452e710e6f07d1cc6e4451fd7030"
+      },
+      "elapsed_seconds": 340.4655213356018,
+      "finished_utc": "2026-09-15T14:33:27.973699+00:00",
+      "key": "6bda67e5292bba2df9f5d12a1409703c603378103e3fed2a4cb9c3414ef9b38b",
+      "member_rows": 1,
+      "reason": "deadline",
+      "response": {
+        "path": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2/cache/6bda67e5292bba2df9f5d12a1409703c603378103e3fed2a4cb9c3414ef9b38b/RESPONSE.json",
+        "sha256": "6d5ea739fb4a59033fb6a80a66ce69290e12caf0508519bc53a0b20504fced56"
+      },
+      "result": {
+        "path": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2/cache/6bda67e5292bba2df9f5d12a1409703c603378103e3fed2a4cb9c3414ef9b38b/RESULT.json",
+        "sha256": "36cb7a584df2677b43b8ca01c4519258fb26061421b7e26003a46ae6d40c8dcf"
+      },
+      "started_utc": "2026-09-15T14:27:47.508178+00:00",
+      "status": "UNRESOLVED",
+      "termination": "deadline",
+      "tokens": 1
+    },
+    {
+      "claim": {
+        "path": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2/cache/700103488c98eb08692cd8c1195f9999fd855fd7a36bea4e3f53f351f1e353e0/CLAIM.json",
+        "sha256": "09613939953071d713e0bcece7ef91b0d8194707033bf684a75a564124936844"
+      },
+      "elapsed_seconds": 340.4666910171509,
+      "finished_utc": "2026-09-15T14:33:27.974869+00:00",
+      "key": "700103488c98eb08692cd8c1195f9999fd855fd7a36bea4e3f53f351f1e353e0",
+      "member_rows": 1,
+      "reason": "deadline",
+      "response": {
+        "path": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2/cache/700103488c98eb08692cd8c1195f9999fd855fd7a36bea4e3f53f351f1e353e0/RESPONSE.json",
+        "sha256": "c99233ee094fb87d350e3e0218417b19b5fdc036d0656a5df1c2559c14d3e6f7"
+      },
+      "result": {
+        "path": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2/cache/700103488c98eb08692cd8c1195f9999fd855fd7a36bea4e3f53f351f1e353e0/RESULT.json",
+        "sha256": "f5a40b5022ed24db7f8e4d1b70248f154df8b4755f26cf7ae8b3546a003e4643"
+      },
+      "started_utc": "2026-09-15T14:27:47.508178+00:00",
+      "status": "UNRESOLVED",
+      "termination": "deadline",
+      "tokens": 1
+    },
+    {
+      "claim": {
+        "path": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2/cache/965449578d38ff34976d722eec95e968395ae37c01e6d2fb9da18910a373583c/CLAIM.json",
+        "sha256": "57b4a4921c813411f41c862215cf630f7b41234ef73ddd9f89d332ae9ec7f558"
+      },
+      "elapsed_seconds": 300.70219111442566,
+      "finished_utc": "2026-09-15T14:38:28.751915+00:00",
+      "key": "965449578d38ff34976d722eec95e968395ae37c01e6d2fb9da18910a373583c",
+      "member_rows": 1,
+      "reason": "",
+      "response": {
+        "path": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2/cache/965449578d38ff34976d722eec95e968395ae37c01e6d2fb9da18910a373583c/RESPONSE.json",
+        "sha256": "bde577581a8c5a0657e980f93a7eee353bfaac4333ff925a1622dd85f7544abf"
+      },
+      "result": {
+        "path": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2/cache/965449578d38ff34976d722eec95e968395ae37c01e6d2fb9da18910a373583c/RESULT.json",
+        "sha256": "2d7d51d0c418d5f40e7861b0be61e39fda81d65c8c783635cbcb8b39b722fb5d"
+      },
+      "started_utc": "2026-09-15T14:33:28.049724+00:00",
+      "status": "COMPLETE",
+      "termination": "eos",
+      "tokens": 162
+    }
+  ],
+  "retries": 0,
+  "root": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2",
+  "rows_receipt": {
+    "path": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2/ROWS.json",
+    "sha256": "9bee751d94eaed940900a60327b90dc210ae34ed5d0e783bc27e60a82fbd1d01"
+  },
+  "source_files_unchanged": true,
+  "source_manifest": {
+    "path": "/localhome/local-rohing/orch_r118_blind_cpu_source_20260915_fresh6_v2/SOURCE_SHA256.json",
+    "sha256": "46c181489154de6563efb1ef883fb5c925e1f3fdf11e96c5e6de89bf659f64b1"
+  },
+  "terminal": {
+    "path": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2/TERMINAL.json",
+    "sha256": "bb18b9724af8f37fbda494dfb0b1c1f44795ceb93f07eaf22d6e45a2067c10d8"
+  },
+  "terminal_finished_utc": "2026-09-15T14:38:28.754589+00:00",
+  "token_logs": [
+    {
+      "batch_started_utc": "2026-09-15T14:27:47.508178+00:00",
+      "cooperative_deadline_utc": "2026-09-15T14:32:47.508178+00:00",
+      "emission_steps": 1,
+      "emitted_tokens": 4,
+      "first_emission_utc": "2026-09-15T14:33:27.962817+00:00",
+      "input_tokens": [
+        1313,
+        1266,
+        1559,
+        1320
+      ],
+      "last_emission_utc": "2026-09-15T14:33:27.962817+00:00",
+      "prefill_to_first_emission_seconds": 340.4546391963959,
+      "reference": {
+        "path": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2/batch_0000.tokens.jsonl",
+        "sha256": "51416ca54ed390137a52227a4be9b6993ac500fb8f8fee3de894e68eb2efa16b"
+      }
+    },
+    {
+      "batch_started_utc": "2026-09-15T14:33:28.049724+00:00",
+      "cooperative_deadline_utc": "2026-09-15T14:38:28.049724+00:00",
+      "emission_steps": 164,
+      "emitted_tokens": 326,
+      "first_emission_utc": "2026-09-15T14:36:48.047883+00:00",
+      "input_tokens": [
+        1823,
+        1330
+      ],
+      "last_emission_utc": "2026-09-15T14:38:28.750175+00:00",
+      "prefill_to_first_emission_seconds": 199.99815893173218,
+      "reference": {
+        "path": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2/batch_0004.tokens.jsonl",
+        "sha256": "e8f96be0f872b74505ef7acc448b8a3b4736290622fab962f74c9a2ef8b07bc0"
+      }
+    }
+  ],
+  "unique_annotation_statuses": {
+    "COMPLETE": 1,
+    "UNRESOLVED": 5
+  }
+}

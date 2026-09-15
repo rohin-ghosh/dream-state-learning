@@ -1,0 +1,111 @@
+{
+  "activation": "Main all8 coordinated release and dispatcher only; no owner activation",
+  "actors_signaled": 0,
+  "candidate": {
+    "path": "/localhome/local-rohing/orch_r118_grid_parallel_candidate_source_20260915_v4/READY.json",
+    "sha256": "e2d1ecf5fdd25c2f8906bf54eca758bf828bab4d8b5b95c3cc888fd32a2aec34"
+  },
+  "created_utc": "2026-09-15T15:09:06.778335+00:00",
+  "failed_mode": "F4 accepted gen0 never resubmitted; DEV FAILED and OPEN NOT_ATTEMPTED retained; fresh canonical gen1 bootstrap before C9",
+  "git_mutations": 0,
+  "local_cpu": {
+    "combined_tests_passed": 141,
+    "focused_tests_passed": 73
+  },
+  "native": {
+    "GPU_calls": 0,
+    "activation": false,
+    "branches": {
+      "A4": {
+        "boundary": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parallel_candidate_v4_cpu/BOUNDARY.json",
+          "sha256": "44ffdac27f4958eeb65c0c0c3f29ab8d487cff299309555037463137f83b9899"
+        },
+        "mode": "PENDING_CONSOLIDATION",
+        "native_used": 567,
+        "next_cycle": 9,
+        "owner_boundary": {
+          "canonical_reload_required": true,
+          "committed_checkpoint_sha256": "43ce68acabb18f661ff929600239eb0a632981da841dd1182f886a85df78a02d",
+          "mounted_checkpoint_sha256": "43ce68acabb18f661ff929600239eb0a632981da841dd1182f886a85df78a02d",
+          "settled_cursor": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parallel_candidate_v4_cpu/PENDING_CURSOR.json",
+            "sha256": "268b2d371c60373933115bcef024f4b3eb5529654829f0c6527b80a8f4aa9d7d"
+          },
+          "settled_pending_consolidation": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parallel_candidate_v4_cpu/PENDING_CONSOLIDATION.json",
+            "sha256": "e992a81d8895155c054ad7b1a45bd8d39f37c11b0da787d254c339957024f036"
+          }
+        },
+        "parent_used": 40,
+        "released": false,
+        "signals": 0
+      },
+      "F4": {
+        "boundary": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parallel_candidate_v4_cpu/BOUNDARY.json",
+          "sha256": "a17391f29c412bc09d151832c949212246b8a68542f11a32cb6b239d29807fb4"
+        },
+        "mode": "CRASHED_POSTCOMMIT",
+        "native_used": 565,
+        "next_cycle": 9,
+        "owner_boundary": {
+          "canonical_reload_required": true,
+          "committed_checkpoint_sha256": "43ce68acabb18f661ff929600239eb0a632981da841dd1182f886a85df78a02d",
+          "mounted_checkpoint_sha256": null,
+          "postcommit_eval_disposition": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parallel_candidate_v4_cpu/disposition/EVAL_DISPOSITION.json",
+            "sha256": "526517485b1548fa92942b7ab01013498f4f13849a5a492b574d69030d4f94c1"
+          },
+          "settled_cursor": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parallel_candidate_v4_cpu/disposition/CURSOR.json",
+            "sha256": "ce4eb6477b606e2d7ade47209d66cae14acc42c5cf5b03567cf4808685dd8dd7"
+          }
+        },
+        "parent_used": 40,
+        "released": false,
+        "signals": 0
+      }
+    },
+    "observed_unix": 1789484779.5436683,
+    "provider_calls": 0,
+    "release": false
+  },
+  "native_cpu": {
+    "receipt_sha256": "f66c657f2006d71084b8b8a712216d8bc4432e05bd42a4ffa5ac5e7daf9002a7",
+    "tests_passed": 66
+  },
+  "new_GPU_calls": 0,
+  "new_provider_calls": 0,
+  "node3_7": {
+    "cycle": 11,
+    "first_new_native_call": {
+      "cycle": 9,
+      "finished_unix": 1789482425.9001873,
+      "number": 561,
+      "sha256": "3e0357dbf45a5f1c943d7c61de07929a6e10818de739828d232d46679c4b16fd"
+    },
+    "guard_pid": 158937,
+    "launch_receipt": "research_notes/analysis/orch_r118_node3_7_grid_20260915_attempt1/RECOVERY_1425_COMPACT.json",
+    "native_alive": true,
+    "native_pid": 159259,
+    "native_used": 727,
+    "observed_unix": 1789484907.461631,
+    "parent_used": 53,
+    "recovered_C9_fresh_DEV": {
+      "finished_unix": 1789483447.5459573,
+      "sha256": "7c27ddb28322958dfa11df01684333fff746c093507590b2fd1f22feb5644bc2",
+      "status": "COMPLETE"
+    },
+    "terminal": false
+  },
+  "pending_mode": "A4 existing gen1 submission adopted via central resume_pending_consolidation before any new calls; next TRAIN C9 after actual commit",
+  "preserved_v3_failure": {
+    "path": "/localhome/local-rohing/orch_r118_grid_parallel_candidate_source_20260915_v3/METADATA_FAILURE.json",
+    "reason": "predecessor_identity_types; decimal guard ticks normalized in new v4 only",
+    "sha256": "c84364b755cd5c8c558f2d1ea50b258eae0c68fbab0bf4987161deb033c866ef"
+  },
+  "raw_evidence": "NODES_ONLY",
+  "schema": "R118_GRID_PARALLEL_READINESS_V4",
+  "status": "CPU_READY_NOT_ACTIVATED_NOT_RELEASED"
+}

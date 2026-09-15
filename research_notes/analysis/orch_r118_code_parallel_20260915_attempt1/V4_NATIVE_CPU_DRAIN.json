@@ -1,0 +1,38 @@
+{
+  "CUDA_VISIBLE_DEVICES": "",
+  "GPU_calls": 0,
+  "case_progress": [
+    "tests/test_orch_r118_code_parallel_final.py::test_rebind_failure_preserves_started_attempt",
+    "tests/test_orch_r118_code_parallel_final.py::test_release_requires_new_native_guard_cursor_and_unchanged_ledger",
+    "tests/test_orch_r118_code_parallel_final.py::test_changed_rebind_reference_rejected_before_wait",
+    "tests/test_orch_r118_code_parallel_final.py::test_cloned_FINAL_dispatch_uses_new_wrapper_not_old_release",
+    "tests/test_orch_r118_code_parallel_final.py::test_late_timer_cancellation_never_signals",
+    "tests/test_orch_r118_code_parallel_final.py::test_bind_supervision_uses_actual_new_timer_not_old_TIMER"
+  ],
+  "command": [
+    "/localhome/local-rohing/v2/venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "tests/test_orch_r118_code_parallel_pending.py",
+    "tests/test_orch_r118_code_parallel_handoff.py",
+    "tests/test_orch_r118_code_parallel_runtime.py",
+    "tests/test_orch_r118_code_parallel_final.py",
+    "-vv",
+    "-p",
+    "no:cacheprovider"
+  ],
+  "elapsed_seconds": 21.44,
+  "helper_sha256": "c56bb57b69405877a65124b623316f9b8bd769aa8f51db6f2481ff65325c5cdb",
+  "observed_utc": "2026-09-15T15:24:13.552065+00:00",
+  "parent_provider_calls": 0,
+  "passed": true,
+  "returncode": 0,
+  "schema": "R118_CODE_PARALLEL_NATIVE_CPU_TESTS_V4",
+  "source_before_after_verified": true,
+  "source_manifest_sha256": "0de882fd5d3ea81d1429dc6c3f0624ac0a40612c90f06d423be99ead79b15d9a",
+  "source_root": "/localhome/local-rohing/orch_r118_code_parallel_source_20260915_v4_drain/source",
+  "stdout_sha256": "58546b1833e94c14de784033642475a66d3df31fde20338ca204d369164e6edd",
+  "tests_passed": 68,
+  "timeout": false
+}
