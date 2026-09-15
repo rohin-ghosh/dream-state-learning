@@ -33,6 +33,26 @@ def sentences(text):
     return [part.strip() for part in re.split(r'(?<=[.!?])\s+|\n+', text) if part.strip()]
 
 
+def persistence_measure(content_token_ids, first_answer_end, *, final_answer_present, cap_hit):
+    require(isinstance(content_token_ids, list) and all(type(token) is int for token in content_token_ids),
+        'native_content_tokens_required')
+    require(type(final_answer_present) is bool and type(cap_hit) is bool, 'observed_termination_required')
+    require(first_answer_end is None or type(first_answer_end) is int
+        and 0 <= first_answer_end <= len(content_token_ids), 'aligned_first_answer_marker')
+    if first_answer_end is None:
+        return dict(persistent=False, marker_present=False, post_marker_tokens=0,
+            novelty=None, final_answer_present=final_answer_present, cap_hit=cap_hit)
+    before = content_token_ids[:first_answer_end]
+    after = content_token_ids[first_answer_end:]
+    prior = {tuple(before[index:index + 4]) for index in range(max(0, len(before) - 3))}
+    grams = [tuple(after[index:index + 4]) for index in range(max(0, len(after) - 3))]
+    novelty = sum(gram not in prior for gram in grams) / len(grams) if grams else None
+    return dict(persistent=len(after) >= 64 and novelty is not None and novelty >= 0.8
+        and final_answer_present and not cap_hit, marker_present=True,
+        post_marker_tokens=len(after), novelty=novelty, final_answer_present=final_answer_present,
+        cap_hit=cap_hit, measure_only_never_a_branch_stop=True)
+
+
 def request(document):
     require(isinstance(document, dict) and document.get('kind') in FIELDS, 'known_annotation_kind')
     kind = document['kind']

@@ -57,3 +57,19 @@ def test_missing_and_silent_are_not_interventions(parent):
     with pytest.raises(ValueError, match='actual_intervention_required'):
         judge.request(dict(kind='intervention', before_text='before', after_text='after',
             before_token_count=1, after_token_count=1, parent_text=parent, intervention_class='metacognition'))
+
+
+@pytest.mark.parametrize('final_answer,cap_hit,expected', [
+    (True, False, True), (True, True, False), (False, False, False),
+])
+def test_persistence_requires_novel_continuation_and_bounded_final(final_answer, cap_hit, expected):
+    result = judge.persistence_measure(list(range(100)), 20,
+        final_answer_present=final_answer, cap_hit=cap_hit)
+    assert result['persistent'] is expected
+    assert result['measure_only_never_a_branch_stop'] is True
+
+
+def test_repeating_after_first_answer_is_not_persistence():
+    result = judge.persistence_measure([1, 2, 3, 4] * 40, 80,
+        final_answer_present=True, cap_hit=False)
+    assert result['persistent'] is False and result['novelty'] == 0
