@@ -1,5 +1,16 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## [Builder] 2026-09-15 11:48 UTC — node3_7 actual refill
+
+New extraBASEgrid native2412262 launched11:45:04 on physical7; first TRAINcall
+completed11:47:23 after fresh baseline readouts,62token IDs. Broker1070930 live,
+first delivered parent not yet verified. Source/provenance/22nativeCPUtests and
+fresh privileged admission passed; no old GPU owner or quota altered.
+Latest full snapshot39/40 memory-resident,20computing during node3_7reload;
+do not report allocation as sustained saturation. Startup receipt in
+`research_notes/analysis/R118_NODE3_7_STARTUP_20260915_1148.json`.
+
+
 ## [Builder] 2026-09-15 11:42 UTC — final node3 refill allocation
 
 Main owns new node3physical7 EXTRA frozen-base grid parenting, same fixed prompt
