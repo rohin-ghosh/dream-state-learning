@@ -1,5 +1,7 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+- [Builder Main] 2026-09-15T22:32Z **R135 queue brokers allocated:** a40r 0/2 native continuations live; 47 broker tests and both pinned live preflights PASS. Same Astra transport, no historical replay or provider fallback; delivery not yet verified. **R136 collection COMPLETE:** 96 calls, unchanged weights; preliminary zero successful feedback corrections, independent reduction pending. No retained-learning claim.
+
 - [Builder Main] 2026-09-15T22:19:17Z **R136 live21calls:**BASE12/FULL9, repeated adapter transitions pass so far; incomplete, no learned result. **R135 a40r0/2 allocated:**84local+73nativeCPUtests, whole context carries ready, first unreserved2048/2329; broker reconnection pending. Original caps/September18 18:00UTCwall retained; no LoRA learning claim.
 
 - [Builder Main] 2026-09-15T22:10:46Z **R136 allocated, not yet loaded:**fresh16tasks/excludesR133;73local+73nativeCPUtestsPASS;ovx3physical7/23:30UTCwall/96newcalls. **R132 matched19428:**no scored gain—ON22/32 capability and0/8code in both arms, unchanged frompreC4. Source-present held16/16 is not source-free retention.
