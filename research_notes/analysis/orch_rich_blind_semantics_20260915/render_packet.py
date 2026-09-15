@@ -48,7 +48,7 @@ def main():
         for index, message in enumerate(row["neutral_training_prefix"], 1):
             sections.append(f"#### Message {index}: {message['role']}\n\n```text\n{message['content']}\n```\n\n")
         sections.append(f"### Raw generated text\n\n```text\n{row['generated_text']}\n```\n\n")
-    add_file(OUTPUT / "blind_packet.md", "".join(sections))
+    add_file(OUTPUT / "blind_packet.md", "".join(sections).rstrip() + "\n")
     print(json.dumps({
         "rows": len(rows),
         "all_neutral_evidence_verbatim_in_generation": all(row["neutral_evidence_verbatim_in_generation"] for row in rows),

@@ -1129,4 +1129,3 @@ So, 26 students play soccer.
 
 FINAL: 26
 ```
-
