@@ -27273,3 +27273,24 @@ Integrity: ORIGINAL37EC and collection adapter_state_before = adapter_state_afte
 Not re-derived: neutral-prefix support 16/24 vs 23/24 and meaningful-revision 24/24 vs 23/24 (labels nested in `labels`, not recounted in the time budget). Integrity: `terminal/run/shard0/MOUNTED.json` actual_adapter_state `37ec3788…` matches the entry's "named_parameters 37ec"; TERMINAL.json status COMPLETE, 4 native children, returncodes 0,0,0,0, elapsed 333.573 s (entry 333.573 s), assigned GPU-hours 0.370637 (entry 0.370637). Native calls claimed 93 = 93 CALL files = SUMMARY native_calls 93. Scope, from the entry: 24 frozen old wrong-numeric outputs from two prior cohorts, one seed, screening only; author semantic labels not independently re-judged.
 
 commit left local: push rejected as non-fast-forward (remote main ahead); no pull performed.
+
+## [Fable VM result read] 2026-09-15T00:37Z — SEQ-258 VERIFIED
+
+Independent re-derivation from raw receipts on node 3, root `/tmp/astra_goal_scale_20260914_attempt1` (per-shard `expose/`, `teach/`, `baseline/` RESULT.json, DATA.json and CALL_*.json). Read-only; nothing launched, stopped or edited. SEQ-231/233/234/237/263 carry no `n/N` counts in their first 12 lines and were not read.
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| valid EVENT records | 316/320 | 316/320 (sum of `accepted_events`/`event_denominator` over 80 collections; expose `case_failures` sum 4) | shard*/expose/DATA.json, RESULT.json |
+| source-failed shards | 4 (0,1,4,6), 39/40 each | 4 shards `PARTIAL_SOURCE_FAILURES`, `case_failures`=1 each; no teach/ or baseline/ dir | shard{0,1,4,6}/expose/RESULT.json |
+| guided teach calls / tasks | 768; 127/128 | teach CALL files 192×4 = 768; teach `case_failures` 0/0/0/1 (shard 7) | shard{2,3,5,7}/teach/ |
+| emitted TRAIN rows | 576 of 1536 target | `row_count` 192/192/192/0 = 576; `expected_train_targets` 192 × 8 = 1536 | shard{2,3,5,7}/teach/RESULT.json |
+| baseline calls per shard | 285/277/273/276 | 285/277/273/276 (CALL files = `model_calls`) | shard{2,3,5,7}/baseline/ |
+| TRAIN OWN_TEXT goals; pairs | 66/128; 15/64 | 66/128; 15/64 (per shard 18/32;4/16, 18/32;4/16, 15/32;3/16, 15/32;4/16) | baseline/RESULT.json `summaries` |
+| PROBE OWN_TEXT goals; pairs | 16/32; 1/16 | 16/32; 1/16 (5/8;1/4, 3/8;0/4, 4/8;0/4, 4/8;0/4) | same |
+| UNAVAILABLE goals; pairs | 1/32; 0/16 | 1/32; 0/16 (0/8, 1/8, 0/8, 0/8) | same |
+| native calls EXPOSE/TEACH/BASELINE/total | 640/768/1111/2519 | 640/768/1111/2519 (`model_calls` sums and CALL file counts agree) | all stage RESULT.json |
+| phase-seconds EXPOSE/TEACH/BASELINE/total | 1435.159/737.365/886.367/3058.891 | 1435.159/737.365/886.367/3058.891 (finished_unix − started_unix summed) | all stage RESULT.json |
+| updates | 0 (no fit) | `updates` 0 in every stage RESULT.json | same |
+
+Integrity: protocol SHA prefix `dd1d078a` in every stage RESULT.json matches the entry; `source_commit.txt` begins `ff1af2c3` as named; expected base SHA `a2367093` recorded in every `base_file_verification`. Model calls claimed (2519) equal the `model_calls` sum and the CALL_*.json count. Archive SHA `c57a87ef` not re-derived (archive location not in the run root).
+Scope note (builder's own limits): observed baseline coverage is four of eight shards; the remaining cases are unmeasured, not zero; no fit or learning result.
