@@ -33,3 +33,12 @@ At18:09:37 F4 counters N598/P43 and A4 N592/P41, not reset. F4 actual provider r
 a40r7 budget handoff completed at N1524/P115 with exact carry e3112e31...; new native978523 restored C24 at17:58:26.426479, broker3339747. ovx2_7 native2321599 continues the frozen-gen1 fork. Both use explicit lease headroom and original cumulative ledgers. The old1858/298 are historical, not stopping doses.
 
 Shared-bound-stage receipts SHARED_BOUND_1755 / SHARED_READY_1757 are historical canceled preparation, NOT launch claims. New FINAL is scheduled in policy for2026-09-16T06:00UTC, distinct from lease wall and old FINAL; its separate8-call timer is NOT YET ARMED. It is the next bounded CPU task, not a reason to stop active lives. No old FINAL contents entered TRAIN or parents.
+
+
+## 18:21 UTC — A4 packaging crash recovered; both independent actors advancing
+
+A4 original native3324624 crashed18:09:40.851043 on an absent packaged PARENTING_BATTLE_PLAN_v4_2026-09-15.md while consuming P41. INDEPENDENT_LIVE_1810 is the immutable18:09:37 snapshot, not a claim that A4 survived afterward. Restored only the absent dependency with exact existing immutable bytes SHA5f494f5f4b6e2cddb8d909c87b07c7e816d23283553f5e91834a489a6b6dd497; no live source edits. Recovery reconstructs26 cached reservations (25native+P41) from original C9 evidence without provider/model replay, preserving N592/P41, carry, gen1 frozen LoRA and zero optimizer use.
+
+Recoveryv1 failed PREMODEL on process_identity_drift:3387061 and is preserved. Separatev2 used fresh unchanged privileged admission; guard3407407/native3407701 restored C9. First new N593 COMPLETE18:19:06.772502 SHA191e6eed538f00590ee8925a4c635b6a3b650e3d09db9edfd876f524f00f54c2. At18:21:24 actual A4 N601 COMPLETE/N602 STARTED, F4 N678 COMPLETE/N679 STARTED; both native PIDs alive, current terminal writers absent. Prospective low A4 broker3438178 alive. Original FAILED and premodel failure remain; no charged input retry or old parent claim replay. Nine focused local tests pass; prior native checks are separately scoped5 recovery and3 admission, not a claim of all9 native.
+
+A4_RECOVERY_1819.json binds native paths/hashes and INDEPENDENT_HEARTBEAT_1821.json records read-only progress. F4 provider recovery remains Hubble-owned; latest Hubble receipt reports OAuth unavailable/MISSING, not COMPLETE. New Sep16 06:00 FINAL timer remains unarmed; no sealed outputs were inspected or sent to parents. Main owns publication; no Git changes or foreign signals.
