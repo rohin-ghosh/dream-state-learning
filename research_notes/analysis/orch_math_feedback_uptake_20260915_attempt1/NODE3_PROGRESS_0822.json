@@ -1,0 +1,474 @@
+{
+  "observed_unix": 1789460561.401874,
+  "lanes": {
+    "0": {
+      "root": "/localhome/local-rohing/orch_math_feedback_uptake_node3_extra_20260915_attempt1/campaign_node3_style0",
+      "LAUNCH_C1_experience.json": {
+        "identity": {
+          "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+          "command_sha256": "12c70456e296a1dca86067cbc32a0c8e1aa20644e3b3686d9ee08c8f6614348f",
+          "pid": 915404,
+          "start_ticks": "16637816",
+          "uid": 2524
+        },
+        "started_unix": 1789460115.8279703,
+        "uuid": "GPU-0ee6f753-c61e-e18a-8aea-acccd3042939"
+      },
+      "cycle1/experience/LOADED.json": {
+        "adapter": null,
+        "all_parameters_frozen": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "base_verified": true,
+        "cycle": 1,
+        "loaded_unix": 1789460155.0547724,
+        "no_lora": true,
+        "no_peft": true,
+        "optimizer": null,
+        "parameters": 339,
+        "phase": "experience",
+        "process": [
+          "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+          915404,
+          16637816
+        ],
+        "runtime": {
+          "tokenizers": "0.22.2",
+          "torch": "2.13.0",
+          "transformers": "5.5.3"
+        },
+        "started_unix": 1789460116.2251477,
+        "training_updates": 0,
+        "uuid": "GPU-0ee6f753-c61e-e18a-8aea-acccd3042939"
+      },
+      "cycle1/experience/LATEST_RESPONSE.json": {
+        "finished_unix": 1789460383.4159315,
+        "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_extra_20260915_attempt1/campaign_node3_style0/cycle1/experience/CALL_005.json",
+        "purpose": "revision",
+        "sha256": "ab5e1278d32cc5d795c4dfd1c090cb0c18b4acef1e6f01d6845610cbdcda67a0",
+        "task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_FEEDBACK_UPTAKE_TRAIN_C1_E3001",
+        "tokens": 549
+      },
+      "cycle1/experience/COMPLETE.json": {
+        "adapter": null,
+        "all_experience_retained": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "carry_sha256": "9ddcf4ca8cf7c97e1ffd427d33f709578c355cfaefedaf105e8c7fad983ecf78",
+        "child_calls": 6,
+        "cycle": 1,
+        "finished_unix": 1789460422.499004,
+        "optimizer": null,
+        "parent_calls": 2,
+        "phase": "experience",
+        "process": [
+          "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+          915404,
+          16637816
+        ],
+        "reflection_boundary": true,
+        "sleep_weight_writes": 0,
+        "started_unix": 1789460116.2251477,
+        "status": "COMPLETE",
+        "training_updates": 0,
+        "uuid": "GPU-0ee6f753-c61e-e18a-8aea-acccd3042939"
+      },
+      "parents": [
+        {
+          "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_extra_20260915_attempt1/parent_transcripts/campaign_node3_style0/GUIDED_SLEEP_C1_P1/RAW_RESPONSE.json",
+          "sha256": "7c5be692ae1dc5b6d048e9bcc4f6f23aa13999bbbe2d083c96f52c49a38ab365",
+          "model": "openai/openai/gpt-6-astra",
+          "complete": {
+            "actual_primary_model": "openai/openai/gpt-6-astra",
+            "finished_unix": 1789460212.6552193,
+            "http_attempts": 1,
+            "plan_sha256": "3e280c3fe33f4c7fc65c8143175e902bdfad58f50d09bf717383a73c8aacfed0",
+            "public_only": true,
+            "raw_response_sha256": "7c5be692ae1dc5b6d048e9bcc4f6f23aa13999bbbe2d083c96f52c49a38ab365",
+            "retries": 0,
+            "status": "COMPLETE",
+            "teacher_targets_compiled": false,
+            "usage": {
+              "cost": null,
+              "input_tokens": 1890,
+              "input_tokens_details": {
+                "audio_tokens": null,
+                "cache_write_tokens": 1887,
+                "cached_tokens": 0,
+                "text_tokens": null
+              },
+              "output_tokens": 1352,
+              "output_tokens_details": {
+                "reasoning_tokens": 1034,
+                "text_tokens": null
+              },
+              "total_tokens": 3242
+            }
+          }
+        },
+        {
+          "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_extra_20260915_attempt1/parent_transcripts/campaign_node3_style0/GUIDED_SLEEP_C1_P2/RAW_RESPONSE.json",
+          "sha256": "c3bf459c5127dd6cc9af7afd79a9b6cb6f402ca60e981a300fb6b8311859a6c8",
+          "model": "openai/openai/gpt-6-astra",
+          "complete": {
+            "actual_primary_model": "openai/openai/gpt-6-astra",
+            "finished_unix": 1789460318.4136126,
+            "http_attempts": 1,
+            "plan_sha256": "30dbbbf280e30e333238a2e82072ab37f1f7043af186907690061b5b5c28480a",
+            "public_only": true,
+            "raw_response_sha256": "c3bf459c5127dd6cc9af7afd79a9b6cb6f402ca60e981a300fb6b8311859a6c8",
+            "retries": 0,
+            "status": "COMPLETE",
+            "teacher_targets_compiled": false,
+            "usage": {
+              "cost": null,
+              "input_tokens": 2674,
+              "input_tokens_details": {
+                "audio_tokens": null,
+                "cache_write_tokens": 2671,
+                "cached_tokens": 0,
+                "text_tokens": null
+              },
+              "output_tokens": 1750,
+              "output_tokens_details": {
+                "reasoning_tokens": 1387,
+                "text_tokens": null
+              },
+              "total_tokens": 4424
+            }
+          }
+        }
+      ]
+    },
+    "3": {
+      "root": "/localhome/local-rohing/orch_math_feedback_uptake_node3_extra_20260915_attempt1/campaign_node3_style3",
+      "LAUNCH_C1_experience.json": {
+        "identity": {
+          "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+          "command_sha256": "8b2ab784b55ded5a0baf3de282441cbf0359ae287f5511f88ece569ce8b5febd",
+          "pid": 919745,
+          "start_ticks": "16642070",
+          "uid": 2524
+        },
+        "started_unix": 1789460158.3743865,
+        "uuid": "GPU-e1277146-04f2-c38f-d1ae-1a98132f907e"
+      },
+      "cycle1/experience/LOADED.json": {
+        "adapter": null,
+        "all_parameters_frozen": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "base_verified": true,
+        "cycle": 1,
+        "loaded_unix": 1789460197.032475,
+        "no_lora": true,
+        "no_peft": true,
+        "optimizer": null,
+        "parameters": 339,
+        "phase": "experience",
+        "process": [
+          "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+          919745,
+          16642070
+        ],
+        "runtime": {
+          "tokenizers": "0.22.2",
+          "torch": "2.13.0",
+          "transformers": "5.5.3"
+        },
+        "started_unix": 1789460158.7696867,
+        "training_updates": 0,
+        "uuid": "GPU-e1277146-04f2-c38f-d1ae-1a98132f907e"
+      },
+      "cycle1/experience/LATEST_RESPONSE.json": {
+        "finished_unix": 1789460466.899311,
+        "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_extra_20260915_attempt1/campaign_node3_style3/cycle1/experience/CALL_005.json",
+        "purpose": "revision",
+        "sha256": "ac784f87b32ec0f9db273cd64d43663fa27bda61cd09b69124ab4285ea5d1574",
+        "task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_FEEDBACK_UPTAKE_TRAIN_C1_E3001",
+        "tokens": 541
+      },
+      "cycle1/experience/COMPLETE.json": {
+        "adapter": null,
+        "all_experience_retained": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "carry_sha256": "532fd3b14bfdea787df3e75415a54812d5daff33cfc379d609cd6e764509e44d",
+        "child_calls": 6,
+        "cycle": 1,
+        "finished_unix": 1789460507.0076241,
+        "optimizer": null,
+        "parent_calls": 2,
+        "phase": "experience",
+        "process": [
+          "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+          919745,
+          16642070
+        ],
+        "reflection_boundary": true,
+        "sleep_weight_writes": 0,
+        "started_unix": 1789460158.7696867,
+        "status": "COMPLETE",
+        "training_updates": 0,
+        "uuid": "GPU-e1277146-04f2-c38f-d1ae-1a98132f907e"
+      },
+      "parents": [
+        {
+          "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_extra_20260915_attempt1/parent_transcripts/campaign_node3_style3/GUIDED_SLEEP_C1_P1/RAW_RESPONSE.json",
+          "sha256": "257f7955bc630157ab68fd780b403dbfd8946386cbd0890abe1c130a0ac7c25c",
+          "model": "openai/openai/gpt-6-astra",
+          "complete": {
+            "actual_primary_model": "openai/openai/gpt-6-astra",
+            "finished_unix": 1789460284.3322134,
+            "http_attempts": 1,
+            "plan_sha256": "ef59cf686874f3bb543e34936868168f15b3a23c813a8e8fcf14d2adeed297c6",
+            "public_only": true,
+            "raw_response_sha256": "257f7955bc630157ab68fd780b403dbfd8946386cbd0890abe1c130a0ac7c25c",
+            "retries": 0,
+            "status": "COMPLETE",
+            "teacher_targets_compiled": false,
+            "usage": {
+              "cost": null,
+              "input_tokens": 1881,
+              "input_tokens_details": {
+                "audio_tokens": null,
+                "cache_write_tokens": 1878,
+                "cached_tokens": 0,
+                "text_tokens": null
+              },
+              "output_tokens": 2728,
+              "output_tokens_details": {
+                "reasoning_tokens": 2070,
+                "text_tokens": null
+              },
+              "total_tokens": 4609
+            }
+          }
+        },
+        {
+          "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_extra_20260915_attempt1/parent_transcripts/campaign_node3_style3/GUIDED_SLEEP_C1_P2/RAW_RESPONSE.json",
+          "sha256": "89eea2a4e3f2317d9bd565c7bc07ced1fb30e2bbf59c0b43f0c5a827efade4f4",
+          "model": "openai/openai/gpt-6-astra",
+          "complete": {
+            "actual_primary_model": "openai/openai/gpt-6-astra",
+            "finished_unix": 1789460394.808368,
+            "http_attempts": 1,
+            "plan_sha256": "29bb3154ad7c5f99fb6f8747265522d542d575d3ca42bb26ec7432f745eb3e55",
+            "public_only": true,
+            "raw_response_sha256": "89eea2a4e3f2317d9bd565c7bc07ced1fb30e2bbf59c0b43f0c5a827efade4f4",
+            "retries": 0,
+            "status": "COMPLETE",
+            "teacher_targets_compiled": false,
+            "usage": {
+              "cost": null,
+              "input_tokens": 2660,
+              "input_tokens_details": {
+                "audio_tokens": null,
+                "cache_write_tokens": 2657,
+                "cached_tokens": 0,
+                "text_tokens": null
+              },
+              "output_tokens": 2080,
+              "output_tokens_details": {
+                "reasoning_tokens": 1362,
+                "text_tokens": null
+              },
+              "total_tokens": 4740
+            }
+          }
+        }
+      ]
+    },
+    "1": {
+      "root": "/localhome/local-rohing/orch_math_feedback_uptake_node3_recovery_20260915_attempt1/campaign_node3_style1",
+      "LAUNCH_C1_experience.json": {
+        "identity": {
+          "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+          "command_sha256": "bc971f8c09671bfb458a7bb07ba74908261ada7042ab7ddbc3cba696e972fda3",
+          "pid": 938454,
+          "start_ticks": "16654633",
+          "uid": 2524
+        },
+        "started_unix": 1789460283.9965801,
+        "uuid": "GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821"
+      },
+      "cycle1/experience/LOADED.json": {
+        "adapter": null,
+        "all_parameters_frozen": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "base_verified": true,
+        "cycle": 1,
+        "loaded_unix": 1789460322.5076501,
+        "no_lora": true,
+        "no_peft": true,
+        "optimizer": null,
+        "parameters": 339,
+        "phase": "experience",
+        "process": [
+          "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+          938454,
+          16654633
+        ],
+        "runtime": {
+          "tokenizers": "0.22.2",
+          "torch": "2.13.0",
+          "transformers": "5.5.3"
+        },
+        "started_unix": 1789460284.3898635,
+        "training_updates": 0,
+        "uuid": "GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821"
+      },
+      "cycle1/experience/LATEST_RESPONSE.json": {
+        "finished_unix": 1789460540.1601856,
+        "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_recovery_20260915_attempt1/campaign_node3_style1/cycle1/experience/CALL_005.json",
+        "purpose": "revision",
+        "sha256": "d12e23f25636fff756a8fcd09810e2b75ca2b0767002f54818ac7ca7c1d0056c",
+        "task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_FEEDBACK_UPTAKE_TRAIN_C1_E2001",
+        "tokens": 554
+      },
+      "cycle1/experience/HISTORICAL_IMPORT.json": {
+        "import_process": [
+          "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+          938454,
+          16654633
+        ],
+        "imported_unix": 1789460322.5213208,
+        "native_calls_added": 0,
+        "original_process": [
+          "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+          853875,
+          16568640
+        ],
+        "original_sha256": "5b556ceed2a4aa0c21058303359871215417f3d13474e6f1a4ce9b200c8afa72",
+        "raw_and_tokens_unchanged": true
+      },
+      "parents": [
+        {
+          "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_recovery_20260915_attempt1/parent_transcripts/campaign_node3_style1/GUIDED_SLEEP_C1_P1/RAW_RESPONSE.json",
+          "sha256": "bfb25ce5b312c8803158b755e696a39c4af6dca75ea0df50f5880cfdcdcdf143",
+          "model": "openai/openai/gpt-6-astra",
+          "complete": {
+            "actual_primary_model": "openai/openai/gpt-6-astra",
+            "finished_unix": 1789460374.732307,
+            "http_attempts": 1,
+            "plan_sha256": "b7d76c4c4735016b743f6606d8214e77c8fbfa93f5efe769111ccbb561a8f22f",
+            "public_only": true,
+            "raw_response_sha256": "bfb25ce5b312c8803158b755e696a39c4af6dca75ea0df50f5880cfdcdcdf143",
+            "retries": 0,
+            "status": "COMPLETE",
+            "teacher_targets_compiled": false,
+            "usage": {
+              "cost": null,
+              "input_tokens": 1834,
+              "input_tokens_details": {
+                "audio_tokens": null,
+                "cache_write_tokens": 1831,
+                "cached_tokens": 0,
+                "text_tokens": null
+              },
+              "output_tokens": 1531,
+              "output_tokens_details": {
+                "reasoning_tokens": 1034,
+                "text_tokens": null
+              },
+              "total_tokens": 3365
+            }
+          }
+        },
+        {
+          "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_recovery_20260915_attempt1/parent_transcripts/campaign_node3_style1/GUIDED_SLEEP_C1_P2/RAW_RESPONSE.json",
+          "sha256": "86e0e0c0d563926597a228d37590330b765b68b11371a6e4d2522f7babbbe152",
+          "model": "openai/openai/gpt-6-astra",
+          "complete": {
+            "actual_primary_model": "openai/openai/gpt-6-astra",
+            "finished_unix": 1789460469.0360246,
+            "http_attempts": 1,
+            "plan_sha256": "eab21bbf5246d9f7204715ffd64191d03bfef04158e4ed28bc92e78e4adb3280",
+            "public_only": true,
+            "raw_response_sha256": "86e0e0c0d563926597a228d37590330b765b68b11371a6e4d2522f7babbbe152",
+            "retries": 0,
+            "status": "COMPLETE",
+            "teacher_targets_compiled": false,
+            "usage": {
+              "cost": null,
+              "input_tokens": 2565,
+              "input_tokens_details": {
+                "audio_tokens": null,
+                "cache_write_tokens": 2562,
+                "cached_tokens": 0,
+                "text_tokens": null
+              },
+              "output_tokens": 1399,
+              "output_tokens_details": {
+                "reasoning_tokens": 847,
+                "text_tokens": null
+              },
+              "total_tokens": 3964
+            }
+          }
+        }
+      ]
+    },
+    "2": {
+      "root": "/localhome/local-rohing/orch_math_feedback_uptake_node3_recovery2_20260915_attempt1/campaign_node3_style2",
+      "LAUNCH_C1_experience.json": {
+        "identity": {
+          "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+          "command_sha256": "6a860d4b16dbead539dd3650ff50e70030f745ad765f3ca05fb004d615e81d08",
+          "pid": 973531,
+          "start_ticks": "16677066",
+          "uid": 2524
+        },
+        "started_unix": 1789460508.3349707,
+        "uuid": "GPU-41a86250-88eb-ed8a-ddfe-9d6f93515da1"
+      },
+      "cycle1/experience/LOADED.json": {
+        "adapter": null,
+        "all_parameters_frozen": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "base_verified": true,
+        "cycle": 1,
+        "loaded_unix": 1789460547.0923066,
+        "no_lora": true,
+        "no_peft": true,
+        "optimizer": null,
+        "parameters": 339,
+        "phase": "experience",
+        "process": [
+          "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+          973531,
+          16677066
+        ],
+        "runtime": {
+          "tokenizers": "0.22.2",
+          "torch": "2.13.0",
+          "transformers": "5.5.3"
+        },
+        "started_unix": 1789460508.73103,
+        "training_updates": 0,
+        "uuid": "GPU-41a86250-88eb-ed8a-ddfe-9d6f93515da1"
+      },
+      "cycle1/experience/LATEST_RESPONSE.json": {
+        "finished_unix": 1789460555.5003083,
+        "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_recovery2_20260915_attempt1/campaign_node3_style2/cycle1/experience/CALL_001.json",
+        "purpose": "experience",
+        "sha256": "93af8e9f2508eb5f81781861d38f8ea90745772eab5543dc0f977f80534946d0",
+        "task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_FEEDBACK_UPTAKE_TRAIN_C1_E2001",
+        "tokens": 253
+      },
+      "cycle1/experience/HISTORICAL_IMPORT.json": {
+        "import_process": [
+          "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+          973531,
+          16677066
+        ],
+        "imported_unix": 1789460547.105715,
+        "native_calls_added": 0,
+        "original_process": [
+          "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+          853312,
+          16568000
+        ],
+        "original_sha256": "58308b90e8b2a6604573889603e785972aca4b9fd966b91a9d25d84cb1f89297",
+        "raw_and_tokens_unchanged": true
+      },
+      "parents": []
+    }
+  }
+}

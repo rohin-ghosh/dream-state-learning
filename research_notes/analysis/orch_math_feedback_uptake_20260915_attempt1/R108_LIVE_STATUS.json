@@ -1,0 +1,817 @@
+{
+  "observed_unix": 1789461180.9664946,
+  "scope": "metadata_only_no_scores_or_raw_text",
+  "lanes": {
+    "1": {
+      "root": "/localhome/local-rohing/orch_math_feedback_uptake_node3_cycle_resume_20260915_attempt1/campaign_node3_style1",
+      "ready_sha256": "a8112ccbd5462b8f159d1385dac3c80e3fd915b91d25b852a15463d8ba7381a0",
+      "ACTIVATION.json": {
+        "started_unix": 1789459352.3844666,
+        "recovery_started_unix": 1789460973.661176,
+        "native_deadline_unix": 1789462772.3844666,
+        "hard_deadline_unix": 1789462952.3844666,
+        "index": 1,
+        "guardian": {
+          "pid": 1050892,
+          "uid": 2524,
+          "start_ticks": "16723562",
+          "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+          "command_sha256": "87489b2bc8fe80286b01a96715a2aee06e9d19df5c24f1894cc3c29c5e3c6ff1"
+        },
+        "ready_sha256": "a8112ccbd5462b8f159d1385dac3c80e3fd915b91d25b852a15463d8ba7381a0",
+        "no_older_counter_reset": true,
+        "aggregate_native_cap": 2162,
+        "aggregate_parent_cap": 50
+      },
+      "PRESERVED_C1_EXPERIENCE.json": {
+        "new_native_calls": 0,
+        "new_parent_calls": 0,
+        "verified_unix": 1789460973.662976
+      },
+      "stages": {
+        "C1_experience": {
+          "LATEST_RESPONSE.json": {
+            "finished_unix": 1789460540.1601856,
+            "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_recovery_20260915_attempt1/campaign_node3_style1/cycle1/experience/CALL_005.json",
+            "purpose": "revision",
+            "sha256": "d12e23f25636fff756a8fcd09810e2b75ca2b0767002f54818ac7ca7c1d0056c",
+            "task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_FEEDBACK_UPTAKE_TRAIN_C1_E2001",
+            "tokens": 554
+          },
+          "COMPLETE.json": {
+            "adapter": null,
+            "all_experience_retained": true,
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "carry_sha256": "5c3a41efedb588517e243d84dc64e938cd530f9b6770197bfa456b202ba09b8a",
+            "child_calls": 6,
+            "cycle": 1,
+            "finished_unix": 1789460579.6028035,
+            "optimizer": null,
+            "parent_calls": 2,
+            "phase": "experience",
+            "process": [
+              "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+              938454,
+              16654633
+            ],
+            "reflection_boundary": true,
+            "sleep_weight_writes": 0,
+            "started_unix": 1789460284.3898635,
+            "status": "COMPLETE",
+            "training_updates": 0,
+            "uuid": "GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821"
+          },
+          "AFTER.json": {
+            "actual_mounted_base_verified": true,
+            "adapter": null,
+            "all_parameters_frozen": true,
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "finished_unix": 1789460579.6026015,
+            "optimizer": null,
+            "process": [
+              "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+              938454,
+              16654633
+            ]
+          },
+          "call_files": 6
+        },
+        "C1_readout": {
+          "launch": {
+            "identity": {
+              "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+              "command_sha256": "c5a891ccd0f2a0d3f49f6a27316677152de32e0c0701cf0128756b75ed1d98c2",
+              "pid": 1056634,
+              "start_ticks": "16728633",
+              "uid": 2524
+            },
+            "started_unix": 1789461024.0037148,
+            "uuid": "GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821"
+          },
+          "LATEST_RESPONSE.json": {
+            "finished_unix": 1789461170.9960985,
+            "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_cycle_resume_20260915_attempt1/campaign_node3_style1/cycle1/readout/CALL_013.json",
+            "purpose": "held",
+            "sha256": "27746b4a606222d56eb03c96b88f6f1c13b82a1b5f5209d41d9caed1b3b7aff7",
+            "task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_FEEDBACK_UPTAKE_HELD_C1_E2007",
+            "tokens": 162
+          },
+          "call_files": 8
+        }
+      },
+      "new_parent_requests": 0,
+      "new_parent_responses": 0,
+      "parents": [],
+      "preserved_C1_parent_count": 2
+    },
+    "2": {
+      "root": "/localhome/local-rohing/orch_math_feedback_uptake_node3_recovery2_20260915_attempt1/campaign_node3_style2",
+      "ready_sha256": "cc33da47d636f431ca578e9da5e19d33fc4b872c44c738d3bc989c0ea4fed3f8",
+      "ACTIVATION.json": {
+        "started_unix": 1789459352.3882375,
+        "recovery_started_unix": 1789460504.1156242,
+        "native_deadline_unix": 1789462772.3882375,
+        "hard_deadline_unix": 1789462952.3882375,
+        "index": 2,
+        "guardian": {
+          "pid": 972746,
+          "uid": 2524,
+          "start_ticks": "16676608",
+          "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+          "command_sha256": "24521530100cd51f4a33b14fe6ab94c38fd875a690dfabab263250c22b3ccbd4"
+        },
+        "ready_sha256": "cc33da47d636f431ca578e9da5e19d33fc4b872c44c738d3bc989c0ea4fed3f8",
+        "no_older_counter_reset": true,
+        "aggregate_native_cap": 2162,
+        "aggregate_parent_cap": 50
+      },
+      "stages": {
+        "C1_experience": {
+          "launch": {
+            "identity": {
+              "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+              "command_sha256": "6a860d4b16dbead539dd3650ff50e70030f745ad765f3ca05fb004d615e81d08",
+              "pid": 973531,
+              "start_ticks": "16677066",
+              "uid": 2524
+            },
+            "started_unix": 1789460508.3349707,
+            "uuid": "GPU-41a86250-88eb-ed8a-ddfe-9d6f93515da1"
+          },
+          "LATEST_RESPONSE.json": {
+            "finished_unix": 1789460805.734727,
+            "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_recovery2_20260915_attempt1/campaign_node3_style2/cycle1/experience/CALL_005.json",
+            "purpose": "revision",
+            "sha256": "a0191609197e71e67df2be62deff30c88b8dd416fe6bd7affd5208ad725cbfce",
+            "task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_FEEDBACK_UPTAKE_TRAIN_C1_E2001",
+            "tokens": 568
+          },
+          "COMPLETE.json": {
+            "adapter": null,
+            "all_experience_retained": true,
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "carry_sha256": "0c92082a98352b8ba7922c7c7eeb9189f370233f00f6bfb2c7713ae27ea0deed",
+            "child_calls": 6,
+            "cycle": 1,
+            "finished_unix": 1789460845.2961724,
+            "optimizer": null,
+            "parent_calls": 2,
+            "phase": "experience",
+            "process": [
+              "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+              973531,
+              16677066
+            ],
+            "reflection_boundary": true,
+            "sleep_weight_writes": 0,
+            "started_unix": 1789460508.73103,
+            "status": "COMPLETE",
+            "training_updates": 0,
+            "uuid": "GPU-41a86250-88eb-ed8a-ddfe-9d6f93515da1"
+          },
+          "AFTER.json": {
+            "actual_mounted_base_verified": true,
+            "adapter": null,
+            "all_parameters_frozen": true,
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "finished_unix": 1789460845.2959287,
+            "optimizer": null,
+            "process": [
+              "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+              973531,
+              16677066
+            ]
+          },
+          "call_files": 6
+        },
+        "C1_readout": {
+          "launch": {
+            "identity": {
+              "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+              "command_sha256": "04e961cba9ee8855496de19dacc5f7d26406baf1adc9b8bc1e8730c269a602a8",
+              "pid": 1040205,
+              "start_ticks": "16715556",
+              "uid": 2524
+            },
+            "started_unix": 1789460893.2338464,
+            "uuid": "GPU-41a86250-88eb-ed8a-ddfe-9d6f93515da1"
+          },
+          "LATEST_RESPONSE.json": {
+            "finished_unix": 1789461036.4379053,
+            "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_recovery2_20260915_attempt1/campaign_node3_style2/cycle1/readout/CALL_013.json",
+            "purpose": "held",
+            "sha256": "279b9345795b09807b47074563397350fde7a30ebccfe5aea5b9e69553aad811",
+            "task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_FEEDBACK_UPTAKE_HELD_C1_E2007",
+            "tokens": 135
+          },
+          "COMPLETE.json": {
+            "adapter": null,
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "child_calls": 8,
+            "cycle": 1,
+            "finished_unix": 1789461075.4335687,
+            "no_automatic_semantic_labels": true,
+            "optimizer": null,
+            "outcome_selection": false,
+            "own_context_conditioned": true,
+            "parent_calls": 0,
+            "parent_free": true,
+            "phase": "readout",
+            "primary_readout": "author_environment_absorption_questions_integration_strategy_novel_thought_per_child_token",
+            "process": [
+              "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+              1040205,
+              16715556
+            ],
+            "started_unix": 1789460893.6299343,
+            "status": "COMPLETE",
+            "training_updates": 0,
+            "uuid": "GPU-41a86250-88eb-ed8a-ddfe-9d6f93515da1"
+          },
+          "AFTER.json": {
+            "actual_mounted_base_verified": true,
+            "adapter": null,
+            "all_parameters_frozen": true,
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "finished_unix": 1789461075.433303,
+            "optimizer": null,
+            "process": [
+              "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+              1040205,
+              16715556
+            ]
+          },
+          "call_files": 8
+        }
+      },
+      "new_parent_requests": 2,
+      "new_parent_responses": 2,
+      "parents": [
+        {
+          "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_recovery2_20260915_attempt1/parent_transcripts/campaign_node3_style2/GUIDED_SLEEP_C1_P2/COMPLETE.json",
+          "sha256": "cfe772049dd09e3976822d11131e0ae5111afaf9cae0b9a53c56327c0dafdff2",
+          "actual_primary_model": "openai/openai/gpt-6-astra",
+          "finished_unix": 1789460738.2864943,
+          "http_attempts": 1,
+          "plan_sha256": "4316c4def46fb414483792fac3cf6f554d7ee388426c9a2ef1166497335d021b",
+          "public_only": true,
+          "raw_response_sha256": "453938a2293f76b065625407f4903e276c366030d6d9ba7a75474a4910635d88",
+          "retries": 0,
+          "status": "COMPLETE",
+          "teacher_targets_compiled": false,
+          "usage": {
+            "cost": null,
+            "input_tokens": 2564,
+            "input_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 2561,
+              "cached_tokens": 0,
+              "text_tokens": null
+            },
+            "output_tokens": 1623,
+            "output_tokens_details": {
+              "reasoning_tokens": 1034,
+              "text_tokens": null
+            },
+            "total_tokens": 4187
+          }
+        },
+        {
+          "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_recovery2_20260915_attempt1/parent_transcripts/campaign_node3_style2/GUIDED_SLEEP_C1_P1/COMPLETE.json",
+          "sha256": "0c236350bc76e29f75fa55ea1bf2fd67f446d4df449600b697dcc9f04fca9672",
+          "actual_primary_model": "openai/openai/gpt-6-astra",
+          "finished_unix": 1789460637.2774243,
+          "http_attempts": 1,
+          "plan_sha256": "6814409b8f041a88abb91db0b73f6c9455884f667b863fbb199e9d9922d453fb",
+          "public_only": true,
+          "raw_response_sha256": "d414026c2244da0cd55b80e3d993ee3c5c3f8d84f9ca6859f22745601616fecb",
+          "retries": 0,
+          "status": "COMPLETE",
+          "teacher_targets_compiled": false,
+          "usage": {
+            "cost": null,
+            "input_tokens": 1823,
+            "input_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 1820,
+              "cached_tokens": 0,
+              "text_tokens": null
+            },
+            "output_tokens": 2045,
+            "output_tokens_details": {
+              "reasoning_tokens": 1552,
+              "text_tokens": null
+            },
+            "total_tokens": 3868
+          }
+        }
+      ]
+    },
+    "0": {
+      "root": "/localhome/local-rohing/orch_math_feedback_uptake_node3_extra_20260915_attempt1/campaign_node3_style0",
+      "ready_sha256": "4d8d80371dab09bd1b6c4a7bea65e61df645c6bab1a5120cf75a9c03e95af0be",
+      "ACTIVATION.json": {
+        "started_unix": 1789460078.3029683,
+        "native_deadline_unix": 1789461698.3029683,
+        "hard_deadline_unix": 1789461878.3029683,
+        "index": 0,
+        "guardian": {
+          "pid": 912038,
+          "uid": 2524,
+          "start_ticks": "16634027",
+          "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+          "command_sha256": "5b3cd74bffacc306006d75057f484702fdf2039f9c2d376da4a3be74805f708d"
+        },
+        "ready_sha256": "4d8d80371dab09bd1b6c4a7bea65e61df645c6bab1a5120cf75a9c03e95af0be",
+        "no_older_counter_reset": true,
+        "aggregate_native_cap": 2218,
+        "aggregate_parent_cap": 58
+      },
+      "stages": {
+        "C1_experience": {
+          "launch": {
+            "identity": {
+              "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+              "command_sha256": "12c70456e296a1dca86067cbc32a0c8e1aa20644e3b3686d9ee08c8f6614348f",
+              "pid": 915404,
+              "start_ticks": "16637816",
+              "uid": 2524
+            },
+            "started_unix": 1789460115.8279703,
+            "uuid": "GPU-0ee6f753-c61e-e18a-8aea-acccd3042939"
+          },
+          "LATEST_RESPONSE.json": {
+            "finished_unix": 1789460383.4159315,
+            "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_extra_20260915_attempt1/campaign_node3_style0/cycle1/experience/CALL_005.json",
+            "purpose": "revision",
+            "sha256": "ab5e1278d32cc5d795c4dfd1c090cb0c18b4acef1e6f01d6845610cbdcda67a0",
+            "task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_FEEDBACK_UPTAKE_TRAIN_C1_E3001",
+            "tokens": 549
+          },
+          "COMPLETE.json": {
+            "adapter": null,
+            "all_experience_retained": true,
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "carry_sha256": "9ddcf4ca8cf7c97e1ffd427d33f709578c355cfaefedaf105e8c7fad983ecf78",
+            "child_calls": 6,
+            "cycle": 1,
+            "finished_unix": 1789460422.499004,
+            "optimizer": null,
+            "parent_calls": 2,
+            "phase": "experience",
+            "process": [
+              "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+              915404,
+              16637816
+            ],
+            "reflection_boundary": true,
+            "sleep_weight_writes": 0,
+            "started_unix": 1789460116.2251477,
+            "status": "COMPLETE",
+            "training_updates": 0,
+            "uuid": "GPU-0ee6f753-c61e-e18a-8aea-acccd3042939"
+          },
+          "AFTER.json": {
+            "actual_mounted_base_verified": true,
+            "adapter": null,
+            "all_parameters_frozen": true,
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "finished_unix": 1789460422.498803,
+            "optimizer": null,
+            "process": [
+              "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+              915404,
+              16637816
+            ]
+          },
+          "call_files": 6
+        },
+        "C1_readout": {
+          "launch": {
+            "identity": {
+              "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+              "command_sha256": "a4d787c2f25d22efcbe0a47314517cf82a17d029653b427d4083353934e727c0",
+              "pid": 989304,
+              "start_ticks": "16686140",
+              "uid": 2524
+            },
+            "started_unix": 1789460599.0751758,
+            "uuid": "GPU-0ee6f753-c61e-e18a-8aea-acccd3042939"
+          },
+          "LATEST_RESPONSE.json": {
+            "finished_unix": 1789460740.4849555,
+            "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_extra_20260915_attempt1/campaign_node3_style0/cycle1/readout/CALL_013.json",
+            "purpose": "held",
+            "sha256": "82f4c71036c5601b71c87937ad2b73f8fdb1cbc535cd13289e048c279ae316b1",
+            "task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_FEEDBACK_UPTAKE_HELD_C1_E3007",
+            "tokens": 246
+          },
+          "COMPLETE.json": {
+            "adapter": null,
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "child_calls": 8,
+            "cycle": 1,
+            "finished_unix": 1789460780.129119,
+            "no_automatic_semantic_labels": true,
+            "optimizer": null,
+            "outcome_selection": false,
+            "own_context_conditioned": true,
+            "parent_calls": 0,
+            "parent_free": true,
+            "phase": "readout",
+            "primary_readout": "author_environment_absorption_questions_integration_strategy_novel_thought_per_child_token",
+            "process": [
+              "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+              989304,
+              16686140
+            ],
+            "started_unix": 1789460599.4681208,
+            "status": "COMPLETE",
+            "training_updates": 0,
+            "uuid": "GPU-0ee6f753-c61e-e18a-8aea-acccd3042939"
+          },
+          "AFTER.json": {
+            "actual_mounted_base_verified": true,
+            "adapter": null,
+            "all_parameters_frozen": true,
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "finished_unix": 1789460780.1288757,
+            "optimizer": null,
+            "process": [
+              "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+              989304,
+              16686140
+            ]
+          },
+          "call_files": 8
+        },
+        "C2_experience": {
+          "launch": {
+            "identity": {
+              "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+              "command_sha256": "c5a775089729521087d6a821d09485f496858ce4ca494c17a3e3c0ec54ae70bb",
+              "pid": 1047186,
+              "start_ticks": "16720690",
+              "uid": 2524
+            },
+            "started_unix": 1789460944.568849,
+            "uuid": "GPU-0ee6f753-c61e-e18a-8aea-acccd3042939"
+          },
+          "LATEST_RESPONSE.json": {
+            "finished_unix": 1789461157.6042068,
+            "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_extra_20260915_attempt1/campaign_node3_style0/cycle2/experience/CALL_017.json",
+            "purpose": "check",
+            "sha256": "6fa1a10db58e953e2d2889fec9137e964013e1172065a7fc2fe63c73448c8645",
+            "task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_FEEDBACK_UPTAKE_TRAIN_C2_E2001",
+            "tokens": 437
+          },
+          "call_files": 4
+        }
+      },
+      "new_parent_requests": 4,
+      "new_parent_responses": 3,
+      "parents": [
+        {
+          "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_extra_20260915_attempt1/parent_transcripts/campaign_node3_style0/GUIDED_SLEEP_C2_P1/COMPLETE.json",
+          "sha256": "baaff6518ff90f91696f17b21fbd1652dbfb2e26b763adb001c89f93e3c25e31",
+          "actual_primary_model": "openai/openai/gpt-6-astra",
+          "finished_unix": 1789461090.4577107,
+          "http_attempts": 1,
+          "plan_sha256": "f5679546d3ffb0d297361eb7eb52aba4678aa15580d02fbb8ca4d0f7fa91350a",
+          "public_only": true,
+          "raw_response_sha256": "c82c36d751315e45bdd76aad9167731eecf54696497eb511ca2fcef13d1087f9",
+          "retries": 0,
+          "status": "COMPLETE",
+          "teacher_targets_compiled": false,
+          "usage": {
+            "cost": null,
+            "input_tokens": 2416,
+            "input_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 2413,
+              "cached_tokens": 0,
+              "text_tokens": null
+            },
+            "output_tokens": 2939,
+            "output_tokens_details": {
+              "reasoning_tokens": 2588,
+              "text_tokens": null
+            },
+            "total_tokens": 5355
+          }
+        },
+        {
+          "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_extra_20260915_attempt1/parent_transcripts/campaign_node3_style0/GUIDED_SLEEP_C1_P2/COMPLETE.json",
+          "sha256": "72f346d5979a883cd0d385bcde4acfdf025cc074f816689b16b8b85d9e4b71d4",
+          "actual_primary_model": "openai/openai/gpt-6-astra",
+          "finished_unix": 1789460318.4136126,
+          "http_attempts": 1,
+          "plan_sha256": "30dbbbf280e30e333238a2e82072ab37f1f7043af186907690061b5b5c28480a",
+          "public_only": true,
+          "raw_response_sha256": "c3bf459c5127dd6cc9af7afd79a9b6cb6f402ca60e981a300fb6b8311859a6c8",
+          "retries": 0,
+          "status": "COMPLETE",
+          "teacher_targets_compiled": false,
+          "usage": {
+            "cost": null,
+            "input_tokens": 2674,
+            "input_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 2671,
+              "cached_tokens": 0,
+              "text_tokens": null
+            },
+            "output_tokens": 1750,
+            "output_tokens_details": {
+              "reasoning_tokens": 1387,
+              "text_tokens": null
+            },
+            "total_tokens": 4424
+          }
+        },
+        {
+          "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_extra_20260915_attempt1/parent_transcripts/campaign_node3_style0/GUIDED_SLEEP_C1_P1/COMPLETE.json",
+          "sha256": "d4c12b405f2e85b0d16969078d3b625b91f57d685b627f4a5349503ccda910ac",
+          "actual_primary_model": "openai/openai/gpt-6-astra",
+          "finished_unix": 1789460212.6552193,
+          "http_attempts": 1,
+          "plan_sha256": "3e280c3fe33f4c7fc65c8143175e902bdfad58f50d09bf717383a73c8aacfed0",
+          "public_only": true,
+          "raw_response_sha256": "7c5be692ae1dc5b6d048e9bcc4f6f23aa13999bbbe2d083c96f52c49a38ab365",
+          "retries": 0,
+          "status": "COMPLETE",
+          "teacher_targets_compiled": false,
+          "usage": {
+            "cost": null,
+            "input_tokens": 1890,
+            "input_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 1887,
+              "cached_tokens": 0,
+              "text_tokens": null
+            },
+            "output_tokens": 1352,
+            "output_tokens_details": {
+              "reasoning_tokens": 1034,
+              "text_tokens": null
+            },
+            "total_tokens": 3242
+          }
+        }
+      ]
+    },
+    "3": {
+      "root": "/localhome/local-rohing/orch_math_feedback_uptake_node3_extra_20260915_attempt1/campaign_node3_style3",
+      "ready_sha256": "dfaa12ac0e97703de1d4cf977fff09726887076454f25049fee7053080f1e542",
+      "ACTIVATION.json": {
+        "started_unix": 1789460078.3051813,
+        "native_deadline_unix": 1789461698.3051813,
+        "hard_deadline_unix": 1789461878.3051813,
+        "index": 3,
+        "guardian": {
+          "pid": 912042,
+          "uid": 2524,
+          "start_ticks": "16634027",
+          "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+          "command_sha256": "f572df029f88be9e41452d61aaa3fb9d8327c73e1bbe309c416073f27cb8bf98"
+        },
+        "ready_sha256": "dfaa12ac0e97703de1d4cf977fff09726887076454f25049fee7053080f1e542",
+        "no_older_counter_reset": true,
+        "aggregate_native_cap": 2218,
+        "aggregate_parent_cap": 58
+      },
+      "stages": {
+        "C1_experience": {
+          "launch": {
+            "identity": {
+              "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+              "command_sha256": "8b2ab784b55ded5a0baf3de282441cbf0359ae287f5511f88ece569ce8b5febd",
+              "pid": 919745,
+              "start_ticks": "16642070",
+              "uid": 2524
+            },
+            "started_unix": 1789460158.3743865,
+            "uuid": "GPU-e1277146-04f2-c38f-d1ae-1a98132f907e"
+          },
+          "LATEST_RESPONSE.json": {
+            "finished_unix": 1789460466.899311,
+            "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_extra_20260915_attempt1/campaign_node3_style3/cycle1/experience/CALL_005.json",
+            "purpose": "revision",
+            "sha256": "ac784f87b32ec0f9db273cd64d43663fa27bda61cd09b69124ab4285ea5d1574",
+            "task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_FEEDBACK_UPTAKE_TRAIN_C1_E3001",
+            "tokens": 541
+          },
+          "COMPLETE.json": {
+            "adapter": null,
+            "all_experience_retained": true,
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "carry_sha256": "532fd3b14bfdea787df3e75415a54812d5daff33cfc379d609cd6e764509e44d",
+            "child_calls": 6,
+            "cycle": 1,
+            "finished_unix": 1789460507.0076241,
+            "optimizer": null,
+            "parent_calls": 2,
+            "phase": "experience",
+            "process": [
+              "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+              919745,
+              16642070
+            ],
+            "reflection_boundary": true,
+            "sleep_weight_writes": 0,
+            "started_unix": 1789460158.7696867,
+            "status": "COMPLETE",
+            "training_updates": 0,
+            "uuid": "GPU-e1277146-04f2-c38f-d1ae-1a98132f907e"
+          },
+          "AFTER.json": {
+            "actual_mounted_base_verified": true,
+            "adapter": null,
+            "all_parameters_frozen": true,
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "finished_unix": 1789460507.007386,
+            "optimizer": null,
+            "process": [
+              "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+              919745,
+              16642070
+            ]
+          },
+          "call_files": 6
+        },
+        "C1_readout": {
+          "launch": {
+            "identity": {
+              "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+              "command_sha256": "638af456d392c4c9898bd81fab1b5d0118a039de50499cc5c6fc2ea8e0cad9fc",
+              "pid": 989726,
+              "start_ticks": "16686675",
+              "uid": 2524
+            },
+            "started_unix": 1789460604.4204025,
+            "uuid": "GPU-e1277146-04f2-c38f-d1ae-1a98132f907e"
+          },
+          "LATEST_RESPONSE.json": {
+            "finished_unix": 1789460746.7041237,
+            "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_extra_20260915_attempt1/campaign_node3_style3/cycle1/readout/CALL_013.json",
+            "purpose": "held",
+            "sha256": "02cc95ebce2655f2c269ed446c0d0d153b4ad27c2255c32e3a2e5d8cf0c72f34",
+            "task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_FEEDBACK_UPTAKE_HELD_C1_E3007",
+            "tokens": 216
+          },
+          "COMPLETE.json": {
+            "adapter": null,
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "child_calls": 8,
+            "cycle": 1,
+            "finished_unix": 1789460786.2310505,
+            "no_automatic_semantic_labels": true,
+            "optimizer": null,
+            "outcome_selection": false,
+            "own_context_conditioned": true,
+            "parent_calls": 0,
+            "parent_free": true,
+            "phase": "readout",
+            "primary_readout": "author_environment_absorption_questions_integration_strategy_novel_thought_per_child_token",
+            "process": [
+              "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+              989726,
+              16686675
+            ],
+            "started_unix": 1789460604.8135195,
+            "status": "COMPLETE",
+            "training_updates": 0,
+            "uuid": "GPU-e1277146-04f2-c38f-d1ae-1a98132f907e"
+          },
+          "AFTER.json": {
+            "actual_mounted_base_verified": true,
+            "adapter": null,
+            "all_parameters_frozen": true,
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "finished_unix": 1789460786.2308197,
+            "optimizer": null,
+            "process": [
+              "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+              989726,
+              16686675
+            ]
+          },
+          "call_files": 8
+        },
+        "C2_experience": {
+          "launch": {
+            "identity": {
+              "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+              "command_sha256": "c1fc9b6f83341f58f67bd0639763ff292aadec6966ce81db812c052ad2fc288a",
+              "pid": 1046573,
+              "start_ticks": "16720224",
+              "uid": 2524
+            },
+            "started_unix": 1789460939.9085546,
+            "uuid": "GPU-e1277146-04f2-c38f-d1ae-1a98132f907e"
+          },
+          "LATEST_RESPONSE.json": {
+            "finished_unix": 1789461130.4931896,
+            "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_extra_20260915_attempt1/campaign_node3_style3/cycle2/experience/CALL_017.json",
+            "purpose": "check",
+            "sha256": "058b78e2b363c1afb047e6076fd2153451e765a329aeda03b950d32d896c6d8e",
+            "task_id": "MATH_PIPELINE_L2_20260915_ATTEMPT1_FEEDBACK_UPTAKE_TRAIN_C2_E2001",
+            "tokens": 295
+          },
+          "call_files": 4
+        }
+      },
+      "new_parent_requests": 4,
+      "new_parent_responses": 3,
+      "parents": [
+        {
+          "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_extra_20260915_attempt1/parent_transcripts/campaign_node3_style3/GUIDED_SLEEP_C2_P1/COMPLETE.json",
+          "sha256": "e639be70f7d228b010d42135abeb6d2bfa310cdcf00d3c593089da59b2ef3272",
+          "actual_primary_model": "openai/openai/gpt-6-astra",
+          "finished_unix": 1789461075.5579002,
+          "http_attempts": 1,
+          "plan_sha256": "0f07f102bd2ba210ff75ad8673a902889ad463d9ebacca304a925ca4daa347a1",
+          "public_only": true,
+          "raw_response_sha256": "7795b3da24849e197b5a19659fa40556fb132df80dc6134da86a0c0626cb876b",
+          "retries": 0,
+          "status": "COMPLETE",
+          "teacher_targets_compiled": false,
+          "usage": {
+            "cost": null,
+            "input_tokens": 2522,
+            "input_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 2519,
+              "cached_tokens": 0,
+              "text_tokens": null
+            },
+            "output_tokens": 2669,
+            "output_tokens_details": {
+              "reasoning_tokens": 1935,
+              "text_tokens": null
+            },
+            "total_tokens": 5191
+          }
+        },
+        {
+          "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_extra_20260915_attempt1/parent_transcripts/campaign_node3_style3/GUIDED_SLEEP_C1_P2/COMPLETE.json",
+          "sha256": "93eb3f0e7897835fb1083c7dd3f2f8a2b944417629df28b8236fa221ffe3bc57",
+          "actual_primary_model": "openai/openai/gpt-6-astra",
+          "finished_unix": 1789460394.808368,
+          "http_attempts": 1,
+          "plan_sha256": "29bb3154ad7c5f99fb6f8747265522d542d575d3ca42bb26ec7432f745eb3e55",
+          "public_only": true,
+          "raw_response_sha256": "89eea2a4e3f2317d9bd565c7bc07ced1fb30e2bbf59c0b43f0c5a827efade4f4",
+          "retries": 0,
+          "status": "COMPLETE",
+          "teacher_targets_compiled": false,
+          "usage": {
+            "cost": null,
+            "input_tokens": 2660,
+            "input_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 2657,
+              "cached_tokens": 0,
+              "text_tokens": null
+            },
+            "output_tokens": 2080,
+            "output_tokens_details": {
+              "reasoning_tokens": 1362,
+              "text_tokens": null
+            },
+            "total_tokens": 4740
+          }
+        },
+        {
+          "path": "/localhome/local-rohing/orch_math_feedback_uptake_node3_extra_20260915_attempt1/parent_transcripts/campaign_node3_style3/GUIDED_SLEEP_C1_P1/COMPLETE.json",
+          "sha256": "48d2198ea029f7431246f90c21b6cd0b8c0bc70a8c8cc216e40de6d8da6d28d9",
+          "actual_primary_model": "openai/openai/gpt-6-astra",
+          "finished_unix": 1789460284.3322134,
+          "http_attempts": 1,
+          "plan_sha256": "ef59cf686874f3bb543e34936868168f15b3a23c813a8e8fcf14d2adeed297c6",
+          "public_only": true,
+          "raw_response_sha256": "257f7955bc630157ab68fd780b403dbfd8946386cbd0890abe1c130a0ac7c25c",
+          "retries": 0,
+          "status": "COMPLETE",
+          "teacher_targets_compiled": false,
+          "usage": {
+            "cost": null,
+            "input_tokens": 1881,
+            "input_tokens_details": {
+              "audio_tokens": null,
+              "cache_write_tokens": 1878,
+              "cached_tokens": 0,
+              "text_tokens": null
+            },
+            "output_tokens": 2728,
+            "output_tokens_details": {
+              "reasoning_tokens": 2070,
+              "text_tokens": null
+            },
+            "total_tokens": 4609
+          }
+        }
+      ]
+    }
+  }
+}
