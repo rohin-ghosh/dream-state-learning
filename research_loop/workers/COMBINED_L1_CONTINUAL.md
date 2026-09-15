@@ -119,3 +119,59 @@ literal response evidence and substantive distinctness, not keyword/length
 gates. No extra native calls or live training-source modification for analysis.
 Strong-teacher data stays separately quarantined; NEVER ingest into ongoingL1.
 Main owns fleet/status publication; no git/BOARD/STATE mutation by this worker.
+
+## 2026-09-15T04:50Z — tested-source recovery priority; exact failure disclosure
+
+This was NOT never launched. Original continual FULL first optimizer update
+04:13:13.621Z; OFF first04:02:09.280Z. Both reached896 and saved safely04:32.
+Source80176fbe9effcaccf77c62d77706ba1ff33f5baaea591e554ebd86ea34709f5a
+resumed896 on FULL430110/430111 (2+6), OFF430112 (3), guardian429660.
+FULL actually reached1024; OFF1013. At04:39:28.042Z the guardian failed after
+FULL's wait_window saw an old ABORT marker retained at the root from a prior
+failed coordinator. This is an owned lifecycle bug, NOT encoding or GPU load
+failure. The guardian stopped OFF before its1024 save. FULL1024 is durable;
+OFF's prior durable checkpoint was896. Raw logs/source/checkpoints are on A100.
+
+Control-only recovery controller444533, native445875 on physical3 launched
+04:45:47.225Z. It restored OFF896 adapter+optimizer+RNG, compares each of the
+117 previously observed897..1013 updates against exact preserved losses,
+row indexes, reference/active tokens and corpus version, then performs11 new
+updates through1024. It does NOT reload from the initial seed. Additional117
+physical updates are explicitly charged; original unsaved1013 tensor identity
+is unavailable, so observable replay agreement is not tensor-level proof.
+Failure evidence is preserved under `STALE_ABORT_FAILURE`; FULL1024 untouched.
+At04:49:23.398Z the control reached1024; durable checkpoint verification follows.
+
+Latest user priority: resume LAST TESTED source immediately, no decoder/readout
+gate. Dispatcher454606 (`TESTED_RESUME_QUEUED.json`,04:48:19.110Z) waits ONLY
+for control1024 durable matched-state PASS and old PID exit, then automatically
+launches the tested guardian at1024 with fresh full2/3/6 admission. Source is
+unchanged80176f..., not unfinished DEV code. Math0/1 always untouched; GPU7 is
+Anscombe's scope. `TESTED_RESUME_STARTED.json` will contain the new guardian;
+`*_RANK*_START_000001024.json` and loss logs carry actual new native milestones.
+
+Ingestion truth at this point:76+473 active version2/2943 since matched128;
+sampled64 CPU/native ready in CONTENT_QUEUE but not yet accepted at a live
+matched boundary (the previous coordinator failed first). New segment63 and64
+passed original-source/native-encoding checks on A100; remaining62/64 checks
+run in parallel. These are queued, not claims of training or individual PASS.
+No raw packets, CALL forests, adapters or new tarballs are pulled to VM.
+New raw bound packets stay in native `SAMPLED_EXTRA_PENDING`; repo gets compact
+`REMOTE_EXTRA_BATCH_RECEIPTS.log` only. Main's disk migration removed local raw
+fixtures: two existing data-fixture tests now fail FileNotFoundError; this is
+recorded in CPU_DEV_DRAFT.log, not silently counted as a native source failure.
+
+Intermediate adaptive-DEV source remains DRAFT, not deployed. It will suspend
+at a matched whole-corpus traversal, read both cells in fresh parent-free
+processes, retain optimizer/RNG/cursor and resume without score-based replacement.
+Repeated panels are adaptiveDEV, not confirmatoryH1. Target is actual readout
+before05:45, with existing08:06:10Z hard end and1760-call global ceiling.
+Rohin101 changes reporting to richness first: generated tokens and EOS/ceiling,
+semantic alternatives/rejections, repetition and coherence, accuracy secondary.
+The frozen old P64 system prompt explicitly requests first person/150–400tokens;
+do NOT label it DEFAULT. A separate minimally prompted paired P64 DEFAULT
+readout was proposed using the remaining128 calls (no exhaustion hints), without
+editing the live old math source. This proposal is not yet native deployed.
+Own-output replay/compile sources must be new TRAIN generations from pinned
+children supplied by Hubble, never held outputs/teacher/L2; no such compiler
+batch is claimed ingested or attribution-tested yet. No automatic promotion.
