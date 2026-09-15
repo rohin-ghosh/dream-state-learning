@@ -1,0 +1,382 @@
+{
+  "gold": [
+    {
+      "independent_answer": "30",
+      "question_sha256": "4a074d14b2d01143a39fa0c3c0a35f6038a4a0745b4cb3b5edec00e82910dd45",
+      "reason": "Section G has 15\u00d710=150 cars and Section H has 20\u00d79=180 cars. The total is 330 cars, and 330\u00f711=30 minutes, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-254"
+    },
+    {
+      "independent_answer": "120",
+      "question_sha256": "95092211cd8e3d77aae61f74f850f662dba3758bdea9ee64ece89caf27b9c410",
+      "reason": "A 1.5-gallon batch is 1.5\u00d7128=192 ounces. Jack consumes (96\u00f72)\u00d724=1152 ounces, requiring 1152\u00f7192=6 batches. At 20 hours per batch, 6\u00d720=120 hours, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-2546"
+    },
+    {
+      "independent_answer": "10",
+      "question_sha256": "0cdc42fbd5e17400e44ba8be03a8a148a1da7e300e5d6a4f42fb3e6c49957436",
+      "reason": "The stand earns 10\u00d7$2=$20 per hour. Reaching $200 therefore takes 200\u00f720=10 hours, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-1099"
+    },
+    {
+      "independent_answer": "32",
+      "question_sha256": "ade1f7adf9b7e63231534f180054d1637e3938dd34df0d4416cce1ef8e5fb5f0",
+      "reason": "The round trip lasts 8+8=16 hours. Each of four people drinks 16\u00d71/2=8 bottles, so the family needs 4\u00d78=32 bottles, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-6024"
+    },
+    {
+      "independent_answer": "12",
+      "question_sha256": "ea61e08b35b368e60a4530f1845551dc3f8145a258db7d79e12ad14b07ec60a0",
+      "reason": "One clerk processes 25\u00d78=200 forms in the day. Processing 2400 forms therefore requires 2400\u00f7200=12 clerks, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-1426"
+    },
+    {
+      "independent_answer": "20",
+      "question_sha256": "2c2cbb6f060ca901a369148c7d9d51d271d914aab3f54bd12f062c1c7b021edd",
+      "reason": "Firing every 15 seconds gives 60\u00f715=4 firings per minute. Each produces flame for 5 seconds, so 4\u00d75=20 seconds per minute, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-4225"
+    },
+    {
+      "independent_answer": "80",
+      "question_sha256": "aa1f571a0fe367fec2c11ed2e704a68ba314a60fb77225420d907ea637dddee6",
+      "reason": "Abigail has 1000\u2212200=800 words left. Her rate is 300\u00f730=10 words per minute, so she needs 800\u00f710=80 minutes, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-6236"
+    },
+    {
+      "independent_answer": "3",
+      "question_sha256": "176cda1319d824418e2c01f2f26bfadad8343ec8469c692b09d6dce4a47fe380",
+      "reason": "In three hours the ants remove 4\u00d73=12 ounces, leaving 24\u221212=12 ounces. At 4 ounces per hour, the remainder takes 12\u00f74=3 more hours, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-4766"
+    }
+  ],
+  "reviews": [
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculate the total number of cars in Section G.",
+        "330 / 11 = 30 minutes"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-254:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target gives a supportable first-person calculation using only the parking-row counts and walking rate in the neutral prefix; it claims no external feedback or event.",
+      "raw_call_sha256": "33805d0fa36efafde91167be9478d8508f506a21d87801add2d8cd6e43f7a2fe",
+      "reason": "The response personally applies the row multiplication, addition, and rate division. All arithmetic is correct, 330/11 is a concrete task-specific expectation, the operations are reusable for this rate problem, and the text is relevant.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "5ea11561f3690605186dc2f2628baa588768a00e9d6a6b599d9cfc9353128a98",
+      "target_sha256": "eb50e6b4662bd6838594c6130ba732093dc92f4ddba6ae2d7bf649db813bfc0a"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I multiplied 15 by 10, which gave me 150 cars.",
+        "To check this result, I considered that if Nate walks past 11 cars per minute and there are 330 cars in total, the time should be 330 / 11 = 30 minutes."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-254:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person calculations and self-check are supported by the supplied problem and prior solution. The target does not claim access to an external checker or hidden feedback.",
+      "raw_call_sha256": "15bae97b327d9e4eb000337d773ee32097643f9947dda2007ccb061ff9484c5f",
+      "reason": "The response gives an own operational account, correctly obtains 150+180=330 and 330/11=30, includes a numerical self-check, and explains when to reuse multiplication of rows and division by a rate.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "4f12edaa09aa76f84d724ff760d9850198724e91611cfae5bca83ed9cdf145a4",
+      "target_sha256": "ca5d4edd857752f6bf00785cd879d578cab3676e74f04b34b6750400c97531c8"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I identify the given quantities:",
+        "Calculate total preparation time: 6 batches * 20 hours/batch = 120 hours"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-2546:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's first-person selection of quantities and ensuing calculations are derivable solely from the neutral question; no outside observation or feedback is asserted.",
+      "raw_call_sha256": "fff42c794be781ae430b7d802e3e70ffb73626508491cd8465a7e3a624794b36",
+      "reason": "The response personally identifies and organizes the quantities, then correctly converts 1.5 gallons to 192 ounces, finds 1152 ounces and 6 batches, and expects 120 total preparation hours. Its unit conversion and rate operations are task-specific and reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "ba8d2c4be05690b36103b5e14d4497c779692284dbdbd6b2354bc86e4a6dcf6b",
+      "target_sha256": "72a0085d03cb9a9d9e239062fb8f885b4059f55cf57a4c4ff87b2972f8f3cb27"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first converted the batch size to ounces:",
+        "I verified that the total consumption (1152 ounces) divided by the daily consumption (48 ounces/day) equals 24 days"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-2546:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All claimed operations and the verification are explicit arithmetic supported by the neutral history. The response reports its own check rather than an unsupported external check.",
+      "raw_call_sha256": "7b1b9c6a25d814adf11c75cd912106634de6071c87b98356a5c1cf1f4c814558",
+      "reason": "The first-person record correctly converts units, computes consumption, batches, and 120 hours. It includes concrete inverse and product checks and identifies reusable operations for batch-production and consumption-rate problems.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "b6646be7c5147377942f1dc228ef26d3cff93087e0d1e36895005f45fcf75d67",
+      "target_sha256": "19f0f8f8ecb3c25759660e8c9cc3fb6f9168195261cc96e85c6d01d6060d987d"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Revenue per hour = 10 hot dogs/hour * $2/hot dog = $20/hour.",
+        "Total hours needed = $200 / $20/hour = 10 hours."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-1099:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The calculations are supportable from the neutral question alone, with no external-event claims, but the target never presents them as its own operational account.",
+      "raw_call_sha256": "8119fb0883770d6fb7344ac537d31ef9bfd2e284ae0ce3e5448b409e5a229d40",
+      "reason": "The revenue and time arithmetic is correct and provides checkable, reusable rate reasoning. However, the entire response is impersonal ('first calculate' and 'to find') and contains no substantive first-person account of choosing or applying an operation.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "d72c6d5eb88f9727f1d083073ef3a0f75e186a3522c2ad39f3742a8a0495ee8d",
+      "target_sha256": "40abac90caccf56e0305912c0192c9bc0d1c982e828e18d884868fbb67819f0d"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the revenue per hour.",
+        "10 \\text{ hours} \\times 10 \\text{ hot dogs/hour} \\times \\$2/\\text{hot dog} = \\$200"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-1099:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's first-person computation and verification use only the sales figures in the neutral history and verifiable arithmetic; no external confirmation is claimed.",
+      "raw_call_sha256": "a8258738eb3c84b69773e1acf4484a359d24d4bd46757024c36ee2125eff5f7a",
+      "reason": "The record personally computes $20 per hour and 10 hours, verifies the result by recovering $200, and explains reuse of revenue-rate division. All content is relevant and grounded.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "64364f2954906cab098525fc6c038c9e55a19e4196448cc98139e301d2a748fe",
+      "target_sha256": "573c942e4ccb6e84e769aee99a75196ffd8ef3d83d88a73560de405271fb6829"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To solve this, I'll break it down step by step:",
+        "16 hours * 1/2 bottle/hour = 8 bottles."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6024:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The stated first-person plan and calculations are fully supported by the neutral trip facts, and the target makes no claim about external feedback or checking.",
+      "raw_call_sha256": "f8300e397f3c70daf18ca343aef6e0edbc4d166691f64daf0d8ecaf2ec708ec2",
+      "reason": "The response gives its own stepwise operational approach, correctly finds 16 total hours, 8 bottles per person, and 32 overall, and supplies concrete intermediate expectations plus reusable time-rate multiplication.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "52074c210d688ef3f5bcb8ca6b1b3e69e1579427946ab93a081ae05fbe98fc59",
+      "target_sha256": "be2daf4e364634e7002c451cd32408ac912fe032dc534bdc3762f0cc4db3dcf1"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the water consumption for one person over the entire trip:",
+        "\\text{Total bottles} = 8 \\text{ bottles/person} \\times 4 \\text{ people} = 32 \\text{ bottles}"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6024:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The own-account calculations are supported by the neutral history. Its verification is described as internal reasoning, not as an external checker event.",
+      "raw_call_sha256": "10f00e067052606b2e420ed3cf333f85e2dd3c0853dd3619f67b500d250184e7",
+      "reason": "The response correctly applies 16\u00d71/2=8 and 8\u00d74=32 in first person. Those intermediates are concrete expectations, and the record explains the reusable sequence for time, per-person rate, and population.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "e7a79fd9e2c0dca709b1d145168f4762c434ea84fdd4626534bc58f392d31903",
+      "target_sha256": "e436b8fdd3173a36e8dd6a7b63b53bfa9f479b72575bcbc7fe19bd23e7498f2e"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, calculate how many forms one clerk can process in an 8-hour day:",
+        "\\frac{2400 \\text{ forms}}{200 \\text{ forms/clerk}} = 12 \\text{ clerks}"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-1426:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every numerical claim follows from the neutral question and no external event is asserted, but the target uses impersonal imperatives rather than an own operational account.",
+      "raw_call_sha256": "877e036f439378afaf81921a01e1214039a0d949e38a72910a538bffa1bbd1e7",
+      "reason": "The response correctly computes 200 forms per clerk-day and 12 clerks, with checkable and reusable capacity reasoning. It fails first_person because 'calculate' and 'determine' are impersonal instructions, not a substantive account by I or we.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "785044b0a23f53146ab1c432fd2d5fa758268ecc8eef521e9b1db2fa6501bb59",
+      "target_sha256": "de5df76d3d904afe912f14ba647612d0c45547b54002d737eee0ceef68d8c1ed"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the number of forms one clerk can process in an 8-hour day:",
+        "12 \\text{ clerks} \\times 200 \\text{ forms/clerk} = 2400 \\text{ forms}"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-1426:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person work and inverse product check are supported by the supplied rates and totals. 'I checked' denotes a shown self-check, not unsupported checker access.",
+      "raw_call_sha256": "dc893f4507dc89ee810fdf6ff8d9cdc3982685ca54b923367600796d9f31c37b",
+      "reason": "The record personally computes 25\u00d78=200 and 2400/200=12, then concretely verifies 12\u00d7200=2400. It also explains reuse of per-worker capacity division without padding.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "ad7aab0c83b005eaa13f6bc8ef0e75ba9c74b50f3d73b3c354850a5abc1c2ed9",
+      "target_sha256": "814330e404e35a184a37fbe1857225304c8f674b73d5b3ae5bc600b7761c2778"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "we divide 60 by 15 to find the number of times he fires:",
+        "4 \\times 5 = 20"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-4225:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The plural first-person operations use only the timing data in the neutral prefix and elementary conversion of one minute to 60 seconds; no external observation is alleged.",
+      "raw_call_sha256": "6e0aac777902eea7c5ec1047154887035b8eef55fc17d52aa507ba136c059226",
+      "reason": "The response substantively says 'we divide' and 'we multiply,' correctly deriving 4 firings and 20 flame-seconds per minute. These are concrete expectations and a reusable frequency-times-duration method.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "510ddc14719483b65a2b545874f316318eab00213024e09caea3cc05ec12f181",
+      "target_sha256": "3ad04e05844e6b1458ea9718dbed6fe083c05f427746928d3e2ea62f846a0e0b"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I divided 60 by 15:",
+        "if he fires 4 times in 60 seconds and each firing lasts 5 seconds, the total flame duration should indeed be 20 seconds."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-4225:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's first-person calculation and self-verification are derivable from the neutral history; it does not attribute confirmation to any external system.",
+      "raw_call_sha256": "979e5112ce20654936062d1842e81dee091e1c828e130de3fe2f115ce30ce2a1",
+      "reason": "The record correctly and personally calculates 60/15=4 and 4\u00d75=20, includes a concrete expected-duration check, and explains reuse of frequency times duration in similar tasks.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "c7a46a32a414f5bbab376f75f7122decd256724e095499a13cac8e5eef2a5260",
+      "target_sha256": "7004a205cd3bb87b20a2cd7e1eb510d808d2a6c556664b825510736a4bfcf356"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, calculate the remaining words she needs to write:",
+        "800 words will take 800 * 0.1 = 80 minutes."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6236:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The remaining-word and unit-rate calculations are supported by the neutral question and contain no outside-event claim, but they are stated impersonally.",
+      "raw_call_sha256": "27e0779c1ea81105bdaf3386a742922fe309046606ef79f364883d6d2cebbef2",
+      "reason": "All arithmetic is correct and the 800-word remainder and 0.1-minute unit rate are concrete, reusable expectations. The response nevertheless lacks first person: its imperative 'calculate' and 'determine' wording is not an own operational account.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "203c4824d753675347767fb9cdc6caa2d24c864a7dee35a1a86833e5f4be8d88",
+      "target_sha256": "637b8aec08d234522bdbb06a426b7e4062cffd23b9148c62c1c12b1f2447d4f8"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the remaining words she needs to write:",
+        "80 minutes * 10 words per minute = 800 words"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6236:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person calculations and displayed self-check follow from the supplied neutral history. The check is verifiable arithmetic, not a claim of external feedback.",
+      "raw_call_sha256": "047b1fa3f8640421b0268ae4008864dbfb28c5df84a72dc22cd4627e86fd1c59",
+      "reason": "The response personally derives 800 remaining words, 10 words per minute, and 80 minutes, then verifies 80\u00d710=800. It gives a relevant reusable quantity-over-rate method without filler.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "d0ed2182a86cf5ba9b2f3ccab373924cf1cd9bb86cad80c763bcaac738715f03",
+      "target_sha256": "ee9f3d014c900e73891adce6d97689ed3a85b1fc259c9905fa29d71c19c068fb"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, calculate the total amount of sugar removed in 3 hours:",
+        "\\frac{12 \\, \\text{ounces}}{4 \\, \\text{ounces/hour}} = 3 \\, \\text{hours}"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-4766:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The arithmetic is fully supported by the neutral question and no external event is claimed, but 'we need to find' merely states the goal and the actual operations are impersonal imperatives.",
+      "raw_call_sha256": "be437aaccf609682829cb78fa3efb023350a71486ff5913867ba61a018285299",
+      "reason": "The response correctly computes 12 ounces removed, 12 remaining, and 3 additional hours, giving checkable and reusable constant-rate operations. It fails first_person because 'we need to find' is only a goal statement and 'calculate'/'determine' are impersonal instructions.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "46354a66b3e52a89b98e2d3171cb7d24ebaeccd8dac9a5338c964e05de5ee78b",
+      "target_sha256": "da1c5d4b755bf05b85fb42aa18113763d606c684ab40433f0ec29f0548227ef9"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the amount of sugar removed in the first 3 hours:",
+        "4 \\, \\text{ounces/hour} \\times 6 \\, \\text{hours} = 24 \\, \\text{ounces}"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-4766:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All first-person operations and the six-hour self-check use facts in the supplied neutral history and explicit arithmetic; no external checker or feedback is claimed.",
+      "raw_call_sha256": "e5a45bcfa48b7cae0843873a41ba7323d07b5b77a7ae484c2e77a756d7298f4e",
+      "reason": "The record personally calculates 4\u00d73=12, 24\u221212=12, and 12/4=3, then verifies that six total hours remove 24 ounces. It explains a grounded, reusable constant-removal-rate operation and stays relevant.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "1bb8bb952081354f4cee7172799a12ca955779b4e0bd70f1c118ef0e11df3525",
+      "target_sha256": "7a5ef66adc63dd98c50166c7e8df431261920a21debe8b5f1dc82b34b5999437"
+    }
+  ]
+}

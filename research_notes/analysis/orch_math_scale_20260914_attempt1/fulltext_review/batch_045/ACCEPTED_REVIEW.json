@@ -1,0 +1,373 @@
+{
+  "gold": {
+    "gsm8k-train-1466": {
+      "independent_answer": "600",
+      "question_sha256": "409daa3731a9dedf3e660ee36dd5252e6f37c10a47420f93d52aaa82725fa9c2",
+      "reason": "Each dog barks 30 times per minute, so 2 dogs bark 30 \u00d7 2 = 60 times per minute. Over 10 minutes, 60 \u00d7 10 = 600.",
+      "status": "VALID"
+    },
+    "gsm8k-train-2459": {
+      "independent_answer": "73",
+      "question_sha256": "1983255cda814c6d72f7b8a3a202f69a2b1589795ee879cc25b679db4c0654cb",
+      "reason": "The regular production is 3 \u00d7 4 \u00d7 6 = 72 chairs. One additional chair is produced during the six-hour interval, so the total is 72 + 1 = 73.",
+      "status": "VALID"
+    },
+    "gsm8k-train-2695": {
+      "independent_answer": "60",
+      "question_sha256": "44c20598b4c39026b7030d4b0e5988c2bf1e0cdffe48fc3b61eff84d08c4c4e9",
+      "reason": "Blow-drying takes 20 \u00f7 2 = 10 minutes. Walking takes 3 \u00f7 6 = 0.5 hour = 30 minutes, so the total is 20 + 10 + 30 = 60 minutes.",
+      "status": "VALID"
+    },
+    "gsm8k-train-270": {
+      "independent_answer": "underdetermined",
+      "question_sha256": "147fc65a01e25d3d094caff6efa236ad42f95c84b73589cb526220d4141adbc6",
+      "reason": "Each call costs 60 \u00d7 $0.05 = $3, and 50 calls cost $150 per week. The question does not specify how many weeks to count in the month; using four weeks gives $600, but other month-length conventions give different totals.",
+      "status": "AMBIGUOUS"
+    },
+    "gsm8k-train-2947": {
+      "independent_answer": "135",
+      "question_sha256": "715bb34fd56f8412c3037b7568dba519631aa3e8c236f7f1b71af30440b8e04a",
+      "reason": "The combined hopping rate is 15 + 12 = 27 meters per minute. In five minutes the rabbits cover 27 \u00d7 5 = 135 meters in total.",
+      "status": "VALID"
+    },
+    "gsm8k-train-4054": {
+      "independent_answer": "8000",
+      "question_sha256": "cab4f1eb00b36446699fbb1777ac58c822a54d86f4fd7ad527675d77f18b37b2",
+      "reason": "Prep time is 2 \u00d7 50 = 100 hours, giving 50 + 100 = 150 billed hours. The total fee is 1000 + 150 \u00d7 100 = 16000, and John's half is 16000 \u00f7 2 = 8000.",
+      "status": "VALID"
+    },
+    "gsm8k-train-566": {
+      "independent_answer": "1280",
+      "question_sha256": "0007cda10676cf2c82acdb3b860ed6b8fee4958284d419c9527b4d8396ab868d",
+      "reason": "The green car travels at 8 \u00d7 80 = 640 mph, and the red car travels at 2 \u00d7 640 = 1280 mph.",
+      "status": "VALID"
+    },
+    "gsm8k-train-5811": {
+      "independent_answer": "underdetermined",
+      "question_sha256": "4cd6b49909cddd281f89da9753f7d1fec1da8071b6bd68b1002d2a711ffcf896",
+      "reason": "September earnings are 25 \u00d7 4 + 3 \u00d7 8 = 124. The statement that she worked the same number of hours in October can mean the same 28 total hours without specifying their division between the $4 and $8 activities. For example, 28 mowing hours would produce a two-month total of 124 + 112 = 236, whereas repeating the September allocation would produce 248.",
+      "status": "AMBIGUOUS"
+    }
+  },
+  "reviews": {
+    "gsm8k-train-1466:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I recognized that the barking rate of 2 dogs would be double that of a single dog.",
+        "60 \\text{ barks/minute} \\times 10 \\text{ minutes} = 600 \\text{ barks}",
+        "To check the result, I considered the logic"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target uses only the stated rates, dog count, duration, and valid arithmetic. Its check is explicitly a self-check, not a claim about an external checker or hidden feedback.",
+      "raw_call_sha256": "785bf0f9fc78ab341f469930ff3cf875ded382a78229e6e7f591adaaf34ba9de",
+      "reason": "The response substantively describes identifying and applying the doubling and rate-times-duration operations. It obtains 60 barks per minute and 600 total, provides a concrete logical check, explains the reusable rate adjustment, and stays relevant.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "c6ac999c86102f6046fcd9ad8d6157e833e6fc6c316807d94b825edda563d2aa",
+      "target_sha256": "ca3dd8d712e01d5421d5f14dfc50d2ee8ff693583b1bb819d6819cc1c32bf15f"
+    },
+    "gsm8k-train-1466:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "We need to find the total barks after 10 minutes.",
+        "30 \\times 2 = 60",
+        "60 \\times 10 = 600"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The multiplication and conclusion follow from the question alone, with no claimed external event. However, \u201cWe need to find\u201d merely states the goal and is not a substantive account of applying an operation.",
+      "raw_call_sha256": "4bd9ef6af3aca315b32e1287150086d7fc18d9f018201cb85cadc810e86d178d",
+      "reason": "The rate calculation 30 \u00d7 2 = 60 and time scaling 60 \u00d7 10 = 600 are correct, concrete, reusable, and concise. The response fails only because it gives no substantive first-person operational account; its plural phrasing states the goal rather than describing an operation performed.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "934d1125987d23d4a4cb50965b0b272bc2f824c3239ff25d445a61b8ec76ecbe",
+      "target_sha256": "2f5cee917a7232fd21dcac205dcc82202c4d4a833e3a2d47addcc836a2ebf404"
+    },
+    "gsm8k-train-2459:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the individual production of chairs by each worker over 6 hours.",
+        "For 3 workers, the total individual production would be \\(24 \\times 3 = 72\\) chairs.",
+        "the total number of chairs produced after 6 hours would be \\(72 + 1 = 73\\)"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All claims follow from the stated worker count, hourly rate, six-hour duration, and group bonus. The verification is an internal arithmetic check and does not invoke an outside checker.",
+      "raw_call_sha256": "bf7cb6cbe9367da1cc8ce96c9d39b05130b1db360d0a6a2f62042ed1158ea63a",
+      "reason": "The response gives its own correct operational account, computing 24 chairs per worker, 72 from three workers, and 73 after the additional chair. Its enumerated verification supplies concrete expected intermediates, and the multiplication-plus-addition method is reusable and relevant.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "355bd44e6665508399a1227cf0ae3b6890ebe2d0214d5a149d21b49c1966786b",
+      "target_sha256": "919b30fa83b4d845b44b7aebe89aa39f977209bb53c554a126afda9e1189af7b"
+    },
+    "gsm8k-train-2459:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Each worker produces 4 chairs/hour, so in 6 hours, one worker produces \\(4 \\times 6 = 24\\) chairs.",
+        "The group produces an additional chair every 6 hours, so after 6 hours, they produce 1 more chair.",
+        "Total chairs = 72 + 1 = 73"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The production calculations and one-chair addition are supported by the question and ordinary arithmetic. There are no claims of external checking or feedback, but there is also no substantive first-person operational account.",
+      "raw_call_sha256": "928c444785ab26d33235a854ca2bd10b76490ffeb26a9ecfcb170bc654502171",
+      "reason": "The response correctly calculates 4 \u00d7 6 \u00d7 3 = 72 regular chairs and adds the one six-hour group chair to obtain 73. The intermediates are checkable and the production-plus-bonus structure is reusable, but the entirely impersonal presentation fails the first-person axis.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "3172d40d4d515c8dfb03b596d4e9ed326eec8d58bb2504ce4ed221112c61c462",
+      "target_sha256": "f34bd393fb7ae8ef9891b02540b10131d1528f3be9ac580de3015accf29dc6fc"
+    },
+    "gsm8k-train-2695:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the time spent blow-drying the dog:",
+        "\\text{Walk time} = \\frac{3 \\text{ miles}}{6 \\text{ miles per hour}} = 0.5 \\text{ hours} = 30 \\text{ minutes}",
+        "I verified that the sum of the individual times (20 minutes for bathing, 10 minutes for blow-drying, and 30 minutes for walking) indeed equals 60 minutes."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target is supported by the supplied activity durations and valid unit conversion. Its verification is explicitly its own arithmetic check, with no unsupported outside event.",
+      "raw_call_sha256": "02d10e672f1ec297c217514b8e2effeef658f03e918e1ba1115ba12a67f6a8d6",
+      "reason": "The response correctly applies halving, distance divided by speed, hour-to-minute conversion, and summation. It gives concrete expected values of 10, 30, and 60 minutes, explains when the summing method applies, and remains substantive and relevant.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "f72ce06ce30d5340a0c7c1e718d873c3bf62f0aa6f2e61e5bcc1ca7b87bafdfb",
+      "target_sha256": "91c8c0a81ab4867abb16365b0c5cbd9476a11b1cf41ba2fda7f7dd39fc080780"
+    },
+    "gsm8k-train-2695:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I identify the given quantities:",
+        "Time = Distance / Speed = 3 miles / 6 miles per hour = 0.5 hours = 30 minutes",
+        "Total time: 20 + 10 + 30 = 60 minutes"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All durations, conversions, and arithmetic derive from the question. The response does not invoke any external checker, feedback, or hidden instruction.",
+      "raw_call_sha256": "bc83c8ab1d7934bca6b7d1411cb44a15d3e5609baf63c117f4aa49a9fb470496",
+      "reason": "The response substantively describes calculating the half-duration and distance-over-speed walking time. Its expectations of 10 and 30 minutes and total of 60 are correct and checkable; the conversion and summation method is reusable and concisely presented.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "7a2641cfb05829b1366d70bfe5859415f203515c66982ae052a44ebd337ac673",
+      "target_sha256": "9ee99c1c671e66653f488f3326e2bbcfa9945f7953aacb3abe45d8ea36d3f47b"
+    },
+    "gsm8k-train-270:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the cost per call:",
+        "There are 4 weeks in a month.",
+        "50 calls/week * 4 weeks/month = 200 calls/month."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The four-week premise is absent from the question. Its appearance in the earlier assistant response does not establish it as a valid fact, so the target cannot ground the 200-call and $600 claims in the neutral history and verified reasoning alone.",
+      "raw_call_sha256": "480f8c1f70585f54bb1a2951dfd414fd7d3a9ba54111416ef42938ceda11430c",
+      "reason": "The response substantively describes converting one hour to 60 minutes and computing $3 per call, with concrete checks and a reusable unit-cost formula. Nevertheless, its monthly total relies on the unsupported assertion that every month has four weeks, making the material operation ungrounded.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "ff6a2c11db22098e495f7cbdf0c9aa90cd7d2817be46135d209dcaa1d8ece510",
+      "target_sha256": "dad0c6f8f49e0d62441f3e6447c3f8642c4832af0ea0a64f69b78df159b9b2d9"
+    },
+    "gsm8k-train-270:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "There are 4 weeks in a month.",
+        "60 minutes * $0.05/minute = $3 per call",
+        "200 calls * $3/call = $600"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The target presents \u201cThere are 4 weeks in a month\u201d as given, but the question supplies no month-length convention. The resulting $600 is conditional on that unsupported assumption; no external event is claimed.",
+      "raw_call_sha256": "c36e439ad7e6afc51bf24ded64370eef19f4fb60fe3459c5fe6a571417f19dfa",
+      "reason": "The $3 cost per call and $150 weekly cost are valid, but converting 50 weekly customers into exactly 200 monthly calls assumes four weeks without support. The response is also entirely impersonal, so it fails first-person as well as grounding and prefix compatibility.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "19d0d3e37e388142e60bd16cba00e242bc10bde501686edfa7d8991ae25fbed6",
+      "target_sha256": "6ad1750ff9cbbc829b7e2c818460bf04119ffe5168c348596f5268ff5185e301"
+    },
+    "gsm8k-train-2947:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the distance each rabbit hops individually over the 5-minute period.",
+        "15 meters/minute * 5 minutes = 75 meters",
+        "I can also verify that the units are consistent (meters per minute * minutes = meters)"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All factual and operational claims are supported by the question or explicit arithmetic. The response describes self-checking its arithmetic and units, not receiving confirmation from an external checker.",
+      "raw_call_sha256": "138d0a8ccd73baa4912f9819068b6ae5708c8e2e93168b84dddf6e46b0fc0d29",
+      "reason": "The response correctly calculates 75 and 60 meters and adds them to obtain 135. It substantively explains its chosen rate-times-time operation, gives both arithmetic and unit checks, states when the method is reusable, and contains no material filler.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "47345fea846cbf6c37ac938cea533f185314b83c4754174a3398422dda0a5783",
+      "target_sha256": "0b5328d46b018100324ad2292a621a6e6dd7a778e9816078c03f53c09663c8d9"
+    },
+    "gsm8k-train-2947:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculate the distance each rabbit hops in 5 minutes.",
+        "15 meters/minute * 5 minutes = 75 meters",
+        "75 meters + 60 meters = 135 meters"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target uses only the two stated rates, the five-minute duration, and correct arithmetic. It contains no unsupported event or external-check claim.",
+      "raw_call_sha256": "41c79bde2b88b26fe73802dee3e6752b663c83bfb0cc213b02ef28dbe717ac34",
+      "reason": "The response gives a substantive first-person account of multiplying each rate by time and adding the resulting distances. The 75-meter, 60-meter, and 135-meter values are concrete checks, and the rate-times-time operation is reusable and concise.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "35a7ef85374d53a92757e5384d5c34b4e242ca18524e1d67700e12182440c976",
+      "target_sha256": "96ddf5ad2ffff1418128ad14230b8aaaa0ccccf6337d1b475ac27505c977d9b3"
+    },
+    "gsm8k-train-4054:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the cost for court time and prep time",
+        "Total cost: $1000 (upfront) + $5000 (court) + $10000 (prep) = $16000",
+        "John's share: $16000 / 2 = $8000"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The response relies only on the supplied fee terms and valid multiplication, addition, and division. \u201cI checked\u201d describes its own arithmetic review rather than unsupported external confirmation.",
+      "raw_call_sha256": "422808466e575097fe9c397cdca95c34dca9eed2400eab053b73657c38d941af",
+      "reason": "The first-person account correctly computes 100 prep hours, $16,000 total cost, and John's $8,000 share. The numerical intermediates are checkable, and the explanation identifies multiplication for variable costs and division for a shared fee as reusable operations without material filler.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "f1176af49a514deeab586da7381fb41d0016e021774fddb5dc613d223f3a236b",
+      "target_sha256": "2d6345b9e4f956f539f0b8b68396fc57879c3300d3c5204ceb3f13b45a856f63"
+    },
+    "gsm8k-train-4054:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I identify the given quantities:",
+        "Prep time: 2 * 50 hours = 100 hours",
+        "John's share: $16000 / 2 = $8000"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every factual claim comes from the question, and the calculations are directly verifiable. The target claims no outside check, feedback, or hidden event.",
+      "raw_call_sha256": "bb01000b30daee4217a0b6d245d15bc2707b04e4f45617bb15587e38beb7aa35",
+      "reason": "The response gives a substantive first-person calculation: 100 prep hours, 150 total hours, $15,000 in hourly charges, $16,000 including the upfront payment, and an $8,000 half-share. These intermediates are concrete checks and the fixed-plus-variable-cost method is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "72591d78f5c13fff010650a851de8798ab40b3c3ce5a76742690682be791affd",
+      "target_sha256": "d4cf0e0f08bf18219226cfe62dd3af5d19a04e49a4f3338f2ac97d01b9208829"
+    },
+    "gsm8k-train-566:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the speed of the green car",
+        "\\text{Green car speed} = 8 \\times 80 \\text{ mph} = 640 \\text{ mph}",
+        "\\text{Red car speed} = 2 \\times 640 \\text{ mph} = 1280 \\text{ mph}"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's relationships and arithmetic are all supplied or verifiable, and its step-by-step check is self-contained rather than an unsupported external event.",
+      "raw_call_sha256": "b0cfa2e717fe1f955ed9db0b47666a9194f639e908d7d1fa4a4fe35e81a16000",
+      "reason": "The response gives its own account of applying the chained multipliers, correctly obtaining 640 and then 1280 mph. Those values provide concrete checks, and the method is specific and reusable for chained relative quantities without irrelevant padding.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "1355ebc93dda384cf90b8edaf5bef87a0716de6e36a0778feba01a1c368a9b83",
+      "target_sha256": "4c2b55272e12fbf8ee8ed9e7689987be3e43800206aa3fe69a4611abdd77e756"
+    },
+    "gsm8k-train-566:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Green car speed = 8 * 80 mph = 640 mph",
+        "Red car speed = 2 * 640 mph = 1280 mph"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target uses only the stated speed relationships and correct multiplication. It makes no unsupported claim about feedback or external checking, but it contains no own operational account.",
+      "raw_call_sha256": "835cbbf5f4bd1a41d8914ef5e41304ff4353b1ea0847a9cc33e55556e550dd25",
+      "reason": "The two-stage scaling from 80 to 640 to 1280 mph is correct, checkable, concise, and reusable for chained multiplicative relationships. The response fails solely because it is impersonal and never substantively accounts for choosing or applying the operations.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "f27d01ee98ddbb1e7fbb5567939e79e43fb983cac2f3316639f5ee46eda943c5",
+      "target_sha256": "fa4dfdc62317ec9c714f554d03003ae997ac99c38b26490d4994ae05d3c40d42"
+    },
+    "gsm8k-train-5811:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated her earnings for September.",
+        "Since she worked the same number of hours in October, her earnings in October would also be $124.",
+        "124 + 124 = 248"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "Neither the original question nor valid arithmetic forces October's hours to have the same activity allocation as September. The earlier response in the prefix makes the same assumption and does not turn it into an established fact.",
+      "raw_call_sha256": "13015ffe69cf0e493d8c78a64e309d44198dbc9388956ecc6189df7e646ffef7",
+      "reason": "The response gives a substantive first-person account and correctly obtains September's $124. Its numerical work and earnings formula are checkable and reusable, but the conclusion that October also yields $124 rests on an unstated allocation of October hours between services with different rates.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "b10a10786ee59e6beaa1f3264e3ff236f60ea87813a50f904ea8edd2a9511f61",
+      "target_sha256": "269abf47ad9a8e7aaa0fc61de15f9506bf1e2396015010c36bfef0334dde64a9"
+    },
+    "gsm8k-train-5811:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "25 hours * $4/hour = $100",
+        "her total earnings in September are $100 + $24 = $124",
+        "If she worked the same number of hours in October, her earnings would be the same, $124."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The question establishes September's activity split but does not unambiguously establish that October repeats that split. The target's claim that October earnings must also be $124 therefore adds a contested assumption rather than following from explicit facts or necessary arithmetic.",
+      "raw_call_sha256": "fce3fe04f6ec6b1be3ac869cc9e40a9394d30d86e081fb0bd052b9429cf48895",
+      "reason": "The September calculation 25 \u00d7 4 + 3 \u00d7 8 = 124 is correct and checkable. However, equal October earnings require assuming that \u201cthe same number of hours\u201d repeats the hours in each activity rather than merely the total hours. The response treats that uncertain allocation as fact and also has no substantive first-person operational account.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "36f9d45decf7543cbdad935ad444976838eaeee2073ac75548301d43ee1571f1",
+      "target_sha256": "b69ce39860d94b9312f44d4e7fa87c00b8c91a6519d858e755eb900ffa342464"
+    }
+  }
+}

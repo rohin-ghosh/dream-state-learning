@@ -1,0 +1,143 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "gold": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "independent_answer": {
+            "type": "string"
+          },
+          "question_sha256": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "VALID",
+              "INVALID",
+              "AMBIGUOUS"
+            ],
+            "type": "string"
+          },
+          "task_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "task_id",
+          "question_sha256",
+          "status",
+          "independent_answer",
+          "reason"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "reviews": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "checkable_expectation": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "evidence_spans": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "first_person": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "full_text_read": {
+            "type": "boolean"
+          },
+          "grounded_operations": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "key": {
+            "type": "string"
+          },
+          "neutral_prefix_compatible": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "no_padding": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "prefix_reason": {
+            "type": "string"
+          },
+          "raw_call_sha256": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "reusable_content": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "status": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "UNRESOLVED"
+            ],
+            "type": "string"
+          },
+          "student_prefix_sha256": {
+            "type": "string"
+          },
+          "target_sha256": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "key",
+          "raw_call_sha256",
+          "target_sha256",
+          "student_prefix_sha256",
+          "status",
+          "reason",
+          "prefix_reason",
+          "full_text_read",
+          "evidence_spans",
+          "first_person",
+          "grounded_operations",
+          "checkable_expectation",
+          "reusable_content",
+          "no_padding",
+          "neutral_prefix_compatible"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "reviews",
+    "gold"
+  ],
+  "type": "object"
+}

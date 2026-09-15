@@ -1,0 +1,351 @@
+{
+  "gold": {
+    "gsm8k-train-1587": {
+      "independent_answer": "36",
+      "question_sha256": "376a6a5dbc25b7901cedc6b4005f8431f49b8f0d0acaf671cf46ed4bbddb6ca5",
+      "reason": "There are 300 \u00d7 0.40 = 120 smoking students. Since 70% were hospitalized, 30% were not: 120 \u00d7 0.30 = 36, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-1817": {
+      "independent_answer": "29",
+      "question_sha256": "dba6d200958890d490ef6ab2dae57fb6ea99854fdc0c2e80c24541fd7e68e087",
+      "reason": "The empty tires need 2 \u00d7 500 = 1000 cubic inches. The other tires need 500 \u00d7 0.60 = 300 and 500 \u00d7 0.30 = 150, totaling 1450. At 50 cubic inches per pump, 1450 \u00f7 50 = 29 pumps, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-2107": {
+      "independent_answer": "1350",
+      "question_sha256": "ec1098df800b0d7121d527d70a1e83e7c5d9fda709eec1c24e0eddd1094c2aae",
+      "reason": "After-tax salary is 5000 \u00d7 0.90 = 4500. Three-fifths is 4500 \u00d7 3/5 = 2700, covering two rent payments, so monthly rent is 2700 \u00f7 2 = 1350, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-3520": {
+      "independent_answer": "8",
+      "question_sha256": "0214666c9d329be333965a274d35d43db40b658b755d66d8ca7e6160b54ffe18",
+      "reason": "In minutes, the activities take 120 + 30 + 90 + 20 = 260 minutes. Watching accounts for 20/260 \u00d7 100 = 7.6923%, which rounds to 8%, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-4710": {
+      "independent_answer": "1400",
+      "question_sha256": "d80e6aea0fb94f2d58b5827aa256f370da6f8eaae61d75f50cf5fa8bfcb44126",
+      "reason": "Driving distance is 2000 \u00d7 1.40 = 2800 miles. Missouri is midway, so its distance to New York is 2800 \u00f7 2 = 1400 miles, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-5966": {
+      "independent_answer": "150",
+      "question_sha256": "6d34fde505d1cdb6de46be8a1921a77384f70891e47fb30a8845c029bfffaa92",
+      "reason": "He read 20% + 20% + 30% = 70%, leaving 30%. Thus 500 \u00d7 0.30 = 150 pages remain, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-6555": {
+      "independent_answer": "underdetermined",
+      "question_sha256": "c3c55acee072229e03d66423fab30703a03fb4369fdc6ef96aa7824a097d92ee",
+      "reason": "The target weekly goal is 100 \u00d7 1.20 = 120 miles, and 280 days is 40 weeks. Gold 3 comes from 120 \u00f7 40, which assumes James starts at 0 miles. Starting at the stated previous level of 100 would instead give (120 \u2212 100) \u00f7 40 = 0.5. His current starting mileage is not specified.",
+      "status": "AMBIGUOUS"
+    },
+    "gsm8k-train-6705": {
+      "independent_answer": "underdetermined",
+      "question_sha256": "a94dbc951dd82486f7beacacf15c020d5106ad7767767e559dcae6f61d78a90f",
+      "reason": "The new reading time is 2 \u00d7 (1 + 1.50) = 5 hours per day. Reaching 1750 pages per week additionally assumes pages read are proportional to time at an unchanged rate: 100 \u00f7 2 = 50 pages/hour, then 50 \u00d7 5 \u00d7 7 = 1750. That rate assumption is not stated, so the gold is not uniquely determined.",
+      "status": "AMBIGUOUS"
+    }
+  },
+  "reviews": {
+    "gsm8k-train-1587:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the number of smoking students:",
+        "70% of 120 is 84, which is the number of hospitalized smoking students.",
+        "Subtracting 84 from 120 gives 36, which is the number of non-hospitalized smoking students."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's own calculations and verification use only facts in the question and visible arithmetic. No external validation or unsupported observed event is asserted.",
+      "raw_call_sha256": "361e03d7be769a2b2cdb1700d4edc6993a580e94afb5d81e8b3630cfa2464951",
+      "reason": "The response provides a first-person operational account, correctly checks 40% of 300, 70% of 120, and 120 \u2212 84, and identifies percentage calculations plus subtraction as reusable. Its content is relevant and unpadded.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "19f996f9b1baec79f459545c7296fb69ccfd2ed928166d4972f127efa83d7727",
+      "target_sha256": "e754ce3aa6a6bf02724bf6556ac3a7d6c75b9b2311702ace0fb66f89fbe594ca"
+    },
+    "gsm8k-train-1587:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "\\[ \\text{Number of smoking students} = 300 \\times \\frac{40}{100} = 120 \\]",
+        "\\[ \\text{Number of non-hospitalized smoking students} = 120 - 84 = 36 \\]"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target uses only the supplied class size and percentages, and all arithmetic is directly verifiable. It claims no hidden feedback or external event.",
+      "raw_call_sha256": "6ed26d3c3978d4acb45d17467b636628ba176f5656188a2e95d11aa0c40f5e3d",
+      "reason": "The response correctly calculates 120 smokers, 84 hospitalized smokers, and 36 not hospitalized, providing concrete, reusable percentage-and-remainder operations. It fails because its imperative presentation contains no substantive first-person operational account.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "e4c8e124f1b03a30b461c096b014310d436d5747559bb214e52b8d20a6bc5612",
+      "target_sha256": "f35b4e27789edc9d1b119ac5a6190f46f848f95309419473f9f60ca5c61c377b"
+    },
+    "gsm8k-train-1817:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the air needed for the two empty tires:",
+        "\\(1450 / 50 = 29\\).",
+        "\\(29 \\times 50 = 1450\\) cubic inches, which matches the total air needed."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All operations and the inverse multiplication check follow from the supplied tire capacities and pump volume. \u201cI checked\u201d is supported by the arithmetic shown and does not imply an external checker.",
+      "raw_call_sha256": "e9ea0bf8db44912c94048b849fd3361e5b4f5451066f028c11decf5f681e0943",
+      "reason": "The response gives a first-person operational account, correctly totals the missing air and obtains 29 pumps, then checks that 29 \u00d7 50 = 1450. It explains the reusable connection between total required volume and volume per pump without irrelevant padding.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "72762f3c2f7bacedf56dd06260a8ff82a7e1481a8440e7b69422a2a99f5b7931",
+      "target_sha256": "2b3d9c9ae3a68709e92b2a0bac384d2f22943a8eeeab050797675911c1db961a"
+    },
+    "gsm8k-train-1817:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "The 40% full tire needs \\(500 - (500 \\times 0.4) = 500 - 200 = 300\\) cubic inches.",
+        "Total air needed:\n- \\(1000 + 300 + 150 = 1450\\) cubic inches.",
+        "Number of pumps needed = \\(1450 / 50 = 29\\)."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The capacity, fill percentages, and pump volume all come from the question, and the target's arithmetic is verifiable. It makes no unsupported external-check claim.",
+      "raw_call_sha256": "302ba696df437d38cdb39c5c2360f9960f1ce7cbed5e547ac9ec7a61a22366ce",
+      "reason": "The target correctly finds each tire's deficit, totals 1450 cubic inches, and divides by 50 to get 29. These are concrete and reusable operations, but the response is wholly impersonal and lacks a substantive own operational account.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "f3b4628f3f1d76171071ece5e9108bd4956f7d1833963ca8db0b4c30552b0e73",
+      "target_sha256": "1a4fad7c17611c2d558d2fe89bd6e8c6742d0b858a31ad61580a2aa8ac4622b1"
+    },
+    "gsm8k-train-2107:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the salary after taxes:",
+        "\\[ \\text{Rent expense per month} = \\frac{2700}{2} = 1350 \\]",
+        "\\[ 1350 \\times 2 = 2700 \\]"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The operational claims and inverse check are supported by the problem and supplied solution. \u201cI checked\u201d describes an internal arithmetic check shown in the target, not an unsupported checker event.",
+      "raw_call_sha256": "44d2773e1af4819bb83424d2a79d1842fa98c6249051db1c0b660ce67a9f18aa",
+      "reason": "The response gives a first-person calculation, correctly obtains 4500, 2700, and 1350, and checks the monthly amount by multiplying it back to 2700. Its tax/fraction/division sequence is specific reusable content and contains no filler.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "e10213804d58e2ccaecb45868f1be10c824605fafbdda1e18e37596c61e2a019",
+      "target_sha256": "45fc368e9b553322ce0fb7d9edbed4e47eec134dfb5e6a18cefa12104440dcd1"
+    },
+    "gsm8k-train-2107:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "\\[ \\text{Salary after taxes} = 5000 - (5000 \\times 0.10) = 5000 - 500 = 4500 \\]",
+        "\\[ \\text{Rent expense per month} = \\frac{2700}{2} = 1350 \\]"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every factual claim comes from the question, and the tax, fraction, and per-month calculations are explicitly verifiable. No unsupported external event is claimed.",
+      "raw_call_sha256": "b97fd036bc78a12db0105beb51d90343d49c619e74c9ea4cbd6fe7f892886225",
+      "reason": "The tax, two-payment total, and monthly division are correct, concrete, relevant, and reusable. The response nevertheless has no substantive first-person account; it presents only impersonal directives such as \u201cFirst, calculate.\u201d",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "40bba11f03d649738ff407a620527a4a5d92b4089d7702f99d1de428b69d79b1",
+      "target_sha256": "0b1d2b6bc44b5526dcb1440febe1fd545547a1e3fc4ab18383d49680aa87f2e6"
+    },
+    "gsm8k-train-3520:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To solve this, I first calculated the total time spent on all activities:",
+        "Rounding 7.69% to the nearest percent, I got 8%.",
+        "The operation I would reuse is converting minutes to hours and calculating percentages."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person calculations and self-check are supported by the supplied durations and explicit arithmetic. The verification is an internal check, not a claim about an unavailable checker.",
+      "raw_call_sha256": "62d9659f5a9fa63eca20eb92f0285762e7dccee4d441600b48b1dc67d8db21af",
+      "reason": "The response substantively recounts converting 20 minutes to one-third hour, totaling 4.3333 hours, calculating 7.69%, and rounding to 8%. It includes concrete expectations, a relevant self-check, and explains when its unit-conversion and percentage operations are reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "39132b00f28956928d68571fde177c1a66a98c35041779632c74f11c3dc053f4",
+      "target_sha256": "98dd380f9c87cfcea6824460132820dbd209689fbef8223b1c2179cb2e353792"
+    },
+    "gsm8k-train-3520:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Time spent making snacks: 3 times the setup time, which is 3 * 0.5 = 1.5 hours",
+        "Percentage = (Time spent watching the comet / Total time) * 100",
+        "Rounded to the nearest percent, the answer is 8%."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The time conversions, sum, percentage, and rounding are supported by the question and visible arithmetic. The target contains no unsupported report of feedback or external checking.",
+      "raw_call_sha256": "20068b5c09d82e02032d851789165f038070a5a3c9c3b1cb26b9e72703f88e63",
+      "reason": "The target correctly converts units, calculates the total duration and 7.69% share, and rounds to 8%, supplying reusable operations and numerical expectations. However, \u201clet's\u201d directives and \u201cwe need to find\u201d are not a substantive own operational account.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "66016c81bca813ce499a3f84f7a32ac5a0d7cd7b8dec9c532eb4b4584ca433a4",
+      "target_sha256": "874a8c199720145a8da7054d1aef0d7dc214db00b241d87236b3a9ca6cdb1cdd"
+    },
+    "gsm8k-train-4710:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the driving distance by increasing the flying distance by 40%.",
+        "To check this result, I considered that the distance from Missouri to New York should be half of the total driving distance, which is indeed 1,400 miles.",
+        "The operation I would reuse is the calculation of the midpoint distance from the total driving distance"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person calculation and self-check are supported by the supplied problem and prior solution. The check is the target's own arithmetic check, not a claimed external event.",
+      "raw_call_sha256": "110108648cc408a9d2835eac0ad09593f9a59671016572428e15e1cf43f3e1f7",
+      "reason": "The target gives a substantive first-person operational account, correctly computes 2000 \u00d7 1.40 = 2800 and 2800 \u00f7 2 = 1400, checks the midpoint expectation, and identifies when the midpoint operation is reusable without irrelevant padding.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "3df9a006a2ad224cff5d6c9af625c8a978b1aabc15fe6f0e9fedbc4355ffb076",
+      "target_sha256": "5119ab7ae3b08b3a08fbed2b257a525b8cb1226fd417a5323bcb98dd6c72f98c"
+    },
+    "gsm8k-train-4710:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "\\[ \\text{Driving distance} = 2,000 \\text{ miles} \\times 1.40 = 2,800 \\text{ miles} \\]",
+        "\\[ \\text{Distance from Missouri to New York by car} = \\frac{2,800 \\text{ miles}}{2} = 1,400 \\text{ miles} \\]"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target uses only the supplied distances and the midpoint relation, with verifiable arithmetic. It makes no claim about an external checker, feedback, or other hidden event.",
+      "raw_call_sha256": "58ac4ae4eebc7a8d6a8f59269052c2be0fb50a35d9848e504759ddd775184af6",
+      "reason": "The arithmetic is grounded and supplies concrete expected intermediate and final distances, and the midpoint operation is task-reusable. However, the response is entirely impersonal and contains no substantive own account of choosing, applying, or checking an operation.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "7bab5ae827a0d29108a378fb9bbb932e4d61bcead2e0845196e5c64c3386b647",
+      "target_sha256": "13639b10229048446e4433c89166d7564d527f1daa6d5c2c8e9aeac0ac597f35"
+    },
+    "gsm8k-train-5966:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "For the first night, I calculated 20% of 500 pages:",
+        "\\[ 100 + 100 + 150 = 350 \\text{ pages} \\]",
+        "I can verify this by rechecking the calculations and ensuring the total pages read (350) is correct and subtracted from the total (500) to get 150."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person calculations and self-verification are fully derivable from the supplied problem and history. The statement about rechecking refers to visible arithmetic, not an external checker.",
+      "raw_call_sha256": "ebc947ae33800a61db9f0670bf6eb85f6bab9351d26ebef496756ba82451b669",
+      "reason": "The response correctly calculates 100, 100, and 150 pages, totals 350, and obtains 150 remaining. It includes a first-person operational account, a concrete check, and the reusable operation of subtracting the amount read from the book total, with no irrelevant filler.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "610ac039548935f876ac7b4aa07580406fad2f738c4d46dab9462db6378190da",
+      "target_sha256": "42e5eced5eec1242aafca644d93ed1fa8d981ab0f8f4374917090a693eba5c06"
+    },
+    "gsm8k-train-5966:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculate how many pages Xander read each night.",
+        "100 + 100 + 150 = 350 pages",
+        "500 - 350 = 150 pages"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All percentages, totals, and subtraction use only the supplied 500-page total and reading percentages. There are no claims of external checking or hidden feedback.",
+      "raw_call_sha256": "4378b30cac32cbb0aea1b7eabd5f1ff2d68df8015a4ad3ed9f0a15ac061baed3",
+      "reason": "The target provides a substantive first-person calculation, correctly converts each percentage to pages, totals 350, and subtracts from 500. These concrete intermediate expectations and the remaining-total operation are reusable and presented without padding.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "9985bd96f008a7b8af2894d4c8e15ffcc29a9f24399aedd7938ba0f5f265a1a5",
+      "target_sha256": "ba74abc378923d97150ab5b19c085993e2a77bd54bc899307d01e60d2949c40d"
+    },
+    "gsm8k-train-6555:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "He has 280 days to reach this goal, which is 280 / 7 = 40 weeks.",
+        "The total increase needed is 120 - 100 = 20 miles.",
+        "we divide the total increase by the number of weeks: 20 / 40 = 0.5 miles per week."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The prefix does not state that James begins the 280-day progression at 100 miles per week. The target's 120 \u2212 100 increase therefore rests on an unsupported interpretation of his starting mileage.",
+      "raw_call_sha256": "b72efe2443536f8148e61a2e496bbcf140aa033cda2c3694c422d528665b3baa",
+      "reason": "The response substantively applies an operation using \u201cwe divide,\u201d gives concrete numerical milestones, and explains dividing a total increase across equal weekly increments. But it assumes the progression begins at the pre-injury 100-mile level, which the question does not establish.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "073e22878f942596ec380e804e187fdfc2f44879066ec14ce56a311b3aaf0ff5",
+      "target_sha256": "3762ac657926c328dcbd06c20f891c7c23e71aae2fd5bd3ec31b195210fcacb2"
+    },
+    "gsm8k-train-6705:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Next, I determined his reading speed:",
+        "He used to read 100 pages in 2 hours, so his reading speed is \\(100 \\div 2 = 50\\) pages per hour.",
+        "There are 7 days in a week, so \\(250 \\times 7 = 1750\\) pages a week."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "Although the earlier assistant message contains the same assumption, that earlier calculation is not evidence that Mark's reading rate stays fixed. The target omits the qualification and treats 50 pages per hour as sufficient to project the new total.",
+      "raw_call_sha256": "9200236b13537172d4aa2c5ed461779f83f7ef9d36bc0233b0a1b7ebe2f1b0a6",
+      "reason": "The response clearly recounts its operations, includes numerical verification, offers reusable percentage/rate calculations, and is relevant. It fails grounding because deriving 1750 requires the unstated assumption that reading output remains proportional to time at a constant speed.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "49f3dfe969a7ea35e73725a0c5cc00089026bc8454335981266ab90b0a079199",
+      "target_sha256": "63cdc01b201cb886f7b80191642b77e406d2fce883108730e4135c880b3507a5"
+    },
+    "gsm8k-train-6705:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Since the number of pages read per hour is not given, I assume the reading speed remains the same.",
+        "if he used to read 100 pages in 2 hours, his reading speed is \\(100 \\div 2 = 50\\) pages per hour.",
+        "\\(250 \\times 7 = 1750\\) pages a week"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The neutral prefix states reading time and old pages per day but does not state that reading speed remains constant. The target explicitly introduces that unsupported assumption and then presents 1750 as the answer.",
+      "raw_call_sha256": "285f915cd644e616a0a2d40c11d469453852444cb05fa8c92ecb7e830f62d029",
+      "reason": "The response has first-person operations and correct conditional arithmetic, concrete expected quantities, and reusable percentage/rate steps. It nevertheless depends materially on an unstated constant-reading-speed assumption, so the operations and conclusion are not fully grounded in the question.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "2a08fadb51d3c736f6545f32d2c03a7188dad2e5c13ee43f468e705cf28665d3",
+      "target_sha256": "ad2ff9de76c524f0423815b5432a5461e9924e9fc23b1e6408f52747c0e496d8"
+    }
+  }
+}

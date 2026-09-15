@@ -1,0 +1,397 @@
+{
+  "gold": [
+    {
+      "independent_answer": "32",
+      "question_sha256": "54363759d7c1a587b14812853948293e707f7b62663b41434c1f6f80fff64563",
+      "reason": "Greta earns 40 \u00d7 12 = 480 dollars. At 15 dollars per hour, Lisa needs 480 \u00f7 15 = 32 hours, equal to the provided gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-5790"
+    },
+    {
+      "independent_answer": "3",
+      "question_sha256": "eff787b2d498f88f7e30ab199fc01fe2022a5ae18c9811736f1453bb93960e0e",
+      "reason": "Each completed hour changes the count by -3 + 2 = -1 log. Starting from 6, after 3 hours there are 6 - 3 = 3 logs, equal to the provided gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-6531"
+    },
+    {
+      "independent_answer": "4",
+      "question_sha256": "f00cb7664dfdd4df446d04798f469d3f41ed1689ff2bdbb8bf7f78626ddc9b4f",
+      "reason": "Regular weekly pay is 40 \u00d7 20 = 800 dollars. The 12 overtime hours pay 12 \u00d7 (1.5 \u00d7 20) = 360 dollars, giving 1160 dollars per week. Thus 4640 \u00f7 1160 = 4 weeks, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-5115"
+    },
+    {
+      "independent_answer": "12",
+      "question_sha256": "00756fc69d5182e280806bcea6299067182782efd19a7ff1794f5c4dfc1a1521",
+      "reason": "Tom swims 2 \u00d7 2 = 4 miles. He runs for half of 2 hours, or 1 hour, at 4 \u00d7 2 = 8 miles per hour, covering 8 miles. The total is 4 + 8 = 12 miles, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-755"
+    },
+    {
+      "independent_answer": "58",
+      "question_sha256": "048e5c965285126f5caa658d9cfe2183d975f6611439e38283e1eb8c17c1f583",
+      "reason": "The three speeds are 60, 60 - 18 = 42, and 60 + 12 = 72 mph. Equal time at each speed makes the time-weighted average (60 + 42 + 72) \u00f7 3 = 58 mph, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-175"
+    },
+    {
+      "independent_answer": "356",
+      "question_sha256": "52057835f0e85e8eac87f5f03eee76ed4aab10267c29a11316e88ca0a390fece",
+      "reason": "Fourteen days is 14 \u00d7 24 = 336 hours. Adding the 20-hour customs wait gives 336 + 20 = 356 hours, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-3917"
+    },
+    {
+      "independent_answer": "15",
+      "question_sha256": "6b45fa78503ce8b3b60e3e02d0f804854fd27e4ca7d08375ba5c0d78544c1efd",
+      "reason": "The current job pays 8 \u00d7 10 = 80 dollars weekly. The new job pays 4 \u00d7 15 + 35 = 95 dollars weekly, including the stated expected bonus. The increase is 95 - 80 = 15 dollars, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-4499"
+    },
+    {
+      "independent_answer": "1800",
+      "question_sha256": "77c357091a71166869a1d0d172d7f27c0f1d923fcc429e1fb625ef92f5fe933a",
+      "reason": "The movies use 3.5 + 1.5 = 5 hours, leaving 8 - 5 = 3 hours or 180 minutes. At 10 words per minute, Henri reads 180 \u00d7 10 = 1800 words, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-2331"
+    }
+  ],
+  "reviews": [
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculate Greta's total earnings.",
+        "\\(40 \\times 12 = 480\\) dollars.",
+        "\\(480 \\div 15 = 32\\) hours."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-5790:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target uses only the stated hours and wage rates plus explicitly shown arithmetic; it makes no claim of external feedback or hidden checker access.",
+      "raw_call_sha256": "8a2ca7f37cbdc8d7c9372931284bf596b10923b47581609f61cea5c546cea1ed",
+      "reason": "The response gives a substantive first-person calculation, correctly finds Greta's $480 earnings, divides by Lisa's $15 hourly rate to obtain 32 hours, and provides concrete, relevant intermediates that are reusable for wage-rate problems.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "2316b9683bada086edb66beebf351f04ac53c765e506763277c2a05def6a19dc",
+      "target_sha256": "e36605f6104290acf5f78bf9d2ffc56a4d40f8327d41bab150dc8047a46bed9c"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated her total earnings.",
+        "\\(40 \\times 12 = 480\\) dollars.",
+        "I also confirmed that \\(32 \\times 15 = 480\\)"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-5790:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The calculation and inverse check are verifiable from the question and prior neutral solution. The statements about checking describe self-checks shown in the target, not an unsupported external event.",
+      "raw_call_sha256": "b8628fa00caaa6b1584955383fd035a044d2106be537119b1adbd5e8bdb77937",
+      "reason": "The target substantively recounts multiplying hours by wage, dividing equal earnings by Lisa's rate, and checking the result with 32 \u00d7 15 = 480. All arithmetic and units are correct, and it explains when those operations apply.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "eb883741deb27aec406b39200092b9792a10b0ac9eab04ffd73b5d7052150ccc",
+      "target_sha256": "b3bdd131ec14a7ed42e815cfd41dfb5b91da51a334fb660d32d7616a5f3dcabb"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Remaining logs: 6 - 3 + 2 = 5",
+        "Remaining logs: 4 - 3 + 2 = 3"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6531:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every stated fact comes from the question, and each displayed update is directly verifiable arithmetic. There is no unsupported claim about feedback, compliance, or external checking.",
+      "raw_call_sha256": "079c778b2b3f41e82c19ef7098bf579399e4f64baf75be0df55f4341e8c0f9c6",
+      "reason": "The hourly recurrence is correct and provides concrete expected log counts, but the entire response is an impersonal worked solution. It never gives a substantive own account of choosing, applying, or checking an operation, so first_person fails.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "1ed77008ee812ec43a47afac5f29c6258bdd85ed6da41883ac95bda0ab87eb88",
+      "target_sha256": "3cd44a8d2c28391b3219f9001baef2bb7a95d0ad3cc712350407c36279693231"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I decided to calculate the logs remaining at the end of each hour",
+        "Remaining logs: 4 - 3 + 2 = 3",
+        "I verified the result by checking the calculations step-by-step"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6531:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person choice, recurrence calculations, and self-verification are supported by the supplied task and visible arithmetic. No external checker or feedback is claimed.",
+      "raw_call_sha256": "94edaa70ab8dbff21b3151e12bbdf8c80aa8c6b168bc29aaac59702ba6f9b2a8",
+      "reason": "The response recounts choosing an hour-by-hour recurrence, correctly applies -3 + 2 each hour to obtain 5, 4, then 3 logs, and identifies that recurrence as reusable in analogous regularly changing inventories.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "c53b6894523610da767eff80d921d81d0cc8b1562fecaec5fbb8b8327ad59e94",
+      "target_sha256": "f25a74e16094b9bb8a7712b6838e4ef5a6319792319bcc21075e321d5b9aa941"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I identify the given quantities:",
+        "Overtime pay: 12 hours * $20/hour * 1.5 = $360",
+        "Weeks needed: $4640 / $1160/week = 4 weeks"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-5115:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All wage, hour, overtime, and car-cost facts are supplied by the question, and the target's arithmetic is explicitly verifiable without relying on any hidden event.",
+      "raw_call_sha256": "a783425f7024e52d0b7842a54551f020d965a784a3eb984e8a9b5a5168765302",
+      "reason": "The response gives a first-person operational account, correctly separates 40 regular hours from 12 overtime hours, computes $1160 weekly pay, and divides the $4640 cost by that amount to obtain 4 weeks.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "a6c387f8475180954a14f1b599aedc639a02031a2b5fcf44c166fd6afdc41644",
+      "target_sha256": "488bb18776f525d33596a26a22135059a375dd087a4c8d87a104c38c252f07f4"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated her weekly earnings:",
+        "Overtime pay: 12 hours * $20/hour * 1.5 = $360",
+        "Earnings over 4 weeks: 4 weeks * $1160/week = $4640"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-5115:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's calculations and inverse four-week check follow solely from the question and neutral prior solution. Its verification is a displayed self-check rather than an unsupported external event.",
+      "raw_call_sha256": "55354e6dc27f795150055914bd2f51c0bb7ad53d07fa35a6d3448338eb4a8e8e",
+      "reason": "The response correctly recounts separating regular and overtime pay, totals $1160 per week, obtains 4 weeks, and checks that 4 \u00d7 $1160 equals the car's $4640 cost. It also states when the weekly-pay operation is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "f3891e44040d1d4ef68b20067493b47665c418dde67d47373789b32252e0ee86",
+      "target_sha256": "fc7eb328f1c1812db9030f2f07818b49260757374cd56f981ea8e31b49638c31"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculate the distance Tom swims.",
+        "\\text{Running speed} = 4 \\times 2 \\, \\text{miles/hour} = 8 \\, \\text{miles/hour}",
+        "\\text{Total distance} = 4 \\, \\text{miles} + 8 \\, \\text{miles} = 12 \\, \\text{miles}"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-755:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The times, speed multiplier, distances, and total all follow from the user question and explicitly valid unit arithmetic. No external observation or checker is invoked.",
+      "raw_call_sha256": "668744fcbfd0949bab65b5eb815588500ada5ec0b1ccf6571e2bf6642e9f2131",
+      "reason": "The response gives a first-person account and correctly applies distance = speed \u00d7 time: 4 swimming miles plus 8 running miles gives 12. Its intermediate time, speed, and distance calculations are concrete expectations and reusable operations.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "29df8e225e500b431e3e6fb5722ed5117d01d924159ccee0f8a84e6d58e613c6",
+      "target_sha256": "7fcb3f2692a6f8086c47c8906c6eac47ed4b5e5cc77b233175a196a2459c3811"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the distance Tom swims:",
+        "\\text{Running distance} = 1 \\, \\text{hour} \\times 8 \\, \\text{miles/hour} = 8 \\, \\text{miles}",
+        "Distance = Speed \u00d7 Time"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-755:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All quantities and relationships come from the supplied problem and prior neutral solution. The consistency check is an internal arithmetic-and-units check, not a claim of external validation.",
+      "raw_call_sha256": "0a6cd936e1c44c175ceadd70ceeeb9173127f123c025d7101a8d1cd3b995f398",
+      "reason": "The target correctly recounts calculating swimming distance, halving the time, quadrupling the speed, calculating running distance, and summing to 12 miles. It gives concrete intermediates and explicitly identifies reusable distance-speed-time operations.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "1f8fe251630ce0ae28f3b242c153592d41f4e5787ef0b2e9652609fc5ac5df17",
+      "target_sha256": "2f8734afb670abdfa9e2456aefbc619f199e43d6e433084505dfa6dcff0cfc1b"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "we use the formula for average speed",
+        "Since the time spent on each type of terrain is equal, we can simply average the speeds.",
+        "Average speed = 174 mph / 3"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-175:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The terrain speeds and equal time shares are supplied, while the arithmetic-mean deduction is explicitly justified by equal durations. The target claims no outside feedback or hidden event.",
+      "raw_call_sha256": "04b5f728d1c17ee52239094f157aa3469659319d37753373464b21743e4b7dc2",
+      "reason": "The plural first-person statement substantively accounts for selecting average speed and explains why equal durations permit directly averaging 60, 72, and 42. The arithmetic 174 \u00f7 3 = 58 is correct and checkable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "7865ab07a8bb9706bd70549981673276c19c9ef436b96c2d0474199b6458c78a",
+      "target_sha256": "6e46848ee37acf1a6f54fe758ab4196aabe2233727414489c619f872930c14fa"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I decided to average the speeds directly.",
+        "\\text{Average speed} = \\frac{174 \\text{ mph}}{3}",
+        "The operation I would reuse is averaging the speeds when the time spent on each type of terrain is equal."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-175:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's speed derivations, equal-time justification, averaging, and self-check are supported by the neutral messages and verifiable mathematics. It does not claim an external checker result.",
+      "raw_call_sha256": "b222a80d1ce19c009a34b581c9456fbfd3e5b8bb7b66af3e6247451442a2b004",
+      "reason": "The response gives a substantive own account of choosing the arithmetic mean because the durations are equal, correctly computes the three speeds and 174 \u00f7 3 = 58 mph, and explains the condition under which the operation is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "1b92e80f775c0dfc2bfd1a768dcfce904df95fa2cb62e4345ba26046631cb2b8",
+      "target_sha256": "d9a8ab6e8238e3e443f52f2654109fc691902f425a547d7a26f6541106e7dce9"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I identify the given quantities:",
+        "14 days * 24 hours/day = 336 hours",
+        "20 hours + 336 hours = 356 hours"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-3917:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target uses the two stated waits and the standard, verifiable conversion of 24 hours per day. Its final check merely restates the computed total and does not claim external access.",
+      "raw_call_sha256": "28e1401f3d010439b05d8fbebf18f4ca5f7ad808a50fdca97af9b8e82be81ff0",
+      "reason": "The response gives a first-person operational account, correctly converts 14 days to 336 hours and adds 20 to obtain 356. The conversion and sum are concrete, checkable, and reusable for mixed-unit time totals.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "4b59f2415ae9f57c4ef9c5718fcb4d29f270031b17b4239e694c4995b10dffcf",
+      "target_sha256": "cdb9cf439a2286001bb680837b571aeb67b46c1781c761c6a638912ad37be588"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I needed to convert the quarantine days into hours and then add the two quantities together.",
+        "14 days * 24 hours/day = 336 hours",
+        "Adding 20 hours to 336 hours gives 356 hours."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-3917:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person conversion, addition, and arithmetic checks are fully supportable from the neutral history and standard time conversion. No outside checker or observed feedback is asserted.",
+      "raw_call_sha256": "46fcd23b90b1ef3b3baf6d0f54b74500c76015de6a92ebf87d29aaea2013b4e2",
+      "reason": "The target correctly recounts converting 14 days to 336 hours and adding the 20-hour customs wait to get 356 hours. It supplies meaningful numerical checks and explains reuse for time conversion and total-time problems.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "868405f342ee17859e476f68d505e5855302c9e9f3efe2e33a0ab16c0a01d97f",
+      "target_sha256": "c0e356308d778f98e611d9b9d18bbcdc8921450b36257bd07f72a0902e97c2f2"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculate Maisy's current earnings.",
+        "\\$60 + \\$35 = \\$95 \\text{ per week}",
+        "\\$95 - \\$80 = \\$15"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-4499:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The wage rates, hours, and expected bonus are all stated in the question, and every calculation is shown directly. The target makes no unsupported claim about feedback or external checking.",
+      "raw_call_sha256": "baf266860d3f3a849634a90cdde42bdd56640cb15717cebabfb1da8f1854f7ab",
+      "reason": "The response gives a first-person operational account and correctly computes $80 at the current job, $95 at the new job including the bonus, and a $15 difference. These are concrete expectations and a reusable earnings-comparison method.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "25706eaee4e1dba50dd46b0a2f1b5b2e5afa65cfc2566964aa752f4fb68ec570",
+      "target_sha256": "aa3df7cc080fcbafd1daea2351cc34d0ee30b7a9eae0ada64059dd530359c666"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated her current job earnings:",
+        "Adding the $35 bonus:",
+        "\\$95 - \\$80 = \\$15"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-4499:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's calculations and stated inclusion of the bonus follow from the supplied neutral messages. Its verification refers to inspecting its own displayed arithmetic, not to external feedback.",
+      "raw_call_sha256": "43ce5d2dcb7d88bf24d83a0c8d46ab536f352c737ec473e6aaa51bc683856db7",
+      "reason": "The response substantively recounts computing and comparing the two weekly totals. The calculations $80, $95, and $15 are correct and checkable, and it explains that subtraction applies when comparing two known values.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "3be02809c83bc9f0f9867e29034085a85319b72220e65e1dbf2a01fa01c4d6c7",
+      "target_sha256": "717f726344538689e816d2fe61eca5cc8005e13361d76713293c572556ba5ca7"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculate the total time spent watching movies:",
+        "3 hours * 60 minutes/hour = 180 minutes",
+        "10 words/minute * 180 minutes = 1800 words"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-2331:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All activity durations and the reading rate come from the question, while the 60-minute conversion and subsequent arithmetic are explicitly verifiable. There is no claim of outside validation.",
+      "raw_call_sha256": "08163649bdd7b4d256a32e766f2ab23c97ae150d2cb1421e66c70ec34071a609",
+      "reason": "The response gives a first-person calculation, correctly finds 5 hours of movies, 3 remaining hours, 180 remaining minutes, and 1800 words. The unit conversion and rate-times-time operation are concrete and reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "7bb395e5f18eba780abb3bd27476d7938d1c9ee61e0e309660c6358928cb1444",
+      "target_sha256": "e7753085b756b68f747e24265281652c62bb74a292621ca077ce3f1a84b8f5b4"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first converted this into minutes to make the calculations easier.",
+        "\\[ 480 \\text{ minutes} - 300 \\text{ minutes} = 180 \\text{ minutes} \\]",
+        "\\[ 180 \\text{ minutes} \\times 10 \\text{ words/minute} = 1800 \\text{ words} \\]"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-2331:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The conversions, subtraction, multiplication, and unit checks use only supplied facts and standard arithmetic. The statement about checking is an internal verifiable check, not an unsupported external event.",
+      "raw_call_sha256": "dc26955b0555a4dd16749626ad81619f8d913a0d279790943d5555f65c072697",
+      "reason": "The response substantively recounts choosing a common unit, correctly converts total and movie times to minutes, subtracts to find 180 minutes, and multiplies by 10 words per minute to obtain 1800. This is a specific reusable mixed-unit rate workflow.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "44f140d1fa15f13c49e10685c24024713b7c9bff7ffbc0268e1df3bbd314bdd5",
+      "target_sha256": "f967365b5513331166b69faad64de1869d0d7640d836b4e583d3a5f1aeda5fd1"
+    }
+  ]
+}

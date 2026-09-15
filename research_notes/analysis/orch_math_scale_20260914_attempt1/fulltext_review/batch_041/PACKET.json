@@ -1,0 +1,296 @@
+[
+  {
+    "gold": "34",
+    "question": "Carol spends five hours filling up her pool. During the first hour, the pool fills at a rate of 8 gallons of water per hour. For the next two hours, the pool fills at 10 gallons of water per hour. For the fourth hour, the pool fills at a rate of 14 gallons of water per hour. During the fifth hour, the pool develops a leak and loses 8 gallons of water. At the end of five hours, how many gallons of water are still left in the pool?",
+    "question_sha256": "04e28e1d7538c8e62f5d3eac89473e7c76542996446cccf9fb44d375dd7a59cd",
+    "responses": [
+      {
+        "key": "gsm8k-train-6085:rich",
+        "raw_call_sha256": "a83fe85974d87470282e1724ab7f5b3fb79347e5e2600c93736351164d60f8bd",
+        "student_prefix": [
+          {
+            "content": "Carol spends five hours filling up her pool. During the first hour, the pool fills at a rate of 8 gallons of water per hour. For the next two hours, the pool fills at 10 gallons of water per hour. For the fourth hour, the pool fills at a rate of 14 gallons of water per hour. During the fifth hour, the pool develops a leak and loses 8 gallons of water. At the end of five hours, how many gallons of water are still left in the pool?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "1ef8f895b61167ee0dc97e016cdc64c0ba8cb8e810bcebe01a64b911fe9f873b",
+        "target": "First, I calculate the amount of water added each hour and then account for the leak.\n\n1. First hour: 8 gallons\n2. Second hour: 10 gallons\n3. Third hour: 10 gallons\n4. Fourth hour: 14 gallons\n5. Fifth hour: 14 gallons - 8 gallons (leak) = 6 gallons\n\nNow, I sum up the water added and subtract the water lost due to the leak.\n\nTotal water added = 8 + 10 + 10 + 14 + 6 = 58 gallons\n\nThe pool has 58 gallons of water at the end of five hours.\n\nFINAL: 58",
+        "target_sha256": "3133b0e3bdba87d4678230fca33eb39c853c533e68c639eaeabf1ab92bd3a77e"
+      }
+    ],
+    "task_id": "gsm8k-train-6085"
+  },
+  {
+    "gold": "8",
+    "question": "Janet has to drive 30 miles east from home to see her dermatologist and 50 miles west from home to see her gynecologist. If she has appointments with both doctors on the same day, how many gallons of gas does she use driving to both appointments and back home again, if her car gets 20 miles per gallon?",
+    "question_sha256": "56992200340ac5ebbe43557e3b83bb36e28c5b39588d2268d9bed5bc29379c78",
+    "responses": [
+      {
+        "key": "gsm8k-train-6486:rich",
+        "raw_call_sha256": "64f9ea97ebc5a29f28429a88e4a727df91f8ce1051c7a0ff43e1089cecbec0a0",
+        "student_prefix": [
+          {
+            "content": "Janet has to drive 30 miles east from home to see her dermatologist and 50 miles west from home to see her gynecologist. If she has appointments with both doctors on the same day, how many gallons of gas does she use driving to both appointments and back home again, if her car gets 20 miles per gallon?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "6684fbfb5e1decf176904ad72439d31391a8481a3b8012ba21a28185e929752a",
+        "target": "First, I identify the given quantities:\n- Distance to dermatologist: 30 miles east\n- Distance to gynecologist: 50 miles west\n- Car's fuel efficiency: 20 miles per gallon\n\nThe total distance Janet drives is the sum of the round trips to both appointments:\n- Round trip to dermatologist: 30 miles * 2 = 60 miles\n- Round trip to gynecologist: 50 miles * 2 = 100 miles\n- Total distance: 60 miles + 100 miles = 160 miles\n\nTo find out how many gallons of gas she uses, I divide the total distance by the car's fuel efficiency:\n- Total gallons used: 160 miles / 20 miles per gallon = 8 gallons\n\nFINAL: 8",
+        "target_sha256": "758fc19bc8c2870b15d2e830dd2e64aacbaaf684022f71c2c4001c3dc1530a84"
+      },
+      {
+        "key": "gsm8k-train-6486:new_record",
+        "raw_call_sha256": "ef3c986b688beca4d934c09d0b42bd02049380ade085bf4414a27a3d33479ccb",
+        "student_prefix": [
+          {
+            "content": "Janet has to drive 30 miles east from home to see her dermatologist and 50 miles west from home to see her gynecologist. If she has appointments with both doctors on the same day, how many gallons of gas does she use driving to both appointments and back home again, if her car gets 20 miles per gallon?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Distance to dermatologist: 30 miles east\n- Distance to gynecologist: 50 miles west\n- Car's fuel efficiency: 20 miles per gallon\n\nThe total distance Janet drives is the sum of the round trips to both appointments:\n- Round trip to dermatologist: 30 miles * 2 = 60 miles\n- Round trip to gynecologist: 50 miles * 2 = 100 miles\n- Total distance: 60 miles + 100 miles = 160 miles\n\nTo find out how many gallons of gas she uses, I divide the total distance by the car's fuel efficiency:\n- Total gallons used: 160 miles / 20 miles per gallon = 8 gallons\n\nFINAL: 8",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "e8c4abaf4ae026c5983d40072d60689fb4b72a95fb3f1755ddba3792945d3500",
+        "target": "Given the problem, I identified the key quantities: the distances to the dermatologist and gynecologist, and the car's fuel efficiency. The distances were 30 miles east to the dermatologist and 50 miles west to the gynecologist. The car's fuel efficiency was 20 miles per gallon. The unknown was the total gallons of gas used for the round trips.\n\nTo solve this, I first calculated the round trip distances:\n- For the dermatologist: 30 miles * 2 = 60 miles\n- For the gynecologist: 50 miles * 2 = 100 miles\n- Total distance: 60 miles + 100 miles = 160 miles\n\nNext, I used the car's fuel efficiency to find the total gallons of gas used:\n- Total gallons used: 160 miles / 20 miles per gallon = 8 gallons\n\nTo check the result, I verified that the total distance (160 miles) divided by the car's fuel efficiency (20 miles per gallon) indeed equals 8 gallons. This calculation aligns with the problem statement and the given data.\n\nThe operation I would reuse is the calculation of total distance for round trips and then dividing by the car's fuel efficiency to find the total gallons of gas used. This operation is reusable for similar problems involving distance and fuel efficiency.\n\nFINAL: 8",
+        "target_sha256": "ad67a51bfe4d36a1932433e42584acb13c22945152bb91fc6b19991bcbb7097e"
+      }
+    ],
+    "task_id": "gsm8k-train-6486"
+  },
+  {
+    "gold": "20800",
+    "question": "Jame gets a raise to $20 per hour and works 40 hours a week.  His old job was $16 an hour for 25 hours per week.  How much more money does he make per year in his new job than the old job if he works 52 weeks a year?",
+    "question_sha256": "2ee2f2de56c37fb71bbf55e020adafb062f1f8d18ee1b582efc164879ad8bdf3",
+    "responses": [
+      {
+        "key": "gsm8k-train-1344:rich",
+        "raw_call_sha256": "950a3175d2fd49d49f43c414e4474ba6915a28789991a710acfac8f46869060c",
+        "student_prefix": [
+          {
+            "content": "Jame gets a raise to $20 per hour and works 40 hours a week.  His old job was $16 an hour for 25 hours per week.  How much more money does he make per year in his new job than the old job if he works 52 weeks a year?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "a29eae5486dc65266a3075c5ee8bedfa6c29a84eede431236aa8ae37acf8b473",
+        "target": "First, I identify the given quantities:\n- New hourly wage: $20\n- New weekly hours: 40\n- Old hourly wage: $16\n- Old weekly hours: 25\n- Weeks per year: 52\n\nThe unknown is how much more money Jame makes per year in his new job compared to his old job.\n\nTo find the difference, I calculate the annual earnings for both jobs and then subtract the old from the new.\n\n1. Calculate new annual earnings:\n\\[ \\text{New annual earnings} = \\text{New hourly wage} \\times \\text{New weekly hours} \\times \\text{Weeks per year} \\]\n\\[ \\text{New annual earnings} = 20 \\times 40 \\times 52 \\]\n\\[ \\text{New annual earnings} = 400 \\times 52 \\]\n\\[ \\text{New annual earnings} = 20800 \\]\n\n2. Calculate old annual earnings:\n\\[ \\text{Old annual earnings} = \\text{Old hourly wage} \\times \\text{Old weekly hours} \\times \\text{Weeks per year} \\]\n\\[ \\text{Old annual earnings} = 16 \\times 25 \\times 52 \\]\n\\[ \\text{Old annual earnings} = 400 \\times 52 \\]\n\\[ \\text{Old annual earnings} = 20800 \\]\n\n3. Calculate the difference in annual earnings:\n\\[ \\text{Difference} = \\text{New annual earnings} - \\text{Old annual earnings} \\]\n\\[ \\text{Difference} = 20800 - 20800 \\]\n\\[ \\text{Difference} = 0 \\]\n\nSo, Jame makes $0 more per year in his new job than in his old job.\n\nFINAL: 0",
+        "target_sha256": "ec4345cc024fc47188631e261889528d7c6d96f47f08c8ff0c3fa134dcaed80f"
+      }
+    ],
+    "task_id": "gsm8k-train-1344"
+  },
+  {
+    "gold": "100",
+    "question": "During the most recent voyage of the Starship Conundrum, the spacecraft traveled from Planet X to Planet Y in eight hours less than twice the number of hours in a typical earth day.  If the distance between these two planets is 4,000 parsecs, what was the average speed, in parsecs per hour, of the Starship Conundrum during this most recent voyage?",
+    "question_sha256": "94b461ef85ffaceda5c314b9f4cc309ce75d5e6fc82620bc99338e442dbc0a2c",
+    "responses": [
+      {
+        "key": "gsm8k-train-3038:rich",
+        "raw_call_sha256": "09173d418363cd65ac891639507f19accf52a232700c9ea7322a08a77e225527",
+        "student_prefix": [
+          {
+            "content": "During the most recent voyage of the Starship Conundrum, the spacecraft traveled from Planet X to Planet Y in eight hours less than twice the number of hours in a typical earth day.  If the distance between these two planets is 4,000 parsecs, what was the average speed, in parsecs per hour, of the Starship Conundrum during this most recent voyage?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "a57d0b0bf3dbe865bbb00e72d05b532dbdc2c6d0fba90878ee560eef3a080bd5",
+        "target": "Given:\n- Distance between Planet X and Planet Y: 4,000 parsecs\n- Time taken: 8 hours less than twice the number of hours in a typical Earth day\n\nFirst, calculate twice the number of hours in a typical Earth day:\n- A typical Earth day has 24 hours\n- Twice this is \\(2 \\times 24 = 48\\) hours\n\nNext, subtract 8 hours from this:\n- Time taken for the voyage: \\(48 - 8 = 40\\) hours\n\nNow, calculate the average speed:\n- Average speed = Total distance / Total time\n- Average speed = \\(4000 \\, \\text{parsecs} / 40 \\, \\text{hours} = 100 \\, \\text{parsecs per hour}\\)\n\nFINAL: 100",
+        "target_sha256": "edc0db6d4bf7e6e749b8cd9eaeee247a5f199a3f5b8ee28fb6d683daf9540963"
+      },
+      {
+        "key": "gsm8k-train-3038:new_record",
+        "raw_call_sha256": "f12317637db9be243abf6ed862bd9c3eee43c0c2e6d1f02cacc1dc792461fce2",
+        "student_prefix": [
+          {
+            "content": "During the most recent voyage of the Starship Conundrum, the spacecraft traveled from Planet X to Planet Y in eight hours less than twice the number of hours in a typical earth day.  If the distance between these two planets is 4,000 parsecs, what was the average speed, in parsecs per hour, of the Starship Conundrum during this most recent voyage?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Distance between Planet X and Planet Y: 4,000 parsecs\n- Time taken: 8 hours less than twice the number of hours in a typical Earth day\n\nFirst, calculate twice the number of hours in a typical Earth day:\n- A typical Earth day has 24 hours\n- Twice this is \\(2 \\times 24 = 48\\) hours\n\nNext, subtract 8 hours from this:\n- Time taken for the voyage: \\(48 - 8 = 40\\) hours\n\nNow, calculate the average speed:\n- Average speed = Total distance / Total time\n- Average speed = \\(4000 \\, \\text{parsecs} / 40 \\, \\text{hours} = 100 \\, \\text{parsecs per hour}\\)\n\nFINAL: 100",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "e0e0020a57e511e66e433bec4aa5d3331445834c022ef8c22d4c6f2d1548d1fb",
+        "target": "Given the problem, I identified the key quantities: the distance between Planet X and Planet Y (4,000 parsecs) and the time taken for the Starship Conundrum's voyage (8 hours less than twice a typical Earth day). I knew the formula for average speed is distance divided by time. \n\nFirst, I calculated twice the number of hours in a typical Earth day: \\(2 \\times 24 = 48\\) hours. Then, I subtracted 8 hours to find the actual time taken: \\(48 - 8 = 40\\) hours. With the distance and time known, I applied the formula for average speed: \\( \\text{Average speed} = \\frac{4000 \\, \\text{parsecs}}{40 \\, \\text{hours}} = 100 \\, \\text{parsecs per hour} \\).\n\nTo check this result, I considered that the average speed should be consistent with the given distance and time. If the ship traveled 100 parsecs per hour for 40 hours, the total distance covered would be \\(100 \\times 40 = 4000\\) parsecs, which matches the given distance.\n\nThe operation I would reuse is the formula for average speed, as it directly connects the given distance and time to the unknown average speed. This formula is applicable whenever distance and time are known and the average speed needs to be calculated.\n\nFINAL: 100",
+        "target_sha256": "235ce19f82b373b693595b50d586929b1714c4f3889acf441e212757cc3df21f"
+      }
+    ],
+    "task_id": "gsm8k-train-3038"
+  },
+  {
+    "gold": "3",
+    "question": "One barnyard owl makes 5 hoot sounds per minute.  If 5 less than 20 hoots per minute are heard coming out of the barn, how many Barnyard owls would this noise be coming from?",
+    "question_sha256": "58f15141f510b0981fc43f430d66fb620fb6228810e8f44f32fa674a3a8f8ccf",
+    "responses": [
+      {
+        "key": "gsm8k-train-522:rich",
+        "raw_call_sha256": "292ae94b08dc916afc64adba400323762cdeaa9b73326ee67153658c25a77eda",
+        "student_prefix": [
+          {
+            "content": "One barnyard owl makes 5 hoot sounds per minute.  If 5 less than 20 hoots per minute are heard coming out of the barn, how many Barnyard owls would this noise be coming from?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "0ff70efc5db6c26987b000ba314f9590c59966dfe908680f4d61338c07ff2361",
+        "target": "Given:\n- 1 barnyard owl hoots 5 times per minute.\n- We hear 5 less than 20 hoots per minute, which is 15 hoots per minute.\n\nTo find:\n- How many barnyard owls are making these hoots.\n\nOperations:\n1. Calculate the number of owls by dividing the total hoots per minute by the hoots per minute per owl.\n\nCalculation:\n15 hoots per minute / 5 hoots per minute per owl = 3 owls\n\nCHECK:\n- 3 owls * 5 hoots per owl per minute = 15 hoots per minute.\n- 20 hoots per minute - 5 = 15 hoots per minute, which matches our calculation.\n\nFINAL: 3",
+        "target_sha256": "7dc52536ffcf4cd9d7f96fc425cf5faf8ce7c9dc4a5b31bc2f61e84ab958e6c5"
+      },
+      {
+        "key": "gsm8k-train-522:new_record",
+        "raw_call_sha256": "ddcfe1cded9160ff06206c4ea150bbffb7e1b4ee7527c6df2a95a150d36fcfe6",
+        "student_prefix": [
+          {
+            "content": "One barnyard owl makes 5 hoot sounds per minute.  If 5 less than 20 hoots per minute are heard coming out of the barn, how many Barnyard owls would this noise be coming from?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- 1 barnyard owl hoots 5 times per minute.\n- We hear 5 less than 20 hoots per minute, which is 15 hoots per minute.\n\nTo find:\n- How many barnyard owls are making these hoots.\n\nOperations:\n1. Calculate the number of owls by dividing the total hoots per minute by the hoots per minute per owl.\n\nCalculation:\n15 hoots per minute / 5 hoots per minute per owl = 3 owls\n\nCHECK:\n- 3 owls * 5 hoots per owl per minute = 15 hoots per minute.\n- 20 hoots per minute - 5 = 15 hoots per minute, which matches our calculation.\n\nFINAL: 3",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "b9e903fe0312dbe423dbd4ea0316d96f51d33678b8ba6ff26c99f91db6665467",
+        "target": "Given the problem, I identified the following quantities:\n- 1 barnyard owl hoots 5 times per minute.\n- The total hoots per minute heard are 5 less than 20, which is 15 hoots per minute.\n\nThe unknown I needed to find was the number of barnyard owls producing these hoots.\n\nTo solve this, I chose to use division, as the problem involves finding how many times a smaller quantity (hoots per owl per minute) fits into a larger quantity (total hoots per minute).\n\nI performed the division:\n15 hoots per minute / 5 hoots per owl per minute = 3 owls.\n\nI expected this result to mean that 3 barnyard owls are producing the 15 hoots per minute heard.\n\nTo check the result, I multiplied the number of owls by the hoots per owl per minute:\n3 owls * 5 hoots per owl per minute = 15 hoots per minute.\n\nThis matches the total hoots per minute heard, confirming the solution is correct.\n\nThe operation I would reuse is division, specifically when given a total quantity and a known smaller quantity that represents a rate or frequency, to find the number of times the smaller quantity fits into the total.\n\nFINAL: 3",
+        "target_sha256": "24d5bc38b105c1c703fca24bcc6eb1ac1648445e6db3c2da943fb9676a3a641c"
+      }
+    ],
+    "task_id": "gsm8k-train-522"
+  },
+  {
+    "gold": "1",
+    "question": "Janet goes to the gym for 5 hours a week.  She goes Monday, Tuesday, Wednesday, and Friday.  She spends an hour and a half each day on Monday and Wednesday.  If she spends the same amount of time at the gym on Tuesday and Friday how many hours is she at the gym on Friday?",
+    "question_sha256": "3f66a456e0dbf476a4073d2cb96c6202bb696f6c17ed756b15cbd1ece1bf0644",
+    "responses": [
+      {
+        "key": "gsm8k-train-3934:rich",
+        "raw_call_sha256": "c6b57e837a6f0bf6e3ef895c201e70ee18fdc210c7be65af12e9612922af9d75",
+        "student_prefix": [
+          {
+            "content": "Janet goes to the gym for 5 hours a week.  She goes Monday, Tuesday, Wednesday, and Friday.  She spends an hour and a half each day on Monday and Wednesday.  If she spends the same amount of time at the gym on Tuesday and Friday how many hours is she at the gym on Friday?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "4e7571e775ac8c74be77faa32bf491e2457ef314f871d4dd69034e757f6343de",
+        "target": "Janet's total gym time per week is 5 hours. She exercises for 1.5 hours each on Monday and Wednesday. So, the time spent on Monday and Wednesday combined is 1.5 hours + 1.5 hours = 3 hours. This leaves 5 hours - 3 hours = 2 hours for Tuesday and Friday. Since she spends the same amount of time on Tuesday and Friday, she spends 2 hours / 2 = 1 hour on Friday. \n\nFINAL: 1",
+        "target_sha256": "fcdd38dfcc5d8fc1127bb24e65cbcc873baf478ce30e5fb6becce91123be9e92"
+      },
+      {
+        "key": "gsm8k-train-3934:new_record",
+        "raw_call_sha256": "82c97658e76ac4361264b4ad56e19520a87ca2d37237abadf9e18e4b783426b4",
+        "student_prefix": [
+          {
+            "content": "Janet goes to the gym for 5 hours a week.  She goes Monday, Tuesday, Wednesday, and Friday.  She spends an hour and a half each day on Monday and Wednesday.  If she spends the same amount of time at the gym on Tuesday and Friday how many hours is she at the gym on Friday?",
+            "role": "user"
+          },
+          {
+            "content": "Janet's total gym time per week is 5 hours. She exercises for 1.5 hours each on Monday and Wednesday. So, the time spent on Monday and Wednesday combined is 1.5 hours + 1.5 hours = 3 hours. This leaves 5 hours - 3 hours = 2 hours for Tuesday and Friday. Since she spends the same amount of time on Tuesday and Friday, she spends 2 hours / 2 = 1 hour on Friday. \n\nFINAL: 1",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "e4f7878b5989508785c2992d53aef4591bddf5394fc67adaeb8e3868559cbc46",
+        "target": "Given that Janet goes to the gym for a total of 5 hours a week, and she exercises for 1.5 hours each on Monday and Wednesday, I first calculated the total time spent on these two days. The time spent on Monday and Wednesday combined is 1.5 hours + 1.5 hours = 3 hours. This means the remaining time for Tuesday and Friday is 5 hours - 3 hours = 2 hours. Since she spends the same amount of time on Tuesday and Friday, I divided the remaining time by 2, resulting in 2 hours / 2 = 1 hour for Friday. \n\nTo verify this, I checked if the total time adds up to 5 hours: 1.5 hours (Monday) + 1.5 hours (Wednesday) + 1 hour (Tuesday) + 1 hour (Friday) = 5 hours. This confirms that my calculation is correct.\n\nThe operation I would reuse is dividing the remaining gym time by 2 when given the total weekly gym time and the time spent on specific days. This is useful whenever the problem involves distributing a total amount of time equally between two days.\n\nFINAL: 1",
+        "target_sha256": "dbdeceabc421ef8545de5d1c9ac83b800236cf91d46b7a44a70c2e6bc993ade6"
+      }
+    ],
+    "task_id": "gsm8k-train-3934"
+  },
+  {
+    "gold": "280",
+    "question": "John takes a 10-minute shower every other day for 4 weeks. If his shower uses 2 gallons of water per minute.  How much water does he use in those 4 weeks?",
+    "question_sha256": "ed6ec50db29ba7521b82d8607c0295b60595175fa055bd458d28bb1b255c228f",
+    "responses": [
+      {
+        "key": "gsm8k-train-1284:rich",
+        "raw_call_sha256": "e2c2f451599605bb8de49fde14d7fcc3c2cbca683ed2adf4bee944f9d5211629",
+        "student_prefix": [
+          {
+            "content": "John takes a 10-minute shower every other day for 4 weeks. If his shower uses 2 gallons of water per minute.  How much water does he use in those 4 weeks?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "d6139aa1295e50801ed235202b8f94538da65d614e8be44860cabd5a435ebdc5",
+        "target": "Given:\n- John takes a 10-minute shower every other day.\n- Each shower uses 2 gallons of water per minute.\n- We need to find out how much water he uses in 4 weeks.\n\nFirst, calculate the number of showers in 4 weeks:\n- There are 7 days in a week, so in 4 weeks, there are \\(4 \\times 7 = 28\\) days.\n- Since he showers every other day, he showers \\(28 \\div 2 = 14\\) times in 4 weeks.\n\nNext, calculate the water used per shower:\n- Each shower is 10 minutes long and uses 2 gallons per minute.\n- So, each shower uses \\(10 \\times 2 = 20\\) gallons of water.\n\nNow, calculate the total water used in 4 weeks:\n- He showers 14 times and each shower uses 20 gallons.\n- Therefore, the total water used is \\(14 \\times 20 = 280\\) gallons.\n\nFINAL: 280",
+        "target_sha256": "bc74472927499cc787b3de06cdac66892baa48882f5b490c092e17dbc3224e2c"
+      },
+      {
+        "key": "gsm8k-train-1284:new_record",
+        "raw_call_sha256": "197ac959173c9775a1159abeed66de39da07a58940e8ab0de26408d77fd9d525",
+        "student_prefix": [
+          {
+            "content": "John takes a 10-minute shower every other day for 4 weeks. If his shower uses 2 gallons of water per minute.  How much water does he use in those 4 weeks?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- John takes a 10-minute shower every other day.\n- Each shower uses 2 gallons of water per minute.\n- We need to find out how much water he uses in 4 weeks.\n\nFirst, calculate the number of showers in 4 weeks:\n- There are 7 days in a week, so in 4 weeks, there are \\(4 \\times 7 = 28\\) days.\n- Since he showers every other day, he showers \\(28 \\div 2 = 14\\) times in 4 weeks.\n\nNext, calculate the water used per shower:\n- Each shower is 10 minutes long and uses 2 gallons per minute.\n- So, each shower uses \\(10 \\times 2 = 20\\) gallons of water.\n\nNow, calculate the total water used in 4 weeks:\n- He showers 14 times and each shower uses 20 gallons.\n- Therefore, the total water used is \\(14 \\times 20 = 280\\) gallons.\n\nFINAL: 280",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "1c17326c4526e4a8c2503ed84387b5aacccbb9861a48f7958f3cf9536c85e3d6",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- John showers every other day for 4 weeks.\n- Each shower lasts 10 minutes.\n- Each minute of the shower uses 2 gallons of water.\n\nFrom this, I needed to find out how much water John uses in those 4 weeks. To solve this, I first calculated the number of showers in 4 weeks:\n- There are 28 days in 4 weeks.\n- Since he showers every other day, he showers \\(28 \\div 2 = 14\\) times in 4 weeks.\n\nNext, I calculated the water used per shower:\n- Each shower is 10 minutes long and uses 2 gallons per minute.\n- Therefore, each shower uses \\(10 \\times 2 = 20\\) gallons of water.\n\nThen, I calculated the total water used in 4 weeks:\n- He showers 14 times and each shower uses 20 gallons.\n- So, the total water used is \\(14 \\times 20 = 280\\) gallons.\n\nTo verify this, I checked the intermediate steps:\n- The number of showers in 4 weeks: \\(28 \\div 2 = 14\\).\n- Water used per shower: \\(10 \\times 2 = 20\\) gallons.\n- Total water used: \\(14 \\times 20 = 280\\) gallons.\n\nThe operations I used were straightforward arithmetic, and the result matched the problem statement. I would reuse this method whenever I need to calculate the total amount of water used for a recurring activity with a fixed duration and water consumption rate.\n\nFINAL: 280",
+        "target_sha256": "ef2aaf02824ba2b61e128f5517a371a105cb3d3aca107f1e7fade384ec55f49d"
+      }
+    ],
+    "task_id": "gsm8k-train-1284"
+  },
+  {
+    "gold": "8",
+    "question": "I run 12 miles in 90 minutes. What is my average speed in miles per hour?",
+    "question_sha256": "63ead974285cc326052c6515e266626427aca303a69650008e47e9ff44989e3d",
+    "responses": [
+      {
+        "key": "gsm8k-train-3500:rich",
+        "raw_call_sha256": "bc660f7931a79d36746d8db78c89858cb3484434e479e651df100d7964df89f0",
+        "student_prefix": [
+          {
+            "content": "I run 12 miles in 90 minutes. What is my average speed in miles per hour?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "d519c20373f17a5dd096c877df45b534234fce018fa3eaaa25f6f2a6330eac7e",
+        "target": "Given: I run 12 miles in 90 minutes.\nUnknown: My average speed in miles per hour.\n\nTo find the average speed in miles per hour, I need to convert the time from minutes to hours and then divide the distance by the time in hours.\n\n1. Convert 90 minutes to hours: 90 minutes \u00f7 60 minutes/hour = 1.5 hours.\n2. Calculate the speed: 12 miles \u00f7 1.5 hours = 8 miles per hour.\n\nSo, my average speed is 8 miles per hour.\n\nFINAL: 8",
+        "target_sha256": "26f80338b956966f94ea4e97e25ade0ce514d2e492b49d51ddd1960edcb78a80"
+      },
+      {
+        "key": "gsm8k-train-3500:new_record",
+        "raw_call_sha256": "12ff0ef26e05445c780875fb49c8340ab829b0bea1710a817525b950349a9b5d",
+        "student_prefix": [
+          {
+            "content": "I run 12 miles in 90 minutes. What is my average speed in miles per hour?",
+            "role": "user"
+          },
+          {
+            "content": "Given: I run 12 miles in 90 minutes.\nUnknown: My average speed in miles per hour.\n\nTo find the average speed in miles per hour, I need to convert the time from minutes to hours and then divide the distance by the time in hours.\n\n1. Convert 90 minutes to hours: 90 minutes \u00f7 60 minutes/hour = 1.5 hours.\n2. Calculate the speed: 12 miles \u00f7 1.5 hours = 8 miles per hour.\n\nSo, my average speed is 8 miles per hour.\n\nFINAL: 8",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "3b408be158a700aba0a97ebe365b153f563d6f8302413c07ec8af8a19741d25d",
+        "target": "Given: I run 12 miles in 90 minutes.\nUnknown: My average speed in miles per hour.\n\nTo solve this, I first identified the given quantities: distance (12 miles) and time (90 minutes). The unknown is the average speed in miles per hour. The key operation here is to convert the time from minutes to hours and then calculate the speed using the formula: speed = distance / time.\n\n1. Convert 90 minutes to hours: 90 minutes \u00f7 60 minutes/hour = 1.5 hours.\n2. Calculate the speed: 12 miles \u00f7 1.5 hours = 8 miles per hour.\n\nI expected the result to mean that I run at an average speed of 8 miles per hour. To check this, I can use the original formula in reverse: 8 miles per hour \u00d7 1.5 hours = 12 miles, which matches the given distance.\n\nThe operation I would reuse is the conversion of time from minutes to hours and the calculation of speed using the distance and time. This is useful whenever I need to find speed given distance and time, or vice versa.\n\nFINAL: 8",
+        "target_sha256": "213cc5111332ac97ac75a8abccf8ba32904012a36431f965234e67c4bc814fa6"
+      }
+    ],
+    "task_id": "gsm8k-train-3500"
+  }
+]

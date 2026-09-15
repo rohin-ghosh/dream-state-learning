@@ -1,0 +1,339 @@
+{
+  "gold": {
+    "gsm8k-train-2912": {
+      "independent_answer": "369",
+      "question_sha256": "afcabc34d4b7fec9551aefeb200c1f856c3eecad0436a4842e0c314102185a91",
+      "reason": "Moving upward, each level is 80% of the level below it. Thus the levels from bottom to top contain 125, 100, 80, and 64 books because 125\u00d70.8=100, 100\u00d70.8=80, and 80\u00d70.8=64. Their sum is 369, equal to the supplied gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-3987": {
+      "independent_answer": "125",
+      "question_sha256": "471c5079115cb4d39743cc1f36daf16673f891e55fee79fdda1aa12e6b049424",
+      "reason": "Chess and basketball account for 10%+40%=50% of the students. 0.50\u00d7250=125, equal to the supplied gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-4399": {
+      "independent_answer": "26",
+      "question_sha256": "f5482cdc4234ae5e24454c0728b3ddf484372a4331e3945e7ad1fb16293ab9d2",
+      "reason": "The known purchases cost 5+(12\u00d70.50)+8+(10\u00d70.90)+(1\u00d76)=5+6+8+9+6=34 dollars. The remainder is 60\u221234=26, equal to the supplied gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-4746": {
+      "independent_answer": "17",
+      "question_sha256": "2c72b93136981c0eaa7f97d4d47eff47516d50aeb00822fbe5761c984f10a4fe",
+      "reason": "The first set has 0.10\u00d750=5 broken marbles and the second has 0.20\u00d760=12. Their total is 5+12=17, equal to the supplied gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-6562": {
+      "independent_answer": "22",
+      "question_sha256": "f96804cf402a988a1f0fcbd69abe6d4269aaaa76d28fe6b89b2a060a2edaf7ff",
+      "reason": "A chips pack costs 4\u00d71.75=7 dollars. Two chips packs and two pretzel packs cost 2\u00d77+2\u00d74=22 dollars, equal to the supplied gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-6774": {
+      "independent_answer": "underdetermined",
+      "question_sha256": "1dc72462614222f3832f7079403759b1ec86ba430738097f352e691b4e25c854",
+      "reason": "The supplied gold 1350 is 3000\u00d7(1\u22120.15\u22120.40), which is correct only if \u201cbetween\u201d includes cars priced exactly $15000 or $20000. If \u201cbetween\u201d is exclusive, the counts at those endpoints are unspecified, so the requested count is underdetermined.",
+      "status": "AMBIGUOUS"
+    },
+    "gsm8k-train-7067": {
+      "independent_answer": "20",
+      "question_sha256": "c454f8db368511c4bb7a5c34151808f0218139e47dbfef2aec90d4886f0a5e04",
+      "reason": "White paint is 100%\u221270%\u221220%=10%. Since 140 ounces is 70% of the mixture, the total is 140\u00f70.70=200 ounces, and 10% of 200 is 20, equal to the supplied gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-858": {
+      "independent_answer": "7",
+      "question_sha256": "cf9dfc1ee259ae0515514c9af3b4d04f04566aa69b2c6cac7a2ff30f7cec111b",
+      "reason": "The drink contributes 2500\u00d70.05=125 calories. Exceeding 150 by 100% means consuming 300 calories, leaving 300\u2212125=175 from candy; 175\u00f725=7, equal to the supplied gold.",
+      "status": "VALID"
+    }
+  },
+  "reviews": {
+    "gsm8k-train-2912:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Given that the top level has 64 books and each subsequent level has 80% as many books as the previous one, we can calculate the number of books in each level",
+        "Since the number of books must be a whole number, we round 188.928 to the nearest whole number, which is 189."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The prefix says upper levels have 80% as many books as their preceding lower levels. The target reverses that relation by multiplying downward from the top, so its level counts and rounding claim are not supportable from the neutral question.",
+      "raw_call_sha256": "e8d9caf196d9ef1bc689740ed1ab1d528bf0b307a62078a3731b74e2c432ccc6",
+      "reason": "The plural first-person account and numerical level expectations are explicit, but the core operation is reversed. With 64 books on top, the lower levels are 80, 100, and 125, not 51.2, 40.96, and 32.768. Rounding the resulting erroneous fractional total also cannot repair the unsupported model.",
+      "reusable_content": false,
+      "status": "FAIL",
+      "student_prefix_sha256": "ae01645bc0237389e3785dbd4e05715ba0e0cb26a6203796bc54825d6d063189",
+      "target_sha256": "6e69795064ba472b04c4afd6bc92fb9a75f82a41a9759677b4314553ca9469e0"
+    },
+    "gsm8k-train-3987:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To solve this, I first calculated the number of students who like basketball:",
+        "I then checked this result by confirming that the percentages for basketball, chess, and soccer add up to 78%, leaving 22% for badminton"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target shows its own calculations and self-check, all of which are supported by the question and neutral history; it does not claim checker access or outside feedback.",
+      "raw_call_sha256": "55e459f5bbc48f87c4cf95f5aacd6a28e3a8c116b397866131a2d4b69f70cb4b",
+      "reason": "The response substantively recounts calculating 40% and 10% of 250, adds 100+25=125, and supplies a concrete 78%/22% partition check. Its explanation of adding percentage-derived group counts is reusable and relevant.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "4d99faaac19196bc298d3485f12fd11f3ac5da79477ccb625247752f2618783a",
+      "target_sha256": "3db2f8419ffefa2401d0504e4652a4f2f83505dcd488cf9f3c5fddf9fdc0f362"
+    },
+    "gsm8k-train-3987:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "40% of 250 = 0.40 * 250 = 100 students",
+        "Check: The total percentage for basketball, chess, and soccer is 40% + 10% + 28% = 78%."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every factual claim and calculation follows from the user question, and \u201cCheck\u201d denotes a displayed self-check rather than an unsupported external event.",
+      "raw_call_sha256": "4ef05f28ceec730eb52d716c33a23464a2167620ae6b3321b4785b7f17595ecd",
+      "reason": "The arithmetic is correct and includes a concrete percentage-total check, but the response is an impersonal recipe (\u201cFirst, calculate\u201d and \u201cNext, calculate\u201d), not a substantive own account of applying the operations.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "75e799232818d7a680c51ccd90dc38b950ff5622081a27adab70802e1ca6ed54",
+      "target_sha256": "a7fab8020379d89c33a9534e28a0dbb5e3963200286dadd8b452dd56c3019a7b"
+    },
+    "gsm8k-train-4399:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I then listed the costs of the items:",
+        "To verify this, I checked the arithmetic:"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": false,
+      "prefix_reason": "The first-person calculations and claimed self-check are supportable from the displayed target arithmetic and neutral prefix; no external checker or feedback is invoked.",
+      "raw_call_sha256": "86e183e11ae1c052eda19a4e294ea912481e54af9c7e97df2d81a1a8f10c3d0f",
+      "reason": "The response correctly calculates the discounted prices, $34 subtotal, and $26 remainder, and it explains the reusable remainder operation. It fails no-padding because its verification section merely asserts \u201cCorrectly calculated,\u201d \u201cProperly added,\u201d and \u201cCorrectly subtracted\u201d without supplying a new concrete check, making that section generic boilerplate.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "c914611e448ac56aac1ba9358989e6304eb2effe5c18f5d4569618f0d677feeb",
+      "target_sha256": "a6812be87a6c373175ee6b71cd96d6bff56c6d84347d2d0c85078c59f1fbfcaa"
+    },
+    "gsm8k-train-4399:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Starting with $60, let's calculate the cost of each item Lily buys.",
+        "$60 - $34 = $26"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All prices, discounts, and arithmetic are present in or derivable from the question, with no claim of outside feedback or checking.",
+      "raw_call_sha256": "cc738686588cc63bc5cbcd551caca0cd4cf5c8cf67e2f21093ed82a5ce6a6509",
+      "reason": "The discounts, $34 subtotal, and $26 remainder are correct and concrete. However, \u201clet's calculate\u201d introduces an imperative recipe rather than a substantive own account of choosing or applying the operations.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "ab3253a2ea77f9ad46361e0cb547aeda941e8986f97fb2926b635fd239075690",
+      "target_sha256": "1f446f2af7f58d33aa7d621db996a939b9d58be4f1d30972cb5a85f0edf81ffe"
+    },
+    "gsm8k-train-4746:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I then calculated the number of broken marbles in each set:",
+        "To verify this result, I checked the arithmetic operations:"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": false,
+      "prefix_reason": "The self-check is supportable because all three arithmetic equalities are explicitly displayed and true; no external checker or unsupported observed event is asserted.",
+      "raw_call_sha256": "5227cf768b72e5d1d328c424de2e0b02b507c874c9d49d46854b696686be08b7",
+      "reason": "The calculations are correct, first-person, checkable, and accompanied by a task-specific reusable percentage-and-addition method. It fails no-padding because the verification block repeats all three preceding equalities\u20140.10\u00d750=5, 0.20\u00d760=12, and 5+12=17\u2014without adding an independent check or new reasoning.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "e19eb5c18a04194975a7ac1f8acdc3aff268b91e6cbabbd87b67cd72d38abb40",
+      "target_sha256": "2c05319eb2967558da299fe28d28eefb7b83bafcd12dcbc61cc6ec310b7bf303"
+    },
+    "gsm8k-train-4746:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Next, I calculate the number of broken marbles in each set:",
+        "Total broken marbles = \\( 5 + 12 = 17 \\)."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The response's own calculations are directly supported by the set sizes and percentages in the question; it claims no external checking or feedback.",
+      "raw_call_sha256": "c386318149b103f5787ea54a4402cfd7b571f97bff917a5e834e950187768a45",
+      "reason": "The target gives a substantive first-person application of percentage multiplication and addition: 0.10\u00d750=5, 0.20\u00d760=12, and 5+12=17. These are correct, concrete, reusable, and concisely presented.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "01e6320969cccf719785e116613359c2cf86ea0de1e8a7741b63a530dc37aa22",
+      "target_sha256": "139e84c91a110e072e82e70b441d067d777fe8c4db3f91b7cd7c982e057c39e2"
+    },
+    "gsm8k-train-6562:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find the cost of a pack of chips, I calculated 75% of $4:",
+        "To verify the result, I checked the individual components:"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The calculations and component check are explicitly performed in the target using only the supplied prices and quantities; \u201cchecked\u201d is a supported self-check.",
+      "raw_call_sha256": "3f3cf4a11a5cc565069b69b3e7d266188b553622c6d2b0fcb4bafc3c1d472b44",
+      "reason": "The target correctly recounts deriving the $3 increase and $7 chips price, totals the purchases at $22, and checks the $14 and $8 components. It also states when the percentage-increase-and-sum method can be reused.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "0dec32d4932ac6ebd59ea2fb892e5ab85d052c6d482213e6f035cc50ec95a219",
+      "target_sha256": "3ecd75f69af2248bf495ef5618720f93a4367c063495f835127ed78f853e6d80"
+    },
+    "gsm8k-train-6562:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find the cost of a pack of chips, I calculate 75% of $4:",
+        "\\[ 2 \\times 7 + 2 \\times 4 = 14 + 8 = 22 \\]"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's first-person arithmetic is fully derivable from the question and contains no unsupported observed event or external confirmation.",
+      "raw_call_sha256": "98a13080ca5540e88a1b7d5c19dcbb0ca3ffa2c9303e467519bb8b8243d4b048",
+      "reason": "The response correctly applies a 75% increase to get $7 per chips pack and computes 2\u00d77+2\u00d74=$22. The displayed item-cost calculation is a concrete expectation and a reusable percentage-increase operation.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "939750492bfd1bc685e470adc93b86230e54cda301ff7a8ece642bc216a10096",
+      "target_sha256": "282ffd712a43dc430ebf8f35f1ce474b4d10a453f99f5941923b30f0cbe7b914"
+    },
+    "gsm8k-train-6774:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To solve this, I first calculated the number of cars in the two known categories:",
+        "450 (less than $15000) + 1350 (between $15000 and $20000) + 1200 (more than $20000) = 3000 cars"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": null,
+      "neutral_prefix_compatible": null,
+      "no_padding": true,
+      "prefix_reason": "The response contains only self-performed reasoning and no hidden checker claim, but its classification of endpoint-priced cars is supportable only under an inclusive reading of \u201cbetween,\u201d which the prefix does not resolve.",
+      "raw_call_sha256": "cf8712831e28b9ee88f1334fe047e5974c8ef7fadb9fd01a6c7ffef654598ce1",
+      "reason": "The first-person calculations and 450+1350+1200=3000 check are concrete. However, subtracting the less-than-$15000 and more-than-$20000 groups yields 1350 only as an inclusive complement; an exclusive interpretation leaves cars at exactly the endpoints unaccounted for. Thus grounding and reuse of that complement operation cannot be conclusively adjudicated.",
+      "reusable_content": null,
+      "status": "UNRESOLVED",
+      "student_prefix_sha256": "a84606bd767c2e7f71ccea13d6405ecacab05c873d07ed1323be1337005b3c3b",
+      "target_sha256": "6c38e06b225bd2e51d381abe30012b9e085b037899515d6c8a2897092b256789"
+    },
+    "gsm8k-train-6774:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, calculate the number of cars in each category:",
+        "3000 - (450 + 1200) = 3000 - 1650 = 1350 cars"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": null,
+      "neutral_prefix_compatible": null,
+      "no_padding": true,
+      "prefix_reason": "The numerical work uses only prompt quantities, but whether its complement is exactly the requested range depends on the unresolved inclusive-versus-exclusive meaning of \u201cbetween.\u201d No external event is claimed.",
+      "raw_call_sha256": "a4a7f412c5ecb2f33eab8b90cb63be2f366fa4b3c532e076fdd98e56f5020c5c",
+      "reason": "The response definitely lacks an own operational account: it is phrased as impersonal instructions such as \u201cFirst, calculate\u201d and \u201cNext, find.\u201d Its 450 and 1200 computations are checkable, but the 1350 conclusion assumes that endpoint-priced cars belong to the requested range, which the wording does not settle.",
+      "reusable_content": null,
+      "status": "FAIL",
+      "student_prefix_sha256": "b8a5e41bf4cd9a0dc4668b7602a92e3796c2ea3c8fbd7af81dd62da92c5d9aad",
+      "target_sha256": "e7c48dd8b3290eacc17e6fffc63aa339afa834719db2e42fced3c8340aa64829"
+    },
+    "gsm8k-train-7067:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find the total mixture, I used the fact that 140 ounces represents 70% of the total mixture.",
+        "And I confirmed that the total mixture is indeed 200 ounces, with 140 ounces of blue paint, 40 ounces of red paint (20% of 200), and 20 ounces of white paint."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's confirmation is a supported self-check using quantities it explicitly derives; the neutral prefix supplies all underlying facts and contains no hidden guidance or external checker event.",
+      "raw_call_sha256": "ff6824d0c8b1e1b97b4a008b2f85ceb9c8f0dab921010af0d3e09121c2a3f3fb",
+      "reason": "The response correctly derives a 200-ounce mixture and 20 ounces of white paint, then checks both the 100% composition and the 140/40/20 component amounts. It supplies a relevant reusable part-of-whole operation in a substantive first-person account.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "3b0c820fbd3c7ae2fce5c9fd275a86ee706210ed0997001b457b5c9228f99f62",
+      "target_sha256": "4e50db8d0c3df763d2893d9b2240da349651af7a0dae796ecdef3d73f2fae3cb"
+    },
+    "gsm8k-train-7067:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "we can determine the percentage of white paint by subtracting the percentages of blue and red from 100%.",
+        "\\[ \\text{Total Mixture} = \\frac{140}{0.70} = 200 \\text{ ounces} \\]"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The plural self-account uses only the supplied percentages and blue-paint quantity, and every conclusion is backed by displayed arithmetic rather than an external event.",
+      "raw_call_sha256": "12ee99d684e61f5664b6589553d84c9295a6cdfe90f5238763e582e20dc2fba1",
+      "reason": "The response substantively describes subtracting percentages, solving 0.70\u00d7total=140, and taking 10% of the resulting 200 ounces. These correct intermediates are concrete and the part-whole percentage method is reusable without padding.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "4e6396580861518b4bc7ac932d4547caa261b1c266fa5baa1caf09a0d0ba9ae9",
+      "target_sha256": "1214b974c6cb655f3506bc065b9555a8bd2e19ddc5585f11431efdf48833466e"
+    },
+    "gsm8k-train-858:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the added sugar from the soft drink:",
+        "\\[ 125 + (7 \\times 25) = 125 + 175 = 300 \\text{ calories} \\]"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person calculations and verification are explicitly shown in the target and are supported by the problem and neutral solved-task history; no outside checker is claimed.",
+      "raw_call_sha256": "20a8ea48b77b9e30fa9ba565b9660f4f7dadba05279baf634fbb46f5e7a78400",
+      "reason": "The response correctly computes 125 drink calories, 175 candy calories, and 7 bars, then concretely verifies 125+(7\u00d725)=300. It explains a task-specific reusable division method without irrelevant filler.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "4150b6a9cf46cdfc20b67c386b5ceac16abaaaa1297d473e142e669f58198fe8",
+      "target_sha256": "b2a3a5a0477df65fd51c61058989e1a03f79bb992ce09f7ddf22cde968744d6c"
+    },
+    "gsm8k-train-858:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculate the amount of added sugar in the soft drink.",
+        "\\(175 \\div 25 = 7\\)."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target relies only on the stated quantities and its displayed arithmetic; it claims no external feedback or hidden event.",
+      "raw_call_sha256": "6d594024a65335e2bc23cfd075d065c340e184352f834368be8f6c1edda4d66f",
+      "reason": "The response gives a substantive first-person calculation: 5% of 2500 is 125, a 100% excess over 150 is 300, and (300\u2212125)\u00f725=7. The numerical intermediates are meaningful and correct, the remaining-amount operation is reusable, and the response is concise.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "eb2a03468bb7679fabae08e4c6eb85415e1de49cb390591d66fa51d59f098ae4",
+      "target_sha256": "b3d4390371f6422b1ed969083964591e3402f6df9d6b8ae4e95473244718527b"
+    }
+  }
+}

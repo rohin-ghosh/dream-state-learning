@@ -1,0 +1,320 @@
+{
+  "gold": {
+    "gsm8k-train-2722": {
+      "independent_answer": "underdetermined",
+      "question_sha256": "9bc87e845468c4dd8b8a34562132fcf9234f0fab28bfcef8ac765c760482dc37",
+      "reason": "The round trip is 20 miles and 2/3 of a 12-gallon tank is 8 gallons remaining, but the starting fuel amount is not stated. Concluding that 4 gallons were consumed\u2014and hence 20/4=5 mpg\u2014requires assuming the tank started full, so the supplied gold is not uniquely determined.",
+      "status": "AMBIGUOUS"
+    },
+    "gsm8k-train-2878": {
+      "independent_answer": "96",
+      "question_sha256": "5ca1f3bc0852069e2bed122ecaf3e586ec75280df032fea41d5d35cf7c5dfac5",
+      "reason": "Using the problem's stated units, the three rates are 6, 3\u00d76=18, and 4\u00d76=24. Their combined rate is 48, and 48\u00d72=96 for two hours. This equals the supplied gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-4039": {
+      "independent_answer": "10",
+      "question_sha256": "f9a99ba4b1c60022c55cb2033c387d5bb6c4c8f4a47e3119ba5e820cfa00dc62",
+      "reason": "Jenna drives for 200/50=4 hours and her friend for 100/20=5 hours. Two 30-minute breaks add 1 hour, so the total is 4+5+1=10 hours, equal to the supplied gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-4046": {
+      "independent_answer": "55",
+      "question_sha256": "87d4ed0c91f4583fee8a885161b3f85ec2f9a5df2a253c2bba3eaa926dcc18a9",
+      "reason": "Second-month earnings are 200+150=350; total earnings are 200+350=550; at $10 per hour, 550/10=55 hours. This equals the supplied gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-525": {
+      "independent_answer": "5",
+      "question_sha256": "39ba68f60a30da9220147d41d86eb6fd84485daddbcce1135b18d361ba14fd15",
+      "reason": "The return-home leg is twice the 12-mile school-to-practice leg, or 24 miles. Total distance is 8+6+12+24=50 miles; 50/25=2 gallons; 2\u00d72.50=$5. This equals the supplied gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-6188": {
+      "independent_answer": "500",
+      "question_sha256": "2550c8d827296c84d8d3205b247559a016f72fc6f33e4aaea4287ecad3d3378a",
+      "reason": "The three earnings amounts are 20\u00d710=200, 30\u00d720=600, and 5\u00d740=200, totaling 1000. After 500 in expenses, 1000\u2212500=500 remains, equal to the supplied gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-6893": {
+      "independent_answer": "48",
+      "question_sha256": "5c71e0438346d19b5fed070a6cdeeea1100dc57d1b5311ee60cae033a571f56b",
+      "reason": "Sarah's 1.3 hours equal 1.3\u00d760=78 minutes. The time difference is 78\u221230=48 minutes, equal to the supplied gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-852": {
+      "independent_answer": "1600",
+      "question_sha256": "488a2fae1af45e4323e070a39fc8c855144f01aba0368eeb14942865bc82d685",
+      "reason": "Five hourly doublings multiply the initial count by 2^5: 50\u00d732=1600. This equals the supplied gold.",
+      "status": "VALID"
+    }
+  },
+  "reviews": {
+    "gsm8k-train-2722:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "12 gallons - (2/3 * 12 gallons) = 12 - 8 = 4 gallons.",
+        "Now, calculate miles per gallon: 20 miles / 4 gallons = 5 miles per gallon."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The prefix says only that 2/3 of the tank remains after the trip; it never says the tank was full initially. Therefore the claim that 4 gallons were used is not supportable from the neutral prefix alone.",
+      "raw_call_sha256": "07e2a064584c80bcee7b34a5bc0041ce04057a2a4363cd2d31cc38ad8e406829",
+      "reason": "Although the round-trip distance of 20 miles is correct and the response supplies concrete numerical stages, it assumes without support that Jim began with a full tank, making \u201c12\u22128=4 gallons\u201d an invalid consumption deduction. It also uses impersonal directives rather than a substantive first-person operational account.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "d2041431df55cf6616e4e9c923ab0ed07065ce62eb26fac2c707a99ca2b6cf0b",
+      "target_sha256": "a8f1ee9c0263ca1c0e8ea2386a8c72de421e89cd413e472eb500ba4bd4040614"
+    },
+    "gsm8k-train-2878:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the energy usage for each light:",
+        "12 watts (bedroom) + 36 watts (office) + 48 watts (living room) = 96 watts."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person calculations and self-verification are supported by the supplied question, earlier solution, and visibly correct arithmetic; \u201cI checked\u201d describes an internal check rather than unsupported external feedback.",
+      "raw_call_sha256": "a15d3d1c9535c7468454eb0d3145d0944983c439d94cb7464068d714d3261e41",
+      "reason": "The response correctly computes 12, 36, and 48 and sums them to 96. It provides a substantive first-person account, concrete expected component values, and an applicable explanation of multiplication over time followed by addition across lights.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "0eb4ff72ea5db6ef7dc601fa091278e441b31d4ef4ba2bf2caa47208add47a1d",
+      "target_sha256": "15dfdf9b67b63c96eb22997f64e0b4310c16fb6f74a66c7e0374a18264ceb8f7"
+    },
+    "gsm8k-train-2878:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Next, I calculate the energy usage for each light:",
+        "12 watts (bedroom) + 36 watts (office) + 48 watts (living room) = 96 watts."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's quantities and computations follow directly from the neutral question, using its stated watt-per-hour convention, and no external event is asserted.",
+      "raw_call_sha256": "fa95e3bf20c6f3c8ffcb57caead77519b33a5159443ae070658eb0003dcf7943",
+      "reason": "The response gives its own operational account and correctly multiplies the base rate by each relative factor and by two hours, then sums 12+36+48=96. The numerical component totals are checkable, and the proportional-scaling-plus-summing method is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "3b4f896f5e318bec59b14ea6891e6766c6361aa2cf48bd07cc51c99760488714",
+      "target_sha256": "3eb594cf61a81a9a4720de525d85b0e1388af04025c03b79cf90f8a58db8feeb"
+    },
+    "gsm8k-train-4039:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To solve this, I first calculated the driving time for each person:",
+        "The total time of 10 hours matches the sum of the driving and break times."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The account and unit check are supported by the neutral history and explicit valid calculations. The stated check is an internal arithmetic/unit verification, not an unsupported external event.",
+      "raw_call_sha256": "d166e799ac210ebc09638dfe238f13018159ced033cb37948508a6dbec45500f",
+      "reason": "The response provides a first-person operational account, correctly calculates 4 and 5 driving hours plus 1 break hour, and checks that their sum is 10 with consistent units. It explicitly explains when distance divided by speed and addition of component times can be reused.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "08e713e3da8d05f526156ddb53dfa7252bc41c0160952f548c79bb43bb160985",
+      "target_sha256": "52cb37a4650a9f2b397c04d1c02a2711e5742e27bd8f3874e8692b76baef7439"
+    },
+    "gsm8k-train-4039:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Next, I calculate the time spent driving:",
+        "Total time spent on the road trip: \\( 9 \\text{ hours} + 1 \\text{ hour} = 10 \\text{ hours} \\)."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All distances, speeds, breaks, and operations come from the neutral question or explicit arithmetic, with no claim of an unavailable checker or feedback event.",
+      "raw_call_sha256": "d7f47a4ad53298fbdc195caa4f67438cce29d51d5159ae00652bc014088603d4",
+      "reason": "The response substantively describes its calculations: 200/50=4 hours, 100/20=5 hours, and two half-hour breaks equal 1 hour, yielding 10. These intermediates are checkable and demonstrate the reusable distance/speed and time-addition operations.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "fdfa16ad7bfdec1d2a7c9a73ba33562c0d51f4b78cad270a4c7cc16c3145d4e3",
+      "target_sha256": "88b9e8e748c17151ada704ce396622c8b2917ca1f371100988d4b6ecbcb7e72d"
+    },
+    "gsm8k-train-4046:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated Sam's earnings for the second month:",
+        "55 \\text{ hours} \\times \\$10 \\text{ per hour} = \\$550"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person calculations and self-check are supported by the supplied problem, prior solution, and explicit correct arithmetic; no external feedback or hidden event is claimed.",
+      "raw_call_sha256": "bda78b579bfbb7d57f91b564fe95202ef438db73c86cbb038d7837bd5afbf26a",
+      "reason": "The response gives a substantive first-person account, correctly computes 350, 550, and 55, verifies 55\u00d710=550, and identifies division by hourly rate as the reusable operation.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "2f6ba2556de3890f2f63781ffedda0eb2dfcbd385d5434006e439ffce0288d43",
+      "target_sha256": "63a14124ff20fd8cde83e9da6713c0153aa5f2b11f2635d6e07d3ea610a110d1"
+    },
+    "gsm8k-train-4046:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "$200 (first month) + $150 = $350 (second month)",
+        "Check: $10/hour \u00d7 55 hours = $550, which matches the total earnings."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every factual claim and calculation is supported by the question and verifiable arithmetic; the check is an internal multiplication check, not a claimed external event.",
+      "raw_call_sha256": "4849722f80c7635f95b7fbc86e833c0b3e4373c7293a501c73a7fd19f93c1b54",
+      "reason": "The earnings arithmetic is correct and includes a concrete inverse check, but the response only gives impersonal directives such as \u201cFirst, calculate\u201d and never provides a substantive first-person account of performing the operations.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "97ff98882406db8cfc9e35d41790edbae27cd1a454eb1a0a06c79217779ee6ff",
+      "target_sha256": "c3a6a3b95c4c75b99b37e1f4dd60817dd62da64b2c72141f5add2c952c112f5d"
+    },
+    "gsm8k-train-525:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I identify the distances:",
+        "2 gallons * $2.50 per gallon = $5.00"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target relies only on the stated route, fuel economy, gas price, and explicit arithmetic. It claims no unsupported checker result or other external event.",
+      "raw_call_sha256": "92afe7e4c4c2aee0f90af92789ebfe106fa6bca1b03aa6290dda521885b8a5fb",
+      "reason": "The response substantively recounts identifying and applying the operations. It correctly obtains a 24-mile return leg, 50 total miles, 2 gallons, and a $5 cost; these numerical stages are concrete checks and the distance-to-fuel-to-cost method is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "5bf39e1c7ee289fdee0978a87484f62f7d9ac94336b340653d8378062fd36b7d",
+      "target_sha256": "217430c605867d141da5c332ff5e389953e0c56ed0f5b8f137f2275ade41e8fd"
+    },
+    "gsm8k-train-6188:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To solve this, I first calculated Dino's earnings from each type of work:",
+        "\\[200 + 600 + 200 = 1000\\] dollars."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person calculations and verification are fully supported by the neutral history and correct visible arithmetic. No external checker or unobserved feedback is claimed.",
+      "raw_call_sha256": "7f5f7489ff61d6ef4e4d1d681e94dfcafd8de4c4463111619e3f4391d521556d",
+      "reason": "The response correctly calculates each income source, checks their 1000 total, and subtracts 500 to obtain 500. It gives a substantive own account and clearly identifies the reusable multiple-income-and-expense method.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "8c10759b2ca37955a64e4daa0ea25bd71eeb4b7058ac5cc57b4bbe5467c8fed0",
+      "target_sha256": "b679b6b42847aa1d2c2122d21d0032ef86758e0f92271537ee24b26b813cf762"
+    },
+    "gsm8k-train-6188:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculate Dino's earnings from each type of work:",
+        "\\[1000 - 500 = 500\\] dollars."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The calculations use only the hours, rates, and expenses supplied in the neutral question, and the target makes no unsupported claim about external validation.",
+      "raw_call_sha256": "23bac61fb38a55773b5d3cc85fcda40f661f72f46ac3a2c53d2aef2d7e381bdf",
+      "reason": "The response substantively recounts multiplying each job's hours by its rate, correctly checks the component earnings as 200, 600, and 200, totals them to 1000, and subtracts 500. This income-total-minus-expenses process is specific and reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "965d9e5713d4185ebead8af77b8e91d5de3760703739edb575fd4e389e33b7f5",
+      "target_sha256": "d1410e4098dc1b677a5993ebcc3627227eef2c631815ba240ff69a5abf1c91cb"
+    },
+    "gsm8k-train-6893:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To solve this, I first converted Sarah's time from hours to minutes.",
+        "I checked this by ensuring the arithmetic was correct and that the units were consistent (both in minutes)."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person calculation and unit-consistency check are supported by the neutral history and explicit correct arithmetic; \u201cI checked\u201d denotes a self-check, not unsupported external confirmation.",
+      "raw_call_sha256": "c213e86a54f8af800354bd1d4db8f12ff42fb5effe5577c67dd08010d7fa7601",
+      "reason": "The response correctly computes 1.3\u00d760=78 minutes and 78\u221230=48 minutes, while substantively describing its own operations. It gives concrete numerical expectations, checks common units, and explains the reusable conversion-and-subtraction method.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "a488b923b6c1ff1da4c906d8c86d164652ea4ec7e914a2b74eca1deff388ff2d",
+      "target_sha256": "4764a1dfc9932929e9422622aa873b4d9b69f51e44dc2c5e48438ab1bbc70da1"
+    },
+    "gsm8k-train-6893:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To solve this, I convert Sarah's time from hours to minutes.",
+        "78 minutes - 30 minutes = 48 minutes."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The conversion and subtraction use only the neutral question and standard unit arithmetic, with no unsupported claim of checker access or feedback.",
+      "raw_call_sha256": "6accf8d3fcb45cbf1495e0cb9b3343dc7f1996e6eb096f13e7ec13af81377d25",
+      "reason": "The response gives a substantive first-person account, correctly converts 1.3 hours to 78 minutes and subtracts 30 to get 48. Those numerical stages are concrete expectations and demonstrate the reusable convert-to-common-units-then-subtract method.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "3409b6068cef62194d5c9b00f713afd66882b69b28fa731ce72f561293f6e792",
+      "target_sha256": "5b28a49168b1fefe7e7048855ee009dcc330fb6035dd7ed4ac1cd1054687ef5c"
+    },
+    "gsm8k-train-852:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I needed to determine the number of ants after 5 hours.",
+        "To verify, I can reapply the doubling operation for each hour"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person operational account and reapplication check are supported by the problem, prior solution, and correct arithmetic; the verification is internal rather than an alleged external event.",
+      "raw_call_sha256": "08e7b6ccad8f99db4a2996a2a90d83ecec15a3da7689b73f8fbf80653455e66e",
+      "reason": "The response correctly performs and records each of five doublings from 50 through 1600. It gives its own account, concrete hourly expectations, and explains that repeated multiplication by two applies at each hourly doubling.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "0816e302e6246ac93073788f3d2aaf497fad4a0ea4741bb2901b76190c941c0e",
+      "target_sha256": "79674538174cec4bee9b114f0482a6c632bf63fc38a47ca80e6913f5ec376e27"
+    },
+    "gsm8k-train-852:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Let's calculate the number of ants after 5 hours.",
+        "Hour 5: 800 * 2 = 1600 ants"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The doubling sequence is fully supported by the neutral question and explicit arithmetic, and the target claims no hidden checker result or other external event.",
+      "raw_call_sha256": "3dbe0ef69bb20eb5f904719ef739ce54000dc3152afc7fad4b3ecb516c5cb73a",
+      "reason": "All five doublings are correct and provide concrete expected hourly counts plus a reusable repeated-doubling operation. However, \u201cLet's calculate\u201d is an imperative invitation/goal statement, not a substantive account by the responder of choosing or applying the operation.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "9cdee4b49b08f361d625d42cdfeeac6061469b1a7b530a653feb2a55b35e00df",
+      "target_sha256": "4d0a8924799f5e92697f32ec18c39f6b64812e197f36552fcd07ac82fe247bb0"
+    }
+  }
+}

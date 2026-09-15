@@ -1,0 +1,317 @@
+[
+  {
+    "gold": "7",
+    "question": "It is recommended that men should consume no more than 150 calories of added sugar per day. Mark took a soft drink in the afternoon that contained 2500 calories, 5% of which was from added sugar. Then he bought some bars of candy which had 25 calories of added sugar each. If he eventually exceeded the recommended intake of added sugar by 100%, how many bars of candy did he take?",
+    "question_sha256": "cf9dfc1ee259ae0515514c9af3b4d04f04566aa69b2c6cac7a2ff30f7cec111b",
+    "responses": [
+      {
+        "key": "gsm8k-train-858:rich",
+        "raw_call_sha256": "6d594024a65335e2bc23cfd075d065c340e184352f834368be8f6c1edda4d66f",
+        "student_prefix": [
+          {
+            "content": "It is recommended that men should consume no more than 150 calories of added sugar per day. Mark took a soft drink in the afternoon that contained 2500 calories, 5% of which was from added sugar. Then he bought some bars of candy which had 25 calories of added sugar each. If he eventually exceeded the recommended intake of added sugar by 100%, how many bars of candy did he take?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "eb2a03468bb7679fabae08e4c6eb85415e1de49cb390591d66fa51d59f098ae4",
+        "target": "First, I calculate the amount of added sugar in the soft drink. The soft drink contained 2500 calories, with 5% from added sugar. So, the added sugar from the soft drink is \\(2500 \\times 0.05 = 125\\) calories.\n\nThe recommended intake of added sugar is 150 calories. Exceeding this by 100% means Mark consumed \\(150 \\times 2 = 300\\) calories of added sugar.\n\nSince he already consumed 125 calories from the soft drink, the additional calories from the candy bars must be \\(300 - 125 = 175\\) calories.\n\nEach candy bar contains 25 calories of added sugar. To find out how many bars he took, I divide the additional calories by the calories per bar: \\(175 \\div 25 = 7\\).\n\nSo, Mark took 7 bars of candy.\n\nFINAL: 7",
+        "target_sha256": "b3d4390371f6422b1ed969083964591e3402f6df9d6b8ae4e95473244718527b"
+      },
+      {
+        "key": "gsm8k-train-858:new_record",
+        "raw_call_sha256": "20a8ea48b77b9e30fa9ba565b9660f4f7dadba05279baf634fbb46f5e7a78400",
+        "student_prefix": [
+          {
+            "content": "It is recommended that men should consume no more than 150 calories of added sugar per day. Mark took a soft drink in the afternoon that contained 2500 calories, 5% of which was from added sugar. Then he bought some bars of candy which had 25 calories of added sugar each. If he eventually exceeded the recommended intake of added sugar by 100%, how many bars of candy did he take?",
+            "role": "user"
+          },
+          {
+            "content": "First, I calculate the amount of added sugar in the soft drink. The soft drink contained 2500 calories, with 5% from added sugar. So, the added sugar from the soft drink is \\(2500 \\times 0.05 = 125\\) calories.\n\nThe recommended intake of added sugar is 150 calories. Exceeding this by 100% means Mark consumed \\(150 \\times 2 = 300\\) calories of added sugar.\n\nSince he already consumed 125 calories from the soft drink, the additional calories from the candy bars must be \\(300 - 125 = 175\\) calories.\n\nEach candy bar contains 25 calories of added sugar. To find out how many bars he took, I divide the additional calories by the calories per bar: \\(175 \\div 25 = 7\\).\n\nSo, Mark took 7 bars of candy.\n\nFINAL: 7",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "4150b6a9cf46cdfc20b67c386b5ceac16abaaaa1297d473e142e669f58198fe8",
+        "target": "Given the problem, I identified the key quantities: the soft drink contained 2500 calories, with 5% from added sugar, and each candy bar had 25 calories of added sugar. The recommended daily intake of added sugar is 150 calories, and Mark exceeded this by 100%, meaning he consumed 300 calories of added sugar in total.\n\nFirst, I calculated the added sugar from the soft drink:\n\\[ 2500 \\times 0.05 = 125 \\text{ calories} \\]\nThis was the initial amount of added sugar Mark consumed.\n\nNext, I determined the additional amount of added sugar he needed to exceed the recommended intake by 100%:\n\\[ 300 - 125 = 175 \\text{ calories} \\]\nThis was the total amount of added sugar from the candy bars.\n\nTo find out how many candy bars he took, I divided the additional calories by the calories per bar:\n\\[ 175 \\div 25 = 7 \\]\nThis calculation showed that Mark took 7 candy bars.\n\nTo verify the result, I checked the total added sugar:\n\\[ 125 + (7 \\times 25) = 125 + 175 = 300 \\text{ calories} \\]\nThis confirmed that Mark indeed consumed 300 calories of added sugar, which is exactly 100% more than the recommended intake.\n\nThe operation I would reuse is the calculation of the number of candy bars based on the additional calories needed to exceed the recommended intake. This can be applied to similar problems where a specific amount of calories needs to be distributed among items with a known calorie content.\n\nFINAL: 7",
+        "target_sha256": "b2a3a5a0477df65fd51c61058989e1a03f79bb992ce09f7ddf22cde968744d6c"
+      }
+    ],
+    "task_id": "gsm8k-train-858"
+  },
+  {
+    "gold": "125",
+    "question": "In a survey about the student's favorite sports, 40% said they like basketball, 10% like chess, 28% like soccer, and the rest said they like badminton. If 250 students were interviewed, how many students identified chess or basketball as their favorite sport?",
+    "question_sha256": "471c5079115cb4d39743cc1f36daf16673f891e55fee79fdda1aa12e6b049424",
+    "responses": [
+      {
+        "key": "gsm8k-train-3987:rich",
+        "raw_call_sha256": "4ef05f28ceec730eb52d716c33a23464a2167620ae6b3321b4785b7f17595ecd",
+        "student_prefix": [
+          {
+            "content": "In a survey about the student's favorite sports, 40% said they like basketball, 10% like chess, 28% like soccer, and the rest said they like badminton. If 250 students were interviewed, how many students identified chess or basketball as their favorite sport?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "75e799232818d7a680c51ccd90dc38b950ff5622081a27adab70802e1ca6ed54",
+        "target": "Given:\n- 40% like basketball\n- 10% like chess\n- 28% like soccer\n- Total students = 250\n\nFirst, calculate the number of students who like basketball:\n40% of 250 = 0.40 * 250 = 100 students\n\nNext, calculate the number of students who like chess:\n10% of 250 = 0.10 * 250 = 25 students\n\nTo find the number of students who like either chess or basketball, add the two numbers:\n100 (basketball) + 25 (chess) = 125 students\n\nCheck: The total percentage for basketball, chess, and soccer is 40% + 10% + 28% = 78%. The remaining percentage for badminton is 22%, which is consistent with the total being 100%.\n\nFINAL: 125",
+        "target_sha256": "a7fab8020379d89c33a9534e28a0dbb5e3963200286dadd8b452dd56c3019a7b"
+      },
+      {
+        "key": "gsm8k-train-3987:new_record",
+        "raw_call_sha256": "55e459f5bbc48f87c4cf95f5aacd6a28e3a8c116b397866131a2d4b69f70cb4b",
+        "student_prefix": [
+          {
+            "content": "In a survey about the student's favorite sports, 40% said they like basketball, 10% like chess, 28% like soccer, and the rest said they like badminton. If 250 students were interviewed, how many students identified chess or basketball as their favorite sport?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- 40% like basketball\n- 10% like chess\n- 28% like soccer\n- Total students = 250\n\nFirst, calculate the number of students who like basketball:\n40% of 250 = 0.40 * 250 = 100 students\n\nNext, calculate the number of students who like chess:\n10% of 250 = 0.10 * 250 = 25 students\n\nTo find the number of students who like either chess or basketball, add the two numbers:\n100 (basketball) + 25 (chess) = 125 students\n\nCheck: The total percentage for basketball, chess, and soccer is 40% + 10% + 28% = 78%. The remaining percentage for badminton is 22%, which is consistent with the total being 100%.\n\nFINAL: 125",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "4d99faaac19196bc298d3485f12fd11f3ac5da79477ccb625247752f2618783a",
+        "target": "Given the problem, I identified the following quantities:\n- 40% of students like basketball\n- 10% of students like chess\n- 28% of students like soccer\n- Total number of students interviewed = 250\n\nThe unknown I needed to find was the number of students who identified chess or basketball as their favorite sport.\n\nTo solve this, I first calculated the number of students who like basketball:\n\\[ 40\\% \\text{ of } 250 = 0.40 \\times 250 = 100 \\text{ students} \\]\n\nNext, I calculated the number of students who like chess:\n\\[ 10\\% \\text{ of } 250 = 0.10 \\times 250 = 25 \\text{ students} \\]\n\nTo find the total number of students who like either chess or basketball, I added the two results:\n\\[ 100 + 25 = 125 \\text{ students} \\]\n\nI then checked this result by confirming that the percentages for basketball, chess, and soccer add up to 78%, leaving 22% for badminton, which is consistent with the total being 100%.\n\nThe operations I used were straightforward percentage calculations and addition. I would reuse these operations in similar problems where I need to find the total of two or more given percentages of a total quantity.\n\nFINAL: 125",
+        "target_sha256": "3db2f8419ffefa2401d0504e4652a4f2f83505dcd488cf9f3c5fddf9fdc0f362"
+      }
+    ],
+    "task_id": "gsm8k-train-3987"
+  },
+  {
+    "gold": "22",
+    "question": "A pack of pretzels costs $4, while a pack of chips is 75% more expensive. Maciek went and bought two packets of chips and two packets of pretzels. How much did he pay for his purchases?",
+    "question_sha256": "f96804cf402a988a1f0fcbd69abe6d4269aaaa76d28fe6b89b2a060a2edaf7ff",
+    "responses": [
+      {
+        "key": "gsm8k-train-6562:rich",
+        "raw_call_sha256": "98a13080ca5540e88a1b7d5c19dcbb0ca3ffa2c9303e467519bb8b8243d4b048",
+        "student_prefix": [
+          {
+            "content": "A pack of pretzels costs $4, while a pack of chips is 75% more expensive. Maciek went and bought two packets of chips and two packets of pretzels. How much did he pay for his purchases?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "939750492bfd1bc685e470adc93b86230e54cda301ff7a8ece642bc216a10096",
+        "target": "First, I identify the given quantities:\n- A pack of pretzels costs $4.\n- A pack of chips is 75% more expensive than a pack of pretzels.\n- Maciek bought two packets of chips and two packets of pretzels.\n\nTo find the cost of a pack of chips, I calculate 75% of $4:\n\\[ 0.75 \\times 4 = 3 \\]\nSo, a pack of chips costs $4 + $3 = $7.\n\nNext, I calculate the total cost for two packets of chips and two packets of pretzels:\n\\[ 2 \\times 7 + 2 \\times 4 = 14 + 8 = 22 \\]\n\nMaciek paid $22 for his purchases.\n\nFINAL: 22",
+        "target_sha256": "282ffd712a43dc430ebf8f35f1ce474b4d10a453f99f5941923b30f0cbe7b914"
+      },
+      {
+        "key": "gsm8k-train-6562:new_record",
+        "raw_call_sha256": "3f3cf4a11a5cc565069b69b3e7d266188b553622c6d2b0fcb4bafc3c1d472b44",
+        "student_prefix": [
+          {
+            "content": "A pack of pretzels costs $4, while a pack of chips is 75% more expensive. Maciek went and bought two packets of chips and two packets of pretzels. How much did he pay for his purchases?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- A pack of pretzels costs $4.\n- A pack of chips is 75% more expensive than a pack of pretzels.\n- Maciek bought two packets of chips and two packets of pretzels.\n\nTo find the cost of a pack of chips, I calculate 75% of $4:\n\\[ 0.75 \\times 4 = 3 \\]\nSo, a pack of chips costs $4 + $3 = $7.\n\nNext, I calculate the total cost for two packets of chips and two packets of pretzels:\n\\[ 2 \\times 7 + 2 \\times 4 = 14 + 8 = 22 \\]\n\nMaciek paid $22 for his purchases.\n\nFINAL: 22",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "0dec32d4932ac6ebd59ea2fb892e5ab85d052c6d482213e6f035cc50ec95a219",
+        "target": "Given the problem, I identified the following quantities:\n- A pack of pretzels costs $4.\n- A pack of chips is 75% more expensive than a pack of pretzels.\n- Maciek bought two packets of chips and two packets of pretzels.\n\nTo find the cost of a pack of chips, I calculated 75% of $4:\n\\[ 0.75 \\times 4 = 3 \\]\nSo, a pack of chips costs $4 + $3 = $7.\n\nNext, I calculated the total cost for two packets of chips and two packets of pretzels:\n\\[ 2 \\times 7 + 2 \\times 4 = 14 + 8 = 22 \\]\n\nTo verify the result, I checked the individual components:\n- Two packets of chips: \\(2 \\times 7 = 14\\)\n- Two packets of pretzels: \\(2 \\times 4 = 8\\)\n- Total cost: \\(14 + 8 = 22\\)\n\nThe calculations align with the problem statement, confirming the total cost is $22.\n\nThe operation I would reuse is calculating the cost of a pack of chips based on the given percentage increase and then summing the costs of the items purchased. This method is reusable for similar problems involving percentage increases and total cost calculations.\n\nFINAL: 22",
+        "target_sha256": "3ecd75f69af2248bf495ef5618720f93a4367c063495f835127ed78f853e6d80"
+      }
+    ],
+    "task_id": "gsm8k-train-6562"
+  },
+  {
+    "gold": "1350",
+    "question": "At a certain car dealership, 15% of the cars cost less than $15000 and 40% of the cars cost more than $20000. If there are 3000 cars at the dealership, how many of them cost between $15000 and $20000?",
+    "question_sha256": "1dc72462614222f3832f7079403759b1ec86ba430738097f352e691b4e25c854",
+    "responses": [
+      {
+        "key": "gsm8k-train-6774:rich",
+        "raw_call_sha256": "a4a7f412c5ecb2f33eab8b90cb63be2f366fa4b3c532e076fdd98e56f5020c5c",
+        "student_prefix": [
+          {
+            "content": "At a certain car dealership, 15% of the cars cost less than $15000 and 40% of the cars cost more than $20000. If there are 3000 cars at the dealership, how many of them cost between $15000 and $20000?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "b8a5e41bf4cd9a0dc4668b7602a92e3796c2ea3c8fbd7af81dd62da92c5d9aad",
+        "target": "Given:\n- 15% of cars cost less than $15000\n- 40% of cars cost more than $20000\n- Total cars = 3000\n\nFirst, calculate the number of cars in each category:\n- Cars costing less than $15000: 15% of 3000 = 0.15 * 3000 = 450 cars\n- Cars costing more than $20000: 40% of 3000 = 0.40 * 3000 = 1200 cars\n\nNext, find the number of cars costing between $15000 and $20000:\n- Total cars - (cars < $15000 + cars > $20000) = 3000 - (450 + 1200) = 3000 - 1650 = 1350 cars\n\nSo, 1350 cars cost between $15000 and $20000.\n\nFINAL: 1350",
+        "target_sha256": "e7c48dd8b3290eacc17e6fffc63aa339afa834719db2e42fced3c8340aa64829"
+      },
+      {
+        "key": "gsm8k-train-6774:new_record",
+        "raw_call_sha256": "cf8712831e28b9ee88f1334fe047e5974c8ef7fadb9fd01a6c7ffef654598ce1",
+        "student_prefix": [
+          {
+            "content": "At a certain car dealership, 15% of the cars cost less than $15000 and 40% of the cars cost more than $20000. If there are 3000 cars at the dealership, how many of them cost between $15000 and $20000?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- 15% of cars cost less than $15000\n- 40% of cars cost more than $20000\n- Total cars = 3000\n\nFirst, calculate the number of cars in each category:\n- Cars costing less than $15000: 15% of 3000 = 0.15 * 3000 = 450 cars\n- Cars costing more than $20000: 40% of 3000 = 0.40 * 3000 = 1200 cars\n\nNext, find the number of cars costing between $15000 and $20000:\n- Total cars - (cars < $15000 + cars > $20000) = 3000 - (450 + 1200) = 3000 - 1650 = 1350 cars\n\nSo, 1350 cars cost between $15000 and $20000.\n\nFINAL: 1350",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "a84606bd767c2e7f71ccea13d6405ecacab05c873d07ed1323be1337005b3c3b",
+        "target": "Given the problem, I identified the following quantities:\n- 15% of cars cost less than $15000\n- 40% of cars cost more than $20000\n- Total cars = 3000\n\nThe unknown I needed to find was the number of cars that cost between $15000 and $20000.\n\nTo solve this, I first calculated the number of cars in the two known categories:\n1. Cars costing less than $15000: 15% of 3000 = 0.15 * 3000 = 450 cars\n2. Cars costing more than $20000: 40% of 3000 = 0.40 * 3000 = 1200 cars\n\nNext, I subtracted the sum of these two categories from the total number of cars to find the number of cars in the desired range:\n3000 - (450 + 1200) = 3000 - 1650 = 1350 cars\n\nThis calculation showed that 1350 cars cost between $15000 and $20000.\n\nTo check the result, I verified that the sum of the cars in all three categories equals the total number of cars:\n450 (less than $15000) + 1350 (between $15000 and $20000) + 1200 (more than $20000) = 3000 cars\n\nThis confirms the result is correct.\n\nThe operation I would reuse is the subtraction of known quantities from the total to find the unknown quantity. This is useful whenever you have a total and need to find the number of items in a specific range after accounting for other known ranges.\n\nFINAL: 1350",
+        "target_sha256": "6c38e06b225bd2e51d381abe30012b9e085b037899515d6c8a2897092b256789"
+      }
+    ],
+    "task_id": "gsm8k-train-6774"
+  },
+  {
+    "gold": "26",
+    "question": "Lily goes to the supermarket. She has $60. She needs to buy 6 items: celery, cereal, bread, milk, potatoes, and coffee. She finds a stalk of celery for $5, cereal for 50% off $12, bread for $8, and milk for 10% off $10. She finds potatoes for $1 each and buys 6. How many dollars does she have left to spend on coffee?",
+    "question_sha256": "f5482cdc4234ae5e24454c0728b3ddf484372a4331e3945e7ad1fb16293ab9d2",
+    "responses": [
+      {
+        "key": "gsm8k-train-4399:rich",
+        "raw_call_sha256": "cc738686588cc63bc5cbcd551caca0cd4cf5c8cf67e2f21093ed82a5ce6a6509",
+        "student_prefix": [
+          {
+            "content": "Lily goes to the supermarket. She has $60. She needs to buy 6 items: celery, cereal, bread, milk, potatoes, and coffee. She finds a stalk of celery for $5, cereal for 50% off $12, bread for $8, and milk for 10% off $10. She finds potatoes for $1 each and buys 6. How many dollars does she have left to spend on coffee?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "ab3253a2ea77f9ad46361e0cb547aeda941e8986f97fb2926b635fd239075690",
+        "target": "Starting with $60, let's calculate the cost of each item Lily buys.\n\n1. Celery: $5\n2. Cereal: 50% off $12, so $12 * 0.5 = $6\n3. Bread: $8\n4. Milk: 10% off $10, so $10 * 0.9 = $9\n5. Potatoes: $1 each, and she buys 6, so $1 * 6 = $6\n\nNow, let's add up the costs of these items:\n$5 (celery) + $6 (cereal) + $8 (bread) + $9 (milk) + $6 (potatoes) = $34\n\nSubtracting this total from her initial $60:\n$60 - $34 = $26\n\nLily has $26 left to spend on coffee.\n\nFINAL: 26",
+        "target_sha256": "1f446f2af7f58d33aa7d621db996a939b9d58be4f1d30972cb5a85f0edf81ffe"
+      },
+      {
+        "key": "gsm8k-train-4399:new_record",
+        "raw_call_sha256": "86e183e11ae1c052eda19a4e294ea912481e54af9c7e97df2d81a1a8f10c3d0f",
+        "student_prefix": [
+          {
+            "content": "Lily goes to the supermarket. She has $60. She needs to buy 6 items: celery, cereal, bread, milk, potatoes, and coffee. She finds a stalk of celery for $5, cereal for 50% off $12, bread for $8, and milk for 10% off $10. She finds potatoes for $1 each and buys 6. How many dollars does she have left to spend on coffee?",
+            "role": "user"
+          },
+          {
+            "content": "Starting with $60, let's calculate the cost of each item Lily buys.\n\n1. Celery: $5\n2. Cereal: 50% off $12, so $12 * 0.5 = $6\n3. Bread: $8\n4. Milk: 10% off $10, so $10 * 0.9 = $9\n5. Potatoes: $1 each, and she buys 6, so $1 * 6 = $6\n\nNow, let's add up the costs of these items:\n$5 (celery) + $6 (cereal) + $8 (bread) + $9 (milk) + $6 (potatoes) = $34\n\nSubtracting this total from her initial $60:\n$60 - $34 = $26\n\nLily has $26 left to spend on coffee.\n\nFINAL: 26",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "c914611e448ac56aac1ba9358989e6304eb2effe5c18f5d4569618f0d677feeb",
+        "target": "Given the problem, I started by identifying the quantities and the unknown. The known quantities are:\n- Lily has $60 initially.\n- She needs to buy 6 items: celery, cereal, bread, milk, potatoes, and coffee.\n- The prices of celery, cereal, bread, milk, and potatoes are given.\n- The unknown is how much money Lily has left to spend on coffee.\n\nI then listed the costs of the items:\n- Celery: $5\n- Cereal: 50% off $12, so $12 * 0.5 = $6\n- Bread: $8\n- Milk: 10% off $10, so $10 * 0.9 = $9\n- Potatoes: $1 each, and she buys 6, so $1 * 6 = $6\n\nNext, I added up the costs of these items:\n$5 (celery) + $6 (cereal) + $8 (bread) + $9 (milk) + $6 (potatoes) = $34\n\nTo find out how much money Lily has left for coffee, I subtracted the total cost of the items from her initial amount:\n$60 - $34 = $26\n\nTo verify this, I checked the arithmetic:\n- Correctly calculated the discounted prices.\n- Properly added the costs of the items.\n- Correctly subtracted the total from her initial amount.\n\nThe operation I would reuse is the subtraction of the total cost of the items from the initial amount, as it directly gives the remaining money for coffee. This operation is reusable in similar problems where the total cost of items needs to be subtracted from a given amount.\n\nFINAL: 26",
+        "target_sha256": "a6812be87a6c373175ee6b71cd96d6bff56c6d84347d2d0c85078c59f1fbfcaa"
+      }
+    ],
+    "task_id": "gsm8k-train-4399"
+  },
+  {
+    "gold": "369",
+    "question": "Alex is stacking his books in a pyramid. Each level of the pyramid has 80% as many books as the number of books in the previous level. If he makes four levels and the top level has 64 books, how many books are in the pyramid in total?",
+    "question_sha256": "afcabc34d4b7fec9551aefeb200c1f856c3eecad0436a4842e0c314102185a91",
+    "responses": [
+      {
+        "key": "gsm8k-train-2912:rich",
+        "raw_call_sha256": "e8d9caf196d9ef1bc689740ed1ab1d528bf0b307a62078a3731b74e2c432ccc6",
+        "student_prefix": [
+          {
+            "content": "Alex is stacking his books in a pyramid. Each level of the pyramid has 80% as many books as the number of books in the previous level. If he makes four levels and the top level has 64 books, how many books are in the pyramid in total?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "ae01645bc0237389e3785dbd4e05715ba0e0cb26a6203796bc54825d6d063189",
+        "target": "Given that the top level has 64 books and each subsequent level has 80% as many books as the previous one, we can calculate the number of books in each level and then sum them up.\n\n1. Top level (Level 1): 64 books\n2. Level 2: \\(64 \\times 0.8 = 51.2\\) books\n3. Level 3: \\(51.2 \\times 0.8 = 40.96\\) books\n4. Level 4: \\(40.96 \\times 0.8 = 32.768\\) books\n\nNow, sum the books in all levels:\n\\[64 + 51.2 + 40.96 + 32.768 = 188.928\\]\n\nSince the number of books must be a whole number, we round 188.928 to the nearest whole number, which is 189.\n\nFINAL: 189",
+        "target_sha256": "6e69795064ba472b04c4afd6bc92fb9a75f82a41a9759677b4314553ca9469e0"
+      }
+    ],
+    "task_id": "gsm8k-train-2912"
+  },
+  {
+    "gold": "20",
+    "question": "Marla is mixing a particular shade of lilac that's 70% blue paint, 20% red paint, and the rest white paint. If she adds 140 ounces of blue paint, how many ounces of white paint does she add?",
+    "question_sha256": "c454f8db368511c4bb7a5c34151808f0218139e47dbfef2aec90d4886f0a5e04",
+    "responses": [
+      {
+        "key": "gsm8k-train-7067:rich",
+        "raw_call_sha256": "12ee99d684e61f5664b6589553d84c9295a6cdfe90f5238763e582e20dc2fba1",
+        "student_prefix": [
+          {
+            "content": "Marla is mixing a particular shade of lilac that's 70% blue paint, 20% red paint, and the rest white paint. If she adds 140 ounces of blue paint, how many ounces of white paint does she add?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "4e6396580861518b4bc7ac932d4547caa261b1c266fa5baa1caf09a0d0ba9ae9",
+        "target": "Given that the shade of lilac is 70% blue, 20% red, and the rest white, we can determine the percentage of white paint by subtracting the percentages of blue and red from 100%. So, the percentage of white paint is 100% - 70% - 20% = 10%.\n\nMarla adds 140 ounces of blue paint, which represents 70% of the total mixture. To find the total amount of the mixture, we can set up the equation:\n\n\\[ 0.70 \\times \\text{Total Mixture} = 140 \\]\n\nSolving for the total mixture:\n\n\\[ \\text{Total Mixture} = \\frac{140}{0.70} = 200 \\text{ ounces} \\]\n\nSince the white paint makes up 10% of the total mixture, we calculate the amount of white paint as:\n\n\\[ 0.10 \\times 200 = 20 \\text{ ounces} \\]\n\nSo, Marla adds 20 ounces of white paint.\n\nFINAL: 20",
+        "target_sha256": "1214b974c6cb655f3506bc065b9555a8bd2e19ddc5585f11431efdf48833466e"
+      },
+      {
+        "key": "gsm8k-train-7067:new_record",
+        "raw_call_sha256": "ff6824d0c8b1e1b97b4a008b2f85ceb9c8f0dab921010af0d3e09121c2a3f3fb",
+        "student_prefix": [
+          {
+            "content": "Marla is mixing a particular shade of lilac that's 70% blue paint, 20% red paint, and the rest white paint. If she adds 140 ounces of blue paint, how many ounces of white paint does she add?",
+            "role": "user"
+          },
+          {
+            "content": "Given that the shade of lilac is 70% blue, 20% red, and the rest white, we can determine the percentage of white paint by subtracting the percentages of blue and red from 100%. So, the percentage of white paint is 100% - 70% - 20% = 10%.\n\nMarla adds 140 ounces of blue paint, which represents 70% of the total mixture. To find the total amount of the mixture, we can set up the equation:\n\n\\[ 0.70 \\times \\text{Total Mixture} = 140 \\]\n\nSolving for the total mixture:\n\n\\[ \\text{Total Mixture} = \\frac{140}{0.70} = 200 \\text{ ounces} \\]\n\nSince the white paint makes up 10% of the total mixture, we calculate the amount of white paint as:\n\n\\[ 0.10 \\times 200 = 20 \\text{ ounces} \\]\n\nSo, Marla adds 20 ounces of white paint.\n\nFINAL: 20",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "3b0c820fbd3c7ae2fce5c9fd275a86ee706210ed0997001b457b5c9228f99f62",
+        "target": "Given the problem, I identified the following quantities and the unknown:\n- Blue paint: 140 ounces (70% of the total mixture)\n- Red paint: 20% of the total mixture\n- White paint: 10% of the total mixture\n- Total mixture: unknown\n\nTo find the total mixture, I used the fact that 140 ounces represents 70% of the total mixture. I set up the equation:\n\\[ 0.70 \\times \\text{Total Mixture} = 140 \\]\n\nSolving for the total mixture:\n\\[ \\text{Total Mixture} = \\frac{140}{0.70} = 200 \\text{ ounces} \\]\n\nWith the total mixture known, I calculated the amount of white paint, which is 10% of the total mixture:\n\\[ 0.10 \\times 200 = 20 \\text{ ounces} \\]\n\nTo verify, I checked that the sum of the percentages of blue, red, and white paint equals 100%:\n\\[ 70\\% + 20\\% + 10\\% = 100\\% \\]\n\nAnd I confirmed that the total mixture is indeed 200 ounces, with 140 ounces of blue paint, 40 ounces of red paint (20% of 200), and 20 ounces of white paint.\n\nThe operation I would reuse is calculating the percentage of a total mixture, as it directly connects the given quantities to the unknown. This operation is useful whenever you need to find a part of a whole based on a given percentage.\n\nFINAL: 20",
+        "target_sha256": "4e50db8d0c3df763d2893d9b2240da349651af7a0dae796ecdef3d73f2fae3cb"
+      }
+    ],
+    "task_id": "gsm8k-train-7067"
+  },
+  {
+    "gold": "17",
+    "question": "Gabriel is looking at her marble sets. She sees that in the first set 10% of her marbles are broken. In the second set, 20% of the marbles are broken. The first set contains 50 marbles. The second set contains 60. How many marbles are broken in total?",
+    "question_sha256": "2c72b93136981c0eaa7f97d4d47eff47516d50aeb00822fbe5761c984f10a4fe",
+    "responses": [
+      {
+        "key": "gsm8k-train-4746:rich",
+        "raw_call_sha256": "c386318149b103f5787ea54a4402cfd7b571f97bff917a5e834e950187768a45",
+        "student_prefix": [
+          {
+            "content": "Gabriel is looking at her marble sets. She sees that in the first set 10% of her marbles are broken. In the second set, 20% of the marbles are broken. The first set contains 50 marbles. The second set contains 60. How many marbles are broken in total?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "01e6320969cccf719785e116613359c2cf86ea0de1e8a7741b63a530dc37aa22",
+        "target": "First, I identify the given quantities:\n- In the first set, 10% of 50 marbles are broken.\n- In the second set, 20% of 60 marbles are broken.\n\nNext, I calculate the number of broken marbles in each set:\n- For the first set: \\( 10\\% \\) of 50 is \\( 0.10 \\times 50 = 5 \\) broken marbles.\n- For the second set: \\( 20\\% \\) of 60 is \\( 0.20 \\times 60 = 12 \\) broken marbles.\n\nNow, I add the broken marbles from both sets to find the total number of broken marbles:\n- Total broken marbles = \\( 5 + 12 = 17 \\).\n\nFINAL: 17",
+        "target_sha256": "139e84c91a110e072e82e70b441d067d777fe8c4db3f91b7cd7c982e057c39e2"
+      },
+      {
+        "key": "gsm8k-train-4746:new_record",
+        "raw_call_sha256": "5227cf768b72e5d1d328c424de2e0b02b507c874c9d49d46854b696686be08b7",
+        "student_prefix": [
+          {
+            "content": "Gabriel is looking at her marble sets. She sees that in the first set 10% of her marbles are broken. In the second set, 20% of the marbles are broken. The first set contains 50 marbles. The second set contains 60. How many marbles are broken in total?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- In the first set, 10% of 50 marbles are broken.\n- In the second set, 20% of 60 marbles are broken.\n\nNext, I calculate the number of broken marbles in each set:\n- For the first set: \\( 10\\% \\) of 50 is \\( 0.10 \\times 50 = 5 \\) broken marbles.\n- For the second set: \\( 20\\% \\) of 60 is \\( 0.20 \\times 60 = 12 \\) broken marbles.\n\nNow, I add the broken marbles from both sets to find the total number of broken marbles:\n- Total broken marbles = \\( 5 + 12 = 17 \\).\n\nFINAL: 17",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "e19eb5c18a04194975a7ac1f8acdc3aff268b91e6cbabbd87b67cd72d38abb40",
+        "target": "Given the problem, I first identified the quantities provided:\n- In the first set, 10% of 50 marbles are broken.\n- In the second set, 20% of 60 marbles are broken.\n\nI then calculated the number of broken marbles in each set:\n- For the first set: 10% of 50 is \\(0.10 \\times 50 = 5\\) broken marbles.\n- For the second set: 20% of 60 is \\(0.20 \\times 60 = 12\\) broken marbles.\n\nNext, I added the broken marbles from both sets to find the total number of broken marbles:\n- Total broken marbles = \\(5 + 12 = 17\\).\n\nTo verify this result, I checked the arithmetic operations:\n- The calculation for the first set: \\(0.10 \\times 50 = 5\\) is correct.\n- The calculation for the second set: \\(0.20 \\times 60 = 12\\) is correct.\n- Adding the results: \\(5 + 12 = 17\\) is correct.\n\nThe operations I used are straightforward percentage calculations and addition. These operations are reusable whenever I need to find the total of a percentage of two different quantities. I would apply the same method to any similar problem where I need to find the total of a percentage of two different sets.\n\nFINAL: 17",
+        "target_sha256": "2c05319eb2967558da299fe28d28eefb7b83bafcd12dcbc61cc6ec310b7bf303"
+      }
+    ],
+    "task_id": "gsm8k-train-4746"
+  }
+]

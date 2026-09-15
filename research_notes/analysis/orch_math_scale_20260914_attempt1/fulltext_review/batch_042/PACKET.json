@@ -1,0 +1,317 @@
+[
+  {
+    "gold": "120",
+    "question": "Every hour Joanne has to collect the coins out of the fountain inside the mall. During the first hour, she collected 15 coins. For the next two hours, she collected 35 coins from the fountain. In the fourth hour, she collected 50 coins from the fountain but she gave 15 of them to her coworker so she could buy a soda. How many coins did she have after the fourth hour?",
+    "question_sha256": "15f8fcd5272593e98d001ffd1d9ee524d4be738f5dcb8d8ea955fec596fe213f",
+    "responses": [
+      {
+        "key": "gsm8k-train-59:rich",
+        "raw_call_sha256": "077b91b1b66e9a3f347000af90d4f6371c97677aaeae0526cf97236e536713fb",
+        "student_prefix": [
+          {
+            "content": "Every hour Joanne has to collect the coins out of the fountain inside the mall. During the first hour, she collected 15 coins. For the next two hours, she collected 35 coins from the fountain. In the fourth hour, she collected 50 coins from the fountain but she gave 15 of them to her coworker so she could buy a soda. How many coins did she have after the fourth hour?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "7c0945b5d66ce49c5673ec904c29cbffeadd955471baccfb1d33e029fb63f87e",
+        "target": "In the first hour, I collected 15 coins. In the next two hours, I collected 35 coins each hour, so that's 35 * 2 = 70 coins. After the first three hours, I had 15 + 70 = 85 coins. In the fourth hour, I collected 50 coins but gave 15 to my coworker, so I added 50 - 15 = 35 coins to my total. Adding this to my previous total, I have 85 + 35 = 120 coins after the fourth hour.\n\nFINAL: 120",
+        "target_sha256": "e706b255eeb4d1338ae907b73a7459c9d996ee9faa71abdbe7a340bf6f7a394e"
+      },
+      {
+        "key": "gsm8k-train-59:new_record",
+        "raw_call_sha256": "588aab95b7aad430025c2326520e6b4121403043d66b7044c6787a0ebbd6c69d",
+        "student_prefix": [
+          {
+            "content": "Every hour Joanne has to collect the coins out of the fountain inside the mall. During the first hour, she collected 15 coins. For the next two hours, she collected 35 coins from the fountain. In the fourth hour, she collected 50 coins from the fountain but she gave 15 of them to her coworker so she could buy a soda. How many coins did she have after the fourth hour?",
+            "role": "user"
+          },
+          {
+            "content": "In the first hour, I collected 15 coins. In the next two hours, I collected 35 coins each hour, so that's 35 * 2 = 70 coins. After the first three hours, I had 15 + 70 = 85 coins. In the fourth hour, I collected 50 coins but gave 15 to my coworker, so I added 50 - 15 = 35 coins to my total. Adding this to my previous total, I have 85 + 35 = 120 coins after the fourth hour.\n\nFINAL: 120",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "962018ac93470599fae859a63c127a6b71901c9034ac1d9ae4de6c6ea084e049",
+        "target": "Given the problem, I identified the following quantities and the unknown:\n- In the first hour, I collected 15 coins.\n- In the next two hours, I collected 35 coins each hour.\n- In the fourth hour, I collected 50 coins but gave 15 to my coworker.\n\nThe unknown is the total number of coins I had after the fourth hour.\n\nTo solve this, I first calculated the total number of coins collected in the first three hours:\n15 (first hour) + 35 (second hour) + 35 (third hour) = 85 coins.\n\nNext, I considered the fourth hour's collection and the coins given away:\n50 (fourth hour) - 15 (given to coworker) = 35 coins.\n\nAdding this to the total from the first three hours:\n85 (from first three hours) + 35 (from fourth hour) = 120 coins.\n\nTo verify this, I checked the operations step-by-step:\n1. First hour: 15 coins.\n2. Second hour: 35 coins.\n3. Third hour: 35 coins.\n4. Fourth hour: 50 coins, but 15 were given away, leaving 35 coins.\n\nSumming these up:\n15 + 35 + 35 + 35 = 120 coins.\n\nThe operations used are straightforward addition and subtraction, and the result matches the problem statement.\n\nFINAL: 120",
+        "target_sha256": "41753c389f2e8d9517783bfbfc2a3e1be9db421d587d4c82530a62af3e781a04"
+      }
+    ],
+    "task_id": "gsm8k-train-59"
+  },
+  {
+    "gold": "2",
+    "question": "It takes 1 hour for refrigerated dough to come to room temperature.  It takes 15 minutes to shape the dough and 2 hours to proof.  The bread takes 30 minutes to bake and 15 minutes to cool.  If the bakery opens at 6:00 am, what is the latest time the head baker can make it to the store to start working?",
+    "question_sha256": "abc31c4f97f7b9bd79facf11972747fdf95fcb422b069450487926d91702d529",
+    "responses": [
+      {
+        "key": "gsm8k-train-5521:rich",
+        "raw_call_sha256": "c9830756e495b94a92f7c0e15ea289ddfc880d3e9900ef66a557efe712571a4d",
+        "student_prefix": [
+          {
+            "content": "It takes 1 hour for refrigerated dough to come to room temperature.  It takes 15 minutes to shape the dough and 2 hours to proof.  The bread takes 30 minutes to bake and 15 minutes to cool.  If the bakery opens at 6:00 am, what is the latest time the head baker can make it to the store to start working?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "6a9d5ebc0666064be4aa27e3124f7a4fd80bfae26f7847f30388279168f072cb",
+        "target": "The total time required for the process is the sum of the time for each step:\n- 1 hour for coming to room temperature\n- 15 minutes for shaping\n- 2 hours for proofing\n- 30 minutes for baking\n- 15 minutes for cooling\n\nFirst, convert all times to minutes for easier addition:\n- 1 hour = 60 minutes\n- 15 minutes (shaping) = 15 minutes\n- 2 hours = 120 minutes\n- 30 minutes (baking) = 30 minutes\n- 15 minutes (cooling) = 15 minutes\n\nAdding these times together:\n60 + 15 + 120 + 30 + 15 = 240 minutes\n\n240 minutes is equivalent to 4 hours. The bakery opens at 6:00 am, so we need to subtract 4 hours from this time to find the latest the head baker can arrive:\n6:00 am - 4 hours = 2:00 am\n\nThe latest the head baker can make it to the store to start working is 2:00 am.\n\nFINAL: 2:00",
+        "target_sha256": "761e8b247bfb38bf8ec2ed5d8cf79c05fc432bfc31a71c48c60493c8822c809d"
+      }
+    ],
+    "task_id": "gsm8k-train-5521"
+  },
+  {
+    "gold": "12",
+    "question": "Jack bought an ice cream cone before jogging to the beach. If the ice cream cone will melt in 10 minutes, the beach is 16 blocks away, and each block is 1/8th of a mile, how fast does Jack need to jog (in miles per hour) to get to the beach before the ice cream melts?",
+    "question_sha256": "4fc2035d23312e4dca3d1704f21e802120b83c07d5a156d946ba68271319a4a7",
+    "responses": [
+      {
+        "key": "gsm8k-train-4485:rich",
+        "raw_call_sha256": "b9c235f762ef931be8d481a81b8aa14e9152b4d0d7ce5581a60d1fa3f92a7a8a",
+        "student_prefix": [
+          {
+            "content": "Jack bought an ice cream cone before jogging to the beach. If the ice cream cone will melt in 10 minutes, the beach is 16 blocks away, and each block is 1/8th of a mile, how fast does Jack need to jog (in miles per hour) to get to the beach before the ice cream melts?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "2379336670c2a8e24b5513487b22edc3484da81f6c92c35e8d8a62c14e8a5111",
+        "target": "First, I identify the given quantities:\n- Ice cream melts in 10 minutes.\n- Beach is 16 blocks away.\n- Each block is 1/8th of a mile.\n\nTo find the distance to the beach in miles:\n\\[ 16 \\text{ blocks} \\times \\frac{1}{8} \\text{ mile/block} = 2 \\text{ miles} \\]\n\nNext, I need to determine the speed Jack needs to jog to cover 2 miles in 10 minutes. First, convert 10 minutes to hours:\n\\[ 10 \\text{ minutes} \\times \\frac{1 \\text{ hour}}{60 \\text{ minutes}} = \\frac{1}{6} \\text{ hour} \\]\n\nNow, calculate the required speed in miles per hour:\n\\[ \\text{Speed} = \\frac{\\text{Distance}}{\\text{Time}} = \\frac{2 \\text{ miles}}{\\frac{1}{6} \\text{ hour}} = 2 \\times 6 = 12 \\text{ miles per hour} \\]\n\nFinally, I check the result: Jack needs to jog at 12 miles per hour to reach the beach before the ice cream melts.\n\nFINAL: 12",
+        "target_sha256": "5dd808dd203b3cc58c6b99a4c6e0570ec0454ba8a3bda4ffb642837019f55f70"
+      },
+      {
+        "key": "gsm8k-train-4485:new_record",
+        "raw_call_sha256": "565e388f58933fed5b73f623e342ff041e3a5c257cae4faade3a028f1397e8da",
+        "student_prefix": [
+          {
+            "content": "Jack bought an ice cream cone before jogging to the beach. If the ice cream cone will melt in 10 minutes, the beach is 16 blocks away, and each block is 1/8th of a mile, how fast does Jack need to jog (in miles per hour) to get to the beach before the ice cream melts?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Ice cream melts in 10 minutes.\n- Beach is 16 blocks away.\n- Each block is 1/8th of a mile.\n\nTo find the distance to the beach in miles:\n\\[ 16 \\text{ blocks} \\times \\frac{1}{8} \\text{ mile/block} = 2 \\text{ miles} \\]\n\nNext, I need to determine the speed Jack needs to jog to cover 2 miles in 10 minutes. First, convert 10 minutes to hours:\n\\[ 10 \\text{ minutes} \\times \\frac{1 \\text{ hour}}{60 \\text{ minutes}} = \\frac{1}{6} \\text{ hour} \\]\n\nNow, calculate the required speed in miles per hour:\n\\[ \\text{Speed} = \\frac{\\text{Distance}}{\\text{Time}} = \\frac{2 \\text{ miles}}{\\frac{1}{6} \\text{ hour}} = 2 \\times 6 = 12 \\text{ miles per hour} \\]\n\nFinally, I check the result: Jack needs to jog at 12 miles per hour to reach the beach before the ice cream melts.\n\nFINAL: 12",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "53a09e3ede8d9993876f1378fdd38dca8bea63bbf2c4f567947c9a836f9da267",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- Ice cream melts in 10 minutes.\n- Beach is 16 blocks away.\n- Each block is 1/8th of a mile.\n- The unknown is the speed Jack needs to jog in miles per hour to reach the beach before the ice cream melts.\n\nFirst, I converted the distance to miles:\n\\[ 16 \\text{ blocks} \\times \\frac{1}{8} \\text{ mile/block} = 2 \\text{ miles} \\]\n\nNext, I converted the time from minutes to hours:\n\\[ 10 \\text{ minutes} \\times \\frac{1 \\text{ hour}}{60 \\text{ minutes}} = \\frac{1}{6} \\text{ hour} \\]\n\nThen, I calculated the required speed:\n\\[ \\text{Speed} = \\frac{\\text{Distance}}{\\text{Time}} = \\frac{2 \\text{ miles}}{\\frac{1}{6} \\text{ hour}} = 2 \\times 6 = 12 \\text{ miles per hour} \\]\n\nTo check the result, I verified that jogging at 12 miles per hour would indeed cover 2 miles in 10 minutes:\n\\[ \\text{Time} = \\frac{\\text{Distance}}{\\text{Speed}} = \\frac{2 \\text{ miles}}{12 \\text{ miles per hour}} = \\frac{1}{6} \\text{ hour} = 10 \\text{ minutes} \\]\n\nThe operations I used were straightforward conversions and the speed formula. I would reuse these operations whenever I need to calculate speed given distance and time, especially in scenarios involving different units of measurement.\n\nFINAL: 12",
+        "target_sha256": "ed378a847bd3dcb92f886da487150f4b47e18b2189753ad7fbe5de235f16bfe8"
+      }
+    ],
+    "task_id": "gsm8k-train-4485"
+  },
+  {
+    "gold": "6",
+    "question": "Milo can roll downhill on his skateboard at twice the speed that he can run.  And Milo's best friend, Cory, can drive his wheelchair at twice the speed that Milo can roll downhill on his skateboard.  If Cory always drives his wheelchair at 12 miles per hour, how many miles can Milo run in two hours?",
+    "question_sha256": "3f33d646d20ca7c4a8ea80abbca61da16505fe2a9e6f28f7e8219199e8909cf4",
+    "responses": [
+      {
+        "key": "gsm8k-train-1880:rich",
+        "raw_call_sha256": "e21736b47d0db41305b5031cea7eaffc1f202b752f7376017281894093b76c7f",
+        "student_prefix": [
+          {
+            "content": "Milo can roll downhill on his skateboard at twice the speed that he can run.  And Milo's best friend, Cory, can drive his wheelchair at twice the speed that Milo can roll downhill on his skateboard.  If Cory always drives his wheelchair at 12 miles per hour, how many miles can Milo run in two hours?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "c1bb7e0a8bd0a04c34a0f3513cb02d3a055d7d7f24cde335e4f94294dd87a505",
+        "target": "Given:\n- Cory's wheelchair speed = 12 miles per hour\n- Cory's speed = 2 * Milo's skateboard speed\n- Milo's skateboard speed = 2 * Milo's running speed\n\nFrom the given information:\n1. Cory's speed = 12 mph\n2. Milo's skateboard speed = 12 / 2 = 6 mph\n3. Milo's running speed = 6 / 2 = 3 mph\n\nTo find how many miles Milo can run in two hours:\n- Milo's running speed = 3 mph\n- Distance = Speed * Time\n- Distance Milo can run in 2 hours = 3 mph * 2 hours = 6 miles\n\nFINAL: 6",
+        "target_sha256": "710fd51fad1aabf26c6cf4624ef30579e1abc3b4036e41dc3154898e833c864f"
+      },
+      {
+        "key": "gsm8k-train-1880:new_record",
+        "raw_call_sha256": "7d85a9dec5bd1b499d8dad21a41ee9631dd3e1fef26f12891e4ec0d7795f198b",
+        "student_prefix": [
+          {
+            "content": "Milo can roll downhill on his skateboard at twice the speed that he can run.  And Milo's best friend, Cory, can drive his wheelchair at twice the speed that Milo can roll downhill on his skateboard.  If Cory always drives his wheelchair at 12 miles per hour, how many miles can Milo run in two hours?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Cory's wheelchair speed = 12 miles per hour\n- Cory's speed = 2 * Milo's skateboard speed\n- Milo's skateboard speed = 2 * Milo's running speed\n\nFrom the given information:\n1. Cory's speed = 12 mph\n2. Milo's skateboard speed = 12 / 2 = 6 mph\n3. Milo's running speed = 6 / 2 = 3 mph\n\nTo find how many miles Milo can run in two hours:\n- Milo's running speed = 3 mph\n- Distance = Speed * Time\n- Distance Milo can run in 2 hours = 3 mph * 2 hours = 6 miles\n\nFINAL: 6",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "800639443e8bb21615627579b77390250e43161f777624c2f779c133e64cdf6a",
+        "target": "Given the problem, I identified the key quantities and relationships:\n- Cory's wheelchair speed: 12 miles per hour\n- Milo's skateboard speed is half of Cory's wheelchair speed\n- Milo's running speed is half of his skateboard speed\n\nFrom these, I calculated Milo's running speed:\n1. Milo's skateboard speed = 12 mph / 2 = 6 mph\n2. Milo's running speed = 6 mph / 2 = 3 mph\n\nNext, I needed to determine how far Milo could run in two hours:\n- Distance = Speed * Time\n- Distance Milo can run in 2 hours = 3 mph * 2 hours = 6 miles\n\nTo verify this, I considered the problem's constraints and the logical steps I took. The operations were straightforward and based on the given relationships. The result, 6 miles, directly answers the question of how far Milo can run in two hours.\n\nThe operations I used are reusable in similar problems involving proportional relationships and distance calculations. I would apply the same method whenever I need to find a speed or distance based on given proportional relationships.\n\nFINAL: 6",
+        "target_sha256": "a9bcd4991d7d4a8d0f14aff4f38dd3d6c4f9142fa0e8b5ce381258115ee05ba4"
+      }
+    ],
+    "task_id": "gsm8k-train-1880"
+  },
+  {
+    "gold": "30",
+    "question": "Keanu was surfing towards the shore at a speed of 20 miles per hour.  A shark was swimming alongside him, riding the same wave, when it doubled its speed and moved away from Keanu.  There was a pilot fish swimming alongside Keanu and the shark, and when the shark increased its speed, the pilot fish also increased its speed and moved away from Keanu, but only increasing its speed by half as much as the shark had increased its speed by.  What speed, in miles per hour, was the pilot fish swimming when it moved away from Keanu?",
+    "question_sha256": "70710b68cbd725ca176c0b3b9297448a577b8463c0301ec7ac96b316596debd8",
+    "responses": [
+      {
+        "key": "gsm8k-train-2586:rich",
+        "raw_call_sha256": "6f9b2dbc87444eb34b05025c0e2ad5c894aee93a574490ea6d8052b914743d5e",
+        "student_prefix": [
+          {
+            "content": "Keanu was surfing towards the shore at a speed of 20 miles per hour.  A shark was swimming alongside him, riding the same wave, when it doubled its speed and moved away from Keanu.  There was a pilot fish swimming alongside Keanu and the shark, and when the shark increased its speed, the pilot fish also increased its speed and moved away from Keanu, but only increasing its speed by half as much as the shark had increased its speed by.  What speed, in miles per hour, was the pilot fish swimming when it moved away from Keanu?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "7c816dd0e3f7f4852ee867640f179600ff56a405a53aeedd853de41ed351ac8f",
+        "target": "Keanu was surfing at 20 miles per hour. The shark doubled its speed, so it increased by 20 miles per hour (since doubling 20 mph results in 40 mph, the increase is 20 mph). The pilot fish increased its speed by half as much as the shark, so the pilot fish increased its speed by 10 miles per hour (half of 20 mph). \n\nKeanu was originally at 20 mph, and the pilot fish increased its speed by 10 mph, so the pilot fish was swimming at 30 miles per hour when it moved away from Keanu.\n\nFINAL: 30",
+        "target_sha256": "5d79e31ade13a47101aa8f425b320b07bf5aba7a8272efd9d7f24c9eec770176"
+      },
+      {
+        "key": "gsm8k-train-2586:new_record",
+        "raw_call_sha256": "6367c5a26af65b0ce2a3a7c26ddceee5cb8b953883f67b7e12134a8ea5aaac34",
+        "student_prefix": [
+          {
+            "content": "Keanu was surfing towards the shore at a speed of 20 miles per hour.  A shark was swimming alongside him, riding the same wave, when it doubled its speed and moved away from Keanu.  There was a pilot fish swimming alongside Keanu and the shark, and when the shark increased its speed, the pilot fish also increased its speed and moved away from Keanu, but only increasing its speed by half as much as the shark had increased its speed by.  What speed, in miles per hour, was the pilot fish swimming when it moved away from Keanu?",
+            "role": "user"
+          },
+          {
+            "content": "Keanu was surfing at 20 miles per hour. The shark doubled its speed, so it increased by 20 miles per hour (since doubling 20 mph results in 40 mph, the increase is 20 mph). The pilot fish increased its speed by half as much as the shark, so the pilot fish increased its speed by 10 miles per hour (half of 20 mph). \n\nKeanu was originally at 20 mph, and the pilot fish increased its speed by 10 mph, so the pilot fish was swimming at 30 miles per hour when it moved away from Keanu.\n\nFINAL: 30",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "87147f4538fcef4319a5f11f510ec73c501a5d91be5d4a994d847a2b4fa31b08",
+        "target": "Given that Keanu was surfing at 20 miles per hour, and the shark doubled its speed, I first identified the shark's speed increase. The shark's initial speed was 20 miles per hour, and doubling this speed meant it increased by 20 miles per hour. The pilot fish increased its speed by half of this increase, which is 10 miles per hour. Adding this increase to the pilot fish's original speed (which was the same as Keanu's, 20 miles per hour), the pilot fish's new speed was 30 miles per hour.\n\nTo verify, I checked the problem statement and the operations I performed:\n1. Shark's initial speed: 20 mph.\n2. Shark's speed increase: 20 mph (doubling).\n3. Pilot fish's speed increase: 10 mph (half of the shark's increase).\n4. Pilot fish's new speed: 20 mph + 10 mph = 30 mph.\n\nThe final speed of the pilot fish was 30 miles per hour.\n\nFINAL: 30",
+        "target_sha256": "b1e14cda4d9d05921d591ed9b373d6554d0d0a341fafe2e05f232b998d819db7"
+      }
+    ],
+    "task_id": "gsm8k-train-2586"
+  },
+  {
+    "gold": "34",
+    "question": "Dustin and Sam are both reading. Dustin can read 75 pages in an hour. Sam can read 24 pages in an hour. How many more pages does Dustin read in 40 minutes compared to Sam?",
+    "question_sha256": "b322902d2b4c9a5f1564784395e2af3d3c0e8891b706a46cdd54cbfa13c659fe",
+    "responses": [
+      {
+        "key": "gsm8k-train-5650:rich",
+        "raw_call_sha256": "5b04115a0012bf2bea274681a896d5073a07d3f4ff64cf7db5ff4fb2e5de5f97",
+        "student_prefix": [
+          {
+            "content": "Dustin and Sam are both reading. Dustin can read 75 pages in an hour. Sam can read 24 pages in an hour. How many more pages does Dustin read in 40 minutes compared to Sam?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "8864ad687ae79d4a0d5377697cbe61221a0c2768409d945bef508dc477f22806",
+        "target": "First, I identify the given quantities:\n- Dustin reads 75 pages in 1 hour.\n- Sam reads 24 pages in 1 hour.\n- We need to find how many more pages Dustin reads than Sam in 40 minutes.\n\nNext, I calculate the number of pages each reads in 40 minutes:\n- Since 40 minutes is 2/3 of an hour, Dustin reads \\(75 \\times \\frac{2}{3} = 50\\) pages in 40 minutes.\n- Similarly, Sam reads \\(24 \\times \\frac{2}{3} = 16\\) pages in 40 minutes.\n\nNow, I find the difference:\n- Dustin reads 50 pages, and Sam reads 16 pages, so the difference is \\(50 - 16 = 34\\) pages.\n\nFINAL: 34",
+        "target_sha256": "1142ee9cbe999f490f90820974767b654b42f104cfa108a25faab1e96b00619c"
+      },
+      {
+        "key": "gsm8k-train-5650:new_record",
+        "raw_call_sha256": "b26276f1cabb73e96b03db06597c366aa233b8be051697c20f5949c8738b1b1e",
+        "student_prefix": [
+          {
+            "content": "Dustin and Sam are both reading. Dustin can read 75 pages in an hour. Sam can read 24 pages in an hour. How many more pages does Dustin read in 40 minutes compared to Sam?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Dustin reads 75 pages in 1 hour.\n- Sam reads 24 pages in 1 hour.\n- We need to find how many more pages Dustin reads than Sam in 40 minutes.\n\nNext, I calculate the number of pages each reads in 40 minutes:\n- Since 40 minutes is 2/3 of an hour, Dustin reads \\(75 \\times \\frac{2}{3} = 50\\) pages in 40 minutes.\n- Similarly, Sam reads \\(24 \\times \\frac{2}{3} = 16\\) pages in 40 minutes.\n\nNow, I find the difference:\n- Dustin reads 50 pages, and Sam reads 16 pages, so the difference is \\(50 - 16 = 34\\) pages.\n\nFINAL: 34",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "72780ab78ac4c251b21d7de6ac03ef848fdf5a0494852c37ad394f43bfe7db34",
+        "target": "Given the problem, I identified the key quantities: Dustin reads 75 pages in an hour, and Sam reads 24 pages in an hour. The task was to find how many more pages Dustin reads than Sam in 40 minutes. I first converted 40 minutes to a fraction of an hour, recognizing that 40 minutes is 2/3 of an hour. \n\nTo find the number of pages each reads in 40 minutes, I used the operation of multiplying the hourly reading rate by 2/3. For Dustin, this was \\(75 \\times \\frac{2}{3} = 50\\) pages. For Sam, it was \\(24 \\times \\frac{2}{3} = 16\\) pages. The difference in the number of pages read by Dustin and Sam in 40 minutes was then calculated as \\(50 - 16 = 34\\) pages.\n\nTo verify this result, I checked the arithmetic operations and the conversion of time. The multiplication and subtraction were straightforward and accurate. The final check involved ensuring the arithmetic was correct and the units were consistent (pages).\n\nThe operation I would reuse is the conversion of time from minutes to a fraction of an hour and the multiplication of the hourly rate by this fraction to find the number of pages read in a given time. This operation is reusable in similar problems involving different reading rates and time intervals.\n\nFINAL: 34",
+        "target_sha256": "ffa16b021f301b58ccde404813af9c00d41e74391f1e9999738a995223577701"
+      }
+    ],
+    "task_id": "gsm8k-train-5650"
+  },
+  {
+    "gold": "180",
+    "question": "In a car racing competition, Skye drove a 6-kilometer track. For the first 3 kilometers, his speed was 150 kilometers per hour. For the next 2 kilometers, his speed was 50 kilometers per hour more. For the remaining 1 kilometer, his speed was twice as fast as his speed on the first 3 kilometers. What is Skye's average speed for the entire race?",
+    "question_sha256": "38699f90d68e2e7a9860b4fcd1349c4000e7f84c64d252c76c040a0426cb8307",
+    "responses": [
+      {
+        "key": "gsm8k-train-1722:rich",
+        "raw_call_sha256": "aaea92d98923696b7cc83911da6f7aa009b36364def187e37d1b79b413ba5df4",
+        "student_prefix": [
+          {
+            "content": "In a car racing competition, Skye drove a 6-kilometer track. For the first 3 kilometers, his speed was 150 kilometers per hour. For the next 2 kilometers, his speed was 50 kilometers per hour more. For the remaining 1 kilometer, his speed was twice as fast as his speed on the first 3 kilometers. What is Skye's average speed for the entire race?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "aee8349296482be4910d359a47d74e9d02f778cd8daee3abb225a4bc8ff5b42b",
+        "target": "Given:\n- Skye drove 6 kilometers in total.\n- For the first 3 kilometers, his speed was 150 km/h.\n- For the next 2 kilometers, his speed was 150 km/h + 50 km/h = 200 km/h.\n- For the last 1 kilometer, his speed was 2 * 150 km/h = 300 km/h.\n\nTo find the average speed, we need to calculate the total time taken and then use the formula: average speed = total distance / total time.\n\n1. Time for the first 3 kilometers:\n   \\[\n   \\text{Time} = \\frac{\\text{Distance}}{\\text{Speed}} = \\frac{3 \\text{ km}}{150 \\text{ km/h}} = 0.02 \\text{ hours}\n   \\]\n\n2. Time for the next 2 kilometers:\n   \\[\n   \\text{Time} = \\frac{2 \\text{ km}}{200 \\text{ km/h}} = 0.01 \\text{ hours}\n   \\]\n\n3. Time for the last 1 kilometer:\n   \\[\n   \\text{Time} = \\frac{1 \\text{ km}}{300 \\text{ km/h}} = \\frac{1}{300} \\text{ hours} \\approx 0.00333 \\text{ hours}\n   \\]\n\nTotal time:\n\\[\n0.02 \\text{ hours} + 0.01 \\text{ hours} + 0.00333 \\text{ hours} = 0.03333 \\text{ hours}\n\\]\n\nTotal distance:\n\\[\n6 \\text{ km}\n\\]\n\nAverage speed:\n\\[\n\\text{Average speed} = \\frac{6 \\text{ km}}{0.03333 \\text{ hours}} \\approx 180 \\text{ km/h}\n\\]\n\nFINAL: 180",
+        "target_sha256": "f12e5abda6c04c8089267946ef200348dba78c925ee24c18005b6fdfac85ee95"
+      },
+      {
+        "key": "gsm8k-train-1722:new_record",
+        "raw_call_sha256": "d370fcea65dc37a528421436e85b14c41f1f99429bac6f5b6471d4f0e1b6a667",
+        "student_prefix": [
+          {
+            "content": "In a car racing competition, Skye drove a 6-kilometer track. For the first 3 kilometers, his speed was 150 kilometers per hour. For the next 2 kilometers, his speed was 50 kilometers per hour more. For the remaining 1 kilometer, his speed was twice as fast as his speed on the first 3 kilometers. What is Skye's average speed for the entire race?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Skye drove 6 kilometers in total.\n- For the first 3 kilometers, his speed was 150 km/h.\n- For the next 2 kilometers, his speed was 150 km/h + 50 km/h = 200 km/h.\n- For the last 1 kilometer, his speed was 2 * 150 km/h = 300 km/h.\n\nTo find the average speed, we need to calculate the total time taken and then use the formula: average speed = total distance / total time.\n\n1. Time for the first 3 kilometers:\n   \\[\n   \\text{Time} = \\frac{\\text{Distance}}{\\text{Speed}} = \\frac{3 \\text{ km}}{150 \\text{ km/h}} = 0.02 \\text{ hours}\n   \\]\n\n2. Time for the next 2 kilometers:\n   \\[\n   \\text{Time} = \\frac{2 \\text{ km}}{200 \\text{ km/h}} = 0.01 \\text{ hours}\n   \\]\n\n3. Time for the last 1 kilometer:\n   \\[\n   \\text{Time} = \\frac{1 \\text{ km}}{300 \\text{ km/h}} = \\frac{1}{300} \\text{ hours} \\approx 0.00333 \\text{ hours}\n   \\]\n\nTotal time:\n\\[\n0.02 \\text{ hours} + 0.01 \\text{ hours} + 0.00333 \\text{ hours} = 0.03333 \\text{ hours}\n\\]\n\nTotal distance:\n\\[\n6 \\text{ km}\n\\]\n\nAverage speed:\n\\[\n\\text{Average speed} = \\frac{6 \\text{ km}}{0.03333 \\text{ hours}} \\approx 180 \\text{ km/h}\n\\]\n\nFINAL: 180",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "c362bc33381bad6ee861e5a619b8b259835a9818dc745e070400a6a8f37420ef",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- Skye drove 6 kilometers in total.\n- For the first 3 kilometers, his speed was 150 km/h.\n- For the next 2 kilometers, his speed was 200 km/h.\n- For the last 1 kilometer, his speed was 300 km/h.\n- The unknown is Skye's average speed for the entire race.\n\nTo find the average speed, I needed to calculate the total time taken for the race and then use the formula: average speed = total distance / total time.\n\nFirst, I calculated the time taken for each segment of the race:\n1. For the first 3 kilometers at 150 km/h:\n   \\[\n   \\text{Time} = \\frac{3 \\text{ km}}{150 \\text{ km/h}} = 0.02 \\text{ hours}\n   \\]\n2. For the next 2 kilometers at 200 km/h:\n   \\[\n   \\text{Time} = \\frac{2 \\text{ km}}{200 \\text{ km/h}} = 0.01 \\text{ hours}\n   \\]\n3. For the last 1 kilometer at 300 km/h:\n   \\[\n   \\text{Time} = \\frac{1 \\text{ km}}{300 \\text{ km/h}} = \\frac{1}{300} \\text{ hours} \\approx 0.00333 \\text{ hours}\n   \\]\n\nNext, I summed these times to get the total time:\n\\[\n0.02 \\text{ hours} + 0.01 \\text{ hours} + 0.00333 \\text{ hours} = 0.03333 \\text{ hours}\n\\]\n\nWith the total distance of 6 kilometers, I calculated the average speed:\n\\[\n\\text{Average speed} = \\frac{6 \\text{ km}}{0.03333 \\text{ hours}} \\approx 180 \\text{ km/h}\n\\]\n\nTo verify, I checked the units and the arithmetic, ensuring that the time was correctly calculated and the average speed was derived accurately from the total distance and total time.\n\nThe operation I would reuse is the formula for average speed: average speed = total distance / total time",
+        "target_sha256": "368594b7a706f076f1c82100758ce5bfbf28616bc15c46e521a6cd5d102621c7"
+      }
+    ],
+    "task_id": "gsm8k-train-1722"
+  },
+  {
+    "gold": "42",
+    "question": "Ann can skate 6 miles an hour. Her friend Glenda can skate 8 miles an hour. If they start in the same place and skate in straight lines in opposite directions for 3 hours, how many miles apart do they end up?",
+    "question_sha256": "588604a2e27bd5fbce2cb18241e734c05b90dd5ae934a5314280fdcdee17f14d",
+    "responses": [
+      {
+        "key": "gsm8k-train-5462:rich",
+        "raw_call_sha256": "3e030a5fc1ee1e57999de070fc936410162784fcbd5be8cbdf35778bd6735a81",
+        "student_prefix": [
+          {
+            "content": "Ann can skate 6 miles an hour. Her friend Glenda can skate 8 miles an hour. If they start in the same place and skate in straight lines in opposite directions for 3 hours, how many miles apart do they end up?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "d8b9de964587ea0bbd7b6beb1c17c191557e78c905b192f5defec339924d2b4c",
+        "target": "Given:\n- Ann's speed: 6 miles per hour\n- Glenda's speed: 8 miles per hour\n- Time: 3 hours\n\nTo find the distance between them after 3 hours, we calculate the distance each person skates and then add those distances together.\n\nAnn's distance:\n\\[ \\text{Distance} = \\text{Speed} \\times \\text{Time} = 6 \\, \\text{miles/hour} \\times 3 \\, \\text{hours} = 18 \\, \\text{miles} \\]\n\nGlenda's distance:\n\\[ \\text{Distance} = \\text{Speed} \\times \\text{Time} = 8 \\, \\text{miles/hour} \\times 3 \\, \\text{hours} = 24 \\, \\text{miles} \\]\n\nTotal distance apart:\n\\[ 18 \\, \\text{miles} + 24 \\, \\text{miles} = 42 \\, \\text{miles} \\]\n\nFINAL: 42",
+        "target_sha256": "217297fa36857323bbaccb89263e16651d6a916a0b8ccbb61c424cdba0424f64"
+      },
+      {
+        "key": "gsm8k-train-5462:new_record",
+        "raw_call_sha256": "acb2564c1e325a727cec177c50183966ca0d23764e8955dd9de778d16f135d18",
+        "student_prefix": [
+          {
+            "content": "Ann can skate 6 miles an hour. Her friend Glenda can skate 8 miles an hour. If they start in the same place and skate in straight lines in opposite directions for 3 hours, how many miles apart do they end up?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Ann's speed: 6 miles per hour\n- Glenda's speed: 8 miles per hour\n- Time: 3 hours\n\nTo find the distance between them after 3 hours, we calculate the distance each person skates and then add those distances together.\n\nAnn's distance:\n\\[ \\text{Distance} = \\text{Speed} \\times \\text{Time} = 6 \\, \\text{miles/hour} \\times 3 \\, \\text{hours} = 18 \\, \\text{miles} \\]\n\nGlenda's distance:\n\\[ \\text{Distance} = \\text{Speed} \\times \\text{Time} = 8 \\, \\text{miles/hour} \\times 3 \\, \\text{hours} = 24 \\, \\text{miles} \\]\n\nTotal distance apart:\n\\[ 18 \\, \\text{miles} + 24 \\, \\text{miles} = 42 \\, \\text{miles} \\]\n\nFINAL: 42",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "96167b184855fae1b71517c1948332071014c7d74bd6d69088a7046a78113778",
+        "target": "Given the problem, I identified the key quantities: Ann's speed (6 miles per hour), Glenda's speed (8 miles per hour), and the time they skated (3 hours). The unknown was the distance between them after 3 hours. To solve this, I recognized that the distance each person skates is the product of their speed and the time they skate. Since they are skating in opposite directions, the total distance between them is the sum of the distances each has skated.\n\nFirst, I calculated the distance Ann skated:\n\\[ \\text{Distance}_{\\text{Ann}} = 6 \\, \\text{miles/hour} \\times 3 \\, \\text{hours} = 18 \\, \\text{miles} \\]\n\nNext, I calculated the distance Glenda skated:\n\\[ \\text{Distance}_{\\text{Glenda}} = 8 \\, \\text{miles/hour} \\times 3 \\, \\text{hours} = 24 \\, \\text{miles} \\]\n\nThen, I added these distances to find the total distance between them:\n\\[ \\text{Total Distance} = 18 \\, \\text{miles} + 24 \\, \\text{miles} = 42 \\, \\text{miles} \\]\n\nTo verify this, I considered that the problem states they are skating in opposite directions, so the total distance apart is indeed the sum of the individual distances. The operations used are straightforward multiplication and addition, which are reliable and reusable for similar problems involving constant speeds and time.\n\nI would reuse this operation when dealing with similar scenarios involving constant speeds and time, where the objects are moving in opposite directions.\n\nFINAL: 42",
+        "target_sha256": "5df81cb9569f66292cb3c19e8f1caf9e5e1582f70a19916fd0dd85c9c4e5f64b"
+      }
+    ],
+    "task_id": "gsm8k-train-5462"
+  }
+]

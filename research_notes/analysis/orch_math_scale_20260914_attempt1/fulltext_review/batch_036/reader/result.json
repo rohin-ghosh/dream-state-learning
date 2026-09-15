@@ -1,0 +1,397 @@
+{
+  "gold": [
+    {
+      "independent_answer": "3000",
+      "question_sha256": "9daffd1556b470cd651bc4bdd01ca16410b3249976939cb434b9b86174d49803",
+      "reason": "Each employee earns 10\u00d710\u00d75\u00d74 = 2000 dollars. Their savings total 2000\u00d7(2/5+3/5+1/2) = 2000\u00d73/2 = 3000.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-6620"
+    },
+    {
+      "independent_answer": "20",
+      "question_sha256": "cf2f3d8a9688dd0a9d21c1782b5424a8d9cfd372a161dac31513ad28cbeec046",
+      "reason": "Jim gains at 9\u22126 = 3 miles per hour. Closing 1 mile takes 1/3 hour, or 20 minutes.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-867"
+    },
+    {
+      "independent_answer": "770",
+      "question_sha256": "61d0b5ba0a2900a867e4eb04be28b25dcd1f4e658bd81544e6fd9ea73e164607",
+      "reason": "Regular pay is 150\u00d75 = 750 dollars and total overtime pay is 5\u00d74 = 20 dollars, giving 750+20 = 770.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-6662"
+    },
+    {
+      "independent_answer": "10100",
+      "question_sha256": "884afec25dc65e39a27de12eb34d7158a9fba3a5a91436b96eb0921ed12aab27",
+      "reason": "Rules take 2 hours; proficiency takes 49\u00d72 = 98 hours. Their combined 100 hours makes the mastery stage 100\u00d7100 = 10000 hours, so total time is 2+98+10000 = 10100.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-2974"
+    },
+    {
+      "independent_answer": "180",
+      "question_sha256": "46b41608bf7787ba648c0b0b7a8ab3b21a78b8bd687b1a87aaee3a12742b5206",
+      "reason": "The friend covers 40\u00d73 = 120 miles, leaving 210\u2212120 = 90 miles. Christina needs 90/30 = 3 hours, or 180 minutes.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-4895"
+    },
+    {
+      "independent_answer": "11 or 20",
+      "question_sha256": "07f8718b2fec9bc00a9e64ab5dc33df776a316ff18569aab0c1736107640aec7",
+      "reason": "The scheduling language does not unambiguously forbid overlapping rises. Fully serializing every rise and bake gives 4\u00d7(3+2) = 20 hours, while allowing all four rises to overlap before sequential baking gives 3+4\u00d72 = 11 hours. The preparation interval between making balls is unspecified.",
+      "status": "AMBIGUOUS",
+      "task_id": "gsm8k-train-2719"
+    },
+    {
+      "independent_answer": "9400",
+      "question_sha256": "602f74a55d452f451e15e6168ceb3a684026490e9a1c2b48c129e6535d205393",
+      "reason": "Mike prints 600\u00d79 + (600/3)\u00d72 = 5400+400 = 5800. Leo works 9/3 = 3 hours at 2\u00d7600 = 1200 per hour, printing 3600. Together they print 5800+3600 = 9400.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-1927"
+    },
+    {
+      "independent_answer": "200",
+      "question_sha256": "78fcb7409a6aa23f11c8ebeec94d31fe03e4a396c782e3c636a764f2f09d4dff",
+      "reason": "Six squirrels provide 6\u00d7300 = 1800 calories per hour, while two rabbits provide 2\u00d7800 = 1600. The difference is 1800\u22121600 = 200.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-2370"
+    }
+  ],
+  "reviews": [
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Weekly earnings = $10 * 10 * 5 = $500",
+        "Combined savings = $800 + $1200 + $1000 = $3000"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6620:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every factual claim and calculation is supported by the question and displayed arithmetic; no external event or hidden feedback is claimed.",
+      "raw_call_sha256": "81880a8ae5a8c78e65e6878d5f2b2484122a0da5e1c0406013e8ca3bd3508907",
+      "reason": "The wage, weekly-pay, savings-rate, four-week, and summation calculations are correct and provide concrete numerical expectations. However, \u201clet's\u201d introduces an imperative recipe rather than a substantive account of an operation the speaker chose or performed.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "2bc9a1ee1214b5db959b5288c0c93d74aa7be0dde2678da234fd97c6a0584cc1",
+      "target_sha256": "3801a9d494096ca988fa4b12ef2243610b41dfaa3a0effacbba28faf222fc5a7"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the weekly earnings for each employee:",
+        "Weekly earnings = $10 * 10 * 5 = $500",
+        "Combined savings = $800 + $1200 + $1000 = $3000"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6620:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person calculations and self-verification are supportable from the supplied problem, the earlier solution, and explicit correct arithmetic. No external checker or feedback is claimed.",
+      "raw_call_sha256": "b415608c6bd57b9377ca0747a430e6c344b07712270df14e82a487582e3021ea",
+      "reason": "The response gives a substantive first-person calculation. It correctly computes weekly earnings, applies each savings fraction, scales by four weeks, and combines the results. These task-specific intermediates are concrete checks and reusable rate-times-base operations.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "c5e26f7268e2e6fa587bc75468a185b5ebef7019fa799e774215a9fffc5d99e3",
+      "target_sha256": "5d826c14b37a4d39baf7a043b148aab9932042629e6afd4f6d468c0256981fe4"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "we need to calculate the time it takes for Jim to close the 1-mile gap",
+        "\\[ 9 \\text{ mph} - 6 \\text{ mph} = 3 \\text{ mph} \\]",
+        "\\[ \\frac{1}{3} \\text{ hours} \\times 60 \\text{ minutes/hour} = 20 \\text{ minutes} \\]"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-867:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The relative-speed calculation and unit conversion follow from the supplied question and valid arithmetic, with no claim of external checking or hidden information.",
+      "raw_call_sha256": "4f20ac5104b21884cbe54c02beb60871e9a311fe99afbd7ff51eb6f6163a5416",
+      "reason": "The response correctly subtracts the speeds, divides the gap by relative speed, and converts hours to minutes. Its first-person language is only the excluded goal statement \u201cwe need to calculate\u201d and instructional \u201cwe can find,\u201d not an own operational account.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "6a1945e085ec253b3731316efbadc74e3ce3ed23086345ae2431b757f83d4869",
+      "target_sha256": "7852cfb1fc5f78655172e0c2edf49f1b463a6018655197214c219bf9ab53bc21"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I recognized that the relative speed",
+        "he would have run 3 miles (head-start) + 2 miles = 5 miles",
+        "Jim would have run 3 miles, thus closing the gap"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "key": "gsm8k-train-867:new_record",
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The prefix gives a 1-mile head start, but the target changes it to \u201c3 miles (head-start)\u201d and falsely writes 3+2=5. That check is not supportable from the neutral history or valid arithmetic.",
+      "raw_call_sha256": "af9f5c0caa6dbaceffb2ef5918ffdb42cfb34948834677e8063f331739c159e9",
+      "reason": "The main relative-speed solution is correct and the response gives a first-person operational account. However, its purported check invents a 3-mile head start and asserts 3+2=5; moreover, Jim at 3 miles and Bob at 1+2=3 miles would meet, contrary to the stated 5-mile comparison. This material false check defeats grounding.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "078e1daa734922b0e015a5015977d708024970bea379055c480c8df4fb9bd269",
+      "target_sha256": "9fb3ea04b4cfc895cebf45f2ebf0a47ce6afe8d96b75c90fcdbcb97b35c80f53"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Daily earnings for 5 days: $150/day * 5 days = $750",
+        "Overtime pay for 4 hours: $5/hour * 4 hours = $20",
+        "Total earnings: $750 + $20 = $770"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6662:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All quantities and arithmetic come directly from the supplied question; the response claims no external event or feedback.",
+      "raw_call_sha256": "52782878a34e7a30e6d88b0b759d99573463fb8f484ece7338eaff54df8e8974",
+      "reason": "The regular-pay and overtime computations are correct, concrete, and reusable. The response is written as impersonal labels and an imperative recipe (\u201cCalculate\u201d), with no substantive first-person account of performing an operation.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "31706058a7394bf27e593dad5a7af4ead5f77e72b183abb99907fe54fce53aeb",
+      "target_sha256": "fec7c8775347d3d41a42d9d5a2982df4c60767a19dc8b650cf3ba5a2f1359e78"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the total earnings from the regular work:",
+        "\\text{Overtime pay} = 5 \\, \\text{dollars/hour} \\times 4 \\, \\text{hours} = 20 \\, \\text{dollars}",
+        "Total: \\( 750 + 20 = 770 \\)"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6662:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's first-person work and arithmetic check are supported by the question and earlier neutral solution. \u201cI checked the arithmetic\u201d describes an explicit self-check, not an external checker event.",
+      "raw_call_sha256": "2b658e0baa8e6edcb32c34b50ad95ba53c879174425f0fe98720df9f9dd1b643",
+      "reason": "The response correctly multiplies each rate by its applicable duration and adds the resulting pay components. It includes first-person operational narration, concrete numerical verification, and a task-grounded explanation of when the rate calculations recur.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "f56e121b3939a0ec5d8be4219dd33c3563aba6d86948b580f4c2ae69367604dc",
+      "target_sha256": "c0bb1c0ef48add2fc2036b95e43984a7a1ba366357d986b8cd2587c2a1d8e3f7"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Time to get proficient: 49 times the time to learn the rules, which is 49 * 2 = 98 hours",
+        "Next, I calculate the total time spent:",
+        "Total time = 2 + 98 + 10000 = 10100 hours"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-2974:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target relies only on the stated multipliers and its verifiably correct arithmetic. It makes no unsupported claim about feedback or external checking.",
+      "raw_call_sha256": "47944cde5c701e240fbf5b39934942407b664385a61274673a8c70a5b4336251",
+      "reason": "The speaker expressly says \u201cI calculate\u201d and correctly applies 49 to the initial two hours, applies 100 to the combined first two stages, and sums all stages. The numerical stage totals are concrete expectations and the staged multiplier method is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "b7989d4570a8167e9ec3b4cca7ab6e91a87204be83a17438a770395a80dc83bd",
+      "target_sha256": "96635871f445c68ae7b96da2e0b38aa74a71ed7238dd26c483e0bf0d0e6715e7"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I combined these quantities:",
+        "The time to get proficient was correctly calculated as 49 * 2 = 98 hours.",
+        "The total time was correctly summed as 2 + 98 + 10000 = 10100 hours."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-2974:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All first-person calculations and checks are supported by the supplied task and correct displayed arithmetic. The verification is self-contained and does not invoke an external checker.",
+      "raw_call_sha256": "e3941dc27ac38b95a1addaed2c74bc033757e716f221d3d6bfacaffd411471a6",
+      "reason": "The response provides an own account of combining the stages, computes 98 and 10000 correctly, and verifies the final 10100 total. Its multiplication-and-addition method is explicitly tied to sequential time stages and contains no irrelevant material.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "de15522637c74fb30449b63d7e89d103c49f5085e6363cf889c1983b7ab9cfe7",
+      "target_sha256": "e88365fcd17625cb365db7a60d82f6eb87c45c7765f8b12b2273927e891337ef"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "40 \\, \\text{mph} \\times 3 \\, \\text{hours} = 120 \\, \\text{miles}",
+        "\\frac{90 \\, \\text{miles}}{30 \\, \\text{mph}} = 3 \\, \\text{hours}",
+        "3 \\, \\text{hours} \\times 60 \\, \\text{minutes/hour} = 180 \\, \\text{minutes}"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-4895:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The distances, time, and conversion are all derived from supplied facts through correct arithmetic, without hidden feedback or external events.",
+      "raw_call_sha256": "fd9d97105d97e9511516bfee3bf51d0ca83c66240bfddbce50a0789391abdc49",
+      "reason": "The response correctly finds the friend's distance, subtracts it, divides the remainder by Christina's speed, and converts units. These supply checkable intermediates and reusable operations, but the prose is an impersonal imperative recipe (\u201ccalculate,\u201d \u201cfind,\u201d \u201cconvert\u201d), not a first-person operational account.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "a758663ca8c42c35d92db1219e0e68188ba4135a764ff470bc7910a5db3762ac",
+      "target_sha256": "f4d2ef74a1d6f6b3d054e27991db32686b79b7fe1ea1dea74ec4b3fb373808f1"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the distance driven by Christina's friend:",
+        "\\text{Remaining distance} = 210 \\, \\text{miles} - 120 \\, \\text{miles} = 90 \\, \\text{miles}",
+        "120 \\, \\text{miles} + 90 \\, \\text{miles} = 210 \\, \\text{miles}"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-4895:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person derivation and total-distance self-check are fully supported by the neutral history and explicit arithmetic; no outside checker is invoked.",
+      "raw_call_sha256": "39559c1dd63f9770cd29ab54c152b33618f1d6b26060c5780f1ca36831bea951",
+      "reason": "The response gives a substantive account of each operation, obtains 120 and 90 miles and 180 minutes correctly, and checks that the two distance portions sum to 210. It also states reusable speed-distance-time and unit-conversion relationships.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "52f595efb3c1bfff30ba7b6d9a1a4ef16b98aab75844f95af342302abd80b50d",
+      "target_sha256": "dd6f06dabff6aeed6b34f7a4ac28c8205e49e07548784f579864160e6f3980bf"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I identify the quantities:",
+        "5 hours for the second ball (starting after the first is done baking)",
+        "5 + 5 + 5 + 5 = 20 hours"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "key": "gsm8k-train-2719:rich",
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The question does not state that each later ball begins only after the preceding ball finishes baking. The target's fully serialized schedule is therefore not supportable from the neutral prefix alone.",
+      "raw_call_sha256": "16083937c8291e9d29123aa801f164a8b9904257820188417ac8cb628375d06c",
+      "reason": "The response assumes, without an explicit scheduling fact, that the second ball starts only after the first finishes baking and similarly for all later balls. Rising could overlap, so 20 is not forced. \u201cI identify\u201d only inventories quantities and is not a substantive own account of selecting or applying the decisive operation.",
+      "reusable_content": false,
+      "status": "FAIL",
+      "student_prefix_sha256": "d5cdae9e8bea0db3faee85548dbca3960493ef1c647fba56ca1192f9f1a2b85d",
+      "target_sha256": "731d6aa24fd87e9b576d3f2e732de631874fabd554c284feb7f761953c95aa26"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "The operation I chose was to multiply the time for one ball by the number of balls",
+        "The second ball starts after the first is done",
+        "Summing these times confirms the total is 20 hours."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "key": "gsm8k-train-2719:new_record",
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The neutral prefix does not establish that later balls start only after earlier ones finish both rising and baking. The claimed fully sequential schedule adds an unsupported constraint.",
+      "raw_call_sha256": "8fac898f7363bdc3a619ecc79651f8efacbde45258cd40f1e9e339e585f1b51c",
+      "reason": "Although the response gives a first-person operation and a concrete 20-hour expectation, it grounds multiplication by four in the unsupported assertion that every next ball starts only after the previous ball is completely done. Because overlap is not excluded, the operation is not reusable as stated for this task.",
+      "reusable_content": false,
+      "status": "FAIL",
+      "student_prefix_sha256": "aaf7754edc979adac102c4a58d8047bdda33de2722d9832f4568f338ffd60d65",
+      "target_sha256": "1a091fa00612e691692645c356de0e5a69c988d32290c1785426e52fa17bdadd"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, let's identify the given quantities and the unknown we need to find.",
+        "600 \\text{ pamphlets/hour} \\div 3 = 200 \\text{ pamphlets/hour}",
+        "5800 + 3600 = 9400 \\text{ pamphlets}"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-1927:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every rate, duration, adjustment, and total is supported by the question and correct arithmetic. No external observation or checker is claimed.",
+      "raw_call_sha256": "4b023ed26540b795fdbff788db6ec5bc1e93b6f784eb6ccda8a4ec1f562c7db7",
+      "reason": "The response correctly calculates both of Mike's phases and Leo's adjusted duration and rate, with concrete numerical checkpoints and reusable rate-times-time reasoning. Its only first-person form is \u201clet's identify\u201d followed by an excluded goal statement; the actual calculations are presented impersonally.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "5421ad698b3c6736f57eb6cc5ce76723e5ffbda3a562be5fc1470241bb9f5482",
+      "target_sha256": "5a8c946a0f015be7fcec747e3d79435b3a41aeeb197daee7661455418cf33554"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated Mike's total pamphlets:",
+        "Leo's speed is \\(600 \\text{ pamphlets/hour} \\times 2 = 1200 \\text{ pamphlets/hour}\\)",
+        "The sum of these values is indeed 9400 pamphlets."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-1927:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's first-person calculations and self-verification follow entirely from supplied rates and durations. The check is internal arithmetic, not claimed external feedback.",
+      "raw_call_sha256": "a50652d02919e5b29151557539a0fe147305883e47be4edd6b88b3b06e74e595",
+      "reason": "The response substantively narrates calculating Mike's and Leo's outputs. All rate adjustments and products are correct, the listed values form concrete checks, and dividing or multiplying a baseline rate or duration by stated factors is reusable task-grounded content.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "1da2fc8fe1f5d647bd721f3b9ddf7226265cda3e0cf870f1e37842fbb1449f0a",
+      "target_sha256": "280114a8e555e349c3fa92e7f1da2097976902d0cf5bb798ce1a5c0071ec894d"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "6 squirrels * 300 calories/squirrel = 1800 calories.",
+        "2 rabbits * 800 calories/rabbit = 1600 calories.",
+        "1800 calories (squirrels) - 1600 calories (rabbits) = 200 calories."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-2370:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The quantities and calorie comparison are directly supported by the question and correct arithmetic; no hidden guidance or external event is invoked.",
+      "raw_call_sha256": "f33b1978e961832d0e6df56440eb4773045314a0bc8a9261bbd5865addeea332",
+      "reason": "The two hourly calorie totals and their difference are correct, checkable, and form a reusable compare-two-rates method. The presentation consists of impersonal imperatives such as \u201ccalculate\u201d and \u201cfind,\u201d with no substantive first-person account.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "b97063c95d1cccdc2a1b4bba23954d026ddcc10d5fd5bd5e9d0f3477f89fab62",
+      "target_sha256": "013898515ce30771944771eee15d13c0474a5c9c3ec8095dd601e91565eadddd"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the total calories from catching squirrels in 1 hour:",
+        "2 rabbits * 800 calories/rabbit = 1600 calories.",
+        "This difference represents the additional calories Brandon would get per hour"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-2370:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person calculation and unit-consistency self-check are supportable from the question and explicit arithmetic; the response does not claim access to an external checker.",
+      "raw_call_sha256": "a7889d2f9141c1478fa8a868f7b369ec4dfb5475a7a1957a488c8e296e7b8837",
+      "reason": "The response provides an own operational account, correctly computes 1800 and 1600 calories and their 200-calorie difference, and explains what that difference means. Its compare-total-output operation is specifically tied to quantities and per-animal calorie values.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "4a26cfd81832b4b2e4a5cc2d8d16e01cc9b03af3cdf99e4ff343629efbf6883c",
+      "target_sha256": "6a6302012013afd5a4ebfed19b2e4b588b9ba71b3209063d02c0f69a477810be"
+    }
+  ]
+}

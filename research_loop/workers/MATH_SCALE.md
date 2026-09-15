@@ -56,3 +56,31 @@ other already-bound judgments and changes aggregate bookkeeping explicitly.
 Runtime memory cap remains2/1/0 at3GiB/1.5GiB; existing readers finish after dips,
 no new second reader below3GiB. No local model, unknown kills, fit, expansion,
 or SEQ request. Publishing completed packets only, not running reader logs.
+
+2026-09-15T00:47:05Z COLLECTION TERMINAL; SCIENTIFIC REVIEW INCOMPLETE.
+1024/1024fixed mining tasks attempted,1984/2048maximum calls;960source-rich
+oracle successes triggered960NEWrecords,952NEWsource-oracle successes. No
+additional collection or optimization; unchanged01:38:46Zdeadline was not hit.
+All4shards exit0: physical4finished00:28:01Z,5at00:26:22Z,6at00:28:36Z,
+7at00:29:47Z. Native elapsed sum5.284818GPUh. Terminal base verification,
+portable37ecadapter, archived source driver/policy pins and all1984call hashes
+replayed successfully; source archive2f9a3a5b7eda295de84672232735ac72c96096c454c08f4d8245f1db90017b67.
+Fresh physical receipt00:47:05Z: UUID-bound lanes4/5/6/7each0MiB/0% and no
+compute-app entry; original native PIDs445214/445217/445223/445220 and guardians
+445117/445121/445124/445123 all absent from/proc. No unknown process killed.
+RETURN ALL FOUR COLLECTION LANES TO MAIN for queued work; no GPU hold during
+CPU review. Any later conditional fit needs actual whole-corpus gate, published
+recipe/tests and a fresh allocation/ownership check, never automatic relaunch.
+Current frozen review snapshot:740fulltexts/384questions,420partial author-side
+qualified distinct targets=143rich+277NEW.348goldVALID/32AMBIGUOUS/4INVALID;
+suspect gold excluded without changing fixed1024outcome denominator. Four
+unresolved batch failures035/040/042/049 remain unadmitted and preserved.
+Fulltext review and independent blind audit are incomplete:fit_ready=false,
+fits0/updates0. Collection completion is NOT a scientific clean null or a
+cleared1000target gate. Only the existing memory-capped finite CPU reader
+continues, original03:17:25Zwatch horizon; no SEQ until scientific terminal ready.
+Exact node2root:/localhome/local-rohing/orch_math_scale_20260914_attempt1.
+Published receipt/reduction/rawarchive/row bindings directory:
+research_notes/analysis/orch_math_scale_20260914_attempt1/collection_terminal_20260915T004705Z/
+REDUCTION.json; COLLECTION_RELEASE_REVIEW_RECEIPT.json; physical_release.txt;
+native_capture_037.tar.gz; ROWS.json. Main-owned notebook/state untouched.

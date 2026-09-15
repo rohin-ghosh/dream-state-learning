@@ -1,0 +1,398 @@
+{
+  "gold": [
+    {
+      "independent_answer": "100",
+      "question_sha256": "e152e98e55dac54106f6005439ecb0a3c7e99f69a6420b901d95a2bc2c5288b7",
+      "reason": "Children are 100%-30%-50%=20% of 1000, or 200. Married guests are 30% of 1000, or 300. The difference is 300-200=100, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-3194"
+    },
+    {
+      "independent_answer": "240",
+      "question_sha256": "1053fd79856686c73f66932c1401aaa07f13c83d4b2976789e043cf288bd7bf9",
+      "reason": "The added money is 20% of $200, or $40. Thus Susie has $200+$40=$240, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-202"
+    },
+    {
+      "independent_answer": "68",
+      "question_sha256": "ccd13837c0cb20444507dba777274c827e5d68ee6899342e1732dcb1162c5a67",
+      "reason": "The discount is 15% of $80, or $12. Barry pays $80-$12=$68, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-4188"
+    },
+    {
+      "independent_answer": "46000",
+      "question_sha256": "4aa2bdc0fe8ea15453d8958c783b19c996290bb3dc465d471e589ac2a000b17e",
+      "reason": "Five years is 60 months, so the monthly payments total $600\u00d760=$36,000. Including the stated $10,000 down payment gives $46,000, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-2826"
+    },
+    {
+      "independent_answer": "1525",
+      "question_sha256": "6725f590f9c0b0394660aacb80ccd9c6df5b67b3f01ced8e313b4c17b4620eec",
+      "reason": "Registering a week beforehand satisfies the stated advance-registration condition. A 5% discount makes each $150 fee $142.50; ten fees cost $1,425, and ten $10 allowances add $100, for $1,525 total, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-4799"
+    },
+    {
+      "independent_answer": "40",
+      "question_sha256": "5019d0a001161c2ff0b97c3bb86f0c7a20077d80fd4d8c45f5318f2a3174b270",
+      "reason": "Initially 1/3 of 90 workers are women, so there are 30. After hiring 10 women there are 40 women among 100 workers, which is 40%, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-7463"
+    },
+    {
+      "independent_answer": "56 or 96",
+      "question_sha256": "56d2c169fbf26f5124368375c7776231ac36c835fe11b8adc16c12dc2a11959f",
+      "reason": "There are 64 boys and 32 girls; 50% of the boys plus 75% of the girls is 32+24=56 interested campers, yielding the gold if only interested campers receive marshmallows. However, the question literally says \u201ceach camper gets one marshmallow,\u201d which would require 96. The intended recipient set is therefore ambiguous.",
+      "status": "AMBIGUOUS",
+      "task_id": "gsm8k-train-7450"
+    },
+    {
+      "independent_answer": "12200",
+      "question_sha256": "86dcbc2b7d61745a683ee482460b29094e0fed569cced5d554706b93a452714d",
+      "reason": "If $3,000 is 15% of the budget, the budget is $3,000/0.15=$20,000. Library and parks consume 15%+24%=39%, leaving 61%, and 0.61\u00d7$20,000=$12,200, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-2752"
+    }
+  ],
+  "reviews": [
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "we calculate the percentage of children as follows",
+        "100% - 30% (married) - 50% (single) = 20% (children)",
+        "300 (married) - 200 (children) = 100"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-3194:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target uses only the supplied percentages and total, with explicitly verifiable arithmetic; it claims no external feedback or hidden event.",
+      "raw_call_sha256": "52d84ce77b785061ab689f00439163a591c689676d3a9e48a41f028a9e3fef6a",
+      "reason": "The plural first-person account computes the 20% remainder, converts category percentages to counts, and subtracts 200 from 300. These correct numerical intermediates provide checkable expectations and a reusable task-specific method without filler.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "e7074d204524a6fdd5d7cb82197645586696eaa5de1b0df6f8b6255faba03533",
+      "target_sha256": "8e46460edaee020344a2e09530d7364c75ad46d398390b3266398f082289dd1d"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first identified the percentage of guests that are children",
+        "300 - 200 = 100",
+        "the numbers of guests in each category add up to 1000"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-3194:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Its self-check is supported by the displayed category counts and arithmetic in the supplied history and target; no external checker or feedback is claimed.",
+      "raw_call_sha256": "4ccbb1ea1fe18c420b1e930d1db70b5f4738ab9d9dcca73e06c2d60a72d31612",
+      "reason": "The target gives a substantive first-person account, correctly obtains 20%, 300, 500, 200, and 100, and checks that percentages and counts exhaust their totals. It explicitly identifies the reusable percentage-and-difference procedure, with no padding.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "20a5f9d2b6ae32611e736e7c048a285fa72121ed5d0a2ad54e7746ea69f3cca6",
+      "target_sha256": "2ff8d500f6a6af86809e6502ae4642cd8704a92c7d0c1fae22f933a67099b73c"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, calculate 20% of $200",
+        "20% of $200 = 0.20 * $200 = $40",
+        "$200 + $40 = $240"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-202:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All factual and numerical claims follow directly from the question and shown arithmetic, with no claimed external event.",
+      "raw_call_sha256": "3684275008fcce108b0f02584ea5d711b6a76574c1efd36247678962c4df09c3",
+      "reason": "The percentage and addition are correct, concrete, reusable, and relevant. However, \u201cFirst, calculate\u201d and \u201cNow, add\u201d are impersonal imperative instructions, not a substantive first-person account of personally applying the operations.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "9574e246cefd4f550598f3deba14ebd849a73241af0dabc591c72ee98af68dbb",
+      "target_sha256": "95694817d66d018df2284522b81e7c1e014f27116a925584795c9c5047ac65ea"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I calculated 20% of $200, which is $40",
+        "20% of $240 is indeed $48, which is double the $40",
+        "the increase should be 20% of the final amount"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "key": "gsm8k-train-202:new_record",
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The prefix supports calculating the increase from the initial $200, but it cannot support the target\u2019s false claims that $48 is double $40 or that the increase should equal 20% of the final amount.",
+      "raw_call_sha256": "e86c51870bf1c33f4eb30e7633a5358215fedfe00cea03e72d91b62ad70d0205",
+      "reason": "The first-person primary calculation correctly reaches $240 and supplies a concrete expectation and reusable percentage method. The verification is materially false: $48 is not double $40, and a 20% increase is measured against the initial $200, not the final $240.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "5b662b7109f0b5b1a26877401581d49060e42e22ae5598193b3a65819c71ea1e",
+      "target_sha256": "90805658fa46dc579bf7f4a52c62143ebc497e065c493474c5c57c16ea34b8ee"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I calculate 15% of $80",
+        "80 \\times 0.15 = 12",
+        "80 - 12 = 68"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-4188:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The account is fully derivable from the stated price and discount and contains no unsupported event or feedback claim.",
+      "raw_call_sha256": "f9cde76ec2a33aa62ab76c8ebac43a0e81be1109780647b35f12737a5d943374",
+      "reason": "The target substantively says what it calculates and subtracts. It correctly obtains the $12 discount and $68 price, providing concrete expectations and a reusable discount operation in relevant prose.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "c28f55dd02964d7168c93fa52dec532a8eb234349f6f8cbf6c31d6972137946d",
+      "target_sha256": "4a6201b17f8787a5aa1b08c9ea4bb698008c8c3bea225c159d5bfc5c0a5a134b"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the discount amount by finding 15% of $80",
+        "80 - 12 = 68",
+        "This is useful in any scenario where a discount is applied"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-4188:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The claimed verification is an ordinary self-check of arithmetic displayed in the target and supplied solution, not an unsupported external check.",
+      "raw_call_sha256": "9bd25bfc69815a01503a74e587bf266fd657a3519ed278fa39c6bc4bd42029d5",
+      "reason": "The response provides a first-person operational account, correctly computes $12 and $68, states the result\u2019s meaning, and explains when the percentage-then-subtraction method is reusable. All content is relevant.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "f87c0d9feae536672e65b08b828f35fa2128c44515bff77d3f6e56a7a1f04fbc",
+      "target_sha256": "87f57723226d08b393ad62cb70aa270d373d7576b87663ba100b6efdd0f94bd8"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "we first calculate the total amount paid in monthly installments over 5 years",
+        "Total monthly payments = $600 \u00d7 60",
+        "Total loan amount = $10,000 + $36,000"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-2826:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target relies only on the supplied term, payment, down payment, and zero-interest condition, with no unsupported observed event.",
+      "raw_call_sha256": "1f91ba517d15656e12170beef97017863ccdec82b67969cbf13206ccac5c5ede",
+      "reason": "The plural first-person account correctly converts five years to 60 months, calculates $36,000 in installments, and adds the down payment. The numerical roles are checkable and the installment-plus-down-payment method is reusable and concise.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "5032db1b2d17684131dc2603410fb9e59f2646b524bb405d68562a0b9a05ba85",
+      "target_sha256": "63532c4080f2ea81f8f6fac26745009de7d7cd3db1705afa8e4a7f2f08d51bb9"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I calculated the total of the monthly payments",
+        "600 \\times 60 = 36,000",
+        "10,000 + 36,000 = 46,000"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-2826:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The self-check merely rechecks the displayed sum from facts in the prefix; it does not claim outside validation.",
+      "raw_call_sha256": "60bce7f1664e38023ecb3c750fa8fb1d1a4c4ec31bde011334cd4f5f5e067f63",
+      "reason": "The target gives a first-person account of multiplying the monthly payment by 60 and adding the down payment. Both numerical expectations are correct, and it states the reusable applicability to installment problems without irrelevant filler.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "7aa6809b78a61a8d896a2173b189b21263cd4bbcabf26d1b4250215c7c4c2370",
+      "target_sha256": "8d087e01e8160b8905e58d40c2d7db2b892d7bb0cb362ca061f9c614a8d4d142"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "The discount per teacher is 5% of $150",
+        "142.50 \\times 10 = 1425",
+        "1425 + 100 = 1525"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-4799:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The calculations and advance-registration interpretation are supportable from the question, and the target alleges no external event.",
+      "raw_call_sha256": "ccf815fa1e11aff960e3582852108d6a0ae38579513ebdb006ff260313e5585e",
+      "reason": "The target correctly computes the discounted fee, seminar total, allowance total, and combined cost, so its expectations and reusable operation are grounded and relevant. It contains no singular or plural first-person account of applying those operations.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "ee0a5ff957eb99fbeb9569987cd065003d4d07512c2548d79863538327cf9702",
+      "target_sha256": "34313f1ef285de2c1882856cb1ee8746781da9e51c676d1f7c4a763d7384389e"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I calculated the discounted seminar fee per teacher",
+        "142.50 \\times 10 = 1425",
+        "The key is to first apply the discount to the base fee"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-4799:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Its correctness statement is based on the explicitly shown arithmetic and supplied facts, not hidden feedback or an external checker.",
+      "raw_call_sha256": "3c0dcd347b65869dae861f7e164d7489ebb28e312ee01e5591557ab064476a69",
+      "reason": "The first-person account correctly calculates $142.50 per teacher, $1,425 in fees, $100 in allowances, and $1,525 overall. It gives concrete expected roles and a reusable order of operations, with relevant content throughout.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "571553704f51e06a861c57137b97ae19fdc74f1c197cc21bc9f2ffca40af0b96",
+      "target_sha256": "2d04ac036f7805f19c4f6c9ac6d87de02773a4ce694c7470ebbe793d2a34b6cb"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Calculate initial number of women",
+        "Women = 1/3 * 90 = 30",
+        "Percentage of women = (40 / 100) * 100 = 40%"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-7463:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every numerical claim follows from the stated workforce composition and hires, without any unsupported event or feedback.",
+      "raw_call_sha256": "c36ea0d3259e31b856a435d55bfb165729baea11f8334afe0f56d2210b2dc339",
+      "reason": "The response correctly complements the men\u2019s fraction, updates both numerator and denominator, and computes 40%, giving checkable and reusable reasoning. But headings and imperative phrases such as \u201cCalculate\u201d do not constitute a first-person operational account.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "fd8cd20eb966ec74767d1f0c1e221fbd40140b8c05c3b143a598945bff10c1bd",
+      "target_sha256": "2baeae8ba4046147cc7df6fe617c3930def5e88e4cd87b72628bd512d4959d76"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I calculated the initial number of women",
+        "Total workers = 90 + 10 = 100",
+        "Percentage of women: (40 / 100) * 100 = 40%"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-7463:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "\u201cI checked\u201d describes a self-check whose exact arithmetic is shown; no external checker or hidden feedback is invoked.",
+      "raw_call_sha256": "6452504b650e2f2f7dfea31be2cbfa313c263c92667783ba888b86f2f05757db",
+      "reason": "The target substantively recounts the operations, correctly reaches 30 initial women, 40 women, 100 workers, and 40%, and repeats these values as a concrete check. It identifies the reusable updated-proportion procedure and remains relevant.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "3be930d0cd9763b2badb95c1f15d7981f7ba4a6edbfd37b4d8f2f60b8e834297",
+      "target_sha256": "c44d00469f996f29383389f67f61744ce8ecd1a5ede3f794610292f93ccd8545"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I calculate the number of boys and girls",
+        "Boys wanting to toast} = 50\\% \\times 64 = 0.5 \\times 64 = 32",
+        "Total marshmallows} = 32 + 24 = 56"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": null,
+      "key": "gsm8k-train-7450:rich",
+      "neutral_prefix_compatible": null,
+      "no_padding": true,
+      "prefix_reason": "The arithmetic is verifiable, but whether the prefix supports giving marshmallows only to the 56 interested campers is uncertain because the question also says each of the 96 campers gets one.",
+      "raw_call_sha256": "cbf6c27bb06d77d71fb6cc7f8f13b6cd8f504770c0af1076c100d5c79ace4372",
+      "reason": "The first-person calculations of 64 boys, 32 girls, and 32+24 interested campers are correct, concrete, reusable, and relevant. However, concluding that 56 marshmallows are needed adopts one uncertain reading of \u201ceach camper\u201d; the literal all-camper reading gives 96, so semantic grounding is unresolved.",
+      "reusable_content": true,
+      "status": "UNRESOLVED",
+      "student_prefix_sha256": "6f606aa7995bbee0e95a1393d987cfbe6e2624501c1b03c3b089a124e6fdd230",
+      "target_sha256": "78ccb0d0bad43ea3fe9a4baa8c497b3b4dceeaad820c1e2d2905f7f7fb72b8c3"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first identified the number of boys and girls",
+        "Total marshmallows} = 32 + 24 = 56",
+        "Since each camper gets one marshmallow to toast, the total number of marshmallows needed is indeed 56."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": null,
+      "key": "gsm8k-train-7450:new_record",
+      "neutral_prefix_compatible": null,
+      "no_padding": true,
+      "prefix_reason": "The displayed calculations support 56 interested campers, but the claim that \u201ceach camper\u201d consequently means 56 recipients is not unambiguously supported by a question stating there are 96 campers.",
+      "raw_call_sha256": "4e4806c845f5eefacb7474d5c849e8960d44825ee9d6bdde29ff4f1865ddffbe",
+      "reason": "The response gives a substantive first-person account and correctly calculates the interested subgroups, with concrete numerical roles and a reusable fraction-and-percentage procedure. Its final recipient interpretation is uncertain: 56 follows if only interested campers get one, while the literal \u201ceach camper\u201d wording yields 96.",
+      "reusable_content": true,
+      "status": "UNRESOLVED",
+      "student_prefix_sha256": "84e8b629a25f26359733baa808d02af715e5009f839f38e6937643dcd3aa6a28",
+      "target_sha256": "6b8d19585bdccc863f53e0003ad444cab36407413ad28a452b7b1095fdf05722"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "we can find the total annual budget",
+        "B = \\frac{3000}{0.15} = 20000",
+        "20000 - 7800 = 12200"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-2752:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All claims follow from the supplied percentages and dollar amount through displayed arithmetic, with no unsupported feedback or external event.",
+      "raw_call_sha256": "461bd415181ac847f6bf6f7dc01801f08621f456ab377ef86e7e8cd5d022b296",
+      "reason": "The plural first-person account correctly recovers the $20,000 budget, calculates $4,800 for parks, and subtracts $7,800 to get $12,200. The intermediates are checkable, the reverse-percentage and subtraction operations are reusable, and the text is relevant.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "f5b2e9c18cb910664bbbb8b207ae4ebf8b62ad7b830e9f426b982276804204e8",
+      "target_sha256": "db84802ade2f9e2edce9ab236e2f5120df5ea20450a6a6c3aedb1da9aa8dafc0"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the total annual budget",
+        "0.24 \\times 20000 = 4800",
+        "20000 - (3000 + 4800) = 20000 - 7800 = 12200"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-2752:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The self-verification concerns arithmetic explicitly available in the target and supplied solution; it does not imply external checker access.",
+      "raw_call_sha256": "dcdd0a4d1f87c1c71966f863cdcc1a51aa270052d588e2a57a2baa49fc6adf34",
+      "reason": "The target substantively describes solving 0.15B=3000, finding the parks allocation, and subtracting both expenses. Its numerical expectations are correct, it identifies reusable budgeting operations and their use, and contains no irrelevant padding.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "7074b05a9433aafb5d7b34a9856422bb42d22d80bd17a2ba43c1d115ac65350b",
+      "target_sha256": "61d23260cbc1e3dcdcaf50118310b7a0ef78fd45962597a98086658773ba9a83"
+    }
+  ]
+}

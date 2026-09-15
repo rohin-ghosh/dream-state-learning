@@ -1,0 +1,338 @@
+[
+  {
+    "gold": "5440000",
+    "question": "Jerry files a lawsuit against the convenience store where he works and slipped and fell. He's asking for damages for loss of a $50,000 annual salary for 30 years, $200,000 in medical bills, and punitive damages equal to triple the medical and salary damages. If he gets 80% of what he's asking for, for much money does he get?",
+    "question_sha256": "baaaecaa50f0b7dde81c361d71cf53fab4e635cd9961e4431b865505b85d86cf",
+    "responses": [
+      {
+        "key": "gsm8k-train-6757:rich",
+        "raw_call_sha256": "127f1cdc8e9142f1f07bbb807675650f3997ae58aa3509bd3d468e41df72f35d",
+        "student_prefix": [
+          {
+            "content": "Jerry files a lawsuit against the convenience store where he works and slipped and fell. He's asking for damages for loss of a $50,000 annual salary for 30 years, $200,000 in medical bills, and punitive damages equal to triple the medical and salary damages. If he gets 80% of what he's asking for, for much money does he get?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "4a7bf17db232aeeed0716c052efbc6100fd5f4fd02dc271c6b5457f7719a22e5",
+        "target": "First, calculate the total salary damages over 30 years:\n\\[ 50,000 \\times 30 = 1,500,000 \\]\n\nNext, add the medical bills:\n\\[ 1,500,000 + 200,000 = 1,700,000 \\]\n\nThen, calculate the punitive damages, which are triple the total of salary and medical damages:\n\\[ 3 \\times 1,700,000 = 5,100,000 \\]\n\nNow, add the salary damages, medical bills, and punitive damages to get the total amount Jerry is asking for:\n\\[ 1,700,000 + 5,100,000 = 6,800,000 \\]\n\nSince Jerry gets 80% of what he's asking for, calculate 80% of $6,800,000:\n\\[ 0.80 \\times 6,800,000 = 5,440,000 \\]\n\nFINAL: 5440000",
+        "target_sha256": "ba5d0cadbadd0b1325bb52e1434114d7d985cfee690e5b944f72f3a3fe0c7afb"
+      },
+      {
+        "key": "gsm8k-train-6757:new_record",
+        "raw_call_sha256": "44ad85d88a81a36db148b794a6577a022f200be829607569bb5ade75adbd61c0",
+        "student_prefix": [
+          {
+            "content": "Jerry files a lawsuit against the convenience store where he works and slipped and fell. He's asking for damages for loss of a $50,000 annual salary for 30 years, $200,000 in medical bills, and punitive damages equal to triple the medical and salary damages. If he gets 80% of what he's asking for, for much money does he get?",
+            "role": "user"
+          },
+          {
+            "content": "First, calculate the total salary damages over 30 years:\n\\[ 50,000 \\times 30 = 1,500,000 \\]\n\nNext, add the medical bills:\n\\[ 1,500,000 + 200,000 = 1,700,000 \\]\n\nThen, calculate the punitive damages, which are triple the total of salary and medical damages:\n\\[ 3 \\times 1,700,000 = 5,100,000 \\]\n\nNow, add the salary damages, medical bills, and punitive damages to get the total amount Jerry is asking for:\n\\[ 1,700,000 + 5,100,000 = 6,800,000 \\]\n\nSince Jerry gets 80% of what he's asking for, calculate 80% of $6,800,000:\n\\[ 0.80 \\times 6,800,000 = 5,440,000 \\]\n\nFINAL: 5440000",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "fc7cf38ca0b1c793c63d7210d52941a184cba0f5c2a83055de825b19729afe98",
+        "target": "Given the problem, I identified the key quantities: Jerry's annual salary loss ($50,000 for 30 years), medical bills ($200,000), and punitive damages (triple the sum of salary and medical damages). The unknown was the total amount Jerry would receive if he got 80% of what he was asking for.\n\nFirst, I calculated the total salary loss over 30 years:\n\\[ 50,000 \\times 30 = 1,500,000 \\]\n\nNext, I added the medical bills:\n\\[ 1,500,000 + 200,000 = 1,700,000 \\]\n\nThen, I calculated the punitive damages, which were triple the total of salary and medical damages:\n\\[ 3 \\times 1,700,000 = 5,100,000 \\]\n\nAdding the salary damages, medical bills, and punitive damages gave the total amount Jerry was asking for:\n\\[ 1,700,000 + 5,100,000 = 6,800,000 \\]\n\nTo find out how much Jerry would get if he received 80% of what he was asking for, I calculated 80% of $6,800,000:\n\\[ 0.80 \\times 6,800,000 = 5,440,000 \\]\n\nTo verify the result, I checked that the operations were correctly applied and the calculations were accurate. The final amount matched the problem's conditions.\n\nFINAL: 5440000",
+        "target_sha256": "af699eede490886667a49d01554036b8292f687d04e651ab5eb93b2c86df8838"
+      }
+    ],
+    "task_id": "gsm8k-train-6757"
+  },
+  {
+    "gold": "3",
+    "question": "Stacy went to a store to buy some pairs of shorts. Each pair normally cost $10, but there's a discount of 10% on the total cost for people who purchase 3 or more pairs at once. How much can she save by buying 3 pairs at once as opposed to purchasing them individually at different times?",
+    "question_sha256": "ee4c9cd159afe00546c7ca4876cb1e5416f4b8aa61e31154b5fef191f6206fa6",
+    "responses": [
+      {
+        "key": "gsm8k-train-1942:rich",
+        "raw_call_sha256": "413f0f6dd989f9bdacb1d234488c54f573d2ef6eb7cda7cf3724830d5e14c207",
+        "student_prefix": [
+          {
+            "content": "Stacy went to a store to buy some pairs of shorts. Each pair normally cost $10, but there's a discount of 10% on the total cost for people who purchase 3 or more pairs at once. How much can she save by buying 3 pairs at once as opposed to purchasing them individually at different times?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "93a3f3c1e7151d6ee56d6eeee1dac66b4fa7a11943a17ca1da33f8636250c5bb",
+        "target": "First, I identify the given quantities:\n- Each pair of shorts costs $10.\n- There's a 10% discount for buying 3 or more pairs at once.\n- Stacy is buying 3 pairs.\n\nNext, I calculate the total cost without the discount:\n- Without discount, 3 pairs cost 3 * $10 = $30.\n\nNow, I apply the 10% discount to the total cost:\n- The discount amount is 10% of $30, which is 0.10 * $30 = $3.\n- So, the total cost with the discount is $30 - $3 = $27.\n\nIf Stacy buys the pairs individually, the cost would be $10 per pair, so for 3 pairs, it would be 3 * $10 = $30.\n\nThe savings by buying 3 pairs at once is the difference between the cost without the discount and the cost with the discount:\n- Savings = $30 - $27 = $3.\n\nFINAL: 3",
+        "target_sha256": "c879b3f2aabb8f8f430416012c444d1eaa227a3c5d7dd1b6a096232e89bb3214"
+      },
+      {
+        "key": "gsm8k-train-1942:new_record",
+        "raw_call_sha256": "88838f949b2530a6bd4ce74d90c691d9bf644832f1e9bfafc949a861c379313f",
+        "student_prefix": [
+          {
+            "content": "Stacy went to a store to buy some pairs of shorts. Each pair normally cost $10, but there's a discount of 10% on the total cost for people who purchase 3 or more pairs at once. How much can she save by buying 3 pairs at once as opposed to purchasing them individually at different times?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Each pair of shorts costs $10.\n- There's a 10% discount for buying 3 or more pairs at once.\n- Stacy is buying 3 pairs.\n\nNext, I calculate the total cost without the discount:\n- Without discount, 3 pairs cost 3 * $10 = $30.\n\nNow, I apply the 10% discount to the total cost:\n- The discount amount is 10% of $30, which is 0.10 * $30 = $3.\n- So, the total cost with the discount is $30 - $3 = $27.\n\nIf Stacy buys the pairs individually, the cost would be $10 per pair, so for 3 pairs, it would be 3 * $10 = $30.\n\nThe savings by buying 3 pairs at once is the difference between the cost without the discount and the cost with the discount:\n- Savings = $30 - $27 = $3.\n\nFINAL: 3",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "2e63611f8a7506240899d6faa1c714f67d67fc9711fd7669b1060def31644e9a",
+        "target": "Given the problem, I identified the key quantities and the task at hand. The given quantities are:\n- Each pair of shorts costs $10.\n- There's a 10% discount for buying 3 or more pairs at once.\n- Stacy is buying 3 pairs.\n\nThe unknown I needed to find was the amount Stacy can save by buying 3 pairs at once as opposed to purchasing them individually at different times.\n\nTo solve this, I first calculated the total cost without the discount:\n- Total cost without discount = 3 pairs * $10/pair = $30.\n\nNext, I applied the 10% discount to the total cost:\n- Discount amount = 10% of $30 = 0.10 * $30 = $3.\n- Total cost with discount = $30 - $3 = $27.\n\nThen, I compared the cost of buying 3 pairs at once with the cost of buying them individually:\n- Cost of buying 3 pairs individually = $30.\n- Cost of buying 3 pairs at once = $27.\n- Savings = $30 - $27 = $3.\n\nTo verify the result, I checked the calculations step-by-step:\n1. The total cost without discount is correctly calculated as $30.\n2. The discount amount is correctly calculated as $3.\n3. The total cost with discount is correctly calculated as $27.\n4. The savings is correctly calculated as $3.\n\nThe operations I used are:\n1. Multiplication to find the total cost without discount.\n2. Percentage calculation to find the discount amount.\n3. Subtraction to find the total cost with discount and the savings.\n\nI would reuse these operations in similar problems involving discounts and cost calculations. The final answer is:\n\nFINAL: 3",
+        "target_sha256": "3a2548211120ef4cd30ced81de60833b28fa2a3cb0aa3494ef8d87ed29c9bcda"
+      }
+    ],
+    "task_id": "gsm8k-train-1942"
+  },
+  {
+    "gold": "140",
+    "question": "Grandma wants to order 5 personalized backpacks for each of her grandchildren's first days of school.  The backpacks are 20% off of $20.00 and having their names monogrammed on the back pack will cost $12.00 each.  How much will the backpacks cost?",
+    "question_sha256": "3dc951310f44a40b6aea5958b04a62f000623828f900d32cbf6aa4b55a7e1cb7",
+    "responses": [
+      {
+        "key": "gsm8k-train-5288:rich",
+        "raw_call_sha256": "955a29e67f45a0cf50ea3c8b2144fda672985fa488a3451a4a0a3ce34d861251",
+        "student_prefix": [
+          {
+            "content": "Grandma wants to order 5 personalized backpacks for each of her grandchildren's first days of school.  The backpacks are 20% off of $20.00 and having their names monogrammed on the back pack will cost $12.00 each.  How much will the backpacks cost?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "0a4988a6aa8251ae8ba25d1b9ac6389d1b898789c07c5bcef3f8eeaf3313d406",
+        "target": "Given:\n- 5 backpacks for grandchildren\n- Each backpack is $20.00 and 20% off\n- Monogramming each backpack costs $12.00\n\nFirst, calculate the discount on each backpack:\n- 20% of $20.00 = 0.20 * $20.00 = $4.00\n- Discounted price per backpack = $20.00 - $4.00 = $16.00\n\nNext, add the monogramming cost:\n- Total cost per backpack = $16.00 + $12.00 = $28.00\n\nNow, calculate the total cost for 5 backpacks:\n- Total cost = 5 * $28.00 = $140.00\n\nFINAL: 140",
+        "target_sha256": "7291a775bcaba656d53f111007706e54f9b4de901e90405ecae3c405a200e7b4"
+      },
+      {
+        "key": "gsm8k-train-5288:new_record",
+        "raw_call_sha256": "082ee61f71c47c8bc6974a4408546ec98b1954875d03fb57301349558a11e3cf",
+        "student_prefix": [
+          {
+            "content": "Grandma wants to order 5 personalized backpacks for each of her grandchildren's first days of school.  The backpacks are 20% off of $20.00 and having their names monogrammed on the back pack will cost $12.00 each.  How much will the backpacks cost?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- 5 backpacks for grandchildren\n- Each backpack is $20.00 and 20% off\n- Monogramming each backpack costs $12.00\n\nFirst, calculate the discount on each backpack:\n- 20% of $20.00 = 0.20 * $20.00 = $4.00\n- Discounted price per backpack = $20.00 - $4.00 = $16.00\n\nNext, add the monogramming cost:\n- Total cost per backpack = $16.00 + $12.00 = $28.00\n\nNow, calculate the total cost for 5 backpacks:\n- Total cost = 5 * $28.00 = $140.00\n\nFINAL: 140",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "c8d769d51ab453929217b1dd1841af1ba2515f29d0b38915b430218613c69a7a",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- Each backpack originally costs $20.00.\n- There is a 20% discount on each backpack.\n- Monogramming each backpack costs an additional $12.00.\n- Grandma wants to order 5 backpacks.\n\nTo solve this, I first calculated the discounted price of each backpack:\n- 20% of $20.00 is $4.00 (0.20 * $20.00).\n- The discounted price per backpack is $20.00 - $4.00 = $16.00.\n\nNext, I added the monogramming cost to the discounted price:\n- The total cost per backpack is $16.00 + $12.00 = $28.00.\n\nThen, I calculated the total cost for 5 backpacks:\n- The total cost for 5 backpacks is 5 * $28.00 = $140.00.\n\nTo verify the result, I checked the calculation step-by-step:\n- Discounted price per backpack: $20.00 - $4.00 = $16.00.\n- Total cost per backpack with monogramming: $16.00 + $12.00 = $28.00.\n- Total cost for 5 backpacks: 5 * $28.00 = $140.00.\n\nThe operations I used are:\n1. Calculate the discount: 20% of $20.00.\n2. Subtract the discount from the original price to get the discounted price.\n3. Add the monogramming cost to the discounted price.\n4. Multiply the total cost per backpack by the number of backpacks.\n\nI would reuse these operations in similar problems involving discounts and additional costs for multiple items. The final answer is:\n\nFINAL: 140",
+        "target_sha256": "1335d37ea14d407cf83ccd0296f69ab46b14daedde6a0abc10e5ee15050ae9de"
+      }
+    ],
+    "task_id": "gsm8k-train-5288"
+  },
+  {
+    "gold": "600",
+    "question": "Lyra bought a pair of shoes at a 20% discount.  If she paid $480, how much was the original price of the pair of shoes?",
+    "question_sha256": "fa997804da68ebd05c60b79a72259fbb67c05261975da4e0a44d606bddce74a1",
+    "responses": [
+      {
+        "key": "gsm8k-train-1720:rich",
+        "raw_call_sha256": "7b84897b4d0a295ce67fdc5d5451c96467b63692317e0500b983e72725b9d31c",
+        "student_prefix": [
+          {
+            "content": "Lyra bought a pair of shoes at a 20% discount.  If she paid $480, how much was the original price of the pair of shoes?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "066b2bb4cc5741d294149c97132a3b9cbb8bae56d83248a85cb3f8d2fcfa2727",
+        "target": "Given: Lyra paid $480 for shoes at a 20% discount. We need to find the original price.\n\nLet the original price be \\( P \\).\n\nSince the shoes were sold at a 20% discount, Lyra paid 80% of the original price. This can be expressed as:\n\\[ 0.80 \\times P = 480 \\]\n\nTo find \\( P \\), we solve for \\( P \\):\n\\[ P = \\frac{480}{0.80} \\]\n\\[ P = 600 \\]\n\nSo, the original price of the shoes was $600.\n\nFINAL: 600",
+        "target_sha256": "0a99d03a01d33816243ec3ef1a13ed2933c85f2a3e2caa837232c27e899faad0"
+      },
+      {
+        "key": "gsm8k-train-1720:new_record",
+        "raw_call_sha256": "7b885e40258d848b261a5998dd7ac7133061157f6144533f7bb44a50547de9fe",
+        "student_prefix": [
+          {
+            "content": "Lyra bought a pair of shoes at a 20% discount.  If she paid $480, how much was the original price of the pair of shoes?",
+            "role": "user"
+          },
+          {
+            "content": "Given: Lyra paid $480 for shoes at a 20% discount. We need to find the original price.\n\nLet the original price be \\( P \\).\n\nSince the shoes were sold at a 20% discount, Lyra paid 80% of the original price. This can be expressed as:\n\\[ 0.80 \\times P = 480 \\]\n\nTo find \\( P \\), we solve for \\( P \\):\n\\[ P = \\frac{480}{0.80} \\]\n\\[ P = 600 \\]\n\nSo, the original price of the shoes was $600.\n\nFINAL: 600",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "0be8f77b7f475f25cf2089b59e1aa841fe87e24f0bf200f67a2ccad5ab7d050a",
+        "target": "Given: Lyra bought a pair of shoes at a 20% discount and paid $480. The unknown is the original price of the shoes.\n\nI identified that a 20% discount means Lyra paid 80% of the original price. This can be expressed as:\n\\[ 0.80 \\times \\text{Original Price} = 480 \\]\n\nTo find the original price, I need to solve for the original price by dividing both sides of the equation by 0.80:\n\\[ \\text{Original Price} = \\frac{480}{0.80} \\]\n\nI expected this operation to give me the original price in dollars. Performing the division:\n\\[ \\text{Original Price} = 600 \\]\n\nTo check the result, I can verify that 80% of $600 is indeed $480:\n\\[ 0.80 \\times 600 = 480 \\]\n\nThis confirms that my solution is correct. The operation I would reuse is the division of the amount paid by the percentage of the original price that was paid, as long as the percentage is given as a decimal.\n\nFINAL: 600",
+        "target_sha256": "8ccadc5f6cc4869931f3e2f2d3f38eae544105f3818688937cbcc246425abfb6"
+      }
+    ],
+    "task_id": "gsm8k-train-1720"
+  },
+  {
+    "gold": "47000",
+    "question": "John decides to fix a racecar.  It cost $20,000 to fix but he gets a 20% discount.  He wins his first race but only keeps 90% of the money.  The prize is $70,000.  How much money did he make from the car?",
+    "question_sha256": "414ab5677a9a49de0d7e77ab0c65cc4f724c3425f4620b3c53f96ab0b34b1407",
+    "responses": [
+      {
+        "key": "gsm8k-train-2564:rich",
+        "raw_call_sha256": "24aff3302aca1582456452390ca1809cf5fa2ac348b8af710075bce568645b54",
+        "student_prefix": [
+          {
+            "content": "John decides to fix a racecar.  It cost $20,000 to fix but he gets a 20% discount.  He wins his first race but only keeps 90% of the money.  The prize is $70,000.  How much money did he make from the car?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "3ff0e75cc3abff70e6276441b152d116076e3091c535ab19f4daa25fd2d3d54a",
+        "target": "First, calculate the cost after the discount. The original cost is $20,000 and the discount is 20%, so the discount amount is $20,000 * 0.20 = $4,000. Therefore, the cost after the discount is $20,000 - $4,000 = $16,000.\n\nNext, calculate the amount John keeps from the prize money. The prize is $70,000 and he keeps 90% of it, so the amount he keeps is $70,000 * 0.90 = $63,000.\n\nFinally, calculate the net profit by subtracting the cost from the prize money he keeps. The net profit is $63,000 - $16,000 = $47,000.\n\nFINAL: 47000",
+        "target_sha256": "a77827637baf6f76ae123953332c7f6e9269fccb77394485526decb45c94054c"
+      },
+      {
+        "key": "gsm8k-train-2564:new_record",
+        "raw_call_sha256": "06294bac90ab0c999ad83de001e50d4b1854d107725e4eb93f88b366ca94f102",
+        "student_prefix": [
+          {
+            "content": "John decides to fix a racecar.  It cost $20,000 to fix but he gets a 20% discount.  He wins his first race but only keeps 90% of the money.  The prize is $70,000.  How much money did he make from the car?",
+            "role": "user"
+          },
+          {
+            "content": "First, calculate the cost after the discount. The original cost is $20,000 and the discount is 20%, so the discount amount is $20,000 * 0.20 = $4,000. Therefore, the cost after the discount is $20,000 - $4,000 = $16,000.\n\nNext, calculate the amount John keeps from the prize money. The prize is $70,000 and he keeps 90% of it, so the amount he keeps is $70,000 * 0.90 = $63,000.\n\nFinally, calculate the net profit by subtracting the cost from the prize money he keeps. The net profit is $63,000 - $16,000 = $47,000.\n\nFINAL: 47000",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "16d20e76abf01546c539a993b61336ad321d3c34adc83bd7a351f7bcc3f25aac",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- Cost to fix the racecar: $20,000\n- Discount: 20%\n- Prize money: $70,000\n- Percentage of prize money kept: 90%\n- Unknown: Net profit from the car\n\nFirst, I calculated the cost after the discount. The discount amount is $20,000 * 0.20 = $4,000. Therefore, the cost after the discount is $20,000 - $4,000 = $16,000. This step involved subtracting the discount from the original cost, which is a straightforward arithmetic operation.\n\nNext, I calculated the amount John keeps from the prize money. The amount he keeps is $70,000 * 0.90 = $63,000. This step involved multiplying the prize money by the percentage he keeps, which is another arithmetic operation.\n\nFinally, I calculated the net profit by subtracting the cost after the discount from the amount he keeps from the prize money. The net profit is $63,000 - $16,000 = $47,000. This step involved subtracting the cost from the prize money he keeps, which is the final arithmetic operation needed to find the net profit.\n\nTo check the result, I verified each step:\n1. The cost after the discount is correct because $20,000 - $4,000 = $16,000.\n2. The amount he keeps from the prize money is correct because $70,000 * 0.90 = $63,000.\n3. The net profit is correct because $63,000 - $16,000 = $47,000.\n\nThe operations I used are subtraction and multiplication, which are reusable in similar problems involving discounts and percentages. I would reuse these operations whenever I need to calculate the final cost after a discount or the amount kept from a prize.\n\nFINAL: 47000",
+        "target_sha256": "756b69c15ca7ad4e0657358f02ba38698367842cdceca8ffdc74a53e840ddf76"
+      }
+    ],
+    "task_id": "gsm8k-train-2564"
+  },
+  {
+    "gold": "43",
+    "question": "Martha is grinding a spice paste. She adds 3 tablespoons of ginger, 1 teaspoon of cardamom, 1 teaspoon of mustard, 2 tablespoons of garlic, and four times as much chile powder as mustard. What percentage of the spice paste is ginger, rounded to the nearest integer? (Remember there are three teaspoons per tablespoon.)",
+    "question_sha256": "4eca7e95dee60d2c63d71e2b62d6f92f1c30623a5c4c55e9c89c096bcf83657e",
+    "responses": [
+      {
+        "key": "gsm8k-train-7146:rich",
+        "raw_call_sha256": "bb73078db4aa18c939c3a04c4ed18cba0c992b7736475cf55af0a8c9d0978c8f",
+        "student_prefix": [
+          {
+            "content": "Martha is grinding a spice paste. She adds 3 tablespoons of ginger, 1 teaspoon of cardamom, 1 teaspoon of mustard, 2 tablespoons of garlic, and four times as much chile powder as mustard. What percentage of the spice paste is ginger, rounded to the nearest integer? (Remember there are three teaspoons per tablespoon.)",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "70da064c6d2962f920eb79c295b40875ea896399014914619c5dc8b56864be1f",
+        "target": "First, I identify the quantities:\n- Ginger: 3 tablespoons\n- Cardamom: 1 teaspoon\n- Mustard: 1 teaspoon\n- Garlic: 2 tablespoons\n- Chile powder: 4 times the mustard, which is 4 teaspoons\n\nNext, I convert all measurements to teaspoons for consistency:\n- Ginger: 3 tablespoons * 3 teaspoons/tablespoon = 9 teaspoons\n- Garlic: 2 tablespoons * 3 teaspoons/tablespoon = 6 teaspoons\n- Cardamom: 1 teaspoon\n- Mustard: 1 teaspoon\n- Chile powder: 4 teaspoons\n\nNow, I calculate the total amount of the spice paste in teaspoons:\nTotal = 9 (ginger) + 1 (cardamom) + 1 (mustard) + 6 (garlic) + 4 (chile powder) = 21 teaspoons\n\nTo find the percentage of the spice paste that is ginger:\nPercentage of ginger = (9 teaspoons / 21 teaspoons) * 100 = 42.857%\n\nRounded to the nearest integer, the percentage is 43%.\n\nFINAL: 43",
+        "target_sha256": "898777112c83b2260e1af903549485bea2e3ba38f39c2de151cb0f56dc3d1f1c"
+      },
+      {
+        "key": "gsm8k-train-7146:new_record",
+        "raw_call_sha256": "4cf92c6eff8363c5129683dcfd422f7e3131c628b2d2c2275eb8dc8b83ce72a7",
+        "student_prefix": [
+          {
+            "content": "Martha is grinding a spice paste. She adds 3 tablespoons of ginger, 1 teaspoon of cardamom, 1 teaspoon of mustard, 2 tablespoons of garlic, and four times as much chile powder as mustard. What percentage of the spice paste is ginger, rounded to the nearest integer? (Remember there are three teaspoons per tablespoon.)",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the quantities:\n- Ginger: 3 tablespoons\n- Cardamom: 1 teaspoon\n- Mustard: 1 teaspoon\n- Garlic: 2 tablespoons\n- Chile powder: 4 times the mustard, which is 4 teaspoons\n\nNext, I convert all measurements to teaspoons for consistency:\n- Ginger: 3 tablespoons * 3 teaspoons/tablespoon = 9 teaspoons\n- Garlic: 2 tablespoons * 3 teaspoons/tablespoon = 6 teaspoons\n- Cardamom: 1 teaspoon\n- Mustard: 1 teaspoon\n- Chile powder: 4 teaspoons\n\nNow, I calculate the total amount of the spice paste in teaspoons:\nTotal = 9 (ginger) + 1 (cardamom) + 1 (mustard) + 6 (garlic) + 4 (chile powder) = 21 teaspoons\n\nTo find the percentage of the spice paste that is ginger:\nPercentage of ginger = (9 teaspoons / 21 teaspoons) * 100 = 42.857%\n\nRounded to the nearest integer, the percentage is 43%.\n\nFINAL: 43",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "51d38596e82acdea4c7b9c47065622ec12f9e7e32b073d20489a1c911920cab6",
+        "target": "Given the problem, I first identified the quantities of each spice in the spice paste:\n- Ginger: 3 tablespoons\n- Cardamom: 1 teaspoon\n- Mustard: 1 teaspoon\n- Garlic: 2 tablespoons\n- Chile powder: 4 times the mustard, which is 4 teaspoons\n\nI then converted all measurements to teaspoons for consistency:\n- Ginger: 3 tablespoons * 3 teaspoons/tablespoon = 9 teaspoons\n- Garlic: 2 tablespoons * 3 teaspoons/tablespoon = 6 teaspoons\n- Cardamom: 1 teaspoon\n- Mustard: 1 teaspoon\n- Chile powder: 4 teaspoons\n\nNext, I calculated the total amount of the spice paste in teaspoons:\nTotal = 9 (ginger) + 1 (cardamom) + 1 (mustard) + 6 (garlic) + 4 (chile powder) = 21 teaspoons\n\nTo find the percentage of the spice paste that is ginger, I used the formula:\nPercentage of ginger = (9 teaspoons / 21 teaspoons) * 100\n\nThis calculation gave me 42.857%, which I rounded to the nearest integer, resulting in 43%.\n\nTo check the result, I verified that the total of the converted measurements indeed sums to 21 teaspoons, and that the percentage calculation is correct. The percentage of ginger in the spice paste is 43%.\n\nThe operation I would reuse is converting tablespoons to teaspoons and calculating the percentage of a component in a mixture. This is useful whenever dealing with mixed units and needing to find the percentage of a specific component.\n\nFINAL: 43",
+        "target_sha256": "6099de1acb587ff50bbd5b6f1de76ff0bdfdd77a7104093199814afeadffdd93"
+      }
+    ],
+    "task_id": "gsm8k-train-7146"
+  },
+  {
+    "gold": "22",
+    "question": "Jerry owes a loan shark $200. The loan shark charges Jerry 10% interest compounded monthly. (This means that every month the loan shark adds Jerry's interest amount to his loan, and the next month Jerry has to pay 10% on the new total). If Jerry doesn't make any payments, how much (in dollars) does the loan shark charge in interest the second month?",
+    "question_sha256": "97e20d885fd295341d9cebe482e40de2bbe7a276df138b710cacb4416ba23924",
+    "responses": [
+      {
+        "key": "gsm8k-train-4809:rich",
+        "raw_call_sha256": "483311c46601d4fc3137dc7408767c0470226fcfd583ae3f9dcc36eccb60ea58",
+        "student_prefix": [
+          {
+            "content": "Jerry owes a loan shark $200. The loan shark charges Jerry 10% interest compounded monthly. (This means that every month the loan shark adds Jerry's interest amount to his loan, and the next month Jerry has to pay 10% on the new total). If Jerry doesn't make any payments, how much (in dollars) does the loan shark charge in interest the second month?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "bf46f13ba04a1663cc2a4ddcce6100e415b9f71b80a988ce72bb93d48549860f",
+        "target": "Given:\n- Initial loan amount: $200\n- Monthly interest rate: 10%\n\nFirst, calculate the interest for the first month:\n\\[ \\text{Interest for the first month} = 200 \\times 0.10 = 20 \\text{ dollars} \\]\n\nAfter the first month, the total loan amount becomes:\n\\[ 200 + 20 = 220 \\text{ dollars} \\]\n\nNow, calculate the interest for the second month on the new total:\n\\[ \\text{Interest for the second month} = 220 \\times 0.10 = 22 \\text{ dollars} \\]\n\nFINAL: 22",
+        "target_sha256": "81b599dab06f9e4dfed054c4dc525bcd3a16cec6809dc845e7aa7aa062147777"
+      },
+      {
+        "key": "gsm8k-train-4809:new_record",
+        "raw_call_sha256": "3f279ae83c5d492291caa8cdaa55a3ac1af1b7c4e9b05822e87519f961149247",
+        "student_prefix": [
+          {
+            "content": "Jerry owes a loan shark $200. The loan shark charges Jerry 10% interest compounded monthly. (This means that every month the loan shark adds Jerry's interest amount to his loan, and the next month Jerry has to pay 10% on the new total). If Jerry doesn't make any payments, how much (in dollars) does the loan shark charge in interest the second month?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Initial loan amount: $200\n- Monthly interest rate: 10%\n\nFirst, calculate the interest for the first month:\n\\[ \\text{Interest for the first month} = 200 \\times 0.10 = 20 \\text{ dollars} \\]\n\nAfter the first month, the total loan amount becomes:\n\\[ 200 + 20 = 220 \\text{ dollars} \\]\n\nNow, calculate the interest for the second month on the new total:\n\\[ \\text{Interest for the second month} = 220 \\times 0.10 = 22 \\text{ dollars} \\]\n\nFINAL: 22",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "9947f763a3cf743ac0d4bb50a115d3c364aad2fafabb4c5cc850c695acd61ea2",
+        "target": "Given the initial loan amount of $200 and a monthly interest rate of 10%, I first calculated the interest for the first month. The interest for the first month was straightforward: \n\\[ \\text{Interest for the first month} = 200 \\times 0.10 = 20 \\text{ dollars} \\]\nThis calculation was based on the given interest rate and the initial loan amount. After the first month, the total loan amount became:\n\\[ 200 + 20 = 220 \\text{ dollars} \\]\nNext, I calculated the interest for the second month on the new total of $220:\n\\[ \\text{Interest for the second month} = 220 \\times 0.10 = 22 \\text{ dollars} \\]\nI expected this result to mean that the loan shark would charge Jerry $22 in interest for the second month, given the compounding nature of the interest. To verify this, I simply rechecked the calculation using the new total from the first month. The operation I would reuse is the formula for compound interest for each month, as it directly connects the given quantities to the unknown interest amount for the second month.\n\nFINAL: 22",
+        "target_sha256": "691ea2c65e6b75da16df87a5458a963db2b0b3e4476d1ff36f1a44ddfd44df66"
+      }
+    ],
+    "task_id": "gsm8k-train-4809"
+  },
+  {
+    "gold": "9",
+    "question": "Michael has 36 pets. 25% of them are dogs, 50% are cats, and the rest are bunnies. How many bunnies does he have?",
+    "question_sha256": "e2ab37316d9d04e22154825428a89cb23393e6388142fbe052539efd650b6ee7",
+    "responses": [
+      {
+        "key": "gsm8k-train-6067:rich",
+        "raw_call_sha256": "02db6e443a5f1776e855f794faf0a98103c1d2c6bfa1c1a75c5ee16ca908d595",
+        "student_prefix": [
+          {
+            "content": "Michael has 36 pets. 25% of them are dogs, 50% are cats, and the rest are bunnies. How many bunnies does he have?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "c7b147fb0edf588af4ea2c275454adb16d62a391d9b331e294e7ad4a43167242",
+        "target": "Given that Michael has 36 pets, 25% of them are dogs and 50% are cats. The rest are bunnies. First, calculate the number of dogs: 25% of 36 is (25/100) * 36 = 9 dogs. Next, calculate the number of cats: 50% of 36 is (50/100) * 36 = 18 cats. The total number of dogs and cats is 9 + 18 = 27. Since the rest are bunnies, subtract the number of dogs and cats from the total number of pets: 36 - 27 = 9 bunnies. \n\nCHECK: The total pets (36) = dogs (9) + cats (18) + bunnies (9) = 36. This matches the given total, so the calculation is correct.\n\nFINAL: 9",
+        "target_sha256": "32e5227e45ff81b44f8da7cb644d5f14399eb43f165324815ca1f7fe433937a7"
+      },
+      {
+        "key": "gsm8k-train-6067:new_record",
+        "raw_call_sha256": "f48773b8fb597721ace73f341f1effae23dd770afa9bd3dd3f1a9f56e52ef2ab",
+        "student_prefix": [
+          {
+            "content": "Michael has 36 pets. 25% of them are dogs, 50% are cats, and the rest are bunnies. How many bunnies does he have?",
+            "role": "user"
+          },
+          {
+            "content": "Given that Michael has 36 pets, 25% of them are dogs and 50% are cats. The rest are bunnies. First, calculate the number of dogs: 25% of 36 is (25/100) * 36 = 9 dogs. Next, calculate the number of cats: 50% of 36 is (50/100) * 36 = 18 cats. The total number of dogs and cats is 9 + 18 = 27. Since the rest are bunnies, subtract the number of dogs and cats from the total number of pets: 36 - 27 = 9 bunnies. \n\nCHECK: The total pets (36) = dogs (9) + cats (18) + bunnies (9) = 36. This matches the given total, so the calculation is correct.\n\nFINAL: 9",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "d656e4ed103b5c1a5824313c32f0eb51fd3d6053277a3b14327ff88fac14e4cc",
+        "target": "Given that Michael has 36 pets, with 25% being dogs and 50% being cats, I needed to find out how many bunnies he has. The first step was to calculate the number of dogs. Since 25% of the pets are dogs, I used the formula: number of dogs = 25% of 36. This translates to (25/100) * 36 = 9 dogs. Next, I calculated the number of cats, which is 50% of the total pets: (50/100) * 36 = 18 cats. Adding the number of dogs and cats together, I got 9 + 18 = 27 pets. Since the total number of pets is 36, the remaining pets must be bunnies. Therefore, the number of bunnies is 36 - 27 = 9. To verify this, I checked that the sum of dogs, cats, and bunnies equals the total number of pets: 9 + 18 + 9 = 36. This confirms the solution is correct.\n\nThe operation I would reuse is the calculation of percentages of a total to find the number of a specific category of pets. This is useful whenever you need to determine the quantity of a subset based on a given percentage of a total.\n\nFINAL: 9",
+        "target_sha256": "7ec46c20ba2c606d458bcd2856eddc0472aeee4e313995973143f75347abf372"
+      }
+    ],
+    "task_id": "gsm8k-train-6067"
+  }
+]

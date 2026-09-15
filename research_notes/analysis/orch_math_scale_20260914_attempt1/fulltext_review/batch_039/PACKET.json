@@ -1,0 +1,338 @@
+[
+  {
+    "gold": "36",
+    "question": "Kevin's fish tank was leaking slowly at a rate of 1.5 ounces per hour.  He planned to go to the fish tank store later that day to get a new tank, but it may be as long as 12 hours before he can return home with the new tank.  Therefore, to collect the leaking fluid over that time, he placed a bucket underneath the tank that could hold twice the amount of fluid that would leak over 12 hours.  What size bucket, in ounces, did he use?",
+    "question_sha256": "2405e6f92289ab92f7d6e9b55a56c65d3cfd9f998c3f8937e5ce7052a6516294",
+    "responses": [
+      {
+        "key": "gsm8k-train-7013:rich",
+        "raw_call_sha256": "a10cf6f61cae195546c6dcf02e4bd9aed06315e05db7684394cdbb0777a8d50f",
+        "student_prefix": [
+          {
+            "content": "Kevin's fish tank was leaking slowly at a rate of 1.5 ounces per hour.  He planned to go to the fish tank store later that day to get a new tank, but it may be as long as 12 hours before he can return home with the new tank.  Therefore, to collect the leaking fluid over that time, he placed a bucket underneath the tank that could hold twice the amount of fluid that would leak over 12 hours.  What size bucket, in ounces, did he use?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "1e978326807fb3aa2cdbae087704df9881d45de2ac4c826882de8f66d0ff9311",
+        "target": "First, I calculate the total amount of fluid that would leak over 12 hours. The leak rate is 1.5 ounces per hour, so over 12 hours, the total leak would be:\n\\[ 1.5 \\, \\text{ounces/hour} \\times 12 \\, \\text{hours} = 18 \\, \\text{ounces} \\]\n\nKevin needs a bucket that can hold twice this amount. Therefore, the bucket size required is:\n\\[ 2 \\times 18 \\, \\text{ounces} = 36 \\, \\text{ounces} \\]\n\nFINAL: 36",
+        "target_sha256": "10b699a85f012054adacd9e4f1d94cc43c5ae75c6ab3cafe95d3f05e20814edc"
+      },
+      {
+        "key": "gsm8k-train-7013:new_record",
+        "raw_call_sha256": "d6ba34a553f423b707a32fbba83b6ffa98ab37d8cc834fec95491c0cf7f0bb85",
+        "student_prefix": [
+          {
+            "content": "Kevin's fish tank was leaking slowly at a rate of 1.5 ounces per hour.  He planned to go to the fish tank store later that day to get a new tank, but it may be as long as 12 hours before he can return home with the new tank.  Therefore, to collect the leaking fluid over that time, he placed a bucket underneath the tank that could hold twice the amount of fluid that would leak over 12 hours.  What size bucket, in ounces, did he use?",
+            "role": "user"
+          },
+          {
+            "content": "First, I calculate the total amount of fluid that would leak over 12 hours. The leak rate is 1.5 ounces per hour, so over 12 hours, the total leak would be:\n\\[ 1.5 \\, \\text{ounces/hour} \\times 12 \\, \\text{hours} = 18 \\, \\text{ounces} \\]\n\nKevin needs a bucket that can hold twice this amount. Therefore, the bucket size required is:\n\\[ 2 \\times 18 \\, \\text{ounces} = 36 \\, \\text{ounces} \\]\n\nFINAL: 36",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "36e3464e3debe064c7f85cc18b1e580599cbc41e46dabdf6b74dcadc54c7c034",
+        "target": "Given the problem, I identified the key quantities: the leak rate of 1.5 ounces per hour and the potential duration of 12 hours. The unknown was the size of the bucket needed, which was specified to be twice the amount of fluid that would leak over 12 hours. \n\nFirst, I calculated the total amount of fluid that would leak over 12 hours:\n\\[ 1.5 \\, \\text{ounces/hour} \\times 12 \\, \\text{hours} = 18 \\, \\text{ounces} \\]\n\nNext, I determined the size of the bucket needed, which was twice the amount of fluid that would leak:\n\\[ 2 \\times 18 \\, \\text{ounces} = 36 \\, \\text{ounces} \\]\n\nTo verify this, I considered that the bucket must hold enough fluid to cover the worst-case scenario of the leak over 12 hours, and the problem explicitly states that the bucket size should be twice this amount. Therefore, the bucket size of 36 ounces meets the requirement.\n\nThe operations I used were straightforward multiplication, and the result directly answered the problem's requirement. I did not need to make any assumptions beyond the given information.\n\nFINAL: 36",
+        "target_sha256": "1660c18ce2d5f1bfa0e01b31a67ce4680732cbe2d7995cf02b76176d9fcea83b"
+      }
+    ],
+    "task_id": "gsm8k-train-7013"
+  },
+  {
+    "gold": "30",
+    "question": "Ivory and Brayan are doing school projects with a tight deadline and have to stay up late to complete everything. They prepare coffee to help them stay focused. If Brayan drinks twice as much coffee as Ivory, and Brayan drinks 4 cups of coffee in an hour, calculate the total number of cups of coffee they drink together in 5 hours.",
+    "question_sha256": "4d570536943c35d5a2c89a55152e11c7349a977c06f9071622150758bc5472cf",
+    "responses": [
+      {
+        "key": "gsm8k-train-2777:rich",
+        "raw_call_sha256": "4aa66f800c27e7b18592c4c4fd1724f3c40a4f1fccc153e0dad2821405e63714",
+        "student_prefix": [
+          {
+            "content": "Ivory and Brayan are doing school projects with a tight deadline and have to stay up late to complete everything. They prepare coffee to help them stay focused. If Brayan drinks twice as much coffee as Ivory, and Brayan drinks 4 cups of coffee in an hour, calculate the total number of cups of coffee they drink together in 5 hours.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "87c4ac4e63744446efd0ffa3bd1552264156dfc192de6fc097eb99ef512bb657",
+        "target": "Given:\n- Brayan drinks 4 cups of coffee in an hour.\n- Brayan drinks twice as much coffee as Ivory.\n\nFirst, calculate how much coffee Ivory drinks in an hour:\n- Since Brayan drinks twice as much as Ivory, Ivory drinks 4 / 2 = 2 cups of coffee in an hour.\n\nNext, calculate the total amount of coffee each drinks in 5 hours:\n- Brayan drinks 4 cups/hour * 5 hours = 20 cups in 5 hours.\n- Ivory drinks 2 cups/hour * 5 hours = 10 cups in 5 hours.\n\nNow, add the amounts together to find the total:\n- Total coffee = Brayan's coffee + Ivory's coffee = 20 cups + 10 cups = 30 cups.\n\nFINAL: 30",
+        "target_sha256": "d75b2279ffd5d4ba9ff2cb0a5a14ab34dae7eafb09791eedebde8afdad0f897f"
+      },
+      {
+        "key": "gsm8k-train-2777:new_record",
+        "raw_call_sha256": "b23300ffde07a50d14e2f0904b8a116bad3c9b3154f43c14cd6535feeb785439",
+        "student_prefix": [
+          {
+            "content": "Ivory and Brayan are doing school projects with a tight deadline and have to stay up late to complete everything. They prepare coffee to help them stay focused. If Brayan drinks twice as much coffee as Ivory, and Brayan drinks 4 cups of coffee in an hour, calculate the total number of cups of coffee they drink together in 5 hours.",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Brayan drinks 4 cups of coffee in an hour.\n- Brayan drinks twice as much coffee as Ivory.\n\nFirst, calculate how much coffee Ivory drinks in an hour:\n- Since Brayan drinks twice as much as Ivory, Ivory drinks 4 / 2 = 2 cups of coffee in an hour.\n\nNext, calculate the total amount of coffee each drinks in 5 hours:\n- Brayan drinks 4 cups/hour * 5 hours = 20 cups in 5 hours.\n- Ivory drinks 2 cups/hour * 5 hours = 10 cups in 5 hours.\n\nNow, add the amounts together to find the total:\n- Total coffee = Brayan's coffee + Ivory's coffee = 20 cups + 10 cups = 30 cups.\n\nFINAL: 30",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "4d8dbb8095ad9114c7ba4f3d4e90046921d3a44036bc20a2cc09bff3cdbe7ce0",
+        "target": "Given the problem, I identified the key quantities: Brayan drinks 4 cups of coffee in an hour, and he drinks twice as much as Ivory. The unknown is the total number of cups of coffee they drink together in 5 hours.\n\nFirst, I calculated how much coffee Ivory drinks in an hour. Since Brayan drinks twice as much as Ivory, Ivory drinks 4 / 2 = 2 cups of coffee in an hour. This is a direct division based on the given ratio.\n\nNext, I calculated the total amount of coffee each drinks in 5 hours. Brayan drinks 4 cups/hour * 5 hours = 20 cups in 5 hours. Ivory drinks 2 cups/hour * 5 hours = 10 cups in 5 hours. This is a simple multiplication of the hourly consumption by the number of hours.\n\nAdding these together, the total number of cups of coffee they drink together in 5 hours is 20 cups + 10 cups = 30 cups. This is a straightforward addition of the two quantities.\n\nTo check the result, I re-evaluated the steps:\n1. Brayan drinks 4 cups/hour, so in 5 hours, he drinks 4 * 5 = 20 cups.\n2. Ivory drinks 2 cups/hour, so in 5 hours, she drinks 2 * 5 = 10 cups.\n3. Together, they drink 20 + 10 = 30 cups.\n\nThe operations used are direct division, multiplication, and addition, all of which are straightforward and reliable. The result, 30 cups, matches the problem statement.\n\nFINAL: 30",
+        "target_sha256": "59d9e3e84b12366b514c2438ed428610560e01ff413f8712d99403c3a498863b"
+      }
+    ],
+    "task_id": "gsm8k-train-2777"
+  },
+  {
+    "gold": "800",
+    "question": "John assembles widgets at a factory.  He can make 20 widgets an hour and works for 8 hours a day 5 days a week.  How many widgets does he make a week?",
+    "question_sha256": "2418c6ae7fafa2f42dabfc23fba6c0430cf2a9259627dfac79fe0bdcd3c97d1c",
+    "responses": [
+      {
+        "key": "gsm8k-train-6910:rich",
+        "raw_call_sha256": "863c46060208588e7cf2e74646b522aa029de675f29a5233ca116abd4470a223",
+        "student_prefix": [
+          {
+            "content": "John assembles widgets at a factory.  He can make 20 widgets an hour and works for 8 hours a day 5 days a week.  How many widgets does he make a week?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "0a691813990224cfc15dc8469298c7465c1b2f3d9e8f94557e09d0b7c6897010",
+        "target": "Given:\n- John makes 20 widgets per hour.\n- He works 8 hours a day.\n- He works 5 days a week.\n\nTo find the number of widgets John makes in a week, we can break it down into steps:\n\n1. Calculate the number of widgets John makes in one day:\n   \\[\n   20 \\text{ widgets/hour} \\times 8 \\text{ hours/day} = 160 \\text{ widgets/day}\n   \\]\n\n2. Calculate the number of widgets John makes in one week:\n   \\[\n   160 \\text{ widgets/day} \\times 5 \\text{ days/week} = 800 \\text{ widgets/week}\n   \\]\n\nSo, John makes 800 widgets a week.\n\nFINAL: 800",
+        "target_sha256": "37e2fb92489a76ffdc146a468f9e40d4d92754462bef5174a51b779e8571613d"
+      },
+      {
+        "key": "gsm8k-train-6910:new_record",
+        "raw_call_sha256": "4f8c791fa8ab259e8780e1791aaee4747b8d5392fac849c0816abd66bab289e1",
+        "student_prefix": [
+          {
+            "content": "John assembles widgets at a factory.  He can make 20 widgets an hour and works for 8 hours a day 5 days a week.  How many widgets does he make a week?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- John makes 20 widgets per hour.\n- He works 8 hours a day.\n- He works 5 days a week.\n\nTo find the number of widgets John makes in a week, we can break it down into steps:\n\n1. Calculate the number of widgets John makes in one day:\n   \\[\n   20 \\text{ widgets/hour} \\times 8 \\text{ hours/day} = 160 \\text{ widgets/day}\n   \\]\n\n2. Calculate the number of widgets John makes in one week:\n   \\[\n   160 \\text{ widgets/day} \\times 5 \\text{ days/week} = 800 \\text{ widgets/week}\n   \\]\n\nSo, John makes 800 widgets a week.\n\nFINAL: 800",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "946a4e23618190d8880c5bf38f35b6132ab911dac9a86f3f4f7f7d6a0f46d6bc",
+        "target": "Given the problem, I identified the following quantities:\n- John assembles 20 widgets per hour.\n- He works 8 hours a day.\n- He works 5 days a week.\n\nThe unknown I needed to find was the total number of widgets John assembles in a week.\n\nTo solve this, I first calculated the number of widgets John assembles in one day:\n\\[ 20 \\text{ widgets/hour} \\times 8 \\text{ hours/day} = 160 \\text{ widgets/day} \\]\n\nNext, I calculated the total number of widgets he assembles in a week:\n\\[ 160 \\text{ widgets/day} \\times 5 \\text{ days/week} = 800 \\text{ widgets/week} \\]\n\nTo verify this result, I checked the multiplication and the units consistency. The units of hours and days cancel out, leaving widgets as the final unit, which is correct. The multiplication was straightforward and the result makes sense in the context of the problem.\n\nThe operation I would reuse is the multiplication of rates and time periods. This is useful whenever you need to find the total output given a rate and the time over which it is applied.\n\nFINAL: 800",
+        "target_sha256": "fd1a3bd7506aa1464381e44f568f71b96697a20d8cae18ece22525964ea8de4d"
+      }
+    ],
+    "task_id": "gsm8k-train-6910"
+  },
+  {
+    "gold": "25",
+    "question": "Jane runs 3 kilometers in two hours. What is her speed in meters per minute?",
+    "question_sha256": "5da7d0bd99a7d5ac605f6bbcaf6cf2bbc3fca142494cf13dc9f2839f693eeb43",
+    "responses": [
+      {
+        "key": "gsm8k-train-2944:rich",
+        "raw_call_sha256": "84a03c7f2ad9422337859ec6c855b50c5aff5e0e368cf75fed492b114c36e0d4",
+        "student_prefix": [
+          {
+            "content": "Jane runs 3 kilometers in two hours. What is her speed in meters per minute?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "e1626fe4a4f7ebc918f5778cde593c967f79ba2a3ab1b2830608c207d157655e",
+        "target": "Given: Jane runs 3 kilometers in 2 hours. We need to find her speed in meters per minute.\n\nFirst, convert kilometers to meters: 3 kilometers = 3,000 meters.\nNext, convert hours to minutes: 2 hours = 120 minutes.\n\nNow, calculate the speed in meters per minute: \nSpeed = Distance / Time = 3,000 meters / 120 minutes = 25 meters/minute.\n\nFINAL: 25",
+        "target_sha256": "840626c8738350676fac25c2eee5f18f49f311e423188320be7c59d330c5f78a"
+      },
+      {
+        "key": "gsm8k-train-2944:new_record",
+        "raw_call_sha256": "21cfe8332652e347e3c8460255f31ca01ae037bcc0d461cc97ffaf9980a5df06",
+        "student_prefix": [
+          {
+            "content": "Jane runs 3 kilometers in two hours. What is her speed in meters per minute?",
+            "role": "user"
+          },
+          {
+            "content": "Given: Jane runs 3 kilometers in 2 hours. We need to find her speed in meters per minute.\n\nFirst, convert kilometers to meters: 3 kilometers = 3,000 meters.\nNext, convert hours to minutes: 2 hours = 120 minutes.\n\nNow, calculate the speed in meters per minute: \nSpeed = Distance / Time = 3,000 meters / 120 minutes = 25 meters/minute.\n\nFINAL: 25",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "b77dda39238b5e307813521c0f588e1f64351292a37922445f3470420a1ecc8e",
+        "target": "Given: Jane runs 3 kilometers in 2 hours. The task is to find her speed in meters per minute.\n\nI started by identifying the given quantities:\n- Distance: 3 kilometers\n- Time: 2 hours\n\nThe unknown I need to find is the speed in meters per minute.\n\nTo solve this, I first converted the distance from kilometers to meters:\n- 3 kilometers = 3,000 meters\n\nNext, I converted the time from hours to minutes:\n- 2 hours = 120 minutes\n\nTo find the speed, I used the formula:\n\\[ \\text{Speed} = \\frac{\\text{Distance}}{\\text{Time}} \\]\n\nSubstituting the values:\n\\[ \\text{Speed} = \\frac{3,000 \\text{ meters}}{120 \\text{ minutes}} \\]\n\nPerforming the division:\n\\[ \\text{Speed} = 25 \\text{ meters per minute} \\]\n\nTo check the result, I considered the units and the arithmetic:\n- The distance was correctly converted from kilometers to meters.\n- The time was correctly converted from hours to minutes.\n- The division was performed accurately.\n\nThe result, 25 meters per minute, makes sense because it represents the distance Jane covers in one minute, given her total distance and total time.\n\nI would reuse this operation when converting units and calculating speed in similar problems.\n\nFINAL: 25",
+        "target_sha256": "59d651585bacce5eb08c6cc7e6b1f211cb8ffe34250e8b212f1d1c376f9fd1b8"
+      }
+    ],
+    "task_id": "gsm8k-train-2944"
+  },
+  {
+    "gold": "27",
+    "question": "Joan has 2 hours to get all her music practice done. She spends 30 minutes on the piano, 25 minutes writing music on her computer, and 38 minutes reading about the history of the piano. Her final work is to use a special finger exerciser. How much time does she have left to use this?",
+    "question_sha256": "a973677784b4dd87c815ef711e959031ad3ed26bc446c50b048b518091574b5d",
+    "responses": [
+      {
+        "key": "gsm8k-train-2062:rich",
+        "raw_call_sha256": "2d25cf58d74cd6b491bff08174a93b2d8e137191afd0263bd520681d0d3ba627",
+        "student_prefix": [
+          {
+            "content": "Joan has 2 hours to get all her music practice done. She spends 30 minutes on the piano, 25 minutes writing music on her computer, and 38 minutes reading about the history of the piano. Her final work is to use a special finger exerciser. How much time does she have left to use this?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "d3572b6430d080502e16cc8dbe66d2053703970cd176c633404fe64bacc60905",
+        "target": "I start with 2 hours, which is 120 minutes. First, I subtract the time spent on the piano: 120 - 30 = 90 minutes. Next, I subtract the time spent writing music: 90 - 25 = 65 minutes. Then, I subtract the time spent reading about the piano's history: 65 - 38 = 27 minutes. \n\nSo, the time left for using the special finger exerciser is 27 minutes.\n\nFINAL: 27",
+        "target_sha256": "737c11f15312f9e2d9c69a24dabe1598305feaa4dfb58caafd5beb42b41f6cf7"
+      },
+      {
+        "key": "gsm8k-train-2062:new_record",
+        "raw_call_sha256": "9baf14af57acf2ec289a9c89467d38086330b693fbaf3169391f6e73e6b67142",
+        "student_prefix": [
+          {
+            "content": "Joan has 2 hours to get all her music practice done. She spends 30 minutes on the piano, 25 minutes writing music on her computer, and 38 minutes reading about the history of the piano. Her final work is to use a special finger exerciser. How much time does she have left to use this?",
+            "role": "user"
+          },
+          {
+            "content": "I start with 2 hours, which is 120 minutes. First, I subtract the time spent on the piano: 120 - 30 = 90 minutes. Next, I subtract the time spent writing music: 90 - 25 = 65 minutes. Then, I subtract the time spent reading about the piano's history: 65 - 38 = 27 minutes. \n\nSo, the time left for using the special finger exerciser is 27 minutes.\n\nFINAL: 27",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "63432026f552486f458c2af4eb134023d628aade03b8c7bc62cfdf23e5199e7a",
+        "target": "Given that Joan has 2 hours (120 minutes) to get all her music practice done, I first noted the time spent on each activity. She spent 30 minutes on the piano, 25 minutes writing music on her computer, and 38 minutes reading about the history of the piano. To find out how much time she has left for the special finger exerciser, I decided to subtract the time spent on each activity from the total time available.\n\nFirst, I subtracted the 30 minutes spent on the piano from the total 120 minutes:\n\\[ 120 - 30 = 90 \\]\nThis left her with 90 minutes.\n\nNext, I subtracted the 25 minutes spent writing music from the remaining 90 minutes:\n\\[ 90 - 25 = 65 \\]\nThis left her with 65 minutes.\n\nThen, I subtracted the 38 minutes spent reading about the piano's history from the remaining 65 minutes:\n\\[ 65 - 38 = 27 \\]\nThis left her with 27 minutes.\n\nTo verify the result, I checked that the sum of the time spent on each activity plus the time left for the finger exerciser equals the total time available:\n\\[ 30 + 25 + 38 + 27 = 120 \\]\nThis confirms that the calculations are correct.\n\nThe operation I would reuse is the subtraction of the time spent on each activity from the total time available, as it directly and accurately determines the remaining time for the final activity.\n\nFINAL: 27",
+        "target_sha256": "44311874f78c0dac0198509702406ab5f595680457afc547eac2e6bba63c01ed"
+      }
+    ],
+    "task_id": "gsm8k-train-2062"
+  },
+  {
+    "gold": "4",
+    "question": "Arlene hiked 24 miles on Saturday, carrying a 60-pound backpack. She is exactly 5 feet tall. She spent 6 hours hiking. The temperature during the day was 60 degrees Fahrenheit. What was Arlene's average hiking pace, in miles per hour?",
+    "question_sha256": "fa43a59e3761da9eb101a71ab7324c0cd31f93795dc57d86f843a681c3ec13dd",
+    "responses": [
+      {
+        "key": "gsm8k-train-551:rich",
+        "raw_call_sha256": "8111525ad361ee4ece19eb014d6236efcd028b1a9efd72aa97e7707b19ca1bad",
+        "student_prefix": [
+          {
+            "content": "Arlene hiked 24 miles on Saturday, carrying a 60-pound backpack. She is exactly 5 feet tall. She spent 6 hours hiking. The temperature during the day was 60 degrees Fahrenheit. What was Arlene's average hiking pace, in miles per hour?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "8b2bc9dca628196a9e874bd4ed8f22d6d9b2fdbfe87bf876be34d6bb0925d567",
+        "target": "To find Arlene's average hiking pace in miles per hour, I need to divide the total distance she hiked by the total time she spent hiking. \n\nGiven:\n- Total distance hiked: 24 miles\n- Total time spent hiking: 6 hours\n\nThe formula for average pace is:\n\\[ \\text{Average pace} = \\frac{\\text{Total distance}}{\\text{Total time}} \\]\n\nPlugging in the values:\n\\[ \\text{Average pace} = \\frac{24 \\text{ miles}}{6 \\text{ hours}} = 4 \\text{ miles per hour} \\]\n\nSo, Arlene's average hiking pace was 4 miles per hour.\n\nFINAL: 4",
+        "target_sha256": "763a12e33e15bf1105922c9d126cbcb691e136623a18d46fd3765ad59613a699"
+      },
+      {
+        "key": "gsm8k-train-551:new_record",
+        "raw_call_sha256": "d55247cd70fc95fc4a2c453a2c4054756a16bfb221c4a98a6faebf221b995a9f",
+        "student_prefix": [
+          {
+            "content": "Arlene hiked 24 miles on Saturday, carrying a 60-pound backpack. She is exactly 5 feet tall. She spent 6 hours hiking. The temperature during the day was 60 degrees Fahrenheit. What was Arlene's average hiking pace, in miles per hour?",
+            "role": "user"
+          },
+          {
+            "content": "To find Arlene's average hiking pace in miles per hour, I need to divide the total distance she hiked by the total time she spent hiking. \n\nGiven:\n- Total distance hiked: 24 miles\n- Total time spent hiking: 6 hours\n\nThe formula for average pace is:\n\\[ \\text{Average pace} = \\frac{\\text{Total distance}}{\\text{Total time}} \\]\n\nPlugging in the values:\n\\[ \\text{Average pace} = \\frac{24 \\text{ miles}}{6 \\text{ hours}} = 4 \\text{ miles per hour} \\]\n\nSo, Arlene's average hiking pace was 4 miles per hour.\n\nFINAL: 4",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "3f00ef3a31517e940699217f12e36e17e889c79be17a41d1b002808b8baf6b91",
+        "target": "Given the problem, I identified the key quantities: the total distance hiked (24 miles) and the total time spent hiking (6 hours). The unknown I needed to find was Arlene's average hiking pace in miles per hour. \n\nTo find the average pace, I used the formula for average speed, which is the total distance divided by the total time. This operation is reusable whenever I need to calculate the average speed or pace of a journey given the distance and time. I expected this operation to give me a measure of how fast Arlene was hiking on average, expressed in miles per hour.\n\nI performed the calculation:\n\\[ \\text{Average pace} = \\frac{24 \\text{ miles}}{6 \\text{ hours}} = 4 \\text{ miles per hour} \\]\n\nTo check the result, I considered that if Arlene hiked 24 miles in 6 hours, she must have covered 4 miles every hour on average. This aligns with the definition of average pace and confirms the calculation is correct.\n\nThe operation I would reuse is the same division operation whenever I need to find the average speed or pace from distance and time data.\n\nFINAL: 4",
+        "target_sha256": "40a3862883e219bf13d623c1ac6521a2b59dbc0ced1bb2716be6b05a209269fe"
+      }
+    ],
+    "task_id": "gsm8k-train-551"
+  },
+  {
+    "gold": "42",
+    "question": "Jason is climbing a telephone pole next to a tree his friend Matt is climbing. Matt can climb 6 feet/minute and Jason can climb 12 feet per minute. After 7 minutes, how much higher will Jason be than Matt?",
+    "question_sha256": "7597be748d5b9fe073a0b26f1f443af4c569766bf637b0f7ec90e7490aca00ae",
+    "responses": [
+      {
+        "key": "gsm8k-train-917:rich",
+        "raw_call_sha256": "357e6e62be18a0c1b4283d45819435a13f38ca50ee6804048bf94fc28c593fe9",
+        "student_prefix": [
+          {
+            "content": "Jason is climbing a telephone pole next to a tree his friend Matt is climbing. Matt can climb 6 feet/minute and Jason can climb 12 feet per minute. After 7 minutes, how much higher will Jason be than Matt?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "0e90ce09a0283e80bc3fb857428c03a7d69c3b8a3d6ef3b4335b7d42ef5fe52a",
+        "target": "Given:\n- Matt climbs at 6 feet/minute.\n- Jason climbs at 12 feet/minute.\n- Time climbed: 7 minutes.\n\nTo find how much higher Jason will be than Matt after 7 minutes, we calculate the distance each has climbed and then find the difference.\n\nMatt's height after 7 minutes:\n\\[ 6 \\, \\text{feet/minute} \\times 7 \\, \\text{minutes} = 42 \\, \\text{feet} \\]\n\nJason's height after 7 minutes:\n\\[ 12 \\, \\text{feet/minute} \\times 7 \\, \\text{minutes} = 84 \\, \\text{feet} \\]\n\nThe difference in height:\n\\[ 84 \\, \\text{feet} - 42 \\, \\text{feet} = 42 \\, \\text{feet} \\]\n\nSo, Jason will be 42 feet higher than Matt after 7 minutes.\n\nFINAL: 42",
+        "target_sha256": "cf915e2f9cc20b2af9af553a0e4c2b0567f8e9dae3b6d305195409679eb50ac8"
+      },
+      {
+        "key": "gsm8k-train-917:new_record",
+        "raw_call_sha256": "2d3e0346ac69cb41e2c26caff0a3aba9f6f85eeb2216ff8e770c797608e8f994",
+        "student_prefix": [
+          {
+            "content": "Jason is climbing a telephone pole next to a tree his friend Matt is climbing. Matt can climb 6 feet/minute and Jason can climb 12 feet per minute. After 7 minutes, how much higher will Jason be than Matt?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Matt climbs at 6 feet/minute.\n- Jason climbs at 12 feet/minute.\n- Time climbed: 7 minutes.\n\nTo find how much higher Jason will be than Matt after 7 minutes, we calculate the distance each has climbed and then find the difference.\n\nMatt's height after 7 minutes:\n\\[ 6 \\, \\text{feet/minute} \\times 7 \\, \\text{minutes} = 42 \\, \\text{feet} \\]\n\nJason's height after 7 minutes:\n\\[ 12 \\, \\text{feet/minute} \\times 7 \\, \\text{minutes} = 84 \\, \\text{feet} \\]\n\nThe difference in height:\n\\[ 84 \\, \\text{feet} - 42 \\, \\text{feet} = 42 \\, \\text{feet} \\]\n\nSo, Jason will be 42 feet higher than Matt after 7 minutes.\n\nFINAL: 42",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "f0925433b419aaced70a9b948145349986ad7eaf7ebe1a8cd600d3e88749617e",
+        "target": "Given the problem, I identified the key quantities: Matt's climbing rate (6 feet/minute), Jason's climbing rate (12 feet/minute), and the time they both climbed (7 minutes). The unknown was how much higher Jason would be than Matt after 7 minutes.\n\nFirst, I calculated the height each had climbed:\n- For Matt: \\(6 \\, \\text{feet/minute} \\times 7 \\, \\text{minutes} = 42 \\, \\text{feet}\\).\n- For Jason: \\(12 \\, \\text{feet/minute} \\times 7 \\, \\text{minutes} = 84 \\, \\text{feet}\\).\n\nNext, I found the difference in their heights:\n\\[84 \\, \\text{feet} - 42 \\, \\text{feet} = 42 \\, \\text{feet}\\].\n\nTo verify, I considered the rates and time again. The difference in their rates is \\(12 - 6 = 6 \\, \\text{feet/minute}\\). Over 7 minutes, this results in \\(6 \\, \\text{feet/minute} \\times 7 \\, \\text{minutes} = 42 \\, \\text{feet}\\), confirming the height difference.\n\nThe operation I would reuse is calculating the height climbed by each based on their rate and time, and then finding the difference. This method is reliable as it directly uses the given rates and time to find the height difference.\n\nFINAL: 42",
+        "target_sha256": "e85fbad1cbeaa42e76abff2f9d5df06b62e7ad06e23a4b1863b0b38854a05d49"
+      }
+    ],
+    "task_id": "gsm8k-train-917"
+  },
+  {
+    "gold": "45",
+    "question": "Toms car gets 50 miles to the gallon.  He drives 75 miles per day.  If gas is $3 per gallon how much does he spend on gas in 10 days?",
+    "question_sha256": "0be741c59bb26eb0e48bc488772a44ddaad1e41fdb55b691004a1f4999190022",
+    "responses": [
+      {
+        "key": "gsm8k-train-5274:rich",
+        "raw_call_sha256": "e32e364e2146b33a8b830d994ee049c8c354d37993448ee0d22878d122574249",
+        "student_prefix": [
+          {
+            "content": "Toms car gets 50 miles to the gallon.  He drives 75 miles per day.  If gas is $3 per gallon how much does he spend on gas in 10 days?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "ec236e2791e5acd7e217637b25ea7f13877e0f45df20a8547c2b203fd5d68754",
+        "target": "Given:\n- Car mileage: 50 miles per gallon\n- Daily driving: 75 miles\n- Gas price: $3 per gallon\n- Duration: 10 days\n\nFirst, calculate the total miles driven in 10 days:\n75 miles/day * 10 days = 750 miles\n\nNext, determine the total gallons of gas used:\n750 miles / 50 miles/gallon = 15 gallons\n\nFinally, calculate the total cost of gas:\n15 gallons * $3/gallon = $45\n\nFINAL: 45",
+        "target_sha256": "70c1fc94754c664b21d3fe2acab32bce1ac41373e03a0aa58902540c0973df72"
+      },
+      {
+        "key": "gsm8k-train-5274:new_record",
+        "raw_call_sha256": "75727bebdb341bde32a53f49f1c8bb9a1abbf621d6a44e3d87094e4c6aea7f68",
+        "student_prefix": [
+          {
+            "content": "Toms car gets 50 miles to the gallon.  He drives 75 miles per day.  If gas is $3 per gallon how much does he spend on gas in 10 days?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Car mileage: 50 miles per gallon\n- Daily driving: 75 miles\n- Gas price: $3 per gallon\n- Duration: 10 days\n\nFirst, calculate the total miles driven in 10 days:\n75 miles/day * 10 days = 750 miles\n\nNext, determine the total gallons of gas used:\n750 miles / 50 miles/gallon = 15 gallons\n\nFinally, calculate the total cost of gas:\n15 gallons * $3/gallon = $45\n\nFINAL: 45",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "de9e51312ac01ab635d08ea553a610ce6990fc83eeab8d4b2f8890025b3b6125",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- Car mileage: 50 miles per gallon\n- Daily driving: 75 miles\n- Gas price: $3 per gallon\n- Duration: 10 days\n- Unknown: Total cost of gas in 10 days\n\nTo solve this, I first calculated the total miles driven in 10 days:\n75 miles/day * 10 days = 750 miles\n\nNext, I determined the total gallons of gas used:\n750 miles / 50 miles/gallon = 15 gallons\n\nThen, I calculated the total cost of gas:\n15 gallons * $3/gallon = $45\n\nTo verify the result, I checked the calculation step-by-step:\n1. Total miles driven: 750 miles (75 miles/day * 10 days)\n2. Gallons of gas used: 15 gallons (750 miles / 50 miles/gallon)\n3. Total cost: $45 (15 gallons * $3/gallon)\n\nThe operations used are straightforward arithmetic, and the result aligns with the problem statement. The operations are reusable for similar problems involving distance, fuel efficiency, and cost calculations.\n\nFINAL: 45",
+        "target_sha256": "555cf13a314dbabe8e3310f4829026759c0fd0e37db3b8c282074c98e8b336c3"
+      }
+    ],
+    "task_id": "gsm8k-train-5274"
+  }
+]
