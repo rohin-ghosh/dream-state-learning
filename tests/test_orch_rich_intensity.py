@@ -27,6 +27,16 @@ def test_exact_roster_source_and_exclusions():
         policy.validate(changed)
 
 
+def test_future_branch_guidance_is_explicit_and_not_in_control():
+    for condition in ('light', 'dense'):
+        guidance = policy.PROMPTS[condition]
+        assert 'Before the FINAL line' in guidance or 'Before the FINAL' in guidance
+        assert 'alternative you considered' in guidance
+        assert 'made you reject it, when relevant' in guidance
+        assert 'do not invent an alternative' in guidance
+    assert policy.PROMPTS['control'] == original.RICH_GUIDANCE
+
+
 def test_control_bytes_and_neutral_masks():
     task = json.loads(ROSTER.read_text())['tasks'][0]
     assert policy.prompt(task, 'control', 'rich') == original.prompt(task, 'rich')
