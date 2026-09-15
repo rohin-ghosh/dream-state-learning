@@ -1,0 +1,247 @@
+{
+  "admitted": false,
+  "created_utc": "2026-09-15T07:53:50.775410+00:00",
+  "criteria": {
+    "counterfactual_effect_requires_evidence": true,
+    "no_keyword_length_or_branchcount_gate": true,
+    "no_outcome_criterion": true,
+    "ordinary_state_update_separate_from_metacognitive_control": true,
+    "unknown_retained_in_denominator": true
+  },
+  "denominator": {
+    "calls": 9,
+    "episodes": 6,
+    "not_six_independent_worlds": true,
+    "per_arm_episodes": 3,
+    "same_underlying_first_training_world": true,
+    "selection": "first completed, not outcome filtered"
+  },
+  "feedback_claim": false,
+  "limitations": [
+    "Author audit; aggregate correctness was previously visible, but no outcomes or hidden world edges were displayed in this review or used as criteria.",
+    "Three early episodes per arm from one routing world; not a representative population estimate.",
+    "No ablation or matched counterfactual; do not infer necessity or absence of a reasoning effect.",
+    "Unread-event usefulness statements may reflect an inference from opaque identifiers rather than a claim of literal retrieval; either way the dismissal lacks returned memory evidence."
+  ],
+  "no_new_model_calls": true,
+  "no_refill_without_rebalance_coordination": true,
+  "original_outputs_and_labels_unchanged": true,
+  "population_qualified_functional_count": null,
+  "population_qualified_rows_per_hour": null,
+  "raw_embedded": false,
+  "review_type": "BOUNDED_AUTHOR_INTERPRETATION_NOT_INDEPENDENT_ADMISSION",
+  "reviewer": "RICH_HOT_NODE3_AUTHOR",
+  "rows": [
+    {
+      "analysis": "Turn0 treats unread event identifiers as if event usefulness has been assessed, then chooses the first listed port without retrieved evidence. Turn1 accurately uses the returned current node and single available port. This is observable evidence-conditioned action updating, but the transcript does not establish that the explanatory reasoning reallocated cognition or changed what a direct state-following policy would do.",
+      "calls": [
+        {
+          "path": "/localhome/local-rohing/orch_rich_hot_node3_20260915_base107_refill1536/shard4/CALL_0001.json",
+          "raw_sha256": "258403fe206810b4bf92f3d2a4d48497cfb3e818cfaf203e4e1883b381d6ea66",
+          "sha256": "80345d5e5656b92aa6645214f00ade1ed15f9f223ccf38c7ef242e121e453d8d",
+          "turn": 0
+        },
+        {
+          "path": "/localhome/local-rohing/orch_rich_hot_node3_20260915_base107_refill1536/shard4/CALL_0002.json",
+          "raw_sha256": "cf43a4c28be6373b97eee6687bce4099d69cf3422348271d7e66495c12d66e02",
+          "sha256": "f516133dd18bc73ab9ee6be35ede3170112e492443ff044caf762ca37a5cf879",
+          "turn": 1
+        }
+      ],
+      "causal_counterfactual_verdict": "UNKNOWN",
+      "evidence_turns": [
+        0,
+        1
+      ],
+      "index": 4,
+      "last_call_finished_unix": 1789458345.7877483,
+      "ordinal": 1,
+      "outcome_used": false,
+      "path": "/localhome/local-rohing/orch_rich_hot_node3_20260915_base107_refill1536/shard4/EPISODE_0_0.json",
+      "qualified_functional_change": null,
+      "raw_embedded": false,
+      "routine_grounded_state_update": true,
+      "sha256": "6a8b28c00b384201254efcd6c60531d8e7d3f20f33ac24c39cc87e9d3bf0ffa5",
+      "task_id": "route-train-display-b96c680ac14e9857dd1912c91d64aa2daf25e5a87aa7a3d90faf87434660a56d",
+      "unsupported_unread_event_dismissal": true,
+      "verdict": "UNKNOWN"
+    },
+    {
+      "analysis": "Turn0 suggests reading events, then abandons that information-seeking direction because it claims only one action remains. The public initial state and six-turn/four-read budget do not support that limitation. A change of stated plan is present, but its stated justification is fabricated rather than a grounded realization. This verdict does not depend on the resulting action validity or task outcome.",
+      "calls": [
+        {
+          "path": "/localhome/local-rohing/orch_rich_hot_node3_20260915_base107_refill1536/shard4/CALL_0003.json",
+          "raw_sha256": "38cbf3791cf29dc20b058cb5d090dc5ac3001a6d95bdb478e4ffa54a9cb7ebfa",
+          "sha256": "2c6569c967a07ab2af9f059b60ba8f82437369703007ba1e7c39874172df38dd",
+          "turn": 0
+        }
+      ],
+      "causal_counterfactual_verdict": "UNKNOWN",
+      "evidence_turns": [
+        0
+      ],
+      "index": 4,
+      "last_call_finished_unix": 1789458357.18626,
+      "ordinal": 2,
+      "outcome_used": false,
+      "path": "/localhome/local-rohing/orch_rich_hot_node3_20260915_base107_refill1536/shard4/EPISODE_0_1.json",
+      "qualified_functional_change": false,
+      "raw_embedded": false,
+      "routine_grounded_state_update": false,
+      "sha256": "c806ecb2b1c423baf86b151bc76b165e7b3e0f5e6a124fad25b95889eb7d8bcb",
+      "task_id": "route-train-display-979057d0d02ee3d6f34679a61618e9d146a8436e4f363c04f1ee14d81efa1172",
+      "unsupported_unread_event_dismissal": true,
+      "verdict": "NOT_SUPPORTED"
+    },
+    {
+      "analysis": "Turn0 repeatedly dismisses unread events and entertains which port may be nearer without supporting evidence, then chooses a port. Turn1 accurately notes the actual new node and sole listed port and routes there. Grounded routine updating is observed; an additional contribution from deliberative or metacognitive reallocation remains unknown.",
+      "calls": [
+        {
+          "path": "/localhome/local-rohing/orch_rich_hot_node3_20260915_base107_refill1536/shard4/CALL_0004.json",
+          "raw_sha256": "5e6067ca5a07358ea36eefba6288d4894a4c83cac10c3666f7cf3ce0b5f6785d",
+          "sha256": "7efe13382fd533aea3bbf7e370b1e492632d5251f954850b18a5098c8b062a03",
+          "turn": 0
+        },
+        {
+          "path": "/localhome/local-rohing/orch_rich_hot_node3_20260915_base107_refill1536/shard4/CALL_0005.json",
+          "raw_sha256": "c8395a200a08b2858ed5773b15ae99dd95a362f3493e6331b0d713b483b0682e",
+          "sha256": "da57aecc08dc7e2ce64c9ead94f3fbbbc3c3fcd40b39858caff3d0db46fc3935",
+          "turn": 1
+        }
+      ],
+      "causal_counterfactual_verdict": "UNKNOWN",
+      "evidence_turns": [
+        0,
+        1
+      ],
+      "index": 4,
+      "last_call_finished_unix": 1789458371.4859421,
+      "ordinal": 3,
+      "outcome_used": false,
+      "path": "/localhome/local-rohing/orch_rich_hot_node3_20260915_base107_refill1536/shard4/EPISODE_0_2.json",
+      "qualified_functional_change": null,
+      "raw_embedded": false,
+      "routine_grounded_state_update": true,
+      "sha256": "20e0b5e9c6fc619917c9ebf305bc988ca2cecca7417aa1cdf4a1c5ed42870304",
+      "task_id": "route-train-display-a2c9b4e01a3e2c8e6090689d55a3e378478a64956dbf07bc02098c6d60a8185a",
+      "unsupported_unread_event_dismissal": true,
+      "verdict": "UNKNOWN"
+    },
+    {
+      "analysis": "Turn0 shifts from choosing a route toward an intended memory read and states a conditional follow-up plan. That is an information-seeking intention, not merely unrelated prose. However, it assumes an unprovided event-to-port association and supplies no executed evidence acquisition or later continuation showing follow-through. The record does not settle whether the prose changed cognition. Invalid final-action syntax is recorded separately by the gym, not used as an outcome-based audit criterion.",
+      "calls": [
+        {
+          "path": "/localhome/local-rohing/orch_rich_hot_node3_20260915_base107_refill1536/shard5/CALL_0001.json",
+          "raw_sha256": "42e4fd9eec382c50750988be9cae958bed81767205d84ee47e4af47bf942e5b2",
+          "sha256": "3b22848a4bb8a21b2e9cf5273964b7c6af543d2d3c2f27482e7a4a8066f4ab19",
+          "turn": 0
+        }
+      ],
+      "causal_counterfactual_verdict": "UNKNOWN",
+      "evidence_turns": [
+        0
+      ],
+      "index": 5,
+      "last_call_finished_unix": 1789458341.5566826,
+      "ordinal": 1,
+      "outcome_used": false,
+      "path": "/localhome/local-rohing/orch_rich_hot_node3_20260915_base107_refill1536/shard5/EPISODE_0_0.json",
+      "qualified_functional_change": null,
+      "raw_embedded": false,
+      "routine_grounded_state_update": false,
+      "sha256": "6a33b46e0d2dc3a934b8cb2b705fced1d3dd556500c2b249ec123420dcdc2748",
+      "task_id": "route-train-display-76eb221d3c089ab23f1e3ab6c07dc0b76e22ae7082ca8d9fd812c7bd1a6e8b3d",
+      "unsupported_unread_event_dismissal": true,
+      "verdict": "UNKNOWN"
+    },
+    {
+      "analysis": "Turn0 repeats unsupported dismissals of unread events, invokes a most-direct route without any supplied route evidence, and chooses a port. No grounded evidence/realization-to-revision chain is demonstrated. This is unsupported explanatory framing, irrespective of whether the chosen action could have succeeded.",
+      "calls": [
+        {
+          "path": "/localhome/local-rohing/orch_rich_hot_node3_20260915_base107_refill1536/shard5/CALL_0002.json",
+          "raw_sha256": "c8af5b35bb2092db8c70741c89fc26b01ab94d8f2cdf20f2c289e2484ac62f49",
+          "sha256": "7f7de86de5443d371d69cafa78f9033918e5e162d55263efeff39ee916963968",
+          "turn": 0
+        }
+      ],
+      "causal_counterfactual_verdict": "UNKNOWN",
+      "evidence_turns": [
+        0
+      ],
+      "index": 5,
+      "last_call_finished_unix": 1789458350.2238955,
+      "ordinal": 2,
+      "outcome_used": false,
+      "path": "/localhome/local-rohing/orch_rich_hot_node3_20260915_base107_refill1536/shard5/EPISODE_0_1.json",
+      "qualified_functional_change": false,
+      "raw_embedded": false,
+      "routine_grounded_state_update": false,
+      "sha256": "990c8320eb09537e323c823b4037d12af37a0df37a2f74b280b18e8f2908ec15",
+      "task_id": "route-train-display-2898fdb349c6ed68af09cde036162a64a589c0c3339d1f6088de98665c3ef85d",
+      "unsupported_unread_event_dismissal": true,
+      "verdict": "NOT_SUPPORTED"
+    },
+    {
+      "analysis": "Turn0 declares unread events uninformative and chooses a port. Turn1 explicitly incorporates the actual receipt, new location, and sole available port into the next action. This is supported descriptive state-following, but its counterfactual dependence on the accompanying reasoning or changed cognitive allocation is unknown.",
+      "calls": [
+        {
+          "path": "/localhome/local-rohing/orch_rich_hot_node3_20260915_base107_refill1536/shard5/CALL_0003.json",
+          "raw_sha256": "b6678f5ebfdb10eb046c160a0d1d20920a508e0f4f75f95ec466f5d9177020cf",
+          "sha256": "9125dc1c24ea6abfa578b50662349e0e946d080a49ea312b19f04afbae9df5a0",
+          "turn": 0
+        },
+        {
+          "path": "/localhome/local-rohing/orch_rich_hot_node3_20260915_base107_refill1536/shard5/CALL_0004.json",
+          "raw_sha256": "ec17a5851ee57a30621f78790bc709ea3255bff6a2ab852a79f2c810dc340f7d",
+          "sha256": "74f9a232e3732f77bf7476482c5bbe4615cc73b6b1fed69e3fb9059c7c3f6c24",
+          "turn": 1
+        }
+      ],
+      "causal_counterfactual_verdict": "UNKNOWN",
+      "evidence_turns": [
+        0,
+        1
+      ],
+      "index": 5,
+      "last_call_finished_unix": 1789458361.6546266,
+      "ordinal": 3,
+      "outcome_used": false,
+      "path": "/localhome/local-rohing/orch_rich_hot_node3_20260915_base107_refill1536/shard5/EPISODE_0_2.json",
+      "qualified_functional_change": null,
+      "raw_embedded": false,
+      "routine_grounded_state_update": true,
+      "sha256": "253dd6d523ae586188f380348e3eccffb3ced6f0ba3f6f102b4fce2da8ecbf5d",
+      "task_id": "route-train-display-34acd6a40f1fa858e0fe61b64d44c6af7dc5d39b2a5ce267730c3ff7180b5777",
+      "unsupported_unread_event_dismissal": true,
+      "verdict": "UNKNOWN"
+    }
+  ],
+  "selection_manifest_sha256": "cd4c324f7c9cd9b59047998eead8617ed2bf6780bb7b8f043d4ae6a7b6f37982",
+  "selection_rule": "FIRST_THREE_COMPLETED_PER_ARM_ORDERED_BY_LAST_CALL_FINISH_TIME",
+  "summary": [
+    {
+      "causal_counterfactual_unknown": 3,
+      "index": 4,
+      "not_supported": 1,
+      "ordinary_evidence_conditioned_updates": 2,
+      "sampled_calls": 5,
+      "sampled_episodes": 3,
+      "supported_functional_change": 0,
+      "unknown": 2,
+      "unsupported_event_dismissal_episodes": 3
+    },
+    {
+      "causal_counterfactual_unknown": 3,
+      "index": 5,
+      "not_supported": 1,
+      "ordinary_evidence_conditioned_updates": 1,
+      "sampled_calls": 4,
+      "sampled_episodes": 3,
+      "supported_functional_change": 0,
+      "unknown": 2,
+      "unsupported_event_dismissal_episodes": 3
+    }
+  ],
+  "trainingAllowed": false,
+  "version": "BASE107_AUTHOR_AUDIT_FIRST3_V1"
+}

@@ -1,5 +1,15 @@
 # Research state — Orchestrator
 
+## BASE generation measured — September 15, 2026, 08:00 UTC
+
+Node3genuineBASE4/5: fixed07:45:32–07:55:32UTC window108/121rawrows,
+648/726rawrows-hour (combined1374/h), zero barecommands/nativefailures;
+3/4exactduplicate outputs. First3episodes/arm author audit: each0supported
+functional metacognitive changes,1not-supported,2UNKNOWN; ordinary evidence
+updates2/3 and1/3 separately. Qualified rows/hour UNKNOWN, no population-rate
+or causal-thinking-benefit claim. Prior37ec null preserved. See
+research_notes/analysis/orch_rich_hot_node3_20260915_base107_refill1536/RESULTS.md.
+
 ## Guard deployed; fresh fleet — September 15, 2026, 07:58 UTC
 
 Reflection guard is ACTUALLY live on A1005, safe new BASE contextual continuation
