@@ -1,0 +1,74 @@
+{
+  "ledger_contiguous": true,
+  "observed_unix": 1789448696.4588304,
+  "qualified_per_hour": null,
+  "raw_files_copied": 0,
+  "reserved_calls": 10,
+  "root": "/localhome/local-rohing/orch_rich_hot_node3_20260915_fill12_r100",
+  "slot_reservations": {
+    "1": 4,
+    "2": 6
+  },
+  "slots": [
+    {
+      "actor_ready": true,
+      "actual_context_bounds_pass": true,
+      "calls": 3,
+      "completed_episodes": 3,
+      "correct_calls": 3,
+      "failed": false,
+      "failed_calls": 0,
+      "first_native": {
+        "arm": "EXHAUSTION_ONLY",
+        "content_tokens": 353,
+        "finished_unix": 1789448654.2150743,
+        "global_call": 2,
+        "max_new_tokens": 16384,
+        "numeric_oracle_correct": true,
+        "output_sha256": "f4941ad69e4c83ea330e7bce2300b39f57253f2fd967764651c5cfae36b9911d",
+        "path": "/localhome/local-rohing/orch_rich_hot_node3_20260915_fill12_r100/shard1/CALL_0001.json",
+        "phase_version": "ROHIN100_NODE3_FILL12_512_CALLS",
+        "prompt_tokens": 270,
+        "repetition_failure_signal": false,
+        "self_reported_rejected_approach_count": 0,
+        "self_reported_worked_approach_count": 2,
+        "semantic_status": "UNREVIEWED",
+        "sha256": "ea31383e06507f0eb872c75fee4644f7e49534db3738e296f65126924ed48bb2",
+        "task_id": "gsm8k-train-4409"
+      },
+      "index": 1,
+      "pid": 286888,
+      "uuid": "GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821"
+    },
+    {
+      "actor_ready": true,
+      "actual_context_bounds_pass": true,
+      "calls": 5,
+      "completed_episodes": 5,
+      "correct_calls": 5,
+      "failed": false,
+      "failed_calls": 0,
+      "first_native": {
+        "arm": "EXHAUSTION_PLUS_STEERING",
+        "content_tokens": 326,
+        "finished_unix": 1789448650.6753378,
+        "global_call": 1,
+        "max_new_tokens": 16384,
+        "numeric_oracle_correct": true,
+        "output_sha256": "5632fc2ba4eeb81a8f853e43cf376b8949ddb00a73d6e41899f0716076712999",
+        "path": "/localhome/local-rohing/orch_rich_hot_node3_20260915_fill12_r100/shard2/CALL_0001.json",
+        "phase_version": "ROHIN100_NODE3_FILL12_512_CALLS",
+        "prompt_tokens": 323,
+        "repetition_failure_signal": true,
+        "self_reported_rejected_approach_count": 0,
+        "self_reported_worked_approach_count": 2,
+        "semantic_status": "UNREVIEWED",
+        "sha256": "1ca422b6ef0d3b814dab95af72355971280ce946f95d6f6f1b5dc39ccccbc5a0",
+        "task_id": "gsm8k-train-4409"
+      },
+      "index": 2,
+      "pid": 286803,
+      "uuid": "GPU-41a86250-88eb-ed8a-ddfe-9d6f93515da1"
+    }
+  ]
+}

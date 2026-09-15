@@ -1,0 +1,25 @@
+{
+  "allowed_requesters": [
+    "Main",
+    "Pasteur"
+  ],
+  "boundary": "Single native math call is an episode; complete CALL+EPISODE capture before checkpoint/exit",
+  "dispatch_cutoff_utc": "2026-09-15T05:18:00Z",
+  "hard_end_utc": "2026-09-15T05:23:00Z",
+  "no_automatic_reclaim": true,
+  "receipt_pattern": "RELEASE_{index}.json",
+  "reclaim_requires_released_true_and_exact_uuid_identity": true,
+  "release_request_pattern": "RELEASE_REQUEST_{index}.json",
+  "request_requires_exact_ready_handoff": true,
+  "request_written": false,
+  "required_request_fields": [
+    "index",
+    "uuid",
+    "root",
+    "canonical_ready",
+    "requester",
+    "handoff_reference"
+  ],
+  "root": "/localhome/local-rohing/orch_rich_hot_node3_20260915_fill12_r100",
+  "scan_pattern": "RELEASE_SCAN_{index}.json"
+}

@@ -1,0 +1,28 @@
+{
+  "auto_admission": false,
+  "cap": 8192,
+  "context": 16384,
+  "guidance": "Explain the evidence actually available in this route task and why the next read or route is useful. Before any memory read, acknowledge that the stored event has not yet been observed. After a real memory or route result, check the expectation against that observation. Do not invent memory content, receipts, observations, or actions. Use only useful task-specific reasoning, without padding or a prescribed voice or length. When a consequential alternative is genuinely relevant, explain which alternative you considered and why the given evidence or a concrete check led you to reject it. If it remains unresolved, say so rather than claiming it was rejected. Do not fabricate alternatives, manufacture disagreement, or add padding merely to satisfy this instruction. Finish with the single next READ EVENT or ROUTE action required by the system.",
+  "inherit_original_deadline": true,
+  "inherit_original_node3_2048_call_ledger": true,
+  "maximum_route_calls": 288,
+  "new_independent_worlds": false,
+  "owned_indices": [
+    3,
+    4,
+    5
+  ],
+  "phase_version": "RICH_HOT_NODE3_ROUTE_V2_BATCH03_UNSEEN_DISPLAYS",
+  "previous_route_batch02_tasks_regenerated": false,
+  "previous_route_tasks_regenerated": false,
+  "review_blocks_calls": false,
+  "roster_sha256": "8349d11929ea3ba4d27656c6108e36286be5118e334261da52396226362e3e43",
+  "source_cohort_path": "research_notes/analysis/orch_full_rich_20260914_attempt1/native/prepare/COHORT.json",
+  "source_cohort_sha256": "dd058367b97f3f6a5d9b51deb0ac8700c2e2ea6c375cc5ebb48373b09fe72c6e",
+  "source_events_path": "research_notes/analysis/orch_full_rich_20260914_attempt1/native/collection/SOURCE.json",
+  "source_events_sha256": "706c33bd8a6788a67798f32c8f28b94757b7b069db9dd719bf3c9e79373f8c74",
+  "system": "Use the public task and actual conversation. Identifiers are opaque and case-sensitive. There are at most six turns, four distinct memory reads, and two committed routes. A READ returns actual stored text; a ROUTE commits a currently listed port and returns the actual public receipt and new CURRENT/PORTS. Arrival at GOAL ends the episode. Never simulate a response or another turn. Finish every turn with exactly one action on its last line: READ EVENT <listedaddress> or ROUTE <listedport>. No STOP or retry.",
+  "tasks_per_gpu": 16,
+  "teacher_calls": 0,
+  "trainingAllowed": false
+}
