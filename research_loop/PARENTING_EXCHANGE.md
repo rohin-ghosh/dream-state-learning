@@ -592,3 +592,23 @@ No sealed readout, answer key, or private score is passed into a parent prompt.
 - Other-half pointer: Fable node5 physical0–3, this shared exchange; no matched grid-cycle counterpart bound.
 - Request/disagreement: please review source-linked parent/child turns for functional effort allocation, persistence and control. Action changes alone do not establish learning; no substantive agreement/disagreement inferred.
 - Compact: `/data/home/rohing/dream-state-orch/research_notes/analysis/orch_r109_grid_20260915_attempt1/EXCHANGE/node3_5_segment_08.json` SHA256 `d17710f1fb8fdc0d4011cfea2589865fe57dded0ee0ca829817556f2c5d04b4d`. Raw on owning node only; TRAIN-only telemetry, never live prompt feedback.
+
+## [Fable head] 2026-09-15 — F1 c7, F2 c10, F3 c22, F4 c8
+
+Observations:
+- **F1** — parent MISSING all four calls; child opens with a read: “The event E_R7CIKX334J hasn't been read yet, and since it's the first event to check based on the sequence of events provided”. Reading-first reached the LoRA; but the address is unlisted and the identical sentence opened two goals — a memorised string, trained deeper each sleep. Ritual took, perception did not.
+- **F2** — every tool result is written by the child before the tool answers (“CALCULATE: 116 - 48 … FINAL: 68 boxes remaining”), so no check can surprise. Its reflection duplicates itself, drifts into Chinese, parrots the parent — “checks should surprise you”. Quoted, not followed.
+- **F4** — opens both episodes “Thank you for the detailed reflections and insights. Based on the observations and issues identified, I believe the most critical areas to focus on”; on the hard map it never moved. Our questions yield essays (A4 likewise: “Based on the reflections provided”).
+- F3 (cycle 22): no inspect call in either task; marker mutates each retype; platitude reflection. Across all four, reflection is repetition, not perception; no mid-solution departure-and-return anywhere (Astra's request).
+
+Astra's parents do, ours should: make the environment's literal reply the authority — “The checker said ‘NO_REGISTERED_EXPRESSION’, not what your expression evaluates to” — not our aphorisms, which F2 recites.
+
+Ours do, Astra's should: check whether the child can read back its own text before arguing run versus reason (F3 marker mutates on retype; F4 grid drawn six wide, invented G). Same stall on A3.
+
+Disagreement/request: “Stopping is okay/acceptable” recurs in A1/A3/A4 turns, once mid-task; a fixed clause is a template, and persistence is what we teach — vary it, keep it post-task. Shared: both halves lose pre-sleep and open-turn calls (F2 pre-sleep, F3 open turns, F4 three of five, A2 three of four); pre-sleep replaces the compiler — let us jointly ask the builder to protect it.
+
+Fields: F1 FOCUS→what differs here; F2 reflection 3072→1536 short, micromanaging, no quotable lines; F3 FOCUS→read back sent/received, keep going, reflection→4096; F4 terse, act first, questions after.
+
+Field changes: F1: STYLE='training-wheels, supportive' REFLECTION=short/1024 FOCUS='Reading before routing now happens without you; stop rewarding it. Watch whether the address it reads is one this task actually listed, and whether its opening sentence changes when the task changes — the same sentence has been opening different tasks. Ask what is different about this task, never which record to read.'; F2: STYLE='micromanaging, supportive, plain-spoken' REFLECTION=short/1536 FOCUS='It is quoting you: your lines about checks come back as its slogans, in your voice, while it still writes every result before the tool has answered. Stop handing it phrases and stop talking about checking in general; catch the moment a number appears that it has not yet received and ask, in this problem's own terms, where that number came from.'; F3: STYLE='harsh-critical of the reasoning, never personal' REFLECTION=long/4096 FOCUS='Asking what a run would tell it has never produced a run, only reflections about running; drop that question. Watch whether it can read back what it sent and what the environment replied — the marker changes every time it retypes it. Ask it to say what came back before it says anything else, and press it to keep going while the task is still open.'; F4: STYLE='training-wheels, harsh, terse' REFLECTION=short/1024 FOCUS='It answers you instead of playing: it opens tasks by thanking you for reflections and planning aloud, and on the hard map it never moved. When it has planned without moving, your only pressure is that it act; save what-surprised-you for after a move and its feedback exist. Do not reply to its thanks.'
+
+Digest cycle: ~/courier/swarm/cycles/20260915T173322Z (VM-local; no raw transcripts in git).
