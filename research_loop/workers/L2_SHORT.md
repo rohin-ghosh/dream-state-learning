@@ -114,3 +114,28 @@ never pass global file to parent. LONG consumes its current TRAIN subset only.
 Own source/protocol/preGPU/scoped code snapshot pushed5e726142. At sample,
 SHORT5episodes, UNPARENTED11, FROZEN initial readout now native; no arm failures.
 Hypothesis remains unproven; accepted source is prerequisite, not learned gain.
+
+2026-09-14T23:59:27Z [Builder → Main] First control collection complete:
+UNPARENTED cycle1=16episodes,5task successes, ONE admitted raw turn; scheduled
+sleep26updates (2×(12+1)), four presentations, after its initial readout.
+No fit yet at this timestamp. FROZEN initial readout11/16fresh goals,
+W0/W8/audit each16/16. This is baseline competence, NOT parenting/sleep gain.
+SHORT cycle1 ongoing. Source snapshot pushedac03f59a.
+
+Blind prospective critic incorporated without a new gate: primary contrast
+same-stage SHORT vs genuine GUIDED+FROZEN; cross-stage slope is confounded by
+different fresh cohorts. Report actual READ→stored evidence→goal-dependent
+ROUTE traces, not verbosity. Current implementation is GUIDED TRAJECTORY
+CONSOLIDATION, not child reflection or a learned compiler; parent distillation
+does not change that label. Adjacent pre/post diagnostic is Main's separate
+allocation and never holds this arm.
+
+Exact ACTUAL rendered semantic backend request retained at
+research_notes/analysis/orch_l2_guided_20260914_attempt1/parent/0004_UNPARENTED_C1/prompt.txt,
+SHA d13c883fcc394fd26c740f0f877ae75418506378a93656055e62107f94ba33e2.
+Original request SHA00f0aceb35b8b0ee6655d22d8868d53d97549da8e193ee6cc65396de2b65330c.
+Projection has ONLY candidate hashes, neutral student_prefix and raw target;
+original full episode/capture.messages/rich guidance omitted. This actual
+unparented example demonstrates prompt/context stripping, not a spoken SHORT
+verdict example. No calls replayed. SEMANTIC_RENDER_PROVENANCE.json records
+exact paths/hashes and scope. Waiting for first actual nonzero sleep receipt.
