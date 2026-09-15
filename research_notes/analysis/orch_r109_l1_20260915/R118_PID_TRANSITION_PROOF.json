@@ -1,0 +1,449 @@
+{
+  "schema": "R118_EXACT_PID_TRANSITION_PROOF",
+  "observed_unix": 1789470895.4573994,
+  "raw_output": false,
+  "old_processes": [
+    {
+      "pid": 945529,
+      "exists": false,
+      "state": null,
+      "wchan": null
+    },
+    {
+      "pid": 945536,
+      "exists": false,
+      "state": null,
+      "wchan": null
+    },
+    {
+      "pid": 945543,
+      "exists": false,
+      "state": null,
+      "wchan": null
+    }
+  ],
+  "successful_old_exit": {
+    "identities": [
+      {
+        "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+        "pid": 945529,
+        "start_ticks": "69911679",
+        "uid": 2524
+      },
+      {
+        "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+        "pid": 945536,
+        "start_ticks": "69911740",
+        "uid": 2524
+      },
+      {
+        "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+        "pid": 945543,
+        "start_ticks": "69911800",
+        "uid": 2524
+      }
+    ],
+    "observed_unix": 1789470803.0523725,
+    "returncodes": [
+      0,
+      0,
+      0
+    ]
+  },
+  "accepted_readout": {
+    "update": 11236,
+    "checkpoint_commit_sha256": "0145f89a99cb2e932a827fb62ce9e719f848dd170e66a895012cd74a71180e5e",
+    "checkpoint_state_sha256": "3536459ed516d885e37634d0aaecace4fa90a4145b48887a86231b4401a45b2e",
+    "reduction_sha256": "aa2b3ee1e3274bd8a7bfddfb968a0d5034b7e571fc2b06b9effe4cb8edc27999",
+    "finished_unix": 1789470803.5768223
+  },
+  "accepted_readout_receipt_sha256": "a380ddd853dea5c667057cb412fb71ace6ec66ee6ff62d5debffed284e644738",
+  "new_training_ranks": [
+    {
+      "index": 0,
+      "launch": {
+        "arguments": [
+          "train",
+          "--arm",
+          "FULL",
+          "--index",
+          "0",
+          "--segment",
+          "18",
+          "--resume",
+          "/localhome/local-rohing/orch_r109_l1_20260915/fit/FULL/checkpoints/000011236",
+          "--rank",
+          "0",
+          "--world-size",
+          "3"
+        ],
+        "async_source_sha256": "a220eb7616c4dd8aee83d8e6e594a2a3baed861612adad1efbef7faa2b58f7e0",
+        "hard_deadline_unix": 1789491360,
+        "identity": {
+          "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+          "pid": 948912,
+          "start_ticks": "69924334",
+          "uid": 2524
+        },
+        "index": 0,
+        "module": "gpu.orch_r109_l1_train",
+        "source_archive_sha256": "862b2c27a45631ae5c25fbc692ab32af35505ce05b80bc095578191f8698087e",
+        "started_unix": 1789470804.2077186,
+        "uuid": "GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0"
+      },
+      "loaded": {
+        "global_cursor_preserved": true,
+        "observed_unix": 1789470863.3871388,
+        "optimizer_restored": true,
+        "original_training_history_unchanged": true,
+        "process": [
+          "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+          948912,
+          69924334
+        ],
+        "rng_restored": true,
+        "state_sha256": "3536459ed516d885e37634d0aaecace4fa90a4145b48887a86231b4401a45b2e",
+        "update": 11236,
+        "uuid": "GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0"
+      },
+      "loaded_sha256": "8be15163fe080ce36231e59b6942beba746cbb15268a43c1af61558d4cb641cb",
+      "actual_updates": 28,
+      "first_update": {
+        "update": 11237,
+        "loss": 1.0236304660793394e-05,
+        "selections": [
+          [
+            "legacy",
+            106
+          ],
+          [
+            "prior",
+            662
+          ],
+          [
+            "anchor",
+            22
+          ],
+          [
+            "prior",
+            663
+          ]
+        ],
+        "local_active": 62,
+        "reference_tokens": 116,
+        "finished_unix": 1789470865.4316058
+      },
+      "last_update": {
+        "update": 11264,
+        "loss": 1.0096263167724828e-06,
+        "selections": [
+          [
+            "legacy",
+            133
+          ],
+          [
+            "prior",
+            716
+          ],
+          [
+            "anchor",
+            7
+          ],
+          [
+            "prior",
+            717
+          ]
+        ],
+        "local_active": 24,
+        "reference_tokens": 49,
+        "finished_unix": 1789470895.062495
+      }
+    },
+    {
+      "index": 1,
+      "launch": {
+        "arguments": [
+          "train",
+          "--arm",
+          "FULL",
+          "--index",
+          "1",
+          "--segment",
+          "18",
+          "--resume",
+          "/localhome/local-rohing/orch_r109_l1_20260915/fit/FULL/checkpoints/000011236",
+          "--rank",
+          "1",
+          "--world-size",
+          "3"
+        ],
+        "async_source_sha256": "a220eb7616c4dd8aee83d8e6e594a2a3baed861612adad1efbef7faa2b58f7e0",
+        "hard_deadline_unix": 1789491360,
+        "identity": {
+          "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+          "pid": 948971,
+          "start_ticks": "69924397",
+          "uid": 2524
+        },
+        "index": 1,
+        "module": "gpu.orch_r109_l1_train",
+        "source_archive_sha256": "862b2c27a45631ae5c25fbc692ab32af35505ce05b80bc095578191f8698087e",
+        "started_unix": 1789470804.839253,
+        "uuid": "GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4"
+      },
+      "loaded": {
+        "global_cursor_preserved": true,
+        "observed_unix": 1789470863.3014688,
+        "optimizer_restored": true,
+        "original_training_history_unchanged": true,
+        "process": [
+          "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+          948971,
+          69924397
+        ],
+        "rng_restored": true,
+        "state_sha256": "3536459ed516d885e37634d0aaecace4fa90a4145b48887a86231b4401a45b2e",
+        "update": 11236,
+        "uuid": "GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4"
+      },
+      "loaded_sha256": "5cf477454b9c515619f72347ec800d77be371fdd151cbd9161b419496abf6c83",
+      "actual_updates": 28,
+      "first_update": {
+        "update": 11237,
+        "loss": 4.211452960589668e-06,
+        "selections": [
+          [
+            "legacy",
+            106
+          ],
+          [
+            "prior",
+            662
+          ],
+          [
+            "anchor",
+            22
+          ],
+          [
+            "prior",
+            663
+          ]
+        ],
+        "local_active": 11,
+        "reference_tokens": 116,
+        "finished_unix": 1789470865.4235377
+      },
+      "last_update": {
+        "update": 11264,
+        "loss": 9.123074846684176e-07,
+        "selections": [
+          [
+            "legacy",
+            133
+          ],
+          [
+            "prior",
+            716
+          ],
+          [
+            "anchor",
+            7
+          ],
+          [
+            "prior",
+            717
+          ]
+        ],
+        "local_active": 11,
+        "reference_tokens": 49,
+        "finished_unix": 1789470895.0587444
+      }
+    },
+    {
+      "index": 2,
+      "launch": {
+        "arguments": [
+          "train",
+          "--arm",
+          "FULL",
+          "--index",
+          "2",
+          "--segment",
+          "18",
+          "--resume",
+          "/localhome/local-rohing/orch_r109_l1_20260915/fit/FULL/checkpoints/000011236",
+          "--rank",
+          "2",
+          "--world-size",
+          "3"
+        ],
+        "async_source_sha256": "a220eb7616c4dd8aee83d8e6e594a2a3baed861612adad1efbef7faa2b58f7e0",
+        "hard_deadline_unix": 1789491360,
+        "identity": {
+          "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+          "pid": 949056,
+          "start_ticks": "69924727",
+          "uid": 2524
+        },
+        "index": 2,
+        "module": "gpu.orch_r109_l1_train",
+        "source_archive_sha256": "862b2c27a45631ae5c25fbc692ab32af35505ce05b80bc095578191f8698087e",
+        "started_unix": 1789470808.1318176,
+        "uuid": "GPU-d2db2a6a-a308-1782-bf41-e41411d8dc05"
+      },
+      "loaded": {
+        "global_cursor_preserved": true,
+        "observed_unix": 1789470863.2095544,
+        "optimizer_restored": true,
+        "original_training_history_unchanged": true,
+        "process": [
+          "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+          949056,
+          69924727
+        ],
+        "rng_restored": true,
+        "state_sha256": "3536459ed516d885e37634d0aaecace4fa90a4145b48887a86231b4401a45b2e",
+        "update": 11236,
+        "uuid": "GPU-d2db2a6a-a308-1782-bf41-e41411d8dc05"
+      },
+      "loaded_sha256": "addc2551218414181db7c080345d5896c9edec1ad8a7681d2b7e77e40cffcb87",
+      "actual_updates": 28,
+      "first_update": {
+        "update": 11237,
+        "loss": 2.874190386137343e-06,
+        "selections": [
+          [
+            "legacy",
+            106
+          ],
+          [
+            "prior",
+            662
+          ],
+          [
+            "anchor",
+            22
+          ],
+          [
+            "prior",
+            663
+          ]
+        ],
+        "local_active": 43,
+        "reference_tokens": 116,
+        "finished_unix": 1789470865.401743
+      },
+      "last_update": {
+        "update": 11264,
+        "loss": 1.103478734876262e-05,
+        "selections": [
+          [
+            "legacy",
+            133
+          ],
+          [
+            "prior",
+            716
+          ],
+          [
+            "anchor",
+            7
+          ],
+          [
+            "prior",
+            717
+          ]
+        ],
+        "local_active": 14,
+        "reference_tokens": 49,
+        "finished_unix": 1789470895.0608335
+      }
+    }
+  ],
+  "closed_zero_residency_windows": [
+    {
+      "index": 3,
+      "first_empty_unix": 1789470568.098749,
+      "last_empty_unix": 1789470591.1936233,
+      "previous_nonempty_unix": 1789470565.9928355,
+      "next_nonempty_unix": 1789470593.292955,
+      "lower_bound_seconds": 23.094874382019043,
+      "upper_bound_seconds": 27.300119400024414
+    },
+    {
+      "index": 0,
+      "first_empty_unix": 1789470677.280142,
+      "last_empty_unix": 1789470700.4783778,
+      "previous_nonempty_unix": 1789470675.1845005,
+      "next_nonempty_unix": 1789470702.595374,
+      "lower_bound_seconds": 23.198235750198364,
+      "upper_bound_seconds": 27.410873651504517
+    },
+    {
+      "index": 1,
+      "first_empty_unix": 1789470677.280142,
+      "last_empty_unix": 1789470702.595374,
+      "previous_nonempty_unix": 1789470675.1845005,
+      "next_nonempty_unix": 1789470704.735957,
+      "lower_bound_seconds": 25.315232038497925,
+      "upper_bound_seconds": 29.551456451416016
+    },
+    {
+      "index": 2,
+      "first_empty_unix": 1789470677.280142,
+      "last_empty_unix": 1789470702.595374,
+      "previous_nonempty_unix": 1789470675.1845005,
+      "next_nonempty_unix": 1789470704.735957,
+      "lower_bound_seconds": 25.315232038497925,
+      "upper_bound_seconds": 29.551456451416016
+    },
+    {
+      "index": 0,
+      "first_empty_unix": 1789470801.3914137,
+      "last_empty_unix": 1789470826.667045,
+      "previous_nonempty_unix": 1789470799.294533,
+      "next_nonempty_unix": 1789470828.7752533,
+      "lower_bound_seconds": 25.275631427764893,
+      "upper_bound_seconds": 29.480720281600952
+    },
+    {
+      "index": 1,
+      "first_empty_unix": 1789470803.489047,
+      "last_empty_unix": 1789470828.7752533,
+      "previous_nonempty_unix": 1789470801.3914137,
+      "next_nonempty_unix": 1789470830.9369805,
+      "lower_bound_seconds": 25.286206245422363,
+      "upper_bound_seconds": 29.54556679725647
+    },
+    {
+      "index": 2,
+      "first_empty_unix": 1789470799.294533,
+      "last_empty_unix": 1789470830.9369805,
+      "previous_nonempty_unix": 1789470797.1940355,
+      "next_nonempty_unix": 1789470833.041847,
+      "lower_bound_seconds": 31.642447471618652,
+      "upper_bound_seconds": 35.847811460494995
+    },
+    {
+      "index": 3,
+      "first_empty_unix": 1789470856.0940616,
+      "last_empty_unix": 1789470879.180887,
+      "previous_nonempty_unix": 1789470853.999963,
+      "next_nonempty_unix": 1789470881.2812657,
+      "lower_bound_seconds": 23.086825370788574,
+      "upper_bound_seconds": 27.28130269050598
+    }
+  ],
+  "guardian_identity": {
+    "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+    "pid": 828120,
+    "start_ticks": "69452936",
+    "uid": 2524
+  },
+  "guardian_alive": true,
+  "manual_restart_performed": false,
+  "optimizer_reset": false,
+  "scientific_sources_changed": false,
+  "interpretation": "Readout segment017 completed successfully and met its own ETA; the11:13:39 census sampled a distinct segment018 training startup. All three new ranks have28 actual updates to11264.",
+  "hard_deadline_unix": 1789491360
+}
