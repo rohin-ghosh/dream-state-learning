@@ -52,6 +52,23 @@ class BlindBatchTests(unittest.TestCase):
         return dict(status='COMPLETE', reason='', sentences=[dict(index=0, label='MAIN',
             legacy_template_check=False, evidence='record')], shift_sentence_indices=[], classes=[])
 
+    def test_tokenizer_explicit_flat_return_before_dispatch(self):
+        tokenizer = Mock()
+        tokenizer.apply_chat_template.side_effect = lambda messages, **options: (
+            [17, 23, 29] if options.get('return_dict') is False else {'input_ids': [17, 23, 29]})
+        request = {'messages': [{'role': 'user', 'content': 'Synthetic visible observation.'}]}
+        self.assertEqual(batch.tokenize_request(tokenizer, request), [17, 23, 29])
+        tokenizer.apply_chat_template.assert_called_once_with(request['messages'], tokenize=True,
+            add_generation_prompt=True, truncation=False, return_dict=False)
+
+    def test_tokenizer_rejects_wrong_shape_without_coercion(self):
+        for returned in ({'input_ids': [17]}, [[17]], [], [True], [17.0], [-1], ['17']):
+            with self.subTest(returned=returned):
+                tokenizer = Mock()
+                tokenizer.apply_chat_template.return_value = returned
+                with self.assertRaisesRegex(ValueError, 'exact_flat_token_list_before_claim'):
+                    batch.tokenize_request(tokenizer, {'messages': []})
+
     def cache(self, group, *, termination='eos', tokens=None):
         path = self.root / 'prior/cache' / group['key']
         batch.write(path / 'CLAIM.json', dict(key=group['key'], request=group['request'], contract=group['contract']))

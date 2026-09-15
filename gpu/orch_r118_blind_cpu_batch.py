@@ -105,6 +105,15 @@ def group_documents(documents, contract):
     return list(groups.values())
 
 
+def tokenize_request(tokenizer, request):
+    tokens = tokenizer.apply_chat_template(request['messages'], tokenize=True,
+        add_generation_prompt=True, truncation=False, return_dict=False)
+    require(type(tokens) is list and tokens
+        and all(type(token) is int and token >= 0 for token in tokens),
+        'exact_flat_token_list_before_claim')
+    return tokens
+
+
 def left_pad(rows, pad_token_id):
     require(rows and all(row and all(type(token) is int and token >= 0 for token in row)
         for row in rows), 'nonempty_exact_token_inputs')
@@ -493,8 +502,7 @@ def run(root):
             chosen = chosen[:allowance]
             if not chosen:
                 continue
-            rows = [tokenizer.apply_chat_template(group['request']['messages'], tokenize=True,
-                add_generation_prompt=True, truncation=False) for group in chosen]
+            rows = [tokenize_request(tokenizer, group['request']) for group in chosen]
             started = time.time()
             for group in chosen:
                 write(root / 'cache' / group['key'] / 'CLAIM.json', dict(key=group['key'], request=group['request'],

@@ -1,0 +1,88 @@
+{
+  "charged_annotation_calls": 0,
+  "cuda_initialized": false,
+  "default_type": "BatchEncoding",
+  "device": "cpu",
+  "dtype": "bfloat16",
+  "elapsed_seconds": 0.44526052474975586,
+  "fixed_exactly_equals_default_input_ids": true,
+  "fixed_token_count": 40,
+  "fixed_type": "list",
+  "independent_EOS": true,
+  "input_context_bound_verified": true,
+  "no_14B_bit_identity_claim": true,
+  "observed_utc": "2026-09-15T14:20:18.957835+00:00",
+  "parameter_count": 22816,
+  "per_sequence_caps": [
+    4,
+    3,
+    2,
+    4
+  ],
+  "prefill_and_KV_decode": true,
+  "pretrained_14B_loaded": false,
+  "random_initialization": true,
+  "return_dict_default": "True",
+  "source_sha256": "84c7cc88c49dcf7170d9ca05f1eac30df04fed2bc6123d43ccf7558ea15c8399",
+  "status": "PASS",
+  "synthetic_results": [
+    {
+      "termination": "eos",
+      "token_ids": [
+        9
+      ]
+    },
+    {
+      "termination": "output_cap",
+      "token_ids": [
+        10,
+        10,
+        10
+      ]
+    },
+    {
+      "termination": "output_cap",
+      "token_ids": [
+        12,
+        12
+      ]
+    },
+    {
+      "termination": "output_cap",
+      "token_ids": [
+        16,
+        16,
+        16,
+        16
+      ]
+    }
+  ],
+  "synthetic_rows": [
+    [
+      7,
+      8,
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11,
+      12
+    ],
+    [
+      13,
+      14,
+      15,
+      16
+    ]
+  ],
+  "synthetic_text_only": true,
+  "threads": 16,
+  "tiny_fixture_matches_single_sequence": true,
+  "tiny_model_class": "Qwen2ForCausalLM",
+  "tokenizer_class": "Qwen2Tokenizer",
+  "torch_version": "2.13.0+cu130",
+  "transformers_version": "5.5.3",
+  "variable_left_padding": true
+}
