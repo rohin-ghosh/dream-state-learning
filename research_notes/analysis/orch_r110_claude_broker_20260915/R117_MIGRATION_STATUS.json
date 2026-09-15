@@ -1,0 +1,90 @@
+{
+  "blocker": "Actual native TRAIN request not yet present; no first delivery claim.",
+  "branches": {
+    "F1": {
+      "alive": true,
+      "claims": 0,
+      "config_path": "/localhome/local-rohing/orch_r117_claude_brokers_20260915_v1/F1/CONFIG.json",
+      "first_complete_at": null,
+      "first_request_at": null,
+      "log": "/localhome/local-rohing/orch_r117_claude_brokers_20260915_v1/F1/BROKER_ATTEMPT2.log",
+      "pid": 371975,
+      "pid_receipt": "/localhome/local-rohing/orch_r117_claude_brokers_20260915_v1/F1/PID_ATTEMPT2.json",
+      "requests": 0,
+      "responses": 0,
+      "root": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1"
+    },
+    "F2": {
+      "alive": true,
+      "claims": 0,
+      "config_path": "/localhome/local-rohing/orch_r117_claude_brokers_20260915_v1/F2/CONFIG.json",
+      "first_complete_at": null,
+      "first_request_at": null,
+      "log": "/localhome/local-rohing/orch_r117_claude_brokers_20260915_v1/F2/BROKER_ATTEMPT2.log",
+      "pid": 371978,
+      "pid_receipt": "/localhome/local-rohing/orch_r117_claude_brokers_20260915_v1/F2/PID_ATTEMPT2.json",
+      "requests": 0,
+      "responses": 0,
+      "root": "/localhome/local-rohing/orch_math_feedback_uptake_r115_f2_20260915_attempt1/lane1"
+    },
+    "F3": {
+      "alive": true,
+      "claims": 0,
+      "config_path": "/localhome/local-rohing/orch_r117_claude_brokers_20260915_v1/F3/CONFIG.json",
+      "first_complete_at": null,
+      "first_request_at": null,
+      "log": "/localhome/local-rohing/orch_r117_claude_brokers_20260915_v1/F3/BROKER_ATTEMPT2.log",
+      "pid": 371980,
+      "pid_receipt": "/localhome/local-rohing/orch_r117_claude_brokers_20260915_v1/F3/PID_ATTEMPT2.json",
+      "requests": 0,
+      "responses": 0,
+      "root": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1"
+    },
+    "F4": {
+      "alive": true,
+      "claims": 0,
+      "config_path": "/localhome/local-rohing/orch_r117_claude_brokers_20260915_v1/F4/CONFIG.json",
+      "first_complete_at": null,
+      "first_request_at": null,
+      "log": "/localhome/local-rohing/orch_r117_claude_brokers_20260915_v1/F4/BROKER_ATTEMPT2.log",
+      "pid": 371983,
+      "pid_receipt": "/localhome/local-rohing/orch_r117_claude_brokers_20260915_v1/F4/PID_ATTEMPT2.json",
+      "requests": 0,
+      "responses": 0,
+      "root": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4"
+    }
+  },
+  "cli_directory": "/localhome/local-rohing/.nvm/versions/node/v24.18.0/bin",
+  "cli_help_verified_system_prompt": "content",
+  "cli_version": "2.1.272",
+  "files": {
+    "gpu/orch_r110_claude_broker.py": "abd5f9997d1b5c2014b3a0dfddb95f9c0090e97d9e24de9922e7cbef58f7ef9c",
+    "tests/test_orch_r110_claude_broker.py": "ead07f793d4efe0ac4cf9219c870bdccf350661d73e38f03b84627fd637532d4",
+    "tests/test_orch_r110_claude_broker_integration.py": "e85d2793e31c64968e4ce2458e3eeb4db715fec2e6292530d9a64ebc8136ba9d"
+  },
+  "first_node_attempt": "Exited before claims/provider: ledger_config_no_reset from noncanonical JSON trailing newline; original bytes/logs preserved; canonical broker.write repair with identical semantic config; no quota reset or provider retry.",
+  "memory_floor_bytes": 1073741824,
+  "no_provider_probe": true,
+  "observed_at": "2026-09-15T10:54:05Z",
+  "preserved": [
+    "owner TRAIN/cohort/exclusions",
+    "parent call/cost caps",
+    "absolute deadlines",
+    "original claims/responses",
+    "native READY/config inputs"
+  ],
+  "prior_vm_stop_receipt": "/localhome/local-rohing/orch_r117_claude_brokers_20260915_v1/prior/R117_STOP_RECEIPT.json",
+  "prompt_root": "/localhome/local-rohing/courier_swarm/prompts",
+  "queue_transport": "node_local",
+  "raw_evidence": "node_only",
+  "runtime_root": "/localhome/local-rohing/orch_r117_claude_brokers_20260915_v1",
+  "schema": "ORCH_R117_BROKER_MIGRATION_STATUS_V1",
+  "single_cli_lock": "/tmp/orch_l2_evaluator.lock",
+  "source_manifest": "/localhome/local-rohing/orch_r117_claude_brokers_20260915_v1/SOURCE_SHA256.json",
+  "source_manifest_sha256": "baafa77ba976ace629f54d2d4bd8b593fe9f5032a46559a67d90532213f75651",
+  "started_at": "2026-09-15T10:52:03Z",
+  "tests": {
+    "command": "python3 -B -m unittest tests.test_orch_r110_claude_broker tests.test_orch_r110_claude_broker_integration -q",
+    "reported_passed": 80
+  }
+}

@@ -1,0 +1,382 @@
+{
+  "actual_anchor_lambda": null,
+  "child_training_token_exposures": 0,
+  "common_contract": {
+    "adapter": null,
+    "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+    "battleplan_sha256": "7b8bb0b233d0b6d68f0e6ca9440e188a8cbdc20434b1ef34e014baf9c2fdc07d",
+    "boundary_label": "CONTEXT_BOUNDARY_NOT_WEIGHT_SLEEP",
+    "boundary_open_parent_context_visible": false,
+    "boundary_open_parent_free": true,
+    "boundary_open_turns": 2,
+    "cadence": "after_every_completed_child_segment",
+    "child_system": "You are a helpful assistant.",
+    "commit": "05a0b4287d037ce6b9c7c8545bbbfc32230d08e9",
+    "comparison": "Fable parents plus head parent plus exchange versus Astra parenting system",
+    "core_native_cap": 1168,
+    "cycle_plan": [
+      {
+        "episode": 1,
+        "parent_slot": true,
+        "phase": "episode",
+        "split": "TRAIN"
+      },
+      {
+        "episode": 1,
+        "parent_slot": true,
+        "phase": "open_turn",
+        "split": "TRAIN"
+      },
+      {
+        "episode": 2,
+        "parent_slot": true,
+        "phase": "episode",
+        "split": "TRAIN"
+      },
+      {
+        "episode": 2,
+        "parent_slot": true,
+        "phase": "open_turn",
+        "split": "TRAIN"
+      },
+      {
+        "episode": null,
+        "parent_slot": true,
+        "phase": "presleep",
+        "split": "TRAIN"
+      },
+      {
+        "episode": null,
+        "parent_slot": true,
+        "phase": "reflection",
+        "split": "TRAIN"
+      },
+      {
+        "after_context_boundary": true,
+        "episode": 1,
+        "parent_context_visible": false,
+        "parent_slot": false,
+        "phase": "boundary_open_turn",
+        "split": "PROBE"
+      },
+      {
+        "after_context_boundary": true,
+        "episode": 2,
+        "parent_context_visible": false,
+        "parent_slot": false,
+        "phase": "boundary_open_turn",
+        "split": "PROBE"
+      },
+      {
+        "index": 0,
+        "parent_slot": false,
+        "phase": "dev",
+        "split": "DEV"
+      },
+      {
+        "index": 1,
+        "parent_slot": false,
+        "phase": "dev",
+        "split": "DEV"
+      },
+      {
+        "index": 2,
+        "parent_slot": false,
+        "phase": "dev",
+        "split": "DEV"
+      },
+      {
+        "index": 3,
+        "parent_slot": false,
+        "phase": "dev",
+        "split": "DEV"
+      },
+      {
+        "index": 4,
+        "parent_slot": false,
+        "phase": "dev",
+        "split": "DEV"
+      },
+      {
+        "index": 5,
+        "parent_slot": false,
+        "phase": "dev",
+        "split": "DEV"
+      },
+      {
+        "index": 6,
+        "parent_slot": false,
+        "phase": "dev",
+        "split": "DEV"
+      },
+      {
+        "index": 7,
+        "parent_slot": false,
+        "phase": "dev",
+        "split": "DEV"
+      },
+      {
+        "index": 0,
+        "parent_slot": false,
+        "phase": "focused",
+        "split": "DEV"
+      },
+      {
+        "index": 1,
+        "parent_slot": false,
+        "phase": "focused",
+        "split": "DEV"
+      }
+    ],
+    "cycles": 63,
+    "decoders": {
+      "episode": {
+        "context_limit": 16384,
+        "delete_generated_text": false,
+        "do_sample": false,
+        "max_new_tokens": 4096,
+        "no_repeat_ngram_size": 0,
+        "num_beams": 1,
+        "repetition_penalty": 1.0,
+        "seed": 0,
+        "truncate_input": false
+      },
+      "focused": {
+        "context_limit": 16384,
+        "delete_generated_text": false,
+        "do_sample": false,
+        "max_new_tokens": 2048,
+        "no_repeat_ngram_size": 0,
+        "num_beams": 1,
+        "repetition_penalty": 1.0,
+        "seed": 0,
+        "truncate_input": false
+      },
+      "held": {
+        "context_limit": 16384,
+        "delete_generated_text": false,
+        "do_sample": false,
+        "max_new_tokens": 2048,
+        "no_repeat_ngram_size": 0,
+        "num_beams": 1,
+        "repetition_penalty": 1.0,
+        "seed": 0,
+        "truncate_input": false
+      },
+      "open_turn": {
+        "context_limit": 16384,
+        "delete_generated_text": false,
+        "do_sample": false,
+        "max_new_tokens": 4096,
+        "no_repeat_ngram_size": 0,
+        "num_beams": 1,
+        "repetition_penalty": 1.0,
+        "seed": 0,
+        "truncate_input": false
+      },
+      "presleep": {
+        "context_limit": 16384,
+        "delete_generated_text": false,
+        "do_sample": false,
+        "max_new_tokens": 8192,
+        "no_repeat_ngram_size": 8,
+        "num_beams": 1,
+        "repetition_penalty": 1.0,
+        "seed": 0,
+        "truncate_input": false
+      },
+      "reflection": {
+        "context_limit": 16384,
+        "delete_generated_text": false,
+        "do_sample": false,
+        "max_new_tokens": 8192,
+        "no_repeat_ngram_size": 8,
+        "num_beams": 1,
+        "repetition_penalty": 1.0,
+        "seed": 0,
+        "truncate_input": false
+      }
+    },
+    "dev_count": 8,
+    "dev_head_visible": true,
+    "dev_schedule": "SLEEP0_AND_EVERY_CYCLE",
+    "episodes_per_cycle": 2,
+    "exact_child_prompts": {
+      "episode": "Take this problem in your own direction.\n\n{question}\n\nWhen you have an answer, end with FINAL: followed by that answer.",
+      "presleep": "We are about to leave this context; take the space to reflect in your own way.",
+      "reflection": "Reflect on your recent experiences in your own way."
+    },
+    "fable_gate": "R112_WATCHER_RELAYED_ROHIN_AUDIT_DONE_REQUIRED",
+    "final_count": 8,
+    "final_morning_unix": 1789491600.0,
+    "final_never_parent_head_exchange": true,
+    "final_schedule": [
+      "sleep0",
+      "morning"
+    ],
+    "focused_count": 2,
+    "focused_dev_indices": [
+      0,
+      1
+    ],
+    "focused_prompt": "{question}\n\nfocus and give the answer",
+    "focused_schedule": "SLEEP0_AND_EVERY_CYCLE",
+    "future_sleep": {
+      "active": false,
+      "anchor_lambda": 0.25,
+      "anchor_manifest_sha256": "2ad09dbe9673f95cbe92cd41e70d83635702b615fb7295b8b3f850e9ee674753",
+      "anchor_root": "/localhome/local-rohing/orch_r107_base_anchors_20260915_attempt1",
+      "anchor_rows": 42,
+      "child_token_exposures": 0,
+      "new_row_presentations": 16,
+      "no_outcome_or_quality_filter": true,
+      "one_optimizer": true,
+      "optimizer_steps": 0,
+      "presentations_per_later_sleep": 1,
+      "proposed_loss": "0.75 * child_and_rehearsal_loss + 0.25 * anchor_loss",
+      "save_each_sleep": true
+    },
+    "hard_deadline_unix": 1789491720.0,
+    "head_editable_fields": [
+      "FOCUS",
+      "STYLE",
+      "REFLECTION"
+    ],
+    "held_batch_size": 8,
+    "held_count": 8,
+    "initiative_labels": [
+      "INITIATE_QUESTION",
+      "REVISIT",
+      "SEEK",
+      "NEW_GOAL",
+      "STOP"
+    ],
+    "label": "PARENTING_SYSTEMS_COMPARISON_FROZEN_BASE_ELICITATION_ONLY",
+    "lane_wait_seconds": 120,
+    "max_gpu_hours_per_member": 8,
+    "max_wall_seconds": 28800,
+    "measures": "DESCRIPTIVE_UNLESS_SOURCE_REVIEW_ESTABLISHES_CHANGED_CONTINUATION_OR_NEW_OBSERVATION",
+    "minimal_held_prompt": "{question}\n\nEnd with FINAL: followed by your answer.",
+    "missing_parent": "MISSING_CONTINUE_NO_RETRY_NO_LATE_APPLY",
+    "morning_dispatch_authorized": false,
+    "morning_exceeds_existing_native_wall": true,
+    "morning_final_reserved_calls": 8,
+    "morning_final_window_end_unix": 1789491720.0,
+    "morning_included_in_core_cap": true,
+    "morning_window_policy": "V4_FINAL_ONLY_AT_1700_UNDER_UNCHANGED_1702_HARD_WALL_NO_EXTENSION",
+    "native_calls_per_cycle": 18,
+    "native_deadline_unix": 1789491540.0,
+    "no_implicit_wall_or_gpu_hour_extension": true,
+    "no_l2_into_ongoing_l1": true,
+    "no_new_baselines": true,
+    "no_new_controls": true,
+    "no_outcome_quality_gate": true,
+    "open_turn_after_each_episode": true,
+    "open_turn_prompt": "The task is over; the environment is still here.",
+    "optimizer": null,
+    "outcome_quality_stop": false,
+    "parent_fields": {
+      "FOCUS": "Attend to your own parenting of the child's thinking rather than its game performance",
+      "GAME": "math word problems",
+      "NUDGING": "You may nudge the child to try a different route, think through several different solutions, or run a different chain of thought, never supply the answer.",
+      "REFLECTION": "long",
+      "STYLE": "creative, supportive"
+    },
+    "parent_prompt_sha256": "4733d90c20a965c0b0dfd04a34e5563853f966082de05f9300d03d1841e0cbaa",
+    "parent_slot_cap": 384,
+    "parent_template_sha256": "6a81eebbb859799e347ce515507ef0ffb4a789eb777d2ddc7758226d3c4e7e0c",
+    "parent_verdict_visibility": "ALL_CHILD_VISIBLE_GAME_FEEDBACK_RETAINED_HIDDEN_EVALUATOR_ONLY_STRIPPED",
+    "persistence": "OBSTACLE_ENGAGEMENT_CHANGED_APPROACH_EVENTUAL_DECISION_SOURCE_REVIEW_REQUIRED",
+    "persistence_labels": [
+      "PERSISTED",
+      "ABANDONED",
+      "LOOPED"
+    ],
+    "planned_native_calls": 1160,
+    "planned_parent_slots": 378,
+    "post_answer_exploration": "DESCRIPTIVE_NOT_PERSISTENCE_OR_CAUSAL_METACOGNITION",
+    "principles_sha256": "5a6a3d28a2f0c9f99dd76873496a07468075509b4451373d90c11ce8d8b363f2",
+    "provider_cutoff_margin_seconds": 30,
+    "readout_context_free": true,
+    "readout_fresh_process": true,
+    "readout_parent_free": true,
+    "reflection": "long",
+    "reflection_field_transport": "BRANCH_CONFIG_NOT_INSERTED_IN_FIXED_TEXT_WHICH_HAS_NO_REFLECTION_PLACEHOLDER",
+    "report_all_branches": true,
+    "report_delivered_parenting": [
+      "completed_interventions",
+      "silent_slots",
+      "missing_slots",
+      "late_slots",
+      "child_tokens",
+      "optimizer_steps",
+      "child_token_exposures"
+    ],
+    "schema": "R114_F2_SYSTEMS_COMPARISON_V1",
+    "seed": 0,
+    "segment_order": [
+      "episode",
+      "open_turn",
+      "episode",
+      "open_turn",
+      "presleep",
+      "reflection",
+      "boundary_open_turn",
+      "boundary_open_turn",
+      "dev",
+      "dev",
+      "dev",
+      "dev",
+      "dev",
+      "dev",
+      "dev",
+      "dev",
+      "focused",
+      "focused"
+    ],
+    "semantic_labels_default": "UNKNOWN_UNTIL_SHARED_JUDGE_OR_AUTHOR_REVIEW",
+    "separate_morning_final_cap": 0,
+    "silent_valid": true,
+    "sleep0_before_first_episode": true,
+    "sleep0_native_calls": 18,
+    "sleep_updates_implemented": false,
+    "style": "creative_supportive_nudging",
+    "supplementary_readout_budget": "UNBOUND_NO_DISPATCH",
+    "weight_updates": 0
+  },
+  "common_contract_sha256": "a683e78d956f95e5231ca529e65093f92e0da0f6988d66b1f07fd8c616e8fe80",
+  "dev_file_sha256": "015cf35ecc762ff98ea97446434d8c9336aaf3106e809973cc331bb07898446c",
+  "dev_ids": [
+    "MATH_PIPELINE_L2_20260915_ATTEMPT1_R111_F2_HELD_C0_E0",
+    "MATH_PIPELINE_L2_20260915_ATTEMPT1_R111_F2_HELD_C0_E1",
+    "MATH_PIPELINE_L2_20260915_ATTEMPT1_R111_F2_HELD_C0_E1003",
+    "MATH_PIPELINE_L2_20260915_ATTEMPT1_R111_F2_HELD_C0_E3",
+    "MATH_PIPELINE_L2_20260915_ATTEMPT1_R111_F2_HELD_C0_E4",
+    "MATH_PIPELINE_L2_20260915_ATTEMPT1_R111_F2_HELD_C0_E5",
+    "MATH_PIPELINE_L2_20260915_ATTEMPT1_R111_F2_HELD_C0_E1007",
+    "MATH_PIPELINE_L2_20260915_ATTEMPT1_R111_F2_HELD_C0_E7"
+  ],
+  "dev_set_sha256": "49feeb421c0ff2fd97c358b7d9770d9372f5c62cdfb6348118c836714d3bdbc1",
+  "dev_sleep0_plan_sha256": "6a614f390915e2139aa4579a4d0a2c85d3ce4288a334d2a434477e7be5b4c333",
+  "final_file_sha256": "1e5548fd989fa79f95a316a0943cae0a92de4e479d5021a0005defa2c00c6b8e",
+  "final_set_sha256": "b3642ffe0e6e501ca805e323d28cdf1f159296872b78f798f65180417dc044ee",
+  "final_sleep0_plan_sha256": "bff30a4c3115ddcdd2b3eee47569be426ea1148b0496eb8431892d01e75c76b7",
+  "final_task_bytes_omitted": true,
+  "focused_ids": [
+    "MATH_PIPELINE_L2_20260915_ATTEMPT1_R111_F2_HELD_C0_E0",
+    "MATH_PIPELINE_L2_20260915_ATTEMPT1_R111_F2_HELD_C0_E1"
+  ],
+  "focused_plan_sha256": "1339ab93371d441ed67e81419342d58a691a5c8dae58f0393b40ce31a9bce4f3",
+  "native_calls": 0,
+  "native_visibility_integration_pending": true,
+  "optimizer_steps": 0,
+  "parent_calls": 0,
+  "predecessor": "/localhome/local-rohing/orch_math_feedback_uptake_r113_f2_20260915_attempt1",
+  "root": "/localhome/local-rohing/orch_math_feedback_uptake_r114_f2_20260915_attempt1",
+  "sealed_permissions_not_same_uid_isolation": true,
+  "sleep0_completed": false,
+  "sleep_implemented": false,
+  "status": "R114_CPU_PREPARED_NOT_NATIVE_READY",
+  "train_file_sha256": "8fdff9a6ba6f697a91bf5357783c46a353406aa0cff7fc8b03f2ebc4b13b5b4b",
+  "weight_updates": 0
+}

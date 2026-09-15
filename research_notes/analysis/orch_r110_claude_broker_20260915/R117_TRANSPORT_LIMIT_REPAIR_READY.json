@@ -1,0 +1,127 @@
+{
+  "branches": {
+    "F1": {
+      "alive": true,
+      "complete": [
+        {
+          "actual_model": "claude-fable-5-1",
+          "finished_at": "2026-09-15T10:55:52.275609+00:00",
+          "id": "000002_F1_C0001",
+          "lock_scope": "shared",
+          "response_path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000002_F1_C0001.response.json",
+          "response_sha256": "75c9d0ba655486286327dfb74aed749a614971c48e8bf5e45878451e97e2ae5d",
+          "transcript_hashes_reverified": true
+        }
+      ],
+      "config_path": "/localhome/local-rohing/orch_r117_claude_brokers_20260915_v2/F1/CONFIG.json",
+      "counts": {
+        "COMPLETE": 1,
+        "MISSING": 13
+      },
+      "errors": {
+        "evaluator_busy_no_wait": 11,
+        "lane_guidance_limit_no_cropping": 1,
+        "provider_error_or_turn_limit": 1
+      },
+      "pid": 431467
+    },
+    "F2": {
+      "alive": true,
+      "complete": [
+        {
+          "actual_model": "claude-fable-5-1",
+          "finished_at": "2026-09-15T11:03:13.925458+00:00",
+          "id": "C003_E0_experience",
+          "lock_scope": "branch",
+          "response_path": "/localhome/local-rohing/orch_math_feedback_uptake_r115_f2_20260915_attempt1/lane1/parent_queue/C003_E0_experience.response.json",
+          "response_sha256": "424aa2f43391e99dae549dd9e92ac60d51d09573a4af97ef3495b7ac6ebb7e07",
+          "transcript_hashes_reverified": true
+        }
+      ],
+      "config_path": "/localhome/local-rohing/orch_r117_claude_brokers_20260915_v2/F2/CONFIG.json",
+      "counts": {
+        "COMPLETE": 1,
+        "MISSING": 12
+      },
+      "errors": {
+        "evaluator_busy_no_wait": 11,
+        "provider_timeout": 1
+      },
+      "pid": 439862
+    },
+    "F3": {
+      "alive": true,
+      "complete": [
+        {
+          "actual_model": "claude-fable-5-1",
+          "finished_at": "2026-09-15T10:59:05.393869+00:00",
+          "id": "C003_E1_PARENT",
+          "lock_scope": "shared",
+          "response_path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C003_E1_PARENT.response.json",
+          "response_sha256": "614f64171041c7dbcdf47a923b519f5934dbc4e39e7a4b238ff871b89c490402",
+          "transcript_hashes_reverified": true
+        },
+        {
+          "actual_model": "claude-fable-5-1",
+          "finished_at": "2026-09-15T11:00:51.089434+00:00",
+          "id": "C004_E0_PARENT",
+          "lock_scope": "branch",
+          "response_path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C004_E0_PARENT.response.json",
+          "response_sha256": "6064a006bc5a86ea2f19caa3cc43b00c6c10fb609b89fa9835f6820ce2617626",
+          "transcript_hashes_reverified": true
+        },
+        {
+          "actual_model": "claude-fable-5-1",
+          "finished_at": "2026-09-15T11:02:18.397039+00:00",
+          "id": "C004_E1_PARENT",
+          "lock_scope": "branch",
+          "response_path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C004_E1_PARENT.response.json",
+          "response_sha256": "2edf50f977e62ed35a3a61fee4aa750dd2bc8a5e722f3ba3029ed99556c8f96c",
+          "transcript_hashes_reverified": true
+        }
+      ],
+      "config_path": "/localhome/local-rohing/orch_r117_claude_brokers_20260915_v2/F3/CONFIG.json",
+      "counts": {
+        "COMPLETE": 3,
+        "MISSING": 7
+      },
+      "errors": {
+        "evaluator_busy_no_wait": 1,
+        "lane_guidance_limit_no_cropping": 1,
+        "payload_binding": 5
+      },
+      "pid": 431453
+    },
+    "F4": {
+      "alive": true,
+      "complete": [],
+      "config_path": "/localhome/local-rohing/orch_r117_claude_brokers_20260915_v2/F4/CONFIG.json",
+      "counts": {
+        "MISSING": 8
+      },
+      "errors": {
+        "evaluator_busy_no_wait": 6,
+        "parent_tag_class": 1,
+        "provider_timeout": 1
+      },
+      "pid": 439952
+    }
+  },
+  "cpu_tests": {
+    "command": "python3 -B -m unittest tests.test_orch_r110_claude_broker tests.test_orch_r110_claude_broker_integration -q",
+    "passed": 85
+  },
+  "diagnosis": "Current SYSTEM omits existing family guidance limits: route/grid90 whitespace words; math/code200 whitespace words plus16000characters. Captured oversized replies remain MISSING; no cropping, retries, or reclassification.",
+  "observed_at": "2026-09-15T11:03:30.031874+00:00",
+  "prospective_repair": "Append exact family-specific guidance limits and existing code nonimplementation restrictions to transport contract; hash actual family transport text. Fn fixed template and principles bytes unchanged. Existing adapt_plan validator unchanged.",
+  "publication_allowlist": {
+    "gpu/orch_r110_claude_broker.py": "ca32a4ee3c161fa476c3349d97c8ed35defba8b2308947516e278f7e8f00f307",
+    "tests/test_orch_r110_claude_broker.py": "ab0e42e525a2e75534380069f8eb35f60b42b4fc573e14fde58069efcca8a4ba",
+    "tests/test_orch_r110_claude_broker_integration.py": "e85d2793e31c64968e4ce2458e3eeb4db715fec2e6292530d9a64ebc8136ba9d"
+  },
+  "repair_status": "CPU_READY_PROSPECTIVE_ONLY; existing immutable node_v2 processes unchanged",
+  "required_next_runtime_step": "Bind new immutable source/config/launch receipt and migrate only at completed-call/archive boundary; carry every original claim/deadline/cap. No live snapshot hotpatch.",
+  "running_source_sha256": "ec6056e44066d40395b15166a5c3795481722c2767a4ba917c4cc229dd547169",
+  "runtime_root": "/localhome/local-rohing/orch_r117_claude_brokers_20260915_v2",
+  "schema": "ORCH_R117_TRANSPORT_LIMIT_REPAIR_READY_V1"
+}

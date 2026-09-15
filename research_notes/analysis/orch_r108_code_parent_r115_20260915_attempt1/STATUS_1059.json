@@ -1,0 +1,56 @@
+{
+  "counts": {
+    "NATIVE_COMPLETE": 4,
+    "NATIVE_FAILED": 70,
+    "PARENT_MISSING": 2,
+    "PARENT_STARTED": 1
+  },
+  "launch": {
+    "identity": {
+      "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+      "command_sha256": "308e2548e0d058cd75347bacb955232d87ae4d8c7b444c3dce8fe64cc7a2a27b",
+      "pid": 400671,
+      "start_ticks": "530109",
+      "uid": 2524
+    },
+    "original_plan_sha256": "2f9e3e96bcdde410d9d670a33a24a06172e8979e2a6c77d7f1cd3dd56d2aa8d6",
+    "source_manifest_sha256": "61671b156bd82049061e9332c806f5631cf9b9824eede4fa21ecaab25c28464f",
+    "started_unix": 1789469740.9108381
+  },
+  "observed_unix": 1789469938.9436853,
+  "optimizer_steps": 0,
+  "parents": [
+    {
+      "actual_model": null,
+      "error": {
+        "code": "evaluator_busy_no_wait",
+        "type": "ValueError"
+      },
+      "finished_unix": 1789469769.8682292,
+      "id": "C003_E0_PARENT.response",
+      "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C003_E0_PARENT.response.json",
+      "provider_dispatched": false,
+      "sha256": "291d70fa58814cf4c4e19318a50cef20782ea883c30f01cb5f598fb4140190ea",
+      "status": "MISSING"
+    },
+    {
+      "actual_model": null,
+      "error": {
+        "code": "lane_guidance_limit_no_cropping",
+        "type": "ValueError"
+      },
+      "finished_unix": 1789469886.652109,
+      "id": "C003_E0_OPEN_PARENT.response",
+      "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C003_E0_OPEN_PARENT.response.json",
+      "provider_dispatched": true,
+      "sha256": "d439522c8d10f9137bfebc95c68984801f948f05389134afbbb9377783c64bff",
+      "status": "MISSING"
+    }
+  ],
+  "raw_on_node_only": true,
+  "root": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1",
+  "semantic_change": "UNASSESSED",
+  "shared_learner": false,
+  "source_manifest_sha256": "61671b156bd82049061e9332c806f5631cf9b9824eede4fa21ecaab25c28464f",
+  "tokens": 1438
+}

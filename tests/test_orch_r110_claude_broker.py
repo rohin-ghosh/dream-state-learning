@@ -339,6 +339,47 @@ class ClaudeBrokerTests(unittest.TestCase):
         self.assertEqual(low['error']['code'], 'vm_memory_floor')
         self.assertFalse(low['provider_dispatched'])
 
+    def test_r116_explicit_one_gib_boundary(self):
+        self.config['min_available_bytes'] = broker.OPT_IN_MIN_AVAILABLE_BYTES
+        self.rebind()
+        low, unused = self.evaluate(memory=lambda: broker.OPT_IN_MIN_AVAILABLE_BYTES-1)
+        self.assertEqual(low['status'], 'MISSING')
+        self.assertFalse(low['provider_dispatched'])
+        self.assertEqual(low['memory_admission']['floor_bytes'], 1073741824)
+        for extra in (0, 1, 200000000):
+            result, unused = self.evaluate(memory=lambda: broker.OPT_IN_MIN_AVAILABLE_BYTES+extra)
+            self.assertEqual(result['status'], 'COMPLETE')
+            self.assertTrue(result['memory_admission']['lower_floor_opt_in'])
+            self.assertTrue(result['memory_admission']['single_call_lock'])
+        self.assertEqual(self.runner.call_count, 3)
+
+    def test_r116_default_floor_stays_one_point_five_gib(self):
+        result, unused = self.evaluate(memory=lambda: broker.OPT_IN_MIN_AVAILABLE_BYTES)
+        self.assertEqual(result['status'], 'MISSING')
+        self.assertEqual(result['memory_admission']['floor_bytes'], 1610612736)
+        self.assertFalse(result['memory_admission']['lower_floor_opt_in'])
+        self.runner.assert_not_called()
+
+    def test_r116_memory_opt_in_does_not_change_lock_or_cutoff(self):
+        self.config['min_available_bytes'] = broker.OPT_IN_MIN_AVAILABLE_BYTES
+        self.rebind()
+        with (self.root/'lock').open('a') as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            result, unused = self.evaluate(memory=lambda: broker.OPT_IN_MIN_AVAILABLE_BYTES)
+        self.assertEqual(result['error']['code'], 'evaluator_busy_no_wait')
+        self.runner.assert_not_called()
+        result, unused = self.evaluate(memory=lambda: broker.OPT_IN_MIN_AVAILABLE_BYTES)
+        self.assertEqual(self.runner.call_args.args[2], self.request['lane_deadline_unix']-30)
+        self.assertEqual(result['status'], 'COMPLETE')
+
+    def test_r116_floor_only_two_explicit_values_and_config_bound(self):
+        for value in (0, True, 1073741823, 1073741824.0, 1500000000, 2147483648):
+            with self.subTest(value=value), self.assertRaisesRegex(ValueError, 'bounded_memory_floor'):
+                broker.validate_config(dict(self.config, min_available_bytes=value))
+        self.config['min_available_bytes'] = 1073741824
+        with self.assertRaisesRegex(ValueError, 'launch_config_binding'):
+            self.evaluate()
+
     def test_busy_lock_missing_without_wait(self):
         with (self.root/'lock').open('a') as lock:
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
@@ -347,6 +388,37 @@ class ClaudeBrokerTests(unittest.TestCase):
         self.assertLess(time.monotonic()-started, 1)
         self.assertEqual(result['error']['code'], 'evaluator_busy_no_wait')
         self.runner.assert_not_called()
+
+    def test_r117_branch_lock_requires_node_local_and_exact_scope(self):
+        with self.assertRaisesRegex(ValueError, 'branch_lock_node_only'):
+            broker.validate_config(dict(self.config, provider_lock_scope='branch'))
+        with self.assertRaisesRegex(ValueError, 'provider_lock_scope'):
+            broker.validate_config(dict(self.config, provider_lock_scope='unlimited'))
+        broker.validate_config(dict(self.config, provider_lock_scope='branch', queue_transport='node_local'))
+
+    def test_r117_four_branch_locks_remain_exclusive_per_branch(self):
+        paths = []
+        for branch in broker.FAMILIES:
+            config = dict(self.config, branch=branch, provider_lock_scope='branch', queue_transport='node_local')
+            path = broker.provider_lock_path(config)
+            paths.append(path)
+            self.assertEqual(path, Path('/tmp/orch_l2_evaluator_' + branch + '.lock'))
+            with path.open('a') as first, path.open('a') as second:
+                fcntl.flock(first, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                with self.assertRaises(BlockingIOError):
+                    fcntl.flock(second, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        self.assertEqual(len(set(paths)), 4)
+        self.assertEqual(broker.provider_lock_path(self.config), broker.backend.LOCK_PATH)
+
+    def test_r117_branch_dispatch_ignores_other_branch_lock(self):
+        self.config.update(provider_lock_scope='branch', queue_transport='node_local')
+        self.rebind()
+        with Path('/tmp/orch_l2_evaluator_F2.lock').open('a') as other:
+            fcntl.flock(other, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            result, unused = self.evaluate(lock_path=None)
+        self.assertEqual(result['status'], 'COMPLETE')
+        self.assertEqual(result['memory_admission']['provider_lock_scope'], 'branch')
+        self.assertEqual(result['memory_admission']['provider_lock_path'], '/tmp/orch_l2_evaluator_F1.lock')
 
     def test_exact_lane_wait_minus_thirty(self):
         result, directory = self.evaluate()
@@ -456,6 +528,59 @@ class ClaudeBrokerTests(unittest.TestCase):
         self.assertEqual(settings['status'], 'SETTINGS_MISMATCH_REPORT_ONLY')
         self.assertNotIn('REFLECTION', settings['fields'])
 
+    def test_r115_missing_fn_uses_exact_section6_fallback_all_lanes(self):
+        for branch, family in broker.FAMILIES.items():
+            with self.subTest(branch=branch):
+                (self.prompts / (branch + '.md')).unlink()
+                self.config.update(branch=branch, family=family)
+                self.request['payload']['game'] = family
+                self.rebind()
+                result, directory = self.evaluate()
+                self.assertEqual(result['status'], 'COMPLETE')
+                binding = result['prompt_binding']
+                self.assertEqual(binding['prompt_source'], 'R115_FIXED_SECTION6_FALLBACK')
+                self.assertEqual(binding['fallback_source_sha256'], broker.sha(Path(broker.__file__)))
+                self.assertEqual((directory/'PARENT_PROMPT.md').read_text(),
+                    broker.render_parent_prompt(broker.FALLBACK_PARENT_FIELDS[branch]))
+                self.assertEqual(binding['head_settings']['fields']['REFLECTION'],
+                    broker.FALLBACK_PARENT_FIELDS[branch]['REFLECTION'])
+
+    def test_r115_fn_appearing_after_fallback_is_reread(self):
+        (self.prompts/'F1.md').unlink()
+        before, unused = self.evaluate()
+        (self.prompts/'F1.md').write_text(broker.render_parent_prompt(self.head_fields))
+        after, unused = self.evaluate()
+        self.assertTrue(before['prompt_binding']['fallback_used'])
+        self.assertFalse(after['prompt_binding']['fallback_used'])
+        self.assertEqual(after['prompt_binding']['prompt_source'], 'REREAD_FN_FILE')
+        self.assertEqual(after['prompt_binding']['prompt_sha256'], broker.sha(self.prompts/'F1.md'))
+        self.assertEqual(self.runner.call_count, 2)
+
+    def test_r115_bad_existing_fn_not_replaced_with_fallback(self):
+        (self.prompts/'F1.md').write_text('Unbound replacement policy')
+        result, unused = self.evaluate()
+        self.assertEqual(result['status'], 'MISSING')
+        self.assertEqual(result['error']['code'], 'fixed_v4_parent_prompt_drift')
+        self.runner.assert_not_called()
+
+    def test_r115_published_custom_fallback_fields_are_config_bound(self):
+        (self.prompts/'F1.md').unlink()
+        self.config['fallback_parent_fields'] = dict(self.head_fields, FOCUS='Owner published focus.')
+        self.rebind()
+        result, unused = self.evaluate()
+        self.assertEqual(result['prompt_binding']['head_settings']['fields'],
+            self.config['fallback_parent_fields'])
+        self.config['fallback_parent_fields']['FOCUS'] = 'Not published'
+        with self.assertRaisesRegex(ValueError, 'launch_config_binding'):
+            self.evaluate()
+
+    def test_r115_source_user_go_still_requires_exact_config(self):
+        self.launch['source_reference'] = 'USER_R115: actual USER GO received; audit complete'
+        broker.validate_launch(self.config, self.launch, time.time())
+        self.launch['config_sha256'] = '0'*64
+        with self.assertRaisesRegex(ValueError, 'launch_config_binding'):
+            broker.validate_launch(self.config, self.launch, time.time())
+
     def test_class_is_description_not_compulsory_catalogue(self):
         for label in (None, 'useful_self_organisation'):
             with self.subTest(label=label):
@@ -527,6 +652,37 @@ class ClaudeBrokerTests(unittest.TestCase):
             with self.subTest(family=family), self.assertRaisesRegex(ValueError, 'no_cropping'):
                 broker.adapt_plan(reply, family, 'TRAIN_1')
 
+    def test_family_word_limits_are_explicit_in_actual_system(self):
+        for branch, family in broker.FAMILIES.items():
+            with self.subTest(family=family):
+                config = dict(self.config, branch=branch, family=family)
+                transcript = dict(self.request['payload'], game=family)
+                system, prompt_bytes, binding = broker.build_system(
+                    transcript, config, self.prompts, self.principles)
+                limit = 90 if family in ('route', 'grid') else 200
+                self.assertIn(f'at most {limit} whitespace-separated words', system)
+                self.assertEqual(prompt_bytes, (self.prompts/(branch+'.md')).read_bytes())
+                self.assertIn(self.principles.read_text(), system)
+                contract = broker.output_transport_contract(family)
+                self.assertTrue(contract.startswith(broker.SYSTEM_CONTRACT))
+                self.assertEqual(binding['transport_contract_sha256'],
+                    broker.hashlib.sha256(contract.encode()).hexdigest())
+                if family in ('math', 'code'):
+                    self.assertIn('at most 16000 characters', system)
+                if family == 'code':
+                    self.assertIn('no code fences, backticks', system)
+
+    def test_transport_limits_match_unchanged_validator_boundaries(self):
+        for family in broker.FAMILIES.values():
+            with self.subTest(family=family):
+                limit = 90 if family in ('route', 'grid') else 200
+                guidance = ' '.join(['notice'] * limit)
+                plan, unused = broker.adapt_plan(dict(self.reply, guidance=guidance), family, 'TRAIN_1')
+                self.assertEqual(plan.get('guidance', plan.get('message')), guidance)
+                oversized = guidance + ' notice'
+                with self.assertRaisesRegex(ValueError, 'lane_guidance_limit_no_cropping'):
+                    broker.adapt_plan(dict(self.reply, guidance=oversized), family, 'TRAIN_1')
+
     def test_model_alias_not_fabricated(self):
         envelope = self.envelope()
         envelope['modelUsage'] = {'another-model': {}}
@@ -583,6 +739,41 @@ class ClaudeBrokerTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'existing_claim_no_retry'):
             broker.process_request(LocalStore(), self.config, self.launch,
                 'cycle1_episode1.request.json', buffer, self.prompts, self.principles)
+
+    def test_r117_local_transport_queue_archive_and_no_duplicate(self):
+        self.config['queue_transport'] = 'node_local'
+        self.rebind()
+        root, buffer = self.prepare_queue()
+        real_evaluate = broker.evaluate
+        def fake_evaluate(*args, **kwargs):
+            return real_evaluate(*args, **kwargs, runner=self.runner,
+                lock_path=self.root/'lock', memory=lambda: broker.backend.MIN_AVAILABLE_BYTES)
+        with patch.object(broker, 'evaluate', side_effect=fake_evaluate), \
+                patch.object(broker.Store, 'shell', side_effect=AssertionError('SSH forbidden')):
+            store = broker.NodeLocalStore(self.root)
+            status = broker.process_request(store, self.config, self.launch,
+                'cycle1_episode1.request.json', buffer, self.prompts, self.principles)
+            self.assertEqual(status, 'COMPLETE')
+            response = broker.loads((root/'parent_queue/cycle1_episode1.response.json').read_text())
+            self.assertTrue(response['transcript_receipt']['all_verified'])
+            self.assertEqual(len(list((root/'parent_claude').glob('*.claim'))), 1)
+            self.assertEqual(broker.process_request(store, self.config, self.launch,
+                'cycle1_episode1.request.json', buffer, self.prompts, self.principles), 'EXISTING')
+        self.assertEqual(self.runner.call_count, 1)
+        self.assertEqual(list(buffer.iterdir()), [])
+
+    def test_r117_local_transport_refuses_relative_copy(self):
+        with self.assertRaisesRegex(ValueError, 'absolute_local_transport_paths'):
+            broker.NodeLocalStore(self.root).copy('relative.json', self.root/'copy.json')
+
+    def test_r117_transport_config_bound(self):
+        self.config['queue_transport'] = 'node_local'
+        broker.validate_config(self.config)
+        with self.assertRaisesRegex(ValueError, 'launch_config_binding'):
+            self.evaluate()
+        self.config['queue_transport'] = 'unknown'
+        with self.assertRaisesRegex(ValueError, 'queue_transport'):
+            broker.validate_config(self.config)
 
     def test_malformed_queue_publishes_missing(self):
         root, buffer = self.prepare_queue('{not-json')

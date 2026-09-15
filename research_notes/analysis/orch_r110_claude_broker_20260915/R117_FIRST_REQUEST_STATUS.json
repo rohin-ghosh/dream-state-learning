@@ -1,0 +1,41 @@
+{
+  "F1": {
+    "actual_response_model": null,
+    "claimed": true,
+    "claude_child_pid": 389950,
+    "claude_parent_pid": 371975,
+    "first_request_at": "2026-09-15T10:54:07.909045Z",
+    "request_id": "000001_F1_C0001",
+    "responses": 0
+  },
+  "F2": {
+    "claims": 6,
+    "error": "evaluator_busy_no_wait",
+    "first_request_at": "2026-09-15T10:54:24.423005Z",
+    "missing": 6,
+    "provider_dispatched": false
+  },
+  "F3": {
+    "requests": 0
+  },
+  "F4": {
+    "claims": 1,
+    "error": "evaluator_busy_no_wait",
+    "first_request_at": "2026-09-15T10:54:46.038287Z",
+    "missing": 1,
+    "provider_dispatched": false
+  },
+  "complete_count": 0,
+  "node_pids": {
+    "F1": 371975,
+    "F2": 371978,
+    "F3": 371980,
+    "F4": 371983
+  },
+  "observed_at": "2026-09-15T10:55:16Z",
+  "quota_reset": false,
+  "retry": false,
+  "risk": "Existing nonblocking shared lock produces charged MISSING instead of waiting while another lane has an active Claude process. No hotpatch, no failed-claim retry.",
+  "schema": "ORCH_R117_FIRST_REQUEST_STATUS_V1",
+  "source_status": "R117_MIGRATION_STATUS.json frozen hashes; 80 focused tests rerun PASS at10:54."
+}

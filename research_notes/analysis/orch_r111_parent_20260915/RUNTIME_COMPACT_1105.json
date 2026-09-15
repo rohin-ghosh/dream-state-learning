@@ -1,0 +1,94 @@
+{
+  "deployed_pair_source": {
+    "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_source_v3/gpu/orch_r111_route_pair.py",
+    "sha256": "cc3009fa218b770cc9e483e754250ff9fe0100c334befa234be08729c23ca411"
+  },
+  "lanes": [
+    {
+      "ACTOR_READY.json": {
+        "loaded_unix": 1789469454.2906637,
+        "optimizer_restored": false,
+        "pid": 356208,
+        "sha256": "d30def6dd9c227bce42b69d9d7bfaff3f58f90afaf077e5f312650d48c807d0b",
+        "started_unix": 1789469401.1998484
+      },
+      "DISPATCH.json": {
+        "sha256": "a8e743bcd8259fe44bba6b80be0e33dcab4e2c0bf92d940bed05e80ca38e86a1",
+        "started_unix": 1789469003.254004,
+        "supervisor_pid": 300641
+      },
+      "STATUS.json": {
+        "cycle": 1,
+        "last_native": 68,
+        "last_parent_status": "MISSING",
+        "observed_unix": 1789469875.7282271,
+        "phase": "reflection",
+        "pid": 356208,
+        "sha256": "819bdc5567138471ff22b02234409ebaad6f36e6221ec3f8612fee363e0e2ecb",
+        "sleeps": 0
+      },
+      "completed_checkpoints": 1,
+      "completed_cycles": 0,
+      "first_complete_response": {
+        "actual_model": "claude-fable-5-1",
+        "finished_unix": 1789469752.275609,
+        "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000002_F1_C0001.response.json",
+        "request_sha256": "d3b54a7288eea3a9db3ddf3d209448f26be9ad72fae42e7c4896333c9622da55",
+        "sha256": "75c9d0ba655486286327dfb74aed749a614971c48e8bf5e45878451e97e2ae5d"
+      },
+      "latest_actor": {
+        "alive": true,
+        "pid": 356208,
+        "receipt": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/actor_attempt_0002.json",
+        "sha256": "fe2a5ece6278fc1fbf30872fc21e699dc8d3daa805c24cfc4aa1bb16ea7d72bb"
+      },
+      "parent_observed_statuses": {
+        "COMPLETE": 1,
+        "MISSING": 13
+      },
+      "parent_requests": 14,
+      "parent_response_statuses": {
+        "COMPLETE": 1,
+        "MISSING": 13
+      },
+      "physical": 0,
+      "plan_sha256": "5b619c1acb48caaafb9bd5acc9ccdbb4d546075ebc8599a21066d8829624c163",
+      "root": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1",
+      "semantic_behavior_changes": null,
+      "uuid": "GPU-f237c5b5-c2a3-b377-92ee-46cf2658db9a"
+    },
+    {
+      "DISPATCH.json": {
+        "sha256": "b57533ddb4cce91c09392839fc6cb2802914ecb931666a1c5b8060d9cb3bcbd0",
+        "started_unix": 1789470295.0346575,
+        "supervisor_pid": 459875
+      },
+      "completed_checkpoints": 0,
+      "completed_cycles": 0,
+      "handoff": {
+        "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_4_attempt1/HANDOFF.json",
+        "sha256": "2f96e42673558c53f1c3833b6ec15ef7a2a279dd8d8ee7890e779081ce171d5e",
+        "source_release_sha256": "8885c95214ddd80bc740df4761d67febd27febff44a40a403f8e02dac5a65aab"
+      },
+      "latest_actor": {
+        "alive": true,
+        "pid": 459948,
+        "receipt": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_4_attempt1/actor_attempt_0001.json",
+        "sha256": "9a2aae8335f1bb0faefba1422821240a3bfcfea4b855fc7ebf7bbdd98ec6dcf3"
+      },
+      "parent_observed_statuses": {},
+      "parent_requests": 0,
+      "parent_response_statuses": {},
+      "physical": 4,
+      "plan_sha256": "47b599908b5a07fcf7e7f90646551fccc80b5d5f4bdbb3f20f494493095ecaf4",
+      "root": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_4_attempt1",
+      "semantic_behavior_changes": null,
+      "uuid": "GPU-94c9a79c-8b13-5679-ad35-8dda3fe5c94d"
+    }
+  ],
+  "mode": "PER_BRANCH_FRESH_RANK8_WITH_TWO_EPISODE_LORA_SLEEP",
+  "observed_utc": "2026-09-15T11:05:33Z",
+  "raw_node_only": true,
+  "shared_pooling_active": false,
+  "wrapper": "gpu/ovx3_ssh.sh"
+}

@@ -481,3 +481,52 @@ device access/CVD, unknown visibility and identityreuse. Original scanner/source
 all failed scans, preparedattempts and deadlines remain immutable. No native
 or parent-call replay/reset; no scientific/model/visibility change. Additional
 tests parallel with already-running broker; original3interface tests10PASS.
+
+## 2026-09-15T10:58Z — F3 actual recovery, parent request, physical5 release
+
+OriginalstrictscannerCLEAR launched F3native351477/readout351478 at10:49:00.
+It loaded verifiedBASE but all70reservednativeattempts failedTypeError before
+tokens/parents. Rootcause: own check returned PLAN dict into PyTorch forward
+prehook, replacing inputargs. Tiny nativeCPU Embedding reproducer confirms
+originalTypeError and correctedNonehookPASS. ExactrecordedPID/UID/start/boot/
+commandgroup stopped; oldPLAN/raw/reservations/source/scans all preserved.
+This is operational, not child-quality failure. NO repeatedcalls or baseline.
+
+Immutable source_v2 fixes only callbackreturn; separate continuation starts
+C3 afterALLpreviouslyreservedcycles, using same8192/1000/100cycle/8h absolute
+PLAN. Initialreadouts NOTrepeated. Newguard400436 uses testedidle1MiB
+reconciler after repeated oldscannerargv-onlydrift. Actualnative400671 launched
+10:55:40, BASE/noadapterverified10:56:05; observed10:57:49 3nativeCOMPLETE,
+1394tokens,1parentMISSING(evaluatorbusy/noAPI),1parentpending. Hubble migrated
+F3broker toNODE PID371980; obsoleteVM718110 mustnotrestart. No deliveryclaim
+until actualresponse/model/archive verified. 37focusedCPUtestsPASS1.46s.
+
+Root `/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1`:
+originalsource atsource/, source_v2/childcontinuation, admission_source_v2/
+CPUlauncher, CONTINUATION_BINDING/CONT_SOURCE_SHA256/CONT_LAUNCH/CONT_ADMISSION
+bind exactbytes. OriginalPLANsha2f9e3e96bcdde410d9d670a33a24a06172e8979e2a6c77d7f1cd3dd56d2aa8d6;
+newchildsourcemanifest61671b156bd82049061e9332c806f5631cf9b9824eede4fa21ecaab25c28464f.
+Repositorycandidate prepare nowcorrects prospectivepercallUSD2 (1000was
+mistakenlifetimefield; originalpreserved,Hubbletightened2 beforedispatch), and
+exactAstra model openai/openai/gpt-6-astra. Candidate != originalnativebytes.
+
+Astra6 prepared10:56:04, RECEIVER_READY.json inmatchingnode5_6 root; exactPLAN
+9a595b3d93c1c4692d370439666e46f1585f85be958c3197b21ad7cf64e6b8ec;
+samecohort/prompt/decoder, forwardhookfixbeforefirstcall. OwnAstra wrapper
+reusesexistingqualifiedstrongAPI andHubblequeue/archive contract;3CPUtestsPASS.
+WaitingexplicitLaplace6cycleexit; no6GPU/provider call launched/preempted.
+
+Oldphysical5 safelyreleased cycle5 at10:57:38, native51670 exactidentityexited;
+R115_RELEASE_COMPLETE.json atoldnode5_5 root, preservedSHA
+050767590088cdfbcfe0fef1cdc7d9b0df439a7be7b37684214768fa8699343c.
+Mathreceivernotified. Owninotify/pidfdwatchers requirecompletedcycle/settled
+cells/nohighercycle/0outstanding/receiverready; racesresumeimmediately, no
+qualityselection. Physical4C4meta_parent2 stillrunning, watcherarmed396383.
+SixreleaseCPUtestsPASS. Neitherforeignlane6noroldsourcehotpatched.
+
+SharedlearnerMain-owned: currentnative response.messages/raw/token_ids/
+prompt_tokens/terminal available, but outertask_id and sharedgeneration/
+checkpoint metadata ABSENT. DoNOTreinterpretpre-sharedBASEcaptures asshared
+LoRAreplay. NextimmutableclientmustaddmetadataBEFOREdispatch andexcludeall
+DEV/FINAL/attachedreadoutopen; actualTRAINopen_observationalias reportedtoMain.
+No sharedoptimizer/adapter/sleep appliedyet; lambdaNOT_APPLIED.

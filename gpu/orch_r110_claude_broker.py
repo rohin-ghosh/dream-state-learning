@@ -9,6 +9,7 @@ retained after failed archival, never redispatched. Fn.md is reread each call.
 """
 
 import argparse
+from copy import deepcopy
 import fcntl
 import hashlib
 import json
@@ -34,6 +35,27 @@ BATTLEPLAN = ROOT / 'research_notes/PARENTING_BATTLE_PLAN_v4_2026-09-15.md'
 MORNING_CUT_UNIX = 1789491600
 NODE5_HARD_WALL_UNIX = 1789596240
 HEAD_EDITABLE_FIELDS = ('FOCUS', 'STYLE', 'REFLECTION')
+MUTABLE_PROMPT_ROOT = Path('/data/home/rohing/courier/swarm/prompts')
+OPT_IN_MIN_AVAILABLE_BYTES = 1024 * 1024 * 1024
+FALLBACK_PARENT_FIELDS = {
+    'F1': dict(GAME='route worlds (READ/ROUTE over a 61-world graph)', STYLE='training-wheels, supportive',
+        NUDGING='You do not suggest routes, methods or hypotheses.',
+        FOCUS='Watch whether it reads its records before it routes; ask what it noticed there, never what to do',
+        REFLECTION=dict(mode='short', max_new_tokens=1024)),
+    'F2': dict(GAME='math word problems with an exact checker', STYLE='creative, supportive',
+        NUDGING="You may say 'try a different route', 'think through several different solutions', 'run a different chain of thought' — never the answer itself.",
+        FOCUS='Watch whether its checks change anything; ask what it expected before it computed',
+        REFLECTION=dict(mode='long', max_new_tokens=3072)),
+    'F3': dict(GAME='small coding tasks with unit tests',
+        STYLE='harsh-critical of the reasoning, never personal',
+        NUDGING='You do not suggest methods, tests or hypotheses.',
+        FOCUS='Watch whether it runs a test or only reasons about one; ask what it can and cannot tell without running it',
+        REFLECTION=dict(mode='long', max_new_tokens=3072)),
+    'F4': dict(GAME='a grid hill-climbing puzzle', STYLE='training-wheels, harsh',
+        NUDGING='You do not suggest moves, methods or hypotheses.',
+        FOCUS='Watch whether it re-plans after a bad move or repeats it; ask what surprised it',
+        REFLECTION=dict(mode='short', max_new_tokens=1024)),
+}
 SCHEMA = 'ORCH_R111_CLAUDE_BROKER_V1'
 FAMILIES = {'F1': 'route', 'F2': 'math', 'F3': 'code', 'F4': 'grid'}
 CLASSES = ('perception', 'persistence', 'metacognition', 'curiosity', 'goal_regulation',
@@ -107,10 +129,19 @@ def finite(value):
 
 
 def validate_config(config):
-    require(set(config) == {'schema', 'branch', 'family', 'remote_root', 'life_id',
+    keys = {'schema', 'branch', 'family', 'remote_root', 'life_id',
         'deadline_unix', 'max_parent_calls', 'max_budget_usd', 'max_output_tokens',
         'train_tasks', 'excluded_task_ids', 'cohort_sha256', 'principles_sha256',
-        'source_files'}, 'config_keys')
+        'source_files'}
+    require(keys <= set(config) <= keys | {'fallback_parent_fields', 'min_available_bytes',
+        'queue_transport', 'provider_lock_scope'}, 'config_keys')
+    require(config.get('queue_transport', 'ssh') in ('ssh', 'node_local'), 'queue_transport')
+    require(config.get('provider_lock_scope', 'shared') in ('shared', 'branch'), 'provider_lock_scope')
+    require(config.get('provider_lock_scope', 'shared') != 'branch'
+        or config.get('queue_transport') == 'node_local', 'branch_lock_node_only')
+    floor = config.get('min_available_bytes', backend.MIN_AVAILABLE_BYTES)
+    require(type(floor) is int and floor in (OPT_IN_MIN_AVAILABLE_BYTES, backend.MIN_AVAILABLE_BYTES),
+        'bounded_memory_floor')
     require(config['schema'] == SCHEMA and config['branch'] in FAMILIES
         and config['family'] == FAMILIES[config['branch']], 'branch_family')
     require(re.fullmatch(r'/[a-zA-Z0-9_./-]+', config['remote_root'])
@@ -129,6 +160,8 @@ def validate_config(config):
         require(isinstance(value, str) and re.fullmatch('[a-f0-9]{64}', value), 'source_hash')
     require(config['source_files'] == source_pins(), 'immutable_source_pins')
     require(config['principles_sha256'] == PRINCIPLES_V2_SHA256, 'r112_principles_v2_required')
+    if 'fallback_parent_fields' in config:
+        render_parent_prompt(config['fallback_parent_fields'])
 
 
 def validate_launch(config, launch, now):
@@ -284,33 +317,101 @@ def head_binding(prompt_path, prompt_bytes):
     return result
 
 
+def output_transport_contract(family):
+    require(family in FAMILIES.values(), 'known_family')
+    limit = 90 if family in ('route', 'grid') else 200
+    contract = SYSTEM_CONTRACT + (
+        f' For this {family} lane, the guidance field must contain at most {limit} '
+        'whitespace-separated words. This limit applies to guidance, not the parent-only rationale. '
+        'Compose concise, complete guidance within the limit; oversized responses are rejected, '
+        'never cropped or retried.')
+    if family in ('math', 'code'):
+        contract += ' The guidance field must also contain at most 16000 characters.'
+    if family == 'code':
+        contract += (' Keep guidance non-implementational: no code fences, backticks, '
+            'function definitions, lambda expressions, or quoted "expression" fields.')
+    return contract
+
+
 def build_system(transcript, config, prompt_root, principles_path):
     prompt_path = Path(prompt_root) / (config['branch'] + '.md')
-    require(prompt_path.stat().st_size <= PACKET_CAP, 'bounded_parent_prompt')
-    prompt_bytes = prompt_path.read_bytes()
+    try:
+        require(prompt_path.stat().st_size <= PACKET_CAP, 'bounded_parent_prompt')
+        prompt_bytes = prompt_path.read_bytes()
+    except FileNotFoundError:
+        fields = deepcopy(config.get('fallback_parent_fields', FALLBACK_PARENT_FIELDS[config['branch']]))
+        prompt_bytes = render_parent_prompt(fields).encode()
+        settings = dict(status='BOUND_FALLBACK_SETTINGS', fields=fields,
+            reflection_applied_by_broker=False, settings_file_sha256=None)
+        prompt_source = 'R115_FIXED_SECTION6_FALLBACK'
+    else:
+        settings = head_binding(prompt_path, prompt_bytes)
+        prompt_source = 'REREAD_FN_FILE'
     principles_bytes = Path(principles_path).read_bytes()
     require(hashlib.sha256(principles_bytes).hexdigest() == config['principles_sha256'],
         'principles_hash_changed')
     prompt = prompt_bytes.decode('utf-8')
-    settings = head_binding(prompt_path, prompt_bytes)
     principles = principles_bytes.decode('utf-8')
-    parent_policy = prompt + '\n\n' + principles + '\n\n' + SYSTEM_CONTRACT
+    transport_contract = output_transport_contract(config['family'])
+    parent_policy = prompt + '\n\n' + principles + '\n\n' + transport_contract
     system = parent_policy + '\n\nTRAIN TRANSCRIPT:\n' + json.dumps(transcript, sort_keys=True)
     require(len(system.encode()) <= PACKET_CAP, 'bounded_system_content_no_crop')
     binding = dict(schema='ORCH_R111_COMMON_PARENT_PROMPT_V1',
         comparison_label='PARENTING_SYSTEMS',
         common_prompt_file='tools/courier/swarm/prompts/' + config['branch'] + '.md',
+        runtime_prompt_file=str(prompt_path),
+        prompt_source=prompt_source, fallback_used=prompt_source == 'R115_FIXED_SECTION6_FALLBACK',
+        fallback_source_sha256=sha(Path(__file__)) if prompt_source == 'R115_FIXED_SECTION6_FALLBACK' else None,
+        battleplan_sha256=sha(BATTLEPLAN),
         prompt_sha256=hashlib.sha256(prompt_bytes).hexdigest(),
         principles_sha256=config['principles_sha256'],
         fixed_parent_template_sha256=hashlib.sha256(fixed_parent_template().encode()).hexdigest(),
         head_settings=settings, head_settings_sha256=digest(settings),
-        transport_contract_sha256=hashlib.sha256(SYSTEM_CONTRACT.encode()).hexdigest(),
+        transport_contract_sha256=hashlib.sha256(transport_contract.encode()).hexdigest(),
         parent_policy_sha256=hashlib.sha256(parent_policy.encode()).hexdigest(),
         system_sha256=hashlib.sha256(system.encode()).hexdigest(),
         public_transcript_sha256=digest(transcript),
         position={key: transcript[key] for key in ('game', 'cycle', 'episode', 'phase')},
         pairing_status='UNVERIFIED_NO_COUNTERPART_RECEIPT', child_gate=False)
     return system, prompt_bytes, binding
+
+
+def reflection_call_settings(response, request, original_cap, *, config, now=None):
+    require(type(original_cap) is int and 1 <= original_cap <= 8192, 'original_reflection_cap')
+    result = dict(status='KEEP_ORIGINAL', effective_max_new_tokens=original_cap,
+        requested_max_new_tokens=None, mode=None, changes_lifetime_caps=False,
+        reflection_applied_by_broker=False, stop_child=False)
+    now = time.time() if now is None else now
+    try:
+        require(isinstance(response, dict) and response.get('status') in ('COMPLETE', 'SILENT'),
+            'no_usable_parent_settings')
+        require(response['id'] == request['id'] and response['request_sha256'] == digest(request)
+            and response['payload_sha256'] == request['payload_sha256']
+            and request['payload_sha256'] == digest(request['payload']), 'settings_request_binding')
+        require(finite(now) and finite(response['finished_unix'])
+            and response['finished_unix'] < request['lane_deadline_unix'] - 30
+            and now < request['lane_deadline_unix'], 'late_settings')
+        receipt = response['transcript_receipt']
+        require(receipt['node_only'] is True and receipt['all_verified'] is True,
+            'settings_archive_unverified')
+        binding = response['prompt_binding']
+        require(receipt['files']['PROMPT_BINDING.json'] == hashlib.sha256(
+            (json.dumps(binding, sort_keys=True, indent=2, allow_nan=False) + '\n').encode()).hexdigest(),
+            'settings_archive_binding')
+        settings = binding['head_settings']
+        require(binding['head_settings_sha256'] == digest(settings)
+            and binding['public_transcript_sha256'] == digest(validate_request(request, config))
+            and settings['status'] in ('BOUND_REQUESTED_SETTINGS', 'BOUND_FALLBACK_SETTINGS'),
+            'head_settings_binding')
+        render_parent_prompt(settings['fields'])
+        reflection = settings['fields']['REFLECTION']
+        result.update(status='BOUND_FOR_LANE_DECODER', mode=reflection['mode'],
+            requested_max_new_tokens=reflection['max_new_tokens'],
+            effective_max_new_tokens=min(original_cap, reflection['max_new_tokens']),
+            prompt_sha256=binding['prompt_sha256'], head_settings_sha256=binding['head_settings_sha256'])
+    except (KeyError, TypeError, ValueError) as error:
+        result['reason'] = str(error)
+    return result
 
 
 def compare_prompt_bindings(left, right, *, matched_opportunity=False):
@@ -467,8 +568,16 @@ def run_cli(argv, directory, cutoff, output_cap):
             stream.close()
 
 
+def provider_lock_path(config):
+    if config.get('provider_lock_scope', 'shared') == 'branch':
+        require(config.get('queue_transport') == 'node_local'
+            and config.get('branch') in FAMILIES, 'branch_lock_node_only')
+        return Path('/tmp/orch_l2_evaluator_' + config['branch'] + '.lock')
+    return backend.LOCK_PATH
+
+
 def evaluate(request, directory, deadline, *, config, launch, prompt_root, principles_path,
-             runner=run_cli, memory=backend.available_memory, lock_path=backend.LOCK_PATH):
+             runner=run_cli, memory=backend.available_memory, lock_path=None):
     validate_config(config)
     validate_launch(config, launch, time.time())
     directory = Path(directory)
@@ -479,16 +588,23 @@ def evaluate(request, directory, deadline, *, config, launch, prompt_root, princ
     dispatched = False
     result = None
     prompt_binding = None
+    memory_admission = None
     try:
         transcript = validate_request(request, config)
         cutoff = min(cutoff, request['lane_deadline_unix'] - 30)
-        with Path(lock_path).open('a') as lock:
+        with Path(lock_path if lock_path is not None else provider_lock_path(config)).open('a') as lock:
             require(time.time() < cutoff, 'lane_cutoff_before_dispatch')
             try:
                 fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
             except BlockingIOError:
                 raise ValueError('evaluator_busy_no_wait') from None
-            require(memory() >= backend.MIN_AVAILABLE_BYTES, 'vm_memory_floor')
+            floor = config.get('min_available_bytes', backend.MIN_AVAILABLE_BYTES)
+            memory_admission = dict(available_bytes=memory(), floor_bytes=floor,
+                single_call_lock=True, lower_floor_opt_in=floor < backend.MIN_AVAILABLE_BYTES,
+                provider_lock_scope=config.get('provider_lock_scope', 'shared'),
+                provider_lock_path=str(lock_path if lock_path is not None else provider_lock_path(config)))
+            write(directory / 'MEMORY.json', memory_admission)
+            require(memory_admission['available_bytes'] >= floor, 'vm_memory_floor')
             system, prompt_bytes, prompt_binding = build_system(transcript, config, prompt_root, principles_path)
             (directory / 'PARENT_PROMPT.md').write_bytes(prompt_bytes)
             (directory / 'SYSTEM.txt').write_text(system)
@@ -515,7 +631,7 @@ def evaluate(request, directory, deadline, *, config, launch, prompt_root, princ
                 else 'captured_failure_no_retry'))
     result.update(id=request.get('id'), request_sha256=digest(request), payload_sha256=request.get('payload_sha256'),
         lane_deadline_unix=request.get('lane_deadline_unix'),
-        prompt_binding=prompt_binding,
+        prompt_binding=prompt_binding, memory_admission=memory_admission,
         provider_dispatched=dispatched, retry=False, finished_unix=time.time())
     write(directory / 'RESULT.json', result)
     return result
@@ -538,6 +654,27 @@ class Store:
 
     def hash(self, path):
         return self.shell('sha256sum ' + shlex.quote(str(path))).stdout.split()[0]
+
+
+class NodeLocalStore:
+    def __init__(self, repository):
+        self.repository = Path(repository)
+
+    def shell(self, script, check=True):
+        return subprocess.run(['bash', '-c', script], text=True, capture_output=True,
+            timeout=20, check=check)
+
+    def copy(self, source, destination):
+        source = Path(str(source).removeprefix('NODE:'))
+        destination = Path(str(destination).removeprefix('NODE:'))
+        require(source.is_absolute() and destination.is_absolute(), 'absolute_local_transport_paths')
+        shutil.copyfile(source, destination)
+
+    def exists(self, path):
+        return Path(path).exists()
+
+    def hash(self, path):
+        return sha(path)
 
 
 def archive(store, directory, destination):
@@ -631,7 +768,7 @@ def serve(config_path, launch_path, prompt_root, principles_path):
     require(sha(principles_path) == config['principles_sha256'], 'principles_hash_changed')
     require(config['principles_sha256'] == PRINCIPLES_V2_SHA256, 'r112_principles_v2_required')
     require(shutil.disk_usage('/').free >= 10 * 1024 ** 3, 'vm_disk_launch_floor')
-    store = Store(ROOT)
+    store = NodeLocalStore(ROOT) if config.get('queue_transport', 'ssh') == 'node_local' else Store(ROOT)
     root = Path(config['remote_root'])
     ledger = root / 'parent_claude'
     store.shell('mkdir -p ' + shlex.quote(str(ledger)))
@@ -667,7 +804,7 @@ if __name__ == '__main__':
     parser.add_argument('--source-pins', action='store_true')
     parser.add_argument('--config', type=Path)
     parser.add_argument('--launch-receipt', type=Path)
-    parser.add_argument('--prompt-root', type=Path, default=ROOT / 'tools/courier/swarm/prompts')
+    parser.add_argument('--prompt-root', type=Path, default=MUTABLE_PROMPT_ROOT)
     parser.add_argument('--principles', type=Path, default=ROOT / 'research_notes/PARENTING_PRINCIPLES_ROHIN_2026-09-15.md')
     arguments = parser.parse_args()
     if arguments.source_pins:
