@@ -29141,3 +29141,43 @@ CREATIVE7/training4/Laplace untouched. Launch after publication; no Main ack.
 [Builder] 2026-09-15T07:56:29.612169+00:00 RICH_HOT_NODE3 BASE107 bounded AUTHOR AUDIT +600s measured. First3completed episodes/arm fixed by lastCALLfinish (4=5calls;5=4calls;6episodes/9calls total), native episode/CALL/rawSHA bound; no outcome criterion, no keyword/length gate. EACHarm supportedfunctional0/3, notsupported1/3, UNKNOWN2/3; ordinary grounded stateupdates separately4=2/3,5=1/3, not automatically metacognitivecontrol. Unread-event dismissals unsupported6/6;4episode2 read->route justification invokes nonexistent one-action budget;5episode1 proposes evidence-seeking but no observed follow-through, UNKNOWN not outcome-failed. Counterfactual reasoning contribution UNKNOWN6/6; oneunderlying TRAINworld/nearbydisplays, authornotindependent, no populationestimate/no causalcomparison. Original raw+UNREVIEWEDlabels preserved. Fresh600s (2026-09-15T07:45:32+00:00,2026-09-15T07:55:32+00:00] nativewindow:4PID756517=108rows/648rawrows/h/19441contenttokens/3exactduplicates;5PID756516=121rows/726rawrows/h/19250tokens/4duplicates;both0barecommand/0nativecallfailures; bothidentitymatches+nonterminal. Tokens completion-attributed with1start-boundary-crossingcall/arm; not instantaneous emissionrate. Functionalqualifiedrows/hour NULL; do not extrapolate sixepisodeaudit to population.231reservations atwindowend, same1536segment/768slot caps/noreset, original15:18:38.782722Zhardend.5local+5native measurementtestsPASS. NO FURTHER REFILLS without Maincoordination on~11gen/trainrebalance atcompletion; no new launch/stop/promptpatch/node1orGPU3touch. RawonlyNODE, repo source+hashes+reductions; exactready research_notes/analysis/orch_rich_hot_node3_20260915_base107_refill1536/AUDIT_STAGE_READY.json.
 [Builder] 2026-09-15T07:58Z actual reflection-stop deployment verified in A1005 new BASE contextual continuation:CALL004/005588/531tokens,12.933/11.646seconds,EOSboth,no stoprequested/truncation,0exactduplicate eligibleparagraphcharacters. SOURCE1fe38d9fea6bed06f07c3a5eb0ccbb029635d7af148b38367d8cd51dddfc2ceb, READY41c0576f40f1e22828100b48c16fb585947059025b28bd97b2084f79d9982e66. Main40tests+16subtestsPASS. No oldprocesshotpatch; revision/reflectiononly; semanticnovelthoughtyieldUNKNOWN; no actualdegenerate-stop or causal-speedup claim. Rawnode-only; compactSTOPPED_FIRST_REFLECTIONS.json+REFLECTION_STOP_RESULTS.md. Fresh fleet07:57:01–05 wrappers:a40r8/8resident,ovx8/8,ovx2 4/8,a1007/8=27/32resident22positive; empty node3 0/1/2/3 andA1004. Saturation UNMET; Anscombe prepares node3BASEparenting1/2, Cicero reserves A1000aftertrainingnaturalrelease for64callfinalFULLON/OFFcapability, no extraBASEcalls. Continual latestmatched8036V13/3635:16012presentations/arm,min3/median4/max6;375newestall3times. New exhaustionaccepted/ingested remains0. Fixed08:00 cutoff, no reset/extension or outcomeintervention.
 [Builder] 2026-09-15T08:00Z R107 genuine BASE4/5 first quality+throughput: exact600s07:45:32–07:55:32UTC108/121rawrows=648/726rawrows-hour,combined1374/h;contenttokens19441/19250;0barecommands/nativefailures;3/4exactduplicate rawoutputs. First3completedepisodes/arm audit each0supported functionalmetacognitivechanges,1notsupported,2UNKNOWN;ordinary evidence-conditionedupdates2/3and1/3separate,all6causalcounterfactualsUNKNOWN. Outcome notqualificationcriterion. Qualified/hourUNKNOWN, noautomaticcorpusadmission or populationrateclaim; neither length nor ordinaryenvironmentresponse proves functionalmeta. Prior37ecnullpreserved; modelANDpromptchanged,no singlefactorclaim.5local+5native measurementtestsPASS. Source+compactaudit/windowmanifests/results in research_notes/analysis/orch_rich_hot_node3_20260915_base107_refill1536; allrawnode-local; no additional modelcalls. Workersstilllive, no furtherrefill beforepostcompletion~11gen/train coordination.
+
+## [Builder / Anscombe] 2026-09-15T08:02Z — node3 BASE parenting treatments1/2
+
+Direct user07:46/07:57 assigns freed node3physical1/2. Allocate only
+1 UUIDGPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821 training-wheels/long/supportive;
+2 UUIDGPU-41a86250-88eb-ed8a-ddfe-9d6f93515da1 creative/long/supportive.
+No reservation of0/3 or other slots. Genuine frozen Qwen BASE a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992,
+no LoRA/optimizer/training. Both parents actual verified openai/openai/gpt-6-astra.
+Two sequential episodes/cycle, two interactive parent rounds/check/revision,
+eight fresh parent-free tests each cycle; two cycles per treatment. Shared
+canonical baseline descriptive only, no new controls/style-matched-control claim.
+
+Prospective +56native/+8parents total (28/4 per treatment), aggregate2162/50;
+each <=60min/1GPUh, combined<=2GPUh within original math24GPUh ceiling and
+11:39:15native11:42:15hard; no older counter/deadline reset. Child caps4096original/
+4096check/2048reflection/8192held,context16384; no batching or retries. Exact
+Pasteur final reflection-only lexical stop1fe38d9f... in actual generator;
+unchanged ordinary task/check/readout path; rawprefix/EOS/cap/repetition distinct,
+no-auto-fit; semantic novelty UNKNOWN/author review. All raw on node, private
+per-style broker buffers only/tmp, verify native transcript hashes before cleanup.
+
+55nodeCPU tests PASS including both full two-cycle native seams, private parent
+style/visibility and both prior exclusion-hash schemas.2886excludedIDs/2878hashes;
+fresh shared20task cohort frozen before results. Native cached base/tokenizer
+provenance verified, no downloads. Earlier missing-dependency and incomplete
+exclusion-union CPU candidates preserved as PRE_EXCLUSION_REPAIR, zero inference,
+invalidated before this allocation; not a live repair or result-based reselection.
+
+FAMILY_READYd838204a52a3f356845484cd00a76cb5a152c0da990c1cf7b68368c2f68d8fa1;
+READY1=8a66bf0b73edf82ec7b2ca6c0ad3f3e3df7315b446d239ace04d667b2c32539c;
+READY2=c4b69bda31f023be25e53ac2d628e31409fdac8941064e6c6390163e16ce7a94;
+source106d79f1755c73984ecc0c03803d92afae613125b9eb79bd10c7613c8bb51571;
+cohort61d33f93ec7591f45cafe7ef38bfac64b0feff4c76176013eb7f9657c12c65f1;
+CPU47b794a7724ef70910490ad783dcdca2a31e03b2f8dcc942ddcaf729c0604e33.
+Root /localhome/local-rohing/orch_math_feedback_uptake_node3_20260915_attempt1.
+Prior1 guardian COMPLETE; prior2 guardian FAILED preserved, NOT called complete
+or retired by this worker for outcomes; both PIDs absent and Main reassigned.
+Fresh privileged pinned full/proc/UUID/CVD/kernel-minor/service admission before
+each process. No peer signals, no L2→L1. Dispatch after publication, no Main ack.
+[Builder] 2026-09-15T08:03Z guarded BASE contextualcycle ACTUALCOMPLETE07:59:46,487.276s/8.121min experience→readout.2originals10.157s,2checks15.099s,2reflections24.579s;otherexperienceenvelope275.912s includesparentwait/load/hashNOTisolatedproviderlatency;admissiongap20.160s;8freshparentfreeowncontextreadout141.370s. No weightupdates. PriorBASEC1598.401s differenttasks/context;neitherreflectiontriggeredstop,NOcausalspeedupclaim. Semanticnoveltyauditpending. STOPPED_CYCLE_TIMING.json hash-boundCOMPLETE/AFTER/guardianreceipts. A1005naturalrelease;node3BASEtreatments1/2preparationstillnotactualdispatchat08:02;0/3prospectiveexpansionmustnotdelay1/2. Scope remains noextra controls/noL2→L1/noforeignsignals.

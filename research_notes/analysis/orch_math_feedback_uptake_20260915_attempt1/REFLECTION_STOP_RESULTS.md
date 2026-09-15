@@ -29,9 +29,16 @@ and parent feedback. Zero exact duplicate paragraphs is only a lexical measure.
 Earlier degenerate LoRA reflections used8192tokens,381.60–387.77seconds and
 repeated-fourgram fractions0.953–0.962. They are different tasks/model states;
 do not attribute this BASE-versus-LoRA timing difference to the guard. Full
-experience→parent→reflection→readout cycle time awaits this cycle's completion.
+experience→parent→reflection→readout cycle completed at07:59:46UTC in487.276s
+(8.121minutes). Breakdown:2original generations10.157s;2coached checks15.099s;
+2reflections24.579s; remaining experience-stage envelope275.912s includes parent
+wait, loading and identity checks and is NOT isolated provider latency;
+between-stage admission20.160s; fresh8-task readout process141.370s.
+The prior BASE C1 took598.401s, but different tasks/context and neither new
+reflection triggered the guard: this is not a causal guard-speedup estimate.
 No trained sleep updates occur in this frozen-BASE contextual arm.
 
 `STOPPED_FIRST_REFLECTIONS.json` binds both call hashes, the deployed guard source,
 READY/publication/activation and the completed experience-stage receipt. Raw
 responses and all parent transcripts stay on A100; compact hashes only in repo.
+`STOPPED_CYCLE_TIMING.json` binds the completed stage and guardian receipts.

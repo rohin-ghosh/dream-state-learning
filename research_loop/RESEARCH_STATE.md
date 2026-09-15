@@ -1,5 +1,15 @@
 # Research state — Orchestrator
 
+## Guarded BASE cycle finished — September 15, 2026, 08:03 UTC
+
+A1005 guarded contextual cycle is COMPLETE at07:59:46; experience-to-readout
+487.276seconds/8.121minutes.2originals10.157s,2checks15.099s,2reflections24.579s,
+other experience overhead including parent wait275.912s,admissiongap20.160s,
+8fresh own-context-conditioned parent-free readout141.370s.0weight updates.
+Prior BASE C1 was598.401s; no causal speedup claim (different tasks/context,
+neither reflection needed the guard). Semantic novelty audit remains pending.
+Source receipts: STOPPED_CYCLE_TIMING.json beside REFLECTION_STOP_RESULTS.md.
+
 ## BASE generation measured — September 15, 2026, 08:00 UTC
 
 Node3genuineBASE4/5: fixed07:45:32–07:55:32UTC window108/121rawrows,
