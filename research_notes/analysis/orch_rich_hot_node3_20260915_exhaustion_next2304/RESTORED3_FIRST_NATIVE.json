@@ -1,0 +1,72 @@
+{
+  "added_call_ceiling": 2304,
+  "inherited_hard_end_utc": "2026-09-15T15:18:38.782722Z",
+  "new_aggregate_ceiling": 5584,
+  "no_quota_reset": true,
+  "observed_unix": 1789449383.1003923,
+  "prior_aggregate_ceiling": 3280,
+  "raw_files_copied": 0,
+  "slot3": {
+    "actual_context_and_output_bounds_pass": true,
+    "arm": "EXHAUSTION_ONLY",
+    "calls": 1,
+    "checkpoint": {
+      "bytes": 11349,
+      "path": "/localhome/local-rohing/orch_rich_hot_node3_20260915_exhaustion_next2304/CHECKPOINT_3.json",
+      "sha256": "7c90b4a521b9c67e7cceded450aa8c90b64c6ea02a3a7923a31cb84b3934cbab"
+    },
+    "complete": false,
+    "completed_episodes": 0,
+    "completed_phase_versions": [
+      "ROHIN100_ROUTE_EXHAUSTION_NEXT_2304"
+    ],
+    "completed_task_overlap": null,
+    "content_tokens": 570,
+    "failed_calls": 0,
+    "first_native_proof": {
+      "arm": "EXHAUSTION_ONLY",
+      "bytes": 12990,
+      "content_tokens": 570,
+      "context": 32768,
+      "finished_unix": 1789449373.9149895,
+      "global_call": 2,
+      "output_cap": 16384,
+      "output_sha256": "23ebd5b103052179f16f8a30750a34d532ce5c73b4b7e3be40bbfb5495339bb1",
+      "path": "/localhome/local-rohing/orch_rich_hot_node3_20260915_exhaustion_next2304/shard3/CALL_0001.json",
+      "phase_version": "ROHIN100_ROUTE_EXHAUSTION_NEXT_2304",
+      "prompt_tokens": 396,
+      "repetition_failure_signal": true,
+      "self_reported_rejected_approach_count": 0,
+      "self_reported_worked_approach_count": null,
+      "semantic_status": "UNREVIEWED",
+      "sha256": "62a5a3603c390939de0ed6a170d99e55f8b4736abdd80ce12b0e85beaf49d542",
+      "task_id": "route-train-display-fc3b848e4646c2a5d832019cb98e3a834c2ce9a1b62645d962d1ccfd8a7f678f"
+    },
+    "first_started_unix": 1789449350.956217,
+    "index": 3,
+    "last_finished_unix": 1789449373.9149895,
+    "live": true,
+    "live_root": "/localhome/local-rohing/orch_rich_hot_node3_20260915_exhaustion_next2304",
+    "missing_approach_self_reports": 1,
+    "oracle_correct_by_stage": null,
+    "phase_version": "ROHIN100_ROUTE_EXHAUSTION_NEXT_2304",
+    "pid": 320521,
+    "prior_captures_hash_preserved": true,
+    "qualified_per_hour": null,
+    "raw_calls_per_hour_since_start": 111.99540717416016,
+    "repetition_flagged_calls": 1,
+    "safe_boundary": true,
+    "self_reported_at_least_two": 0,
+    "self_reported_rejections": 0,
+    "semantic_status": "UNREVIEWED",
+    "semantic_verified_worked_approach_count": null,
+    "stage_counts": {
+      "route_turn": 1
+    },
+    "uuid": "GPU-e1277146-04f2-c38f-d1ae-1a98132f907e",
+    "verifier_correct_episodes": 0,
+    "worker_failed": false
+  },
+  "slot4": "Prior exhaustion live; independent next guard waits for exact natural completion",
+  "slot5": "Naturally completed prior batch; successor has five native calls at observation"
+}

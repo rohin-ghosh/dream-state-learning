@@ -204,7 +204,8 @@ def wait_window(root, update, lifetime):
     path = root / 'WINDOWS' / f'{update:09d}.json'
     while not path.exists():
         assert time.time() < lifetime['native_deadline_unix'], 'window_wait_deadline'
-        if (root / 'ABORT.json').exists():
+        if (root / 'ABORT.json').exists() and policy.abort_applies(
+                read(root / 'ABORT.json'), os.environ.get('CONTINUAL_CONTROLLER_SESSION')):
             raise RuntimeError('coordinator_aborted')
         time.sleep(0.2)
     return read(path)

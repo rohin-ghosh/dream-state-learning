@@ -1,0 +1,1144 @@
+{
+  "observed_utc": "2026-09-15T05:11:56.241974+00:00",
+  "historical_control": "FROZEN_LORA_NOT_NO_LORA",
+  "schedule": "8TRAIN_EPISODES_PER_SLEEP_16PRESENTATIONS_HISTORICAL",
+  "thinking_primary_retrospective_descriptive": true,
+  "phases": [
+    {
+      "arm": "GUIDED",
+      "cycle": 0,
+      "phase": "readout",
+      "started_unix": 1789446241.6303132,
+      "finished_unix": 1789446342.801839,
+      "elapsed_seconds": 101.1715259552002,
+      "receipt_path": "/tmp/orch_route_parent_campaign_20260915_segment2/GUIDED/cycle0/readout/COMPLETE.json",
+      "receipt_sha256": "67e9e986dc93524120c911298a950ecc1d4fe0fcf4cef6b09fdaa0f8910efceb",
+      "input_identity": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "4a7e6836e536e25fcc0151601beed711e0f2d4ce7b4966cc5853c7bc7f22fa55"
+          ],
+          [
+            "adapter_model.safetensors",
+            "6f7546d334a6dd65c5a22dddeff2ee6eb42292373d79552df52a272f3aeab76f"
+          ]
+        ],
+        "path": "/tmp/orch_route_parent_campaign_20260915_segment2/initial_adapter",
+        "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+      },
+      "updates": 0,
+      "parent_free": true,
+      "thinking": {
+        "schema": "ROUTE_THINKING_COUNTERS102_V1",
+        "episodes": 8,
+        "calls_attempted": 44,
+        "calls_with_response": 44,
+        "call_errors": 0,
+        "prompt_tokens": 16617,
+        "generated_tokens_including_eos": 497,
+        "generation_wall_seconds": 22.850419759750366,
+        "action_attempts": 44,
+        "unique_action_strings": 32,
+        "distinct_route_sequences": 8,
+        "rejected_action_attempts": 0,
+        "repeated_action_strings": 0,
+        "adjacent_repeated_actions": 0,
+        "coherence_proxies": {
+          "complete_responses": 44,
+          "reflection_attempts": 0,
+          "reflection_admissions": 0
+        },
+        "interpretation": "OPERATIONAL_PROXIES_NOT_LATENT_THINKING_OR_REASONING_QUALITY",
+        "causal_claim": false,
+        "parent_visible": false,
+        "outcome_driven_scheduling": false
+      },
+      "ancillary_outcomes": {
+        "successes": 8,
+        "episodes": 8,
+        "paired_both_correct": 4,
+        "paired_worlds": 4
+      }
+    },
+    {
+      "arm": "GUIDED",
+      "cycle": 1,
+      "phase": "experience",
+      "started_unix": 1789445647.2240853,
+      "finished_unix": 1789446237.5315208,
+      "elapsed_seconds": 590.3074355125427,
+      "receipt_path": "/tmp/orch_route_parent_campaign_20260915_segment2/GUIDED/cycle1/experience/COMPLETE.json",
+      "receipt_sha256": "d44d2ac8e17c235034b4afd01dc48f059b4df8dc5c3f85cef593ee86c80de274",
+      "input_identity": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "4a7e6836e536e25fcc0151601beed711e0f2d4ce7b4966cc5853c7bc7f22fa55"
+          ],
+          [
+            "adapter_model.safetensors",
+            "6f7546d334a6dd65c5a22dddeff2ee6eb42292373d79552df52a272f3aeab76f"
+          ]
+        ],
+        "path": "/tmp/orch_route_parent_campaign_20260915_segment2/initial_adapter",
+        "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+      },
+      "updates": 0,
+      "parent_free": false,
+      "thinking": {
+        "schema": "ROUTE_THINKING_COUNTERS102_V1",
+        "episodes": 8,
+        "calls_attempted": 54,
+        "calls_with_response": 54,
+        "call_errors": 0,
+        "prompt_tokens": 39634,
+        "generated_tokens_including_eos": 3750,
+        "generation_wall_seconds": 160.2743363380432,
+        "action_attempts": 46,
+        "unique_action_strings": 25,
+        "distinct_route_sequences": 8,
+        "rejected_action_attempts": 7,
+        "repeated_action_strings": 6,
+        "adjacent_repeated_actions": 6,
+        "coherence_proxies": {
+          "complete_responses": 51,
+          "reflection_attempts": 8,
+          "reflection_admissions": 5
+        },
+        "interpretation": "OPERATIONAL_PROXIES_NOT_LATENT_THINKING_OR_REASONING_QUALITY",
+        "causal_claim": false,
+        "parent_visible": false,
+        "outcome_driven_scheduling": false
+      },
+      "ancillary_outcomes": {
+        "successes": 1,
+        "episodes": 8,
+        "paired_both_correct": 0,
+        "paired_worlds": 4
+      }
+    },
+    {
+      "arm": "GUIDED",
+      "cycle": 1,
+      "phase": "sleep",
+      "started_unix": 1789446346.923357,
+      "finished_unix": 1789446974.8227124,
+      "elapsed_seconds": 627.8993554115295,
+      "receipt_path": "/tmp/orch_route_parent_campaign_20260915_segment2/GUIDED/cycle1/sleep/COMPLETE.json",
+      "receipt_sha256": "d7b310e01714a9f8827e2291e3e3788fab02515b845ef10418095df813dc02f0",
+      "input_identity": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "4a7e6836e536e25fcc0151601beed711e0f2d4ce7b4966cc5853c7bc7f22fa55"
+          ],
+          [
+            "adapter_model.safetensors",
+            "6f7546d334a6dd65c5a22dddeff2ee6eb42292373d79552df52a272f3aeab76f"
+          ]
+        ],
+        "path": "/tmp/orch_route_parent_campaign_20260915_segment2/initial_adapter",
+        "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+      },
+      "updates": 136,
+      "parent_free": null
+    },
+    {
+      "arm": "GUIDED",
+      "cycle": 1,
+      "phase": "readout",
+      "started_unix": 1789446978.91986,
+      "finished_unix": 1789447081.206189,
+      "elapsed_seconds": 102.2863290309906,
+      "receipt_path": "/tmp/orch_route_parent_campaign_20260915_segment2/GUIDED/cycle1/readout/COMPLETE.json",
+      "receipt_sha256": "091984505a52f76e47a01bb37a55beb4d0b01403dd0446f3ff27b2a421f05c31",
+      "input_identity": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "2ec0ca0cc48d018f9d337367bfd03d56aa993c77230c7d021a069a84cfccdb8f"
+          ],
+          [
+            "adapter_model.safetensors",
+            "db10c0f6bac0f388bdd399e562adba65145f9158d1a64dfa785f6ca485f8396b"
+          ]
+        ],
+        "path": "/tmp/orch_route_parent_campaign_20260915_segment2/GUIDED/cycle1/sleep/adapter",
+        "state_sha256": "b23ebed3b69fce91a9c7e2db092e7c7fb787b30638b4ae8d45fa15c595b7868a"
+      },
+      "updates": 0,
+      "parent_free": true,
+      "thinking": {
+        "schema": "ROUTE_THINKING_COUNTERS102_V1",
+        "episodes": 8,
+        "calls_attempted": 48,
+        "calls_with_response": 48,
+        "call_errors": 0,
+        "prompt_tokens": 18445,
+        "generated_tokens_including_eos": 526,
+        "generation_wall_seconds": 24.352749586105347,
+        "action_attempts": 48,
+        "unique_action_strings": 31,
+        "distinct_route_sequences": 8,
+        "rejected_action_attempts": 1,
+        "repeated_action_strings": 1,
+        "adjacent_repeated_actions": 0,
+        "coherence_proxies": {
+          "complete_responses": 48,
+          "reflection_attempts": 0,
+          "reflection_admissions": 0
+        },
+        "interpretation": "OPERATIONAL_PROXIES_NOT_LATENT_THINKING_OR_REASONING_QUALITY",
+        "causal_claim": false,
+        "parent_visible": false,
+        "outcome_driven_scheduling": false
+      },
+      "ancillary_outcomes": {
+        "successes": 7,
+        "episodes": 8,
+        "paired_both_correct": 3,
+        "paired_worlds": 4
+      },
+      "fresh_saved_child_verified": true
+    },
+    {
+      "arm": "GUIDED",
+      "cycle": 2,
+      "phase": "experience",
+      "started_unix": 1789447085.3566136,
+      "finished_unix": 1789447688.0385585,
+      "elapsed_seconds": 602.6819448471069,
+      "receipt_path": "/tmp/orch_route_parent_campaign_20260915_segment2/GUIDED/cycle2/experience/COMPLETE.json",
+      "receipt_sha256": "6b8a8781362ec9416ea362faf6e2e6e1cda4eda1c46194282a0f6b210be38b9d",
+      "input_identity": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "2ec0ca0cc48d018f9d337367bfd03d56aa993c77230c7d021a069a84cfccdb8f"
+          ],
+          [
+            "adapter_model.safetensors",
+            "db10c0f6bac0f388bdd399e562adba65145f9158d1a64dfa785f6ca485f8396b"
+          ]
+        ],
+        "path": "/tmp/orch_route_parent_campaign_20260915_segment2/GUIDED/cycle1/sleep/adapter",
+        "state_sha256": "b23ebed3b69fce91a9c7e2db092e7c7fb787b30638b4ae8d45fa15c595b7868a"
+      },
+      "updates": 0,
+      "parent_free": false,
+      "thinking": {
+        "schema": "ROUTE_THINKING_COUNTERS102_V1",
+        "episodes": 8,
+        "calls_attempted": 52,
+        "calls_with_response": 52,
+        "call_errors": 0,
+        "prompt_tokens": 37251,
+        "generated_tokens_including_eos": 2471,
+        "generation_wall_seconds": 109.4126238822937,
+        "action_attempts": 44,
+        "unique_action_strings": 24,
+        "distinct_route_sequences": 8,
+        "rejected_action_attempts": 8,
+        "repeated_action_strings": 8,
+        "adjacent_repeated_actions": 5,
+        "coherence_proxies": {
+          "complete_responses": 52,
+          "reflection_attempts": 8,
+          "reflection_admissions": 7
+        },
+        "interpretation": "OPERATIONAL_PROXIES_NOT_LATENT_THINKING_OR_REASONING_QUALITY",
+        "causal_claim": false,
+        "parent_visible": false,
+        "outcome_driven_scheduling": false
+      },
+      "ancillary_outcomes": {
+        "successes": 0,
+        "episodes": 8,
+        "paired_both_correct": 0,
+        "paired_worlds": 4
+      },
+      "taught_to_actual_next_cycle_same_child": true
+    },
+    {
+      "arm": "GUIDED",
+      "cycle": 2,
+      "phase": "sleep",
+      "started_unix": 1789447692.191376,
+      "finished_unix": 1789448379.2621336,
+      "elapsed_seconds": 687.0707576274872,
+      "receipt_path": "/tmp/orch_route_parent_campaign_20260915_segment2/GUIDED/cycle2/sleep/COMPLETE.json",
+      "receipt_sha256": "8917c9d8a62dba3988a87438772a79c6aaa79577a295ffcf2c80e0089d47187d",
+      "input_identity": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "2ec0ca0cc48d018f9d337367bfd03d56aa993c77230c7d021a069a84cfccdb8f"
+          ],
+          [
+            "adapter_model.safetensors",
+            "db10c0f6bac0f388bdd399e562adba65145f9158d1a64dfa785f6ca485f8396b"
+          ]
+        ],
+        "path": "/tmp/orch_route_parent_campaign_20260915_segment2/GUIDED/cycle1/sleep/adapter",
+        "state_sha256": "b23ebed3b69fce91a9c7e2db092e7c7fb787b30638b4ae8d45fa15c595b7868a"
+      },
+      "updates": 152,
+      "parent_free": null
+    },
+    {
+      "arm": "GUIDED",
+      "cycle": 2,
+      "phase": "readout",
+      "started_unix": 1789448383.3583946,
+      "finished_unix": 1789448483.3028698,
+      "elapsed_seconds": 99.9444751739502,
+      "receipt_path": "/tmp/orch_route_parent_campaign_20260915_segment2/GUIDED/cycle2/readout/COMPLETE.json",
+      "receipt_sha256": "7835c997a0e0000173fcdf103cf79d0c299126c2da8a9cc3b2444a0144891d57",
+      "input_identity": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "e69e2514e78400df933198d29cbb31252850285bb023628997a66dc27f3b0903"
+          ],
+          [
+            "adapter_model.safetensors",
+            "1433feb75016e15340f5b737ff6c0d0f76b606094df309ec3bebb1be1d5873cb"
+          ]
+        ],
+        "path": "/tmp/orch_route_parent_campaign_20260915_segment2/GUIDED/cycle2/sleep/adapter",
+        "state_sha256": "627e5e16a2a48784f6b4aa8d4fbc27f048f888c5dbdfed3937b1956fc74dca18"
+      },
+      "updates": 0,
+      "parent_free": true,
+      "thinking": {
+        "schema": "ROUTE_THINKING_COUNTERS102_V1",
+        "episodes": 8,
+        "calls_attempted": 42,
+        "calls_with_response": 42,
+        "call_errors": 0,
+        "prompt_tokens": 15672,
+        "generated_tokens_including_eos": 477,
+        "generation_wall_seconds": 21.82114839553833,
+        "action_attempts": 42,
+        "unique_action_strings": 28,
+        "distinct_route_sequences": 6,
+        "rejected_action_attempts": 2,
+        "repeated_action_strings": 0,
+        "adjacent_repeated_actions": 0,
+        "coherence_proxies": {
+          "complete_responses": 42,
+          "reflection_attempts": 0,
+          "reflection_admissions": 0
+        },
+        "interpretation": "OPERATIONAL_PROXIES_NOT_LATENT_THINKING_OR_REASONING_QUALITY",
+        "causal_claim": false,
+        "parent_visible": false,
+        "outcome_driven_scheduling": false
+      },
+      "ancillary_outcomes": {
+        "successes": 5,
+        "episodes": 8,
+        "paired_both_correct": 1,
+        "paired_worlds": 4
+      },
+      "fresh_saved_child_verified": true
+    },
+    {
+      "arm": "UNPARENTED",
+      "cycle": 0,
+      "phase": "readout",
+      "started_unix": 1789445887.984022,
+      "finished_unix": 1789445992.667847,
+      "elapsed_seconds": 104.68382501602173,
+      "receipt_path": "/tmp/orch_route_parent_campaign_20260915_segment2/UNPARENTED/cycle0/readout/COMPLETE.json",
+      "receipt_sha256": "2216fd42bc530431cd8e69ac2c37d3d8c0e16b130edf17292f0966386566a35e",
+      "input_identity": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "4a7e6836e536e25fcc0151601beed711e0f2d4ce7b4966cc5853c7bc7f22fa55"
+          ],
+          [
+            "adapter_model.safetensors",
+            "6f7546d334a6dd65c5a22dddeff2ee6eb42292373d79552df52a272f3aeab76f"
+          ]
+        ],
+        "path": "/tmp/orch_route_parent_campaign_20260915_segment2/initial_adapter",
+        "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+      },
+      "updates": 0,
+      "parent_free": true,
+      "thinking": {
+        "schema": "ROUTE_THINKING_COUNTERS102_V1",
+        "episodes": 8,
+        "calls_attempted": 44,
+        "calls_with_response": 44,
+        "call_errors": 0,
+        "prompt_tokens": 16617,
+        "generated_tokens_including_eos": 497,
+        "generation_wall_seconds": 25.286513090133667,
+        "action_attempts": 44,
+        "unique_action_strings": 32,
+        "distinct_route_sequences": 8,
+        "rejected_action_attempts": 0,
+        "repeated_action_strings": 0,
+        "adjacent_repeated_actions": 0,
+        "coherence_proxies": {
+          "complete_responses": 44,
+          "reflection_attempts": 0,
+          "reflection_admissions": 0
+        },
+        "interpretation": "OPERATIONAL_PROXIES_NOT_LATENT_THINKING_OR_REASONING_QUALITY",
+        "causal_claim": false,
+        "parent_visible": false,
+        "outcome_driven_scheduling": false
+      },
+      "ancillary_outcomes": {
+        "successes": 8,
+        "episodes": 8,
+        "paired_both_correct": 4,
+        "paired_worlds": 4
+      }
+    },
+    {
+      "arm": "UNPARENTED",
+      "cycle": 1,
+      "phase": "experience",
+      "started_unix": 1789445647.2007189,
+      "finished_unix": 1789445883.9003272,
+      "elapsed_seconds": 236.69960832595825,
+      "receipt_path": "/tmp/orch_route_parent_campaign_20260915_segment2/UNPARENTED/cycle1/experience/COMPLETE.json",
+      "receipt_sha256": "731b221ca770ba3f26dd9aaf9bd6faba3f622e66f29aeb43c527db5e0c86be79",
+      "input_identity": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "4a7e6836e536e25fcc0151601beed711e0f2d4ce7b4966cc5853c7bc7f22fa55"
+          ],
+          [
+            "adapter_model.safetensors",
+            "6f7546d334a6dd65c5a22dddeff2ee6eb42292373d79552df52a272f3aeab76f"
+          ]
+        ],
+        "path": "/tmp/orch_route_parent_campaign_20260915_segment2/initial_adapter",
+        "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+      },
+      "updates": 0,
+      "parent_free": false,
+      "thinking": {
+        "schema": "ROUTE_THINKING_COUNTERS102_V1",
+        "episodes": 8,
+        "calls_attempted": 47,
+        "calls_with_response": 47,
+        "call_errors": 0,
+        "prompt_tokens": 26451,
+        "generated_tokens_including_eos": 4036,
+        "generation_wall_seconds": 157.10477113723755,
+        "action_attempts": 39,
+        "unique_action_strings": 30,
+        "distinct_route_sequences": 7,
+        "rejected_action_attempts": 2,
+        "repeated_action_strings": 0,
+        "adjacent_repeated_actions": 0,
+        "coherence_proxies": {
+          "complete_responses": 45,
+          "reflection_attempts": 8,
+          "reflection_admissions": 6
+        },
+        "interpretation": "OPERATIONAL_PROXIES_NOT_LATENT_THINKING_OR_REASONING_QUALITY",
+        "causal_claim": false,
+        "parent_visible": false,
+        "outcome_driven_scheduling": false
+      },
+      "ancillary_outcomes": {
+        "successes": 6,
+        "episodes": 8,
+        "paired_both_correct": 2,
+        "paired_worlds": 4
+      }
+    },
+    {
+      "arm": "UNPARENTED",
+      "cycle": 1,
+      "phase": "sleep",
+      "started_unix": 1789445996.8552053,
+      "finished_unix": 1789446703.0776465,
+      "elapsed_seconds": 706.2224411964417,
+      "receipt_path": "/tmp/orch_route_parent_campaign_20260915_segment2/UNPARENTED/cycle1/sleep/COMPLETE.json",
+      "receipt_sha256": "c56efe304795f666a9feb5a6bf2d43b4267af959dac5687636456c4281fbe1dd",
+      "input_identity": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "4a7e6836e536e25fcc0151601beed711e0f2d4ce7b4966cc5853c7bc7f22fa55"
+          ],
+          [
+            "adapter_model.safetensors",
+            "6f7546d334a6dd65c5a22dddeff2ee6eb42292373d79552df52a272f3aeab76f"
+          ]
+        ],
+        "path": "/tmp/orch_route_parent_campaign_20260915_segment2/initial_adapter",
+        "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+      },
+      "updates": 144,
+      "parent_free": null
+    },
+    {
+      "arm": "UNPARENTED",
+      "cycle": 1,
+      "phase": "readout",
+      "started_unix": 1789446707.1191459,
+      "finished_unix": 1789446802.5740485,
+      "elapsed_seconds": 95.45490264892578,
+      "receipt_path": "/tmp/orch_route_parent_campaign_20260915_segment2/UNPARENTED/cycle1/readout/COMPLETE.json",
+      "receipt_sha256": "f3b30e515aa6def5ab1a8baf6dadbc5279683a7f3e51d57dd9621e79bb386ced",
+      "input_identity": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "71039c76c6ac8845504eff18e20fe6d53dab26a10254103970b870e1d38075ca"
+          ],
+          [
+            "adapter_model.safetensors",
+            "c6490022c60c9bbaf2b279747fedea8d52c481a4bd07a0e22969d72910d6f75d"
+          ]
+        ],
+        "path": "/tmp/orch_route_parent_campaign_20260915_segment2/UNPARENTED/cycle1/sleep/adapter",
+        "state_sha256": "57076a1447faaffa2dae06bf85b1da7d15b745db2855a4f5639d1ac51ff77280"
+      },
+      "updates": 0,
+      "parent_free": true,
+      "thinking": {
+        "schema": "ROUTE_THINKING_COUNTERS102_V1",
+        "episodes": 8,
+        "calls_attempted": 32,
+        "calls_with_response": 32,
+        "call_errors": 0,
+        "prompt_tokens": 10828,
+        "generated_tokens_including_eos": 352,
+        "generation_wall_seconds": 16.54746174812317,
+        "action_attempts": 32,
+        "unique_action_strings": 27,
+        "distinct_route_sequences": 6,
+        "rejected_action_attempts": 3,
+        "repeated_action_strings": 0,
+        "adjacent_repeated_actions": 0,
+        "coherence_proxies": {
+          "complete_responses": 32,
+          "reflection_attempts": 0,
+          "reflection_admissions": 0
+        },
+        "interpretation": "OPERATIONAL_PROXIES_NOT_LATENT_THINKING_OR_REASONING_QUALITY",
+        "causal_claim": false,
+        "parent_visible": false,
+        "outcome_driven_scheduling": false
+      },
+      "ancillary_outcomes": {
+        "successes": 5,
+        "episodes": 8,
+        "paired_both_correct": 1,
+        "paired_worlds": 4
+      },
+      "fresh_saved_child_verified": true
+    },
+    {
+      "arm": "UNPARENTED",
+      "cycle": 2,
+      "phase": "experience",
+      "started_unix": 1789446806.555883,
+      "finished_unix": 1789447050.2136226,
+      "elapsed_seconds": 243.65773963928223,
+      "receipt_path": "/tmp/orch_route_parent_campaign_20260915_segment2/UNPARENTED/cycle2/experience/COMPLETE.json",
+      "receipt_sha256": "de9858f0f8e9af91d381551897a300b07091e43dea0aa69b287a3c0c3f22de3a",
+      "input_identity": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "71039c76c6ac8845504eff18e20fe6d53dab26a10254103970b870e1d38075ca"
+          ],
+          [
+            "adapter_model.safetensors",
+            "c6490022c60c9bbaf2b279747fedea8d52c481a4bd07a0e22969d72910d6f75d"
+          ]
+        ],
+        "path": "/tmp/orch_route_parent_campaign_20260915_segment2/UNPARENTED/cycle1/sleep/adapter",
+        "state_sha256": "57076a1447faaffa2dae06bf85b1da7d15b745db2855a4f5639d1ac51ff77280"
+      },
+      "updates": 0,
+      "parent_free": false,
+      "thinking": {
+        "schema": "ROUTE_THINKING_COUNTERS102_V1",
+        "episodes": 8,
+        "calls_attempted": 51,
+        "calls_with_response": 51,
+        "call_errors": 0,
+        "prompt_tokens": 28971,
+        "generated_tokens_including_eos": 4054,
+        "generation_wall_seconds": 164.57745718955994,
+        "action_attempts": 43,
+        "unique_action_strings": 30,
+        "distinct_route_sequences": 8,
+        "rejected_action_attempts": 2,
+        "repeated_action_strings": 0,
+        "adjacent_repeated_actions": 0,
+        "coherence_proxies": {
+          "complete_responses": 49,
+          "reflection_attempts": 8,
+          "reflection_admissions": 6
+        },
+        "interpretation": "OPERATIONAL_PROXIES_NOT_LATENT_THINKING_OR_REASONING_QUALITY",
+        "causal_claim": false,
+        "parent_visible": false,
+        "outcome_driven_scheduling": false
+      },
+      "ancillary_outcomes": {
+        "successes": 6,
+        "episodes": 8,
+        "paired_both_correct": 2,
+        "paired_worlds": 4
+      },
+      "taught_to_actual_next_cycle_same_child": true
+    },
+    {
+      "arm": "UNPARENTED",
+      "cycle": 2,
+      "phase": "sleep",
+      "started_unix": 1789447054.3382783,
+      "finished_unix": 1789447721.4660263,
+      "elapsed_seconds": 667.1277480125427,
+      "receipt_path": "/tmp/orch_route_parent_campaign_20260915_segment2/UNPARENTED/cycle2/sleep/COMPLETE.json",
+      "receipt_sha256": "5459173028cfaf7d028794daabeecc7da1f9f8ad2e59cbbdfc9f420f9ee926c5",
+      "input_identity": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "71039c76c6ac8845504eff18e20fe6d53dab26a10254103970b870e1d38075ca"
+          ],
+          [
+            "adapter_model.safetensors",
+            "c6490022c60c9bbaf2b279747fedea8d52c481a4bd07a0e22969d72910d6f75d"
+          ]
+        ],
+        "path": "/tmp/orch_route_parent_campaign_20260915_segment2/UNPARENTED/cycle1/sleep/adapter",
+        "state_sha256": "57076a1447faaffa2dae06bf85b1da7d15b745db2855a4f5639d1ac51ff77280"
+      },
+      "updates": 144,
+      "parent_free": null
+    },
+    {
+      "arm": "UNPARENTED",
+      "cycle": 2,
+      "phase": "readout",
+      "started_unix": 1789447725.5896156,
+      "finished_unix": 1789447824.7268918,
+      "elapsed_seconds": 99.13727617263794,
+      "receipt_path": "/tmp/orch_route_parent_campaign_20260915_segment2/UNPARENTED/cycle2/readout/COMPLETE.json",
+      "receipt_sha256": "fd6b61ab0d6c931e4bcd8db006023a8a0f73754cc44f267e1f3d5233cd48d1af",
+      "input_identity": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "55e32872b7187907ef47486418f7d73003bb14f27b9888a1fbf70807a601c4e3"
+          ],
+          [
+            "adapter_model.safetensors",
+            "d73bbd997f2029f81ce58b8c2d5264f7d060476d4108a93ad7cef992b94142d6"
+          ]
+        ],
+        "path": "/tmp/orch_route_parent_campaign_20260915_segment2/UNPARENTED/cycle2/sleep/adapter",
+        "state_sha256": "67d32cf9cdb13d275913d778d6ffa05c6d0ffb0a8e8a059693a4945dce58e59a"
+      },
+      "updates": 0,
+      "parent_free": true,
+      "thinking": {
+        "schema": "ROUTE_THINKING_COUNTERS102_V1",
+        "episodes": 8,
+        "calls_attempted": 40,
+        "calls_with_response": 40,
+        "call_errors": 0,
+        "prompt_tokens": 14902,
+        "generated_tokens_including_eos": 453,
+        "generation_wall_seconds": 20.63357710838318,
+        "action_attempts": 40,
+        "unique_action_strings": 28,
+        "distinct_route_sequences": 7,
+        "rejected_action_attempts": 2,
+        "repeated_action_strings": 0,
+        "adjacent_repeated_actions": 0,
+        "coherence_proxies": {
+          "complete_responses": 40,
+          "reflection_attempts": 0,
+          "reflection_admissions": 0
+        },
+        "interpretation": "OPERATIONAL_PROXIES_NOT_LATENT_THINKING_OR_REASONING_QUALITY",
+        "causal_claim": false,
+        "parent_visible": false,
+        "outcome_driven_scheduling": false
+      },
+      "ancillary_outcomes": {
+        "successes": 5,
+        "episodes": 8,
+        "paired_both_correct": 1,
+        "paired_worlds": 4
+      },
+      "fresh_saved_child_verified": true
+    },
+    {
+      "arm": "FROZEN",
+      "cycle": 0,
+      "phase": "readout",
+      "started_unix": 1789445825.799101,
+      "finished_unix": 1789445928.474572,
+      "elapsed_seconds": 102.67547082901001,
+      "receipt_path": "/tmp/orch_route_parent_campaign_20260915_segment2/FROZEN/cycle0/readout/COMPLETE.json",
+      "receipt_sha256": "93665f0fc491eb764423874822411c9f5fcb260facb75a924b8b9e546c3ed6ef",
+      "input_identity": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "4a7e6836e536e25fcc0151601beed711e0f2d4ce7b4966cc5853c7bc7f22fa55"
+          ],
+          [
+            "adapter_model.safetensors",
+            "6f7546d334a6dd65c5a22dddeff2ee6eb42292373d79552df52a272f3aeab76f"
+          ]
+        ],
+        "path": "/tmp/orch_route_parent_campaign_20260915_segment2/initial_adapter",
+        "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+      },
+      "updates": 0,
+      "parent_free": true,
+      "thinking": {
+        "schema": "ROUTE_THINKING_COUNTERS102_V1",
+        "episodes": 8,
+        "calls_attempted": 44,
+        "calls_with_response": 44,
+        "call_errors": 0,
+        "prompt_tokens": 16617,
+        "generated_tokens_including_eos": 497,
+        "generation_wall_seconds": 23.16304302215576,
+        "action_attempts": 44,
+        "unique_action_strings": 32,
+        "distinct_route_sequences": 8,
+        "rejected_action_attempts": 0,
+        "repeated_action_strings": 0,
+        "adjacent_repeated_actions": 0,
+        "coherence_proxies": {
+          "complete_responses": 44,
+          "reflection_attempts": 0,
+          "reflection_admissions": 0
+        },
+        "interpretation": "OPERATIONAL_PROXIES_NOT_LATENT_THINKING_OR_REASONING_QUALITY",
+        "causal_claim": false,
+        "parent_visible": false,
+        "outcome_driven_scheduling": false
+      },
+      "ancillary_outcomes": {
+        "successes": 8,
+        "episodes": 8,
+        "paired_both_correct": 4,
+        "paired_worlds": 4
+      }
+    },
+    {
+      "arm": "FROZEN",
+      "cycle": 1,
+      "phase": "experience",
+      "started_unix": 1789446962.1070096,
+      "finished_unix": 1789447117.5270097,
+      "elapsed_seconds": 155.42000007629395,
+      "receipt_path": "/tmp/orch_route_parent_campaign_20260915_segment2/FROZEN/cycle1/experience/COMPLETE.json",
+      "receipt_sha256": "9312dd8a232128eb18d32c0a5fc65ac33d40a7048b5b6b8ab059ae59d7ba5183",
+      "input_identity": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "4a7e6836e536e25fcc0151601beed711e0f2d4ce7b4966cc5853c7bc7f22fa55"
+          ],
+          [
+            "adapter_model.safetensors",
+            "6f7546d334a6dd65c5a22dddeff2ee6eb42292373d79552df52a272f3aeab76f"
+          ]
+        ],
+        "path": "/tmp/orch_route_parent_campaign_20260915_segment2/initial_adapter",
+        "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+      },
+      "updates": 0,
+      "parent_free": false,
+      "thinking": {
+        "schema": "ROUTE_THINKING_COUNTERS102_V1",
+        "episodes": 8,
+        "calls_attempted": 54,
+        "calls_with_response": 54,
+        "call_errors": 0,
+        "prompt_tokens": 39974,
+        "generated_tokens_including_eos": 3339,
+        "generation_wall_seconds": 145.48372340202332,
+        "action_attempts": 46,
+        "unique_action_strings": 25,
+        "distinct_route_sequences": 8,
+        "rejected_action_attempts": 7,
+        "repeated_action_strings": 7,
+        "adjacent_repeated_actions": 6,
+        "coherence_proxies": {
+          "complete_responses": 54,
+          "reflection_attempts": 8,
+          "reflection_admissions": 8
+        },
+        "interpretation": "OPERATIONAL_PROXIES_NOT_LATENT_THINKING_OR_REASONING_QUALITY",
+        "causal_claim": false,
+        "parent_visible": false,
+        "outcome_driven_scheduling": false
+      },
+      "ancillary_outcomes": {
+        "successes": 1,
+        "episodes": 8,
+        "paired_both_correct": 0,
+        "paired_worlds": 4
+      },
+      "phase_wall_scope": "RESUMED_PHASE_ONLY; historical failure and gap included separately",
+      "preserved_failure_inclusive_timing": {
+        "original_failed_work_seconds": 494.8505856990814,
+        "failure_to_resume_gap_seconds": 534.7280275821686,
+        "resumed_phase_seconds": 155.42000007629395,
+        "full_experience_envelope_seconds": 1184.998613357544,
+        "original_start_unix": 1789445932.5283964,
+        "failed_unix": 1789446427.378982,
+        "resumed_start_unix": 1789446962.1070096,
+        "completed_unix": 1789447117.5270097
+      }
+    },
+    {
+      "arm": "FROZEN",
+      "cycle": 1,
+      "phase": "sleep",
+      "started_unix": 1789447121.7602942,
+      "finished_unix": 1789447121.7614703,
+      "elapsed_seconds": 0.0011761188507080078,
+      "receipt_path": "/tmp/orch_route_parent_campaign_20260915_segment2/FROZEN/cycle1/sleep/COMPLETE.json",
+      "receipt_sha256": "7984c6e80658d77f41ab2bc3295f507a50203e98a170ee6a8913c4a0941b24ea",
+      "input_identity": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "4a7e6836e536e25fcc0151601beed711e0f2d4ce7b4966cc5853c7bc7f22fa55"
+          ],
+          [
+            "adapter_model.safetensors",
+            "6f7546d334a6dd65c5a22dddeff2ee6eb42292373d79552df52a272f3aeab76f"
+          ]
+        ],
+        "path": "/tmp/orch_route_parent_campaign_20260915_segment2/initial_adapter",
+        "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+      },
+      "updates": 0,
+      "parent_free": null
+    },
+    {
+      "arm": "FROZEN",
+      "cycle": 1,
+      "phase": "readout",
+      "started_unix": 1789447122.6729636,
+      "finished_unix": 1789447217.346548,
+      "elapsed_seconds": 94.67358446121216,
+      "receipt_path": "/tmp/orch_route_parent_campaign_20260915_segment2/FROZEN/cycle1/readout/COMPLETE.json",
+      "receipt_sha256": "611b09b4694ecbd371ac3bfa1e20f8241b1b3a27d9d1d9af972b5566c8e4e261",
+      "input_identity": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "4a7e6836e536e25fcc0151601beed711e0f2d4ce7b4966cc5853c7bc7f22fa55"
+          ],
+          [
+            "adapter_model.safetensors",
+            "6f7546d334a6dd65c5a22dddeff2ee6eb42292373d79552df52a272f3aeab76f"
+          ]
+        ],
+        "path": "/tmp/orch_route_parent_campaign_20260915_segment2/initial_adapter",
+        "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+      },
+      "updates": 0,
+      "parent_free": true,
+      "thinking": {
+        "schema": "ROUTE_THINKING_COUNTERS102_V1",
+        "episodes": 8,
+        "calls_attempted": 32,
+        "calls_with_response": 32,
+        "call_errors": 0,
+        "prompt_tokens": 10828,
+        "generated_tokens_including_eos": 352,
+        "generation_wall_seconds": 16.172374725341797,
+        "action_attempts": 32,
+        "unique_action_strings": 27,
+        "distinct_route_sequences": 6,
+        "rejected_action_attempts": 3,
+        "repeated_action_strings": 0,
+        "adjacent_repeated_actions": 0,
+        "coherence_proxies": {
+          "complete_responses": 32,
+          "reflection_attempts": 0,
+          "reflection_admissions": 0
+        },
+        "interpretation": "OPERATIONAL_PROXIES_NOT_LATENT_THINKING_OR_REASONING_QUALITY",
+        "causal_claim": false,
+        "parent_visible": false,
+        "outcome_driven_scheduling": false
+      },
+      "ancillary_outcomes": {
+        "successes": 5,
+        "episodes": 8,
+        "paired_both_correct": 1,
+        "paired_worlds": 4
+      },
+      "fresh_saved_child_verified": true
+    },
+    {
+      "arm": "FROZEN",
+      "cycle": 2,
+      "phase": "experience",
+      "started_unix": 1789447221.4756947,
+      "finished_unix": 1789447835.3564136,
+      "elapsed_seconds": 613.8807189464569,
+      "receipt_path": "/tmp/orch_route_parent_campaign_20260915_segment2/FROZEN/cycle2/experience/COMPLETE.json",
+      "receipt_sha256": "36d70a89ad54b05d015460aba229fc9bc9f666c7af4686afb0159b1e7303c26d",
+      "input_identity": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "4a7e6836e536e25fcc0151601beed711e0f2d4ce7b4966cc5853c7bc7f22fa55"
+          ],
+          [
+            "adapter_model.safetensors",
+            "6f7546d334a6dd65c5a22dddeff2ee6eb42292373d79552df52a272f3aeab76f"
+          ]
+        ],
+        "path": "/tmp/orch_route_parent_campaign_20260915_segment2/initial_adapter",
+        "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+      },
+      "updates": 0,
+      "parent_free": false,
+      "thinking": {
+        "schema": "ROUTE_THINKING_COUNTERS102_V1",
+        "episodes": 8,
+        "calls_attempted": 52,
+        "calls_with_response": 52,
+        "call_errors": 0,
+        "prompt_tokens": 37415,
+        "generated_tokens_including_eos": 3342,
+        "generation_wall_seconds": 147.78993701934814,
+        "action_attempts": 44,
+        "unique_action_strings": 25,
+        "distinct_route_sequences": 8,
+        "rejected_action_attempts": 7,
+        "repeated_action_strings": 7,
+        "adjacent_repeated_actions": 7,
+        "coherence_proxies": {
+          "complete_responses": 52,
+          "reflection_attempts": 8,
+          "reflection_admissions": 8
+        },
+        "interpretation": "OPERATIONAL_PROXIES_NOT_LATENT_THINKING_OR_REASONING_QUALITY",
+        "causal_claim": false,
+        "parent_visible": false,
+        "outcome_driven_scheduling": false
+      },
+      "ancillary_outcomes": {
+        "successes": 1,
+        "episodes": 8,
+        "paired_both_correct": 0,
+        "paired_worlds": 4
+      },
+      "taught_to_actual_next_cycle_same_child": true
+    },
+    {
+      "arm": "FROZEN",
+      "cycle": 2,
+      "phase": "sleep",
+      "started_unix": 1789447839.6354585,
+      "finished_unix": 1789447839.6366494,
+      "elapsed_seconds": 0.0011909008026123047,
+      "receipt_path": "/tmp/orch_route_parent_campaign_20260915_segment2/FROZEN/cycle2/sleep/COMPLETE.json",
+      "receipt_sha256": "fe7c58d0f9706928b7d3515bd14476b3a9939e1a9f3d96e5e590d7efcf274a0e",
+      "input_identity": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "4a7e6836e536e25fcc0151601beed711e0f2d4ce7b4966cc5853c7bc7f22fa55"
+          ],
+          [
+            "adapter_model.safetensors",
+            "6f7546d334a6dd65c5a22dddeff2ee6eb42292373d79552df52a272f3aeab76f"
+          ]
+        ],
+        "path": "/tmp/orch_route_parent_campaign_20260915_segment2/initial_adapter",
+        "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+      },
+      "updates": 0,
+      "parent_free": null
+    },
+    {
+      "arm": "FROZEN",
+      "cycle": 2,
+      "phase": "readout",
+      "started_unix": 1789447840.5911736,
+      "finished_unix": 1789447943.0650403,
+      "elapsed_seconds": 102.4738667011261,
+      "receipt_path": "/tmp/orch_route_parent_campaign_20260915_segment2/FROZEN/cycle2/readout/COMPLETE.json",
+      "receipt_sha256": "71dc1a7cdcccda10b25b98951c2cec7850b52ab7c2af0ba283b3c6a60f871108",
+      "input_identity": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "4a7e6836e536e25fcc0151601beed711e0f2d4ce7b4966cc5853c7bc7f22fa55"
+          ],
+          [
+            "adapter_model.safetensors",
+            "6f7546d334a6dd65c5a22dddeff2ee6eb42292373d79552df52a272f3aeab76f"
+          ]
+        ],
+        "path": "/tmp/orch_route_parent_campaign_20260915_segment2/initial_adapter",
+        "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+      },
+      "updates": 0,
+      "parent_free": true,
+      "thinking": {
+        "schema": "ROUTE_THINKING_COUNTERS102_V1",
+        "episodes": 8,
+        "calls_attempted": 40,
+        "calls_with_response": 40,
+        "call_errors": 0,
+        "prompt_tokens": 14907,
+        "generated_tokens_including_eos": 456,
+        "generation_wall_seconds": 22.720919609069824,
+        "action_attempts": 40,
+        "unique_action_strings": 30,
+        "distinct_route_sequences": 7,
+        "rejected_action_attempts": 2,
+        "repeated_action_strings": 0,
+        "adjacent_repeated_actions": 0,
+        "coherence_proxies": {
+          "complete_responses": 40,
+          "reflection_attempts": 0,
+          "reflection_admissions": 0
+        },
+        "interpretation": "OPERATIONAL_PROXIES_NOT_LATENT_THINKING_OR_REASONING_QUALITY",
+        "causal_claim": false,
+        "parent_visible": false,
+        "outcome_driven_scheduling": false
+      },
+      "ancillary_outcomes": {
+        "successes": 6,
+        "episodes": 8,
+        "paired_both_correct": 2,
+        "paired_worlds": 4
+      },
+      "fresh_saved_child_verified": true
+    }
+  ]
+}

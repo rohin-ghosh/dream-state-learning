@@ -18,6 +18,14 @@ read, write, sha = run.read, run.write, run.sha
 HUBBLE = Path('/localhome/local-rohing/orch_rich_hot_a100_20260915_attempt1')
 
 
+def auxiliary_available(root):
+    release = root / 'P64_DEFAULT/RELEASED.json'
+    if not release.exists():
+        return False
+    report = read(release)
+    return len(report['returncodes']) == 2 and report['actual_reserved_calls'] <= 128
+
+
 def admit_devices(root, indexes, label, scan=None, pause=time.sleep, attempts=30):
     scan = scan or run.scan
     transient = ('process_identity_drift:', 'minor_scan_identity_changed:', 'minor_scan_process_drift:')
@@ -82,6 +90,7 @@ def launch(root, resume=0, recover_partial=False):
     assert bool(resume or recover_partial) == (root / 'LIFETIME.json').exists()
     prior_lifetime = read(run.MATH_ROOT / 'LIFETIME.json')
     started = time.time()
+    controller_session = f'{os.getpid()}:{time.time_ns()}'
     original = prior_lifetime['started_unix']
     hard_end = min(original + 43200, original + 24 * 3600 / 5, run.LEASE_END - 21600)
     lifetime = dict(started_unix=started, original_started_unix=original,
@@ -133,6 +142,7 @@ def launch(root, resume=0, recover_partial=False):
                     command += ['--resume', str(root / arm / 'checkpoints' / f'{start_update:09d}')]
                 child = subprocess.Popen(command, cwd=root / 'source',
                     env=dict(os.environ, CUDA_VISIBLE_DEVICES=run.DEVICES[index], PYTHONDONTWRITEBYTECODE='1',
+                             CONTINUAL_CONTROLLER_SESSION=controller_session,
                              OMP_NUM_THREADS='2', TOKENIZERS_PARALLELISM='false'),
                     stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
                 identity = run.common.process_identity(child.pid)
@@ -242,7 +252,7 @@ def launch(root, resume=0, recover_partial=False):
             next_topology = topology
             if gpu6_ready:
                 next_topology = run.TRANSITIONAL_TOPOLOGY
-                if auxiliary.exists() and all(read(auxiliary)['releases'].values()):
+                if auxiliary_available(root):
                     next_topology = run.TOPOLOGY
             expand = not terminal and next_topology != topology
             if terminal or expand or diagnostic:
@@ -259,7 +269,7 @@ def launch(root, resume=0, recover_partial=False):
                     write(root / 'DEV_PROGRESS.json', dict(update=update, evaluation=str(evaluation),
                         adaptive_dev_not_confirmatory=True, no_score_based_training_decision=True,
                         completed_unix=time.time()))
-                    if auxiliary.exists() and all(read(auxiliary)['releases'].values()):
+                    if auxiliary_available(root):
                         next_topology = run.TOPOLOGY
                     expand = True
                 admit(sorted({index for indexes in next_topology.values() for index in indexes}), f'EXPANSION_ADMISSION_{update:09d}')
@@ -291,7 +301,8 @@ def launch(root, resume=0, recover_partial=False):
                 launch_readouts(root, update, lifetime)
             status = 'COMPLETE'
     except BaseException as error:
-        write(root / 'ABORT.json', dict(type=type(error).__name__, message=str(error), time_unix=time.time()))
+        write(root / 'ABORT.json', dict(type=type(error).__name__, message=str(error), time_unix=time.time(),
+            controller_session=controller_session))
         raise
     finally:
         for child, identity in children:

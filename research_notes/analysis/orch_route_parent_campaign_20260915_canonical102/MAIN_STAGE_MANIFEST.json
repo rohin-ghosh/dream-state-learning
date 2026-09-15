@@ -1,19 +1,19 @@
 {
-  "utc": "2026-09-15T05:11:06.553271+00:00",
+  "utc": "2026-09-15T05:24:24.766952+00:00",
   "source_ready": true,
-  "baseline_stage": "GUIDED_NATIVE_SOURCE_RUNNING;1/2_OWNER_RELEASE_REQUESTED",
-  "no_lora_response_observed": false,
-  "first_parent_response_observed": false,
-  "native_unittest_passed": 43,
-  "local_unittest_passed": 48,
-  "pytest": "Unavailable in VM and native interpreters; not installed or claimed",
+  "baseline_stage": "ALL_THREE_NATIVE; ACTUAL_PARENTED_NO_LORA_AND_GUIDED_RESPONSES_OBSERVED",
+  "local_unittest_passed": 50,
+  "native_frozen_unittest_passed": 43,
+  "native_inference_base_identity_verified": true,
+  "no_lora_first_response_phase": "ACTUAL_PARENTED_NO_LORA_C1; C0 ALSO PRESERVED",
   "source_paths": [
     "gpu/orch_route_parent_campaign_run.py",
     "gpu/orch_route_parent_campaign_canonical.py",
     "gpu/orch_route_parent_campaign_canonical_parent.py",
     "gpu/orch_route_parent_campaign_canonical_monitor.py",
     "organism_v6/orch_route_parent_campaign_canonical.py",
-    "tests/test_orch_route_parent_campaign_canonical.py"
+    "tests/test_orch_route_parent_campaign_canonical.py",
+    "tests/test_orch_route_parent_campaign_canonical_monitor.py"
   ],
   "files": [
     {
@@ -47,9 +47,14 @@
       "sha256": "a2b4a5d46a00d090310cc8f0d543a2da62a4ffae777e79a5c8bdbc08d0f231ac"
     },
     {
-      "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/BROKER_COMPACT.log",
-      "bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      "path": "tests/test_orch_route_parent_campaign_canonical_monitor.py",
+      "bytes": 2254,
+      "sha256": "e287ca2718d520aae9ded6fc7b4480e45085b05dd6a453e1cd1951e096aa723b"
+    },
+    {
+      "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/ALL_LANE_DISPATCHES.json",
+      "bytes": 3118,
+      "sha256": "b49f7b85eb80753fcc40a36f05fcf36327ddb68842eb9d1ff694076cc0dd9d6f"
     },
     {
       "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/BROKER_PROCESS.json",
@@ -57,9 +62,29 @@
       "sha256": "a75f19284078920890167df77d1ab0215f648743d289b0d880fde2ceba092451"
     },
     {
+      "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/FIRST_ACTUAL_ASTRA_PARENT.json",
+      "bytes": 700,
+      "sha256": "1e7e41f92620efe0e097cfa53336b502cc40502a5d7082322ac548f5c5579776"
+    },
+    {
       "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/FIRST_GUIDED_LAUNCH.json",
       "bytes": 1151,
       "sha256": "6504df24b2ccf4483f8dea3885e27193ae70609abcb6fff10d3bb36835f02203"
+    },
+    {
+      "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/FIRST_PARENTED_GUIDED_RESPONSE.json",
+      "bytes": 342,
+      "sha256": "13e1a382bdb3c1246dfb8c717499484161c9aea44734d806ba69ac01d4836612"
+    },
+    {
+      "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/FIRST_PARENTED_NO_LORA_RESPONSE.json",
+      "bytes": 1478,
+      "sha256": "42c6a9b0219b3721ef61c6011eade5bdb3c35406535a135bf73378247901396c"
+    },
+    {
+      "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/FIRST_TRUE_NO_LORA_RESPONSE.json",
+      "bytes": 1113,
+      "sha256": "6fe3172d622f24f66bc1014b47484aaacb21c65322c99c18877f05469e2ae6d9"
     },
     {
       "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/GUIDED_DISPATCH.log",
@@ -72,9 +97,29 @@
       "sha256": "d29e73ee8182fad23deedec32d966d1db3d023ca0462e5ae08205955e56a7dbf"
     },
     {
-      "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/MONITOR.log",
-      "bytes": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/LANE_RELEASE_NO_LORA.json",
+      "bytes": 823,
+      "sha256": "230f57b9e4c0ddc70b1c551fbb4f76de96c00eb4b098e40023733192b36a7845"
+    },
+    {
+      "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/LANE_RELEASE_UNPARENTED.json",
+      "bytes": 824,
+      "sha256": "2df982d2a53a40a8c51e6e42ae39766d9ad047d4f63ba4c54f39a22a0a8e287a"
+    },
+    {
+      "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/LEGACY_BROKER_RETIREMENT.json",
+      "bytes": 485,
+      "sha256": "b7e3b13d9a23bb4bd64bc62bc448b16567f2402358d29942eb3df9afa8e66629"
+    },
+    {
+      "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/MILESTONE_0523.json",
+      "bytes": 21101,
+      "sha256": "a96436469b1d6e76227aa1beeb4faf18aa9572b751d01969246b27f6f41a8587"
+    },
+    {
+      "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/MILESTONE_0523_SNAPSHOT.json",
+      "bytes": 33343,
+      "sha256": "3ed848f863bfed3e35212fa5ec58e05f84ec514bb9fcbe36b94c50826cbbb138"
     },
     {
       "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/MONITOR_PROCESS.json",
@@ -102,6 +147,21 @@
       "sha256": "07545eaa4019cac64c2fd659fae48718df88dcb67f8d7888b63239684c5e897a"
     },
     {
+      "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/NEGATIVE_EXAMPLE_LOSS_RECEIPTS.json",
+      "bytes": 3020,
+      "sha256": "760b9fc18813306c81b54376333bbf6d02983857da1448652588b5c6124881c3"
+    },
+    {
+      "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/NO_LORA_DISPATCH.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/POINCARE_RELEASE_RECEIPTS.jsonl",
+      "bytes": 1083,
+      "sha256": "99329a699f210a40bbfb857b0e435a393a6d86a17a7daa1f5b268c7cc9e15f66"
+    },
+    {
       "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/PROSPECTIVE.json",
       "bytes": 3108,
       "sha256": "b45aa1fb333d59b2720ea02c5787177a8246af4b8b1fedd76044ef0342e9b039"
@@ -112,6 +172,26 @@
       "sha256": "097a793c9fc3f6e55cfce1fb991a265dbc4eeadd8e84ecbd9e984de29435031a"
     },
     {
+      "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/READER_STAGE_HASHES.json",
+      "bytes": 31452,
+      "sha256": "785286ab60a8df8c67aad48a9c04de2278c31341ef8f5bb94dd11a0877426931"
+    },
+    {
+      "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/ROHIN104_THINKING_AND_LOSS.md",
+      "bytes": 3397,
+      "sha256": "3759b2fe80f8dcfdac4f5bc66e213094188e2ff395bb0bf140691272b8969c2b"
+    },
+    {
+      "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/SEGMENT2_COMPLETE_REDUCTION.json",
+      "bytes": 42394,
+      "sha256": "ef9440038a695d3ce5e497396332cf5876a499d01f96a64d94e69ad8f2921ae5"
+    },
+    {
+      "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/SEGMENT2_TAUGHT_NEXT_JOINS.json",
+      "bytes": 5077,
+      "sha256": "007dbbc47f788d69373bc879a0cb4a903f692a464d710764a5d722d2fd8f7f2c"
+    },
+    {
       "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/SOURCE_PROGRESS.json",
       "bytes": 445,
       "sha256": "a2c2c31121bce84b141b387400d9e74aeafe69cc4a9a478cf2c383cd8924c3e8"
@@ -120,6 +200,11 @@
       "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/START_REDUCTION.json",
       "bytes": 79,
       "sha256": "b2bb3fdf4b4b6dd0a30ba2a6036a64f9a819cfff93b2f56548845bd48b5a3301"
+    },
+    {
+      "path": "research_notes/analysis/orch_route_parent_campaign_20260915_canonical102/UNPARENTED_DISPATCH.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }
   ],
   "raw_node_only": true,

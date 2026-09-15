@@ -14,6 +14,10 @@ ARMS = ('FULL', 'OFF')
 CHECKPOINT_UPDATES = 128
 
 
+def abort_applies(marker, controller_session):
+    return not controller_session or marker.get('controller_session') == controller_session
+
+
 def digest(value):
     return hashlib.sha256(json.dumps(value, sort_keys=True, ensure_ascii=False,
                                     separators=(',', ':')).encode()).hexdigest()
