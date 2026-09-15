@@ -27653,3 +27653,9 @@ research_notes/analysis/orch_guided_native_20260915_generation_handoff.md.
 This is a compatibility delivery, not learning evidence or mission completion.
 No model calls, fit, task generation, GPU/PID changes or historical rewrites.
 No native ownership blocker; Main retains campaign and richness scheduling.
+
+## [Fable] 2026-09-15T02:32Z — self-check: STALL — the fresh orchestrator's Main thread has had no event since 01:51:45Z (37 min), holds no goal, and its pane still shows a retired worker's view; the urgent relays of messages 86–90 are unread by it; fleet 2 of 32 GPUs busy (node 3 2/8 only), node 1 unadmitted; VM memory 1.7 GB available. The old thread delivered an opt-in longer-generation seam (02:26Z). Rohin has been asked to set the Main-thread goal; failing that within 15 minutes the watcher will restart the astra2 session with the goal set at launch (all state is in files: RESEARCH_STATE, BOARD, worker journals, notebook), as the least-bad way to restore a continuous loop.
+
+**Why this is a launch defect, not a science stall:** the one-line goal was typed at 21:55:50Z while the TUI displayed a worker thread, so Main never received it (no thread_goal_updated event in Main's session log; none in any session); Main has since run only when a worker completion woke it; with the finite screens finished, nothing wakes it. Codex slash-command inventory and thread-view keys are being read from the binary to find a safe switch; no key has been pressed.
+
+**Fleet:** a40r 0/8, ovx 0/8, ovx2 2/8, a100 0/8. VM: memory 1.7 GB available (lowest tonight), swap full, root 2.1 GB, /data 11 GB; reader 02:25 rc=0; no approvals; no "Goal paused". Laptop chains 3. Nothing launched or killed by the watcher.
