@@ -1,0 +1,101 @@
+{
+  "accounting": "NEW16/OLD1, 42 anchors, .75 child/.25 anchor per rank; add actual logical optimizer steps and actual target tokens, not presentations as optimizer steps.",
+  "activation_fields": [
+    "schema",
+    "status",
+    "root",
+    "generation",
+    "pins",
+    "source_files",
+    "participants",
+    "deadline_unix",
+    "commit_reserve_seconds"
+  ],
+  "actual_native_readonly_cohort": {
+    "activation_authorized": false,
+    "anchor_token_exposures": 35885,
+    "child_token_exposures": 319802,
+    "cuda_initialized": false,
+    "current_serial_not_interrupted": true,
+    "encoded_new": 114,
+    "encoded_old": 60,
+    "no_source_mutation": true,
+    "parallel_optimizer_steps": 236,
+    "serial_presentations": 1884,
+    "source_manifest_sha256": "428df304244ed2d64bd76e9b49bfb9bd4c55ddfd2bf7e1fe8b68b87c27560916"
+  },
+  "algorithm": "Average-gradient batch8 AdamW, NOT serial-equivalent; partial tail averages active ranks only.",
+  "bounds_fields": [
+    "train_end_unix",
+    "hard_end_unix",
+    "native_used",
+    "native_cap",
+    "parent_used",
+    "parent_cap"
+  ],
+  "created_utc": "2026-09-15T13:55:27.352325+00:00",
+  "deadlines": "Immutable minimum of activation, all8 TRAIN/lease bounds and 17:00UTC; hard ceiling17:02UTC; reserve for commit; no sliding deadlines.",
+  "entrypoint": "consolidate",
+  "hook_signature": "consolidate(root, activation_path, activation_sha256, branch, engine, optimizer, group, anchor_module, anchors, anchor_root, save_checkpoint, check): keyword-only; all8 call collectively",
+  "measured_speedup": null,
+  "native_gpu_tested": false,
+  "native_manifest_sha256": "2dee9779deb38ce6e9bb6755f9d7bf674f687a5c51707cacd36bf0c08ddb2f56",
+  "native_root": "/localhome/local-rohing/orch_r118_parallel_consolidation_cpu_20260915_v5",
+  "owner_callback": "def save(destination, generation, metrics): original.checkpoint(engine, SAME_optimizer, destination, sleeps+1, cycle); return consolidation.reference(destination)",
+  "owner_hooks": {
+    "F1": "Pass the SAME existing AdamW and original save_checkpoint(destination,generation,metrics) callback; do not reconstruct optimizer.",
+    "Main": "Create pinned activation after serial commit/readouts and all8 safe handoffs; never during START without COMPLETE.",
+    "after_return": "All8 in-place LoRA broadcasts verified; collective reload ACKs durable before return. Owners retain fresh-process DEV/FINAL/open scheduling.",
+    "all8": "Keep raw engine/LoRA objects and RNG; stop collection at two-episode submission barrier; supply live process identity and safe certificate.",
+    "committed_restart": "Only at an idle common boundary: restore_committed restores adapter and existing F1 optimizer in place plus each saved rank RNG; never during an unfinished sleep.",
+    "failure": "No retry/reset/replay. Preserve START, UPDATES, sidecars and FAILED. Only recover_complete may repair COMPLETE->STATE without training.",
+    "group": "Caller-owned Gloo group, rank order F1..A4, finite timeout <=180s, no fork of CUDA engines.",
+    "rows": "Each rank runs pinned prepare_native_cohort against identical COMMON and original F1 anchor order; native prefix masking unchanged.",
+    "workers": "Pass optimizer=None and save_checkpoint=None; no optimizer allocation."
+  },
+  "owner_integration_still_required": [
+    "Owner-specific future successor hooks to preserve safe release/current cursor (route/code/grid/math), no implicit first-sleep seam.",
+    "Caller-created finite-timeout Gloo process group and SAME F1 raw optimizer; never fork already-loaded CUDA engines.",
+    "Main creates future activation pins after all8 verified safe; current serial and CONFIG remain unchanged.",
+    "Owners maintain strict guard/FINAL binding and fresh-process readouts. No changes to current family modules in this delivery."
+  ],
+  "partial_failure_contract": "START and completed step receipts remain; FAILED prohibits rerun. No retry/reset/regeneration. Only COMPLETE publication recovery can advance STATE without optimizer work. If uncommitted partial state is lost, leave it failed; any further recovery needs explicit owner design, not silent replay.",
+  "participant_fields": [
+    "branch",
+    "root",
+    "generation",
+    "checkpoint_sha256",
+    "identity",
+    "status",
+    "bounds",
+    "preserved_files",
+    "submission_sha256"
+  ],
+  "participant_note": "participants maps branch to {path,sha256}; preserved_files maps root-relative ledgers/CARRY/cursors to hashes, owner-produced at boundary; identity is live boot_id/pid/start_ticks.",
+  "participant_status": "SAFE_FOR_PARALLEL",
+  "pin_files": [
+    "CONFIG.json",
+    "STATE.json",
+    "ADOPTION.json",
+    "INITIALIZED.json"
+  ],
+  "predecessor_loading": "Before entry, F1 owner loads current committed adapter/optimizer into its raw engine and existing AdamW. Entry verifies actual adapter tensors and complete optimizer state against COMMON checkpoint. No optimizer is constructed here; objects remain identical during all updates/reloads.",
+  "process_launch": false,
+  "publication": "Original CHECKPOINT.json and optimizer_rng.pt keys preserved; hashed PARALLEL_RNG.pt and all8 manifest added in one renamed checkpoint directory, then COMPLETE, then STATE.",
+  "rank_order": [
+    "F1",
+    "F2",
+    "F3",
+    "F4",
+    "A1",
+    "A2",
+    "A3",
+    "A4"
+  ],
+  "rank_rng": "On successful completion all8 resident engines already contain the broadcast committed adapter; RNG remains rank-local. Explicit restore_committed at an idle committed boundary reuses parameter/optimizer objects and restores all8 saved RNG. It rejects a generation with START or no matching COMPLETE; not partial-sleep replay.",
+  "safe_certificate_rule": "Family owners, not this candidate, establish completed DEV + settled cursor/charge boundary and authenticate CARRY/ledger files. Candidate verifies bound hashes, live PID identities, caps and all8 exact submissions, but does not infer family-specific ledger semantics.",
+  "schema": "R118_PARALLEL_CONSOLIDATION_V1",
+  "source_pin_rule": "Include full immutable source closure and exact owner save-hook source file. prepare_native_cohort additionally requires pinned shared/replay/anchor/policy modules. Hash native source archives; never point live actors at this candidate before Main activation.",
+  "source_sha256": "23ab3f6c4b978b6b12abf82f3ccde21e6a26ee37f7c9e3c6a0c268c8d1e3fc49",
+  "status": "PROSPECTIVE_NOT_ACTIVATED"
+}

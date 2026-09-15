@@ -1,0 +1,135 @@
+{
+  "canonical_root": "/tmp/orch_route_parent_campaign_20260915_canonical102",
+  "cohort": {
+    "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/COHORT.json",
+    "sha256": "c848fdec7335795a38c0982e4ec88d31eed54f44484bdfc86690ae90580c355d"
+  },
+  "created_utc": "2026-09-15T13:50:13.948489+00:00",
+  "current_slot_reserved": false,
+  "historical_source_hashes": {
+    "gpu/astra_experienced_event_microloop.py": "8e57909a6c4f2d988a434423a33e7a663c23696ffdb2ce402c2bb03b2fccbb70",
+    "gpu/orch_guided_native.py": "559d8e6ea7002f2651748ba192a57c5cf627381f6a3994d93cb02d63011a3157",
+    "gpu/orch_route_parent_campaign_canonical.py": "68669b19476df8e7c05c71aee29a5df60262651d53db27e26c6f8e285c429c50",
+    "gpu/orch_route_parent_campaign_run.py": "a2fabc4074b3023b71962be2cd95eb67798ba3f3a095f32f201bfe58078124ee",
+    "organism_v6/orch_full_rich.py": "88d90dc424f44ed8e752275880dc8b4cf9dc07472c96fb5c2ac410d63f2cc0ba",
+    "organism_v6/orch_l2_guided.py": "fb724beb5a437cc6c360df5a224e6899a98581a206c5b106006efaa5742932f0",
+    "organism_v6/orch_l2_shared.py": "633d699b6c6f87cae7eb3dfdb3e1e8e3598aab46d1a2daa18473029a6c789ebc",
+    "organism_v6/orch_route_parent_campaign_canonical.py": "62098443bff269aa8807e7dd02438ca92cbfe787ba878f0a926d1caf2c005fa2"
+  },
+  "initial_adapter": {
+    "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+    "explicit_no_adapter": false,
+    "files": [
+      {
+        "expected_sha256": "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33",
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/initial_adapter/README.md",
+        "verified": true
+      },
+      {
+        "expected_sha256": "4a7e6836e536e25fcc0151601beed711e0f2d4ce7b4966cc5853c7bc7f22fa55",
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/initial_adapter/adapter_config.json",
+        "verified": true
+      },
+      {
+        "expected_sha256": "6f7546d334a6dd65c5a22dddeff2ee6eb42292373d79552df52a272f3aeab76f",
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/initial_adapter/adapter_model.safetensors",
+        "verified": true
+      }
+    ],
+    "kind": "ADAPTER",
+    "saved_files_verified": true,
+    "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+  },
+  "local_inspected_bytes_match_historical_PREPARE": {
+    "gpu/astra_experienced_event_microloop.py": true,
+    "gpu/orch_guided_native.py": true,
+    "gpu/orch_route_parent_campaign_canonical.py": true,
+    "gpu/orch_route_parent_campaign_run.py": true,
+    "organism_v6/orch_full_rich.py": true,
+    "organism_v6/orch_l2_guided.py": true,
+    "organism_v6/orch_l2_shared.py": true,
+    "organism_v6/orch_route_parent_campaign_canonical.py": true
+  },
+  "new_inference_calls": 0,
+  "prepare": {
+    "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/PREPARE.json",
+    "sha256": "4a0652429d0298e213f91485762c2a7758da5311228b2458b9eb3b6694d8378c"
+  },
+  "proposed_bounds": {
+    "actor_calls_per_episode": 6,
+    "episodes_per_group": 2,
+    "fresh_processes": 6,
+    "generation_tokens_per_call": 512,
+    "held_groups": 6,
+    "input_context_cap": 8192,
+    "lease_margin_seconds": 21600,
+    "maximum_generation_token_budget": 36864,
+    "native_calls_total": 72,
+    "optimizer_steps": 0,
+    "parent_calls": 0,
+    "proposed_gpu_hours": 1,
+    "proposed_wall_seconds": 3600,
+    "retries": 0,
+    "source_generation_calls": 0,
+    "training_rows": 0,
+    "worlds_per_group": 1
+  },
+  "schema": "R118_FROZEN_INITIAL_REFERENCE_FEASIBILITY_V1",
+  "source_contents_exported": false,
+  "source_store_file": {
+    "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/SOURCE.json",
+    "sha256": "d8d2e513dad61c705be90ef91ae63c9ca289712e95b9cd676ef91c02c23a5116"
+  },
+  "status": "PROPOSAL_ONLY_NOT_IMPLEMENTED_NOT_ALLOCATED_NOT_LAUNCHED",
+  "task_content_parsed": false,
+  "task_source": [
+    {
+      "cohort_selector": "held[1]",
+      "cycle": 1,
+      "task_hashes": [
+        "bb77a458d668aed40ebe1b157bcdbb1d3b18c71eb152a0ec9d4ba1278c260b6d",
+        "8691718d31af37a3c47cbc24c91cd5ab014b89961f9ec0e2c0075688ac36fb93"
+      ]
+    },
+    {
+      "cohort_selector": "held[2]",
+      "cycle": 2,
+      "task_hashes": [
+        "56e8c4e6eeb4f2ba6169d2c8a48b9ef1b0e70ac95f4b686f7b56fe3a83b869af",
+        "cc713b9c5d2ac57b2c4a66f6f5cdebbd4c32b32a8f0ae2718ab0524aa6d697f5"
+      ]
+    },
+    {
+      "cohort_selector": "held[3]",
+      "cycle": 3,
+      "task_hashes": [
+        "123957b0a005a5a5bd8de3b7c295e520f26a3c866d232f610e695677b0612ce5",
+        "24abd3b0a6a52f57fdd2bfbb927ac353a8ffe418e5cab854ba5e515a39216d19"
+      ]
+    },
+    {
+      "cohort_selector": "held[4]",
+      "cycle": 4,
+      "task_hashes": [
+        "8852455eb099e6335660bc0b4be699c4c29eea4d0952610ca737c65890d24cee",
+        "b0fda5e156b1269db6e5b6c98f8e1d751c660eccacac15edd735918d300267a7"
+      ]
+    },
+    {
+      "cohort_selector": "held[5]",
+      "cycle": 5,
+      "task_hashes": [
+        "fca953c7593ffdbb0ee6d49b82ee21a764af53f9925e6c90d6adf66da1cd8810",
+        "1bcd888d25f7359526072fae14e7fa025fa52b1f8b431ae789194e35c11a34d6"
+      ]
+    },
+    {
+      "cohort_selector": "held[6]",
+      "cycle": 6,
+      "task_hashes": [
+        "9361f06b1adec41b1bc1c955c2e1c93aec3288496380267c3451cb9d81c493d3",
+        "b133977abbc985ec3c139491d53522e50df29074d656514e19ea7824ef4cbfee"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,349 @@
+{
+  "archive_sha256": "c5029c8e9e99b47c39a7cebf25d0eb859880abdaf2e871eec114e39204505966",
+  "backend": {
+    "all_rank_python_numpy_torch_rng_exact_recovery": true,
+    "backend": "gloo",
+    "checkpoint_disk_roundtrip": true,
+    "device": "cpu",
+    "final_optimizer_step": 9,
+    "initial_existing_optimizer_step": 1,
+    "matches_single_process_average_gradient_reference": true,
+    "metrics": {
+      "anchor_loss_weight": 0.25,
+      "anchor_token_exposures": 118,
+      "backend": "R116_PARALLEL_SLEEP_GLOO_V2",
+      "batch_size": 8,
+      "child_loss_weight": 0.75,
+      "child_token_exposures": 118,
+      "collective_backend": "gloo",
+      "collective_tensor_device": "cpu",
+      "complete": true,
+      "completed_full_batches": 7,
+      "completed_partial_batch_size": 3,
+      "encoded_new_rows": 3,
+      "encoded_rehearsal_rows": 11,
+      "gpu_transport_benchmarked": false,
+      "gradient_average_denominator": "active_ranks_in_logical_batch",
+      "gradient_workers": 7,
+      "last_completed_batch_size": 3,
+      "new_presentations": 16,
+      "new_row_exposures": 48,
+      "nominal_batch_size": 8,
+      "optimizer_count": 1,
+      "optimizer_owner": "F1/group_rank0",
+      "optimizer_steps": 8,
+      "optimizer_steps_avoided_vs_serial": 51,
+      "padding_exposures": 0,
+      "rehearsal_presentations": 1,
+      "rehearsal_row_exposures": 11,
+      "schedule_binding_sha256": "03390c3a7ee8549d6918601982c645dd1ad8b009f535bbd2c31289989bfe8980",
+      "scheduled_final_batch_size": 3,
+      "segment_optimizer_steps": 1,
+      "serial_adamw_equivalent": false,
+      "serial_equivalent_presentations": 59,
+      "source_manifest_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "total_scheduled_optimizer_steps": 8
+    },
+    "partial_inactive_no_forward": true,
+    "partial_tail_denominator": 3,
+    "peer_failure_collectively_rejected": true,
+    "ranks": [
+      {
+        "base_unchanged": true,
+        "cuda_initialized": false,
+        "cursor": 8,
+        "optimizer_present": true,
+        "optimizer_step_values": [
+          9,
+          9
+        ],
+        "parameter_identity_preserved": true,
+        "pid": 1756502,
+        "rank": 0,
+        "rng_restored_exactly": true
+      },
+      {
+        "base_unchanged": true,
+        "cuda_initialized": false,
+        "cursor": 8,
+        "optimizer_present": false,
+        "optimizer_step_values": [],
+        "parameter_identity_preserved": true,
+        "pid": 1756503,
+        "rank": 1,
+        "rng_restored_exactly": true
+      },
+      {
+        "base_unchanged": true,
+        "cuda_initialized": false,
+        "cursor": 8,
+        "optimizer_present": false,
+        "optimizer_step_values": [],
+        "parameter_identity_preserved": true,
+        "pid": 1756504,
+        "rank": 2,
+        "rng_restored_exactly": true
+      },
+      {
+        "base_unchanged": true,
+        "cuda_initialized": false,
+        "cursor": 8,
+        "optimizer_present": false,
+        "optimizer_step_values": [],
+        "parameter_identity_preserved": true,
+        "pid": 1756505,
+        "rank": 3,
+        "rng_restored_exactly": true
+      },
+      {
+        "base_unchanged": true,
+        "cuda_initialized": false,
+        "cursor": 8,
+        "optimizer_present": false,
+        "optimizer_step_values": [],
+        "parameter_identity_preserved": true,
+        "pid": 1756506,
+        "rank": 4,
+        "rng_restored_exactly": true
+      },
+      {
+        "base_unchanged": true,
+        "cuda_initialized": false,
+        "cursor": 8,
+        "optimizer_present": false,
+        "optimizer_step_values": [],
+        "parameter_identity_preserved": true,
+        "pid": 1756507,
+        "rank": 5,
+        "rng_restored_exactly": true
+      },
+      {
+        "base_unchanged": true,
+        "cuda_initialized": false,
+        "cursor": 8,
+        "optimizer_present": false,
+        "optimizer_step_values": [],
+        "parameter_identity_preserved": true,
+        "pid": 1756508,
+        "rank": 6,
+        "rng_restored_exactly": true
+      },
+      {
+        "base_unchanged": true,
+        "cuda_initialized": false,
+        "cursor": 8,
+        "optimizer_present": false,
+        "optimizer_step_values": [],
+        "parameter_identity_preserved": true,
+        "pid": 1756509,
+        "rank": 7,
+        "rng_restored_exactly": true
+      }
+    ],
+    "world_size": 8
+  },
+  "backend_proof_sha256": "721b13aee42817313161bbff1b94c95885182c1cb07647395308823cbbfc08c2",
+  "cohort": {
+    "activation_authorized": false,
+    "anchor_token_exposures": 35885,
+    "child_token_exposures": 319802,
+    "cuda_initialized": false,
+    "current_serial_not_interrupted": true,
+    "encoded_new": 114,
+    "encoded_old": 60,
+    "no_source_mutation": true,
+    "parallel_optimizer_steps": 236,
+    "serial_presentations": 1884,
+    "source_manifest_sha256": "428df304244ed2d64bd76e9b49bfb9bd4c55ddfd2bf7e1fe8b68b87c27560916"
+  },
+  "cohort_proof_sha256": "f0a6b1c7ac50153aea5c5bd3af83f5e915419ee7b6b22d9e49d4d9b661164906",
+  "coordinator": {
+    "eight_real_gloo_ranks": true,
+    "live_COMMON_untouched": true,
+    "native_original_serializer": true,
+    "scenarios": [
+      {
+        "actual_optimizer_steps": [
+          1
+        ],
+        "committed_all8_rng_inplace_restore": false,
+        "cuda_initialized": false,
+        "native_validator": true,
+        "original_serializer": true,
+        "passed": true,
+        "rank0_existing_optimizer": true,
+        "scenario": "carry_tamper",
+        "synthetic_encoder": true
+      },
+      {
+        "actual_optimizer_steps": [
+          2
+        ],
+        "committed_all8_rng_inplace_restore": false,
+        "cuda_initialized": false,
+        "native_validator": true,
+        "original_serializer": true,
+        "passed": true,
+        "rank0_existing_optimizer": true,
+        "scenario": "deadline",
+        "synthetic_encoder": true
+      },
+      {
+        "actual_optimizer_steps": [
+          1
+        ],
+        "committed_all8_rng_inplace_restore": false,
+        "cuda_initialized": false,
+        "native_validator": true,
+        "original_serializer": true,
+        "passed": true,
+        "rank0_existing_optimizer": true,
+        "scenario": "existing_start",
+        "synthetic_encoder": true
+      },
+      {
+        "actual_optimizer_steps": [
+          1
+        ],
+        "committed_all8_rng_inplace_restore": false,
+        "cuda_initialized": false,
+        "native_validator": true,
+        "original_serializer": true,
+        "passed": true,
+        "rank0_existing_optimizer": true,
+        "scenario": "held",
+        "synthetic_encoder": true
+      },
+      {
+        "actual_optimizer_steps": [
+          1
+        ],
+        "committed_all8_rng_inplace_restore": false,
+        "cuda_initialized": false,
+        "native_validator": true,
+        "original_serializer": true,
+        "passed": true,
+        "rank0_existing_optimizer": true,
+        "scenario": "late_start",
+        "synthetic_encoder": true
+      },
+      {
+        "actual_optimizer_steps": [
+          9
+        ],
+        "committed_all8_rng_inplace_restore": false,
+        "cuda_initialized": false,
+        "native_validator": true,
+        "original_serializer": true,
+        "passed": true,
+        "rank0_existing_optimizer": true,
+        "scenario": "metadata_crash",
+        "synthetic_encoder": true
+      },
+      {
+        "actual_optimizer_steps": [
+          1
+        ],
+        "committed_all8_rng_inplace_restore": false,
+        "cuda_initialized": false,
+        "native_validator": true,
+        "original_serializer": true,
+        "passed": true,
+        "rank0_existing_optimizer": true,
+        "scenario": "missing_participant",
+        "synthetic_encoder": true
+      },
+      {
+        "actual_optimizer_steps": [],
+        "committed_all8_rng_inplace_restore": false,
+        "cuda_initialized": false,
+        "native_validator": true,
+        "original_serializer": true,
+        "passed": true,
+        "rank0_existing_optimizer": true,
+        "scenario": "optimizer_reset",
+        "synthetic_encoder": true
+      },
+      {
+        "actual_optimizer_steps": [
+          2
+        ],
+        "committed_all8_rng_inplace_restore": false,
+        "cuda_initialized": false,
+        "native_validator": true,
+        "original_serializer": true,
+        "passed": true,
+        "rank0_existing_optimizer": true,
+        "scenario": "peer_failure",
+        "synthetic_encoder": true
+      },
+      {
+        "actual_optimizer_steps": [
+          9
+        ],
+        "committed_all8_rng_inplace_restore": true,
+        "cuda_initialized": false,
+        "native_validator": true,
+        "original_serializer": true,
+        "passed": true,
+        "rank0_existing_optimizer": true,
+        "scenario": "success",
+        "synthetic_encoder": true
+      },
+      {
+        "actual_optimizer_steps": [
+          1
+        ],
+        "committed_all8_rng_inplace_restore": false,
+        "cuda_initialized": false,
+        "native_validator": true,
+        "original_serializer": true,
+        "passed": true,
+        "rank0_existing_optimizer": true,
+        "scenario": "worker_optimizer",
+        "synthetic_encoder": true
+      },
+      {
+        "actual_optimizer_steps": [
+          1
+        ],
+        "committed_all8_rng_inplace_restore": false,
+        "cuda_initialized": false,
+        "native_validator": true,
+        "original_serializer": true,
+        "passed": true,
+        "rank0_existing_optimizer": true,
+        "scenario": "wrong_rank",
+        "synthetic_encoder": true
+      }
+    ],
+    "schema": "R118_PARALLEL_CONSOLIDATION_V1",
+    "synthetic_encoded_rows": true
+  },
+  "coordinator_proof_sha256": "37fe966e9db9fe55d0319d03d8b749425679b0e70ca9e8b78c75ed7c593bb4ce",
+  "created_utc": "2026-09-15T13:55:27.352325+00:00",
+  "current_serial_mutated": false,
+  "manifest_sha256": "2dee9779deb38ce6e9bb6755f9d7bf674f687a5c51707cacd36bf0c08ddb2f56",
+  "measured_GPU_speedup": null,
+  "measurement_limits": [
+    "Coordinator uses eight real CPU Gloo ranks and a tiny synthetic model/cohort; unmodified native capture validator and original F1 checkpoint serializer execute.",
+    "Separate native read-only test uses actual all8 submissions, original Qwen tokenizer, exact42 BASE anchors and prior history; no native model training.",
+    "No GPU speedup measured; 236 vs1884 counts are logical steps, not a measured wallclock acceleration.",
+    "v1 and v3 failed CPU attempts retained in separate node roots; v5 final source passed all78 tests."
+  ],
+  "native_root": "/localhome/local-rohing/orch_r118_parallel_consolidation_cpu_20260915_v5",
+  "no_GPU_launch": true,
+  "pinned_backend_sha256": "0f73264f6bcb980ffed932ccd000457db857e2f64d7bafd22de33f9f181bf58b",
+  "pinned_candidate_sha256": "23ab3f6c4b978b6b12abf82f3ccde21e6a26ee37f7c9e3c6a0c268c8d1e3fc49",
+  "pinned_test_sha256": "90093b02af1217c1f67b52aa7f8a36509570763454171ab0588b3b91682af79d",
+  "prospective_only": true,
+  "schema": "R118_PARALLEL_FROZEN_SOURCE_V1",
+  "source_files": 1125,
+  "tests": {
+    "local_pass": 75,
+    "local_skip": 3,
+    "log_sha256": "5acbda1444eb465941c8abe248634c01d618ce3e4cd4ea2012e7c22325574cd9",
+    "native_pass": 78,
+    "native_skip": 0
+  }
+}
