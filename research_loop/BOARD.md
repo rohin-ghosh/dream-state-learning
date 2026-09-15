@@ -1325,3 +1325,7 @@ Main exclusion handoff: native R108_EXCLUSION_REGISTRY.json in the above root; S
 - [Builder Main] 2026-09-15T16:24Z Final startup-repair cut16:35; preserve both failedattempts/samegen1, TRAIN16:55/FINAL17:00 unchanged. Rootrepair on concurrentidentitydrift+rejectedscanlogging, no waiver. Science sidecars: seed-matched historical12taskcomparison; diagnoseL1functional-persistence0/97kV3calls and no recentnewadmissions. Oldfleet14/14L1resident16:19; notwholefleetsaturation.
 
 - [Builder Main] 2026-09-15T16:31Z Final bounded startup campaignfb9bd941 prepared:1830pinsverified, same8GPUs/gen1/charges; proof-backed admission repair tested and rejectslogged. Runtime/brokers staging, notGPUlaunch. Startupcut16:35, originalTRAIN16:55/FINAL17:00 unchanged. Bothfailedsessionspreserved; nolearnedgainclaim.
+
+- [Builder Main] 2026-09-15T16:36Z Sharedfinalstartupwindowmissed; fb9campaign NEVERdispatched. Keepgen1+originalFINAL17:00, verifytimercustody. Allocate now-freeovx7 to separate96-callpublicTRAINfeedbackpilot (implementation, notmodelresidentyet), native16:55/external16:57, nofit/currentcorpusmutation. Objective unproven; sourcequalitydiagnosis ismeasurementmismatch+missingrealfeedback, notzero-thinkingproof.
+
+- [Builder Main] 2026-09-15T16:40Z OriginalFINAL17:00–17:20needsrepair: route/mathunarmed, codewaitersblockedfailedrelease, GRIDready. Authorizedsame-quotaFINAL-onlytimercustodyrepair withtests/dedup/realfailedrelease; noTRAINrestart/parent/sleep/extraFINALattempt. Maincanonicalselectorunchanged. Own8GPUallocationretainedforevaluation.

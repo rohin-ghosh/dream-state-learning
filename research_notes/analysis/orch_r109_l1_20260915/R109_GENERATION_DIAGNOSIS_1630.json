@@ -1,0 +1,478 @@
+{
+  "FINAL_reads": 0,
+  "GPU_launches": 0,
+  "admissions": 0,
+  "aggregate": {
+    "calls": 768,
+    "code_verifier_errors": {
+      "SyntaxError: closing parenthesis '}' does not match opening parenthesis '(' (<unknown>, line 1)": 1,
+      "ValueError: helper arity mismatch": 5,
+      "ValueError: unknown identifier": 46,
+      "no_verifier_error_recorded": 6
+    },
+    "family_stage": {
+      "code:draft": 33,
+      "code:optional_opportunity": 25,
+      "math:draft": 34,
+      "math:optional_opportunity": 27,
+      "route:exposure": 256,
+      "route:goal": 393
+    },
+    "identical_text_pairs": 9,
+    "metrics": {
+      "alignment": 331,
+      "cap_hit": 0,
+      "expression_json": 52,
+      "marker_found": 331,
+      "math_first_final_is_last": 61,
+      "math_pre_final_nonempty": 61,
+      "persistence": 0,
+      "terminal": 768,
+      "truncated": 0
+    },
+    "over_C2_2048": 0,
+    "pair_count": 50,
+    "pair_transitions": {
+      "code:False->False": 21,
+      "code:False->None": 1,
+      "code:None->None": 2,
+      "math:True->True": 26
+    }
+  },
+  "bounded_extra_receipts": {
+    "append_decisions_sha256": "6c366befc847f7420ec53c1b6ef1a8561f8e344337a29b2a0f892b70010e8b78",
+    "decisions_sha256": "fdbdd75bf43a5a4f4f6cfb2428ed80c6260272a4ab4e04bfaa968ba428fa356a",
+    "reviewed_new_admitted": 15,
+    "reviewed_rejected_ambiguous": 3,
+    "route_episodes": [
+      {
+        "correct": [
+          false,
+          true
+        ],
+        "path": "/localhome/local-rohing/orch_r109_l1_20260915/generation_v3/gpu4/EPISODE_0159_04.json",
+        "sha256": "9b6eba216c59e2a59c05706bdb4543d38bda72c4c3718b68243f8f7ee18b967c"
+      },
+      {
+        "correct": [
+          true,
+          true
+        ],
+        "path": "/localhome/local-rohing/orch_r109_l1_20260915/generation_v3/gpu4/EPISODE_0159_10.json",
+        "sha256": "949082fc7916caef26dcb029e0e329fc82e7985553cd287f0409a25dffd13c35"
+      }
+    ]
+  },
+  "live_source_changes": 0,
+  "native_source_hashes_verified_against_local": {
+    "gpu/orch_r109_l1_experience.py": "e97c759ac7573b62c09c4f68ebfd6b30ec66d897dd6e08bfc792111048830a61",
+    "gpu/orch_r109_l1_feed.py": "dc4528d03aa95ee4a5320c77d49bb6b40197ab77ed20403b3bf4285810435dee",
+    "gpu/orch_r109_l1_generation_v3.py": "ef49cd1d9fb4b21b36b7eb376dda809b43b9eef9c5fdda18a5425e3948b73c70",
+    "gpu/orch_rich_hot_node2_exhaustion_v3.py": "a9fc096b66a1fe185f84c15d50f049ce9da8e146fa8dab014c85f2bdda36b28e",
+    "organism_v6/orch_r109_l1_generation_policy.py": "de8c9d2d090dd53a075e2a59c8e0a61529a11cc899916cfef26ce40478626abe",
+    "organism_v6/orch_rich_hot_node2_supply.py": "16fdb9fd625d6c9b375a4924c689ef3709ed3c15b03882c1f832f7811d39c3e5"
+  },
+  "no_population_or_learning_gain_claim": true,
+  "nodes": {
+    "node1": {
+      "FINAL_read": false,
+      "GPU_launched": false,
+      "audit_source_sha256": "16f2afebfa9d462d6439726f681b966c483da99f16cfc17099d1f0c540447082",
+      "feed": null,
+      "generation_plan_sha256": "387dfbbc88a46e2766c19ece5e8b4dabdf31e3d39cba5709806dc05471a43457",
+      "lanes": [
+        {
+          "base": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "code_errors": {
+            "ValueError: unknown identifier": 4
+          },
+          "condition": "ORDINARY_CONTROL",
+          "family_stage": {
+            "code:draft": 4,
+            "math:draft": 4,
+            "route:exposure": 32,
+            "route:goal": 56
+          },
+          "index": 0,
+          "loaded_sha256": "0a1822a40ba8d5f3dabc89419e7d1e846043f431cb69b348784d54d841c7fd3a",
+          "maximum_post_tokens": 0,
+          "metrics": {
+            "alignment": 40,
+            "cap_hit": 0,
+            "expression_json": 4,
+            "marker_found": 40,
+            "math_first_final_is_last": 4,
+            "math_pre_final_nonempty": 4,
+            "persistence": 0,
+            "terminal": 96,
+            "truncated": 0
+          },
+          "over_C2_2048": 0,
+          "pair_count": 0,
+          "pair_transitions": {},
+          "progress_sha256": "e3575fa643b6ebc1231cdeb86e0e264be984d642fd8148620cbec5c0a1635c5e",
+          "sampled_end_call": 16427,
+          "sampled_rows": 96,
+          "seed": "121655d491bc55ba6bbd8eb732bc4f7a65215a07d3b6b2492f4fa623026f80f1",
+          "unique_source_ids": 13
+        },
+        {
+          "base": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "code_errors": {
+            "SyntaxError: closing parenthesis '}' does not match opening parenthesis '(' (<unknown>, line 1)": 1,
+            "ValueError: helper arity mismatch": 1,
+            "ValueError: unknown identifier": 6
+          },
+          "condition": "PERSISTENCE",
+          "family_stage": {
+            "code:draft": 4,
+            "code:optional_opportunity": 4,
+            "math:draft": 4,
+            "math:optional_opportunity": 4,
+            "route:exposure": 32,
+            "route:goal": 48
+          },
+          "index": 1,
+          "loaded_sha256": "a1a57b27737a30e861dcb641563fa5f0859d530a27d1656d502798db85875e8d",
+          "maximum_post_tokens": 0,
+          "metrics": {
+            "alignment": 40,
+            "cap_hit": 0,
+            "expression_json": 8,
+            "marker_found": 40,
+            "math_first_final_is_last": 8,
+            "math_pre_final_nonempty": 8,
+            "persistence": 0,
+            "terminal": 96,
+            "truncated": 0
+          },
+          "over_C2_2048": 0,
+          "pair_count": 8,
+          "pair_transitions": {
+            "code:False->False": 4,
+            "math:True->True": 4
+          },
+          "progress_sha256": "b3e304c4509f73800600aeaaa75a1ea03eebbec3fb6a353794a8ee14aaf819c6",
+          "sampled_end_call": 15563,
+          "sampled_rows": 96,
+          "seed": "121655d491bc55ba6bbd8eb732bc4f7a65215a07d3b6b2492f4fa623026f80f1",
+          "unique_source_ids": 12
+        },
+        {
+          "base": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "code_errors": {
+            "ValueError: unknown identifier": 8
+          },
+          "condition": "FUNCTIONAL_METACOGNITION",
+          "family_stage": {
+            "code:draft": 4,
+            "code:optional_opportunity": 4,
+            "math:draft": 4,
+            "math:optional_opportunity": 4,
+            "route:exposure": 32,
+            "route:goal": 48
+          },
+          "index": 2,
+          "loaded_sha256": "a45b81effc13c191c926b52e211e6cf8867e259c353949c7308a3f097e68f78e",
+          "maximum_post_tokens": 437,
+          "metrics": {
+            "alignment": 43,
+            "cap_hit": 0,
+            "expression_json": 8,
+            "marker_found": 43,
+            "math_first_final_is_last": 8,
+            "math_pre_final_nonempty": 8,
+            "persistence": 0,
+            "terminal": 96,
+            "truncated": 0
+          },
+          "over_C2_2048": 0,
+          "pair_count": 8,
+          "pair_transitions": {
+            "code:False->False": 4,
+            "math:True->True": 4
+          },
+          "progress_sha256": "798ae3dc1e583f2d00e165705201e1703f989629c8a2ec1fe74b7fc772e40203",
+          "sampled_end_call": 12581,
+          "sampled_rows": 96,
+          "seed": "121655d491bc55ba6bbd8eb732bc4f7a65215a07d3b6b2492f4fa623026f80f1",
+          "unique_source_ids": 13
+        },
+        {
+          "base": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "code_errors": {
+            "ValueError: helper arity mismatch": 3,
+            "ValueError: unknown identifier": 5
+          },
+          "condition": "PERCEPTION",
+          "family_stage": {
+            "code:draft": 4,
+            "code:optional_opportunity": 4,
+            "math:draft": 4,
+            "math:optional_opportunity": 5,
+            "route:exposure": 32,
+            "route:goal": 47
+          },
+          "index": 3,
+          "loaded_sha256": "a477bf79d7e45ee1e3999d92ff69fa89660ac50796a50708a489b4d7208447dc",
+          "maximum_post_tokens": 0,
+          "metrics": {
+            "alignment": 41,
+            "cap_hit": 0,
+            "expression_json": 8,
+            "marker_found": 41,
+            "math_first_final_is_last": 9,
+            "math_pre_final_nonempty": 9,
+            "persistence": 0,
+            "terminal": 96,
+            "truncated": 0
+          },
+          "over_C2_2048": 0,
+          "pair_count": 8,
+          "pair_transitions": {
+            "code:False->False": 4,
+            "math:True->True": 4
+          },
+          "progress_sha256": "67d51421fb8469eff12e5856d6707e9ded58fa0a240023217a67da18cd67c068",
+          "sampled_end_call": 14605,
+          "sampled_rows": 96,
+          "seed": "121655d491bc55ba6bbd8eb732bc4f7a65215a07d3b6b2492f4fa623026f80f1",
+          "unique_source_ids": 13
+        },
+        {
+          "base": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "code_errors": {
+            "ValueError: unknown identifier": 6,
+            "no_verifier_error_recorded": 2
+          },
+          "condition": "EVIDENCE_HOPS",
+          "family_stage": {
+            "code:draft": 4,
+            "code:optional_opportunity": 4,
+            "math:draft": 4,
+            "math:optional_opportunity": 4,
+            "route:exposure": 32,
+            "route:goal": 48
+          },
+          "index": 4,
+          "loaded_sha256": "a2f7390ff6aaff1eff5ca226cb65680ad92d89a018d82d9e5f54f6490a71db9a",
+          "maximum_post_tokens": 138,
+          "metrics": {
+            "alignment": 42,
+            "cap_hit": 0,
+            "expression_json": 6,
+            "marker_found": 42,
+            "math_first_final_is_last": 8,
+            "math_pre_final_nonempty": 8,
+            "persistence": 0,
+            "terminal": 96,
+            "truncated": 0
+          },
+          "over_C2_2048": 0,
+          "pair_count": 8,
+          "pair_transitions": {
+            "code:False->False": 3,
+            "code:None->None": 1,
+            "math:True->True": 4
+          },
+          "progress_sha256": "8dae99f2a2a23bceeb0c441d52eff6bf9c4cdaca5f388a53a7769c3bcd290344",
+          "sampled_end_call": 12567,
+          "sampled_rows": 96,
+          "seed": "121655d491bc55ba6bbd8eb732bc4f7a65215a07d3b6b2492f4fa623026f80f1",
+          "unique_source_ids": 12
+        },
+        {
+          "base": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "code_errors": {
+            "ValueError: helper arity mismatch": 1,
+            "ValueError: unknown identifier": 4
+          },
+          "condition": "ORDINARY_CONTROL",
+          "family_stage": {
+            "code:draft": 5,
+            "math:draft": 4,
+            "route:exposure": 32,
+            "route:goal": 55
+          },
+          "index": 5,
+          "loaded_sha256": "8efb2db94cc41a153e942e5e925c278cd70629c22975f378c43522f50e5d967a",
+          "maximum_post_tokens": 0,
+          "metrics": {
+            "alignment": 39,
+            "cap_hit": 0,
+            "expression_json": 5,
+            "marker_found": 39,
+            "math_first_final_is_last": 4,
+            "math_pre_final_nonempty": 4,
+            "persistence": 0,
+            "terminal": 96,
+            "truncated": 0
+          },
+          "over_C2_2048": 0,
+          "pair_count": 0,
+          "pair_transitions": {},
+          "progress_sha256": "03b52671836ecd4b468a4296e42c370302f95be8841f73283217009d9d104688",
+          "sampled_end_call": 18113,
+          "sampled_rows": 96,
+          "seed": "121655d491bc55ba6bbd8eb732bc4f7a65215a07d3b6b2492f4fa623026f80f1",
+          "unique_source_ids": 14
+        },
+        {
+          "base": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "code_errors": {
+            "ValueError: unknown identifier": 6,
+            "no_verifier_error_recorded": 3
+          },
+          "condition": "PERSISTENCE",
+          "family_stage": {
+            "code:draft": 4,
+            "code:optional_opportunity": 5,
+            "math:draft": 5,
+            "math:optional_opportunity": 5,
+            "route:exposure": 32,
+            "route:goal": 45
+          },
+          "index": 6,
+          "loaded_sha256": "e590359d66e7fd7fb27ad54032289c8da596c7caad1fdb48de39bfc9e3bea3ef",
+          "maximum_post_tokens": 28,
+          "metrics": {
+            "alignment": 44,
+            "cap_hit": 0,
+            "expression_json": 6,
+            "marker_found": 44,
+            "math_first_final_is_last": 10,
+            "math_pre_final_nonempty": 10,
+            "persistence": 0,
+            "terminal": 96,
+            "truncated": 0
+          },
+          "over_C2_2048": 0,
+          "pair_count": 9,
+          "pair_transitions": {
+            "code:False->False": 3,
+            "code:None->None": 1,
+            "math:True->True": 5
+          },
+          "progress_sha256": "c45477e2cf47048e8c20832d8f6bc2f44cabb920d65ea831b5f464ff8ab186d0",
+          "sampled_end_call": 12863,
+          "sampled_rows": 96,
+          "seed": "121655d491bc55ba6bbd8eb732bc4f7a65215a07d3b6b2492f4fa623026f80f1",
+          "unique_source_ids": 14
+        }
+      ],
+      "live_files_changed": false,
+      "native_samples": {
+        "path": "/localhome/local-rohing/orch_r109_l1_diagnosis_20260915_1625/audit_v2/NATIVE_TRAIN_SAMPLES.json",
+        "sha256": "9668919c54fd0eeeb4ea808d704fae3579abcf714ca97c332415db8b34b55440"
+      },
+      "node": "node1",
+      "observed_unix": 1789489695.6357722,
+      "origin": "/localhome/local-rohing/orch_r109_l1_20260915",
+      "original_archive_sha256": "862b2c27a45631ae5c25fbc692ab32af35505ce05b80bc095578191f8698087e",
+      "policy_sha256": "de8c9d2d090dd53a075e2a59c8e0a61529a11cc899916cfef26ce40478626abe",
+      "references": {
+        "path": "/localhome/local-rohing/orch_r109_l1_diagnosis_20260915_1625/audit_v2/CAPTURE_REFERENCES.json",
+        "sha256": "2b64569c800b6fe11ba0a99ce48bbc4c288810324aca6fa0159bc18cbb5aa36a"
+      },
+      "rows_admitted": 0,
+      "runner_sha256": "ef49cd1d9fb4b21b36b7eb376dda809b43b9eef9c5fdda18a5425e3948b73c70",
+      "sample_count": 6,
+      "sampling": "last completed calls at frozen per-lane PROGRESS counter; not population estimate",
+      "schema": "R109_BOUNDED_TRAIN_DIAGNOSIS_V1",
+      "supplement_archive_sha256": "15e4071b1f238d297bc2cb9c20a5582c79c13b2c559176e7905d96afb1034b36",
+      "tasks_sha256": "84c33c95dfa39a160457902ab895d75e2a9e5f06636707201d379b1ea27d4ad8",
+      "window_per_lane": 96
+    },
+    "node2": {
+      "FINAL_read": false,
+      "GPU_launched": false,
+      "audit_source_sha256": "16f2afebfa9d462d6439726f681b966c483da99f16cfc17099d1f0c540447082",
+      "feed": {
+        "eligible_rows": 19,
+        "eligible_sha256": "ee27a57c73ec912116e6080746285df22f66340e33e290d87909a8f7cb6ff10a",
+        "eligible_unique_tasks": 19,
+        "exact_native_sources": {
+          "orch_r109_l1_experience.py": "e97c759ac7573b62c09c4f68ebfd6b30ec66d897dd6e08bfc792111048830a61",
+          "orch_r109_l1_feed.py": "dc4528d03aa95ee4a5320c77d49bb6b40197ab77ed20403b3bf4285810435dee"
+        },
+        "sampled_math_already_eligible": 0,
+        "sampled_math_calls": 10,
+        "sampled_math_unique_tasks": 5
+      },
+      "generation_plan_sha256": "739c730ae78b8a637eb6602a7e02c893dba8108918c4591cc6c06d4b6684690f",
+      "lanes": [
+        {
+          "base": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "code_errors": {
+            "ValueError: unknown identifier": 7,
+            "no_verifier_error_recorded": 1
+          },
+          "condition": "PERSISTENCE",
+          "family_stage": {
+            "code:draft": 4,
+            "code:optional_opportunity": 4,
+            "math:draft": 5,
+            "math:optional_opportunity": 5,
+            "route:exposure": 32,
+            "route:goal": 46
+          },
+          "index": 4,
+          "loaded_sha256": "2aa78286403b43c869b9dd970fc2e029c2e68c33f98c67de652956f73c5f4e55",
+          "maximum_post_tokens": 0,
+          "metrics": {
+            "alignment": 42,
+            "cap_hit": 0,
+            "expression_json": 7,
+            "marker_found": 42,
+            "math_first_final_is_last": 10,
+            "math_pre_final_nonempty": 10,
+            "persistence": 0,
+            "terminal": 96,
+            "truncated": 0
+          },
+          "over_C2_2048": 0,
+          "pair_count": 9,
+          "pair_transitions": {
+            "code:False->False": 3,
+            "code:False->None": 1,
+            "math:True->True": 5
+          },
+          "progress_sha256": "b71255fd854cdf4eefb2f1ce3e075578d940cc54ace43d1ef9a162652a6f5bc5",
+          "sampled_end_call": 15021,
+          "sampled_rows": 96,
+          "seed": "121655d491bc55ba6bbd8eb732bc4f7a65215a07d3b6b2492f4fa623026f80f1",
+          "unique_source_ids": 13
+        }
+      ],
+      "live_files_changed": false,
+      "native_samples": {
+        "path": "/localhome/local-rohing/orch_r109_l1_diagnosis_20260915_1625/audit_v2/NATIVE_TRAIN_SAMPLES.json",
+        "sha256": "791d9bc8a60b7ba20083c3acbbc2d9b334286da8d5c0d8c09826dfccd3e6101f"
+      },
+      "node": "node2",
+      "observed_unix": 1789489696.4150226,
+      "origin": "/localhome/local-rohing/orch_r109_l1_20260915",
+      "original_archive_sha256": "862b2c27a45631ae5c25fbc692ab32af35505ce05b80bc095578191f8698087e",
+      "policy_sha256": "de8c9d2d090dd53a075e2a59c8e0a61529a11cc899916cfef26ce40478626abe",
+      "references": {
+        "path": "/localhome/local-rohing/orch_r109_l1_diagnosis_20260915_1625/audit_v2/CAPTURE_REFERENCES.json",
+        "sha256": "2d6287236efdfabfd20509baed4099a25b5c35a7f510bb36db7868ed43833a2a"
+      },
+      "rows_admitted": 0,
+      "runner_sha256": "ef49cd1d9fb4b21b36b7eb376dda809b43b9eef9c5fdda18a5425e3948b73c70",
+      "sample_count": 6,
+      "sampling": "last completed calls at frozen per-lane PROGRESS counter; not population estimate",
+      "schema": "R109_BOUNDED_TRAIN_DIAGNOSIS_V1",
+      "supplement_archive_sha256": "43e6f6ade251c716d6d45643a1d9b288860f263f17593c1904422feae05408ff",
+      "tasks_sha256": "84c33c95dfa39a160457902ab895d75e2a9e5f06636707201d379b1ea27d4ad8",
+      "window_per_lane": 96
+    }
+  },
+  "schema": "R109_L1_GENERATION_DIAGNOSIS_COMPACT_V1",
+  "status": "CPU_DIAGNOSED_NEXT_ARM_PROPOSED_NOT_ALLOCATED",
+  "tests": {
+    "direct_python_assertions_passed": 3,
+    "native_audits_completed": 2,
+    "pytest_available": false
+  }
+}

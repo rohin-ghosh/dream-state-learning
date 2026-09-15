@@ -1,0 +1,60 @@
+{
+  "GPU_model_calls": 0,
+  "blocked_processes": [],
+  "blocking_reasons": [],
+  "clear": true,
+  "command": [
+    "sudo",
+    "-n",
+    "env",
+    "CUDA_VISIBLE_DEVICES=",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "PYTHONPATH=/localhome/local-rohing/orch_r118_code_parallel_source_20260915_v4_drain/source",
+    "python3",
+    "-B",
+    "-m",
+    "gpu.orch_r108_code_parent_r115_admission",
+    "scan",
+    "--root",
+    "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1"
+  ],
+  "device_minor": 6,
+  "diagnostic_only_not_original_admission": true,
+  "gpu": {
+    "index": 6,
+    "memory_used_mib": 1,
+    "utilization_percent": 0,
+    "uuid": "GPU-67a989f7-2660-a76b-40e8-3619b9fa2987"
+  },
+  "observed_unix": 1789489159.3500874,
+  "original_rejected_snapshot_available": false,
+  "reconciled_non_GPU": [
+    3159,
+    2766043,
+    2766049,
+    2766053
+  ],
+  "returncode": 0,
+  "scanner_euid": 0,
+  "source_file": {
+    "path": "/localhome/local-rohing/orch_r118_code_parallel_source_20260915_v4_drain/source/gpu/orch_r108_code_parent_r115_admission.py",
+    "sha256": "09dbfbd8bfed7cc1006e2a5c005f3fb124f7f6a5bcbca413cf7122b028a3c621"
+  },
+  "started_unix": 1789489158.365008,
+  "stderr": {
+    "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/parallel_v4/admission_diagnosis_1619/STDERR.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stdout": {
+    "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/parallel_v4/admission_diagnosis_1619/STDOUT.json",
+    "sha256": "b23beb18e9968dd5479b5ceb9a2130f77c960857d53d3b83d9d13f07bacb24fb"
+  },
+  "target_compute": [],
+  "unreconciled_blocking_reasons": [
+    "minor_scan_identity_changed:2766049",
+    "minor_scan_identity_changed:2766053",
+    "minor_scan_identity_changed:3159",
+    "process_identity_drift:2766043",
+    "process_identity_drift:3159"
+  ]
+}

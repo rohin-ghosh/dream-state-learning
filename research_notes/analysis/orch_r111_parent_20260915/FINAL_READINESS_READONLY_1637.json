@@ -1,0 +1,46 @@
+{
+  "observed_unix": 1789490238.038797,
+  "status": "ROUTE_FINAL_NOT_ARMED_SELECTOR_LIVE",
+  "read_only_native_audit": true,
+  "sealed_tasks_or_outputs_read": false,
+  "gpu_launches": 0,
+  "process_signals": 0,
+  "expiry_extensions": 0,
+  "final_campaign_session_exists": false,
+  "route_final": {
+    "F1": {"scheduler_pid": 1496784, "scheduler_present": false, "original_supervisor_pid": 1035111, "original_actor_pid": 1035149, "original_processes_present": false},
+    "A1": {"scheduler_pid": 1496788, "scheduler_present": false, "original_supervisor_pid": 1035107, "original_actor_pid": 1035110, "original_processes_present": false},
+    "replacement_scheduler_observed": false,
+    "retirement": {"path": "/localhome/local-rohing/orch_r118_route_parallel_candidate_20260915_v4/stage_1528/CPU_LIFECYCLE_RETIRED.json", "sha256": "384c7a243d106b56d32d3c55712fa48fb848c1bbd2f22246691c51b88da9bcc3", "finished_unix": 1789486307.3319147},
+    "old_evaluation_config_hashes_match": true,
+    "old_cutoff_control_hashes_match": true,
+    "old_cutoff_completed": true,
+    "old_cutoff_dispositions": {"F1": "RELEASED", "A1": "RELEASED"},
+    "evaluation_start_unix": 1789491600,
+    "evaluation_end_unix": 1789492800,
+    "native_calls_per_branch": 48,
+    "disposition": "Existing evaluation metadata is preserved but no live route scheduler was observed; cannot claim FINAL will run automatically."
+  },
+  "selector": {
+    "pid": 1519259,
+    "parent_timeout_pid": 1519258,
+    "both_present_sleeping": true,
+    "start_ticks": "1431188",
+    "launch_start_ticks_match": true,
+    "launch": {"path": "/localhome/local-rohing/orch_r118_final_selector_20260915_attempt1/LAUNCH.json", "sha256": "45af98f112b978c704492d677c9fd5065028c3087df113016c04252749875d39"},
+    "source_hash_matches": true,
+    "source_sha256": "64ccee2884b1dddafde70da8ccc2795127c8a4553fb6eb1a301484da369334ed",
+    "canonical_lineage_hashes_match_launch": true,
+    "selection_marker_exists_before_1700": false
+  },
+  "committed_state": {
+    "generation": 1,
+    "total_optimizer_steps": 3009,
+    "shared_optimizer_steps": 1884,
+    "checkpoint_sha256": "43ce68acabb18f661ff929600239eb0a632981da841dd1182f886a85df78a02d",
+    "optimizer_sha256": "2afebd67c922367e3735ef9b5ed31b3c9a7c6e329758478781e5ea3cb469c0b5",
+    "both_artifact_hashes_match": true,
+    "complete_receipt_matches_state": true,
+    "new_learning_claim": false
+  }
+}

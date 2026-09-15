@@ -1,0 +1,101 @@
+{
+  "branches": {
+    "A3": {
+      "dispatch_identity_matches": true,
+      "final4_exists": false,
+      "final_root": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/parallel_v4/final_2",
+      "old_final_status_files": [
+        "CPU_DISPATCH.json",
+        "FINAL_REBIND.json",
+        "PLAN.json",
+        "REBIND_STARTED.json",
+        "SCHEDULER_SPAWN.json",
+        "SCHEDULER_STARTED.json"
+      ],
+      "root": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1",
+      "service4_native_launched": false,
+      "stager_exact_alive": false,
+      "stager_failure": {
+        "error_type": "ValueError",
+        "no_retry": true,
+        "observed_unix": 1789490100.1126893,
+        "original_calls_unchanged": true
+      },
+      "stager_identity": {
+        "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+        "command_sha256": "9c75ac319f644a93cc816f8f27055179ded3eb634474b3acc63196a6897026f3",
+        "pid": 2855385,
+        "start_ticks": "2560784",
+        "uid": 2524
+      },
+      "timer_exact_alive": true,
+      "timer_identity": {
+        "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+        "command_sha256": "b7b8c3709a1a2f4563ea966cbae6b75be25565629030c812e2970c6971ef3ab8",
+        "pid": 2610330,
+        "start_ticks": "2257944",
+        "uid": 2524
+      }
+    },
+    "F3": {
+      "dispatch_identity_matches": true,
+      "final4_exists": false,
+      "final_root": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parallel_v4/final_3",
+      "old_final_status_files": [
+        "CPU_DISPATCH.json",
+        "FINAL_REBIND.json",
+        "PLAN.json",
+        "REBIND_STARTED.json",
+        "SCHEDULER_SPAWN.json",
+        "SCHEDULER_STARTED.json"
+      ],
+      "root": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1",
+      "service4_native_launched": false,
+      "stager_exact_alive": false,
+      "stager_failure": {
+        "error_type": "ValueError",
+        "no_retry": true,
+        "observed_unix": 1789490100.1976829,
+        "original_calls_unchanged": true
+      },
+      "stager_identity": {
+        "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+        "command_sha256": "72cd375186daff0daaf5bea00dfea3ae99de4806543b58b83b587049143d4e80",
+        "pid": 2855102,
+        "start_ticks": "2560632",
+        "uid": 2524
+      },
+      "timer_exact_alive": true,
+      "timer_identity": {
+        "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+        "command_sha256": "34e433b35f591114058d27cf9c31142ac611f21b301d5bf68f1e3273ed327224",
+        "pid": 2753110,
+        "start_ticks": "2459501",
+        "uid": 2524
+      }
+    }
+  },
+  "final_bounds": {
+    "cutoff_unix": 1789491600,
+    "hard_deadline_unix": 1789492800,
+    "native_cap_per_branch": 8,
+    "parent_cap": 0
+  },
+  "observed_unix": 1789490172.3766248,
+  "read_only": true,
+  "release_blocker": {
+    "A3": {
+      "CLEAN_RELEASE_exists": false,
+      "GUARD_TERMINAL_exists": true,
+      "bound_service": "service_2"
+    },
+    "F3": {
+      "CLEAN_RELEASE_exists": false,
+      "GUARD_TERMINAL_exists": true,
+      "bound_service": "service_3"
+    }
+  },
+  "selector_proc_present": true,
+  "signals": 0,
+  "status": "WAITERS_ALIVE_BUT_FAILED_PREDECESSOR_CLEAN_RELEASE_ABSENT"
+}

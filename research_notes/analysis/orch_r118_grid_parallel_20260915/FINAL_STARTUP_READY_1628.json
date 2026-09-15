@@ -1,0 +1,91 @@
+{
+  "A4_pending": "Accepted C8 consolidation before new TRAIN C9; exact carry retained",
+  "FINAL_changes": 0,
+  "GPU_launches": 0,
+  "actual_scans": 0,
+  "branches": {
+    "A4": {
+      "bind_command_prefix": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "/localhome/local-rohing/orch_r118_grid_final_startup_source_20260915_v1/gpu/orch_r118_grid_final_startup_run.py",
+        "bind",
+        "--prepared",
+        "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parallel_recovery_1624/OWNER_PREPARED.json",
+        "--prepared-sha256",
+        "fef3c4f272d53c175d749d91de3351f12d43c22ad3886223ae5694244d8ff1b0"
+      ],
+      "broker_binding": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parallel_recovery_1624/BROKER_BINDING.json",
+        "sha256": "5ac6b8b5efd4ea4bbb518f719dc63b0d54dbee213256d763a2230b27a9501ee1"
+      },
+      "handoff": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parallel_recovery_1624/HANDOFF.json",
+        "sha256": "543f8452917957703675535c2551683321c7b38e0b89c025252131c0f3004be7"
+      },
+      "new_native_calls": 0,
+      "optimizer_steps": 0,
+      "prepared": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parallel_recovery_1624/OWNER_PREPARED.json",
+        "sha256": "fef3c4f272d53c175d749d91de3351f12d43c22ad3886223ae5694244d8ff1b0"
+      },
+      "remaining_input": "Main new --campaign path --campaign-sha256 digest"
+    },
+    "F4": {
+      "bind_command_prefix": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "/localhome/local-rohing/orch_r118_grid_final_startup_source_20260915_v1/gpu/orch_r118_grid_final_startup_run.py",
+        "bind",
+        "--prepared",
+        "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parallel_recovery_1624/OWNER_PREPARED.json",
+        "--prepared-sha256",
+        "6c04987a87734fd7e8a5cc7c411eb7d56bc5e35c3632f2ba8f687388d1c7be82"
+      ],
+      "broker_binding": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parallel_recovery_1624/BROKER_BINDING.json",
+        "sha256": "25cde5b36c4615740603934e48db3c46a35eb40d11d3590d97aacda98ee2c340"
+      },
+      "handoff": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parallel_recovery_1624/HANDOFF.json",
+        "sha256": "363ece480580ff65de23e63fbd097d17516c957c3d3d3124ae0e07092bb44732"
+      },
+      "new_native_calls": 0,
+      "optimizer_steps": 0,
+      "prepared": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parallel_recovery_1624/OWNER_PREPARED.json",
+        "sha256": "6c04987a87734fd7e8a5cc7c411eb7d56bc5e35c3632f2ba8f687388d1c7be82"
+      },
+      "remaining_input": "Main new --campaign path --campaign-sha256 digest"
+    }
+  },
+  "export": {
+    "path": "/localhome/local-rohing/orch_r118_grid_final_startup_source_20260915_v1/FINAL_PREPARED_EXPORT.json",
+    "sha256": "e335ab85d0e57532b5cb4f1432d86fbe681c83845652ff38ae0ff2a92710a2cd"
+  },
+  "hard_end_utc": "2026-09-15T17:02:00Z",
+  "local_tests_passed": 11,
+  "native_tests_passed": 11,
+  "optimizer_steps": 0,
+  "original_FINAL_timer_identities_retained": {
+    "A4": 2610801,
+    "F4": 2610920
+  },
+  "packaging_failure": "Inherited CPU_AUTHORIZATION.json exclusive-write collision preserved; new FINAL_ metadata names, no overwritten files or repeated native tests",
+  "prepared_utc": "2026-09-15T16:27:22.245534+00:00",
+  "provider_calls": 0,
+  "ready": {
+    "path": "/localhome/local-rohing/orch_r118_grid_final_startup_source_20260915_v1/FINAL_READY.json",
+    "sha256": "2b6935336d27a872ec8ea7fb780d9551120288f113b63fcc25a51317ed89dffe"
+  },
+  "schema": "R118_GRID_FINAL_STARTUP_CPU_HANDOFF_V1",
+  "selector_access": false,
+  "source_files_path": "/localhome/local-rohing/orch_r118_grid_final_startup_source_20260915_v1/FINAL_SOURCE_FILES.json",
+  "source_hashes": {
+    "gpu/orch_r118_grid_final_startup_run.py": "7d689dc06a2dc04e2f2e158e9120ca70b9ef005cd1a289a5dfc4ec96ebeddf1c",
+    "tests/test_orch_r118_grid_final_startup_run.py": "5bc3bfcfeae99fc7f04ee483013a7ac45f75d39a05b2136482633ad13470cba3"
+  },
+  "startup_end_utc": "2026-09-15T16:35:00Z",
+  "terminal": "R118_GRID_PARALLEL_RECOVERY_V2_TERMINAL.json",
+  "train_end_utc": "2026-09-15T16:55:00Z"
+}
