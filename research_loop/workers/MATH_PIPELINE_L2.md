@@ -1,5 +1,9 @@
 # MATH-PIPELINE-L2 — automatic manufacturing-line handoff
 
+## 2026-09-15T17:01Z — FINAL orchestration terminal; no completed readouts
+
+CanonicalMainselectedgen1 at17:00:00.000183; STATE5ed1cee6c9673f8087fff68a07fd7591e917a001c479a5dbcc4d625bfca5a295/checkpoint43ce68ac.... F2strictadmissionPASS,1process3096952, FAILED17:00:05.319 beforemodel/tasks: portable source contract missing astra_goal_breadth_collection_guard.sh in frozenclosure (CPUpackagingfailure). Claimretained/0taskcharged/0complete/8unattempted. A2strictadmissiondrift3096808→NOT_RUN17:00:04.042,0claim/0process/0charged/0complete/8unattempted. Bothwaiters/nativegone17:00:40. No retry/sourcepatch/quotareset/selectorchange. Metadataonly FINAL_METADATA_1701.json +FINAL_ORCHESTRATION_1701.md; no sealedoutputs. SECOND_EXIT_STAGE_PATHS.txt supplies exact12source/test/receiptpublicationpaths. MainGit.
+
 ## 2026-09-15T16:45Z — FINAL-only custody armed; no startup extension
 
 ActualF2CPU2956733/A22956814 live17:00waiters, started16:44:42/43 before16:50; selector1519259preserved. Same8FINAL/branch17:00–17:20, frozenbase/selectedcanonicalLoRAread-only, parent/train/optimizer/OPEN/retry0. Authenticfailed-predecessors plus neverdispatchedattempt5 and retiredtimers; nofakeCLEAN. Recursiveoldallocationdedup and originalbranchwrite-oncequota claim.73local+73nativeCPU PASS, frozenv4manifest883c4bc9e043b5bb20738e358e14ce82a0831b95f08c290b93546d0dada16494; earlierCPUmissingdependencyfailures archived,noGPU. ARMreceipta44a7f68497b89aeeb2956e005e4b583b5259de500639ef674efddf6a4d5f9b5. No claims/ledger/model at16:45:11; ARMED_NOT_EVALUATED. Fullready/allowlist FINAL_ONLY_READY_1645.md. NoGit/rawVM/extraallocation.
@@ -665,3 +669,112 @@ preserved as attributed future-lineage evidence; no new lineage claim.
 [Builder / MATH FINALc56 PRESTAGE EXPORTS NOW -> Main,Herschel] 2026-09-15T15:17:42.351380+00:00 Actual imported bootstrap_fresh_actor/await_campaign_activation/launch_at_boundary co_filename all /localhome/local-rohing/orch_math_feedback_uptake_r118_parallel_source_20260915_v4/gpu/orch_r118_parallel_consolidation.py SHA c56bb57b69405877a65124b623316f9b8bd769aa8f51db6f2481ff65325c5cdb, verified againstMain canonicalv4. Nativeentry enforces this exact SHA and refuses missing/wrong startup_action; math action explicitly COLLECT_NEW_TWO_EPISODES plus canonical_adapter_actually_verified. Hookcampaign pending-resume-failure guard present.194local+194nativeCPU PASS(native6.681s), CPU9fcb864d4f1a40eff786afc1cc61f219a9e0ce3f33a9778030f6d1e343548293; manifestd3b6bfd8ec8de10746de8a0037c872337ba99d92480d41d971798251c5ff4da0. PRESTAGE_EXPORTS.json inthatv4source SHAe68691371a1cfca227332df365e3969f5e5be84eb2393117047532d65fb871d9 has all exactrefs BEFOREstage(no campaign circularwait). Service /localhome/local-rohing/orch_math_feedback_uptake_r118_parallel_20260915_attempt2/lane1/FRESH_OWNER_PREPARED_d3b6bfd8ec8de107.json SHAa2426862ce4636f520415cc1760f7b04b42a977def23ef00496acf5b81dc3e31; lane5 samefilename SHA04516049579186ecfe039907483d98c6cac0f65fa8b7523fdd35f6c2552566df. Eachservice SOURCE_FILES_V4.json SHA86ebb5677d8e0927014ea8fc693de3ba51b8b18765dd9961a29a0467fea4516e (sameexactsourceclosure); merge forcampaign now. Currentfinalizedreadies lane1c80b696782e1c1019b4336d757c088eefa245033f3087519e264435a18dd3632/lane5a016361296b3f490675be0756cbcf78124bff394804b3478432a601ed000e7bd. Bothnative postcommitvalidatorPASS; next11/7, N274/P60 andN170/P36 unchanged, actualoldrelease preserved. OldPLAN/SOURCE_UPGRADE/ownerV3 snapshots remainimmutable via NEWsource-specificupgrade record+newpreparedfilenames. NOstage/retire/model/provider/guard launched. Mainstage mustexecute fromv4beforecommonlockeddispatcher, --campaign alreadywired. ActualGPUbootstrapnotyetclaimed; explicit runtimepin prevents accidentalintermediatehookuse. NoGit.
 
 [Builder / MATH -> Main,Hubble SCOPED LAUNCH STAGE REQUIREMENTS] 2026-09-15T15:27:16.187325+00:00 NoStandaloneGPUstartup. Nativeprepared exact requirements in /localhome/local-rohing/orch_math_feedback_uptake_r118_parallel_20260915_attempt2/lane1/STAGE_REQUIREMENTS_V4.json SHA8674794b4394d63de4a57c2261e8dd49593d442cac1dc505b39046d60906724b andlane5 samefilename SHAa08f949d6546540a360f4a8fbfa33305a39ffa959aac438d079f28f9fa00dd12. Authschema R118_MATH_PARALLEL_FRESH_EXEC_AUTH_V1; actions=[LAUNCH], authorized/common_handoff_coordinated/lifecycle_rebinding_authorized/all_eight_released=true; root peroriginalbranch; planSHA F224bd2587397e10bb4334f9d47acd7a5405aab613b80516e749789d3216e7036d A274615943a09ac0338e9db96ca4c5f6b40a321ea55baf9a767a9f04d086957eb3; checkpoint43ce68acabb18f661ff929600239eb0a632981da841dd1182f886a85df78a02d; RNGpolicyDETERMINISTIC_NEW_STREAM_NOT_OLD_PEER_RNG; actual notbefore<expires<=1789491300(16:55UTC); activation_directory exactcampaignfield, realcampaignpath+sha. Oncecampaignarrives, ownstage willretire ONLY sixoldmathCPUtimers F21760859/1760860/1523331,A21760861/1760862/1523332 viaexactidentitypidfd; writeRUNTIME/brokerbinding/finalowner BEFOREMainlockeddispatcher. NewreplacementFINAL/cutofftimers are createdbythe testedGUARD BEFOREGPUadmission/load duringMaincommonstartup; stageitselfdoesnotspawnGPUguard. Selector1519259 freshidentityverified LIVE boot2c05ffec-1b4c-472f-9688-2a37543a6f4a/start1431188/cmd8071ade621dff429eac1e87880b93e5183b69faa6241781418d2ce1c8e71669e; explicitlyexcludedfromALLmathretirementlists, preserved. HubbleF2: newservice /localhome/local-rohing/orch_math_feedback_uptake_r118_parallel_20260915_attempt2/lane1; willsendactualRUNTIME.sha immediatelyafterstage. YourprivateoriginalTRAINqueue remainsoriginalF2root. Brokertrack ONLY newservice/GUARD_TERMINAL.json, andpublishnewservice/BROKER_READY.json withactual runtime:{path,sha256},terminal_path,actual_single_lane_lock_acquired:true afteractualexclusiveoriginalqueuelock(notconfigonly). A2samecontract ownfrozenHTTPwrapperready. CurrentRUNTIME/LAUNCHabsent, no signals/calls/counterchanges; 274/60and170/36 retained. MainGit; awaitingonlyactualcampaignreference, no newhumanratification.
+## 2026-09-15T18:10Z — independent native launch-ready, no common gate
+
+Own11local+11nativeCPU PASS. Frozen source
+/localhome/local-rohing/orch_math_feedback_uptake_r121_independent_source_20260915_v1
+SOURCE_MANIFEST fdea2f419279e1389afaaf662d2ceeb899f4af4ce6cf04bc7925f37dc98bec3f;
+CPU_TESTS2cdd6532284e535a8881f252e43619d28d03df15ffdaf75f4f8dab99d3f768a1.
+Actual PLAN refs independentroot/lane1/PLAN.json
+27b5d7c7f5e9670cda31910b26f30a847f24f359a7549f6dd8a09e7172308f3f;
+lane5 b7280ae38462cf3833c53cb7402e5240b00d09dcd58f353bb91d66fbbfa94246.
+Hubble fastF2: exact terminal independentroot/lane1/TERMINAL.json, writer
+source/gpu/orch_math_feedback_uptake_r121_independent_native.py. Bind PLAN
+above as owner; originalqueue retained, perEPISODE2parents/cycle,600sTTL,
+turn-boundary polling and no provider/head waits. No calls depend on head.
+Native engine has real independently restored AdamW and tested existing
+16new/1rehearsal+42anchors lambda.25 sleep; no optimizer update claimed until
+actual sleep/COMPLETE. Parent model low Fable perHubble, A2 lowHTTP wrapper
+parallel. Starting strictguards now; no sharedstage/session/all8 startup.
+Original caps retained in history; no43cycle loop stop. Existing96taskcohort
+remains frozen; prospective disjoint extension/broker registry must be adopted
+before exhaustion, not a claim it is already expanded. No hidden replay.
+
+## 2026-09-15T18:02Z — BINDING independent sleeping pairs, shared stage STOPPED
+
+New direct user supersedes shared restart tonight. Campaign1750 and staged
+F2/A2 owners preserved, no math guard/model launched from that campaign.
+Implementing NEW independent fork roots
+/localhome/local-rohing/orch_math_feedback_uptake_r121_independent_20260915_attempt1/lane1
+and lane5 on physical1/5 only. Each restores genuine common gen1 checkpoint
+43ce68ac + AdamW2afebd independently, source optimizer_steps3009; this is
+explicit forked optimizer ownership, NOT historical math optimizer continuity.
+Two sequential episodes then actual own-trace LoRA sleep,16new/1rehearsal,
+same42anchors lambda.25; fresh parent-free DEV per committed sleep. Old FINAL
+remains immutable; new Sep16T06:00 and lease-wall FINAL keys are separate.
+Hubble F2: preserve original TRAIN queue/history but bind future terminal to
+new lane1/TERMINAL.json; fast low/medium subparent, no high/blocking wait.
+Native requests have R121 prefix; parent replies injected only at completed
+turn boundaries; child never waits for provider/head. A2 uses existing Astra
+HTTP with low configured effort/short output; actual support/delivery measured,
+never claimed merely from settings. Old carry/counters retained in fork
+provenance. CPU tests/native full admission remain, no all8/session dependency.
+
+## 2026-09-15T17:55Z — R119 actual staged refs to Main/Hubble
+
+Both final owners ACTUALLY staged under Main campaign1750 SHA8715b24d...;
+native prefix /localhome/local-rohing/orch_math_feedback_uptake_r119_shared_20260915_attempt1.
+F2 lane1/FRESH_OWNER.json SHA918e38ec08a752c5abb6453a2c78a110d5f7fee85916e91944bf6ea349fba507;
+RUNTIME SHA92efb1616ff708a39138f5d4d2e0fa2eefcd1c3104144177444d340f7845896e.
+A2 lane5/FRESH_OWNER.json SHA48639bcbbf920c72feb60196036afdf53f443e9979928adeebe2ac5e3d4d8119;
+RUNTIME SHAf67333295a9afe4486322e71f0e57397445a506ab3945c791f7c7c137e286ff3.
+Hubble: bind F2 to exact lane1 runtime/new GUARD_TERMINAL, original queue unchanged.
+A2 broker lease-only custody in progress. No shared GPU launch, model or parent
+calls during stage. Actual source export STAGE_1752.json SHA81a293c5...;
+compact full refs research_notes/analysis/orch_math_feedback_uptake_r119_shared_20260915_attempt1/STAGED_1752.md.
+
+## 2026-09-15T17:17Z — FINAL COMPLETE and continuation ownership
+
+Actual F2/A2 FINAL recoveries completed17:14:03,8/8each, AFTER verified,
+parents0/optimizer0. Both native3135103/3135148 and schedulers absent17:14:36.
+Canonical gen1 checkpoint43ce68ac unchanged; no sealed content exported.
+Compact provenance/publication list:
+`research_notes/analysis/orch_math_feedback_uptake_r119_final_premodel_20260915_attempt1/STAGE_PATHS.txt`.
+Main may prepare shared1/5 continuation; no replay of failed sessions or FINAL.
+Old math slots ONLY ovx2 0/1/2; authentic frozenBASE context/nooptimizer.
+Resume targets0:C14partial5captures,1:C33partial7captures,2:C53heldnotstarted.
+New lease-bound source must preserve these prefixes/counters and fixed policy;
+no historical context captures will be regenerated. No L1slot takeover.
+## 2026-09-15T17:20Z — binding allocation correction
+
+Main17:17 supersedes17:13 original-slot map. Math will NOT resume ovx2physical0:
+Herschel now owns it. Assigned math: ovx2physical1/2 BASE, a40r4/5 BASE,
+A1005/6/7 LEARNED; node5F2/A2 separate shared Main continuation.
+ovx2physical2 earliest exact restore is C53held (C53experience COMPLETE);
+physical1 C33partial7captures requires preserving parent-timeout/segment263.
+No native continuation has launched yet. Existing node3 lease receipt
+1789689600 implies conservative latest hardwall2026-09-17T18:00Z at6hmargin;
+new train cutoff must reserve checkpoint/exit time. A40/A100 predecessor
+and lease inventory still being verified rather than guessed.
+## 2026-09-15T17:30Z — actual old residents and shared continuation work
+
+ovx2physical1 native2279659/start19936278, real BASE LOADED; physical2
+native2283710/start19948915 now launched after fresh strict scan. The first
+physical2 scan saw real transient root FD2279645; failedreport preserved,
+observed exit then new full scan (not a cleared blocker/charged-call retry).
+Both recover originalcontext/cursors, no optimizer/LoRA; hardSep17T18:00Z
+from existing conservativeSep18T00:00 lease minus6h, not a new lease.
+Common Main clock a1aa5134 received (train1789596120/hard1789596240).
+Preparing node5 `/localhome/local-rohing/orch_math_feedback_uptake_r119_shared_20260915_attempt1/lane1` +lane5
+new shared services; gen1/counters274/60 and170/36 unchanged; completedFINAL
+must be positive custody proof, never start another FINAL timer/evaluator.
+Hubble: F2 futurebroker must bind this new service+commonleaseclock, preserve
+originalqueue/charges/fixedprompts, old deadline-only config stays archived.
+Owner refs not yet READY; no standalone shared dispatch. A40r4/5 currently
+have no native math root located; need documented relocation from genuine
+oldmathcontext, not a fabricated priorcheckpoint. A1005/6/7 predecessor
+checkpoint audit remains separate; no overlap with Herschel0–4.
+## 2026-09-15T17:33Z — Main handoff refs and first actual restored parent
+
+Lease-bound common ownerrefs/source maps ready, NOT sharedlaunch:
+`research_notes/analysis/orch_math_feedback_uptake_r119_shared_20260915_attempt1/READY.md`;
+exactsource/test/compactallowlist in STAGE_PATHS.txt beside it.12local+12native
+CPU PASS, actual gen1/carry/counter/FINALcompletion provenance verified.
+F2preparedowner d27655d3... A2 9695a347...; fullhashes/nativepaths inREADY.
+Actual old ovx2native1=2279659/2=2283710; C33held/C53held COMPLETE; nowC34/C54.
+First real resumed Astra delivered17:32:19.504, modelopenai/openai/gpt-6-astra,
+T267response72b9954aa089fb34c960e210a0f4081604cef3d3f00ef702403117122114979e.
+Allrawnode-only. BASEcontext only, no optimizer/update claims. Assignedmap
+retained; ovx2physical0 NOTours. A40r4/5 and A1005/6/7 not yet launched.
+FINALboth8/8/AFTER verified, no repetition; r119_final_premodel completion
+receipt+metadata and separateSTAGE_PATHS ready. NoGit mutation.

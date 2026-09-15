@@ -324,3 +324,135 @@ branch destinations each original root /parallel_v4/final_failed_recovery.
 F3 TRANSFER_COMMITTEDd3fe7926ec637aa473faeeae5afe72475a0ee6b46b9c7935b178ca260cfa5652;
 A3 TRANSFER_COMMITTED2bef1e80435b4c3f78ead78ebd797f5ea467fda86fce3a132e4606227edbe59a.
 Raw remains native; publication includes only owned sources/tests/compact receipts.
+
+### 17:02 UTC — FINAL orchestration COMPLETE, no sealed-content inspection
+
+Read-only metadata watcher observed canonical FINAL_SELECTION at17:00:00.0001829:
+generation1; immutable selected state5ed1cee6c9673f8087fff68a07fd7591e917a001c479a5dbcc4d625bfca5a295;
+checkpoint43ce68acabb18f661ff929600239eb0a632981da841dd1182f886a85df78a02d;
+selection65899137a9833b177547f6ba3f392576436d590049ebf6454e1a3199642891b7.
+Selected state hash verified. Both use this one committed shared model, not
+independent learned models. No post-cutoff learning or selector mutation.
+
+Actual first-scan admission and dispatch: A3PID3096811 at17:00:02.5887585,
+F3PID3096812 at17:00:02.6720226. Each one attempt/eight reservations.
+Native COMPLETE A3 at17:01:55.8962767; F3 at17:01:56.1514626. Both report8/8
+completed calls and393 childtokens, parent0/optimizer0. This token count alone
+does not establish identical outputs or scores. Both GUARD_TERMINAL returncode0
+at17:01:57.6047332/17:01:57.6898642 respectively. No retry/new quota/reset/signals.
+
+Observer opened only selection/state hashes and whitelisted orchestration
+metadata: no reservation contents, raw response/capture contents or SEALED_OUTCOMES.
+Capture existence only was counted. Watcher model_calls/GPU_scans/signals=0
+describe the observer, not the16 completed experiment calls. Full raw remains
+node-local; compact V9_FINAL_ORCHESTRATION_COMPLETE_1702.json pins exact native
+selection, launches, admissions, COMPLETE/TERMINAL and final watcher snapshot.
+Main owns publication and outcome interpretation. No prompts/exchange edits/Git.
+
+### 17:29 UTC — R119 canonical-clock CODE continuation CPU/owner handoff
+
+Scoped prospective CODE wrapper only: keep original CONFIG/ADOPTION/PLAN,
+committed generation1/checkpoint43ce68ac and shared F1 optimizer2afebd67;
+preserve pending F3C22/A3C8 before next23/9, cumulative native735/274 and
+parent100/40, caps8192native/1000parent/100cycles, carry reflection3072.
+No per-branch optimizer, FINAL replay, re-submission or retroactive source edits.
+Both FINAL8 already COMPLETE; their exited identities remain factual evidence.
+
+Main canonical CLOCK a1aa51349c1784ec9f78e6411912576be43b55942c5fcdf1858ca391fd81c510
+sets train2026-09-16T22:02Z/hard22:04Z, actual lease2026-09-17T04:04Z
+minus6h. Prospective backend33a30aa1793a053ca603a9c3e2c4e5fde477b35b99d858af87dfa980036a065c.
+Native frozen wrapper root /localhome/local-rohing/orch_r119_code_runtime_20260915_v1:
+20native CPU tests PASS, CUDA uninitialized; source hashes verified.
+Local recheck29PASS0.49s includes9CODE native-turn parser tests plus9Main clock
+tests. Parser remains local/unintegrated; shared broker now independently accepts
+observed num_turns>=1. No provider retry/utility-turn undercount asserted away.
+
+OWNER_EXPORTS.json SHA475eff1e57a1259541731390867b49b5e343781e2570eeea755cb8c5df2da58c;
+SOURCE_FILES_ABSOLUTE.json SHAfa6c751edda4d261d3ac52795a3a17eb902ef35c055f606be0aec52287049cea
+contains229 absolute pins. F3 OWNER_PREPARED50f3005c4b8264c9acb48d4a734ff230ab3e9e10755ba0b1993d0377d49eba01;
+A3 OWNER_PREPARED85867ac0c2b673aedb7161f53dd7e963723cb2141c12a8ecba3b421cfd79083e.
+Only compact owner/source/CPU metadata copied locally; no raw captures pulled.
+
+NOT launched: RUNTIME_PREPARED needs Main campaign/activation binding and broker
+custody. Concrete common validator blocker: validate_launch_participant still
+requires nonempty live final_identity_bindings. CODE supplies completed_final_bindings
+with immutable COMPLETE/TERMINAL and exited evaluator identities instead; Main
+owns the common validator. Do not fabricate a live FINAL timer or repeat FINAL.
+If backend changes, its CLOCK provenance must be repinned by Main.
+
+Parallel OLD allocation inspection found actual previous node3CODE was BASE
+context-only, not four learned CODE checkpoints/cursors. a40r6 has no previous
+CODE root; ovx2_6 GRID release is separately recorded by GRID. No foreign signals
+or takeover. Need explicit learned seed/lineage to label new placements honestly;
+no independent old-fleet launch claimed. Shared continuation is independent of
+that lineage clarification. High-effort Fable/600s transport remains to be bound
+prospectively, not silently asserted for historical ASTRA lives. Main owns Git.
+
+### 17:45 UTC — authorized truthful completed-FINAL custodian, frozen v2
+
+Main explicitly authorizes the same COMPLETED_FINAL_CUSTODIAN_NO_EVALUATION
+CPU process used by other families. New owned custodian validates original8/8
+COMPLETE plus successful TERMINAL, binds actual continuation native identity,
+and advertises evaluator0/provider0/quota_delta0, is_timerFalse/may_dispatchFalse.
+Existing common live-identity validator is unchanged. Custodian remains alive
+only while its owned actor is alive and within canonical hard wall; no FINAL
+dispatch, quota reservation, model load, parent request or optimizer call.
+Guard records the real custodian identity/evidence in final_identity_bindings.
+All original FINAL/raw/failed startup and v1 source/owners remain immutable.
+
+29local PASS0.52s and29native PASS0.59s; CUDA uninitialized and source hashes
+unchanged across tests. Native new source root
+/localhome/local-rohing/orch_r119_code_runtime_20260915_v2;
+SOURCE_FILES_ABSOLUTE.json58431e6520aa89362371683e9ff235f62969e5eda3ced6effcb8f404d058a8f6.
+Use service_2 OWNER_PREPARED: F3
+48586b15c7493a9dfbf6db0bf3d4ba344feaa3b65fa8e8de9489f75e2afd1d2b;
+A3 5723e637937a317fb3e6a530316cfba85bd0f747661c91e12fe03bd1f9eac06b.
+Main backend33a30aa/CLOCKa1aa513 unchanged. PendingC22/C8, counters/caps,
+carry3072, originalCONFIG/ADOPTION/PLAN unchanged. No GPU launch claimed;
+Main campaign union can proceed from these exported owners immediately.
+
+Main now explicitly authorizes oldfleet ancestry: ovx2_3–6 are gen1 checkpoint
+43ce68 read-only-LoRA forks of actual old BASE context if no distinct predecessors;
+a40r6 BASE context fork/migration. These are NOT four old learned CODE lives,
+not optimizer continuation and not independent models/retained-learning evidence.
+Actual old node3CODE metadata:383completed native,110completed parents,
+16missing/1started/1failed parent cells, last chargedcycle26, saved TRAIN context
+through25. Preserve partial26 and charges; only explicitly labelled fork from
+saved context may start a new prospective branch. No replay or sealed-score read.
+
+### 18:05 UTC — R119 explicit independent CODE pre-GPU receipt
+
+Rohin119 cancels tonight's shared restart. Campaign8715 remains PREPARED with
+no CODE GUARD_ONCE/actors. New F3/A3 independent elicitation uses actual committed
+gen1/checkpoint43ce68 read-only LoRA, no optimizer, no shared initialization,
+submission, barrier or sleep. PendingF3C22/A3C8 remains immutable/untrained;
+continue previously uncharged C23/C9 with original counters/caps/PLAN and actual
+reflection carry3072. Fork label is explicit; this is not continued weight learning.
+
+Parents submit asynchronously and immediately return to useful child generation.
+Only exact request/payload/model/native archive-verified responses can enter the
+next TRAIN turn; DEV/FINAL cannot consume guidance. Missing/late are operational
+and no request is retried. Full messages/raw/native tokens plus injected-parent
+IDs retained node-local; declared parent metadata is not a semantic behavior score.
+No head wait. Parent-fast requirement applies to BOTH Fable and Astra; transport
+fast settings handled separately, never claimed from child nonblocking alone.
+
+New own gpu/orch_r119_code_independent.py and sevenfocusedtests:13localPASS
+(including6existing custody tests),13nativePASS; actual independent frozen import
+and configure(initial=True) PASS for both physical2/6, zeroCUDAinitialization,
+zero model/provider calls before launch. Native v2 source adds the missing local
+custody-module dependency discovered during prelaunch review; v1prepared only,
+no v1guard/native attempted. Root /localhome/local-rohing/orch_r119_code_independent_20260915_v2.
+Independent definitions F3 80c6836a6da2e46c63b5378b238cbd9cf0dc7628189411d7c2d72d46e301381e;
+A3 9486a7ac8db3ea357a96cf15be9aae0311ea31f8fe465db80ac6cba899367cab.
+Both under original branch root/r119_independent/service_2.
+
+Fresh strict original privileged UUID/minor/full-proc/CVD admission mandatory
+inside each new guard; no blanket transient waiver, no foreignsignals, noGPU
+standalone shared dispatch. Actual lease wall2026-09-16T22:04UTC/train22:02,
+same cumulative8192native/1000parent/100cycle caps. DEV preserves reasoning;
+new FINAL key R119_FINAL_20260916_0600 cannot dispatch beforeSep16 06:00UTC,
+only at an active completed-cycle boundary. Old Sep15FINAL8/branch never replayed.
+If the finite TRAIN schedule ends first, a separate same-quota morning custody
+path is still needed; do not misreport the boundary trigger as an armed timer.
+Main ownsGit/publication; code oldfleet partialpreparation is NOTstage-ready.
