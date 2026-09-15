@@ -1,5 +1,14 @@
 # Research state — Orchestrator
 
+## Branching scope correction — September 15, 2026, 05:56 UTC
+
+Own-output pilot9/12 author branch labels are not nine two-method solutions:
+reviewed alternatives change premises or inspect a superseded plan. Preserve
+original labels and veto; no new population rate or learner branching claim.
+Six fixed strong-teacher exemplars read completely show premise-preserving
+worked methods of mixed distinctness; teacher source remains separate/unfitted.
+Existing runs and Rohin105 design-only boundary unchanged.
+
 ## Fleet checkpoint — September 15, 2026, 05:46 UTC
 
 Parallelcensus32/32compute-resident,30/32positiveutilization; all8node1active,

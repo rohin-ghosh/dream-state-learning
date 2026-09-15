@@ -1,5 +1,15 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## Branching evidence correction — 2026-09-15 05:56 UTC
+
+The own-output pilot's attributed 9/12 branch labels describe counterfactual
+or premise checks, not demonstrated two-method reasoning. Batch remains vetoed,
+zero admitted/compiled/fitted. Main fully read six fixed teacher exemplars:
+same-premise methods exist, strongest in equation adjustment, enumeration and
+forward/backward routes; no teacher fit or learned branching claimed.
+Details: `research_notes/analysis/orch_branching_method_correction_20260915_0556.md`.
+Live allocation unchanged; one premise-preserving generator arm in preparation.
+
 ## Fleet measured — 2026-09-15 05:46 UTC
 
 32/32compute-resident,30positiveinstantaneousutilization;node1all8.
