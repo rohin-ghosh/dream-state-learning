@@ -27294,3 +27294,4 @@ Independent re-derivation from raw receipts on node 3, root `/tmp/astra_goal_sca
 
 Integrity: protocol SHA prefix `dd1d078a` in every stage RESULT.json matches the entry; `source_commit.txt` begins `ff1af2c3` as named; expected base SHA `a2367093` recorded in every `base_file_verification`. Model calls claimed (2519) equal the `model_calls` sum and the CALL_*.json count. Archive SHA `c57a87ef` not re-derived (archive location not in the run root).
 Scope note (builder's own limits): observed baseline coverage is four of eight shards; the remaining cases are unmeasured, not zero; no fit or learning result.
+commit left local: push skipped, 2 unpushed commits on main besides this read.
