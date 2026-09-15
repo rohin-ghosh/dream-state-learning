@@ -16,7 +16,7 @@ from gpu import orch_r111_route_sleep as pair
 
 
 VERSION = 'recovery_r113_v1'
-LANES = ('a100_1', 'a100_2', 'a100_3', 'a100_5', 'a100_6', 'node1_7')
+LANES = ('a100_1', 'a100_2', 'a100_3', 'a100_5', 'a100_6', 'node1_7', 'node3_3')
 
 
 def directory(root, lane):

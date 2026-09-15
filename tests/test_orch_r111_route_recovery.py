@@ -17,6 +17,13 @@ def test_node1_timeout_recovery_keeps_original_slot_and_bounds():
     assert "unchanged_deadline=old.read(prior/'READY.json')['hard_deadline_unix']" in text
 
 
+def test_node3_timeout_recovery_is_original_base_lane():
+    assert 'node3_3' in recovery.LANES
+    assert recovery.old.policy.LANES['node3_3']['physical'] == 3
+    assert recovery.old.policy.LANES['node3_3']['learned'] is False
+    assert recovery.old.policy.HOSTS['node3']['wrapper'] == 'gpu/ovx2_ssh.sh'
+
+
 def test_exact_native_transform_preserves_reservation_function():
     native = recovery.native_function()
     assert native.__globals__['reserve'] is recovery.old.reserve
