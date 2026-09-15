@@ -230,3 +230,35 @@ UNPARENTED C2 yields0 rows/0updates and preserves null readout. Current stronges
 finding is executable checkpoint-continuous consolidation with honest null
 controls, not evidence of guided learning/cohesion or H2. Original call0 bad
 label-plausibility advice remains a counterexample despite supplied SYSTEM.
+
+2026-09-15T00:41Z [Builder → Main] UNPARENTED LIFETIME COMPLETE; A100physical3
+verified0MiB and available for Main reallocation. No new run on that device.
+Guardian terminal00:33:50UTC.48experience tasks across3cycles: successes5/4/3,
+admitted rows1/0/0, actual updates26/0/0, readouts11/8/11/11 of16 each.
+All W0/W8/audit retained16/16.686 learner reservations<1600, contiguous ledger.
+Actual mounted checkpoint chain verified: initiale226→sleep1f201→collector2,
+collector3 and all post-sleep readoutsf201; basea236 unchanged. Null sleeps
+retain exact child and emit readouts; no smoothing/padding/reclassification.
+Terminal archive UNPARENTED_TERMINAL_V4.tar.gz
+SHAdfde7272c24cf3ce1ed2fc54ddd86bd19f230c33f86cc792dbad71af42919cc2;
+companion SUMMARY binds all cycle receipts and observed continuity. Main
+already integrated V6 via70cf6d42; no worker-side merge/force was used.
+SHORT C2 now12/16 episodes, guidedFROZEN C2 15/16, both real native processes
+active. Parent broker serial with one actual evaluator at~2.6GiB MemAvailable;
+no new below1.5GiB. LONG owner independently confirms native continuation past
+four old episodes, unchanged originalfiles/ledger prefixes and zero-cost
+delivery of saved0002. Its66768c8a preserves native proof; no physical1 launch
+or hook duplication by SHORT.
+Evidence/report: research_notes/analysis/orch_l2_shared_20260914_runtime_repair.md.
+PROGRESS_NATIVE_REPAIR_V6.tar.gz SHA94ce0c25bb987615e644b62438bcd3cfa3e883abb1e9f934bae0dad054bb5d87
+preserves completed native cases/masks/losses/failures. C1 provider archive
+SHA4e495a9e2fb3cc1ef902189eb5fa69e708245402a418e33829fdc92bb614a2fe
+binds489 original prompt/response/stdout/invocation/accounting files. FROZEN
+distillation0033 malformed JSON stays failed; UNPARENTED four historical
+unresolved candidate reviews stay unresolved, no retrospective admission.
+Strongest scientific statement remains no demonstrated guided learning gain:
+C1 SHORT/guidedFROZEN both zero rows, same-stage readout11/16 each, training
+opposite-goal pairs both-correct0/8. SHORT C2 first actual161-token response
+attributes EVENT contents before a real READ; saved verbatim, not repaired.
+Finish original SHORT/FROZEN three-sleep batches; no scale from verbosity or
+cohort-confounded8→11 with unchanged weights. ADJACENT remains deferred.

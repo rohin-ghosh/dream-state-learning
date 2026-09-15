@@ -1,0 +1,794 @@
+{
+  "cohort_stage_warning": "Across-stage readouts change held cohorts; slopes are confounded.",
+  "scope": "DESCRIPTIVE_SNAPSHOT_NOT_CAUSAL_GAIN",
+  "snapshot_sha256": "94ce0c25bb987615e644b62438bcd3cfa3e883abb1e9f934bae0dad054bb5d87",
+  "variants": {
+    "FROZEN": {
+      "0": {
+        "readout": {
+          "admitted_rows": 0,
+          "audit": {
+            "fault": {
+              "correct": 8,
+              "denominator": 8
+            },
+            "overall": {
+              "correct": 16,
+              "denominator": 16
+            },
+            "true": {
+              "correct": 8,
+              "denominator": 8
+            }
+          },
+          "input_adapter": {
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "files": [
+              [
+                "README.md",
+                "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+              ],
+              [
+                "adapter_config.json",
+                "b2cee0d47d60c55fb7b6b677b244535a77c8fd0c0320e2c2afcea473cdb93743"
+              ],
+              [
+                "adapter_model.safetensors",
+                "a8b69dc8860f8d0ffef92ba42fa55133accd2cf74d134b93f635b8ef30a33c94"
+              ]
+            ],
+            "path": "/tmp/orch_l2_shared_20260914_attempt1/initial_adapter",
+            "state_sha256": "e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf"
+          },
+          "opposite_goal_world_pairs": {
+            "both_correct": 5,
+            "denominator": 8,
+            "exactly_one_correct": 1,
+            "neither_correct": 2
+          },
+          "receipt": "research_notes/analysis/orch_l2_shared_20260914_attempt1/PROGRESS_NATIVE_REPAIR_V6/FROZEN/cycle0/readout/COMPLETE.json",
+          "receipt_sha256": "27fe4e23a7e22a9538cec4468f591b89cee130935b110e7117b37d4748df3683",
+          "retention": {
+            "0": {
+              "correct": 16,
+              "denominator": 16
+            },
+            "8": {
+              "correct": 16,
+              "denominator": 16
+            }
+          },
+          "successes": 11
+        }
+      },
+      "1": {
+        "experience": {
+          "actor_calls": 62,
+          "actual_read_operations": 36,
+          "actual_route_operations": 13,
+          "admitted_rows": 0,
+          "child_reflection_calls": 0,
+          "episode_denominator": 16,
+          "input_adapter": {
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "files": [
+              [
+                "README.md",
+                "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+              ],
+              [
+                "adapter_config.json",
+                "b2cee0d47d60c55fb7b6b677b244535a77c8fd0c0320e2c2afcea473cdb93743"
+              ],
+              [
+                "adapter_model.safetensors",
+                "a8b69dc8860f8d0ffef92ba42fa55133accd2cf74d134b93f635b8ef30a33c94"
+              ]
+            ],
+            "path": "/tmp/orch_l2_shared_20260914_attempt1/initial_adapter",
+            "state_sha256": "e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf"
+          },
+          "opposite_goal_world_pairs": {
+            "both_correct": 0,
+            "denominator": 8,
+            "exactly_one_correct": 0,
+            "neither_correct": 8
+          },
+          "parent_errors": 0,
+          "parent_opportunities": 33,
+          "parent_oversize_rejections": 0,
+          "parent_spoken_messages": 33,
+          "receipt": "research_notes/analysis/orch_l2_shared_20260914_attempt1/PROGRESS_NATIVE_REPAIR_V6/FROZEN/cycle1/experience/COMPLETE.json",
+          "receipt_sha256": "92d3802bb80caf67a8815c592d4404c1f539ff3c7e77da8decec16523121958f",
+          "semantic_statuses": {
+            "FAIL_NECESSARY_CONDITIONS": 62
+          },
+          "successes": 0,
+          "terminal_reasons": {
+            "capture_error": 13,
+            "dead_end": 3
+          },
+          "turns_in_150_400_band": 15,
+          "turns_with_prior_read": 43,
+          "world_denominator": 8
+        },
+        "readout": {
+          "admitted_rows": 0,
+          "audit": {
+            "fault": {
+              "correct": 8,
+              "denominator": 8
+            },
+            "overall": {
+              "correct": 16,
+              "denominator": 16
+            },
+            "true": {
+              "correct": 8,
+              "denominator": 8
+            }
+          },
+          "input_adapter": {
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "files": [
+              [
+                "README.md",
+                "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+              ],
+              [
+                "adapter_config.json",
+                "b2cee0d47d60c55fb7b6b677b244535a77c8fd0c0320e2c2afcea473cdb93743"
+              ],
+              [
+                "adapter_model.safetensors",
+                "a8b69dc8860f8d0ffef92ba42fa55133accd2cf74d134b93f635b8ef30a33c94"
+              ]
+            ],
+            "path": "/tmp/orch_l2_shared_20260914_attempt1/initial_adapter",
+            "state_sha256": "e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf"
+          },
+          "opposite_goal_world_pairs": {
+            "both_correct": 4,
+            "denominator": 8,
+            "exactly_one_correct": 3,
+            "neither_correct": 1
+          },
+          "receipt": "research_notes/analysis/orch_l2_shared_20260914_attempt1/PROGRESS_NATIVE_REPAIR_V6/FROZEN/cycle1/readout/COMPLETE.json",
+          "receipt_sha256": "06f162d1773c791d721c742fe72bd03061d14d8d0e31333a6b2e84adf37350d4",
+          "retention": {
+            "0": {
+              "correct": 16,
+              "denominator": 16
+            },
+            "8": {
+              "correct": 16,
+              "denominator": 16
+            }
+          },
+          "successes": 11
+        },
+        "sleep": {
+          "input_adapter": {
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "files": [
+              [
+                "README.md",
+                "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+              ],
+              [
+                "adapter_config.json",
+                "b2cee0d47d60c55fb7b6b677b244535a77c8fd0c0320e2c2afcea473cdb93743"
+              ],
+              [
+                "adapter_model.safetensors",
+                "a8b69dc8860f8d0ffef92ba42fa55133accd2cf74d134b93f635b8ef30a33c94"
+              ]
+            ],
+            "path": "/tmp/orch_l2_shared_20260914_attempt1/initial_adapter",
+            "state_sha256": "e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf"
+          },
+          "output_adapter": {
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "files": [
+              [
+                "README.md",
+                "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+              ],
+              [
+                "adapter_config.json",
+                "b2cee0d47d60c55fb7b6b677b244535a77c8fd0c0320e2c2afcea473cdb93743"
+              ],
+              [
+                "adapter_model.safetensors",
+                "a8b69dc8860f8d0ffef92ba42fa55133accd2cf74d134b93f635b8ef30a33c94"
+              ]
+            ],
+            "path": "/tmp/orch_l2_shared_20260914_attempt1/initial_adapter",
+            "state_sha256": "e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf"
+          },
+          "receipt": "research_notes/analysis/orch_l2_shared_20260914_attempt1/PROGRESS_NATIVE_REPAIR_V6/FROZEN/cycle1/sleep/COMPLETE.json",
+          "receipt_sha256": "ea66ffeed5d88fd22ccd2e84a39a8f3563c4784adb598b8e770fc18c9c0e504c",
+          "unchanged": true,
+          "updates": 0
+        }
+      }
+    },
+    "SHORT": {
+      "0": {
+        "readout": {
+          "admitted_rows": 0,
+          "audit": {
+            "fault": {
+              "correct": 8,
+              "denominator": 8
+            },
+            "overall": {
+              "correct": 16,
+              "denominator": 16
+            },
+            "true": {
+              "correct": 8,
+              "denominator": 8
+            }
+          },
+          "input_adapter": {
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "files": [
+              [
+                "README.md",
+                "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+              ],
+              [
+                "adapter_config.json",
+                "b2cee0d47d60c55fb7b6b677b244535a77c8fd0c0320e2c2afcea473cdb93743"
+              ],
+              [
+                "adapter_model.safetensors",
+                "a8b69dc8860f8d0ffef92ba42fa55133accd2cf74d134b93f635b8ef30a33c94"
+              ]
+            ],
+            "path": "/tmp/orch_l2_shared_20260914_attempt1/initial_adapter",
+            "state_sha256": "e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf"
+          },
+          "opposite_goal_world_pairs": {
+            "both_correct": 5,
+            "denominator": 8,
+            "exactly_one_correct": 1,
+            "neither_correct": 2
+          },
+          "receipt": "research_notes/analysis/orch_l2_shared_20260914_attempt1/PROGRESS_NATIVE_REPAIR_V6/SHORT/cycle0/readout/COMPLETE.json",
+          "receipt_sha256": "e0c7e36d70f728afafb4b8f65c672edf1ad2644e5a0b10c52878ef6f8dc58d83",
+          "retention": {
+            "0": {
+              "correct": 16,
+              "denominator": 16
+            },
+            "8": {
+              "correct": 16,
+              "denominator": 16
+            }
+          },
+          "successes": 11
+        }
+      },
+      "1": {
+        "experience": {
+          "actor_calls": 48,
+          "actual_read_operations": 22,
+          "actual_route_operations": 12,
+          "admitted_rows": 0,
+          "child_reflection_calls": 0,
+          "episode_denominator": 16,
+          "input_adapter": {
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "files": [
+              [
+                "README.md",
+                "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+              ],
+              [
+                "adapter_config.json",
+                "b2cee0d47d60c55fb7b6b677b244535a77c8fd0c0320e2c2afcea473cdb93743"
+              ],
+              [
+                "adapter_model.safetensors",
+                "a8b69dc8860f8d0ffef92ba42fa55133accd2cf74d134b93f635b8ef30a33c94"
+              ]
+            ],
+            "path": "/tmp/orch_l2_shared_20260914_attempt1/initial_adapter",
+            "state_sha256": "e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf"
+          },
+          "opposite_goal_world_pairs": {
+            "both_correct": 0,
+            "denominator": 8,
+            "exactly_one_correct": 1,
+            "neither_correct": 7
+          },
+          "parent_errors": 0,
+          "parent_opportunities": 26,
+          "parent_oversize_rejections": 0,
+          "parent_spoken_messages": 26,
+          "receipt": "research_notes/analysis/orch_l2_shared_20260914_attempt1/PROGRESS_NATIVE_REPAIR_V6/SHORT/cycle1/experience/COMPLETE.json",
+          "receipt_sha256": "025ced8bd74e8cff72467dcd6ed78250202796ebd8edec0e3af1838a7b143abe",
+          "semantic_statuses": {
+            "FAIL_NECESSARY_CONDITIONS": 48
+          },
+          "successes": 1,
+          "terminal_reasons": {
+            "capture_error": 14,
+            "dead_end": 1,
+            "reached_goal": 1
+          },
+          "turns_in_150_400_band": 23,
+          "turns_with_prior_read": 26,
+          "world_denominator": 8
+        },
+        "readout": {
+          "admitted_rows": 0,
+          "audit": {
+            "fault": {
+              "correct": 8,
+              "denominator": 8
+            },
+            "overall": {
+              "correct": 16,
+              "denominator": 16
+            },
+            "true": {
+              "correct": 8,
+              "denominator": 8
+            }
+          },
+          "input_adapter": {
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "files": [
+              [
+                "README.md",
+                "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+              ],
+              [
+                "adapter_config.json",
+                "b2cee0d47d60c55fb7b6b677b244535a77c8fd0c0320e2c2afcea473cdb93743"
+              ],
+              [
+                "adapter_model.safetensors",
+                "a8b69dc8860f8d0ffef92ba42fa55133accd2cf74d134b93f635b8ef30a33c94"
+              ]
+            ],
+            "path": "/tmp/orch_l2_shared_20260914_attempt1/initial_adapter",
+            "state_sha256": "e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf"
+          },
+          "opposite_goal_world_pairs": {
+            "both_correct": 4,
+            "denominator": 8,
+            "exactly_one_correct": 3,
+            "neither_correct": 1
+          },
+          "receipt": "research_notes/analysis/orch_l2_shared_20260914_attempt1/PROGRESS_NATIVE_REPAIR_V6/SHORT/cycle1/readout/COMPLETE.json",
+          "receipt_sha256": "8e07a2a9360e8e622b313c0f0cdd69f74f1309579c2eed03cdf0698025dc9a75",
+          "retention": {
+            "0": {
+              "correct": 16,
+              "denominator": 16
+            },
+            "8": {
+              "correct": 16,
+              "denominator": 16
+            }
+          },
+          "successes": 11
+        },
+        "sleep": {
+          "input_adapter": {
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "files": [
+              [
+                "README.md",
+                "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+              ],
+              [
+                "adapter_config.json",
+                "b2cee0d47d60c55fb7b6b677b244535a77c8fd0c0320e2c2afcea473cdb93743"
+              ],
+              [
+                "adapter_model.safetensors",
+                "a8b69dc8860f8d0ffef92ba42fa55133accd2cf74d134b93f635b8ef30a33c94"
+              ]
+            ],
+            "path": "/tmp/orch_l2_shared_20260914_attempt1/initial_adapter",
+            "state_sha256": "e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf"
+          },
+          "output_adapter": {
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "files": [
+              [
+                "README.md",
+                "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+              ],
+              [
+                "adapter_config.json",
+                "b2cee0d47d60c55fb7b6b677b244535a77c8fd0c0320e2c2afcea473cdb93743"
+              ],
+              [
+                "adapter_model.safetensors",
+                "a8b69dc8860f8d0ffef92ba42fa55133accd2cf74d134b93f635b8ef30a33c94"
+              ]
+            ],
+            "path": "/tmp/orch_l2_shared_20260914_attempt1/initial_adapter",
+            "state_sha256": "e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf"
+          },
+          "receipt": "research_notes/analysis/orch_l2_shared_20260914_attempt1/PROGRESS_NATIVE_REPAIR_V6/SHORT/cycle1/sleep/COMPLETE.json",
+          "receipt_sha256": "14fb96143c4f59742d98e3e639ba5ed4a751bcc493053843c51330bfb324c28d",
+          "unchanged": true,
+          "updates": 0
+        }
+      }
+    },
+    "UNPARENTED": {
+      "0": {
+        "readout": {
+          "admitted_rows": 0,
+          "audit": {
+            "fault": {
+              "correct": 8,
+              "denominator": 8
+            },
+            "overall": {
+              "correct": 16,
+              "denominator": 16
+            },
+            "true": {
+              "correct": 8,
+              "denominator": 8
+            }
+          },
+          "input_adapter": {
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "files": [
+              [
+                "README.md",
+                "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+              ],
+              [
+                "adapter_config.json",
+                "b2cee0d47d60c55fb7b6b677b244535a77c8fd0c0320e2c2afcea473cdb93743"
+              ],
+              [
+                "adapter_model.safetensors",
+                "a8b69dc8860f8d0ffef92ba42fa55133accd2cf74d134b93f635b8ef30a33c94"
+              ]
+            ],
+            "path": "/tmp/orch_l2_shared_20260914_attempt1/initial_adapter",
+            "state_sha256": "e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf"
+          },
+          "opposite_goal_world_pairs": {
+            "both_correct": 5,
+            "denominator": 8,
+            "exactly_one_correct": 1,
+            "neither_correct": 2
+          },
+          "receipt": "research_notes/analysis/orch_l2_shared_20260914_attempt1/PROGRESS_NATIVE_REPAIR_V6/UNPARENTED/cycle0/readout/COMPLETE.json",
+          "receipt_sha256": "e1401b5c56cdae45fc1a5ffde4b7ebb5e4a3a810ff7daa3c3bf656b47d83d3a2",
+          "retention": {
+            "0": {
+              "correct": 16,
+              "denominator": 16
+            },
+            "8": {
+              "correct": 16,
+              "denominator": 16
+            }
+          },
+          "successes": 11
+        }
+      },
+      "1": {
+        "experience": {
+          "actor_calls": 75,
+          "actual_read_operations": 48,
+          "actual_route_operations": 17,
+          "admitted_rows": 1,
+          "child_reflection_calls": 0,
+          "episode_denominator": 16,
+          "input_adapter": {
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "files": [
+              [
+                "README.md",
+                "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+              ],
+              [
+                "adapter_config.json",
+                "b2cee0d47d60c55fb7b6b677b244535a77c8fd0c0320e2c2afcea473cdb93743"
+              ],
+              [
+                "adapter_model.safetensors",
+                "a8b69dc8860f8d0ffef92ba42fa55133accd2cf74d134b93f635b8ef30a33c94"
+              ]
+            ],
+            "path": "/tmp/orch_l2_shared_20260914_attempt1/initial_adapter",
+            "state_sha256": "e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf"
+          },
+          "opposite_goal_world_pairs": {
+            "both_correct": 0,
+            "denominator": 8,
+            "exactly_one_correct": 5,
+            "neither_correct": 3
+          },
+          "parent_errors": 0,
+          "parent_opportunities": 0,
+          "parent_oversize_rejections": 0,
+          "parent_spoken_messages": 0,
+          "receipt": "research_notes/analysis/orch_l2_shared_20260914_attempt1/PROGRESS_NATIVE_REPAIR_V6/UNPARENTED/cycle1/experience/COMPLETE.json",
+          "receipt_sha256": "8c9eba6434214c2e132956ba531f3f167a9ad34cc9ebd056b3fe58ea07060463",
+          "semantic_statuses": {
+            "FAIL_NECESSARY_CONDITIONS": 70,
+            "PASS": 1,
+            "UNRESOLVED": 4
+          },
+          "successes": 5,
+          "terminal_reasons": {
+            "capture_error": 10,
+            "dead_end": 1,
+            "reached_goal": 5
+          },
+          "turns_in_150_400_band": 19,
+          "turns_with_prior_read": 57,
+          "world_denominator": 8
+        },
+        "readout": {
+          "admitted_rows": 0,
+          "audit": {
+            "fault": {
+              "correct": 8,
+              "denominator": 8
+            },
+            "overall": {
+              "correct": 16,
+              "denominator": 16
+            },
+            "true": {
+              "correct": 8,
+              "denominator": 8
+            }
+          },
+          "input_adapter": {
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "files": [
+              [
+                "README.md",
+                "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+              ],
+              [
+                "adapter_config.json",
+                "c5ef793afa201da0058a2a26e323bd30f4600b5d9a2342791e499f7b95db968c"
+              ],
+              [
+                "adapter_model.safetensors",
+                "2e685d58722362e7ad79b55ca5ec0666b460a83b15c0b8bbe4038a961f4544fa"
+              ]
+            ],
+            "path": "/tmp/orch_l2_shared_20260914_attempt1/UNPARENTED/cycle1/sleep/adapter",
+            "state_sha256": "f2013ae172f58d3f2aea843272eb7aea286d587a21d4cb96b905cb965ac99100"
+          },
+          "opposite_goal_world_pairs": {
+            "both_correct": 2,
+            "denominator": 8,
+            "exactly_one_correct": 4,
+            "neither_correct": 2
+          },
+          "receipt": "research_notes/analysis/orch_l2_shared_20260914_attempt1/PROGRESS_NATIVE_REPAIR_V6/UNPARENTED/cycle1/readout/COMPLETE.json",
+          "receipt_sha256": "cff364f6582aac552bbb194b6504b249249d07513035cc7c8d7fc875ce2f23b6",
+          "retention": {
+            "0": {
+              "correct": 16,
+              "denominator": 16
+            },
+            "8": {
+              "correct": 16,
+              "denominator": 16
+            }
+          },
+          "successes": 8
+        },
+        "sleep": {
+          "input_adapter": {
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "files": [
+              [
+                "README.md",
+                "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+              ],
+              [
+                "adapter_config.json",
+                "b2cee0d47d60c55fb7b6b677b244535a77c8fd0c0320e2c2afcea473cdb93743"
+              ],
+              [
+                "adapter_model.safetensors",
+                "a8b69dc8860f8d0ffef92ba42fa55133accd2cf74d134b93f635b8ef30a33c94"
+              ]
+            ],
+            "path": "/tmp/orch_l2_shared_20260914_attempt1/initial_adapter",
+            "state_sha256": "e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf"
+          },
+          "output_adapter": {
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "files": [
+              [
+                "README.md",
+                "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+              ],
+              [
+                "adapter_config.json",
+                "c5ef793afa201da0058a2a26e323bd30f4600b5d9a2342791e499f7b95db968c"
+              ],
+              [
+                "adapter_model.safetensors",
+                "2e685d58722362e7ad79b55ca5ec0666b460a83b15c0b8bbe4038a961f4544fa"
+              ]
+            ],
+            "path": "/tmp/orch_l2_shared_20260914_attempt1/UNPARENTED/cycle1/sleep/adapter",
+            "state_sha256": "f2013ae172f58d3f2aea843272eb7aea286d587a21d4cb96b905cb965ac99100"
+          },
+          "receipt": "research_notes/analysis/orch_l2_shared_20260914_attempt1/PROGRESS_NATIVE_REPAIR_V6/UNPARENTED/cycle1/sleep/COMPLETE.json",
+          "receipt_sha256": "2a7e77496d8f906063a0e5621e9512ecbb3096a230ef4b357770768bf3c56c94",
+          "unchanged": false,
+          "updates": 26
+        }
+      },
+      "2": {
+        "experience": {
+          "actor_calls": 52,
+          "actual_read_operations": 26,
+          "actual_route_operations": 19,
+          "admitted_rows": 0,
+          "child_reflection_calls": 0,
+          "episode_denominator": 16,
+          "input_adapter": {
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "files": [
+              [
+                "README.md",
+                "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+              ],
+              [
+                "adapter_config.json",
+                "c5ef793afa201da0058a2a26e323bd30f4600b5d9a2342791e499f7b95db968c"
+              ],
+              [
+                "adapter_model.safetensors",
+                "2e685d58722362e7ad79b55ca5ec0666b460a83b15c0b8bbe4038a961f4544fa"
+              ]
+            ],
+            "path": "/tmp/orch_l2_shared_20260914_attempt1/UNPARENTED/cycle1/sleep/adapter",
+            "state_sha256": "f2013ae172f58d3f2aea843272eb7aea286d587a21d4cb96b905cb965ac99100"
+          },
+          "opposite_goal_world_pairs": {
+            "both_correct": 0,
+            "denominator": 8,
+            "exactly_one_correct": 4,
+            "neither_correct": 4
+          },
+          "parent_errors": 0,
+          "parent_opportunities": 0,
+          "parent_oversize_rejections": 0,
+          "parent_spoken_messages": 0,
+          "receipt": "research_notes/analysis/orch_l2_shared_20260914_attempt1/PROGRESS_NATIVE_REPAIR_V6/UNPARENTED/cycle2/experience/COMPLETE.json",
+          "receipt_sha256": "3ad979853cc355b0c1fc2abae8ddf614a38d4adbd60e402d0473606ac5bda44b",
+          "semantic_statuses": {
+            "FAIL_NECESSARY_CONDITIONS": 51,
+            "FAIL_SEMANTIC": 1
+          },
+          "successes": 4,
+          "terminal_reasons": {
+            "capture_error": 7,
+            "dead_end": 5,
+            "reached_goal": 4
+          },
+          "turns_in_150_400_band": 15,
+          "turns_with_prior_read": 30,
+          "world_denominator": 8
+        },
+        "readout": {
+          "admitted_rows": 0,
+          "audit": {
+            "fault": {
+              "correct": 8,
+              "denominator": 8
+            },
+            "overall": {
+              "correct": 16,
+              "denominator": 16
+            },
+            "true": {
+              "correct": 8,
+              "denominator": 8
+            }
+          },
+          "input_adapter": {
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "files": [
+              [
+                "README.md",
+                "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+              ],
+              [
+                "adapter_config.json",
+                "c5ef793afa201da0058a2a26e323bd30f4600b5d9a2342791e499f7b95db968c"
+              ],
+              [
+                "adapter_model.safetensors",
+                "2e685d58722362e7ad79b55ca5ec0666b460a83b15c0b8bbe4038a961f4544fa"
+              ]
+            ],
+            "path": "/tmp/orch_l2_shared_20260914_attempt1/UNPARENTED/cycle1/sleep/adapter",
+            "state_sha256": "f2013ae172f58d3f2aea843272eb7aea286d587a21d4cb96b905cb965ac99100"
+          },
+          "opposite_goal_world_pairs": {
+            "both_correct": 4,
+            "denominator": 8,
+            "exactly_one_correct": 3,
+            "neither_correct": 1
+          },
+          "receipt": "research_notes/analysis/orch_l2_shared_20260914_attempt1/PROGRESS_NATIVE_REPAIR_V6/UNPARENTED/cycle2/readout/COMPLETE.json",
+          "receipt_sha256": "988d0b3aec937b6d2926dbc32dac30dc9c0838e96b3253a894987906207ee4bf",
+          "retention": {
+            "0": {
+              "correct": 16,
+              "denominator": 16
+            },
+            "8": {
+              "correct": 16,
+              "denominator": 16
+            }
+          },
+          "successes": 11
+        },
+        "sleep": {
+          "input_adapter": {
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "files": [
+              [
+                "README.md",
+                "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+              ],
+              [
+                "adapter_config.json",
+                "c5ef793afa201da0058a2a26e323bd30f4600b5d9a2342791e499f7b95db968c"
+              ],
+              [
+                "adapter_model.safetensors",
+                "2e685d58722362e7ad79b55ca5ec0666b460a83b15c0b8bbe4038a961f4544fa"
+              ]
+            ],
+            "path": "/tmp/orch_l2_shared_20260914_attempt1/UNPARENTED/cycle1/sleep/adapter",
+            "state_sha256": "f2013ae172f58d3f2aea843272eb7aea286d587a21d4cb96b905cb965ac99100"
+          },
+          "output_adapter": {
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "files": [
+              [
+                "README.md",
+                "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+              ],
+              [
+                "adapter_config.json",
+                "c5ef793afa201da0058a2a26e323bd30f4600b5d9a2342791e499f7b95db968c"
+              ],
+              [
+                "adapter_model.safetensors",
+                "2e685d58722362e7ad79b55ca5ec0666b460a83b15c0b8bbe4038a961f4544fa"
+              ]
+            ],
+            "path": "/tmp/orch_l2_shared_20260914_attempt1/UNPARENTED/cycle1/sleep/adapter",
+            "state_sha256": "f2013ae172f58d3f2aea843272eb7aea286d587a21d4cb96b905cb965ac99100"
+          },
+          "receipt": "research_notes/analysis/orch_l2_shared_20260914_attempt1/PROGRESS_NATIVE_REPAIR_V6/UNPARENTED/cycle2/sleep/COMPLETE.json",
+          "receipt_sha256": "6791b19e569f85790a18a56b8480ef79ea94935885cc2845e9547167bfeb100f",
+          "unchanged": true,
+          "updates": 0
+        }
+      }
+    }
+  }
+}
