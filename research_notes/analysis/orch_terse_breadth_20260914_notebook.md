@@ -122,3 +122,5 @@ exceptions. Exact UUID/proc/allGPU receipt in A100_RELEASE_DETACHED_20260915.jso
 next owner fresh-checks. Node3dose16pair still running4207/4252updates at
 01:17:04; ownership retained through original readouts. No baseline rerun,
 extra cell, full-batch retirement or SEQ; all three pair outcomes remain due.
+
+2026-09-15T11:16:04.935314+00:00 [Builder] TERMINAL_READY: INCOMPLETE_NATIVE_EVIDENCE. Own six fit/readout chains ended; terminal archives and author summary are preserved in `research_notes/analysis/orch_terse_breadth_20260914_attempt1/TERMINAL_AUTHOR_RESULT.json`. Request ordered SEQ now, and independent reader verification; no promotion or extra256. Independent blind cohort worker was not contacted. Publication failure, if any, is recorded in terminal_publish.json.

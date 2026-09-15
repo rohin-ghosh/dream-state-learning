@@ -166,3 +166,5 @@ SSH-observer scan attempts retained; successful scan ran after initiating
 SSH closed, no exemption/kill. Next owner must fresh-check at launch.
 Unique baseline not rerun. No new GPU task, node3retirement, full-batch
 terminal claim or SEQ request. Existing watcher preserves all three pairs.
+
+2026-09-15T11:16:04.935314+00:00 [Builder] TERMINAL_READY: INCOMPLETE_NATIVE_EVIDENCE. Own six fit/readout chains ended; terminal archives and author summary are preserved in `research_notes/analysis/orch_terse_breadth_20260914_attempt1/TERMINAL_AUTHOR_RESULT.json`. Request ordered SEQ now, and independent reader verification; no promotion or extra256. Independent blind cohort worker was not contacted. Publication failure, if any, is recorded in terminal_publish.json.
