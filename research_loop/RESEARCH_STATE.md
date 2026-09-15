@@ -1,5 +1,25 @@
 # Research state — Orchestrator
 
+## Guard deployed; fresh fleet — September 15, 2026, 07:58 UTC
+
+Reflection guard is ACTUALLY live on A1005, safe new BASE contextual continuation
+after natural prior C2 completion. First two guarded reflections588/531tokens,
+12.933/11.646seconds, bothEOS and neither truncated/stopped; zero exact duplicate
+eligible paragraph characters. This verifies deployment, NOT causal speedup.
+Semantic novelty/token remains UNKNOWN; lexical novelty is not a substitute.
+Compact evidence and scope: analysis/orch_math_feedback_uptake_20260915_attempt1/
+REFLECTION_STOP_RESULTS.md. No LoRA sleep updates in this BASE contextual arm.
+
+Fleet07:57:01–05UTC: node1eight/node2eight/node3four/A100seven compute residents,
+27/32 total;22/32positive instantaneous utilization. Node3physical0/1/2/3 and
+A1004 empty, so fleet saturation remains UNMET. Node3BASE parenting treatments
+are being prepared on1/2; no launch claimed. A1000 reserved prospectively for
+continual FULL ON/OFF capability diagnostic after natural training release;
+Laplace2/3/6 retain reserved terminal readouts. No foreign process preemption.
+Latest matched8036 exposure: all3635rows16012presentations/arm,min3/median4/max6;
+new375each3presentations. Exhaustion-feed acceptedmanifest/ingestedrows remain0,
+not continuous new-source uptake. Fixed08:00 cutoff then matched boundary.
+
 ## R107 independent BASE result — September 15, 2026, 07:52 UTC
 
 PUREBASE capability32 completed07:51:40: BASE24/32, adapter-disabled OFF24/32,
