@@ -1,5 +1,24 @@
 # MATH-PIPELINE-L2 — automatic manufacturing-line handoff
 
+## 2026-09-15T05:26Z — GPU4 parent timeout, zero-write recovery
+
+Direct05:23census investigated: oldpairedGUIDED C2FAILED05:19:59.294164Z,
+parent_backend_failure_no_substitute caused actualprovider readTimeoutError.
+Eightoriginalresponses preserved; no LOSSES/no sleepupdates. FAILED_AFTER
+verifies unchanged genuineC1 e1e18842b544411a720cc441d42089f5e39b7249f5f8893364ecb5df062a1dce
+and frozenbase. Do not retry itsparent or claimcompletedC2sleep.
+Immediate repair executes only already-budgeted, never-attempted C2parent-free
+56readout from genuineC1 with freshstrictadmission, explicitlyfailedsleepstratum.
+Original native/archive untouched. CPUregressions require exactlyzero writes
+and matching mountedpredecessor; no qualitywaiver or outcome-basedrelease.
+
+Main prospective notice NOW: a new eightcycle twoepisode STRONG_PARENT
+continuation segment on4, preserving genuineC1 adapter+optimizer and historical
+rows, would add144native/+8parents; aggregate2064native/36parents versus
+1920/28, preserving all historical counters. Original deadlines/24GPUh remain.
+This prospective segment is not yet dispatch-ready; no additionalcall dispatched.
+Preparing while the bounded existing-budget failedphase readout occupies4.
+
 ## 2026-09-15T05:18Z — R104 negative examples and measured cycles
 
 05:20Z update: CREATIVE C1test8COMPLETE+AFTER05:19:24.090480Z,

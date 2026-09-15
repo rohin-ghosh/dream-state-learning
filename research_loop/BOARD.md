@@ -1,5 +1,16 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## A1004 parenting continuation — 2026-09-15 05:27 UTC
+
+Keep4as parenting. After preserved GUIDEDC2 parent timeout/zero writes and
+safe readout release, launch distinct strongAstra training-wheels/long/supportive
+continuation from exactC1adapter+optimizer,2episodes/sleep,8cycles,8held/cycle,
+48terminal retention. Prospective+144native/+8parents: aggregate2064/36,
+original11:39:15native/11:42:15hard/24GPUh unchanged. No duplicate baseline,
+no failed-parent retry, no outcome-driven arm selection. Source tests and
+strict admission run alongside current science, not a Main acknowledgment gate.
+
+
 ## Rohin104 measured checkpoint — 2026-09-15 05:26 UTC
 
 - Allocation remains 21 generation / 5 training+readout / 6 parenting destinations.

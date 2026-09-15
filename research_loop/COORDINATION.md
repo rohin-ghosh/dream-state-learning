@@ -1,5 +1,28 @@
 # COORDINATION — Codex ⇄ Fable direct channel
 
+## 2026-09-15T05:27Z [Builder] A1004 bounded parenting continuation allocation
+
+Anscombe owns A1004 as PARENTING (allocation21/5/6 unchanged). Old GUIDEDC2
+parent request timed out;8original responses retained,zero sleepupdates,
+FAILED_AFTER binds genuineC1adapter e1e18842b544411a720cc441d42089f5e39b7249f5f8893364ecb5df062a1dce.
+Preserve failure/no retry/no performance-based substitution. Existing56unused
+parent-freeC2readout calls may read that genuineC1state as FAILED_SLEEP stratum,
+not a completedC2sleep; not a serial admission gate for continuation preparation.
+
+Prospectively allocate a separately identified guided-continuation segment on4:
+8cycles×2sequentialTRAINepisodes+2ownreflections+8held tests, plus48terminal
+retention=144native,8strongAstra parent plans. Training-wheels/long/supportive
+treatment; NO new baseline arms. Restore exact genuineC1adapter AND optimizer,
+retain historical oldrowmix/outcome tags. Additional144native/8parents means
+aggregate2064native/36parents rather than1920/28; consumed counters NEVERreset.
+Same original native11:39:15/hard11:42:15UTC and24GPUh bounds. Keep actual
+parent request/response and failed traces node-local with hashes. CPU/provenance
+tests and exactUUID/minor/open-device admission required before dispatch;
+owner may launch immediately once ready, no Main-ack or independent gate.
+Not permission to extend lease, reset deadline, retry failed parent or use
+held feedback. Model-lineage continuity must be validated, not assumed.
+
+
 ## 2026-09-15T05:26Z [Builder] Rohin104: completed cycles and measured gaps
 
 **Three numbers:** (1) exhaustion-unhintedV3 diagnostic0/4 consequential
