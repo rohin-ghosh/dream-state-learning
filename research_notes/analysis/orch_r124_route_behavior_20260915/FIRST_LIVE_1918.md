@@ -1,0 +1,9 @@
+# First live matched-route assay evidence — September 15, 2026
+
+- `ovx` physical 7 was released at 19:14:28 UTC after a verified whole-task boundary. The predecessor retained 20,286 cumulative calls (15,842 inherited, 4,444 new); no charged input was replayed. Owner release SHA256: `84382d9edeb4d43ef6637a9ae8bcd9f78690506a72f938347365e90a121735a7`.
+- Main dispatched supervisor **1409803** after verifying that release and the bound READY/PLAN. Dispatch receipt `/localhome/local-rohing/orch_r124_route_behavior_20260915/DISPATCH.json`, SHA256 `84bd7d2e541059157f049bc9214cbb99c19d0f3027838faaf634e24f65e1bab0`.
+- A fresh privileged exact-UUID scan passed. First evaluation process **1409840** ran A1 `BEFORE`; **all 32 calls completed** and the adapter/base immutability check passed. Condition receipt `/localhome/local-rohing/orch_r124_route_behavior_20260915/run1/A1/BEFORE/COMPLETE.json`, SHA256 `f4898f2b0875caa0f0248b0d81b094bedb46b989182a603291f4db0435784cfa`.
+- First capture completed at **19:17:43.675 UTC**: 14 tokens, zero prose tokens before its READ action, terminal, not truncated. Capture `run1/A1/BEFORE/calls/000.json`, SHA256 `d16f4aaa9cc82145173e27d5e76eb1028f61d8ca40c8df75ee2d2ba62fa71f54`. This establishes execution, not an effect of sleep.
+- A1 `AFTER` process **1410324** launched at **19:18:35.757 UTC**. No matched-pair result or remaining-condition completion is claimed by this receipt.
+
+Every full response and generated token ID remains node-local. In this assay, the metric named `valid_final_action` checks **syntax only**; it is not task correctness, allowed-action membership or evidence of grounded reasoning. Semantic coherence, retained improvement and the causal contribution of parenting remain unproven. The separate reducer requires identical prompt hashes and all three completed conditions before producing a branch comparison.
