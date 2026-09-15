@@ -851,3 +851,12 @@ resume into testedoffload readout successors, no controls/quality gate/hotpatch.
 Boundedpidfd controller only touches exactownedactor duringreadoutwait after
 save, lets existingreadout finish, proves no newcycle input, then actualrelease.
 Hubble successor F2terminal request posted; A2broker ownership remains MATH.
+## 2026-09-15T19:22Z R124 matched probes and bounded admission repair
+F2 before8/8 and after8/8 actual COMPLETE+return0, full verification next;
+native3953966 resumes savedC14/AdamW4108 after probes. A2 released savedC11,
+N200/P46/AdamW4419, first strictscan failed before model/input. Exact two drift
+PIDs and oldguard now pidfdESRCH+/proc absent. New readmit wrapper6local+6native
+tests PASS;17combinedlocal. Original model/source/scanner untouched; retain
+first ADMISSION and permit one administrative freshscan in admission_attempt2.
+No charged-task replay. Full preGPU source/test pins and Hubble actualF2
+RELEASED/PLAN handoff posted COORD; A2broker3796147 already rebound safely.

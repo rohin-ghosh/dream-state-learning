@@ -1,0 +1,95 @@
+{
+  "hashes": {
+    "CONTINUATION.json": "bd111048f1e2557a3dee32de7226fd5567029dadfae288f287faeefcbb8a2c54",
+    "PRE_GPU.json": "6579128ff0edec2d2666accbe897a09e5e4269a6a872b12ca5f82c0273f95c8e",
+    "RECOVERY.json": "d11b38292a749dfb2624028c2e18e890d5c71f53eb80aae0713c1b01136b2fa1",
+    "fit/CONTROL/segment039/RANK0_LOADED.json": "68fe13fe628e45db343ed0a54855a7cb67b754ac63e9f46ce51dcbe0bc2348c8",
+    "orch_r119_l1_resume.py": "6984cb04eee54bb2bd2fb1a4fb938c571c1b613c6aa220dd0827f34bb2cdb688",
+    "orch_r119_l1_resume_recovery.py": "47eb5931597b5b40e2210fd113d7ed9a696e5018e837ddab9b7c080fa0a0fa66"
+  },
+  "heartbeat": {
+    "index": 1,
+    "observed_unix": 1789500692.4450748,
+    "phase": "WAIT_OWNERSHIP",
+    "resume": "/localhome/local-rohing/orch_r119_l1_control_recovery_20260915_attempt1/fit/CONTROL/checkpoints/000017252",
+    "segment": 39
+  },
+  "last_loss": {
+    "eligible_supervised_tokens": 0,
+    "finished_unix": 1789500654.2038727,
+    "local_active": 483,
+    "loss": 0.0070025501772761345,
+    "reference_tokens": 483,
+    "selections": [
+      [
+        "legacy",
+        31
+      ],
+      [
+        "prior",
+        1787
+      ],
+      [
+        "anchor",
+        31
+      ],
+      [
+        "prior",
+        1788
+      ]
+    ],
+    "update": 17252
+  },
+  "loaded": {
+    "cohort_id": "R109_EXPERIENCE_C2_B002",
+    "eligible_sha256": "ee27a57c73ec912116e6080746285df22f66340e33e290d87909a8f7cb6ff10a",
+    "global_cursor_preserved": true,
+    "observed_unix": 1789500531.727066,
+    "optimizer_restored": true,
+    "process": [
+      "273420dc-cd6c-4760-a264-0027d2f6aede",
+      3471628,
+      22162630
+    ],
+    "rng_restored": true,
+    "state_sha256": "18120e56a41ce0a30193f63b5941716a5037836229819bf7537a98e2dac25267",
+    "update": 17124,
+    "uuid": "GPU-604c4ea8-8c29-099e-76ed-571ec7d9be4b"
+  },
+  "observed_unix": 1789500693.869376,
+  "recovery": {
+    "arm": "CONTROL",
+    "continuation_sha256": "bd111048f1e2557a3dee32de7226fd5567029dadfae288f287faeefcbb8a2c54",
+    "no_new_updates_in_failed_segment": true,
+    "observed_unix": 1789500416.445864,
+    "physical": 1,
+    "prior_paired_receipt_sha256": "d5b860b4b925e8296b0f0d1a13c3fca64ba0568554163432d7d614bd2106471a",
+    "prior_root": "/localhome/local-rohing/orch_r119_l1_continuation_20260915_attempt2",
+    "prior_supervisor": {
+      "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+      "pid": 3190881,
+      "start_ticks": "21426067",
+      "uid": 1395
+    },
+    "prior_supervisor_log_sha256": "30af5e9f39ba0a4d05e8fb783e14d6660b03568c5ace2c729695deef496c27bc",
+    "recovery_source_sha256": "47eb5931597b5b40e2210fd113d7ed9a696e5018e837ddab9b7c080fa0a0fa66"
+  },
+  "root": "/localhome/local-rohing/orch_r119_l1_control_recovery_20260915_attempt1",
+  "start": {
+    "hard_deadline_unix": 1790442300,
+    "identity": {
+      "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+      "pid": 3464856,
+      "start_ticks": "22157036",
+      "uid": 1395
+    },
+    "observed_unix": 1789500417.536896,
+    "original_checkpoint": {
+      "checkpoint": "/localhome/local-rohing/orch_r119_l1_continuation_20260915_attempt2/fit/CONTROL/checkpoints/000017124",
+      "commit_sha256": "214b4bef08c43e59b5e92ca50aa2d25f4b6c97b7a7053ea0a2d35d5cc5895e37",
+      "optimizer_sha256": "86d50bfc94e9e981bf96cf3ebeaf778b32cc2f5e7afc385314f2037c237cefd1",
+      "rng_sha256": "fcb4604b4d04f5a2a426072ddc732ee362537b838cddf24583f798de5e8ec84b",
+      "update": 17124
+    }
+  }
+}

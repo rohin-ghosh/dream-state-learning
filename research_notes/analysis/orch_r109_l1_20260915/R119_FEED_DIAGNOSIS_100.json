@@ -1,0 +1,223 @@
+{
+  "aggregate": {
+    "admissions": 0,
+    "cap_hits": 0,
+    "distinct_after_intrasample_dedup": 3,
+    "families": {
+      "code": 8,
+      "math": 5,
+      "route": 87
+    },
+    "funnel_captures": {
+      "bound_review_present": 0,
+      "captured_responses": 100,
+      "native_correct": 5,
+      "new_source_task": 5,
+      "new_target": 5,
+      "not_excluded": 5,
+      "supported_math": 5,
+      "terminal_untruncated": 5,
+      "train_self": 100
+    },
+    "persistence_count": 0,
+    "quality_screen_unique_targets": 5,
+    "quality_screen_unique_tasks": 3,
+    "reason_counts": {
+      "legacy_source_binding_mismatch": 100,
+      "missing_bound_author_review": 100,
+      "unsupported_family_for_existing_feed": 95
+    },
+    "sample_count": 100
+  },
+  "disposition": "PROPOSE_C3_EXPLICIT_SOURCE_REGISTRATION_AND_REVIEWED_SEGMENT_APPEND;NO_FEED_MUTATION",
+  "nodes": [
+    {
+      "admissions": 0,
+      "author_reviews_created": 0,
+      "cap_hits": 0,
+      "diagnostic_source_gate_counts": {
+        "native_V3_source_only": 64
+      },
+      "experience_source_sha256": "e97c759ac7573b62c09c4f68ebfd6b30ec66d897dd6e08bfc792111048830a61",
+      "families": {
+        "code": 6,
+        "math": 5,
+        "route": 53
+      },
+      "feed_source_sha256": "dc4528d03aa95ee4a5320c77d49bb6b40197ab77ed20403b3bf4285810435dee",
+      "funnel": {
+        "bound_review_present": 0,
+        "captured_responses": 64,
+        "native_correct": 5,
+        "new_source_task": 5,
+        "new_target": 5,
+        "not_excluded": 5,
+        "supported_math": 5,
+        "terminal_untruncated": 5,
+        "train_self": 64
+      },
+      "held_or_final_content_read": false,
+      "native_outcome_mismatches": 0,
+      "native_row_diagnostics": "/localhome/local-rohing/orch_r119_l1_feed_diagnosis_20260915_attempt1/AUDIT/ROW_DIAGNOSTICS.json",
+      "newest_finished_unix": 1789500241.177018,
+      "node": "ovx",
+      "observed_processes": [],
+      "observed_unix": 1789500241.3997939,
+      "oldest_finished_unix": 1789500224.6891956,
+      "persistence_count": 0,
+      "reason_counts": {
+        "legacy_source_binding_mismatch": 64,
+        "missing_bound_author_review": 64,
+        "unsupported_family_for_existing_feed": 59
+      },
+      "reference_sha256": "4fe7cba4bfb660611affb8a0c02e3077f7bce81d627824c4a95450f6a4171003",
+      "row_diagnostics_sha256": "2f5269e7341290d11210bdb23c7a54c23164a7410c178ac8a42e77c0449edf4e",
+      "sample_count": 64,
+      "sample_method": "Newest immutable complete CALL files by filesystem mtime; fixed per-node quota, not outcome-selected; released ovx7 excluded",
+      "schema": "R119_L1_FEED_DIAGNOSIS_V1",
+      "source_drift_counts": {
+        "source_state_sha256": 64
+      },
+      "source_sha256": "134fb8167b61ad666c1be9a800762dff47a37c752de0d8af8f67d5155b1745df",
+      "training_mutations": 0
+    },
+    {
+      "admissions": 0,
+      "author_reviews_created": 0,
+      "cap_hits": 0,
+      "diagnostic_source_gate_counts": {
+        "native_V3_source_only": 27
+      },
+      "experience_source_sha256": "e97c759ac7573b62c09c4f68ebfd6b30ec66d897dd6e08bfc792111048830a61",
+      "families": {
+        "code": 1,
+        "route": 26
+      },
+      "feed_source_sha256": "dc4528d03aa95ee4a5320c77d49bb6b40197ab77ed20403b3bf4285810435dee",
+      "funnel": {
+        "bound_review_present": 0,
+        "captured_responses": 27,
+        "native_correct": 0,
+        "new_source_task": 0,
+        "new_target": 0,
+        "not_excluded": 0,
+        "supported_math": 0,
+        "terminal_untruncated": 0,
+        "train_self": 27
+      },
+      "held_or_final_content_read": false,
+      "native_outcome_mismatches": 0,
+      "native_row_diagnostics": "/localhome/local-rohing/orch_r119_l1_feed_diagnosis_20260915_attempt1/AUDIT/ROW_DIAGNOSTICS.json",
+      "newest_finished_unix": 1789500247.2241447,
+      "node": "a100",
+      "observed_processes": [
+        {
+          "argv_sha256": "5178b6d2625dca0831b194b4d92190397591bc742eb91374aadc93531319f443",
+          "phase": [
+            "supervise"
+          ],
+          "pid": 3190880,
+          "roles": [
+            "fixed_cohort_continuation"
+          ],
+          "start_ticks": "21426067",
+          "state": "S",
+          "uid": 1395
+        },
+        {
+          "argv_sha256": "923540777fcff5aa5fc0fc3a828a8f45ca8efea61a736b0c54556f035d9839be",
+          "phase": [
+            "readout"
+          ],
+          "pid": 3445470,
+          "roles": [
+            "fixed_cohort_continuation"
+          ],
+          "start_ticks": "22139096",
+          "state": "R",
+          "uid": 1395
+        }
+      ],
+      "observed_unix": 1789500247.714663,
+      "oldest_finished_unix": 1789500238.8907447,
+      "persistence_count": 0,
+      "reason_counts": {
+        "legacy_source_binding_mismatch": 27,
+        "missing_bound_author_review": 27,
+        "unsupported_family_for_existing_feed": 27
+      },
+      "reference_sha256": "4fe7cba4bfb660611affb8a0c02e3077f7bce81d627824c4a95450f6a4171003",
+      "row_diagnostics_sha256": "07d0d742a95e82432592e693c59aa123c7cb5274b7918e957274ee2b9b4c9ae6",
+      "sample_count": 27,
+      "sample_method": "Newest immutable complete CALL files by filesystem mtime; fixed per-node quota, not outcome-selected; released ovx7 excluded",
+      "schema": "R119_L1_FEED_DIAGNOSIS_V1",
+      "source_drift_counts": {
+        "source_state_sha256": 27
+      },
+      "source_sha256": "134fb8167b61ad666c1be9a800762dff47a37c752de0d8af8f67d5155b1745df",
+      "training_mutations": 0
+    },
+    {
+      "admissions": 0,
+      "author_reviews_created": 0,
+      "cap_hits": 0,
+      "diagnostic_source_gate_counts": {
+        "native_V3_source_only": 9
+      },
+      "experience_source_sha256": "e97c759ac7573b62c09c4f68ebfd6b30ec66d897dd6e08bfc792111048830a61",
+      "families": {
+        "code": 1,
+        "route": 8
+      },
+      "feed_source_sha256": "dc4528d03aa95ee4a5320c77d49bb6b40197ab77ed20403b3bf4285810435dee",
+      "funnel": {
+        "bound_review_present": 0,
+        "captured_responses": 9,
+        "native_correct": 0,
+        "new_source_task": 0,
+        "new_target": 0,
+        "not_excluded": 0,
+        "supported_math": 0,
+        "terminal_untruncated": 0,
+        "train_self": 9
+      },
+      "held_or_final_content_read": false,
+      "native_outcome_mismatches": 0,
+      "native_row_diagnostics": "/localhome/local-rohing/orch_r119_l1_feed_diagnosis_20260915_attempt1/AUDIT/ROW_DIAGNOSTICS.json",
+      "newest_finished_unix": 1789500251.321042,
+      "node": "ovx2",
+      "observed_processes": [],
+      "observed_unix": 1789500254.0199988,
+      "oldest_finished_unix": 1789500228.0719395,
+      "persistence_count": 0,
+      "reason_counts": {
+        "legacy_source_binding_mismatch": 9,
+        "missing_bound_author_review": 9,
+        "unsupported_family_for_existing_feed": 9
+      },
+      "reference_sha256": "4fe7cba4bfb660611affb8a0c02e3077f7bce81d627824c4a95450f6a4171003",
+      "row_diagnostics_sha256": "f6b2f9bf0408d517a1b5bec6c1cb0e20e83b5cb19d3c3ac1cc3bd7dafd4fa351",
+      "sample_count": 9,
+      "sample_method": "Newest immutable complete CALL files by filesystem mtime; fixed per-node quota, not outcome-selected; released ovx7 excluded",
+      "schema": "R119_L1_FEED_DIAGNOSIS_V1",
+      "source_drift_counts": {
+        "source_state_sha256": 9
+      },
+      "source_sha256": "134fb8167b61ad666c1be9a800762dff47a37c752de0d8af8f67d5155b1745df",
+      "training_mutations": 0
+    }
+  ],
+  "schema": "R119_FEED_100_COMPACT_V1",
+  "tests": {
+    "control_recovery": 8,
+    "feed_and_audit": 20
+  },
+  "wiring": {
+    "automatic_semantic_review": false,
+    "current_consumer": "fixed copied versions/002",
+    "eligible_rows": 19,
+    "latest_actual_append_admitted_unix": 1789479343.0484324,
+    "live_ingester_count_at_audit": 0,
+    "new_source_registration": false
+  }
+}

@@ -632,3 +632,105 @@ native CPU provenance, prearmed custody and broker/cohort bindings. No GPU,
 provider call, quota change or actor stop performed for this CPU design.
 Main owns Git; ready publication scope only new capacity source/test, this
 journal and compact proposal/allowlist. Existing r123/old frozen files untouched.
+
+### [Builder — R125 F3 checker recovery] September 15, 19:16 UTC preGPU scope
+
+Actual F3 service_2 FAILED SyntaxError18:58:09.874UTC, not capacity exhaustion.
+Native3325386/start3106787 and guard3324993 absent; A3 native3325385 remains
+live and untouched. C23..43 have complete two-episode receipts. C44 has ONE
+already COMPLETE original native response (SHA40cfda317b10de661b7572977923aea9b95e0d58513ebc6b421fb2feb2d55ef1),
+then checker ast.parse raised; no C44 parent/reflection/triple was issued.
+This is NOT a completed-cycle seam. The narrowly supported recovery resumes
+post-call deterministic processing of those exact saved native bytes, without
+dispatching or rewriting that call, then schedules first NEW C044_E0_REFLECTION.
+No charge replay, task skip, old score retrofit, prompt change or quota reset.
+
+New disjoint R125 wrapper catches SyntaxError only in the existing bounded
+checker/inspection/scorer rejection paths, preserves other interpreter errors
+and unrelated implementation exceptions. Original source/artifacts remain
+immutable. Own tests cover invalid/valid/unsafe expressions, exact prompt and
+actual previous guidance matching, hash/cap/split mismatch, once-only saved-call
+restore without dispatch/rewrite, fresh calls and foreign-branch rejection.
+Native proof must verify all old slots terminal, actor identities exited, all
+historical reservations/source/PLAN/carry hashes, no unconsumed current-era
+guidance, exact C44 singleton. Frozen gen1 LoRA read-only; optimizer0, same
+8192native/1000parent/100cycle caps and Sep16 22:02TRAIN/22:04hard walls.
+Strict privileged full admission retained. Hubble owns F3 broker rebind; child
+never waits for parent. No A3/oldfleet source, signal, provider or GPU changes.
+Tests/provenance must pass before own successor GPU guard; Main owns Git.
+
+R12519:18 preGPU checks complete:17local+17nativePASS (0.35s/0.50s).
+Frozen sourceae9a24a747282d8d35538ea1ab32b5f32a21dccccac779fa5237e8a8bb72008d;
+testcf960ebabbf98aaa649df6b0b70951d29f4bcab82195ba677ab3283d62211f4a.
+Native v1 READY binds service r125_checker_recovery/service_1 definition4ee4caf5,
+RECOVERY8384bbab and CPU_TESTS888d37dd. Cumulative1051native/205parent before
+new dispatch, exactoldallslotterminal and frozenclosure validated. This proof
+is factual FAILED checker recovery, not CLEAN_RELEASE. Main/Hubble exact refs
+posted COORD; Hubble alone rebinds F3 broker. Strict GPUguard next.
+
+R125 ACTUAL19:21 handoff: strictadmission7a372e2d, guard3953993/start3542816,
+native3954388/start3543058. Same readonlygen1 loaded19:18:45.361UTC. Exact
+already-COMPLETE original restored without dispatch/rewrite19:18:45.483;
+firstNEW C044_E0_REFLECTION19:18:45.850→19:19:01.237,336native tokens,
+SHA8dee6215bb1894bd5dcec23405a79bafc8a56d91d5f7969241251c1a80f373aa.
+By19:20:46 snapshot:8newTRAIN COMPLETE/1STARTED, C44twoTRAINepisode COMPLETE,
+6parentPENDING (publication/injection NOT yet verified). 1807historical
+artifacts hash-matched after new work; oldfailure+raw source+singlecall intact.
+F3 native and original A3 native3325385 both alive, no new optimizer or quota.
+Raw remains node-only; native FIRST_COMPLETED_COMPACT.json and local
+R125_F3_FIRST_COMPLETED.json contain metadata/hashes/token counts only.
+
+Oldfleet bounded19:21:14–15 metadata census: allseven native identities live.
+ovx2_3/4/5/6 completedcycle48/47/45/47; a40r4/5/6=42/42/48, all oldlimit100.
+Consumed parent COMPLETE/MISSING/PENDING: ovx2_3=6/32/8,4=25/13/6,
+5=0/32/8,6=2/34/7; a40r4=2/24/8,5=0/25/9,6=30/11/4. These are durable
+child-side parent statuses, not new API calls or semanticbenefit evidence.
+Oldovx2_5/6 prior broker failures remain unresolved; children nonblocking.
+No need to interrupt these healthy actors for immediate F3 failure recovery.
+R124 futurecapacity is still testedCPUcandidate, not an armed successor;
+naturalC100 handoff/runtime integration remains explicit next work.
+
+### [Builder — R126 natural-C100 automatic capacity] September 15 preGPU scope
+
+Main now explicitly requests automatic naturalC100 continuation of allseven
+oldCODE allocations. New disjoint gpu/orch_r126_code_capacity.py and tests
+reuse the original fifteen-native/two-episode-parent cycle, safe interpreter,
+frozen BASE(a40r4/5/6)/read-onlygen1LoRA(ovx2_3/4/5/6), reflection and prompts.
+NO optimizer, weight sleep, live hotpatch, currentactor signal or task retry.
+Original 1500native/500parent/100cycle history remains immutable. Existing
+R124 explicit prospective increments61440native/8192parent perlane across
+4096additional cycles (C101..4196), always bounded by actual priorleasewall,
+are NOT reset allowances. Shared new64chunk registries freeze every task,
+ordering and call reservation before arming; all600old tasks plus original
+fixed32/anchors/knownheld exclusion hashes must remain disjoint. Newcontent
+variants are not a newskill/independentbenchmark claim. Raw registries onnode.
+
+Node-local CPUcustodian waits20seconds between checks (no SSH polling), never
+touches an active actor. It requires both exact native+guardian identities
+exited, successfulguard+terminal, actualC100context+completion, readonlyAFTER
+matching ACTOR_READY, all1110newnative/148parentcharges and terminalnative
+slots. Pendingparents carry immutable originalrequest refs/TTL into separate
+successor disposition records; no request replay or overwrite of oldcells.
+Exact returned-empty asynchronous lesson list plus actualC100ownreflection
+are carried, not invented summaries. Newguard uses existing kernel/exe/FD/CVD
+proof and fresh privileged UUID admission; model reload is automatic, not
+claimed literally zero downtime. Finite leaseguardian retained. Runtime
+rolls allpreparedchunks resident, not another short100cycle process.
+Parentbroker ownership remains separate: no duplicate parentprocess launch;
+actual PARENT_HANDOFF atrelease exposes old/newqueue and explicitnewbudget.
+
+Initial ownCPU29PASS includes existingR12417 and12 new lifecycle tests: exact
+960native/128parentchunk denominator, C101meta bounds, identicalprompt source,
+PIDreuse/liveowner refusal, exact1493/276carry and oldartifact immutability,
+failed/partialrelease rejection, no watchsignals, and actual original-policy
+one-cycle CPUfake-engine execution (15calls/2asyncparents/0optimizer), including
+TRAIN-only parent payloads and context carry. NativeCPU/provenance before arm.
+
+F3 DEV bounded evidence is READY R126_F3_DEV_CAPTURE.json: actual latestC46,
+all8 COMPLETE, token counts34/34/31/38/59/33/85/39. Each response.raw and
+response.token_ids native field exists and is hashed; response.messages equals
+the exact clean per-task readout prompt (no carried TRAIN context) and every
+injected_parent_ids is empty. No newmodelcall, FINALread or rawtext export.
+The existing percycle diagnostic saves rawbefore separate scoring; full
+raw/token capture is not evidence of unexpressed internal reasoning or
+semantic improvement. Main owns Git and brokerhandoff publication.
