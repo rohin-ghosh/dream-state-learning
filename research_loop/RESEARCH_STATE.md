@@ -1,5 +1,24 @@
 # Research state — Orchestrator
 
+## Execution update — September 15, 2026, 05:40 UTC
+
+- Continual ingestion ACTUAL atpaired2020: V13/3635rows,+375native-only rows
+  from6batches;63samplePASS/312UNREVIEWED. Optimizerretained/resetfalse.
+  Main05:39:48observedFULL2137/OFF2102updates. Freshrows admitted is not yet
+  proof of their presentation counts. EarlierDEVpause disclosed,1892resumed.
+- SEQ282 minimaldefaultFULL/OFF COMPLETE64each:186/246.046875mean tokens,
+  180.5/240medians,64EOSeach/zeroceilings; ancillary50/64vs48/64. BASErunning.
+  PromptedP64remains54/64vs59/64and211.89vs196.84tokens, NOTdefault.
+- Fixedfirst4/cellauthorsemanticreview:1approacheach/0rejections. Default
+  FULL/OFF4coherenteach; historicalFULL4coherent/OFF3coherent1mixed.60/cell
+  unreviewed; P65FULL/BASEtests stillopen. No promotion or gain claim.
+- TWOepisode mathC2nowCOMPLETE522/530sleepupdates+8heldreadouts; training4
+  strongparent continuation actuallymounted/restoredoptimizer,first2responses
+  completed05:35. Onecanonicalroutebaseline remains; othersparenttreatments.
+- RawVM forests excluded intentionally; source/receipt/journals pushed through
+  SEQ282commit6124ac64and subsequentcompactupdates. No clean-treeclaim.
+
+
 ## Execution update — September 15, 2026, 05:26 UTC
 
 - Measured05:23:12 fleet30/32resident,27positive utilization; node1 all8live.

@@ -1,0 +1,69 @@
+{
+  "observed_unix": 1789450548.042628,
+  "raw_local": false,
+  "receipts": {
+    "LOADED.json": {
+      "path": "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_05_r104_training4/GUIDED_SLEEP/cycle1/experience/LOADED.json",
+      "sha256": "81de0a72e2af4c83766a5a2e0c4684e9b07e0428fac86504631d7fc91cbfac33",
+      "data": {
+        "observed": {
+          "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "files": [
+            [
+              "README.md",
+              "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+            ],
+            [
+              "adapter_config.json",
+              "ffbcd3f593b1e52609a4014b8e3519aa6c4d36c87a691bd8c1b3ae2a86bfd257"
+            ],
+            [
+              "adapter_model.safetensors",
+              "255a57969dfae776770c0fd09216e491574b7ff1641ac59c7bf02077397811c8"
+            ]
+          ],
+          "path": "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_02_recovery_paired/GUIDED_SLEEP/cycle1/experience/adapter",
+          "state_sha256": "e1e18842b544411a720cc441d42089f5e39b7249f5f8893364ecb5df062a1dce"
+        },
+        "process": [
+          "273420dc-cd6c-4760-a264-0027d2f6aede",
+          553960,
+          17156368
+        ],
+        "uuid": "GPU-31583768-d90f-520c-51ed-5dac761526d0"
+      }
+    },
+    "OPTIMIZER_CONTINUITY.json": {
+      "path": "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_05_r104_training4/GUIDED_SLEEP/cycle1/experience/OPTIMIZER_CONTINUITY.json",
+      "sha256": "952ae999ebb82c1ef89162a7ab035d74437728266e58ccbc3a290b906715ed0e",
+      "data": {
+        "new_optimizer_reset": false,
+        "source_path": "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_02_recovery_paired/GUIDED_SLEEP/cycle1/experience/optimizer.pt",
+        "source_sha256": "aa6d67c60b19658ac035786a975b6af7c15a631e7509df0509820d9883d75c6b"
+      }
+    }
+  },
+  "calls": [
+    {
+      "path": "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_05_r104_training4/GUIDED_SLEEP/cycle1/experience/CALL_0000.json",
+      "sha256": "9207f8f9a5f33e4512a048d4f1c74cee2d185d760ff550b0cef5334a8e316937",
+      "purpose": "experience",
+      "prior_updates": 0,
+      "started_unix": 1789450484.3075166,
+      "finished_unix": 1789450496.9347405,
+      "response_present": true,
+      "child_emitted_tokens": 256
+    },
+    {
+      "path": "/localhome/local-rohing/orch_math_pipeline_l2_20260915_attempt1/campaign_05_r104_training4/GUIDED_SLEEP/cycle1/experience/CALL_0001.json",
+      "sha256": "7a64262dcd3c390b2fe1246e0027397fe55d224e3799f3615acd935722826fa4",
+      "purpose": "experience",
+      "prior_updates": 0,
+      "started_unix": 1789450496.9374073,
+      "finished_unix": 1789450500.9688556,
+      "response_present": true,
+      "child_emitted_tokens": 88
+    }
+  ],
+  "parent_request_exists": true
+}

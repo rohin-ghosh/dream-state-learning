@@ -1,5 +1,15 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## Actual continual intake — 2026-09-15 05:40 UTC
+
+V13/3635 ACTUALLYingested paired2020,+375rows(63samplePASS/312UNREVIEWED),
+optimizerretained/resetfalse. FULL2137/OFF2102observed05:39:48. No longer
+merelyqueued; no newrowpresentationcount inferred. MathC2sleep522/530updates
+and8heldtestscomplete. Training4Astra parenttreatmentrestoredC1optimizer,
+first2sequentialresponsescomplete05:35. Fixedfirst4SEQ282samples/cell:
+1approach/0rejections;default4coherentFULL+4OFF. BASEstillrunning.
+
+
 ## SEQ-282 DEFAULT complete — 2026-09-15 05:37 UTC
 
 Richness first: minimalFULLmean186/median180.5tokens vsOFF246.046875/240;

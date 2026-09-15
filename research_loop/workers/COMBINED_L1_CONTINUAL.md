@@ -242,3 +242,71 @@ No DEFAULT/BASE result claimed here. All raw remains NODE; repo compact reductio
 New announced27/33/34/36/38/40 batches NOT yet claimed ingested. Bounded source/
 native-encoder adaptation to run alongside fitting/readout, never a training gate.
 Main owns git/BOARD/census; no git mutation or raw VM artifacts by this worker.
+
+## 2026-09-15 05:39Z — actual V13 uptake, resumed training, author-reviewed richness
+
+Non-material source-only fixture repair: all three immutable delta76 fixtures must
+exist before the real scientific test runs. Exhaustive eight fixture-presence
+combinations tested; scientific assertions unchanged when fixtures exist. Local
+continual/native-feed/sampled subset 55 PASS,4 SKIP. No raw fixtures restored to VM.
+
+Native feed27/33/34/36/38/40: exact375 rows passed six64-candidate native mechanical
+replays and exact target/labels/EOS/context/held exclusion checks. Individual review
+counts12/10/10/11/10/10; unsampled52 per batch remain UNREVIEWED under batch admission,
+NOT individually author-qualified. Publisher-only reporting fields retained losslessly
+outside old core eligibility; original ROWS/provenance/targets/labels unchanged.
+Registry purpose initially compared against manifest purpose incorrectly; fixed to
+exact L1_RICHNESS_GENERATION, tested against frozen policy. Old live receiver lacked
+Node2 serialization adapter and failed KeyError initial; no admission waived.
+Isolated native feed_validation_0533 uses already-tested hash-pinned Node2 adapter
+and fixed policy/wrapper; immutable running source never edited. Local55PASS4SKIP;
+native pytest unavailable (No module named pytest), but native encoders/replay and
+old live consumer validation passed. Failures preserved in tool records and READY
+limitations, no extra native model calls. Node-to-node stream only; no VM raw files.
+
+Actual INGEST_RECEIPTS/000002020.json at 2026-09-15T05:38:16.788188+00:00:
+SHA 3d014fb3c0a88eb945b53c648d9060f7785f4ea02ab067fc2538e443d8242178; six batches added64/62/62/63/62/62 exactly once,
+V13 rows3635, corpusSHA ee2aa551ae71d271bc6cbf2101dcfef4a708f6d031fe4f2dbbd2c161dd09ce19.
+reset=false, optimizer_retained=true; original optimizer/RNG/cursor retained.
+DEV readout saved1636 completed992 calls at 2026-09-15T05:34:02.037098+00:00,
+all six jobs success, pending0, no retry or promotion. Retained training1892 resumed
+via guardian555316; workers555806 FULL2,555807 FULL6,555808 OFF3. First optimizer1893
+FULL 2026-09-15T05:35:25.853319+00:00,
+OFF 2026-09-15T05:35:27.066921+00:00.
+Actual V13 FULL/OFF updates captured in INGEST_2020_EXPOSURES_COMPACT.json, not load claims.
+
+Exposure at logical2020: FULL/OFF exact matched row counts; per-source min/median/max
+in INGEST_2020_EXPOSURES_COMPACT.json. Original3260 all presented at least once;
+new375 have ZERO presentations at ingestion boundary2020 (do not conflate appended
+with trained), subsequent V13 updates are actual but not yet all new rows sampled.
+Logical2020/cell versus extra117 physical OFF recovery updates separately charged.
+FULL supervised580282/OFF119822 tokens. No fixed16-repeat claim.
+
+P64_RICHNESS_AUTHOR_0535_COMPACT.json contains actual author FULL-OUTPUT reviews of
+prospective first4 per arm for BOTH historical prompted and minimal DEFAULT (16
+outputs), bound to response SHA, exact native evidence, source SHA, no parent access.
+All16 show one executed approach, zero substantively distinct alternatives, zero
+grounded rejections. Coherence: historicalFULL4 coherent; historicalOFF3 coherent,
+1 mixed due to unsupported four-leg spider assumption. DEFAULT4/4 coherent each.
+Sample is descriptive author-only, not whole-cohort certification or improvement.
+
+P64 DEFAULT64/arm: FULL mean186 median180.5, OFF246.046875 median240; all64EOS/0ceiling.
+Lexical4gram repeat mean FULL0.03798594/OFF0.06577211; not semantic repetition proof.
+Accuracy secondary frozen oracle FULL50/64 OFF48/64. DEFAULT OFF quilt sample has
+correct arithmetic but missing FINAL; keep oracle unchanged, not incoherence.
+Historical PROMPTED results remain separate FULL211.890625/OFF196.84375 tokens,
+accuracy54/64 versus59/64; never relabel prompted as default.
+
+DEV_RICHNESS_AUTHOR_0539_COMPACT.json adds first4 per arm full-output review of
+saved1636 DEFAULT math: all8 coherent, one approach each, no alternative/rejection.
+Mean tokens FULL197.25/OFF247.484375, medians194/234,64EOS/0ceiling each;
+lexical repetition0.05562035/0.06498204. Accuracy secondary60/64 versus36/64 under
+unchanged oracle; OFF samples include boxed/no-marker or LaTeX-wrapped FINAL.
+Route command-only DEV63/64 FULL,64/64 OFF; legacy48/48 each. This is adaptive DEV,
+NOT confirmatoryH1, and not evidence of improved branching. Parent blind throughout.
+
+True BASE default process557673 starts from no-adapter frozenQwen a236... (zero
+training updates, not initial37ec); actual calls running, not completed here.
+No closing P65a/c against promptedOFF: await their registered rawBASE/default
+comparator. No training from held, teacher, parenting/L2 or failed own-output pilot.
+Budget1824 totalreadouts, original08:06:10Z hardend. Main owns git/BOARD/publication.
