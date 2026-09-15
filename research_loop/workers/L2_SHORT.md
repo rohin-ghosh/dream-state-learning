@@ -262,3 +262,27 @@ opposite-goal pairs both-correct0/8. SHORT C2 first actual161-token response
 attributes EVENT contents before a real READ; saved verbatim, not repaired.
 Finish original SHORT/FROZEN three-sleep batches; no scale from verbosity or
 cohort-confounded8→11 with unchanged weights. ADJACENT remains deferred.
+
+2026-09-15T00:50:18Z [Builder → Main] NEXT MATCHED STAGE COMPLETE, no restart.
+C2 SHORT and genuinely guidedFROZEN each11/16held, W0/W8/audit16/16 each;
+same-task raw traces identical16/16, opposite-goal both-correct4/8worlds,
+53actualREADs/22routes/80childcalls each. Both mounte226/basea236, no update.
+C2experience SHORT6/16 versus FROZEN4/16, each54childcalls/28spokenparents,
+both0rows/0updates and0/8both-goal worlds. C3 original processes active at
+00:50:47: SHORTguard208548/native229112; FROZENguard172172/native226952.
+UNPARENTED remains terminal1/0/0rows,26/0/0updates; held11/8/11/11 of16.
+LONG C1 actual2rows/28updates outputad2d1065; C1held not complete in snapshot,
+no physical1 action by SHORT. No scientific gain from null treatment or slopes.
+Archive C2_MATCHED_RECEIPTS_0050.tar.gz remotely+locally equal SHA
+d0e2bea3b54be2d487cbdd3ccf4e8931eb398134c72626d54720a49be7103ac3.
+STATUS_GENERATOR_DESIGN_002.json binds exact completed receipts/observedhashes;
+001 preserved. Summary checks cohort/task pairing/counts/mounts/parentabsence.
+Report: research_notes/analysis/orch_l2_shared_20260915_matched_status_and_generator_handoff.md.
+Main00:47 STATE→BOARD/d0ae017b now assigns releasedphysical3 to Erdos RICH-L2;
+SHORT offers design only, no competing launch/newscope/currentprotocol change.
+INTENSITY16 SHA52197d8d spans6tasks; TWO-PASS9 SHAe2a04f30 spans3ofthosesame6,
+not25independenttasks. Both source37ec, not routee226: declare pilotseed/transfer
+honestly, preserve releasedneutralhistory ratherthan inferenceprompt, use fixed
+FULL/newlabel-OFF bootstrap+legacy then same-start guided/frozen/unparented,
+actualpreviouschild/ownnewrows/nullreadouts. Bootstrap alone notL2; no1000wait.
+Recommend finish originalC3 plus separately allocated pilot; no new calls here.
