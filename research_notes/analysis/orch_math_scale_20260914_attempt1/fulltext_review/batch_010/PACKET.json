@@ -1,0 +1,317 @@
+[
+  {
+    "gold": "12690",
+    "question": "James has a small tree outside his window with 30 branches with 90 twigs per branch. 30% of the twigs sprout 4 leaves and the rest sprout 5 leaves. How many leaves are on the tree total?",
+    "question_sha256": "6c16023e280b97f0065afa3a7afb8c7b11f2bd8e2d623bb3feedededfee6c44f",
+    "responses": [
+      {
+        "key": "gsm8k-train-3245:rich",
+        "raw_call_sha256": "2dddd7bd23da6d0395671d59ec380a2be0b5139273735774e41cc19510dbeeab",
+        "student_prefix": [
+          {
+            "content": "James has a small tree outside his window with 30 branches with 90 twigs per branch. 30% of the twigs sprout 4 leaves and the rest sprout 5 leaves. How many leaves are on the tree total?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "d9aaf3a65a15cda261c46c14c39ff981f4a6127f1223e8936585a0a58d645f31",
+        "target": "First, I calculate the total number of twigs on the tree. There are 30 branches, each with 90 twigs, so the total number of twigs is \\(30 \\times 90 = 2700\\).\n\nNext, I determine how many twigs sprout 4 leaves and how many sprout 5 leaves. Since 30% of the twigs sprout 4 leaves, the number of these twigs is \\(2700 \\times 0.30 = 810\\). The rest of the twigs, which is 70%, sprout 5 leaves, so the number of these twigs is \\(2700 \\times 0.70 = 1890\\).\n\nNow, I calculate the total number of leaves. The 810 twigs that sprout 4 leaves contribute \\(810 \\times 4 = 3240\\) leaves. The 1890 twigs that sprout 5 leaves contribute \\(1890 \\times 5 = 9450\\) leaves. Adding these together, the total number of leaves is \\(3240 + 9450 = 12690\\).\n\nFINAL: 12690",
+        "target_sha256": "5775bf4694b6a27ddee5696c486035313ad1a307acb98efc8e12fc98276aa0e6"
+      },
+      {
+        "key": "gsm8k-train-3245:new_record",
+        "raw_call_sha256": "cc46ffb897f49d6c4444c783372fa81b7724b5b89c718db5762d0358fe3adeb3",
+        "student_prefix": [
+          {
+            "content": "James has a small tree outside his window with 30 branches with 90 twigs per branch. 30% of the twigs sprout 4 leaves and the rest sprout 5 leaves. How many leaves are on the tree total?",
+            "role": "user"
+          },
+          {
+            "content": "First, I calculate the total number of twigs on the tree. There are 30 branches, each with 90 twigs, so the total number of twigs is \\(30 \\times 90 = 2700\\).\n\nNext, I determine how many twigs sprout 4 leaves and how many sprout 5 leaves. Since 30% of the twigs sprout 4 leaves, the number of these twigs is \\(2700 \\times 0.30 = 810\\). The rest of the twigs, which is 70%, sprout 5 leaves, so the number of these twigs is \\(2700 \\times 0.70 = 1890\\).\n\nNow, I calculate the total number of leaves. The 810 twigs that sprout 4 leaves contribute \\(810 \\times 4 = 3240\\) leaves. The 1890 twigs that sprout 5 leaves contribute \\(1890 \\times 5 = 9450\\) leaves. Adding these together, the total number of leaves is \\(3240 + 9450 = 12690\\).\n\nFINAL: 12690",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "8fdd877f278f0ab5231b6b64ef4caed5440a847492e343af0c333c5160163bc5",
+        "target": "Given the problem, I identified the key quantities: the number of branches (30), the number of twigs per branch (90), and the leaf distribution (30% of twigs sprout 4 leaves, 70% sprout 5 leaves). The unknown was the total number of leaves on the tree.\n\nFirst, I calculated the total number of twigs:\n\\[ \\text{Total twigs} = 30 \\text{ branches} \\times 90 \\text{ twigs/branch} = 2700 \\text{ twigs} \\]\n\nNext, I determined the number of twigs sprouting 4 leaves and 5 leaves:\n\\[ \\text{Twigs sprouting 4 leaves} = 2700 \\times 0.30 = 810 \\]\n\\[ \\text{Twigs sprouting 5 leaves} = 2700 \\times 0.70 = 1890 \\]\n\nThen, I calculated the total number of leaves from each group:\n\\[ \\text{Leaves from 4-leaf twigs} = 810 \\times 4 = 3240 \\]\n\\[ \\text{Leaves from 5-leaf twigs} = 1890 \\times 5 = 9450 \\]\n\nAdding these together gave the total number of leaves:\n\\[ \\text{Total leaves} = 3240 + 9450 = 12690 \\]\n\nTo verify, I checked the arithmetic and the logic of the distribution. The calculations were straightforward and the result was consistent with the given percentages and leaf counts.\n\nThe operation I would reuse is the calculation of the total number of leaves based on the given percentages and leaf counts. This method can be applied to similar problems involving weighted averages or distribution calculations.\n\nFINAL: 12690",
+        "target_sha256": "e62bb2b3d9a7279f325fa7e66bbdd388990dad9f0f92e8a5064655bb7008d1f6"
+      }
+    ],
+    "task_id": "gsm8k-train-3245"
+  },
+  {
+    "gold": "34",
+    "question": "A gecko eats 70 crickets every three days.  The first day she eats 30% of the crickets.  The second day she eats 6 less than the first, and the third day she finishes up the remaining crickets.  How many crickets does she eat on the third day?",
+    "question_sha256": "01be408bc8e10e093abcceaaf5294decf293ea7396fdb6691b48138efab33847",
+    "responses": [
+      {
+        "key": "gsm8k-train-1166:rich",
+        "raw_call_sha256": "a1989c3d74f37d07cf003a8c38f312d006b98d22b79ef7b2adc97d22f0ea8af3",
+        "student_prefix": [
+          {
+            "content": "A gecko eats 70 crickets every three days.  The first day she eats 30% of the crickets.  The second day she eats 6 less than the first, and the third day she finishes up the remaining crickets.  How many crickets does she eat on the third day?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "7267dd477c1c74abca9d008db1084559d0637da8cb7a5119a58e27be95b364b2",
+        "target": "Given that the gecko eats 70 crickets every three days, we can break down the consumption over the three days.\n\nFirst day: The gecko eats 30% of 70 crickets.\n30% of 70 = 0.30 * 70 = 21 crickets.\n\nSecond day: The gecko eats 6 less than the first day.\n21 - 6 = 15 crickets.\n\nTo find out how many crickets are left for the third day, we subtract the crickets eaten on the first and second days from the total.\n70 - (21 + 15) = 70 - 36 = 34 crickets.\n\nSo, the gecko eats 34 crickets on the third day.\n\nFINAL: 34",
+        "target_sha256": "e6f7de51981281f7d99e7d1e57680729f997d1927f5ee3e3b86b8b4ae343eaa6"
+      },
+      {
+        "key": "gsm8k-train-1166:new_record",
+        "raw_call_sha256": "1d4b0fa0002240c6dd2c3c915d723433bd602fddeecb933509a7197d2b94c1cb",
+        "student_prefix": [
+          {
+            "content": "A gecko eats 70 crickets every three days.  The first day she eats 30% of the crickets.  The second day she eats 6 less than the first, and the third day she finishes up the remaining crickets.  How many crickets does she eat on the third day?",
+            "role": "user"
+          },
+          {
+            "content": "Given that the gecko eats 70 crickets every three days, we can break down the consumption over the three days.\n\nFirst day: The gecko eats 30% of 70 crickets.\n30% of 70 = 0.30 * 70 = 21 crickets.\n\nSecond day: The gecko eats 6 less than the first day.\n21 - 6 = 15 crickets.\n\nTo find out how many crickets are left for the third day, we subtract the crickets eaten on the first and second days from the total.\n70 - (21 + 15) = 70 - 36 = 34 crickets.\n\nSo, the gecko eats 34 crickets on the third day.\n\nFINAL: 34",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "4a2f65e4465d54cfd4bb88ca9e715b63a1739924d5cad1e197022304e46d6146",
+        "target": "Given that a gecko eats 70 crickets every three days, I first identified the total number of crickets eaten over the three days as 70. I then broke down the consumption over the three days, starting with the first day.\n\nOn the first day, the gecko eats 30% of the crickets. Calculating 30% of 70:\n\\[ 0.30 \\times 70 = 21 \\]\nSo, the gecko eats 21 crickets on the first day.\n\nOn the second day, the gecko eats 6 less than the first day. Therefore:\n\\[ 21 - 6 = 15 \\]\nThe gecko eats 15 crickets on the second day.\n\nTo find out how many crickets the gecko eats on the third day, I subtract the crickets eaten on the first and second days from the total:\n\\[ 70 - (21 + 15) = 70 - 36 = 34 \\]\nSo, the gecko eats 34 crickets on the third day.\n\nTo verify this, I checked the total:\n\\[ 21 + 15 + 34 = 70 \\]\nThis confirms that the total number of crickets eaten over the three days is indeed 70.\n\nThe operation I would reuse is the calculation of the remaining crickets after the first two days, which is:\n\\[ \\text{Total crickets} - (\\text{Crickets eaten on first day} + \\text{Crickets eaten on second day}) \\]\n\nThis operation can be reused in similar problems where the consumption pattern is known over a period and the exact consumption on a specific day is required.\n\nFINAL: 34",
+        "target_sha256": "99ed1571bb0c73068ca1835a5f957020d1d296a5fc7fd63977454cf199035fe2"
+      }
+    ],
+    "task_id": "gsm8k-train-1166"
+  },
+  {
+    "gold": "105",
+    "question": "There are 350 trees in the park, 70% of which are pine trees. How many are not pine trees?",
+    "question_sha256": "61a7c083125e612bfda74e966504bfbc7c1d9ca2ff50e45813885cbe8c9d47cc",
+    "responses": [
+      {
+        "key": "gsm8k-train-2907:rich",
+        "raw_call_sha256": "bcfcf0f4950f9b73b095915400591515eedf89fcff1c277e64c8103068def09f",
+        "student_prefix": [
+          {
+            "content": "There are 350 trees in the park, 70% of which are pine trees. How many are not pine trees?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "e0989140f67b7e2611e9b6c20b1793ad27e367285997e56180f4e85efd6de19b",
+        "target": "Given: There are 350 trees in total, and 70% of them are pine trees.\n\nTo find: The number of trees that are not pine trees.\n\nStep 1: Calculate the number of pine trees.\n70% of 350 trees = 0.70 * 350 = 245 pine trees.\n\nStep 2: Calculate the number of trees that are not pine trees.\nTotal trees - Pine trees = 350 - 245 = 105 trees that are not pine trees.\n\nFinal: 105",
+        "target_sha256": "f794bc0bfa9459cd8e29aeb91cad0965d0f5d2c553d76074efb101c71ee2d1d6"
+      }
+    ],
+    "task_id": "gsm8k-train-2907"
+  },
+  {
+    "gold": "300",
+    "question": "Enrique earns a 15% commission on every piece of clothing item he sells.  In one day he sells 2 $700.00 suits, 6 shirts that cost $50.00 each and 2 pairs of loafers that are $150.00 each.  How much commission does Enrique earn?",
+    "question_sha256": "3e3bc84135b6137250666ec929aefe35975532dabae9a3a409e841a005773c75",
+    "responses": [
+      {
+        "key": "gsm8k-train-5682:rich",
+        "raw_call_sha256": "68f0cf984afc6668597ad54d8737a168471b09836606b0a7fdeffea06b839929",
+        "student_prefix": [
+          {
+            "content": "Enrique earns a 15% commission on every piece of clothing item he sells.  In one day he sells 2 $700.00 suits, 6 shirts that cost $50.00 each and 2 pairs of loafers that are $150.00 each.  How much commission does Enrique earn?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "3ca1dae6a2a255355333b9c4801aea5373d6f14a26d517371273558b414841a4",
+        "target": "First, I identify the quantities:\n- Enrique earns a 15% commission on each item sold.\n- He sells 2 suits at $700 each, 6 shirts at $50 each, and 2 pairs of loafers at $150 each.\n\nNext, I calculate the total sales for each type of item:\n- Suits: 2 suits * $700 = $1400\n- Shirts: 6 shirts * $50 = $300\n- Loafers: 2 pairs * $150 = $300\n\nNow, I sum up the total sales:\n$1400 + $300 + $300 = $2000\n\nTo find the commission, I apply the 15% commission rate to the total sales:\n$2000 * 0.15 = $300\n\nSo, Enrique earns a commission of $300.\n\nFINAL: 300",
+        "target_sha256": "f057131fe64806643e80a7ca9eb747c9c5aed69138921a29c82e6ce4eb556450"
+      },
+      {
+        "key": "gsm8k-train-5682:new_record",
+        "raw_call_sha256": "bb674456c38d68dc400241d6edd1b1e48facb4e9b523f294a94545e7b9a3892d",
+        "student_prefix": [
+          {
+            "content": "Enrique earns a 15% commission on every piece of clothing item he sells.  In one day he sells 2 $700.00 suits, 6 shirts that cost $50.00 each and 2 pairs of loafers that are $150.00 each.  How much commission does Enrique earn?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the quantities:\n- Enrique earns a 15% commission on each item sold.\n- He sells 2 suits at $700 each, 6 shirts at $50 each, and 2 pairs of loafers at $150 each.\n\nNext, I calculate the total sales for each type of item:\n- Suits: 2 suits * $700 = $1400\n- Shirts: 6 shirts * $50 = $300\n- Loafers: 2 pairs * $150 = $300\n\nNow, I sum up the total sales:\n$1400 + $300 + $300 = $2000\n\nTo find the commission, I apply the 15% commission rate to the total sales:\n$2000 * 0.15 = $300\n\nSo, Enrique earns a commission of $300.\n\nFINAL: 300",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "516bc94fb28fc75384f94da0cfe57499897db50fcc670747aedf27e9d26f7507",
+        "target": "Given the problem, I identified the key quantities and the commission rate:\n- 2 suits at $700 each\n- 6 shirts at $50 each\n- 2 pairs of loafers at $150 each\n- A 15% commission on total sales\n\nFirst, I calculated the total sales for each type of item:\n- Suits: 2 * $700 = $1400\n- Shirts: 6 * $50 = $300\n- Loafers: 2 * $150 = $300\n\nAdding these amounts together gave the total sales:\n$1400 + $300 + $300 = $2000\n\nNext, I applied the 15% commission rate to the total sales:\n$2000 * 0.15 = $300\n\nThis calculation provided the commission Enrique earned. To verify, I checked the arithmetic and the application of the percentage:\n- Correct multiplication for each item type\n- Correct addition of the totals\n- Correct application of the 15% commission rate\n\nThe result, $300, matched the problem's requirements. The operations used were straightforward arithmetic and percentage calculation, which are reliable and reusable for similar problems involving commission rates and total sales.\n\nFINAL: 300",
+        "target_sha256": "dbc2519a4ee21b13b4d6854bb5c24f7d68bcd9243257717174f230f10c204547"
+      }
+    ],
+    "task_id": "gsm8k-train-5682"
+  },
+  {
+    "gold": "36000",
+    "question": "A tractor trailer has a load of 50000 pounds.  10% of the weight gets unloaded at the first store, and 20% of the remaining load is removed at the second store.  How much weight, in pounds, is left on the truck after the two deliveries?",
+    "question_sha256": "dc2dfbc611075ec42b23b20c56bbc631fb5b0f0fb68907525fcc34cd6a2a000e",
+    "responses": [
+      {
+        "key": "gsm8k-train-1501:rich",
+        "raw_call_sha256": "1425a21885d9f295f87249a4604f252e06837fb94e2f919ca2e31d4eed128d94",
+        "student_prefix": [
+          {
+            "content": "A tractor trailer has a load of 50000 pounds.  10% of the weight gets unloaded at the first store, and 20% of the remaining load is removed at the second store.  How much weight, in pounds, is left on the truck after the two deliveries?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "e1a494661386a5eb4ba4569003a4ff74855604e84743e2f5a20a95761c811951",
+        "target": "Starting with 50,000 pounds, 10% is unloaded at the first store. 10% of 50,000 is 5,000 pounds. So after the first delivery, 50,000 - 5,000 = 45,000 pounds remain.\n\nNext, 20% of the remaining 45,000 pounds is removed at the second store. 20% of 45,000 is 9,000 pounds. So after the second delivery, 45,000 - 9,000 = 36,000 pounds remain.\n\nFINAL: 36000",
+        "target_sha256": "f21d7af272464793a54a9cf598c634aaba629f10580cfe812194d926875b1172"
+      },
+      {
+        "key": "gsm8k-train-1501:new_record",
+        "raw_call_sha256": "311899cf342700a1449f945891e01c25c814cb020050645e48f382f60555dc94",
+        "student_prefix": [
+          {
+            "content": "A tractor trailer has a load of 50000 pounds.  10% of the weight gets unloaded at the first store, and 20% of the remaining load is removed at the second store.  How much weight, in pounds, is left on the truck after the two deliveries?",
+            "role": "user"
+          },
+          {
+            "content": "Starting with 50,000 pounds, 10% is unloaded at the first store. 10% of 50,000 is 5,000 pounds. So after the first delivery, 50,000 - 5,000 = 45,000 pounds remain.\n\nNext, 20% of the remaining 45,000 pounds is removed at the second store. 20% of 45,000 is 9,000 pounds. So after the second delivery, 45,000 - 9,000 = 36,000 pounds remain.\n\nFINAL: 36000",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "29ae04d1dcde8b0275f689336ce7eeb1b0db8e5f78f22f5e3658fb00fef11ed2",
+        "target": "Given the initial load of 50,000 pounds, I first calculated the weight unloaded at the first store. I knew 10% of the load was removed, so I computed 10% of 50,000 pounds, which is 5,000 pounds. Subtracting this from the initial load, I found the remaining weight to be 50,000 - 5,000 = 45,000 pounds. \n\nNext, I needed to determine how much weight was removed at the second store. I calculated 20% of the remaining 45,000 pounds, which is 9,000 pounds. Subtracting this from the remaining load, I found the final weight to be 45,000 - 9,000 = 36,000 pounds.\n\nTo verify the result, I checked that the operations were correctly applied and the arithmetic was accurate. The initial load was reduced by 5,000 pounds, leaving 45,000 pounds, and then 9,000 pounds were further removed, leaving 36,000 pounds.\n\nThe operations I used were straightforward percentage calculations and subtraction. I would reuse these operations in similar problems where a percentage of a remaining quantity is removed in stages. The key is to apply the percentage to the correct remaining quantity at each step.\n\nFINAL: 36000",
+        "target_sha256": "9fac2f94e2a07e3e9119c063fe4f7ba81c26138ade6ddc786d658a5f85420a81"
+      }
+    ],
+    "task_id": "gsm8k-train-1501"
+  },
+  {
+    "gold": "24960",
+    "question": "Trisha just got a job offer for an hourly job that pays 15 dollars an hour, 40 hours per week. She has been told to estimate that 20 percent of her pay will be withheld to pay taxes, unemployment insurance, and social security. Assuming Trisha works 52 weeks in a year, what is her annual \"take-home\" pay?",
+    "question_sha256": "be5f1145c72e1072b357c2193dcad0852da0c48d5d6336b6fd93335938ed0f2a",
+    "responses": [
+      {
+        "key": "gsm8k-train-6450:rich",
+        "raw_call_sha256": "f0d130c15750026ceeeec55fb4bb31714ff64f61e37a7ea0585fae83566bbc95",
+        "student_prefix": [
+          {
+            "content": "Trisha just got a job offer for an hourly job that pays 15 dollars an hour, 40 hours per week. She has been told to estimate that 20 percent of her pay will be withheld to pay taxes, unemployment insurance, and social security. Assuming Trisha works 52 weeks in a year, what is her annual \"take-home\" pay?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "c8877a52311e61a81661e6ddaed9e2ce45ce39fcde327b997ea0635e7511c2d2",
+        "target": "First, I calculate Trisha's weekly gross pay: 15 dollars/hour * 40 hours/week = 600 dollars/week. Next, I find out how much is withheld for taxes, unemployment insurance, and social security: 20% of 600 dollars = 0.20 * 600 = 120 dollars. This means her weekly take-home pay is 600 dollars - 120 dollars = 480 dollars. To find her annual take-home pay, I multiply her weekly take-home pay by the number of weeks she works in a year: 480 dollars/week * 52 weeks/year = 24,960 dollars/year. \n\nFINAL: 24960",
+        "target_sha256": "9d5a1f6757aebee7408c796473af5e181ef07a66726afc560a4ad9301e115c0c"
+      },
+      {
+        "key": "gsm8k-train-6450:new_record",
+        "raw_call_sha256": "9e513b3e090055007baa670f99e5ea068e7193fdca247a4c44da458e947c9433",
+        "student_prefix": [
+          {
+            "content": "Trisha just got a job offer for an hourly job that pays 15 dollars an hour, 40 hours per week. She has been told to estimate that 20 percent of her pay will be withheld to pay taxes, unemployment insurance, and social security. Assuming Trisha works 52 weeks in a year, what is her annual \"take-home\" pay?",
+            "role": "user"
+          },
+          {
+            "content": "First, I calculate Trisha's weekly gross pay: 15 dollars/hour * 40 hours/week = 600 dollars/week. Next, I find out how much is withheld for taxes, unemployment insurance, and social security: 20% of 600 dollars = 0.20 * 600 = 120 dollars. This means her weekly take-home pay is 600 dollars - 120 dollars = 480 dollars. To find her annual take-home pay, I multiply her weekly take-home pay by the number of weeks she works in a year: 480 dollars/week * 52 weeks/year = 24,960 dollars/year. \n\nFINAL: 24960",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "188938231cb5dff7a24b8b2ccb39508a5e38214742dc133e7e372d1b48ee5bde",
+        "target": "Given the hourly wage of $15 per hour, the number of hours worked per week (40), the percentage of pay withheld (20%), and the number of weeks worked in a year (52), I needed to calculate Trisha's annual take-home pay. \n\nFirst, I calculated her weekly gross pay: $15/hour * 40 hours/week = $600/week. This was a straightforward multiplication to find her gross earnings before any deductions.\n\nNext, I determined the amount withheld for taxes, unemployment insurance, and social security: 20% of $600 = 0.20 * $600 = $120. This calculation involved converting the percentage to a decimal and then multiplying it by her weekly gross pay to find the total amount withheld.\n\nSubtracting the withheld amount from her weekly gross pay gave me her weekly take-home pay: $600 - $120 = $480. This subtraction provided the net amount she would receive each week after deductions.\n\nTo find her annual take-home pay, I multiplied her weekly take-home pay by the number of weeks in a year: $480/week * 52 weeks/year = $24,960/year. This multiplication gave me the total amount she would receive over the course of a year after all deductions.\n\nTo verify the result, I checked that the weekly gross pay calculation, the percentage calculation, and the final multiplication all used the correct values and operations. The result of $24,960 seemed reasonable given the context of the problem.\n\nThe operations I used were reliable and reusable for similar problems involving gross pay, deductions, and annual calculations. I would reuse these operations whenever I need to calculate take-home pay based on hourly wages, weekly hours, and annual work weeks.\n\nFINAL: 24960",
+        "target_sha256": "97c87e1935263925ecc02866873ccb368967751e4ca6f5e9422f494440b99a94"
+      }
+    ],
+    "task_id": "gsm8k-train-6450"
+  },
+  {
+    "gold": "7680",
+    "question": "John and his two brothers decide to split the cost of an apartment.  It is 40% more expensive than John's old apartment which costs $1200 per month.  How much does John save per year by splitting the apartment compared to living alone?",
+    "question_sha256": "cac01ae05004338ccb62b11cf057ee93b1b4675f77d88e8e79d87c09c5217425",
+    "responses": [
+      {
+        "key": "gsm8k-train-2635:rich",
+        "raw_call_sha256": "f149db82ae39c98f9e4fce49445a89fac51c9df80c2d204f838bd69cc855fabd",
+        "student_prefix": [
+          {
+            "content": "John and his two brothers decide to split the cost of an apartment.  It is 40% more expensive than John's old apartment which costs $1200 per month.  How much does John save per year by splitting the apartment compared to living alone?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "74b6cefabfab4ccf08904d7f183b957dfd3a377c874a8e541d98c90dc0652f19",
+        "target": "First, I identify the given quantities:\n- John's old apartment cost: $1200 per month\n- New apartment cost: 40% more than $1200\n- Number of people splitting the new apartment: 3 (John and his two brothers)\n\nTo find the cost of the new apartment, I calculate 40% of $1200 and add it to $1200:\n\\[ 1200 \\times 0.40 = 480 \\]\n\\[ 1200 + 480 = 1680 \\]\n\nThis is the total monthly cost of the new apartment. To find the cost per person, I divide by 3:\n\\[ 1680 \\div 3 = 560 \\]\n\nSo, each person pays $560 per month for the new apartment. Now, I calculate the annual cost for both the old and new apartments:\n- Old apartment annual cost: \\( 1200 \\times 12 = 14400 \\)\n- New apartment annual cost: \\( 560 \\times 12 = 6720 \\)\n\nTo find the annual savings, I subtract the new apartment's annual cost from the old apartment's annual cost:\n\\[ 14400 - 6720 = 7680 \\]\n\nFINAL: 7680",
+        "target_sha256": "e726807a73a0acfe597864480f03abe627c55678a3135783df5e38c454319365"
+      },
+      {
+        "key": "gsm8k-train-2635:new_record",
+        "raw_call_sha256": "f0b62836ec1b8de2e2b991a1885ad916c3d6e24a273a0d6451d3bc3fd0d63a21",
+        "student_prefix": [
+          {
+            "content": "John and his two brothers decide to split the cost of an apartment.  It is 40% more expensive than John's old apartment which costs $1200 per month.  How much does John save per year by splitting the apartment compared to living alone?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- John's old apartment cost: $1200 per month\n- New apartment cost: 40% more than $1200\n- Number of people splitting the new apartment: 3 (John and his two brothers)\n\nTo find the cost of the new apartment, I calculate 40% of $1200 and add it to $1200:\n\\[ 1200 \\times 0.40 = 480 \\]\n\\[ 1200 + 480 = 1680 \\]\n\nThis is the total monthly cost of the new apartment. To find the cost per person, I divide by 3:\n\\[ 1680 \\div 3 = 560 \\]\n\nSo, each person pays $560 per month for the new apartment. Now, I calculate the annual cost for both the old and new apartments:\n- Old apartment annual cost: \\( 1200 \\times 12 = 14400 \\)\n- New apartment annual cost: \\( 560 \\times 12 = 6720 \\)\n\nTo find the annual savings, I subtract the new apartment's annual cost from the old apartment's annual cost:\n\\[ 14400 - 6720 = 7680 \\]\n\nFINAL: 7680",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "fd68826eca75465f014cec74682797e600e91e64f2064a583a808cb4f2c2383b",
+        "target": "Given the problem, I identified the following quantities:\n- John's old apartment cost: $1200 per month\n- New apartment cost: 40% more than $1200\n- Number of people splitting the new apartment: 3\n\nFirst, I calculated the new apartment's monthly cost by finding 40% of $1200 and adding it to the original cost:\n\\[ 1200 \\times 0.40 = 480 \\]\n\\[ 1200 + 480 = 1680 \\]\n\nThis means the new apartment costs $1680 per month. To find the cost per person, I divided the total monthly cost by 3:\n\\[ 1680 \\div 3 = 560 \\]\n\nSo, each person pays $560 per month for the new apartment. Next, I calculated the annual cost for both the old and new apartments:\n- Old apartment annual cost: \\( 1200 \\times 12 = 14400 \\)\n- New apartment annual cost: \\( 560 \\times 12 = 6720 \\)\n\nTo find the annual savings, I subtracted the new apartment's annual cost from the old apartment's annual cost:\n\\[ 14400 - 6720 = 7680 \\]\n\nThis calculation shows that John saves $7680 per year by splitting the new apartment with his brothers compared to living alone in his old apartment. The operations used here are straightforward arithmetic and can be reused in similar problems involving cost sharing and percentage increases.\n\nFINAL: 7680",
+        "target_sha256": "32abd9ef29eeddcff762e9d809a77787d78ac372520f34aa64c0008e75d62579"
+      }
+    ],
+    "task_id": "gsm8k-train-2635"
+  },
+  {
+    "gold": "1080",
+    "question": "Adam earns $40 daily in his job. 10% of his money is deducted as taxes. How much money will Adam have earned after taxes after 30 days of work?",
+    "question_sha256": "2398cd4b7fa92fe4c75f224d56ce352250b97ce24b3e043b0f8e7fb019d2012a",
+    "responses": [
+      {
+        "key": "gsm8k-train-345:rich",
+        "raw_call_sha256": "05f2b810f1b5cac5fda5414eff717493932e49c986616395c94a0a0647882cce",
+        "student_prefix": [
+          {
+            "content": "Adam earns $40 daily in his job. 10% of his money is deducted as taxes. How much money will Adam have earned after taxes after 30 days of work?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "f5182542566756ec731bead317148c66cde3de50dafdaa62db75e91db910016d",
+        "target": "First, I identify the given quantities:\n- Adam earns $40 daily.\n- 10% of his earnings are deducted as taxes.\n- He works for 30 days.\n\nThe unknown is:\n- How much money Adam will have earned after taxes after 30 days.\n\nTo solve this, I'll follow these steps:\n1. Calculate the daily earnings after taxes.\n2. Multiply the daily after-tax earnings by the number of days worked.\n\nStep 1: Calculate the daily earnings after taxes.\n- 10% of $40 is $40 * 0.10 = $4.\n- So, the daily earnings after taxes are $40 - $4 = $36.\n\nStep 2: Calculate the total earnings after taxes for 30 days.\n- $36 per day * 30 days = $1080.\n\nTherefore, Adam will have earned $1080 after taxes after 30 days of work.\n\nFINAL: 1080",
+        "target_sha256": "df924c345249f4c0465ce6deecd4f7cf11298cec6c36ccdfcfc29c3a494c42df"
+      },
+      {
+        "key": "gsm8k-train-345:new_record",
+        "raw_call_sha256": "05a197a976696d57f4234ad151601e61b3d8b547c92de67d1f2a60e99423dbfa",
+        "student_prefix": [
+          {
+            "content": "Adam earns $40 daily in his job. 10% of his money is deducted as taxes. How much money will Adam have earned after taxes after 30 days of work?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Adam earns $40 daily.\n- 10% of his earnings are deducted as taxes.\n- He works for 30 days.\n\nThe unknown is:\n- How much money Adam will have earned after taxes after 30 days.\n\nTo solve this, I'll follow these steps:\n1. Calculate the daily earnings after taxes.\n2. Multiply the daily after-tax earnings by the number of days worked.\n\nStep 1: Calculate the daily earnings after taxes.\n- 10% of $40 is $40 * 0.10 = $4.\n- So, the daily earnings after taxes are $40 - $4 = $36.\n\nStep 2: Calculate the total earnings after taxes for 30 days.\n- $36 per day * 30 days = $1080.\n\nTherefore, Adam will have earned $1080 after taxes after 30 days of work.\n\nFINAL: 1080",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "42122bdd242ca2f54444fa8f3779cf08387947b2383c8fd2f7cb783c6617781f",
+        "target": "Given the problem, I identified the following quantities:\n- Adam earns $40 daily.\n- 10% of his earnings are deducted as taxes.\n- I need to find out how much money Adam will have earned after taxes after 30 days of work.\n\nTo solve this, I first calculated the daily earnings after taxes. I knew that 10% of $40 is $4, so the daily earnings after taxes would be $40 - $4 = $36. This step involved subtracting the tax amount from the daily earnings.\n\nNext, I multiplied the daily after-tax earnings by the number of days worked to find the total earnings after taxes. So, $36 * 30 = $1080. This multiplication step was necessary to determine the total amount earned over the 30-day period.\n\nTo check the result, I verified that the daily earnings after taxes ($36) were correctly calculated and then multiplied by 30 days to get $1080. This check ensures that the operations were performed accurately and that the result makes sense in the context of the problem.\n\nThe operations I used are reusable in similar problems involving percentage deductions and total earnings over a period. I would reuse the steps of calculating the after-tax daily earnings and then multiplying by the number of days for any similar scenario.\n\nFINAL: 1080",
+        "target_sha256": "3a778ccb61b88c0f41ad3a7a2347e5d8a14938a18c42376938b0af8f17207572"
+      }
+    ],
+    "task_id": "gsm8k-train-345"
+  }
+]

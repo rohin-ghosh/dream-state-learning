@@ -1,0 +1,61 @@
+{
+  "admitted_in_revalidated_batch": 14,
+  "affected_target_semantic_after": "PASS",
+  "affected_target_semantic_before": "PASS",
+  "explanation": "The original reader used lowercase we in a span whose raw target begins uppercase We. The original positive judgment was not admitted after this strict failure. Author separately read and evaluated the full question, neutral prefix and target, independently recomputed25, and explicitly authored all six axes and literal evidence. This is not automatic case normalization or reuse of the malformed positive label. Original failure and result are unchanged. Atomic revalidation also releases other already exactly bound original decisions; aggregate bookkeeping changes, with each row still subject to outcome/token/gold constraints.",
+  "extra_reviewer_calls": 0,
+  "key": "gsm8k-train-1077:rich",
+  "kind": "EXPLICIT_NEW_AUTHOR_FULLTEXT_POSITIVE_REASSESSMENT_AFTER_LITERAL_SPAN_REJECTION",
+  "native_calls": 0,
+  "observed_utc": "2026-09-14T23:54:33.432017+00:00",
+  "original_decision": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "we can set up the equation",
+      "0.20x = 5",
+      "x = \\frac{5}{0.20}",
+      "x = 25"
+    ],
+    "first_person": true,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "neutral_prefix_compatible": true,
+    "no_padding": true,
+    "prefix_reason": "The conversion from 80% correct to 20% wrong and the equation use only supplied facts and valid arithmetic, without any hidden feedback claim.",
+    "raw_call_sha256": "67b846e85f58fe9cfab5b25c6ecf8981b5fa901d8c0276ba12a8fea30f1edae7",
+    "reason": "The response substantively describes setting up and solving 0.20x = 5, correctly yielding 25. The numerical equation is a concrete expectation and demonstrates the reusable part-to-rate division method.",
+    "reusable_content": true,
+    "status": "PASS",
+    "student_prefix_sha256": "3a1d5dcfad4236dd41fb06552991ae619198a0c671093c06d039e8722dd735e4",
+    "target_sha256": "7fa6ed405c3706e70a693732b232d2061414691eaa68583e4cd3c638073e638d"
+  },
+  "original_failed_receipt_sha256": "3f1798fcf621d603088f33e73800460c04037d2adfde144b709a478afd29656f",
+  "original_reader_result_sha256": "7335e1186577525f0c636c950bc48130962765ca315dbb3ba25ad20a96659d3c",
+  "other_semantic_labels_changed": false,
+  "other_valid_bound_reviews_released": 15,
+  "packet_sha256": "887bde6ff54bab886f5c70a6499d5c3c26e772e74ffb359ff70a657c696c66bb",
+  "replacement_decision": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "The 5 mistakes represent these 20% of the total items.",
+      "We can set up the equation:",
+      "To find \\( x \\), we solve for \\( x \\):",
+      "x = \\frac{5}{0.20}"
+    ],
+    "first_person": true,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "neutral_prefix_compatible": true,
+    "no_padding": true,
+    "prefix_reason": "The neutral prefix contains the quiz question only. The80% score and5mistakes support the complementary20% and5/0.20=25. No external checker, parent feedback, or generation-guidance event is claimed. Gold25 is independently supported by20correct and5incorrect out of25.",
+    "raw_call_sha256": "67b846e85f58fe9cfab5b25c6ecf8981b5fa901d8c0276ba12a8fea30f1edae7",
+    "reason": "Author read the complete question, raw target and neutral user-only prefix. The target explicitly relates five mistakes to the complementary 20% of all items, owns defining the unknown and solving the resulting equation with plural agency, and divides the wrong-item count by its fraction to obtain25. These clauses interpret the equation at the problem level and explain when the reusable part-to-rate division applies. This is an operation-result expectation during derivation, not a demand for a separate verification. All reasoning is relevant; the substantive ownership is not inferred from a heading or isolated pronoun.",
+    "reusable_content": true,
+    "reviewer": "MATH_SCALE_AUTHOR_MANUAL_FULLTEXT_REASSESSMENT",
+    "status": "PASS",
+    "student_prefix_sha256": "3a1d5dcfad4236dd41fb06552991ae619198a0c671093c06d039e8722dd735e4",
+    "target_sha256": "7fa6ed405c3706e70a693732b232d2061414691eaa68583e4cd3c638073e638d"
+  },
+  "target_bytes_changed": false,
+  "validators_changed": false
+}

@@ -1,0 +1,356 @@
+{
+  "gold": [
+    {
+      "independent_answer": "20",
+      "question_sha256": "7a115d3c0dec9d6847dc78ec8f4a243a58f90c7582ee7cc2b1b75797c0ae0a1c",
+      "reason": "The increase is 102 - 85 = 17, and 17/85 \u00d7 100 = 20%. This unambiguously equals the provided gold 20.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-6617"
+    },
+    {
+      "independent_answer": "6400",
+      "question_sha256": "ef29d8fc1a1c70160f0e14284dfc4fa12273e8278c6e70728db30a5fa9f7823c",
+      "reason": "40 gallons \u00d7 4 quarts per gallon = 160 bottles. Their undiscounted cost is 160 \u00d7 50 = 8000, and paying 80% after the 20% discount gives 8000 \u00d7 0.8 = 6400, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-469"
+    },
+    {
+      "independent_answer": "45",
+      "question_sha256": "7933070ca81f4c58ebc5f5e2620ad442cfd58800f7e4c16b2245c37ffbbdc303",
+      "reason": "A 50% increase on 12 inches gives 12 \u00d7 1.5 = 18 inches. Converting gives 18 \u00d7 2.5 = 45 centimeters, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-3265"
+    },
+    {
+      "independent_answer": "240",
+      "question_sha256": "d7906eaeeb8a499786c2a237f49c922bc9aff02323d0c4160e11e8be43ace11c",
+      "reason": "The invalid count is 0.40 \u00d7 400 = 160, leaving 400 - 160 = 240 valid documents. This equals the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-4586"
+    },
+    {
+      "independent_answer": "60 if the approximate 25% drop is treated as exactly 25%",
+      "question_sha256": "04b757fca0dd9bfbbd2db1a41fca6ca818f38d768c73ad3c46901843981e21b1",
+      "reason": "Treating both rates as exact gives 100 \u00d7 0.75 \u00d7 0.80 = 60. However, the first decrease is stated as \u201cabout 25%,\u201d so the exact final value is underdetermined; gold 60 is only the result of treating that approximation as exact.",
+      "status": "AMBIGUOUS",
+      "task_id": "gsm8k-train-2178"
+    },
+    {
+      "independent_answer": "11000",
+      "question_sha256": "b176ac52d47cc5556d6389125d9fb3f560ea516c269a80f39bb092ff95dccfa7",
+      "reason": "The old car sells for 20000 \u00d7 0.80 = 16000, while the new car costs 30000 \u00d7 0.90 = 27000. The out-of-pocket difference is 27000 - 16000 = 11000, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-177"
+    },
+    {
+      "independent_answer": "104",
+      "question_sha256": "d2024c94ed084a067a9761e81c47012fd0c931784f49c844f173531d1a9d77b5",
+      "reason": "The other 29 students contribute 29 \u00d7 74 = 2146 percentage points. A 75% average for 30 students requires 30 \u00d7 75 = 2250, so William needs 2250 - 2146 = 104. Thus the provided gold 94 is demonstrably wrong; if scores are capped at 100, the target average is unattainable, but 94 still does not suffice.",
+      "status": "INVALID",
+      "task_id": "gsm8k-train-1776"
+    },
+    {
+      "independent_answer": "48",
+      "question_sha256": "f88ee25d22883443b773fb7c4fc7b20a4c0ef6dd9228e80036e5f61c92277cdb",
+      "reason": "The first delivery covers (2/5) \u00d7 200 = 80 homes, leaving 120. Delivering to 60% of those leaves 40% \u00d7 120 = 48 homes, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-5190"
+    }
+  ],
+  "reviews": [
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculate the difference in cost: $102 - $85 = $17.",
+        "$17 / $85 = 0.2.",
+        "0.2 * 100 = 20%."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6617:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target uses only the supplied ticket prices and explicitly verifiable arithmetic. Its first-person calculations are self-performed operations, with no claimed external checker or hidden feedback.",
+      "raw_call_sha256": "85d8035ff53a0d714fafece98f57fbf50e084bb921c28a9e4cc82d4237393b38",
+      "reason": "The response gives a substantive first-person account, correctly computes the $17 increase, divides by the original $85, and converts 0.2 to 20%. The numerical intermediates are checkable and the percent-increase procedure is reusable without filler.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "c10a33376199adb2e32992180fc08d95485a45d27d44b171469dedd9e8782745",
+      "target_sha256": "717049908599e11b82ced98f9233b1218483acd0d68cdd1f59beedc4ec0b4139"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the difference in cost between this year and last year:",
+        "\\[ \\$85 + (0.2 \\times \\$85) = \\$85 + \\$17 = \\$102 \\]",
+        "The operation I would reuse is the formula for percent increase:"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6617:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The record is supported by the supplied prices, the prior neutral solution, and arithmetic displayed in the target. \u201cI checked\u201d describes an internal inverse calculation that is actually shown, not an unsupported external event.",
+      "raw_call_sha256": "417a94e587e698e6a8793c3ed8d883ac2821ae399e920aea7e4775c70a5599df",
+      "reason": "The target correctly computes 102 - 85 = 17 and 17/85 = 0.2, then verifies that adding 20% of 85 returns 102. It provides first-person operations, a concrete inverse check, and a correctly explained reusable percent-increase formula.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "6181297ee03b76f6f98b527d7476f9591905b0b883f5d6567111079ae3e48d63",
+      "target_sha256": "3638224ccd758ffcd309ec9caec9838b23e5689aadf1fd81815a03dbdecbe3b2"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find out how many bottles are needed, I convert gallons to quarts:",
+        "40 gallons * 4 quarts/gallon = 160 quarts.",
+        "$8000 - $1600 = $6400."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-469:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every quantity comes from the question, and the conversion, multiplication, discount, and subtraction are explicitly verifiable. The target claims no external checking or feedback.",
+      "raw_call_sha256": "e4cb2b38664d0a6fa78952d5a21cb07222e84810ee9db843f0a5265cdf0a52d1",
+      "reason": "The first-person solution correctly converts 40 gallons to 160 quarts/bottles, obtains the $8000 pre-discount cost, computes the $1600 discount, and subtracts it to get $6400. These numerical roles are concrete and the unit-conversion/discount sequence is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "b63526774d71a683843ec4b134f6e9e9ec670aff51aed27282a54d9ce1865ae5",
+      "target_sha256": "3b680f67b04010df105f202c4ff57131450e5c9021c5d8aa898e1671c9ece4cf"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I started by converting the hot tub's capacity from gallons to quarts:",
+        "\\[ 160 \\text{ bottles} \\times \\$50/\\text{bottle} = \\$8000 \\]",
+        "\\[ \\$8000 - \\$1600 = \\$6400 \\]"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-469:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's facts and calculations are supported by the question and neutral solution. Its statement that it checked the steps is an internal assessment of operations displayed in full, not a claim about an external checker.",
+      "raw_call_sha256": "7afbc39d0f1b0ede77b5fa2f5cffadb00a3243954bd1e630d1666d742807f2d0",
+      "reason": "The record substantively recounts the conversion and pricing operations in first person. All arithmetic is correct, and the concrete values for bottle count, gross cost, discount, and final cost provide checkable expectations and reusable content.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "7cb594212027aa52d439e97dac651a42ea679e809cca221f486ae495261d8bb8",
+      "target_sha256": "e8e712ab5bcfe347fb537a00c142e8e8b21ea03e0b2bd1e0c6c28a924526eac4"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Next, I calculate the length of Carmen's brush in inches:",
+        "0.5 * 12 = 6 inches",
+        "18 inches * 2.5 centimeters/inch = 45 centimeters"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-3265:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target relies only on the stated length, percentage, and conversion factor. Its statement that the calculation is correct is supportable from the displayed arithmetic and does not invoke an external event.",
+      "raw_call_sha256": "e020c39a184f9e67eaeb5e57b4b908b73630ad53f133c6b5a5787994594646d4",
+      "reason": "The response provides first-person calculation and correctly finds the 6-inch increase, 18-inch new length, and 45-centimeter conversion. The intermediates are task-specific checks, and applying a percentage increase before unit conversion is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "3f0ad309a3ce948e8aaa451276734f166b8aa42e6040ad8ea42919a869dacb9a",
+      "target_sha256": "dceac9cff1fe3b251fc247ea9f077c117594d2a4f41fe525bc8f93f382a1ad70"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the length of Carmen's brush in inches.",
+        "\\[ 12 + 6 = 18 \\text{ inches} \\]",
+        "\\[ 18 \\text{ inches} \\times 2.5 \\text{ cm/inch} = 45 \\text{ cm} \\]"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-3265:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All claims follow from the supplied quantities and explicitly shown arithmetic. The step-by-step verification is internal and reproduced numerically, with no unsupported checker or feedback claim.",
+      "raw_call_sha256": "3df437bb120a650a1bc4a50bbb3e0ffe3ef1720c651acc8f9fa35e10a76eea6f",
+      "reason": "The record gives a first-person operational account, correctly computes 50% of 12, adds the increase, and performs the centimeter conversion. Its numbered verification supplies concrete checks, and it explains when the percentage-and-conversion method can be reused.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "21ede2626c2be13d56d58ec63a615f430741b9ff63403e2459fc3c4c7e4b8221",
+      "target_sha256": "d8662166756bb1fa0c821a0f17025a890da77e71bd8ab3f8e415d9e5749a68c8"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "we need to find the number of valid documents.",
+        "40% of 400 = 0.40 * 400 = 160 invalid documents.",
+        "400 - 160 = 240 valid documents."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-4586:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The arithmetic and factual claims use only the question's quantities. There is no unsupported external event, but the prefix and target do not provide a substantive own operational account.",
+      "raw_call_sha256": "02c371094a6315bc650d4f6cc5d06070101217a78207ec822fa7353ac4f4c75e",
+      "reason": "The calculations are correct and checkable: 40% of 400 is 160 and subtracting gives 240. The subtraction method is reusable and the text is relevant. However, \u201cwe need to find\u201d merely states the goal, while the actual operations are impersonal imperatives (\u201ccalculate,\u201d \u201csubtract\u201d), so first_person fails.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "0896eb64a4ed6159b5090ebf9f1ff10b97524059c7a255f6d0716d0d37a8b20e",
+      "target_sha256": "90560a807e54fab3d5b6385f75d74645d09445be424f1ba28c14e08a6b7f1588"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I knew that 40% of 400 papers were invalid, so I performed the calculation:",
+        "\\[ 400 - 160 = 240 \\]",
+        "\\[ \\frac{240}{400} \\times 100 = 60\\% \\]"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-4586:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The record uses supplied facts and true arithmetic. \u201cTo check this\u201d introduces a self-contained percentage calculation shown in the target, not an unsupported external check.",
+      "raw_call_sha256": "031e61b66a36fb8fac9ef1f8e5e8ef42f738f8c81caaf87ea54ec0e6cb6d1122",
+      "reason": "The response gives a first-person account of computing 160 invalid papers and subtracting them to get 240. It concretely verifies that 240/400 is the complementary 60%, and identifies subtraction of the invalid part as a reusable operation.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "7cee6fc24ba82884bfad1cd5e2570c7fd5a8d2db8ea9e4f72f911136ee90eb18",
+      "target_sha256": "546a91203fc6232687208e845fd5ac4e42bd23c5a2e4bce117faa7aa3cbeb9b7"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "the value dropped by 25%.",
+        "I calculate 20% of $75, which is $15.",
+        "$75 - $15 = $60"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "key": "gsm8k-train-2178:rich",
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The neutral question says the first drop was \u201cabout 25%,\u201d but the target silently restates it as an exact 25% drop and asserts an exact $60 value. That exact claim is not fully supportable from the neutral prefix.",
+      "raw_call_sha256": "fe9d606dfc047df76f242dd31c9cf797c59991cc79ba3616c41f30874c208512",
+      "reason": "The first-person percentage operations are arithmetically correct under an exact-25% assumption, with concrete intermediates and a reusable sequential-depreciation method. However, treating \u201cabout 25%\u201d as exactly 25% without qualification is an unsupported material assumption, so grounded_operations and neutral_prefix_compatible fail.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "8d342abd7e19501fbf6a28003233ef4b6900c694f8ddef5449e7c188940a9277",
+      "target_sha256": "b648e9b6047b98e014d558aa504342b85df4cdea79006bea28198869710d860c"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "The problem states that after six months, the value dropped by 25%",
+        "\\[ 100 \\times 0.75 = 75 \\]",
+        "\\[ 75 \\times 0.80 = 60 \\]"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "key": "gsm8k-train-2178:new_record",
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The prefix only states an approximate first depreciation. The target removes that qualification, falsely says the problem states an exact 25% drop, and presents $60 as exact; its internal check cannot supply the missing exact premise.",
+      "raw_call_sha256": "f422bb8dc5f3b856a46be4be0b1b642fe463312ba70eb408f0321fd07c024f0b",
+      "reason": "The response substantively explains sequential retained-value multiplication in first person, and its 75 and 60 intermediates are checkable. Yet it treats \u201cabout 25%\u201d as an exact rate and even misstates the question as giving exactly 25%, so the material premise and exact outcome are not grounded.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "45566f6fddd5390945ab5a06b47518b4def91aaf055b34cc94c24dbb74b720e0",
+      "target_sha256": "639433846e7278ccf9ab64fef3ef033b244b0f8a03039859e666f4fe5c74cc57"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculate how much James sold his old car for.",
+        "0.80 * $20,000 = $16,000.",
+        "$27,000 - $16,000 = $11,000."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-177:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The sales proceeds, purchase price, and difference are derived solely from the supplied prices and percentages. No external feedback or checker event is claimed.",
+      "raw_call_sha256": "e4334b4eb472432d8e5dcb184a5e9153e444829780f2d7530e86042dcb8b2077",
+      "reason": "The response gives a first-person operational account and correctly calculates $16,000 received, $27,000 paid, and their $11,000 difference. These intermediates are checkable, and subtracting sale proceeds from replacement cost is a specific reusable method.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "5ff3e89b1e8ee65d10e90c99058f1c9bcbb743c9cfb116c21926ac833a7bac5f",
+      "target_sha256": "c8ac0a7741deb3d8cdfb64a9f2920f7ec08bb82d5ddd93c4e66d0c475334515b"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Let's denote William's score as \\( x \\).",
+        "\\[ 29 \\times 74 + x = 30 \\times 75 \\]",
+        "\\[ x = 104 \\]"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-1776:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The equation and arithmetic are supportable using the class size and averages in the neutral question. The target invokes no external checker, but \u201cLet's denote\u201d is an imperative setup rather than an account of personally choosing or applying the substantive operations.",
+      "raw_call_sha256": "756b699ef1cb5299f975e0249b56cc0b3f28a89323584ecbfa5321dd97474c4a",
+      "reason": "The target correctly computes the 29-student total as 2146, the required 30-student total as 2250, and the needed difference as 104. Those are checkable, relevant, reusable average-total operations. It fails first_person because it never substantively recounts its own application of them; \u201cLet's denote\u201d alone is an imperative invitation.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "5bdc6b1a4034d8848a6d0a793aff5a930508ff0c13c79ff36af7e09933647dfe",
+      "target_sha256": "d43b1631e13afc3d31a5d48b54407f0068d9838d5d4fdb2211086f960518618d"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "the number of homes he has already delivered to is \\( \\frac{2}{5} \\times 200 = 80 \\) homes.",
+        "This leaves \\( 200 - 80 = 120 \\) homes remaining.",
+        "This leaves \\( 120 - 72 = 48 \\) homes still needing newspapers."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-5190:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All quantities and operations follow from the neutral question, and there are no unsupported observed events or checker claims. The target is entirely an impersonal account about Kiaan, not the writer's own operational account.",
+      "raw_call_sha256": "f6cc4b784a059f95d9636108fff186c42bb4b9966fa0edab8c3bc6c83f19da78",
+      "reason": "The response correctly computes 80 initially served, 120 remaining, 72 subsequently served, and 48 still remaining. These provide concrete expectations and a reusable remaining-percentage operation. However, it contains no substantive first-person account of choosing or applying those operations.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "844957e0ffafb23b75b9947b4f477417a6ff47ec36f51a25beb5a6e2c5078cb1",
+      "target_sha256": "b499475b79fc937a2b916b94697761afcd00478de0c58caa9137ae6edcf6e268"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the number of homes he had delivered to after the first hour.",
+        "I used the operation \\( 0.60 \\times 120 = 72 \\) homes.",
+        "This check is \\( 80 + 72 + 48 = 200 \\)"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-5190:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target derives every value from the neutral question and shows its conservation check explicitly. The claim \u201cI checked\u201d refers to the displayed true sum, not an external checker or hidden feedback.",
+      "raw_call_sha256": "c3558481ca89f6723ae0b67b902945510ace4d60200c65e3326c2effb65803c4",
+      "reason": "The record gives a substantive first-person account of both delivery stages, correctly obtains 80, 120, 72, and 48, and verifies that 80 + 72 + 48 = 200. It also explains the reusable operation of subtracting a delivered percentage from a remaining quantity.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "7dfce2d7264ea245869837d24e30e27e179baf4bc23cdf2218e5f112bc48573e",
+      "target_sha256": "8ddcf4ee7f2c45d049ed3f71963587979d1ced0abdc74cf02a71047ddfe8112f"
+    }
+  ]
+}

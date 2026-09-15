@@ -1,0 +1,27 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tmp/orch_oracle_repair_20260914_attempt1/source/gpu/orch_oracle_repair_native.py", line 125, in <module>
+    main()
+  File "/tmp/orch_oracle_repair_20260914_attempt1/source/gpu/orch_oracle_repair_native.py", line 54, in main
+    binding['base_verification'] = portable.verify_base_files(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/orch_oracle_repair_20260914_attempt1/source/gpu/astra_portable_actor_bundle.py", line 121, in verify_base_files
+    manifest = read_manifest(bundle, expected_manifest_sha256=expected_manifest_sha256)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/orch_oracle_repair_20260914_attempt1/source/gpu/astra_portable_actor_bundle.py", line 104, in read_manifest
+    require(manifest['source_contract'] == contract(), 'import_source_contract_drift')
+                                           ^^^^^^^^^^
+  File "/tmp/orch_oracle_repair_20260914_attempt1/source/gpu/astra_portable_actor_bundle.py", line 25, in contract
+    return dict(exporter_sha256=source.file_hash(__file__), helpers=collector.helpers(),
+                                                                    ^^^^^^^^^^^^^^^^^^^
+  File "/tmp/orch_oracle_repair_20260914_attempt1/source/gpu/astra_goal_breadth_collection.py", line 35, in helpers
+    guard=source.file_hash(Path(__file__).with_name('astra_goal_breadth_collection_guard.sh')),
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/orch_oracle_repair_20260914_attempt1/source/gpu/astra_experienced_event_microloop.py", line 44, in file_hash
+    with Path(path).open("rb") as stream:
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/orch_oracle_repair_20260914_attempt1/source/gpu/astra_goal_breadth_collection_guard.sh'

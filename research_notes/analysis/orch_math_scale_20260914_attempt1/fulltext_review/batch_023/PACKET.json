@@ -1,0 +1,317 @@
+[
+  {
+    "gold": "22000",
+    "question": "A king gets a crown made that costs $20,000.  He tips the person 10%.  How much did the king pay after the tip?",
+    "question_sha256": "ce9c032c39e811dbda36dedee01976c3e00d541aacc1404dd6f2f1b9bf7027d2",
+    "responses": [
+      {
+        "key": "gsm8k-train-4243:rich",
+        "raw_call_sha256": "72edaca2c30b3bb20f330e7e9cb0fd926775701d36f1384891a27b5727fda65c",
+        "student_prefix": [
+          {
+            "content": "A king gets a crown made that costs $20,000.  He tips the person 10%.  How much did the king pay after the tip?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "1036e3bfd375ecacd9c722146c39e889c4eb65022ae048d03e7f876934f0165c",
+        "target": "The cost of the crown is $20,000. The king tips 10% of this amount. To find the tip, I calculate 10% of $20,000:\n\n\\[ \\text{Tip} = 20,000 \\times \\frac{10}{100} = 20,000 \\times 0.10 = 2,000 \\]\n\nThe total amount paid by the king is the cost of the crown plus the tip:\n\n\\[ \\text{Total} = 20,000 + 2,000 = 22,000 \\]\n\nSo, the king paid $22,000 after the tip.\n\nFINAL: 22000",
+        "target_sha256": "95ee138f33da309951f2262ba61fe665a028cdfb3dc040edd2574527a75f6a2e"
+      },
+      {
+        "key": "gsm8k-train-4243:new_record",
+        "raw_call_sha256": "ffdcd532a7d0bf80efb91a1fd84353362f76d3ba4851d13230003b7004ab1923",
+        "student_prefix": [
+          {
+            "content": "A king gets a crown made that costs $20,000.  He tips the person 10%.  How much did the king pay after the tip?",
+            "role": "user"
+          },
+          {
+            "content": "The cost of the crown is $20,000. The king tips 10% of this amount. To find the tip, I calculate 10% of $20,000:\n\n\\[ \\text{Tip} = 20,000 \\times \\frac{10}{100} = 20,000 \\times 0.10 = 2,000 \\]\n\nThe total amount paid by the king is the cost of the crown plus the tip:\n\n\\[ \\text{Total} = 20,000 + 2,000 = 22,000 \\]\n\nSo, the king paid $22,000 after the tip.\n\nFINAL: 22000",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "2c65db64ead767d9da3da01b5c2b367b719b2ef1a812ce5dc3bde2d999cf4518",
+        "target": "Given the cost of the crown as $20,000 and a tip of 10%, I first identified the cost as the known quantity and the tip percentage as the given rate. To find the tip amount, I calculated 10% of $20,000. Using the formula for percentage, I performed the operation:\n\n\\[ \\text{Tip} = 20,000 \\times \\frac{10}{100} = 20,000 \\times 0.10 = 2,000 \\]\n\nThis calculation showed that the tip was $2,000. To find the total amount paid, I added the tip to the original cost of the crown:\n\n\\[ \\text{Total} = 20,000 + 2,000 = 22,000 \\]\n\nI verified this by ensuring that the total was indeed the sum of the original cost and the calculated tip. The final amount paid by the king was $22,000.\n\nFINAL: 22000",
+        "target_sha256": "d5a287102c0b801c07b1a9476c3b4c3ed6d05b2d89fc33ba534e2795c016ec13"
+      }
+    ],
+    "task_id": "gsm8k-train-4243"
+  },
+  {
+    "gold": "27200",
+    "question": "Steve makes 40000$ a year as a teacher.  He loses 20 percent to taxes, 10 percent to healthcare, and 800$ to local union dues.  How much money does Steve take home?",
+    "question_sha256": "9af2438764eefa05d90556a6635105e2b8bb1bbc6abd39b1d1f6381964ffc14e",
+    "responses": [
+      {
+        "key": "gsm8k-train-5330:rich",
+        "raw_call_sha256": "869e0368e77365b74450a312b60ba9547bd5e7d82c037879e1b3b04f40460b58",
+        "student_prefix": [
+          {
+            "content": "Steve makes 40000$ a year as a teacher.  He loses 20 percent to taxes, 10 percent to healthcare, and 800$ to local union dues.  How much money does Steve take home?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "10b9fc5d761e986bdf25046a3c1f5d09439584f265d3b7948b743addc33a56d2",
+        "target": "First, I identify the given quantities:\n- Steve's annual salary: $40,000\n- Taxes: 20% of $40,000\n- Healthcare: 10% of $40,000\n- Union dues: $800\n\nNext, I calculate the amounts lost to each category:\n- Taxes: 20% of $40,000 = 0.20 * $40,000 = $8,000\n- Healthcare: 10% of $40,000 = 0.10 * $40,000 = $4,000\n\nNow, I sum up the total deductions:\n- Total deductions = Taxes + Healthcare + Union dues\n- Total deductions = $8,000 + $4,000 + $800 = $12,800\n\nFinally, I subtract the total deductions from Steve's annual salary to find his take-home pay:\n- Take-home pay = Annual salary - Total deductions\n- Take-home pay = $40,000 - $12,800 = $27,200\n\nFINAL: 27200",
+        "target_sha256": "616da642413e92ac0b60c5bb66330e72cddc9ac1a1a7f3095dde24c7bdfadfbe"
+      },
+      {
+        "key": "gsm8k-train-5330:new_record",
+        "raw_call_sha256": "43ac0981888ba1959b297fbd5b1967feca6da02813637ff277f2e84041d88c0f",
+        "student_prefix": [
+          {
+            "content": "Steve makes 40000$ a year as a teacher.  He loses 20 percent to taxes, 10 percent to healthcare, and 800$ to local union dues.  How much money does Steve take home?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Steve's annual salary: $40,000\n- Taxes: 20% of $40,000\n- Healthcare: 10% of $40,000\n- Union dues: $800\n\nNext, I calculate the amounts lost to each category:\n- Taxes: 20% of $40,000 = 0.20 * $40,000 = $8,000\n- Healthcare: 10% of $40,000 = 0.10 * $40,000 = $4,000\n\nNow, I sum up the total deductions:\n- Total deductions = Taxes + Healthcare + Union dues\n- Total deductions = $8,000 + $4,000 + $800 = $12,800\n\nFinally, I subtract the total deductions from Steve's annual salary to find his take-home pay:\n- Take-home pay = Annual salary - Total deductions\n- Take-home pay = $40,000 - $12,800 = $27,200\n\nFINAL: 27200",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "f2c107a019f20b6b2316fe5abbdd81670613ebc61544bc4a6105092d14dcc13e",
+        "target": "Given the problem, I identified the following quantities:\n- Steve's annual salary: $40,000\n- Taxes: 20% of $40,000\n- Healthcare: 10% of $40,000\n- Union dues: $800\n\nThe unknown quantity is Steve's take-home pay after all deductions.\n\nFirst, I calculated the amount lost to taxes:\n- Taxes = 20% of $40,000 = 0.20 * $40,000 = $8,000\n\nNext, I calculated the amount lost to healthcare:\n- Healthcare = 10% of $40,000 = 0.10 * $40,000 = $4,000\n\nThen, I summed up all the deductions:\n- Total deductions = Taxes + Healthcare + Union dues = $8,000 + $4,000 + $800 = $12,800\n\nFinally, I subtracted the total deductions from Steve's annual salary to find his take-home pay:\n- Take-home pay = Annual salary - Total deductions = $40,000 - $12,800 = $27,200\n\nTo check the result, I verified that the sum of the individual deductions equals the total deductions and that the take-home pay is correctly calculated by adding the deductions back to the take-home pay and ensuring it equals the original salary.\n\nThe operation I would reuse is the calculation of the take-home pay after deductions, as it directly connects the given quantities to the unknown and can be applied to similar problems involving multiple deductions.\n\nFINAL: 27200",
+        "target_sha256": "ffb446be386377aadbe9dec8b807d7f7de3d073a394ad21475ae649a3badbea6"
+      }
+    ],
+    "task_id": "gsm8k-train-5330"
+  },
+  {
+    "gold": "96",
+    "question": "Julia just adopted a puppy for $20.00 from the local pet shelter.  Before she brings the puppy home, she needs to buy a bag of dog food for $20.00, 2 bags of treats for $2.50 a bag, an assortment box of toys for $15.00, a crate and a bed for $20.00 each, and the collar/leash combo for $15.00.  The store offered Julia a 20% new-customer discount.  How much will Julia spend on the new puppy?",
+    "question_sha256": "8d51a0b16485a316ad51b2d03c403a0c3e396c29422dbcdbaf4425766af9355d",
+    "responses": [
+      {
+        "key": "gsm8k-train-5321:rich",
+        "raw_call_sha256": "b50cfe3129065f9d6af10108103f0b8a4daf901e90446b3b32c0db91e1d10a14",
+        "student_prefix": [
+          {
+            "content": "Julia just adopted a puppy for $20.00 from the local pet shelter.  Before she brings the puppy home, she needs to buy a bag of dog food for $20.00, 2 bags of treats for $2.50 a bag, an assortment box of toys for $15.00, a crate and a bed for $20.00 each, and the collar/leash combo for $15.00.  The store offered Julia a 20% new-customer discount.  How much will Julia spend on the new puppy?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "bf262ce78bf61ce714c7a3aac33b944bc1516483ec404ce6df47ead12c14eb84",
+        "target": "First, let's identify the given quantities:\n- Adoption fee: $20.00\n- Dog food: $20.00\n- Treats (2 bags): $2.50 each\n- Assortment box of toys: $15.00\n- Crate: $20.00\n- Bed: $20.00\n- Collar/leash combo: $15.00\n\nThe total cost before the discount is:\n\\[ 20 + 20 + (2 \\times 2.50) + 15 + 20 + 20 + 15 = 20 + 20 + 5 + 15 + 20 + 20 + 15 = 115 \\]\n\nNow, applying the 20% discount:\n\\[ \\text{Discount amount} = 115 \\times 0.20 = 23 \\]\n\\[ \\text{Total cost after discount} = 115 - 23 = 92 \\]\n\nAdding the adoption fee:\n\\[ \\text{Total cost} = 92 + 20 = 112 \\]\n\nFINAL: 112",
+        "target_sha256": "bf6eb0c6d6a19ba039c1969d5afc7cc7244bd1fa505dae00aa4452b5e2a2510f"
+      }
+    ],
+    "task_id": "gsm8k-train-5321"
+  },
+  {
+    "gold": "2",
+    "question": "Two stores sell the same model of smartphone, but they offer it at different prices and with different discounts. Store A lists the smartphone at a full price of $125 and offers an additional discount of 8%.  Store B lists the same smartphone for $130 and offers an additional discount of 10%.  After both stores' discounts are applied, how much cheaper is store A's smartphone than store B's smartphone?",
+    "question_sha256": "4c3a18f6248d21df628b15707ab66d5f4670f6dadf23983eb98861de5ac5ae2c",
+    "responses": [
+      {
+        "key": "gsm8k-train-2127:rich",
+        "raw_call_sha256": "0960ab3bbb3e800b0cc6974378ec7b4a93126150febb86846a2362e9249178d0",
+        "student_prefix": [
+          {
+            "content": "Two stores sell the same model of smartphone, but they offer it at different prices and with different discounts. Store A lists the smartphone at a full price of $125 and offers an additional discount of 8%.  Store B lists the same smartphone for $130 and offers an additional discount of 10%.  After both stores' discounts are applied, how much cheaper is store A's smartphone than store B's smartphone?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "2ce5c8390dc383e3d322d6cf36d5f9cb49f16d351a348bd976eb2c514f8c2335",
+        "target": "First, I identify the given quantities:\n- Store A: Full price = $125, Discount = 8%\n- Store B: Full price = $130, Discount = 10%\n\nNext, I calculate the final price for each store after applying the discounts.\n\nFor Store A:\n1. Calculate the discount amount: \\( 125 \\times 0.08 = 10 \\)\n2. Subtract the discount from the full price: \\( 125 - 10 = 115 \\)\n\nFor Store B:\n1. Calculate the discount amount: \\( 130 \\times 0.10 = 13 \\)\n2. Subtract the discount from the full price: \\( 130 - 13 = 117 \\)\n\nNow, I find the difference in price between Store B and Store A:\n\\( 117 - 115 = 2 \\)\n\nFINAL: 2",
+        "target_sha256": "71a58f129bf6420f5cb0011ff5bfd8d7af7f5f7bb605d973bb65a392ea110557"
+      },
+      {
+        "key": "gsm8k-train-2127:new_record",
+        "raw_call_sha256": "e315cfd1b27be7bf4478235b7b19eff80271a36f88d521903ad6b274602c401a",
+        "student_prefix": [
+          {
+            "content": "Two stores sell the same model of smartphone, but they offer it at different prices and with different discounts. Store A lists the smartphone at a full price of $125 and offers an additional discount of 8%.  Store B lists the same smartphone for $130 and offers an additional discount of 10%.  After both stores' discounts are applied, how much cheaper is store A's smartphone than store B's smartphone?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Store A: Full price = $125, Discount = 8%\n- Store B: Full price = $130, Discount = 10%\n\nNext, I calculate the final price for each store after applying the discounts.\n\nFor Store A:\n1. Calculate the discount amount: \\( 125 \\times 0.08 = 10 \\)\n2. Subtract the discount from the full price: \\( 125 - 10 = 115 \\)\n\nFor Store B:\n1. Calculate the discount amount: \\( 130 \\times 0.10 = 13 \\)\n2. Subtract the discount from the full price: \\( 130 - 13 = 117 \\)\n\nNow, I find the difference in price between Store B and Store A:\n\\( 117 - 115 = 2 \\)\n\nFINAL: 2",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "f985a5e8d378f587c03a6e700a46360465f632cd65ae1cc9fc8ffaaa92b8f7b8",
+        "target": "Given the full price and discount for two stores, I first identified the quantities:\n- Store A: Full price = $125, Discount = 8%\n- Store B: Full price = $130, Discount = 10%\n\nTo find the final price after the discount, I used the operation of calculating the discount amount and then subtracting it from the full price. For Store A, I calculated:\n1. Discount amount: \\( 125 \\times 0.08 = 10 \\)\n2. Final price: \\( 125 - 10 = 115 \\)\n\nFor Store B, I performed the same operation:\n1. Discount amount: \\( 130 \\times 0.10 = 13 \\)\n2. Final price: \\( 130 - 13 = 117 \\)\n\nNext, I found the difference between the final prices of Store B and Store A:\n\\( 117 - 115 = 2 \\)\n\nThis difference indicates that Store A's smartphone is $2 cheaper than Store B's smartphone after the discounts are applied. I verified this by rechecking the calculations and ensuring the operations were correctly applied.\n\nThe operation I would reuse is the same: calculate the discount amount by multiplying the full price by the discount rate, and then subtract this amount from the full price. This operation is reusable for any similar problem involving discounts and price comparisons.\n\nFINAL: 2",
+        "target_sha256": "f2c66eee89f1406f46ed9342680405f2fab95acd8877fbf456a5002c2e8783b7"
+      }
+    ],
+    "task_id": "gsm8k-train-2127"
+  },
+  {
+    "gold": "2475",
+    "question": "Johnny TV makes 25 percent more movies than L&J Productions each year. If  L&J Productions produces 220 movies in a year, how many movies does the two production companies produce in five years combined?",
+    "question_sha256": "f01401bc69140b14a7b4551825ae06d5e8e97a5f5566fdac739695b87ae3415f",
+    "responses": [
+      {
+        "key": "gsm8k-train-961:rich",
+        "raw_call_sha256": "31bf5102d9c150bcec49f899af3c2370d4595d3e13d830f00b17b99b473de07e",
+        "student_prefix": [
+          {
+            "content": "Johnny TV makes 25 percent more movies than L&J Productions each year. If  L&J Productions produces 220 movies in a year, how many movies does the two production companies produce in five years combined?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "0744ce92deb22a7baa7c490478c5b35a13ec1e7f13637c69af7afbf284246d2e",
+        "target": "Given:\n- L&J Productions produces 220 movies in a year.\n- Johnny TV makes 25% more movies than L&J Productions each year.\n\nFirst, calculate how many movies Johnny TV produces in a year:\n- 25% of 220 is \\( 0.25 \\times 220 = 55 \\).\n- Therefore, Johnny TV produces \\( 220 + 55 = 275 \\) movies in a year.\n\nNext, find the total number of movies produced by both companies in one year:\n- L&J Productions: 220 movies.\n- Johnny TV: 275 movies.\n- Combined: \\( 220 + 275 = 495 \\) movies in a year.\n\nNow, calculate the total number of movies produced in five years:\n- \\( 495 \\times 5 = 2475 \\).\n\nFINAL: 2475",
+        "target_sha256": "b33dd2f4cae36ebadec4ea6bda5e122666eec3f62eb5859e7323f0aa43f2a8db"
+      },
+      {
+        "key": "gsm8k-train-961:new_record",
+        "raw_call_sha256": "08017e4052e714c7d9b3f9878c55fcb48583fc1fafc8546045fc759158dbb5f0",
+        "student_prefix": [
+          {
+            "content": "Johnny TV makes 25 percent more movies than L&J Productions each year. If  L&J Productions produces 220 movies in a year, how many movies does the two production companies produce in five years combined?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- L&J Productions produces 220 movies in a year.\n- Johnny TV makes 25% more movies than L&J Productions each year.\n\nFirst, calculate how many movies Johnny TV produces in a year:\n- 25% of 220 is \\( 0.25 \\times 220 = 55 \\).\n- Therefore, Johnny TV produces \\( 220 + 55 = 275 \\) movies in a year.\n\nNext, find the total number of movies produced by both companies in one year:\n- L&J Productions: 220 movies.\n- Johnny TV: 275 movies.\n- Combined: \\( 220 + 275 = 495 \\) movies in a year.\n\nNow, calculate the total number of movies produced in five years:\n- \\( 495 \\times 5 = 2475 \\).\n\nFINAL: 2475",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "f95fd1aea452fd67db1fbff272933e5df42bdebd734db16a097f015974915808",
+        "target": "Given that L&J Productions produces 220 movies in a year, and Johnny TV makes 25% more movies than L&J Productions, I first calculated the number of movies Johnny TV produces in a year. I knew that 25% of 220 is \\(0.25 \\times 220 = 55\\). Therefore, Johnny TV produces \\(220 + 55 = 275\\) movies in a year. \n\nNext, I added the number of movies produced by both companies in a year: \\(220 + 275 = 495\\). This sum represents the total number of movies produced by both companies in one year. To find the total number of movies produced in five years, I multiplied 495 by 5, resulting in \\(495 \\times 5 = 2475\\).\n\nTo verify the result, I checked the calculation step-by-step: the number of movies produced by L&J Productions in a year is 220, and Johnny TV produces 275 movies in a year, making a total of 495 movies per year. Multiplying 495 by 5 gives 2475, which matches the problem's requirement.\n\nThe operations I used are straightforward arithmetic: calculating percentages, addition, and multiplication. These operations are reusable in similar problems involving percentage increases and total production over multiple years.\n\nFINAL: 2475",
+        "target_sha256": "02aa361b8ccc859e5118839ac560481213ad5a8895429f0f2c0aecc202d207bd"
+      }
+    ],
+    "task_id": "gsm8k-train-961"
+  },
+  {
+    "gold": "384",
+    "question": "Bob ordered 80 packs of Greek yogurt from Costco to use for the month. However, when the delivery arrived, he realized 40% of the packs were expired. He decided to return those packs. If each pack was $12, how much was Bob refunded for the expired product?",
+    "question_sha256": "12bf06d59b5e847a5a5523c200a83bd8064a4ad32367c93dfe4c7873c9c4243a",
+    "responses": [
+      {
+        "key": "gsm8k-train-2070:rich",
+        "raw_call_sha256": "b8085aecda55d222e02e1194ea812e2d9b447542effe7060953d1357e5b727fc",
+        "student_prefix": [
+          {
+            "content": "Bob ordered 80 packs of Greek yogurt from Costco to use for the month. However, when the delivery arrived, he realized 40% of the packs were expired. He decided to return those packs. If each pack was $12, how much was Bob refunded for the expired product?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "675e681e81f6148da785ed107e3f6510309758e3f2d902321560980222387317",
+        "target": "First, I identify the given quantities:\n- Total packs ordered: 80\n- Percentage of expired packs: 40%\n- Price per pack: $12\n\nNext, I calculate the number of expired packs:\n- Expired packs = Total packs * Percentage of expired packs\n- Expired packs = 80 * 0.40 = 32 packs\n\nThen, I calculate the refund amount:\n- Refund amount = Number of expired packs * Price per pack\n- Refund amount = 32 * $12 = $384\n\nFinally, I check the result:\n- The calculation is correct as 32 packs at $12 each indeed equals $384.\n\nFINAL: 384",
+        "target_sha256": "c8fdbb7097fc02a8f37c98c2cb782aa3a91b3e8dd3a9bb20f002e4a5c84f70fb"
+      },
+      {
+        "key": "gsm8k-train-2070:new_record",
+        "raw_call_sha256": "fff61eaa330689953110fae00341ceee3cfb850ce309fb1c17a5fcf5ef9ff37c",
+        "student_prefix": [
+          {
+            "content": "Bob ordered 80 packs of Greek yogurt from Costco to use for the month. However, when the delivery arrived, he realized 40% of the packs were expired. He decided to return those packs. If each pack was $12, how much was Bob refunded for the expired product?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Total packs ordered: 80\n- Percentage of expired packs: 40%\n- Price per pack: $12\n\nNext, I calculate the number of expired packs:\n- Expired packs = Total packs * Percentage of expired packs\n- Expired packs = 80 * 0.40 = 32 packs\n\nThen, I calculate the refund amount:\n- Refund amount = Number of expired packs * Price per pack\n- Refund amount = 32 * $12 = $384\n\nFinally, I check the result:\n- The calculation is correct as 32 packs at $12 each indeed equals $384.\n\nFINAL: 384",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "7e2d980f293260c1f95010aa7a3feb1a8f73e51bfa76d27f7a606da5fbb74098",
+        "target": "Given the problem, I identified the key quantities and the task at hand. The quantities were:\n- Total packs ordered: 80\n- Percentage of expired packs: 40%\n- Price per pack: $12\n\nThe unknown I needed to find was the refund amount for the expired packs. To solve this, I first calculated the number of expired packs by multiplying the total number of packs by the percentage of expired packs. This operation is:\n\\[ \\text{Expired packs} = 80 \\times 0.40 = 32 \\]\n\nNext, I calculated the refund amount by multiplying the number of expired packs by the price per pack:\n\\[ \\text{Refund amount} = 32 \\times 12 = 384 \\]\n\nTo verify the result, I checked the calculation step-by-step. I confirmed that 40% of 80 is indeed 32, and that 32 packs at $12 each equals $384. This check aligns with the problem statement and confirms the accuracy of the result.\n\nThe operation I would reuse is the calculation of the number of expired packs and the subsequent calculation of the refund amount. This method can be applied to similar problems involving percentages and pricing.\n\nFINAL: 384",
+        "target_sha256": "ee33286cdfed17ce9eb833dba0d9dcd24d0e208fea2e2feaaf3d16bd3b637d2e"
+      }
+    ],
+    "task_id": "gsm8k-train-2070"
+  },
+  {
+    "gold": "680",
+    "question": "Donald went to a computer store. He saw a 15% reduction in the price of the laptop he wants to buy. If the laptop originally costs $800, how much will he pay for the laptop?",
+    "question_sha256": "5d802cc7a88c59e529f4f9fa212fe8318ed3ecce70e443b77237c3465a35d85f",
+    "responses": [
+      {
+        "key": "gsm8k-train-5465:rich",
+        "raw_call_sha256": "24f1bf47cfaa7bc749778ecdd0e854339ad39ddfd7e926e2779e28521234042c",
+        "student_prefix": [
+          {
+            "content": "Donald went to a computer store. He saw a 15% reduction in the price of the laptop he wants to buy. If the laptop originally costs $800, how much will he pay for the laptop?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "af96ee014c8e8341dece3ac9de7fdf31e603bd53cb88036941e83cffabcdd33f",
+        "target": "The original price of the laptop is $800. There's a 15% reduction in price. To find the reduction amount, I calculate 15% of $800:\n\n15% of $800 = 0.15 * $800 = $120\n\nThis means the price is reduced by $120. To find the new price, I subtract the reduction from the original price:\n\n$800 - $120 = $680\n\nSo, Donald will pay $680 for the laptop.\n\nFINAL: 680",
+        "target_sha256": "122726857bd4b7f9e4e50ccf868c31686888c06a29d57188abf26b5a5d5aba92"
+      },
+      {
+        "key": "gsm8k-train-5465:new_record",
+        "raw_call_sha256": "aca09810ee1183106e8c8fc2867bc74a6bc003e674cfb46320f74a22afb93db0",
+        "student_prefix": [
+          {
+            "content": "Donald went to a computer store. He saw a 15% reduction in the price of the laptop he wants to buy. If the laptop originally costs $800, how much will he pay for the laptop?",
+            "role": "user"
+          },
+          {
+            "content": "The original price of the laptop is $800. There's a 15% reduction in price. To find the reduction amount, I calculate 15% of $800:\n\n15% of $800 = 0.15 * $800 = $120\n\nThis means the price is reduced by $120. To find the new price, I subtract the reduction from the original price:\n\n$800 - $120 = $680\n\nSo, Donald will pay $680 for the laptop.\n\nFINAL: 680",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "5592c9c80276c7fde3950ddc3894ac151c7de6fbbde0c2eb26fcb42ac542c2d9",
+        "target": "Given that the original price of the laptop is $800 and there is a 15% reduction, I first identified the quantities involved: the original price ($800) and the percentage reduction (15%). To find the reduction amount, I calculated 15% of $800. This involved converting the percentage to a decimal (0.15) and then multiplying it by the original price:\n\n0.15 * $800 = $120\n\nThis calculation showed that the price reduction is $120. To find the new price, I subtracted the reduction from the original price:\n\n$800 - $120 = $680\n\nI then checked this result by confirming that the reduction of $120 from the original $800 indeed equals $680. This check was based on the arithmetic operations performed and the logical steps taken to arrive at the final price.\n\nThe operation I would reuse is the calculation of a percentage reduction, which can be applied to any similar problem where a price reduction is given as a percentage of the original price. This operation is reusable because it follows a consistent mathematical process that can be applied to various scenarios.\n\nFINAL: 680",
+        "target_sha256": "06b0959b2f165a4a9e3d005fe7a0b8b88f9d2da59cf6aa0aaa270323a03636bd"
+      }
+    ],
+    "task_id": "gsm8k-train-5465"
+  },
+  {
+    "gold": "480",
+    "question": "Milly is making feather boas for her dance team. Each flamingo has 20 tail feathers, and it's only safe to pluck 25% of their tail feathers at one time. If Milly needs to make 12 boas, and each boa has 200 feathers, how many flamingoes does she need to harvest?",
+    "question_sha256": "4f5a27d54d95158318f2cc3f58b52c7dfb5993e0c37144170d3482720e2692fe",
+    "responses": [
+      {
+        "key": "gsm8k-train-5729:rich",
+        "raw_call_sha256": "f4e26fb1448ef192d2d0a0c1da35bbba364870da46a00be102d35511e1afb525",
+        "student_prefix": [
+          {
+            "content": "Milly is making feather boas for her dance team. Each flamingo has 20 tail feathers, and it's only safe to pluck 25% of their tail feathers at one time. If Milly needs to make 12 boas, and each boa has 200 feathers, how many flamingoes does she need to harvest?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "6f580b51ad723f455d6350625b54a1793b716c319bbc83a541ce0d360fa2e131",
+        "target": "First, I calculate the total number of feathers needed for 12 boas. Each boa requires 200 feathers, so:\n\\[ 12 \\text{ boas} \\times 200 \\text{ feathers/boa} = 2400 \\text{ feathers} \\]\n\nNext, I determine how many feathers can be safely plucked from one flamingo. Since only 25% of a flamingo's 20 tail feathers can be plucked:\n\\[ 20 \\text{ feathers} \\times 0.25 = 5 \\text{ feathers} \\]\n\nNow, I find out how many flamingoes are needed to get 2400 feathers, given that each flamingo provides 5 feathers:\n\\[ \\frac{2400 \\text{ feathers}}{5 \\text{ feathers/flamingo}} = 480 \\text{ flamingoes} \\]\n\nSo, Milly needs to harvest feathers from 480 flamingoes. \n\nFINAL: 480",
+        "target_sha256": "98611ba43fee6764399e9e83b9944cc35b94c9867af15a3fc018f01834c3f7d5"
+      },
+      {
+        "key": "gsm8k-train-5729:new_record",
+        "raw_call_sha256": "75d4813c6d5da15c3ea5966440cb4af3db281313214e3755fd2824f1be4f0662",
+        "student_prefix": [
+          {
+            "content": "Milly is making feather boas for her dance team. Each flamingo has 20 tail feathers, and it's only safe to pluck 25% of their tail feathers at one time. If Milly needs to make 12 boas, and each boa has 200 feathers, how many flamingoes does she need to harvest?",
+            "role": "user"
+          },
+          {
+            "content": "First, I calculate the total number of feathers needed for 12 boas. Each boa requires 200 feathers, so:\n\\[ 12 \\text{ boas} \\times 200 \\text{ feathers/boa} = 2400 \\text{ feathers} \\]\n\nNext, I determine how many feathers can be safely plucked from one flamingo. Since only 25% of a flamingo's 20 tail feathers can be plucked:\n\\[ 20 \\text{ feathers} \\times 0.25 = 5 \\text{ feathers} \\]\n\nNow, I find out how many flamingoes are needed to get 2400 feathers, given that each flamingo provides 5 feathers:\n\\[ \\frac{2400 \\text{ feathers}}{5 \\text{ feathers/flamingo}} = 480 \\text{ flamingoes} \\]\n\nSo, Milly needs to harvest feathers from 480 flamingoes. \n\nFINAL: 480",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "be96aed9dd3b18add5373ff2ee2c8820f0847633efbbc7c92346a4e6a8245977",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- Each flamingo has 20 tail feathers.\n- Only 25% of these feathers can be plucked at one time.\n- Milly needs to make 12 boas, each with 200 feathers.\n- The unknown is the number of flamingoes needed.\n\nFirst, I calculated the number of feathers that can be plucked from one flamingo:\n\\[ 20 \\text{ feathers} \\times 0.25 = 5 \\text{ feathers} \\]\n\nNext, I determined the total number of feathers needed:\n\\[ 12 \\text{ boas} \\times 200 \\text{ feathers/boa} = 2400 \\text{ feathers} \\]\n\nThen, I found out how many flamingoes are required to get 2400 feathers:\n\\[ \\frac{2400 \\text{ feathers}}{5 \\text{ feathers/flamingo}} = 480 \\text{ flamingoes} \\]\n\nTo verify, I checked the calculation by ensuring the total feathers plucked from 480 flamingoes equals 2400:\n\\[ 480 \\text{ flamingoes} \\times 5 \\text{ feathers/flamingo} = 2400 \\text{ feathers} \\]\n\nThis matches the required number of feathers for the 12 boas. The operations used are straightforward arithmetic and are reusable for similar problems involving proportional calculations.\n\nFINAL: 480",
+        "target_sha256": "ca0b8217e01b6c655f0639f4af8ff4a2114be26b0765e486b31cb1e31951688f"
+      }
+    ],
+    "task_id": "gsm8k-train-5729"
+  }
+]

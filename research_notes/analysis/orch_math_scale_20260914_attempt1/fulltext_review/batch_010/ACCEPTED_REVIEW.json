@@ -1,0 +1,339 @@
+{
+  "gold": {
+    "gsm8k-train-1166": {
+      "independent_answer": "34",
+      "question_sha256": "01be408bc8e10e093abcceaaf5294decf293ea7396fdb6691b48138efab33847",
+      "reason": "Day one is 0.30\u00d770=21 crickets. Day two is 21\u22126=15, leaving 70\u221221\u221215=34 for day three, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-1501": {
+      "independent_answer": "36000",
+      "question_sha256": "dc2dfbc611075ec42b23b20c56bbc631fb5b0f0fb68907525fcc34cd6a2a000e",
+      "reason": "After unloading 10%, 50000\u00d70.90=45000 pounds remain. Removing 20% of that leaves 45000\u00d70.80=36000 pounds, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-2635": {
+      "independent_answer": "7680 or 13440",
+      "question_sha256": "cac01ae05004338ccb62b11cf057ee93b1b4675f77d88e8e79d87c09c5217425",
+      "reason": "The new rent is 1200\u00d71.40=1680 dollars and John's one-third share is 560. Comparing that share with his old 1200-dollar solo rent gives (1200\u2212560)\u00d712=7680, but comparing it with living alone in the new 1680-dollar apartment gives (1680\u2212560)\u00d712=13440. The question does not explicitly identify which solo arrangement is the comparison.",
+      "status": "AMBIGUOUS"
+    },
+    "gsm8k-train-2907": {
+      "independent_answer": "105",
+      "question_sha256": "61a7c083125e612bfda74e966504bfbc7c1d9ca2ff50e45813885cbe8c9d47cc",
+      "reason": "The non-pine share is 100%\u221270%=30%, and 0.30\u00d7350=105, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-3245": {
+      "independent_answer": "12690",
+      "question_sha256": "6c16023e280b97f0065afa3a7afb8c7b11f2bd8e2d623bb3feedededfee6c44f",
+      "reason": "There are 30\u00d790=2700 twigs. The 30% group has 810 twigs and 810\u00d74=3240 leaves; the remaining 1890 twigs have 1890\u00d75=9450 leaves. Thus 3240+9450=12690, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-345": {
+      "independent_answer": "1080",
+      "question_sha256": "2398cd4b7fa92fe4c75f224d56ce352250b97ce24b3e043b0f8e7fb019d2012a",
+      "reason": "Adam keeps 90% of 40 dollars, or 36 dollars per day. Over 30 days he earns 36\u00d730=1080 dollars after tax, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-5682": {
+      "independent_answer": "300",
+      "question_sha256": "3e3bc84135b6137250666ec929aefe35975532dabae9a3a409e841a005773c75",
+      "reason": "Sales total 2\u00d7700+6\u00d750+2\u00d7150=1400+300+300=2000 dollars. The commission is 0.15\u00d72000=300, equal to the gold.",
+      "status": "VALID"
+    },
+    "gsm8k-train-6450": {
+      "independent_answer": "24960",
+      "question_sha256": "be5f1145c72e1072b357c2193dcad0852da0c48d5d6336b6fd93335938ed0f2a",
+      "reason": "Weekly gross pay is 15\u00d740=600 dollars. Keeping 80% gives 480 dollars weekly, and 480\u00d752=24960 dollars annually, equal to the gold.",
+      "status": "VALID"
+    }
+  },
+  "reviews": {
+    "gsm8k-train-1166:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I then broke down the consumption over the three days",
+        "\\[ 21 + 15 + 34 = 70 \\]"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's calculations and inverse total check are supported by the supplied problem and solved history; \u201cI checked\u201d describes an explicit self-check, not an external event.",
+      "raw_call_sha256": "1d4b0fa0002240c6dd2c3c915d723433bd602fddeecb933509a7197d2b94c1cb",
+      "reason": "The response correctly computes 21 and 15 for the first two days, subtracts them from 70 to obtain 34, and independently verifies 21+15+34=70. It explains when the remainder operation is reusable and contains no material filler.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "4a2f65e4465d54cfd4bb88ca9e715b63a1739924d5cad1e197022304e46d6146",
+      "target_sha256": "99ed1571bb0c73068ca1835a5f957020d1d296a5fc7fd63977454cf199035fe2"
+    },
+    "gsm8k-train-1166:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Given that the gecko eats 70 crickets every three days, we can break down the consumption over the three days.",
+        "70 - (21 + 15) = 70 - 36 = 34 crickets."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The plural first-person calculation uses only the supplied total, percentage, and six-cricket difference; no unsupported observation or feedback is invoked.",
+      "raw_call_sha256": "a1989c3d74f37d07cf003a8c38f312d006b98d22b79ef7b2adc97d22f0ea8af3",
+      "reason": "The response uses a substantive plural first-person account and correctly derives day one as 21, day two as 15, and the remainder as 34. The displayed remainder computation is a concrete expectation and a reusable remaining-total operation.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "7267dd477c1c74abca9d008db1084559d0637da8cb7a5119a58e27be95b364b2",
+      "target_sha256": "e6f7de51981281f7d99e7d1e57680729f997d1927f5ee3e3b86b8b4ae343eaa6"
+    },
+    "gsm8k-train-1501:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I calculated 20% of the remaining 45,000 pounds, which is 9,000 pounds.",
+        "The key is to apply the percentage to the correct remaining quantity at each step."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's first-person calculations and self-check use only supplied facts and valid arithmetic; no external checker or hidden instruction is invoked.",
+      "raw_call_sha256": "311899cf342700a1449f945891e01c25c814cb020050645e48f382f60555dc94",
+      "reason": "The response correctly computes the first removal as 5000, the remainder as 45000, the second removal as 9000, and the final load as 36000. Those values provide concrete checks, and it clearly explains the reusable need to apply each later rate to the current remainder.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "29ae04d1dcde8b0275f689336ce7eeb1b0db8e5f78f22f5e3658fb00fef11ed2",
+      "target_sha256": "9fac2f94e2a07e3e9119c063fe4f7ba81c26138ade6ddc786d658a5f85420a81"
+    },
+    "gsm8k-train-1501:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "10% of 50,000 is 5,000 pounds.",
+        "20% of 45,000 is 9,000 pounds."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every quantity and staged percentage operation follows directly from the supplied question and shown arithmetic; no hidden feedback or observed event is claimed.",
+      "raw_call_sha256": "1425a21885d9f295f87249a4604f252e06837fb94e2f919ca2e31d4eed128d94",
+      "reason": "The target correctly leaves 45000 after the first unloading and then 36000 after removing 20% of that remainder. The intermediate weights are concrete expectations and show the reusable staged-percentage method. It fails first_person because the entire account is impersonal, with no substantive self-attribution of choosing, applying, or checking an operation.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "e1a494661386a5eb4ba4569003a4ff74855604e84743e2f5a20a95761c811951",
+      "target_sha256": "f21d7af272464793a54a9cf598c634aaba629f10580cfe812194d926875b1172"
+    },
+    "gsm8k-train-2635:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the new apartment's monthly cost by finding 40% of $1200 and adding it to the original cost:",
+        "This calculation shows that John saves $7680 per year by splitting the new apartment with his brothers compared to living alone in his old apartment."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target explicitly adopts the contextually supportable old-apartment comparison and derives its figures from the supplied facts and prior solution, without invoking hidden feedback.",
+      "raw_call_sha256": "f0b62836ec1b8de2e2b991a1885ad916c3d6e24a273a0d6451d3bc3fd0d63a21",
+      "reason": "For the stated comparison with living alone in the old apartment, the calculations 1200\u00d71.40=1680, 1680\u00f73=560, and (1200\u2212560)\u00d712=7680 are correct. The target gives a substantive personal account, concrete expected values, and a reusable cost-sharing and percentage-increase procedure.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "fd68826eca75465f014cec74682797e600e91e64f2064a583a808cb4f2c2383b",
+      "target_sha256": "32abd9ef29eeddcff762e9d809a77787d78ac372520f34aa64c0008e75d62579"
+    },
+    "gsm8k-train-2635:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "To find the cost of the new apartment, I calculate 40% of $1200 and add it to $1200:",
+        "\\[ 14400 - 6720 = 7680 \\]"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The chosen comparison with John's old solo apartment is a supportable contextual reading, and all numerical claims are derived from the supplied rents and three-person split; no external event is claimed.",
+      "raw_call_sha256": "f149db82ae39c98f9e4fce49445a89fac51c9df80c2d204f838bd69cc855fabd",
+      "reason": "Under the target's supportable reading that \u201cliving alone\u201d means John's old apartment, it correctly computes the new rent as 1680, John's share as 560, the annual costs as 14400 and 6720, and savings as 7680. The response personally applies and checks reusable percentage-increase, equal-split, and cost-difference operations.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "74b6cefabfab4ccf08904d7f183b957dfd3a377c874a8e541d98c90dc0652f19",
+      "target_sha256": "e726807a73a0acfe597864480f03abe627c55678a3135783df5e38c454319365"
+    },
+    "gsm8k-train-2907:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Step 1: Calculate the number of pine trees.",
+        "Total trees - Pine trees = 350 - 245 = 105 trees that are not pine trees."
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The numerical claims use only the supplied total and pine percentage and are directly verifiable; there is no unsupported external event.",
+      "raw_call_sha256": "bcfcf0f4950f9b73b095915400591515eedf89fcff1c277e64c8103068def09f",
+      "reason": "The arithmetic is correct: 70% of 350 is 245 and 350\u2212245=105, providing a concrete numerical expectation and reusable complement/subtraction method. However, the full target is an impersonal step recipe and never gives a substantive first-person account of applying or checking the operations.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "e0989140f67b7e2611e9b6c20b1793ad27e367285997e56180f4e85efd6de19b",
+      "target_sha256": "f794bc0bfa9459cd8e29aeb91cad0965d0f5d2c553d76074efb101c71ee2d1d6"
+    },
+    "gsm8k-train-3245:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the total number of twigs:",
+        "\\[ \\text{Total leaves} = 3240 + 9450 = 12690 \\]"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person calculations and self-check are supported by the question, the supplied solved history, and verifiable arithmetic; the target does not claim an external checker event.",
+      "raw_call_sha256": "cc46ffb897f49d6c4444c783372fa81b7724b5b89c718db5762d0358fe3adeb3",
+      "reason": "The target correctly computes 30\u00d790=2700, the 30%/70% partition, and 3240+9450=12690. Its numerical intermediates are concrete checks, and it identifies weighted distribution as the reusable method without irrelevant padding.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "8fdd877f278f0ab5231b6b64ef4caed5440a847492e343af0c333c5160163bc5",
+      "target_sha256": "e62bb2b3d9a7279f325fa7e66bbdd388990dad9f0f92e8a5064655bb7008d1f6"
+    },
+    "gsm8k-train-3245:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculate the total number of twigs on the tree.",
+        "Adding these together, the total number of leaves is \\(3240 + 9450 = 12690\\)."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every claim follows from the supplied tree quantities and explicitly shown arithmetic; no external event or hidden feedback is claimed.",
+      "raw_call_sha256": "2dddd7bd23da6d0395671d59ec380a2be0b5139273735774e41cc19510dbeeab",
+      "reason": "The response personally narrates the calculation, correctly gets 2700 twigs, partitions them into 810 and 1890, and checks the expected leaf contributions through the concrete sum 3240+9450=12690. The weighted-group procedure is reusable and the text stays relevant.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "d9aaf3a65a15cda261c46c14c39ff981f4a6127f1223e8936585a0a58d645f31",
+      "target_sha256": "5775bf4694b6a27ddee5696c486035313ad1a307acb98efc8e12fc98276aa0e6"
+    },
+    "gsm8k-train-345:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I knew that 10% of $40 is $4, so the daily earnings after taxes would be $40 - $4 = $36.",
+        "So, $36 * 30 = $1080."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person calculations and arithmetic self-check are supported by the question and supplied solved history; no external checker event is asserted.",
+      "raw_call_sha256": "05a197a976696d57f4234ad151601e61b3d8b547c92de67d1f2a60e99423dbfa",
+      "reason": "The target correctly obtains 4 dollars tax, 36 dollars after tax per day, and 36\u00d730=1080 dollars total. It supplies concrete numerical expectations and explains why the deduction-and-multiplication sequence transfers to similar earnings problems.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "42122bdd242ca2f54444fa8f3779cf08387947b2383c8fd2f7cb783c6617781f",
+      "target_sha256": "3a778ccb61b88c0f41ad3a7a2347e5d8a14938a18c42376938b0af8f17207572"
+    },
+    "gsm8k-train-345:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "10% of $40 is $40 * 0.10 = $4.",
+        "$36 per day * 30 days = $1080."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's first-person steps use only the daily wage, tax rate, and work duration supplied in the question; it claims no outside confirmation.",
+      "raw_call_sha256": "05f2b810f1b5cac5fda5414eff717493932e49c986616395c94a0a0647882cce",
+      "reason": "The response correctly calculates a 4-dollar daily tax, 36-dollar daily net pay, and 1080 dollars over 30 days. Those intermediates provide concrete expectations and demonstrate the reusable percentage-deduction-then-duration operation.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "f5182542566756ec731bead317148c66cde3de50dafdaa62db75e91db910016d",
+      "target_sha256": "df924c345249f4c0465ce6deecd4f7cf11298cec6c36ccdfcfc29c3a494c42df"
+    },
+    "gsm8k-train-5682:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the total sales for each type of item:",
+        "Next, I applied the 15% commission rate to the total sales:"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person work and arithmetic self-check are supported by the question and supplied solution; the target does not attribute confirmation to an external checker.",
+      "raw_call_sha256": "bb674456c38d68dc400241d6edd1b1e48facb4e9b523f294a94545e7b9a3892d",
+      "reason": "The target correctly totals 1400+300+300=2000 dollars and applies 0.15 to obtain 300. Its item totals and commission calculation are concrete expectations, and it identifies percentage-of-total sales as reusable while remaining task-relevant.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "516bc94fb28fc75384f94da0cfe57499897db50fcc670747aedf27e9d26f7507",
+      "target_sha256": "dbc2519a4ee21b13b4d6854bb5c24f7d68bcd9243257717174f230f10c204547"
+    },
+    "gsm8k-train-5682:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Next, I calculate the total sales for each type of item:",
+        "$2000 * 0.15 = $300"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All quantities, sales calculations, and the commission operation come from the question and explicit arithmetic; no outside validation is claimed.",
+      "raw_call_sha256": "68f0cf984afc6668597ad54d8737a168471b09836606b0a7fdeffea06b839929",
+      "reason": "The response personally applies the operations and correctly obtains item sales of 1400, 300, and 300 dollars, a 2000-dollar total, and a 15% commission of 300. These are concrete expectations and demonstrate the reusable total-sales-times-rate procedure.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "3ca1dae6a2a255355333b9c4801aea5373d6f14a26d517371273558b414841a4",
+      "target_sha256": "f057131fe64806643e80a7ca9eb747c9c5aed69138921a29c82e6ce4eb556450"
+    },
+    "gsm8k-train-6450:new_record": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated her weekly gross pay: $15/hour * 40 hours/week = $600/week.",
+        "$480/week * 52 weeks/year = $24,960/year."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's arithmetic and stated self-check are supported by the question and neutral solved history; \u201cI checked\u201d is a self-check backed by shown values, not external feedback.",
+      "raw_call_sha256": "9e513b3e090055007baa670f99e5ea068e7193fdca247a4c44da458e947c9433",
+      "reason": "The target correctly derives weekly gross pay of 600, withholding of 120, weekly net pay of 480, and annual net pay of 24960. It supplies concrete unit-bearing expectations and explains the reusable conversion from hourly gross pay through deductions to annual take-home pay.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "188938231cb5dff7a24b8b2ccb39508a5e38214742dc133e7e372d1b48ee5bde",
+      "target_sha256": "97c87e1935263925ecc02866873ccb368967751e4ca6f5e9422f494440b99a94"
+    },
+    "gsm8k-train-6450:rich": {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculate Trisha's weekly gross pay: 15 dollars/hour * 40 hours/week = 600 dollars/week.",
+        "480 dollars/week * 52 weeks/year = 24,960 dollars/year."
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The first-person calculations follow solely from the wage, hours, withholding rate, and weeks stated in the question, without claiming outside verification.",
+      "raw_call_sha256": "f0d130c15750026ceeeec55fb4bb31714ff64f61e37a7ea0585fae83566bbc95",
+      "reason": "The response correctly computes 600 dollars gross per week, 120 withheld, 480 take-home weekly, and 24960 annually. These unit-labelled intermediates are concrete expectations and demonstrate a reusable gross-minus-percentage-deduction calculation.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "c8877a52311e61a81661e6ddaed9e2ce45ce39fcde327b997ea0635e7511c2d2",
+      "target_sha256": "9d5a1f6757aebee7408c796473af5e181ef07a66726afc560a4ad9301e115c0c"
+    }
+  }
+}

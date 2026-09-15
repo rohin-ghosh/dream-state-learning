@@ -1,0 +1,51 @@
+{
+  "explanation": "One target-hash transcription error in the model output. Original failure/result untouched. Author read the complete supplied target and authored a newly bound FAIL; exact validators remain unchanged. Other model decisions independently passed all binding checks.",
+  "extra_reviewer_calls": 0,
+  "key": "gsm8k-train-171:new_record",
+  "kind": "EXPLICIT_NEW_AUTHOR_NEGATIVE_REVIEW_AFTER_STRICT_HASH_REJECTION",
+  "native_calls": 0,
+  "observed_utc": "2026-09-14T23:32:11.095519+00:00",
+  "old_failed_receipt_sha256": "6ce463edc217fd1dd8f0be3e5560a731b11841f7a6930bd919e7b22b21eda446",
+  "original_decision": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "I first calculated the total number of seeds",
+      "This means he planted 24 trees."
+    ],
+    "first_person": true,
+    "full_text_read": true,
+    "grounded_operations": false,
+    "neutral_prefix_compatible": false,
+    "no_padding": true,
+    "prefix_reason": "Neither the question nor the earlier solution establishes that 24 planted seeds are 24 trees; repeating that unsupported conclusion in the neutral history does not make it valid.",
+    "raw_call_sha256": "a0155ff0f425be26027c7af977c02ebc54a16821a42ff36c4fd2c1333eb16eef",
+    "reason": "The response substantively recounts its calculations and correctly obtains 40 seeds and 24 planted seeds, but falsely treats the seed count as a tree count.",
+    "reusable_content": true,
+    "status": "FAIL",
+    "student_prefix_sha256": "46decf9935b5b57cdc10c85e7397c893c5f222c6f2dac773a102add6c4743c0d",
+    "target_sha256": "8333ab1a0264ac854c8c8a70a610c99ca2063c8b78819c6125921cecbe3758851"
+  },
+  "original_reader_result_sha256": "3f3f25284c4ae9d43e32955b69a515464ad37ef10f9f6b338df31e9aa2c7adb2",
+  "other_decisions_changed": false,
+  "promoted_targets": 0,
+  "replacement_decision": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "I first calculated the total number of seeds",
+      "This means he planted 24 trees."
+    ],
+    "first_person": true,
+    "full_text_read": true,
+    "grounded_operations": false,
+    "neutral_prefix_compatible": false,
+    "no_padding": true,
+    "prefix_reason": "Neither the question nor the earlier solution establishes that 24 planted seeds are 24 trees; repeating that unsupported conclusion in the neutral history does not make it valid.",
+    "raw_call_sha256": "a0155ff0f425be26027c7af977c02ebc54a16821a42ff36c4fd2c1333eb16eef",
+    "reason": "Author independently read the entire question and target: 2x20x1=40 seeds and 60%=24 seeds are correct, but 24 planted trees is an unsupported conversion. Preserve FAIL, not a promoted target.",
+    "reusable_content": true,
+    "reviewer": "MATH_SCALE_AUTHOR_MANUAL_FULLTEXT_FAIL_REASSESSMENT",
+    "status": "FAIL",
+    "student_prefix_sha256": "46decf9935b5b57cdc10c85e7397c893c5f222c6f2dac773a102add6c4743c0d",
+    "target_sha256": "8333ab1a0264ac8548c8a70a610c99ca2063c8b78819c6125921cecbe3758851"
+  }
+}

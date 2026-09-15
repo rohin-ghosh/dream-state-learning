@@ -1,0 +1,378 @@
+{
+  "gold": [
+    {
+      "independent_answer": "400",
+      "question_sha256": "d3b4f483c02fcc0472d38e6ad8136c87cb9048918e830625c832dc744d94f505",
+      "reason": "Daily pay is 50 \u00d7 10 = 500. Withholding 20% removes 0.20 \u00d7 500 = 100, leaving 500 \u2212 100 = 400, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-7387"
+    },
+    {
+      "independent_answer": "17",
+      "question_sha256": "9fa52b480e4dbec563a69dd3698ed4389d3f221e959b359f819a8e46b5574c24",
+      "reason": "The marked price is 50 \u00d7 1.30 = 65. A 10% discount gives 65 \u00d7 0.90 = 58.5, so profit is 8.5 and percent profit is 8.5/50 \u00d7 100 = 17, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-6916"
+    },
+    {
+      "independent_answer": "22",
+      "question_sha256": "c53918a99e6540396a10811cbf572073cac6760ed151ea5edfccac5600f7ece9",
+      "reason": "Vanilla orders are 20% of 220, or 44. Since vanilla orders are twice chocolate orders, chocolate orders are 44/2 = 22, equal to the gold. The remaining customers may have ordered other flavors.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-2765"
+    },
+    {
+      "independent_answer": "23",
+      "question_sha256": "07933e52ddd2b91d6b141ccc5db5b073be8fcdd23edc33620716cada8bc2335b",
+      "reason": "Ten percent of 920 is 92 eight-antlered deer. One quarter of 92 is 23, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-4306"
+    },
+    {
+      "independent_answer": "24",
+      "question_sha256": "1ee26c51704ba28d4fc4398336b7757d6588ff484670c3e9b459c8830b0f2dc9",
+      "reason": "The two sides contain 16 + 16 = 32 squares. Betsy has sewn 25% of 32 = 8, leaving 32 \u2212 8 = 24, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-5139"
+    },
+    {
+      "independent_answer": "184",
+      "question_sha256": "5b812f989c4063bb44e6547da4f036595385855c8ddbe6639f1a4d7aceedd159",
+      "reason": "Federal tax is 450/3 = 150 and state tax is 0.08 \u00d7 450 = 36. Total deductions are 150 + 36 + 50 + 20 + 10 = 266, leaving 450 \u2212 266 = 184, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-3706"
+    },
+    {
+      "independent_answer": "underdetermined",
+      "question_sha256": "ae3ca08f91d25aeeb357267b400e343aa44b9b9da34078883c2263b6a99bc149",
+      "reason": "The foundation receives 0.80 \u00d7 2500 = 2000, but the question does not state that this sum is divided equally among its eight organizations. The gold 250 follows only after adding that allocation assumption, so each organization's share is underdetermined.",
+      "status": "AMBIGUOUS",
+      "task_id": "gsm8k-train-2087"
+    },
+    {
+      "independent_answer": "24",
+      "question_sha256": "6dbcd03c1db661dc4d78a6f3d6c81c5c1727dc8a105857dbbf8178251f6048c6",
+      "reason": "The haircut total is 48 + 2 \u00d7 36 = 120. A 20% tip is 0.20 \u00d7 120 = 24, equal to the gold.",
+      "status": "VALID",
+      "task_id": "gsm8k-train-5871"
+    }
+  ],
+  "reviews": [
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Next, I calculate Amanda's daily earnings:",
+        "50 \\times 10 = 500",
+        "500 - 100 = 400"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-7387:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target uses only the stated wage, hours, and withholding rate, plus verifiable arithmetic; it claims no external feedback or event.",
+      "raw_call_sha256": "50606203c2195c752bc48abd55839ee2f07c9b44f0f9f56cf5a7529d7009827b",
+      "reason": "It gives a substantive first-person calculation: $500 daily pay, $100 withheld, and $400 received. Those concrete intermediates are correct, meaningful checks, and illustrate the reusable process of calculating and deducting a percentage without filler.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "d52719b98aace490549f2075d6284fff59be54e46bf34516bcafb09d1e36afab",
+      "target_sha256": "b9d3b3fb1df05eae99fe43150ffe76d0b8d56dfa0ad95c783b017e2f2f3bb2d3"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated Amanda's daily earnings",
+        "500 \\times 0.20 = 100",
+        "The operations I would reuse are the same arithmetic operations"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-7387:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All factual claims and self-checking are supported by the supplied problem, prior solution, and arithmetic shown in the target; no external checker is claimed.",
+      "raw_call_sha256": "022d7e2748e04a87ec65ce0410fdfe20677b04aa5717af06f95b2afc957abf7f",
+      "reason": "The first-person record correctly computes 50 \u00d7 10 = 500, withholds 500 \u00d7 0.20 = 100, and subtracts to get 400. The numeric roles are checkable, and it explicitly explains reusing percentage deduction operations.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "653d4b46d907cd2a15473508a71aa58717a02dcabbe3c1f12af6c421b382cc74",
+      "target_sha256": "96fe4ccdc5e1e19202349c9f49d2d19092b59223c3258a0899edb1dd482c3989"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Marked Price = 50 + 15",
+        "Discounted Price = 58.5",
+        "Percent Profit = 17\\%"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6916:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The markup, discount, profit, and percentage calculations follow from the question and verifiable arithmetic, with no unsupported external event.",
+      "raw_call_sha256": "8f8c688da6d100b43759f020bc06abcdd6bdd59da4b5f1ba01763fd32f66615b",
+      "reason": "The arithmetic is correct and provides checkable, reusable markup-and-discount operations, but the response is an impersonal recipe using commands such as \u201ccalculate\u201d; it never gives a substantive first-person account of applying them.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "dae8f8e4800fcf47e88b0b34b83ca387c28dd64a009464695dd0a03afe930aec",
+      "target_sha256": "b74edefdb90d33cdca7ea9080b61e5f3e8932ecadaf4cbaeb9f4c95ee7d4a4d3"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I first calculated the marked price",
+        "I then applied a 10% discount",
+        "\\frac{8.5}{50}",
+        "17\\%"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-6916:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target's claims are supported by the problem, neutral history, and its displayed arithmetic; its verification is a self-check rather than an unsupported external event.",
+      "raw_call_sha256": "c491ca8c6e060e876ea453b0914d8aa0361830ed364e603c9c2681d58ed51991",
+      "reason": "It substantively recounts calculating the $65 marked price, $58.50 sale price, $8.50 profit, and 17% profit. These correct numerical roles are checkable, and the markup-discount-profit sequence is explicitly reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "bbe61ff3d55a46f7e72c15f684d735f65f75075b24a39832b31cb6b222e23523",
+      "target_sha256": "59ec50916d5c3f23713d8010856a5d75788f06b1f57ff3ff1553fd6cc02394b6"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "20% of 220 = 0.20 * 220 = 44 people",
+        "C = \\frac{44}{2} = 22",
+        "Total: 44 + 22 = 66 (which is 20% of 220)"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "key": "gsm8k-train-2765:rich",
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The question supports 44 vanilla and 22 chocolate orders, but not the target's false claim that their sum, 66, is 20% of 220; 66 is 30%.",
+      "raw_call_sha256": "bc16975da2e9faf78462269c134bfc720a13e6140d036a39a91101b7852a74bb",
+      "reason": "Although 44 vanilla and 22 chocolate are correct and concrete, the stated check falsely calls 66 twenty percent of 220. The response also remains impersonal (\u201cLet C\u201d) rather than recounting its own application of the operations.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "10d6572368dca6d6aba06f5101577f52d228aab97669e2d27e5b508adfcba85e",
+      "target_sha256": "02a1102cf5c852f8800b771a676d58cad0749934750f45ff1fb997c2f50b39bc"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the number of people who ordered vanilla ice cream",
+        "44 + 22 = 66",
+        "the remaining 80% must be split between vanilla and chocolate, confirming the solution"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "key": "gsm8k-train-2765:new_record",
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "Neither the question nor valid reasoning says the remaining 80% is split between vanilla and chocolate. The earlier response's erroneous check does not establish that unsupported claim.",
+      "raw_call_sha256": "3c4e4be662480d4b6efe9b9f13e88287ff67503b88f12afcbdef957be3fe5b54",
+      "reason": "The first-person core computation, 20% of 220 = 44 and 44/2 = 22, is correct and reusable. However, its verification invents an allocation of the remaining 80%; other flavors can account for those orders, so that material deduction is unsupported.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "caf91c643d33a1f7deb87fa6dab04f233d7ef0dc4956be5685cdfcc1e41615b5",
+      "target_sha256": "71be072d12df9c5b3c41b1ea6276a21875f408bb347bde8147ad25345d5e009c"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Next, I calculate the number of deer with 8 antlers:",
+        "0.10 * 920 = 92 deer",
+        "92 / 4 = 23 deer"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-4306:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every factual claim follows from the supplied counts, percentage, fraction, and displayed arithmetic, with no hidden feedback or external event.",
+      "raw_call_sha256": "ede2bed9178011b6cc1441c8521498b22c36cc187aafaf542200ffcb11dcbe77",
+      "reason": "It gives a substantive first-person calculation of the expected subsets: 10% of 920 is 92 and one quarter of 92 is 23. The sequential subset operations are correct, checkable, relevant, and reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "22edcda312a796401b9547b54a5ae76a0c24858652fe3ff4dac9494e79aed980",
+      "target_sha256": "6ac26aeef3905e5b54395a4f3397eac867b20f0b17a0d2ba92621ab079046349"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I expected this result to represent the number of deer with 8 antlers.",
+        "\\frac{1}{4} \\times 92 = 23",
+        "The operations I used are reusable"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-4306:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target uses only supplied quantities and valid arithmetic. Its checking is explicitly its own logical review, not a claimed external confirmation.",
+      "raw_call_sha256": "8020ac68c80799c707a9ab5ea5782382eec8ab72d735f6656b0096fcd653bdec",
+      "reason": "The record personally applies and explains the two correct subset calculations, identifies the expected meaning of 92 and 23, and states when percentage-and-fraction operations can be reused. The reasoning remains task-relevant.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "456bdec65451636005ad53c3aad2cd79b64ef195e3300166a3bcd69fb2c8b588",
+      "target_sha256": "bae7f615119c2c7c9d0a3ec118a392520c68211ffdcd2a91da78c30d8bff07d2"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "the total number of squares is \\(16 \\times 16 = 256\\)",
+        "we calculate 25% of 256",
+        "\\(256 - 64 = 192\\)"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "key": "gsm8k-train-5139:rich",
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The prefix states two groups of 16 squares, supporting 16 + 16 = 32, not a 16-by-16 array. Therefore the target's 256-square premise and 192-square result are unsupported.",
+      "raw_call_sha256": "e9fad1692636a983274cbf51df6e097203bf77a7ec3198db0d12c911e3a1b757",
+      "reason": "The plural first-person account provides concrete completed-and-remaining quantities and the reusable idea of subtracting the completed part. Its material opening operation is wrong, however: it multiplies the two side counts instead of adding them, producing 192 rather than 24.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "222397976350819ac499fd634c125ea5359227faab3092f88fb04e1285952070",
+      "target_sha256": "ca1bf607d28733473907ebcb5b11e868ec26b11c1e556bd98d2633c72afae6c1"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Next, I calculate the amounts removed:",
+        "150 + 36 + 50 + 20 + 10 = 266",
+        "450 - 266 = 184"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-3706:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "All deduction amounts and arithmetic are supported by the question and target itself, with no assertion of external checking or feedback.",
+      "raw_call_sha256": "ed09e5dcdd97660fababdefb84225ade929aac6068d91ee13fddfe71d8341b34",
+      "reason": "It personally computes the $150 and $36 percentage deductions, combines them with the fixed deductions to get $266, and subtracts that from $450 to get $184. The numerical roles are checkable and the total-deductions method is reusable.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "58325b50b942f9d3e5d1830f5cc6979a0035a071014acc1d7293adb055ded120",
+      "target_sha256": "f1707adcec7283a45a766fc4b6d41b2ab8a71a7151ee9d0212492885c30f5871"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I broke this down into steps:",
+        "150 + 36 + 50 + 20 + 10 = 266",
+        "The concrete check I made was to recompute the total deductions"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-3706:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The stated self-check can be verified directly from the supplied figures and shown arithmetic; no external checker, feedback, or hidden event is invoked.",
+      "raw_call_sha256": "662dc99932fd952ea118b7cb44c5627d40111e0f0c4c23688aca91afd4a648be",
+      "reason": "The response gives a substantive first-person procedure, correct deductions, and the concrete recomputation check that deductions sum to $266 before $450 \u2212 $266 = $184. It clearly explains reusing the combine-then-subtract method.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "91f2a8b0d430a907f0f4f12551b562f48a7df8622234a81ef7688a4d8938b656",
+      "target_sha256": "6607a7149b182dfa9aab40e5fb5b28e64fc58ef25b8867e97c3b4aeb71671bd1"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "This foundation then distributes the donation equally among 8 organizations.",
+        "0.80 \\times 2500 = \\$2000",
+        "\\frac{\\$2000}{8} = \\$250"
+      ],
+      "first_person": false,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "key": "gsm8k-train-2087:rich",
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The prefix says only that the foundation has eight organizations; it never specifies equal distribution. The target adds that allocation rule as a fact.",
+      "raw_call_sha256": "d3310e376d5bd849f90ddfabc8c3ef8508268c746b8911cbb20f188bdeecbb56",
+      "reason": "The $2,000 donation calculation is correct and the proposed equal-division computation is concrete and reusable, but equal distribution is an invented material assumption. The response is also impersonal, using directives rather than its own operational account.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "390ad1717100044723dd7f4ebb999e7a5083fc7d44837feabc9995476baf7e94",
+      "target_sha256": "21439df7f7e05b9e60b588f99d9044f4ede843549b813d081bedb2ad3da328f1"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "I needed to distribute the $2000 equally among the 8 organizations.",
+        "\\frac{2000}{8} = 250",
+        "250 \\times 8 = 2000"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": false,
+      "key": "gsm8k-train-2087:new_record",
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The original question does not supply equal allocation. The prior response merely repeats that unsupported assumption, so it cannot ground the new target's division or reverse check.",
+      "raw_call_sha256": "f20c03a85a089afbd19c42b66a470dff2c5b7475bc7a2093335e8ad71f0df091",
+      "reason": "The first-person record gives concrete arithmetic and a valid inverse check conditional on equal distribution, and it explains a reusable percentage-then-division method. However, the essential premise that all eight shares are equal is not given, so the material operation is not grounded.",
+      "reusable_content": true,
+      "status": "FAIL",
+      "student_prefix_sha256": "d65ab054a03521717e36d004bbb4f5de6bd369db419dce44fbe17958a554152f",
+      "target_sha256": "82638ec8bf2d4dc49975e382b0b73ce540bf105dccde92b0f6ee374070615c10"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "Next, I calculate the total cost of the haircuts:",
+        "Total cost for all: $48 + $72 = $120",
+        "20% of $120 = 0.20 * $120 = $24"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-5871:rich",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "The target uses exactly the supplied haircut counts, prices, and tip rate with valid arithmetic, and claims no unsupported outside event.",
+      "raw_call_sha256": "357a74fc3b6911113173f1a98ddfec1e4d991a08e6cf0b103d27d6cc66eaf12a",
+      "reason": "It personally computes the daughters' $72 cost, the $120 bill, and the $24 tip. These numerical roles are concrete and correct, and the operation of totaling charges before applying the tip rate is reusable and relevant.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "27a930fe5971619b0809a15bbb8e58aaeb87bd4e0c2473f494d4458894e4a2c0",
+      "target_sha256": "9cea211d40e7d2815788dc0a28b04dee9e0cf4984d843398868d34d75bebceef"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_spans": [
+        "First, I calculated the total cost of the haircuts:",
+        "$24 is one-fifth of $120",
+        "The operations I used are straightforward arithmetic"
+      ],
+      "first_person": true,
+      "full_text_read": true,
+      "grounded_operations": true,
+      "key": "gsm8k-train-5871:new_record",
+      "neutral_prefix_compatible": true,
+      "no_padding": true,
+      "prefix_reason": "Every claim follows from the supplied prices, number of children, and tip rate. The one-fifth comparison is an explicitly verifiable self-check, not external feedback.",
+      "raw_call_sha256": "b76c067754e16c3c102c2499bdf49deaaf6ce44d5ed1ec9712915b89f5c45561",
+      "reason": "It gives a substantive first-person calculation of the $120 total and $24 tip, then concretely checks that $24 is one-fifth of $120. It also explains that totaling costs and taking a percentage transfers to similar tip problems.",
+      "reusable_content": true,
+      "status": "PASS",
+      "student_prefix_sha256": "d7b15c86f12e21d059418477ec9d8b6049df863c71ed9fb468aabb99ca794c25",
+      "target_sha256": "269e26473f9d57e08c849b76da6de8f7e43c1abcfc054df6c17f8c40d4c7137d"
+    }
+  ]
+}

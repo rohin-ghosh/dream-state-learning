@@ -1,0 +1,296 @@
+[
+  {
+    "gold": "39",
+    "question": "Hannah wants to get the highest grade in the class on the upcoming math test. Because she is out sick the day of the test, she learns ahead of time the top scores she has to beat. She finds out that one student got a 95% on the exam. Another student only got 3 wrong out of 40. How many questions does she have to get right to have the highest score in the class?",
+    "question_sha256": "ea94142f178187663c0ef18bb1f233346006772c3e18ca66274f6f695e7cdbb3",
+    "responses": [
+      {
+        "key": "gsm8k-train-7193:rich",
+        "raw_call_sha256": "0d532eca06166a71eeeb4a9b069d4176bc6524900a321738c3eb83a106172ecb",
+        "student_prefix": [
+          {
+            "content": "Hannah wants to get the highest grade in the class on the upcoming math test. Because she is out sick the day of the test, she learns ahead of time the top scores she has to beat. She finds out that one student got a 95% on the exam. Another student only got 3 wrong out of 40. How many questions does she have to get right to have the highest score in the class?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "bff91c31af1fd1d77317851cc98d8ad194b2df9619dfe4f14f6f2b88dbce99a3",
+        "target": "To determine how many questions Hannah needs to get right to have the highest score in the class, I first need to figure out the scores of the other students. \n\nThe first student got a 95%. Since the test is presumably out of 100 points, this means the student got 95 questions right. \n\nThe second student got 3 questions wrong out of 40. This means the student got \\(40 - 3 = 37\\) questions right.\n\nTo have the highest score in the class, Hannah needs to get more questions right than the student who got 37 questions right. Therefore, Hannah needs to get at least 38 questions right.\n\nTo confirm, if Hannah gets 38 questions right, she will have a higher score than the student who got 37 questions right. Since the problem does not specify the total number of questions on the test, we can assume the test is out of 40 questions based on the information given.\n\nThus, Hannah needs to get 38 questions right to have the highest score in the class.\n\nFINAL: 38",
+        "target_sha256": "26adaae89f78d88b3602bad8816b163ccefaf0ec19da6c2c48f7ed769819b60c"
+      }
+    ],
+    "task_id": "gsm8k-train-7193"
+  },
+  {
+    "gold": "18",
+    "question": "The dinner bill for 6 friends came to $150. Silas said he would pay for half of the bill and the remaining friends could split the rest of the bill and leave a 10% tip for the whole meal. How many dollars will one of the friends pay?",
+    "question_sha256": "66dfc3d12383aebc4c75231f8e187609de869e4d045363cc7fcea381b4558bce",
+    "responses": [
+      {
+        "key": "gsm8k-train-1696:rich",
+        "raw_call_sha256": "ea7a3185c2c7b690f868a26fcf028bd3bc1fa6a6cf9bc2dfa08c44a91e22bce9",
+        "student_prefix": [
+          {
+            "content": "The dinner bill for 6 friends came to $150. Silas said he would pay for half of the bill and the remaining friends could split the rest of the bill and leave a 10% tip for the whole meal. How many dollars will one of the friends pay?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "e263696081ed174053af33d78401c3805e22f627a2f2fe8e3abb408a45fdfeb9",
+        "target": "The total bill is $150. Silas pays half, so he pays $150 / 2 = $75. The remaining amount is $150 - $75 = $75. A 10% tip on the total bill is $150 * 0.10 = $15. So, the total amount to be paid by the remaining friends is $75 + $15 = $90. There are 5 friends left to split this amount, so each friend pays $90 / 5 = $18.\n\nFINAL: 18",
+        "target_sha256": "c0e7eb3b4df4dd48ea61b9edf4ab69ff052f53f46c0a656e5f548b8cd6dd4e50"
+      },
+      {
+        "key": "gsm8k-train-1696:new_record",
+        "raw_call_sha256": "18dd9ad070d846f5b2d1a0e8ad6e2fbf85f72ecccf22f549367b20f608b1437f",
+        "student_prefix": [
+          {
+            "content": "The dinner bill for 6 friends came to $150. Silas said he would pay for half of the bill and the remaining friends could split the rest of the bill and leave a 10% tip for the whole meal. How many dollars will one of the friends pay?",
+            "role": "user"
+          },
+          {
+            "content": "The total bill is $150. Silas pays half, so he pays $150 / 2 = $75. The remaining amount is $150 - $75 = $75. A 10% tip on the total bill is $150 * 0.10 = $15. So, the total amount to be paid by the remaining friends is $75 + $15 = $90. There are 5 friends left to split this amount, so each friend pays $90 / 5 = $18.\n\nFINAL: 18",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "e2d1e0fce84f67bc7eabbe18f16a9198034ccdde0a17bb0bfbfdc8c929d50918",
+        "target": "Given the total dinner bill of $150, I first identified the key quantities: the total bill, the amount Silas would pay, and the amount the remaining friends would need to cover, including a 10% tip. The unknown was how much each of the remaining 5 friends would pay.\n\nI started by calculating the amount Silas would pay, which is half of the total bill:\n\\[ \\text{Silas's share} = \\frac{150}{2} = 75 \\]\nThis calculation was straightforward and directly applied the given information.\n\nNext, I determined the remaining amount to be split among the 5 friends:\n\\[ \\text{Remaining amount} = 150 - 75 = 75 \\]\nThis step involved subtracting Silas's share from the total bill to find out what the other friends need to cover.\n\nThen, I calculated the 10% tip on the total bill:\n\\[ \\text{Tip} = 150 \\times 0.10 = 15 \\]\nThis operation was necessary to account for the tip, which is a common practice in many dining situations.\n\nAdding the tip to the remaining amount gave me the total amount the 5 friends need to cover:\n\\[ \\text{Total to be split} = 75 + 15 = 90 \\]\nThis step combined the remaining bill and the tip to get the final amount to be shared.\n\nFinally, I divided this total by the number of friends (5) to find out how much each friend would pay:\n\\[ \\text{Each friend's share} = \\frac{90}{5} = 18 \\]\nThis division evenly distributed the total amount among the 5 friends.\n\nTo check the result, I verified that the sum of Silas's share and the total amount the other friends need to cover equals the original bill:\n\\[ 75 + 90 = 165 - 15 = 150 \\]\nThis check confirmed that the calculations were correct and that the total bill was accurately accounted for.\n\nThe operation I would reuse is the division of the total amount to be split by the number of friends, as it directly and evenly distributes the cost. This operation is useful in similar scenarios where a total amount needs to be shared equally among a group.\n\nFINAL: 18",
+        "target_sha256": "9c116771b296834fcf378cc94e384b616a5ab92a99e515487ba4e2e0d7d57545"
+      }
+    ],
+    "task_id": "gsm8k-train-1696"
+  },
+  {
+    "gold": "130",
+    "question": "John's shirt cost 60% more than his pants.  His pants cost $50.  How much was John's outfit?",
+    "question_sha256": "61852c4012901b6e5516f36311a285c7a56945c3303e7674e6687a2d99990b4c",
+    "responses": [
+      {
+        "key": "gsm8k-train-2160:rich",
+        "raw_call_sha256": "c4ea844082bc3aeec77b7991a4c432815afc596166311d9111ce487df245dda0",
+        "student_prefix": [
+          {
+            "content": "John's shirt cost 60% more than his pants.  His pants cost $50.  How much was John's outfit?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "c750679ac4c462b8d8a98ee3533cfa2adaf90ee255800a5ac82349f51e6a35b2",
+        "target": "Given:\n- John's pants cost $50.\n- John's shirt costs 60% more than his pants.\n\nFirst, calculate 60% of the cost of the pants:\n60% of $50 = 0.60 * $50 = $30.\n\nSo, the shirt costs $30 more than the pants:\nCost of the shirt = $50 + $30 = $80.\n\nNow, add the cost of the pants and the shirt to find the total cost of the outfit:\nTotal cost = Cost of pants + Cost of shirt = $50 + $80 = $130.\n\nFINAL: 130",
+        "target_sha256": "5a88b727dec10f6c1a2d897789d3c3acf60b7eaaa899435e10bca80ddbb26623"
+      },
+      {
+        "key": "gsm8k-train-2160:new_record",
+        "raw_call_sha256": "583536f23c710fecd23b8ff3d2af7a56eb5819c004bc7ee0cec888bc00618006",
+        "student_prefix": [
+          {
+            "content": "John's shirt cost 60% more than his pants.  His pants cost $50.  How much was John's outfit?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- John's pants cost $50.\n- John's shirt costs 60% more than his pants.\n\nFirst, calculate 60% of the cost of the pants:\n60% of $50 = 0.60 * $50 = $30.\n\nSo, the shirt costs $30 more than the pants:\nCost of the shirt = $50 + $30 = $80.\n\nNow, add the cost of the pants and the shirt to find the total cost of the outfit:\nTotal cost = Cost of pants + Cost of shirt = $50 + $80 = $130.\n\nFINAL: 130",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "568c6710a752eada675f36700607ee85d16e7b0eddf3aa897211f5d70197ba4c",
+        "target": "Given that John's pants cost $50 and his shirt costs 60% more than his pants, I first identified the cost of the pants as a known quantity: $50. The unknown quantity was the total cost of John's outfit, which included both the pants and the shirt.\n\nTo find the cost of the shirt, I calculated 60% of $50, which is 0.60 * $50 = $30. This $30 represents the additional cost of the shirt compared to the pants. Therefore, the cost of the shirt is $50 + $30 = $80.\n\nNext, I added the cost of the pants and the shirt to find the total cost of the outfit: $50 + $80 = $130. This calculation was based on the given information and the operations of percentage calculation and addition.\n\nTo verify the result, I checked that the shirt's cost was indeed 60% more than the pants: 60% of $50 is $30, and $50 + $30 = $80, which matches the calculated cost of the shirt. The total outfit cost of $130 was the sum of the pants and the shirt, confirming the accuracy of the calculation.\n\nThe operations I used were straightforward: percentage calculation and addition. These operations are reusable in similar problems where one quantity is a percentage more or less than another.\n\nFINAL: 130",
+        "target_sha256": "dd85bd1842853de76f456a210431e623664117dd2969a585e23ddcaa9b57e0d8"
+      }
+    ],
+    "task_id": "gsm8k-train-2160"
+  },
+  {
+    "gold": "30",
+    "question": "John has been having trouble sleeping lately.  In the past week he was only able to get 3 hours of sleep on 2 of the days and on the remaining days he was only able to get 60% of the recommended 8 hours of sleep.  How much sleep did he get this week?",
+    "question_sha256": "4538e4132262259b9944a586d0709b3555d1c9065c80df49cb845b3c8c52fb33",
+    "responses": [
+      {
+        "key": "gsm8k-train-6627:rich",
+        "raw_call_sha256": "ada777a547f9329e97e191ea97ffd45f5819e07c518e1870535911c412ebbc88",
+        "student_prefix": [
+          {
+            "content": "John has been having trouble sleeping lately.  In the past week he was only able to get 3 hours of sleep on 2 of the days and on the remaining days he was only able to get 60% of the recommended 8 hours of sleep.  How much sleep did he get this week?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "fcf602fed5dfb6e7df19da3cdb480efba339a5ea959a93eb6bac2c43487c1c11",
+        "target": "First, I identify the given quantities:\n- John got 3 hours of sleep on 2 days.\n- On the remaining 5 days, he got 60% of the recommended 8 hours of sleep.\n\nThe recommended sleep is 8 hours, so 60% of 8 hours is 0.60 * 8 = 4.8 hours. For 5 days, he got 4.8 hours of sleep each day, which totals 5 * 4.8 = 24 hours. Adding the 3 hours from the 2 days, the total sleep is 24 + 3 = 27 hours. \n\nCHECK: The problem asks for the total sleep in a week, and the calculation matches the given conditions. \n\nFINAL: 27",
+        "target_sha256": "29ccf9013aae39bb5c9abd5dcee4da9c4523fbc8d3913f8dd8c04fc03d10d2e6"
+      }
+    ],
+    "task_id": "gsm8k-train-6627"
+  },
+  {
+    "gold": "18",
+    "question": "There are 32 students in a statistics course.  25 percent of the class received an A.  1/4 of the remaining students got either a B or C, and the rest of the students failed.  How many students failed?",
+    "question_sha256": "f79fb50a9bcf3bd75951726e5c67e65a37abd64699f266e8d6d16ea35bc9eea1",
+    "responses": [
+      {
+        "key": "gsm8k-train-6424:rich",
+        "raw_call_sha256": "0c7829e3f01cdf81ac689e0349a08b1d6cd4d718bbeca691559b20e12ce57a5e",
+        "student_prefix": [
+          {
+            "content": "There are 32 students in a statistics course.  25 percent of the class received an A.  1/4 of the remaining students got either a B or C, and the rest of the students failed.  How many students failed?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "c1b988d3d5163cff8377095dfe5dc22ec18dc538946647e644a6b3601793f85c",
+        "target": "Given:\n- Total students: 32\n- Percentage of A: 25%\n- Remaining students after A: 32 - (32 * 0.25)\n- Students getting B or C: 1/4 of the remaining students\n- Students failing: Remaining students after A and B/C\n\nFirst, calculate the number of students who received an A:\n32 * 0.25 = 8 students\n\nNext, calculate the remaining students after those who received an A:\n32 - 8 = 24 students\n\nThen, calculate the number of students who got either a B or C:\n24 * (1/4) = 6 students\n\nFinally, calculate the number of students who failed:\n24 - 6 = 18 students\n\nFINAL: 18",
+        "target_sha256": "492da5ea46ffa85473013d3b57bbd56c5ad3c8996fd0a6c96df19cdc4b07cac3"
+      },
+      {
+        "key": "gsm8k-train-6424:new_record",
+        "raw_call_sha256": "b960df0523c9a1743be9f06cfcbfc6f2c87f3d6e7e1ddeab447493aa5cde1c73",
+        "student_prefix": [
+          {
+            "content": "There are 32 students in a statistics course.  25 percent of the class received an A.  1/4 of the remaining students got either a B or C, and the rest of the students failed.  How many students failed?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Total students: 32\n- Percentage of A: 25%\n- Remaining students after A: 32 - (32 * 0.25)\n- Students getting B or C: 1/4 of the remaining students\n- Students failing: Remaining students after A and B/C\n\nFirst, calculate the number of students who received an A:\n32 * 0.25 = 8 students\n\nNext, calculate the remaining students after those who received an A:\n32 - 8 = 24 students\n\nThen, calculate the number of students who got either a B or C:\n24 * (1/4) = 6 students\n\nFinally, calculate the number of students who failed:\n24 - 6 = 18 students\n\nFINAL: 18",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "39545dda27c17af29ae009fdc4922291ce7929a7007286cea5f34c0c9becdda9",
+        "target": "Given the problem, I started by identifying the key quantities:\n- Total number of students: 32\n- Percentage of students who received an A: 25%\n- Fraction of the remaining students who got either a B or C: 1/4\n- The unknown: number of students who failed\n\nFirst, I calculated the number of students who received an A:\n\\[ 32 \\times 0.25 = 8 \\]\nThis means 8 students received an A. I then subtracted this number from the total to find the remaining students:\n\\[ 32 - 8 = 24 \\]\nNext, I determined how many of these remaining students got either a B or C:\n\\[ 24 \\times \\frac{1}{4} = 6 \\]\nThis means 6 students got either a B or C. To find the number of students who failed, I subtracted the number of students who got B or C from the remaining students:\n\\[ 24 - 6 = 18 \\]\nThus, 18 students failed.\n\nTo check this result, I verified that the sum of students who received an A, B, C, and failed equals the total number of students:\n\\[ 8 + 6 + 18 = 32 \\]\nThis confirms that my calculations are correct.\n\nThe operation I would reuse is the calculation of the remaining students after accounting for those who received an A, and then using a fraction to determine the number of students who got B or C. This method can be applied to similar problems where a fraction of a remaining quantity is known.\n\nFINAL: 18",
+        "target_sha256": "61152e0e9bbfe64533cc085f2e57bd56cffb298545adb61d1a8ac7945d8907a5"
+      }
+    ],
+    "task_id": "gsm8k-train-6424"
+  },
+  {
+    "gold": "39",
+    "question": "Tim gets a manicure and tips the beautician 30%.  If the manicure cost $30 how much did he pay in total?",
+    "question_sha256": "2f7ac246c19ff0043bc76865df3cb6dccb01cf15e67983a66b3a577b74f07d64",
+    "responses": [
+      {
+        "key": "gsm8k-train-6112:rich",
+        "raw_call_sha256": "84eff658fcdac8627e58d47d9d0900bfe580f328e312f0262a2c332810402d98",
+        "student_prefix": [
+          {
+            "content": "Tim gets a manicure and tips the beautician 30%.  If the manicure cost $30 how much did he pay in total?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "021c712387434ea654fe18df6f9c7b7e22816e0442e8268c15014fe869dbc842",
+        "target": "Given: The cost of the manicure is $30, and Tim tips 30% of this cost.\n\nTo find: The total amount Tim paid.\n\nStep 1: Calculate the tip amount.\nTip = 30% of $30 = 0.30 * $30 = $9\n\nStep 2: Add the tip to the cost of the manicure to get the total amount paid.\nTotal amount paid = Cost of manicure + Tip = $30 + $9 = $39\n\nCHECK: The total amount paid is the sum of the manicure cost and the tip, which is $39.\n\nFINAL: 39",
+        "target_sha256": "ce0cc975d937921b7ff5b930d870befeb67741f2ab8249523e5bc3b841b12f2d"
+      },
+      {
+        "key": "gsm8k-train-6112:new_record",
+        "raw_call_sha256": "519988e74364400bb5e722f6b113cbcfa0f3cfb107ede8f7f238a50c31737f3c",
+        "student_prefix": [
+          {
+            "content": "Tim gets a manicure and tips the beautician 30%.  If the manicure cost $30 how much did he pay in total?",
+            "role": "user"
+          },
+          {
+            "content": "Given: The cost of the manicure is $30, and Tim tips 30% of this cost.\n\nTo find: The total amount Tim paid.\n\nStep 1: Calculate the tip amount.\nTip = 30% of $30 = 0.30 * $30 = $9\n\nStep 2: Add the tip to the cost of the manicure to get the total amount paid.\nTotal amount paid = Cost of manicure + Tip = $30 + $9 = $39\n\nCHECK: The total amount paid is the sum of the manicure cost and the tip, which is $39.\n\nFINAL: 39",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "2930b7708b6cee348468b1b8a53e6e6e16a85e62181ebcb2d1bf9567291cc5a2",
+        "target": "Given: The cost of the manicure is $30, and Tim tips 30% of this cost. The task is to find the total amount Tim paid.\n\nI identified the cost of the manicure as $30 and the tip percentage as 30%. To find the tip amount, I calculated 30% of $30. This involved converting the percentage to a decimal (0.30) and then multiplying it by the cost of the manicure:\n\\[ \\text{Tip} = 0.30 \\times 30 = 9 \\]\nThis calculation showed that the tip amount is $9. To find the total amount paid, I added the tip to the original cost of the manicure:\n\\[ \\text{Total amount paid} = 30 + 9 = 39 \\]\nI verified this by ensuring that the total amount included both the original cost and the tip, confirming that the sum is indeed $39.\n\nThe operations I used are straightforward: converting a percentage to a decimal and performing multiplication and addition. These operations are reusable in similar problems involving percentages and total costs.\n\nFINAL: 39",
+        "target_sha256": "25edb2e8959fa8cfbefb17a667c10ee64689e4cda2154d69dc142a60897f790f"
+      }
+    ],
+    "task_id": "gsm8k-train-6112"
+  },
+  {
+    "gold": "240",
+    "question": "The capacity of Karson's home library is 400 books. If he currently has 120 books, how many more books does he have to buy to make his library 90% full?",
+    "question_sha256": "292695fbffc90d501395e96bfec83b76874c4dda9d3e79bcfd0507a2b307bf2c",
+    "responses": [
+      {
+        "key": "gsm8k-train-7264:rich",
+        "raw_call_sha256": "fe8442392861aa032eacc42c675dba18db347c3a5770f0344443140889e3cd91",
+        "student_prefix": [
+          {
+            "content": "The capacity of Karson's home library is 400 books. If he currently has 120 books, how many more books does he have to buy to make his library 90% full?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "d29b11ae831dd9ba83a3d9975e39cb6949f35d2db7c3a1c1e18bf77f4d49d949",
+        "target": "Given:\n- Total capacity of the library = 400 books\n- Current number of books = 120 books\n- Desired fullness = 90%\n\nFirst, calculate 90% of the library's capacity:\n90% of 400 = 0.90 * 400 = 360 books\n\nNext, find out how many more books are needed to reach 360 books:\nBooks needed = Desired number of books - Current number of books\nBooks needed = 360 - 120 = 240 books\n\nSo, Karson needs to buy 240 more books to make his library 90% full.\n\nFINAL: 240",
+        "target_sha256": "2ef93f77164c11a76011fd5cea847999befdb41d9c3917b67148ce3a8970da16"
+      },
+      {
+        "key": "gsm8k-train-7264:new_record",
+        "raw_call_sha256": "b77393855c40fde7872690c444f216067195477aa4e5b6e20611ebec3230c4b0",
+        "student_prefix": [
+          {
+            "content": "The capacity of Karson's home library is 400 books. If he currently has 120 books, how many more books does he have to buy to make his library 90% full?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Total capacity of the library = 400 books\n- Current number of books = 120 books\n- Desired fullness = 90%\n\nFirst, calculate 90% of the library's capacity:\n90% of 400 = 0.90 * 400 = 360 books\n\nNext, find out how many more books are needed to reach 360 books:\nBooks needed = Desired number of books - Current number of books\nBooks needed = 360 - 120 = 240 books\n\nSo, Karson needs to buy 240 more books to make his library 90% full.\n\nFINAL: 240",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "2c9be149aa4abf289cda8e02a484c7be3acb9a1e0203972c24b70c90ec743824",
+        "target": "Given the problem, I identified the key quantities: the total capacity of the library (400 books), the current number of books (120 books), and the desired fullness (90%). The unknown I needed to find was how many more books Karson needs to buy to reach 90% of the library's capacity.\n\nFirst, I calculated 90% of the library's total capacity:\n\\[ 0.90 \\times 400 = 360 \\text{ books} \\]\nThis step was necessary to determine the target number of books for 90% fullness.\n\nNext, I subtracted the current number of books from the target number to find out how many more books are needed:\n\\[ 360 - 120 = 240 \\text{ books} \\]\nThis subtraction operation directly gave me the number of books Karson needs to buy.\n\nTo verify the result, I checked if adding 240 books to the current 120 books would indeed make the library 90% full:\n\\[ 120 + 240 = 360 \\text{ books} \\]\nSince 360 books is 90% of the library's capacity (as calculated earlier), the result is correct.\n\nThe operation I would reuse is the subtraction of the current number of books from the target number of books to find the number of books needed to reach a specific percentage of capacity. This operation is reusable whenever a similar problem involving a target percentage and current quantity needs to be solved.\n\nFINAL: 240",
+        "target_sha256": "acb1da3bb1869371a8709306d03299543b6f61b65479d6209efbd7d2cd28f5f4"
+      }
+    ],
+    "task_id": "gsm8k-train-7264"
+  },
+  {
+    "gold": "2888",
+    "question": "Robert, a sales agent, earns a basic salary of $1250 per month and,  10% commission on his monthly sales. Last month, his total sales were $23600. He allocated 20% of his total earnings to savings and the rest of the money to his monthly expenses. How much were his monthly expenses last month?",
+    "question_sha256": "36c42b23e138ae2eb47e0acb165752eb2db09efd87d6d2fa41a5c6f49e168f76",
+    "responses": [
+      {
+        "key": "gsm8k-train-2458:rich",
+        "raw_call_sha256": "9d58579ba55bbe1df4164a6055a3bd49873352c5e2b2c9c84cd9421aa72226e7",
+        "student_prefix": [
+          {
+            "content": "Robert, a sales agent, earns a basic salary of $1250 per month and,  10% commission on his monthly sales. Last month, his total sales were $23600. He allocated 20% of his total earnings to savings and the rest of the money to his monthly expenses. How much were his monthly expenses last month?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "983b176911035e3b21f26f314b3fe1b9b14aec2a8465c08724b76cbd9301b26d",
+        "target": "First, I calculate Robert's commission from his sales. His commission is 10% of $23600, which is \\(0.10 \\times 23600 = 2360\\) dollars.\n\nNext, I add his basic salary to his commission to find his total earnings. His total earnings are \\(1250 + 2360 = 3610\\) dollars.\n\nRobert then allocates 20% of his total earnings to savings. The amount he saves is \\(0.20 \\times 3610 = 722\\) dollars.\n\nTo find his monthly expenses, I subtract his savings from his total earnings. His monthly expenses are \\(3610 - 722 = 2888\\) dollars.\n\nFINAL: 2888",
+        "target_sha256": "fa05f464568ef190eea6a6228c93b836cf0635e9cd9a7c59be8c6a9de0de54ce"
+      },
+      {
+        "key": "gsm8k-train-2458:new_record",
+        "raw_call_sha256": "6adadeea61c089e5a104c4a4535e07dec5019ef7f35a0c66bd8d6d81adce2bcf",
+        "student_prefix": [
+          {
+            "content": "Robert, a sales agent, earns a basic salary of $1250 per month and,  10% commission on his monthly sales. Last month, his total sales were $23600. He allocated 20% of his total earnings to savings and the rest of the money to his monthly expenses. How much were his monthly expenses last month?",
+            "role": "user"
+          },
+          {
+            "content": "First, I calculate Robert's commission from his sales. His commission is 10% of $23600, which is \\(0.10 \\times 23600 = 2360\\) dollars.\n\nNext, I add his basic salary to his commission to find his total earnings. His total earnings are \\(1250 + 2360 = 3610\\) dollars.\n\nRobert then allocates 20% of his total earnings to savings. The amount he saves is \\(0.20 \\times 3610 = 722\\) dollars.\n\nTo find his monthly expenses, I subtract his savings from his total earnings. His monthly expenses are \\(3610 - 722 = 2888\\) dollars.\n\nFINAL: 2888",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "9016f6f9e99987c50f0b46818c50e9a20dd123659b9e1771ed066c34dc48a292",
+        "target": "Given the problem, I identified the following quantities and the unknown:\n- Basic salary: $1250\n- Commission rate: 10%\n- Total sales: $23600\n- Savings rate: 20%\n- Monthly expenses: unknown\n\nTo find the monthly expenses, I first calculated the commission earned from sales. The commission is 10% of $23600, which I computed as:\n\\[ 0.10 \\times 23600 = 2360 \\]\n\nNext, I added the basic salary to the commission to get the total earnings:\n\\[ 1250 + 2360 = 3610 \\]\n\nThen, I calculated the amount allocated to savings, which is 20% of the total earnings:\n\\[ 0.20 \\times 3610 = 722 \\]\n\nTo find the monthly expenses, I subtracted the savings from the total earnings:\n\\[ 3610 - 722 = 2888 \\]\n\nI verified the result by ensuring that the sum of the savings and the expenses equals the total earnings:\n\\[ 722 + 2888 = 3610 \\]\n\nThis check confirms the accuracy of the calculation. The operations used are straightforward arithmetic and percentage calculations, which are reliable and reusable for similar problems.\n\nFINAL: 2888",
+        "target_sha256": "d20cb5c2171f55c00a1db9973fbad91a2d862d9cddfccbb568660c388ee7a252"
+      }
+    ],
+    "task_id": "gsm8k-train-2458"
+  }
+]

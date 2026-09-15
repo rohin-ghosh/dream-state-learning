@@ -1,0 +1,338 @@
+[
+  {
+    "gold": "3450",
+    "question": "A luxury bag costs $3000. A reseller wants to get a 15% profit. How much should she sell the bag?",
+    "question_sha256": "42ce057a24812334515b37e7194e1fb0dc12b23027432c5962e427a63108a6ae",
+    "responses": [
+      {
+        "key": "gsm8k-train-538:rich",
+        "raw_call_sha256": "3b7d9853c75f2ba24855ec7d65026e319e83fe31489c8409a99c5fc6b542a81e",
+        "student_prefix": [
+          {
+            "content": "A luxury bag costs $3000. A reseller wants to get a 15% profit. How much should she sell the bag?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "84a7a26011172875cb9debc20af1fb088bead5c3951dc7a9dfafaf7f492c6a89",
+        "target": "Given:\n- Cost price of the bag = $3000\n- Desired profit = 15%\n\nTo find the selling price, we need to calculate 15% of the cost price and add it to the cost price.\n\n1. Calculate 15% of $3000:\n\\[ 15\\% \\text{ of } 3000 = \\frac{15}{100} \\times 3000 = 0.15 \\times 3000 = 450 \\]\n\n2. Add this profit to the original cost price:\n\\[ \\text{Selling price} = 3000 + 450 = 3450 \\]\n\nSo, the reseller should sell the bag for $3450.\n\nFINAL: 3450",
+        "target_sha256": "72d2ee7c19ace83811d1754c5c7f58b5c1bca74ab5e79e4edfc57d6a10efe227"
+      },
+      {
+        "key": "gsm8k-train-538:new_record",
+        "raw_call_sha256": "f758a2071eb6590b6e47fba7a33d7941a0560ee446c2b1189ca27faf8cb3edc6",
+        "student_prefix": [
+          {
+            "content": "A luxury bag costs $3000. A reseller wants to get a 15% profit. How much should she sell the bag?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Cost price of the bag = $3000\n- Desired profit = 15%\n\nTo find the selling price, we need to calculate 15% of the cost price and add it to the cost price.\n\n1. Calculate 15% of $3000:\n\\[ 15\\% \\text{ of } 3000 = \\frac{15}{100} \\times 3000 = 0.15 \\times 3000 = 450 \\]\n\n2. Add this profit to the original cost price:\n\\[ \\text{Selling price} = 3000 + 450 = 3450 \\]\n\nSo, the reseller should sell the bag for $3450.\n\nFINAL: 3450",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "52f3e0c55b0672d3ad42ae97071a354052d9395e0fc547f166bf7a25eb12ac74",
+        "target": "Given the problem, I identified the cost price of the bag as $3000 and the desired profit as 15%. My task was to determine the selling price that would yield this profit. I knew that to find the selling price, I needed to calculate the profit amount and then add it to the cost price.\n\nFirst, I calculated 15% of $3000 to find the profit amount:\n\\[ \\text{Profit} = \\frac{15}{100} \\times 3000 = 0.15 \\times 3000 = 450 \\]\n\nNext, I added this profit to the original cost price to find the selling price:\n\\[ \\text{Selling Price} = 3000 + 450 = 3450 \\]\n\nTo verify the result, I checked that the selling price was indeed $3450, which is the sum of the original cost and the calculated profit. This check confirmed that the operations were correctly applied and the result was accurate.\n\nThe operations I used were straightforward: calculating a percentage of a given number and then adding that result to the original number. These operations are reusable in similar problems where a percentage profit or loss needs to be calculated.\n\nFINAL: 3450",
+        "target_sha256": "668ed0e949b023a031a9de06b3a15e6c9491b51ff07d1fbafbf962f71b68aae0"
+      }
+    ],
+    "task_id": "gsm8k-train-538"
+  },
+  {
+    "gold": "2600",
+    "question": "Mr. Mayer bought Corgi dogs for $1000 each. He plans to sell them with a 30% profit. If one of his friends wants to buy two dogs, how much should his friend pay?",
+    "question_sha256": "6221a93479d46f6ffeef7b8519dc0c608cf66e9e9b23ae56e8c0c01dec84f693",
+    "responses": [
+      {
+        "key": "gsm8k-train-2319:rich",
+        "raw_call_sha256": "9415f5808b878ba805f1e2c6a86052d814e77291abf7b12ef0c025c53ad94bab",
+        "student_prefix": [
+          {
+            "content": "Mr. Mayer bought Corgi dogs for $1000 each. He plans to sell them with a 30% profit. If one of his friends wants to buy two dogs, how much should his friend pay?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "06ac8e82d9d9a7c3e9ca2652aace8814a5564e1c09e16b6625e070a167f2d061",
+        "target": "Given:\n- Cost price of one Corgi dog = $1000\n- Profit margin = 30%\n\nFirst, calculate the selling price of one dog:\nSelling price = Cost price + (Profit margin * Cost price)\nSelling price = $1000 + (0.30 * $1000)\nSelling price = $1000 + $300\nSelling price = $1300\n\nNow, calculate the total cost for two dogs:\nTotal cost for two dogs = Selling price of one dog * 2\nTotal cost for two dogs = $1300 * 2\nTotal cost for two dogs = $2600\n\nFINAL: 2600",
+        "target_sha256": "5fc3bbbcf2928bf38b3d1f8c17e1d7ab4bb2a7cd00d6e342af43357ade942e25"
+      },
+      {
+        "key": "gsm8k-train-2319:new_record",
+        "raw_call_sha256": "4435081381877c3cf7d9a2737ca2b757945dba784307c0552bbd7e7bbe8c3d28",
+        "student_prefix": [
+          {
+            "content": "Mr. Mayer bought Corgi dogs for $1000 each. He plans to sell them with a 30% profit. If one of his friends wants to buy two dogs, how much should his friend pay?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Cost price of one Corgi dog = $1000\n- Profit margin = 30%\n\nFirst, calculate the selling price of one dog:\nSelling price = Cost price + (Profit margin * Cost price)\nSelling price = $1000 + (0.30 * $1000)\nSelling price = $1000 + $300\nSelling price = $1300\n\nNow, calculate the total cost for two dogs:\nTotal cost for two dogs = Selling price of one dog * 2\nTotal cost for two dogs = $1300 * 2\nTotal cost for two dogs = $2600\n\nFINAL: 2600",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "4347d3d61bf268e25db2c07a02e5fc9fd1efeb47239a9eb664d1687b42758b1f",
+        "target": "Given the problem, I identified the key quantities: the cost price of one Corgi dog ($1000) and the desired profit margin (30%). The unknown was the total amount a friend should pay for two dogs with a 30% profit included.\n\nFirst, I calculated the selling price of one dog:\n\\[ \\text{Selling price} = \\text{Cost price} + (\\text{Profit margin} \\times \\text{Cost price}) \\]\n\\[ \\text{Selling price} = 1000 + (0.30 \\times 1000) \\]\n\\[ \\text{Selling price} = 1000 + 300 \\]\n\\[ \\text{Selling price} = 1300 \\]\n\nNext, I determined the total cost for two dogs:\n\\[ \\text{Total cost for two dogs} = \\text{Selling price of one dog} \\times 2 \\]\n\\[ \\text{Total cost for two dogs} = 1300 \\times 2 \\]\n\\[ \\text{Total cost for two dogs} = 2600 \\]\n\nTo verify the result, I checked the calculation by ensuring the profit was correctly applied to the cost price and that the total was indeed double the selling price of one dog. The operations used were straightforward arithmetic, and the result matched the problem's requirements.\n\nThe operations I would reuse are the same: calculating the selling price with a given profit margin and then multiplying by the number of items. This method is general and can be applied to any similar problem involving a fixed cost and a percentage profit.\n\nFINAL: 2600",
+        "target_sha256": "801202009166b12ae915eeff9e38511ab983fd6cb38820433cd47e7855b96a1c"
+      }
+    ],
+    "task_id": "gsm8k-train-2319"
+  },
+  {
+    "gold": "52",
+    "question": "There are 11 boys and 13 girls in a class. If 1 boy is added to the class, what percentage of the class are girls?",
+    "question_sha256": "28fc3fc93d3a24fb3eb0d5fda71266dcea51ca468c550ac1ba072a70adaabfe9",
+    "responses": [
+      {
+        "key": "gsm8k-train-7189:rich",
+        "raw_call_sha256": "4018a0ce73d68e61f1e4d2a2dd83eb4101bcc8a3f7cefd754bbb1942c8717dda",
+        "student_prefix": [
+          {
+            "content": "There are 11 boys and 13 girls in a class. If 1 boy is added to the class, what percentage of the class are girls?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "092d45011889dc88e9b0a579ef8e4637136f33541dc3117fa75ccf71df88cd07",
+        "target": "Initially, there are 11 boys and 13 girls, making a total of 11 + 13 = 24 students. When 1 boy is added, the number of boys becomes 11 + 1 = 12, and the total number of students is now 24 + 1 = 25. The number of girls remains 13. To find the percentage of the class that are girls, we use the formula:\n\n\\[ \\text{Percentage of girls} = \\left( \\frac{\\text{Number of girls}}{\\text{Total number of students}} \\right) \\times 100 \\]\n\nSubstituting the values:\n\n\\[ \\text{Percentage of girls} = \\left( \\frac{13}{25} \\right) \\times 100 = 52\\% \\]\n\nSo, 52% of the class are girls.\n\nFINAL: 52",
+        "target_sha256": "3629b91261fd76bf0f83010cb928eb97813d1231174e9b9fd4775bf7236709ca"
+      },
+      {
+        "key": "gsm8k-train-7189:new_record",
+        "raw_call_sha256": "51d8df0a5dea1449857b9a049a80b8fa8c552d5631d4b0f1ee3335d247de1e3e",
+        "student_prefix": [
+          {
+            "content": "There are 11 boys and 13 girls in a class. If 1 boy is added to the class, what percentage of the class are girls?",
+            "role": "user"
+          },
+          {
+            "content": "Initially, there are 11 boys and 13 girls, making a total of 11 + 13 = 24 students. When 1 boy is added, the number of boys becomes 11 + 1 = 12, and the total number of students is now 24 + 1 = 25. The number of girls remains 13. To find the percentage of the class that are girls, we use the formula:\n\n\\[ \\text{Percentage of girls} = \\left( \\frac{\\text{Number of girls}}{\\text{Total number of students}} \\right) \\times 100 \\]\n\nSubstituting the values:\n\n\\[ \\text{Percentage of girls} = \\left( \\frac{13}{25} \\right) \\times 100 = 52\\% \\]\n\nSo, 52% of the class are girls.\n\nFINAL: 52",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "e9cf1b9df4f090eaa53e0522a54568f4526ed4660f4d2538606e2adc677c3551",
+        "target": "Given the problem, I identified the initial quantities: 11 boys and 13 girls, making a total of 24 students. The task was to determine the percentage of the class that are girls after adding 1 boy. The unknown was the percentage of girls in the new class composition.\n\nI first added 1 boy to the initial 11 boys, resulting in 12 boys. The total number of students then became 24 + 1 = 25. The number of girls remained 13. To find the percentage of girls, I used the formula:\n\n\\[ \\text{Percentage of girls} = \\left( \\frac{\\text{Number of girls}}{\\text{Total number of students}} \\right) \\times 100 \\]\n\nSubstituting the values:\n\n\\[ \\text{Percentage of girls} = \\left( \\frac{13}{25} \\right) \\times 100 = 52\\% \\]\n\nTo verify this result, I checked the calculation by ensuring that the percentage was indeed the correct representation of the ratio of girls to the total number of students. The operation of adding 1 boy and recalculating the percentage is reusable in similar problems where the composition of a group changes and the percentage of a specific subgroup is required.\n\nThe final answer is:\n\nFINAL: 52",
+        "target_sha256": "666c11a136c9d798a5f887dbd7dfa3e4b93d779613ed6c180b55ab6161794087"
+      }
+    ],
+    "task_id": "gsm8k-train-7189"
+  },
+  {
+    "gold": "900",
+    "question": "Robi and Rudy contributed money to start a business that could earn them profit. Robi contributed $4000, and Rudy contributed 1/4 more money than Robi. If they made a profit of 20 percent of the total amount and decided to share the profits equally, calculate the amount of money each got.",
+    "question_sha256": "bb52217a66addf102166ec7da714427f324ce2729d8614302e9ed4c5e7e7966c",
+    "responses": [
+      {
+        "key": "gsm8k-train-3603:rich",
+        "raw_call_sha256": "80f10cab66d6d8703bb40f674545c7a32b71734130e3499fd58facbd345097c3",
+        "student_prefix": [
+          {
+            "content": "Robi and Rudy contributed money to start a business that could earn them profit. Robi contributed $4000, and Rudy contributed 1/4 more money than Robi. If they made a profit of 20 percent of the total amount and decided to share the profits equally, calculate the amount of money each got.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "9d4ef165288764393d93d9c91c55dfed76b3ed2c9aed6b5e091a5a6cf13f5a7a",
+        "target": "First, I identify the given quantities:\n- Robi contributed $4000.\n- Rudy contributed 1/4 more than Robi, which means Rudy contributed $4000 + (1/4 * $4000) = $4000 + $1000 = $5000.\n- The total contribution is $4000 + $5000 = $9000.\n- They made a 20% profit on the total amount, so the profit is 20% of $9000 = 0.20 * $9000 = $1800.\n- Since they decided to share the profits equally, each gets half of $1800 = $1800 / 2 = $900.\n\nFINAL: 900",
+        "target_sha256": "0d6a2022e0e1e0c3b83c70efc3a093751e15df561c31bea5c5c90f74cad4f48e"
+      },
+      {
+        "key": "gsm8k-train-3603:new_record",
+        "raw_call_sha256": "63481842401c766a493abe5b22e983f28368c9b6902503f1727c18f80f81e75e",
+        "student_prefix": [
+          {
+            "content": "Robi and Rudy contributed money to start a business that could earn them profit. Robi contributed $4000, and Rudy contributed 1/4 more money than Robi. If they made a profit of 20 percent of the total amount and decided to share the profits equally, calculate the amount of money each got.",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Robi contributed $4000.\n- Rudy contributed 1/4 more than Robi, which means Rudy contributed $4000 + (1/4 * $4000) = $4000 + $1000 = $5000.\n- The total contribution is $4000 + $5000 = $9000.\n- They made a 20% profit on the total amount, so the profit is 20% of $9000 = 0.20 * $9000 = $1800.\n- Since they decided to share the profits equally, each gets half of $1800 = $1800 / 2 = $900.\n\nFINAL: 900",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "9f3b8cf395335ce097fdd13db4cdc03a38fb5e19469e71692f8d0d8b80a39846",
+        "target": "Given the problem, I identified the contributions of Robi and Rudy, and the profit they made. The contributions were straightforward: Robi contributed $4000, and Rudy contributed 1/4 more than Robi, which I calculated as $4000 + (1/4 * $4000) = $5000. The total contribution was then $4000 + $5000 = $9000. The profit was 20% of the total contribution, which I calculated as 0.20 * $9000 = $1800. Since they decided to share the profits equally, each received half of the profit, which I calculated as $1800 / 2 = $900. To verify, I checked that the total profit ($1800) divided by 2 ($900 each) equals the individual share, confirming the calculation.\n\nThe operations I used were straightforward arithmetic: addition to find the total contribution, multiplication to find the profit, and division to share the profit equally. These operations are reusable in similar problems involving contributions and profit sharing.\n\nFINAL: 900",
+        "target_sha256": "172b808da03a3a40ea64bd8167450d0f187e3d031a24fe032ed7ede85a8830d2"
+      }
+    ],
+    "task_id": "gsm8k-train-3603"
+  },
+  {
+    "gold": "90",
+    "question": "Following her doctor\u2019s recommendation to up her daily water intake, Nancy now drinks the equivalent of 60% of her body weight in water. If Nancy\u2019s daily water intake is 54 pounds, how much, in pounds, does she weigh?",
+    "question_sha256": "ba5f058a69c2fe4185c8a2274329f7d7ce6c3f6aeac4a96a095f3f569dac1f6e",
+    "responses": [
+      {
+        "key": "gsm8k-train-1906:rich",
+        "raw_call_sha256": "02cba68239fc3a12694bdd40ce49d41dbaf6df8061ef1ca3a96c7ec79dfa5489",
+        "student_prefix": [
+          {
+            "content": "Following her doctor\u2019s recommendation to up her daily water intake, Nancy now drinks the equivalent of 60% of her body weight in water. If Nancy\u2019s daily water intake is 54 pounds, how much, in pounds, does she weigh?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "7af9db9bd9cfc94a2a480e97675959626a36a3373c4b0f8b8ff8b750e1c91178",
+        "target": "Given that Nancy drinks 60% of her body weight in water and her daily water intake is 54 pounds, we can set up the equation to find her weight.\n\nLet \\( W \\) be Nancy's weight in pounds. According to the problem, 60% of her weight is equal to 54 pounds. This can be written as:\n\\[ 0.60 \\times W = 54 \\]\n\nTo find \\( W \\), we divide both sides of the equation by 0.60:\n\\[ W = \\frac{54}{0.60} \\]\n\nPerforming the division:\n\\[ W = 90 \\]\n\nSo, Nancy weighs 90 pounds.\n\nFINAL: 90",
+        "target_sha256": "e0a3ea0d13ce3c3291326d3e624eceacd8a7413619c40b370052757b587dedae"
+      },
+      {
+        "key": "gsm8k-train-1906:new_record",
+        "raw_call_sha256": "5b405f012a4c359432958bc0e3f979c54940a939b81498231083a3d615c266d7",
+        "student_prefix": [
+          {
+            "content": "Following her doctor\u2019s recommendation to up her daily water intake, Nancy now drinks the equivalent of 60% of her body weight in water. If Nancy\u2019s daily water intake is 54 pounds, how much, in pounds, does she weigh?",
+            "role": "user"
+          },
+          {
+            "content": "Given that Nancy drinks 60% of her body weight in water and her daily water intake is 54 pounds, we can set up the equation to find her weight.\n\nLet \\( W \\) be Nancy's weight in pounds. According to the problem, 60% of her weight is equal to 54 pounds. This can be written as:\n\\[ 0.60 \\times W = 54 \\]\n\nTo find \\( W \\), we divide both sides of the equation by 0.60:\n\\[ W = \\frac{54}{0.60} \\]\n\nPerforming the division:\n\\[ W = 90 \\]\n\nSo, Nancy weighs 90 pounds.\n\nFINAL: 90",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "ab2ef482fafa1752b6badac19efc9ec88c1fe1c94d8f85758b719cd48768d5c0",
+        "target": "Given that Nancy drinks 60% of her body weight in water, and her daily water intake is 54 pounds, I started by identifying the key quantities: Nancy's daily water intake (54 pounds) and the percentage of her body weight that this represents (60%). The unknown quantity is Nancy's weight, which I denoted as \\( W \\).\n\nI recognized that the relationship between Nancy's weight and her water intake can be expressed as:\n\\[ 0.60 \\times W = 54 \\]\n\nTo find \\( W \\), I decided to isolate it by dividing both sides of the equation by 0.60:\n\\[ W = \\frac{54}{0.60} \\]\n\nI expected this operation to yield Nancy's weight in pounds. Performing the division, I calculated:\n\\[ W = 90 \\]\n\nTo verify the result, I checked if 60% of 90 pounds equals 54 pounds:\n\\[ 0.60 \\times 90 = 54 \\]\n\nSince the calculation holds true, I am confident in the result. The operation I used, dividing the daily water intake by the percentage of body weight, is reusable whenever the percentage of body weight for a given substance is known and the intake is provided.\n\nFINAL: 90",
+        "target_sha256": "cdb0f69cfcc75ec256e2d65a478eee6e8ff059d919e8afe7a2acbaa5444f6f47"
+      }
+    ],
+    "task_id": "gsm8k-train-1906"
+  },
+  {
+    "gold": "99",
+    "question": "All people named Barry are nice, while only half of the people named Kevin are nice.  Three-fourths of people named Julie are nice, while 10% of people named Joe are nice.  If a crowd contains 24 people named Barry, 20 people named Kevin, 80 people named Julie, and 50 people named Joe, how many nice people are in the crowd?",
+    "question_sha256": "28cdd9e352f4a81bd297775984a52440f03798957f311288c76f077799dd7940",
+    "responses": [
+      {
+        "key": "gsm8k-train-3847:rich",
+        "raw_call_sha256": "319ea78892a4c52f8b7d557fa393cea0ae900a76599981699daf9404b56d3323",
+        "student_prefix": [
+          {
+            "content": "All people named Barry are nice, while only half of the people named Kevin are nice.  Three-fourths of people named Julie are nice, while 10% of people named Joe are nice.  If a crowd contains 24 people named Barry, 20 people named Kevin, 80 people named Julie, and 50 people named Joe, how many nice people are in the crowd?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "1c3ce4bbf2966650264adf6e76dc93320c5d00cd091b60690c3bb03e2cab083d",
+        "target": "Given:\n- All 24 people named Barry are nice.\n- Half of 20 people named Kevin are nice, which is 10 people.\n- Three-fourths of 80 people named Julie are nice, which is 60 people.\n- 10% of 50 people named Joe are nice, which is 5 people.\n\nTo find the total number of nice people, we sum the nice people from each group:\n24 (Barry) + 10 (Kevin) + 60 (Julie) + 5 (Joe) = 99.\n\nFINAL: 99",
+        "target_sha256": "51f1c5fceac8396ae51d7a143037f69dd725a399e07eb2b605fb79e3966b9d77"
+      },
+      {
+        "key": "gsm8k-train-3847:new_record",
+        "raw_call_sha256": "a0be354f784885182ca5c168d8cc15b9eaef25d7dad71f2e0387004fcf66c91b",
+        "student_prefix": [
+          {
+            "content": "All people named Barry are nice, while only half of the people named Kevin are nice.  Three-fourths of people named Julie are nice, while 10% of people named Joe are nice.  If a crowd contains 24 people named Barry, 20 people named Kevin, 80 people named Julie, and 50 people named Joe, how many nice people are in the crowd?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- All 24 people named Barry are nice.\n- Half of 20 people named Kevin are nice, which is 10 people.\n- Three-fourths of 80 people named Julie are nice, which is 60 people.\n- 10% of 50 people named Joe are nice, which is 5 people.\n\nTo find the total number of nice people, we sum the nice people from each group:\n24 (Barry) + 10 (Kevin) + 60 (Julie) + 5 (Joe) = 99.\n\nFINAL: 99",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "4c347f93c814f643f61f3dfaf604589c21b58816eca59729f0f7f8c81a85b586",
+        "target": "Given the problem, I identified the following quantities and their relationships:\n- 24 people named Barry, all of whom are nice.\n- 20 people named Kevin, half of whom are nice.\n- 80 people named Julie, three-fourths of whom are nice.\n- 50 people named Joe, 10% of whom are nice.\n\nThe unknown I needed to find was the total number of nice people in the crowd.\n\nTo solve this, I broke it down into steps:\n1. Calculate the number of nice people named Barry: Since all 24 Barrys are nice, this is simply 24.\n2. Calculate the number of nice people named Kevin: Half of 20 is 10, so there are 10 nice Kevin.\n3. Calculate the number of nice people named Julie: Three-fourths of 80 is 60, so there are 60 nice Julie.\n4. Calculate the number of nice people named Joe: 10% of 50 is 5, so there are 5 nice Joe.\n\nAdding these together:\n24 (Barry) + 10 (Kevin) + 60 (Julie) + 5 (Joe) = 99.\n\nTo check this result, I verified that each calculation was correct and that the sum of the nice people from each group matched the total calculated. The operations used were straightforward arithmetic, and the result was consistent with the problem statement.\n\nThe operations I would reuse are the same arithmetic operations for calculating proportions and sums, as they are directly applicable to similar problems involving categorical data and proportions.\n\nFINAL: 99",
+        "target_sha256": "6283c3a187ee7b2ddb87e7ebbddddac3cb77859e7c780125c33ba1cb31f46d5c"
+      }
+    ],
+    "task_id": "gsm8k-train-3847"
+  },
+  {
+    "gold": "25",
+    "question": "Louie obtained 80% on a math quiz. He had 5 mistakes. How many items were there on the math quiz?",
+    "question_sha256": "9d4ef5a1d0aef7037b053caec393f9731de2125e8790bd3f344f7b7e5e3bb9c8",
+    "responses": [
+      {
+        "key": "gsm8k-train-1077:rich",
+        "raw_call_sha256": "67b846e85f58fe9cfab5b25c6ecf8981b5fa901d8c0276ba12a8fea30f1edae7",
+        "student_prefix": [
+          {
+            "content": "Louie obtained 80% on a math quiz. He had 5 mistakes. How many items were there on the math quiz?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "3a1d5dcfad4236dd41fb06552991ae619198a0c671093c06d039e8722dd735e4",
+        "target": "Given that Louie obtained 80% on the quiz and had 5 mistakes, we can determine the total number of items on the quiz. \n\nFirst, let's denote the total number of items on the quiz as \\( x \\). Since Louie got 80% correct, he got 20% wrong. The 5 mistakes represent these 20% of the total items.\n\nWe can set up the equation:\n\\[ 0.20x = 5 \\]\n\nTo find \\( x \\), we solve for \\( x \\):\n\\[ x = \\frac{5}{0.20} \\]\n\\[ x = 25 \\]\n\nSo, the total number of items on the quiz is 25.\n\nFINAL: 25",
+        "target_sha256": "7fa6ed405c3706e70a693732b232d2061414691eaa68583e4cd3c638073e638d"
+      },
+      {
+        "key": "gsm8k-train-1077:new_record",
+        "raw_call_sha256": "e800fb3a6dc78099ef6886578adf455b858a3fa6fc85af2dcc8481fb9202969e",
+        "student_prefix": [
+          {
+            "content": "Louie obtained 80% on a math quiz. He had 5 mistakes. How many items were there on the math quiz?",
+            "role": "user"
+          },
+          {
+            "content": "Given that Louie obtained 80% on the quiz and had 5 mistakes, we can determine the total number of items on the quiz. \n\nFirst, let's denote the total number of items on the quiz as \\( x \\). Since Louie got 80% correct, he got 20% wrong. The 5 mistakes represent these 20% of the total items.\n\nWe can set up the equation:\n\\[ 0.20x = 5 \\]\n\nTo find \\( x \\), we solve for \\( x \\):\n\\[ x = \\frac{5}{0.20} \\]\n\\[ x = 25 \\]\n\nSo, the total number of items on the quiz is 25.\n\nFINAL: 25",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "af31fb81ea724c328750f1d67c6bc57d68ef34a6d43d65dcf03125f628e61735",
+        "target": "Given that Louie obtained 80% on a math quiz and had 5 mistakes, I started by identifying the key quantities: the percentage score (80%) and the number of mistakes (5). The unknown quantity is the total number of items on the quiz, which I'll denote as \\( x \\).\n\nFrom the problem, I knew that the 5 mistakes represent the 20% of the total items that Louie got wrong. This led me to set up the equation:\n\\[ 0.20x = 5 \\]\n\nTo find \\( x \\), I solved the equation by dividing both sides by 0.20:\n\\[ x = \\frac{5}{0.20} \\]\n\\[ x = 25 \\]\n\nI expected this result to mean that the total number of items on the quiz is 25, as this would make sense given that 20% of 25 is 5, which matches the number of mistakes Louie had.\n\nTo check the result, I verified that 80% of 25 is indeed the number of correct answers:\n\\[ 0.80 \\times 25 = 20 \\]\nSince Louie had 5 mistakes, he must have gotten 20 correct answers, which is 80% of the total items.\n\nThe operation I would reuse is the setup and solving of the equation based on the percentage and the number of mistakes. This method can be applied to similar problems where a percentage and a specific number of incorrect or correct answers are given.\n\nFINAL: 25",
+        "target_sha256": "9659b67cfd9583a98f59c950e838f960670c8f3b7d059add6272c1a337f2b4e3"
+      }
+    ],
+    "task_id": "gsm8k-train-1077"
+  },
+  {
+    "gold": "60",
+    "question": "Ryan works in an office that has an even number of men and women working there.  Ryan participates in a meeting composed of 4 men and 6 women who are pulled from the office floor.   This reduces the number of women working on the office floor by 20%.  How many people work at Ryan's office?",
+    "question_sha256": "59623e4cdd8e3391d7c57c4210a610f71ea4ea023457e8bd61128a9236e86fa5",
+    "responses": [
+      {
+        "key": "gsm8k-train-4091:rich",
+        "raw_call_sha256": "9f78ba6fb4d0985976c2ec5148074d78a823a774cd5367bc6d9d33781f83f63c",
+        "student_prefix": [
+          {
+            "content": "Ryan works in an office that has an even number of men and women working there.  Ryan participates in a meeting composed of 4 men and 6 women who are pulled from the office floor.   This reduces the number of women working on the office floor by 20%.  How many people work at Ryan's office?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "83f0fc92d1afb795d10494f9f8ac004882853f952c3e2dab369e4f13f72fdc13",
+        "target": "Given:\n- The meeting includes 4 men and 6 women.\n- The number of women in the meeting is 20% of the total women in the office.\n\nLet \\( W \\) be the total number of women in the office. Since 6 women represent 20% of the total women, we can write:\n\\[ 0.2W = 6 \\]\nSolving for \\( W \\):\n\\[ W = \\frac{6}{0.2} = 30 \\]\n\nSince the number of men is equal to the number of women, there are also 30 men in the office.\n\nThe total number of people in the office is:\n\\[ 30 \\text{ men} + 30 \\text{ women} = 60 \\]\n\nFINAL: 60",
+        "target_sha256": "c8c1093b330aa193f3e39e535d36475946db0e351d4f71c09f1ba2dd28616a1d"
+      },
+      {
+        "key": "gsm8k-train-4091:new_record",
+        "raw_call_sha256": "93459ae5ae8c8659df700256503ca691856353b2f85414ef57c007faaf796701",
+        "student_prefix": [
+          {
+            "content": "Ryan works in an office that has an even number of men and women working there.  Ryan participates in a meeting composed of 4 men and 6 women who are pulled from the office floor.   This reduces the number of women working on the office floor by 20%.  How many people work at Ryan's office?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- The meeting includes 4 men and 6 women.\n- The number of women in the meeting is 20% of the total women in the office.\n\nLet \\( W \\) be the total number of women in the office. Since 6 women represent 20% of the total women, we can write:\n\\[ 0.2W = 6 \\]\nSolving for \\( W \\):\n\\[ W = \\frac{6}{0.2} = 30 \\]\n\nSince the number of men is equal to the number of women, there are also 30 men in the office.\n\nThe total number of people in the office is:\n\\[ 30 \\text{ men} + 30 \\text{ women} = 60 \\]\n\nFINAL: 60",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "ee33d7d5d1bf32df402765c6e937022eb0d374472ce5773c7ca8cee89b2eaafc",
+        "target": "Given that the office has an even number of men and women, and that a meeting of 4 men and 6 women was pulled from the office floor, reducing the number of women by 20%, I started by focusing on the women's count. The problem stated that 6 women represent 20% of the total women in the office. This led me to set up the equation:\n\n\\[ 0.2W = 6 \\]\n\nSolving for \\( W \\):\n\n\\[ W = \\frac{6}{0.2} = 30 \\]\n\nThis calculation confirmed that there are 30 women in the office. Since the number of men is equal to the number of women, there are also 30 men. Therefore, the total number of people in the office is:\n\n\\[ 30 \\text{ men} + 30 \\text{ women} = 60 \\]\n\nTo verify this, I considered that the meeting included 6 women, which is indeed 20% of 30 women. The remaining 24 women on the office floor confirm the reduction. The same logic applies to the men, with 4 men in the meeting and 26 men remaining, which is consistent with the total of 30 men.\n\nThe operations I used were straightforward: setting up and solving a simple percentage equation. This method is reusable whenever a problem involves a known percentage of a total quantity.\n\nFINAL: 60",
+        "target_sha256": "de8d17eb0cec1b5d5cb71e8a0ac6bdabbd3095c7e8a30ac9f11878e238d9c3cf"
+      }
+    ],
+    "task_id": "gsm8k-train-4091"
+  }
+]

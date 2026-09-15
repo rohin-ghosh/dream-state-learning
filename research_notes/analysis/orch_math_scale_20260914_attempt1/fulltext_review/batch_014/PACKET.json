@@ -1,0 +1,338 @@
+[
+  {
+    "gold": "54",
+    "question": "Mr. Angstadt has 120 students throughout the school day.  Half of them are enrolled in Statistics.  Of the students in Statistics, 90 percent are seniors.  How many of Mr. Angstadt's students are seniors enrolled in Statistics?",
+    "question_sha256": "937557bfee738afb32de67e1e52306155f8df4de0e12fc9698b5c393ff7edd63",
+    "responses": [
+      {
+        "key": "gsm8k-train-5565:rich",
+        "raw_call_sha256": "d37bd152f405a4e2591dc52301f94622b0fef4f46c238b8fd0584d84570fd654",
+        "student_prefix": [
+          {
+            "content": "Mr. Angstadt has 120 students throughout the school day.  Half of them are enrolled in Statistics.  Of the students in Statistics, 90 percent are seniors.  How many of Mr. Angstadt's students are seniors enrolled in Statistics?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "3a402700eb8b3b89a1cc79db7726aef01c9fbd4d432dd0cb99a3e073eec778bd",
+        "target": "Given:\n- Total students: 120\n- Half are in Statistics: 120 / 2 = 60 students\n- 90% of Statistics students are seniors: 60 * 0.90 = 54 students\n\nSo, 54 of Mr. Angstadt's students are seniors enrolled in Statistics.\n\nFINAL: 54",
+        "target_sha256": "ae6f3d06e0adb6b3e5336bc742cfea29cded46953b4095966e2e49b9a194c603"
+      },
+      {
+        "key": "gsm8k-train-5565:new_record",
+        "raw_call_sha256": "b11fec405fcd6e7a57b981c537140dff76c4e3f3d831a0219d96bf66f1220724",
+        "student_prefix": [
+          {
+            "content": "Mr. Angstadt has 120 students throughout the school day.  Half of them are enrolled in Statistics.  Of the students in Statistics, 90 percent are seniors.  How many of Mr. Angstadt's students are seniors enrolled in Statistics?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- Total students: 120\n- Half are in Statistics: 120 / 2 = 60 students\n- 90% of Statistics students are seniors: 60 * 0.90 = 54 students\n\nSo, 54 of Mr. Angstadt's students are seniors enrolled in Statistics.\n\nFINAL: 54",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "08d8db3b1810e9eaa6cb807da71460a52cf2645d76cf3b7b87c872112a8cfb65",
+        "target": "Given the problem, I identified the following quantities:\n- Total number of students: 120\n- Half of the students are in Statistics: 120 / 2 = 60 students\n- 90% of the Statistics students are seniors: 60 * 0.90 = 54 students\n\nThe unknown I needed to find was the number of seniors enrolled in Statistics. To find this, I first calculated the number of students in Statistics, which is half of the total number of students. Then, I determined the number of seniors in Statistics by finding 90% of the Statistics students.\n\nThe operation I chose was to multiply the number of Statistics students by 90%, which is equivalent to multiplying by 0.90. I expected this operation to give me the number of seniors in Statistics, as 90% is the given percentage of seniors among the Statistics students.\n\nTo check the result, I verified that the calculation was correct by ensuring that 54 is indeed 90% of 60. This can be confirmed by the equation: 60 * 0.90 = 54.\n\nThe operation I would reuse is the multiplication of a given percentage by a quantity to find a part of that quantity. This operation is useful in problems where a percentage of a total is needed.\n\nFINAL: 54",
+        "target_sha256": "879b6bac090dd710290b5ffd35961c9e5df86e087fb54ff3f9ff8eb43c70baf7"
+      }
+    ],
+    "task_id": "gsm8k-train-5565"
+  },
+  {
+    "gold": "4455",
+    "question": "Bob has a cube of silver that measures 3 inches on each side.  A cubic inch of silver weighs 6 ounces.  Each ounce of silver sells for $25.  He sells it for 110% of its silver value.  How much does he sell it for?",
+    "question_sha256": "ab828217b44af48bf65fb5da7421465a7c6ce41ca23abe9520ac159bc11caf78",
+    "responses": [
+      {
+        "key": "gsm8k-train-7385:rich",
+        "raw_call_sha256": "02c238e1b677696056e2e21c2adca3174c7fb1b527075cf08c94d25f2861f028",
+        "student_prefix": [
+          {
+            "content": "Bob has a cube of silver that measures 3 inches on each side.  A cubic inch of silver weighs 6 ounces.  Each ounce of silver sells for $25.  He sells it for 110% of its silver value.  How much does he sell it for?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "38a9e365ab04cd74e127a35adea423f4692249f1e308af62b36b4b31241d6be8",
+        "target": "First, I identify the given quantities:\n- The cube measures 3 inches on each side.\n- A cubic inch of silver weighs 6 ounces.\n- Each ounce of silver sells for $25.\n- Bob sells it for 110% of its silver value.\n\nNext, I calculate the volume of the cube:\n\\[ \\text{Volume} = 3 \\times 3 \\times 3 = 27 \\text{ cubic inches} \\]\n\nThen, I find the weight of the silver:\n\\[ \\text{Weight} = 27 \\times 6 = 162 \\text{ ounces} \\]\n\nNext, I calculate the value of the silver:\n\\[ \\text{Value} = 162 \\times 25 = 4050 \\text{ dollars} \\]\n\nFinally, I determine the selling price, which is 110% of the silver value:\n\\[ \\text{Selling Price} = 4050 \\times 1.10 = 4455 \\text{ dollars} \\]\n\nFINAL: 4455",
+        "target_sha256": "355d1b44f3eb2c0a7783845c544061d516f15aca72cf2e3537c8b844b280c051"
+      },
+      {
+        "key": "gsm8k-train-7385:new_record",
+        "raw_call_sha256": "d4661adfc265dc8e1e6951592219bb5afc9ef924eae131c0cd020ef3bd8eea2a",
+        "student_prefix": [
+          {
+            "content": "Bob has a cube of silver that measures 3 inches on each side.  A cubic inch of silver weighs 6 ounces.  Each ounce of silver sells for $25.  He sells it for 110% of its silver value.  How much does he sell it for?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- The cube measures 3 inches on each side.\n- A cubic inch of silver weighs 6 ounces.\n- Each ounce of silver sells for $25.\n- Bob sells it for 110% of its silver value.\n\nNext, I calculate the volume of the cube:\n\\[ \\text{Volume} = 3 \\times 3 \\times 3 = 27 \\text{ cubic inches} \\]\n\nThen, I find the weight of the silver:\n\\[ \\text{Weight} = 27 \\times 6 = 162 \\text{ ounces} \\]\n\nNext, I calculate the value of the silver:\n\\[ \\text{Value} = 162 \\times 25 = 4050 \\text{ dollars} \\]\n\nFinally, I determine the selling price, which is 110% of the silver value:\n\\[ \\text{Selling Price} = 4050 \\times 1.10 = 4455 \\text{ dollars} \\]\n\nFINAL: 4455",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "ce97465fdcc1dc4cc9e909e5a7baee0a9ce7a39036a71af5d278c6c04721589f",
+        "target": "Given the problem, I first identified the key quantities: the cube's side length (3 inches), the weight of a cubic inch of silver (6 ounces), the price per ounce of silver ($25), and the selling condition (110% of its silver value). The unknown was the final selling price.\n\nI started by calculating the volume of the cube:\n\\[ \\text{Volume} = 3 \\times 3 \\times 3 = 27 \\text{ cubic inches} \\]\nThis step was necessary to determine the total volume of silver in the cube.\n\nNext, I calculated the total weight of the silver:\n\\[ \\text{Weight} = 27 \\times 6 = 162 \\text{ ounces} \\]\nThis step was crucial to find out how much silver the cube contained.\n\nThen, I determined the value of the silver:\n\\[ \\text{Value} = 162 \\times 25 = 4050 \\text{ dollars} \\]\nThis step was essential to find the intrinsic value of the silver in the cube.\n\nFinally, I calculated the selling price, which was 110% of the silver value:\n\\[ \\text{Selling Price} = 4050 \\times 1.10 = 4455 \\text{ dollars} \\]\nThis step was to find out how much Bob would sell the cube for, given the specified condition.\n\nTo check the result, I verified that the calculations were correct and that the final price was indeed 110% of the intrinsic value of the silver. The operations used were straightforward arithmetic, and the result was consistent with the problem statement.\n\nThe operations I used are reusable in similar problems involving volume, weight, and value calculations. They can be applied to any similar scenario where the volume, density, and price per unit are known, and a percentage increase is required.\n\nFINAL: 4455",
+        "target_sha256": "08bf4a4e6a2c89abe6043799bc5da5c36d2764a9b6de8d54df8e9c3124973097"
+      }
+    ],
+    "task_id": "gsm8k-train-7385"
+  },
+  {
+    "gold": "375",
+    "question": "To make a shed in his backyard, Tom needs 1000 bricks. He can buy half of the bricks for 50% off of $.50. The other Half he needs to pay full price. How many dollars does Tom spend?",
+    "question_sha256": "2d100a4364160a4e558ca6d4849c0929bdea69787b2192ade532b20f3536828e",
+    "responses": [
+      {
+        "key": "gsm8k-train-929:rich",
+        "raw_call_sha256": "1c94461abe397d73fbe6ff687afaf508a0db6d946ccdf4192c191118c9d31e92",
+        "student_prefix": [
+          {
+            "content": "To make a shed in his backyard, Tom needs 1000 bricks. He can buy half of the bricks for 50% off of $.50. The other Half he needs to pay full price. How many dollars does Tom spend?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "61b2346b476ed61cdc107255b90fe637cd676ad889e880789d06d2ab7d2c1e5f",
+        "target": "Tom needs 1000 bricks in total. He can buy half of them, which is 500 bricks, at a 50% discount off the regular price of $0.50 per brick. The other half, also 500 bricks, he needs to buy at full price.\n\nFirst, calculate the discounted price for the half he gets at a discount:\n- Discounted price per brick = $0.50 * 50% = $0.25\n- Cost for 500 discounted bricks = 500 * $0.25 = $125\n\nNext, calculate the full price for the other half:\n- Full price per brick = $0.50\n- Cost for 500 full-price bricks = 500 * $0.50 = $250\n\nNow, add the two costs together to find the total amount Tom spends:\n- Total cost = $125 + $250 = $375\n\nFINAL: 375",
+        "target_sha256": "1637025d3fdfb1d092a8aabcaa66b94b3e19c20413413395b4f9d294b8b1588b"
+      },
+      {
+        "key": "gsm8k-train-929:new_record",
+        "raw_call_sha256": "d5868dfa3f44b06390b0377e79b8b14dd6a51599a8c30d0ee03540a338f34e51",
+        "student_prefix": [
+          {
+            "content": "To make a shed in his backyard, Tom needs 1000 bricks. He can buy half of the bricks for 50% off of $.50. The other Half he needs to pay full price. How many dollars does Tom spend?",
+            "role": "user"
+          },
+          {
+            "content": "Tom needs 1000 bricks in total. He can buy half of them, which is 500 bricks, at a 50% discount off the regular price of $0.50 per brick. The other half, also 500 bricks, he needs to buy at full price.\n\nFirst, calculate the discounted price for the half he gets at a discount:\n- Discounted price per brick = $0.50 * 50% = $0.25\n- Cost for 500 discounted bricks = 500 * $0.25 = $125\n\nNext, calculate the full price for the other half:\n- Full price per brick = $0.50\n- Cost for 500 full-price bricks = 500 * $0.50 = $250\n\nNow, add the two costs together to find the total amount Tom spends:\n- Total cost = $125 + $250 = $375\n\nFINAL: 375",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "77ed7b76adaf48636841b25c74cd56db6e718f0e2581f462cf880a89912d9ce4",
+        "target": "Given that Tom needs 1000 bricks for his shed, I first identified the key quantities: the total number of bricks (1000), the number of bricks bought at a discount (500), the number of bricks bought at full price (500), and the regular price per brick ($0.50). The problem also mentioned a 50% discount on half of the bricks.\n\nTo solve this, I broke the problem into two parts: calculating the cost for the discounted bricks and the cost for the full-price bricks. I then added these two costs to find the total amount Tom spends.\n\nFirst, I calculated the cost for the discounted bricks:\n- Discounted price per brick = $0.50 * 50% = $0.25\n- Cost for 500 discounted bricks = 500 * $0.25 = $125\n\nNext, I calculated the cost for the full-price bricks:\n- Full price per brick = $0.50\n- Cost for 500 full-price bricks = 500 * $0.50 = $250\n\nAdding these two costs together gave me the total amount Tom spends:\n- Total cost = $125 + $250 = $375\n\nTo check the result, I verified that the calculations were correct by ensuring that the total number of bricks (1000) was evenly split into two groups of 500, and that the discount was applied correctly to the first group. I also confirmed that the full price was used for the second group.\n\nThe operations I used are reusable in similar problems involving discounts and cost calculations. I would reuse this approach whenever I need to calculate the total cost of items with different pricing conditions.\n\nFINAL: 375",
+        "target_sha256": "375447d70a5fcec505ab77970ab06efa70841724b635435a3c8eda50cbc74e72"
+      }
+    ],
+    "task_id": "gsm8k-train-929"
+  },
+  {
+    "gold": "2",
+    "question": "In a Zoo, there are different animals. There are 5 giraffes and twice as many penguins. Penguins make up 20% of all the animals in the Zoo. How many elephants are there in the Zoo if they make up 4% of all the animals?",
+    "question_sha256": "b419ed730fdd58947ae47b4795aa2985f5807c4211226ef3be74b637b6198f48",
+    "responses": [
+      {
+        "key": "gsm8k-train-3095:rich",
+        "raw_call_sha256": "7c037673fc9c09742f082ba9cfdaa9f13143c10354a5050d96938b0d98a8edaa",
+        "student_prefix": [
+          {
+            "content": "In a Zoo, there are different animals. There are 5 giraffes and twice as many penguins. Penguins make up 20% of all the animals in the Zoo. How many elephants are there in the Zoo if they make up 4% of all the animals?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "c172c0dd50e94ae12ef03cb8d668c91dfff8b1394f286f6cc9e469709b1ea550",
+        "target": "Given:\n- 5 giraffes\n- Twice as many penguins as giraffes\n- Penguins make up 20% of all animals\n- Elephants make up 4% of all animals\n\nFirst, calculate the number of penguins:\n\\[ \\text{Number of penguins} = 2 \\times 5 = 10 \\]\n\nNext, let the total number of animals in the Zoo be \\( x \\). Penguins make up 20% of all animals:\n\\[ 0.20x = 10 \\]\n\\[ x = \\frac{10}{0.20} = 50 \\]\n\nNow, calculate the number of elephants:\n\\[ \\text{Number of elephants} = 0.04 \\times 50 = 2 \\]\n\nFINAL: 2",
+        "target_sha256": "68bd90ed5903f575710ba12fc4be140498fe573bd0e933581d5d19cef314174a"
+      },
+      {
+        "key": "gsm8k-train-3095:new_record",
+        "raw_call_sha256": "22b2b3ef79b5ab07f106ef5969acd3977d8c8e4618bae6fd31edceb1ecbbd3e7",
+        "student_prefix": [
+          {
+            "content": "In a Zoo, there are different animals. There are 5 giraffes and twice as many penguins. Penguins make up 20% of all the animals in the Zoo. How many elephants are there in the Zoo if they make up 4% of all the animals?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- 5 giraffes\n- Twice as many penguins as giraffes\n- Penguins make up 20% of all animals\n- Elephants make up 4% of all animals\n\nFirst, calculate the number of penguins:\n\\[ \\text{Number of penguins} = 2 \\times 5 = 10 \\]\n\nNext, let the total number of animals in the Zoo be \\( x \\). Penguins make up 20% of all animals:\n\\[ 0.20x = 10 \\]\n\\[ x = \\frac{10}{0.20} = 50 \\]\n\nNow, calculate the number of elephants:\n\\[ \\text{Number of elephants} = 0.04 \\times 50 = 2 \\]\n\nFINAL: 2",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "2f3f22a2fe38b5898069eb9b71b2d16a0e4274963cccdebee608770822b421e3",
+        "target": "Given the problem, I identified the following quantities and the unknown:\n- 5 giraffes\n- Twice as many penguins as giraffes\n- Penguins make up 20% of all animals\n- Elephants make up 4% of all animals\n- The unknown is the number of elephants.\n\nFirst, I calculated the number of penguins:\n\\[ \\text{Number of penguins} = 2 \\times 5 = 10 \\]\n\nNext, I determined the total number of animals in the zoo. Since penguins make up 20% of all animals:\n\\[ 0.20 \\times \\text{Total number of animals} = 10 \\]\n\\[ \\text{Total number of animals} = \\frac{10}{0.20} = 50 \\]\n\nThen, I calculated the number of elephants, which make up 4% of all animals:\n\\[ \\text{Number of elephants} = 0.04 \\times 50 = 2 \\]\n\nTo verify the solution, I checked the total number of animals:\n- Giraffes: 5\n- Penguins: 10\n- Elephants: 2\n- Remaining animals (unknown type): \\( 50 - (5 + 10 + 2) = 33 \\)\n\nThe calculations are consistent with the given percentages. The number of elephants is 2.\n\nFINAL: 2",
+        "target_sha256": "eb66da8100e1659d47cd6f47f19e7a32f27e099d02e56519b4ec0b18f92a2976"
+      }
+    ],
+    "task_id": "gsm8k-train-3095"
+  },
+  {
+    "gold": "40",
+    "question": "Kate has 2 red balloons and 4 blue balloons. Assuming she inflates 4 more balloons, two of each color red and blue, what is the percent likelihood that one selected at random will be red?",
+    "question_sha256": "aad844f8a5fcb073dff3384c8aed0934b16ba0f11f8034cdba88c1a884d91ff2",
+    "responses": [
+      {
+        "key": "gsm8k-train-2516:rich",
+        "raw_call_sha256": "9208a3e4d583fa05153848a8cd344792f3857f1ad8c4170777f13f22c1fa4cd0",
+        "student_prefix": [
+          {
+            "content": "Kate has 2 red balloons and 4 blue balloons. Assuming she inflates 4 more balloons, two of each color red and blue, what is the percent likelihood that one selected at random will be red?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "c40db72c206f7446c9b06ff34247c2f92d0ba334b804e2d4908153b6ba05303e",
+        "target": "Initially, Kate has 2 red and 4 blue balloons. After inflating 4 more balloons, 2 red and 2 blue, the total number of red balloons becomes 2 + 2 = 4, and the total number of blue balloons becomes 4 + 2 = 6. The total number of balloons is now 4 red + 6 blue = 10 balloons.\n\nTo find the percent likelihood that a randomly selected balloon will be red, we use the formula:\n\\[ \\text{Percent likelihood} = \\left( \\frac{\\text{Number of red balloons}}{\\text{Total number of balloons}} \\right) \\times 100 \\]\n\nSubstituting the numbers:\n\\[ \\text{Percent likelihood} = \\left( \\frac{4}{10} \\right) \\times 100 = 40\\% \\]\n\nFINAL: 40",
+        "target_sha256": "fff3b5f49916ce4daf56fe198158c6aca9806892706ff6a4435994416420b0e2"
+      },
+      {
+        "key": "gsm8k-train-2516:new_record",
+        "raw_call_sha256": "b16dd232d21ab4f7d848c5680a3ffb42a75352630b39714750b999b6112272cd",
+        "student_prefix": [
+          {
+            "content": "Kate has 2 red balloons and 4 blue balloons. Assuming she inflates 4 more balloons, two of each color red and blue, what is the percent likelihood that one selected at random will be red?",
+            "role": "user"
+          },
+          {
+            "content": "Initially, Kate has 2 red and 4 blue balloons. After inflating 4 more balloons, 2 red and 2 blue, the total number of red balloons becomes 2 + 2 = 4, and the total number of blue balloons becomes 4 + 2 = 6. The total number of balloons is now 4 red + 6 blue = 10 balloons.\n\nTo find the percent likelihood that a randomly selected balloon will be red, we use the formula:\n\\[ \\text{Percent likelihood} = \\left( \\frac{\\text{Number of red balloons}}{\\text{Total number of balloons}} \\right) \\times 100 \\]\n\nSubstituting the numbers:\n\\[ \\text{Percent likelihood} = \\left( \\frac{4}{10} \\right) \\times 100 = 40\\% \\]\n\nFINAL: 40",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "17e63dd1adaf88d7049adf9a04012f7a740e6b22ab98df2363fb6c16ad6573b1",
+        "target": "Given that Kate initially has 2 red balloons and 4 blue balloons, and then inflates 4 more balloons, 2 of each color, I first identified the total number of red and blue balloons after the inflation. Initially, there are 2 red balloons, and after inflating 2 more red balloons, the total number of red balloons becomes 2 + 2 = 4. Similarly, the total number of blue balloons becomes 4 + 2 = 6. The total number of balloons is now 4 red + 6 blue = 10 balloons.\n\nTo find the percent likelihood that a randomly selected balloon will be red, I used the formula for percentage:\n\\[ \\text{Percent likelihood} = \\left( \\frac{\\text{Number of red balloons}}{\\text{Total number of balloons}} \\right) \\times 100 \\]\n\nSubstituting the numbers:\n\\[ \\text{Percent likelihood} = \\left( \\frac{4}{10} \\right) \\times 100 = 40\\% \\]\n\nI checked this result by ensuring that the calculation was correct and that the percentage represented the proportion of red balloons out of the total number of balloons. The operation I used is directly applicable to similar problems where the probability of selecting a specific type of item from a collection is required.\n\nI would reuse this operation whenever I need to calculate the probability of selecting a specific item from a collection, given the total number of items and the number of items of the specific type.\n\nFINAL: 40",
+        "target_sha256": "9b93aa4d7388599ace0edba6c0c0d23e262da378a23dd6a3b5d59b6f1b7ce552"
+      }
+    ],
+    "task_id": "gsm8k-train-2516"
+  },
+  {
+    "gold": "50",
+    "question": "Janet buys a multi-flavor pack of cheese sticks. 15 of the sticks are cheddar, 30 are mozzarella, and 45 are pepperjack. If Janet picks a cheese stick at random, what is the percentage chance it will be pepperjack?",
+    "question_sha256": "dd79a5df0eca22f1efb1e7ec49e24a363dbbf77bb6865c3181e3d476f979e19d",
+    "responses": [
+      {
+        "key": "gsm8k-train-6280:rich",
+        "raw_call_sha256": "ffeeddc8eda982f2156131fadf8af7a107ccb8397fdb79c27bfb623105d1d34e",
+        "student_prefix": [
+          {
+            "content": "Janet buys a multi-flavor pack of cheese sticks. 15 of the sticks are cheddar, 30 are mozzarella, and 45 are pepperjack. If Janet picks a cheese stick at random, what is the percentage chance it will be pepperjack?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "313c0aa2a23045dc82a47ae4e0c560e80a0c50f9409665d3a5794780e62672b8",
+        "target": "First, I identify the quantities given:\n- Cheddar cheese sticks: 15\n- Mozzarella cheese sticks: 30\n- Pepperjack cheese sticks: 45\n\nThe total number of cheese sticks is the sum of all types:\n15 + 30 + 45 = 90\n\nTo find the percentage chance of picking a pepperjack cheese stick, I use the formula:\n( Number of pepperjack cheese sticks / Total number of cheese sticks ) * 100\n\nPlugging in the numbers:\n( 45 / 90 ) * 100 = 0.5 * 100 = 50%\n\nSo, the percentage chance of picking a pepperjack cheese stick is 50%.\n\nFINAL: 50",
+        "target_sha256": "b65a587a1a2b32a467ca0b28536abbc7ad297496569746d337efe084f9952130"
+      },
+      {
+        "key": "gsm8k-train-6280:new_record",
+        "raw_call_sha256": "fbefc2a8752056c18f818fb7b8735a04dbc2f06cc1dbd5888805c10eff6c9a1d",
+        "student_prefix": [
+          {
+            "content": "Janet buys a multi-flavor pack of cheese sticks. 15 of the sticks are cheddar, 30 are mozzarella, and 45 are pepperjack. If Janet picks a cheese stick at random, what is the percentage chance it will be pepperjack?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the quantities given:\n- Cheddar cheese sticks: 15\n- Mozzarella cheese sticks: 30\n- Pepperjack cheese sticks: 45\n\nThe total number of cheese sticks is the sum of all types:\n15 + 30 + 45 = 90\n\nTo find the percentage chance of picking a pepperjack cheese stick, I use the formula:\n( Number of pepperjack cheese sticks / Total number of cheese sticks ) * 100\n\nPlugging in the numbers:\n( 45 / 90 ) * 100 = 0.5 * 100 = 50%\n\nSo, the percentage chance of picking a pepperjack cheese stick is 50%.\n\nFINAL: 50",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "f65f7f7edec299f4f226c18b003a0a6eeae96f9a19d753882d63307d3b337ace",
+        "target": "Given the problem, I identified the quantities of different types of cheese sticks:\n- Cheddar: 15\n- Mozzarella: 30\n- Pepperjack: 45\n\nThe total number of cheese sticks is the sum of these quantities:\n15 + 30 + 45 = 90\n\nTo find the percentage chance of picking a pepperjack cheese stick, I used the formula for percentage:\n( Number of pepperjack cheese sticks / Total number of cheese sticks ) * 100\n\nPlugging in the numbers:\n( 45 / 90 ) * 100 = 0.5 * 100 = 50%\n\nI expected this result to mean that there is a 50% chance of randomly picking a pepperjack cheese stick from the pack. To check this, I verified the arithmetic and the application of the percentage formula. The operations are straightforward and can be reused in similar problems where a percentage is needed from a given set of quantities.\n\nThe operation I would reuse is the formula for calculating percentages, which is applicable whenever you need to find the percentage of a specific category within a total set. This can be used in any scenario where you have a set of distinct items and need to determine the percentage of a particular type within that set.\n\nFINAL: 50",
+        "target_sha256": "b68479ab38d82c3035243d895ea38fe5ffec61db56c8f1fb8a57c51c2cdd31b7"
+      }
+    ],
+    "task_id": "gsm8k-train-6280"
+  },
+  {
+    "gold": "3",
+    "question": "Haleigh decides that instead of throwing away old candles, she can use the last bit of wax combined together to make new candles. Each candle has 10% of it's original wax left. How many 5 ounce candles can she make if she has five 20 oz candles, 5 five ounce candles, and twenty-five one ounce candles?",
+    "question_sha256": "e6f86441f3b4c05ea49bc95664e434074a2f4189294767df5ac4e391d3784d7a",
+    "responses": [
+      {
+        "key": "gsm8k-train-6953:rich",
+        "raw_call_sha256": "45bbf528d7dd873b9db956299b4cede1a18b23ea902d9fbaf082ad26916c2123",
+        "student_prefix": [
+          {
+            "content": "Haleigh decides that instead of throwing away old candles, she can use the last bit of wax combined together to make new candles. Each candle has 10% of it's original wax left. How many 5 ounce candles can she make if she has five 20 oz candles, 5 five ounce candles, and twenty-five one ounce candles?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "d72b4cf6d6013412097902883e6468c788719a46fb7b8a8832aac08290bcf31f",
+        "target": "First, I identify the quantities:\n- Each candle has 10% of its original wax left.\n- Haleigh has five 20 oz candles, five 5 oz candles, and twenty-five 1 oz candles.\n\nNext, I calculate the leftover wax from each type of candle:\n- For the 20 oz candles: \\(5 \\times 20 \\times 0.10 = 10\\) ounces.\n- For the 5 oz candles: \\(5 \\times 5 \\times 0.10 = 2.5\\) ounces.\n- For the 1 oz candles: \\(25 \\times 1 \\times 0.10 = 2.5\\) ounces.\n\nNow, I sum the leftover wax:\n\\(10 + 2.5 + 2.5 = 15\\) ounces.\n\nFinally, I determine how many 5 oz candles can be made from 15 ounces of wax:\n\\(\\frac{15}{5} = 3\\) candles.\n\nFINAL: 3",
+        "target_sha256": "029c4b7f637068bb84d3107565205ccea8a1ef6bccc919e5fdc8770c58c8e897"
+      },
+      {
+        "key": "gsm8k-train-6953:new_record",
+        "raw_call_sha256": "88a6dd74066ab2df7fef2ebd7a7c59b02b620f337c80acb43a0530b7ebbbeda5",
+        "student_prefix": [
+          {
+            "content": "Haleigh decides that instead of throwing away old candles, she can use the last bit of wax combined together to make new candles. Each candle has 10% of it's original wax left. How many 5 ounce candles can she make if she has five 20 oz candles, 5 five ounce candles, and twenty-five one ounce candles?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the quantities:\n- Each candle has 10% of its original wax left.\n- Haleigh has five 20 oz candles, five 5 oz candles, and twenty-five 1 oz candles.\n\nNext, I calculate the leftover wax from each type of candle:\n- For the 20 oz candles: \\(5 \\times 20 \\times 0.10 = 10\\) ounces.\n- For the 5 oz candles: \\(5 \\times 5 \\times 0.10 = 2.5\\) ounces.\n- For the 1 oz candles: \\(25 \\times 1 \\times 0.10 = 2.5\\) ounces.\n\nNow, I sum the leftover wax:\n\\(10 + 2.5 + 2.5 = 15\\) ounces.\n\nFinally, I determine how many 5 oz candles can be made from 15 ounces of wax:\n\\(\\frac{15}{5} = 3\\) candles.\n\nFINAL: 3",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "34c33214460e95fd5672c74b06ee9008ef714277094bf9768ef4c4566a52b0ff",
+        "target": "Given the problem, I first identified the quantities and the unknown. I knew Haleigh had five 20 oz candles, five 5 oz candles, and twenty-five 1 oz candles, each with 10% of their original wax left. The unknown was how many 5 oz candles she could make from this leftover wax.\n\nI started by calculating the leftover wax from each type of candle:\n- For the 20 oz candles: \\(5 \\times 20 \\times 0.10 = 10\\) ounces.\n- For the 5 oz candles: \\(5 \\times 5 \\times 0.10 = 2.5\\) ounces.\n- For the 1 oz candles: \\(25 \\times 1 \\times 0.10 = 2.5\\) ounces.\n\nNext, I summed the leftover wax:\n\\[10 + 2.5 + 2.5 = 15 \\text{ ounces}\\]\n\nThen, I determined how many 5 oz candles could be made from 15 ounces of wax:\n\\[\\frac{15}{5} = 3 \\text{ candles}\\]\n\nTo check the result, I verified that 15 ounces of wax, when divided by the 5 oz per candle, indeed results in 3 candles. This matches the problem's requirement.\n\nThe operation I would reuse is the calculation of leftover wax from each type of candle and then summing these amounts. This is useful in similar problems where you need to combine leftover materials to make new items.\n\nFINAL: 3",
+        "target_sha256": "c8a4b1c0f009ad8e48752413d87e867d52ed5cff46dad388416fc68b2e75ab48"
+      }
+    ],
+    "task_id": "gsm8k-train-6953"
+  },
+  {
+    "gold": "156",
+    "question": "Ten percent less than twice the total number of students present in the science class yesterday have attended class today. If there were 70 students in the class yesterday and 30 students are absent today, calculate the number of students registered for the course.",
+    "question_sha256": "c29b852b5702640b5fea41acceef3d57783a18a695d46b4badec1a74ec0c0ed8",
+    "responses": [
+      {
+        "key": "gsm8k-train-4310:rich",
+        "raw_call_sha256": "8cd38612fca81f52c7ae3353473a634eeccd723819f2772128da483b88359f53",
+        "student_prefix": [
+          {
+            "content": "Ten percent less than twice the total number of students present in the science class yesterday have attended class today. If there were 70 students in the class yesterday and 30 students are absent today, calculate the number of students registered for the course.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "4abe44a7a7f63633efac3190909bf1266cd8199d067a8924f0c4860fc957e9a5",
+        "target": "Given:\n- 10% less than twice the number of students present yesterday have attended today.\n- Yesterday, there were 70 students.\n- Today, 30 students are absent.\n\nFirst, calculate twice the number of students from yesterday:\n2 * 70 = 140\n\nNext, find 10% of 140:\n10% of 140 = 0.10 * 140 = 14\n\nNow, subtract this 10% from 140 to get the number of students who attended today:\n140 - 14 = 126\n\nSince 30 students are absent today, the total number of students registered for the course is:\n126 (present today) + 30 (absent today) = 156\n\nFINAL: 156",
+        "target_sha256": "663f898082809ed7ee6e241fde339446f468199779d7bbc8800d049b4ec64ad8"
+      },
+      {
+        "key": "gsm8k-train-4310:new_record",
+        "raw_call_sha256": "6dd829677e7ee24eb0aa4226a6d1f112e21c0864ffc129c15c7a25eb66a9f637",
+        "student_prefix": [
+          {
+            "content": "Ten percent less than twice the total number of students present in the science class yesterday have attended class today. If there were 70 students in the class yesterday and 30 students are absent today, calculate the number of students registered for the course.",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- 10% less than twice the number of students present yesterday have attended today.\n- Yesterday, there were 70 students.\n- Today, 30 students are absent.\n\nFirst, calculate twice the number of students from yesterday:\n2 * 70 = 140\n\nNext, find 10% of 140:\n10% of 140 = 0.10 * 140 = 14\n\nNow, subtract this 10% from 140 to get the number of students who attended today:\n140 - 14 = 126\n\nSince 30 students are absent today, the total number of students registered for the course is:\n126 (present today) + 30 (absent today) = 156\n\nFINAL: 156",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "918ac7987fd3587a5c538cb48450c3ea5b2c3bd7b832020ab2fb89e7b27978cb",
+        "target": "Given the problem, I identified the key quantities and the unknown:\n- Yesterday, there were 70 students in the science class.\n- Today, 30 students are absent.\n- The number of students who attended today is 10% less than twice the number of students present yesterday.\n\nTo solve this, I first calculated twice the number of students from yesterday:\n\\[ 2 \\times 70 = 140 \\]\n\nNext, I determined 10% of 140:\n\\[ 0.10 \\times 140 = 14 \\]\n\nSubtracting this 10% from 140 gave me the number of students who attended today:\n\\[ 140 - 14 = 126 \\]\n\nSince 30 students are absent today, the total number of students registered for the course is:\n\\[ 126 + 30 = 156 \\]\n\nTo verify this, I checked that the number of students present today (126) plus the number of students absent today (30) equals the total number of students registered for the course (156). This check confirms the solution is correct.\n\nThe operation I would reuse is calculating the total number of students registered for the course by summing the number of students present and absent today. This operation is reusable in similar problems where the attendance and absence are given.\n\nFINAL: 156",
+        "target_sha256": "e5a579531f12c8b2069ec4617d1a14ee6615024261c2f7fe2c5035d39939c30d"
+      }
+    ],
+    "task_id": "gsm8k-train-4310"
+  }
+]

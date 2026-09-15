@@ -1,803 +1,595 @@
 # Research state — Orchestrator
 
-Updated 2026-09-14 23:08 UTC. Mission ACTIVE / INCOMPLETE. Wave W2/W3.
-Authoritative steering: Rohin's current launch instruction and raw messages
-42–80 (80 read23:10UTC from3d2da5e8); next full raw-message reread by23:50UTC.
-Check notebook updates every orchestration cycle, not just every two hours.
-
-## Objective and authority
-
-Initialize grounded reasoning, feedback use, meaningful revision and reusable
-record generation through outcome-and-content-gated SFT of the child's own
-words. Then test repeated GUIDED experience → reflection → consolidation
-cycles with the parent ABSENT at evaluation, against frozen and unparented
-twins. Later autonomy is a separate test. H1/H2 remain the scientific spine;
-no claim enters the paper from this state file.
-
-Approved scope: current user launch directive / launch-pack v3 (message76),
-plus AGENTS.md standing authorization and ASTRA_LAUNCH_PROMPT §15. W1 changes
-experimental implementation, not base model, invariants or paper claims.
-No material architecture intake or human ratification is fabricated. Reserved
-changes use architecture_deliberation.py and architecture_intake.py before
-implementation. Message79 delegates L2/L3 family designation to Main, preserving
-separation. Paper claims, extra fleet spend and thesis-overturning interpretations
-still go to Rohin; other work continues. Historical family-approval holds below
-are superseded by the23:04registry, not silently deleted.
-
-## Established observations (inherited, not re-derived here)
-
-- Level-0 examples support answer-omitting first-person recall rows,
-  interleaved presentations and legacy rehearsal. Approximately200 fact
-  presentations is a tested operating point, not a universal dose law;
-  SEQ253 acquired4/4 at50 in its different recipe. Copy-format and correlated
-  copies do not establish the same learning. Unrehearsed habits/interference
-  can change within16 competing updates. Scope remains measured DEV recipes.
-- Cue/checker/interface behavior has matched loss-off evidence (SEQ226,
-  239,252). SEQ245 preserves a narrow fresh single-hop write→use continuation
-  1/4→4/4, old12/12, audit16/16, selected=uniform; not H2 or selection benefit.
-- SEQ260: FULL taught32/32 vs17/32; held5/8 goals and1/4 pairs vs6/8 and2/4.
-  No incremental held advantage at that scale; not evidence of impossibility.
-- SEQ264: execution56/64 six-command episodes,58/64 goal arrivals;
-  content196PASS/108FAIL/32UNRESOLVED after one preserved adjudication,
-  one eligible episode/56 candidates (1/64 attempts), six rows, no fit.
-  Fable reader VERIFIED collection and content counts in their stated scope.
-- SEQ265: critique6/16 goals vs repeat4/16; both1/8 pairs; zero six-turn
-  candidates, unequal actual spend, no fit. VERIFIED, no learned-reflection
-  benefit established; this specific screen is deallocated, not disproven.
-
-## Promising evidence: SEQ266 (not promoted)
-
-**OBSERVATION:** FULL held OWN_TEXT30/32 pairs,62/64 goals,15/16 worlds;
-matched LOSS_OFF1/32,26/64,1/16; baseline2/32,33/64,2/16. Old W0/W8/audit
-16/16 each in all three. UNAVAILABLE pairs0/32 in all three; FULL23/64
-unavailable goals vs baseline3/64 and control0/64. All denominators retained.
-
-**EVIDENCE AND CONTROL:** primary60aca837 / source7f9d4251; independent memo
-research_notes/analysis/2026-09-14_goal_quality_fit_independent_result.md and
-Builder handover21:52Z. Same1674inputs/2928updates, new-label loss masked in
-control, fresh AFTERs. Independent author-side reviewer reports Evidence PASS;
-Fable cron VERIFIED entry21:47Z now ingested (not re-run by Main); it
-recounts primary counts/hashes but explicitly did not locate1674inputs.
-The later independent episode review supplies a different, broader scope.
-Original prelaunch
-notebook-publication-order deviation remains part of the evidence.
-
-**CURRENT INTERPRETATION:** substantial incremental supplied-text,
-held-identifier goal sensitivity is possible in this terse broader recipe.
-The frozen all-world conjunction FAILS (15/16); no automatic checkpoint
-promotion, rich-supervision conclusion, unseen-family claim or H1/H2.
-
-**CREDIBLE ALTERNATIVES:** display/grammar regularities, source dependence,
-quality/breadth/dose mixture, exposed DEV ancestry. Missing source is not a
-proven sole failure cause: baseline and control solve task2 in the failed
-world despite the same unavailable address. Do not repair/drop the original.
-
-**CONFIDENCE:** strong on independently recounted finite DEV contrast;
-limited on mechanism/generalization and no conclusion about repeated sleeps.
-
-**CHEAPEST DISCRIMINATING NEXT TEST:** new blinded adversarial source/display
-interventions on released states; independent prospective replication before
-using any promoted transfer finding as another arm's premise. Separate
-content-bearing mining tests do not depend on this result being true.
-
-## Contradictions and dead ends
-
-- The launch summary's claim that no recipe moved held pairs is superseded
-  by SEQ266; its failed conjunction is NOT superseded.
-- More tokens need not mean grounded reasoning: SEQ264 arrives successfully
-  while most complete episodes contain erroneous explanations.
-- Tiny authored/terse data and parser rejection cannot answer whether rich
-  successful self-trajectories transfer. Do not rerun the same failed cell.
-- Old scale1536-target/12384-update proposal is not the executed1452-target
-  quality recipe; do not resurrect it or equate their predictions.
-- No claim of unseen-environment developmental improvement has passed.
-
-## W1 result ingestion: GAME Taxi screen (SEQ267 assigned, reader pending)
-
-**OBSERVATION:** RICH0/16 deliveries vs TERSE0/16;192/192 native calls,
-32/32 episodes worker-replayed. Format pass59/96rich vs96/96terse; median
-generated tokens160.5vs4.0.65/96rich turns within150–400tokens.0admitted rows,
-0fits. Rich initial-turn diagnostic2PASS/13FAIL/1UNRESOLVED out of16;
-80/96rich turns unreviewed. This is NOT a whole-episode semantic pass rate.
-
-**EVIDENCE AND CONTROL:** worker RESULT.md / REDUCTION.json under
-research_notes/analysis/orch_game_20260914_attempt1; same16fixed states,
-37ec,observations,decoder,six-turn horizon; native Gym oracle. Source/archive
-c58f7671,bank8d12ddb1. All four workers terminal by22:09:50UTC and GPUs
-released after physical/CVD checks by22:12:06UTC. Independent reader pending.
-
-**CURRENT INTERPRETATION:** declared installed-Taxi pool fails its eligibility
-gate and is DEALLOCATED. Greater verbal output did not improve this finite
-outcome measure. This is a small within-family diagnostic, not campaign
-completion and not a disproof of reflection or text-game learning.
-
-**CREDIBLE ALTERNATIVES:** state/action representation, inherited37ec policy
-specialization, instruction following, six-turn horizon. Rich parsing alone
-is not sufficient explanation because terse parsed96/96 but solved0/16.
-Native token caps did not bind (maximum context444,generation282). Fluent
-explanations sometimes invented goals/walls or inverted north/south.
-
-**CONFIDENCE:** high on worker-replayed finite counts, pending independent
-read; weak on cause and no generalization claim. No gate relaxed.
-
-**CHEAPEST DISCRIMINATING NEXT TEST:** distinct TextWorld prerequisite-feedback
-proposal preserved (open-before-take, take-before-put), not launched. A later
-plain frozen-base comparison could isolate adapter specialization; neither
-proposal rescues or extends this failed Taxi screen.
-
-### Belief and allocation update after this batch
-
-Changed belief: observable coherent state alone is insufficient for this actor
-on Taxi; richness tokens can coexist with incorrect relations. Smallest
-bottleneck remains semantic/outcome yield in a genuinely usable pool; no
-evidence yet that another gym shares Taxi's failure. A positive guided-cycle
-slope vs both twins would still most change the developmental architecture.
-Exact Taxi reruns/more dose are redundant. SEQ266's finite positive contrast
-still needs a fresh blind prospective replication; prioritize that next free
-worker slot rather than optimizing Taxi. Alternative needing a separate test:
-37ec-specialization vs task representation. New implied hypothesis: explicit
-prerequisite feedback may be easier to ground than ASCII spatial reasoning.
-
-AllA1000–3 released by GAME; node3GPU5 released unused by ROUTE; A100GPU7
-released after PERSIST-MATH control terminal (treatment continues). Main does
-not kill controls or rerun the reader. Next allocation after BOARD rewrite:
-fresh blind replication worker on node3 0/1/5 when GAME publishes and retires;
-node3 6/7 and A1000–3/7 remain adaptive reserve. No inherited failed-gate
-checkpoint is automatically promoted by commissioning a diagnostic replication.
-
-## 22:24 UTC ingestion — terminal reports, then replacement allocations
-
-### SEQ268: source/display intervention, not promoted
-
-**OBSERVATION:** Correct source-switch pairs FULL6/6, loss-off1/6,
-original37ec0/6; display-invariance pairs6/6,2/6,2/6. Reference completion
-FULL5/6 tasks and2/3 goal-pairs, versus control3/6 and1/3, original4/6
-and1/3. First-port reference3/6 tasks,0/3 pairs. All72 cases/144 calls retained.
-
-**EVIDENCE AND CONTROL:** worker terminal report
-`research_notes/analysis/orch_route_adversary_20260914_result.md`, evidence
-37907197 and notebook publication efee1498. Three frozen states in one batch;
-13 author CPU tests. Reader VERIFIED pending; Main does not repeat the checks.
-Four scripted READ turns precede two native continuation turns. Same-family
-DEV and disclosed initial BOARD-summary exposure: neither autonomous retrieval
-nor fully blind independent confirmation.
-
-**CURRENT INTERPRETATION:** Narrow first-port/display-only explanations are
-weakened on this small intervention. The broader reference conjunction still
-fails; no promoted transfer, unseen-family, learning-loop or H1/H2 result.
-
-**CREDIBLE ALTERNATIVES:** Scripted evidence scaffolding, familiar grammar,
-cohort-specific behavior and prior training. Missing source alone is insufficient:
-the remaining FULL reference failure duplicates a READ after a correct first port;
-the transformed-root condition succeeds despite the same unavailable source.
-
-**CONFIDENCE:** finite author-replayed contrast only, awaiting independent reader;
-limited causal generality. Transformed sources are not child training targets.
-
-**CHEAPEST DISCRIMINATING NEXT TEST:** already commissioned genuinely blind
-fresh-cohort readout replication; do not disclose this result to that worker.
-A new cohort is not an independent training seed. Retire ROUTE-ADVERSARY;
-node3 2–4 released22:15,5 already assigned to replication.
-
-### PERSIST-MATH terminal null: SEQ269 assigned for publication
-
-**OBSERVATION:** RICH final answers0/16 vs TERSE2/16; answer-plus-checked-record
-0/16 both. No record store populated;64 calls,0 admitted rows,0 fits. RICH
-16/32 calls truncated; generated tokens11489 vs1105. Fixed16-task denominators.
-
-**EVIDENCE AND CONTROL:** same16 tasks and two-turn ceiling in one paired
-inference batch; report `research_notes/analysis/orch_persist_math_20260914_attempt1/REPORT.md`
-and terminal publication8304b2e8. Worker replay64 calls and26 CPU tests;
-six-call semantic diagnostic1PASS/5FAIL is not a whole-corpus admission rate.
-Original token-precheck defect and transient failed release scan are preserved;
-actual native budgets pass worker replay. Independent reader pending.
-
-**CURRENT INTERPRETATION:** this curriculum/interface/budget recipe failed to
-bootstrap reusable records. DEALLOCATED, not a disproof of record learning.
-No retention, transfer or sleep improvement was measured.
-
-**CREDIBLE ALTERNATIVES:** difficult initial tasks, unfamiliar action/record
-contract, truncation, modular arithmetic errors. No single cause isolated.
-
-**CONFIDENCE:** high in worker-replayed finite counts, low in mechanism inference.
-
-**CHEAPEST DISCRIMINATING NEXT TEST:** a separately declared simpler
-feedback/prerequisite screen, not more seeds or hidden-record ablation with empty
-stores. A1006/7 released; no new math sequel allocated on this null alone.
-
-### CODE-RICH operational retirement (no scientific result)
-
-Faraday returned0 native calls,0 runs and no executable implementation; the
-namespace sandbox was unavailable and a proposed replacement was not built.
-Preserve `research_loop/workers/CODE_RICH.md`; do not report a clean null or
-benchmark failure. Retire worker. This leaves an untested high-value code pool,
-not evidence against code reasoning. Replacement CODE-BOUNDED gets node2 0–3
-only after its fresh physical/CVD checks. Narrow scope: real unit-tested
-off-the-shelf tasks executable with an explicitly restricted, safe interpreter;
-no arbitrary generated Python execution, no fresh sandbox platform project.
-If safe eligible tasks cannot be obtained quickly, report operational blockage
-and a concrete alternative instead of reserving GPUs indefinitely.
-
-### Adaptive decision after the batch
-
-Belief change: script-supported source sensitivity survives narrow adversarial
-interventions, while richer verbal contracts do not automatically produce usable
-game/math records. Smallest bottleneck remains outcome-plus-semantic target yield,
-not admission machinery. Architecture-changing evidence remains retained guided
-cycle gains over frozen/unparented twins. Redundant spend: exact Taxi/recurrence
-reruns and more dose without records. Replicate the promising finite route
-contrast independently before premise reuse. New discriminating hypothesis:
-explicit object prerequisites and grounded feedback may be more learnable than
-ASCII navigation or modular recurrence. Declare TEXT-PREREQUISITE on A1000–3,
-actual TextWorld off-the-shelf if available, with a narrow preregistered
-rich/terse screen and no reinterpretation of Taxi. This is L1 mining only;
-new L2/L3 family proposals remain awaiting Rohin. CODE-BOUNDED and
-TEXT-PREREQUISITE are declared here before BOARD rewrite and assignment.
-
-## 22:27 UTC ingestion — SEQ270 and distinct math followups
-
-**OBSERVATION:** Initial rich29/32 vs terse5/32; format-neutral posthoc
-sensitivity gives terse7/32 without changing original scores. Corrections0/3.
-Complete author review64/64 responses:24PASS/36FAIL/4UNRESOLVED;19 admitted
-targets across16 tasks (15initial traces,4records,0corrections). Four families
-each show initial answer gap, but0/4 pass the original scale-yield gate.
-
-**EVIDENCE AND CONTROL:** same32 public GSM8K train tasks, one portable37ec,
-96 calls,10 CPU tests; report `research_notes/analysis/orch_math_rich_20260914_attempt1/REPORT.md`
-and SEQ270 publicationf016099b. Rich/terse inference spending differs; no fit,
-held evaluation or retention read. All64 non-terse texts judged by the author;
-independent reader pending. Target tokens4228 total,min153,median214,max348.
-
-**CURRENT INTERPRETATION:** finite checked-answer advantage makes this math
-pool more promising for rich mining than the failed game/recurrence recipes.
-Admission yield remains limiting; the original scale recipe is DEALLOCATED,
-not silently continued or called a1000-row corpus. Correct answers do not certify
-records: one child record invents a false inventory check. No learning claim.
-
-**CREDIBLE ALTERNATIVES:** prompt/spend and public benchmark familiarity;
-many rubric failures concern impersonal voice rather than false mathematics.
-The3 rejected rich answers all have wording ambiguities, so correction0/3
-does not isolate inability to use meaningful feedback. Oracle gold and original
-denominators remain unchanged; ambiguous candidates are not training targets.
-
-**CONFIDENCE:** author-replayed finite contrast with complete author content
-review, not VERIFIED or independent replication. Low on causal generality.
-
-**CHEAPEST DISCRIMINATING NEXT TEST:** two distinct questions, not a repeat
-of the failed scale recipe. (1) A fresh independent worker blind to outcome
-values repeats rich/terse on a disjoint fixed32-task same-family cohort, node3
-2–4. This replicates a prompting contrast, not a fitted training effect.
-(2) Author worker tests record elicitation on fresh tasks: same child-generated
-solution feeds two equal-budget record prompts, original vs an explicit
-first-person account of actual evidence, decision, check and reusable lesson.
-No exemplar target, answer rewrite, padding or relaxed rubric. Node2 4–7.
-Freeze exact64-task roster (16/family), call cap and paired record admission
-criteria before inference. Initial rich traces shared across branches; compare
-record admission on the fixed denominator, report all failures/ambiguities.
-Successful first-person wording without grounded operations is still a failure.
-No new scale tranche or fit authorized by this declaration; report whether the
-yield intervention works, then decide from evidence. Original19 rows preserved.
-
-Allocation reasoning: new evidence moves expected target-yield value toward
-ordinary math, but keeps code, text prerequisites and blind route replication
-independent. The gap needs replication rather than optimization. The new record
-test isolates a data-contract bottleneck; it does not substitute voice for
-reasoning. Quantity-level feedback vs matched retry remains a separate queued
-hypothesis; do not entangle it with record-prompt manipulation in this screen.
-STATE first, BOARD second, then assignments. Node3 6–7/A1006–7 stay reserve.
-
-## 22:30 UTC steering78, persistent-code ingestion and breadth allocation
-
-Raw message78 is preserved verbatim in THESIS_RAW and notebook commit1b0c3c68;
-read in the first cycle after arrival. Directive: elevate the successful recipe
-with scale/diversity and bind it to guided closed loops; projection before
-model-reasoned replay, compiler not a blocker. Fable's suggestions are advice,
-not ratification or evidence that266 passed its failed conjunction. Preserve
-all invariants and old-thread ownership; old thread continues independently.
-
-### PERSIST-CODE terminal (SEQ271 assigned)
-
-**OBSERVATION:** RICH0/8 complete tasks vs TERSE2/8 and fixed sum(values)0/8;
-40 vs35 native calls,12831 vs976 generated tokens. RICH0records,TERSE2;
-one terse repair succeeds but its lesson fails the very same task's example.
-Zero admitted rich rows/fits. Both slots released22:23:03UTC.
-
-**EVIDENCE AND CONTROL:** report
-`research_notes/analysis/orch_persist_code_result.md`, packet6f7e2af9. Same8
-integer-ledger tasks, frozen37ec and ceilings;75 calls in the completed batch,
-separate2-call failed engineering attempt retained. Author replay and16/40
-rich-turn semantic diagnostic, remaining24 UNREVIEWED; reader pending.
-
-**CURRENT INTERPRETATION:** DEALLOCATED screen, not a persistence disproof;
-rich side never created useful records, so reuse was not exercised. Lesson
-correctness needs its own grounded check rather than task-success inheritance.
-
-**CREDIBLE ALTERNATIVES:** function-input vs memory namespace confusion,
-28invalid/missing rich actions,3truncations, invented arithmetic; no single
-cause isolated. Posthoc alias substitution is diagnostic only, not rescued
-native scores or edited targets. Public codebase learning remains untested.
-
-**CONFIDENCE:** worker-replayed finite result, pending independent read;
-no sleep, retention, transfer or parenting claim.
-
-**CHEAPEST DISCRIMINATING NEXT TEST:** no immediate ledger sequel; off-the-shelf
-code worker is already independent. Spend freed compute on message78's
-prospective broader recipe instead of more failed-protocol retries.
-
-### New TERSE-BREADTH diagnostic and loop design
-
-Declare a separate fidelity/breadth replication of266:128 new same-family TRAIN
-worlds, fixed fresh held cohort, three independently seeded matched FULL versus
-new-labels-masked fits,16 presentations per new target and legacy rehearsal.
-One worker owns A1004–7 and node3 6–7 after fresh admission. Reuse exact266
-quality-filtered child-native trajectory recipe; freeze all rosters, scales,
-source hashes, schedule, deterministic reference and failures before outcomes.
-Three pairs admitted as one batch; independent train seeds, not three read-order
-seeds. >=1000 distinct qualified new targets before any fit. This is explicitly
-a TERSE replication per78, not rich-corpus admission, not an exception allowing
-terse commands into the rich mining corpus. Old failed conjunction stays failed.
-Changing topology and parametric memory are separate queued hypotheses, not
-bundled factors in this first breadth test. No new L2/3 family is admitted.
-
-Changed belief: the finite266 contrast justifies a prospective scale/seed test,
-not a validated L2 starting premise. Blind fresh-cohort replication continues;
-breadth experiment does not wait on it because it tests a hypothesis rather
-than promoting a result. Preserve code/text/math diversity. Freed PC worker
-slot becomes the single breadth-worker slot; no PI-native execution.
-
-Loop preparation proceeds in parallel as PI design: three guided sleeps,
-same-child frozen twin and unparented-sleep twin, parents blind to sealed
-held readouts and absent at evaluation. A projection/replay baseline needs no
-learned compiler; child-reasoned consolidation is a separately controlled
-later arm, not prerequisite. Launch requires a prospectively specified
-qualifying child and appropriate held-family admission; don't silently waive
-the frozen transfer conjunction. No result currently meets that full gate.
-Escalate a precise proposed route L2 family to Rohin while all L1 work runs.
-
-Fable22:22 VERIFIED267 is now ingested: finite Taxi counts independently
-re-derived; its semantic16-turn labels remain author-side. Deallocation unchanged.
-STATE first, BOARD second, assignment after publication.
-
-## 22:39 UTC reader ingestion and actual execution status
-
-Fable's22:33UTC independent read marks268,269,270 VERIFIED for the specified
-finite counts, call totals and available hashes. This changes confidence in
-those observations, not promotion or their causal interpretation.268 still
-has four scripted READs and reference2/3 pairs;269 still has empty stores;
-270 still has0/4scale-ready families. Reader re-counted author semantic labels,
-not an independent full-text semantic adjudication. It did not compare268
-base/adapter state fields or rederive270's unchanged-adapter claim from the
-shard fields checked. Preserve these explicit verification limits.
-
-No newly allocated science changes follow from this verification alone.
-Independent cohorts are already running/preparing; no exact null rerun.
-Blind route source collector launched22:32 on node3GPU5, guardian97349/native
-97358, automatically followed by three fresh readouts on0/1/5 under fixed caps.
-MATH-RECORD genuinely generating: ACTOR_READY4/4 at22:36:49, first persisted
-call22:36:55; deadline23:20:59.64fixed questions retain2question-only gold
-concerns (one ambiguous,one suspect), excluded from admission, not denominator.
-No paired outcome or admission claim yet. TextWorld and code CPU/preGPU
-receipts exist; launches are not inferred merely from publication. Breadth
-worker is Plato; its protocolf0a93ca7 is published, stale merge wait cleared.
-
-Measured controller memory22:36:36:7.0GiB available, swap nearly full. Fable's
-earlier2.2GiB sample is a real historical warning, not current capacity. Keep
-six existing distinct workers now, no extra local model loads; reassess if
-available RAM falls below3GiB. Never kill another project/process to free RAM.
-Public fetch approvals must be respected; no alternative client is used to
-bypass a pending or denied runtime approval. Cached approved inputs are fine.
-
-## 22:41 UTC consequential dose correction before breadth fits
-
-Old Builder handoff6e45b997/e589488c reports native schedule parity: SEQ266
-used FOUR trajectory presentations, not16.1452new rows received5808new-target
-presentations in2928four-slot updates. With the same1452rows,16presentations
-requires11712updates. Main inherited and repeated the wrong16-dose description
-from Fable; those earlier notebook statements are explicitly corrected here,
-not rewritten. Primary old scores and exposure receipts remain intact. Main
-read the handed-off helper/report, did not execute a replay or reader check.
-
-This changes experimental design, not the base, invariant, frozen benchmark
-or paper claim. Six-GPU128TRAIN/32held source scope unchanged. Before any
-fit/outcome, replace the original three16-dose pairs with:
-
-| Assigned devices | Training seed | New-target presentations | Purpose |
-|---|---:|---:|---|
-| A1004FULL/5OFF |7801 |4 |same-dose breadth replication |
-| A1006FULL/7OFF |7802 |4 |independent second training seed |
-| node3 6FULL/7OFF |7801 |16 |dose intervention vs7801at4 |
-
-Same actual qualified corpus, held cohort, initialization, optimizer and
-reference-label masking across conditions; dose is the explicit difference
-for7801. Broader corpus remains a change from266; it is not a same-corpus
-replication. Third independent seed7803 is deferred, not relabelled as the
-16-dose pair. Admit all three matched pairs in the corrected common batch.
-No source tasks or outcome thresholds are changed by this amendment.
-
-Changed belief: width and dose had been mistakenly conflated before a new
-fit. This contrast is more informative than three repetitions of the wrong
-assumed dose. A positive4-dose contrast merits the third4-dose seed before
-promotion; a16-only gain would motivate dose rather than breadth attribution.
-Retain unknowns about shared-data/ancestry and require all original readout
-and retention gates. No newL2/3test family or compiler prerequisite introduced.
-The released replay-layout helper is optional, worker CPU/native integration
-still required; frozen quality driver remains byte-identical, not modified.
-STATE first, BOARD second, corrected worker scope after publication.
-
-## 22:49 UTC batch — blind route success, two mining failures, next uncertainties
-
-### SEQ273: independently implemented fresh-cohort readout
-
-**OBSERVATION:** FULL16/16 opposite-goal pairs,32/32 goals; loss-off0/16,
-14/32; original37ec1/16,14/32; first-port0/16,16/32. Every state oldW0/W8/
-audit16/16 each. Eight worlds, correlated two display-order pairs/world.
-
-**EVIDENCE AND CONTROL:** prospectively frozen blind protocol and independent
-readout/scorer;32/32 genuine source EVENTs from64original-child calls, same
-captured store across fresh processes. Actual four READs and two ROUTEs, not
-scripted-prefix continuation.769/784calls; no fits/targets. Report
-`research_notes/analysis/orch_replication_20260914_result.md`, publication19232207,
-SEQ2737e650ab4. Worker replay22tests; independent Fable read pending.
-
-**CURRENT INTERPRETATION:** the saved-child contrast replicates on this new
-same-family supplied-text cohort. This is independently implemented readout,
-NOT independent training-seed replication. It does not erase266's failed old
-conjunction, supply unseen-family evidence, or demonstrate repeated sleeps.
-
-**CREDIBLE ALTERNATIVES:** shared topology/grammar/ancestry, public source
-scaffolding, correlated world tasks, one saved training pair. No unique
-causal-mechanism or population-effect claim from16 correlated pairs.
-
-**CONFIDENCE:** promising blind finite result; reader pending, training-seed
-challenge underway. All blind-protocol exposure disclosures remain preserved.
-
-**CHEAPEST DISCRIMINATING NEXT TEST:** already-declared same-dose breadth and
-seed fits; stop further checkpoint rereads. A separate candidate-versus-control
-RICH mining test now has higher expected value: does retained route competence
-yield grounded rich trajectories, or did command SFT narrow output behavior?
-This uses an experimental candidate, not an assertion of checkpoint promotion.
-
-### SEQ272: easy TextWorld ceiling and unrealized richness
-
-**OBSERVATION:** RICH-prompt8/8 vsTERSE8/8;41calls,0admitted rows. All18rich
-turns28–52prose tokens, below150–400. No child missing-prerequisite feedback.
-**EVIDENCE AND CONTROL:** actual TextWorld paired frozen tasks,16episode native
-replays; report `research_notes/analysis/orch_text_prerequisite_20260914_attempt1/REPORT.md`,
-SEQ27232902079. Author full-text review; reader pending.
-**CURRENT INTERPRETATION:** DEALLOCATED exact pool; not a learning null, since
-richness/correction manipulation did not occur. No fit or extrapolated claim.
-**CREDIBLE ALTERNATIVES:** easy optimal-distance2 tasks, ceiling, short-output
-policy; fluent successful actions included unsupported possession claims.
-**CONFIDENCE:** finite author-replayed counts, low on mechanism.
-**CHEAPEST DISCRIMINATING NEXT TEST:** not extra seeds/difficulty rescue here;
-compare base versus installed adapter under the same rich contract separately.
-A1000–3 released22:35:06, Hypatia retired.
-
-### CODE-BOUNDED terminal (SEQ274 assigned after273)
-
-**OBSERVATION:** RICH7/8 vsTERSE6/8;0admitted rows,37calls. All19rich texts
-read:18FAIL,1UNRESOLVED;median60tokens,only2/19total150–400. Official reference
-program8/8 is oracle parity, NOT a non-oracle baseline the learner must beat.
-**EVIDENCE AND CONTROL:** real MBPP,974source/91prospectively supported/8selected
-tasks, supplied public tests visible to both. Report
-`research_notes/analysis/orch_code_bounded_20260914_attempt1/REPORT.md`, evidencee739de55.
-All science calls/final hashes completed before nonexistent Engine.close
-cleanup raised; exit1 retained, CPU-only repair, no native rerun. Reader pending.
-**CURRENT INTERPRETATION:** DEALLOCATED exact easy expression screen, not code
-learning disproven. No hidden-test transfer, retained learning or semantic repair.
-**CREDIBLE ALTERNATIVES:** trivial/exposed tasks, restrictive interpreter,
-installed short-output habits. Fabricated positive oracle feedback is rejected.
-**CONFIDENCE:** complete finite author report, pending reader; limited scope.
-**CHEAPEST DISCRIMINATING NEXT TEST:** separate base/adapter contract diagnostic,
-not broader unsupported-task claims or retries. Node2 0–3 released.
-
-### New allocations from these results, before assignment
-
-FULL-RICH on A1000–3: eight fresh TRAIN route worlds, two goals/world,
-same rich150–400 contract for FULL, loss-off and original37ec. Native source
-capture identical across conditions; no scripted READs. At most64source plus
-288trajectory calls (352total),6turns/episode; no extra post-episode call or fit.
-Compare outcome AND full-text semantic yield on the fixed16episode/state
-denominator, not tokens alone. No scored273worlds used for teaching/mining.
-Question: can the experimental competent route child supply rich trainable
-experience, or does its command-specialized adapter suppress the narrative?
-
-BASE-CONTRACT on node2 0–3: same frozenQwen base, adapter-disabled versus
-original37ec, exactly matched rich prompts on eight fixed diagnostic tasks
-(four already-exposed MBPP, four already-exposed GSM8K; prospectively chosen
-before this arm's outcomes). Same safe interpreter/checkers and budgets;
-no new benchmark, teacher targets, weights or claims. Up to32calls, no fit.
-Primary: grounded outcome-qualified150–400turn/record yield, plus literal
-contract contradictions and actual stop/token behavior. Isolate installed
-adapter versus base instruction-following before spending on more simple pools.
-Explicitly diagnostic re-use, NOT untouched tasks or another rerun of an
-unchanged failed recipe. Original failed denominators remain intact.
-
-GUIDED-BRIDGE CPU-only worker: minimal previous-adapter binding and tests for
-collector/trainer/fresh readout across guided/frozen/unparented arms, using
-existing native APIs and released replay-layout helper. No framework/archive
-project, no GPU, no real L2contents or actual loop launch before family ruling
-and candidate gates. Three freed node3GPUs0/1/5 are adaptive reserve, not held
-by this CPU task. This removes implementation uncertainty while all unblocked
-L1 experiments continue. STATE first, BOARD second, assignment after publish.
-
-## 22:57 UTC ingestion — record-yield result and bounded scale candidate
-
-**OBSERVATION:** MATH-RECORD NEW55/64 admitted records vsOLD9/64;46NEW-only,
-0OLD-only,9both,9neither. Grounded61/64 vs59/64, materially false1vs3.
-Common rich answers63/64; record answersNEW62/64 vsOLD63/64, NOT an accuracy
-gain.190fulltexts author-read:107PASS/82FAIL/1UNRESOLVED.28initial-rich targets
-plus55NEW records =83NEW-pipeline targets.92all-condition targets additionally
-include9OLD records; never count92 as NEW yield or paired wins.
-
-**EVIDENCE AND CONTROL:** fixed64fresh GSM8K tasks, common native solution,
-two independent record branches, equal ceilings but NEWprompt62tokens longer.
-Report `research_notes/analysis/orch_math_record_20260914_attempt1/REPORT.md`,
-evidence13dac397; SEQ275 assigned after274.19CPU tests and190raw joins pass
-by author; reader and independent semantic adjudication pending. Four native
-shards finished22:45:48,GPUs4–7 released22:46:20. No fits.
-
-**CURRENT INTERPRETATION:** autobiographical operation/expectation framing
-improves the frozen record-admission criterion on this sample. Mostly a voice-
-contract/yield effect, not demonstrated new reasoning, useful learned records
-or transfer. The original270failed recipe remains closed. Counts justify a
-prospective scaled collection candidate, not a scientific promotion.
-
-**CREDIBLE ALTERNATIVES:** unblinded semantic judgments, task/sample/prompt
-length effects; many OLD records contain true operations but impersonal voice.
-More overflow withNEW. One NEWtarget1734 truthfully echoes generation-only
-checker confirmation omitted from neutral student prefix. This mismatch must
-be disposed before training, without rewriting target bytes or hiding raw rows.
-Ambiguous wage and suspect juice gold remain original failures/exclusions.
-
-**CONFIDENCE:** finite author-replayed result; strong enough to test scaled
-yield, not enough for a retained-learning claim. Blinded text/neutral-prefix
-audit is next available independent slot; collection need not wait for it.
-
-**CHEAPEST DISCRIMINATING NEXT TEST / ALLOCATION:** MATH-SCALE under the same
-author worker on node2 4–7:1024fresh fixed mining tasks,256perexisting L1
-family, excluding all known previously used IDs/question hashes. Same rich
-solution plus exact NEWrecord elicitation, <=2048generation calls, no OLD
-record branch. Freeze candidate roster and prospective held64 L1 tasks
-(32geometry_measurement,32age_time_relations, never mined) before outcomes.
-No newL2/3family. Admit only actual outcome-qualified full-text-grounded
-150–400targets with neutral-prefix compatibility. Exclude disputed/unsupported
-feedback claims rather than rewrite them; preserve old83/92counts separately.
-
-Conditional one matched FULL/new-labels-masked fit only after>=1000distinct
-admitted new targets and full source/prefix/control CPU checks. No old-packet
-automatic admission. Exact corpus/schedule/hyperparameters/reference-label
-denominator and16presentations plus legacy rehearsal bound before fit;16 is
-the prospective rich-corpus dose, not266's historical4. Fresh parent-absent
-held64readout vs matched control, original37ec and fixed zero-answer reference,
-plus oldW0/W8/audit>=15/16 each. Samebatch FULL/OFF; constant0 is baseline,
-official solutions are oracles. Reader/replication required for promotion,
-not a separate prelaunch approval. No fit below threshold; report inadequate
-yield as such, never pad/copy/replace cases. After collection, initial fit4/5;
-6/7 released with physical receipts for the next allocation. New scope must
-be implemented/frozen/published by worker before any native use.
-
-Conditional projection only:83/64 NEW-pipeline rows per task would imply1328
-rows over1024tasks if yield transferred. That is not a prediction or success
-criterion; actual corpus may fail qualification. This changes smallest
-bottleneck from zero viable record recipe to audited scalable targets followed
-by held uncoached learning. Independent semantic audit and actual learning
-controls now matter more than further narration-prompt optimization.
-
-## 23:04 UTC message79 applied, family registry and measured utilization
-
-Raw79 preserved verbatim36a0a2db, read first cycle after arrival22:57UTC.
-Main now designates L2/L3 families without per-family human permission.
-Separation, quality, held invisibility, candidate gates and all other scientific
-invariants remain. This is direct human delegation, not inferred model consensus.
-Exact registry: `research_notes/analysis/orch_family_registry_20260914.md`.
-Admit route within-family diagnostic, structured-text ledger and congruence-join
-L2 design scopes; reserve dependency-build graphs and linear recurrence for
-heldL3 qualification. They are not certified hardest merely by their names.
-Expand toward dozens of substantively different high-quality families;
-60–120 is a scale horizon, not an achieved inventory or count of renamed IDs.
-
-The route candidate is already ceiling32/32 on273; a repeated same-difficulty
-loop cannot establish positive slope at that ceiling. The bridge must measure
-new-task learning opportunity, not claim progress from repeated perfect scores.
-Family designation removes a permission hold, not this experimental-design
-question or a qualification gate. CPU/native loading integration proceeds now.
-
-Live read-only nvidia-smi snapshot22:59:12–14UTC: node2 no model-residentGPU;
-node3 all1MiB/no model-residentGPU; A1004–7 resident15981–16109MiB,
-utilization1/7/3/7percent. Thus4/24eligibleGPUs resident (16.7%), NOT saturation;
-node1's8excluded from campaign and receives no new work. Allocated slots do
-not equal busy compute. Earlier six-lane launches are historical, not current
-occupancy. Main ran only read-only monitoring commands, no experiment cell.
-New1024-task math collection and fits are being prepared; finished screens
-released their devices. Continue avoiding serial admission and gratuitous
-reruns, while improving sustained useful work, not occupancy theater.
-
-Old Builder is assigned a substantive disjoint native adapter-loading seam
-under orch_guided_native prefixes. CPU bridge worker keeps orch_guided_bridge;
-StageBinding.adapter supplies path/state_sha256/base_sha256/files, with
-verify_loaded checking actual state and visibility. Old Builder must load
-that explicit prior child for collector AND trainer, fresh readout for new
-child; never quietly37ec. CPU mocked parity/tests only until a separate native
-protocol; no GPU allocation or new framework. Binding worker and native seam
-communicate through Main and frozen public interface, not overlapping edits.
-
-## 23:08 UTC independent math result and next evidence allocation
-
-**OBSERVATION:** terminal blind MATH-REPLICATION, assigned SEQ276 pending
-worker publication: rich31/32 versus terse10/32;21rich-only,0terse-only.
-96calls;47candidate texts author-read,6PASS/41FAIL/0unresolved across5tasks,
-including3own records from31record calls. Frozen combined>=8row gate FAIL.
-
-**EVIDENCE AND CONTROL:** independent protocol and fresh32public questions,
-eight per existing mining family; report
-research_notes/analysis/orch_math_replication_20260914_attempt1/REPORT.md.
-Three clean terminal shards; prior math results hidden through frozen analysis.
-Paired prompting controls, not trained FULL/loss-off controls; no training.
-Author-reported exact counts await Fable; no Main reader checks performed.
-
-**CURRENT INTERPRETATION:** the rich-versus-terse answer contrast independently
-recurs on another finite cohort, while the original record recipe still yields
-too few qualified examples. This distinguishes answer performance from training
-material quality. Deallocate completed screen; do not repeat it or call the
-mechanism disproven.
-
-**CREDIBLE ALTERNATIVES:** prompt roles, spend, public pretraining familiarity,
-first-person/check rubric interpretation and six preflagged question ambiguities.
-Terse failures15wrong numeric/7format, zero truncations; formatting alone is
-not enough to explain the whole contrast. All denominators/golds preserved.
-
-**CONFIDENCE:** finite author-reported contrast and independent analysis;
-unverified by reader, no retained-learning or generalization claim.
-
-**CHEAPEST DISCRIMINATING NEXT TEST:** independent semantic and neutral-prefix
-audit of already captured paired record-prompt texts, no extra GPU prompting.
-Gauss receives all190raw targets sorted by target hash, generation prompts,
-neutral prefixes and gold, but no prior labels/counts/favored interpretation.
-Packet SHA4a459a9bea6415ef43c0db936587f50d713e7096cbafca83d7f2074d7a5214c9.
-Prompts make conditions inferable; independence is from favored interpretation,
-not magically from wording. Freeze per-target findings before comparison.
-MATH-SCALE collection remains unblocked; no mismatched-prefix targets fit.
-
-Changed belief: answer contrast more credible, usable-row gate remains smallest
-bottleneck. Redundant work: another unchanged prompting replication. Highest
-architecture-value result remains retained guided-cycle slope, absent so far.
-New uncertainty is whether apparent record-yield gain survives blind semantic
-and removed-guidance checks. Guided bridge22CPU tests complete, native seam
-assigned Old Builder; no native cycle exists yet and route ceiling cannot show
-positive slope by repetition. Independent training seeds remain TERSE-BREADTH.
-
-Operational update23:07:42–44UTC:6/24eligible GPUs model-resident, not saturation:
-node2none;node3 6/7 at100%;A1000/1/2/4 at44–46%,others zero. This is an
-instant snapshot, not integrated utilization. TERSE collected2868distinct
-qualified terse targets,120/128eligible TRAINsources;4150calls; fixed fits
-5760updates for fourA100cells and23040for twoA40cells, actual start receipts
-requested. FULL-RICH source/readouts active; BASE repair preserves initial11
-calls but lacks their post-generation mounted hash observation: not a clean
-paired null. MATH-SCALE1024+held64 frozen, not yet claimed running. RAM2.9GiB
-available/swap full; no additional simultaneous worker beyond retired slot.
-Node1 remains unavailable pending a new lease/onboarding receipt despite
-watcher23:04expectation of23:25return; Main neither leased nor onboarded it.
-
-## 23:12 UTC message80 and prospective correction screen
-
-Raw80 is the authority for the ladder: L0 absorb experience into LoRA memory/
-behavior; L1 open-loop thought rich enough to change behavior; L2 guided
-cross-sleep cohesion; L3 convergence toward long-term outcomes; L4 deployment.
-Read verbatim this cycle, not merely Fable's table. Relay heading says~23:15
-but commit arrived23:08:37; arrival/read time governs response, not that estimate.
-This records Rohin's explanation, not a new result or permission to silently
-replace SFT with a policy-gradient objective. Current experiments, masks,
-controls and acceptance denominators are unchanged. Any actual new objective,
-loop/invariant change or paper claim follows the durable architecture intake/
-deliberation path before editing the affected system. Fable's FIRST SUCCESS
-label does not remove266all-world failure or convert273into training replication.
-
-The276result suggests a distinct, cheap test: previous rich-answer corrections
-had mostly ambiguous gold, whereas naturally wrong terse child outputs contain
-verifiable mistakes. ORACLE-REPAIR tests whether explicit grounded rejection
-adds meaningful correction/reusable-record yield beyond the SAME rich retry
-without that feedback. No new task family or hidden-set access. Freeze up to24
-unambiguously wrong-numeric child responses from completed270/276 L1 mining
-receipts by stable task hash; audit gold/question correctness before new calls.
-Gold disputes/format-only failures are excluded from this new prospective
-roster with reasons, never removed from original denominators. If fewer than24
-eligible exist use all and disclose actual N, no collection to fill the quota.
-
-Paired arms share exact task and actual prior wrong child bytes. GUIDED receives
-only truthful deterministic oracle rejection, NO answer/reference solution;
-RETRY receives no verdict. Same first-person150–400rich correction request,
-same512generated/2048context budgets and branch order balanced before outcomes.
-One repair and, only on correct repair, one own-record call per branch:<=96
-new calls overall; child-only neutral prefixes, fulltext semantic and prefix
-review; unchanged frozen37ec. Report correction success, meaningful revision,
-record yield, token distributions and paired contrasts separately. A positive
-local feedback signal requires>=4additional joint outcome-and-rubric repair
-admissions in GUIDED over RETRY; otherwise deallocate this declared screen,
-not declare parenting false. No fit, scale, held-transfer or learned-loop claim.
-
-Allocate node3 0–3 to one sceptical worker, stance: the verdict adds nothing
-beyond a rich retry. Own scoped implementation/CPU/provenance/preGPU publication
-then independent launch, no Main gate.60min/4assignedGPUh including cleanup;
-node3 4/5 remain reserve,6/7 remain breadthfit. This complements the corpus and
-prefix audit; it does not substitute a24case screen for the campaign or claim
-L2 readiness. Strongest alternative is informative feedback versus simply
-re-running richer reasoning, now directly controlled.
-
-## Active uncertainties and surprises
-
-1. Which off-the-shelf pools show a measured rich-over-terse reasoning gap AND
-   high semantic/outcome admission yield? Code, math, games tested separately.
-2. Does feedback produce meaningful child revisions and reusable records,
-   rather than copied answers, verbosity or repeated attempts?
-3. Does any >=1000-row admissible corpus transfer in a fresh uncoached process
-   above matched loss-off and a fixed deterministic reference without erasure?
-4. Does a persistent task benefit from accumulated records across sleeps,
-   beyond in-context scaffolding? Two independent gym proposals address this.
-5. Do SEQ268's narrow source/display contrasts extend to a fresh cohort?
-   Adversary disclosed initial BOARD exposure and scripted READ scaffolding.
-   Fermat's separately frozen blind prospective cohort is underway; it cannot
-   establish independent training-seed replication. Broader3seed fits are separate.
-
-## Priority frontier and allocation rationale
-
-Smallest current bottleneck: grounded trainable experience in content-bearing
-pools, followed by retained held-family transfer; not rebuilding the LoRA
-substrate. Highest architecture-changing result would be durable guided-cycle
-gain disappearing in frozen and unparented twins; no such result yet.
-
-Initial W1 allocated20GPUs to six differently seeded workers. The22:15UTC
-batch reallocates on GAME's null and actual releases as described above;
-do not preserve its initial reservations. Reserve capacity is not a serial gate.
-All24 node2/node3/A100 slots were released by old builder21:52Z; each requires
-fresh physical and CVD admission. Node1 excluded. No new leases authorized.
-
-Do not preserve these allocations merely because they are initial. After
-each meaningful result, revise this file FIRST, BOARD second, allocation
-third: changed beliefs; smallest bottleneck; architecture-changing test;
-redundant arm; replication candidate; alternative needing falsification;
-new hypothesis. One clean null deallocates its declared screen, not the
-mechanism. A worker without a next discriminating test is retired.
-
-## Historical readiness snapshot through22:15 (superseded by ingestions above)
-
-- Publish W1 conditional batch contract and request Fable preregistration.
-- Gather workers' actual CPU/provenance/native readiness; log admissions in
-  batches. Own CPU receipts received: MATH7/7; GAME9screen+4portable plus
-  native environment3000transition equivalence; PERSIST-CODE21tests. These
-  are worker reports, not Main-repeated tests or reader VERIFIED results.
-  GAME actual launch22:05:01UTC: four A1000–3 native workers; MATH repaired
-  launch22:05:32UTC: four node2 4–7 native workers, initializing at22:06:09.
-  Update22:08: MATH initialization subsequently failed mounted-adapter hash
-  comparison before any generation (PEFT export naming vs V3 named-parameter
-  hashing). Worker restored existing contract with9/9CPU tests, preserving
-  pins and old failure artifacts; retry pending actual ready/call receipt.
-  Process starts are not completed calls or results. MATH's earlier
-  cross-host UID/GID archive check abort had zero scientific calls; preserved
-  non-material repair8/8CPU, not a scientific null. PERSIST-MATH reports
-  21/21CPU and clean preGPU; PERSIST-CODE preGPU published22:07:11UTC.
-  Worker EOF-only preGPU/launch/result appends are authorized after9a9593af;
-  publication failures stop that launch, not unrelated workers.
-- Worker concurrency ceiling is six (seventh spawn rejected, no worker
-  created). Keep four reserve GPUs free until a slot can own useful work;
-  do not merge unrelated hypotheses to pretend greater independence.
-- Escalate exact proposed L2/L3 families, leaving those families untouched.
-- Exact four family scopes sent22:05UTC; no ruling yet observed. Message77:
-  keep orchestrator on VM continuously. No migration, resize or destructive
-  cleanup. Local22:07:27UTC: RAM3.1GiB available, swap full, /data13GB free,
-  VM root2.7GB. Heavy native work stays remote. Goal tool returned null22:06;
-  notify watcher that autonomous goal scheduling is not yet confirmed, while
-  current orchestration continues.
-- Fable P47–P52 now present. Their hypotheses do not change frozen worker
-  screen denominators or turn contextual-memory comparisons into sleep tests.
-- MATH now genuinely generating: ACTOR_READY and33saved calls at22:10:26UTC
-  after published repair; original guard/native failures remain zero-science.
-  PERSIST-CODE attempt2 running after a token-accounting interface repair;
-  attempt1 has one call/arm, not a clean null, all failures preserved.
-  PERSIST-MATH treatment running; control complete and released.
-  ROUTE native3state batch started22:11:16UTC, loading at last receipt.
-- Ingest independent-reader status asynchronously, never silently promote.
-- Capacity checkpoint: 2026-09-15 08:00UTC (next morning),5000 admitted rows
-  and four pairs OR two pairs plus justified replication; distributions and
-  scientific discrimination outrank capacity counts. AbstractSeptember18;
-  heavy experiments including test deployments throughSeptember19.
+Updated September15,2026,00:10UTC. ACTIVE / INCOMPLETE. Current synthesis,
+not an experiment transcript. Prior detailed state remains in git66d134c5
+and the append-only notebook; no evidence, failed denominator or raw directive
+is deleted by this compaction. BOARD owns current GPU allocations.
+
+## Objective, steering and invariants
+
+Read launch pack in order in the initial orchestration; continued from durable
+handoff. Raw42–83 authoritative;79read22:57,80read23:10;81/82read23:27
+after upstream reconciliation(acf15f0e). Message82 ARRIVED23:25, not its
+approximate~23:30spoken-time heading.83read23:31 from39c15c90,arrival23:30.
+Both newest steers acted on this cycle; no prior-richness/promotion hold.
+Read new relays every cycle; full raw42–83 reread completed23:48UTC from
+raw-only extraction, following prior chunks1–900 and final901–991. Next full
+reread due September15,01:48UTC; new relays still acted on within one cycle.
+Raw80 relay estimates~23:15 but arrived23:08:37; actual arrival/read times govern.
+
+- L0: correct experience can change LoRA memory/behavior and be retained.
+- L1: open-loop reasoning rich enough to supply learnable child-native data.
+- L2: parent-guided experience/reflection/consolidation produces cohesive
+  retained learning across sleeps; parent ABSENT at evaluation.
+- L3: learning converges toward long-term outcomes in difficult families.
+- L4: unparented deployment on unseen verifiable tasks, versus a non-learning
+  twin; H1/H2 and dependence on continued sleep remain the scientific spine.
+
+Message80 is recorded as Rohin's explanation, not a newly demonstrated result
+or permission to replace SFT with an unreviewed policy-gradient objective.
+No current loss, benchmark, denominator or scientific acceptance gate changes.
+Actual material thesis/objective/invariant changes use architecture_intake.py
+and architecture_deliberation.py with independent interpretations, critique,
+consensus and exact human ratification before affected-system edits. Existing
+authorized experiments continue; do not impose this path on ordinary choices
+inside the standing experiment scope.
+
+Frozen Qwen2.5-7B-Instruct; LoRA-only learning; provenance and contamination
+rules; child-authored targets; outcome AND substantive content; parent/guidance
+removed from student prefixes and masked from loss; parents blind to sealed
+scores; controls, retention, fresh-process evaluation and preserved evidence.
+No hand-authored/padded/repaired behavioral targets. No paper claim authorized.
+Rohin79 delegates family designation to Main; no per-family permission hold.
+Paper claims, beyond-fleet spend and thesis-overturning interpretation escalate;
+material base/invariant changes still follow the durable path.
+
+## Established observations and limits
+
+- L0 DEV: first-person/query-like varied presentations acquire; copy-format
+  rows do not at tested doses. About200 is one operating point, not universal;
+  SEQ253 acquired4/4 at50 in a different recipe. Competing updates can erase
+  unrehearsed habits within16 updates; replay preserves tested behavior.
+- Cue/checker/interface contrasts have loss-off controls (226/239/252).
+  SEQ245 fresh single-hop write→use improves1/4→4/4,old12/12,audit16/16,
+  selected=uniform; not H2 or a selection advantage.
+- SEQ260 lower-breadth fit: held FULL1/4pairs5/8goals versus control2/4,6/8.
+  Taught acquisition is diagnostic, not progress; no incremental held gain.
+- Fable's reader re-derives counts asynchronously. Main never runs it.
+  VERIFIED is scoped to what it actually read, not universal semantic proof.
+  Promotion requires same-batch matched control, untouched held worlds,
+  fresh-process readout and VERIFIED counts. A promoted premise additionally
+  needs independent replication; a new readout is not a new training seed.
+
+## Promising claims, not promoted conclusions
+
+### SEQ266 — inherited terse supplied-text fit
+
+**OBSERVATION:** FULL30/32pairs62/64goals versus OFF1/32,26/64 and original
+2/32,33/64. W0/W8/audit16/16each all states. All-world conjunction15/16FAIL.
+Unavailable-text pairs0/32all states; FULL23/64goals versus OFF0/64/original3/64.
+
+**EVIDENCE AND CONTROL:** source7f9d4251,primary60aca837; Fable21:47VERIFIED
+primary counts/hashes, did not locate1674inputs; independent episode review
+and memo have their own broader scope. Same2928updates; new-label loss off.
+Actual1452new targets×FOUR presentations, not16.16would mean11712updates.
+Original preGPU-publication-order deviation stays disclosed.
+
+**INTERPRETATION:** finite exposed-DEV supplied-text goal sensitivity improved
+in one terse recipe. Failed world conjunction stands; no H1/H2/richness claim.
+**ALTERNATIVES:** familiar grammar/display, source dependence, breadth/dose/
+quality mixture. Missing text is not a proven sole cause of the failed world.
+**CONFIDENCE:** strong finite contrast, narrow scope, no repeated-sleep result.
+**NEXT TEST:** distinct training seeds and dose/breadth comparison now running;
+do not repeat the same checkpoint readout to manufacture replication.
+
+### SEQ273 — independent fresh route readout, not training replication
+
+**OBSERVATION:** FULL16/16pairs32/32goals;OFF0/16,14/32;original1/16,14/32;
+first-port0/16,16/32. All three W0/W8/audit16/16.32actual EVENTs from64calls;
+769totalcalls, no fit. Four actual native READs plus two ROUTEs, not scripted.
+**EVIDENCE AND CONTROL:** report orch_replication_20260914_result.md,
+publication7e650ab4/evidence19232207; Fable22:53VERIFIED.
+Reader did not rehash native archive. New independently implemented, initially
+blinded readout; later source-missing metadata exposure disclosed.
+**INTERPRETATION:** same trained lineage succeeds on a fresh finite cohort.
+**ALTERNATIVES:** same grammar/ancestry, public DEV exposure, one training seed.
+**CONFIDENCE:** independently recounted readout, not qualified broad child.
+**NEXT TEST:** training replication, plus FULL-RICH competence-to-prose screen.
+Never mine these held worlds; repeating this32/32ceiling cannot show a slope.
+
+### SEQ275 — record-prompt yield, not accuracy or learning
+
+**OBSERVATION:** NEW55/64admitted records versus OLD9/64;46NEW-only,0OLD-only.
+Record answers NEW62/64 versus OLD63/64; not an accuracy gain.190texts author
+107PASS/82FAIL/1unresolved.83NEW-pipeline targets=28rich+55NEW;92all-condition
+includes9OLD, not92NEW. Common initial rich63/64;59tasks across all admissions.
+**EVIDENCE AND CONTROL:** publication14c7ee4a/evidence13dac397, paired same
+64tasks; report orch_math_record_20260914_attempt1/REPORT.md. Fable23:02VERIFIED
+published counts,190CALL files and reduction/review/archive hashes. This is
+not independent semantic certification. Guardian cost0.61556GPUh was NOT
+re-derived; reduction instead carries0.608094GPUh. Preserve discrepancy.
+**INTERPRETATION:** autobiographical framing increases author-rated usability.
+**ALTERNATIVES:** voice/judgment,62additional prompt tokens, neutral-prefix
+mismatch; NEW1734echoes real generation-only checker success absent in student
+prefix. Suspect juice/wages cases remain failed/excluded, no denominator repair.
+**CONFIDENCE:** finite author result, not independent semantic certification.
+**NEXT TEST:** Gauss blind190text semantic/prefix audit; separately frozen1024
+fresh-task yield test. Old83/92packet is NOT automatically admitted to a fit.
+
+### SEQ276 — independent original math prompting replication
+
+**OBSERVATION:** rich31/32versus terse10/32;21rich-only,0terse-only.96calls,
+47candidate fulltexts:6PASS/41FAIL/0pending across5tasks;3own records/31calls.
+Frozen combined>=8qualified-row gateFAIL. No terse truncation;15wrong numeric
+and7format failures. Original gold/denominators and six ambiguity flags retained.
+**EVIDENCE AND CONTROL:** frozen independent32tasks,8/family; clean three shards,
+unchanged mounted37ec/base reported; evidencef52028ce,SEQ003bef8d merged67640ea4.
+Prior math outcomes hidden through own analysis; reader pending. Prompt controls,
+not training loss-off controls; no fit. Exact p9.5367431640625e-7 is finite DEV.
+**INTERPRETATION:** answer advantage recurs; original recipe's rich-record yield
+remains too low. Deallocated screen, not mechanism disproven.
+**ALTERNATIVES:** prompting roles/spend, public pretraining, rubric/gold ambiguity.
+**CONFIDENCE:** independent author analysis, not yet reader VERIFIED or learning.
+**NEXT TEST:** audit paired record wording; ORACLE-REPAIR isolates verdict value
+on real wrong terse outputs rather than ambiguous already-rich failures.
+
+### SEQ277 assigned — BASE-CONTRACT behavioral contrast with provenance gap
+
+**OBSERVATION:** BASE7/8initial correct versus ORIGINAL6/8; any content-passing
+task4/8versus2/8,below prospective>=3difference.29calls read in full:
+10semanticPASS/17FAIL/2unresolved; tokens median231versus123.5. Record passes
+0/7attempts versus1/6. Five content-passing rows have complete mounted proof,
+covering3BASEtasks and2ORIGINALtasks; initial11calls lack historical posthashes.
+**EVIDENCE AND CONTROL:** paired8already-exposed tasks, sourcef527b48e/report
+orch_base_contract_20260914_attempt1/REPORT.md. Preserved initial11+uncalled-slot
+recovery; exact original8target replays; no inference regeneration. Readerpending.
+**INTERPRETATION:** neither universal base nor installed-adapter inability to
+produce rich text fits observed complete examples. Numeric paired threshold
+missed, but historical source-provenance gap makes this NOT a clean paired null.
+**ALTERNATIVES:** simpletasks/length mismatch, conflicting code API wording,
+record role placement, generic recipes; one suppression-only story insufficient.
+**CONFIDENCE:** specific complete examples; lower for aggregate causal contrast.
+**NEXT TEST:** no identical8taskrerun. Let blind corpus audit and retained-fit
+readout test useful learnability; change code/prompt interface only under a
+new prospective protocol if a distinct hypothesis justifies it. Deallocate.
+
+### SEQ278 assigned — FULL-RICH clean finite screen null
+
+**OBSERVATION:** FULL7/16success versus OFF4/16/original3/16; reference8/16.
+Qualified episodes1/16versus0/16/0/16;3FULLrows,0others. FULL3/77turns meet
+length,median112;OFF20/39median165;original8/22median351.5.202/352calls,
+32/32actualsourceEVENTs;48/48author episode replays, no fits/updates.
+**EVIDENCE AND CONTROL:** same8freshTRAINworlds and actualsource store; exact
+mounted before/after and frozenbase; report orch_full_rich_20260914_attempt1/
+REPORT.md. Author semantic3PASS/4FAIL among7eligible; other131fail necessary
+conditions, not claimed fulltext-reviewed. Readerpending. Published preGPU,
+bounded native terminal23:11:51;A1000–3released23:11:53.
+**INTERPRETATION:** this competent terse child supplies a few rich rows, not
+a useful rich corpus under the frozen contract; even generous token-only upper
+bound fails. This screen is deallocated; neither learner nor mechanism disproven.
+**ALTERNATIVES:** narration/action interference, learned command style, source/
+memory confusion and cap failures. Two contextual FULLpasses are debatable;
+their rejection only strengthens the finite null. One clear151tokenrow remains.
+**CONFIDENCE:** robust finite null conditional on protocol; no isolated cause.
+**NEXT TEST:** no repeat/fit from3rows. Reader scrutiny can proceed with zeroGPU;
+native-loop integration and math fit remain distinct hypotheses, not rescues.
+
+### Blind semantic audit — frozen assessment, Main join, no rescoring
+
+**OBSERVATION:**190/190texts independently read;60semanticPASS/114FAIL/
+16UNRESOLVED; neutral support180PASS/9FAIL/1UNRESOLVED. Main joins frozen
+per-SHA labels to original conditions: source-outcome AND all independent axes
+NEW43/64,OLD8/64,initialrich3/64. Thus46NEW-pipeline targets survive this
+conservative conjunction versus author83. Original27555/9/28counts unchanged.
+**EVIDENCE AND CONTROL:** blinded packet, assessmentfd77ba37,freeze301c7427;
+13worker evidence-structure tests, zero model/GPU/nativecells. Main staticjoin
+orch_math_audit_join_20260914.json SHA9ca46e5d5d40c6182466b4f164eaebfb4cc4751b7246b906227591d9cb63ac4f.
+This joins independently authored labels, not Fable's raw-receipt recount.
+**INTERPRETATION:** NEW's yield advantage survives conservatively but exact
+corpus size is uncertain. Confirmed missing checker event7ccf8746; false reusable
+subtractions5535fdd2; correct orange12 versus preservedgold6. No target repairs.
+**ALTERNATIVES:** large initial-rich3versus28disagreement includes checkability
+and substantive ownership boundaries, not25new arithmetic errors. An explicit
+operation-result expectation can count without future tense or a second method;
+neither headings nor performed arithmetic automatically satisfy every axis.
+**CONFIDENCE:** strong objective support defects; finite frozen subjective
+judgments with unresolved boundaries. No automatic reviewer/author override.
+**NEXT TEST:** Gauss's separate ADDENDUM_RICH_TRACE_CLARIFICATION.md now
+acknowledges some frozen reasons demanded unjustified verification distinct
+from derivation. Four representative disputes are not arithmetic errors or a
+quantitative explanation of the whole gap. Crayon conservation can express a
+falsifiable expected relation; causal unit-cost/directional difference and
+plural operational agency can qualify. Overtime ownership remains contestable.
+Frozen bytes/counts unchanged; neither3 nor28 is automatically canonical.
+Author critique requested. MATH-SCALE keeps its prospective substantive gate;
+no new second-check requirement, automatic expansion or lowering1000floor.
+Collection unblocked; CHECK-CONTRACT stays deferred, not a mandatory remedy.
+
+### SEQ279 — truthful oracle rejection versus the same rich retry
+
+**OBSERVATION:** joint-qualified repairs8/24GUIDED versus8/24RETRY; four both,
+four GUIDED-only, four RETRY-only, twelve neither. Checked corrections22/24
+versus23/24; qualified own records2/24 versus3/24.93calls, no fit/updates.
+**EVIDENCE AND CONTROL:** same24 legitimate old L1 natural numeric errors,
+14from270/10from276; rich instructions/prior outputs matched, order balanced.
+GUIDED adds only truthful rejection, no solution/gold. All93 raw/token/prefix
+replays and19author CPUtests pass; actual mounted37ec/base checks reported.
+Own fulltext author labels, not independent reader certification; readerpending.
+Report orch_oracle_repair_20260914_attempt1/SEQ279.md; archive d6bdb6c5.
+**CURRENT INTERPRETATION:** zero admission advantage misses prospective+4.
+Deallocated at declared scale, not disproven or statistically equivalent.
+Six GUIDED targets echo real verdict events absent from neutral prefixes;
+unsupported at training, not fabricated in the actual guided experience.
+**CREDIBLE ALTERNATIVES:** selected public DEV tasks, fixed actor, style/token/
+prefix effects and author semantic thresholds. Dropping first-person alone
+posthoc yields16versus21, not a hidden GUIDED advantage; primary unchanged.
+**CONFIDENCE:** strong finite captured contrast; semantics author-dependent,
+low confidence extrapolating to conversational parenting or learned loops.
+**CHEAPEST DISCRIMINATING NEXT TEST:** zeroGPU independent evidence scrutiny;
+no rerun/fit/scale. Rich conversational SHORT/LONG loops test a different
+intervention, not rescue279. Node3 0–3 released23:28:19, worker retired.
+
+## Superseded allocation: CHECK-CONTRACT (NOT launched)
+
+Raw82 immediately takes priority. This unstarted screen is deferred; no worker
+was spawned and no GPU/model call occurred. A1000–3 go to L2-GUIDED below.
+Keep the prospective idea, not its reservation. Existing mining, breadthfit and
+already-assigned ORACLE-REPAIR continue independently.
+
+The largest unresolved loss is initial-rich admission, not answer correctness.
+On64fresh L1 mining math tasks(16/family), compare exact oldrich instruction
+with that instruction plus an explicit requirement to show a concrete numeric
+consistency check against a given quantity or a relevant inequality, not just
+say correct. SAME150–400/512generated/2048context budgets, no padding, no gold/
+reference hint. Same exact NEWrecord request after each correct initial answer.
+Freeze tasks/order before new calls; exclude all previous128,active1024 andheld64
+IDs/question hashes. No newfamily, fit, claim or prior target repair.
+
+<=256calls, one initial+conditional record per branch/task; primary improvement
+is>=16additional joint outcome/rubric/prefix-qualified initial-rich targets/64,
+under the unchanged content rubric. Report all axes, record yield, failures,
+tokens and prompt-length confound; no hand-authored behavioral targets or
+heading/keyword classifier. One declared null deallocates, not disproves checks.
+Worker stance: explicit checking may improve reusable learning material, but
+could merely add format/padding; falsify that alternative with fulltext reading.
+Assign A1000–3 after prior release;75min/5assignedGPUh including cleanup,
+ownCPU/provenance/publishedpreGPU then launch independently. No fit/scale from
+this64case screen. This is a new manipulation, not relabeling failedoldoutputs.
+
+## Contradictions and deallocated screens
+
+| Evidence | Observation | Failure mechanism / remaining scope |
+|---|---|---|
+|264rich opaque route|56/64execution,58/64goals;1grounded eligible episode/64;6rows|Outcome not grounding;196P108F32Uauthor;Fable scopedVERIFIED|
+|265critique|6/16goalsvs4/16;both1/8pairs;0rows|No pair benefit;unequal spend;not feedback disproven|
+|267Taxi|0/16richvs0/16terse;192calls;0rows|Native execution failure;not TextWorld equivalent;VERIFIED22:22|
+|268route adversary|switch6/6vs1/6OFF,0/6original;display6/6vs2/6,2/6|Narrow shortcuts weakened;fourSCRIPTED READs;BOARD exposure;VERIFIED22:33not fullblind|
+|269persistentmath|0/16richvs2/16terse;0records|Records never populated;no learning null;VERIFIED22:33|
+|270originalmath|29/32richvs5/32terse;19rows/16tasks;correction0/3|Answer gain but0/4scale families;ambiguous rich failures;VERIFIED22:33counts not fullsemantic|
+|271persistentcode|0/8richvs2/8terse;75calls;0richrows|One terse lesson false12vs27;VERIFIED22:53local reduction not rehashed|
+|272TextWorld|8/8vs8/8;41calls;0rows;rich28–52tokens|Task ceiling, failedrichness manipulation;VERIFIED22:53native replay16/16|
+|274boundedcode|7/8richvs6/8terse;37calls;0rows|Median60tokens;official8/8oracle notbaseline;VERIFIED22:53not local18F1Usemantic split|
+|originalCODEworker|0nativecalls|Namespace tooling failure, not science null;safe interpreter replacement completed|
+
+Preserve274post-science Engine.close cleanup failure/CPU repair without rerun.
+Never relabel a null or small diagnostic as the campaign; no negative-paper
+policy excuses hiding failures. One clean screen suffices to deallocate, not
+to declare a mechanism false. No further identical screens are queued.
+
+## Active portfolio and operational gaps
+
+- **TERSE-BREADTH / Plato:**2868qualified native TERSE targets/239pairs,
+  120/128eligible TRAINsources,8failedsources+1failedpair preserved;32held
+  include2partial sources.4150collectioncalls. Three matched pairs/two seeds:
+  A1004FULL/5OFF7801dose4,6FULL/7OFF7802dose4;node3 6FULL/7OFF7801dose16.
+  5760updates/A100cell,23040/A40cell; dose contrast also changes hardware.
+  At23:13:59FIVE fits actually running; A1004FULL waits on its own frozen
+  baseline164953, NOT on Main. A100 initial scans failed before any fit and
+  were preserved; bounded retry949faf42 keeps source/batch unchanged. No fit
+  outcome or baseline score used for recovery. Baseline never substitutes OFF.
+- **MATH-SCALE / Laplace:**1024fresh L1tasks,256each existing four families;
+  64heldL1(geometry/age-time) never mined;128priorIDs ANDquestionhashes excluded.
+  Native4–7node2 actually ready23:09:36, firstcalls by23:09:51 after published
+  preGPU3ee946d7.<=2048calls, deadlineSept15 01:38:46UTC,37authorCPUtests.
+  Exact rich+NEWrecord; fulltext/outcome/prefix/gold review; no padding. Only
+  >=1000truly qualified distinct targets enables separately published ONE
+  FULL/new-label-loss-off pair on4/5,16presentations+legacy,held64uncoached
+  vsOFF/original/constant0,W0/W8/audit>=15/16. No automatic fit or3seeds.
+  Author reviews are not independent Gauss audit; Main requested<=2review
+  processes,<=1below3GiBavailable,no new reviewer below1.5GiB. Native GPUs
+  are separate hosts. Failures/unresolved never automatically pass.
+- **FULL-RICH / Rawls:**terminal clean screen null above;A1000–3released;
+  worker finishes publication then retires. No further native work allocated.
+- **BASE-CONTRACT / Kierkegaard:**terminal behavioral result/provenance gap
+  above;277publishedcdc97dad;retired. Node2 0–1clear23:11:38,2–3clear23:11:39;
+  no rerun; fresh physical verification still required for reuse.
+- **MATH-SEMANTIC-AUDIT / Gauss:**zeroGPUs,190all raw texts, sortedbyhash;
+  packet4a459a9bea6415ef43c0db936587f50d713e7096cbafca83d7f2074d7a5214c9.
+  Blinded to favored counts/authorlabels, not inevitably visible promptwords.
+  Independent fulltext semantic ANDneutralprefix judgments frozen before join;
+  completed; separate bounded clarification pending, no altered frozen scores.
+- **ORACLE-REPAIR / Sartre:**node3 0–3, published66d134c5, sceptical stance
+  verdict adds nothing beyond rich retry. Freeze<=24legitimate natural wrong
+  numeric terse child outputs from270/276,stablehash; audit ambiguousgold and
+  format-only exclusions before newcalls without editing olddenominators.
+  Same rich retry botharms; GUIDED truthfully rejected, RETRY no verdict;
+  NO answer/hint/reference solution. One repair+conditional ownrecord/branch,
+  <=96newcalls;>=4additional jointqualified repair admissions prospective
+  local signal, else deallocate.60min/4GPUh;ownCPU/provenance/preGPU thenlaunch.
+  No fit, newheldpool or L2claim. Node3 4/5remain reserve.
+
+## Guided-loop integration and families
+
+### Raw81/82 — start the existing child in Level2 NOW
+
+Rohin explicitly selects266FULL/273child for a guided Level2 test; no waiting
+for a richmathfit, another trainingseed, richcorpus threshold or child-promotion
+ceremony. This is experimental use of the named artifact, not a retrospective
+claim that it satisfied every oldgate. Facts:266used61eligibleTRAINworlds and
+terse targets;273was8newheldworlds/16pairs;278does NOT show richreasoning
+installed (7/16success,1/16qualified). Explain that distinction to Rohin.
+
+L2 is preschool/learner-centric: per-sleep fresh-task gain, quality/use of own
+records, meaningful feedback use, repeated-probe cohesion/retention, failures
+and possible acceleration; not merely maximizing environment score. L3 is
+longer-horizon outcome tests. L4 means no special preparatory tuning to the
+deployment benchmark; H2 still requires testing continued own-experience sleep,
+not silently turning that learning off because of a paraphrase of81.
+
+Parent is an actual conversational evaluator, not canned rejection only. Child
+sees complete parent messages during experience/reflection. Parent can initiate
+or respond, discuss the learning system and use full NONSEALED experience,
+public learner telemetry and context; no keys/hostnames or sealedscores enter
+its context. It may decline a speaking opportunity; log all choices/messages.
+Teacher text still removed/masked at training; parent absent at fresh readouts.
+High-level feedback and morecontext do not authorize changing frozenbase or
+revealing sealed evaluation. ORACLE-REPAIR remains a separate narrow test, NOT
+the definition of parenting and NOT a prerequisite to this loop.
+
+**Allocation amended immediately by83:** two independent parenting workers,
+one shared three-sleep batch on the exact existingFULLcheckpoint. SHORT owns
+A1000(GUIDED+SLEEP),2(sharedFROZEN),3(sharedUNPARENTED+SLEEP); LONG owns
+A1001(LONG_GUIDED+SLEEP).12hours/48GPUh total. Shared starting child, cohort,
+source/readout contracts and controls; all four learner lanes on samehardware.
+SHORT owns shared protocol/cohort/control artifacts, LONG its disjoint lane.
+Parents use an existing authorized evaluator runtime, not another leasednode.
+SHORT chooses episode-local/dense steering; LONG chooses cross-episode/sleep
+cohesion/sparse steering, with at leasttwo declared involvement scales. Exact
+message/token caps frozen beforecalls. Both are conversational parents,
+not scripted answers. More mixed variants are adaptive, not obligatory now.
+Start real guided collection after
+ownCPU/provenance/preGPU publication while native training-seam integration
+continues independently. No serial Main/reviewer approval. Main executes no
+cells. Node2 0–3 andnode3 4/5 reserve remain available for a separate justified
+arm; CHECK-CONTRACT never acquires them by default.
+
+Prospective envelope:<=32experienceworlds/cycle and<=16freshheldworlds/readout,
+threecycles plusinitialreadout; exact cohort/call/dose/optimizer protocol frozen
+by worker before newcalls,<=20000all modelcalls and<=6000updates/sleep/arm.
+All oldheld273/266worlds excluded from teaching; distinct named L2route scope
+alreadydesignated. Identical task distribution/budgets across arms; no parent
+at sealed fresh readouts. Fourpresentations of actual admissible newtargets
+plusoldrehearsal is starting dose, freshAdamW eachsleep; actual counts/yields
+may differ naturally and must be disclosed. Never pad or discard zero-yield/
+unchanged-weight cycles to fit a helper's fixed-count assumptions; preserve
+them with no-update readouts. No guaranteed success/acceleration inferred from
+continuity or a task ceiling. Learner-centricmetrics and outcome/retention
+counts are both reported; negative or ceiling-limited results remain visible.
+
+SHORT owns orch_l2_guided* and shared orch_l2_shared* protocol/driver/guardian/
+tests; LONG owns orch_l2_long* only. OldBuilder retains orch_guided_native*
+loading seam, now deliveredce9a906e/f2e76c43 with56CPUtests (18new), not a
+nativeGPUclaim. Existing exact-byte projection is enough to
+start; child-reasoned compiler is a later nonblockingvariant. No newframework.
+Parent backend and full prompt/context/mask plan must be declared in worker
+protocol; powerful evaluator uses only alreadyauthorized runtime/connections,
+no credential-in-files or backend substitution around deniedapprovals.
+83explicit: use RICH actor contract from cycle1, not a terse-only loop.
+Rich prompt is context-distilled away at training; actual own successful,
+rubric-passing responses only. Existingchild's deficient richness is a measured
+starting point to improve with parenting, not a reason to defer this experiment.
+
+CPU bridgee5a4f919 complete22tests; Chandrasekhar retired. Only synthetic
+continuity demonstrated. Old Builder assigned orch_guided_native prefixes
+through notebookbe4d0e96; Main relayed literal assignment to stopped astra
+CLI at23:14UTC (not shell commands or new human authorization). Read-only pane
+showed missing-ownership block; task ownership now explicitly supplied.
+
+Native seam must actually load/measure previous child for BOTH collection and
+training, and new child for fresh parent-free readout. StageBinding.adapter
+fields/path and verify_loaded are the frozen public interface; expected hashes
+are not observed tensors. No GPU/task generation in CPU assignment; no new
+framework. Current scaffold fixes per-arm rowcount and rejects unchanged sleep
+hashes: those are implementation restrictions, not evidence that valid natural
+yield/no-change cycles may be discarded. Address explicitly in a prospective
+native loop protocol before use, never pad data to satisfy scaffolding.
+
+Registry orch_family_registry_20260914.md: L2build scopes
+ROUTE_GUIDED_CYCLES_L2_V1,structured-text-ledger-v1,PM_CONGRUENCE_JOIN_V1;
+L3qualification reservations dependency-build-graph-v1,PM_LINEAR_RECURRENCE_V1.
+Names/designations do not assert generated content, certified hardness or runs.
+Keep strongest difficult high-quality families for L3; grow genuine reusable
+structure diversity toward dozens, not renamed seeds. No family approval hold.
+
+## Native L2 milestone — September14,23:45:38UTC
+
+SHORT reports actual sourcePID170357 on A100physical2, mounted childe226cea2
+and basea2367093 both verified;48calls reserved and5world receipts complete at
+that snapshot. This is real source generation, not yet guided learning or a
+successful sleep. Own59CPUtests include sanitized-neutral semantic gate.
+Tool-free parent service ready with empty tools/MCP and no skills/retries;
+only sanitized nonsealed requests supplied, never global SOURCE/held paths.
+
+Shared cap8648 prospectively supersedes8048:448source+4×1600learner+3×600parent.
+FROZEN is genuinely SHORT-guided, response-aware with its own parent bucket.
+LONG shares that frozen fresh readout, but it is not a matched sparse-guidance
+training-telemetry control; guidance amount and horizon remain confounded.
+Archivecbf75f94, module633d699b, protocol16fa840e; exact receipts in workers.
+No new cohort/dose. Existing4presentations/new target+legacy, atmost216updates
+per sleep; no cumulative prior-new replay, a disclosed retention limitation.
+Zero admitted rows means unchanged child/readout, not invented targets or
+discarded cycles. V2 may consume exact first8 completed TRAIN source receipts
+while one immutable source stream finishes; initial parent-free readout remains
+before first sleep. No source regeneration and no held information to parent.
+
+LONG delivered disjoint build_parent constructor, observe_episode after every
+episode and distill_cycle hook; Main relayed23:49 for shared-driver integration.
+Native LONG launch awaits actual caller compatibility, not Main ratification.
+OldBuilder seam ce9a906e/f2e76c43 delivered and locally published,56CPUtests;
+do not treat an old missing-ownership prompt as a current blocker.
+
+## Latest operational evidence and nonblocking readout question
+
+SHORT23:49 reports actual guided episodes on A1000 and UNPARENTED rich
+collection on3 alongside source2. LONG hook now integrated in RuntimeV3;
+LONG worker alone launches physical1. No retained-learning result yet.
+Initial evaluator ledger counted CLI requests but receipts expose auxiliary
+Haiku plus main Sonnet. Worker preserves this defect and explicitly POSTHOC
+backfill; subsequent provider dispatch reserves both within unchanged600/bucket
+and8648total. Do not describe the initial calls as fully pre-reserved. No rerun,
+target repair or hidden additional budget. Use one serial evaluator broker.
+
+TERSE-BREADTH fresh23:51:21 receipts confirm SIX actual fits; A1004 FULL168001
+started23:22:24, update1858/5760 at snapshot, finite loss. Original baseline
+completed1699calls once. Other lanes2538/2516/2529/1461/1478updates; no failure
+or survival/readout claim. Two seeds, not three; hardware confounds dose contrast.
+
+Next small bottleneck is interpreting learner-centric change without mistaking
+different held-world difficulty or within-context coaching for retained gain.
+Assign one zeroGPU L2-BLIND-READOUT critic, narrow prospective analysis only,
+blind to parent-arm outcomes and favored protocol. It may identify what the
+already-declared shared-twin readouts/receipts can or cannot establish, not
+change acceptance thresholds, add calls, run Fable's checks or block launches.
+This is cheaper than another near-identical GPU arm before cycle1 evidence.
+Existing mining/fits/L2 launches continue; reserves remain available for a
+discriminating replication/variant once that evidence exists.
+
+## September14,23:59 synthesis before next allocation
+
+MATH-SCALE23:55:42 partial author snapshot:1092calls,566/1024initial attempts,
+526NEW attempts;386fulltexts/200questions reviewed.228distinct admitted targets
+=83rich+145NEW; not228/1024completed tasks, not a complete-corpus yield estimate.
+Gold184VALID/13AMBIGUOUS/3INVALID; all fixed denominators remain. No fit,
+threshold1000 and full review coverage not met. Review order/family coverage
+can bias extrapolation; keep bounded1024collection rather than expand it.
+Four-case author critique agrees that separate verification was not required:
+three admission disputes defensibly pass expectation; overtime rejected for
+ownership by BOTH original reviewers. Original labels unchanged; neither3nor28
+canonized. Positive batch021 malformed quotation now has explicit fulltext
+author reassessment, not silent repair; original failed receipt preserved.
+
+Blind Erdos memo complete with no outcome/state/peer-journal access or calls.
+Same-stage SHORT versus SHORT-guided FROZEN is strongest; stage/cohort changes
+confound naive slope. LONG versus SHORT changes both policy and involvement;
+UNPARENTED versus FROZEN changes both parenting and sleep, no full interaction.
+Admitted row count/changed hash/verbosity do not prove retained cohesion.
+Current learner receives trajectory consolidation, not a separately isolated
+child-reflection/learned-compiler intervention; parent's summary is not that.
+Use raw uncoached READ→evidence→goal-dependent action and fixed failed cases.
+Main inspected safe_payload's neutral-only semantic projection in source;
+SHORT asked for rendered request receipt, not a new test/launch hold.
+
+**Next discrimination, prospectively allocated now:** L2-ADJACENT, Erdos worker,
+node2 0–1 only, at most512 learner calls /60native minutes /2assignedGPUh.
+Select the FIRST SHORT sleep within the current three cycles with genuinely
+nonzero actual updates, without seeing/selecting its held score. Compare its
+immediate previous saved adapter versus output saved adapter, both fresh native
+processes on that SAME already-designated held[cycle] cohort and identical
+stored EVENTs, neutral prompts and decoding. No source generation, training,
+parent, new tasks/families or extra cycles. Count all fixed8worlds/16episodes
+per checkpoint and failed source cases; existing retention/audits and reference
+remain separate. Untouched confirmation is not claimed: reused held diagnostic,
+not independent training replication. If no actual update in three cycles,
+deallocate without calls. Identical output weights are valid evidence, not a
+rejection criterion. Single bounded batch after own CPU/provenance publication;
+no Main or reader wait. Result promotion still needs Fable's scoped verification.
+
+This addresses an actual inference limitation, not a rescue or change to the
+running parent arms' acceptance rules. A same-cohort difference would support
+adapter-mediated change, not isolate reflection or establish acceleration.
+No difference with headroom would reduce value of more identical sleeps;
+ceiling remains uninformative. Other reserves await new discriminating evidence.
+
+## September15,00:10 current cycle — native evidence and runtime repairs
+
+LONG actual child182989/guardian182923 on A1001 mounted e226/basea236; first
+actual parent message delivered.87own CPUtests/390 source hashes before launch.
+At00:00:56,9child calls/2complete episodes/1success: first response512truncated,
+second successful episode's six turns89–105tokens, below150. These are partial
+author observations, not a protocol comparison or retained-learning gain.
+UNPARENTED cycle1 completed16episodes,5successes,1admitted raw turn; intended
+26updates not initially completed. FROZEN neutral initial readout11/16goals,
+W0/W8/audit16/16each: headroom exists; baseline, not parenting/sleep benefit.
+All source448calls complete,224accepted initial-child EVENTs; no regeneration.
+
+Operational failures remain separate from scientific nulls:
+- UNPARENTED sleep1 stopped before gradients on tuple-versus-list mask equality.
+  Actual222 reencoded masks and archived masks have equal canonical SHA6776bcf6.
+  SHORT owns nonmaterial canonical-comparison repair plus one-label-corruption
+  regression; no label/target/source change or prior-stage rerun.
+- LONG stopped/released1 after broker rejected fenced JSON at semantic0001
+  and coaching0002; second also uses distillation_for_rohin. LONG owns new
+  lossless envelope helper/tests, SHORT its small broker integration and exact
+  phase resume. Preserve raw errors/outputs, completed4episodes, actual quotas,
+  original deadline and in-progress position. No provider regeneration, target
+  rewrite, semantic rescore or duplicate charge. Invalid/ambiguous content still
+  fails; only transport envelope/field alias normalization is in repair scope.
+Thus 'native live' is a historical milestone, not a claim every lane is
+currently running. No SHORT nonzero sleep yet; ADJACENT remains CPU preparation.
+
+PI spot-check: LONG's first coach advises choosing EVENTs by plausible label
+connection despite opaque identifiers; child then simulates multiple unseen
+EVENT observations in one response. One descriptive counterexample, not causal
+attribution. Main's missing-public-rules conjecture was falsified by actual
+0000_LONG_C1 request/rendered prompt: neutral SYSTEM explicitly states opaque
+IDs, actual IO/no simulation and budgets. No context repair authorized on that
+false premise. Full150–400 GUIDANCE is absent from that observation; a separate
+context-quality question, not permission for an unlogged protocol change.
+Actual unparented semantic prompt d13c883f demonstrates rich-instruction/full
+capture stripping; it does not demonstrate a spoken SHORT verdict case.
+
+Fable00:03 says replacementnode1 went RESERVED→DELETING23:53; quota prevents
+return tonight. Fleet remains24, no node1 allocation or Main lease action.
+Reader23:55 ran successfully but no new scoped276–279verification entry has
+been received; do not upgrade statuses from cron exit0 alone.
+
+## Priority frontier — decisions for next compute
+
+1. **Belief change:** independent math answer gain is more credible; qualified
+   own-record yield and training usability remain the smallest L1bottleneck.
+2. **Most architecture-changing result:** retained guided multi-sleep gain versus
+   frozen and unparented twins; none exists. Initial32/32route ceiling is not
+   a slope design. State continuity alone is not learning.
+3. **Replicate, not optimize:** existing terse transfer needs independent seeds;
+   breadth batch supplies two, not three. Avoid extra same-child rereads.
+4. **Adversarial explanation:** prompt/voice/removed-feedback artifacts could
+   explain record-yield gain; blind fulltext audit addresses them before fit.
+5. **New evidence:** simple truthful rejection alone did not add qualified
+   repair yield in279. Conversational parent coaching over learner history is
+   distinct and now primary; do not repeat the boolean-feedback screen.
+6. **Redundant/deallocated:** unchanged small code/text/Taxi/original-record
+   screens. Reallocate only on distinct discriminating predictions, not quota.
+
+## Fleet and process boundary
+
+Main orchestrates, never runs GPUcells or Fablechecks. Node2/node3/A10024GPUs
+released by old builder21:52; fresh physical UUID/PID/CVD checks mandatory.
+Main read-only snapshot23:55:07–09:13/24model-resident,12nonzero utilization;
+node2 4–7at87–91%,node3 6/7at100%,A1004–7at99–100%,source2at14%,
+unparented3at39%,guided0resident/0% at that instant,LONG1empty. Not saturation
+or proof of ownership from utilization. RAM23:51available3.2GiB,swap3.6/3.8GiB;
+/data13GBfree/root2.1GB. Archives on/data, no localmodels/unknownkills.
+
+Node1 oldlease ended23:14; replacementDELETING23:53 perFable00:03, quota-limited.
+Unavailable, not merely awaiting an imminent onboarding receipt. Main never
+purchases, extends or onboards. Historical roots/owners remain protected.
+Keys environment-only, hostnames only ignoredgpu/hosts.env. No oldcheckout
+edits, blanket staging, stash/rebase/force or killbyname. Shared append-only
+merges preserve both complete additions. Runtime approvals are not bypassed.
+Six agent slots; retired workers released before replacements. Hierarchical
+communication; blind reviewers do not receive favored interpretations.
+
+Every meaningful result: STATE first, BOARD second, next allocation third;
+exact-path commit/push after logged step. Live allocation is not utilization.
+The mission remains incomplete; no active autonomous goal loop was confirmed
+by the earlier get_goal(null). Do not claim unattended continuation without it.

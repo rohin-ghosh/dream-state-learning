@@ -66,3 +66,28 @@ A1004FULL queued behind unique existing baseline164953 (959calls), not
 silently substituted. Scientific source/archive and5aac9c13common batch
 unchanged on newA100attempt2. All six remain pre-admitted; five executing.
 Own CPU watcher2161684 runs terminal archive/author-handoff, no promotion.
+
+2026-09-14T23:21:54Z [Builder] Main status response, measured observations:
+A10023:21:30 lane0FULL7801dose4 NO fit REQUEST/PID; lane1OFF7801dose4
+166693/update550; lane2FULL7802dose4 166707/update545; lane3OFF7802dose4
+166700/update548. Node3 23:21:38 lane4FULL7801dose16 104214/update520;
+lane5OFF7801dose16 104207/update526. Five native fits, not six; no FAILED
+receipts among them. A1004 unique baseline164953 has1699calls at23:21:48
+and no terminal receipt; queue166575 waits, then fresh admission starts FULL.
+Baseline never replaces a control. Initial A100 pre-native scan failures and
+recovery stagger preserved; no scientific batch/source/seed changes. Four
+retry lifecycle tests PASS again; watcher2161684 alive. Continue bounded
+allocated compute only; no terminal evidence or SEQ request yet.
+
+2026-09-14T23:51:21Z [Builder] Sixth actual FULL start verified by native
+A100attempt2/train0/REQUEST.json: PID168001, started23:22:24.144883UTC,
+FULL7801dose4 physical4. Fresh finite LOSSES update1858/5760,
+fit_elapsed1685.623s, loss4.316621198086068e-05, active/reference76/76;
+process alive and no FAILED receipt. Original baseline COMPLETE1699calls,
+1042.7107s; no rerun. Existing watcher23:51:08 records six RUNNING fits,
+other lanes1–5 updates2538/2516/2529/1461/1478; no terminal chains yet.
+Watcher2161684 alive. Admission recovery is now six actual starts, not merely
+six prospective admissions. Frozen batch/source/controls preserved; retain
+ownership through all readouts. Progress only, no retirement, scientific
+survival, extra diagnostic, scope variation or SEQ. Next meaningful reporting
+phase operational failure or terminal after own reducer.

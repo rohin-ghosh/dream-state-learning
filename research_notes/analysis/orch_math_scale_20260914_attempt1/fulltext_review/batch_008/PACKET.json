@@ -1,0 +1,338 @@
+[
+  {
+    "gold": "24",
+    "question": "James collects all the fruits from his 2 trees.  Each tree has 20 plants.  Each plant has 1 seed and he plants 60% of those.  How many trees did he plant?",
+    "question_sha256": "656efa5526605131797250a8d56a808049d4a95e90e9cfb59909577608d45fbf",
+    "responses": [
+      {
+        "key": "gsm8k-train-171:rich",
+        "raw_call_sha256": "2978de0ec4db1ccebb0d9c0caa1421202917a9215bf161b2c36d905e8dab561a",
+        "student_prefix": [
+          {
+            "content": "James collects all the fruits from his 2 trees.  Each tree has 20 plants.  Each plant has 1 seed and he plants 60% of those.  How many trees did he plant?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "f58cc8c51df80e483a57bcb83854264cef1435ad1938ca4fc6d72fa1550b88e9",
+        "target": "Given:\n- 2 trees\n- Each tree has 20 plants\n- Each plant has 1 seed\n- He plants 60% of the seeds\n\nFirst, calculate the total number of seeds:\n2 trees * 20 plants/tree * 1 seed/plant = 40 seeds\n\nNext, calculate 60% of the seeds:\n40 seeds * 60% = 40 * 0.60 = 24 seeds\n\nThese 24 seeds represent the number of trees he planted.\n\nFINAL: 24",
+        "target_sha256": "75311fd1ae5767b931e47127faec2c70816065c3bdc68307f5a7cfe2ae2568fe"
+      },
+      {
+        "key": "gsm8k-train-171:new_record",
+        "raw_call_sha256": "a0155ff0f425be26027c7af977c02ebc54a16821a42ff36c4fd2c1333eb16eef",
+        "student_prefix": [
+          {
+            "content": "James collects all the fruits from his 2 trees.  Each tree has 20 plants.  Each plant has 1 seed and he plants 60% of those.  How many trees did he plant?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- 2 trees\n- Each tree has 20 plants\n- Each plant has 1 seed\n- He plants 60% of the seeds\n\nFirst, calculate the total number of seeds:\n2 trees * 20 plants/tree * 1 seed/plant = 40 seeds\n\nNext, calculate 60% of the seeds:\n40 seeds * 60% = 40 * 0.60 = 24 seeds\n\nThese 24 seeds represent the number of trees he planted.\n\nFINAL: 24",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "46decf9935b5b57cdc10c85e7397c893c5f222c6f2dac773a102add6c4743c0d",
+        "target": "Given the problem, I identified the following quantities and the unknown:\n- 2 trees\n- Each tree has 20 plants\n- Each plant has 1 seed\n- He plants 60% of those seeds\n\nThe unknown is the number of trees he planted.\n\nTo solve this, I first calculated the total number of seeds:\n\\[ 2 \\text{ trees} \\times 20 \\text{ plants/tree} \\times 1 \\text{ seed/plant} = 40 \\text{ seeds} \\]\n\nNext, I calculated 60% of the seeds to determine how many trees he planted:\n\\[ 40 \\text{ seeds} \\times 0.60 = 24 \\text{ seeds} \\]\n\nThis means he planted 24 trees. To verify this, I checked the operations:\n- The total number of seeds is correctly calculated as \\(2 \\times 20 \\times 1 = 40\\).\n- The number of trees planted is correctly calculated as \\(40 \\times 0.60 = 24\\).\n\nThe operations are straightforward and directly connect the given quantities to the unknown. The result is consistent with the problem statement.\n\nFINAL: 24",
+        "target_sha256": "8333ab1a0264ac8548c8a70a610c99ca2063c8b78819c6125921cecbe3758851"
+      }
+    ],
+    "task_id": "gsm8k-train-171"
+  },
+  {
+    "gold": "84",
+    "question": "Alan likes to support music creators, so instead of downloading songs from the internet, he visits a record store once in a while. He decided now to buy 2 CDs by \"The Dark\", 1 CD by the creator \"AVN\", and 5 CDs that are mixes of songs from the 90s. The price of the \"AVN\" CD is $12 and it is half the price of one CD by \"The Dark\". The 5 CDs of 90s music cost is 40% of all the cost of all other CDs Alan is going to buy. How much will Alan have to pay for all the products?",
+    "question_sha256": "f347bdf8a2881955301849cb288691f9fab28335ae24d5c98c93ab1df232934b",
+    "responses": [
+      {
+        "key": "gsm8k-train-6066:rich",
+        "raw_call_sha256": "a5d843be36c804e4c62128a26b935b0f1ba20e04c5174d05e889a8359f6425cc",
+        "student_prefix": [
+          {
+            "content": "Alan likes to support music creators, so instead of downloading songs from the internet, he visits a record store once in a while. He decided now to buy 2 CDs by \"The Dark\", 1 CD by the creator \"AVN\", and 5 CDs that are mixes of songs from the 90s. The price of the \"AVN\" CD is $12 and it is half the price of one CD by \"The Dark\". The 5 CDs of 90s music cost is 40% of all the cost of all other CDs Alan is going to buy. How much will Alan have to pay for all the products?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "d6aaac25ee9aa9e52115807a35b9f5444a6b80ca32a967e3ee65704ac4d696ea",
+        "target": "First, let's identify the given quantities and the unknown:\n- Price of \"AVN\" CD: $12\n- \"AVN\" CD is half the price of one \"The Dark\" CD\n- 5 CDs of 90s music cost is 40% of the total cost of all other CDs\n- Alan buys 2 \"The Dark\" CDs, 1 \"AVN\" CD, and 5 CDs of 90s music\n- We need to find the total cost\n\nFrom the given, the price of one \"The Dark\" CD is twice the price of the \"AVN\" CD:\n- Price of \"The Dark\" CD = 2 * $12 = $24\n\nNow, calculate the cost of 2 \"The Dark\" CDs:\n- 2 * $24 = $48\n\nThe cost of 1 \"AVN\" CD is:\n- $12\n\nTotal cost of \"The Dark\" and \"AVN\" CDs:\n- $48 + $12 = $60\n\nLet the total cost of all other CDs (2 \"The Dark\" and 1 \"AVN\") be \\( x \\). The 5 CDs of 90s music cost 40% of \\( x \\):\n- 5 CDs of 90s music = 0.4x\n\nThe total cost of all CDs is:\n- \\( x + 0.4x = 1.4x \\)\n\nWe know the total cost of \"The Dark\" and \"AVN\" CDs is $60, so:\n- \\( x = 60 \\)\n\nTherefore, the cost of the 5 CDs of 90s music is:\n- 0.4 * 60 = $24\n\nNow, the total cost of all CDs:\n- $60 (for \"The Dark\" and \"AVN\") + $24 (for 90s music) = $84\n\nFINAL: 84",
+        "target_sha256": "4c7677a3fbc096432cff72093ca71daa1b4f412f65ae69f86922e89c9d38dda5"
+      },
+      {
+        "key": "gsm8k-train-6066:new_record",
+        "raw_call_sha256": "0343e2a3d641a7550d3a300371796187b350806b5074ae5998c23c61ca660260",
+        "student_prefix": [
+          {
+            "content": "Alan likes to support music creators, so instead of downloading songs from the internet, he visits a record store once in a while. He decided now to buy 2 CDs by \"The Dark\", 1 CD by the creator \"AVN\", and 5 CDs that are mixes of songs from the 90s. The price of the \"AVN\" CD is $12 and it is half the price of one CD by \"The Dark\". The 5 CDs of 90s music cost is 40% of all the cost of all other CDs Alan is going to buy. How much will Alan have to pay for all the products?",
+            "role": "user"
+          },
+          {
+            "content": "First, let's identify the given quantities and the unknown:\n- Price of \"AVN\" CD: $12\n- \"AVN\" CD is half the price of one \"The Dark\" CD\n- 5 CDs of 90s music cost is 40% of the total cost of all other CDs\n- Alan buys 2 \"The Dark\" CDs, 1 \"AVN\" CD, and 5 CDs of 90s music\n- We need to find the total cost\n\nFrom the given, the price of one \"The Dark\" CD is twice the price of the \"AVN\" CD:\n- Price of \"The Dark\" CD = 2 * $12 = $24\n\nNow, calculate the cost of 2 \"The Dark\" CDs:\n- 2 * $24 = $48\n\nThe cost of 1 \"AVN\" CD is:\n- $12\n\nTotal cost of \"The Dark\" and \"AVN\" CDs:\n- $48 + $12 = $60\n\nLet the total cost of all other CDs (2 \"The Dark\" and 1 \"AVN\") be \\( x \\). The 5 CDs of 90s music cost 40% of \\( x \\):\n- 5 CDs of 90s music = 0.4x\n\nThe total cost of all CDs is:\n- \\( x + 0.4x = 1.4x \\)\n\nWe know the total cost of \"The Dark\" and \"AVN\" CDs is $60, so:\n- \\( x = 60 \\)\n\nTherefore, the cost of the 5 CDs of 90s music is:\n- 0.4 * 60 = $24\n\nNow, the total cost of all CDs:\n- $60 (for \"The Dark\" and \"AVN\") + $24 (for 90s music) = $84\n\nFINAL: 84",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "86ace98d4cc6b0bb3ba9262e27a6152b4393446ea96d703c0612f1f0a6794011",
+        "target": "Given the problem, I identified the following quantities and the unknown:\n- Price of \"AVN\" CD: $12\n- \"AVN\" CD is half the price of one \"The Dark\" CD\n- Alan buys 2 CDs by \"The Dark\", 1 CD by \"AVN\", and 5 CDs of 90s music\n- The 5 CDs of 90s music cost 40% of the total cost of all other CDs\n- The unknown is the total cost Alan will have to pay\n\nFrom the given, I deduced that the price of one \"The Dark\" CD is $24 (since it is twice the price of the \"AVN\" CD). Then, I calculated the cost of 2 \"The Dark\" CDs, which is $48, and the cost of 1 \"AVN\" CD, which is $12. Adding these, the total cost of \"The Dark\" and \"AVN\" CDs is $60.\n\nNext, I recognized that the 5 CDs of 90s music cost 40% of the total cost of the \"The Dark\" and \"AVN\" CDs. Therefore, the cost of the 5 CDs of 90s music is 0.4 * $60 = $24. Adding this to the $60, the total cost is $84.\n\nTo verify, I checked if the 5 CDs of 90s music indeed cost 40% of the total cost of the \"The Dark\" and \"AVN\" CDs:\n- Total cost of \"The Dark\" and \"AVN\" CDs: $60\n- 40% of $60: 0.4 * $60 = $24\n- This matches the cost of the 5 CDs of 90s music\n\nSince all calculations align with the problem statement, I can confidently state the total cost.\n\nFINAL: 84",
+        "target_sha256": "48edc3dfd87c9d6aae83fd3da73bb6492148c6aa624f85aed08fd223e0941fed"
+      }
+    ],
+    "task_id": "gsm8k-train-6066"
+  },
+  {
+    "gold": "102",
+    "question": "Mary is paying her monthly garbage bill for a month with exactly four weeks. The garbage company charges Mary $10 per trash bin and $5 per recycling bin every week, and Mary has 2 trash bins and 1 recycling bin. They're giving her an 18% discount on the whole bill before fines for being elderly, but also charging her a $20 fine for putting inappropriate items in a recycling bin. How much is Mary's garbage bill?",
+    "question_sha256": "ca016e8ee283ed8b0f3d2bde59e12d82352955ad164a84fc7f8e340d79f67149",
+    "responses": [
+      {
+        "key": "gsm8k-train-4715:rich",
+        "raw_call_sha256": "491a97f84f3ab7ee7978af837ce981b5459555e281719fa11a35c4b14855bf64",
+        "student_prefix": [
+          {
+            "content": "Mary is paying her monthly garbage bill for a month with exactly four weeks. The garbage company charges Mary $10 per trash bin and $5 per recycling bin every week, and Mary has 2 trash bins and 1 recycling bin. They're giving her an 18% discount on the whole bill before fines for being elderly, but also charging her a $20 fine for putting inappropriate items in a recycling bin. How much is Mary's garbage bill?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "4cf6edac516add30b350aae8458cfa26fb19f141fbd890615a69dde5312384e3",
+        "target": "First, I identify the given quantities:\n- $10 per trash bin per week\n- $5 per recycling bin per week\n- 2 trash bins\n- 1 recycling bin\n- 4 weeks in the month\n- 18% discount on the whole bill\n- $20 fine for inappropriate items\n\nThe unknown is the total garbage bill.\n\nNext, I calculate the weekly cost:\n- Cost for trash bins: 2 bins * $10/bin = $20\n- Cost for recycling bin: 1 bin * $5/bin = $5\n- Total weekly cost: $20 + $5 = $25\n\nFor the month:\n- Total monthly cost before discount and fine: $25/week * 4 weeks = $100\n\nApplying the 18% discount:\n- Discount amount: $100 * 18% = $18\n- Cost after discount: $100 - $18 = $82\n\nAdding the $20 fine:\n- Final bill: $82 + $20 = $102\n\nFINAL: 102",
+        "target_sha256": "6e172c44a15c538c486402d0baa9788c3474a1b202978d50c2f3c57cd823a78d"
+      },
+      {
+        "key": "gsm8k-train-4715:new_record",
+        "raw_call_sha256": "08f275685b627215b0e6aed2deb6499d3031d75b7402d120c71e1bc05cb7ada8",
+        "student_prefix": [
+          {
+            "content": "Mary is paying her monthly garbage bill for a month with exactly four weeks. The garbage company charges Mary $10 per trash bin and $5 per recycling bin every week, and Mary has 2 trash bins and 1 recycling bin. They're giving her an 18% discount on the whole bill before fines for being elderly, but also charging her a $20 fine for putting inappropriate items in a recycling bin. How much is Mary's garbage bill?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- $10 per trash bin per week\n- $5 per recycling bin per week\n- 2 trash bins\n- 1 recycling bin\n- 4 weeks in the month\n- 18% discount on the whole bill\n- $20 fine for inappropriate items\n\nThe unknown is the total garbage bill.\n\nNext, I calculate the weekly cost:\n- Cost for trash bins: 2 bins * $10/bin = $20\n- Cost for recycling bin: 1 bin * $5/bin = $5\n- Total weekly cost: $20 + $5 = $25\n\nFor the month:\n- Total monthly cost before discount and fine: $25/week * 4 weeks = $100\n\nApplying the 18% discount:\n- Discount amount: $100 * 18% = $18\n- Cost after discount: $100 - $18 = $82\n\nAdding the $20 fine:\n- Final bill: $82 + $20 = $102\n\nFINAL: 102",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "c9fd777698dbedd52ef152fb82dda553bcd43d4db3a2e82be85639a0a4d22c32",
+        "target": "Given the problem, I identified the key quantities and the operations needed to solve it. The given quantities are:\n- $10 per trash bin per week\n- $5 per recycling bin per week\n- 2 trash bins\n- 1 recycling bin\n- 4 weeks in the month\n- 18% discount on the whole bill\n- $20 fine for inappropriate items\n\nThe unknown is the total garbage bill.\n\nFirst, I calculated the weekly cost for the trash and recycling bins:\n- Weekly cost for trash bins: 2 bins * $10/bin = $20\n- Weekly cost for recycling bin: 1 bin * $5/bin = $5\n- Total weekly cost: $20 + $5 = $25\n\nNext, I calculated the total monthly cost before any discounts or fines:\n- Total monthly cost: $25/week * 4 weeks = $100\n\nThen, I applied the 18% discount to the total monthly cost:\n- Discount amount: $100 * 18% = $18\n- Cost after discount: $100 - $18 = $82\n\nFinally, I added the $20 fine for inappropriate items:\n- Final bill: $82 + $20 = $102\n\nTo check the result, I verified each step:\n- Weekly cost calculation: $20 (trash) + $5 (recycling) = $25\n- Monthly cost before discount: $25 * 4 = $100\n- Discount application: $100 - $18 = $82\n- Final bill: $82 + $20 = $102\n\nThe operations used are straightforward arithmetic and can be reused in similar problems involving weekly charges, discounts, and additional fines. The final answer is confirmed by the problem's constraints and calculations.\n\nFINAL: 102",
+        "target_sha256": "774e7f183de59c1ef8b8e8af96be8acc2a902d72fa99c7a19334c5c97effc88b"
+      }
+    ],
+    "task_id": "gsm8k-train-4715"
+  },
+  {
+    "gold": "45",
+    "question": "Jenny signs up for dinner theater with 5 of her friends. Each person pays $50 for the ticket and $10 for their entr\u00e9e, and half the people also buy unlimited drink tickets for $30/person. Then the dinner theater is canceled due to COVID, and each person gets a 90% refund. How much money did the group of six friends lose?",
+    "question_sha256": "2fd74f61471da7f596641422ba375e5317d95b7f00aa5aa4ef99025dd722b3be",
+    "responses": [
+      {
+        "key": "gsm8k-train-2190:rich",
+        "raw_call_sha256": "12d5936ca433369b66b092e4207a107a441f87f9c33afdac7b158b4481c50589",
+        "student_prefix": [
+          {
+            "content": "Jenny signs up for dinner theater with 5 of her friends. Each person pays $50 for the ticket and $10 for their entr\u00e9e, and half the people also buy unlimited drink tickets for $30/person. Then the dinner theater is canceled due to COVID, and each person gets a 90% refund. How much money did the group of six friends lose?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "a8ea2587d1c92594cc258b11178ed143c0bc8e272cfc13dc404632d4e9ec8b3a",
+        "target": "First, I identify the quantities:\n- Number of people: 6\n- Ticket cost per person: $50\n- Entr\u00e9e cost per person: $10\n- Drink ticket cost per person (half the group): $30\n- Refund rate: 90%\n\nNext, I calculate the total cost before the refund:\n- Total ticket cost: 6 * $50 = $300\n- Total entr\u00e9e cost: 6 * $10 = $60\n- Total drink ticket cost (3 people): 3 * $30 = $90\n- Total cost: $300 + $60 + $90 = $450\n\nNow, I calculate the refund amount:\n- Refund rate: 90% = 0.90\n- Total refund: $450 * 0.90 = $405\n\nFinally, I find the loss:\n- Total cost - Total refund = $450 - $405 = $45\n\nFINAL: 45",
+        "target_sha256": "ce92f4f298f98563041458837c44bd127796a35fc77da1e8cc5ce6d77dff3da7"
+      },
+      {
+        "key": "gsm8k-train-2190:new_record",
+        "raw_call_sha256": "d22ba8e930bf2f18e1c43db10e0480dbab82937a9ea3fcc9511dfe131762bea4",
+        "student_prefix": [
+          {
+            "content": "Jenny signs up for dinner theater with 5 of her friends. Each person pays $50 for the ticket and $10 for their entr\u00e9e, and half the people also buy unlimited drink tickets for $30/person. Then the dinner theater is canceled due to COVID, and each person gets a 90% refund. How much money did the group of six friends lose?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the quantities:\n- Number of people: 6\n- Ticket cost per person: $50\n- Entr\u00e9e cost per person: $10\n- Drink ticket cost per person (half the group): $30\n- Refund rate: 90%\n\nNext, I calculate the total cost before the refund:\n- Total ticket cost: 6 * $50 = $300\n- Total entr\u00e9e cost: 6 * $10 = $60\n- Total drink ticket cost (3 people): 3 * $30 = $90\n- Total cost: $300 + $60 + $90 = $450\n\nNow, I calculate the refund amount:\n- Refund rate: 90% = 0.90\n- Total refund: $450 * 0.90 = $405\n\nFinally, I find the loss:\n- Total cost - Total refund = $450 - $405 = $45\n\nFINAL: 45",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "a7aec2987c4c32bf3f741cb7628f9180e507d161eef577811d88658ee8b16b78",
+        "target": "Given the problem, I identified the key quantities and the goal:\n- Number of people: 6\n- Ticket cost per person: $50\n- Entr\u00e9e cost per person: $10\n- Drink ticket cost per person (half the group): $30\n- Refund rate: 90%\n\nI first calculated the total cost before the refund:\n1. Total ticket cost: 6 * $50 = $300\n2. Total entr\u00e9e cost: 6 * $10 = $60\n3. Total drink ticket cost (3 people): 3 * $30 = $90\n4. Total cost: $300 + $60 + $90 = $450\n\nNext, I calculated the refund amount:\n- Total refund: $450 * 0.90 = $405\n\nThen, I determined the loss:\n- Total cost - Total refund = $450 - $405 = $45\n\nTo verify, I checked the calculations step-by-step:\n- Corrected the number of people with drink tickets: 6 / 2 = 3\n- Corrected the total drink ticket cost: 3 * $30 = $90\n- Corrected the total cost: $300 + $60 + $90 = $450\n- Corrected the refund: $450 * 0.90 = $405\n- Corrected the loss: $450 - $405 = $45\n\nThe operations used are straightforward arithmetic and percentage calculations, which are reliable and reusable in similar scenarios involving group expenses and refunds.\n\nFINAL: 45",
+        "target_sha256": "49ae2ffeddc5c65924addc46e6b4af44877ba625b01b5bade766cff2fd3af0ed"
+      }
+    ],
+    "task_id": "gsm8k-train-2190"
+  },
+  {
+    "gold": "40",
+    "question": "4 friends went to buy from a clothes shop. Every item was 50% off.  All four friends decided to buy a t-shirt. The original price of the t-shirt was 20 dollars. How much money did they spend in total?",
+    "question_sha256": "9442490708eb891e8cf3e99d81109e1f611b8b7a1a90c4705783cd313dc2dd7d",
+    "responses": [
+      {
+        "key": "gsm8k-train-1005:rich",
+        "raw_call_sha256": "6c693dca37d736077bd6c6bcba237b5d749d500e7535680708fbcf72cb4ac14f",
+        "student_prefix": [
+          {
+            "content": "4 friends went to buy from a clothes shop. Every item was 50% off.  All four friends decided to buy a t-shirt. The original price of the t-shirt was 20 dollars. How much money did they spend in total?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "0f960d544e2963d12f9a16aaa13bfd16e22e62cdb6ad4a558b1326b164419a7c",
+        "target": "Given: \n- 4 friends\n- 50% off on all items\n- Original price of a t-shirt = $20\n- Each friend buys one t-shirt\n\nFirst, calculate the discounted price of one t-shirt:\n- 50% off means the t-shirt is now 50% of the original price\n- 50% of $20 = 0.50 * $20 = $10\n\nNow, calculate the total amount spent by all four friends:\n- Each friend spends $10\n- 4 friends * $10 = $40\n\nSo, the total amount spent by the four friends is $40.\n\nFINAL: 40",
+        "target_sha256": "a2811061dba2bdeafa6581c3c9392512060fc2b85b6febd5e1b32e795544ee3c"
+      },
+      {
+        "key": "gsm8k-train-1005:new_record",
+        "raw_call_sha256": "4e59cb3f31585bccb54aff20656b3923092395dac5cdc295c10a3bf0dbd8af99",
+        "student_prefix": [
+          {
+            "content": "4 friends went to buy from a clothes shop. Every item was 50% off.  All four friends decided to buy a t-shirt. The original price of the t-shirt was 20 dollars. How much money did they spend in total?",
+            "role": "user"
+          },
+          {
+            "content": "Given: \n- 4 friends\n- 50% off on all items\n- Original price of a t-shirt = $20\n- Each friend buys one t-shirt\n\nFirst, calculate the discounted price of one t-shirt:\n- 50% off means the t-shirt is now 50% of the original price\n- 50% of $20 = 0.50 * $20 = $10\n\nNow, calculate the total amount spent by all four friends:\n- Each friend spends $10\n- 4 friends * $10 = $40\n\nSo, the total amount spent by the four friends is $40.\n\nFINAL: 40",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "cf221ecbb4d34bcec509920925e65a9843ab4ddbc157020e858a22be7611803c",
+        "target": "Given the problem, I identified the following quantities and the unknown:\n- Original price of a t-shirt: $20\n- Discount: 50%\n- Number of friends: 4\n- Unknown: Total amount spent by all friends\n\nTo solve this, I first calculated the discounted price of one t-shirt:\n- Discounted price = Original price * (1 - Discount)\n- Discounted price = $20 * (1 - 0.50) = $20 * 0.50 = $10\n\nNext, I calculated the total amount spent by all four friends:\n- Total amount = Discounted price * Number of friends\n- Total amount = $10 * 4 = $40\n\nTo verify the result, I checked the calculation by ensuring that the total amount spent ($40) is indeed the sum of the discounted prices of the t-shirts each friend bought. Since each friend bought one t-shirt at $10, and there are four friends, the total is $40.\n\nThe operations I used are straightforward and reusable for similar problems involving discounts and total cost calculations. I would reuse the operation of calculating the discounted price and then multiplying by the number of items purchased to find the total cost.\n\nFINAL: 40",
+        "target_sha256": "2b9d1963b0402f87227aebcd6da73237992023610b7be38a602e734953fd9add"
+      }
+    ],
+    "task_id": "gsm8k-train-1005"
+  },
+  {
+    "gold": "20",
+    "question": "Van Helsing gets paid by the town to remove all the vampires and werewolves. He gets $5 per vampire and $10 per werewolf. He removes half the vampires and removes 8 werewolves, and earned $105. There were 4 times as many werewolves as vampires. What percentage of the werewolves did he remove?",
+    "question_sha256": "1c0123ea27f99f47a723a1f5d87904a4950436222ebed952f922d0b1d83440aa",
+    "responses": [
+      {
+        "key": "gsm8k-train-3125:rich",
+        "raw_call_sha256": "fb882f47a48f52362d7e0b091a4f76475350d5ca192e76aab5faa95583a5517c",
+        "student_prefix": [
+          {
+            "content": "Van Helsing gets paid by the town to remove all the vampires and werewolves. He gets $5 per vampire and $10 per werewolf. He removes half the vampires and removes 8 werewolves, and earned $105. There were 4 times as many werewolves as vampires. What percentage of the werewolves did he remove?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "c7cbe033b31e8fdd5f72c85ddc26078b7467ad8b349554cff481d9de16031077",
+        "target": "Given:\n- $5 per vampire\n- $10 per werewolf\n- Removed half the vampires\n- Removed 8 werewolves\n- Total earnings: $105\n- 4 times as many werewolves as vampires\n\nLet \\( v \\) be the number of vampires and \\( w \\) be the number of werewolves. We know \\( w = 4v \\).\n\nEarnings equation:\n\\[ 5 \\left(\\frac{v}{2}\\right) + 10 \\cdot 8 = 105 \\]\n\\[ \\frac{5v}{2} + 80 = 105 \\]\n\\[ \\frac{5v}{2} = 25 \\]\n\\[ 5v = 50 \\]\n\\[ v = 10 \\]\n\nSo, \\( w = 4 \\times 10 = 40 \\).\n\nHe removed 8 werewolves out of 40, so the percentage removed is:\n\\[ \\frac{8}{40} \\times 100 = 20\\% \\]\n\nFINAL: 20",
+        "target_sha256": "2d9eaf158585678dd7db6936edf3b263e35ce5387e17b4bc95c3b02f7dbb2630"
+      },
+      {
+        "key": "gsm8k-train-3125:new_record",
+        "raw_call_sha256": "7404bef4872f6bada6ab83a48de448efe845626b4f6663d4ad175682f4a74cfa",
+        "student_prefix": [
+          {
+            "content": "Van Helsing gets paid by the town to remove all the vampires and werewolves. He gets $5 per vampire and $10 per werewolf. He removes half the vampires and removes 8 werewolves, and earned $105. There were 4 times as many werewolves as vampires. What percentage of the werewolves did he remove?",
+            "role": "user"
+          },
+          {
+            "content": "Given:\n- $5 per vampire\n- $10 per werewolf\n- Removed half the vampires\n- Removed 8 werewolves\n- Total earnings: $105\n- 4 times as many werewolves as vampires\n\nLet \\( v \\) be the number of vampires and \\( w \\) be the number of werewolves. We know \\( w = 4v \\).\n\nEarnings equation:\n\\[ 5 \\left(\\frac{v}{2}\\right) + 10 \\cdot 8 = 105 \\]\n\\[ \\frac{5v}{2} + 80 = 105 \\]\n\\[ \\frac{5v}{2} = 25 \\]\n\\[ 5v = 50 \\]\n\\[ v = 10 \\]\n\nSo, \\( w = 4 \\times 10 = 40 \\).\n\nHe removed 8 werewolves out of 40, so the percentage removed is:\n\\[ \\frac{8}{40} \\times 100 = 20\\% \\]\n\nFINAL: 20",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "f5ef04f6c1fb026587dc7c6ca3d57d11066558478bdb79c5ededd997fab31b42",
+        "target": "Given the problem, I identified the following quantities and relationships:\n- Van Helsing earns $5 per vampire and $10 per werewolf.\n- He removed half the vampires and 8 werewolves.\n- His total earnings were $105.\n- There were 4 times as many werewolves as vampires.\n\nFrom these, I defined:\n- \\( v \\) as the number of vampires.\n- \\( w \\) as the number of werewolves, with \\( w = 4v \\).\n\nI then set up the equation based on his earnings:\n\\[ 5 \\left(\\frac{v}{2}\\right) + 10 \\cdot 8 = 105 \\]\n\nSimplifying the equation:\n\\[ \\frac{5v}{2} + 80 = 105 \\]\n\\[ \\frac{5v}{2} = 25 \\]\n\\[ 5v = 50 \\]\n\\[ v = 10 \\]\n\nUsing \\( v = 10 \\), I calculated the number of werewolves:\n\\[ w = 4 \\times 10 = 40 \\]\n\nNext, I verified the number of werewolves removed:\n- He removed 8 werewolves out of 40.\n- The percentage removed is:\n\\[ \\frac{8}{40} \\times 100 = 20\\% \\]\n\nTo check the result, I recalculated his earnings:\n- Earnings from vampires: \\( 5 \\times \\frac{10}{2} = 25 \\)\n- Earnings from werewolves: \\( 10 \\times 8 = 80 \\)\n- Total earnings: \\( 25 + 80 = 105 \\)\n\nThis matches the given total earnings, confirming the solution is correct.\n\nFINAL: 20",
+        "target_sha256": "bc4f2133cfee58cc2cd59963f035f90a7acc4e89b528c7d6c7ab6c3324f1d7fd"
+      }
+    ],
+    "task_id": "gsm8k-train-3125"
+  },
+  {
+    "gold": "23",
+    "question": "Chris buys 2 and a half dozen donuts on his way to work to share with his co-workers.  While driving, he eats 10% of the donuts.  Once inside, he grabs another 4 donuts for his afternoon snack.  How many donuts are left for his co-workers?",
+    "question_sha256": "5672b1662ccddd0678e1858317b1477ded3d35221fad3ca2151b64abd6dd0d94",
+    "responses": [
+      {
+        "key": "gsm8k-train-7032:rich",
+        "raw_call_sha256": "8efd83409d4b3c813adcfa0d651697a6bddc506200e7eea25bdc47803440e9de",
+        "student_prefix": [
+          {
+            "content": "Chris buys 2 and a half dozen donuts on his way to work to share with his co-workers.  While driving, he eats 10% of the donuts.  Once inside, he grabs another 4 donuts for his afternoon snack.  How many donuts are left for his co-workers?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "16c75f6efbe462fc3dc5e78c4960ce4e7604f69832becbf6b51e79894ae6dc15",
+        "target": "First, I identify the given quantities:\n- Chris buys 2 and a half dozen donuts. Since a dozen is 12, 2.5 dozen is 2.5 * 12 = 30 donuts.\n- He eats 10% of the donuts while driving. 10% of 30 is 0.10 * 30 = 3 donuts.\n- After driving, he grabs another 4 donuts for his afternoon snack.\n\nNow, I calculate the total number of donuts consumed:\n- Donuts eaten while driving: 3\n- Donuts taken for afternoon snack: 4\n- Total donuts consumed: 3 + 4 = 7\n\nFinally, I subtract the total donuts consumed from the initial amount:\n- Initial donuts: 30\n- Donuts consumed: 7\n- Donuts left for co-workers: 30 - 7 = 23\n\nFINAL: 23",
+        "target_sha256": "4bd14ced2fef21a542265724eba39c88f340caa5299836234672184d0bfbf549"
+      },
+      {
+        "key": "gsm8k-train-7032:new_record",
+        "raw_call_sha256": "6996e0be09b8c14333218c8cf48038491c71ff5f01735c4accecc01631b0b346",
+        "student_prefix": [
+          {
+            "content": "Chris buys 2 and a half dozen donuts on his way to work to share with his co-workers.  While driving, he eats 10% of the donuts.  Once inside, he grabs another 4 donuts for his afternoon snack.  How many donuts are left for his co-workers?",
+            "role": "user"
+          },
+          {
+            "content": "First, I identify the given quantities:\n- Chris buys 2 and a half dozen donuts. Since a dozen is 12, 2.5 dozen is 2.5 * 12 = 30 donuts.\n- He eats 10% of the donuts while driving. 10% of 30 is 0.10 * 30 = 3 donuts.\n- After driving, he grabs another 4 donuts for his afternoon snack.\n\nNow, I calculate the total number of donuts consumed:\n- Donuts eaten while driving: 3\n- Donuts taken for afternoon snack: 4\n- Total donuts consumed: 3 + 4 = 7\n\nFinally, I subtract the total donuts consumed from the initial amount:\n- Initial donuts: 30\n- Donuts consumed: 7\n- Donuts left for co-workers: 30 - 7 = 23\n\nFINAL: 23",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "543f52abd49bb051538b9bb139af27d81a2c68017ff9200cef14983aaf3f0652",
+        "target": "Given the problem, I first identified the key quantities and the unknown:\n- Chris buys 2.5 dozen donuts, which is 2.5 * 12 = 30 donuts.\n- He eats 10% of the donuts while driving, which is 0.10 * 30 = 3 donuts.\n- He then grabs another 4 donuts for his afternoon snack.\n\nTo find out how many donuts are left for his co-workers, I needed to subtract the total number of donuts consumed from the initial amount:\n- Total donuts consumed: 3 (while driving) + 4 (afternoon snack) = 7 donuts.\n- Donuts left for co-workers: 30 (initial) - 7 (consumed) = 23 donuts.\n\nI checked this by ensuring that the operations were correctly applied and the result made sense in the context of the problem. The initial 30 donuts minus the 7 consumed equals 23, which is the number of donuts left for his co-workers.\n\nThe operation I would reuse is the subtraction of the total consumed donuts from the initial amount, as it directly and accurately solves the problem. This operation can be applied to similar problems where you need to find the remaining quantity after some have been used or taken.\n\nFINAL: 23",
+        "target_sha256": "05f6a7abd75bbcaa039f548a4cffe88e0b2852452864d03264a601c8732e3e30"
+      }
+    ],
+    "task_id": "gsm8k-train-7032"
+  },
+  {
+    "gold": "35",
+    "question": "At a party, there are 50 people. 30% of them are boys. How many girls are at this party?",
+    "question_sha256": "db0b02597de422887970577a6ebb941b5bb24a38aa0c4e2fc1aa88d04212d3ab",
+    "responses": [
+      {
+        "key": "gsm8k-train-3683:rich",
+        "raw_call_sha256": "7fef4caac3b39d877765c6cce3f78bbc15afb727adb977d9c4dcd16b483db5dd",
+        "student_prefix": [
+          {
+            "content": "At a party, there are 50 people. 30% of them are boys. How many girls are at this party?",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "de7f0a0ea586e34fc083fbe3fa8b8f85b7a21a9dc00d3fd3f4b8dcfa70f6ecd2",
+        "target": "Given that there are 50 people at the party and 30% of them are boys, we can calculate the number of boys first. 30% of 50 is 0.30 * 50 = 15 boys. Since the total number of people is 50, the number of girls would be the total minus the number of boys, which is 50 - 15 = 35 girls. \n\nTo double-check, if we add the number of boys and girls, we get 15 boys + 35 girls = 50 people, which matches the total given in the problem.\n\nFINAL: 35",
+        "target_sha256": "fdc11e5e92e87fa87f4f215731f691249f339249e3aa91fa1ad1da7a633d3c01"
+      },
+      {
+        "key": "gsm8k-train-3683:new_record",
+        "raw_call_sha256": "e37769e12798e4957cd501f0149b8d55a6c284f71c6983aed12ac169681dd724",
+        "student_prefix": [
+          {
+            "content": "At a party, there are 50 people. 30% of them are boys. How many girls are at this party?",
+            "role": "user"
+          },
+          {
+            "content": "Given that there are 50 people at the party and 30% of them are boys, we can calculate the number of boys first. 30% of 50 is 0.30 * 50 = 15 boys. Since the total number of people is 50, the number of girls would be the total minus the number of boys, which is 50 - 15 = 35 girls. \n\nTo double-check, if we add the number of boys and girls, we get 15 boys + 35 girls = 50 people, which matches the total given in the problem.\n\nFINAL: 35",
+            "role": "assistant"
+          },
+          {
+            "content": "Write your own reusable record of this solved task.",
+            "role": "user"
+          }
+        ],
+        "student_prefix_sha256": "bc16afd0eeb7e3e54e9110e866114c709e4f239fd3848f9d0819a17d22c8a92b",
+        "target": "Given that there are 50 people at the party and 30% of them are boys, I first identified the total number of people and the percentage of boys. The total number of people is 50, and 30% of these are boys. To find the number of boys, I calculated 30% of 50, which is 0.30 * 50 = 15 boys. This calculation was based on the fact that 30% is equivalent to 0.30 in decimal form. \n\nNext, to find the number of girls, I subtracted the number of boys from the total number of people. So, 50 - 15 = 35 girls. This subtraction was necessary because the total number of people is the sum of boys and girls. \n\nTo verify the result, I added the number of boys and girls: 15 boys + 35 girls = 50 people, which matches the total given in the problem. This check confirmed that my calculations were correct.\n\nThe operation I would reuse is calculating a percentage of a total to find a specific group's count, and then subtracting that from the total to find the count of the remaining group. This is useful in similar problems where you need to find the count of one group given the total and the percentage of another group.\n\nFINAL: 35",
+        "target_sha256": "4769efa4d5d94144831fa4c96e8a592fcc61a5661300e5a59b83ee7591b169ee"
+      }
+    ],
+    "task_id": "gsm8k-train-3683"
+  }
+]

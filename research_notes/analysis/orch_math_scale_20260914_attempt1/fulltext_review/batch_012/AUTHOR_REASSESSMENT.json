@@ -1,0 +1,57 @@
+{
+  "admitted_in_revalidated_batch": 9,
+  "affected_target_semantic_after": "FAIL",
+  "affected_target_semantic_before": "FAIL",
+  "explanation": "Reader quoted rendered labels rather than literal LaTex bytes. Original result and FAILED remain unchanged. Author read the actual full target and authored a new raw-span-bound FAIL. Other exact-bound reader decisions retain their original semantic labels; aggregate bookkeeping now includes those previously blocked by the batch-atomic validation failure.",
+  "extra_reviewer_calls": 0,
+  "key": "gsm8k-train-6916:rich",
+  "kind": "EXPLICIT_NEW_AUTHOR_NEGATIVE_REVIEW_AFTER_LITERAL_SPAN_REJECTION",
+  "native_calls": 0,
+  "observed_utc": "2026-09-14T23:45:21.486784+00:00",
+  "original_decision": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "Marked Price = 50 + 15",
+      "Discounted Price = 58.5",
+      "Percent Profit = 17\\%"
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "neutral_prefix_compatible": true,
+    "no_padding": true,
+    "prefix_reason": "The markup, discount, profit, and percentage calculations follow from the question and verifiable arithmetic, with no unsupported external event.",
+    "raw_call_sha256": "8f8c688da6d100b43759f020bc06abcdd6bdd59da4b5f1ba01763fd32f66615b",
+    "reason": "The arithmetic is correct and provides checkable, reusable markup-and-discount operations, but the response is an impersonal recipe using commands such as \u201ccalculate\u201d; it never gives a substantive first-person account of applying them.",
+    "reusable_content": true,
+    "status": "FAIL",
+    "student_prefix_sha256": "dae8f8e4800fcf47e88b0b34b83ca387c28dd64a009464695dd0a03afe930aec",
+    "target_sha256": "b74edefdb90d33cdca7ea9080b61e5f3e8932ecadaf4cbaeb9f4c95ee7d4a4d3"
+  },
+  "original_failed_receipt_sha256": "64208e4b6a1856789631810b4b46c539d31849eae636ef4df6b50781e3338c60",
+  "original_reader_result_sha256": "d7c8550ec6dbe4f2ec4f633d55c540077fd8994d4a40efbf41e0f43ee1cc9366",
+  "other_semantic_labels_changed": false,
+  "other_valid_bound_reviews_released": 14,
+  "replacement_decision": {
+    "checkable_expectation": true,
+    "evidence_spans": [
+      "First, calculate the marked price:",
+      "\\text{Profit} = 8.5",
+      "\\text{Percent Profit} = 17\\%"
+    ],
+    "first_person": false,
+    "full_text_read": true,
+    "grounded_operations": true,
+    "neutral_prefix_compatible": true,
+    "no_padding": true,
+    "prefix_reason": "The markup, discount, profit, and percentage calculations follow from the question and verifiable arithmetic, with no unsupported external event.",
+    "raw_call_sha256": "8f8c688da6d100b43759f020bc06abcdd6bdd59da4b5f1ba01763fd32f66615b",
+    "reason": "Author read the complete question and target: cost50 marked to65 then discounted to58.5 gives8.5profit/50=17%. Arithmetic and quantity roles are valid, but this is an impersonal sequence of calculate commands, not an own first-person operational account. Retain FAIL.",
+    "reusable_content": true,
+    "reviewer": "MATH_SCALE_AUTHOR_MANUAL_FULLTEXT_FAIL_REASSESSMENT",
+    "status": "FAIL",
+    "student_prefix_sha256": "dae8f8e4800fcf47e88b0b34b83ca387c28dd64a009464695dd0a03afe930aec",
+    "target_sha256": "b74edefdb90d33cdca7ea9080b61e5f3e8932ecadaf4cbaeb9f4c95ee7d4a4d3"
+  },
+  "target_bytes_changed": false
+}
