@@ -1,5 +1,25 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## Deferred parenting backfill — allocation before launch
+
+Node3physical1 ONLY after canonicalOFF C8 sleep, fresh parent-free C8readout,
+guardian COMPLETE and process exit; strict privileged UUID/process/CVD release
+admission required. Never reclaim a phase gap or touch GUIDED0/NO_LORA2.
+New singleGUIDED creative/short/supportive Astra treatment, original fixed
+61-world child (not an OFF-C8 reset), same fixed first4TRAIN/first5heldgroups.
+Exactly2episodes/sleep, unchanged rehearsal, C0andC1–4parent-free tests.
+Caps:4cycles,256nativecalls×512tokens,48parents×4096tokens/120s/no retry,
+364savedupdates maximum,4→16→16→16presentations,7200s once after release.
+No new control, source-generation call, lease or automatic budget extension.
+Authority is R104/standing builder; R105 design-only replay boundary unchanged.
+
+Native root: `/tmp/orch_route_parent_creative_backfill_20260915`.
+READY SHA `6ca6f5ffc27cd994ad0564c1d6d0c63fb7cdb2a54c56e44b39e17b44a192d9ad`;
+PROPOSAL SHA `8bb08055361f3ede6b7c9a2b0a43726c1b0c140fc920316aa5c86f3fe1a54d10`.
+Native10/local21CPUtestsPASS; Main10treatmenttestsPASS. No launched/parented
+response claim until actual receipts. Temporal offset and varying admissions
+limit causal style/retention comparisons; preserve existing baseline data.
+
 ## Replacement feed publisher launched — 2026-09-15 06:17 UTC
 
 CPU/provider controller3797981 started06:15:04.857901UTC; first64current-source

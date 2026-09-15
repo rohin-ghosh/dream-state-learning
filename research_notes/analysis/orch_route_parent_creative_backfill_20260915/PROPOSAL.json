@@ -1,0 +1,58 @@
+{
+  "arm": "GUIDED",
+  "authority": "R104_AND_STANDING_BUILDER_NOT_R105",
+  "baseline_cohort_sha256": "33a7eeb401732365e399ee080a2771c139e3a0ce4cf951216e06722058b4d1ba",
+  "caps": {
+    "child_calls_per_lane": 256,
+    "context": 8192,
+    "cycles": 4,
+    "generation": 512,
+    "parent_calls_per_lane": 48,
+    "parent_tokens": 192,
+    "seconds": 7200,
+    "source_calls": 0,
+    "updates_per_sleep": 112,
+    "worlds": 1
+  },
+  "cell": {
+    "horizon": "short",
+    "provider": "openai/openai/gpt-6-astra",
+    "style": "creative",
+    "tone": "supportive-positive"
+  },
+  "comparison_limits": [
+    "New treatment life begins from the original fixed adapter, not OFF C8.",
+    "Existing baseline only; no new OFF, frozen-LoRA or NO_LORA control.",
+    "Start-time offset, stochastic parent responses and admission yield confound pure style effects.",
+    "Different checkpoint tasks preclude a same-task retention or clean causal dose-curve claim.",
+    "Historical NO_LORA and adapter-seeded arms have different initial parameter states."
+  ],
+  "initial_file_sha256": "6f7546d334a6dd65c5a22dddeff2ee6eb42292373d79552df52a272f3aeab76f",
+  "initial_state": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f",
+  "lifetime_seconds": 7200,
+  "lifetime_starts": "ONE_ACTIVATION_AFTER_NATURAL_OFF_RELEASE",
+  "maximum_legacy_trajectory_presentations": 624,
+  "maximum_native_output_tokens": 131072,
+  "maximum_new_reflection_presentations": 104,
+  "maximum_parent_output_tokens": 196608,
+  "maximum_saved_updates": 364,
+  "no_automatic_budget_or_clock_reset": true,
+  "no_new_source_generation": true,
+  "no_yield": "UNCHANGED_NO_VALID_REFLECTIONS_NOOP_NO_REHEARSAL_CLAIM",
+  "parent_free_readout_episodes": 10,
+  "parent_output_tokens_per_call": 4096,
+  "parent_retries": 0,
+  "parent_timeout_seconds": 120,
+  "physical_index": 1,
+  "presentations_by_cycle": [
+    4,
+    16,
+    16,
+    16
+  ],
+  "replay": "UNCHANGED_CANONICAL_OLD_MIX_NO_FADING_OR_PLASTICITY_CHANGE",
+  "root": "/tmp/orch_route_parent_creative_backfill_20260915",
+  "selection": "FIRST_FOUR_TRAIN_AND_FIRST_FIVE_READOUT_GROUPS_IN_EXISTING_FROZEN_ORDER",
+  "sequential_episodes_per_sleep": 2,
+  "train_episodes": 8
+}

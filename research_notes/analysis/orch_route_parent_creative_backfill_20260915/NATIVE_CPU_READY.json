@@ -1,0 +1,143 @@
+{
+  "observed_utc": "2026-09-15T06:23:26.985426+00:00",
+  "status": "CPU_READY_NOT_LAUNCHED",
+  "native_root": "/tmp/orch_route_parent_creative_backfill_20260915",
+  "ready_sha256": "6ca6f5ffc27cd994ad0564c1d6d0c63fb7cdb2a54c56e44b39e17b44a192d9ad",
+  "prepare_sha256": "84c3424b67ed4bf4bf79f179491251d3eadb47c6642dd2a2872fd57d721fc48c",
+  "proposal_sha256": "8bb08055361f3ede6b7c9a2b0a43726c1b0c140fc920316aa5c86f3fe1a54d10",
+  "cpu_tests_sha256": "f32b30fce11ee8d6a56816751898fe209d763ff43ccdf8fa1938d407e060bd0a",
+  "cpu_tests_log": "test_broker_rejects_other_arms_cycles_and_budget (test_orch_route_parent_creative_backfill.CreativeBackfillTests.test_broker_rejects_other_arms_cycles_and_budget) ... ok\ntest_cohort_provenance_drift_rejected (test_orch_route_parent_creative_backfill.CreativeBackfillTests.test_cohort_provenance_drift_rejected) ... ok\ntest_configuration_only_maps_physical_one (test_orch_route_parent_creative_backfill.CreativeBackfillTests.test_configuration_only_maps_physical_one) ... ok\ntest_exact_authority_allocation_and_caps (test_orch_route_parent_creative_backfill.CreativeBackfillTests.test_exact_authority_allocation_and_caps) ... ok\ntest_fixed_first_groups_not_score_selection (test_orch_route_parent_creative_backfill.CreativeBackfillTests.test_fixed_first_groups_not_score_selection) ... ok\ntest_natural_final_readout_and_exit_required (test_orch_route_parent_creative_backfill.CreativeBackfillTests.test_natural_final_readout_and_exit_required) ... ok\ntest_no_extra_cycle_or_control (test_orch_route_parent_creative_backfill.CreativeBackfillTests.test_no_extra_cycle_or_control) ... ok\ntest_parent_blind_and_actual_creative_provider (test_orch_route_parent_creative_backfill.CreativeBackfillTests.test_parent_blind_and_actual_creative_provider) ... ok\ntest_posting_is_required_and_hash_bound (test_orch_route_parent_creative_backfill.CreativeBackfillTests.test_posting_is_required_and_hash_bound) ... ok\ntest_same_child_lineage_no_reset (test_orch_route_parent_creative_backfill.CreativeBackfillTests.test_same_child_lineage_no_reset) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.013s\n\nOK\n",
+  "proposal": {
+    "arm": "GUIDED",
+    "authority": "R104_AND_STANDING_BUILDER_NOT_R105",
+    "baseline_cohort_sha256": "33a7eeb401732365e399ee080a2771c139e3a0ce4cf951216e06722058b4d1ba",
+    "caps": {
+      "child_calls_per_lane": 256,
+      "context": 8192,
+      "cycles": 4,
+      "generation": 512,
+      "parent_calls_per_lane": 48,
+      "parent_tokens": 192,
+      "seconds": 7200,
+      "source_calls": 0,
+      "updates_per_sleep": 112,
+      "worlds": 1
+    },
+    "cell": {
+      "horizon": "short",
+      "provider": "openai/openai/gpt-6-astra",
+      "style": "creative",
+      "tone": "supportive-positive"
+    },
+    "comparison_limits": [
+      "New treatment life begins from the original fixed adapter, not OFF C8.",
+      "Existing baseline only; no new OFF, frozen-LoRA or NO_LORA control.",
+      "Start-time offset, stochastic parent responses and admission yield confound pure style effects.",
+      "Different checkpoint tasks preclude a same-task retention or clean causal dose-curve claim.",
+      "Historical NO_LORA and adapter-seeded arms have different initial parameter states."
+    ],
+    "initial_file_sha256": "6f7546d334a6dd65c5a22dddeff2ee6eb42292373d79552df52a272f3aeab76f",
+    "initial_state": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f",
+    "lifetime_seconds": 7200,
+    "lifetime_starts": "ONE_ACTIVATION_AFTER_NATURAL_OFF_RELEASE",
+    "maximum_legacy_trajectory_presentations": 624,
+    "maximum_native_output_tokens": 131072,
+    "maximum_new_reflection_presentations": 104,
+    "maximum_parent_output_tokens": 196608,
+    "maximum_saved_updates": 364,
+    "no_automatic_budget_or_clock_reset": true,
+    "no_new_source_generation": true,
+    "no_yield": "UNCHANGED_NO_VALID_REFLECTIONS_NOOP_NO_REHEARSAL_CLAIM",
+    "parent_free_readout_episodes": 10,
+    "parent_output_tokens_per_call": 4096,
+    "parent_retries": 0,
+    "parent_timeout_seconds": 120,
+    "physical_index": 1,
+    "presentations_by_cycle": [
+      4,
+      16,
+      16,
+      16
+    ],
+    "replay": "UNCHANGED_CANONICAL_OLD_MIX_NO_FADING_OR_PLASTICITY_CHANGE",
+    "root": "/tmp/orch_route_parent_creative_backfill_20260915",
+    "selection": "FIRST_FOUR_TRAIN_AND_FIRST_FIVE_READOUT_GROUPS_IN_EXISTING_FROZEN_ORDER",
+    "sequential_episodes_per_sleep": 2,
+    "train_episodes": 8
+  },
+  "initial": {
+    "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+    "files": [
+      [
+        "README.md",
+        "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+      ],
+      [
+        "adapter_config.json",
+        "4a7e6836e536e25fcc0151601beed711e0f2d4ce7b4966cc5853c7bc7f22fa55"
+      ],
+      [
+        "adapter_model.safetensors",
+        "6f7546d334a6dd65c5a22dddeff2ee6eb42292373d79552df52a272f3aeab76f"
+      ]
+    ],
+    "path": "/tmp/orch_route_parent_creative_backfill_20260915/initial_adapter",
+    "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+  },
+  "cohort_sha256": "0587d15f5493010aa6b895ed81d1102becfe6ee7b961bf56beef48205c08d91d",
+  "cpu_legacy_rows": 222,
+  "reused_source": {
+    "baseline_cohort_sha256": "33a7eeb401732365e399ee080a2771c139e3a0ce4cf951216e06722058b4d1ba",
+    "baseline_prepare_sha256": "4a0652429d0298e213f91485762c2a7758da5311228b2458b9eb3b6694d8378c",
+    "baseline_root": "/tmp/orch_route_parent_campaign_20260915_canonical102",
+    "baseline_source_sha256": "d8d2e513dad61c705be90ef91ae63c9ca289712e95b9cd676ef91c02c23a5116",
+    "newly_generated_source_calls": 0,
+    "same_initial_adapter_state": true,
+    "selection": "FIXED_FIRST_GROUPS_NOT_OUTCOME_SELECTED"
+  },
+  "own_sources": {
+    "gpu/orch_route_parent_creative_backfill.py": "45cb93e6789d3719a809c8e613e573dca1ddc3095449ac48d984f0adc87d8294",
+    "gpu/orch_route_parent_creative_backfill_parent.py": "7164bcb418b959164dbd5b8dff88ec41cb38725e6acb685d0b8049cfce3bb3d8",
+    "organism_v6/orch_route_parent_creative_backfill.py": "c5ecb6a60919ffa92e9d0e9b972e77959fbe30ff86a11fe00e0c23872dda97e8",
+    "tests/test_orch_route_parent_creative_backfill.py": "ca1a74693483e66415c646f952fe96fbe7bd683e7b8646cdb362ca03d59b0c72"
+  },
+  "broker_dependencies": {
+    "gpu/orch_route_parent_campaign_canonical_parent.py": "ea4e65738e523c3e0c3a5ad95c63ee37af9408f9cc833bdf8d5d7c97fd94c441",
+    "gpu/orch_route_parent_campaign_providers.py": "b0f76da0d2037aa8dd5b922cc57942ba4f9ac7ec9249c4367380a9b5791ffc14"
+  },
+  "source_files_count": 561,
+  "sealed_source_inputs": {
+    "COHORT.json": "c69a0d4621e4d6240cea281223be5c5ac7b3a264978088e8f698bc36a690a8f4",
+    "LEGACY_MATERIAL.json": "46a9bff84a9a7c25d793f3d4bb05d524be127b234ab3d7974c92487a4a35e998",
+    "LEGACY_READOUT.json": "52c605041d7dccc0cc35fabae85d109844cf0265e1fcec7bc8da26da7efe4845",
+    "OFF_OWNER.json": "1e343a7e7d3f405d62ecd72acd23391a1f07ca8ff683aa2d48574bb5b792179b",
+    "OLD_MASKS.json": "ce0e15415890c853b2a401c6dd9bac7285b47ed3472cabb92544794424d80416",
+    "PROPOSAL.json": "8bb08055361f3ede6b7c9a2b0a43726c1b0c140fc920316aa5c86f3fe1a54d10",
+    "PROVIDER.json": "d94e8b9796ae3ea54881615c24d9ca33ae4f60dd74b0139983b341e4a6732165",
+    "REUSED_SOURCE_PROVENANCE.json": "5a15908ed74c74b1f6d3ccf9856ae9ede523bcdf73120c5d6397612f40e1a29e",
+    "SERVICE_IDENTITY.json": "e7e8c911cc0657b44730b2d336df29634e46c23c8d75a98a162502e7445e69aa",
+    "SOURCE.json": "3826cd45436afe33da924f6413df2ddadd6bd53c51536a20bfcebfdb84a7661e",
+    "initial_source_receipt.json": "8bfcd527495dc2b1865348066906dec01cbf2f59cc666b46b0fd4b358008e749",
+    "source_capture/ORCH-ROUTE-PARENT-20260915-CANONICAL102-TRAIN-C0-W0.json": "9297e08ee68a2cc7e32a73542fca667e4b79d5a41114b329df9f3a7776798e10",
+    "source_capture/ORCH-ROUTE-PARENT-20260915-CANONICAL102-TRAIN-C1-W0.json": "0a0be236faa55273c5fce3c218d04ca3691edb2eefea56078d585c7da928ac0a",
+    "source_capture/ORCH-ROUTE-PARENT-20260915-CANONICAL102-TRAIN-C2-W0.json": "efaf63cf4fcc3e476acf0caabe360900bc9a86ea7e161cca520d397c3eed7ccb",
+    "source_capture/ORCH-ROUTE-PARENT-20260915-CANONICAL102-TRAIN-C3-W0.json": "5374547c573a49fee6f3badda92e17f52eab0c9723c7054a0dcc14e9bed81ee4"
+  },
+  "owner_capture": {
+    "dispatch_sha256": "e80eec6d649a18475e8b0d74df264d67bc3d3e8994c43730d3289bec1e2b224e",
+    "guardian": {
+      "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+      "command_sha256": "99b1f8e36105265191f5f3fcc047b3e0632ed8fbb5cd2918c589f6b337020ee7",
+      "pid": 317455,
+      "start_ticks": 15551308,
+      "uid": 2524
+    }
+  },
+  "main_post_exists": false,
+  "start_exists": false,
+  "launch_claim_exists": false,
+  "parent_request_count": 0,
+  "gpu_calls": 0,
+  "model_calls": 0,
+  "updates": 0
+}
