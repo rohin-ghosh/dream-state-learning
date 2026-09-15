@@ -1,0 +1,45 @@
+{
+  "schema": "ORCH_R114_CLAUDE_BROKER_CURRENT_STAGE_V1",
+  "recorded_utc": "2026-09-15T10:23:51Z",
+  "status": "CPU_READY_DEADLINE_CORRECTION_EXPLICIT_DONE_GATE",
+  "supersedes": "CPU_READY_R114_V4.json deadline_rule and its source hashes; historical receipt preserved, not current launch guidance",
+  "files": {
+    "gpu/orch_r110_claude_broker.py": "4f93eceeb7605390ddba17bf2a3e1146cae9d3c8a9b8899b5fd9f354b3016d31",
+    "tests/test_orch_r110_claude_broker.py": "e3a187b2cd8bc0982154b64892a32186baea56cca613175ee73d24d2adf71598"
+  },
+  "required_snapshot_document": {
+    "research_notes/PARENTING_BATTLE_PLAN_v4_2026-09-15.md": "6a1b78c54b28493e0932e0c5974eecd3753a712a15c2f787a769fa1ba9706cd6"
+  },
+  "judge_reference_not_parent_input": {
+    "module": "organism_v6.orch_r114_shared_judge",
+    "prompt_path": "research_notes/R114_SHARED_JUDGE_PROMPT.md",
+    "prompt_sha256": "0466c6fa8bbd8c75f8e2d4c625498423835b2b5285e58c4f703069e8b6c532fd"
+  },
+  "test_command": "python3 -B -m unittest tests.test_orch_r110_claude_broker -q",
+  "tests_passed": 63,
+  "battleplan_stable_through_final_test_run": true,
+  "evaluation_boundary": {
+    "utc": "2026-09-15T17:00:00Z",
+    "unix": 1789491600,
+    "stops_branch_or_provider": false
+  },
+  "node5_lease_hard_wall": {
+    "utc": "2026-09-16T22:04:00Z",
+    "unix": 1789596240
+  },
+  "deadline_contract": "Each allocation keeps its explicit bounded deadline, no later than node5 hard wall. Actual provider cutoff remains min(caller deadline, allocation deadline, lane wait deadline minus30s). Morning evaluation time is not part of this minimum. Earlier running bounds are unchanged; this preparation grants no extension or reset.",
+  "regressions": [
+    "post-morning parent dispatch succeeds with mocked runner under a later valid lane deadline",
+    "new allocation may reach node5 hard wall but not exceed it",
+    "earlier original deadline remains actual provider cutoff",
+    "morning evaluation and lease hard wall are separate exact UTC constants"
+  ],
+  "visibility_and_prompt_contract": "V4 fixed clause/open_turn/useful organisation/descriptive classes and FOCUS STYLE REFLECTION bindings unchanged. Child-visible feedback retained; hidden evaluator stripped; DEV head-only and FINAL no parent/head/exchange.",
+  "comparison_label": "PARENTING_SYSTEMS",
+  "authorization": "WATCHER_RELAYED_ROHIN_DONE",
+  "provider_calls": 0,
+  "judge_calls": 0,
+  "gpu_calls": 0,
+  "running_allocation_changes": 0,
+  "old_learned_broker_changed": false
+}

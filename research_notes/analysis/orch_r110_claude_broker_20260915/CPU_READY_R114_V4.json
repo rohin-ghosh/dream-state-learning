@@ -1,0 +1,37 @@
+{
+  "schema": "ORCH_R114_CLAUDE_BROKER_CPU_READY_V1",
+  "recorded_utc": "2026-09-15T10:19:10Z",
+  "status": "CPU_READY_EXPLICIT_DONE_GATE_NO_DISPATCH",
+  "battleplan_commit": "05a0b428",
+  "files": {
+    "gpu/orch_r110_claude_broker.py": "51fe2ca12e1f7636835a194f54ebff72ff009959d6dd862827481a6dc0136173",
+    "tests/test_orch_r110_claude_broker.py": "9b018559ef24f46ab8275377797ae28b3f1aee57e1f216fac99d4e943d0bb2b7"
+  },
+  "required_snapshot_document": {
+    "research_notes/PARENTING_BATTLE_PLAN_v4_2026-09-15.md": "7b8bb0b233d0b6d68f0e6ca9440e188a8cbdc20434b1ef34e014baf9c2fdc07d"
+  },
+  "principles_sha256": "5a6a3d28a2f0c9f99dd76873496a07468075509b4451373d90c11ce8d8b363f2",
+  "test_command": "python3 -B -m unittest tests.test_orch_r110_claude_broker -q",
+  "tests_passed": 60,
+  "provider_calls": 0,
+  "judge_calls": 0,
+  "gpu_calls": 0,
+  "morning_cut_utc": "2026-09-15T17:00:00Z",
+  "deadline_rule": "No new config deadline later than this cut; earlier original deadlines remain earlier, no reset.",
+  "authorization": "WATCHER_RELAYED_ROHIN_DONE; no grace/silence/old generic GO",
+  "prompt_contract": {
+    "fixed_text": "Exact quoted parent block in v4 section6, including visible-feedback clause, useful organisation, broad permission and no compulsory catalogue.",
+    "renderer": "render_parent_prompt(fields): GAME/STYLE/NUDGING/FOCUS strings plus REFLECTION {mode:short|long,max_new_tokens:1..8192}",
+    "reader": "Rereads Fn.md per call, verifies fixed text, hashes exact consumed bytes. Does not create real audited Fn files.",
+    "head_update_validator": "validate_head_update(previous,current): only FOCUS/STYLE/REFLECTION may change; GAME/NUDGING remain fixed.",
+    "optional_companion": "Fn.fields.json = {schema:ORCH_R114_HEAD_FIELDS_V1,prompt_sha256,fields}; match binds requested reflection settings; stale hash reports SETTINGS_MISMATCH_REPORT_ONLY without changing valid guidance.",
+    "reflection_limit": "Broker records requested reflection mode/budget only. Native owner applies settings prospectively and reports actual cap/exposure. Missing settings remain unspecified, never claimed applied. V4 quoted parent block does not contain a REFLECTION placeholder, so it is bound separately rather than appended to fixed parent prose."
+  },
+  "open_turn": "Accepted as TRAIN phase with actual child events required; no imagined child or prescribed goal is injected.",
+  "class_contract": "intervention_class is free descriptive text or null; tag remains ADD/STOP/SHIFT. No behavior catalogue is shown or required. No semantic class is coerced; legacy plan rationale uses exact label or unclassified. Native grid consumers must not impose the previous enum.",
+  "visibility": "Child-received game/checker feedback retained, explicit hidden evaluation fields removed. DEV head-only for parenting adaptation; FINAL never parent/head/exchange. Evaluation does not gate child continuation.",
+  "comparison_label": "PARENTING_SYSTEMS",
+  "reporting": "Existing per-request prompt/settings bindings and publication receipts; hourly reduction distinguishes delivered/MISSING/late and requires native evidence for child tokens/optimizer steps.",
+  "native_integration_status": "Still requires audited Fn files, lane adapter integration, watcher-relayed DONE and receiver admission; CPU readiness is not launch approval.",
+  "old_learned_broker_changed": false
+}

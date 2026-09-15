@@ -33,8 +33,11 @@ class ClaudeBrokerTests(unittest.TestCase):
         self.root = Path(self.temporary.name)
         self.prompts = self.root / 'prompts'
         self.prompts.mkdir()
+        self.head_fields = dict(GAME='route worlds', STYLE='training-wheels, supportive',
+            NUDGING='No additional nudging.', FOCUS='Notice actual behavior.',
+            REFLECTION=dict(mode='short', max_new_tokens=512))
         for branch in broker.FAMILIES:
-            (self.prompts / (branch + '.md')).write_text('Exact parent text including nudging policy.')
+            (self.prompts / (branch + '.md')).write_text(broker.render_parent_prompt(self.head_fields))
         self.principles = broker.ROOT / 'research_notes/PARENTING_PRINCIPLES_ROHIN_2026-09-15.md'
         self.config = dict(schema=broker.SCHEMA, branch='F1', family='route',
             remote_root=str(self.root / 'native'), life_id='life1', deadline_unix=time.time()+300,
@@ -240,7 +243,8 @@ class ClaudeBrokerTests(unittest.TestCase):
 
     def test_reread_fn_each_call(self):
         first, first_dir = self.evaluate()
-        (self.prompts/'F1.md').write_text('Changed FOCUS, fresh head-parent text.')
+        (self.prompts/'F1.md').write_text(broker.render_parent_prompt(
+            dict(self.head_fields, FOCUS='Changed FOCUS, fresh head-parent text.')))
         second, second_dir = self.evaluate()
         self.assertEqual((first['status'], second['status']), ('COMPLETE', 'COMPLETE'))
         self.assertNotEqual((first_dir/'SYSTEM.txt').read_text(), (second_dir/'SYSTEM.txt').read_text())
@@ -257,7 +261,8 @@ class ClaudeBrokerTests(unittest.TestCase):
 
     def test_drifting_prompt_reports_mismatch_never_gates_call(self):
         first, directory = self.evaluate()
-        (self.prompts/'F1.md').write_text('Different focus, no child gate.')
+        (self.prompts/'F1.md').write_text(broker.render_parent_prompt(
+            dict(self.head_fields, FOCUS='Different focus, no child gate.')))
         second, directory = self.evaluate()
         comparison = broker.compare_prompt_bindings(first['prompt_binding'], second['prompt_binding'],
             matched_opportunity=True)
@@ -392,12 +397,108 @@ class ClaudeBrokerTests(unittest.TestCase):
                 self.assertEqual(plan['episode_guidance'], {'TRAIN_1': ''})
                 self.assertEqual(plan['guidance'], self.reply['guidance'])
 
-    def test_grid_legacy_class_mapping_is_explicit(self):
+    def test_grid_class_not_coerced_to_another_behavior(self):
         plan, metadata = broker.adapt_plan(dict(self.reply, intervention_class='self_perception'),
             'grid', 'TRAIN_1')
         self.assertEqual(metadata['intervention_class'], 'self_perception')
-        self.assertEqual(metadata['legacy_plan_class'], 'metacognition')
-        self.assertTrue(plan['rationale'].startswith('metacognition:'))
+        self.assertEqual(metadata['legacy_plan_class'], 'self_perception')
+        self.assertTrue(plan['rationale'].startswith('self_perception:'))
+
+    def test_open_turn_accepts_actual_train_events(self):
+        self.request['payload']['phase'] = 'open_turn'
+        self.rebind()
+        result, directory = self.evaluate()
+        self.assertEqual(result['status'], 'COMPLETE')
+        self.assertEqual(result['prompt_binding']['position']['phase'], 'open_turn')
+
+    def test_v4_exact_feedback_and_useful_organization_clause(self):
+        prompt = broker.render_parent_prompt(self.head_fields)
+        self.assertIn('Use the feedback the child itself received', prompt)
+        self.assertIn("allow the child's own useful organisation", prompt)
+        self.assertIn('nothing here is a catalogue you must enact', prompt)
+        self.assertNotIn('[NUDGING]', prompt)
+        result, directory = self.evaluate()
+        self.assertEqual(result['status'], 'COMPLETE')
+        self.assertEqual((directory/'PARENT_PROMPT.md').read_text(), prompt)
+
+    def test_fixed_prompt_cannot_silently_revert_to_v2(self):
+        path = self.prompts/'F1.md'
+        path.write_text(path.read_text().replace('allow the child\'s own useful organisation',
+            'always forbid any organisation'))
+        result, directory = self.evaluate()
+        self.assertEqual(result['error']['code'], 'fixed_v4_parent_prompt_drift')
+        self.runner.assert_not_called()
+
+    def test_head_edit_scope_focus_style_reflection(self):
+        changed = dict(self.head_fields, FOCUS='Another focus.', STYLE='creative',
+            REFLECTION=dict(mode='long', max_new_tokens=2048))
+        broker.validate_head_update(self.head_fields, changed)
+        for key in ('GAME', 'NUDGING'):
+            with self.subTest(key=key), self.assertRaisesRegex(ValueError, 'head_may_edit'):
+                broker.validate_head_update(self.head_fields, dict(changed, **{key: 'changed'}))
+
+    def test_reflection_settings_bound_not_applied_by_parent_broker(self):
+        document = dict(schema='ORCH_R114_HEAD_FIELDS_V1',
+            prompt_sha256=broker.sha(self.prompts/'F1.md'), fields=self.head_fields)
+        (self.prompts/'F1.fields.json').write_text(json.dumps(document))
+        result, directory = self.evaluate()
+        settings = result['prompt_binding']['head_settings']
+        self.assertEqual(settings['status'], 'BOUND_REQUESTED_SETTINGS')
+        self.assertEqual(settings['fields']['REFLECTION'], self.head_fields['REFLECTION'])
+        self.assertFalse(settings['reflection_applied_by_broker'])
+
+    def test_stale_head_settings_report_only(self):
+        document = dict(schema='ORCH_R114_HEAD_FIELDS_V1', prompt_sha256='e'*64, fields=self.head_fields)
+        (self.prompts/'F1.fields.json').write_text(json.dumps(document))
+        result, directory = self.evaluate()
+        self.assertEqual(result['status'], 'COMPLETE')
+        settings = result['prompt_binding']['head_settings']
+        self.assertEqual(settings['status'], 'SETTINGS_MISMATCH_REPORT_ONLY')
+        self.assertNotIn('REFLECTION', settings['fields'])
+
+    def test_class_is_description_not_compulsory_catalogue(self):
+        for label in (None, 'useful_self_organisation'):
+            with self.subTest(label=label):
+                plan, metadata = broker.adapt_plan(dict(self.reply, intervention_class=label),
+                    'route', 'TRAIN_1')
+                self.assertEqual(metadata['intervention_class'], label)
+                self.assertEqual(plan['message'], self.reply['guidance'])
+        self.assertNotIn(', '.join(broker.CLASSES), broker.SYSTEM_CONTRACT)
+
+    def test_v4_evaluation_cut_distinct_from_lease_hard_wall(self):
+        from datetime import datetime, timezone
+        self.assertEqual(datetime.fromtimestamp(broker.MORNING_CUT_UNIX, timezone.utc).isoformat(),
+            '2026-09-15T17:00:00+00:00')
+        self.assertEqual(datetime.fromtimestamp(broker.NODE5_HARD_WALL_UNIX, timezone.utc).isoformat(),
+            '2026-09-16T22:04:00+00:00')
+        self.config['deadline_unix'] = broker.MORNING_CUT_UNIX+1
+        broker.validate_config(self.config)
+
+    def test_new_lane_may_end_after_evaluation_cut_but_not_lease(self):
+        self.config['deadline_unix'] = broker.NODE5_HARD_WALL_UNIX
+        broker.validate_config(self.config)
+        self.config['deadline_unix'] += 1
+        with self.assertRaisesRegex(ValueError, 'node5_lease_hard_wall'):
+            broker.validate_config(self.config)
+
+    def test_post_morning_parent_slot_not_stopped_by_evaluation_boundary(self):
+        after_cut = broker.MORNING_CUT_UNIX+60
+        self.config['deadline_unix'] = broker.NODE5_HARD_WALL_UNIX
+        self.request['lane_deadline_unix'] = after_cut+120
+        self.rebind()
+        with patch.object(broker.time, 'time', return_value=after_cut):
+            result, directory = self.evaluate()
+        self.assertEqual(result['status'], 'COMPLETE')
+        self.assertEqual(self.runner.call_args.args[2], after_cut+90)
+
+    def test_original_earlier_lane_bound_not_extended(self):
+        earlier = time.time()+40
+        self.config['deadline_unix'] = earlier
+        self.rebind()
+        result, directory = self.evaluate()
+        self.assertEqual(result['status'], 'COMPLETE')
+        self.assertEqual(self.runner.call_args.args[2], earlier)
+        self.assertEqual(self.config['deadline_unix'], earlier)
 
     def test_run_cli_bounded_local_stub_no_provider(self):
         directory = self.root/'stub'

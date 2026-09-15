@@ -30,6 +30,10 @@ from gpu import orch_l2_long_backend as backend
 MODEL = 'claude-fable-5-1'
 PRINCIPLES_V2_SHA256 = '5a6a3d28a2f0c9f99dd76873496a07468075509b4451373d90c11ce8d8b363f2'
 ROOT = Path(__file__).resolve().parents[1]
+BATTLEPLAN = ROOT / 'research_notes/PARENTING_BATTLE_PLAN_v4_2026-09-15.md'
+MORNING_CUT_UNIX = 1789491600
+NODE5_HARD_WALL_UNIX = 1789596240
+HEAD_EDITABLE_FIELDS = ('FOCUS', 'STYLE', 'REFLECTION')
 SCHEMA = 'ORCH_R111_CLAUDE_BROKER_V1'
 FAMILIES = {'F1': 'route', 'F2': 'math', 'F3': 'code', 'F4': 'grid'}
 CLASSES = ('perception', 'persistence', 'metacognition', 'curiosity', 'goal_regulation',
@@ -49,8 +53,11 @@ SYSTEM_CONTRACT = (
     'Discrepancies are reflection material, never outcome-based intervention triggers. '
     'No DEV or FINAL readout is available to this parent. '
     'Return [SILENT] if nothing needs saying. Otherwise return only JSON with guidance '
-    '(child-visible text), tag (ADD, STOP, or SHIFT), intervention_class (one of '
-    + ', '.join(CLASSES) + '), and rationale (parent-only explanation). '
+    '(child-visible text), tag (ADD, STOP, or SHIFT), intervention_class '
+    '(a short descriptive label, or null when unclassified), and rationale (parent-only explanation). '
+    'Choose useful guidance first; metadata describes that choice afterward. There is no '
+    'compulsory catalogue of behaviors to teach, cover, count or enact. '
+    'Useful self-organisation is allowed; intervene on structure only if repetitive or no longer useful. '
     'Tags, class, rationale and logging must not be embedded in guidance. '
     'These are transport fields, not a structure to ask the child to imitate.'
 )
@@ -91,7 +98,7 @@ def write(path, value):
 def source_pins():
     files = [Path(__file__).resolve(), Path(backend.__file__).resolve(),
         Path(backend.validate_request.__code__.co_filename).resolve(),
-        ROOT / 'gpu/ovx3_ssh.sh', ROOT / 'gpu/ovx3_scp.sh']
+        ROOT / 'gpu/ovx3_ssh.sh', ROOT / 'gpu/ovx3_scp.sh', BATTLEPLAN]
     return {str(path.relative_to(ROOT)): sha(path) for path in files}
 
 
@@ -110,6 +117,7 @@ def validate_config(config):
         and '..' not in Path(config['remote_root']).parts, 'native_root')
     require(finite(config['deadline_unix']) and finite(config['max_budget_usd'])
         and config['max_budget_usd'] > 0, 'bounded_deadline_cost')
+    require(config['deadline_unix'] <= NODE5_HARD_WALL_UNIX, 'node5_lease_hard_wall')
     require(type(config['max_parent_calls']) is int and config['max_parent_calls'] > 0
         and type(config['max_output_tokens']) is int
         and 1 <= config['max_output_tokens'] <= 8192, 'bounded_calls_output')
@@ -154,7 +162,7 @@ def public_transcript(payload, config):
         'transcript_life_family')
     require(type(payload['cycle']) is int and payload['cycle'] >= 0
         and type(payload['episode']) is int and payload['episode'] in (0, 1)
-        and payload['phase'] in ('experience', 'presleep_metacognition', 'reflection'),
+        and payload['phase'] in ('experience', 'presleep_metacognition', 'reflection', 'open_turn'),
         'train_phase_only')
     task = payload['task_id']
     require(task in config['train_tasks'] and task not in config['excluded_task_ids'],
@@ -218,6 +226,64 @@ def command(system_content, max_budget_usd):
         'Respond to the supplied TRAIN transcript using the transport contract.']
 
 
+def fixed_parent_template():
+    text = BATTLEPLAN.read_text()
+    start = text.index('> You are the parent of a young model.')
+    lines = []
+    for line in text[start:].splitlines():
+        if not line.startswith('> '):
+            break
+        lines.append(line[2:])
+    return '\n'.join(lines)
+
+
+def render_parent_prompt(fields):
+    require(set(fields) == {'GAME', 'STYLE', 'NUDGING', 'FOCUS', 'REFLECTION'}, 'head_fields_keys')
+    require(all(isinstance(fields[key], str) for key in ('GAME', 'STYLE', 'NUDGING', 'FOCUS')),
+        'head_text_fields')
+    reflection = fields['REFLECTION']
+    require(isinstance(reflection, dict) and set(reflection) == {'mode', 'max_new_tokens'}
+        and reflection['mode'] in ('short', 'long') and type(reflection['max_new_tokens']) is int
+        and 1 <= reflection['max_new_tokens'] <= 8192, 'reflection_request_bounds')
+    return re.sub(r'\[(GAME|STYLE|NUDGING|FOCUS)\]',
+        lambda match: fields[match.group(1)], fixed_parent_template())
+
+
+def validate_head_update(previous, current):
+    render_parent_prompt(previous)
+    render_parent_prompt(current)
+    require(all(previous[key] == current[key] for key in ('GAME', 'NUDGING')),
+        'head_may_edit_focus_style_reflection_only')
+
+
+def head_binding(prompt_path, prompt_bytes):
+    prompt = prompt_bytes.decode('utf-8')
+    template = fixed_parent_template()
+    pattern = re.escape(template)
+    for name in ('GAME', 'STYLE', 'NUDGING', 'FOCUS'):
+        pattern = pattern.replace(re.escape('[' + name + ']'), '(?P<' + name + '>.*?)')
+    match = re.fullmatch(pattern, prompt.rstrip('\n'), flags=re.DOTALL)
+    require(match is not None, 'fixed_v4_parent_prompt_drift')
+    captured = match.groupdict()
+    result = dict(status='TEXT_BOUND_REFLECTION_UNSPECIFIED', fields=captured,
+        reflection_applied_by_broker=False, settings_file_sha256=None)
+    settings_path = prompt_path.with_suffix('.fields.json')
+    if settings_path.exists():
+        require(settings_path.stat().st_size <= PACKET_CAP, 'bounded_head_settings')
+        raw = settings_path.read_bytes()
+        settings = loads(raw)
+        require(set(settings) == {'schema', 'prompt_sha256', 'fields'}
+            and settings['schema'] == 'ORCH_R114_HEAD_FIELDS_V1', 'head_settings_schema')
+        rendered = render_parent_prompt(settings['fields'])
+        matches = settings['prompt_sha256'] == hashlib.sha256(prompt_bytes).hexdigest()
+        matches = matches and rendered == prompt.rstrip('\n')
+        result.update(status='BOUND_REQUESTED_SETTINGS' if matches else 'SETTINGS_MISMATCH_REPORT_ONLY',
+            settings_file_sha256=hashlib.sha256(raw).hexdigest())
+        if matches:
+            result['fields'] = settings['fields']
+    return result
+
+
 def build_system(transcript, config, prompt_root, principles_path):
     prompt_path = Path(prompt_root) / (config['branch'] + '.md')
     require(prompt_path.stat().st_size <= PACKET_CAP, 'bounded_parent_prompt')
@@ -226,6 +292,7 @@ def build_system(transcript, config, prompt_root, principles_path):
     require(hashlib.sha256(principles_bytes).hexdigest() == config['principles_sha256'],
         'principles_hash_changed')
     prompt = prompt_bytes.decode('utf-8')
+    settings = head_binding(prompt_path, prompt_bytes)
     principles = principles_bytes.decode('utf-8')
     parent_policy = prompt + '\n\n' + principles + '\n\n' + SYSTEM_CONTRACT
     system = parent_policy + '\n\nTRAIN TRANSCRIPT:\n' + json.dumps(transcript, sort_keys=True)
@@ -235,6 +302,8 @@ def build_system(transcript, config, prompt_root, principles_path):
         common_prompt_file='tools/courier/swarm/prompts/' + config['branch'] + '.md',
         prompt_sha256=hashlib.sha256(prompt_bytes).hexdigest(),
         principles_sha256=config['principles_sha256'],
+        fixed_parent_template_sha256=hashlib.sha256(fixed_parent_template().encode()).hexdigest(),
+        head_settings=settings, head_settings_sha256=digest(settings),
         transport_contract_sha256=hashlib.sha256(SYSTEM_CONTRACT.encode()).hexdigest(),
         parent_policy_sha256=hashlib.sha256(parent_policy.encode()).hexdigest(),
         system_sha256=hashlib.sha256(system.encode()).hexdigest(),
@@ -245,7 +314,7 @@ def build_system(transcript, config, prompt_root, principles_path):
 
 
 def compare_prompt_bindings(left, right, *, matched_opportunity=False):
-    fields = ('common_prompt_file', 'prompt_sha256', 'principles_sha256',
+    fields = ('common_prompt_file', 'prompt_sha256', 'principles_sha256', 'head_settings_sha256',
         'transport_contract_sha256', 'parent_policy_sha256')
     if not isinstance(left, dict) or not isinstance(right, dict):
         return dict(status='UNVERIFIED_MISSING_BINDING', child_gate=False,
@@ -302,15 +371,17 @@ def adapt_plan(reply, family, task_id):
         return None, dict(tag=None, intervention_class=None, parent_note=None, silent=True)
     require(isinstance(reply, dict) and set(reply) == {'guidance', 'tag',
         'intervention_class', 'rationale'}, 'parent_json_schema')
-    require(reply['tag'] in ('ADD', 'STOP', 'SHIFT') and reply['intervention_class'] in CLASSES,
+    require(reply['tag'] in ('ADD', 'STOP', 'SHIFT') and (reply['intervention_class'] is None
+        or isinstance(reply['intervention_class'], str)
+        and 0 < len(reply['intervention_class']) <= 80
+        and re.fullmatch('[a-zA-Z0-9 _-]+', reply['intervention_class'])),
         'parent_tag_class')
     require(isinstance(reply['guidance'], str) and reply['guidance'].strip()
         and isinstance(reply['rationale'], str) and reply['rationale'].strip(), 'parent_text')
     guidance = reply['guidance']
     if family in ('route', 'grid'):
         require(len(guidance.split()) <= 90, 'lane_guidance_limit_no_cropping')
-        legacy_class = ('metacognition' if family == 'grid'
-            and reply['intervention_class'] == 'self_perception' else reply['intervention_class'])
+        legacy_class = reply['intervention_class'] or 'unclassified'
         plan = dict(speak=True, message=guidance,
             rationale=legacy_class + ': ' + reply['rationale'])
     else:
