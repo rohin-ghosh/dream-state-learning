@@ -1,0 +1,156 @@
+{
+  "observed_unix": 1789466385.775775,
+  "observed_utc": "2026-09-15T09:59:45.775775+00:00",
+  "hard_end_unix": 1789491360,
+  "raw_output": false,
+  "alerts": [],
+  "rehearsal": {
+    "HEARTBEAT.json": {
+      "arms": {
+        "CONTROL": {
+          "pending": false,
+          "phase": "train",
+          "processes": [
+            {
+              "alive": true,
+              "identity": {
+                "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+                "pid": 832407,
+                "start_ticks": "69467662",
+                "uid": 2524
+              },
+              "index": 3
+            }
+          ],
+          "resume": "/localhome/local-rohing/orch_r109_l1_20260915/fit/CONTROL/checkpoints/000009572",
+          "segment": 5,
+          "terminal": false
+        },
+        "FULL": {
+          "pending": false,
+          "phase": "train",
+          "processes": [
+            {
+              "alive": true,
+              "identity": {
+                "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+                "pid": 831712,
+                "start_ticks": "69465625",
+                "uid": 2524
+              },
+              "index": 0
+            },
+            {
+              "alive": true,
+              "identity": {
+                "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+                "pid": 831719,
+                "start_ticks": "69465683",
+                "uid": 2524
+              },
+              "index": 1
+            },
+            {
+              "alive": true,
+              "identity": {
+                "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+                "pid": 831726,
+                "start_ticks": "69465743",
+                "uid": 2524
+              },
+              "index": 2
+            }
+          ],
+          "resume": "/localhome/local-rohing/orch_r109_l1_20260915/fit/FULL/checkpoints/000009572",
+          "segment": 5,
+          "terminal": false
+        }
+      },
+      "compare_only_matched_updates": true,
+      "hard_end_unix": 1789491360,
+      "independent_arms": true,
+      "maximum_total_segments_per_arm": 512,
+      "native_cutoff_unix": 1789491060,
+      "observed_unix": 1789466385.8448064,
+      "source_sha256": "a220eb7616c4dd8aee83d8e6e594a2a3baed861612adad1efbef7faa2b58f7e0"
+    },
+    "CPU_LAUNCH.json": {
+      "hard_end_unix": 1789491360,
+      "identity": {
+        "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+        "pid": 828120,
+        "start_ticks": "69452936",
+        "uid": 2524
+      },
+      "started_unix": 1789466090.2230422
+    }
+  },
+  "experience": {
+    "admission": {
+      "rows": 4,
+      "unique_tasks": 4,
+      "eligible_sha256": "89723bdcd062518f3a5d93550abc85492345c97ec1531dc50df06978912bd659",
+      "source_label": "R109_SELF_GENERATED_FUNCTIONAL",
+      "teacher_l2": false
+    },
+    "FULL": {
+      "supervisor": {
+        "identity": {
+          "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+          "pid": 829676,
+          "start_ticks": "69458534",
+          "uid": 2524
+        },
+        "alive": true
+      }
+    },
+    "CONTROL": {
+      "supervisor": {
+        "identity": {
+          "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+          "pid": 829677,
+          "start_ticks": "69458535",
+          "uid": 2524
+        },
+        "alive": true
+      }
+    }
+  },
+  "gpu": [
+    {
+      "index": 0,
+      "memory_mib": 30017,
+      "utilization_percent": 100
+    },
+    {
+      "index": 1,
+      "memory_mib": 21169,
+      "utilization_percent": 100
+    },
+    {
+      "index": 2,
+      "memory_mib": 17517,
+      "utilization_percent": 2
+    },
+    {
+      "index": 3,
+      "memory_mib": 34665,
+      "utilization_percent": 100
+    },
+    {
+      "index": 4,
+      "memory_mib": 15613,
+      "utilization_percent": 91
+    },
+    {
+      "index": 5,
+      "memory_mib": 15741,
+      "utilization_percent": 80
+    },
+    {
+      "index": 6,
+      "memory_mib": 15637,
+      "utilization_percent": 66
+    }
+  ]
+}

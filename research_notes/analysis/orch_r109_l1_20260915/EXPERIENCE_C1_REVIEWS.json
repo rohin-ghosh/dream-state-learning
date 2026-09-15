@@ -1,0 +1,59 @@
+{
+  "schema": "R109_NATIVE_FUNCTIONAL_AUTHOR_REVIEW_C1",
+  "node": "node2",
+  "source_archive_sha256": "862b2c27a45631ae5c25fbc692ab32af35505ce05b80bc095578191f8698087e",
+  "node_plan_sha256": "16f919726c925e7dbd5fe44e927e9bb2b2f3000b2c2a773eb33b820ae69a0b82",
+  "reviewer": "R109_L1_builder_full_native_text_review_20260915",
+  "selection": "Focused bounded diagnostic, not random prevalence sample; outcomes alone never admit",
+  "accepted": [
+    {
+      "path": "generation/gpu4/CALL_000514.json",
+      "call_sha256": "ec039ab1432279fa8662b701b780e7ad542dbf357517cb59dde5a26619e0bb49",
+      "draft_path": "generation/gpu4/CALL_000513.json",
+      "draft_sha256": "4bfa7b1f4adb0276b647072dc597bd541b7efd546e855c6e321b5b2868521927",
+      "source_task_id": "gsm8k-train-798",
+      "full_text_read": true,
+      "functional_verdict": "PASS",
+      "grounding_verdict": "PASS",
+      "property": "ARITHMETIC_ERROR_CORRECTED",
+      "evidence": "Actual own draft wrongly divides the remaining96 by12 as9. Child continuation recomputes the same supplied quantities and division as8, changing the answer without external feedback, fabricated observations, or altered premises. This is one realized correction, not general metacognition evidence."
+    },
+    {
+      "path": "generation/gpu6/CALL_000480.json",
+      "call_sha256": "9023ca9a0d8d40dc11c8fbc32c9001de9d1f590e435bc5a037f316b9ef68926e",
+      "source_task_id": "gsm8k-train-2936",
+      "full_text_read": true,
+      "functional_verdict": "PASS",
+      "grounding_verdict": "PASS",
+      "property": "TASK_CONSTRAINT_USED",
+      "evidence": "Child uses both supplied fractional categories and the remainder constraint, obtains172 and258 and subtracts them from516 to derive86. Actual quantitative relation use, not a perception label or heading count; no correction or novel observation claimed."
+    },
+    {
+      "path": "generation/gpu6/CALL_000552.json",
+      "call_sha256": "c004bd5057092d419d8353c3eb322ab177882980754921ed14a51efb0099d74e",
+      "source_task_id": "gsm8k-train-2829",
+      "full_text_read": true,
+      "functional_verdict": "PASS",
+      "grounding_verdict": "PASS",
+      "property": "TASK_CONSTRAINT_USED",
+      "evidence": "Child applies the actual three-quarter time constraint, converts2.25hours to135minutes, then divides by15minutes/page to derive9pages. The unit conversion is used consequentially; no fictional test or outside observation."
+    },
+    {
+      "path": "generation/gpu6/CALL_000456.json",
+      "call_sha256": "295ed51a0ea0e259d577c8147137936ba75433a4badd29f211fc449b3a3b4427",
+      "source_task_id": "gsm8k-train-7284",
+      "full_text_read": true,
+      "functional_verdict": "PASS",
+      "grounding_verdict": "PASS",
+      "property": "TASK_CONSTRAINT_USED",
+      "evidence": "Child maps the stated itinerary to all three supplied distances5,3,8 and uses each once to get16. The actual start/end and route constraints determine the answer; this is task-grounded work, NOT real tool retrieval or evidence-hop success."
+    }
+  ],
+  "excluded_diagnostics": [
+    {"node":"node1","path":"generation/gpu1/CALL_000261.json","sha256":"b36eb7bfb80f6f1c5c0f9eab8e7909dba209ccd2fd1f12b0ae491e42554a8e7b","reason":"Draft already mathematically correct10; changed oracle status came only from exact FINAL layout. Not arithmetic correction."},
+    {"node":"node1","path":"generation/gpu6/CALL_000514.json","sha256":"14322ef0e40be235052dd708427c0cb61912d6d86db24b30e500a55b6034876c","reason":"Same source task and byte-identical corrected target as accepted node2gpu4; duplicate not independent experience."},
+    {"node":"node2","path":"generation/gpu6/CALL_000529.json","sha256":"84e04e78e03b63781721e672ec8dd2e25bc5b649eeeedb99f280f68e7f2aa0bc","reason":"Same corrected source problem; exclude correlated duplicate from initial four-task cohort."},
+    {"node":"node2","path":"generation/gpu6/CALL_000504.json","sha256":"25e3c787a95280116ab7acccef3748a63eea8851fbf9bb5499210915e6471415","reason":"Before-versus-at threshold wording ambiguity; oracle correct does not settle premise semantics. Not admitted."}
+  ],
+  "claim": "Four distinct native child trajectories on reused TRAIN tasks; not four novel tasks, no teacher/L2, no held admission, no retained learning gain claim"
+}

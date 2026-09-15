@@ -1,5 +1,5 @@
 import unittest
-from unittest.mock import patch
+from unittest.mock import patch, Mock
 
 from gpu import orch_r109_l1_async as scheduler
 
@@ -40,6 +40,16 @@ class AsyncTests(unittest.TestCase):
         self.assertFalse(scheduler.cpu_binding('/tmp', str(scheduler.ROOT / 'source'), ''))
         self.assertFalse(scheduler.cpu_binding(scheduler.ROOT.parent, '/tmp/other', ''))
         self.assertFalse(scheduler.cpu_binding(scheduler.ROOT.parent, str(scheduler.ROOT / 'source'), '0'))
+
+    def test_exiting_proc_is_not_failed_until_waitpid_settles(self):
+        child = Mock()
+        child.poll.return_value = None
+        self.assertIsNone(scheduler.exit_codes([{'child':child}]))
+        child.poll.return_value = 0
+        self.assertEqual(scheduler.exit_codes([{'child':child}]), [0])
+        child.poll.return_value = -9
+        self.assertEqual(scheduler.exit_codes([{'child':child}]), [-9])
+        self.assertEqual(scheduler.exit_codes([{'child':None}]), [None])
 
 
 if __name__ == '__main__':

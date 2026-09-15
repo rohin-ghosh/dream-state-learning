@@ -1,0 +1,35 @@
+{
+  "schema": "R109_L1_INDEPENDENT_ARM_RECOVERY_V3",
+  "cpu_passed": true,
+  "cpu_test_methods": 29,
+  "native_focused_test_methods": 7,
+  "builder_line": "[Builder] 2026-09-15T09:54Z R109 L1 V3 immediate non-material supervisor repair:29CPU testsPASS; defer unset Popen returncodes and record every actual exit code. V2 assertion lacked exit-code evidence, exact cause not overclaimed. Both FULL3 and CONTROL1 completed128updates and committed9572; native optimizer/RNG/COMMIT hashes verified. Recover only9572->fixed32ON/OFF+held readouts, never repeat completed training; old guardian terminal and model slots empty. Original architecture, recipe, source archive,14slots112GPUh/end16:56/native16:51 unchanged; no publisher gate.",
+  "source_sha256": "a220eb7616c4dd8aee83d8e6e594a2a3baed861612adad1efbef7faa2b58f7e0",
+  "supplement_archive_sha256": "40853fc78ef8cd0a67f7aef24bc3e08b4a3c0691946eb8855c26b52aeb6ca980",
+  "files": {
+    "test_orch_r109_l1_async.py": "103b998912b2df67d73d52272665d8c71ce9f7bd2d0585b8e1083f05e0bafb78",
+    "orch_r109_l1_async.py": "a220eb7616c4dd8aee83d8e6e594a2a3baed861612adad1efbef7faa2b58f7e0"
+  },
+  "original_plan_sha256": "16f919726c925e7dbd5fe44e927e9bb2b2f3000b2c2a773eb33b820ae69a0b82",
+  "original_archive_sha256": "862b2c27a45631ae5c25fbc692ab32af35505ce05b80bc095578191f8698087e",
+  "started_unix": 1789462560,
+  "hard_end_unix": 1789491360,
+  "native_cutoff_unix": 1789491060,
+  "last_new_fit_before_unix": 1789490460,
+  "maximum_total_segments_per_arm": 512,
+  "updates_per_segment": 128,
+  "allocation": {
+    "FULL": [
+      0,
+      1,
+      2
+    ],
+    "CONTROL": [
+      3
+    ]
+  },
+  "reset": false,
+  "corrected_l2_ingestion": "DEFERRED_NO_COMPILER",
+  "publisher": "Main",
+  "recovery": "EXACT_COMMITTED9572_READOUT_NO_TRAINING_REPLAY"
+}

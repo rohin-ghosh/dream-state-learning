@@ -58,6 +58,19 @@ def cpu_binding(cwd, pythonpath, visible_devices):
             and pythonpath == str(ROOT / 'source') and visible_devices == '')
 
 
+def exit_codes(jobs):
+    codes = []
+    for job in jobs:
+        if job['child'] is None:
+            codes.append(None)
+            continue
+        code = job['child'].poll()
+        if code is None:
+            return None
+        codes.append(code)
+    return codes
+
+
 def verify():
     from gpu import orch_r109_l1_run as original
     directory = Path(__file__).resolve().parent
@@ -264,7 +277,34 @@ def launch(plan, arm, phase, segment, resume, index, rank):
     return dict(**receipt, child=child)
 
 
-def supervise():
+def recovery_custody():
+    from gpu import orch_r109_l1_run as original
+    from gpu.orch_r109_l1_ops import identity
+    prior = ROOT / 'async_v2'
+    old_cpu = read(prior / 'CPU_LAUNCH.json')['identity']
+    assert not alive(old_cpu) and (prior / 'FAILURE.json').exists()
+    inherited = []
+    for arm, indexes in TOPOLOGY.items():
+        complete_path = ROOT / 'fit' / arm / 'segment004/COMPLETE.json'
+        complete = read(complete_path)
+        assert complete['update'] == 9572
+        from organism_v6 import orch_combined_l1_continual as storage
+        assert storage.verify_checkpoint(Path(complete['checkpoint']))['metadata']['update'] == 9572
+        for index in indexes:
+            path = ROOT / f'async_train_4_{arm}_{index}_LAUNCH.json'
+            row = read(path)
+            assert not alive(row['identity']) and row['index'] == index
+            inherited.append(dict(row, receipt_sha256=sha(path)))
+    receipt = dict(old_cpu_identity=old_cpu, guardian_identity=identity(os.getpid()),
+        phase='train', segment=4, inherited=inherited, source_sha256=sha(__file__),
+        original_failure_sha256=sha(prior / 'FAILURE.json'), observed_unix=time.time(),
+        model_jobs_untouched=True, hard_end_unix=END,
+        recovery='COMMITTED9572_ONLY_READOUT_NEXT_NO_OPTIMIZER_REPLAY')
+    original.write(Path(__file__).parent / 'CUSTODY.json', receipt)
+    return receipt
+
+
+def supervise(recover=False):
     import fcntl
     from gpu import orch_r109_l1_run as original
     plan = verify()
@@ -272,7 +312,7 @@ def supervise():
     lock = (directory / 'LOCK').open('a')
     fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
     assert not (directory / 'CUSTODY.json').exists(), 'explicit_recovery_required_no_counter_reset'
-    custody = takeover()
+    custody = recovery_custody() if recover else takeover()
     states = {}
     for arm in TOPOLOGY:
         jobs = [dict(row, child=None) for row in custody['inherited']
@@ -292,7 +332,12 @@ def supervise():
                 if not state['pending']:
                     if not ready(arm, state['jobs'], occupied):
                         continue
-                    assert all(job['child'] is None or job['child'].poll() == 0 for job in state['jobs']), 'stage_failed_preserve_evidence'
+                    codes = exit_codes(state['jobs'])
+                    if codes is None:
+                        continue
+                    original.write(directory / f'EXIT_{arm}_{state["segment"]}_{state["phase"]}.json',
+                        dict(returncodes=codes, identities=[job['identity'] for job in state['jobs']], observed_unix=time.time()))
+                    assert all(code in (None, 0) for code in codes), 'stage_failed_preserve_evidence'
                     if state['phase'] == 'train':
                         complete = read(ROOT / 'fit' / arm / f'segment{state["segment"]:03d}' / 'COMPLETE.json')
                         assert complete['update'] == 8932 + 128 * (state['segment'] + 1)
@@ -351,14 +396,14 @@ def supervise():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('action', choices=['supervise', 'readout', 'verify'])
+    parser.add_argument('action', choices=['supervise', 'recover', 'readout', 'verify'])
     parser.add_argument('--arm', choices=list(TOPOLOGY))
     parser.add_argument('--index', type=int)
     parser.add_argument('--segment', type=int)
     parser.add_argument('--resume', type=Path)
     options = parser.parse_args()
-    if options.action == 'supervise':
-        supervise()
+    if options.action in ('supervise', 'recover'):
+        supervise(options.action == 'recover')
     elif options.action == 'verify':
         plan = verify()
         print(json.dumps(dict(status='PASS', plan_sha256=sha(ROOT / 'PLAN.json'), source_sha256=sha(__file__))))
