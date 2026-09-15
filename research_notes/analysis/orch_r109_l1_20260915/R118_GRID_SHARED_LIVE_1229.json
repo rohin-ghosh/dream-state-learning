@@ -1,0 +1,354 @@
+{
+  "branches": {
+    "A4": {
+      "activation": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/SHARED_ACTIVATION.json",
+        "sha256": "47cf05681f149fe2c7b779b66bd2369b1528ba4c98523bd4b47d59b84886a69c"
+      },
+      "boundary": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/shared_boundaries/C0006.json",
+        "sha256": "9078d24c36ad73714e6181732e182c4808d55f193314b70613783922cafb1915"
+      },
+      "bounds": {
+        "final_unix": 1789491600.0,
+        "hard_end_unix": 1789491720.0,
+        "max_native_calls": 1858,
+        "max_parent_calls": 298,
+        "parent_wait_seconds": 120,
+        "physical": 7,
+        "train_end_unix": 1789491300.0
+      },
+      "first_shared_capture": {
+        "cycle": 7,
+        "finished_unix": 1789475333.7142234,
+        "number": 457,
+        "purpose": "episode",
+        "receipt": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/calls/N00457.json",
+          "sha256": "18da82b9c46f5c2e2d3b393a8de8eb75a0f7fa7f601a23afc7ea28bac63ab9a1"
+        },
+        "shared_checkpoint_sha256": "084f62110ca5e42fb55145675538f6f88e10ce684a9c8847c49d1c858df7d264",
+        "shared_generation": 0,
+        "split": "TRAIN",
+        "status": "COMPLETE"
+      },
+      "guard": {
+        "activation": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/SHARED_ACTIVATION.json",
+          "sha256": "47cf05681f149fe2c7b779b66bd2369b1528ba4c98523bd4b47d59b84886a69c"
+        },
+        "branch": "A4",
+        "command": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r118_grid_shared_run",
+          "guard",
+          "--root",
+          "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4"
+        ],
+        "common": {
+          "ADOPTION.json": "6dfc7dcd59e86648478a13852ff740701930f36499c92bef1178d3e645dcf7b5",
+          "CONFIG.json": "e5ac72af0d88e4481174f853fbf3951294278b1c9f62c88080f7d4b816cceb51",
+          "INITIALIZED.json": "d4e2c87e97bcfccb639d332d996f9f239023bbaa19f9312ce95d30f3f0aecff6"
+        },
+        "explicit_main_launch_go": true,
+        "identity": {
+          "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+          "pid": 1044197,
+          "start_ticks": "1079342",
+          "uid": 2524
+        },
+        "local_optimizer_steps": 0,
+        "next_cycle": 7,
+        "original_bounds": {
+          "final_unix": 1789491600.0,
+          "hard_end_unix": 1789491720.0,
+          "max_native_calls": 1858,
+          "max_parent_calls": 298,
+          "parent_wait_seconds": 120,
+          "physical": 7,
+          "train_end_unix": 1789491300.0
+        },
+        "started_unix": 1789475233.2349982
+      },
+      "guard_launch_ref": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/SHARED_GUARD_CPU_LAUNCH.json",
+        "sha256": "6e8c3f6239b8c4e2f7d971e851d946ba3d706adc15a729eace71da216682bfda"
+      },
+      "handoff": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/R118_SHARED_HANDOFF_BRANCH.json",
+        "sha256": "937079c072ed864aa21f59ffef103193452afa915af8f4c9ed836c0c0b649b25"
+      },
+      "loaded": {
+        "local_optimizer_steps": 0,
+        "next_cycle": 7,
+        "observed_unix": 1789475321.8720946,
+        "optimizer_owner": "F1",
+        "pid": 1044750,
+        "process": [
+          "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+          1044750,
+          1080148
+        ],
+        "session": {
+          "adapter": {
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "files": [
+              [
+                "README.md",
+                "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+              ],
+              [
+                "adapter_config.json",
+                "cda5647f14cad59912853337ea797fca9dccf69d5c880d0985f08f93341a18b5"
+              ],
+              [
+                "adapter_model.safetensors",
+                "840be0ce727cd6c4114e511fcc47b6903696dee59cf61c93df3f84ed9b049733"
+              ]
+            ],
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/cycle_0006/checkpoint/adapter",
+            "state_sha256": "f0718b300486032757608aaff0c2a99896f84ade6a091cc9b78ec3b19630652d"
+          },
+          "branch": "A4",
+          "checkpoint_sha256": "084f62110ca5e42fb55145675538f6f88e10ce684a9c8847c49d1c858df7d264",
+          "config_sha256": "e5ac72af0d88e4481174f853fbf3951294278b1c9f62c88080f7d4b816cceb51",
+          "generation": 0
+        }
+      },
+      "loaded_ref": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/SHARED_LOADED.json",
+        "sha256": "1e903acdb1432ae25949d1e34913a771c50f969cf3d946f0ddb884948483e709"
+      },
+      "native_alive": true,
+      "native_launch": {
+        "command": [
+          "timeout",
+          "--signal=TERM",
+          "--kill-after=2s",
+          "16473s",
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r118_grid_shared_run",
+          "resident",
+          "--root",
+          "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4"
+        ],
+        "observed_unix": 1789475241.292959,
+        "pid": 1044749
+      },
+      "native_launch_ref": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/shared_guard/LAUNCH.json",
+        "sha256": "c299f910fbce9e38466a31e1dd94ab003d059d1172cddbe67f5d8f321c4fba69"
+      },
+      "next_cycle": 7,
+      "pre_gpu": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/shared_guard/PRE_GPU.json",
+        "sha256": "8a3f3eee2d9e440b4780474f063c0771e7c0e7eb39d768503e1db61a6fea9576"
+      },
+      "predecessors_exited": true,
+      "release": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/R118_SHARED_RELEASE/RELEASED.json",
+        "sha256": "22f33b5bed6e56b469b1ddd75ef548435d25b444fc4b527d935efb07a6f65db3"
+      },
+      "root": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4",
+      "strict_scan": {
+        "blocking_reasons": [],
+        "clear": true,
+        "receipt": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/shared_guard/admission/001.json",
+          "sha256": "4e5ca394d937d630178672979f55ec63860c1da99226ab55b5d63a39a41295f9"
+        },
+        "scanner_euid": 0
+      },
+      "terminal": null
+    },
+    "F4": {
+      "activation": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/SHARED_ACTIVATION.json",
+        "sha256": "c3a58b13187ae30a88282087aa72f1490a3ebe6af76297cc79b5174e871df6e1"
+      },
+      "boundary": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/shared_boundaries/C0007.json",
+        "sha256": "6ec68cafa1f6a709a39e48155dc23c24b891a8018ac8abda84fbd63e8e69222a"
+      },
+      "bounds": {
+        "final_unix": 1789491600.0,
+        "hard_end_unix": 1789491720.0,
+        "max_native_calls": 1858,
+        "max_parent_calls": 298,
+        "parent_wait_seconds": 600,
+        "physical": 3,
+        "train_end_unix": 1789491300.0
+      },
+      "first_shared_capture": {
+        "cycle": 8,
+        "finished_unix": 1789475327.5637805,
+        "number": 520,
+        "purpose": "episode",
+        "receipt": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/calls/N00520.json",
+          "sha256": "ccb285b6cf162f1ef968266e2e2aef359b5e386df05ea1d94a4ebabbe60c1483"
+        },
+        "shared_checkpoint_sha256": "084f62110ca5e42fb55145675538f6f88e10ce684a9c8847c49d1c858df7d264",
+        "shared_generation": 0,
+        "split": "TRAIN",
+        "status": "COMPLETE"
+      },
+      "guard": {
+        "activation": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/SHARED_ACTIVATION.json",
+          "sha256": "c3a58b13187ae30a88282087aa72f1490a3ebe6af76297cc79b5174e871df6e1"
+        },
+        "branch": "F4",
+        "command": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r118_grid_shared_run",
+          "guard",
+          "--root",
+          "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4"
+        ],
+        "common": {
+          "ADOPTION.json": "6dfc7dcd59e86648478a13852ff740701930f36499c92bef1178d3e645dcf7b5",
+          "CONFIG.json": "e5ac72af0d88e4481174f853fbf3951294278b1c9f62c88080f7d4b816cceb51",
+          "INITIALIZED.json": "d4e2c87e97bcfccb639d332d996f9f239023bbaa19f9312ce95d30f3f0aecff6"
+        },
+        "explicit_main_launch_go": true,
+        "identity": {
+          "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+          "pid": 1044185,
+          "start_ticks": "1079260",
+          "uid": 2524
+        },
+        "local_optimizer_steps": 0,
+        "next_cycle": 8,
+        "original_bounds": {
+          "final_unix": 1789491600.0,
+          "hard_end_unix": 1789491720.0,
+          "max_native_calls": 1858,
+          "max_parent_calls": 298,
+          "parent_wait_seconds": 600,
+          "physical": 3,
+          "train_end_unix": 1789491300.0
+        },
+        "started_unix": 1789475232.4139044
+      },
+      "guard_launch_ref": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/SHARED_GUARD_CPU_LAUNCH.json",
+        "sha256": "165e06e929b75e4f15af4a7c1b023a54ddbc3845bd16ac61daa30d98e98059f8"
+      },
+      "handoff": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/R118_SHARED_HANDOFF_BRANCH.json",
+        "sha256": "230750d301e54f2967ce4511ddebf17833ed2363b7b55ca5cb5fb3bbba9ee9a7"
+      },
+      "loaded": {
+        "local_optimizer_steps": 0,
+        "next_cycle": 8,
+        "observed_unix": 1789475317.8606133,
+        "optimizer_owner": "F1",
+        "pid": 1044407,
+        "process": [
+          "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+          1044407,
+          1079632
+        ],
+        "session": {
+          "adapter": {
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "files": [
+              [
+                "README.md",
+                "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+              ],
+              [
+                "adapter_config.json",
+                "cda5647f14cad59912853337ea797fca9dccf69d5c880d0985f08f93341a18b5"
+              ],
+              [
+                "adapter_model.safetensors",
+                "840be0ce727cd6c4114e511fcc47b6903696dee59cf61c93df3f84ed9b049733"
+              ]
+            ],
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/cycle_0006/checkpoint/adapter",
+            "state_sha256": "f0718b300486032757608aaff0c2a99896f84ade6a091cc9b78ec3b19630652d"
+          },
+          "branch": "F4",
+          "checkpoint_sha256": "084f62110ca5e42fb55145675538f6f88e10ce684a9c8847c49d1c858df7d264",
+          "config_sha256": "e5ac72af0d88e4481174f853fbf3951294278b1c9f62c88080f7d4b816cceb51",
+          "generation": 0
+        }
+      },
+      "loaded_ref": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/SHARED_LOADED.json",
+        "sha256": "963a142dab6f624b2254033665ce0bb1b7fcd946a2b8fc71c0b213b87f4df374"
+      },
+      "native_alive": true,
+      "native_launch": {
+        "command": [
+          "timeout",
+          "--signal=TERM",
+          "--kill-after=2s",
+          "16478s",
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r118_grid_shared_run",
+          "resident",
+          "--root",
+          "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4"
+        ],
+        "observed_unix": 1789475236.1355498,
+        "pid": 1044406
+      },
+      "native_launch_ref": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/shared_guard/LAUNCH.json",
+        "sha256": "c4e93a0f545cac68586b5002d9afa875a051d7d1258b3743fca61eb89ba4c677"
+      },
+      "next_cycle": 8,
+      "pre_gpu": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/shared_guard/PRE_GPU.json",
+        "sha256": "cb15c20f6a0477da661b2cd0227a09f022edd9f8d8d44598c756aa858b4f2bd9"
+      },
+      "predecessors_exited": true,
+      "release": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/R118_SHARED_RELEASE/RELEASED.json",
+        "sha256": "38bbe50a3b3adc4242886114f5154850fc28898454debf549b9ed3bab6f80d68"
+      },
+      "root": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4",
+      "strict_scan": {
+        "blocking_reasons": [],
+        "clear": true,
+        "receipt": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/shared_guard/admission/000.json",
+          "sha256": "3b92d839f618c7d2da46c7dc780f803e132366e3390f97d89a8a0cc79abd948d"
+        },
+        "scanner_euid": 0
+      },
+      "terminal": null
+    }
+  },
+  "common": {
+    "ADOPTION.json": {
+      "path": "/localhome/local-rohing/orch_r116_shared_node5_20260915_attempt1/ADOPTION.json",
+      "sha256": "6dfc7dcd59e86648478a13852ff740701930f36499c92bef1178d3e645dcf7b5"
+    },
+    "CONFIG.json": {
+      "path": "/localhome/local-rohing/orch_r116_shared_node5_20260915_attempt1/CONFIG.json",
+      "sha256": "e5ac72af0d88e4481174f853fbf3951294278b1c9f62c88080f7d4b816cceb51"
+    },
+    "INITIALIZED.json": {
+      "path": "/localhome/local-rohing/orch_r116_shared_node5_20260915_attempt1/INITIALIZED.json",
+      "sha256": "d4e2c87e97bcfccb639d332d996f9f239023bbaa19f9312ce95d30f3f0aecff6"
+    }
+  },
+  "local_optimizers_created": 0,
+  "observed_utc": "2026-09-15T12:29:26.016656+00:00",
+  "raw_output": false,
+  "schema": "R118_GRID_SHARED_LIVE_V1",
+  "signals_sent": false,
+  "source_unchanged": true
+}

@@ -57,7 +57,8 @@ FALLBACK_PARENT_FIELDS = {
         REFLECTION=dict(mode='short', max_new_tokens=1024)),
 }
 SCHEMA = 'ORCH_R111_CLAUDE_BROKER_V1'
-TERMINAL_FILENAMES = ('TERMINAL.json', 'R118_WAIT600_TERMINAL.json', 'SHARED_TERMINAL.json')
+TERMINAL_FILENAMES = ('TERMINAL.json', 'R118_WAIT600_TERMINAL.json', 'SHARED_TERMINAL.json',
+    'R118_SHARED_REPAIR_TERMINAL.json')
 FAMILIES = {'F1': 'route', 'F2': 'math', 'F3': 'code', 'F4': 'grid'}
 CLASSES = ('perception', 'persistence', 'metacognition', 'curiosity', 'goal_regulation',
     'meta_goal_regulation', 'reflection', 'action_steering', 'affective_value_regulation',

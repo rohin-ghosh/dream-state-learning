@@ -1,0 +1,58 @@
+{
+  "branch": "A3",
+  "files": {
+    "parent_claude/C007_E0_PARENT.claim/PUBLISHED.json": {
+      "fields": {
+        "id": "C007_E0_PARENT",
+        "late": false,
+        "provider_dispatched": true,
+        "published_unix": 1789475563.4761846,
+        "status": "COMPLETE"
+      },
+      "mtime": 1789475566.4877052,
+      "sha256": "e959cae5cc23d2d33eae54a8c3717de11718c0b178cba3aeffc4939582557d82"
+    },
+    "parent_claude/C007_E0_PARENT.claim/RESERVATION.json": {
+      "fields": {
+        "deadline_unix": 1789497869.1416624,
+        "id": "C007_E0_PARENT"
+      },
+      "mtime": 1789475502.186089,
+      "sha256": "4632e29266bd82ed7f2a01996f782472e2d89776e708e616830ba10e01422437"
+    },
+    "parent_queue/C007_E0_PARENT.response.json": {
+      "fields": {
+        "actual_model": "openai/openai/gpt-6-astra",
+        "finished_unix": 1789475527.8076878,
+        "id": "C007_E0_PARENT",
+        "lane_deadline_unix": 1789475562.1019185,
+        "provider_dispatched": true,
+        "retry": false,
+        "status": "COMPLETE"
+      },
+      "mtime": 1789475560.523648,
+      "sha256": "c7645729b13b239dc0ea0282105fee29a651afc5dd38698c5990707daaec20a1"
+    },
+    "reservations/C007_E0_PARENT.json": {
+      "fields": {
+        "finished_unix": 1789475562.4353054,
+        "id": "C007_E0_PARENT",
+        "kind": "PARENT",
+        "late": true,
+        "started_unix": 1789475382.0900028,
+        "status": "MISSING"
+      },
+      "mtime": 1789475562.4346664,
+      "sha256": "25f36283568839cc8151392f77f860f79ef0e82260b6de3620aeaacd294a6bb0"
+    }
+  },
+  "interpretation": {
+    "child_late": true,
+    "child_received_status": "MISSING",
+    "counts_as_received_intervention": false,
+    "next_action": "Continue original child reflection and next scheduled parent; preserve source/caps/deadline. Publication receipt follows original lane cutoff; do not count provider completion as received intervention.",
+    "no_reclassification_or_retry": true,
+    "provider_status": "COMPLETE"
+  },
+  "observed_unix": 1789475599.312748
+}

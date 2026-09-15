@@ -1,0 +1,70 @@
+{
+  "A4": {
+    "branch_handoff_sha256": "937079c072ed864aa21f59ffef103193452afa915af8f4c9ed836c0c0b649b25",
+    "broker_migration_sha256": "d833a85566ac6c2ed0ef3dd42ad7d3b53447110700a99f4feb5d61dd66d43624",
+    "broker_pid": 1255534,
+    "native_charged": 456,
+    "next_cycle": 7,
+    "parent_charged": 30,
+    "predecessors_exited": [
+      374239,
+      374024
+    ],
+    "release_sha256": "22f33b5bed6e56b469b1ddd75ef548435d25b444fc4b527d935efb07a6f65db3",
+    "released_unix": 1789474373.6258402,
+    "root": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4",
+    "terminal": "SHARED_TERMINAL.json",
+    "wait_seconds": 120
+  },
+  "F4": {
+    "current_cycle": 7,
+    "guard_pid": 804050,
+    "last_parent": 34,
+    "native_pid": 804107,
+    "root": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4",
+    "wait_seconds": 600,
+    "watcher_pid": 967286
+  },
+  "authorization": {
+    "eight_ready_sha256": "5bff8653270e7e83c87bf045c72912331c4265e3368b7c7b9e052a528bd377ca",
+    "roster_sha256": "595f91e74065b69baee7e0be895fde98ab6bf872896848fea9a674118014f375"
+  },
+  "cpu": {
+    "frozen_http_passed": 13,
+    "local_passed": 29,
+    "native_release_passed": 16,
+    "skipped": 0
+  },
+  "limitations": [
+    "F4 release not yet observed; do not claim all eight released.",
+    "Initial sandbox migration timed out before mutation; escalated host-PID rerun completed."
+  ],
+  "migration_source": {
+    "node_path": "/localhome/local-rohing/orch_r118_grid_release_20260915_v1/A4_BROKER_MIGRATION_SOURCE.py",
+    "sha256": "a41c615ede5256bbe3230f9894610c2365e3d97a455f50ea8e8dd39d30175d35"
+  },
+  "native_source": "/localhome/local-rohing/orch_r118_grid_release_20260915_v1",
+  "native_successor_source": "/localhome/local-rohing/orch_r118_grid_shared_source_20260915_attempt2",
+  "observed_utc": "2026-09-15T12:19:00Z",
+  "source_sha256": {
+    "gpu/orch_r118_a4_shared_broker.py": "3ecef5e90fe99b1d4bbfc30c3cc8e8f1a5419a7bf1a39f6c461b2389cfde2f7f",
+    "gpu/orch_r118_grid_release.py": "978f1aa0cd0b672e99756db6b988da2cededf44310b86de3f83f588d0893fbf4",
+    "tests/test_orch_r118_a4_shared_broker.py": "a070d7f0194ddc0b0b3d973699204c4526538337aa4d58fb0640fad2cbbd8452",
+    "tests/test_orch_r118_grid_release.py": "a517275d85c884b16f96bdf072cc02c6fa1ce6756192377aca8c9776d218725d"
+  },
+  "status": {
+    "A4": "RELEASED",
+    "F4": "ARMED_WAITING_COMPLETED_C7"
+  },
+  "unchanged": {
+    "calls_retried": 0,
+    "final_unix": 1789491600.0,
+    "hard_end_unix": 1789491720.0,
+    "main_sole_common_config": true,
+    "native_call_cap": 1858,
+    "own_shared_gpu_launches": 0,
+    "parent_call_cap": 298,
+    "raw_node_only": true,
+    "train_end_unix": 1789491300.0
+  }
+}

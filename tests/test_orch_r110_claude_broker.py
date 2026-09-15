@@ -174,6 +174,38 @@ class ClaudeBrokerTests(unittest.TestCase):
         self.assertEqual(broker.sha(root/'TERMINAL.json'), historical)
         self.assertFalse((root/'parent_claude/RUNNER.lock').exists())
 
+    def test_f4_repair_terminal_preserves_failure_and_stops_next_dispatch(self):
+        root = Path(self.config['remote_root'])
+        queue = root/'parent_queue'
+        queue.mkdir(parents=True)
+        historical_path = root/'SHARED_TERMINAL.json'
+        historical_path.write_text('{"status":"FAILED","exit_code":1}')
+        historical = broker.sha(historical_path)
+        for identifier in ('P0037', 'P0038'):
+            (queue/(identifier+'.request.json')).write_text('{}')
+        self.config.update(branch='F4', family='grid', queue_transport='node_local',
+            terminal_filename='R118_SHARED_REPAIR_TERMINAL.json')
+        self.rebind()
+        config_path = self.root/'CONFIG.json'
+        launch_path = self.root/'LAUNCH.json'
+        broker.write(config_path, self.config)
+        broker.write(launch_path, self.launch)
+        seen = []
+        def finish(store, config, launch, name, buffer, prompt_root, principles_path):
+            seen.append(name)
+            broker.write(root/'R118_SHARED_REPAIR_TERMINAL.json', {'status':'COMPLETE'})
+            return 'COMPLETE'
+        with patch.object(broker, 'ROOT', self.root), \
+                patch.object(broker, 'source_pins', return_value=self.config['source_files']), \
+                patch.dict(broker.os.environ, {'CUDA_VISIBLE_DEVICES':''}), \
+                patch.object(broker.shutil, 'disk_usage', return_value=Mock(free=20*1024**3)), \
+                patch.object(broker, 'process_request', side_effect=finish), \
+                patch.object(broker.time, 'sleep'):
+            broker.serve(config_path, launch_path, self.prompts, self.principles)
+        self.assertEqual(seen, ['P0037.request.json'])
+        self.assertEqual(broker.sha(historical_path), historical)
+        self.assertFalse((root/'parent_claude/RUNNER.lock').exists())
+
     def test_config_is_exact_and_pinned(self):
         broker.validate_config(self.config)
         self.config['source_files'] = {}
@@ -479,7 +511,8 @@ class ClaudeBrokerTests(unittest.TestCase):
             path = broker.provider_lock_path(config)
             paths.append(path)
             self.assertEqual(path, Path('/tmp/orch_l2_evaluator_' + branch + '.lock'))
-            with path.open('a') as first, path.open('a') as second:
+            isolated_path = self.root / path.name
+            with isolated_path.open('a') as first, isolated_path.open('a') as second:
                 fcntl.flock(first, fcntl.LOCK_EX | fcntl.LOCK_NB)
                 with self.assertRaises(BlockingIOError):
                     fcntl.flock(second, fcntl.LOCK_EX | fcntl.LOCK_NB)
@@ -489,12 +522,16 @@ class ClaudeBrokerTests(unittest.TestCase):
     def test_r117_branch_dispatch_ignores_other_branch_lock(self):
         self.config.update(provider_lock_scope='branch', queue_transport='node_local')
         self.rebind()
-        with Path('/tmp/orch_l2_evaluator_F2.lock').open('a') as other:
-            fcntl.flock(other, fcntl.LOCK_EX | fcntl.LOCK_NB)
-            result, unused = self.evaluate(lock_path=None)
+        real_provider_lock_path = broker.provider_lock_path
+        with patch.object(broker, 'provider_lock_path',
+                side_effect=lambda config: self.root / real_provider_lock_path(config).name):
+            with (self.root / 'orch_l2_evaluator_F2.lock').open('a') as other:
+                fcntl.flock(other, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                result, unused = self.evaluate(lock_path=None)
         self.assertEqual(result['status'], 'COMPLETE')
         self.assertEqual(result['memory_admission']['provider_lock_scope'], 'branch')
-        self.assertEqual(result['memory_admission']['provider_lock_path'], '/tmp/orch_l2_evaluator_F1.lock')
+        self.assertEqual(result['memory_admission']['provider_lock_path'],
+            str(self.root / 'orch_l2_evaluator_F1.lock'))
 
     def test_exact_lane_wait_minus_thirty(self):
         result, directory = self.evaluate()

@@ -1,0 +1,309 @@
+{
+  "A3_broker": {
+    "config_unchanged": true,
+    "failed_prior_start": {
+      "error": "immutable_source_pins",
+      "pid": 1323893,
+      "preserved": true,
+      "provider_dispatches": 0,
+      "repair": "Original1132 broker dependency bytes plus tested shared-terminal wrapper; same original CONFIG/ledger.",
+      "runtime": "/tmp/orch_r108_code_parent_r118_astra_shared_runtime_1229"
+    },
+    "focused_tests": {
+      "failed": 0,
+      "original_config_source_pins_match": true,
+      "passed": 3,
+      "provider_calls": 0,
+      "seconds": 0.19
+    },
+    "launch_sha256": "7d06ea716c90c87cf57266a174eb27e34d61e865ee63bf80ee8491326528f9cd",
+    "native_source_unchanged": true,
+    "pid": 1333702,
+    "runtime": "/tmp/orch_r108_code_parent_r118_astra_shared_runtime_1230",
+    "source": "/tmp/orch_r108_code_parent_r118_astra_shared_runtime_1230/source",
+    "source_manifest_sha256": "c09ac732af8fca0a0ce6b6d5cd133f884489bdcd152e290254bb78ce8098521f",
+    "started_unix": 1789475452.7960882
+  },
+  "branches": {
+    "A3": {
+      "files": {
+        "R118_CARRY_RESTORED.json": {
+          "data": {
+            "carry_sha256": "95afad14d4dd4d1d630b09cecaf638f7b92cd9a86e9d70218730fba1cd47a8d2",
+            "prior_experience_replayed": false,
+            "settings": {
+              "changes_lifetime_caps": false,
+              "effective_max_new_tokens": 3072,
+              "head_settings_sha256": "df6f84c482f99c2b07490ed46fd62a1dcfd4447bac1b9836ca6c29f3f55a40d6",
+              "mode": "long",
+              "prompt_sha256": "fffc30317c2bb13dea8f1a1e03e9fed7afbd6fac3122796e8600e560856cc2b8",
+              "reflection_applied_by_broker": false,
+              "requested_max_new_tokens": 3072,
+              "status": "BOUND_FOR_LANE_DECODER",
+              "stop_child": false
+            },
+            "source_id": "C006_META_PARENT"
+          },
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/R118_CARRY_RESTORED.json",
+          "sha256": "79027dad530c653316e531a7f4a5b5d7ce867e57e93d426a3758748c1a010db6"
+        },
+        "R118_SHARED_ADMISSION.json": {
+          "blocking_reasons": [],
+          "clear": true,
+          "gpu_uuid": "GPU-67a989f7-2660-a76b-40e8-3619b9fa2987",
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/R118_SHARED_ADMISSION.json",
+          "scanner_euid": 0,
+          "sha256": "8fc0539be1ec011f21e922db5ed29d9dcbbd3e7a5083dc055c417100db9b51b7"
+        },
+        "R118_SHARED_GUARD_DISPATCH.json": {
+          "data": {
+            "guard_pid": 1052977,
+            "physical": 6,
+            "started_unix": 1789475312.6608827
+          },
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/R118_SHARED_GUARD_DISPATCH.json",
+          "sha256": "4f6edab2a91f4f1a80ec8e7930eddc8a346bfdb6f4f9e3a741f57d4e5977b151"
+        },
+        "R118_SHARED_NATIVE_LAUNCH.json": {
+          "data": {
+            "activation_sha256": "c15e51320f7cb56093ec8ddbb478517533ca68364d1ffaa20a54456a45daa528",
+            "admission_sha256": "8fc0539be1ec011f21e922db5ed29d9dcbbd3e7a5083dc055c417100db9b51b7",
+            "identity": {
+              "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+              "command_sha256": "630eab56b1a1c97c65c0b0af21b98baa3493647a6cde5bdecfa666829b54b856",
+              "pid": 1054676,
+              "start_ticks": "1088562",
+              "uid": 2524
+            },
+            "started_unix": 1789475325.4406466
+          },
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/R118_SHARED_NATIVE_LAUNCH.json",
+          "sha256": "4d9965f10d5515fa1c1be405e02c81376627bcc39052b0167d6096bdee91053b"
+        },
+        "SHARED_ACTIVATION.json": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/SHARED_ACTIVATION.json",
+          "sha256": "c15e51320f7cb56093ec8ddbb478517533ca68364d1ffaa20a54456a45daa528"
+        },
+        "SHARED_ACTOR_READY.json": {
+          "data": {
+            "capture_binding": {
+              "shared_checkpoint_sha256": "084f62110ca5e42fb55145675538f6f88e10ce684a9c8847c49d1c858df7d264",
+              "shared_generation": 0,
+              "shared_learner": {
+                "branch": "A3",
+                "checkpoint_sha256": "084f62110ca5e42fb55145675538f6f88e10ce684a9c8847c49d1c858df7d264",
+                "generation": 0
+              }
+            },
+            "initial_readout_repeated": false,
+            "local_optimizer_steps": 0,
+            "next_cycle": 7,
+            "optimizer_owner": "F1",
+            "original_plan_sha256": "9a595b3d93c1c4692d370439666e46f1585f85be958c3197b21ad7cf64e6b8ec",
+            "pid": 1054676,
+            "started_unix": 1789475379.5209615
+          },
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/SHARED_ACTOR_READY.json",
+          "sha256": "2965188b4c814cc48b054f2e09b7a0deff4201d2c760c23eca4054c3efa0401d"
+        }
+      },
+      "guard_pid_alive": true,
+      "native_pid_alive": true,
+      "new_calls": [
+        {
+          "id": "C007_E0_ORIGINAL",
+          "kind": "NATIVE",
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/reservations/C007_E0_ORIGINAL.json",
+          "sha256": "8ccd65e82f71e602fefd6bdcee62dc67a1297ed0009771ac098ab12f05c112cf",
+          "shared_checkpoint_sha256": "084f62110ca5e42fb55145675538f6f88e10ce684a9c8847c49d1c858df7d264",
+          "shared_generation": 0,
+          "status": "COMPLETE",
+          "terminal": true,
+          "tokens": 40
+        },
+        {
+          "id": "C007_E0_PARENT",
+          "kind": "PARENT",
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1/reservations/C007_E0_PARENT.json",
+          "sha256": "c227c27ae31afca7a75272098fcc09f1b9461b0985728ae106b7d13bb7af9aba",
+          "shared_checkpoint_sha256": null,
+          "shared_generation": null,
+          "status": "STARTED",
+          "terminal": null,
+          "tokens": 0
+        }
+      ],
+      "parent_responses": [],
+      "parent_runner_lock": true,
+      "physical": 6,
+      "resume_cycle": 7,
+      "root": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_6_20260915_attempt1"
+    },
+    "F3": {
+      "files": {
+        "R118_CARRY_RESTORED.json": {
+          "data": {
+            "carry_sha256": "7d81d00abfdb78f3ce620036328160e0bbacc0ab72f03db47ed29aff0e3ce595",
+            "prior_experience_replayed": false,
+            "settings": {
+              "changes_lifetime_caps": false,
+              "effective_max_new_tokens": 3072,
+              "head_settings_sha256": "df6f84c482f99c2b07490ed46fd62a1dcfd4447bac1b9836ca6c29f3f55a40d6",
+              "mode": "long",
+              "prompt_sha256": "fffc30317c2bb13dea8f1a1e03e9fed7afbd6fac3122796e8600e560856cc2b8",
+              "reflection_applied_by_broker": false,
+              "requested_max_new_tokens": 3072,
+              "status": "BOUND_FOR_LANE_DECODER",
+              "stop_child": false
+            },
+            "source_id": "C020_E1_PARENT"
+          },
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/R118_CARRY_RESTORED.json",
+          "sha256": "ee6f5ca83d3b36b50ea6e057e3f41ee6b3546385638fbb51ee5b560d9e1740b9"
+        },
+        "R118_SHARED_ADMISSION.json": {
+          "blocking_reasons": [],
+          "clear": true,
+          "gpu_uuid": "GPU-d62ba12e-ff08-9e5e-ba35-14c723f6e05b",
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/R118_SHARED_ADMISSION.json",
+          "scanner_euid": 0,
+          "sha256": "7dc7d413380aab79badaf336b4b97d60604298e3075a600990e5dc3e020a961c"
+        },
+        "R118_SHARED_GUARD_DISPATCH.json": {
+          "data": {
+            "guard_pid": 1052974,
+            "physical": 2,
+            "started_unix": 1789475312.452807
+          },
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/R118_SHARED_GUARD_DISPATCH.json",
+          "sha256": "e52734bd09c3d5c62d6298fa4643dbaf8fa8d959ba9841a5c2745c6e37237c5a"
+        },
+        "R118_SHARED_NATIVE_LAUNCH.json": {
+          "data": {
+            "activation_sha256": "677ae3dbf816c6be437d760b9e0a359d96360691dd4372d4fdc3035bc8de382d",
+            "admission_sha256": "7dc7d413380aab79badaf336b4b97d60604298e3075a600990e5dc3e020a961c",
+            "identity": {
+              "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+              "command_sha256": "5ef76091cca9a96019d7e2a09933cf334bd23a8fa681d6e11b22c188dfadf661",
+              "pid": 1054674,
+              "start_ticks": "1088548",
+              "uid": 2524
+            },
+            "started_unix": 1789475325.3018227
+          },
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/R118_SHARED_NATIVE_LAUNCH.json",
+          "sha256": "6c531c098d22015d4194023fa509ea24192314ca8402e56d9393c31a1e8dc1d7"
+        },
+        "SHARED_ACTIVATION.json": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/SHARED_ACTIVATION.json",
+          "sha256": "677ae3dbf816c6be437d760b9e0a359d96360691dd4372d4fdc3035bc8de382d"
+        },
+        "SHARED_ACTOR_READY.json": {
+          "data": {
+            "capture_binding": {
+              "shared_checkpoint_sha256": "084f62110ca5e42fb55145675538f6f88e10ce684a9c8847c49d1c858df7d264",
+              "shared_generation": 0,
+              "shared_learner": {
+                "branch": "F3",
+                "checkpoint_sha256": "084f62110ca5e42fb55145675538f6f88e10ce684a9c8847c49d1c858df7d264",
+                "generation": 0
+              }
+            },
+            "initial_readout_repeated": false,
+            "local_optimizer_steps": 0,
+            "next_cycle": 21,
+            "optimizer_owner": "F1",
+            "original_plan_sha256": "2f9e3e96bcdde410d9d670a33a24a06172e8979e2a6c77d7f1cd3dd56d2aa8d6",
+            "pid": 1054674,
+            "started_unix": 1789475379.4328566
+          },
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/SHARED_ACTOR_READY.json",
+          "sha256": "68fa980f81370ab9e8be9c480bd409b196adf3d92f9b1315d3e080708bd5111e"
+        }
+      },
+      "guard_pid_alive": true,
+      "native_pid_alive": true,
+      "new_calls": [
+        {
+          "id": "C021_E0_OPEN",
+          "kind": "NATIVE",
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C021_E0_OPEN.json",
+          "sha256": "e5ad494d3dbbf5a6c0dcaa9d6f92cc910f24914652a597508bc8e4d761c84b75",
+          "shared_checkpoint_sha256": "084f62110ca5e42fb55145675538f6f88e10ce684a9c8847c49d1c858df7d264",
+          "shared_generation": 0,
+          "status": "COMPLETE",
+          "terminal": true,
+          "tokens": 388
+        },
+        {
+          "id": "C021_E0_OPEN_PARENT",
+          "kind": "PARENT",
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C021_E0_OPEN_PARENT.json",
+          "sha256": "f1a15260c8b369cae65aa806ea13d19d231fdbfaf184001aeada80c7391326a3",
+          "shared_checkpoint_sha256": null,
+          "shared_generation": null,
+          "status": "STARTED",
+          "terminal": null,
+          "tokens": 0
+        },
+        {
+          "id": "C021_E0_ORIGINAL",
+          "kind": "NATIVE",
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C021_E0_ORIGINAL.json",
+          "sha256": "28922ef6719a2fcb0bbcc18cd68dbb83fb855f9d5b48c1f6fcd78e8925803c6a",
+          "shared_checkpoint_sha256": "084f62110ca5e42fb55145675538f6f88e10ce684a9c8847c49d1c858df7d264",
+          "shared_generation": 0,
+          "status": "COMPLETE",
+          "terminal": true,
+          "tokens": 30
+        },
+        {
+          "id": "C021_E0_PARENT",
+          "kind": "PARENT",
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C021_E0_PARENT.json",
+          "sha256": "a07826b8c24cba8e3b0f602f60d204bc6fa6f58e04d1199d7646f305a634efbb",
+          "shared_checkpoint_sha256": null,
+          "shared_generation": null,
+          "status": "COMPLETE",
+          "terminal": null,
+          "tokens": 0
+        },
+        {
+          "id": "C021_E0_REFLECTION",
+          "kind": "NATIVE",
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C021_E0_REFLECTION.json",
+          "sha256": "47bb07dc9d75884f9e13eb60b45f533629d9007276e5b459fa13736c0f62c338",
+          "shared_checkpoint_sha256": "084f62110ca5e42fb55145675538f6f88e10ce684a9c8847c49d1c858df7d264",
+          "shared_generation": 0,
+          "status": "COMPLETE",
+          "terminal": true,
+          "tokens": 256
+        }
+      ],
+      "parent_responses": [
+        {
+          "actual_model": "claude-fable-5-1",
+          "finished_unix": 1789475456.8472779,
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C021_E0_PARENT.response.json",
+          "provider_dispatched": true,
+          "sha256": "0fa1e5618336ebe1b75a1adb43b23cf063586bdaa729fc17b1f0e9562569d0c0",
+          "status": "COMPLETE"
+        }
+      ],
+      "parent_runner_lock": true,
+      "physical": 2,
+      "resume_cycle": 21,
+      "root": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1"
+    }
+  },
+  "claim_boundary": "Actual gen0 loaded and native responses; first F3 parent COMPLETE. A3 first parent pending at snapshot, not claimed COMPLETE. No shared sleep completion claimed.",
+  "common_hashes": {
+    "ADOPTION.json": "6dfc7dcd59e86648478a13852ff740701930f36499c92bef1178d3e645dcf7b5",
+    "CONFIG.json": "e5ac72af0d88e4481174f853fbf3951294278b1c9f62c88080f7d4b816cceb51",
+    "INITIALIZED.json": "d4e2c87e97bcfccb639d332d996f9f239023bbaa19f9312ce95d30f3f0aecff6"
+  },
+  "common_root": "/localhome/local-rohing/orch_r116_shared_node5_20260915_attempt1",
+  "observed_unix": 1789475504.2769167,
+  "raw_retained_node_only": true,
+  "schema": "R118_CODE_SHARED_LAUNCH_COMPACT_V1"
+}

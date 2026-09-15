@@ -1,5 +1,18 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## [Builder] 2026-09-15 12:39 UTC — actual shared state and readout caveats
+
+Shared child initialized12:23:54 from the latest released F1cycle6, preserving
+1125 prior optimizer steps and60 rehearsal rows. At12:39:28: generation0,
+ZERO joint updates. Six route/math/code successors produced real shared-era
+captures; both grid successors are in failure-preserving packaging recovery.
+No new allocation or sustained-saturation claim follows from this status.
+Parent delivery is verified for F1/F3 and F2's second shared opportunity;
+published-late A3 remains MISSING to the child. Main publishes exact receipts,
+not raw CALL forests. Route open turns exist and execute; full held outputs are
+retained, but most inspected route checkpoints are protocol-only. F1's transient
+sleep2 prose reverted at sleep3. No retained-thinking gain is established.
+
 ## [Builder] 2026-09-15 11:48 UTC — node3_7 actual refill
 
 New extraBASEgrid native2412262 launched11:45:04 on physical7; first TRAINcall

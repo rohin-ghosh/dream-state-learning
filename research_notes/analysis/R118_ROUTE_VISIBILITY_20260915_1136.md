@@ -82,3 +82,14 @@ final answers. These checks establish storage fidelity, not reasoning quality.
   Receipt: `research_notes/analysis/orch_r108_code_parent_r115_20260915_attempt1/DEV_VISIBILITY_1137.json`.
 
 Neither check read FINAL. Neither establishes access to hidden thoughts.
+
+## Main recheck — September 15, 2026, 12:39:28 UTC
+
+Read-only node5 verification reproduced the exact SHA256 values above for
+F1 TRAIN `OPEN_TRAIN_0.json`, A1 TRAIN `OPEN_TRAIN_0.json`, and F1 parent-free
+`open_readouts/readout_0001/OPEN.json`. No new model/provider call was made.
+The 11:36 filename-search gap is therefore resolved, not an unimplemented-turn
+claim. The reasoning-quality gap remains: report command-only checkpoints as
+protocol-only, preserve F1 sleep2's transient visible prose separately, and do
+not infer unobserved thinking from saved commands. No held prompt was changed
+to manufacture a richer historical comparison.

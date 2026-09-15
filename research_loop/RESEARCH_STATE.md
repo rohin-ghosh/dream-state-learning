@@ -1,5 +1,51 @@
 # Research state — Orchestrator
 
+## Shared initialization verified; learning pending — September 15, 2026, 12:39 UTC
+
+Common initialization completed at12:23:54UTC after all eight predecessor
+releases. It adopted the latest released F1 cycle6 checkpoint, including its
+LoRA, sole optimizer/RNG,60 rehearsal rows,1125 optimizer steps,68,231 child-token
+exposures and20,351 anchor-token exposures. This is preserved prior learning,
+not newly demonstrated pooled learning. At12:39:28, common STATE still reports
+generation0 and ZERO shared optimizer steps/child-token exposures.
+Receipt: `research_notes/analysis/orch_r118_shared_adoption_20260915/INITIALIZED_ACTUAL_1224.json`.
+
+Route, math and code successors have real generation0 child captures. Shared-era
+F1 and F3 parents were verified consumed COMPLETE at12:30:56; F2's second
+parent opportunity was consumed COMPLETE at12:37:29 after an earlier schema
+failure. Do not equate provider COMPLETE with delivery: A3's first shared
+response was published after its child cutoff, and the child recorded MISSING.
+
+Both grid successors failed because their frozen package omitted the runtime
+battle-plan document. CPU readiness did not exercise that successful-parent
+path. Exact predecessor document bytes and a regression exercising real archived
+parent envelopes are now in a separate repair bundle;6 native CPU tests passed.
+Recovery subsequently produced new F4/A4 continuations at12:38:52/54, with the
+previously completed parent replies verified in their actual input prefixes.
+The original calls were not regenerated. Future broker delivery under the new
+repair terminal still needs verification. Original failures, completed child
+calls and published parents remain preserved; shared state is not reset.
+
+The route visibility audit confirms actual `OPEN_TRAIN_*.json` and parent-free
+`open_readouts/.../OPEN.json` artifacts, including executed environment reads.
+Held calls retain full decoded text/token IDs. F1 sleep2 has transient prose,
+sleep3 returns to bare commands; inspected A1 readouts are protocol-only. F2/F3
+DEV also retain full continuations. These are storage/enactment checks, not a
+demonstration of retained metacognition. See `R118_ROUTE_VISIBILITY_20260915_1136.md`.
+
+L1's latest feeder audit found only FOUR unique admitted rows, unchanged since
+09:52, despite ongoing real updates. Continuous fresh ingestion is NOT achieved.
+A separate TRAIN-only parented-derived candidate audit is underway; no DEV/FINAL
+rows may enter it. The common-cutoff watchdog remains a plan, with implementation
+assigned. FINAL remains September15 at17:00UTC; no silent bound extension.
+
+**The full research goal remains active and unproven.**
+
+Fleet measured12:40:45–46:39/40 devices above1GiB resident,18/40 positive
+instantaneous utilization. Node3 physical0 is an actual failed math lane, not a
+reload vacancy; its owner has been assigned failure-preserving repair. Node5
+is8/8 resident, but residency is not sustained compute or learning.
+
 ## Shared learner handoff underway — September 15, 2026, 12:06 UTC
 
 All eight node5 executable successors passed native readiness validation:

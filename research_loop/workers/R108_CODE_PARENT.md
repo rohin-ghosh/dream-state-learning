@@ -639,3 +639,65 @@ including EOS, terminal, no truncation). DEV_VISIBILITY_1137 includes native
 path/source hashes; no raw pulled, no FINAL content accessed/exchanged.
 Node3physical7 is not an owned CODE lane in this journal; historical1382504 is
 physical4. No new node3 scan/signal/reservation performed.
+
+## 2026-09-15T12:20Z — R118 actual paired handoff; no successor launch
+
+Verified Main's exact ROSTER SHA595f91e74065b69baee7e0be895fde98ab6bf872896848fea9a674118014f375
+and EIGHT_READY SHA5bff8653270e7e83c87bf045c72912331c4265e3368b7c7b9e052a528bd377ca.
+Both original RELEASE_AFTER_CYCLE hooks atomically armed and parse-verified
+12:07:15UTC, without signals. A3 guard exited0 at12:09:06.007150UTC afterC6;
+F3 continuation guard exited0 at12:10:55.210422UTC afterC20. All recorded
+native/guard/pending-readout PIDs are gone. No quality selection or preemption.
+
+Actual native R118_SHARED_HANDOFF_BRANCH.json in each original root:
+F3 SHAdfda09edf9a26e34fe1bdde3e4c7d29719000c03988e63dfff1ad6cf97ca9aa0,
+next21; A3 SHA4f2d9752acbecdb36931163384407dcdfc48c9ea4587fd334b5f09e3d360e182,
+next7.1860/661 preserved files bind PLAN, request/complete, all charged
+reservations, raw node-local readouts/triples/environment, parent claims and
+published responses plus carry. F3 native620COMPLETE/70oldFAILED,
+parents26COMPLETE/64MISSING; A3 native229COMPLETE, parents9COMPLETE/21MISSING.
+No pending reservation or unpublished original claim remains at handoff.
+Actual latest reflection carry3072 both: F3C020_E1_PARENT/A3C006_META_PARENT.
+
+Nonmaterial activation repair: the earlier ready successor defaulted its
+initial reflection settings. New isolated overlay restores the exact recorded
+carry before its first new call, without rewriting the ROSTER-pinned176files,
+old captures, child conversation, cursor, limits or outcomes. Added strict
+Main-adoption/handoff/source/CPU custody, original UUID lock and privileged
+full scanner admission, exact-identity finite deadline supervision; no local
+optimizer. New A3 broker wrapper changes only terminal routing after verified
+Main adoption; preserves four HTTP slots, original claims/config/caps/oneattempt.
+Hubble informed to handle F3; own old A3 broker956791 exited naturally.
+
+56CPUtestsPASS1.47s from isolated182-file snapshot; native import/integrity and
+zero literal-hostname scan PASS, CUDA uninitialized. Source on node:
+/localhome/local-rohing/orch_r108_code_parent_r118_activation_20260915_v2/source;
+manifest2454c50f32d070558d7caf9abb93e45b3993633f04110fde3efe0861070695eb;
+CPUreceiptc2fb7025d581aa9f5566a2a2d64a4bb1cccdf02e24fb3deea6d0f15b007cb02e.
+No shared initialization, activation sidecar, privileged scan, broker restart
+or GPU launch performed. Await Main ADOPTION follow-up. Exact commands in
+R118_ACTIVATION_PREPARED.md. All future sender canonical Unicode tests retained.
+
+Cheap node-only A3 diagnosis12:11:57UTC: preceding30minutes3COMPLETE/9MISSING.
+All9 are completed valid-JSON envelopes whose intervention_class values fall
+outside the actual frozen broker enum; sourceec6056e44066d40395b15166a5c3795481722c2767a4ba917c4cc229dd547169.
+No explicit refusal fields/incomplete envelopes among those9. No replay,
+reclassification, extra provider call or refusal reroute; strict parser
+unchanged. Future metadata acceptance is for prospective transport coordination.
+Only compact counts/hashes/paths in repo; raw remains on node. Main owns Git.
+
+## 2026-09-15T12:30Z — Actual launch and bounded broker custody repair
+
+F3/A3 strict guards1052974/1052977 admitted and launched natives1054674/1054676 at12:28:45UTC. Sidecars bind Main actual initialized history; no local optimizer/reset. Own A3 broker1323893 exited before acquiring ledger/provider dispatch: immutable_source_pins rejected overlay transport bytes differing from original CONFIG. Failed runtime/log preserved under /tmp/orch_r108_code_parent_r118_astra_shared_runtime_1229. Nonmaterial fix is a new immutable VM runtime retaining every original1132 broker source byte, adding only tested R118 shared-terminal wrapper; unchanged CONFIG/ledger/caps/parser, no GPU source changes. Re-run shared broker focused CPU tests and exact original source pins before dispatch. No model retry.
+
+## 2026-09-15T12:32Z — Shared generation0 native evidence
+
+Main GO executed: CONFIG/ADOPTION/INITIALIZED exact hashes verified; F3/A3 activation sidecars SHA677ae3dbf816c6be437d760b9e0a359d96360691dd4372d4fdc3035bc8de382d /c15e51320f7cb56093ec8ddbb478517533ca68364d1ffaa20a54456a45daa528. Guards1052974/1052977 took originalUUID locks and privileged CLEAR, native1054674/1054676 actually launched12:28:45UTC. Both loaded12:29:39UTC; gen0 checkpoint084f62110ca5e42fb55145675538f6f88e10ce684a9c8847c49d1c858df7d264, resume21/7, actualcarry3072, no baseline/oldcapture replay/localoptimizer.
+
+First native TRAIN COMPLETE: F3C021_E0_ORIGINAL30tokens SHA28922ef6719a2fcb0bbcc18cd68dbb83fb855f9d5b48c1f6fcd78e8925803c6a; A3C007_E0_ORIGINAL40tokens SHA8ccd65e82f71e602fefd6bdcee62dc67a1297ed0009771ac098ab12f05c112cf. Bothterminal and predispatchbound gen0/checkpoint. Hubble actualF3 parentCOMPLETE12:30:56.847UTC modelclaude-fable-5-1 responseSHA0fa1e5618336ebe1b75a1adb43b23cf063586bdaa729fc17b1f0e9562569d0c0, childreflection256tokens thenOPEN388tokens.
+
+A3 broker corrected immutable runtime1230 (original1132dependencybytes plus R118wrapper):3focusedtestsPASS0.19s and exactCONFIGsourcepinsPASS. Broker1333702 started12:30:52UTC, live/emptyerrorlog with nativeRUNNERlock; firstA3parent stillpending12:32:26UTC, not countedCOMPLETE. Runtime source manifestc09ac732af8fca0a0ce6b6d5cd133f884489bdcd152e290254bb78ce8098521f; launchSHA7d06ea716c90c87cf57266a174eb27e34d61e865ee63bf80ee8491326528f9cd. Earlier1323893 failedpreprovider sourcepin check preserved, no dispatch/modelretry. No GPU source change or ledger reset. Native/guards alive, no SHARED_TERMINAL; sharedcycle/sleep not yet complete. Compact R118_SHARED_LAUNCH_1232.json records custody/evidence; all raw NODE only. Main owns publication; immediate next action monitor actual A3 delivery and first common barrier, no duplicate launch.
+
+### 12:33UTC A3 actual delivery distinction
+
+A3C007_E0_PARENT providerCOMPLETE at12:32:07.807UTC, responseSHAc7645729b13b239dc0ea0282105fee29a651afc5dd38698c5990707daaec20a1; child records MISSING/late at12:32:42.435UTC against originalcutoff12:32:42.102UTC. PUBLISHED at12:32:43.476UTC, despite brokerlate=false. Do not count as received intervention or salvage old response. This is delivery timing, not a demonstrated provider refusal/parse failure. Raw/claims preserved; child ownreflection continues and nextscheduledparent unchanged. Compact R118_A3_DELIVERY_1233.json binds exact timings/hashes; no GPU/source/cap change.

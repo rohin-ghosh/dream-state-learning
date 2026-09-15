@@ -1,0 +1,399 @@
+{
+  "CPU_tests": {
+    "cuda_initialized": false,
+    "file_reads_mocked": false,
+    "finished_unix": 1789475784.744697,
+    "manifest_sha256": "364cdf71538a62fab316aaf8e0dc229fcb2da57c6467953bc739ab758b51995e",
+    "passed": true,
+    "provider_calls": 0,
+    "real_captured_parent_envelopes": [
+      "F4/P0036",
+      "A4/P0031"
+    ],
+    "tests_failed": 0,
+    "tests_run": 6,
+    "tests_skipped": 0
+  },
+  "CPU_tests_ref": {
+    "path": "/localhome/local-rohing/orch_r118_grid_shared_repair_20260915_v1/CPU_TESTS.json",
+    "sha256": "88e528210ff65a4c3ef2c2b26c30545d544bb721bdfc36346e81b3fd08eac59e"
+  },
+  "branches": {
+    "A4": {
+      "bounds": {
+        "final_unix": 1789491600.0,
+        "hard_end_unix": 1789491720.0,
+        "max_native_calls": 1858,
+        "max_parent_calls": 298,
+        "parent_wait_seconds": 120,
+        "physical": 7,
+        "train_end_unix": 1789491300.0
+      },
+      "broker_repair_binding_status": "AWAITING_OWNER_PUBLISHED_PROOF",
+      "charged_totals": {
+        "NATIVE": 469,
+        "PARENT": 31
+      },
+      "failed_terminal": {
+        "exit_code": 1,
+        "finished_unix": 1789475446.087176,
+        "local_optimizer_steps": 0,
+        "status": "FAILED"
+      },
+      "failed_terminal_preserved": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/SHARED_TERMINAL.json",
+        "sha256": "fd5da7b25d73ac79b73b36aa00ca1106cd12f0d5dc38766daf48648085eda7ab"
+      },
+      "first_new_capture": {
+        "cycle": 7,
+        "finished_unix": 1789475934.3597634,
+        "number": 458,
+        "purpose": "continuation",
+        "receipt": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/calls/N00458.json",
+          "sha256": "0966ca4d2fb6be152c8e82f79001092cfeaee86b3ef7c5400d7fc87c10c577df"
+        },
+        "shared_checkpoint_sha256": "084f62110ca5e42fb55145675538f6f88e10ce684a9c8847c49d1c858df7d264",
+        "shared_generation": 0,
+        "status": "COMPLETE"
+      },
+      "guard": {
+        "bounds": {
+          "final_unix": 1789491600.0,
+          "hard_end_unix": 1789491720.0,
+          "max_native_calls": 1858,
+          "max_parent_calls": 298,
+          "parent_wait_seconds": 120,
+          "physical": 7,
+          "train_end_unix": 1789491300.0
+        },
+        "command": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "/localhome/local-rohing/orch_r118_grid_shared_repair_20260915_v1/orch_r118_grid_shared_repair.py",
+          "guard",
+          "--root",
+          "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4"
+        ],
+        "identity": {
+          "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+          "pid": 1107760,
+          "start_ticks": "1139729",
+          "uid": 2524
+        },
+        "local_optimizer_steps": 0,
+        "old_calls_retried": 0,
+        "ready": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/shared_repair_v1/READY.json",
+          "sha256": "5716e34f1303a11052e37aec6bca6114ecb64fb2f0a771bf716c52a1b5f7b43e"
+        },
+        "started_unix": 1789475837.1055665,
+        "terminal_filename": "R118_SHARED_REPAIR_TERMINAL.json"
+      },
+      "guard_receipt": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/shared_repair_v1/CPU_LAUNCH.json",
+        "sha256": "953086ca8a8e747e9dd8e9be1a02957b68243c7e18fb28507e51cfd6c5277a74"
+      },
+      "loaded": {
+        "continuation_after_capture": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/calls/N00457.json",
+          "sha256": "18da82b9c46f5c2e2d3b393a8de8eb75a0f7fa7f601a23afc7ea28bac63ab9a1"
+        },
+        "cycle": 7,
+        "local_optimizer_steps": 0,
+        "observed_unix": 1789475927.3539503,
+        "pid": 1108400,
+        "process": [
+          "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+          1108400,
+          1140594
+        ],
+        "session": {
+          "adapter": {
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "files": [
+              [
+                "README.md",
+                "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+              ],
+              [
+                "adapter_config.json",
+                "cda5647f14cad59912853337ea797fca9dccf69d5c880d0985f08f93341a18b5"
+              ],
+              [
+                "adapter_model.safetensors",
+                "840be0ce727cd6c4114e511fcc47b6903696dee59cf61c93df3f84ed9b049733"
+              ]
+            ],
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/cycle_0006/checkpoint/adapter",
+            "state_sha256": "f0718b300486032757608aaff0c2a99896f84ade6a091cc9b78ec3b19630652d"
+          },
+          "branch": "A4",
+          "checkpoint_sha256": "084f62110ca5e42fb55145675538f6f88e10ce684a9c8847c49d1c858df7d264",
+          "config_sha256": "e5ac72af0d88e4481174f853fbf3951294278b1c9f62c88080f7d4b816cceb51",
+          "generation": 0
+        }
+      },
+      "loaded_ref": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/shared_repair_v1/LOADED.json",
+        "sha256": "0ef96fdb370a7a71341ff6a028d08824e3f7303ff8c44492279a06d539ff1c14"
+      },
+      "native_alive": true,
+      "native_launch": {
+        "command": [
+          "timeout",
+          "--signal=TERM",
+          "--kill-after=2s",
+          "15869s",
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "/localhome/local-rohing/orch_r118_grid_shared_repair_20260915_v1/orch_r118_grid_shared_repair.py",
+          "resident",
+          "--root",
+          "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4"
+        ],
+        "observed_unix": 1789475845.7563596,
+        "pid": 1108399
+      },
+      "native_launch_receipt": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/shared_repair_v1/LAUNCH.json",
+        "sha256": "8cdf8f7afe0367244207fa77476028dbd8dc1517b4e3ede1c4e1703c6220b5ba"
+      },
+      "original_capture_unchanged": true,
+      "original_parent_response_unchanged": true,
+      "pre_gpu": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/shared_repair_v1/PRE_GPU.json",
+        "sha256": "82ecb157e4a72c4fd320bb9739e2ec080d4d73bb723c084b2894e9712bc45b29"
+      },
+      "ready": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/shared_repair_v1/READY.json",
+        "sha256": "5716e34f1303a11052e37aec6bca6114ecb64fb2f0a771bf716c52a1b5f7b43e"
+      },
+      "recovered_parent": {
+        "guidance_in_actual_new_child_prompt": true,
+        "observation_clock_basis": "RECORDED_FAILURE_UPPER_BOUND_AFTER_ORIGINAL_RESPONSE_READ",
+        "original_clock": 1789475446.087176,
+        "parent_redispatched": false,
+        "receipt": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parent_received/P0031.json",
+          "sha256": "9cfefb6c7b7d1a1363e13a827782685b12f566a3d8e028ca7248a9a37ce84379"
+        },
+        "recovered_unix": 1789475810.1685908,
+        "status": "COMPLETE"
+      },
+      "repair_terminal_exists": false,
+      "repair_terminal_filename": "R118_SHARED_REPAIR_TERMINAL.json",
+      "root": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4",
+      "strict_scan": {
+        "blocking_reasons": [],
+        "clear": true,
+        "receipt": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/shared_repair_v1/admission/001.json",
+          "sha256": "d715cf9584019964df60f03a4cc8950e8ab35559020c2c277a511e54bb7d3482"
+        },
+        "scanner_euid": 0
+      },
+      "submission_present": false,
+      "triple": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/triples/C0007_E0.json",
+        "sha256": "af9c4221ab6b5fd0c82f3796a25eafc32bb36fe194b9ac1ff8d9771251f86f2a"
+      }
+    },
+    "F4": {
+      "bounds": {
+        "final_unix": 1789491600.0,
+        "hard_end_unix": 1789491720.0,
+        "max_native_calls": 1858,
+        "max_parent_calls": 298,
+        "parent_wait_seconds": 600,
+        "physical": 3,
+        "train_end_unix": 1789491300.0
+      },
+      "broker_repair_binding_status": "AWAITING_OWNER_PUBLISHED_PROOF",
+      "charged_totals": {
+        "NATIVE": 528,
+        "PARENT": 36
+      },
+      "failed_terminal": {
+        "exit_code": 1,
+        "finished_unix": 1789475373.41239,
+        "local_optimizer_steps": 0,
+        "status": "FAILED"
+      },
+      "failed_terminal_preserved": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/SHARED_TERMINAL.json",
+        "sha256": "0db0d8379de7c04875a34f443cc09c0a8949e128b5ab0456493fb8b991a34f99"
+      },
+      "first_new_capture": {
+        "cycle": 8,
+        "finished_unix": 1789475932.4388714,
+        "number": 521,
+        "purpose": "continuation",
+        "receipt": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/calls/N00521.json",
+          "sha256": "33b7dc56cb56dc36aba7b5ba9fda758a7763d93acc1002517cdc7d5de896065b"
+        },
+        "shared_checkpoint_sha256": "084f62110ca5e42fb55145675538f6f88e10ce684a9c8847c49d1c858df7d264",
+        "shared_generation": 0,
+        "status": "COMPLETE"
+      },
+      "guard": {
+        "bounds": {
+          "final_unix": 1789491600.0,
+          "hard_end_unix": 1789491720.0,
+          "max_native_calls": 1858,
+          "max_parent_calls": 298,
+          "parent_wait_seconds": 600,
+          "physical": 3,
+          "train_end_unix": 1789491300.0
+        },
+        "command": [
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "/localhome/local-rohing/orch_r118_grid_shared_repair_20260915_v1/orch_r118_grid_shared_repair.py",
+          "guard",
+          "--root",
+          "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4"
+        ],
+        "identity": {
+          "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+          "pid": 1107627,
+          "start_ticks": "1139572",
+          "uid": 2524
+        },
+        "local_optimizer_steps": 0,
+        "old_calls_retried": 0,
+        "ready": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/shared_repair_v1/READY.json",
+          "sha256": "55d586a02551b4809c75f37637b353cf24e9f09c602ee8340ef6db42c2312908"
+        },
+        "started_unix": 1789475835.5427215,
+        "terminal_filename": "R118_SHARED_REPAIR_TERMINAL.json"
+      },
+      "guard_receipt": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/shared_repair_v1/CPU_LAUNCH.json",
+        "sha256": "fe13c65dd5888ff0ea0baa2d657d5118163636b2906cc48df9f43b3d41e1ac9a"
+      },
+      "loaded": {
+        "continuation_after_capture": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/calls/N00520.json",
+          "sha256": "ccb285b6cf162f1ef968266e2e2aef359b5e386df05ea1d94a4ebabbe60c1483"
+        },
+        "cycle": 8,
+        "local_optimizer_steps": 0,
+        "observed_unix": 1789475920.9716277,
+        "pid": 1107938,
+        "process": [
+          "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+          1107938,
+          1139980
+        ],
+        "session": {
+          "adapter": {
+            "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+            "files": [
+              [
+                "README.md",
+                "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+              ],
+              [
+                "adapter_config.json",
+                "cda5647f14cad59912853337ea797fca9dccf69d5c880d0985f08f93341a18b5"
+              ],
+              [
+                "adapter_model.safetensors",
+                "840be0ce727cd6c4114e511fcc47b6903696dee59cf61c93df3f84ed9b049733"
+              ]
+            ],
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/cycle_0006/checkpoint/adapter",
+            "state_sha256": "f0718b300486032757608aaff0c2a99896f84ade6a091cc9b78ec3b19630652d"
+          },
+          "branch": "F4",
+          "checkpoint_sha256": "084f62110ca5e42fb55145675538f6f88e10ce684a9c8847c49d1c858df7d264",
+          "config_sha256": "e5ac72af0d88e4481174f853fbf3951294278b1c9f62c88080f7d4b816cceb51",
+          "generation": 0
+        }
+      },
+      "loaded_ref": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/shared_repair_v1/LOADED.json",
+        "sha256": "2acf3f4d64bf4ce43e1ff1f93606c4b2062d0392c3147ab9ab4c2d54d39461d7"
+      },
+      "native_alive": true,
+      "native_launch": {
+        "command": [
+          "timeout",
+          "--signal=TERM",
+          "--kill-after=2s",
+          "15875s",
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "/localhome/local-rohing/orch_r118_grid_shared_repair_20260915_v1/orch_r118_grid_shared_repair.py",
+          "resident",
+          "--root",
+          "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4"
+        ],
+        "observed_unix": 1789475839.615208,
+        "pid": 1107937
+      },
+      "native_launch_receipt": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/shared_repair_v1/LAUNCH.json",
+        "sha256": "c4902d2c05e7492634c4568c04ba15ce1d841a23b84a7cc46d74b699541094b9"
+      },
+      "original_capture_unchanged": true,
+      "original_parent_response_unchanged": true,
+      "pre_gpu": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/shared_repair_v1/PRE_GPU.json",
+        "sha256": "4a00ec43892f9ccb79a44117843e4e4d35c5287adfa7f0e1de065db75fa6f699"
+      },
+      "ready": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/shared_repair_v1/READY.json",
+        "sha256": "55d586a02551b4809c75f37637b353cf24e9f09c602ee8340ef6db42c2312908"
+      },
+      "recovered_parent": {
+        "guidance_in_actual_new_child_prompt": true,
+        "observation_clock_basis": "RECORDED_FAILURE_UPPER_BOUND_AFTER_ORIGINAL_RESPONSE_READ",
+        "original_clock": 1789475373.41239,
+        "parent_redispatched": false,
+        "receipt": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_received/P0036.json",
+          "sha256": "c3ffa5ace244a6585eb45384babd28a827a67f70e6e53c46d1f2bd54c825010f"
+        },
+        "recovered_unix": 1789475808.0628667,
+        "status": "COMPLETE"
+      },
+      "repair_terminal_exists": false,
+      "repair_terminal_filename": "R118_SHARED_REPAIR_TERMINAL.json",
+      "root": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4",
+      "strict_scan": {
+        "blocking_reasons": [],
+        "clear": true,
+        "receipt": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/shared_repair_v1/admission/000.json",
+          "sha256": "0e597a465b16a1df2650776d995007cd1b7cb1181a4a47779a3d635e55b81245"
+        },
+        "scanner_euid": 0
+      },
+      "submission_present": false,
+      "triple": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/triples/C0008_E0.json",
+        "sha256": "eb572ca1b285bc4361ab5bde116d098ded4c3a237a5bbbf881e9f0dcf10882af"
+      }
+    }
+  },
+  "bundle": "/localhome/local-rohing/orch_r118_grid_shared_repair_20260915_v1",
+  "frozen_closure_sha256": "03a2f241f2a043da9de28d9fc6d91fa7dc240b7ce6ef9fa08b2ff2bd92face9d",
+  "local_optimizers": 0,
+  "manifest": {
+    "path": "/localhome/local-rohing/orch_r118_grid_shared_repair_20260915_v1/MANIFEST.json",
+    "sha256": "364cdf71538a62fab316aaf8e0dc229fcb2da57c6467953bc739ab758b51995e"
+  },
+  "observed_utc": "2026-09-15T12:39:47.740497+00:00",
+  "raw_output": false,
+  "runtime_files": {
+    "orch_r118_grid_shared_repair.py": "e4baef854823ea3d34567997f4351ca9be17f593e3434dbf647ea1acf6c0532c",
+    "research_notes/PARENTING_BATTLE_PLAN_v4_2026-09-15.md": "5f494f5f4b6e2cddb8d909c87b07c7e816d23283553f5e91834a489a6b6dd497",
+    "research_notes/PARENTING_PRINCIPLES_ROHIN_2026-09-15.md": "5a6a3d28a2f0c9f99dd76873496a07468075509b4451373d90c11ce8d8b363f2",
+    "test_orch_r118_grid_shared_repair.py": "245bbac6139fbcde1c4665d722c6df80f6c03bbe0c3f01334e9e5b2fd914468d"
+  },
+  "schema": "R118_GRID_NO_REPLAY_REPAIR_LIVE_V1"
+}

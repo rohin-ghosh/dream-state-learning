@@ -1,0 +1,744 @@
+{
+  "accepted_definition": "Exact native COMPLETE request/response join before lane deadline, not semantic uptake.",
+  "branches": {
+    "F1": {
+      "alive": true,
+      "first_COMPLETE": {
+        "actual_model": "claude-fable-5-1",
+        "all_transcript_hashes_verified": true,
+        "before_broker_migration": false,
+        "claimed": true,
+        "cycle": 7,
+        "error_code": null,
+        "finished_unix": 1789475456.0987039,
+        "id": "000064_F1_C0007",
+        "lane_deadline_unix": 1789475524.0839536,
+        "native": {
+          "accepted": true,
+          "observed_unix": 1789475456.1703188,
+          "receipt": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000064_F1_C0007.observed.json",
+            "sha256": "5520bc4d66d98cb156bbf0d6d5f27515fec0be15dc9fee96b853aeb62c6a8b35"
+          },
+          "status": "COMPLETE"
+        },
+        "publication": {
+          "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_claude/000064_F1_C0007.claim/PUBLISHED.json",
+          "sha256": "994c75280f2cd45b91893b165c530d855ef9f265c8796401c2ca36c67c668e0f"
+        },
+        "published_unix": 1789475456.1108367,
+        "request": {
+          "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000064_F1_C0007.request.json",
+          "sha256": "895dcdee968b39c838bed2be7dcba951afa2c243e1b18dfb88742ec62ed52e11"
+        },
+        "response": {
+          "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000064_F1_C0007.response.json",
+          "sha256": "70c6de74f73f31feced62d48006affdbecd3e24a74ea3b7e39e8e8235dd750f1"
+        },
+        "status": "COMPLETE"
+      },
+      "first_reply": {
+        "actual_model": null,
+        "before_broker_migration": true,
+        "claimed": true,
+        "cycle": 7,
+        "error_code": "provider_error_or_turn_limit",
+        "finished_unix": 1789475266.9136581,
+        "id": "000061_F1_C0007",
+        "lane_deadline_unix": 1789475304.6777086,
+        "native": {
+          "accepted": false,
+          "observed_unix": 1789475267.0104222,
+          "receipt": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000061_F1_C0007.observed.json",
+            "sha256": "b7fc202546db3410450468914e5f19b66be9a8f378b9754be147b54108224ef3"
+          },
+          "status": "MISSING"
+        },
+        "publication": {
+          "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_claude/000061_F1_C0007.claim/PUBLISHED.json",
+          "sha256": "f56d03d3ddeb245f9b811a66d1deb446eba54965cfac4e11df2c2bf83fb9bcd0"
+        },
+        "published_unix": 1789475266.929089,
+        "request": {
+          "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000061_F1_C0007.request.json",
+          "sha256": "06ba67b19f37aec53aac8e467da2923bf378d31fa1b1d0abeac6e40975fbbedb"
+        },
+        "response": {
+          "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000061_F1_C0007.response.json",
+          "sha256": "306a18e7a6e4b7a9b41885fdbdcbbd4beaf493da1c9e24be8b71b13b868ede1e"
+        },
+        "status": "MISSING"
+      },
+      "migration": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/source/gpu/orch_r110_claude_broker.py",
+          "--config",
+          "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/F1_REAL_TERMINAL_V2/CONFIG.json",
+          "--launch-receipt",
+          "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/F1_REAL_TERMINAL_V2/LAUNCH.json",
+          "--prompt-root",
+          "/localhome/local-rohing/courier_swarm/prompts",
+          "--principles",
+          "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/source/research_notes/PARENTING_PRINCIPLES_ROHIN_2026-09-15.md"
+        ],
+        "bindings": {
+          "activation": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/PLAN.json",
+            "sha256": "7d84a94eecce66c38dd2e52c2df4bf1b5eae48e3265c810f684cdb1f091d89fb"
+          },
+          "common": {
+            "ADOPTION.json": {
+              "path": "/localhome/local-rohing/orch_r116_shared_node5_20260915_attempt1/ADOPTION.json",
+              "sha256": "6dfc7dcd59e86648478a13852ff740701930f36499c92bef1178d3e645dcf7b5"
+            },
+            "CONFIG.json": {
+              "path": "/localhome/local-rohing/orch_r116_shared_node5_20260915_attempt1/CONFIG.json",
+              "sha256": "e5ac72af0d88e4481174f853fbf3951294278b1c9f62c88080f7d4b816cceb51"
+            },
+            "INITIALIZED.json": {
+              "path": "/localhome/local-rohing/orch_r116_shared_node5_20260915_attempt1/INITIALIZED.json",
+              "sha256": "d4e2c87e97bcfccb639d332d996f9f239023bbaa19f9312ce95d30f3f0aecff6"
+            }
+          },
+          "ready": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/SHARED_CLIENT_READY_V2_R1.json",
+            "sha256": "d87c463594a01f814bc03fa720b105a4a55ce6b30c37e192b6a87ce1debc4de0"
+          },
+          "release": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/R118_SHARED_HANDOFF_BRANCH.json",
+            "sha256": "ca1d25f89eaa7f2b473d8418ef3430a5fe3a7cdcc93f93ecdc1aa400706a15e4"
+          }
+        },
+        "branch": "F1",
+        "carried_claims": 63,
+        "config_path": "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/F1_REAL_TERMINAL_V2/CONFIG.json",
+        "config_sha256": "51bc91f7ee64ac267085c980f507a41a7e33ea680cb3efa809c8878fbca44bfc",
+        "deadline_unix": 1789596240,
+        "max_parent_calls": 16384,
+        "old_claims_retried": false,
+        "old_publications_sha256": "2c35ed180b943c0fcac193a089ddf37718a8aae2f7703b8714a19becd1a0afd0",
+        "parent_effort": "max",
+        "pid": 1061971,
+        "prior_pid": 688462,
+        "root": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1",
+        "started_unix": 1789475400.3556716,
+        "terminal_filename": "TERMINAL.json"
+      },
+      "migration_receipt": {
+        "path": "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/F1_REAL_TERMINAL_V2/PID.json",
+        "sha256": "4e9acc1f6666e2f8cf7033b7795f221d96dfb7fc9acb24376f028c68bd0966de"
+      },
+      "native_accepted": 1,
+      "next_cycle": 7,
+      "old_publications_unchanged": true,
+      "shared_counts": {
+        "COMPLETE": 1,
+        "MISSING": 3,
+        "PENDING": 1
+      },
+      "shared_rows": [
+        {
+          "actual_model": null,
+          "before_broker_migration": true,
+          "claimed": true,
+          "cycle": 7,
+          "error_code": "provider_error_or_turn_limit",
+          "finished_unix": 1789475266.9136581,
+          "id": "000061_F1_C0007",
+          "lane_deadline_unix": 1789475304.6777086,
+          "native": {
+            "accepted": false,
+            "observed_unix": 1789475267.0104222,
+            "receipt": {
+              "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000061_F1_C0007.observed.json",
+              "sha256": "b7fc202546db3410450468914e5f19b66be9a8f378b9754be147b54108224ef3"
+            },
+            "status": "MISSING"
+          },
+          "publication": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_claude/000061_F1_C0007.claim/PUBLISHED.json",
+            "sha256": "f56d03d3ddeb245f9b811a66d1deb446eba54965cfac4e11df2c2bf83fb9bcd0"
+          },
+          "published_unix": 1789475266.929089,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000061_F1_C0007.request.json",
+            "sha256": "06ba67b19f37aec53aac8e467da2923bf378d31fa1b1d0abeac6e40975fbbedb"
+          },
+          "response": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000061_F1_C0007.response.json",
+            "sha256": "306a18e7a6e4b7a9b41885fdbdcbbd4beaf493da1c9e24be8b71b13b868ede1e"
+          },
+          "status": "MISSING"
+        },
+        {
+          "actual_model": null,
+          "before_broker_migration": true,
+          "claimed": true,
+          "cycle": 7,
+          "error_code": "provider_error_or_turn_limit",
+          "finished_unix": 1789475330.160418,
+          "id": "000062_F1_C0007",
+          "lane_deadline_unix": 1789475387.741625,
+          "native": {
+            "accepted": false,
+            "observed_unix": 1789475330.2432795,
+            "receipt": {
+              "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000062_F1_C0007.observed.json",
+              "sha256": "6f3d4e3fea9b6c69ecb15790958b8d1a79e05ad0fd7636352a34e5cf9f9a9085"
+            },
+            "status": "MISSING"
+          },
+          "publication": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_claude/000062_F1_C0007.claim/PUBLISHED.json",
+            "sha256": "d2c4087d572f791f326d1a64c651fd68ea3cf6fefdf2f3e8b480c87aad17a35a"
+          },
+          "published_unix": 1789475330.1756947,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000062_F1_C0007.request.json",
+            "sha256": "f6be42f097fc532cb10d3df9515ad1e0117b00f34c347c88545f0005ee525259"
+          },
+          "response": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000062_F1_C0007.response.json",
+            "sha256": "a88e0bc8247cbdeb0bcaa1a26c0ba6eee0a0b45225e8632a5f06d407ea3c52bf"
+          },
+          "status": "MISSING"
+        },
+        {
+          "actual_model": null,
+          "before_broker_migration": true,
+          "claimed": true,
+          "cycle": 7,
+          "error_code": "provider_error_or_turn_limit",
+          "finished_unix": 1789475399.8014574,
+          "id": "000063_F1_C0007",
+          "lane_deadline_unix": 1789475450.96408,
+          "native": {
+            "accepted": false,
+            "observed_unix": 1789475399.8676264,
+            "receipt": {
+              "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000063_F1_C0007.observed.json",
+              "sha256": "041c1a9aa2ac1397658097fc33c285c91bbb78a0a7c1ca13f9574a48b284d735"
+            },
+            "status": "MISSING"
+          },
+          "publication": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_claude/000063_F1_C0007.claim/PUBLISHED.json",
+            "sha256": "611f365017c292f4122ab1c39f50a0241430288ddf6f757fc5b6377fc1c7637d"
+          },
+          "published_unix": 1789475399.8178082,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000063_F1_C0007.request.json",
+            "sha256": "409b5178e936acdff39366750e4f409cc719d62e43e35651de1778e617545450"
+          },
+          "response": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000063_F1_C0007.response.json",
+            "sha256": "bf23a08bae55ba0dea1ed146eaab2a80ca487028ff2cbe617013a0bd8c9955c0"
+          },
+          "status": "MISSING"
+        },
+        {
+          "actual_model": "claude-fable-5-1",
+          "all_transcript_hashes_verified": true,
+          "before_broker_migration": false,
+          "claimed": true,
+          "cycle": 7,
+          "error_code": null,
+          "finished_unix": 1789475456.0987039,
+          "id": "000064_F1_C0007",
+          "lane_deadline_unix": 1789475524.0839536,
+          "native": {
+            "accepted": true,
+            "observed_unix": 1789475456.1703188,
+            "receipt": {
+              "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000064_F1_C0007.observed.json",
+              "sha256": "5520bc4d66d98cb156bbf0d6d5f27515fec0be15dc9fee96b853aeb62c6a8b35"
+            },
+            "status": "COMPLETE"
+          },
+          "publication": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_claude/000064_F1_C0007.claim/PUBLISHED.json",
+            "sha256": "994c75280f2cd45b91893b165c530d855ef9f265c8796401c2ca36c67c668e0f"
+          },
+          "published_unix": 1789475456.1108367,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000064_F1_C0007.request.json",
+            "sha256": "895dcdee968b39c838bed2be7dcba951afa2c243e1b18dfb88742ec62ed52e11"
+          },
+          "response": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000064_F1_C0007.response.json",
+            "sha256": "70c6de74f73f31feced62d48006affdbecd3e24a74ea3b7e39e8e8235dd750f1"
+          },
+          "status": "COMPLETE"
+        },
+        {
+          "claimed": true,
+          "cycle": 7,
+          "id": "000065_F1_C0007",
+          "lane_deadline_unix": 1789475576.4029284,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000065_F1_C0007.request.json",
+            "sha256": "1782481fbe916868eb461537ddf7c17a8636a3d66397b308784da54d92b8af85"
+          },
+          "status": "PENDING"
+        }
+      ],
+      "terminal": null,
+      "terminal_status": null
+    },
+    "F2": {
+      "alive": true,
+      "first_COMPLETE": null,
+      "first_reply": null,
+      "migration": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/source/gpu/orch_r110_claude_broker.py",
+          "--config",
+          "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/F2/CONFIG.json",
+          "--launch-receipt",
+          "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/F2/LAUNCH.json",
+          "--prompt-root",
+          "/localhome/local-rohing/courier_swarm/prompts",
+          "--principles",
+          "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/source/research_notes/PARENTING_PRINCIPLES_ROHIN_2026-09-15.md"
+        ],
+        "bindings": {
+          "activation": {
+            "path": "/localhome/local-rohing/orch_math_feedback_uptake_r115_f2_20260915_attempt1/lane1/SHARED_ACTIVATION.json",
+            "sha256": "dcffedf129a3ea8c7f83ed42ea0d8487278e3f82d64a0652bfa4a029c2481097"
+          },
+          "common": {
+            "ADOPTION.json": {
+              "path": "/localhome/local-rohing/orch_r116_shared_node5_20260915_attempt1/ADOPTION.json",
+              "sha256": "6dfc7dcd59e86648478a13852ff740701930f36499c92bef1178d3e645dcf7b5"
+            },
+            "CONFIG.json": {
+              "path": "/localhome/local-rohing/orch_r116_shared_node5_20260915_attempt1/CONFIG.json",
+              "sha256": "e5ac72af0d88e4481174f853fbf3951294278b1c9f62c88080f7d4b816cceb51"
+            },
+            "INITIALIZED.json": {
+              "path": "/localhome/local-rohing/orch_r116_shared_node5_20260915_attempt1/INITIALIZED.json",
+              "sha256": "d4e2c87e97bcfccb639d332d996f9f239023bbaa19f9312ce95d30f3f0aecff6"
+            }
+          },
+          "ready": {
+            "path": "/localhome/local-rohing/orch_math_feedback_uptake_r115_f2_20260915_attempt1/lane1/SHARED_CLIENT_READY.json",
+            "sha256": "5b53f2bacef5d97903a93858bf28a5c80bcbcbc9a8a1d93585e21348d0f101a5"
+          },
+          "release": {
+            "path": "/localhome/local-rohing/orch_math_feedback_uptake_r115_f2_20260915_attempt1/lane1/R118_SHARED_HANDOFF_BRANCH.json",
+            "sha256": "27b1de8425417170fb289b2a93606afdb2f534aba1b145144ddd180c14d47279"
+          }
+        },
+        "branch": "F2",
+        "carried_claims": 54,
+        "config_path": "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/F2/CONFIG.json",
+        "config_sha256": "6d6ed0c098a4f590397d6e61cd526bcd1b682bcd68002b3697b2030ba9aeecc7",
+        "deadline_unix": 1789491540.0,
+        "max_parent_calls": 384,
+        "old_claims_retried": false,
+        "old_publications_sha256": "60a49ae3d6cf11cb69139f986744f3bee371ff99c575bbd5ac1dbeb4c6b8be13",
+        "parent_effort": "max",
+        "pid": 1058541,
+        "prior_pid": 689566,
+        "root": "/localhome/local-rohing/orch_math_feedback_uptake_r115_f2_20260915_attempt1/lane1",
+        "started_unix": 1789475356.3618088,
+        "terminal_filename": "SHARED_TERMINAL.json"
+      },
+      "migration_receipt": {
+        "path": "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/F2/PID.json",
+        "sha256": "ed490702f85894b1338e7cd3e1428639a98b07f84767e5777789ca145f4e1d04"
+      },
+      "native_accepted": 0,
+      "next_cycle": 10,
+      "old_publications_unchanged": true,
+      "shared_counts": {},
+      "shared_rows": [],
+      "terminal": null,
+      "terminal_status": null
+    },
+    "F3": {
+      "alive": true,
+      "first_COMPLETE": {
+        "actual_model": "claude-fable-5-1",
+        "all_transcript_hashes_verified": true,
+        "before_broker_migration": false,
+        "claimed": true,
+        "cycle": 21,
+        "error_code": null,
+        "finished_unix": 1789475456.8472779,
+        "id": "C021_E0_PARENT",
+        "lane_deadline_unix": 1789475561.6184106,
+        "native": {
+          "accepted": true,
+          "observed_unix": 1789475456.9108083,
+          "receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C021_E0_PARENT.json",
+            "sha256": "a07826b8c24cba8e3b0f602f60d204bc6fa6f58e04d1199d7646f305a634efbb"
+          },
+          "status": "COMPLETE"
+        },
+        "publication": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C021_E0_PARENT.claim/PUBLISHED.json",
+          "sha256": "9a05156046c20b685b9702e02657287e6a46ad3840165364a77dc62e839a6ef6"
+        },
+        "published_unix": 1789475456.8653414,
+        "request": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C021_E0_PARENT.request.json",
+          "sha256": "346574e975ff10f0ab3e70a1ab12eecf9827e37a230274e8db31f451d05f2ed8"
+        },
+        "response": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C021_E0_PARENT.response.json",
+          "sha256": "0fa1e5618336ebe1b75a1adb43b23cf063586bdaa729fc17b1f0e9562569d0c0"
+        },
+        "status": "COMPLETE"
+      },
+      "first_reply": {
+        "actual_model": "claude-fable-5-1",
+        "all_transcript_hashes_verified": true,
+        "before_broker_migration": false,
+        "claimed": true,
+        "cycle": 21,
+        "error_code": null,
+        "finished_unix": 1789475456.8472779,
+        "id": "C021_E0_PARENT",
+        "lane_deadline_unix": 1789475561.6184106,
+        "native": {
+          "accepted": true,
+          "observed_unix": 1789475456.9108083,
+          "receipt": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C021_E0_PARENT.json",
+            "sha256": "a07826b8c24cba8e3b0f602f60d204bc6fa6f58e04d1199d7646f305a634efbb"
+          },
+          "status": "COMPLETE"
+        },
+        "publication": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C021_E0_PARENT.claim/PUBLISHED.json",
+          "sha256": "9a05156046c20b685b9702e02657287e6a46ad3840165364a77dc62e839a6ef6"
+        },
+        "published_unix": 1789475456.8653414,
+        "request": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C021_E0_PARENT.request.json",
+          "sha256": "346574e975ff10f0ab3e70a1ab12eecf9827e37a230274e8db31f451d05f2ed8"
+        },
+        "response": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C021_E0_PARENT.response.json",
+          "sha256": "0fa1e5618336ebe1b75a1adb43b23cf063586bdaa729fc17b1f0e9562569d0c0"
+        },
+        "status": "COMPLETE"
+      },
+      "migration": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/source/gpu/orch_r110_claude_broker.py",
+          "--config",
+          "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/F3/CONFIG.json",
+          "--launch-receipt",
+          "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/F3/LAUNCH.json",
+          "--prompt-root",
+          "/localhome/local-rohing/courier_swarm/prompts",
+          "--principles",
+          "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/source/research_notes/PARENTING_PRINCIPLES_ROHIN_2026-09-15.md"
+        ],
+        "bindings": {
+          "activation": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/SHARED_ACTIVATION.json",
+            "sha256": "677ae3dbf816c6be437d760b9e0a359d96360691dd4372d4fdc3035bc8de382d"
+          },
+          "common": {
+            "ADOPTION.json": {
+              "path": "/localhome/local-rohing/orch_r116_shared_node5_20260915_attempt1/ADOPTION.json",
+              "sha256": "6dfc7dcd59e86648478a13852ff740701930f36499c92bef1178d3e645dcf7b5"
+            },
+            "CONFIG.json": {
+              "path": "/localhome/local-rohing/orch_r116_shared_node5_20260915_attempt1/CONFIG.json",
+              "sha256": "e5ac72af0d88e4481174f853fbf3951294278b1c9f62c88080f7d4b816cceb51"
+            },
+            "INITIALIZED.json": {
+              "path": "/localhome/local-rohing/orch_r116_shared_node5_20260915_attempt1/INITIALIZED.json",
+              "sha256": "d4e2c87e97bcfccb639d332d996f9f239023bbaa19f9312ce95d30f3f0aecff6"
+            }
+          },
+          "ready": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/SHARED_CLIENT_READY.json",
+            "sha256": "d20706d0ee5f43c428bfc41ffc7bb47e0879e9907c13043ebabe5e99ca86b941"
+          },
+          "release": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/R118_SHARED_HANDOFF_BRANCH.json",
+            "sha256": "dfda09edf9a26e34fe1bdde3e4c7d29719000c03988e63dfff1ad6cf97ca9aa0"
+          }
+        },
+        "branch": "F3",
+        "carried_claims": 90,
+        "config_path": "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/F3/CONFIG.json",
+        "config_sha256": "01bed3829305bee2f92da74c1930417fff4ac43bfb1c59f56128289689905ac6",
+        "deadline_unix": 1789497869.1416624,
+        "max_parent_calls": 1000,
+        "old_claims_retried": false,
+        "old_publications_sha256": "830013a08495371290b5f804908c6b6fe09bf69bbf589308bc05b7776e756ebd",
+        "parent_effort": "max",
+        "pid": 1058557,
+        "prior_pid": 692538,
+        "root": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1",
+        "started_unix": 1789475356.738525,
+        "terminal_filename": "SHARED_TERMINAL.json"
+      },
+      "migration_receipt": {
+        "path": "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/F3/PID.json",
+        "sha256": "051d587c6dade46c39df64f5d707dcb1ce673e509b8ac154ce77b4af9cc81089"
+      },
+      "native_accepted": 1,
+      "next_cycle": 21,
+      "old_publications_unchanged": true,
+      "shared_counts": {
+        "COMPLETE": 1,
+        "PENDING": 1
+      },
+      "shared_rows": [
+        {
+          "claimed": true,
+          "cycle": 21,
+          "id": "C021_E0_OPEN_PARENT",
+          "lane_deadline_unix": 1789475664.00388,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C021_E0_OPEN_PARENT.request.json",
+            "sha256": "33077107b69063db6182f108021bfb8645cb239c00e052c38f0ecf598a52f106"
+          },
+          "status": "PENDING"
+        },
+        {
+          "actual_model": "claude-fable-5-1",
+          "all_transcript_hashes_verified": true,
+          "before_broker_migration": false,
+          "claimed": true,
+          "cycle": 21,
+          "error_code": null,
+          "finished_unix": 1789475456.8472779,
+          "id": "C021_E0_PARENT",
+          "lane_deadline_unix": 1789475561.6184106,
+          "native": {
+            "accepted": true,
+            "observed_unix": 1789475456.9108083,
+            "receipt": {
+              "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/reservations/C021_E0_PARENT.json",
+              "sha256": "a07826b8c24cba8e3b0f602f60d204bc6fa6f58e04d1199d7646f305a634efbb"
+            },
+            "status": "COMPLETE"
+          },
+          "publication": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C021_E0_PARENT.claim/PUBLISHED.json",
+            "sha256": "9a05156046c20b685b9702e02657287e6a46ad3840165364a77dc62e839a6ef6"
+          },
+          "published_unix": 1789475456.8653414,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C021_E0_PARENT.request.json",
+            "sha256": "346574e975ff10f0ab3e70a1ab12eecf9827e37a230274e8db31f451d05f2ed8"
+          },
+          "response": {
+            "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C021_E0_PARENT.response.json",
+            "sha256": "0fa1e5618336ebe1b75a1adb43b23cf063586bdaa729fc17b1f0e9562569d0c0"
+          },
+          "status": "COMPLETE"
+        }
+      ],
+      "terminal": null,
+      "terminal_status": null
+    },
+    "F4": {
+      "alive": false,
+      "first_COMPLETE": {
+        "actual_model": "claude-fable-5-1",
+        "all_transcript_hashes_verified": true,
+        "before_broker_migration": true,
+        "claimed": true,
+        "cycle": 8,
+        "error_code": null,
+        "finished_unix": 1789475372.3232899,
+        "id": "P0036",
+        "lane_deadline_unix": 1789475927.5677283,
+        "native": {
+          "accepted": false,
+          "status": "NO_NATIVE_RECEIPT"
+        },
+        "publication": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_claude/P0036.claim/PUBLISHED.json",
+          "sha256": "573a3179ef30913eaa71ab5e9eab5b2278456ba50ff36ca9c513fb8a28c8d92d"
+        },
+        "published_unix": 1789475372.3379707,
+        "request": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0036.request.json",
+          "sha256": "a8fe02e3dc5bc975dfa9ba2557378e909c3912d30d37bb142b3933e7a82bd26b"
+        },
+        "response": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0036.response.json",
+          "sha256": "09f865547d0657068c928a94f1b26453f8933943d9c3c3b9c6a8fedcbebd21bd"
+        },
+        "status": "COMPLETE"
+      },
+      "first_reply": {
+        "actual_model": "claude-fable-5-1",
+        "all_transcript_hashes_verified": true,
+        "before_broker_migration": true,
+        "claimed": true,
+        "cycle": 8,
+        "error_code": null,
+        "finished_unix": 1789475372.3232899,
+        "id": "P0036",
+        "lane_deadline_unix": 1789475927.5677283,
+        "native": {
+          "accepted": false,
+          "status": "NO_NATIVE_RECEIPT"
+        },
+        "publication": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_claude/P0036.claim/PUBLISHED.json",
+          "sha256": "573a3179ef30913eaa71ab5e9eab5b2278456ba50ff36ca9c513fb8a28c8d92d"
+        },
+        "published_unix": 1789475372.3379707,
+        "request": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0036.request.json",
+          "sha256": "a8fe02e3dc5bc975dfa9ba2557378e909c3912d30d37bb142b3933e7a82bd26b"
+        },
+        "response": {
+          "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0036.response.json",
+          "sha256": "09f865547d0657068c928a94f1b26453f8933943d9c3c3b9c6a8fedcbebd21bd"
+        },
+        "status": "COMPLETE"
+      },
+      "migration": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/source/gpu/orch_r110_claude_broker.py",
+          "--config",
+          "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/F4/CONFIG.json",
+          "--launch-receipt",
+          "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/F4/LAUNCH.json",
+          "--prompt-root",
+          "/localhome/local-rohing/courier_swarm/prompts",
+          "--principles",
+          "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/source/research_notes/PARENTING_PRINCIPLES_ROHIN_2026-09-15.md"
+        ],
+        "bindings": {
+          "activation": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/SHARED_ACTIVATION.json",
+            "sha256": "c3a58b13187ae30a88282087aa72f1490a3ebe6af76297cc79b5174e871df6e1"
+          },
+          "common": {
+            "ADOPTION.json": {
+              "path": "/localhome/local-rohing/orch_r116_shared_node5_20260915_attempt1/ADOPTION.json",
+              "sha256": "6dfc7dcd59e86648478a13852ff740701930f36499c92bef1178d3e645dcf7b5"
+            },
+            "CONFIG.json": {
+              "path": "/localhome/local-rohing/orch_r116_shared_node5_20260915_attempt1/CONFIG.json",
+              "sha256": "e5ac72af0d88e4481174f853fbf3951294278b1c9f62c88080f7d4b816cceb51"
+            },
+            "INITIALIZED.json": {
+              "path": "/localhome/local-rohing/orch_r116_shared_node5_20260915_attempt1/INITIALIZED.json",
+              "sha256": "d4e2c87e97bcfccb639d332d996f9f239023bbaa19f9312ce95d30f3f0aecff6"
+            }
+          },
+          "ready": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/SHARED_CLIENT_READY.json",
+            "sha256": "6854a97eb8131c5b45ffea867bb43ffc6cda2a6d79582f443cff05c0bb126eba"
+          },
+          "release": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/R118_SHARED_HANDOFF_BRANCH.json",
+            "sha256": "230750d301e54f2967ce4511ddebf17833ed2363b7b55ca5cb5fb3bbba9ee9a7"
+          }
+        },
+        "branch": "F4",
+        "carried_claims": 36,
+        "config_path": "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/F4/CONFIG.json",
+        "config_sha256": "9869a775c2bb150c040ea6bcd2e7c6e8e584a704012cfa8bf9a5de56b1c5f175",
+        "deadline_unix": 1789491720.0,
+        "max_parent_calls": 298,
+        "old_claims_retried": false,
+        "old_publications_sha256": "8cdad1d72b28e168eb7a0a90c1b0f71cbecc08abd8bd265248b0e4d7a66e1b4f",
+        "parent_effort": "max",
+        "pid": 1059941,
+        "prior_pid": 815990,
+        "root": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4",
+        "started_unix": 1789475372.5069873,
+        "terminal_filename": "SHARED_TERMINAL.json"
+      },
+      "migration_receipt": {
+        "path": "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/F4/PID.json",
+        "sha256": "e7ee7a468e87a11857a73d7a46aa3fb640ded8eab9f8d66502e8ba9488644cd7"
+      },
+      "native_accepted": 0,
+      "next_cycle": 8,
+      "old_publications_unchanged": true,
+      "shared_counts": {
+        "COMPLETE": 1
+      },
+      "shared_rows": [
+        {
+          "actual_model": "claude-fable-5-1",
+          "all_transcript_hashes_verified": true,
+          "before_broker_migration": true,
+          "claimed": true,
+          "cycle": 8,
+          "error_code": null,
+          "finished_unix": 1789475372.3232899,
+          "id": "P0036",
+          "lane_deadline_unix": 1789475927.5677283,
+          "native": {
+            "accepted": false,
+            "status": "NO_NATIVE_RECEIPT"
+          },
+          "publication": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_claude/P0036.claim/PUBLISHED.json",
+            "sha256": "573a3179ef30913eaa71ab5e9eab5b2278456ba50ff36ca9c513fb8a28c8d92d"
+          },
+          "published_unix": 1789475372.3379707,
+          "request": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0036.request.json",
+            "sha256": "a8fe02e3dc5bc975dfa9ba2557378e909c3912d30d37bb142b3933e7a82bd26b"
+          },
+          "response": {
+            "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_queue/P0036.response.json",
+            "sha256": "09f865547d0657068c928a94f1b26453f8933943d9c3c3b9c6a8fedcbebd21bd"
+          },
+          "status": "COMPLETE"
+        }
+      ],
+      "terminal": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/SHARED_TERMINAL.json",
+        "sha256": "0db0d8379de7c04875a34f443cc09c0a8949e128b5ab0456493fb8b991a34f99"
+      },
+      "terminal_status": {
+        "exit_code": 1,
+        "finished_unix": 1789475373.41239,
+        "local_optimizer_steps": 0,
+        "status": "FAILED"
+      }
+    }
+  },
+  "eligibility": "Original root request payload cycle >= owner release next_cycle; activation/source binding retained. Not a semantic benefit or optimizer attribution claim.",
+  "migration_source": {
+    "path": "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/MIGRATE.py",
+    "sha256": "1de354eff1deb4d41486f98ef5b12a23cb9aa98e5805d1afb898748446d4b8d1"
+  },
+  "native_CPU_tests": {
+    "count": 85,
+    "passed": true,
+    "provider_calls": 0,
+    "same_broker_source": true
+  },
+  "no_new_provider_calls_by_observer": true,
+  "observed_utc": "2026-09-15T12:31:35.904435+00:00",
+  "owner_reported_followups": {
+    "F2": "Math12:31: initial strict admission failed before native dispatch; bounded full rescans underway. No new queued shared parent yet.",
+    "F4": "Herschel12:31: FileNotFoundError for omitted battle-plan file in native closure after valid parent; native packaging/continuation repair owner-owned. Preserve terminal and P0036, no broker restart or retry."
+  },
+  "schema": "ORCH_R118_SHARED_BROKER_ACTUAL_V1",
+  "source": {
+    "path": "/localhome/local-rohing/orch_r118_claude_shared_successors_20260915_v1/source/gpu/orch_r110_claude_broker.py",
+    "sha256": "46f4118be681920c97f18bdb1c1c5b6231d1ce75873246f2f6a1dea36f86bdf7"
+  }
+}
