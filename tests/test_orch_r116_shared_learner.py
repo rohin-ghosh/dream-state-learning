@@ -1,9 +1,12 @@
 from collections import Counter
+from contextlib import nullcontext
 from copy import deepcopy
 import json
 from pathlib import Path
 import tempfile
 import unittest
+from types import SimpleNamespace
+from unittest.mock import Mock, patch
 
 from gpu import orch_r116_shared_learner as shared
 
@@ -17,7 +20,9 @@ class SharedLearnerTests(unittest.TestCase):
         self.specs = {branch: dict(root=str(self.root / branch),
             train_ids=[branch + '_one', branch + '_two']) for branch in shared.BRANCHES}
         self.checkpoint = self.make_checkpoint(self.root / 'initial', 'initial')
-        shared.initialize(self.shared, self.specs, self.checkpoint, excluded_ids=['sealed'])
+        self.prior = dict.fromkeys(shared.METRICS, 0)
+        shared.initialize(self.shared, self.specs, self.checkpoint, excluded_ids=['sealed'],
+                          prior_metrics=self.prior, initial_history={})
 
     def make_checkpoint(self, folder, text):
         folder.mkdir(parents=True)
@@ -34,7 +39,8 @@ class SharedLearnerTests(unittest.TestCase):
         messages = [dict(role='user', content='Visible observation; parent advice in prefix.')]
         response = dict(messages=messages, prompt_tokens=12, raw='Child thought.',
                         token_ids=[3, 4], terminal=True, truncated=False)
-        call = dict(task_id=task, phase=phase, split=split, attached_readout=attached, response=response)
+        call = dict(task_id=task, phase=phase, split=split, attached_readout=attached, response=response,
+                    shared_generation=0, shared_checkpoint_sha256=self.checkpoint['path_sha256'])
         path = self.root / branch / ('call_' + str(ordinal) + '.json')
         shared.write(path, call)
         return dict(replay_mode=shared.replay.MODE, student_prefix=messages,
@@ -57,18 +63,20 @@ class SharedLearnerTests(unittest.TestCase):
         specs = dict(self.specs)
         specs.pop('A4')
         with self.assertRaisesRegex(ValueError, 'exact_eight'):
-            shared.initialize(self.shared, specs, self.checkpoint)
+            shared.initialize(self.shared, specs, self.checkpoint, prior_metrics=self.prior, initial_history={})
 
     def test_initialize_idempotent(self):
         before = shared.read(self.shared / 'STATE.json')
-        after = shared.initialize(self.shared, self.specs, self.checkpoint, excluded_ids=['sealed'])
+        after = shared.initialize(self.shared, self.specs, self.checkpoint, excluded_ids=['sealed'],
+                                  prior_metrics=self.prior, initial_history={})
         self.assertEqual(before, after)
 
     def test_sealed_overlap_rejected(self):
         specs = deepcopy(self.specs)
         specs['F1']['train_ids'].append('sealed')
         with self.assertRaisesRegex(ValueError, 'held_train_overlap'):
-            shared.initialize(self.root / 'bad', specs, self.checkpoint, excluded_ids=['sealed'])
+            shared.initialize(self.root / 'bad', specs, self.checkpoint, excluded_ids=['sealed'],
+                              prior_metrics=self.prior, initial_history={})
 
     def test_submit_is_idempotent_not_double_counted(self):
         rows = [self.row('F1', 0), self.row('F1', 1)]
@@ -182,6 +190,62 @@ class SharedLearnerTests(unittest.TestCase):
             shared.consolidate(self.shared, 'F1', self.checkpoint['path_sha256'],
                                None, None, [], None, None, train_call=crash)
         self.assertEqual(shared.read(self.shared / 'STATE.json')['generation'], 0)
+
+    def test_adoption_preserves_counters_unknown_exposures_and_rehearsal(self):
+        previous_row = self.row('F1', 0)
+        previous_metrics = dict(optimizer_steps=113, child_token_exposures=None, anchor_token_exposures=700)
+        root = self.root / 'adopted'
+        state = shared.initialize(root, self.specs, self.checkpoint, prior_metrics=previous_metrics,
+                                  initial_history={'F1': [previous_row]})
+        self.assertEqual(state['optimizer_steps'], 113)
+        self.assertIsNone(state['child_token_exposures'])
+        self.assertEqual(state['shared_optimizer_steps'], 0)
+        self.assertEqual(shared.read(root / 'CONFIG.json')['initial_history']['F1'], [previous_row])
+
+    def test_continuation_is_training_not_readout(self):
+        self.submit('F1', [self.row('F1', 0, phase='continuation'), self.row('F1', 1)])
+        self.assertEqual(shared.barrier_status(self.shared)['present'], ['F1'])
+
+    def test_old_base_capture_cannot_be_relabeled_shared(self):
+        row = self.row('F1', 0)
+        source = Path(row['source_call_path'])
+        call = shared.read(source)
+        call.pop('shared_checkpoint_sha256')
+        shared.write(source, call, replace=True)
+        row['source_call_sha256'] = shared.sha(source)
+        with self.assertRaisesRegex(ValueError, 'capture_must_bind_actual_shared_child'):
+            self.submit('F1', [row])
+
+    def test_actual_training_loop_has_anchor_gradient_every_update(self):
+        from gpu import orch_guided_native as native
+        weights = []
+        class Loss:
+            def __mul__(self, weight):
+                weights.append(weight)
+                return self
+
+            def backward(self):
+                pass
+
+        item = SimpleNamespace(input_ids=(1, 2, 3), labels=(-100, 2, 3), target_ids=(2, 3))
+        torch = SimpleNamespace(tensor=lambda values, **kwargs: values, long='long', bfloat16='bf16',
+            ones_like=lambda values: values, autocast=lambda **kwargs: nullcontext(), isfinite=lambda loss: True)
+        model = Mock(return_value=SimpleNamespace(loss=Loss()))
+        model.config = SimpleNamespace(use_cache=True)
+        engine = SimpleNamespace(torch=torch, tokenizer=None, model=model, device='cpu', verify_base=Mock())
+        optimizer = Mock()
+        output = self.root / 'train'
+        output.mkdir()
+        with patch.object(shared.replay, 'encode_row', return_value=item), \
+                patch.object(native.development, 'enable_existing_adapter'):
+            result = shared.train(engine, optimizer, [{}, {}, {}], [{}],
+                                  [dict(encoded=item)] * 42, output, lambda label: None)
+        self.assertEqual(optimizer.step.call_count, 49)
+        self.assertEqual(weights, [.75, .25] * 49)
+        self.assertEqual(result['child_token_exposures'], 98)
+        self.assertEqual(result['anchor_token_exposures'], 98)
+        engine.verify_base.assert_called_once()
+        model.requires_grad_.assert_called_once_with(False)
 
 
 if __name__ == '__main__':

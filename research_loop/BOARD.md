@@ -1,5 +1,21 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## [Builder] 2026-09-15 11:03 UTC — Fable now dispatches from node5
+
+First verified Fable F1 COMPLETE:10:55:52.275609UTC, actualclaude-fable-5-1,
+responseSHA75c9d0ba655486286327dfb74aed749a614971c48e8bf5e45878451e97e2ae5d.
+Node-hosted broker dispatch began before11:03; no VM reboot. Four nodebroker
+PIDs initially371975/371978/371980/371983; per-branch lock migration in progress
+because global fail-fast locking caused MISSING slots. Preserve those charges.
+F2's separately restored VM broker is being retired, not misreported as node-local.
+Node5 measured10:56UTC8/8resident,4instantaneouslycomputing, mixed old/matched
+Astra lanes during safe handoff. F3 recovered real generation after70failed
+hook calls; it is not yet a verified COMPLETE parent. No learning claim yet.
+Node1_7 recoverednative142328 ACTOR_READY,8/8node1resident at10:58:50.
+Node2 transient gaps resolved by its existing supervisor:0-6allresident10:54,
+FULL10852; no reset. A1004 extraBASEgrid parenting assignedLaplace forrefill.
+Shared mode remains PER-BRANCH fallback;25coordinatorCPUtests pass, rollout pending.
+
 ## [Builder] 2026-09-15 10:55 UTC — R118 immediate refill
 
 Main re-admits node1 physical7's original frozenBASE parenting at cycle6,

@@ -15,7 +15,8 @@ from organism_v6 import orch_r107_parented_replay as replay
 BRANCHES = ('F1', 'F2', 'F3', 'F4', 'A1', 'A2', 'A3', 'A4')
 ANCHOR_SHA = '2ad09dbe9673f95cbe92cd41e70d83635702b615fb7295b8b3f850e9ee674753'
 PHASES = frozenset(('experience', 'episode', 'presleep', 'reflection', 'open_turn',
-                    'open_train', 'open_continue', 'metacognition'))
+                    'open_train', 'open_continue', 'open_observation', 'continuation', 'metacognition'))
+METRICS = ('optimizer_steps', 'child_token_exposures', 'anchor_token_exposures')
 
 
 def require(condition, reason):
@@ -73,7 +74,7 @@ def checked_checkpoint(checkpoint):
 
 
 def initialize(root, branch_specs, checkpoint, *, owner='F1', excluded_ids=(),
-               anchor_sha256=ANCHOR_SHA):
+               anchor_sha256=ANCHOR_SHA, prior_metrics, initial_history):
     require(set(branch_specs) == set(BRANCHES), 'exact_eight_branches_required')
     require(owner == 'F1', 'declared_single_optimizer_owner_F1')
     require(anchor_sha256 == ANCHOR_SHA, 'same_broad_anchor_inventory')
@@ -83,23 +84,31 @@ def initialize(root, branch_specs, checkpoint, *, owner='F1', excluded_ids=(),
     for spec in branch_specs.values():
         require(Path(spec['root']).is_absolute() and spec['train_ids'], 'bound_branch_train_inventory')
         require(not exclusions.intersection(spec['train_ids']), 'held_train_overlap')
+    require(set(prior_metrics) == set(METRICS), 'explicit_pretransition_counters_required')
+    require(all(value is None or type(value) is int and value >= 0 for value in prior_metrics.values()),
+            'unknown_history_is_null_not_zero')
+    require(set(initial_history).issubset(BRANCHES), 'bound_initial_history_branches')
+    for branch, rows in initial_history.items():
+        for row in rows:
+            validate_row(row, branch_specs[branch], exclusions)
     config = dict(schema='R116_SHARED_LEARNER_V1', branches=branch_specs, owner=owner,
                   excluded_ids=sorted(exclusions), anchor_sha256=anchor_sha256,
                   episodes_per_branch=2, new_presentations=16, rehearsal_presentations=1,
-                  anchor_loss_weight=.25, initial_checkpoint=checked_checkpoint(checkpoint))
+                  anchor_loss_weight=.25, initial_checkpoint=checked_checkpoint(checkpoint),
+                  pretransition_metrics=prior_metrics, initial_history=initial_history)
     with locked(root) as root:
         if (root / 'CONFIG.json').exists():
             require(read(root / 'CONFIG.json') == config, 'shared_configuration_is_immutable')
             return read(root / 'STATE.json')
         write(root / 'CONFIG.json', config)
-        state = dict(generation=0, checkpoint=checkpoint, optimizer_steps=0,
-                     child_token_exposures=0, anchor_token_exposures=0,
-                     config_sha256=sha(root / 'CONFIG.json'))
+        state = dict(generation=0, checkpoint=checkpoint, **prior_metrics,
+                     config_sha256=sha(root / 'CONFIG.json'),
+                     **{'shared_' + name: 0 for name in METRICS})
         write(root / 'STATE.json', state)
         return state
 
 
-def validate_row(row, spec, exclusions):
+def validate_row(row, spec, exclusions, *, generation=None, checkpoint_sha256=None):
     source = Path(row['source_call_path']).resolve()
     require(source.is_relative_to(Path(spec['root']).resolve()), 'source_outside_branch')
     require(not any('readout' in part.lower() or part.lower() in ('dev', 'final')
@@ -107,6 +116,10 @@ def validate_row(row, spec, exclusions):
     require(sha(source) == row['source_call_sha256'], 'source_capture_hash_mismatch')
     call = read(source)
     metadata = call.get('request') or call
+    if generation is not None:
+        require(metadata.get('shared_generation') == generation
+                and metadata.get('shared_checkpoint_sha256') == checkpoint_sha256,
+                'capture_must_bind_actual_shared_child')
     phase = metadata.get('phase', metadata.get('purpose'))
     require(phase in PHASES, 'readout_phase_never_experience')
     require(metadata.get('split', 'TRAIN') == 'TRAIN', 'held_split_never_experience')
@@ -130,7 +143,8 @@ def submit(root, branch, generation, checkpoint_sha256, episode_ids, rows):
         spec = config['branches'][branch]
         require(all(identifier in spec['train_ids'] for identifier in episode_ids), 'bound_episode_ids')
         for row in rows:
-            validate_row(row, spec, config['excluded_ids'])
+            validate_row(row, spec, config['excluded_ids'], generation=generation,
+                         checkpoint_sha256=checkpoint_sha256)
             require(row['episode_id'] in episode_ids, 'row_outside_two_episode_cycle')
         identities = [row['source_call_sha256'] for row in rows]
         require(len(identities) == len(set(identities)), 'duplicate_source_in_submission')
@@ -169,7 +183,8 @@ def pooled_rows(root, generation):
     for branch in BRANCHES:
         receipt = read(root / f'generation_{generation:06d}' / (branch + '.json'))
         for row in receipt['rows']:
-            validate_row(row, config['branches'][branch], config['excluded_ids'])
+            validate_row(row, config['branches'][branch], config['excluded_ids'],
+                         generation=generation, checkpoint_sha256=receipt['checkpoint_sha256'])
             require(row['source_call_sha256'] not in seen, 'duplicate_source_between_branches')
             seen.add(row['source_call_sha256'])
             rows.append(row)
@@ -247,7 +262,12 @@ def consolidate(root, owner, loaded_checkpoint_sha256, engine, optimizer, anchor
         output.mkdir(exist_ok=True)
         require(not (output / 'START.json').exists(), 'partial_sleep_requires_explicit_recovery_no_replay')
         rows = pooled_rows(root, generation)
-        history = [row for prior in range(generation) for row in pooled_rows(root, prior)]
+        config = read(root / 'CONFIG.json')
+        history = []
+        for branch, previous in config['initial_history'].items():
+            history.extend(validate_row(row, config['branches'][branch], config['excluded_ids'])
+                           for row in previous)
+        history.extend(row for prior in range(generation) for row in pooled_rows(root, prior))
         require(not {row['source_call_sha256'] for row in history}.intersection(
             row['source_call_sha256'] for row in rows), 'old_capture_resubmitted_as_new')
         write(output / 'START.json', dict(generation=generation, pid=os.getpid(), started_unix=time.time(),
@@ -256,8 +276,9 @@ def consolidate(root, owner, loaded_checkpoint_sha256, engine, optimizer, anchor
         checkpoint = checked_checkpoint(save_checkpoint(output / 'checkpoint', generation + 1, metrics))
         next_state = dict(generation=generation + 1, checkpoint=checkpoint,
                           config_sha256=state['config_sha256'])
-        for name in ('optimizer_steps', 'child_token_exposures', 'anchor_token_exposures'):
-            next_state[name] = state[name] + metrics[name]
+        for name in METRICS:
+            next_state[name] = None if state[name] is None else state[name] + metrics[name]
+            next_state['shared_' + name] = state['shared_' + name] + metrics[name]
         write(output / 'COMPLETE.json', dict(metrics=metrics, state=next_state,
               completed_unix=time.time(), same_optimizer=True, source_checkpoint=state['checkpoint']))
         write(root / 'STATE.json', next_state, replace=True)
