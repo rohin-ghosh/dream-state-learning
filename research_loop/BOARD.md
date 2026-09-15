@@ -1,5 +1,15 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## [Builder] 2026-09-15 10:55 UTC — R118 immediate refill
+
+Main re-admits node1 physical7's original frozenBASE parenting at cycle6,
+preserving184native/9parentcomplete/0optimizerupdates, original bounds and all
+prior raw. Six local+same6native recovery tests pass. Original missing-parent
+bug repaired without quota reset; dispatch subject unchanged scoped GPU scan.
+R117 Claude broker migration to node5 is owned by Hubble, deadline11:03UTC.
+Shared coordinator21CPUtestsPASS, not yet pooled learning. NativeF2/F3 nowseen
+onphysical1/2; fresh readouts are not delivered-parent evidence.
+
 ## [Builder] 2026-09-15 10:45 UTC — R116 launch fallback in progress
 
 R116 supersedes preparation-only gating: launch existing paired implementations,

@@ -16,7 +16,7 @@ from gpu import orch_r111_route_sleep as pair
 
 
 VERSION = 'recovery_r113_v1'
-LANES = ('a100_1', 'a100_2', 'a100_3', 'a100_5', 'a100_6')
+LANES = ('a100_1', 'a100_2', 'a100_3', 'a100_5', 'a100_6', 'node1_7')
 
 
 def directory(root, lane):
@@ -25,7 +25,7 @@ def directory(root, lane):
 
 def prepare(root, lane):
     old.verify(root, lane)
-    old.policy.require(lane in LANES, 'only_released_owned_a100_route')
+    old.policy.require(lane in LANES, 'only_released_owned_route')
     prior = root/('campaign_'+lane)
     launch = old.read(prior/'LAUNCH.json')
     old.policy.require(not Path('/proc', str(launch['pid'])).exists(), 'original_native_absent')

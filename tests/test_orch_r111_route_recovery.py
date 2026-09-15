@@ -8,6 +8,15 @@ import pytest
 from gpu import orch_r111_route_recovery as recovery
 
 
+def test_node1_timeout_recovery_keeps_original_slot_and_bounds():
+    assert 'node1_7' in recovery.LANES
+    assert recovery.old.policy.LANES['node1_7']['physical'] == 7
+    assert recovery.old.policy.LANES['node1_7']['learned'] is False
+    text = inspect.getsource(recovery.prepare)
+    assert "failed['error']['message'] == 'parent_timeout_no_replay'" in text
+    assert "unchanged_deadline=old.read(prior/'READY.json')['hard_deadline_unix']" in text
+
+
 def test_exact_native_transform_preserves_reservation_function():
     native = recovery.native_function()
     assert native.__globals__['reserve'] is recovery.old.reserve
