@@ -1,0 +1,122 @@
+{
+  "observed_utc": "2026-09-15T04:54:59.581946+00:00",
+  "latest_gpu_observation_utc": "2026-09-15T04:54:09Z",
+  "lanes": {
+    "physical0": {
+      "pid": 254820,
+      "role": "segment2 GUIDED cycle2 sleep",
+      "utilization_percent": 64
+    },
+    "physical1": {
+      "pid": null,
+      "role": "segment2 UNPARENTED cycle2 COMPLETE; no further work in its registered segment",
+      "readout_completed_utc": "2026-09-15T04:50:24.726892+00:00"
+    },
+    "physical2": {
+      "pid": null,
+      "role": "segment2 historical FROZEN LoRA cycle2 COMPLETE",
+      "readout_completed_utc": "2026-09-15T04:52:23.065040+00:00"
+    }
+  },
+  "bounds": {
+    "segment2_native_deadline_unix": 1789459952.6568093,
+    "segment2_presentations_per_cycle": 16,
+    "cycles": 2,
+    "controls_preserved": true,
+    "new_provider_calls_this_turn": 0,
+    "new_gpu_launches_this_turn": 0
+  },
+  "canonical_no_lora": {
+    "launched": false,
+    "segment3_exists": false,
+    "source_ready": false,
+    "no_adapter_provenance_tests_passed": false,
+    "historical_frozen_relabelled": false,
+    "haiku_queue_retired": true,
+    "transition_gate": "GUIDED C2 completion, new strong-provider NO_LORA source/tests/provenance, published allocation, fresh full admission; no defensible launch timestamp yet",
+    "baseline": "one shared GUIDED / UNPARENTED / same-parent NO_LORA; extra styles treatment-only",
+    "dose": "prospective 4 then 16 additional, no within-life reset"
+  },
+  "strong_provider": {
+    "actual_model": "openai/openai/gpt-6-astra",
+    "verified": true,
+    "reply_utc": "2026-09-15T04:08:11.545194+00:00",
+    "dispatch_utc": "2026-09-15T04:07:51.047966+00:00",
+    "usage": {
+      "cost": null,
+      "input_tokens": 371,
+      "input_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": null
+      },
+      "output_tokens": 800,
+      "output_tokens_details": {
+        "reasoning_tokens": 692,
+        "text_tokens": null
+      },
+      "total_tokens": 1171
+    },
+    "api_bounds": {
+      "attempts": 1,
+      "retries": 0,
+      "maximum_output_tokens": 4096,
+      "timeout_seconds": 120,
+      "tool_access": false
+    },
+    "receipt_path": "research_notes/analysis/orch_route_parent_campaign_20260915_monitor_v2/provider_strong/RECEIPT.json",
+    "receipt_sha256": "d94e8b9796ae3ea54881615c24d9ca33ae4f60dd74b0139983b341e4a6732165",
+    "fable_class_receipt": "NOT_VERIFIED; historical Sonnet is not relabelled Fable",
+    "not_new_baseline_parent_call": true
+  },
+  "tests": {
+    "unittest_discovery": {
+      "passed": 39,
+      "command": "python3 -B -m unittest discover -s tests -p 'test_orch_route_parent_campaign*.py' -q"
+    },
+    "pytest": "NOT_RUN: system python has no pytest; no package/config changes"
+  },
+  "mirror_receipt": "research_notes/analysis/orch_route_parent_campaign_20260915_rohin100/NODE_MIRROR_RECEIPT.json",
+  "pruning": {
+    "performed": false,
+    "listed_snapshot_verified_on_node": true,
+    "live_parent_ledgers_request_response_delivered_markers": "KEEP; do not prune active broker restart/idempotency state",
+    "teacher_completed_raw": "node-verified snapshot; eligible for path-by-path rehash and untracked-only compaction",
+    "future_calls": "not covered by this snapshot"
+  },
+  "source_test_manifest": [
+    {
+      "path": "gpu/orch_route_parent_campaign_mirror.py",
+      "sha256": "61e88f8c3c7179600c41db5f10243ea7fbe4a912243d30b41003e466291dec35"
+    },
+    {
+      "path": "tests/test_orch_route_parent_campaign_mirror.py",
+      "sha256": "e6683f31027c774e684aa45c5557655a9d87be1fc0ed993e6ee78d69a910de9d"
+    },
+    {
+      "path": "gpu/orch_route_parent_campaign_timing.py",
+      "sha256": "a5c12bc33d665cca4a44f475dd302b04928e64bd9ad4ae4b45f19da595da8cb9"
+    },
+    {
+      "path": "gpu/orch_route_parent_campaign_wire_resume.py",
+      "sha256": "0a71ebaa797b1565e3dc39f35fb71e83e66ac0dd2c7a8cc03ac7572b2e3943c5"
+    },
+    {
+      "path": "tests/test_orch_route_parent_campaign_wire_resume.py",
+      "sha256": "73378b8f7f6ef4dfeaa38b5f18aee7d0112051ee6bbbc010db45c5afed89a1e5"
+    },
+    {
+      "path": "gpu/orch_route_parent_campaign_teacher_exemplar.py",
+      "sha256": "f3b84cf157914c299d6738f78072743be7452e195c03b72d09f4d901aa32ee85"
+    },
+    {
+      "path": "organism_v6/orch_route_parent_campaign_teacher_exemplar.py",
+      "sha256": "78d632cf24db923d53192769f511620cb2654e9857cd0fe8f30a96a0dd25ab3d"
+    },
+    {
+      "path": "tests/test_orch_route_parent_campaign_teacher_exemplar.py",
+      "sha256": "3704592929e22250488e516f0fd0401ddb42820fa701896acd46d59f9be9e225"
+    }
+  ]
+}

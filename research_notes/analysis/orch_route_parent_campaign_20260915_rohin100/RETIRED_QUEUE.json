@@ -1,0 +1,33 @@
+{
+  "utc": "2026-09-15T04:39:17.302511+00:00",
+  "pid": 3364716,
+  "command": [
+    "python3",
+    "-B",
+    "-m",
+    "gpu.orch_route_parent_campaign_queue",
+    "--host",
+    "local-rohing@10.176.170.186",
+    "--local-root",
+    "/data/home/rohing/dream-state-orch/research_notes/analysis/orch_route_parent_campaign_20260915_dose4to16/continuation",
+    "--deadline",
+    "1789501022.75119",
+    "--qualifications",
+    "/data/home/rohing/dream-state-orch/research_notes/analysis/orch_route_parent_campaign_20260915_dose4to16/QUALIFICATIONS.json",
+    "--start-segment",
+    "3",
+    "--dose4to16",
+    ""
+  ],
+  "proc_stat": "3364716 (python3) S 1 3364702 3364702 0 -1 4194304 5077 44825 6 7 9 4 309 35 20 0 1 0 155351332 39424000 5198 18446744073709551615 4325376 7351213 140733670926752 0 0 0 0 16781319 0 1 0 0 17 10 0 0 0 0 0 10649032 12212352 92585984 140733670934412 140733670934829 140733670934829 140733670936551 0\n",
+  "status": {
+    "next_segment": 3,
+    "previous": "/tmp/orch_route_parent_campaign_20260915_segment2",
+    "state": "PREDECESSOR_RUNNING_NOT_IDLE_HOLD",
+    "time_unix": 1789447151.8478904
+  },
+  "reason": "ROHIN100_RETIRE_UNLAUNCHED_HAIKU_AND_DUPLICATE_BASELINE_QUEUE",
+  "segment2_preserved": true,
+  "next_launch_requires_new_control_source_tests_and_main_allocation": true,
+  "raw_storage": "NODES_ONLY"
+}
