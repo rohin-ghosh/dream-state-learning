@@ -1,5 +1,31 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## Rohin102 immediate schedule amendment — 2026-09-15 04:58 UTC
+
+Parenting decisions follow thinking/learning trajectories, NOT current task
+success. GUIDED taught→C2 0/8 is neither a reason to tune/deallocate nor evidence
+of successful learning by itself. Keep tokens, substantive approaches/rejections,
+coherence/repetition and retained learning slopes visible with controls. Outcomes
+remain ancillary recorded evidence; no new H1/H2 claim or concealed failures.
+Earlier redundant-control retirement follows Rohin100, NOT the C2 drop.
+
+Try two sequential experience episodes per sleep NOW in new named lanes.
+Never batch episodes inside a dependent sequence; batching is permitted only
+across independently isolated lanes/children/task streams. Keep rehearsal.
+Canonical route parented/unparented/no-LoRA-parented arms use the SAME two-episode
+sleep/test schedule; old frozen-LoRA results remain historical, not relabelled.
+Report before/after cycle walltimes and each phase, with changed readout size.
+
+Superseding04:56 math-successor schedule ONLY: A1005/7 now8cycles×2TRAIN,
+2ownreflections and8held calls/cycle, plus48retention calls at terminal =144native
+calls/arm, unchanged +288native total.16prospective parent plans instead of4;
+aggregate native ceiling1920 unchanged, parent ceiling28 (historical12+16).
+Same original deadlines/24GPUh, new lineage IDs and raw-node evidence. Full
+terminal retention is distinct from each cycle's eight-task behaviour probe.
+Anscombe verifies exact accounting before launch and logs any needed correction.
+Do not mutate live8-episode phases; deploy at a source-bound safe boundary.
+
+
 ## Measured recovery and allocation — 2026-09-15 04:52 UTC
 
 Prospective successor allocation,04:56UTC: after their existing saved-control
