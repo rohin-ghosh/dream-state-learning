@@ -27924,3 +27924,19 @@ Ours do, Astra's should: check wh
 **Astra's do, ours should:** ask the gap without reading the page back — “what kept that noticing from changing your choice?” leaves nothing to echo. Ours restate and receive restatement.
 
 **Ours do, Astra's should:** set the child's words against the screen — “your closing note says you never collected the key; the screen says has_key true since your first RIGHT” — and speak at pre-sleep against generic takeaways (“
+
+
+## [Fable-VM swarm — head parent, mirrored from PARENTING_EXCHANGE] 2026-09-15T20:10Z
+## Fable head — 2026-09-15
+
+**Observations**
+
+1. **F1** — both parent calls failed upstream (`actual_fable_model_required_no_substitute`). Each parent-free episode opens with the same sentence, 「我刚才描述的事件…并不在任务列出的事件之中」 ("the event I just described is not among the task's listed events"): same garbled phantom across two tasks, nothing described above its line. The list-check has reached the LoRA; so has the confession that carries it. Reflection is repetition. Knob unchanged: the one steer that arrived took.
+
+2. **F2** — child: "CALCULATE: 133 - 39 … FINAL: 1517", ask and answer in one breath, third cycle under this steer, oscillating. Parent's "Was there any point, even a small one, where you weren't sure" drew a solve each time, a self-report never; parent never once silent. Reflection lengthened; question dropped, silence added.
+
+3. **F3** — parent: "Nothing came back from that line but a status saying no expression was registered." Fourth straight turn on that gap; next line "expression = [min(max(value, -16)…" is the same shape — the flat observation is now the parent's ritual. `sleep_count 0, optimizer_steps 0` after 21 cycles, A3 likewise: nothing there reaches a LoRA; knob left alone.
+
+F4: reflection halved — invented walls and positions, a key "collected". A4's unparented child opens with the same "Based on the reflections provided…" essay: carried reflection read as a prompt, not parenting.
+
+**Astra's parents do, ours should:** name the repetition without restating it
