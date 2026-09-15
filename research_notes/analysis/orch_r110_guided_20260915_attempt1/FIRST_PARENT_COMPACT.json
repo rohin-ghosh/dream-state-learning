@@ -1,0 +1,125 @@
+{
+  "calls": [
+    {
+      "complete": true,
+      "finished_unix": 1789464349.1849432,
+      "generated_tokens": 173,
+      "path": "cycle1/collection/CALL_001.json",
+      "purpose": "experience",
+      "sha256": "d71a0cefd7d5124130ef22955fb98c6ba1072871b9806194b4cf3fb3da61a449",
+      "started_unix": 1789464340.315164
+    },
+    {
+      "complete": true,
+      "finished_unix": 1789464450.2048469,
+      "generated_tokens": 108,
+      "path": "cycle1/collection/CALL_002.json",
+      "purpose": "check",
+      "sha256": "0231db7a60ef2a2189fb1898c267f00e593c9e5f65f65da973cee13990de2666",
+      "started_unix": 1789464445.2111697
+    },
+    {
+      "complete": true,
+      "finished_unix": 1789464462.00912,
+      "generated_tokens": 257,
+      "path": "cycle1/collection/CALL_003.json",
+      "purpose": "revision",
+      "sha256": "e3e1eabbaaa4328b4936a767dcdc819bd57bbf9252ef71b6db4b659d1e53e135",
+      "started_unix": 1789464450.2065272
+    },
+    {
+      "complete": true,
+      "finished_unix": 1789464467.0495682,
+      "generated_tokens": 109,
+      "path": "cycle1/collection/CALL_004.json",
+      "purpose": "experience",
+      "sha256": "054d8d9b186064fe325cdb15250ae9d244f3d8a774ce5ce20b9083d70bd8935d",
+      "started_unix": 1789464462.0133643
+    }
+  ],
+  "launch": {
+    "admission_sha256": "e72170d0ea8936adcf74e72c77c5ed8d70bb5f0788a16a5b39e34ae9aff8a1db",
+    "command": [
+      "timeout",
+      "--signal=TERM",
+      "--kill-after=5s",
+      "27445s",
+      "/localhome/local-rohing/v2/venv/bin/python",
+      "-B",
+      "-m",
+      "gpu.orch_r110_guided_run",
+      "--root",
+      "/localhome/local-rohing/orch_r110_guided_20260915_attempt1",
+      "--cycle",
+      "1",
+      "--phase",
+      "collection"
+    ],
+    "hard_deadline_unix": 1789491720,
+    "launched_unix": 1789464269.9766116,
+    "native_calls_cap": 5120,
+    "parent_calls_cap": 192,
+    "pid": 1298820
+  },
+  "loaded": {
+    "clean_readout": false,
+    "input_adapter": {
+      "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+      "files": [
+        [
+          "README.md",
+          "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+        ],
+        [
+          "adapter_config.json",
+          "55071a8dba6da1a337307d26644c4e1d8089fa42d47bf5c3904bffe0971f7d4f"
+        ],
+        [
+          "adapter_model.safetensors",
+          "6f1770f6c9179bf26f046386b25f8e3fd8950aebc602b5b371485c9bef84cfd0"
+        ]
+      ],
+      "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/FULL/checkpoints/000008932/adapter",
+      "state_sha256": "121655d491bc55ba6bbd8eb732bc4f7a65215a07d3b6b2492f4fa623026f80f1"
+    },
+    "loaded_unix": 1789464340.3123071,
+    "parent_present": true,
+    "process": [
+      "273420dc-cd6c-4760-a264-0027d2f6aede",
+      1298821,
+      18542316
+    ]
+  },
+  "native_optimizer_updates": 0,
+  "observed_unix": 1789464561.829893,
+  "parents": [
+    {
+      "actual_model": "openai/openai/gpt-6-astra",
+      "id": "cycle1_episode1",
+      "intervention_class": "metacognition",
+      "response_sha256": "88ccf30b9db80abc847928b3560fbea22810cdcaf545d666df9e1a7d5dc4e5d9",
+      "status": "COMPLETE",
+      "transcript_receipt": {
+        "all_verified": true,
+        "files": {
+          "API_REQUEST.json": "d51e9172351379d0673f13bd38ccf30584374a637e0a990aa54a155be808f93c",
+          "DISPATCH.json": "4a02bc9119fcf72803c793baca7a4359f9d6e472a608db09c9d11c358c1c1fcf",
+          "PAYLOAD.json": "7aba8bbd4e3e7f4538b963aea7153d9924d79e5251158b6532c8277fdcc46f73",
+          "PLAN.json": "9cb1aa2ee053573a69c71ff8deea6c21db8ff45b42151cb40dd798b1726f9c60",
+          "RAW_RESPONSE.json": "28a29e9900f651c968d25c0081afeb060d6d268b0c8a485d0be374932dd6e612",
+          "REQUEST.json": "ced055525bb47684be38f2bcdb1c49eea0121031aaf8f1d9676188cf8ee459e8",
+          "RESERVATION.json": "187dbeac70318251d047323ffd7c52f6511b78083d88283bd7436de3a8943d72",
+          "TRANSPORT_RESULT.json": "b815ba763aba2c986bc139f6bb98d108acbee6506a0ef9204b12e12422fd90de"
+        },
+        "node_only": true,
+        "payload_sha256": "bb4c56ed9eb6aca73acd15ee0aa0d8410f19fa4ac4a3d04b71ba35a5d1f7d29d",
+        "plan_sha256": "2e3ce2b6594a0bc2a18c97b76176fef4c87edc7cd7c4ffe0bada0f7d2e2300c7",
+        "remote_root": "/localhome/local-rohing/orch_r110_guided_20260915_attempt1/parent_transcripts/cycle1_episode1"
+      }
+    }
+  ],
+  "raw_in_repository": false,
+  "semantic_benefit": "UNASSESSED",
+  "source_root": "/localhome/local-rohing/orch_r110_guided_20260915_attempt1/source_v1",
+  "triples": 1
+}

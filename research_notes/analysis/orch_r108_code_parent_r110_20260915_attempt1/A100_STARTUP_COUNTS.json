@@ -1,0 +1,64 @@
+{
+  "LAUNCH.json": {
+    "admission_sha256": "7dde3bffd0a0ba31017533579955126243276c1b2b8d8cfe814c1699fe751d4e",
+    "arm": "a100_segment",
+    "identity": {
+      "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+      "command_sha256": "61f6445c9fa435a1466990774f1de43d6a2ab17e57da73f0550e86c4fda71aa1",
+      "pid": 1267384,
+      "start_ticks": "18519581",
+      "uid": 1395
+    },
+    "ready_sha256": "f7c581f7dedd6f5845cba7bb4cf202710b5eb9fc401e0c497b048e05b993d220",
+    "started_unix": 1789464042.629197,
+    "uuid": "GPU-ff5f84e9-c70e-272d-a8e0-eb20aad05ac6"
+  },
+  "arm": "a100_segment",
+  "before_exists": true,
+  "context_distillation_cycles": 0,
+  "cycles_complete": 0,
+  "declared_behavior_operations": {},
+  "declared_intervention_classes": {},
+  "failed_cells": [],
+  "first_completed_cells": [
+    {
+      "cell_id": "R109_CODE_a100_segment_TRAIN_C001_E1_segment1",
+      "finished_unix": 1789464072.555173,
+      "kind": "NATIVE",
+      "phase": "segment1",
+      "terminal": true,
+      "tokens": 95,
+      "truncated": false
+    }
+  ],
+  "generated_tokens_by_phase": {
+    "parent1": 0,
+    "segment1": 95
+  },
+  "native_complete": 1,
+  "native_identity_live": true,
+  "native_started": 1,
+  "node_root": "/localhome/local-rohing/orch_r108_code_parent_r110_20260915_attempt1",
+  "observed_unix": 1789464109.3351884,
+  "owned_native_source_hashes": {
+    "gpu/orch_r108_code_parent_broker.py": "63f8cc4803c31efa3e503a39ef5dc8a477334df6fc4742fcd327992f4d7062b7",
+    "gpu/orch_r108_code_parent_engine.py": "6cef3cd17f20aa704b2d1393463aed60eec0f5448f5b8255363a5c4b54c50df8",
+    "gpu/orch_r108_code_parent_r109_broker.py": "2cb2d2bad2f5acd77bef40c4193a4677078b2ac053c15b0d9c22cbbe04737feb",
+    "gpu/orch_r108_code_parent_r109_run.py": "0aeec5ba67ae703fc2ad7c8f0fdfc9a0db75051c1175ba61f1a879f58b8bac65",
+    "gpu/orch_r108_code_parent_r109_scan.py": "a4445baf62e0040fbaf91d8d13359ba352a27f339c96568525efbf1cc933de55",
+    "gpu/orch_r108_code_parent_registry.py": "bffe22641423b551fec3d1632ba9912c71b45ea55f020c0f185ce22827d1db71",
+    "gpu/orch_r108_code_parent_run.py": "625a2d8f6dc1bc85bd0dcb14781f15d3c19016474404b210bce5145f641dea4c",
+    "organism_v6/orch_r108_code_parent.py": "a30e910e4da9e6da15c649807937038a44d085f179153fd0a024c9e2f433b82d",
+    "organism_v6/orch_r108_code_parent_r109.py": "300435395e4dfebd57b63ed13c38fa0609b858ad6091c81639e124784a11154e",
+    "tests/test_orch_r108_code_parent.py": "bc3d01dba087fa0bf647d65b1489858289b90a0aff6c1ef7be50aa453d6e300d",
+    "tests/test_orch_r108_code_parent_r109.py": "e555f59d1b61b73ca9d7968b1d8180d55df4406cfc9844ebfedb90c6c22d8133",
+    "tests/test_orch_r108_code_parent_run.py": "191e57de0ea1269bed2b538e69742b30a624555bec8d13b8aa239759f255bf0b"
+  },
+  "parent_complete": 0,
+  "parent_started": 1,
+  "raw_in_repository": false,
+  "retained_weight_learning_claim": false,
+  "semantic_helpfulness": "UNREVIEWED",
+  "triples": 0,
+  "updates": 0
+}

@@ -1,0 +1,78 @@
+{
+  "LAUNCH.json": {
+    "admission_sha256": "7dde3bffd0a0ba31017533579955126243276c1b2b8d8cfe814c1699fe751d4e",
+    "arm": "a100_segment",
+    "identity": {
+      "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+      "command_sha256": "61f6445c9fa435a1466990774f1de43d6a2ab17e57da73f0550e86c4fda71aa1",
+      "pid": 1267384,
+      "start_ticks": "18519581",
+      "uid": 1395
+    },
+    "ready_sha256": "f7c581f7dedd6f5845cba7bb4cf202710b5eb9fc401e0c497b048e05b993d220",
+    "started_unix": 1789464042.629197,
+    "uuid": "GPU-ff5f84e9-c70e-272d-a8e0-eb20aad05ac6"
+  },
+  "arm": "a100_segment",
+  "context_distillation_cycles": 0,
+  "cycles_complete": 0,
+  "declared_behavior_operations": {
+    "UNDECLARED": 1
+  },
+  "declared_intervention_classes": {
+    "UNDECLARED": 1
+  },
+  "first_complete_triple_hashes": {
+    "TRIPLE_C001_E1_S1.json": "f84fe8e853d06a0d5e4633f4e7c8adf41853d99c915f06b1804ecb24b2d01a82"
+  },
+  "first_completed_cells": [
+    {
+      "cell_id": "R109_CODE_a100_segment_TRAIN_C001_E1_segment1",
+      "finished_unix": 1789464072.555173,
+      "kind": "NATIVE",
+      "phase": "segment1",
+      "tokens": 95
+    },
+    {
+      "cell_id": "R109_CODE_a100_segment_TRAIN_C001_E1_parent1",
+      "finished_unix": 1789464161.1545026,
+      "kind": "PARENT",
+      "phase": "parent1",
+      "tokens": 0
+    },
+    {
+      "cell_id": "R109_CODE_a100_segment_TRAIN_C001_E1_reflection1",
+      "finished_unix": 1789464171.6415355,
+      "kind": "NATIVE",
+      "phase": "reflection1",
+      "tokens": 480
+    },
+    {
+      "cell_id": "R109_CODE_a100_segment_TRAIN_C001_E1_segment2",
+      "finished_unix": 1789464174.1378503,
+      "kind": "NATIVE",
+      "phase": "segment2",
+      "tokens": 112
+    }
+  ],
+  "generated_tokens_by_phase": {
+    "parent1": 0,
+    "parent2": 0,
+    "reflection1": 480,
+    "segment1": 95,
+    "segment2": 112
+  },
+  "guard_identity_live": true,
+  "native_complete": 3,
+  "native_identity_live": true,
+  "native_started": 3,
+  "node_root": "/localhome/local-rohing/orch_r108_code_parent_r110_20260915_attempt1",
+  "observed_unix": 1789464187.459376,
+  "parent_complete": 1,
+  "parent_started": 2,
+  "raw_in_repository": false,
+  "retained_weight_learning_claim": false,
+  "semantic_helpfulness": "UNREVIEWED",
+  "triples": 1,
+  "updates": 0
+}

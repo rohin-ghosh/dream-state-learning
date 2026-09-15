@@ -1,0 +1,82 @@
+{
+  "AFTER.json": {
+    "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+    "no_adapter": {
+      "adapter_parameter_count": 0,
+      "hf_peft_config_loaded": false,
+      "model_class": "Qwen2ForCausalLM",
+      "peft_wrapper_count": 0,
+      "trainable_parameter_count": 0
+    },
+    "status": "PASS",
+    "updates": 0
+  },
+  "FAILED.json": {
+    "arm": "node3_episode",
+    "context_distillation_cycles": 0,
+    "cycles_complete": 0,
+    "declared_behavior_operations": {},
+    "declared_intervention_classes": {},
+    "error_type": "ValueError",
+    "generated_tokens_by_phase": {
+      "parent2": 0,
+      "segment1": 95,
+      "segment2": 101
+    },
+    "native_complete": 2,
+    "native_started": 2,
+    "observed_unix": 1789464132.4032962,
+    "parent_complete": 0,
+    "parent_started": 1,
+    "retained_weight_learning_claim": false,
+    "semantic_helpfulness": "UNREVIEWED",
+    "status": "FAILED",
+    "triples": 0,
+    "updates": 0
+  },
+  "TERMINAL.json": {
+    "finished_unix": 1789464135.1246011,
+    "no_refill": true,
+    "status": "FAILED"
+  },
+  "observed_unix": 1789464149.8762891,
+  "provider_shape_diagnostic_only_no_salvage": [
+    {
+      "ends_fence": false,
+      "envelope_error_present": false,
+      "envelope_status": "completed",
+      "json_error": {
+        "column": 2,
+        "line": 9,
+        "message": "Expecting ',' delimiter",
+        "position": 1591
+      },
+      "leading_whitespace": 0,
+      "message_text_count": 1,
+      "native_path": "/localhome/local-rohing/orch_r108_code_parent_r110_20260915_attempt1/parent_transcripts/campaign_code_parent/GUIDED_SLEEP_C1_P1_S2/RAW_RESPONSE.json",
+      "sha256": "25a82c15e927537032777e6c665bcb0388ebb7c1a5b234a78ddb527f0ba3baae",
+      "starts_json_fence": false,
+      "starts_json_object": true,
+      "stripped_ends_fence": false,
+      "text_characters": 1591,
+      "trailing_whitespace": 0,
+      "usage": {
+        "cost": null,
+        "input_tokens": 4407,
+        "input_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": 4404,
+          "cached_tokens": 0,
+          "text_tokens": null
+        },
+        "output_tokens": 1354,
+        "output_tokens_details": {
+          "reasoning_tokens": 1034,
+          "text_tokens": null
+        },
+        "total_tokens": 5761
+      }
+    }
+  ],
+  "wrapper": "ovx2"
+}

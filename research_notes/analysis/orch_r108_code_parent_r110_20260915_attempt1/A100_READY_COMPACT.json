@@ -1,0 +1,64 @@
+{
+  "arm": "a100_segment",
+  "base_cpu": {
+    "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+    "native_calls": 0,
+    "no_adapter": {
+      "adapter_parameter_count": 0,
+      "hf_peft_config_loaded": false,
+      "model_class": "Qwen2ForCausalLM",
+      "peft_wrapper_count": 0,
+      "trainable_parameter_count": 0
+    },
+    "runtime": {
+      "tokenizers": "0.22.2",
+      "torch": "2.13.0",
+      "transformers": "5.5.3"
+    },
+    "updates": 0
+  },
+  "cohort": {
+    "exact_exclusion_not_semantic_independence": true,
+    "exclusions_sha256": "40811241c9cd8b7f4c3381f473bd21c72854ae29513c0bd64fd81308430b52e0",
+    "held": 400,
+    "prompt_count": 600,
+    "prospective_pair_same_prompts": true,
+    "same_split_across_arms": true,
+    "train": 200
+  },
+  "config": {
+    "cadence": "EVERY_GENERATED_SEGMENT",
+    "host_sha256": "6bcd6b8370cc2f2a15e1e488352b4cec96b1e137489d52c3324c199536a09ba8",
+    "index": 0,
+    "native_cap": 1700,
+    "parent_cap": 700,
+    "reflection_cap": 2048,
+    "style": "Persistent perceptual/metacognitive calibration: distinguish observation from inference, notice limitations, redirect relevant questions, and ground reflection. Support persistence, goals and affect without solving.",
+    "uuid": "GPU-ff5f84e9-c70e-272d-a8e0-eb20aad05ac6",
+    "wrapper": "a100"
+  },
+  "file_hashes": {
+    "BASE_CPU_IDENTITY.json": "960d6831590a9a8942a2e7042db5eeb8aaffc98dce9ee123434bc2fb58e3a08a",
+    "COHORT_PRIVATE.json": "bc7cf13d10a9f7770d6cdf5e1e42d2f8f8a9275484dfc3ecf2015237f5fe604b",
+    "CPU_TESTS.json": "ec30b880455f7b4674b158e306e79bff7e13ee1c7fe3f14aab3c8c455a7f8d93",
+    "DEPLOY_INPUTS.json": "3964bd5c994a4df6d30c6b74c51c59a01b556cebc2a7cb8208b79db998595558",
+    "EXCLUSIONS.json": "9f27ce877c70fbad9aab604e304d59d33354eda91f9b5cad9809d32d081b6d90",
+    "LIFETIME.json": "3e3b870810b267f8dbf3ff1df3e0ac48c9425021f7ac7d6bce4f5e58c64faf89",
+    "PARENTING_PRINCIPLES.md": "b7f4d6baef8158b41533d15acf0f7c924b4bc1e875a30d6ca31f874b5e1c589d",
+    "PROVIDER_FILES.json": "32d1773b9e9b430e4b630e579ee6e9a6e8c33db6d0ddce589d91d36993c02304",
+    "RESERVATIONS.json": "6248adee91cdef051af98d2ceca633bc4209cbde2512d2d8340e4e755eb5ed39",
+    "SOURCE_SHA256.json": "36a13d362f9802e85f25bef121156d912614cb18a24aa1945bbc086d873d5161"
+  },
+  "lifetime": {
+    "gpu_hours_cap": 8,
+    "hard_deadline_unix": 1789491720,
+    "lease_end_unix": 1790463900,
+    "native_cap": 1700,
+    "native_deadline_unix": 1789491600,
+    "parent_cap": 700,
+    "started_unix": 1789462920
+  },
+  "principles_sha256": "b7f4d6baef8158b41533d15acf0f7c924b4bc1e875a30d6ca31f874b5e1c589d",
+  "ready_sha256": "f7c581f7dedd6f5845cba7bb4cf202710b5eb9fc401e0c497b048e05b993d220",
+  "root": "/localhome/local-rohing/orch_r108_code_parent_r110_20260915_attempt1"
+}

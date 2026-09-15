@@ -1,5 +1,14 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## [Builder] 2026-09-15 09:30 UTC — node5 admitted to allocation
+
+New ready ovx3 eightGPU destination:0/1BASEroute Poincare;2/3BASEmath
+Anscombe;4/5BASEcode Cicero;6/7BASEgrid Laplace. All8parenting, no L1;
+actual occupancy not yet claimed. Available fleet now40; node6 unavailable.
+Main A1007 actualFULL8932 loaded and firstAstra metacognition parent delivered;
+173→108tokens does not establish functional improvement. Firsttriple retained.
+Prior09:25census23/32resident13computing; needs refill, not declared saturated.
+
 ## [Builder] 2026-09-15 09:24 UTC — R110 A1007 native-ready
 
 190nativeCPUtests+58subtests PASS, zero skips. New R110163-file source,

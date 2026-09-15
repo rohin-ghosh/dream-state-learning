@@ -1,0 +1,96 @@
+{
+  "AFTER.json": {
+    "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+    "no_adapter": {
+      "adapter_parameter_count": 0,
+      "hf_peft_config_loaded": false,
+      "model_class": "Qwen2ForCausalLM",
+      "peft_wrapper_count": 0,
+      "trainable_parameter_count": 0
+    },
+    "status": "PASS",
+    "updates": 0
+  },
+  "FAILED.json": {
+    "arm": "node3_episode",
+    "context_distillation_cycles": 0,
+    "cycles_complete": 0,
+    "declared_behavior_operations": {},
+    "declared_intervention_classes": {},
+    "error_type": "ValueError",
+    "generated_tokens_by_phase": {
+      "parent2": 0,
+      "segment1": 95,
+      "segment2": 101
+    },
+    "native_complete": 2,
+    "native_started": 2,
+    "observed_unix": 1789464132.4032962,
+    "parent_complete": 0,
+    "parent_started": 1,
+    "retained_weight_learning_claim": false,
+    "semantic_helpfulness": "UNREVIEWED",
+    "status": "FAILED",
+    "triples": 0,
+    "updates": 0
+  },
+  "LAUNCH.json": {
+    "admission_sha256": "e6fdcd2a8570e5f0ee02630eb048a8d674e2569a2391155f3c5ca0c215ae6f94",
+    "arm": "node3_episode",
+    "identity": {
+      "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+      "command_sha256": "6fff15a48475f244fb855e853bb44d8af9863224dcb514f3f2376ec27b9a1fed",
+      "pid": 1301730,
+      "start_ticks": "17026144",
+      "uid": 2524
+    },
+    "ready_sha256": "142e6022a1090daa31cb1b13091ee222903d1870f3a611666f7406b5f5c53cd8",
+    "started_unix": 1789463999.1146026,
+    "uuid": "GPU-f484c608-a2d4-0c26-dee1-a06cc5ae69e4"
+  },
+  "TERMINAL.json": {
+    "finished_unix": 1789464135.1246011,
+    "no_refill": true,
+    "status": "FAILED"
+  },
+  "arm": "node3_episode",
+  "context_distillation_cycles": 0,
+  "cycles_complete": 0,
+  "declared_behavior_operations": {},
+  "declared_intervention_classes": {},
+  "first_complete_triple_hashes": {},
+  "first_completed_cells": [
+    {
+      "cell_id": "R109_CODE_node3_episode_TRAIN_C001_E1_segment1",
+      "finished_unix": 1789464027.9937565,
+      "kind": "NATIVE",
+      "phase": "segment1",
+      "tokens": 95
+    },
+    {
+      "cell_id": "R109_CODE_node3_episode_TRAIN_C001_E1_segment2",
+      "finished_unix": 1789464031.0910554,
+      "kind": "NATIVE",
+      "phase": "segment2",
+      "tokens": 101
+    }
+  ],
+  "generated_tokens_by_phase": {
+    "parent2": 0,
+    "segment1": 95,
+    "segment2": 101
+  },
+  "guard_identity_live": false,
+  "native_complete": 2,
+  "native_identity_live": false,
+  "native_started": 2,
+  "node_root": "/localhome/local-rohing/orch_r108_code_parent_r110_20260915_attempt1",
+  "observed_unix": 1789464187.4726613,
+  "parent_complete": 0,
+  "parent_started": 1,
+  "raw_in_repository": false,
+  "retained_weight_learning_claim": false,
+  "semantic_helpfulness": "UNREVIEWED",
+  "triples": 0,
+  "updates": 0
+}
