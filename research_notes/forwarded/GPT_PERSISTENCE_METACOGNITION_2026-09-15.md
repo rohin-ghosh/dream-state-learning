@@ -1250,3 +1250,31 @@ Maintain engagement across completed goals, setbacks, and pauses; choose whether
 That gives you something more durable than “never stop generating.” A pause can belong to a persistent agent. Otherwise, forcing perpetual output removes its discretion over whether more thinking is useful—the metacognitive control you wanted in the first place.
 
 For this run, a small observation would be particularly revealing: after a task ends, offer an open opportunity to continue without prescribing another goal. See whether the child initiates a question, chooses an investigation, or deliberately stops. Then check whether that initiative appears without parental prompting after sleep. The harness supplies the continuing opportunity to act. Parenting and training may help the child learn what to do with that opportunity. Self-instilled persistence would be the child increasingly taking initiative within it, rather than merely filling the tokens you require.
+
+## 5. Forwarded with message 115 (~10:35 UTC): the assistant's final review of PARENTING_BATTLE_PLAN_v4 (verbatim)
+
+V4 is ready for an exploratory run. I wouldn’t ask for another conceptual rewrite. It now captures your intent substantially better, including changes to the actual parent prompt.
+
+The strongest addition is the combination of:
+
+Open turns: does the child initiate something after the assigned task ends?
+
+Parent-free readouts after sleep: does that initiative survive without the parent or prior conversation?
+
+Focused-mode probes: can it still direct its competence toward solving when asked?
+
+Capability anchors: an explicit attempt to preserve competence throughout learning.
+
+Together, these give you a useful first look at whether the child is acquiring greater discretion over its behavior.
+
+The open turn is a first test of perpetual persistence—not the whole mechanism yet. One invitation can show willingness to initiate. Your larger idea involves sustaining something it chose: forming a question, investigating, encountering feedback, reconsidering, and deciding what comes next. Tonight can establish whether that process starts.
+
+I’d have the implementing agent verify three concrete things before interpreting results:
+
+Open-turn investigations can actually execute. If the child says “I want to inspect this,” it needs access to the environment and a subsequent response. Otherwise you’re measuring proposed initiative, not enacted initiative.
+
+Evaluation experiences stay out of sleep training. This includes parent-free open turns attached to DEV/FINAL tasks. They should not accidentally enter the experience buffer through the same logging path as ordinary episodes.
+
+[REFLECTION] changes the actual generation budget. The head parent now has permission to set it, but the broker must apply it to the lane; editing a prompt field alone doesn’t establish that the adjustment works.
+
+One interpretation detail: the two-task focused probe is a useful diagnostic, but cannot establish broad capability preservation. Read it alongside the capability panel. What I’d most want to see in the morning: a child notices something without a parental nudge, pursues it through an actual interaction, uses the observation to change its next move, and shows similar initiative after sleep with fresh context—while retaining its ability to focus. That would be a meaningful early result even if overall game scores haven’t improved. My review of the supplied plan is complete; implementation and runtime behavior still need verification, and the attachment cuts off at the launch checklist.

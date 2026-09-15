@@ -36,7 +36,7 @@ fill" is replaced by persistence plus discretionary allocation, with revisitatio
 morning cut was set to 2026-09-16 06:00 UTC (corrected in v4 to 2026-09-15 17:00 UTC); missed parent calls are visible in every interpretation. Claims in the
 morning follow §10.
 
-**Gate (message 112): the Fable half launches the moment Rohin says his audit is done.** Everything outside §6 is
+**Gate (message 112) released by message 115 ("V4 is ready for an exploratory run … my review is complete"): the Fable half launches once §9.5's three verifications are posted.** Everything outside §6 is
 already Astra's standing order and is running or ramping now.
 
 Status: v4, 2026-09-15 ~10:35 UTC. v1 was checked by four independent critics (fidelity to your verbatim words,
@@ -387,3 +387,12 @@ child code.
    queue depth per lane; then half-hour reads as tonight.
 4. Disk and RAM headroom on the VM checked before launch (root ≥ 10 GB free, RAM ≥ 1.5 GB available); transcripts
    stay on node 5; the VM holds digests only.
+5. **Pre-launch verifications (message 115), posted by Astra in the notebook before the first Fable episode:**
+   (a) open-turn investigations EXECUTE — a child that says "I want to inspect this" gets the environment call and its
+   response, so enacted initiative is measured, not proposed initiative; (b) evaluation experiences — DEV and FINAL
+   readouts and any open turn attached to them — never enter the sleep experience buffer (separate logging path,
+   asserted by test); (c) the head parent's [REFLECTION] field changes the lane's actual reflection generation budget
+   through the broker (asserted by test). The focused probe is read beside the capability panel, never alone.
+   Morning target in the reviewer's words: "a child notices something without a parental nudge, pursues it through an
+   actual interaction, uses the observation to change its next move, and shows similar initiative after sleep with
+   fresh context — while retaining its ability to focus."
