@@ -1,0 +1,72 @@
+{
+  "RECOVERY_V2_READY.json": {
+    "sha256": "90fff46df3a58da739b3d10d17cfa0e6b83263e85258c3ca60c06c7bb477629f",
+    "receipt": {
+      "adapter_sha256": "7290faeb230c59e8952db30faa014c3c90689b81787dee33be8b7322445c81ad",
+      "input_sha256": {
+        "INITIAL.json": "d552ae85ad43b22b645e55c931c0c51d6cf28939514bc2a883d3795b7e0cc70b",
+        "PLAN.json": "52e08f7dcae028c26cfb9f91981a25732fdfe54e867dbc4f1449bf6e7d6fdf9a",
+        "READY.json": "f83d46d4990df767f5cbdbf92d9cbbfde346816c88cbb45a2233b6d24f5d738b",
+        "RESERVATIONS.jsonl": "21aa4c1463f6d1470f8b0ac6e844e685bd6617a5651efbab432fc17ad10a2ec1",
+        "cycle1/collection/COMPLETE.json": "947f86333be12eff8f70d08cdd124ccd902590b106af9a284342eaefb31a5d08",
+        "cycle1/sleep/FAILED.json": "af4c2cb14cb01b2d2ae07a11603931d2f747b5d2ec29e094843ea6ec1e54ca9f",
+        "cycle1/sleep/REQUEST.json": "f2e2a5deb4970b22b4bf52a1169ad0ae647cad19e8d9da0907b0e1c154eeb293",
+        "cycle1/sleep/SLEEP.json": "f3dd386c9922be85b4d3bfaf9f0c43af0316385ae63c694e22acb7840f5fcd12",
+        "cycle1/sleep/carry/CARRY.json": "401af61df55bc7d6435438bb4024367d8dd2fbcf995b2d5b7773151d7d21cc48"
+      },
+      "next_phase": "cycle1/readout",
+      "optimizer_step": 9045,
+      "original_deadlines_unchanged": true,
+      "original_terminal_sha256": "8476e6c2be3731640f1e88fc28098a813c32a245a515ccc40f2361ced51ad14a",
+      "preserved_updates": 113,
+      "publication_sha256": "d5e030a3c5a4fdb075d4819ca0f7dd0667f92456601d91cca826e4be1ea80400",
+      "repair_sha256": "3bb9e71f6de288fbea0399475a798631b681e27f5e7b0fba30491f569a309881",
+      "repeated_native_calls": 0,
+      "repeated_parent_calls": 0,
+      "repeated_training_updates": 0,
+      "schema": "R110_METADATA_RECOVERY_READY_V2"
+    }
+  },
+  "recovery_v2/LAUNCH.json": {
+    "sha256": "c7d642a19b4af2cd398e83b4feb0e208a7f23dbeeae6349f7848ee9c5238553e",
+    "receipt": {
+      "pid": 1566991,
+      "started_unix": 1789465796.6384397,
+      "command": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r110_completion_recovery",
+        "resume"
+      ],
+      "publication_commit": "fe955013c6abdd0bb14b9ce41d5e1aa11e7f7315"
+    }
+  },
+  "LAUNCH_1_readout.json": {
+    "sha256": "3a3311b20d047d2c1a584b61e1cf620248eb41b7038066ac15ebe75a08386237",
+    "receipt": {
+      "admission_sha256": "47777ade182912652cdd3c09f1419778ebee52868743b38fde5b99da114dcd7d",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=5s",
+        "25902s",
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r110_guided_run",
+        "--root",
+        "/localhome/local-rohing/orch_r110_guided_20260915_attempt1",
+        "--cycle",
+        "1",
+        "--phase",
+        "readout"
+      ],
+      "hard_deadline_unix": 1789491720,
+      "launched_unix": 1789465812.5028503,
+      "native_calls_cap": 5120,
+      "parent_calls_cap": 192,
+      "pid": 1569258
+    }
+  }
+}
