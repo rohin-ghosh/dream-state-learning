@@ -1,0 +1,93 @@
+{
+  "exclusive_runner_lock_exists": true,
+  "native_recovery": {
+    "path": "/localhome/local-rohing/orch_r128_code_queue_recovery_20260915_v1/ovx2_5/RECOVERY.json",
+    "sha256": "099019dc3eabbc21badae340bd100a058b072683e5dab3acd897c8329dd922c9"
+  },
+  "new_claims": [
+    {
+      "PUBLISHED.json": {
+        "late": false,
+        "provider_dispatched": true,
+        "published_unix": 1789504096.6991243,
+        "reference": {
+          "path": "/localhome/local-rohing/orch_r119_code_old_forks_20260915_v3/ovx2_5/parent_claude/R109_CODE_node3_episode_TRAIN_C071_E1_parent2.claim/PUBLISHED.json",
+          "sha256": "77a634df271ced3f2c4e186bd1522a6f7e2eb9a87a8b44785b6a22f4d9b08080"
+        },
+        "status": "MISSING"
+      },
+      "RESERVATION.json": {
+        "attempts": 1,
+        "reference": {
+          "path": "/localhome/local-rohing/orch_r119_code_old_forks_20260915_v3/ovx2_5/parent_claude/R109_CODE_node3_episode_TRAIN_C071_E1_parent2.claim/RESERVATION.json",
+          "sha256": "d5722eb85bebc528e8780f025e1d48a56760d85db246c8d66d5a9251a3e7eb42"
+        },
+        "reserved_unix": 1789504046.3753111,
+        "sequence": 7
+      },
+      "child_record": {
+        "finished_unix": 1789504098.1282303,
+        "reference": {
+          "path": "/localhome/local-rohing/orch_r119_code_old_forks_20260915_v3/ovx2_5/campaign_code_parent/cells/R109_CODE_node3_episode_TRAIN_C071_E1_parent2.json",
+          "sha256": "3be283a6136f653446d57b0a30a3e6069792e971540aad33def9182a839c463a"
+        },
+        "status": "MISSING"
+      },
+      "claim_path": "/localhome/local-rohing/orch_r119_code_old_forks_20260915_v3/ovx2_5/parent_claude/R109_CODE_node3_episode_TRAIN_C071_E1_parent2.claim",
+      "id": "R109_CODE_node3_episode_TRAIN_C071_E1_parent2",
+      "request": {
+        "path": "/localhome/local-rohing/orch_r119_code_old_forks_20260915_v3/ovx2_5/parent_queue/R109_CODE_node3_episode_TRAIN_C071_E1_parent2.request.json",
+        "sha256": "abeeb2457d1a2372b73def4877ab201d60b0bce767a863761cfda9b1c5c8ebf0"
+      },
+      "request_after_recovery": true,
+      "request_mtime": 1789504035.824293,
+      "response": {
+        "actual_model": null,
+        "delivery_error": null,
+        "error_code": "provider_exit_failure",
+        "provider_dispatched": true,
+        "reference": {
+          "path": "/localhome/local-rohing/orch_r119_code_old_forks_20260915_v3/ovx2_5/parent_queue/R109_CODE_node3_episode_TRAIN_C071_E1_parent2.response.json",
+          "sha256": "24e68f9a19e4250a628a3d0a676ed808d30595816318edd7715b6b88bb7e33d0"
+        },
+        "status": "MISSING"
+      }
+    },
+    {
+      "RESERVATION.json": {
+        "attempts": 1,
+        "reference": {
+          "path": "/localhome/local-rohing/orch_r119_code_old_forks_20260915_v3/ovx2_5/parent_claude/R109_CODE_node3_episode_TRAIN_C071_E2_parent2.claim/RESERVATION.json",
+          "sha256": "e2854f093dd4348bd181c400b1ed0619453c932b8dc6e8a3101cdc3dc1a3fa15"
+        },
+        "reserved_unix": 1789504114.3316083,
+        "sequence": 8
+      },
+      "child_record": {
+        "finished_unix": null,
+        "reference": {
+          "path": "/localhome/local-rohing/orch_r119_code_old_forks_20260915_v3/ovx2_5/campaign_code_parent/cells/R109_CODE_node3_episode_TRAIN_C071_E2_parent2.json",
+          "sha256": "8b34b992292b34707f001a22d9c09e535e4866fdc0127ca2269ceeb900cae948"
+        },
+        "status": "PENDING"
+      },
+      "claim_path": "/localhome/local-rohing/orch_r119_code_old_forks_20260915_v3/ovx2_5/parent_claude/R109_CODE_node3_episode_TRAIN_C071_E2_parent2.claim",
+      "id": "R109_CODE_node3_episode_TRAIN_C071_E2_parent2",
+      "request": {
+        "path": "/localhome/local-rohing/orch_r119_code_old_forks_20260915_v3/ovx2_5/parent_queue/R109_CODE_node3_episode_TRAIN_C071_E2_parent2.request.json",
+        "sha256": "0fed6c360bceb6cf620335e23019d8a3023d9da10dacec3ae11c3f1eee3eb37d"
+      },
+      "request_after_recovery": true,
+      "request_mtime": 1789504074.186436
+    }
+  ],
+  "observed_unix": 1789504159.4678512,
+  "original_claim_artifacts_unchanged": true,
+  "original_claim_count": 6,
+  "original_guard_live": true,
+  "original_native_live": true,
+  "raw_exported": false,
+  "root": "/localhome/local-rohing/orch_r119_code_old_forks_20260915_v3/ovx2_5",
+  "schema": "R128_DELIVERY_OBSERVATION_V1",
+  "wrapper": "ovx2"
+}

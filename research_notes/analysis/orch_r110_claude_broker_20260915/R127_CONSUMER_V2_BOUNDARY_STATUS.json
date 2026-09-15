@@ -1,0 +1,102 @@
+{
+  "actions": {
+    "git_mutations": 0,
+    "gpu_launches": 0,
+    "live_source_changes": 0,
+    "provider_calls": 0,
+    "signals": 0
+  },
+  "actor": {
+    "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/R121_INDEPENDENT_ACTOR_READY.json",
+    "sha256": "2e7105746f3e25e8bb12e7a3b482aff8d1cf944093bdad5e88c5a1987c16b30d"
+  },
+  "actor_alive": true,
+  "actor_pid": 3356570,
+  "armed": false,
+  "consumer_launched": false,
+  "counts": {
+    "broker_existing": 111,
+    "new_consumer": 18,
+    "route_existing": 10
+  },
+  "cpu_tests": {
+    "path": "/localhome/local-rohing/orch_r127_route_substitution_consumer_20260915_v2/CPU_TESTS.log",
+    "sha256": "66a7087db3d77f65bfc56b436905307b5283c1a346d1b52e670954bf655ecf05"
+  },
+  "cycles": [
+    {
+      "checkpoint": {
+        "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/cycle_0021/checkpoint/CHECKPOINT.json",
+        "sha256": "b8705e105b823324ec9ea74e6813dc6c454b73066cf424d16150978ee7f2e77d"
+      },
+      "complete": {
+        "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/cycle_0021/COMPLETE.json",
+        "sha256": "1a11991770b2a72d014ec530ef0cfcfa9376d6f9546199d87e6d38e0714d1a6c"
+      },
+      "cycle": "cycle_0021",
+      "start": {
+        "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/cycle_0021/START.json",
+        "sha256": "5b46f1e4d34fd0e07461ebb1d1555e0b69b56172a9084c83499f58703d6145d8"
+      }
+    },
+    {
+      "checkpoint": {
+        "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/cycle_0022/checkpoint/CHECKPOINT.json",
+        "sha256": "e51af34f2ed99dc531c537ec47111cee809616441dde1aaff5d52fa803347e93"
+      },
+      "complete": null,
+      "cycle": "cycle_0022",
+      "start": {
+        "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/cycle_0022/START.json",
+        "sha256": "23b1cbd0cfdaf2572e1248bcf4c6e5b66e779f4956a7c8e60efc1d88fde6055e"
+      }
+    }
+  ],
+  "exact_blockers": [
+    "Current run rejects an existing R121_INDEPENDENT_ACTOR_READY.json; no restart entry point.",
+    "Current initializer always restores the original fork_checkpoint and initial R121_HISTORY, not the latest completed cycle.",
+    "Current loop only persists optimizer/RNG at sleep and own carry; evolving history, last-two parent conversation and head settings have no complete continuation export.",
+    "Cycle COMPLETE alone is not a release acknowledgement; next cycle starts immediately without a cooperative handoff barrier.",
+    "Existing route shared-boundary adapter requires SHARED_SLEEP/common-state invariants and is not valid for this independent loop."
+  ],
+  "history": {
+    "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/R121_HISTORY.json",
+    "sha256": "7e27fc5f201c9cb0af1ae1b41fb28a5ace2b2e7fd20753d9c4a6409a0c3d2f0c"
+  },
+  "ledger": {
+    "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/RESERVATIONS.jsonl",
+    "sha256": "382a54bc681378baad10fb097a26982a06f4396323a7ea741c62520a0f4caea5"
+  },
+  "native_loop_byte_identical": true,
+  "observed_utc": "2026-09-15T20:31:12.837163+00:00",
+  "original_source": {
+    "path": "/localhome/local-rohing/orch_r121_route_independent_20260915_v2/source/gpu/orch_r121_route_independent.py",
+    "sha256": "d1b0de12edc1ad45bbc1b3d20def7f0084198310ef0a7c9ee2db3f6bc6095673"
+  },
+  "own_carry": {
+    "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/OWN_CARRY.json",
+    "sha256": "6516b69826186dd5c5cd0b1adcf3740e2b44f0acf7135760471244e36dd1254a"
+  },
+  "required_future_transition": "Exact settled COMPLETE/readout boundary plus all-state/counter/queue export and verified process release before fresh same-state admission; never birth, replay, forced stop or source hotpatch.",
+  "resume_exports": [],
+  "run_source_sha256": "162c94d1fb0189a417c831bf8c3473400c169c8d3b8a53167fbe1d0832bb7a4d",
+  "safe_resume_supported": false,
+  "schema": "R127_ROUTE_CONSUMER_CPU_READY_NO_SAFE_LIVE_RESUME_V1",
+  "source": {
+    "path": "/localhome/local-rohing/orch_r127_route_substitution_consumer_20260915_v2/source/gpu/orch_r121_route_independent.py",
+    "sha256": "ecc52086ab67559aa74943f85947bb62a039af0682656745448ef4e2cdd095c2"
+  },
+  "status": {
+    "cycle": 22,
+    "last_native": 1241,
+    "observed_unix": 1789503700.8765535,
+    "phase": "reflection",
+    "pid": 3356570,
+    "sleeps": 21
+  },
+  "terminal_exists": false,
+  "tests": {
+    "path": "/localhome/local-rohing/orch_r127_route_substitution_consumer_20260915_v2/source/tests/test_orch_r127_route_substitution.py",
+    "sha256": "a7d4736b75177be15a396b7a06de8a803285fc6445b6267db12821410d22bc2f"
+  }
+}

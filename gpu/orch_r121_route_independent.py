@@ -65,7 +65,65 @@ def prompts():
     return dict(episode=EPISODE_PROMPT, presleep=PRESLEEP_PROMPT, reflection=REFLECTION_PROMPT)
 
 
-def parent_result(response, request, provider_model, now=None):
+def substituted_parent_binding(response, request, provider_model, *, substitution, queue_root, branch):
+    from gpu import orch_r110_claude_broker as broker
+    require(branch == 'F1' and provider_model == broker.MODEL, 'substitution_F1_only')
+    require(isinstance(substitution, dict) and set(substitution) == {'allowed_models', 'broker_config'}
+            and substitution['allowed_models'] == [broker.F1_ROUTE_SUBSTITUTE], 'exact_substitution_policy')
+    require(response.get('actual_model') in (broker.MODEL, broker.F1_ROUTE_SUBSTITUTE), 'exact_substitute_identity')
+    config_ref = substitution['broker_config']
+    require(isinstance(config_ref, dict) and set(config_ref) == {'path', 'sha256'}
+            and sha(config_ref['path']) == config_ref['sha256'], 'substitute_config_hash')
+    config = broker.loads(Path(config_ref['path']).read_text())
+    broker.validate_config(config)
+    require(config['branch'] == 'F1' and config['family'] == 'route'
+            and config.get('allowed_substitute_models') == substitution['allowed_models'], 'substitute_config_scope')
+    root = Path(queue_root).resolve(strict=True)
+    require(Path(config['remote_root']).resolve(strict=True) == root, 'substitute_queue_root')
+    broker.validate_request(request, config)
+    identifier = request['id']
+    require(re.fullmatch(r'[a-zA-Z0-9_-]{1,100}', identifier) is not None, 'substitute_request_id')
+    request_path = root/'parent_queue'/(identifier+'.request.json')
+    response_path = root/'parent_queue'/(identifier+'.response.json')
+    require(read(request_path) == request and read(response_path) == response, 'substitute_native_queue_join')
+    claim = root/'parent_claude'/(identifier+'.claim')
+    reservation = read(claim/'RESERVATION.json')
+    require(reservation.get('id') == identifier and reservation.get('attempts') == 1
+            and reservation.get('request_file_sha256') == sha(request_path)
+            and reservation.get('config_sha256') == broker.digest(config), 'substitute_prospective_reservation')
+    publication = read(claim/'PUBLISHED.json')
+    require(publication.get('id') == identifier and publication.get('response_sha256') == sha(response_path),
+            'substitute_publication_join')
+    receipt = response.get('transcript_receipt', {})
+    archive = root/'parent_transcripts'/identifier
+    require(receipt.get('node_only') is True and receipt.get('all_verified') is True
+            and Path(receipt.get('remote_root', '')) == archive
+            and archive.resolve(strict=True) == archive, 'substitute_node_archive')
+    files = receipt.get('files', {})
+    require(isinstance(files, dict) and 1 <= len(files) <= 32
+            and {'REQUEST.json', 'RESULT.json', 'stdout.json'} <= set(files), 'substitute_archive_files')
+    for name, expected in files.items():
+        require(isinstance(name, str) and Path(name).name == name and name not in ('.', '..'),
+                'substitute_archive_filename')
+        path = archive/name
+        require(path.is_file() and not path.is_symlink() and sha(path) == expected, 'substitute_archive_hash')
+    require(read(archive/'REQUEST.json') == request, 'substitute_archived_request')
+    require(read(archive/'RESULT.json') == {key: value for key, value in response.items()
+            if key != 'transcript_receipt'}, 'substitute_archived_result')
+    require((archive/'stdout.json').stat().st_size <= broker.STDOUT_CAP, 'substitute_raw_bound')
+    parsed = broker.verify_response_model_binding(response, (archive/'stdout.json').read_text(),
+        'route', request['payload']['task_id'], branch='F1', allowed_models=substitution['allowed_models'])
+    require(publication.get('actual_model') == parsed['actual_model']
+            and publication.get('requested_model') == broker.MODEL
+            and publication.get('model_attribution') == parsed['model_attribution'], 'substitute_publication_attribution')
+    return dict(requested_model=parsed['requested_model'], model_attribution=parsed['model_attribution'],
+        model_usage=parsed['usage']['model_usage'],
+        fable_parent_claim_eligible=parsed['model_attribution']['fable_parent_claim_eligible'],
+        model_binding=dict(raw_sha256=sha(archive/'stdout.json'), broker_config=config_ref,
+            reservation_sha256=sha(claim/'RESERVATION.json'), publication_sha256=sha(claim/'PUBLISHED.json')))
+
+
+def parent_result(response, request, provider_model, now=None, *, substitution=None, queue_root=None, branch=None):
     now = time.time() if now is None else now
     missing = dict(status='MISSING', parent_text='', tag=None, intervention_class=None,
                    functional_change='UNKNOWN')
@@ -75,7 +133,14 @@ def parent_result(response, request, provider_model, now=None):
         return dict(missing, reason='binding_mismatch')
     if response.get('status') == 'MISSING' or response.get('error'):
         return dict(missing, reason='provider_missing')
-    if response.get('actual_model') != provider_model:
+    attribution = {}
+    if substitution is not None:
+        try:
+            attribution = substituted_parent_binding(response, request, provider_model,
+                substitution=substitution, queue_root=queue_root, branch=branch)
+        except (ValueError, OSError, KeyError, TypeError) as error:
+            return dict(missing, reason='substitute_binding_invalid', binding_error=type(error).__name__)
+    elif response.get('actual_model') != provider_model:
         return dict(missing, reason='provider_identity_mismatch')
     plan = response.get('plan') or {}
     metadata = response.get('parent_metadata') or {}
@@ -83,7 +148,8 @@ def parent_result(response, request, provider_model, now=None):
     text = plan.get('message')
     if text == '[SILENT]' or response.get('status') == 'SILENT':
         return dict(status='SILENT', parent_text='', tag=None, intervention_class=None,
-                    functional_change='UNKNOWN', actual_model=response['actual_model'], head_settings=head_settings)
+                    functional_change='UNKNOWN', actual_model=response['actual_model'], head_settings=head_settings,
+                    **attribution)
     if response.get('status') != 'COMPLETE' or not isinstance(text, str) or not text.strip():
         return dict(missing, reason='malformed_reply')
     if metadata.get('tag') not in ('ADD', 'STOP', 'SHIFT'):
@@ -93,7 +159,7 @@ def parent_result(response, request, provider_model, now=None):
         return dict(missing, reason='node_archive_not_verified')
     return dict(status='COMPLETE', parent_text=text, tag=metadata['tag'],
                 intervention_class=metadata['intervention_class'], actual_model=response['actual_model'],
-                receipt=receipt, functional_change='UNKNOWN', head_settings=head_settings)
+                receipt=receipt, functional_change='UNKNOWN', head_settings=head_settings, **attribution)
 
 
 def public_payload(root, plan, task, cycle, episode_index, messages, phase, capture_sha256):
@@ -165,8 +231,18 @@ def poll_parents(root, plan):
         if not response_path.exists() and now < request['lane_deadline_unix']:
             continue
         response = read(response_path) if response_path.exists() else None
+        if plan.get('parent_model_substitution') is not None and response is not None \
+                and response.get('status') in ('COMPLETE', 'SILENT') and now < request['lane_deadline_unix']:
+            publication_path = root/'parent_claude'/(request['id']+'.claim')/'PUBLISHED.json'
+            try:
+                publication = read(publication_path)
+            except (OSError, ValueError):
+                continue
+            if publication.get('response_sha256') != sha(response_path):
+                continue
         arrival = response.get('finished_unix', now) if response else now
-        result = parent_result(response, request, plan['provider'], now=arrival)
+        result = parent_result(response, request, plan['provider'], now=arrival,
+            substitution=plan.get('parent_model_substitution'), queue_root=root, branch=plan.get('branch'))
         receipt = dict(result, id=request['id'], request_sha256=digest(request),
             source_call_sha256=tracked['source_call_sha256'], observed_unix=now,
             delivery_latency_seconds=now-tracked['submitted_unix'], retry=False,

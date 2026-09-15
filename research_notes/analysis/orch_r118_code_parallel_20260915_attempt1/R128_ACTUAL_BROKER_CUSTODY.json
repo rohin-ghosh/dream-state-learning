@@ -1,0 +1,124 @@
+{
+  "brokers": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-u",
+        "/tmp/orch_r128_code_queue_recovery_20260915_v1/RUN.py",
+        "serve",
+        "--recovery",
+        "/tmp/orch_r128_code_queue_recovery_20260915_v1/ovx2_5/RECOVERY.json"
+      ],
+      "identity": {
+        "boot_id": "6923d4d7-1372-4852-a65d-280a2a9bf831",
+        "command_sha256": "44475b75d36b86b7a32d1d5ded3a3339f6cabdaee0f42b343080c1d37c5f9f1d",
+        "pid": 37389,
+        "start_ticks": "161097492",
+        "uid": 158984
+      },
+      "identity_matches": true,
+      "launch_unix": 1789503957.0580997,
+      "live": true,
+      "process_state": "S",
+      "references": {
+        "DISPATCH.json": {
+          "path": "/tmp/orch_r128_code_queue_recovery_20260915_v1/ovx2_5/DISPATCH.json",
+          "sha256": "6bddc9b9c31bf9c9e9c64b426f28b9bb3ab52b17e3d1ee5b2fd25369d263cf23"
+        },
+        "RECOVERY.json": {
+          "path": "/tmp/orch_r128_code_queue_recovery_20260915_v1/ovx2_5/RECOVERY.json",
+          "sha256": "099019dc3eabbc21badae340bd100a058b072683e5dab3acd897c8329dd922c9"
+        }
+      },
+      "wrapper": "ovx2"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-u",
+        "/tmp/orch_r128_code_queue_recovery_20260915_v1/RUN.py",
+        "serve",
+        "--recovery",
+        "/tmp/orch_r128_code_queue_recovery_20260915_v1/a40r_5/RECOVERY.json"
+      ],
+      "identity": {
+        "boot_id": "6923d4d7-1372-4852-a65d-280a2a9bf831",
+        "command_sha256": "d1ac5b002783c62cfe100c028150de1985b1cacbb84555c678eb96f4a242815b",
+        "pid": 37420,
+        "start_ticks": "161097512",
+        "uid": 158984
+      },
+      "identity_matches": true,
+      "launch_unix": 1789503957.2610562,
+      "live": true,
+      "process_state": "S",
+      "references": {
+        "DISPATCH.json": {
+          "path": "/tmp/orch_r128_code_queue_recovery_20260915_v1/a40r_5/DISPATCH.json",
+          "sha256": "442f49ae79509a13ee2bf0c0ff711df9d355b6dc2279ef2ddeba76cf31daf2f7"
+        },
+        "RECOVERY.json": {
+          "path": "/tmp/orch_r128_code_queue_recovery_20260915_v1/a40r_5/RECOVERY.json",
+          "sha256": "c436a09169dbd26f2816a6844558adf6ae9b1b71e4cc2fe63cbd4748106f900c"
+        }
+      },
+      "wrapper": "a40r"
+    }
+  ],
+  "observed_unix": 1789504112.1845558,
+  "raw_exported": false,
+  "schema": "R128_BROKER_CUSTODY_V1",
+  "source_pins": {
+    "/tmp/orch_r119_code_fast_parents_1832/overlay/gpu/orch_r119_code_fable_parser.py": "01977e972483de45ca6d80bace81695ccebba2ee6572c80272876a9af61e0321",
+    "/tmp/orch_r119_code_fast_parents_1832/overlay/gpu/orch_r119_code_fast_astra.py": "34a8d9f652491301109b1abde35a23d6333cfc65d3165a06e9635bb26fd32a37",
+    "/tmp/orch_r119_code_fast_parents_1832/overlay/gpu/orch_r119_code_old_parent.py": "f56397b6feaa5ea38b502baed65d98fe5d0edb87daf6589de5e155b4007a11c1",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/astra_corrective_reselect.py": "eeb4e068b998e54bad263d09232c0e9c46a1a32f2ed1edf8f0ebb6fdcbb59769",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/astra_corrective_sleep_train.py": "1b8f4d59c6fc391d735d39df4b9567e9268bfc926c93eb7d8d01504142c47f4b",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/astra_event_two_hop.py": "fd5d7af6e55c47a6a884d399efd7590be2e5780164ddc95b01746eef6a8d5429",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/astra_event_two_hop_lesson.py": "8b98c9f2169e5e02f9d6ce0cf69f93f523cab2c80ba91ec427743df8e6ee1098",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/astra_event_two_hop_memory.py": "7586678b28309edaa8ece1e16f4c985c394e367b69bedf46e6edc61e50aa64cc",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/astra_event_two_hop_transfer.py": "05fa8812e3e08ae9e343c25a42882ab2b4f552afd5cfe4ce366387c3df10d3a8",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/astra_experienced_event_adult_cycle.py": "6b3c7f07b271b7599e4a78e473852be774faf774d21de571000f152d31b8fa09",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/astra_experienced_event_cue_collect.py": "bcce157dfb6c40fa4845f7f0c59b1f821d61aa370d50f0569ab549e999ea3fb5",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/astra_experienced_event_cue_sleep.py": "a0cd9b92a636d14218482e7e7cbf3f2b417d9e25324307a08ca2a48dcc11fd1a",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/astra_experienced_event_microloop.py": "8e57909a6c4f2d988a434423a33e7a663c23696ffdb2ce402c2bb03b2fccbb70",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/astra_experienced_event_read_route.py": "21c8e824b1523e822167b1b756e148d89923cb9fa389677735960bcd7c0d999d",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/astra_fresh_reader_cycle.py": "6195232dc32d9f2942c0c43c76975f88c310c6f73d93ee3b97feae8cb9b16b16",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/astra_goal_breadth_collection.py": "0e21e0fc4b205b73651e089e47fd22b2040e6951335b226f9655056b29ca8232",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/astra_goal_pair_collection.py": "823ff27836603d41e2e3765bd3c0ba0db3bfb974431d9029e7e0f6e9e121e9bc",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/astra_goal_quality_collection.py": "864f4faffe8a71bfc7b225f85cd65d016f146aba91e56e898d235161f15b054a",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/astra_goal_quality_train.py": "e84d3ef24007ac8bf56a52daec30a2fb508fe91153908ed0759e75954d0ea7b3",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/astra_goal_scale_collection.py": "95eafe28e6b1223f454f96221f742992dda8588ae646e9f023a347a0e3343b20",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/astra_pchain2_native.py": "7fc071bf8d614eb2374d812f23e4488a0a719f5f7eafa1ee39f350d81fc4165d",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/astra_pchain2_nulls.py": "b026fa1561c267d2fff1fdf09a4874255673b42896f3b4f6baa786843d4a9a0d",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/astra_pchain2_prepare.py": "46d39129a79ecdf4eae12c512db34b9dca25420b5617d323d221ec3d4997d84a",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/astra_portable_actor_bundle.py": "d2e4572f1f33b8ce6a117b131075a3398c8fcae149d500541227e0b3e171de3b",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/astra_reader_audit_lesson.py": "2b1c52703f686095d70a601e295826dc34d183e880a54d1c47f7f6c564e07ab2",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/astra_reader_audit_lesson_train.py": "1e22ba8609b32266e1302762ad3f1e0420ecdf3a4beae609a7ee613892f1864b",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/astra_selected_reader_repair.py": "bd3b1b3fd3331cda69302f1b720e92726920b457dcd84a4aac5e5537570aec3c",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/astra_selected_reader_repair_train.py": "70ffc55f4abd7bb7077d35a652e71fb0df98fcb1bfb058af450216c933d7046a",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/orch_full_rich.py": "6a07a6307e7e29c79bf0bb2291171971bf3a9e824eac8387d11fdb74e9b633d7",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/orch_guided_native.py": "559d8e6ea7002f2651748ba192a57c5cf627381f6a3994d93cb02d63011a3157",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/orch_l2_long_backend.py": "dfc3afd9d4d4ed9551201c0b81e4844755186a44049cce9ed701b6a66944bc1a",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/orch_l2_long_hook.py": "ec9da83512817778557216fd23c80e6f494a0573c663ccb306f4e8a466de1129",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/orch_l2_shared_run.py": "3da6491ba4284524d501a24b20d2f7946b3017e58359520865edcb3506e61eee",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/orch_r108_code_parent_r115_astra.py": "57ab7ab6681fe66ad8cb83e89f4143498005a95f73ade9978bfdc1f7815a43e4",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/orch_r108_code_parent_r118_astra_migrate.py": "9c58d40ad5fbe190643a64ced9f59bfe8cee5c6451ebdd1d426e5c357861c50d",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/orch_r108_code_parent_r118_astra_shared.py": "33d5dba3a4822f3c7c1d3591a7e25fc080690f9a2a2fdddf7fb23cef1a43dc9d",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/orch_r110_claude_broker.py": "d967f99c2c90578fb53a89ccf2e2563c8a922cc364cf80d7b21d2d9c8f9a9c63",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/orch_r118_astra_slots.py": "2c0e63311dac814044234c1fc48d4650aab4947f560620bbc79ccbbbd67d7a4d",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/orch_r118_code_parallel_broker.py": "18b808bb449a1e2ada19994480ca2dbe5f1ef59f2d84127506f9041ebf4bf56a",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/orch_replication.py": "4cfda508f75cb676fc4aab7190633490b638ae71f756c0de79eda4c09b2f2288",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/orch_route_parent_campaign_parent.py": "0cc2781e24ecb21cf8b7acdf0fc8b5beb325d2ceec221dd94cc0da267e20bf71",
+    "/tmp/orch_r119_code_fast_parents_1832/provider/gpu/orch_route_parent_campaign_providers.py": "b0f76da0d2037aa8dd5b922cc57942ba4f9ac7ec9249c4367380a9b5791ffc14",
+    "/tmp/orch_r119_code_fast_parents_1832/tests/test_orch_r119_code_fable_parser.py": "9a01934c802a31e67b362ecc046def75d94eafc51d3494ea0390daabcc606fa0",
+    "/tmp/orch_r119_code_fast_parents_1832/tests/test_orch_r119_code_fast_astra.py": "8d417a774baee48b0339c7e966977e7e842f637827d4437a96cf2bd9515d7941",
+    "/tmp/orch_r119_code_fast_parents_1832/tests/test_orch_r119_code_old_parent.py": "36ebb7a0a9307a9ba3614cb4de949255a71a366d6eaf4a2e1ab2b4314ad255a9",
+    "/tmp/orch_r128_code_queue_recovery_20260915_v1/RUN.py": "92200e13d6d097b7ddcfe70c53c2ef7a696bd8adca9c401ca659e530f7a2d896",
+    "/tmp/orch_r128_code_queue_recovery_20260915_v1/source/gpu/orch_r128_code_queue_recovery.py": "87c98c00f8607939706dc7010acbb0a14ff053646beaa2d3eda0088490672ad9",
+    "/tmp/orch_r128_code_queue_recovery_20260915_v1/tests/test_orch_r128_code_queue_recovery.py": "418d6c331b7eb1dabb25a052477f7046ce963727616744d9195b4bf7a3d36d8c"
+  }
+}

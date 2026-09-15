@@ -796,3 +796,172 @@ PARENT_PREARM references are available NOW, PARENT_HANDOFF+actualPLAN appear
 onlyafteractualrelease. Native never waits for provider; old pendingresponses
 are checked atnextTRAINboundary with originalTTL and dispositioncopies, not
 retried or silently overwritten. CODE has not spawned a duplicate broker.
+
+R126 READ-ONLY STATUS September15 20:13:23–24UTC: all seven exact
+custodian/native/guardian identities alive; zero custodian failures, zero
+successor launches. Completed original cycles ovx2_3/4/5/6=67/65/65/65,
+a40r_4/5/6=63/61/69. All seven PARENT_PREARM ready; zero actual
+PARENT_HANDOFF receipts, correctly awaiting natural C100. Hubble/current
+transport owner can prepare from existing prearm refs, not bind a fictional
+successor PLAN or start duplicate parents. Original *_parent2 status-file
+counts COMPLETE/MISSING/PENDING respectively: ovx2_3=6/70/8,
+ovx2_4=25/48/7, ovx2_5=0/72/7, ovx2_6=2/70/8,
+a40r_4=2/66/7, a40r_5=0/64/8, a40r_6=64/21/3.
+These are recorded request statuses, NOT audited child-consumption counts.
+Poor delivery on several lanes remains visible; no transport mutation here.
+
+Single wrapper-only fleet observation20:14:58–59UTC: ovx7resident/7positive,
+ovx2=8/7, ovx3=8/7, a100=8/7, a40r=7/7; total38/40resident,
+35instantaneously positive utilization. Resident means nvidia-smi compute
+process present; positive utilization is not proof of useful training.
+No clearance/admission claim, broad process scan, signals, raw exports,
+provider calls, or GPU changes. Compact R126_*_STATUS_2014.json and
+R126_FLEET_CENSUS_2015.json preserve observation times and native refs.
+Main owns Git. Automatic existing local custodians remain the next action
+at C100; actual transport handoff belongs to Hubble/current broker owner.
+
+R126 NARROW TRANSPORT DIAGNOSIS September15 20:18–20:20UTC: ovx2_5
+original broker3514086 and a40r_5 broker3568075 are absent; preserved
+BROKER.log in both exact dispatch roots ends ValueError: queue_filename.
+No duplicate matching old-parent config process found in local process
+inspection. Native roots have no top-level lock directories. Child actors
+and custodians were not signalled, reloaded, or edited.
+
+Actual original transport output inventory: ovx2_5 six claims/six responses,
+a40r_5 two/two. All eight replies MISSING/evaluator_busy_no_wait with
+provider_dispatched=false; NOT provider refusal or child quality failure.
+Latest five missing cells per lane have no response AND no claim and are
+past original600second deadlines. Latest recheck records76MISSING/7PENDING
+and69MISSING/8PENDING respectively; zeroCOMPLETE remains true.
+
+Exact frozen pending_listing function CPU reproduction PASS: empty queue
+prints newline; splitlines yields one empty filename, rejected by existing
+queue_filename guard before any claim. Both traceback paths match; original
+listing stdout was not retained, so exact historical triggering bytes are
+not asserted. All current native request filenames satisfy the guard.
+No provider/model call in reproduction. Source hash and failure/config/log
+references are in R126_TRANSPORT_DIAGNOSIS.json; node-only request/cell hashes
+and metadata in R126_{OVX2,A40R}_5_TRANSPORT_{NATIVE,RECHECK}.json.
+
+Disposition: concrete handoff, NOT recovered. No validated config-only fix
+identified; frozen-source restart can recur on the next empty queue. Small
+prospective CODE-only listing adapter must emit no empty filename, exclude
+expired/previously claimed requests without reissuing them, retain original
+limits and use existing exclusive broker lock. Existing no-wait evaluator
+contention is separately evidenced; fixing enumeration alone does not prove
+delivery recovery. No shared broker source changes (Hubble owns F1 repair),
+no original-claim retry, no new process, no Git. R126 capacity prearms remain
+ready but are not actual broker handovers or evidence of live transport.
+
+[Builder — R128 CODE transport repair] September15 20:22UTC: explicit
+user-authorized non-material recovery ONLY ovx2_5 and a40r_5 failed parent
+transports. New gpu/orch_r128_code_queue_recovery.py and focused tests;
+no old or shared broker source edits, no actor change. 19 local tests PASS
+(0.51s), exact command: uv run --offline --no-project --with pytest python
+-B -m pytest -q tests/test_orch_r128_code_queue_recovery.py
+tests/test_orch_r119_code_old_parent.py. Includes empty/already-answered
+queue, invalid real filenames, claimed/expired/old requests, dispatch-time
+recheck, exact root/cap/deadline binding, and occupied exclusive lock rejection.
+
+Prospective-only source filters request mtime before recovery cut and all
+expired, responded, or claimed requests; never removes files or retries a
+claim. Native validates frozen adapter+PLAN each listing, and eligibility is
+rechecked before original claim function. Retains original RUNNER.lock,
+ledger/config, parser/model, effort low,512output,600TTL, provider lock,
+372 remaining-original parent cap accounting and existing lease deadlines.
+No delivery guarantee: evaluator_busy_no_wait remains separately recorded.
+Now freezing exact local dependency closure, copying only new code/tests
+node-local, validating native source/PLAN/process/lock and CPU regressions,
+then launching exactly two CPU successor brokers under original configs.
+Old logs/dispatch/config/claims remain unchanged. No GPU/probe/model call
+for preparation and no shared broker mutation; Main owns Git/publication.
+
+R128 EXACT CPU ALLOCATION September15 20:26UTC: ovx2_5 and a40r_5 ONLY,
+new CPU brokers, same native queues/PLAN and original config bytes. Frozen
+adapter87c98c00f8607939706dc7010acbb0a14ff053646beaa2d3eda0088490672ad9;
+19localPASS and17nativePASS each (0.41s/0.44s). Native first test packaging
+missed old_parent dependency (15PASS/2ImportErrors); preserved per-node
+CPU_V1_MISSING_DEPENDENCY.log, then supplied exact old frozen code closure;
+no production source change. Native PASS receipts bf304a099e7b6562e6062346136134d68cf9b64a7723a930dd56a0d24a74d473
+(ovx2) and8482c797c571603231b4ae8afbed100f959e45b73bf2975e3041c66f6c5aa9c7
+(a40r). Config formatting differs local/native historically; validated exact
+native bytes against original provider canonical serialization, not altered
+either copy. Local preparation initially rejected raw-byte comparison before
+any launch. Native original claims6/2 bound, lock absent, PLAN pinned; live
+actors untouched. Original predecessor broker PIDs absent. Successors use
+new /tmp/orch_r128_code_queue_recovery_20260915_v1/{ovx2_5,a40r_5}/RECOVERY.json,
+49frozen local source/harness pins, native source hash checked each listing.
+Original evaluator lock/no-wait behavior remains. Launch now authorized
+inside existing max372 parent reservations per lane and original TRAIN ends;
+no cap extension/reset, no old request or claim reissue. Postlaunch proof
+must distinguish live CPU custody, fresh claimed/published and consumed.
+
+R128 ACTUAL RECOVERY September15 20:25:57UTC (allocation paragraph rounded
+to20:26; it was appended BEFORE dispatch): ovx2_5 CPUbroker37389,
+a40r_5 CPUbroker37420. Exact PID/UID/start/boot/argv identities verified
+live; own new immutable RECOVERY+DISPATCH copied node-local. Original
+RUNNER.lock held by successors; no actor/guardian/custodian changes.
+First future original-ledger reservations: ovx2 C071_E1 sequence7,
+a40r C068_E1 sequence3. Both request mtimes after respective recovery cuts;
+original six/two claim artifact hashes unchanged. No original claim retried.
+
+20:29:19UTC delivery observation: ovx2 has2freshclaims (seq7/8),1published
+MISSING/provider_exit_failure/provider_dispatched=true,1pending. a40r
+has2freshclaims(seq3/4),bothpublished MISSING/provider_exit_failure/
+provider_dispatched=true. Child records agree MISSING for three published
+failures;0COMPLETE,0confirmed consumed interventions. Earlier global
+evaluator_busy_no_wait remains historical and possible; current failures
+are provider_exit_failure, NOT silently classified as contention/refusal.
+No retry/reroute/provider source fix within this queue-only repair.
+Both original actor+guard identities still live; both exclusive brokerlocks
+held, no observed queue_filename recurrence. Thus queue/CPU custody
+recovered, successful parentdelivery NOT yet established. Next scheduled
+fresh requests continue within original caps; provider failure references
+are ready for Main/Hubble, not grounds to change healthy child lives.
+
+Expanded local tests31PASS0.94s, exact additional command adds
+tests/test_orch_r119_code_fable_parser.py and
+tests/test_orch_r119_code_fast_astra.py to the documented19test command;
+no source changed after frozen launch. R128_TEST_COMMANDS.md includes real
+native vendored-pytest harness (not a false bare-venvpytest claim). Ready
+source/test plus compact/journal allowlist in R128_STAGE_READY.json;
+Main owns Git, no shared broker/F1 code edited, raw remains node-local.
+
+R128 BOUNDED PROVIDER DIAGNOSIS September15 20:37UTC: inspected existing
+native CLI_STATUS/stdout/stderr only; no probe/retry/auth work. Latest three
+captured provider_exit_failure responses per lane (six total) all exit1,
+zero stderr bytes, parseable stdout result envelopes is_error=true,
+num_turns1, attempts1, cleanup_terminated_process=false. Node-local result
+text explicitly matches reasoning_extraction safeguard and policy category.
+This is an identified safeguard rejection, NOT a benign runtime/packaging
+failure and NOT diagnosed expired credentials. Initial broad classifier
+returned unknown (empty stderr); explicit safeguard classification resolves
+that without changing original RESULT/error codes or raw bytes. Raw output
+not pulled: compact error categories, numeric CLI metadata and exact native
+archive/stdout/stderr/command SHA references only. Do not generalize this
+six-response sample to every historic MISSING cause.
+
+Exact watcher/Main handoff: R128_{OVX2,A40R}_SAFEGUARD_CLASSIFICATION.json
+points to original response/CLI_STATUS/stdout.json/stderr.txt with verified
+transcript archive hashes. Preserve these MISSING slots; no retry, alternate
+model, reroute, prompt workaround, credential inspection or auth changes.
+No new source successor justified by the captured failures. Existing brokers
+remain37389/37420 with exact identity/live checks and exclusive native locks;
+no restart/signals/changes to their existing next-request schedules.
+
+20:37:01UTC actual delivery since recovery: ovx2_5 seven fresh claims,
+6publishedMISSING+1unpublished,0COMPLETE/0consumed. a40r_5 nine freshclaims,
+7publishedMISSING+1COMPLETE+1unpublished,1confirmed consumed. All original
+six/two claim artifacts unchanged; child+guard identities remain live.
+Successful a40r future C069_E2_parent2 original-ledger sequence6,oneattempt,
+published20:31:39.207UTC,actual_model claude-fable-5-1,notlate; child accepted
+20:31:46.924UTC. Native C070_E1_segment1 COMPLETE includes its exact
+injected_parent_id and delayed_interventions receipt83102aad44a3c2879d26b3c61bf6081b3c5ea1f812400b11e3cd05aa47f2c3be.
+This was a distinct normally scheduled request, not a retry/substitution of
+a rejected slot. Functional/semantic improvement UNASSESSED; it establishes
+one actual delivery+consumption, not reliable parenting recovery on both.
+
+No production source/test/credentials altered by diagnosis, no new inference
+invoked by inspection. Fresh journal+compact allowlist in
+R128_EXIT_DIAGNOSIS_STAGE_READY.json; original R128_STAGE_READY preserved
+for Main's concurrent commit. Main owns Git/publication.
