@@ -1,0 +1,1437 @@
+{
+  "observed_unix": 1789465084.664813,
+  "update": 9316,
+  "parent_access": false,
+  "training_ingestion": false,
+  "arms": {
+    "FULL": {
+      "COMPLETE.json": {
+        "adapter": {
+          "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "files": [
+            [
+              "README.md",
+              "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+            ],
+            [
+              "adapter_config.json",
+              "265c7285be33753c8c66d3c678e4d30d8a38819592d93be243d8d6aeec4e276d"
+            ],
+            [
+              "adapter_model.safetensors",
+              "d354438005657c0bd9137caba1e14390c4340ea657dad80ac87a3b78c65b8e64"
+            ]
+          ],
+          "path": "/localhome/local-rohing/orch_r109_l1_20260915/fit/FULL/checkpoints/000009316/adapter",
+          "state_sha256": "5ba537b3f8022c92f36ae6c0320a05d7f88d4c691bf6a97fbe5b7c7f5815641a"
+        },
+        "checkpoint": "/localhome/local-rohing/orch_r109_l1_20260915/fit/FULL/checkpoints/000009316",
+        "commit_sha256": "b805b06522aaf1c5db8775f6d7488c9aabe2cec6ed44e321f13b51a53a35883f",
+        "readout_required": true,
+        "update": 9316
+      },
+      "PAIRED_FIXED32.json": {
+        "all_cells_recorded": true,
+        "all_pairs_complete": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "checkpoint_sha256": "5ba537b3f8022c92f36ae6c0320a05d7f88d4c691bf6a97fbe5b7c7f5815641a",
+        "claim_boundary": "Fixed synthetic32 diagnostic only; no broad capability, semantic thinking, training or causal-generalization proof.",
+        "expected_cells": 64,
+        "families": {
+          "code": {
+            "arms": {
+              "OFF": {
+                "all_responses_complete": true,
+                "completion_counts": {
+                  "complete": 8,
+                  "execution_error": 0,
+                  "incomplete": 0,
+                  "missing": 0,
+                  "truncated": 0
+                },
+                "denominator": 8,
+                "generation_metrics": {
+                  "content_tokens": {
+                    "known_count": 8,
+                    "known_sum": 156,
+                    "unknown_count": 0
+                  },
+                  "generated_tokens": {
+                    "known_count": 8,
+                    "known_sum": 164,
+                    "unknown_count": 0
+                  },
+                  "prompt_tokens": {
+                    "known_count": 8,
+                    "known_sum": 954,
+                    "unknown_count": 0
+                  }
+                },
+                "outcome_categories": {
+                  "correct": 2,
+                  "invalid_json": 2,
+                  "unsafe_or_invalid_expression": 2,
+                  "wrong_answer": 2
+                },
+                "passed": 2,
+                "recorded": 8
+              },
+              "ON": {
+                "all_responses_complete": true,
+                "completion_counts": {
+                  "complete": 8,
+                  "execution_error": 0,
+                  "incomplete": 0,
+                  "missing": 0,
+                  "truncated": 0
+                },
+                "denominator": 8,
+                "generation_metrics": {
+                  "content_tokens": {
+                    "known_count": 8,
+                    "known_sum": 147,
+                    "unknown_count": 0
+                  },
+                  "generated_tokens": {
+                    "known_count": 8,
+                    "known_sum": 155,
+                    "unknown_count": 0
+                  },
+                  "prompt_tokens": {
+                    "known_count": 8,
+                    "known_sum": 954,
+                    "unknown_count": 0
+                  }
+                },
+                "outcome_categories": {
+                  "invalid_json": 6,
+                  "unsafe_or_invalid_expression": 2
+                },
+                "passed": 0,
+                "recorded": 8
+              }
+            },
+            "pairs": {
+              "complete": 8,
+              "counts": {
+                "OFF_only": 2,
+                "ON_only": 0,
+                "both_fail": 6,
+                "both_pass": 0,
+                "incomplete_pair": 0
+              },
+              "denominator": 8
+            }
+          },
+          "concise_instruction": {
+            "arms": {
+              "OFF": {
+                "all_responses_complete": true,
+                "completion_counts": {
+                  "complete": 8,
+                  "execution_error": 0,
+                  "incomplete": 0,
+                  "missing": 0,
+                  "truncated": 0
+                },
+                "denominator": 8,
+                "generation_metrics": {
+                  "content_tokens": {
+                    "known_count": 8,
+                    "known_sum": 18,
+                    "unknown_count": 0
+                  },
+                  "generated_tokens": {
+                    "known_count": 8,
+                    "known_sum": 26,
+                    "unknown_count": 0
+                  },
+                  "prompt_tokens": {
+                    "known_count": 8,
+                    "known_sum": 381,
+                    "unknown_count": 0
+                  }
+                },
+                "outcome_categories": {
+                  "correct": 7,
+                  "exact_constraint_failure": 1
+                },
+                "passed": 7,
+                "recorded": 8
+              },
+              "ON": {
+                "all_responses_complete": true,
+                "completion_counts": {
+                  "complete": 8,
+                  "execution_error": 0,
+                  "incomplete": 0,
+                  "missing": 0,
+                  "truncated": 0
+                },
+                "denominator": 8,
+                "generation_metrics": {
+                  "content_tokens": {
+                    "known_count": 8,
+                    "known_sum": 17,
+                    "unknown_count": 0
+                  },
+                  "generated_tokens": {
+                    "known_count": 8,
+                    "known_sum": 25,
+                    "unknown_count": 0
+                  },
+                  "prompt_tokens": {
+                    "known_count": 8,
+                    "known_sum": 381,
+                    "unknown_count": 0
+                  }
+                },
+                "outcome_categories": {
+                  "correct": 7,
+                  "exact_constraint_failure": 1
+                },
+                "passed": 7,
+                "recorded": 8
+              }
+            },
+            "pairs": {
+              "complete": 8,
+              "counts": {
+                "OFF_only": 0,
+                "ON_only": 0,
+                "both_fail": 1,
+                "both_pass": 7,
+                "incomplete_pair": 0
+              },
+              "denominator": 8
+            }
+          },
+          "math": {
+            "arms": {
+              "OFF": {
+                "all_responses_complete": true,
+                "completion_counts": {
+                  "complete": 8,
+                  "execution_error": 0,
+                  "incomplete": 0,
+                  "missing": 0,
+                  "truncated": 0
+                },
+                "denominator": 8,
+                "generation_metrics": {
+                  "content_tokens": {
+                    "known_count": 8,
+                    "known_sum": 26,
+                    "unknown_count": 0
+                  },
+                  "generated_tokens": {
+                    "known_count": 8,
+                    "known_sum": 34,
+                    "unknown_count": 0
+                  },
+                  "prompt_tokens": {
+                    "known_count": 8,
+                    "known_sum": 433,
+                    "unknown_count": 0
+                  }
+                },
+                "outcome_categories": {
+                  "correct": 7,
+                  "wrong_answer": 1
+                },
+                "passed": 7,
+                "recorded": 8
+              },
+              "ON": {
+                "all_responses_complete": true,
+                "completion_counts": {
+                  "complete": 8,
+                  "execution_error": 0,
+                  "incomplete": 0,
+                  "missing": 0,
+                  "truncated": 0
+                },
+                "denominator": 8,
+                "generation_metrics": {
+                  "content_tokens": {
+                    "known_count": 8,
+                    "known_sum": 20,
+                    "unknown_count": 0
+                  },
+                  "generated_tokens": {
+                    "known_count": 8,
+                    "known_sum": 28,
+                    "unknown_count": 0
+                  },
+                  "prompt_tokens": {
+                    "known_count": 8,
+                    "known_sum": 433,
+                    "unknown_count": 0
+                  }
+                },
+                "outcome_categories": {
+                  "correct": 7,
+                  "wrong_answer": 1
+                },
+                "passed": 7,
+                "recorded": 8
+              }
+            },
+            "pairs": {
+              "complete": 8,
+              "counts": {
+                "OFF_only": 0,
+                "ON_only": 0,
+                "both_fail": 1,
+                "both_pass": 7,
+                "incomplete_pair": 0
+              },
+              "denominator": 8
+            }
+          },
+          "toolcall": {
+            "arms": {
+              "OFF": {
+                "all_responses_complete": true,
+                "completion_counts": {
+                  "complete": 8,
+                  "execution_error": 0,
+                  "incomplete": 0,
+                  "missing": 0,
+                  "truncated": 0
+                },
+                "denominator": 8,
+                "generation_metrics": {
+                  "content_tokens": {
+                    "known_count": 8,
+                    "known_sum": 149,
+                    "unknown_count": 0
+                  },
+                  "generated_tokens": {
+                    "known_count": 8,
+                    "known_sum": 157,
+                    "unknown_count": 0
+                  },
+                  "prompt_tokens": {
+                    "known_count": 8,
+                    "known_sum": 1136,
+                    "unknown_count": 0
+                  }
+                },
+                "outcome_categories": {
+                  "correct": 8
+                },
+                "passed": 8,
+                "recorded": 8
+              },
+              "ON": {
+                "all_responses_complete": true,
+                "completion_counts": {
+                  "complete": 8,
+                  "execution_error": 0,
+                  "incomplete": 0,
+                  "missing": 0,
+                  "truncated": 0
+                },
+                "denominator": 8,
+                "generation_metrics": {
+                  "content_tokens": {
+                    "known_count": 8,
+                    "known_sum": 149,
+                    "unknown_count": 0
+                  },
+                  "generated_tokens": {
+                    "known_count": 8,
+                    "known_sum": 157,
+                    "unknown_count": 0
+                  },
+                  "prompt_tokens": {
+                    "known_count": 8,
+                    "known_sum": 1136,
+                    "unknown_count": 0
+                  }
+                },
+                "outcome_categories": {
+                  "correct": 8
+                },
+                "passed": 8,
+                "recorded": 8
+              }
+            },
+            "pairs": {
+              "complete": 8,
+              "counts": {
+                "OFF_only": 0,
+                "ON_only": 0,
+                "both_fail": 0,
+                "both_pass": 8,
+                "incomplete_pair": 0
+              },
+              "denominator": 8
+            }
+          }
+        },
+        "max_new_tokens": 512,
+        "model_id": "Qwen/Qwen2.5-7B-Instruct",
+        "overall": {
+          "arms": {
+            "OFF": {
+              "all_responses_complete": true,
+              "completion_counts": {
+                "complete": 32,
+                "execution_error": 0,
+                "incomplete": 0,
+                "missing": 0,
+                "truncated": 0
+              },
+              "denominator": 32,
+              "generation_metrics": {
+                "content_tokens": {
+                  "known_count": 32,
+                  "known_sum": 349,
+                  "unknown_count": 0
+                },
+                "generated_tokens": {
+                  "known_count": 32,
+                  "known_sum": 381,
+                  "unknown_count": 0
+                },
+                "prompt_tokens": {
+                  "known_count": 32,
+                  "known_sum": 2904,
+                  "unknown_count": 0
+                }
+              },
+              "outcome_categories": {
+                "correct": 24,
+                "exact_constraint_failure": 1,
+                "invalid_json": 2,
+                "unsafe_or_invalid_expression": 2,
+                "wrong_answer": 3
+              },
+              "passed": 24,
+              "recorded": 32
+            },
+            "ON": {
+              "all_responses_complete": true,
+              "completion_counts": {
+                "complete": 32,
+                "execution_error": 0,
+                "incomplete": 0,
+                "missing": 0,
+                "truncated": 0
+              },
+              "denominator": 32,
+              "generation_metrics": {
+                "content_tokens": {
+                  "known_count": 32,
+                  "known_sum": 333,
+                  "unknown_count": 0
+                },
+                "generated_tokens": {
+                  "known_count": 32,
+                  "known_sum": 365,
+                  "unknown_count": 0
+                },
+                "prompt_tokens": {
+                  "known_count": 32,
+                  "known_sum": 2904,
+                  "unknown_count": 0
+                }
+              },
+              "outcome_categories": {
+                "correct": 22,
+                "exact_constraint_failure": 1,
+                "invalid_json": 6,
+                "unsafe_or_invalid_expression": 2,
+                "wrong_answer": 1
+              },
+              "passed": 22,
+              "recorded": 32
+            }
+          },
+          "pairs": {
+            "complete": 32,
+            "counts": {
+              "OFF_only": 2,
+              "ON_only": 0,
+              "both_fail": 8,
+              "both_pass": 22,
+              "incomplete_pair": 0
+            },
+            "denominator": 32
+          }
+        },
+        "recorded_cells": 64,
+        "schema": "ORCH_R107_CAPABILITY_V1",
+        "source": "FIXED_SYNTHETIC_DIAGNOSTIC_NOT_TRAIN",
+        "suite_sha256": "32a1d71ff23e168f42366ec4c96777aceb59247020e7a3ae98b6f64b4b9b602c",
+        "task_pairs": [
+          {
+            "category": "both_fail",
+            "complete": true,
+            "family": "code",
+            "task_id": "R107_CODE_00"
+          },
+          {
+            "category": "both_fail",
+            "complete": true,
+            "family": "code",
+            "task_id": "R107_CODE_01"
+          },
+          {
+            "category": "OFF_only",
+            "complete": true,
+            "family": "code",
+            "task_id": "R107_CODE_02"
+          },
+          {
+            "category": "both_fail",
+            "complete": true,
+            "family": "code",
+            "task_id": "R107_CODE_03"
+          },
+          {
+            "category": "both_fail",
+            "complete": true,
+            "family": "code",
+            "task_id": "R107_CODE_04"
+          },
+          {
+            "category": "OFF_only",
+            "complete": true,
+            "family": "code",
+            "task_id": "R107_CODE_05"
+          },
+          {
+            "category": "both_fail",
+            "complete": true,
+            "family": "code",
+            "task_id": "R107_CODE_06"
+          },
+          {
+            "category": "both_fail",
+            "complete": true,
+            "family": "code",
+            "task_id": "R107_CODE_07"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "math",
+            "task_id": "R107_MATH_00"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "math",
+            "task_id": "R107_MATH_01"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "math",
+            "task_id": "R107_MATH_02"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "math",
+            "task_id": "R107_MATH_03"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "math",
+            "task_id": "R107_MATH_04"
+          },
+          {
+            "category": "both_fail",
+            "complete": true,
+            "family": "math",
+            "task_id": "R107_MATH_05"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "math",
+            "task_id": "R107_MATH_06"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "math",
+            "task_id": "R107_MATH_07"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "toolcall",
+            "task_id": "R107_TOOLCALL_00"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "toolcall",
+            "task_id": "R107_TOOLCALL_01"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "toolcall",
+            "task_id": "R107_TOOLCALL_02"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "toolcall",
+            "task_id": "R107_TOOLCALL_03"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "toolcall",
+            "task_id": "R107_TOOLCALL_04"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "toolcall",
+            "task_id": "R107_TOOLCALL_05"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "toolcall",
+            "task_id": "R107_TOOLCALL_06"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "toolcall",
+            "task_id": "R107_TOOLCALL_07"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "concise_instruction",
+            "task_id": "R107_CONCISE_INSTRUCTION_00"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "concise_instruction",
+            "task_id": "R107_CONCISE_INSTRUCTION_01"
+          },
+          {
+            "category": "both_fail",
+            "complete": true,
+            "family": "concise_instruction",
+            "task_id": "R107_CONCISE_INSTRUCTION_02"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "concise_instruction",
+            "task_id": "R107_CONCISE_INSTRUCTION_03"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "concise_instruction",
+            "task_id": "R107_CONCISE_INSTRUCTION_04"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "concise_instruction",
+            "task_id": "R107_CONCISE_INSTRUCTION_05"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "concise_instruction",
+            "task_id": "R107_CONCISE_INSTRUCTION_06"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "concise_instruction",
+            "task_id": "R107_CONCISE_INSTRUCTION_07"
+          }
+        ],
+        "thinking_metrics": null
+      },
+      "readout/ON/COMPLETE.json": {
+        "base_and_adapter_unchanged": true,
+        "behavior": {
+          "fault": {
+            "correct": 8,
+            "denominator": 8
+          },
+          "overall": {
+            "correct": 16,
+            "denominator": 16
+          },
+          "true": {
+            "correct": 8,
+            "denominator": 8
+          }
+        },
+        "behavior_calls": 16,
+        "capability_calls": 32,
+        "checkpoint_state_sha256": "5ba537b3f8022c92f36ae6c0320a05d7f88d4c691bf6a97fbe5b7c7f5815641a",
+        "condition": "ON",
+        "finished_unix": 1789464982.2954862,
+        "fixed32_suite_sha256": "32a1d71ff23e168f42366ec4c96777aceb59247020e7a3ae98b6f64b4b9b602c",
+        "held_behavior_sha256": "4528215d24a80aff62e27b834e58305f492a2b0fa640bd0b89382e5266bd69e4",
+        "parent_access": false,
+        "status": "COMPLETE",
+        "training_ingestion": false
+      },
+      "readout/OFF/COMPLETE.json": {
+        "base_and_adapter_unchanged": true,
+        "behavior": {
+          "fault": {
+            "correct": 0,
+            "denominator": 8
+          },
+          "overall": {
+            "correct": 6,
+            "denominator": 16
+          },
+          "true": {
+            "correct": 6,
+            "denominator": 8
+          }
+        },
+        "behavior_calls": 16,
+        "capability_calls": 32,
+        "checkpoint_state_sha256": "5ba537b3f8022c92f36ae6c0320a05d7f88d4c691bf6a97fbe5b7c7f5815641a",
+        "condition": "OFF",
+        "finished_unix": 1789464978.5363646,
+        "fixed32_suite_sha256": "32a1d71ff23e168f42366ec4c96777aceb59247020e7a3ae98b6f64b4b9b602c",
+        "held_behavior_sha256": "4528215d24a80aff62e27b834e58305f492a2b0fa640bd0b89382e5266bd69e4",
+        "parent_access": false,
+        "status": "COMPLETE",
+        "training_ingestion": false
+      }
+    },
+    "CONTROL": {
+      "COMPLETE.json": {
+        "adapter": {
+          "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "files": [
+            [
+              "README.md",
+              "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+            ],
+            [
+              "adapter_config.json",
+              "99d1dcfa3d2cd4232983e5dda6d5ab9a4e0a2b866c6c2e4c967cbdd41eefe2e9"
+            ],
+            [
+              "adapter_model.safetensors",
+              "97724cca863fc86493f6082b71bbfbdd7aece417fb95241f6d6d7ec7b6f0063d"
+            ]
+          ],
+          "path": "/localhome/local-rohing/orch_r109_l1_20260915/fit/CONTROL/checkpoints/000009316/adapter",
+          "state_sha256": "0b348fd4af0149349fd03b16b719012bfc88be3853166ee82ad5412b74e83670"
+        },
+        "checkpoint": "/localhome/local-rohing/orch_r109_l1_20260915/fit/CONTROL/checkpoints/000009316",
+        "commit_sha256": "8bfd269d6e5400579a7896ebdb5c3c6b2fe4a5e1810355b459febdf7a2f07fd9",
+        "readout_required": true,
+        "update": 9316
+      },
+      "PAIRED_FIXED32.json": {
+        "all_cells_recorded": true,
+        "all_pairs_complete": true,
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "checkpoint_sha256": "0b348fd4af0149349fd03b16b719012bfc88be3853166ee82ad5412b74e83670",
+        "claim_boundary": "Fixed synthetic32 diagnostic only; no broad capability, semantic thinking, training or causal-generalization proof.",
+        "expected_cells": 64,
+        "families": {
+          "code": {
+            "arms": {
+              "OFF": {
+                "all_responses_complete": true,
+                "completion_counts": {
+                  "complete": 8,
+                  "execution_error": 0,
+                  "incomplete": 0,
+                  "missing": 0,
+                  "truncated": 0
+                },
+                "denominator": 8,
+                "generation_metrics": {
+                  "content_tokens": {
+                    "known_count": 8,
+                    "known_sum": 156,
+                    "unknown_count": 0
+                  },
+                  "generated_tokens": {
+                    "known_count": 8,
+                    "known_sum": 164,
+                    "unknown_count": 0
+                  },
+                  "prompt_tokens": {
+                    "known_count": 8,
+                    "known_sum": 954,
+                    "unknown_count": 0
+                  }
+                },
+                "outcome_categories": {
+                  "correct": 2,
+                  "invalid_json": 2,
+                  "unsafe_or_invalid_expression": 2,
+                  "wrong_answer": 2
+                },
+                "passed": 2,
+                "recorded": 8
+              },
+              "ON": {
+                "all_responses_complete": true,
+                "completion_counts": {
+                  "complete": 8,
+                  "execution_error": 0,
+                  "incomplete": 0,
+                  "missing": 0,
+                  "truncated": 0
+                },
+                "denominator": 8,
+                "generation_metrics": {
+                  "content_tokens": {
+                    "known_count": 8,
+                    "known_sum": 124,
+                    "unknown_count": 0
+                  },
+                  "generated_tokens": {
+                    "known_count": 8,
+                    "known_sum": 132,
+                    "unknown_count": 0
+                  },
+                  "prompt_tokens": {
+                    "known_count": 8,
+                    "known_sum": 954,
+                    "unknown_count": 0
+                  }
+                },
+                "outcome_categories": {
+                  "correct": 1,
+                  "invalid_json": 6,
+                  "unsafe_or_invalid_expression": 1
+                },
+                "passed": 1,
+                "recorded": 8
+              }
+            },
+            "pairs": {
+              "complete": 8,
+              "counts": {
+                "OFF_only": 2,
+                "ON_only": 1,
+                "both_fail": 5,
+                "both_pass": 0,
+                "incomplete_pair": 0
+              },
+              "denominator": 8
+            }
+          },
+          "concise_instruction": {
+            "arms": {
+              "OFF": {
+                "all_responses_complete": true,
+                "completion_counts": {
+                  "complete": 8,
+                  "execution_error": 0,
+                  "incomplete": 0,
+                  "missing": 0,
+                  "truncated": 0
+                },
+                "denominator": 8,
+                "generation_metrics": {
+                  "content_tokens": {
+                    "known_count": 8,
+                    "known_sum": 18,
+                    "unknown_count": 0
+                  },
+                  "generated_tokens": {
+                    "known_count": 8,
+                    "known_sum": 26,
+                    "unknown_count": 0
+                  },
+                  "prompt_tokens": {
+                    "known_count": 8,
+                    "known_sum": 381,
+                    "unknown_count": 0
+                  }
+                },
+                "outcome_categories": {
+                  "correct": 7,
+                  "exact_constraint_failure": 1
+                },
+                "passed": 7,
+                "recorded": 8
+              },
+              "ON": {
+                "all_responses_complete": true,
+                "completion_counts": {
+                  "complete": 8,
+                  "execution_error": 0,
+                  "incomplete": 0,
+                  "missing": 0,
+                  "truncated": 0
+                },
+                "denominator": 8,
+                "generation_metrics": {
+                  "content_tokens": {
+                    "known_count": 8,
+                    "known_sum": 17,
+                    "unknown_count": 0
+                  },
+                  "generated_tokens": {
+                    "known_count": 8,
+                    "known_sum": 25,
+                    "unknown_count": 0
+                  },
+                  "prompt_tokens": {
+                    "known_count": 8,
+                    "known_sum": 381,
+                    "unknown_count": 0
+                  }
+                },
+                "outcome_categories": {
+                  "correct": 7,
+                  "exact_constraint_failure": 1
+                },
+                "passed": 7,
+                "recorded": 8
+              }
+            },
+            "pairs": {
+              "complete": 8,
+              "counts": {
+                "OFF_only": 0,
+                "ON_only": 0,
+                "both_fail": 1,
+                "both_pass": 7,
+                "incomplete_pair": 0
+              },
+              "denominator": 8
+            }
+          },
+          "math": {
+            "arms": {
+              "OFF": {
+                "all_responses_complete": true,
+                "completion_counts": {
+                  "complete": 8,
+                  "execution_error": 0,
+                  "incomplete": 0,
+                  "missing": 0,
+                  "truncated": 0
+                },
+                "denominator": 8,
+                "generation_metrics": {
+                  "content_tokens": {
+                    "known_count": 8,
+                    "known_sum": 26,
+                    "unknown_count": 0
+                  },
+                  "generated_tokens": {
+                    "known_count": 8,
+                    "known_sum": 34,
+                    "unknown_count": 0
+                  },
+                  "prompt_tokens": {
+                    "known_count": 8,
+                    "known_sum": 433,
+                    "unknown_count": 0
+                  }
+                },
+                "outcome_categories": {
+                  "correct": 7,
+                  "wrong_answer": 1
+                },
+                "passed": 7,
+                "recorded": 8
+              },
+              "ON": {
+                "all_responses_complete": true,
+                "completion_counts": {
+                  "complete": 8,
+                  "execution_error": 0,
+                  "incomplete": 0,
+                  "missing": 0,
+                  "truncated": 0
+                },
+                "denominator": 8,
+                "generation_metrics": {
+                  "content_tokens": {
+                    "known_count": 8,
+                    "known_sum": 20,
+                    "unknown_count": 0
+                  },
+                  "generated_tokens": {
+                    "known_count": 8,
+                    "known_sum": 28,
+                    "unknown_count": 0
+                  },
+                  "prompt_tokens": {
+                    "known_count": 8,
+                    "known_sum": 433,
+                    "unknown_count": 0
+                  }
+                },
+                "outcome_categories": {
+                  "correct": 7,
+                  "wrong_answer": 1
+                },
+                "passed": 7,
+                "recorded": 8
+              }
+            },
+            "pairs": {
+              "complete": 8,
+              "counts": {
+                "OFF_only": 0,
+                "ON_only": 0,
+                "both_fail": 1,
+                "both_pass": 7,
+                "incomplete_pair": 0
+              },
+              "denominator": 8
+            }
+          },
+          "toolcall": {
+            "arms": {
+              "OFF": {
+                "all_responses_complete": true,
+                "completion_counts": {
+                  "complete": 8,
+                  "execution_error": 0,
+                  "incomplete": 0,
+                  "missing": 0,
+                  "truncated": 0
+                },
+                "denominator": 8,
+                "generation_metrics": {
+                  "content_tokens": {
+                    "known_count": 8,
+                    "known_sum": 149,
+                    "unknown_count": 0
+                  },
+                  "generated_tokens": {
+                    "known_count": 8,
+                    "known_sum": 157,
+                    "unknown_count": 0
+                  },
+                  "prompt_tokens": {
+                    "known_count": 8,
+                    "known_sum": 1136,
+                    "unknown_count": 0
+                  }
+                },
+                "outcome_categories": {
+                  "correct": 8
+                },
+                "passed": 8,
+                "recorded": 8
+              },
+              "ON": {
+                "all_responses_complete": true,
+                "completion_counts": {
+                  "complete": 8,
+                  "execution_error": 0,
+                  "incomplete": 0,
+                  "missing": 0,
+                  "truncated": 0
+                },
+                "denominator": 8,
+                "generation_metrics": {
+                  "content_tokens": {
+                    "known_count": 8,
+                    "known_sum": 149,
+                    "unknown_count": 0
+                  },
+                  "generated_tokens": {
+                    "known_count": 8,
+                    "known_sum": 157,
+                    "unknown_count": 0
+                  },
+                  "prompt_tokens": {
+                    "known_count": 8,
+                    "known_sum": 1136,
+                    "unknown_count": 0
+                  }
+                },
+                "outcome_categories": {
+                  "correct": 7,
+                  "invalid_tool_schema": 1
+                },
+                "passed": 7,
+                "recorded": 8
+              }
+            },
+            "pairs": {
+              "complete": 8,
+              "counts": {
+                "OFF_only": 1,
+                "ON_only": 0,
+                "both_fail": 0,
+                "both_pass": 7,
+                "incomplete_pair": 0
+              },
+              "denominator": 8
+            }
+          }
+        },
+        "max_new_tokens": 512,
+        "model_id": "Qwen/Qwen2.5-7B-Instruct",
+        "overall": {
+          "arms": {
+            "OFF": {
+              "all_responses_complete": true,
+              "completion_counts": {
+                "complete": 32,
+                "execution_error": 0,
+                "incomplete": 0,
+                "missing": 0,
+                "truncated": 0
+              },
+              "denominator": 32,
+              "generation_metrics": {
+                "content_tokens": {
+                  "known_count": 32,
+                  "known_sum": 349,
+                  "unknown_count": 0
+                },
+                "generated_tokens": {
+                  "known_count": 32,
+                  "known_sum": 381,
+                  "unknown_count": 0
+                },
+                "prompt_tokens": {
+                  "known_count": 32,
+                  "known_sum": 2904,
+                  "unknown_count": 0
+                }
+              },
+              "outcome_categories": {
+                "correct": 24,
+                "exact_constraint_failure": 1,
+                "invalid_json": 2,
+                "unsafe_or_invalid_expression": 2,
+                "wrong_answer": 3
+              },
+              "passed": 24,
+              "recorded": 32
+            },
+            "ON": {
+              "all_responses_complete": true,
+              "completion_counts": {
+                "complete": 32,
+                "execution_error": 0,
+                "incomplete": 0,
+                "missing": 0,
+                "truncated": 0
+              },
+              "denominator": 32,
+              "generation_metrics": {
+                "content_tokens": {
+                  "known_count": 32,
+                  "known_sum": 310,
+                  "unknown_count": 0
+                },
+                "generated_tokens": {
+                  "known_count": 32,
+                  "known_sum": 342,
+                  "unknown_count": 0
+                },
+                "prompt_tokens": {
+                  "known_count": 32,
+                  "known_sum": 2904,
+                  "unknown_count": 0
+                }
+              },
+              "outcome_categories": {
+                "correct": 22,
+                "exact_constraint_failure": 1,
+                "invalid_json": 6,
+                "invalid_tool_schema": 1,
+                "unsafe_or_invalid_expression": 1,
+                "wrong_answer": 1
+              },
+              "passed": 22,
+              "recorded": 32
+            }
+          },
+          "pairs": {
+            "complete": 32,
+            "counts": {
+              "OFF_only": 3,
+              "ON_only": 1,
+              "both_fail": 7,
+              "both_pass": 21,
+              "incomplete_pair": 0
+            },
+            "denominator": 32
+          }
+        },
+        "recorded_cells": 64,
+        "schema": "ORCH_R107_CAPABILITY_V1",
+        "source": "FIXED_SYNTHETIC_DIAGNOSTIC_NOT_TRAIN",
+        "suite_sha256": "32a1d71ff23e168f42366ec4c96777aceb59247020e7a3ae98b6f64b4b9b602c",
+        "task_pairs": [
+          {
+            "category": "both_fail",
+            "complete": true,
+            "family": "code",
+            "task_id": "R107_CODE_00"
+          },
+          {
+            "category": "ON_only",
+            "complete": true,
+            "family": "code",
+            "task_id": "R107_CODE_01"
+          },
+          {
+            "category": "OFF_only",
+            "complete": true,
+            "family": "code",
+            "task_id": "R107_CODE_02"
+          },
+          {
+            "category": "both_fail",
+            "complete": true,
+            "family": "code",
+            "task_id": "R107_CODE_03"
+          },
+          {
+            "category": "both_fail",
+            "complete": true,
+            "family": "code",
+            "task_id": "R107_CODE_04"
+          },
+          {
+            "category": "OFF_only",
+            "complete": true,
+            "family": "code",
+            "task_id": "R107_CODE_05"
+          },
+          {
+            "category": "both_fail",
+            "complete": true,
+            "family": "code",
+            "task_id": "R107_CODE_06"
+          },
+          {
+            "category": "both_fail",
+            "complete": true,
+            "family": "code",
+            "task_id": "R107_CODE_07"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "math",
+            "task_id": "R107_MATH_00"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "math",
+            "task_id": "R107_MATH_01"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "math",
+            "task_id": "R107_MATH_02"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "math",
+            "task_id": "R107_MATH_03"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "math",
+            "task_id": "R107_MATH_04"
+          },
+          {
+            "category": "both_fail",
+            "complete": true,
+            "family": "math",
+            "task_id": "R107_MATH_05"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "math",
+            "task_id": "R107_MATH_06"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "math",
+            "task_id": "R107_MATH_07"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "toolcall",
+            "task_id": "R107_TOOLCALL_00"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "toolcall",
+            "task_id": "R107_TOOLCALL_01"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "toolcall",
+            "task_id": "R107_TOOLCALL_02"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "toolcall",
+            "task_id": "R107_TOOLCALL_03"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "toolcall",
+            "task_id": "R107_TOOLCALL_04"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "toolcall",
+            "task_id": "R107_TOOLCALL_05"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "toolcall",
+            "task_id": "R107_TOOLCALL_06"
+          },
+          {
+            "category": "OFF_only",
+            "complete": true,
+            "family": "toolcall",
+            "task_id": "R107_TOOLCALL_07"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "concise_instruction",
+            "task_id": "R107_CONCISE_INSTRUCTION_00"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "concise_instruction",
+            "task_id": "R107_CONCISE_INSTRUCTION_01"
+          },
+          {
+            "category": "both_fail",
+            "complete": true,
+            "family": "concise_instruction",
+            "task_id": "R107_CONCISE_INSTRUCTION_02"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "concise_instruction",
+            "task_id": "R107_CONCISE_INSTRUCTION_03"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "concise_instruction",
+            "task_id": "R107_CONCISE_INSTRUCTION_04"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "concise_instruction",
+            "task_id": "R107_CONCISE_INSTRUCTION_05"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "concise_instruction",
+            "task_id": "R107_CONCISE_INSTRUCTION_06"
+          },
+          {
+            "category": "both_pass",
+            "complete": true,
+            "family": "concise_instruction",
+            "task_id": "R107_CONCISE_INSTRUCTION_07"
+          }
+        ],
+        "thinking_metrics": null
+      },
+      "readout/ON/COMPLETE.json": {
+        "base_and_adapter_unchanged": true,
+        "behavior": {
+          "fault": {
+            "correct": 8,
+            "denominator": 8
+          },
+          "overall": {
+            "correct": 16,
+            "denominator": 16
+          },
+          "true": {
+            "correct": 8,
+            "denominator": 8
+          }
+        },
+        "behavior_calls": 16,
+        "capability_calls": 32,
+        "checkpoint_state_sha256": "0b348fd4af0149349fd03b16b719012bfc88be3853166ee82ad5412b74e83670",
+        "condition": "ON",
+        "finished_unix": 1789464982.2954297,
+        "fixed32_suite_sha256": "32a1d71ff23e168f42366ec4c96777aceb59247020e7a3ae98b6f64b4b9b602c",
+        "held_behavior_sha256": "4528215d24a80aff62e27b834e58305f492a2b0fa640bd0b89382e5266bd69e4",
+        "parent_access": false,
+        "status": "COMPLETE",
+        "training_ingestion": false
+      },
+      "readout/OFF/COMPLETE.json": {
+        "base_and_adapter_unchanged": true,
+        "behavior": {
+          "fault": {
+            "correct": 0,
+            "denominator": 8
+          },
+          "overall": {
+            "correct": 6,
+            "denominator": 16
+          },
+          "true": {
+            "correct": 6,
+            "denominator": 8
+          }
+        },
+        "behavior_calls": 16,
+        "capability_calls": 32,
+        "checkpoint_state_sha256": "0b348fd4af0149349fd03b16b719012bfc88be3853166ee82ad5412b74e83670",
+        "condition": "OFF",
+        "finished_unix": 1789464979.506728,
+        "fixed32_suite_sha256": "32a1d71ff23e168f42366ec4c96777aceb59247020e7a3ae98b6f64b4b9b602c",
+        "held_behavior_sha256": "4528215d24a80aff62e27b834e58305f492a2b0fa640bd0b89382e5266bd69e4",
+        "parent_access": false,
+        "status": "COMPLETE",
+        "training_ingestion": false
+      }
+    }
+  }
+}

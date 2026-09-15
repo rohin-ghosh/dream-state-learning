@@ -1,0 +1,274 @@
+{
+  "observed_unix": 1789465237.6433809,
+  "native_supplement_root": "/localhome/local-rohing/orch_r109_l1_20260915/async_v2",
+  "files": {
+    "CPU_LAUNCH.json": {
+      "sha256": "a4e3382c61304e459cb038537d43b06d9917e86b5457ca269dc18ea141685034",
+      "content": {
+        "hard_end_unix": 1789491360,
+        "identity": {
+          "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+          "pid": 801976,
+          "start_ticks": "69365226",
+          "uid": 2524
+        },
+        "pre_gpu_sha256": "96ec4aa964e14fea9ca68f3a8349e85ee04a5d5df751d0800e641a3dd2f2e231",
+        "started_unix": 1789465213.1289215
+      }
+    },
+    "CUSTODY.json": {
+      "sha256": "16b4e9f856c125dccc5e31d8dee7425e20de2c943025a3061a59f82711c5c985",
+      "content": {
+        "guardian_identity": {
+          "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+          "pid": 801976,
+          "start_ticks": "69365226",
+          "uid": 2524
+        },
+        "hard_end_unix": 1789491360,
+        "inherited": [
+          {
+            "arguments": [
+              "train",
+              "--arm",
+              "FULL",
+              "--rank",
+              "0",
+              "--index",
+              "0",
+              "--world-size",
+              "3",
+              "--segment",
+              "3",
+              "--resume",
+              "/localhome/local-rohing/orch_r109_l1_20260915/fit/FULL/checkpoints/000009316"
+            ],
+            "hard_deadline_unix": 1789491360.0,
+            "identity": {
+              "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+              "pid": 794602,
+              "start_ticks": "69342378",
+              "uid": 2524
+            },
+            "index": 0,
+            "module": "gpu.orch_r109_l1_train",
+            "receipt_sha256": "c7a1d2ac92c75fba60bdaffe01f24916b9b8c45075ecfbc8883c40a1de3f9859",
+            "source_archive_sha256": "862b2c27a45631ae5c25fbc692ab32af35505ce05b80bc095578191f8698087e",
+            "started_unix": 1789464984.6426418,
+            "uuid": "GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0"
+          },
+          {
+            "arguments": [
+              "train",
+              "--arm",
+              "CONTROL",
+              "--rank",
+              "0",
+              "--index",
+              "3",
+              "--world-size",
+              "1",
+              "--segment",
+              "3",
+              "--resume",
+              "/localhome/local-rohing/orch_r109_l1_20260915/fit/CONTROL/checkpoints/000009316"
+            ],
+            "hard_deadline_unix": 1789491360.0,
+            "identity": {
+              "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+              "pid": 794595,
+              "start_ticks": "69342336",
+              "uid": 2524
+            },
+            "index": 3,
+            "module": "gpu.orch_r109_l1_train",
+            "receipt_sha256": "4b229f643ed369373e59f90b0c0e5926e89f00c773f730301e6eb6146cae1c40",
+            "source_archive_sha256": "862b2c27a45631ae5c25fbc692ab32af35505ce05b80bc095578191f8698087e",
+            "started_unix": 1789464984.2286458,
+            "uuid": "GPU-c9450d3d-0455-f034-b9bf-7f8956e44733"
+          },
+          {
+            "arguments": [
+              "train",
+              "--arm",
+              "FULL",
+              "--rank",
+              "1",
+              "--index",
+              "1",
+              "--world-size",
+              "3",
+              "--segment",
+              "3",
+              "--resume",
+              "/localhome/local-rohing/orch_r109_l1_20260915/fit/FULL/checkpoints/000009316"
+            ],
+            "hard_deadline_unix": 1789491360.0,
+            "identity": {
+              "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+              "pid": 794609,
+              "start_ticks": "69342424",
+              "uid": 2524
+            },
+            "index": 1,
+            "module": "gpu.orch_r109_l1_train",
+            "receipt_sha256": "92b13ef335c21c74cfbb5c8253ddc2bee644f970eaaac36dbbc2674fbdf9039b",
+            "source_archive_sha256": "862b2c27a45631ae5c25fbc692ab32af35505ce05b80bc095578191f8698087e",
+            "started_unix": 1789464985.1049223,
+            "uuid": "GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4"
+          },
+          {
+            "arguments": [
+              "train",
+              "--arm",
+              "FULL",
+              "--rank",
+              "2",
+              "--index",
+              "2",
+              "--world-size",
+              "3",
+              "--segment",
+              "3",
+              "--resume",
+              "/localhome/local-rohing/orch_r109_l1_20260915/fit/FULL/checkpoints/000009316"
+            ],
+            "hard_deadline_unix": 1789491360.0,
+            "identity": {
+              "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+              "pid": 794616,
+              "start_ticks": "69342470",
+              "uid": 2524
+            },
+            "index": 2,
+            "module": "gpu.orch_r109_l1_train",
+            "receipt_sha256": "d257ef6138cbd82438b50f269e1803066c0ce56530a845afeb96afc1fcb14137",
+            "source_archive_sha256": "862b2c27a45631ae5c25fbc692ab32af35505ce05b80bc095578191f8698087e",
+            "started_unix": 1789464985.569298,
+            "uuid": "GPU-d2db2a6a-a308-1782-bf41-e41411d8dc05"
+          }
+        ],
+        "model_jobs_untouched": true,
+        "observed_unix": 1789465213.9277704,
+        "old_cpu_identity": {
+          "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+          "pid": 763809,
+          "start_ticks": "69200645",
+          "uid": 2524
+        },
+        "phase": "train",
+        "segment": 3,
+        "source_sha256": "caf5ac7ce1933c276a89f94f68405ad86fecacbae0a8973f17d5040dfac5497a"
+      }
+    },
+    "HEARTBEAT.json": {
+      "sha256": "fae7a5dea36758f1b39726c82859165f0f77b7d18461d97e678d680454bea786",
+      "content": {
+        "arms": {
+          "CONTROL": {
+            "pending": false,
+            "phase": "train",
+            "processes": [
+              {
+                "alive": true,
+                "identity": {
+                  "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+                  "pid": 794595,
+                  "start_ticks": "69342336",
+                  "uid": 2524
+                },
+                "index": 3
+              }
+            ],
+            "resume": "None",
+            "segment": 3,
+            "terminal": false
+          },
+          "FULL": {
+            "pending": false,
+            "phase": "readout",
+            "processes": [
+              {
+                "alive": true,
+                "identity": {
+                  "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+                  "pid": 802155,
+                  "start_ticks": "69365360",
+                  "uid": 2524
+                },
+                "index": 0
+              },
+              {
+                "alive": true,
+                "identity": {
+                  "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+                  "pid": 802171,
+                  "start_ticks": "69365423",
+                  "uid": 2524
+                },
+                "index": 1
+              },
+              {
+                "alive": true,
+                "identity": {
+                  "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+                  "pid": 802178,
+                  "start_ticks": "69365485",
+                  "uid": 2524
+                },
+                "index": 2
+              }
+            ],
+            "resume": "/localhome/local-rohing/orch_r109_l1_20260915/fit/FULL/checkpoints/000009444",
+            "segment": 3,
+            "terminal": false
+          }
+        },
+        "compare_only_matched_updates": true,
+        "hard_end_unix": 1789491360,
+        "independent_arms": true,
+        "maximum_total_segments_per_arm": 512,
+        "native_cutoff_unix": 1789491060,
+        "observed_unix": 1789465235.7591076,
+        "source_sha256": "caf5ac7ce1933c276a89f94f68405ad86fecacbae0a8973f17d5040dfac5497a"
+      }
+    },
+    "PRE_GPU.json": {
+      "sha256": "96ec4aa964e14fea9ca68f3a8349e85ee04a5d5df751d0800e641a3dd2f2e231",
+      "content": {
+        "schema": "R109_L1_INDEPENDENT_ARM_CONTINUATION_V2",
+        "cpu_passed": true,
+        "cpu_test_methods": 22,
+        "native_focused_test_methods": 7,
+        "builder_line": "[Builder] 2026-09-15T09:40Z R109 L1 V2 PRE-GPU non-material custody repair:22 CPU/native7 PASS; exact CPU source environment + UID/cwd + pidfd proof; V1 failed before any signals, all model jobs preserved. Sourcecaf5ac7ce1933c276a89f94f68405ad86fecacbae0a8973f17d5040dfac5497a archive817d476da7c56b56d0cb7fd73b35d54242bad7e57f3687343dcf7ba811fd9aab; unchanged original8932 lineage/optimizer/held/source/14slots/112GPUh/end16:56/native16:51. No reset/newadmission/node5; independent arms and exact fixed32/held readout partitions only.",
+        "source_sha256": "caf5ac7ce1933c276a89f94f68405ad86fecacbae0a8973f17d5040dfac5497a",
+        "supplement_archive_sha256": "817d476da7c56b56d0cb7fd73b35d54242bad7e57f3687343dcf7ba811fd9aab",
+        "files": {
+          "orch_r109_l1_async.py": "caf5ac7ce1933c276a89f94f68405ad86fecacbae0a8973f17d5040dfac5497a",
+          "test_orch_r109_l1_async.py": "08cb126edeaeb58f8b466e462ad300df50c177b8b587aaba2f2ed436fb8287b3"
+        },
+        "original_plan_sha256": "16f919726c925e7dbd5fe44e927e9bb2b2f3000b2c2a773eb33b820ae69a0b82",
+        "original_archive_sha256": "862b2c27a45631ae5c25fbc692ab32af35505ce05b80bc095578191f8698087e",
+        "started_unix": 1789462560,
+        "hard_end_unix": 1789491360,
+        "native_cutoff_unix": 1789491060,
+        "last_new_fit_before_unix": 1789490460,
+        "maximum_total_segments_per_arm": 512,
+        "updates_per_segment": 128,
+        "allocation": {
+          "FULL": [
+            0,
+            1,
+            2
+          ],
+          "CONTROL": [
+            3
+          ]
+        },
+        "reset": false,
+        "corrected_l2_ingestion": "DEFERRED_NO_COMPILER",
+        "publisher": "Main"
+      }
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "ACTOR_READY.json": {
+    "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+    "lane": "a100_6",
+    "loaded_unix": 1789464714.8151958,
+    "path": "/localhome/local-rohing/orch_r109_route_20260915_a100_6_attempt3/campaign_a100_6/ACTOR_READY.json",
+    "pid": 1366187,
+    "principles_sha256": "b7f4d6baef8158b41533d15acf0f7c924b4bc1e875a30d6ca31f874b5e1c589d",
+    "sha256": "94531d22457ef71a0b5f8ce6d79c4078c674a596e71f76f7a64757b6a0cd893b",
+    "uuid": "GPU-6de3930d-104a-f969-7d36-009271368dd1"
+  },
+  "LAUNCH.json": {
+    "path": "/localhome/local-rohing/orch_r109_route_20260915_a100_6_attempt3/campaign_a100_6/LAUNCH.json",
+    "pid": 1366187,
+    "sha256": "bf728aa3b03fb0eed938f3d0e527a71553807fd28b14a9af81e3fec7f9fa41fa",
+    "started_unix": 1789464614.1839616,
+    "uuid": "GPU-6de3930d-104a-f969-7d36-009271368dd1"
+  },
+  "READY.json": {
+    "hard_deadline_unix": 1789491720.0,
+    "lane": "a100_6",
+    "native_cap": 16384,
+    "parent_cap": 1024,
+    "path": "/localhome/local-rohing/orch_r109_route_20260915_a100_6_attempt3/campaign_a100_6/READY.json",
+    "principles_sha256": "b7f4d6baef8158b41533d15acf0f7c924b4bc1e875a30d6ca31f874b5e1c589d",
+    "sha256": "4b119766853d69785f9be4108d4d9c1223a8895104565421d86ce61920b6b906",
+    "started_unix": 1789464463.6098962
+  },
+  "STATUS.json": {
+    "hard_deadline_unix": 1789491720.0,
+    "held_episodes": 0,
+    "native_completed": 11,
+    "optimizer_updates": 0,
+    "parent_completed": 2,
+    "path": "/localhome/local-rohing/orch_r109_route_20260915_a100_6_attempt3/campaign_a100_6/STATUS.json",
+    "phase": "PARENT_METACOGNITION_CONVERSATION",
+    "pid": 1366187,
+    "sha256": "44fde9993e228d3e563458f97c169edc97f3e54e1fb5ebb78ed3ba37db1c64e3",
+    "sleeps": 0,
+    "train_episodes": 2,
+    "train_segments": 11,
+    "triples": 1,
+    "uuid": "GPU-6de3930d-104a-f969-7d36-009271368dd1"
+  },
+  "behavior_add_stop_shift_verified": null,
+  "behavior_audit_status": "UNKNOWN_PENDING_AUTHOR_AUDIT_NO_OUTCOME_CRITERION",
+  "current_compute_pids": [
+    1366187
+  ],
+  "first_native": {
+    "finished_unix": 1789464719.455786,
+    "full_prompt_prefix_verified": true,
+    "input_truncated": false,
+    "path": "/localhome/local-rohing/orch_r109_route_20260915_a100_6_attempt3/campaign_a100_6/native/CALL_000001.json",
+    "sha256": "5c15b88577b09e070ea3af3169728622568437b7ffb6731d08390f227859ae66",
+    "started_unix": 1789464714.824436,
+    "tokens_including_eos": 84
+  },
+  "first_parent": {
+    "actual_model": "openai/openai/gpt-6-astra",
+    "observed_unix": 1789464866.7094727,
+    "path": "/localhome/local-rohing/orch_r109_route_20260915_a100_6_attempt3/campaign_a100_6/PARENT_00001.json",
+    "principles_sha256": "b7f4d6baef8158b41533d15acf0f7c924b4bc1e875a30d6ca31f874b5e1c589d",
+    "provider_finished_unix": 1789464832.0844705,
+    "raw_response_sha256": "8a07df461892c84a8fe7067b4f8bad7af894745368f8d19a33a2af27a7972763",
+    "response_sha256": "412799e326520a79123babb2a7fffb53eeb0a2196fef9384bacdc7a2dc77e8ba",
+    "sha256": "41a639e69fb6de70794a2537e87c1139ac4cea643282c954e085214529bcc0b4"
+  },
+  "intervention_class_text_mentions_not_semantic_verification": {
+    "action steering": 0,
+    "affective": 0,
+    "curiosity": 0,
+    "goal": 0,
+    "metacognition": 0,
+    "perception": 2,
+    "persistence": 0,
+    "reflection": 2
+  },
+  "lane": "a100_6",
+  "learned_sleeps": [],
+  "native_counts": {
+    "completed": 11,
+    "protocol_only_structural": 0,
+    "reflection": 0,
+    "reflection_lexical_stop": 0,
+    "reserved": 11,
+    "tokens_including_eos": 1940,
+    "truncated": 0
+  },
+  "observed_utc": "2026-09-15T09:36:39.986738+00:00",
+  "observer_does_not_change_gpu_or_source": true,
+  "parent_modes": {
+    "BEHAVIOR": 2
+  },
+  "parent_responses": 2,
+  "raw_embedded": false,
+  "root": "/localhome/local-rohing/orch_r109_route_20260915_a100_6_attempt3",
+  "throughput_600s": {
+    "completed": 11,
+    "full_600s_available": false,
+    "observed_seconds": 285.16230177879333,
+    "protocol_only_structural": 0,
+    "qualified_functional_count": null,
+    "qualified_functional_per_hour": null,
+    "raw_calls_per_hour": 138.8682857200339,
+    "reflection": 0,
+    "reflection_lexical_stop": 0,
+    "semantic_sample_denominator": 0,
+    "tokens_including_eos": 1940,
+    "truncated": 0
+  },
+  "triples_retained": 1
+}
