@@ -1,0 +1,24 @@
+{
+  "schema": "R127_F1_SUBSTITUTION_PUBLICATION_ALLOWLIST_V1",
+  "status": "CPU_READY_NATIVE_CONSUMER_BLOCKED_NOT_DEPLOYED",
+  "observed_utc": "2026-09-15T20:15:25.033433+00:00",
+  "local_tests_passed": 111,
+  "native_tests_passed": 111,
+  "native_runtime": "/localhome/local-rohing/orch_r127_f1_substitution_20260915_v1",
+  "old_broker_pid_preserved": 3825740,
+  "new_provider_calls": 0,
+  "replayed_claims": 0,
+  "files": {
+    "gpu/orch_r110_claude_broker.py": "704df1d4184be7444daec4c5ccb29c65bc4969ab773d8e7cccb80f1a8011064b",
+    "tests/test_orch_r110_claude_broker.py": "dc3bcf3a5d7d416b42f0a2803b555ba3726ee9a7560e87edc0c94269eed07d8b",
+    "research_notes/analysis/orch_r110_claude_broker_20260915/R127_F1_SUBSTITUTION_CPU_READY.json": "212c429be00a3fde37e2801c289d6345cc36f67977ff06fae813f56b4c838da7",
+    "research_notes/analysis/orch_r110_claude_broker_20260915/R127_F1_SUBSTITUTION_NATIVE_TESTS.log": "7ab2c5fa0acdb3f2e4a8cde0112db3ff54c5ee48c4d906ab801bac93f0067bec",
+    "research_notes/analysis/orch_r110_claude_broker_20260915/R127_F1_SUBSTITUTION_HANDOFF.md": "3205728b6e528f436dea4c4b6c844065c7c6a7a44f307d6f9dc458ea83a24bf0"
+  },
+  "blocking_reference": {
+    "path": "/localhome/local-rohing/orch_r121_route_independent_20260915_v2/source/gpu/orch_r121_route_independent.py",
+    "sha256": "d1b0de12edc1ad45bbc1b3d20def7f0084198310ef0a7c9ee2db3f6bc6095673",
+    "reason": "Frozen route consumer rejects truthful Opus actual_model; Main/Poincare compatible runtime/release/terminal binding required for consumption."
+  },
+  "scope": "F1 route opt-in only; truthful SUBSTITUTED attribution; defaults/head/other branches unchanged; no failed-claim salvage or credentials; no Git; no raw VM pulls."
+}

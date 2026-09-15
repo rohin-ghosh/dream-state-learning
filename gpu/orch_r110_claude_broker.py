@@ -29,6 +29,7 @@ from gpu import orch_l2_long_backend as backend
 
 
 MODEL = 'claude-fable-5-1'
+F1_ROUTE_SUBSTITUTE = 'claude-opus-5'
 PRINCIPLES_V2_SHA256 = '5a6a3d28a2f0c9f99dd76873496a07468075509b4451373d90c11ce8d8b363f2'
 ROOT = Path(__file__).resolve().parents[1]
 BATTLEPLAN = ROOT / 'research_notes/PARENTING_BATTLE_PLAN_v4_2026-09-15.md'
@@ -138,7 +139,9 @@ def validate_config(config):
         'source_files'}
     require(keys <= set(config) <= keys | {'fallback_parent_fields', 'min_available_bytes',
         'queue_transport', 'provider_lock_scope', 'parent_effort', 'terminal_filename',
-        'terminal_binding', 'predecessor_config'}, 'config_keys')
+        'terminal_binding', 'predecessor_config', 'allowed_substitute_models'}, 'config_keys')
+    validate_model_allowlist(config.get('allowed_substitute_models', []),
+        branch=config.get('branch'), family=config.get('family'))
     require(config.get('terminal_filename', 'TERMINAL.json') in TERMINAL_FILENAMES,
         'configured_terminal_filename')
     require(config.get('queue_transport', 'ssh') in ('ssh', 'node_local'), 'queue_transport')
@@ -553,7 +556,22 @@ def adapt_plan(reply, family, task_id):
         legacy_plan_class=legacy_class if family in ('route', 'grid') else None)
 
 
-def parse_output(raw, family, task_id):
+def validate_model_allowlist(allowed_models, *, branch, family):
+    require(type(allowed_models) is list and allowed_models in ([], [F1_ROUTE_SUBSTITUTE]),
+        'exact_substitute_allowlist_required')
+    require(not allowed_models or (branch == 'F1' and family == 'route'),
+        'substitution_f1_route_only')
+
+
+def validate_cli_allowlist(config, allowed_models):
+    validate_model_allowlist(allowed_models, branch=config.get('branch'), family=config.get('family'))
+    require(allowed_models == config.get('allowed_substitute_models', []),
+        'cli_config_substitute_allowlist_binding')
+
+
+def parse_output(raw, family, task_id, *, branch=None, allowed_models=None):
+    allowed_models = [] if allowed_models is None else allowed_models
+    validate_model_allowlist(allowed_models, branch=branch, family=family)
     envelope = loads(raw)
     require(isinstance(envelope, dict) and envelope.get('type') == 'result'
         and not envelope.get('is_error') and envelope.get('subtype') in (None, 'success')
@@ -562,8 +580,24 @@ def parse_output(raw, family, task_id):
     models = envelope.get('modelUsage')
     require(isinstance(models, dict) and 0 < len(models) <= 2, 'actual_model_usage_required')
     observed = [name for name, usage in models.items()
-        if name == MODEL or isinstance(usage, dict) and usage.get('canonicalModel') == MODEL]
+        if name == MODEL or isinstance(usage, dict) and usage.get('canonicalModel') == MODEL
+        or name in allowed_models]
     require(len(observed) == 1, 'actual_fable_model_required_no_substitute')
+    actual = observed[0]
+    require(isinstance(models[actual], dict), 'actual_model_usage_record')
+    canonical = models[actual].get('canonicalModel', actual)
+    if actual in (MODEL, F1_ROUTE_SUBSTITUTE):
+        require(canonical == actual, 'actual_model_canonical_conflict')
+    for name, usage in models.items():
+        if name != actual:
+            require(name == 'claude-haiku-4-5-20251001' and isinstance(usage, dict)
+                and usage.get('canonicalModel', 'claude-haiku-4-5') == 'claude-haiku-4-5',
+                'unapproved_or_ambiguous_model_usage')
+    substituted = actual == F1_ROUTE_SUBSTITUTE
+    attribution = dict(status='SUBSTITUTED' if substituted else 'REQUESTED_MODEL',
+        requested_model=MODEL, actual_model=actual, actual_canonical_model=canonical,
+        model_usage_sha256=digest(models), fable_parent_claim_eligible=not substituted,
+        explicitly_allowed_substitute_models=allowed_models)
     result = envelope.get('result')
     require(isinstance(result, str), 'parent_result_text')
     text = result.strip()
@@ -571,11 +605,25 @@ def parse_output(raw, family, task_id):
         text = text[8:-4]
     reply = '[SILENT]' if text == '[SILENT]' else loads(text)
     plan, metadata = adapt_plan(reply, family, task_id)
+    if substituted:
+        metadata = dict(metadata, model_attribution=attribution)
+        if plan is not None:
+            plan = dict(plan, rationale='[SUBSTITUTED requested_model='+MODEL+' actual_model='+actual+
+                ' excluded_from_fable_parent_claims=true] '+plan['rationale'])
     return dict(status='SILENT' if metadata['silent'] else 'COMPLETE', plan=plan,
-        parent_metadata=metadata, actual_model=observed[0], usage=dict(
+        parent_metadata=metadata, requested_model=MODEL, actual_model=actual,
+        model_attribution=attribution, usage=dict(
             usage=envelope.get('usage'), model_usage=models,
             total_cost_usd=envelope.get('total_cost_usd'), duration_ms=envelope.get('duration_ms'),
             reported_num_turns=envelope['num_turns']))
+
+
+def verify_response_model_binding(response, raw, family, task_id, *, branch=None, allowed_models=None):
+    parsed = parse_output(raw, family, task_id, branch=branch, allowed_models=allowed_models)
+    require(all(response.get(key) == parsed[key] for key in
+        ('status', 'plan', 'parent_metadata', 'requested_model', 'actual_model', 'model_attribution', 'usage')),
+        'consumer_raw_model_plan_binding')
+    return parsed
 
 
 def stop_process(process):
@@ -722,7 +770,8 @@ def evaluate(request, directory, deadline, *, config, launch, prompt_root, princ
             runner(command(system, config['max_budget_usd'], config.get('parent_effort', 'max')),
                 directory, cutoff, config['max_output_tokens'])
             require(time.time() < cutoff, 'late_parent_missing')
-            result = parse_output((directory / 'stdout.json').read_text(), config['family'], transcript['task_id'])
+            result = parse_output((directory / 'stdout.json').read_text(), config['family'], transcript['task_id'],
+                branch=config['branch'], allowed_models=config.get('allowed_substitute_models', []))
     except (ValueError, RuntimeError, OSError, subprocess.SubprocessError) as error:
         code = str(error)
         result = dict(status='MISSING', plan=None, parent_metadata=None, actual_model=None,
@@ -737,7 +786,7 @@ def evaluate(request, directory, deadline, *, config, launch, prompt_root, princ
             provider_elapsed_seconds=(time.monotonic()-provider_started_monotonic)
                 if dispatched else None,
             cutoff_unix=cutoff),
-        parent_effort=config.get('parent_effort', 'max'), consumption_status='UNKNOWN')
+        requested_model=MODEL, parent_effort=config.get('parent_effort', 'max'), consumption_status='UNKNOWN')
     write(directory / 'RESULT.json', result)
     return result
 
@@ -852,6 +901,8 @@ def process_request(store, config, launch, name, buffer, prompt_root, principles
     write(published / 'PUBLISHED.json', dict(id=identifier, status=result['status'],
         published_unix=time.time(), response_sha256=sha(local_response),
         provider_dispatched=result['provider_dispatched'],
+        requested_model=MODEL, actual_model=result.get('actual_model'),
+        model_attribution=result.get('model_attribution'),
         consumption_status='UNKNOWN',
         timing=result.get('timing'),
         late=bool(result.get('delivery_error')) or result.get('error', {}).get('code') in (
@@ -873,9 +924,10 @@ def terminal_path(config):
     return Path(config['remote_root']) / name
 
 
-def serve(config_path, launch_path, prompt_root, principles_path):
+def serve(config_path, launch_path, prompt_root, principles_path, *, allowed_models=None):
     config = loads(Path(config_path).read_text())
     validate_config(config)
+    validate_cli_allowlist(config, [] if allowed_models is None else allowed_models)
     launch = loads(Path(launch_path).read_text())
     validate_launch(config, launch, time.time())
     require(not (ROOT / '.git').exists() and os.environ.get('CUDA_VISIBLE_DEVICES') == '',
@@ -920,6 +972,8 @@ def serve(config_path, launch_path, prompt_root, principles_path):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--source-pins', action='store_true')
+    parser.add_argument('--allow-f1-route-substitute-model', action='append', default=[],
+        choices=[F1_ROUTE_SUBSTITUTE], help='Explicit F1 route-only opt-in; must match the pinned config allowlist.')
     parser.add_argument('--config', type=Path)
     parser.add_argument('--launch-receipt', type=Path)
     parser.add_argument('--prompt-root', type=Path, default=MUTABLE_PROMPT_ROOT)
@@ -930,4 +984,5 @@ if __name__ == '__main__':
     else:
         if not arguments.config or not arguments.launch_receipt:
             parser.error('--config and --launch-receipt are required; no implicit launch approval')
-        serve(arguments.config, arguments.launch_receipt, arguments.prompt_root, arguments.principles)
+        serve(arguments.config, arguments.launch_receipt, arguments.prompt_root, arguments.principles,
+            allowed_models=arguments.allow_f1_route_substitute_model)

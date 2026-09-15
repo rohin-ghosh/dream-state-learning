@@ -1071,6 +1071,155 @@ class ClaudeBrokerTests(unittest.TestCase):
             with self.subTest(raw=raw), self.assertRaises(ValueError):
                 broker.loads(raw)
 
+    def opus_envelope(self, reply=None):
+        return dict(self.envelope(reply), modelUsage={
+            'claude-haiku-4-5-20251001': dict(inputTokens=905, outputTokens=14,
+                cacheReadInputTokens=0, cacheCreationInputTokens=0, webSearchRequests=0,
+                costUSD=0.000975, contextWindow=200000, maxOutputTokens=32000,
+                thinkingTokens=0, canonicalModel='claude-haiku-4-5', provider='firstParty', costBasis='list'),
+            'claude-opus-5': dict(inputTokens=2, outputTokens=340,
+                cacheReadInputTokens=0, cacheCreationInputTokens=7801, webSearchRequests=0,
+                costUSD=0.057266250000000005, contextWindow=1000000, maxOutputTokens=64000,
+                thinkingTokens=125, canonicalModel='claude-opus-5', provider='firstParty', costBasis='list')})
+
+    def parse_opus(self, envelope=None, **changes):
+        options=dict(branch='F1', allowed_models=['claude-opus-5'])
+        options.update(changes)
+        return broker.parse_output(json.dumps(envelope or self.opus_envelope()), 'route', 'TRAIN_1', **options)
+
+    def test_substitution_strict_default(self):
+        for branch in (None, 'F1', 'HEAD'):
+            with self.subTest(branch=branch), self.assertRaisesRegex(ValueError, 'actual_fable_model'):
+                broker.parse_output(json.dumps(self.opus_envelope()), 'route', 'TRAIN_1', branch=branch)
+
+    def test_captured_opus_metadata_synthetic_plan_truthful_identity(self):
+        captured_stdout_sha256='6dff70c8a655e43033febd9bc7ee875d04eaa4a3201f57c9934b8a0c4309852e'
+        self.assertEqual(len(captured_stdout_sha256),64)
+        envelope=self.opus_envelope()
+        result=self.parse_opus(envelope)
+        self.assertEqual(result['status'],'COMPLETE')
+        self.assertEqual(result['requested_model'],broker.MODEL)
+        self.assertEqual(result['actual_model'],'claude-opus-5')
+        self.assertEqual(result['usage']['model_usage'],envelope['modelUsage'])
+        self.assertEqual(result['model_attribution']['status'],'SUBSTITUTED')
+        self.assertFalse(result['model_attribution']['fable_parent_claim_eligible'])
+        self.assertEqual(set(result['plan']),{'speak','message','rationale'})
+        self.assertEqual(result['plan']['message'],self.reply['guidance'])
+        self.assertTrue(result['plan']['rationale'].startswith('[SUBSTITUTED requested_model='))
+
+    def test_substitution_other_branch_family_refused(self):
+        for branch,family in (('F2','math'),('F3','code'),('F4','grid'),('F2','route'),('F1','grid'),('HEAD','route')):
+            with self.subTest(branch=branch,family=family), self.assertRaisesRegex(ValueError,'substitution_f1_route_only'):
+                broker.parse_output(json.dumps(self.opus_envelope()),family,'TRAIN_1',
+                    branch=branch,allowed_models=['claude-opus-5'])
+
+    def test_substitution_exact_config_and_cli_opt_in(self):
+        opted=dict(self.config,allowed_substitute_models=['claude-opus-5'])
+        broker.validate_config(opted)
+        broker.validate_cli_allowlist(opted,['claude-opus-5'])
+        for config,cli in ((opted,[]),(self.config,['claude-opus-5'])):
+            with self.assertRaisesRegex(ValueError,'cli_config_substitute_allowlist_binding'):
+                broker.validate_cli_allowlist(config,cli)
+        for invalid in (['unknown'],['claude-opus-5','claude-opus-5'],True,'claude-opus-5'):
+            with self.subTest(invalid=invalid), self.assertRaises(ValueError):
+                broker.validate_cli_allowlist(opted,invalid)
+        for branch,family in broker.FAMILIES.items():
+            if branch != 'F1':
+                with self.assertRaisesRegex(ValueError,'substitution_f1_route_only'):
+                    broker.validate_config(dict(opted,branch=branch,family=family))
+
+    def test_substitution_unknown_and_ambiguous_usage_rejected(self):
+        for usage in ({'unknown':{}},{broker.MODEL:{},'claude-opus-5':{}},
+                {'claude-opus-5':{},'unknown':{}},
+                {broker.MODEL:{},'unknown':{}},
+                {'claude-opus-5':{},'other-alias':{'canonicalModel':'claude-opus-5'}}):
+            with self.subTest(usage=usage), self.assertRaises(ValueError):
+                self.parse_opus(dict(self.envelope(),modelUsage=usage))
+
+    def test_substitution_canonical_identity_conflict_rejected(self):
+        for name,canonical in (('claude-opus-5',broker.MODEL),(broker.MODEL,'claude-opus-5')):
+            with self.assertRaises(ValueError):
+                self.parse_opus(dict(self.envelope(),modelUsage={name:dict(canonicalModel=canonical)}))
+
+    def test_substitution_silent_retains_attribution(self):
+        result=self.parse_opus(self.opus_envelope('[SILENT]'))
+        self.assertEqual(result['status'],'SILENT')
+        self.assertIsNone(result['plan'])
+        self.assertEqual(result['model_attribution']['status'],'SUBSTITUTED')
+        self.assertFalse(result['model_attribution']['fable_parent_claim_eligible'])
+
+    def test_opt_in_does_not_relabel_actual_fable(self):
+        result=self.parse_opus(self.envelope())
+        self.assertEqual(result['actual_model'],broker.MODEL)
+        self.assertEqual(result['model_attribution']['status'],'REQUESTED_MODEL')
+        self.assertTrue(result['model_attribution']['fable_parent_claim_eligible'])
+        self.assertFalse(result['plan']['rationale'].startswith('[SUBSTITUTED'))
+
+    def test_consumer_raw_join_checks_models_plan_usage_and_attribution(self):
+        raw=json.dumps(self.opus_envelope())
+        result=self.parse_opus()
+        self.assertEqual(broker.verify_response_model_binding(result,raw,'route','TRAIN_1',
+            branch='F1',allowed_models=['claude-opus-5']),result)
+        for change in (dict(actual_model=broker.MODEL),dict(requested_model='claude-opus-5'),
+                dict(plan=dict(result['plan'],message='changed')),dict(usage={}),
+                dict(model_attribution=dict(result['model_attribution'],fable_parent_claim_eligible=True))):
+            with self.subTest(change=change), self.assertRaisesRegex(ValueError,'consumer_raw_model_plan_binding'):
+                broker.verify_response_model_binding(dict(result,**change),raw,'route','TRAIN_1',
+                    branch='F1',allowed_models=['claude-opus-5'])
+        with self.assertRaises(ValueError):
+            broker.verify_response_model_binding(result,json.dumps(self.envelope()),'route','TRAIN_1',
+                branch='F1',allowed_models=['claude-opus-5'])
+
+    def test_substitution_preserves_prompt_cli_and_caps(self):
+        before=broker.build_system(self.request['payload'],self.config,self.prompts,self.principles)[0]
+        self.config['allowed_substitute_models']=['claude-opus-5']
+        self.config['parent_effort']='low'
+        self.rebind()
+        def runner(argv,directory,cutoff,output_cap):
+            (directory/'stdout.json').write_text(json.dumps(self.opus_envelope()))
+        self.runner.side_effect=runner
+        result,directory=self.evaluate()
+        self.assertEqual(result['status'],'COMPLETE')
+        self.assertEqual((directory/'SYSTEM.txt').read_text(),before)
+        argv=self.runner.call_args.args[0]
+        for flag,value in (('--model',broker.MODEL),('--effort','low'),('--max-turns','1'),('--tools','')):
+            self.assertEqual(argv[argv.index(flag)+1],value)
+        self.assertEqual(self.runner.call_args.args[2],self.request['lane_deadline_unix']-30)
+
+    def test_substitution_does_not_relax_plan_validation_or_failures(self):
+        for envelope in (self.opus_envelope(dict(self.reply,guidance='notice '*91)),
+                dict(self.opus_envelope(),is_error=True),dict(self.opus_envelope(),num_turns=0)):
+            with self.assertRaises(ValueError):
+                self.parse_opus(envelope)
+
+    def test_substitution_archive_publication_and_no_retry(self):
+        self.config['allowed_substitute_models']=['claude-opus-5']
+        self.rebind()
+        root,buffer=self.prepare_queue()
+        def runner(argv,directory,cutoff,output_cap):
+            (directory/'stdout.json').write_text(json.dumps(self.opus_envelope()))
+        self.runner.side_effect=runner
+        real_evaluate=broker.evaluate
+        def evaluate(*args,**kwargs):
+            return real_evaluate(*args,**kwargs,runner=self.runner,lock_path=self.root/'lock',
+                memory=lambda:broker.backend.MIN_AVAILABLE_BYTES)
+        with patch.object(broker,'evaluate',side_effect=evaluate):
+            status=broker.process_request(LocalStore(),self.config,self.launch,'cycle1_episode1.request.json',
+                buffer,self.prompts,self.principles)
+        self.assertEqual(status,'COMPLETE')
+        response=broker.loads((root/'parent_queue/cycle1_episode1.response.json').read_text())
+        publication=broker.loads((root/'parent_claude/cycle1_episode1.claim/PUBLISHED.json').read_text())
+        self.assertEqual(publication['model_attribution']['status'],'SUBSTITUTED')
+        self.assertEqual(publication['actual_model'],'claude-opus-5')
+        self.assertEqual(publication['response_sha256'],broker.sha(root/'parent_queue/cycle1_episode1.response.json'))
+        archive=Path(response['transcript_receipt']['remote_root'])
+        self.assertTrue(all(broker.sha(archive/name)==expected for name,expected in response['transcript_receipt']['files'].items()))
+        broker.verify_response_model_binding(response,(archive/'stdout.json').read_text(),'route','TRAIN_1',
+            branch='F1',allowed_models=['claude-opus-5'])
+        self.assertEqual(broker.process_request(LocalStore(),self.config,self.launch,'cycle1_episode1.request.json',
+            buffer,self.prompts,self.principles),'EXISTING')
+        self.assertEqual(self.runner.call_count,1)
+
     def test_no_raw_directory_inside_repo(self):
         with self.assertRaisesRegex(ValueError, 'bounded_tmp'):
             broker.evaluate(self.request, broker.ROOT/'never-created', time.time()+10,
