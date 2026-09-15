@@ -1,4 +1,6 @@
 from pathlib import Path
+import json
+import shutil
 import tempfile
 import unittest
 
@@ -50,6 +52,31 @@ class ParentTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 parent.evaluate(self.request(), Path(directory) / 'request',
                     dispatch=lambda prompt, command: dict(speak=False, message='hidden', rationale='no'))
+
+    def test_recover_actual_saved_outputs_without_dispatch_or_overwrite(self):
+        evidence = Path('research_notes/analysis/orch_l2_guided_20260914_attempt1/parent')
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for identity in ('0001_LONG_C1', '0002_LONG_C1'):
+                (root / identity).mkdir()
+                for suffix in ('.request.json', '.response.json'):
+                    shutil.copyfile(evidence / (identity + suffix), root / (identity + suffix))
+                for name in ('stdout.json', 'INVOCATION.json'):
+                    shutil.copyfile(evidence / identity / name, root / identity / name)
+                originals = {str(path): path.read_bytes() for path in root.rglob('*.json')}
+                recovered = parent.recover_saved(root, identity)
+                response = json.loads(recovered.read_text())
+                self.assertEqual(response['recovery']['provider_calls'], 0)
+                self.assertFalse(response['result'].get('error'))
+                self.assertEqual(parent.recover_saved(root, identity), recovered)
+                for path, content in originals.items():
+                    self.assertEqual(Path(path).read_bytes(), content)
+                self.assertFalse(list(root.glob('CALLS_*')))
+                provider = json.loads((root / identity / 'stdout.json').read_text())
+                provider['is_error'] = True
+                (root / identity / 'stdout.json').write_text(json.dumps(provider))
+                with self.assertRaisesRegex(ValueError, 'saved_provider_recovery_binding'):
+                    parent.recover_saved(root, identity)
 
 
 if __name__ == '__main__':

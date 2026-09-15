@@ -146,3 +146,64 @@ COHORT/SOURCE/legacy schemas, current immutable actual SHORT readout snapshot
 source_runtime_v2.tar SHA7ccd3c9a, and previous/output/LOADED/COMPLETE schema.
 Select FIRST SHORT actualupdates>0 by cycle order, never held outcome or
 UNPARENTED fit. No eligible SHORT sleep yet. Loop does not wait on sidecar.
+
+2026-09-15T00:03:43Z [Builder] NON-MATERIAL REPAIR: UNPARENTED sleep1
+failed before gradients/updates on Python tuple/list legacy-mask equality.
+Native CPU re-encoding all222rows gives identical canonical mask SHA
+6776bcf6b1a13e85164dffde5d55d6ed86db324f474d6f67c2b72a80f351eeaf
+for actual and archived OLD_MASKS; Python objects differ only tuples vs lists.
+Fix compares exact canonical serialized masks, still rejecting any changed
+token/label or row count. No source/target/legacy-mask edits or padding, no
+new collection or evaluation calls. Regression test covers tuple/list identity
+and one-label corruption. Preserve failedsleep and guardian; resume only
+completed bound stages without replay under new immutable runtimeV4. This is
+not a native fit result or a design/acceptance relaxation.
+
+2026-09-15T00:18Z [Builder → Main] Runtime continuation repair CPU-ready.
+Imported LONG-owned parse_json_envelope SHA82b08674 unchanged. Original
+0001semantic/0002coach stdout/error/request bytes preserved; separate
+parent/0001_LONG_C1.recovered.response.json and
+parent/0002_LONG_C1.recovered.response.json decode SAME outputs, zero provider
+calls and zero new reservations. Existing six provider slots stay charged.
+Shared native --resume-experience restores only actual LONG C1 boundary:
+four completed EPISODEs/16 recorded CALLs, exact input mounted identity and
+original runtime manifest. CPU-only supplied-hook callbacks reconstruct own
+history against exact cached request hashes and identical delivered messages;
+no child generation, source regeneration or regrading. Pending0002 must match
+original remaining_decisions3 payload, then total decisions consumed2 (not3).
+Only elapsed/creation timestamps differ in replay validation; every original
+message/raw target/semantic decision remains unchanged. Original files remain
+in place; new restoration receipts go CONTINUATION_V5. Actual fixture tests
+pass, including unexpected partial call, task/request drift, unchanged ledgers,
+exact pending message and no dispatch during restoration. Immutable V5 next;
+LONG owns physical1 launch using --resume-experience, never this guardian.
+UNPARENTED repaired sleep1 completed26 updates, output statef2013ae1, frozen
+base unchanged; cycle2 collection active. SHORT sleep1 zero rows/zero updates,
+fresh readout1 complete; cycle2 admission stopped on transient inaccessible
+sshd/sftp scanner entries, no cycle2 calls. Retrying only fresh admission under
+bound V5 after publication, never weakening scanner or rerunning cycle1.
+Actual PUBLIC SYSTEM was present in original LONG call0; no context/policy
+repair. Adjacent diagnostic DEFERRED by raw84; no loop dependency.
+
+2026-09-15T00:20Z [Builder → Main] V5 READY FOR LONG-OWNED NATIVE CONTINUATION.
+Remote sharedroot/source_runtime_v5, PYTHONPATH that directory;
+L2_NATIVE_MANIFEST=PREPARE_RUNTIME_V5.json;
+L2_PUBLICATION=PUBLICATION_RUNTIME_V5.json. Shared native command adds ONLY
+--resume-experience to --arm LONG --cycle1 --phase experience (CLI cycle is
+two arguments: --cycle 1). Do NOT separately restore hook counters first;
+driver reconstructs them once from immutable cached callbacks. Original
+0002 payload with remaining3 matches, consumed total2, exact86-token message
+validated using actual mounted tokenizer with NO native/model/provider calls.
+CPU_CONTINUATION_V5.json SHAa2b34cb067c3276a6f58a70ef44b549f89615b82589fbd8501c56af5fc651ceb.
+98CPUtests pass, legacy canonical SHA6776bcf6 unchanged across222rows.
+Archive source_runtime_v5.tar SHA0fac7689bec511b451892f978ee7ce8ede79e1bf8a11e1dcc279ecc52a4b7efa.
+Manifest SHAad574e17bbf4041b1c74a78a54044fada12bee1816434eae7ca788ed6e99ef70.
+Shared frozen interface still16fa840e07235424499e4ccd3704b62b8f9e91ca7883c8c4cd379807d12635e2.
+Separate recovered responses ALREADY remote parent_queue; original error files
+untouched. Actual original4episodes/16calls/ledgers verified byte-identical.
+Parent broker safely replaced at child-free boundary, PID2492391 using V5;
+no provider interruption/retry. LONG may launch own physical1 now; no Main
+reapproval. SHORT second admission also met transient sshd/sftp scanner block;
+still no C2 child calls. Adding bounded rechecks that require a fully CLEAR
+scan before launch, not service exceptions/visibility relaxation. V5 stays
+immutable for LONG; own guardian-only publication next.

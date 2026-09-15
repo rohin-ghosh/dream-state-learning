@@ -1,6 +1,7 @@
 """Small native stages over released loading/replay seams, including null cycles."""
 
 import argparse
+from copy import deepcopy
 from dataclasses import asdict
 import json
 import os
@@ -111,6 +112,93 @@ def input_identity(root, arm, cycle, phase):
     return bridge.AdapterIdentity.from_document(receipt['output_adapter']), [tuple(receipt['process'])]
 
 
+class RecordedParentTransport:
+    def __init__(self, root, arm, cycle, check, output):
+        self.root, self.arm, self.cycle, self.check, self.output = root, arm, cycle, check, output
+        self.requests = sorted((root / 'parent_queue').glob(f'*_{arm}_C{cycle}.request.json'))
+        self.position = 0
+        self.restoring = True
+
+    def __call__(self, payload):
+        if self.position == len(self.requests):
+            source.require(not self.restoring, 'restoration_must_not_dispatch')
+            return parent_request(self.root, self.arm, self.cycle, payload, self.check)
+        request_path = self.requests[self.position]
+        request = source.read(request_path)
+        source.require(rich.digest(request['payload']) == rich.digest(payload), 'recorded_parent_request_drift')
+        name = request['id']
+        source.require(request_path.name == name + '.request.json', 'recorded_parent_identity_drift')
+        original_path = request_path.with_name(name + '.response.json')
+        response_path = request_path.with_name(name + '.recovered.response.json')
+        if not response_path.exists():
+            response_path = original_path
+        response = source.read(response_path)
+        source.require(response['id'] == name and response['request_sha256'] == rich.digest(request)
+                       and not response['result'].get('error'), 'recorded_parent_response_failed_or_unbound')
+        if response_path != original_path:
+            recovery = response['recovery']
+            source.require(recovery['provider_calls'] == 0
+                and recovery['request_file_sha256'] == bridge.file_sha256(request_path)
+                and recovery['original_response_sha256'] == bridge.file_sha256(original_path),
+                'recorded_recovery_binding_drift')
+        self.position += 1
+        write(self.output / f'PARENT_CACHE_{self.position:04d}.json', dict(
+            request=str(request_path), request_sha256=bridge.file_sha256(request_path),
+            response=str(response_path), response_sha256=bridge.file_sha256(response_path),
+            provider_calls=0, request_reservations=0, restoring_completed_episode=self.restoring))
+        return response['result']
+
+
+def continuation_records(root, arm, cycle, output, identity, worlds):
+    source.require(arm == 'LONG' and cycle == 1 and not (output / 'COMPLETE.json').exists(),
+                   'only_recorded_long_cycle1_boundary')
+    request = source.read(output / 'REQUEST.json')
+    loaded = source.read(output / 'LOADED.json')
+    failure = source.read(output / 'FAILED.json')
+    source.require(request['arm'] == arm and request['cycle'] == cycle and request['phase'] == 'experience'
+        and request['input_adapter'] == identity.document() and loaded['observed'] == identity.document()
+        and failure['message'] == 'long_parent_transport_failed_no_canned_fallback', 'continuation_input_binding_drift')
+    manifests = list(root.glob('PREPARE*.json')) + [root.parent / 'orch_l2_long_20260914_attempt1/PREPARE_LONG.json']
+    source.require(any(path.is_file() and bridge.file_sha256(path) == request['runtime_manifest_sha256']
+                       for path in manifests), 'original_runtime_manifest_missing')
+    paths = sorted(output.glob('EPISODE_*.json'))
+    source.require([path.name for path in paths] == [f'EPISODE_{index:02d}.json' for index in range(1, 5)],
+                   'exact_four_completed_episodes_required')
+    records = [source.read(path) for path in paths]
+    tasks = [task for world in worlds for task in shared.tasks(world)]
+    calls = [source.read(path) for path in sorted(output.glob('CALL_*.json'))]
+    captures = [capture for record in records for capture in record['captures']]
+    source.require(len(calls) == len(captures) == 16, 'unrecorded_partial_child_call_cannot_resume')
+    source.require(all(record['task'] == tasks[index] and record['actor_calls'] == len(record['captures'])
+                       for index, record in enumerate(records)), 'completed_episode_task_drift')
+    source.require(all(call.get('response') is not None and call.get('error') is None
+        and call['messages'] == capture['messages'] and call['response'] == capture['response']
+        for call, capture in zip(calls, captures)), 'completed_capture_call_drift')
+    return records
+
+
+def restore_parent_episode(hook, record, telemetry):
+    seen = []
+    for capture in record['captures']:
+        if capture['turn'] not in (0, 2, 4):
+            continue
+        payload = dict(kind='coach', turn=capture['turn'], task=deepcopy(record['task']),
+            public_messages=deepcopy(capture['student_prefix']), prior_parent_messages=deepcopy(seen),
+            learner=deepcopy(telemetry))
+        restored = hook(payload)
+        original = capture['parent_messages'][-1]
+        comparable = deepcopy(original)
+        restored = deepcopy(restored)
+        for value in (comparable, restored):
+            if 'long_decision' in value:
+                value['long_decision'].pop('elapsed_seconds', None)
+                value['long_decision'].pop('created_unix', None)
+        source.require(restored == comparable, 'recorded_parent_delivery_drift')
+        seen.append(deepcopy(original))
+    source.require(seen == record['parent_messages'], 'recorded_parent_turn_drift')
+    hook.observe_episode(record)
+
+
 def legacy_encode(root, tokenizer):
     from gpu import astra_goal_quality_train as old
 
@@ -119,8 +207,14 @@ def legacy_encode(root, tokenizer):
     encoded += tuple(old.memory.cues.encode_cue_rows(material['cue_rows'], tokenizer))
     encoded += tuple(old.memory.audit.encode_rows(material['audit_rows'], tokenizer))
     encoded += tuple(old.memory.lesson.lesson.encode_rows(material['trajectory_rows'], tokenizer))
-    source.require([asdict(row) for row in encoded] == source.read(root / 'OLD_MASKS.json'), 'legacy_reference_drift')
+    verify_legacy_reference(encoded, source.read(root / 'OLD_MASKS.json'))
     return encoded
+
+
+def verify_legacy_reference(encoded, reference):
+    actual = [asdict(row) for row in encoded]
+    source.require(len(actual) == len(reference) == 222 and rich.digest(actual) == rich.digest(reference),
+                   'legacy_reference_drift')
 
 
 def experience_store(root, frozen, cycle, check):
@@ -164,13 +258,23 @@ def run(options):
     source.require(os.environ.get('CUDA_VISIBLE_DEVICES') == DEVICES[arm][1], 'own_uuid_required')
     source.require(phase != 'source' or arm == 'FROZEN', 'shared_source_lane2_only')
     output = root / ('source_capture' if phase == 'source' else f'{arm}/cycle{cycle}/{phase}')
-    output.mkdir(parents=True, exist_ok=False)
+    resuming = getattr(options, 'resume_experience', False)
+    source.require(not resuming or phase == 'experience', 'experience_resume_only')
+    output.mkdir(parents=True, exist_ok=resuming)
     deadline = float((root / 'DEADLINE').read_text())
 
     def check(label):
         source.require(time.time() < deadline, 'allocation_deadline:' + label)
 
     identity, predecessors = input_identity(root, arm, cycle, phase)
+    resumed_records = continuation_records(root, arm, cycle, output, identity, frozen['train'][cycle - 1]) if resuming else []
+    attempt = output / 'CONTINUATION_V5' if resuming else output
+    if resuming:
+        attempt.mkdir(exist_ok=False)
+        predecessors.append(tuple(source.read(output / 'LOADED.json')['process']))
+        write(attempt / 'PRESERVED.json', dict(files={path.name: bridge.file_sha256(path)
+            for path in sorted(output.glob('*.json'))}, episodes=len(resumed_records), child_calls=16,
+            next_episode_index=4, next_turn=0, deadline=deadline, original_calls_replayed=0))
     if phase == 'readout' and cycle and not predecessors:
         predecessors = [tuple(source.read(root / arm / f'cycle{cycle}' / 'experience/COMPLETE.json')['process'])]
     parent_present = phase == 'experience' and arm in ('SHORT', 'FROZEN', 'LONG')
@@ -181,7 +285,7 @@ def run(options):
     context = native.StageContext(private_guidance=(rich.GUIDANCE,) if parent_present else ())
     kwargs = dict(model_dir=prepared['model_dir'], device='cuda:0', gpu_uuid=DEVICES[arm][1],
                   context=context, check=check, predecessor_processes=tuple(predecessors))
-    write(output / 'REQUEST.json', dict(arm=arm, cycle=cycle, phase=phase, input_adapter=identity.document(),
+    write(attempt / 'REQUEST.json', dict(arm=arm, cycle=cycle, phase=phase, input_adapter=identity.document(),
                                       process=native.process_identity(), started_unix=time.time(),
                                       runtime_manifest_sha256=bridge.file_sha256(manifest_path)))
     try:
@@ -200,7 +304,7 @@ def run(options):
             loaded = native.load_training(plan, **kwargs)
         else:
             loaded = native.load_readout(binding, **kwargs) if phase == 'readout' else native.load_stage(binding, **kwargs)
-        write(output / 'LOADED.json', dict(observed=loaded.observed.document(), process=loaded.process,
+        write(attempt / 'LOADED.json', dict(observed=loaded.observed.document(), process=loaded.process,
                                            runtime=loaded.engine.runtime, phase=phase))
 
         def generate(messages, **metadata):
@@ -230,12 +334,17 @@ def run(options):
             store = experience_store(root, frozen, cycle, check) if phase == 'experience' else shared.verify_source(frozen, source.read(root / 'SOURCE.json'))
             worlds = frozen['train'][cycle - 1] if phase == 'experience' else frozen['held'][cycle]
             episodes, admitted, gates = [], [], []
+            transport = RecordedParentTransport(root, arm, cycle, check, attempt) if resuming else None
+
+            def request_parent(payload):
+                return transport(payload) if transport is not None else parent_request(root, arm, cycle, payload, check)
+
             previous_admitted = 0
             if cycle > 1 and phase == 'experience':
                 previous_admitted = source.read(root / arm / f'cycle{cycle - 1}' / 'experience/COMPLETE.json')['admitted_rows']
 
             def parent(payload):
-                value = parent_request(root, arm, cycle, payload, check)
+                value = request_parent(payload)
                 text = value.get('message', '')
                 if value.get('speak') and len(loaded.engine.tokenizer.encode(text, add_special_tokens=False)) > 160:
                     return dict(speak=False, message='', rationale='oversized_parent_message_not_truncated', rejected=value)
@@ -245,24 +354,35 @@ def run(options):
             if parent_present and arm == 'LONG':
                 from gpu.orch_l2_long_hook import build_parent
 
-                events = []
+                event_index = max([int(path.stem.rsplit('_', 1)[1]) for path in output.glob('LONG_PARENT_EVENT_*.json')] or [0])
 
                 def emit(event):
-                    events.append(event)
-                    write(output / f'LONG_PARENT_EVENT_{len(events):04d}.json', event)
+                    nonlocal event_index
+                    event_index += 1
+                    event_output = attempt if transport is not None and transport.restoring else output
+                    write(event_output / f'LONG_PARENT_EVENT_{event_index:04d}.json', event)
 
                 hook = build_parent(root=root, cycle=cycle, tokenizer=loaded.engine.tokenizer,
-                    transport=lambda payload: parent_request(root, arm, cycle, payload, check), emit=emit)
+                    transport=request_parent, emit=emit)
             for world in worlds:
                 local_store = {edge['event']: store[edge['event']] for edge in world['edges'] if edge['event'] in store}
                 for task in shared.tasks(world):
-                    record = guided.episode(world, task, generate, local_store,
-                        parent=hook if hook is not None else parent if parent_present else None,
-                        telemetry=guided.learner_telemetry(episodes, cycle, previous_admitted), rich_contract=phase == 'experience')
+                    restoring = len(episodes) < len(resumed_records)
+                    telemetry = guided.learner_telemetry(episodes, cycle, previous_admitted)
+                    if transport is not None:
+                        transport.restoring = restoring
+                    if restoring:
+                        record = resumed_records[len(episodes)]
+                        restore_parent_episode(hook, record, telemetry)
+                    else:
+                        record = guided.episode(world, task, generate, local_store,
+                            parent=hook if hook is not None else parent if parent_present else None,
+                            telemetry=telemetry, rich_contract=phase == 'experience')
                     episodes.append(record)
-                    if hook is not None:
+                    if hook is not None and not restoring:
                         hook.observe_episode(record)
-                    write(output / f'EPISODE_{len(episodes):02d}.json', record)
+                    if not restoring:
+                        write(output / f'EPISODE_{len(episodes):02d}.json', record)
                     if phase == 'experience':
                         candidates = [capture for capture in record['captures']
                                       if rich.row_gate(record, capture)['eligible_for_semantic_review']]
@@ -272,9 +392,9 @@ def run(options):
                                 candidates=[dict(capture_sha256=rich.digest(capture),
                                     raw_sha256=rich.digest(capture['response']['raw']), capture=capture)
                                     for capture in candidates], rubric=list(rich.RUBRIC))
-                            review = parent_request(root, arm, cycle, payload, check)
+                            review = request_parent(payload)
                             reviews = review.get('reviews', [])
-                            write(output / f'REVIEW_{len(episodes):02d}.json', review)
+                            write((attempt if restoring else output) / f'REVIEW_{len(episodes):02d}.json', review)
                         for item in guided.admitted_captures(record, reviews):
                             capture = item['capture']
                             if item['gate']['admitted']:
@@ -306,7 +426,16 @@ def run(options):
                 write(output / 'AUDIT.json', audit)
                 result['audit'] = audit['summary']
             elif hook is not None:
-                write(output / 'PARENT_DISTILLATION.json', hook.distill_cycle())
+                distillation = hook.distill_cycle()
+                if resuming:
+                    distillation['continuation_provenance'] = dict(
+                        original_receipts=str(attempt / 'PRESERVED.json'),
+                        restored_episode_count=len(resumed_records),
+                        original_backend_failure_preserved=True,
+                        restored_callback_times_are_cpu_not_provider_latency=True,
+                        recovered_responses_are_original_provider_bytes=True,
+                        additional_provider_calls_for_recovery=0)
+                write(output / 'PARENT_DISTILLATION.json', distillation)
             elif parent_present:
                 distill = parent_request(root, arm, cycle, dict(kind='distill',
                     learner=guided.learner_telemetry(episodes, cycle),
@@ -361,7 +490,7 @@ def run(options):
         write(output / 'COMPLETE.json', dict(status='COMPLETE', arm=arm, cycle=cycle, phase=phase,
             process=loaded.process, input_adapter=identity.document(), finished_unix=time.time(), **result))
     except Exception as error:
-        write(output / 'FAILED.json', dict(type=type(error).__name__, message=str(error), phase=phase,
+        write(attempt / 'FAILED.json', dict(type=type(error).__name__, message=str(error), phase=phase,
                                            process=native.process_identity()))
         raise
 
@@ -372,6 +501,7 @@ def main():
     parser.add_argument('--phase', choices=('prepare', 'source', 'experience', 'sleep', 'readout'), required=True)
     parser.add_argument('--arm', choices=tuple(DEVICES), default='FROZEN')
     parser.add_argument('--cycle', type=int, default=0)
+    parser.add_argument('--resume-experience', action='store_true')
     options = parser.parse_args()
     if options.phase == 'prepare':
         prepare(Path(options.root))

@@ -1,0 +1,19 @@
+{
+  "id": "0002_LONG_C1",
+  "recovery": {
+    "invocation_sha256": "753d8b4e0154e2a7fb7c284238d0187979e674535972e5b67b971c2e73fef76d",
+    "kind": "LOSSLESS_SAVED_PROVIDER_ENVELOPE",
+    "original_response_sha256": "4498ef040c39d3c1529911e2a86ab5f83e9014e862933b4a8a48794583a23143",
+    "parser_sha256": "82b0867480d50c2073d4149c7139ae3a9ecda64397e0629a5f37bb69f37f3ec3",
+    "provider_calls": 0,
+    "request_file_sha256": "009082f9fe24b5e9c4204436d67693095d943ddb5d25ca66bd9c4c1cde30694a",
+    "stdout_sha256": "788f5be3cccbb2c25ea3ed2946bcb27d6dfb61b54adf7f16563f7398dd75d9f8"
+  },
+  "request_sha256": "b4086f787b846f43952d9582d4eecfc75b46642342eebe8a0ed11834b42959b3",
+  "result": {
+    "decision": "speak",
+    "distillation": "Child conflates 'port mentioned in any event' with 'port valid at current node,' causing invalid routes. Also tends to over-read near-duplicate events before acting. Nudged toward checking PORTS-for-CURRENT-node before routing and acting sooner.",
+    "message": "Quick tip: only ROUTE a port that's actually listed under PORTS for your CURRENT node. Evidence about ports at other nodes is useful context, but you can't use it until you actually arrive there first. Also, if READs aren't revealing new useful info, don't loop on them\u2014pick a listed port and act. Feel free to ask me anything about yourself, your training, or how learning works here.",
+    "reason": "Episode 3 failed because the child routed to a port (P_7DDUOCCLDG) seen in an event at a different node rather than one listed as available at its current node; episode 0 stalled re-reading similar events without acting. Coaching toward checking port validity before routing and avoiding redundant reads addresses both recurring issues without giving task-specific answers."
+  }
+}

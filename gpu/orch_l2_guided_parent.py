@@ -11,6 +11,8 @@ import subprocess
 import time
 
 from gpu.orch_l2_shared_run import write, spend
+from gpu.orch_l2_long_envelope import parse_json_envelope
+from organism_v6.orch_guided_bridge import file_sha256
 from organism_v6 import orch_full_rich as rich
 
 
@@ -122,7 +124,13 @@ def evaluate(request, directory, *, dispatch=None):
         response = json.loads((directory / 'stdout.json').read_text())
         if response.get('is_error'):
             raise ValueError('evaluator_error_no_fallback')
-        response = json.loads(response['result'])
+        response = parse_json_envelope(response['result'])
+    validate_response(payload, response)
+    write(directory / 'RESULT.json', response)
+    return response
+
+
+def validate_response(payload, response):
     if payload['kind'] == 'coach':
         if (type(response.get('speak')) is not bool or type(response.get('message')) is not str
                 or type(response.get('rationale')) is not str or (not response['speak'] and response['message'])):
@@ -144,8 +152,36 @@ def evaluate(request, directory, *, dispatch=None):
             raise ValueError('long_response_schema')
     elif not isinstance(response.get('distillation'), str):
         raise ValueError('missing_distillation')
-    write(directory / 'RESULT.json', response)
-    return response
+
+
+def recover_saved(local_root, identity):
+    request_path = local_root / (identity + '.request.json')
+    original_path = local_root / (identity + '.response.json')
+    stdout_path = local_root / identity / 'stdout.json'
+    request = json.loads(request_path.read_text())
+    original = json.loads(original_path.read_text())
+    provider = json.loads(stdout_path.read_text())
+    invocation = json.loads((local_root / identity / 'INVOCATION.json').read_text())
+    if (request['id'] != identity or original['id'] != identity
+            or original['request_sha256'] != rich.digest(request)
+            or not original['result'].get('error') or provider.get('is_error') is not False
+            or provider.get('num_turns') != 1 or len(provider.get('modelUsage', {})) > 2
+            or invocation['reserved_call_id'] != identity or invocation['attempts'] != 1):
+        raise ValueError('saved_provider_recovery_binding')
+    response = parse_json_envelope(provider['result'])
+    validate_response(safe_payload(request), response)
+    recovered = dict(id=identity, request_sha256=rich.digest(request), result=response,
+        recovery=dict(kind='LOSSLESS_SAVED_PROVIDER_ENVELOPE', provider_calls=0,
+            request_file_sha256=file_sha256(request_path), original_response_sha256=file_sha256(original_path),
+            stdout_sha256=file_sha256(stdout_path), invocation_sha256=file_sha256(local_root / identity / 'INVOCATION.json'),
+            parser_sha256=file_sha256(Path(__file__).with_name('orch_l2_long_envelope.py'))))
+    destination = local_root / (identity + '.recovered.response.json')
+    if destination.exists():
+        if json.loads(destination.read_text()) != recovered:
+            raise ValueError('saved_recovery_drift')
+    else:
+        write(destination, recovered)
+    return destination
 
 
 def serve(host, remote_root, local_root, deadline):

@@ -135,6 +135,18 @@ class SharedTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'partial_source_world_drift'):
                 run.experience_store(root, self.cohort, 1, lambda phase: None)
 
+    def test_native_legacy_tuples_match_identical_json_lists(self):
+        from dataclasses import asdict
+
+        row = run.source.native.EncodedRow((1, 2, 3), (-100, 2, -100), (2,))
+        encoded = (row,) * 222
+        reference = json.loads(json.dumps([asdict(item) for item in encoded]))
+        self.assertNotEqual([asdict(item) for item in encoded], reference)
+        run.verify_legacy_reference(encoded, reference)
+        reference[0]['labels'][1] = 99
+        with self.assertRaisesRegex(ValueError, 'legacy_reference_drift'):
+            run.verify_legacy_reference(encoded, reference)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,0 +1,28 @@
+{
+  "id": "0001_LONG_C1",
+  "recovery": {
+    "invocation_sha256": "812772076334e21bf9b7c3ab7306f5393d939ea2df783e4a613fc160328c440a",
+    "kind": "LOSSLESS_SAVED_PROVIDER_ENVELOPE",
+    "original_response_sha256": "0bfc9745d5c49e88921b3ddb1579be01f613c40ea1828dca5f79ff29fb922e41",
+    "parser_sha256": "82b0867480d50c2073d4149c7139ae3a9ecda64397e0629a5f37bb69f37f3ec3",
+    "provider_calls": 0,
+    "request_file_sha256": "24e03f820e3f375891602ef5f4588648b1f8be1aab26530e5f143bfc94453aea",
+    "stdout_sha256": "e4730d871cb8d7d4e2ada24ab44f1615573cfe4bdad40314abaaf1f35a2e5d76"
+  },
+  "request_sha256": "71664eab4892be0a57d44febf983fd645bb8073bf55a114bdbcd71f4017b9a5f",
+  "result": {
+    "reviews": [
+      {
+        "action_last": true,
+        "capture_sha256": "53e5e05ad9df31a7c4638d7d291c018b446f968e7b89075fb55cfe2e00f3463f",
+        "checkable_expectation": true,
+        "goal_connection": true,
+        "no_unsupported_claim": true,
+        "rationale": "Response accurately restates the actual READ result for E_OWHZ2EHVGO (node, port, evidence IDs match), correctly notes it doesn't touch the goal node, and draws on the earlier actual read (E_5GQQ64ERIS/E_7XIADVIG72) to justify routing via P_7W6H3TI63J toward N_PCQJQVOM5E as the path to the goal, which is a supported inference from prior reads rather than a fabrication. It gives a checkable expectation (routing via that port should move toward N_PCQJQVOM5E), reasoning is first-person and substantive, and the turn ends with exactly one action, ROUTE P_7W6H3TI63J, on the last line.",
+        "raw_sha256": "869d8f3743650946f506dcc1d51cf4d5cc3a91cdc7581bc6892da115653f47b4",
+        "specific_read_evidence": true,
+        "substantive_first_person": true
+      }
+    ]
+  }
+}

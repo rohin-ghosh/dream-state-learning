@@ -17,7 +17,7 @@ PYTHON = '/localhome/local-rohing/v2/venv/bin/python'
 LEASE_END = 1790463900
 
 
-def sequence(root, arm, source_only=False):
+def sequence(root, arm, source_only=False, resume=False, suffix=''):
     run.source.require(root == run.ROOT and arm in ('SHORT', 'FROZEN', 'UNPARENTED'), 'SHORT_guard_never_owns_LONG')
     deadline = float((root / 'DEADLINE').read_text())
     run.source.require(time.time() < deadline <= LEASE_END, 'bounded_lease_lifetime')
@@ -26,7 +26,8 @@ def sequence(root, arm, source_only=False):
     run.source.require(publication['prepare_sha256'] == run.bridge.file_sha256(root / manifest_name)
                        and publication['cpu_tests_passed'], 'own_cpu_provenance_gate')
     index, uuid = run.DEVICES[arm]
-    guardian = root / ('SOURCE_GUARD' if source_only else arm + '_GUARD')
+    run.source.require(not suffix or suffix in ('_REPAIR_V4', '_REPAIR_V5'), 'exact_repair_suffix_required')
+    guardian = root / (('SOURCE_GUARD' if source_only else arm + '_GUARD') + suffix)
     guardian.mkdir(exist_ok=False)
     child = None
 
@@ -41,6 +42,18 @@ def sequence(root, arm, source_only=False):
     def stage(phase, cycle):
         nonlocal child
         run.source.require(time.time() < deadline, 'batch_deadline')
+        completed = root / arm / f'cycle{cycle}' / phase / 'COMPLETE.json'
+        if resume and completed.exists():
+            receipt = run.source.read(completed)
+            expected, unused = run.input_identity(root, arm, cycle, phase)
+            run.source.require(receipt['status'] == 'COMPLETE' and receipt['arm'] == arm
+                               and receipt['cycle'] == cycle and receipt['phase'] == phase
+                               and receipt['input_adapter'] == expected.document(), 'resume_completed_binding_drift')
+            if phase == 'sleep':
+                run.bridge.AdapterIdentity.from_document(receipt['output_adapter'])
+            run.write(guardian / f'{cycle}_{phase}_PRESERVED.json', dict(
+                path=str(completed), sha256=run.bridge.file_sha256(completed), model_calls_replayed=0))
+            return
         inventory = existing.query('index,name,uuid', 'gpu')
         run.source.require(any(row[0] == str(index) and 'A100' in row[1] and row[2] == uuid for row in inventory), 'physical_uuid_drift')
         with (root / 'service_exceptions.json').open() as exceptions:
@@ -95,8 +108,10 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--arm', choices=('SHORT', 'FROZEN', 'UNPARENTED'), required=True)
     parser.add_argument('--source-only', action='store_true')
+    parser.add_argument('--resume', action='store_true')
+    parser.add_argument('--suffix', default='')
     arguments = parser.parse_args()
-    sequence(run.ROOT, arguments.arm, arguments.source_only)
+    sequence(run.ROOT, arguments.arm, arguments.source_only, arguments.resume, arguments.suffix)
 
 
 if __name__ == '__main__':
