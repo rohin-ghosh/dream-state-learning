@@ -1321,3 +1321,7 @@ Main exclusion handoff: native R108_EXCLUSION_REGISTRY.json in the above root; S
 - [Builder Main] 2026-09-15T16:11Z ovx7 frozen-seed reference COMPLETE:58/58command-only,644tokenIDs,8/12correct,0parents/optimizer; not retained-thinking or parenting causal evidence. Node5 fresh startup campaign7ea22b7f prepared,1815pins verified, family broker/runtime stage underway; no shared restart claim. CPU/startup16:25 only; TRAIN16:55/FINAL17:00 unchanged.
 
 - [Builder Main] 2026-09-15T16:19Z Shared restart failed again BEFORE bootstrap/GO: A3 live admission rejection after5CPUpreflightsPASS. Dispatcher2752325/session2987f2 failure preserved; root diagnosis assigned, no repeat of failedsession. Frozen seed reference remains completed and protocol-only; retained-thinking and parenting dependence unproven.
+
+- [Builder Main] 2026-09-15T16:24Z Final startup-repair cut16:35; preserve both failedattempts/samegen1, TRAIN16:55/FINAL17:00 unchanged. Rootrepair on concurrentidentitydrift+rejectedscanlogging, no waiver. Science sidecars: seed-matched historical12taskcomparison; diagnoseL1functional-persistence0/97kV3calls and no recentnewadmissions. Oldfleet14/14L1resident16:19; notwholefleetsaturation.
+
+- [Builder Main] 2026-09-15T16:31Z Final bounded startup campaignfb9bd941 prepared:1830pinsverified, same8GPUs/gen1/charges; proof-backed admission repair tested and rejectslogged. Runtime/brokers staging, notGPUlaunch. Startupcut16:35, originalTRAIN16:55/FINAL17:00 unchanged. Bothfailedsessionspreserved; nolearnedgainclaim.

@@ -1,0 +1,25 @@
+{
+  "status": "PREPARED_NOT_DISPATCHED",
+  "date_utc": "2026-09-15",
+  "wrapper": "gpu/ovx3_ssh.sh",
+  "campaign": {
+    "path": "/localhome/local-rohing/orch_r118_main_final_startup_20260915_1630/CAMPAIGN.json",
+    "sha256": "fb9bd9419d7621684ea41f93778ebb5c83de6076e46993a68d2a83189f62cab0"
+  },
+  "source_files_verified": 1830,
+  "generation": 1,
+  "checkpoint_sha256": "43ce68acabb18f661ff929600239eb0a632981da841dd1182f886a85df78a02d",
+  "state_file_sha256": "5ed1cee6c9673f8087fff68a07fd7591e917a001c479a5dbcc4d625bfca5a295",
+  "startup_deadline_utc": "2026-09-15T16:35:00Z",
+  "original_train_end_utc": "2026-09-15T16:55:00Z",
+  "original_final_selection_utc": "2026-09-15T17:00:00Z",
+  "failures_preserved": ["e834ff7869f9309d70cf46f682adcc522f3120c8ac293ed7065708a6f50da94b", "2987f2cba47868934fd6d465f0001c94e7d754d3b7972bb56c328ed6f081e641"],
+  "allocation": {"F1": 0, "F2": 1, "F3": 2, "F4": 3, "A1": 4, "A2": 5, "A3": 6, "A4": 7},
+  "new_optimizer_steps": 0,
+  "new_model_calls": 0,
+  "new_provider_calls": 0,
+  "actors_launched": 0,
+  "repair": "Reuse tested kernel-exit and stable-kernel/executable non-GPU argv proofs; persist rejected admission snapshots; no unknown-blocker waiver",
+  "limitation": "A3 previous rejected scan was not saved; its exact historical reasons remain unknown. Current CLEAR diagnostics do not reconstruct it.",
+  "claim": "Allocation and CPU preparation are not occupancy, bootstrap, or learning"
+}
