@@ -120,3 +120,41 @@ ovx2 node HOURLY/20260915T092607Z.json SHA3882694b72a630c73fe4e84f861c67d8c6c730
 No edits to R108 frozen seed or Main runtime. Main source_v5 integration
 passed115tests0skip33subtests after packaging three historical shell guards;
 that omission was the only reproduced R108 code blocker reported by this worker.
+
+
+## Node5 additional pair actual — 2026-09-15T09:39Z
+
+Trusted ovx3 wrapper repaired by owner; no trust bypass. New physical6/7
+source branches derived from exact frozen original source, independent roots
+orch_r109_grid_node5_6_20260915_attempt1 and _7_, each source_v1. Existing
+ovx7/ovx2physical5 residents and immutable source untouched. Native53tests
+PASS0skip per new lane; local75PASS1native-onlyskip including19derivation
+regressions. CPU preparation CUDAuninitialized/modelnotloaded; frozenBASE
+identity additionally checked at native load, zeroLoRA/trainableparameters.
+
+Builder preGPU COORD logged09:37 before guard dispatch. Node5 source manifests
+6:2918e0decb28030ccc7cd84f02d3f577824c33cbb55bbebcf216b4d90a6088da;
+7:280da6ebf320b4598676b90eb5442f553aff6777702abc3786b2f93f051880fe.
+Native PIDs14869/15653; guardians14775/14776; brokers357624/357625.
+First children finished09:37:58.986/09:38:10.312UTC; first real Astra parents
+finished09:38:33.690/09:38:39.351UTC. Snapshot09:39:11 has3/18native,
+1/1Astra and1/1joined triples; zero failures. Process command/start/UID/CWD,
+UUID/CVD and nvidia-smi compute-app PID bindings verified, not mere PIDexistence.
+Original lanes09:38:36/37:49/162native,24/8Astra and24/8triples,
+0/2metacognitive conversations, zero failed calls. Semantics UNASSESSED.
+
+Initial full admission attempts1/5, finalCLEAR scans resident_000 and_004;
+all unsuccessful scans preserved, no reason waiver/no foreign signals.
+Continuous residents thereafter, no repeated phase admissions. Newpair cap
+3716native/596Astra/16GPUh, separate from originalpair/no refunds; same16:57
+native cutoff/17:02hardendUTC and September17 04:04lease-minus6h margin.
+Supportive6/critical7, identical fixed geometries/unchanged cadence sequencing;
+no new independent held tasks, causal treatment or retained-weight claim.
+
+Compact NODE5_STARTUP_20260915T0939Z.json binds first calls/parents, actual
+processes, source derivations and tests. Additional readonly hourly monitors
+360669/360752 mirror onlycompact counters/hashes into NODE5_6_HOURLY and
+NODE5_7_HOURLY; next10:02UTC. Raw remains onnodes. Portable contract bundle
+streamed node-to-node without VM artifact; never attached to BASE model.
+Safe additional publication set: STAGE_NODE5_0939.json; do not stage raw,
+models, transientparentbuffers or sharedMainfiles. No git mutation by worker.
