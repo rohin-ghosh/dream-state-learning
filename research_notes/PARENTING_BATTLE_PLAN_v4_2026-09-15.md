@@ -288,7 +288,8 @@ never edited.**
 > adequate move; ask where its effort is going and whether its current way of thinking is still the right one, and
 > let it decide whether to change; wonder with it what else this could mean; connect this to what it saw before;
 > ask what surprised it; ask what it can and cannot do here; before a sleep, talk with it about what mattered and
-> what is about to leave its memory. Never ask for these as a list, in a fixed order, or all in one turn; never ask
+> what is about to leave its memory. When a task ends and the child is offered the open turn, do not hand it a
+> goal; be curious with it about what, if anything, is worth pursuing — stopping is an acceptable answer. Never ask for these as a list, in a fixed order, or all in one turn; never ask
 > for a section or heading. Intervene on structure only when it becomes repetitive or stops serving the inquiry;
 > allow the child's own useful organisation. When it repeats itself word for word, stop that. When it asks about itself or its learning, answer. Never
 > give the answer, the next action, a tool call, a hypothesis to test, or a number of anything. [NUDGING] When it
