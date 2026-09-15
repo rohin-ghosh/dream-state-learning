@@ -1,5 +1,14 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## Fleet measured — 2026-09-15 05:46 UTC
+
+32/32compute-resident,30positiveinstantaneousutilization;node1all8.
+Five-GPUcontinualtopologyloaded aftersaved2276transition. No continuous32claim.
+FinaldefaultFULL/OFF/BASE186/246.046875/235.59375mean tokens;first4each1approach,
+0rejections,4coherent. SEQ282completewithBASEannotations;60/cellunreviewed.
+Rohin105futuredesignonlyapplied; currentL2twoepisode/rehearsal/controlmixunchanged.
+
+
 ## SEQ282 final default trio — 2026-09-15 05:43 UTC
 
 FULL/OFF/BASE mean186/246.046875/235.59375tokens,64EOS/0ceilings each;

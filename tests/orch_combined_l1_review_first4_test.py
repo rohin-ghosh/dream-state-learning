@@ -21,3 +21,9 @@ def test_unread_dev_output_cannot_receive_author_review(arm):
     from gpu.orch_combined_l1_review_dev_first4 import annotate as annotate_dev
     with pytest.raises(AssertionError, match='not_an_author_reviewed_output'):
         annotate_dev('An unread response', arm, 0)
+
+
+def test_unread_base_output_cannot_receive_author_review():
+    from gpu.orch_combined_l1_review_base_first4 import annotate as annotate_base
+    with pytest.raises(AssertionError, match='not_an_author_reviewed_output'):
+        annotate_base('An unread response', 0)

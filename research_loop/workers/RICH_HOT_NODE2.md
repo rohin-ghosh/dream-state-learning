@@ -525,3 +525,39 @@ draft+final captures243 registered correct,19 parsed-wrong,2 parser-null and
 comparisons. Two raw targets now exceed400tokens (503 and412); both retained
 without semantic qualification or training. All rows remain UNREVIEWED;
 parent/API calls0, fits0, admitted0. Original16hour guardian/call caps unchanged.
+
+## 2026-09-15T05:35Z — checkpoint99 staging and V3 diagnostic
+
+Main owns git. Four requested files ready; exactSHA256s/native-source bindings
+in own analysis `status_0528Z/SOURCE_STAGE_RECEIPT.json`. Three runtime files
+match frozen native checkpoint99 bytes. Current test has4tests including a
+post-launch reservation/source/checkpoint/cap regression; native3test bytes
+preserved, not relabelled as current preGPU evidence. Fresh checkpoint4PASS,
+all owned hot_node2 tests40PASS; logs in same compact directory. No runtime
+source changed in this reporting turn.
+
+At05:30:32.878UTC September15 all8 exact identities live, physical0–7
+PIDs597413/597738/597759/598323/600751/600846/600758/600765, UID2524; boot/start/
+UUID bindings in `status_0528Z/LIVE_AND_SAMPLE_FREEZE.json`. No current V3
+failure receipts observed. Completed captures1126, per-slot280/87/106/169/120/
+139/142/83. Last600seconds234captures=1404/hour,116318completed content tokens;
+all-stage captures, NOT unique tasks/qualified rows. Low capture rates1/7
+accompany long decoding, not dead generators.12completed exact-prompt CODE/math
+pairs0/1; ROUTE histories differ, excluded. Derived is not labelled improved.
+
+526exhaustion-applicable captures,372claim>=2headings,22repetition-screen flags
+separate from correctness. Frozen outcome-independent stratified8row semantic
+diagnostic:7targets fully read, long ROUTE7first100of979lines only. Hash-bound
+`status_0528Z/SEMANTIC_ANNOTATIONS.md`:4math targets claim2methods but demonstrate
+1distinct method; CODE2/3expression-only; ROUTE6action-only, not whole-trajectory
+judgment; ROUTE7prefix invents observations/repeats, full method count unknown.
+Zero of7fully read targets demonstrate2distinct worked methods; diagnostic,
+not prevalence/admission. Strict parser categories unchanged, no rescore,
+gold inference, register/length gate or rejected-path-as-failure rule.
+
+All8continue unchanged16384output/32768context with second-pass accounting and
+original19:19:30.743091UTC hard end. No signals/restarts/new launches, parent
+service restart, rawVMpull, shared-file edit or git mutation. Next: Main stages
+exact source/tests/compact receipts; Hubble source-registers/samples native
+immutable batches before training admission. Keep generators live while
+reporting quality limitations, not heading counts as realized exhaustion.
