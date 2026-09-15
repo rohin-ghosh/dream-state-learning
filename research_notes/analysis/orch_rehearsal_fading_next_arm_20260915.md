@@ -2,10 +2,17 @@
 
 ## Scope and authority
 
-Rohin104 requests age-decaying rehearsal refreshed by frequent use, followed by
-no replay at the older lower-plasticity stage. Keep the current in-batch old-row
-mix unchanged now. This is a prospective parenting treatment comparison, not a
-new baseline triple, a foundation change, or a claimed learning result.
+Rohin104 requests age-decaying rehearsal refreshed by frequent use. Rohin105
+(September15,2026, approximately05:40UTC) clarifies the ladder: rehearsal stays
+ON throughout levels2–3 childhood; the shipped level4 has NO replay and keeps
+only reflection-based sleeps at lower plasticity. Reflection is taught through
+parenting and can occur during idle time as well as after experience.
+
+This is a design-only amendment. Keep every running lane's in-batch old-row mix,
+two-episode schedule, optimizer, controls, allocation and budget unchanged.
+This prospective comparison is not a new baseline triple, foundation change,
+deployment authorization, or learning result. The exact raw directive is in
+`research_notes/THESIS_RAW_ROHIN_2026-09-11.md`, Message105.
 
 ## Proposed rule
 
@@ -26,11 +33,19 @@ outcome examples retain their failure tags, source context and selection rights;
 neither success nor failure changes the age rule. Archive all records even after
 their sampling weight falls; forgetting in rehearsal is not evidence deletion.
 
-At the prospectively fixed lower-plasticity stage, set old-row replay slots to
+During levels2–3, keep a nonzero old-row rehearsal allocation in both current-
+mix and fading-mix arms. Age decay changes sampling within those old-row slots;
+it does not switch childhood rehearsal off. In particular, an arbitrary late
+cycle of a level2 experiment is NOT a level4 deployment transition.
+
+Only at an explicitly registered level4 boundary set old-row replay slots to
 zero, rather than renormalizing tiny weights into a hidden perpetual cache.
-The transition cycle and learning-rate/plasticity setting must be declared
-before launch; no held-score-triggered transition. This document does not choose
-or activate that transition in the running lanes.
+Both sleeping arms of the level4 deployment test must have zero replay and
+fresh own-reflection targets only: no legacy rows, old target reuse, raw-attempt
+targets, or teacher transcript targets. The starting checkpoint and lower-
+plasticity configuration must be frozen before that separate test. No held-
+score-triggered transition or live-lane change is authorized here. See
+`orch_level4_reflection_only_design_20260915.md` for the prospective test.
 
 ## Comparison and readout
 
@@ -47,8 +62,9 @@ paths, repetition, coherence, taught-to-next-cycle change, and parent-free
 retention. Also report actual old/new presentations, record ages/use-refreshes,
 sampling probabilities, parameter changes, and generation/parent/sleep/readout
 wall times. Outcomes are recorded as ancillary evidence, not an intervention
-trigger. Record the no-replay stage separately because removing old slots changes
-the treatment as well as the number of presentations.
+trigger. Record level4 as a separate experiment, not an unlabelled late phase
+of the level2–3 fading comparison. Removing old slots and allowing only fresh
+reflection targets changes both the treatment and presentation accounting.
 
 ## Tests before the separate launch
 
@@ -57,11 +73,13 @@ the treatment as well as the number of presentations.
 - Replay reads, fabricated IDs, parent-only mentions and held runs cannot refresh.
 - Wrong-outcome records retain their tags and are not silently filtered.
 - Identical age/use records have equal probability irrespective of outcome.
-- The lower-plasticity stage yields exactly zero old-row presentations.
+- Levels2–3 never disable the configured old-row slots because of age or cycle.
+- Both level4 sleeping arms yield exactly zero old-row presentations; every
+  supervised target is a newly generated, source-bound own reflection.
 - Resume preserves optimizer, record history, RNG, refresh ledger and counters.
 - Matched treatment schedules, two-episode ordering, provenance/visibility and
   compact evidence storage pass their existing tests.
 
 No live sampler, optimizer, model checkpoint, GPU allocation or budget is changed
-by this design. The author will publish exact source, cohort, transition and
-budget bindings before the bounded comparison is launched.
+by this design. The author will publish exact source, cohort, ladder boundary,
+plasticity and budget bindings before either bounded comparison is launched.

@@ -1,5 +1,13 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## Rohin105 future design — 2026-09-15 05:42 UTC
+
+ReplayON throughL2–L3; futureL4bothsleepingarms replayOFF, freshownreflection
+targets only, lowerplasticity. Reflectionparent-taught; bounded idletrigger
+possible. No live schedule/mix/allocation change. Sharedfadingdesign and
+separatelevel4reflection-only test requirements published; not launched.
+
+
 ## Actual continual intake — 2026-09-15 05:40 UTC
 
 V13/3635 ACTUALLYingested paired2020,+375rows(63samplePASS/312UNREVIEWED),
