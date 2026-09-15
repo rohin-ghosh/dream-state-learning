@@ -1,0 +1,41 @@
+{
+  "schema": "ORCH_R111_CLAUDE_BROKER_CPU_READY_V1",
+  "recorded_utc": "2026-09-15T10:06:58Z",
+  "status": "CPU_READY_NOT_LAUNCH_AUTHORIZATION",
+  "files": {
+    "gpu/orch_r110_claude_broker.py": "658faea480c4e9c2bca5fe63f110a6a1717dcd2456a15f9231551a46c9cf718b",
+    "tests/test_orch_r110_claude_broker.py": "cf569742d48f97b51e874b4161bef8189d9b1056ea8c00bc0534034305e04d51"
+  },
+  "runtime_dependencies": {
+    "gpu/orch_l2_long_backend.py": "dfc3afd9d4d4ed9551201c0b81e4844755186a44049cce9ed701b6a66944bc1a",
+    "organism_v6/orch_l2_long_parent.py": "8f35fd0578d2af29a45b737a100a25034abf09181e66de75ca6f26df39f1e622",
+    "gpu/ovx3_scp.sh": "2a1bf86fc875f98b1564a8f5dac9c549ad15dea67150d22850a1e7fcc7671e20",
+    "gpu/ovx3_ssh.sh": "e7be79c608da97bcdf218e430ee5151e78636694bd3b1b337dd7f724a92a2b56"
+  },
+  "principles_sha256": "5a6a3d28a2f0c9f99dd76873496a07468075509b4451373d90c11ce8d8b363f2",
+  "test_command": "python3 -B -m unittest tests.test_orch_r110_claude_broker -q",
+  "tests_passed": 43,
+  "provider_calls": 0,
+  "judge_calls": 0,
+  "gpu_calls": 0,
+  "launch_requirement": "R112 WATCHER_RELAYED_ROHIN_GO receipt bound to exact config; silence and grace are invalid",
+  "prompt_files": "tools/courier/swarm/prompts/F1.md through F4.md; reread each request; not present locally at this receipt",
+  "per_request_receipts": ["PROMPT_BINDING.json", "PARENT_PROMPT.md", "SYSTEM.txt", "VISIBILITY.json", "DISPATCH.json", "RESULT.json"],
+  "prompt_pairing": {
+    "common_file_contract": "Both parent implementations consume the same exact Fn.md bytes and principles/transport policy at a matched parent opportunity. Node archive PARENT_PROMPT.md plus its hash identifies the immutable consumed version; never reconstruct it from current mutable Fn.md.",
+    "helper": "build_system(transcript, config, prompt_root, principles_path) returns system text, exact Fn bytes, binding; safe for the separate Astra adapter",
+    "comparison_helper": "compare_prompt_bindings(left, right, matched_opportunity=True)",
+    "alignment": "Caller must bind the actual corresponding segment/opportunity; same cycle/episode alone is insufficient.",
+    "mismatch_behavior": "PROMPT_MISMATCH_CONTRAST_LIMITATION; no child gate, retry, or altered plan",
+    "matched_prompt_is_not_sufficient_for_model_only_claim": true
+  },
+  "shared_judge_reference_only_not_parent_input": {
+    "path": "research_notes/R111_SHARED_JUDGE_PROMPT.md",
+    "sha256": "ad9d7284e11c3203172942af46dacddb1fa5f800f124d2c4bb0f66eced281255",
+    "model": "Qwen2.5-14B-Instruct",
+    "temperature": 0
+  },
+  "remaining_native_integration": ["audited Fn prompts and watcher GO", "native lane configs/cohort pins/deadlines", "separate Astra dispatch adapter", "receiver fresh admission"],
+  "old_learned_broker_changed": false,
+  "raw_policy": "Node archives only; bounded temporary VM transport deleted only after verification. This manifest contains no raw transcript."
+}

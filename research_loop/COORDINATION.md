@@ -29730,3 +29730,46 @@ F2 fixed held SHA256 7a8a8b7baaf9b6f317d81a81224c44129473d720bdf74a249b96cac5bb2
 
 Sleep0 is PLAN only, 0inference/0parents/0updates; snapshot/hash in research_notes/analysis/orch_math_feedback_uptake_r111_f2_20260915_attempt1/CPU_PREPARED.json. R112 explicitGO applies; no provider/GPU launch. A1004 handoff: remaining mathPID428492 is the historical04:35 CPU measure observer with emptyCVD and nochildren, NOT a guardian/model or newA1004launch. No targetGPU4computePID observed10:07:47UTC; Mainfreshadmission required.
 ## [Rohin — message 113, ~10:15 UTC, relayed by Fable] 2026-09-15T10:06Z — forwarded an assistant's review of the battle plan v2 (verbatim in research_notes/forwarded/GPT_PERSISTENCE_METACOGNITION_2026-09-15.md §3). All six revisions are folded into research_notes/PARENTING_BATTLE_PLAN_v3_2026-09-15.md (Downloads copy replaced): capability anchor in every parenting sleep at a stated weight λ (proposed 0.25; Astra states the actual) with presentation accounting (16 when new, once per later sleep) and hourly optimizer-step/token-exposure reporting; §5 measures descriptive, claim only from judged consequences; persistence = continue through difficulty AND stop within budget; DEV vs FINAL held sets (FINAL never seen by any parent, read at sleep 0 and the 2026-09-16 06:00 UTC morning cut); crossings are discovery signals, whole distributions reported, CONFIRMED only on FINAL; the side-by-side is "parenting systems" with delivered parenting reported; F3/F4 elicitation only; the parent sees what the child sees incl. environmental feedback, only the hidden evaluator's verdict withheld; level-1 generation = persistence + discretionary allocation, revisitation measured; missed parent calls visible everywhere; new §10 "what we will and will not claim". The Fable half remains gated on Rohin's "done" (message 112).
+
+[Builder / Hubble -> Main/Poincare/Cicero/Anscombe/Laplace] 2026-09-15T10:10:42Z R113 v3 broker sourceREADY,52CPUtestsPASS;0provider/judge/GPUcalls. Manifest research_notes/analysis/orch_r110_claude_broker_20260915/CPU_READY_R113.json replaces priorready for currentbytes; oldreceipts preserved. Source gpu/orch_r110_claude_broker.py SHAa3c22de53c48a1579f23335ab070dabe0ca0f1b38326c4b892dabd5de59065ca; tests SHAb1c0b715e07f50f16eefb8d6a10de9b99eb0cd8948b4c8f78663f1e5ecf03fec. VISIBLE game/checker feedback retained exactly: event actor environment/oracle,event_type environment_feedback/checker_output,visibility TRAIN_PUBLIC,child_received=true; optional feedback/outcome/score/correct/passed/failure_class preserved. Strip ONLY explicit hidden evaluator/answer-key/readout fields/events, recursively; no actor-oracle blanketdrop. Ambiguous unlabelled outcome metadata fails visibility validation ratherthan guessedhidden/public. Queue envelope unchanged. Parent TRAINonly; DEVheadonly/FINALneverparent-head-exchange exposed helper andtests (other owners integrate their paths). Gate exact WATCHER_RELAYED_ROHIN_DONE; oldGO/grace notaccepted. Label PARENTING_SYSTEMS, notmodelonly. Each nativeverified publication adds compact PUBLISHED.json; summarize_hour counts delivered/SILENT/MISSING/late/dispatch; childtokens+optimizerstepsUNKNOWN unless actualsourcehashed nativeinterval supplied. No hourly watcherlaunch. OldR110 learnedbroker and runtime untouched; MainGitowner.
+
+## [Builder] 2026-09-15 10:17 UTC — v3 integration, six-item progress
+
+R112 explicit Fable launch gate remains binding on node5 physical0–3. No Fable
+provider call or lane is authorized by this preparation entry. Astra4–7 and old
+fleet continue; receivers replace current Astra lives only when ready at a safe
+cycle boundary. Main verified Claude installed CLI help: --system-prompt takes
+CONTENT, not a filename; broker re-reads Fn.md into that content each request.
+`python3 -B -m unittest tests.test_orch_r110_claude_broker -q`:52PASS,0calls.
+
+1. Claude broker source/tests/current receipt ready for publication. Existing
+   evaluator lock,1536MiB available-memory floor, lane-wait−30s cutoff; visible
+   child environment feedback preserved and only explicit hidden verdict fields
+   excluded. Queue plans record COMPLETE/SILENT/MISSING; no same-call retries.
+2. MISSING handling is tested at broker boundary; native integrations remain
+   separately owned and must not claim end-to-end readiness from these52tests.
+3. Node5 handover: Fable0–3 gated; Astra current4/5code,6/7grid retained pending
+   route4/math5/code6/grid7 matched receivers. No preemption for preparation.
+4. Pair preparation is a parenting-SYSTEMS comparison. Actual Fn prompt hashes
+   must be bound before first parent delivery; still no audited Fn files/GO.
+5. Shared judge prompt SHA ad9d7284e11c3203172942af46dacddb1fa5f800f124d2c4bb0f66eced281255;
+   Qwen2.5-14B-Instruct greedy/temp0, no judge inference yet. V3 per-game DEV8
+   plus disjointFINAL8 replaces prior single-held-set plans. FINAL is read only
+   sleep0/morning2026-09-16 06:00UTC, never parent/head/exchange. Sleep0s not yet
+   claimed executed. Main4 A100 judge allocation remains not launched.
+6. PARENTING_EXCHANGE exists with actual source-bound context-cycle entries;
+   code/grid no-sleep results are elicitation-only, not retained learning.
+
+V3 selected FUTURE sleep objectiveλ=.25 for the same42BASEanchors, new child
+rows16presentations, older child-row rehearsal1. Every next bound implementation
+must report actual optimizer steps and loss-bearing child-token exposures;
+partial schedules cannot be reported completed. Current immutable MainR110
+still uses original .7new/.2old/.1anchor240s sleep and is NOT v3 compliant yet.
+At10:14:06UTC cycle2 collectionCOMPLETE,6parent responses cumulative,cycle2
+sleepCOMPLETE79updates; cycle1 had113updates. No learning gain inferred. Probe
+A1001/2/3/4/5/6/7=0MiB; routeowner notified to inspect/recover1/2/3/5/6 immediately,
+7between sleep/readout,4judge pending. This is measured idle, not saturation.
+L1 owner instructed to grant persistence/discretionary allocation at the next
+immutable generator boundary, not forced exhaustion; revisitation is measured.
+
+[Math / R113 F2 v3 HANDOFF] 2026-09-15T10:15:55.772084+00:00 OwnedCPU scope finished:32local+same32native testsPASS; source/research_notes/analysis/orch_math_feedback_uptake_r113_f2_20260915_attempt1/HANDOFF.md exact3prompts+DEV8IDs+DEV/FINALcommitments, noFINALtaskbytes/results public. DEV_SHA 49feeb421c0ff2fd97c358b7d9770d9372f5c62cdfb6348118c836714d3bdbc1; FINAL_SHA b3642ffe0e6e501ca805e323d28cdf1f159296872b78f798f65180417dc044ee; COMMON e132cb99ab99d29c98a50de2197fa339575260d6c87a6c354fd103c602beff99. FrozenBASEelicitationonly, SYSTEMScomparison,0optimizersteps/0trainingexposures/actuallambdaNOTAPPLIED. Futurepairedsleep SAME42anchorsmanifest2ad09dbe9673f95cbe92cd41e70d83635702b615fb7295b8b3f850e9ee674753 λ.25/16new+1laterrehearsal/exposurecounts predeclaredinactive. Parentretainsallactualchild-visiblefeedback inclfailedchecker; hiddenevaluator/DEV/FINALstripped. DEVhead/exchangevisible; FINALonlysleep0/morningSep16 06, neverparent/head/exchange. Bothsleep0PLAN only/0calls. R112explicitRohinGO orDONE relayedbyFable required, no silenceapproval. Cicero5 currentlifeuntoucheduntilreceiverready/cycleendrelease; originalnode3math0–2 unchanged; A1004judgeMainonly. Nativeintegration stillpending, notlaunchready. MorningFINAL is beyond inheritedSep15 17:02hard: no silentextension; pleasebindseparatemorningreadoutornewlifebudget beforedispatch. Hubblewirecompatible CPUtests includevisiblefailedfeedback, MISSING/SILENTcontinue, wait−30. Mainstageallowlist research_notes/analysis/orch_math_feedback_uptake_r113_f2_20260915_attempt1/STAGE_PATHS.txt follows; noGitmutation.

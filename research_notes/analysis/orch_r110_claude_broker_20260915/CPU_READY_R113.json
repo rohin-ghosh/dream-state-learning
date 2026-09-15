@@ -1,0 +1,36 @@
+{
+  "schema": "ORCH_R113_CLAUDE_BROKER_CPU_READY_V1",
+  "recorded_utc": "2026-09-15T10:10:42Z",
+  "status": "CPU_READY_EXPLICIT_DONE_GATE_NO_DISPATCH",
+  "battleplan_commit": "e3a13940",
+  "files": {
+    "gpu/orch_r110_claude_broker.py": "a3c22de53c48a1579f23335ab070dabe0ca0f1b38326c4b892dabd5de59065ca",
+    "tests/test_orch_r110_claude_broker.py": "b1c0b715e07f50f16eefb8d6a10de9b99eb0cd8948b4c8f78663f1e5ecf03fec"
+  },
+  "principles_sha256": "5a6a3d28a2f0c9f99dd76873496a07468075509b4451373d90c11ce8d8b363f2",
+  "test_command": "python3 -B -m unittest tests.test_orch_r110_claude_broker -q",
+  "tests_passed": 52,
+  "provider_calls": 0,
+  "judge_calls": 0,
+  "gpu_calls": 0,
+  "visibility_contract": {
+    "visible_feedback": "TRAIN_PUBLIC environment/oracle checker events with event_type environment_feedback or checker_output and child_received=true preserve exact text and structured feedback, including observed score/outcome/correctness fields.",
+    "hidden_only_removed": ["hidden_evaluator_verdict", "hidden_answer_keys", "hidden_readout", "held_scores", "answer_keys", "readouts"],
+    "hidden_events_removed": ["hidden_evaluator_verdict", "hidden_answer_keys", "hidden_readout"],
+    "unknown_visibility": "Unlabelled top-level outcome fields are rejected, not guessed public or silently stripped. Explicit source visibility must be supplied by native integration.",
+    "audiences": "TRAIN: parent/head/exchange; DEV: head only; FINAL: none of parent/head/exchange. Broker only accepts registered TRAIN; helper validate_audience_split is exposed for other owners, not proof their head/exchange paths enforce it."
+  },
+  "authorization": "WATCHER_RELAYED_ROHIN_DONE bound to exact config; old GO/grace/silence rejected",
+  "comparison_label": "PARENTING_SYSTEMS",
+  "prompt_pairing": "Per-request Fn/principles/policy/system hashes and exact node-archived Fn bytes retained. Version/alignment mismatch is a non-gating contrast limitation.",
+  "hourly_contract": {
+    "native_publication_receipt": "parent_claude/<id>.claim/PUBLISHED.json after verified response delivery",
+    "helper": "summarize_hour(receipts,start_unix,end_unix,native_metrics=None)",
+    "counts": ["delivered_interventions", "silent_slots", "missing_slots", "missing_late_slots", "provider_dispatches"],
+    "native_fields": "Child tokens and optimizer steps are null/UNKNOWN without a source-hashed matching-interval native receipt; never inferred from parent calls or cycles.",
+    "scheduler": "No hourly process launched; callable reduction for Main's reporter."
+  },
+  "remaining": ["audited Fn prompts and watcher-relayed DONE", "native queue integration/configs", "separate Astra dispatch adapter", "receiver admission"],
+  "old_learned_broker_changed": false,
+  "raw_policy": "All real archives remain node-only with bounded temporary VM transport; no raw captures in this manifest."
+}

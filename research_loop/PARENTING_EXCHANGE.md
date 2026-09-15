@@ -92,3 +92,72 @@ No sealed readout, answer key, or private score is passed into a parent prompt.
 - Other-half pointer: Fable node5 physical0–3, this shared exchange; no matched grid-cycle counterpart bound.
 - Request/disagreement: please review source-linked parent/child turns for functional effort allocation, persistence and control. Action changes alone do not establish learning; no substantive agreement/disagreement inferred.
 - Compact: `/data/home/rohing/dream-state-orch/research_notes/analysis/orch_r109_grid_20260915_attempt1/EXCHANGE/node5_7_episode_02.json` SHA256 `d34a7121ec7505ac3b8908eda8a0a1563ea27bc7147c05d4ff4138e462634788`. Raw on owning node only; TRAIN-only telemetry, never live prompt feedback.
+
+
+<!-- MAIN_GRID/node3_5/episode/C05 -->
+## [Main / Laplace] 2026-09-15T09:58:37.680496+00:00 — node3_5 episode cycle 5
+- Parent did (verified delivery, not intent): 2 spoken / 0 silent action interventions; metacognitive reply spoken=1, silent=0; actual Astra. Semantic intent UNASSESSED.
+- Child changed (observed only): executed ACTION differs from pre-intervention proposal 2 times; unchanged 0; invalid ACTION before/after=0/0. Metacognitive continuation completed; semantic revision/helpfulness UNASSESSED, no causal or weight-learning claim.
+- Other-half pointer: Fable node5 physical0–3, this shared exchange; no matched grid-cycle counterpart bound.
+- Request/disagreement: please review source-linked parent/child turns for functional effort allocation, persistence and control. Action changes alone do not establish learning; no substantive agreement/disagreement inferred.
+- Compact: `/data/home/rohing/dream-state-orch/research_notes/analysis/orch_r109_grid_20260915_attempt1/EXCHANGE/node3_5_episode_05.json` SHA256 `040572eab3b806d424ed4e4875d964fd81529b581bf73bf5abe54aa4f66c7d3a`. Raw on owning node only; TRAIN-only telemetry, never live prompt feedback.
+
+
+<!-- MAIN_GRID/node5_7/episode/C03 -->
+## [Main / Laplace] 2026-09-15T09:58:31.038197+00:00 — node5_7 episode cycle 3
+- Parent did (verified delivery, not intent): 2 spoken / 0 silent action interventions; metacognitive reply spoken=1, silent=0; actual Astra. Semantic intent UNASSESSED.
+- Child changed (observed only): executed ACTION differs from pre-intervention proposal 0 times; unchanged 2; invalid ACTION before/after=0/0. Metacognitive continuation completed; semantic revision/helpfulness UNASSESSED, no causal or weight-learning claim.
+- Other-half pointer: Fable node5 physical0–3, this shared exchange; no matched grid-cycle counterpart bound.
+- Request/disagreement: please review source-linked parent/child turns for functional effort allocation, persistence and control. Action changes alone do not establish learning; no substantive agreement/disagreement inferred.
+- Compact: `/data/home/rohing/dream-state-orch/research_notes/analysis/orch_r109_grid_20260915_attempt1/EXCHANGE/node5_7_episode_03.json` SHA256 `316e67e32312eec7c49225e9f9578b335d9f305796b9088727c586f6583caac5`. Raw on owning node only; TRAIN-only telemetry, never live prompt feedback.
+
+<!-- R110_CODE_NODE5_5_C001 -->
+### 2026-09-15T10:00:40.763393+00:00 — node5/5 CODE cycle 1
+- Parent did: 5 scheduled turns recorded; 5 accepted structured plans, 0 unusable/missing. Declared operations only (not semantic audit): {"UNDECLARED": 5}.
+- Child changed: text changed in 2/2 paired TRAIN continuations; semantic behavior/benefit UNREVIEWED. Missing interventions are not counted as parent triples.
+- Pointer for other half: `/localhome/local-rohing/orch_r108_code_parent_node5_5_20260915_attempt2/parent_transcripts/campaign_code_parent`; native root `/localhome/local-rohing/orch_r108_code_parent_node5_5_20260915_attempt2`; READY `c093167a69fc524c7b6b3283732fc303e90be8732e47368d1a109076b6dbc48d`, cycle receipt `7d6d237110d3d3b120fcba9a069da53750d426ec9c8ed903ce985df94c3229ad`. Raw stays node-local.
+- Request/disagreement: compare actual mid-solution departures/returns and effort allocation, not headings or length; no success claim from changed wording. Share questions/observations, not answers or held scores.
+- TRAIN-only metadata snapshot `3389d4a555d912e3f3dea6d8ea31dfbcc06f65b131b803dfcc1ec82b5b1cddf7`. No optimizer/weight update; exchange publication is not proof any live parent consumed it.
+
+<!-- R110_CODE_NODE5_4_C001 -->
+### 2026-09-15T10:05:46.006141+00:00 — node5/4 CODE cycle 1
+- Parent did: 7 scheduled turns recorded; 7 accepted structured plans, 0 unusable/missing. Declared operations only (not semantic audit): {"UNDECLARED": 7}.
+- Child changed: text changed in 4/4 paired TRAIN continuations; semantic behavior/benefit UNREVIEWED. Missing interventions are not counted as parent triples.
+- Pointer for other half: `/localhome/local-rohing/orch_r108_code_parent_node5_4_20260915_attempt2/parent_transcripts/campaign_code_parent`; native root `/localhome/local-rohing/orch_r108_code_parent_node5_4_20260915_attempt2`; READY `37610a1ba0d4059009645ace0b45cefb45b25f83840269d86895b28efd6c07db`, cycle receipt `ae7e4aaca4f2179d5810a997a817282eba669dec37e29cf5833c0614f1eabfce`. Raw stays node-local.
+- Request/disagreement: compare actual mid-solution departures/returns and effort allocation, not headings or length; no success claim from changed wording. Share questions/observations, not answers or held scores.
+- TRAIN-only metadata snapshot `8b05fd4b7280cdbed7b06ce464835d91d09f93f411710c7bc1f66d4a12324798`. No optimizer/weight update; exchange publication is not proof any live parent consumed it.
+
+
+<!-- MAIN_GRID/node5_6/segment/C01 -->
+## [Main / Laplace] 2026-09-15T10:05:10.739845+00:00 — node5_6 segment cycle 1
+- Parent did (verified delivery, not intent): 32 spoken / 0 silent action interventions; metacognitive reply spoken=1, silent=0; actual Astra. Semantic intent UNASSESSED.
+- Child changed (observed only): executed ACTION differs from pre-intervention proposal 11 times; unchanged 21; invalid ACTION before/after=0/0. Metacognitive continuation completed; semantic revision/helpfulness UNASSESSED, no causal or weight-learning claim.
+- Other-half pointer: Fable node5 physical0–3, this shared exchange; no matched grid-cycle counterpart bound.
+- Request/disagreement: please review source-linked parent/child turns for functional effort allocation, persistence and control. Action changes alone do not establish learning; no substantive agreement/disagreement inferred.
+- Compact: `/data/home/rohing/dream-state-orch/research_notes/analysis/orch_r109_grid_20260915_attempt1/EXCHANGE/node5_6_segment_01.json` SHA256 `9f5625a01fc4ddb9b888b5c8bbfc97a5c57b3f00069f5c18ced408282a11c50c`. Raw on owning node only; TRAIN-only telemetry, never live prompt feedback.
+
+
+<!-- MAIN_GRID/node3_5/episode/C06 -->
+## [Main / Laplace] 2026-09-15T10:07:06.776240+00:00 — node3_5 episode cycle 6
+- Parent did (verified delivery, not intent): 2 spoken / 0 silent action interventions; metacognitive reply spoken=1, silent=0; actual Astra. Semantic intent UNASSESSED.
+- Child changed (observed only): executed ACTION differs from pre-intervention proposal 0 times; unchanged 2; invalid ACTION before/after=0/0. Metacognitive continuation completed; semantic revision/helpfulness UNASSESSED, no causal or weight-learning claim.
+- Other-half pointer: Fable node5 physical0–3, this shared exchange; no matched grid-cycle counterpart bound.
+- Request/disagreement: please review source-linked parent/child turns for functional effort allocation, persistence and control. Action changes alone do not establish learning; no substantive agreement/disagreement inferred.
+- Compact: `/data/home/rohing/dream-state-orch/research_notes/analysis/orch_r109_grid_20260915_attempt1/EXCHANGE/node3_5_episode_06.json` SHA256 `d45cf6e97a378ec2c87a30ff5bda2116f57d79fdc20984b5ca643568fd393c36`. Raw on owning node only; TRAIN-only telemetry, never live prompt feedback.
+
+
+<!-- MAIN_GRID/node5_7/episode/C04 -->
+## [Main / Laplace] 2026-09-15T10:06:35.208866+00:00 — node5_7 episode cycle 4
+- Parent did (verified delivery, not intent): 2 spoken / 0 silent action interventions; metacognitive reply spoken=1, silent=0; actual Astra. Semantic intent UNASSESSED.
+- Child changed (observed only): executed ACTION differs from pre-intervention proposal 0 times; unchanged 2; invalid ACTION before/after=0/0. Metacognitive continuation completed; semantic revision/helpfulness UNASSESSED, no causal or weight-learning claim.
+- Other-half pointer: Fable node5 physical0–3, this shared exchange; no matched grid-cycle counterpart bound.
+- Request/disagreement: please review source-linked parent/child turns for functional effort allocation, persistence and control. Action changes alone do not establish learning; no substantive agreement/disagreement inferred.
+- Compact: `/data/home/rohing/dream-state-orch/research_notes/analysis/orch_r109_grid_20260915_attempt1/EXCHANGE/node5_7_episode_04.json` SHA256 `68103b798b0ff733544fabc9887cc75546d2da13e8290b924f69872182fcbc67`. Raw on owning node only; TRAIN-only telemetry, never live prompt feedback.
+
+<!-- R110_CODE_NODE5_5_C002 -->
+### 2026-09-15T10:12:53.353120+00:00 — node5/5 CODE cycle 2
+- Parent did: 5 scheduled turns recorded; 5 accepted structured plans, 0 unusable/missing. Declared operations only (not semantic audit): {"UNDECLARED": 5}.
+- Child changed: text changed in 2/2 paired TRAIN continuations; semantic behavior/benefit UNREVIEWED. Missing interventions are not counted as parent triples.
+- Pointer for other half: `/localhome/local-rohing/orch_r108_code_parent_node5_5_20260915_attempt2/parent_transcripts/campaign_code_parent`; native root `/localhome/local-rohing/orch_r108_code_parent_node5_5_20260915_attempt2`; READY `c093167a69fc524c7b6b3283732fc303e90be8732e47368d1a109076b6dbc48d`, cycle receipt `c40fdf881a2b33658f270f1e2dcb5a8c3f9325c0a02a352a4f6a96c2e1a47ff6`. Raw stays node-local.
+- Request/disagreement: compare actual mid-solution departures/returns and effort allocation, not headings or length; no success claim from changed wording. Share questions/observations, not answers or held scores.
+- TRAIN-only metadata snapshot `438acb74c1ede096c44415390d5d89ecb6cb59b4a00a877ec017d0750370b862`. No optimizer/weight update; exchange publication is not proof any live parent consumed it.

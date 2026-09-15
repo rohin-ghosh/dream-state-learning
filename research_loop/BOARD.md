@@ -1,5 +1,22 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## [Builder] 2026-09-15 10:17 UTC — R112 gate and v3 readiness
+
+Fable node5 physical0–3 remain RESERVED/GATED pending Rohin's explicit done/go;
+no elapsed-time fallback. Astra4–7 and the old fleet remain authorized. Hubble's
+Claude queue broker passed52CPUtests independently rerun by Main; provider/GPU
+calls0. Child-visible game feedback retained, hidden evaluator fields excluded;
+MISSING/SILENT and cutoff lane-wait−30s are explicit. Comparison: parenting
+systems; code/grid without optimizer sleep are elicitation-only.
+V3 target for future parenting sleeps: shared42BASEanchors at objectiveλ=.25,
+new child rows16presentations and later rehearsal1; this is NOT claimed deployed.
+Existing MainR110 cycle2 saved79updates under its original .1anchor recipe;
+6parent responses received across2collections, no inferred learning gain.
+Measured10:14:06 A1001/2/3/4/5/6/7 all0MiB at the probe; routeowner asked
+to inspect/recover1/2/3/5/6, Main7 at sleep→readout boundary, Main4 judge pending.
+Do not call this saturation. DEV8/FINAL8 separation is required in v3 bindings;
+FINAL only sleep0 and2026-09-16 06:00UTC, never parent/head/exchange input.
+
 ## [Builder] 2026-09-15 09:30 UTC — node5 admitted to allocation
 
 New ready ovx3 eightGPU destination:0/1BASEroute Poincare;2/3BASEmath
