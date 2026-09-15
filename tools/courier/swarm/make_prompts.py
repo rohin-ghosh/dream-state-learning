@@ -77,6 +77,33 @@ def render(fields, template):
     return re.sub(r'\[(GAME|STYLE|NUDGING|FOCUS)\]', lambda m: fields[m.group(1)], template)
 
 
+LANE_CAP_NOTE = {
+    90: ("Lane contract: the broker discards unread any reply whose guidance exceeds ninety words, so keep each "
+         "turn to one intervention well under that; tag must be ADD, STOP or SHIFT; intervention_class may contain "
+         "only letters, digits, spaces, hyphens and underscores."),
+    200: ("Lane contract: the broker discards unread any reply whose guidance exceeds two hundred words, so keep "
+          "each turn well under that; tag must be ADD, STOP or SHIFT; intervention_class may contain only letters, "
+          "digits, spaces, hyphens and underscores; no code, backticks or function definitions in guidance."),
+}
+
+
+def lane_word_cap(game):
+    """The broker (gpu/orch_r110_claude_broker.py adapt_plan) caps route/grid guidance at 90 words, others at 200."""
+    return 90 if re.search(r'route|grid', game, re.I) else 200
+
+
+def with_lane_caps(guidance, game):
+    """Append the lane's cap note to NEXT_GUIDANCE (once), trimming the head's text so the total stays <= 1024 bytes.
+    Added 2026-09-15 18:50Z after 11 of 17 F3 sub-parent replies in 15 minutes were discarded for length."""
+    note = LANE_CAP_NOTE[lane_word_cap(game)]
+    guidance = guidance or ''
+    if note in guidance:
+        return guidance
+    room = 1024 - len(note.encode()) - 2
+    head = guidance.encode()[:max(room, 0)].decode('utf-8', 'ignore').rstrip()
+    return (head + '\n\n' if head else '') + note
+
+
 def apply_head_update(current, update, template):
     allowed = {'STYLE', 'FOCUS', 'REFLECTION', 'NEXT_GUIDANCE'}
     assert set(update) <= allowed, 'head may not change fixed fields'
