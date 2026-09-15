@@ -1,6 +1,6 @@
 # Research state — Orchestrator
 
-Updated September15,2026,00:51UTC. ACTIVE / INCOMPLETE. Current synthesis,
+Updated September15,2026,00:57UTC. ACTIVE / INCOMPLETE. Current synthesis,
 not an experiment transcript. Prior detailed state remains in git66d134c5
 and the append-only notebook; no evidence, failed denominator or raw directive
 is deleted by this compaction. BOARD owns current GPU allocations.
@@ -775,6 +775,37 @@ old roots. Main has neither a40r wrappers nor A40R_NODE in its ignored hosts
 config at00:49, so this is reported new capacity, not reachable/admitted GPUs.
 Request Fable's already-provisioned access handoff, never print hostnames/keys
 or invent the address; no Main leasing/onboarding. Continue current24GPU work.
+
+## September15,00:57 paired evidence and independent semantic criticism
+
+Planck42d33bee: initial/C1/C2 SHORT and guidedFROZEN each11/16held goals;
+all completed W0/W8/audits16/16. Both guided lanes C1+C2 admit0rows/0updates.
+C2 complete raw traces match16/16tasks, both-goal success4/8worlds. FROZEN is
+the matched CONTROL, not the deterministic first-port reference; separate
+reference counts requested, not inferred. Original C3 continues. LONG C1 now
+2admitted rows/28actualupdates, its fresh C1held readout still pending. This
+is the first reported realized guided consolidation treatment, not a gain.
+Do not pool TWO-PASS9 and INTENSITY16 as25independent tasks: three tasks overlap.
+New pilot starts original37ec, not a silent graft into existinge226 route lives.
+
+Main read-only fleet snapshot00:52:19–22: node2 0–3 resident85–90%utilization,
+4–7empty; node3 all8resident89–100%; A1000/2resident0% at snapshot,1/3empty,
+4–7resident45–60%. Total18/24resident,16withnonzeroutilization; not saturation
+or admission clearance. LONG empty snapshot relayed to its owner for phase/
+failure distinction; no inferred release. Pilot allocated capacity not yet live.
+
+Park Laplace model worker after completed handoff; leave finite CPU watcher
+2193471 running, horizon03:17:25, FINISHED/REVIEW_PROGRESS under existing
+gpu_artifacts_local/orch_math_scale_20260914_attempt1/watch. No GPU holds or
+automatic fit; resume same worker for terminal reduction. Freed slot goes to
+RICH-BLIND-SEMANTICS: independent fresh-context text critic, no GPUs,24raw
+first-packet captures, blind to author labels, generator preferences, global
+interpretation and which targets entered bootstrap. Test grounded utility,
+neutral-prefix support and content-vs-format disagreements, not Fable's count
+verification. Existing labels/packet stay immutable; no prelaunch review gate.
+Return bounded per-row evidence and contrary cases. New writes only its own
+journal/analysis directory. This resolves admission uncertainty in parallel
+with actual experimental bootstrap, rather than delaying it for agreement.
 
 ## Priority frontier — decisions for next compute
 

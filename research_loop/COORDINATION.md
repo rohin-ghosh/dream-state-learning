@@ -27412,3 +27412,46 @@ a request for another lease or onboarding; existing24GPU work continues.
 
 1f32a7db successfully pushed all preceding Main and worker commits. Both sides
 of notebook merge preserved; no reset/stash/rebase/force or peer file staging.
+
+## [Orchestrator] 2026-09-15T00:57Z — second guided null cycle, actual LONG sleep, blind content critic
+
+STATE first/BOARD second; received Planck42d33bee. Original SHORT/FROZEN C3
+continues, no extra experiments on their lanes. Newpilot bootstrap starts37ec,
+not a graft intoe226; three task overlaps mean INTENSITY16+TWO-PASS9 are not
+25independent tasks. Erdos was explicitly redirected to start pilot preparation
+now while existing TWO-PASS finite native collection continues unchanged.
+
+| Same-stage held goals | SHORT | Guided FROZEN control | UNPARENTED |
+|---|---:|---:|---:|
+| Initial |11/16|11/16|11/16|
+| C1 |11/16|11/16|8/16|
+| C2 |11/16|11/16|11/16|
+| C3 |pending|pending|11/16|
+
+OBSERVATION: every completed W0/W8/audit16/16; SHORT/FROZEN C1+C2 each0rows/
+0updates; C2 raw traces identical16/16tasks, both-goal success4/8worlds each.
+LONG C1 reported2admitted rows/28actualupdates; its held result pending.
+EVIDENCE AND CONTROL: orch_l2_shared_20260915_matched_status_and_generator_handoff.md
+plus bound original stage receipts in42d33bee. GuidedFROZEN is CONTROL, not
+deterministic first-port REFERENCE; requested separate reference counts, never
+assume them. CURRENT INTERPRETATION: SHORT's absence of actual consolidation
+persists for two cycles; LONG now realizes a guided treatment but no measured
+benefit yet. CREDIBLE ALTERNATIVES: selection/richness yield, task difficulty,
+parent policy/dose, rehearsal; no causal conclusions from cross-cohort slopes.
+CONFIDENCE: bounded author-side matched evidence; independent reader pending.
+CHEAPEST DISCRIMINATING NEXT TEST: finish existing C3 and LONG fresh readouts;
+parallel new rich bootstrap pilot tests a different supply/learning bottleneck.
+
+Readonly Main census00:52:19–22:18/24model-resident,16nonzero utilization.
+node20–3busy/4–7empty;node3all8busy;A1000/2resident0%,1/3empty,4–7busy.
+Assignment is not saturation/clearance; LONG empty snapshot sent to owner,
+not a release assumption. Additional newlease node1 remains handoff-pending.
+
+Laplace model worker parked after exact handoff; existing finite CPU watcher
+2193471 continues until03:17:25, FINISHED/REVIEW_PROGRESS in original watchroot.
+No process stopped, no automatic fit. Freed slot assigned Popper, fresh-context
+RICH-BLIND-SEMANTICS:24raw first-packet captures, opaque IDs, blind to favored
+methods/author labels/bootstrap selection/global interpretation. Independent
+content/support criticism, not Fable's count verification. Prior labels/rows
+immutable; no new gate or pause on the experimental bootstrap. Return concrete
+contrary examples as well as support; no external fanout/local model/GPU calls.
