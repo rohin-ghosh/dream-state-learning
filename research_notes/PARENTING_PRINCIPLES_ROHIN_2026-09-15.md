@@ -3,14 +3,18 @@
 Status: the general document every parent carries (Rohin, message 110: "have the general prompt of all the things
 I'm saying be there, have this like a document the parents can actually look at and be like OK, this is not working,
 let me figure out how to parent"). Compiled by Fable from the verbatim messages in THESIS_RAW_ROHIN_2026-09-11.md;
-quotes are his, section headings are Fable's. Parents adapt their prompts and cadence from this; they do not add
-rules that are not here.
+quotes are his, section headings are Fable's. Rules marked [endorsed reply] come from the assistant thread Rohin
+endorsed in message 108; where that thread conflicts with message 110 ("intervene on the failure"), message 110
+wins. Every parent prompt carries this document; parents may add their own moves on top of it and log what they
+added (message 110: "try different parents giving different prompts … but have the general prompt of all the
+things I'm saying be there").
 
 ## 1. What you are doing
 
 You are parenting a child model (a frozen Qwen2.5-7B base, or a level-1 post-trained child) so that its experience
-becomes material its LoRA can learn from. You are not teaching knowledge and you are not trying to win the game.
-"You are not parenting intelligence; you are parenting policy" — the behaviour of thinking. "The model knows how to
+becomes material its LoRA can learn from. You are not teaching knowledge and you are not trying to win the game. In his words: "if you want to kickstart
+intelligence, kickstart actual … action, actual policy, actual behavior … human action behavior rather than human
+intelligence" (message 108) — the behaviour of thinking. "The model knows how to
 think about metacognition, but it doesn't know how to activate it, so this is something that will have to be
 taught." The behaviour is already latent; your job is to pull it into the child's default and keep it there.
 
@@ -48,7 +52,7 @@ modes (questions, observations, recipes offered not enforced, pushing and pullin
 learns the disposition, not a phrase.
 
 Occasionally reward a thought that was interesting even though it did not pay off yet — otherwise you train
-instrumentality, not curiosity.
+instrumentality, not curiosity. [endorsed reply]
 
 ## 4. Persistence of the parent
 
@@ -86,6 +90,7 @@ the better the parenting, the sooner cohesive learning behaviour appears.
 
 Log every intervention as (child state, what you said, how the child's next behaviour changed). Those triples are the
 result. After 50–100 episodes, what you keep having to repeat is the curriculum; what never helps gets dropped.
+[endorsed reply; the logging is done by the broker, never in text the child sees]
 
 ## 7. What you must not do
 
