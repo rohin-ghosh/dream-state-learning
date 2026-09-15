@@ -1,0 +1,200 @@
+{
+  "common_config_exists": false,
+  "http_broker": {
+    "handoff": {
+      "charges_unchanged": true,
+      "finished_unix": 1789471448.7506301,
+      "http_slots_sha256": "2c0e63311dac814044234c1fc48d4650aab4947f560620bbc79ccbbbd67d7a4d",
+      "identity": {
+        "boot_id": "6923d4d7-1372-4852-a65d-280a2a9bf831",
+        "command_sha256": "9f345f57c592e72695850b8b269e9ac9d5479e700fc227fcda16568f35ae48b4",
+        "pid": 879471,
+        "start_ticks": "157780067"
+      },
+      "native_untouched": true,
+      "new_evaluator_sha256": "d5d37b3b79b68c1f32747c0a73fd722f70d1448ea50e1a80cd00eb8e7223645f",
+      "new_source": "/tmp/orch_r111_astra_http_1124/source",
+      "old_source": "/tmp/orch_r111_astra_1113/source",
+      "owned_broker_exited": true,
+      "reason": "R118_four_bounded_direct_HTTP_slots_not_CLI_lock",
+      "request_boundary": {
+        "claims": 9,
+        "pending": []
+      }
+    },
+    "pid": 941768,
+    "source": "/tmp/orch_r111_astra_http_1124/source"
+  },
+  "lanes": [
+    {
+      "branch": "F1",
+      "checkpoints": 2,
+      "complete_cycles": 2,
+      "latest_adoption_candidate": {
+        "checkpoint": {
+          "optimizer_path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/cycle_0002/checkpoint/optimizer_rng.pt",
+          "optimizer_path_sha256": "133a6254cf74985e938d35897cc228aa928e800f91c3476800b44bcdb75f500a",
+          "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/cycle_0002/checkpoint/CHECKPOINT.json",
+          "path_sha256": "85af12741d3966e8648a34f69281d44b599e7abc52bea7f0c71e7001c477f833"
+        },
+        "not_a_stop_or_selected_rollback": true,
+        "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/SHARED_HISTORY_CANDIDATE_85af12741d3966e8.json",
+        "previously_trained_rows": 23,
+        "prior_metrics": {
+          "anchor_token_exposures": 6950,
+          "child_token_exposures": 26505,
+          "optimizer_steps": 382
+        },
+        "sha256": "d72c5b3915d936a1ddf0159cd93f6dc679d26286a37505c45b426b823d92ce09"
+      },
+      "latest_by_status": {
+        "COMPLETE": {
+          "actual_model": "claude-fable-5-1",
+          "admission_kind": null,
+          "error": null,
+          "finished_unix": 1789469752.275609,
+          "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000002_F1_C0001.response.json",
+          "provider_dispatched": true,
+          "sha256": "75c9d0ba655486286327dfb74aed749a614971c48e8bf5e45878451e97e2ae5d"
+        },
+        "MISSING": {
+          "actual_model": null,
+          "admission_kind": null,
+          "error": {
+            "code": "provider_exit_failure",
+            "type": "ValueError"
+          },
+          "finished_unix": 1789471544.8003376,
+          "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/parent_queue/000033_F1_C0003.response.json",
+          "provider_dispatched": true,
+          "sha256": "d796723ad4f0aa7f593b42deda8be678cd053afc21032c8c01a74d66864315de"
+        }
+      },
+      "native_alive": true,
+      "native_pid": 356208,
+      "parent_observed_counts": {
+        "COMPLETE": 1,
+        "MISSING": 32
+      },
+      "parent_requests": 34,
+      "parent_response_counts": {
+        "COMPLETE": 1,
+        "MISSING": 32
+      },
+      "physical": 0,
+      "plan_sha256": "5b619c1acb48caaafb9bd5acc9ccdbb4d546075ebc8599a21066d8829624c163",
+      "root": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1",
+      "shared_ready": {
+        "active": false,
+        "excluded_count": 16,
+        "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/SHARED_CLIENT_READY.json",
+        "sha256": "280a1181f3ec6facc7bc71704c63f5e2ef199f4b59d393f41def3c6b3a8575fe",
+        "successor_source": "/localhome/local-rohing/orch_r111_route_shared_source_20260915_v1",
+        "train_count": 16
+      },
+      "status": {
+        "cycle": 3,
+        "hard_end_unix": 1789596240.0,
+        "last_native": 163,
+        "last_parent_status": "MISSING",
+        "observed_unix": 1789471544.84032,
+        "phase": "presleep",
+        "pid": 356208,
+        "semantic_changes": null,
+        "sleeps": 2
+      },
+      "uuid": "GPU-f237c5b5-c2a3-b377-92ee-46cf2658db9a"
+    },
+    {
+      "branch": "A1",
+      "checkpoints": 1,
+      "complete_cycles": 1,
+      "http_slot_receipts": [
+        {
+          "cli_lock_used": false,
+          "helper_sha256": "2c0e63311dac814044234c1fc48d4650aab4947f560620bbc79ccbbbd67d7a4d",
+          "maximum_http_concurrency": 4,
+          "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_4_attempt1/parent_transcripts/000010_F1_C0002/HTTP_SLOT.json",
+          "provider_attempts": 0,
+          "provider_time_reserved_seconds": 20,
+          "sha256": "11ad5cd865bb8613e5b52d43e17a12fce5b99c77784773964378d30c0e641278",
+          "slot": 0,
+          "waited_seconds": 5.030632019042969e-05
+        }
+      ],
+      "latest_by_status": {
+        "COMPLETE": {
+          "actual_model": "openai/openai/gpt-6-astra",
+          "admission_kind": "R118_ASTRA_FOUR_HTTP_SLOTS",
+          "error": null,
+          "finished_unix": 1789471518.0125008,
+          "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_4_attempt1/parent_queue/000010_F1_C0002.response.json",
+          "provider_dispatched": true,
+          "sha256": "1ea4d25e8a78306848296cbeb2f0106bbf82a3f3fdee832777df50622a2f360e"
+        },
+        "MISSING": {
+          "actual_model": null,
+          "admission_kind": null,
+          "error": {
+            "code": "captured_failure_no_retry",
+            "type": "TimeoutError"
+          },
+          "finished_unix": 1789471074.5122416,
+          "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_4_attempt1/parent_queue/000009_F1_C0001.response.json",
+          "provider_dispatched": true,
+          "sha256": "14a1b5a1e6f4fd40273f93d2c447c594f821369135976676bec1f23f62307883"
+        },
+        "SILENT": {
+          "actual_model": "openai/openai/gpt-6-astra",
+          "admission_kind": null,
+          "error": null,
+          "finished_unix": 1789470704.959305,
+          "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_4_attempt1/parent_queue/000005_F1_C0001.response.json",
+          "provider_dispatched": true,
+          "sha256": "63a6f34410a9290f758e29d724d9d094190dc7176a4ea9c5a81428e00937a8c7"
+        }
+      },
+      "native_alive": true,
+      "native_pid": 459948,
+      "parent_observed_counts": {
+        "COMPLETE": 3,
+        "MISSING": 6,
+        "SILENT": 1
+      },
+      "parent_requests": 11,
+      "parent_response_counts": {
+        "COMPLETE": 3,
+        "MISSING": 6,
+        "SILENT": 1
+      },
+      "physical": 4,
+      "plan_sha256": "47b599908b5a07fcf7e7f90646551fccc80b5d5f4bdbb3f20f494493095ecaf4",
+      "root": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_4_attempt1",
+      "shared_ready": {
+        "active": false,
+        "excluded_count": 16,
+        "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_4_attempt1/SHARED_CLIENT_READY.json",
+        "sha256": "e98e68bf0149a4d734d8a7a9debfdbd1c8fae690bf193516234f698cfab5253a",
+        "successor_source": "/localhome/local-rohing/orch_r111_route_shared_source_20260915_v1",
+        "train_count": 16
+      },
+      "status": {
+        "cycle": 2,
+        "hard_end_unix": 1789596240.0,
+        "last_native": 101,
+        "last_parent_status": "COMPLETE",
+        "observed_unix": 1789471553.1925442,
+        "phase": "experience",
+        "pid": 459948,
+        "semantic_changes": null,
+        "sleeps": 1
+      },
+      "uuid": "GPU-94c9a79c-8b13-5679-ad35-8dda3fe5c94d"
+    }
+  ],
+  "observed_utc": "2026-09-15T11:26:01Z",
+  "raw_on_node_only": true,
+  "shared_initialized_by_this_worker": false,
+  "shared_rollout_performed": false,
+  "wrapper": "gpu/ovx3_ssh.sh"
+}

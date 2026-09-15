@@ -1,7 +1,6 @@
 """Astra counterpart over Hubble's exact queue/archive and common prompt contract."""
 
 import argparse
-import fcntl
 import json
 from pathlib import Path
 import time
@@ -9,6 +8,7 @@ from types import FunctionType
 
 from gpu import orch_r110_claude_broker as transport
 from gpu import orch_route_parent_campaign_providers as existing
+from gpu import orch_r118_astra_slots as slots
 
 
 MODEL = existing.STRONG
@@ -41,7 +41,7 @@ def authorize(config, launch, now):
 
 
 def evaluate(request, directory, deadline, *, config, launch, prompt_root, principles_path,
-             runner=None, memory=transport.backend.available_memory, lock_path=transport.backend.LOCK_PATH):
+             runner=None, memory=transport.backend.available_memory, http_slot_root=slots.ROOT):
     transport.validate_config(config)
     transport.require(config['branch'] == 'F1' and config['family'] == 'route', 'F1_only')
     authorize(config, launch, time.time())
@@ -55,8 +55,9 @@ def evaluate(request, directory, deadline, *, config, launch, prompt_root, princ
     try:
         transcript = transport.validate_request(request, config)
         cutoff = min(deadline, config['deadline_unix'], request['lane_deadline_unix']-30)
-        with Path(lock_path).open('a') as lock:
-            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        with slots.acquire(cutoff, root=http_slot_root) as slot_receipt:
+            transport.write(directory/'HTTP_SLOT.json', dict(slot_receipt,
+                helper_sha256=transport.sha(Path(slots.__file__))))
             transport.require(memory() >= config.get('min_available_bytes', transport.backend.MIN_AVAILABLE_BYTES),
                               'vm_memory_floor')
             system, prompt_bytes, binding = transport.build_system(transcript, config, prompt_root, principles_path)
@@ -77,7 +78,8 @@ def evaluate(request, directory, deadline, *, config, launch, prompt_root, princ
                       error=dict(type=type(error).__name__, code='captured_failure_no_retry'))
     result.update(id=request.get('id'), request_sha256=transport.digest(request),
                   payload_sha256=request.get('payload_sha256'), lane_deadline_unix=request.get('lane_deadline_unix'),
-                  provider_dispatched=dispatched, retry=False, finished_unix=time.time(), prompt_binding=binding)
+                  provider_dispatched=dispatched, retry=False, finished_unix=time.time(), prompt_binding=binding,
+                  admission_kind='R118_ASTRA_FOUR_HTTP_SLOTS')
     transport.write(directory/'RESULT.json', result)
     return result
 
