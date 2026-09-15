@@ -1,5 +1,37 @@
 # Research state — Orchestrator
 
+## Execution update — September 15, 2026, 05:03 UTC
+
+- Continual append is ACTUAL: matched1152 receipt installs corpusV7/3260,
+  SHA6f844241fdccc820d1e3b769c997e13ff03fb475ea6dbaef2e57cf30c0fc38cf,
+  optimizer retained/resetfalse. New317sampled rows =64+63+64+62+64,
+  beyond old76+473. Unsampled rows remain individually UNREVIEWED.
+  Native receipt INGEST_RECEIPTS/000001152.json SHA
+  9ef8c87091a00b2336ace701726772548413e3134ae05f49e781aab9c6747377.
+  At05:01:42 FULL1464/OFF1449; no held behaviour gain inferred.
+- Math764 masked fit COMPLETE05:01:26; FULL still training. Requested OFF
+  independent fresh-process readout now rather than holding A1001 for FULL.
+  Actual first held/default readout is not yet claimed.
+- Exhaustion outputs verified on node1all8/node2all8/node3 3–5. Node1 snapshot
+  04:56:39:148raw calls,139self-claimed >=2approaches,104lexical repetition flags;
+  892.92raw calls/hour includes rolling start. Semantic richness remains unreviewed.
+  Node3:76calls/22episodes,21self-claimed >=2,8repetition flags;957.87raw calls/hour.
+  Node2:191captures,95exhaustion-applicable+96sourceEVENT exposures;67claimed>=2,
+  one repetition flag. These different denominators are NOT qualified/fleet rates.
+- Rohin102: two sequential episodes per sleep, rehearsal retained; never batch
+  within a dependent life. Behaviour/learning slopes first, outcomes ancillary,
+  no deallocation based on GUIDED0/8. New math5/7 and canonical route schedules
+  are being implemented; no frequent-sleep native completion yet claimed.
+- Route1/2 explicitly released to bounded generation fillers while true no-LoRA
+  canonical source is prepared. Temporary23generation/5training/4parenting
+  destinations, below parenting floor; original21/5/6 restored upon handoff.
+  All allocations/bounds are posted before launch; not a32/32busy claim.
+- Route timing tools, math timing tables/recovery/strong-provider sources and
+  all-node exhaustion sources/compact receipts are pushed through63c63d17.
+  Main tests:99PASS+4subtests (readout/supply/generation),34PASS (parenting/tools).
+  Old raw archives remain node-local; new source prep does not block live fitting.
+
+
 ## Live correction — September 15, 2026, 04:52 UTC
 
 - Direct fleet census:28/32 resident,22/32 positive instantaneous utilization;

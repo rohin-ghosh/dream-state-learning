@@ -175,3 +175,24 @@ editing the live old math source. This proposal is not yet native deployed.
 Own-output replay/compile sources must be new TRAIN generations from pinned
 children supplied by Hubble, never held outputs/teacher/L2; no such compiler
 batch is claimed ingested or attribution-tested yet. No automatic promotion.
+
+## 2026-09-15T04:55Z — actual tested resume and parallel ingestion readiness
+
+At04:53:51Z guardian459143 was alive; FULL463010/463011 on2+6 each
+finished1152 at1789448029.862Z, OFF463012 on3 finished1111 at1789448030.918Z.
+Native files FULL/RANK{0,1}_LOSSES_000001024.jsonl and
+OFF/RANK0_LOSSES_000001024.jsonl contain actual optimizer updates, not loads.
+TESTED_RESUME_STARTED.json binds unchanged source80176fbe9effcaccf77c62d77706ba1ff33f5baaea591e554ebd86ea34709f5a.
+No current ABORT marker. Paired1024 recovery completed with117 exact observable
+replay comparisons; no tensor-level reconstruction claim. Math0/1 untouched.
+
+Read-only native CPU checks using this SAME tested source passed all four
+pending sampled packets63/64/62/64, including exactly-once replay identity,
+source/rows/exclusion/encoder hashes, historical eligibility and held exclusions.
+EXTRA_BATCH_TESTED_SOURCE_PASS.json on A100 records proposed3260 rows with
+original queued64. These additional253 rows are ready for atomic queue moves;
+actual ingestion remains a separate paired-boundary receipt. No native stop,
+source replacement, reset, raw VM transfer or additional model calls required.
+DEFAULT minimal-prompt DEV and pairedP64 add-on remain separate from historical
+promptedP64. Main has authorized the128-call add-on inside1760 total; preparation
+continues alongside running last-tested science, not as a training launch gate.
