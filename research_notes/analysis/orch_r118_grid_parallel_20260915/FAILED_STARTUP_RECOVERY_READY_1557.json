@@ -1,0 +1,138 @@
+{
+  "A4_pending": "Accepted C8 pending consolidation before any new TRAIN C9; no duplicate submission or parent replay",
+  "FINAL_window_utc": [
+    "2026-09-15T17:00:00Z",
+    "2026-09-15T17:20:00Z"
+  ],
+  "GPU_starts": 0,
+  "branches": {
+    "A4": {
+      "bind_command_prefix": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "/localhome/local-rohing/orch_r118_grid_failed_startup_source_20260915_v2/gpu/orch_r118_grid_failed_startup_run.py",
+        "bind",
+        "--prepared",
+        "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parallel_recovery_1548/OWNER_PREPARED.json",
+        "--prepared-sha256",
+        "dca888437c93259428190a870fa7b85744bf202afbd8f63f0e12a6d71d7edbe2"
+      ],
+      "bind_remaining_arguments": [
+        "--campaign",
+        "--campaign-sha256"
+      ],
+      "broker_binding": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parallel_recovery_1548/BROKER_BINDING.json",
+        "sha256": "5ebd441aef28cac019d7dda242d96331fc86a3b54105c9606e5a3768a8f7c488"
+      },
+      "handoff": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parallel_recovery_1548/HANDOFF.json",
+        "sha256": "e266be5efad3f1e52916107453e53aa94f4d13d2e1ebd36704c779ddf9b7eab6"
+      },
+      "prepared": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parallel_recovery_1548/OWNER_PREPARED.json",
+        "sha256": "dca888437c93259428190a870fa7b85744bf202afbd8f63f0e12a6d71d7edbe2"
+      },
+      "timer_identity": {
+        "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+        "command_sha256": "fe5d4989923ec51862155a899930de2dd6fb4dd11ec927e0ad66bf53b9687031",
+        "pid": 2610801,
+        "ppid": 1,
+        "start_ticks": "2258339",
+        "state": "S",
+        "uid": 2524
+      }
+    },
+    "F4": {
+      "bind_command_prefix": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "/localhome/local-rohing/orch_r118_grid_failed_startup_source_20260915_v2/gpu/orch_r118_grid_failed_startup_run.py",
+        "bind",
+        "--prepared",
+        "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parallel_recovery_1548/OWNER_PREPARED.json",
+        "--prepared-sha256",
+        "75cb9fa01faae324a0da2e4f747aeaba1e510145084aef5d10b2d1ef143b0855"
+      ],
+      "bind_remaining_arguments": [
+        "--campaign",
+        "--campaign-sha256"
+      ],
+      "broker_binding": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parallel_recovery_1548/BROKER_BINDING.json",
+        "sha256": "cab4fe003cb38b5caa8e1757348037bbf30b125482df0d14dabd38db503bd5c8"
+      },
+      "handoff": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parallel_recovery_1548/HANDOFF.json",
+        "sha256": "ffe8dfcf4e6cc1d159925e5a10afcd08d5a7cce44f6e5024d5e0275240ad9b87"
+      },
+      "prepared": {
+        "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parallel_recovery_1548/OWNER_PREPARED.json",
+        "sha256": "75cb9fa01faae324a0da2e4f747aeaba1e510145084aef5d10b2d1ef143b0855"
+      },
+      "timer_identity": {
+        "boot_id": "2c05ffec-1b4c-472f-9688-2a37543a6f4a",
+        "command_sha256": "70aad4dd9e4b27df78423560e2f0546177ad9486105a0689a392f35e98ddb1b8",
+        "pid": 2610920,
+        "ppid": 1,
+        "start_ticks": "2258425",
+        "state": "S",
+        "uid": 2524
+      }
+    }
+  },
+  "export": {
+    "path": "/localhome/local-rohing/orch_r118_grid_failed_startup_source_20260915_v2/PREPARED_EXPORT.json",
+    "sha256": "dd289c7a3f5b953e45a65f5ab006628c5bb845176caaf17e7f41acc5d405d71d"
+  },
+  "failed_session": "e834ff7869f9309d70cf46f682adcc522f3120c8ac293ed7065708a6f50da94b",
+  "failure_repair": "Sparse timer record has pid/start/boot only; compare those exactly and validate live UID independently. v1 source/evidence preserved.",
+  "git_mutations": 0,
+  "hard_end_utc": "2026-09-15T17:02:00Z",
+  "local_source_files": {
+    "gpu/orch_r118_grid_failed_startup_a4_broker.py": "94e1545a6eb03679b6fb0bb1b1c99a037cbd4c6a9dc7cf8142a7eaa6126ba40e",
+    "gpu/orch_r118_grid_failed_startup_run.py": "5663c96db2de0bff681be98684bba66d2e016d526f2dccca56043e03403fecf7",
+    "gpu/orch_r118_grid_failed_startup_stage.py": "5dc594d37396eca7bb0cf8d7e28e4b074611ec30050dfa9f8c09fa672b711f8d",
+    "tests/test_orch_r118_grid_failed_startup_run.py": "2caee88c40d4ee17d5936f3b4de9f1cd69965c889c1a7ed818fc92aa07c4fffa"
+  },
+  "native_source": "/localhome/local-rohing/orch_r118_grid_failed_startup_source_20260915_v2",
+  "optimizer_steps": 0,
+  "predecessor_FINAL_timers": {
+    "A4": 2610801,
+    "F4": 2610920
+  },
+  "preserved_failure": "/localhome/local-rohing/orch_r118_grid_failed_startup_source_20260915_v1/PREPARATION_FAILED.json",
+  "provider_calls": 0,
+  "ready": {
+    "path": "/localhome/local-rohing/orch_r118_grid_failed_startup_source_20260915_v2/RECOVERY_READY.json",
+    "sha256": "aaae95e7cf1558ddf66065dd50bd1fc3dea473ef41b5eb2f65d739a827352153"
+  },
+  "recorded_utc": "2026-09-15T15:57:33.978624+00:00",
+  "runtime_timer_retirement": "Only Main-dispatched guard, exact old timer pidfd+source/command/boot/start/UID checks, new timer identity established first; selector excluded",
+  "schema": "R118_GRID_FAILED_STARTUP_CPU_HANDOFF_V1",
+  "selector_access": false,
+  "signals": 0,
+  "source_files": {
+    "path": "/localhome/local-rohing/orch_r118_grid_failed_startup_source_20260915_v2/RECOVERY_SOURCE_FILES.json",
+    "sha256": "6e98d40e065108a6e74c0d1b633c0921e8eea919ebbdc7567c2c1f1195a90a6e"
+  },
+  "status": "CPU_PREPARED_AWAITING_NEW_MAIN_CAMPAIGN_REFERENCE",
+  "terminal": "R118_GRID_PARALLEL_RECOVERY_V1_TERMINAL.json",
+  "tests": {
+    "local_passed": 38,
+    "native_passed": 31
+  },
+  "timer_retirement_during_preparation": false,
+  "train_end_utc": "2026-09-15T16:55:00Z",
+  "unchanged_checkpoint": "43ce68acabb18f661ff929600239eb0a632981da841dd1182f886a85df78a02d",
+  "unchanged_ledger": {
+    "A4": {
+      "NATIVE": 567,
+      "PARENT": 40
+    },
+    "F4": {
+      "NATIVE": 565,
+      "PARENT": 40
+    }
+  }
+}

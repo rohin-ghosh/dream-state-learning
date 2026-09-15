@@ -35,6 +35,10 @@ def read(path):
     return json.loads(Path(path).read_text())
 
 
+def task_sha256(task):
+    return hashlib.sha256(json.dumps(task, sort_keys=True).encode()).hexdigest()
+
+
 def write_new(path, value):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -180,7 +184,7 @@ def group(plan_path, cycle):
         cohort = checked(feasibility["cohort"])
         store = run.source_store(Path(plan["canonical_root"]), cohort)
         records = run_episodes(cohort["held"][cycle], run.shared_run.shared.tasks, run.guided.episode,
-            generate, store, feasibility["task_source"][cycle - 1]["task_hashes"], run.digest,
+            generate, store, feasibility["task_source"][cycle - 1]["task_hashes"], task_sha256,
             on_record=lambda index, record: write_new(output / f"EPISODE_{index:02d}.json", record))
         loaded.verify_unchanged()
         write_new(output / "COMPLETE.json", dict(status="COMPLETE", cycle=cycle, episodes=len(records),

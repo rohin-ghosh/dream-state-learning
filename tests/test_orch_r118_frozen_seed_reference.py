@@ -1,3 +1,4 @@
+import hashlib
 import json
 from pathlib import Path
 import tempfile
@@ -56,6 +57,13 @@ class FrozenSeedReferenceTest(unittest.TestCase):
         self.assertEqual(prepared["initial"]["state_sha256"], "fixed_initial")
         self.assertEqual(len(feasibility["task_source"]), 6)
         self.assertFalse(Path(self.plan["output_root"]).exists())
+
+    def test_task_hash_matches_feasibility_json_encoding(self):
+        task = dict(node="fixture", events=["one", "two"])
+        expected = hashlib.sha256(json.dumps(task, sort_keys=True).encode()).hexdigest()
+        compact = hashlib.sha256(json.dumps(task, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+        self.assertEqual(reference.task_sha256(task), expected)
+        self.assertNotEqual(reference.task_sha256(task), compact)
 
     def test_different_initial_child_rejected(self):
         self.plan["initial_state_sha256"] = "bare_base"

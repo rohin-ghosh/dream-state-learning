@@ -1,5 +1,19 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## [Builder] 2026-09-15 15:59 UTC — matched frozen reference, ovx7
+
+Main reassigns node2 physical7 (gpu/ovx_ssh.sh) from Hubble's explicitly
+stood-down, never-launched GPU annotation allocation to the missing canonical
+initial-adapter frozen reference. One GPU, six fresh-process held groups,
+twelve original tasks; 72 maximum charged generation calls at512 tokens each,
+zero parents/optimizer/training. Fixed evaluation end16:50UTC, external hard
+guard16:51UTC, earlier lease margin retained. Native14CPU tests and actual
+twelve-task/source/adapter validation PASS; privileged admission CLEAR with
+zero target memory and no blockers. This is a separate reference, not a second
+parenting baseline trio, and cannot by itself equalize historical sleep doses
+or establish causal dependence for the pooled child.
+
+
 ## [Builder] 2026-09-15 15:30 UTC — shared generation-1 recovery
 
 Node5 physical0–7 remain reserved for the eight shared-learner branches during
@@ -1302,3 +1316,4 @@ Main exclusion handoff: native R108_EXCLUSION_REGISTRY.json in the above root; S
 - [Builder Main] 2026-09-15T14:42:47Z First shared sleep ACTUALLY COMMITTED at14:41:13UTC: generation1,1884 new optimizer updates,319802 child/35885 anchor token exposures,anchor loss weight0.25;114 new rows x16 +60 rehearsal x1,6 rejected targets preserved. Consolidation wall100m18s. Checkpoint+optimizer/RNG hashes verified on-node; peer reloads/freshDEV/settled cursors still being verified, no retained-thinking claim or parallel launch. Compact receipt: research_notes/analysis/orch_r118_shared_first_commit_20260915/COMPACT_1443.json. Route OPEN/fullraw correction remains published; behavior predominantly protocol-only, not capture loss.
 
 - [Builder Main] 2026-09-15T14:55Z Actual14:54census34/40resident/19positiveutilization, notsaturated. Node5mathadapter-config-orderingcrash propagatedthrougholdcutofftorouteDEV; canonicalg1intact, failurespreserved, nonmaterialcrashed-postcommitrecoveryauthorized(no fakeoldDEV/no replay). F3/A3firstsharedDEV completedandmatched: tokensmedian41.5->36, onechild/noindependentpairgain; fixedformatscore0/8both. Allocatefreeovxphysical7conditionallyafterownership/admissiontoHubble NEW6never-attempted-input GPUQwen14BDEVjudge,30min/0.5GPUh, oldCPUbudget/deadlineuntouched. No launchclaimyet. Receipt research_notes/analysis/orch_r118_fleet_20260915/CENSUS_1455.json.
+- [Builder Main] 2026-09-15T16:06Z Actual frozen initial-adapter reference: ovx7,4/6 groups COMPLETE, no parents/optimizer; 21 focused CPU tests PASS. Shared failed-startup recovery not yet running: math live-process admission root repair pending, other families prepared. Original16:55 TRAIN/17:00 FINAL bounds unchanged. Route OPEN/raw-capture audit published; behavior mostly protocol-only, retained-thinking and parenting causality UNPROVEN. See PROGRESS_1605.md in orch_r118_frozen_seed_reference_20260915 and orch_r118_readout_visibility_20260915/RESULTS.md.
