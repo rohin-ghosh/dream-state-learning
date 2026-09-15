@@ -1,5 +1,24 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## R107 node3 refill allocation — 2026-09-15T07:19:58.909689+00:00
+
+Only physical4 UUIDGPU-f484c608-a2d4-0c26-dee1-a06cc5ae69e4/minor4
+and physical5 UUIDGPU-bc211959-642d-664b-3581-42a0dbe434e9/minor5.
+Physical3 belongs to Main's capability diagnostic;0/1/2/6/7 and node1 unchanged.
+4 is persistence-only;5 is persistence plus functional metacognitive control.
+No required branch/method/check counts, surprise, or template-based admission.
+256frozen TRAIN displays of8existing worlds/32replayed child events; no new
+independent worlds or teacher data. Original37ec/frozenQwen7B,16384output,
+32768context; original15:18:38.782722UTC hardend/72GPUh ceiling unchanged.
+Explicitadditional1536calls,768/slot; prior5584cap+1536=7120aggregateceiling.
+All prior3580consumed calls and fill12receipts preserved; no reset/carryover
+conversion. UnlaunchedR1062304proposal never allocated.19local/15nativeCPU
+and provenancePASS; strictphysicalUUID/minor/proc/CVD recheck before launch.
+Raw stays native; semantic diagnostics unreviewed, no fit or automatic admission.
+
+[Builder BOARD allocation] R107_NODE3_REFILL physical4/5 root=/localhome/local-rohing/orch_rich_hot_node3_20260915_r107_refill1536 source_sha256=7fd048ff2df6da5ab4285cef5f6afbebc2ed9467723fc25d3e4c895f569bf443 protocol_sha256=36d0d0e13ab3f01ff8ae158be020952d4c1196a972e7f8c8103e9b9f1f06b198 segment_sha256=47994c5082cab68163221a21403818e6ead8f7e66c9a26383376e6a735d37101 additional_calls=1536 aggregate_ceiling=7120 hard_end=2026-09-15T15:18:38.782722Z
+
+
 ## R107 node3 physical3 capability assignment — 2026-09-15
 
 Per latest user directive, node3 physical3 ONLY is assigned to Main's R107
