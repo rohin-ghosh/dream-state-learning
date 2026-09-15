@@ -1,5 +1,20 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## Replacement feed publisher launched — 2026-09-15 06:17 UTC
+
+CPU/provider controller3797981 started06:15:04.857901UTC; first64current-source
+rows are under review,2/128newcalls reserved (old96 preserved). Not yet accepted
+or ingested. Same37ec only,9unhinted/55steered explicitly labelled; noBASE,
+checkpoint,teacher orL2data. Native source reaches06:13:06 instead of retired
+04:48source. New08:00deadline/07:49dispatchcutoff unchanged. Allocation was
+published06:02; worker CPU/hashreceipt06:14:27 precedes dispatch. Main46targeted
+testsPASS. See `orch_continual_exhaustion_publish_20260915_segment1/READY_BEFORE_DISPATCH.json`
+and `LAUNCH.json` under research_notes/analysis. Receiver binding being prepared
+in parallel; a live controller is not an acceptance or learning claim.
+
+Node3physical1 apparent idle was a phase transition:06:13:30 fullresident,
+canonicalOFF C7sleep; no takeover. Preserve through C8readout/terminal/release.
+
 ## Actual exposure and new generator — 2026-09-15 06:11 UTC
 
 - New375 tranche first presented atupdate3460,06:06:47UTC, **28m31s after

@@ -1,0 +1,60 @@
+{
+  "aggregate_allocation_ceiling": 256,
+  "attempts": 1,
+  "batch_size": 64,
+  "borrowed_source_sha256": {
+    "gpu/orch_continual_batch_handoff.py": "308b266859f8816cbd93f34368a6631b8b313c4e7f382df5f0aee8e17863e6d8",
+    "gpu/orch_continual_batch_publish.py": "573caeabe3abec6cb99cc69f53b4ee55ec835d5e09966173cc54e1bc0a725c29",
+    "gpu/orch_continual_batch_remote_feed.py": "e1a0a335ecb5a3d2064a64e6817ccd6582ad810e474254d42f39d0d8f9778b05",
+    "organism_v6/orch_continual_batch.py": "1c2349d27cb4ab7eacd4e9d62519aacf45579be764fd65b1bd030eaccdc038be"
+  },
+  "causal_prompt_comparison": false,
+  "concurrency": 2,
+  "config_sha256": "a1de2cef562765e6e269a4670fd8288ef9b57d80a6ed1eb329ddbe61ffe613e1",
+  "deadline_utc": "2026-09-15T08:00:00Z",
+  "dispatch_cutoff_utc": "2026-09-15T07:49:00Z",
+  "first_capture_path": "research_notes/analysis/orch_continual_exhaustion_publish_20260915_segment1/FIRST_CAPTURE.json",
+  "first_capture_sha256": "e4006dd2584e60b2e1c6fb3b9acc9e1d674eefaf3f6628fa51cb2b595a5ecfae",
+  "gpu_calls": 0,
+  "inherited_seen": 5275,
+  "maximum_output_tokens": 8192,
+  "native_ready_sha256": "ac2b8fe9da9498747f5bc9799864962f291df89afcc36daa0e7279c3a144d94c",
+  "native_root": "/localhome/local-rohing/orch_continual_exhaustion_publish_20260915_segment1",
+  "new_reserved": 0,
+  "new_review_allocation": 128,
+  "old_reserved_preserved": 96,
+  "old_state_mutated": false,
+  "provider_calls": 0,
+  "publisher_registry_sha256": "9c290dddda5c4958f3dde8d1b0c09289dcf410a3b3abafdb78d57e84560a6431",
+  "raw_storage": "NODE_ONLY; bounded temporary12sample packet45505bytes in/tmp",
+  "registration_sha256": "cbff02500ee15ab55420371334257347b2cc4fb28b77f51cb67f0c3751a857f9",
+  "review_model": "openai/openai/gpt-6-astra",
+  "reviewed_batches_max": 64,
+  "sample_size": 12,
+  "schema": "ORCH_CONTINUAL_EXHAUSTION_PUBLISH_CPU_READY_V1",
+  "source_adapter_ready": "research_notes/analysis/orch_continual_exhaustion_feed_20260915_attempt1/READY_REGISTRATION.json",
+  "source_adapter_sha256": "14afaf648ddc594f6b4cb491bd89a62f8bcefa46f0d042c6b948b9613c1abf38",
+  "source_batching_rule": "MIXED_STEERING_SAME_37EC",
+  "source_files": [
+    {
+      "path": "gpu/orch_continual_exhaustion_publish.py",
+      "sha256": "4c7e53ea0ac06234be30dcee48c84f08cfe30f7fa0187e65a644d27eec3fc5e7"
+    },
+    {
+      "path": "tests/test_orch_continual_exhaustion_publish.py",
+      "sha256": "4253d4bcd95d16002f52d753f7b25e64fb198b09a7148beb460f20e41a302a8a"
+    }
+  ],
+  "source_states": "Current registry admits ONLY original37ec; no BASE/checkpoint/teacher/L2 labels substituted",
+  "status": "CPU_READY_BEFORE_PROVIDER_DISPATCH",
+  "teacher_pilot_paused": true,
+  "tests": {
+    "local_publisher_and_unchanged_tests": 42,
+    "local_pytest_not_installed": true,
+    "native_publisher_and_unchanged_tests": 28,
+    "source_adapter_and_unchanged_policy_Cicero_receipt": 40
+  },
+  "transport": "Existing verified NVIDIA Responses configuration; direct single HTTP attempt with payload-enforced output cap. Not uncapped old Codex CLI.",
+  "utc": "2026-09-15T06:14:27.283200+00:00",
+  "vm_runtime": "/tmp/orch_continual_exhaustion_publish_20260915_segment1"
+}

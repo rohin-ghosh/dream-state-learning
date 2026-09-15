@@ -1,5 +1,16 @@
 # Research state — Orchestrator
 
+## Fresh source and actual exposure — September 15, 2026, 06:17 UTC
+
+Replacementpublisher3797981 live since06:15:04, first64current37ec rows under
+two reserved reviews. New128/08:00bounded segment, original96reserved preserved;
+no accepted-current-source manifest or newsegmentingestion claimed yet.
+Newest375 from priorpublisher actually began FULL-supervised presentation at
+paired3460/06:06:47 (28m31afteringest); OFFsameinputs/newlabelsmasked.
+Premise-preserving node1physical3 firstreply06:09:18 verified; onecoremethod
+plusregroupvariant, not proven two independentmethods. L2twoepisode/rehearsal
+continues; R105futureL4reflection-onlydesign unchanged. Goal remains unproven.
+
 ## Actual cycles and exposure — September 15, 2026, 05:58 UTC
 
 32resident/28positive GPUs at05:56:34–35; actual19generation/7training/6parenting
