@@ -575,6 +575,7 @@ def parse_output(raw, family, task_id, *, branch=None, allowed_models=None):
     envelope = loads(raw)
     require(isinstance(envelope, dict) and envelope.get('type') == 'result'
         and not envelope.get('is_error') and envelope.get('subtype') in (None, 'success')
+        and envelope.get('stop_reason') != 'refusal'
         and type(envelope.get('num_turns')) is int and envelope['num_turns'] >= 1,
         'provider_error_or_turn_limit')
     models = envelope.get('modelUsage')

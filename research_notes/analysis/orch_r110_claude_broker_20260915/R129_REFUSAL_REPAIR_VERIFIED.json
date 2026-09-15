@@ -1,0 +1,36 @@
+{
+  "schema": "R129_REFUSAL_REPAIR_VERIFIED_V1",
+  "verified_at_utc": "2026-09-15T20:58:54Z",
+  "classification": "NON_MATERIAL_REFUSAL_ACCOUNTING_REPAIR",
+  "deployment": "NOT_DEPLOYED",
+  "source": {
+    "path": "gpu/orch_r110_claude_broker.py",
+    "sha256": "f3fc5b3fd49473f40e78c97294317859bfb0c086b270e05d37e2be3eae54a054"
+  },
+  "tests": {
+    "path": "tests/test_orch_r110_claude_broker.py",
+    "sha256": "db4bd96e6130b7978536c6a8b07db284b4e70ec74bed97a7aa76df428f8d4c7c",
+    "command": "python3 -m unittest tests.test_orch_r110_claude_broker -q",
+    "main_result": "115 tests PASS",
+    "worker_result": "115 tests PASS"
+  },
+  "invariants_verified": [
+    "Explicit refusal is rejected even with is_error=false and subtype=success",
+    "Model aliases and existing identity opt-in do not turn refusal into guidance",
+    "MISSING result retains raw stdout, no plan, one dispatch attempt",
+    "Prospective requested_parent_model configuration is rejected"
+  ],
+  "repair_provider_calls": 0,
+  "repair_gpu_calls": 0,
+  "repair_restarts": 0,
+  "refused_input_retries": 0,
+  "new_parent_model_activated": false,
+  "existing_live_sources_edited": false,
+  "historical_artifacts_preserved": true,
+  "limitations": [
+    "This source-only repair is not evidence of changed live delivery rates",
+    "Existing immutable F1 model-attribution configuration remains unchanged",
+    "Watcher reports head-parent cron disabled in origin commit a9b01b83; Main did not independently inspect cron",
+    "No learning benefit or current fleet occupancy is established"
+  ]
+}

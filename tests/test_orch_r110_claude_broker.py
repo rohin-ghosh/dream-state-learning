@@ -1066,6 +1066,62 @@ class ClaudeBrokerTests(unittest.TestCase):
         self.assertEqual(self.runner.call_args.args[2], self.request['lane_deadline_unix']-30)
         self.assertEqual(result['memory_admission']['provider_lock_scope'], 'branch')
 
+    def test_refusal_stop_reason_rejected_independently_of_error_and_model_alias(self):
+        usages = ({broker.MODEL: {}},
+            {'reported-model-alias': {'canonicalModel': broker.MODEL}})
+        for usage in usages:
+            for is_error in (False, True):
+                for reply in (self.reply, '[SILENT]'):
+                    with self.subTest(usage=usage, is_error=is_error, reply=reply):
+                        envelope = dict(self.envelope(reply), modelUsage=usage,
+                            is_error=is_error, stop_reason='refusal')
+                        with patch.object(broker, 'adapt_plan') as adapt:
+                            with self.assertRaisesRegex(ValueError, 'provider_error_or_turn_limit'):
+                                broker.parse_output(json.dumps(envelope), 'route', 'TRAIN_1')
+                            adapt.assert_not_called()
+        accepted = dict(self.envelope(), modelUsage=usages[1], stop_reason='end_turn')
+        self.assertEqual(broker.parse_output(json.dumps(accepted), 'route', 'TRAIN_1')['status'],
+            'COMPLETE')
+
+    def test_refusal_not_guidance_even_under_existing_f1_identity_opt_in(self):
+        for is_error in (False, True):
+            envelope = dict(self.opus_envelope(), is_error=is_error, stop_reason='refusal')
+            with self.subTest(is_error=is_error), patch.object(broker, 'adapt_plan') as adapt:
+                with self.assertRaisesRegex(ValueError, 'provider_error_or_turn_limit'):
+                    self.parse_opus(envelope)
+                adapt.assert_not_called()
+
+    def test_refusal_evaluation_missing_single_attempt_raw_preserved(self):
+        for usage in ({broker.MODEL: {}},
+                {'reported-model-alias': {'canonicalModel': broker.MODEL}}):
+            for is_error in (False, True):
+                raw = json.dumps(dict(self.envelope(), modelUsage=usage,
+                    is_error=is_error, stop_reason='refusal'))
+
+                def runner(argv, directory, cutoff, output_cap):
+                    (directory/'stdout.json').write_text(raw)
+                    (directory/'stderr.txt').write_text('')
+
+                self.runner.reset_mock()
+                self.runner.side_effect = runner
+                with self.subTest(usage=usage, is_error=is_error), patch.object(broker, 'adapt_plan') as adapt:
+                    result, directory = self.evaluate()
+                    self.assertEqual(result['status'], 'MISSING')
+                    self.assertIsNone(result['plan'])
+                    self.assertIsNone(result['parent_metadata'])
+                    self.assertEqual(result['error']['code'], 'provider_error_or_turn_limit')
+                    self.assertEqual((directory/'stdout.json').read_text(), raw)
+                    self.assertEqual(json.loads((directory/'DISPATCH.json').read_text())['attempts'], 1)
+                    self.runner.assert_called_once()
+                    adapt.assert_not_called()
+                    argv = self.runner.call_args.args[0]
+                    self.assertEqual(argv[argv.index('--model')+1], broker.MODEL)
+
+    def test_prospective_requested_model_configuration_removed(self):
+        self.config['requested_parent_model'] = 'claude-opus-5'
+        with self.assertRaisesRegex(ValueError, 'config_keys'):
+            broker.validate_config(self.config)
+
     def test_duplicate_or_nonfinite_json_rejected(self):
         for raw in ('{"a":1,"a":2}', '{"a":NaN}'):
             with self.subTest(raw=raw), self.assertRaises(ValueError):
