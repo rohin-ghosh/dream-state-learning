@@ -1,0 +1,499 @@
+{
+  "schema": "R118_L1_SATURATION_STATUS",
+  "observed_utc": "2026-09-15T10:54:51.849974+00:00",
+  "raw_output": false,
+  "action": "VERIFIED_EXISTING_BOUNDED_SUPERVISOR_CONTINUATION_NO_DUPLICATE_RESTART",
+  "new_manual_gpu_launches": 0,
+  "no_new_tests_or_gates": true,
+  "hard_deadline_unix": 1789491360,
+  "initial_gpu": {
+    "observed_utc": "2026-09-15T10:51:55.407904+00:00",
+    "gpu": [
+      {
+        "index": 0,
+        "memory_mib": 26519,
+        "utilization_percent": 97
+      },
+      {
+        "index": 1,
+        "memory_mib": 20811,
+        "utilization_percent": 97
+      },
+      {
+        "index": 2,
+        "memory_mib": 16975,
+        "utilization_percent": 60
+      },
+      {
+        "index": 3,
+        "memory_mib": 38583,
+        "utilization_percent": 0
+      },
+      {
+        "index": 4,
+        "memory_mib": 16097,
+        "utilization_percent": 87
+      },
+      {
+        "index": 5,
+        "memory_mib": 0,
+        "utilization_percent": 0
+      },
+      {
+        "index": 6,
+        "memory_mib": 0,
+        "utilization_percent": 0
+      }
+    ]
+  },
+  "confirmed_gpu": {
+    "observed_utc": "2026-09-15T10:54:13.971376+00:00",
+    "gpu": [
+      {
+        "index": 0,
+        "memory_mib": 15161,
+        "utilization_percent": 86
+      },
+      {
+        "index": 1,
+        "memory_mib": 15157,
+        "utilization_percent": 88
+      },
+      {
+        "index": 2,
+        "memory_mib": 15229,
+        "utilization_percent": 79
+      },
+      {
+        "index": 3,
+        "memory_mib": 15229,
+        "utilization_percent": 3
+      },
+      {
+        "index": 4,
+        "memory_mib": 16097,
+        "utilization_percent": 87
+      },
+      {
+        "index": 5,
+        "memory_mib": 15047,
+        "utilization_percent": 0
+      },
+      {
+        "index": 6,
+        "memory_mib": 22097,
+        "utilization_percent": 100
+      }
+    ]
+  },
+  "latest_original_heartbeat": {
+    "arms": {
+      "CONTROL": {
+        "pending": false,
+        "phase": "readout",
+        "processes": [
+          {
+            "alive": true,
+            "identity": {
+              "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+              "pid": 910533,
+              "start_ticks": "69795677",
+              "uid": 2524
+            },
+            "index": 3
+          }
+        ],
+        "resume": "/localhome/local-rohing/orch_r109_l1_20260915/fit/CONTROL/checkpoints/000010468",
+        "segment": 11,
+        "terminal": false
+      },
+      "FULL": {
+        "pending": false,
+        "phase": "readout",
+        "processes": [
+          {
+            "alive": true,
+            "identity": {
+              "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+              "pid": 913276,
+              "start_ticks": "69803363",
+              "uid": 2524
+            },
+            "index": 0
+          },
+          {
+            "alive": true,
+            "identity": {
+              "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+              "pid": 913285,
+              "start_ticks": "69803425",
+              "uid": 2524
+            },
+            "index": 1
+          },
+          {
+            "alive": true,
+            "identity": {
+              "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+              "pid": 913297,
+              "start_ticks": "69803485",
+              "uid": 2524
+            },
+            "index": 2
+          }
+        ],
+        "resume": "/localhome/local-rohing/orch_r109_l1_20260915/fit/FULL/checkpoints/000010852",
+        "segment": 14,
+        "terminal": false
+      }
+    },
+    "compare_only_matched_updates": true,
+    "hard_end_unix": 1789491360,
+    "independent_arms": true,
+    "maximum_total_segments_per_arm": 512,
+    "native_cutoff_unix": 1789491060,
+    "observed_unix": 1789469653.846694,
+    "source_sha256": "a220eb7616c4dd8aee83d8e6e594a2a3baed861612adad1efbef7faa2b58f7e0"
+  },
+  "completed_optimizer_updates": [
+    {
+      "arm": "CONTROL",
+      "rank_file": "RANK0_LOSSES.jsonl",
+      "phase": "readout",
+      "completed_segment_updates": 128,
+      "last_update": 10468,
+      "last_update_unix": 1789469487.2337089
+    },
+    {
+      "arm": "FULL",
+      "rank_file": "RANK0_LOSSES.jsonl",
+      "phase": "readout",
+      "completed_segment_updates": 128,
+      "last_update": 10852,
+      "last_update_unix": 1789469563.5286472
+    },
+    {
+      "arm": "FULL",
+      "rank_file": "RANK1_LOSSES.jsonl",
+      "phase": "readout",
+      "completed_segment_updates": 128,
+      "last_update": 10852,
+      "last_update_unix": 1789469563.5289593
+    },
+    {
+      "arm": "FULL",
+      "rank_file": "RANK2_LOSSES.jsonl",
+      "phase": "readout",
+      "completed_segment_updates": 128,
+      "last_update": 10852,
+      "last_update_unix": 1789469563.5292952
+    }
+  ],
+  "latest_original_readout_progress": [
+    {
+      "arm": "CONTROL",
+      "phase": "readout",
+      "segment": 11,
+      "checkpoint": "/localhome/local-rohing/orch_r109_l1_20260915/fit/CONTROL/checkpoints/000010468",
+      "pids": [
+        910533
+      ],
+      "readout_captures": 96,
+      "last_capture_mtime": 1789469631.549972,
+      "loaded": [
+        {
+          "file": "RANK0_LOADED.json",
+          "sha256": "3ab5dd629d51a152f58bd4ee1d140dd8995bcd2e5ed68e6a6572b308996da5c2",
+          "update": 10340,
+          "optimizer_restored": true,
+          "rng_restored": true,
+          "global_cursor_preserved": true
+        }
+      ]
+    },
+    {
+      "arm": "FULL",
+      "phase": "readout",
+      "segment": 14,
+      "checkpoint": "/localhome/local-rohing/orch_r109_l1_20260915/fit/FULL/checkpoints/000010852",
+      "pids": [
+        913276,
+        913285,
+        913297
+      ],
+      "readout_captures": 20,
+      "last_capture_mtime": 1789469654.7834861,
+      "loaded": [
+        {
+          "file": "RANK0_LOADED.json",
+          "sha256": "4a604fab5b4d790fe5627449c6959437066f786d5ff5e07b79cb34ff9b98b3e0",
+          "update": 10724,
+          "optimizer_restored": true,
+          "rng_restored": true,
+          "global_cursor_preserved": true
+        },
+        {
+          "file": "RANK1_LOADED.json",
+          "sha256": "b3fd97957be9fc2c8ad2b3299669e0d82487c4d24a0c6aaff9972b9e3d33856f",
+          "update": 10724,
+          "optimizer_restored": true,
+          "rng_restored": true,
+          "global_cursor_preserved": true
+        },
+        {
+          "file": "RANK2_LOADED.json",
+          "sha256": "ec300500bd29e3ca96fb27397e1d3863ae324571f0fd685f799b1d11d1b01446",
+          "update": 10724,
+          "optimizer_restored": true,
+          "rng_restored": true,
+          "global_cursor_preserved": true
+        }
+      ]
+    }
+  ],
+  "c1_continuity": {
+    "observed_unix": 1789469691.814243,
+    "arms": [
+      {
+        "arm": "FULL",
+        "index": 5,
+        "pid": 913446,
+        "phase": "train",
+        "resume": "/localhome/local-rohing/orch_r109_l1_20260915/experience_c1/fit/FULL/checkpoints/000010212",
+        "completed_updates": 16,
+        "last_update": 10228,
+        "last_update_unix": 1789469690.659582,
+        "loaded": {
+          "cohort_id": "R109_EXPERIENCE_C1",
+          "eligible_sha256": "89723bdcd062518f3a5d93550abc85492345c97ec1531dc50df06978912bd659",
+          "global_cursor_preserved": true,
+          "observed_unix": 1789469657.6106672,
+          "optimizer_restored": true,
+          "process": [
+            "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+            913446,
+            69804236
+          ],
+          "rng_restored": true,
+          "state_sha256": "8f0c3752e2c4b2de317f739519f6e9c701393ccb2c2d23eccb82db5af715f228",
+          "update": 10212,
+          "uuid": "GPU-0cc84073-37a0-4f7a-e555-11671425bd03"
+        },
+        "loaded_sha256": "1d725cca6bafdd42bba0217e13535baac3692f4bec870182429fb364129bddd9"
+      },
+      {
+        "arm": "CONTROL",
+        "index": 6,
+        "pid": 913294,
+        "phase": "train",
+        "resume": "/localhome/local-rohing/orch_r109_l1_20260915/experience_c1/fit/CONTROL/checkpoints/000010212",
+        "completed_updates": 19,
+        "last_update": 10231,
+        "last_update_unix": 1789469690.3380363,
+        "loaded": {
+          "cohort_id": "R109_EXPERIENCE_C1",
+          "eligible_sha256": "89723bdcd062518f3a5d93550abc85492345c97ec1531dc50df06978912bd659",
+          "global_cursor_preserved": true,
+          "observed_unix": 1789469651.1427557,
+          "optimizer_restored": true,
+          "process": [
+            "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+            913294,
+            69803463
+          ],
+          "rng_restored": true,
+          "state_sha256": "1582f91ac6be2236fb5fcbef7e0666fb9f2aeff0d7636ed11fe76b42caf6b2db",
+          "update": 10212,
+          "uuid": "GPU-a064bca2-bddc-73ad-faf1-a4fbcb49fecf"
+        },
+        "loaded_sha256": "5b0bc93e6a2e028ed123c389005521bda6d5a9f45722617b668a78b5b9f79da9"
+      }
+    ]
+  },
+  "c1_checkpoints": {
+    "FULL": {
+      "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_c1/fit/FULL/checkpoints/000010212",
+      "commit_sha256": "e72408982bd7483d318c536e915758ad181ae0137468a7b96661e0cae0ec158a",
+      "update": 10212,
+      "state_sha256": "8f0c3752e2c4b2de317f739519f6e9c701393ccb2c2d23eccb82db5af715f228",
+      "optimizer_sha256": "c4fc80667a19435723ee883301f5b054c5628d666cb416872a0c45a9de3c3c50",
+      "eligible_supervised_tokens": 14640
+    },
+    "CONTROL": {
+      "path": "/localhome/local-rohing/orch_r109_l1_20260915/experience_c1/fit/CONTROL/checkpoints/000010212",
+      "commit_sha256": "9dcbccc8b75ac61f6d58763fa6fc8ba5fb9c4774b446c3b9db57a3d99cbd7368",
+      "update": 10212,
+      "state_sha256": "1582f91ac6be2236fb5fcbef7e0666fb9f2aeff0d7636ed11fe76b42caf6b2db",
+      "optimizer_sha256": "49cdbdeee837ad60c88e9ea8afe1ab18f20167f0cfb674e59756cba2759f2aac",
+      "eligible_supervised_tokens": 0
+    }
+  },
+  "generation": {
+    "node1": {
+      "observed_unix": 1789469539.0162518,
+      "lanes": [
+        {
+          "index": 0,
+          "phase": "generation",
+          "alive": true,
+          "new_completed_calls": 847,
+          "cumulative_completed_calls": 4293,
+          "launch": {
+            "path": "/localhome/local-rohing/orch_r109_l1_20260915/generation_v3/LAUNCH_0.json",
+            "sha256": "f436ae38599ed59a9b76c07d0de2afae57f7b347813245e3fe95f31c692e0793",
+            "identity": {
+              "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+              "pid": 139537,
+              "start_ticks": "3622423",
+              "uid": 2524
+            }
+          },
+          "exit": null,
+          "failure": null
+        },
+        {
+          "index": 1,
+          "phase": "generation",
+          "alive": true,
+          "new_completed_calls": 906,
+          "cumulative_completed_calls": 2615,
+          "launch": {
+            "path": "/localhome/local-rohing/orch_r109_l1_20260915/generation_v3/LAUNCH_1.json",
+            "sha256": "fe03b4cc809f5b0a60cc64efc37cfba7e0956cf0129c2331297bf676ae1c830a",
+            "identity": {
+              "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+              "pid": 139642,
+              "start_ticks": "3623532",
+              "uid": 2524
+            }
+          },
+          "exit": null,
+          "failure": null
+        },
+        {
+          "index": 2,
+          "phase": "generation",
+          "alive": true,
+          "new_completed_calls": 726,
+          "cumulative_completed_calls": 2545,
+          "launch": {
+            "path": "/localhome/local-rohing/orch_r109_l1_20260915/generation_v3/LAUNCH_2.json",
+            "sha256": "76f381e5b5f8d85d032503e7fd1805aaafcada9367945615c8a643f15703ca86",
+            "identity": {
+              "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+              "pid": 139540,
+              "start_ticks": "3622457",
+              "uid": 2524
+            }
+          },
+          "exit": null,
+          "failure": null
+        },
+        {
+          "index": 3,
+          "phase": "generation",
+          "alive": true,
+          "new_completed_calls": 866,
+          "cumulative_completed_calls": 2187,
+          "launch": {
+            "path": "/localhome/local-rohing/orch_r109_l1_20260915/generation_v3/LAUNCH_3.json",
+            "sha256": "370cc98b2d5fa052376b415761f3660eb2bcf28e5bfa86ee370dfdca6e50b56c",
+            "identity": {
+              "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+              "pid": 139556,
+              "start_ticks": "3622740",
+              "uid": 2524
+            }
+          },
+          "exit": null,
+          "failure": null
+        },
+        {
+          "index": 4,
+          "phase": "generation",
+          "alive": true,
+          "new_completed_calls": 705,
+          "cumulative_completed_calls": 1866,
+          "launch": {
+            "path": "/localhome/local-rohing/orch_r109_l1_20260915/generation_v3/LAUNCH_4.json",
+            "sha256": "2a8ec2541c9170973687bd28aa320f3bee2c19225a38686b728308f0b1caa65d",
+            "identity": {
+              "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+              "pid": 139949,
+              "start_ticks": "3633170",
+              "uid": 2524
+            }
+          },
+          "exit": null,
+          "failure": null
+        },
+        {
+          "index": 5,
+          "phase": "generation",
+          "alive": true,
+          "new_completed_calls": 986,
+          "cumulative_completed_calls": 3915,
+          "launch": {
+            "path": "/localhome/local-rohing/orch_r109_l1_20260915/generation_v3/LAUNCH_5.json",
+            "sha256": "e27c59dd2189e7d9a4d6de4918c7dae83f08878e9fe466f96eda71f7413dc2ec",
+            "identity": {
+              "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+              "pid": 139513,
+              "start_ticks": "3622116",
+              "uid": 2524
+            }
+          },
+          "exit": null,
+          "failure": null
+        },
+        {
+          "index": 6,
+          "phase": "generation",
+          "alive": true,
+          "new_completed_calls": 727,
+          "cumulative_completed_calls": 2512,
+          "launch": {
+            "path": "/localhome/local-rohing/orch_r109_l1_20260915/generation_v3/LAUNCH_6.json",
+            "sha256": "8f96e734528b9153426941965b726fac15248e2167fa1b411bf155a9b53fb951",
+            "identity": {
+              "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+              "pid": 139628,
+              "start_ticks": "3623285",
+              "uid": 2524
+            }
+          },
+          "exit": null,
+          "failure": null
+        }
+      ]
+    },
+    "node2": {
+      "observed_unix": 1789469540.1679416,
+      "lanes": [
+        {
+          "index": 4,
+          "phase": "generation",
+          "alive": true,
+          "new_completed_calls": 877,
+          "cumulative_completed_calls": 3130,
+          "launch": {
+            "path": "/localhome/local-rohing/orch_r109_l1_20260915/generation_v3/LAUNCH_4.json",
+            "sha256": "8727b39b1f32b88b56d01a921c0691a9c81c863f11fd0fa672ee3e176d724236",
+            "identity": {
+              "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+              "pid": 869758,
+              "start_ticks": "69649086",
+              "uid": 2524
+            }
+          },
+          "exit": null,
+          "failure": null
+        }
+      ]
+    }
+  },
+  "handoff_ready_now": [],
+  "reason_no_handoff": "All eight assigned generation lanes remain active; none naturally ended. Temporary model reload gaps are not released slots.",
+  "outside_ownership_gpu7_untouched": true,
+  "alerts": []
+}
