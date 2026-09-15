@@ -42,3 +42,9 @@ def test_lifetime_bounds_do_not_roll_forward():
     assert 'native_deadline_unix=1789491600' in source
     assert 'hard_deadline_unix=1789491720' in source
     assert 'max_parent_calls=run.PARENT_CAP' in source
+
+
+def test_recovery_does_not_repeat_collection_or_sleep():
+    assert supervisor.remaining_phases(1, True) == ('readout',)
+    assert supervisor.remaining_phases(2, True) == ('collection', 'sleep', 'readout')
+    assert supervisor.remaining_phases(1, False) == ('collection', 'sleep', 'readout')

@@ -1100,3 +1100,12 @@ Main exclusion handoff: native R108_EXCLUSION_REGISTRY.json in the above root; S
 
 
 - [Builder] 2026-09-15T09:39:42.881262+00:00: node5 trust repaired; retain posted eight-BASE allocation (route0/1, math2/3, code4/5, grid6/7), long lives to17:02UTC. Measured fleet 34/40 resident/20/40 instantaneous computing, NOT saturated; compact `research_notes/analysis/orch_r110_guided_20260915_attempt1/FLEET_0939_COMPACT.json`. Main A1007 actual93 sleep updates after3Astra/8native cycle1, restoredFULL8932 optimizer/RNG; learning/readout unproven. Workers own empty-card launches/recovery; no Main acknowledgment gate.
+
+- 2026-09-15T09:40:22.798823+00:00 Cicero / node5ovx3physical4/5: newR110BASECODE twoarms,132CPU+16subtestsPASS and nativeCPUbasePASS, allocation/caps/source/READY in COORD. Freshprivilegedadmission now; othernode5slots notowned.
+
+- 2026-09-15T09:43:07.610744+00:00 Cicero / A1000: sameR110ownership/caps/wall, immutable resilient continuation READY 240cc4162208c7fca0b3b8af19c053aa234d3ec6e25bb342b8ee7dc8e86173e7;136CPU+16subtestsPASS; original6native/3parent charged included; freshadmission mandatory.
+
+- 2026-09-15T09:45:31.896385+00:00 Cicero node5ovx3physical4/5: attempt2sameallocation/caps/wall; zero-dispatchattempt1preserved.137CPU+16subtests/nativeCPUbasePASS; newprivilegednode5scannerbinding nowfreshadmission; noothernode5slots.
+
+
+- [Builder] 2026-09-15T09:49:36.883780+00:00: R111 node5 0–3 RESERVED Fable, retire own prior0/1 and cancel2/3; Astra code4/5/grid6/7 unchanged. Fable launch awaits Rohin promptapproval. A1007 metadata-only recovery approved after19local/17nativeCPU tests: preserve113updates/step9045 and resume freshreadout1, no repeat/no reset. REPAIR3bb9e71f6de288fbea0399475a798631b681e27f5e7b0fba30491f569a309881.

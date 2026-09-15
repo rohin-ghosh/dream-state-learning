@@ -15,3 +15,18 @@ def test_initial_and_next_sleep_lineage_no_reset(monkeypatch):
     assert run.input_seed(run.ROOT, 1, 'collection')['generation'] == 0
     assert run.input_seed(run.ROOT, 1, 'sleep')['generation'] == 0
     assert all(path == run.ROOT / 'INITIAL.json' for path in captured)
+
+
+def test_completion_retains_phase_and_training_clocks():
+    metrics = dict(started_unix=20, finished_unix=30, optimizer_updates=113)
+    result = run.completion_record(1, 'sleep', ['boot', 1, 2], 10, 40, {}, metrics)
+    assert result['started_unix'] == 10 and result['finished_unix'] == 40
+    assert result['training_started_unix'] == 20 and result['training_finished_unix'] == 30
+    assert result['optimizer_updates'] == 113 and result['status'] == 'COMPLETE'
+    assert metrics == dict(started_unix=20, finished_unix=30, optimizer_updates=113)
+
+
+def test_completion_rejects_protected_field_collision():
+    import pytest
+    with pytest.raises(ValueError, match='completion_metadata_collision'):
+        run.completion_record(1, 'sleep', [], 10, 40, {}, dict(status='FAILED'))

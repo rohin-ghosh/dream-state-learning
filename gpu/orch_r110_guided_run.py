@@ -47,7 +47,20 @@ def validate(root):
     policy.require(plan['sleep_seconds_per_cycle'] == 240 and plan['cycles'] == policy.CYCLES
         and plan['episodes_per_cycle'] == 2 and plan['no_L2_into_original_L1'] is True,
         'declared_schedule_and_lineage')
-    for name, expected in ready['source_files'].items():
+    source_files = ready['source_files']
+    repair_path = SOURCE_ROOT / 'REPAIR.json'
+    if repair_path.exists():
+        repair = read(repair_path)
+        policy.require(repair['schema'] == 'R110_COMPLETION_REPAIR_V2'
+            and repair['original_ready_sha256'] == sha(root / 'READY.json'), 'bound_completion_repair')
+        for name, expected in source_files.items():
+            relative = Path(name)
+            policy.require(not relative.is_absolute() and '..' not in relative.parts
+                and sha(root / 'source_v1' / relative) == expected, 'original_source_preserved')
+        source_files = repair['source_files']
+        policy.require(set(ready['source_files']) <= set(source_files)
+            and source_files['gpu/orch_r110_guided_run.py'] == sha(Path(__file__)), 'complete_repaired_source')
+    for name, expected in source_files.items():
         relative = Path(name)
         policy.require(not relative.is_absolute() and '..' not in relative.parts
             and sha(SOURCE_ROOT / relative) == expected, 'immutable_source_binding')
@@ -150,6 +163,17 @@ def capability_capture(task, condition, response, adapter_sha256):
     return capability.capture(task, 'ON' if condition == 'LORA_ON' else 'OFF', normalized,
         checkpoint_sha256=adapter_sha256, base_sha256=seed.BASE_SHA,
         lora_enabled=condition == 'LORA_ON')
+
+
+def completion_record(cycle, phase, process, started, finished, adapter, result):
+    details = dict(result)
+    for field in ('started_unix', 'finished_unix'):
+        if field in details:
+            details['training_' + field] = details.pop(field)
+    policy.require(not set(details).intersection(('status', 'cycle', 'phase', 'process', 'output_adapter')),
+        'completion_metadata_collision')
+    return dict(status='COMPLETE', cycle=cycle, phase=phase, process=process,
+        started_unix=started, finished_unix=finished, output_adapter=adapter, **details)
 
 
 def run(root, cycle, phase):
@@ -266,9 +290,8 @@ def run(root, cycle, phase):
             result.update(held_calls=len(held), capability_calls=len(panel), parent_calls=0,
                 fresh_process=True, own_context_carry=False, semantic_success_not_inferred=True)
         engine.verify_base()
-        write(output / 'COMPLETE.json', dict(status='COMPLETE', cycle=cycle, phase=phase,
-            process=loaded.process, started_unix=started, finished_unix=time.time(),
-            output_adapter=identity.document(), **result))
+        write(output / 'COMPLETE.json', completion_record(cycle, phase, loaded.process,
+            started, time.time(), identity.document(), result))
     except BaseException as error:
         partial = None
         if loaded is not None and phase == 'sleep' and loaded.optimizer is not None:

@@ -150,16 +150,21 @@ def wait_clear(root, cycle, phase, plan):
     raise TimeoutError('strict_admission_not_clear')
 
 
-def supervise(root):
+def remaining_phases(cycle, recovery):
+    return ('readout',) if recovery and cycle == 1 else ('collection', 'sleep', 'readout')
+
+
+def supervise(root, recovery=False):
     plan = run.validate(root)
     require(os.environ.get('CUDA_VISIBLE_DEVICES') == '', 'cpu_only_supervisor')
-    (root / 'SUPERVISOR_ONCE').mkdir()
+    status_root = root / 'recovery_v2' if recovery else root
+    (status_root / 'SUPERVISOR_ONCE').mkdir()
     try:
-        first_admission = wait_clear(root, 1, 'lifetime', plan)
+        first_admission = wait_clear(root, 1, 'recovery_v2' if recovery else 'lifetime', plan)
         for cycle in range(1, run.policy.CYCLES + 1):
             if time.time() >= plan['native_deadline_unix'] - 600:
                 break
-            for phase in ('collection', 'sleep', 'readout'):
+            for phase in remaining_phases(cycle, recovery):
                 run.validate(root)
                 if phase == 'sleep':
                     while not (root / 'ANCHORS.json').exists():
@@ -183,10 +188,16 @@ def supervise(root):
                 complete = root / f'cycle{cycle}' / phase / 'COMPLETE.json'
                 require(read(complete)['status'] == 'COMPLETE', 'native_completion_required')
                 write(root / f'DONE_{cycle}_{phase}.json', dict(complete_sha256=sha(complete), returncode=code))
-        write(root / 'TERMINAL.json', dict(status='COMPLETE', cycles=sum(1 for path in root.glob('DONE_*_readout.json')), finished_unix=time.time()))
+        terminal = dict(status='COMPLETE', cycles=sum(1 for path in root.glob('DONE_*_readout.json')), finished_unix=time.time())
+        write(status_root / 'TERMINAL.json', terminal)
+        if recovery:
+            write(root / 'TERMINAL.json', dict(terminal, recovery_v2=True))
     except BaseException as error:
-        write(root / 'TERMINAL.json', dict(status='FAILED', error_type=type(error).__name__,
-            error=str(error), finished_unix=time.time(), retry=False))
+        terminal = dict(status='FAILED', error_type=type(error).__name__,
+            error=str(error), finished_unix=time.time(), retry=False)
+        write(status_root / 'TERMINAL.json', terminal)
+        if recovery:
+            write(root / 'TERMINAL.json', dict(terminal, recovery_v2=True))
         raise
 
 
