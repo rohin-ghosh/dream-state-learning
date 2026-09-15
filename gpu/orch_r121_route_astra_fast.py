@@ -46,6 +46,17 @@ def evaluate(request, directory, deadline, **kwargs):
     return result
 
 
+def publish_config(store, config, temporary):
+    path=Path(temporary)/'CONFIG.json'
+    transport.write(path,config)
+    destination=Path(ROOT)/'parent_claude'/('CONFIG_R121_'+transport.digest(config)+'.json')
+    if store.exists(destination):
+        require(store.hash(destination)==transport.sha(path), 'existing_identical_config_only')
+    else:
+        store.copy(path,'NODE:'+str(destination))
+        require(store.hash(destination)==transport.sha(path), 'new_config_verified')
+
+
 def serve(args):
     require(os.environ.get('CUDA_VISIBLE_DEVICES')=='', 'CPU_only_provider')
     config=json.loads(args.config.read_text())
@@ -71,14 +82,10 @@ def serve(args):
         config_sha256=transport.sha(args.config),source_sha256=transport.sha(__file__),
         parent_effort='low',max_output_tokens=512,provider_timeout_seconds=20,
         attempts_per_request=1,old_claims_preserved=True,nonblocking_child=True)
-    transport.write(args.ready,started)
-    with tempfile.TemporaryDirectory(prefix='orch_r121_astra_config_') as temporary:
-        path=Path(temporary)/'CONFIG.json'
-        transport.write(path,config)
-        destination=Path(ROOT)/'parent_claude'/('CONFIG_R121_'+transport.digest(config)+'.json')
-        require(not store.exists(destination), 'new_prospective_config_namespace')
-        store.copy(path,'NODE:'+str(destination))
     try:
+        with tempfile.TemporaryDirectory(prefix='orch_r121_astra_config_') as temporary:
+            publish_config(store,config,temporary)
+        transport.write(args.ready,started)
         while time.time()<config['deadline_unix']:
             if store.exists(Path(ROOT)/'R121_INDEPENDENT_TERMINAL.json'):
                 break

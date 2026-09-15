@@ -1,7 +1,7 @@
 from pathlib import Path
 import tempfile
 import unittest
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 from gpu import orch_r121_route_astra_fast as fast
 
 
@@ -30,6 +30,26 @@ class FastTests(unittest.TestCase):
         self.assertGreaterEqual(result['elapsed_seconds'],0)
         evaluate.assert_called_once()
         self.assertFalse(result['retry'])
+
+    def test_existing_config_requires_identical_bytes_without_overwrite(self):
+        config={'example':'unchanged'}
+        with tempfile.TemporaryDirectory() as temporary:
+            path=Path(temporary)/'REFERENCE.json'
+            fast.transport.write(path,config)
+            store=Mock()
+            store.exists.return_value=True
+            store.hash.return_value=fast.transport.sha(path)
+            fast.publish_config(store,config,temporary)
+            store.copy.assert_not_called()
+
+    def test_changed_existing_config_rejected(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            store=Mock()
+            store.exists.return_value=True
+            store.hash.return_value='0'*64
+            with self.assertRaisesRegex(ValueError,'existing_identical'):
+                fast.publish_config(store,{'example':'changed'},temporary)
+            store.copy.assert_not_called()
 
 
 if __name__=='__main__': unittest.main()
