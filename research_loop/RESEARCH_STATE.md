@@ -1,6 +1,6 @@
 # Research state — Orchestrator
 
-Updated September15,2026,00:21UTC. ACTIVE / INCOMPLETE. Current synthesis,
+Updated September15,2026,00:47UTC. ACTIVE / INCOMPLETE. Current synthesis,
 not an experiment transcript. Prior detailed state remains in git66d134c5
 and the append-only notebook; no evidence, failed denominator or raw directive
 is deleted by this compaction. BOARD owns current GPU allocations.
@@ -648,6 +648,99 @@ promoted premise. Long/short route loops continue unchanged through repairs;
 terse route skills can be developmental content at L1 or L2, not proof of H2.
 No new L2family implicit in a rename; use declared scopes or prospectively
 designate genuine family structure under Rohin79's delegated authority.
+
+## September15,00:34 current evidence
+
+INTENSITY all6 actors actually READY00:26:18–19, mounted37ec. RAW85 revision
+preceded any actor calls: old6initializing processes stopped by exact identity
+at0READY/0calls, release6/6,0.1104assignedGPUh preserved. Native engine768 cap
+required an owned generation override; old engine/base unchanged. New11CPUtests.
+At00:27:27,37persisted calls; first4/shard24rawcalls archived. First2questions
+control/light2/2numeric oracle, dense0/2final-format despite correct numerical
+conclusions. First source tokens167/183/208/212/347/346 byphysical0–5 under
+512/512/1536/1536/1536/1536 ceilings. Partial snapshot, no admitted-yield or
+campaign claim. Irrelevant damage branches are early contrary examples;
+explicit counterfactuals must not automatically be mislabeled asserted facts.
+
+L2 cycle1 author results: SHORT11/16held goals and guidedFROZEN11/16, both
+unchanged weights/nullsleep; TRAIN successes1/16 versus0/16 and0admitted rows
+both. UNPARENTED actually completed26updates with1raw target, e226→f2013ae1,
+then fresh C1readout8/16. Same-stage paired details/reference/retention await
+terminal table; initial11→post8 across different cohorts is NOT causal regression.
+C2 UNPARENTED0rows/0updates preserves changed child for fresh readout. SHORT
+C2 native208593 admitted under guardian-onlyV6; LONG repairing its preserved
+manifest alias before its exact C1continuation, not rerunning originals.
+OldBuilder's readonly integration observation confirms saved-output/path/files
+flow through distinct sleep/readout/next-experience processes; it is author-side
+integration evidence, not independent tensor rehash or scientific verification.
+Current evidence supports executable checkpoint continuity and honest nulls,
+not guided improvement, acceleration, child-reflection efficacy or H2.
+
+Fable23:37 reader entry finally received via00:19merge:276VERIFIED from repo
+receipts (not a new node connection);277VERIFIED counts/capsule with11historical
+post-mounted gaps retained.277unambiguous6/8each and CPU replays NOT rederived;
+only first of8 original-replay entries individually checked. No semantic or
+provenance gap erased by VERIFIED.278/279 remain readerpending in received data.
+
+## September15,00:47 ingestion and immediate richness-to-L2 allocation
+
+Two independently prompted generators now supply small author-qualified packets,
+not retained learning or generator superiority. INTENSITY's first24 reviewed
+targets yield16 unchanged-gate rows: control6, LIGHT6, DENSE4, across6 questions.
+Different early task denominators and percentages-only coverage prevent an arm
+effect estimate. TWO-PASS first3 common tasks yield4/6 BRANCH and5/6 CONTINUE
+targets, including3/3 NEW records each; all other targets remain unreviewed.
+Its observed59 dispatch reservations are not59 completed/admitted responses.
+Actual useful follow-through includes an alternative discount calculation and
+a subset-to-population consistency check; irrelevant hypothetical fees,
+unnecessary rounding, and exact-final-format failures remain contrary evidence.
+Author qualification is not Fable VERIFIED or independent replication.
+
+UNPARENTED route lifetime completed00:33:50; worker verified A100physical3
+released0MiB by00:41. Across3cycles/48experience tasks: successes5/4/3 of16,
+admitted1/0/0, updates26/0/0; initial/post-sleep held goals11/8/11/11 of16.
+W0/W8/audits16/16 throughout.686 learner reservations; savedf201 state persists
+across both null sleeps. Different held cohorts prohibit a causal8-to11 gain
+claim. C1 SHORT and guidedFROZEN both11/16held,0admitted/0updates; later paired
+stages still pending. LONG exact continuation resumed past original4episodes,
+with26 cumulative childcalls/5completedepisodes observed00:41; not a new run.
+The unparented screen is COMPLETE at its declared scale, not disproven; no
+extra unparented route collection or retrospective repair is allocated.
+
+Belief change: trainable rich text is available now, whereas guided route C1
+realized no consolidation treatment. Smallest bottleneck is whether an actual
+rich bootstrap supports useful guided retained change, not reaching1000rows.
+No generator is selected as a winner. Freeze the entire first INTENSITY packet
+of16rows (ADMITTED.json SHA52197d8d0f73528af69b61e6f244e5b1570f2bcfafd5ebb79d4058c959946837)
+as a diagnostic bootstrap, without later substitutions or favorable selection.
+This is an experimental candidate, not a promoted premise. Matched FULL versus
+new-labels-masked bootstrap, identical legacy rehearsal, then same-starting-child
+guided+sleep, guided-frozen and unparented+sleep lanes address separate questions.
+Fresh same-stage held readouts must include the bootstrap control; no naive
+cross-cohort slopes, no instruction-rich evaluation, no promoted claims.
+
+Allocation decision: Erdos receives released A100physical3 for RICH-L2-PILOT,
+in addition to finishing its already-bounded node2 TWO-PASS collection. New
+write scope orch_l2_rich_math* and its own journal/protocol; no shared L2 edits.
+Up to4native hours/4GPUh,1536learner calls and192actual parent-provider calls,
+one guardian across the whole pilot; sequential model residency on its ONE GPU
+is capacity sharing within the arm, not serial Main admission. Bootstrap16
+presentations/target plus canonical legacy rehearsal, at most3guided cycles
+with8experience tasks/lane/cycle and8held tasks/lane/stage; retain every null.
+Worker freezes runnable exact exposure, masks, roster, controls, deterministic
+reference and counts before calls, and runs own CPU/provenance checks. Use the
+already designated PM_CONGRUENCE_JOIN_V1 L2 build scope if quickly executable;
+otherwise propose the smallest ready verifiable L2 scope immediately, not an
+unbounded gym project. L1 mined/held sets and reserved L3 families stay separate.
+Parent observes only actual nonsealed learner history, evaluates learning and
+guides corrections/reflection; child-native admitted responses alone train.
+No1000-row, perfect-child, reader or Main ratification wait after own checks.
+
+Highest-value next test is this controlled pilot, not optimizing the early
+4-versus5 or6-versus6 counts. A clean null retires this pilot at declared scale,
+not the developmental hypothesis. Any promising learning result needs a fresh
+independent replication before becoming a premise. Current route lanes and
+generator/breadth screens continue unchanged on their remaining allocations.
 
 ## Priority frontier — decisions for next compute
 

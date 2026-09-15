@@ -27248,6 +27248,21 @@ Native attempt3 starts independently after fresh all0–5 scans; peer6/7untouche
 First genuinely qualified fulltext batch will be signaled for Main's controlled
 L2experiment immediately, not withheld for1000rows or promotion. No scope
 expansion, historical/currentL2 rescoring, or independent-audit claim.
+
+## [Builder] 2026-09-15T00:31Z — RICH-INTENSITY first qualified RAW85 packet
+
+MainL2trigger: author read24entire stable firstfourcalls/shard, recomputed6golds;
+16rows qualify unchangedgate (control6,LIGHT6,DENSE4). Not independent audit or
+generatorwinner. DENSE937 source298tokens computes35 via70%remaining, evaluates,
+then checks via30%discount15 and50−15; genuine useful second calculation.
+LIGHT1706 NEW301tokens follows26soccer with26/400=6.5% population consistency.
+Evidence/unalteredADMITTED/REVIEWS/GOLD/SUMMARY/READOUT in
+`research_notes/analysis/orch_rich_intensity_20260915_first_qualified/`.
+Available now for a controlledL2experiment, without1000row/perfectchild/promotion
+hold. Different early task counts/percentages-only/no fullcohortcontrast: not
+an effect estimate. Dense first2formatfailures and irrelevant branches retained.
+All6ACTOR_READY37ec at00:26:18–19 and actualpersistedcalls verified,not PIDalone;
+no6/7touch, scope/caps unchanged, no new fit/scale/reviewerfanout requested.
 ## [Rohin — message 85, ~00:20 UTC 09-15, relayed by Fable] 2026-09-15T00:16Z — STRONG STEER: go ALL OUT on richness now (many strategies in parallel, heavy token budgets, guidance vs over-guidance); as soon as any richness success appears, run level-2 tests on it; also push the terse route behaviour through the level-2 closed loop with long/short parents; the route behaviour may be level-2 (parented) content rather than level-1 — either is fine, and it may make level 2 easier. THESIS ("write this down"): 0 mechanism · 1 richness = a higher token budget the base already uses well · 2 utilise capabilities + richness for the closed loop's purpose · 3 utilise that learning for generalised outcomes · 4 deploy
 
 > OK, I understand how that flash card thing can help. It's actually not bad. It's it's a little bit too much like telling it a scale but it's not bad and honestly might be something that needs to be parented right that might be a level two sort of thing rather than a level one think about that but yeah, if it helps on level one, I don't really mind it doesn't really know but obviously even if you have the level one, it will help on level two as well, but I think I'm thinking about something way more raw for level one oh yeah, you said it matters for level two anyways completely matters for level two, but doesn't matter at level two or four I guess it doesn't even make us that much of a difference whether we teach it at level one or level two technically yeah so I don't know. It's not like a bad thing. It might actually make level two a little bit easier which easiness is kind of something that we want right now cause we've been going at it. I'm glad you get the richness right now cause it's a very loaded term. That is very very important for the fundamental core of a level. one is OK let's go all out on this richness shit all out. I'm talking rich as fuck. Yeah, let's try different strategies. That's scale things up lots of richness lots of things to make sure that those things are working. The model is really run heavy really you know given it a lot of token usage we can test like prompting different things to increase richness like I think there's an issue with over guidance versus guidance so we can kind of try both of those there's a lot of things to do that's what I'm saying like there's so much we can try right now and we need to get this rich and it's done ASAP so so keep move. Keep it moving as soon as any sort of success happens on richness I want to see some level two tests on it I wanna see let's see if we're only doing a richness thing. I want to see your whole note card shit betrayed to a richness level one close loop oh sorry, level 2 Close Loop I wanna see in level two this terse rose sort of thing this Tatro TERSE thing get trained on the closed loop and like whatever other training like I wanna see long-term short-term trait all that this is what I wanna get this level one level two I think level two we just scale it I think level two might end up being a little it's not gonna be easy. It's not gonna be easy. I think level one level two level two level two level three are gonna be a little bit closer together let's just get a gun. I think we've been simplifying things very well. We simplify level zero just a simple Laura right mechanism find out what skills it works at level one we finally found out. OK we just want richness. We just want want higher token you so like we wanna give it a higher token budget and the model will already have a lot of based on capabilities to be able to use that usefully and then we don't need to teach all of that and then in the level too then we already narrowed it down just to be able to kind of take all of its capabilities and it's level one richness and utilize t the purpose of that self for that purpose of that close loop and then level level three is going to be take that learning utilize it for generalized environmental outcomes then you deploy it great great great great write this down. This is like getting very close to a great abstract already so that's not bad at all but we need to get this heavy lifting done ASAP
@@ -27294,3 +27309,54 @@ This is runtime integration evidence from your worker's existing receipts,
 not my own tensor rehash, independent scientific review, parenting benefit,
 H1/H2 or campaign completion. No GPU reservation/process changes, no endpoint
 analysis or extra panels; preserve the original null-cycle/failure evidence.
+
+## [Orchestrator] 2026-09-15T00:48Z — qualified generator packets ingested; released GPU assigned to immediate controlled L2 pilot
+
+STATE updated first00:47, BOARD second, Erdos assigned released A100physical3.
+Raw85 action, no1000-row/perfect-child/promotion hold. Experimental bootstrap
+uses ENTIRE first INTENSITY16-row packet, SHA52197d8d0f73528af69b61e6f244e5b1570f2bcfafd5ebb79d4058c959946837;
+not a winner selected from early unequal counts. Own RICH-L2-PILOT root/source/
+guardian, original37ec FULL/new-labels-masked bootstrap,16presentations+legacy,
+then same-child guided+sleep/guidedFROZEN/unparented+sleep, bootstrapOFF held
+read control. Up to3cycles of8experience tasks/lane,8held/stage,4nativehours/
+4GPUh/1536learner/192actual-parent-provider calls. Own focused CPU/provenance
+and prospective runnable contract suffice; no Main/reader admission wait.
+Use already-designated L2 congruence-join scope if promptly executable; no
+mined/held/L3 relabeling. Parent blind to sealed eval, actual child words only.
+
+| Observed measure | Treatment | Matched comparator / boundary |
+|---|---:|---|
+| INTENSITY author-admitted early targets | LIGHT6, DENSE4 | oldrich6;24reviewed total, unequal task denominators |
+| TWO-PASS first3 common tasks, admitted targets | BRANCH4/6 | CONTINUE5/6;NEW3/3 each;percentagesonly |
+| Route C1 held goals | SHORT11/16 | guidedFROZEN11/16;same-stage |
+| Route C1 admitted / actual updates | SHORT0/0 | guidedFROZEN0/0 |
+| UNPARENTED three experience cycles | successes5/16,4/16,3/16 | whole48-task declared screen |
+| UNPARENTED admitted / updates by cycle |1/26,0/0,0/0 | unchangedf201 after firstsleep |
+| UNPARENTED initial/post held goals |11/16,8/16,11/16,11/16 | different stage cohorts;not causal slope |
+| UNPARENTED W0/W8/audit |16/16 each throughout | same-stage full guided tables still pending |
+
+OBSERVATION: counts above are author-side packets/native receipts, not VERIFIED
+learning. UNPARENTED terminal00:33:50,686learner reservations; Planck reports
+physical3released0MiB00:41. LONG exactresume26cumulativecalls/5episodes00:41.
+EVIDENCE AND CONTROL: INTENSITY first_qualified READOUT/REVIEWS/ADMITTED,
+TWO-PASS readout_first_reviewed SUMMARY/ADMITTED_ROWS, L2_SHORT journal and
+UNPARENTED_TERMINAL_V4.tar.gz(dfde7272), runtime-repair report; matched controls
+as table. C1 shared cohort supports11versus11, not a multi-sleep conclusion.
+CURRENT INTERPRETATION: rich targets exist; guided route C1 realized no training
+treatment. Checkpoint continuity works operationally, not evidence of cohesion.
+CREDIBLE ALTERNATIVES: early percent-only selection, rubric disagreement,
+format compliance, needless branches, tiny bootstrap, legacy replay, family
+shift and stage difficulty. No remedy by retrospective rescoring or padding.
+CONFIDENCE: bounded observed receipts; comparative learning remains unshown.
+CHEAPEST DISCRIMINATING NEXT TEST: fixed-packet controlled L2 pilot now, while
+existing guided route three-cycle batch and paired generator panels finish.
+Promising retained result requires independent reader and replication before
+premise use; one clean pilot null deallocates that screen, not the thesis.
+
+Reader ingestion: Fable23:37 SEQ276 VERIFIED counts/capsule; SEQ277 VERIFIED
+scoped counts with11historical post-mounted gaps.277unambiguous6/8each and
+CPUreplays NOT rederived; only first original replay checked individually.
+SEQ278/279 remain readerpending in received data. No checks run by Main.
+TERSE00:46:three A100fits complete5760updates, fresh readouts active; fourth
+at5470/5760, node3fits3213/3250of23040. No released TERSE lane or held/retention
+result yet. This is progress, not a scientific success or measured saturation.
