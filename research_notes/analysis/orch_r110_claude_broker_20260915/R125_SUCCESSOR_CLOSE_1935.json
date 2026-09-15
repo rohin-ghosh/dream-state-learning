@@ -1,0 +1,133 @@
+{
+  "branches": [
+    {
+      "branch": "F2",
+      "complete_elapsed_seconds_median": null,
+      "complete_fraction": null,
+      "complete_provider_dispatched": 0,
+      "consumption": "UNKNOWN_NOT_MEASURED",
+      "first_complete": null,
+      "historical_claims_hash_verified": 70,
+      "missing_error_counts": {},
+      "missing_without_provider_dispatch": 0,
+      "pending_snapshot_count": 0,
+      "pid": 4101008,
+      "published_denominator": 0,
+      "ready": {
+        "path": "/localhome/local-rohing/orch_r124_parent_transport_contract_20260915_v1/F2_math_r124/READY.json",
+        "sha256": "89cdefedf44b68d35fb903584d4b3c3f14c79c417f49388393d3b0288e4a20b3"
+      },
+      "successor_published": {
+        "COMPLETE": 0,
+        "MISSING": 0,
+        "SILENT": 0
+      },
+      "terminal_binding": {
+        "owner": {
+          "path": "/localhome/local-rohing/orch_math_feedback_uptake_r124_readout_20260915_attempt1/F2/PLAN.json",
+          "sha256": "e545e854f759f4bc00104603b4231c5eebcdd45774185a3a92fd5ef18404263d"
+        },
+        "path": "/localhome/local-rohing/orch_math_feedback_uptake_r124_readout_20260915_attempt1/F2/TERMINAL.json",
+        "writer": {
+          "path": "/localhome/local-rohing/orch_math_feedback_uptake_r124_readout_source_20260915_v1/gpu/orch_math_feedback_uptake_r124_readout.py",
+          "sha256": "a161b2121624350fc026ad39e0a4fb45997b8e91ca58adfbdd4be6d40e858011"
+        }
+      },
+      "terminal_exists": false
+    },
+    {
+      "branch": "F3",
+      "complete_elapsed_seconds_median": 10.990517214006104,
+      "complete_fraction": 0.5666666666666667,
+      "complete_provider_dispatched": 17,
+      "consumption": "UNKNOWN_NOT_MEASURED",
+      "first_complete": {
+        "binding": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_transcripts/C046_E1_OPEN_PARENT/PROMPT_BINDING.json",
+          "sha256": "57fc6c8f36813b39a352148a3498648d8d4bb7eff691fd0649f5d9cf9c31bdec"
+        },
+        "consumption": "UNKNOWN_NOT_INFERRED_FROM_PUBLISHED_RESPONSE",
+        "error": null,
+        "finished_unix": 1789500746.2855988,
+        "id": "C046_E1_OPEN_PARENT",
+        "new_successor_config": true,
+        "policy_sha256": "a53e9149a251dbbf29cc57b3f1132d105bb76635ad372b83b648e40a4920f838",
+        "provider_dispatched": true,
+        "publication": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C046_E1_OPEN_PARENT.claim/PUBLISHED.json",
+          "sha256": "47164de7bf5886aa5f83b1b158f22d59d54886a8fbcf071e661eb06f7a3dc185"
+        },
+        "published_unix": 1789500746.3028615,
+        "requested_unix": null,
+        "reservation": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_claude/C046_E1_OPEN_PARENT.claim/RESERVATION.json",
+          "sha256": "841069e5219092e299540449fbbdfcc8dd916e103977ef7c4e164af167708751"
+        },
+        "response": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/parent_queue/C046_E1_OPEN_PARENT.response.json",
+          "sha256": "ecc200ab3b1526eef49b5933affa4de77f1e77ec5adc9944a6f9458781faa164"
+        },
+        "status": "COMPLETE",
+        "timing": {
+          "cutoff_unix": 1789500779.9389596,
+          "elapsed_seconds": 9.764034455998626,
+          "provider_elapsed_seconds": 9.760173220995057,
+          "provider_started_unix": 1789500736.525427,
+          "started_unix": 1789500736.5215652
+        },
+        "transport_contract_sha256": "85efb1446a76c4312cca2aeb09471df83a3f0d7f6ffd42ea84bdcb7ce7b6736c"
+      },
+      "historical_claims_hash_verified": 205,
+      "missing_error_counts": {
+        "lane_cutoff_before_dispatch": 13
+      },
+      "missing_without_provider_dispatch": 13,
+      "pending_snapshot_count": 10,
+      "pid": 4101015,
+      "published_denominator": 30,
+      "ready": {
+        "path": "/localhome/local-rohing/orch_r124_parent_transport_contract_20260915_v1/F3_code_r125/READY.json",
+        "sha256": "6ee664e6a20c26c6fb8badc76c32f2b7e778c9d05d61025c8022316d6a7b2a38"
+      },
+      "successor_published": {
+        "COMPLETE": 17,
+        "MISSING": 13,
+        "SILENT": 0
+      },
+      "terminal_binding": {
+        "owner": {
+          "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/r125_checker_recovery/service_1/INDEPENDENT.json",
+          "sha256": "4ee4caf5b15f14b0735300e3efe64a1b18e0048f2322f03f404f912d9549911c"
+        },
+        "path": "/localhome/local-rohing/orch_r108_code_parent_r115_node5_2_20260915_attempt1/r125_checker_recovery/service_1/GUARD_TERMINAL.json",
+        "writer": {
+          "path": "/localhome/local-rohing/orch_r125_code_checker_recovery_20260915_v1/gpu/orch_r125_code_checker_recovery.py",
+          "sha256": "ae9a24a747282d8d35538ea1ab32b5f32a21dccccac779fa5237e8a8bb72008d"
+        }
+      },
+      "terminal_exists": false
+    }
+  ],
+  "closure": "Both actual successor bindings/settled identities verified; first F3 reply verified. F2 has no successor requests yet; broker remains serving, not stopped. Main retains campaign.",
+  "cohort": "Requests first claimed under each successor config, including pre-existing never-claimed backlog; published responses finished by cut. Not a newly-enqueued request cohort: envelopes do not contain enqueue timestamps.",
+  "native_receipt": {
+    "path": "/localhome/local-rohing/orch_r124_parent_transport_contract_20260915_v1/CUSTODY_STATUS_1789500933381189620.json",
+    "sha256": "d22a7a2b2e331c576597b1c96785ec68c41760c5f518e10641e6419fef61da59"
+  },
+  "no_credentials": true,
+  "no_git": true,
+  "no_long_poll": true,
+  "no_new_repair": true,
+  "no_retries": true,
+  "observed_utc": "2026-09-15T19:35:33.273406+00:00",
+  "schema": "R125_SUCCESSOR_CUSTODY_CLOSE_V1",
+  "snapshot_caveat": "Live non-atomic census: pending observed during scan; reservation visibility can lag new claim directory creation. Do not infer exact in-flight count by subtraction.",
+  "source": {
+    "path": "/localhome/local-rohing/orch_r124_parent_transport_contract_20260915_v1/source/gpu/orch_r110_claude_broker.py",
+    "sha256": "a6b67b6284e30f706773a0a8ead296d2f3c6dee96c40d4d0351998ccf56e6ebf"
+  },
+  "tests": {
+    "path": "/localhome/local-rohing/orch_r124_parent_transport_contract_20260915_v1/source/tests/test_orch_r110_claude_broker.py",
+    "sha256": "32e09703d5a14b24f68719f7a319e26396877103160b64fa14ce02a1e02a1505"
+  }
+}
