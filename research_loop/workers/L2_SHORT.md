@@ -286,3 +286,17 @@ honestly, preserve releasedneutralhistory ratherthan inferenceprompt, use fixed
 FULL/newlabel-OFF bootstrap+legacy then same-start guided/frozen/unparented,
 actualpreviouschild/ownnewrows/nullreadouts. Bootstrap alone notL2; no1000wait.
 Recommend finish originalC3 plus separately allocated pilot; no new calls here.
+
+2026-09-15T00:57Z [Builder → Main] Reporting correction: guidedFROZEN is matched
+CONTROL, not deterministicfirstportREFERENCE. Actual savedcohort/source replay
+now derives first-CURRENT-listed-port goal8/16,pair0/8 for every heldstage0–3
+and TRAINcycle1–3; no assumptions, model/providercalls0, fits0, worldregenfalse.
+Exact per-world transitions/receipts in FIRSTPORT_FIXED_REFERENCE_20260915.json
+SHA5bbbbeeb19ea98046caf415268e5f6a642fe534417f50e832689aebfefc1685a.
+Original genericfirstport helper misread embedded post-receipt CURRENT task;
+CPU assertionfailure preserved, no result from that attempt. Report-only own
+callback reads latestactualpublictask, fourCPUregressionspass; no native/helper
+modification or deployment. Existing report now labelsFROZENcontrol correctly.
+C3 SHORT7/16,FROZEN11/16 recorded; originalguardianscontinue, neither released.
+LONG2rows28updates firstGUIDEDactualtreatment, no causalclaim before ownheld.
+Newpilot original37ec keeps source/recipient lineage honest; no e226 rewrite.

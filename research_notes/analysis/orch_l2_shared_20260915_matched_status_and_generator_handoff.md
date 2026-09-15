@@ -10,7 +10,7 @@ Each held cell is correct goals / 16 tasks on eight opposite-goal worlds.
 Columns compare the SAME stage/cohort/source. Rows use different fresh held
 worlds, so across-row slopes do not identify retained learning.
 
-| Held stage | SHORT + sleep | LONG + sleep | SHORT-guided FROZEN reference | UNPARENTED + sleep |
+| Held stage | SHORT + sleep | LONG + sleep | SHORT-guided FROZEN control | UNPARENTED + sleep |
 |---|---:|---:|---:|---:|
 | Initial | 11/16 | 11/16 | 11/16 | 11/16 |
 | C1 | 11/16 | pending | 11/16 | 8/16 |
@@ -21,7 +21,13 @@ Every completed cell above has W0 recall **16/16**, W8 recall **16/16**,
 and audit **16/16** (true 8/8, fault 8/8). Pending is not failure or zero.
 FROZEN is genuinely response-aware SHORT-guided during experience and never
 consolidates. All held readouts are parent-absent and use the neutral contract.
-It is an observed initial-weight reference, not an oracle or an extra replicate.
+It is an observed initial-weight matched control, not the deterministic
+first-current-port reference, an oracle, or an extra replicate. The earlier
+word "reference" for FROZEN was imprecise; this correction changes reporting
+only, not the executed control. Separate deterministic counts are now bound
+in `orch_l2_shared_20260914_attempt1/FIRSTPORT_FIXED_REFERENCE_20260915.json`:
+each held stage0/1/2/3 and TRAIN cycle1/2/3 yields8/16goals and0/8opposite-goal
+pairs. These counts were actually derived, not assumed.
 
 | Lane | C1 admitted rows / actual updates | C2 rows / updates | C3 rows / updates | Three-cycle position |
 |---|---:|---:|---:|---|
