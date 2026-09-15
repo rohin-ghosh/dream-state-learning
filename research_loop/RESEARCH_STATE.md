@@ -1,5 +1,41 @@
 # Research state — Orchestrator
 
+## R107 actual progress — September 15, 2026, 07:48 UTC
+
+The genuine frozen-BASE parenting discovery lane is running on A100 physical5,
+with no adapter, optimizer, PEFT wrapper or weight updates. First Astra feedback
+landed at07:30:50; cycle1 completed at07:39:18 with six child responses and eight
+fresh parent-free, own-context-conditioned tests (9.97minutes). This establishes
+an operating contextual loop, NOT retained weight learning or parenting benefit.
+
+MATH764 FULL checkpoint capability ON/OFF synthetic32 is COMPLETE: ON22/32,
+OFF24/32, zero truncations/missing. OFF is the FULL adapter disabled, not the
+trained masked-control child. Code0/8 vs2/8; math7/8 both, simulatedtools8/8 both,
+conciseinstructions7/8 both. The two OFF-only losses are strict JSON packaging;
+post-hoc wrapping recovers the expressions on the bounded test cases without
+changing primary scores. PUREBASE independently loaded comparison is being
+prepared on node3physical3, not yet claimed complete. This compact-output panel
+is not a persistence test or broad capability benchmark.
+
+Continual training resumed the SAME checkpoint6628/optimizer/RNG/corpusV13;
+first update6629 verified07:20:48, checkpoint7268 independently observed07:32.
+Five A100 ranks are resident at07:47; training cutoff08:00 then reserved readouts.
+New-source accepted manifests/exposure still require explicit receipts; review
+captures alone do not establish continual ingestion. Extra117OFF recovery
+updates remain disclosed. No L2 or teacher experience enters this running child.
+
+Node3physical4/5 have genuine BASE generation allocations and are computing
+at07:46; prior37ec terse protocol rows are preserved failures, NOT persistence.
+Only audited functional changes in continuation/action qualify. Repetition-stop
+helper/integration is in progress, not yet claimed deployed. Semantic novel-
+thought yield remains UNKNOWN; lexical duplication is reported separately.
+
+Latest wrapper-only snapshots show node1 and node2 eight residents each, A100
+eight, node3five (07:46–07:47), NOT32/32. Node3physical1/2 assigned next BASE
+parenting treatment preparation; physical3 remains Main's pureBASE diagnostic.
+All raw evidence stays node-local; compact results and source are pushed.
+Goal remains active and unproven.
+
 ## Verified stop and late parenting evidence — September 15, 2026, 07:08 UTC
 
 The 07:03:31 census supersedes the earlier full-fleet snapshot: A1000/1/2/3/5/6/7

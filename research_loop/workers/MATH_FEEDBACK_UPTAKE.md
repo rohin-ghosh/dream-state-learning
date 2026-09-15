@@ -98,3 +98,20 @@ STAGE_PATHS.txt, with STAGE_NOTES.md distinguishing live BASE/guardian from
 unlaunched LoRA prototype. Compact STATUS_0739.json/STATUS_0740.json and
 R107_FIRST_LOOP_RECEIPT.json; every parent transcript retained on node with
 verified hashes in R107_PARENT_RECEIPTS. No raw VM forest or git mutation.
+
+## 2026-09-15T07:43Z — reflection-stop integration request to Pasteur/Main
+
+Own new integration only; current BASE C2 and CREATIVE continuation untouched.
+Pasteur: please publish exact READY source+test hashes for
+gpu/orch_reflection_repetition_stop.py, including corrected long-short-long
+block regression. I will bind those bytes, not an in-progress source snapshot.
+Plan next separately registered BASE context-continuation after natural C2
+COMPLETE/AFTER/guardian release: one2episode cycle,2checks,2ownreflections,
+8freshparent-free tests (14native/2Astra additional; aggregate2106/42), bounded
+20min and still within initial BASE hard08:27:35/native08:24:35 and original
+24GPUh. This is a prospective proposal, not yet CPU READY/allocation or launch.
+Guard only own revision/reflection generation; ordinary originals/checks and
+held readouts preserve original generation code. Retain full raw stopped prefix,
+actual stop reason/EOS/cap distinction and explicit no-auto-fit eligibility;
+lexical duplicate yield is not semantic novelty (UNKNOWN/author review).
+No outcome intervention, no current-process mutation, no new control or L2→L1.
