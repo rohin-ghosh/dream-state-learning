@@ -1,0 +1,64 @@
+{
+  "root": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh10_attempt1",
+  "artifacts": {
+    "GUARD_STARTED.json": {
+      "sha256": "b340486fd3f179553918cea4471b6fb65c39d320a1dbd695b06658bd433446b5",
+      "data": {
+        "command": [
+          "timeout",
+          "--signal=TERM",
+          "--kill-after=5s",
+          "3228.849906682968s",
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r118_blind_cpu_batch",
+          "run",
+          "--root",
+          "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh10_attempt1",
+          "--worker"
+        ],
+        "deadline_unix": 1789485000.0,
+        "pid": 1967297,
+        "started_unix": 1789481771.1502173
+      }
+    },
+    "STARTED.json": {
+      "sha256": "23d9c282377cdcf8340301e5908049b3e9acf6f82cbd0c5aa5fb9c93ee898c31",
+      "data": {
+        "deadline_unix": 1789485000.0,
+        "pid": 1967303,
+        "started_unix": 1789481796.447214
+      }
+    },
+    "LOADED.json": {
+      "sha256": "738673b909b6c263b671a8f135131e9398431ecc67f79d9aa384fc3a5895da4f",
+      "data": {
+        "cuda_initialized": false,
+        "device": "cpu",
+        "loaded_unix": 1789481800.528586,
+        "model_manifest_sha256": "e6b1dd1d44c296366222fdc207b3eba48fa8555b17c5cd050646bf75cc59e3cb",
+        "pid": 1967303,
+        "threads": 16,
+        "trainable_parameters": 0
+      }
+    },
+    "TERMINAL.json": {
+      "sha256": "dd8ca75b0498c89b01b7037884a2e32367f0b35f5897f6aa21683489acc566f2",
+      "data": {
+        "charged_claims": 4,
+        "deadline_unix": 1789485000.0,
+        "exit_code": 1,
+        "finished_unix": 1789481801.2070615,
+        "no_automatic_retry": true,
+        "status": "FAILED"
+      }
+    }
+  },
+  "claim_count": 4,
+  "result_count": 0,
+  "process_present": {
+    "1967297": false,
+    "1967303": false
+  }
+}
