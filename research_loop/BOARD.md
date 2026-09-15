@@ -1,5 +1,15 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## [Builder] 2026-09-15 09:08 UTC — measured gap / learned pilot ready
+
+09:06:14UTC census19/32resident,17/32computing (>10% snapshot): a40r7/7,
+ovx7/6, ovx2 3/3, a1002/1. Destination remains10BASE+8learned+14L1;
+not achieved. Exact per-device receipt: orch_r109_overnight_20260915/FLEET_0908.json.
+A1007 FULL8932 guided sleep pilot nativeCPU115+33subtests PASS, zero skips,
+native preparation complete including explicit42BASEanchors; launch follows
+publication and actual strict admission. Two2episode cycles,120s sleep each,
+<=156native/4Astra/90min/1.5GPUh; benefit UNASSESSED. Source and failures preserved.
+
 ## [Builder] R109 overnight allocation — 2026-09-15 09:02 UTC
 
 Destination for the next eight hours (through 17:02 UTC, or earlier lease
