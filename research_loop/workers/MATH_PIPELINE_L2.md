@@ -4,6 +4,18 @@
 
 ## 2026-09-15T05:32Z — GPU4 allocated continuation READY
 
+05:35Z actual mounted+firstresponse: LOADED verifiesC1
+e1e18842b544411a720cc441d42089f5e39b7249f5f8893364ecb5df062a1dce /
+basea2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992.
+OPTIMIZER_CONTINUITY actual restoredsourceSHA
+aa6d67c60b19658ac035786a975b6af7c15a631e7509df0509820d9883d75c6b,
+new_optimizer_reset=false. First256childtokens COMPLETE05:34:56.934740Z;
+second88tokens05:35:00.968856Z; bothpriorupdates0, sequential, then parentqueue.
+R104_TRAINING4_FIRST_NATIVE.json preserves metadata/hashreceipt only, rawNODE.
+ExistingMICRO C2sleep522updates/test8COMPLETE;CREATIVE530/test8COMPLETE,
+bothAFTER; C2negativeoriginals0/2both, all4rows/lane source/masks verified.
+R104_C2_COMPLETE_MILESTONES.json holds exacttimings/coverage. No furtherMainack.
+
 05:33:34Z actual launch update: oldfailedC2readout56COMPLETE+AFTER,
 terminal05:32:59.704909Z; strictprivilegedrelease05:33:22.607881Z followedby
 freshsecondadmission. Newtraining4 native553960 launched05:33:30.496071Z,

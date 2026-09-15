@@ -1,5 +1,16 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## SEQ-282 DEFAULT complete — 2026-09-15 05:37 UTC
+
+Richness first: minimalFULLmean186/median180.5tokens vsOFF246.046875/240;
+64EOS each,zeroceilings. Ancillary50/64vs48/64. Prompted historical
+FULL211.890625tokens54/64vsOFF196.8437559/64 remains separate. BASE15complete
+plus1reserved; registeredFULL/BASEdefaultP65(a,c,d)notyetclosed. Semantic
+branching/coherence not inferred from markers. FullSEQ282 and native hashes
+published in combined_l1_continual analysis. Twoepisodecycles andonecanonical
+baseline were already observed/pushed; not pending implementation.
+
+
 ## Branching update — 2026-09-15 05:30 UTC
 
 Separate FULL256 STEERED/ORIGINAL_RICH pilot: author sample9/12meaningful
