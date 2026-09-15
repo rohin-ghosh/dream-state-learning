@@ -197,6 +197,35 @@ class SharedAdoptionTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'held_split'):
             self.adopt()
 
+    def test_wait_for_missing_release_never_initializes(self):
+        output = self.root / 'ASSEMBLED.json'
+        result = adoption.adopt_released_once(self.entries, self.common, output)
+        self.assertEqual(set(result['missing']), set(adoption.shared.BRANCHES))
+        self.assertFalse(output.exists())
+        self.assertFalse(self.common.exists())
+
+    def test_actual_certificates_initialize_once_without_actor_launch(self):
+        for branch, certificate in self.handoff['branches'].items():
+            adoption.shared.write(self.root / branch / 'R118_SHARED_HANDOFF_BRANCH.json', certificate)
+        with patch.object(adoption.route, 'adoption_inputs', return_value=copy.deepcopy(self.current)):
+            result = adoption.adopt_released_once(self.entries, self.common, self.root / 'ASSEMBLED.json')
+        self.assertEqual(result['status'], 'INITIALIZED_NO_ACTORS_LAUNCHED')
+        self.assertEqual(result['optimizer_updates'], 0)
+        self.assertEqual(result['actors_launched'], 0)
+
+    def test_watch_deadline_is_not_life_extension(self):
+        with self.assertRaisesRegex(ValueError, 'future_watch_deadline'):
+            adoption.watch(self.entries, self.common, self.root / 'ASSEMBLED.json', 0)
+        self.assertFalse(self.common.exists())
+
+    def test_invalid_release_status_does_not_adopt(self):
+        path = self.root / 'F4/RELEASED.json'
+        path.write_text(json.dumps(dict(status='PREPARED')))
+        self.handoff['branches']['F4']['release'] = adoption.reference(path)
+        with self.assertRaisesRegex(ValueError, 'release_and_lineage_evidence'):
+            self.adopt()
+        self.assertFalse(self.common.exists())
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -8,6 +8,7 @@ import argparse
 from copy import deepcopy
 import json
 from pathlib import Path
+import time
 
 from gpu import orch_r111_route_shared as route
 from gpu import orch_r116_shared_learner as shared
@@ -168,17 +169,56 @@ def adopt(entries, common_root, handoff_binding):
         return receipt
 
 
+def adopt_released_once(entries, common_root, output):
+    prepared = readiness(entries, common_root)
+    paths = {branch: Path(spec['root']) / 'R118_SHARED_HANDOFF_BRANCH.json'
+             for branch, spec in prepared['branch_specs'].items()}
+    missing = [branch for branch, path in paths.items() if not path.exists()]
+    if missing:
+        return dict(status='WAITING_FOR_EXISTING_CYCLE_RELEASE', missing=missing,
+                    actors_launched=0, optimizer_updates=0)
+    branches = {branch: shared.read(path) for branch, path in paths.items()}
+    current = route.adoption_inputs(prepared['branch_specs']['F1']['root'])
+    handoff = dict(schema='R118_SHARED_HANDOFF_V1', readiness=prepared['readiness'],
+                   branches=branches, latest_F1_checkpoint=current['checkpoint'],
+                   branch_certificates={branch: reference(path) for branch, path in paths.items()})
+    output = Path(output)
+    if output.exists():
+        shared.require(shared.read(output) == handoff, 'assembled_handoff_is_immutable')
+    else:
+        shared.write(output, handoff)
+    result = adopt(entries, common_root, reference(output))
+    return dict(status='INITIALIZED_NO_ACTORS_LAUNCHED', **result)
+
+
+def watch(entries, common_root, output, deadline):
+    shared.require(time.time() < deadline, 'future_watch_deadline')
+    while time.time() < deadline:
+        result = adopt_released_once(entries, common_root, output)
+        print(json.dumps(dict(status=result['status'], missing=result.get('missing', []),
+                              observed_unix=time.time()), sort_keys=True), flush=True)
+        if result['status'] == 'INITIALIZED_NO_ACTORS_LAUNCHED':
+            return result
+        time.sleep(min(5, max(0, deadline - time.time())))
+    raise TimeoutError('no_adoption_without_eight_actual_releases')
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('phase', choices=('inspect', 'adopt'))
+    parser.add_argument('phase', choices=('inspect', 'adopt', 'watch'))
     parser.add_argument('--roster', type=Path, required=True)
     parser.add_argument('--common-root', type=Path, required=True)
     parser.add_argument('--handoff', type=Path)
     parser.add_argument('--output', type=Path)
+    parser.add_argument('--deadline-unix', type=float)
     args = parser.parse_args()
     entries = shared.read(args.roster)
     if args.phase == 'inspect':
         result = readiness(entries, args.common_root)
+    elif args.phase == 'watch':
+        shared.require(args.handoff is not None and args.deadline_unix is not None,
+                       'watch_handoff_path_and_deadline_required')
+        result = watch(entries, args.common_root, args.handoff, args.deadline_unix)
     else:
         shared.require(args.handoff is not None, 'released_handoff_required')
         result = adopt(entries, args.common_root, reference(args.handoff))
