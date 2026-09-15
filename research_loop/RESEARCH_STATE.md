@@ -1,5 +1,18 @@
 # Research state — Orchestrator
 
+## Actual cycles and exposure — September 15, 2026, 05:58 UTC
+
+32resident/28positive GPUs at05:56:34–35; actual19generation/7training/6parenting
+includes two older terse fits still active. Five continual ranks are training.
+Route C2 G/O each104savedupdates, but matched parent-free output lengths are
+identical88→97→91 and do not establish differentiated retained learning.
+Math MICRO/CREATIVE three completed2episode sleeps/tests each:699–899s/cycle,
+more reflection prose, weak next-cycle independent-method uptake; arithmetic
+errors preserved. Training4 saved308updates; first test still ongoing.
+Latest375continualrows still0actualpresentations at05:53:50; ingestion is not
+exposure. Feed watcher active, no future accepted manifest beyond040 yet.
+No parenting promotion or causal improvement is declared.
+
 ## Branching scope correction — September 15, 2026, 05:56 UTC
 
 Own-output pilot9/12 author branch labels are not nine two-method solutions:

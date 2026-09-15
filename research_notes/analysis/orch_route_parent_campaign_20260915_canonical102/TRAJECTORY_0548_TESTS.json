@@ -1,0 +1,60 @@
+{
+  "utc": "2026-09-15T05:54:35.097148+00:00",
+  "tests": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_orch_route_parent_campaign_trajectory.py",
+        "-v"
+      ],
+      "passed": 6,
+      "returncode": 0,
+      "output": "test_censored_calls_do_not_become_completed_learning (test_orch_route_parent_campaign_trajectory.TrajectoryTests.test_censored_calls_do_not_become_completed_learning) ... ok\ntest_fresh_readout_checks_fail_for_wrong_state_or_parent (test_orch_route_parent_campaign_trajectory.TrajectoryTests.test_fresh_readout_checks_fail_for_wrong_state_or_parent) ... ok\ntest_known_admission_rejections_keep_exact_reason (test_orch_route_parent_campaign_trajectory.TrajectoryTests.test_known_admission_rejections_keep_exact_reason) ... ok\ntest_noop_preserves_identity_and_has_no_retention_claim (test_orch_route_parent_campaign_trajectory.TrajectoryTests.test_noop_preserves_identity_and_has_no_retention_claim) ... ok\ntest_parent_wait_residual_not_labelled_pure_queue_time (test_orch_route_parent_campaign_trajectory.TrajectoryTests.test_parent_wait_residual_not_labelled_pure_queue_time) ... ok\ntest_raw_tasks_answers_and_unknown_errors_not_exported (test_orch_route_parent_campaign_trajectory.TrajectoryTests.test_raw_tasks_answers_and_unknown_errors_not_exported) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.010s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_orch_route_parent_campaign_canonical*.py",
+        "-v"
+      ],
+      "passed": 11,
+      "returncode": 0,
+      "output": "test_base_identity_cannot_masquerade_as_adapter (test_orch_route_parent_campaign_canonical.CanonicalTests.test_base_identity_cannot_masquerade_as_adapter) ... ok\ntest_base_loader_no_adapter_and_clean_fresh_readout (test_orch_route_parent_campaign_canonical.CanonicalTests.test_base_loader_no_adapter_and_clean_fresh_readout) ... ok\ntest_base_only_mount_rejects_lora_trainability_and_hash_drift (test_orch_route_parent_campaign_canonical.CanonicalTests.test_base_only_mount_rejects_lora_trainability_and_hash_drift) ... ok\ntest_broker_matches_new_arms_and_rejects_history_or_budget_overrun (test_orch_route_parent_campaign_canonical.CanonicalTests.test_broker_matches_new_arms_and_rejects_history_or_budget_overrun) ... ok\ntest_exclusions_and_strict_dose (test_orch_route_parent_campaign_canonical.CanonicalTests.test_exclusions_and_strict_dose) ... ok\ntest_parent_projection_blind_and_actual_strong (test_orch_route_parent_campaign_canonical.CanonicalTests.test_parent_projection_blind_and_actual_strong) ... ok\ntest_prospective_matched_two_episode_schedule (test_orch_route_parent_campaign_canonical.CanonicalTests.test_prospective_matched_two_episode_schedule) ... ok\ntest_same_life_continuation_and_no_update (test_orch_route_parent_campaign_canonical.CanonicalTests.test_same_life_continuation_and_no_update) ... ok\ntest_thinking_counters_have_explicit_denominators (test_orch_route_parent_campaign_canonical.CanonicalTests.test_thinking_counters_have_explicit_denominators) ... ok\ntest_fresh_parent_free_lineage_verified_before_publication (test_orch_route_parent_campaign_canonical_monitor.CanonicalMonitorTests.test_fresh_parent_free_lineage_verified_before_publication) ... ok\ntest_raw_held_prompt_and_response_never_exported (test_orch_route_parent_campaign_canonical_monitor.CanonicalMonitorTests.test_raw_held_prompt_and_response_never_exported) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.015s\n\nOK\n"
+    }
+  ],
+  "total_passed": 17,
+  "native_data_checks": {
+    "completed_experiences_exactly_two_episodes": 7,
+    "completed_postsleep_readouts_fresh_parent_free": 7,
+    "fits_saved_updates_match_optimizer_logs_and_file_hashes": 3,
+    "matched_readout_task_sets_across_arms": [
+      0,
+      1,
+      2
+    ],
+    "observed_taught_next_loaded_identity_joins": 6,
+    "base_unchanged": true,
+    "no_lora_no_adapter_verified": true
+  },
+  "semantic_retention_demonstrated": false,
+  "live_learning_code_modified": false,
+  "source_changes": "READ_ONLY_REDUCER_AND_TESTS_ONLY",
+  "gpu_launches": 0,
+  "allocation_changes": 0,
+  "raw_vm_downloads": 0,
+  "git_mutations": 0
+}

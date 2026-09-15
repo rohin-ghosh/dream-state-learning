@@ -317,3 +317,77 @@ CURRENT_UPTAKE_0541_COMPACT.json gives per-source min/median/max and exact lates
 FULL/OFF records. This is deliberate dose accounting, not a claim these new rows
 have trained already. Post2020 row selections are exactly matched across arms.
 Combined focused regression run77PASS4SKIP (CPU_FEED_REVIEW_0540.log).
+
+
+## 2026-09-15 05:49Z — ongoing feed automation, dose delay, true BASE review
+
+User directive: continue subsequent accepted nativepublisher manifests inside existing
+TRAIN provenance/deadlines; sampler unchanged, never confuse ingestion with learning.
+CPU-only VM watcher3707080 now polls exact node2 native publisher every60s, up to4
+ascending batch numbers per poll, later accepted041..999 manifests only. Native source
+proofs/registry/admission/held checks plus all64 mechanical replays and exact encoders
+remain mandatory. Hash discovery is not admission. Rebound manifests rejected; failed
+hashes preserved and not auto-retried. Node lock+receipt checks+atomic queue rename
+prevent double publication; native guard still performs exactly-once boundary ingestion.
+No training source/adapter/optimizer/sampler changes and no model calls; packets stream
+node2→A100 through VM RAM only. Poller stops at existing TRAIN deadline07:03:10.779610Z,
+not after that deadline merely because overall08:06:10Z remains. Current discovery has
+zero new accepted manifests beyond040, so no further actual additions claimed.
+
+Source gpu/orch_combined_l1_native_feed{,_node,_watch}.py; node exporter under
+/localhome/local-rohing/orch_combined_l1_native_feed_auto_0545/export.py, isolated CPU
+validation under A100 root/feed_auto_validation_0545. READY hashes and COORD dated
+Builder pre-ingest entry in AUTO_FEED_READY_0547_COMPACT.json;49testsPASS at launch.
+Watcher native/log heartbeat in AUTO_FEED_0547/WATCH.log; startup compact saved.
+
+Earliest new375: no actual presentation through latest FULL2444/OFF2446 at05:48:36Z.
+With fixed currentV13/3635, unchanged modulo sampler first possible new375 presentation
+is update3460. Last128 realized wall-clock throughput includes checkpoint pauses:
+FULL1.08693s/update/OFF1.06255s/update; conditional ETA06:07:00/06:06:33Z. This is
+~30minutes AFTER ingestion05:38:16Z, NOT immediate newdata learning. Future corpus
+append changes modulo schedule and can move that ETA; topology/checkpoints affect rate.
+Earlier1rankOFF estimate and active-stepFULL ETA are superseded by this realized-rate
+snapshot, not guaranteed deadlines. No schedule tuning undertaken.
+
+Native CPU progress monitor587677 scans actual rank0 loss rows every60s. It retains
+FIRST_NEW375_FULL/OFF.json only upon actual loss-record evidence, with native log path,
+line SHA/update/timestamp, and refreshes FEED_PRESENTATION_PROGRESS/LATEST.json with
+actual distinct rows/counts and conditional ETA. Fixed new375 index range is bound to
+INGEST_RECEIPTS2020 SHA3d014fb3...; later rows remain distinct. No new model/readout calls.
+Source gpu/orch_combined_l1_feed_progress.py; detector and changed-corpus ETA tested.
+
+FIVE actual training ranks verified after durable2276: FULL0/2/6 PIDs577683/4/5,
+OFF1/3 PIDs577686/7. First native2277 all FULL at05:45:46.64Z and OFF05:45:48.77Z;
+all subsequently2404 and beyond. Checkpoint adapter+optimizer+RNG+cursor preserved;
+new ranks use previously saved rank0 RNG shadows, no bitwise-world-size equivalence
+claim. Global batch4/reference normalization unchanged; no foreign process touched.
+FIVE_TRAINING_RANKS_0549_COMPACT.json binds expansion+first/last actual updates.
+
+TRUE BASE completed64. Same prospective first4 full-output author review complete:
+all4 coherent, one direct solution each, zero substantively distinct alternatives,
+zero grounded rejections. No extra calls, no headings/length heuristics. Hash-bound
+native evidence and source SHA in BASE_RICHNESS_AUTHOR_0543_COMPACT.json and on-node
+BASE_AUTHOR_REVIEW_0543/ANNOTATIONS.json; no parent access. BASEmean235.59375,
+median225.5,64EOS/0ceiling, lexical4gram repeat0.0607978934; accuracy secondary42/64.
+Compare registered minimalDEFAULT FULLmean186/50of64, OFF246.046875/48of64. Four-item
+semantic samples provide no observed increased branching; not a whole-cohort richness
+certification or improvement conclusion. Prompted historicalOFF is NOT BASE comparator.
+Source gpu/orch_combined_l1_review_base_first4.py; exact unread-output rejection test.
+
+Main handles git/BOARD/staging; no git changes by this worker. Raw remains nodes,
+1824readout ceiling, original08:06:10Z hardend and qualification invariants unchanged.
+
+
+## 2026-09-15T05:53:50.970828+00:00 — feed health and earliest-presentation check
+
+Actual rank0 updates FULL2747/OFF2748, V13/3635. New375
+actual total presentations FULL0/OFF0; no first-presentation receipt yet.
+Unchanged sampler first possible exposure update3460; conditional current ETA
+FULL 2026-09-15T06:06:44.803842+00:00, OFF 2026-09-15T06:06:46.063617+00:00.
+CPU watcher3707080 and native exposure monitor587677 alive; five native training
+ranks577683..577687 alive. Six successful heartbeat polls since05:47; fresh publisher
+discovery returns no accepted future manifests beyond040, not a receiver block.
+No new model calls, no repeated encoding of the six ingested batches, no sampler
+change. Exposure monitor will preserve FIRST_NEW375_FULL/OFF.json upon actual loss
+record evidence. FEED_STATUS_20260915T0553_COMPACT.json binds current checkpoint refs
+and source. Main owns git; no commits or shared edits beyond this own journal.

@@ -1,0 +1,115 @@
+{
+  "observed_utc": "2026-09-15T05:54:34.828619+00:00",
+  "current_phases": [
+    {
+      "arm": "GUIDED",
+      "cycle": 3,
+      "phase": "experience",
+      "status": "RUNNING_CENSORED",
+      "started_unix": 1789451100.2190013,
+      "finished_unix": null,
+      "elapsed_seconds": 574.6096181869507,
+      "request_path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle3/experience/REQUEST.json",
+      "request_sha256": "8b65eea0ac68531cd5c468d97521edacdedfdd4d46fc6cc9eeb5caf87018c2d1",
+      "terminal_path": null,
+      "terminal_sha256": null,
+      "input_identity": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "c85355c633ab42e3fa6312c2d08b59fc411b8ddbc24f07f1494b124cc608c717"
+          ],
+          [
+            "adapter_model.safetensors",
+            "f7c3846f6fff8c2c26bd9cfa882e09dc785968d552b66fa29462c40782f28bd0"
+          ]
+        ],
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle2/sleep/adapter",
+        "state_sha256": "a64a273b9b9f1fa2714fcd4cad39ca8a410b1abe48ef811a2bee2ac0987b7dd7"
+      },
+      "updates": null,
+      "first_call": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/GUIDED/cycle3/experience/CALL_0052.json",
+        "sha256": "5e8d852694bbf393beb318d7fbda8965d96b0b89cf51f4428ff70c9f78b16a3d",
+        "started_unix": 1789451229.5637903,
+        "finished_unix": 1789451231.1890466,
+        "response_observed": true,
+        "prompt_tokens": 296,
+        "output_tokens": 11
+      }
+    },
+    {
+      "arm": "UNPARENTED",
+      "cycle": 5,
+      "phase": "sleep",
+      "status": "RUNNING_CENSORED",
+      "started_unix": 1789451430.8460743,
+      "finished_unix": null,
+      "elapsed_seconds": 243.9825451374054,
+      "request_path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle5/sleep/REQUEST.json",
+      "request_sha256": "5a740be2e6b67a856f831cad8a37b604d64cba322d22ed9527830e64795c39fd",
+      "terminal_path": null,
+      "terminal_sha256": null,
+      "input_identity": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [
+          [
+            "README.md",
+            "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+          ],
+          [
+            "adapter_config.json",
+            "4c59f7ef03f7b2387b968b46ed5a44edb507994f74827c9c0fa504cb3cce14ee"
+          ],
+          [
+            "adapter_model.safetensors",
+            "06b3e70d205e79c7aee75856354fa6b475ca7708eaf13647ad84eabe96bbd4d5"
+          ]
+        ],
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/UNPARENTED/cycle4/sleep/adapter",
+        "state_sha256": "ebf5ac477871ab9cb03d4468aeb33b20ce271664cfbb1ab70cad95006354fdc4"
+      },
+      "updates": null,
+      "first_call": null
+    },
+    {
+      "arm": "NO_LORA",
+      "cycle": 3,
+      "phase": "experience",
+      "status": "RUNNING_CENSORED",
+      "started_unix": 1789451231.7813966,
+      "finished_unix": null,
+      "elapsed_seconds": 443.0472228527069,
+      "request_path": "/tmp/orch_route_parent_campaign_20260915_canonical102/NO_LORA/cycle3/experience/REQUEST.json",
+      "request_sha256": "f489873f9ea41bbf56c7e6041e5c7a7cb6534041fc4285be180c8a062b73132a",
+      "terminal_path": null,
+      "terminal_sha256": null,
+      "input_identity": {
+        "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+        "files": [],
+        "kind": "FROZEN_QWEN_BASE_NO_ADAPTER",
+        "path": null,
+        "state_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992"
+      },
+      "updates": null,
+      "first_call": {
+        "path": "/tmp/orch_route_parent_campaign_20260915_canonical102/NO_LORA/cycle3/experience/CALL_0040.json",
+        "sha256": "1222ff42c94aed046eaace1a2cee4909d42e4348371703e90f4c016b34034b94",
+        "started_unix": 1789451415.4236782,
+        "finished_unix": 1789451416.788982,
+        "response_observed": true,
+        "prompt_tokens": 295,
+        "output_tokens": 11
+      }
+    }
+  ],
+  "original_deadlines_unchanged": true,
+  "native_lanes_untouched": true,
+  "actions": "READ_ONLY_METADATA_CENSUS",
+  "raw_exported": false
+}

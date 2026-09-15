@@ -1,5 +1,27 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## Measured learning and fleet — 2026-09-15 05:58 UTC
+
+- Fleet05:56:34–35:32/32 compute-resident,28/32 positive instantaneous
+  utilization. Actual work is19generation/7training/6parenting: node3 6/7
+  still run the old terse fits, so21generation/5training/6parenting is only
+  their destination allocation, not current occupancy. Node1 all8 active.
+- Canonical route C2 GUIDED/OFF each admitted1/2 reflections and saved104
+  updates (16new-target presentations); C1 both no-op. Fresh parent-free
+  output tokens88→97→91 in both. No differentiated retained thinking shown.
+- Math MICRO/CREATIVE C1–C3 sleeps and8-held tests complete, cycles699–899s.
+  Reflections get longer, but next-cycle defaults remain mostly single-method;
+  CREATIVE retains documented arithmetic errors. Training4 first sleep saved308
+  updates after two highly repetitive8192-cap reflections; held test ongoing.
+- Continual FULL2747/OFF2748 at05:53:50, V13/3635. The latest375 are ingested
+  but have0presentations at that observation; estimated first exposure06:07,
+  conditional on current sampler/corpus/speed. Autonomous feed watcher is live,
+  but no newly accepted publisher manifest after040 found yet. Not a feed-gain claim.
+
+Receipts: `orch_fleet_20260915/SNAPSHOT_0556.txt`, canonical
+`TRAJECTORY_0548_COMPARE.md`, math `THINKING_C1_C3_20260915_REVIEW.md`,
+continual `FEED_STATUS_20260915T0553_COMPACT.json` under research_notes/analysis.
+
 ## Branching evidence correction — 2026-09-15 05:56 UTC
 
 The own-output pilot's attributed 9/12 branch labels describe counterfactual

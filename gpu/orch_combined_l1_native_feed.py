@@ -5,6 +5,7 @@ import base64
 import hashlib
 import json
 from pathlib import Path
+import re
 import sys
 import tarfile
 
@@ -19,6 +20,27 @@ REGISTRY_PURPOSE = 'L1_RICHNESS_GENERATION'
 
 def validate_registry_source(registered):
     assert registered['purpose'] == REGISTRY_PURPOSE and registered['family'] == 'math'
+
+
+def allowed_number(number):
+    return type(number) is int and (number in (27, 33, 34, 36, 38, 40) or 41 <= number <= 999)
+
+
+def discover(root=ROOT):
+    found = []
+    for path in sorted(root.glob('orch_continual_batch_snapshot_*/MANIFEST.json')):
+        match = re.fullmatch(r'orch_continual_batch_snapshot_(\d{3})', path.parent.name)
+        if match is None or not 41 <= int(match[1]) <= 999:
+            continue
+        try:
+            manifest = read(path)
+        except (OSError, json.JSONDecodeError):
+            continue
+        if manifest.get('batch_author_accepted') is not True:
+            continue
+        found.append(dict(number=int(match[1]), manifest_sha256=sha(path),
+            batch_id=manifest.get('batch_id'), row_count=manifest.get('row_count')))
+    return found
 
 
 def digest(value):
@@ -46,7 +68,7 @@ def project(wrapped, batch_id, index):
 
 
 def export(number, expected_manifest_sha, exclusions):
-    assert number in (27, 33, 34, 36, 38, 40), 'bounded_announced_batches_only'
+    assert allowed_number(number), 'bounded_native_publisher_sequence_only'
     batch = ROOT / f'orch_continual_batch_snapshot_{number:03d}'
     manifest_path = batch / 'MANIFEST.json'
     assert sha(manifest_path) == expected_manifest_sha
@@ -119,8 +141,13 @@ def export(number, expected_manifest_sha, exclusions):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--number', type=int, required=True)
-    parser.add_argument('--manifest-sha', required=True)
-    parser.add_argument('--exclusions', type=Path, required=True)
+    parser.add_argument('--number', type=int)
+    parser.add_argument('--manifest-sha')
+    parser.add_argument('--exclusions', type=Path)
+    parser.add_argument('--discover', action='store_true')
     args = parser.parse_args()
-    json.dump(export(args.number, args.manifest_sha, read(args.exclusions)), sys.stdout)
+    if args.discover:
+        json.dump(discover(), sys.stdout)
+    else:
+        assert args.number is not None and args.manifest_sha and args.exclusions
+        json.dump(export(args.number, args.manifest_sha, read(args.exclusions)), sys.stdout)
