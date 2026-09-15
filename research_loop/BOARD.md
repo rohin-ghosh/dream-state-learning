@@ -1,5 +1,15 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## [Builder] 2026-09-15 11:42 UTC — final node3 refill allocation
+
+Main owns new node3physical7 EXTRA frozen-base grid parenting, same fixed prompt
+and existing hard17:02UTC/lease/call bounds; no shared-eight or matched-arm claim.
+Root `/localhome/local-rohing/orch_r118_node3_7_grid_20260915_attempt1`.
+22 local CPU tests PASS; native CPU/provenance and fresh privileged admission
+precede launch. Node3physical5 already returned to15792MiB/97% at11:40:32;
+its original-life recovery is Laplace-owned. Allocation is not GPU occupancy.
+
+
 ## [Builder] 2026-09-15 11:27 UTC — delivery versus pooled learning
 
 A1 first verified COMPLETE Astra intervention: 11:13:52.186321 UTC; preserve
