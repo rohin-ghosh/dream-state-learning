@@ -1,0 +1,108 @@
+{
+  "actual_status": {
+    "completed_calls": 175,
+    "frozen_sources_unchanged": true,
+    "observed_utc": "2026-09-15T03:49:38.747133+00:00",
+    "workers": [
+      {
+        "alive": true,
+        "calls": 25,
+        "failed": false,
+        "index": 0,
+        "pid": 39537,
+        "stage": "source"
+      },
+      {
+        "alive": true,
+        "calls": 25,
+        "failed": false,
+        "index": 1,
+        "pid": 39546,
+        "stage": "source"
+      },
+      {
+        "alive": true,
+        "calls": 23,
+        "failed": false,
+        "index": 2,
+        "pid": 39555,
+        "stage": "source"
+      },
+      {
+        "alive": true,
+        "calls": 20,
+        "failed": false,
+        "index": 3,
+        "pid": 39564,
+        "stage": "source"
+      },
+      {
+        "alive": true,
+        "calls": 21,
+        "failed": false,
+        "index": 4,
+        "pid": 39573,
+        "stage": "source"
+      },
+      {
+        "alive": true,
+        "calls": 21,
+        "failed": false,
+        "index": 5,
+        "pid": 39582,
+        "stage": "source"
+      },
+      {
+        "alive": true,
+        "calls": 21,
+        "failed": false,
+        "index": 6,
+        "pid": 39591,
+        "stage": "source"
+      },
+      {
+        "alive": true,
+        "calls": 19,
+        "failed": false,
+        "index": 7,
+        "pid": 39641,
+        "stage": "source"
+      }
+    ]
+  },
+  "automatic_training": false,
+  "failure_glob": "shard*/CALL_*_FAILED.json",
+  "native_source_root": "/localhome/local-rohing/orch_rich_hot_node1_20260915_attempt1",
+  "owner": "Hubble batch publisher / Main sampled semantic review",
+  "parenting_data_allowed": false,
+  "prior_first16sample": "RAW_SAMPLE_0347/MANIFEST.json; raw UNREVIEWED only, not an admitted64/12 batch",
+  "prompt_version": "live V1 unchanged; V2_Rohin98 staged separately, not deployed",
+  "provenance_sidecars": [
+    "PUBLICATION.json",
+    "PREPARED.json",
+    "SOURCE_SHA256.json",
+    "PROTOCOL.json",
+    "PROVENANCE.json",
+    "TASKS.json",
+    "LEASE.json",
+    "LIFETIME.json"
+  ],
+  "raw_batch_size": 64,
+  "raw_glob": "shard*/CALL_[0-9][0-9][0-9][0-9][0-9].json",
+  "review_blocks_calls": false,
+  "schema": {
+    "call_identity": "global_call",
+    "finish_time": "finished_unix",
+    "generated_raw": "response.raw",
+    "generated_token_ids": "response.token_ids",
+    "generation_messages": "messages",
+    "outcome": "outcome",
+    "shard": "index",
+    "source_task": "task",
+    "stage": "stage"
+  },
+  "semantic_sample_size": 12,
+  "source_family": "cached GSM TRAIN mining only, known roster/held exclusions frozen",
+  "source_state": "original37ec",
+  "transport_wrapper": "gpu/a40r_ssh.sh"
+}

@@ -1,5 +1,39 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## CURRENT FLOOR — Rohin98 + corpus audit, 2026-09-15 03:47 UTC
+
+32GPU allocation:19permanent-generation (node1all8,node2all8,node3 3/4/5),
+5training (A1000/1/2/3/6),6parenting (A1004/5/7,node3 0/1/2),2existingnode3
+6/7jobs until safe completion then additionalgeneration/parenting. Final
+backfilled split21generation/5training/6parenting meets16/5/5 floors. Resource
+assignment is NOT observed utilization. Existing generators fill pending
+training/parenting slots until launch-ready, identity-checked owner release.
+
+Training: preserve current legacy0/1; start persistent FULL ranks2+6 and
+maskedcontrol3 without waitinglegacyfinish. Then expand SAME checkpoint to
+FULL0+2+6 / masked1+3 with matched globalexamples/normalization, no reset.
+Unequal rank counts must have CPU/native equivalence checks. A1006 leaves
+Hubble generation ONLY on actual Laplace launch-ready release request.
+
+Every parenting cycle tests the learner parent-free and logs taught→next-cycle
+behavior. Foundation upgrades occur ONLY at explicit versioned epoch boundaries
+with same-new-child twins, archived oldlineages, separate metrics before/after.
+Main chooses worth switching from prospectively frozen DEV readouts, not parent
+access to sealed outcomes; no claim that mixed-epoch slopes prove H1/H2.
+Do NOT feed parenting/L2-run experiences into ongoingL1. Preserve every transcript
+as separate futurecuration material; any final once-only sequence is a later
+explicitly declared phase, not automatic batch ingestion.
+
+Corpus audit disposition: do not reject correct sourced rows solely for first-
+person register or150–400length. Preserve original labels and issue a versioned
+new eligibility decision; provenance/gold/held/mask checks remain. Measure
+meaningful branching (alternative considered + reason rejected), request it
+before FINAL when relevant, and never fail a row merely for showing a rejected
+path. Unsupported claims/incorrect reasoning remain separately assessable.
+Report rawrows/hour, batch-admitted vs individually-reviewed counts, duplicate
+rate, richness/branching sample metrics, and actual resident/utilizing GPUs.
+Publish receipts/results/journals/source continuously, preserve both Git sides.
+
 ## FLOOR OVERRIDE — Rohin96, allocated 2026-09-15 03:32 UTC
 
 03:43UTC training transition: math764 onA1000/1 cannot checkpoint before its

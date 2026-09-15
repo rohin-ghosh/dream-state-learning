@@ -1,0 +1,36 @@
+{
+  "assigned_gpu_hours_ceiling": 72,
+  "automatic_training": false,
+  "bundle_sha256": "5e675c309b202625a6ddf1d36c1a58f51ef656985821cec1cd6123424d927469",
+  "claim": "TRAIN_DEV_RAW_SUPPLY_NOT_LEARNING_OR_TRANSFER",
+  "conditions": [
+    "original",
+    "light",
+    "hierarchical"
+  ],
+  "context_limit": 16384,
+  "continuation": "requires_new_prospective_freeze_same_global_budget_and_clock",
+  "denominator_per_condition": 256,
+  "fits": 0,
+  "followup_context_overflow": "record_failure_no_truncation_no_retry",
+  "followups": {
+    "hierarchical": "own_second_pass_regardless_of_oracle",
+    "light": "own_record_only_if_original_oracle_pass",
+    "original": "own_record_only_if_original_oracle_pass"
+  },
+  "hierarchical_first_pass": "Solve this problem in your own voice. Think expansively where it matters: explore the considerations that could change the answer and concentrate on the most consequential uncertainty. Evaluate your provisional conclusion and pursue the most useful question or check it raises. Let the evidence determine how far each branch deserves to go. Use the available space for useful reasoning, not padding or repetition; do not invent facts or observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+  "light_prompt": "Solve this problem in your own voice. Think expansively where it matters: explore the considerations that could change the answer and concentrate on the most consequential uncertainty. Evaluate your provisional conclusion and pursue the most useful question or check it raises. Let the evidence determine how far each branch deserves to go. Use the available space for useful reasoning, not padding or repetition; do not invent facts or observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+  "max_new_tokens": 8192,
+  "maximum_calls": 2048,
+  "maximum_seconds": 43200,
+  "maximum_this_batch_calls": 1536,
+  "no_automatic_budget_reset": true,
+  "no_held_tasks": true,
+  "no_semantic_review_before_calls": true,
+  "original_prompt": "Solve in your own first-person voice, using 150\u2013400 tokens. Identify the given quantities and requested unknown, explain the actual reusable operations connecting them, and check the result against the problem. Do not pad with generic advice or invent observations. Finish with a separate line FINAL: followed by just the numeric answer.",
+  "paired_shards_per_condition": 2,
+  "schema": "RICH_HOT_NODE3_V1",
+  "second_pass": "The assistant response above is your own first pass on the given task, not an external answer or a verified solution. Evaluate it hierarchically: identify the most consequential uncertainty, examine the relevant reasoning branches, and check your provisional conclusion against the given quantities. Pursue the useful next question raised by that check. Retain or revise your conclusion with task-specific reasons. Do not invent observations, manufacture disagreement, repeat, or pad. Stop when useful reasoning is complete. Finish with a separate line FINAL: followed by just the numeric answer.",
+  "tasks_sha256": "3e320ce8c06878a13da0400475977082cedd8379eab780ad82c5de8f1aa50c43",
+  "updates": 0
+}

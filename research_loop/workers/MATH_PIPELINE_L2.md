@@ -1,5 +1,94 @@
 # MATH-PIPELINE-L2 — automatic manufacturing-line handoff
 
+## 2026-09-15T03:55Z — FIRST REAL PARENT PLAN + CHILD REPLAY + WRITES
+
+GUIDED real configuredgpt-5.6-sol/high parent plan completed03:53:44.604175Z;
+1CLI invocation, actualusage13390input/2497output(including308reasoning) tokens.
+Upstreamproviderrequestcount NOT inferred fromCLIcount. Full prompt/request/
+events/plan/stderr/invocation/usage preserved under own analysis
+parent_transcripts/campaign_01_existing_rich/GUIDED_SLEEP_C1; no tool events.
+Child's own parent-guided reflection completed03:54:21.444639Z:710contenttokens.
+It then actually wrote sourced historical attempt/reflection pairs: first
+update loss0.0852069929,736supervisedtokens, LR3e-5, taskTRAIN_C1_E2.
+13GUIDEDupdates confirmed03:54:28; later snapshot116GUIDED/334UNPARENTED/0FROZEN
+actualupdates. No current nativeFAILED and cycle1 remainsinprogress, not terminal.
+First source pair completed58presentations each in its boundedtimewindow;
+not a nominal fixed-dose or cross-arm dose-equality claim. FROZEN parent call
+still pending at this snapshot; no uncompleted parent outcome claimed.
+FIRST_PARENTED_WRITE.json SHA
+0a064628b7fd91a684a9f285c30d42697eca6fcb258934d4d2e8fc2e4b06c1a5
+binds actualmountedstate, rawreflection/messages/tokenIDs, source-call hashes,
+firstactualupdate, parentresponse hash, fullfailure-aware livecounts and original
+LIFETIME/source hashes. FIRST_PARENT_LINEAGE.json binds complete parent files.
+Postcyclefreshnative TEST/retention is queued after each of3cycles; not yet run.
+L2_QUARANTINE.json excludes ALLthisroot's experience/transcripts fromongoingL1.
+Only explicitMainDEV-approved futureEPOCHmayupgrade; no automatic reset.
+Editable native retention import is now root-cause fixed for FUTURE source,
+23CPUtestsPASS; EDITABLE_RETENTION_FIX.json distinguishes it from unchanged
+livea841e3ba archive and separately hash-bound continuation wrapper.
+
+## 2026-09-15T03:52Z — actual first cycle1 responses on ALL THREE
+
+ALL3actual LOADED show exactFULL
+12354524c434be91deaeae74f411091bc70b4e38c003fd4f800aea797cc770c8 andbase
+a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992.
+FirstTRAIN_C1_E0 completed GUIDED03:50:45.440974Z,
+UNPARENTED03:50:52.224506Z,FROZEN03:50:57.209821Z; each228contenttokens/
+229IDs inclEOS, normaltermination, no truncation. FIRST_NATIVE_CYCLE1.json
+preserves full raw responses/messages/tokenIDs/callhashes/actualmountedreceipts.
+No semantic qualification or postcycleverification yet. At03:51 eachlane2
+complete/3reserved; parentplan andwrite pending, not falsely called completed.
+The repaired exact retention callable path additionally exercised all48cases
+with a CPU-only fake generator;0nativecalls, explicitly synthetic, not outcomes.
+
+## 2026-09-15T03:50Z — ALL THREE cycle1 native processes launched
+
+Actual starts03:49:24.836471Z GUIDED4PID350729;
+03:49:32.680809Z UNPARENTED5PID350875;
+03:49:37.253593Z FROZEN7PID350967. Continuationguard350722, parentservice3175663.
+Each passed NEW clear privileged fullproc/CVD/UUID/kernel-minor admission;
+transient sshd/transport argv drifts rescanned with ALL negative receipts kept,
+no skipped owners/unreadable checks. Baseline slots are not replayed; actual
+parent plan/reflection/write still pending at this observation, not claimed.
+Original sourcearchivea841e3ba and8hLIFETIME unchanged; separate wrapper
+4bb6e38b9563e75b7c4b18a29f798eae076333a11203077c5ba92bb3dbd9ef90
+binds existing callable retention seam; supervisorV2
+f53f2f072f6923ce1f969b1e28e554cf415c23b1262fa1d88d7b1cad06127894.
+4focused CPUtests andremote callable-seam smokePASS. Builder heading03:50Z
+was actually inserted03:49:19Z BEFORE this continuation launch; heading minute
+is nominal, actual native timestamps/receipts are authoritative. MainDEV epoch
+upgrades only, no automatic replacement aftercycles; L2dataquarantined fromL1.
+
+## 2026-09-15T03:49Z — truthful partial baseline / non-material continuation
+
+Actual initial lifetime03:42:15.272750Z→11:42:15.272750Z; sourcea841e3ba
+unchanged. GUIDED344715 andFROZEN344769 mounted exactFULL12354524/basea236
+and each completed8math responses. GUIDED then hit author retention importbug:
+orch_full_rich has no memory attribute. This was NOT a model/oracle failure.
+Initial UNPARENTED admission rejected sshd4583 transientargv drift beforelaunch.
+Supervision sidecar then admitted firstUNPARENTED347488, but GUIDED's existing
+native importfailure caused conservative sidecar shutdown beforeUNPARENTEDload.
+No actual parenting, reflections, or writes occurred.16calls completed, all
+raw/token records preserved. Other152planned baseline slots remain missing/
+failed; no replay. GUIDED failure-after base/stateverified; FROZEN posttermination
+mounted verification unavailable, explicitly not claimed. Releases CLEAR all3.
+
+Repair1's attempted03:45COORD append raced peer merge and FAILED; its generated
+reference to that proposed line was premature, not a valid published receipt.
+Original03:40Builder gate remains; correction and continuationBuilder logged
+separately with actual timestamp. Frozen archives never mutated.
+
+Rohin98:4/5/7 unchanged; parent-free TEST after EACH cycle mandatory. Continue
+ONLY unattempted cycles1–3 with explicit existing retention-seam binding repair;
+do not retry failed/partial baseline or any reserved call. All3still seed SAME
+unchanged FULL, all cycles/tests/cohort/dose/prompt/parentvisibility remain.
+Original clock/counters preserved, baseline delta claims unavailable. Parent
+experience/retention aftercycles remain freshprocess same-stage comparisons.
+Foundation upgrade only at explicit Main-DEV-approved newEPOCH; previous automatic
+combined upgrade is DISABLED, no blocking upgrade infrastructure before first
+parenting. L2traces/parenttranscripts/metrics quarantined from ongoingL1 ingestion;
+future final once-only curation is separate, not authorized here.
+
 ## 2026-09-15T03:40Z — ACTUAL CPU READY / selective release now
 
 Hubble:4/5/7 ready NOW.18local+remote tests PASS; remote tensor/base/tokenizer

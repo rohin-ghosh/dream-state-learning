@@ -1,0 +1,42 @@
+{
+  "schema": "ORCH_RICH_HOT_NODE2_PUBLISHER_HANDOFF_V1",
+  "owner": "RICH_HOT_NODE2",
+  "recipient": "Hubble CONTINUAL_BATCH / Main / Laplace",
+  "raw_manifest_schema": "ORCH_RICH_HOT_NODE2_RAW_BATCH_V1",
+  "original_native_root": "/localhome/local-rohing/orch_rich_hot_node2_20260915_attempt1",
+  "original_batches": "/localhome/local-rohing/orch_rich_hot_node2_supply_20260915_attempt1/raw/batches/*/MANIFEST.json",
+  "local_first1110_batches": "research_notes/analysis/orch_rich_hot_node2_20260915_attempt1/supply_handoff/raw/batches/*/MANIFEST.json",
+  "floor98_native_root": "/localhome/local-rohing/orch_rich_hot_node2_floor98_20260915_attempt1",
+  "floor98_batches": "/localhome/local-rohing/orch_rich_hot_node2_supply_20260915_attempt1/floor98_raw/batches/*/MANIFEST.json",
+  "floor98_environment_evidence": "/localhome/local-rohing/orch_rich_hot_node2_supply_20260915_attempt1/floor98_raw/evidence/*/EVIDENCE_MANIFEST.json",
+  "publication": "Atomic directory rename after fsynced files; manifest directory name is SHA256 of exact MANIFEST.json bytes.",
+  "capture_join": "Each rows[].file is relative to its immutable manifest directory; sha256 and bytes bind exact source capture. key=run:shard:task_id:stage. Do not equate reservations with completions.",
+  "raw_fields": ["messages", "response.raw", "response.token_ids", "response.terminal", "response.truncated", "response.max_new_tokens", "outcome", "error", "shard", "condition", "task_id", "stage", "finished_unix"],
+  "prospective_extra_fields": ["family", "source_task_id", "repeated_train_source", "outcome.branching_semantic_annotation"],
+  "environment_join": "EVIDENCE_MANIFEST source_relative_path shardN/evidence/Bxxx-Pxx.json joins raw shard/task_id; its raw.json contains the exact task payload and actual collection/episode records. Route response captures alone are not success scores. Later AFTER and BATCH checkpoint receipts are separate immutable evidence, not retrospective raw edits.",
+  "source_identity": {
+    "adapter_state_sha256": "37ec37884e4b0b679edd1dba1be1dec3474589e992649f3a33e7e3b1ec78b8c0",
+    "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992"
+  },
+  "limits": {"max_new_tokens": 8192, "context": 16384, "original_batch_max_rows": 128, "floor98_batch_max_rows": 64},
+  "review_contract": {
+    "owner": "Hubble's separately frozen64raw/12sample policy",
+    "raw_semantic_status": "UNREVIEWED",
+    "admitted": false,
+    "trainingAllowed": false,
+    "no_first_person_gate": true,
+    "no_150_400_token_gate": true,
+    "never_treat_batch_sample_as_individual_PASS": true,
+    "branching_measurement": "Sampled full-text semantic annotation with evidence spans for consequential alternative considered, reason rejected and grounding; allow not-relevant/unresolved; no keyword proxy certification.",
+    "neutral_prefix": "No automatic rewriting of generation history. Bind any proposed training prefix and check actual support separately.",
+    "long_targets": "Keep all raw bytes. If an encoder cannot accept full context, record incompatibility; never crop or silently gate at400."
+  },
+  "source_exclusions": "Cached GSM TRAIN with inherited98known roster exclusions plus originalhot cohort excluded from new math pool; existing L1 code gym and new isolated TRAIN route namespaces. Known exclusions, not a full-pretraining/global-census guarantee.",
+  "no_parenting_experience_into_L1": true,
+  "no_teacher_targets": true,
+  "no_held_inputs": true,
+  "no_semantic_review_launch_gate": true,
+  "crossworker_pool_repeats": "Keep source/target hashes for deduplication. Reused training tasks are not distinct novel questions.",
+  "live_verified_snapshot": "research_notes/analysis/orch_rich_hot_node2_20260915_attempt1/LIVE_OBSERVATION_FLOOR98.json",
+  "next_action": "Hubble may consume original raw batches now; Floor98 watcher573172 starts CODE first on each naturally completed/AFTER-verified original lane following fresh privileged admission. No Floor98 GPU call has yet occurred."
+}
