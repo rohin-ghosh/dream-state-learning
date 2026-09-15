@@ -1,5 +1,36 @@
 # Research state — Orchestrator
 
+## Shared learner handoff underway — September 15, 2026, 12:06 UTC
+
+All eight node5 executable successors passed native readiness validation:
+F1/A1 route physical0/4, F2/A2 math1/5, F3/A3 code2/6, F4/A4 grid3/7.
+This is not yet a shared learning result or a completed activation. Exact
+completed-cycle releases are authorized and being coordinated; no historical
+checkpoint is an adoption target. The common child must inherit the latest
+released F1 LoRA, its sole optimizer/RNG, rehearsal history and exposure counters.
+Existing bounds, charges, task cursors and carries remain. No other branch owns
+an optimizer after adoption. Parent-system comparisons then share one learner;
+they do not isolate per-parent weight-training effects.
+
+Main's readiness/adoption helper passed44CPU tests locally and on node5. Native
+proof and the exact eight-ready roster are in
+`research_notes/analysis/orch_r118_shared_adoption_20260915/NATIVE_READY_1206.json`.
+All40GPUs were memory-resident at11:57:49–50UTC;20had positive instantaneous
+utilization. Do not report this as sustained40/40compute.
+
+The12:02node-local reduction reports F1's latest completed930optimizer steps
+and60,110child-token exposures; A1 has281steps/17,907exposures. Other six node5
+branches remain elicitation-only until shared activation. F1published2COMPLETE/
+51MISSING parents; A1published17COMPLETE/7MISSING/3SILENT. Published responses
+are not automatically consumed interventions. The full eight-branch distribution,
+TRAINtokens, error caveats and evidence hashes are in `HOURLY_1202.md` andJSON
+in that directory. FINAL was not read for this audit.
+
+F1's transient DEV prose at sleep2 reverted to protocol-only output at sleep3.
+Open turns are recorded and sometimes enact inspections, but repeated reads
+are not established useful initiative. **Retained parent-free behavioural gains
+against frozen and unparented controls remain unproven; the full goal is active.**
+
 ## Two new math-lane failures disclosed — September 15, 2026, 08:15 UTC
 
 Node3BASEmath1/2 each produced ONE298-token original, then failed at08:05:00/

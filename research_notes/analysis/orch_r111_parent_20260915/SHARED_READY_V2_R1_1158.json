@@ -1,0 +1,77 @@
+{
+  "schema": "R118_ROUTE_READY_V2_R1_COMPACT",
+  "observed_utc": "2026-09-15T11:57:45.039954+00:00",
+  "explicit_Main_binding_required": true,
+  "successor_source": "/localhome/local-rohing/orch_r111_route_shared_source_20260915_v2r1",
+  "executable": {
+    "module": "gpu.orch_r111_route_pair_shared",
+    "sha256": "c385db4fe1920ba645af8816327ddcbaebe10da3d1f42f3318330fa052ecb7ae"
+  },
+  "source_closure": {
+    "path": "/localhome/local-rohing/orch_r111_route_shared_source_20260915_v2r1/SOURCE_CLOSURE_V2.json",
+    "sha256": "dad9751a058d4ebffa1caa8ecb5ff1c02056de80bc97b3ec01cc297cc1c0cfac",
+    "python_files": 960
+  },
+  "CPU": {
+    "path": "/localhome/local-rohing/orch_r111_route_shared_source_20260915_v2r1/CPU_SHARED_V2.json",
+    "sha256": "7cb1660db6cc356e98561826365a005be6b6bf6221b3585433f0e37f22d776d0",
+    "pytest_passed": 164,
+    "subtests_passed": 42,
+    "junit_cases_passed": 206,
+    "failed": 0,
+    "skipped": 0,
+    "cuda_initialized": false,
+    "actual_PEFT_AdamW_RNG_roundtrip": true,
+    "actual_entrypoint_help_exit_code": 0
+  },
+  "F1": {
+    "physical": 0,
+    "ready_path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/SHARED_CLIENT_READY_V2_R1.json",
+    "ready_sha256": "d87c463594a01f814bc03fa720b105a4a55ce6b30c37e192b6a87ce1debc4de0",
+    "preserved_v1_sha256": "280a1181f3ec6facc7bc71704c63f5e2ef199f4b59d393f41def3c6b3a8575fe",
+    "preserved_invalid_v2_sha256": "75b939f800cbf9f44913aeae59e192e19f55be95d9117978cd63ad509f689263",
+    "unchanged_plan_sha256": "5b619c1acb48caaafb9bd5acc9ccdbb4d546075ebc8599a21066d8829624c163",
+    "train_ids_count": 16,
+    "excluded_ids_count": 16,
+    "candidate_only": {
+      "cycle": 4,
+      "checkpoint_sha256": "3e4b13a2236bb542ad6702cd78011e9c90b150833363f48709cfd779c3ead09b",
+      "optimizer_sha256": "5589cd653e3897b975aed81fc331c472ae6546646e6a7515ad12688854fd2dfc",
+      "optimizer_steps": 744,
+      "child_token_exposures": 55114,
+      "anchor_token_exposures": 13580,
+      "history_rows": 42,
+      "history_path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/SHARED_HISTORY_CANDIDATE_3e4b13a2236bb542.json",
+      "history_sha256": "6de1d53473e045160b845383f812a2af5cabc2ec221f90bffdd1ee83082ebde3",
+      "must_refresh_at_actual_release": true
+    }
+  },
+  "A1": {
+    "physical": 4,
+    "ready_path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_4_attempt1/SHARED_CLIENT_READY_V2_R1.json",
+    "ready_sha256": "de222592d5067b1f6999c592019707d3102659b54af4c6db0fa8bd2585adb804",
+    "preserved_v1_sha256": "e98e68bf0149a4d734d8a7a9debfdbd1c8fae690bf193516234f698cfab5253a",
+    "preserved_invalid_v2_sha256": "1d669e80dc985d72d328620338757452e70da0b3ae944428d12e877ebf2eb9c2",
+    "unchanged_plan_sha256": "47b599908b5a07fcf7e7f90646551fccc80b5d5f4bdbb3f20f494493095ecaf4",
+    "train_ids_count": 16,
+    "excluded_ids_count": 16
+  },
+  "handoff": {
+    "controller_source": "/localhome/local-rohing/orch_r111_boundary_candidate_20260915_v2/gpu/orch_r111_route_boundary.py",
+    "controller_sha256": "acb0e1b95a457ef6a88bbc7ae8cd50445d04188142361d7299e7948f17c7b508",
+    "F1_request_sha256": "7cac4cca2fdc93ecd58462d34347e662646c144c824e6b33778e8c498fce6b20",
+    "A1_request_sha256": "c34ed07b65c04b2f5f37aeb4717b42850ff2ae80ec6b0b319e206ddd6d628486",
+    "F1_expires_unix": 1789476323.7796512,
+    "A1_expires_unix": 1789476323.860031,
+    "expiry_utc": "2026-09-15T12:45:23Z",
+    "armed": false,
+    "AUTH_created": false,
+    "shared_initialized_by_this_worker": false
+  },
+  "parent_wait_seconds": 120,
+  "live_source_changed": false,
+  "old_ready_files_changed": false,
+  "native_or_parent_calls_added": 0,
+  "quota_reset": false,
+  "raw_on_node_only": true
+}
