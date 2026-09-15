@@ -53,14 +53,28 @@ reconciler and all target-device checks. That scan passed, but a wrapper missing
 complete subprocess launch interface. This implementation fault and all earlier
 failures remain preserved, without changing counters.
 
-Latest immutable runtime source is
-`/localhome/local-rohing/orch_math_feedback_uptake_r125_runtime_source_20260915_v2`;
-CPU5local/5native PASS, plus40combined local runtime/transient regressions.
-`runtime_recovery3/ADMISSION.json` is clear and native PID4093591 started at
-19:31:31 UTC. It skips the failed probes, restores saved C11 AdamW/RNG/carry,
-and continues C12. Future original DEV20 calls use the tested full resident
-model/optimizer CPU-offload path. Successful A2 future DEV remains to verify;
-no A2 matched before/after result is claimed.
+That runtime3 subsequently failed on the preserved MOUNTED_BEFORE receipt,
+before model load. The fix writes the new mounted receipt in its own service
+directory. Runtime4 then correctly rejected another insufficiently proven
+argv drift, PID4121286. All failed guards and artifacts remain intact.
+
+Latest immutable sampling wrapper is
+`/localhome/local-rohing/orch_math_feedback_uptake_r125_runtime_source_20260915_v4`,
+binding runtime-source v2. Full guard startup with an injected model boundary
+and full resident prefix through the first new-cycle boundary passed before
+dispatch: seven native tests, 43 combined local tests. Runtime5 admission
+is clear; guard4155307 and native4156720 are the actual current processes.
+
+At19:38:41 UTC, A2 **actually restored** saved C11 checkpoint53b97274...,
+AdamW4419 and exact CPU/CUDA RNG. First new C12CALL201 completed252tokens,
+SHA5500c0c6..., bound to that checkpoint. Native206/parent48 at the compact
+snapshot, with all previous charges preserved. It skipped both failed probe
+keys. Future DEV20 uses resident/optimizer CPU offload; successful C12 DEV
+remains to verify. No A2 matched before/after result is claimed.
+
+`ACTUAL_CONTINUITY_1939.json` contains exact restoration/checkpoint/call and
+failed-era hashes. F2 subsequently saved C15 at4401steps and completed another
+fresh DEV20/20 plus AFTER and return0; it continues into C16.
 
 There are no scheduled new boundary signals or outcome-dependent interventions.
 Both continued lives retain original carry, failed charges, two-episode sleeps,

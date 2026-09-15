@@ -860,3 +860,30 @@ tests PASS;17combinedlocal. Original model/source/scanner untouched; retain
 first ADMISSION and permit one administrative freshscan in admission_attempt2.
 No charged-task replay. Full preGPU source/test pins and Hubble actualF2
 RELEASED/PLAN handoff posted COORD; A2broker3796147 already rebound safely.
+## 2026-09-15T19:37Z [Builder] A2 full-startup regression and bounded continuation
+Shared COORD/BOARD left untouched during Main publication. R125v4 exactsource
+310980c7b141abaa9cb17d552a2692fbb1e7670b576c8363c5567af406e181c1,
+runtimev2 b27d8196b9a6f4edae3e239abbd699858426d8d2f056640bb3c72eba28c4a1b5.
+Full guard path tested with fake model Popen boundary, rejecting failedscan;
+full resident prefix tested through savedrestore/mounted/anchors to first genuine
+C12collect boundary, originalmountedreceipt preserved.7native/43combinedlocalPASS;
+FULL_STARTUP_CPU_TESTS011a9c37dd871e8042ca689e3a4d66e7f0bcd25570dfe4980eed1bbce748aaaf.
+Runtime_recovery4 failedstrictscan only, PID4121286 now pidfdESRCH+/proc absent,
+no LAUNCH or charge. New runtime_recovery5 administrative guard, onefreshstrictscan
+with all rejected observations preserved for diagnosis; no scanner waiver or
+probe retry. Original failedprobes+all4runtimeattempts preserved. Firstactual
+newC12model/updates pending, never claimed from guardalone. Native200/P46/4419
+until verified restoration. Own exact stageallowlist includes startup test.
+## 2026-09-15T19:40Z ACTUAL restoration; queued status superseded
+A2 runtime_recovery5 guard4155307/native4156720 alive; strictfullscan clear,
+actualC11checkpoint53b97274.../AdamW4419+savedCPU/CUDA RNG restored19:38:41.
+LOADED1f0f1277..., OPTIMIZER_RESTORED19be0381.... FirstnewC12CALL201
+COMPLETE252tokens SHA5500c0c6..., actualcheckpointbound. N206/P48;
+no originalfailedprobe keys retried. Runtime4failure4121286 remains preserved:
+argv changed, kerneluid/start unchanged,targetFDfalse/CVDnull but insufficient
+proof; rejected correctly, no empty-memory inference. Runtime5freshscan clear,
+not a waiver. No further administrativeattempt queued. FutureC12DEV pending.
+F2actualC15saved4401steps/DEV20of20+AFTER+return0, C16continues. Matchedpair
+16/16successful; exact4textchanges are wording/whitespace around same methods,
+not improvement/control inference. Compact ACTUAL_CONTINUITY_1939.json and
+F2_MATCHED_DEV_VERIFIED.json plus exactsource/test allowlist ready; MainGit.
