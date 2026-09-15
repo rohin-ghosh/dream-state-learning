@@ -27653,3 +27653,29 @@ research_notes/analysis/orch_guided_native_20260915_generation_handoff.md.
 This is a compatibility delivery, not learning evidence or mission completion.
 No model calls, fit, task generation, GPU/PID changes or historical rewrites.
 No native ownership blocker; Main retains campaign and richness scheduling.
+
+## [Fable VM result read] 2026-09-15T12:07Z — SEQ-277 VERIFIED
+
+Read-only recount of the Worker BASE-CONTRACT SEQ277 entry (2026-09-14T23:18:41Z) against the reader path on node 2, `/localhome/local-rohing/orch_base_contract_20260914_attempt1/recovery1/` (FINAL_REDUCTION.json, FINAL_ROWS.json, SEMANTIC_REVIEW.json, CPU_TOKEN_REPLAY.json, CAPSULE_SHA256.txt, prepare/REQUEST.json) and the local mirror `research_notes/analysis/orch_base_contract_20260914_attempt1/FINAL_CPU_TESTS.txt`. SEQ-278 carries no `[Builder|Orchestrator|Worker]` tag in its heading and was not selected by the candidate filter; not read.
+
+| measure | entry | re-derived | source |
+|---|---|---|---|
+| Initial checker successes BASE / ORIGINAL | 7/8 / 6/8 | 7/8 / 6/8 | FINAL_REDUCTION.json states.*.initial_success, denominator |
+| Initial content-gate passes | 4/8 / 1/8 | 4/8 / 1/8 | states.*.initial_admitted; FINAL_ROWS content_gate_pass (solution) 4 / 1 |
+| Own-record content passes / attempted records | 0/7 / 1/6 | 0/7 / 1/6 | FINAL_ROWS kind=record: BASE 7 rows 0 pass, ORIGINAL 6 rows 1 pass |
+| Tasks with any content pass | 4/8 / 2/8 | 4/8 / 2/8 | states.*.admitted_tasks |
+| Content-passing tasks with complete post-mounted proof | 3/8 / 2/8 | 3/8 / 2/8 | provenance_qualified_tasks; FINAL_ROWS provenance_qualified_admitted 3 / 2 |
+| CODE content-passing | 1/4 / 0/4 | 1/4 / 0/4 | by_domain.CODE |
+| MATH content-passing | 3/4 / 2/4 | 3/4 / 2/4 | by_domain.MATH |
+| Paired BASE-only / ORIGINAL-only / both / neither | 2/0/2/4 | 2/0/2/4 | pairs (BASE-only: task 14, gsm8k-train-3590) |
+| Unique native calls | 15 / 14, 29/32 | 15 / 14, 29 rows, 29 unique raw hashes | states.*.calls; FINAL_ROWS |
+| Median generated tokens | 231 / 123.5 | 231 / 123.5 | states.*.tokens (15 and 14 values) |
+| Calls lacking post-mounted hash | 11 | 11 (BASE 7, ORIGINAL 4) | historical_post_mounted_hash_missing; FINAL_ROWS post_mounted_hash_verified=false |
+| Full texts read: PASS / FAIL / UNRESOLVED | 29: 10/17/2 | 29: 10/17/2 | SEMANTIC_REVIEW.json status; FINAL_ROWS semantic_status |
+| CPU token replays | 29/29 | status PASS, verified_calls 29 | CPU_TOKEN_REPLAY.json |
+| CPU tests | 40/40 | 40 passed | FINAL_CPU_TESTS.txt (local mirror) |
+| ORIGINAL initial raw hashes replay original receipts | 8/8 | 8 tasks exact=true | original_replay |
+| Native GPU hours | 0.308707821 | 0.30870782123671636 | native_gpu_hours |
+
+Integrity: FINAL_REDUCTION.json sha256 38e47ced9256aef1fd08811fc8ae66e855b489e29f23e4f452f0be6305c14c23 matches the entry; terminal_capsule.tar.gz sha256 46a097e39bca9174adc96c86d355a17db5cad63deed5771089159e2fd3fea5de and 206013 bytes match the entry and CAPSULE_SHA256.txt; frozen FREEZE hash 56812ce… matches prepare/REQUEST.json and prepare/RESULT.json. Model-call count: entry 29 unique calls = 29 FINAL_ROWS rows = CPU_TOKEN_REPLAY verified_calls 29. The 201-file capsule count and the 23:11 UTC release times were not re-derived. No RESULT.json-style `physical_model_calls`/`adapter_sha256` fields exist in this reduction format.
+Scope note (builder's own limits): eight already-exposed simple tasks, one node, content passes are not training admissions, not a clean paired null (11 initial calls lack post-generation mounted hashes).
