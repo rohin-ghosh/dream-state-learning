@@ -1,0 +1,116 @@
+{
+  "captured_case": {
+    "dispatch_metadata": {
+      "attempts": 1,
+      "cutoff_unix": 1789473655.0074472,
+      "effort": "max",
+      "requested_model": "claude-fable-5-1",
+      "started_unix": 1789473137.3559399
+    },
+    "envelope_metadata": {
+      "duration_api_ms": 94902,
+      "duration_ms": 94242,
+      "is_error": false,
+      "modelUsage": {
+        "claude-fable-5-1": {
+          "cacheCreationInputTokens": 5413,
+          "cacheReadInputTokens": 4535,
+          "canonicalModel": "claude-fable-5-1",
+          "contextWindow": 1000000,
+          "costBasis": "list",
+          "costUSD": 0.45023374999999993,
+          "inputTokens": 4,
+          "maxOutputTokens": 64000,
+          "outputTokens": 6816,
+          "provider": "firstParty",
+          "thinkingTokens": 6446,
+          "webSearchRequests": 0
+        },
+        "claude-haiku-4-5-20251001": {
+          "cacheCreationInputTokens": 0,
+          "cacheReadInputTokens": 0,
+          "canonicalModel": "claude-haiku-4-5",
+          "contextWindow": 200000,
+          "costBasis": "list",
+          "costUSD": 0.000975,
+          "inputTokens": 905,
+          "maxOutputTokens": 32000,
+          "outputTokens": 14,
+          "provider": "firstParty",
+          "thinkingTokens": 0,
+          "webSearchRequests": 0
+        }
+      },
+      "num_turns": 2,
+      "subtype": "success",
+      "total_cost_usd": 0.45120874999999994,
+      "type": "result"
+    },
+    "files": {
+      "DISPATCH.json": "080493da9303d27f1b10d3768bf7ee483451f29677acbb5af32b87b8c3cdfd28",
+      "REQUEST.json": "c644725720416c8b49b3129d4916d0cec0682f531fc7167dcd2e8e582fac1159",
+      "RESULT.json": "0ceb32e2bfdc6eeedb64811545c20becadbb12db01bbafc72c167a66900f58e1",
+      "stdout.json": "1c558efff246abb85d60c975b03e36d2cc3efd8eabe9f0b5de843f7cc0c58c67"
+    },
+    "original_error": {
+      "code": "provider_error_or_turn_limit",
+      "type": "ValueError"
+    },
+    "original_result_unchanged": true,
+    "original_status": "MISSING",
+    "regression_uses": "Exact captured envelope metadata plus explicitly synthetic valid plan; no historical text replay or relabel",
+    "result_text_exported": false,
+    "root": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_transcripts/P0026",
+    "split": "TRAIN"
+  },
+  "future_runtime": {
+    "max_concurrent_across_branches": 4,
+    "max_concurrent_per_branch": 1,
+    "owner_bound_lifecycle_required": true,
+    "parent_effort": "high",
+    "parent_wait_seconds": 600,
+    "prompt_root": "/localhome/local-rohing/courier_swarm/prompts",
+    "provider_cutoff": "min(request.lane_deadline_unix - 30, config.deadline_unix)",
+    "provider_lock_scope": "branch",
+    "queue_transport": "node_local"
+  },
+  "launched": false,
+  "native_receipt": {
+    "path": "/localhome/local-rohing/orch_r119_claude_broker_20260915_turncount_v1/CPU_READY.json",
+    "sha256": "d38a2a0f1b82f2aa9151d6306fcdd0d3595d44507fd3341f6967349d82cce5b5"
+  },
+  "new_provider_calls": 0,
+  "observed_utc": "2026-09-15T17:31:07.228144+00:00",
+  "old_claims_modified": false,
+  "repair": {
+    "cli_max_turns": 1,
+    "model_identity_check_unchanged": true,
+    "no_empty_or_malformed_plan_admission": true,
+    "reported_num_turns": "positive integer telemetry, not CLI --max-turns equality",
+    "success_and_error_checks_unchanged": true,
+    "tools": ""
+  },
+  "schema": "R119_CLAUDE_TURN_COUNT_REPAIR_CPU_READY_V1",
+  "source_files": {
+    "gpu/orch_l2_long_backend.py": "dfc3afd9d4d4ed9551201c0b81e4844755186a44049cce9ed701b6a66944bc1a",
+    "gpu/orch_r110_claude_broker.py": "63ef962cd668be601f25cdc969f618804258e90ed696977b923dddaedfe7d049",
+    "gpu/ovx3_scp.sh": "2a1bf86fc875f98b1564a8f5dac9c549ad15dea67150d22850a1e7fcc7671e20",
+    "gpu/ovx3_ssh.sh": "e7be79c608da97bcdf218e430ee5151e78636694bd3b1b337dd7f724a92a2b56",
+    "organism_v6/orch_l2_long_parent.py": "8f35fd0578d2af29a45b737a100a25034abf09181e66de75ca6f26df39f1e622",
+    "research_notes/PARENTING_BATTLE_PLAN_v4_2026-09-15.md": "79c36d2468cf1ab6668ebcc6bf6929bae37a9a9a6fbe19272339c67c9fff31a9"
+  },
+  "source_root": "/localhome/local-rohing/orch_r119_claude_broker_20260915_turncount_v1/source",
+  "test_file_sha256": "9c4233dd34fd2a08e1e38e6e75f1f9a0586ea51f655e5dbba515efcca4ac69a8",
+  "tests": {
+    "local": {
+      "command": "python3 -m unittest discover -s tests -p test_orch_r110_claude_broker.py -q",
+      "passed": 89,
+      "returncode": 0
+    },
+    "native": {
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/localhome/local-rohing/orch_r119_claude_broker_20260915_turncount_v1/source CUDA_VISIBLE_DEVICES= python3 -m unittest discover -s /localhome/local-rohing/orch_r119_claude_broker_20260915_turncount_v1/source/tests -p test_orch_r110_claude_broker.py -q",
+      "passed": 89,
+      "returncode": 0
+    }
+  }
+}

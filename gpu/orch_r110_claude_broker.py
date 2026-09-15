@@ -136,10 +136,39 @@ def validate_config(config):
         'train_tasks', 'excluded_task_ids', 'cohort_sha256', 'principles_sha256',
         'source_files'}
     require(keys <= set(config) <= keys | {'fallback_parent_fields', 'min_available_bytes',
-        'queue_transport', 'provider_lock_scope', 'parent_effort', 'terminal_filename'}, 'config_keys')
+        'queue_transport', 'provider_lock_scope', 'parent_effort', 'terminal_filename',
+        'terminal_binding', 'predecessor_config'}, 'config_keys')
     require(config.get('terminal_filename', 'TERMINAL.json') in TERMINAL_FILENAMES,
         'configured_terminal_filename')
     require(config.get('queue_transport', 'ssh') in ('ssh', 'node_local'), 'queue_transport')
+    if 'terminal_binding' in config:
+        require(config.get('queue_transport') == 'node_local', 'terminal_binding_node_only')
+        binding = config['terminal_binding']
+        require(isinstance(binding, dict) and set(binding) == {'path', 'owner', 'writer'},
+            'terminal_binding_schema')
+        terminal = Path(binding['path'])
+        require(terminal.is_absolute() and '..' not in terminal.parts
+            and terminal.name.endswith('TERMINAL.json')
+            and terminal.is_relative_to('/localhome/local-rohing')
+            and not terminal.is_symlink(), 'terminal_binding_path')
+        for key in ('owner', 'writer'):
+            reference = binding[key]
+            require(isinstance(reference, dict) and set(reference) == {'path', 'sha256'}
+                and Path(reference['path']).is_absolute()
+                and not Path(reference['path']).is_symlink()
+                and sha(reference['path']) == reference['sha256'], 'terminal_binding_source')
+        require(terminal.name in Path(binding['writer']['path']).read_text(),
+            'actual_terminal_writer')
+    if 'predecessor_config' in config:
+        reference = config['predecessor_config']
+        require(config.get('queue_transport') == 'node_local' and isinstance(reference, dict)
+            and set(reference) == {'path', 'sha256'}
+            and Path(reference['path']) == Path(config['remote_root'])/'parent_claude/CONFIG.json'
+            and sha(reference['path']) == reference['sha256'], 'predecessor_config_binding')
+        prior = loads(Path(reference['path']).read_text())
+        require(all(prior[key] == config[key] for key in ('branch', 'family', 'remote_root',
+            'life_id', 'max_parent_calls', 'max_budget_usd', 'max_output_tokens', 'train_tasks',
+            'excluded_task_ids', 'cohort_sha256', 'principles_sha256')), 'predecessor_caps_and_identity')
     require(config.get('parent_effort', 'max') in ('max', 'high'), 'bounded_parent_effort')
     require(config.get('provider_lock_scope', 'shared') in ('shared', 'branch'), 'provider_lock_scope')
     require(config.get('provider_lock_scope', 'shared') != 'branch'
@@ -508,7 +537,7 @@ def parse_output(raw, family, task_id):
     envelope = loads(raw)
     require(isinstance(envelope, dict) and envelope.get('type') == 'result'
         and not envelope.get('is_error') and envelope.get('subtype') in (None, 'success')
-        and type(envelope.get('num_turns')) is int and envelope['num_turns'] == 1,
+        and type(envelope.get('num_turns')) is int and envelope['num_turns'] >= 1,
         'provider_error_or_turn_limit')
     models = envelope.get('modelUsage')
     require(isinstance(models, dict) and 0 < len(models) <= 2, 'actual_model_usage_required')
@@ -525,7 +554,8 @@ def parse_output(raw, family, task_id):
     return dict(status='SILENT' if metadata['silent'] else 'COMPLETE', plan=plan,
         parent_metadata=metadata, actual_model=observed[0], usage=dict(
             usage=envelope.get('usage'), model_usage=models,
-            total_cost_usd=envelope.get('total_cost_usd'), duration_ms=envelope.get('duration_ms')))
+            total_cost_usd=envelope.get('total_cost_usd'), duration_ms=envelope.get('duration_ms'),
+            reported_num_turns=envelope['num_turns']))
 
 
 def stop_process(process):
@@ -782,6 +812,8 @@ def process_request(store, config, launch, name, buffer, prompt_root, principles
 
 
 def terminal_path(config):
+    if 'terminal_binding' in config:
+        return Path(config['terminal_binding']['path'])
     name = config.get('terminal_filename', 'TERMINAL.json')
     require(name in TERMINAL_FILENAMES, 'configured_terminal_filename')
     return Path(config['remote_root']) / name
@@ -808,7 +840,8 @@ def serve(config_path, launch_path, prompt_root, principles_path):
     try:
         binding = buffer / 'CONFIG.json'
         write(binding, config)
-        remote_binding = ledger / 'CONFIG.json'
+        remote_binding = ledger / (('CONFIG_' + digest(config) + '.json')
+            if 'predecessor_config' in config else 'CONFIG.json')
         if not store.exists(remote_binding):
             store.copy(binding, 'NODE:' + str(remote_binding))
         require(store.hash(remote_binding) == sha(binding), 'ledger_config_no_reset')

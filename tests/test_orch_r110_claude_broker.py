@@ -144,6 +144,34 @@ class ClaudeBrokerTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'launch_config_binding'):
             self.evaluate()
 
+    def test_successor_terminal_and_predecessor_config_are_hash_bound(self):
+        ledger = Path(self.config['remote_root'])/'parent_claude'
+        ledger.mkdir(parents=True)
+        prior_path = ledger/'CONFIG.json'
+        prior_path.write_text(json.dumps(self.config))
+        writer = self.root/'writer.py'
+        writer.write_text("TERMINAL = 'GUARD_TERMINAL.json'\n")
+        owner = self.root/'OWNER.json'
+        owner.write_text('{"status":"PREPARED"}')
+        self.config.update(queue_transport='node_local', provider_lock_scope='branch',
+            parent_effort='high', predecessor_config=dict(path=str(prior_path), sha256=broker.sha(prior_path)),
+            terminal_binding=dict(path='/localhome/local-rohing/owner/service/GUARD_TERMINAL.json',
+                owner=dict(path=str(owner), sha256=broker.sha(owner)),
+                writer=dict(path=str(writer), sha256=broker.sha(writer))))
+        broker.validate_config(self.config)
+        self.assertEqual(broker.terminal_path(self.config),
+            Path('/localhome/local-rohing/owner/service/GUARD_TERMINAL.json'))
+        before = prior_path.read_bytes()
+        with self.assertRaisesRegex(ValueError, 'predecessor_caps_and_identity'):
+            broker.validate_config(dict(self.config, max_parent_calls=5))
+        with self.assertRaisesRegex(ValueError, 'terminal_binding_source'):
+            broker.validate_config(dict(self.config, terminal_binding=dict(self.config['terminal_binding'],
+                writer=dict(path=str(writer), sha256='0'*64))))
+        with self.assertRaisesRegex(ValueError, 'terminal_binding_path'):
+            broker.validate_config(dict(self.config, terminal_binding=dict(self.config['terminal_binding'],
+                path='/localhome/local-rohing/owner/../GUARD_TERMINAL.json')))
+        self.assertEqual(prior_path.read_bytes(), before)
+
     def test_serve_uses_bound_terminal_and_stops_before_next_request(self):
         root = Path(self.config['remote_root'])
         queue = root/'parent_queue'
@@ -721,6 +749,7 @@ class ClaudeBrokerTests(unittest.TestCase):
 
     def test_post_morning_parent_slot_not_stopped_by_evaluation_boundary(self):
         after_cut = broker.MORNING_CUT_UNIX+60
+        self.launch['not_before_unix'] = after_cut-1
         self.config['deadline_unix'] = broker.NODE5_HARD_WALL_UNIX
         self.request['lane_deadline_unix'] = after_cut+120
         self.rebind()
@@ -827,11 +856,78 @@ class ClaudeBrokerTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'actual_fable_model'):
             broker.parse_output(json.dumps(envelope), 'route', 'TRAIN_1')
 
-    def test_provider_error_and_multiturn_refused(self):
+    def test_captured_success_two_turn_metadata_with_synthetic_plan(self):
+        capture = dict(
+            stdout_path='/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parent_transcripts/P0026/stdout.json',
+            stdout_sha256='1c558efff246abb85d60c975b03e36d2cc3efd8eabe9f0b5de843f7cc0c58c67',
+            request_sha256='c644725720416c8b49b3129d4916d0cec0682f531fc7167dcd2e8e582fac1159',
+            metadata=dict(type='result', subtype='success', is_error=False, num_turns=2,
+                duration_ms=94242, duration_api_ms=94902, total_cost_usd=0.45120874999999994,
+                modelUsage={
+                    'claude-haiku-4-5-20251001': dict(inputTokens=905, outputTokens=14,
+                        cacheReadInputTokens=0, cacheCreationInputTokens=0,
+                        webSearchRequests=0, costUSD=0.000975, contextWindow=200000,
+                        maxOutputTokens=32000, thinkingTokens=0,
+                        canonicalModel='claude-haiku-4-5', provider='firstParty', costBasis='list'),
+                    'claude-fable-5-1': dict(inputTokens=4, outputTokens=6816,
+                        cacheReadInputTokens=4535, cacheCreationInputTokens=5413,
+                        webSearchRequests=0, costUSD=0.45023374999999993,
+                        contextWindow=1000000, maxOutputTokens=64000, thinkingTokens=6446,
+                        canonicalModel='claude-fable-5-1', provider='firstParty', costBasis='list')}))
+        envelope = dict(capture['metadata'], result=json.dumps(self.reply))
+        result = broker.parse_output(json.dumps(envelope), 'grid', 'TRAIN_1')
+        self.assertEqual(result['status'], 'COMPLETE')
+        self.assertEqual(result['actual_model'], broker.MODEL)
+        self.assertEqual(result['usage']['reported_num_turns'], 2)
+        self.assertEqual(result['usage']['model_usage'], capture['metadata']['modelUsage'])
+        argv = broker.command('SYNTHETIC TEST SYSTEM', 2, 'high')
+        self.assertEqual(argv[argv.index('--max-turns') + 1], '1')
+        self.assertEqual(argv[argv.index('--tools') + 1], '')
+
+    def test_reported_turns_are_telemetry_not_cli_turn_limit(self):
+        for turns in (1, 2, 3):
+            with self.subTest(turns=turns):
+                envelope = dict(self.envelope(), num_turns=turns)
+                result = broker.parse_output(json.dumps(envelope), 'route', 'TRAIN_1')
+                self.assertEqual(result['usage']['reported_num_turns'], turns)
+        envelope = dict(self.envelope('[SILENT]'), num_turns=2)
+        self.assertEqual(broker.parse_output(json.dumps(envelope), 'route', 'TRAIN_1')['status'],
+            'SILENT')
+
+    def test_provider_error_and_invalid_turn_metadata_refused(self):
         for patch_values in ({'is_error': True}, {'subtype': 'error_max_budget_usd'},
-                {'num_turns': 2}, {'num_turns': True}, {'modelUsage': {}}):
+                {'subtype': 'error_max_turns', 'num_turns': 2},
+                {'num_turns': 0}, {'num_turns': -1}, {'num_turns': 2.0},
+                {'num_turns': '2'}, {'num_turns': None}, {'num_turns': True},
+                {'modelUsage': {}}, {'num_turns': 2, 'modelUsage': {'another-model': {}}},
+                {'num_turns': 2, 'result': None}, {'num_turns': 2, 'result': ''}):
             with self.subTest(patch_values=patch_values), self.assertRaises(ValueError):
                 broker.parse_output(json.dumps(dict(self.envelope(), **patch_values)), 'route', 'TRAIN_1')
+
+    def test_high_600_branch_local_dispatch_accepts_reported_two_turns(self):
+        self.config.update(parent_effort='high', provider_lock_scope='branch',
+            queue_transport='node_local', deadline_unix=time.time()+1200)
+        self.request['lane_deadline_unix'] = time.time()+600
+        self.rebind()
+
+        def runner(argv, directory, cutoff, output_cap):
+            (directory/'stdout.json').write_text(json.dumps(dict(self.envelope(), num_turns=2)))
+
+        self.runner.side_effect = runner
+        real_provider_lock_path = broker.provider_lock_path
+        with patch.object(broker, 'provider_lock_path',
+                side_effect=lambda config: self.root/real_provider_lock_path(config).name):
+            with (self.root/'orch_l2_evaluator_F2.lock').open('a') as other:
+                fcntl.flock(other, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                result, directory = self.evaluate(lock_path=None)
+        self.assertEqual(result['status'], 'COMPLETE')
+        self.assertEqual(result['usage']['reported_num_turns'], 2)
+        argv = self.runner.call_args.args[0]
+        self.assertEqual(argv[argv.index('--effort')+1], 'high')
+        self.assertEqual(argv[argv.index('--max-turns')+1], '1')
+        self.assertEqual(argv[argv.index('--tools')+1], '')
+        self.assertEqual(self.runner.call_args.args[2], self.request['lane_deadline_unix']-30)
+        self.assertEqual(result['memory_admission']['provider_lock_scope'], 'branch')
 
     def test_duplicate_or_nonfinite_json_rejected(self):
         for raw in ('{"a":1,"a":2}', '{"a":NaN}'):
