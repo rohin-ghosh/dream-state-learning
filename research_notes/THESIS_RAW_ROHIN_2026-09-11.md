@@ -752,3 +752,11 @@ Raw:
 > so it did some rich work but i want to get the damn level 1 done so we can do level 2 work , thats what i want , thats the main goal all fo htis is good if that thing is happenign
 
 Reading (Fable): priority ruling — level-1 completion (a rich corpus fitted and shown to transfer; his criterion: teach → next-cycle behaviour change) is the one thing that matters tonight; richness screens are instrumental to it, not ends. Also at ~02:55 UTC Rohin accidentally sent Ctrl-C to the OLD builder's Codex session (pane shows "Shutting down..."); the orchestrator (astra2) and all GPU guardians were unaffected.
+
+## Message 92 — (typed, ~03:10 UTC 09-15) DECLARATIVE: train level-1 models on the rich data ASAP so level-2 research can begin; keep creating and testing more level-1 data in parallel; by the time level 1 is fully built out, level 2 should already have progress; "I wanna keep the memory, I agree"
+
+Raw:
+
+> yea im gald youre testing different good datat tyeps for richens but i want to train level 1s on this asap so that our level 2 research can begin, lets get this goign fast ive made it clear what i want im being declarative today, , yea i wanna keep the meormy i agree, again the goal rn is get the level 1 fly wheel workign for level 2 testing while we test and create more and more level 1 data so then by then time level 1 is all well build out we have good progress on level 2
+
+Reading (Fable): RULED, declarative — (1) start level-1 FITS on the rich data now (do not wait for a perfect or 1,000-row corpus), with matched controls; (2) begin level-2 testing on the first child that comes out of those fits; (3) richness screens and data creation continue in parallel; the flywheel works for level-2 testing while level 1 keeps being built out. "Keep the memory, I agree" read as agreeing that the VM's RAM matters more than the old thread's context — the old builder stays down (its session id is kept for a later resume).
