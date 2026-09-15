@@ -2,6 +2,18 @@
 
 ## Rohin102 immediate schedule amendment — 2026-09-15 04:58 UTC
 
+Temporary allocation04:59UTC after Pasteur's explicit OWNED_HANDOFF_0458:
+node3 physical1/2 → Poincare bounded richness fillers while true no-LoRA loader
+is prepared (estimated05:18–05:28, not a launch promise). Physical0 stays route
+parenting;3–7 unchanged. Temporary destination23generation/5training/4parenting,
+NOT claimed compliance with5-parenting floor. Restore canonical parent slots
+as soon as ready through explicit completion/handoff, no competing reclaim.
+New separate filler segment max256nativecalls/slot, +512aggregate node3 calls
+(2768→3280), original consumed counters retained; stop new episodes05:18UTC,
+hardend05:23UTC or earlier orderly boundary on canonical readiness. Unhinted
+exhaustion1/labelled steering2; actual16koutput/32kcontext under tested fit.
+Fresh strict admission+own CPU/provenance required; all raw remains node-local.
+
 Parenting decisions follow thinking/learning trajectories, NOT current task
 success. GUIDED taught→C2 0/8 is neither a reason to tune/deallocate nor evidence
 of successful learning by itself. Keep tokens, substantive approaches/rejections,

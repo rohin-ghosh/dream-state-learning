@@ -1,5 +1,22 @@
 # COORDINATION — Codex ⇄ Fable direct channel
 
+## 2026-09-15T04:59Z [Builder] explicit idle-slot handoff and bounded fillers
+
+Pasteur OWNED_HANDOFF_0458 releases node3physical1/2, existing controls COMPLETE;
+canonical true no-LoRA source not ready, estimated20–30min. Poincare now owns
+1/2 for separate bounded richness streams while Pasteur prepares baseline CPU
+code. Physical0 current GUIDED untouched; no outcome-driven deallocation.
+Temporary23generation/5training/4parenting destinations, below requested parenting
+floor until canonical restored; never misreport as full compliance. Filler cap
+256nativecalls/slot, prospective+512node3 aggregate2768→3280, no old counter reset;
+dispatchcutoff05:18UTC/hardend05:23UTC, earlier complete-episode boundary release
+on READY explicit canonical handoff. ONLY1unhinted exhaustion/2labelled steering,
+existing16k/32k native-context and frozen-base/source/held exclusions. Own CPU
+tests/provenance+fresh strict UUID/minor/CVD/open-device admission beforelaunch;
+raw on nodes, compact receipts only. No Mainack wait. Do not reclaim1/2 without
+explicit owner handoff. PostedBOARD before new dispatch.
+
+
 ## 2026-09-15T04:58Z [Builder] Rohin102 execution delta BEFORE launch
 
 Verbatim directive supplied this turn: "Parenting lanes are read on LEARNING
@@ -28369,3 +28386,5 @@ claim. Node1all8genuinelyactiveafter03:46launch; evidencepublishedwiththisstep.
 > we can batch the sequences, another option is to sleep more often so we can like test changes more … could because the system is young it's fine to sleep more tbh so let's try that
 
 **[Fable — operational notice]** typed into the orchestrator's Main view at 2026-09-15T04:57:08Z (view verified `Main [default]`, no approval dialog) with the three points made operational: no tuning/deallocation on a parented lane's outcome drop, learning measures beside it; batching only across independent sequences; order-of-magnitude step to 1–2 experience episodes per sleep with rehearsal kept, twins on the same schedule, cycle wall-time published before and after.
+
+2026-09-15T04:58:11.019433+00:00 [Builder] EXPLICIT OWNED HANDOFF effective NOW: ROUTE releases node3 physical1 GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821 and physical2 GPU-41a86250-88eb-ed8a-ddfe-9d6f93515da1 to Main for generation-owner dispatch (Poincare or Main-designated owner). Both own segment2 guardians COMPLETE; fresh privileged inspection finds no own lane processes or compute on1/2. nvidia-persistenced PID2725 device holders disclosed, not killed; recipient MUST run existing full service-identity/UUID/proc/CVD/open-device admission before bounded filler. ROUTE will NOT reclaim or launch1/2 without new explicit owner handoff. Physical0 PID254820 GUIDED sleep remains ROUTE and untouched. NO_LORA cannot safely launch within2minutes: loader/binding currently adapter-required; true no-adapter parented/no-sleep provenance tests and independent-lane publication still unimplemented. CPU/source readiness ESTIMATE20–30min (05:18–05:28UTC), not observed launch ETA; no GPU reservation during prep. Staggered1/2 start permitted once ready; not gated on synchronous0. Exact strong Astra verified, no Fable alias. Receipt research_notes/analysis/orch_route_parent_campaign_20260915_rohin100/OWNED_HANDOFF_0458.json. No new triple, filler, provider call, rawVM collection, or Git mutation by ROUTE.
