@@ -183,3 +183,12 @@ Corrected cumulative eligibility BEFORE continuation:317batch-admitted rows acro
 
 
 2026-09-15T04:46:52.589497+00:00 — Laplace/Main native-only accepted batch27: 64rows; 12samplePASS/52UNREVIEWED. Node2 native manifest `/localhome/local-rohing/orch_continual_batch_20260915_segment2_disk_native1/orch_continual_batch_snapshot_027/MANIFEST.json` SHA256 `29f573d0a28ba3b8ee642b85139ad6dcc80b3624d58adc2e23df7169d733d764`. Raw/ROWS/archive remain native; VM reduction only. No native trainer consumption claimed.
+
+
+2026-09-15T04:58:43.847180+00:00 — Laplace/Main native-only accepted batch33: 62rows; 10samplePASS/52UNREVIEWED. Node2 native manifest `/localhome/local-rohing/orch_continual_batch_20260915_segment2_disk_native1/orch_continual_batch_snapshot_033/MANIFEST.json` SHA256 `6a71433befd40173d24e2c3691d4663a220057a7dcc1856682429e6ed48f3244`. Raw/ROWS/archive remain native; VM reduction only. No native trainer consumption claimed.
+
+
+2026-09-15T05:00:39.718116+00:00 — Laplace/Main native-only accepted batch34: 62rows; 10samplePASS/52UNREVIEWED. Node2 native manifest `/localhome/local-rohing/orch_continual_batch_20260915_segment2_disk_native1/orch_continual_batch_snapshot_034/MANIFEST.json` SHA256 `fa19f56643ff1ca0a957f9cf2dda6fcde30debf2f937245021cd028e7a22949f`. Raw/ROWS/archive remain native; VM reduction only. No native trainer consumption claimed.
+
+
+2026-09-15T05:04:28.804167+00:00 — Laplace/Main native-only accepted batch36: 63rows; 11samplePASS/52UNREVIEWED. Node2 native manifest `/localhome/local-rohing/orch_continual_batch_20260915_segment2_disk_native1/orch_continual_batch_snapshot_036/MANIFEST.json` SHA256 `78f6a563e735d96d08d9e963292d25efad1d884d0d82ad1ada33878b355c698b`. Raw/ROWS/archive remain native; VM reduction only. No native trainer consumption claimed.

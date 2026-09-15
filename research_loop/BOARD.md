@@ -1,5 +1,25 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## MATH764 readout recovery — 2026-09-15 05:05 UTC
+
+Both fits are actually COMPLETE6208updates: OFF05:01:26,FULL05:02:57.
+Original guardian TERMINAL05:03:01 says RELEASE_UNVERIFIED/readout_calls0;
+this is a release-scope failure, not failed fits or permission to ignore identity.
+Owner runs fresh parent-free held+retention readouts after source-bound strict
+admission; failed release evidence retained. Main05:05:09 already sees GPU0/1
+resident again, so do not double-launch based on the later-labelled watcher flag.
+Current2/3/6 empty transition must remain bounded; continued training/readout
+owner reports actual phase receipts, not a new blanket never-launched claim.
+
+Latest explicit user adds UNTRAINED BASE to minimal-prompt FULL/OFF richness
+comparison. Prospectively +64base-held calls if not already covered: total
+1824rather than1760, historical consumed counters unchanged; same08:06:10hardend.
+Separate zero-training base identity from the original37ec adapter; label exact
+mount honestly. Parents absent, held outputs never compile, outcome ancillary.
+This additional readout does not reserve another GPU: reuse0/1 after own phase
+release, stagger independently, no full-pair launch barrier.
+
+
 ## Rohin102 immediate schedule amendment — 2026-09-15 04:58 UTC
 
 Temporary allocation04:59UTC after Pasteur's explicit OWNED_HANDOFF_0458:
