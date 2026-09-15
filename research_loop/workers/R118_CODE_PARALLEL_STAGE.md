@@ -456,3 +456,62 @@ only at an active completed-cycle boundary. Old Sep15FINAL8/branch never replaye
 If the finite TRAIN schedule ends first, a separate same-quota morning custody
 path is still needed; do not misreport the boundary trigger as an armed timer.
 Main ownsGit/publication; code oldfleet partialpreparation is NOTstage-ready.
+
+### 18:12 UTC — Actual independent first calls, compact publication handoff
+
+F3 native3325386 first input18:06:02.021200Z, COMPLETE18:06:04.281713Z,
+34native tokens; A3 native3325385 input18:06:01.702300Z,
+COMPLETE18:06:03.778007Z,30tokens. Original privileged admissions CLEAR.
+Compact R119_INDEPENDENT_LIVE_1814.json observed18:12:08Z: F3 15complete/
+1started native,7179tokens,10MISSING/1pending parent; A3 20complete/1started,
+7061tokens,2consumed COMPLETE/12pending. Both completed two new TRAIN cycles.
+These reservation counters exclude separately named diagnostic batches; no
+qualified-throughput/semantic-benefit claim. A3 twoactualguidance injections
+include an auxiliary OPEN request under interim older broker: per-episode-only
+fast transport correction remains prospective. F3 operational auth failure
+reported by Hubble; child never waits. No new shared optimizer or barrier.
+Raw remains node-local; source gpu/orch_r119_code_independent.py SHA38aff9ae43ec27afca0ee580f009c9b9b2911426b65d67c502c31ec13bbd515c;
+test SHAcbb8bc45df0361a948095d67067b3e7adadf484a236b174c9e8db3d89686a32a.
+
+### 18:17 UTC — [Builder] R119 old-fleet explicit fork pre-GPU receipt
+
+Scope only allocated ovx2 physical3–6 and a40r6. Own new old-fork wrapper
+retains frozen original R109 CODE prompts/two episodes, safe bounded interpreter,
+saved actual BASE TRAIN context throughC25, partialC26 untouched, inherited
+383native/128parent charged cells and1500native/500parent absolutecaps.
+Starts prospectiveC27, not a replay or claimed recovery of four learned lives.
+ovx2 mounts exact sharedgen1 checkpoint43ce68 read-only LoRA; a40r remains actual
+BASE. No optimizer, fit, sharedbarrier or teacher target. Parent enqueue once
+per TRAIN episode,600TTL,zero wait,low/medium; useful ownreflection continues.
+Late/missing/invalid response is operational, no retry. Only hash/request/model/
+archive-verified guidance can enter next TRAIN generation; held never consumes.
+Unavailable guidance never creates a falsely claimed parent intervention triple.
+New delayed injection records retain exact native continuation and parent joins.
+No sleep engineering. Node5 existing actors/sources remain untouched.
+
+8local and8native focused tests PASS; full18local regression PASS before final
+same-path pending receipt update repair. Actual native configure imports checked
+against frozen source, noGPU during CPU preparation. Original source1131files
+copied node-local; only missing transport closure and own wrappers added before
+freezing. Native raw/context never copied to VM. Actual authoritative lease
+ovx2Sep18 00:00Z -> hardSep17 18:00Z; a40rSep19 00:00Z -> hardSep18 18:00Z,
+both train cutoff120s earlier. No lease extension. Fresh privileged full UUID/
+minor/proc/CVD CLEAR mandatory before each native; preserve rejected admission.
+Main owns Git/publication; old forks are distinct ancestry, not independent
+retained-learning models. CPU preparation only until actual LAUNCH receipts.
+
+### 18:21 UTC — [Builder] oldfork3 native; scoped pre-model rescan repair
+
+ovx2_3 native2472507 launched18:18:53.243Z after actual ADMISSION_00 CLEAR;
+guard2472376. No replay or source changes to this live v1. Slots4–6 v1 guards
+exited before LAUNCH/NATIVE_ONCE/cells: exact rejected reasons were only
+process_identity_drift and minor_scan_identity_changed (PID3082 and concurrent
+short-lived startup processes). Preserve all ADMISSION/log/identity bytes in
+v1. New v2 only permits another fully fresh scan for those precise churn
+classes (including minor_scan_process_drift); never edits/clears report reasons,
+never admits until original scanner says CLEAR, still rejects unknown/occupied.
+10local+10native PASS including unchanged-report/unknown-blocker/expiry tests.
+PREDECESSORS.json binds all three actual exited identities and zero dispatch.
+Same roots' quotas/context/nextC27/lease/frozenweights, new execution namespace;
+no oldcalls retried. a40r6 v1 guard1133664 started18:20:20.625Z, own8native
+CPUtests PASS before guard. Neither guard-start nor model-load is output evidence.

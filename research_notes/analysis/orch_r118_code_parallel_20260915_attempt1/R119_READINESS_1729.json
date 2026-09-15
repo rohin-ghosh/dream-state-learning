@@ -1,0 +1,31 @@
+{
+  "schema": "R119_CODE_READINESS_V1",
+  "observed_utc": "2026-09-15T17:29:00Z",
+  "status": "CPU_AND_OWNER_PREPARED_NOT_LAUNCHED",
+  "local_tests": {"passed": 29, "seconds": 0.49},
+  "native_tests": {"passed": 20, "cuda_initialized": false},
+  "native_root": "/localhome/local-rohing/orch_r119_code_runtime_20260915_v1",
+  "owner_exports_sha256": "475eff1e57a1259541731390867b49b5e343781e2570eeea755cb8c5df2da58c",
+  "absolute_sources_sha256": "fa6c751edda4d261d3ac52795a3a17eb902ef35c055f606be0aec52287049cea",
+  "source_count": 229,
+  "lease_clock_sha256": "a1aa51349c1784ec9f78e6411912576be43b55942c5fcdf1858ca391fd81c510",
+  "train_end_unix": 1789596120,
+  "hard_end_unix": 1789596240,
+  "generation": 1,
+  "checkpoint_sha256": "43ce68acabb18f661ff929600239eb0a632981da841dd1182f886a85df78a02d",
+  "optimizer_owner": "F1",
+  "pending_cycles": {"F3": 22, "A3": 8},
+  "cumulative_native": {"F3": 735, "A3": 274},
+  "cumulative_parent": {"F3": 100, "A3": 40},
+  "final_calls_completed": {"F3": 8, "A3": 8},
+  "final_retry_allowed": false,
+  "new_model_calls_this_preparation": 0,
+  "new_provider_calls_this_preparation": 0,
+  "blockers": [
+    "Main campaign and activation binding not yet supplied",
+    "Common launch validator requires live FINAL bindings despite completed FINAL",
+    "New broker custody not yet staged"
+  ],
+  "old_fleet_status": "NO_LAUNCH_NO_VERIFIED_FOUR_LEARNED_CODE_PREDECESSORS",
+  "raw_exported": false
+}
