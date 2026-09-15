@@ -1,0 +1,90 @@
+{
+  "id": "0059_GUIDED_C2",
+  "payload": {
+    "cell": {
+      "horizon": "short",
+      "provider": "existing_claude_cli",
+      "style": "training-wheels",
+      "tone": "supportive-positive"
+    },
+    "kind": "coach",
+    "learner": {
+      "algorithm": "All sourced good/bad outcomes to own reflection; failed actions never gold.",
+      "cycle": 2,
+      "experienced_episodes": 7,
+      "recent_outcomes": [
+        false,
+        false
+      ]
+    },
+    "prior_parent_messages": [
+      {
+        "message": "Two recent attempts didn't reach goal, so let's not repeat those exact routes blindly. Before committing, what do the available EVENTS tell you about which port leads toward N_WVLRYCEHE4? Try reading one of the listed events first to gather real evidence, then decide between P_JGDPDVVZR3 and P_M2FT7RUBDB based on what it says.",
+        "rationale": "Recent outcomes were both failures, so I should not endorse repeating unexamined routing choices. I scaffold the learner toward using READ EVENT to gather actual evidence before committing a route, consistent with distinguishing outcome evidence from failed attempts without inventing observations.",
+        "speak": true
+      },
+      {
+        "message": "Good evidence gathering! You found that P_M2FT7RUBDB from here leads to N_T7UDYCW4KV, not the goal. The other event showed P_ESL7UEEXIV from a different node reaches the goal, but that's not one of your current ports. Neither listed event confirms P_JGDPDVVZR3 from here reaches N_WVLRYCEHE4. Want to read one more event to see if there's direct evidence for that port before routing?",
+        "rationale": "The learner read two events; one shows P_M2FT7RUBDB leads away from goal (useful negative evidence), the other is evidence for a different node/port not currently available. I must not invent confirmation for P_JGDPDVVZR3 since no event yet shows it leads to goal. Scaffolding toward reading remaining events for real evidence before committing a route.",
+        "speak": true
+      }
+    ],
+    "public_messages": [
+      {
+        "content": "Use the public task and actual conversation. Identifiers are opaque and case-sensitive. There are at most six turns, four distinct memory reads, and two committed routes. A READ returns actual stored text; a ROUTE commits a currently listed port and returns the actual public receipt and new CURRENT/PORTS. Arrival at GOAL ends the episode. Never simulate a response or another turn. Finish every turn with exactly one action on its last line: READ EVENT <listedaddress> or ROUTE <listedport>. No STOP or retry.",
+        "role": "system"
+      },
+      {
+        "content": "ROUTE TASK\nCURRENT N_74RZH2F6FO\nGOAL N_WVLRYCEHE4\nPORTS P_JGDPDVVZR3,P_M2FT7RUBDB\nEVENTS E_AZFEFMNPGK,E_JAXZ2QC3OM,E_MCJMJHPK7C,E_PAKPNQ3DTW",
+        "role": "user"
+      },
+      {
+        "content": "READ EVENT E_PAKPNQ3DTW",
+        "role": "assistant"
+      },
+      {
+        "content": "EVENT E_PAKPNQ3DTW AT N_UFVHPCE46R DID P_ESL7UEEXIV GOT N_WVLRYCEHE4 EVIDENCE R_32MN2B6SW2",
+        "role": "user"
+      },
+      {
+        "content": "READ EVENT E_MCJMJHPK7C",
+        "role": "assistant"
+      },
+      {
+        "content": "EVENT E_MCJMJHPK7C AT N_74RZH2F6FO DID P_M2FT7RUBDB GOT N_T7UDYCW4KV EVIDENCE R_6S3GLRJ5ON",
+        "role": "user"
+      },
+      {
+        "content": "READ EVENT E_JAXZ2QC3OM",
+        "role": "assistant"
+      },
+      {
+        "content": "EVENT E_JAXZ2QC3OM AT N_T7UDYCW4KV DID P_SD5EGQ7HJD GOT N_6H2DMUGEMG EVIDENCE R_HHEQFXF2QN",
+        "role": "user"
+      },
+      {
+        "content": "READ EVENT E_AZFEFMNPGK",
+        "role": "assistant"
+      },
+      {
+        "content": "EVENT E_AZFEFMNPGK AT N_74RZH2F6FO DID P_JGDPDVVZR3 GOT N_UFVHPCE46R EVIDENCE R_TGYLO5T5MG",
+        "role": "user"
+      }
+    ],
+    "task": {
+      "events": [
+        "E_AZFEFMNPGK",
+        "E_JAXZ2QC3OM",
+        "E_MCJMJHPK7C",
+        "E_PAKPNQ3DTW"
+      ],
+      "goal": "N_WVLRYCEHE4",
+      "node": "N_74RZH2F6FO",
+      "ports": [
+        "P_JGDPDVVZR3",
+        "P_M2FT7RUBDB"
+      ]
+    },
+    "turn": 4
+  }
+}

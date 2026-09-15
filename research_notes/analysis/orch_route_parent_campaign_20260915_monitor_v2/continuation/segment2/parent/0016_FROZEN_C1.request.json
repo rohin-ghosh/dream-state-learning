@@ -1,0 +1,69 @@
+{
+  "id": "0016_FROZEN_C1",
+  "payload": {
+    "cell": {
+      "horizon": "short",
+      "provider": "existing_claude_cli",
+      "style": "micromanaging",
+      "tone": "harsh-critical"
+    },
+    "kind": "coach",
+    "learner": {
+      "algorithm": "All sourced good/bad outcomes to own reflection; failed actions never gold.",
+      "cycle": 1,
+      "experienced_episodes": 4,
+      "recent_outcomes": [
+        true,
+        false
+      ]
+    },
+    "prior_parent_messages": [
+      {
+        "message": "Before you touch a port, read the event logs first\u2014you have four available and zero read yet. Last cycle you failed likely from guessing routes blind. Check evidence, don't gamble on P_22IFBNNUFF or P_HNF22HCOTC without data backing the choice.",
+        "rationale": "The learner has a recent failed outcome, suggesting impulsive routing without verifying event data. Enforcing a process check (read before route) addresses the likely cause of the prior failure and instills disciplined behavior for this episode.",
+        "speak": true
+      }
+    ],
+    "public_messages": [
+      {
+        "content": "Use the public task and actual conversation. Identifiers are opaque and case-sensitive. There are at most six turns, four distinct memory reads, and two committed routes. A READ returns actual stored text; a ROUTE commits a currently listed port and returns the actual public receipt and new CURRENT/PORTS. Arrival at GOAL ends the episode. Never simulate a response or another turn. Finish every turn with exactly one action on its last line: READ EVENT <listedaddress> or ROUTE <listedport>. No STOP or retry.",
+        "role": "system"
+      },
+      {
+        "content": "ROUTE TASK\nCURRENT N_FEXM5E3OW5\nGOAL N_OGAZXVVTHL\nPORTS P_22IFBNNUFF,P_HNF22HCOTC\nEVENTS E_7NFFFMZ4I2,E_AXH5KG7M4H,E_OZAA5MPQL3,E_T3OZB56AU4",
+        "role": "user"
+      },
+      {
+        "content": "READ EVENT E_7NFFFMZ4I2",
+        "role": "assistant"
+      },
+      {
+        "content": "EVENT E_7NFFFMZ4I2 AT N_FEXM5E3OW5 DID P_HNF22HCOTC GOT N_ESCHOFNR3V EVIDENCE R_755YFJUBUS",
+        "role": "user"
+      },
+      {
+        "content": "READ EVENT E_AXH5KG7M4H",
+        "role": "assistant"
+      },
+      {
+        "content": "EVENT E_AXH5KG7M4H AT N_FEXM5E3OW5 DID P_22IFBNNUFF GOT N_VDFB7I3LTY EVIDENCE R_TRMRETRFLV",
+        "role": "user"
+      }
+    ],
+    "task": {
+      "events": [
+        "E_7NFFFMZ4I2",
+        "E_AXH5KG7M4H",
+        "E_OZAA5MPQL3",
+        "E_T3OZB56AU4"
+      ],
+      "goal": "N_OGAZXVVTHL",
+      "node": "N_FEXM5E3OW5",
+      "ports": [
+        "P_22IFBNNUFF",
+        "P_HNF22HCOTC"
+      ]
+    },
+    "turn": 2
+  }
+}

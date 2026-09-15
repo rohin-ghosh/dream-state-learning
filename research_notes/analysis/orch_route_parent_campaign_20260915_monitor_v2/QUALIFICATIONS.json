@@ -1,0 +1,62 @@
+{
+  "openai/openai/gpt-6-astra": {
+    "actual_primary_model": "openai/openai/gpt-6-astra",
+    "envelope_sha256": "d18a593b20335401454169382043cfb30462047f4239d98b346f41f05609385f",
+    "prompt_sha256": "8e5f35862578d3590c269a372a37006a1a582cc7dc9d473990aa3fe3e61d6315",
+    "response": {
+      "message": "Let\u2019s start with the evidence: you have two available ports and four listed events, but no observed transition showing where either port leads. What would you need to observe to make an informed choice toward the goal? If you try an option, distinguish the action you attempted from its actual outcome; a failed attempt is not a confirmed route.",
+      "rationale": "Only the initial task is available. This scaffold encourages reasoning from observed outcomes without inventing connections or supplying a route.",
+      "speak": true
+    },
+    "scope": "TRAIN_ONLY_READINESS_NOT_HELD",
+    "transcript_quarantined_from_ongoing_L1": true,
+    "usage": {
+      "cost": null,
+      "input_tokens": 371,
+      "input_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": null
+      },
+      "output_tokens": 800,
+      "output_tokens_details": {
+        "reasoning_tokens": 692,
+        "text_tokens": null
+      },
+      "total_tokens": 1171
+    },
+    "utc": "2026-09-15T04:08:11.545194+00:00",
+    "verified": true
+  },
+  "claude-haiku-4-5-20251001": {
+    "actual_primary_model": "claude-haiku-4-5-20251001",
+    "envelope_sha256": "9001f105430466e40d7c39b90f056ffb0985ae0b9b15a1e584d3cc73084f8978",
+    "prompt_sha256": "8e5f35862578d3590c269a372a37006a1a582cc7dc9d473990aa3fe3e61d6315",
+    "response": {
+      "message": "Great! You're starting from N_RBVDTMAXQR and need to reach N_PHY2W4H3TG. You have two ports (P_TKJTYXX5G7, P_ZCTOQF73RX) and four events available. What do you notice about these resources? Which one feels like a natural first step to explore?",
+      "rationale": "Turn 0: Learner hasn't attempted anything yet. Scaffolding by acknowledging the setup, restating the goal clearly, naming what's available, and asking them to reason about next steps. This invites active thinking without revealing the correct path.",
+      "speak": true
+    },
+    "scope": "TRAIN_ONLY_READINESS_NOT_HELD",
+    "transcript_quarantined_from_ongoing_L1": true,
+    "usage": {
+      "claude-haiku-4-5-20251001": {
+        "cacheCreationInputTokens": 0,
+        "cacheReadInputTokens": 0,
+        "canonicalModel": "claude-haiku-4-5",
+        "contextWindow": 200000,
+        "costBasis": "list",
+        "costUSD": 0.005168,
+        "inputTokens": 2043,
+        "maxOutputTokens": 32000,
+        "outputTokens": 625,
+        "provider": "firstParty",
+        "thinkingTokens": 418,
+        "webSearchRequests": 0
+      }
+    },
+    "utc": "2026-09-15T04:07:58.949922+00:00",
+    "verified": true
+  }
+}

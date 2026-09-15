@@ -1,0 +1,9 @@
+{
+  "id": "0048_GUIDED_C2",
+  "request_sha256": "18306cdf8d040b725cfb9062cba47d9225840d222b70c978b620436e62253e29",
+  "result": {
+    "message": "Good consolidation moment: your reads correctly showed P_AP6SWBMEX6 \u2192 N_OTFPLSPHSW, and that route succeeded. But then the actual PORTS list at N_OTFPLSPHSW was P_KFOTRBMHPY, not P_AP6SWBMEX6 again \u2014 that repeat was the error, not a valid answer. The evidence still says P_KFOTRBMHPY from N_OTFPLSPHSW reaches goal. What port does the current PORTS listing actually offer you now?",
+    "rationale": "The learner reused a stale port name instead of the currently listed one, causing invalid_route. Distinguishing this failed attempt from the earlier successful route evidence, and redirecting attention to matching action to the live PORTS list rather than supplying the answer directly.",
+    "speak": true
+  }
+}

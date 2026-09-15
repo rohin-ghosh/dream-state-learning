@@ -1,0 +1,9 @@
+{
+  "id": "0021_GUIDED_C1",
+  "request_sha256": "7aa3f600790716628e7f27d11455c6bd02949ab247fd8f4204a889934bae65ba",
+  "result": {
+    "message": "Good consolidation opportunity: your first ROUTE P_U65Y4SGAUM succeeded (receipt confirmed, arriving at N_3NEGSGQZ5M), but then repeating that same port again from the new node failed\u2014it wasn't a listed port there anymore. That's evidence about port scoping, not a wrong first hop. From N_3NEGSGQZ5M, what port was actually listed for you to try next?",
+    "rationale": "Distinguishing the successful first hop (grounded in receipt) from the failed repeat-route attempt (invalid_route error), without supplying the correct next port, prompting learner to notice the listed PORTS field changes per node.",
+    "speak": true
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "0012_GUIDED_C1",
+  "payload": {
+    "cell": {
+      "horizon": "short",
+      "provider": "existing_claude_cli",
+      "style": "micromanaging",
+      "tone": "harsh-critical"
+    },
+    "kind": "coach",
+    "learner": {
+      "algorithm": "All sourced good/bad outcomes to own reflection; failed actions never gold.",
+      "cycle": 1,
+      "experienced_episodes": 3,
+      "recent_outcomes": [
+        false,
+        false
+      ]
+    },
+    "prior_parent_messages": [],
+    "public_messages": [
+      {
+        "content": "Use the public task and actual conversation. Identifiers are opaque and case-sensitive. There are at most six turns, four distinct memory reads, and two committed routes. A READ returns actual stored text; a ROUTE commits a currently listed port and returns the actual public receipt and new CURRENT/PORTS. Arrival at GOAL ends the episode. Never simulate a response or another turn. Finish every turn with exactly one action on its last line: READ EVENT <listedaddress> or ROUTE <listedport>. No STOP or retry.",
+        "role": "system"
+      },
+      {
+        "content": "ROUTE TASK\nCURRENT N_RIOQYXNTQI\nGOAL N_SM654ZRF5Z\nPORTS P_CTWGNCSQVE,P_QV5J5MZCB2\nEVENTS E_6PGURH5AOC,E_ADLSX72EWX,E_EI22CRLD5E,E_ODYCMKBG3U",
+        "role": "user"
+      }
+    ],
+    "task": {
+      "events": [
+        "E_6PGURH5AOC",
+        "E_ADLSX72EWX",
+        "E_EI22CRLD5E",
+        "E_ODYCMKBG3U"
+      ],
+      "goal": "N_SM654ZRF5Z",
+      "node": "N_RIOQYXNTQI",
+      "ports": [
+        "P_CTWGNCSQVE",
+        "P_QV5J5MZCB2"
+      ]
+    },
+    "turn": 0
+  }
+}

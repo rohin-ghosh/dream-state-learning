@@ -1,0 +1,69 @@
+{
+  "id": "0012_GUIDED_C1",
+  "payload": {
+    "cell": {
+      "horizon": "short",
+      "provider": "existing_claude_cli",
+      "style": "training-wheels",
+      "tone": "supportive-positive"
+    },
+    "kind": "coach",
+    "learner": {
+      "algorithm": "All sourced good/bad outcomes to own reflection; failed actions never gold.",
+      "cycle": 1,
+      "experienced_episodes": 3,
+      "recent_outcomes": [
+        true,
+        true
+      ]
+    },
+    "prior_parent_messages": [
+      {
+        "message": "You've got two ports and four unread events at this node. Before committing, it's worth checking whether any events give clues about which port leads toward the goal. Want to read one first, or do you feel ready to pick a port based on what you already know?",
+        "rationale": "Encouraging the learner to gather evidence via READ before committing a ROUTE, consistent with short-horizon coaching and not supplying a gold route.",
+        "speak": true
+      }
+    ],
+    "public_messages": [
+      {
+        "content": "Use the public task and actual conversation. Identifiers are opaque and case-sensitive. There are at most six turns, four distinct memory reads, and two committed routes. A READ returns actual stored text; a ROUTE commits a currently listed port and returns the actual public receipt and new CURRENT/PORTS. Arrival at GOAL ends the episode. Never simulate a response or another turn. Finish every turn with exactly one action on its last line: READ EVENT <listedaddress> or ROUTE <listedport>. No STOP or retry.",
+        "role": "system"
+      },
+      {
+        "content": "ROUTE TASK\nCURRENT N_MHZW42TU2Z\nGOAL N_6MT5EEUG7T\nPORTS P_EE22XRGDIJ,P_UZJHKPO7G6\nEVENTS E_IIGQMWNXK5,E_OUA7NIW6LI,E_RDDA36F22B,E_YDA6RKL4CI",
+        "role": "user"
+      },
+      {
+        "content": "READ EVENT E_IIGQMWNXK5",
+        "role": "assistant"
+      },
+      {
+        "content": "EVENT E_IIGQMWNXK5 AT N_G4W24PQXIT DID P_OZDU4P2DMB GOT N_YZS3NAWD7O EVIDENCE R_T4DZBV3MKL",
+        "role": "user"
+      },
+      {
+        "content": "READ EVENT E_OUA7NIW6LI",
+        "role": "assistant"
+      },
+      {
+        "content": "EVENT E_OUA7NIW6LI AT N_MHZW42TU2Z DID P_UZJHKPO7G6 GOT N_G4W24PQXIT EVIDENCE R_ZH7NDLXPIO",
+        "role": "user"
+      }
+    ],
+    "task": {
+      "events": [
+        "E_IIGQMWNXK5",
+        "E_OUA7NIW6LI",
+        "E_RDDA36F22B",
+        "E_YDA6RKL4CI"
+      ],
+      "goal": "N_6MT5EEUG7T",
+      "node": "N_MHZW42TU2Z",
+      "ports": [
+        "P_EE22XRGDIJ",
+        "P_UZJHKPO7G6"
+      ]
+    },
+    "turn": 2
+  }
+}

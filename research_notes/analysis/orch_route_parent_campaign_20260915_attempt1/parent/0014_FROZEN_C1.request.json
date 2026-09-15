@@ -1,0 +1,63 @@
+{
+  "id": "0014_FROZEN_C1",
+  "payload": {
+    "cell": {
+      "horizon": "short",
+      "provider": "existing_claude_cli",
+      "style": "training-wheels",
+      "tone": "supportive-positive"
+    },
+    "kind": "coach",
+    "learner": {
+      "algorithm": "All sourced good/bad outcomes to own reflection; failed actions never gold.",
+      "cycle": 1,
+      "experienced_episodes": 3,
+      "recent_outcomes": [
+        true,
+        true
+      ]
+    },
+    "prior_parent_messages": [
+      {
+        "message": "You've got two ports to choose from and some event logs available before committing. Since you can't know which port leads toward the goal yet, what would help you decide \u2014 checking an event log first, or trying a port and observing the receipt? What's your reasoning for picking one over the other?",
+        "rationale": "Short-horizon coaching: prompting learner to reason about exploration (READ) vs commitment (ROUTE) without supplying a gold path, consistent with training-wheels style.",
+        "speak": true
+      },
+      {
+        "message": "Nice find \u2014 that second log shows P_UZJHKPO7G6 from your current node leads to N_G4W24PQXIT, which matches the 'AT' node in your first log. So you now have a two-hop trace from here. Does that chain get you closer to N_6MT5EEUG7T, or would checking one more log help confirm before you commit a route?",
+        "rationale": "Scaffolding: pointing out the observable chain between the two read events without asserting it's correct or gold, prompting learner to reason about relevance to goal before committing.",
+        "speak": true
+      },
+      {
+        "message": "Great detective work! You've now traced a full path: from here, P_EE22XRGDIJ leads to N_3W65MMQTBR, and from there P_YOANUQISN6 reaches your goal N_6MT5EEUG7T directly. That's a two-hop chain confirmed entirely by event logs, not a guess. Given what you've read, which port from your current node would you commit to first?",
+        "rationale": "Scaffolding learner to articulate the confirmed multi-hop chain from read evidence (not a failed attempt) before committing the ROUTE action themselves, per training-wheels style.",
+        "speak": true
+      }
+    ],
+    "public_messages": [
+      {
+        "content": "Consolidate this actual experience in your own words. Distinguish observed success from failure. A failed attempt is evidence of what went wrong, NOT a correct answer. Explain an evidence-grounded strategy and uncertainty, without inventing a correct route. Do not quote the coach or give an action command.",
+        "role": "system"
+      },
+      {
+        "content": "{\"attempted_actions_are_not_gold\": true, \"attempts\": [{\"error\": null, \"response\": {\"raw\": \"READ EVENT E_IIGQMWNXK5\", \"terminal\": true, \"token_ids\": [9560, 12742, 468, 7959, 1914, 88878, 36919, 55, 42, 20, 151645], \"truncated\": false}}, {\"error\": null, \"response\": {\"raw\": \"READ EVENT E_OUA7NIW6LI\", \"terminal\": true, \"token_ids\": [9560, 12742, 468, 2232, 17782, 22, 14912, 54, 21, 18537, 151645], \"truncated\": false}}, {\"error\": null, \"response\": {\"raw\": \"READ EVENT E_RDDA36F22B\", \"terminal\": true, \"token_ids\": [9560, 12742, 468, 2568, 4103, 32, 18, 21, 37, 17, 17, 33, 151645], \"truncated\": false}}, {\"error\": null, \"response\": {\"raw\": \"READ EVENT E_YDA6RKL4CI\", \"terminal\": true, \"token_ids\": [9560, 12742, 468, 10626, 6352, 21, 49, 52983, 19, 11237, 151645], \"truncated\": false}}, {\"error\": null, \"response\": {\"raw\": \"ROUTE P_EE22XRGDIJ\", \"terminal\": true, \"token_ids\": [99111, 393, 2089, 36, 17, 17, 55, 32360, 17625, 41, 151645], \"truncated\": false}}, {\"error\": null, \"response\": {\"raw\": \"ROUTE P_YOANUQISN6\", \"terminal\": true, \"token_ids\": [99111, 393, 10626, 46, 1093, 52, 48, 1637, 45, 21, 151645], \"truncated\": false}}], \"messages\": [{\"content\": \"Use the public task and actual conversation. Identifiers are opaque and case-sensitive. There are at most six turns, four distinct memory reads, and two committed routes. A READ returns actual stored text; a ROUTE commits a currently listed port and returns the actual public receipt and new CURRENT/PORTS. Arrival at GOAL ends the episode. Never simulate a response or another turn. Finish every turn with exactly one action on its last line: READ EVENT <listedaddress> or ROUTE <listedport>. No STOP or retry.\", \"role\": \"system\"}, {\"content\": \"ROUTE TASK\\nCURRENT N_MHZW42TU2Z\\nGOAL N_6MT5EEUG7T\\nPORTS P_EE22XRGDIJ,P_UZJHKPO7G6\\nEVENTS E_IIGQMWNXK5,E_OUA7NIW6LI,E_RDDA36F22B,E_YDA6RKL4CI\", \"role\": \"user\"}, {\"content\": \"READ EVENT E_IIGQMWNXK5\", \"role\": \"assistant\"}, {\"content\": \"EVENT E_IIGQMWNXK5 AT N_G4W24PQXIT DID P_OZDU4P2DMB GOT N_YZS3NAWD7O EVIDENCE R_T4DZBV3MKL\", \"role\": \"user\"}, {\"content\": \"READ EVENT E_OUA7NIW6LI\", \"role\": \"assistant\"}, {\"content\": \"EVENT E_OUA7NIW6LI AT N_MHZW42TU2Z DID P_UZJHKPO7G6 GOT N_G4W24PQXIT EVIDENCE R_ZH7NDLXPIO\", \"role\": \"user\"}, {\"content\": \"READ EVENT E_RDDA36F22B\", \"role\": \"assistant\"}, {\"content\": \"EVENT E_RDDA36F22B AT N_MHZW42TU2Z DID P_EE22XRGDIJ GOT N_3W65MMQTBR EVIDENCE R_TV6IL34EWG\", \"role\": \"user\"}, {\"content\": \"READ EVENT E_YDA6RKL4CI\", \"role\": \"assistant\"}, {\"content\": \"EVENT E_YDA6RKL4CI AT N_3W65MMQTBR DID P_YOANUQISN6 GOT N_6MT5EEUG7T EVIDENCE R_VGXDRYJP3A\", \"role\": \"user\"}, {\"content\": \"ROUTE P_EE22XRGDIJ\", \"role\": \"assistant\"}, {\"content\": \"RECEIPT R_TV6IL34EWG AT N_MHZW42TU2Z DID P_EE22XRGDIJ GOT N_3W65MMQTBR\\n\\nROUTE TASK\\nCURRENT N_3W65MMQTBR\\nGOAL N_6MT5EEUG7T\\nPORTS P_YOANUQISN6\\nEVENTS E_IIGQMWNXK5,E_OUA7NIW6LI,E_RDDA36F22B,E_YDA6RKL4CI\", \"role\": \"user\"}, {\"content\": \"ROUTE P_YOANUQISN6\", \"role\": \"assistant\"}, {\"content\": \"RECEIPT R_VGXDRYJP3A AT N_3W65MMQTBR DID P_YOANUQISN6 GOT N_6MT5EEUG7T\\n\\nROUTE TASK\\nCURRENT N_6MT5EEUG7T\\nGOAL N_6MT5EEUG7T\\nPORTS \\nEVENTS E_IIGQMWNXK5,E_OUA7NIW6LI,E_RDDA36F22B,E_YDA6RKL4CI\", \"role\": \"user\"}], \"outcome\": \"SUCCESS\", \"reads\": [\"E_IIGQMWNXK5\", \"E_OUA7NIW6LI\", \"E_RDDA36F22B\", \"E_YDA6RKL4CI\"], \"routes\": [{\"destination\": \"N_3W65MMQTBR\", \"port\": \"P_EE22XRGDIJ\", \"receipt\": \"R_TV6IL34EWG\", \"source\": \"N_MHZW42TU2Z\"}, {\"destination\": \"N_6MT5EEUG7T\", \"port\": \"P_YOANUQISN6\", \"receipt\": \"R_VGXDRYJP3A\", \"source\": \"N_3W65MMQTBR\"}], \"task\": {\"events\": [\"E_IIGQMWNXK5\", \"E_OUA7NIW6LI\", \"E_RDDA36F22B\", \"E_YDA6RKL4CI\"], \"goal\": \"N_6MT5EEUG7T\", \"node\": \"N_MHZW42TU2Z\", \"ports\": [\"P_EE22XRGDIJ\", \"P_UZJHKPO7G6\"]}, \"terminal_reason\": \"reached_goal\"}",
+        "role": "user"
+      }
+    ],
+    "task": {
+      "events": [
+        "E_IIGQMWNXK5",
+        "E_OUA7NIW6LI",
+        "E_RDDA36F22B",
+        "E_YDA6RKL4CI"
+      ],
+      "goal": "N_6MT5EEUG7T",
+      "node": "N_MHZW42TU2Z",
+      "ports": [
+        "P_EE22XRGDIJ",
+        "P_UZJHKPO7G6"
+      ]
+    },
+    "turn": 6
+  }
+}

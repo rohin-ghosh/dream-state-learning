@@ -1,0 +1,90 @@
+{
+  "id": "0028_GUIDED_C1",
+  "payload": {
+    "cell": {
+      "horizon": "short",
+      "provider": "existing_claude_cli",
+      "style": "training-wheels",
+      "tone": "supportive-positive"
+    },
+    "kind": "coach",
+    "learner": {
+      "algorithm": "All sourced good/bad outcomes to own reflection; failed actions never gold.",
+      "cycle": 1,
+      "experienced_episodes": 7,
+      "recent_outcomes": [
+        false,
+        false
+      ]
+    },
+    "prior_parent_messages": [
+      {
+        "message": "You've had two failed attempts already \u2014 good chance to slow down. Before routing, have you read any of the event memories at this node yet? Checking those first might reveal clues about which port actually leads toward your goal, rather than guessing again.",
+        "rationale": "The learner has two recent failed outcomes and is about to act at turn 0 with no reads yet. Per training-wheels style, I should not supply a gold route or invent observations, but should prompt reflection and encourage using available READ actions to gather evidence before committing a ROUTE, since failures are not correct answers and shouldn't be repeated blindly.",
+        "speak": true
+      },
+      {
+        "message": "Nice work reading two events. Notice the first one is at your current node N_NH6DNWDZV4 and shows where port P_KBEHKTYFVG actually leads. The second event is at a different node (N_OCCELYHARK), so it may not tell you about your ports here. You still have two more events and P_ORIURKCVS3 unread \u2014 want to check those before routing?",
+        "rationale": "Learner has read one event relevant to current node/port and one irrelevant (different node). With two prior failures, I should not endorse a route yet; encourage distinguishing relevant evidence and reading remaining events/ports before committing, without inventing data or supplying the answer.",
+        "speak": true
+      }
+    ],
+    "public_messages": [
+      {
+        "content": "Use the public task and actual conversation. Identifiers are opaque and case-sensitive. There are at most six turns, four distinct memory reads, and two committed routes. A READ returns actual stored text; a ROUTE commits a currently listed port and returns the actual public receipt and new CURRENT/PORTS. Arrival at GOAL ends the episode. Never simulate a response or another turn. Finish every turn with exactly one action on its last line: READ EVENT <listedaddress> or ROUTE <listedport>. No STOP or retry.",
+        "role": "system"
+      },
+      {
+        "content": "ROUTE TASK\nCURRENT N_NH6DNWDZV4\nGOAL N_OBPV56A5PX\nPORTS P_KBEHKTYFVG,P_ORIURKCVS3\nEVENTS E_D6ST6VBPVS,E_QWD5VS5KW6,E_VUZWN4ZGNK,E_VVGX3HC6MC",
+        "role": "user"
+      },
+      {
+        "content": "READ EVENT E_D6ST6VBPVS",
+        "role": "assistant"
+      },
+      {
+        "content": "EVENT E_D6ST6VBPVS AT N_NH6DNWDZV4 DID P_KBEHKTYFVG GOT N_XSDCFZHTEZ EVIDENCE R_EADRVBVQSX",
+        "role": "user"
+      },
+      {
+        "content": "READ EVENT E_QWD5VS5KW6",
+        "role": "assistant"
+      },
+      {
+        "content": "EVENT E_QWD5VS5KW6 AT N_OCCELYHARK DID P_RTJY5GJV6H GOT N_TBM7WKW3TG EVIDENCE R_IO6HH5IKW2",
+        "role": "user"
+      },
+      {
+        "content": "READ EVENT E_VUZWN4ZGNK",
+        "role": "assistant"
+      },
+      {
+        "content": "EVENT E_VUZWN4ZGNK AT N_NH6DNWDZV4 DID P_ORIURKCVS3 GOT N_OCCELYHARK EVIDENCE R_PFIWZCFVY5",
+        "role": "user"
+      },
+      {
+        "content": "READ EVENT E_VVGX3HC6MC",
+        "role": "assistant"
+      },
+      {
+        "content": "EVENT E_VVGX3HC6MC AT N_XSDCFZHTEZ DID P_LPVFDAL4RP GOT N_OBPV56A5PX EVIDENCE R_L2Z24GNEFD",
+        "role": "user"
+      }
+    ],
+    "task": {
+      "events": [
+        "E_D6ST6VBPVS",
+        "E_QWD5VS5KW6",
+        "E_VUZWN4ZGNK",
+        "E_VVGX3HC6MC"
+      ],
+      "goal": "N_OBPV56A5PX",
+      "node": "N_NH6DNWDZV4",
+      "ports": [
+        "P_KBEHKTYFVG",
+        "P_ORIURKCVS3"
+      ]
+    },
+    "turn": 4
+  }
+}

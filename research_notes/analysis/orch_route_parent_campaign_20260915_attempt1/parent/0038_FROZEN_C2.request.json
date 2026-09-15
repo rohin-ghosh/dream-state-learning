@@ -1,0 +1,62 @@
+{
+  "id": "0038_FROZEN_C2",
+  "payload": {
+    "cell": {
+      "horizon": "short",
+      "provider": "existing_claude_cli",
+      "style": "training-wheels",
+      "tone": "supportive-positive"
+    },
+    "kind": "coach",
+    "learner": {
+      "algorithm": "All sourced good/bad outcomes to own reflection; failed actions never gold.",
+      "cycle": 2,
+      "experienced_episodes": 1,
+      "recent_outcomes": [
+        false
+      ]
+    },
+    "prior_parent_messages": [
+      {
+        "message": "",
+        "rationale": "No learner action or outcome has occurred yet this turn; the episode has just started with the task setup. As a coach, I should wait until the learner takes an action (a READ or ROUTE) before offering any reflection or scaffolding, rather than pre-empting their reasoning.",
+        "speak": false
+      },
+      {
+        "message": "That second memory wasn't available, so it tells us nothing\u2014no evidence either way. But you do have solid evidence from your first read: taking P_3JXWVCMCV7 from here led to N_ZAQXXJFYMD. You still have two more events to check before committing. Want to read another one, or does the evidence so far point you toward a port?",
+        "rationale": "The learner's second READ returned MEMORY UNAVAILABLE, which is not evidence of anything and must not be treated as a failed or successful outcome. I'm distinguishing this from the genuine outcome evidence in the first READ (which did yield a real observed transition). I'm prompting the learner to continue their own reasoning rather than supplying a gold route, consistent with training-wheels scaffolding.",
+        "speak": true
+      },
+      {
+        "message": "Nice, now you've read all four events. From here, P_3JXWVCMCV7 leads to N_ZAQXXJFYMD, and P_5OQHWGZERR leads to N_BWWFIQ3LUR (which then connects onward via P_XMC2IUBT5C to N_35CMV5AP3R). Neither directly reaches N_GOGLZLBP2Q yet, but one path shows more forward progress. Which port's evidence looks more promising to commit to first?",
+        "rationale": "All four reads are now available; two are real outcome evidence at the current node, one is a genuine downstream observation, and one was unavailable (no evidence). I'm summarizing only observed evidence without inventing a gold path, prompting the learner to weigh the two port options and reason toward their own routing decision.",
+        "speak": true
+      }
+    ],
+    "public_messages": [
+      {
+        "content": "Consolidate this actual experience in your own words. Distinguish observed success from failure. A failed attempt is evidence of what went wrong, NOT a correct answer. Explain an evidence-grounded strategy and uncertainty, without inventing a correct route. Do not quote the coach or give an action command.",
+        "role": "system"
+      },
+      {
+        "content": "{\"attempted_actions_are_not_gold\": true, \"attempts\": [{\"error\": null, \"response\": {\"raw\": \"READ EVENT E_BYGS5GM4RF\", \"terminal\": true, \"token_ids\": [9560, 12742, 468, 13696, 16522, 20, 20637, 19, 17612, 151645], \"truncated\": false}}, {\"error\": null, \"response\": {\"raw\": \"READ EVENT E_CSR5CAJ67I\", \"terminal\": true, \"token_ids\": [9560, 12742, 468, 81449, 20, 5049, 41, 21, 22, 40, 151645], \"truncated\": false}}, {\"error\": null, \"response\": {\"raw\": \"READ EVENT E_FB5N7NOT3B\", \"terminal\": true, \"token_ids\": [9560, 12742, 468, 64707, 20, 45, 22, 14065, 18, 33, 151645], \"truncated\": false}}, {\"error\": null, \"response\": {\"raw\": \"READ EVENT E_QB2OAA6TFA\", \"terminal\": true, \"token_ids\": [9560, 12742, 468, 13337, 33, 17, 46, 6029, 21, 51, 3627, 151645], \"truncated\": false}}, {\"error\": null, \"response\": {\"raw\": \"ROUTE P_3JXWVCMCV7\", \"terminal\": true, \"token_ids\": [99111, 393, 62, 18, 41, 55, 54, 53, 9985, 19589, 22, 151645], \"truncated\": false}}, {\"error\": {\"message\": \"invalid_route\", \"type\": \"ValueError\"}, \"response\": {\"raw\": \"ROUTE P_5OQHWGZERR\", \"terminal\": true, \"token_ids\": [99111, 393, 62, 20, 46, 48, 38252, 38, 57, 2650, 151645], \"truncated\": false}}], \"messages\": [{\"content\": \"Use the public task and actual conversation. Identifiers are opaque and case-sensitive. There are at most six turns, four distinct memory reads, and two committed routes. A READ returns actual stored text; a ROUTE commits a currently listed port and returns the actual public receipt and new CURRENT/PORTS. Arrival at GOAL ends the episode. Never simulate a response or another turn. Finish every turn with exactly one action on its last line: READ EVENT <listedaddress> or ROUTE <listedport>. No STOP or retry.\", \"role\": \"system\"}, {\"content\": \"ROUTE TASK\\nCURRENT N_DCYMUHIMQ2\\nGOAL N_GOGLZLBP2Q\\nPORTS P_3JXWVCMCV7,P_5OQHWGZERR\\nEVENTS E_BYGS5GM4RF,E_CSR5CAJ67I,E_FB5N7NOT3B,E_QB2OAA6TFA\", \"role\": \"user\"}, {\"content\": \"READ EVENT E_BYGS5GM4RF\", \"role\": \"assistant\"}, {\"content\": \"EVENT E_BYGS5GM4RF AT N_DCYMUHIMQ2 DID P_3JXWVCMCV7 GOT N_ZAQXXJFYMD EVIDENCE R_BYYJ72BVVA\", \"role\": \"user\"}, {\"content\": \"READ EVENT E_CSR5CAJ67I\", \"role\": \"assistant\"}, {\"content\": \"MEMORY UNAVAILABLE\", \"role\": \"user\"}, {\"content\": \"READ EVENT E_FB5N7NOT3B\", \"role\": \"assistant\"}, {\"content\": \"EVENT E_FB5N7NOT3B AT N_BWWFIQ3LUR DID P_XMC2IUBT5C GOT N_35CMV5AP3R EVIDENCE R_5MLRUQS5EF\", \"role\": \"user\"}, {\"content\": \"READ EVENT E_QB2OAA6TFA\", \"role\": \"assistant\"}, {\"content\": \"EVENT E_QB2OAA6TFA AT N_DCYMUHIMQ2 DID P_5OQHWGZERR GOT N_BWWFIQ3LUR EVIDENCE R_53LS2BGEJV\", \"role\": \"user\"}, {\"content\": \"ROUTE P_3JXWVCMCV7\", \"role\": \"assistant\"}, {\"content\": \"RECEIPT R_BYYJ72BVVA AT N_DCYMUHIMQ2 DID P_3JXWVCMCV7 GOT N_ZAQXXJFYMD\\n\\nROUTE TASK\\nCURRENT N_ZAQXXJFYMD\\nGOAL N_GOGLZLBP2Q\\nPORTS P_7F4S2ZMM72\\nEVENTS E_BYGS5GM4RF,E_CSR5CAJ67I,E_FB5N7NOT3B,E_QB2OAA6TFA\", \"role\": \"user\"}, {\"content\": \"ROUTE P_5OQHWGZERR\", \"role\": \"assistant\"}], \"outcome\": \"FAILURE_NOT_CORRECT_ANSWER\", \"reads\": [\"E_BYGS5GM4RF\", \"E_CSR5CAJ67I\", \"E_FB5N7NOT3B\", \"E_QB2OAA6TFA\"], \"routes\": [{\"destination\": \"N_ZAQXXJFYMD\", \"port\": \"P_3JXWVCMCV7\", \"receipt\": \"R_BYYJ72BVVA\", \"source\": \"N_DCYMUHIMQ2\"}], \"task\": {\"events\": [\"E_BYGS5GM4RF\", \"E_CSR5CAJ67I\", \"E_FB5N7NOT3B\", \"E_QB2OAA6TFA\"], \"goal\": \"N_GOGLZLBP2Q\", \"node\": \"N_DCYMUHIMQ2\", \"ports\": [\"P_3JXWVCMCV7\", \"P_5OQHWGZERR\"]}, \"terminal_reason\": \"capture_error\"}",
+        "role": "user"
+      }
+    ],
+    "task": {
+      "events": [
+        "E_BYGS5GM4RF",
+        "E_CSR5CAJ67I",
+        "E_FB5N7NOT3B",
+        "E_QB2OAA6TFA"
+      ],
+      "goal": "N_GOGLZLBP2Q",
+      "node": "N_DCYMUHIMQ2",
+      "ports": [
+        "P_3JXWVCMCV7",
+        "P_5OQHWGZERR"
+      ]
+    },
+    "turn": 6
+  }
+}

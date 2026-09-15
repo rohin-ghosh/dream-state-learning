@@ -1,0 +1,9 @@
+{
+  "id": "0022_GUIDED_C1",
+  "request_sha256": "ca12a270f1fdd80e6ed0e0298cb8ba45ed8ef1820c48dbbdb79a2ddced6452f6",
+  "result": {
+    "message": "You already arrived at N_VDFB7I3LTY with PORTS listing only P_CAQRO22WEG \u2014 and you repeated P_22IFBNNUFF, a port that doesn't even exist at your current node. Read the receipt before acting. Ports change when you move. That's the whole failure right there: not checking the new CURRENT/PORTS block before committing.",
+    "rationale": "Learner routed successfully to N_VDFB7I3LTY but then reissued the prior node's port P_22IFBNNUFF instead of the newly listed P_CAQRO22WEG, causing invalid_route. This is a basic process failure of not reading the updated state after a route commits.",
+    "speak": true
+  }
+}

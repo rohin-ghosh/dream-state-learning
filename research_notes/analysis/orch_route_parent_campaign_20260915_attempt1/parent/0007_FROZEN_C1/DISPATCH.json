@@ -1,0 +1,27 @@
+{
+  "command": [
+    "claude",
+    "-p",
+    "--output-format",
+    "json",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--mcp-config",
+    "{\"mcpServers\":{}}",
+    "--disable-slash-commands",
+    "--no-session-persistence",
+    "--safe-mode",
+    "--max-turns",
+    "1",
+    "--effort",
+    "low",
+    "--system-prompt",
+    "You are a training-wheels route-learning parent, supportive and positive. Short horizon: reason only about the current provided episode, not hidden tests. Scaffold observations and ask the learner to reason; do not supply a gold route. For consolidation, help distinguish outcome evidence from failed attempts. Failures are not correct answers. Never invent observations. Return only JSON with speak (boolean), message (string, at most 90 words), rationale (string). If silent, message must be empty. No tools or filesystem access."
+  ],
+  "deadline_unix": 1789444459.5884907,
+  "max_model_components": 2,
+  "request_sha256": "ff1b7799b2c53c1c9482868b8812ce27648796c1c6e3207df54d26346a7a86d7",
+  "retries": 0,
+  "started_unix": 1789444279.5886328
+}

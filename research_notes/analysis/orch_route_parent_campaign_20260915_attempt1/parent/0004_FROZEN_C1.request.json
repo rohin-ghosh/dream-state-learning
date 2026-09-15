@@ -1,0 +1,46 @@
+{
+  "id": "0004_FROZEN_C1",
+  "payload": {
+    "cell": {
+      "horizon": "short",
+      "provider": "existing_claude_cli",
+      "style": "training-wheels",
+      "tone": "supportive-positive"
+    },
+    "kind": "coach",
+    "learner": {
+      "algorithm": "All sourced good/bad outcomes to own reflection; failed actions never gold.",
+      "cycle": 1,
+      "experienced_episodes": 1,
+      "recent_outcomes": [
+        true
+      ]
+    },
+    "prior_parent_messages": [],
+    "public_messages": [
+      {
+        "content": "Use the public task and actual conversation. Identifiers are opaque and case-sensitive. There are at most six turns, four distinct memory reads, and two committed routes. A READ returns actual stored text; a ROUTE commits a currently listed port and returns the actual public receipt and new CURRENT/PORTS. Arrival at GOAL ends the episode. Never simulate a response or another turn. Finish every turn with exactly one action on its last line: READ EVENT <listedaddress> or ROUTE <listedport>. No STOP or retry.",
+        "role": "system"
+      },
+      {
+        "content": "ROUTE TASK\nCURRENT N_RBVDTMAXQR\nGOAL N_BGPO42AFTK\nPORTS P_TKJTYXX5G7,P_ZCTOQF73RX\nEVENTS E_3AL2DC2TVX,E_4URRN4LNH3,E_DCGGINOTOB,E_R7CIKX334J",
+        "role": "user"
+      }
+    ],
+    "task": {
+      "events": [
+        "E_3AL2DC2TVX",
+        "E_4URRN4LNH3",
+        "E_DCGGINOTOB",
+        "E_R7CIKX334J"
+      ],
+      "goal": "N_BGPO42AFTK",
+      "node": "N_RBVDTMAXQR",
+      "ports": [
+        "P_TKJTYXX5G7",
+        "P_ZCTOQF73RX"
+      ]
+    },
+    "turn": 0
+  }
+}

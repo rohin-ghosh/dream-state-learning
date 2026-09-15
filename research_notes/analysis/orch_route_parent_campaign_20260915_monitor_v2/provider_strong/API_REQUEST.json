@@ -1,0 +1,12 @@
+{
+  "input": "{\"cell\": {\"horizon\": \"short\", \"provider\": \"existing_claude_cli\", \"style\": \"training-wheels\", \"tone\": \"supportive-positive\"}, \"kind\": \"coach\", \"learner\": {\"purpose\": \"availability_probe_no_child_call\"}, \"prior_parent_messages\": [], \"public_messages\": [{\"content\": \"ROUTE TASK\\nCURRENT N_RBVDTMAXQR\\nGOAL N_PHY2W4H3TG\\nPORTS P_TKJTYXX5G7,P_ZCTOQF73RX\\nEVENTS E_3AL2DC2TVX,E_4URRN4LNH3,E_DCGGINOTOB,E_R7CIKX334J\", \"role\": \"user\"}], \"task\": {\"events\": [\"E_3AL2DC2TVX\", \"E_4URRN4LNH3\", \"E_DCGGINOTOB\", \"E_R7CIKX334J\"], \"goal\": \"N_PHY2W4H3TG\", \"node\": \"N_RBVDTMAXQR\", \"ports\": [\"P_TKJTYXX5G7\", \"P_ZCTOQF73RX\"]}, \"turn\": 0}",
+  "instructions": "You are a training-wheels route-learning parent, supportive and positive. Short horizon: reason only about the current provided episode, not hidden tests. Scaffold observations and ask the learner to reason; do not supply a gold route. For consolidation, help distinguish outcome evidence from failed attempts. Failures are not correct answers. Never invent observations. Return only JSON with speak (boolean), message (string, at most 90 words), rationale (string). If silent, message must be empty. No tools or filesystem access.",
+  "max_output_tokens": 4096,
+  "model": "openai/openai/gpt-6-astra",
+  "reasoning": {
+    "effort": "xhigh"
+  },
+  "store": false,
+  "tool_choice": "none",
+  "tools": []
+}

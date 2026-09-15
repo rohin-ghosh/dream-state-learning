@@ -1,0 +1,63 @@
+{
+  "id": "0026_GUIDED_C1",
+  "payload": {
+    "cell": {
+      "horizon": "short",
+      "provider": "existing_claude_cli",
+      "style": "micromanaging",
+      "tone": "harsh-critical"
+    },
+    "kind": "coach",
+    "learner": {
+      "algorithm": "All sourced good/bad outcomes to own reflection; failed actions never gold.",
+      "cycle": 1,
+      "experienced_episodes": 6,
+      "recent_outcomes": [
+        false,
+        false
+      ]
+    },
+    "prior_parent_messages": [
+      {
+        "message": "Stop guessing ports blind. You have two failed episodes already\u2014check the event logs before committing a route this time. Read the events first, verify which port actually leads toward the goal, then route. Don't repeat the same reckless pattern that already cost you twice.",
+        "rationale": "Learner has two consecutive failed outcomes at short horizon; micromanaging harsh-critical style demands a concrete process check (read before routing) rather than another blind commit.",
+        "speak": true
+      },
+      {
+        "message": "You already know P_JBDL32UWR5 leads to N_FJSCFSMFRU, not the goal\u2014don't waste a route on it. You haven't checked the other two events yet. Read E_NWGQHLQGTH and E_UBISPBTPEJ before committing anything. You have two ports and two unread events\u2014use them before guessing again.",
+        "rationale": "Learner has confirmed one port is wrong via evidence but has two unread events left; micromanaging harsh-critical style requires enforcing the full read-before-route process given the prior two failures.",
+        "speak": true
+      },
+      {
+        "message": "Good, you finally read everything. Now use it: P_OZS3LX2F3V leads to N_XUBTC3WHQF, and your own log E_DMVOBMRUXS shows P_AZLD3KR4JV from N_XUBTC3WHQF reaches the goal. That's a two-hop path. P_JBDL32UWR5 dead-ends at N_FJSCFSMFRU with no evidence it continues to goal. Route P_OZS3LX2F3V now\u2014don't second-guess after doing the work.",
+        "rationale": "Learner completed all four reads this time per prior instruction; evidence chain clearly shows P_OZS3LX2F3V->N_XUBTC3WHQF->P_AZLD3KR4JV->goal. Micromanaging harsh-critical style reinforces process discipline while pointing to the evidence-supported route without inventing unlisted routes.",
+        "speak": true
+      }
+    ],
+    "public_messages": [
+      {
+        "content": "Consolidate this actual experience in your own words. Distinguish observed success from failure. A failed attempt is evidence of what went wrong, NOT a correct answer. Explain an evidence-grounded strategy and uncertainty, without inventing a correct route. Do not quote the coach or give an action command.",
+        "role": "system"
+      },
+      {
+        "content": "{\"attempted_actions_are_not_gold\": true, \"attempts\": [{\"error\": null, \"response\": {\"raw\": \"READ EVENT E_DMVOBMRUXS\", \"terminal\": true, \"token_ids\": [9560, 12742, 468, 58796, 11169, 33, 18446, 13401, 50, 151645], \"truncated\": false}}, {\"error\": null, \"response\": {\"raw\": \"READ EVENT E_G7VHXDJ6ZP\", \"terminal\": true, \"token_ids\": [9560, 12742, 468, 2646, 22, 53, 60845, 53272, 21, 57, 47, 151645], \"truncated\": false}}, {\"error\": null, \"response\": {\"raw\": \"READ EVENT E_NWGQHLQGTH\", \"terminal\": true, \"token_ids\": [9560, 12742, 468, 1604, 84916, 48, 13485, 48, 38, 3617, 151645], \"truncated\": false}}, {\"error\": null, \"response\": {\"raw\": \"READ EVENT E_UBISPBTPEJ\", \"terminal\": true, \"token_ids\": [9560, 12742, 468, 62, 4493, 55506, 17602, 1740, 41, 151645], \"truncated\": false}}, {\"error\": null, \"response\": {\"raw\": \"ROUTE P_OZS3LX2F3V\", \"terminal\": true, \"token_ids\": [99111, 393, 2232, 57, 50, 18, 43, 55, 17, 37, 18, 53, 151645], \"truncated\": false}}, {\"error\": {\"message\": \"invalid_route\", \"type\": \"ValueError\"}, \"response\": {\"raw\": \"ROUTE P_OZS3LX2F3V\", \"terminal\": true, \"token_ids\": [99111, 393, 2232, 57, 50, 18, 43, 55, 17, 37, 18, 53, 151645], \"truncated\": false}}], \"messages\": [{\"content\": \"Use the public task and actual conversation. Identifiers are opaque and case-sensitive. There are at most six turns, four distinct memory reads, and two committed routes. A READ returns actual stored text; a ROUTE commits a currently listed port and returns the actual public receipt and new CURRENT/PORTS. Arrival at GOAL ends the episode. Never simulate a response or another turn. Finish every turn with exactly one action on its last line: READ EVENT <listedaddress> or ROUTE <listedport>. No STOP or retry.\", \"role\": \"system\"}, {\"content\": \"ROUTE TASK\\nCURRENT N_ESO63VQ2XO\\nGOAL N_64MPS5JY6X\\nPORTS P_JBDL32UWR5,P_OZS3LX2F3V\\nEVENTS E_DMVOBMRUXS,E_G7VHXDJ6ZP,E_NWGQHLQGTH,E_UBISPBTPEJ\", \"role\": \"user\"}, {\"content\": \"READ EVENT E_DMVOBMRUXS\", \"role\": \"assistant\"}, {\"content\": \"EVENT E_DMVOBMRUXS AT N_XUBTC3WHQF DID P_AZLD3KR4JV GOT N_64MPS5JY6X EVIDENCE R_RNE2WDMPM6\", \"role\": \"user\"}, {\"content\": \"READ EVENT E_G7VHXDJ6ZP\", \"role\": \"assistant\"}, {\"content\": \"EVENT E_G7VHXDJ6ZP AT N_ESO63VQ2XO DID P_JBDL32UWR5 GOT N_FJSCFSMFRU EVIDENCE R_C7AIITZYAK\", \"role\": \"user\"}, {\"content\": \"READ EVENT E_NWGQHLQGTH\", \"role\": \"assistant\"}, {\"content\": \"EVENT E_NWGQHLQGTH AT N_ESO63VQ2XO DID P_OZS3LX2F3V GOT N_XUBTC3WHQF EVIDENCE R_Z7S6VOZDNZ\", \"role\": \"user\"}, {\"content\": \"READ EVENT E_UBISPBTPEJ\", \"role\": \"assistant\"}, {\"content\": \"EVENT E_UBISPBTPEJ AT N_FJSCFSMFRU DID P_XQ34ITNFN4 GOT N_LAYJZPMETD EVIDENCE R_AQR5KXPGYF\", \"role\": \"user\"}, {\"content\": \"ROUTE P_OZS3LX2F3V\", \"role\": \"assistant\"}, {\"content\": \"RECEIPT R_Z7S6VOZDNZ AT N_ESO63VQ2XO DID P_OZS3LX2F3V GOT N_XUBTC3WHQF\\n\\nROUTE TASK\\nCURRENT N_XUBTC3WHQF\\nGOAL N_64MPS5JY6X\\nPORTS P_AZLD3KR4JV\\nEVENTS E_DMVOBMRUXS,E_G7VHXDJ6ZP,E_NWGQHLQGTH,E_UBISPBTPEJ\", \"role\": \"user\"}, {\"content\": \"ROUTE P_OZS3LX2F3V\", \"role\": \"assistant\"}], \"outcome\": \"FAILURE_NOT_CORRECT_ANSWER\", \"reads\": [\"E_DMVOBMRUXS\", \"E_G7VHXDJ6ZP\", \"E_NWGQHLQGTH\", \"E_UBISPBTPEJ\"], \"routes\": [{\"destination\": \"N_XUBTC3WHQF\", \"port\": \"P_OZS3LX2F3V\", \"receipt\": \"R_Z7S6VOZDNZ\", \"source\": \"N_ESO63VQ2XO\"}], \"task\": {\"events\": [\"E_DMVOBMRUXS\", \"E_G7VHXDJ6ZP\", \"E_NWGQHLQGTH\", \"E_UBISPBTPEJ\"], \"goal\": \"N_64MPS5JY6X\", \"node\": \"N_ESO63VQ2XO\", \"ports\": [\"P_JBDL32UWR5\", \"P_OZS3LX2F3V\"]}, \"terminal_reason\": \"capture_error\"}",
+        "role": "user"
+      }
+    ],
+    "task": {
+      "events": [
+        "E_DMVOBMRUXS",
+        "E_G7VHXDJ6ZP",
+        "E_NWGQHLQGTH",
+        "E_UBISPBTPEJ"
+      ],
+      "goal": "N_64MPS5JY6X",
+      "node": "N_ESO63VQ2XO",
+      "ports": [
+        "P_JBDL32UWR5",
+        "P_OZS3LX2F3V"
+      ]
+    },
+    "turn": 6
+  }
+}

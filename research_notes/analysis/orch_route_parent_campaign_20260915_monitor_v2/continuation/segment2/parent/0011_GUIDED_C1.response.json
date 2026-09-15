@@ -1,0 +1,9 @@
+{
+  "id": "0011_GUIDED_C1",
+  "request_sha256": "3e2082f3dca09b6e66349522d03ac156e1770aa228524f695f156248c0b74540",
+  "result": {
+    "message": "You had the correct port sitting right in your PORTS list\u2014P_KX53QP76IO\u2014and you repeated the old, already-spent P_CTWGNCSQVE instead. That port doesn't even exist at this node anymore. You read the evidence correctly, then failed to apply it at the actual decision point. Check CURRENT PORTS before you type the command, not just your memory of the plan.",
+    "rationale": "Learner correctly gathered all four events and identified the valid two-hop chain, but at the second route commit it re-issued the first-hop port instead of the newly available P_KX53QP76IO, causing invalid_route failure. This is a process failure at the final action step despite good information gathering, so critique targets the mismatch between read evidence and the actual action taken.",
+    "speak": true
+  }
+}

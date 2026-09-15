@@ -1,0 +1,63 @@
+{
+  "id": "0011_FROZEN_C1",
+  "payload": {
+    "cell": {
+      "horizon": "short",
+      "provider": "existing_claude_cli",
+      "style": "micromanaging",
+      "tone": "harsh-critical"
+    },
+    "kind": "coach",
+    "learner": {
+      "algorithm": "All sourced good/bad outcomes to own reflection; failed actions never gold.",
+      "cycle": 1,
+      "experienced_episodes": 2,
+      "recent_outcomes": [
+        false,
+        false
+      ]
+    },
+    "prior_parent_messages": [
+      {
+        "message": "Stop and check events before you commit blindly \u2014 you already have two failed routes behind you. Read at least one event now to gather actual intel instead of guessing a port again. Guessing burned you twice already; sloppy process, not bad luck, is why.",
+        "rationale": "Learner has two consecutive failed outcomes and is about to act on turn 0 without reading any events despite four being available. Short horizon focus on this episode's process: enforce checking stored information before committing a route, since failed routes are not gold and blind routing already failed twice.",
+        "speak": true
+      },
+      {
+        "message": "You found the event confirming P_QV5J5MZCB2 goes from your current node to N_ALE3RMXJ7O, not the goal. That's not a full path yet. Read at least one more event before routing blindly again \u2014 you need to know how to get from N_ALE3RMXJ7O to N_37YKWU5N6X, or you're repeating the same guessing mistake that already failed twice.",
+        "rationale": "Learner has read two events but neither confirms a route to the actual goal node. With two prior failures and two more reads still available, committing now would again be guessing rather than verified routing; enforce further evidence-gathering before a route action.",
+        "speak": true
+      },
+      {
+        "message": "Now you actually have it: P_CTWGNCSQVE takes you straight to N_L4SBIWIB2I, and from there P_KX53QP76IO reaches the goal N_37YKWU5N6X. That's a full two-hop chain confirmed by events, not a guess. Route P_CTWGNCSQVE now \u2014 don't drift back to the dead-end port you already wasted a read disproving.",
+        "rationale": "All four events are now read. They form a verified two-hop path: N_RIOQYXNTQI --P_CTWGNCSQVE--> N_L4SBIWIB2I --P_KX53QP76IO--> N_37YKWU5N6X (goal). This is genuine evidence-backed routing, unlike the two prior failures. Directing the learner to commit the first hop reinforces correct process: read before route, then act on confirmed evidence.",
+        "speak": true
+      }
+    ],
+    "public_messages": [
+      {
+        "content": "Consolidate this actual experience in your own words. Distinguish observed success from failure. A failed attempt is evidence of what went wrong, NOT a correct answer. Explain an evidence-grounded strategy and uncertainty, without inventing a correct route. Do not quote the coach or give an action command.",
+        "role": "system"
+      },
+      {
+        "content": "{\"attempted_actions_are_not_gold\": true, \"attempts\": [{\"error\": null, \"response\": {\"raw\": \"READ EVENT E_6PGURH5AOC\", \"terminal\": true, \"token_ids\": [9560, 12742, 468, 62, 21, 11383, 1511, 39, 20, 32, 7612, 151645], \"truncated\": false}}, {\"error\": null, \"response\": {\"raw\": \"READ EVENT E_ADLSX72EWX\", \"terminal\": true, \"token_ids\": [9560, 12742, 468, 22510, 7268, 55, 22, 17, 37779, 55, 151645], \"truncated\": false}}, {\"error\": null, \"response\": {\"raw\": \"READ EVENT E_EI22CRLD5E\", \"terminal\": true, \"token_ids\": [9560, 12742, 468, 2089, 40, 17, 17, 34, 4728, 35, 20, 36, 151645], \"truncated\": false}}, {\"error\": null, \"response\": {\"raw\": \"READ EVENT E_ODYCMKBG3U\", \"terminal\": true, \"token_ids\": [9560, 12742, 468, 62, 21050, 9985, 29862, 38, 18, 52, 151645], \"truncated\": false}}, {\"error\": null, \"response\": {\"raw\": \"ROUTE P_CTWGNCSQVE\", \"terminal\": true, \"token_ids\": [99111, 393, 920, 47069, 25167, 6412, 48, 4491, 151645], \"truncated\": false}}, {\"error\": null, \"response\": {\"raw\": \"ROUTE P_KX53QP76IO\", \"terminal\": true, \"token_ids\": [99111, 393, 10102, 55, 20, 18, 66520, 22, 21, 3810, 151645], \"truncated\": false}}], \"messages\": [{\"content\": \"Use the public task and actual conversation. Identifiers are opaque and case-sensitive. There are at most six turns, four distinct memory reads, and two committed routes. A READ returns actual stored text; a ROUTE commits a currently listed port and returns the actual public receipt and new CURRENT/PORTS. Arrival at GOAL ends the episode. Never simulate a response or another turn. Finish every turn with exactly one action on its last line: READ EVENT <listedaddress> or ROUTE <listedport>. No STOP or retry.\", \"role\": \"system\"}, {\"content\": \"ROUTE TASK\\nCURRENT N_RIOQYXNTQI\\nGOAL N_37YKWU5N6X\\nPORTS P_CTWGNCSQVE,P_QV5J5MZCB2\\nEVENTS E_6PGURH5AOC,E_ADLSX72EWX,E_EI22CRLD5E,E_ODYCMKBG3U\", \"role\": \"user\"}, {\"content\": \"READ EVENT E_6PGURH5AOC\", \"role\": \"assistant\"}, {\"content\": \"EVENT E_6PGURH5AOC AT N_ALE3RMXJ7O DID P_UPRP3Z4R2F GOT N_SM654ZRF5Z EVIDENCE R_STW4PA7ZYY\", \"role\": \"user\"}, {\"content\": \"READ EVENT E_ADLSX72EWX\", \"role\": \"assistant\"}, {\"content\": \"EVENT E_ADLSX72EWX AT N_RIOQYXNTQI DID P_QV5J5MZCB2 GOT N_ALE3RMXJ7O EVIDENCE R_DMKWRFHJXJ\", \"role\": \"user\"}, {\"content\": \"READ EVENT E_EI22CRLD5E\", \"role\": \"assistant\"}, {\"content\": \"EVENT E_EI22CRLD5E AT N_L4SBIWIB2I DID P_KX53QP76IO GOT N_37YKWU5N6X EVIDENCE R_ZL2MJ2NMKB\", \"role\": \"user\"}, {\"content\": \"READ EVENT E_ODYCMKBG3U\", \"role\": \"assistant\"}, {\"content\": \"EVENT E_ODYCMKBG3U AT N_RIOQYXNTQI DID P_CTWGNCSQVE GOT N_L4SBIWIB2I EVIDENCE R_IUEKAXQTLP\", \"role\": \"user\"}, {\"content\": \"ROUTE P_CTWGNCSQVE\", \"role\": \"assistant\"}, {\"content\": \"RECEIPT R_IUEKAXQTLP AT N_RIOQYXNTQI DID P_CTWGNCSQVE GOT N_L4SBIWIB2I\\n\\nROUTE TASK\\nCURRENT N_L4SBIWIB2I\\nGOAL N_37YKWU5N6X\\nPORTS P_KX53QP76IO\\nEVENTS E_6PGURH5AOC,E_ADLSX72EWX,E_EI22CRLD5E,E_ODYCMKBG3U\", \"role\": \"user\"}, {\"content\": \"ROUTE P_KX53QP76IO\", \"role\": \"assistant\"}, {\"content\": \"RECEIPT R_ZL2MJ2NMKB AT N_L4SBIWIB2I DID P_KX53QP76IO GOT N_37YKWU5N6X\\n\\nROUTE TASK\\nCURRENT N_37YKWU5N6X\\nGOAL N_37YKWU5N6X\\nPORTS \\nEVENTS E_6PGURH5AOC,E_ADLSX72EWX,E_EI22CRLD5E,E_ODYCMKBG3U\", \"role\": \"user\"}], \"outcome\": \"SUCCESS\", \"reads\": [\"E_6PGURH5AOC\", \"E_ADLSX72EWX\", \"E_EI22CRLD5E\", \"E_ODYCMKBG3U\"], \"routes\": [{\"destination\": \"N_L4SBIWIB2I\", \"port\": \"P_CTWGNCSQVE\", \"receipt\": \"R_IUEKAXQTLP\", \"source\": \"N_RIOQYXNTQI\"}, {\"destination\": \"N_37YKWU5N6X\", \"port\": \"P_KX53QP76IO\", \"receipt\": \"R_ZL2MJ2NMKB\", \"source\": \"N_L4SBIWIB2I\"}], \"task\": {\"events\": [\"E_6PGURH5AOC\", \"E_ADLSX72EWX\", \"E_EI22CRLD5E\", \"E_ODYCMKBG3U\"], \"goal\": \"N_37YKWU5N6X\", \"node\": \"N_RIOQYXNTQI\", \"ports\": [\"P_CTWGNCSQVE\", \"P_QV5J5MZCB2\"]}, \"terminal_reason\": \"reached_goal\"}",
+        "role": "user"
+      }
+    ],
+    "task": {
+      "events": [
+        "E_6PGURH5AOC",
+        "E_ADLSX72EWX",
+        "E_EI22CRLD5E",
+        "E_ODYCMKBG3U"
+      ],
+      "goal": "N_37YKWU5N6X",
+      "node": "N_RIOQYXNTQI",
+      "ports": [
+        "P_CTWGNCSQVE",
+        "P_QV5J5MZCB2"
+      ]
+    },
+    "turn": 6
+  }
+}

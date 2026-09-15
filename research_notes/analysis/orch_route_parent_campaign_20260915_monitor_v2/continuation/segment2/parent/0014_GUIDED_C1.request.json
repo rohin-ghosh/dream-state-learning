@@ -1,0 +1,58 @@
+{
+  "id": "0014_GUIDED_C1",
+  "payload": {
+    "cell": {
+      "horizon": "short",
+      "provider": "existing_claude_cli",
+      "style": "micromanaging",
+      "tone": "harsh-critical"
+    },
+    "kind": "coach",
+    "learner": {
+      "algorithm": "All sourced good/bad outcomes to own reflection; failed actions never gold.",
+      "cycle": 1,
+      "experienced_episodes": 3,
+      "recent_outcomes": [
+        false,
+        false
+      ]
+    },
+    "prior_parent_messages": [
+      {
+        "message": "Two failed routes already and you haven't read a single event yet. Stop guessing ports blindly\u2014check the events first before committing. That's the process you keep skipping.",
+        "rationale": "The learner has two prior failed outcomes and is about to route again without gathering information via READ EVENT. Enforcing process discipline is the priority given micromanaging style and short horizon.",
+        "speak": true
+      },
+      {
+        "message": "Good, you finally read events instead of guessing. Now you have the chain: N_RIOQYXNTQI --P_QV5J5MZCB2--> N_ALE3RMXJ7O --P_UPRP3Z4R2F--> GOAL. But P_UPRP3Z4R2F isn't in your listed ports here, so don't assume it'll be available later. Route P_QV5J5MZCB2 now since it's confirmed and listed\u2014don't waste turns reading events that don't touch your current node.",
+        "rationale": "Learner has now read two relevant events establishing a two-hop path to goal via P_QV5J5MZCB2 then P_UPRP3Z4R2F. Given two prior failures, reinforce process discipline: act on gathered evidence rather than over-reading, while flagging the unlisted port risk for the second hop.",
+        "speak": true
+      }
+    ],
+    "public_messages": [
+      {
+        "content": "Consolidate this actual experience in your own words. Distinguish observed success from failure. A failed attempt is evidence of what went wrong, NOT a correct answer. Explain an evidence-grounded strategy and uncertainty, without inventing a correct route. Do not quote the coach or give an action command.",
+        "role": "system"
+      },
+      {
+        "content": "{\"attempted_actions_are_not_gold\": true, \"attempts\": [{\"error\": null, \"response\": {\"raw\": \"READ EVENT E_6PGURH5AOC\", \"terminal\": true, \"token_ids\": [9560, 12742, 468, 62, 21, 11383, 1511, 39, 20, 32, 7612, 151645], \"truncated\": false}}, {\"error\": null, \"response\": {\"raw\": \"READ EVENT E_ADLSX72EWX\", \"terminal\": true, \"token_ids\": [9560, 12742, 468, 22510, 7268, 55, 22, 17, 37779, 55, 151645], \"truncated\": false}}, {\"error\": null, \"response\": {\"raw\": \"ROUTE P_QV5J5MZCB2\", \"terminal\": true, \"token_ids\": [99111, 393, 13337, 53, 20, 41, 20, 96988, 12979, 17, 151645], \"truncated\": false}}, {\"error\": {\"message\": \"invalid_route\", \"type\": \"ValueError\"}, \"response\": {\"raw\": \"ROUTE P_QV5J5MZCB2\", \"terminal\": true, \"token_ids\": [99111, 393, 13337, 53, 20, 41, 20, 96988, 12979, 17, 151645], \"truncated\": false}}], \"messages\": [{\"content\": \"Use the public task and actual conversation. Identifiers are opaque and case-sensitive. There are at most six turns, four distinct memory reads, and two committed routes. A READ returns actual stored text; a ROUTE commits a currently listed port and returns the actual public receipt and new CURRENT/PORTS. Arrival at GOAL ends the episode. Never simulate a response or another turn. Finish every turn with exactly one action on its last line: READ EVENT <listedaddress> or ROUTE <listedport>. No STOP or retry.\", \"role\": \"system\"}, {\"content\": \"ROUTE TASK\\nCURRENT N_RIOQYXNTQI\\nGOAL N_SM654ZRF5Z\\nPORTS P_CTWGNCSQVE,P_QV5J5MZCB2\\nEVENTS E_6PGURH5AOC,E_ADLSX72EWX,E_EI22CRLD5E,E_ODYCMKBG3U\", \"role\": \"user\"}, {\"content\": \"READ EVENT E_6PGURH5AOC\", \"role\": \"assistant\"}, {\"content\": \"EVENT E_6PGURH5AOC AT N_ALE3RMXJ7O DID P_UPRP3Z4R2F GOT N_SM654ZRF5Z EVIDENCE R_STW4PA7ZYY\", \"role\": \"user\"}, {\"content\": \"READ EVENT E_ADLSX72EWX\", \"role\": \"assistant\"}, {\"content\": \"EVENT E_ADLSX72EWX AT N_RIOQYXNTQI DID P_QV5J5MZCB2 GOT N_ALE3RMXJ7O EVIDENCE R_DMKWRFHJXJ\", \"role\": \"user\"}, {\"content\": \"ROUTE P_QV5J5MZCB2\", \"role\": \"assistant\"}, {\"content\": \"RECEIPT R_DMKWRFHJXJ AT N_RIOQYXNTQI DID P_QV5J5MZCB2 GOT N_ALE3RMXJ7O\\n\\nROUTE TASK\\nCURRENT N_ALE3RMXJ7O\\nGOAL N_SM654ZRF5Z\\nPORTS P_UPRP3Z4R2F\\nEVENTS E_6PGURH5AOC,E_ADLSX72EWX,E_EI22CRLD5E,E_ODYCMKBG3U\", \"role\": \"user\"}, {\"content\": \"ROUTE P_QV5J5MZCB2\", \"role\": \"assistant\"}], \"outcome\": \"FAILURE_NOT_CORRECT_ANSWER\", \"reads\": [\"E_6PGURH5AOC\", \"E_ADLSX72EWX\"], \"routes\": [{\"destination\": \"N_ALE3RMXJ7O\", \"port\": \"P_QV5J5MZCB2\", \"receipt\": \"R_DMKWRFHJXJ\", \"source\": \"N_RIOQYXNTQI\"}], \"task\": {\"events\": [\"E_6PGURH5AOC\", \"E_ADLSX72EWX\", \"E_EI22CRLD5E\", \"E_ODYCMKBG3U\"], \"goal\": \"N_SM654ZRF5Z\", \"node\": \"N_RIOQYXNTQI\", \"ports\": [\"P_CTWGNCSQVE\", \"P_QV5J5MZCB2\"]}, \"terminal_reason\": \"capture_error\"}",
+        "role": "user"
+      }
+    ],
+    "task": {
+      "events": [
+        "E_6PGURH5AOC",
+        "E_ADLSX72EWX",
+        "E_EI22CRLD5E",
+        "E_ODYCMKBG3U"
+      ],
+      "goal": "N_SM654ZRF5Z",
+      "node": "N_RIOQYXNTQI",
+      "ports": [
+        "P_CTWGNCSQVE",
+        "P_QV5J5MZCB2"
+      ]
+    },
+    "turn": 6
+  }
+}

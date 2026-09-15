@@ -1,0 +1,90 @@
+{
+  "id": "0009_GUIDED_C1",
+  "payload": {
+    "cell": {
+      "horizon": "short",
+      "provider": "existing_claude_cli",
+      "style": "training-wheels",
+      "tone": "supportive-positive"
+    },
+    "kind": "coach",
+    "learner": {
+      "algorithm": "All sourced good/bad outcomes to own reflection; failed actions never gold.",
+      "cycle": 1,
+      "experienced_episodes": 2,
+      "recent_outcomes": [
+        true,
+        true
+      ]
+    },
+    "prior_parent_messages": [
+      {
+        "message": "You've got two ports to choose from and some events available too. Since you don't have any info yet on which port leads toward the goal, what would help you decide \u2014 maybe check an event first before committing to a route?",
+        "rationale": "Encouraging the learner to gather evidence (READ) before committing a ROUTE, since no prior outcome data exists to justify picking a port blindly. Not supplying any gold answer, just prompting exploration.",
+        "speak": true
+      },
+      {
+        "message": "Nice detective work! Look closely at what those two events told you: one shows a path from your current node through a port to another node, and the other shows that node connecting onward to your goal. Do you see a chain forming? Which port would start you on that chain?",
+        "rationale": "Both events together reveal a two-hop evidenced path from CURRENT to GOAL via P_UZJHKPO7G6 through N_G4W24PQXIT. Rather than stating this outright, I'm prompting the learner to connect the two pieces of evidence themselves before committing a route, reinforcing outcome-based reasoning over guessing.",
+        "speak": true
+      }
+    ],
+    "public_messages": [
+      {
+        "content": "Use the public task and actual conversation. Identifiers are opaque and case-sensitive. There are at most six turns, four distinct memory reads, and two committed routes. A READ returns actual stored text; a ROUTE commits a currently listed port and returns the actual public receipt and new CURRENT/PORTS. Arrival at GOAL ends the episode. Never simulate a response or another turn. Finish every turn with exactly one action on its last line: READ EVENT <listedaddress> or ROUTE <listedport>. No STOP or retry.",
+        "role": "system"
+      },
+      {
+        "content": "ROUTE TASK\nCURRENT N_MHZW42TU2Z\nGOAL N_YZS3NAWD7O\nPORTS P_EE22XRGDIJ,P_UZJHKPO7G6\nEVENTS E_IIGQMWNXK5,E_OUA7NIW6LI,E_RDDA36F22B,E_YDA6RKL4CI",
+        "role": "user"
+      },
+      {
+        "content": "READ EVENT E_IIGQMWNXK5",
+        "role": "assistant"
+      },
+      {
+        "content": "EVENT E_IIGQMWNXK5 AT N_G4W24PQXIT DID P_OZDU4P2DMB GOT N_YZS3NAWD7O EVIDENCE R_T4DZBV3MKL",
+        "role": "user"
+      },
+      {
+        "content": "READ EVENT E_OUA7NIW6LI",
+        "role": "assistant"
+      },
+      {
+        "content": "EVENT E_OUA7NIW6LI AT N_MHZW42TU2Z DID P_UZJHKPO7G6 GOT N_G4W24PQXIT EVIDENCE R_ZH7NDLXPIO",
+        "role": "user"
+      },
+      {
+        "content": "READ EVENT E_RDDA36F22B",
+        "role": "assistant"
+      },
+      {
+        "content": "EVENT E_RDDA36F22B AT N_MHZW42TU2Z DID P_EE22XRGDIJ GOT N_3W65MMQTBR EVIDENCE R_TV6IL34EWG",
+        "role": "user"
+      },
+      {
+        "content": "READ EVENT E_YDA6RKL4CI",
+        "role": "assistant"
+      },
+      {
+        "content": "EVENT E_YDA6RKL4CI AT N_3W65MMQTBR DID P_YOANUQISN6 GOT N_6MT5EEUG7T EVIDENCE R_VGXDRYJP3A",
+        "role": "user"
+      }
+    ],
+    "task": {
+      "events": [
+        "E_IIGQMWNXK5",
+        "E_OUA7NIW6LI",
+        "E_RDDA36F22B",
+        "E_YDA6RKL4CI"
+      ],
+      "goal": "N_YZS3NAWD7O",
+      "node": "N_MHZW42TU2Z",
+      "ports": [
+        "P_EE22XRGDIJ",
+        "P_UZJHKPO7G6"
+      ]
+    },
+    "turn": 4
+  }
+}

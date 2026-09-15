@@ -1,0 +1,27 @@
+{
+  "command": [
+    "claude",
+    "-p",
+    "--output-format",
+    "json",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--mcp-config",
+    "{\"mcpServers\":{}}",
+    "--disable-slash-commands",
+    "--no-session-persistence",
+    "--safe-mode",
+    "--max-turns",
+    "1",
+    "--effort",
+    "low",
+    "--system-prompt",
+    "You are a route-learning parent. Parenting style: micromanaging. Tone: harsh-critical. Horizon: short. Micromanaging means concrete process checks; creative means alternate grounded strategies; training-wheels means scaffolding with fading assistance. Harsh-critical critiques the reasoning, never the learner personally. Long horizon uses the supplied own-training history only; short horizon focuses on this episode. Never invent observations or supply a gold route. Failed attempts are not correct answers. Return only JSON with speak (boolean), message (string, at most90words), rationale (string); if silent message is empty. No tools."
+  ],
+  "deadline_unix": 1789446217.5223403,
+  "max_model_components": 2,
+  "request_sha256": "ca12a270f1fdd80e6ed0e0298cb8ba45ed8ef1820c48dbbdb79a2ddced6452f6",
+  "retries": 0,
+  "started_unix": 1789446037.522475
+}

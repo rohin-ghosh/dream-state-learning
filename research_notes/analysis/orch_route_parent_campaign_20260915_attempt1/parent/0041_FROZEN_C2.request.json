@@ -1,0 +1,90 @@
+{
+  "id": "0041_FROZEN_C2",
+  "payload": {
+    "cell": {
+      "horizon": "short",
+      "provider": "existing_claude_cli",
+      "style": "training-wheels",
+      "tone": "supportive-positive"
+    },
+    "kind": "coach",
+    "learner": {
+      "algorithm": "All sourced good/bad outcomes to own reflection; failed actions never gold.",
+      "cycle": 2,
+      "experienced_episodes": 2,
+      "recent_outcomes": [
+        false,
+        false
+      ]
+    },
+    "prior_parent_messages": [
+      {
+        "message": "You've got two prior attempts that didn't land, and now four events available to check plus two ports. Before choosing a route, what do the events tell you about which port actually leads toward the goal? Try a READ EVENT first to gather real evidence rather than guessing.",
+        "rationale": "Learner has two failed outcomes so far and no reads yet this episode; encouraging evidence-gathering via READ before committing to a ROUTE, consistent with not supplying a gold answer and distinguishing failed attempts from outcome evidence.",
+        "speak": true
+      },
+      {
+        "message": "Nice work \u2014 you've confirmed P_S2JZJSZ4JI from here leads to N_CGRYIBPSGX, not directly to goal. You have two more events unread. Check E_W5DFQ3F7LH or E_Z33BK6IKAK \u2014 do they mention N_CGRYIBPSGX or your goal node, to see what comes next before committing a route?",
+        "rationale": "Learner has read two events showing a chain but not yet reaching goal; encouraging further evidence gathering rather than premature routing, since two prior attempts failed and no gold route should be given.",
+        "speak": true
+      }
+    ],
+    "public_messages": [
+      {
+        "content": "Use the public task and actual conversation. Identifiers are opaque and case-sensitive. There are at most six turns, four distinct memory reads, and two committed routes. A READ returns actual stored text; a ROUTE commits a currently listed port and returns the actual public receipt and new CURRENT/PORTS. Arrival at GOAL ends the episode. Never simulate a response or another turn. Finish every turn with exactly one action on its last line: READ EVENT <listedaddress> or ROUTE <listedport>. No STOP or retry.",
+        "role": "system"
+      },
+      {
+        "content": "ROUTE TASK\nCURRENT N_LDMVHJXIQ2\nGOAL N_UWEBVLXQ3Y\nPORTS P_DK5SF6ISZH,P_S2JZJSZ4JI\nEVENTS E_2RPBWIS56Q,E_45JK5YQ6N4,E_W5DFQ3F7LH,E_Z33BK6IKAK",
+        "role": "user"
+      },
+      {
+        "content": "READ EVENT E_2RPBWIS56Q",
+        "role": "assistant"
+      },
+      {
+        "content": "EVENT E_2RPBWIS56Q AT N_CGRYIBPSGX DID P_NPGLHKHX5A GOT N_AIDESBPFLN EVIDENCE R_MTJOP43465",
+        "role": "user"
+      },
+      {
+        "content": "READ EVENT E_45JK5YQ6N4",
+        "role": "assistant"
+      },
+      {
+        "content": "EVENT E_45JK5YQ6N4 AT N_LDMVHJXIQ2 DID P_S2JZJSZ4JI GOT N_CGRYIBPSGX EVIDENCE R_DTYITCAOFU",
+        "role": "user"
+      },
+      {
+        "content": "READ EVENT E_W5DFQ3F7LH",
+        "role": "assistant"
+      },
+      {
+        "content": "EVENT E_W5DFQ3F7LH AT N_LDMVHJXIQ2 DID P_DK5SF6ISZH GOT N_HLRCOZ7453 EVIDENCE R_U54PMH37T5",
+        "role": "user"
+      },
+      {
+        "content": "READ EVENT E_Z33BK6IKAK",
+        "role": "assistant"
+      },
+      {
+        "content": "EVENT E_Z33BK6IKAK AT N_HLRCOZ7453 DID P_SRPW5GLYK7 GOT N_UWEBVLXQ3Y EVIDENCE R_JGFRO3MFVA",
+        "role": "user"
+      }
+    ],
+    "task": {
+      "events": [
+        "E_2RPBWIS56Q",
+        "E_45JK5YQ6N4",
+        "E_W5DFQ3F7LH",
+        "E_Z33BK6IKAK"
+      ],
+      "goal": "N_UWEBVLXQ3Y",
+      "node": "N_LDMVHJXIQ2",
+      "ports": [
+        "P_DK5SF6ISZH",
+        "P_S2JZJSZ4JI"
+      ]
+    },
+    "turn": 4
+  }
+}

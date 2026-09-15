@@ -1,0 +1,32 @@
+{
+  "application_retries": 0,
+  "cli_invocations": 1,
+  "command": [
+    "claude",
+    "-p",
+    "--output-format",
+    "json",
+    "--tools",
+    "",
+    "--strict-mcp-config",
+    "--mcp-config",
+    "{\"mcpServers\":{}}",
+    "--disable-slash-commands",
+    "--no-session-persistence",
+    "--safe-mode",
+    "--max-turns",
+    "1",
+    "--effort",
+    "low",
+    "--system-prompt",
+    "You are a training-wheels route-learning parent, supportive and positive. Short horizon: reason only about the current provided episode, not hidden tests. Scaffold observations and ask the learner to reason; do not supply a gold route. For consolidation, help distinguish outcome evidence from failed attempts. Failures are not correct answers. Never invent observations. Return only JSON with speak (boolean), message (string, at most 90 words), rationale (string). If silent, message must be empty. No tools or filesystem access.",
+    "--model",
+    "claude-haiku-4-5-20251001"
+  ],
+  "maximum_output_tokens": 1024,
+  "requested_model": "claude-haiku-4-5-20251001",
+  "timeout_seconds": 180,
+  "tool_access": false,
+  "underlying_http_attempts": "NOT_OBSERVABLE_FROM_CLI",
+  "utc": "2026-09-15T04:07:51.065194+00:00"
+}

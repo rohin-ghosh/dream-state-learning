@@ -1,0 +1,9 @@
+{
+  "id": "0014_GUIDED_C1",
+  "request_sha256": "9d959742ed19cb90585658dfb761eee9f3cc375f90269334031ce32cb192db35",
+  "result": {
+    "message": "Good consolidation opportunity: your reads correctly showed P_EE22XRGDIJ \u2192 N_3W65MMQTBR \u2192 goal, and your first route confirmed that first hop worked (receipt matched!). But repeating the same ROUTE P_EE22XRGDIJ command at the new node failed\u2014that port wasn't valid there anymore. The lesson: after arriving at a new CURRENT node, check its listed PORTS fresh rather than reusing a prior action. What port was actually listed at N_3W65MMQTBR?",
+    "rationale": "Distinguishing the successful first hop (evidence-grounded, matched receipt) from the failed second attempt (invalid_route error from reusing a stale port command instead of using the newly listed port P_YOANUQISN6). Encouraging the learner to self-diagnose the mistake without supplying the gold action directly.",
+    "speak": true
+  }
+}
