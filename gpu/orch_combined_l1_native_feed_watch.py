@@ -30,13 +30,16 @@ def pending(discovered, inventory, attempted):
     return selected[:4]
 
 
-def main(repository, output, once=False):
+def main(repository, output, once=False, *, exporter=None, validation=None,
+         receiver_module='gpu.orch_combined_l1_native_feed_node'):
+    exporter = exporter or f'python3 -B {EXPORT}'
+    validation = validation or VALIDATION
     output.mkdir(parents=True, exist_ok=True)
     with (output / 'WATCH.lock').open('a') as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         attempted = {path.stem for path in output.glob('ATTEMPTS/*.json')}
         while True:
-            remote = f'CUDA_VISIBLE_DEVICES= PYTHONPATH={VALIDATION} {PYTHON} -B -m gpu.orch_combined_l1_native_feed_node --root {ROOT}'
+            remote = f'CUDA_VISIBLE_DEVICES= PYTHONPATH={validation} {PYTHON} -B -m {receiver_module} --root {ROOT}'
             def ssh(wrapper, command, **kwargs):
                 return subprocess.run(['bash', str(repository / 'gpu' / wrapper), command],
                     capture_output=True, text=True, check=True, timeout=120, **kwargs)
@@ -44,10 +47,10 @@ def main(repository, output, once=False):
             if inventory['native_unix'] >= inventory['training_deadline']:
                 print(json.dumps(dict(status='TRAINING_DEADLINE', native_unix=inventory['native_unix'])), flush=True)
                 return
-            discovered = json.loads(ssh('ovx_ssh.sh', f'python3 -B {EXPORT} --discover').stdout)
+            discovered = json.loads(ssh('ovx_ssh.sh', exporter + ' --discover').stdout)
             for entry in pending(discovered, inventory, attempted):
                 expected = entry['manifest_sha256']
-                command = f'python3 -B {EXPORT} --number {entry["number"]} --manifest-sha {shlex.quote(expected)} --exclusions {EXCLUSIONS}'
+                command = f'{exporter} --number {entry["number"]} --manifest-sha {shlex.quote(expected)} --exclusions {EXCLUSIONS}'
                 remaining = inventory['training_deadline'] - time.time()
                 if remaining < 120:
                     return

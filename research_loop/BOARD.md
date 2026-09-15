@@ -1,5 +1,32 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## Verified update — 2026-09-15 06:41 UTC
+
+- R106 audit: departure/return positives exist (partial-review lowerbounds
+  FULL5/64,OFF2/64,BASE4/64); terminal checks separately excluded from mid-line
+  counts (lowerbounds1/64,0/64,2/64). Not a learned-branching advantage. New
+  token-composition tables and bound author annotations in R106 RESULTS.
+- Creative parenting backfill is LIVE on node3physical1 after OFF's natural
+  C8terminal06:27:27; firstparentreply06:31:23, firstparentedchild06:31:28.
+  Single treatment/no new control;2episodes/sleep/rehearsal and freshtests.
+- Fleet06:39:06–07 has32compute-resident/25positive instantaneous utilization.
+  Actual19generation/7training/6parenting includes oldtersefits6/7node3; do not
+  present intended21/5/6 as actual. No zero-utilization phase-gap takeovers.
+- Newexhaustionfeed still0acceptedmanifests06:38. V13child continues; newest375
+  all first-exposed by06:09:48. TRAINdeadline07:03:10;416readoutcalls remain.
+
+## R106 measurement correction — 2026-09-15 06:35 UTC
+
+Branching means departures-and-returns, including checks, judgments and
+counterfactual asides, NOT two worked methods. Preserve method count separately.
+The 05:56 dismissal of counterfactual checks as non-branching is superseded;
+old 9/12 labels are not automatically a validated new rate. CPU-only MATH764
+composition supplement now scoped: existing minimal-default FULL/OFF/BASE,
+exact token denominators, fixed first4/arm author review and separately labelled
+whole-cohort lexical proxy. No new calls or running-lane changes; no held-to-TRAIN
+or parent leakage. Protocol: `orch_r106_measurement_20260915.md` in analysis.
+R105 remains design-only: replay ON L2–3; eventual L4 reflection-only sleeps.
+
 ## Deferred parenting backfill — allocation before launch
 
 Node3physical1 ONLY after canonicalOFF C8 sleep, fresh parent-free C8readout,

@@ -1,0 +1,111 @@
+{
+  "observed_utc": "2026-09-15T06:31:57.147350+00:00",
+  "phase": "ACTUAL_PARENTED_C1_EXPERIENCE",
+  "initial_state": {
+    "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+    "files": [
+      [
+        "README.md",
+        "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+      ],
+      [
+        "adapter_config.json",
+        "4a7e6836e536e25fcc0151601beed711e0f2d4ce7b4966cc5853c7bc7f22fa55"
+      ],
+      [
+        "adapter_model.safetensors",
+        "6f7546d334a6dd65c5a22dddeff2ee6eb42292373d79552df52a272f3aeab76f"
+      ]
+    ],
+    "path": "/tmp/orch_route_parent_creative_backfill_20260915/initial_adapter",
+    "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+  },
+  "initial_state_matches_c0": true,
+  "parent_present": true,
+  "parent_cell": {
+    "horizon": "short",
+    "provider": "openai/openai/gpt-6-astra",
+    "style": "creative",
+    "tone": "supportive-positive"
+  },
+  "first_parent": {
+    "actual_model": "openai/openai/gpt-6-astra",
+    "started_utc": "2026-09-15T06:30:35.550657+00:00",
+    "finished_utc": "2026-09-15T06:31:23.152634+00:00",
+    "elapsed_seconds": 47.60197687149048,
+    "usage": {
+      "cost": null,
+      "input_tokens": 529,
+      "input_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": 0,
+        "cached_tokens": 0,
+        "text_tokens": null
+      },
+      "output_tokens": 1109,
+      "output_tokens_details": {
+        "reasoning_tokens": 966,
+        "text_tokens": null
+      },
+      "total_tokens": 1638
+    },
+    "node_path": "/tmp/orch_route_parent_creative_backfill_20260915/parent_raw/0000_GUIDED_C1/RECEIPT.json",
+    "sha256": "df817c24c766c6972e15a0937cb96551260b647077498df2598827e182599271",
+    "native_raw_manifest_path": "/tmp/orch_route_parent_creative_backfill_20260915/parent_raw/0000_GUIDED_C1/MANIFEST.json",
+    "native_raw_manifest_sha256": "19aa21ba44d43977fefc6a5707e07f0583393c1ba610343e106cd9b5b6535112",
+    "files_verified": 9,
+    "all_hashes_match": true,
+    "transcript_quarantined": true
+  },
+  "first_parented_learner": {
+    "started_utc": "2026-09-15T06:31:26.888676+00:00",
+    "finished_utc": "2026-09-15T06:31:28.735703+00:00",
+    "prompt_tokens": 300,
+    "output_tokens": 13,
+    "terminal": true,
+    "truncated": false,
+    "node_path": "/tmp/orch_route_parent_creative_backfill_20260915/GUIDED/cycle1/experience/CALL_0008.json",
+    "sha256": "6ceaf75d7be15665d3c819dede1f77fa73af8328da568c449ae5f7948f7f2c81",
+    "native_process": [
+      "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+      455804,
+      16003911
+    ]
+  },
+  "parent_wait_seconds": 56.0108118057251,
+  "parent_queue_request_sha256": "f55996fcafbe71a9c7d3feab49b771ba6313e801b2c824520985d741c049cca0",
+  "parent_queue_response_sha256": "cdc49939b0cdbb8addf7279259dcad7cc641d1f7dcd2864d8d8a61429c5b56f8",
+  "c0_parentfree_complete": {
+    "finished_utc": "2026-09-15T06:29:32.927329+00:00",
+    "process": [
+      "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+      450910,
+      15995045
+    ],
+    "sha256": "f6a087ff1b28ac97b3ce4f61e994935b7aa48a9d3c8db861049548c006f8378a",
+    "episodes": 2
+  },
+  "loaded_receipt_sha256": "80b60dd213aa3ccede5a9fa3b4eb54417ec0a43504ed62a79502e491100f595b",
+  "ledgers": {
+    "CALLS_GUIDED.jsonl": {
+      "node_path": "/tmp/orch_route_parent_creative_backfill_20260915/CALLS_GUIDED.jsonl",
+      "count": 10,
+      "sha256": "23b51b227bbae46247b27adc4b2772c2a83caad91705196bdec911d8cc8f939b"
+    },
+    "CALLS_PARENT_GUIDED.jsonl": {
+      "node_path": "/tmp/orch_route_parent_creative_backfill_20260915/CALLS_PARENT_GUIDED.jsonl",
+      "count": 2,
+      "sha256": "8e9758623bd850944a112e5407b872345b91e7e2351dd0174f6e5841cd416e5f"
+    },
+    "CALLS_SOURCE.jsonl": {
+      "node_path": "/tmp/orch_route_parent_creative_backfill_20260915/CALLS_SOURCE.jsonl",
+      "count": 0,
+      "sha256": null
+    }
+  },
+  "saved_updates": 0,
+  "experience_complete": false,
+  "guardian_failed": false,
+  "raw_exported": false,
+  "learning_effect_claim": false
+}

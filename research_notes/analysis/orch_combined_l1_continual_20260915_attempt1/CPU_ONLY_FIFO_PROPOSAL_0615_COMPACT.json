@@ -1,0 +1,25 @@
+{
+  "status": "CPU_ONLY_ILLUSTRATION_NOT_AUTHORIZED_OR_IMPLEMENTED",
+  "corpus_rows": 3635,
+  "fresh_rows": 375,
+  "window_start": 2021,
+  "window_end": 3647,
+  "original_first": 3460,
+  "original_all": 3647,
+  "proposed_first": 2021,
+  "proposed_all": 2395,
+  "swaps": 375,
+  "old222_slots_unchanged": true,
+  "window_row_multiset_identical": true,
+  "full_off_share_identical_grid": true,
+  "grid_sha256": {
+    "original": "d6426d1d217e56602381b60e5d77cbe720dfc453015d9e6470137f437667c48d",
+    "proposed": "f80170faeeffd246e49919ea2fc3e413d812effff5d3b78f525d32875a4d7ce5"
+  },
+  "scope": "Fixed V13 snapshot only. No runtime input, GPU/model call, optimizer access, or checkpoint mutation.",
+  "limitations": [
+    "Does not certify arbitrary concurrent arrivals or wall-clock latency.",
+    "Old nonlegacy rehearsal is temporally displaced and repaid at reserved future slots.",
+    "Same window doses do not imply same optimizer trajectory or per-update normalization."
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "observed_utc": "2026-09-15T06:30:10.613872+00:00",
+  "main_commit": "949d7c00",
+  "main_board_post_utc": "2026-09-15T06:27:04Z",
+  "main_post_installation_utc": "2026-09-15T06:28:05.168432+00:00",
+  "off_final_readout_finished_utc": "2026-09-15T06:27:26.539920+00:00",
+  "off_guardian_finished_utc": "2026-09-15T06:27:27.374305+00:00",
+  "claim_utc": "2026-09-15T06:28:06.796673+00:00",
+  "natural_release_verified_utc": "2026-09-15T06:28:06.797116+00:00",
+  "claim_to_release_check_seconds": 0.00044274330139160156,
+  "wait_interpretation": "OFF had already naturally completed when helper checked; this is gate-check elapsed time, not an estimated queued wait.",
+  "activation_clock_utc": "2026-09-15T06:28:06.797191+00:00",
+  "hard_deadline_utc": "2026-09-15T08:28:06.797191+00:00",
+  "native_deadline_utc": "2026-09-15T08:27:36.797191+00:00",
+  "dispatched_utc": "2026-09-15T06:28:07.184416+00:00",
+  "guardian_pid": 450903,
+  "strict_release": {
+    "admission_sha256": "4a73231436e4d54c5121ebe3ccbab708bd51425cba23623accb4b8537251ff4e",
+    "canonical_files_modified": false,
+    "clear": true,
+    "final_readout_sha256": "a8c6532bede3d2b021eebef155277da7b3504c8d5e974ce707967bddcb88b7b4",
+    "final_sleep_sha256": "843df51a8acd14df08f29c2833967050a8a753b020ca85b67de09df83ed985b9",
+    "guard_sha256": "b01d7766b6055e79a5252dd1bd8a041e27f2fbe3852df74af080628c9159dda1",
+    "natural_completion": true,
+    "owner": "ROUTE_PARENT_CAMPAIGN",
+    "physical_index": 1,
+    "prior_guardian": {
+      "boot_id": "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+      "command_sha256": "99b1f8e36105265191f5f3fcc047b3e0632ed8fbb5cd2918c589f6b337020ee7",
+      "pid": 317455,
+      "start_ticks": 15551308,
+      "uid": 2524
+    },
+    "privileged": true,
+    "recorded_unix": 1789453686.797116,
+    "released": true,
+    "uuid": "GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821"
+  },
+  "admission_summary": {
+    "created_utc": "2026-09-15T06:28:06.984018+00:00",
+    "scanner_euid": 0,
+    "gpu": {
+      "index": 1,
+      "memory_used_mib": 1,
+      "utilization_percent": 0,
+      "uuid": "GPU-71e5a3e2-e9c8-5caf-70d8-73794ac34821"
+    },
+    "clear": true,
+    "blocking_reasons": []
+  },
+  "initial_loaded": {
+    "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+    "files": [
+      [
+        "README.md",
+        "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+      ],
+      [
+        "adapter_config.json",
+        "4a7e6836e536e25fcc0151601beed711e0f2d4ce7b4966cc5853c7bc7f22fa55"
+      ],
+      [
+        "adapter_model.safetensors",
+        "6f7546d334a6dd65c5a22dddeff2ee6eb42292373d79552df52a272f3aeab76f"
+      ]
+    ],
+    "path": "/tmp/orch_route_parent_creative_backfill_20260915/initial_adapter",
+    "state_sha256": "d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f"
+  },
+  "initial_native_process": [
+    "589725e3-0bcb-4427-83b3-8ead5cbc1e9a",
+    450910,
+    15995045
+  ],
+  "first_native_response": {
+    "phase": "C0_PARENT_FREE_READOUT_NOT_PARENTED_EXPERIENCE",
+    "node_path": "/tmp/orch_route_parent_creative_backfill_20260915/GUIDED/cycle0/readout/CALL_0000.json",
+    "sha256": "e1060f3a0ef01710ab5c8a125ef86aff619d9970f65e890ac48f35f0f6e93c74",
+    "started_utc": "2026-09-15T06:29:01.441749+00:00",
+    "finished_utc": "2026-09-15T06:29:02.820576+00:00",
+    "response_observed": true,
+    "prompt_tokens": 203,
+    "output_tokens": 13
+  },
+  "counters": {
+    "native_calls": 8,
+    "source_calls": 0,
+    "parent_requests": 0,
+    "parent_responses": 0,
+    "saved_updates": 0
+  },
+  "caps": {
+    "seconds": 7200,
+    "source_calls": 0,
+    "child_calls_per_lane": 256,
+    "parent_calls_per_lane": 48,
+    "updates_per_sleep": 112,
+    "cycles": 4,
+    "worlds": 1,
+    "context": 8192,
+    "generation": 512,
+    "parent_tokens": 192
+  },
+  "broker_claim_exists": true,
+  "evidence": {
+    "MAIN_POSTED.json": {
+      "node_path": "/tmp/orch_route_parent_creative_backfill_20260915/MAIN_POSTED.json",
+      "sha256": "f994f868f22416d3981159a8dbc4579a17b1ca97325f73f1a3df0607b063127c"
+    },
+    "DEFERRED_HELPER.json": {
+      "node_path": "/tmp/orch_route_parent_creative_backfill_20260915/DEFERRED_HELPER.json",
+      "sha256": "fee534c51b5b60306069d5a8b62807d23fe162ede2d0ac8bfcf5ba4330fa1226"
+    },
+    "LAUNCH_CLAIM.json": {
+      "node_path": "/tmp/orch_route_parent_creative_backfill_20260915/LAUNCH_CLAIM.json",
+      "sha256": "29765e6b22212a4c73fdb0d53fcee978a44472d1778e76f2fa94913214aba45e"
+    },
+    "START.json": {
+      "node_path": "/tmp/orch_route_parent_creative_backfill_20260915/START.json",
+      "sha256": "ce04543ff94ad072df946822f69cfaaf197e9c3228f2affb1922c2c1d548406f"
+    },
+    "STRICT_RELEASE.json": {
+      "node_path": "/tmp/orch_route_parent_creative_backfill_20260915/STRICT_RELEASE.json",
+      "sha256": "1470d30f9542e5f9b62b489989fd1b6a0073e3a220e548ac7d1b4f04b8fb4a0f"
+    },
+    "DISPATCH.json": {
+      "node_path": "/tmp/orch_route_parent_creative_backfill_20260915/DISPATCH.json",
+      "sha256": "cb2097643a119d23d969ccd9113cbe60ebff9db6eb8c8d8cca00928d6f6153c3"
+    },
+    "RELEASE_ADMISSION.json": {
+      "node_path": "/tmp/orch_route_parent_creative_backfill_20260915/RELEASE_ADMISSION.json",
+      "sha256": "4a73231436e4d54c5121ebe3ccbab708bd51425cba23623accb4b8537251ff4e"
+    }
+  },
+  "retries": 0,
+  "foreign_signals": 0,
+  "physical0_or_2_changes": false,
+  "raw_exported": false,
+  "learning_effect_claim": false
+}

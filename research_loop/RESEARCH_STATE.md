@@ -1,5 +1,22 @@
 # Research state — Orchestrator
 
+## R106 composition and actual parenting — September 15, 2026, 06:41 UTC
+
+Method count is separate from branching. Main confirmed checks/judgments with
+returns in at least5/64FULL,2/64OFF,4/64BASE minimal-default outputs; mostly
+terminal checks, not mid-line excursions. Partial semantic audit only:12fixed
+plus11marker-selected outputs. Token composition supplement preserves this
+selection and separates full-cohort lexical proxies from author labels. FULL
+still averages186tokens versus246.05OFF/235.59BASE; compression, not a demonstrated
+new thinking repertoire. R106 supersedes the05:56 definition, not old evidence.
+Creative node3physical1 backfill actually started06:28:07 after canonicalOFF
+naturalcompletion; firstAstraresponse06:31:23, firstparentedchild06:31:28.
+Exactly2episodes/sleep/rehearsal/freshreadouts maintained; no retainedgainclaim.
+Fleet06:39:06–07:32/32compute-resident,25/32positive instantaneousutilization.
+Continualnew-source acceptedmanifests still0 at06:38; existingV13 remains in
+training. Historical newest375 all exposed by06:09:48, not freshfeedproof.
+Goal remains active and unproven; futureFIFO/META/L4 changes are not live.
+
 ## Fresh source and actual exposure — September 15, 2026, 06:17 UTC
 
 Replacementpublisher3797981 live since06:15:04, first64current37ec rows under

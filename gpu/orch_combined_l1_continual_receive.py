@@ -13,13 +13,13 @@ from gpu.orch_combined_l1_continual_guard import take_batch
 from organism_v6 import orch_combined_l1_continual as policy
 
 
-def receive(root, envelope):
+def receive(root, envelope, native_validator=None):
     packet = envelope['packet']
     exclusions = envelope['exclusions']
     sampled.validate_packet(packet, exclusions)
     from transformers import AutoTokenizer
     tokenizer = AutoTokenizer.from_pretrained(run.read(root / 'PREPARE.json')['model_dir'], local_files_only=True)
-    encoded = sampled.native_check(packet, exclusions, tokenizer)
+    encoded = (native_validator or sampled.native_check)(packet, exclusions, tokenizer)
     state = policy.initial_state(run.read(root / 'PACKET/ADMITTED_ROWS.json'), run.combined.MANIFEST_SHA)
     state = take_batch(root, state)
     for pending in sorted((root / 'SAMPLED_EXTRA_PENDING').glob('*/BOUND_PACKET.json')):

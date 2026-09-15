@@ -1,5 +1,13 @@
 # Branching evidence correction — 2026-09-15 05:56 UTC
 
+**R106 addendum, 2026-09-15 06:41 UTC:** the method distinction below remains
+valid, but it must NOT define branching. Checks, judgments and counterfactual
+departures with a return count under Rohin's definition. Any implication here
+that they are non-branching is withdrawn. Original9/12 labels and verdicts are
+preserved, not automatically recertified. See `orch_r106_measurement_20260915.md`
+and `orch_r106_composition_20260915/RESULTS.md`; terminal checks are reported
+separately from mid-solution excursions.
+
 ## Own-output pilot: counterfactual checks are not alternative methods
 
 Main read the 12 sampled review records in the failed FULL256 pilot's

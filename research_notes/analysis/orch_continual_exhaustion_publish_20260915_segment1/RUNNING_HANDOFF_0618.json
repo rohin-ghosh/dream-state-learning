@@ -1,0 +1,84 @@
+{
+  "aggregate_allocation_ceiling": 256,
+  "aggregate_reserved": 100,
+  "clock_clarification": {
+    "config_setup_lead_seconds": 37.66198945045471,
+    "config_started_unix": 1789452867.274424,
+    "controller_wall_to_first_decision_seconds": 109.46499180793762,
+    "live_status_actual_publisher_wall_seconds_is_config_origin": true,
+    "native_capture_window_is_separate": true,
+    "process_started_unix": 1789452904.9364135
+  },
+  "first64_selected_source_window": {
+    "first_capture_unix": 1789447789.154159,
+    "generated_content_tokens": 22277,
+    "last_capture_unix": 1789451242.1192317,
+    "scope": "Selected64, not whole live-source scan; no semantic qualification implied",
+    "unique_targets": 64
+  },
+  "first_batch": {
+    "accepted": false,
+    "admitted": 0,
+    "gold_valid": 12,
+    "grounding_defects": 5,
+    "native_reviews_path": "/localhome/local-rohing/orch_continual_exhaustion_publish_20260915_segment1/orch_continual_exhaustion_feed_batch_000/SAMPLED_REVIEWS.json",
+    "native_reviews_sha256": "f54d1789c9e3b130f19c958392c8f51a3a96ad4fde50cb4d5f21993533feab17",
+    "native_transfer_files": 18,
+    "native_transfer_verified": true,
+    "potential_exported56_not_admitted": true,
+    "prefix_defects": 5,
+    "reported_provider_components": {
+      "cached_input_tokens": 1287,
+      "input_tokens": 21589,
+      "output_tokens": 8857,
+      "reasoning_output_tokens": 212
+    },
+    "sample_fail": 8,
+    "sample_pass": 4,
+    "unsampled_individually_unreviewed": 52
+  },
+  "first_dispatch_utc": "2026-09-15T06:15:05.870982Z",
+  "laplace_handoff": "Allowlist this NEW native root and Cicero source adapter for future accepted manifests. No accepted manifest yet; do not enqueue rejected000. Old receiver watching only retired-source root is insufficient.",
+  "manifests_ready_for_training": [],
+  "native_root": "/localhome/local-rohing/orch_continual_exhaustion_publish_20260915_segment1",
+  "new_generation_or_GPU_calls": 0,
+  "new_reserved_at_last_native_observation": 4,
+  "next_action": "Controller continues new immutable snapshots and one-attempt sampled review until128 new calls or07:49 dispatch cutoff;08:00 deadline unchanged.",
+  "observed_utc": "2026-09-15T06:18:24.519140+00:00",
+  "old_reserved_preserved": 96,
+  "old_runtime_changed": false,
+  "pid": 3797981,
+  "process_start_ticks": "155992292",
+  "raw_storage": "Native-only; verified first review temporary packet removed; only bounded second packet currently in/tmp",
+  "schema": "ORCH_CONTINUAL_EXHAUSTION_PUBLISH_RUNNING_HANDOFF_V1",
+  "second_batch_dispatches": [
+    {
+      "attempts": 1,
+      "config_sha256": "6b3affde9e76a17e5331d4dbfdbe23ec6099d7d2416b229890f81c5ba1d0c85f",
+      "group": "batch_001_0",
+      "maximum_output_tokens": 8192,
+      "model": "openai/openai/gpt-6-astra",
+      "receipt_sha256": "edc84758e974806a4dd679fe280c0ac7e89d1a260b7efb6f810a3ee9130f8803",
+      "request_sha256": "c1df8e47353a016060e2c09135992e15d3e1a4d351019f4d0bc68d7ae28b9104",
+      "retries": 0,
+      "started_unix": 1789453023.184006,
+      "timeout_seconds": 300
+    },
+    {
+      "attempts": 1,
+      "config_sha256": "6b3affde9e76a17e5331d4dbfdbe23ec6099d7d2416b229890f81c5ba1d0c85f",
+      "group": "batch_001_1",
+      "maximum_output_tokens": 8192,
+      "model": "openai/openai/gpt-6-astra",
+      "receipt_sha256": "94e815d06bea0557443642bfa993b0a06cb9cc47ef2659537f566910a6b8e0d1",
+      "request_sha256": "7ca54e5e7dac6c89f84a997955a78975044cb2e81e54af364ef40bb423e934e9",
+      "retries": 0,
+      "started_unix": 1789453023.1926363,
+      "timeout_seconds": 300
+    }
+  ],
+  "source_adapter": "gpu/orch_continual_exhaustion_feed.py",
+  "source_adapter_sha256": "14afaf648ddc594f6b4cb491bd89a62f8bcefa46f0d042c6b948b9613c1abf38",
+  "source_mix": "MIXED_STEERING_SAME_37EC",
+  "teacher_work_paused": true
+}

@@ -1,0 +1,321 @@
+{
+  "admitted_rows": 0,
+  "axis_counts": {
+    "checkable_expectation": {
+      "false": 0,
+      "true": 12,
+      "unknown": 0
+    },
+    "first_person": {
+      "false": 3,
+      "true": 9,
+      "unknown": 0
+    },
+    "grounded_operations": {
+      "false": 5,
+      "true": 7,
+      "unknown": 0
+    },
+    "neutral_prefix_compatible": {
+      "false": 5,
+      "true": 7,
+      "unknown": 0
+    },
+    "no_padding": {
+      "false": 6,
+      "true": 6,
+      "unknown": 0
+    },
+    "reusable_content": {
+      "false": 0,
+      "true": 12,
+      "unknown": 0
+    }
+  },
+  "branching": {
+    "main_fulltext_qualification": {
+      "attribution": "Main current user directive; no new review invocation",
+      "description": "Valid division plus abbreviated iterative pouring/depletion; no changed givens or rejected method. Method2 shows only two steps then asserts10. Preserve FAIL for unsupported less-precise-for-large-volumes comparison, not arithmetic error.",
+      "target_sha256": "d60b2434ae6c77f3b00db04d16b7ed1f57d19fa09a2d873ff173a0ac88f50bf7"
+    },
+    "not_a_fully_independent_two_method_proof": true,
+    "not_zero_branching": true,
+    "original_author_repetition_flags": 6,
+    "original_author_rows_with_two_same_premise_methods": 1,
+    "sample_denominator": 12
+  },
+  "fail_count": 8,
+  "failure_overlap": {
+    "both": 3,
+    "grounding_and_prefix_defects": 5,
+    "grounding_prefix_only": 2,
+    "padding_defects": 6,
+    "padding_only": 3
+  },
+  "failures": [
+    {
+      "checkable_expectation": true,
+      "evidence_line_ids": [
+        2,
+        5,
+        6,
+        7,
+        13,
+        14,
+        15,
+        18
+      ],
+      "false_quality_axes": [
+        "grounded_operations",
+        "no_padding",
+        "neutral_prefix_compatible"
+      ],
+      "first_person": true,
+      "gold_reason": "Caleb has 20 - 5 = 15; Suraya has 15 + 12 = 27; 27 - 20 = 7.",
+      "gold_status": "VALID",
+      "grounded_operations": false,
+      "neutral_prefix_compatible": false,
+      "no_padding": false,
+      "prefix_reason": "The earlier assistant also made the comparison, but it is not proof: both displayed versions calculate Caleb and use identical steps.",
+      "reason": "Repeats the identical solution and falsely claims the first version uses fewer steps and avoids an additional Caleb calculation.",
+      "reduction_category": "UNSUPPORTED_STEP_COUNT_COMPARISON_AND_REPETITION",
+      "reduction_category_is_new_verdict": false,
+      "reusable_content": true,
+      "target_sha256": "31043794afa4e4a0ac916c9ef6c93d6ab666c8e927fb0df93758f7dc78e994eb"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_line_ids": [
+        4,
+        5,
+        7,
+        8,
+        12,
+        18,
+        19,
+        20,
+        21,
+        24
+      ],
+      "false_quality_axes": [
+        "grounded_operations",
+        "neutral_prefix_compatible"
+      ],
+      "first_person": false,
+      "gold_reason": "4000(1.30) + (400 - 200) = 5200 + 200 = 5400.",
+      "gold_status": "VALID",
+      "grounded_operations": false,
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The prior attempt is not mathematical evidence. A $100 discount is not given, and its calculation does not check the stated $200 discount.",
+      "reason": "The main calculation is correct, but the lens counterexample changes the discount to $100 and is then endorsed as confirming the original calculation.",
+      "reduction_category": "CHANGED_DISCOUNT_PREMISE_ENDORSED_AS_CHECK",
+      "reduction_category_is_new_verdict": false,
+      "reusable_content": true,
+      "target_sha256": "20ebddf9136a4d5c7a8f7b8ad53a2a4aae8745d7476c7238006b4fbd9b2eae32"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_line_ids": [
+        5,
+        6,
+        7,
+        8,
+        11,
+        15,
+        18,
+        21,
+        26,
+        29,
+        32,
+        36,
+        39,
+        42
+      ],
+      "false_quality_axes": [
+        "no_padding"
+      ],
+      "first_person": true,
+      "gold_reason": "Matt previously read 75/(3/2) = 50; Pete read 100 then 200, totaling 300.",
+      "gold_status": "VALID",
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": false,
+      "prefix_reason": "All mathematical quantities and relations are supported by the question; no external verification is claimed.",
+      "reason": "The arithmetic is correct, but the entire second approach repeats the same equations and calculations without a new check.",
+      "reduction_category": "REPETITION_ONLY",
+      "reduction_category_is_new_verdict": false,
+      "reusable_content": true,
+      "target_sha256": "a20ada5d758ef596a014a7e8a1c1ea20eff4d869bd86814039f6d7643a7145a5"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_line_ids": [
+        2,
+        3,
+        4,
+        8,
+        9,
+        10,
+        11
+      ],
+      "false_quality_axes": [
+        "no_padding"
+      ],
+      "first_person": false,
+      "gold_reason": "Three trucks carry nine tanks in total; 9 \u00d7 150 = 1350.",
+      "gold_status": "VALID",
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": false,
+      "prefix_reason": "All quantities and capacity calculations follow from the question; no external confirmation is claimed.",
+      "reason": "The arithmetic is correct, but the second block repeats the same multiplication and result without a substantive new check.",
+      "reduction_category": "REPETITION_ONLY",
+      "reduction_category_is_new_verdict": false,
+      "reusable_content": true,
+      "target_sha256": "d08d03b51f9556faeb37799550460f44d18ffed7e2702c56f852733e4dcfbb68"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_line_ids": [
+        7,
+        12,
+        13,
+        18,
+        19,
+        20,
+        21,
+        22,
+        26,
+        27,
+        29
+      ],
+      "false_quality_axes": [
+        "grounded_operations",
+        "no_padding",
+        "neutral_prefix_compatible"
+      ],
+      "first_person": true,
+      "gold_reason": "Maximum carrying capacity is 3 \u00d7 3 \u00d7 150 = 1350.",
+      "gold_status": "VALID",
+      "grounded_operations": false,
+      "neutral_prefix_compatible": false,
+      "no_padding": false,
+      "prefix_reason": "The earlier attempted solution does not justify its capacity error. Lines 22, 26, and 29 retain that unsupported claim.",
+      "reason": "The counterfactual arithmetic is correct, but the target repeatedly endorses the false claim that partial filling reduces capacity rather than carried volume.",
+      "reduction_category": "CAPACITY_VERSUS_CARRIED_VOLUME_CONCEPTUAL_ERROR_AND_REPETITION",
+      "reduction_category_is_new_verdict": false,
+      "reusable_content": true,
+      "target_sha256": "ee5749aab29d54ae6276a22e370eae2e216a781e178125566a5a46e1b569f398"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_line_ids": [
+        6,
+        9,
+        12,
+        16,
+        17,
+        24,
+        27,
+        30,
+        34,
+        35,
+        40,
+        42,
+        43,
+        47,
+        48,
+        52,
+        53
+      ],
+      "false_quality_axes": [
+        "no_padding"
+      ],
+      "first_person": true,
+      "gold_reason": "Sedrich has 21; twice the combined 38 is 76, and 76/4 = 19.",
+      "gold_status": "VALID",
+      "grounded_operations": true,
+      "neutral_prefix_compatible": true,
+      "no_padding": false,
+      "prefix_reason": "All arithmetic and candidate evaluations can be verified from the question, independently of the prior assistant response.",
+      "reason": "The solution and candidate checks are correct, but the entire decomposed calculation duplicates the direct calculation without new substance.",
+      "reduction_category": "REPETITION_ONLY",
+      "reduction_category_is_new_verdict": false,
+      "reusable_content": true,
+      "target_sha256": "5f2cd5b9a47c706f2f4ab461096c28362cd4ab747cac3106e2d2ac0dcbefb6a7"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_line_ids": [
+        2,
+        4,
+        5,
+        6,
+        10,
+        13,
+        14,
+        16,
+        20
+      ],
+      "false_quality_axes": [
+        "grounded_operations",
+        "neutral_prefix_compatible"
+      ],
+      "first_person": true,
+      "gold_reason": "Two liters is 2000 ml, and 2000/200 = 10.",
+      "gold_status": "VALID",
+      "grounded_operations": false,
+      "neutral_prefix_compatible": false,
+      "no_padding": true,
+      "prefix_reason": "The hypothetical pours are valid mathematical reasoning, not claimed observations. Nothing in the question or reasoning establishes reduced precision for exact repeated subtraction.",
+      "reason": "The conversion, division, and depletion check are correct, but the claim that the stepwise method is less precise for large volumes is unsupported.",
+      "reduction_category": "UNSUPPORTED_QUALITATIVE_PRECISION_COMPARISON",
+      "reduction_category_is_new_verdict": false,
+      "reusable_content": true,
+      "target_sha256": "d60b2434ae6c77f3b00db04d16b7ed1f57d19fa09a2d873ff173a0ac88f50bf7"
+    },
+    {
+      "checkable_expectation": true,
+      "evidence_line_ids": [
+        4,
+        5,
+        9,
+        11,
+        12,
+        13,
+        15
+      ],
+      "false_quality_axes": [
+        "grounded_operations",
+        "no_padding",
+        "neutral_prefix_compatible"
+      ],
+      "first_person": true,
+      "gold_reason": "Convert 2 liters to 2000 ml and divide by 200 ml per portion to obtain 10.",
+      "gold_status": "VALID",
+      "grounded_operations": false,
+      "neutral_prefix_compatible": false,
+      "no_padding": false,
+      "prefix_reason": "The conversion and division are justified, but the prior assistant's comparison is not proof that identical procedures differ in efficiency or step count.",
+      "reason": "The second calculation duplicates the first, and the comparison incorrectly claims the first requires fewer steps.",
+      "reduction_category": "UNSUPPORTED_STEP_COUNT_COMPARISON_AND_REPETITION",
+      "reduction_category_is_new_verdict": false,
+      "reusable_content": true,
+      "target_sha256": "44d72f25c2131dceae7356af5b2115a1994b49b33ee65371ec149e3d6ed61d34"
+    }
+  ],
+  "gold_valid": 12,
+  "interpretation": "None of the eight original reason fields identifies an arithmetic calculation error. Twelve original sample gold_status fields are VALID. Qualitative method comparisons, premise/quantity interpretation and repetition must remain distinct; this is not blanket condemnation of generation.",
+  "native_review_path": "/localhome/local-rohing/orch_continual_exhaustion_publish_20260915_segment1/orch_continual_exhaustion_feed_batch_000/SAMPLED_REVIEWS.json",
+  "native_review_sha256": "f54d1789c9e3b130f19c958392c8f51a3a96ad4fde50cb4d5f21993533feab17",
+  "observed_utc": "2026-09-15T06:21:50.261421+00:00",
+  "pass_count": 4,
+  "pipeline_gate_added": false,
+  "reviews_or_provider_calls_added": 0,
+  "sampled": 12,
+  "schema": "ORCH_CONTINUAL_EXHAUSTION_BATCH000_FAILURE_REDUCTION_V1",
+  "scope": "Attributed original author-review reasons for deterministic12 sample, not independent re-review, not whole64 or fleet prevalence.",
+  "source_state": "MIXED_STEERING_SAME_37EC; frozen original37ec/base; not checkpoint/teacher",
+  "verdict_preserved": true
+}
