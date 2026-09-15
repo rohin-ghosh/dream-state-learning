@@ -1,5 +1,22 @@
 # Research state — Orchestrator
 
+## Live correction — September 15, 2026, 04:52 UTC
+
+- Direct fleet census:28/32 resident,22/32 positive instantaneous utilization;
+  A1005 and node3 1/4/5 empty. Node1 all8 generating. Destination allocation
+  stays21generation/5training/6parenting; assigned is not busy.
+- Continual tested-source recovery launched guardian459143 at04:49:57;
+  FULL463010/463011 on2/6 and OFF463012 on3 loaded04:51:59–04:52:00.
+  Actual FULL1042both/OFF1036 by04:52:23 on corpusV2/2943. Transition failure,
+  OFF896→1024 reconstruction and physical extra updates remain disclosed.
+- Richness-first default readouts and TRAIN-only own-output replay are pending,
+  not inferred from fit loss or prompted P64. No improvement/promotion claim.
+- Compact timing/storage receipts and live journals pushed through04dedd4c;
+  origin/main..HEAD empty immediately after push. Further entries require sync.
+  64 large verified node-mirrored files were pruned after receipts were pushed;
+  VM now~9.9GiB available/97%. Raw evidence must remain on node-local disks.
+
+
 ## Current execution evidence — September 15, 2026, 04:23 UTC
 
 This supersedes older status summaries, not their preserved evidence. Git rebase

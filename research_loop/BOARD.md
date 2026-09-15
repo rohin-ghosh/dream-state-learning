@@ -1,5 +1,36 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## Measured recovery and allocation — 2026-09-15 04:52 UTC
+
+Destination remains 21 generation / 5 training / 6 parenting, all 32 assigned:
+node1 all8 generation; node2 all8 generation; node3 3–7 generation destinations
+(6/7 still occupied by legacy jobs until safe completion), 0–2 parenting;
+A100 0/1 existing math764 fit, 2/6 continual FULL, 3 matched masked control,
+4/5/7 math parenting. No competing fillers on owned transition slots.
+This is NOT measured saturation: direct 04:52:00–01 UTC census found 28/32
+resident, 22/32 with positive sampled GPU utilization. Empty: A1005 and node3
+1/4/5. Owners are restoring bounded stages; node1 all8 are computing.
+
+Continual training is running, not still waiting for its first GPU gate.
+Last-tested source80176f resumed matched1024 after control recovery;
+at04:52:23 FULL both ranks1042, masked control1036, corpusV2/2943.
+Original OFF first update04:02:09, FULL04:13:13. Stale ABORT lifecycle failure
+interrupted a later transition; failed evidence and extra reconstruction work
+remain recorded. Do not claim uninterrupted operation or exact lost tensors.
+Intermediate adaptive-DEV/default richness readouts remain pending, targeted
+before05:45; old math764 P64 ETA~05:15 is not a completion promise.
+
+Publish tokens/EOS-vs-ceiling, approaches, rejected paths, repetition and
+coherence BEFORE accuracy. Existing old P64 prompt requests first-person and
+150–400 tokens: label that prompted, not default. Separate minimal-prompt
+paired default readout is being prepared within remaining call bounds.
+Own-output replay compiles TRAIN outputs only; held/teacher/L2 excluded.
+Measured route cycle tables are published in
+research_notes/analysis/orch_route_parent_campaign_20260915_rohin100/ROHIN101_TIMING_TABLE.md;
+pure generation versus full parent wait is not separately instrumented there.
+Math timing table requested from current lane owner; no invented 2.5-hour total.
+
+
 ## Rohin100 priority + disk policy — 2026-09-15 04:40 UTC
 
 Generation owners are rolling to SOLUTION BY EXHAUSTION: enumerate approaches,
