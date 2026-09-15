@@ -119,5 +119,5 @@ fi
 cd "$COURIER_REPO" || exit 0
 if [ -d .git/rebase-merge ] || [ -d .git/rebase-apply ] || [ -f .git/MERGE_HEAD ]; then log "git busy; entry left uncommitted"; exit 0; fi
 git commit -q -o research_loop/PARENTING_EXCHANGE.md research_loop/COORDINATION.md -m "Fable-VM head parent $TS: exchange entry + field changes" && \
-  { git diff --cached --quiet && [ "$(git rev-list --count origin/main..HEAD)" = 1 ] && git push -q origin HEAD:main 2>/dev/null && log "pushed" || log "commit local (push deferred)"; }
+  { git push -q origin HEAD:refs/heads/vm-watcher 2>/dev/null && log "pushed to origin/vm-watcher (laptop watcher mirrors into main)" || log "commit local (push to vm-watcher failed)"; }
 log "head parent cycle done -> $CYC"
