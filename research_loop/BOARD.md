@@ -2,6 +2,21 @@
 
 ## Measured recovery and allocation — 2026-09-15 04:52 UTC
 
+Prospective successor allocation,04:56UTC: after their existing saved-control
+tests and strict release receipts, A1005/7 stay PARENTING, not idle reservations.
+Anscombe owns two distinct strong-parent treatment lanes:5micromanaging/short/
+critical,7creative/long/supportive; exactly one shared canonical route baseline,
+no new triples or baseline-only GPU reservation. Each starts the genuine saved
+rich child as a NEW lineage, never a reset of a prior life. Two cycles/lane,
+each8TRAINattempts+8ownreflections+56parent-free held/retention calls:144native
+calls/lane maximum,288prospective additional calls total,4parent plans maximum.
+Original1632-call/12parent budgets remain historical; prospective aggregate
+ceiling1920native/16parent, no counter reset, no deadline or24GPUh extension.
+Own CPU/provenance checks run while current control tests finish, then launch
+after fresh UUID/minor/CVD/open-device admission. Every cycle sleeps on eligible
+own experience and tests; taught→next-cycle reported. Shared route controls do
+not support a matched math style-effect claim. Raw transcripts stay on nodes.
+
 Destination remains 21 generation / 5 training / 6 parenting, all 32 assigned:
 node1 all8 generation; node2 all8 generation; node3 3–7 generation destinations
 (6/7 still occupied by legacy jobs until safe completion), 0–2 parenting;
