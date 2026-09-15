@@ -139,3 +139,10 @@ original full episode/capture.messages/rich guidance omitted. This actual
 unparented example demonstrates prompt/context stripping, not a spoken SHORT
 verdict example. No calls replayed. SEMANTIC_RENDER_PROVENANCE.json records
 exact paths/hashes and scope. Waiting for first actual nonzero sleep receipt.
+
+2026-09-15T00:01Z [Builder → Main] Adjacent diagnostic metadata published in
+research_notes/analysis/orch_l2_shared_adjacent_interface.md. Includes exact
+COHORT/SOURCE/legacy schemas, current immutable actual SHORT readout snapshot
+source_runtime_v2.tar SHA7ccd3c9a, and previous/output/LOADED/COMPLETE schema.
+Select FIRST SHORT actualupdates>0 by cycle order, never held outcome or
+UNPARENTED fit. No eligible SHORT sleep yet. Loop does not wait on sidecar.
