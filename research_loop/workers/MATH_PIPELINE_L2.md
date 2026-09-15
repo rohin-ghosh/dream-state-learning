@@ -838,3 +838,16 @@ C9 saved18:52:59 checkpoint2ad6f934... optimizerb88feeae...,steps3837;
 N194/P44. C10reflectionCALL194 COMPLETE18:54:23,377tokens. C9DEV FAILED_NO_RETRY
 18:53:38, no successfulreadoutclaim. No actor interference, no modeldiagnosticcalls.
 Exact hashes/times appended R123 READY_AND_LAUNCH.md (already listed for staging).
+
+## 2026-09-15T19:11Z measurement repair ready and arming
+F2 C13 durable3821steps, checkpoint82c1a68c..., optimizer73751336...;
+offload17MBallocated/56MBreserved, actual freshDEV20/20+AFTER+return0 at19:04:08.
+First held194tokens contains derivation/check, exactly system+user emptycontext.
+R12431local+31native CPU PASS and PRE-GPU posted: matched16DEV calls each
+F2/A2 at an exactsavedreadout boundary, beforecheckpoint from actual collected
+sourcebindings, aftercheckpoint from saved sleep. Unique keys preserve failed
+DEVs; parent0/train0 during probes, fulltokenIDs/rawtext. Same state/RNG/counters
+resume into testedoffload readout successors, no controls/quality gate/hotpatch.
+Boundedpidfd controller only touches exactownedactor duringreadoutwait after
+save, lets existingreadout finish, proves no newcycle input, then actualrelease.
+Hubble successor F2terminal request posted; A2broker ownership remains MATH.
