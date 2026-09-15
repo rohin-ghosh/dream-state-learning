@@ -1,5 +1,42 @@
 # Research state — Orchestrator
 
+## Current execution evidence — September 15, 2026, 04:23 UTC
+
+This supersedes older status summaries, not their preserved evidence. Git rebase
+is repaired and pushed through fc60506a, including runnable worker sources,
+473 content readmissions, sampled-batch64 source evidence and native training
+receipts. origin/main..HEAD was empty after that push. Further live results
+are published as subsequent snapshots, not silently folded into old receipts.
+
+- Allocation: destination21generation/5training/6parenting; node1all8 included.
+  Latest complete census04:14:50–51:25/32 resident,22/32 computing. Transitions
+  and failures mean the fleet is NOT yet verified continuously saturated.
+- Combined continual FULL reached256actual updates on both ranks2/6; OFF
+  resumed saved128 and reached240 at04:17:36. corpus_version2 appears in native
+  losses. Confirm batch-specific ingestion from receipts, not just eligibility.
+  Gloo repair replaces a stalled first NCCL gradient; failure evidence retained.
+  Existing math764 on0/1 is auxiliary and must never replace evolving checkpoints.
+- Math-parenting continuation stopped04:03:56 with full_admission_failed_no_waiver;
+  Main verified4/5/7 empty04:14:50 and directed its owner to repair remaining
+  stages without regenerating completed experiences. Model residency alone was
+  not proof of first parent response. Route has actual retained parent responses,
+  saved GUIDED/UNPARENTED sleeps and parent-free C0/C1 tests: allarms6/8 atC0,
+  allarms8/8 atC1 on different stage cohorts. This shows NO controlled gain;
+  four paired worlds/stage and unequal40/32updates preclude stronger claims.
+- Corpus:1313 content-eligible math targets =840 prior+473readmissions, not473
+  new generations. Initial sampled supply64 has12 individuallyPASS and52
+  individuallyUNREVIEWED, branching0/12. Pilot source-window137.01batch-admitted
+  rows/hour and25.69individually-sampled-qualified/hour are not fleet rates.
+- Rohin99 arms assigned before launch: one node2 slot for pinned-checkpoint
+  derived generation (not yet proved improved); separate teacher-exemplar32call
+  pilot; future route branching4→16 with matched twins. Teacher outputs remain
+  labelled outside own-write/L1-mainline lineage. Parent tests and epoch-qualified
+  foundation changes continue; no L2 experience enters ongoingL1.
+
+Evidence: research_notes/analysis/orch_fleet_20260915/SNAPSHOT_0414.json,
+CONTINUAL_UPDATES_0418.json in the same directory; individual worker journals
+and immutable source packets. No H1/H2 success is claimed.
+
 ## Current floor and native evidence — September 15, 2026, 03:43 UTC
 
 This supersedes all older allocation/status summaries below. Git was rebased

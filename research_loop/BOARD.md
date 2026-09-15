@@ -1,5 +1,44 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## Rohin99 execution delta — 2026-09-15 04:23 UTC
+
+Keep the posted 21generation/5training/6parenting destination allocation;
+two legacy node3 jobs still occupy the last two generation destinations until
+safe completion. No extra baseline reservation. Node1 is admitted and generating.
+This is an allocation, NOT a saturation claim: Main's04:14:50–51 census found
+25/32 resident and22/32 computing during generator transitions and a math-parent
+admission failure. Owners are repairing these gaps without killing foreign jobs.
+
+Combined continual FULL has ACTUAL update256 on both ranks2/6; OFF resumed its
+saved128 state and reached240 by04:17:36. Native rows report corpus_version2.
+Original math764 FULL/OFF remain on0/1 until their first durable save; that is
+not the new evolving stream. Preserve paired optimizer/RNG/cursor and append
+external batches, never parenting experience. No improvement claim from losses.
+
+New assigned arms, before launch: Cicero uses one existing node2 generation
+slot at a safe boundary for CHECKPOINT_DERIVED rich generation from a pinned
+continual FULL checkpoint, matched source/prompt/cohort to37ec where possible.
+Do not label the checkpoint IMPROVED without held/DEV evidence. Pasteur collects
+TEACHER_EXEMPLAR_ONLY solutions from up to2 actually verified providers,
+16 safe TRAIN tasks/provider,32 single-attempt calls total,8192 output tokens
+per call,60minute deadline. This is separately labelled teacher-distillation
+source data, NEVER mixed into self-generated continualL1 or called own-writing.
+Any teacher fit is a separately declared isolated arm; no mainline ingestion.
+
+Next unlaunched route branching segment starts4 presentations then a registered
+16-presentation continuation of the same child, on genuine route choice points,
+with fixed teaching style/provider where feasible and matched twins. Preserve
+already launched segments. Parent-free tests at every cycle and taught→next-cycle
+remain mandatory; the ongoingL1 stream has no fixed16-presentation stop.
+
+Judge source quality by distinct applied considerations, consequential alternative
+plus rejection evidence, and repetition/novelty, not pronouns or length. Report
+rawrows/hour separately from sampled-batch admissions and individual reviews.
+Settle transfer by fresh held child behaviour; math764 P64 is the first intended
+fit readout, not evidence until it actually completes. Future intensity/two-pass
+branch prompts now explicitly request relevant rejection evidence before FINAL;
+original controls and archived sources remain unchanged.48CPUtests+10subtests pass.
+
 ## CURRENT FLOOR — Rohin98 + corpus audit, 2026-09-15 03:47 UTC
 
 32GPU allocation:19permanent-generation (node1all8,node2all8,node3 3/4/5),
