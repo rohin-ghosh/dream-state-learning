@@ -1,5 +1,22 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## [Builder] R107 independent PUREBASE allocation — 2026-09-15 07:50 UTC
+
+Node3 physical3 only, UUID GPU-e1277146-04f2-c38f-d1ae-1a98132f907e/minor3,
+via gpu/ovx2_ssh.sh: fresh genuinely no-adapter BASE on unchanged synthetic32,
+32 separately allocated calls,512tokens/call,0parents/optimizer/updates/ingestion.
+Paired ON/OFF already COMPLETE; no paired calls replayed. ETA5–10minutes,
+30minute maximum/0.5GPUh; native1789460328.0739956/hard1789460358.0739956.
+159CPUtestsPASS; native CPU provenance/tokenization32PASS. First preparation
+missing shell dependency failed before PLAN/GPU and was repaired by staging
+unchanged guard sources. Fresh privileged proc/UUID/minor admission before launch.
+PLAN78ee4f1a897c724cbf5bb927f3a2498feb03f348994df64cacf87f65e231118c;
+READY8c8311b392dce1d6551a4813b5a9e421bb0512e2cb514134897f238979803537;
+runnerffdab66c378f6faca673272f0032d65a447585e2fe19a0022561d39cfc7cf74c.
+Root /localhome/local-rohing/orch_r107_capability_purebase_20260915; raw stays
+node-local, compact hashes/results only in repo. Not a persistence readout or
+broad capability claim; report BASE separately from adapter-disabled OFF.
+
 ## R107 capability V3 missing-cell continuation — September 15, 2026
 
 Same node3physical3; actual PEFT context-exit trainability restoration repaired
