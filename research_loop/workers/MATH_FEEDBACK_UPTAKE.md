@@ -115,3 +115,29 @@ held readouts preserve original generation code. Retain full raw stopped prefix,
 actual stop reason/EOS/cap distinction and explicit no-auto-fit eligibility;
 lexical duplicate yield is not semantic novelty (UNKNOWN/author review).
 No outcome intervention, no current-process mutation, no new control or L2→L1.
+
+## 2026-09-15T08:04Z — guard actually used; node3 dispatch/admission state
+
+A1005 separate STOPPED continuation launched native903020 at07:51:39.211.
+First actual guarded own reflection07:56:12.196,588tokens, natural EOS,
+CALL004SHA dc2b22944a60994a13393c6d05d54abdbbe02e3531a68f824afe4d4688f56a2d;
+guardSHA1fe38d9fea6bed06f07c3a5eb0ccbb029635d7af148b38367d8cd51dddfc2ceb.
+No forced repetition-stop claim: actual EOS=true,captruncated=false,
+semanticnoveltyUNKNOWN,noauto-fit. Second reflection531tokens alsoEOS (Main
+observed); guarded cycle subsequently COMPLETE487.276s per Main timing receipt.
+Untouched initial BASE C2 naturally COMPLETE07:48:20/terminal07:48:23.
+
+Node3 allocated1/2 EXACT posted08:02;55nodeCPU tests PASS, full base/tokenizer
+and2886ID/2878question exclusions. Initial dependency and hash-schema CPU
+candidate failures preserved, zero model calls; only repaired READY is allocated.
+FAMILY_READYd838204a52a3f356845484cd00a76cb5a152c0da990c1cf7b68368c2f68d8fa1;
+guardians847334/847336 active, fresh privileged full/proc scans initially
+blocking on changing process identities (including root listener3082), not
+waived. Private brokers intentionally not started before native admission to
+avoid adding SSH churn. No reservation of0/3; those are next separate optional
+expansion after1/2 native dispatch, per Main08:03. Avoid rapid parallel readonly
+SSH polling during strict admission if possible; no peer signals requested.
+
+Rebalance: keep1/2 launch critical path;0/3 available to Main until prospectively
+prepared expansion. A1005 naturally complete: no idle reservation by this worker;
+Main may reassign after own fresh admission. A1004 and Laplace0/1 not claimed.

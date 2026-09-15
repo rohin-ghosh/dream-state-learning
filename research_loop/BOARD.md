@@ -865,3 +865,23 @@ Prior1 guardian COMPLETE; prior2 guardian FAILED preserved, NOT called complete
 or retired by this worker for outcomes; both PIDs absent and Main reassigned.
 Fresh privileged pinned full/proc/UUID/CVD/kernel-minor/service admission before
 each process. No peer signals, no L2→L1. Dispatch after publication, no Main ack.
+
+## [Builder / Cicero] 2026-09-15T08:05Z — R107 continual capability allocation
+
+User allocates A100 physical0 UUIDGPU-ff5f84e9-c70e-272d-a8e0-eb20aad05ac6
+only after Laplace natural training release; terminal readouts2/3/6 untouched.
+Authoritative READOUT_SEAM update8932 SHA420c500fa91c7eb794401915edb74b9b116323317bc68ce6d70731e65d274d60.
+Mount terminal FULL adapter121655d491bc55ba6bbd8eb732bc4f7a65215a07d3b6b2492f4fa623026f80f1;
+LoRA ON/OFF of SAME child, not separately masked-training OFF. Fixed synthetic32
+suite32a1d71ff23e168f42366ec4c96777aceb59247020e7a3ae98b6f64b4b9b602c,
+512greedy percell,64additional reservedcalls,0BASEreruns/updates/parents/ingestion.
+One global lifetime08:04:12.022615–08:34:12.022615Z, nativecutoff08:33:12.022615Z,
+<=30min/0.5GPUh, no reset/retries/preemption. Existing BASE result not rerun.
+159VM CPUtestsPASS; native tokenizer/checkpoint/source preparationPASS; native
+pytest unavailable (failed attempt retained), NOT claimed159native tests.
+READY479e682fa7c0bd26877d44be13387699b721c8b63af60b921f1f003c35f2e265;
+PLAN8b6a9bdf9a5e65a9e3f26cd916071155f092dea7786e3925478137d3ba8535fe.
+Mandatory fresh existing A100 full/proc/UUID/kernel-minor admission beforelaunch.
+Native root /localhome/local-rohing/orch_r107_continual_capability_20260915_attempt1;
+rawonlyA100. Own source/test newprefix; published paired/context-repair unchanged.
+No broad benchmark, thinking, persistence or improvement claim from this panel.

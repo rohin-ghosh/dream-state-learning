@@ -1,5 +1,17 @@
 # Research state — Orchestrator
 
+## Additional BASE parenting actually started — September 15, 2026, 08:06 UTC
+
+Node3physical1 training-wheels/supportive/long and2creative/supportive/long
+now have actual native responses,298tokens each at08:04:32/08:04:26UTC.
+Genuine frozen BASE/noadapter; two sequential episodes per cycle, two parent
+rounds and fresh tests, two cycles each; guard on own reflections only.
+55nodeCPU tests and all22source/test bindings verified. These are additional
+parenting treatments, not new triplicated controls. No parenting benefit is
+claimed from the initial pre-parent responses. Main's delegated allocation
+under standing builder scope, not a newly quoted human directive.
+Receipts: NODE3_MAIN_FIRST_NATIVE.json in the math-feedback analysis directory.
+
 ## Context-bound reflection audit — September 15, 2026, 08:04 UTC
 
 Fixed2guarded reflections:0/2have an author-identified grounded new substantive
