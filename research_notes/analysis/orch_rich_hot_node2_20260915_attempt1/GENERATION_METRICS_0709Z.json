@@ -1,0 +1,605 @@
+{
+  "arms": [
+    {
+      "arm": "CHECKPOINT_DERIVED_EXHAUSTION_ONLY",
+      "metrics": {
+        "categories": {
+          "bounded_oracle_failed": 54,
+          "missing_exact_FINAL": 4,
+          "parsed_wrong": 4,
+          "registered_correct": 54,
+          "route_response_requires_task_receipt": 829
+        },
+        "completed_raw_captures": 945,
+        "qualified_rate_reason": "Not measured by generator observation; publisher reviews/admissions are separate. Null is not zero.",
+        "qualified_rows_per_hour": null,
+        "raw_captures_per_hour": 390,
+        "recent_600s_content_tokens": 6409,
+        "recent_600s_exhaustion_applicable": 33,
+        "recent_600s_families": {
+          "code": 4,
+          "math": 5,
+          "route": 56
+        },
+        "recent_600s_raw_captures": 65,
+        "recent_600s_repetition_screen_flags": 0,
+        "repetition_screen_flags": 1
+      },
+      "shards": [
+        0
+      ]
+    },
+    {
+      "arm": "37EC_EXHAUSTION_ONLY",
+      "metrics": {
+        "categories": {
+          "bounded_oracle_failed": 23,
+          "missing_exact_FINAL": 6,
+          "missing_exact_expression_JSON": 2,
+          "registered_correct": 23,
+          "route_response_requires_task_receipt": 308,
+          "truncation": 7
+        },
+        "completed_raw_captures": 369,
+        "qualified_rate_reason": "Not measured by generator observation; publisher reviews/admissions are separate. Null is not zero.",
+        "qualified_rows_per_hour": null,
+        "raw_captures_per_hour": 42,
+        "recent_600s_content_tokens": 17284,
+        "recent_600s_exhaustion_applicable": 3,
+        "recent_600s_families": {
+          "code": 1,
+          "math": 1,
+          "route": 5
+        },
+        "recent_600s_raw_captures": 7,
+        "recent_600s_repetition_screen_flags": 1,
+        "repetition_screen_flags": 9
+      },
+      "shards": [
+        1
+      ]
+    },
+    {
+      "arm": "37EC_STEERED_LIGHT",
+      "metrics": {
+        "categories": {
+          "bounded_oracle_failed": 63,
+          "missing_exact_FINAL": 17,
+          "missing_exact_expression_JSON": 4,
+          "registered_correct": 50,
+          "route_response_requires_task_receipt": 745,
+          "truncation": 10
+        },
+        "completed_raw_captures": 889,
+        "qualified_rate_reason": "Not measured by generator observation; publisher reviews/admissions are separate. Null is not zero.",
+        "qualified_rows_per_hour": null,
+        "raw_captures_per_hour": 444,
+        "recent_600s_content_tokens": 7673,
+        "recent_600s_exhaustion_applicable": 27,
+        "recent_600s_families": {
+          "code": 4,
+          "math": 4,
+          "route": 66
+        },
+        "recent_600s_raw_captures": 74,
+        "recent_600s_repetition_screen_flags": 1,
+        "repetition_screen_flags": 20
+      },
+      "shards": [
+        2,
+        3
+      ]
+    },
+    {
+      "arm": "37EC_STEERED_TWO_PASS",
+      "metrics": {
+        "categories": {
+          "bounded_oracle_failed": 92,
+          "missing_exact_FINAL": 18,
+          "missing_exact_expression_JSON": 3,
+          "registered_correct": 93,
+          "route_response_requires_task_receipt": 558,
+          "truncation": 9
+        },
+        "completed_raw_captures": 773,
+        "qualified_rate_reason": "Not measured by generator observation; publisher reviews/admissions are separate. Null is not zero.",
+        "qualified_rows_per_hour": null,
+        "raw_captures_per_hour": 294,
+        "recent_600s_content_tokens": 26567,
+        "recent_600s_exhaustion_applicable": 25,
+        "recent_600s_families": {
+          "code": 8,
+          "math": 6,
+          "route": 35
+        },
+        "recent_600s_raw_captures": 49,
+        "recent_600s_repetition_screen_flags": 1,
+        "repetition_screen_flags": 13
+      },
+      "shards": [
+        4,
+        5
+      ]
+    },
+    {
+      "arm": "37EC_STEERED_META",
+      "metrics": {
+        "categories": {
+          "bounded_oracle_failed": 85,
+          "missing_exact_FINAL": 30,
+          "missing_exact_expression_JSON": 23,
+          "registered_correct": 81,
+          "route_response_requires_task_receipt": 651,
+          "truncation": 6
+        },
+        "completed_raw_captures": 876,
+        "qualified_rate_reason": "Not measured by generator observation; publisher reviews/admissions are separate. Null is not zero.",
+        "qualified_rows_per_hour": null,
+        "raw_captures_per_hour": 258,
+        "recent_600s_content_tokens": 9620,
+        "recent_600s_exhaustion_applicable": 19,
+        "recent_600s_families": {
+          "code": 4,
+          "math": 4,
+          "route": 35
+        },
+        "recent_600s_raw_captures": 43,
+        "recent_600s_repetition_screen_flags": 3,
+        "repetition_screen_flags": 51
+      },
+      "shards": [
+        6,
+        7
+      ]
+    }
+  ],
+  "captured_inventory_sha256": "54721dec3368db1b84ee4a2e8e9c06623f9bdb31cae91b53a121fe0df5b0389f",
+  "count_contract": "Raw captures across all response stages incl drafts, ROUTE exposures/actions; not unique tasks or accepted training rows. Hourly rate is observed600second count times6; two-slot arms aggregate both GPUs.",
+  "execution_errors": [],
+  "generation_signals": 0,
+  "gpu_inventory": [
+    {
+      "memory_used_mib": 16507,
+      "physical_gpu": 0,
+      "utilization_percent": 6,
+      "uuid": "GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0"
+    },
+    {
+      "memory_used_mib": 17197,
+      "physical_gpu": 1,
+      "utilization_percent": 84,
+      "uuid": "GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4"
+    },
+    {
+      "memory_used_mib": 16679,
+      "physical_gpu": 2,
+      "utilization_percent": 0,
+      "uuid": "GPU-d2db2a6a-a308-1782-bf41-e41411d8dc05"
+    },
+    {
+      "memory_used_mib": 16669,
+      "physical_gpu": 3,
+      "utilization_percent": 97,
+      "uuid": "GPU-c9450d3d-0455-f034-b9bf-7f8956e44733"
+    },
+    {
+      "memory_used_mib": 17283,
+      "physical_gpu": 4,
+      "utilization_percent": 83,
+      "uuid": "GPU-d304a15c-516a-16a0-a926-a560304077cc"
+    },
+    {
+      "memory_used_mib": 16705,
+      "physical_gpu": 5,
+      "utilization_percent": 97,
+      "uuid": "GPU-0cc84073-37a0-4f7a-e555-11671425bd03"
+    },
+    {
+      "memory_used_mib": 16561,
+      "physical_gpu": 6,
+      "utilization_percent": 98,
+      "uuid": "GPU-a064bca2-bddc-73ad-faf1-a4fbcb49fecf"
+    },
+    {
+      "memory_used_mib": 16907,
+      "physical_gpu": 7,
+      "utilization_percent": 90,
+      "uuid": "GPU-7c213554-a6c0-5c5a-1117-0422c8eee4ed"
+    }
+  ],
+  "gpu_launches": 0,
+  "guardian": {
+    "cuda_visible_devices": "",
+    "expected": {
+      "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+      "pid": 597267,
+      "start_ticks": "67608408",
+      "uid": 2524
+    },
+    "live": true,
+    "state": "S"
+  },
+  "guardian_failed": false,
+  "inventory_contract": "Sorted [relative native B capture path, SHA256] pairs with finished_unix<=observed_unix, before classification; native files immutable.",
+  "latest_native_capture_utc": "2026-09-15T07:10:01.821472+00:00",
+  "lifetime": {
+    "assigned_gpu_hours_ceiling": 128,
+    "hard_deadline_unix": 1789499970.7430906,
+    "max_calls": 6144,
+    "native_deadline_unix": 1789499670.7430906,
+    "ready_sha256": "bc68509fd63282ba5c3e87ed5a86f3914410a5d1ab660884f3e8ed7418fb51f0",
+    "started_unix": 1789442370.7430906
+  },
+  "native_source_root": "/localhome/local-rohing/orch_rich_hot_node2_exhaustion_v3_20260915_attempt1",
+  "observed_unix": 1789456201.9147692,
+  "observed_utc": "2026-09-15T07:10:01.914769+00:00",
+  "positive_utilization_gpus": 7,
+  "provider_calls": 0,
+  "publisher_changes": false,
+  "raw_vm_copies": 0,
+  "resident_exact_live_generators": 8,
+  "scan_finished_utc": "2026-09-15T07:10:02.565983+00:00",
+  "schema": "NODE2_GENERATION_COMPACT_20260915_0709_V1",
+  "semantic_contract": "No re-audit. Existing R106 four-META-task sample:4terminal departure/returns,0mid-computation returns, all4draft/final pairs read. Separate earlier mixed-family method sample:0of7fully read targets with>=2distinct worked methods plus1partial; neither sample is population prevalence or learned advantage.",
+  "slots": [
+    {
+      "condition": "EXHAUSTION_ONLY",
+      "failure_receipt_exists": false,
+      "gpu_uuid": "GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0",
+      "identity": {
+        "cuda_visible_devices": "GPU-c70cba10-6ab6-a287-e2db-51dccd617ab0",
+        "expected": {
+          "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+          "pid": 597413,
+          "start_ticks": "67612665",
+          "uid": 2524
+        },
+        "live": true,
+        "state": "R"
+      },
+      "metrics": {
+        "categories": {
+          "bounded_oracle_failed": 54,
+          "missing_exact_FINAL": 4,
+          "parsed_wrong": 4,
+          "registered_correct": 54,
+          "route_response_requires_task_receipt": 829
+        },
+        "completed_raw_captures": 945,
+        "qualified_rate_reason": "Not measured by generator observation; publisher reviews/admissions are separate. Null is not zero.",
+        "qualified_rows_per_hour": null,
+        "raw_captures_per_hour": 390,
+        "recent_600s_content_tokens": 6409,
+        "recent_600s_exhaustion_applicable": 33,
+        "recent_600s_families": {
+          "code": 4,
+          "math": 5,
+          "route": 56
+        },
+        "recent_600s_raw_captures": 65,
+        "recent_600s_repetition_screen_flags": 0,
+        "repetition_screen_flags": 1
+      },
+      "shard": 0,
+      "state_sha256": "93a036b93e2d41d2715230aaf2f2fa5382f4cbe404c743fd36dc37aba7f7c0d8"
+    },
+    {
+      "condition": "EXHAUSTION_ONLY",
+      "failure_receipt_exists": false,
+      "gpu_uuid": "GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4",
+      "identity": {
+        "cuda_visible_devices": "GPU-e7a322fc-fe84-919f-7534-cdfefb6ce1e4",
+        "expected": {
+          "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+          "pid": 597738,
+          "start_ticks": "67613799",
+          "uid": 2524
+        },
+        "live": true,
+        "state": "R"
+      },
+      "metrics": {
+        "categories": {
+          "bounded_oracle_failed": 23,
+          "missing_exact_FINAL": 6,
+          "missing_exact_expression_JSON": 2,
+          "registered_correct": 23,
+          "route_response_requires_task_receipt": 308,
+          "truncation": 7
+        },
+        "completed_raw_captures": 369,
+        "qualified_rate_reason": "Not measured by generator observation; publisher reviews/admissions are separate. Null is not zero.",
+        "qualified_rows_per_hour": null,
+        "raw_captures_per_hour": 42,
+        "recent_600s_content_tokens": 17284,
+        "recent_600s_exhaustion_applicable": 3,
+        "recent_600s_families": {
+          "code": 1,
+          "math": 1,
+          "route": 5
+        },
+        "recent_600s_raw_captures": 7,
+        "recent_600s_repetition_screen_flags": 1,
+        "repetition_screen_flags": 9
+      },
+      "shard": 1,
+      "state_sha256": "37ec37884e4b0b679edd1dba1be1dec3474589e992649f3a33e7e3b1ec78b8c0"
+    },
+    {
+      "condition": "STEERED_LIGHT",
+      "failure_receipt_exists": false,
+      "gpu_uuid": "GPU-d2db2a6a-a308-1782-bf41-e41411d8dc05",
+      "identity": {
+        "cuda_visible_devices": "GPU-d2db2a6a-a308-1782-bf41-e41411d8dc05",
+        "expected": {
+          "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+          "pid": 597759,
+          "start_ticks": "67613854",
+          "uid": 2524
+        },
+        "live": true,
+        "state": "R"
+      },
+      "metrics": {
+        "categories": {
+          "bounded_oracle_failed": 26,
+          "missing_exact_FINAL": 7,
+          "missing_exact_expression_JSON": 3,
+          "registered_correct": 22,
+          "route_response_requires_task_receipt": 315,
+          "truncation": 7
+        },
+        "completed_raw_captures": 380,
+        "qualified_rate_reason": "Not measured by generator observation; publisher reviews/admissions are separate. Null is not zero.",
+        "qualified_rows_per_hour": null,
+        "raw_captures_per_hour": 384,
+        "recent_600s_content_tokens": 7246,
+        "recent_600s_exhaustion_applicable": 25,
+        "recent_600s_families": {
+          "code": 4,
+          "math": 4,
+          "route": 56
+        },
+        "recent_600s_raw_captures": 64,
+        "recent_600s_repetition_screen_flags": 1,
+        "repetition_screen_flags": 7
+      },
+      "shard": 2,
+      "state_sha256": "37ec37884e4b0b679edd1dba1be1dec3474589e992649f3a33e7e3b1ec78b8c0"
+    },
+    {
+      "condition": "STEERED_LIGHT",
+      "failure_receipt_exists": false,
+      "gpu_uuid": "GPU-c9450d3d-0455-f034-b9bf-7f8956e44733",
+      "identity": {
+        "cuda_visible_devices": "GPU-c9450d3d-0455-f034-b9bf-7f8956e44733",
+        "expected": {
+          "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+          "pid": 598323,
+          "start_ticks": "67614494",
+          "uid": 2524
+        },
+        "live": true,
+        "state": "R"
+      },
+      "metrics": {
+        "categories": {
+          "bounded_oracle_failed": 37,
+          "missing_exact_FINAL": 10,
+          "missing_exact_expression_JSON": 1,
+          "registered_correct": 28,
+          "route_response_requires_task_receipt": 430,
+          "truncation": 3
+        },
+        "completed_raw_captures": 509,
+        "qualified_rate_reason": "Not measured by generator observation; publisher reviews/admissions are separate. Null is not zero.",
+        "qualified_rows_per_hour": null,
+        "raw_captures_per_hour": 60,
+        "recent_600s_content_tokens": 427,
+        "recent_600s_exhaustion_applicable": 2,
+        "recent_600s_families": {
+          "route": 10
+        },
+        "recent_600s_raw_captures": 10,
+        "recent_600s_repetition_screen_flags": 0,
+        "repetition_screen_flags": 13
+      },
+      "shard": 3,
+      "state_sha256": "37ec37884e4b0b679edd1dba1be1dec3474589e992649f3a33e7e3b1ec78b8c0"
+    },
+    {
+      "condition": "STEERED_TWO_PASS",
+      "failure_receipt_exists": false,
+      "gpu_uuid": "GPU-d304a15c-516a-16a0-a926-a560304077cc",
+      "identity": {
+        "cuda_visible_devices": "GPU-d304a15c-516a-16a0-a926-a560304077cc",
+        "expected": {
+          "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+          "pid": 600751,
+          "start_ticks": "67619620",
+          "uid": 2524
+        },
+        "live": true,
+        "state": "R"
+      },
+      "metrics": {
+        "categories": {
+          "bounded_oracle_failed": 39,
+          "missing_exact_FINAL": 6,
+          "registered_correct": 41,
+          "route_response_requires_task_receipt": 221,
+          "truncation": 6
+        },
+        "completed_raw_captures": 313,
+        "qualified_rate_reason": "Not measured by generator observation; publisher reviews/admissions are separate. Null is not zero.",
+        "qualified_rows_per_hour": null,
+        "raw_captures_per_hour": 204,
+        "recent_600s_content_tokens": 23245,
+        "recent_600s_exhaustion_applicable": 18,
+        "recent_600s_families": {
+          "code": 6,
+          "math": 4,
+          "route": 24
+        },
+        "recent_600s_raw_captures": 34,
+        "recent_600s_repetition_screen_flags": 1,
+        "repetition_screen_flags": 9
+      },
+      "shard": 4,
+      "state_sha256": "37ec37884e4b0b679edd1dba1be1dec3474589e992649f3a33e7e3b1ec78b8c0"
+    },
+    {
+      "condition": "STEERED_TWO_PASS",
+      "failure_receipt_exists": false,
+      "gpu_uuid": "GPU-0cc84073-37a0-4f7a-e555-11671425bd03",
+      "identity": {
+        "cuda_visible_devices": "GPU-0cc84073-37a0-4f7a-e555-11671425bd03",
+        "expected": {
+          "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+          "pid": 600846,
+          "start_ticks": "67620270",
+          "uid": 2524
+        },
+        "live": true,
+        "state": "R"
+      },
+      "metrics": {
+        "categories": {
+          "bounded_oracle_failed": 53,
+          "missing_exact_FINAL": 12,
+          "missing_exact_expression_JSON": 3,
+          "registered_correct": 52,
+          "route_response_requires_task_receipt": 337,
+          "truncation": 3
+        },
+        "completed_raw_captures": 460,
+        "qualified_rate_reason": "Not measured by generator observation; publisher reviews/admissions are separate. Null is not zero.",
+        "qualified_rows_per_hour": null,
+        "raw_captures_per_hour": 90,
+        "recent_600s_content_tokens": 3322,
+        "recent_600s_exhaustion_applicable": 7,
+        "recent_600s_families": {
+          "code": 2,
+          "math": 2,
+          "route": 11
+        },
+        "recent_600s_raw_captures": 15,
+        "recent_600s_repetition_screen_flags": 0,
+        "repetition_screen_flags": 4
+      },
+      "shard": 5,
+      "state_sha256": "37ec37884e4b0b679edd1dba1be1dec3474589e992649f3a33e7e3b1ec78b8c0"
+    },
+    {
+      "condition": "STEERED_META",
+      "failure_receipt_exists": false,
+      "gpu_uuid": "GPU-a064bca2-bddc-73ad-faf1-a4fbcb49fecf",
+      "identity": {
+        "cuda_visible_devices": "GPU-a064bca2-bddc-73ad-faf1-a4fbcb49fecf",
+        "expected": {
+          "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+          "pid": 600758,
+          "start_ticks": "67619670",
+          "uid": 2524
+        },
+        "live": true,
+        "state": "R"
+      },
+      "metrics": {
+        "categories": {
+          "bounded_oracle_failed": 50,
+          "missing_exact_FINAL": 16,
+          "missing_exact_expression_JSON": 7,
+          "registered_correct": 42,
+          "route_response_requires_task_receipt": 351,
+          "truncation": 2
+        },
+        "completed_raw_captures": 468,
+        "qualified_rate_reason": "Not measured by generator observation; publisher reviews/admissions are separate. Null is not zero.",
+        "qualified_rows_per_hour": null,
+        "raw_captures_per_hour": 18,
+        "recent_600s_content_tokens": 2008,
+        "recent_600s_exhaustion_applicable": 3,
+        "recent_600s_families": {
+          "route": 3
+        },
+        "recent_600s_raw_captures": 3,
+        "recent_600s_repetition_screen_flags": 1,
+        "repetition_screen_flags": 20
+      },
+      "shard": 6,
+      "state_sha256": "37ec37884e4b0b679edd1dba1be1dec3474589e992649f3a33e7e3b1ec78b8c0"
+    },
+    {
+      "condition": "STEERED_META",
+      "failure_receipt_exists": false,
+      "gpu_uuid": "GPU-7c213554-a6c0-5c5a-1117-0422c8eee4ed",
+      "identity": {
+        "cuda_visible_devices": "GPU-7c213554-a6c0-5c5a-1117-0422c8eee4ed",
+        "expected": {
+          "boot_id": "8ff7b0dc-fbdf-4945-9044-3dffe94b5407",
+          "pid": 600765,
+          "start_ticks": "67619717",
+          "uid": 2524
+        },
+        "live": true,
+        "state": "R"
+      },
+      "metrics": {
+        "categories": {
+          "bounded_oracle_failed": 35,
+          "missing_exact_FINAL": 14,
+          "missing_exact_expression_JSON": 16,
+          "registered_correct": 39,
+          "route_response_requires_task_receipt": 300,
+          "truncation": 4
+        },
+        "completed_raw_captures": 408,
+        "qualified_rate_reason": "Not measured by generator observation; publisher reviews/admissions are separate. Null is not zero.",
+        "qualified_rows_per_hour": null,
+        "raw_captures_per_hour": 240,
+        "recent_600s_content_tokens": 7612,
+        "recent_600s_exhaustion_applicable": 16,
+        "recent_600s_families": {
+          "code": 4,
+          "math": 4,
+          "route": 32
+        },
+        "recent_600s_raw_captures": 40,
+        "recent_600s_repetition_screen_flags": 2,
+        "repetition_screen_flags": 31
+      },
+      "shard": 7,
+      "state_sha256": "37ec37884e4b0b679edd1dba1be1dec3474589e992649f3a33e7e3b1ec78b8c0"
+    }
+  ],
+  "source_archive_sha256": "f71ab1fcad22792e70d79b732937bf9cc004f80cbcaec01be799f119dd4d7d13",
+  "source_prepare_sha256": "0c7c9d351b0357bc48a492d26ac2301edda9c53f21ed0e3e356ab15dd92bfd57",
+  "totals": {
+    "categories": {
+      "bounded_oracle_failed": 317,
+      "missing_exact_FINAL": 75,
+      "missing_exact_expression_JSON": 32,
+      "parsed_wrong": 4,
+      "registered_correct": 301,
+      "route_response_requires_task_receipt": 3091,
+      "truncation": 32
+    },
+    "completed_raw_captures": 3852,
+    "qualified_rate_reason": "Not measured by generator observation; publisher reviews/admissions are separate. Null is not zero.",
+    "qualified_rows_per_hour": null,
+    "raw_captures_per_hour": 1428,
+    "recent_600s_content_tokens": 67553,
+    "recent_600s_exhaustion_applicable": 107,
+    "recent_600s_families": {
+      "code": 21,
+      "math": 20,
+      "route": 197
+    },
+    "recent_600s_raw_captures": 238,
+    "recent_600s_repetition_screen_flags": 6,
+    "repetition_screen_flags": 94
+  },
+  "window_seconds": 600,
+  "window_start_utc": "2026-09-15T07:00:01.914769+00:00"
+}

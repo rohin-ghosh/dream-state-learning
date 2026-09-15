@@ -1,0 +1,561 @@
+{
+  "observed_unix": 1789457024.6903596,
+  "reset": false,
+  "extra_physical_off_recovery_updates": 117,
+  "readout_calls_remaining": 416,
+  "capability_calls": 0,
+  "arms": {
+    "FULL": {
+      "ranks": [
+        {
+          "rank": 0,
+          "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/FULL/RANK0_LOSSES_000006628.jsonl",
+          "first": {
+            "update": 6629,
+            "rank": 0,
+            "loss": 0.01410204079002142,
+            "rows": [
+              100,
+              196,
+              2525,
+              2526
+            ],
+            "local_active": 339,
+            "supervised": 642,
+            "reference": 642,
+            "corpus_version": 13,
+            "finished_unix": 1789456848.7502825
+          },
+          "latest": {
+            "update": 6803,
+            "rank": 0,
+            "loss": 0.0022762250155210495,
+            "rows": [
+              18,
+              206,
+              2873,
+              2874
+            ],
+            "local_active": 174,
+            "supervised": 589,
+            "reference": 589,
+            "corpus_version": 13,
+            "finished_unix": 1789457024.6811612
+          },
+          "actual_updates": 175,
+          "start": {
+            "command": [
+              "/localhome/local-rohing/v2/venv/bin/python",
+              "-B",
+              "-m",
+              "gpu.orch_combined_l1_continual_run",
+              "train",
+              "--root",
+              "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1",
+              "--arm",
+              "FULL",
+              "--rank",
+              "0",
+              "--port",
+              "38107",
+              "--world-size",
+              "3",
+              "--index",
+              "0",
+              "--resume",
+              "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/FULL/checkpoints/000006628"
+            ],
+            "identity": {
+              "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+              "pid": 790049,
+              "start_ticks": "17792815",
+              "uid": 1395
+            },
+            "index": 0,
+            "pid": 790049,
+            "resume_update": 6628,
+            "started_unix": 1789456774.9638531
+          },
+          "loss_log_sha256": "83a51ecb7caaa12cc9eb1586a8f3e684b6724e344aec381670890822285fd701"
+        },
+        {
+          "rank": 1,
+          "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/FULL/RANK1_LOSSES_000006628.jsonl",
+          "first": {
+            "update": 6629,
+            "rank": 1,
+            "loss": 3.1937524624936486e-08,
+            "rows": [
+              100,
+              196,
+              2525,
+              2526
+            ],
+            "local_active": 10,
+            "supervised": 642,
+            "reference": 642,
+            "corpus_version": 13,
+            "finished_unix": 1789456848.7518036
+          },
+          "latest": {
+            "update": 6803,
+            "rank": 1,
+            "loss": 8.824107311511398e-08,
+            "rows": [
+              18,
+              206,
+              2873,
+              2874
+            ],
+            "local_active": 2,
+            "supervised": 589,
+            "reference": 589,
+            "corpus_version": 13,
+            "finished_unix": 1789457024.6812875
+          },
+          "actual_updates": 175,
+          "start": {
+            "command": [
+              "/localhome/local-rohing/v2/venv/bin/python",
+              "-B",
+              "-m",
+              "gpu.orch_combined_l1_continual_run",
+              "train",
+              "--root",
+              "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1",
+              "--arm",
+              "FULL",
+              "--rank",
+              "1",
+              "--port",
+              "38107",
+              "--world-size",
+              "3",
+              "--index",
+              "2",
+              "--resume",
+              "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/FULL/checkpoints/000006628"
+            ],
+            "identity": {
+              "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+              "pid": 790050,
+              "start_ticks": "17792815",
+              "uid": 1395
+            },
+            "index": 2,
+            "pid": 790050,
+            "resume_update": 6628,
+            "started_unix": 1789456774.9662452
+          },
+          "loss_log_sha256": "d7fd46f3f76509490dc8b774cf37f8e788bc4a102fb43387fab3feaa8e5f2a6f"
+        },
+        {
+          "rank": 2,
+          "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/FULL/RANK2_LOSSES_000006628.jsonl",
+          "first": {
+            "update": 6629,
+            "rank": 2,
+            "loss": 0.009205766953527927,
+            "rows": [
+              100,
+              196,
+              2525,
+              2526
+            ],
+            "local_active": 293,
+            "supervised": 642,
+            "reference": 642,
+            "corpus_version": 13,
+            "finished_unix": 1789456848.7625778
+          },
+          "latest": {
+            "update": 6803,
+            "rank": 2,
+            "loss": 0.01347519550472498,
+            "rows": [
+              18,
+              206,
+              2873,
+              2874
+            ],
+            "local_active": 413,
+            "supervised": 589,
+            "reference": 589,
+            "corpus_version": 13,
+            "finished_unix": 1789457024.6903381
+          },
+          "actual_updates": 175,
+          "start": {
+            "command": [
+              "/localhome/local-rohing/v2/venv/bin/python",
+              "-B",
+              "-m",
+              "gpu.orch_combined_l1_continual_run",
+              "train",
+              "--root",
+              "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1",
+              "--arm",
+              "FULL",
+              "--rank",
+              "2",
+              "--port",
+              "38107",
+              "--world-size",
+              "3",
+              "--index",
+              "6",
+              "--resume",
+              "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/FULL/checkpoints/000006628"
+            ],
+            "identity": {
+              "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+              "pid": 790051,
+              "start_ticks": "17792815",
+              "uid": 1395
+            },
+            "index": 6,
+            "pid": 790051,
+            "resume_update": 6628,
+            "started_unix": 1789456774.9685843
+          },
+          "loss_log_sha256": "14fe8d4e04c12c230ac4aab68df383ab038e1623837be59756c01deca2452a72"
+        }
+      ],
+      "checkpoint": {
+        "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/FULL/checkpoints/000006756",
+        "commit_sha256": "6531c1d19859e1213dddfc269c20ee49c94fdb275478cbd81da2b2946fdb59b8",
+        "adapter": {
+          "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "files": [
+            [
+              "README.md",
+              "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+            ],
+            [
+              "adapter_config.json",
+              "55071a8dba6da1a337307d26644c4e1d8089fa42d47bf5c3904bffe0971f7d4f"
+            ],
+            [
+              "adapter_model.safetensors",
+              "31fc55049f92c0cf04da86d3835e03ad4b5ea2467424b171970d2ddbb055cfb0"
+            ]
+          ],
+          "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/FULL/checkpoints/000006756/adapter",
+          "state_sha256": "6dc3eebac3db1f2a9e1ff9495716ecab8d4433c3bdf3c2f79f7bb7f224c54b97"
+        },
+        "optimizer_sha256": "7911b9e6899b1a1c720ec3d9babc300b04c487645306bb714ca72480ef99c52a",
+        "rank_rng_sha256": {
+          "rank0.pt": "db2f33a684372c1e092dd401265bae4538cef2047a11eb33713eb152725699e1",
+          "rank1.pt": "0fd991b9bd2df1ffa8fdbe99d7fdfab2c58f16aa4ba017eb5312892921a27eb7",
+          "rank2.pt": "d36e4201c545fd732ca4bb47a6062756774a715f0971856872fa975f41c223de"
+        },
+        "logical_updates": 6756,
+        "reference_tokens": 2230244,
+        "supervised_tokens": 2230244,
+        "presentations_total": 27024,
+        "presentations_since_resume": 512,
+        "new_corpus_presentations": {
+          "min": 2,
+          "median": 4,
+          "max": 5,
+          "total": 13464
+        }
+      }
+    },
+    "OFF": {
+      "ranks": [
+        {
+          "rank": 0,
+          "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/OFF/RANK0_LOSSES_000006628.jsonl",
+          "first": {
+            "update": 6629,
+            "rank": 0,
+            "loss": 1.4353366850627935e-07,
+            "rows": [
+              100,
+              196,
+              2525,
+              2526
+            ],
+            "local_active": 52,
+            "supervised": 62,
+            "reference": 642,
+            "corpus_version": 13,
+            "finished_unix": 1789456849.943933
+          },
+          "latest": {
+            "update": 6804,
+            "rank": 0,
+            "loss": 1.4688266958273744e-07,
+            "rows": [
+              19,
+              207,
+              2875,
+              2876
+            ],
+            "local_active": 52,
+            "supervised": 61,
+            "reference": 280,
+            "corpus_version": 13,
+            "finished_unix": 1789457024.6106343
+          },
+          "actual_updates": 176,
+          "start": {
+            "command": [
+              "/localhome/local-rohing/v2/venv/bin/python",
+              "-B",
+              "-m",
+              "gpu.orch_combined_l1_continual_run",
+              "train",
+              "--root",
+              "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1",
+              "--arm",
+              "OFF",
+              "--rank",
+              "0",
+              "--port",
+              "36585",
+              "--world-size",
+              "2",
+              "--index",
+              "1",
+              "--resume",
+              "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/OFF/checkpoints/000006628"
+            ],
+            "identity": {
+              "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+              "pid": 790052,
+              "start_ticks": "17792816",
+              "uid": 1395
+            },
+            "index": 1,
+            "pid": 790052,
+            "resume_update": 6628,
+            "started_unix": 1789456774.9706717
+          },
+          "loss_log_sha256": "28ff213c0e2c30f03d0c768e2b090f6397ba7dd860e358bfd4b20c26a64018b4"
+        },
+        {
+          "rank": 1,
+          "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/OFF/RANK1_LOSSES_000006628.jsonl",
+          "first": {
+            "update": 6629,
+            "rank": 1,
+            "loss": 6.22036040454077e-08,
+            "rows": [
+              100,
+              196,
+              2525,
+              2526
+            ],
+            "local_active": 10,
+            "supervised": 62,
+            "reference": 642,
+            "corpus_version": 13,
+            "finished_unix": 1789456849.9572453
+          },
+          "latest": {
+            "update": 6804,
+            "rank": 1,
+            "loss": 8.174319532372465e-08,
+            "rows": [
+              19,
+              207,
+              2875,
+              2876
+            ],
+            "local_active": 9,
+            "supervised": 61,
+            "reference": 280,
+            "corpus_version": 13,
+            "finished_unix": 1789457024.633484
+          },
+          "actual_updates": 176,
+          "start": {
+            "command": [
+              "/localhome/local-rohing/v2/venv/bin/python",
+              "-B",
+              "-m",
+              "gpu.orch_combined_l1_continual_run",
+              "train",
+              "--root",
+              "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1",
+              "--arm",
+              "OFF",
+              "--rank",
+              "1",
+              "--port",
+              "36585",
+              "--world-size",
+              "2",
+              "--index",
+              "3",
+              "--resume",
+              "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/OFF/checkpoints/000006628"
+            ],
+            "identity": {
+              "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+              "pid": 790053,
+              "start_ticks": "17792816",
+              "uid": 1395
+            },
+            "index": 3,
+            "pid": 790053,
+            "resume_update": 6628,
+            "started_unix": 1789456774.9728143
+          },
+          "loss_log_sha256": "e610e1b78456e1097b497c2c5b9ebdbe0384e21f9fc0564d0da4c666e8a105e2"
+        }
+      ],
+      "checkpoint": {
+        "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/OFF/checkpoints/000006756",
+        "commit_sha256": "c020077852118ad0d14143bb855b7b6994ad51a7b528e4b0b1a8c5d09433cc96",
+        "adapter": {
+          "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "files": [
+            [
+              "README.md",
+              "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+            ],
+            [
+              "adapter_config.json",
+              "1f109e3b5d90b2abcd43284af61870ba30cb59989b8a0c2607bf555ad32b7733"
+            ],
+            [
+              "adapter_model.safetensors",
+              "5790a3ff00cced566d16d63db90f3bd54e2aaf43b06bff0383f74b58dd19ac45"
+            ]
+          ],
+          "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/OFF/checkpoints/000006756/adapter",
+          "state_sha256": "9b32149df2871176ce4d9866f3bd134ce429c9a193081ad1239415032c6d63ba"
+        },
+        "optimizer_sha256": "197b2fa0ec410a39d0fb43b2515fc93fdd69d4b8c019420c97910a634dccfa90",
+        "rank_rng_sha256": {
+          "rank0.pt": "0606852f2ab5fe03d9ad74e52c70f5f4d4a426df31dc533e417f89e96d131e01",
+          "rank1.pt": "3add97c1a86ad54a73b00a540d1d1be63831a540e5590cd3baead73fb87f34a7",
+          "rank2.pt": "7b4a681cb008ceee219c28ec148c22e3c56ed64e3d65312f2d4df8225c3ba280"
+        },
+        "logical_updates": 6756,
+        "reference_tokens": 2230244,
+        "supervised_tokens": 400354,
+        "presentations_total": 27024,
+        "presentations_since_resume": 512,
+        "new_corpus_presentations": {
+          "min": 2,
+          "median": 4,
+          "max": 5,
+          "total": 13464
+        }
+      }
+    }
+  },
+  "admissions": {
+    "0": {
+      "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/R107_CONTINUATION_20260915/ADMISSIONS/R107_PRELAUNCH_0_002.json",
+      "sha256": "8499b2ba3842f7579e4cd28820753d36172d4f3da249f054bb936562ee610e67",
+      "created_utc": "2026-09-15T07:18:57.900121+00:00",
+      "clear": true,
+      "preserved_failed_scans": 2
+    },
+    "1": {
+      "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/R107_CONTINUATION_20260915/ADMISSIONS/R107_PRELAUNCH_1_008.json",
+      "sha256": "4f59693d4adc34b43968fa8b2dc8645e425cdfb2c85447e573462de55c3fcd6d",
+      "created_utc": "2026-09-15T07:19:19.282951+00:00",
+      "clear": true,
+      "preserved_failed_scans": 8
+    },
+    "2": {
+      "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/R107_CONTINUATION_20260915/ADMISSIONS/R107_PRELAUNCH_2_000.json",
+      "sha256": "304025ba41ff91f35c7db399fc973c14f70989f4b64e2d9e98ea22f76a937343",
+      "created_utc": "2026-09-15T07:19:20.771372+00:00",
+      "clear": true,
+      "preserved_failed_scans": 0
+    },
+    "3": {
+      "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/R107_CONTINUATION_20260915/ADMISSIONS/R107_PRELAUNCH_3_002.json",
+      "sha256": "367e7697a9dfa533f04aadf2a0977c8a0fd7236ef24381d865e3130c57b2e405",
+      "created_utc": "2026-09-15T07:19:27.258459+00:00",
+      "clear": true,
+      "preserved_failed_scans": 2
+    },
+    "6": {
+      "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/R107_CONTINUATION_20260915/ADMISSIONS/R107_PRELAUNCH_6_002.json",
+      "sha256": "e14e2bc3679b5c9b2d975b271e836159b4019659d21f9db540b7bba83653058a",
+      "created_utc": "2026-09-15T07:19:33.731034+00:00",
+      "clear": true,
+      "preserved_failed_scans": 2
+    }
+  },
+  "lifetime": {
+    "accounting": "Prior segment retained separately; this segment <=10 GPUh.",
+    "continuation_gpu_hours_ceiling": 10,
+    "continuation_once": true,
+    "continuation_segment": "R107_CONTINUATION_20260915",
+    "continuation_started_unix": 1789456732.2330687,
+    "extra_physical_off_recovery_updates": 117,
+    "hard_deadline_unix": 1789462980.0,
+    "lease_margin_seconds": 21600,
+    "native_deadline_unix": 1789462800.0,
+    "no_fixed_presentation_stop": true,
+    "no_retry": true,
+    "original_started_unix": 1789442290.7796104,
+    "parent_calls": 0,
+    "previous_lifetime_preserved": true,
+    "readout_calls": 1760,
+    "started_unix": 1789444842.4202476,
+    "terminal_calls_remaining": 416,
+    "total_gpu_hours_ceiling": 24,
+    "total_readout_calls_including_base": 1824,
+    "training_deadline_unix": 1789459200.0,
+    "training_generation": 0
+  },
+  "ready_sha256": "05e7bc291a717a201356ae873a52fbc1b339bcfc2834401a3893792a3e4b1765",
+  "matched_boundary": {
+    "path": "/localhome/local-rohing/orch_combined_l1_continual_20260915_attempt1/PAIRED_BOUNDARIES/000006756.json",
+    "sha256": "a53e50c56c5fecaf9adb16ab92633bdf2c07c08bb8d73860740138b667310134",
+    "record": {
+      "corpus_sha256": "ee2aa551ae71d271bc6cbf2101dcfef4a708f6d031fe4f2dbbd2c161dd09ce19",
+      "corpus_version": 13,
+      "full_sha256": "6531c1d19859e1213dddfc269c20ee49c94fdb275478cbd81da2b2946fdb59b8",
+      "full_supervised": 2230244,
+      "off_sha256": "c020077852118ad0d14143bb855b7b6994ad51a7b528e4b0b1a8c5d09433cc96",
+      "off_supervised": 400354,
+      "reference_tokens": 2230244,
+      "segment": "R107_CONTINUATION_20260915",
+      "time_unix": 1789456984.4148366,
+      "topology": {
+        "FULL": [
+          0,
+          2,
+          6
+        ],
+        "OFF": [
+          1,
+          3
+        ]
+      },
+      "update": 6756
+    }
+  },
+  "terminal_readouts_reserved": 0,
+  "queued_exhaustion_manifests": 0,
+  "reducer_sha256": "3dd60fe868ab346ed944a874b5fccc9c8fcff3a9544f213d59e198b30fa6cec2",
+  "receiver_watchers": [
+    {
+      "pid": 4023248,
+      "module": "gpu.orch_combined_l1_native_feed_watch",
+      "found": 0
+    },
+    {
+      "pid": 4023249,
+      "module": "gpu.orch_combined_l1_exhaustion_watch",
+      "found": 0
+    }
+  ],
+  "local_cpu_tests": {
+    "passed": 56,
+    "skipped": 4,
+    "native_pytest": "UNAVAILABLE_PRESERVED",
+    "native_provenance": "PASS"
+  }
+}

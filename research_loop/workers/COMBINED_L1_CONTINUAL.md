@@ -538,3 +538,13 @@ what-ifs is distinct from independent method count. No such new measurements,
 held outputs, parenting/L2 or teacher data enter TRAIN. No relabeling live packets.
 FIFO staysCPU-only; originaltrainingsampler/deadline07:03:10.779610Z preserved;
 416existingterminal readout calls retained under1824ceiling, no new calls.
+
+## 2026-09-15T07:24:11.790961+00:00 — R107 actual bounded continuation
+
+Teacher16 deferred; no node1handoff/launch. Native source4859efad... untouched. Prior guard saved matched6628 then failed strict release(scan device_not_idle and process identity drift); native failures and prior lifetime retained in R107_CONTINUATION_20260915. New dated BOARD allocation+COORD CPU receipt precede fresh admissions (all five actual clear, failed scans retained). Local56PASS/4skips; nativepytest absent failure retained, native full-source/checkpoint/optimizer/rankRNG/corpus verificationPASS.
+
+Guardian788025; FULL ranks790049/790050/790051 on0/2/6, OFF790052/790053 on1/3. First actual6629 FULL07:20:48.750283Z/OFF07:20:49.943933Z, not just loaded. Latest compact FULL6803/OFF6804/V13; matched6756 durable both,512additional row presentations each (128updates), optimizer/RNG/cursor/exposure continuity verified.117extraOFFphysicalhistoricalupdates separate; OFF new labels masked, not LoRA-disabled BASE. No new corpus/criteria or FIFO change.
+
+Bounded TRAIN first matched128-update boundary at/after08:00Z, native09:00Z hard09:03Z <=10additional conservativeGPUh, no automatic further extension. Existing416terminalreadoutcalls unchanged,1824aggregateincludingBASE; capabilityON/OFF diagnostics not included. At training release new exact seam will be R107_CONTINUATION_20260915/READOUT_SEAM.json then ADAPTIVE_DEV/TERMINAL_<update> (mathFULL/OFF64each,route96each,legacy48each). Existing matched checkpoint6756 can be referenced independently without stopping/rescoring training.
+
+Original receiver watcher restarted4023248; separately registry-bound exhaustion watcher4023249; both reuse exact prior attempts/journals and current LIFETIME TRAIN08:00 cutoff, zero newly accepted manifests observed07:23. Do not silently bind newer source registry. No raw VM artifacts, modelcalls by receiver, foreign kills, or git mutation. Compact R107_FIRST_UPDATE_0724_COMPACT.json SHAe20a4d03d8de849fa4c98be49edc49c60be44e7ce3ccb64b7d5292f9734b3c7e.
