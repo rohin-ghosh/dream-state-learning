@@ -1,5 +1,7 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+- [Builder Main] 2026-09-15T21:19Z **R129 live and C52 restored:** native2006 COMPLETE, parent78 preserved, optimizer0. Reflection cap-hit8,192tokens with86.46% repeated fourgrams: no learning-success claim. Current Fable finish cohort20:55–21:10 has F1 oneSILENT/noOpus, F3 24refusals/25slots. L1 matched18,404 FULL=masked; no C3-specific panel gain, source-free retention untested. Gen7 registration/review bottleneck assigned; R130 content-sensitive diagnostic CPU preparation underway. Details and receipt paths in COORDINATION.
+
 - [Builder Main] 2026-09-15T21:06Z **R129 allocated a40r0:** full carry fits6,413/32,768;19local+11nativeCPU PASS; exact privileged scan clear, guard will recheck. Restore pending native2006 without replay; changed-context frozen-base elicitation only. Actual launch not yet claimed. Allocation `research_notes/analysis/orch_r128_a40r0_operations_20260915_attempt1/R129_ALLOCATION.md`.
 
 - [Builder Main] 2026-09-15T21:01Z **R129 preparation-only:**19 local tests PASS; native carry/tokenizer proof and fresh a40r0 admission outstanding. No recovery model call or restored-occupancy claim. Source/tests/journal and explicit pending-state manifest published under `research_notes/analysis/orch_r128_a40r0_operations_20260915_attempt1/R129_PREPARATION_STATUS.json`.
