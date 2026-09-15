@@ -1,6 +1,6 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
-Updated2026-09-14 23:59UTC. DECLARED is not RUNNING. All arm metrics pending
+Updated2026-09-15 00:10UTC. DECLARED is not RUNNING. All arm metrics pending
 unless explicitly measured. State first: RESEARCH_STATE.md. User message76
 and current launch directive supersede historical launch holds.
 
@@ -19,8 +19,8 @@ The allocation column is ownership, not measured GPU occupancy.
 | Blind math prompting replication | Locke retiring after publication | NONE;node3 2–4released | COMPLETE;SEQ276assigned;readerpending |31/32richvs10/32terse;notheldtransfer | no fit |6PASS/47candidates;3records/31;5tasks;>=8gateFAIL | answergaprecurs;originalrecordyieldlow | publicdata/promptroles/spend/rubric | unchangedrepeatlow | publishblindreport;deallocate notdisprove |
 | Blind record semantic/prefix audit | Gauss retired | NONE | COMPLETE190+separateclarification;freeze301c7427unchanged | conservativeNEW43/64vsOLD8/64;rich3/64disputed;notrescore | no fit |60semP114F16U;support180P9F1U;NEWpipeline46vsauthor83 | somefrozenreasons imposedexcesssecond-checkdemand | fourcasesnotarithmeticerrors;notwholegapexplained | boundedauthorcritique;objectiveleakexclusions | noautomatic3or28canonical;preserveprospectivegate |
 | CHECK-CONTRACT: explicit numerical check improves qualified rich yield | unassigned | NONE | DEFERREDbeforeworker/calls;raw82 | prospective64freshL1only | no fit |0calls/0newrows | usefulidea, L2nowpriority | formatting/padding/promptlength | retainidea notreservation | do notlaunch implicitly |
-| L2-SHORT: dense episode parent improves rich loop cohesion | Planck | A1000guided;2GUIDED-FROZEN;3unparented | REALguidedepisodes0andunparented3at23:49;source2live |shared56worldcohort;3TRAINx8+4heldx8 |oldfacts/audit>=15/16readoutrequired |8648cap;initialauxproviderundercountdisclosed;noqualifiedtotalsyet | actualrichguidedcollectionnowlive;nogainyet | taskadaptation/incontextteacher/style | highest: actualclosedloop | LONGhookintegrated;12h/36GPUh;no1k/promotionhold |
-| L2-LONG: sparse parent steers across episode/sleep history | Galileo | A1001 | HOOKdelivered23:44;nativecallerbeingintegrated |samecohort;sharedSHORT-guidedfrozen/unparented |sameoldfacts/audit |complete256-tokenparentcap;lowerinvolvement;actualownrows | parenthorizon remainsopenquestion | guidanceamountandhorizonconfounded;frozennotLONGmatched | comparelearnercentriccurves notjustscore | nativeLONGnext;12h/12GPUh;no cohortreconstruction |
+| L2-SHORT: dense episode parent improves rich loop cohesion | Planck | A1000guided;2GUIDED-FROZEN;3unparented | SOURCEcomplete448;SHORTexperience;UNPARENTEDpregradientmaskrepair |FROZENinitial11/16goals;notgain;UNPARENTEDTRAIN5/16 |FROZENinitialW0/W8/audit16/16each |UNPARENTEDC1oneadmittedturn;26updatespending;8648cap | headroomexists;nogain/SHORTsleepyet | cohort/teacher/style;runtimefaultnotnull | highest: exactcontinuityrepairandloop | canonicalmaskrepair+resume;12h/36GPUh;no1khold |
+| L2-LONG: sparse parent steers across episode/sleep history | Galileo | A1001 reserved;processreleasedafterfault | NATIVEparent/childconfirmed;brokerJSONfault;repair/resume |partial2episodes1success;NOTmatchedgain |pendingownreadout |first512truncated;next6turns89–105;completed4episodespreserved | realcommunication, richnessstillobstacle | policy/dose/horizon;onebadopaque-labeladvice | exactresume thenexistingthreecycles | losslessenvelopehelper;no regeneratedoutputs;original12hdeadline |
 | ORACLE-REPAIR: rejection feedback adds qualified correction beyond rich retry | Sartre retired | NONE;node3 0–3released23:28:19 | DEALLOCATEDcleanfiniteNULL;SEQ279;readerpending |8/24jointrepairsboth;checked22/24vs23/24;notheldtransfer | no fit |93calls;records2/24vs3/24;19CPUtests;0.371assignedGPUh | rejectionaloneaddsnoqualifiedyieldatdeclaredscale | prefix/verdictsupport;style;selectedpublictasks | zeroGPUreader;exactrerunlow | preserve;notparentingdisproven;no fit/scale |
 | GAME-ORTHOGONAL: observable transitions improve grounding | Dalton retired | NONE | DEALLOCATED; SEQ267 VERIFIED Fable22:22 | delivery0/16rich vs0/16terse; within-family | no fit |0admitted; first-turn2P13F1U/16author-side;80turns unreviewed; median160.5vs4tokens | verbal richness does not fix this finite screen | state/action representation; prior-adapter specialization | exact rerun low | preserve; no fit/scale/parser rescue |
 | TEXT-PREREQUISITE: grounded feedback teaches object prerequisites | Hypatia retired | NONE;A1000–3released22:35:06 | DEALLOCATED; SEQ272 published |8/8vs8/8;0discordantpairs | no fit |0rows;41calls;18richturns28–52tokens;0prerequisitefeedback | ceiling and unrealized richness, not learning null | easytasks/short-outputpolicy | exact repeat low | preserve; no newseed/scale |
@@ -45,8 +45,8 @@ The allocation column is ownership, not measured GPU occupancy.
 
 - Old builder21:52Z released every node2/node3/A100GPU, including node3 0/1;
   no active arm transferred. Native physical+UUID+/proc CVD check is mandatory.
-- Node1 gets NO NEW WORK on expiring23:14lease. Watcher23:04reports newlease
-  expected23:25; unavailable until actual onboarding receipt. Main does not
+- Node1 gets NO NEW WORK: oldleaseended23:14; replacementDELETING23:53,
+  quota-limited perFable00:03. No expected imminent return. Main does not
   extend leases or onboard nodes. Unknown/service owners are not idle from0MiB.
 - Main owns BOARD, RESEARCH_STATE and append-only notebook integration.
   Workers own only their named new file prefixes and unique run roots.

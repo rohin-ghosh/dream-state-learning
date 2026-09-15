@@ -1,6 +1,6 @@
 # Research state — Orchestrator
 
-Updated September14,2026,23:59UTC. ACTIVE / INCOMPLETE. Current synthesis,
+Updated September15,2026,00:10UTC. ACTIVE / INCOMPLETE. Current synthesis,
 not an experiment transcript. Prior detailed state remains in git66d134c5
 and the append-only notebook; no evidence, failed denominator or raw directive
 is deleted by this compaction. BOARD owns current GPU allocations.
@@ -510,6 +510,49 @@ adapter-mediated change, not isolate reflection or establish acceleration.
 No difference with headroom would reduce value of more identical sleeps;
 ceiling remains uninformative. Other reserves await new discriminating evidence.
 
+## September15,00:10 current cycle — native evidence and runtime repairs
+
+LONG actual child182989/guardian182923 on A1001 mounted e226/basea236; first
+actual parent message delivered.87own CPUtests/390 source hashes before launch.
+At00:00:56,9child calls/2complete episodes/1success: first response512truncated,
+second successful episode's six turns89–105tokens, below150. These are partial
+author observations, not a protocol comparison or retained-learning gain.
+UNPARENTED cycle1 completed16episodes,5successes,1admitted raw turn; intended
+26updates not initially completed. FROZEN neutral initial readout11/16goals,
+W0/W8/audit16/16each: headroom exists; baseline, not parenting/sleep benefit.
+All source448calls complete,224accepted initial-child EVENTs; no regeneration.
+
+Operational failures remain separate from scientific nulls:
+- UNPARENTED sleep1 stopped before gradients on tuple-versus-list mask equality.
+  Actual222 reencoded masks and archived masks have equal canonical SHA6776bcf6.
+  SHORT owns nonmaterial canonical-comparison repair plus one-label-corruption
+  regression; no label/target/source change or prior-stage rerun.
+- LONG stopped/released1 after broker rejected fenced JSON at semantic0001
+  and coaching0002; second also uses distillation_for_rohin. LONG owns new
+  lossless envelope helper/tests, SHORT its small broker integration and exact
+  phase resume. Preserve raw errors/outputs, completed4episodes, actual quotas,
+  original deadline and in-progress position. No provider regeneration, target
+  rewrite, semantic rescore or duplicate charge. Invalid/ambiguous content still
+  fails; only transport envelope/field alias normalization is in repair scope.
+Thus 'native live' is a historical milestone, not a claim every lane is
+currently running. No SHORT nonzero sleep yet; ADJACENT remains CPU preparation.
+
+PI spot-check: LONG's first coach advises choosing EVENTs by plausible label
+connection despite opaque identifiers; child then simulates multiple unseen
+EVENT observations in one response. One descriptive counterexample, not causal
+attribution. Main's missing-public-rules conjecture was falsified by actual
+0000_LONG_C1 request/rendered prompt: neutral SYSTEM explicitly states opaque
+IDs, actual IO/no simulation and budgets. No context repair authorized on that
+false premise. Full150–400 GUIDANCE is absent from that observation; a separate
+context-quality question, not permission for an unlogged protocol change.
+Actual unparented semantic prompt d13c883f demonstrates rich-instruction/full
+capture stripping; it does not demonstrate a spoken SHORT verdict case.
+
+Fable00:03 says replacementnode1 went RESERVED→DELETING23:53; quota prevents
+return tonight. Fleet remains24, no node1 allocation or Main lease action.
+Reader23:55 ran successfully but no new scoped276–279verification entry has
+been received; do not upgrade statuses from cron exit0 alone.
+
 ## Priority frontier — decisions for next compute
 
 1. **Belief change:** independent math answer gain is more credible; qualified
@@ -537,9 +580,9 @@ unparented3at39%,guided0resident/0% at that instant,LONG1empty. Not saturation
 or proof of ownership from utilization. RAM23:51available3.2GiB,swap3.6/3.8GiB;
 /data13GBfree/root2.1GB. Archives on/data, no localmodels/unknownkills.
 
-Node1 expiring23:14lease receives nothing. Watcher predicts a replacement lease
-~23:25; unavailable until actual onboarding receipt. Main never purchases,
-extends or onboards. All node1 historical roots/owners remain protected.
+Node1 oldlease ended23:14; replacementDELETING23:53 perFable00:03, quota-limited.
+Unavailable, not merely awaiting an imminent onboarding receipt. Main never
+purchases, extends or onboards. Historical roots/owners remain protected.
 Keys environment-only, hostnames only ignoredgpu/hosts.env. No oldcheckout
 edits, blanket staging, stash/rebase/force or killbyname. Shared append-only
 merges preserve both complete additions. Runtime approvals are not bypassed.

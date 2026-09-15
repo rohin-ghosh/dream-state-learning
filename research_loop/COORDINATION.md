@@ -27081,3 +27081,49 @@ after adjacent allocation. Node1 remains unavailable without onboarding receipt.
 **Node 1:** the onboarding chain reached the lease window at 23:25Z, polled RESERVED for 26 minutes, then the reservation showed DELETING from 23:53Z (no IP); the lease hunter's parallel requests are REFUSED on the rolling lease-usage quota. Node 1 is not coming back tonight without a quota change — Rohin's decision. BOARD already gives it no work.
 
 **Fleet:** ovx 4/8 (MATH-SCALE collection, P57), ovx2 2/8 (dose fit pair, P54), a100 7/8 (L2 arms on 0–3, dose fits on 4–7) — 13 of 24 GPUs busy; the orchestrator holds ~10 in reserve deliberately. VM: memory 3.1 GB available, swap full, root 2.1 GB, /data 13 GB; both Codex sessions alive (astra idle at prompt between turns; astra2 in worker view). Reader: 23:55 slot ran (rc=0); cron now on :05/:15/:25/:35/:45/:55. Laptop chains 4/4. Nothing launched or killed by the watcher.
+
+[Orchestrator] 2026-09-15T00:10Z — STATE thenBOARD ingest partial native L2
+receipts, not terminal result promotion:
+
+| Measure | Captured count | Scope |
+| --- | ---: | --- |
+| Shared source calls / accepted EVENTs |448 /224|complete frozen initial-child source|
+| FROZEN initial neutral held successes |11/16|8worlds; baseline, not learning|
+| FROZEN initial W0 / W8 / audit |16/16each|baseline retention only|
+| UNPARENTED cycle1 TRAIN successes |5/16|not held progress|
+| UNPARENTED cycle1 admitted raw turns |1|author gate;26updates intended, initially failed before gradients|
+| LONG early child calls / successes |9 /1of2episodes|00:00:56 partial; no comparative claim|
+
+OBSERVATION: table, plus LONG first512token/truncated response and six89–105token
+turns in its second episode. EVIDENCE AND CONTROL: exact shared source,
+LONG actual LOADED e226/basea236, first parent response/exposure/provider receipts,
+own87CPUtests/390sourcebindings; same-batch twins underway, not completed results.
+CURRENT INTERPRETATION: actual parent→child communication exists and baseline
+has headroom; rich learnable supply and retained gain remain unestablished.
+CREDIBLE ALTERNATIVES: style/narration, teacher quality, source/cohort difficulty,
+different guidance/dose; no causal attribution from early training examples.
+CONFIDENCE: author-side partial counts, not FableVERIFIED benefit.
+CHEAPEST DISCRIMINATING NEXT TEST: repair runtime continuity without repeated
+model calls, finish declared cycles, and first-nonzero-SHORT adjacent diagnostic.
+
+[Orchestrator] 2026-09-15T00:10Z — technical faults, NOT scientific nulls:
+UNPARENTED sleep1 tuple/list mask equality failed pregradient despite identical
+canonical222-row maskSHA6776bcf6; SHORT repairs exact canonical comparison and
+one-label corruption regression. LONG broker failed fencedJSON semantic0001
+and coaching0002 (distillation_for_rohin alias), guardianreleased1. Parallel
+ownership: LONG new losslessenvelopehelper/tests; SHORT tiny broker integration
+and exact-stage resume. Preserve failed receipts, originalgenerated outputs,
+first4completed LONGepisodes, quotas/deadlines; no model regeneration, targets
+rewritten or duplicate charges. Invalid semantic content still fails. No new
+Main/reviewer/rowcount admission gate; Main runs no GPUcells/Fablechecks.
+
+[Orchestrator] 2026-09-15T00:10Z — PI spot-check and falsified conjecture:
+LONG first coach recommends EVENT label plausibility despite opaqueIDs; first
+child response invents several unseenEVENT observations. One counterexample,
+not proof coaching caused it. Actual0000_LONG_C1.request/renderedprompt DOES
+include neutralSYSTEM's opaqueIDs/actualIO/no-simulation/budget rules, disproving
+my missing-public-rules conjecture for that call. Workers told NOT to repair
+that nonexistent omission. Exact150–400GUIDANCE absent there is a distinct
+possiblecontext limitation, not authorization for silent policy change.
+Fable00:03 node1 replacementDELETING/quota report ingested: fleet24, no node1work.
+Readercronexit0 alone does not upgrade pending276–279verification statuses.
