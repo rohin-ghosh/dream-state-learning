@@ -134,8 +134,9 @@ def validate_config(config):
         'train_tasks', 'excluded_task_ids', 'cohort_sha256', 'principles_sha256',
         'source_files'}
     require(keys <= set(config) <= keys | {'fallback_parent_fields', 'min_available_bytes',
-        'queue_transport', 'provider_lock_scope'}, 'config_keys')
+        'queue_transport', 'provider_lock_scope', 'parent_effort'}, 'config_keys')
     require(config.get('queue_transport', 'ssh') in ('ssh', 'node_local'), 'queue_transport')
+    require(config.get('parent_effort', 'max') in ('max', 'high'), 'bounded_parent_effort')
     require(config.get('provider_lock_scope', 'shared') in ('shared', 'branch'), 'provider_lock_scope')
     require(config.get('provider_lock_scope', 'shared') != 'branch'
         or config.get('queue_transport') == 'node_local', 'branch_lock_node_only')
@@ -248,10 +249,11 @@ def validate_request(request, config):
     return public_transcript(request['payload'], config)
 
 
-def command(system_content, max_budget_usd):
+def command(system_content, max_budget_usd, effort='max'):
     require(isinstance(system_content, str) and bool(system_content.strip()), 'actual_system_content')
     require(finite(max_budget_usd) and max_budget_usd > 0, 'positive_provider_cap')
-    return ['claude', '-p', '--model', MODEL, '--effort', 'max', '--output-format', 'json',
+    require(effort in ('max', 'high'), 'bounded_parent_effort')
+    return ['claude', '-p', '--model', MODEL, '--effort', effort, '--output-format', 'json',
         '--tools', '', '--no-session-persistence', '--max-turns', '1',
         '--max-budget-usd', str(max_budget_usd), '--system-prompt', system_content,
         '--strict-mcp-config', '--mcp-config', '{"mcpServers":{}}',
@@ -536,6 +538,7 @@ def stop_process(process):
 
 def run_cli(argv, directory, cutoff, output_cap):
     environment = dict(os.environ, CUDA_VISIBLE_DEVICES='', CLAUDE_CODE_MAX_OUTPUT_TOKENS=str(output_cap))
+    started_unix = time.time()
     child = subprocess.Popen(argv, cwd=directory, env=environment, stdin=subprocess.DEVNULL,
         stdout=subprocess.PIPE, stderr=subprocess.PIPE, start_new_session=True)
     selector = selectors.DefaultSelector()
@@ -545,6 +548,8 @@ def run_cli(argv, directory, cutoff, output_cap):
     caps = dict(stdout=STDOUT_CAP, stderr=STDERR_CAP)
     streams = {name: (directory / (name + '.json' if name == 'stdout' else name + '.txt')).open('xb')
         for name in sizes}
+    first_byte_unix = dict(stdout=None, stderr=None)
+    terminal_error = None
     try:
         while selector.get_map() or child.poll() is None:
             require(time.time() < cutoff, 'provider_timeout')
@@ -554,18 +559,31 @@ def run_cli(argv, directory, cutoff, output_cap):
                 if not chunk:
                     selector.unregister(selected.fileobj)
                     continue
+                if first_byte_unix[name] is None:
+                    first_byte_unix[name] = time.time()
                 allowed = caps[name] - sizes[name]
                 streams[name].write(chunk[:allowed])
                 sizes[name] += min(allowed, len(chunk))
                 require(len(chunk) <= allowed, 'provider_output_bytes_limit')
         require(child.wait(timeout=max(.01, cutoff - time.time())) == 0, 'provider_exit_failure')
+    except BaseException as error:
+        terminal_error = dict(type=type(error).__name__,
+            code=str(error) if re.fullmatch('[a-z0-9_]{1,100}', str(error)) else 'captured_cli_failure')
+        raise
     finally:
+        exit_code_before_cleanup = child.poll()
         stop_process(child)
         selector.close()
         child.stdout.close()
         child.stderr.close()
         for stream in streams.values():
             stream.close()
+        write(directory / 'CLI_STATUS.json', dict(started_unix=started_unix, finished_unix=time.time(),
+            cutoff_unix=cutoff, available_seconds=cutoff-started_unix, pid=child.pid,
+            first_byte_unix=first_byte_unix, captured_bytes=sizes,
+            exit_code_before_cleanup=exit_code_before_cleanup, exit_code_after_cleanup=child.poll(),
+            cleanup_terminated_process=exit_code_before_cleanup is None, error=terminal_error,
+            command_sha256=digest(argv), attempts=1, retry=False))
 
 
 def provider_lock_path(config):
@@ -616,12 +634,13 @@ def evaluate(request, directory, deadline, *, config, launch, prompt_root, princ
             validate_launch(config, launch, time.time())
             require(time.time() < cutoff, 'lane_cutoff_before_dispatch')
             write(directory / 'DISPATCH.json', dict(request_id=request['id'], started_unix=time.time(),
-                cutoff_unix=cutoff, requested_model=MODEL, effort='max', attempts=1,
+                cutoff_unix=cutoff, requested_model=MODEL, effort=config.get('parent_effort', 'max'), attempts=1,
                 prompt_sha256=prompt_binding['prompt_sha256'],
                 parent_policy_sha256=prompt_binding['parent_policy_sha256'],
                 max_budget_usd=config['max_budget_usd'], max_output_tokens=config['max_output_tokens']))
             dispatched = True
-            runner(command(system, config['max_budget_usd']), directory, cutoff, config['max_output_tokens'])
+            runner(command(system, config['max_budget_usd'], config.get('parent_effort', 'max')),
+                directory, cutoff, config['max_output_tokens'])
             require(time.time() < cutoff, 'late_parent_missing')
             result = parse_output((directory / 'stdout.json').read_text(), config['family'], transcript['task_id'])
     except (ValueError, RuntimeError, OSError, subprocess.SubprocessError) as error:

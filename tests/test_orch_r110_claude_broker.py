@@ -98,6 +98,38 @@ class ClaudeBrokerTests(unittest.TestCase):
             with self.subTest(value=value), self.assertRaises(ValueError):
                 broker.command('text', value)
 
+    def test_parent_effort_candidate_is_bounded_and_keeps_prompt(self):
+        original = broker.command('EXACT SYSTEM', 2)
+        candidate = broker.command('EXACT SYSTEM', 2, 'high')
+        index = original.index('--effort') + 1
+        self.assertEqual(original[index], 'max')
+        self.assertEqual(candidate[index], 'high')
+        candidate[index] = 'max'
+        self.assertEqual(candidate, original)
+        for value in ('low', 'medium', None, True):
+            with self.assertRaisesRegex(ValueError, 'bounded_parent_effort'):
+                broker.validate_config(dict(self.config, parent_effort=value))
+        self.config['parent_effort'] = 'high'
+        with self.assertRaisesRegex(ValueError, 'launch_config_binding'):
+            self.evaluate()
+        self.rebind()
+        result, directory = self.evaluate()
+        self.assertEqual(result['status'], 'COMPLETE')
+        argv = self.runner.call_args.args[0]
+        self.assertEqual(argv[argv.index('--effort')+1], 'high')
+        self.assertEqual(json.loads((directory/'DISPATCH.json').read_text())['effort'], 'high')
+
+    def test_future_600_second_lane_keeps_reserve_and_hard_deadline(self):
+        self.request['lane_deadline_unix'] = time.time()+600
+        self.config['deadline_unix'] = time.time()+1200
+        self.rebind()
+        self.evaluate()
+        self.assertEqual(self.runner.call_args.args[2], self.request['lane_deadline_unix']-30)
+        self.config['deadline_unix'] = time.time()+60
+        self.rebind()
+        self.evaluate()
+        self.assertEqual(self.runner.call_args.args[2], self.config['deadline_unix'])
+
     def test_config_is_exact_and_pinned(self):
         broker.validate_config(self.config)
         self.config['source_files'] = {}
@@ -638,6 +670,31 @@ class ClaudeBrokerTests(unittest.TestCase):
         directory.mkdir()
         with self.assertRaisesRegex(ValueError, 'provider_timeout'):
             broker.run_cli(['/bin/sh', '-c', 'sleep 5'], directory, time.time()+.1, 100)
+        status = json.loads((directory/'CLI_STATUS.json').read_text())
+        self.assertEqual(status['error']['code'], 'provider_timeout')
+        self.assertTrue(status['cleanup_terminated_process'])
+        self.assertIsNone(status['exit_code_before_cleanup'])
+        self.assertIsNotNone(status['exit_code_after_cleanup'])
+        self.assertFalse(status['retry'])
+
+    def test_cli_exit_and_first_byte_diagnostics_no_extra_attempt(self):
+        for exit_code in (0, 7):
+            directory = self.root/('exit_stub_'+str(exit_code))
+            directory.mkdir()
+            argv = ['/bin/sh', '-c', 'printf metadata; printf diagnostic >&2; exit '+str(exit_code)]
+            if exit_code:
+                with self.assertRaisesRegex(ValueError, 'provider_exit_failure'):
+                    broker.run_cli(argv, directory, time.time()+5, 100)
+            else:
+                broker.run_cli(argv, directory, time.time()+5, 100)
+            status = json.loads((directory/'CLI_STATUS.json').read_text())
+            self.assertEqual(status['exit_code_before_cleanup'], exit_code)
+            self.assertEqual(status['exit_code_after_cleanup'], exit_code)
+            self.assertEqual(status['attempts'], 1)
+            self.assertFalse(status['cleanup_terminated_process'])
+            self.assertIsNotNone(status['first_byte_unix']['stdout'])
+            self.assertIsNotNone(status['first_byte_unix']['stderr'])
+            self.assertEqual(status['captured_bytes'], {'stdout':8, 'stderr':10})
 
     def test_run_cli_output_cap(self):
         directory = self.root/'output_stub'
