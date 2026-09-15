@@ -1124,3 +1124,67 @@ Observe how the child is learning and acting. Intervene only when its current be
 Then let the actual trajectories tell you what the parenting theory needs to become.
 
 That is probably the fastest path forward now.
+
+## 3. Forwarded with message 113 (~10:15 UTC): the assistant's review of PARENTING_BATTLE_PLAN_v2 (verbatim)
+
+I like the experimental direction, but I’d revise a few things before treating the morning results as evidence that parenting works. It captures your intent well: let the parent elicit behavior, let the child consolidate its experience, and check what survives without the parent. The main weaknesses are in preservation and measurement—not a need for more cognitive architecture.
+
+The strongest parts are the parent-free, context-free readouts, the separation between frozen elicitation and LoRA learning, and continuing lives without selecting only successful children. Those give you a chance to observe actual development, including deterioration.
+
+1. Capability protection hasn’t actually been carried through into parenting.
+
+The level-1 training explicitly includes a broad capability anchor. Parenting sleep specifies rehearsal of the child’s earlier experiences, but does not explicitly include that anchor.
+
+That leaves the exact gap you were worried about: repeatedly training on a narrow childhood distribution while merely observing capability loss.
+
+I’d carry the same broad anchor into every parenting sleep, with its training weight specified. This doesn’t select or filter the child’s experiences; it preserves ordinary competence alongside them. LoRA alone is not a guarantee against interference. Research on forgetting in low-rank adaptation supports that distinction.
+
+Also, “16 presentations per row” needs clarification: once when newly collected, or again whenever replayed? Those imply very different cumulative exposure. Report actual optimizer steps and token exposures, not just sleep count.
+
+2. Several headline measures reward the appearance of your target behavior.
+
+Current measure    What could falsely look like progress
+More tokens on harder tasks    Confusion or repetition
+Novel text after the first answer    Inability to finish
+More “I can / I cannot” statements    Learned self-description
+Fewer interventions per 1,000 tokens    Longer responses with unchanged intervention count
+More departures and returns    Decorative tangents
+Keep these as descriptive measurements. But none should individually carry the claim that metacognition improved.
+
+Your existing requirement that a realization changes the continuation is much stronger. Look for observable consequences: a revised action, a discriminating check, an abandoned approach, an earlier experience changing a later decision.
+
+That can include curiosity without immediate task success. A question that produces a new observation is already more informative than a paragraph saying “I wonder.”
+
+And persistence should include continuing through difficulty while retaining the ability to stop. Defining it mainly as continuing after an adequate answer risks recreating the “more tokens” objective you just moved beyond.
+
+3. The readout isn’t fully held out if the head parent uses it to change parenting.
+
+The plan gives the head parent readout measures and asks it to adjust behavior based on whether changes reached the LoRA. That makes those eight repeated tasks a development set, even if their IDs never enter training.
+
+That feedback is useful—keep it. But reserve a separate final evaluation that neither parent nor head parent sees during the run.
+
+Also, “at least one branch crosses a threshold twice” is a discovery signal, not strong confirmation when you have many branches and checkpoints. Two greedy readouts on the same eight tasks are not independent replications. Report the whole branch distribution and confirm promising checkpoints on fresh tasks.
+
+4. The Astra/Fable comparison is a comparison of parenting systems, not parent model alone.
+
+One side explicitly has a head parent, both sides learn from each other, and missing parent calls allow children to continue. Those differences can affect the result independently of model quality.
+
+That’s completely fine for exploration. Just label it accurately and report actual delivered parenting: completed interventions, missed slots, child tokens, and training exposure.
+
+Similarly, F3/F4 can demonstrate elicitation or within-context adaptation. Without sleep updates, they cannot demonstrate consolidation into weights.
+
+5. Don’t make the parent blind to the experience it is supposed to help interpret.
+
+I agree with avoiding outcome-based selection and “you failed, therefore intervene.” But never letting outcomes influence what the parent says is a much stronger restriction.
+
+If an experiment contradicts the child’s prediction, that discrepancy is material for reflection. The parent can ask what changed without supplying the answer or optimizing for game score.
+
+I’d distinguish a hidden evaluator’s verdict from environmental feedback the child actually experiences. Hide the former if needed; preserve the latter. Otherwise “perception and reflection” become partly disconnected from evidence.
+
+6. Remove the remaining assumption that enough tokens force branching.
+
+Section 2 still says “budgets a linear path cannot fill.” That repeats the premise you moved away from. Replace it with persistence plus discretionary allocation, and measure whether revisitation actually appears.
+
+Two practical fixes also matter: the 06:00 UTC reporting deadline conflicts with the stated ~10:05 UTC document time unless it means the next day; and 20–40 serialized parent calls/hour across four branches may not support the intended frequent parenting. Missing calls must be visible in the interpretation.
+
+My recommendation: run this as an exploratory developmental campaign, with capability anchors, an untouched final evaluation, and more cautious success claims. You don’t need more prescribed branching. You need to distinguish the child becoming more exploratory in its language from the child acquiring durable, self-directed behavior while retaining its competence.
