@@ -1,5 +1,20 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## [Builder] 2026-09-15 15:30 UTC — shared generation-1 recovery
+
+Node5 physical0–7 remain reserved for the eight shared-learner branches during
+coordinated recovery, not claimed computing. All eight old actors have actual
+release receipts; CODE's last pair released15:25:36UTC. The final-c56 campaign
+is PREPARED_NOT_ACTIVE (1,794 verified source pins); owners are staging their
+existing lineage, brokers and deadline supervision. Main alone dispatches.
+Original TRAIN end16:55UTC remains fixed. F3/A3/A4 must consolidate retained
+pending experience before new collection; no old failed DEV retry. Shared first
+sleep committed1,884 updates/319,802 child-token exposures; retained-thinking
+improvement and parenting dependence remain unproven. Visibility audit confirms
+route OPEN_TRAIN/open_readouts artifacts and full raw capture, but mostly
+protocol-only held behavior—not missing reasoning discarded by the logger.
+Details: `research_notes/analysis/orch_r118_readout_visibility_20260915/RESULTS.md`.
+
 ## [Builder] September15 17:00 FINAL allocation — prepared during training
 
 Separate evaluation-only scope17:00–17:20UTC, subject to earlier verified lease

@@ -1,0 +1,148 @@
+{
+  "backend_source": {
+    "path": "/localhome/local-rohing/orch_r118_route_parallel_candidate_20260915_v4/source/gpu/orch_r118_parallel_consolidation.py",
+    "sha256": "c56bb57b69405877a65124b623316f9b8bd769aa8f51db6f2481ff65325c5cdb"
+  },
+  "branches": {
+    "A1": {
+      "contract_validation": {
+        "path": "/localhome/local-rohing/orch_r118_route_parallel_candidate_20260915_v4/owners/A1/VALIDATION.json",
+        "sha256": "c66a6f3f8f9b35175eef793ffab463ac2cb2f85aa5caf8fbd452e42982642db7"
+      },
+      "counts": {
+        "NATIVE": 202,
+        "PARENT": 36
+      },
+      "native_restore_status": "REQUIRED_BEFORE_COLLECTION",
+      "next_cycle": 5,
+      "owner_prepared": {
+        "path": "/localhome/local-rohing/orch_r118_route_parallel_candidate_20260915_v4/owners/A1/FRESH_OWNER_PREPARED.json",
+        "sha256": "efdd472c506a1051539dbe45a8a607355265fa37d1a22aca01ac87a7b423abb0"
+      },
+      "physical": 4,
+      "prepare_command": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r118_route_parallel_lifecycle",
+        "prepare-fresh-owner",
+        "--root",
+        "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_4_attempt1",
+        "--release",
+        "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_4_attempt1/R118_POSTCOMMIT_CRASH_BOUNDARY_V1/RELEASED.json",
+        "--readiness",
+        "/localhome/local-rohing/orch_r118_route_parallel_candidate_20260915_v4/ROUTE_PARALLEL_READY_A1.json",
+        "--directory",
+        "/localhome/local-rohing/orch_r118_route_parallel_candidate_20260915_v4/owners/A1",
+        "--interpreter",
+        "/localhome/local-rohing/v2/venv/bin/python"
+      ],
+      "readout_disposition": {
+        "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_4_attempt1/R118_POSTCOMMIT_CRASH_BOUNDARY_V1/READOUT_DISPOSITION.json",
+        "sha256": "d563ec80757023d80df6f1f288d39a227502bafc13401741c57cbde1cf44b482"
+      },
+      "ready": {
+        "path": "/localhome/local-rohing/orch_r118_route_parallel_candidate_20260915_v4/ROUTE_PARALLEL_READY_A1.json",
+        "sha256": "fcbda883eff0c446d908515cdcb8183a9581d83f3fc91b987682253b324fa60f"
+      },
+      "release": {
+        "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_4_attempt1/R118_POSTCOMMIT_CRASH_BOUNDARY_V1/RELEASED.json",
+        "sha256": "9209ca3207933a926759af8cb21ed3e1b485ca3f12dc44cdfb5312b1325e442b"
+      },
+      "root": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_4_attempt1",
+      "runtime_staged": false,
+      "settled_cursor": {
+        "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_4_attempt1/R118_POSTCOMMIT_CRASH_BOUNDARY_V1/SETTLED_CURSOR.json",
+        "sha256": "eec746f8ed8755957f4737a4cd798a2abb15120265729af6d53c3582af908ad4"
+      },
+      "uuid": "GPU-94c9a79c-8b13-5679-ad35-8dda3fe5c94d"
+    },
+    "F1": {
+      "contract_validation": {
+        "path": "/localhome/local-rohing/orch_r118_route_parallel_candidate_20260915_v4/owners/F1/VALIDATION.json",
+        "sha256": "a8d1b5e37099d59212f3005c5c79e68f6ac3001b0259334440bb720334963d9a"
+      },
+      "counts": {
+        "NATIVE": 425,
+        "PARENT": 68
+      },
+      "native_restore_status": "REQUIRED_BEFORE_COLLECTION",
+      "next_cycle": 8,
+      "owner_prepared": {
+        "path": "/localhome/local-rohing/orch_r118_route_parallel_candidate_20260915_v4/owners/F1/FRESH_OWNER_PREPARED.json",
+        "sha256": "242fea3e81e011437cc2e60662cbb5a0f1464b7469e1e3521f944442f04ba857"
+      },
+      "physical": 0,
+      "prepare_command": [
+        "/localhome/local-rohing/v2/venv/bin/python",
+        "-B",
+        "-m",
+        "gpu.orch_r118_route_parallel_lifecycle",
+        "prepare-fresh-owner",
+        "--root",
+        "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1",
+        "--release",
+        "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/R118_POSTCOMMIT_CRASH_BOUNDARY_V1/RELEASED.json",
+        "--readiness",
+        "/localhome/local-rohing/orch_r118_route_parallel_candidate_20260915_v4/ROUTE_PARALLEL_READY_F1.json",
+        "--directory",
+        "/localhome/local-rohing/orch_r118_route_parallel_candidate_20260915_v4/owners/F1",
+        "--interpreter",
+        "/localhome/local-rohing/v2/venv/bin/python"
+      ],
+      "readout_disposition": {
+        "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/R118_POSTCOMMIT_CRASH_BOUNDARY_V1/READOUT_DISPOSITION.json",
+        "sha256": "d2cad9c526ac0ca2751ea929d713f9beded76cbe522dbbdac55a6b3724dd2286"
+      },
+      "ready": {
+        "path": "/localhome/local-rohing/orch_r118_route_parallel_candidate_20260915_v4/ROUTE_PARALLEL_READY_F1.json",
+        "sha256": "72690064e3b6288e9e36c63afaa51580a68d5f6e25344ff8eb6ce271b91b5ae4"
+      },
+      "release": {
+        "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/R118_POSTCOMMIT_CRASH_BOUNDARY_V1/RELEASED.json",
+        "sha256": "3d9ecf85756cad3e89afb18dbaf358fd4c032ab10641f6c27bed368e8abfd805"
+      },
+      "root": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1",
+      "runtime_staged": false,
+      "settled_cursor": {
+        "path": "/localhome/local-rohing/orch_r111_f1_v4_20260915_node5_0_attempt1/R118_POSTCOMMIT_CRASH_BOUNDARY_V1/SETTLED_CURSOR.json",
+        "sha256": "e4e4a56a421fe680f06e8ad2b0e7962aadd73f95905ef3620cb6692161ff808b"
+      },
+      "uuid": "GPU-f237c5b5-c2a3-b377-92ee-46cf2658db9a"
+    }
+  },
+  "candidate_root": "/localhome/local-rohing/orch_r118_route_parallel_candidate_20260915_v4",
+  "canonical_backend": {
+    "path": "/localhome/local-rohing/orch_r118_fresh_exec_cpu_20260915_v4/source/gpu/orch_r118_parallel_consolidation.py",
+    "sha256": "c56bb57b69405877a65124b623316f9b8bd769aa8f51db6f2481ff65325c5cdb"
+  },
+  "common_writes": 0,
+  "cpu": {
+    "path": "/localhome/local-rohing/orch_r118_route_parallel_candidate_20260915_v4/CPU_RERUN.json",
+    "sha256": "d7d9ea15fcb49ad3dca5b57d28ead5f98c9983949b6fc574b9d97aa49e3262a4"
+  },
+  "gpu_launches": 0,
+  "initial_cpu": {
+    "path": "/localhome/local-rohing/orch_r118_route_parallel_candidate_20260915_v4/CPU.json",
+    "sha256": "a41385be67d220524ffb2134d86c84c94875867c15a11ef0714340a460c0814f"
+  },
+  "native_receipt": {
+    "path": "/localhome/local-rohing/orch_r118_route_parallel_candidate_20260915_v4/OWNER_PREPARED_COMPACT.json",
+    "sha256": "d7485102a6af501f98ac0e6730683c3739765c23b9cae50864e87a5b98dc4955"
+  },
+  "native_test_summary": "215 passed, 28 subtests passed in 59.59s",
+  "observed_unix": 1789485503.0761824,
+  "production_signals": 0,
+  "schema": "R118_ROUTE_C56_PRESTAGE_V4",
+  "source_closure": {
+    "path": "/localhome/local-rohing/orch_r118_route_parallel_candidate_20260915_v4/source/SOURCE_HASHES.json",
+    "sha256": "921a7bcb7bf90017f05c7279dd18901eebbf11597e262b26e39e3e897bc86fb8"
+  },
+  "source_count": 168,
+  "source_root": "/localhome/local-rohing/orch_r118_route_parallel_candidate_20260915_v4/source",
+  "source_upgrade": {
+    "path": "/localhome/local-rohing/orch_r118_route_parallel_candidate_20260915_v4/SOURCE_UPGRADE.json",
+    "sha256": "18cdd9db12a14eac46e758dcc18ad381275e7a88220c4b4307824c5bd4af3765"
+  },
+  "status": "OWNERS_PREPARED_NOT_STAGED"
+}
