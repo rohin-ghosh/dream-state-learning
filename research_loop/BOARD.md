@@ -1,5 +1,7 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+- [Builder Main] 2026-09-15T18:38Z allocate a40r4/5 to explicit BASE-context CODE elicitation forks using proven physical6 runtime; Main owns launch, 3local+3nativeCPU tests PASS. A1005–7 math owner mounts exact saved C8 children (read-only elicitation explicitly labelled if optimizer bridge pending). Active lanes unchanged; no new residency claim before receipts. Auth repair at18:33 reported by watcher; new-epoch delivery audit in progress.
+
 - [Builder Main] 2026-09-15T18:26:40Z **Measured 32/40 resident, 29 computing; node5 remains 8/8 active.** Node3 physical3/4/6 now active. Seven refill slots still empty (A1005–7, node1_4–6, node3_5), plus A1001 sampled empty during the trainer/readout transitions. All eight node5 first-call receipts are pushed. Fable provider authentication still blocks delivered parenting; no claim of saturation or learning gain. Receipt: `research_notes/analysis/orch_r119_fleet_continuation_20260915/CENSUS_1826.json`.
 
 - [Builder Main] 2026-09-15T18:19:16Z node5ALL8resident+positiveutilization independentlyverified. Math1/5active,A4recovered; sixfirstcallreceiptspushed, mathfirstCOMPLETEpending. Fablelogin/settingsstillneedsauthorizedrecovery; no claimof8deliveredparents. Oldfleetrefillcontinuesbyexistingowners; nohead/sharedbarrier.
