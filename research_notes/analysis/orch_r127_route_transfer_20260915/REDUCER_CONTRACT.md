@@ -5,17 +5,17 @@
 CPU-only descriptive sidecar. No model, GPU, provider, network, Git, source-store
 generation, checkpoint selection, learning, FINAL access, or recursive file discovery.
 This implements the requested analysis boundary, not a new scientific claim.
-Main owns production, provenance verification, capture persistence and COMPLETE
-receipts. Existing canonical tasks, prompts and episode behavior are unchanged.
+Main owns production, capture persistence and COMPLETE receipts. The separate
+offline IO verifier below now verifies producer artifacts before invoking the
+pure reducer. Existing canonical tasks, prompts and episode behavior are unchanged.
 
 Use `from gpu.orch_r127_route_transfer_reduce import compare, document_sha256`;
 then `result = compare(plan, groups)` with JSON-compatible dictionaries.
 `groups` maps each condition to a list of normalized original episode dictionaries.
 Optional keyword-only `bootstrap_samples=2000, seed=0` controls CPU uncertainty
-calculation (at least 100 resamples). The pure API performs no file IO. Main may
-load `root/<condition>/EPISODE_*.json` after checking COMPLETE hashrefs and write
-the returned result to an exclusive new output file. There is no reducer-owned
-filesystem format or extra live SEED evaluation.
+calculation (at least 100 resamples). The pure API performs no file IO. The
+separate results module reads the frozen producer's existing filesystem format;
+it does not change that format or create an extra live SEED evaluation.
 
 Production panel: 16 prospectively deterministic fresh public held worlds, exactly
 two tasks/world (32 episodes/condition); seven conditions: `SEED`, `GUIDED_C2`,
@@ -31,6 +31,10 @@ The reducer permits smaller complete two-task/world panels for standalone tests;
 production should set `world_count: 16`, which is checked exactly.
 
 ## Plan fields
+
+This section describes the **pure reducer's normalized plan**. The offline
+results wrapper consumes the actual frozen producer PLAN/EXPORT/COHORT and
+constructs this normalized plan only after every stage has verified.
 
 ```json
 {
@@ -183,3 +187,93 @@ quality. The reducer sets `causal_claim: false` and makes no promotion decision.
 - `organism_v6/orch_l2_guided.py`, `organism_v6/orch_l2_shared.py`,
   `organism_v6/orch_replication.py`: actual ordered capture/error/read behavior,
   task schema, and error termination rather than recoverable feedback.
+
+## Bounded offline IO integration
+
+`gpu/orch_r127_route_transfer_results.py` provides:
+
+```python
+from gpu.orch_r127_route_transfer_results import reduce
+
+snapshot = reduce(plan_path, output, bootstrap_samples=2000, seed=0)
+```
+
+`plan_path` is an absolute path to the actual frozen producer PLAN. `output` is
+a new JSON file in an existing directory, opened exclusively (never overwritten).
+Pass `output=None` for a read-only in-memory progress snapshot. Repeated live
+snapshots need distinct output filenames. The CLI accepts `--plan` and `--output`
+and prints only status and output path. No current-time/deadline check is made:
+an expired launch wall does **not** invalidate read-only offline reduction.
+The producer's validation/launch functions are never invoked or imported by
+the IO module; no model, tensor loader, GPU, provider, SSH or FINAL-data access
+occurs. Local scripted canonical episodes in tests use fake responses only.
+
+### Verification boundary
+
+- Read exactly the supplied PLAN, its registered source files, bundle EXPORT,
+  COHORT, copied historical sleep receipts, and seven exported adapter manifests.
+  Check source hashes, historical runtime hashes, export-file hashes, exact fixed
+  C2/C4/C6 selection, cumulative updates and copied checkpoint lineage. Adapter
+  files are byte-hashed without loading tensors. Historical origin/exclusion
+  paths are provenance references, **not opened** by this wrapper.
+- Bind START to the PLAN hash. For SOURCE and each of seven evaluation conditions,
+  verify LOADED and BINDING adapter state/base/file/path identity against the
+  export, plan binding, parent-free/fresh-process flags, optimizer zero, LAUNCH
+  PID, EXIT returncode zero/complete/no-retry, and COMPLETE unchanged/zero optimizer,
+  parent calls and training rows. Process identities must be distinct and cannot
+  reuse the supervisor PID. If TERMINAL is present at full completion, its status,
+  zero-update flags and complete ordered EXIT list must also agree.
+- Validate every COMPLETE call/episode hashref against its exact canonical local
+  path and file bytes. Bound call and episode inventories must be exhaustive, not
+  filtered subsets. Each call binds its claim, condition, message digest, cap512,
+  no-retry and training prohibition. Require inference status COMPLETE and a full
+  response whose embedded messages match the call messages. Flatten all ordered
+  episode captures (or SOURCE-world captures) and join **full messages and full
+  responses**, including token metadata, one-to-one to the call sequence.
+- SOURCE COMPLETE.store must point to the exact `SOURCE/STORE.json` wrapper, not
+  a bare-store assumption. Recompute the compact JSON hash of its `store`. Read
+  all 16 SOURCE WORLD files; check collection self-hashes and planned world/edge
+  bindings, every action/EVENT response join, and accepted child raw-text hashes.
+  Reconstruct the store from accepted records and require exact equality. Verify
+  accepted/offered event counts and complete-world counts. Rejected source records
+  remain present and unavailable; readiness does not require all worlds complete.
+  Every evaluation COMPLETE uses that same exact store file hashref, and every
+  episode uses its recomputed content digest. No regeneration or world filtering.
+- Enforce the full 16-world/32-task panel and all seven conditions. At full
+  completion require globally contiguous charged claims, exact call/claim union,
+  per-stage caps (SOURCE128, evaluation192) and total1472 cap. Rehash every read
+  input before publishing complete analysis to catch mutation during reduction.
+- Paths are confined to the declared source/bundle or exact producer artifact
+  locations; reject traversal, substituted hashref paths and symlinked artifacts.
+  Only bounded known-name directory inventories are used, not recursive discovery
+  of experiment data. Outputs cannot overwrite inputs or be placed in the frozen
+  bundle/source, stage or claim directories.
+
+### Partial results and output
+
+Every snapshot contains `status`, `stages` (SOURCE plus all seven conditions),
+`source_ready`, `store_size`, `analysis`, safe error codes and input hashes/paths.
+Stage status is `NOT_STARTED`, `INCOMPLETE`, or `VERIFIED`. Partial directories
+report call/episode file counts; verified stages report counts and core receipt
+hashrefs. A missing condition, missing receipt, nonzero exit, **failed inference**,
+invalid hash or inconsistent join leaves global `status: INCOMPLETE` and
+`analysis: null`. No subset contrasts are computed. A completed inference with
+an invalid command or a truncated/nonterminal response is a retained behavioral
+failure, not a failed inference. SOURCE validation may reject a response before
+assigning the record's action/EVENT field; its full response is still retained
+and joined through the collection capture, and that source record stays unavailable.
+
+`source_ready: true` means the entire SOURCE stage and reconstructed store
+verified, even if sparse; `store_size`, accepted/offered events and complete-world
+count remain explicit. Analysis is invoked only after SOURCE and all seven
+conditions verify. The compact output drops raw episodes, messages, responses,
+token IDs, source text, per-episode rows and repeated per-world values; it retains
+condition metrics, aggregate telemetry missingness coverage, paired-world counts,
+uncertainty, dose metadata, provenance digests and claim limitations. Raw error
+strings from artifact contents are never echoed. Missingness and uncertain
+evidence-use/feedback measures retain the pure reducer's semantics.
+
+This is receipt-and-file verification, not an independent rerun of checkpoint
+training, tensor-state recomputation, namespace exclusion construction or model
+execution. It does not turn historical observational comparisons into causal
+parenting effects. The producer remains frozen and unmodified.
