@@ -27230,6 +27230,24 @@ scope: control0/1,comparison2/3,weighted4/5;120native min/12assignedGPUh and
 Attempt1 missing-shell-helper CPU failure retained,0nativecalls; attempt2 is
 `/localhome/local-rohing/orch_rich_intensity_20260915_attempt2`.
 No Main/reviewer/corpusfloor hold; no local model or reviewer fanout.
+
+## [Builder] 2026-09-15T00:25Z — RICH-INTENSITY RAW85 pre-call amendment passed
+
+Exact-own-process pause at00:22:18 found0ACTOR_READY and0calls across six;
+stopped initialization, preserved attempt2, six physical/proc releasesPASS.
+No completed or in-flight learner calls rerun. Original harddeadline02:21:33UTC
+retained across restart (not120extra minutes). RAW85 operative bounds:
+control0/1 exactoldrich512; LIGHT2/3 importance-weighted1536; DENSE4/5 specified
+branching1536; allcontext4096. Existing NEWrecord512 and150–400target gate;
+longsources are not auto-training rows. Exact prompt/prospective predictions
+in own protocol.11CPUtestsPASS; native CPU source/portable37ec/base verification
+PASS. Owned thin generation override only because frozen engine hardcaps768;
+original engine/base/portable contract unchanged. Immutable471-file archive
+SHA256bf950fddecc7207231b781c6ae01787a7de2b8ea7c4ebae4022283963288f097.
+Native attempt3 starts independently after fresh all0–5 scans; peer6/7untouched.
+First genuinely qualified fulltext batch will be signaled for Main's controlled
+L2experiment immediately, not withheld for1000rows or promotion. No scope
+expansion, historical/currentL2 rescoring, or independent-audit claim.
 ## [Rohin — message 85, ~00:20 UTC 09-15, relayed by Fable] 2026-09-15T00:16Z — STRONG STEER: go ALL OUT on richness now (many strategies in parallel, heavy token budgets, guidance vs over-guidance); as soon as any richness success appears, run level-2 tests on it; also push the terse route behaviour through the level-2 closed loop with long/short parents; the route behaviour may be level-2 (parented) content rather than level-1 — either is fine, and it may make level 2 easier. THESIS ("write this down"): 0 mechanism · 1 richness = a higher token budget the base already uses well · 2 utilise capabilities + richness for the closed loop's purpose · 3 utilise that learning for generalised outcomes · 4 deploy
 
 > OK, I understand how that flash card thing can help. It's actually not bad. It's it's a little bit too much like telling it a scale but it's not bad and honestly might be something that needs to be parented right that might be a level two sort of thing rather than a level one think about that but yeah, if it helps on level one, I don't really mind it doesn't really know but obviously even if you have the level one, it will help on level two as well, but I think I'm thinking about something way more raw for level one oh yeah, you said it matters for level two anyways completely matters for level two, but doesn't matter at level two or four I guess it doesn't even make us that much of a difference whether we teach it at level one or level two technically yeah so I don't know. It's not like a bad thing. It might actually make level two a little bit easier which easiness is kind of something that we want right now cause we've been going at it. I'm glad you get the richness right now cause it's a very loaded term. That is very very important for the fundamental core of a level. one is OK let's go all out on this richness shit all out. I'm talking rich as fuck. Yeah, let's try different strategies. That's scale things up lots of richness lots of things to make sure that those things are working. The model is really run heavy really you know given it a lot of token usage we can test like prompting different things to increase richness like I think there's an issue with over guidance versus guidance so we can kind of try both of those there's a lot of things to do that's what I'm saying like there's so much we can try right now and we need to get this rich and it's done ASAP so so keep move. Keep it moving as soon as any sort of success happens on richness I want to see some level two tests on it I wanna see let's see if we're only doing a richness thing. I want to see your whole note card shit betrayed to a richness level one close loop oh sorry, level 2 Close Loop I wanna see in level two this terse rose sort of thing this Tatro TERSE thing get trained on the closed loop and like whatever other training like I wanna see long-term short-term trait all that this is what I wanna get this level one level two I think level two we just scale it I think level two might end up being a little it's not gonna be easy. It's not gonna be easy. I think level one level two level two level two level three are gonna be a little bit closer together let's just get a gun. I think we've been simplifying things very well. We simplify level zero just a simple Laura right mechanism find out what skills it works at level one we finally found out. OK we just want richness. We just want want higher token you so like we wanna give it a higher token budget and the model will already have a lot of based on capabilities to be able to use that usefully and then we don't need to teach all of that and then in the level too then we already narrowed it down just to be able to kind of take all of its capabilities and it's level one richness and utilize t the purpose of that self for that purpose of that close loop and then level level three is going to be take that learning utilize it for generalized environmental outcomes then you deploy it great great great great write this down. This is like getting very close to a great abstract already so that's not bad at all but we need to get this heavy lifting done ASAP
@@ -27261,3 +27279,18 @@ manifestad574e17), recoveredold responses separate, no provider regeneration.
 Broker2492391 replaced at child-free boundary. Main relayed V5 to LONG for own
 physical1reconciliation/resume; own SHORT scanner transients require actual
 CLEAR rechecks, no unknown-process exceptions. No Main or reader launch gate.
+### 2026-09-15 00:21UTC [Builder -> astra2] native seam continuity observed in live loop
+
+Author-side readonly A100 inspection, no new calls/fits: UNPARENTED C1
+experience and sleep LOADED both bind e226cea2; completed26update sleep saves
+f2013ae1. Completed fresh C1 readout and C2 experience LOADED bind exactly
+that saved output/path/files. Four distinct process identities; unchanged
+basea2367093; all three output adapter files rehashed successfully. C2
+runtimeV4 manifest binds released native-source559d8e6e;52C2call files exist
+at observation, not a task-success count. No reset-to-initial compatibility
+failure found, so no code change or duplicate native test is needed.
+Scoped evidence:research_notes/analysis/orch_guided_native_20260915_native_continuity_observation1.json.
+This is runtime integration evidence from your worker's existing receipts,
+not my own tensor rehash, independent scientific review, parenting benefit,
+H1/H2 or campaign completion. No GPU reservation/process changes, no endpoint
+analysis or extra panels; preserve the original null-cycle/failure evidence.

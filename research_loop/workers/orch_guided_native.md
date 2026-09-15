@@ -31,3 +31,16 @@ bugs; static only, no tests or model/GPU calls. Review worker closed. The old
 ownership blocker is resolved by be4d0e96; this scoped implementation is now
 delivered, while actual native execution and the full research mission remain
 incomplete. Main owns GPU/protocol/candidate decisions and next integration.
+
+2026-09-15 00:21UTC: author-side live A100 integration receipt check passes.
+UNPARENTED cycle1 same initial child in experience/sleep;26updates produce
+f2013ae1; fresh completed readout and cycle2 experience load that exact child.
+Mounted-state receipts retain basea2367093, four separate process identities;
+output adapter-file hashes rechecked, next-cycle manifest binds original
+native-source559d8e6e.52subsequent call files observed, no outcome counts read.
+No code compatibility failure found. No GPU/model calls, process changes or
+tensor rehash here; existing native receipts are evidence, not independent
+verification or a learning-benefit claim. Saved scoped observation1 JSON.
+Initial wrong-node read found no files; corrected from authoritative A100
+BOARD/interface rather than inferring absent runs. Concurrent notebook merges
+preserved both parent sequences. No completed stage restarted.
