@@ -1188,3 +1188,65 @@ Section 2 still says “budgets a linear path cannot fill.” That repeats the p
 Two practical fixes also matter: the 06:00 UTC reporting deadline conflicts with the stated ~10:05 UTC document time unless it means the next day; and 20–40 serialized parent calls/hour across four branches may not support the intended frequent parenting. Missing calls must be visible in the interpretation.
 
 My recommendation: run this as an exploratory developmental campaign, with capability anchors, an untouched final evaluation, and more cautious success claims. You don’t need more prescribed branching. You need to distinguish the child becoming more exploratory in its language from the child acquiring durable, self-directed behavior while retaining its competence.
+
+## 4. Forwarded with message 114 (~10:25 UTC): the assistant's review of PARENTING_BATTLE_PLAN_v3 and its reply on perpetual persistence (verbatim; Rohin's interjection marked)
+
+This is substantially better. I’d consider v3 ready for an exploratory run after a small consistency pass—not another architectural redesign. It now includes capability anchors during parenting, separate DEV/FINAL evaluations, training-exposure accounting, environmental feedback, and appropriately narrower claims.
+
+The remaining issue is that some corrections were added to the explanations without updating the actual operating prompts.
+
+The parent prompt still contradicts the environmental-feedback correction.
+§3 permits reflecting on discrepancies, but §6 still says outcomes must never affect “what you say.” Replace that with: Use feedback the child received as material for reflection; do not supply solutions or use hidden evaluator scores. Otherwise the parent gets two incompatible instructions.
+
+The head parent’s permissions contradict its assignment.
+It must lengthen or shorten reflection, but may edit only [FOCUS] and [STYLE]. Give it an explicit reflection-length field. Similarly, replace “readout never conditions … how the life continues” with something precise: DEV may inform parenting; evaluations never gate continuation; FINAL remains inaccessible.
+
+Persistence is still measured mainly as talking after answering.
+Adding a termination requirement improves it, but a child that investigates carefully and then gives one final answer could still fail the metric. Keep that statistic, but call it post-answer exploration. Assess persistence through continued engagement after an obstacle, including changing approach and eventually stopping. That better matches what you actually want.
+
+“Stop any fixed structure” goes further than your intended freedom.
+You wanted to avoid imposing a branching template. The prompt now instructs parents to suppress structures the child develops itself. I’d change it to: Intervene when structure becomes repetitive or stops serving the inquiry; allow useful self-generated organization. Otherwise you risk discouraging precisely the self-organization you’re trying to elicit.
+
+One important interpretation limit remains: a judge seeing a changed continuation establishes an observable behavioral change, not necessarily that the stated realization caused it. For the strongest examples, include the actual action/check and resulting observation, and manually inspect a small sample. That’s enough for this exploratory stage; you don’t need a whole new evaluation project tonight.
+
+Also, eight FINAL tasks can provide a held-out follow-up, but “CONFIRMED” is too strong a label for the broader thesis. Report “reproduced on FINAL,” with the actual counts and capability changes. That makes a promising result useful without overselling it.
+
+Two small operational cleanups: delete the superseded 30-minute auto-launch paragraph, and check the intended reporting time—September 16 at 06:00 UTC is about 19 hours 40 minutes after the stated document time, not eight hours later.
+
+My assessment: the plan now supports a worthwhile first test of whether parent-elicited behavior survives sleep and context removal. The next valuable step is seeing trajectories and checkpoint results. I wouldn’t keep expanding the plan before obtaining that evidence.
+
+> [Rohin] I have a thought that, like, where you know how level two has level three is environmental? Level one might end up being worse because you're spending less more time trying to think about things than trying to solve. But I agree that it should not be never, and we should give parents tons of permission. Yeah, and I agree that persistence should actually be sort of self-instilled, where it's like it's trying on its own. And, like, what happens when the model has no more outcomes? Because it'll keep happening to have tokens there. So, like, perpetual persistence.
+
+Yes—level one could get worse at immediate task completion while becoming more exploratory, because it spends effort noticing, questioning, and investigating things that don’t immediately solve the game. That’s a plausible tradeoff to test. You’d want to distinguish it from losing the ability to solve: does the child still perform when explicitly asked to focus?
+
+And I agree about parental permission. Give parents a broad objective and freedom to respond to the child. The particular interventions should depend on what’s happening, rather than a fixed catalogue they must enact.
+
+“Perpetual persistence” introduces a useful distinction: finishing a task doesn’t have to end the agent’s engagement.
+
+When an immediate objective is complete, the child could:
+
+Explore an unresolved question from the experience.
+
+Revisit an earlier idea with the new information.
+
+Seek a new observation or interaction.
+
+Choose a new goal.
+
+Decide there’s nothing worthwhile to pursue yet and wait.
+
+The interesting behavior is choosing what deserves engagement after the externally supplied objective runs out. That’s where your persistence starts connecting to curiosity and goal setting.
+
+But I’d separate two meanings of “no more outcomes”:
+
+No more assigned goals: there may still be an environment to investigate and things to discover. The child can create its own questions and get feedback.
+
+No new observations or feedback available: it can still reflect, derive implications, or reorganize what it knows, but continued text alone doesn’t establish that it is learning anything new. Sometimes seeking input—or waiting—is the sensible continuation.
+
+So I’d make persistence mean:
+
+Maintain engagement across completed goals, setbacks, and pauses; choose whether to investigate, act, reflect, or wait, and resume when there is reason to.
+
+That gives you something more durable than “never stop generating.” A pause can belong to a persistent agent. Otherwise, forcing perpetual output removes its discretion over whether more thinking is useful—the metacognitive control you wanted in the first place.
+
+For this run, a small observation would be particularly revealing: after a task ends, offer an open opportunity to continue without prescribing another goal. See whether the child initiates a question, chooses an investigation, or deliberately stops. Then check whether that initiative appears without parental prompting after sleep. The harness supplies the continuing opportunity to act. Parenting and training may help the child learn what to do with that opportunity. Self-instilled persistence would be the child increasingly taking initiative within it, rather than merely filling the tokens you require.
