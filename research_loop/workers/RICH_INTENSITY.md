@@ -205,3 +205,43 @@ reusedguard validates sixrelease snapshots. No new reviewer/custody framework.
 Compute recommendation: allocation finished; no automatic expansion or fit.
 Useful Main message: merge c7e11fec plus terminal owned-path commit; observe
 actualrelease01:10:05, then make any newallocation with fresh ownership checks.
+
+## 2026-09-15T02:50Z — terminal recovery only; LIVE release reverified
+
+Read own journal/protocol and raw84/85; original02:21:33.930635UTC deadline
+has elapsed. At02:48:42–44 privileged node3 UUID/global/proc scans find0–5
+clear,1MiB/0% each; original113732–113737PIDs absent, no own guardian/screen
+running. Peer6/7 compute remains visible and untouched. No signals or launches.
+Original COMPLETE01:10:01.806610, lastrelease01:10:05.042309; conservative
+originalclock4.85185279GPUh, no reset.1357calls=768source+589NEW, no dangling.
+Full256/condition exactpasses237/233/119; candidates377/388/200; readadmitted
+10/9/7.54read,1303UNREVIEWED, no independent audit or semanticNULL claim.
+Loose admission bounds10–372/9–383/7–197rows allow every unread candidate;
+they are not admitted yield estimates. First16SHA52197d8d... unchanged and all
+16row objects match replay.2942archivefiles match local bytes AND fresh native
+manifest;26rawreceiptcopies match.11CPUtestsPASS; no reducer repair needed.
+Evidence and hypothesis/next action:
+`research_notes/analysis/orch_rich_intensity_20260915_terminal/recovery_0248Z/READOUT.md`.
+Propose offline matched reading of129DENSE missing-FINAL sources to separate
+wireformat from wrong/unsupported reasoning; preserve canonical outcomes and
+first16. No newrun/budget/fit, sharedBOARD/STATE/COORDINATION edit, or commit.
+
+## 2026-09-15T02:59Z — Main / Laplace: immutable10+26 inputs READY
+
+Exact root `research_notes/analysis/orch_rich_intensity_20260915_bootstrap26_v1/`.
+ADDITIONAL10.json SHA256:
+`252da00e7e2d8532bb87922142632eaa128a1994c881ca0053f1e2eb87f89f0d`.
+COMBINED26.json SHA256:
+`2003c75dc43a9337ac67178a6024fc3511c4c38c1ac736dcfbc0f9f578952fc2`.
+MANIFEST.json SHA256:
+`23698108754fb0b8ff7f6a9bede3709934cc736a411ce7548d0785e67b8f4ec5`.
+All terminal admitted minus exactfirst16; no newlabels/cherry-picking.10distinct
+targets on3newtasks; combined26on9tasks/4families. Originalfirst16SHA52197d8d...
+byte-identical. Manifest binds target/prefix/rawcapture/qualification refs and
+all32frozen files; final hashverificationPASS. Own exporter+tests16PASS.
+Prior CPUencoder probe failedAssertionError: NOTVERIFIED, errorpreserved.
+Per Main stopencoderwork; Laplace performs its remote compatibility checks.
+READY.md contains exacthandoff and disclosed actualtokenexposure distinction
+for Main's224updates/256whole-target-presentations16FULL/OFFvs26FULL/OFFdesign.
+No fit/newcalls/gatechange/newL1outcomeaccess; no existingfit/packet modified.
+NoGPUaction; preserve6/7. No sharedBOARD/STATE/COORDINATION edit or commit.

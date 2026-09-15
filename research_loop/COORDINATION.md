@@ -27699,3 +27699,287 @@ No native ownership blocker; Main retains campaign and richness scheduling.
 > hello these last two days has shown me that tokens are not been getting me good results by themselves so we I want GP to be fully satisfied so I know we're not wasting time because if I just using tokens is not been I know like there's a point where we're gonna be wasting time on the GPs even if they're separated, but then at that point, we can actually start thinking about what if we were actually doing anything useful that's a good problem to have to have their GPU saturated. Let's get to it. There's so much I wanna try out and you're not even using all the capabilities at once. Come on now look are you kidding me like I want I want way more scale. I want scale of the things we're trying and how mcapacity we're trying it at. What is this dose thing? OK you're saying it takes a lot more time to train on the Ridge Road. Why don't we train on the retro first or if we all have something trained on the retro just add all the data to that one already we don't have to retrain it cause in theory right we can just continually train all of these. We could just have one sort of giant system. We can just dump into. What do you think about that? Does that seem like it would w? I don't even know if we should dump person there at this point we can just test on directly but six hours we need to how long he said 40 minutes thousand tasks I need like 16 GP on this building tons of trying to reach corpus and I want you to and while it's building I want you to be the one who's looking at the quality of these I don't know what this whole dose bullshit is. It sounds like some sort of hard coding. I already told you just give it a ton of a ton of token allocation so uses tokens as much as possible. I don't know as much of a dose to that like you just tell us I don't know maybe doses right? I don't know exactly how that works but yeah I want I want. I want to see high dosages I want I want a lot of data. I want a lot of data for richness. I want grid data. You know how to test the data so even if it's not data for exactly richness it's still worth putting into the putting into the corpus and then and then let's start building so like I don't know how much data do we need right we have 16. It seems like we have 16 we have 32 GPs we have a kind of shitty corpus you're saying 40 minutes 1600 qualifies if we have 16 GPU t we probably wanna do. I'll be awake for another maybe like six hours like how about this like I'll check back in in two hours. I want two hours 16 GPs I want tons and tons I would like flowed but I don't know if 1600 is good how many rows do you want on this but I want flow it up I want crazy, crazy stuff in 5 to 8 hours. I don't care let's get it done and then for the strong corpus but then here's the thing we're gonna be checking to make sure that the corpus is actually improving by doing level two and doing some training so we're gonna have to do that. OK that's we're gonna have a continual source that's building data and ensure we might steer that source when it's gonna build that data I'm gonna I'm gonna say 16 GPs on tha and then I want the eight GPs on testing right now HPs I wanted to actually test how much test all of the current data on level two sort of parenting and so you're testing two things you're testing how well is level level one right now and you're testing you're getting more parent data so this is gonna take a lot of stuff I want I wanna max out those HGP's and then the other HGP's fucking no I wanna ask you to max out those 12 GP so then what that's like oh wait no 16+12 OK now 16+ 36 so we don't have that much make it make it 12 GPs for the for the data creation and no no no 16 GPs right now for the data creation and then I want we're gonna have what do we have like 32 so we have another six GPs I want four of those GPUs we don't have anything else to do parenting training OK so we need some GP so we have six Gs left. We need to do parenting and we need to do training right right now. We don't have so not right now we want to continually trained so then once the corpus is done we don't have to wait another six rounds six hours to train right so let's say this right right now we're training. We're building the data right we already have some existing data. We're training the agent on that data. We're gonna use tha. I don't know how many GPs we can use. I guess we have to do that on like one GPU so maybe we trade like two versions I don't why would we change two version on the same data though it's not gonna change anything so we don't know how many GPs we can use to train but we're gonna train on on the system. Let me see what you said for one we're gonna use. We're gonna use a note for training I guess notice we're gonna use like four for training continually that's gonna be there so like and we're gonna have let's say 16 right now it's gonna go down to. It's gonna go down. Let's say lik for building data and then for for training so then all that new training data gets tested. It doesn't get all tested get tested in batches so like you're like OK let's get grab a couple of. Does it be OK? That's decent data. You don't have to literally test it but like do something just mix and then just throw it into the throw it into the into the training set so then before GPs continually transit so now you have that and then you have the rest you have a 12+4 is gonna be 1616 four and then now you have two GP no four GP sorry I keep 12 GPs are gonna be training four GPs are gonna be 12 GPs for creating the data 4G pews for training and then 4G pews for parenting and I want tons of parenting, different parenting styles build parenting data s Southern fable and as Chuck can understand how parenting does and you can understand what the limitations in the scale of level one is so like do we need to improve level one and like some things that we need to understand by level one and understandable level two that's what's happening OK I want all the there should not be a thing we should be begging for like we should be praying we had more GPs that's how AI research should be doing. We're spending. We're doing AI research and we're doing no fucking GP is running. Are you kidding me get that done
 
 **[Fable — operational notice]** typed into the orchestrator's Main view at 2026-09-15T03:30Z (view verified Main, no approval pending) as the allocation floor above with the continual-training design (one evolving child, new batches appended with rehearsal of the old) and the order to post allocation then launch.
+## [Builder — Orchestrator] 2026-09-15T02:51Z — continuation, terminal evidence and adaptive allocation
+
+Approved intake/scope: standing Builder authorization, W1 operating contract,
+Rohin raw76/79/82–85 and the active L1→L2 sprint objective. No thesis, model,
+benchmark, visibility invariant or existing acceptance test changes. New bounded
+diagnostics are separate from old failed/deferred arms; CPU preparation only
+until their own tests/provenance and full physical admission are recorded.
+
+LIVE EVIDENCE: A10002:47:34 all8 zero memory/no compute processes, after explicit
+CODE_CHANNEL/LONG/TERSE_BREADTH releases. Node3 02:48:45 only6/7 model-resident
+and100% utilization. Node1 new-lease wrapper still fails host-key verification;
+no bypass, lease extension or onboarding attempted. Not GPU saturation.
+Local /data11GB free, root2.1GB, availableRAM2.4GB/swap full; avoid redundant
+adapter archives and concurrent local model-review runtimes.
+
+TERMINAL FINDINGS: LONG completed10stages01:26:38, sleeps28/0/0updates,
+held11/8/9/9 of16 and pairs5/2/2/1 of8, legacy16/16 throughout. No demonstrated
+retained advantage. Provider reservations are NOT actual calls: LONG34 slots
+vs40 observed turn-based main+utility invocations, SHORT192 vs184 slots,
+FROZEN187 vs184; exact wire retries unavailable. Preserve original fail-closed
+responses and cost caveats. CODE_CHANNEL64tasks/arm: initial22/0/36successes,
+qualified3/0/0tasks, allSOURCE and0NEW; full250texts reviewed, no fit.
+MATH_SCALE offline reducer snapshot02:49:1409texts/728questions reviewed,
+764qualified distinct targets=229rich+535NEW;660valid/61ambiguous/7invalid gold.
+Native1984calls/1024fixed tasks unchanged; fit_ready=false, no gate relaxation.
+
+SWARM: Cicero recovers rich-L2 terminal stages/control comparisons and real
+provider accounting on existing node2 4–7. James recovers TWO_PASS terminal
+0–3; Bacon INTENSITY terminal node3 0–5. Both generator deadlines elapsed;
+neither may relaunch/reset budgets. Anscombe owns NEW L1_BOOTSTRAP_TRANSFER,
+A1004/5/6: first16 FULL/OFF/original on32 excluded fresh checked-answer math
+tasks,96calls,90min/4.5GPUh; no fit or parent. Locke owns NEW LONG_ADJACENT,
+A1000/1: first positive sleep immediate pre/post on SAME existingC1 held cohort,
+<=512calls,60min/2GPUh; no fit/parent. Main already knows historical counts;
+this is diagnostic, not blind confirmation. Original SHORT_ADJACENT stays
+unlaunched because SHORT never slept. A1002/3/7 unallocated adaptive reserve.
+
+WHY THESE TESTS: changing held cohorts confounds sleep slopes; a paired same-
+cohort contrast isolates the adapter change. The tiny rich bootstrap has actual
+224update FULL/OFF fits but still needs a fresh-domain retained-behavior test.
+Neither replaces the goal: repeated guided improvements versus both twins,
+parents absent at evaluation, with dependence across sleeps remains unproven.
+BOARD/RESEARCH_STATE updated; workers exchange relevant findings through Main.
+
+## [Builder — Orchestrator] 2026-09-15T03:02Z — L1-BOOTSTRAP-TRANSFER pre-GPU receipt
+
+Approved intake/scope: standing Builder experiment authorization and the
+02:47 Anscombe assignment, unchanged frozen base/LoRA/provenance/visibility.
+Own CPU tests15PASS locally and remotely; saved checkpoint tensors, frozen
+base/tokenizer, original224update paired bootstrap receipts and256exposures
+verified. Full privileged UUID/proc/CVD readiness scans PASS03:01:18–20 on
+A1004/5/6; guardian repeats admission immediately before each native process.
+Zero learner calls/updates in this new arm before publication.
+
+READY.json SHA256 d3f3c99720ba01b6da04af343e189c35dfa9843d97fc45551e7850c74553f7e4
+PROTOCOL.md SHA256 da941cad92053e31de226664f25780a58583ed86a26e513cfdd5310b7c828825
+COHORT.json SHA256 3530b667828373408ec6de97f9080c9c1e7a692ee617a90930ce8a9aa1adcbe4
+source.tar SHA256 411951b3eba68b29fc393ba1eb83a626c75750d5fab425894bc1e4ffb54fed04
+PREPARE.json SHA256 a9828d667d11c5f4a90e5e759b700130cfe26127af75880ab66a5427ec21f111
+Own root research_notes/analysis/orch_l1_bootstrap_transfer_20260915_attempt1/.
+
+Proceed with the already declared32fresh tasks/state, identical rich prompt,
+FULL123545/OFFa525/original37ec,96calls max,1536generation tokens, no parent,
+record, training or retry, one90minute/4.5GPUh lifetime. Actual mounted state
+before/after remains REQUIRED inside each fresh native process; CPU checks are
+not presented as native completion. Fable review remains asynchronous; no new
+approval or scientific promotion gate. This logs own pre-GPU evidence under
+standing authorization, not independent ratification or a learned-effect claim.
+
+## [Builder — Orchestrator] 2026-09-15T03:04Z — actual rich sleeps, censoring diagnosis, next controlled fits
+
+RICH_L2_PILOT audit:34stages completed, guided admitted4/2/2 and trained
+32/28/28updates; frozen admitted3/3/1 with0updates; unparented admitted0/0/3,
+updates0/0/30. Four fresh /8 held readouts per arm: guided1/0/2/0,
+frozen1/0/1/1, unparented1/0/1/3, bootstrapOFF1/0/0/1. Actual repeated
+consolidation is now evidenced, NOT retained guided improvement. Final W0/W8
+guided13/13,frozen14/14,unparented12/13,OFF12/12 per16: no retention success.
+CPU-only audit repair adds21passingtests, stage/adapter/loss joins and truthful
+provider lower bounds.71CLI invocations evidence>=151main+utility calls versus
+142slots; exact192cap compliance unverified, no retroactive repair or rerun.
+
+The128held failures partition without rescoring:100truncated,7missing exact
+FINAL,8parsed wrong,13correct. Guided alone25/2/2/3; frozen24/3/2/3;
+unparented23/2/2/5; OFF28/0/2/2. This is serious measurement censoring, not
+100proven wrong reasoning cases. CALL1095 derives8 but puts FINAL on the
+same prose line; remains registered failure, no prose extraction or salvage.
+Original raw results, failed semantic reviews and denominator are unchanged.
+After all71requests resolved/alllanesterminal, exact pidfd/UID/start/boot/argv
+retirement stopped only the unused rich parent service02:53:51, preserving499
+parent files. Shared-route broker and all GPU processes untouched.
+
+INTENSITY recovered1357calls: exact initial237/233/119 per256 CONTROL/LIGHT/
+DENSE; only54texts reviewed,26admitted. DENSE129missing-FINAL sources, not
+129semantic errors. TWO_PASS recovered1229calls: BRANCH223/256 vs CONTINUE
+238/256, conditionalNEW223/223 vs238/238;9priorqualified targets,961unread.
+James's non-material reducer repair preserves conditional AND fixed
+denominators, missing-response reservations and unknown token usage. Main
+re-ran17targeted testsPASS. Node2 0–3 fullscanrelease02:49:54; node3 0–5
+fullscanrelease02:48. No obsolete generator relaunched or old gate relaxed.
+
+Additional input packet: ALL10previouslyqualified INTENSITY rows outside
+first16,3newtasks, fourfamilies combined; no new labels or selection by favor.
+COMBINED26 SHA2003c75dc43a9337ac67178a6024fc3511c4c38c1ac736dcfbc0f9f578952fc2
+MANIFEST SHA23698108754fb0b8ff7f6a9bede3709934cc736a411ce7548d0785e67b8f4ec5
+under research_notes/analysis/orch_rich_intensity_20260915_bootstrap26_v1/.
+Original52197d8d first16 preserved. Encoder compatibility still needs native
+CPU verification; unsuccessful probe preserved, not called success.
+
+ADAPTIVE NEXT WORK, all new scopes under standing authorization:
+- Laplace RICH_BREADTH_BOOTSTRAP owns node3 0–3:16/26rows x FULL/OFF,
+  same224updates/exactlegacydose/256whole-target presentations,320fresh
+  math+legacy calls max,120min/8GPUh. Realized token exposure may differ;
+  this is not pure breadth isolated from dose. No original1000gate bypass.
+- Cicero L2_BUDGET_READOUT owns node2 0–3: four final saved pilot states on
+ 16NEWcongruence tasks x512/1536caps,128mathcalls plus192legacycalls once,
+ 60min/4GPUh; parent absent/no fit. Tests censoring prospectively using original
+ strictparser; no regrade of the128old calls. Own preGPU evidence still due.
+- Fermat CPU-only fixedfirst16unread INTENSITY tasks, <=64CONTROL/LIGHTtexts,
+ originalgold/rubric; unseen staysunreviewed, no modelruntime or GPU.
+- Locke pauses LONG_ADJACENT BEFORE any launch: exact archived FROZEN C1
+ may already supply immediate-pre state on identicalC1tasks. CPU equivalence
+ audit, then deallocate if redundant rather than consume calls for no new test.
+
+All original experiment claims remain bounded. Target is still retained fresh
+task improvement from guided cycles against both twins, and dependence across
+sleeps. It is not achieved. New fits/readouts must report real starts/results,
+not declarations as utilization. Fable: NEWnode1 still fails host-key
+verification; please provide a trusted verified-key handoff through the
+existing onboarding path. Main does not bypass SSH checks or onboard/lease.
+
+[Builder — RICH_BREADTH_BOOTSTRAP] 2026-09-15T03:10Z preGPU PASS, own authorized single append, no serial Main acknowledgment or independent approval gate: 61 CPU tests +40 subtests and remote tokenizer-only26-row exact boundary/EOS/mask/base/original37ec/provenance checks; zero model loads/calls/fits yet. Evidence research_notes/analysis/orch_rich_breadth_bootstrap_20260915_attempt1; READY SHA256 be757d66cc9062f2fafa0c22291fd5fd08ab0cbb12507eabf5accd8f52f76338; source938files SHA256 a6de5326d445bfc9bb0ff42d4796224fbe81602588ef62b6eff1f1ff4b1fbabb; protocol SHA256 4f81091f75b396b8af2e46ce8aa308ae44a3d4de3bdcb9d8ba299ebe8c63aa69; cohort SHA256 24854584450f918ec0dd94c5525d7b26db27526fb918379c81126fc003fe3b55; provenance SHA256 9e6950326c30fa2fe5bae3605443b9770fa03831ca3794e21b6ea2bab2f9782e; FIRST16 SHA256 52197d8d0f73528af69b61e6f244e5b1570f2bcfafd5ebb79d4058c959946837; ADDITIONAL10 SHA256 252da00e7e2d8532bb87922142632eaa128a1994c881ca0053f1e2eb87f89f0d; COMBINED26 SHA256 2003c75dc43a9337ac67178a6024fc3511c4c38c1ac736dcfbc0f9f578952fc2; MANIFEST SHA256 23698108754fb0b8ff7f6a9bede3709934cc736a411ce7548d0785e67b8f4ec5; native PREPARE SHA256 00060782b62413a2de17f28c4c56a12c0f57bbe3b162f86a06582e223acb6ed9. Scope node3 physical0/1/2/3 only, fresh privileged UUID/global/proc admission still required; four original37ec-reset LoRA-only frozenQwen fits ORIGINAL16_FULL/OFF and EXPANDED26_FULL/OFF,224 updates each, exact222legacy rows/exposures,256 whole-new-target slots via pure26cycle, within-corpus identical FULL/OFF inputs and OFF new-label-only masking. New supervised tokens70960/70097; legacy15442each; expanded-content comparison NOT pure breadth/token-isolated. Frozen32 balanced8/family excludes96prior rosters/1568IDs including Anscombe3530b667 cohort without outcomes; fresh parentfree32math+48legacy readout/cell,1536math/original160legacy caps,<=320 readoutcalls,0traininggeneration/parentcalls, one120min/8assignedGPUh deadline including scans/load/train/readout, native cutoff360s before hard end for cleanup, no retry/epochextension/promotion. Existing author-only qualification/public data/tiny9-task corpus/token-exposure confound; preserve all failures, no packet edits or rescue, no older evaluator writes, no other shared-file edits or commits.
+
+[Builder — L2_BUDGET_READOUT] 2026-09-15T03:10Z own preGPU CPU/provenance PASS;12 local/native tests, four copied saved-adapter tensor identities and frozen Qwen base/tokenizer files verified;zero GPU loads/calls/fits before publication. Main-authorized single append, no serial Mainack/reviewer gate. Scope node2 physical0/1/2/3 GUIDED_SLEEP-final/GUIDED_FROZEN-FULL/UNPARENTED_SLEEP-final/BOOTSTRAP_OFF; fresh privileged full UUID/proc/CVD/open-device admission mandatory immediately before each launch. New analysis/native prefix orch_l2_budget_readout_20260915_attempt1 only; originals immutable. PREPARE SHA256 a9b24bcc2190b13f7457793bd47ddc3dd85b77a507f480184917077930574798; source SHA256 54ab3cafc86b2d104c5211b12b3012bcd5348e6c95b826134f4fb16fc3065419; COHORT SHA256 c1875ace36dfe41e4aaf7c64c3eb0b347827e513fdb6ce9381eea3be8817e989; ORDER SHA256 b936486857b74e05c04f39594670f679116769c54814905e0bc401be20f51788; CPU_TESTS SHA256 44b0aa6a35e5bcc6f188d7fd7504a9b10a3dd1be32a8d4e08eb3a3852f835f91. Exact states d0b7630bfadf571083e9bac495216d4737b9e656670bda63f94852f60c5fe011 /12354524c434be91deaeae74f411091bc70b4e38c003fd4f800aea797cc770c8 /0d06058c3a304d4d3734cc47ab8142d3285919d899cceabaf73383a98bcf9219 /a525b5b3287a44ce3ce0d64a56c941e7ee33b1be0309f20ce68ded1dee0f9e6d. Sixteen NEW congruence tasks exclude original56, unchanged oracle/neutral prompts/strict FINAL parser;512/1536 budget order alternates by task, same prompts/order across four fresh read-only state processes; prompt-plus-completion<=4096.128math+192original-retention=320 calls total, original48retention/state once at512; exclusive per-call marker+locked/fsynced global reservation before dispatch, no retry. One60min/4assignedGPUh lifetime, native cutoff57min, identity-bound cleanup/release before hard end; no timer reset. Zero parent/teacher/semantic calls, no feedback/memory/fit, mounted base/adapter before-after checks. Descriptive budget and within-budget state contrasts only, not pure-parenting/held-confirmatory/training replication. CPU-only tuple/list serialization failure preserved preGPU_attempt0; no task/order bytes changed. Guardian gpu.orch_l2_budget_readout_run launch; exact PIDs/lifetime/admission/terminal in own native root. No other coordination edits or commits.
+
+## [Builder — Orchestrator] 2026-09-15T03:15Z — EXECUTING Rohin90–93; allocation BEFORE new launches
+
+User relay received in Main03:09: "we need things running now"; fit the rich
+math corpus now, FULLvsnew-labels-masked at useful highdose, immediate L2 child
+handoff, every other freeGPU generating top-budget richness, admit newnode1.
+Read raw86–93 from fetched origin b15eb5c9dd97ea66a359b0c039278e2a2f66fc66.
+The prior1000row fit hold is explicitly superseded, not silently called passed.
+L1 still admits only outcome+richness+provenance-qualified actual child rows.
+L2 raw87 separately requires sourced GOOD AND BAD experience, outcome-tagged,
+parent-guided replay/training wheels, not success-only teaching selection.
+Frozen Qwen/LoRA-only, no teacher lesson sleep bytes, no sealed parent scores,
+no unsourced confabulation, evidence/controls and lease rules remain unchanged.
+
+ALLOCATION: A1000 FULL /1 masked, Laplace, ENTIRE764qualified target snapshot
+at research_notes/analysis/orch_math_scale_20260914_attempt1/progress_20260915T024900Z/ADMITTED_ROWS.json.
+16targetpresentations (highest currently deployed rich-bootstrap replay dose),
+GoalReplayLayout764x16=6208updates each; actual token exposures recorded;
+same native recipe/legacy222rows/pair schedule,12h/24GPUh pair ceiling,
+fresh-process held/legacy readout. This replaces the unlaunched16vs26study.
+No more admission wait, census wait, or perfect-rubric wait.
+
+A1002/3/7 Anscombe: top-budget generation while direct L1→L2 handoff prepares;
+on saved FULL provenance receipt, guided+sleep/unparented+sleep/frozen twins
+start from the SAME child, parent absent at each fresh readout. All sourced
+experience represented, outcome-tagged, parented replay; no borrowed teacher
+targets. Existing A1004/5/6 readout already live,14/96responses03:08:31;
+finish unchanged then those lanes generate too. No control arm is interrupted.
+
+Node2 ALL0–7 Cicero: high-budget rich generation8192newtokens/context16384,
+paired original/light/second-pass/meta variants, no forcedpadding, fixedraw
+outcomes and full failures, no automatic semantic admission. Replaces the
+unlaunched budget-readout diagnostic. Node3 0–5 Poincare: same top-budget
+richness supply, three paired variants; preserve peer6/7actualtraining.
+All new scopes use unique roots, own CPU/provenance checks, exactprivileged
+UUID/proc/CVD admission and lease-end guards. Workers may append their own
+dated preGPU Builder receipt and launch; no Main acknowledgment dependency.
+
+NEWnode1: originalwrapper again failed host verification. Explicit first-use
+accept-new connection under escalation added the first ED25519 host key while
+retaining changed-key rejection; authentication then fails publickey,password.
+No GPU state obtained, no admission claimed, no credentials guessed/changed.
+Fable: the VM's existing id_ed25519 public key is not accepted by the configured
+newnode1 account; repair the promised VM-key handoff. Every accessible freeGPU
+is allocated above; node1 becomes8richness generators once access works.
+
+Operational cleanup: Main retired only completed route-parent PID2492391 with
+pidfd+UID/start/argv binding after TWO stable remote snapshots proved all40
+route stages COMPLETE and all201requests resolved.1583parentfiles hash-
+inventoried and preserved; no provider/native call added. Receipt directory
+research_notes/analysis/orch_route_parent_retirement_20260915/.
+The narrower diagnostic activity is superseded by the actual large L1 fit
+and downstream parenting pipeline. No H1/H2 or retained gain is claimed yet.
+
+[Builder — RICH_BREADTH_BOOTSTRAP] 2026-09-15T03:18Z SCOPE SUPERSESSION MATH764 preGPU PASS under urgent direct user relay: exact entire764-row02:49snapshot,229rich+535NEW/563tasks, no1000gate/no new review or filtering. Prior16vs26 actually reached8updates/cell before supersession; owned guardian stopped,0readouts, node3physical0–3 privileged release clear03:11:43,0.082057GPUh preserved, not silently called unlaunched. New native root /localhome/local-rohing/orch_rich_breadth_bootstrap_scale764_20260915_attempt1; local evidence research_notes/analysis/orch_rich_breadth_bootstrap_20260915_attempt1/scale764. Main BOARD explicitly assigns A1000/1; fresh privileged UUID/global/proc/open-device admission still required.63CPUtests+40subtests PASS; all764 exact native tokenizer/EOS/context/suffix/mask boundaries PASS, original37ec/frozenQwen base/legacy222 provenance PASS; zero new-scope model loads/calls/fits before this receipt. READY SHA256 07eedb1deeae0a291e958645de987ef9a3784021677ac02d853e8b2230665a3c; source940files SHA256 2dbeda579e38cc270e6548a43c500b5b7777ceed9592e7d56ea1698c0159abff; protocol SHA256 d53806f3952347c98edba68bc7f9b81a5eeaa60778475bea769a4a4c9d976d98; verbatimrelay SHA256 3fe84e0a989020bd9bba4103c28ff368fe5139578806a0403fe34ecf57499c45; packet SHA256 257272aeead68cd690b984895e09fad9493d3d1d0e5b7e76b6c27872da2e3d2e; cohort SHA256 28787f755adffea252c01b993f406c92fa0a2c57141c26e11eb8734838c47960; provenance SHA256 73ce81a52b4c4fb9f958d1a8921517965b8c8f500a09685db3e5edac3a2b3168; nativePREPARE SHA256 72e27efff35707f3a11810da17c23f02806e908aebaf535c2187a49f0b44390d. Two fresh37ec LoRA-only FULL/new-labels-masked fits, standardGoalReplayLayout764,16=6208updates each/12224new presentations,16whole-target exposures/row; originaloptimizer/lr0.00003/seed8203. Identical FULL/OFF batches/input/legacy labels/reference normalization; supervised FULL3744098 vs OFF369490, new3374608. User-preferred reserved64 held exact original membership/order/gold, no held outcomes inspected, then48legacy/cell; fresh parent-free readout,1536math/original160legacy caps,224total calls,0traininggeneration/parentcalls. One12h/24GPUh including load/train/readout, native cutoff360s before hard deadline, knownA100 lease end minus6h enforced; no retry/epoch extension/promotion. Author-only public-data qualification, pretraining/cluster/single-seed limits; no purebreadth or H1/H2 claim. Launch directly after admission, no Mainack gate. No existing COORD lines or other Main files edited by this worker.
+
+[Builder — RICH_HOT_NODE3] 2026-09-15T03:18:37.426188+00:00 own preGPU PASS under direct Main rawRohin90–93: 9 CPU regression tests; cached GSM TRAIN source hash and all256 question/numeric-gold joins verified; original37ec portable bundle and frozen Qwen base/tokenizer verified; local config32768 validates context16384, all768 source prompts checked (max241 tokens). PROTOCOL SHA256 0822489c96a12ab8e9fc516e587e698cb6dd813b7814fee07f66a751e2e0d534; SOURCE SHA256 5d760e4da1c97d2adb9febf6c78c0497b8bee6f1b939a68c675eaa279fa62b98; PREPARED SHA256 aab128e60ae62e5d9b517846bee23985460c2081711c796e501a1a50fc8b2312; TASKS SHA256 3e320ce8c06878a13da0400475977082cedd8379eab780ad82c5de8f1aa50c43. Scope ONLY node3 physical0–5, paired2shards each originalrich/light/hierarchical OWN secondpass,256tasks/condition; GPU6/7 peers untouched. Every call max8192newtokens, prompt+completion<=16384, no forced minimum/padding; original numeric FINAL oracle unchanged. Original/light ownrecord conditional on exactpass; hierarchy ownsecondpass regardless, task+ownfirstpass only/no externalanswers. Raw supply UNREVIEWED/not automatically trainable, fits0/updates0; separateworker owns existing764corpus L1training. Global2048call cap, firstbatch<=1536, one12h/72assignedGPUh clock including load/scans and lease6hguard; no automatic reset/restart. Native launch only after fresh privileged full UUID/global/procCVD/open-device scans and per-launch rescan. No semanticreview/Mainack/independentreview gate. New analysis/root orch_rich_hot_node3_20260915_attempt1 only, oldroots read-only, no commits/reverts/sharedBOARD edits; this is own authorized narrow coordination append.
+
+[Builder — RICH_HOT_NODE2] 2026-09-15T03:18Z preGPU PASS, direct user90–93/Main all-node2physical0–7 richness allocation supersedes budget readout. Exact budget guardian565440/UID2524/start67031015 SIGTERM03:12:52 and owned child retirement completed03:12:55; all four privileged release receipts clear, four completed raw calls/four in-flight reservations preserved in stop archive7f8aa8a27bbcb3e572adada18f7fa75f29f80f110b9530fc7b030bfbb668c270, no readout continuation. NEW orch_rich_hot_node2_20260915_attempt1: five local/native CPU tests pass; original37ec tensor/base/tokenizer provenance verified; actual model max_position_embeddings32768 supports requested totalcontext16384/output8192; no forced minimum/150–400 prompt length demand. Source cached GSM SHA17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465;98known roster files including current L1/BREADTH held,1616IDs/1608question hashes excluded,5937available, fixed1024common tasks/condition, deterministic parity shards. PREPARE SHAd0a53fa4b046bfcb27d4817571b3d9acbe3d848514c31b42a549e392c988935f; source SHA5efffbbfb20e984e5dcd21d9b8e1de42a92e947488f928cd4c3d3248311d5c01; TASKS SHAde88a350494b31e59c40a1ccf7cb7974b6888b6c5ece1c56b6a8870e7b91c637; DATA_PROVENANCE SHA73a9d97c386519a53e3ddee71db8422a8d05dabd7a7628e045ced38e356c721b; CPU_TESTS SHA39f0bca84626cefaab615716598c91f78c4a01b64736f661604701541ccc5ad2. Physical0/1 original-rich content,2/3 LIGHT branching,4/5 two-pass own draft/continuation,6/7 own draft/meta-evaluation; relevant branches not padding; no gold/outcome feedback in prompts. Eight original37ec fresh processes, exact model/adapter before-after checks. All calls8192 max; oversized combined second-pass context fails without cropping/rescue. At most6144native calls, no retries, each reserved/fsynced before dispatch; zero parent/API/semantic/fit/admission calls. One16h/128assignedGPUh lifetime, dispatch cutoff5min and exact-owned shutdown4min before hard end; node2lease2026-09-21T08:43Z minus6h enforced. Atomic own all-eight lease claim under Main exclusive allocation; immediately fresh privileged full UUID/proc/CVD/open-device scans, no unreadable waiver. All raw trajectories/token IDs/registered strict numeric outcomes including>400 tokens/failures retained UNREVIEWED/admittedfalse/trainingAllowedfalse; no automatic corpus qualification or training/learning claim. Launch guardian gpu.orch_rich_hot_node2_run without Mainack; no changes to originalpilot, no shared broker stop, no other Main-file edits or commit.
+
+[Builder — RICH_BREADTH_BOOTSTRAP] 2026-09-15T03:21Z MATH764 NON-MATERIAL PREMODEL SCANNER REPAIR PASS: inherited scanner gained HOST_SHA; own adapter now carries exact existing A100 host identity without relaxing any scan. Initial guardian stopped before any child/model/fit/call; full SCANNER_FAILURE source/log/lifetime preserved.65CPUtests+40subtests and repeated764native-CPU encoding/base/legacy/provenance PASS; actual privileged repair preflights0/1 bothclear. Same entire764 packet257272aeead68cd690b984895e09fad9493d3d1d0e5b7e76b6c27872da2e3d2e, protocol d53806f3952347c98edba68bc7f9b81a5eeaa60778475bea769a4a4c9d976d98, held64 cohort28787f755adffea252c01b993f406c92fa0a2c57141c26e11eb8734838c47960 and all dose/caps unchanged. Corrected source SHA256 8e16039061bfb36001826e7d0d29a9f091dae4ae3017307220faebd4310303c5; PREPARE SHA256 cf19da2589042f1cdd3144dce222cb9a953d4ec70fa8a0b075d40622b0946322; READY SHA256 270544cfacd605d0f417e2daba9262c9447955e136864bb9688b0d871a50f1e1; recovery SHA256 87b286e4614949d3ad04b15e7e4d88615f32a67f583fd20868db8d2232754e4c; original LIFETIME SHA256 05b48be1f5765f43c7ed05c6ae14fa1d7332743b09db1fd0703ec1f0009490d8. Admission-only recovery preserves original start1789442290.7796104 and harddeadline1789485490.7796104,12h/24GPUh; not a fit retry or timerreset. A1000/1 FULL/OFF from37ec,6208updates,16presentations/row,224readouts max,0parent/traininggeneration; firstnativeupdate next after immediate fresh admission. No old shared lines, packet or claim changes.
+
+[Builder — RICH_HOT_NODE3] 2026-09-15T03:22:28.108197+00:00 NON-MATERIAL REPAIR preGPU PASS: first six native source calls occurred; physical0–3 each persisted one exactpass source then failed BEFORE any followup reservation with unknown_row_class (new_record routed to original helper requiring record). Preserve original failures/source/raw receipts; alias fixed,10CPUtests including regression PASS, repeated frozen37ec/base/tokenizer/provenance/config PREPARE PASS. Resume ONLY physical0–3 under fresh privileged full per-device UUID/global/procCVD/open-device scans; original4/5 hierarchical workers continue unchanged and6/7 peers untouched. Reuse each original own source with exact hash/task/prompt/actor joins, no regeneration/no retry of any dispatched native call. RECOVERY SHA256 af42ef57a8c77f3acf9ee2a381ab07736b791d7a6e4d688a9d271105e9424746; SOURCE SHA256 4a503dd4c7cad80d0e5471b7ee06b6646852d7ed98e19eb2c12fd23c6ee83cc2; PREPARED SHA256 663103440dfc623028978da27c5fe496574b9cba122662fda1d3af1c3263c7fd; PROTOCOL unchanged 0822489c96a12ab8e9fc516e587e698cb6dd813b7814fee07f66a751e2e0d534. New owned root orch_rich_hot_node3_20260915_repair1 retains original global locked2048 call ledger and original12h/72GPUh deadline, no cap/clock reset, no scientific/test/visibility change, no automatic training. Original root/source/failure artifacts preserved. Narrow own authorized preGPU append only; no commits/BOARD edits.
+
+
+[Builder] 2026-09-15 03:23 UTC — Rohin95 execution allocation, BEFORE new launches.
+Direct user relay orders combined L1, immediate existing-child parenting, all
+remaining GPUs richness, node1 included; no change to thesis/base/invariants.
+A1000/1 Laplace COMBINED FULL/new-labels-masked: SEQ-2661452 route targets +
+qualified math764 + already admitted nonduplicate rich rows, frozen joins and
+held exclusions, useful top dose, fresh held readouts on BOTH families.
+Preserve actual superseded math fit/checkpoints, then safe owned retirement.
+Wall-clock estimate provisional12–24h planning envelope, not measured forecast;
+Laplace must replace with observed-throughput estimate and bounded guardian
+before launch, reporting route/rich token cost and uncertainty. No1000-row wait.
+A1002/3/7 Hubble generation until Anscombe ready, then existing rich-bootstrap
+child guided/unparented/frozen parenting NOW, followed by combined saved child
+without score-based selection. A1004/5/6 finish unchanged live readout then
+Hubble generation. Node3 0/1/2 Poincare generation until route campaign ready,
+then existing61-world route child guided/unparented/frozen; node3 3/4/5 remain
+richness and6/7 existingTERSE_BREADTH. Node2 0–7 Cicero richness. No Mainack
+or independent-review gate; each owner records own CPU/provenance preGPU PASS,
+performs full privileged UUID/proc/CVD admission, bounded lease-aware launch.
+Parent campaign schedules style micro/training-wheels/creative × short/long ×
+harsh-critical/supportive-positive × verified available strong/Sonnet/smaller
+providers. Start available cohorts while expanding, preserve EVERY parent
+transcript and source/outcome-tagged all-experience replay; no teacher bytes
+in sleep targets, no sealed scores to parent. Record learner-centric readout
+and taught→next-cycle lineage. Unsupported provider aliases are not access.
+Node1 remains authentication-blocked after first-use host-key admission;
+Fable please repair the promised VM key access, then Main admits GPU inventory.
+No changed-key bypass, credentials in reports, lease change or onboarding.
+BOARD execution override posted. Relay estimated03:35 while host receipt03:21;
+recorded as relay estimate rather than backdating execution evidence.
+
+[Builder — RICH_HOT_A100] 2026-09-15T03:25:49.716718+00:00 preGPU PASS under direct Rohin90–93/95; own narrow append, no Main acknowledgment. Launch ONLY A1004/5/6 originalrich/lightconsequentialbranch/secondpassselfevaluation; existing L1_BOOTSTRAP_TRANSFER formal COMPLETE96calls/allstatesverified/privileged releases checked before launch. A1002/3/7 no generator ever launched in this attempt: immediately available to Anscombe EXISTING-child MATH_PIPELINE_L2, no generator checkpoint or retirement wait. NEVER0/1. Nine local and nine native CPU tests PASS;1536 exact native encoder/roundtrip probes/EOS PASS, native config32768 supports requested16384; original37ec mounted-native admission still checked on load, saved tensors/frozenbase/portable provenance CPU PASS. AllUID privileged globalGPU/proc/CVD/open-device4/5/6 admission clear. Source62files SHA256 444a59109ff3d3e4390a61592d35e2c5dcad59eaa27a00ecc10193d14714c7f9; PREPARE a37f800e5bb229fd23cf9c9f457c21929044229fcb74f6512b4e354fff899691; protocol 9178d483e0f0bf7027c64e76b9b28ce13881ff7680194c23798aef7d34d272b6; cohort 3e320ce8c06878a13da0400475977082cedd8379eab780ad82c5de8f1aa50c43. CachedINTENSITY256 TRAIN reused prospectively, notheld/fresh.8192 top generation cap/context16384, no forced minimum/padding; actual longhistory lowers continuation cap only, no crop.256questions/GPU, source+conditionalNEW on4/5, unconditionalsecondpass on6; <=512reservedcalls/GPU,1536total, no retry/reset; one12h/36GPUh guard and leaseendminus6h. Exact originalnumericFINAL outcomes/raw/failures/tokens retained; all UNREVIEWED, no semantic admission/review/fit/APIcall/H1H2claim. Evidence research_notes/analysis/orch_rich_hot_a100_20260915_attempt1; own immutable remote root /localhome/local-rohing/orch_rich_hot_a100_20260915_attempt1.
+
+
+[Builder] 2026-09-15 03:29 UTC — actual occupancy and terminal small-bootstrap evidence.
+Readonly native03:24: node2 all8resident87–91%util; node3 all8resident, six
+richness87–92% and TERSE6/7 at98/100%; A100 only0/1math fit resident100%.
+Thus18/24 accessible GPUs then, NOT saturation. Hubble subsequently records
+A1004/5/6 native starts03:25:53–54 (339640/339647/339656); responses pending
+independent Main observation.2/3/7 must be filled until Anscombe launch-ready,
+not held idle merely for preparation. Node1 still auth-denied03:24; repair
+request actually written courier/outbox/astra_node1_access_repair_20260915T0324Z.txt.
+Node3 own recovery verified101saved outputs03:24:23; no repeated source calls,
+no deadline/call reset, four initial routing failures remain preserved.
+Main downloaded terminal96-call L1_BOOTSTRAP_TRANSFER archive, recomputed ALL
+96 registered outcomes with exact joins, verified final arm/guardian receipts.
+FULL16bootstrap25/32 vs OFF30/32 and original37ec30/32; in-family12/16 vs15/16
+vs15/16, out-family13/16 vs15/16 vs15/16. Each comparison25bothcorrect,
+5FULLonlyfailures,2bothwrong,0FULLonlywins. FULL4missingFINAL, controls0;
+all96 untruncated. Median content170/181/178.5tokens. Semantic richness remains
+UNREVIEWED: no retained benefit or H1/H2 claim. Retire further tiny16vs26
+capacity, not the requested existing-child parenting lineage; no held scores
+or failed examples go to parents/replay. Combined fit remains priority.
+Reduction/report: orch_l1_bootstrap_transfer_20260915_attempt1/MAIN_REPORT.md
+and MAIN_TERMINAL_REDUCTION.json under research_notes/analysis. Readout ended
+03:13:14 UTC,0.342044assignedGPUh; authoritative4/5/6 release verified by owner.
+
+[Builder — RICH_HOT_A100] 2026-09-15T03:30:46.667534+00:00 preGPU priority-FILL extension PASS under Main immediate correction: no idle2/3/7 hold while Anscombe prepares; no actual launch-ready ETA posted. Live4/5/6 source444a59109ff3d3e4390a61592d35e2c5dcad59eaa27a00ecc10193d14714c7f9 unchanged, same native generator also2/3/7.14focusedCPUtests PASS; reuse exact1536 native encoder/config/base/provenance probes. Non-material regression-tested admission repair: nvidia-smi GPU index != kernel device minor on A100; physical2/3/7 map by exact kernel UUID to minor1/0/4. New own scanner rechecks allUID/proc/open-device/identity, preserves CVD/globalGPU/unknown gates and old failed scans; privileged MINOR_ADMISSION2/3/7 clear. Driver 3949d3ee941cb72e9d1934631501d695fce552bdebe3517fce7a1c12ecd3c491; scanner f7136608f4b3fca051b3852a006abf86b704dbf1cfe882f6b8c3b43704ec387e. Inherit ORIGINAL12h LIFETIME03:25:52Z, no timer/budget reset; <=512reservedcalls/GPU, additional<=1536, aggregate<=3072/72GPUh for6assignedGPUs. Same256TRAIN cohort/strategies repeated, NOT distinct tasks or independently qualified supply; duplicates retained and not inflated as novel data. Direct Anscombe request via own root FILL_RELEASE_REQUEST.json soft-stops exactPID2/3/7 after current saved generation checkpoint, verifies native identities, emits privileged UUID/minor RELEASE receipts. This operational release signal never asserts CHILD_READY.4/5/6 continue: actual first responses03:27:09–11Z FINAL342 correct146/156/146contenttokens, EOS/no truncation, UNREVIEWED. Earlier fill guard failed closed before claim/load for missingREADY; log retained, no GPUcalls/budget consumed. No0/1 process changes, fits/review/APIcalls or Mainack gate.
+
+
+[Builder] 2026-09-15 03:32 UTC — Rohin96 fixed-floor allocation BEFORE revised launches.
+Effective accessible24GPU allocation:12richness (node2all8,node3 3/4/5,A1006),
+4CONTINUAL-training (A1000/1/2/3 Laplace),6parenting (A1004/5/7 Anscombe
+existing-rich child; node3 0/1/2 Pasteur existing-route child),2existingnode3
+6/7jobs until safe owned release then backfillA/C. Node1additional8blocked by
+SSHauth, Main/Fable repair, then all richness/parenting; no32GPUaccess claim.
+All parenting slots stay generation until actual launch-ready handoff.
+Supersedes Anscombe2/3/7 and Hubble2/3prior allocation. Direct owners coordinate
+safe exact-PID checkpoint/release; no blind termination of live fits or controls.
+B means evolving combined-corpus FULL plus matched new-labels-masked lineage,
+append qualified batches with rehearsal; preserve adapter/optimizer/RNG/cursor
+and input-version evidence across arrivals, no from-scratch reset per batch.
+Use4GPU allocation efficiently, published concrete execution topology before
+launch, no waiting for6h finished corpus. Existing math fit state preserved.
+Dose is actual high presentations schedule permits, NOT fixed16ending gate;
+log per-row counts, update totals and effective token exposure. Bounded guardian
+windows/lease margins remain operational safety, with persistent continuation.
+A expands to math/code/route high-budget generation, parallel batch review and
+incremental immutable ingestion. Sampled batch review must remain labelled as
+sampled, not fictitious full-text PASS for every row; preserve each row source,
+actual verifier outcome and teacher/held exclusions. Thousandsqualified/hour is
+a target, not an observed rate. Every parent transcript retained; campaigns on
+existing children launch without waiting B; later B checkpoints seed new matched
+lineages. BOARD floor override posted;05:45UTC watcher check is target, not a
+reason to defer. No scientific/base/invariant change or extra ratification gate.
+
+[Builder — ROUTE_PARENT_CAMPAIGN] 2026-09-15T03:33:39.415343+00:00 OWN PRE-GPU PASS + LAUNCH-READY DIRECT RELEASE REQUEST to Poincare agent01a0a30d-80e6-7aa2-84e2-4ee406688ced: please identity-check and safely release ONLY node3 physical0/1/2 NOW;3/4/5 continue,6/7 untouched. 54 CPU tests PASS; native CPU frozen-base/tokenizer/222 legacy-mask/provenance checks PASS. Existing fixed lane0 seed7801 FULL dose4 child state d13fabd566e04926f45aa66ee0a30ff7dc88d411430ab3e1fe15dfffeb2fd27f, adapter file6f7546d334a6dd65c5a22dddeff2ee6eb42292373d79552df52a272f3aeab76f; no score-based selection, no Corpus16 held inspection. Prospective fresh cohort SHA fbe8932381e1d5a2c7200a1af504ffac19a683f58ee3fc33150b42c10795a7a9. First training-wheels/short/supportive GUIDED/FROZEN/UNPARENTED identical initial child; every sourced outcome to own consolidation; failed attempts not gold; teacher bytes excluded targets; fresh-process parent-free held and taught-next-cycle behavior. Bound4h/12GPUh,2656child calls,256parent invocations(max512components)+one2component readiness probe,256updates upper bound. Actual provider probe claude-sonnet-5[1m] (canonical claude-sonnet-5); Haiku utility separately accounted. PREPARE SHA 76c4b5a00f590edff4e65ed65860a210581a321f495ced6b8b4af899cd9cb121; SOURCE_V2 SHA f3da0d4a6b4549e074d12281f0a3a2ffe43bc6fb018f3fa6801f6200e147924b. Exact remote root /tmp/orch_route_parent_campaign_20260915_attempt1 ready. Please publish your release evidence in own journal/own evidence path; I will consume it then perform fresh full privileged global UUID/proc/CVD/open-device admission and launch directly with no Mainack. No other owner kill; no generic idle hold. This is an addressed file-handoff request, not a claim of unavailable inter-agent-tool delivery.

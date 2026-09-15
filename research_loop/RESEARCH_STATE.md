@@ -1,10 +1,121 @@
 # Research state — Orchestrator
 
-Updated September 15, 2026, 01:07 UTC. ACTIVE / INCOMPLETE.
+## Current execution — September 15, 2026, 03:24 UTC
+
+ACTIVE / INCOMPLETE. This section supersedes the historical synthesis below.
+Rohin95 directs combined route+rich-math L1 now, parenting on EXISTING children
+now and combined child next, high-budget richness on remaining GPUs. Allocation
+posted in BOARD and COORDINATION before new launches. No1000-row wait remains.
+
+- Combined fit: Laplace owns A1000/1. Combine sourced SEQ-2661452 route targets,
+  frozen764 qualified math targets, other already-admitted nonduplicate rich
+  rows; FULL/new-labels-masked, useful top dose, fresh held BOTH families.
+  Native math-only fit is present at03:24 (PIDs338105/338106, each48565MiB,
+  100%utilization), but combined fit is PREPARING, not yet verified launched.
+  Preserve superseded native evidence. Measured wallclock projection pending;
+  allocation's12–24h is only a provisional planning envelope.
+- Existing-child parenting: Anscombe owns rich-bootstrap campaign A1002/3/7;
+  Pasteur owns61-world route campaign node3 0/1/2 once launch-ready. Each uses
+  same-child guided/unparented/frozen twins, all sourced outcome-tagged replay,
+  exact parent transcript retention and taught→next-cycle readout. Provider
+  axes expand through verified available configurations, not invented access.
+  These campaigns are PREPARING, not yet demonstrated native lives.
+- Generation: node2 all8 have native GPU processes at03:24:16,87–91%utilization.
+  Node3 all8 have native processes at03:24:15; six richness87–92% and existing
+  TERSE_BREADTH6/7 at98/100%. Richness0–3 recovered from an unknown_row_class
+  dispatch error with a CPU regression; original failures/source preserved,
+  shared call/deadline cap unchanged. Generator owners hand off campaign slots
+  directly only when campaign launch-ready, with fresh admission afterward.
+- A100 occupancy at03:24:14 is2/8, not saturation. Six idle slots assigned to
+  Hubble generation pending campaign readiness; previous readout4/5/6 appears
+  terminal by GPU inventory, authoritative owner completion/release requested.
+  Total accessible-node occupancy18/24. This is memory/process residency and
+  utilization snapshot, not proof of completed useful work or launch admission.
+- New node1 remains SSH authentication-blocked at03:24, no GPU census obtained.
+  Fable repair requested via courier outbox and notebook; host changed-key
+  protection retained. No booking/extension/onboarding or credential bypass.
+
+Prior corrections:16vs26 actually ran8updates/cell before owned retirement,
+not an unlaunched proposal. LONG-adjacent was deallocated after exact CPU
+equivalence audit; no redundant readout needed. Earlier rich L2 pilot completed
+three guided sleeps but did NOT show a retained advantage. No H1/H2 success
+or completed combined fit is claimed. Raw artifacts/denominators remain fixed.
+
+Updated September 15, 2026, 03:00 UTC. ACTIVE / INCOMPLETE.
 This is the current synthesis, not the experiment transcript. Detailed previous
 state is preserved in git `9905adfc:research_loop/RESEARCH_STATE.md`; notebook,
 raw evidence, failed denominators and original judgments remain unchanged.
 BOARD.md owns exact allocations; worker journals own live execution receipts.
+
+## Continuation evidence — September 15, 02:50 UTC
+
+03:00 superseding observations: recovered rich-pilot native receipts show
+all four lanes COMPLETE02:16:19.756028. GUIDED_SLEEP admitted4/2/2 rows and
+trained32/28/28updates; GUIDED_FROZEN admitted3/3/1 but0updates; UNPARENTED
+admitted0/0/3 and trained0/0/30. Held C0/C1/C2/C3, each /8: guided1/0/2/0,
+frozen1/0/1/1, unparented1/0/1/3, bootstrapOFF1/0/0/1. Actual repeated
+consolidation now exists, but no final retained advantage is demonstrated.
+Final W0/W8 guided13/13, frozen14/14, unparented12/13, OFF12/12 (each /16);
+these are below the legacy15/16 target, not retention success. Complete audit
+is pending; original receipts/control denominators are not altered.
+
+Pilot transport:71CLI invocations,80reported main turns plus utility usage in
+every invocation means at least151main+utility calls versus142reserved slots;
+exact utility/wire multiplicity remains unknown. Seven multi-turn responses
+were rejected, not salvaged. After all71requests had responses and all lanes
+completed, exact PID/UID/start/boot/argv-bound parent service retirement was
+recorded02:53:51. No shared-route broker or GPU process was killed.
+
+INTENSITY full256/condition: CONTROL237, LIGHT233, DENSE119 exact successes;
+1357calls,26prior author-qualified rows and1303unread. DENSE has129missing-
+FINAL failures, not129proven reasoning errors. Additional10qualified rows
+expand first16 from6percentage tasks to26rows/9tasks/4families. TWO_PASS
+full256/condition: BRANCH223, CONTINUE238 exact,1229calls;9qualified prior rows,
+961target responses unread. These are not complete semantic-yield estimates.
+Both generators released their GPUs; original outcomes/packets remain fixed.
+
+Adaptation: cancel/deallocate LONG_ADJACENT if CPU audit confirms existing
+FROZEN C1 already supplies the exact pre-sleep comparison; do not run solely
+because implementation is ready. New RICH_BREADTH_BOOTSTRAP prepares16vs26
+approved source rows, each FULL/OFF,224matched updates and256new presentations
+with exact common legacy dose. Realized token differences remain a confound;
+not pure breadth or a change to MATH_SCALE's1000gate. New32math+48legacy/state
+readouts are prospective and parent-free. A separate bounded full-text worker
+expands source review rather than treating unread outcomes as trainable rows.
+
+This update supersedes pending/active descriptions later in this historical
+synthesis. LONG is terminal: all10 stages completed, updates28/0/0, held goals
+11/8/9/9 of16, pairs5/2/2/1 of8, all W0/W8/audit16/16. No demonstrated retained
+advantage. Its sparse-parent protocol also differs from the SHORT frozen
+control. Same-cohort pre/post diagnostic now assigned, not another training run.
+Source: `analysis/orch_l2_long_20260914_attempt1/FINAL_REPORT.md` under
+`research_notes/`; original artifacts and failed provider calls are preserved.
+
+Provider ledger caveat: LONG34 reserved slots versus40 observed main/utility
+turn-based invocations; SHORT192 versus184 and FROZEN187 versus184 reserved
+slots. Exact wire retry counts are unavailable. Existing fail-closed responses
+remain empty and unrescored. These are protocol limitations, not permission to
+retroactively increase budgets or to report reservations as actual API calls.
+
+CODE_CHANNEL finished all64tasks/arm and250raw texts: LEGACY22/64initial,
+SEPARATED0/64, TERSE36/64; qualified3/0/0tasks, all three SOURCE not NEWrecords.
+No fit, all lanes released. The exact separated envelope failed; this does
+not establish that the model lacks reasoning. Full-text review is author-side.
+
+MATH_SCALE native collection remains1984calls/1024questions. Main's existing
+offline reducer at02:49 yields1409reviewed rows and764qualified distinct targets;
+corpus_threshold_met=false, fit_ready=false. Review continues under original
+03:17:25 horizon, with14failed review batches at02:48. No failed/unread row is
+automatically admitted and no1000target gate is relaxed. Snapshot is
+`analysis/orch_math_scale_20260914_attempt1/progress_20260915T024900Z/`.
+
+Two bounded NEW readouts are preparing on released A100 lanes: retained
+first16 rich bootstrap versus matched OFF/original on32 fresh math tasks;
+LONG first positive sleep immediate pre/post on exactly the same stored held
+cohort. Neither is a learning-loop success claim or substitute for repeated
+guided-cycle improvement. Live rich-pilot and terminal generator recovery run
+in parallel. Fleet is NOT saturated: A100 empty02:47; node3 only6/7 busy02:48;
+node1 new lease remains inaccessible due to host-key verification failure.
 
 ## Objective and authoritative steering
 
@@ -121,9 +232,9 @@ not a separately demonstrated child-reflection stage or learned compiler.
 | Held goals | SHORT | Guided FROZEN control | UNPARENTED | LONG |
 |---|---:|---:|---:|---:|
 | Initial |11/16|11/16|11/16|11/16|
-| C1 |11/16|11/16|8/16|pending|
+| C1 |11/16|11/16|8/16|8/16|
 | C2 |11/16|11/16|11/16|pending|
-| C3 |pending|pending|11/16|pending|
+| C3 |15/16|15/16|11/16|pending|
 
 OBSERVATION: every completed W0/W8/audit16/16. SHORT/FROZEN C1+C2 each
 0admitted/0updates. C2 held raw traces identical16/16tasks; both-goal4/8worlds.
@@ -141,8 +252,20 @@ legacy rehearsal. UNPARENTED8→11 on unchangedf201 illustrates cohort confoundi
 not improvement. Parent's opaque-label advice was bad despite supplied SYSTEM;
 the conjectured missing-public-rules explanation was falsified, not repaired.
 CONFIDENCE: author-side bound native evidence; no promoted learning or H2.
-CHEAPEST NEXT TEST: finish original SHORT/FROZEN C3 and LONG's original cycles;
-compare identical-stage controls, not naive cross-cohort slopes. No extra UNP run.
+CHEAPEST NEXT TEST: finish LONG's original cycles and the new rich pilot;
+SHORT/FROZEN are now terminal. Compare same-stage controls, not naive slopes.
+No extra SHORT/FROZEN/UNP run. SEQ280 reserved for their completed batch.
+
+Terminal bee3254d: SHORT experience1/6/2of16, FROZEN0/4/4of16; both0rows/
+0updates in ALL3cycles. SHORT666/FROZEN677learner reservations,184/600provider
+reservations each (92logical requests are not184additional calls). Shared
+source448calls counted once. Held pairs initial/C1/C2/C3 SHORT=FROZEN5/4/4/7of8;
+UNPARENTED5/2/4/3. Every SHORT/FROZEN raw trace identical16/16 at every stage;
+unchangede226 makes11→15 cohort variation, not learning. LONG C1 after28updates
+has8/16held, allretention16/16; descriptive−3 versus same-stageFROZEN, not a
+policy-matched causal parenting verdict. LONG C2experience2/16,0rows/0updates.
+SHORT/FROZEN guardians ended01:09:18/01:05:39; physical0/2 released01:10:47.
+The finite SHORT recipe is DEALLOCATED, not the developmental thesis disproven.
 
 Operational continuity: UNPARENTED e226→f201→later collections/readouts verified
 by worker and separate old-Builder read-only integration observation, not an
@@ -206,6 +329,61 @@ readout calls. No refit/replay/deadline reset; originals/errors remain archived.
   inclusive ID length. No GPU/external fanout, new threshold or prelaunch gate.
   Return contrary evidence; original labels/packet remain immutable.
 
+## September15,01:17 decisions after completed batches
+
+RICH-L2 bootstrap FULL/OFF each completed224updates. FULL12354524…70c8,
+OFFa525b5…f9e6d, common basea236. Actual saved outputs transferred unchanged;
+A1003 release rechecked01:14:32. Node2four native lanes READY by01:15:
+462243GUIDED_SLEEP,462240GUIDED_FROZEN,462241UNPARENTED_SLEEP,462242OFF.
+First learner response01:14:50.455169, eight captures at01:15:21—not eight
+correct answers. Source_lanes55326f24, LANE_PREPARE0db0108d, sameCOHORT20ec0c83
+and05:00:00.717940deadline. Old bootstrap allocation superseded by actual
+phase release; all pilot compute/call caps remain unchanged. No held claim yet.
+
+INTENSITY paired8panel COMPLETE:40texts=24sources+16conditionalrecords.
+Control/LIGHT/DENSE admit8/6/3rows across5/5/2tasks; source exact outcomes7/8,
+7/8,2/8; DENSE5/8final-format failures. Semantic counts9/9/5 are not admissions.
+Source tokens1382/1620/2464, NEW2015/2128/572. Seven valid golds, one ambiguous;
+contrary arithmetic/units retained. This fixed panel supplies no stronger-
+guidance advantage; it is not the declared256-task terminal screen. Finish
+only the existing bounded batch, no expansion/fit/repair or pilot substitution.
+Panel summary2e200372, reviewb465746a; author-side, not independent verification.
+
+Popper independent first24:18content+lengthPASS/6FAIL,19semanticPASS; all24
+contain correct grounded arithmetic, two noncanonical FINALs. Specific failures:
+ownership, irrelevant excursion, claimed independent-rounding evidence, length.
+Plural operational ownership can qualify; no I-only/second-check rule added.
+Main static identity join (physical_index,target_sha256,student_prefix_sha256),
+NOT a Fable raw-receipt audit: all16 fixed bootstrap rows are within critic's
+18PASS. The two extra recommendations do not change the frozen packet/labels.
+Bounded confidence in textual substance improves; learned benefit is untested.
+No more critic fanout needed for this packet. Park Popper and reuse slot.
+
+Next uncertainty worth actual compute is code's narrative/action interface,
+not more optimization of math's stronger-guidance prompt. Allocate CODE-CHANNEL
+on released A1000/2/3 (old SHORT/FROZEN and completed bootstrap),90native minutes,
+4.5aggregateGPUh,≤384learner calls. Fresh64 bounded-MBPP eligible L1 tasks,
+excluding prior code diagnostic IDs; one unchanged safe deterministic oracle,
+never execute generated Python outside the existing restricted interpreter.
+Compare (0) legacy rich contract, (2) unambiguous separated narrative/action
+contract, (3) terse, each1536source/512conditional NEW/context4096 ceilings.
+Formatting/projection only differs; no reference solutions in learner context,
+relaxed tests, repaired outputs or hand-authored training targets. Worker freezes
+exact grammar/tasks/oracle/prompts before calls and performs own focused tests.
+Screen hypothesis: interface conflict suppresses learnable code traces, not
+absence of reasoning. Candidate rule: separated contract adds≥8qualified tasks
+over legacy-rich/64 without >4/64initial-outcome deficit. Report terse contrast,
+all semantic/outcome/token/family axes; task count not row count. No fit/scale
+from this screen; one terminal clean null deallocates. This is a new diagnostic
+contract/budget, not a rerun or reinterpretation of the old failed8tasks.
+
+New A40 access handoff809e5cf9/55c05c3f received, wrappers/config now present.
+Actual readonly connection01:10 failed Host key verification; no physical
+census/admission achieved. Request verified host-key handoff from Fable; never
+disable host verification or guess trust. Existing fleet/assigned pilot and
+CODE-CHANNEL remain unblocked. New eight-GPU draft-diversity screen stays a
+proposal until access/worker assignment, not claimed saturation or native work.
+
 ## Dead ends and contradictions retained
 
 | Screen | Measured observation | Why deallocated / limit |
@@ -262,8 +440,9 @@ Main orchestrates, never executes GPU cells/Fable checks. Last measured full
 census00:52:19–22:18/24resident,16nonzero utilization; subsequent pilot/LONG
 native receipts do not constitute a new fleet census. Ownership≠utilization.
 Node1 OLD lease ended23:14. Fable00:32 reports NEWlease NODE_READY00:30:36,
-setup finishing, but this checkout lacks a40r wrappers/A40R_NODE at00:49.
-Access handoff requested; no admitted new-node GPUs or old-alias/root reuse.
+  setup complete perFable; wrappers/config received in809e5cf9/55c05c3f.
+Actual01:10 connection failed host-key verification; verified trust handoff
+requested. No admitted new-node GPUs, bypass or old-alias/root reuse.
 Main never leases/onboards. Unknown/service owners are not safe from0MiB alone.
 
 Archives on/data; no local model loads/unbounded reviewer fanout. At00:49 RAM

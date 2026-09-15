@@ -1,6 +1,89 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
-Updated2026-09-15 01:07UTC. DECLARED is not RUNNING. All arm metrics pending
+## FLOOR OVERRIDE — Rohin96, allocated 2026-09-15 03:32 UTC
+
+This supersedes all lower tables. Accessible fleet is24GPUs, with8additional
+node1 GPUs still authentication-blocked, not32 verified. Floor on accessible
+capacity:12rich creation +4continual training +6parenting (above4floor), with
+2existing node3 jobs preserved until safe release, then backfilled. Campaign
+slots generate richness during CPU preparation; no idle readiness reservation.
+
+| Physical allocation | Owner / work |
+|---|---|
+| A1000/1/2/3 | Laplace: CONTINUAL combined-corpus evolving FULL lineage plus matched new-labels-masked control;4GPU training allocation. Preserve any recoverable existing training state. Ingest versioned qualified batches with old-row rehearsal, no from-scratch reset between arrivals. |
+| A1004/5/7 | Anscombe: EXISTING rich-bootstrap parenting twins, multiple parent schedules; Hubble generation until launch-ready direct handoff. Supersedes2/3/7. |
+| A1006 | Hubble: continuous high-budget richness, part of12GPU floor. |
+| node2 0–7 | Cicero: continuous high-budget math/code/route richness, batch-review/ingest outputs. |
+| node3 3/4/5 | Poincare: continuous high-budget math/code/route richness, part of12GPU floor. |
+| node3 0/1/2 | Pasteur: EXISTING route-child parenting twins; Poincare generation until ready. |
+| node3 6/7 | Preserve actual existing TERSE_BREADTH until safe checkpoint/release; then richness or additional parenting, no restart. |
+| NEW node1 0–7 | Main admission after Fable auth repair; all capacity additional richness/parenting. No access assumed. |
+
+No fixed presentation-count stopping rule: continual trainer logs actual per-row
+presentations and cumulative updates, with high replay while arrivals are thin,
+bounded renewable operational windows within the verified lease. Finite guard
+deadlines are safety checkpoints, not corpus-completion or research-success
+gates. Save adapter/optimizer/RNG/cursor/corpus version for real continuation.
+Batch quality review is parallel and sampled; preserve row-level provenance,
+actual outcomes and explicit sampled/unreviewed dispositions. A sampled batch
+does not magically make every row individually semantically verified. No
+teacher-byte/held leakage or unsourced training. Thousands-qualified/hour is
+the requested target, NOT measured achieved throughput. Parent transcripts all
+persist; route and math campaigns start before combined-child checkpoint.
+The relay's05:45UTC check-in is the operational target; all start times use
+measured host timestamps. Own preGPU tests/provenance and live admission remain.
+
+## EXECUTION OVERRIDE — Rohin95, allocated 2026-09-15 03:22 UTC
+
+This supersedes allocations below. Receipt clock is 03:21 UTC; the relay's
+"~03:35 UTC" is an unverified message-time estimate, not a launch timestamp.
+
+| Physical allocation | Owner / immediate work | Handoff |
+|---|---|---|
+| A100 0/1 | Laplace: COMBINED L1 FULL/new-labels-masked, SEQ-266 route1452 + qualified math764 + other admitted nonduplicate rich rows | Preserve superseded math-fit evidence; saved FULL goes directly to parenting without held-score selection. |
+| A100 2/3/7 | Hubble generation until Anscombe launch-ready; then EXISTING rich-math-bootstrap parenting, guided/unparented/frozen twins | Do not wait for combined fit; combined child follows as another matched lineage. |
+| A100 4/5/6 | Finish existing transfer readout; Hubble generation afterward | Preserve live readout source and controls. |
+| node3 0/1/2 | Poincare generation until route campaign launch-ready; then route worker, EXISTING 61-world child guided/unparented/frozen twins | Direct identity-checked owner release and fresh admission; no idle reservation. |
+| node3 3/4/5 | Poincare high-budget richness generation | Keep native workers running. |
+| node3 6/7 | Existing TERSE_BREADTH | Preserve existing jobs. |
+| node2 0–7 | Cicero high-budget richness generation | Verify actual eight native starts. |
+| NEW node1 0–7 | Main admission, then richness generation | Authentication blocked; Fable repair requested, no bypass or new lease/onboarding. |
+
+Combined-fit wall-clock estimate: measured-throughput estimate pending first
+updates; provisional planning envelope 12–24h, NOT a measured forecast or
+launch deadline. Worker posts measured projection and bounded guardian before
+launch; no silent corpus/control reduction. Parent campaign axes are style
+(micromanaging/training-wheels/creative), horizon (short/long), tone
+(harsh-critical/supportive-positive), and verified available provider strength.
+Start executable cohorts, not a wait for the whole factorial. Preserve EVERY
+parent transcript, sourced all-experience replay, teacher-byte exclusion,
+parent blindness, learner-centric readouts and taught→next-cycle lineage.
+Own CPU/provenance Builder receipts suffice inside standing scope.
+
+## EXECUTION OVERRIDE — Rohin90–93, received03:09, allocated03:15 UTC
+
+This overrides all lower allocation tables. New directives86–93 read verbatim
+from fetched origin b15eb5c9; do not wait for1000rows or another census.
+
+| Node / physical GPUs | Owner / work | Current execution status |
+|---|---|---|
+| A100 0/1 | Laplace: MATH764 FULL / new-labels-masked | IMMEDIATE fit on entire qualified02:49snapshot;16presentations/6208updates each, fresh held+retention readout; no1000gate. Supersedes16vs26 proposal before launch. |
+| A100 2/3/7 | Anscombe: rich generation → L2 pipeline | Generation while preparing direct saved-FULL handoff to guided-sleep/unparented-sleep/frozen twins; ALL sourced good/bad experience outcome-tagged, parented replay/training wheels. |
+| A100 4/5/6 | Existing Anscombe L1 transfer readout → richness | RUNNING since03:06; first actual responses03:07:43–44,14/96complete03:08:31. Finish unchanged then release to generation/pipeline. |
+| node2 0–7 | Cicero: RICH_HOT_NODE2 | Top-budget generation8192/context16384, paired prompt/meta variants, original37ec; supersedes unlaunched budget-readout proposal. Own preGPUchecks then launch. |
+| node3 0–5 | Poincare: RICH_HOT_NODE3 | Top-budget generation8192/context16384, original/light/hierarchical variants; original37ec; preserve busy6/7. Own preGPUchecks then launch. |
+| node3 6/7 | Existing TERSE_BREADTH | Existing lives unchanged; no control killed to free treatment capacity. |
+| NEW node1 0–7 | Main admission → richness worker | Host first-use key admitted, changed-key rejection retained. SSH now fails publickey/password authentication. Fable must repair promised VM-key access; no onboarding or auth bypass. |
+
+No reserved idle diagnostic lanes. Future L2 starts when native saved-child
+provenance is verified, not after a perfect corpus or an independent-review
+hold. Existing failed screens/zero sleeps remain immutable; new L2 replaces
+success-only selection with sourced outcome-tagged replay, never unsourced
+content or teacher lesson bytes. Physics/lease/ancestry gates remain mandatory.
+Workers may append their exact own preGPU Builder receipt and launch directly;
+no serial Main acknowledgment gate on these new arms. Main integrates results.
+
+Updated2026-09-15 03:00UTC. DECLARED is not RUNNING. All arm metrics pending
 unless explicitly measured. State first: RESEARCH_STATE.md. User message76
 and current launch directive supersede historical launch holds.
 
@@ -9,6 +92,33 @@ are superseded by orch_family_registry_20260914.md. Main23:55:07–09 readonly
 census superseded00:52:19–22:18/24model-resident,16nonzeroutilization; not
 saturation. LONG1empty snapshot relayed to owner; pilotnotyetnative.
 The allocation column is ownership, not measured GPU occupancy.
+
+## Continuation allocation override — 02:50 UTC
+
+This section supersedes stale active/ownership cells below; historical cells
+remain evidence of previous assignments, not permission to reuse their GPUs.
+Main's 02:47:34 A100 census: all eight GPUs have zero memory/compute processes.
+Their previous workers explicitly released them in CODE_CHANNEL, L2_LONG and
+TERSE_BREADTH journals. New launches still require full UUID/proc/CVD admission.
+Node3 at02:48:45 has only physical6/7 resident, both100% utilization; the
+TERSE_BREADTH journal's later `4/5` wording is not an ownership reassignment.
+Node1 NEWlease still fails host-key verification; no bypass or onboarding.
+
+| Work | Owner | Exclusive allocation | State and next action |
+|---|---|---|---|
+| RICH_L2_PILOT recovery | Cicero | node2 physical4–7 release audit pending | All lanes COMPLETE02:16; guided updates32/28/28, no retained advantage; offline audit and original provider accounting. |
+| RICH_TWO_PASS terminal | James completed | NONE; node2 physical0–3 released02:49:54 | 1229calls complete; BRANCH223/256 vs CONTINUE238/256 exact;17CPU regression tests pass; no relaunch. |
+| RICH_INTENSITY terminal | Bacon | NONE; node3 physical0–5 released02:48 | 1357calls complete;26existing admitted rows over9tasks; preserve first16 and prepare exact additional10 packet. |
+| L1_BOOTSTRAP_TRANSFER | Anscombe | A100 physical4/5/6 | NEW CPU preparation: first16 FULL/OFF/original37ec on32 excluded fresh math questions,96calls,90min/4.5GPUh; no fit/parent. |
+| L2_LONG_ADJACENT | Locke | NO LAUNCH; A100 physical0/1 held only for audit decision | CPU equivalence audit: existing FROZEN C1 may already be exact pre-sleep readout. Avoid redundant native calls if equivalent; preserve prepared work. |
+| RICH_BREADTH_BOOTSTRAP | Laplace | node3 physical0/1/2/3 | NEW CPU preparation:16vs26 approved rows, each FULL/OFF from37ec;224matched updates/exact legacy exposure/256new presentations; fresh32math+48retention/state;320calls,120min/8GPUh. Token exposure differs and is reported, not a pure breadth contrast. |
+| RICH_SUPPLY_REVIEW | Fermat | NONE | CPU-only deterministic first16unread tasks, CONTROL/LIGHT source/record,<=64texts; original rubric/gold, no automatic admission. |
+| Adaptive reserve | Main | A100 physical2/3/7; node2 physical0–3; node3 physical4/5 | Unallocated, no claim of saturation; fresh admission required for new work. |
+
+New readouts do not modify old gates or rescue failed screens. The SHORT-only
+ADJACENT arm remains unlaunched because all its sleeps had zero updates.
+LONG_ADJACENT explicitly discloses Main already knows the historical counts;
+it tests a same-cohort sleep contrast, not an untouched confirmation.
 
 | Arm / hypothesis | Worker | Exclusive GPUs | State / last SEQ | Held pairs and goals vs reference / control | Retention | Admitted / rubric / tokens / world coverage | BELIEF CHANGE | ALTERNATIVE EXPLANATION | VALUE OF NEXT TEST | Next action |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -20,10 +130,11 @@ The allocation column is ownership, not measured GPU occupancy.
 | Blind math prompting replication | Locke retired | NONE | DEALLOCATED;SEQ276VERIFIED23:37scoped |31/32richvs10/32terse;notheldtransfer | no fit |6PASS/47candidates;3records/31;5tasks;>=8gateFAIL | answergaprecurs;originalrecordyieldlow | publicdata/promptroles/spend/rubric | unchangedrepeatlow | preserveverifiedcounts;notsemanticcertification |
 | Blind record semantic/prefix audit | Gauss retired | NONE | COMPLETE190+separateclarification;freeze301c7427unchanged | conservativeNEW43/64vsOLD8/64;rich3/64disputed;notrescore | no fit |60semP114F16U;support180P9F1U;NEWpipeline46vsauthor83 | somefrozenreasons imposedexcesssecond-checkdemand | fourcasesnotarithmeticerrors;notwholegapexplained | boundedauthorcritique;objectiveleakexclusions | noautomatic3or28canonical;preserveprospectivegate |
 | CHECK-CONTRACT: explicit numerical check improves qualified rich yield | unassigned | NONE | DEFERREDbeforeworker/calls;raw82 | prospective64freshL1only | no fit |0calls/0newrows | usefulidea, L2nowpriority | formatting/padding/promptlength | retainidea notreservation | do notlaunch implicitly |
-| L2-SHORT: dense episode parent improves rich loop cohesion | Planck | A1000guided;2GUIDED-FROZEN | SHORT/FROZENC3;UNPterminal |C1/C2SHORT11/16=FROZEN11/16;C2pairs4/8each;firstport8/16goals,0/8pairs |allcompletedW0/W8/audit16/16 |C1+C2guided0rows/0updates;UNP1/0/0rows,26/0/0updates | same-stagehonestnulltreatment | cohorts/dose/rehearsal | finishoriginal3cycles;noextension |referenceb09764ee;C2tracesidentical16/16 |
+| L2-SHORT: dense episode parent improves rich loop cohesion | Planck finalSEQ280publication | NONE;0/2released01:10:47 | DEALLOCATED3cycledeclaredscreen;bee3254d |SHORT=FROZEN11/11/11/15of16,pairs5/4/4/7;firstport8/16,0/8 |allW0/W8/audit16/16 |guidedall3cycles0rows/0updates;UNP1/0/0rows,26/0/0updates | no realizedguidedlearning;11→15cohortvariation | data/gate/task/parentquality;notthesisfalsified | no repeat;newrichpilot | sharedbrokerpreservedforLONG;SEQ280reserved |
 | L2-LONG: sparse parent steers across episode/sleep history | Galileo | A1001 | readout1RESUMED00:59:43;native236830;9905adfc |C1heldpending;2rows28updatesactual |pendingpost-sleepreadout |mountedad2d1065;firstindex203,no replay | guidedtreatmentrealized,notgain | policy/dose/horizon;badopaque-labeladvice | finishoriginalthreecycles | guardian236763;originaldeadline/priorGPUh |
-| RICH-BLIND-SEMANTICS: apparent richness survives independent content reading | Popper | NONE | ASSIGNED00:57;blindtolabels/bootstrap/interpretation |noGPUreadout;nolearningclaim |notapplicable |24rawfirstpacketcaptures;separatecontent/outcome/support | testadmissionuncertaintywithoutgate | rubricinterpretation/format/padding | high:contraryevidencebeforepremiseuse | authorlabelsimmutable;Fablecountsnotduplicated |
-| RICH-L2-PILOT: rich bootstrap supports guided retained change | Erdos | A1003bootstrapthenrelease;node24–7parallelcontrols | NATIVE01:00:00.717940;PID239377;FULL40updatesobserved01:01 |heldnotyet;exactmathoracle8/8ceiling,notbeatablebaseline |retentionpending |fixed16rows/6tasks;FULL/OFF224updates+legacy;256presentations | actualbootstrap,notL2gain | tiny/publicL1packet;familyshift;rehearsal | high: parallelguidedcyclesnext | hardend05:00:00.717940;16GPUh/1536learner/192parentcaps |
+| RICH-BLIND-SEMANTICS: apparent richness survives independent content reading | Popper retiring | NONE | COMPLETEdbfc0cc1/b3841da0;blind |18/24content+lengthP;19semanticP;24numericcorrect;notlearning |notapplicable |all16fixedpilotrowsamong18criticP;staticlabeljoinnotFablecheck | substantivearithmeticexists;ownership/formatdistinct | pluralownership/genericchecks/earlyselection | boundedcriticismcomplete;no extra fanout | preserveoriginal16/labels;freeworker slot |
+| RICH-L2-PILOT: rich bootstrap supports guided retained change | Erdos | node24–7;A1003released01:14:32 | FOURNATIVELANES01:15;firstresponse01:14:50 |heldresultsnotyet;oracle8/8ceiling,notbeatablebaseline |retentionpending |FULL/OFF224updateseachcomplete;FULL12354524/OFFa525b5;fixed16rows | actualsavedchildrenload;notL2gain | tiny/publicL1packet;familyshift;rehearsal | high: completeguidedcycles | hardend05:00:00.717940;16GPUh/1536learner/192parentcaps |
+| CODE-CHANNEL: narrative/action interface limits usable code traces | newworker | A1000legacy-rich/2separated/3terse | DECLARED01:17;notnative |64fresheligibleMBPPL1;unchangedrestrictedoracle |no fit |source1536/record512/context4096;<=384calls | orthogonaltestaftermathpromptpanelnull | tokenbudget/format/grammar/publicdata | high:≥8qualifiedtaskgainwithout>4outcomeloss |90min/4.5GPUh;no unsafePython/newtargets/fit |
 | ORACLE-REPAIR: rejection feedback adds qualified correction beyond rich retry | Sartre retired | NONE;node3 0–3released23:28:19 | DEALLOCATEDcleanfiniteNULL;SEQ279;readerpending |8/24jointrepairsboth;checked22/24vs23/24;notheldtransfer | no fit |93calls;records2/24vs3/24;19CPUtests;0.371assignedGPUh | rejectionaloneaddsnoqualifiedyieldatdeclaredscale | prefix/verdictsupport;style;selectedpublictasks | zeroGPUreader;exactrerunlow | preserve;notparentingdisproven;no fit/scale |
 | GAME-ORTHOGONAL: observable transitions improve grounding | Dalton retired | NONE | DEALLOCATED; SEQ267 VERIFIED Fable22:22 | delivery0/16rich vs0/16terse; within-family | no fit |0admitted; first-turn2P13F1U/16author-side;80turns unreviewed; median160.5vs4tokens | verbal richness does not fix this finite screen | state/action representation; prior-adapter specialization | exact rerun low | preserve; no fit/scale/parser rescue |
 | TEXT-PREREQUISITE: grounded feedback teaches object prerequisites | Hypatia retired | NONE;A1000–3released22:35:06 | DEALLOCATED; SEQ272 published |8/8vs8/8;0discordantpairs | no fit |0rows;41calls;18richturns28–52tokens;0prerequisitefeedback | ceiling and unrealized richness, not learning null | easytasks/short-outputpolicy | exact repeat low | preserve; no newseed/scale |
@@ -38,7 +149,7 @@ The allocation column is ownership, not measured GPU occupancy.
 | Adaptive reserve | nonecurrently | NONE;tenGPUsassignedraw84generators | REALutilizationnotyetconfirmed | none | none | none | branchinggeneratorsoutrankidlewait | startupnotactivity | freshphysicalchecksperworker | no additionalfleet/node1 |
 | L2-BLIND-READOUT: distinguish retained cohesion from coaching/difficulty | Erdos;critiquecomplete | NONE | COMPLETEprospectiveblindmemo;noresultsread |same-stageSHORTvsFROZENstrongest;slopestillcohortconfounded |no new tests |zero calls;no Fablerecounts | parentdistillationnotchildreflection | ceiling/unequaldose/selfimitation | separateadjacentdiagnostic | keepblindmemo;notapproval/hold |
 | L2-ADJACENT: retained effect of one actual sleep | Erdos reassigned | NONE | DEFERREDraw84beforeadditionalnativecalls;preserveCPUwork |samehelddiagnosticretainednotlaunched |existingold/auditseparate |no authorizednewcallsunderdeferredarm | methodologicalvaluestands | checkpointwaitvsnewgenerators | revisitafteractualsleep | no implicitsideload/launch |
-| RICH-INTENSITY: focused branching instruction yields learnable richness | Ampere | node3 0–5 | RUNNING;firstqualifiedpacket00:31;944ce911 |first24reviewedtargets:control6/LIGHT6/DENSE4admitted;notpairedtaskestimate |no fit |16rows/6questions;percentagesonly;512vs1536vs1536/context4096 | usefulfollow-through exists,notwinner/learning | earlyselection;format/prompt/budget | paired8taskpanel;fixedpacketL2pilot | 120min/12GPUh;unchanged256cohort |
+| RICH-INTENSITY: focused branching instruction yields learnable richness | Ampere | node3 0–5untilterminal | paired8COMPLETE;full256batchcontinues |paneladmitted8/6/3(control/light/dense),5/5/2tasks |no fit |40texts;sourceoutcomes7/8,7/8,2/8;DENSE5formatfails | strongerpromptpanelnotbetter;notfullscreennull | format/prompt/budget/gold;correctanswerswrongintermediates | finishoriginalonly;noexpansion | first16pilotpacketunchanged;deadline02:21:33 |
 | RICH-TWO-PASS: conclusion evaluation adds value beyond another call | Erdos | node2 0–3 | RUNNING;all4ready;firstcall00:33:28 |first3commontasks:BRANCH4/6vsCONTINUE5/6targets |no fit |9qualified/12reviewed;NEW3/3each;percentagesonly | extra branchingnotautomaticallyuseful | earlyselection/realizedtokens/conditioning | fullpairedscreen;separateL2pilot | deadline02:32:52;120min/8GPUh;no paddedtargets |
 | Native evolving-child loading seam | Old Builder scoped contributor complete | NONE | DELIVEREDce9a906e/f2e76c43 | none | preserves base/adapter checks |56CPUtests;no nativevalidationbycontributor | actualsavedchildload replacesresettrap | expectedhashnotobservedstate | integratedbyL2workers | no newframework/ownershiphold |
 | SEQ266 broader terse quality | old Nash complete, Ramanujan review released | NONE | VERIFIED Fable21:47Z + independent memo; SEQ266 | FULL30/32,62/64; baseline2/32,33/64; control1/32,26/64; first-port not asserted here | W0/W8/audit16/16 all |1452new targets; terse;61eligibleTRAIN;16PROBE | strong finite DEV contrast; all-world gate FAIL15/16 | source/display regularities; missing text not sole cause proven | new adversarial test, not extra dose | still NOT PROMOTED; fresh independent replication next slot |
@@ -50,9 +161,9 @@ The allocation column is ownership, not measured GPU occupancy.
 
 - Old builder21:52Z released every node2/node3/A100GPU, including node3 0/1;
   no active arm transferred. Native physical+UUID+/proc CVD check is mandatory.
-- Node1 OLDlease/roots get NO NEW WORK. Fable00:32 reports NEWlease
-  NODE_READY00:30:36; a40r wrappers/ignored-host config not in this checkout00:49.
-  Await provisioned access handoff and actual physical checks, not old alias.
+- Node1 OLDlease/roots get NO NEW WORK. NEWlease wrappers/config received
+  809e5cf9/55c05c3f; setup reportedcomplete. Actual01:10 SSH host-key verification
+  fails. Await VERIFIED host-key handoff then physicalchecks; no bypass/oldalias.
   Main never leases/onboards. Unknown/service owners are not idle from0MiB.
 - Main owns BOARD, RESEARCH_STATE and append-only notebook integration.
   Workers own only their named new file prefixes and unique run roots.
