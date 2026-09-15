@@ -1,0 +1,57 @@
+{
+  "observed_unix": 1789482559.0233197,
+  "root": "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2",
+  "artifacts": {
+    "GUARD_STARTED.json": {
+      "sha256": "b38e761777c0104b6f0e145290578fce4e957bd0232f63b5f6e772c833a459ff",
+      "data": {
+        "command": [
+          "timeout",
+          "--signal=TERM",
+          "--kill-after=5s",
+          "2561.73823094368s",
+          "/localhome/local-rohing/v2/venv/bin/python",
+          "-B",
+          "-m",
+          "gpu.orch_r118_blind_cpu_batch",
+          "run",
+          "--root",
+          "/localhome/local-rohing/orch_r118_blind_cpu_20260915_fresh6_attempt2",
+          "--worker"
+        ],
+        "deadline_unix": 1789485000.0,
+        "pid": 2068372,
+        "started_unix": 1789482438.261866
+      }
+    },
+    "STARTED.json": {
+      "sha256": "33a89e5dd478f9fca3ede9c538909f112f570e15f7279f347f6b7fb3b811b806",
+      "data": {
+        "deadline_unix": 1789485000.0,
+        "pid": 2068375,
+        "started_unix": 1789482463.453313
+      }
+    },
+    "LOADED.json": {
+      "sha256": "b2719348bda04e2a53b54eaa50e68613a16279416b8676c43afe1165dc8c6a5f",
+      "data": {
+        "cuda_initialized": false,
+        "device": "cpu",
+        "loaded_unix": 1789482467.4608302,
+        "model_manifest_sha256": "e6b1dd1d44c296366222fdc207b3eba48fa8555b17c5cd050646bf75cc59e3cb",
+        "pid": 2068375,
+        "threads": 16,
+        "trainable_parameters": 0
+      }
+    }
+  },
+  "claims": 4,
+  "results": 0,
+  "process_present": {
+    "2068372": true,
+    "2068375": true
+  },
+  "token_log_lines": {
+    "batch_0000.tokens.jsonl": 1
+  }
+}
