@@ -1,0 +1,74 @@
+{
+  "observed_unix": 1789452568.0051415,
+  "LAUNCH_3.json": {
+    "checkpoint_sha256": "60e3fff14cad47e666dc0664cb331ea243dff250e9429317f9e759787da44d83",
+    "identity": {
+      "boot_id": "ddc89057-e544-4d14-ac7d-cae6b7e3f781",
+      "pid": 68109,
+      "start_ticks": "2066311",
+      "uid": 2524
+    },
+    "index": 3,
+    "phase_version": "PREMISE_PRESERVING_EXHAUSTION_V1",
+    "started_unix": 1789452492.8798873,
+    "uuid": "GPU-4d0f10af-119f-10bb-a28f-f7b7703a3b14"
+  },
+  "shard3/ACTOR_READY.json": {
+    "adapter_state": "37ec37884e4b0b679edd1dba1be1dec3474589e992649f3a33e7e3b1ec78b8c0",
+    "all_parameters_frozen": true,
+    "fits": 0,
+    "index": 3,
+    "kernel_minor": 0,
+    "phase_version": "PREMISE_PRESERVING_EXHAUSTION_V1",
+    "pid": 68109,
+    "ready_unix": 1789452530.8863156,
+    "reused_completed_v1_tasks": 686,
+    "runtime": {
+      "distributions": {
+        "peft": "0.20.0",
+        "tokenizers": "0.22.2",
+        "torch": "2.13.0",
+        "transformers": "5.5.3"
+      },
+      "imported": {
+        "peft": "0.20.0",
+        "tokenizers": "0.22.2",
+        "torch": "2.13.0+cu130",
+        "transformers": "5.5.3"
+      }
+    },
+    "updates": 0,
+    "uuid": "GPU-4d0f10af-119f-10bb-a28f-f7b7703a3b14"
+  },
+  "shard3/PROGRESS.json": {
+    "arm": "PREMISE_PRESERVING_EXHAUSTION",
+    "batch": 2,
+    "calls": 1,
+    "category": "registered_correct",
+    "condition": "LIGHT_BRANCH",
+    "generated_tokens": 557,
+    "index": 3,
+    "max_new_tokens": 16384,
+    "phase_version": "PREMISE_PRESERVING_EXHAUSTION_V1",
+    "stage": "source",
+    "task_id": "gsm8k-train-4352",
+    "updated_unix": 1789452558.085836
+  },
+  "failed": false,
+  "first_call": {
+    "path": "/localhome/local-rohing/orch_rich_hot_node1_20260915_premise_v1/shard3/CALL_00001.json",
+    "sha256": "da913c45b4e90869cbfc730d14b69c6875bf2e8d35c55d50b00a93735ce23a6c",
+    "started_unix": 1789452530.9116113,
+    "finished_unix": 1789452558.0843368,
+    "phase_version": "PREMISE_PRESERVING_EXHAUSTION_V1",
+    "task_id": "gsm8k-train-4352",
+    "global_call": 5077,
+    "prompt_tokens": 395,
+    "generated_tokens": 558,
+    "correct": true,
+    "self_reported_worked_method_count": 2,
+    "self_reported_premises_preserved": "YES",
+    "repetition_failure_signal": false,
+    "semantic_verified_worked_method_count": null
+  }
+}

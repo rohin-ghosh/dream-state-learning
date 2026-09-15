@@ -391,3 +391,41 @@ No new model calls, no repeated encoding of the six ingested batches, no sampler
 change. Exposure monitor will preserve FIRST_NEW375_FULL/OFF.json upon actual loss
 record evidence. FEED_STATUS_20260915T0553_COMPACT.json binds current checkpoint refs
 and source. Main owns git; no commits or shared edits beyond this own journal.
+
+
+## 2026-09-15 06:09Z — FIRST NEW375 ACTUAL, rank-local supervision verified
+
+Both arms first ACTUALLY presented newly added row at update3460/corpusV13:
+FULL2026-09-15T06:06:47.901185Z, OFF06:06:47.944851Z. Ingestion was05:38:16.788188Z
+at boundary2020; actual delay FULL1711.113s/OFF1711.157s =28min31.1s. Monitor first
+observed06:07:08.959237Z; observation is NOT the update completion timestamp.
+Global batch[3,143,3481,3482]; first new375 row is encoded3482/corpus3260,
+batch027/taskgsm8k-train-4280/targetSHA012150df62687da3d8c81564d3e093a5f06eede42882d645456fb0c2deb754c2.
+
+Not relying on global-row metadata alone: exact native rank_positions source gives
+FULL world3 rank0 positions(0,3), physical0/PID577683, local rows(3,3482),327 active
+labels =52 legacy+275 new target including native target EOS. FULLrank1 contributes12
+and rank2 contributes138, global477. OFFworld2 rank1 positions(1,3), physical3/PID577687,
+local rows(143,3482),12 active =12legacy+ZERO new labels. OFFrank0 contributes52,
+global64 with identical reference477. All five actual rank3460 loss records agree;
+records written after optimizer.step in exact hashed native trainer. Thus FULL truly
+supervised the new row; matchedOFF only presented it with new labels masked. No claim
+of learning benefit or improved behavior follows from exposure alone.
+
+FIRST_NEW375_ACTUAL_20260915T0607_COMPACT.json binds native immutable first receipts:
+FULLc307f2ff8082241284a17ad0d4d3a1b1a69d60dae1e9cac244ac8e53cdd410a2,
+OFF8c41b001394017d708b16316d3529477cdc56e3e518982a1e6fccaa1dd202a52.
+FIRST_NEW375_RANK_BINDING_20260915T0609_COMPACT.json adds exact native source hashes,
+per-rank partitions/GPU/PID/logline SHA/local supervision. Raw stays native.
+
+At current receipt FULL3545/OFF3544: new375 unique/total171/171 FULL,169/169 OFF,
+each seen row once; unpresented204/206. Slight count difference is asynchronous current
+updates, not mismatched batch selection. These are presentations, not validated learning.
+Progress monitor remains active; sampler untouched. Extra117 historical OFF physical
+recovery updates remain separately charged; no reset or new model/readout calls.
+
+Main06:00 upstream diagnosis acknowledged: original publisher uses frozen earlier
+node2root, hence no later accepted manifests despite healthy receiver polls. No silent
+source/registry/root extension. New untrained/base exhaustion segment needs separate
+explicit provenance binding; teacher-distillation dose4 pilot remains quarantined,
+never fed to ongoingL1. No slots changed and no git mutation by this worker.

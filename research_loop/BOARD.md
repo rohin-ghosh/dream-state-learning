@@ -1,5 +1,18 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## Actual exposure and new generator — 2026-09-15 06:11 UTC
+
+- New375 tranche first presented atupdate3460,06:06:47UTC, **28m31s after
+  ingestion**, not immediately. FULL learns those labels; OFF presents matched
+  rows with new labels masked. By06:07:53,171/375FULL and169/375OFF appeared.
+- Node1physical3 newpremisearm actuallylaunched06:08:12, firstreply06:09:18:
+  558tokens/EOS, correct, no changedgivens. Main fullfirst-rowreview finds one
+  core accounting method plus a regrouping variant, not convincing independent
+  methods; native self-report2 remains attributed. No fit/admission/gain claim.
+- Training4 first2episode cycle+8heldtest now COMPLETE05:58:41:308updates,
+  25m09s total (not the11.6–15min range of MICRO/CREATIVE). Repetitive capped
+  reflections remain preserved. Current-exhaustion feed replacement still preparing.
+
 ## Node1 premise-preserving generation — prospective allocation
 
 Replace only physical3 at its next durably complete task boundary. Preserve
