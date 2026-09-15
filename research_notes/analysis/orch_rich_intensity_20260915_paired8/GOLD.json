@@ -1,0 +1,58 @@
+{
+  "gsm8k-train-4409": {
+    "status": "VALID",
+    "independent_answer": "342",
+    "reason": "15*24=360 tins; 5% of360 is18 damaged;360-18=342. Thrown-away tins are unambiguously excluded.",
+    "question_sha256": "12a4036a7db4424dbdb7109cc03d9394243eb9397d3d6d137dad3a7108c134c5",
+    "reader": "RICH-INTENSITY author, direct fulltext reading in this session; not independent audit"
+  },
+  "gsm8k-train-2624": {
+    "status": "VALID",
+    "independent_answer": "120",
+    "reason": "The discount amount40 is25% of original160; payment160-40=120. It is not a40-dollar final price.",
+    "question_sha256": "057835af292beee12799c787007bd651c7c871cb9084575e50ecbdb94706a140",
+    "reader": "RICH-INTENSITY author, direct fulltext reading in this session; not independent audit"
+  },
+  "gsm8k-train-1614": {
+    "status": "VALID",
+    "independent_answer": "6",
+    "reason": "Comparing equal out-and-back trips:2*5-2*2=6 hours saved. Symmetric stated route travel times are the normal interpretation of the round trip.",
+    "question_sha256": "8030442714589177ff6d472e7783758ae83808bd389e9249c75dc457d8e24c87",
+    "reader": "RICH-INTENSITY author, direct fulltext readings; not independent audit"
+  },
+  "gsm8k-train-5181": {
+    "status": "AMBIGUOUS",
+    "independent_answer": "15 under continuous pursuit",
+    "reason": "Given moving speeds imply15*.5=7.5-mile lead,45-15=30mph closing,7.5/30=.25hours=15minutes, unlike stored gold10. School distance and whether Jenny has stopped are unspecified:10minutes could describe reaching a stationary Jenny7.5miles away, not the stated continuous-pursuit calculation. Keep original gold10/outcome failures, exclude suspect gold; no rescore or target repair.",
+    "question_sha256": "30e961c38dc7c49d00d4c254dbafe1fea63adb558ad20e2176974bfe6ea4dae5",
+    "reader": "RICH-INTENSITY author, direct fulltext readings; not independent audit"
+  },
+  "gsm8k-train-971": {
+    "status": "VALID",
+    "independent_answer": "12",
+    "reason": "A third of30 is10 spent on junk food; another8spent leaves30-10-8=12. No uncertain quantity or currency conversion.",
+    "question_sha256": "f4e8e39f1a81fe7f1ecbdb23d15691b68b0957f6aaf6ee09afa5b08d739322cd",
+    "reader": "RICH-INTENSITY author, direct fulltext readings; not independent audit"
+  },
+  "gsm8k-train-3164": {
+    "status": "VALID",
+    "independent_answer": "450",
+    "reason": "Initial stamps are half of the300 purchased, thus150; after purchase150+300=450. The 300-is-half-of-300 assertion in two NEW targets is false; it does not alter the source gold.",
+    "question_sha256": "9a788ca3bb92333adae6a971c968179a388c7d9fdc68b6a821b7d22d8e4c264e",
+    "reader": "RICH-INTENSITY author, direct fulltext readings; not independent audit"
+  },
+  "gsm8k-train-5643": {
+    "status": "VALID",
+    "independent_answer": "130",
+    "reason": "Weekly vacuuming30*3=90minutes and dusting20*2=40minutes give130minutes total. Days need not be distinct for total activity time.",
+    "question_sha256": "16be8060964c956001354eff200c1207532048bb19cb6e5afd44d24619b8c1a9",
+    "reader": "RICH-INTENSITY author, direct fulltext readings; not independent audit"
+  },
+  "gsm8k-train-6593": {
+    "status": "VALID",
+    "independent_answer": "420",
+    "reason": "Hypothetical passenger capacity per carriage25+10=35;4carriages/train and3trains give35*4*3=420passengers. Additional passenger capacity need not mean physical additional seats; this distinction does not change the numeric gold.",
+    "question_sha256": "c430910699f27858cb9dad15db0e7e7abbb4aa8dc741c398767cf347ee4115c6",
+    "reader": "RICH-INTENSITY author, direct fulltext readings; not independent audit"
+  }
+}

@@ -30,7 +30,7 @@ def reduce(root, reviews=None, gold=None):
     policy.validate(document)
     assert hashlib.sha256((root / 'TASKS.json').read_bytes()).hexdigest() == policy.TASKS_SHA
     tasks = {task['id']: task for task in document['tasks']}
-    rows, inventory, statuses = [], {}, {}
+    rows, inventory, statuses, reservations = [], {}, {}, []
     reviews, gold = reviews or {}, gold or {}
     for task_id, decision in gold.items():
         assert decision['question_sha256'] == tasks[task_id]['question_sha256']
@@ -45,6 +45,14 @@ def reduce(root, reviews=None, gold=None):
             'FAILED' if (directory / 'FAILED.json').exists() else 'PENDING')
         paths = sorted(directory.glob('CALL_*.json'))
         assert len(paths) <= 256
+        intents = sorted(directory.glob('INTENT_*.json'))
+        assert len(intents) <= 256
+        for path in intents:
+            intent = read(path)
+            assert intent['condition'] == condition
+            assert intent['max_new_tokens'] == policy.generation_cap(condition, intent['kind'])
+            reservations.append(dict(intent, physical_index=index, path=str(path.relative_to(root)),
+                persisted=(directory / path.name.replace('INTENT_', 'CALL_')).exists()))
         assigned = {task['id'] for position, task in enumerate(document['tasks']) if position % 2 == shard}
         previous = {}
         for path in paths:
@@ -77,10 +85,12 @@ def reduce(root, reviews=None, gold=None):
         if statuses[str(index)] == 'COMPLETE':
             assert len(previous) == 128
             assert len(paths) == 128 + sum(row['outcome_pass'] for row in previous.values())
-    assert len(rows) <= 1536 and set(reviews) <= set(inventory)
+    assert len(rows) <= 1536 and len(reservations) <= 1536 and set(reviews) <= set(inventory)
     summary = dict(tasks_sha256=policy.TASKS_SHA, denominator_per_condition=256,
         statuses=statuses, complete=all(status == 'COMPLETE' for status in statuses.values()),
-        total_calls=len(rows), fits=0, fit_ready=False, independent_verification=False,
+        total_calls=len(rows), dispatch_reservations=len(reservations),
+        reservations_without_persisted_response=sum(not entry['persisted'] for entry in reservations),
+        fits=0, fit_ready=False, independent_verification=False,
         reviewed_rows=len(reviews), gold_reviewed_tasks=len(gold), conditions={}, inventory=inventory)
     for condition in policy.CONDITIONS:
         selected = [row for row in rows if row['condition'] == condition]
@@ -96,6 +106,9 @@ def reduce(root, reviews=None, gold=None):
                 generated_tokens=distribution([row['generated_tokens'] for row in subset]),
                 prompt_tokens=distribution([row['call']['prompt_tokens'] for row in subset]),
                 truncated=sum(row['call']['truncated'] for row in subset),
+                unparseable_final=sum(original.final_value(row['target']) is None for row in subset),
+                parsed_numeric_mismatch=sum(original.final_value(row['target']) is not None and
+                    not row['outcome_pass'] for row in subset),
                 outside_target_range=sum(not 150 <= row['generated_tokens'] <= 400 for row in subset))
         for family in original.MINING:
             subset = [row for row in selected if row['family'] == family]

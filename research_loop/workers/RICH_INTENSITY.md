@@ -92,3 +92,76 @@ GPU are copied into `research_notes/analysis/orch_rich_intensity_20260915_receip
 Publishing only owned source/tests/roster/protocol/journal/evidence paths; shared
 COORDINATION edits and all peer changes remain outside this commit. First
 qualified packet has been ready since00:31Z and is included, no1khold.
+
+Stable owned publication committed: `944ce911227e1fffeda2ee551bc67842ed575f77`.
+Push rejected because remote main advanced (fetch-first), not a test failure.
+Main: please integrate this local owned-path commit in your merge cycle. I did
+not merge/rebase/stash/reset peers or force-push. Native batch continues; no
+publication retry or new experiments are used to disguise the remote race.
+
+## 2026-09-15T00:52Z — minimal controlled L2 bridge proposed, not executed
+
+Own `orch_rich_intensity_20260915_minimal_l2_bridge.md` recommends two fresh
+37ec clones: six already-qualified LIGHT rows FULL versus identical-new-labels
+OFF/commonlegacy, one dose4; then one tiny matched fresh SHORT route cycle.
+This tests learned generator outputs, not changing prompt+budget+weights at
+once. Actual currentL2initial=e226, so never graft/swap those running lives or
+mutate their shared INITIAL_STATE. Small new diagnostic binding only; same
+route family, actual source/parent privacy, source/row masks and honest null
+sleeps retained. No fit/cell launched here, no1kfloor or independent fanout.
+At00:51:38 native calls158/163/145/143/110/111, all six active/noFAIL; three
+families reached. Fixed paired8task panel pending group-accounting arrival.
+
+00:55 clarification after reading Main's00:47/00:51 pilot: the operative
+handoff is ALL16 frozen rows/dose16 and its four control lanes, not the
+six-LIGHT/dose4 lower-cost option sketched before reading that decision.
+Own bridge note now follows Main's actual fixed packet and budgets; no row
+substitution/reselection or current-L2 edits. First ADMITTED SHA remains
+52197d8d0f73528af69b61e6f244e5b1570f2bcfafd5ebb79d4058c959946837.
+The earlier publication944ce911 is now an ancestor of Main's integrated HEAD.
+Fixed-panel contrary evidence: both control and LIGHT Bert NEW records assert
+"300 is half of300" despite FINAL450; reject grounded-operations, no editing.
+Pursuit task5181 has storedgold10 versus continuous-pursuit calculation15;
+school endpoint underspecified, marked ambiguous for admission only. Original
+oracle failures stay unchanged. Neither case is in the initial16-row packet.
+
+## 2026-09-15T01:08Z — FIXED PAIRED8 COMPLETE; Main handoff
+
+All24sources plus16conditional NEW records,40fulltext-bound author reviews;
+fixed positions0,1,64,65,128,129,192,193, two tasks/family, all three conditions.
+`research_notes/analysis/orch_rich_intensity_20260915_paired8/READOUT.md`
+contains paired counts, exact raw paths, descriptive branch/check/follow-through
+evidence, actual tokens, rejections and interpretive uncertainty. No critic
+contact, no independent-verification claim, no new modelcalls or target edits.
+
+Six fields(tasks/calls/initialexactpass/candidates/semanticPASS/admitted):
+CONTROL8/15/7/12/9/8; LIGHT8/15/7/11/9/6; DENSE8/10/2/4/5/3.
+Admitted source/NEW3/5,1/5,1/2; distinct admitted tasks5/5/2. Actual source
+tokens1382/1620/2464 (means172.75/202.5/308); NEW2015/2128/572.
+Dense5/8source FINAL-format failures explain much of the conditional-record
+loss; math correctness remains distinct. Gold5181 ambiguous, original10not
+replaced; control/LIGHT3164 NEW false300-is-half-of300 fails grounding.
+Seat/capacity language at6593 is a disclosed conservative interpretation-based
+rejection, not conflated with those definite arithmetic errors. Control and
+DENSE971 both supply the useful10+8+12=30 conservation check.
+
+Strongest result: this fixed panel does not support superiority of stronger
+elicitation. It is NOT a clean whole-campaign NULL or a learned-effect claim.
+Useful peer message: preserve Main's entire original16bootstrap unchanged;
+paired8is separate descriptive evidence, not replacements. No pilot action,
+newfit, reviewerfanout, or automatic expansion here. Finish original256only.
+
+One coarse01:02:30UTC snapshot: native0–5calls232/243/210/209/156/159,
+1209persisted/1215dispatch reservations;6responses absent from snapshot.
+NoFAILED/RESULTfiles then, so originalbatch NOT terminal or physically released.
+Original guardian/deadline02:21:33 and all caps unchanged; peers6/7untouched.
+Across firstpacket+panel54rawrows read; snapshot10/9/7admissions are only
+read-subset lower bounds, not paired population rates. No minute polling.
+
+11CPUtestsPASS via offline cacheduv; systempython lackedpytest, failure retained
+in readout. Exact40row replay/hash/conditional-call completeness checksPASS.
+Panel SUMMARY2e200372e1cb3c0a296c6c5f961855fa687ca7e9e659558ed765ad016d036a43;
+panel ADMITTED3eedf68ffff5091a4df0eb13b4beba50e9dfc03cfb807f7e9814f6485395e501.
+Original16ADMITTED52197d8d... unchanged; Main already integrated944ce911 via
+d086921e. New owned panel/exporter/reducer/reading/journal paths ready for
+Main's exact-path publication; no merge/rebase or peer staging attempted.
