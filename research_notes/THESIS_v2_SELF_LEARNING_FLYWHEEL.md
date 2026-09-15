@@ -148,3 +148,21 @@ The stance: once a semblance of richness exists, go all in on scaling. For level
 Decision: the project runs as a LINEAGE from this point. We do not wait for any level to be perfect; once a stage runs, the line moves on and comes back only if needed. A new generation may be the same model or a new one; either way it does not start from zero — it starts from the previous generation's good state, and its post-training GENERALISES the last LoRA (the last agent's experience, records and parented life) rather than copying the last agent. Scaling therefore never blocks on completion: level 1 tonight only has to be rich enough for level 2 to turn; whatever level 2's parents teach becomes ordinary post-training data for generation two, which is the "great, contamination-free level 1" of message 89.
 
 Operational corollary (same message): while richness is the block, every GPU works on richness — generating rich text at the top budgets, comparing variants ("was that richer? did it add better reasoning? did it yield more training?"), and settling arguments by training the output into the LoRA and measuring the behaviour change. The parenting swarm starts tonight.
+
+## Level 1 restated: persistence and metacognitive control (message 107, 2026-09-15 ~07:10 UTC)
+
+After the first rich-row fit (764 math rows × 16 presentations) produced a terser child with a hollow Check habit and
+no change in thinking (P64/P65, composition audit), Rohin restated the level-1 target. Level 1 post-trains two
+primitives, not a template of "rich" output: **persistence** (keep a line of thought alive past the first adequate
+answer — depth) and **metacognitive control** (decide where the extra thought goes and whether to change how one is
+thinking — allocation). Curiosity, mycelial branching, revisitation and cross-linking are expected to emerge from the
+pair under parenting, and are measured as freedom of cognitive movement, never as a branch count. Two constraints:
+the level-1 corpus must be diverse enough that the LoRA nudges behaviour without suppressing base capabilities (tool
+use, code, concise answering must all survive and happen "in a more thought-intensive way"), checked LoRA-ON vs
+LoRA-OFF on a fixed capability suite; and the training rows must show functional metacognition (the realisation
+changes the continuation), never performative self-commentary. The base-model parenting loop — frozen base, no
+level-1 LoRA, heavy parenting for curiosity, metacognition and persistence — is the discovery baseline that decides
+what level 1 must internalise and how much of level 1 survives at all ("I don't know if we've had any success on any
+of this fine-tuning so far"). Allocation: after the current level-1 loop completes, data creation + post-training
+shrink from 17 to about 11 GPUs and the rest goes to parenting. Principle from the forwarded thread that Rohin
+endorsed: capabilities accumulate, experiences decay; development should be additive before it is destructive.
