@@ -1,0 +1,101 @@
+{
+  "F4_broker_owner": "Hubble; readiness not independently asserted by this receipt",
+  "GPU_started": false,
+  "all_eight_release_proof": {
+    "path": "/localhome/local-rohing/orch_r118_grid_parallel_drain_20260915_1513/ALL8_RELEASE_PROOF_1528.json",
+    "sha256": "bcbf6c99c725258ff72e5e18496ab139fa143e174e11f1275225d38cff79aede"
+  },
+  "authorization": {
+    "path": "/localhome/local-rohing/orch_r118_grid_parallel_drain_20260915_1513/LAUNCH_STAGE_AUTH_1528.json",
+    "sha256": "500ac3afcab4b93a0a1c3fc61d5b4497fa07e4830d766dc8d89e81de1df5e922"
+  },
+  "bounds": {
+    "final_window_utc": [
+      "2026-09-15T17:00:00Z",
+      "2026-09-15T17:20:00Z"
+    ],
+    "hard_end_unix": 1789491720,
+    "train_end_unix": 1789491300
+  },
+  "broker_bindings": {
+    "A4": {
+      "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parallel_exec_1513/BROKER_BINDING.json",
+      "sha256": "26382b64893b70199d002e1e4152e016701a3c44c383acd38e1fe25e492d4460"
+    },
+    "F4": {
+      "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parallel_exec_1513/BROKER_BINDING.json",
+      "sha256": "164608a77c7ba09870206d8d63b18c4eb8168047363a686f4c1052d7471c6ea0"
+    }
+  },
+  "broker_ready": {
+    "VM_pid": 2459104,
+    "actual_single_lane_lock_acquired": true,
+    "branch": "A4",
+    "observed_unix": 1789486456.6523316,
+    "parent_wait_seconds": 120,
+    "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parallel_exec_1513/BROKER_READY.json",
+    "preserved_parent_numbers_through": 40,
+    "provider_calls_at_observation": 0,
+    "sha256": "87351e4a68a55b3d8681ed38e3c126b77841aa1c7400b0a1ae378009e72d553d"
+  },
+  "campaign": {
+    "path": "/localhome/local-rohing/orch_r118_main_parallel_campaign_20260915_1527/CAMPAIGN.json",
+    "sha256": "b5528e1d20af8a245b8c41641888a28ae0501bd4f9a477c220af6fa324c97036"
+  },
+  "dispatcher_reserved_env": [
+    "R118_PARALLEL_SESSION",
+    "R118_PARALLEL_SESSION_SHA256",
+    "R118_PARALLEL_BRANCH"
+  ],
+  "execution_authority": "MAIN_CENTRAL_DISPATCH_ONLY",
+  "local_source": {
+    "gpu/orch_r118_grid_parallel_stage.py": "50e1c9d8c99fa033878409b3cde21aa3649dcf7471ef472d97273a7b01a1d3a0",
+    "tests/test_orch_r118_grid_parallel_stage.py": "4a766f1c126d87ce826d78c1e0d6dc5fe28cf79f7847b2115a15dec702fa914e"
+  },
+  "observed_unix": 1789486249.2700138,
+  "owners": {
+    "A4": {
+      "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parallel_exec_1513/FRESH_OWNER_FINAL.json",
+      "sha256": "d39ec43091bf23802146b1930fae4a5537886ab15ecb2c04e573a9ad3d31846d"
+    },
+    "F4": {
+      "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parallel_exec_1513/FRESH_OWNER_FINAL.json",
+      "sha256": "695b622024a0c6101d467e7b2af98edea659ecfb509bbf18c28b23ff2ace1106"
+    }
+  },
+  "preserved_state": {
+    "A4": "N567/P40; pending C8 consolidation before new TRAIN C9, no duplicate submission",
+    "F4": "N565/P40; failed postcommit C8 DEV preserved, no retry or gen0 resubmission"
+  },
+  "provider_calls": 0,
+  "replacement_final_timers": "Staged only; created by Main-dispatched guards before native model loading",
+  "retired": {
+    "A4": {
+      "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/A4/parallel_exec_1513/FINAL_RETIREMENT_STAGE.json",
+      "sha256": "0490933b2ed5fd450dbbcde9ca16b6459e1ee94182637f045ff7f39af3f373ba"
+    },
+    "F4": {
+      "path": "/localhome/local-rohing/orch_r115_grid_pair_20260915/F4/parallel_exec_1513/FINAL_RETIREMENT_STAGE.json",
+      "sha256": "ddac42c820001c9270f411ec65eb2773bd7337f5a4a40f3eb8cf1558005ff425"
+    }
+  },
+  "runtime_frozen_unchanged": true,
+  "schema": "R118_GRID_FINAL_DISPATCH_HANDOFF_V1",
+  "selector_1519259_untouched": true,
+  "selector_access": false,
+  "source_files": {
+    "path": "/localhome/local-rohing/orch_r118_grid_parallel_drain_20260915_1513/SOURCE_FILES.json",
+    "sha256": "464a59d26321b396946a57b965d990ad6fa1ea2febcf5ced0f2cad49b53a406a"
+  },
+  "staged": {
+    "path": "/localhome/local-rohing/orch_r118_grid_parallel_drain_20260915_1513/FINAL_STAGE_1528.json",
+    "sha256": "60a79ea134f703ae743b6e348a059b62f5369e7c7bc156dade7e820d072149b2"
+  },
+  "status": "CPU_STAGED_OWN_TIMERS_RETIRED_NO_GPU_START",
+  "tests_previously_completed": {
+    "frozen_A4_broker_passed": 7,
+    "local_stage_and_runner_passed": 21,
+    "native_stage_passed": 12
+  },
+  "verified_utc": "2026-09-15T15:37:07.395546+00:00"
+}
