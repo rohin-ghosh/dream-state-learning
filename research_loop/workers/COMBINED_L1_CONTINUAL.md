@@ -310,3 +310,10 @@ training updates, not initial37ec); actual calls running, not completed here.
 No closing P65a/c against promptedOFF: await their registered rawBASE/default
 comparator. No training from held, teacher, parenting/L2 or failed own-output pilot.
 Budget1824 totalreadouts, original08:06:10Z hardend. Main owns git/BOARD/publication.
+
+05:40:53Z read-only exact matched-log replay through2148: V13/3635 active,
+new375 ingested but actual presentations0/distinct presented0 at that cursor.
+CURRENT_UPTAKE_0541_COMPACT.json gives per-source min/median/max and exact latest
+FULL/OFF records. This is deliberate dose accounting, not a claim these new rows
+have trained already. Post2020 row selections are exactly matched across arms.
+Combined focused regression run77PASS4SKIP (CPU_FEED_REVIEW_0540.log).

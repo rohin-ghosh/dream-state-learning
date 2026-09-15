@@ -1,5 +1,16 @@
 # Research state — Orchestrator
 
+## Final default readout — September 15, 2026, 05:43 UTC
+
+SEQ282all3minimal-defaultcellsCOMPLETE64: FULL186/OFF246.046875/BASE235.59375
+mean tokens,64EOS/0ceilings each; ancillarycorrect50/64,48/64,42/64.
+RawnoadapterBASE verified. Registered1.5×FULL/BASEdefaultlengthhypothesis
+fails(~0.79); no broadbranching/coherencegainclaim. Exactreceiptssynced.
+V13new375admitted but0presentations atpaired2148; corpusintakeandactual
+newrowlearningremainseparate. Rohin105futuredesign: L2–3replayON,L4both
+sleepingarmsreflectionONLY/replayOFF; no livechange. Campaignremainsactive.
+
+
 ## Execution update — September 15, 2026, 05:40 UTC
 
 - Continual ingestion ACTUAL atpaired2020: V13/3635rows,+375native-only rows

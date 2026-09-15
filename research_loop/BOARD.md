@@ -1,5 +1,14 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## SEQ282 final default trio — 2026-09-15 05:43 UTC
+
+FULL/OFF/BASE mean186/246.046875/235.59375tokens,64EOS/0ceilings each;
+ancillary50/64,48/64,42/64. FULL/BASE~0.79: registered1.5×lengthprediction
+fails; OFFnotbetweenBASEandFULL. Semanticfirst4FULL/OFFeach1approach/0reject,
+notwholecohortcertification. Newest375continualrowsingested but0presentations
+atmatched2148; learningexposureauditcontinues,notmislabelledtrainingonnewrows.
+
+
 ## Rohin105 future design — 2026-09-15 05:42 UTC
 
 ReplayON throughL2–L3; futureL4bothsleepingarms replayOFF, freshownreflection

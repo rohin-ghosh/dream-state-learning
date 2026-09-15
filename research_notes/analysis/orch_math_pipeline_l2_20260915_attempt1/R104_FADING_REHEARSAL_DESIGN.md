@@ -6,6 +6,14 @@ truthful outcome tags. Existing R102 schedule, old-row mix, sources, deadlines,
 and allocation remain UNMODIFIED. This document authorizes no dispatch, added
 calls, provider retry, epoch reset, or modification of an existing life.
 
+Rohin105 supersedes the earlier cycle5 no-replay proposal: replay stays ON
+through L2–L3 childhood. Only the explicitly declared shipped L4 ladder level
+has lower plasticity and no replay. At L4 BOTH sleeping arms use reflection
+ONLY: newly generated own thinking about sourced experience, including idle
+reflection and taught/parented reflection where applicable. Main owns the
+shared fading document and new L4 design; this document records that boundary,
+not a new L4 implementation, schedule, allocation, or budget.
+
 ## Objective and interpretation
 
 Current sleep minimizes ordinary causal cross-entropy on source-attributed
@@ -32,7 +40,7 @@ allocation, exact cohort, additive native/parent accounting, source bindings,
 deadline fit, and own Builder CPU/provenance receipt must be frozen separately;
 there is currently no reservation or launch-ready claim for this next arm.
 
-### Stage A: cycles1–4, fading historical rehearsal
+### L2–L3 childhood: replay ON, prospective fading rehearsal
 
 - Every current episode keeps its outcome-tagged original-attempt record when
   actual response bytes exist, and one actual own reflection. Both are used
@@ -43,7 +51,8 @@ there is currently no reservation or launch-ready claim for this next arm.
   `age_cycles` is cycles since the latest eligible TRAIN use (creation/import
   cycle initially); `train_uses_4` counts eligible original TRAIN episodes in
   the last four cycles. All historical rows remain represented, not selected
-  by outcome; weights are strictly positive in this bounded stage.
+  by outcome; weights remain positive throughout the replay-enabled childhood
+  stage. Age/use weighting does not itself trigger a ladder-level transition.
 - Eligible use is a deterministic predeclared source-key dependency: exact task
   key by default, or a generator-provided skill key whose row mapping was
   frozen before the run. Never invent a semantic dependency after outcomes.
@@ -52,43 +61,48 @@ there is currently no reservation or launch-ready claim for this next arm.
   reflections, HELD/retention, and optimizer presentations cannot refresh it.
 - Multiply that row's mean supervised-token CE by its recorded weight, then
   backpropagate into LoRA only. No signed loss and no outcome-based multiplier.
-  Proposed LR remains the source recipe3e-5 in Stage A. Keep source-mask checks
+  Proposed childhood LR remains the source recipe3e-5. Keep source-mask checks
   and paired current-attempt/reflection exposure. Log eligible keys, ages,
   weights, presentations, weighted/unweighted losses, and actual updates.
 
-### Stage B: cycles5–8, lower plasticity and no replay
+### Shipped L4 only: lower plasticity, reflection-only sleeping arms
 
-The proposed transition is at fixed cycle5, never triggered by held scores or
-0/8 outcomes. Continue the same adapter AND optimizer state, with documented
-LR3e-6; do not reset parameters or optimizer. Historical/legacy replay stops
-entirely. Neither earlier rows nor the current recorded original attempt is
-reproduced as a supervised target in this stage: that would still be replay.
-Instead each of the two fresh episodes produces a fresh source-bound own
-reflection, followed by a masked reflection-only write. The original attempt,
-failure tag, and verifier feedback remain explicit negative-example context
-and immutable ledger rows, not relabelled or deleted. Teacher words remain
-excluded. Log this as **fresh-reflection-only adaptation, no replay**, not the
-Stage A paired-original/reflection objective. This is a proposed objective
-delta, not a reinterpretation or live alteration of R102.
+The transition is an explicit ladder-level transition to shipped L4, NOT
+cycle5 or any other cycle count within L2 or L3. No held score,0/8 outcome,
+rehearsal age, or elapsed time silently changes the level. The previous
+cycles5–8 no-replay stage and its cycle-triggered LR3e-6 proposal are superseded.
+Lower-plasticity settings, timing and transition provenance belong to Main's
+L4 design; this document does not specify them or authorize a state reset.
 
-If “no replay” is intended to prohibit even fresh reflection adaptation, that
-would instead be a no-write stage, conflicting with the requested learning
-cycle writes; stop and report that exact scope conflict rather than silently
-calling repeated trace SFT “no replay.” Current design explicitly uses the
-fresh-reflection-only interpretation, which must appear in its eventual frozen
-protocol and CPU tests before dispatch.
+At L4 BOTH sleeping arms train only on newly generated own reflections about
+sourced experience. Historical/legacy rows, earlier reflections, and recorded
+original attempts are not replayed as supervised targets. Reflection may
+occur while idle or be taught/parented where applicable; it need not be tied
+to two newly collected episodes. Idle reflection does not invent an experience
+or an environmental outcome. Original attempts, truthful failure tags and
+verifier feedback remain attributable context and immutable evidence, never
+relabeled or deleted. Teacher words remain excluded from sleep prefixes and
+targets. Log this as **new-own-reflection-only adaptation, no replay**, not
+childhood paired-original/reflection replay and not a no-write interpretation.
+Exact L4 cadence and arm-specific visibility remain in Main's design. No new
+arms or controls are allocated here; existing live L2 schedules/mixes stay intact.
 
 ## Required tests and reporting before implementation launch
 
-1. Equal-age/use correct and incorrect rows receive identical positive weights;
-   every failed current episode has coverage and at least one actual sourced
-   reflection write. Source tamper/relabel/omission and teacher copying fail.
+1. In L2–L3, equal-age/use correct and incorrect rows receive identical positive
+   weights; every failed current episode has coverage and at least one actual
+   sourced reflection write. Source tamper/relabel/omission and teacher copying fail.
 2. Age increases monotonically without eligible TRAIN; repeated eligible TRAIN
    refreshes decay. Replay, reflection, HELD and retention cannot refresh it.
-3. At cycle5, historical AND original-trace replay updates are exactly zero;
-   only fresh reflection targets are trained. LR lowers without state reset.
-4. Exactly two sequential original episodes and two reflections per sleep;
-   parent-free tests after every cycle and taught-to-next-cycle linkage.
+3. Replay remains ON throughout L2–L3, including cycle5 and later cycles.
+   Only an explicit shipped-L4 level transition enables no replay/lower
+   plasticity. At L4 BOTH sleeping arms use only newly generated own-reflection
+   targets; historical, original-trace and earlier-reflection replay updates
+   are zero. No implicit state reset or unlogged level transition.
+4. Childhood keeps exactly two sequential original episodes and two reflections
+   per sleep, parent-free tests after every cycle and taught-to-next-cycle
+   linkage. Main's L4 tests cover source-safe idle and taught/parented reflection
+   without imposing this childhood episode cadence on L4.
 5. No outcome-based stopping, tuning or resource release; all failures retained.
    Thinking/approach/rejection/repetition/coherence are primary descriptive
    readouts, not automatic admission labels. Accuracy is ancillary.
