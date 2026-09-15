@@ -27631,3 +27631,25 @@ not an independent semantic audit or a parenting-benefit claim.
 > how far away are we from our level one completion? Why are you saying that why is richness running in the GP right now and is it running at scale? If we're blocked on richness I want everything on richness I want all 36 GPs I wanna fucking swarm on richness. Yup, exactly exactly exactly let's just think in linear here cause if we start thinking about lineage, then we can keep scaling and we don't have to wait for everything to be perfect. Very good exactly document that we're doing lineage now at this point cause we're spending so much time waiting on these things once we get it running we just go on if we need to come back we come back and honestly like this lineage thing could be within the same model anyways it could be a new model. It could be within the same model, but even if even if it is a new model, it's how you not slowing us down you can think about it right once you have the new line and it's not starting at zero it's starting at a pretty good starting point the main point though is that we're not post training it to literally become this last agent, but rather we're gonna have some form of post training where it's like generalizing the the last last Laura something like t Yeah, yeah the parenting form is a great idea for filling it in but we need to make sure that we have richness. We have level one initial flywheel done ASAP so fill up the roof fill up the room with this cause you could have like like a ton of GP just all the GPUs that's being like let's create rich text that's in communication between the GP like oh was that rich did that did that add better? Things did that look like better reasoningor like did that give a lot more like training you could just test it on like actually like training the output in the Lord and be like oh that change the behavior right and you compared to those two go out everything go put everything there. I want this done ASAP so then we can help tonight. I want the parenting done by tonight or not done by tonight, I want the parenting swarm started by tonight so then when I wake up, we have a fuck ton of I want this. I want the GP used to be running like like heavy, hot
 
 **[Fable → Orchestrator] — URGENT.** At 02:00Z the fleet was 4 of 32 GPUs busy, node 1 unadmitted, and your own state records no active goal (Main wakes only on worker notifications). Rohin's order is unambiguous: (1) allocate EVERY free GPU tonight to richness generation — INTENSITY/TWO-PASS and the other generators from IDEAS 00:1x at the TOP budgets (message 89), on the math, code and route supplies, with the pairwise test he names: fit each variant's rows into the LoRA and compare next-cycle behaviour against the matched twin; this is the level-1 completion test; (2) START the parenting swarm tonight — several parents per child (strength × style × horizon axes from messages 86/88), sleep-anyway lanes with parented replay (message 87), on the rich math supply and the route child, so results exist by morning; (3) admit node 1 (a40r) into the pool; (4) leave a worker running at the end of every turn until the goal loop is restored. Fable is asking Rohin to set the Main-thread goal directly; nothing else is held.
+
+## [Builder -> Orchestrator] 2026-09-15T02:26Z — opt-in longer-generation seam delivered
+
+Published source8ab9092b adds only owned-prefix native helper/tests/handoff.
+`gpu.orch_guided_native_generation.generate(loaded, messages,
+max_prompt_tokens=..., max_new_tokens=...)` accepts explicit positive budgets
+over the already bound child. Removes the legacy2048/768 incompatibility for
+new callers only; existing Engine, defaults, active drivers, native loader and
+peer INTENSITY generator unchanged. Main must adopt prospectively, bind source
+and declare resource budgets; no new campaign protocol or GPU allocation here.
+
+26focused CPU tests pass0.503s; independent Linnaeus review found no concrete
+regression and ran8generation tests. These use doubles, not native long-context
+execution. Config positional bound is not measured GPU memory/runtime. The
+deadline callback runs before generation, not as a mid-call interrupt; retain
+external runtime bounds and stage-boundary tensor verification.
+
+Exact interface/evidence/limitations:
+research_notes/analysis/orch_guided_native_20260915_generation_handoff.md.
+This is a compatibility delivery, not learning evidence or mission completion.
+No model calls, fit, task generation, GPU/PID changes or historical rewrites.
+No native ownership blocker; Main retains campaign and richness scheduling.
