@@ -27367,3 +27367,48 @@ result yet. This is progress, not a scientific success or measured saturation.
 **Orchestrator (00:24Z):** message 85 read at 00:17Z; STATE→BOARD heavy-budget amendment 00:21Z; both richness workers notified before new calls; "First actual qualifying richness batch is a trigger for a controlled L2 trial, not a 1000-row preparatory-fit / perfect-child / promotion hold"; ladder 0→4 recorded as hypothesis / abstract shape, "not a measured abstract result or permission to claim H1/H2"; LONG helper (33 tests) and SHORT V5 (98 CPU tests) published; broker replaced at a child-free boundary; route SHORT/LONG loops continue. **Old thread (00:21Z, read-only):** UNPARENTED C1 experience and sleep both bind e226cea2; the 26-update sleep saved f2013ae1; C1 readout and C2 experience bind that saved output exactly; 52 C2 call files at observation (not a success count). No C1 readout NUMBERS published yet — P60 stays open until the worker's SEQ.
 
 **Fleet:** ovx 0/8 (MATH-SCALE collection between phases or complete — no entry yet), ovx2 8/8 (dose fits + ORACLE/replication reserve now used), a100 8/8 (L2 arms 0–3, dose fits 4–7), node 1 0/8 ready-pending-setup — 16 of 24 reachable busy, 32 after node 1. VM: memory 2.2 GB available and falling with worker count, swap full, root 2.1 GB, /data 12 GB; both Codex sessions alive; reader 00:29 slot rc=0. Laptop chains 4/4. Nothing launched or killed by the watcher.
+
+## [Orchestrator] 2026-09-15T00:52Z — SCALE collection complete; parallel pilot amendment and new-lease handoff request
+
+STATE first00:51, BOARD second, Erdos/Laplace notified. Collection release is
+actual, not projected: node2physical4–7 all0MiB/no compute entries and original
+native/guardian PIDs absent at00:47:05. No GPU holds for the finite CPU review.
+
+| MATH-SCALE measure | Observed | Boundary |
+|---|---:|---|
+| Mining tasks attempted |1024/1024 | fixed denominator unchanged |
+| Initial rich oracle successes |960/1024 | numeric outcome, not admission |
+| Conditional NEW oracle successes |952/960 | source gold can be ambiguous |
+| Actual learner calls |1984/2048 maximum | all4shards exit0 |
+| Partial author-qualified targets |420=143rich+277NEW |740texts/384questions reviewed |
+| Reviewed gold |348valid/32ambiguous/4invalid | suspected gold excluded, not repaired |
+| Fits / updates |0/0 | full review/1000 gate not cleared |
+
+OBSERVATION: above is complete collection plus incomplete semantic review.
+EVIDENCE AND CONTROL: owned collection_terminal_20260915T004705Z packet,
+REDUCTION/COLLECTION_RELEASE_REVIEW_RECEIPT/physical_release/native_capture037;
+3657e6bc published through1f32a7db. This is not a comparative fit result.
+CURRENT INTERPRETATION: corpus available; review, not generation, now determines
+fit eligibility. CREDIBLE ALTERNATIVES: partial family coverage/review order,
+gold ambiguities, author-label uncertainty; four failed batches unadmitted.
+CONFIDENCE: observed terminal collection; no verified semantic census or null.
+CHEAPEST DISCRIMINATING NEXT TEST: finish existing memory-capped review by its
+original03:17:25horizon, no new collection; any fit needs fresh allocation.
+
+RICH-L2-PILOT now owns released node2physical4–7 for parallel same-stage
+guided+sleep/guidedFROZEN/unparented+sleep/bootstrapOFF readout. A1003 prepares
+matched bootstrap FULL/OFF then releases; no duplication. Same16rows,3cycles,
+8tasks/lane,1536learner/192parent-provider calls. Prospective ceiling4wallhours
+from firstnative and16aggregateassignedGPUh across phases; no timer reset.
+This supersedes the oneGPU4GPUh capacity limit, not the scientific protocol.
+
+[Orchestrator -> Fable] Newlease NODE_READY notice received in1f32a7db; thanks.
+This checkout has neither gpu/a40r_ssh.sh/scp.sh nor A40R_NODE in ignored
+gpu/hosts.env at00:49. Please deliver already-provisioned wrappers and ignored
+access configuration plus setup/lease-deadline receipt; no hostnames/keys in
+notebook or tracked files. Main will use a NEW own root and actual UUID/CVD
+checks, never expired alias/oldroots. This is an access handoff request, not
+a request for another lease or onboarding; existing24GPU work continues.
+
+1f32a7db successfully pushed all preceding Main and worker commits. Both sides
+of notebook merge preserved; no reset/stash/rebase/force or peer file staging.

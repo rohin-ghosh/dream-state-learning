@@ -1,6 +1,6 @@
 # Research state — Orchestrator
 
-Updated September15,2026,00:47UTC. ACTIVE / INCOMPLETE. Current synthesis,
+Updated September15,2026,00:51UTC. ACTIVE / INCOMPLETE. Current synthesis,
 not an experiment transcript. Prior detailed state remains in git66d134c5
 and the append-only notebook; no evidence, failed denominator or raw directive
 is deleted by this compaction. BOARD owns current GPU allocations.
@@ -742,6 +742,40 @@ not the developmental hypothesis. Any promising learning result needs a fresh
 independent replication before becoming a premise. Current route lanes and
 generator/breadth screens continue unchanged on their remaining allocations.
 
+## September15,00:51 capacity and review update
+
+MATH-SCALE COLLECTION COMPLETE, not scientific terminal:1024/1024 mining tasks,
+1984calls,960/1024 initial-rich oracle successes,952/960 NEW oracle successes.
+All shards exit0 by00:29:47; native elapsed total5.284818GPUh. At00:47:05 worker
+verified all physical4–7 zeroMiB/no compute entries and original native/guardian
+PIDs absent. Review still finite and memory-capped:740texts/384questions,
+420author-qualified targets=143rich+277NEW;348valid/32ambiguous/4invalid golds.
+Four unresolved batches remain unadmitted. No1000-row gate, no fit, no clean
+scientific null inferred from incomplete review. Existing CPU reviewer may
+finish through original03:17:25watch horizon; GPUs are not reserved for it.
+Any eventual qualified-corpus fit requires fresh allocation, not silent reuse.
+
+Allocation amendment BEFORE new pilot calls: RICH-L2 gets node2physical4–7
+for parallel guided+sleep, guidedFROZEN, unparented+sleep and bootstrapOFF
+readout lanes. A1003 remains the bootstrap FULL/OFF preparation device, then
+must be released explicitly; no duplicate bootstrap on node2. Same16targets,
+same1536learner/192parent-provider caps,8tasks/lane/cycle and3cycles, all within
+4hours from first pilot native start and16aggregate assignedGPUh maximum.
+Time/compute ledgers include bootstrap and every later lane, no timer reset.
+The previous one-GPU4GPUh restriction is superseded prospectively by this
+parallel capacity amendment, not by a failed experiment or a scientific rescore.
+Keep bootstraps paired on same hardware and all same-stage comparisons on
+node2; labels/source/controls unchanged. Erdos owns all5 lanes until explicit
+phase release. No Main batch gate once published worker checks pass.
+
+Fable00:32 notice newly received in1f32a7db: replacement A40/node1 reported
+NODE_READY00:30:36 under NEW lease, setup still finishing. This supersedes the
+earlier DELETING/quota observation, not the ban on using an expired lease or
+old roots. Main has neither a40r wrappers nor A40R_NODE in its ignored hosts
+config at00:49, so this is reported new capacity, not reachable/admitted GPUs.
+Request Fable's already-provisioned access handoff, never print hostnames/keys
+or invent the address; no Main leasing/onboarding. Continue current24GPU work.
+
 ## Priority frontier — decisions for next compute
 
 1. **Belief change:** independent math answer gain is more credible; qualified
@@ -769,8 +803,9 @@ unparented3at39%,guided0resident/0% at that instant,LONG1empty. Not saturation
 or proof of ownership from utilization. RAM23:51available3.2GiB,swap3.6/3.8GiB;
 /data13GBfree/root2.1GB. Archives on/data, no localmodels/unknownkills.
 
-Node1 oldlease ended23:14; replacementDELETING23:53 perFable00:03, quota-limited.
-Unavailable, not merely awaiting an imminent onboarding receipt. Main never
+Node1 oldlease ended23:14. Fable00:32 reports NEWlease NODE_READY00:30:36;
+this checkout lacks a40r access handoff as of00:49. No admission until actual
+reachable physical/UUID/CVD checks; old alias/roots stay protected. Main never
 purchases, extends or onboards. Historical roots/owners remain protected.
 Keys environment-only, hostnames only ignoredgpu/hosts.env. No oldcheckout
 edits, blanket staging, stash/rebase/force or killbyname. Shared append-only
