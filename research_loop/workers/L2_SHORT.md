@@ -300,3 +300,32 @@ modification or deployment. Existing report now labelsFROZENcontrol correctly.
 C3 SHORT7/16,FROZEN11/16 recorded; originalguardianscontinue, neither released.
 LONG2rows28updates firstGUIDEDactualtreatment, no causalclaim before ownheld.
 Newpilot original37ec keeps source/recipient lineage honest; no e226 rewrite.
+
+2026-09-15T01:12Z [Builder → Main] ORIGINAL OWNED THREE-CYCLE LIFETIME TERMINAL.
+SHORTguard ended01:09:18UTC; FROZEN01:05:39UTC; no restarts/extensions/newsource.
+SHORT experience1/6/2 of16, rows0/0/0,updates0/0/0,666learnerreservations.
+GuidedFROZEN experience0/4/4 of16,rows0/0/0,updates0/0/0,677reservations.
+UNPARENTED prior terminal5/4/3,rows1/0/0,updates26/0/0,686reservations.
+Held goals initial/C1/C2/C3 SHORT=FROZEN11/11/11/15 of16; pairs5/4/4/7 of8.
+UNPARENTED held11/8/11/11,pairs5/2/4/3. Every owned W0/W8/audit16/16.
+Deterministic first-CURRENT-listed-port REFERENCE actually8/16goals,0/8pairs
+EVERYstage; GUIDED-FROZEN is CONTROL. RawSHORT/FROZENtraces16/16identical at
+every stage; unchangede226 means11→15 is cohortvariation, not guidedlearning.
+LONGnewreadonly C1held8/16,W0/W8/audit16/16 after2rows28updates; descriptive
+-3goals vsC1guidedFROZEN, no causalclaim/firstport-policy-equivalence/gain.
+LONGC2experience2/16,0rows0updates; its fulltrajectory remainsLONGowned.
+Ownproviderreservations SHORT184/600 (includesUNPsemantic),FROZEN184/600;
+92logicalrequests each are not an extra184modelcalls. Source448shared once.
+Originaldeadline1789472611.845884 unchanged; allledgerscontiguous/capschecked.
+TerminalsummarySHA6120ee1f4810385cbd29eddbf445dba0212590a3a668fd9accd8e0c635b945e1;
+nativearchivee18ee9d5102d8950921151ed546eac4ea583730b0385989223c4cc23c47a6278
+remotely/localverified.1451providerfiles archive
+8589ab50b04877ba2d6d4caf322d83067c19e3280856ebb02e7d94bcfea3f146.
+FROZENdistillC1/C3failedraws preserved, no retries/substitution. Short3distills
+andFROZENC2distill intact. Previousfailures/nulls/targetprefixes untouched.
+After counts/chain/terminalchecks, actualguardian/nativePIDsabsent, UUIDchecked
+A100physical0/2 each0MiB at01:10:47: RELEASED TO MAIN, no new cell/kill action.
+Physical3 remainsErdos;1remainsLONG. Serialparentbroker stays forLONG.
+Report research_notes/analysis/orch_l2_shared_20260915_original_terminal.md.
+BoundedSHORTrecipe null; retirethisrun atdeclaredscale, notdevelopmentalthesis.
+Nextcompute separatelyallocated37ecpilot; no e226recipient/sourceconflation.
