@@ -1,5 +1,9 @@
 # Independent restoration — 2026-09-15 18:11 UTC
 
+## Update: node5 all eight computing at 18:19:16 UTC
+
+Independent wrapper census: physical 0–7 memory MiB = 23648, 15810, 17238, 36394, 35046, 15704, 16982, 18880; utilization percentages = 100, 85, 85, 100, 53, 87, 6, 81. F2/A2 now have active models; A4 is resident again after its packaging-failure recovery. This verifies eight active GPU slots, not eight delivered parents or successful math sleeps. First completed math calls and actual sleep updates still require receipts. Old-fleet empty slots remain assigned to their existing family owners for restoration; the earlier whole-fleet census below is historical, not updated by arithmetic.
+
 Measured via the five SSH wrappers, not inferred from allocations. Resident means memory.used > 1024 MiB; computing means instantaneous utilization.gpu > 0.
 
 | Wrapper | Resident / 8 | Computing / 8 | Empty physical slots |
