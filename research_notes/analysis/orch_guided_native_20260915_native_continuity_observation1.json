@@ -1,0 +1,325 @@
+{
+  "additional_fits": 0,
+  "additional_model_calls": 0,
+  "limitations": [
+    "No tensor rehash in this read-only observation: observed states come from native LOADED receipts.",
+    "No parented benefit, behavioral improvement, G1-G3 gate promotion, or full campaign completion inferred.",
+    "Call-file count confirms captured subsequent activity, not successful task outcomes."
+  ],
+  "next_stage_manifest": {
+    "native_source_sha256": "559d8e6ea7002f2651748ba192a57c5cf627381f6a3994d93cb02d63011a3157",
+    "path": "PREPARE_RUNTIME_V4.json",
+    "sha256": "e6dbdda466a9e2e732b5965eb7750677b2ba77803a2c100e5d790a748f635f62"
+  },
+  "node_alias": "A100",
+  "observed_utc": "2026-09-15T00:21:24.637988+00:00",
+  "receipts": {
+    "UNPARENTED/cycle1/experience/COMPLETE.json": {
+      "fields": {
+        "admitted_rows": 1,
+        "arm": "UNPARENTED",
+        "cycle": 1,
+        "input_adapter": {
+          "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "files": [
+            [
+              "README.md",
+              "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+            ],
+            [
+              "adapter_config.json",
+              "b2cee0d47d60c55fb7b6b677b244535a77c8fd0c0320e2c2afcea473cdb93743"
+            ],
+            [
+              "adapter_model.safetensors",
+              "a8b69dc8860f8d0ffef92ba42fa55133accd2cf74d134b93f635b8ef30a33c94"
+            ]
+          ],
+          "path": "/tmp/orch_l2_shared_20260914_attempt1/initial_adapter",
+          "state_sha256": "e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf"
+        },
+        "phase": "experience",
+        "process": [
+          "273420dc-cd6c-4760-a264-0027d2f6aede",
+          172189,
+          15075892
+        ],
+        "status": "COMPLETE"
+      },
+      "sha256": "8c9eba6434214c2e132956ba531f3f167a9ad34cc9ebd056b3fe58ea07060463"
+    },
+    "UNPARENTED/cycle1/readout/COMPLETE.json": {
+      "fields": {
+        "admitted_rows": 0,
+        "arm": "UNPARENTED",
+        "cycle": 1,
+        "input_adapter": {
+          "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "files": [
+            [
+              "README.md",
+              "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+            ],
+            [
+              "adapter_config.json",
+              "c5ef793afa201da0058a2a26e323bd30f4600b5d9a2342791e499f7b95db968c"
+            ],
+            [
+              "adapter_model.safetensors",
+              "2e685d58722362e7ad79b55ca5ec0666b460a83b15c0b8bbe4038a961f4544fa"
+            ]
+          ],
+          "path": "/tmp/orch_l2_shared_20260914_attempt1/UNPARENTED/cycle1/sleep/adapter",
+          "state_sha256": "f2013ae172f58d3f2aea843272eb7aea286d587a21d4cb96b905cb965ac99100"
+        },
+        "phase": "readout",
+        "process": [
+          "273420dc-cd6c-4760-a264-0027d2f6aede",
+          192408,
+          15199058
+        ],
+        "status": "COMPLETE"
+      },
+      "sha256": "cff364f6582aac552bbb194b6504b249249d07513035cc7c8d7fc875ce2f23b6"
+    },
+    "UNPARENTED/cycle1/readout/LOADED.json": {
+      "fields": {
+        "observed": {
+          "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "files": [
+            [
+              "README.md",
+              "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+            ],
+            [
+              "adapter_config.json",
+              "c5ef793afa201da0058a2a26e323bd30f4600b5d9a2342791e499f7b95db968c"
+            ],
+            [
+              "adapter_model.safetensors",
+              "2e685d58722362e7ad79b55ca5ec0666b460a83b15c0b8bbe4038a961f4544fa"
+            ]
+          ],
+          "path": "/tmp/orch_l2_shared_20260914_attempt1/UNPARENTED/cycle1/sleep/adapter",
+          "state_sha256": "f2013ae172f58d3f2aea843272eb7aea286d587a21d4cb96b905cb965ac99100"
+        },
+        "phase": "readout",
+        "process": [
+          "273420dc-cd6c-4760-a264-0027d2f6aede",
+          192408,
+          15199058
+        ],
+        "runtime": {
+          "distributions": {
+            "peft": "0.20.0",
+            "tokenizers": "0.22.2",
+            "torch": "2.13.0",
+            "transformers": "5.5.3"
+          },
+          "imported": {
+            "peft": "0.20.0",
+            "tokenizers": "0.22.2",
+            "torch": "2.13.0+cu130",
+            "transformers": "5.5.3"
+          }
+        }
+      },
+      "sha256": "1e3ed3e6ef8677c8132f17951798a02b8fa75cf38e7eb70c6b71015e5ea3d2a7"
+    },
+    "UNPARENTED/cycle1/sleep/COMPLETE.json": {
+      "fields": {
+        "arm": "UNPARENTED",
+        "cycle": 1,
+        "fits": 1,
+        "input_adapter": {
+          "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "files": [
+            [
+              "README.md",
+              "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+            ],
+            [
+              "adapter_config.json",
+              "b2cee0d47d60c55fb7b6b677b244535a77c8fd0c0320e2c2afcea473cdb93743"
+            ],
+            [
+              "adapter_model.safetensors",
+              "a8b69dc8860f8d0ffef92ba42fa55133accd2cf74d134b93f635b8ef30a33c94"
+            ]
+          ],
+          "path": "/tmp/orch_l2_shared_20260914_attempt1/initial_adapter",
+          "state_sha256": "e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf"
+        },
+        "output_adapter": {
+          "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "files": [
+            [
+              "README.md",
+              "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+            ],
+            [
+              "adapter_config.json",
+              "c5ef793afa201da0058a2a26e323bd30f4600b5d9a2342791e499f7b95db968c"
+            ],
+            [
+              "adapter_model.safetensors",
+              "2e685d58722362e7ad79b55ca5ec0666b460a83b15c0b8bbe4038a961f4544fa"
+            ]
+          ],
+          "path": "/tmp/orch_l2_shared_20260914_attempt1/UNPARENTED/cycle1/sleep/adapter",
+          "state_sha256": "f2013ae172f58d3f2aea843272eb7aea286d587a21d4cb96b905cb965ac99100"
+        },
+        "phase": "sleep",
+        "process": [
+          "273420dc-cd6c-4760-a264-0027d2f6aede",
+          190435,
+          15187165
+        ],
+        "status": "COMPLETE",
+        "unchanged": false,
+        "updates": 26
+      },
+      "sha256": "2a7e77496d8f906063a0e5621e9512ecbb3096a230ef4b357770768bf3c56c94"
+    },
+    "UNPARENTED/cycle1/sleep/LOADED.json": {
+      "fields": {
+        "observed": {
+          "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "files": [
+            [
+              "README.md",
+              "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+            ],
+            [
+              "adapter_config.json",
+              "b2cee0d47d60c55fb7b6b677b244535a77c8fd0c0320e2c2afcea473cdb93743"
+            ],
+            [
+              "adapter_model.safetensors",
+              "a8b69dc8860f8d0ffef92ba42fa55133accd2cf74d134b93f635b8ef30a33c94"
+            ]
+          ],
+          "path": "/tmp/orch_l2_shared_20260914_attempt1/initial_adapter",
+          "state_sha256": "e226cea230b4b970cd5a94cb2b853350aa8bfb95ab4ba69cba3e78ebdd0ad3bf"
+        },
+        "phase": "sleep",
+        "process": [
+          "273420dc-cd6c-4760-a264-0027d2f6aede",
+          190435,
+          15187165
+        ],
+        "runtime": {
+          "distributions": {
+            "peft": "0.20.0",
+            "tokenizers": "0.22.2",
+            "torch": "2.13.0",
+            "transformers": "5.5.3"
+          },
+          "imported": {
+            "peft": "0.20.0",
+            "tokenizers": "0.22.2",
+            "torch": "2.13.0+cu130",
+            "transformers": "5.5.3"
+          }
+        }
+      },
+      "sha256": "41426976bcd2fe0c07e51b294db4a81177ac4d0623faf74f0ecd2ea35f5acce0"
+    },
+    "UNPARENTED/cycle2/experience/LOADED.json": {
+      "fields": {
+        "observed": {
+          "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "files": [
+            [
+              "README.md",
+              "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+            ],
+            [
+              "adapter_config.json",
+              "c5ef793afa201da0058a2a26e323bd30f4600b5d9a2342791e499f7b95db968c"
+            ],
+            [
+              "adapter_model.safetensors",
+              "2e685d58722362e7ad79b55ca5ec0666b460a83b15c0b8bbe4038a961f4544fa"
+            ]
+          ],
+          "path": "/tmp/orch_l2_shared_20260914_attempt1/UNPARENTED/cycle1/sleep/adapter",
+          "state_sha256": "f2013ae172f58d3f2aea843272eb7aea286d587a21d4cb96b905cb965ac99100"
+        },
+        "phase": "experience",
+        "process": [
+          "273420dc-cd6c-4760-a264-0027d2f6aede",
+          196081,
+          15222108
+        ],
+        "runtime": {
+          "distributions": {
+            "peft": "0.20.0",
+            "tokenizers": "0.22.2",
+            "torch": "2.13.0",
+            "transformers": "5.5.3"
+          },
+          "imported": {
+            "peft": "0.20.0",
+            "tokenizers": "0.22.2",
+            "torch": "2.13.0+cu130",
+            "transformers": "5.5.3"
+          }
+        }
+      },
+      "sha256": "ce471d926dad27add1913475dfef0d680e5d1323286b9225dbdf0b5e814a9c9d"
+    },
+    "UNPARENTED/cycle2/experience/REQUEST.json": {
+      "fields": {
+        "arm": "UNPARENTED",
+        "cycle": 2,
+        "input_adapter": {
+          "base_sha256": "a2367093892219a833eea1bc7b3e0e2069bcaecad335df357809679d272f4992",
+          "files": [
+            [
+              "README.md",
+              "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+            ],
+            [
+              "adapter_config.json",
+              "c5ef793afa201da0058a2a26e323bd30f4600b5d9a2342791e499f7b95db968c"
+            ],
+            [
+              "adapter_model.safetensors",
+              "2e685d58722362e7ad79b55ca5ec0666b460a83b15c0b8bbe4038a961f4544fa"
+            ]
+          ],
+          "path": "/tmp/orch_l2_shared_20260914_attempt1/UNPARENTED/cycle1/sleep/adapter",
+          "state_sha256": "f2013ae172f58d3f2aea843272eb7aea286d587a21d4cb96b905cb965ac99100"
+        },
+        "phase": "experience",
+        "process": [
+          "273420dc-cd6c-4760-a264-0027d2f6aede",
+          196081,
+          15222108
+        ],
+        "runtime_manifest_sha256": "e6dbdda466a9e2e732b5965eb7750677b2ba77803a2c100e5d790a748f635f62"
+      },
+      "sha256": "5dc6454850bf21fb52197196ed3c386ff54742a7d423290c1716b61fa6601c27"
+    }
+  },
+  "root": "/tmp/orch_l2_shared_20260914_attempt1",
+  "schema": "AUTHOR_NATIVE_SEAM_CONTINUITY_OBSERVATION_V1",
+  "scope": "author-side existing receipt and adapter-file verification; not independent scientific review or new model execution",
+  "status": "CHECKS_PASS",
+  "subsequent_cycle_call_files_at_observation": 52,
+  "verified_output_adapter_files": [
+    {
+      "name": "README.md",
+      "sha256": "1b1a685a0798f66ef71e870c1b87713d92814d912c47297127c119e751d3ea33"
+    },
+    {
+      "name": "adapter_config.json",
+      "sha256": "c5ef793afa201da0058a2a26e323bd30f4600b5d9a2342791e499f7b95db968c"
+    },
+    {
+      "name": "adapter_model.safetensors",
+      "sha256": "2e685d58722362e7ad79b55ca5ec0666b460a83b15c0b8bbe4038a961f4544fa"
+    }
+  ]
+}

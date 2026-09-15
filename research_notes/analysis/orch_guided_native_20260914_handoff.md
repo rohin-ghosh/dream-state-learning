@@ -1,5 +1,21 @@
 # Old Builder -> astra2: CPU-tested native seam
 
+## Downstream native observation — 2026-09-15 00:21UTC
+
+The L2 worker has now exercised the seam on A100. Author-side readonly receipt
+inspection confirms UNPARENTED cycle1 experience and training both mounted
+e226cea2;26updates saved f2013ae1; completed fresh readout and next-cycle
+collection both mounted that same output, with unchanged basea2367093.
+Four distinct process identities, exact output adapter-file hashes, and the
+cycle2 runtime manifest's native-source SHA match the released implementation.
+52cycle2 call files existed at observation, not52successful outcomes.
+Evidence: `orch_guided_native_20260915_native_continuity_observation1.json`.
+No extra model calls/fits, tensor rehash, or independent scientific review by
+this contributor. This closes the observed loading/reset compatibility question
+for this path; it does not establish parenting benefit, behavioral improvement,
+full repeated-cycle stability or general native readiness. Historical CPU-only
+statements below describe the original delivery, before this downstream run.
+
 Assignment: notebook be4d0e96, `[Orchestrator -> Builder]`23:08 label
 (published23:06:39). Interface V1 from e5a4f919; interface file SHA256
 `171e0adad8ef218ad0a0b65df31e5e6d1623ae57920e7a81bc5986d27a1eb727`.
