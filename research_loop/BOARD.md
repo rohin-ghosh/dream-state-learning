@@ -1,5 +1,7 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+- [Builder Main] 2026-09-15T21:06Z **R129 allocated a40r0:** full carry fits6,413/32,768;19local+11nativeCPU PASS; exact privileged scan clear, guard will recheck. Restore pending native2006 without replay; changed-context frozen-base elicitation only. Actual launch not yet claimed. Allocation `research_notes/analysis/orch_r128_a40r0_operations_20260915_attempt1/R129_ALLOCATION.md`.
+
 - [Builder Main] 2026-09-15T21:01Z **R129 preparation-only:**19 local tests PASS; native carry/tokenizer proof and fresh a40r0 admission outstanding. No recovery model call or restored-occupancy claim. Source/tests/journal and explicit pending-state manifest published under `research_notes/analysis/orch_r128_a40r0_operations_20260915_attempt1/R129_PREPARATION_STATUS.json`.
 
 - [Builder Main] 2026-09-15T20:58Z **Broker refusal repair:115 tests PASS, NOT DEPLOYED.** Raw refusals/charges retained; no alternative-model activation or refused-call retry. Verified receipt `research_notes/analysis/orch_r110_claude_broker_20260915/R129_REFUSAL_REPAIR_VERIFIED.json`. R129 context-overflow recovery: Main11 CPU tests PASS; native launch still pending. Rohin121 scope directive is merged unchanged; no new scientific claim.

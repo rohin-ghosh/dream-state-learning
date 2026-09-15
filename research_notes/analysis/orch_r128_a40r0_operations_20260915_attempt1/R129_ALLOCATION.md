@@ -1,0 +1,11 @@
+# R129 allocation — September 15, 2026, 21:06 UTC
+
+Allocate only `gpu/a40r_ssh.sh` physical0, UUID `GPU-5b370d4d-bdcc-21d5-cf06-e9bea52e602d`, to recovery of the existing `node1_7` frozen-base, context-only route lineage. Other GPUs and live sources remain untouched. This is a declared changed-context epoch, not LoRA learning or identical-context continuation.
+
+Native source: `/localhome/local-rohing/orch_r129_a40r0_source_20260915_v1/gpu/orch_r129_a40r0_context_epoch.py`, SHA256 `37f70c174130edd639f4e83728c0b6a62ccd3a9764aa381a686fa912415d339a`. Frozen dependencies: `/localhome/local-rohing/orch_r118_node1_route_source`.
+
+Native campaign: `/localhome/local-rohing/orch_r109_route_20260915_node1_7_attempt2/overflow_r129_v1/campaign_node1_7`. EPOCH SHA256 `30a9ba3a9dff896932a8892d240b3f2fa842df0233fdce11febeeb0253d4d0c5`; CARRY SHA256 `374ea0b7caa7ae882b6896c8a871f9c6655ffd650d35b97d262baafd9ffe98bb`. Actual full child reflection2005, original system/pending instruction and delivered parent110 yield a 6,413-token prompt within the unchanged32,768 limit. The full earlier context remains archived. No parent110 replay, synthetic compiler summary or tail truncation. Original RNG was not serialized: declared new context fork, unchanged greedy decoder, no exact-RNG claim.
+
+Main19 local tests and11 native tests PASS, including actual frozen native seam compilation and the simulated unreserved2006-only transition. Initial native invocation lacked pytest; rerun used existing node-local pytest support, no dependency installation or model call. Privileged CPU scan at21:05:52UTC found exact physical0 clear with no blockers; the guard must scan again immediately before dispatch.
+
+Keep original cumulative native16,384/parent640/cycle256 caps and September18,2026 18:00UTC hard wall (TRAIN120seconds earlier). First new learner call is2006, pending C52 reflection turn2. C52 source episodes and reflection1 are not repeated; subsequent original cycles remain eligible. Capability/readout data stays excluded from parent/training paths. No occupancy or retained-benefit claim until actual receipts. Existing Astra provider only for future scheduled requests of this existing Astra lane; no Fable-refusal rerouting or credential changes.
