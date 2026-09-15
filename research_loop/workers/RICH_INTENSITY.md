@@ -165,3 +165,43 @@ panel ADMITTED3eedf68ffff5091a4df0eb13b4beba50e9dfc03cfb807f7e9814f6485395e501.
 Original16ADMITTED52197d8d... unchanged; Main already integrated944ce911 via
 d086921e. New owned panel/exporter/reducer/reading/journal paths ready for
 Main's exact-path publication; no merge/rebase or peer staging attempted.
+
+## 2026-09-15T01:24Z — own commit published; original batch COMPLETE/RELEASED
+
+Explicitadd then `git commit --only -- <exactpaths>` produced
+`c7e11fec8df151da46043a9305832f1051f181cc` for owned panel/reducer/reading/journal.
+Existing unchanged tests were included in exactpaths; no artificial testdiff.
+Only owned paths entered the commit; no shared-index/peer edits or upstreammerge.
+Main handles upstream integration, not staging on our behalf.
+
+Next native observation01:21:50UTC found actual COMPLETE already01:10:01.806610;
+all six privileged UUID/global/proc RELEASE scans clear by01:10:05.042309UTC.
+This is historical release, not a claim of current vacancy after reallocation.
+No manual kill/restart, newcalls, formatrepair, fit, or expansion. Node3 6/7untouched.
+Six shardcalls246/247/243/246/182/193; six COMPLETE/exit0; all128initials/shard.
+1357persisted=768initial+589NEW;1357intents,zero dangling;179unusedcallbudget.
+
+Full256terminal sixfields(tasks/calls/initialexactpass/candidates/readsemanticPASS/readadmitted):
+CONTROL256/493/237/377/12/10; LIGHT256/489/233/388/12/9;
+DENSE256/375/119/200/9/7. Finaltwofields are READ-SUBSET LOWER BOUNDS:
+54totalrowsread,1303UNREVIEWED/unadmitted. Paired8unchanged8/6/3;
+not a full-screen semanticNULL or learning claim. All26admittedrows directlyread.
+Actual source tokens45484/55688/94969; NEW74223/74729/38298.
+InitialmissingFINAL5/11/129, parsednumericmismatch14/12/8: no math/format conflation.
+Allfourfamilies64/condition completed. Fulltext contrary examples retained.
+
+Original allocation through lastrelease48.5185min=conservative4.85185sixGPUh;
+attempt3guardian4.44606GPUh does NOT reset originalclock. Deadline02:21:33unchanged.
+Same37ec verified on allsix;zero updates/fits; first16ADMITTED52197d8d...unchanged.
+No critic contact or canonicalrescore; pilot stays separate, no actions here.
+
+Terminal rawarchive native/local SHA matches
+a4374f0c7e2479cde7eb7d6a2e2c47820ecdbe87fb15cc7e17ec6a25bae2c97f,
+`gpu_artifacts_local/orch_rich_intensity_20260915_attempt3/TERMINAL_0122.tar.gz`.
+Durablecounts/rawreceiptcopies/fulltextlimits in
+`research_notes/analysis/orch_rich_intensity_20260915_terminal/READOUT.md`.
+All1357exactprompt/mask/capture/conditional-call/state/ownership/cap checksPASS;
+reusedguard validates sixrelease snapshots. No new reviewer/custody framework.
+Compute recommendation: allocation finished; no automatic expansion or fit.
+Useful Main message: merge c7e11fec plus terminal owned-path commit; observe
+actualrelease01:10:05, then make any newallocation with fresh ownership checks.
