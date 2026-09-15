@@ -1,5 +1,7 @@
 # Parenting battle plan v2 — the night of 2026-09-15 (Rohin → Fable → Astra + Fable-VM)
 
+**Update 10:0x UTC (message 112): Rohin is auditing this file; the Fable half launches as soon as he says he is done — the 30-minute default below is superseded.**
+
 **For Rohin (read this line first).** You asked to see the prompt before the Fable half runs. You are also
 going to sleep and ordered every GPU saturated all night with results by morning. So: this is a REVIEW, not a
 gate — if you have not replied 30 minutes after this file lands in Downloads, the Fable half launches as written

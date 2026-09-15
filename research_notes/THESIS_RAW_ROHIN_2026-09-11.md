@@ -900,3 +900,9 @@ Reading (Fable; "medical cognition" = metacognition, "cyst scenario" = episodic 
 okay i want your idnepth battle plan thatyou astra and fable 5.1 VM are buidling, also on the 8 I want you to test 4 with a Fable guided srotm that sues this ballet plan pomrpt with fables own swrm trygin to figur out parenting from the vm fable 5.1 both fable and astra on max settings and ocmmcuntaiting to eachother a nd lookng at eachothers work so lets get this spomrpt right and then show me th eprompt in downloads
 
 Reading (Fable): (1) REQUEST: an in-depth battle plan for the night that Fable (laptop), Astra (orchestrator) and Fable 5.1 on the VM execute together. (2) RULED: of the 8 new GPUs (node 5), 4 run a FABLE-GUIDED SWARM — Fable's own swarm on the VM (Claude Fable 5.1), driven by this battle-plan prompt, trying to figure out parenting; both Fable and Astra at maximum settings, communicating with each other and looking at each other's work. (3) "Let's get this prompt right, then show me the prompt in Downloads" — the plan/prompt goes to ~/Downloads for his review before the Fable half launches. Labels: REQUEST (plan), RULED (4 of 8 node-5 GPUs to the Fable swarm; max settings; two-way communication), PROCESS (review in Downloads first).
+
+## Message 112 — 2026-09-15 ~10:00 UTC (typed; verbatim)
+
+this right /Users/rohing/Downloads/dream_state_PARENTING_BATTLE_PLAN_v2_FOR_REVIEW_2026-09-15.md       ? laugnth it as soon as im done iwt my audit,
+
+Reading (Fable): confirms the file path; RULED: launch the Fable-guided swarm as soon as he finishes his audit of the plan — i.e. the review IS a gate until he says he is done (supersedes the plan's 30-minute default). Labels: RULED (gate until "done").
