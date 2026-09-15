@@ -1,5 +1,25 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## [Builder] 2026-09-15 09:24 UTC — R110 A1007 native-ready
+
+190nativeCPUtests+58subtests PASS, zero skips. New R110163-file source,
+actualFULL8932 optimizer/RNG continuity,42BASEanchors bound; dispatch approved
+under09:24COORD receipt. Initial ownership admission then same reserved life,
+no per-phase re-admission; max64cycles/5120native/192Astra, hard17:02UTC.
+Two sequential episodes→pure metacognition parent dialogue→240s LoRA sleep→
+fresh parent-free held/capability readout. Benefit still UNASSESSED.
+
+## [Builder] 2026-09-15 09:22 UTC — R110 update
+
+New parents carry shared Rohin principles and add/stop/shift behavior, not
+failure-driven tutoring. Main A1007 unlaunched R108 superseded with evidence
+preserved; new R11064-cycle/8h bounded life under native CPU verification,
+two episodes then child→parent→child metacognition and240s actual LoRA sleep.
+No repeated ownership-admission gaps inside the reserved life. Not yet launched.
+Actual R109 node2 training advancing from8932; receipts pushed85e94b02.
+Node3 6/7 productive old fits continue to safe natural end, parenting delayed.
+New-node destination after Fable readiness:6BASE+2learned parenting per8GPUs.
+
 ## [Builder] 2026-09-15 09:08 UTC — measured gap / learned pilot ready
 
 09:06:14UTC census19/32resident,17/32computing (>10% snapshot): a40r7/7,
