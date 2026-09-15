@@ -1,0 +1,15 @@
+{
+  "observed_utc": "2026-09-15T17:34:00Z",
+  "timestamp_precision": "minute",
+  "wrapper": "gpu/a100_ssh.sh",
+  "root": "/localhome/local-rohing/orch_r119_l1_continuation_20260915_attempt2",
+  "evidence": ["fit/FULL/segment026/RANK0_LOADED.json", "fit/CONTROL/segment026/RANK0_LOADED.json", "fit/FULL/segment026/RANK0_LOSSES.jsonl", "fit/CONTROL/segment026/RANK0_LOSSES.jsonl"],
+  "full": {"physical_gpu": 0, "native_pid": 3190894, "restored_update": 15460, "observed_completed_update": 15588, "new_updates": 128, "last_loss": 0.0023977572564035654, "state_sha256": "cf2ba10de964eadfc2379264ad6aa20f40aeb08c490b6585c864a1ab4bd4ffed"},
+  "control": {"physical_gpu": 1, "native_pid": 3190895, "restored_update": 15460, "observed_completed_update": 15588, "new_updates": 128, "last_loss": 0.0034154937602579594, "state_sha256": "f25d5bf617b1989f722b9aec154a98a16f8a85b33f18228da06ce53f10af031e"},
+  "optimizer_restored": true,
+  "rng_restored": true,
+  "global_cursor_preserved": true,
+  "world_size_per_arm": 1,
+  "observation_scope": "Existing segment026 loaded receipts and last loss rows; no additional model call or claim that segment026 is still the current process.",
+  "whole_fleet_saturated": false
+}

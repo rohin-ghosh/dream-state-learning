@@ -1,0 +1,17 @@
+{
+  "observed_utc": "2026-09-15T17:26:00Z",
+  "timestamp_precision": "minute",
+  "wrapper": "gpu/a100_ssh.sh",
+  "root": "/localhome/local-rohing/orch_r119_l1_continuation_20260915_attempt1",
+  "start_full": {"pid": 3190446, "start_ticks": "21412565", "uid": 1395, "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede"},
+  "start_control": {"pid": 3190447, "start_ticks": "21412565", "uid": 1395, "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede"},
+  "observed_control_native_launch": {"pid": 3190454, "start_ticks": "21412720", "uid": 1395, "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede"},
+  "gpu_memory_mib": [26747,26747,0,0,0,0,0,0],
+  "gpu_utilization_percent": [75,75,0,0,0,0,0,0],
+  "status": "HISTORICAL_ATTEMPT1_METADATA_AND_UNBOUND_GPU_OBSERVATION",
+  "attribution_correction": "The attempt1 launch metadata was read separately from GPU occupancy and does not establish which processes held those GPUs. Successful restored training was independently verified under attempt2, not attempt1; see A100_RESUMED_UPDATES_1734.json.",
+  "source_checkpoint_update_reported_by_owner": 15460,
+  "independently_verified_new_optimizer_steps": null,
+  "observer_model_calls": 0,
+  "whole_fleet_saturated": false
+}

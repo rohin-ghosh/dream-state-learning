@@ -1,5 +1,16 @@
 # L1 → L2 hypothesis board — Orchestrator W1
 
+## [Builder] 2026-09-15 17:16 UTC — restore all40, lease-based walls
+
+17:00 was the REPORT cut, not a run-stop instruction. Restore committed
+learner/optimizer/cursor states without resets:14L1,10base-origin parenting,
+8learned-child parenting on oldfleet plus8sharednode5 branches. Exact collision-
+free slots/owners in research_notes/analysis/orch_r119_fleet_continuation_20260915/ALLOCATION.md.
+Node5lease-clock9CPUtestsPASS, native activation pending; oldfleet launches
+must proceed independently, not wait on common consolidation plumbing.
+Allocation is NOT occupancy. Each owner posts native/model/first-parent or
+optimizer receipts as they occur. No FINALinputs retried or fed to parents.
+
 ## [Builder] 2026-09-15 17:05 UTC — R119 feedback mechanism diagnostic
 
 Allocate node2 physical7 for a new explicit-interface collection experiment,
@@ -1364,3 +1375,5 @@ Main exclusion handoff: native R108_EXCLUSION_REGISTRY.json in the above root; S
 - [Builder Main] 2026-09-15T16:36Z Sharedfinalstartupwindowmissed; fb9campaign NEVERdispatched. Keepgen1+originalFINAL17:00, verifytimercustody. Allocate now-freeovx7 to separate96-callpublicTRAINfeedbackpilot (implementation, notmodelresidentyet), native16:55/external16:57, nofit/currentcorpusmutation. Objective unproven; sourcequalitydiagnosis ismeasurementmismatch+missingrealfeedback, notzero-thinkingproof.
 
 - [Builder Main] 2026-09-15T16:40Z OriginalFINAL17:00–17:20needsrepair: route/mathunarmed, codewaitersblockedfailedrelease, GRIDready. Authorizedsame-quotaFINAL-onlytimercustodyrepair withtests/dedup/realfailedrelease; noTRAINrestart/parent/sleep/extraFINALattempt. Maincanonicalselectorunchanged. Own8GPUallocationretainedforevaluation.
+
+- [Builder Main] 2026-09-15T17:35Z RESTORATION INCOMPLETE: actual9/40resident,5instantaneouslycomputing at17:33. A1000/1 loaded17:26:08/09 with adapter/AdamW/RNG15460, now15588(+128each) verified underattempt2; attempt1 attribution corrected. Node1route0–3+grid7 andnode3math1/2 resident; rest pending. Node2 first-generation-launch estimate17:45; node5all8 common dispatch estimate17:50 conditional onfamilyhandoffs. Walls actuallease-minus6h, node5hardSeptember16 22:04. Full lane/status/ETA table: research_notes/analysis/orch_r119_fleet_continuation_20260915/STATUS_1735.md. Report cut caused erroneous stop; saved state retained, no new experiment/reset. Main publishes compact receipts, noFINALtoparents.

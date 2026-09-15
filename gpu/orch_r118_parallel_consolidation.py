@@ -28,6 +28,11 @@ from gpu import orch_r116_shared_parallel_sleep as parallel
 SCHEMA = 'R118_PARALLEL_CONSOLIDATION_V1'
 HARD_END = 1789491720
 TRAIN_END = 1789491600
+if os.environ.get('ORCH_R119_LEASE_CLOCK') or os.environ.get('ORCH_R119_LEASE_CLOCK_SHA256'):
+    from gpu import orch_r119_lease_clock
+    _lease_clock = orch_r119_lease_clock.from_environment(os.environ, __file__)
+    TRAIN_END = _lease_clock['train_end_unix']
+    HARD_END = _lease_clock['hard_end_unix']
 BRANCHES = shared.BRANCHES
 LAUNCH_SCHEMA = 'R118_PARALLEL_INPLACE_LAUNCH_V1'
 SESSION_SCHEMA = 'R118_PARALLEL_FRESH_EXEC_V1'
