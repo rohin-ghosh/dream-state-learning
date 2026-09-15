@@ -1,0 +1,160 @@
+{
+  "CONTROL_integrity_caveat": "Original17508 ON32 capability captures retained; original process final postcheck not reached. Fresh ON held-only16 integrity is REPAIR_PROCESS_ONLY. OFF32+16 complete. No old capability replay.",
+  "FULL_cumulative_new_targets": {
+    "active_tokens": 1030,
+    "presentations": 6,
+    "roots_disjoint_segments": true,
+    "unique_targets": 3
+  },
+  "actual_occupancy": {
+    "CONTROL": {
+      "memory_MiB": 47143,
+      "pid": 3823065,
+      "proc_state": "R",
+      "utilization_percent": 76
+    },
+    "FULL": {
+      "memory_MiB": 43323,
+      "pid": 3818638,
+      "proc_state": "R",
+      "utilization_percent": 74
+    }
+  },
+  "arms": {
+    "CONTROL": {
+      "heartbeat": {
+        "cohort": "C2",
+        "condition": null,
+        "identity": {
+          "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+          "pid": 3823065,
+          "start_ticks": "22475001",
+          "uid": 1395
+        },
+        "observed_unix": 1789503690.8991032,
+        "phase": "train",
+        "resume": "/localhome/local-rohing/orch_r119_l1_c3_control_readout_recovery_20260915_attempt1/CONTROL/segment042/fit/CONTROL/checkpoints/000017636",
+        "segment": 43
+      },
+      "latest_stage": {
+        "checkpoint_complete": false,
+        "cohort": "C2",
+        "latest_update": 17691,
+        "loaded_sha256": "4d337beb45f887f5296655d63d65521cfd9b611a984e39f9c1f412b3adaa7f5d",
+        "loss_prefix_sha256": "701bc6c40e5ec33f5d99d453d1db992dc734b8db991dca8ce1a8b9854a2f9bb3",
+        "native_loaded": true,
+        "newly_selected_targets": {},
+        "optimizer_updates": 55,
+        "paired_complete": false,
+        "readout_complete": {
+          "OFF": false,
+          "ON": false
+        },
+        "restore": {
+          "global_cursor_preserved": true,
+          "optimizer_restored": true,
+          "rng_restored": true,
+          "state_sha256": "fcbe78f4255ce39f8b0580ee4c8e8f357c30a81699fd55a64db355f36a619854",
+          "update": 17636
+        },
+        "segment": "segment043",
+        "start_update": 17636
+      },
+      "previous_stage": {
+        "checkpoint_complete": true,
+        "cohort": "C2",
+        "latest_update": 17636,
+        "loaded_sha256": "61d8a0bdbd0986d25d07a498694313ea243f6f8cd5dd4e7332a47292678423a7",
+        "loss_prefix_sha256": "ba7982763b0690b52f5c618a2a846139710b2dfef6b23fe4b6d41f650049f33e",
+        "native_loaded": true,
+        "newly_selected_targets": {},
+        "optimizer_updates": 128,
+        "paired_complete": true,
+        "readout_complete": {
+          "OFF": true,
+          "ON": true
+        },
+        "restore": {
+          "global_cursor_preserved": true,
+          "optimizer_restored": true,
+          "rng_restored": true,
+          "state_sha256": "bed13b0f05b58db69e87588692ef39e11347e6836e3ca01eb8c95f4f9918422f",
+          "update": 17508
+        },
+        "segment": "segment042",
+        "start_update": 17508
+      },
+      "root": "/localhome/local-rohing/orch_r119_l1_c3_control_readout_recovery_20260915_attempt1"
+    },
+    "FULL": {
+      "heartbeat": {
+        "cohort": "C3",
+        "condition": null,
+        "identity": {
+          "boot_id": "273420dc-cd6c-4760-a264-0027d2f6aede",
+          "pid": 3818638,
+          "start_ticks": "22470859",
+          "uid": 1395
+        },
+        "observed_unix": 1789503691.5092711,
+        "phase": "train",
+        "resume": "/localhome/local-rohing/orch_r119_l1_c3_consumer_20260915_attempt1/FULL/segment045/fit/FULL/checkpoints/000018020",
+        "segment": 46
+      },
+      "latest_stage": {
+        "checkpoint_complete": false,
+        "cohort": "C3",
+        "latest_update": 18113,
+        "loaded_sha256": "786b903dd6de5e86dde06ab8d07b6b0f281ae14aceccaca04fef9c9477a1a035",
+        "loss_prefix_sha256": "5c2235756a67db681ea84e6ebcbb5522d4f98b493573210fac8c177e05a41583",
+        "native_loaded": true,
+        "newly_selected_targets": {
+          "21d2f73a1f6e99f26590c286fc8223a32a451d553cf55f46712d5ed003fbe638": {
+            "active_tokens": 269,
+            "presentations": 1,
+            "source_task_id": "gsm8k-train-4506",
+            "updates": [
+              18053
+            ]
+          },
+          "e202464a5f222fc7612c70d9911c0aac85a89ba3a4df4809e595c0505bafc126": {
+            "active_tokens": 109,
+            "presentations": 1,
+            "source_task_id": "gsm8k-train-1768",
+            "updates": [
+              18045
+            ]
+          },
+          "f38237a8b6c95550e7b6d9646349f6858c52daabc1079485bff1a151ab4d9e0c": {
+            "active_tokens": 137,
+            "presentations": 1,
+            "source_task_id": "gsm8k-train-3102",
+            "updates": [
+              18061
+            ]
+          }
+        },
+        "optimizer_updates": 93,
+        "paired_complete": false,
+        "readout_complete": {
+          "OFF": false,
+          "ON": false
+        },
+        "restore": {
+          "global_cursor_preserved": true,
+          "optimizer_restored": true,
+          "rng_restored": true,
+          "state_sha256": "31f07ec7da1347e4d59bbc08bf520a619e6cdbbbdc6cfb850ebfa611ef8eaa8a",
+          "update": 18020
+        },
+        "segment": "segment046",
+        "start_update": 18020
+      },
+      "previous_stage": null,
+      "root": "/localhome/local-rohing/orch_r119_l1_c3_full_scanned_continuation_20260915_attempt1"
+    }
+  },
+  "counts_only": true,
+  "no_behavior_gain_claim": true,
+  "observed_unix": 1789503692.2710106
+}
